@@ -18,18 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchCreateIndex::BatchCreateIndex() : 
-    m_orderedIndexedAttributeListHasBeenSet(false),
-    m_isUnique(false),
-    m_isUniqueHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false),
-    m_batchReferenceNameHasBeenSet(false)
-{
-}
-
 BatchCreateIndex::BatchCreateIndex(JsonView jsonValue)
-  : BatchCreateIndex()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ BatchCreateIndex& BatchCreateIndex::operator =(JsonView jsonValue)
     }
     m_orderedIndexedAttributeListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsUnique"))
   {
     m_isUnique = jsonValue.GetBool("IsUnique");
-
     m_isUniqueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentReference"))
   {
     m_parentReference = jsonValue.GetObject("ParentReference");
-
     m_parentReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkName"))
   {
     m_linkName = jsonValue.GetString("LinkName");
-
     m_linkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchReferenceName"))
   {
     m_batchReferenceName = jsonValue.GetString("BatchReferenceName");
-
     m_batchReferenceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

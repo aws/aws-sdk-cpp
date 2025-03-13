@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DeleteConfigurationTemplateRequest::DeleteConfigurationTemplateRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

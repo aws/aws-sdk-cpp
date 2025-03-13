@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Resource::Resource() : 
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_partition(Partition::NOT_SET),
-    m_partitionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataClassificationHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Partition"))
   {
     m_partition = PartitionMapper::GetPartitionForName(jsonValue.GetString("Partition"));
-
     m_partitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRole"))
   {
     m_resourceRole = jsonValue.GetString("ResourceRole");
-
     m_resourceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -85,35 +59,26 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataClassification"))
   {
     m_dataClassification = jsonValue.GetObject("DataClassification");
-
     m_dataClassificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetObject("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationName"))
   {
     m_applicationName = jsonValue.GetString("ApplicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

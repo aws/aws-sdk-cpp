@@ -18,19 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-VehicleSummary::VehicleSummary() : 
-    m_vehicleNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_decoderManifestArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 VehicleSummary::VehicleSummary(JsonView jsonValue)
-  : VehicleSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ VehicleSummary& VehicleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vehicleName"))
   {
     m_vehicleName = jsonValue.GetString("vehicleName");
-
     m_vehicleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelManifestArn"))
   {
     m_modelManifestArn = jsonValue.GetString("modelManifestArn");
-
     m_modelManifestArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decoderManifestArn"))
   {
     m_decoderManifestArn = jsonValue.GetString("decoderManifestArn");
-
     m_decoderManifestArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("lastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -88,7 +64,6 @@ VehicleSummary& VehicleSummary::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

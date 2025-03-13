@@ -35,7 +35,7 @@ namespace Model
   class SearchResourcesTagCriterion
   {
   public:
-    AWS_MACIE2_API SearchResourcesTagCriterion();
+    AWS_MACIE2_API SearchResourcesTagCriterion() = default;
     AWS_MACIE2_API SearchResourcesTagCriterion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SearchResourcesTagCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
      * (not equals).</p>
      */
-    inline const SearchResourcesComparator& GetComparator() const{ return m_comparator; }
+    inline SearchResourcesComparator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const SearchResourcesComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(SearchResourcesComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline SearchResourcesTagCriterion& WithComparator(const SearchResourcesComparator& value) { SetComparator(value); return *this;}
-    inline SearchResourcesTagCriterion& WithComparator(SearchResourcesComparator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(SearchResourcesComparator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline SearchResourcesTagCriterion& WithComparator(SearchResourcesComparator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,18 @@ namespace Model
      * <p>The tag keys, tag values, or tag key and value pairs to use in the
      * condition.</p>
      */
-    inline const Aws::Vector<SearchResourcesTagCriterionPair>& GetTagValues() const{ return m_tagValues; }
+    inline const Aws::Vector<SearchResourcesTagCriterionPair>& GetTagValues() const { return m_tagValues; }
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
-    inline void SetTagValues(const Aws::Vector<SearchResourcesTagCriterionPair>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
-    inline void SetTagValues(Aws::Vector<SearchResourcesTagCriterionPair>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
-    inline SearchResourcesTagCriterion& WithTagValues(const Aws::Vector<SearchResourcesTagCriterionPair>& value) { SetTagValues(value); return *this;}
-    inline SearchResourcesTagCriterion& WithTagValues(Aws::Vector<SearchResourcesTagCriterionPair>&& value) { SetTagValues(std::move(value)); return *this;}
-    inline SearchResourcesTagCriterion& AddTagValues(const SearchResourcesTagCriterionPair& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-    inline SearchResourcesTagCriterion& AddTagValues(SearchResourcesTagCriterionPair&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
+    template<typename TagValuesT = Aws::Vector<SearchResourcesTagCriterionPair>>
+    void SetTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::forward<TagValuesT>(value); }
+    template<typename TagValuesT = Aws::Vector<SearchResourcesTagCriterionPair>>
+    SearchResourcesTagCriterion& WithTagValues(TagValuesT&& value) { SetTagValues(std::forward<TagValuesT>(value)); return *this;}
+    template<typename TagValuesT = SearchResourcesTagCriterionPair>
+    SearchResourcesTagCriterion& AddTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues.emplace_back(std::forward<TagValuesT>(value)); return *this; }
     ///@}
   private:
 
-    SearchResourcesComparator m_comparator;
+    SearchResourcesComparator m_comparator{SearchResourcesComparator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
     Aws::Vector<SearchResourcesTagCriterionPair> m_tagValues;

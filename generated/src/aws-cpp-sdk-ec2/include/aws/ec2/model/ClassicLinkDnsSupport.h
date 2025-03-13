@@ -32,7 +32,7 @@ namespace Model
   class ClassicLinkDnsSupport
   {
   public:
-    AWS_EC2_API ClassicLinkDnsSupport();
+    AWS_EC2_API ClassicLinkDnsSupport() = default;
     AWS_EC2_API ClassicLinkDnsSupport(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClassicLinkDnsSupport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
      */
-    inline bool GetClassicLinkDnsSupported() const{ return m_classicLinkDnsSupported; }
+    inline bool GetClassicLinkDnsSupported() const { return m_classicLinkDnsSupported; }
     inline bool ClassicLinkDnsSupportedHasBeenSet() const { return m_classicLinkDnsSupportedHasBeenSet; }
     inline void SetClassicLinkDnsSupported(bool value) { m_classicLinkDnsSupportedHasBeenSet = true; m_classicLinkDnsSupported = value; }
     inline ClassicLinkDnsSupport& WithClassicLinkDnsSupported(bool value) { SetClassicLinkDnsSupported(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline ClassicLinkDnsSupport& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline ClassicLinkDnsSupport& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline ClassicLinkDnsSupport& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    ClassicLinkDnsSupport& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_classicLinkDnsSupported;
+    bool m_classicLinkDnsSupported{false};
     bool m_classicLinkDnsSupportedHasBeenSet = false;
 
     Aws::String m_vpcId;

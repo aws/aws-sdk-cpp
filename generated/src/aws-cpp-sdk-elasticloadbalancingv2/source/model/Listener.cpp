@@ -20,23 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Listener::Listener() : 
-    m_listenerArnHasBeenSet(false),
-    m_loadBalancerArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(ProtocolEnum::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_sslPolicyHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false),
-    m_alpnPolicyHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
-{
-}
-
 Listener::Listener(const XmlNode& xmlNode)
-  : Listener()
 {
   *this = xmlNode;
 }
@@ -52,72 +36,81 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     {
       m_listenerArn = Aws::Utils::Xml::DecodeEscapedXmlText(listenerArnNode.GetText());
       m_listenerArnHasBeenSet = true;
+       m_listenerArnHasBeenSet = true;
     }
     XmlNode loadBalancerArnNode = resultNode.FirstChild("LoadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
       m_loadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerArnNode.GetText());
       m_loadBalancerArnHasBeenSet = true;
+       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolEnumMapper::GetProtocolEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode certificatesNode = resultNode.FirstChild("Certificates");
     if(!certificatesNode.IsNull())
     {
       XmlNode certificatesMember = certificatesNode.FirstChild("member");
+      m_certificatesHasBeenSet = !certificatesMember.IsNull();
       while(!certificatesMember.IsNull())
       {
         m_certificates.push_back(certificatesMember);
         certificatesMember = certificatesMember.NextNode("member");
       }
 
-      m_certificatesHasBeenSet = true;
+       m_certificatesHasBeenSet = true;
     }
     XmlNode sslPolicyNode = resultNode.FirstChild("SslPolicy");
     if(!sslPolicyNode.IsNull())
     {
       m_sslPolicy = Aws::Utils::Xml::DecodeEscapedXmlText(sslPolicyNode.GetText());
       m_sslPolicyHasBeenSet = true;
+       m_sslPolicyHasBeenSet = true;
     }
     XmlNode defaultActionsNode = resultNode.FirstChild("DefaultActions");
     if(!defaultActionsNode.IsNull())
     {
       XmlNode defaultActionsMember = defaultActionsNode.FirstChild("member");
+      m_defaultActionsHasBeenSet = !defaultActionsMember.IsNull();
       while(!defaultActionsMember.IsNull())
       {
         m_defaultActions.push_back(defaultActionsMember);
         defaultActionsMember = defaultActionsMember.NextNode("member");
       }
 
-      m_defaultActionsHasBeenSet = true;
+       m_defaultActionsHasBeenSet = true;
     }
     XmlNode alpnPolicyNode = resultNode.FirstChild("AlpnPolicy");
     if(!alpnPolicyNode.IsNull())
     {
       XmlNode alpnPolicyMember = alpnPolicyNode.FirstChild("member");
+      m_alpnPolicyHasBeenSet = !alpnPolicyMember.IsNull();
       while(!alpnPolicyMember.IsNull())
       {
         m_alpnPolicy.push_back(alpnPolicyMember.GetText());
         alpnPolicyMember = alpnPolicyMember.NextNode("member");
       }
 
-      m_alpnPolicyHasBeenSet = true;
+       m_alpnPolicyHasBeenSet = true;
     }
     XmlNode mutualAuthenticationNode = resultNode.FirstChild("MutualAuthentication");
     if(!mutualAuthenticationNode.IsNull())
     {
       m_mutualAuthentication = mutualAuthenticationNode;
       m_mutualAuthenticationHasBeenSet = true;
+       m_mutualAuthenticationHasBeenSet = true;
     }
   }
 

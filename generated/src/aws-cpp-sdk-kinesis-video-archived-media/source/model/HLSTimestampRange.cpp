@@ -18,14 +18,7 @@ namespace KinesisVideoArchivedMedia
 namespace Model
 {
 
-HLSTimestampRange::HLSTimestampRange() : 
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false)
-{
-}
-
 HLSTimestampRange::HLSTimestampRange(JsonView jsonValue)
-  : HLSTimestampRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HLSTimestampRange& HLSTimestampRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTimestamp"))
   {
     m_startTimestamp = jsonValue.GetDouble("StartTimestamp");
-
     m_startTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimestamp"))
   {
     m_endTimestamp = jsonValue.GetDouble("EndTimestamp");
-
     m_endTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,18 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSecretsRequest::ListSecretsRequest() : 
-    m_includePlannedDeletion(false),
-    m_includePlannedDeletionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_sortOrder(SortOrderType::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListSecretsRequest::SerializePayload() const
 {
   JsonValue payload;

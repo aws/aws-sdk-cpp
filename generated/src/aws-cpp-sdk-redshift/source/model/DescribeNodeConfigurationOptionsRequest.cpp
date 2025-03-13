@@ -10,20 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeNodeConfigurationOptionsRequest::DescribeNodeConfigurationOptionsRequest() : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNodeConfigurationOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

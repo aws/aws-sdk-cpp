@@ -12,22 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMethodRequest::PutMethodRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_authorizationTypeHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false),
-    m_apiKeyRequired(false),
-    m_apiKeyRequiredHasBeenSet(false),
-    m_operationNameHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_requestModelsHasBeenSet(false),
-    m_requestValidatorIdHasBeenSet(false),
-    m_authorizationScopesHasBeenSet(false)
-{
-}
-
 Aws::String PutMethodRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEmergencyContactSettingsRequest::UpdateEmergencyContactSettingsRequest() : 
-    m_emergencyContactListHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEmergencyContactSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

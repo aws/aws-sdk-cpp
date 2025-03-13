@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PieChartSortConfiguration::PieChartSortConfiguration() : 
-    m_categorySortHasBeenSet(false),
-    m_categoryItemsLimitHasBeenSet(false),
-    m_smallMultiplesSortHasBeenSet(false),
-    m_smallMultiplesLimitConfigurationHasBeenSet(false)
-{
-}
-
 PieChartSortConfiguration::PieChartSortConfiguration(JsonView jsonValue)
-  : PieChartSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ PieChartSortConfiguration& PieChartSortConfiguration::operator =(JsonView jsonVa
     }
     m_categorySortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryItemsLimit"))
   {
     m_categoryItemsLimit = jsonValue.GetObject("CategoryItemsLimit");
-
     m_categoryItemsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiplesSort"))
   {
     Aws::Utils::Array<JsonView> smallMultiplesSortJsonList = jsonValue.GetArray("SmallMultiplesSort");
@@ -60,14 +48,11 @@ PieChartSortConfiguration& PieChartSortConfiguration::operator =(JsonView jsonVa
     }
     m_smallMultiplesSortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiplesLimitConfiguration"))
   {
     m_smallMultiplesLimitConfiguration = jsonValue.GetObject("SmallMultiplesLimitConfiguration");
-
     m_smallMultiplesLimitConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

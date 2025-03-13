@@ -28,7 +28,7 @@ namespace Model
   class RejectResourceShareInvitationResult
   {
   public:
-    AWS_RAM_API RejectResourceShareInvitationResult();
+    AWS_RAM_API RejectResourceShareInvitationResult() = default;
     AWS_RAM_API RejectResourceShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RAM_API RejectResourceShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>An object that contains the details about the rejected invitation.</p>
      */
-    inline const ResourceShareInvitation& GetResourceShareInvitation() const{ return m_resourceShareInvitation; }
-    inline void SetResourceShareInvitation(const ResourceShareInvitation& value) { m_resourceShareInvitation = value; }
-    inline void SetResourceShareInvitation(ResourceShareInvitation&& value) { m_resourceShareInvitation = std::move(value); }
-    inline RejectResourceShareInvitationResult& WithResourceShareInvitation(const ResourceShareInvitation& value) { SetResourceShareInvitation(value); return *this;}
-    inline RejectResourceShareInvitationResult& WithResourceShareInvitation(ResourceShareInvitation&& value) { SetResourceShareInvitation(std::move(value)); return *this;}
+    inline const ResourceShareInvitation& GetResourceShareInvitation() const { return m_resourceShareInvitation; }
+    template<typename ResourceShareInvitationT = ResourceShareInvitation>
+    void SetResourceShareInvitation(ResourceShareInvitationT&& value) { m_resourceShareInvitationHasBeenSet = true; m_resourceShareInvitation = std::forward<ResourceShareInvitationT>(value); }
+    template<typename ResourceShareInvitationT = ResourceShareInvitation>
+    RejectResourceShareInvitationResult& WithResourceShareInvitation(ResourceShareInvitationT&& value) { SetResourceShareInvitation(std::forward<ResourceShareInvitationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * other parameters must also have the same values that you used in the first
      * call.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline RejectResourceShareInvitationResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RejectResourceShareInvitationResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RejectResourceShareInvitationResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    RejectResourceShareInvitationResult& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RejectResourceShareInvitationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RejectResourceShareInvitationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RejectResourceShareInvitationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RejectResourceShareInvitationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceShareInvitation m_resourceShareInvitation;
+    bool m_resourceShareInvitationHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

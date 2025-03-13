@@ -18,15 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListAccountAssociationsFilter::ListAccountAssociationsFilter() : 
-    m_associationHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 ListAccountAssociationsFilter::ListAccountAssociationsFilter(JsonView jsonValue)
-  : ListAccountAssociationsFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ListAccountAssociationsFilter& ListAccountAssociationsFilter::operator =(JsonVie
   if(jsonValue.ValueExists("Association"))
   {
     m_association = jsonValue.GetString("Association");
-
     m_associationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountIds"))
   {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
@@ -56,7 +44,6 @@ ListAccountAssociationsFilter& ListAccountAssociationsFilter::operator =(JsonVie
     }
     m_accountIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncS3Destination::ResourceDataSyncS3Destination() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
-    m_syncFormatHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_aWSKMSKeyARNHasBeenSet(false),
-    m_destinationDataSharingHasBeenSet(false)
-{
-}
-
 ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(JsonView jsonValue)
-  : ResourceDataSyncS3Destination()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ResourceDataSyncS3Destination& ResourceDataSyncS3Destination::operator =(JsonVie
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncFormat"))
   {
     m_syncFormat = ResourceDataSyncS3FormatMapper::GetResourceDataSyncS3FormatForName(jsonValue.GetString("SyncFormat"));
-
     m_syncFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSKMSKeyARN"))
   {
     m_aWSKMSKeyARN = jsonValue.GetString("AWSKMSKeyARN");
-
     m_aWSKMSKeyARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationDataSharing"))
   {
     m_destinationDataSharing = jsonValue.GetObject("DestinationDataSharing");
-
     m_destinationDataSharingHasBeenSet = true;
   }
-
   return *this;
 }
 

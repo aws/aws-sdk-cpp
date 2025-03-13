@@ -18,54 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FilterCriteria::FilterCriteria() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_codeVulnerabilityDetectorNameHasBeenSet(false),
-    m_codeVulnerabilityDetectorTagsHasBeenSet(false),
-    m_codeVulnerabilityFilePathHasBeenSet(false),
-    m_componentIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_ec2InstanceImageIdHasBeenSet(false),
-    m_ec2InstanceSubnetIdHasBeenSet(false),
-    m_ec2InstanceVpcIdHasBeenSet(false),
-    m_ecrImageArchitectureHasBeenSet(false),
-    m_ecrImageHashHasBeenSet(false),
-    m_ecrImagePushedAtHasBeenSet(false),
-    m_ecrImageRegistryHasBeenSet(false),
-    m_ecrImageRepositoryNameHasBeenSet(false),
-    m_ecrImageTagsHasBeenSet(false),
-    m_epssScoreHasBeenSet(false),
-    m_exploitAvailableHasBeenSet(false),
-    m_findingArnHasBeenSet(false),
-    m_findingStatusHasBeenSet(false),
-    m_findingTypeHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_fixAvailableHasBeenSet(false),
-    m_inspectorScoreHasBeenSet(false),
-    m_lambdaFunctionExecutionRoleArnHasBeenSet(false),
-    m_lambdaFunctionLastModifiedAtHasBeenSet(false),
-    m_lambdaFunctionLayersHasBeenSet(false),
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_lambdaFunctionRuntimeHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_networkProtocolHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_relatedVulnerabilitiesHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_vendorSeverityHasBeenSet(false),
-    m_vulnerabilityIdHasBeenSet(false),
-    m_vulnerabilitySourceHasBeenSet(false),
-    m_vulnerablePackagesHasBeenSet(false)
-{
-}
-
 FilterCriteria::FilterCriteria(JsonView jsonValue)
-  : FilterCriteria()
 {
   *this = jsonValue;
 }
@@ -81,7 +34,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeVulnerabilityDetectorName"))
   {
     Aws::Utils::Array<JsonView> codeVulnerabilityDetectorNameJsonList = jsonValue.GetArray("codeVulnerabilityDetectorName");
@@ -91,7 +43,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_codeVulnerabilityDetectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeVulnerabilityDetectorTags"))
   {
     Aws::Utils::Array<JsonView> codeVulnerabilityDetectorTagsJsonList = jsonValue.GetArray("codeVulnerabilityDetectorTags");
@@ -101,7 +52,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_codeVulnerabilityDetectorTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeVulnerabilityFilePath"))
   {
     Aws::Utils::Array<JsonView> codeVulnerabilityFilePathJsonList = jsonValue.GetArray("codeVulnerabilityFilePath");
@@ -111,7 +61,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_codeVulnerabilityFilePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentId"))
   {
     Aws::Utils::Array<JsonView> componentIdJsonList = jsonValue.GetArray("componentId");
@@ -121,7 +70,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_componentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentType"))
   {
     Aws::Utils::Array<JsonView> componentTypeJsonList = jsonValue.GetArray("componentType");
@@ -131,7 +79,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_componentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceImageId"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceImageIdJsonList = jsonValue.GetArray("ec2InstanceImageId");
@@ -141,7 +88,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceImageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceSubnetId"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceSubnetIdJsonList = jsonValue.GetArray("ec2InstanceSubnetId");
@@ -151,7 +97,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceVpcId"))
   {
     Aws::Utils::Array<JsonView> ec2InstanceVpcIdJsonList = jsonValue.GetArray("ec2InstanceVpcId");
@@ -161,7 +106,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ec2InstanceVpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageArchitecture"))
   {
     Aws::Utils::Array<JsonView> ecrImageArchitectureJsonList = jsonValue.GetArray("ecrImageArchitecture");
@@ -171,7 +115,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageArchitectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageHash"))
   {
     Aws::Utils::Array<JsonView> ecrImageHashJsonList = jsonValue.GetArray("ecrImageHash");
@@ -181,7 +124,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImagePushedAt"))
   {
     Aws::Utils::Array<JsonView> ecrImagePushedAtJsonList = jsonValue.GetArray("ecrImagePushedAt");
@@ -191,7 +133,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImagePushedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageRegistry"))
   {
     Aws::Utils::Array<JsonView> ecrImageRegistryJsonList = jsonValue.GetArray("ecrImageRegistry");
@@ -201,7 +142,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageRegistryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageRepositoryName"))
   {
     Aws::Utils::Array<JsonView> ecrImageRepositoryNameJsonList = jsonValue.GetArray("ecrImageRepositoryName");
@@ -211,7 +151,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageRepositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImageTags"))
   {
     Aws::Utils::Array<JsonView> ecrImageTagsJsonList = jsonValue.GetArray("ecrImageTags");
@@ -221,7 +160,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_ecrImageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("epssScore"))
   {
     Aws::Utils::Array<JsonView> epssScoreJsonList = jsonValue.GetArray("epssScore");
@@ -231,7 +169,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_epssScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exploitAvailable"))
   {
     Aws::Utils::Array<JsonView> exploitAvailableJsonList = jsonValue.GetArray("exploitAvailable");
@@ -241,7 +178,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_exploitAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingArn"))
   {
     Aws::Utils::Array<JsonView> findingArnJsonList = jsonValue.GetArray("findingArn");
@@ -251,7 +187,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_findingArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingStatus"))
   {
     Aws::Utils::Array<JsonView> findingStatusJsonList = jsonValue.GetArray("findingStatus");
@@ -261,7 +196,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_findingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingType"))
   {
     Aws::Utils::Array<JsonView> findingTypeJsonList = jsonValue.GetArray("findingType");
@@ -271,7 +205,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_findingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstObservedAt"))
   {
     Aws::Utils::Array<JsonView> firstObservedAtJsonList = jsonValue.GetArray("firstObservedAt");
@@ -281,7 +214,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_firstObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixAvailable"))
   {
     Aws::Utils::Array<JsonView> fixAvailableJsonList = jsonValue.GetArray("fixAvailable");
@@ -291,7 +223,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_fixAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inspectorScore"))
   {
     Aws::Utils::Array<JsonView> inspectorScoreJsonList = jsonValue.GetArray("inspectorScore");
@@ -301,7 +232,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_inspectorScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionExecutionRoleArn"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionExecutionRoleArnJsonList = jsonValue.GetArray("lambdaFunctionExecutionRoleArn");
@@ -311,7 +241,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionExecutionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionLastModifiedAt"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionLastModifiedAtJsonList = jsonValue.GetArray("lambdaFunctionLastModifiedAt");
@@ -321,7 +250,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionLastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionLayers"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionLayersJsonList = jsonValue.GetArray("lambdaFunctionLayers");
@@ -331,7 +259,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionLayersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionName"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionNameJsonList = jsonValue.GetArray("lambdaFunctionName");
@@ -341,7 +268,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunctionRuntime"))
   {
     Aws::Utils::Array<JsonView> lambdaFunctionRuntimeJsonList = jsonValue.GetArray("lambdaFunctionRuntime");
@@ -351,7 +277,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_lambdaFunctionRuntimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastObservedAt"))
   {
     Aws::Utils::Array<JsonView> lastObservedAtJsonList = jsonValue.GetArray("lastObservedAt");
@@ -361,7 +286,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_lastObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkProtocol"))
   {
     Aws::Utils::Array<JsonView> networkProtocolJsonList = jsonValue.GetArray("networkProtocol");
@@ -371,7 +295,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_networkProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portRange"))
   {
     Aws::Utils::Array<JsonView> portRangeJsonList = jsonValue.GetArray("portRange");
@@ -381,7 +304,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_portRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedVulnerabilities"))
   {
     Aws::Utils::Array<JsonView> relatedVulnerabilitiesJsonList = jsonValue.GetArray("relatedVulnerabilities");
@@ -391,7 +313,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_relatedVulnerabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("resourceId");
@@ -401,7 +322,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTags"))
   {
     Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
@@ -411,7 +331,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("resourceType");
@@ -421,7 +340,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     Aws::Utils::Array<JsonView> severityJsonList = jsonValue.GetArray("severity");
@@ -431,7 +349,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     Aws::Utils::Array<JsonView> titleJsonList = jsonValue.GetArray("title");
@@ -441,7 +358,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     Aws::Utils::Array<JsonView> updatedAtJsonList = jsonValue.GetArray("updatedAt");
@@ -451,7 +367,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendorSeverity"))
   {
     Aws::Utils::Array<JsonView> vendorSeverityJsonList = jsonValue.GetArray("vendorSeverity");
@@ -461,7 +376,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_vendorSeverityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerabilityId"))
   {
     Aws::Utils::Array<JsonView> vulnerabilityIdJsonList = jsonValue.GetArray("vulnerabilityId");
@@ -471,7 +385,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_vulnerabilityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerabilitySource"))
   {
     Aws::Utils::Array<JsonView> vulnerabilitySourceJsonList = jsonValue.GetArray("vulnerabilitySource");
@@ -481,7 +394,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_vulnerabilitySourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerablePackages"))
   {
     Aws::Utils::Array<JsonView> vulnerablePackagesJsonList = jsonValue.GetArray("vulnerablePackages");
@@ -491,7 +403,6 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
     }
     m_vulnerablePackagesHasBeenSet = true;
   }
-
   return *this;
 }
 

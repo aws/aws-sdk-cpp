@@ -35,7 +35,7 @@ namespace Model
   class Ec2Config
   {
   public:
-    AWS_DATASYNC_API Ec2Config();
+    AWS_DATASYNC_API Ec2Config() = default;
     AWS_DATASYNC_API Ec2Config(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Ec2Config& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <p>You don't need to specify a subnet that includes a file system mount
      * target.</p> 
      */
-    inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
+    inline const Aws::String& GetSubnetArn() const { return m_subnetArn; }
     inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
-    inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
-    inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
-    inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
-    inline Ec2Config& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
-    inline Ec2Config& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
-    inline Ec2Config& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
+    template<typename SubnetArnT = Aws::String>
+    void SetSubnetArn(SubnetArnT&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::forward<SubnetArnT>(value); }
+    template<typename SubnetArnT = Aws::String>
+    Ec2Config& WithSubnetArn(SubnetArnT&& value) { SetSubnetArn(std::forward<SubnetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * <p>Specifies the Amazon Resource Names (ARNs) of the security groups associated
      * with an Amazon EFS file system's mount target.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const { return m_securityGroupArns; }
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
-    inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
-    inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
-    inline Ec2Config& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
-    inline Ec2Config& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
-    inline Ec2Config& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
-    inline Ec2Config& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
-    inline Ec2Config& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
+    template<typename SecurityGroupArnsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupArns(SecurityGroupArnsT&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::forward<SecurityGroupArnsT>(value); }
+    template<typename SecurityGroupArnsT = Aws::Vector<Aws::String>>
+    Ec2Config& WithSecurityGroupArns(SecurityGroupArnsT&& value) { SetSecurityGroupArns(std::forward<SecurityGroupArnsT>(value)); return *this;}
+    template<typename SecurityGroupArnsT = Aws::String>
+    Ec2Config& AddSecurityGroupArns(SecurityGroupArnsT&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.emplace_back(std::forward<SecurityGroupArnsT>(value)); return *this; }
     ///@}
   private:
 

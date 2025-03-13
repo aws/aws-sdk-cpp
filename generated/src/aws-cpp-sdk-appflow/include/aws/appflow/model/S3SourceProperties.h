@@ -33,7 +33,7 @@ namespace Model
   class S3SourceProperties
   {
   public:
-    AWS_APPFLOW_API S3SourceProperties();
+    AWS_APPFLOW_API S3SourceProperties() = default;
     AWS_APPFLOW_API S3SourceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API S3SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The Amazon S3 bucket name where the source files are stored. </p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3SourceProperties& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3SourceProperties& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3SourceProperties& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3SourceProperties& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,24 +56,22 @@ namespace Model
      * <p> The object key for the Amazon S3 bucket in which the source files are
      * stored. </p>
      */
-    inline const Aws::String& GetBucketPrefix() const{ return m_bucketPrefix; }
+    inline const Aws::String& GetBucketPrefix() const { return m_bucketPrefix; }
     inline bool BucketPrefixHasBeenSet() const { return m_bucketPrefixHasBeenSet; }
-    inline void SetBucketPrefix(const Aws::String& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = value; }
-    inline void SetBucketPrefix(Aws::String&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::move(value); }
-    inline void SetBucketPrefix(const char* value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix.assign(value); }
-    inline S3SourceProperties& WithBucketPrefix(const Aws::String& value) { SetBucketPrefix(value); return *this;}
-    inline S3SourceProperties& WithBucketPrefix(Aws::String&& value) { SetBucketPrefix(std::move(value)); return *this;}
-    inline S3SourceProperties& WithBucketPrefix(const char* value) { SetBucketPrefix(value); return *this;}
+    template<typename BucketPrefixT = Aws::String>
+    void SetBucketPrefix(BucketPrefixT&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::forward<BucketPrefixT>(value); }
+    template<typename BucketPrefixT = Aws::String>
+    S3SourceProperties& WithBucketPrefix(BucketPrefixT&& value) { SetBucketPrefix(std::forward<BucketPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3InputFormatConfig& GetS3InputFormatConfig() const{ return m_s3InputFormatConfig; }
+    inline const S3InputFormatConfig& GetS3InputFormatConfig() const { return m_s3InputFormatConfig; }
     inline bool S3InputFormatConfigHasBeenSet() const { return m_s3InputFormatConfigHasBeenSet; }
-    inline void SetS3InputFormatConfig(const S3InputFormatConfig& value) { m_s3InputFormatConfigHasBeenSet = true; m_s3InputFormatConfig = value; }
-    inline void SetS3InputFormatConfig(S3InputFormatConfig&& value) { m_s3InputFormatConfigHasBeenSet = true; m_s3InputFormatConfig = std::move(value); }
-    inline S3SourceProperties& WithS3InputFormatConfig(const S3InputFormatConfig& value) { SetS3InputFormatConfig(value); return *this;}
-    inline S3SourceProperties& WithS3InputFormatConfig(S3InputFormatConfig&& value) { SetS3InputFormatConfig(std::move(value)); return *this;}
+    template<typename S3InputFormatConfigT = S3InputFormatConfig>
+    void SetS3InputFormatConfig(S3InputFormatConfigT&& value) { m_s3InputFormatConfigHasBeenSet = true; m_s3InputFormatConfig = std::forward<S3InputFormatConfigT>(value); }
+    template<typename S3InputFormatConfigT = S3InputFormatConfig>
+    S3SourceProperties& WithS3InputFormatConfig(S3InputFormatConfigT&& value) { SetS3InputFormatConfig(std::forward<S3InputFormatConfigT>(value)); return *this;}
     ///@}
   private:
 

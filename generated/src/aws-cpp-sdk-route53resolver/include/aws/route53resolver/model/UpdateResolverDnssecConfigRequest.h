@@ -22,7 +22,7 @@ namespace Model
   class UpdateResolverDnssecConfigRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateResolverDnssecConfigRequest();
+    AWS_ROUTE53RESOLVER_API UpdateResolverDnssecConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC
      * validation status for.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline UpdateResolverDnssecConfigRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline UpdateResolverDnssecConfigRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline UpdateResolverDnssecConfigRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    UpdateResolverDnssecConfigRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * value can be <code>ENABLE</code> or <code>DISABLE</code>. Be aware that it can
      * take time for a validation status change to be completed.</p>
      */
-    inline const Validation& GetValidation() const{ return m_validation; }
+    inline Validation GetValidation() const { return m_validation; }
     inline bool ValidationHasBeenSet() const { return m_validationHasBeenSet; }
-    inline void SetValidation(const Validation& value) { m_validationHasBeenSet = true; m_validation = value; }
-    inline void SetValidation(Validation&& value) { m_validationHasBeenSet = true; m_validation = std::move(value); }
-    inline UpdateResolverDnssecConfigRequest& WithValidation(const Validation& value) { SetValidation(value); return *this;}
-    inline UpdateResolverDnssecConfigRequest& WithValidation(Validation&& value) { SetValidation(std::move(value)); return *this;}
+    inline void SetValidation(Validation value) { m_validationHasBeenSet = true; m_validation = value; }
+    inline UpdateResolverDnssecConfigRequest& WithValidation(Validation value) { SetValidation(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    Validation m_validation;
+    Validation m_validation{Validation::NOT_SET};
     bool m_validationHasBeenSet = false;
   };
 

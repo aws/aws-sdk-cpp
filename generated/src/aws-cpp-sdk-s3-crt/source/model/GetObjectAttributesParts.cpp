@@ -20,23 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-GetObjectAttributesParts::GetObjectAttributesParts() : 
-    m_totalPartsCount(0),
-    m_totalPartsCountHasBeenSet(false),
-    m_partNumberMarker(0),
-    m_partNumberMarkerHasBeenSet(false),
-    m_nextPartNumberMarker(0),
-    m_nextPartNumberMarkerHasBeenSet(false),
-    m_maxParts(0),
-    m_maxPartsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_partsHasBeenSet(false)
-{
-}
-
 GetObjectAttributesParts::GetObjectAttributesParts(const XmlNode& xmlNode)
-  : GetObjectAttributesParts()
 {
   *this = xmlNode;
 }
@@ -52,42 +36,48 @@ GetObjectAttributesParts& GetObjectAttributesParts::operator =(const XmlNode& xm
     {
       m_totalPartsCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalPartsCountNode.GetText()).c_str()).c_str());
       m_totalPartsCountHasBeenSet = true;
+       m_totalPartsCountHasBeenSet = true;
     }
     XmlNode partNumberMarkerNode = resultNode.FirstChild("PartNumberMarker");
     if(!partNumberMarkerNode.IsNull())
     {
       m_partNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partNumberMarkerNode.GetText()).c_str()).c_str());
       m_partNumberMarkerHasBeenSet = true;
+       m_partNumberMarkerHasBeenSet = true;
     }
     XmlNode nextPartNumberMarkerNode = resultNode.FirstChild("NextPartNumberMarker");
     if(!nextPartNumberMarkerNode.IsNull())
     {
       m_nextPartNumberMarker = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nextPartNumberMarkerNode.GetText()).c_str()).c_str());
       m_nextPartNumberMarkerHasBeenSet = true;
+       m_nextPartNumberMarkerHasBeenSet = true;
     }
     XmlNode maxPartsNode = resultNode.FirstChild("MaxParts");
     if(!maxPartsNode.IsNull())
     {
       m_maxParts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxPartsNode.GetText()).c_str()).c_str());
       m_maxPartsHasBeenSet = true;
+       m_maxPartsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
+       m_isTruncatedHasBeenSet = true;
     }
     XmlNode partsNode = resultNode.FirstChild("Part");
     if(!partsNode.IsNull())
     {
       XmlNode partMember = partsNode;
+      m_partsHasBeenSet = !partMember.IsNull();
       while(!partMember.IsNull())
       {
         m_parts.push_back(partMember);
         partMember = partMember.NextNode("Part");
       }
 
-      m_partsHasBeenSet = true;
+       m_partsHasBeenSet = true;
     }
   }
 

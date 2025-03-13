@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-S3MachineLearningModelResourceData::S3MachineLearningModelResourceData() : 
-    m_destinationPathHasBeenSet(false),
-    m_ownerSettingHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 S3MachineLearningModelResourceData::S3MachineLearningModelResourceData(JsonView jsonValue)
-  : S3MachineLearningModelResourceData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3MachineLearningModelResourceData& S3MachineLearningModelResourceData::operator
   if(jsonValue.ValueExists("DestinationPath"))
   {
     m_destinationPath = jsonValue.GetString("DestinationPath");
-
     m_destinationPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerSetting"))
   {
     m_ownerSetting = jsonValue.GetObject("OwnerSetting");
-
     m_ownerSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

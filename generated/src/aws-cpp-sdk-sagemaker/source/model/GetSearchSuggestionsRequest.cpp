@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSearchSuggestionsRequest::GetSearchSuggestionsRequest() : 
-    m_resource(ResourceType::NOT_SET),
-    m_resourceHasBeenSet(false),
-    m_suggestionQueryHasBeenSet(false)
-{
-}
-
 Aws::String GetSearchSuggestionsRequest::SerializePayload() const
 {
   JsonValue payload;

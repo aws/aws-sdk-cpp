@@ -12,14 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAIPromptVersionRequest::DeleteAIPromptVersionRequest() : 
-    m_aiPromptIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAIPromptVersionRequest::SerializePayload() const
 {
   return {};

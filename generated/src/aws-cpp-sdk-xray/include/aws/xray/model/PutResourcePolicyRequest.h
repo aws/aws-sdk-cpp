@@ -21,7 +21,7 @@ namespace Model
   class PutResourcePolicyRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API PutResourcePolicyRequest();
+    AWS_XRAY_API PutResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The name of the resource policy. Must be unique within a specific Amazon Web
      * Services account.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline PutResourcePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    PutResourcePolicyRequest& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource policy document, which can be up to 5kb in size.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline PutResourcePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    PutResourcePolicyRequest& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <code>InvalidPolicyRevisionIdException</code> exception if a resource policy
      * with the same name already exists. </p>
      */
-    inline const Aws::String& GetPolicyRevisionId() const{ return m_policyRevisionId; }
+    inline const Aws::String& GetPolicyRevisionId() const { return m_policyRevisionId; }
     inline bool PolicyRevisionIdHasBeenSet() const { return m_policyRevisionIdHasBeenSet; }
-    inline void SetPolicyRevisionId(const Aws::String& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = value; }
-    inline void SetPolicyRevisionId(Aws::String&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::move(value); }
-    inline void SetPolicyRevisionId(const char* value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId.assign(value); }
-    inline PutResourcePolicyRequest& WithPolicyRevisionId(const Aws::String& value) { SetPolicyRevisionId(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyRevisionId(Aws::String&& value) { SetPolicyRevisionId(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyRevisionId(const char* value) { SetPolicyRevisionId(value); return *this;}
+    template<typename PolicyRevisionIdT = Aws::String>
+    void SetPolicyRevisionId(PolicyRevisionIdT&& value) { m_policyRevisionIdHasBeenSet = true; m_policyRevisionId = std::forward<PolicyRevisionIdT>(value); }
+    template<typename PolicyRevisionIdT = Aws::String>
+    PutResourcePolicyRequest& WithPolicyRevisionId(PolicyRevisionIdT&& value) { SetPolicyRevisionId(std::forward<PolicyRevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +87,7 @@ namespace Model
      * subsequent <code>PutResourcePolicy</code> request.</p> <p>The default value is
      * false.</p>
      */
-    inline bool GetBypassPolicyLockoutCheck() const{ return m_bypassPolicyLockoutCheck; }
+    inline bool GetBypassPolicyLockoutCheck() const { return m_bypassPolicyLockoutCheck; }
     inline bool BypassPolicyLockoutCheckHasBeenSet() const { return m_bypassPolicyLockoutCheckHasBeenSet; }
     inline void SetBypassPolicyLockoutCheck(bool value) { m_bypassPolicyLockoutCheckHasBeenSet = true; m_bypassPolicyLockoutCheck = value; }
     inline PutResourcePolicyRequest& WithBypassPolicyLockoutCheck(bool value) { SetBypassPolicyLockoutCheck(value); return *this;}
@@ -109,7 +103,7 @@ namespace Model
     Aws::String m_policyRevisionId;
     bool m_policyRevisionIdHasBeenSet = false;
 
-    bool m_bypassPolicyLockoutCheck;
+    bool m_bypassPolicyLockoutCheck{false};
     bool m_bypassPolicyLockoutCheckHasBeenSet = false;
   };
 

@@ -37,7 +37,7 @@ namespace Model
   class ActiveViolation
   {
   public:
-    AWS_IOT_API ActiveViolation();
+    AWS_IOT_API ActiveViolation() = default;
     AWS_IOT_API ActiveViolation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ActiveViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,54 +47,48 @@ namespace Model
     /**
      * <p>The ID of the active violation.</p>
      */
-    inline const Aws::String& GetViolationId() const{ return m_violationId; }
+    inline const Aws::String& GetViolationId() const { return m_violationId; }
     inline bool ViolationIdHasBeenSet() const { return m_violationIdHasBeenSet; }
-    inline void SetViolationId(const Aws::String& value) { m_violationIdHasBeenSet = true; m_violationId = value; }
-    inline void SetViolationId(Aws::String&& value) { m_violationIdHasBeenSet = true; m_violationId = std::move(value); }
-    inline void SetViolationId(const char* value) { m_violationIdHasBeenSet = true; m_violationId.assign(value); }
-    inline ActiveViolation& WithViolationId(const Aws::String& value) { SetViolationId(value); return *this;}
-    inline ActiveViolation& WithViolationId(Aws::String&& value) { SetViolationId(std::move(value)); return *this;}
-    inline ActiveViolation& WithViolationId(const char* value) { SetViolationId(value); return *this;}
+    template<typename ViolationIdT = Aws::String>
+    void SetViolationId(ViolationIdT&& value) { m_violationIdHasBeenSet = true; m_violationId = std::forward<ViolationIdT>(value); }
+    template<typename ViolationIdT = Aws::String>
+    ActiveViolation& WithViolationId(ViolationIdT&& value) { SetViolationId(std::forward<ViolationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing responsible for the active violation.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline ActiveViolation& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline ActiveViolation& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline ActiveViolation& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    ActiveViolation& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security profile with the behavior is in violation.</p>
      */
-    inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
+    inline const Aws::String& GetSecurityProfileName() const { return m_securityProfileName; }
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-    inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-    inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-    inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-    inline ActiveViolation& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-    inline ActiveViolation& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-    inline ActiveViolation& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    template<typename SecurityProfileNameT = Aws::String>
+    void SetSecurityProfileName(SecurityProfileNameT&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::forward<SecurityProfileNameT>(value); }
+    template<typename SecurityProfileNameT = Aws::String>
+    ActiveViolation& WithSecurityProfileName(SecurityProfileNameT&& value) { SetSecurityProfileName(std::forward<SecurityProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The behavior that is being violated.</p>
      */
-    inline const Behavior& GetBehavior() const{ return m_behavior; }
+    inline const Behavior& GetBehavior() const { return m_behavior; }
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
-    inline void SetBehavior(const Behavior& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
-    inline void SetBehavior(Behavior&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
-    inline ActiveViolation& WithBehavior(const Behavior& value) { SetBehavior(value); return *this;}
-    inline ActiveViolation& WithBehavior(Behavior&& value) { SetBehavior(std::move(value)); return *this;}
+    template<typename BehaviorT = Behavior>
+    void SetBehavior(BehaviorT&& value) { m_behaviorHasBeenSet = true; m_behavior = std::forward<BehaviorT>(value); }
+    template<typename BehaviorT = Behavior>
+    ActiveViolation& WithBehavior(BehaviorT&& value) { SetBehavior(std::forward<BehaviorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,74 +96,70 @@ namespace Model
      * <p>The value of the metric (the measurement) that caused the most recent
      * violation.</p>
      */
-    inline const MetricValue& GetLastViolationValue() const{ return m_lastViolationValue; }
+    inline const MetricValue& GetLastViolationValue() const { return m_lastViolationValue; }
     inline bool LastViolationValueHasBeenSet() const { return m_lastViolationValueHasBeenSet; }
-    inline void SetLastViolationValue(const MetricValue& value) { m_lastViolationValueHasBeenSet = true; m_lastViolationValue = value; }
-    inline void SetLastViolationValue(MetricValue&& value) { m_lastViolationValueHasBeenSet = true; m_lastViolationValue = std::move(value); }
-    inline ActiveViolation& WithLastViolationValue(const MetricValue& value) { SetLastViolationValue(value); return *this;}
-    inline ActiveViolation& WithLastViolationValue(MetricValue&& value) { SetLastViolationValue(std::move(value)); return *this;}
+    template<typename LastViolationValueT = MetricValue>
+    void SetLastViolationValue(LastViolationValueT&& value) { m_lastViolationValueHasBeenSet = true; m_lastViolationValue = std::forward<LastViolationValueT>(value); }
+    template<typename LastViolationValueT = MetricValue>
+    ActiveViolation& WithLastViolationValue(LastViolationValueT&& value) { SetLastViolationValue(std::forward<LastViolationValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The details of a violation event. </p>
      */
-    inline const ViolationEventAdditionalInfo& GetViolationEventAdditionalInfo() const{ return m_violationEventAdditionalInfo; }
+    inline const ViolationEventAdditionalInfo& GetViolationEventAdditionalInfo() const { return m_violationEventAdditionalInfo; }
     inline bool ViolationEventAdditionalInfoHasBeenSet() const { return m_violationEventAdditionalInfoHasBeenSet; }
-    inline void SetViolationEventAdditionalInfo(const ViolationEventAdditionalInfo& value) { m_violationEventAdditionalInfoHasBeenSet = true; m_violationEventAdditionalInfo = value; }
-    inline void SetViolationEventAdditionalInfo(ViolationEventAdditionalInfo&& value) { m_violationEventAdditionalInfoHasBeenSet = true; m_violationEventAdditionalInfo = std::move(value); }
-    inline ActiveViolation& WithViolationEventAdditionalInfo(const ViolationEventAdditionalInfo& value) { SetViolationEventAdditionalInfo(value); return *this;}
-    inline ActiveViolation& WithViolationEventAdditionalInfo(ViolationEventAdditionalInfo&& value) { SetViolationEventAdditionalInfo(std::move(value)); return *this;}
+    template<typename ViolationEventAdditionalInfoT = ViolationEventAdditionalInfo>
+    void SetViolationEventAdditionalInfo(ViolationEventAdditionalInfoT&& value) { m_violationEventAdditionalInfoHasBeenSet = true; m_violationEventAdditionalInfo = std::forward<ViolationEventAdditionalInfoT>(value); }
+    template<typename ViolationEventAdditionalInfoT = ViolationEventAdditionalInfo>
+    ActiveViolation& WithViolationEventAdditionalInfo(ViolationEventAdditionalInfoT&& value) { SetViolationEventAdditionalInfo(std::forward<ViolationEventAdditionalInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The verification state of the violation (detect alarm).</p>
      */
-    inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
+    inline VerificationState GetVerificationState() const { return m_verificationState; }
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
-    inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
-    inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
-    inline ActiveViolation& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
-    inline ActiveViolation& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
+    inline void SetVerificationState(VerificationState value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
+    inline ActiveViolation& WithVerificationState(VerificationState value) { SetVerificationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the verification state of the violation.</p>
      */
-    inline const Aws::String& GetVerificationStateDescription() const{ return m_verificationStateDescription; }
+    inline const Aws::String& GetVerificationStateDescription() const { return m_verificationStateDescription; }
     inline bool VerificationStateDescriptionHasBeenSet() const { return m_verificationStateDescriptionHasBeenSet; }
-    inline void SetVerificationStateDescription(const Aws::String& value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription = value; }
-    inline void SetVerificationStateDescription(Aws::String&& value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription = std::move(value); }
-    inline void SetVerificationStateDescription(const char* value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription.assign(value); }
-    inline ActiveViolation& WithVerificationStateDescription(const Aws::String& value) { SetVerificationStateDescription(value); return *this;}
-    inline ActiveViolation& WithVerificationStateDescription(Aws::String&& value) { SetVerificationStateDescription(std::move(value)); return *this;}
-    inline ActiveViolation& WithVerificationStateDescription(const char* value) { SetVerificationStateDescription(value); return *this;}
+    template<typename VerificationStateDescriptionT = Aws::String>
+    void SetVerificationStateDescription(VerificationStateDescriptionT&& value) { m_verificationStateDescriptionHasBeenSet = true; m_verificationStateDescription = std::forward<VerificationStateDescriptionT>(value); }
+    template<typename VerificationStateDescriptionT = Aws::String>
+    ActiveViolation& WithVerificationStateDescription(VerificationStateDescriptionT&& value) { SetVerificationStateDescription(std::forward<VerificationStateDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the most recent violation occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastViolationTime() const{ return m_lastViolationTime; }
+    inline const Aws::Utils::DateTime& GetLastViolationTime() const { return m_lastViolationTime; }
     inline bool LastViolationTimeHasBeenSet() const { return m_lastViolationTimeHasBeenSet; }
-    inline void SetLastViolationTime(const Aws::Utils::DateTime& value) { m_lastViolationTimeHasBeenSet = true; m_lastViolationTime = value; }
-    inline void SetLastViolationTime(Aws::Utils::DateTime&& value) { m_lastViolationTimeHasBeenSet = true; m_lastViolationTime = std::move(value); }
-    inline ActiveViolation& WithLastViolationTime(const Aws::Utils::DateTime& value) { SetLastViolationTime(value); return *this;}
-    inline ActiveViolation& WithLastViolationTime(Aws::Utils::DateTime&& value) { SetLastViolationTime(std::move(value)); return *this;}
+    template<typename LastViolationTimeT = Aws::Utils::DateTime>
+    void SetLastViolationTime(LastViolationTimeT&& value) { m_lastViolationTimeHasBeenSet = true; m_lastViolationTime = std::forward<LastViolationTimeT>(value); }
+    template<typename LastViolationTimeT = Aws::Utils::DateTime>
+    ActiveViolation& WithLastViolationTime(LastViolationTimeT&& value) { SetLastViolationTime(std::forward<LastViolationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the violation started.</p>
      */
-    inline const Aws::Utils::DateTime& GetViolationStartTime() const{ return m_violationStartTime; }
+    inline const Aws::Utils::DateTime& GetViolationStartTime() const { return m_violationStartTime; }
     inline bool ViolationStartTimeHasBeenSet() const { return m_violationStartTimeHasBeenSet; }
-    inline void SetViolationStartTime(const Aws::Utils::DateTime& value) { m_violationStartTimeHasBeenSet = true; m_violationStartTime = value; }
-    inline void SetViolationStartTime(Aws::Utils::DateTime&& value) { m_violationStartTimeHasBeenSet = true; m_violationStartTime = std::move(value); }
-    inline ActiveViolation& WithViolationStartTime(const Aws::Utils::DateTime& value) { SetViolationStartTime(value); return *this;}
-    inline ActiveViolation& WithViolationStartTime(Aws::Utils::DateTime&& value) { SetViolationStartTime(std::move(value)); return *this;}
+    template<typename ViolationStartTimeT = Aws::Utils::DateTime>
+    void SetViolationStartTime(ViolationStartTimeT&& value) { m_violationStartTimeHasBeenSet = true; m_violationStartTime = std::forward<ViolationStartTimeT>(value); }
+    template<typename ViolationStartTimeT = Aws::Utils::DateTime>
+    ActiveViolation& WithViolationStartTime(ViolationStartTimeT&& value) { SetViolationStartTime(std::forward<ViolationStartTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -191,16 +181,16 @@ namespace Model
     ViolationEventAdditionalInfo m_violationEventAdditionalInfo;
     bool m_violationEventAdditionalInfoHasBeenSet = false;
 
-    VerificationState m_verificationState;
+    VerificationState m_verificationState{VerificationState::NOT_SET};
     bool m_verificationStateHasBeenSet = false;
 
     Aws::String m_verificationStateDescription;
     bool m_verificationStateDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastViolationTime;
+    Aws::Utils::DateTime m_lastViolationTime{};
     bool m_lastViolationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_violationStartTime;
+    Aws::Utils::DateTime m_violationStartTime{};
     bool m_violationStartTimeHasBeenSet = false;
   };
 

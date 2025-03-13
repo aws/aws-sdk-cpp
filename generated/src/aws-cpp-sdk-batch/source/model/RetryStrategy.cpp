@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-RetryStrategy::RetryStrategy() : 
-    m_attempts(0),
-    m_attemptsHasBeenSet(false),
-    m_evaluateOnExitHasBeenSet(false)
-{
-}
-
 RetryStrategy::RetryStrategy(JsonView jsonValue)
-  : RetryStrategy()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attempts"))
   {
     m_attempts = jsonValue.GetInteger("attempts");
-
     m_attemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluateOnExit"))
   {
     Aws::Utils::Array<JsonView> evaluateOnExitJsonList = jsonValue.GetArray("evaluateOnExit");
@@ -49,7 +39,6 @@ RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
     }
     m_evaluateOnExitHasBeenSet = true;
   }
-
   return *this;
 }
 

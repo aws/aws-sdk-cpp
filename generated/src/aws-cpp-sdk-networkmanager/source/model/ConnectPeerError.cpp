@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectPeerError::ConnectPeerError() : 
-    m_code(ConnectPeerErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ConnectPeerError::ConnectPeerError(JsonView jsonValue)
-  : ConnectPeerError()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConnectPeerError& ConnectPeerError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ConnectPeerErrorCodeMapper::GetConnectPeerErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

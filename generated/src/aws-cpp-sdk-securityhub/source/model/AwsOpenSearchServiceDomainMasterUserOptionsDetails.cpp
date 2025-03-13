@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsOpenSearchServiceDomainMasterUserOptionsDetails::AwsOpenSearchServiceDomainMasterUserOptionsDetails() : 
-    m_masterUserArnHasBeenSet(false),
-    m_masterUserNameHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false)
-{
-}
-
 AwsOpenSearchServiceDomainMasterUserOptionsDetails::AwsOpenSearchServiceDomainMasterUserOptionsDetails(JsonView jsonValue)
-  : AwsOpenSearchServiceDomainMasterUserOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsOpenSearchServiceDomainMasterUserOptionsDetails& AwsOpenSearchServiceDomainMa
   if(jsonValue.ValueExists("MasterUserArn"))
   {
     m_masterUserArn = jsonValue.GetString("MasterUserArn");
-
     m_masterUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserName"))
   {
     m_masterUserName = jsonValue.GetString("MasterUserName");
-
     m_masterUserNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUserPassword"))
   {
     m_masterUserPassword = jsonValue.GetString("MasterUserPassword");
-
     m_masterUserPasswordHasBeenSet = true;
   }
-
   return *this;
 }
 

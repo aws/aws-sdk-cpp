@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClusterOperationResult::DescribeClusterOperationResult()
-{
-}
-
 DescribeClusterOperationResult::DescribeClusterOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeClusterOperationResult& DescribeClusterOperationResult::operator =(const
   if(jsonValue.ValueExists("clusterOperationInfo"))
   {
     m_clusterOperationInfo = jsonValue.GetObject("clusterOperationInfo");
-
+    m_clusterOperationInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

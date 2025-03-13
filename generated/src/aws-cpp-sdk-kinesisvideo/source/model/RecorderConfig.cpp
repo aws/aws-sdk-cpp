@@ -18,14 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-RecorderConfig::RecorderConfig() : 
-    m_mediaSourceConfigHasBeenSet(false),
-    m_scheduleConfigHasBeenSet(false)
-{
-}
-
 RecorderConfig::RecorderConfig(JsonView jsonValue)
-  : RecorderConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecorderConfig& RecorderConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaSourceConfig"))
   {
     m_mediaSourceConfig = jsonValue.GetObject("MediaSourceConfig");
-
     m_mediaSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleConfig"))
   {
     m_scheduleConfig = jsonValue.GetObject("ScheduleConfig");
-
     m_scheduleConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

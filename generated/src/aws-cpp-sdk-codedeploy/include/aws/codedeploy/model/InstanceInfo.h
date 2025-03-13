@@ -34,7 +34,7 @@ namespace Model
   class InstanceInfo
   {
   public:
-    AWS_CODEDEPLOY_API InstanceInfo();
+    AWS_CODEDEPLOY_API InstanceInfo() = default;
     AWS_CODEDEPLOY_API InstanceInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API InstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,68 +44,60 @@ namespace Model
     /**
      * <p>The name of the on-premises instance.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline InstanceInfo& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline InstanceInfo& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline InstanceInfo& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    InstanceInfo& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM session associated with the on-premises instance.</p>
      */
-    inline const Aws::String& GetIamSessionArn() const{ return m_iamSessionArn; }
+    inline const Aws::String& GetIamSessionArn() const { return m_iamSessionArn; }
     inline bool IamSessionArnHasBeenSet() const { return m_iamSessionArnHasBeenSet; }
-    inline void SetIamSessionArn(const Aws::String& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
-    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = std::move(value); }
-    inline void SetIamSessionArn(const char* value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn.assign(value); }
-    inline InstanceInfo& WithIamSessionArn(const Aws::String& value) { SetIamSessionArn(value); return *this;}
-    inline InstanceInfo& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(std::move(value)); return *this;}
-    inline InstanceInfo& WithIamSessionArn(const char* value) { SetIamSessionArn(value); return *this;}
+    template<typename IamSessionArnT = Aws::String>
+    void SetIamSessionArn(IamSessionArnT&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = std::forward<IamSessionArnT>(value); }
+    template<typename IamSessionArnT = Aws::String>
+    InstanceInfo& WithIamSessionArn(IamSessionArnT&& value) { SetIamSessionArn(std::forward<IamSessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user ARN associated with the on-premises instance.</p>
      */
-    inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+    inline const Aws::String& GetIamUserArn() const { return m_iamUserArn; }
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
-    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
-    inline InstanceInfo& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-    inline InstanceInfo& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-    inline InstanceInfo& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    template<typename IamUserArnT = Aws::String>
+    void SetIamUserArn(IamUserArnT&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::forward<IamUserArnT>(value); }
+    template<typename IamUserArnT = Aws::String>
+    InstanceInfo& WithIamUserArn(IamUserArnT&& value) { SetIamUserArn(std::forward<IamUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the on-premises instance.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline InstanceInfo& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline InstanceInfo& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline InstanceInfo& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    InstanceInfo& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the on-premises instance was registered.</p>
      */
-    inline const Aws::Utils::DateTime& GetRegisterTime() const{ return m_registerTime; }
+    inline const Aws::Utils::DateTime& GetRegisterTime() const { return m_registerTime; }
     inline bool RegisterTimeHasBeenSet() const { return m_registerTimeHasBeenSet; }
-    inline void SetRegisterTime(const Aws::Utils::DateTime& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
-    inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = std::move(value); }
-    inline InstanceInfo& WithRegisterTime(const Aws::Utils::DateTime& value) { SetRegisterTime(value); return *this;}
-    inline InstanceInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(std::move(value)); return *this;}
+    template<typename RegisterTimeT = Aws::Utils::DateTime>
+    void SetRegisterTime(RegisterTimeT&& value) { m_registerTimeHasBeenSet = true; m_registerTime = std::forward<RegisterTimeT>(value); }
+    template<typename RegisterTimeT = Aws::Utils::DateTime>
+    InstanceInfo& WithRegisterTime(RegisterTimeT&& value) { SetRegisterTime(std::forward<RegisterTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,26 +105,26 @@ namespace Model
      * <p>If the on-premises instance was deregistered, the time at which the
      * on-premises instance was deregistered.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeregisterTime() const{ return m_deregisterTime; }
+    inline const Aws::Utils::DateTime& GetDeregisterTime() const { return m_deregisterTime; }
     inline bool DeregisterTimeHasBeenSet() const { return m_deregisterTimeHasBeenSet; }
-    inline void SetDeregisterTime(const Aws::Utils::DateTime& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = value; }
-    inline void SetDeregisterTime(Aws::Utils::DateTime&& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = std::move(value); }
-    inline InstanceInfo& WithDeregisterTime(const Aws::Utils::DateTime& value) { SetDeregisterTime(value); return *this;}
-    inline InstanceInfo& WithDeregisterTime(Aws::Utils::DateTime&& value) { SetDeregisterTime(std::move(value)); return *this;}
+    template<typename DeregisterTimeT = Aws::Utils::DateTime>
+    void SetDeregisterTime(DeregisterTimeT&& value) { m_deregisterTimeHasBeenSet = true; m_deregisterTime = std::forward<DeregisterTimeT>(value); }
+    template<typename DeregisterTimeT = Aws::Utils::DateTime>
+    InstanceInfo& WithDeregisterTime(DeregisterTimeT&& value) { SetDeregisterTime(std::forward<DeregisterTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags currently associated with the on-premises instance.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline InstanceInfo& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline InstanceInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline InstanceInfo& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline InstanceInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    InstanceInfo& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    InstanceInfo& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -148,10 +140,10 @@ namespace Model
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_registerTime;
+    Aws::Utils::DateTime m_registerTime{};
     bool m_registerTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deregisterTime;
+    Aws::Utils::DateTime m_deregisterTime{};
     bool m_deregisterTimeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

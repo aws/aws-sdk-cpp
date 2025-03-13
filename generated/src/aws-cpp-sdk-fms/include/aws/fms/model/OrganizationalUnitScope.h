@@ -37,7 +37,7 @@ namespace Model
   class OrganizationalUnitScope
   {
   public:
-    AWS_FMS_API OrganizationalUnitScope();
+    AWS_FMS_API OrganizationalUnitScope() = default;
     AWS_FMS_API OrganizationalUnitScope(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API OrganizationalUnitScope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,15 +55,14 @@ namespace Model
      * to <code>false</code>, then the Firewall Manager administrator can only apply
      * policies to the OUs in this list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOrganizationalUnits() const{ return m_organizationalUnits; }
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnits() const { return m_organizationalUnits; }
     inline bool OrganizationalUnitsHasBeenSet() const { return m_organizationalUnitsHasBeenSet; }
-    inline void SetOrganizationalUnits(const Aws::Vector<Aws::String>& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = value; }
-    inline void SetOrganizationalUnits(Aws::Vector<Aws::String>&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = std::move(value); }
-    inline OrganizationalUnitScope& WithOrganizationalUnits(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnits(value); return *this;}
-    inline OrganizationalUnitScope& WithOrganizationalUnits(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnits(std::move(value)); return *this;}
-    inline OrganizationalUnitScope& AddOrganizationalUnits(const Aws::String& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(value); return *this; }
-    inline OrganizationalUnitScope& AddOrganizationalUnits(Aws::String&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(std::move(value)); return *this; }
-    inline OrganizationalUnitScope& AddOrganizationalUnits(const char* value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.push_back(value); return *this; }
+    template<typename OrganizationalUnitsT = Aws::Vector<Aws::String>>
+    void SetOrganizationalUnits(OrganizationalUnitsT&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits = std::forward<OrganizationalUnitsT>(value); }
+    template<typename OrganizationalUnitsT = Aws::Vector<Aws::String>>
+    OrganizationalUnitScope& WithOrganizationalUnits(OrganizationalUnitsT&& value) { SetOrganizationalUnits(std::forward<OrganizationalUnitsT>(value)); return *this;}
+    template<typename OrganizationalUnitsT = Aws::String>
+    OrganizationalUnitScope& AddOrganizationalUnits(OrganizationalUnitsT&& value) { m_organizationalUnitsHasBeenSet = true; m_organizationalUnits.emplace_back(std::forward<OrganizationalUnitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,7 +74,7 @@ namespace Model
      * <code>OrganizationalUnitScope$OrganizationalUnits</code>. You cannot specify
      * both.</p>
      */
-    inline bool GetAllOrganizationalUnitsEnabled() const{ return m_allOrganizationalUnitsEnabled; }
+    inline bool GetAllOrganizationalUnitsEnabled() const { return m_allOrganizationalUnitsEnabled; }
     inline bool AllOrganizationalUnitsEnabledHasBeenSet() const { return m_allOrganizationalUnitsEnabledHasBeenSet; }
     inline void SetAllOrganizationalUnitsEnabled(bool value) { m_allOrganizationalUnitsEnabledHasBeenSet = true; m_allOrganizationalUnitsEnabled = value; }
     inline OrganizationalUnitScope& WithAllOrganizationalUnitsEnabled(bool value) { SetAllOrganizationalUnitsEnabled(value); return *this;}
@@ -94,7 +93,7 @@ namespace Model
      * <code>OrganizationalUnitScope$AllOrganizationalUnitsEnabled</code>. You cannot
      * specify both.</p>
      */
-    inline bool GetExcludeSpecifiedOrganizationalUnits() const{ return m_excludeSpecifiedOrganizationalUnits; }
+    inline bool GetExcludeSpecifiedOrganizationalUnits() const { return m_excludeSpecifiedOrganizationalUnits; }
     inline bool ExcludeSpecifiedOrganizationalUnitsHasBeenSet() const { return m_excludeSpecifiedOrganizationalUnitsHasBeenSet; }
     inline void SetExcludeSpecifiedOrganizationalUnits(bool value) { m_excludeSpecifiedOrganizationalUnitsHasBeenSet = true; m_excludeSpecifiedOrganizationalUnits = value; }
     inline OrganizationalUnitScope& WithExcludeSpecifiedOrganizationalUnits(bool value) { SetExcludeSpecifiedOrganizationalUnits(value); return *this;}
@@ -104,10 +103,10 @@ namespace Model
     Aws::Vector<Aws::String> m_organizationalUnits;
     bool m_organizationalUnitsHasBeenSet = false;
 
-    bool m_allOrganizationalUnitsEnabled;
+    bool m_allOrganizationalUnitsEnabled{false};
     bool m_allOrganizationalUnitsEnabledHasBeenSet = false;
 
-    bool m_excludeSpecifiedOrganizationalUnits;
+    bool m_excludeSpecifiedOrganizationalUnits{false};
     bool m_excludeSpecifiedOrganizationalUnitsHasBeenSet = false;
   };
 

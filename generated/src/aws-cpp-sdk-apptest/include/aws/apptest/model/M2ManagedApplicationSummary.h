@@ -33,7 +33,7 @@ namespace Model
   class M2ManagedApplicationSummary
   {
   public:
-    AWS_APPTEST_API M2ManagedApplicationSummary();
+    AWS_APPTEST_API M2ManagedApplicationSummary() = default;
     AWS_APPTEST_API M2ManagedApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2ManagedApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The application ID of the AWS Mainframe Modernization managed application
      * summary.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline M2ManagedApplicationSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline M2ManagedApplicationSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline M2ManagedApplicationSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    M2ManagedApplicationSummary& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>The runtime of the AWS Mainframe Modernization managed application
      * summary.</p>
      */
-    inline const M2ManagedRuntime& GetRuntime() const{ return m_runtime; }
+    inline M2ManagedRuntime GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const M2ManagedRuntime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(M2ManagedRuntime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline M2ManagedApplicationSummary& WithRuntime(const M2ManagedRuntime& value) { SetRuntime(value); return *this;}
-    inline M2ManagedApplicationSummary& WithRuntime(M2ManagedRuntime&& value) { SetRuntime(std::move(value)); return *this;}
+    inline void SetRuntime(M2ManagedRuntime value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+    inline M2ManagedApplicationSummary& WithRuntime(M2ManagedRuntime value) { SetRuntime(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>The listener port of the AWS Mainframe Modernization managed application
      * summary.</p>
      */
-    inline int GetListenerPort() const{ return m_listenerPort; }
+    inline int GetListenerPort() const { return m_listenerPort; }
     inline bool ListenerPortHasBeenSet() const { return m_listenerPortHasBeenSet; }
     inline void SetListenerPort(int value) { m_listenerPortHasBeenSet = true; m_listenerPort = value; }
     inline M2ManagedApplicationSummary& WithListenerPort(int value) { SetListenerPort(value); return *this;}
@@ -82,10 +78,10 @@ namespace Model
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    M2ManagedRuntime m_runtime;
+    M2ManagedRuntime m_runtime{M2ManagedRuntime::NOT_SET};
     bool m_runtimeHasBeenSet = false;
 
-    int m_listenerPort;
+    int m_listenerPort{0};
     bool m_listenerPortHasBeenSet = false;
   };
 

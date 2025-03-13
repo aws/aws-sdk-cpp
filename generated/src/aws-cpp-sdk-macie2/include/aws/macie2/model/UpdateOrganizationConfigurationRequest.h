@@ -19,7 +19,7 @@ namespace Model
   class UpdateOrganizationConfigurationRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API UpdateOrganizationConfigurationRequest();
+    AWS_MACIE2_API UpdateOrganizationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,14 +35,14 @@ namespace Model
      * <p>Specifies whether to enable Amazon Macie automatically for accounts that are
      * added to the organization in Organizations.</p>
      */
-    inline bool GetAutoEnable() const{ return m_autoEnable; }
+    inline bool GetAutoEnable() const { return m_autoEnable; }
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
     inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
     inline UpdateOrganizationConfigurationRequest& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
     ///@}
   private:
 
-    bool m_autoEnable;
+    bool m_autoEnable{false};
     bool m_autoEnableHasBeenSet = false;
   };
 

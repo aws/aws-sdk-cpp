@@ -28,7 +28,7 @@ namespace Model
   class PrepareFlowResult
   {
   public:
-    AWS_BEDROCKAGENT_API PrepareFlowResult();
+    AWS_BEDROCKAGENT_API PrepareFlowResult() = default;
     AWS_BEDROCKAGENT_API PrepareFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API PrepareFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The unique identifier of the flow.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline PrepareFlowResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PrepareFlowResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PrepareFlowResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PrepareFlowResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,30 +50,29 @@ namespace Model
      * <code>NotPrepared</code>. If preparation succeeds, the status becomes
      * <code>Prepared</code>. If it fails, the status becomes <code>FAILED</code>.</p>
      */
-    inline const FlowStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const FlowStatus& value) { m_status = value; }
-    inline void SetStatus(FlowStatus&& value) { m_status = std::move(value); }
-    inline PrepareFlowResult& WithStatus(const FlowStatus& value) { SetStatus(value); return *this;}
-    inline PrepareFlowResult& WithStatus(FlowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline FlowStatus GetStatus() const { return m_status; }
+    inline void SetStatus(FlowStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PrepareFlowResult& WithStatus(FlowStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PrepareFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PrepareFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PrepareFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PrepareFlowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    FlowStatus m_status;
+    FlowStatus m_status{FlowStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

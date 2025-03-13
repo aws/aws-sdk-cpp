@@ -28,7 +28,7 @@ namespace Model
   class GetQueryResultsResult
   {
   public:
-    AWS_ATHENA_API GetQueryResultsResult();
+    AWS_ATHENA_API GetQueryResultsResult() = default;
     AWS_ATHENA_API GetQueryResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetQueryResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
      * <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>,
      * <code>INSERT INTO</code>, or <code>UPDATE</code> statement. </p>
      */
-    inline long long GetUpdateCount() const{ return m_updateCount; }
-    inline void SetUpdateCount(long long value) { m_updateCount = value; }
+    inline long long GetUpdateCount() const { return m_updateCount; }
+    inline void SetUpdateCount(long long value) { m_updateCountHasBeenSet = true; m_updateCount = value; }
     inline GetQueryResultsResult& WithUpdateCount(long long value) { SetUpdateCount(value); return *this;}
     ///@}
 
@@ -47,11 +47,11 @@ namespace Model
     /**
      * <p>The results of the query execution.</p>
      */
-    inline const ResultSet& GetResultSet() const{ return m_resultSet; }
-    inline void SetResultSet(const ResultSet& value) { m_resultSet = value; }
-    inline void SetResultSet(ResultSet&& value) { m_resultSet = std::move(value); }
-    inline GetQueryResultsResult& WithResultSet(const ResultSet& value) { SetResultSet(value); return *this;}
-    inline GetQueryResultsResult& WithResultSet(ResultSet&& value) { SetResultSet(std::move(value)); return *this;}
+    inline const ResultSet& GetResultSet() const { return m_resultSet; }
+    template<typename ResultSetT = ResultSet>
+    void SetResultSet(ResultSetT&& value) { m_resultSetHasBeenSet = true; m_resultSet = std::forward<ResultSetT>(value); }
+    template<typename ResultSetT = ResultSet>
+    GetQueryResultsResult& WithResultSet(ResultSetT&& value) { SetResultSet(std::forward<ResultSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,34 +61,34 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetQueryResultsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetQueryResultsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetQueryResultsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetQueryResultsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQueryResultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQueryResultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQueryResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQueryResultsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_updateCount;
+    long long m_updateCount{0};
+    bool m_updateCountHasBeenSet = false;
 
     ResultSet m_resultSet;
+    bool m_resultSetHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

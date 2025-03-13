@@ -28,7 +28,7 @@ namespace Model
   class StartIngestionJobResult
   {
   public:
-    AWS_BEDROCKAGENT_API StartIngestionJobResult();
+    AWS_BEDROCKAGENT_API StartIngestionJobResult() = default;
     AWS_BEDROCKAGENT_API StartIngestionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API StartIngestionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains information about the data ingestion job.</p>
      */
-    inline const IngestionJob& GetIngestionJob() const{ return m_ingestionJob; }
-    inline void SetIngestionJob(const IngestionJob& value) { m_ingestionJob = value; }
-    inline void SetIngestionJob(IngestionJob&& value) { m_ingestionJob = std::move(value); }
-    inline StartIngestionJobResult& WithIngestionJob(const IngestionJob& value) { SetIngestionJob(value); return *this;}
-    inline StartIngestionJobResult& WithIngestionJob(IngestionJob&& value) { SetIngestionJob(std::move(value)); return *this;}
+    inline const IngestionJob& GetIngestionJob() const { return m_ingestionJob; }
+    template<typename IngestionJobT = IngestionJob>
+    void SetIngestionJob(IngestionJobT&& value) { m_ingestionJobHasBeenSet = true; m_ingestionJob = std::forward<IngestionJobT>(value); }
+    template<typename IngestionJobT = IngestionJob>
+    StartIngestionJobResult& WithIngestionJob(IngestionJobT&& value) { SetIngestionJob(std::forward<IngestionJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartIngestionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartIngestionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartIngestionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartIngestionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IngestionJob m_ingestionJob;
+    bool m_ingestionJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class AIPromptTemplateConfiguration
   {
   public:
-    AWS_QCONNECT_API AIPromptTemplateConfiguration();
+    AWS_QCONNECT_API AIPromptTemplateConfiguration() = default;
     AWS_QCONNECT_API AIPromptTemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIPromptTemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The configuration for a prompt template that supports full textual prompt
      * configuration using a YAML prompt.</p>
      */
-    inline const TextFullAIPromptEditTemplateConfiguration& GetTextFullAIPromptEditTemplateConfiguration() const{ return m_textFullAIPromptEditTemplateConfiguration; }
+    inline const TextFullAIPromptEditTemplateConfiguration& GetTextFullAIPromptEditTemplateConfiguration() const { return m_textFullAIPromptEditTemplateConfiguration; }
     inline bool TextFullAIPromptEditTemplateConfigurationHasBeenSet() const { return m_textFullAIPromptEditTemplateConfigurationHasBeenSet; }
-    inline void SetTextFullAIPromptEditTemplateConfiguration(const TextFullAIPromptEditTemplateConfiguration& value) { m_textFullAIPromptEditTemplateConfigurationHasBeenSet = true; m_textFullAIPromptEditTemplateConfiguration = value; }
-    inline void SetTextFullAIPromptEditTemplateConfiguration(TextFullAIPromptEditTemplateConfiguration&& value) { m_textFullAIPromptEditTemplateConfigurationHasBeenSet = true; m_textFullAIPromptEditTemplateConfiguration = std::move(value); }
-    inline AIPromptTemplateConfiguration& WithTextFullAIPromptEditTemplateConfiguration(const TextFullAIPromptEditTemplateConfiguration& value) { SetTextFullAIPromptEditTemplateConfiguration(value); return *this;}
-    inline AIPromptTemplateConfiguration& WithTextFullAIPromptEditTemplateConfiguration(TextFullAIPromptEditTemplateConfiguration&& value) { SetTextFullAIPromptEditTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TextFullAIPromptEditTemplateConfigurationT = TextFullAIPromptEditTemplateConfiguration>
+    void SetTextFullAIPromptEditTemplateConfiguration(TextFullAIPromptEditTemplateConfigurationT&& value) { m_textFullAIPromptEditTemplateConfigurationHasBeenSet = true; m_textFullAIPromptEditTemplateConfiguration = std::forward<TextFullAIPromptEditTemplateConfigurationT>(value); }
+    template<typename TextFullAIPromptEditTemplateConfigurationT = TextFullAIPromptEditTemplateConfiguration>
+    AIPromptTemplateConfiguration& WithTextFullAIPromptEditTemplateConfiguration(TextFullAIPromptEditTemplateConfigurationT&& value) { SetTextFullAIPromptEditTemplateConfiguration(std::forward<TextFullAIPromptEditTemplateConfigurationT>(value)); return *this;}
     ///@}
   private:
 

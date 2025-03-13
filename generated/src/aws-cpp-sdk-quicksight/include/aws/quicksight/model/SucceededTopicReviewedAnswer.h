@@ -32,7 +32,7 @@ namespace Model
   class SucceededTopicReviewedAnswer
   {
   public:
-    AWS_QUICKSIGHT_API SucceededTopicReviewedAnswer();
+    AWS_QUICKSIGHT_API SucceededTopicReviewedAnswer() = default;
     AWS_QUICKSIGHT_API SucceededTopicReviewedAnswer(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SucceededTopicReviewedAnswer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The answer ID for the <code>SucceededTopicReviewedAnswer</code>.</p>
      */
-    inline const Aws::String& GetAnswerId() const{ return m_answerId; }
+    inline const Aws::String& GetAnswerId() const { return m_answerId; }
     inline bool AnswerIdHasBeenSet() const { return m_answerIdHasBeenSet; }
-    inline void SetAnswerId(const Aws::String& value) { m_answerIdHasBeenSet = true; m_answerId = value; }
-    inline void SetAnswerId(Aws::String&& value) { m_answerIdHasBeenSet = true; m_answerId = std::move(value); }
-    inline void SetAnswerId(const char* value) { m_answerIdHasBeenSet = true; m_answerId.assign(value); }
-    inline SucceededTopicReviewedAnswer& WithAnswerId(const Aws::String& value) { SetAnswerId(value); return *this;}
-    inline SucceededTopicReviewedAnswer& WithAnswerId(Aws::String&& value) { SetAnswerId(std::move(value)); return *this;}
-    inline SucceededTopicReviewedAnswer& WithAnswerId(const char* value) { SetAnswerId(value); return *this;}
+    template<typename AnswerIdT = Aws::String>
+    void SetAnswerId(AnswerIdT&& value) { m_answerIdHasBeenSet = true; m_answerId = std::forward<AnswerIdT>(value); }
+    template<typename AnswerIdT = Aws::String>
+    SucceededTopicReviewedAnswer& WithAnswerId(AnswerIdT&& value) { SetAnswerId(std::forward<AnswerIdT>(value)); return *this;}
     ///@}
   private:
 

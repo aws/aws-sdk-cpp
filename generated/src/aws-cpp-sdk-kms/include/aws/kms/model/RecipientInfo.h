@@ -39,7 +39,7 @@ namespace Model
   class RecipientInfo
   {
   public:
-    AWS_KMS_API RecipientInfo();
+    AWS_KMS_API RecipientInfo() = default;
     AWS_KMS_API RecipientInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API RecipientInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * Amazon Web Services Nitro Enclave to encrypt plaintext values for the response.
      * The only valid value is <code>RSAES_OAEP_SHA_256</code>.</p>
      */
-    inline const KeyEncryptionMechanism& GetKeyEncryptionAlgorithm() const{ return m_keyEncryptionAlgorithm; }
+    inline KeyEncryptionMechanism GetKeyEncryptionAlgorithm() const { return m_keyEncryptionAlgorithm; }
     inline bool KeyEncryptionAlgorithmHasBeenSet() const { return m_keyEncryptionAlgorithmHasBeenSet; }
-    inline void SetKeyEncryptionAlgorithm(const KeyEncryptionMechanism& value) { m_keyEncryptionAlgorithmHasBeenSet = true; m_keyEncryptionAlgorithm = value; }
-    inline void SetKeyEncryptionAlgorithm(KeyEncryptionMechanism&& value) { m_keyEncryptionAlgorithmHasBeenSet = true; m_keyEncryptionAlgorithm = std::move(value); }
-    inline RecipientInfo& WithKeyEncryptionAlgorithm(const KeyEncryptionMechanism& value) { SetKeyEncryptionAlgorithm(value); return *this;}
-    inline RecipientInfo& WithKeyEncryptionAlgorithm(KeyEncryptionMechanism&& value) { SetKeyEncryptionAlgorithm(std::move(value)); return *this;}
+    inline void SetKeyEncryptionAlgorithm(KeyEncryptionMechanism value) { m_keyEncryptionAlgorithmHasBeenSet = true; m_keyEncryptionAlgorithm = value; }
+    inline RecipientInfo& WithKeyEncryptionAlgorithm(KeyEncryptionMechanism value) { SetKeyEncryptionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,19 @@ namespace Model
      * <p>The attestation document for an Amazon Web Services Nitro Enclave. This
      * document includes the enclave's public key.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetAttestationDocument() const{ return m_attestationDocument; }
+    inline const Aws::Utils::ByteBuffer& GetAttestationDocument() const { return m_attestationDocument; }
     inline bool AttestationDocumentHasBeenSet() const { return m_attestationDocumentHasBeenSet; }
-    inline void SetAttestationDocument(const Aws::Utils::ByteBuffer& value) { m_attestationDocumentHasBeenSet = true; m_attestationDocument = value; }
-    inline void SetAttestationDocument(Aws::Utils::ByteBuffer&& value) { m_attestationDocumentHasBeenSet = true; m_attestationDocument = std::move(value); }
-    inline RecipientInfo& WithAttestationDocument(const Aws::Utils::ByteBuffer& value) { SetAttestationDocument(value); return *this;}
-    inline RecipientInfo& WithAttestationDocument(Aws::Utils::ByteBuffer&& value) { SetAttestationDocument(std::move(value)); return *this;}
+    template<typename AttestationDocumentT = Aws::Utils::ByteBuffer>
+    void SetAttestationDocument(AttestationDocumentT&& value) { m_attestationDocumentHasBeenSet = true; m_attestationDocument = std::forward<AttestationDocumentT>(value); }
+    template<typename AttestationDocumentT = Aws::Utils::ByteBuffer>
+    RecipientInfo& WithAttestationDocument(AttestationDocumentT&& value) { SetAttestationDocument(std::forward<AttestationDocumentT>(value)); return *this;}
     ///@}
   private:
 
-    KeyEncryptionMechanism m_keyEncryptionAlgorithm;
+    KeyEncryptionMechanism m_keyEncryptionAlgorithm{KeyEncryptionMechanism::NOT_SET};
     bool m_keyEncryptionAlgorithmHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_attestationDocument;
+    Aws::Utils::ByteBuffer m_attestationDocument{};
     bool m_attestationDocumentHasBeenSet = false;
   };
 

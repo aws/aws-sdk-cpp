@@ -21,7 +21,7 @@ namespace Model
   class GetDbClusterRequest : public TimestreamInfluxDBRequest
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API GetDbClusterRequest();
+    AWS_TIMESTREAMINFLUXDB_API GetDbClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Service-generated unique identifier of the DB cluster to retrieve.</p>
      */
-    inline const Aws::String& GetDbClusterId() const{ return m_dbClusterId; }
+    inline const Aws::String& GetDbClusterId() const { return m_dbClusterId; }
     inline bool DbClusterIdHasBeenSet() const { return m_dbClusterIdHasBeenSet; }
-    inline void SetDbClusterId(const Aws::String& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = value; }
-    inline void SetDbClusterId(Aws::String&& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = std::move(value); }
-    inline void SetDbClusterId(const char* value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId.assign(value); }
-    inline GetDbClusterRequest& WithDbClusterId(const Aws::String& value) { SetDbClusterId(value); return *this;}
-    inline GetDbClusterRequest& WithDbClusterId(Aws::String&& value) { SetDbClusterId(std::move(value)); return *this;}
-    inline GetDbClusterRequest& WithDbClusterId(const char* value) { SetDbClusterId(value); return *this;}
+    template<typename DbClusterIdT = Aws::String>
+    void SetDbClusterId(DbClusterIdT&& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = std::forward<DbClusterIdT>(value); }
+    template<typename DbClusterIdT = Aws::String>
+    GetDbClusterRequest& WithDbClusterId(DbClusterIdT&& value) { SetDbClusterId(std::forward<DbClusterIdT>(value)); return *this;}
     ///@}
   private:
 

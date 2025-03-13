@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyCapacityReservationRequest::ModifyCapacityReservationRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_minimumLoadBalancerCapacityHasBeenSet(false),
-    m_resetCapacityReservation(false),
-    m_resetCapacityReservationHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCapacityReservationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

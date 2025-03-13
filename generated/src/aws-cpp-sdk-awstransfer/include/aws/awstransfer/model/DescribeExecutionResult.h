@@ -28,7 +28,7 @@ namespace Model
   class DescribeExecutionResult
   {
   public:
-    AWS_TRANSFER_API DescribeExecutionResult();
+    AWS_TRANSFER_API DescribeExecutionResult() = default;
     AWS_TRANSFER_API DescribeExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API DescribeExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>A unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowId.assign(value); }
-    inline DescribeExecutionResult& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline DescribeExecutionResult& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    DescribeExecutionResult& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The structure that contains the details of the workflow' execution.</p>
      */
-    inline const DescribedExecution& GetExecution() const{ return m_execution; }
-    inline void SetExecution(const DescribedExecution& value) { m_execution = value; }
-    inline void SetExecution(DescribedExecution&& value) { m_execution = std::move(value); }
-    inline DescribeExecutionResult& WithExecution(const DescribedExecution& value) { SetExecution(value); return *this;}
-    inline DescribeExecutionResult& WithExecution(DescribedExecution&& value) { SetExecution(std::move(value)); return *this;}
+    inline const DescribedExecution& GetExecution() const { return m_execution; }
+    template<typename ExecutionT = DescribedExecution>
+    void SetExecution(ExecutionT&& value) { m_executionHasBeenSet = true; m_execution = std::forward<ExecutionT>(value); }
+    template<typename ExecutionT = DescribedExecution>
+    DescribeExecutionResult& WithExecution(ExecutionT&& value) { SetExecution(std::forward<ExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workflowId;
+    bool m_workflowIdHasBeenSet = false;
 
     DescribedExecution m_execution;
+    bool m_executionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class RangeOverride
   {
   public:
-    AWS_CUSTOMERPROFILES_API RangeOverride();
+    AWS_CUSTOMERPROFILES_API RangeOverride() = default;
     AWS_CUSTOMERPROFILES_API RangeOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API RangeOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The start time of when to include objects.</p>
      */
-    inline int GetStart() const{ return m_start; }
+    inline int GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
     inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
     inline RangeOverride& WithStart(int value) { SetStart(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The end time of when to include objects.</p>
      */
-    inline int GetEnd() const{ return m_end; }
+    inline int GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
     inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
     inline RangeOverride& WithEnd(int value) { SetEnd(value); return *this;}
@@ -62,22 +62,20 @@ namespace Model
     /**
      * <p>The unit for start and end.</p>
      */
-    inline const RangeUnit& GetUnit() const{ return m_unit; }
+    inline RangeUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const RangeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(RangeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline RangeOverride& WithUnit(const RangeUnit& value) { SetUnit(value); return *this;}
-    inline RangeOverride& WithUnit(RangeUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(RangeUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline RangeOverride& WithUnit(RangeUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    int m_start;
+    int m_start{0};
     bool m_startHasBeenSet = false;
 
-    int m_end;
+    int m_end{0};
     bool m_endHasBeenSet = false;
 
-    RangeUnit m_unit;
+    RangeUnit m_unit{RangeUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

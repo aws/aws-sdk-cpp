@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ReportFrequency::ReportFrequency() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_period(ReportFrequencyType::NOT_SET),
-    m_periodHasBeenSet(false)
-{
-}
-
 ReportFrequency::ReportFrequency(JsonView jsonValue)
-  : ReportFrequency()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ReportFrequency& ReportFrequency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInteger("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("period"))
   {
     m_period = ReportFrequencyTypeMapper::GetReportFrequencyTypeForName(jsonValue.GetString("period"));
-
     m_periodHasBeenSet = true;
   }
-
   return *this;
 }
 

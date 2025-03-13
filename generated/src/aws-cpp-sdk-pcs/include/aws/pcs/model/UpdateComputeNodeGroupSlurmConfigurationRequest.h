@@ -33,7 +33,7 @@ namespace Model
   class UpdateComputeNodeGroupSlurmConfigurationRequest
   {
   public:
-    AWS_PCS_API UpdateComputeNodeGroupSlurmConfigurationRequest();
+    AWS_PCS_API UpdateComputeNodeGroupSlurmConfigurationRequest() = default;
     AWS_PCS_API UpdateComputeNodeGroupSlurmConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API UpdateComputeNodeGroupSlurmConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Additional Slurm-specific configuration that directly maps to Slurm
      * settings.</p>
      */
-    inline const Aws::Vector<SlurmCustomSetting>& GetSlurmCustomSettings() const{ return m_slurmCustomSettings; }
+    inline const Aws::Vector<SlurmCustomSetting>& GetSlurmCustomSettings() const { return m_slurmCustomSettings; }
     inline bool SlurmCustomSettingsHasBeenSet() const { return m_slurmCustomSettingsHasBeenSet; }
-    inline void SetSlurmCustomSettings(const Aws::Vector<SlurmCustomSetting>& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings = value; }
-    inline void SetSlurmCustomSettings(Aws::Vector<SlurmCustomSetting>&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings = std::move(value); }
-    inline UpdateComputeNodeGroupSlurmConfigurationRequest& WithSlurmCustomSettings(const Aws::Vector<SlurmCustomSetting>& value) { SetSlurmCustomSettings(value); return *this;}
-    inline UpdateComputeNodeGroupSlurmConfigurationRequest& WithSlurmCustomSettings(Aws::Vector<SlurmCustomSetting>&& value) { SetSlurmCustomSettings(std::move(value)); return *this;}
-    inline UpdateComputeNodeGroupSlurmConfigurationRequest& AddSlurmCustomSettings(const SlurmCustomSetting& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.push_back(value); return *this; }
-    inline UpdateComputeNodeGroupSlurmConfigurationRequest& AddSlurmCustomSettings(SlurmCustomSetting&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.push_back(std::move(value)); return *this; }
+    template<typename SlurmCustomSettingsT = Aws::Vector<SlurmCustomSetting>>
+    void SetSlurmCustomSettings(SlurmCustomSettingsT&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings = std::forward<SlurmCustomSettingsT>(value); }
+    template<typename SlurmCustomSettingsT = Aws::Vector<SlurmCustomSetting>>
+    UpdateComputeNodeGroupSlurmConfigurationRequest& WithSlurmCustomSettings(SlurmCustomSettingsT&& value) { SetSlurmCustomSettings(std::forward<SlurmCustomSettingsT>(value)); return *this;}
+    template<typename SlurmCustomSettingsT = SlurmCustomSetting>
+    UpdateComputeNodeGroupSlurmConfigurationRequest& AddSlurmCustomSettings(SlurmCustomSettingsT&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.emplace_back(std::forward<SlurmCustomSettingsT>(value)); return *this; }
     ///@}
   private:
 

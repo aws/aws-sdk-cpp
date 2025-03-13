@@ -38,7 +38,7 @@ namespace Model
   class IntentResultEvent
   {
   public:
-    AWS_LEXRUNTIMEV2_API IntentResultEvent();
+    AWS_LEXRUNTIMEV2_API IntentResultEvent() = default;
     AWS_LEXRUNTIMEV2_API IntentResultEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API IntentResultEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <p>Indicates whether the input to the operation was text, speech, or from a
      * touch-tone keypad.</p>
      */
-    inline const InputMode& GetInputMode() const{ return m_inputMode; }
+    inline InputMode GetInputMode() const { return m_inputMode; }
     inline bool InputModeHasBeenSet() const { return m_inputModeHasBeenSet; }
-    inline void SetInputMode(const InputMode& value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
-    inline void SetInputMode(InputMode&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::move(value); }
-    inline IntentResultEvent& WithInputMode(const InputMode& value) { SetInputMode(value); return *this;}
-    inline IntentResultEvent& WithInputMode(InputMode&& value) { SetInputMode(std::move(value)); return *this;}
+    inline void SetInputMode(InputMode value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
+    inline IntentResultEvent& WithInputMode(InputMode value) { SetInputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -65,57 +63,52 @@ namespace Model
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
-    inline const Aws::Vector<Interpretation>& GetInterpretations() const{ return m_interpretations; }
+    inline const Aws::Vector<Interpretation>& GetInterpretations() const { return m_interpretations; }
     inline bool InterpretationsHasBeenSet() const { return m_interpretationsHasBeenSet; }
-    inline void SetInterpretations(const Aws::Vector<Interpretation>& value) { m_interpretationsHasBeenSet = true; m_interpretations = value; }
-    inline void SetInterpretations(Aws::Vector<Interpretation>&& value) { m_interpretationsHasBeenSet = true; m_interpretations = std::move(value); }
-    inline IntentResultEvent& WithInterpretations(const Aws::Vector<Interpretation>& value) { SetInterpretations(value); return *this;}
-    inline IntentResultEvent& WithInterpretations(Aws::Vector<Interpretation>&& value) { SetInterpretations(std::move(value)); return *this;}
-    inline IntentResultEvent& AddInterpretations(const Interpretation& value) { m_interpretationsHasBeenSet = true; m_interpretations.push_back(value); return *this; }
-    inline IntentResultEvent& AddInterpretations(Interpretation&& value) { m_interpretationsHasBeenSet = true; m_interpretations.push_back(std::move(value)); return *this; }
+    template<typename InterpretationsT = Aws::Vector<Interpretation>>
+    void SetInterpretations(InterpretationsT&& value) { m_interpretationsHasBeenSet = true; m_interpretations = std::forward<InterpretationsT>(value); }
+    template<typename InterpretationsT = Aws::Vector<Interpretation>>
+    IntentResultEvent& WithInterpretations(InterpretationsT&& value) { SetInterpretations(std::forward<InterpretationsT>(value)); return *this;}
+    template<typename InterpretationsT = Interpretation>
+    IntentResultEvent& AddInterpretations(InterpretationsT&& value) { m_interpretationsHasBeenSet = true; m_interpretations.emplace_back(std::forward<InterpretationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const SessionState& GetSessionState() const{ return m_sessionState; }
+    inline const SessionState& GetSessionState() const { return m_sessionState; }
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
-    inline void SetSessionState(const SessionState& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
-    inline void SetSessionState(SessionState&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
-    inline IntentResultEvent& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
-    inline IntentResultEvent& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
+    template<typename SessionStateT = SessionState>
+    void SetSessionState(SessionStateT&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::forward<SessionStateT>(value); }
+    template<typename SessionStateT = SessionState>
+    IntentResultEvent& WithSessionState(SessionStateT&& value) { SetSessionState(std::forward<SessionStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attributes sent in the request.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const{ return m_requestAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const { return m_requestAttributes; }
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
-    inline void SetRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
-    inline void SetRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
-    inline IntentResultEvent& WithRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestAttributes(value); return *this;}
-    inline IntentResultEvent& WithRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestAttributes(std::move(value)); return *this;}
-    inline IntentResultEvent& AddRequestAttributes(const Aws::String& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
-    inline IntentResultEvent& AddRequestAttributes(Aws::String&& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
-    inline IntentResultEvent& AddRequestAttributes(const Aws::String& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
-    inline IntentResultEvent& AddRequestAttributes(Aws::String&& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline IntentResultEvent& AddRequestAttributes(const char* key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
-    inline IntentResultEvent& AddRequestAttributes(Aws::String&& key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
-    inline IntentResultEvent& AddRequestAttributes(const char* key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
+    template<typename RequestAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequestAttributes(RequestAttributesT&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::forward<RequestAttributesT>(value); }
+    template<typename RequestAttributesT = Aws::Map<Aws::String, Aws::String>>
+    IntentResultEvent& WithRequestAttributes(RequestAttributesT&& value) { SetRequestAttributes(std::forward<RequestAttributesT>(value)); return *this;}
+    template<typename RequestAttributesKeyT = Aws::String, typename RequestAttributesValueT = Aws::String>
+    IntentResultEvent& AddRequestAttributes(RequestAttributesKeyT&& key, RequestAttributesValueT&& value) {
+      m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::forward<RequestAttributesKeyT>(key), std::forward<RequestAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the session in use.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline IntentResultEvent& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline IntentResultEvent& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline IntentResultEvent& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    IntentResultEvent& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,30 +117,28 @@ namespace Model
      * the form <code>RESPONSE-N</code>, where N is a number starting with one and
      * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline IntentResultEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline IntentResultEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline IntentResultEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    IntentResultEvent& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The bot member that is processing the intent.</p>
      */
-    inline const RecognizedBotMember& GetRecognizedBotMember() const{ return m_recognizedBotMember; }
+    inline const RecognizedBotMember& GetRecognizedBotMember() const { return m_recognizedBotMember; }
     inline bool RecognizedBotMemberHasBeenSet() const { return m_recognizedBotMemberHasBeenSet; }
-    inline void SetRecognizedBotMember(const RecognizedBotMember& value) { m_recognizedBotMemberHasBeenSet = true; m_recognizedBotMember = value; }
-    inline void SetRecognizedBotMember(RecognizedBotMember&& value) { m_recognizedBotMemberHasBeenSet = true; m_recognizedBotMember = std::move(value); }
-    inline IntentResultEvent& WithRecognizedBotMember(const RecognizedBotMember& value) { SetRecognizedBotMember(value); return *this;}
-    inline IntentResultEvent& WithRecognizedBotMember(RecognizedBotMember&& value) { SetRecognizedBotMember(std::move(value)); return *this;}
+    template<typename RecognizedBotMemberT = RecognizedBotMember>
+    void SetRecognizedBotMember(RecognizedBotMemberT&& value) { m_recognizedBotMemberHasBeenSet = true; m_recognizedBotMember = std::forward<RecognizedBotMemberT>(value); }
+    template<typename RecognizedBotMemberT = RecognizedBotMember>
+    IntentResultEvent& WithRecognizedBotMember(RecognizedBotMemberT&& value) { SetRecognizedBotMember(std::forward<RecognizedBotMemberT>(value)); return *this;}
     ///@}
   private:
 
-    InputMode m_inputMode;
+    InputMode m_inputMode{InputMode::NOT_SET};
     bool m_inputModeHasBeenSet = false;
 
     Aws::Vector<Interpretation> m_interpretations;

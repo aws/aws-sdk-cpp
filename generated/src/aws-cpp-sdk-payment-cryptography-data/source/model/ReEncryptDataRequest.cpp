@@ -12,17 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReEncryptDataRequest::ReEncryptDataRequest() : 
-    m_incomingKeyIdentifierHasBeenSet(false),
-    m_outgoingKeyIdentifierHasBeenSet(false),
-    m_cipherTextHasBeenSet(false),
-    m_incomingEncryptionAttributesHasBeenSet(false),
-    m_outgoingEncryptionAttributesHasBeenSet(false),
-    m_incomingWrappedKeyHasBeenSet(false),
-    m_outgoingWrappedKeyHasBeenSet(false)
-{
-}
-
 Aws::String ReEncryptDataRequest::SerializePayload() const
 {
   JsonValue payload;

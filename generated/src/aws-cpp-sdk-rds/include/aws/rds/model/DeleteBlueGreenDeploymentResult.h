@@ -28,33 +28,35 @@ namespace Model
   class DeleteBlueGreenDeploymentResult
   {
   public:
-    AWS_RDS_API DeleteBlueGreenDeploymentResult();
+    AWS_RDS_API DeleteBlueGreenDeploymentResult() = default;
     AWS_RDS_API DeleteBlueGreenDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DeleteBlueGreenDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const BlueGreenDeployment& GetBlueGreenDeployment() const{ return m_blueGreenDeployment; }
-    inline void SetBlueGreenDeployment(const BlueGreenDeployment& value) { m_blueGreenDeployment = value; }
-    inline void SetBlueGreenDeployment(BlueGreenDeployment&& value) { m_blueGreenDeployment = std::move(value); }
-    inline DeleteBlueGreenDeploymentResult& WithBlueGreenDeployment(const BlueGreenDeployment& value) { SetBlueGreenDeployment(value); return *this;}
-    inline DeleteBlueGreenDeploymentResult& WithBlueGreenDeployment(BlueGreenDeployment&& value) { SetBlueGreenDeployment(std::move(value)); return *this;}
+    inline const BlueGreenDeployment& GetBlueGreenDeployment() const { return m_blueGreenDeployment; }
+    template<typename BlueGreenDeploymentT = BlueGreenDeployment>
+    void SetBlueGreenDeployment(BlueGreenDeploymentT&& value) { m_blueGreenDeploymentHasBeenSet = true; m_blueGreenDeployment = std::forward<BlueGreenDeploymentT>(value); }
+    template<typename BlueGreenDeploymentT = BlueGreenDeployment>
+    DeleteBlueGreenDeploymentResult& WithBlueGreenDeployment(BlueGreenDeploymentT&& value) { SetBlueGreenDeployment(std::forward<BlueGreenDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteBlueGreenDeploymentResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteBlueGreenDeploymentResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteBlueGreenDeploymentResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     BlueGreenDeployment m_blueGreenDeployment;
+    bool m_blueGreenDeploymentHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

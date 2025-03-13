@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAmazonMqBrokerLogsDetails::AwsAmazonMqBrokerLogsDetails() : 
-    m_audit(false),
-    m_auditHasBeenSet(false),
-    m_general(false),
-    m_generalHasBeenSet(false),
-    m_auditLogGroupHasBeenSet(false),
-    m_generalLogGroupHasBeenSet(false),
-    m_pendingHasBeenSet(false)
-{
-}
-
 AwsAmazonMqBrokerLogsDetails::AwsAmazonMqBrokerLogsDetails(JsonView jsonValue)
-  : AwsAmazonMqBrokerLogsDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AwsAmazonMqBrokerLogsDetails& AwsAmazonMqBrokerLogsDetails::operator =(JsonView 
   if(jsonValue.ValueExists("Audit"))
   {
     m_audit = jsonValue.GetBool("Audit");
-
     m_auditHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("General"))
   {
     m_general = jsonValue.GetBool("General");
-
     m_generalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditLogGroup"))
   {
     m_auditLogGroup = jsonValue.GetString("AuditLogGroup");
-
     m_auditLogGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneralLogGroup"))
   {
     m_generalLogGroup = jsonValue.GetString("GeneralLogGroup");
-
     m_generalLogGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pending"))
   {
     m_pending = jsonValue.GetObject("Pending");
-
     m_pendingHasBeenSet = true;
   }
-
   return *this;
 }
 

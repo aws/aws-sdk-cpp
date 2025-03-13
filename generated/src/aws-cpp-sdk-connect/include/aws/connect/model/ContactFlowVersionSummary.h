@@ -31,7 +31,7 @@ namespace Model
   class ContactFlowVersionSummary
   {
   public:
-    AWS_CONNECT_API ContactFlowVersionSummary();
+    AWS_CONNECT_API ContactFlowVersionSummary() = default;
     AWS_CONNECT_API ContactFlowVersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactFlowVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the view version.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ContactFlowVersionSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ContactFlowVersionSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ContactFlowVersionSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ContactFlowVersionSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the flow version.</p>
      */
-    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+    inline const Aws::String& GetVersionDescription() const { return m_versionDescription; }
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
-    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
-    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
-    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
-    inline ContactFlowVersionSummary& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
-    inline ContactFlowVersionSummary& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
-    inline ContactFlowVersionSummary& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+    template<typename VersionDescriptionT = Aws::String>
+    void SetVersionDescription(VersionDescriptionT&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::forward<VersionDescriptionT>(value); }
+    template<typename VersionDescriptionT = Aws::String>
+    ContactFlowVersionSummary& WithVersionDescription(VersionDescriptionT&& value) { SetVersionDescription(std::forward<VersionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the flow version.</p>
      */
-    inline long long GetVersion() const{ return m_version; }
+    inline long long GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
     inline ContactFlowVersionSummary& WithVersion(long long value) { SetVersion(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_versionDescription;
     bool m_versionDescriptionHasBeenSet = false;
 
-    long long m_version;
+    long long m_version{0};
     bool m_versionHasBeenSet = false;
   };
 

@@ -12,13 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMonitorDeploymentRequest::StartMonitorDeploymentRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String StartMonitorDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

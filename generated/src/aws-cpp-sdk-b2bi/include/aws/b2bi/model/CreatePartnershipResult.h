@@ -30,7 +30,7 @@ namespace Model
   class CreatePartnershipResult
   {
   public:
-    AWS_B2BI_API CreatePartnershipResult();
+    AWS_B2BI_API CreatePartnershipResult() = default;
     AWS_B2BI_API CreatePartnershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_B2BI_API CreatePartnershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
      * <p>Returns the unique, system-generated identifier for the profile connected to
      * this partnership.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
-    inline void SetProfileId(const Aws::String& value) { m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileId.assign(value); }
-    inline CreatePartnershipResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline CreatePartnershipResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    CreatePartnershipResult& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the unique, system-generated identifier for a partnership.</p>
      */
-    inline const Aws::String& GetPartnershipId() const{ return m_partnershipId; }
-    inline void SetPartnershipId(const Aws::String& value) { m_partnershipId = value; }
-    inline void SetPartnershipId(Aws::String&& value) { m_partnershipId = std::move(value); }
-    inline void SetPartnershipId(const char* value) { m_partnershipId.assign(value); }
-    inline CreatePartnershipResult& WithPartnershipId(const Aws::String& value) { SetPartnershipId(value); return *this;}
-    inline CreatePartnershipResult& WithPartnershipId(Aws::String&& value) { SetPartnershipId(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithPartnershipId(const char* value) { SetPartnershipId(value); return *this;}
+    inline const Aws::String& GetPartnershipId() const { return m_partnershipId; }
+    template<typename PartnershipIdT = Aws::String>
+    void SetPartnershipId(PartnershipIdT&& value) { m_partnershipIdHasBeenSet = true; m_partnershipId = std::forward<PartnershipIdT>(value); }
+    template<typename PartnershipIdT = Aws::String>
+    CreatePartnershipResult& WithPartnershipId(PartnershipIdT&& value) { SetPartnershipId(std::forward<PartnershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,66 +63,57 @@ namespace Model
      * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
      * resource, such as a capability, partnership, profile, or transformer.</p>
      */
-    inline const Aws::String& GetPartnershipArn() const{ return m_partnershipArn; }
-    inline void SetPartnershipArn(const Aws::String& value) { m_partnershipArn = value; }
-    inline void SetPartnershipArn(Aws::String&& value) { m_partnershipArn = std::move(value); }
-    inline void SetPartnershipArn(const char* value) { m_partnershipArn.assign(value); }
-    inline CreatePartnershipResult& WithPartnershipArn(const Aws::String& value) { SetPartnershipArn(value); return *this;}
-    inline CreatePartnershipResult& WithPartnershipArn(Aws::String&& value) { SetPartnershipArn(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithPartnershipArn(const char* value) { SetPartnershipArn(value); return *this;}
+    inline const Aws::String& GetPartnershipArn() const { return m_partnershipArn; }
+    template<typename PartnershipArnT = Aws::String>
+    void SetPartnershipArn(PartnershipArnT&& value) { m_partnershipArnHasBeenSet = true; m_partnershipArn = std::forward<PartnershipArnT>(value); }
+    template<typename PartnershipArnT = Aws::String>
+    CreatePartnershipResult& WithPartnershipArn(PartnershipArnT&& value) { SetPartnershipArn(std::forward<PartnershipArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a descriptive name for the partnership.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreatePartnershipResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreatePartnershipResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePartnershipResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the email address associated with this trading partner.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
-    inline void SetEmail(const Aws::String& value) { m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_email.assign(value); }
-    inline CreatePartnershipResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline CreatePartnershipResult& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithEmail(const char* value) { SetEmail(value); return *this;}
+    inline const Aws::String& GetEmail() const { return m_email; }
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    CreatePartnershipResult& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the phone number associated with the partnership.</p>
      */
-    inline const Aws::String& GetPhone() const{ return m_phone; }
-    inline void SetPhone(const Aws::String& value) { m_phone = value; }
-    inline void SetPhone(Aws::String&& value) { m_phone = std::move(value); }
-    inline void SetPhone(const char* value) { m_phone.assign(value); }
-    inline CreatePartnershipResult& WithPhone(const Aws::String& value) { SetPhone(value); return *this;}
-    inline CreatePartnershipResult& WithPhone(Aws::String&& value) { SetPhone(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithPhone(const char* value) { SetPhone(value); return *this;}
+    inline const Aws::String& GetPhone() const { return m_phone; }
+    template<typename PhoneT = Aws::String>
+    void SetPhone(PhoneT&& value) { m_phoneHasBeenSet = true; m_phone = std::forward<PhoneT>(value); }
+    template<typename PhoneT = Aws::String>
+    CreatePartnershipResult& WithPhone(PhoneT&& value) { SetPhone(std::forward<PhoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns one or more capabilities associated with this partnership.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCapabilities() const{ return m_capabilities; }
-    inline void SetCapabilities(const Aws::Vector<Aws::String>& value) { m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<Aws::String>&& value) { m_capabilities = std::move(value); }
-    inline CreatePartnershipResult& WithCapabilities(const Aws::Vector<Aws::String>& value) { SetCapabilities(value); return *this;}
-    inline CreatePartnershipResult& WithCapabilities(Aws::Vector<Aws::String>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline CreatePartnershipResult& AddCapabilities(const Aws::String& value) { m_capabilities.push_back(value); return *this; }
-    inline CreatePartnershipResult& AddCapabilities(Aws::String&& value) { m_capabilities.push_back(std::move(value)); return *this; }
-    inline CreatePartnershipResult& AddCapabilities(const char* value) { m_capabilities.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCapabilities() const { return m_capabilities; }
+    template<typename CapabilitiesT = Aws::Vector<Aws::String>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<Aws::String>>
+    CreatePartnershipResult& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    template<typename CapabilitiesT = Aws::String>
+    CreatePartnershipResult& AddCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.emplace_back(std::forward<CapabilitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,70 +121,77 @@ namespace Model
      * <p>Returns the structure that contains the details for the associated
      * capabilities.</p>
      */
-    inline const CapabilityOptions& GetCapabilityOptions() const{ return m_capabilityOptions; }
-    inline void SetCapabilityOptions(const CapabilityOptions& value) { m_capabilityOptions = value; }
-    inline void SetCapabilityOptions(CapabilityOptions&& value) { m_capabilityOptions = std::move(value); }
-    inline CreatePartnershipResult& WithCapabilityOptions(const CapabilityOptions& value) { SetCapabilityOptions(value); return *this;}
-    inline CreatePartnershipResult& WithCapabilityOptions(CapabilityOptions&& value) { SetCapabilityOptions(std::move(value)); return *this;}
+    inline const CapabilityOptions& GetCapabilityOptions() const { return m_capabilityOptions; }
+    template<typename CapabilityOptionsT = CapabilityOptions>
+    void SetCapabilityOptions(CapabilityOptionsT&& value) { m_capabilityOptionsHasBeenSet = true; m_capabilityOptions = std::forward<CapabilityOptionsT>(value); }
+    template<typename CapabilityOptionsT = CapabilityOptions>
+    CreatePartnershipResult& WithCapabilityOptions(CapabilityOptionsT&& value) { SetCapabilityOptions(std::forward<CapabilityOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the unique, system-generated identifier for a trading partner.</p>
      */
-    inline const Aws::String& GetTradingPartnerId() const{ return m_tradingPartnerId; }
-    inline void SetTradingPartnerId(const Aws::String& value) { m_tradingPartnerId = value; }
-    inline void SetTradingPartnerId(Aws::String&& value) { m_tradingPartnerId = std::move(value); }
-    inline void SetTradingPartnerId(const char* value) { m_tradingPartnerId.assign(value); }
-    inline CreatePartnershipResult& WithTradingPartnerId(const Aws::String& value) { SetTradingPartnerId(value); return *this;}
-    inline CreatePartnershipResult& WithTradingPartnerId(Aws::String&& value) { SetTradingPartnerId(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithTradingPartnerId(const char* value) { SetTradingPartnerId(value); return *this;}
+    inline const Aws::String& GetTradingPartnerId() const { return m_tradingPartnerId; }
+    template<typename TradingPartnerIdT = Aws::String>
+    void SetTradingPartnerId(TradingPartnerIdT&& value) { m_tradingPartnerIdHasBeenSet = true; m_tradingPartnerId = std::forward<TradingPartnerIdT>(value); }
+    template<typename TradingPartnerIdT = Aws::String>
+    CreatePartnershipResult& WithTradingPartnerId(TradingPartnerIdT&& value) { SetTradingPartnerId(std::forward<TradingPartnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a timestamp for creation date and time of the partnership.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreatePartnershipResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreatePartnershipResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreatePartnershipResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePartnershipResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePartnershipResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePartnershipResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePartnershipResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_profileId;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_partnershipId;
+    bool m_partnershipIdHasBeenSet = false;
 
     Aws::String m_partnershipArn;
+    bool m_partnershipArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_email;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_phone;
+    bool m_phoneHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
 
     CapabilityOptions m_capabilityOptions;
+    bool m_capabilityOptionsHasBeenSet = false;
 
     Aws::String m_tradingPartnerId;
+    bool m_tradingPartnerIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

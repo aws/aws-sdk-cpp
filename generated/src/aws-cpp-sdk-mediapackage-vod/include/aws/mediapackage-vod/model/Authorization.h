@@ -31,7 +31,7 @@ namespace Model
   class Authorization
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API Authorization();
+    AWS_MEDIAPACKAGEVOD_API Authorization() = default;
     AWS_MEDIAPACKAGEVOD_API Authorization(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * The Amazon Resource Name (ARN) for the secret in AWS Secrets Manager that is
      * used for CDN authorization.
      */
-    inline const Aws::String& GetCdnIdentifierSecret() const{ return m_cdnIdentifierSecret; }
+    inline const Aws::String& GetCdnIdentifierSecret() const { return m_cdnIdentifierSecret; }
     inline bool CdnIdentifierSecretHasBeenSet() const { return m_cdnIdentifierSecretHasBeenSet; }
-    inline void SetCdnIdentifierSecret(const Aws::String& value) { m_cdnIdentifierSecretHasBeenSet = true; m_cdnIdentifierSecret = value; }
-    inline void SetCdnIdentifierSecret(Aws::String&& value) { m_cdnIdentifierSecretHasBeenSet = true; m_cdnIdentifierSecret = std::move(value); }
-    inline void SetCdnIdentifierSecret(const char* value) { m_cdnIdentifierSecretHasBeenSet = true; m_cdnIdentifierSecret.assign(value); }
-    inline Authorization& WithCdnIdentifierSecret(const Aws::String& value) { SetCdnIdentifierSecret(value); return *this;}
-    inline Authorization& WithCdnIdentifierSecret(Aws::String&& value) { SetCdnIdentifierSecret(std::move(value)); return *this;}
-    inline Authorization& WithCdnIdentifierSecret(const char* value) { SetCdnIdentifierSecret(value); return *this;}
+    template<typename CdnIdentifierSecretT = Aws::String>
+    void SetCdnIdentifierSecret(CdnIdentifierSecretT&& value) { m_cdnIdentifierSecretHasBeenSet = true; m_cdnIdentifierSecret = std::forward<CdnIdentifierSecretT>(value); }
+    template<typename CdnIdentifierSecretT = Aws::String>
+    Authorization& WithCdnIdentifierSecret(CdnIdentifierSecretT&& value) { SetCdnIdentifierSecret(std::forward<CdnIdentifierSecretT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to
      * communicate with AWS Secrets Manager.
      */
-    inline const Aws::String& GetSecretsRoleArn() const{ return m_secretsRoleArn; }
+    inline const Aws::String& GetSecretsRoleArn() const { return m_secretsRoleArn; }
     inline bool SecretsRoleArnHasBeenSet() const { return m_secretsRoleArnHasBeenSet; }
-    inline void SetSecretsRoleArn(const Aws::String& value) { m_secretsRoleArnHasBeenSet = true; m_secretsRoleArn = value; }
-    inline void SetSecretsRoleArn(Aws::String&& value) { m_secretsRoleArnHasBeenSet = true; m_secretsRoleArn = std::move(value); }
-    inline void SetSecretsRoleArn(const char* value) { m_secretsRoleArnHasBeenSet = true; m_secretsRoleArn.assign(value); }
-    inline Authorization& WithSecretsRoleArn(const Aws::String& value) { SetSecretsRoleArn(value); return *this;}
-    inline Authorization& WithSecretsRoleArn(Aws::String&& value) { SetSecretsRoleArn(std::move(value)); return *this;}
-    inline Authorization& WithSecretsRoleArn(const char* value) { SetSecretsRoleArn(value); return *this;}
+    template<typename SecretsRoleArnT = Aws::String>
+    void SetSecretsRoleArn(SecretsRoleArnT&& value) { m_secretsRoleArnHasBeenSet = true; m_secretsRoleArn = std::forward<SecretsRoleArnT>(value); }
+    template<typename SecretsRoleArnT = Aws::String>
+    Authorization& WithSecretsRoleArn(SecretsRoleArnT&& value) { SetSecretsRoleArn(std::forward<SecretsRoleArnT>(value)); return *this;}
     ///@}
   private:
 

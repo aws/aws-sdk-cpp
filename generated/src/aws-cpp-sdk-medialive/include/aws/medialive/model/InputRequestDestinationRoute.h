@@ -31,7 +31,7 @@ namespace Model
   class InputRequestDestinationRoute
   {
   public:
-    AWS_MEDIALIVE_API InputRequestDestinationRoute();
+    AWS_MEDIALIVE_API InputRequestDestinationRoute() = default;
     AWS_MEDIALIVE_API InputRequestDestinationRoute(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API InputRequestDestinationRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * The CIDR of the route.
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline InputRequestDestinationRoute& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline InputRequestDestinationRoute& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline InputRequestDestinationRoute& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    InputRequestDestinationRoute& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * An optional gateway for the route.
      */
-    inline const Aws::String& GetGateway() const{ return m_gateway; }
+    inline const Aws::String& GetGateway() const { return m_gateway; }
     inline bool GatewayHasBeenSet() const { return m_gatewayHasBeenSet; }
-    inline void SetGateway(const Aws::String& value) { m_gatewayHasBeenSet = true; m_gateway = value; }
-    inline void SetGateway(Aws::String&& value) { m_gatewayHasBeenSet = true; m_gateway = std::move(value); }
-    inline void SetGateway(const char* value) { m_gatewayHasBeenSet = true; m_gateway.assign(value); }
-    inline InputRequestDestinationRoute& WithGateway(const Aws::String& value) { SetGateway(value); return *this;}
-    inline InputRequestDestinationRoute& WithGateway(Aws::String&& value) { SetGateway(std::move(value)); return *this;}
-    inline InputRequestDestinationRoute& WithGateway(const char* value) { SetGateway(value); return *this;}
+    template<typename GatewayT = Aws::String>
+    void SetGateway(GatewayT&& value) { m_gatewayHasBeenSet = true; m_gateway = std::forward<GatewayT>(value); }
+    template<typename GatewayT = Aws::String>
+    InputRequestDestinationRoute& WithGateway(GatewayT&& value) { SetGateway(std::forward<GatewayT>(value)); return *this;}
     ///@}
   private:
 

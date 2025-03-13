@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Insight::Insight() : 
-    m_insightArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_groupByAttributeHasBeenSet(false)
-{
-}
-
 Insight::Insight(JsonView jsonValue)
-  : Insight()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Insight& Insight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsightArn"))
   {
     m_insightArn = jsonValue.GetString("InsightArn");
-
     m_insightArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filters"))
   {
     m_filters = jsonValue.GetObject("Filters");
-
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupByAttribute"))
   {
     m_groupByAttribute = jsonValue.GetString("GroupByAttribute");
-
     m_groupByAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

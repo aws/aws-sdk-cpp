@@ -12,13 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEncoderConfigurationsRequest::ListEncoderConfigurationsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEncoderConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

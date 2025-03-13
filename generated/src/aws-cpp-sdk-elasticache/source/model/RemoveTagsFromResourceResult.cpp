@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveTagsFromResourceResult::RemoveTagsFromResourceResult()
-{
-}
-
 RemoveTagsFromResourceResult::RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RemoveTagsFromResourceResult& RemoveTagsFromResourceResult::operator =(const Aws
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);
@@ -54,6 +51,7 @@ RemoveTagsFromResourceResult& RemoveTagsFromResourceResult::operator =(const Aws
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::RemoveTagsFromResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

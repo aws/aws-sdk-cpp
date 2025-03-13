@@ -12,17 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomMetricRequest::CreateCustomMetricRequest() : 
-    m_metricNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_metricType(CustomMetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateCustomMetricRequest::SerializePayload() const
 {
   JsonValue payload;

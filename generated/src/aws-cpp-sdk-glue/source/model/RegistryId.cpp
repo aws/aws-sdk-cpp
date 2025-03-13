@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RegistryId::RegistryId() : 
-    m_registryNameHasBeenSet(false),
-    m_registryArnHasBeenSet(false)
-{
-}
-
 RegistryId::RegistryId(JsonView jsonValue)
-  : RegistryId()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegistryId& RegistryId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
     m_registryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryArn"))
   {
     m_registryArn = jsonValue.GetString("RegistryArn");
-
     m_registryArnHasBeenSet = true;
   }
-
   return *this;
 }
 

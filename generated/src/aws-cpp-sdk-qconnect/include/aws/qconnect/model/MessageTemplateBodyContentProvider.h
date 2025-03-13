@@ -31,7 +31,7 @@ namespace Model
   class MessageTemplateBodyContentProvider
   {
   public:
-    AWS_QCONNECT_API MessageTemplateBodyContentProvider();
+    AWS_QCONNECT_API MessageTemplateBodyContentProvider() = default;
     AWS_QCONNECT_API MessageTemplateBodyContentProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API MessageTemplateBodyContentProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The content of the message template.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline MessageTemplateBodyContentProvider& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline MessageTemplateBodyContentProvider& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline MessageTemplateBodyContentProvider& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    MessageTemplateBodyContentProvider& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

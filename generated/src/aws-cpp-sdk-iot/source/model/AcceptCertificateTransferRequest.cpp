@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AcceptCertificateTransferRequest::AcceptCertificateTransferRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_setAsActive(false),
-    m_setAsActiveHasBeenSet(false)
-{
-}
-
 Aws::String AcceptCertificateTransferRequest::SerializePayload() const
 {
   return {};

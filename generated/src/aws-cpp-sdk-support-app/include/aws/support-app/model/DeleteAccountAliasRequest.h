@@ -19,7 +19,7 @@ namespace Model
   class DeleteAccountAliasRequest : public SupportAppRequest
   {
   public:
-    AWS_SUPPORTAPP_API DeleteAccountAliasRequest();
+    AWS_SUPPORTAPP_API DeleteAccountAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

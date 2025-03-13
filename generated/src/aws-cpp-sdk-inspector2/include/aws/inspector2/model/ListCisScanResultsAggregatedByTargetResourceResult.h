@@ -29,7 +29,7 @@ namespace Model
   class ListCisScanResultsAggregatedByTargetResourceResult
   {
   public:
-    AWS_INSPECTOR2_API ListCisScanResultsAggregatedByTargetResourceResult();
+    AWS_INSPECTOR2_API ListCisScanResultsAggregatedByTargetResourceResult() = default;
     AWS_INSPECTOR2_API ListCisScanResultsAggregatedByTargetResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API ListCisScanResultsAggregatedByTargetResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScanResultsAggregatedByTargetResourceResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource aggregations.</p>
      */
-    inline const Aws::Vector<CisTargetResourceAggregation>& GetTargetResourceAggregations() const{ return m_targetResourceAggregations; }
-    inline void SetTargetResourceAggregations(const Aws::Vector<CisTargetResourceAggregation>& value) { m_targetResourceAggregations = value; }
-    inline void SetTargetResourceAggregations(Aws::Vector<CisTargetResourceAggregation>&& value) { m_targetResourceAggregations = std::move(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithTargetResourceAggregations(const Aws::Vector<CisTargetResourceAggregation>& value) { SetTargetResourceAggregations(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithTargetResourceAggregations(Aws::Vector<CisTargetResourceAggregation>&& value) { SetTargetResourceAggregations(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceResult& AddTargetResourceAggregations(const CisTargetResourceAggregation& value) { m_targetResourceAggregations.push_back(value); return *this; }
-    inline ListCisScanResultsAggregatedByTargetResourceResult& AddTargetResourceAggregations(CisTargetResourceAggregation&& value) { m_targetResourceAggregations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CisTargetResourceAggregation>& GetTargetResourceAggregations() const { return m_targetResourceAggregations; }
+    template<typename TargetResourceAggregationsT = Aws::Vector<CisTargetResourceAggregation>>
+    void SetTargetResourceAggregations(TargetResourceAggregationsT&& value) { m_targetResourceAggregationsHasBeenSet = true; m_targetResourceAggregations = std::forward<TargetResourceAggregationsT>(value); }
+    template<typename TargetResourceAggregationsT = Aws::Vector<CisTargetResourceAggregation>>
+    ListCisScanResultsAggregatedByTargetResourceResult& WithTargetResourceAggregations(TargetResourceAggregationsT&& value) { SetTargetResourceAggregations(std::forward<TargetResourceAggregationsT>(value)); return *this;}
+    template<typename TargetResourceAggregationsT = CisTargetResourceAggregation>
+    ListCisScanResultsAggregatedByTargetResourceResult& AddTargetResourceAggregations(TargetResourceAggregationsT&& value) { m_targetResourceAggregationsHasBeenSet = true; m_targetResourceAggregations.emplace_back(std::forward<TargetResourceAggregationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCisScanResultsAggregatedByTargetResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCisScanResultsAggregatedByTargetResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CisTargetResourceAggregation> m_targetResourceAggregations;
+    bool m_targetResourceAggregationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,21 +18,7 @@ namespace DLM
 namespace Model
 {
 
-LifecyclePolicySummary::LifecyclePolicySummary() : 
-    m_policyIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_state(GettablePolicyStateValues::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_policyType(PolicyTypeValues::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_defaultPolicy(false),
-    m_defaultPolicyHasBeenSet(false)
-{
-}
-
 LifecyclePolicySummary::LifecyclePolicySummary(JsonView jsonValue)
-  : LifecyclePolicySummary()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = GettablePolicyStateValuesMapper::GetGettablePolicyStateValuesForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -69,21 +49,16 @@ LifecyclePolicySummary& LifecyclePolicySummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = PolicyTypeValuesMapper::GetPolicyTypeValuesForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultPolicy"))
   {
     m_defaultPolicy = jsonValue.GetBool("DefaultPolicy");
-
     m_defaultPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

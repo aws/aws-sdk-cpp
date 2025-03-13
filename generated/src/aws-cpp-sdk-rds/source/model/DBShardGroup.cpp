@@ -20,27 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBShardGroup::DBShardGroup() : 
-    m_dBShardGroupResourceIdHasBeenSet(false),
-    m_dBShardGroupIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_maxACU(0.0),
-    m_maxACUHasBeenSet(false),
-    m_minACU(0.0),
-    m_minACUHasBeenSet(false),
-    m_computeRedundancy(0),
-    m_computeRedundancyHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_dBShardGroupArnHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 DBShardGroup::DBShardGroup(const XmlNode& xmlNode)
-  : DBShardGroup()
 {
   *this = xmlNode;
 }
@@ -56,72 +36,83 @@ DBShardGroup& DBShardGroup::operator =(const XmlNode& xmlNode)
     {
       m_dBShardGroupResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupResourceIdNode.GetText());
       m_dBShardGroupResourceIdHasBeenSet = true;
+       m_dBShardGroupResourceIdHasBeenSet = true;
     }
     XmlNode dBShardGroupIdentifierNode = resultNode.FirstChild("DBShardGroupIdentifier");
     if(!dBShardGroupIdentifierNode.IsNull())
     {
       m_dBShardGroupIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupIdentifierNode.GetText());
       m_dBShardGroupIdentifierHasBeenSet = true;
+       m_dBShardGroupIdentifierHasBeenSet = true;
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
       m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
       m_dBClusterIdentifierHasBeenSet = true;
+       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode maxACUNode = resultNode.FirstChild("MaxACU");
     if(!maxACUNode.IsNull())
     {
       m_maxACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxACUNode.GetText()).c_str()).c_str());
       m_maxACUHasBeenSet = true;
+       m_maxACUHasBeenSet = true;
     }
     XmlNode minACUNode = resultNode.FirstChild("MinACU");
     if(!minACUNode.IsNull())
     {
       m_minACU = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minACUNode.GetText()).c_str()).c_str());
       m_minACUHasBeenSet = true;
+       m_minACUHasBeenSet = true;
     }
     XmlNode computeRedundancyNode = resultNode.FirstChild("ComputeRedundancy");
     if(!computeRedundancyNode.IsNull())
     {
       m_computeRedundancy = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(computeRedundancyNode.GetText()).c_str()).c_str());
       m_computeRedundancyHasBeenSet = true;
+       m_computeRedundancyHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode publiclyAccessibleNode = resultNode.FirstChild("PubliclyAccessible");
     if(!publiclyAccessibleNode.IsNull())
     {
       m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publiclyAccessibleNode.GetText()).c_str()).c_str());
       m_publiclyAccessibleHasBeenSet = true;
+       m_publiclyAccessibleHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode dBShardGroupArnNode = resultNode.FirstChild("DBShardGroupArn");
     if(!dBShardGroupArnNode.IsNull())
     {
       m_dBShardGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBShardGroupArnNode.GetText());
       m_dBShardGroupArnHasBeenSet = true;
+       m_dBShardGroupArnHasBeenSet = true;
     }
     XmlNode tagListNode = resultNode.FirstChild("TagList");
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);
         tagListMember = tagListMember.NextNode("Tag");
       }
 
-      m_tagListHasBeenSet = true;
+       m_tagListHasBeenSet = true;
     }
   }
 

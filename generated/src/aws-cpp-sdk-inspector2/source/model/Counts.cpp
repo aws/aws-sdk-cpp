@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Counts::Counts() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_groupKey(GroupKey::NOT_SET),
-    m_groupKeyHasBeenSet(false)
-{
-}
-
 Counts::Counts(JsonView jsonValue)
-  : Counts()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Counts& Counts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupKey"))
   {
     m_groupKey = GroupKeyMapper::GetGroupKeyForName(jsonValue.GetString("groupKey"));
-
     m_groupKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

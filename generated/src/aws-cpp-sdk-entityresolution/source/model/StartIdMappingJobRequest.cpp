@@ -12,12 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartIdMappingJobRequest::StartIdMappingJobRequest() : 
-    m_outputSourceConfigHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String StartIdMappingJobRequest::SerializePayload() const
 {
   JsonValue payload;

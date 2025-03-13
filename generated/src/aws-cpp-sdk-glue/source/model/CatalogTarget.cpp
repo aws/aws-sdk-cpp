@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogTarget::CatalogTarget() : 
-    m_databaseNameHasBeenSet(false),
-    m_tablesHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_eventQueueArnHasBeenSet(false),
-    m_dlqEventQueueArnHasBeenSet(false)
-{
-}
-
 CatalogTarget::CatalogTarget(JsonView jsonValue)
-  : CatalogTarget()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tables"))
   {
     Aws::Utils::Array<JsonView> tablesJsonList = jsonValue.GetArray("Tables");
@@ -51,28 +39,21 @@ CatalogTarget& CatalogTarget::operator =(JsonView jsonValue)
     }
     m_tablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventQueueArn"))
   {
     m_eventQueueArn = jsonValue.GetString("EventQueueArn");
-
     m_eventQueueArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DlqEventQueueArn"))
   {
     m_dlqEventQueueArn = jsonValue.GetString("DlqEventQueueArn");
-
     m_dlqEventQueueArnHasBeenSet = true;
   }
-
   return *this;
 }
 

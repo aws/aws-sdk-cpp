@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTransformerRequest::DeleteTransformerRequest() : 
-    m_transformerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTransformerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,34 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-TransactionEvent::TransactionEvent() : 
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false),
-    m_transactionHashHasBeenSet(false),
-    m_eventType(QueryTransactionEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_contractAddressHasBeenSet(false),
-    m_tokenIdHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_voutIndex(0),
-    m_voutIndexHasBeenSet(false),
-    m_voutSpent(false),
-    m_voutSpentHasBeenSet(false),
-    m_spentVoutTransactionIdHasBeenSet(false),
-    m_spentVoutTransactionHashHasBeenSet(false),
-    m_spentVoutIndex(0),
-    m_spentVoutIndexHasBeenSet(false),
-    m_blockchainInstantHasBeenSet(false),
-    m_confirmationStatus(ConfirmationStatus::NOT_SET),
-    m_confirmationStatusHasBeenSet(false)
-{
-}
-
 TransactionEvent::TransactionEvent(JsonView jsonValue)
-  : TransactionEvent()
 {
   *this = jsonValue;
 }
@@ -55,115 +28,83 @@ TransactionEvent& TransactionEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("network"))
   {
     m_network = QueryNetworkMapper::GetQueryNetworkForName(jsonValue.GetString("network"));
-
     m_networkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transactionHash"))
   {
     m_transactionHash = jsonValue.GetString("transactionHash");
-
     m_transactionHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = QueryTransactionEventTypeMapper::GetQueryTransactionEventTypeForName(jsonValue.GetString("eventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetString("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetString("to");
-
     m_toHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contractAddress"))
   {
     m_contractAddress = jsonValue.GetString("contractAddress");
-
     m_contractAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenId"))
   {
     m_tokenId = jsonValue.GetString("tokenId");
-
     m_tokenIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transactionId"))
   {
     m_transactionId = jsonValue.GetString("transactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("voutIndex"))
   {
     m_voutIndex = jsonValue.GetInteger("voutIndex");
-
     m_voutIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("voutSpent"))
   {
     m_voutSpent = jsonValue.GetBool("voutSpent");
-
     m_voutSpentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spentVoutTransactionId"))
   {
     m_spentVoutTransactionId = jsonValue.GetString("spentVoutTransactionId");
-
     m_spentVoutTransactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spentVoutTransactionHash"))
   {
     m_spentVoutTransactionHash = jsonValue.GetString("spentVoutTransactionHash");
-
     m_spentVoutTransactionHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spentVoutIndex"))
   {
     m_spentVoutIndex = jsonValue.GetInteger("spentVoutIndex");
-
     m_spentVoutIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockchainInstant"))
   {
     m_blockchainInstant = jsonValue.GetObject("blockchainInstant");
-
     m_blockchainInstantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationStatus"))
   {
     m_confirmationStatus = ConfirmationStatusMapper::GetConfirmationStatusForName(jsonValue.GetString("confirmationStatus"));
-
     m_confirmationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

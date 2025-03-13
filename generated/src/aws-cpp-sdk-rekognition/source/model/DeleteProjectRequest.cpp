@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProjectRequest::DeleteProjectRequest() : 
-    m_projectArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectRequest::SerializePayload() const
 {
   JsonValue payload;

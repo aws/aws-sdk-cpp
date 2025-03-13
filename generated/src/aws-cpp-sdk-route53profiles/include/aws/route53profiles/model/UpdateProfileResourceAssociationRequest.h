@@ -21,7 +21,7 @@ namespace Model
   class UpdateProfileResourceAssociationRequest : public Route53ProfilesRequest
   {
   public:
-    AWS_ROUTE53PROFILES_API UpdateProfileResourceAssociationRequest();
+    AWS_ROUTE53PROFILES_API UpdateProfileResourceAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p> Name of the resource association. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateProfileResourceAssociationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateProfileResourceAssociationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateProfileResourceAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateProfileResourceAssociationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> ID of the resource association. </p>
      */
-    inline const Aws::String& GetProfileResourceAssociationId() const{ return m_profileResourceAssociationId; }
+    inline const Aws::String& GetProfileResourceAssociationId() const { return m_profileResourceAssociationId; }
     inline bool ProfileResourceAssociationIdHasBeenSet() const { return m_profileResourceAssociationIdHasBeenSet; }
-    inline void SetProfileResourceAssociationId(const Aws::String& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = value; }
-    inline void SetProfileResourceAssociationId(Aws::String&& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = std::move(value); }
-    inline void SetProfileResourceAssociationId(const char* value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId.assign(value); }
-    inline UpdateProfileResourceAssociationRequest& WithProfileResourceAssociationId(const Aws::String& value) { SetProfileResourceAssociationId(value); return *this;}
-    inline UpdateProfileResourceAssociationRequest& WithProfileResourceAssociationId(Aws::String&& value) { SetProfileResourceAssociationId(std::move(value)); return *this;}
-    inline UpdateProfileResourceAssociationRequest& WithProfileResourceAssociationId(const char* value) { SetProfileResourceAssociationId(value); return *this;}
+    template<typename ProfileResourceAssociationIdT = Aws::String>
+    void SetProfileResourceAssociationId(ProfileResourceAssociationIdT&& value) { m_profileResourceAssociationIdHasBeenSet = true; m_profileResourceAssociationId = std::forward<ProfileResourceAssociationIdT>(value); }
+    template<typename ProfileResourceAssociationIdT = Aws::String>
+    UpdateProfileResourceAssociationRequest& WithProfileResourceAssociationId(ProfileResourceAssociationIdT&& value) { SetProfileResourceAssociationId(std::forward<ProfileResourceAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * priority assinged the lowest value. </p> <p>The allowed values for priority are
      * between 100 and 9900.</p>
      */
-    inline const Aws::String& GetResourceProperties() const{ return m_resourceProperties; }
+    inline const Aws::String& GetResourceProperties() const { return m_resourceProperties; }
     inline bool ResourcePropertiesHasBeenSet() const { return m_resourcePropertiesHasBeenSet; }
-    inline void SetResourceProperties(const Aws::String& value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties = value; }
-    inline void SetResourceProperties(Aws::String&& value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties = std::move(value); }
-    inline void SetResourceProperties(const char* value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties.assign(value); }
-    inline UpdateProfileResourceAssociationRequest& WithResourceProperties(const Aws::String& value) { SetResourceProperties(value); return *this;}
-    inline UpdateProfileResourceAssociationRequest& WithResourceProperties(Aws::String&& value) { SetResourceProperties(std::move(value)); return *this;}
-    inline UpdateProfileResourceAssociationRequest& WithResourceProperties(const char* value) { SetResourceProperties(value); return *this;}
+    template<typename ResourcePropertiesT = Aws::String>
+    void SetResourceProperties(ResourcePropertiesT&& value) { m_resourcePropertiesHasBeenSet = true; m_resourceProperties = std::forward<ResourcePropertiesT>(value); }
+    template<typename ResourcePropertiesT = Aws::String>
+    UpdateProfileResourceAssociationRequest& WithResourceProperties(ResourcePropertiesT&& value) { SetResourceProperties(std::forward<ResourcePropertiesT>(value)); return *this;}
     ///@}
   private:
 

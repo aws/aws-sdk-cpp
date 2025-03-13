@@ -35,7 +35,7 @@ namespace Model
   class AnonymousUserEmbeddingExperienceConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration();
+    AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration() = default;
     AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AnonymousUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The type of embedding experience. In this case, Amazon QuickSight
      * dashboards.</p>
      */
-    inline const AnonymousUserDashboardEmbeddingConfiguration& GetDashboard() const{ return m_dashboard; }
+    inline const AnonymousUserDashboardEmbeddingConfiguration& GetDashboard() const { return m_dashboard; }
     inline bool DashboardHasBeenSet() const { return m_dashboardHasBeenSet; }
-    inline void SetDashboard(const AnonymousUserDashboardEmbeddingConfiguration& value) { m_dashboardHasBeenSet = true; m_dashboard = value; }
-    inline void SetDashboard(AnonymousUserDashboardEmbeddingConfiguration&& value) { m_dashboardHasBeenSet = true; m_dashboard = std::move(value); }
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboard(const AnonymousUserDashboardEmbeddingConfiguration& value) { SetDashboard(value); return *this;}
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboard(AnonymousUserDashboardEmbeddingConfiguration&& value) { SetDashboard(std::move(value)); return *this;}
+    template<typename DashboardT = AnonymousUserDashboardEmbeddingConfiguration>
+    void SetDashboard(DashboardT&& value) { m_dashboardHasBeenSet = true; m_dashboard = std::forward<DashboardT>(value); }
+    template<typename DashboardT = AnonymousUserDashboardEmbeddingConfiguration>
+    AnonymousUserEmbeddingExperienceConfiguration& WithDashboard(DashboardT&& value) { SetDashboard(std::forward<DashboardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * <p>The type of embedding experience. In this case, Amazon QuickSight
      * visuals.</p>
      */
-    inline const AnonymousUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const{ return m_dashboardVisual; }
+    inline const AnonymousUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const { return m_dashboardVisual; }
     inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
-    inline void SetDashboardVisual(const AnonymousUserDashboardVisualEmbeddingConfiguration& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
-    inline void SetDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfiguration&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(const AnonymousUserDashboardVisualEmbeddingConfiguration& value) { SetDashboardVisual(value); return *this;}
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(AnonymousUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
+    template<typename DashboardVisualT = AnonymousUserDashboardVisualEmbeddingConfiguration>
+    void SetDashboardVisual(DashboardVisualT&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::forward<DashboardVisualT>(value); }
+    template<typename DashboardVisualT = AnonymousUserDashboardVisualEmbeddingConfiguration>
+    AnonymousUserEmbeddingExperienceConfiguration& WithDashboardVisual(DashboardVisualT&& value) { SetDashboardVisual(std::forward<DashboardVisualT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Q search bar that you want to use for anonymous user embedding.</p>
      */
-    inline const AnonymousUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const{ return m_qSearchBar; }
+    inline const AnonymousUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const { return m_qSearchBar; }
     inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
-    inline void SetQSearchBar(const AnonymousUserQSearchBarEmbeddingConfiguration& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = value; }
-    inline void SetQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::move(value); }
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(const AnonymousUserQSearchBarEmbeddingConfiguration& value) { SetQSearchBar(value); return *this;}
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
+    template<typename QSearchBarT = AnonymousUserQSearchBarEmbeddingConfiguration>
+    void SetQSearchBar(QSearchBarT&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::forward<QSearchBarT>(value); }
+    template<typename QSearchBarT = AnonymousUserQSearchBarEmbeddingConfiguration>
+    AnonymousUserEmbeddingExperienceConfiguration& WithQSearchBar(QSearchBarT&& value) { SetQSearchBar(std::forward<QSearchBarT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +84,12 @@ namespace Model
      * <p>The Generative Q&amp;A experience that you want to use for anonymous user
      * embedding.</p>
      */
-    inline const AnonymousUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const{ return m_generativeQnA; }
+    inline const AnonymousUserGenerativeQnAEmbeddingConfiguration& GetGenerativeQnA() const { return m_generativeQnA; }
     inline bool GenerativeQnAHasBeenSet() const { return m_generativeQnAHasBeenSet; }
-    inline void SetGenerativeQnA(const AnonymousUserGenerativeQnAEmbeddingConfiguration& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = value; }
-    inline void SetGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfiguration&& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = std::move(value); }
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithGenerativeQnA(const AnonymousUserGenerativeQnAEmbeddingConfiguration& value) { SetGenerativeQnA(value); return *this;}
-    inline AnonymousUserEmbeddingExperienceConfiguration& WithGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfiguration&& value) { SetGenerativeQnA(std::move(value)); return *this;}
+    template<typename GenerativeQnAT = AnonymousUserGenerativeQnAEmbeddingConfiguration>
+    void SetGenerativeQnA(GenerativeQnAT&& value) { m_generativeQnAHasBeenSet = true; m_generativeQnA = std::forward<GenerativeQnAT>(value); }
+    template<typename GenerativeQnAT = AnonymousUserGenerativeQnAEmbeddingConfiguration>
+    AnonymousUserEmbeddingExperienceConfiguration& WithGenerativeQnA(GenerativeQnAT&& value) { SetGenerativeQnA(std::forward<GenerativeQnAT>(value)); return *this;}
     ///@}
   private:
 

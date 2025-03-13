@@ -26,7 +26,7 @@ namespace Model
   class GetReferenceRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API GetReferenceRequest();
+    AWS_OMICS_API GetReferenceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,49 +45,43 @@ namespace Model
     /**
      * <p>The reference's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetReferenceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetReferenceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetReferenceRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetReferenceRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reference's store ID.</p>
      */
-    inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
+    inline const Aws::String& GetReferenceStoreId() const { return m_referenceStoreId; }
     inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
-    inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
-    inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
-    inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
-    inline GetReferenceRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
-    inline GetReferenceRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
-    inline GetReferenceRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
+    template<typename ReferenceStoreIdT = Aws::String>
+    void SetReferenceStoreId(ReferenceStoreIdT&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::forward<ReferenceStoreIdT>(value); }
+    template<typename ReferenceStoreIdT = Aws::String>
+    GetReferenceRequest& WithReferenceStoreId(ReferenceStoreIdT&& value) { SetReferenceStoreId(std::forward<ReferenceStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The range to retrieve.</p>
      */
-    inline const Aws::String& GetRange() const{ return m_range; }
+    inline const Aws::String& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
-    inline GetReferenceRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
-    inline GetReferenceRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
-    inline GetReferenceRequest& WithRange(const char* value) { SetRange(value); return *this;}
+    template<typename RangeT = Aws::String>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = Aws::String>
+    GetReferenceRequest& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The part number to retrieve.</p>
      */
-    inline int GetPartNumber() const{ return m_partNumber; }
+    inline int GetPartNumber() const { return m_partNumber; }
     inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
     inline GetReferenceRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
@@ -97,12 +91,10 @@ namespace Model
     /**
      * <p>The file to retrieve.</p>
      */
-    inline const ReferenceFile& GetFile() const{ return m_file; }
+    inline ReferenceFile GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const ReferenceFile& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(ReferenceFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline GetReferenceRequest& WithFile(const ReferenceFile& value) { SetFile(value); return *this;}
-    inline GetReferenceRequest& WithFile(ReferenceFile&& value) { SetFile(std::move(value)); return *this;}
+    inline void SetFile(ReferenceFile value) { m_fileHasBeenSet = true; m_file = value; }
+    inline GetReferenceRequest& WithFile(ReferenceFile value) { SetFile(value); return *this;}
     ///@}
   private:
 
@@ -115,10 +107,10 @@ namespace Model
     Aws::String m_range;
     bool m_rangeHasBeenSet = false;
 
-    int m_partNumber;
+    int m_partNumber{0};
     bool m_partNumberHasBeenSet = false;
 
-    ReferenceFile m_file;
+    ReferenceFile m_file{ReferenceFile::NOT_SET};
     bool m_fileHasBeenSet = false;
   };
 

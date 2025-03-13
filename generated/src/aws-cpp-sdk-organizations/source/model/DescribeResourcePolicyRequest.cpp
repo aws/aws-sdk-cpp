@@ -12,10 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResourcePolicyRequest::DescribeResourcePolicyRequest()
-{
-}
-
 Aws::String DescribeResourcePolicyRequest::SerializePayload() const
 {
   return "{}";

@@ -12,14 +12,6 @@ using namespace Aws::PCS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListComputeNodeGroupsRequest::ListComputeNodeGroupsRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListComputeNodeGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

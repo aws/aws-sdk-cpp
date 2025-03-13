@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-OnInputLifecycle::OnInputLifecycle() : 
-    m_eventsHasBeenSet(false),
-    m_transitionEventsHasBeenSet(false)
-{
-}
-
 OnInputLifecycle::OnInputLifecycle(JsonView jsonValue)
-  : OnInputLifecycle()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ OnInputLifecycle& OnInputLifecycle::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transitionEvents"))
   {
     Aws::Utils::Array<JsonView> transitionEventsJsonList = jsonValue.GetArray("transitionEvents");
@@ -51,7 +43,6 @@ OnInputLifecycle& OnInputLifecycle::operator =(JsonView jsonValue)
     }
     m_transitionEventsHasBeenSet = true;
   }
-
   return *this;
 }
 

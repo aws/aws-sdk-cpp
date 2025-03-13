@@ -20,39 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification() : 
-    m_tunnelInsideCidrHasBeenSet(false),
-    m_tunnelInsideIpv6CidrHasBeenSet(false),
-    m_preSharedKeyHasBeenSet(false),
-    m_phase1LifetimeSeconds(0),
-    m_phase1LifetimeSecondsHasBeenSet(false),
-    m_phase2LifetimeSeconds(0),
-    m_phase2LifetimeSecondsHasBeenSet(false),
-    m_rekeyMarginTimeSeconds(0),
-    m_rekeyMarginTimeSecondsHasBeenSet(false),
-    m_rekeyFuzzPercentage(0),
-    m_rekeyFuzzPercentageHasBeenSet(false),
-    m_replayWindowSize(0),
-    m_replayWindowSizeHasBeenSet(false),
-    m_dPDTimeoutSeconds(0),
-    m_dPDTimeoutSecondsHasBeenSet(false),
-    m_dPDTimeoutActionHasBeenSet(false),
-    m_phase1EncryptionAlgorithmsHasBeenSet(false),
-    m_phase2EncryptionAlgorithmsHasBeenSet(false),
-    m_phase1IntegrityAlgorithmsHasBeenSet(false),
-    m_phase2IntegrityAlgorithmsHasBeenSet(false),
-    m_phase1DHGroupNumbersHasBeenSet(false),
-    m_phase2DHGroupNumbersHasBeenSet(false),
-    m_iKEVersionsHasBeenSet(false),
-    m_startupActionHasBeenSet(false),
-    m_logOptionsHasBeenSet(false),
-    m_enableTunnelLifecycleControl(false),
-    m_enableTunnelLifecycleControlHasBeenSet(false)
-{
-}
-
 VpnTunnelOptionsSpecification::VpnTunnelOptionsSpecification(const XmlNode& xmlNode)
-  : VpnTunnelOptionsSpecification()
 {
   *this = xmlNode;
 }
@@ -68,162 +36,182 @@ VpnTunnelOptionsSpecification& VpnTunnelOptionsSpecification::operator =(const X
     {
       m_tunnelInsideCidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideCidrNode.GetText());
       m_tunnelInsideCidrHasBeenSet = true;
+       m_tunnelInsideCidrHasBeenSet = true;
     }
     XmlNode tunnelInsideIpv6CidrNode = resultNode.FirstChild("TunnelInsideIpv6Cidr");
     if(!tunnelInsideIpv6CidrNode.IsNull())
     {
       m_tunnelInsideIpv6Cidr = Aws::Utils::Xml::DecodeEscapedXmlText(tunnelInsideIpv6CidrNode.GetText());
       m_tunnelInsideIpv6CidrHasBeenSet = true;
+       m_tunnelInsideIpv6CidrHasBeenSet = true;
     }
     XmlNode preSharedKeyNode = resultNode.FirstChild("PreSharedKey");
     if(!preSharedKeyNode.IsNull())
     {
       m_preSharedKey = Aws::Utils::Xml::DecodeEscapedXmlText(preSharedKeyNode.GetText());
       m_preSharedKeyHasBeenSet = true;
+       m_preSharedKeyHasBeenSet = true;
     }
     XmlNode phase1LifetimeSecondsNode = resultNode.FirstChild("Phase1LifetimeSeconds");
     if(!phase1LifetimeSecondsNode.IsNull())
     {
       m_phase1LifetimeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(phase1LifetimeSecondsNode.GetText()).c_str()).c_str());
       m_phase1LifetimeSecondsHasBeenSet = true;
+       m_phase1LifetimeSecondsHasBeenSet = true;
     }
     XmlNode phase2LifetimeSecondsNode = resultNode.FirstChild("Phase2LifetimeSeconds");
     if(!phase2LifetimeSecondsNode.IsNull())
     {
       m_phase2LifetimeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(phase2LifetimeSecondsNode.GetText()).c_str()).c_str());
       m_phase2LifetimeSecondsHasBeenSet = true;
+       m_phase2LifetimeSecondsHasBeenSet = true;
     }
     XmlNode rekeyMarginTimeSecondsNode = resultNode.FirstChild("RekeyMarginTimeSeconds");
     if(!rekeyMarginTimeSecondsNode.IsNull())
     {
       m_rekeyMarginTimeSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rekeyMarginTimeSecondsNode.GetText()).c_str()).c_str());
       m_rekeyMarginTimeSecondsHasBeenSet = true;
+       m_rekeyMarginTimeSecondsHasBeenSet = true;
     }
     XmlNode rekeyFuzzPercentageNode = resultNode.FirstChild("RekeyFuzzPercentage");
     if(!rekeyFuzzPercentageNode.IsNull())
     {
       m_rekeyFuzzPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rekeyFuzzPercentageNode.GetText()).c_str()).c_str());
       m_rekeyFuzzPercentageHasBeenSet = true;
+       m_rekeyFuzzPercentageHasBeenSet = true;
     }
     XmlNode replayWindowSizeNode = resultNode.FirstChild("ReplayWindowSize");
     if(!replayWindowSizeNode.IsNull())
     {
       m_replayWindowSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replayWindowSizeNode.GetText()).c_str()).c_str());
       m_replayWindowSizeHasBeenSet = true;
+       m_replayWindowSizeHasBeenSet = true;
     }
     XmlNode dPDTimeoutSecondsNode = resultNode.FirstChild("DPDTimeoutSeconds");
     if(!dPDTimeoutSecondsNode.IsNull())
     {
       m_dPDTimeoutSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dPDTimeoutSecondsNode.GetText()).c_str()).c_str());
       m_dPDTimeoutSecondsHasBeenSet = true;
+       m_dPDTimeoutSecondsHasBeenSet = true;
     }
     XmlNode dPDTimeoutActionNode = resultNode.FirstChild("DPDTimeoutAction");
     if(!dPDTimeoutActionNode.IsNull())
     {
       m_dPDTimeoutAction = Aws::Utils::Xml::DecodeEscapedXmlText(dPDTimeoutActionNode.GetText());
       m_dPDTimeoutActionHasBeenSet = true;
+       m_dPDTimeoutActionHasBeenSet = true;
     }
     XmlNode phase1EncryptionAlgorithmsNode = resultNode.FirstChild("Phase1EncryptionAlgorithm");
     if(!phase1EncryptionAlgorithmsNode.IsNull())
     {
       XmlNode phase1EncryptionAlgorithmsMember = phase1EncryptionAlgorithmsNode.FirstChild("item");
+      m_phase1EncryptionAlgorithmsHasBeenSet = !phase1EncryptionAlgorithmsMember.IsNull();
       while(!phase1EncryptionAlgorithmsMember.IsNull())
       {
         m_phase1EncryptionAlgorithms.push_back(phase1EncryptionAlgorithmsMember);
         phase1EncryptionAlgorithmsMember = phase1EncryptionAlgorithmsMember.NextNode("item");
       }
 
-      m_phase1EncryptionAlgorithmsHasBeenSet = true;
+       m_phase1EncryptionAlgorithmsHasBeenSet = true;
     }
     XmlNode phase2EncryptionAlgorithmsNode = resultNode.FirstChild("Phase2EncryptionAlgorithm");
     if(!phase2EncryptionAlgorithmsNode.IsNull())
     {
       XmlNode phase2EncryptionAlgorithmsMember = phase2EncryptionAlgorithmsNode.FirstChild("item");
+      m_phase2EncryptionAlgorithmsHasBeenSet = !phase2EncryptionAlgorithmsMember.IsNull();
       while(!phase2EncryptionAlgorithmsMember.IsNull())
       {
         m_phase2EncryptionAlgorithms.push_back(phase2EncryptionAlgorithmsMember);
         phase2EncryptionAlgorithmsMember = phase2EncryptionAlgorithmsMember.NextNode("item");
       }
 
-      m_phase2EncryptionAlgorithmsHasBeenSet = true;
+       m_phase2EncryptionAlgorithmsHasBeenSet = true;
     }
     XmlNode phase1IntegrityAlgorithmsNode = resultNode.FirstChild("Phase1IntegrityAlgorithm");
     if(!phase1IntegrityAlgorithmsNode.IsNull())
     {
       XmlNode phase1IntegrityAlgorithmsMember = phase1IntegrityAlgorithmsNode.FirstChild("item");
+      m_phase1IntegrityAlgorithmsHasBeenSet = !phase1IntegrityAlgorithmsMember.IsNull();
       while(!phase1IntegrityAlgorithmsMember.IsNull())
       {
         m_phase1IntegrityAlgorithms.push_back(phase1IntegrityAlgorithmsMember);
         phase1IntegrityAlgorithmsMember = phase1IntegrityAlgorithmsMember.NextNode("item");
       }
 
-      m_phase1IntegrityAlgorithmsHasBeenSet = true;
+       m_phase1IntegrityAlgorithmsHasBeenSet = true;
     }
     XmlNode phase2IntegrityAlgorithmsNode = resultNode.FirstChild("Phase2IntegrityAlgorithm");
     if(!phase2IntegrityAlgorithmsNode.IsNull())
     {
       XmlNode phase2IntegrityAlgorithmsMember = phase2IntegrityAlgorithmsNode.FirstChild("item");
+      m_phase2IntegrityAlgorithmsHasBeenSet = !phase2IntegrityAlgorithmsMember.IsNull();
       while(!phase2IntegrityAlgorithmsMember.IsNull())
       {
         m_phase2IntegrityAlgorithms.push_back(phase2IntegrityAlgorithmsMember);
         phase2IntegrityAlgorithmsMember = phase2IntegrityAlgorithmsMember.NextNode("item");
       }
 
-      m_phase2IntegrityAlgorithmsHasBeenSet = true;
+       m_phase2IntegrityAlgorithmsHasBeenSet = true;
     }
     XmlNode phase1DHGroupNumbersNode = resultNode.FirstChild("Phase1DHGroupNumber");
     if(!phase1DHGroupNumbersNode.IsNull())
     {
       XmlNode phase1DHGroupNumbersMember = phase1DHGroupNumbersNode.FirstChild("item");
+      m_phase1DHGroupNumbersHasBeenSet = !phase1DHGroupNumbersMember.IsNull();
       while(!phase1DHGroupNumbersMember.IsNull())
       {
         m_phase1DHGroupNumbers.push_back(phase1DHGroupNumbersMember);
         phase1DHGroupNumbersMember = phase1DHGroupNumbersMember.NextNode("item");
       }
 
-      m_phase1DHGroupNumbersHasBeenSet = true;
+       m_phase1DHGroupNumbersHasBeenSet = true;
     }
     XmlNode phase2DHGroupNumbersNode = resultNode.FirstChild("Phase2DHGroupNumber");
     if(!phase2DHGroupNumbersNode.IsNull())
     {
       XmlNode phase2DHGroupNumbersMember = phase2DHGroupNumbersNode.FirstChild("item");
+      m_phase2DHGroupNumbersHasBeenSet = !phase2DHGroupNumbersMember.IsNull();
       while(!phase2DHGroupNumbersMember.IsNull())
       {
         m_phase2DHGroupNumbers.push_back(phase2DHGroupNumbersMember);
         phase2DHGroupNumbersMember = phase2DHGroupNumbersMember.NextNode("item");
       }
 
-      m_phase2DHGroupNumbersHasBeenSet = true;
+       m_phase2DHGroupNumbersHasBeenSet = true;
     }
     XmlNode iKEVersionsNode = resultNode.FirstChild("IKEVersion");
     if(!iKEVersionsNode.IsNull())
     {
       XmlNode iKEVersionsMember = iKEVersionsNode.FirstChild("item");
+      m_iKEVersionsHasBeenSet = !iKEVersionsMember.IsNull();
       while(!iKEVersionsMember.IsNull())
       {
         m_iKEVersions.push_back(iKEVersionsMember);
         iKEVersionsMember = iKEVersionsMember.NextNode("item");
       }
 
-      m_iKEVersionsHasBeenSet = true;
+       m_iKEVersionsHasBeenSet = true;
     }
     XmlNode startupActionNode = resultNode.FirstChild("StartupAction");
     if(!startupActionNode.IsNull())
     {
       m_startupAction = Aws::Utils::Xml::DecodeEscapedXmlText(startupActionNode.GetText());
       m_startupActionHasBeenSet = true;
+       m_startupActionHasBeenSet = true;
     }
     XmlNode logOptionsNode = resultNode.FirstChild("LogOptions");
     if(!logOptionsNode.IsNull())
     {
       m_logOptions = logOptionsNode;
       m_logOptionsHasBeenSet = true;
+       m_logOptionsHasBeenSet = true;
     }
     XmlNode enableTunnelLifecycleControlNode = resultNode.FirstChild("EnableTunnelLifecycleControl");
     if(!enableTunnelLifecycleControlNode.IsNull())
     {
       m_enableTunnelLifecycleControl = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableTunnelLifecycleControlNode.GetText()).c_str()).c_str());
       m_enableTunnelLifecycleControlHasBeenSet = true;
+       m_enableTunnelLifecycleControlHasBeenSet = true;
     }
   }
 

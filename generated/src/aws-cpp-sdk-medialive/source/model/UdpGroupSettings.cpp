@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-UdpGroupSettings::UdpGroupSettings() : 
-    m_inputLossAction(InputLossActionForUdpOut::NOT_SET),
-    m_inputLossActionHasBeenSet(false),
-    m_timedMetadataId3Frame(UdpTimedMetadataId3Frame::NOT_SET),
-    m_timedMetadataId3FrameHasBeenSet(false),
-    m_timedMetadataId3Period(0),
-    m_timedMetadataId3PeriodHasBeenSet(false)
-{
-}
-
 UdpGroupSettings::UdpGroupSettings(JsonView jsonValue)
-  : UdpGroupSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ UdpGroupSettings& UdpGroupSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputLossAction"))
   {
     m_inputLossAction = InputLossActionForUdpOutMapper::GetInputLossActionForUdpOutForName(jsonValue.GetString("inputLossAction"));
-
     m_inputLossActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataId3Frame"))
   {
     m_timedMetadataId3Frame = UdpTimedMetadataId3FrameMapper::GetUdpTimedMetadataId3FrameForName(jsonValue.GetString("timedMetadataId3Frame"));
-
     m_timedMetadataId3FrameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataId3Period"))
   {
     m_timedMetadataId3Period = jsonValue.GetInteger("timedMetadataId3Period");
-
     m_timedMetadataId3PeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class UpdateCaseActionDefinition
   {
   public:
-    AWS_CONNECT_API UpdateCaseActionDefinition();
+    AWS_CONNECT_API UpdateCaseActionDefinition() = default;
     AWS_CONNECT_API UpdateCaseActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UpdateCaseActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>An array of objects with <code>Field ID</code> and Value data.</p>
      */
-    inline const Aws::Vector<FieldValue>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<FieldValue>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<FieldValue>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<FieldValue>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline UpdateCaseActionDefinition& WithFields(const Aws::Vector<FieldValue>& value) { SetFields(value); return *this;}
-    inline UpdateCaseActionDefinition& WithFields(Aws::Vector<FieldValue>&& value) { SetFields(std::move(value)); return *this;}
-    inline UpdateCaseActionDefinition& AddFields(const FieldValue& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline UpdateCaseActionDefinition& AddFields(FieldValue&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<FieldValue>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<FieldValue>>
+    UpdateCaseActionDefinition& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = FieldValue>
+    UpdateCaseActionDefinition& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
   private:
 

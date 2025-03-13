@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSiteAddressRequest::GetSiteAddressRequest() : 
-    m_siteIdHasBeenSet(false),
-    m_addressType(AddressType::NOT_SET),
-    m_addressTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetSiteAddressRequest::SerializePayload() const
 {
   return {};

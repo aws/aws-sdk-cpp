@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-Output::Output() : 
-    m_fileHasBeenSet(false)
-{
-}
-
 Output::Output(JsonView jsonValue)
-  : Output()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Output& Output::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   return *this;
 }
 

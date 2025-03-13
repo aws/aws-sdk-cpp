@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetTrigger::DatasetTrigger() : 
-    m_scheduleHasBeenSet(false),
-    m_datasetHasBeenSet(false)
-{
-}
-
 DatasetTrigger::DatasetTrigger(JsonView jsonValue)
-  : DatasetTrigger()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatasetTrigger& DatasetTrigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataset"))
   {
     m_dataset = jsonValue.GetObject("dataset");
-
     m_datasetHasBeenSet = true;
   }
-
   return *this;
 }
 

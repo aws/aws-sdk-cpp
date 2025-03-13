@@ -12,15 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDeliveryStreamsRequest::ListDeliveryStreamsRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_deliveryStreamType(DeliveryStreamType::NOT_SET),
-    m_deliveryStreamTypeHasBeenSet(false),
-    m_exclusiveStartDeliveryStreamNameHasBeenSet(false)
-{
-}
-
 Aws::String ListDeliveryStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

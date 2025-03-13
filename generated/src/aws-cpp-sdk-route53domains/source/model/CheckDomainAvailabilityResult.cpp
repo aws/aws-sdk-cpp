@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckDomainAvailabilityResult::CheckDomainAvailabilityResult() : 
-    m_availability(DomainAvailability::NOT_SET)
-{
-}
-
 CheckDomainAvailabilityResult::CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CheckDomainAvailabilityResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ CheckDomainAvailabilityResult& CheckDomainAvailabilityResult::operator =(const A
   if(jsonValue.ValueExists("Availability"))
   {
     m_availability = DomainAvailabilityMapper::GetDomainAvailabilityForName(jsonValue.GetString("Availability"));
-
+    m_availabilityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

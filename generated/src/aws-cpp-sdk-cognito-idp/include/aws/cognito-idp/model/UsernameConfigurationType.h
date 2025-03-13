@@ -30,7 +30,7 @@ namespace Model
   class UsernameConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UsernameConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,14 @@ namespace Model
      * <code>preferred_username</code> and <code>email</code> alias to be case
      * insensitive, in addition to the <code>username</code> attribute.</p> </dd> </dl>
      */
-    inline bool GetCaseSensitive() const{ return m_caseSensitive; }
+    inline bool GetCaseSensitive() const { return m_caseSensitive; }
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
     inline UsernameConfigurationType& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
     ///@}
   private:
 
-    bool m_caseSensitive;
+    bool m_caseSensitive{false};
     bool m_caseSensitiveHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace QApps
 namespace Model
 {
 
-PredictQAppInputOptions::PredictQAppInputOptions() : 
-    m_conversationHasBeenSet(false),
-    m_problemStatementHasBeenSet(false)
-{
-}
-
 PredictQAppInputOptions::PredictQAppInputOptions(JsonView jsonValue)
-  : PredictQAppInputOptions()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ PredictQAppInputOptions& PredictQAppInputOptions::operator =(JsonView jsonValue)
     }
     m_conversationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("problemStatement"))
   {
     m_problemStatement = jsonValue.GetString("problemStatement");
-
     m_problemStatementHasBeenSet = true;
   }
-
   return *this;
 }
 

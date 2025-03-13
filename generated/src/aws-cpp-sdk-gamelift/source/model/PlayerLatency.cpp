@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-PlayerLatency::PlayerLatency() : 
-    m_playerIdHasBeenSet(false),
-    m_regionIdentifierHasBeenSet(false),
-    m_latencyInMilliseconds(0.0),
-    m_latencyInMillisecondsHasBeenSet(false)
-{
-}
-
 PlayerLatency::PlayerLatency(JsonView jsonValue)
-  : PlayerLatency()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PlayerLatency& PlayerLatency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlayerId"))
   {
     m_playerId = jsonValue.GetString("PlayerId");
-
     m_playerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionIdentifier"))
   {
     m_regionIdentifier = jsonValue.GetString("RegionIdentifier");
-
     m_regionIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatencyInMilliseconds"))
   {
     m_latencyInMilliseconds = jsonValue.GetDouble("LatencyInMilliseconds");
-
     m_latencyInMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

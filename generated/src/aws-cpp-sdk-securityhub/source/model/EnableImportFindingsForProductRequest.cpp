@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableImportFindingsForProductRequest::EnableImportFindingsForProductRequest() : 
-    m_productArnHasBeenSet(false)
-{
-}
-
 Aws::String EnableImportFindingsForProductRequest::SerializePayload() const
 {
   JsonValue payload;

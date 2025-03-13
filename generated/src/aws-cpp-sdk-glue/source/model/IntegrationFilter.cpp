@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IntegrationFilter::IntegrationFilter() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 IntegrationFilter::IntegrationFilter(JsonView jsonValue)
-  : IntegrationFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IntegrationFilter& IntegrationFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ IntegrationFilter& IntegrationFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

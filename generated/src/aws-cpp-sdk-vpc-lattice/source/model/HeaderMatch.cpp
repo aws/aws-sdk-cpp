@@ -18,16 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-HeaderMatch::HeaderMatch() : 
-    m_caseSensitive(false),
-    m_caseSensitiveHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 HeaderMatch::HeaderMatch(JsonView jsonValue)
-  : HeaderMatch()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HeaderMatch& HeaderMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("caseSensitive"))
   {
     m_caseSensitive = jsonValue.GetBool("caseSensitive");
-
     m_caseSensitiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

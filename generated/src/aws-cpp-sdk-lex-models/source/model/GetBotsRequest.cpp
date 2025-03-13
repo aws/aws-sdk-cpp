@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBotsRequest::GetBotsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false)
-{
-}
-
 Aws::String GetBotsRequest::SerializePayload() const
 {
   return {};

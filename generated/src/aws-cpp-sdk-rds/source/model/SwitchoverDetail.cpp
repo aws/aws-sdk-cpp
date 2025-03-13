@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-SwitchoverDetail::SwitchoverDetail() : 
-    m_sourceMemberHasBeenSet(false),
-    m_targetMemberHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SwitchoverDetail::SwitchoverDetail(const XmlNode& xmlNode)
-  : SwitchoverDetail()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ SwitchoverDetail& SwitchoverDetail::operator =(const XmlNode& xmlNode)
     {
       m_sourceMember = Aws::Utils::Xml::DecodeEscapedXmlText(sourceMemberNode.GetText());
       m_sourceMemberHasBeenSet = true;
+       m_sourceMemberHasBeenSet = true;
     }
     XmlNode targetMemberNode = resultNode.FirstChild("TargetMember");
     if(!targetMemberNode.IsNull())
     {
       m_targetMember = Aws::Utils::Xml::DecodeEscapedXmlText(targetMemberNode.GetText());
       m_targetMemberHasBeenSet = true;
+       m_targetMemberHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

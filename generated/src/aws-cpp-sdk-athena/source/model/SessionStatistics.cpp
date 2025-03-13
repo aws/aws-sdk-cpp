@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-SessionStatistics::SessionStatistics() : 
-    m_dpuExecutionInMillis(0),
-    m_dpuExecutionInMillisHasBeenSet(false)
-{
-}
-
 SessionStatistics::SessionStatistics(JsonView jsonValue)
-  : SessionStatistics()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SessionStatistics& SessionStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DpuExecutionInMillis"))
   {
     m_dpuExecutionInMillis = jsonValue.GetInt64("DpuExecutionInMillis");
-
     m_dpuExecutionInMillisHasBeenSet = true;
   }
-
   return *this;
 }
 

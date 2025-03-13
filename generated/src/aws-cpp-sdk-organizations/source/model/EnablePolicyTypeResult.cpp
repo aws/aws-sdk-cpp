@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnablePolicyTypeResult::EnablePolicyTypeResult()
-{
-}
-
 EnablePolicyTypeResult::EnablePolicyTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ EnablePolicyTypeResult& EnablePolicyTypeResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("Root"))
   {
     m_root = jsonValue.GetObject("Root");
-
+    m_rootHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

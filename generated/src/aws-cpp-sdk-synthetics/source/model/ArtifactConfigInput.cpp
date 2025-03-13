@@ -18,13 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-ArtifactConfigInput::ArtifactConfigInput() : 
-    m_s3EncryptionHasBeenSet(false)
-{
-}
-
 ArtifactConfigInput::ArtifactConfigInput(JsonView jsonValue)
-  : ArtifactConfigInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ArtifactConfigInput& ArtifactConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Encryption"))
   {
     m_s3Encryption = jsonValue.GetObject("S3Encryption");
-
     m_s3EncryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

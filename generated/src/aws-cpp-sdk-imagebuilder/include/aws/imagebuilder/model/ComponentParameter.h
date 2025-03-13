@@ -33,7 +33,7 @@ namespace Model
   class ComponentParameter
   {
   public:
-    AWS_IMAGEBUILDER_API ComponentParameter();
+    AWS_IMAGEBUILDER_API ComponentParameter() = default;
     AWS_IMAGEBUILDER_API ComponentParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ComponentParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The name of the component parameter to set.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ComponentParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ComponentParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ComponentParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ComponentParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sets the value for the named component parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValue() const{ return m_value; }
+    inline const Aws::Vector<Aws::String>& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Vector<Aws::String>& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Vector<Aws::String>&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ComponentParameter& WithValue(const Aws::Vector<Aws::String>& value) { SetValue(value); return *this;}
-    inline ComponentParameter& WithValue(Aws::Vector<Aws::String>&& value) { SetValue(std::move(value)); return *this;}
-    inline ComponentParameter& AddValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
-    inline ComponentParameter& AddValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value.push_back(std::move(value)); return *this; }
-    inline ComponentParameter& AddValue(const char* value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Vector<Aws::String>>
+    ComponentParameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
+    template<typename ValueT = Aws::String>
+    ComponentParameter& AddValue(ValueT&& value) { m_valueHasBeenSet = true; m_value.emplace_back(std::forward<ValueT>(value)); return *this; }
     ///@}
   private:
 

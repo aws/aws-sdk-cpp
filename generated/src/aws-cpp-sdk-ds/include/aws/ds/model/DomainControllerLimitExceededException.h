@@ -33,7 +33,7 @@ namespace Model
   class DomainControllerLimitExceededException
   {
   public:
-    AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException();
+    AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException() = default;
     AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DomainControllerLimitExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DomainControllerLimitExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DomainControllerLimitExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DomainControllerLimitExceededException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline DomainControllerLimitExceededException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DomainControllerLimitExceededException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DomainControllerLimitExceededException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DomainControllerLimitExceededException& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class SendManagedThingCommandRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API SendManagedThingCommandRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API SendManagedThingCommandRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,26 @@ namespace Model
     /**
      * <p>The id of the device.</p>
      */
-    inline const Aws::String& GetManagedThingId() const{ return m_managedThingId; }
+    inline const Aws::String& GetManagedThingId() const { return m_managedThingId; }
     inline bool ManagedThingIdHasBeenSet() const { return m_managedThingIdHasBeenSet; }
-    inline void SetManagedThingId(const Aws::String& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = value; }
-    inline void SetManagedThingId(Aws::String&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::move(value); }
-    inline void SetManagedThingId(const char* value) { m_managedThingIdHasBeenSet = true; m_managedThingId.assign(value); }
-    inline SendManagedThingCommandRequest& WithManagedThingId(const Aws::String& value) { SetManagedThingId(value); return *this;}
-    inline SendManagedThingCommandRequest& WithManagedThingId(Aws::String&& value) { SetManagedThingId(std::move(value)); return *this;}
-    inline SendManagedThingCommandRequest& WithManagedThingId(const char* value) { SetManagedThingId(value); return *this;}
+    template<typename ManagedThingIdT = Aws::String>
+    void SetManagedThingId(ManagedThingIdT&& value) { m_managedThingIdHasBeenSet = true; m_managedThingId = std::forward<ManagedThingIdT>(value); }
+    template<typename ManagedThingIdT = Aws::String>
+    SendManagedThingCommandRequest& WithManagedThingId(ManagedThingIdT&& value) { SetManagedThingId(std::forward<ManagedThingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device endpoint.</p>
      */
-    inline const Aws::Vector<CommandEndpoint>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<CommandEndpoint>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<CommandEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<CommandEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline SendManagedThingCommandRequest& WithEndpoints(const Aws::Vector<CommandEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline SendManagedThingCommandRequest& WithEndpoints(Aws::Vector<CommandEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline SendManagedThingCommandRequest& AddEndpoints(const CommandEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline SendManagedThingCommandRequest& AddEndpoints(CommandEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<CommandEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<CommandEndpoint>>
+    SendManagedThingCommandRequest& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = CommandEndpoint>
+    SendManagedThingCommandRequest& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <p>The ID tracking the current discovery process for one connector
      * association.</p>
      */
-    inline const Aws::String& GetConnectorAssociationId() const{ return m_connectorAssociationId; }
+    inline const Aws::String& GetConnectorAssociationId() const { return m_connectorAssociationId; }
     inline bool ConnectorAssociationIdHasBeenSet() const { return m_connectorAssociationIdHasBeenSet; }
-    inline void SetConnectorAssociationId(const Aws::String& value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId = value; }
-    inline void SetConnectorAssociationId(Aws::String&& value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId = std::move(value); }
-    inline void SetConnectorAssociationId(const char* value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId.assign(value); }
-    inline SendManagedThingCommandRequest& WithConnectorAssociationId(const Aws::String& value) { SetConnectorAssociationId(value); return *this;}
-    inline SendManagedThingCommandRequest& WithConnectorAssociationId(Aws::String&& value) { SetConnectorAssociationId(std::move(value)); return *this;}
-    inline SendManagedThingCommandRequest& WithConnectorAssociationId(const char* value) { SetConnectorAssociationId(value); return *this;}
+    template<typename ConnectorAssociationIdT = Aws::String>
+    void SetConnectorAssociationId(ConnectorAssociationIdT&& value) { m_connectorAssociationIdHasBeenSet = true; m_connectorAssociationId = std::forward<ConnectorAssociationIdT>(value); }
+    template<typename ConnectorAssociationIdT = Aws::String>
+    SendManagedThingCommandRequest& WithConnectorAssociationId(ConnectorAssociationIdT&& value) { SetConnectorAssociationId(std::forward<ConnectorAssociationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -64,7 +64,7 @@ namespace Model
   class ValidateStateMachineDefinitionDiagnostic
   {
   public:
-    AWS_SFN_API ValidateStateMachineDefinitionDiagnostic();
+    AWS_SFN_API ValidateStateMachineDefinitionDiagnostic() = default;
     AWS_SFN_API ValidateStateMachineDefinitionDiagnostic(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API ValidateStateMachineDefinitionDiagnostic& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,40 +77,34 @@ namespace Model
      * alert you to potential issues, but they will not prevent you from creating or
      * updating your state machine.</p>
      */
-    inline const ValidateStateMachineDefinitionSeverity& GetSeverity() const{ return m_severity; }
+    inline ValidateStateMachineDefinitionSeverity GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const ValidateStateMachineDefinitionSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(ValidateStateMachineDefinitionSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline ValidateStateMachineDefinitionDiagnostic& WithSeverity(const ValidateStateMachineDefinitionSeverity& value) { SetSeverity(value); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithSeverity(ValidateStateMachineDefinitionSeverity&& value) { SetSeverity(std::move(value)); return *this;}
+    inline void SetSeverity(ValidateStateMachineDefinitionSeverity value) { m_severityHasBeenSet = true; m_severity = value; }
+    inline ValidateStateMachineDefinitionDiagnostic& WithSeverity(ValidateStateMachineDefinitionSeverity value) { SetSeverity(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifying code for the diagnostic.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ValidateStateMachineDefinitionDiagnostic& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ValidateStateMachineDefinitionDiagnostic& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Message describing the diagnostic condition.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidateStateMachineDefinitionDiagnostic& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidateStateMachineDefinitionDiagnostic& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,18 +114,16 @@ namespace Model
      * <code>/States/&lt;StateName&gt;/&lt;FieldName&gt;</code>, for example:
      * <code>/States/FailState/ErrorPath</code>.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ValidateStateMachineDefinitionDiagnostic& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ValidateStateMachineDefinitionDiagnostic& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ValidateStateMachineDefinitionDiagnostic& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
-    ValidateStateMachineDefinitionSeverity m_severity;
+    ValidateStateMachineDefinitionSeverity m_severity{ValidateStateMachineDefinitionSeverity::NOT_SET};
     bool m_severityHasBeenSet = false;
 
     Aws::String m_code;

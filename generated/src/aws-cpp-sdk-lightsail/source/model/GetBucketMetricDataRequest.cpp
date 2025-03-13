@@ -12,20 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBucketMetricDataRequest::GetBucketMetricDataRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_metricName(BucketMetricName::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_unit(MetricUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 Aws::String GetBucketMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

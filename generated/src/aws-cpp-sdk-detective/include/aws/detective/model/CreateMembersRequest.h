@@ -23,7 +23,7 @@ namespace Model
   class CreateMembersRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API CreateMembersRequest();
+    AWS_DETECTIVE_API CreateMembersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline CreateMembersRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline CreateMembersRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline CreateMembersRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    CreateMembersRequest& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>Customized message text to include in the invitation email message to the
      * invited member accounts.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline CreateMembersRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CreateMembersRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CreateMembersRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CreateMembersRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * accounts receive email notifications.</p> <p>Organization accounts in the
      * organization behavior graph do not receive email notifications.</p>
      */
-    inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
+    inline bool GetDisableEmailNotification() const { return m_disableEmailNotification; }
     inline bool DisableEmailNotificationHasBeenSet() const { return m_disableEmailNotificationHasBeenSet; }
     inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
     inline CreateMembersRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}
@@ -84,14 +80,14 @@ namespace Model
      * root user email address. For organization accounts in the organization behavior
      * graph, the email address is not required.</p>
      */
-    inline const Aws::Vector<Account>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<Account>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<Account>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<Account>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline CreateMembersRequest& WithAccounts(const Aws::Vector<Account>& value) { SetAccounts(value); return *this;}
-    inline CreateMembersRequest& WithAccounts(Aws::Vector<Account>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline CreateMembersRequest& AddAccounts(const Account& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline CreateMembersRequest& AddAccounts(Account&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
+    template<typename AccountsT = Aws::Vector<Account>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<Account>>
+    CreateMembersRequest& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = Account>
+    CreateMembersRequest& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
   private:
 
@@ -101,7 +97,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    bool m_disableEmailNotification;
+    bool m_disableEmailNotification{false};
     bool m_disableEmailNotificationHasBeenSet = false;
 
     Aws::Vector<Account> m_accounts;

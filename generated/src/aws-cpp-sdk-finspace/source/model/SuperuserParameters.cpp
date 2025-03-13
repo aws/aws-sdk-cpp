@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-SuperuserParameters::SuperuserParameters() : 
-    m_emailAddressHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
-{
-}
-
 SuperuserParameters::SuperuserParameters(JsonView jsonValue)
-  : SuperuserParameters()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SuperuserParameters& SuperuserParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("emailAddress"))
   {
     m_emailAddress = jsonValue.GetString("emailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstName"))
   {
     m_firstName = jsonValue.GetString("firstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastName"))
   {
     m_lastName = jsonValue.GetString("lastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   return *this;
 }
 

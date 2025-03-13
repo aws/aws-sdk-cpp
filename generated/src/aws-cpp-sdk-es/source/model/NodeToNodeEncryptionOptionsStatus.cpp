@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-NodeToNodeEncryptionOptionsStatus::NodeToNodeEncryptionOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 NodeToNodeEncryptionOptionsStatus::NodeToNodeEncryptionOptionsStatus(JsonView jsonValue)
-  : NodeToNodeEncryptionOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NodeToNodeEncryptionOptionsStatus& NodeToNodeEncryptionOptionsStatus::operator =
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

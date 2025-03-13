@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailInvocationMetrics::GuardrailInvocationMetrics() : 
-    m_guardrailProcessingLatency(0),
-    m_guardrailProcessingLatencyHasBeenSet(false),
-    m_usageHasBeenSet(false),
-    m_guardrailCoverageHasBeenSet(false)
-{
-}
-
 GuardrailInvocationMetrics::GuardrailInvocationMetrics(JsonView jsonValue)
-  : GuardrailInvocationMetrics()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GuardrailInvocationMetrics& GuardrailInvocationMetrics::operator =(JsonView json
   if(jsonValue.ValueExists("guardrailProcessingLatency"))
   {
     m_guardrailProcessingLatency = jsonValue.GetInt64("guardrailProcessingLatency");
-
     m_guardrailProcessingLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usage"))
   {
     m_usage = jsonValue.GetObject("usage");
-
     m_usageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailCoverage"))
   {
     m_guardrailCoverage = jsonValue.GetObject("guardrailCoverage");
-
     m_guardrailCoverageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AssetPropertyValue::AssetPropertyValue() : 
-    m_valueHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_quality(Quality::NOT_SET),
-    m_qualityHasBeenSet(false)
-{
-}
-
 AssetPropertyValue::AssetPropertyValue(JsonView jsonValue)
-  : AssetPropertyValue()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AssetPropertyValue& AssetPropertyValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetObject("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quality"))
   {
     m_quality = QualityMapper::GetQualityForName(jsonValue.GetString("quality"));
-
     m_qualityHasBeenSet = true;
   }
-
   return *this;
 }
 

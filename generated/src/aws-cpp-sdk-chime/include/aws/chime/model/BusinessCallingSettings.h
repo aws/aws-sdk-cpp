@@ -33,7 +33,7 @@ namespace Model
   class BusinessCallingSettings
   {
   public:
-    AWS_CHIME_API BusinessCallingSettings();
+    AWS_CHIME_API BusinessCallingSettings() = default;
     AWS_CHIME_API BusinessCallingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API BusinessCallingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket designated for call detail record storage.</p>
      */
-    inline const Aws::String& GetCdrBucket() const{ return m_cdrBucket; }
+    inline const Aws::String& GetCdrBucket() const { return m_cdrBucket; }
     inline bool CdrBucketHasBeenSet() const { return m_cdrBucketHasBeenSet; }
-    inline void SetCdrBucket(const Aws::String& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = value; }
-    inline void SetCdrBucket(Aws::String&& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = std::move(value); }
-    inline void SetCdrBucket(const char* value) { m_cdrBucketHasBeenSet = true; m_cdrBucket.assign(value); }
-    inline BusinessCallingSettings& WithCdrBucket(const Aws::String& value) { SetCdrBucket(value); return *this;}
-    inline BusinessCallingSettings& WithCdrBucket(Aws::String&& value) { SetCdrBucket(std::move(value)); return *this;}
-    inline BusinessCallingSettings& WithCdrBucket(const char* value) { SetCdrBucket(value); return *this;}
+    template<typename CdrBucketT = Aws::String>
+    void SetCdrBucket(CdrBucketT&& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = std::forward<CdrBucketT>(value); }
+    template<typename CdrBucketT = Aws::String>
+    BusinessCallingSettings& WithCdrBucket(CdrBucketT&& value) { SetCdrBucket(std::forward<CdrBucketT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,24 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Option::Option() : 
-    m_optionNameHasBeenSet(false),
-    m_optionDescriptionHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_optionVersionHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false),
-    m_dBSecurityGroupMembershipsHasBeenSet(false),
-    m_vpcSecurityGroupMembershipsHasBeenSet(false)
-{
-}
-
 Option::Option(const XmlNode& xmlNode)
-  : Option()
 {
   *this = xmlNode;
 }
@@ -53,72 +36,81 @@ Option& Option::operator =(const XmlNode& xmlNode)
     {
       m_optionName = Aws::Utils::Xml::DecodeEscapedXmlText(optionNameNode.GetText());
       m_optionNameHasBeenSet = true;
+       m_optionNameHasBeenSet = true;
     }
     XmlNode optionDescriptionNode = resultNode.FirstChild("OptionDescription");
     if(!optionDescriptionNode.IsNull())
     {
       m_optionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(optionDescriptionNode.GetText());
       m_optionDescriptionHasBeenSet = true;
+       m_optionDescriptionHasBeenSet = true;
     }
     XmlNode persistentNode = resultNode.FirstChild("Persistent");
     if(!persistentNode.IsNull())
     {
       m_persistent = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(persistentNode.GetText()).c_str()).c_str());
       m_persistentHasBeenSet = true;
+       m_persistentHasBeenSet = true;
     }
     XmlNode permanentNode = resultNode.FirstChild("Permanent");
     if(!permanentNode.IsNull())
     {
       m_permanent = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permanentNode.GetText()).c_str()).c_str());
       m_permanentHasBeenSet = true;
+       m_permanentHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode optionVersionNode = resultNode.FirstChild("OptionVersion");
     if(!optionVersionNode.IsNull())
     {
       m_optionVersion = Aws::Utils::Xml::DecodeEscapedXmlText(optionVersionNode.GetText());
       m_optionVersionHasBeenSet = true;
+       m_optionVersionHasBeenSet = true;
     }
     XmlNode optionSettingsNode = resultNode.FirstChild("OptionSettings");
     if(!optionSettingsNode.IsNull())
     {
       XmlNode optionSettingsMember = optionSettingsNode.FirstChild("OptionSetting");
+      m_optionSettingsHasBeenSet = !optionSettingsMember.IsNull();
       while(!optionSettingsMember.IsNull())
       {
         m_optionSettings.push_back(optionSettingsMember);
         optionSettingsMember = optionSettingsMember.NextNode("OptionSetting");
       }
 
-      m_optionSettingsHasBeenSet = true;
+       m_optionSettingsHasBeenSet = true;
     }
     XmlNode dBSecurityGroupMembershipsNode = resultNode.FirstChild("DBSecurityGroupMemberships");
     if(!dBSecurityGroupMembershipsNode.IsNull())
     {
       XmlNode dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsNode.FirstChild("DBSecurityGroup");
+      m_dBSecurityGroupMembershipsHasBeenSet = !dBSecurityGroupMembershipsMember.IsNull();
       while(!dBSecurityGroupMembershipsMember.IsNull())
       {
         m_dBSecurityGroupMemberships.push_back(dBSecurityGroupMembershipsMember);
         dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsMember.NextNode("DBSecurityGroup");
       }
 
-      m_dBSecurityGroupMembershipsHasBeenSet = true;
+       m_dBSecurityGroupMembershipsHasBeenSet = true;
     }
     XmlNode vpcSecurityGroupMembershipsNode = resultNode.FirstChild("VpcSecurityGroupMemberships");
     if(!vpcSecurityGroupMembershipsNode.IsNull())
     {
       XmlNode vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsNode.FirstChild("VpcSecurityGroupMembership");
+      m_vpcSecurityGroupMembershipsHasBeenSet = !vpcSecurityGroupMembershipsMember.IsNull();
       while(!vpcSecurityGroupMembershipsMember.IsNull())
       {
         m_vpcSecurityGroupMemberships.push_back(vpcSecurityGroupMembershipsMember);
         vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsMember.NextNode("VpcSecurityGroupMembership");
       }
 
-      m_vpcSecurityGroupMembershipsHasBeenSet = true;
+       m_vpcSecurityGroupMembershipsHasBeenSet = true;
     }
   }
 

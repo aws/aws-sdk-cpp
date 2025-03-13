@@ -18,16 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-TrustedTokenIssuerMetadata::TrustedTokenIssuerMetadata() : 
-    m_nameHasBeenSet(false),
-    m_trustedTokenIssuerArnHasBeenSet(false),
-    m_trustedTokenIssuerType(TrustedTokenIssuerType::NOT_SET),
-    m_trustedTokenIssuerTypeHasBeenSet(false)
-{
-}
-
 TrustedTokenIssuerMetadata::TrustedTokenIssuerMetadata(JsonView jsonValue)
-  : TrustedTokenIssuerMetadata()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TrustedTokenIssuerMetadata& TrustedTokenIssuerMetadata::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
   {
     m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
-
     m_trustedTokenIssuerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedTokenIssuerType"))
   {
     m_trustedTokenIssuerType = TrustedTokenIssuerTypeMapper::GetTrustedTokenIssuerTypeForName(jsonValue.GetString("TrustedTokenIssuerType"));
-
     m_trustedTokenIssuerTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

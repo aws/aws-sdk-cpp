@@ -40,7 +40,7 @@ namespace Model
   class AssessmentRiskRecommendation
   {
   public:
-    AWS_RESILIENCEHUB_API AssessmentRiskRecommendation();
+    AWS_RESILIENCEHUB_API AssessmentRiskRecommendation() = default;
     AWS_RESILIENCEHUB_API AssessmentRiskRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API AssessmentRiskRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,15 +53,14 @@ namespace Model
      * recommendation.</p>  <p>This property is available only in the US East (N.
      * Virginia) Region.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetAppComponents() const{ return m_appComponents; }
+    inline const Aws::Vector<Aws::String>& GetAppComponents() const { return m_appComponents; }
     inline bool AppComponentsHasBeenSet() const { return m_appComponentsHasBeenSet; }
-    inline void SetAppComponents(const Aws::Vector<Aws::String>& value) { m_appComponentsHasBeenSet = true; m_appComponents = value; }
-    inline void SetAppComponents(Aws::Vector<Aws::String>&& value) { m_appComponentsHasBeenSet = true; m_appComponents = std::move(value); }
-    inline AssessmentRiskRecommendation& WithAppComponents(const Aws::Vector<Aws::String>& value) { SetAppComponents(value); return *this;}
-    inline AssessmentRiskRecommendation& WithAppComponents(Aws::Vector<Aws::String>&& value) { SetAppComponents(std::move(value)); return *this;}
-    inline AssessmentRiskRecommendation& AddAppComponents(const Aws::String& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(value); return *this; }
-    inline AssessmentRiskRecommendation& AddAppComponents(Aws::String&& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(std::move(value)); return *this; }
-    inline AssessmentRiskRecommendation& AddAppComponents(const char* value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(value); return *this; }
+    template<typename AppComponentsT = Aws::Vector<Aws::String>>
+    void SetAppComponents(AppComponentsT&& value) { m_appComponentsHasBeenSet = true; m_appComponents = std::forward<AppComponentsT>(value); }
+    template<typename AppComponentsT = Aws::Vector<Aws::String>>
+    AssessmentRiskRecommendation& WithAppComponents(AppComponentsT&& value) { SetAppComponents(std::forward<AppComponentsT>(value)); return *this;}
+    template<typename AppComponentsT = Aws::String>
+    AssessmentRiskRecommendation& AddAppComponents(AppComponentsT&& value) { m_appComponentsHasBeenSet = true; m_appComponents.emplace_back(std::forward<AppComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,14 +69,12 @@ namespace Model
      * identified risks in the application.</p>  <p>This property is available
      * only in the US East (N. Virginia) Region.</p> 
      */
-    inline const Aws::String& GetRecommendation() const{ return m_recommendation; }
+    inline const Aws::String& GetRecommendation() const { return m_recommendation; }
     inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
-    inline void SetRecommendation(const Aws::String& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
-    inline void SetRecommendation(Aws::String&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::move(value); }
-    inline void SetRecommendation(const char* value) { m_recommendationHasBeenSet = true; m_recommendation.assign(value); }
-    inline AssessmentRiskRecommendation& WithRecommendation(const Aws::String& value) { SetRecommendation(value); return *this;}
-    inline AssessmentRiskRecommendation& WithRecommendation(Aws::String&& value) { SetRecommendation(std::move(value)); return *this;}
-    inline AssessmentRiskRecommendation& WithRecommendation(const char* value) { SetRecommendation(value); return *this;}
+    template<typename RecommendationT = Aws::String>
+    void SetRecommendation(RecommendationT&& value) { m_recommendationHasBeenSet = true; m_recommendation = std::forward<RecommendationT>(value); }
+    template<typename RecommendationT = Aws::String>
+    AssessmentRiskRecommendation& WithRecommendation(RecommendationT&& value) { SetRecommendation(std::forward<RecommendationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +83,12 @@ namespace Model
      * as part of the Resilience Hub assessment.</p>  <p>This property is
      * available only in the US East (N. Virginia) Region.</p> 
      */
-    inline const Aws::String& GetRisk() const{ return m_risk; }
+    inline const Aws::String& GetRisk() const { return m_risk; }
     inline bool RiskHasBeenSet() const { return m_riskHasBeenSet; }
-    inline void SetRisk(const Aws::String& value) { m_riskHasBeenSet = true; m_risk = value; }
-    inline void SetRisk(Aws::String&& value) { m_riskHasBeenSet = true; m_risk = std::move(value); }
-    inline void SetRisk(const char* value) { m_riskHasBeenSet = true; m_risk.assign(value); }
-    inline AssessmentRiskRecommendation& WithRisk(const Aws::String& value) { SetRisk(value); return *this;}
-    inline AssessmentRiskRecommendation& WithRisk(Aws::String&& value) { SetRisk(std::move(value)); return *this;}
-    inline AssessmentRiskRecommendation& WithRisk(const char* value) { SetRisk(value); return *this;}
+    template<typename RiskT = Aws::String>
+    void SetRisk(RiskT&& value) { m_riskHasBeenSet = true; m_risk = std::forward<RiskT>(value); }
+    template<typename RiskT = Aws::String>
+    AssessmentRiskRecommendation& WithRisk(RiskT&& value) { SetRisk(std::forward<RiskT>(value)); return *this;}
     ///@}
   private:
 

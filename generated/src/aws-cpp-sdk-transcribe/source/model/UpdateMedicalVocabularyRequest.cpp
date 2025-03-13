@@ -12,14 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMedicalVocabularyRequest::UpdateMedicalVocabularyRequest() : 
-    m_vocabularyNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_vocabularyFileUriHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMedicalVocabularyRequest::SerializePayload() const
 {
   JsonValue payload;

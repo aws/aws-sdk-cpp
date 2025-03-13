@@ -29,7 +29,7 @@ namespace Model
   class Rec601Settings
   {
   public:
-    AWS_MEDIALIVE_API Rec601Settings();
+    AWS_MEDIALIVE_API Rec601Settings() = default;
     AWS_MEDIALIVE_API Rec601Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Rec601Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

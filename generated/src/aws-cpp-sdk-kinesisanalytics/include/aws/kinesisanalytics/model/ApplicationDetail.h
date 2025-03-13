@@ -45,7 +45,7 @@ namespace Model
   class ApplicationDetail
   {
   public:
-    AWS_KINESISANALYTICS_API ApplicationDetail();
+    AWS_KINESISANALYTICS_API ApplicationDetail() = default;
     AWS_KINESISANALYTICS_API ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,78 +55,70 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline ApplicationDetail& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline ApplicationDetail& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    ApplicationDetail& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the application.</p>
      */
-    inline const Aws::String& GetApplicationDescription() const{ return m_applicationDescription; }
+    inline const Aws::String& GetApplicationDescription() const { return m_applicationDescription; }
     inline bool ApplicationDescriptionHasBeenSet() const { return m_applicationDescriptionHasBeenSet; }
-    inline void SetApplicationDescription(const Aws::String& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = value; }
-    inline void SetApplicationDescription(Aws::String&& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = std::move(value); }
-    inline void SetApplicationDescription(const char* value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription.assign(value); }
-    inline ApplicationDetail& WithApplicationDescription(const Aws::String& value) { SetApplicationDescription(value); return *this;}
-    inline ApplicationDetail& WithApplicationDescription(Aws::String&& value) { SetApplicationDescription(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationDescription(const char* value) { SetApplicationDescription(value); return *this;}
+    template<typename ApplicationDescriptionT = Aws::String>
+    void SetApplicationDescription(ApplicationDescriptionT&& value) { m_applicationDescriptionHasBeenSet = true; m_applicationDescription = std::forward<ApplicationDescriptionT>(value); }
+    template<typename ApplicationDescriptionT = Aws::String>
+    ApplicationDetail& WithApplicationDescription(ApplicationDescriptionT&& value) { SetApplicationDescription(std::forward<ApplicationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ARN of the application.</p>
      */
-    inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
+    inline const Aws::String& GetApplicationARN() const { return m_applicationARN; }
     inline bool ApplicationARNHasBeenSet() const { return m_applicationARNHasBeenSet; }
-    inline void SetApplicationARN(const Aws::String& value) { m_applicationARNHasBeenSet = true; m_applicationARN = value; }
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::move(value); }
-    inline void SetApplicationARN(const char* value) { m_applicationARNHasBeenSet = true; m_applicationARN.assign(value); }
-    inline ApplicationDetail& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-    inline ApplicationDetail& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    template<typename ApplicationARNT = Aws::String>
+    void SetApplicationARN(ApplicationARNT&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::forward<ApplicationARNT>(value); }
+    template<typename ApplicationARNT = Aws::String>
+    ApplicationDetail& WithApplicationARN(ApplicationARNT&& value) { SetApplicationARN(std::forward<ApplicationARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the application.</p>
      */
-    inline const ApplicationStatus& GetApplicationStatus() const{ return m_applicationStatus; }
+    inline ApplicationStatus GetApplicationStatus() const { return m_applicationStatus; }
     inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
-    inline void SetApplicationStatus(const ApplicationStatus& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
-    inline void SetApplicationStatus(ApplicationStatus&& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = std::move(value); }
-    inline ApplicationDetail& WithApplicationStatus(const ApplicationStatus& value) { SetApplicationStatus(value); return *this;}
-    inline ApplicationDetail& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
+    inline void SetApplicationStatus(ApplicationStatus value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
+    inline ApplicationDetail& WithApplicationStatus(ApplicationStatus value) { SetApplicationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time stamp when the application version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreateTimestamp() const { return m_createTimestamp; }
     inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
-    inline void SetCreateTimestamp(const Aws::Utils::DateTime& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = value; }
-    inline void SetCreateTimestamp(Aws::Utils::DateTime&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::move(value); }
-    inline ApplicationDetail& WithCreateTimestamp(const Aws::Utils::DateTime& value) { SetCreateTimestamp(value); return *this;}
-    inline ApplicationDetail& WithCreateTimestamp(Aws::Utils::DateTime&& value) { SetCreateTimestamp(std::move(value)); return *this;}
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    void SetCreateTimestamp(CreateTimestampT&& value) { m_createTimestampHasBeenSet = true; m_createTimestamp = std::forward<CreateTimestampT>(value); }
+    template<typename CreateTimestampT = Aws::Utils::DateTime>
+    ApplicationDetail& WithCreateTimestamp(CreateTimestampT&& value) { SetCreateTimestamp(std::forward<CreateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time stamp when the application was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const { return m_lastUpdateTimestamp; }
     inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
-    inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
-    inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::move(value); }
-    inline ApplicationDetail& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
-    inline ApplicationDetail& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdateTimestamp(LastUpdateTimestampT&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::forward<LastUpdateTimestampT>(value); }
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    ApplicationDetail& WithLastUpdateTimestamp(LastUpdateTimestampT&& value) { SetLastUpdateTimestamp(std::forward<LastUpdateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +127,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
-    inline const Aws::Vector<InputDescription>& GetInputDescriptions() const{ return m_inputDescriptions; }
+    inline const Aws::Vector<InputDescription>& GetInputDescriptions() const { return m_inputDescriptions; }
     inline bool InputDescriptionsHasBeenSet() const { return m_inputDescriptionsHasBeenSet; }
-    inline void SetInputDescriptions(const Aws::Vector<InputDescription>& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = value; }
-    inline void SetInputDescriptions(Aws::Vector<InputDescription>&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = std::move(value); }
-    inline ApplicationDetail& WithInputDescriptions(const Aws::Vector<InputDescription>& value) { SetInputDescriptions(value); return *this;}
-    inline ApplicationDetail& WithInputDescriptions(Aws::Vector<InputDescription>&& value) { SetInputDescriptions(std::move(value)); return *this;}
-    inline ApplicationDetail& AddInputDescriptions(const InputDescription& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(value); return *this; }
-    inline ApplicationDetail& AddInputDescriptions(InputDescription&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.push_back(std::move(value)); return *this; }
+    template<typename InputDescriptionsT = Aws::Vector<InputDescription>>
+    void SetInputDescriptions(InputDescriptionsT&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions = std::forward<InputDescriptionsT>(value); }
+    template<typename InputDescriptionsT = Aws::Vector<InputDescription>>
+    ApplicationDetail& WithInputDescriptions(InputDescriptionsT&& value) { SetInputDescriptions(std::forward<InputDescriptionsT>(value)); return *this;}
+    template<typename InputDescriptionsT = InputDescription>
+    ApplicationDetail& AddInputDescriptions(InputDescriptionsT&& value) { m_inputDescriptionsHasBeenSet = true; m_inputDescriptions.emplace_back(std::forward<InputDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -151,14 +143,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring
      * Application Output</a>. </p>
      */
-    inline const Aws::Vector<OutputDescription>& GetOutputDescriptions() const{ return m_outputDescriptions; }
+    inline const Aws::Vector<OutputDescription>& GetOutputDescriptions() const { return m_outputDescriptions; }
     inline bool OutputDescriptionsHasBeenSet() const { return m_outputDescriptionsHasBeenSet; }
-    inline void SetOutputDescriptions(const Aws::Vector<OutputDescription>& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = value; }
-    inline void SetOutputDescriptions(Aws::Vector<OutputDescription>&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = std::move(value); }
-    inline ApplicationDetail& WithOutputDescriptions(const Aws::Vector<OutputDescription>& value) { SetOutputDescriptions(value); return *this;}
-    inline ApplicationDetail& WithOutputDescriptions(Aws::Vector<OutputDescription>&& value) { SetOutputDescriptions(std::move(value)); return *this;}
-    inline ApplicationDetail& AddOutputDescriptions(const OutputDescription& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(value); return *this; }
-    inline ApplicationDetail& AddOutputDescriptions(OutputDescription&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.push_back(std::move(value)); return *this; }
+    template<typename OutputDescriptionsT = Aws::Vector<OutputDescription>>
+    void SetOutputDescriptions(OutputDescriptionsT&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions = std::forward<OutputDescriptionsT>(value); }
+    template<typename OutputDescriptionsT = Aws::Vector<OutputDescription>>
+    ApplicationDetail& WithOutputDescriptions(OutputDescriptionsT&& value) { SetOutputDescriptions(std::forward<OutputDescriptionsT>(value)); return *this;}
+    template<typename OutputDescriptionsT = OutputDescription>
+    ApplicationDetail& AddOutputDescriptions(OutputDescriptionsT&& value) { m_outputDescriptionsHasBeenSet = true; m_outputDescriptions.emplace_back(std::forward<OutputDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -168,14 +160,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring
      * Application Input</a>. </p>
      */
-    inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const{ return m_referenceDataSourceDescriptions; }
+    inline const Aws::Vector<ReferenceDataSourceDescription>& GetReferenceDataSourceDescriptions() const { return m_referenceDataSourceDescriptions; }
     inline bool ReferenceDataSourceDescriptionsHasBeenSet() const { return m_referenceDataSourceDescriptionsHasBeenSet; }
-    inline void SetReferenceDataSourceDescriptions(const Aws::Vector<ReferenceDataSourceDescription>& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = value; }
-    inline void SetReferenceDataSourceDescriptions(Aws::Vector<ReferenceDataSourceDescription>&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = std::move(value); }
-    inline ApplicationDetail& WithReferenceDataSourceDescriptions(const Aws::Vector<ReferenceDataSourceDescription>& value) { SetReferenceDataSourceDescriptions(value); return *this;}
-    inline ApplicationDetail& WithReferenceDataSourceDescriptions(Aws::Vector<ReferenceDataSourceDescription>&& value) { SetReferenceDataSourceDescriptions(std::move(value)); return *this;}
-    inline ApplicationDetail& AddReferenceDataSourceDescriptions(const ReferenceDataSourceDescription& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(value); return *this; }
-    inline ApplicationDetail& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescription&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.push_back(std::move(value)); return *this; }
+    template<typename ReferenceDataSourceDescriptionsT = Aws::Vector<ReferenceDataSourceDescription>>
+    void SetReferenceDataSourceDescriptions(ReferenceDataSourceDescriptionsT&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions = std::forward<ReferenceDataSourceDescriptionsT>(value); }
+    template<typename ReferenceDataSourceDescriptionsT = Aws::Vector<ReferenceDataSourceDescription>>
+    ApplicationDetail& WithReferenceDataSourceDescriptions(ReferenceDataSourceDescriptionsT&& value) { SetReferenceDataSourceDescriptions(std::forward<ReferenceDataSourceDescriptionsT>(value)); return *this;}
+    template<typename ReferenceDataSourceDescriptionsT = ReferenceDataSourceDescription>
+    ApplicationDetail& AddReferenceDataSourceDescriptions(ReferenceDataSourceDescriptionsT&& value) { m_referenceDataSourceDescriptionsHasBeenSet = true; m_referenceDataSourceDescriptions.emplace_back(std::forward<ReferenceDataSourceDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,14 +178,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
      * with Amazon CloudWatch Logs</a>. </p>
      */
-    inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
+    inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const { return m_cloudWatchLoggingOptionDescriptions; }
     inline bool CloudWatchLoggingOptionDescriptionsHasBeenSet() const { return m_cloudWatchLoggingOptionDescriptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = value; }
-    inline void SetCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = std::move(value); }
-    inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { SetCloudWatchLoggingOptionDescriptions(value); return *this;}
-    inline ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { SetCloudWatchLoggingOptionDescriptions(std::move(value)); return *this;}
-    inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(const CloudWatchLoggingOptionDescription& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(value); return *this; }
-    inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
+    template<typename CloudWatchLoggingOptionDescriptionsT = Aws::Vector<CloudWatchLoggingOptionDescription>>
+    void SetCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescriptionsT&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions = std::forward<CloudWatchLoggingOptionDescriptionsT>(value); }
+    template<typename CloudWatchLoggingOptionDescriptionsT = Aws::Vector<CloudWatchLoggingOptionDescription>>
+    ApplicationDetail& WithCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescriptionsT&& value) { SetCloudWatchLoggingOptionDescriptions(std::forward<CloudWatchLoggingOptionDescriptionsT>(value)); return *this;}
+    template<typename CloudWatchLoggingOptionDescriptionsT = CloudWatchLoggingOptionDescription>
+    ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescriptionsT&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.emplace_back(std::forward<CloudWatchLoggingOptionDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -201,21 +193,19 @@ namespace Model
      * <p>Returns the application code that you provided to perform data analysis on
      * any of the in-application streams in your application.</p>
      */
-    inline const Aws::String& GetApplicationCode() const{ return m_applicationCode; }
+    inline const Aws::String& GetApplicationCode() const { return m_applicationCode; }
     inline bool ApplicationCodeHasBeenSet() const { return m_applicationCodeHasBeenSet; }
-    inline void SetApplicationCode(const Aws::String& value) { m_applicationCodeHasBeenSet = true; m_applicationCode = value; }
-    inline void SetApplicationCode(Aws::String&& value) { m_applicationCodeHasBeenSet = true; m_applicationCode = std::move(value); }
-    inline void SetApplicationCode(const char* value) { m_applicationCodeHasBeenSet = true; m_applicationCode.assign(value); }
-    inline ApplicationDetail& WithApplicationCode(const Aws::String& value) { SetApplicationCode(value); return *this;}
-    inline ApplicationDetail& WithApplicationCode(Aws::String&& value) { SetApplicationCode(std::move(value)); return *this;}
-    inline ApplicationDetail& WithApplicationCode(const char* value) { SetApplicationCode(value); return *this;}
+    template<typename ApplicationCodeT = Aws::String>
+    void SetApplicationCode(ApplicationCodeT&& value) { m_applicationCodeHasBeenSet = true; m_applicationCode = std::forward<ApplicationCodeT>(value); }
+    template<typename ApplicationCodeT = Aws::String>
+    ApplicationDetail& WithApplicationCode(ApplicationCodeT&& value) { SetApplicationCode(std::forward<ApplicationCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the current application version.</p>
      */
-    inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
+    inline long long GetApplicationVersionId() const { return m_applicationVersionId; }
     inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
     inline ApplicationDetail& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
@@ -231,13 +221,13 @@ namespace Model
     Aws::String m_applicationARN;
     bool m_applicationARNHasBeenSet = false;
 
-    ApplicationStatus m_applicationStatus;
+    ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
     bool m_applicationStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTimestamp;
+    Aws::Utils::DateTime m_createTimestamp{};
     bool m_createTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTimestamp;
+    Aws::Utils::DateTime m_lastUpdateTimestamp{};
     bool m_lastUpdateTimestampHasBeenSet = false;
 
     Aws::Vector<InputDescription> m_inputDescriptions;
@@ -255,7 +245,7 @@ namespace Model
     Aws::String m_applicationCode;
     bool m_applicationCodeHasBeenSet = false;
 
-    long long m_applicationVersionId;
+    long long m_applicationVersionId{0};
     bool m_applicationVersionIdHasBeenSet = false;
   };
 

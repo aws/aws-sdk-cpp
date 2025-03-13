@@ -21,7 +21,7 @@ namespace Model
   class ReplaceRouteTableAssociationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ReplaceRouteTableAssociationRequest();
+    AWS_EC2_API ReplaceRouteTableAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ReplaceRouteTableAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,32 +53,28 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline ReplaceRouteTableAssociationRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline ReplaceRouteTableAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline ReplaceRouteTableAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    ReplaceRouteTableAssociationRequest& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the new route table to associate with the subnet.</p>
      */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+    inline const Aws::String& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-    inline ReplaceRouteTableAssociationRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-    inline ReplaceRouteTableAssociationRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-    inline ReplaceRouteTableAssociationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+    template<typename RouteTableIdT = Aws::String>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = Aws::String>
+    ReplaceRouteTableAssociationRequest& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_associationId;

@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-SecurityProfileTargetMapping::SecurityProfileTargetMapping() : 
-    m_securityProfileIdentifierHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 SecurityProfileTargetMapping::SecurityProfileTargetMapping(JsonView jsonValue)
-  : SecurityProfileTargetMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SecurityProfileTargetMapping& SecurityProfileTargetMapping::operator =(JsonView 
   if(jsonValue.ValueExists("securityProfileIdentifier"))
   {
     m_securityProfileIdentifier = jsonValue.GetObject("securityProfileIdentifier");
-
     m_securityProfileIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

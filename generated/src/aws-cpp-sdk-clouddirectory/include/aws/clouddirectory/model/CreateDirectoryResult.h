@@ -27,7 +27,7 @@ namespace Model
   class CreateDirectoryResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API CreateDirectoryResult();
+    AWS_CLOUDDIRECTORY_API CreateDirectoryResult() = default;
     AWS_CLOUDDIRECTORY_API CreateDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API CreateDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,33 @@ namespace Model
      * <p>The ARN that is associated with the <a>Directory</a>. For more information,
      * see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArn.assign(value); }
-    inline CreateDirectoryResult& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline CreateDirectoryResult& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline CreateDirectoryResult& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    CreateDirectoryResult& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <a>Directory</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateDirectoryResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateDirectoryResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateDirectoryResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateDirectoryResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The root object node of the created directory.</p>
      */
-    inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
-    inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifier = value; }
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifier = std::move(value); }
-    inline void SetObjectIdentifier(const char* value) { m_objectIdentifier.assign(value); }
-    inline CreateDirectoryResult& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
-    inline CreateDirectoryResult& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
-    inline CreateDirectoryResult& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
+    inline const Aws::String& GetObjectIdentifier() const { return m_objectIdentifier; }
+    template<typename ObjectIdentifierT = Aws::String>
+    void SetObjectIdentifier(ObjectIdentifierT&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::forward<ObjectIdentifierT>(value); }
+    template<typename ObjectIdentifierT = Aws::String>
+    CreateDirectoryResult& WithObjectIdentifier(ObjectIdentifierT&& value) { SetObjectIdentifier(std::forward<ObjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,36 +72,37 @@ namespace Model
      * schema is copied into the directory, it has its own ARN, which is referred to
      * applied schema ARN. For more information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetAppliedSchemaArn() const{ return m_appliedSchemaArn; }
-    inline void SetAppliedSchemaArn(const Aws::String& value) { m_appliedSchemaArn = value; }
-    inline void SetAppliedSchemaArn(Aws::String&& value) { m_appliedSchemaArn = std::move(value); }
-    inline void SetAppliedSchemaArn(const char* value) { m_appliedSchemaArn.assign(value); }
-    inline CreateDirectoryResult& WithAppliedSchemaArn(const Aws::String& value) { SetAppliedSchemaArn(value); return *this;}
-    inline CreateDirectoryResult& WithAppliedSchemaArn(Aws::String&& value) { SetAppliedSchemaArn(std::move(value)); return *this;}
-    inline CreateDirectoryResult& WithAppliedSchemaArn(const char* value) { SetAppliedSchemaArn(value); return *this;}
+    inline const Aws::String& GetAppliedSchemaArn() const { return m_appliedSchemaArn; }
+    template<typename AppliedSchemaArnT = Aws::String>
+    void SetAppliedSchemaArn(AppliedSchemaArnT&& value) { m_appliedSchemaArnHasBeenSet = true; m_appliedSchemaArn = std::forward<AppliedSchemaArnT>(value); }
+    template<typename AppliedSchemaArnT = Aws::String>
+    CreateDirectoryResult& WithAppliedSchemaArn(AppliedSchemaArnT&& value) { SetAppliedSchemaArn(std::forward<AppliedSchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDirectoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryArn;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_objectIdentifier;
+    bool m_objectIdentifierHasBeenSet = false;
 
     Aws::String m_appliedSchemaArn;
+    bool m_appliedSchemaArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class EBSStorageInfo
   {
   public:
-    AWS_KAFKA_API EBSStorageInfo();
+    AWS_KAFKA_API EBSStorageInfo() = default;
     AWS_KAFKA_API EBSStorageInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API EBSStorageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
             <p>EBS volume provisioned throughput information.</p>
          
      */
-    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline EBSStorageInfo& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-    inline EBSStorageInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    EBSStorageInfo& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +61,7 @@ namespace Model
      * broker node.</p>
          
      */
-    inline int GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const { return m_volumeSize; }
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline EBSStorageInfo& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet = false;
 
-    int m_volumeSize;
+    int m_volumeSize{0};
     bool m_volumeSizeHasBeenSet = false;
   };
 

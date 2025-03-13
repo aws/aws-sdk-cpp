@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyUserGroupRequest::ModifyUserGroupRequest() : 
-    m_userGroupIdHasBeenSet(false),
-    m_userIdsToAddHasBeenSet(false),
-    m_userIdsToRemoveHasBeenSet(false),
-    m_engineHasBeenSet(false)
-{
-}
-
 Aws::String ModifyUserGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

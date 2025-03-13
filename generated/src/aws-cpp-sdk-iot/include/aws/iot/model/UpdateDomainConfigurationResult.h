@@ -27,7 +27,7 @@ namespace Model
   class UpdateDomainConfigurationResult
   {
   public:
-    AWS_IOT_API UpdateDomainConfigurationResult();
+    AWS_IOT_API UpdateDomainConfigurationResult() = default;
     AWS_IOT_API UpdateDomainConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API UpdateDomainConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The name of the domain configuration that was updated.</p>
      */
-    inline const Aws::String& GetDomainConfigurationName() const{ return m_domainConfigurationName; }
-    inline void SetDomainConfigurationName(const Aws::String& value) { m_domainConfigurationName = value; }
-    inline void SetDomainConfigurationName(Aws::String&& value) { m_domainConfigurationName = std::move(value); }
-    inline void SetDomainConfigurationName(const char* value) { m_domainConfigurationName.assign(value); }
-    inline UpdateDomainConfigurationResult& WithDomainConfigurationName(const Aws::String& value) { SetDomainConfigurationName(value); return *this;}
-    inline UpdateDomainConfigurationResult& WithDomainConfigurationName(Aws::String&& value) { SetDomainConfigurationName(std::move(value)); return *this;}
-    inline UpdateDomainConfigurationResult& WithDomainConfigurationName(const char* value) { SetDomainConfigurationName(value); return *this;}
+    inline const Aws::String& GetDomainConfigurationName() const { return m_domainConfigurationName; }
+    template<typename DomainConfigurationNameT = Aws::String>
+    void SetDomainConfigurationName(DomainConfigurationNameT&& value) { m_domainConfigurationNameHasBeenSet = true; m_domainConfigurationName = std::forward<DomainConfigurationNameT>(value); }
+    template<typename DomainConfigurationNameT = Aws::String>
+    UpdateDomainConfigurationResult& WithDomainConfigurationName(DomainConfigurationNameT&& value) { SetDomainConfigurationName(std::forward<DomainConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the domain configuration that was updated.</p>
      */
-    inline const Aws::String& GetDomainConfigurationArn() const{ return m_domainConfigurationArn; }
-    inline void SetDomainConfigurationArn(const Aws::String& value) { m_domainConfigurationArn = value; }
-    inline void SetDomainConfigurationArn(Aws::String&& value) { m_domainConfigurationArn = std::move(value); }
-    inline void SetDomainConfigurationArn(const char* value) { m_domainConfigurationArn.assign(value); }
-    inline UpdateDomainConfigurationResult& WithDomainConfigurationArn(const Aws::String& value) { SetDomainConfigurationArn(value); return *this;}
-    inline UpdateDomainConfigurationResult& WithDomainConfigurationArn(Aws::String&& value) { SetDomainConfigurationArn(std::move(value)); return *this;}
-    inline UpdateDomainConfigurationResult& WithDomainConfigurationArn(const char* value) { SetDomainConfigurationArn(value); return *this;}
+    inline const Aws::String& GetDomainConfigurationArn() const { return m_domainConfigurationArn; }
+    template<typename DomainConfigurationArnT = Aws::String>
+    void SetDomainConfigurationArn(DomainConfigurationArnT&& value) { m_domainConfigurationArnHasBeenSet = true; m_domainConfigurationArn = std::forward<DomainConfigurationArnT>(value); }
+    template<typename DomainConfigurationArnT = Aws::String>
+    UpdateDomainConfigurationResult& WithDomainConfigurationArn(DomainConfigurationArnT&& value) { SetDomainConfigurationArn(std::forward<DomainConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDomainConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDomainConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDomainConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDomainConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainConfigurationName;
+    bool m_domainConfigurationNameHasBeenSet = false;
 
     Aws::String m_domainConfigurationArn;
+    bool m_domainConfigurationArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

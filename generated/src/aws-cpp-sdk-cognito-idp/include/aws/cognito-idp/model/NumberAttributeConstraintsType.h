@@ -32,7 +32,7 @@ namespace Model
   class NumberAttributeConstraintsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API NumberAttributeConstraintsType();
+    AWS_COGNITOIDENTITYPROVIDER_API NumberAttributeConstraintsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API NumberAttributeConstraintsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API NumberAttributeConstraintsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The minimum value of an attribute that is of the number data type.</p>
      */
-    inline const Aws::String& GetMinValue() const{ return m_minValue; }
+    inline const Aws::String& GetMinValue() const { return m_minValue; }
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
-    inline void SetMinValue(const Aws::String& value) { m_minValueHasBeenSet = true; m_minValue = value; }
-    inline void SetMinValue(Aws::String&& value) { m_minValueHasBeenSet = true; m_minValue = std::move(value); }
-    inline void SetMinValue(const char* value) { m_minValueHasBeenSet = true; m_minValue.assign(value); }
-    inline NumberAttributeConstraintsType& WithMinValue(const Aws::String& value) { SetMinValue(value); return *this;}
-    inline NumberAttributeConstraintsType& WithMinValue(Aws::String&& value) { SetMinValue(std::move(value)); return *this;}
-    inline NumberAttributeConstraintsType& WithMinValue(const char* value) { SetMinValue(value); return *this;}
+    template<typename MinValueT = Aws::String>
+    void SetMinValue(MinValueT&& value) { m_minValueHasBeenSet = true; m_minValue = std::forward<MinValueT>(value); }
+    template<typename MinValueT = Aws::String>
+    NumberAttributeConstraintsType& WithMinValue(MinValueT&& value) { SetMinValue(std::forward<MinValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * equal to <code>2^1023</code>, represented as a string with a length of 131072
      * characters or fewer.</p>
      */
-    inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
+    inline const Aws::String& GetMaxValue() const { return m_maxValue; }
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
-    inline void SetMaxValue(const Aws::String& value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
-    inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::move(value); }
-    inline void SetMaxValue(const char* value) { m_maxValueHasBeenSet = true; m_maxValue.assign(value); }
-    inline NumberAttributeConstraintsType& WithMaxValue(const Aws::String& value) { SetMaxValue(value); return *this;}
-    inline NumberAttributeConstraintsType& WithMaxValue(Aws::String&& value) { SetMaxValue(std::move(value)); return *this;}
-    inline NumberAttributeConstraintsType& WithMaxValue(const char* value) { SetMaxValue(value); return *this;}
+    template<typename MaxValueT = Aws::String>
+    void SetMaxValue(MaxValueT&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::forward<MaxValueT>(value); }
+    template<typename MaxValueT = Aws::String>
+    NumberAttributeConstraintsType& WithMaxValue(MaxValueT&& value) { SetMaxValue(std::forward<MaxValueT>(value)); return *this;}
     ///@}
   private:
 

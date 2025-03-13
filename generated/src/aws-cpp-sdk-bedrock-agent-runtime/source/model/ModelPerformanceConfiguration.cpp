@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ModelPerformanceConfiguration::ModelPerformanceConfiguration() : 
-    m_performanceConfigHasBeenSet(false)
-{
-}
-
 ModelPerformanceConfiguration::ModelPerformanceConfiguration(JsonView jsonValue)
-  : ModelPerformanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelPerformanceConfiguration& ModelPerformanceConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
     m_performanceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

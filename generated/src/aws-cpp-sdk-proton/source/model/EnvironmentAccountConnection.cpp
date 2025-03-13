@@ -18,24 +18,7 @@ namespace Proton
 namespace Model
 {
 
-EnvironmentAccountConnection::EnvironmentAccountConnection() : 
-    m_arnHasBeenSet(false),
-    m_codebuildRoleArnHasBeenSet(false),
-    m_componentRoleArnHasBeenSet(false),
-    m_environmentAccountIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_managementAccountIdHasBeenSet(false),
-    m_requestedAtHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_status(EnvironmentAccountConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EnvironmentAccountConnection::EnvironmentAccountConnection(JsonView jsonValue)
-  : EnvironmentAccountConnection()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ EnvironmentAccountConnection& EnvironmentAccountConnection::operator =(JsonView 
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codebuildRoleArn"))
   {
     m_codebuildRoleArn = jsonValue.GetString("codebuildRoleArn");
-
     m_codebuildRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentRoleArn"))
   {
     m_componentRoleArn = jsonValue.GetString("componentRoleArn");
-
     m_componentRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentAccountId"))
   {
     m_environmentAccountId = jsonValue.GetString("environmentAccountId");
-
     m_environmentAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managementAccountId"))
   {
     m_managementAccountId = jsonValue.GetString("managementAccountId");
-
     m_managementAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedAt"))
   {
     m_requestedAt = jsonValue.GetDouble("requestedAt");
-
     m_requestedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EnvironmentAccountConnectionStatusMapper::GetEnvironmentAccountConnectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

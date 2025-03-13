@@ -12,16 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResolverEndpointRequest::UpdateResolverEndpointRequest() : 
-    m_resolverEndpointIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false),
-    m_updateIpAddressesHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResolverEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

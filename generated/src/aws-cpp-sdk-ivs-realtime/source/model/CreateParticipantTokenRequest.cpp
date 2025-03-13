@@ -12,16 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateParticipantTokenRequest::CreateParticipantTokenRequest() : 
-    m_stageArnHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateParticipantTokenRequest::SerializePayload() const
 {
   JsonValue payload;

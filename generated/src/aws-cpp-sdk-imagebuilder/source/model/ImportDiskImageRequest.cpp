@@ -12,21 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportDiskImageRequest::ImportDiskImageRequest() : 
-    m_nameHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_infrastructureConfigurationArnHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String ImportDiskImageRequest::SerializePayload() const
 {
   JsonValue payload;

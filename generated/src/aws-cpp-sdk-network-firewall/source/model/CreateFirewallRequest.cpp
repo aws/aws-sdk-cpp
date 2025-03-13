@@ -12,24 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFirewallRequest::CreateFirewallRequest() : 
-    m_firewallNameHasBeenSet(false),
-    m_firewallPolicyArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false),
-    m_deleteProtection(false),
-    m_deleteProtectionHasBeenSet(false),
-    m_subnetChangeProtection(false),
-    m_subnetChangeProtectionHasBeenSet(false),
-    m_firewallPolicyChangeProtection(false),
-    m_firewallPolicyChangeProtectionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_enabledAnalysisTypesHasBeenSet(false)
-{
-}
-
 Aws::String CreateFirewallRequest::SerializePayload() const
 {
   JsonValue payload;

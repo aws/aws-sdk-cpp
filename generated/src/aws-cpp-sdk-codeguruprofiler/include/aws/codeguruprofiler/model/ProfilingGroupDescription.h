@@ -36,7 +36,7 @@ namespace Model
   class ProfilingGroupDescription
   {
   public:
-    AWS_CODEGURUPROFILER_API ProfilingGroupDescription();
+    AWS_CODEGURUPROFILER_API ProfilingGroupDescription() = default;
     AWS_CODEGURUPROFILER_API ProfilingGroupDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API ProfilingGroupDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,26 +49,24 @@ namespace Model
      * <code>AgentOrchestrationConfig</code> </a> object that indicates if the
      * profiling group is enabled for profiled or not. </p>
      */
-    inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const{ return m_agentOrchestrationConfig; }
+    inline const AgentOrchestrationConfig& GetAgentOrchestrationConfig() const { return m_agentOrchestrationConfig; }
     inline bool AgentOrchestrationConfigHasBeenSet() const { return m_agentOrchestrationConfigHasBeenSet; }
-    inline void SetAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = value; }
-    inline void SetAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::move(value); }
-    inline ProfilingGroupDescription& WithAgentOrchestrationConfig(const AgentOrchestrationConfig& value) { SetAgentOrchestrationConfig(value); return *this;}
-    inline ProfilingGroupDescription& WithAgentOrchestrationConfig(AgentOrchestrationConfig&& value) { SetAgentOrchestrationConfig(std::move(value)); return *this;}
+    template<typename AgentOrchestrationConfigT = AgentOrchestrationConfig>
+    void SetAgentOrchestrationConfig(AgentOrchestrationConfigT&& value) { m_agentOrchestrationConfigHasBeenSet = true; m_agentOrchestrationConfig = std::forward<AgentOrchestrationConfigT>(value); }
+    template<typename AgentOrchestrationConfigT = AgentOrchestrationConfig>
+    ProfilingGroupDescription& WithAgentOrchestrationConfig(AgentOrchestrationConfigT&& value) { SetAgentOrchestrationConfig(std::forward<AgentOrchestrationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) identifying the profiling group resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ProfilingGroupDescription& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ProfilingGroupDescription& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ProfilingGroupDescription& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ProfilingGroupDescription& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises
      * server, or a different platform. The default is <code>Default</code>. </p>
      */
-    inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+    inline ComputePlatform GetComputePlatform() const { return m_computePlatform; }
     inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
-    inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
-    inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
-    inline ProfilingGroupDescription& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
-    inline ProfilingGroupDescription& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
+    inline void SetComputePlatform(ComputePlatform value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
+    inline ProfilingGroupDescription& WithComputePlatform(ComputePlatform value) { SetComputePlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -93,26 +89,24 @@ namespace Model
      * format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
      * 1, 2020 1:15:02 PM UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ProfilingGroupDescription& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ProfilingGroupDescription& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ProfilingGroupDescription& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the profiling group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ProfilingGroupDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ProfilingGroupDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ProfilingGroupDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ProfilingGroupDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,31 +118,28 @@ namespace Model
      * the aggregation period and start time for the most recent aggregated profile.
      * </p>
      */
-    inline const ProfilingStatus& GetProfilingStatus() const{ return m_profilingStatus; }
+    inline const ProfilingStatus& GetProfilingStatus() const { return m_profilingStatus; }
     inline bool ProfilingStatusHasBeenSet() const { return m_profilingStatusHasBeenSet; }
-    inline void SetProfilingStatus(const ProfilingStatus& value) { m_profilingStatusHasBeenSet = true; m_profilingStatus = value; }
-    inline void SetProfilingStatus(ProfilingStatus&& value) { m_profilingStatusHasBeenSet = true; m_profilingStatus = std::move(value); }
-    inline ProfilingGroupDescription& WithProfilingStatus(const ProfilingStatus& value) { SetProfilingStatus(value); return *this;}
-    inline ProfilingGroupDescription& WithProfilingStatus(ProfilingStatus&& value) { SetProfilingStatus(std::move(value)); return *this;}
+    template<typename ProfilingStatusT = ProfilingStatus>
+    void SetProfilingStatus(ProfilingStatusT&& value) { m_profilingStatusHasBeenSet = true; m_profilingStatus = std::forward<ProfilingStatusT>(value); }
+    template<typename ProfilingStatusT = ProfilingStatus>
+    ProfilingGroupDescription& WithProfilingStatus(ProfilingStatusT&& value) { SetProfilingStatus(std::forward<ProfilingStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of the tags that belong to this profiling group. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ProfilingGroupDescription& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ProfilingGroupDescription& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ProfilingGroupDescription& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ProfilingGroupDescription& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ProfilingGroupDescription& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ProfilingGroupDescription& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProfilingGroupDescription& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ProfilingGroupDescription& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ProfilingGroupDescription& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ProfilingGroupDescription& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ProfilingGroupDescription& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -157,12 +148,12 @@ namespace Model
      * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
      * millisecond past June 1, 2020 1:15:02 PM UTC. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline ProfilingGroupDescription& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline ProfilingGroupDescription& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ProfilingGroupDescription& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -172,10 +163,10 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    ComputePlatform m_computePlatform;
+    ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
     bool m_computePlatformHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_name;
@@ -187,7 +178,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

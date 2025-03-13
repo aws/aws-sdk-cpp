@@ -18,14 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ReplicaConfigurationRequest::ReplicaConfigurationRequest() : 
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false)
-{
-}
-
 ReplicaConfigurationRequest::ReplicaConfigurationRequest(JsonView jsonValue)
-  : ReplicaConfigurationRequest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReplicaConfigurationRequest& ReplicaConfigurationRequest::operator =(JsonView js
   if(jsonValue.ValueExists("ReplicaCount"))
   {
     m_replicaCount = jsonValue.GetInteger("ReplicaCount");
-
     m_replicaCountHasBeenSet = true;
   }
-
   return *this;
 }
 

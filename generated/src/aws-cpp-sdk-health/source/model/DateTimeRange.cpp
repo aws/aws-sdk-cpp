@@ -18,14 +18,7 @@ namespace Health
 namespace Model
 {
 
-DateTimeRange::DateTimeRange() : 
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 DateTimeRange::DateTimeRange(JsonView jsonValue)
-  : DateTimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateTimeRange& DateTimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetDouble("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetDouble("to");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

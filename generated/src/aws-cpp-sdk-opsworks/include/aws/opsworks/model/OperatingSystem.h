@@ -34,7 +34,7 @@ namespace Model
   class OperatingSystem
   {
   public:
-    AWS_OPSWORKS_API OperatingSystem();
+    AWS_OPSWORKS_API OperatingSystem() = default;
     AWS_OPSWORKS_API OperatingSystem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API OperatingSystem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the operating system, such as <code>Amazon Linux 2</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline OperatingSystem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline OperatingSystem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline OperatingSystem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    OperatingSystem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The ID of a supported operating system, such as <code>Amazon Linux
      * 2</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline OperatingSystem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline OperatingSystem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline OperatingSystem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    OperatingSystem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The type of a supported operating system, either <code>Linux</code> or
      * <code>Windows</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline OperatingSystem& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline OperatingSystem& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline OperatingSystem& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    OperatingSystem& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,28 +83,26 @@ namespace Model
      * <p>Supported configuration manager name and versions for an OpsWorks Stacks
      * operating system.</p>
      */
-    inline const Aws::Vector<OperatingSystemConfigurationManager>& GetConfigurationManagers() const{ return m_configurationManagers; }
+    inline const Aws::Vector<OperatingSystemConfigurationManager>& GetConfigurationManagers() const { return m_configurationManagers; }
     inline bool ConfigurationManagersHasBeenSet() const { return m_configurationManagersHasBeenSet; }
-    inline void SetConfigurationManagers(const Aws::Vector<OperatingSystemConfigurationManager>& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers = value; }
-    inline void SetConfigurationManagers(Aws::Vector<OperatingSystemConfigurationManager>&& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers = std::move(value); }
-    inline OperatingSystem& WithConfigurationManagers(const Aws::Vector<OperatingSystemConfigurationManager>& value) { SetConfigurationManagers(value); return *this;}
-    inline OperatingSystem& WithConfigurationManagers(Aws::Vector<OperatingSystemConfigurationManager>&& value) { SetConfigurationManagers(std::move(value)); return *this;}
-    inline OperatingSystem& AddConfigurationManagers(const OperatingSystemConfigurationManager& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers.push_back(value); return *this; }
-    inline OperatingSystem& AddConfigurationManagers(OperatingSystemConfigurationManager&& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationManagersT = Aws::Vector<OperatingSystemConfigurationManager>>
+    void SetConfigurationManagers(ConfigurationManagersT&& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers = std::forward<ConfigurationManagersT>(value); }
+    template<typename ConfigurationManagersT = Aws::Vector<OperatingSystemConfigurationManager>>
+    OperatingSystem& WithConfigurationManagers(ConfigurationManagersT&& value) { SetConfigurationManagers(std::forward<ConfigurationManagersT>(value)); return *this;}
+    template<typename ConfigurationManagersT = OperatingSystemConfigurationManager>
+    OperatingSystem& AddConfigurationManagers(ConfigurationManagersT&& value) { m_configurationManagersHasBeenSet = true; m_configurationManagers.emplace_back(std::forward<ConfigurationManagersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A short name for the operating system manufacturer.</p>
      */
-    inline const Aws::String& GetReportedName() const{ return m_reportedName; }
+    inline const Aws::String& GetReportedName() const { return m_reportedName; }
     inline bool ReportedNameHasBeenSet() const { return m_reportedNameHasBeenSet; }
-    inline void SetReportedName(const Aws::String& value) { m_reportedNameHasBeenSet = true; m_reportedName = value; }
-    inline void SetReportedName(Aws::String&& value) { m_reportedNameHasBeenSet = true; m_reportedName = std::move(value); }
-    inline void SetReportedName(const char* value) { m_reportedNameHasBeenSet = true; m_reportedName.assign(value); }
-    inline OperatingSystem& WithReportedName(const Aws::String& value) { SetReportedName(value); return *this;}
-    inline OperatingSystem& WithReportedName(Aws::String&& value) { SetReportedName(std::move(value)); return *this;}
-    inline OperatingSystem& WithReportedName(const char* value) { SetReportedName(value); return *this;}
+    template<typename ReportedNameT = Aws::String>
+    void SetReportedName(ReportedNameT&& value) { m_reportedNameHasBeenSet = true; m_reportedName = std::forward<ReportedNameT>(value); }
+    template<typename ReportedNameT = Aws::String>
+    OperatingSystem& WithReportedName(ReportedNameT&& value) { SetReportedName(std::forward<ReportedNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,21 +110,19 @@ namespace Model
      * <p>The version of the operating system, including the release and edition, if
      * applicable.</p>
      */
-    inline const Aws::String& GetReportedVersion() const{ return m_reportedVersion; }
+    inline const Aws::String& GetReportedVersion() const { return m_reportedVersion; }
     inline bool ReportedVersionHasBeenSet() const { return m_reportedVersionHasBeenSet; }
-    inline void SetReportedVersion(const Aws::String& value) { m_reportedVersionHasBeenSet = true; m_reportedVersion = value; }
-    inline void SetReportedVersion(Aws::String&& value) { m_reportedVersionHasBeenSet = true; m_reportedVersion = std::move(value); }
-    inline void SetReportedVersion(const char* value) { m_reportedVersionHasBeenSet = true; m_reportedVersion.assign(value); }
-    inline OperatingSystem& WithReportedVersion(const Aws::String& value) { SetReportedVersion(value); return *this;}
-    inline OperatingSystem& WithReportedVersion(Aws::String&& value) { SetReportedVersion(std::move(value)); return *this;}
-    inline OperatingSystem& WithReportedVersion(const char* value) { SetReportedVersion(value); return *this;}
+    template<typename ReportedVersionT = Aws::String>
+    void SetReportedVersion(ReportedVersionT&& value) { m_reportedVersionHasBeenSet = true; m_reportedVersion = std::forward<ReportedVersionT>(value); }
+    template<typename ReportedVersionT = Aws::String>
+    OperatingSystem& WithReportedVersion(ReportedVersionT&& value) { SetReportedVersion(std::forward<ReportedVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates that an operating system is not supported for new instances.</p>
      */
-    inline bool GetSupported() const{ return m_supported; }
+    inline bool GetSupported() const { return m_supported; }
     inline bool SupportedHasBeenSet() const { return m_supportedHasBeenSet; }
     inline void SetSupported(bool value) { m_supportedHasBeenSet = true; m_supported = value; }
     inline OperatingSystem& WithSupported(bool value) { SetSupported(value); return *this;}
@@ -157,7 +147,7 @@ namespace Model
     Aws::String m_reportedVersion;
     bool m_reportedVersionHasBeenSet = false;
 
-    bool m_supported;
+    bool m_supported{false};
     bool m_supportedHasBeenSet = false;
   };
 

@@ -24,7 +24,7 @@ namespace Model
   class CreateExplainabilityExportRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API CreateExplainabilityExportRequest();
+    AWS_FORECASTSERVICE_API CreateExplainabilityExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,38 +41,34 @@ namespace Model
     /**
      * <p>A unique name for the Explainability export.</p>
      */
-    inline const Aws::String& GetExplainabilityExportName() const{ return m_explainabilityExportName; }
+    inline const Aws::String& GetExplainabilityExportName() const { return m_explainabilityExportName; }
     inline bool ExplainabilityExportNameHasBeenSet() const { return m_explainabilityExportNameHasBeenSet; }
-    inline void SetExplainabilityExportName(const Aws::String& value) { m_explainabilityExportNameHasBeenSet = true; m_explainabilityExportName = value; }
-    inline void SetExplainabilityExportName(Aws::String&& value) { m_explainabilityExportNameHasBeenSet = true; m_explainabilityExportName = std::move(value); }
-    inline void SetExplainabilityExportName(const char* value) { m_explainabilityExportNameHasBeenSet = true; m_explainabilityExportName.assign(value); }
-    inline CreateExplainabilityExportRequest& WithExplainabilityExportName(const Aws::String& value) { SetExplainabilityExportName(value); return *this;}
-    inline CreateExplainabilityExportRequest& WithExplainabilityExportName(Aws::String&& value) { SetExplainabilityExportName(std::move(value)); return *this;}
-    inline CreateExplainabilityExportRequest& WithExplainabilityExportName(const char* value) { SetExplainabilityExportName(value); return *this;}
+    template<typename ExplainabilityExportNameT = Aws::String>
+    void SetExplainabilityExportName(ExplainabilityExportNameT&& value) { m_explainabilityExportNameHasBeenSet = true; m_explainabilityExportName = std::forward<ExplainabilityExportNameT>(value); }
+    template<typename ExplainabilityExportNameT = Aws::String>
+    CreateExplainabilityExportRequest& WithExplainabilityExportName(ExplainabilityExportNameT&& value) { SetExplainabilityExportName(std::forward<ExplainabilityExportNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
      */
-    inline const Aws::String& GetExplainabilityArn() const{ return m_explainabilityArn; }
+    inline const Aws::String& GetExplainabilityArn() const { return m_explainabilityArn; }
     inline bool ExplainabilityArnHasBeenSet() const { return m_explainabilityArnHasBeenSet; }
-    inline void SetExplainabilityArn(const Aws::String& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = value; }
-    inline void SetExplainabilityArn(Aws::String&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::move(value); }
-    inline void SetExplainabilityArn(const char* value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn.assign(value); }
-    inline CreateExplainabilityExportRequest& WithExplainabilityArn(const Aws::String& value) { SetExplainabilityArn(value); return *this;}
-    inline CreateExplainabilityExportRequest& WithExplainabilityArn(Aws::String&& value) { SetExplainabilityArn(std::move(value)); return *this;}
-    inline CreateExplainabilityExportRequest& WithExplainabilityArn(const char* value) { SetExplainabilityArn(value); return *this;}
+    template<typename ExplainabilityArnT = Aws::String>
+    void SetExplainabilityArn(ExplainabilityArnT&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::forward<ExplainabilityArnT>(value); }
+    template<typename ExplainabilityArnT = Aws::String>
+    CreateExplainabilityExportRequest& WithExplainabilityArn(ExplainabilityArnT&& value) { SetExplainabilityArn(std::forward<ExplainabilityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataDestination& GetDestination() const{ return m_destination; }
+    inline const DataDestination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const DataDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(DataDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline CreateExplainabilityExportRequest& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
-    inline CreateExplainabilityExportRequest& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = DataDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = DataDestination>
+    CreateExplainabilityExportRequest& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,28 +91,26 @@ namespace Model
      * your tags per resource limit. You cannot edit or delete tag keys with this
      * prefix.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateExplainabilityExportRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateExplainabilityExportRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateExplainabilityExportRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateExplainabilityExportRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateExplainabilityExportRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateExplainabilityExportRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The format of the exported data, CSV or PARQUET.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline CreateExplainabilityExportRequest& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline CreateExplainabilityExportRequest& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline CreateExplainabilityExportRequest& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    CreateExplainabilityExportRequest& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
   private:
 

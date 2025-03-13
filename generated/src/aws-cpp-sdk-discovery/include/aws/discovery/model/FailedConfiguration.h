@@ -32,7 +32,7 @@ namespace Model
   class FailedConfiguration
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API FailedConfiguration();
+    AWS_APPLICATIONDISCOVERYSERVICE_API FailedConfiguration() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API FailedConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API FailedConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p> The unique identifier of the configuration the failed to delete. </p>
      */
-    inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
+    inline const Aws::String& GetConfigurationId() const { return m_configurationId; }
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
-    inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
-    inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
-    inline FailedConfiguration& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-    inline FailedConfiguration& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-    inline FailedConfiguration& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    template<typename ConfigurationIdT = Aws::String>
+    void SetConfigurationId(ConfigurationIdT&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::forward<ConfigurationIdT>(value); }
+    template<typename ConfigurationIdT = Aws::String>
+    FailedConfiguration& WithConfigurationId(ConfigurationIdT&& value) { SetConfigurationId(std::forward<ConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The integer error code associated with the error message. </p>
      */
-    inline int GetErrorStatusCode() const{ return m_errorStatusCode; }
+    inline int GetErrorStatusCode() const { return m_errorStatusCode; }
     inline bool ErrorStatusCodeHasBeenSet() const { return m_errorStatusCodeHasBeenSet; }
     inline void SetErrorStatusCode(int value) { m_errorStatusCodeHasBeenSet = true; m_errorStatusCode = value; }
     inline FailedConfiguration& WithErrorStatusCode(int value) { SetErrorStatusCode(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
      * <p> A descriptive message indicating why the associated configuration failed to
      * delete. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline FailedConfiguration& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline FailedConfiguration& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline FailedConfiguration& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    FailedConfiguration& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationId;
     bool m_configurationIdHasBeenSet = false;
 
-    int m_errorStatusCode;
+    int m_errorStatusCode{0};
     bool m_errorStatusCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

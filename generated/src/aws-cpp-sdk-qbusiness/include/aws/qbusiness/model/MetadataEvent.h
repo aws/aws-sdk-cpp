@@ -35,7 +35,7 @@ namespace Model
   class MetadataEvent
   {
   public:
-    AWS_QBUSINESS_API MetadataEvent();
+    AWS_QBUSINESS_API MetadataEvent() = default;
     AWS_QBUSINESS_API MetadataEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API MetadataEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The identifier of the conversation with which the generated metadata is
      * associated.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline MetadataEvent& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline MetadataEvent& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline MetadataEvent& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    MetadataEvent& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The identifier of an Amazon Q Business end user text input message within the
      * conversation.</p>
      */
-    inline const Aws::String& GetUserMessageId() const{ return m_userMessageId; }
+    inline const Aws::String& GetUserMessageId() const { return m_userMessageId; }
     inline bool UserMessageIdHasBeenSet() const { return m_userMessageIdHasBeenSet; }
-    inline void SetUserMessageId(const Aws::String& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = value; }
-    inline void SetUserMessageId(Aws::String&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::move(value); }
-    inline void SetUserMessageId(const char* value) { m_userMessageIdHasBeenSet = true; m_userMessageId.assign(value); }
-    inline MetadataEvent& WithUserMessageId(const Aws::String& value) { SetUserMessageId(value); return *this;}
-    inline MetadataEvent& WithUserMessageId(Aws::String&& value) { SetUserMessageId(std::move(value)); return *this;}
-    inline MetadataEvent& WithUserMessageId(const char* value) { SetUserMessageId(value); return *this;}
+    template<typename UserMessageIdT = Aws::String>
+    void SetUserMessageId(UserMessageIdT&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::forward<UserMessageIdT>(value); }
+    template<typename UserMessageIdT = Aws::String>
+    MetadataEvent& WithUserMessageId(UserMessageIdT&& value) { SetUserMessageId(std::forward<UserMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,42 +72,38 @@ namespace Model
      * <p>The identifier of an Amazon Q Business AI generated message within the
      * conversation.</p>
      */
-    inline const Aws::String& GetSystemMessageId() const{ return m_systemMessageId; }
+    inline const Aws::String& GetSystemMessageId() const { return m_systemMessageId; }
     inline bool SystemMessageIdHasBeenSet() const { return m_systemMessageIdHasBeenSet; }
-    inline void SetSystemMessageId(const Aws::String& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = value; }
-    inline void SetSystemMessageId(Aws::String&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::move(value); }
-    inline void SetSystemMessageId(const char* value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId.assign(value); }
-    inline MetadataEvent& WithSystemMessageId(const Aws::String& value) { SetSystemMessageId(value); return *this;}
-    inline MetadataEvent& WithSystemMessageId(Aws::String&& value) { SetSystemMessageId(std::move(value)); return *this;}
-    inline MetadataEvent& WithSystemMessageId(const char* value) { SetSystemMessageId(value); return *this;}
+    template<typename SystemMessageIdT = Aws::String>
+    void SetSystemMessageId(SystemMessageIdT&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::forward<SystemMessageIdT>(value); }
+    template<typename SystemMessageIdT = Aws::String>
+    MetadataEvent& WithSystemMessageId(SystemMessageIdT&& value) { SetSystemMessageId(std::forward<SystemMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source documents used to generate the conversation response.</p>
      */
-    inline const Aws::Vector<SourceAttribution>& GetSourceAttributions() const{ return m_sourceAttributions; }
+    inline const Aws::Vector<SourceAttribution>& GetSourceAttributions() const { return m_sourceAttributions; }
     inline bool SourceAttributionsHasBeenSet() const { return m_sourceAttributionsHasBeenSet; }
-    inline void SetSourceAttributions(const Aws::Vector<SourceAttribution>& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions = value; }
-    inline void SetSourceAttributions(Aws::Vector<SourceAttribution>&& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions = std::move(value); }
-    inline MetadataEvent& WithSourceAttributions(const Aws::Vector<SourceAttribution>& value) { SetSourceAttributions(value); return *this;}
-    inline MetadataEvent& WithSourceAttributions(Aws::Vector<SourceAttribution>&& value) { SetSourceAttributions(std::move(value)); return *this;}
-    inline MetadataEvent& AddSourceAttributions(const SourceAttribution& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions.push_back(value); return *this; }
-    inline MetadataEvent& AddSourceAttributions(SourceAttribution&& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions.push_back(std::move(value)); return *this; }
+    template<typename SourceAttributionsT = Aws::Vector<SourceAttribution>>
+    void SetSourceAttributions(SourceAttributionsT&& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions = std::forward<SourceAttributionsT>(value); }
+    template<typename SourceAttributionsT = Aws::Vector<SourceAttribution>>
+    MetadataEvent& WithSourceAttributions(SourceAttributionsT&& value) { SetSourceAttributions(std::forward<SourceAttributionsT>(value)); return *this;}
+    template<typename SourceAttributionsT = SourceAttribution>
+    MetadataEvent& AddSourceAttributions(SourceAttributionsT&& value) { m_sourceAttributionsHasBeenSet = true; m_sourceAttributions.emplace_back(std::forward<SourceAttributionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The final text output message generated by the system.</p>
      */
-    inline const Aws::String& GetFinalTextMessage() const{ return m_finalTextMessage; }
+    inline const Aws::String& GetFinalTextMessage() const { return m_finalTextMessage; }
     inline bool FinalTextMessageHasBeenSet() const { return m_finalTextMessageHasBeenSet; }
-    inline void SetFinalTextMessage(const Aws::String& value) { m_finalTextMessageHasBeenSet = true; m_finalTextMessage = value; }
-    inline void SetFinalTextMessage(Aws::String&& value) { m_finalTextMessageHasBeenSet = true; m_finalTextMessage = std::move(value); }
-    inline void SetFinalTextMessage(const char* value) { m_finalTextMessageHasBeenSet = true; m_finalTextMessage.assign(value); }
-    inline MetadataEvent& WithFinalTextMessage(const Aws::String& value) { SetFinalTextMessage(value); return *this;}
-    inline MetadataEvent& WithFinalTextMessage(Aws::String&& value) { SetFinalTextMessage(std::move(value)); return *this;}
-    inline MetadataEvent& WithFinalTextMessage(const char* value) { SetFinalTextMessage(value); return *this;}
+    template<typename FinalTextMessageT = Aws::String>
+    void SetFinalTextMessage(FinalTextMessageT&& value) { m_finalTextMessageHasBeenSet = true; m_finalTextMessage = std::forward<FinalTextMessageT>(value); }
+    template<typename FinalTextMessageT = Aws::String>
+    MetadataEvent& WithFinalTextMessage(FinalTextMessageT&& value) { SetFinalTextMessage(std::forward<FinalTextMessageT>(value)); return *this;}
     ///@}
   private:
 

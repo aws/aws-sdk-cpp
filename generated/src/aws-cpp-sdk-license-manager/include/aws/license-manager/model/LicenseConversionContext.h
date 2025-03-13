@@ -32,7 +32,7 @@ namespace Model
   class LicenseConversionContext
   {
   public:
-    AWS_LICENSEMANAGER_API LicenseConversionContext();
+    AWS_LICENSEMANAGER_API LicenseConversionContext() = default;
     AWS_LICENSEMANAGER_API LicenseConversionContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API LicenseConversionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample
      * data: usage operation by platform </a> </p>
      */
-    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+    inline const Aws::String& GetUsageOperation() const { return m_usageOperation; }
     inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
-    inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
-    inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
-    inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
-    inline LicenseConversionContext& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
-    inline LicenseConversionContext& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
-    inline LicenseConversionContext& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+    template<typename UsageOperationT = Aws::String>
+    void SetUsageOperation(UsageOperationT&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::forward<UsageOperationT>(value); }
+    template<typename UsageOperationT = Aws::String>
+    LicenseConversionContext& WithUsageOperation(UsageOperationT&& value) { SetUsageOperation(std::forward<UsageOperationT>(value)); return *this;}
     ///@}
   private:
 

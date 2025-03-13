@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteSignpost::RouteSignpost() : 
-    m_labelsHasBeenSet(false)
-{
-}
-
 RouteSignpost::RouteSignpost(JsonView jsonValue)
-  : RouteSignpost()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RouteSignpost& RouteSignpost::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   return *this;
 }
 

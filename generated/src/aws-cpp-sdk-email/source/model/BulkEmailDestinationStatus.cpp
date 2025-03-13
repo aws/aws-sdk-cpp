@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-BulkEmailDestinationStatus::BulkEmailDestinationStatus() : 
-    m_status(BulkEmailStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_messageIdHasBeenSet(false)
-{
-}
-
 BulkEmailDestinationStatus::BulkEmailDestinationStatus(const XmlNode& xmlNode)
-  : BulkEmailDestinationStatus()
 {
   *this = xmlNode;
 }
@@ -43,20 +34,23 @@ BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator =(const XmlNode
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("Error");
     if(!errorNode.IsNull())
     {
       m_error = Aws::Utils::Xml::DecodeEscapedXmlText(errorNode.GetText());
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
       m_messageIdHasBeenSet = true;
+       m_messageIdHasBeenSet = true;
     }
   }
 

@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2LaunchTemplateDataCreditSpecificationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCreditSpecificationDetails();
+    AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCreditSpecificationDetails() = default;
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCreditSpecificationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2LaunchTemplateDataCreditSpecificationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The credit option for CPU usage of a T instance. </p>
      */
-    inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
+    inline const Aws::String& GetCpuCredits() const { return m_cpuCredits; }
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
-    inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
-    inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
-    inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
-    inline AwsEc2LaunchTemplateDataCreditSpecificationDetails& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
-    inline AwsEc2LaunchTemplateDataCreditSpecificationDetails& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
-    inline AwsEc2LaunchTemplateDataCreditSpecificationDetails& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
+    template<typename CpuCreditsT = Aws::String>
+    void SetCpuCredits(CpuCreditsT&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::forward<CpuCreditsT>(value); }
+    template<typename CpuCreditsT = Aws::String>
+    AwsEc2LaunchTemplateDataCreditSpecificationDetails& WithCpuCredits(CpuCreditsT&& value) { SetCpuCredits(std::forward<CpuCreditsT>(value)); return *this;}
     ///@}
   private:
 

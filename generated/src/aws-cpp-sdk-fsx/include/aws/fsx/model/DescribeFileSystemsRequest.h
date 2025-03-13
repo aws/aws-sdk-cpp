@@ -26,7 +26,7 @@ namespace Model
   class DescribeFileSystemsRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API DescribeFileSystemsRequest();
+    AWS_FSX_API DescribeFileSystemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>IDs of the file systems whose descriptions you want to retrieve (String).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFileSystemIds() const{ return m_fileSystemIds; }
+    inline const Aws::Vector<Aws::String>& GetFileSystemIds() const { return m_fileSystemIds; }
     inline bool FileSystemIdsHasBeenSet() const { return m_fileSystemIdsHasBeenSet; }
-    inline void SetFileSystemIds(const Aws::Vector<Aws::String>& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds = value; }
-    inline void SetFileSystemIds(Aws::Vector<Aws::String>&& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds = std::move(value); }
-    inline DescribeFileSystemsRequest& WithFileSystemIds(const Aws::Vector<Aws::String>& value) { SetFileSystemIds(value); return *this;}
-    inline DescribeFileSystemsRequest& WithFileSystemIds(Aws::Vector<Aws::String>&& value) { SetFileSystemIds(std::move(value)); return *this;}
-    inline DescribeFileSystemsRequest& AddFileSystemIds(const Aws::String& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.push_back(value); return *this; }
-    inline DescribeFileSystemsRequest& AddFileSystemIds(Aws::String&& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.push_back(std::move(value)); return *this; }
-    inline DescribeFileSystemsRequest& AddFileSystemIds(const char* value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.push_back(value); return *this; }
+    template<typename FileSystemIdsT = Aws::Vector<Aws::String>>
+    void SetFileSystemIds(FileSystemIdsT&& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds = std::forward<FileSystemIdsT>(value); }
+    template<typename FileSystemIdsT = Aws::Vector<Aws::String>>
+    DescribeFileSystemsRequest& WithFileSystemIds(FileSystemIdsT&& value) { SetFileSystemIds(std::forward<FileSystemIdsT>(value)); return *this;}
+    template<typename FileSystemIdsT = Aws::String>
+    DescribeFileSystemsRequest& AddFileSystemIds(FileSystemIdsT&& value) { m_fileSystemIdsHasBeenSet = true; m_fileSystemIds.emplace_back(std::forward<FileSystemIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,7 +60,7 @@ namespace Model
      * returns is the minimum of the <code>MaxResults</code> parameter specified in the
      * request and the service's internal maximum number of items per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeFileSystemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -73,21 +72,19 @@ namespace Model
      * <code>DescribeFileSystems</code> operation (String). If a token present, the
      * operation continues the list from where the returning call left off.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeFileSystemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFileSystemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFileSystemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFileSystemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_fileSystemIds;
     bool m_fileSystemIdsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

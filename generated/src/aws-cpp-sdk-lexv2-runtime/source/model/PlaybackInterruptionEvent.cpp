@@ -18,16 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-PlaybackInterruptionEvent::PlaybackInterruptionEvent() : 
-    m_eventReason(PlaybackInterruptionReason::NOT_SET),
-    m_eventReasonHasBeenSet(false),
-    m_causedByEventIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
-{
-}
-
 PlaybackInterruptionEvent::PlaybackInterruptionEvent(JsonView jsonValue)
-  : PlaybackInterruptionEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PlaybackInterruptionEvent& PlaybackInterruptionEvent::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("eventReason"))
   {
     m_eventReason = PlaybackInterruptionReasonMapper::GetPlaybackInterruptionReasonForName(jsonValue.GetString("eventReason"));
-
     m_eventReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("causedByEventId"))
   {
     m_causedByEventId = jsonValue.GetString("causedByEventId");
-
     m_causedByEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

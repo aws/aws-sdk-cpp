@@ -21,7 +21,7 @@ namespace Model
   class RegisterAdminRequest : public RepostspaceRequest
   {
   public:
-    AWS_REPOSTSPACE_API RegisterAdminRequest();
+    AWS_REPOSTSPACE_API RegisterAdminRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the administrator.</p>
      */
-    inline const Aws::String& GetAdminId() const{ return m_adminId; }
+    inline const Aws::String& GetAdminId() const { return m_adminId; }
     inline bool AdminIdHasBeenSet() const { return m_adminIdHasBeenSet; }
-    inline void SetAdminId(const Aws::String& value) { m_adminIdHasBeenSet = true; m_adminId = value; }
-    inline void SetAdminId(Aws::String&& value) { m_adminIdHasBeenSet = true; m_adminId = std::move(value); }
-    inline void SetAdminId(const char* value) { m_adminIdHasBeenSet = true; m_adminId.assign(value); }
-    inline RegisterAdminRequest& WithAdminId(const Aws::String& value) { SetAdminId(value); return *this;}
-    inline RegisterAdminRequest& WithAdminId(Aws::String&& value) { SetAdminId(std::move(value)); return *this;}
-    inline RegisterAdminRequest& WithAdminId(const char* value) { SetAdminId(value); return *this;}
+    template<typename AdminIdT = Aws::String>
+    void SetAdminId(AdminIdT&& value) { m_adminIdHasBeenSet = true; m_adminId = std::forward<AdminIdT>(value); }
+    template<typename AdminIdT = Aws::String>
+    RegisterAdminRequest& WithAdminId(AdminIdT&& value) { SetAdminId(std::forward<AdminIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the private re:Post.</p>
      */
-    inline const Aws::String& GetSpaceId() const{ return m_spaceId; }
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
     inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    inline void SetSpaceId(const Aws::String& value) { m_spaceIdHasBeenSet = true; m_spaceId = value; }
-    inline void SetSpaceId(Aws::String&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::move(value); }
-    inline void SetSpaceId(const char* value) { m_spaceIdHasBeenSet = true; m_spaceId.assign(value); }
-    inline RegisterAdminRequest& WithSpaceId(const Aws::String& value) { SetSpaceId(value); return *this;}
-    inline RegisterAdminRequest& WithSpaceId(Aws::String&& value) { SetSpaceId(std::move(value)); return *this;}
-    inline RegisterAdminRequest& WithSpaceId(const char* value) { SetSpaceId(value); return *this;}
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    RegisterAdminRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
     ///@}
   private:
 

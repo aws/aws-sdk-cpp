@@ -10,12 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ListAllowedNodeTypeModificationsRequest::ListAllowedNodeTypeModificationsRequest() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_replicationGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

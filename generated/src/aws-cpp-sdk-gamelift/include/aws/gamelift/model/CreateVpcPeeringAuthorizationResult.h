@@ -28,7 +28,7 @@ namespace Model
   class CreateVpcPeeringAuthorizationResult
   {
   public:
-    AWS_GAMELIFT_API CreateVpcPeeringAuthorizationResult();
+    AWS_GAMELIFT_API CreateVpcPeeringAuthorizationResult() = default;
     AWS_GAMELIFT_API CreateVpcPeeringAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API CreateVpcPeeringAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details on the requested VPC peering authorization, including expiration.</p>
      */
-    inline const VpcPeeringAuthorization& GetVpcPeeringAuthorization() const{ return m_vpcPeeringAuthorization; }
-    inline void SetVpcPeeringAuthorization(const VpcPeeringAuthorization& value) { m_vpcPeeringAuthorization = value; }
-    inline void SetVpcPeeringAuthorization(VpcPeeringAuthorization&& value) { m_vpcPeeringAuthorization = std::move(value); }
-    inline CreateVpcPeeringAuthorizationResult& WithVpcPeeringAuthorization(const VpcPeeringAuthorization& value) { SetVpcPeeringAuthorization(value); return *this;}
-    inline CreateVpcPeeringAuthorizationResult& WithVpcPeeringAuthorization(VpcPeeringAuthorization&& value) { SetVpcPeeringAuthorization(std::move(value)); return *this;}
+    inline const VpcPeeringAuthorization& GetVpcPeeringAuthorization() const { return m_vpcPeeringAuthorization; }
+    template<typename VpcPeeringAuthorizationT = VpcPeeringAuthorization>
+    void SetVpcPeeringAuthorization(VpcPeeringAuthorizationT&& value) { m_vpcPeeringAuthorizationHasBeenSet = true; m_vpcPeeringAuthorization = std::forward<VpcPeeringAuthorizationT>(value); }
+    template<typename VpcPeeringAuthorizationT = VpcPeeringAuthorization>
+    CreateVpcPeeringAuthorizationResult& WithVpcPeeringAuthorization(VpcPeeringAuthorizationT&& value) { SetVpcPeeringAuthorization(std::forward<VpcPeeringAuthorizationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVpcPeeringAuthorizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVpcPeeringAuthorizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVpcPeeringAuthorizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVpcPeeringAuthorizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcPeeringAuthorization m_vpcPeeringAuthorization;
+    bool m_vpcPeeringAuthorizationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

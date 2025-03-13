@@ -18,14 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-ContentFeatures::ContentFeatures() : 
-    m_maxResolution(ContentResolution::NOT_SET),
-    m_maxResolutionHasBeenSet(false)
-{
-}
-
 ContentFeatures::ContentFeatures(JsonView jsonValue)
-  : ContentFeatures()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ContentFeatures& ContentFeatures::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxResolution"))
   {
     m_maxResolution = ContentResolutionMapper::GetContentResolutionForName(jsonValue.GetString("MaxResolution"));
-
     m_maxResolutionHasBeenSet = true;
   }
-
   return *this;
 }
 

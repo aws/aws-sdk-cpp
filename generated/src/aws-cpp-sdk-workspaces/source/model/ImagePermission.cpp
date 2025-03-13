@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ImagePermission::ImagePermission() : 
-    m_sharedAccountIdHasBeenSet(false)
-{
-}
-
 ImagePermission::ImagePermission(JsonView jsonValue)
-  : ImagePermission()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImagePermission& ImagePermission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SharedAccountId"))
   {
     m_sharedAccountId = jsonValue.GetString("SharedAccountId");
-
     m_sharedAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class AddWorkloadRequest : public ApplicationInsightsRequest
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API AddWorkloadRequest();
+    AWS_APPLICATIONINSIGHTS_API AddWorkloadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-    inline AddWorkloadRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline AddWorkloadRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline AddWorkloadRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    AddWorkloadRequest& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline AddWorkloadRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline AddWorkloadRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline AddWorkloadRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    AddWorkloadRequest& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,12 @@ namespace Model
      * <p>The configuration settings of the workload. The value is the escaped JSON of
      * the configuration.</p>
      */
-    inline const WorkloadConfiguration& GetWorkloadConfiguration() const{ return m_workloadConfiguration; }
+    inline const WorkloadConfiguration& GetWorkloadConfiguration() const { return m_workloadConfiguration; }
     inline bool WorkloadConfigurationHasBeenSet() const { return m_workloadConfigurationHasBeenSet; }
-    inline void SetWorkloadConfiguration(const WorkloadConfiguration& value) { m_workloadConfigurationHasBeenSet = true; m_workloadConfiguration = value; }
-    inline void SetWorkloadConfiguration(WorkloadConfiguration&& value) { m_workloadConfigurationHasBeenSet = true; m_workloadConfiguration = std::move(value); }
-    inline AddWorkloadRequest& WithWorkloadConfiguration(const WorkloadConfiguration& value) { SetWorkloadConfiguration(value); return *this;}
-    inline AddWorkloadRequest& WithWorkloadConfiguration(WorkloadConfiguration&& value) { SetWorkloadConfiguration(std::move(value)); return *this;}
+    template<typename WorkloadConfigurationT = WorkloadConfiguration>
+    void SetWorkloadConfiguration(WorkloadConfigurationT&& value) { m_workloadConfigurationHasBeenSet = true; m_workloadConfiguration = std::forward<WorkloadConfigurationT>(value); }
+    template<typename WorkloadConfigurationT = WorkloadConfiguration>
+    AddWorkloadRequest& WithWorkloadConfiguration(WorkloadConfigurationT&& value) { SetWorkloadConfiguration(std::forward<WorkloadConfigurationT>(value)); return *this;}
     ///@}
   private:
 

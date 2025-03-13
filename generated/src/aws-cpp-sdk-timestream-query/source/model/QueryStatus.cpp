@@ -18,18 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QueryStatus::QueryStatus() : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false),
-    m_cumulativeBytesScanned(0),
-    m_cumulativeBytesScannedHasBeenSet(false),
-    m_cumulativeBytesMetered(0),
-    m_cumulativeBytesMeteredHasBeenSet(false)
-{
-}
-
 QueryStatus::QueryStatus(JsonView jsonValue)
-  : QueryStatus()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ QueryStatus& QueryStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProgressPercentage"))
   {
     m_progressPercentage = jsonValue.GetDouble("ProgressPercentage");
-
     m_progressPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CumulativeBytesScanned"))
   {
     m_cumulativeBytesScanned = jsonValue.GetInt64("CumulativeBytesScanned");
-
     m_cumulativeBytesScannedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CumulativeBytesMetered"))
   {
     m_cumulativeBytesMetered = jsonValue.GetInt64("CumulativeBytesMetered");
-
     m_cumulativeBytesMeteredHasBeenSet = true;
   }
-
   return *this;
 }
 

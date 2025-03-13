@@ -44,7 +44,7 @@ namespace Model
   class DescribeChangeSetResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeChangeSetResult();
+    AWS_CLOUDFORMATION_API DescribeChangeSetResult() = default;
     AWS_CLOUDFORMATION_API DescribeChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribeChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -53,26 +53,22 @@ namespace Model
     /**
      * <p>The name of the change set.</p>
      */
-    inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
-    inline void SetChangeSetName(const Aws::String& value) { m_changeSetName = value; }
-    inline void SetChangeSetName(Aws::String&& value) { m_changeSetName = std::move(value); }
-    inline void SetChangeSetName(const char* value) { m_changeSetName.assign(value); }
-    inline DescribeChangeSetResult& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
-    inline DescribeChangeSetResult& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
+    inline const Aws::String& GetChangeSetName() const { return m_changeSetName; }
+    template<typename ChangeSetNameT = Aws::String>
+    void SetChangeSetName(ChangeSetNameT&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::forward<ChangeSetNameT>(value); }
+    template<typename ChangeSetNameT = Aws::String>
+    DescribeChangeSetResult& WithChangeSetName(ChangeSetNameT&& value) { SetChangeSetName(std::forward<ChangeSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the change set.</p>
      */
-    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
-    inline void SetChangeSetId(const Aws::String& value) { m_changeSetId = value; }
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
-    inline void SetChangeSetId(const char* value) { m_changeSetId.assign(value); }
-    inline DescribeChangeSetResult& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
-    inline DescribeChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+    inline const Aws::String& GetChangeSetId() const { return m_changeSetId; }
+    template<typename ChangeSetIdT = Aws::String>
+    void SetChangeSetId(ChangeSetIdT&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::forward<ChangeSetIdT>(value); }
+    template<typename ChangeSetIdT = Aws::String>
+    DescribeChangeSetResult& WithChangeSetId(ChangeSetIdT&& value) { SetChangeSetId(std::forward<ChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,39 +76,33 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the stack that's associated with the change
      * set.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
-    inline DescribeChangeSetResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DescribeChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
+    inline const Aws::String& GetStackId() const { return m_stackId; }
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DescribeChangeSetResult& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the stack that's associated with the change set.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
-    inline void SetStackName(const Aws::String& value) { m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackName.assign(value); }
-    inline DescribeChangeSetResult& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline DescribeChangeSetResult& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithStackName(const char* value) { SetStackName(value); return *this;}
+    inline const Aws::String& GetStackName() const { return m_stackName; }
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    DescribeChangeSetResult& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the change set.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeChangeSetResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeChangeSetResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeChangeSetResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,24 +113,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      * data type.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
-    inline DescribeChangeSetResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline DescribeChangeSetResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
-    inline DescribeChangeSetResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    DescribeChangeSetResult& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    DescribeChangeSetResult& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeChangeSetResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeChangeSetResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeChangeSetResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,11 +141,9 @@ namespace Model
      * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
      * the stack was already updated.</p>
      */
-    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
-    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatus = value; }
-    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatus = std::move(value); }
-    inline DescribeChangeSetResult& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
-    inline DescribeChangeSetResult& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
+    inline ExecutionStatus GetExecutionStatus() const { return m_executionStatus; }
+    inline void SetExecutionStatus(ExecutionStatus value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+    inline DescribeChangeSetResult& WithExecutionStatus(ExecutionStatus value) { SetExecutionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -163,11 +151,9 @@ namespace Model
      * <p>The current status of the change set, such as <code>CREATE_PENDING</code>,
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
      */
-    inline const ChangeSetStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ChangeSetStatus& value) { m_status = value; }
-    inline void SetStatus(ChangeSetStatus&& value) { m_status = std::move(value); }
-    inline DescribeChangeSetResult& WithStatus(const ChangeSetStatus& value) { SetStatus(value); return *this;}
-    inline DescribeChangeSetResult& WithStatus(ChangeSetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ChangeSetStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ChangeSetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeChangeSetResult& WithStatus(ChangeSetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -175,13 +161,11 @@ namespace Model
      * <p>A description of the change set's status. For example, if your attempt to
      * create a change set failed, CloudFormation shows the error message.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
-    inline DescribeChangeSetResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline DescribeChangeSetResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    DescribeChangeSetResult& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +173,13 @@ namespace Model
      * <p>The ARNs of the Amazon SNS topics that will be associated with the stack if
      * you execute the change set.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
-    inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNs = value; }
-    inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNs = std::move(value); }
-    inline DescribeChangeSetResult& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
-    inline DescribeChangeSetResult& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& AddNotificationARNs(const Aws::String& value) { m_notificationARNs.push_back(value); return *this; }
-    inline DescribeChangeSetResult& AddNotificationARNs(Aws::String&& value) { m_notificationARNs.push_back(std::move(value)); return *this; }
-    inline DescribeChangeSetResult& AddNotificationARNs(const char* value) { m_notificationARNs.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNotificationARNs() const { return m_notificationARNs; }
+    template<typename NotificationARNsT = Aws::Vector<Aws::String>>
+    void SetNotificationARNs(NotificationARNsT&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = std::forward<NotificationARNsT>(value); }
+    template<typename NotificationARNsT = Aws::Vector<Aws::String>>
+    DescribeChangeSetResult& WithNotificationARNs(NotificationARNsT&& value) { SetNotificationARNs(std::forward<NotificationARNsT>(value)); return *this;}
+    template<typename NotificationARNsT = Aws::String>
+    DescribeChangeSetResult& AddNotificationARNs(NotificationARNsT&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.emplace_back(std::forward<NotificationARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -204,11 +187,11 @@ namespace Model
      * <p>The rollback triggers for CloudFormation to monitor during stack creation and
      * updating operations, and for the specified monitoring period afterwards.</p>
      */
-    inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
-    inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfiguration = value; }
-    inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfiguration = std::move(value); }
-    inline DescribeChangeSetResult& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
-    inline DescribeChangeSetResult& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
+    inline const RollbackConfiguration& GetRollbackConfiguration() const { return m_rollbackConfiguration; }
+    template<typename RollbackConfigurationT = RollbackConfiguration>
+    void SetRollbackConfiguration(RollbackConfigurationT&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::forward<RollbackConfigurationT>(value); }
+    template<typename RollbackConfigurationT = RollbackConfiguration>
+    DescribeChangeSetResult& WithRollbackConfiguration(RollbackConfigurationT&& value) { SetRollbackConfiguration(std::forward<RollbackConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,13 +199,12 @@ namespace Model
      * <p>If you execute the change set, the list of capabilities that were explicitly
      * acknowledged when the change set was created.</p>
      */
-    inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
-    inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
-    inline DescribeChangeSetResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
-    inline DescribeChangeSetResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
-    inline DescribeChangeSetResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Capability>& GetCapabilities() const { return m_capabilities; }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    DescribeChangeSetResult& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    inline DescribeChangeSetResult& AddCapabilities(Capability value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -230,13 +212,13 @@ namespace Model
      * <p>If you execute the change set, the tags that will be associated with the
      * stack.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline DescribeChangeSetResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribeChangeSetResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline DescribeChangeSetResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribeChangeSetResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribeChangeSetResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -244,13 +226,13 @@ namespace Model
      * <p>A list of <code>Change</code> structures that describes the resources
      * CloudFormation changes if you execute the change set.</p>
      */
-    inline const Aws::Vector<Change>& GetChanges() const{ return m_changes; }
-    inline void SetChanges(const Aws::Vector<Change>& value) { m_changes = value; }
-    inline void SetChanges(Aws::Vector<Change>&& value) { m_changes = std::move(value); }
-    inline DescribeChangeSetResult& WithChanges(const Aws::Vector<Change>& value) { SetChanges(value); return *this;}
-    inline DescribeChangeSetResult& WithChanges(Aws::Vector<Change>&& value) { SetChanges(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& AddChanges(const Change& value) { m_changes.push_back(value); return *this; }
-    inline DescribeChangeSetResult& AddChanges(Change&& value) { m_changes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Change>& GetChanges() const { return m_changes; }
+    template<typename ChangesT = Aws::Vector<Change>>
+    void SetChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes = std::forward<ChangesT>(value); }
+    template<typename ChangesT = Aws::Vector<Change>>
+    DescribeChangeSetResult& WithChanges(ChangesT&& value) { SetChanges(std::forward<ChangesT>(value)); return *this;}
+    template<typename ChangesT = Change>
+    DescribeChangeSetResult& AddChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes.emplace_back(std::forward<ChangesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -258,21 +240,19 @@ namespace Model
      * <p>If the output exceeds 1 MB, a string that identifies the next page of
      * changes. If there is no additional page, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeChangeSetResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeChangeSetResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeChangeSetResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.</p>
      */
-    inline bool GetIncludeNestedStacks() const{ return m_includeNestedStacks; }
-    inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacks = value; }
+    inline bool GetIncludeNestedStacks() const { return m_includeNestedStacks; }
+    inline void SetIncludeNestedStacks(bool value) { m_includeNestedStacksHasBeenSet = true; m_includeNestedStacks = value; }
     inline DescribeChangeSetResult& WithIncludeNestedStacks(bool value) { SetIncludeNestedStacks(value); return *this;}
     ///@}
 
@@ -281,13 +261,11 @@ namespace Model
      * <p>Specifies the change set ID of the parent change set in the current nested
      * change set hierarchy.</p>
      */
-    inline const Aws::String& GetParentChangeSetId() const{ return m_parentChangeSetId; }
-    inline void SetParentChangeSetId(const Aws::String& value) { m_parentChangeSetId = value; }
-    inline void SetParentChangeSetId(Aws::String&& value) { m_parentChangeSetId = std::move(value); }
-    inline void SetParentChangeSetId(const char* value) { m_parentChangeSetId.assign(value); }
-    inline DescribeChangeSetResult& WithParentChangeSetId(const Aws::String& value) { SetParentChangeSetId(value); return *this;}
-    inline DescribeChangeSetResult& WithParentChangeSetId(Aws::String&& value) { SetParentChangeSetId(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithParentChangeSetId(const char* value) { SetParentChangeSetId(value); return *this;}
+    inline const Aws::String& GetParentChangeSetId() const { return m_parentChangeSetId; }
+    template<typename ParentChangeSetIdT = Aws::String>
+    void SetParentChangeSetId(ParentChangeSetIdT&& value) { m_parentChangeSetIdHasBeenSet = true; m_parentChangeSetId = std::forward<ParentChangeSetIdT>(value); }
+    template<typename ParentChangeSetIdT = Aws::String>
+    DescribeChangeSetResult& WithParentChangeSetId(ParentChangeSetIdT&& value) { SetParentChangeSetId(std::forward<ParentChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -295,13 +273,11 @@ namespace Model
      * <p>Specifies the change set ID of the root change set in the current nested
      * change set hierarchy.</p>
      */
-    inline const Aws::String& GetRootChangeSetId() const{ return m_rootChangeSetId; }
-    inline void SetRootChangeSetId(const Aws::String& value) { m_rootChangeSetId = value; }
-    inline void SetRootChangeSetId(Aws::String&& value) { m_rootChangeSetId = std::move(value); }
-    inline void SetRootChangeSetId(const char* value) { m_rootChangeSetId.assign(value); }
-    inline DescribeChangeSetResult& WithRootChangeSetId(const Aws::String& value) { SetRootChangeSetId(value); return *this;}
-    inline DescribeChangeSetResult& WithRootChangeSetId(Aws::String&& value) { SetRootChangeSetId(std::move(value)); return *this;}
-    inline DescribeChangeSetResult& WithRootChangeSetId(const char* value) { SetRootChangeSetId(value); return *this;}
+    inline const Aws::String& GetRootChangeSetId() const { return m_rootChangeSetId; }
+    template<typename RootChangeSetIdT = Aws::String>
+    void SetRootChangeSetId(RootChangeSetIdT&& value) { m_rootChangeSetIdHasBeenSet = true; m_rootChangeSetId = std::forward<RootChangeSetIdT>(value); }
+    template<typename RootChangeSetIdT = Aws::String>
+    DescribeChangeSetResult& WithRootChangeSetId(RootChangeSetIdT&& value) { SetRootChangeSetId(std::forward<RootChangeSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -323,11 +299,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
      * API operation.</p> </li> </ul>
      */
-    inline const OnStackFailure& GetOnStackFailure() const{ return m_onStackFailure; }
-    inline void SetOnStackFailure(const OnStackFailure& value) { m_onStackFailure = value; }
-    inline void SetOnStackFailure(OnStackFailure&& value) { m_onStackFailure = std::move(value); }
-    inline DescribeChangeSetResult& WithOnStackFailure(const OnStackFailure& value) { SetOnStackFailure(value); return *this;}
-    inline DescribeChangeSetResult& WithOnStackFailure(OnStackFailure&& value) { SetOnStackFailure(std::move(value)); return *this;}
+    inline OnStackFailure GetOnStackFailure() const { return m_onStackFailure; }
+    inline void SetOnStackFailure(OnStackFailure value) { m_onStackFailureHasBeenSet = true; m_onStackFailure = value; }
+    inline DescribeChangeSetResult& WithOnStackFailure(OnStackFailure value) { SetOnStackFailure(value); return *this;}
     ///@}
 
     ///@{
@@ -340,64 +314,86 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">resource
      * import</a> feature instead.</p> 
      */
-    inline bool GetImportExistingResources() const{ return m_importExistingResources; }
-    inline void SetImportExistingResources(bool value) { m_importExistingResources = value; }
+    inline bool GetImportExistingResources() const { return m_importExistingResources; }
+    inline void SetImportExistingResources(bool value) { m_importExistingResourcesHasBeenSet = true; m_importExistingResources = value; }
     inline DescribeChangeSetResult& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeChangeSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeChangeSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeChangeSetResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_changeSetName;
+    bool m_changeSetNameHasBeenSet = false;
 
     Aws::String m_changeSetId;
+    bool m_changeSetIdHasBeenSet = false;
 
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_stackName;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    ExecutionStatus m_executionStatus;
+    ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
+    bool m_executionStatusHasBeenSet = false;
 
-    ChangeSetStatus m_status;
+    ChangeSetStatus m_status{ChangeSetStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notificationARNs;
+    bool m_notificationARNsHasBeenSet = false;
 
     RollbackConfiguration m_rollbackConfiguration;
+    bool m_rollbackConfigurationHasBeenSet = false;
 
     Aws::Vector<Capability> m_capabilities;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Change> m_changes;
+    bool m_changesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    bool m_includeNestedStacks;
+    bool m_includeNestedStacks{false};
+    bool m_includeNestedStacksHasBeenSet = false;
 
     Aws::String m_parentChangeSetId;
+    bool m_parentChangeSetIdHasBeenSet = false;
 
     Aws::String m_rootChangeSetId;
+    bool m_rootChangeSetIdHasBeenSet = false;
 
-    OnStackFailure m_onStackFailure;
+    OnStackFailure m_onStackFailure{OnStackFailure::NOT_SET};
+    bool m_onStackFailureHasBeenSet = false;
 
-    bool m_importExistingResources;
+    bool m_importExistingResources{false};
+    bool m_importExistingResourcesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProblemResult::DescribeProblemResult()
-{
-}
-
 DescribeProblemResult::DescribeProblemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DescribeProblemResult& DescribeProblemResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Problem"))
   {
     m_problem = jsonValue.GetObject("Problem");
-
+    m_problemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNSNotificationArn"))
   {
     m_sNSNotificationArn = jsonValue.GetString("SNSNotificationArn");
-
+    m_sNSNotificationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

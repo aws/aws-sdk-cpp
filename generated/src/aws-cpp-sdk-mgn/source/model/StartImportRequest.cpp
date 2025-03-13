@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportRequest::StartImportRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_s3BucketSourceHasBeenSet(false)
-{
-}
-
 Aws::String StartImportRequest::SerializePayload() const
 {
   JsonValue payload;

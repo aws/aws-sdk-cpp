@@ -27,7 +27,7 @@ namespace Model
   class RemoveBackendConfigResult
   {
   public:
-    AWS_AMPLIFYBACKEND_API RemoveBackendConfigResult();
+    AWS_AMPLIFYBACKEND_API RemoveBackendConfigResult() = default;
     AWS_AMPLIFYBACKEND_API RemoveBackendConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYBACKEND_API RemoveBackendConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>If the request fails, this error is returned.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
-    inline void SetError(const Aws::String& value) { m_error = value; }
-    inline void SetError(Aws::String&& value) { m_error = std::move(value); }
-    inline void SetError(const char* value) { m_error.assign(value); }
-    inline RemoveBackendConfigResult& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline RemoveBackendConfigResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline RemoveBackendConfigResult& WithError(const char* value) { SetError(value); return *this;}
+    inline const Aws::String& GetError() const { return m_error; }
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    RemoveBackendConfigResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveBackendConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveBackendConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveBackendConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveBackendConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_error;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

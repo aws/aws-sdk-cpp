@@ -22,7 +22,7 @@ namespace Model
   class CreateStreamSessionConnectionRequest : public GameLiftStreamsRequest
   {
   public:
-    AWS_GAMELIFTSTREAMS_API CreateStreamSessionConnectionRequest();
+    AWS_GAMELIFTSTREAMS_API CreateStreamSessionConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * idempotent, which ensures that an API request completes only once. When users
      * send a request, Amazon GameLift Streams automatically populates this field. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateStreamSessionConnectionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateStreamSessionConnectionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * this stream session with. The stream group must be in <code>ACTIVE</code> status
      * and have idle stream capacity. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline CreateStreamSessionConnectionRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    CreateStreamSessionConnectionRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * The offer must be newly generated, not the same offer provided to
      * <code>StartStreamSession</code>. </p>
      */
-    inline const Aws::String& GetSignalRequest() const{ return m_signalRequest; }
+    inline const Aws::String& GetSignalRequest() const { return m_signalRequest; }
     inline bool SignalRequestHasBeenSet() const { return m_signalRequestHasBeenSet; }
-    inline void SetSignalRequest(const Aws::String& value) { m_signalRequestHasBeenSet = true; m_signalRequest = value; }
-    inline void SetSignalRequest(Aws::String&& value) { m_signalRequestHasBeenSet = true; m_signalRequest = std::move(value); }
-    inline void SetSignalRequest(const char* value) { m_signalRequestHasBeenSet = true; m_signalRequest.assign(value); }
-    inline CreateStreamSessionConnectionRequest& WithSignalRequest(const Aws::String& value) { SetSignalRequest(value); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithSignalRequest(Aws::String&& value) { SetSignalRequest(std::move(value)); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithSignalRequest(const char* value) { SetSignalRequest(value); return *this;}
+    template<typename SignalRequestT = Aws::String>
+    void SetSignalRequest(SignalRequestT&& value) { m_signalRequestHasBeenSet = true; m_signalRequest = std::forward<SignalRequestT>(value); }
+    template<typename SignalRequestT = Aws::String>
+    CreateStreamSessionConnectionRequest& WithSignalRequest(SignalRequestT&& value) { SetSignalRequest(std::forward<SignalRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * Format example: <code>1AB2C3De4</code>. The stream session must be in
      * <code>PENDING_CLIENT_RECONNECTION</code> or <code>ACTIVE</code> status. </p>
      */
-    inline const Aws::String& GetStreamSessionIdentifier() const{ return m_streamSessionIdentifier; }
+    inline const Aws::String& GetStreamSessionIdentifier() const { return m_streamSessionIdentifier; }
     inline bool StreamSessionIdentifierHasBeenSet() const { return m_streamSessionIdentifierHasBeenSet; }
-    inline void SetStreamSessionIdentifier(const Aws::String& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = value; }
-    inline void SetStreamSessionIdentifier(Aws::String&& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = std::move(value); }
-    inline void SetStreamSessionIdentifier(const char* value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier.assign(value); }
-    inline CreateStreamSessionConnectionRequest& WithStreamSessionIdentifier(const Aws::String& value) { SetStreamSessionIdentifier(value); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithStreamSessionIdentifier(Aws::String&& value) { SetStreamSessionIdentifier(std::move(value)); return *this;}
-    inline CreateStreamSessionConnectionRequest& WithStreamSessionIdentifier(const char* value) { SetStreamSessionIdentifier(value); return *this;}
+    template<typename StreamSessionIdentifierT = Aws::String>
+    void SetStreamSessionIdentifier(StreamSessionIdentifierT&& value) { m_streamSessionIdentifierHasBeenSet = true; m_streamSessionIdentifier = std::forward<StreamSessionIdentifierT>(value); }
+    template<typename StreamSessionIdentifierT = Aws::String>
+    CreateStreamSessionConnectionRequest& WithStreamSessionIdentifier(StreamSessionIdentifierT&& value) { SetStreamSessionIdentifier(std::forward<StreamSessionIdentifierT>(value)); return *this;}
     ///@}
   private:
 

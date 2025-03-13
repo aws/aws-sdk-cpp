@@ -12,13 +12,6 @@ using namespace Aws::NotificationsContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEmailContactRequest::CreateEmailContactRequest() : 
-    m_nameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEmailContactRequest::SerializePayload() const
 {
   JsonValue payload;

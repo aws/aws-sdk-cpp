@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotFileSheetSelection::SnapshotFileSheetSelection() : 
-    m_sheetIdHasBeenSet(false),
-    m_selectionScope(SnapshotFileSheetSelectionScope::NOT_SET),
-    m_selectionScopeHasBeenSet(false),
-    m_visualIdsHasBeenSet(false)
-{
-}
-
 SnapshotFileSheetSelection::SnapshotFileSheetSelection(JsonView jsonValue)
-  : SnapshotFileSheetSelection()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SnapshotFileSheetSelection& SnapshotFileSheetSelection::operator =(JsonView json
   if(jsonValue.ValueExists("SheetId"))
   {
     m_sheetId = jsonValue.GetString("SheetId");
-
     m_sheetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectionScope"))
   {
     m_selectionScope = SnapshotFileSheetSelectionScopeMapper::GetSnapshotFileSheetSelectionScopeForName(jsonValue.GetString("SelectionScope"));
-
     m_selectionScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualIds"))
   {
     Aws::Utils::Array<JsonView> visualIdsJsonList = jsonValue.GetArray("VisualIds");
@@ -57,7 +44,6 @@ SnapshotFileSheetSelection& SnapshotFileSheetSelection::operator =(JsonView json
     }
     m_visualIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

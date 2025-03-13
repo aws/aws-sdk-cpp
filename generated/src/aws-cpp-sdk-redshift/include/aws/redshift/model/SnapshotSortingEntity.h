@@ -32,7 +32,7 @@ namespace Model
   class SnapshotSortingEntity
   {
   public:
-    AWS_REDSHIFT_API SnapshotSortingEntity();
+    AWS_REDSHIFT_API SnapshotSortingEntity() = default;
     AWS_REDSHIFT_API SnapshotSortingEntity(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API SnapshotSortingEntity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,31 +44,27 @@ namespace Model
     /**
      * <p>The category for sorting the snapshots.</p>
      */
-    inline const SnapshotAttributeToSortBy& GetAttribute() const{ return m_attribute; }
+    inline SnapshotAttributeToSortBy GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const SnapshotAttributeToSortBy& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(SnapshotAttributeToSortBy&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline SnapshotSortingEntity& WithAttribute(const SnapshotAttributeToSortBy& value) { SetAttribute(value); return *this;}
-    inline SnapshotSortingEntity& WithAttribute(SnapshotAttributeToSortBy&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(SnapshotAttributeToSortBy value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline SnapshotSortingEntity& WithAttribute(SnapshotAttributeToSortBy value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order for listing the attributes.</p>
      */
-    inline const SortByOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortByOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortByOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortByOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SnapshotSortingEntity& WithSortOrder(const SortByOrder& value) { SetSortOrder(value); return *this;}
-    inline SnapshotSortingEntity& WithSortOrder(SortByOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortByOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SnapshotSortingEntity& WithSortOrder(SortByOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    SnapshotAttributeToSortBy m_attribute;
+    SnapshotAttributeToSortBy m_attribute{SnapshotAttributeToSortBy::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    SortByOrder m_sortOrder;
+    SortByOrder m_sortOrder{SortByOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

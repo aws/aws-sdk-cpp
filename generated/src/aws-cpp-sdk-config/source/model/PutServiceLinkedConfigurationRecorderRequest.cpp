@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutServiceLinkedConfigurationRecorderRequest::PutServiceLinkedConfigurationRecorderRequest() : 
-    m_servicePrincipalHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutServiceLinkedConfigurationRecorderRequest::SerializePayload() const
 {
   JsonValue payload;

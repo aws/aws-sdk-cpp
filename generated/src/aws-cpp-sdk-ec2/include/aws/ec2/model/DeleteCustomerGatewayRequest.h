@@ -25,7 +25,7 @@ namespace Model
   class DeleteCustomerGatewayRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteCustomerGatewayRequest();
+    AWS_EC2_API DeleteCustomerGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
-    inline const Aws::String& GetCustomerGatewayId() const{ return m_customerGatewayId; }
+    inline const Aws::String& GetCustomerGatewayId() const { return m_customerGatewayId; }
     inline bool CustomerGatewayIdHasBeenSet() const { return m_customerGatewayIdHasBeenSet; }
-    inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
-    inline void SetCustomerGatewayId(Aws::String&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::move(value); }
-    inline void SetCustomerGatewayId(const char* value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId.assign(value); }
-    inline DeleteCustomerGatewayRequest& WithCustomerGatewayId(const Aws::String& value) { SetCustomerGatewayId(value); return *this;}
-    inline DeleteCustomerGatewayRequest& WithCustomerGatewayId(Aws::String&& value) { SetCustomerGatewayId(std::move(value)); return *this;}
-    inline DeleteCustomerGatewayRequest& WithCustomerGatewayId(const char* value) { SetCustomerGatewayId(value); return *this;}
+    template<typename CustomerGatewayIdT = Aws::String>
+    void SetCustomerGatewayId(CustomerGatewayIdT&& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = std::forward<CustomerGatewayIdT>(value); }
+    template<typename CustomerGatewayIdT = Aws::String>
+    DeleteCustomerGatewayRequest& WithCustomerGatewayId(CustomerGatewayIdT&& value) { SetCustomerGatewayId(std::forward<CustomerGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteCustomerGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_customerGatewayId;
     bool m_customerGatewayIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

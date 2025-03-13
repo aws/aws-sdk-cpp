@@ -32,7 +32,7 @@ namespace Model
   class DnsRequestAction
   {
   public:
-    AWS_GUARDDUTY_API DnsRequestAction();
+    AWS_GUARDDUTY_API DnsRequestAction() = default;
     AWS_GUARDDUTY_API DnsRequestAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API DnsRequestAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The domain information for the DNS query.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DnsRequestAction& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,21 +55,19 @@ namespace Model
      * <p>The network connection protocol observed in the activity that prompted
      * GuardDuty to generate the finding.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline DnsRequestAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline DnsRequestAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline DnsRequestAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    DnsRequestAction& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the targeted port is blocked.</p>
      */
-    inline bool GetBlocked() const{ return m_blocked; }
+    inline bool GetBlocked() const { return m_blocked; }
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
     inline DnsRequestAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
@@ -84,14 +80,12 @@ namespace Model
      * second-level domains, see <a href="https://publicsuffix.org/">public suffix
      * list</a>.</p>
      */
-    inline const Aws::String& GetDomainWithSuffix() const{ return m_domainWithSuffix; }
+    inline const Aws::String& GetDomainWithSuffix() const { return m_domainWithSuffix; }
     inline bool DomainWithSuffixHasBeenSet() const { return m_domainWithSuffixHasBeenSet; }
-    inline void SetDomainWithSuffix(const Aws::String& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = value; }
-    inline void SetDomainWithSuffix(Aws::String&& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = std::move(value); }
-    inline void SetDomainWithSuffix(const char* value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix.assign(value); }
-    inline DnsRequestAction& WithDomainWithSuffix(const Aws::String& value) { SetDomainWithSuffix(value); return *this;}
-    inline DnsRequestAction& WithDomainWithSuffix(Aws::String&& value) { SetDomainWithSuffix(std::move(value)); return *this;}
-    inline DnsRequestAction& WithDomainWithSuffix(const char* value) { SetDomainWithSuffix(value); return *this;}
+    template<typename DomainWithSuffixT = Aws::String>
+    void SetDomainWithSuffix(DomainWithSuffixT&& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = std::forward<DomainWithSuffixT>(value); }
+    template<typename DomainWithSuffixT = Aws::String>
+    DnsRequestAction& WithDomainWithSuffix(DomainWithSuffixT&& value) { SetDomainWithSuffix(std::forward<DomainWithSuffixT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +95,7 @@ namespace Model
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    bool m_blocked;
+    bool m_blocked{false};
     bool m_blockedHasBeenSet = false;
 
     Aws::String m_domainWithSuffix;

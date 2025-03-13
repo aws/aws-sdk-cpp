@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-EventConfig::EventConfig() : 
-    m_authProvidersHasBeenSet(false),
-    m_connectionAuthModesHasBeenSet(false),
-    m_defaultPublishAuthModesHasBeenSet(false),
-    m_defaultSubscribeAuthModesHasBeenSet(false),
-    m_logConfigHasBeenSet(false)
-{
-}
-
 EventConfig::EventConfig(JsonView jsonValue)
-  : EventConfig()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ EventConfig& EventConfig::operator =(JsonView jsonValue)
     }
     m_authProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionAuthModes"))
   {
     Aws::Utils::Array<JsonView> connectionAuthModesJsonList = jsonValue.GetArray("connectionAuthModes");
@@ -54,7 +43,6 @@ EventConfig& EventConfig::operator =(JsonView jsonValue)
     }
     m_connectionAuthModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultPublishAuthModes"))
   {
     Aws::Utils::Array<JsonView> defaultPublishAuthModesJsonList = jsonValue.GetArray("defaultPublishAuthModes");
@@ -64,7 +52,6 @@ EventConfig& EventConfig::operator =(JsonView jsonValue)
     }
     m_defaultPublishAuthModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultSubscribeAuthModes"))
   {
     Aws::Utils::Array<JsonView> defaultSubscribeAuthModesJsonList = jsonValue.GetArray("defaultSubscribeAuthModes");
@@ -74,14 +61,11 @@ EventConfig& EventConfig::operator =(JsonView jsonValue)
     }
     m_defaultSubscribeAuthModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfig"))
   {
     m_logConfig = jsonValue.GetObject("logConfig");
-
     m_logConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

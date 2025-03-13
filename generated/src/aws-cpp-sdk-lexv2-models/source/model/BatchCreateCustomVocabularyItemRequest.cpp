@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateCustomVocabularyItemRequest::BatchCreateCustomVocabularyItemRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_customVocabularyItemListHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateCustomVocabularyItemRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails() : 
-    m_cloudWatchEncryptionEnabled(false),
-    m_cloudWatchEncryptionEnabledHasBeenSet(false),
-    m_cloudWatchLogGroupNameHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_s3EncryptionEnabled(false),
-    m_s3EncryptionEnabledHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
-{
-}
-
 AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(JsonView jsonValue)
-  : AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails& Aw
   if(jsonValue.ValueExists("CloudWatchEncryptionEnabled"))
   {
     m_cloudWatchEncryptionEnabled = jsonValue.GetBool("CloudWatchEncryptionEnabled");
-
     m_cloudWatchEncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogGroupName"))
   {
     m_cloudWatchLogGroupName = jsonValue.GetString("CloudWatchLogGroupName");
-
     m_cloudWatchLogGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3EncryptionEnabled"))
   {
     m_s3EncryptionEnabled = jsonValue.GetBool("S3EncryptionEnabled");
-
     m_s3EncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

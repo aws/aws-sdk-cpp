@@ -12,15 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResolverQueryLogConfigRequest::CreateResolverQueryLogConfigRequest() : 
-    m_nameHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateResolverQueryLogConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class SchemaDefinition
   {
   public:
-    AWS_FINSPACEDATA_API SchemaDefinition();
+    AWS_FINSPACEDATA_API SchemaDefinition() = default;
     AWS_FINSPACEDATA_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,28 @@ namespace Model
     /**
      * <p>List of column definitions.</p>
      */
-    inline const Aws::Vector<ColumnDefinition>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<ColumnDefinition>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<ColumnDefinition>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<ColumnDefinition>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline SchemaDefinition& WithColumns(const Aws::Vector<ColumnDefinition>& value) { SetColumns(value); return *this;}
-    inline SchemaDefinition& WithColumns(Aws::Vector<ColumnDefinition>&& value) { SetColumns(std::move(value)); return *this;}
-    inline SchemaDefinition& AddColumns(const ColumnDefinition& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline SchemaDefinition& AddColumns(ColumnDefinition&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
+    template<typename ColumnsT = Aws::Vector<ColumnDefinition>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<ColumnDefinition>>
+    SchemaDefinition& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = ColumnDefinition>
+    SchemaDefinition& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of column names used for primary key.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrimaryKeyColumns() const{ return m_primaryKeyColumns; }
+    inline const Aws::Vector<Aws::String>& GetPrimaryKeyColumns() const { return m_primaryKeyColumns; }
     inline bool PrimaryKeyColumnsHasBeenSet() const { return m_primaryKeyColumnsHasBeenSet; }
-    inline void SetPrimaryKeyColumns(const Aws::Vector<Aws::String>& value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns = value; }
-    inline void SetPrimaryKeyColumns(Aws::Vector<Aws::String>&& value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns = std::move(value); }
-    inline SchemaDefinition& WithPrimaryKeyColumns(const Aws::Vector<Aws::String>& value) { SetPrimaryKeyColumns(value); return *this;}
-    inline SchemaDefinition& WithPrimaryKeyColumns(Aws::Vector<Aws::String>&& value) { SetPrimaryKeyColumns(std::move(value)); return *this;}
-    inline SchemaDefinition& AddPrimaryKeyColumns(const Aws::String& value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns.push_back(value); return *this; }
-    inline SchemaDefinition& AddPrimaryKeyColumns(Aws::String&& value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns.push_back(std::move(value)); return *this; }
-    inline SchemaDefinition& AddPrimaryKeyColumns(const char* value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns.push_back(value); return *this; }
+    template<typename PrimaryKeyColumnsT = Aws::Vector<Aws::String>>
+    void SetPrimaryKeyColumns(PrimaryKeyColumnsT&& value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns = std::forward<PrimaryKeyColumnsT>(value); }
+    template<typename PrimaryKeyColumnsT = Aws::Vector<Aws::String>>
+    SchemaDefinition& WithPrimaryKeyColumns(PrimaryKeyColumnsT&& value) { SetPrimaryKeyColumns(std::forward<PrimaryKeyColumnsT>(value)); return *this;}
+    template<typename PrimaryKeyColumnsT = Aws::String>
+    SchemaDefinition& AddPrimaryKeyColumns(PrimaryKeyColumnsT&& value) { m_primaryKeyColumnsHasBeenSet = true; m_primaryKeyColumns.emplace_back(std::forward<PrimaryKeyColumnsT>(value)); return *this; }
     ///@}
   private:
 

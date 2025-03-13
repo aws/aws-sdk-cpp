@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClusterRequest::DeleteClusterRequest() : 
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterRequest::SerializePayload() const
 {
   return {};

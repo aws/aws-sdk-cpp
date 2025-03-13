@@ -21,7 +21,7 @@ namespace Model
   class AssociateDeviceWithPlacementRequest : public IoT1ClickProjectsRequest
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API AssociateDeviceWithPlacementRequest();
+    AWS_IOT1CLICKPROJECTS_API AssociateDeviceWithPlacementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The name of the project containing the placement in which to associate the
      * device.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline AssociateDeviceWithPlacementRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    AssociateDeviceWithPlacementRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the placement in which to associate the device.</p>
      */
-    inline const Aws::String& GetPlacementName() const{ return m_placementName; }
+    inline const Aws::String& GetPlacementName() const { return m_placementName; }
     inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
-    inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
-    inline void SetPlacementName(Aws::String&& value) { m_placementNameHasBeenSet = true; m_placementName = std::move(value); }
-    inline void SetPlacementName(const char* value) { m_placementNameHasBeenSet = true; m_placementName.assign(value); }
-    inline AssociateDeviceWithPlacementRequest& WithPlacementName(const Aws::String& value) { SetPlacementName(value); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithPlacementName(Aws::String&& value) { SetPlacementName(std::move(value)); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithPlacementName(const char* value) { SetPlacementName(value); return *this;}
+    template<typename PlacementNameT = Aws::String>
+    void SetPlacementName(PlacementNameT&& value) { m_placementNameHasBeenSet = true; m_placementName = std::forward<PlacementNameT>(value); }
+    template<typename PlacementNameT = Aws::String>
+    AssociateDeviceWithPlacementRequest& WithPlacementName(PlacementNameT&& value) { SetPlacementName(std::forward<PlacementNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,28 +63,24 @@ namespace Model
      * the project. Note that a mandatory 4 character prefix is required for all
      * <code>deviceId</code> values.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline AssociateDeviceWithPlacementRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    AssociateDeviceWithPlacementRequest& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The device template name to associate with the device ID.</p>
      */
-    inline const Aws::String& GetDeviceTemplateName() const{ return m_deviceTemplateName; }
+    inline const Aws::String& GetDeviceTemplateName() const { return m_deviceTemplateName; }
     inline bool DeviceTemplateNameHasBeenSet() const { return m_deviceTemplateNameHasBeenSet; }
-    inline void SetDeviceTemplateName(const Aws::String& value) { m_deviceTemplateNameHasBeenSet = true; m_deviceTemplateName = value; }
-    inline void SetDeviceTemplateName(Aws::String&& value) { m_deviceTemplateNameHasBeenSet = true; m_deviceTemplateName = std::move(value); }
-    inline void SetDeviceTemplateName(const char* value) { m_deviceTemplateNameHasBeenSet = true; m_deviceTemplateName.assign(value); }
-    inline AssociateDeviceWithPlacementRequest& WithDeviceTemplateName(const Aws::String& value) { SetDeviceTemplateName(value); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithDeviceTemplateName(Aws::String&& value) { SetDeviceTemplateName(std::move(value)); return *this;}
-    inline AssociateDeviceWithPlacementRequest& WithDeviceTemplateName(const char* value) { SetDeviceTemplateName(value); return *this;}
+    template<typename DeviceTemplateNameT = Aws::String>
+    void SetDeviceTemplateName(DeviceTemplateNameT&& value) { m_deviceTemplateNameHasBeenSet = true; m_deviceTemplateName = std::forward<DeviceTemplateNameT>(value); }
+    template<typename DeviceTemplateNameT = Aws::String>
+    AssociateDeviceWithPlacementRequest& WithDeviceTemplateName(DeviceTemplateNameT&& value) { SetDeviceTemplateName(std::forward<DeviceTemplateNameT>(value)); return *this;}
     ///@}
   private:
 

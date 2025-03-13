@@ -18,15 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-CollectionFilters::CollectionFilters() : 
-    m_nameHasBeenSet(false),
-    m_status(CollectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 CollectionFilters::CollectionFilters(JsonView jsonValue)
-  : CollectionFilters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CollectionFilters& CollectionFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CollectionStatusMapper::GetCollectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

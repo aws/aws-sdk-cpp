@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportEarthObservationJobResult::ExportEarthObservationJobResult() : 
-    m_exportSourceImages(false),
-    m_exportStatus(EarthObservationJobExportStatus::NOT_SET)
-{
-}
-
 ExportEarthObservationJobResult::ExportEarthObservationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ExportEarthObservationJobResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ ExportEarthObservationJobResult& ExportEarthObservationJobResult::operator =(con
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
+    m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportSourceImages"))
   {
     m_exportSourceImages = jsonValue.GetBool("ExportSourceImages");
-
+    m_exportSourceImagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportStatus"))
   {
     m_exportStatus = EarthObservationJobExportStatusMapper::GetEarthObservationJobExportStatusForName(jsonValue.GetString("ExportStatus"));
-
+    m_exportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
+    m_outputConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

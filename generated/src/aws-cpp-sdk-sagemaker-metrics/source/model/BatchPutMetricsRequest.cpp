@@ -12,12 +12,6 @@ using namespace Aws::SageMakerMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutMetricsRequest::BatchPutMetricsRequest() : 
-    m_trialComponentNameHasBeenSet(false),
-    m_metricDataHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

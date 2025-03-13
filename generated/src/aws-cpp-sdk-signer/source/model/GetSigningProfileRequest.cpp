@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSigningProfileRequest::GetSigningProfileRequest() : 
-    m_profileNameHasBeenSet(false),
-    m_profileOwnerHasBeenSet(false)
-{
-}
-
 Aws::String GetSigningProfileRequest::SerializePayload() const
 {
   return {};

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeApplicationProviderResult::DescribeApplicationProviderResult() : 
-    m_federationProtocol(FederationProtocol::NOT_SET)
-{
-}
-
 DescribeApplicationProviderResult::DescribeApplicationProviderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeApplicationProviderResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ DescribeApplicationProviderResult& DescribeApplicationProviderResult::operator =
   if(jsonValue.ValueExists("ApplicationProviderArn"))
   {
     m_applicationProviderArn = jsonValue.GetString("ApplicationProviderArn");
-
+    m_applicationProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayData"))
   {
     m_displayData = jsonValue.GetObject("DisplayData");
-
+    m_displayDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederationProtocol"))
   {
     m_federationProtocol = FederationProtocolMapper::GetFederationProtocolForName(jsonValue.GetString("FederationProtocol"));
-
+    m_federationProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceServerConfig"))
   {
     m_resourceServerConfig = jsonValue.GetObject("ResourceServerConfig");
-
+    m_resourceServerConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

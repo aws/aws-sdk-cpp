@@ -30,7 +30,7 @@ namespace Model
   class DeleteFleetsResponse
   {
   public:
-    AWS_EC2_API DeleteFleetsResponse();
+    AWS_EC2_API DeleteFleetsResponse() = default;
     AWS_EC2_API DeleteFleetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteFleetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,46 @@ namespace Model
     /**
      * <p>Information about the EC2 Fleets that are successfully deleted.</p>
      */
-    inline const Aws::Vector<DeleteFleetSuccessItem>& GetSuccessfulFleetDeletions() const{ return m_successfulFleetDeletions; }
-    inline void SetSuccessfulFleetDeletions(const Aws::Vector<DeleteFleetSuccessItem>& value) { m_successfulFleetDeletions = value; }
-    inline void SetSuccessfulFleetDeletions(Aws::Vector<DeleteFleetSuccessItem>&& value) { m_successfulFleetDeletions = std::move(value); }
-    inline DeleteFleetsResponse& WithSuccessfulFleetDeletions(const Aws::Vector<DeleteFleetSuccessItem>& value) { SetSuccessfulFleetDeletions(value); return *this;}
-    inline DeleteFleetsResponse& WithSuccessfulFleetDeletions(Aws::Vector<DeleteFleetSuccessItem>&& value) { SetSuccessfulFleetDeletions(std::move(value)); return *this;}
-    inline DeleteFleetsResponse& AddSuccessfulFleetDeletions(const DeleteFleetSuccessItem& value) { m_successfulFleetDeletions.push_back(value); return *this; }
-    inline DeleteFleetsResponse& AddSuccessfulFleetDeletions(DeleteFleetSuccessItem&& value) { m_successfulFleetDeletions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeleteFleetSuccessItem>& GetSuccessfulFleetDeletions() const { return m_successfulFleetDeletions; }
+    template<typename SuccessfulFleetDeletionsT = Aws::Vector<DeleteFleetSuccessItem>>
+    void SetSuccessfulFleetDeletions(SuccessfulFleetDeletionsT&& value) { m_successfulFleetDeletionsHasBeenSet = true; m_successfulFleetDeletions = std::forward<SuccessfulFleetDeletionsT>(value); }
+    template<typename SuccessfulFleetDeletionsT = Aws::Vector<DeleteFleetSuccessItem>>
+    DeleteFleetsResponse& WithSuccessfulFleetDeletions(SuccessfulFleetDeletionsT&& value) { SetSuccessfulFleetDeletions(std::forward<SuccessfulFleetDeletionsT>(value)); return *this;}
+    template<typename SuccessfulFleetDeletionsT = DeleteFleetSuccessItem>
+    DeleteFleetsResponse& AddSuccessfulFleetDeletions(SuccessfulFleetDeletionsT&& value) { m_successfulFleetDeletionsHasBeenSet = true; m_successfulFleetDeletions.emplace_back(std::forward<SuccessfulFleetDeletionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the EC2 Fleets that are not successfully deleted.</p>
      */
-    inline const Aws::Vector<DeleteFleetErrorItem>& GetUnsuccessfulFleetDeletions() const{ return m_unsuccessfulFleetDeletions; }
-    inline void SetUnsuccessfulFleetDeletions(const Aws::Vector<DeleteFleetErrorItem>& value) { m_unsuccessfulFleetDeletions = value; }
-    inline void SetUnsuccessfulFleetDeletions(Aws::Vector<DeleteFleetErrorItem>&& value) { m_unsuccessfulFleetDeletions = std::move(value); }
-    inline DeleteFleetsResponse& WithUnsuccessfulFleetDeletions(const Aws::Vector<DeleteFleetErrorItem>& value) { SetUnsuccessfulFleetDeletions(value); return *this;}
-    inline DeleteFleetsResponse& WithUnsuccessfulFleetDeletions(Aws::Vector<DeleteFleetErrorItem>&& value) { SetUnsuccessfulFleetDeletions(std::move(value)); return *this;}
-    inline DeleteFleetsResponse& AddUnsuccessfulFleetDeletions(const DeleteFleetErrorItem& value) { m_unsuccessfulFleetDeletions.push_back(value); return *this; }
-    inline DeleteFleetsResponse& AddUnsuccessfulFleetDeletions(DeleteFleetErrorItem&& value) { m_unsuccessfulFleetDeletions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeleteFleetErrorItem>& GetUnsuccessfulFleetDeletions() const { return m_unsuccessfulFleetDeletions; }
+    template<typename UnsuccessfulFleetDeletionsT = Aws::Vector<DeleteFleetErrorItem>>
+    void SetUnsuccessfulFleetDeletions(UnsuccessfulFleetDeletionsT&& value) { m_unsuccessfulFleetDeletionsHasBeenSet = true; m_unsuccessfulFleetDeletions = std::forward<UnsuccessfulFleetDeletionsT>(value); }
+    template<typename UnsuccessfulFleetDeletionsT = Aws::Vector<DeleteFleetErrorItem>>
+    DeleteFleetsResponse& WithUnsuccessfulFleetDeletions(UnsuccessfulFleetDeletionsT&& value) { SetUnsuccessfulFleetDeletions(std::forward<UnsuccessfulFleetDeletionsT>(value)); return *this;}
+    template<typename UnsuccessfulFleetDeletionsT = DeleteFleetErrorItem>
+    DeleteFleetsResponse& AddUnsuccessfulFleetDeletions(UnsuccessfulFleetDeletionsT&& value) { m_unsuccessfulFleetDeletionsHasBeenSet = true; m_unsuccessfulFleetDeletions.emplace_back(std::forward<UnsuccessfulFleetDeletionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteFleetsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteFleetsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteFleetsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeleteFleetSuccessItem> m_successfulFleetDeletions;
+    bool m_successfulFleetDeletionsHasBeenSet = false;
 
     Aws::Vector<DeleteFleetErrorItem> m_unsuccessfulFleetDeletions;
+    bool m_unsuccessfulFleetDeletionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

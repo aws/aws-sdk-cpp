@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansUtilization::SavingsPlansUtilization() : 
-    m_totalCommitmentHasBeenSet(false),
-    m_usedCommitmentHasBeenSet(false),
-    m_unusedCommitmentHasBeenSet(false),
-    m_utilizationPercentageHasBeenSet(false)
-{
-}
-
 SavingsPlansUtilization::SavingsPlansUtilization(JsonView jsonValue)
-  : SavingsPlansUtilization()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SavingsPlansUtilization& SavingsPlansUtilization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalCommitment"))
   {
     m_totalCommitment = jsonValue.GetString("TotalCommitment");
-
     m_totalCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsedCommitment"))
   {
     m_usedCommitment = jsonValue.GetString("UsedCommitment");
-
     m_usedCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnusedCommitment"))
   {
     m_unusedCommitment = jsonValue.GetString("UnusedCommitment");
-
     m_unusedCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UtilizationPercentage"))
   {
     m_utilizationPercentage = jsonValue.GetString("UtilizationPercentage");
-
     m_utilizationPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

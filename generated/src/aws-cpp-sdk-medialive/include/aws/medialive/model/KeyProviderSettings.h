@@ -31,7 +31,7 @@ namespace Model
   class KeyProviderSettings
   {
   public:
-    AWS_MEDIALIVE_API KeyProviderSettings();
+    AWS_MEDIALIVE_API KeyProviderSettings() = default;
     AWS_MEDIALIVE_API KeyProviderSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API KeyProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const StaticKeySettings& GetStaticKeySettings() const{ return m_staticKeySettings; }
+    inline const StaticKeySettings& GetStaticKeySettings() const { return m_staticKeySettings; }
     inline bool StaticKeySettingsHasBeenSet() const { return m_staticKeySettingsHasBeenSet; }
-    inline void SetStaticKeySettings(const StaticKeySettings& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = value; }
-    inline void SetStaticKeySettings(StaticKeySettings&& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = std::move(value); }
-    inline KeyProviderSettings& WithStaticKeySettings(const StaticKeySettings& value) { SetStaticKeySettings(value); return *this;}
-    inline KeyProviderSettings& WithStaticKeySettings(StaticKeySettings&& value) { SetStaticKeySettings(std::move(value)); return *this;}
+    template<typename StaticKeySettingsT = StaticKeySettings>
+    void SetStaticKeySettings(StaticKeySettingsT&& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = std::forward<StaticKeySettingsT>(value); }
+    template<typename StaticKeySettingsT = StaticKeySettings>
+    KeyProviderSettings& WithStaticKeySettings(StaticKeySettingsT&& value) { SetStaticKeySettings(std::forward<StaticKeySettingsT>(value)); return *this;}
     ///@}
   private:
 

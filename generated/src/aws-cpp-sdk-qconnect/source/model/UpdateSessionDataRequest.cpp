@@ -12,15 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSessionDataRequest::UpdateSessionDataRequest() : 
-    m_assistantIdHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_namespace(SessionDataNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSessionDataRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ConditionalFormattingGradientColor::ConditionalFormattingGradientColor() : 
-    m_expressionHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 ConditionalFormattingGradientColor::ConditionalFormattingGradientColor(JsonView jsonValue)
-  : ConditionalFormattingGradientColor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConditionalFormattingGradientColor& ConditionalFormattingGradientColor::operator
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetObject("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-RecommendationCostOptimizingAggregates::RecommendationCostOptimizingAggregates() : 
-    m_estimatedMonthlySavings(0.0),
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_estimatedPercentMonthlySavings(0.0),
-    m_estimatedPercentMonthlySavingsHasBeenSet(false)
-{
-}
-
 RecommendationCostOptimizingAggregates::RecommendationCostOptimizingAggregates(JsonView jsonValue)
-  : RecommendationCostOptimizingAggregates()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RecommendationCostOptimizingAggregates& RecommendationCostOptimizingAggregates::
   if(jsonValue.ValueExists("estimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetDouble("estimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedPercentMonthlySavings"))
   {
     m_estimatedPercentMonthlySavings = jsonValue.GetDouble("estimatedPercentMonthlySavings");
-
     m_estimatedPercentMonthlySavingsHasBeenSet = true;
   }
-
   return *this;
 }
 

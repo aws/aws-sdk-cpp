@@ -33,7 +33,7 @@ namespace Model
   class TelephonyOutboundMode
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API TelephonyOutboundMode();
+    AWS_CONNECTCAMPAIGNSV2_API TelephonyOutboundMode() = default;
     AWS_CONNECTCAMPAIGNSV2_API TelephonyOutboundMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API TelephonyOutboundMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,32 +41,32 @@ namespace Model
 
     ///@{
     
-    inline const ProgressiveConfig& GetProgressive() const{ return m_progressive; }
+    inline const ProgressiveConfig& GetProgressive() const { return m_progressive; }
     inline bool ProgressiveHasBeenSet() const { return m_progressiveHasBeenSet; }
-    inline void SetProgressive(const ProgressiveConfig& value) { m_progressiveHasBeenSet = true; m_progressive = value; }
-    inline void SetProgressive(ProgressiveConfig&& value) { m_progressiveHasBeenSet = true; m_progressive = std::move(value); }
-    inline TelephonyOutboundMode& WithProgressive(const ProgressiveConfig& value) { SetProgressive(value); return *this;}
-    inline TelephonyOutboundMode& WithProgressive(ProgressiveConfig&& value) { SetProgressive(std::move(value)); return *this;}
+    template<typename ProgressiveT = ProgressiveConfig>
+    void SetProgressive(ProgressiveT&& value) { m_progressiveHasBeenSet = true; m_progressive = std::forward<ProgressiveT>(value); }
+    template<typename ProgressiveT = ProgressiveConfig>
+    TelephonyOutboundMode& WithProgressive(ProgressiveT&& value) { SetProgressive(std::forward<ProgressiveT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PredictiveConfig& GetPredictive() const{ return m_predictive; }
+    inline const PredictiveConfig& GetPredictive() const { return m_predictive; }
     inline bool PredictiveHasBeenSet() const { return m_predictiveHasBeenSet; }
-    inline void SetPredictive(const PredictiveConfig& value) { m_predictiveHasBeenSet = true; m_predictive = value; }
-    inline void SetPredictive(PredictiveConfig&& value) { m_predictiveHasBeenSet = true; m_predictive = std::move(value); }
-    inline TelephonyOutboundMode& WithPredictive(const PredictiveConfig& value) { SetPredictive(value); return *this;}
-    inline TelephonyOutboundMode& WithPredictive(PredictiveConfig&& value) { SetPredictive(std::move(value)); return *this;}
+    template<typename PredictiveT = PredictiveConfig>
+    void SetPredictive(PredictiveT&& value) { m_predictiveHasBeenSet = true; m_predictive = std::forward<PredictiveT>(value); }
+    template<typename PredictiveT = PredictiveConfig>
+    TelephonyOutboundMode& WithPredictive(PredictiveT&& value) { SetPredictive(std::forward<PredictiveT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AgentlessConfig& GetAgentless() const{ return m_agentless; }
+    inline const AgentlessConfig& GetAgentless() const { return m_agentless; }
     inline bool AgentlessHasBeenSet() const { return m_agentlessHasBeenSet; }
-    inline void SetAgentless(const AgentlessConfig& value) { m_agentlessHasBeenSet = true; m_agentless = value; }
-    inline void SetAgentless(AgentlessConfig&& value) { m_agentlessHasBeenSet = true; m_agentless = std::move(value); }
-    inline TelephonyOutboundMode& WithAgentless(const AgentlessConfig& value) { SetAgentless(value); return *this;}
-    inline TelephonyOutboundMode& WithAgentless(AgentlessConfig&& value) { SetAgentless(std::move(value)); return *this;}
+    template<typename AgentlessT = AgentlessConfig>
+    void SetAgentless(AgentlessT&& value) { m_agentlessHasBeenSet = true; m_agentless = std::forward<AgentlessT>(value); }
+    template<typename AgentlessT = AgentlessConfig>
+    TelephonyOutboundMode& WithAgentless(AgentlessT&& value) { SetAgentless(std::forward<AgentlessT>(value)); return *this;}
     ///@}
   private:
 

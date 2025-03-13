@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OpenZFSClientConfiguration::OpenZFSClientConfiguration() : 
-    m_clientsHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 OpenZFSClientConfiguration::OpenZFSClientConfiguration(JsonView jsonValue)
-  : OpenZFSClientConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OpenZFSClientConfiguration& OpenZFSClientConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Clients"))
   {
     m_clients = jsonValue.GetString("Clients");
-
     m_clientsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("Options");
@@ -48,7 +39,6 @@ OpenZFSClientConfiguration& OpenZFSClientConfiguration::operator =(JsonView json
     }
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

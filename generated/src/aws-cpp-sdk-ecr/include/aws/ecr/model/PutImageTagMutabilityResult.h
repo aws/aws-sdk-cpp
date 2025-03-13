@@ -28,7 +28,7 @@ namespace Model
   class PutImageTagMutabilityResult
   {
   public:
-    AWS_ECR_API PutImageTagMutabilityResult();
+    AWS_ECR_API PutImageTagMutabilityResult() = default;
     AWS_ECR_API PutImageTagMutabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API PutImageTagMutabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-    inline PutImageTagMutabilityResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline PutImageTagMutabilityResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline PutImageTagMutabilityResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    PutImageTagMutabilityResult& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name associated with the request.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryName.assign(value); }
-    inline PutImageTagMutabilityResult& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline PutImageTagMutabilityResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline PutImageTagMutabilityResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    PutImageTagMutabilityResult& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image tag mutability setting for the repository.</p>
      */
-    inline const ImageTagMutability& GetImageTagMutability() const{ return m_imageTagMutability; }
-    inline void SetImageTagMutability(const ImageTagMutability& value) { m_imageTagMutability = value; }
-    inline void SetImageTagMutability(ImageTagMutability&& value) { m_imageTagMutability = std::move(value); }
-    inline PutImageTagMutabilityResult& WithImageTagMutability(const ImageTagMutability& value) { SetImageTagMutability(value); return *this;}
-    inline PutImageTagMutabilityResult& WithImageTagMutability(ImageTagMutability&& value) { SetImageTagMutability(std::move(value)); return *this;}
+    inline ImageTagMutability GetImageTagMutability() const { return m_imageTagMutability; }
+    inline void SetImageTagMutability(ImageTagMutability value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = value; }
+    inline PutImageTagMutabilityResult& WithImageTagMutability(ImageTagMutability value) { SetImageTagMutability(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutImageTagMutabilityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutImageTagMutabilityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutImageTagMutabilityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutImageTagMutabilityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryId;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
+    bool m_repositoryNameHasBeenSet = false;
 
-    ImageTagMutability m_imageTagMutability;
+    ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
+    bool m_imageTagMutabilityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

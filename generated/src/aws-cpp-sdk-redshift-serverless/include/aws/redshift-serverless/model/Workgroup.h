@@ -38,7 +38,7 @@ namespace Model
   class Workgroup
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API Workgroup();
+    AWS_REDSHIFTSERVERLESS_API Workgroup() = default;
     AWS_REDSHIFTSERVERLESS_API Workgroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Workgroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * <p>The base data warehouse capacity of the workgroup in Redshift Processing
      * Units (RPUs).</p>
      */
-    inline int GetBaseCapacity() const{ return m_baseCapacity; }
+    inline int GetBaseCapacity() const { return m_baseCapacity; }
     inline bool BaseCapacityHasBeenSet() const { return m_baseCapacityHasBeenSet; }
     inline void SetBaseCapacity(int value) { m_baseCapacityHasBeenSet = true; m_baseCapacity = value; }
     inline Workgroup& WithBaseCapacity(int value) { SetBaseCapacity(value); return *this;}
@@ -67,26 +67,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">
      * Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
      */
-    inline const Aws::Vector<ConfigParameter>& GetConfigParameters() const{ return m_configParameters; }
+    inline const Aws::Vector<ConfigParameter>& GetConfigParameters() const { return m_configParameters; }
     inline bool ConfigParametersHasBeenSet() const { return m_configParametersHasBeenSet; }
-    inline void SetConfigParameters(const Aws::Vector<ConfigParameter>& value) { m_configParametersHasBeenSet = true; m_configParameters = value; }
-    inline void SetConfigParameters(Aws::Vector<ConfigParameter>&& value) { m_configParametersHasBeenSet = true; m_configParameters = std::move(value); }
-    inline Workgroup& WithConfigParameters(const Aws::Vector<ConfigParameter>& value) { SetConfigParameters(value); return *this;}
-    inline Workgroup& WithConfigParameters(Aws::Vector<ConfigParameter>&& value) { SetConfigParameters(std::move(value)); return *this;}
-    inline Workgroup& AddConfigParameters(const ConfigParameter& value) { m_configParametersHasBeenSet = true; m_configParameters.push_back(value); return *this; }
-    inline Workgroup& AddConfigParameters(ConfigParameter&& value) { m_configParametersHasBeenSet = true; m_configParameters.push_back(std::move(value)); return *this; }
+    template<typename ConfigParametersT = Aws::Vector<ConfigParameter>>
+    void SetConfigParameters(ConfigParametersT&& value) { m_configParametersHasBeenSet = true; m_configParameters = std::forward<ConfigParametersT>(value); }
+    template<typename ConfigParametersT = Aws::Vector<ConfigParameter>>
+    Workgroup& WithConfigParameters(ConfigParametersT&& value) { SetConfigParameters(std::forward<ConfigParametersT>(value)); return *this;}
+    template<typename ConfigParametersT = ConfigParameter>
+    Workgroup& AddConfigParameters(ConfigParametersT&& value) { m_configParametersHasBeenSet = true; m_configParameters.emplace_back(std::forward<ConfigParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The creation date of the workgroup.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline Workgroup& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline Workgroup& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    Workgroup& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,67 +95,62 @@ namespace Model
      * cloud with access to Amazon Redshift Serverless. If all of the VPCs for the
      * grantee are allowed, it shows an asterisk.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCrossAccountVpcs() const{ return m_crossAccountVpcs; }
+    inline const Aws::Vector<Aws::String>& GetCrossAccountVpcs() const { return m_crossAccountVpcs; }
     inline bool CrossAccountVpcsHasBeenSet() const { return m_crossAccountVpcsHasBeenSet; }
-    inline void SetCrossAccountVpcs(const Aws::Vector<Aws::String>& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs = value; }
-    inline void SetCrossAccountVpcs(Aws::Vector<Aws::String>&& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs = std::move(value); }
-    inline Workgroup& WithCrossAccountVpcs(const Aws::Vector<Aws::String>& value) { SetCrossAccountVpcs(value); return *this;}
-    inline Workgroup& WithCrossAccountVpcs(Aws::Vector<Aws::String>&& value) { SetCrossAccountVpcs(std::move(value)); return *this;}
-    inline Workgroup& AddCrossAccountVpcs(const Aws::String& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.push_back(value); return *this; }
-    inline Workgroup& AddCrossAccountVpcs(Aws::String&& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.push_back(std::move(value)); return *this; }
-    inline Workgroup& AddCrossAccountVpcs(const char* value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.push_back(value); return *this; }
+    template<typename CrossAccountVpcsT = Aws::Vector<Aws::String>>
+    void SetCrossAccountVpcs(CrossAccountVpcsT&& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs = std::forward<CrossAccountVpcsT>(value); }
+    template<typename CrossAccountVpcsT = Aws::Vector<Aws::String>>
+    Workgroup& WithCrossAccountVpcs(CrossAccountVpcsT&& value) { SetCrossAccountVpcs(std::forward<CrossAccountVpcsT>(value)); return *this;}
+    template<typename CrossAccountVpcsT = Aws::String>
+    Workgroup& AddCrossAccountVpcs(CrossAccountVpcsT&& value) { m_crossAccountVpcsHasBeenSet = true; m_crossAccountVpcs.emplace_back(std::forward<CrossAccountVpcsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The custom domain name’s certificate Amazon resource name (ARN).</p>
      */
-    inline const Aws::String& GetCustomDomainCertificateArn() const{ return m_customDomainCertificateArn; }
+    inline const Aws::String& GetCustomDomainCertificateArn() const { return m_customDomainCertificateArn; }
     inline bool CustomDomainCertificateArnHasBeenSet() const { return m_customDomainCertificateArnHasBeenSet; }
-    inline void SetCustomDomainCertificateArn(const Aws::String& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = value; }
-    inline void SetCustomDomainCertificateArn(Aws::String&& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = std::move(value); }
-    inline void SetCustomDomainCertificateArn(const char* value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn.assign(value); }
-    inline Workgroup& WithCustomDomainCertificateArn(const Aws::String& value) { SetCustomDomainCertificateArn(value); return *this;}
-    inline Workgroup& WithCustomDomainCertificateArn(Aws::String&& value) { SetCustomDomainCertificateArn(std::move(value)); return *this;}
-    inline Workgroup& WithCustomDomainCertificateArn(const char* value) { SetCustomDomainCertificateArn(value); return *this;}
+    template<typename CustomDomainCertificateArnT = Aws::String>
+    void SetCustomDomainCertificateArn(CustomDomainCertificateArnT&& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = std::forward<CustomDomainCertificateArnT>(value); }
+    template<typename CustomDomainCertificateArnT = Aws::String>
+    Workgroup& WithCustomDomainCertificateArn(CustomDomainCertificateArnT&& value) { SetCustomDomainCertificateArn(std::forward<CustomDomainCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiration time for the certificate.</p>
      */
-    inline const Aws::Utils::DateTime& GetCustomDomainCertificateExpiryTime() const{ return m_customDomainCertificateExpiryTime; }
+    inline const Aws::Utils::DateTime& GetCustomDomainCertificateExpiryTime() const { return m_customDomainCertificateExpiryTime; }
     inline bool CustomDomainCertificateExpiryTimeHasBeenSet() const { return m_customDomainCertificateExpiryTimeHasBeenSet; }
-    inline void SetCustomDomainCertificateExpiryTime(const Aws::Utils::DateTime& value) { m_customDomainCertificateExpiryTimeHasBeenSet = true; m_customDomainCertificateExpiryTime = value; }
-    inline void SetCustomDomainCertificateExpiryTime(Aws::Utils::DateTime&& value) { m_customDomainCertificateExpiryTimeHasBeenSet = true; m_customDomainCertificateExpiryTime = std::move(value); }
-    inline Workgroup& WithCustomDomainCertificateExpiryTime(const Aws::Utils::DateTime& value) { SetCustomDomainCertificateExpiryTime(value); return *this;}
-    inline Workgroup& WithCustomDomainCertificateExpiryTime(Aws::Utils::DateTime&& value) { SetCustomDomainCertificateExpiryTime(std::move(value)); return *this;}
+    template<typename CustomDomainCertificateExpiryTimeT = Aws::Utils::DateTime>
+    void SetCustomDomainCertificateExpiryTime(CustomDomainCertificateExpiryTimeT&& value) { m_customDomainCertificateExpiryTimeHasBeenSet = true; m_customDomainCertificateExpiryTime = std::forward<CustomDomainCertificateExpiryTimeT>(value); }
+    template<typename CustomDomainCertificateExpiryTimeT = Aws::Utils::DateTime>
+    Workgroup& WithCustomDomainCertificateExpiryTime(CustomDomainCertificateExpiryTimeT&& value) { SetCustomDomainCertificateExpiryTime(std::forward<CustomDomainCertificateExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom domain name associated with the workgroup.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
-    inline Workgroup& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline Workgroup& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline Workgroup& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    Workgroup& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint that is created from the workgroup.</p>
      */
-    inline const Endpoint& GetEndpoint() const{ return m_endpoint; }
+    inline const Endpoint& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Endpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Endpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline Workgroup& WithEndpoint(const Endpoint& value) { SetEndpoint(value); return *this;}
-    inline Workgroup& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+    template<typename EndpointT = Endpoint>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Endpoint>
+    Workgroup& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,7 +159,7 @@ namespace Model
      * (VPC) routing, which forces Amazon Redshift Serverless to route traffic through
      * your VPC.</p>
      */
-    inline bool GetEnhancedVpcRouting() const{ return m_enhancedVpcRouting; }
+    inline bool GetEnhancedVpcRouting() const { return m_enhancedVpcRouting; }
     inline bool EnhancedVpcRoutingHasBeenSet() const { return m_enhancedVpcRoutingHasBeenSet; }
     inline void SetEnhancedVpcRouting(bool value) { m_enhancedVpcRoutingHasBeenSet = true; m_enhancedVpcRouting = value; }
     inline Workgroup& WithEnhancedVpcRouting(bool value) { SetEnhancedVpcRouting(value); return *this;}
@@ -175,14 +170,12 @@ namespace Model
      * <p>The IP address type that the workgroup supports. Possible values are
      * <code>ipv4</code> and <code>dualstack</code>.</p>
      */
-    inline const Aws::String& GetIpAddressType() const{ return m_ipAddressType; }
+    inline const Aws::String& GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const Aws::String& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(Aws::String&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline void SetIpAddressType(const char* value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType.assign(value); }
-    inline Workgroup& WithIpAddressType(const Aws::String& value) { SetIpAddressType(value); return *this;}
-    inline Workgroup& WithIpAddressType(Aws::String&& value) { SetIpAddressType(std::move(value)); return *this;}
-    inline Workgroup& WithIpAddressType(const char* value) { SetIpAddressType(value); return *this;}
+    template<typename IpAddressTypeT = Aws::String>
+    void SetIpAddressType(IpAddressTypeT&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::forward<IpAddressTypeT>(value); }
+    template<typename IpAddressTypeT = Aws::String>
+    Workgroup& WithIpAddressType(IpAddressTypeT&& value) { SetIpAddressType(std::forward<IpAddressTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,7 +183,7 @@ namespace Model
      * <p>The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve
      * queries. The max capacity is specified in RPUs.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline Workgroup& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -200,14 +193,12 @@ namespace Model
     /**
      * <p>The namespace the workgroup is associated with.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline Workgroup& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline Workgroup& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline Workgroup& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    Workgroup& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,14 +208,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
      * versions for Amazon Redshift</a>.</p>
      */
-    inline const Aws::String& GetPatchVersion() const{ return m_patchVersion; }
+    inline const Aws::String& GetPatchVersion() const { return m_patchVersion; }
     inline bool PatchVersionHasBeenSet() const { return m_patchVersionHasBeenSet; }
-    inline void SetPatchVersion(const Aws::String& value) { m_patchVersionHasBeenSet = true; m_patchVersion = value; }
-    inline void SetPatchVersion(Aws::String&& value) { m_patchVersionHasBeenSet = true; m_patchVersion = std::move(value); }
-    inline void SetPatchVersion(const char* value) { m_patchVersionHasBeenSet = true; m_patchVersion.assign(value); }
-    inline Workgroup& WithPatchVersion(const Aws::String& value) { SetPatchVersion(value); return *this;}
-    inline Workgroup& WithPatchVersion(Aws::String&& value) { SetPatchVersion(std::move(value)); return *this;}
-    inline Workgroup& WithPatchVersion(const char* value) { SetPatchVersion(value); return *this;}
+    template<typename PatchVersionT = Aws::String>
+    void SetPatchVersion(PatchVersionT&& value) { m_patchVersionHasBeenSet = true; m_patchVersion = std::forward<PatchVersionT>(value); }
+    template<typename PatchVersionT = Aws::String>
+    Workgroup& WithPatchVersion(PatchVersionT&& value) { SetPatchVersion(std::forward<PatchVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -233,14 +222,12 @@ namespace Model
      * track changes, the workgroup is switched to the latest workgroup release
      * available for the track. At this point, the track name is applied.</p>
      */
-    inline const Aws::String& GetPendingTrackName() const{ return m_pendingTrackName; }
+    inline const Aws::String& GetPendingTrackName() const { return m_pendingTrackName; }
     inline bool PendingTrackNameHasBeenSet() const { return m_pendingTrackNameHasBeenSet; }
-    inline void SetPendingTrackName(const Aws::String& value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName = value; }
-    inline void SetPendingTrackName(Aws::String&& value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName = std::move(value); }
-    inline void SetPendingTrackName(const char* value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName.assign(value); }
-    inline Workgroup& WithPendingTrackName(const Aws::String& value) { SetPendingTrackName(value); return *this;}
-    inline Workgroup& WithPendingTrackName(Aws::String&& value) { SetPendingTrackName(std::move(value)); return *this;}
-    inline Workgroup& WithPendingTrackName(const char* value) { SetPendingTrackName(value); return *this;}
+    template<typename PendingTrackNameT = Aws::String>
+    void SetPendingTrackName(PendingTrackNameT&& value) { m_pendingTrackNameHasBeenSet = true; m_pendingTrackName = std::forward<PendingTrackNameT>(value); }
+    template<typename PendingTrackNameT = Aws::String>
+    Workgroup& WithPendingTrackName(PendingTrackNameT&& value) { SetPendingTrackName(std::forward<PendingTrackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,7 +235,7 @@ namespace Model
      * <p>The custom port to use when connecting to a workgroup. Valid port ranges are
      * 5431-5455 and 8191-8215. The default is 5439.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline Workgroup& WithPort(int value) { SetPort(value); return *this;}
@@ -259,12 +246,12 @@ namespace Model
      * <p>An object that represents the price performance target settings for the
      * workgroup.</p>
      */
-    inline const PerformanceTarget& GetPricePerformanceTarget() const{ return m_pricePerformanceTarget; }
+    inline const PerformanceTarget& GetPricePerformanceTarget() const { return m_pricePerformanceTarget; }
     inline bool PricePerformanceTargetHasBeenSet() const { return m_pricePerformanceTargetHasBeenSet; }
-    inline void SetPricePerformanceTarget(const PerformanceTarget& value) { m_pricePerformanceTargetHasBeenSet = true; m_pricePerformanceTarget = value; }
-    inline void SetPricePerformanceTarget(PerformanceTarget&& value) { m_pricePerformanceTargetHasBeenSet = true; m_pricePerformanceTarget = std::move(value); }
-    inline Workgroup& WithPricePerformanceTarget(const PerformanceTarget& value) { SetPricePerformanceTarget(value); return *this;}
-    inline Workgroup& WithPricePerformanceTarget(PerformanceTarget&& value) { SetPricePerformanceTarget(std::move(value)); return *this;}
+    template<typename PricePerformanceTargetT = PerformanceTarget>
+    void SetPricePerformanceTarget(PricePerformanceTargetT&& value) { m_pricePerformanceTargetHasBeenSet = true; m_pricePerformanceTarget = std::forward<PricePerformanceTargetT>(value); }
+    template<typename PricePerformanceTargetT = PerformanceTarget>
+    Workgroup& WithPricePerformanceTarget(PricePerformanceTargetT&& value) { SetPricePerformanceTarget(std::forward<PricePerformanceTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,7 +259,7 @@ namespace Model
      * <p>A value that specifies whether the workgroup can be accessible from a public
      * network.</p>
      */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline Workgroup& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -282,98 +269,86 @@ namespace Model
     /**
      * <p>An array of security group IDs to associate with the workgroup.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline Workgroup& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline Workgroup& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline Workgroup& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline Workgroup& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline Workgroup& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    Workgroup& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    Workgroup& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the workgroup.</p>
      */
-    inline const WorkgroupStatus& GetStatus() const{ return m_status; }
+    inline WorkgroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WorkgroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WorkgroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Workgroup& WithStatus(const WorkgroupStatus& value) { SetStatus(value); return *this;}
-    inline Workgroup& WithStatus(WorkgroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WorkgroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Workgroup& WithStatus(WorkgroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of subnet IDs the workgroup is associated with.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline Workgroup& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline Workgroup& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline Workgroup& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline Workgroup& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline Workgroup& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    Workgroup& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    Workgroup& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the track for the workgroup.</p>
      */
-    inline const Aws::String& GetTrackName() const{ return m_trackName; }
+    inline const Aws::String& GetTrackName() const { return m_trackName; }
     inline bool TrackNameHasBeenSet() const { return m_trackNameHasBeenSet; }
-    inline void SetTrackName(const Aws::String& value) { m_trackNameHasBeenSet = true; m_trackName = value; }
-    inline void SetTrackName(Aws::String&& value) { m_trackNameHasBeenSet = true; m_trackName = std::move(value); }
-    inline void SetTrackName(const char* value) { m_trackNameHasBeenSet = true; m_trackName.assign(value); }
-    inline Workgroup& WithTrackName(const Aws::String& value) { SetTrackName(value); return *this;}
-    inline Workgroup& WithTrackName(Aws::String&& value) { SetTrackName(std::move(value)); return *this;}
-    inline Workgroup& WithTrackName(const char* value) { SetTrackName(value); return *this;}
+    template<typename TrackNameT = Aws::String>
+    void SetTrackName(TrackNameT&& value) { m_trackNameHasBeenSet = true; m_trackName = std::forward<TrackNameT>(value); }
+    template<typename TrackNameT = Aws::String>
+    Workgroup& WithTrackName(TrackNameT&& value) { SetTrackName(std::forward<TrackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that links to the workgroup.</p>
      */
-    inline const Aws::String& GetWorkgroupArn() const{ return m_workgroupArn; }
+    inline const Aws::String& GetWorkgroupArn() const { return m_workgroupArn; }
     inline bool WorkgroupArnHasBeenSet() const { return m_workgroupArnHasBeenSet; }
-    inline void SetWorkgroupArn(const Aws::String& value) { m_workgroupArnHasBeenSet = true; m_workgroupArn = value; }
-    inline void SetWorkgroupArn(Aws::String&& value) { m_workgroupArnHasBeenSet = true; m_workgroupArn = std::move(value); }
-    inline void SetWorkgroupArn(const char* value) { m_workgroupArnHasBeenSet = true; m_workgroupArn.assign(value); }
-    inline Workgroup& WithWorkgroupArn(const Aws::String& value) { SetWorkgroupArn(value); return *this;}
-    inline Workgroup& WithWorkgroupArn(Aws::String&& value) { SetWorkgroupArn(std::move(value)); return *this;}
-    inline Workgroup& WithWorkgroupArn(const char* value) { SetWorkgroupArn(value); return *this;}
+    template<typename WorkgroupArnT = Aws::String>
+    void SetWorkgroupArn(WorkgroupArnT&& value) { m_workgroupArnHasBeenSet = true; m_workgroupArn = std::forward<WorkgroupArnT>(value); }
+    template<typename WorkgroupArnT = Aws::String>
+    Workgroup& WithWorkgroupArn(WorkgroupArnT&& value) { SetWorkgroupArn(std::forward<WorkgroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the workgroup.</p>
      */
-    inline const Aws::String& GetWorkgroupId() const{ return m_workgroupId; }
+    inline const Aws::String& GetWorkgroupId() const { return m_workgroupId; }
     inline bool WorkgroupIdHasBeenSet() const { return m_workgroupIdHasBeenSet; }
-    inline void SetWorkgroupId(const Aws::String& value) { m_workgroupIdHasBeenSet = true; m_workgroupId = value; }
-    inline void SetWorkgroupId(Aws::String&& value) { m_workgroupIdHasBeenSet = true; m_workgroupId = std::move(value); }
-    inline void SetWorkgroupId(const char* value) { m_workgroupIdHasBeenSet = true; m_workgroupId.assign(value); }
-    inline Workgroup& WithWorkgroupId(const Aws::String& value) { SetWorkgroupId(value); return *this;}
-    inline Workgroup& WithWorkgroupId(Aws::String&& value) { SetWorkgroupId(std::move(value)); return *this;}
-    inline Workgroup& WithWorkgroupId(const char* value) { SetWorkgroupId(value); return *this;}
+    template<typename WorkgroupIdT = Aws::String>
+    void SetWorkgroupId(WorkgroupIdT&& value) { m_workgroupIdHasBeenSet = true; m_workgroupId = std::forward<WorkgroupIdT>(value); }
+    template<typename WorkgroupIdT = Aws::String>
+    Workgroup& WithWorkgroupId(WorkgroupIdT&& value) { SetWorkgroupId(std::forward<WorkgroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workgroup.</p>
      */
-    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+    inline const Aws::String& GetWorkgroupName() const { return m_workgroupName; }
     inline bool WorkgroupNameHasBeenSet() const { return m_workgroupNameHasBeenSet; }
-    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = value; }
-    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::move(value); }
-    inline void SetWorkgroupName(const char* value) { m_workgroupNameHasBeenSet = true; m_workgroupName.assign(value); }
-    inline Workgroup& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
-    inline Workgroup& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
-    inline Workgroup& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+    template<typename WorkgroupNameT = Aws::String>
+    void SetWorkgroupName(WorkgroupNameT&& value) { m_workgroupNameHasBeenSet = true; m_workgroupName = std::forward<WorkgroupNameT>(value); }
+    template<typename WorkgroupNameT = Aws::String>
+    Workgroup& WithWorkgroupName(WorkgroupNameT&& value) { SetWorkgroupName(std::forward<WorkgroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -383,24 +358,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html">Cluster
      * versions for Amazon Redshift</a>.</p>
      */
-    inline const Aws::String& GetWorkgroupVersion() const{ return m_workgroupVersion; }
+    inline const Aws::String& GetWorkgroupVersion() const { return m_workgroupVersion; }
     inline bool WorkgroupVersionHasBeenSet() const { return m_workgroupVersionHasBeenSet; }
-    inline void SetWorkgroupVersion(const Aws::String& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = value; }
-    inline void SetWorkgroupVersion(Aws::String&& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = std::move(value); }
-    inline void SetWorkgroupVersion(const char* value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion.assign(value); }
-    inline Workgroup& WithWorkgroupVersion(const Aws::String& value) { SetWorkgroupVersion(value); return *this;}
-    inline Workgroup& WithWorkgroupVersion(Aws::String&& value) { SetWorkgroupVersion(std::move(value)); return *this;}
-    inline Workgroup& WithWorkgroupVersion(const char* value) { SetWorkgroupVersion(value); return *this;}
+    template<typename WorkgroupVersionT = Aws::String>
+    void SetWorkgroupVersion(WorkgroupVersionT&& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = std::forward<WorkgroupVersionT>(value); }
+    template<typename WorkgroupVersionT = Aws::String>
+    Workgroup& WithWorkgroupVersion(WorkgroupVersionT&& value) { SetWorkgroupVersion(std::forward<WorkgroupVersionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_baseCapacity;
+    int m_baseCapacity{0};
     bool m_baseCapacityHasBeenSet = false;
 
     Aws::Vector<ConfigParameter> m_configParameters;
     bool m_configParametersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_crossAccountVpcs;
@@ -409,7 +382,7 @@ namespace Model
     Aws::String m_customDomainCertificateArn;
     bool m_customDomainCertificateArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_customDomainCertificateExpiryTime;
+    Aws::Utils::DateTime m_customDomainCertificateExpiryTime{};
     bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
 
     Aws::String m_customDomainName;
@@ -418,13 +391,13 @@ namespace Model
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    bool m_enhancedVpcRouting;
+    bool m_enhancedVpcRouting{false};
     bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
     Aws::String m_namespaceName;
@@ -436,19 +409,19 @@ namespace Model
     Aws::String m_pendingTrackName;
     bool m_pendingTrackNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     PerformanceTarget m_pricePerformanceTarget;
     bool m_pricePerformanceTargetHasBeenSet = false;
 
-    bool m_publiclyAccessible;
+    bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet = false;
 
-    WorkgroupStatus m_status;
+    WorkgroupStatus m_status{WorkgroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;

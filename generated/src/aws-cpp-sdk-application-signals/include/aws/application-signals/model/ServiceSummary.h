@@ -35,7 +35,7 @@ namespace Model
   class ServiceSummary
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ServiceSummary();
+    AWS_APPLICATIONSIGNALS_API ServiceSummary() = default;
     AWS_APPLICATIONSIGNALS_API ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,19 +58,16 @@ namespace Model
      * specifies the location where this object is hosted, or what it belongs to.</p>
      * </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const { return m_keyAttributes; }
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-    inline void SetKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-    inline void SetKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-    inline ServiceSummary& WithKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyAttributes(value); return *this;}
-    inline ServiceSummary& WithKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyAttributes(std::move(value)); return *this;}
-    inline ServiceSummary& AddKeyAttributes(const Aws::String& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
-    inline ServiceSummary& AddKeyAttributes(Aws::String&& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-    inline ServiceSummary& AddKeyAttributes(const Aws::String& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-    inline ServiceSummary& AddKeyAttributes(Aws::String&& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ServiceSummary& AddKeyAttributes(const char* key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-    inline ServiceSummary& AddKeyAttributes(Aws::String&& key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-    inline ServiceSummary& AddKeyAttributes(const char* key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
+    template<typename KeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetKeyAttributes(KeyAttributesT&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::forward<KeyAttributesT>(value); }
+    template<typename KeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    ServiceSummary& WithKeyAttributes(KeyAttributesT&& value) { SetKeyAttributes(std::forward<KeyAttributesT>(value)); return *this;}
+    template<typename KeyAttributesKeyT = Aws::String, typename KeyAttributesValueT = Aws::String>
+    ServiceSummary& AddKeyAttributes(KeyAttributesKeyT&& key, KeyAttributesValueT&& value) {
+      m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::forward<KeyAttributesKeyT>(key), std::forward<KeyAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -105,14 +102,14 @@ namespace Model
      * the point of application where the telemetry was collected or specifies what was
      * used for the source of telemetry data.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetAttributeMaps() const{ return m_attributeMaps; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetAttributeMaps() const { return m_attributeMaps; }
     inline bool AttributeMapsHasBeenSet() const { return m_attributeMapsHasBeenSet; }
-    inline void SetAttributeMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_attributeMapsHasBeenSet = true; m_attributeMaps = value; }
-    inline void SetAttributeMaps(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_attributeMapsHasBeenSet = true; m_attributeMaps = std::move(value); }
-    inline ServiceSummary& WithAttributeMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetAttributeMaps(value); return *this;}
-    inline ServiceSummary& WithAttributeMaps(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetAttributeMaps(std::move(value)); return *this;}
-    inline ServiceSummary& AddAttributeMaps(const Aws::Map<Aws::String, Aws::String>& value) { m_attributeMapsHasBeenSet = true; m_attributeMaps.push_back(value); return *this; }
-    inline ServiceSummary& AddAttributeMaps(Aws::Map<Aws::String, Aws::String>&& value) { m_attributeMapsHasBeenSet = true; m_attributeMaps.push_back(std::move(value)); return *this; }
+    template<typename AttributeMapsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    void SetAttributeMaps(AttributeMapsT&& value) { m_attributeMapsHasBeenSet = true; m_attributeMaps = std::forward<AttributeMapsT>(value); }
+    template<typename AttributeMapsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    ServiceSummary& WithAttributeMaps(AttributeMapsT&& value) { SetAttributeMaps(std::forward<AttributeMapsT>(value)); return *this;}
+    template<typename AttributeMapsT = Aws::Map<Aws::String, Aws::String>>
+    ServiceSummary& AddAttributeMaps(AttributeMapsT&& value) { m_attributeMapsHasBeenSet = true; m_attributeMaps.emplace_back(std::forward<AttributeMapsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,14 +117,14 @@ namespace Model
      * <p>An array of structures that each contain information about one metric
      * associated with this service.</p>
      */
-    inline const Aws::Vector<MetricReference>& GetMetricReferences() const{ return m_metricReferences; }
+    inline const Aws::Vector<MetricReference>& GetMetricReferences() const { return m_metricReferences; }
     inline bool MetricReferencesHasBeenSet() const { return m_metricReferencesHasBeenSet; }
-    inline void SetMetricReferences(const Aws::Vector<MetricReference>& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = value; }
-    inline void SetMetricReferences(Aws::Vector<MetricReference>&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::move(value); }
-    inline ServiceSummary& WithMetricReferences(const Aws::Vector<MetricReference>& value) { SetMetricReferences(value); return *this;}
-    inline ServiceSummary& WithMetricReferences(Aws::Vector<MetricReference>&& value) { SetMetricReferences(std::move(value)); return *this;}
-    inline ServiceSummary& AddMetricReferences(const MetricReference& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(value); return *this; }
-    inline ServiceSummary& AddMetricReferences(MetricReference&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(std::move(value)); return *this; }
+    template<typename MetricReferencesT = Aws::Vector<MetricReference>>
+    void SetMetricReferences(MetricReferencesT&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::forward<MetricReferencesT>(value); }
+    template<typename MetricReferencesT = Aws::Vector<MetricReference>>
+    ServiceSummary& WithMetricReferences(MetricReferencesT&& value) { SetMetricReferences(std::forward<MetricReferencesT>(value)); return *this;}
+    template<typename MetricReferencesT = MetricReference>
+    ServiceSummary& AddMetricReferences(MetricReferencesT&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.emplace_back(std::forward<MetricReferencesT>(value)); return *this; }
     ///@}
   private:
 

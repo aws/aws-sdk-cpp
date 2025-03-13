@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetFieldResult::BatchGetFieldResult()
-{
-}
-
 BatchGetFieldResult::BatchGetFieldResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetFieldResult& BatchGetFieldResult::operator =(const Aws::AmazonWebService
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -45,14 +41,15 @@ BatchGetFieldResult& BatchGetFieldResult::operator =(const Aws::AmazonWebService
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
     }
+    m_fieldsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

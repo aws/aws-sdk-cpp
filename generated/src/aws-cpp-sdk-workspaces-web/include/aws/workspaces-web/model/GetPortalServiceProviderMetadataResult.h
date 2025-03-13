@@ -27,7 +27,7 @@ namespace Model
   class GetPortalServiceProviderMetadataResult
   {
   public:
-    AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult();
+    AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult() = default;
     AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The ARN of the web portal.</p>
      */
-    inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-    inline void SetPortalArn(const Aws::String& value) { m_portalArn = value; }
-    inline void SetPortalArn(Aws::String&& value) { m_portalArn = std::move(value); }
-    inline void SetPortalArn(const char* value) { m_portalArn.assign(value); }
-    inline GetPortalServiceProviderMetadataResult& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-    inline GetPortalServiceProviderMetadataResult& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-    inline GetPortalServiceProviderMetadataResult& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
+    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
+    template<typename PortalArnT = Aws::String>
+    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
+    template<typename PortalArnT = Aws::String>
+    GetPortalServiceProviderMetadataResult& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service provider SAML metadata.</p>
      */
-    inline const Aws::String& GetServiceProviderSamlMetadata() const{ return m_serviceProviderSamlMetadata; }
-    inline void SetServiceProviderSamlMetadata(const Aws::String& value) { m_serviceProviderSamlMetadata = value; }
-    inline void SetServiceProviderSamlMetadata(Aws::String&& value) { m_serviceProviderSamlMetadata = std::move(value); }
-    inline void SetServiceProviderSamlMetadata(const char* value) { m_serviceProviderSamlMetadata.assign(value); }
-    inline GetPortalServiceProviderMetadataResult& WithServiceProviderSamlMetadata(const Aws::String& value) { SetServiceProviderSamlMetadata(value); return *this;}
-    inline GetPortalServiceProviderMetadataResult& WithServiceProviderSamlMetadata(Aws::String&& value) { SetServiceProviderSamlMetadata(std::move(value)); return *this;}
-    inline GetPortalServiceProviderMetadataResult& WithServiceProviderSamlMetadata(const char* value) { SetServiceProviderSamlMetadata(value); return *this;}
+    inline const Aws::String& GetServiceProviderSamlMetadata() const { return m_serviceProviderSamlMetadata; }
+    template<typename ServiceProviderSamlMetadataT = Aws::String>
+    void SetServiceProviderSamlMetadata(ServiceProviderSamlMetadataT&& value) { m_serviceProviderSamlMetadataHasBeenSet = true; m_serviceProviderSamlMetadata = std::forward<ServiceProviderSamlMetadataT>(value); }
+    template<typename ServiceProviderSamlMetadataT = Aws::String>
+    GetPortalServiceProviderMetadataResult& WithServiceProviderSamlMetadata(ServiceProviderSamlMetadataT&& value) { SetServiceProviderSamlMetadata(std::forward<ServiceProviderSamlMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPortalServiceProviderMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPortalServiceProviderMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPortalServiceProviderMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPortalServiceProviderMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_portalArn;
+    bool m_portalArnHasBeenSet = false;
 
     Aws::String m_serviceProviderSamlMetadata;
+    bool m_serviceProviderSamlMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

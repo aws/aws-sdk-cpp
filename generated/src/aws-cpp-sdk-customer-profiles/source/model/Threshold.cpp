@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Threshold::Threshold() : 
-    m_valueHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 Threshold::Threshold(JsonView jsonValue)
-  : Threshold()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Threshold& Threshold::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

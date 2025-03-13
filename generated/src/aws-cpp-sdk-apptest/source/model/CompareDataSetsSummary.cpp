@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CompareDataSetsSummary::CompareDataSetsSummary() : 
-    m_stepInputHasBeenSet(false),
-    m_stepOutputHasBeenSet(false)
-{
-}
-
 CompareDataSetsSummary::CompareDataSetsSummary(JsonView jsonValue)
-  : CompareDataSetsSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CompareDataSetsSummary& CompareDataSetsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepInput"))
   {
     m_stepInput = jsonValue.GetObject("stepInput");
-
     m_stepInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepOutput"))
   {
     m_stepOutput = jsonValue.GetObject("stepOutput");
-
     m_stepOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

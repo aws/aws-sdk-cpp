@@ -18,16 +18,7 @@ namespace CloudSearchDomain
 namespace Model
 {
 
-Hit::Hit() : 
-    m_idHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_exprsHasBeenSet(false),
-    m_highlightsHasBeenSet(false)
-{
-}
-
 Hit::Hit(JsonView jsonValue)
-  : Hit()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Hit& Hit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
@@ -57,7 +46,6 @@ Hit& Hit::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exprs"))
   {
     Aws::Map<Aws::String, JsonView> exprsJsonMap = jsonValue.GetObject("exprs").GetAllObjects();
@@ -67,7 +55,6 @@ Hit& Hit::operator =(JsonView jsonValue)
     }
     m_exprsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("highlights"))
   {
     Aws::Map<Aws::String, JsonView> highlightsJsonMap = jsonValue.GetObject("highlights").GetAllObjects();
@@ -77,7 +64,6 @@ Hit& Hit::operator =(JsonView jsonValue)
     }
     m_highlightsHasBeenSet = true;
   }
-
   return *this;
 }
 

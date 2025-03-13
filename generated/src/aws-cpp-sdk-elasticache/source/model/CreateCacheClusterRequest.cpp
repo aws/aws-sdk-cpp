@@ -10,49 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateCacheClusterRequest::CreateCacheClusterRequest() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_replicationGroupIdHasBeenSet(false),
-    m_aZMode(AZMode::NOT_SET),
-    m_aZModeHasBeenSet(false),
-    m_preferredAvailabilityZoneHasBeenSet(false),
-    m_preferredAvailabilityZonesHasBeenSet(false),
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_cacheSecurityGroupNamesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_snapshotArnsHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_notificationTopicArnHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_authTokenHasBeenSet(false),
-    m_outpostMode(OutpostMode::NOT_SET),
-    m_outpostModeHasBeenSet(false),
-    m_preferredOutpostArnHasBeenSet(false),
-    m_preferredOutpostArnsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_transitEncryptionEnabled(false),
-    m_transitEncryptionEnabledHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false)
-{
-}
-
 Aws::String CreateCacheClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

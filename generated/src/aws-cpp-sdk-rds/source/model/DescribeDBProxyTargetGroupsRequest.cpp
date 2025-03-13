@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBProxyTargetGroupsRequest::DescribeDBProxyTargetGroupsRequest() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBProxyTargetGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

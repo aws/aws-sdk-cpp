@@ -21,7 +21,7 @@ namespace Model
   class DisassociateLibraryItemReviewRequest : public QAppsRequest
   {
   public:
-    AWS_QAPPS_API DisassociateLibraryItemReviewRequest();
+    AWS_QAPPS_API DisassociateLibraryItemReviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The unique identifier of the Amazon Q Business application environment
      * instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DisassociateLibraryItemReviewRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DisassociateLibraryItemReviewRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DisassociateLibraryItemReviewRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DisassociateLibraryItemReviewRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the library item to remove the review from.</p>
      */
-    inline const Aws::String& GetLibraryItemId() const{ return m_libraryItemId; }
+    inline const Aws::String& GetLibraryItemId() const { return m_libraryItemId; }
     inline bool LibraryItemIdHasBeenSet() const { return m_libraryItemIdHasBeenSet; }
-    inline void SetLibraryItemId(const Aws::String& value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId = value; }
-    inline void SetLibraryItemId(Aws::String&& value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId = std::move(value); }
-    inline void SetLibraryItemId(const char* value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId.assign(value); }
-    inline DisassociateLibraryItemReviewRequest& WithLibraryItemId(const Aws::String& value) { SetLibraryItemId(value); return *this;}
-    inline DisassociateLibraryItemReviewRequest& WithLibraryItemId(Aws::String&& value) { SetLibraryItemId(std::move(value)); return *this;}
-    inline DisassociateLibraryItemReviewRequest& WithLibraryItemId(const char* value) { SetLibraryItemId(value); return *this;}
+    template<typename LibraryItemIdT = Aws::String>
+    void SetLibraryItemId(LibraryItemIdT&& value) { m_libraryItemIdHasBeenSet = true; m_libraryItemId = std::forward<LibraryItemIdT>(value); }
+    template<typename LibraryItemIdT = Aws::String>
+    DisassociateLibraryItemReviewRequest& WithLibraryItemId(LibraryItemIdT&& value) { SetLibraryItemId(std::forward<LibraryItemIdT>(value)); return *this;}
     ///@}
   private:
 

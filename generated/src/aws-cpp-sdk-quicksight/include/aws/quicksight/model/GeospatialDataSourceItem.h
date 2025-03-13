@@ -32,7 +32,7 @@ namespace Model
   class GeospatialDataSourceItem
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialDataSourceItem();
+    AWS_QUICKSIGHT_API GeospatialDataSourceItem() = default;
     AWS_QUICKSIGHT_API GeospatialDataSourceItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialDataSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The static file data source properties for the geospatial data.</p>
      */
-    inline const GeospatialStaticFileSource& GetStaticFileDataSource() const{ return m_staticFileDataSource; }
+    inline const GeospatialStaticFileSource& GetStaticFileDataSource() const { return m_staticFileDataSource; }
     inline bool StaticFileDataSourceHasBeenSet() const { return m_staticFileDataSourceHasBeenSet; }
-    inline void SetStaticFileDataSource(const GeospatialStaticFileSource& value) { m_staticFileDataSourceHasBeenSet = true; m_staticFileDataSource = value; }
-    inline void SetStaticFileDataSource(GeospatialStaticFileSource&& value) { m_staticFileDataSourceHasBeenSet = true; m_staticFileDataSource = std::move(value); }
-    inline GeospatialDataSourceItem& WithStaticFileDataSource(const GeospatialStaticFileSource& value) { SetStaticFileDataSource(value); return *this;}
-    inline GeospatialDataSourceItem& WithStaticFileDataSource(GeospatialStaticFileSource&& value) { SetStaticFileDataSource(std::move(value)); return *this;}
+    template<typename StaticFileDataSourceT = GeospatialStaticFileSource>
+    void SetStaticFileDataSource(StaticFileDataSourceT&& value) { m_staticFileDataSourceHasBeenSet = true; m_staticFileDataSource = std::forward<StaticFileDataSourceT>(value); }
+    template<typename StaticFileDataSourceT = GeospatialStaticFileSource>
+    GeospatialDataSourceItem& WithStaticFileDataSource(StaticFileDataSourceT&& value) { SetStaticFileDataSource(std::forward<StaticFileDataSourceT>(value)); return *this;}
     ///@}
   private:
 

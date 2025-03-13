@@ -32,7 +32,7 @@ namespace Model
   class PtrUpdateStatus
   {
   public:
-    AWS_EC2_API PtrUpdateStatus();
+    AWS_EC2_API PtrUpdateStatus() = default;
     AWS_EC2_API PtrUpdateStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PtrUpdateStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The value for the PTR record update.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PtrUpdateStatus& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PtrUpdateStatus& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PtrUpdateStatus& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PtrUpdateStatus& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the PTR record update.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline PtrUpdateStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline PtrUpdateStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline PtrUpdateStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    PtrUpdateStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the PTR record update.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline PtrUpdateStatus& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline PtrUpdateStatus& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline PtrUpdateStatus& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    PtrUpdateStatus& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

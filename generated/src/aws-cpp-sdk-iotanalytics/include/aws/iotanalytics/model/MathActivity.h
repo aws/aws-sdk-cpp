@@ -32,7 +32,7 @@ namespace Model
   class MathActivity
   {
   public:
-    AWS_IOTANALYTICS_API MathActivity();
+    AWS_IOTANALYTICS_API MathActivity() = default;
     AWS_IOTANALYTICS_API MathActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API MathActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the math activity.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MathActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MathActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MathActivity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MathActivity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the attribute that contains the result of the math operation.</p>
      */
-    inline const Aws::String& GetAttribute() const{ return m_attribute; }
+    inline const Aws::String& GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
-    inline MathActivity& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-    inline MathActivity& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-    inline MathActivity& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+    template<typename AttributeT = Aws::String>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Aws::String>
+    MathActivity& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * <p>An expression that uses one or more existing attributes and must return an
      * integer value.</p>
      */
-    inline const Aws::String& GetMath() const{ return m_math; }
+    inline const Aws::String& GetMath() const { return m_math; }
     inline bool MathHasBeenSet() const { return m_mathHasBeenSet; }
-    inline void SetMath(const Aws::String& value) { m_mathHasBeenSet = true; m_math = value; }
-    inline void SetMath(Aws::String&& value) { m_mathHasBeenSet = true; m_math = std::move(value); }
-    inline void SetMath(const char* value) { m_mathHasBeenSet = true; m_math.assign(value); }
-    inline MathActivity& WithMath(const Aws::String& value) { SetMath(value); return *this;}
-    inline MathActivity& WithMath(Aws::String&& value) { SetMath(std::move(value)); return *this;}
-    inline MathActivity& WithMath(const char* value) { SetMath(value); return *this;}
+    template<typename MathT = Aws::String>
+    void SetMath(MathT&& value) { m_mathHasBeenSet = true; m_math = std::forward<MathT>(value); }
+    template<typename MathT = Aws::String>
+    MathActivity& WithMath(MathT&& value) { SetMath(std::forward<MathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next activity in the pipeline.</p>
      */
-    inline const Aws::String& GetNext() const{ return m_next; }
+    inline const Aws::String& GetNext() const { return m_next; }
     inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
-    inline void SetNext(const Aws::String& value) { m_nextHasBeenSet = true; m_next = value; }
-    inline void SetNext(Aws::String&& value) { m_nextHasBeenSet = true; m_next = std::move(value); }
-    inline void SetNext(const char* value) { m_nextHasBeenSet = true; m_next.assign(value); }
-    inline MathActivity& WithNext(const Aws::String& value) { SetNext(value); return *this;}
-    inline MathActivity& WithNext(Aws::String&& value) { SetNext(std::move(value)); return *this;}
-    inline MathActivity& WithNext(const char* value) { SetNext(value); return *this;}
+    template<typename NextT = Aws::String>
+    void SetNext(NextT&& value) { m_nextHasBeenSet = true; m_next = std::forward<NextT>(value); }
+    template<typename NextT = Aws::String>
+    MathActivity& WithNext(NextT&& value) { SetNext(std::forward<NextT>(value)); return *this;}
     ///@}
   private:
 

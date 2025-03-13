@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveFlowVpcInterfaceResult::RemoveFlowVpcInterfaceResult()
-{
-}
-
 RemoveFlowVpcInterfaceResult::RemoveFlowVpcInterfaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ RemoveFlowVpcInterfaceResult& RemoveFlowVpcInterfaceResult::operator =(const Aws
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nonDeletedNetworkInterfaceIds"))
   {
     Aws::Utils::Array<JsonView> nonDeletedNetworkInterfaceIdsJsonList = jsonValue.GetArray("nonDeletedNetworkInterfaceIds");
@@ -42,20 +37,20 @@ RemoveFlowVpcInterfaceResult& RemoveFlowVpcInterfaceResult::operator =(const Aws
     {
       m_nonDeletedNetworkInterfaceIds.push_back(nonDeletedNetworkInterfaceIdsJsonList[nonDeletedNetworkInterfaceIdsIndex].AsString());
     }
+    m_nonDeletedNetworkInterfaceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcInterfaceName"))
   {
     m_vpcInterfaceName = jsonValue.GetString("vpcInterfaceName");
-
+    m_vpcInterfaceNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

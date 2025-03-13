@@ -41,7 +41,7 @@ namespace Model
   class CallAnalyticsJobSettings
   {
   public:
-    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSettings();
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSettings() = default;
     AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API CallAnalyticsJobSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * <p>The name of the custom vocabulary you want to include in your Call Analytics
      * transcription request. Custom vocabulary names are case sensitive.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline CallAnalyticsJobSettings& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline CallAnalyticsJobSettings& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline CallAnalyticsJobSettings& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    CallAnalyticsJobSettings& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * sensitive.</p> <p>Note that if you include <code>VocabularyFilterName</code> in
      * your request, you must also include <code>VocabularyFilterMethod</code>.</p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline CallAnalyticsJobSettings& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline CallAnalyticsJobSettings& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline CallAnalyticsJobSettings& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    CallAnalyticsJobSettings& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * <code>mask</code>.</p> <p>To delete words, choose <code>remove</code>.</p> <p>To
      * flag words without changing them, choose <code>tag</code>.</p>
      */
-    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline VocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline CallAnalyticsJobSettings& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline CallAnalyticsJobSettings& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline CallAnalyticsJobSettings& WithVocabularyFilterMethod(VocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -103,24 +97,22 @@ namespace Model
      * languages do not match, the custom language model isn't applied. There are no
      * errors or warnings associated with a language mismatch.</p>
      */
-    inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
+    inline const Aws::String& GetLanguageModelName() const { return m_languageModelName; }
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
-    inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
-    inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
-    inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
-    inline CallAnalyticsJobSettings& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
-    inline CallAnalyticsJobSettings& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
-    inline CallAnalyticsJobSettings& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
+    template<typename LanguageModelNameT = Aws::String>
+    void SetLanguageModelName(LanguageModelNameT&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::forward<LanguageModelNameT>(value); }
+    template<typename LanguageModelNameT = Aws::String>
+    CallAnalyticsJobSettings& WithLanguageModelName(LanguageModelNameT&& value) { SetLanguageModelName(std::forward<LanguageModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
+    inline const ContentRedaction& GetContentRedaction() const { return m_contentRedaction; }
     inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
-    inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
-    inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
-    inline CallAnalyticsJobSettings& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
-    inline CallAnalyticsJobSettings& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
+    template<typename ContentRedactionT = ContentRedaction>
+    void SetContentRedaction(ContentRedactionT&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::forward<ContentRedactionT>(value); }
+    template<typename ContentRedactionT = ContentRedaction>
+    CallAnalyticsJobSettings& WithContentRedaction(ContentRedactionT&& value) { SetContentRedaction(std::forward<ContentRedactionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +130,13 @@ namespace Model
      * Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file
      * must be encoded at a sample rate of 16,000 Hz or higher.</p>
      */
-    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const{ return m_languageOptions; }
+    inline const Aws::Vector<LanguageCode>& GetLanguageOptions() const { return m_languageOptions; }
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
-    inline void SetLanguageOptions(const Aws::Vector<LanguageCode>& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
-    inline void SetLanguageOptions(Aws::Vector<LanguageCode>&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
-    inline CallAnalyticsJobSettings& WithLanguageOptions(const Aws::Vector<LanguageCode>& value) { SetLanguageOptions(value); return *this;}
-    inline CallAnalyticsJobSettings& WithLanguageOptions(Aws::Vector<LanguageCode>&& value) { SetLanguageOptions(std::move(value)); return *this;}
-    inline CallAnalyticsJobSettings& AddLanguageOptions(const LanguageCode& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
-    inline CallAnalyticsJobSettings& AddLanguageOptions(LanguageCode&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(std::move(value)); return *this; }
+    template<typename LanguageOptionsT = Aws::Vector<LanguageCode>>
+    void SetLanguageOptions(LanguageOptionsT&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::forward<LanguageOptionsT>(value); }
+    template<typename LanguageOptionsT = Aws::Vector<LanguageCode>>
+    CallAnalyticsJobSettings& WithLanguageOptions(LanguageOptionsT&& value) { SetLanguageOptions(std::forward<LanguageOptionsT>(value)); return *this;}
+    inline CallAnalyticsJobSettings& AddLanguageOptions(LanguageCode value) { m_languageOptionsHasBeenSet = true; m_languageOptions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -176,16 +167,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages and language-specific features</a>.</p>
      */
-    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
+    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const { return m_languageIdSettings; }
     inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
-    inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
-    inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
-    inline CallAnalyticsJobSettings& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
-    inline CallAnalyticsJobSettings& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
-    inline CallAnalyticsJobSettings& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
-    inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
-    inline CallAnalyticsJobSettings& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
-    inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename LanguageIdSettingsT = Aws::Map<LanguageCode, LanguageIdSettings>>
+    void SetLanguageIdSettings(LanguageIdSettingsT&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::forward<LanguageIdSettingsT>(value); }
+    template<typename LanguageIdSettingsT = Aws::Map<LanguageCode, LanguageIdSettings>>
+    CallAnalyticsJobSettings& WithLanguageIdSettings(LanguageIdSettingsT&& value) { SetLanguageIdSettings(std::forward<LanguageIdSettingsT>(value)); return *this;}
+    inline CallAnalyticsJobSettings& AddLanguageIdSettings(LanguageCode key, LanguageIdSettings value) {
+      m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -194,12 +184,12 @@ namespace Model
      * parameter if you want to enable Generative call summarization in your Call
      * Analytics request.</p>
      */
-    inline const Summarization& GetSummarization() const{ return m_summarization; }
+    inline const Summarization& GetSummarization() const { return m_summarization; }
     inline bool SummarizationHasBeenSet() const { return m_summarizationHasBeenSet; }
-    inline void SetSummarization(const Summarization& value) { m_summarizationHasBeenSet = true; m_summarization = value; }
-    inline void SetSummarization(Summarization&& value) { m_summarizationHasBeenSet = true; m_summarization = std::move(value); }
-    inline CallAnalyticsJobSettings& WithSummarization(const Summarization& value) { SetSummarization(value); return *this;}
-    inline CallAnalyticsJobSettings& WithSummarization(Summarization&& value) { SetSummarization(std::move(value)); return *this;}
+    template<typename SummarizationT = Summarization>
+    void SetSummarization(SummarizationT&& value) { m_summarizationHasBeenSet = true; m_summarization = std::forward<SummarizationT>(value); }
+    template<typename SummarizationT = Summarization>
+    CallAnalyticsJobSettings& WithSummarization(SummarizationT&& value) { SetSummarization(std::forward<SummarizationT>(value)); return *this;}
     ///@}
   private:
 
@@ -209,7 +199,7 @@ namespace Model
     Aws::String m_vocabularyFilterName;
     bool m_vocabularyFilterNameHasBeenSet = false;
 
-    VocabularyFilterMethod m_vocabularyFilterMethod;
+    VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
     Aws::String m_languageModelName;

@@ -28,7 +28,7 @@ namespace Model
   class ListKeyGroups2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListKeyGroups2020_05_31Result();
+    AWS_CLOUDFRONT_API ListKeyGroups2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListKeyGroups2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListKeyGroups2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A list of key groups.</p>
      */
-    inline const KeyGroupList& GetKeyGroupList() const{ return m_keyGroupList; }
-    inline void SetKeyGroupList(const KeyGroupList& value) { m_keyGroupList = value; }
-    inline void SetKeyGroupList(KeyGroupList&& value) { m_keyGroupList = std::move(value); }
-    inline ListKeyGroups2020_05_31Result& WithKeyGroupList(const KeyGroupList& value) { SetKeyGroupList(value); return *this;}
-    inline ListKeyGroups2020_05_31Result& WithKeyGroupList(KeyGroupList&& value) { SetKeyGroupList(std::move(value)); return *this;}
+    inline const KeyGroupList& GetKeyGroupList() const { return m_keyGroupList; }
+    template<typename KeyGroupListT = KeyGroupList>
+    void SetKeyGroupList(KeyGroupListT&& value) { m_keyGroupListHasBeenSet = true; m_keyGroupList = std::forward<KeyGroupListT>(value); }
+    template<typename KeyGroupListT = KeyGroupList>
+    ListKeyGroups2020_05_31Result& WithKeyGroupList(KeyGroupListT&& value) { SetKeyGroupList(std::forward<KeyGroupListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKeyGroups2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKeyGroups2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKeyGroups2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKeyGroups2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     KeyGroupList m_keyGroupList;
+    bool m_keyGroupListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

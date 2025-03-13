@@ -32,7 +32,7 @@ namespace Model
   class DataAutomationConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API DataAutomationConfiguration();
+    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API DataAutomationConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API DataAutomationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API DataAutomationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>Data automation project arn.</p>
      */
-    inline const Aws::String& GetDataAutomationProjectArn() const{ return m_dataAutomationProjectArn; }
+    inline const Aws::String& GetDataAutomationProjectArn() const { return m_dataAutomationProjectArn; }
     inline bool DataAutomationProjectArnHasBeenSet() const { return m_dataAutomationProjectArnHasBeenSet; }
-    inline void SetDataAutomationProjectArn(const Aws::String& value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn = value; }
-    inline void SetDataAutomationProjectArn(Aws::String&& value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn = std::move(value); }
-    inline void SetDataAutomationProjectArn(const char* value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn.assign(value); }
-    inline DataAutomationConfiguration& WithDataAutomationProjectArn(const Aws::String& value) { SetDataAutomationProjectArn(value); return *this;}
-    inline DataAutomationConfiguration& WithDataAutomationProjectArn(Aws::String&& value) { SetDataAutomationProjectArn(std::move(value)); return *this;}
-    inline DataAutomationConfiguration& WithDataAutomationProjectArn(const char* value) { SetDataAutomationProjectArn(value); return *this;}
+    template<typename DataAutomationProjectArnT = Aws::String>
+    void SetDataAutomationProjectArn(DataAutomationProjectArnT&& value) { m_dataAutomationProjectArnHasBeenSet = true; m_dataAutomationProjectArn = std::forward<DataAutomationProjectArnT>(value); }
+    template<typename DataAutomationProjectArnT = Aws::String>
+    DataAutomationConfiguration& WithDataAutomationProjectArn(DataAutomationProjectArnT&& value) { SetDataAutomationProjectArn(std::forward<DataAutomationProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Data automation stage.</p>
      */
-    inline const DataAutomationStage& GetStage() const{ return m_stage; }
+    inline DataAutomationStage GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const DataAutomationStage& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(DataAutomationStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline DataAutomationConfiguration& WithStage(const DataAutomationStage& value) { SetStage(value); return *this;}
-    inline DataAutomationConfiguration& WithStage(DataAutomationStage&& value) { SetStage(std::move(value)); return *this;}
+    inline void SetStage(DataAutomationStage value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline DataAutomationConfiguration& WithStage(DataAutomationStage value) { SetStage(value); return *this;}
     ///@}
   private:
 
     Aws::String m_dataAutomationProjectArn;
     bool m_dataAutomationProjectArnHasBeenSet = false;
 
-    DataAutomationStage m_stage;
+    DataAutomationStage m_stage{DataAutomationStage::NOT_SET};
     bool m_stageHasBeenSet = false;
   };
 

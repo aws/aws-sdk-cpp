@@ -14,12 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateKeyValueStore2020_05_31Request::CreateKeyValueStore2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_importSourceHasBeenSet(false)
-{
-}
 
 Aws::String CreateKeyValueStore2020_05_31Request::SerializePayload() const
 {

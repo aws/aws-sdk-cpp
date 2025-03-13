@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnConnection::VpnConnection() : 
-    m_categoryHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_coreNetworkAttachmentArnHasBeenSet(false),
-    m_gatewayAssociationState(GatewayAssociationState::NOT_SET),
-    m_gatewayAssociationStateHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_routesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vgwTelemetryHasBeenSet(false),
-    m_vpnConnectionIdHasBeenSet(false),
-    m_state(VpnState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_customerGatewayConfigurationHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false)
-{
-}
-
 VpnConnection::VpnConnection(const XmlNode& xmlNode)
-  : VpnConnection()
 {
   *this = xmlNode;
 }
@@ -59,108 +36,123 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     {
       m_category = Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText());
       m_categoryHasBeenSet = true;
+       m_categoryHasBeenSet = true;
     }
     XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
     if(!transitGatewayIdNode.IsNull())
     {
       m_transitGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayIdNode.GetText());
       m_transitGatewayIdHasBeenSet = true;
+       m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode coreNetworkArnNode = resultNode.FirstChild("coreNetworkArn");
     if(!coreNetworkArnNode.IsNull())
     {
       m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
       m_coreNetworkArnHasBeenSet = true;
+       m_coreNetworkArnHasBeenSet = true;
     }
     XmlNode coreNetworkAttachmentArnNode = resultNode.FirstChild("coreNetworkAttachmentArn");
     if(!coreNetworkAttachmentArnNode.IsNull())
     {
       m_coreNetworkAttachmentArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkAttachmentArnNode.GetText());
       m_coreNetworkAttachmentArnHasBeenSet = true;
+       m_coreNetworkAttachmentArnHasBeenSet = true;
     }
     XmlNode gatewayAssociationStateNode = resultNode.FirstChild("gatewayAssociationState");
     if(!gatewayAssociationStateNode.IsNull())
     {
-      m_gatewayAssociationState = GatewayAssociationStateMapper::GetGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText()).c_str()).c_str());
+      m_gatewayAssociationState = GatewayAssociationStateMapper::GetGatewayAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(gatewayAssociationStateNode.GetText()).c_str()));
       m_gatewayAssociationStateHasBeenSet = true;
+       m_gatewayAssociationStateHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
     {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode routesNode = resultNode.FirstChild("routes");
     if(!routesNode.IsNull())
     {
       XmlNode routesMember = routesNode.FirstChild("item");
+      m_routesHasBeenSet = !routesMember.IsNull();
       while(!routesMember.IsNull())
       {
         m_routes.push_back(routesMember);
         routesMember = routesMember.NextNode("item");
       }
 
-      m_routesHasBeenSet = true;
+       m_routesHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode vgwTelemetryNode = resultNode.FirstChild("vgwTelemetry");
     if(!vgwTelemetryNode.IsNull())
     {
       XmlNode vgwTelemetryMember = vgwTelemetryNode.FirstChild("item");
+      m_vgwTelemetryHasBeenSet = !vgwTelemetryMember.IsNull();
       while(!vgwTelemetryMember.IsNull())
       {
         m_vgwTelemetry.push_back(vgwTelemetryMember);
         vgwTelemetryMember = vgwTelemetryMember.NextNode("item");
       }
 
-      m_vgwTelemetryHasBeenSet = true;
+       m_vgwTelemetryHasBeenSet = true;
     }
     XmlNode vpnConnectionIdNode = resultNode.FirstChild("vpnConnectionId");
     if(!vpnConnectionIdNode.IsNull())
     {
       m_vpnConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnConnectionIdNode.GetText());
       m_vpnConnectionIdHasBeenSet = true;
+       m_vpnConnectionIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpnStateMapper::GetVpnStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode customerGatewayConfigurationNode = resultNode.FirstChild("customerGatewayConfiguration");
     if(!customerGatewayConfigurationNode.IsNull())
     {
       m_customerGatewayConfiguration = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayConfigurationNode.GetText());
       m_customerGatewayConfigurationHasBeenSet = true;
+       m_customerGatewayConfigurationHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = GatewayTypeMapper::GetGatewayTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
       m_customerGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayIdNode.GetText());
       m_customerGatewayIdHasBeenSet = true;
+       m_customerGatewayIdHasBeenSet = true;
     }
     XmlNode vpnGatewayIdNode = resultNode.FirstChild("vpnGatewayId");
     if(!vpnGatewayIdNode.IsNull())
     {
       m_vpnGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnGatewayIdNode.GetText());
       m_vpnGatewayIdHasBeenSet = true;
+       m_vpnGatewayIdHasBeenSet = true;
     }
   }
 

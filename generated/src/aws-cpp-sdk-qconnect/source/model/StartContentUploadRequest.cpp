@@ -12,14 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartContentUploadRequest::StartContentUploadRequest() : 
-    m_contentTypeHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_presignedUrlTimeToLive(0),
-    m_presignedUrlTimeToLiveHasBeenSet(false)
-{
-}
-
 Aws::String StartContentUploadRequest::SerializePayload() const
 {
   JsonValue payload;

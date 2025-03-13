@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisComponent::AnalysisComponent() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AnalysisComponent::AnalysisComponent(const XmlNode& xmlNode)
-  : AnalysisComponent()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ AnalysisComponent& AnalysisComponent::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

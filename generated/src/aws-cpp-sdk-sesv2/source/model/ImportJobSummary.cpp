@@ -18,21 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ImportJobSummary::ImportJobSummary() : 
-    m_jobIdHasBeenSet(false),
-    m_importDestinationHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_processedRecordsCount(0),
-    m_processedRecordsCountHasBeenSet(false),
-    m_failedRecordsCount(0),
-    m_failedRecordsCountHasBeenSet(false)
-{
-}
-
 ImportJobSummary::ImportJobSummary(JsonView jsonValue)
-  : ImportJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ImportJobSummary& ImportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportDestination"))
   {
     m_importDestination = jsonValue.GetObject("ImportDestination");
-
     m_importDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessedRecordsCount"))
   {
     m_processedRecordsCount = jsonValue.GetInteger("ProcessedRecordsCount");
-
     m_processedRecordsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedRecordsCount"))
   {
     m_failedRecordsCount = jsonValue.GetInteger("FailedRecordsCount");
-
     m_failedRecordsCountHasBeenSet = true;
   }
-
   return *this;
 }
 

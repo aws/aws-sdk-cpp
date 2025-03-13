@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AiffSettings::AiffSettings() : 
-    m_bitDepth(0),
-    m_bitDepthHasBeenSet(false),
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false)
-{
-}
-
 AiffSettings::AiffSettings(JsonView jsonValue)
-  : AiffSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AiffSettings& AiffSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bitDepth"))
   {
     m_bitDepth = jsonValue.GetInteger("bitDepth");
-
     m_bitDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channels"))
   {
     m_channels = jsonValue.GetInteger("channels");
-
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   return *this;
 }
 

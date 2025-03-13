@@ -18,16 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-AccessRights::AccessRights() : 
-    m_autoEnroll(AccessRight::NOT_SET),
-    m_autoEnrollHasBeenSet(false),
-    m_enroll(AccessRight::NOT_SET),
-    m_enrollHasBeenSet(false)
-{
-}
-
 AccessRights::AccessRights(JsonView jsonValue)
-  : AccessRights()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccessRights& AccessRights::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutoEnroll"))
   {
     m_autoEnroll = AccessRightMapper::GetAccessRightForName(jsonValue.GetString("AutoEnroll"));
-
     m_autoEnrollHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enroll"))
   {
     m_enroll = AccessRightMapper::GetAccessRightForName(jsonValue.GetString("Enroll"));
-
     m_enrollHasBeenSet = true;
   }
-
   return *this;
 }
 

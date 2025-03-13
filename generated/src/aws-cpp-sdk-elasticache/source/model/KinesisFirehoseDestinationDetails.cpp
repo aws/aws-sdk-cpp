@@ -20,13 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails() : 
-    m_deliveryStreamHasBeenSet(false)
-{
-}
-
 KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails(const XmlNode& xmlNode)
-  : KinesisFirehoseDestinationDetails()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ KinesisFirehoseDestinationDetails& KinesisFirehoseDestinationDetails::operator =
     {
       m_deliveryStream = Aws::Utils::Xml::DecodeEscapedXmlText(deliveryStreamNode.GetText());
       m_deliveryStreamHasBeenSet = true;
+       m_deliveryStreamHasBeenSet = true;
     }
   }
 

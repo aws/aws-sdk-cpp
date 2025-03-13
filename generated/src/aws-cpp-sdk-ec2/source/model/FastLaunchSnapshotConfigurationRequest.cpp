@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FastLaunchSnapshotConfigurationRequest::FastLaunchSnapshotConfigurationRequest() : 
-    m_targetResourceCount(0),
-    m_targetResourceCountHasBeenSet(false)
-{
-}
-
 FastLaunchSnapshotConfigurationRequest::FastLaunchSnapshotConfigurationRequest(const XmlNode& xmlNode)
-  : FastLaunchSnapshotConfigurationRequest()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ FastLaunchSnapshotConfigurationRequest& FastLaunchSnapshotConfigurationRequest::
     {
       m_targetResourceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetResourceCountNode.GetText()).c_str()).c_str());
       m_targetResourceCountHasBeenSet = true;
+       m_targetResourceCountHasBeenSet = true;
     }
   }
 

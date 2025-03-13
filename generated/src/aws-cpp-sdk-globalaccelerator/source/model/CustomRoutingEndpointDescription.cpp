@@ -18,13 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CustomRoutingEndpointDescription::CustomRoutingEndpointDescription() : 
-    m_endpointIdHasBeenSet(false)
-{
-}
-
 CustomRoutingEndpointDescription::CustomRoutingEndpointDescription(JsonView jsonValue)
-  : CustomRoutingEndpointDescription()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomRoutingEndpointDescription& CustomRoutingEndpointDescription::operator =(J
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   return *this;
 }
 

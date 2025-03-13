@@ -18,14 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-ParameterMapEntry::ParameterMapEntry() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ParameterMapEntry::ParameterMapEntry(JsonView jsonValue)
-  : ParameterMapEntry()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ParameterMapEntry& ParameterMapEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ ParameterMapEntry& ParameterMapEntry::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

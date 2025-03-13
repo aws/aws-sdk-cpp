@@ -18,26 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-GsmObj::GsmObj() : 
-    m_mcc(0),
-    m_mccHasBeenSet(false),
-    m_mnc(0),
-    m_mncHasBeenSet(false),
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_geranCid(0),
-    m_geranCidHasBeenSet(false),
-    m_gsmLocalIdHasBeenSet(false),
-    m_gsmTimingAdvance(0),
-    m_gsmTimingAdvanceHasBeenSet(false),
-    m_rxLevel(0),
-    m_rxLevelHasBeenSet(false),
-    m_gsmNmrHasBeenSet(false)
-{
-}
-
 GsmObj::GsmObj(JsonView jsonValue)
-  : GsmObj()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ GsmObj& GsmObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mcc"))
   {
     m_mcc = jsonValue.GetInteger("Mcc");
-
     m_mccHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mnc"))
   {
     m_mnc = jsonValue.GetInteger("Mnc");
-
     m_mncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lac"))
   {
     m_lac = jsonValue.GetInteger("Lac");
-
     m_lacHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeranCid"))
   {
     m_geranCid = jsonValue.GetInteger("GeranCid");
-
     m_geranCidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GsmLocalId"))
   {
     m_gsmLocalId = jsonValue.GetObject("GsmLocalId");
-
     m_gsmLocalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GsmTimingAdvance"))
   {
     m_gsmTimingAdvance = jsonValue.GetInteger("GsmTimingAdvance");
-
     m_gsmTimingAdvanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RxLevel"))
   {
     m_rxLevel = jsonValue.GetInteger("RxLevel");
-
     m_rxLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GsmNmr"))
   {
     Aws::Utils::Array<JsonView> gsmNmrJsonList = jsonValue.GetArray("GsmNmr");
@@ -102,7 +69,6 @@ GsmObj& GsmObj::operator =(JsonView jsonValue)
     }
     m_gsmNmrHasBeenSet = true;
   }
-
   return *this;
 }
 

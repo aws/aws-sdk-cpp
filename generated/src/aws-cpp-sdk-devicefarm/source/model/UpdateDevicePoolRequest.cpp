@@ -12,18 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDevicePoolRequest::UpdateDevicePoolRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_maxDevices(0),
-    m_maxDevicesHasBeenSet(false),
-    m_clearMaxDevices(false),
-    m_clearMaxDevicesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDevicePoolRequest::SerializePayload() const
 {
   JsonValue payload;

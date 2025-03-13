@@ -40,7 +40,7 @@ namespace Model
   class CacheBehaviorPerPath
   {
   public:
-    AWS_LIGHTSAIL_API CacheBehaviorPerPath();
+    AWS_LIGHTSAIL_API CacheBehaviorPerPath() = default;
     AWS_LIGHTSAIL_API CacheBehaviorPerPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API CacheBehaviorPerPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,14 +66,12 @@ namespace Model
      * all files in the images sub-directory of the document root of an Apache web
      * server.</p> <p> <code>var/www/html/images/</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline CacheBehaviorPerPath& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline CacheBehaviorPerPath& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline CacheBehaviorPerPath& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    CacheBehaviorPerPath& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +82,17 @@ namespace Model
      * <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.
      * </p> </li> </ul>
      */
-    inline const BehaviorEnum& GetBehavior() const{ return m_behavior; }
+    inline BehaviorEnum GetBehavior() const { return m_behavior; }
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
-    inline void SetBehavior(const BehaviorEnum& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
-    inline void SetBehavior(BehaviorEnum&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
-    inline CacheBehaviorPerPath& WithBehavior(const BehaviorEnum& value) { SetBehavior(value); return *this;}
-    inline CacheBehaviorPerPath& WithBehavior(BehaviorEnum&& value) { SetBehavior(std::move(value)); return *this;}
+    inline void SetBehavior(BehaviorEnum value) { m_behaviorHasBeenSet = true; m_behavior = value; }
+    inline CacheBehaviorPerPath& WithBehavior(BehaviorEnum value) { SetBehavior(value); return *this;}
     ///@}
   private:
 
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    BehaviorEnum m_behavior;
+    BehaviorEnum m_behavior{BehaviorEnum::NOT_SET};
     bool m_behaviorHasBeenSet = false;
   };
 

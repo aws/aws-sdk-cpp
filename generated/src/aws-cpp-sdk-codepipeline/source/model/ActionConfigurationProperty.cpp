@@ -18,24 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionConfigurationProperty::ActionConfigurationProperty() : 
-    m_nameHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_key(false),
-    m_keyHasBeenSet(false),
-    m_secret(false),
-    m_secretHasBeenSet(false),
-    m_queryable(false),
-    m_queryableHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ActionConfigurationPropertyType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ActionConfigurationProperty::ActionConfigurationProperty(JsonView jsonValue)
-  : ActionConfigurationProperty()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ ActionConfigurationProperty& ActionConfigurationProperty::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetBool("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secret"))
   {
     m_secret = jsonValue.GetBool("secret");
-
     m_secretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryable"))
   {
     m_queryable = jsonValue.GetBool("queryable");
-
     m_queryableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ActionConfigurationPropertyTypeMapper::GetActionConfigurationPropertyTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

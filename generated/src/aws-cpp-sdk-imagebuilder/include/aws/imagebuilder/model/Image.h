@@ -51,7 +51,7 @@ namespace Model
   class Image
   {
   public:
-    AWS_IMAGEBUILDER_API Image();
+    AWS_IMAGEBUILDER_API Image() = default;
     AWS_IMAGEBUILDER_API Image(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -69,40 +69,34 @@ namespace Model
      * have all four nodes, and point to a specific build for a specific version of an
      * object.</p> </li> </ol> 
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Image& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Image& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Image& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Image& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether this image produces an AMI or a container image.</p>
      */
-    inline const ImageType& GetType() const{ return m_type; }
+    inline ImageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Image& WithType(const ImageType& value) { SetType(value); return *this;}
-    inline Image& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ImageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Image& WithType(ImageType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the image.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Image& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Image& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Image& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Image& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,26 +116,22 @@ namespace Model
      * wildcard in any node, all nodes to the right of the first wildcard must also be
      * wildcards.</p> 
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline Image& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline Image& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline Image& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    Image& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image operating system platform, such as Linux or Windows.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
+    inline Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline Image& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline Image& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline Image& WithPlatform(Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -149,7 +139,7 @@ namespace Model
      * <p>Indicates whether Image Builder collects additional information about the
      * image, such as the operating system (OS) version and package list.</p>
      */
-    inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
+    inline bool GetEnhancedImageMetadataEnabled() const { return m_enhancedImageMetadataEnabled; }
     inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
     inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
     inline Image& WithEnhancedImageMetadataEnabled(bool value) { SetEnhancedImageMetadataEnabled(value); return *this;}
@@ -160,26 +150,24 @@ namespace Model
      * <p>The operating system version for instances that launch from this image. For
      * example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
-    inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
+    inline const Aws::String& GetOsVersion() const { return m_osVersion; }
     inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
-    inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
-    inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
-    inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
-    inline Image& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
-    inline Image& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
-    inline Image& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
+    template<typename OsVersionT = Aws::String>
+    void SetOsVersion(OsVersionT&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::forward<OsVersionT>(value); }
+    template<typename OsVersionT = Aws::String>
+    Image& WithOsVersion(OsVersionT&& value) { SetOsVersion(std::forward<OsVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the image.</p>
      */
-    inline const ImageState& GetState() const{ return m_state; }
+    inline const ImageState& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ImageState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Image& WithState(const ImageState& value) { SetState(value); return *this;}
-    inline Image& WithState(ImageState&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = ImageState>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = ImageState>
+    Image& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,12 +175,12 @@ namespace Model
      * <p>For images that distribute an AMI, this is the image recipe that Image
      * Builder used to create the image. For container images, this is empty.</p>
      */
-    inline const ImageRecipe& GetImageRecipe() const{ return m_imageRecipe; }
+    inline const ImageRecipe& GetImageRecipe() const { return m_imageRecipe; }
     inline bool ImageRecipeHasBeenSet() const { return m_imageRecipeHasBeenSet; }
-    inline void SetImageRecipe(const ImageRecipe& value) { m_imageRecipeHasBeenSet = true; m_imageRecipe = value; }
-    inline void SetImageRecipe(ImageRecipe&& value) { m_imageRecipeHasBeenSet = true; m_imageRecipe = std::move(value); }
-    inline Image& WithImageRecipe(const ImageRecipe& value) { SetImageRecipe(value); return *this;}
-    inline Image& WithImageRecipe(ImageRecipe&& value) { SetImageRecipe(std::move(value)); return *this;}
+    template<typename ImageRecipeT = ImageRecipe>
+    void SetImageRecipe(ImageRecipeT&& value) { m_imageRecipeHasBeenSet = true; m_imageRecipe = std::forward<ImageRecipeT>(value); }
+    template<typename ImageRecipeT = ImageRecipe>
+    Image& WithImageRecipe(ImageRecipeT&& value) { SetImageRecipe(std::forward<ImageRecipeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,26 +188,24 @@ namespace Model
      * <p>For container images, this is the container recipe that Image Builder used to
      * create the image. For images that distribute an AMI, this is empty.</p>
      */
-    inline const ContainerRecipe& GetContainerRecipe() const{ return m_containerRecipe; }
+    inline const ContainerRecipe& GetContainerRecipe() const { return m_containerRecipe; }
     inline bool ContainerRecipeHasBeenSet() const { return m_containerRecipeHasBeenSet; }
-    inline void SetContainerRecipe(const ContainerRecipe& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = value; }
-    inline void SetContainerRecipe(ContainerRecipe&& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = std::move(value); }
-    inline Image& WithContainerRecipe(const ContainerRecipe& value) { SetContainerRecipe(value); return *this;}
-    inline Image& WithContainerRecipe(ContainerRecipe&& value) { SetContainerRecipe(std::move(value)); return *this;}
+    template<typename ContainerRecipeT = ContainerRecipe>
+    void SetContainerRecipe(ContainerRecipeT&& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = std::forward<ContainerRecipeT>(value); }
+    template<typename ContainerRecipeT = ContainerRecipe>
+    Image& WithContainerRecipe(ContainerRecipeT&& value) { SetContainerRecipe(std::forward<ContainerRecipeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the image pipeline that created this image.</p>
      */
-    inline const Aws::String& GetSourcePipelineName() const{ return m_sourcePipelineName; }
+    inline const Aws::String& GetSourcePipelineName() const { return m_sourcePipelineName; }
     inline bool SourcePipelineNameHasBeenSet() const { return m_sourcePipelineNameHasBeenSet; }
-    inline void SetSourcePipelineName(const Aws::String& value) { m_sourcePipelineNameHasBeenSet = true; m_sourcePipelineName = value; }
-    inline void SetSourcePipelineName(Aws::String&& value) { m_sourcePipelineNameHasBeenSet = true; m_sourcePipelineName = std::move(value); }
-    inline void SetSourcePipelineName(const char* value) { m_sourcePipelineNameHasBeenSet = true; m_sourcePipelineName.assign(value); }
-    inline Image& WithSourcePipelineName(const Aws::String& value) { SetSourcePipelineName(value); return *this;}
-    inline Image& WithSourcePipelineName(Aws::String&& value) { SetSourcePipelineName(std::move(value)); return *this;}
-    inline Image& WithSourcePipelineName(const char* value) { SetSourcePipelineName(value); return *this;}
+    template<typename SourcePipelineNameT = Aws::String>
+    void SetSourcePipelineName(SourcePipelineNameT&& value) { m_sourcePipelineNameHasBeenSet = true; m_sourcePipelineName = std::forward<SourcePipelineNameT>(value); }
+    template<typename SourcePipelineNameT = Aws::String>
+    Image& WithSourcePipelineName(SourcePipelineNameT&& value) { SetSourcePipelineName(std::forward<SourcePipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,26 +213,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image pipeline that created this
      * image.</p>
      */
-    inline const Aws::String& GetSourcePipelineArn() const{ return m_sourcePipelineArn; }
+    inline const Aws::String& GetSourcePipelineArn() const { return m_sourcePipelineArn; }
     inline bool SourcePipelineArnHasBeenSet() const { return m_sourcePipelineArnHasBeenSet; }
-    inline void SetSourcePipelineArn(const Aws::String& value) { m_sourcePipelineArnHasBeenSet = true; m_sourcePipelineArn = value; }
-    inline void SetSourcePipelineArn(Aws::String&& value) { m_sourcePipelineArnHasBeenSet = true; m_sourcePipelineArn = std::move(value); }
-    inline void SetSourcePipelineArn(const char* value) { m_sourcePipelineArnHasBeenSet = true; m_sourcePipelineArn.assign(value); }
-    inline Image& WithSourcePipelineArn(const Aws::String& value) { SetSourcePipelineArn(value); return *this;}
-    inline Image& WithSourcePipelineArn(Aws::String&& value) { SetSourcePipelineArn(std::move(value)); return *this;}
-    inline Image& WithSourcePipelineArn(const char* value) { SetSourcePipelineArn(value); return *this;}
+    template<typename SourcePipelineArnT = Aws::String>
+    void SetSourcePipelineArn(SourcePipelineArnT&& value) { m_sourcePipelineArnHasBeenSet = true; m_sourcePipelineArn = std::forward<SourcePipelineArnT>(value); }
+    template<typename SourcePipelineArnT = Aws::String>
+    Image& WithSourcePipelineArn(SourcePipelineArnT&& value) { SetSourcePipelineArn(std::forward<SourcePipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The infrastructure that Image Builder used to create this image.</p>
      */
-    inline const InfrastructureConfiguration& GetInfrastructureConfiguration() const{ return m_infrastructureConfiguration; }
+    inline const InfrastructureConfiguration& GetInfrastructureConfiguration() const { return m_infrastructureConfiguration; }
     inline bool InfrastructureConfigurationHasBeenSet() const { return m_infrastructureConfigurationHasBeenSet; }
-    inline void SetInfrastructureConfiguration(const InfrastructureConfiguration& value) { m_infrastructureConfigurationHasBeenSet = true; m_infrastructureConfiguration = value; }
-    inline void SetInfrastructureConfiguration(InfrastructureConfiguration&& value) { m_infrastructureConfigurationHasBeenSet = true; m_infrastructureConfiguration = std::move(value); }
-    inline Image& WithInfrastructureConfiguration(const InfrastructureConfiguration& value) { SetInfrastructureConfiguration(value); return *this;}
-    inline Image& WithInfrastructureConfiguration(InfrastructureConfiguration&& value) { SetInfrastructureConfiguration(std::move(value)); return *this;}
+    template<typename InfrastructureConfigurationT = InfrastructureConfiguration>
+    void SetInfrastructureConfiguration(InfrastructureConfigurationT&& value) { m_infrastructureConfigurationHasBeenSet = true; m_infrastructureConfiguration = std::forward<InfrastructureConfigurationT>(value); }
+    template<typename InfrastructureConfigurationT = InfrastructureConfiguration>
+    Image& WithInfrastructureConfiguration(InfrastructureConfigurationT&& value) { SetInfrastructureConfiguration(std::forward<InfrastructureConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,69 +238,64 @@ namespace Model
      * <p>The distribution configuration that Image Builder used to create this
      * image.</p>
      */
-    inline const DistributionConfiguration& GetDistributionConfiguration() const{ return m_distributionConfiguration; }
+    inline const DistributionConfiguration& GetDistributionConfiguration() const { return m_distributionConfiguration; }
     inline bool DistributionConfigurationHasBeenSet() const { return m_distributionConfigurationHasBeenSet; }
-    inline void SetDistributionConfiguration(const DistributionConfiguration& value) { m_distributionConfigurationHasBeenSet = true; m_distributionConfiguration = value; }
-    inline void SetDistributionConfiguration(DistributionConfiguration&& value) { m_distributionConfigurationHasBeenSet = true; m_distributionConfiguration = std::move(value); }
-    inline Image& WithDistributionConfiguration(const DistributionConfiguration& value) { SetDistributionConfiguration(value); return *this;}
-    inline Image& WithDistributionConfiguration(DistributionConfiguration&& value) { SetDistributionConfiguration(std::move(value)); return *this;}
+    template<typename DistributionConfigurationT = DistributionConfiguration>
+    void SetDistributionConfiguration(DistributionConfigurationT&& value) { m_distributionConfigurationHasBeenSet = true; m_distributionConfiguration = std::forward<DistributionConfigurationT>(value); }
+    template<typename DistributionConfigurationT = DistributionConfiguration>
+    Image& WithDistributionConfiguration(DistributionConfigurationT&& value) { SetDistributionConfiguration(std::forward<DistributionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image tests that ran when that Image Builder created this image.</p>
      */
-    inline const ImageTestsConfiguration& GetImageTestsConfiguration() const{ return m_imageTestsConfiguration; }
+    inline const ImageTestsConfiguration& GetImageTestsConfiguration() const { return m_imageTestsConfiguration; }
     inline bool ImageTestsConfigurationHasBeenSet() const { return m_imageTestsConfigurationHasBeenSet; }
-    inline void SetImageTestsConfiguration(const ImageTestsConfiguration& value) { m_imageTestsConfigurationHasBeenSet = true; m_imageTestsConfiguration = value; }
-    inline void SetImageTestsConfiguration(ImageTestsConfiguration&& value) { m_imageTestsConfigurationHasBeenSet = true; m_imageTestsConfiguration = std::move(value); }
-    inline Image& WithImageTestsConfiguration(const ImageTestsConfiguration& value) { SetImageTestsConfiguration(value); return *this;}
-    inline Image& WithImageTestsConfiguration(ImageTestsConfiguration&& value) { SetImageTestsConfiguration(std::move(value)); return *this;}
+    template<typename ImageTestsConfigurationT = ImageTestsConfiguration>
+    void SetImageTestsConfiguration(ImageTestsConfigurationT&& value) { m_imageTestsConfigurationHasBeenSet = true; m_imageTestsConfiguration = std::forward<ImageTestsConfigurationT>(value); }
+    template<typename ImageTestsConfigurationT = ImageTestsConfiguration>
+    Image& WithImageTestsConfiguration(ImageTestsConfigurationT&& value) { SetImageTestsConfiguration(std::forward<ImageTestsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date on which Image Builder created this image.</p>
      */
-    inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
-    inline Image& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
-    inline Image& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
-    inline Image& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
+    template<typename DateCreatedT = Aws::String>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::String>
+    Image& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output resources that Image Builder produces for this image.</p>
      */
-    inline const OutputResources& GetOutputResources() const{ return m_outputResources; }
+    inline const OutputResources& GetOutputResources() const { return m_outputResources; }
     inline bool OutputResourcesHasBeenSet() const { return m_outputResourcesHasBeenSet; }
-    inline void SetOutputResources(const OutputResources& value) { m_outputResourcesHasBeenSet = true; m_outputResources = value; }
-    inline void SetOutputResources(OutputResources&& value) { m_outputResourcesHasBeenSet = true; m_outputResources = std::move(value); }
-    inline Image& WithOutputResources(const OutputResources& value) { SetOutputResources(value); return *this;}
-    inline Image& WithOutputResources(OutputResources&& value) { SetOutputResources(std::move(value)); return *this;}
+    template<typename OutputResourcesT = OutputResources>
+    void SetOutputResources(OutputResourcesT&& value) { m_outputResourcesHasBeenSet = true; m_outputResources = std::forward<OutputResourcesT>(value); }
+    template<typename OutputResourcesT = OutputResources>
+    Image& WithOutputResources(OutputResourcesT&& value) { SetOutputResources(std::forward<OutputResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags that apply to this image.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Image& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Image& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Image& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Image& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Image& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Image& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Image& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Image& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Image& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Image& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Image& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -329,48 +308,44 @@ namespace Model
      * use as the base image for the recipe.</p> </li> <li> <p> <b>IMPORT_ISO</b> – An
      * ISO disk import created the image.</p> </li> </ul>
      */
-    inline const BuildType& GetBuildType() const{ return m_buildType; }
+    inline BuildType GetBuildType() const { return m_buildType; }
     inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
-    inline void SetBuildType(const BuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
-    inline void SetBuildType(BuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
-    inline Image& WithBuildType(const BuildType& value) { SetBuildType(value); return *this;}
-    inline Image& WithBuildType(BuildType&& value) { SetBuildType(std::move(value)); return *this;}
+    inline void SetBuildType(BuildType value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+    inline Image& WithBuildType(BuildType value) { SetBuildType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The origin of the base image that Image Builder used to build this image.</p>
      */
-    inline const ImageSource& GetImageSource() const{ return m_imageSource; }
+    inline ImageSource GetImageSource() const { return m_imageSource; }
     inline bool ImageSourceHasBeenSet() const { return m_imageSourceHasBeenSet; }
-    inline void SetImageSource(const ImageSource& value) { m_imageSourceHasBeenSet = true; m_imageSource = value; }
-    inline void SetImageSource(ImageSource&& value) { m_imageSourceHasBeenSet = true; m_imageSource = std::move(value); }
-    inline Image& WithImageSource(const ImageSource& value) { SetImageSource(value); return *this;}
-    inline Image& WithImageSource(ImageSource&& value) { SetImageSource(std::move(value)); return *this;}
+    inline void SetImageSource(ImageSource value) { m_imageSourceHasBeenSet = true; m_imageSource = value; }
+    inline Image& WithImageSource(ImageSource value) { SetImageSource(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the current state of scans for this image.</p>
      */
-    inline const ImageScanState& GetScanState() const{ return m_scanState; }
+    inline const ImageScanState& GetScanState() const { return m_scanState; }
     inline bool ScanStateHasBeenSet() const { return m_scanStateHasBeenSet; }
-    inline void SetScanState(const ImageScanState& value) { m_scanStateHasBeenSet = true; m_scanState = value; }
-    inline void SetScanState(ImageScanState&& value) { m_scanStateHasBeenSet = true; m_scanState = std::move(value); }
-    inline Image& WithScanState(const ImageScanState& value) { SetScanState(value); return *this;}
-    inline Image& WithScanState(ImageScanState&& value) { SetScanState(std::move(value)); return *this;}
+    template<typename ScanStateT = ImageScanState>
+    void SetScanState(ScanStateT&& value) { m_scanStateHasBeenSet = true; m_scanState = std::forward<ScanStateT>(value); }
+    template<typename ScanStateT = ImageScanState>
+    Image& WithScanState(ScanStateT&& value) { SetScanState(std::forward<ScanStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains settings for vulnerability scans.</p>
      */
-    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
+    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const { return m_imageScanningConfiguration; }
     inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
-    inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
-    inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
-    inline Image& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
-    inline Image& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+    template<typename ImageScanningConfigurationT = ImageScanningConfiguration>
+    void SetImageScanningConfiguration(ImageScanningConfigurationT&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::forward<ImageScanningConfigurationT>(value); }
+    template<typename ImageScanningConfigurationT = ImageScanningConfiguration>
+    Image& WithImageScanningConfiguration(ImageScanningConfigurationT&& value) { SetImageScanningConfiguration(std::forward<ImageScanningConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -378,12 +353,12 @@ namespace Model
      * <p>The time when deprecation occurs for an image resource. This can be a past or
      * future date.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeprecationTime() const{ return m_deprecationTime; }
+    inline const Aws::Utils::DateTime& GetDeprecationTime() const { return m_deprecationTime; }
     inline bool DeprecationTimeHasBeenSet() const { return m_deprecationTimeHasBeenSet; }
-    inline void SetDeprecationTime(const Aws::Utils::DateTime& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = value; }
-    inline void SetDeprecationTime(Aws::Utils::DateTime&& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = std::move(value); }
-    inline Image& WithDeprecationTime(const Aws::Utils::DateTime& value) { SetDeprecationTime(value); return *this;}
-    inline Image& WithDeprecationTime(Aws::Utils::DateTime&& value) { SetDeprecationTime(std::move(value)); return *this;}
+    template<typename DeprecationTimeT = Aws::Utils::DateTime>
+    void SetDeprecationTime(DeprecationTimeT&& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = std::forward<DeprecationTimeT>(value); }
+    template<typename DeprecationTimeT = Aws::Utils::DateTime>
+    Image& WithDeprecationTime(DeprecationTimeT&& value) { SetDeprecationTime(std::forward<DeprecationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -391,14 +366,12 @@ namespace Model
      * <p>Identifies the last runtime instance of the lifecycle policy to take action
      * on the image.</p>
      */
-    inline const Aws::String& GetLifecycleExecutionId() const{ return m_lifecycleExecutionId; }
+    inline const Aws::String& GetLifecycleExecutionId() const { return m_lifecycleExecutionId; }
     inline bool LifecycleExecutionIdHasBeenSet() const { return m_lifecycleExecutionIdHasBeenSet; }
-    inline void SetLifecycleExecutionId(const Aws::String& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = value; }
-    inline void SetLifecycleExecutionId(Aws::String&& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = std::move(value); }
-    inline void SetLifecycleExecutionId(const char* value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId.assign(value); }
-    inline Image& WithLifecycleExecutionId(const Aws::String& value) { SetLifecycleExecutionId(value); return *this;}
-    inline Image& WithLifecycleExecutionId(Aws::String&& value) { SetLifecycleExecutionId(std::move(value)); return *this;}
-    inline Image& WithLifecycleExecutionId(const char* value) { SetLifecycleExecutionId(value); return *this;}
+    template<typename LifecycleExecutionIdT = Aws::String>
+    void SetLifecycleExecutionId(LifecycleExecutionIdT&& value) { m_lifecycleExecutionIdHasBeenSet = true; m_lifecycleExecutionId = std::forward<LifecycleExecutionIdT>(value); }
+    template<typename LifecycleExecutionIdT = Aws::String>
+    Image& WithLifecycleExecutionId(LifecycleExecutionIdT&& value) { SetLifecycleExecutionId(std::forward<LifecycleExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -406,35 +379,33 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
      * grants Image Builder access to perform workflow actions.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline Image& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline Image& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline Image& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    Image& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the build and test workflows that are associated with the image.</p>
      */
-    inline const Aws::Vector<WorkflowConfiguration>& GetWorkflows() const{ return m_workflows; }
+    inline const Aws::Vector<WorkflowConfiguration>& GetWorkflows() const { return m_workflows; }
     inline bool WorkflowsHasBeenSet() const { return m_workflowsHasBeenSet; }
-    inline void SetWorkflows(const Aws::Vector<WorkflowConfiguration>& value) { m_workflowsHasBeenSet = true; m_workflows = value; }
-    inline void SetWorkflows(Aws::Vector<WorkflowConfiguration>&& value) { m_workflowsHasBeenSet = true; m_workflows = std::move(value); }
-    inline Image& WithWorkflows(const Aws::Vector<WorkflowConfiguration>& value) { SetWorkflows(value); return *this;}
-    inline Image& WithWorkflows(Aws::Vector<WorkflowConfiguration>&& value) { SetWorkflows(std::move(value)); return *this;}
-    inline Image& AddWorkflows(const WorkflowConfiguration& value) { m_workflowsHasBeenSet = true; m_workflows.push_back(value); return *this; }
-    inline Image& AddWorkflows(WorkflowConfiguration&& value) { m_workflowsHasBeenSet = true; m_workflows.push_back(std::move(value)); return *this; }
+    template<typename WorkflowsT = Aws::Vector<WorkflowConfiguration>>
+    void SetWorkflows(WorkflowsT&& value) { m_workflowsHasBeenSet = true; m_workflows = std::forward<WorkflowsT>(value); }
+    template<typename WorkflowsT = Aws::Vector<WorkflowConfiguration>>
+    Image& WithWorkflows(WorkflowsT&& value) { SetWorkflows(std::forward<WorkflowsT>(value)); return *this;}
+    template<typename WorkflowsT = WorkflowConfiguration>
+    Image& AddWorkflows(WorkflowsT&& value) { m_workflowsHasBeenSet = true; m_workflows.emplace_back(std::forward<WorkflowsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    ImageType m_type;
+    ImageType m_type{ImageType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
@@ -443,10 +414,10 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    Platform m_platform;
+    Platform m_platform{Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
-    bool m_enhancedImageMetadataEnabled;
+    bool m_enhancedImageMetadataEnabled{false};
     bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
     Aws::String m_osVersion;
@@ -485,10 +456,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    BuildType m_buildType;
+    BuildType m_buildType{BuildType::NOT_SET};
     bool m_buildTypeHasBeenSet = false;
 
-    ImageSource m_imageSource;
+    ImageSource m_imageSource{ImageSource::NOT_SET};
     bool m_imageSourceHasBeenSet = false;
 
     ImageScanState m_scanState;
@@ -497,7 +468,7 @@ namespace Model
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deprecationTime;
+    Aws::Utils::DateTime m_deprecationTime{};
     bool m_deprecationTimeHasBeenSet = false;
 
     Aws::String m_lifecycleExecutionId;

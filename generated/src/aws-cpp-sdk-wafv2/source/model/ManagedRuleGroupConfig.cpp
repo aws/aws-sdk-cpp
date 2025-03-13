@@ -18,15 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleGroupConfig::ManagedRuleGroupConfig() : 
-    m_aWSManagedRulesBotControlRuleSetHasBeenSet(false),
-    m_aWSManagedRulesATPRuleSetHasBeenSet(false),
-    m_aWSManagedRulesACFPRuleSetHasBeenSet(false)
-{
-}
-
 ManagedRuleGroupConfig::ManagedRuleGroupConfig(JsonView jsonValue)
-  : ManagedRuleGroupConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ManagedRuleGroupConfig& ManagedRuleGroupConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AWSManagedRulesBotControlRuleSet"))
   {
     m_aWSManagedRulesBotControlRuleSet = jsonValue.GetObject("AWSManagedRulesBotControlRuleSet");
-
     m_aWSManagedRulesBotControlRuleSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSManagedRulesATPRuleSet"))
   {
     m_aWSManagedRulesATPRuleSet = jsonValue.GetObject("AWSManagedRulesATPRuleSet");
-
     m_aWSManagedRulesATPRuleSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AWSManagedRulesACFPRuleSet"))
   {
     m_aWSManagedRulesACFPRuleSet = jsonValue.GetObject("AWSManagedRulesACFPRuleSet");
-
     m_aWSManagedRulesACFPRuleSetHasBeenSet = true;
   }
-
   return *this;
 }
 

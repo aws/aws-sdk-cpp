@@ -13,14 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddResourcePermissionsRequest::AddResourcePermissionsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_notificationOptionsHasBeenSet(false)
-{
-}
-
 Aws::String AddResourcePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

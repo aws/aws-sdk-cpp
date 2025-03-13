@@ -39,7 +39,7 @@ namespace Model
   class DatasetImportJobSummary
   {
   public:
-    AWS_FORECASTSERVICE_API DatasetImportJobSummary();
+    AWS_FORECASTSERVICE_API DatasetImportJobSummary() = default;
     AWS_FORECASTSERVICE_API DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
      */
-    inline const Aws::String& GetDatasetImportJobArn() const{ return m_datasetImportJobArn; }
+    inline const Aws::String& GetDatasetImportJobArn() const { return m_datasetImportJobArn; }
     inline bool DatasetImportJobArnHasBeenSet() const { return m_datasetImportJobArnHasBeenSet; }
-    inline void SetDatasetImportJobArn(const Aws::String& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = value; }
-    inline void SetDatasetImportJobArn(Aws::String&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::move(value); }
-    inline void SetDatasetImportJobArn(const char* value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn.assign(value); }
-    inline DatasetImportJobSummary& WithDatasetImportJobArn(const Aws::String& value) { SetDatasetImportJobArn(value); return *this;}
-    inline DatasetImportJobSummary& WithDatasetImportJobArn(Aws::String&& value) { SetDatasetImportJobArn(std::move(value)); return *this;}
-    inline DatasetImportJobSummary& WithDatasetImportJobArn(const char* value) { SetDatasetImportJobArn(value); return *this;}
+    template<typename DatasetImportJobArnT = Aws::String>
+    void SetDatasetImportJobArn(DatasetImportJobArnT&& value) { m_datasetImportJobArnHasBeenSet = true; m_datasetImportJobArn = std::forward<DatasetImportJobArnT>(value); }
+    template<typename DatasetImportJobArnT = Aws::String>
+    DatasetImportJobSummary& WithDatasetImportJobArn(DatasetImportJobArnT&& value) { SetDatasetImportJobArn(std::forward<DatasetImportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the dataset import job.</p>
      */
-    inline const Aws::String& GetDatasetImportJobName() const{ return m_datasetImportJobName; }
+    inline const Aws::String& GetDatasetImportJobName() const { return m_datasetImportJobName; }
     inline bool DatasetImportJobNameHasBeenSet() const { return m_datasetImportJobNameHasBeenSet; }
-    inline void SetDatasetImportJobName(const Aws::String& value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName = value; }
-    inline void SetDatasetImportJobName(Aws::String&& value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName = std::move(value); }
-    inline void SetDatasetImportJobName(const char* value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName.assign(value); }
-    inline DatasetImportJobSummary& WithDatasetImportJobName(const Aws::String& value) { SetDatasetImportJobName(value); return *this;}
-    inline DatasetImportJobSummary& WithDatasetImportJobName(Aws::String&& value) { SetDatasetImportJobName(std::move(value)); return *this;}
-    inline DatasetImportJobSummary& WithDatasetImportJobName(const char* value) { SetDatasetImportJobName(value); return *this;}
+    template<typename DatasetImportJobNameT = Aws::String>
+    void SetDatasetImportJobName(DatasetImportJobNameT&& value) { m_datasetImportJobNameHasBeenSet = true; m_datasetImportJobName = std::forward<DatasetImportJobNameT>(value); }
+    template<typename DatasetImportJobNameT = Aws::String>
+    DatasetImportJobSummary& WithDatasetImportJobName(DatasetImportJobNameT&& value) { SetDatasetImportJobName(std::forward<DatasetImportJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,12 @@ namespace Model
      * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
      * used, <code>DataSource</code> includes an Key Management Service (KMS) key.</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline DatasetImportJobSummary& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline DatasetImportJobSummary& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    DatasetImportJobSummary& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,40 +93,36 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
      * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DatasetImportJobSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DatasetImportJobSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DatasetImportJobSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DatasetImportJobSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurred, an informational message about the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DatasetImportJobSummary& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DatasetImportJobSummary& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DatasetImportJobSummary& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DatasetImportJobSummary& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the dataset import job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline DatasetImportJobSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DatasetImportJobSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DatasetImportJobSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,24 +135,22 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
-    inline DatasetImportJobSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DatasetImportJobSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DatasetImportJobSummary& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The import mode of the dataset import job, FULL or INCREMENTAL.</p>
      */
-    inline const ImportMode& GetImportMode() const{ return m_importMode; }
+    inline ImportMode GetImportMode() const { return m_importMode; }
     inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
-    inline void SetImportMode(const ImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
-    inline void SetImportMode(ImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
-    inline DatasetImportJobSummary& WithImportMode(const ImportMode& value) { SetImportMode(value); return *this;}
-    inline DatasetImportJobSummary& WithImportMode(ImportMode&& value) { SetImportMode(std::move(value)); return *this;}
+    inline void SetImportMode(ImportMode value) { m_importModeHasBeenSet = true; m_importMode = value; }
+    inline DatasetImportJobSummary& WithImportMode(ImportMode value) { SetImportMode(value); return *this;}
     ///@}
   private:
 
@@ -179,13 +169,13 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
     bool m_lastModificationTimeHasBeenSet = false;
 
-    ImportMode m_importMode;
+    ImportMode m_importMode{ImportMode::NOT_SET};
     bool m_importModeHasBeenSet = false;
   };
 

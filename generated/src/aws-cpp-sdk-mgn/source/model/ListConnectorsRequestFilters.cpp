@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ListConnectorsRequestFilters::ListConnectorsRequestFilters() : 
-    m_connectorIDsHasBeenSet(false)
-{
-}
-
 ListConnectorsRequestFilters::ListConnectorsRequestFilters(JsonView jsonValue)
-  : ListConnectorsRequestFilters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ListConnectorsRequestFilters& ListConnectorsRequestFilters::operator =(JsonView 
     }
     m_connectorIDsHasBeenSet = true;
   }
-
   return *this;
 }
 

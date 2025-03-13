@@ -23,7 +23,7 @@ namespace Model
   class GetInstanceTpmEkPubRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetInstanceTpmEkPubRequest();
+    AWS_EC2_API GetInstanceTpmEkPubRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,22 @@ namespace Model
     /**
      * <p>The ID of the instance for which to get the public endorsement key.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetInstanceTpmEkPubRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetInstanceTpmEkPubRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetInstanceTpmEkPubRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetInstanceTpmEkPubRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required public endorsement key type.</p>
      */
-    inline const EkPubKeyType& GetKeyType() const{ return m_keyType; }
+    inline EkPubKeyType GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const EkPubKeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(EkPubKeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline GetInstanceTpmEkPubRequest& WithKeyType(const EkPubKeyType& value) { SetKeyType(value); return *this;}
-    inline GetInstanceTpmEkPubRequest& WithKeyType(EkPubKeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    inline void SetKeyType(EkPubKeyType value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+    inline GetInstanceTpmEkPubRequest& WithKeyType(EkPubKeyType value) { SetKeyType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,10 @@ namespace Model
      * <code>tpmt</code> for a TPM 2.0 format that is compatible with tpm2-tools. The
      * returned key is base64 encoded.</p>
      */
-    inline const EkPubKeyFormat& GetKeyFormat() const{ return m_keyFormat; }
+    inline EkPubKeyFormat GetKeyFormat() const { return m_keyFormat; }
     inline bool KeyFormatHasBeenSet() const { return m_keyFormatHasBeenSet; }
-    inline void SetKeyFormat(const EkPubKeyFormat& value) { m_keyFormatHasBeenSet = true; m_keyFormat = value; }
-    inline void SetKeyFormat(EkPubKeyFormat&& value) { m_keyFormatHasBeenSet = true; m_keyFormat = std::move(value); }
-    inline GetInstanceTpmEkPubRequest& WithKeyFormat(const EkPubKeyFormat& value) { SetKeyFormat(value); return *this;}
-    inline GetInstanceTpmEkPubRequest& WithKeyFormat(EkPubKeyFormat&& value) { SetKeyFormat(std::move(value)); return *this;}
+    inline void SetKeyFormat(EkPubKeyFormat value) { m_keyFormatHasBeenSet = true; m_keyFormat = value; }
+    inline GetInstanceTpmEkPubRequest& WithKeyFormat(EkPubKeyFormat value) { SetKeyFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +80,7 @@ namespace Model
      * <code>DryRunOperation</code>. Otherwise, the response is
      * <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetInstanceTpmEkPubRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -96,13 +90,13 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    EkPubKeyType m_keyType;
+    EkPubKeyType m_keyType{EkPubKeyType::NOT_SET};
     bool m_keyTypeHasBeenSet = false;
 
-    EkPubKeyFormat m_keyFormat;
+    EkPubKeyFormat m_keyFormat{EkPubKeyFormat::NOT_SET};
     bool m_keyFormatHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

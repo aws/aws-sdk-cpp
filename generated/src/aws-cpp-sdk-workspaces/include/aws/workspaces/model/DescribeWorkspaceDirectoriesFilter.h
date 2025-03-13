@@ -34,7 +34,7 @@ namespace Model
   class DescribeWorkspaceDirectoriesFilter
   {
   public:
-    AWS_WORKSPACES_API DescribeWorkspaceDirectoriesFilter();
+    AWS_WORKSPACES_API DescribeWorkspaceDirectoriesFilter() = default;
     AWS_WORKSPACES_API DescribeWorkspaceDirectoriesFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API DescribeWorkspaceDirectoriesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,28 @@ namespace Model
     /**
      * <p>The name of the WorkSpaces to filter.</p>
      */
-    inline const DescribeWorkspaceDirectoriesFilterName& GetName() const{ return m_name; }
+    inline DescribeWorkspaceDirectoriesFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DescribeWorkspaceDirectoriesFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DescribeWorkspaceDirectoriesFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DescribeWorkspaceDirectoriesFilter& WithName(const DescribeWorkspaceDirectoriesFilterName& value) { SetName(value); return *this;}
-    inline DescribeWorkspaceDirectoriesFilter& WithName(DescribeWorkspaceDirectoriesFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DescribeWorkspaceDirectoriesFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DescribeWorkspaceDirectoriesFilter& WithName(DescribeWorkspaceDirectoriesFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values for filtering WorkSpaces</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline DescribeWorkspaceDirectoriesFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline DescribeWorkspaceDirectoriesFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline DescribeWorkspaceDirectoriesFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline DescribeWorkspaceDirectoriesFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline DescribeWorkspaceDirectoriesFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    DescribeWorkspaceDirectoriesFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    DescribeWorkspaceDirectoriesFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    DescribeWorkspaceDirectoriesFilterName m_name;
+    DescribeWorkspaceDirectoriesFilterName m_name{DescribeWorkspaceDirectoriesFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

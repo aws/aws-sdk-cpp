@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectCache::ProjectCache() : 
-    m_type(CacheType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_modesHasBeenSet(false)
-{
-}
-
 ProjectCache::ProjectCache(JsonView jsonValue)
-  : ProjectCache()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ProjectCache& ProjectCache::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = CacheTypeMapper::GetCacheTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modes"))
   {
     Aws::Utils::Array<JsonView> modesJsonList = jsonValue.GetArray("modes");
@@ -57,7 +44,6 @@ ProjectCache& ProjectCache::operator =(JsonView jsonValue)
     }
     m_modesHasBeenSet = true;
   }
-
   return *this;
 }
 

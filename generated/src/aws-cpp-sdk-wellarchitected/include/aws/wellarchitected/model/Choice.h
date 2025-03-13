@@ -34,7 +34,7 @@ namespace Model
   class Choice
   {
   public:
-    AWS_WELLARCHITECTED_API Choice();
+    AWS_WELLARCHITECTED_API Choice() = default;
     AWS_WELLARCHITECTED_API Choice(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Choice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,38 +42,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetChoiceId() const{ return m_choiceId; }
+    inline const Aws::String& GetChoiceId() const { return m_choiceId; }
     inline bool ChoiceIdHasBeenSet() const { return m_choiceIdHasBeenSet; }
-    inline void SetChoiceId(const Aws::String& value) { m_choiceIdHasBeenSet = true; m_choiceId = value; }
-    inline void SetChoiceId(Aws::String&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::move(value); }
-    inline void SetChoiceId(const char* value) { m_choiceIdHasBeenSet = true; m_choiceId.assign(value); }
-    inline Choice& WithChoiceId(const Aws::String& value) { SetChoiceId(value); return *this;}
-    inline Choice& WithChoiceId(Aws::String&& value) { SetChoiceId(std::move(value)); return *this;}
-    inline Choice& WithChoiceId(const char* value) { SetChoiceId(value); return *this;}
+    template<typename ChoiceIdT = Aws::String>
+    void SetChoiceId(ChoiceIdT&& value) { m_choiceIdHasBeenSet = true; m_choiceId = std::forward<ChoiceIdT>(value); }
+    template<typename ChoiceIdT = Aws::String>
+    Choice& WithChoiceId(ChoiceIdT&& value) { SetChoiceId(std::forward<ChoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline Choice& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline Choice& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline Choice& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    Choice& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Choice& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Choice& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Choice& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Choice& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +76,12 @@ namespace Model
      * field only applies to custom lenses. Each choice can have only one helpful
      * resource.</p>
      */
-    inline const ChoiceContent& GetHelpfulResource() const{ return m_helpfulResource; }
+    inline const ChoiceContent& GetHelpfulResource() const { return m_helpfulResource; }
     inline bool HelpfulResourceHasBeenSet() const { return m_helpfulResourceHasBeenSet; }
-    inline void SetHelpfulResource(const ChoiceContent& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = value; }
-    inline void SetHelpfulResource(ChoiceContent&& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = std::move(value); }
-    inline Choice& WithHelpfulResource(const ChoiceContent& value) { SetHelpfulResource(value); return *this;}
-    inline Choice& WithHelpfulResource(ChoiceContent&& value) { SetHelpfulResource(std::move(value)); return *this;}
+    template<typename HelpfulResourceT = ChoiceContent>
+    void SetHelpfulResource(HelpfulResourceT&& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = std::forward<HelpfulResourceT>(value); }
+    template<typename HelpfulResourceT = ChoiceContent>
+    Choice& WithHelpfulResource(HelpfulResourceT&& value) { SetHelpfulResource(std::forward<HelpfulResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,12 @@ namespace Model
      * field only applies to custom lenses. Each choice can have only one improvement
      * plan.</p>
      */
-    inline const ChoiceContent& GetImprovementPlan() const{ return m_improvementPlan; }
+    inline const ChoiceContent& GetImprovementPlan() const { return m_improvementPlan; }
     inline bool ImprovementPlanHasBeenSet() const { return m_improvementPlanHasBeenSet; }
-    inline void SetImprovementPlan(const ChoiceContent& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = value; }
-    inline void SetImprovementPlan(ChoiceContent&& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = std::move(value); }
-    inline Choice& WithImprovementPlan(const ChoiceContent& value) { SetImprovementPlan(value); return *this;}
-    inline Choice& WithImprovementPlan(ChoiceContent&& value) { SetImprovementPlan(std::move(value)); return *this;}
+    template<typename ImprovementPlanT = ChoiceContent>
+    void SetImprovementPlan(ImprovementPlanT&& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = std::forward<ImprovementPlanT>(value); }
+    template<typename ImprovementPlanT = ChoiceContent>
+    Choice& WithImprovementPlan(ImprovementPlanT&& value) { SetImprovementPlan(std::forward<ImprovementPlanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,14 @@ namespace Model
      * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
      * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
-    inline const Aws::Vector<AdditionalResources>& GetAdditionalResources() const{ return m_additionalResources; }
+    inline const Aws::Vector<AdditionalResources>& GetAdditionalResources() const { return m_additionalResources; }
     inline bool AdditionalResourcesHasBeenSet() const { return m_additionalResourcesHasBeenSet; }
-    inline void SetAdditionalResources(const Aws::Vector<AdditionalResources>& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = value; }
-    inline void SetAdditionalResources(Aws::Vector<AdditionalResources>&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = std::move(value); }
-    inline Choice& WithAdditionalResources(const Aws::Vector<AdditionalResources>& value) { SetAdditionalResources(value); return *this;}
-    inline Choice& WithAdditionalResources(Aws::Vector<AdditionalResources>&& value) { SetAdditionalResources(std::move(value)); return *this;}
-    inline Choice& AddAdditionalResources(const AdditionalResources& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.push_back(value); return *this; }
-    inline Choice& AddAdditionalResources(AdditionalResources&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.push_back(std::move(value)); return *this; }
+    template<typename AdditionalResourcesT = Aws::Vector<AdditionalResources>>
+    void SetAdditionalResources(AdditionalResourcesT&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = std::forward<AdditionalResourcesT>(value); }
+    template<typename AdditionalResourcesT = Aws::Vector<AdditionalResources>>
+    Choice& WithAdditionalResources(AdditionalResourcesT&& value) { SetAdditionalResources(std::forward<AdditionalResourcesT>(value)); return *this;}
+    template<typename AdditionalResourcesT = AdditionalResources>
+    Choice& AddAdditionalResources(AdditionalResourcesT&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.emplace_back(std::forward<AdditionalResourcesT>(value)); return *this; }
     ///@}
   private:
 

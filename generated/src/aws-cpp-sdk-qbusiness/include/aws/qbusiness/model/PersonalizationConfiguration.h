@@ -34,7 +34,7 @@ namespace Model
   class PersonalizationConfiguration
   {
   public:
-    AWS_QBUSINESS_API PersonalizationConfiguration();
+    AWS_QBUSINESS_API PersonalizationConfiguration() = default;
     AWS_QBUSINESS_API PersonalizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API PersonalizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * specific metadata—specifically, location and job information���in your IAM
      * Identity Center instance.</p>
      */
-    inline const PersonalizationControlMode& GetPersonalizationControlMode() const{ return m_personalizationControlMode; }
+    inline PersonalizationControlMode GetPersonalizationControlMode() const { return m_personalizationControlMode; }
     inline bool PersonalizationControlModeHasBeenSet() const { return m_personalizationControlModeHasBeenSet; }
-    inline void SetPersonalizationControlMode(const PersonalizationControlMode& value) { m_personalizationControlModeHasBeenSet = true; m_personalizationControlMode = value; }
-    inline void SetPersonalizationControlMode(PersonalizationControlMode&& value) { m_personalizationControlModeHasBeenSet = true; m_personalizationControlMode = std::move(value); }
-    inline PersonalizationConfiguration& WithPersonalizationControlMode(const PersonalizationControlMode& value) { SetPersonalizationControlMode(value); return *this;}
-    inline PersonalizationConfiguration& WithPersonalizationControlMode(PersonalizationControlMode&& value) { SetPersonalizationControlMode(std::move(value)); return *this;}
+    inline void SetPersonalizationControlMode(PersonalizationControlMode value) { m_personalizationControlModeHasBeenSet = true; m_personalizationControlMode = value; }
+    inline PersonalizationConfiguration& WithPersonalizationControlMode(PersonalizationControlMode value) { SetPersonalizationControlMode(value); return *this;}
     ///@}
   private:
 
-    PersonalizationControlMode m_personalizationControlMode;
+    PersonalizationControlMode m_personalizationControlMode{PersonalizationControlMode::NOT_SET};
     bool m_personalizationControlModeHasBeenSet = false;
   };
 

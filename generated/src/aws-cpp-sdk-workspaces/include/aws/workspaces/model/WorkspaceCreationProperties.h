@@ -34,7 +34,7 @@ namespace Model
   class WorkspaceCreationProperties
   {
   public:
-    AWS_WORKSPACES_API WorkspaceCreationProperties();
+    AWS_WORKSPACES_API WorkspaceCreationProperties() = default;
     AWS_WORKSPACES_API WorkspaceCreationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkspaceCreationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,7 +57,7 @@ namespace Model
      * existing WorkSpaces and any new WorkSpaces that are launched in the directory
      * will have WorkDocs enabled.</p> 
      */
-    inline bool GetEnableWorkDocs() const{ return m_enableWorkDocs; }
+    inline bool GetEnableWorkDocs() const { return m_enableWorkDocs; }
     inline bool EnableWorkDocsHasBeenSet() const { return m_enableWorkDocsHasBeenSet; }
     inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
     inline WorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
      */
-    inline bool GetEnableInternetAccess() const{ return m_enableInternetAccess; }
+    inline bool GetEnableInternetAccess() const { return m_enableInternetAccess; }
     inline bool EnableInternetAccessHasBeenSet() const { return m_enableInternetAccessHasBeenSet; }
     inline void SetEnableInternetAccess(bool value) { m_enableInternetAccessHasBeenSet = true; m_enableInternetAccess = value; }
     inline WorkspaceCreationProperties& WithEnableInternetAccess(bool value) { SetEnableInternetAccess(value); return *this;}
@@ -88,35 +88,31 @@ namespace Model
      * Distinguished Names</a> in the Microsoft documentation.</p> </li> <li> <p>The
      * API doesn't validate whether the OU exists.</p> </li> </ul> 
      */
-    inline const Aws::String& GetDefaultOu() const{ return m_defaultOu; }
+    inline const Aws::String& GetDefaultOu() const { return m_defaultOu; }
     inline bool DefaultOuHasBeenSet() const { return m_defaultOuHasBeenSet; }
-    inline void SetDefaultOu(const Aws::String& value) { m_defaultOuHasBeenSet = true; m_defaultOu = value; }
-    inline void SetDefaultOu(Aws::String&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = std::move(value); }
-    inline void SetDefaultOu(const char* value) { m_defaultOuHasBeenSet = true; m_defaultOu.assign(value); }
-    inline WorkspaceCreationProperties& WithDefaultOu(const Aws::String& value) { SetDefaultOu(value); return *this;}
-    inline WorkspaceCreationProperties& WithDefaultOu(Aws::String&& value) { SetDefaultOu(std::move(value)); return *this;}
-    inline WorkspaceCreationProperties& WithDefaultOu(const char* value) { SetDefaultOu(value); return *this;}
+    template<typename DefaultOuT = Aws::String>
+    void SetDefaultOu(DefaultOuT&& value) { m_defaultOuHasBeenSet = true; m_defaultOu = std::forward<DefaultOuT>(value); }
+    template<typename DefaultOuT = Aws::String>
+    WorkspaceCreationProperties& WithDefaultOu(DefaultOuT&& value) { SetDefaultOu(std::forward<DefaultOuT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of your custom security group.</p>
      */
-    inline const Aws::String& GetCustomSecurityGroupId() const{ return m_customSecurityGroupId; }
+    inline const Aws::String& GetCustomSecurityGroupId() const { return m_customSecurityGroupId; }
     inline bool CustomSecurityGroupIdHasBeenSet() const { return m_customSecurityGroupIdHasBeenSet; }
-    inline void SetCustomSecurityGroupId(const Aws::String& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = value; }
-    inline void SetCustomSecurityGroupId(Aws::String&& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = std::move(value); }
-    inline void SetCustomSecurityGroupId(const char* value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId.assign(value); }
-    inline WorkspaceCreationProperties& WithCustomSecurityGroupId(const Aws::String& value) { SetCustomSecurityGroupId(value); return *this;}
-    inline WorkspaceCreationProperties& WithCustomSecurityGroupId(Aws::String&& value) { SetCustomSecurityGroupId(std::move(value)); return *this;}
-    inline WorkspaceCreationProperties& WithCustomSecurityGroupId(const char* value) { SetCustomSecurityGroupId(value); return *this;}
+    template<typename CustomSecurityGroupIdT = Aws::String>
+    void SetCustomSecurityGroupId(CustomSecurityGroupIdT&& value) { m_customSecurityGroupIdHasBeenSet = true; m_customSecurityGroupId = std::forward<CustomSecurityGroupIdT>(value); }
+    template<typename CustomSecurityGroupIdT = Aws::String>
+    WorkspaceCreationProperties& WithCustomSecurityGroupId(CustomSecurityGroupIdT&& value) { SetCustomSecurityGroupId(std::forward<CustomSecurityGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether users are local administrators of their WorkSpaces.</p>
      */
-    inline bool GetUserEnabledAsLocalAdministrator() const{ return m_userEnabledAsLocalAdministrator; }
+    inline bool GetUserEnabledAsLocalAdministrator() const { return m_userEnabledAsLocalAdministrator; }
     inline bool UserEnabledAsLocalAdministratorHasBeenSet() const { return m_userEnabledAsLocalAdministratorHasBeenSet; }
     inline void SetUserEnabledAsLocalAdministrator(bool value) { m_userEnabledAsLocalAdministratorHasBeenSet = true; m_userEnabledAsLocalAdministrator = value; }
     inline WorkspaceCreationProperties& WithUserEnabledAsLocalAdministrator(bool value) { SetUserEnabledAsLocalAdministrator(value); return *this;}
@@ -129,7 +125,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
      * Maintenance</a>. </p>
      */
-    inline bool GetEnableMaintenanceMode() const{ return m_enableMaintenanceMode; }
+    inline bool GetEnableMaintenanceMode() const { return m_enableMaintenanceMode; }
     inline bool EnableMaintenanceModeHasBeenSet() const { return m_enableMaintenanceModeHasBeenSet; }
     inline void SetEnableMaintenanceMode(bool value) { m_enableMaintenanceModeHasBeenSet = true; m_enableMaintenanceMode = value; }
     inline WorkspaceCreationProperties& WithEnableMaintenanceMode(bool value) { SetEnableMaintenanceMode(value); return *this;}
@@ -139,21 +135,19 @@ namespace Model
     /**
      * <p>Indicates the IAM role ARN of the instance.</p>
      */
-    inline const Aws::String& GetInstanceIamRoleArn() const{ return m_instanceIamRoleArn; }
+    inline const Aws::String& GetInstanceIamRoleArn() const { return m_instanceIamRoleArn; }
     inline bool InstanceIamRoleArnHasBeenSet() const { return m_instanceIamRoleArnHasBeenSet; }
-    inline void SetInstanceIamRoleArn(const Aws::String& value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn = value; }
-    inline void SetInstanceIamRoleArn(Aws::String&& value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn = std::move(value); }
-    inline void SetInstanceIamRoleArn(const char* value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn.assign(value); }
-    inline WorkspaceCreationProperties& WithInstanceIamRoleArn(const Aws::String& value) { SetInstanceIamRoleArn(value); return *this;}
-    inline WorkspaceCreationProperties& WithInstanceIamRoleArn(Aws::String&& value) { SetInstanceIamRoleArn(std::move(value)); return *this;}
-    inline WorkspaceCreationProperties& WithInstanceIamRoleArn(const char* value) { SetInstanceIamRoleArn(value); return *this;}
+    template<typename InstanceIamRoleArnT = Aws::String>
+    void SetInstanceIamRoleArn(InstanceIamRoleArnT&& value) { m_instanceIamRoleArnHasBeenSet = true; m_instanceIamRoleArn = std::forward<InstanceIamRoleArnT>(value); }
+    template<typename InstanceIamRoleArnT = Aws::String>
+    WorkspaceCreationProperties& WithInstanceIamRoleArn(InstanceIamRoleArnT&& value) { SetInstanceIamRoleArn(std::forward<InstanceIamRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableWorkDocs;
+    bool m_enableWorkDocs{false};
     bool m_enableWorkDocsHasBeenSet = false;
 
-    bool m_enableInternetAccess;
+    bool m_enableInternetAccess{false};
     bool m_enableInternetAccessHasBeenSet = false;
 
     Aws::String m_defaultOu;
@@ -162,10 +156,10 @@ namespace Model
     Aws::String m_customSecurityGroupId;
     bool m_customSecurityGroupIdHasBeenSet = false;
 
-    bool m_userEnabledAsLocalAdministrator;
+    bool m_userEnabledAsLocalAdministrator{false};
     bool m_userEnabledAsLocalAdministratorHasBeenSet = false;
 
-    bool m_enableMaintenanceMode;
+    bool m_enableMaintenanceMode{false};
     bool m_enableMaintenanceModeHasBeenSet = false;
 
     Aws::String m_instanceIamRoleArn;

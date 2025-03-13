@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SolutionStackDescription::SolutionStackDescription() : 
-    m_solutionStackNameHasBeenSet(false),
-    m_permittedFileTypesHasBeenSet(false)
-{
-}
-
 SolutionStackDescription::SolutionStackDescription(const XmlNode& xmlNode)
-  : SolutionStackDescription()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ SolutionStackDescription& SolutionStackDescription::operator =(const XmlNode& xm
     {
       m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
       m_solutionStackNameHasBeenSet = true;
+       m_solutionStackNameHasBeenSet = true;
     }
     XmlNode permittedFileTypesNode = resultNode.FirstChild("PermittedFileTypes");
     if(!permittedFileTypesNode.IsNull())
     {
       XmlNode permittedFileTypesMember = permittedFileTypesNode.FirstChild("member");
+      m_permittedFileTypesHasBeenSet = !permittedFileTypesMember.IsNull();
       while(!permittedFileTypesMember.IsNull())
       {
         m_permittedFileTypes.push_back(permittedFileTypesMember.GetText());
         permittedFileTypesMember = permittedFileTypesMember.NextNode("member");
       }
 
-      m_permittedFileTypesHasBeenSet = true;
+       m_permittedFileTypesHasBeenSet = true;
     }
   }
 

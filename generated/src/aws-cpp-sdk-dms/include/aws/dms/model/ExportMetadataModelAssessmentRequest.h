@@ -23,7 +23,7 @@ namespace Model
   class ExportMetadataModelAssessmentRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ExportMetadataModelAssessmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,56 +40,49 @@ namespace Model
     /**
      * <p>The migration project name or Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetMigrationProjectIdentifier() const{ return m_migrationProjectIdentifier; }
+    inline const Aws::String& GetMigrationProjectIdentifier() const { return m_migrationProjectIdentifier; }
     inline bool MigrationProjectIdentifierHasBeenSet() const { return m_migrationProjectIdentifierHasBeenSet; }
-    inline void SetMigrationProjectIdentifier(const Aws::String& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = value; }
-    inline void SetMigrationProjectIdentifier(Aws::String&& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = std::move(value); }
-    inline void SetMigrationProjectIdentifier(const char* value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier.assign(value); }
-    inline ExportMetadataModelAssessmentRequest& WithMigrationProjectIdentifier(const Aws::String& value) { SetMigrationProjectIdentifier(value); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithMigrationProjectIdentifier(Aws::String&& value) { SetMigrationProjectIdentifier(std::move(value)); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithMigrationProjectIdentifier(const char* value) { SetMigrationProjectIdentifier(value); return *this;}
+    template<typename MigrationProjectIdentifierT = Aws::String>
+    void SetMigrationProjectIdentifier(MigrationProjectIdentifierT&& value) { m_migrationProjectIdentifierHasBeenSet = true; m_migrationProjectIdentifier = std::forward<MigrationProjectIdentifierT>(value); }
+    template<typename MigrationProjectIdentifierT = Aws::String>
+    ExportMetadataModelAssessmentRequest& WithMigrationProjectIdentifier(MigrationProjectIdentifierT&& value) { SetMigrationProjectIdentifier(std::forward<MigrationProjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value that specifies the database objects to assess.</p>
      */
-    inline const Aws::String& GetSelectionRules() const{ return m_selectionRules; }
+    inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
     inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }
-    inline void SetSelectionRules(const Aws::String& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = value; }
-    inline void SetSelectionRules(Aws::String&& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = std::move(value); }
-    inline void SetSelectionRules(const char* value) { m_selectionRulesHasBeenSet = true; m_selectionRules.assign(value); }
-    inline ExportMetadataModelAssessmentRequest& WithSelectionRules(const Aws::String& value) { SetSelectionRules(value); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithSelectionRules(Aws::String&& value) { SetSelectionRules(std::move(value)); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithSelectionRules(const char* value) { SetSelectionRules(value); return *this;}
+    template<typename SelectionRulesT = Aws::String>
+    void SetSelectionRules(SelectionRulesT&& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = std::forward<SelectionRulesT>(value); }
+    template<typename SelectionRulesT = Aws::String>
+    ExportMetadataModelAssessmentRequest& WithSelectionRules(SelectionRulesT&& value) { SetSelectionRules(std::forward<SelectionRulesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the assessment file to create in your Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline ExportMetadataModelAssessmentRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    ExportMetadataModelAssessmentRequest& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file format of the assessment file.</p>
      */
-    inline const Aws::Vector<AssessmentReportType>& GetAssessmentReportTypes() const{ return m_assessmentReportTypes; }
+    inline const Aws::Vector<AssessmentReportType>& GetAssessmentReportTypes() const { return m_assessmentReportTypes; }
     inline bool AssessmentReportTypesHasBeenSet() const { return m_assessmentReportTypesHasBeenSet; }
-    inline void SetAssessmentReportTypes(const Aws::Vector<AssessmentReportType>& value) { m_assessmentReportTypesHasBeenSet = true; m_assessmentReportTypes = value; }
-    inline void SetAssessmentReportTypes(Aws::Vector<AssessmentReportType>&& value) { m_assessmentReportTypesHasBeenSet = true; m_assessmentReportTypes = std::move(value); }
-    inline ExportMetadataModelAssessmentRequest& WithAssessmentReportTypes(const Aws::Vector<AssessmentReportType>& value) { SetAssessmentReportTypes(value); return *this;}
-    inline ExportMetadataModelAssessmentRequest& WithAssessmentReportTypes(Aws::Vector<AssessmentReportType>&& value) { SetAssessmentReportTypes(std::move(value)); return *this;}
-    inline ExportMetadataModelAssessmentRequest& AddAssessmentReportTypes(const AssessmentReportType& value) { m_assessmentReportTypesHasBeenSet = true; m_assessmentReportTypes.push_back(value); return *this; }
-    inline ExportMetadataModelAssessmentRequest& AddAssessmentReportTypes(AssessmentReportType&& value) { m_assessmentReportTypesHasBeenSet = true; m_assessmentReportTypes.push_back(std::move(value)); return *this; }
+    template<typename AssessmentReportTypesT = Aws::Vector<AssessmentReportType>>
+    void SetAssessmentReportTypes(AssessmentReportTypesT&& value) { m_assessmentReportTypesHasBeenSet = true; m_assessmentReportTypes = std::forward<AssessmentReportTypesT>(value); }
+    template<typename AssessmentReportTypesT = Aws::Vector<AssessmentReportType>>
+    ExportMetadataModelAssessmentRequest& WithAssessmentReportTypes(AssessmentReportTypesT&& value) { SetAssessmentReportTypes(std::forward<AssessmentReportTypesT>(value)); return *this;}
+    inline ExportMetadataModelAssessmentRequest& AddAssessmentReportTypes(AssessmentReportType value) { m_assessmentReportTypesHasBeenSet = true; m_assessmentReportTypes.push_back(value); return *this; }
     ///@}
   private:
 

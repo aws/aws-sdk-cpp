@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-BatchDeleteScheduledActionRequest::BatchDeleteScheduledActionRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scheduledActionNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteScheduledActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

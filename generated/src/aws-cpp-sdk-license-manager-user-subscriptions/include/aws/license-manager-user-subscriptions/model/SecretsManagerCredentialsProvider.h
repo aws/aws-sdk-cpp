@@ -32,7 +32,7 @@ namespace Model
   class SecretsManagerCredentialsProvider
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API SecretsManagerCredentialsProvider();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API SecretsManagerCredentialsProvider() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API SecretsManagerCredentialsProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API SecretsManagerCredentialsProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the Secrets Manager secret that contains credentials.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline SecretsManagerCredentialsProvider& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline SecretsManagerCredentialsProvider& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline SecretsManagerCredentialsProvider& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    SecretsManagerCredentialsProvider& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
   private:
 

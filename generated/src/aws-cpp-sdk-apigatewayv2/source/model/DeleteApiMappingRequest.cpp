@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApiMappingRequest::DeleteApiMappingRequest() : 
-    m_apiMappingIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApiMappingRequest::SerializePayload() const
 {
   return {};

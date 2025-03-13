@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteTenantDatabaseRequest::DeleteTenantDatabaseRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false),
-    m_skipFinalSnapshot(false),
-    m_skipFinalSnapshotHasBeenSet(false),
-    m_finalDBSnapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTenantDatabaseRequest::SerializePayload() const
 {
   Aws::StringStream ss;

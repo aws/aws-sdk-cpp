@@ -31,7 +31,7 @@ namespace Model
   class Alarm
   {
   public:
-    AWS_AUTOSCALING_API Alarm();
+    AWS_AUTOSCALING_API Alarm() = default;
     AWS_AUTOSCALING_API Alarm(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API Alarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline Alarm& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline Alarm& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline Alarm& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    Alarm& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
-    inline const Aws::String& GetAlarmARN() const{ return m_alarmARN; }
+    inline const Aws::String& GetAlarmARN() const { return m_alarmARN; }
     inline bool AlarmARNHasBeenSet() const { return m_alarmARNHasBeenSet; }
-    inline void SetAlarmARN(const Aws::String& value) { m_alarmARNHasBeenSet = true; m_alarmARN = value; }
-    inline void SetAlarmARN(Aws::String&& value) { m_alarmARNHasBeenSet = true; m_alarmARN = std::move(value); }
-    inline void SetAlarmARN(const char* value) { m_alarmARNHasBeenSet = true; m_alarmARN.assign(value); }
-    inline Alarm& WithAlarmARN(const Aws::String& value) { SetAlarmARN(value); return *this;}
-    inline Alarm& WithAlarmARN(Aws::String&& value) { SetAlarmARN(std::move(value)); return *this;}
-    inline Alarm& WithAlarmARN(const char* value) { SetAlarmARN(value); return *this;}
+    template<typename AlarmARNT = Aws::String>
+    void SetAlarmARN(AlarmARNT&& value) { m_alarmARNHasBeenSet = true; m_alarmARN = std::forward<AlarmARNT>(value); }
+    template<typename AlarmARNT = Aws::String>
+    Alarm& WithAlarmARN(AlarmARNT&& value) { SetAlarmARN(std::forward<AlarmARNT>(value)); return *this;}
     ///@}
   private:
 

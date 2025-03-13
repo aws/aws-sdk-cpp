@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-TimeRangeFilterInput::TimeRangeFilterInput() : 
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 TimeRangeFilterInput::TimeRangeFilterInput(JsonView jsonValue)
-  : TimeRangeFilterInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimeRangeFilterInput& TimeRangeFilterInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

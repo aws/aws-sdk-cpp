@@ -18,19 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ContinuousParameterRange::ContinuousParameterRange() : 
-    m_nameHasBeenSet(false),
-    m_maxValue(0.0),
-    m_maxValueHasBeenSet(false),
-    m_minValue(0.0),
-    m_minValueHasBeenSet(false),
-    m_scalingType(ScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false)
-{
-}
-
 ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue)
-  : ContinuousParameterRange()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ContinuousParameterRange& ContinuousParameterRange::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetDouble("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetDouble("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingType"))
   {
     m_scalingType = ScalingTypeMapper::GetScalingTypeForName(jsonValue.GetString("ScalingType"));
-
     m_scalingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

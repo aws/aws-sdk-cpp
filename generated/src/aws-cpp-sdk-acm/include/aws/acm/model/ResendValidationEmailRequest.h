@@ -21,7 +21,7 @@ namespace Model
   class ResendValidationEmailRequest : public ACMRequest
   {
   public:
-    AWS_ACM_API ResendValidationEmailRequest();
+    AWS_ACM_API ResendValidationEmailRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline ResendValidationEmailRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline ResendValidationEmailRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline ResendValidationEmailRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    ResendValidationEmailRequest& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The fully qualified domain name (FQDN) of the certificate that needs to be
      * validated.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ResendValidationEmailRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ResendValidationEmailRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ResendValidationEmailRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ResendValidationEmailRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>postmaster@subdomain.example.com</p> </li> <li>
      * <p>webmaster@subdomain.example.com</p> </li> </ul>
      */
-    inline const Aws::String& GetValidationDomain() const{ return m_validationDomain; }
+    inline const Aws::String& GetValidationDomain() const { return m_validationDomain; }
     inline bool ValidationDomainHasBeenSet() const { return m_validationDomainHasBeenSet; }
-    inline void SetValidationDomain(const Aws::String& value) { m_validationDomainHasBeenSet = true; m_validationDomain = value; }
-    inline void SetValidationDomain(Aws::String&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::move(value); }
-    inline void SetValidationDomain(const char* value) { m_validationDomainHasBeenSet = true; m_validationDomain.assign(value); }
-    inline ResendValidationEmailRequest& WithValidationDomain(const Aws::String& value) { SetValidationDomain(value); return *this;}
-    inline ResendValidationEmailRequest& WithValidationDomain(Aws::String&& value) { SetValidationDomain(std::move(value)); return *this;}
-    inline ResendValidationEmailRequest& WithValidationDomain(const char* value) { SetValidationDomain(value); return *this;}
+    template<typename ValidationDomainT = Aws::String>
+    void SetValidationDomain(ValidationDomainT&& value) { m_validationDomainHasBeenSet = true; m_validationDomain = std::forward<ValidationDomainT>(value); }
+    template<typename ValidationDomainT = Aws::String>
+    ResendValidationEmailRequest& WithValidationDomain(ValidationDomainT&& value) { SetValidationDomain(std::forward<ValidationDomainT>(value)); return *this;}
     ///@}
   private:
 

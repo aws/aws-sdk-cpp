@@ -32,7 +32,7 @@ namespace Model
   class MapRunRedrivenEventDetails
   {
   public:
-    AWS_SFN_API MapRunRedrivenEventDetails();
+    AWS_SFN_API MapRunRedrivenEventDetails() = default;
     AWS_SFN_API MapRunRedrivenEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API MapRunRedrivenEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Map Run that was redriven.</p>
      */
-    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+    inline const Aws::String& GetMapRunArn() const { return m_mapRunArn; }
     inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
-    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
-    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
-    inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
-    inline MapRunRedrivenEventDetails& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-    inline MapRunRedrivenEventDetails& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-    inline MapRunRedrivenEventDetails& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+    template<typename MapRunArnT = Aws::String>
+    void SetMapRunArn(MapRunArnT&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::forward<MapRunArnT>(value); }
+    template<typename MapRunArnT = Aws::String>
+    MapRunRedrivenEventDetails& WithMapRunArn(MapRunArnT&& value) { SetMapRunArn(std::forward<MapRunArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * execution's history including this event. The redrive count for a redriven Map
      * Run is always greater than 0.</p>
      */
-    inline int GetRedriveCount() const{ return m_redriveCount; }
+    inline int GetRedriveCount() const { return m_redriveCount; }
     inline bool RedriveCountHasBeenSet() const { return m_redriveCountHasBeenSet; }
     inline void SetRedriveCount(int value) { m_redriveCountHasBeenSet = true; m_redriveCount = value; }
     inline MapRunRedrivenEventDetails& WithRedriveCount(int value) { SetRedriveCount(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_mapRunArn;
     bool m_mapRunArnHasBeenSet = false;
 
-    int m_redriveCount;
+    int m_redriveCount{0};
     bool m_redriveCountHasBeenSet = false;
   };
 

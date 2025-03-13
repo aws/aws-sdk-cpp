@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMessageTemplatesRequest::ListMessageTemplatesRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListMessageTemplatesRequest::SerializePayload() const
 {
   return {};

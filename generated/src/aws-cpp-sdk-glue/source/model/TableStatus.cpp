@@ -19,91 +19,53 @@ namespace Glue
 namespace Model
 {
 
-TableStatus::TableStatus() : 
-    m_requestedByHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_action(ResourceAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_state(ResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 TableStatus::TableStatus(JsonView jsonValue)
-  : TableStatus()
 {
   *this = jsonValue;
 }
-
-const StatusDetails& TableStatus::GetDetails() const{ return *m_details; }
-bool TableStatus::DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-void TableStatus::SetDetails(const StatusDetails& value) { m_detailsHasBeenSet = true; m_details = Aws::MakeShared<StatusDetails>("TableStatus", value); }
-void TableStatus::SetDetails(StatusDetails&& value) { m_detailsHasBeenSet = true; m_details = Aws::MakeShared<StatusDetails>("TableStatus", std::move(value)); }
-TableStatus& TableStatus::WithDetails(const StatusDetails& value) { SetDetails(value); return *this;}
-TableStatus& TableStatus::WithDetails(StatusDetails&& value) { SetDetails(std::move(value)); return *this;}
 
 TableStatus& TableStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RequestedBy"))
   {
     m_requestedBy = jsonValue.GetString("RequestedBy");
-
     m_requestedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedBy"))
   {
     m_updatedBy = jsonValue.GetString("UpdatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestTime"))
   {
     m_requestTime = jsonValue.GetDouble("RequestTime");
-
     m_requestTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ResourceActionMapper::GetResourceActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ResourceStateMapper::GetResourceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = Aws::MakeShared<StatusDetails>("TableStatus", jsonValue.GetObject("Details"));
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

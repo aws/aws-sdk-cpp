@@ -33,7 +33,7 @@ namespace Model
   class OrganizationAffectedEntitiesErrorItem
   {
   public:
-    AWS_HEALTH_API OrganizationAffectedEntitiesErrorItem();
+    AWS_HEALTH_API OrganizationAffectedEntitiesErrorItem() = default;
     AWS_HEALTH_API OrganizationAffectedEntitiesErrorItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTH_API OrganizationAffectedEntitiesErrorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The 12-digit Amazon Web Services account numbers that contains the affected
      * entities.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline OrganizationAffectedEntitiesErrorItem& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    OrganizationAffectedEntitiesErrorItem& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,28 +61,24 @@ namespace Model
      * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
-    inline const Aws::String& GetEventArn() const{ return m_eventArn; }
+    inline const Aws::String& GetEventArn() const { return m_eventArn; }
     inline bool EventArnHasBeenSet() const { return m_eventArnHasBeenSet; }
-    inline void SetEventArn(const Aws::String& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
-    inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
-    inline void SetEventArn(const char* value) { m_eventArnHasBeenSet = true; m_eventArn.assign(value); }
-    inline OrganizationAffectedEntitiesErrorItem& WithEventArn(const Aws::String& value) { SetEventArn(value); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithEventArn(const char* value) { SetEventArn(value); return *this;}
+    template<typename EventArnT = Aws::String>
+    void SetEventArn(EventArnT&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::forward<EventArnT>(value); }
+    template<typename EventArnT = Aws::String>
+    OrganizationAffectedEntitiesErrorItem& WithEventArn(EventArnT&& value) { SetEventArn(std::forward<EventArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the error.</p>
      */
-    inline const Aws::String& GetErrorName() const{ return m_errorName; }
+    inline const Aws::String& GetErrorName() const { return m_errorName; }
     inline bool ErrorNameHasBeenSet() const { return m_errorNameHasBeenSet; }
-    inline void SetErrorName(const Aws::String& value) { m_errorNameHasBeenSet = true; m_errorName = value; }
-    inline void SetErrorName(Aws::String&& value) { m_errorNameHasBeenSet = true; m_errorName = std::move(value); }
-    inline void SetErrorName(const char* value) { m_errorNameHasBeenSet = true; m_errorName.assign(value); }
-    inline OrganizationAffectedEntitiesErrorItem& WithErrorName(const Aws::String& value) { SetErrorName(value); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithErrorName(Aws::String&& value) { SetErrorName(std::move(value)); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithErrorName(const char* value) { SetErrorName(value); return *this;}
+    template<typename ErrorNameT = Aws::String>
+    void SetErrorName(ErrorNameT&& value) { m_errorNameHasBeenSet = true; m_errorName = std::forward<ErrorNameT>(value); }
+    template<typename ErrorNameT = Aws::String>
+    OrganizationAffectedEntitiesErrorItem& WithErrorName(ErrorNameT&& value) { SetErrorName(std::forward<ErrorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * <code>AccountSpecific</code> value for the <code>EventScopeCode</code>
      * parameter, but don't specify an Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline OrganizationAffectedEntitiesErrorItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline OrganizationAffectedEntitiesErrorItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    OrganizationAffectedEntitiesErrorItem& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

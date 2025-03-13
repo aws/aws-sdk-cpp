@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BodySectionRepeatDimensionConfiguration::BodySectionRepeatDimensionConfiguration() : 
-    m_dynamicCategoryDimensionConfigurationHasBeenSet(false),
-    m_dynamicNumericDimensionConfigurationHasBeenSet(false)
-{
-}
-
 BodySectionRepeatDimensionConfiguration::BodySectionRepeatDimensionConfiguration(JsonView jsonValue)
-  : BodySectionRepeatDimensionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BodySectionRepeatDimensionConfiguration& BodySectionRepeatDimensionConfiguration
   if(jsonValue.ValueExists("DynamicCategoryDimensionConfiguration"))
   {
     m_dynamicCategoryDimensionConfiguration = jsonValue.GetObject("DynamicCategoryDimensionConfiguration");
-
     m_dynamicCategoryDimensionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicNumericDimensionConfiguration"))
   {
     m_dynamicNumericDimensionConfiguration = jsonValue.GetObject("DynamicNumericDimensionConfiguration");
-
     m_dynamicNumericDimensionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

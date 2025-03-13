@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-LinkedService::LinkedService() : 
-    m_servicePrincipalHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 LinkedService::LinkedService(const XmlNode& xmlNode)
-  : LinkedService()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LinkedService& LinkedService::operator =(const XmlNode& xmlNode)
     {
       m_servicePrincipal = Aws::Utils::Xml::DecodeEscapedXmlText(servicePrincipalNode.GetText());
       m_servicePrincipalHasBeenSet = true;
+       m_servicePrincipalHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

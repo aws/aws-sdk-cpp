@@ -34,7 +34,7 @@ namespace Model
   class AuthorizedTargetsByService
   {
   public:
-    AWS_QUICKSIGHT_API AuthorizedTargetsByService();
+    AWS_QUICKSIGHT_API AuthorizedTargetsByService() = default;
     AWS_QUICKSIGHT_API AuthorizedTargetsByService(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AuthorizedTargetsByService& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the Amazon Web Services service.</p>
      */
-    inline const ServiceType& GetService() const{ return m_service; }
+    inline ServiceType GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const ServiceType& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(ServiceType&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline AuthorizedTargetsByService& WithService(const ServiceType& value) { SetService(value); return *this;}
-    inline AuthorizedTargetsByService& WithService(ServiceType&& value) { SetService(std::move(value)); return *this;}
+    inline void SetService(ServiceType value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline AuthorizedTargetsByService& WithService(ServiceType value) { SetService(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,18 @@ namespace Model
      * <p>Aist of authorized targets that are represented by IAM Identity Center
      * application ARNs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const{ return m_authorizedTargets; }
+    inline const Aws::Vector<Aws::String>& GetAuthorizedTargets() const { return m_authorizedTargets; }
     inline bool AuthorizedTargetsHasBeenSet() const { return m_authorizedTargetsHasBeenSet; }
-    inline void SetAuthorizedTargets(const Aws::Vector<Aws::String>& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = value; }
-    inline void SetAuthorizedTargets(Aws::Vector<Aws::String>&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = std::move(value); }
-    inline AuthorizedTargetsByService& WithAuthorizedTargets(const Aws::Vector<Aws::String>& value) { SetAuthorizedTargets(value); return *this;}
-    inline AuthorizedTargetsByService& WithAuthorizedTargets(Aws::Vector<Aws::String>&& value) { SetAuthorizedTargets(std::move(value)); return *this;}
-    inline AuthorizedTargetsByService& AddAuthorizedTargets(const Aws::String& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(value); return *this; }
-    inline AuthorizedTargetsByService& AddAuthorizedTargets(Aws::String&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(std::move(value)); return *this; }
-    inline AuthorizedTargetsByService& AddAuthorizedTargets(const char* value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.push_back(value); return *this; }
+    template<typename AuthorizedTargetsT = Aws::Vector<Aws::String>>
+    void SetAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets = std::forward<AuthorizedTargetsT>(value); }
+    template<typename AuthorizedTargetsT = Aws::Vector<Aws::String>>
+    AuthorizedTargetsByService& WithAuthorizedTargets(AuthorizedTargetsT&& value) { SetAuthorizedTargets(std::forward<AuthorizedTargetsT>(value)); return *this;}
+    template<typename AuthorizedTargetsT = Aws::String>
+    AuthorizedTargetsByService& AddAuthorizedTargets(AuthorizedTargetsT&& value) { m_authorizedTargetsHasBeenSet = true; m_authorizedTargets.emplace_back(std::forward<AuthorizedTargetsT>(value)); return *this; }
     ///@}
   private:
 
-    ServiceType m_service;
+    ServiceType m_service{ServiceType::NOT_SET};
     bool m_serviceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_authorizedTargets;

@@ -12,12 +12,6 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateExportRequest::UpdateExportRequest() : 
-    m_exportHasBeenSet(false),
-    m_exportArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateExportRequest::SerializePayload() const
 {
   JsonValue payload;

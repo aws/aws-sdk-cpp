@@ -12,12 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFirewallRequest::DescribeFirewallRequest() : 
-    m_firewallNameHasBeenSet(false),
-    m_firewallArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFirewallRequest::SerializePayload() const
 {
   JsonValue payload;

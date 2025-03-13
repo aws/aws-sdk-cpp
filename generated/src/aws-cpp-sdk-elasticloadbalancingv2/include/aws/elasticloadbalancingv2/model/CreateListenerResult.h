@@ -29,7 +29,7 @@ namespace Model
   class CreateListenerResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API CreateListenerResult();
+    AWS_ELASTICLOADBALANCINGV2_API CreateListenerResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API CreateListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API CreateListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the listener.</p>
      */
-    inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
-    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listeners = value; }
-    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listeners = std::move(value); }
-    inline CreateListenerResult& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
-    inline CreateListenerResult& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
-    inline CreateListenerResult& AddListeners(const Listener& value) { m_listeners.push_back(value); return *this; }
-    inline CreateListenerResult& AddListeners(Listener&& value) { m_listeners.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Listener>& GetListeners() const { return m_listeners; }
+    template<typename ListenersT = Aws::Vector<Listener>>
+    void SetListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners = std::forward<ListenersT>(value); }
+    template<typename ListenersT = Aws::Vector<Listener>>
+    CreateListenerResult& WithListeners(ListenersT&& value) { SetListeners(std::forward<ListenersT>(value)); return *this;}
+    template<typename ListenersT = Listener>
+    CreateListenerResult& AddListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners.emplace_back(std::forward<ListenersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateListenerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateListenerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateListenerResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Listener> m_listeners;
+    bool m_listenersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

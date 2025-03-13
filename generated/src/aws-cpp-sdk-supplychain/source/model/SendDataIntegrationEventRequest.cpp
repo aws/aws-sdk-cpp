@@ -12,18 +12,6 @@ using namespace Aws::SupplyChain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendDataIntegrationEventRequest::SendDataIntegrationEventRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_eventType(DataIntegrationEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_eventGroupIdHasBeenSet(false),
-    m_eventTimestampHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String SendDataIntegrationEventRequest::SerializePayload() const
 {
   JsonValue payload;

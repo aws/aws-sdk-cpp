@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAppRequest::GetAppRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAppRequest::SerializePayload() const
 {
   return {};

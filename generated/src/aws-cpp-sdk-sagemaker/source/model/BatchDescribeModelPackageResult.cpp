@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDescribeModelPackageResult::BatchDescribeModelPackageResult()
-{
-}
-
 BatchDescribeModelPackageResult::BatchDescribeModelPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDescribeModelPackageResult& BatchDescribeModelPackageResult::operator =(con
     {
       m_modelPackageSummaries[modelPackageSummariesItem.first] = modelPackageSummariesItem.second.AsObject();
     }
+    m_modelPackageSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchDescribeModelPackageErrorMap"))
   {
     Aws::Map<Aws::String, JsonView> batchDescribeModelPackageErrorMapJsonMap = jsonValue.GetObject("BatchDescribeModelPackageErrorMap").GetAllObjects();
@@ -45,14 +41,15 @@ BatchDescribeModelPackageResult& BatchDescribeModelPackageResult::operator =(con
     {
       m_batchDescribeModelPackageErrorMap[batchDescribeModelPackageErrorMapItem.first] = batchDescribeModelPackageErrorMapItem.second.AsObject();
     }
+    m_batchDescribeModelPackageErrorMapHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

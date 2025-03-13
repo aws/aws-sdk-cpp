@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CalculatedMeasureField::CalculatedMeasureField() : 
-    m_fieldIdHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 CalculatedMeasureField::CalculatedMeasureField(JsonView jsonValue)
-  : CalculatedMeasureField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CalculatedMeasureField& CalculatedMeasureField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

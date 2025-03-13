@@ -13,11 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDirectoryRequest::DeleteDirectoryRequest() : 
-    m_directoryArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDirectoryRequest::SerializePayload() const
 {
   return {};

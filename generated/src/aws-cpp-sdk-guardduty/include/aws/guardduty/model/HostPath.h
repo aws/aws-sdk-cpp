@@ -32,7 +32,7 @@ namespace Model
   class HostPath
   {
   public:
-    AWS_GUARDDUTY_API HostPath();
+    AWS_GUARDDUTY_API HostPath() = default;
     AWS_GUARDDUTY_API HostPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API HostPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Path of the file or directory on the host that the volume maps to.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline HostPath& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline HostPath& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline HostPath& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    HostPath& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

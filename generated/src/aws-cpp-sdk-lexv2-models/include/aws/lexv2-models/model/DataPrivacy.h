@@ -32,7 +32,7 @@ namespace Model
   class DataPrivacy
   {
   public:
-    AWS_LEXMODELSV2_API DataPrivacy();
+    AWS_LEXMODELSV2_API DataPrivacy() = default;
     AWS_LEXMODELSV2_API DataPrivacy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API DataPrivacy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,14 +64,14 @@ namespace Model
      * whole or in part, to children under age 13, see the <a
      * href="http://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ</a>.</p>
      */
-    inline bool GetChildDirected() const{ return m_childDirected; }
+    inline bool GetChildDirected() const { return m_childDirected; }
     inline bool ChildDirectedHasBeenSet() const { return m_childDirectedHasBeenSet; }
     inline void SetChildDirected(bool value) { m_childDirectedHasBeenSet = true; m_childDirected = value; }
     inline DataPrivacy& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
     ///@}
   private:
 
-    bool m_childDirected;
+    bool m_childDirected{false};
     bool m_childDirectedHasBeenSet = false;
   };
 

@@ -23,7 +23,7 @@ namespace Model
   class GetECSServiceRecommendationProjectedMetricsRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GetECSServiceRecommendationProjectedMetricsRequest();
+    AWS_COMPUTEOPTIMIZER_API GetECSServiceRecommendationProjectedMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,33 +43,29 @@ namespace Model
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    GetECSServiceRecommendationProjectedMetricsRequest& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The statistic of the projected metrics. </p>
      */
-    inline const MetricStatistic& GetStat() const{ return m_stat; }
+    inline MetricStatistic GetStat() const { return m_stat; }
     inline bool StatHasBeenSet() const { return m_statHasBeenSet; }
-    inline void SetStat(const MetricStatistic& value) { m_statHasBeenSet = true; m_stat = value; }
-    inline void SetStat(MetricStatistic&& value) { m_statHasBeenSet = true; m_stat = std::move(value); }
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithStat(const MetricStatistic& value) { SetStat(value); return *this;}
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithStat(MetricStatistic&& value) { SetStat(std::move(value)); return *this;}
+    inline void SetStat(MetricStatistic value) { m_statHasBeenSet = true; m_stat = value; }
+    inline GetECSServiceRecommendationProjectedMetricsRequest& WithStat(MetricStatistic value) { SetStat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The granularity, in seconds, of the projected metrics data points. </p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetECSServiceRecommendationProjectedMetricsRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -79,40 +75,40 @@ namespace Model
     /**
      * <p> The timestamp of the first projected metrics data point to return. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetECSServiceRecommendationProjectedMetricsRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp of the last projected metrics data point to return. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetECSServiceRecommendationProjectedMetricsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetECSServiceRecommendationProjectedMetricsRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceArn;
     bool m_serviceArnHasBeenSet = false;
 
-    MetricStatistic m_stat;
+    MetricStatistic m_stat{MetricStatistic::NOT_SET};
     bool m_statHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

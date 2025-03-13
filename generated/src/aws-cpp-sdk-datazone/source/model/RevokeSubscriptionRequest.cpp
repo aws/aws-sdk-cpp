@@ -12,14 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeSubscriptionRequest::RevokeSubscriptionRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_retainPermissions(false),
-    m_retainPermissionsHasBeenSet(false)
-{
-}
-
 Aws::String RevokeSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

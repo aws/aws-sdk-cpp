@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConfigurationSet::ConfigurationSet() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ConfigurationSet::ConfigurationSet(const XmlNode& xmlNode)
-  : ConfigurationSet()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ConfigurationSet& ConfigurationSet::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

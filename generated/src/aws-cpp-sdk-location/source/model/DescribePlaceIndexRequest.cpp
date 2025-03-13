@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePlaceIndexRequest::DescribePlaceIndexRequest() : 
-    m_indexNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribePlaceIndexRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class AssignedEnvironmentExitSessionActionDefinition
   {
   public:
-    AWS_DEADLINE_API AssignedEnvironmentExitSessionActionDefinition();
+    AWS_DEADLINE_API AssignedEnvironmentExitSessionActionDefinition() = default;
     AWS_DEADLINE_API AssignedEnvironmentExitSessionActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API AssignedEnvironmentExitSessionActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The environment ID of the assigned environment when exiting a session.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline AssignedEnvironmentExitSessionActionDefinition& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline AssignedEnvironmentExitSessionActionDefinition& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline AssignedEnvironmentExitSessionActionDefinition& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    AssignedEnvironmentExitSessionActionDefinition& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
   private:
 

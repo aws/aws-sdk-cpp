@@ -18,19 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-SentimentFilter::SentimentFilter() : 
-    m_sentimentsHasBeenSet(false),
-    m_absoluteTimeRangeHasBeenSet(false),
-    m_relativeTimeRangeHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
-{
-}
-
 SentimentFilter::SentimentFilter(JsonView jsonValue)
-  : SentimentFilter()
 {
   *this = jsonValue;
 }
@@ -46,35 +34,26 @@ SentimentFilter& SentimentFilter::operator =(JsonView jsonValue)
     }
     m_sentimentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbsoluteTimeRange"))
   {
     m_absoluteTimeRange = jsonValue.GetObject("AbsoluteTimeRange");
-
     m_absoluteTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeTimeRange"))
   {
     m_relativeTimeRange = jsonValue.GetObject("RelativeTimeRange");
-
     m_relativeTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Negate"))
   {
     m_negate = jsonValue.GetBool("Negate");
-
     m_negateHasBeenSet = true;
   }
-
   return *this;
 }
 

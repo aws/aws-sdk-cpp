@@ -18,31 +18,7 @@ namespace EMR
 namespace Model
 {
 
-NotebookExecution::NotebookExecution() : 
-    m_notebookExecutionIdHasBeenSet(false),
-    m_editorIdHasBeenSet(false),
-    m_executionEngineHasBeenSet(false),
-    m_notebookExecutionNameHasBeenSet(false),
-    m_notebookParamsHasBeenSet(false),
-    m_status(NotebookExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_outputNotebookURIHasBeenSet(false),
-    m_lastStateChangeReasonHasBeenSet(false),
-    m_notebookInstanceSecurityGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_notebookS3LocationHasBeenSet(false),
-    m_outputNotebookS3LocationHasBeenSet(false),
-    m_outputNotebookFormat(OutputNotebookFormat::NOT_SET),
-    m_outputNotebookFormatHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
-{
-}
-
 NotebookExecution::NotebookExecution(JsonView jsonValue)
-  : NotebookExecution()
 {
   *this = jsonValue;
 }
@@ -52,87 +28,63 @@ NotebookExecution& NotebookExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotebookExecutionId"))
   {
     m_notebookExecutionId = jsonValue.GetString("NotebookExecutionId");
-
     m_notebookExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EditorId"))
   {
     m_editorId = jsonValue.GetString("EditorId");
-
     m_editorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionEngine"))
   {
     m_executionEngine = jsonValue.GetObject("ExecutionEngine");
-
     m_executionEngineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookExecutionName"))
   {
     m_notebookExecutionName = jsonValue.GetString("NotebookExecutionName");
-
     m_notebookExecutionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookParams"))
   {
     m_notebookParams = jsonValue.GetString("NotebookParams");
-
     m_notebookParamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = NotebookExecutionStatusMapper::GetNotebookExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputNotebookURI"))
   {
     m_outputNotebookURI = jsonValue.GetString("OutputNotebookURI");
-
     m_outputNotebookURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStateChangeReason"))
   {
     m_lastStateChangeReason = jsonValue.GetString("LastStateChangeReason");
-
     m_lastStateChangeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceSecurityGroupId"))
   {
     m_notebookInstanceSecurityGroupId = jsonValue.GetString("NotebookInstanceSecurityGroupId");
-
     m_notebookInstanceSecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -142,28 +94,21 @@ NotebookExecution& NotebookExecution::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookS3Location"))
   {
     m_notebookS3Location = jsonValue.GetObject("NotebookS3Location");
-
     m_notebookS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputNotebookS3Location"))
   {
     m_outputNotebookS3Location = jsonValue.GetObject("OutputNotebookS3Location");
-
     m_outputNotebookS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputNotebookFormat"))
   {
     m_outputNotebookFormat = OutputNotebookFormatMapper::GetOutputNotebookFormatForName(jsonValue.GetString("OutputNotebookFormat"));
-
     m_outputNotebookFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("EnvironmentVariables").GetAllObjects();
@@ -173,7 +118,6 @@ NotebookExecution& NotebookExecution::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

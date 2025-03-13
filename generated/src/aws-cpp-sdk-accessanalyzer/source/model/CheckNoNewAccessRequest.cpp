@@ -12,14 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckNoNewAccessRequest::CheckNoNewAccessRequest() : 
-    m_newPolicyDocumentHasBeenSet(false),
-    m_existingPolicyDocumentHasBeenSet(false),
-    m_policyType(AccessCheckPolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 Aws::String CheckNoNewAccessRequest::SerializePayload() const
 {
   JsonValue payload;

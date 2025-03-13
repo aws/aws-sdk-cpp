@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-AutoMLResult::AutoMLResult() : 
-    m_bestRecipeArnHasBeenSet(false)
-{
-}
-
 AutoMLResult::AutoMLResult(JsonView jsonValue)
-  : AutoMLResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoMLResult& AutoMLResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bestRecipeArn"))
   {
     m_bestRecipeArn = jsonValue.GetString("bestRecipeArn");
-
     m_bestRecipeArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartFailbackLaunchRequest::StartFailbackLaunchRequest() : 
-    m_recoveryInstanceIDsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartFailbackLaunchRequest::SerializePayload() const
 {
   JsonValue payload;

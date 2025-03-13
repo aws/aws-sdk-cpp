@@ -21,7 +21,7 @@ namespace Model
   class CancelExportTaskRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CancelExportTaskRequest();
+    AWS_RDS_API CancelExportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The identifier of the snapshot or cluster export task to cancel.</p>
      */
-    inline const Aws::String& GetExportTaskIdentifier() const{ return m_exportTaskIdentifier; }
+    inline const Aws::String& GetExportTaskIdentifier() const { return m_exportTaskIdentifier; }
     inline bool ExportTaskIdentifierHasBeenSet() const { return m_exportTaskIdentifierHasBeenSet; }
-    inline void SetExportTaskIdentifier(const Aws::String& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = value; }
-    inline void SetExportTaskIdentifier(Aws::String&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::move(value); }
-    inline void SetExportTaskIdentifier(const char* value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier.assign(value); }
-    inline CancelExportTaskRequest& WithExportTaskIdentifier(const Aws::String& value) { SetExportTaskIdentifier(value); return *this;}
-    inline CancelExportTaskRequest& WithExportTaskIdentifier(Aws::String&& value) { SetExportTaskIdentifier(std::move(value)); return *this;}
-    inline CancelExportTaskRequest& WithExportTaskIdentifier(const char* value) { SetExportTaskIdentifier(value); return *this;}
+    template<typename ExportTaskIdentifierT = Aws::String>
+    void SetExportTaskIdentifier(ExportTaskIdentifierT&& value) { m_exportTaskIdentifierHasBeenSet = true; m_exportTaskIdentifier = std::forward<ExportTaskIdentifierT>(value); }
+    template<typename ExportTaskIdentifierT = Aws::String>
+    CancelExportTaskRequest& WithExportTaskIdentifier(ExportTaskIdentifierT&& value) { SetExportTaskIdentifier(std::forward<ExportTaskIdentifierT>(value)); return *this;}
     ///@}
   private:
 

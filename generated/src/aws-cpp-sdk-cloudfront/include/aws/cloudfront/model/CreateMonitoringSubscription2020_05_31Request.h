@@ -22,7 +22,7 @@ namespace Model
   class CreateMonitoringSubscription2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateMonitoringSubscription2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateMonitoringSubscription2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The ID of the distribution that you are enabling metrics for.</p>
      */
-    inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
+    inline const Aws::String& GetDistributionId() const { return m_distributionId; }
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-    inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-    inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-    inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-    inline CreateMonitoringSubscription2020_05_31Request& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-    inline CreateMonitoringSubscription2020_05_31Request& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-    inline CreateMonitoringSubscription2020_05_31Request& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+    template<typename DistributionIdT = Aws::String>
+    void SetDistributionId(DistributionIdT&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::forward<DistributionIdT>(value); }
+    template<typename DistributionIdT = Aws::String>
+    CreateMonitoringSubscription2020_05_31Request& WithDistributionId(DistributionIdT&& value) { SetDistributionId(std::forward<DistributionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * additional CloudWatch metrics are enabled for a given CloudFront
      * distribution.</p>
      */
-    inline const MonitoringSubscription& GetMonitoringSubscription() const{ return m_monitoringSubscription; }
+    inline const MonitoringSubscription& GetMonitoringSubscription() const { return m_monitoringSubscription; }
     inline bool MonitoringSubscriptionHasBeenSet() const { return m_monitoringSubscriptionHasBeenSet; }
-    inline void SetMonitoringSubscription(const MonitoringSubscription& value) { m_monitoringSubscriptionHasBeenSet = true; m_monitoringSubscription = value; }
-    inline void SetMonitoringSubscription(MonitoringSubscription&& value) { m_monitoringSubscriptionHasBeenSet = true; m_monitoringSubscription = std::move(value); }
-    inline CreateMonitoringSubscription2020_05_31Request& WithMonitoringSubscription(const MonitoringSubscription& value) { SetMonitoringSubscription(value); return *this;}
-    inline CreateMonitoringSubscription2020_05_31Request& WithMonitoringSubscription(MonitoringSubscription&& value) { SetMonitoringSubscription(std::move(value)); return *this;}
+    template<typename MonitoringSubscriptionT = MonitoringSubscription>
+    void SetMonitoringSubscription(MonitoringSubscriptionT&& value) { m_monitoringSubscriptionHasBeenSet = true; m_monitoringSubscription = std::forward<MonitoringSubscriptionT>(value); }
+    template<typename MonitoringSubscriptionT = MonitoringSubscription>
+    CreateMonitoringSubscription2020_05_31Request& WithMonitoringSubscription(MonitoringSubscriptionT&& value) { SetMonitoringSubscription(std::forward<MonitoringSubscriptionT>(value)); return *this;}
     ///@}
   private:
 

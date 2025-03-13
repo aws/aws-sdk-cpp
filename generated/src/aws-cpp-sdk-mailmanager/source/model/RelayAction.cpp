@@ -18,17 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RelayAction::RelayAction() : 
-    m_actionFailurePolicy(ActionFailurePolicy::NOT_SET),
-    m_actionFailurePolicyHasBeenSet(false),
-    m_mailFrom(MailFrom::NOT_SET),
-    m_mailFromHasBeenSet(false),
-    m_relayHasBeenSet(false)
-{
-}
-
 RelayAction::RelayAction(JsonView jsonValue)
-  : RelayAction()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RelayAction& RelayAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionFailurePolicy"))
   {
     m_actionFailurePolicy = ActionFailurePolicyMapper::GetActionFailurePolicyForName(jsonValue.GetString("ActionFailurePolicy"));
-
     m_actionFailurePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MailFrom"))
   {
     m_mailFrom = MailFromMapper::GetMailFromForName(jsonValue.GetString("MailFrom"));
-
     m_mailFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Relay"))
   {
     m_relay = jsonValue.GetString("Relay");
-
     m_relayHasBeenSet = true;
   }
-
   return *this;
 }
 

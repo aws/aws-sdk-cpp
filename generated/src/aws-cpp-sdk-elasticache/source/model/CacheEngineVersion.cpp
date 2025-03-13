@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheEngineVersion::CacheEngineVersion() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_cacheEngineDescriptionHasBeenSet(false),
-    m_cacheEngineVersionDescriptionHasBeenSet(false)
-{
-}
-
 CacheEngineVersion::CacheEngineVersion(const XmlNode& xmlNode)
-  : CacheEngineVersion()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ CacheEngineVersion& CacheEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode cacheParameterGroupFamilyNode = resultNode.FirstChild("CacheParameterGroupFamily");
     if(!cacheParameterGroupFamilyNode.IsNull())
     {
       m_cacheParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(cacheParameterGroupFamilyNode.GetText());
       m_cacheParameterGroupFamilyHasBeenSet = true;
+       m_cacheParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode cacheEngineDescriptionNode = resultNode.FirstChild("CacheEngineDescription");
     if(!cacheEngineDescriptionNode.IsNull())
     {
       m_cacheEngineDescription = Aws::Utils::Xml::DecodeEscapedXmlText(cacheEngineDescriptionNode.GetText());
       m_cacheEngineDescriptionHasBeenSet = true;
+       m_cacheEngineDescriptionHasBeenSet = true;
     }
     XmlNode cacheEngineVersionDescriptionNode = resultNode.FirstChild("CacheEngineVersionDescription");
     if(!cacheEngineVersionDescriptionNode.IsNull())
     {
       m_cacheEngineVersionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(cacheEngineVersionDescriptionNode.GetText());
       m_cacheEngineVersionDescriptionHasBeenSet = true;
+       m_cacheEngineVersionDescriptionHasBeenSet = true;
     }
   }
 

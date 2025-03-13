@@ -18,21 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-EvaluatedRule::EvaluatedRule() : 
-    m_ruleIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_expressionWithValuesHasBeenSet(false),
-    m_outcomesHasBeenSet(false),
-    m_evaluated(false),
-    m_evaluatedHasBeenSet(false),
-    m_matched(false),
-    m_matchedHasBeenSet(false)
-{
-}
-
 EvaluatedRule::EvaluatedRule(JsonView jsonValue)
-  : EvaluatedRule()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ EvaluatedRule& EvaluatedRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleVersion"))
   {
     m_ruleVersion = jsonValue.GetString("ruleVersion");
-
     m_ruleVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expressionWithValues"))
   {
     m_expressionWithValues = jsonValue.GetString("expressionWithValues");
-
     m_expressionWithValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outcomes"))
   {
     Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
@@ -76,21 +54,16 @@ EvaluatedRule& EvaluatedRule::operator =(JsonView jsonValue)
     }
     m_outcomesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluated"))
   {
     m_evaluated = jsonValue.GetBool("evaluated");
-
     m_evaluatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matched"))
   {
     m_matched = jsonValue.GetBool("matched");
-
     m_matchedHasBeenSet = true;
   }
-
   return *this;
 }
 

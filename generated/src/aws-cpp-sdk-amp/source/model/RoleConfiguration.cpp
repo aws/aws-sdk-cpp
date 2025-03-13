@@ -18,14 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-RoleConfiguration::RoleConfiguration() : 
-    m_sourceRoleArnHasBeenSet(false),
-    m_targetRoleArnHasBeenSet(false)
-{
-}
-
 RoleConfiguration::RoleConfiguration(JsonView jsonValue)
-  : RoleConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RoleConfiguration& RoleConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceRoleArn"))
   {
     m_sourceRoleArn = jsonValue.GetString("sourceRoleArn");
-
     m_sourceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRoleArn"))
   {
     m_targetRoleArn = jsonValue.GetString("targetRoleArn");
-
     m_targetRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

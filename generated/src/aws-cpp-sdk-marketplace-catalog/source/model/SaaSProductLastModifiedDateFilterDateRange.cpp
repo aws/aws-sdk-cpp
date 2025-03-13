@@ -18,14 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-SaaSProductLastModifiedDateFilterDateRange::SaaSProductLastModifiedDateFilterDateRange() : 
-    m_afterValueHasBeenSet(false),
-    m_beforeValueHasBeenSet(false)
-{
-}
-
 SaaSProductLastModifiedDateFilterDateRange::SaaSProductLastModifiedDateFilterDateRange(JsonView jsonValue)
-  : SaaSProductLastModifiedDateFilterDateRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SaaSProductLastModifiedDateFilterDateRange& SaaSProductLastModifiedDateFilterDat
   if(jsonValue.ValueExists("AfterValue"))
   {
     m_afterValue = jsonValue.GetString("AfterValue");
-
     m_afterValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeforeValue"))
   {
     m_beforeValue = jsonValue.GetString("BeforeValue");
-
     m_beforeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

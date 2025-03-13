@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUploadBufferResult::DescribeUploadBufferResult() : 
-    m_uploadBufferUsedInBytes(0),
-    m_uploadBufferAllocatedInBytes(0)
-{
-}
-
 DescribeUploadBufferResult::DescribeUploadBufferResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeUploadBufferResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ DescribeUploadBufferResult& DescribeUploadBufferResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskIds"))
   {
     Aws::Utils::Array<JsonView> diskIdsJsonList = jsonValue.GetArray("DiskIds");
@@ -45,26 +37,25 @@ DescribeUploadBufferResult& DescribeUploadBufferResult::operator =(const Aws::Am
     {
       m_diskIds.push_back(diskIdsJsonList[diskIdsIndex].AsString());
     }
+    m_diskIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploadBufferUsedInBytes"))
   {
     m_uploadBufferUsedInBytes = jsonValue.GetInt64("UploadBufferUsedInBytes");
-
+    m_uploadBufferUsedInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploadBufferAllocatedInBytes"))
   {
     m_uploadBufferAllocatedInBytes = jsonValue.GetInt64("UploadBufferAllocatedInBytes");
-
+    m_uploadBufferAllocatedInBytesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

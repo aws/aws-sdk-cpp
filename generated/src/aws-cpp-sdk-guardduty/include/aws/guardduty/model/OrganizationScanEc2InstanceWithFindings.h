@@ -32,7 +32,7 @@ namespace Model
   class OrganizationScanEc2InstanceWithFindings
   {
   public:
-    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings();
+    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings() = default;
     AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Whether scanning EBS volumes should be auto-enabled for new members joining
      * the organization.</p>
      */
-    inline const OrganizationEbsVolumes& GetEbsVolumes() const{ return m_ebsVolumes; }
+    inline const OrganizationEbsVolumes& GetEbsVolumes() const { return m_ebsVolumes; }
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-    inline void SetEbsVolumes(const OrganizationEbsVolumes& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-    inline void SetEbsVolumes(OrganizationEbsVolumes&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
-    inline OrganizationScanEc2InstanceWithFindings& WithEbsVolumes(const OrganizationEbsVolumes& value) { SetEbsVolumes(value); return *this;}
-    inline OrganizationScanEc2InstanceWithFindings& WithEbsVolumes(OrganizationEbsVolumes&& value) { SetEbsVolumes(std::move(value)); return *this;}
+    template<typename EbsVolumesT = OrganizationEbsVolumes>
+    void SetEbsVolumes(EbsVolumesT&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::forward<EbsVolumesT>(value); }
+    template<typename EbsVolumesT = OrganizationEbsVolumes>
+    OrganizationScanEc2InstanceWithFindings& WithEbsVolumes(EbsVolumesT&& value) { SetEbsVolumes(std::forward<EbsVolumesT>(value)); return *this;}
     ///@}
   private:
 

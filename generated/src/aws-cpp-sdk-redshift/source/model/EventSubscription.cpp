@@ -20,24 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EventSubscription::EventSubscription() : 
-    m_customerAwsIdHasBeenSet(false),
-    m_custSubscriptionIdHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionCreationTimeHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdsListHasBeenSet(false),
-    m_eventCategoriesListHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EventSubscription::EventSubscription(const XmlNode& xmlNode)
-  : EventSubscription()
 {
   *this = xmlNode;
 }
@@ -53,84 +36,95 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
     {
       m_customerAwsId = Aws::Utils::Xml::DecodeEscapedXmlText(customerAwsIdNode.GetText());
       m_customerAwsIdHasBeenSet = true;
+       m_customerAwsIdHasBeenSet = true;
     }
     XmlNode custSubscriptionIdNode = resultNode.FirstChild("CustSubscriptionId");
     if(!custSubscriptionIdNode.IsNull())
     {
       m_custSubscriptionId = Aws::Utils::Xml::DecodeEscapedXmlText(custSubscriptionIdNode.GetText());
       m_custSubscriptionIdHasBeenSet = true;
+       m_custSubscriptionIdHasBeenSet = true;
     }
     XmlNode snsTopicArnNode = resultNode.FirstChild("SnsTopicArn");
     if(!snsTopicArnNode.IsNull())
     {
       m_snsTopicArn = Aws::Utils::Xml::DecodeEscapedXmlText(snsTopicArnNode.GetText());
       m_snsTopicArnHasBeenSet = true;
+       m_snsTopicArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode subscriptionCreationTimeNode = resultNode.FirstChild("SubscriptionCreationTime");
     if(!subscriptionCreationTimeNode.IsNull())
     {
       m_subscriptionCreationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(subscriptionCreationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_subscriptionCreationTimeHasBeenSet = true;
+       m_subscriptionCreationTimeHasBeenSet = true;
     }
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
       m_sourceType = Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText());
       m_sourceTypeHasBeenSet = true;
+       m_sourceTypeHasBeenSet = true;
     }
     XmlNode sourceIdsListNode = resultNode.FirstChild("SourceIdsList");
     if(!sourceIdsListNode.IsNull())
     {
       XmlNode sourceIdsListMember = sourceIdsListNode.FirstChild("SourceId");
+      m_sourceIdsListHasBeenSet = !sourceIdsListMember.IsNull();
       while(!sourceIdsListMember.IsNull())
       {
         m_sourceIdsList.push_back(sourceIdsListMember.GetText());
         sourceIdsListMember = sourceIdsListMember.NextNode("SourceId");
       }
 
-      m_sourceIdsListHasBeenSet = true;
+       m_sourceIdsListHasBeenSet = true;
     }
     XmlNode eventCategoriesListNode = resultNode.FirstChild("EventCategoriesList");
     if(!eventCategoriesListNode.IsNull())
     {
       XmlNode eventCategoriesListMember = eventCategoriesListNode.FirstChild("EventCategory");
+      m_eventCategoriesListHasBeenSet = !eventCategoriesListMember.IsNull();
       while(!eventCategoriesListMember.IsNull())
       {
         m_eventCategoriesList.push_back(eventCategoriesListMember.GetText());
         eventCategoriesListMember = eventCategoriesListMember.NextNode("EventCategory");
       }
 
-      m_eventCategoriesListHasBeenSet = true;
+       m_eventCategoriesListHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
       m_severity = Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText());
       m_severityHasBeenSet = true;
+       m_severityHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

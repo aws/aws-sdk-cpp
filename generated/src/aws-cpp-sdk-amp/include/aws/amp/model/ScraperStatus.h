@@ -32,7 +32,7 @@ namespace Model
   class ScraperStatus
   {
   public:
-    AWS_PROMETHEUSSERVICE_API ScraperStatus();
+    AWS_PROMETHEUSSERVICE_API ScraperStatus() = default;
     AWS_PROMETHEUSSERVICE_API ScraperStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API ScraperStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The current status of the scraper.</p>
      */
-    inline const ScraperStatusCode& GetStatusCode() const{ return m_statusCode; }
+    inline ScraperStatusCode GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const ScraperStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(ScraperStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline ScraperStatus& WithStatusCode(const ScraperStatusCode& value) { SetStatusCode(value); return *this;}
-    inline ScraperStatus& WithStatusCode(ScraperStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
+    inline void SetStatusCode(ScraperStatusCode value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
+    inline ScraperStatus& WithStatusCode(ScraperStatusCode value) { SetStatusCode(value); return *this;}
     ///@}
   private:
 
-    ScraperStatusCode m_statusCode;
+    ScraperStatusCode m_statusCode{ScraperStatusCode::NOT_SET};
     bool m_statusCodeHasBeenSet = false;
   };
 

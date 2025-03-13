@@ -30,7 +30,7 @@ namespace Model
   class DescribeRetrainingSchedulerResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API DescribeRetrainingSchedulerResult();
+    AWS_LOOKOUTEQUIPMENT_API DescribeRetrainingSchedulerResult() = default;
     AWS_LOOKOUTEQUIPMENT_API DescribeRetrainingSchedulerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API DescribeRetrainingSchedulerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The name of the model that the retraining scheduler is attached to. </p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
-    inline void SetModelName(const Aws::String& value) { m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelName.assign(value); }
-    inline DescribeRetrainingSchedulerResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithModelName(const char* value) { SetModelName(value); return *this;}
+    inline const Aws::String& GetModelName() const { return m_modelName; }
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    DescribeRetrainingSchedulerResult& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the model that the retraining scheduler is attached to. </p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArn.assign(value); }
-    inline DescribeRetrainingSchedulerResult& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    DescribeRetrainingSchedulerResult& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,11 +62,11 @@ namespace Model
      * <p>The start date for the retraining scheduler. Lookout for Equipment truncates
      * the time you provide to the nearest UTC day.</p>
      */
-    inline const Aws::Utils::DateTime& GetRetrainingStartDate() const{ return m_retrainingStartDate; }
-    inline void SetRetrainingStartDate(const Aws::Utils::DateTime& value) { m_retrainingStartDate = value; }
-    inline void SetRetrainingStartDate(Aws::Utils::DateTime&& value) { m_retrainingStartDate = std::move(value); }
-    inline DescribeRetrainingSchedulerResult& WithRetrainingStartDate(const Aws::Utils::DateTime& value) { SetRetrainingStartDate(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithRetrainingStartDate(Aws::Utils::DateTime&& value) { SetRetrainingStartDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetRetrainingStartDate() const { return m_retrainingStartDate; }
+    template<typename RetrainingStartDateT = Aws::Utils::DateTime>
+    void SetRetrainingStartDate(RetrainingStartDateT&& value) { m_retrainingStartDateHasBeenSet = true; m_retrainingStartDate = std::forward<RetrainingStartDateT>(value); }
+    template<typename RetrainingStartDateT = Aws::Utils::DateTime>
+    DescribeRetrainingSchedulerResult& WithRetrainingStartDate(RetrainingStartDateT&& value) { SetRetrainingStartDate(std::forward<RetrainingStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,37 +75,31 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a>
      * guidelines.</p>
      */
-    inline const Aws::String& GetRetrainingFrequency() const{ return m_retrainingFrequency; }
-    inline void SetRetrainingFrequency(const Aws::String& value) { m_retrainingFrequency = value; }
-    inline void SetRetrainingFrequency(Aws::String&& value) { m_retrainingFrequency = std::move(value); }
-    inline void SetRetrainingFrequency(const char* value) { m_retrainingFrequency.assign(value); }
-    inline DescribeRetrainingSchedulerResult& WithRetrainingFrequency(const Aws::String& value) { SetRetrainingFrequency(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithRetrainingFrequency(Aws::String&& value) { SetRetrainingFrequency(std::move(value)); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithRetrainingFrequency(const char* value) { SetRetrainingFrequency(value); return *this;}
+    inline const Aws::String& GetRetrainingFrequency() const { return m_retrainingFrequency; }
+    template<typename RetrainingFrequencyT = Aws::String>
+    void SetRetrainingFrequency(RetrainingFrequencyT&& value) { m_retrainingFrequencyHasBeenSet = true; m_retrainingFrequency = std::forward<RetrainingFrequencyT>(value); }
+    template<typename RetrainingFrequencyT = Aws::String>
+    DescribeRetrainingSchedulerResult& WithRetrainingFrequency(RetrainingFrequencyT&& value) { SetRetrainingFrequency(std::forward<RetrainingFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of past days of data used for retraining.</p>
      */
-    inline const Aws::String& GetLookbackWindow() const{ return m_lookbackWindow; }
-    inline void SetLookbackWindow(const Aws::String& value) { m_lookbackWindow = value; }
-    inline void SetLookbackWindow(Aws::String&& value) { m_lookbackWindow = std::move(value); }
-    inline void SetLookbackWindow(const char* value) { m_lookbackWindow.assign(value); }
-    inline DescribeRetrainingSchedulerResult& WithLookbackWindow(const Aws::String& value) { SetLookbackWindow(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithLookbackWindow(Aws::String&& value) { SetLookbackWindow(std::move(value)); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithLookbackWindow(const char* value) { SetLookbackWindow(value); return *this;}
+    inline const Aws::String& GetLookbackWindow() const { return m_lookbackWindow; }
+    template<typename LookbackWindowT = Aws::String>
+    void SetLookbackWindow(LookbackWindowT&& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = std::forward<LookbackWindowT>(value); }
+    template<typename LookbackWindowT = Aws::String>
+    DescribeRetrainingSchedulerResult& WithLookbackWindow(LookbackWindowT&& value) { SetLookbackWindow(std::forward<LookbackWindowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the retraining scheduler. </p>
      */
-    inline const RetrainingSchedulerStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const RetrainingSchedulerStatus& value) { m_status = value; }
-    inline void SetStatus(RetrainingSchedulerStatus&& value) { m_status = std::move(value); }
-    inline DescribeRetrainingSchedulerResult& WithStatus(const RetrainingSchedulerStatus& value) { SetStatus(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithStatus(RetrainingSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline RetrainingSchedulerStatus GetStatus() const { return m_status; }
+    inline void SetStatus(RetrainingSchedulerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeRetrainingSchedulerResult& WithStatus(RetrainingSchedulerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -121,11 +111,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">manually
      * activated</a>.</p>
      */
-    inline const ModelPromoteMode& GetPromoteMode() const{ return m_promoteMode; }
-    inline void SetPromoteMode(const ModelPromoteMode& value) { m_promoteMode = value; }
-    inline void SetPromoteMode(ModelPromoteMode&& value) { m_promoteMode = std::move(value); }
-    inline DescribeRetrainingSchedulerResult& WithPromoteMode(const ModelPromoteMode& value) { SetPromoteMode(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithPromoteMode(ModelPromoteMode&& value) { SetPromoteMode(std::move(value)); return *this;}
+    inline ModelPromoteMode GetPromoteMode() const { return m_promoteMode; }
+    inline void SetPromoteMode(ModelPromoteMode value) { m_promoteModeHasBeenSet = true; m_promoteMode = value; }
+    inline DescribeRetrainingSchedulerResult& WithPromoteMode(ModelPromoteMode value) { SetPromoteMode(value); return *this;}
     ///@}
 
     ///@{
@@ -133,11 +121,11 @@ namespace Model
      * <p>Indicates the time and date at which the retraining scheduler was created.
      * </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline DescribeRetrainingSchedulerResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DescribeRetrainingSchedulerResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,44 +133,52 @@ namespace Model
      * <p>Indicates the time and date at which the retraining scheduler was updated.
      * </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline DescribeRetrainingSchedulerResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    DescribeRetrainingSchedulerResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRetrainingSchedulerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRetrainingSchedulerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRetrainingSchedulerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelName;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelArn;
+    bool m_modelArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_retrainingStartDate;
+    Aws::Utils::DateTime m_retrainingStartDate{};
+    bool m_retrainingStartDateHasBeenSet = false;
 
     Aws::String m_retrainingFrequency;
+    bool m_retrainingFrequencyHasBeenSet = false;
 
     Aws::String m_lookbackWindow;
+    bool m_lookbackWindowHasBeenSet = false;
 
-    RetrainingSchedulerStatus m_status;
+    RetrainingSchedulerStatus m_status{RetrainingSchedulerStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    ModelPromoteMode m_promoteMode;
+    ModelPromoteMode m_promoteMode{ModelPromoteMode::NOT_SET};
+    bool m_promoteModeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

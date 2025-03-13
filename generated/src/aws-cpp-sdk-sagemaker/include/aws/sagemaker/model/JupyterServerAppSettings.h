@@ -34,7 +34,7 @@ namespace Model
   class JupyterServerAppSettings
   {
   public:
-    AWS_SAGEMAKER_API JupyterServerAppSettings();
+    AWS_SAGEMAKER_API JupyterServerAppSettings() = default;
     AWS_SAGEMAKER_API JupyterServerAppSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API JupyterServerAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <code>LifecycleConfigArns</code> parameter, then this parameter is also
      * required.</p>
      */
-    inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
+    inline const ResourceSpec& GetDefaultResourceSpec() const { return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-    inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-    inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-    inline JupyterServerAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-    inline JupyterServerAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    void SetDefaultResourceSpec(DefaultResourceSpecT&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::forward<DefaultResourceSpecT>(value); }
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    JupyterServerAppSettings& WithDefaultResourceSpec(DefaultResourceSpecT&& value) { SetDefaultResourceSpec(std::forward<DefaultResourceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +63,14 @@ namespace Model
      * remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
      * empty list.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const{ return m_lifecycleConfigArns; }
+    inline const Aws::Vector<Aws::String>& GetLifecycleConfigArns() const { return m_lifecycleConfigArns; }
     inline bool LifecycleConfigArnsHasBeenSet() const { return m_lifecycleConfigArnsHasBeenSet; }
-    inline void SetLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = value; }
-    inline void SetLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::move(value); }
-    inline JupyterServerAppSettings& WithLifecycleConfigArns(const Aws::Vector<Aws::String>& value) { SetLifecycleConfigArns(value); return *this;}
-    inline JupyterServerAppSettings& WithLifecycleConfigArns(Aws::Vector<Aws::String>&& value) { SetLifecycleConfigArns(std::move(value)); return *this;}
-    inline JupyterServerAppSettings& AddLifecycleConfigArns(const Aws::String& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
-    inline JupyterServerAppSettings& AddLifecycleConfigArns(Aws::String&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(std::move(value)); return *this; }
-    inline JupyterServerAppSettings& AddLifecycleConfigArns(const char* value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.push_back(value); return *this; }
+    template<typename LifecycleConfigArnsT = Aws::Vector<Aws::String>>
+    void SetLifecycleConfigArns(LifecycleConfigArnsT&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns = std::forward<LifecycleConfigArnsT>(value); }
+    template<typename LifecycleConfigArnsT = Aws::Vector<Aws::String>>
+    JupyterServerAppSettings& WithLifecycleConfigArns(LifecycleConfigArnsT&& value) { SetLifecycleConfigArns(std::forward<LifecycleConfigArnsT>(value)); return *this;}
+    template<typename LifecycleConfigArnsT = Aws::String>
+    JupyterServerAppSettings& AddLifecycleConfigArns(LifecycleConfigArnsT&& value) { m_lifecycleConfigArnsHasBeenSet = true; m_lifecycleConfigArns.emplace_back(std::forward<LifecycleConfigArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +78,14 @@ namespace Model
      * <p>A list of Git repositories that SageMaker AI automatically displays to users
      * for cloning in the JupyterServer application.</p>
      */
-    inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const{ return m_codeRepositories; }
+    inline const Aws::Vector<CodeRepository>& GetCodeRepositories() const { return m_codeRepositories; }
     inline bool CodeRepositoriesHasBeenSet() const { return m_codeRepositoriesHasBeenSet; }
-    inline void SetCodeRepositories(const Aws::Vector<CodeRepository>& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = value; }
-    inline void SetCodeRepositories(Aws::Vector<CodeRepository>&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = std::move(value); }
-    inline JupyterServerAppSettings& WithCodeRepositories(const Aws::Vector<CodeRepository>& value) { SetCodeRepositories(value); return *this;}
-    inline JupyterServerAppSettings& WithCodeRepositories(Aws::Vector<CodeRepository>&& value) { SetCodeRepositories(std::move(value)); return *this;}
-    inline JupyterServerAppSettings& AddCodeRepositories(const CodeRepository& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(value); return *this; }
-    inline JupyterServerAppSettings& AddCodeRepositories(CodeRepository&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.push_back(std::move(value)); return *this; }
+    template<typename CodeRepositoriesT = Aws::Vector<CodeRepository>>
+    void SetCodeRepositories(CodeRepositoriesT&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories = std::forward<CodeRepositoriesT>(value); }
+    template<typename CodeRepositoriesT = Aws::Vector<CodeRepository>>
+    JupyterServerAppSettings& WithCodeRepositories(CodeRepositoriesT&& value) { SetCodeRepositories(std::forward<CodeRepositoriesT>(value)); return *this;}
+    template<typename CodeRepositoriesT = CodeRepository>
+    JupyterServerAppSettings& AddCodeRepositories(CodeRepositoriesT&& value) { m_codeRepositoriesHasBeenSet = true; m_codeRepositories.emplace_back(std::forward<CodeRepositoriesT>(value)); return *this; }
     ///@}
   private:
 

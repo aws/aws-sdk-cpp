@@ -24,7 +24,7 @@ namespace Model
   class CreateChannelNamespaceRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API CreateChannelNamespaceRequest();
+    AWS_APPSYNC_API CreateChannelNamespaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The <code>Api</code> ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline CreateChannelNamespaceRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline CreateChannelNamespaceRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline CreateChannelNamespaceRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    CreateChannelNamespaceRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The name of the <code>ChannelNamespace</code>. This name must be unique
      * within the <code>Api</code> </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateChannelNamespaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateChannelNamespaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateChannelNamespaceRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateChannelNamespaceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,14 @@ namespace Model
      * namespace. This configuration overrides the default <code>Api</code>
      * authorization configuration.</p>
      */
-    inline const Aws::Vector<AuthMode>& GetSubscribeAuthModes() const{ return m_subscribeAuthModes; }
+    inline const Aws::Vector<AuthMode>& GetSubscribeAuthModes() const { return m_subscribeAuthModes; }
     inline bool SubscribeAuthModesHasBeenSet() const { return m_subscribeAuthModesHasBeenSet; }
-    inline void SetSubscribeAuthModes(const Aws::Vector<AuthMode>& value) { m_subscribeAuthModesHasBeenSet = true; m_subscribeAuthModes = value; }
-    inline void SetSubscribeAuthModes(Aws::Vector<AuthMode>&& value) { m_subscribeAuthModesHasBeenSet = true; m_subscribeAuthModes = std::move(value); }
-    inline CreateChannelNamespaceRequest& WithSubscribeAuthModes(const Aws::Vector<AuthMode>& value) { SetSubscribeAuthModes(value); return *this;}
-    inline CreateChannelNamespaceRequest& WithSubscribeAuthModes(Aws::Vector<AuthMode>&& value) { SetSubscribeAuthModes(std::move(value)); return *this;}
-    inline CreateChannelNamespaceRequest& AddSubscribeAuthModes(const AuthMode& value) { m_subscribeAuthModesHasBeenSet = true; m_subscribeAuthModes.push_back(value); return *this; }
-    inline CreateChannelNamespaceRequest& AddSubscribeAuthModes(AuthMode&& value) { m_subscribeAuthModesHasBeenSet = true; m_subscribeAuthModes.push_back(std::move(value)); return *this; }
+    template<typename SubscribeAuthModesT = Aws::Vector<AuthMode>>
+    void SetSubscribeAuthModes(SubscribeAuthModesT&& value) { m_subscribeAuthModesHasBeenSet = true; m_subscribeAuthModes = std::forward<SubscribeAuthModesT>(value); }
+    template<typename SubscribeAuthModesT = Aws::Vector<AuthMode>>
+    CreateChannelNamespaceRequest& WithSubscribeAuthModes(SubscribeAuthModesT&& value) { SetSubscribeAuthModes(std::forward<SubscribeAuthModesT>(value)); return *this;}
+    template<typename SubscribeAuthModesT = AuthMode>
+    CreateChannelNamespaceRequest& AddSubscribeAuthModes(SubscribeAuthModesT&& value) { m_subscribeAuthModesHasBeenSet = true; m_subscribeAuthModes.emplace_back(std::forward<SubscribeAuthModesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,14 +82,14 @@ namespace Model
      * namespace. This configuration overrides the default <code>Api</code>
      * authorization configuration.</p>
      */
-    inline const Aws::Vector<AuthMode>& GetPublishAuthModes() const{ return m_publishAuthModes; }
+    inline const Aws::Vector<AuthMode>& GetPublishAuthModes() const { return m_publishAuthModes; }
     inline bool PublishAuthModesHasBeenSet() const { return m_publishAuthModesHasBeenSet; }
-    inline void SetPublishAuthModes(const Aws::Vector<AuthMode>& value) { m_publishAuthModesHasBeenSet = true; m_publishAuthModes = value; }
-    inline void SetPublishAuthModes(Aws::Vector<AuthMode>&& value) { m_publishAuthModesHasBeenSet = true; m_publishAuthModes = std::move(value); }
-    inline CreateChannelNamespaceRequest& WithPublishAuthModes(const Aws::Vector<AuthMode>& value) { SetPublishAuthModes(value); return *this;}
-    inline CreateChannelNamespaceRequest& WithPublishAuthModes(Aws::Vector<AuthMode>&& value) { SetPublishAuthModes(std::move(value)); return *this;}
-    inline CreateChannelNamespaceRequest& AddPublishAuthModes(const AuthMode& value) { m_publishAuthModesHasBeenSet = true; m_publishAuthModes.push_back(value); return *this; }
-    inline CreateChannelNamespaceRequest& AddPublishAuthModes(AuthMode&& value) { m_publishAuthModesHasBeenSet = true; m_publishAuthModes.push_back(std::move(value)); return *this; }
+    template<typename PublishAuthModesT = Aws::Vector<AuthMode>>
+    void SetPublishAuthModes(PublishAuthModesT&& value) { m_publishAuthModesHasBeenSet = true; m_publishAuthModes = std::forward<PublishAuthModesT>(value); }
+    template<typename PublishAuthModesT = Aws::Vector<AuthMode>>
+    CreateChannelNamespaceRequest& WithPublishAuthModes(PublishAuthModesT&& value) { SetPublishAuthModes(std::forward<PublishAuthModesT>(value)); return *this;}
+    template<typename PublishAuthModesT = AuthMode>
+    CreateChannelNamespaceRequest& AddPublishAuthModes(PublishAuthModesT&& value) { m_publishAuthModesHasBeenSet = true; m_publishAuthModes.emplace_back(std::forward<PublishAuthModesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,31 +97,26 @@ namespace Model
      * <p>The event handler functions that run custom business logic to process
      * published events and subscribe requests.</p>
      */
-    inline const Aws::String& GetCodeHandlers() const{ return m_codeHandlers; }
+    inline const Aws::String& GetCodeHandlers() const { return m_codeHandlers; }
     inline bool CodeHandlersHasBeenSet() const { return m_codeHandlersHasBeenSet; }
-    inline void SetCodeHandlers(const Aws::String& value) { m_codeHandlersHasBeenSet = true; m_codeHandlers = value; }
-    inline void SetCodeHandlers(Aws::String&& value) { m_codeHandlersHasBeenSet = true; m_codeHandlers = std::move(value); }
-    inline void SetCodeHandlers(const char* value) { m_codeHandlersHasBeenSet = true; m_codeHandlers.assign(value); }
-    inline CreateChannelNamespaceRequest& WithCodeHandlers(const Aws::String& value) { SetCodeHandlers(value); return *this;}
-    inline CreateChannelNamespaceRequest& WithCodeHandlers(Aws::String&& value) { SetCodeHandlers(std::move(value)); return *this;}
-    inline CreateChannelNamespaceRequest& WithCodeHandlers(const char* value) { SetCodeHandlers(value); return *this;}
+    template<typename CodeHandlersT = Aws::String>
+    void SetCodeHandlers(CodeHandlersT&& value) { m_codeHandlersHasBeenSet = true; m_codeHandlers = std::forward<CodeHandlersT>(value); }
+    template<typename CodeHandlersT = Aws::String>
+    CreateChannelNamespaceRequest& WithCodeHandlers(CodeHandlersT&& value) { SetCodeHandlers(std::forward<CodeHandlersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateChannelNamespaceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateChannelNamespaceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateChannelNamespaceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateChannelNamespaceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateChannelNamespaceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateChannelNamespaceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateChannelNamespaceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateChannelNamespaceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateChannelNamespaceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateChannelNamespaceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateChannelNamespaceRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConversionTasksResponse::DescribeConversionTasksResponse()
-{
-}
-
 DescribeConversionTasksResponse::DescribeConversionTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeConversionTasksResponse& DescribeConversionTasksResponse::operator =(con
     if(!conversionTasksNode.IsNull())
     {
       XmlNode conversionTasksMember = conversionTasksNode.FirstChild("item");
+      m_conversionTasksHasBeenSet = !conversionTasksMember.IsNull();
       while(!conversionTasksMember.IsNull())
       {
         m_conversionTasks.push_back(conversionTasksMember);
@@ -56,6 +53,7 @@ DescribeConversionTasksResponse& DescribeConversionTasksResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeConversionTasksResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

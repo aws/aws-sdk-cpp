@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SnapshotTierStatus::SnapshotTierStatus() : 
-    m_snapshotIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_status(SnapshotState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageTier(StorageTier::NOT_SET),
-    m_storageTierHasBeenSet(false),
-    m_lastTieringStartTimeHasBeenSet(false),
-    m_lastTieringProgress(0),
-    m_lastTieringProgressHasBeenSet(false),
-    m_lastTieringOperationStatus(TieringOperationStatus::NOT_SET),
-    m_lastTieringOperationStatusHasBeenSet(false),
-    m_lastTieringOperationStatusDetailHasBeenSet(false),
-    m_archivalCompleteTimeHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false)
-{
-}
-
 SnapshotTierStatus::SnapshotTierStatus(const XmlNode& xmlNode)
-  : SnapshotTierStatus()
 {
   *this = xmlNode;
 }
@@ -57,78 +36,90 @@ SnapshotTierStatus& SnapshotTierStatus::operator =(const XmlNode& xmlNode)
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+       m_volumeIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode storageTierNode = resultNode.FirstChild("storageTier");
     if(!storageTierNode.IsNull())
     {
-      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()).c_str());
+      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()));
       m_storageTierHasBeenSet = true;
+       m_storageTierHasBeenSet = true;
     }
     XmlNode lastTieringStartTimeNode = resultNode.FirstChild("lastTieringStartTime");
     if(!lastTieringStartTimeNode.IsNull())
     {
       m_lastTieringStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastTieringStartTimeHasBeenSet = true;
+       m_lastTieringStartTimeHasBeenSet = true;
     }
     XmlNode lastTieringProgressNode = resultNode.FirstChild("lastTieringProgress");
     if(!lastTieringProgressNode.IsNull())
     {
       m_lastTieringProgress = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringProgressNode.GetText()).c_str()).c_str());
       m_lastTieringProgressHasBeenSet = true;
+       m_lastTieringProgressHasBeenSet = true;
     }
     XmlNode lastTieringOperationStatusNode = resultNode.FirstChild("lastTieringOperationStatus");
     if(!lastTieringOperationStatusNode.IsNull())
     {
-      m_lastTieringOperationStatus = TieringOperationStatusMapper::GetTieringOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringOperationStatusNode.GetText()).c_str()).c_str());
+      m_lastTieringOperationStatus = TieringOperationStatusMapper::GetTieringOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringOperationStatusNode.GetText()).c_str()));
       m_lastTieringOperationStatusHasBeenSet = true;
+       m_lastTieringOperationStatusHasBeenSet = true;
     }
     XmlNode lastTieringOperationStatusDetailNode = resultNode.FirstChild("lastTieringOperationStatusDetail");
     if(!lastTieringOperationStatusDetailNode.IsNull())
     {
       m_lastTieringOperationStatusDetail = Aws::Utils::Xml::DecodeEscapedXmlText(lastTieringOperationStatusDetailNode.GetText());
       m_lastTieringOperationStatusDetailHasBeenSet = true;
+       m_lastTieringOperationStatusDetailHasBeenSet = true;
     }
     XmlNode archivalCompleteTimeNode = resultNode.FirstChild("archivalCompleteTime");
     if(!archivalCompleteTimeNode.IsNull())
     {
       m_archivalCompleteTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(archivalCompleteTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_archivalCompleteTimeHasBeenSet = true;
+       m_archivalCompleteTimeHasBeenSet = true;
     }
     XmlNode restoreExpiryTimeNode = resultNode.FirstChild("restoreExpiryTime");
     if(!restoreExpiryTimeNode.IsNull())
     {
       m_restoreExpiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(restoreExpiryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_restoreExpiryTimeHasBeenSet = true;
+       m_restoreExpiryTimeHasBeenSet = true;
     }
   }
 

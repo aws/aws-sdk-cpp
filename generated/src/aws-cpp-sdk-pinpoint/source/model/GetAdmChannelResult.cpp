@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAdmChannelResult::GetAdmChannelResult()
-{
-}
-
 GetAdmChannelResult::GetAdmChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ GetAdmChannelResult& GetAdmChannelResult::operator =(const Aws::AmazonWebService
 {
   JsonView jsonValue = result.GetPayload().View();
   m_aDMChannelResponse = jsonValue;
+  m_aDMChannelResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

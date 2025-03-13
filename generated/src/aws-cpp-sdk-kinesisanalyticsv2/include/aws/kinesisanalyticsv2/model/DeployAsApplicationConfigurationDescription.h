@@ -33,7 +33,7 @@ namespace Model
   class DeployAsApplicationConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API DeployAsApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The location that holds the data required to specify an Amazon Data Analytics
      * application.</p>
      */
-    inline const S3ContentBaseLocationDescription& GetS3ContentLocationDescription() const{ return m_s3ContentLocationDescription; }
+    inline const S3ContentBaseLocationDescription& GetS3ContentLocationDescription() const { return m_s3ContentLocationDescription; }
     inline bool S3ContentLocationDescriptionHasBeenSet() const { return m_s3ContentLocationDescriptionHasBeenSet; }
-    inline void SetS3ContentLocationDescription(const S3ContentBaseLocationDescription& value) { m_s3ContentLocationDescriptionHasBeenSet = true; m_s3ContentLocationDescription = value; }
-    inline void SetS3ContentLocationDescription(S3ContentBaseLocationDescription&& value) { m_s3ContentLocationDescriptionHasBeenSet = true; m_s3ContentLocationDescription = std::move(value); }
-    inline DeployAsApplicationConfigurationDescription& WithS3ContentLocationDescription(const S3ContentBaseLocationDescription& value) { SetS3ContentLocationDescription(value); return *this;}
-    inline DeployAsApplicationConfigurationDescription& WithS3ContentLocationDescription(S3ContentBaseLocationDescription&& value) { SetS3ContentLocationDescription(std::move(value)); return *this;}
+    template<typename S3ContentLocationDescriptionT = S3ContentBaseLocationDescription>
+    void SetS3ContentLocationDescription(S3ContentLocationDescriptionT&& value) { m_s3ContentLocationDescriptionHasBeenSet = true; m_s3ContentLocationDescription = std::forward<S3ContentLocationDescriptionT>(value); }
+    template<typename S3ContentLocationDescriptionT = S3ContentBaseLocationDescription>
+    DeployAsApplicationConfigurationDescription& WithS3ContentLocationDescription(S3ContentLocationDescriptionT&& value) { SetS3ContentLocationDescription(std::forward<S3ContentLocationDescriptionT>(value)); return *this;}
     ///@}
   private:
 

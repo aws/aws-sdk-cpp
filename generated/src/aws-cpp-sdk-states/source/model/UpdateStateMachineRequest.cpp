@@ -12,19 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStateMachineRequest::UpdateStateMachineRequest() : 
-    m_stateMachineArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_loggingConfigurationHasBeenSet(false),
-    m_tracingConfigurationHasBeenSet(false),
-    m_publish(false),
-    m_publishHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStateMachineRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteParallelDataRequest::DeleteParallelDataRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteParallelDataRequest::SerializePayload() const
 {
   JsonValue payload;

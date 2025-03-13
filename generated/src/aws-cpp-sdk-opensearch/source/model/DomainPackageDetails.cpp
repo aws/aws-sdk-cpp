@@ -18,25 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DomainPackageDetails::DomainPackageDetails() : 
-    m_packageIDHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainPackageStatus(DomainPackageStatus::NOT_SET),
-    m_domainPackageStatusHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_prerequisitePackageIDListHasBeenSet(false),
-    m_referencePathHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_associationConfigurationHasBeenSet(false)
-{
-}
-
 DomainPackageDetails::DomainPackageDetails(JsonView jsonValue)
-  : DomainPackageDetails()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ DomainPackageDetails& DomainPackageDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PackageID"))
   {
     m_packageID = jsonValue.GetString("PackageID");
-
     m_packageIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageName"))
   {
     m_packageName = jsonValue.GetString("PackageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageType"))
   {
     m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
-
     m_packageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainPackageStatus"))
   {
     m_domainPackageStatus = DomainPackageStatusMapper::GetDomainPackageStatusForName(jsonValue.GetString("DomainPackageStatus"));
-
     m_domainPackageStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageVersion"))
   {
     m_packageVersion = jsonValue.GetString("PackageVersion");
-
     m_packageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrerequisitePackageIDList"))
   {
     Aws::Utils::Array<JsonView> prerequisitePackageIDListJsonList = jsonValue.GetArray("PrerequisitePackageIDList");
@@ -101,28 +69,21 @@ DomainPackageDetails& DomainPackageDetails::operator =(JsonView jsonValue)
     }
     m_prerequisitePackageIDListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferencePath"))
   {
     m_referencePath = jsonValue.GetString("ReferencePath");
-
     m_referencePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("ErrorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationConfiguration"))
   {
     m_associationConfiguration = jsonValue.GetObject("AssociationConfiguration");
-
     m_associationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

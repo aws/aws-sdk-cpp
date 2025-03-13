@@ -32,7 +32,7 @@ namespace Model
   class AuthChallengeRequestEvent
   {
   public:
-    AWS_QBUSINESS_API AuthChallengeRequestEvent();
+    AWS_QBUSINESS_API AuthChallengeRequestEvent() = default;
     AWS_QBUSINESS_API AuthChallengeRequestEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API AuthChallengeRequestEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * response to an authentication verification event activated by an end user
      * request to use a custom plugin. </p>
      */
-    inline const Aws::String& GetAuthorizationUrl() const{ return m_authorizationUrl; }
+    inline const Aws::String& GetAuthorizationUrl() const { return m_authorizationUrl; }
     inline bool AuthorizationUrlHasBeenSet() const { return m_authorizationUrlHasBeenSet; }
-    inline void SetAuthorizationUrl(const Aws::String& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = value; }
-    inline void SetAuthorizationUrl(Aws::String&& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = std::move(value); }
-    inline void SetAuthorizationUrl(const char* value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl.assign(value); }
-    inline AuthChallengeRequestEvent& WithAuthorizationUrl(const Aws::String& value) { SetAuthorizationUrl(value); return *this;}
-    inline AuthChallengeRequestEvent& WithAuthorizationUrl(Aws::String&& value) { SetAuthorizationUrl(std::move(value)); return *this;}
-    inline AuthChallengeRequestEvent& WithAuthorizationUrl(const char* value) { SetAuthorizationUrl(value); return *this;}
+    template<typename AuthorizationUrlT = Aws::String>
+    void SetAuthorizationUrl(AuthorizationUrlT&& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = std::forward<AuthorizationUrlT>(value); }
+    template<typename AuthorizationUrlT = Aws::String>
+    AuthChallengeRequestEvent& WithAuthorizationUrl(AuthorizationUrlT&& value) { SetAuthorizationUrl(std::forward<AuthorizationUrlT>(value)); return *this;}
     ///@}
   private:
 

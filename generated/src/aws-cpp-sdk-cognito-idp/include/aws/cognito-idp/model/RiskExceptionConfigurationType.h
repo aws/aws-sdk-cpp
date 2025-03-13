@@ -33,7 +33,7 @@ namespace Model
   class RiskExceptionConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API RiskExceptionConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * blocks authentication requests. This parameter is displayed and set in CIDR
      * notation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedIPRangeList() const{ return m_blockedIPRangeList; }
+    inline const Aws::Vector<Aws::String>& GetBlockedIPRangeList() const { return m_blockedIPRangeList; }
     inline bool BlockedIPRangeListHasBeenSet() const { return m_blockedIPRangeListHasBeenSet; }
-    inline void SetBlockedIPRangeList(const Aws::Vector<Aws::String>& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList = value; }
-    inline void SetBlockedIPRangeList(Aws::Vector<Aws::String>&& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList = std::move(value); }
-    inline RiskExceptionConfigurationType& WithBlockedIPRangeList(const Aws::Vector<Aws::String>& value) { SetBlockedIPRangeList(value); return *this;}
-    inline RiskExceptionConfigurationType& WithBlockedIPRangeList(Aws::Vector<Aws::String>&& value) { SetBlockedIPRangeList(std::move(value)); return *this;}
-    inline RiskExceptionConfigurationType& AddBlockedIPRangeList(const Aws::String& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList.push_back(value); return *this; }
-    inline RiskExceptionConfigurationType& AddBlockedIPRangeList(Aws::String&& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList.push_back(std::move(value)); return *this; }
-    inline RiskExceptionConfigurationType& AddBlockedIPRangeList(const char* value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList.push_back(value); return *this; }
+    template<typename BlockedIPRangeListT = Aws::Vector<Aws::String>>
+    void SetBlockedIPRangeList(BlockedIPRangeListT&& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList = std::forward<BlockedIPRangeListT>(value); }
+    template<typename BlockedIPRangeListT = Aws::Vector<Aws::String>>
+    RiskExceptionConfigurationType& WithBlockedIPRangeList(BlockedIPRangeListT&& value) { SetBlockedIPRangeList(std::forward<BlockedIPRangeListT>(value)); return *this;}
+    template<typename BlockedIPRangeListT = Aws::String>
+    RiskExceptionConfigurationType& AddBlockedIPRangeList(BlockedIPRangeListT&& value) { m_blockedIPRangeListHasBeenSet = true; m_blockedIPRangeList.emplace_back(std::forward<BlockedIPRangeListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,15 +61,14 @@ namespace Model
      * addresses in this range list. This parameter is displayed and set in CIDR
      * notation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSkippedIPRangeList() const{ return m_skippedIPRangeList; }
+    inline const Aws::Vector<Aws::String>& GetSkippedIPRangeList() const { return m_skippedIPRangeList; }
     inline bool SkippedIPRangeListHasBeenSet() const { return m_skippedIPRangeListHasBeenSet; }
-    inline void SetSkippedIPRangeList(const Aws::Vector<Aws::String>& value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList = value; }
-    inline void SetSkippedIPRangeList(Aws::Vector<Aws::String>&& value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList = std::move(value); }
-    inline RiskExceptionConfigurationType& WithSkippedIPRangeList(const Aws::Vector<Aws::String>& value) { SetSkippedIPRangeList(value); return *this;}
-    inline RiskExceptionConfigurationType& WithSkippedIPRangeList(Aws::Vector<Aws::String>&& value) { SetSkippedIPRangeList(std::move(value)); return *this;}
-    inline RiskExceptionConfigurationType& AddSkippedIPRangeList(const Aws::String& value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList.push_back(value); return *this; }
-    inline RiskExceptionConfigurationType& AddSkippedIPRangeList(Aws::String&& value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList.push_back(std::move(value)); return *this; }
-    inline RiskExceptionConfigurationType& AddSkippedIPRangeList(const char* value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList.push_back(value); return *this; }
+    template<typename SkippedIPRangeListT = Aws::Vector<Aws::String>>
+    void SetSkippedIPRangeList(SkippedIPRangeListT&& value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList = std::forward<SkippedIPRangeListT>(value); }
+    template<typename SkippedIPRangeListT = Aws::Vector<Aws::String>>
+    RiskExceptionConfigurationType& WithSkippedIPRangeList(SkippedIPRangeListT&& value) { SetSkippedIPRangeList(std::forward<SkippedIPRangeListT>(value)); return *this;}
+    template<typename SkippedIPRangeListT = Aws::String>
+    RiskExceptionConfigurationType& AddSkippedIPRangeList(SkippedIPRangeListT&& value) { m_skippedIPRangeListHasBeenSet = true; m_skippedIPRangeList.emplace_back(std::forward<SkippedIPRangeListT>(value)); return *this; }
     ///@}
   private:
 

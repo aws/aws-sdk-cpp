@@ -12,27 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateImagePipelineRequest::UpdateImagePipelineRequest() : 
-    m_imagePipelineArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageRecipeArnHasBeenSet(false),
-    m_containerRecipeArnHasBeenSet(false),
-    m_infrastructureConfigurationArnHasBeenSet(false),
-    m_distributionConfigurationArnHasBeenSet(false),
-    m_imageTestsConfigurationHasBeenSet(false),
-    m_enhancedImageMetadataEnabled(false),
-    m_enhancedImageMetadataEnabledHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_status(PipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_workflowsHasBeenSet(false),
-    m_executionRoleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateImagePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

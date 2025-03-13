@@ -28,35 +28,35 @@ namespace Model
   class GetCampaignDateRangeKpiResult
   {
   public:
-    AWS_PINPOINT_API GetCampaignDateRangeKpiResult();
+    AWS_PINPOINT_API GetCampaignDateRangeKpiResult() = default;
     AWS_PINPOINT_API GetCampaignDateRangeKpiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetCampaignDateRangeKpiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const CampaignDateRangeKpiResponse& GetCampaignDateRangeKpiResponse() const{ return m_campaignDateRangeKpiResponse; }
-    inline void SetCampaignDateRangeKpiResponse(const CampaignDateRangeKpiResponse& value) { m_campaignDateRangeKpiResponse = value; }
-    inline void SetCampaignDateRangeKpiResponse(CampaignDateRangeKpiResponse&& value) { m_campaignDateRangeKpiResponse = std::move(value); }
-    inline GetCampaignDateRangeKpiResult& WithCampaignDateRangeKpiResponse(const CampaignDateRangeKpiResponse& value) { SetCampaignDateRangeKpiResponse(value); return *this;}
-    inline GetCampaignDateRangeKpiResult& WithCampaignDateRangeKpiResponse(CampaignDateRangeKpiResponse&& value) { SetCampaignDateRangeKpiResponse(std::move(value)); return *this;}
+    inline const CampaignDateRangeKpiResponse& GetCampaignDateRangeKpiResponse() const { return m_campaignDateRangeKpiResponse; }
+    template<typename CampaignDateRangeKpiResponseT = CampaignDateRangeKpiResponse>
+    void SetCampaignDateRangeKpiResponse(CampaignDateRangeKpiResponseT&& value) { m_campaignDateRangeKpiResponseHasBeenSet = true; m_campaignDateRangeKpiResponse = std::forward<CampaignDateRangeKpiResponseT>(value); }
+    template<typename CampaignDateRangeKpiResponseT = CampaignDateRangeKpiResponse>
+    GetCampaignDateRangeKpiResult& WithCampaignDateRangeKpiResponse(CampaignDateRangeKpiResponseT&& value) { SetCampaignDateRangeKpiResponse(std::forward<CampaignDateRangeKpiResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCampaignDateRangeKpiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCampaignDateRangeKpiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCampaignDateRangeKpiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCampaignDateRangeKpiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CampaignDateRangeKpiResponse m_campaignDateRangeKpiResponse;
+    bool m_campaignDateRangeKpiResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

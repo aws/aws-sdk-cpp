@@ -25,7 +25,7 @@ namespace Model
   class ModifyDBSnapshotAttributeRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API ModifyDBSnapshotAttributeRequest();
+    AWS_RDS_API ModifyDBSnapshotAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to modify the attributes for.</p>
      */
-    inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
+    inline const Aws::String& GetDBSnapshotIdentifier() const { return m_dBSnapshotIdentifier; }
     inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
-    inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
-    inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::move(value); }
-    inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
-    inline ModifyDBSnapshotAttributeRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(std::move(value)); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
+    template<typename DBSnapshotIdentifierT = Aws::String>
+    void SetDBSnapshotIdentifier(DBSnapshotIdentifierT&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = std::forward<DBSnapshotIdentifierT>(value); }
+    template<typename DBSnapshotIdentifierT = Aws::String>
+    ModifyDBSnapshotAttributeRequest& WithDBSnapshotIdentifier(DBSnapshotIdentifierT&& value) { SetDBSnapshotIdentifier(std::forward<DBSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * list of attributes available to modify, use the
      * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline ModifyDBSnapshotAttributeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    ModifyDBSnapshotAttributeRequest& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,15 +79,14 @@ namespace Model
      * information that you don't want available to all Amazon Web Services
      * accounts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValuesToAdd() const{ return m_valuesToAdd; }
+    inline const Aws::Vector<Aws::String>& GetValuesToAdd() const { return m_valuesToAdd; }
     inline bool ValuesToAddHasBeenSet() const { return m_valuesToAddHasBeenSet; }
-    inline void SetValuesToAdd(const Aws::Vector<Aws::String>& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = value; }
-    inline void SetValuesToAdd(Aws::Vector<Aws::String>&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = std::move(value); }
-    inline ModifyDBSnapshotAttributeRequest& WithValuesToAdd(const Aws::Vector<Aws::String>& value) { SetValuesToAdd(value); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& WithValuesToAdd(Aws::Vector<Aws::String>&& value) { SetValuesToAdd(std::move(value)); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& AddValuesToAdd(const Aws::String& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
-    inline ModifyDBSnapshotAttributeRequest& AddValuesToAdd(Aws::String&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(std::move(value)); return *this; }
-    inline ModifyDBSnapshotAttributeRequest& AddValuesToAdd(const char* value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
+    template<typename ValuesToAddT = Aws::Vector<Aws::String>>
+    void SetValuesToAdd(ValuesToAddT&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = std::forward<ValuesToAddT>(value); }
+    template<typename ValuesToAddT = Aws::Vector<Aws::String>>
+    ModifyDBSnapshotAttributeRequest& WithValuesToAdd(ValuesToAddT&& value) { SetValuesToAdd(std::forward<ValuesToAddT>(value)); return *this;}
+    template<typename ValuesToAddT = Aws::String>
+    ModifyDBSnapshotAttributeRequest& AddValuesToAdd(ValuesToAddT&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.emplace_back(std::forward<ValuesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,15 +100,14 @@ namespace Model
      * whose account ID is explicitly added to the <code>restore</code> attribute can
      * still copy or restore the manual DB snapshot.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValuesToRemove() const{ return m_valuesToRemove; }
+    inline const Aws::Vector<Aws::String>& GetValuesToRemove() const { return m_valuesToRemove; }
     inline bool ValuesToRemoveHasBeenSet() const { return m_valuesToRemoveHasBeenSet; }
-    inline void SetValuesToRemove(const Aws::Vector<Aws::String>& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = value; }
-    inline void SetValuesToRemove(Aws::Vector<Aws::String>&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = std::move(value); }
-    inline ModifyDBSnapshotAttributeRequest& WithValuesToRemove(const Aws::Vector<Aws::String>& value) { SetValuesToRemove(value); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& WithValuesToRemove(Aws::Vector<Aws::String>&& value) { SetValuesToRemove(std::move(value)); return *this;}
-    inline ModifyDBSnapshotAttributeRequest& AddValuesToRemove(const Aws::String& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
-    inline ModifyDBSnapshotAttributeRequest& AddValuesToRemove(Aws::String&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(std::move(value)); return *this; }
-    inline ModifyDBSnapshotAttributeRequest& AddValuesToRemove(const char* value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
+    template<typename ValuesToRemoveT = Aws::Vector<Aws::String>>
+    void SetValuesToRemove(ValuesToRemoveT&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = std::forward<ValuesToRemoveT>(value); }
+    template<typename ValuesToRemoveT = Aws::Vector<Aws::String>>
+    ModifyDBSnapshotAttributeRequest& WithValuesToRemove(ValuesToRemoveT&& value) { SetValuesToRemove(std::forward<ValuesToRemoveT>(value)); return *this;}
+    template<typename ValuesToRemoveT = Aws::String>
+    ModifyDBSnapshotAttributeRequest& AddValuesToRemove(ValuesToRemoveT&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.emplace_back(std::forward<ValuesToRemoveT>(value)); return *this; }
     ///@}
   private:
 

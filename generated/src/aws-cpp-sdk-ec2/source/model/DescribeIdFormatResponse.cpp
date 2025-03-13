@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdFormatResponse::DescribeIdFormatResponse()
-{
-}
-
 DescribeIdFormatResponse::DescribeIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeIdFormatResponse& DescribeIdFormatResponse::operator =(const Aws::Amazon
     if(!statusesNode.IsNull())
     {
       XmlNode statusesMember = statusesNode.FirstChild("item");
+      m_statusesHasBeenSet = !statusesMember.IsNull();
       while(!statusesMember.IsNull())
       {
         m_statuses.push_back(statusesMember);
@@ -56,6 +53,7 @@ DescribeIdFormatResponse& DescribeIdFormatResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeIdFormatResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

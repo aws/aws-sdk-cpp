@@ -34,7 +34,7 @@ namespace Model
   class ChangeResourceRecordSetsResult
   {
   public:
-    AWS_ROUTE53_API ChangeResourceRecordSetsResult();
+    AWS_ROUTE53_API ChangeResourceRecordSetsResult() = default;
     AWS_ROUTE53_API ChangeResourceRecordSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ChangeResourceRecordSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
      * action to get detailed information about the change.</p>
      */
-    inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
-    inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
-    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
-    inline ChangeResourceRecordSetsResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
-    inline ChangeResourceRecordSetsResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
+    inline const ChangeInfo& GetChangeInfo() const { return m_changeInfo; }
+    template<typename ChangeInfoT = ChangeInfo>
+    void SetChangeInfo(ChangeInfoT&& value) { m_changeInfoHasBeenSet = true; m_changeInfo = std::forward<ChangeInfoT>(value); }
+    template<typename ChangeInfoT = ChangeInfo>
+    ChangeResourceRecordSetsResult& WithChangeInfo(ChangeInfoT&& value) { SetChangeInfo(std::forward<ChangeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ChangeResourceRecordSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ChangeResourceRecordSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ChangeResourceRecordSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ChangeResourceRecordSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChangeInfo m_changeInfo;
+    bool m_changeInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

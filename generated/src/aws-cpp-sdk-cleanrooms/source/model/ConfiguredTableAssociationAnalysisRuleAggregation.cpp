@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ConfiguredTableAssociationAnalysisRuleAggregation::ConfiguredTableAssociationAnalysisRuleAggregation() : 
-    m_allowedResultReceiversHasBeenSet(false),
-    m_allowedAdditionalAnalysesHasBeenSet(false)
-{
-}
-
 ConfiguredTableAssociationAnalysisRuleAggregation::ConfiguredTableAssociationAnalysisRuleAggregation(JsonView jsonValue)
-  : ConfiguredTableAssociationAnalysisRuleAggregation()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ConfiguredTableAssociationAnalysisRuleAggregation& ConfiguredTableAssociationAna
     }
     m_allowedResultReceiversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedAdditionalAnalyses"))
   {
     Aws::Utils::Array<JsonView> allowedAdditionalAnalysesJsonList = jsonValue.GetArray("allowedAdditionalAnalyses");
@@ -51,7 +43,6 @@ ConfiguredTableAssociationAnalysisRuleAggregation& ConfiguredTableAssociationAna
     }
     m_allowedAdditionalAnalysesHasBeenSet = true;
   }
-
   return *this;
 }
 

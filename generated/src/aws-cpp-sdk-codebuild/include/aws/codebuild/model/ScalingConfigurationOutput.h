@@ -34,7 +34,7 @@ namespace Model
   class ScalingConfigurationOutput
   {
   public:
-    AWS_CODEBUILD_API ScalingConfigurationOutput();
+    AWS_CODEBUILD_API ScalingConfigurationOutput() = default;
     AWS_CODEBUILD_API ScalingConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ScalingConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,31 @@ namespace Model
     /**
      * <p>The scaling type for a compute fleet.</p>
      */
-    inline const FleetScalingType& GetScalingType() const{ return m_scalingType; }
+    inline FleetScalingType GetScalingType() const { return m_scalingType; }
     inline bool ScalingTypeHasBeenSet() const { return m_scalingTypeHasBeenSet; }
-    inline void SetScalingType(const FleetScalingType& value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
-    inline void SetScalingType(FleetScalingType&& value) { m_scalingTypeHasBeenSet = true; m_scalingType = std::move(value); }
-    inline ScalingConfigurationOutput& WithScalingType(const FleetScalingType& value) { SetScalingType(value); return *this;}
-    inline ScalingConfigurationOutput& WithScalingType(FleetScalingType&& value) { SetScalingType(std::move(value)); return *this;}
+    inline void SetScalingType(FleetScalingType value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
+    inline ScalingConfigurationOutput& WithScalingType(FleetScalingType value) { SetScalingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>TargetTrackingScalingConfiguration</code> objects.</p>
      */
-    inline const Aws::Vector<TargetTrackingScalingConfiguration>& GetTargetTrackingScalingConfigs() const{ return m_targetTrackingScalingConfigs; }
+    inline const Aws::Vector<TargetTrackingScalingConfiguration>& GetTargetTrackingScalingConfigs() const { return m_targetTrackingScalingConfigs; }
     inline bool TargetTrackingScalingConfigsHasBeenSet() const { return m_targetTrackingScalingConfigsHasBeenSet; }
-    inline void SetTargetTrackingScalingConfigs(const Aws::Vector<TargetTrackingScalingConfiguration>& value) { m_targetTrackingScalingConfigsHasBeenSet = true; m_targetTrackingScalingConfigs = value; }
-    inline void SetTargetTrackingScalingConfigs(Aws::Vector<TargetTrackingScalingConfiguration>&& value) { m_targetTrackingScalingConfigsHasBeenSet = true; m_targetTrackingScalingConfigs = std::move(value); }
-    inline ScalingConfigurationOutput& WithTargetTrackingScalingConfigs(const Aws::Vector<TargetTrackingScalingConfiguration>& value) { SetTargetTrackingScalingConfigs(value); return *this;}
-    inline ScalingConfigurationOutput& WithTargetTrackingScalingConfigs(Aws::Vector<TargetTrackingScalingConfiguration>&& value) { SetTargetTrackingScalingConfigs(std::move(value)); return *this;}
-    inline ScalingConfigurationOutput& AddTargetTrackingScalingConfigs(const TargetTrackingScalingConfiguration& value) { m_targetTrackingScalingConfigsHasBeenSet = true; m_targetTrackingScalingConfigs.push_back(value); return *this; }
-    inline ScalingConfigurationOutput& AddTargetTrackingScalingConfigs(TargetTrackingScalingConfiguration&& value) { m_targetTrackingScalingConfigsHasBeenSet = true; m_targetTrackingScalingConfigs.push_back(std::move(value)); return *this; }
+    template<typename TargetTrackingScalingConfigsT = Aws::Vector<TargetTrackingScalingConfiguration>>
+    void SetTargetTrackingScalingConfigs(TargetTrackingScalingConfigsT&& value) { m_targetTrackingScalingConfigsHasBeenSet = true; m_targetTrackingScalingConfigs = std::forward<TargetTrackingScalingConfigsT>(value); }
+    template<typename TargetTrackingScalingConfigsT = Aws::Vector<TargetTrackingScalingConfiguration>>
+    ScalingConfigurationOutput& WithTargetTrackingScalingConfigs(TargetTrackingScalingConfigsT&& value) { SetTargetTrackingScalingConfigs(std::forward<TargetTrackingScalingConfigsT>(value)); return *this;}
+    template<typename TargetTrackingScalingConfigsT = TargetTrackingScalingConfiguration>
+    ScalingConfigurationOutput& AddTargetTrackingScalingConfigs(TargetTrackingScalingConfigsT&& value) { m_targetTrackingScalingConfigsHasBeenSet = true; m_targetTrackingScalingConfigs.emplace_back(std::forward<TargetTrackingScalingConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of instances in the ﬂeet when auto-scaling.</p>
      */
-    inline int GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ScalingConfigurationOutput& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
@@ -80,23 +78,23 @@ namespace Model
     /**
      * <p>The desired number of instances in the ﬂeet when auto-scaling.</p>
      */
-    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const { return m_desiredCapacity; }
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
     inline ScalingConfigurationOutput& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
     ///@}
   private:
 
-    FleetScalingType m_scalingType;
+    FleetScalingType m_scalingType{FleetScalingType::NOT_SET};
     bool m_scalingTypeHasBeenSet = false;
 
     Aws::Vector<TargetTrackingScalingConfiguration> m_targetTrackingScalingConfigs;
     bool m_targetTrackingScalingConfigsHasBeenSet = false;
 
-    int m_maxCapacity;
+    int m_maxCapacity{0};
     bool m_maxCapacityHasBeenSet = false;
 
-    int m_desiredCapacity;
+    int m_desiredCapacity{0};
     bool m_desiredCapacityHasBeenSet = false;
   };
 

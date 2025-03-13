@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientLoginBannerOptions::ClientLoginBannerOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bannerTextHasBeenSet(false)
-{
-}
-
 ClientLoginBannerOptions::ClientLoginBannerOptions(const XmlNode& xmlNode)
-  : ClientLoginBannerOptions()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ClientLoginBannerOptions& ClientLoginBannerOptions::operator =(const XmlNode& xm
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode bannerTextNode = resultNode.FirstChild("BannerText");
     if(!bannerTextNode.IsNull())
     {
       m_bannerText = Aws::Utils::Xml::DecodeEscapedXmlText(bannerTextNode.GetText());
       m_bannerTextHasBeenSet = true;
+       m_bannerTextHasBeenSet = true;
     }
   }
 

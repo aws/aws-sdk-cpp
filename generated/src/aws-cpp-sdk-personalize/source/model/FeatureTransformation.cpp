@@ -18,18 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-FeatureTransformation::FeatureTransformation() : 
-    m_nameHasBeenSet(false),
-    m_featureTransformationArnHasBeenSet(false),
-    m_defaultParametersHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 FeatureTransformation::FeatureTransformation(JsonView jsonValue)
-  : FeatureTransformation()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ FeatureTransformation& FeatureTransformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("featureTransformationArn"))
   {
     m_featureTransformationArn = jsonValue.GetString("featureTransformationArn");
-
     m_featureTransformationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultParameters"))
   {
     Aws::Map<Aws::String, JsonView> defaultParametersJsonMap = jsonValue.GetObject("defaultParameters").GetAllObjects();
@@ -59,28 +44,21 @@ FeatureTransformation& FeatureTransformation::operator =(JsonView jsonValue)
     }
     m_defaultParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

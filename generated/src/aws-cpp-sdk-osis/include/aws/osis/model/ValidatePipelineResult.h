@@ -29,7 +29,7 @@ namespace Model
   class ValidatePipelineResult
   {
   public:
-    AWS_OSIS_API ValidatePipelineResult();
+    AWS_OSIS_API ValidatePipelineResult() = default;
     AWS_OSIS_API ValidatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OSIS_API ValidatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>A boolean indicating whether or not the pipeline configuration is valid.</p>
      */
-    inline bool GetIsValid() const{ return m_isValid; }
-    inline void SetIsValid(bool value) { m_isValid = value; }
+    inline bool GetIsValid() const { return m_isValid; }
+    inline void SetIsValid(bool value) { m_isValidHasBeenSet = true; m_isValid = value; }
     inline ValidatePipelineResult& WithIsValid(bool value) { SetIsValid(value); return *this;}
     ///@}
 
@@ -47,32 +47,33 @@ namespace Model
     /**
      * <p>A list of errors if the configuration is invalid.</p>
      */
-    inline const Aws::Vector<ValidationMessage>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ValidationMessage>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ValidationMessage>&& value) { m_errors = std::move(value); }
-    inline ValidatePipelineResult& WithErrors(const Aws::Vector<ValidationMessage>& value) { SetErrors(value); return *this;}
-    inline ValidatePipelineResult& WithErrors(Aws::Vector<ValidationMessage>&& value) { SetErrors(std::move(value)); return *this;}
-    inline ValidatePipelineResult& AddErrors(const ValidationMessage& value) { m_errors.push_back(value); return *this; }
-    inline ValidatePipelineResult& AddErrors(ValidationMessage&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidationMessage>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ValidationMessage>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ValidationMessage>>
+    ValidatePipelineResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ValidationMessage>
+    ValidatePipelineResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ValidatePipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ValidatePipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ValidatePipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ValidatePipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isValid;
+    bool m_isValid{false};
+    bool m_isValidHasBeenSet = false;
 
     Aws::Vector<ValidationMessage> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

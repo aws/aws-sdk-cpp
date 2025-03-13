@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAnnotationStoreRequest::DeleteAnnotationStoreRequest() : 
-    m_nameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAnnotationStoreRequest::SerializePayload() const
 {
   return {};

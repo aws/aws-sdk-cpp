@@ -20,21 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-TextOptions::TextOptions() : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false),
-    m_highlightEnabled(false),
-    m_highlightEnabledHasBeenSet(false),
-    m_analysisSchemeHasBeenSet(false)
-{
-}
-
 TextOptions::TextOptions(const XmlNode& xmlNode)
-  : TextOptions()
 {
   *this = xmlNode;
 }
@@ -50,36 +36,42 @@ TextOptions& TextOptions::operator =(const XmlNode& xmlNode)
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
       m_sourceField = Aws::Utils::Xml::DecodeEscapedXmlText(sourceFieldNode.GetText());
       m_sourceFieldHasBeenSet = true;
+       m_sourceFieldHasBeenSet = true;
     }
     XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
     if(!returnEnabledNode.IsNull())
     {
       m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnEnabledNode.GetText()).c_str()).c_str());
       m_returnEnabledHasBeenSet = true;
+       m_returnEnabledHasBeenSet = true;
     }
     XmlNode sortEnabledNode = resultNode.FirstChild("SortEnabled");
     if(!sortEnabledNode.IsNull())
     {
       m_sortEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sortEnabledNode.GetText()).c_str()).c_str());
       m_sortEnabledHasBeenSet = true;
+       m_sortEnabledHasBeenSet = true;
     }
     XmlNode highlightEnabledNode = resultNode.FirstChild("HighlightEnabled");
     if(!highlightEnabledNode.IsNull())
     {
       m_highlightEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(highlightEnabledNode.GetText()).c_str()).c_str());
       m_highlightEnabledHasBeenSet = true;
+       m_highlightEnabledHasBeenSet = true;
     }
     XmlNode analysisSchemeNode = resultNode.FirstChild("AnalysisScheme");
     if(!analysisSchemeNode.IsNull())
     {
       m_analysisScheme = Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeNode.GetText());
       m_analysisSchemeHasBeenSet = true;
+       m_analysisSchemeHasBeenSet = true;
     }
   }
 

@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-PropertyDifference::PropertyDifference() : 
-    m_propertyPathHasBeenSet(false),
-    m_expectedValueHasBeenSet(false),
-    m_actualValueHasBeenSet(false),
-    m_differenceType(DifferenceType::NOT_SET),
-    m_differenceTypeHasBeenSet(false)
-{
-}
-
 PropertyDifference::PropertyDifference(const XmlNode& xmlNode)
-  : PropertyDifference()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ PropertyDifference& PropertyDifference::operator =(const XmlNode& xmlNode)
     {
       m_propertyPath = Aws::Utils::Xml::DecodeEscapedXmlText(propertyPathNode.GetText());
       m_propertyPathHasBeenSet = true;
+       m_propertyPathHasBeenSet = true;
     }
     XmlNode expectedValueNode = resultNode.FirstChild("ExpectedValue");
     if(!expectedValueNode.IsNull())
     {
       m_expectedValue = Aws::Utils::Xml::DecodeEscapedXmlText(expectedValueNode.GetText());
       m_expectedValueHasBeenSet = true;
+       m_expectedValueHasBeenSet = true;
     }
     XmlNode actualValueNode = resultNode.FirstChild("ActualValue");
     if(!actualValueNode.IsNull())
     {
       m_actualValue = Aws::Utils::Xml::DecodeEscapedXmlText(actualValueNode.GetText());
       m_actualValueHasBeenSet = true;
+       m_actualValueHasBeenSet = true;
     }
     XmlNode differenceTypeNode = resultNode.FirstChild("DifferenceType");
     if(!differenceTypeNode.IsNull())
     {
-      m_differenceType = DifferenceTypeMapper::GetDifferenceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(differenceTypeNode.GetText()).c_str()).c_str());
+      m_differenceType = DifferenceTypeMapper::GetDifferenceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(differenceTypeNode.GetText()).c_str()));
       m_differenceTypeHasBeenSet = true;
+       m_differenceTypeHasBeenSet = true;
     }
   }
 

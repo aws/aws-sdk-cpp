@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-TlsValidationContextSdsTrust::TlsValidationContextSdsTrust() : 
-    m_secretNameHasBeenSet(false)
-{
-}
-
 TlsValidationContextSdsTrust::TlsValidationContextSdsTrust(JsonView jsonValue)
-  : TlsValidationContextSdsTrust()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TlsValidationContextSdsTrust& TlsValidationContextSdsTrust::operator =(JsonView 
   if(jsonValue.ValueExists("secretName"))
   {
     m_secretName = jsonValue.GetString("secretName");
-
     m_secretNameHasBeenSet = true;
   }
-
   return *this;
 }
 

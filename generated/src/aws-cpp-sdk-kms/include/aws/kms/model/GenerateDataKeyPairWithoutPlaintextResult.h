@@ -29,7 +29,7 @@ namespace Model
   class GenerateDataKeyPairWithoutPlaintextResult
   {
   public:
-    AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult();
+    AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult() = default;
     AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,11 @@ namespace Model
      * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
      * Base64-encoded.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPrivateKeyCiphertextBlob() const{ return m_privateKeyCiphertextBlob; }
-    inline void SetPrivateKeyCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_privateKeyCiphertextBlob = value; }
-    inline void SetPrivateKeyCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_privateKeyCiphertextBlob = std::move(value); }
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithPrivateKeyCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetPrivateKeyCiphertextBlob(value); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithPrivateKeyCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetPrivateKeyCiphertextBlob(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetPrivateKeyCiphertextBlob() const { return m_privateKeyCiphertextBlob; }
+    template<typename PrivateKeyCiphertextBlobT = Aws::Utils::ByteBuffer>
+    void SetPrivateKeyCiphertextBlob(PrivateKeyCiphertextBlobT&& value) { m_privateKeyCiphertextBlobHasBeenSet = true; m_privateKeyCiphertextBlob = std::forward<PrivateKeyCiphertextBlobT>(value); }
+    template<typename PrivateKeyCiphertextBlobT = Aws::Utils::ByteBuffer>
+    GenerateDataKeyPairWithoutPlaintextResult& WithPrivateKeyCiphertextBlob(PrivateKeyCiphertextBlobT&& value) { SetPrivateKeyCiphertextBlob(std::forward<PrivateKeyCiphertextBlobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,11 +53,11 @@ namespace Model
      * Services CLI, the value is Base64-encoded. Otherwise, it is not
      * Base64-encoded.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPublicKey() const{ return m_publicKey; }
-    inline void SetPublicKey(const Aws::Utils::ByteBuffer& value) { m_publicKey = value; }
-    inline void SetPublicKey(Aws::Utils::ByteBuffer&& value) { m_publicKey = std::move(value); }
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithPublicKey(const Aws::Utils::ByteBuffer& value) { SetPublicKey(value); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithPublicKey(Aws::Utils::ByteBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetPublicKey() const { return m_publicKey; }
+    template<typename PublicKeyT = Aws::Utils::ByteBuffer>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::Utils::ByteBuffer>
+    GenerateDataKeyPairWithoutPlaintextResult& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,47 +66,46 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    GenerateDataKeyPairWithoutPlaintextResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of data key pair that was generated.</p>
      */
-    inline const DataKeyPairSpec& GetKeyPairSpec() const{ return m_keyPairSpec; }
-    inline void SetKeyPairSpec(const DataKeyPairSpec& value) { m_keyPairSpec = value; }
-    inline void SetKeyPairSpec(DataKeyPairSpec&& value) { m_keyPairSpec = std::move(value); }
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithKeyPairSpec(const DataKeyPairSpec& value) { SetKeyPairSpec(value); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithKeyPairSpec(DataKeyPairSpec&& value) { SetKeyPairSpec(std::move(value)); return *this;}
+    inline DataKeyPairSpec GetKeyPairSpec() const { return m_keyPairSpec; }
+    inline void SetKeyPairSpec(DataKeyPairSpec value) { m_keyPairSpecHasBeenSet = true; m_keyPairSpec = value; }
+    inline GenerateDataKeyPairWithoutPlaintextResult& WithKeyPairSpec(DataKeyPairSpec value) { SetKeyPairSpec(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateDataKeyPairWithoutPlaintextResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateDataKeyPairWithoutPlaintextResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_privateKeyCiphertextBlob;
+    Aws::Utils::ByteBuffer m_privateKeyCiphertextBlob{};
+    bool m_privateKeyCiphertextBlobHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_publicKey;
+    Aws::Utils::ByteBuffer m_publicKey{};
+    bool m_publicKeyHasBeenSet = false;
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    DataKeyPairSpec m_keyPairSpec;
+    DataKeyPairSpec m_keyPairSpec{DataKeyPairSpec::NOT_SET};
+    bool m_keyPairSpecHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

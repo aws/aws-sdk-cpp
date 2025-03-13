@@ -32,7 +32,7 @@ namespace Model
   class SlotTypeConfiguration
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeConfiguration();
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeConfiguration() = default;
     AWS_LEXMODELBUILDINGSERVICE_API SlotTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API SlotTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A regular expression used to validate the value of a slot.</p>
      */
-    inline const SlotTypeRegexConfiguration& GetRegexConfiguration() const{ return m_regexConfiguration; }
+    inline const SlotTypeRegexConfiguration& GetRegexConfiguration() const { return m_regexConfiguration; }
     inline bool RegexConfigurationHasBeenSet() const { return m_regexConfigurationHasBeenSet; }
-    inline void SetRegexConfiguration(const SlotTypeRegexConfiguration& value) { m_regexConfigurationHasBeenSet = true; m_regexConfiguration = value; }
-    inline void SetRegexConfiguration(SlotTypeRegexConfiguration&& value) { m_regexConfigurationHasBeenSet = true; m_regexConfiguration = std::move(value); }
-    inline SlotTypeConfiguration& WithRegexConfiguration(const SlotTypeRegexConfiguration& value) { SetRegexConfiguration(value); return *this;}
-    inline SlotTypeConfiguration& WithRegexConfiguration(SlotTypeRegexConfiguration&& value) { SetRegexConfiguration(std::move(value)); return *this;}
+    template<typename RegexConfigurationT = SlotTypeRegexConfiguration>
+    void SetRegexConfiguration(RegexConfigurationT&& value) { m_regexConfigurationHasBeenSet = true; m_regexConfiguration = std::forward<RegexConfigurationT>(value); }
+    template<typename RegexConfigurationT = SlotTypeRegexConfiguration>
+    SlotTypeConfiguration& WithRegexConfiguration(RegexConfigurationT&& value) { SetRegexConfiguration(std::forward<RegexConfigurationT>(value)); return *this;}
     ///@}
   private:
 

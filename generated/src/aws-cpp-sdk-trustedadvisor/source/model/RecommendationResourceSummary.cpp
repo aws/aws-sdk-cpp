@@ -18,23 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-RecommendationResourceSummary::RecommendationResourceSummary() : 
-    m_arnHasBeenSet(false),
-    m_awsResourceIdHasBeenSet(false),
-    m_exclusionStatus(ExclusionStatus::NOT_SET),
-    m_exclusionStatusHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_recommendationArnHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RecommendationResourceSummary::RecommendationResourceSummary(JsonView jsonValue)
-  : RecommendationResourceSummary()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ RecommendationResourceSummary& RecommendationResourceSummary::operator =(JsonVie
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsResourceId"))
   {
     m_awsResourceId = jsonValue.GetString("awsResourceId");
-
     m_awsResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exclusionStatus"))
   {
     m_exclusionStatus = ExclusionStatusMapper::GetExclusionStatusForName(jsonValue.GetString("exclusionStatus"));
-
     m_exclusionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -85,28 +59,21 @@ RecommendationResourceSummary& RecommendationResourceSummary::operator =(JsonVie
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationArn"))
   {
     m_recommendationArn = jsonValue.GetString("recommendationArn");
-
     m_recommendationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regionCode"))
   {
     m_regionCode = jsonValue.GetString("regionCode");
-
     m_regionCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

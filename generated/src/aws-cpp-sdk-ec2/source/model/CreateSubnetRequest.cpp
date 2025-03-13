@@ -10,27 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateSubnetRequest::CreateSubnetRequest() : 
-    m_tagSpecificationsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_ipv6Native(false),
-    m_ipv6NativeHasBeenSet(false),
-    m_ipv4IpamPoolIdHasBeenSet(false),
-    m_ipv4NetmaskLength(0),
-    m_ipv4NetmaskLengthHasBeenSet(false),
-    m_ipv6IpamPoolIdHasBeenSet(false),
-    m_ipv6NetmaskLength(0),
-    m_ipv6NetmaskLengthHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubnetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

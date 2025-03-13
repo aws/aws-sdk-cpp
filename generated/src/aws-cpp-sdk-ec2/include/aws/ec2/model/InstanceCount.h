@@ -31,7 +31,7 @@ namespace Model
   class InstanceCount
   {
   public:
-    AWS_EC2_API InstanceCount();
+    AWS_EC2_API InstanceCount() = default;
     AWS_EC2_API InstanceCount(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceCount& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline InstanceCount& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -54,19 +54,17 @@ namespace Model
     /**
      * <p>The states of the listed Reserved Instances.</p>
      */
-    inline const ListingState& GetState() const{ return m_state; }
+    inline ListingState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ListingState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ListingState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline InstanceCount& WithState(const ListingState& value) { SetState(value); return *this;}
-    inline InstanceCount& WithState(ListingState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ListingState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InstanceCount& WithState(ListingState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    ListingState m_state;
+    ListingState m_state{ListingState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

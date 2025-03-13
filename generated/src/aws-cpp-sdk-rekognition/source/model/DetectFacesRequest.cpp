@@ -12,12 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectFacesRequest::DetectFacesRequest() : 
-    m_imageHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String DetectFacesRequest::SerializePayload() const
 {
   JsonValue payload;

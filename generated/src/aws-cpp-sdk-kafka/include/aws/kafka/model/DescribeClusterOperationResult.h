@@ -28,7 +28,7 @@ namespace Model
   class DescribeClusterOperationResult
   {
   public:
-    AWS_KAFKA_API DescribeClusterOperationResult();
+    AWS_KAFKA_API DescribeClusterOperationResult() = default;
     AWS_KAFKA_API DescribeClusterOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API DescribeClusterOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
             <p>Cluster operation information</p>
          
      */
-    inline const ClusterOperationInfo& GetClusterOperationInfo() const{ return m_clusterOperationInfo; }
-    inline void SetClusterOperationInfo(const ClusterOperationInfo& value) { m_clusterOperationInfo = value; }
-    inline void SetClusterOperationInfo(ClusterOperationInfo&& value) { m_clusterOperationInfo = std::move(value); }
-    inline DescribeClusterOperationResult& WithClusterOperationInfo(const ClusterOperationInfo& value) { SetClusterOperationInfo(value); return *this;}
-    inline DescribeClusterOperationResult& WithClusterOperationInfo(ClusterOperationInfo&& value) { SetClusterOperationInfo(std::move(value)); return *this;}
+    inline const ClusterOperationInfo& GetClusterOperationInfo() const { return m_clusterOperationInfo; }
+    template<typename ClusterOperationInfoT = ClusterOperationInfo>
+    void SetClusterOperationInfo(ClusterOperationInfoT&& value) { m_clusterOperationInfoHasBeenSet = true; m_clusterOperationInfo = std::forward<ClusterOperationInfoT>(value); }
+    template<typename ClusterOperationInfoT = ClusterOperationInfo>
+    DescribeClusterOperationResult& WithClusterOperationInfo(ClusterOperationInfoT&& value) { SetClusterOperationInfo(std::forward<ClusterOperationInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeClusterOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeClusterOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeClusterOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeClusterOperationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ClusterOperationInfo m_clusterOperationInfo;
+    bool m_clusterOperationInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

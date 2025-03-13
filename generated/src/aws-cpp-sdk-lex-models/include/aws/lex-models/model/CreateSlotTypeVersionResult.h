@@ -32,7 +32,7 @@ namespace Model
   class CreateSlotTypeVersionResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult();
+    AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The name of the slot type.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateSlotTypeVersionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSlotTypeVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the slot type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateSlotTypeVersionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateSlotTypeVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,13 +64,13 @@ namespace Model
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
      * the slot type can take.</p>
      */
-    inline const Aws::Vector<EnumerationValue>& GetEnumerationValues() const{ return m_enumerationValues; }
-    inline void SetEnumerationValues(const Aws::Vector<EnumerationValue>& value) { m_enumerationValues = value; }
-    inline void SetEnumerationValues(Aws::Vector<EnumerationValue>&& value) { m_enumerationValues = std::move(value); }
-    inline CreateSlotTypeVersionResult& WithEnumerationValues(const Aws::Vector<EnumerationValue>& value) { SetEnumerationValues(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithEnumerationValues(Aws::Vector<EnumerationValue>&& value) { SetEnumerationValues(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& AddEnumerationValues(const EnumerationValue& value) { m_enumerationValues.push_back(value); return *this; }
-    inline CreateSlotTypeVersionResult& AddEnumerationValues(EnumerationValue&& value) { m_enumerationValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnumerationValue>& GetEnumerationValues() const { return m_enumerationValues; }
+    template<typename EnumerationValuesT = Aws::Vector<EnumerationValue>>
+    void SetEnumerationValues(EnumerationValuesT&& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues = std::forward<EnumerationValuesT>(value); }
+    template<typename EnumerationValuesT = Aws::Vector<EnumerationValue>>
+    CreateSlotTypeVersionResult& WithEnumerationValues(EnumerationValuesT&& value) { SetEnumerationValues(std::forward<EnumerationValuesT>(value)); return *this;}
+    template<typename EnumerationValuesT = EnumerationValue>
+    CreateSlotTypeVersionResult& AddEnumerationValues(EnumerationValuesT&& value) { m_enumerationValuesHasBeenSet = true; m_enumerationValues.emplace_back(std::forward<EnumerationValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,48 +78,44 @@ namespace Model
      * <p>The date that the slot type was updated. When you create a resource, the
      * creation date and last update date are the same.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
-    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
-    inline CreateSlotTypeVersionResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const { return m_lastUpdatedDate; }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    void SetLastUpdatedDate(LastUpdatedDateT&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::forward<LastUpdatedDateT>(value); }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    CreateSlotTypeVersionResult& WithLastUpdatedDate(LastUpdatedDateT&& value) { SetLastUpdatedDate(std::forward<LastUpdatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date that the slot type was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline CreateSlotTypeVersionResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    CreateSlotTypeVersionResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version assigned to the new slot type version. </p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline CreateSlotTypeVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CreateSlotTypeVersionResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-    inline CreateSlotTypeVersionResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    CreateSlotTypeVersionResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,72 +123,77 @@ namespace Model
      * <p>The strategy that Amazon Lex uses to determine the value of the slot. For
      * more information, see <a>PutSlotType</a>.</p>
      */
-    inline const SlotValueSelectionStrategy& GetValueSelectionStrategy() const{ return m_valueSelectionStrategy; }
-    inline void SetValueSelectionStrategy(const SlotValueSelectionStrategy& value) { m_valueSelectionStrategy = value; }
-    inline void SetValueSelectionStrategy(SlotValueSelectionStrategy&& value) { m_valueSelectionStrategy = std::move(value); }
-    inline CreateSlotTypeVersionResult& WithValueSelectionStrategy(const SlotValueSelectionStrategy& value) { SetValueSelectionStrategy(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
+    inline SlotValueSelectionStrategy GetValueSelectionStrategy() const { return m_valueSelectionStrategy; }
+    inline void SetValueSelectionStrategy(SlotValueSelectionStrategy value) { m_valueSelectionStrategyHasBeenSet = true; m_valueSelectionStrategy = value; }
+    inline CreateSlotTypeVersionResult& WithValueSelectionStrategy(SlotValueSelectionStrategy value) { SetValueSelectionStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The built-in slot type used a the parent of the slot type.</p>
      */
-    inline const Aws::String& GetParentSlotTypeSignature() const{ return m_parentSlotTypeSignature; }
-    inline void SetParentSlotTypeSignature(const Aws::String& value) { m_parentSlotTypeSignature = value; }
-    inline void SetParentSlotTypeSignature(Aws::String&& value) { m_parentSlotTypeSignature = std::move(value); }
-    inline void SetParentSlotTypeSignature(const char* value) { m_parentSlotTypeSignature.assign(value); }
-    inline CreateSlotTypeVersionResult& WithParentSlotTypeSignature(const Aws::String& value) { SetParentSlotTypeSignature(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithParentSlotTypeSignature(Aws::String&& value) { SetParentSlotTypeSignature(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& WithParentSlotTypeSignature(const char* value) { SetParentSlotTypeSignature(value); return *this;}
+    inline const Aws::String& GetParentSlotTypeSignature() const { return m_parentSlotTypeSignature; }
+    template<typename ParentSlotTypeSignatureT = Aws::String>
+    void SetParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = std::forward<ParentSlotTypeSignatureT>(value); }
+    template<typename ParentSlotTypeSignatureT = Aws::String>
+    CreateSlotTypeVersionResult& WithParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) { SetParentSlotTypeSignature(std::forward<ParentSlotTypeSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information that extends the parent built-in slot type.</p>
      */
-    inline const Aws::Vector<SlotTypeConfiguration>& GetSlotTypeConfigurations() const{ return m_slotTypeConfigurations; }
-    inline void SetSlotTypeConfigurations(const Aws::Vector<SlotTypeConfiguration>& value) { m_slotTypeConfigurations = value; }
-    inline void SetSlotTypeConfigurations(Aws::Vector<SlotTypeConfiguration>&& value) { m_slotTypeConfigurations = std::move(value); }
-    inline CreateSlotTypeVersionResult& WithSlotTypeConfigurations(const Aws::Vector<SlotTypeConfiguration>& value) { SetSlotTypeConfigurations(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithSlotTypeConfigurations(Aws::Vector<SlotTypeConfiguration>&& value) { SetSlotTypeConfigurations(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& AddSlotTypeConfigurations(const SlotTypeConfiguration& value) { m_slotTypeConfigurations.push_back(value); return *this; }
-    inline CreateSlotTypeVersionResult& AddSlotTypeConfigurations(SlotTypeConfiguration&& value) { m_slotTypeConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SlotTypeConfiguration>& GetSlotTypeConfigurations() const { return m_slotTypeConfigurations; }
+    template<typename SlotTypeConfigurationsT = Aws::Vector<SlotTypeConfiguration>>
+    void SetSlotTypeConfigurations(SlotTypeConfigurationsT&& value) { m_slotTypeConfigurationsHasBeenSet = true; m_slotTypeConfigurations = std::forward<SlotTypeConfigurationsT>(value); }
+    template<typename SlotTypeConfigurationsT = Aws::Vector<SlotTypeConfiguration>>
+    CreateSlotTypeVersionResult& WithSlotTypeConfigurations(SlotTypeConfigurationsT&& value) { SetSlotTypeConfigurations(std::forward<SlotTypeConfigurationsT>(value)); return *this;}
+    template<typename SlotTypeConfigurationsT = SlotTypeConfiguration>
+    CreateSlotTypeVersionResult& AddSlotTypeConfigurations(SlotTypeConfigurationsT&& value) { m_slotTypeConfigurationsHasBeenSet = true; m_slotTypeConfigurations.emplace_back(std::forward<SlotTypeConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSlotTypeVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSlotTypeVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSlotTypeVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSlotTypeVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EnumerationValue> m_enumerationValues;
+    bool m_enumerationValuesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Utils::DateTime m_lastUpdatedDate{};
+    bool m_lastUpdatedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_checksum;
+    bool m_checksumHasBeenSet = false;
 
-    SlotValueSelectionStrategy m_valueSelectionStrategy;
+    SlotValueSelectionStrategy m_valueSelectionStrategy{SlotValueSelectionStrategy::NOT_SET};
+    bool m_valueSelectionStrategyHasBeenSet = false;
 
     Aws::String m_parentSlotTypeSignature;
+    bool m_parentSlotTypeSignatureHasBeenSet = false;
 
     Aws::Vector<SlotTypeConfiguration> m_slotTypeConfigurations;
+    bool m_slotTypeConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

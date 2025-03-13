@@ -22,7 +22,7 @@ namespace Model
   class UntagResourceRequest : public KinesisVideoRequest
   {
   public:
-    AWS_KINESISVIDEO_API UntagResourceRequest();
+    AWS_KINESISVIDEO_API UntagResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,29 +38,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the signaling channel from which you want
      * to remove tags.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline UntagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    UntagResourceRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the keys of the tags that you want to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
+    inline const Aws::Vector<Aws::String>& GetTagKeyList() const { return m_tagKeyList; }
     inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
-    inline void SetTagKeyList(const Aws::Vector<Aws::String>& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = value; }
-    inline void SetTagKeyList(Aws::Vector<Aws::String>&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = std::move(value); }
-    inline UntagResourceRequest& WithTagKeyList(const Aws::Vector<Aws::String>& value) { SetTagKeyList(value); return *this;}
-    inline UntagResourceRequest& WithTagKeyList(Aws::Vector<Aws::String>&& value) { SetTagKeyList(std::move(value)); return *this;}
-    inline UntagResourceRequest& AddTagKeyList(const Aws::String& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-    inline UntagResourceRequest& AddTagKeyList(Aws::String&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(std::move(value)); return *this; }
-    inline UntagResourceRequest& AddTagKeyList(const char* value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
+    template<typename TagKeyListT = Aws::Vector<Aws::String>>
+    void SetTagKeyList(TagKeyListT&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = std::forward<TagKeyListT>(value); }
+    template<typename TagKeyListT = Aws::Vector<Aws::String>>
+    UntagResourceRequest& WithTagKeyList(TagKeyListT&& value) { SetTagKeyList(std::forward<TagKeyListT>(value)); return *this;}
+    template<typename TagKeyListT = Aws::String>
+    UntagResourceRequest& AddTagKeyList(TagKeyListT&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.emplace_back(std::forward<TagKeyListT>(value)); return *this; }
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class VpcOptions
   {
   public:
-    AWS_OSIS_API VpcOptions();
+    AWS_OSIS_API VpcOptions() = default;
     AWS_OSIS_API VpcOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API VpcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,40 @@ namespace Model
     /**
      * <p>A list of subnet IDs associated with the VPC endpoint.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline VpcOptions& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline VpcOptions& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline VpcOptions& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline VpcOptions& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline VpcOptions& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    VpcOptions& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    VpcOptions& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of security groups associated with the VPC endpoint.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline VpcOptions& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline VpcOptions& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline VpcOptions& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline VpcOptions& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline VpcOptions& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    VpcOptions& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    VpcOptions& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Options for attaching a VPC to a pipeline.</p>
      */
-    inline const VpcAttachmentOptions& GetVpcAttachmentOptions() const{ return m_vpcAttachmentOptions; }
+    inline const VpcAttachmentOptions& GetVpcAttachmentOptions() const { return m_vpcAttachmentOptions; }
     inline bool VpcAttachmentOptionsHasBeenSet() const { return m_vpcAttachmentOptionsHasBeenSet; }
-    inline void SetVpcAttachmentOptions(const VpcAttachmentOptions& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = value; }
-    inline void SetVpcAttachmentOptions(VpcAttachmentOptions&& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = std::move(value); }
-    inline VpcOptions& WithVpcAttachmentOptions(const VpcAttachmentOptions& value) { SetVpcAttachmentOptions(value); return *this;}
-    inline VpcOptions& WithVpcAttachmentOptions(VpcAttachmentOptions&& value) { SetVpcAttachmentOptions(std::move(value)); return *this;}
+    template<typename VpcAttachmentOptionsT = VpcAttachmentOptions>
+    void SetVpcAttachmentOptions(VpcAttachmentOptionsT&& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = std::forward<VpcAttachmentOptionsT>(value); }
+    template<typename VpcAttachmentOptionsT = VpcAttachmentOptions>
+    VpcOptions& WithVpcAttachmentOptions(VpcAttachmentOptionsT&& value) { SetVpcAttachmentOptions(std::forward<VpcAttachmentOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * <p>Defines whether you or Amazon OpenSearch Ingestion service create and manage
      * the VPC endpoint configured for the pipeline.</p>
      */
-    inline const VpcEndpointManagement& GetVpcEndpointManagement() const{ return m_vpcEndpointManagement; }
+    inline VpcEndpointManagement GetVpcEndpointManagement() const { return m_vpcEndpointManagement; }
     inline bool VpcEndpointManagementHasBeenSet() const { return m_vpcEndpointManagementHasBeenSet; }
-    inline void SetVpcEndpointManagement(const VpcEndpointManagement& value) { m_vpcEndpointManagementHasBeenSet = true; m_vpcEndpointManagement = value; }
-    inline void SetVpcEndpointManagement(VpcEndpointManagement&& value) { m_vpcEndpointManagementHasBeenSet = true; m_vpcEndpointManagement = std::move(value); }
-    inline VpcOptions& WithVpcEndpointManagement(const VpcEndpointManagement& value) { SetVpcEndpointManagement(value); return *this;}
-    inline VpcOptions& WithVpcEndpointManagement(VpcEndpointManagement&& value) { SetVpcEndpointManagement(std::move(value)); return *this;}
+    inline void SetVpcEndpointManagement(VpcEndpointManagement value) { m_vpcEndpointManagementHasBeenSet = true; m_vpcEndpointManagement = value; }
+    inline VpcOptions& WithVpcEndpointManagement(VpcEndpointManagement value) { SetVpcEndpointManagement(value); return *this;}
     ///@}
   private:
 
@@ -106,7 +102,7 @@ namespace Model
     VpcAttachmentOptions m_vpcAttachmentOptions;
     bool m_vpcAttachmentOptionsHasBeenSet = false;
 
-    VpcEndpointManagement m_vpcEndpointManagement;
+    VpcEndpointManagement m_vpcEndpointManagement{VpcEndpointManagement::NOT_SET};
     bool m_vpcEndpointManagementHasBeenSet = false;
   };
 

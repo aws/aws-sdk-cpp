@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCloudFrontOriginAccessIdentities2020_05_31Result::ListCloudFrontOriginAccessIdentities2020_05_31Result()
-{
-}
-
 ListCloudFrontOriginAccessIdentities2020_05_31Result::ListCloudFrontOriginAccessIdentities2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListCloudFrontOriginAccessIdentities2020_05_31Result& ListCloudFrontOriginAccess
   if(!resultNode.IsNull())
   {
     m_cloudFrontOriginAccessIdentityList = resultNode;
+    m_cloudFrontOriginAccessIdentityListHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListCloudFrontOriginAccessIdentities2020_05_31Result& ListCloudFrontOriginAccess
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -21,7 +21,7 @@ namespace Model
   class GetDeviceRequest : public BraketRequest
   {
   public:
-    AWS_BRAKET_API GetDeviceRequest();
+    AWS_BRAKET_API GetDeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the device to retrieve.</p>
      */
-    inline const Aws::String& GetDeviceArn() const{ return m_deviceArn; }
+    inline const Aws::String& GetDeviceArn() const { return m_deviceArn; }
     inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
-    inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
-    inline void SetDeviceArn(Aws::String&& value) { m_deviceArnHasBeenSet = true; m_deviceArn = std::move(value); }
-    inline void SetDeviceArn(const char* value) { m_deviceArnHasBeenSet = true; m_deviceArn.assign(value); }
-    inline GetDeviceRequest& WithDeviceArn(const Aws::String& value) { SetDeviceArn(value); return *this;}
-    inline GetDeviceRequest& WithDeviceArn(Aws::String&& value) { SetDeviceArn(std::move(value)); return *this;}
-    inline GetDeviceRequest& WithDeviceArn(const char* value) { SetDeviceArn(value); return *this;}
+    template<typename DeviceArnT = Aws::String>
+    void SetDeviceArn(DeviceArnT&& value) { m_deviceArnHasBeenSet = true; m_deviceArn = std::forward<DeviceArnT>(value); }
+    template<typename DeviceArnT = Aws::String>
+    GetDeviceRequest& WithDeviceArn(DeviceArnT&& value) { SetDeviceArn(std::forward<DeviceArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-NFSDataRepositoryConfiguration::NFSDataRepositoryConfiguration() : 
-    m_version(NfsVersion::NOT_SET),
-    m_versionHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false),
-    m_autoExportPolicyHasBeenSet(false)
-{
-}
-
 NFSDataRepositoryConfiguration::NFSDataRepositoryConfiguration(JsonView jsonValue)
-  : NFSDataRepositoryConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ NFSDataRepositoryConfiguration& NFSDataRepositoryConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("Version"))
   {
     m_version = NfsVersionMapper::GetNfsVersionForName(jsonValue.GetString("Version"));
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsIps"))
   {
     Aws::Utils::Array<JsonView> dnsIpsJsonList = jsonValue.GetArray("DnsIps");
@@ -50,14 +39,11 @@ NFSDataRepositoryConfiguration& NFSDataRepositoryConfiguration::operator =(JsonV
     }
     m_dnsIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoExportPolicy"))
   {
     m_autoExportPolicy = jsonValue.GetObject("AutoExportPolicy");
-
     m_autoExportPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterIdentityProviderRequest::DeregisterIdentityProviderRequest() : 
-    m_identityProviderHasBeenSet(false),
-    m_identityProviderArnHasBeenSet(false),
-    m_productHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterIdentityProviderRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSipMediaApplicationCallResult::CreateSipMediaApplicationCallResult()
-{
-}
-
 CreateSipMediaApplicationCallResult::CreateSipMediaApplicationCallResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSipMediaApplicationCallResult& CreateSipMediaApplicationCallResult::operat
   if(jsonValue.ValueExists("SipMediaApplicationCall"))
   {
     m_sipMediaApplicationCall = jsonValue.GetObject("SipMediaApplicationCall");
-
+    m_sipMediaApplicationCallHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

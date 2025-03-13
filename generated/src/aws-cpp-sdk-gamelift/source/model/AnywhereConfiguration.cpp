@@ -18,13 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-AnywhereConfiguration::AnywhereConfiguration() : 
-    m_costHasBeenSet(false)
-{
-}
-
 AnywhereConfiguration::AnywhereConfiguration(JsonView jsonValue)
-  : AnywhereConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnywhereConfiguration& AnywhereConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Cost"))
   {
     m_cost = jsonValue.GetString("Cost");
-
     m_costHasBeenSet = true;
   }
-
   return *this;
 }
 

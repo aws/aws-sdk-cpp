@@ -39,7 +39,7 @@ namespace Model
   class DataProtectionConfig
   {
   public:
-    AWS_WAFV2_API DataProtectionConfig();
+    AWS_WAFV2_API DataProtectionConfig() = default;
     AWS_WAFV2_API DataProtectionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API DataProtectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * types. This is defined for each web ACL. WAF applies the specified protection to
      * all web requests that the web ACL inspects. </p>
      */
-    inline const Aws::Vector<DataProtection>& GetDataProtections() const{ return m_dataProtections; }
+    inline const Aws::Vector<DataProtection>& GetDataProtections() const { return m_dataProtections; }
     inline bool DataProtectionsHasBeenSet() const { return m_dataProtectionsHasBeenSet; }
-    inline void SetDataProtections(const Aws::Vector<DataProtection>& value) { m_dataProtectionsHasBeenSet = true; m_dataProtections = value; }
-    inline void SetDataProtections(Aws::Vector<DataProtection>&& value) { m_dataProtectionsHasBeenSet = true; m_dataProtections = std::move(value); }
-    inline DataProtectionConfig& WithDataProtections(const Aws::Vector<DataProtection>& value) { SetDataProtections(value); return *this;}
-    inline DataProtectionConfig& WithDataProtections(Aws::Vector<DataProtection>&& value) { SetDataProtections(std::move(value)); return *this;}
-    inline DataProtectionConfig& AddDataProtections(const DataProtection& value) { m_dataProtectionsHasBeenSet = true; m_dataProtections.push_back(value); return *this; }
-    inline DataProtectionConfig& AddDataProtections(DataProtection&& value) { m_dataProtectionsHasBeenSet = true; m_dataProtections.push_back(std::move(value)); return *this; }
+    template<typename DataProtectionsT = Aws::Vector<DataProtection>>
+    void SetDataProtections(DataProtectionsT&& value) { m_dataProtectionsHasBeenSet = true; m_dataProtections = std::forward<DataProtectionsT>(value); }
+    template<typename DataProtectionsT = Aws::Vector<DataProtection>>
+    DataProtectionConfig& WithDataProtections(DataProtectionsT&& value) { SetDataProtections(std::forward<DataProtectionsT>(value)); return *this;}
+    template<typename DataProtectionsT = DataProtection>
+    DataProtectionConfig& AddDataProtections(DataProtectionsT&& value) { m_dataProtectionsHasBeenSet = true; m_dataProtections.emplace_back(std::forward<DataProtectionsT>(value)); return *this; }
     ///@}
   private:
 

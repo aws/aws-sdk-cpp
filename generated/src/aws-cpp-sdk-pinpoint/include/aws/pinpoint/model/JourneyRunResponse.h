@@ -33,7 +33,7 @@ namespace Model
   class JourneyRunResponse
   {
   public:
-    AWS_PINPOINT_API JourneyRunResponse();
+    AWS_PINPOINT_API JourneyRunResponse() = default;
     AWS_PINPOINT_API JourneyRunResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API JourneyRunResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,46 @@ namespace Model
      * <p>The time when the journey run was created or scheduled, in ISO 8601
      * format.</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline JourneyRunResponse& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline JourneyRunResponse& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline JourneyRunResponse& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    JourneyRunResponse& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the journey run was updated, in ISO 8601 format..</p>
      */
-    inline const Aws::String& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::String& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::String& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::String&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline void SetLastUpdateTime(const char* value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime.assign(value); }
-    inline JourneyRunResponse& WithLastUpdateTime(const Aws::String& value) { SetLastUpdateTime(value); return *this;}
-    inline JourneyRunResponse& WithLastUpdateTime(Aws::String&& value) { SetLastUpdateTime(std::move(value)); return *this;}
-    inline JourneyRunResponse& WithLastUpdateTime(const char* value) { SetLastUpdateTime(value); return *this;}
+    template<typename LastUpdateTimeT = Aws::String>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::String>
+    JourneyRunResponse& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the run.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline JourneyRunResponse& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline JourneyRunResponse& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline JourneyRunResponse& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    JourneyRunResponse& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the journey run.</p>
      */
-    inline const JourneyRunStatus& GetStatus() const{ return m_status; }
+    inline JourneyRunStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JourneyRunStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JourneyRunStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JourneyRunResponse& WithStatus(const JourneyRunStatus& value) { SetStatus(value); return *this;}
-    inline JourneyRunResponse& WithStatus(JourneyRunStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JourneyRunStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JourneyRunResponse& WithStatus(JourneyRunStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_runId;
     bool m_runIdHasBeenSet = false;
 
-    JourneyRunStatus m_status;
+    JourneyRunStatus m_status{JourneyRunStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

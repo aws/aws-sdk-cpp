@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FeatureMetadata::FeatureMetadata() : 
-    m_featureGroupArnHasBeenSet(false),
-    m_featureGroupNameHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_featureType(FeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 FeatureMetadata::FeatureMetadata(JsonView jsonValue)
-  : FeatureMetadata()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ FeatureMetadata& FeatureMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeatureGroupArn"))
   {
     m_featureGroupArn = jsonValue.GetString("FeatureGroupArn");
-
     m_featureGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
     m_featureGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureName"))
   {
     m_featureName = jsonValue.GetString("FeatureName");
-
     m_featureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureType"))
   {
     m_featureType = FeatureTypeMapper::GetFeatureTypeForName(jsonValue.GetString("FeatureType"));
-
     m_featureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -97,7 +69,6 @@ FeatureMetadata& FeatureMetadata::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

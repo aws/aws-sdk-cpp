@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateParallelDataResult::CreateParallelDataResult() : 
-    m_status(ParallelDataStatus::NOT_SET)
-{
-}
-
 CreateParallelDataResult::CreateParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateParallelDataResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateParallelDataResult& CreateParallelDataResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

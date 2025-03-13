@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CustomErrorResponse::CustomErrorResponse() : 
-    m_errorCode(0),
-    m_errorCodeHasBeenSet(false),
-    m_responsePagePathHasBeenSet(false),
-    m_responseCodeHasBeenSet(false),
-    m_errorCachingMinTTL(0),
-    m_errorCachingMinTTLHasBeenSet(false)
-{
-}
-
 CustomErrorResponse::CustomErrorResponse(const XmlNode& xmlNode)
-  : CustomErrorResponse()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ CustomErrorResponse& CustomErrorResponse::operator =(const XmlNode& xmlNode)
     {
       m_errorCode = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText()).c_str()).c_str());
       m_errorCodeHasBeenSet = true;
+       m_errorCodeHasBeenSet = true;
     }
     XmlNode responsePagePathNode = resultNode.FirstChild("ResponsePagePath");
     if(!responsePagePathNode.IsNull())
     {
       m_responsePagePath = Aws::Utils::Xml::DecodeEscapedXmlText(responsePagePathNode.GetText());
       m_responsePagePathHasBeenSet = true;
+       m_responsePagePathHasBeenSet = true;
     }
     XmlNode responseCodeNode = resultNode.FirstChild("ResponseCode");
     if(!responseCodeNode.IsNull())
     {
       m_responseCode = Aws::Utils::Xml::DecodeEscapedXmlText(responseCodeNode.GetText());
       m_responseCodeHasBeenSet = true;
+       m_responseCodeHasBeenSet = true;
     }
     XmlNode errorCachingMinTTLNode = resultNode.FirstChild("ErrorCachingMinTTL");
     if(!errorCachingMinTTLNode.IsNull())
     {
       m_errorCachingMinTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(errorCachingMinTTLNode.GetText()).c_str()).c_str());
       m_errorCachingMinTTLHasBeenSet = true;
+       m_errorCachingMinTTLHasBeenSet = true;
     }
   }
 

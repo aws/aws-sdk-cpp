@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NeuronDeviceMemoryInfo::NeuronDeviceMemoryInfo() : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
-{
-}
-
 NeuronDeviceMemoryInfo::NeuronDeviceMemoryInfo(const XmlNode& xmlNode)
-  : NeuronDeviceMemoryInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ NeuronDeviceMemoryInfo& NeuronDeviceMemoryInfo::operator =(const XmlNode& xmlNod
     {
       m_sizeInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInMiBNode.GetText()).c_str()).c_str());
       m_sizeInMiBHasBeenSet = true;
+       m_sizeInMiBHasBeenSet = true;
     }
   }
 

@@ -12,17 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkspaceBundleRequest::CreateWorkspaceBundleRequest() : 
-    m_bundleNameHasBeenSet(false),
-    m_bundleDescriptionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_computeTypeHasBeenSet(false),
-    m_userStorageHasBeenSet(false),
-    m_rootStorageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkspaceBundleRequest::SerializePayload() const
 {
   JsonValue payload;

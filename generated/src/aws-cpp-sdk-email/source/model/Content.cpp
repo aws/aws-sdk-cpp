@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-Content::Content() : 
-    m_dataHasBeenSet(false),
-    m_charsetHasBeenSet(false)
-{
-}
-
 Content::Content(const XmlNode& xmlNode)
-  : Content()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Content& Content::operator =(const XmlNode& xmlNode)
     {
       m_data = Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText());
       m_dataHasBeenSet = true;
+       m_dataHasBeenSet = true;
     }
     XmlNode charsetNode = resultNode.FirstChild("Charset");
     if(!charsetNode.IsNull())
     {
       m_charset = Aws::Utils::Xml::DecodeEscapedXmlText(charsetNode.GetText());
       m_charsetHasBeenSet = true;
+       m_charsetHasBeenSet = true;
     }
   }
 

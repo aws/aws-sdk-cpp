@@ -18,19 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-MetricSetSummary::MetricSetSummary() : 
-    m_metricSetArnHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_metricSetDescriptionHasBeenSet(false),
-    m_metricSetNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 MetricSetSummary::MetricSetSummary(JsonView jsonValue)
-  : MetricSetSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ MetricSetSummary& MetricSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricSetArn"))
   {
     m_metricSetArn = jsonValue.GetString("MetricSetArn");
-
     m_metricSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyDetectorArn"))
   {
     m_anomalyDetectorArn = jsonValue.GetString("AnomalyDetectorArn");
-
     m_anomalyDetectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricSetDescription"))
   {
     m_metricSetDescription = jsonValue.GetString("MetricSetDescription");
-
     m_metricSetDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricSetName"))
   {
     m_metricSetName = jsonValue.GetString("MetricSetName");
-
     m_metricSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -88,7 +64,6 @@ MetricSetSummary& MetricSetSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

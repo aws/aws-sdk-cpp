@@ -18,13 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-ClientCertAuthSettings::ClientCertAuthSettings() : 
-    m_oCSPUrlHasBeenSet(false)
-{
-}
-
 ClientCertAuthSettings::ClientCertAuthSettings(JsonView jsonValue)
-  : ClientCertAuthSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClientCertAuthSettings& ClientCertAuthSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OCSPUrl"))
   {
     m_oCSPUrl = jsonValue.GetString("OCSPUrl");
-
     m_oCSPUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

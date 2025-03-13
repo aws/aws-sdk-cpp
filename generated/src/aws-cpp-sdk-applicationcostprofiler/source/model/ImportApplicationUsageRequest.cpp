@@ -12,11 +12,6 @@ using namespace Aws::ApplicationCostProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportApplicationUsageRequest::ImportApplicationUsageRequest() : 
-    m_sourceS3LocationHasBeenSet(false)
-{
-}
-
 Aws::String ImportApplicationUsageRequest::SerializePayload() const
 {
   JsonValue payload;

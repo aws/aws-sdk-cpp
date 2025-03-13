@@ -12,18 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMaintenanceWindowScheduleRequest::DescribeMaintenanceWindowScheduleRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_resourceType(MaintenanceWindowResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMaintenanceWindowScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLinkedWhatsAppBusinessAccountResult::GetLinkedWhatsAppBusinessAccountResult()
-{
-}
-
 GetLinkedWhatsAppBusinessAccountResult::GetLinkedWhatsAppBusinessAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetLinkedWhatsAppBusinessAccountResult& GetLinkedWhatsAppBusinessAccountResult::
   if(jsonValue.ValueExists("account"))
   {
     m_account = jsonValue.GetObject("account");
-
+    m_accountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,27 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListNotebookInstancesRequest::ListNotebookInstancesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortBy(NotebookInstanceSortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(NotebookInstanceSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_lastModifiedTimeBeforeHasBeenSet(false),
-    m_lastModifiedTimeAfterHasBeenSet(false),
-    m_statusEquals(NotebookInstanceStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameContainsHasBeenSet(false),
-    m_defaultCodeRepositoryContainsHasBeenSet(false),
-    m_additionalCodeRepositoryEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListNotebookInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

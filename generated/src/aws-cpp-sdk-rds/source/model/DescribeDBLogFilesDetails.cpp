@@ -20,17 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DescribeDBLogFilesDetails::DescribeDBLogFilesDetails() : 
-    m_logFileNameHasBeenSet(false),
-    m_lastWritten(0),
-    m_lastWrittenHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 DescribeDBLogFilesDetails::DescribeDBLogFilesDetails(const XmlNode& xmlNode)
-  : DescribeDBLogFilesDetails()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ DescribeDBLogFilesDetails& DescribeDBLogFilesDetails::operator =(const XmlNode& 
     {
       m_logFileName = Aws::Utils::Xml::DecodeEscapedXmlText(logFileNameNode.GetText());
       m_logFileNameHasBeenSet = true;
+       m_logFileNameHasBeenSet = true;
     }
     XmlNode lastWrittenNode = resultNode.FirstChild("LastWritten");
     if(!lastWrittenNode.IsNull())
     {
       m_lastWritten = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastWrittenNode.GetText()).c_str()).c_str());
       m_lastWrittenHasBeenSet = true;
+       m_lastWrittenHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
+       m_sizeHasBeenSet = true;
     }
   }
 

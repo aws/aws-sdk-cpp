@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-TopicConfiguration::TopicConfiguration() : 
-    m_idHasBeenSet(false),
-    m_topicArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 TopicConfiguration::TopicConfiguration(const XmlNode& xmlNode)
-  : TopicConfiguration()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ TopicConfiguration& TopicConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode topicArnNode = resultNode.FirstChild("Topic");
     if(!topicArnNode.IsNull())
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
         eventMember = eventMember.NextNode("Event");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
   }
 

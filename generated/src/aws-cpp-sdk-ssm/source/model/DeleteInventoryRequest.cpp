@@ -12,17 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInventoryRequest::DeleteInventoryRequest() : 
-    m_typeNameHasBeenSet(false),
-    m_schemaDeleteOption(InventorySchemaDeleteOption::NOT_SET),
-    m_schemaDeleteOptionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteInventoryRequest::SerializePayload() const
 {
   JsonValue payload;

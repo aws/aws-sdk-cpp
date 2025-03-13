@@ -36,7 +36,7 @@ namespace Model
   class VpcConnectionInfo
   {
   public:
-    AWS_KAFKA_API VpcConnectionInfo();
+    AWS_KAFKA_API VpcConnectionInfo() = default;
     AWS_KAFKA_API VpcConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API VpcConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
       
      *   
      */
-    inline const Aws::String& GetVpcConnectionArn() const{ return m_vpcConnectionArn; }
+    inline const Aws::String& GetVpcConnectionArn() const { return m_vpcConnectionArn; }
     inline bool VpcConnectionArnHasBeenSet() const { return m_vpcConnectionArnHasBeenSet; }
-    inline void SetVpcConnectionArn(const Aws::String& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = value; }
-    inline void SetVpcConnectionArn(Aws::String&& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = std::move(value); }
-    inline void SetVpcConnectionArn(const char* value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn.assign(value); }
-    inline VpcConnectionInfo& WithVpcConnectionArn(const Aws::String& value) { SetVpcConnectionArn(value); return *this;}
-    inline VpcConnectionInfo& WithVpcConnectionArn(Aws::String&& value) { SetVpcConnectionArn(std::move(value)); return *this;}
-    inline VpcConnectionInfo& WithVpcConnectionArn(const char* value) { SetVpcConnectionArn(value); return *this;}
+    template<typename VpcConnectionArnT = Aws::String>
+    void SetVpcConnectionArn(VpcConnectionArnT&& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = std::forward<VpcConnectionArnT>(value); }
+    template<typename VpcConnectionArnT = Aws::String>
+    VpcConnectionInfo& WithVpcConnectionArn(VpcConnectionArnT&& value) { SetVpcConnectionArn(std::forward<VpcConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
             <p>The owner of the VPC Connection.</p>
          
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline VpcConnectionInfo& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline VpcConnectionInfo& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline VpcConnectionInfo& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    VpcConnectionInfo& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,12 @@ namespace Model
  
      *        
      */
-    inline const UserIdentity& GetUserIdentity() const{ return m_userIdentity; }
+    inline const UserIdentity& GetUserIdentity() const { return m_userIdentity; }
     inline bool UserIdentityHasBeenSet() const { return m_userIdentityHasBeenSet; }
-    inline void SetUserIdentity(const UserIdentity& value) { m_userIdentityHasBeenSet = true; m_userIdentity = value; }
-    inline void SetUserIdentity(UserIdentity&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::move(value); }
-    inline VpcConnectionInfo& WithUserIdentity(const UserIdentity& value) { SetUserIdentity(value); return *this;}
-    inline VpcConnectionInfo& WithUserIdentity(UserIdentity&& value) { SetUserIdentity(std::move(value)); return *this;}
+    template<typename UserIdentityT = UserIdentity>
+    void SetUserIdentity(UserIdentityT&& value) { m_userIdentityHasBeenSet = true; m_userIdentity = std::forward<UserIdentityT>(value); }
+    template<typename UserIdentityT = UserIdentity>
+    VpcConnectionInfo& WithUserIdentity(UserIdentityT&& value) { SetUserIdentity(std::forward<UserIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +93,12 @@ namespace Model
       
      *   
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline VpcConnectionInfo& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline VpcConnectionInfo& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    VpcConnectionInfo& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,7 +111,7 @@ namespace Model
     UserIdentity m_userIdentity;
     bool m_userIdentityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

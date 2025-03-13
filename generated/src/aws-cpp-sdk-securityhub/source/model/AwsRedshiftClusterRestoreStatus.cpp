@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterRestoreStatus::AwsRedshiftClusterRestoreStatus() : 
-    m_currentRestoreRateInMegaBytesPerSecond(0.0),
-    m_currentRestoreRateInMegaBytesPerSecondHasBeenSet(false),
-    m_elapsedTimeInSeconds(0),
-    m_elapsedTimeInSecondsHasBeenSet(false),
-    m_estimatedTimeToCompletionInSeconds(0),
-    m_estimatedTimeToCompletionInSecondsHasBeenSet(false),
-    m_progressInMegaBytes(0),
-    m_progressInMegaBytesHasBeenSet(false),
-    m_snapshotSizeInMegaBytes(0),
-    m_snapshotSizeInMegaBytesHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterRestoreStatus::AwsRedshiftClusterRestoreStatus(JsonView jsonValue)
-  : AwsRedshiftClusterRestoreStatus()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ AwsRedshiftClusterRestoreStatus& AwsRedshiftClusterRestoreStatus::operator =(Jso
   if(jsonValue.ValueExists("CurrentRestoreRateInMegaBytesPerSecond"))
   {
     m_currentRestoreRateInMegaBytesPerSecond = jsonValue.GetDouble("CurrentRestoreRateInMegaBytesPerSecond");
-
     m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElapsedTimeInSeconds"))
   {
     m_elapsedTimeInSeconds = jsonValue.GetInt64("ElapsedTimeInSeconds");
-
     m_elapsedTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedTimeToCompletionInSeconds"))
   {
     m_estimatedTimeToCompletionInSeconds = jsonValue.GetInt64("EstimatedTimeToCompletionInSeconds");
-
     m_estimatedTimeToCompletionInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressInMegaBytes"))
   {
     m_progressInMegaBytes = jsonValue.GetInt64("ProgressInMegaBytes");
-
     m_progressInMegaBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotSizeInMegaBytes"))
   {
     m_snapshotSizeInMegaBytes = jsonValue.GetInt64("SnapshotSizeInMegaBytes");
-
     m_snapshotSizeInMegaBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

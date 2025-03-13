@@ -12,11 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdMappingWorkflowRequest::GetIdMappingWorkflowRequest() : 
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String GetIdMappingWorkflowRequest::SerializePayload() const
 {
   return {};

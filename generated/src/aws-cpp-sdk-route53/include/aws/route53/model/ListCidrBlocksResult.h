@@ -29,7 +29,7 @@ namespace Model
   class ListCidrBlocksResult
   {
   public:
-    AWS_ROUTE53_API ListCidrBlocksResult();
+    AWS_ROUTE53_API ListCidrBlocksResult() = default;
     AWS_ROUTE53_API ListCidrBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListCidrBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * enumerating results. </p> <p>If no value is provided, the listing of results
      * starts from the beginning.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCidrBlocksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCidrBlocksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCidrBlocksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCidrBlocksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A complex type that contains information about the CIDR blocks.</p>
      */
-    inline const Aws::Vector<CidrBlockSummary>& GetCidrBlocks() const{ return m_cidrBlocks; }
-    inline void SetCidrBlocks(const Aws::Vector<CidrBlockSummary>& value) { m_cidrBlocks = value; }
-    inline void SetCidrBlocks(Aws::Vector<CidrBlockSummary>&& value) { m_cidrBlocks = std::move(value); }
-    inline ListCidrBlocksResult& WithCidrBlocks(const Aws::Vector<CidrBlockSummary>& value) { SetCidrBlocks(value); return *this;}
-    inline ListCidrBlocksResult& WithCidrBlocks(Aws::Vector<CidrBlockSummary>&& value) { SetCidrBlocks(std::move(value)); return *this;}
-    inline ListCidrBlocksResult& AddCidrBlocks(const CidrBlockSummary& value) { m_cidrBlocks.push_back(value); return *this; }
-    inline ListCidrBlocksResult& AddCidrBlocks(CidrBlockSummary&& value) { m_cidrBlocks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CidrBlockSummary>& GetCidrBlocks() const { return m_cidrBlocks; }
+    template<typename CidrBlocksT = Aws::Vector<CidrBlockSummary>>
+    void SetCidrBlocks(CidrBlocksT&& value) { m_cidrBlocksHasBeenSet = true; m_cidrBlocks = std::forward<CidrBlocksT>(value); }
+    template<typename CidrBlocksT = Aws::Vector<CidrBlockSummary>>
+    ListCidrBlocksResult& WithCidrBlocks(CidrBlocksT&& value) { SetCidrBlocks(std::forward<CidrBlocksT>(value)); return *this;}
+    template<typename CidrBlocksT = CidrBlockSummary>
+    ListCidrBlocksResult& AddCidrBlocks(CidrBlocksT&& value) { m_cidrBlocksHasBeenSet = true; m_cidrBlocks.emplace_back(std::forward<CidrBlocksT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCidrBlocksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCidrBlocksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCidrBlocksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCidrBlocksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CidrBlockSummary> m_cidrBlocks;
+    bool m_cidrBlocksHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

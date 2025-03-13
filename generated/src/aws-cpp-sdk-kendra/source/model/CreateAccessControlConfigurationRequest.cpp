@@ -12,17 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccessControlConfigurationRequest::CreateAccessControlConfigurationRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_hierarchicalAccessControlListHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateAccessControlConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

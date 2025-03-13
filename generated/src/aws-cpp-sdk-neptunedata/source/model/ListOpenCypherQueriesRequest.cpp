@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListOpenCypherQueriesRequest::ListOpenCypherQueriesRequest() : 
-    m_includeWaiting(false),
-    m_includeWaitingHasBeenSet(false)
-{
-}
-
 Aws::String ListOpenCypherQueriesRequest::SerializePayload() const
 {
   return {};

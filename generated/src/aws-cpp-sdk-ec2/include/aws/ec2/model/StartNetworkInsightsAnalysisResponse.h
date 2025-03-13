@@ -28,7 +28,7 @@ namespace Model
   class StartNetworkInsightsAnalysisResponse
   {
   public:
-    AWS_EC2_API StartNetworkInsightsAnalysisResponse();
+    AWS_EC2_API StartNetworkInsightsAnalysisResponse() = default;
     AWS_EC2_API StartNetworkInsightsAnalysisResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API StartNetworkInsightsAnalysisResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the network insights analysis.</p>
      */
-    inline const NetworkInsightsAnalysis& GetNetworkInsightsAnalysis() const{ return m_networkInsightsAnalysis; }
-    inline void SetNetworkInsightsAnalysis(const NetworkInsightsAnalysis& value) { m_networkInsightsAnalysis = value; }
-    inline void SetNetworkInsightsAnalysis(NetworkInsightsAnalysis&& value) { m_networkInsightsAnalysis = std::move(value); }
-    inline StartNetworkInsightsAnalysisResponse& WithNetworkInsightsAnalysis(const NetworkInsightsAnalysis& value) { SetNetworkInsightsAnalysis(value); return *this;}
-    inline StartNetworkInsightsAnalysisResponse& WithNetworkInsightsAnalysis(NetworkInsightsAnalysis&& value) { SetNetworkInsightsAnalysis(std::move(value)); return *this;}
+    inline const NetworkInsightsAnalysis& GetNetworkInsightsAnalysis() const { return m_networkInsightsAnalysis; }
+    template<typename NetworkInsightsAnalysisT = NetworkInsightsAnalysis>
+    void SetNetworkInsightsAnalysis(NetworkInsightsAnalysisT&& value) { m_networkInsightsAnalysisHasBeenSet = true; m_networkInsightsAnalysis = std::forward<NetworkInsightsAnalysisT>(value); }
+    template<typename NetworkInsightsAnalysisT = NetworkInsightsAnalysis>
+    StartNetworkInsightsAnalysisResponse& WithNetworkInsightsAnalysis(NetworkInsightsAnalysisT&& value) { SetNetworkInsightsAnalysis(std::forward<NetworkInsightsAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline StartNetworkInsightsAnalysisResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline StartNetworkInsightsAnalysisResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    StartNetworkInsightsAnalysisResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     NetworkInsightsAnalysis m_networkInsightsAnalysis;
+    bool m_networkInsightsAnalysisHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

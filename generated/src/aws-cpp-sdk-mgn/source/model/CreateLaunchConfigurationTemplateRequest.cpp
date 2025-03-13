@@ -12,32 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLaunchConfigurationTemplateRequest::CreateLaunchConfigurationTemplateRequest() : 
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_bootMode(BootMode::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_copyPrivateIp(false),
-    m_copyPrivateIpHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_enableMapAutoTagging(false),
-    m_enableMapAutoTaggingHasBeenSet(false),
-    m_largeVolumeConfHasBeenSet(false),
-    m_launchDisposition(LaunchDisposition::NOT_SET),
-    m_launchDispositionHasBeenSet(false),
-    m_licensingHasBeenSet(false),
-    m_mapAutoTaggingMpeIDHasBeenSet(false),
-    m_postLaunchActionsHasBeenSet(false),
-    m_smallVolumeConfHasBeenSet(false),
-    m_smallVolumeMaxSize(0),
-    m_smallVolumeMaxSizeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
-    m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
-{
-}
-
 Aws::String CreateLaunchConfigurationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

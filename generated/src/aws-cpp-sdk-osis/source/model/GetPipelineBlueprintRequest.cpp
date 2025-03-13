@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetPipelineBlueprintRequest::GetPipelineBlueprintRequest() : 
-    m_blueprintNameHasBeenSet(false),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String GetPipelineBlueprintRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-RestartBatchJobIdentifier::RestartBatchJobIdentifier() : 
-    m_executionIdHasBeenSet(false),
-    m_jobStepRestartMarkerHasBeenSet(false)
-{
-}
-
 RestartBatchJobIdentifier::RestartBatchJobIdentifier(JsonView jsonValue)
-  : RestartBatchJobIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RestartBatchJobIdentifier& RestartBatchJobIdentifier::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobStepRestartMarker"))
   {
     m_jobStepRestartMarker = jsonValue.GetObject("jobStepRestartMarker");
-
     m_jobStepRestartMarkerHasBeenSet = true;
   }
-
   return *this;
 }
 

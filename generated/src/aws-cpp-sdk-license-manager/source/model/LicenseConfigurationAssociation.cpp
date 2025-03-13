@@ -18,18 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-LicenseConfigurationAssociation::LicenseConfigurationAssociation() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_associationTimeHasBeenSet(false),
-    m_amiAssociationScopeHasBeenSet(false)
-{
-}
-
 LicenseConfigurationAssociation::LicenseConfigurationAssociation(JsonView jsonValue)
-  : LicenseConfigurationAssociation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ LicenseConfigurationAssociation& LicenseConfigurationAssociation::operator =(Jso
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceOwnerId"))
   {
     m_resourceOwnerId = jsonValue.GetString("ResourceOwnerId");
-
     m_resourceOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationTime"))
   {
     m_associationTime = jsonValue.GetDouble("AssociationTime");
-
     m_associationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmiAssociationScope"))
   {
     m_amiAssociationScope = jsonValue.GetString("AmiAssociationScope");
-
     m_amiAssociationScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class Change
   {
   public:
-    AWS_ROUTE53_API Change();
+    AWS_ROUTE53_API Change() = default;
     AWS_ROUTE53_API Change(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API Change& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,28 +55,26 @@ namespace Model
      * Route 53 creates it. If a resource record set does exist, Route 53 updates it
      * with the values in the request.</p> </li> </ul>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline Change& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline Change& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline Change& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the resource record set to create, delete, or update.</p>
      */
-    inline const ResourceRecordSet& GetResourceRecordSet() const{ return m_resourceRecordSet; }
+    inline const ResourceRecordSet& GetResourceRecordSet() const { return m_resourceRecordSet; }
     inline bool ResourceRecordSetHasBeenSet() const { return m_resourceRecordSetHasBeenSet; }
-    inline void SetResourceRecordSet(const ResourceRecordSet& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = value; }
-    inline void SetResourceRecordSet(ResourceRecordSet&& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = std::move(value); }
-    inline Change& WithResourceRecordSet(const ResourceRecordSet& value) { SetResourceRecordSet(value); return *this;}
-    inline Change& WithResourceRecordSet(ResourceRecordSet&& value) { SetResourceRecordSet(std::move(value)); return *this;}
+    template<typename ResourceRecordSetT = ResourceRecordSet>
+    void SetResourceRecordSet(ResourceRecordSetT&& value) { m_resourceRecordSetHasBeenSet = true; m_resourceRecordSet = std::forward<ResourceRecordSetT>(value); }
+    template<typename ResourceRecordSetT = ResourceRecordSet>
+    Change& WithResourceRecordSet(ResourceRecordSetT&& value) { SetResourceRecordSet(std::forward<ResourceRecordSetT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     ResourceRecordSet m_resourceRecordSet;

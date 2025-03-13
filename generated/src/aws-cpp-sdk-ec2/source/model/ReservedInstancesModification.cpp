@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesModification::ReservedInstancesModification() : 
-    m_clientTokenHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_effectiveDateHasBeenSet(false),
-    m_modificationResultsHasBeenSet(false),
-    m_reservedInstancesIdsHasBeenSet(false),
-    m_reservedInstancesModificationIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
-{
-}
-
 ReservedInstancesModification::ReservedInstancesModification(const XmlNode& xmlNode)
-  : ReservedInstancesModification()
 {
   *this = xmlNode;
 }
@@ -50,66 +36,75 @@ ReservedInstancesModification& ReservedInstancesModification::operator =(const X
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
+       m_clientTokenHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode effectiveDateNode = resultNode.FirstChild("effectiveDate");
     if(!effectiveDateNode.IsNull())
     {
       m_effectiveDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(effectiveDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_effectiveDateHasBeenSet = true;
+       m_effectiveDateHasBeenSet = true;
     }
     XmlNode modificationResultsNode = resultNode.FirstChild("modificationResultSet");
     if(!modificationResultsNode.IsNull())
     {
       XmlNode modificationResultsMember = modificationResultsNode.FirstChild("item");
+      m_modificationResultsHasBeenSet = !modificationResultsMember.IsNull();
       while(!modificationResultsMember.IsNull())
       {
         m_modificationResults.push_back(modificationResultsMember);
         modificationResultsMember = modificationResultsMember.NextNode("item");
       }
 
-      m_modificationResultsHasBeenSet = true;
+       m_modificationResultsHasBeenSet = true;
     }
     XmlNode reservedInstancesIdsNode = resultNode.FirstChild("reservedInstancesSet");
     if(!reservedInstancesIdsNode.IsNull())
     {
       XmlNode reservedInstancesIdsMember = reservedInstancesIdsNode.FirstChild("item");
+      m_reservedInstancesIdsHasBeenSet = !reservedInstancesIdsMember.IsNull();
       while(!reservedInstancesIdsMember.IsNull())
       {
         m_reservedInstancesIds.push_back(reservedInstancesIdsMember);
         reservedInstancesIdsMember = reservedInstancesIdsMember.NextNode("item");
       }
 
-      m_reservedInstancesIdsHasBeenSet = true;
+       m_reservedInstancesIdsHasBeenSet = true;
     }
     XmlNode reservedInstancesModificationIdNode = resultNode.FirstChild("reservedInstancesModificationId");
     if(!reservedInstancesModificationIdNode.IsNull())
     {
       m_reservedInstancesModificationId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesModificationIdNode.GetText());
       m_reservedInstancesModificationIdHasBeenSet = true;
+       m_reservedInstancesModificationIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("updateDate");
     if(!updateDateNode.IsNull())
     {
       m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
+       m_updateDateHasBeenSet = true;
     }
   }
 

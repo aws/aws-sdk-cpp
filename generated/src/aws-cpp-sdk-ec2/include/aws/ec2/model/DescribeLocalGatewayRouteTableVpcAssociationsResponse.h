@@ -30,7 +30,7 @@ namespace Model
   class DescribeLocalGatewayRouteTableVpcAssociationsResponse
   {
   public:
-    AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse();
+    AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse() = default;
     AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the associations.</p>
      */
-    inline const Aws::Vector<LocalGatewayRouteTableVpcAssociation>& GetLocalGatewayRouteTableVpcAssociations() const{ return m_localGatewayRouteTableVpcAssociations; }
-    inline void SetLocalGatewayRouteTableVpcAssociations(const Aws::Vector<LocalGatewayRouteTableVpcAssociation>& value) { m_localGatewayRouteTableVpcAssociations = value; }
-    inline void SetLocalGatewayRouteTableVpcAssociations(Aws::Vector<LocalGatewayRouteTableVpcAssociation>&& value) { m_localGatewayRouteTableVpcAssociations = std::move(value); }
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithLocalGatewayRouteTableVpcAssociations(const Aws::Vector<LocalGatewayRouteTableVpcAssociation>& value) { SetLocalGatewayRouteTableVpcAssociations(value); return *this;}
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithLocalGatewayRouteTableVpcAssociations(Aws::Vector<LocalGatewayRouteTableVpcAssociation>&& value) { SetLocalGatewayRouteTableVpcAssociations(std::move(value)); return *this;}
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& AddLocalGatewayRouteTableVpcAssociations(const LocalGatewayRouteTableVpcAssociation& value) { m_localGatewayRouteTableVpcAssociations.push_back(value); return *this; }
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& AddLocalGatewayRouteTableVpcAssociations(LocalGatewayRouteTableVpcAssociation&& value) { m_localGatewayRouteTableVpcAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LocalGatewayRouteTableVpcAssociation>& GetLocalGatewayRouteTableVpcAssociations() const { return m_localGatewayRouteTableVpcAssociations; }
+    template<typename LocalGatewayRouteTableVpcAssociationsT = Aws::Vector<LocalGatewayRouteTableVpcAssociation>>
+    void SetLocalGatewayRouteTableVpcAssociations(LocalGatewayRouteTableVpcAssociationsT&& value) { m_localGatewayRouteTableVpcAssociationsHasBeenSet = true; m_localGatewayRouteTableVpcAssociations = std::forward<LocalGatewayRouteTableVpcAssociationsT>(value); }
+    template<typename LocalGatewayRouteTableVpcAssociationsT = Aws::Vector<LocalGatewayRouteTableVpcAssociation>>
+    DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithLocalGatewayRouteTableVpcAssociations(LocalGatewayRouteTableVpcAssociationsT&& value) { SetLocalGatewayRouteTableVpcAssociations(std::forward<LocalGatewayRouteTableVpcAssociationsT>(value)); return *this;}
+    template<typename LocalGatewayRouteTableVpcAssociationsT = LocalGatewayRouteTableVpcAssociation>
+    DescribeLocalGatewayRouteTableVpcAssociationsResponse& AddLocalGatewayRouteTableVpcAssociations(LocalGatewayRouteTableVpcAssociationsT&& value) { m_localGatewayRouteTableVpcAssociationsHasBeenSet = true; m_localGatewayRouteTableVpcAssociations.emplace_back(std::forward<LocalGatewayRouteTableVpcAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeLocalGatewayRouteTableVpcAssociationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LocalGatewayRouteTableVpcAssociation> m_localGatewayRouteTableVpcAssociations;
+    bool m_localGatewayRouteTableVpcAssociationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

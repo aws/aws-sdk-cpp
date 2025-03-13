@@ -34,7 +34,7 @@ namespace Model
   class DeploymentStage
   {
   public:
-    AWS_SAGEMAKER_API DeploymentStage();
+    AWS_SAGEMAKER_API DeploymentStage() = default;
     AWS_SAGEMAKER_API DeploymentStage(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DeploymentStage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,36 @@ namespace Model
     /**
      * <p>The name of the stage.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline DeploymentStage& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline DeploymentStage& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline DeploymentStage& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    DeploymentStage& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration of the devices in the stage.</p>
      */
-    inline const DeviceSelectionConfig& GetDeviceSelectionConfig() const{ return m_deviceSelectionConfig; }
+    inline const DeviceSelectionConfig& GetDeviceSelectionConfig() const { return m_deviceSelectionConfig; }
     inline bool DeviceSelectionConfigHasBeenSet() const { return m_deviceSelectionConfigHasBeenSet; }
-    inline void SetDeviceSelectionConfig(const DeviceSelectionConfig& value) { m_deviceSelectionConfigHasBeenSet = true; m_deviceSelectionConfig = value; }
-    inline void SetDeviceSelectionConfig(DeviceSelectionConfig&& value) { m_deviceSelectionConfigHasBeenSet = true; m_deviceSelectionConfig = std::move(value); }
-    inline DeploymentStage& WithDeviceSelectionConfig(const DeviceSelectionConfig& value) { SetDeviceSelectionConfig(value); return *this;}
-    inline DeploymentStage& WithDeviceSelectionConfig(DeviceSelectionConfig&& value) { SetDeviceSelectionConfig(std::move(value)); return *this;}
+    template<typename DeviceSelectionConfigT = DeviceSelectionConfig>
+    void SetDeviceSelectionConfig(DeviceSelectionConfigT&& value) { m_deviceSelectionConfigHasBeenSet = true; m_deviceSelectionConfig = std::forward<DeviceSelectionConfigT>(value); }
+    template<typename DeviceSelectionConfigT = DeviceSelectionConfig>
+    DeploymentStage& WithDeviceSelectionConfig(DeviceSelectionConfigT&& value) { SetDeviceSelectionConfig(std::forward<DeviceSelectionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration of the deployment details.</p>
      */
-    inline const EdgeDeploymentConfig& GetDeploymentConfig() const{ return m_deploymentConfig; }
+    inline const EdgeDeploymentConfig& GetDeploymentConfig() const { return m_deploymentConfig; }
     inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
-    inline void SetDeploymentConfig(const EdgeDeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
-    inline void SetDeploymentConfig(EdgeDeploymentConfig&& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = std::move(value); }
-    inline DeploymentStage& WithDeploymentConfig(const EdgeDeploymentConfig& value) { SetDeploymentConfig(value); return *this;}
-    inline DeploymentStage& WithDeploymentConfig(EdgeDeploymentConfig&& value) { SetDeploymentConfig(std::move(value)); return *this;}
+    template<typename DeploymentConfigT = EdgeDeploymentConfig>
+    void SetDeploymentConfig(DeploymentConfigT&& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = std::forward<DeploymentConfigT>(value); }
+    template<typename DeploymentConfigT = EdgeDeploymentConfig>
+    DeploymentStage& WithDeploymentConfig(DeploymentConfigT&& value) { SetDeploymentConfig(std::forward<DeploymentConfigT>(value)); return *this;}
     ///@}
   private:
 

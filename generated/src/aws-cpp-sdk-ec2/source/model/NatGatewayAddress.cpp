@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NatGatewayAddress::NatGatewayAddress() : 
-    m_allocationIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_isPrimary(false),
-    m_isPrimaryHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_status(NatGatewayAddressStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 NatGatewayAddress::NatGatewayAddress(const XmlNode& xmlNode)
-  : NatGatewayAddress()
 {
   *this = xmlNode;
 }
@@ -51,48 +36,56 @@ NatGatewayAddress& NatGatewayAddress::operator =(const XmlNode& xmlNode)
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
+       m_allocationIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpNode = resultNode.FirstChild("privateIp");
     if(!privateIpNode.IsNull())
     {
       m_privateIp = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpNode.GetText());
       m_privateIpHasBeenSet = true;
+       m_privateIpHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
+       m_publicIpHasBeenSet = true;
     }
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
+       m_associationIdHasBeenSet = true;
     }
     XmlNode isPrimaryNode = resultNode.FirstChild("isPrimary");
     if(!isPrimaryNode.IsNull())
     {
       m_isPrimary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isPrimaryNode.GetText()).c_str()).c_str());
       m_isPrimaryHasBeenSet = true;
+       m_isPrimaryHasBeenSet = true;
     }
     XmlNode failureMessageNode = resultNode.FirstChild("failureMessage");
     if(!failureMessageNode.IsNull())
     {
       m_failureMessage = Aws::Utils::Xml::DecodeEscapedXmlText(failureMessageNode.GetText());
       m_failureMessageHasBeenSet = true;
+       m_failureMessageHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = NatGatewayAddressStatusMapper::GetNatGatewayAddressStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = NatGatewayAddressStatusMapper::GetNatGatewayAddressStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

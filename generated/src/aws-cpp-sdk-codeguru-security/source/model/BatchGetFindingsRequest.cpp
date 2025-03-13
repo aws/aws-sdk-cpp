@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetFindingsRequest::BatchGetFindingsRequest() : 
-    m_findingIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

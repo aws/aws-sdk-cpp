@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFieldLevelEncryptionProfiles2020_05_31Request::ListFieldLevelEncryptionProfiles2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListFieldLevelEncryptionProfiles2020_05_31Request::SerializePayload() const
 {

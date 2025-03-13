@@ -18,22 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-JobParameters::JobParameters() : 
-    m_formatHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_archiveIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sNSTopicHasBeenSet(false),
-    m_retrievalByteRangeHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_inventoryRetrievalParametersHasBeenSet(false),
-    m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
-{
-}
-
 JobParameters::JobParameters(JsonView jsonValue)
-  : JobParameters()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ JobParameters& JobParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveId"))
   {
     m_archiveId = jsonValue.GetString("ArchiveId");
-
     m_archiveIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNSTopic"))
   {
     m_sNSTopic = jsonValue.GetString("SNSTopic");
-
     m_sNSTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetrievalByteRange"))
   {
     m_retrievalByteRange = jsonValue.GetString("RetrievalByteRange");
-
     m_retrievalByteRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = jsonValue.GetString("Tier");
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InventoryRetrievalParameters"))
   {
     m_inventoryRetrievalParameters = jsonValue.GetObject("InventoryRetrievalParameters");
-
     m_inventoryRetrievalParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectParameters"))
   {
     m_selectParameters = jsonValue.GetObject("SelectParameters");
-
     m_selectParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputLocation"))
   {
     m_outputLocation = jsonValue.GetObject("OutputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

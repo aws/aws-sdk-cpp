@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AnalyzeDocumentResult::AnalyzeDocumentResult()
-{
-}
-
 AnalyzeDocumentResult::AnalyzeDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AnalyzeDocumentResult& AnalyzeDocumentResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("DocumentMetadata"))
   {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
-
+    m_documentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocks"))
   {
     Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
@@ -42,26 +37,25 @@ AnalyzeDocumentResult& AnalyzeDocumentResult::operator =(const Aws::AmazonWebSer
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
     }
+    m_blocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanLoopActivationOutput"))
   {
     m_humanLoopActivationOutput = jsonValue.GetObject("HumanLoopActivationOutput");
-
+    m_humanLoopActivationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzeDocumentModelVersion"))
   {
     m_analyzeDocumentModelVersion = jsonValue.GetString("AnalyzeDocumentModelVersion");
-
+    m_analyzeDocumentModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

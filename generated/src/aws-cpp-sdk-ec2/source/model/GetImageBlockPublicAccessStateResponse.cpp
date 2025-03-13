@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImageBlockPublicAccessStateResponse::GetImageBlockPublicAccessStateResponse() : 
-    m_managedBy(ManagedBy::NOT_SET)
-{
-}
-
 GetImageBlockPublicAccessStateResponse::GetImageBlockPublicAccessStateResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetImageBlockPublicAccessStateResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ GetImageBlockPublicAccessStateResponse& GetImageBlockPublicAccessStateResponse::
     if(!imageBlockPublicAccessStateNode.IsNull())
     {
       m_imageBlockPublicAccessState = Aws::Utils::Xml::DecodeEscapedXmlText(imageBlockPublicAccessStateNode.GetText());
+      m_imageBlockPublicAccessStateHasBeenSet = true;
     }
     XmlNode managedByNode = resultNode.FirstChild("managedBy");
     if(!managedByNode.IsNull())
     {
-      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()));
+      m_managedByHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ GetImageBlockPublicAccessStateResponse& GetImageBlockPublicAccessStateResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetImageBlockPublicAccessStateResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

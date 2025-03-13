@@ -18,29 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-ManagedNotificationEvent::ManagedNotificationEvent() : 
-    m_schemaVersion(SchemaVersion::NOT_SET),
-    m_schemaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageComponentsHasBeenSet(false),
-    m_sourceEventDetailUrlHasBeenSet(false),
-    m_sourceEventDetailUrlDisplayTextHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false),
-    m_eventStatus(EventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false),
-    m_aggregationEventType(AggregationEventType::NOT_SET),
-    m_aggregationEventTypeHasBeenSet(false),
-    m_aggregationSummaryHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_textPartsHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 ManagedNotificationEvent::ManagedNotificationEvent(JsonView jsonValue)
-  : ManagedNotificationEvent()
 {
   *this = jsonValue;
 }
@@ -50,80 +28,58 @@ ManagedNotificationEvent& ManagedNotificationEvent::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = SchemaVersionMapper::GetSchemaVersionForName(jsonValue.GetString("schemaVersion"));
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageComponents"))
   {
     m_messageComponents = jsonValue.GetObject("messageComponents");
-
     m_messageComponentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEventDetailUrl"))
   {
     m_sourceEventDetailUrl = jsonValue.GetString("sourceEventDetailUrl");
-
     m_sourceEventDetailUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEventDetailUrlDisplayText"))
   {
     m_sourceEventDetailUrlDisplayText = jsonValue.GetString("sourceEventDetailUrlDisplayText");
-
     m_sourceEventDetailUrlDisplayTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationType"))
   {
     m_notificationType = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("notificationType"));
-
     m_notificationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventStatus"))
   {
     m_eventStatus = EventStatusMapper::GetEventStatusForName(jsonValue.GetString("eventStatus"));
-
     m_eventStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationEventType"))
   {
     m_aggregationEventType = AggregationEventTypeMapper::GetAggregationEventTypeForName(jsonValue.GetString("aggregationEventType"));
-
     m_aggregationEventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationSummary"))
   {
     m_aggregationSummary = jsonValue.GetObject("aggregationSummary");
-
     m_aggregationSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textParts"))
   {
     Aws::Map<Aws::String, JsonView> textPartsJsonMap = jsonValue.GetObject("textParts").GetAllObjects();
@@ -133,14 +89,11 @@ ManagedNotificationEvent& ManagedNotificationEvent::operator =(JsonView jsonValu
     }
     m_textPartsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

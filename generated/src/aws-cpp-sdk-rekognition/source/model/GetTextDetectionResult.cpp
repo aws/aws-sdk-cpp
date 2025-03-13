@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTextDetectionResult::GetTextDetectionResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
-{
-}
-
 GetTextDetectionResult::GetTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTextDetectionResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetTextDetectionResult& GetTextDetectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VideoMetadata"))
   {
     m_videoMetadata = jsonValue.GetObject("VideoMetadata");
-
+    m_videoMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextDetections"))
   {
     Aws::Utils::Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
@@ -56,44 +47,40 @@ GetTextDetectionResult& GetTextDetectionResult::operator =(const Aws::AmazonWebS
     {
       m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());
     }
+    m_textDetectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextModelVersion"))
   {
     m_textModelVersion = jsonValue.GetString("TextModelVersion");
-
+    m_textModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
+    m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobTag"))
   {
     m_jobTag = jsonValue.GetString("JobTag");
-
+    m_jobTagHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SelectiveExecutionResult::SelectiveExecutionResult() : 
-    m_sourcePipelineExecutionArnHasBeenSet(false)
-{
-}
-
 SelectiveExecutionResult::SelectiveExecutionResult(JsonView jsonValue)
-  : SelectiveExecutionResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SelectiveExecutionResult& SelectiveExecutionResult::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SourcePipelineExecutionArn"))
   {
     m_sourcePipelineExecutionArn = jsonValue.GetString("SourcePipelineExecutionArn");
-
     m_sourcePipelineExecutionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

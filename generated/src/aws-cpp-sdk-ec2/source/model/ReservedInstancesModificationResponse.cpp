@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesModificationResponse::ReservedInstancesModificationResponse() : 
-    m_reservedInstancesIdHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
-{
-}
-
 ReservedInstancesModificationResponse::ReservedInstancesModificationResponse(const XmlNode& xmlNode)
-  : ReservedInstancesModificationResponse()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ReservedInstancesModificationResponse& ReservedInstancesModificationResponse::op
     {
       m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
       m_reservedInstancesIdHasBeenSet = true;
+       m_reservedInstancesIdHasBeenSet = true;
     }
     XmlNode targetConfigurationNode = resultNode.FirstChild("targetConfiguration");
     if(!targetConfigurationNode.IsNull())
     {
       m_targetConfiguration = targetConfigurationNode;
       m_targetConfigurationHasBeenSet = true;
+       m_targetConfigurationHasBeenSet = true;
     }
   }
 

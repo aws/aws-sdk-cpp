@@ -12,17 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServerNeighborsRequest::ListServerNeighborsRequest() : 
-    m_configurationIdHasBeenSet(false),
-    m_portInformationNeeded(false),
-    m_portInformationNeededHasBeenSet(false),
-    m_neighborConfigurationIdsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListServerNeighborsRequest::SerializePayload() const
 {
   JsonValue payload;

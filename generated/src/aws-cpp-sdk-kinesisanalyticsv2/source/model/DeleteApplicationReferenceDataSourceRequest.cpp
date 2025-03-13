@@ -12,14 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationReferenceDataSourceRequest::DeleteApplicationReferenceDataSourceRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentApplicationVersionId(0),
-    m_currentApplicationVersionIdHasBeenSet(false),
-    m_referenceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationReferenceDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

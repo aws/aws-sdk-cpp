@@ -33,7 +33,7 @@ namespace Model
   class StreamProcessorSettingsForUpdate
   {
   public:
-    AWS_REKOGNITION_API StreamProcessorSettingsForUpdate();
+    AWS_REKOGNITION_API StreamProcessorSettingsForUpdate() = default;
     AWS_REKOGNITION_API StreamProcessorSettingsForUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessorSettingsForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p> The label detection settings you want to use for your stream processor. </p>
      */
-    inline const ConnectedHomeSettingsForUpdate& GetConnectedHomeForUpdate() const{ return m_connectedHomeForUpdate; }
+    inline const ConnectedHomeSettingsForUpdate& GetConnectedHomeForUpdate() const { return m_connectedHomeForUpdate; }
     inline bool ConnectedHomeForUpdateHasBeenSet() const { return m_connectedHomeForUpdateHasBeenSet; }
-    inline void SetConnectedHomeForUpdate(const ConnectedHomeSettingsForUpdate& value) { m_connectedHomeForUpdateHasBeenSet = true; m_connectedHomeForUpdate = value; }
-    inline void SetConnectedHomeForUpdate(ConnectedHomeSettingsForUpdate&& value) { m_connectedHomeForUpdateHasBeenSet = true; m_connectedHomeForUpdate = std::move(value); }
-    inline StreamProcessorSettingsForUpdate& WithConnectedHomeForUpdate(const ConnectedHomeSettingsForUpdate& value) { SetConnectedHomeForUpdate(value); return *this;}
-    inline StreamProcessorSettingsForUpdate& WithConnectedHomeForUpdate(ConnectedHomeSettingsForUpdate&& value) { SetConnectedHomeForUpdate(std::move(value)); return *this;}
+    template<typename ConnectedHomeForUpdateT = ConnectedHomeSettingsForUpdate>
+    void SetConnectedHomeForUpdate(ConnectedHomeForUpdateT&& value) { m_connectedHomeForUpdateHasBeenSet = true; m_connectedHomeForUpdate = std::forward<ConnectedHomeForUpdateT>(value); }
+    template<typename ConnectedHomeForUpdateT = ConnectedHomeSettingsForUpdate>
+    StreamProcessorSettingsForUpdate& WithConnectedHomeForUpdate(ConnectedHomeForUpdateT&& value) { SetConnectedHomeForUpdate(std::forward<ConnectedHomeForUpdateT>(value)); return *this;}
     ///@}
   private:
 

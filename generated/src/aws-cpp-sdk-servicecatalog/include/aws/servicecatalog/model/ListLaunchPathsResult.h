@@ -29,7 +29,7 @@ namespace Model
   class ListLaunchPathsResult
   {
   public:
-    AWS_SERVICECATALOG_API ListLaunchPathsResult();
+    AWS_SERVICECATALOG_API ListLaunchPathsResult() = default;
     AWS_SERVICECATALOG_API ListLaunchPathsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListLaunchPathsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the launch path.</p>
      */
-    inline const Aws::Vector<LaunchPathSummary>& GetLaunchPathSummaries() const{ return m_launchPathSummaries; }
-    inline void SetLaunchPathSummaries(const Aws::Vector<LaunchPathSummary>& value) { m_launchPathSummaries = value; }
-    inline void SetLaunchPathSummaries(Aws::Vector<LaunchPathSummary>&& value) { m_launchPathSummaries = std::move(value); }
-    inline ListLaunchPathsResult& WithLaunchPathSummaries(const Aws::Vector<LaunchPathSummary>& value) { SetLaunchPathSummaries(value); return *this;}
-    inline ListLaunchPathsResult& WithLaunchPathSummaries(Aws::Vector<LaunchPathSummary>&& value) { SetLaunchPathSummaries(std::move(value)); return *this;}
-    inline ListLaunchPathsResult& AddLaunchPathSummaries(const LaunchPathSummary& value) { m_launchPathSummaries.push_back(value); return *this; }
-    inline ListLaunchPathsResult& AddLaunchPathSummaries(LaunchPathSummary&& value) { m_launchPathSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LaunchPathSummary>& GetLaunchPathSummaries() const { return m_launchPathSummaries; }
+    template<typename LaunchPathSummariesT = Aws::Vector<LaunchPathSummary>>
+    void SetLaunchPathSummaries(LaunchPathSummariesT&& value) { m_launchPathSummariesHasBeenSet = true; m_launchPathSummaries = std::forward<LaunchPathSummariesT>(value); }
+    template<typename LaunchPathSummariesT = Aws::Vector<LaunchPathSummary>>
+    ListLaunchPathsResult& WithLaunchPathSummaries(LaunchPathSummariesT&& value) { SetLaunchPathSummaries(std::forward<LaunchPathSummariesT>(value)); return *this;}
+    template<typename LaunchPathSummariesT = LaunchPathSummary>
+    ListLaunchPathsResult& AddLaunchPathSummaries(LaunchPathSummariesT&& value) { m_launchPathSummariesHasBeenSet = true; m_launchPathSummaries.emplace_back(std::forward<LaunchPathSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListLaunchPathsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListLaunchPathsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListLaunchPathsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListLaunchPathsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLaunchPathsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLaunchPathsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLaunchPathsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLaunchPathsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LaunchPathSummary> m_launchPathSummaries;
+    bool m_launchPathSummariesHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

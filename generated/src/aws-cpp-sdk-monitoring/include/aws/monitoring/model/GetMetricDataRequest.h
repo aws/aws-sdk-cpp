@@ -26,7 +26,7 @@ namespace Model
   class GetMetricDataRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API GetMetricDataRequest();
+    AWS_CLOUDWATCH_API GetMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,14 @@ namespace Model
      * these structures can specify either a metric to retrieve, a Metrics Insights
      * query, or a math expression to perform on retrieved data. </p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
+    inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const { return m_metricDataQueries; }
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
-    inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
-    inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
-    inline GetMetricDataRequest& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
-    inline GetMetricDataRequest& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
-    inline GetMetricDataRequest& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
-    inline GetMetricDataRequest& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
+    template<typename MetricDataQueriesT = Aws::Vector<MetricDataQuery>>
+    void SetMetricDataQueries(MetricDataQueriesT&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::forward<MetricDataQueriesT>(value); }
+    template<typename MetricDataQueriesT = Aws::Vector<MetricDataQuery>>
+    GetMetricDataRequest& WithMetricDataQueries(MetricDataQueriesT&& value) { SetMetricDataQueries(std::forward<MetricDataQueriesT>(value)); return *this;}
+    template<typename MetricDataQueriesT = MetricDataQuery>
+    GetMetricDataRequest& AddMetricDataQueries(MetricDataQueriesT&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.emplace_back(std::forward<MetricDataQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,12 +83,12 @@ namespace Model
      * a faster response from CloudWatch than setting 12:07 or 12:29 as the
      * <code>StartTime</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetMetricDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +102,12 @@ namespace Model
      * or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than
      * setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetMetricDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +115,12 @@ namespace Model
      * <p>Include this value, if it was returned by the previous
      * <code>GetMetricData</code> operation, to get the next set of data points.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetMetricDataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetMetricDataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetMetricDataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetMetricDataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +132,10 @@ namespace Model
      * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
      * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
-    inline const ScanBy& GetScanBy() const{ return m_scanBy; }
+    inline ScanBy GetScanBy() const { return m_scanBy; }
     inline bool ScanByHasBeenSet() const { return m_scanByHasBeenSet; }
-    inline void SetScanBy(const ScanBy& value) { m_scanByHasBeenSet = true; m_scanBy = value; }
-    inline void SetScanBy(ScanBy&& value) { m_scanByHasBeenSet = true; m_scanBy = std::move(value); }
-    inline GetMetricDataRequest& WithScanBy(const ScanBy& value) { SetScanBy(value); return *this;}
-    inline GetMetricDataRequest& WithScanBy(ScanBy&& value) { SetScanBy(std::move(value)); return *this;}
+    inline void SetScanBy(ScanBy value) { m_scanByHasBeenSet = true; m_scanBy = value; }
+    inline GetMetricDataRequest& WithScanBy(ScanBy value) { SetScanBy(value); return *this;}
     ///@}
 
     ///@{
@@ -147,7 +143,7 @@ namespace Model
      * <p>The maximum number of data points the request should return before
      * paginating. If you omit this, the default of 100,800 is used.</p>
      */
-    inline int GetMaxDatapoints() const{ return m_maxDatapoints; }
+    inline int GetMaxDatapoints() const { return m_maxDatapoints; }
     inline bool MaxDatapointsHasBeenSet() const { return m_maxDatapointsHasBeenSet; }
     inline void SetMaxDatapoints(int value) { m_maxDatapointsHasBeenSet = true; m_maxDatapoints = value; }
     inline GetMetricDataRequest& WithMaxDatapoints(int value) { SetMaxDatapoints(value); return *this;}
@@ -159,31 +155,31 @@ namespace Model
      * use to specify your time zone so that the labels of returned data display the
      * correct time for your time zone. </p>
      */
-    inline const LabelOptions& GetLabelOptions() const{ return m_labelOptions; }
+    inline const LabelOptions& GetLabelOptions() const { return m_labelOptions; }
     inline bool LabelOptionsHasBeenSet() const { return m_labelOptionsHasBeenSet; }
-    inline void SetLabelOptions(const LabelOptions& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = value; }
-    inline void SetLabelOptions(LabelOptions&& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = std::move(value); }
-    inline GetMetricDataRequest& WithLabelOptions(const LabelOptions& value) { SetLabelOptions(value); return *this;}
-    inline GetMetricDataRequest& WithLabelOptions(LabelOptions&& value) { SetLabelOptions(std::move(value)); return *this;}
+    template<typename LabelOptionsT = LabelOptions>
+    void SetLabelOptions(LabelOptionsT&& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = std::forward<LabelOptionsT>(value); }
+    template<typename LabelOptionsT = LabelOptions>
+    GetMetricDataRequest& WithLabelOptions(LabelOptionsT&& value) { SetLabelOptions(std::forward<LabelOptionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
     bool m_metricDataQueriesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    ScanBy m_scanBy;
+    ScanBy m_scanBy{ScanBy::NOT_SET};
     bool m_scanByHasBeenSet = false;
 
-    int m_maxDatapoints;
+    int m_maxDatapoints{0};
     bool m_maxDatapointsHasBeenSet = false;
 
     LabelOptions m_labelOptions;

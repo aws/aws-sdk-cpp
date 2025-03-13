@@ -20,20 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TemplateProgress::TemplateProgress() : 
-    m_resourcesSucceeded(0),
-    m_resourcesSucceededHasBeenSet(false),
-    m_resourcesFailed(0),
-    m_resourcesFailedHasBeenSet(false),
-    m_resourcesProcessing(0),
-    m_resourcesProcessingHasBeenSet(false),
-    m_resourcesPending(0),
-    m_resourcesPendingHasBeenSet(false)
-{
-}
-
 TemplateProgress::TemplateProgress(const XmlNode& xmlNode)
-  : TemplateProgress()
 {
   *this = xmlNode;
 }
@@ -49,24 +36,28 @@ TemplateProgress& TemplateProgress::operator =(const XmlNode& xmlNode)
     {
       m_resourcesSucceeded = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourcesSucceededNode.GetText()).c_str()).c_str());
       m_resourcesSucceededHasBeenSet = true;
+       m_resourcesSucceededHasBeenSet = true;
     }
     XmlNode resourcesFailedNode = resultNode.FirstChild("ResourcesFailed");
     if(!resourcesFailedNode.IsNull())
     {
       m_resourcesFailed = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourcesFailedNode.GetText()).c_str()).c_str());
       m_resourcesFailedHasBeenSet = true;
+       m_resourcesFailedHasBeenSet = true;
     }
     XmlNode resourcesProcessingNode = resultNode.FirstChild("ResourcesProcessing");
     if(!resourcesProcessingNode.IsNull())
     {
       m_resourcesProcessing = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourcesProcessingNode.GetText()).c_str()).c_str());
       m_resourcesProcessingHasBeenSet = true;
+       m_resourcesProcessingHasBeenSet = true;
     }
     XmlNode resourcesPendingNode = resultNode.FirstChild("ResourcesPending");
     if(!resourcesPendingNode.IsNull())
     {
       m_resourcesPending = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourcesPendingNode.GetText()).c_str()).c_str());
       m_resourcesPendingHasBeenSet = true;
+       m_resourcesPendingHasBeenSet = true;
     }
   }
 

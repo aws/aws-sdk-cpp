@@ -18,20 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_clusterConfigurationHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(JsonView jsonValue)
-  : Snapshot()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterConfiguration"))
   {
     m_clusterConfiguration = jsonValue.GetObject("ClusterConfiguration");
-
     m_clusterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTiering"))
   {
     m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(jsonValue.GetString("DataTiering"));
-
     m_dataTieringHasBeenSet = true;
   }
-
   return *this;
 }
 

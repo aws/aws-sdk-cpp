@@ -12,15 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventConfigurationByResourceTypesRequest::UpdateEventConfigurationByResourceTypesRequest() : 
-    m_deviceRegistrationStateHasBeenSet(false),
-    m_proximityHasBeenSet(false),
-    m_joinHasBeenSet(false),
-    m_connectionStatusHasBeenSet(false),
-    m_messageDeliveryStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventConfigurationByResourceTypesRequest::SerializePayload() const
 {
   JsonValue payload;

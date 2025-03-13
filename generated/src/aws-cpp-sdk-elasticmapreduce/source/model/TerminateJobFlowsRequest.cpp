@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateJobFlowsRequest::TerminateJobFlowsRequest() : 
-    m_jobFlowIdsHasBeenSet(false)
-{
-}
-
 Aws::String TerminateJobFlowsRequest::SerializePayload() const
 {
   JsonValue payload;

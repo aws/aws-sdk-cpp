@@ -18,17 +18,7 @@ namespace Route53Profiles
 namespace Model
 {
 
-ProfileSummary::ProfileSummary() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shareStatus(ShareStatus::NOT_SET),
-    m_shareStatusHasBeenSet(false)
-{
-}
-
 ProfileSummary::ProfileSummary(JsonView jsonValue)
-  : ProfileSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProfileSummary& ProfileSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareStatus"))
   {
     m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("ShareStatus"));
-
     m_shareStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

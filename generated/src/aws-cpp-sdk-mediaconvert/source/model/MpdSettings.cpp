@@ -18,32 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MpdSettings::MpdSettings() : 
-    m_accessibilityCaptionHints(MpdAccessibilityCaptionHints::NOT_SET),
-    m_accessibilityCaptionHintsHasBeenSet(false),
-    m_audioDuration(MpdAudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_captionContainerType(MpdCaptionContainerType::NOT_SET),
-    m_captionContainerTypeHasBeenSet(false),
-    m_klvMetadata(MpdKlvMetadata::NOT_SET),
-    m_klvMetadataHasBeenSet(false),
-    m_manifestMetadataSignaling(MpdManifestMetadataSignaling::NOT_SET),
-    m_manifestMetadataSignalingHasBeenSet(false),
-    m_scte35Esam(MpdScte35Esam::NOT_SET),
-    m_scte35EsamHasBeenSet(false),
-    m_scte35Source(MpdScte35Source::NOT_SET),
-    m_scte35SourceHasBeenSet(false),
-    m_timedMetadata(MpdTimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false),
-    m_timedMetadataBoxVersion(MpdTimedMetadataBoxVersion::NOT_SET),
-    m_timedMetadataBoxVersionHasBeenSet(false),
-    m_timedMetadataSchemeIdUriHasBeenSet(false),
-    m_timedMetadataValueHasBeenSet(false)
-{
-}
-
 MpdSettings::MpdSettings(JsonView jsonValue)
-  : MpdSettings()
 {
   *this = jsonValue;
 }
@@ -53,80 +28,58 @@ MpdSettings& MpdSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessibilityCaptionHints"))
   {
     m_accessibilityCaptionHints = MpdAccessibilityCaptionHintsMapper::GetMpdAccessibilityCaptionHintsForName(jsonValue.GetString("accessibilityCaptionHints"));
-
     m_accessibilityCaptionHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioDuration"))
   {
     m_audioDuration = MpdAudioDurationMapper::GetMpdAudioDurationForName(jsonValue.GetString("audioDuration"));
-
     m_audioDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionContainerType"))
   {
     m_captionContainerType = MpdCaptionContainerTypeMapper::GetMpdCaptionContainerTypeForName(jsonValue.GetString("captionContainerType"));
-
     m_captionContainerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("klvMetadata"))
   {
     m_klvMetadata = MpdKlvMetadataMapper::GetMpdKlvMetadataForName(jsonValue.GetString("klvMetadata"));
-
     m_klvMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestMetadataSignaling"))
   {
     m_manifestMetadataSignaling = MpdManifestMetadataSignalingMapper::GetMpdManifestMetadataSignalingForName(jsonValue.GetString("manifestMetadataSignaling"));
-
     m_manifestMetadataSignalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Esam"))
   {
     m_scte35Esam = MpdScte35EsamMapper::GetMpdScte35EsamForName(jsonValue.GetString("scte35Esam"));
-
     m_scte35EsamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Source"))
   {
     m_scte35Source = MpdScte35SourceMapper::GetMpdScte35SourceForName(jsonValue.GetString("scte35Source"));
-
     m_scte35SourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadata"))
   {
     m_timedMetadata = MpdTimedMetadataMapper::GetMpdTimedMetadataForName(jsonValue.GetString("timedMetadata"));
-
     m_timedMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataBoxVersion"))
   {
     m_timedMetadataBoxVersion = MpdTimedMetadataBoxVersionMapper::GetMpdTimedMetadataBoxVersionForName(jsonValue.GetString("timedMetadataBoxVersion"));
-
     m_timedMetadataBoxVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataSchemeIdUri"))
   {
     m_timedMetadataSchemeIdUri = jsonValue.GetString("timedMetadataSchemeIdUri");
-
     m_timedMetadataSchemeIdUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataValue"))
   {
     m_timedMetadataValue = jsonValue.GetString("timedMetadataValue");
-
     m_timedMetadataValueHasBeenSet = true;
   }
-
   return *this;
 }
 

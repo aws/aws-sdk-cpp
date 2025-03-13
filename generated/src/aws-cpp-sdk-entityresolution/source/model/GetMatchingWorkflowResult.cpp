@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMatchingWorkflowResult::GetMatchingWorkflowResult()
-{
-}
-
 GetMatchingWorkflowResult::GetMatchingWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ GetMatchingWorkflowResult& GetMatchingWorkflowResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incrementalRunConfig"))
   {
     m_incrementalRunConfig = jsonValue.GetObject("incrementalRunConfig");
-
+    m_incrementalRunConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputSourceConfig"))
   {
     Aws::Utils::Array<JsonView> inputSourceConfigJsonList = jsonValue.GetArray("inputSourceConfig");
@@ -54,8 +47,8 @@ GetMatchingWorkflowResult& GetMatchingWorkflowResult::operator =(const Aws::Amaz
     {
       m_inputSourceConfig.push_back(inputSourceConfigJsonList[inputSourceConfigIndex].AsObject());
     }
+    m_inputSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputSourceConfig"))
   {
     Aws::Utils::Array<JsonView> outputSourceConfigJsonList = jsonValue.GetArray("outputSourceConfig");
@@ -63,20 +56,18 @@ GetMatchingWorkflowResult& GetMatchingWorkflowResult::operator =(const Aws::Amaz
     {
       m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
     }
+    m_outputSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolutionTechniques"))
   {
     m_resolutionTechniques = jsonValue.GetObject("resolutionTechniques");
-
+    m_resolutionTechniquesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -84,32 +75,30 @@ GetMatchingWorkflowResult& GetMatchingWorkflowResult::operator =(const Aws::Amaz
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowArn"))
   {
     m_workflowArn = jsonValue.GetString("workflowArn");
-
+    m_workflowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowName"))
   {
     m_workflowName = jsonValue.GetString("workflowName");
-
+    m_workflowNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

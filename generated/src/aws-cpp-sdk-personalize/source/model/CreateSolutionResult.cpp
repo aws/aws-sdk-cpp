@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSolutionResult::CreateSolutionResult()
-{
-}
-
 CreateSolutionResult::CreateSolutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSolutionResult& CreateSolutionResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("solutionArn"))
   {
     m_solutionArn = jsonValue.GetString("solutionArn");
-
+    m_solutionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

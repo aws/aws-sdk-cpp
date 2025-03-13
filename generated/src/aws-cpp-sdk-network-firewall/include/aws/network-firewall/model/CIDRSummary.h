@@ -35,7 +35,7 @@ namespace Model
   class CIDRSummary
   {
   public:
-    AWS_NETWORKFIREWALL_API CIDRSummary();
+    AWS_NETWORKFIREWALL_API CIDRSummary() = default;
     AWS_NETWORKFIREWALL_API CIDRSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API CIDRSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * <p>The number of CIDR blocks available for use by the IP set references in a
      * firewall.</p>
      */
-    inline int GetAvailableCIDRCount() const{ return m_availableCIDRCount; }
+    inline int GetAvailableCIDRCount() const { return m_availableCIDRCount; }
     inline bool AvailableCIDRCountHasBeenSet() const { return m_availableCIDRCountHasBeenSet; }
     inline void SetAvailableCIDRCount(int value) { m_availableCIDRCountHasBeenSet = true; m_availableCIDRCount = value; }
     inline CIDRSummary& WithAvailableCIDRCount(int value) { SetAvailableCIDRCount(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
      */
-    inline int GetUtilizedCIDRCount() const{ return m_utilizedCIDRCount; }
+    inline int GetUtilizedCIDRCount() const { return m_utilizedCIDRCount; }
     inline bool UtilizedCIDRCountHasBeenSet() const { return m_utilizedCIDRCountHasBeenSet; }
     inline void SetUtilizedCIDRCount(int value) { m_utilizedCIDRCountHasBeenSet = true; m_utilizedCIDRCount = value; }
     inline CIDRSummary& WithUtilizedCIDRCount(int value) { SetUtilizedCIDRCount(value); return *this;}
@@ -66,25 +66,23 @@ namespace Model
     /**
      * <p>The list of the IP set references used by a firewall.</p>
      */
-    inline const Aws::Map<Aws::String, IPSetMetadata>& GetIPSetReferences() const{ return m_iPSetReferences; }
+    inline const Aws::Map<Aws::String, IPSetMetadata>& GetIPSetReferences() const { return m_iPSetReferences; }
     inline bool IPSetReferencesHasBeenSet() const { return m_iPSetReferencesHasBeenSet; }
-    inline void SetIPSetReferences(const Aws::Map<Aws::String, IPSetMetadata>& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences = value; }
-    inline void SetIPSetReferences(Aws::Map<Aws::String, IPSetMetadata>&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences = std::move(value); }
-    inline CIDRSummary& WithIPSetReferences(const Aws::Map<Aws::String, IPSetMetadata>& value) { SetIPSetReferences(value); return *this;}
-    inline CIDRSummary& WithIPSetReferences(Aws::Map<Aws::String, IPSetMetadata>&& value) { SetIPSetReferences(std::move(value)); return *this;}
-    inline CIDRSummary& AddIPSetReferences(const Aws::String& key, const IPSetMetadata& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, value); return *this; }
-    inline CIDRSummary& AddIPSetReferences(Aws::String&& key, const IPSetMetadata& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(std::move(key), value); return *this; }
-    inline CIDRSummary& AddIPSetReferences(const Aws::String& key, IPSetMetadata&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, std::move(value)); return *this; }
-    inline CIDRSummary& AddIPSetReferences(Aws::String&& key, IPSetMetadata&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(std::move(key), std::move(value)); return *this; }
-    inline CIDRSummary& AddIPSetReferences(const char* key, IPSetMetadata&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, std::move(value)); return *this; }
-    inline CIDRSummary& AddIPSetReferences(const char* key, const IPSetMetadata& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(key, value); return *this; }
+    template<typename IPSetReferencesT = Aws::Map<Aws::String, IPSetMetadata>>
+    void SetIPSetReferences(IPSetReferencesT&& value) { m_iPSetReferencesHasBeenSet = true; m_iPSetReferences = std::forward<IPSetReferencesT>(value); }
+    template<typename IPSetReferencesT = Aws::Map<Aws::String, IPSetMetadata>>
+    CIDRSummary& WithIPSetReferences(IPSetReferencesT&& value) { SetIPSetReferences(std::forward<IPSetReferencesT>(value)); return *this;}
+    template<typename IPSetReferencesKeyT = Aws::String, typename IPSetReferencesValueT = IPSetMetadata>
+    CIDRSummary& AddIPSetReferences(IPSetReferencesKeyT&& key, IPSetReferencesValueT&& value) {
+      m_iPSetReferencesHasBeenSet = true; m_iPSetReferences.emplace(std::forward<IPSetReferencesKeyT>(key), std::forward<IPSetReferencesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    int m_availableCIDRCount;
+    int m_availableCIDRCount{0};
     bool m_availableCIDRCountHasBeenSet = false;
 
-    int m_utilizedCIDRCount;
+    int m_utilizedCIDRCount{0};
     bool m_utilizedCIDRCountHasBeenSet = false;
 
     Aws::Map<Aws::String, IPSetMetadata> m_iPSetReferences;

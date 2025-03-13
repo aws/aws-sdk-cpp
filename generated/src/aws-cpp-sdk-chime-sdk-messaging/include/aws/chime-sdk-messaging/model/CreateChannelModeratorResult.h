@@ -28,7 +28,7 @@ namespace Model
   class CreateChannelModeratorResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API CreateChannelModeratorResult();
+    AWS_CHIMESDKMESSAGING_API CreateChannelModeratorResult() = default;
     AWS_CHIMESDKMESSAGING_API CreateChannelModeratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API CreateChannelModeratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The ARN of the channel.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-    inline CreateChannelModeratorResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline CreateChannelModeratorResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline CreateChannelModeratorResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    CreateChannelModeratorResult& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARNs of the channel and the moderator.</p>
      */
-    inline const Identity& GetChannelModerator() const{ return m_channelModerator; }
-    inline void SetChannelModerator(const Identity& value) { m_channelModerator = value; }
-    inline void SetChannelModerator(Identity&& value) { m_channelModerator = std::move(value); }
-    inline CreateChannelModeratorResult& WithChannelModerator(const Identity& value) { SetChannelModerator(value); return *this;}
-    inline CreateChannelModeratorResult& WithChannelModerator(Identity&& value) { SetChannelModerator(std::move(value)); return *this;}
+    inline const Identity& GetChannelModerator() const { return m_channelModerator; }
+    template<typename ChannelModeratorT = Identity>
+    void SetChannelModerator(ChannelModeratorT&& value) { m_channelModeratorHasBeenSet = true; m_channelModerator = std::forward<ChannelModeratorT>(value); }
+    template<typename ChannelModeratorT = Identity>
+    CreateChannelModeratorResult& WithChannelModerator(ChannelModeratorT&& value) { SetChannelModerator(std::forward<ChannelModeratorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateChannelModeratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateChannelModeratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateChannelModeratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateChannelModeratorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelArn;
+    bool m_channelArnHasBeenSet = false;
 
     Identity m_channelModerator;
+    bool m_channelModeratorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

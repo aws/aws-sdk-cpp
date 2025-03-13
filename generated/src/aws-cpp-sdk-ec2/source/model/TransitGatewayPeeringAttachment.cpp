@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_accepterTransitGatewayAttachmentIdHasBeenSet(false),
-    m_requesterTgwInfoHasBeenSet(false),
-    m_accepterTgwInfoHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_state(TransitGatewayAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayPeeringAttachment::TransitGatewayPeeringAttachment(const XmlNode& xmlNode)
-  : TransitGatewayPeeringAttachment()
 {
   *this = xmlNode;
 }
@@ -51,60 +36,69 @@ TransitGatewayPeeringAttachment& TransitGatewayPeeringAttachment::operator =(con
     {
       m_transitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentIdNode.GetText());
       m_transitGatewayAttachmentIdHasBeenSet = true;
+       m_transitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode accepterTransitGatewayAttachmentIdNode = resultNode.FirstChild("accepterTransitGatewayAttachmentId");
     if(!accepterTransitGatewayAttachmentIdNode.IsNull())
     {
       m_accepterTransitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(accepterTransitGatewayAttachmentIdNode.GetText());
       m_accepterTransitGatewayAttachmentIdHasBeenSet = true;
+       m_accepterTransitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode requesterTgwInfoNode = resultNode.FirstChild("requesterTgwInfo");
     if(!requesterTgwInfoNode.IsNull())
     {
       m_requesterTgwInfo = requesterTgwInfoNode;
       m_requesterTgwInfoHasBeenSet = true;
+       m_requesterTgwInfoHasBeenSet = true;
     }
     XmlNode accepterTgwInfoNode = resultNode.FirstChild("accepterTgwInfo");
     if(!accepterTgwInfoNode.IsNull())
     {
       m_accepterTgwInfo = accepterTgwInfoNode;
       m_accepterTgwInfoHasBeenSet = true;
+       m_accepterTgwInfoHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
     {
       m_options = optionsNode;
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayAttachmentStateMapper::GetTransitGatewayAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayAttachmentStateMapper::GetTransitGatewayAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

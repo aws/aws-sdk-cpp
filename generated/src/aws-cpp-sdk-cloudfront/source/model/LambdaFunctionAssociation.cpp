@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-LambdaFunctionAssociation::LambdaFunctionAssociation() : 
-    m_lambdaFunctionARNHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_includeBody(false),
-    m_includeBodyHasBeenSet(false)
-{
-}
-
 LambdaFunctionAssociation::LambdaFunctionAssociation(const XmlNode& xmlNode)
-  : LambdaFunctionAssociation()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ LambdaFunctionAssociation& LambdaFunctionAssociation::operator =(const XmlNode& 
     {
       m_lambdaFunctionARN = Aws::Utils::Xml::DecodeEscapedXmlText(lambdaFunctionARNNode.GetText());
       m_lambdaFunctionARNHasBeenSet = true;
+       m_lambdaFunctionARNHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()).c_str());
+      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
+       m_eventTypeHasBeenSet = true;
     }
     XmlNode includeBodyNode = resultNode.FirstChild("IncludeBody");
     if(!includeBodyNode.IsNull())
     {
       m_includeBody = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeBodyNode.GetText()).c_str()).c_str());
       m_includeBodyHasBeenSet = true;
+       m_includeBodyHasBeenSet = true;
     }
   }
 

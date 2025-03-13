@@ -34,7 +34,7 @@ namespace Model
   class ContainerAttribute
   {
   public:
-    AWS_GAMELIFT_API ContainerAttribute();
+    AWS_GAMELIFT_API ContainerAttribute() = default;
     AWS_GAMELIFT_API ContainerAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ContainerAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier for a container that's running in a compute. </p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline ContainerAttribute& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ContainerAttribute& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ContainerAttribute& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ContainerAttribute& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The runtime ID for the container that's running in a compute. This value is
      * unique within the compute.</p>
      */
-    inline const Aws::String& GetContainerRuntimeId() const{ return m_containerRuntimeId; }
+    inline const Aws::String& GetContainerRuntimeId() const { return m_containerRuntimeId; }
     inline bool ContainerRuntimeIdHasBeenSet() const { return m_containerRuntimeIdHasBeenSet; }
-    inline void SetContainerRuntimeId(const Aws::String& value) { m_containerRuntimeIdHasBeenSet = true; m_containerRuntimeId = value; }
-    inline void SetContainerRuntimeId(Aws::String&& value) { m_containerRuntimeIdHasBeenSet = true; m_containerRuntimeId = std::move(value); }
-    inline void SetContainerRuntimeId(const char* value) { m_containerRuntimeIdHasBeenSet = true; m_containerRuntimeId.assign(value); }
-    inline ContainerAttribute& WithContainerRuntimeId(const Aws::String& value) { SetContainerRuntimeId(value); return *this;}
-    inline ContainerAttribute& WithContainerRuntimeId(Aws::String&& value) { SetContainerRuntimeId(std::move(value)); return *this;}
-    inline ContainerAttribute& WithContainerRuntimeId(const char* value) { SetContainerRuntimeId(value); return *this;}
+    template<typename ContainerRuntimeIdT = Aws::String>
+    void SetContainerRuntimeId(ContainerRuntimeIdT&& value) { m_containerRuntimeIdHasBeenSet = true; m_containerRuntimeId = std::forward<ContainerRuntimeIdT>(value); }
+    template<typename ContainerRuntimeIdT = Aws::String>
+    ContainerAttribute& WithContainerRuntimeId(ContainerRuntimeIdT&& value) { SetContainerRuntimeId(std::forward<ContainerRuntimeIdT>(value)); return *this;}
     ///@}
   private:
 

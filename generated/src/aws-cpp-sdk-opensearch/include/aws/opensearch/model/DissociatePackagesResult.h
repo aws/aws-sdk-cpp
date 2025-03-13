@@ -29,7 +29,7 @@ namespace Model
   class DissociatePackagesResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DissociatePackagesResult();
+    AWS_OPENSEARCHSERVICE_API DissociatePackagesResult() = default;
     AWS_OPENSEARCHSERVICE_API DissociatePackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API DissociatePackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>A list of package details for the packages that were dissociated from the
      * domain.</p>
      */
-    inline const Aws::Vector<DomainPackageDetails>& GetDomainPackageDetailsList() const{ return m_domainPackageDetailsList; }
-    inline void SetDomainPackageDetailsList(const Aws::Vector<DomainPackageDetails>& value) { m_domainPackageDetailsList = value; }
-    inline void SetDomainPackageDetailsList(Aws::Vector<DomainPackageDetails>&& value) { m_domainPackageDetailsList = std::move(value); }
-    inline DissociatePackagesResult& WithDomainPackageDetailsList(const Aws::Vector<DomainPackageDetails>& value) { SetDomainPackageDetailsList(value); return *this;}
-    inline DissociatePackagesResult& WithDomainPackageDetailsList(Aws::Vector<DomainPackageDetails>&& value) { SetDomainPackageDetailsList(std::move(value)); return *this;}
-    inline DissociatePackagesResult& AddDomainPackageDetailsList(const DomainPackageDetails& value) { m_domainPackageDetailsList.push_back(value); return *this; }
-    inline DissociatePackagesResult& AddDomainPackageDetailsList(DomainPackageDetails&& value) { m_domainPackageDetailsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainPackageDetails>& GetDomainPackageDetailsList() const { return m_domainPackageDetailsList; }
+    template<typename DomainPackageDetailsListT = Aws::Vector<DomainPackageDetails>>
+    void SetDomainPackageDetailsList(DomainPackageDetailsListT&& value) { m_domainPackageDetailsListHasBeenSet = true; m_domainPackageDetailsList = std::forward<DomainPackageDetailsListT>(value); }
+    template<typename DomainPackageDetailsListT = Aws::Vector<DomainPackageDetails>>
+    DissociatePackagesResult& WithDomainPackageDetailsList(DomainPackageDetailsListT&& value) { SetDomainPackageDetailsList(std::forward<DomainPackageDetailsListT>(value)); return *this;}
+    template<typename DomainPackageDetailsListT = DomainPackageDetails>
+    DissociatePackagesResult& AddDomainPackageDetailsList(DomainPackageDetailsListT&& value) { m_domainPackageDetailsListHasBeenSet = true; m_domainPackageDetailsList.emplace_back(std::forward<DomainPackageDetailsListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DissociatePackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DissociatePackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DissociatePackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DissociatePackagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainPackageDetails> m_domainPackageDetailsList;
+    bool m_domainPackageDetailsListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

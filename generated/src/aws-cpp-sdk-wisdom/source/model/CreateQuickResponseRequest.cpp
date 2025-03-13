@@ -12,24 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateQuickResponseRequest::CreateQuickResponseRequest() : 
-    m_channelsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupingConfigurationHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortcutKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateQuickResponseRequest::SerializePayload() const
 {
   JsonValue payload;

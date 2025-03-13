@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-OutboundEmailConfig::OutboundEmailConfig() : 
-    m_outboundEmailAddressIdHasBeenSet(false)
-{
-}
-
 OutboundEmailConfig::OutboundEmailConfig(JsonView jsonValue)
-  : OutboundEmailConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutboundEmailConfig& OutboundEmailConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutboundEmailAddressId"))
   {
     m_outboundEmailAddressId = jsonValue.GetString("OutboundEmailAddressId");
-
     m_outboundEmailAddressIdHasBeenSet = true;
   }
-
   return *this;
 }
 

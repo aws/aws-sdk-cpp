@@ -32,7 +32,7 @@ namespace Model
   class ResourcePolicy
   {
   public:
-    AWS_CODEARTIFACT_API ResourcePolicy();
+    AWS_CODEARTIFACT_API ResourcePolicy() = default;
     AWS_CODEARTIFACT_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p> The ARN of the resource associated with the resource policy </p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline ResourcePolicy& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline ResourcePolicy& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline ResourcePolicy& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    ResourcePolicy& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current revision of the resource policy. </p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-    inline ResourcePolicy& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline ResourcePolicy& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline ResourcePolicy& WithRevision(const char* value) { SetRevision(value); return *this;}
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    ResourcePolicy& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The resource policy formatted in JSON. </p>
      */
-    inline const Aws::String& GetDocument() const{ return m_document; }
+    inline const Aws::String& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
-    inline ResourcePolicy& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
-    inline ResourcePolicy& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
-    inline ResourcePolicy& WithDocument(const char* value) { SetDocument(value); return *this;}
+    template<typename DocumentT = Aws::String>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Aws::String>
+    ResourcePolicy& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
   private:
 

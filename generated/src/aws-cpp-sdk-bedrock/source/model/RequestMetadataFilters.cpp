@@ -18,16 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-RequestMetadataFilters::RequestMetadataFilters() : 
-    m_equalsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false),
-    m_andAllHasBeenSet(false),
-    m_orAllHasBeenSet(false)
-{
-}
-
 RequestMetadataFilters::RequestMetadataFilters(JsonView jsonValue)
-  : RequestMetadataFilters()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ RequestMetadataFilters& RequestMetadataFilters::operator =(JsonView jsonValue)
     }
     m_equalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notEquals"))
   {
     Aws::Map<Aws::String, JsonView> notEqualsJsonMap = jsonValue.GetObject("notEquals").GetAllObjects();
@@ -53,7 +43,6 @@ RequestMetadataFilters& RequestMetadataFilters::operator =(JsonView jsonValue)
     }
     m_notEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("andAll"))
   {
     Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
@@ -63,7 +52,6 @@ RequestMetadataFilters& RequestMetadataFilters::operator =(JsonView jsonValue)
     }
     m_andAllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orAll"))
   {
     Aws::Utils::Array<JsonView> orAllJsonList = jsonValue.GetArray("orAll");
@@ -73,7 +61,6 @@ RequestMetadataFilters& RequestMetadataFilters::operator =(JsonView jsonValue)
     }
     m_orAllHasBeenSet = true;
   }
-
   return *this;
 }
 

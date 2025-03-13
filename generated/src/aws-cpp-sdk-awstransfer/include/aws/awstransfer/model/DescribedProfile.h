@@ -35,7 +35,7 @@ namespace Model
   class DescribedProfile
   {
   public:
-    AWS_TRANSFER_API DescribedProfile();
+    AWS_TRANSFER_API DescribedProfile() = default;
     AWS_TRANSFER_API DescribedProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) for the profile.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribedProfile& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribedProfile& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribedProfile& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribedProfile& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the local or partner AS2 profile.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline DescribedProfile& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline DescribedProfile& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline DescribedProfile& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    DescribedProfile& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * <code>PARTNER</code> type profiles. If not supplied in the request, the command
      * lists all types of profiles.</p>
      */
-    inline const ProfileType& GetProfileType() const{ return m_profileType; }
+    inline ProfileType GetProfileType() const { return m_profileType; }
     inline bool ProfileTypeHasBeenSet() const { return m_profileTypeHasBeenSet; }
-    inline void SetProfileType(const ProfileType& value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
-    inline void SetProfileType(ProfileType&& value) { m_profileTypeHasBeenSet = true; m_profileType = std::move(value); }
-    inline DescribedProfile& WithProfileType(const ProfileType& value) { SetProfileType(value); return *this;}
-    inline DescribedProfile& WithProfileType(ProfileType&& value) { SetProfileType(std::move(value)); return *this;}
+    inline void SetProfileType(ProfileType value) { m_profileTypeHasBeenSet = true; m_profileType = value; }
+    inline DescribedProfile& WithProfileType(ProfileType value) { SetProfileType(value); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * header for the AS2 messages sent to the partner using the
      * <code>StartFileTransfer</code> API operation. This ID cannot include spaces.</p>
      */
-    inline const Aws::String& GetAs2Id() const{ return m_as2Id; }
+    inline const Aws::String& GetAs2Id() const { return m_as2Id; }
     inline bool As2IdHasBeenSet() const { return m_as2IdHasBeenSet; }
-    inline void SetAs2Id(const Aws::String& value) { m_as2IdHasBeenSet = true; m_as2Id = value; }
-    inline void SetAs2Id(Aws::String&& value) { m_as2IdHasBeenSet = true; m_as2Id = std::move(value); }
-    inline void SetAs2Id(const char* value) { m_as2IdHasBeenSet = true; m_as2Id.assign(value); }
-    inline DescribedProfile& WithAs2Id(const Aws::String& value) { SetAs2Id(value); return *this;}
-    inline DescribedProfile& WithAs2Id(Aws::String&& value) { SetAs2Id(std::move(value)); return *this;}
-    inline DescribedProfile& WithAs2Id(const char* value) { SetAs2Id(value); return *this;}
+    template<typename As2IdT = Aws::String>
+    void SetAs2Id(As2IdT&& value) { m_as2IdHasBeenSet = true; m_as2Id = std::forward<As2IdT>(value); }
+    template<typename As2IdT = Aws::String>
+    DescribedProfile& WithAs2Id(As2IdT&& value) { SetAs2Id(std::forward<As2IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,29 +99,28 @@ namespace Model
      * <p>An array of identifiers for the imported certificates. You use this
      * identifier for working with profiles and partner profiles.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCertificateIds() const{ return m_certificateIds; }
+    inline const Aws::Vector<Aws::String>& GetCertificateIds() const { return m_certificateIds; }
     inline bool CertificateIdsHasBeenSet() const { return m_certificateIdsHasBeenSet; }
-    inline void SetCertificateIds(const Aws::Vector<Aws::String>& value) { m_certificateIdsHasBeenSet = true; m_certificateIds = value; }
-    inline void SetCertificateIds(Aws::Vector<Aws::String>&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds = std::move(value); }
-    inline DescribedProfile& WithCertificateIds(const Aws::Vector<Aws::String>& value) { SetCertificateIds(value); return *this;}
-    inline DescribedProfile& WithCertificateIds(Aws::Vector<Aws::String>&& value) { SetCertificateIds(std::move(value)); return *this;}
-    inline DescribedProfile& AddCertificateIds(const Aws::String& value) { m_certificateIdsHasBeenSet = true; m_certificateIds.push_back(value); return *this; }
-    inline DescribedProfile& AddCertificateIds(Aws::String&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds.push_back(std::move(value)); return *this; }
-    inline DescribedProfile& AddCertificateIds(const char* value) { m_certificateIdsHasBeenSet = true; m_certificateIds.push_back(value); return *this; }
+    template<typename CertificateIdsT = Aws::Vector<Aws::String>>
+    void SetCertificateIds(CertificateIdsT&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds = std::forward<CertificateIdsT>(value); }
+    template<typename CertificateIdsT = Aws::Vector<Aws::String>>
+    DescribedProfile& WithCertificateIds(CertificateIdsT&& value) { SetCertificateIds(std::forward<CertificateIdsT>(value)); return *this;}
+    template<typename CertificateIdsT = Aws::String>
+    DescribedProfile& AddCertificateIds(CertificateIdsT&& value) { m_certificateIdsHasBeenSet = true; m_certificateIds.emplace_back(std::forward<CertificateIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs that can be used to group and search for profiles.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DescribedProfile& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribedProfile& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribedProfile& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DescribedProfile& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribedProfile& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribedProfile& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -139,7 +130,7 @@ namespace Model
     Aws::String m_profileId;
     bool m_profileIdHasBeenSet = false;
 
-    ProfileType m_profileType;
+    ProfileType m_profileType{ProfileType::NOT_SET};
     bool m_profileTypeHasBeenSet = false;
 
     Aws::String m_as2Id;

@@ -12,18 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAlgorithmRequest::CreateAlgorithmRequest() : 
-    m_algorithmNameHasBeenSet(false),
-    m_algorithmDescriptionHasBeenSet(false),
-    m_trainingSpecificationHasBeenSet(false),
-    m_inferenceSpecificationHasBeenSet(false),
-    m_validationSpecificationHasBeenSet(false),
-    m_certifyForMarketplace(false),
-    m_certifyForMarketplaceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAlgorithmRequest::SerializePayload() const
 {
   JsonValue payload;

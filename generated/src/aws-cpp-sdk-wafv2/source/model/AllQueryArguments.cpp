@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-AllQueryArguments::AllQueryArguments()
-{
-}
-
 AllQueryArguments::AllQueryArguments(JsonView jsonValue)
 {
   *this = jsonValue;

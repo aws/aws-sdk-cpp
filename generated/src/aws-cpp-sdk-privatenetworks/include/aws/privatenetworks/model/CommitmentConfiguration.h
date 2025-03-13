@@ -34,7 +34,7 @@ namespace Model
   class CommitmentConfiguration
   {
   public:
-    AWS_PRIVATENETWORKS_API CommitmentConfiguration();
+    AWS_PRIVATENETWORKS_API CommitmentConfiguration() = default;
     AWS_PRIVATENETWORKS_API CommitmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API CommitmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,7 +56,7 @@ namespace Model
      * </li> </ul> <p>You cannot use the automatic-renewal option for a 60-day
      * commitment.</p>
      */
-    inline bool GetAutomaticRenewal() const{ return m_automaticRenewal; }
+    inline bool GetAutomaticRenewal() const { return m_automaticRenewal; }
     inline bool AutomaticRenewalHasBeenSet() const { return m_automaticRenewalHasBeenSet; }
     inline void SetAutomaticRenewal(bool value) { m_automaticRenewalHasBeenSet = true; m_automaticRenewal = value; }
     inline CommitmentConfiguration& WithAutomaticRenewal(bool value) { SetAutomaticRenewal(value); return *this;}
@@ -67,19 +67,17 @@ namespace Model
      * <p>The duration of the commitment period for the radio unit. You can choose a
      * 60-day, 1-year, or 3-year period.</p>
      */
-    inline const CommitmentLength& GetCommitmentLength() const{ return m_commitmentLength; }
+    inline CommitmentLength GetCommitmentLength() const { return m_commitmentLength; }
     inline bool CommitmentLengthHasBeenSet() const { return m_commitmentLengthHasBeenSet; }
-    inline void SetCommitmentLength(const CommitmentLength& value) { m_commitmentLengthHasBeenSet = true; m_commitmentLength = value; }
-    inline void SetCommitmentLength(CommitmentLength&& value) { m_commitmentLengthHasBeenSet = true; m_commitmentLength = std::move(value); }
-    inline CommitmentConfiguration& WithCommitmentLength(const CommitmentLength& value) { SetCommitmentLength(value); return *this;}
-    inline CommitmentConfiguration& WithCommitmentLength(CommitmentLength&& value) { SetCommitmentLength(std::move(value)); return *this;}
+    inline void SetCommitmentLength(CommitmentLength value) { m_commitmentLengthHasBeenSet = true; m_commitmentLength = value; }
+    inline CommitmentConfiguration& WithCommitmentLength(CommitmentLength value) { SetCommitmentLength(value); return *this;}
     ///@}
   private:
 
-    bool m_automaticRenewal;
+    bool m_automaticRenewal{false};
     bool m_automaticRenewalHasBeenSet = false;
 
-    CommitmentLength m_commitmentLength;
+    CommitmentLength m_commitmentLength{CommitmentLength::NOT_SET};
     bool m_commitmentLengthHasBeenSet = false;
   };
 

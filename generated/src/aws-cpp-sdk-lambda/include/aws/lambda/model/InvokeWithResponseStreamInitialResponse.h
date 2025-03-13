@@ -27,7 +27,7 @@ namespace Model
   class InvokeWithResponseStreamInitialResponse
   {
   public:
-    AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse();
+    AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse() = default;
     AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API InvokeWithResponseStreamInitialResponse(const Http::HeaderValueCollection& responseHeaders);
@@ -40,7 +40,7 @@ namespace Model
      * <code>RequestResponse</code> invocation type, this status code is 200. For the
      * <code>DryRun</code> invocation type, this status code is 204.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
+    inline int GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline InvokeWithResponseStreamInitialResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
@@ -51,32 +51,28 @@ namespace Model
      * <p>The version of the function that executed. When you invoke a function with an
      * alias, this indicates which version the alias resolved to.</p>
      */
-    inline const Aws::String& GetExecutedVersion() const{ return m_executedVersion; }
+    inline const Aws::String& GetExecutedVersion() const { return m_executedVersion; }
     inline bool ExecutedVersionHasBeenSet() const { return m_executedVersionHasBeenSet; }
-    inline void SetExecutedVersion(const Aws::String& value) { m_executedVersionHasBeenSet = true; m_executedVersion = value; }
-    inline void SetExecutedVersion(Aws::String&& value) { m_executedVersionHasBeenSet = true; m_executedVersion = std::move(value); }
-    inline void SetExecutedVersion(const char* value) { m_executedVersionHasBeenSet = true; m_executedVersion.assign(value); }
-    inline InvokeWithResponseStreamInitialResponse& WithExecutedVersion(const Aws::String& value) { SetExecutedVersion(value); return *this;}
-    inline InvokeWithResponseStreamInitialResponse& WithExecutedVersion(Aws::String&& value) { SetExecutedVersion(std::move(value)); return *this;}
-    inline InvokeWithResponseStreamInitialResponse& WithExecutedVersion(const char* value) { SetExecutedVersion(value); return *this;}
+    template<typename ExecutedVersionT = Aws::String>
+    void SetExecutedVersion(ExecutedVersionT&& value) { m_executedVersionHasBeenSet = true; m_executedVersion = std::forward<ExecutedVersionT>(value); }
+    template<typename ExecutedVersionT = Aws::String>
+    InvokeWithResponseStreamInitialResponse& WithExecutedVersion(ExecutedVersionT&& value) { SetExecutedVersion(std::forward<ExecutedVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of data the stream is returning.</p>
      */
-    inline const Aws::String& GetResponseStreamContentType() const{ return m_responseStreamContentType; }
+    inline const Aws::String& GetResponseStreamContentType() const { return m_responseStreamContentType; }
     inline bool ResponseStreamContentTypeHasBeenSet() const { return m_responseStreamContentTypeHasBeenSet; }
-    inline void SetResponseStreamContentType(const Aws::String& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = value; }
-    inline void SetResponseStreamContentType(Aws::String&& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = std::move(value); }
-    inline void SetResponseStreamContentType(const char* value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType.assign(value); }
-    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(const Aws::String& value) { SetResponseStreamContentType(value); return *this;}
-    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(Aws::String&& value) { SetResponseStreamContentType(std::move(value)); return *this;}
-    inline InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(const char* value) { SetResponseStreamContentType(value); return *this;}
+    template<typename ResponseStreamContentTypeT = Aws::String>
+    void SetResponseStreamContentType(ResponseStreamContentTypeT&& value) { m_responseStreamContentTypeHasBeenSet = true; m_responseStreamContentType = std::forward<ResponseStreamContentTypeT>(value); }
+    template<typename ResponseStreamContentTypeT = Aws::String>
+    InvokeWithResponseStreamInitialResponse& WithResponseStreamContentType(ResponseStreamContentTypeT&& value) { SetResponseStreamContentType(std::forward<ResponseStreamContentTypeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_executedVersion;

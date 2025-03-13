@@ -34,7 +34,7 @@ namespace Model
   class PartitionedPrefix
   {
   public:
-    AWS_S3CRT_API PartitionedPrefix();
+    AWS_S3CRT_API PartitionedPrefix() = default;
     AWS_S3CRT_API PartitionedPrefix(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API PartitionedPrefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,16 +51,14 @@ namespace Model
      * year, month, and day correspond to the day on which the event occurred, and the
      * hour, minutes and seconds are set to 00 in the key.</p>
      */
-    inline const PartitionDateSource& GetPartitionDateSource() const{ return m_partitionDateSource; }
+    inline PartitionDateSource GetPartitionDateSource() const { return m_partitionDateSource; }
     inline bool PartitionDateSourceHasBeenSet() const { return m_partitionDateSourceHasBeenSet; }
-    inline void SetPartitionDateSource(const PartitionDateSource& value) { m_partitionDateSourceHasBeenSet = true; m_partitionDateSource = value; }
-    inline void SetPartitionDateSource(PartitionDateSource&& value) { m_partitionDateSourceHasBeenSet = true; m_partitionDateSource = std::move(value); }
-    inline PartitionedPrefix& WithPartitionDateSource(const PartitionDateSource& value) { SetPartitionDateSource(value); return *this;}
-    inline PartitionedPrefix& WithPartitionDateSource(PartitionDateSource&& value) { SetPartitionDateSource(std::move(value)); return *this;}
+    inline void SetPartitionDateSource(PartitionDateSource value) { m_partitionDateSourceHasBeenSet = true; m_partitionDateSource = value; }
+    inline PartitionedPrefix& WithPartitionDateSource(PartitionDateSource value) { SetPartitionDateSource(value); return *this;}
     ///@}
   private:
 
-    PartitionDateSource m_partitionDateSource;
+    PartitionDateSource m_partitionDateSource{PartitionDateSource::NOT_SET};
     bool m_partitionDateSourceHasBeenSet = false;
   };
 

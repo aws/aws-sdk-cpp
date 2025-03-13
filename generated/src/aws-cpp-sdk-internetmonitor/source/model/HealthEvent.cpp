@@ -18,27 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-HealthEvent::HealthEvent() : 
-    m_eventArnHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_impactedLocationsHasBeenSet(false),
-    m_status(HealthEventStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_percentOfTotalTrafficImpacted(0.0),
-    m_percentOfTotalTrafficImpactedHasBeenSet(false),
-    m_impactType(HealthEventImpactType::NOT_SET),
-    m_impactTypeHasBeenSet(false),
-    m_healthScoreThreshold(0.0),
-    m_healthScoreThresholdHasBeenSet(false)
-{
-}
-
 HealthEvent::HealthEvent(JsonView jsonValue)
-  : HealthEvent()
 {
   *this = jsonValue;
 }
@@ -48,45 +28,33 @@ HealthEvent& HealthEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventArn"))
   {
     m_eventArn = jsonValue.GetString("EventArn");
-
     m_eventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventId"))
   {
     m_eventId = jsonValue.GetString("EventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetString("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndedAt"))
   {
     m_endedAt = jsonValue.GetString("EndedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpactedLocations"))
   {
     Aws::Utils::Array<JsonView> impactedLocationsJsonList = jsonValue.GetArray("ImpactedLocations");
@@ -96,35 +64,26 @@ HealthEvent& HealthEvent::operator =(JsonView jsonValue)
     }
     m_impactedLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = HealthEventStatusMapper::GetHealthEventStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentOfTotalTrafficImpacted"))
   {
     m_percentOfTotalTrafficImpacted = jsonValue.GetDouble("PercentOfTotalTrafficImpacted");
-
     m_percentOfTotalTrafficImpactedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImpactType"))
   {
     m_impactType = HealthEventImpactTypeMapper::GetHealthEventImpactTypeForName(jsonValue.GetString("ImpactType"));
-
     m_impactTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthScoreThreshold"))
   {
     m_healthScoreThreshold = jsonValue.GetDouble("HealthScoreThreshold");
-
     m_healthScoreThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

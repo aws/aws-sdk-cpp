@@ -36,7 +36,7 @@ namespace Model
   class Recommendation
   {
   public:
-    AWS_DATASYNC_API Recommendation();
+    AWS_DATASYNC_API Recommendation() = default;
     AWS_DATASYNC_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * to based on information that DataSync Discovery collects about your on-premises
      * storage system.</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline Recommendation& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline Recommendation& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline Recommendation& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    Recommendation& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,16 @@ namespace Model
      * <p>Information about how you can set up a recommended Amazon Web Services
      * storage service.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStorageConfiguration() const{ return m_storageConfiguration; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStorageConfiguration() const { return m_storageConfiguration; }
     inline bool StorageConfigurationHasBeenSet() const { return m_storageConfigurationHasBeenSet; }
-    inline void SetStorageConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = value; }
-    inline void SetStorageConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = std::move(value); }
-    inline Recommendation& WithStorageConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetStorageConfiguration(value); return *this;}
-    inline Recommendation& WithStorageConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetStorageConfiguration(std::move(value)); return *this;}
-    inline Recommendation& AddStorageConfiguration(const Aws::String& key, const Aws::String& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(key, value); return *this; }
-    inline Recommendation& AddStorageConfiguration(Aws::String&& key, const Aws::String& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(std::move(key), value); return *this; }
-    inline Recommendation& AddStorageConfiguration(const Aws::String& key, Aws::String&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(key, std::move(value)); return *this; }
-    inline Recommendation& AddStorageConfiguration(Aws::String&& key, Aws::String&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline Recommendation& AddStorageConfiguration(const char* key, Aws::String&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(key, std::move(value)); return *this; }
-    inline Recommendation& AddStorageConfiguration(Aws::String&& key, const char* value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(std::move(key), value); return *this; }
-    inline Recommendation& AddStorageConfiguration(const char* key, const char* value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(key, value); return *this; }
+    template<typename StorageConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    void SetStorageConfiguration(StorageConfigurationT&& value) { m_storageConfigurationHasBeenSet = true; m_storageConfiguration = std::forward<StorageConfigurationT>(value); }
+    template<typename StorageConfigurationT = Aws::Map<Aws::String, Aws::String>>
+    Recommendation& WithStorageConfiguration(StorageConfigurationT&& value) { SetStorageConfiguration(std::forward<StorageConfigurationT>(value)); return *this;}
+    template<typename StorageConfigurationKeyT = Aws::String, typename StorageConfigurationValueT = Aws::String>
+    Recommendation& AddStorageConfiguration(StorageConfigurationKeyT&& key, StorageConfigurationValueT&& value) {
+      m_storageConfigurationHasBeenSet = true; m_storageConfiguration.emplace(std::forward<StorageConfigurationKeyT>(key), std::forward<StorageConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -83,14 +78,12 @@ namespace Model
      * <p>The estimated monthly cost of the recommended Amazon Web Services storage
      * service.</p>
      */
-    inline const Aws::String& GetEstimatedMonthlyStorageCost() const{ return m_estimatedMonthlyStorageCost; }
+    inline const Aws::String& GetEstimatedMonthlyStorageCost() const { return m_estimatedMonthlyStorageCost; }
     inline bool EstimatedMonthlyStorageCostHasBeenSet() const { return m_estimatedMonthlyStorageCostHasBeenSet; }
-    inline void SetEstimatedMonthlyStorageCost(const Aws::String& value) { m_estimatedMonthlyStorageCostHasBeenSet = true; m_estimatedMonthlyStorageCost = value; }
-    inline void SetEstimatedMonthlyStorageCost(Aws::String&& value) { m_estimatedMonthlyStorageCostHasBeenSet = true; m_estimatedMonthlyStorageCost = std::move(value); }
-    inline void SetEstimatedMonthlyStorageCost(const char* value) { m_estimatedMonthlyStorageCostHasBeenSet = true; m_estimatedMonthlyStorageCost.assign(value); }
-    inline Recommendation& WithEstimatedMonthlyStorageCost(const Aws::String& value) { SetEstimatedMonthlyStorageCost(value); return *this;}
-    inline Recommendation& WithEstimatedMonthlyStorageCost(Aws::String&& value) { SetEstimatedMonthlyStorageCost(std::move(value)); return *this;}
-    inline Recommendation& WithEstimatedMonthlyStorageCost(const char* value) { SetEstimatedMonthlyStorageCost(value); return *this;}
+    template<typename EstimatedMonthlyStorageCostT = Aws::String>
+    void SetEstimatedMonthlyStorageCost(EstimatedMonthlyStorageCostT&& value) { m_estimatedMonthlyStorageCostHasBeenSet = true; m_estimatedMonthlyStorageCost = std::forward<EstimatedMonthlyStorageCostT>(value); }
+    template<typename EstimatedMonthlyStorageCostT = Aws::String>
+    Recommendation& WithEstimatedMonthlyStorageCost(EstimatedMonthlyStorageCostT&& value) { SetEstimatedMonthlyStorageCost(std::forward<EstimatedMonthlyStorageCostT>(value)); return *this;}
     ///@}
   private:
 

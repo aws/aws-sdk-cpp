@@ -35,7 +35,7 @@ namespace Model
   class ListVaultsResult
   {
   public:
-    AWS_GLACIER_API ListVaultsResult();
+    AWS_GLACIER_API ListVaultsResult() = default;
     AWS_GLACIER_API ListVaultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API ListVaultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>List of vaults.</p>
      */
-    inline const Aws::Vector<DescribeVaultOutput>& GetVaultList() const{ return m_vaultList; }
-    inline void SetVaultList(const Aws::Vector<DescribeVaultOutput>& value) { m_vaultList = value; }
-    inline void SetVaultList(Aws::Vector<DescribeVaultOutput>&& value) { m_vaultList = std::move(value); }
-    inline ListVaultsResult& WithVaultList(const Aws::Vector<DescribeVaultOutput>& value) { SetVaultList(value); return *this;}
-    inline ListVaultsResult& WithVaultList(Aws::Vector<DescribeVaultOutput>&& value) { SetVaultList(std::move(value)); return *this;}
-    inline ListVaultsResult& AddVaultList(const DescribeVaultOutput& value) { m_vaultList.push_back(value); return *this; }
-    inline ListVaultsResult& AddVaultList(DescribeVaultOutput&& value) { m_vaultList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DescribeVaultOutput>& GetVaultList() const { return m_vaultList; }
+    template<typename VaultListT = Aws::Vector<DescribeVaultOutput>>
+    void SetVaultList(VaultListT&& value) { m_vaultListHasBeenSet = true; m_vaultList = std::forward<VaultListT>(value); }
+    template<typename VaultListT = Aws::Vector<DescribeVaultOutput>>
+    ListVaultsResult& WithVaultList(VaultListT&& value) { SetVaultList(std::forward<VaultListT>(value)); return *this;}
+    template<typename VaultListT = DescribeVaultOutput>
+    ListVaultsResult& AddVaultList(VaultListT&& value) { m_vaultListHasBeenSet = true; m_vaultList.emplace_back(std::forward<VaultListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * <p>The vault ARN at which to continue pagination of the results. You use the
      * marker in another List Vaults request to obtain more vaults in the list.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListVaultsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListVaultsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListVaultsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListVaultsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVaultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVaultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVaultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVaultsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DescribeVaultOutput> m_vaultList;
+    bool m_vaultListHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

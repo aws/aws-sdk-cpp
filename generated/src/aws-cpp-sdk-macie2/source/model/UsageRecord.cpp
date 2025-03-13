@@ -18,16 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-UsageRecord::UsageRecord() : 
-    m_accountIdHasBeenSet(false),
-    m_automatedDiscoveryFreeTrialStartDateHasBeenSet(false),
-    m_freeTrialStartDateHasBeenSet(false),
-    m_usageHasBeenSet(false)
-{
-}
-
 UsageRecord::UsageRecord(JsonView jsonValue)
-  : UsageRecord()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("automatedDiscoveryFreeTrialStartDate"))
   {
     m_automatedDiscoveryFreeTrialStartDate = jsonValue.GetString("automatedDiscoveryFreeTrialStartDate");
-
     m_automatedDiscoveryFreeTrialStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("freeTrialStartDate"))
   {
     m_freeTrialStartDate = jsonValue.GetString("freeTrialStartDate");
-
     m_freeTrialStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usage"))
   {
     Aws::Utils::Array<JsonView> usageJsonList = jsonValue.GetArray("usage");
@@ -64,7 +49,6 @@ UsageRecord& UsageRecord::operator =(JsonView jsonValue)
     }
     m_usageHasBeenSet = true;
   }
-
   return *this;
 }
 

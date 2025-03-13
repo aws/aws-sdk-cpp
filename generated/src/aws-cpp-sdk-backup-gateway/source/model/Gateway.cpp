@@ -18,18 +18,7 @@ namespace BackupGateway
 namespace Model
 {
 
-Gateway::Gateway() : 
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayDisplayNameHasBeenSet(false),
-    m_gatewayType(GatewayType::NOT_SET),
-    m_gatewayTypeHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastSeenTimeHasBeenSet(false)
-{
-}
-
 Gateway::Gateway(JsonView jsonValue)
-  : Gateway()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Gateway& Gateway::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GatewayArn"))
   {
     m_gatewayArn = jsonValue.GetString("GatewayArn");
-
     m_gatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayDisplayName"))
   {
     m_gatewayDisplayName = jsonValue.GetString("GatewayDisplayName");
-
     m_gatewayDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayType"))
   {
     m_gatewayType = GatewayTypeMapper::GetGatewayTypeForName(jsonValue.GetString("GatewayType"));
-
     m_gatewayTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HypervisorId"))
   {
     m_hypervisorId = jsonValue.GetString("HypervisorId");
-
     m_hypervisorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSeenTime"))
   {
     m_lastSeenTime = jsonValue.GetDouble("LastSeenTime");
-
     m_lastSeenTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

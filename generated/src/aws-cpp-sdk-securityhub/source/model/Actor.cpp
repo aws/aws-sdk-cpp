@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Actor::Actor() : 
-    m_idHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_sessionHasBeenSet(false)
-{
-}
-
 Actor::Actor(JsonView jsonValue)
-  : Actor()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Actor& Actor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetObject("User");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetObject("Session");
-
     m_sessionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-SecretsManagerSecretResourceData::SecretsManagerSecretResourceData() : 
-    m_aRNHasBeenSet(false),
-    m_additionalStagingLabelsToDownloadHasBeenSet(false)
-{
-}
-
 SecretsManagerSecretResourceData::SecretsManagerSecretResourceData(JsonView jsonValue)
-  : SecretsManagerSecretResourceData()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SecretsManagerSecretResourceData& SecretsManagerSecretResourceData::operator =(J
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalStagingLabelsToDownload"))
   {
     Aws::Utils::Array<JsonView> additionalStagingLabelsToDownloadJsonList = jsonValue.GetArray("AdditionalStagingLabelsToDownload");
@@ -48,7 +39,6 @@ SecretsManagerSecretResourceData& SecretsManagerSecretResourceData::operator =(J
     }
     m_additionalStagingLabelsToDownloadHasBeenSet = true;
   }
-
   return *this;
 }
 

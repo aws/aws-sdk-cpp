@@ -29,7 +29,7 @@ namespace Model
   class ListAttributeGroupsForApplicationResult
   {
   public:
-    AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult();
+    AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult() = default;
     AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPREGISTRY_API ListAttributeGroupsForApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> The details related to a specific attribute group. </p>
      */
-    inline const Aws::Vector<AttributeGroupDetails>& GetAttributeGroupsDetails() const{ return m_attributeGroupsDetails; }
-    inline void SetAttributeGroupsDetails(const Aws::Vector<AttributeGroupDetails>& value) { m_attributeGroupsDetails = value; }
-    inline void SetAttributeGroupsDetails(Aws::Vector<AttributeGroupDetails>&& value) { m_attributeGroupsDetails = std::move(value); }
-    inline ListAttributeGroupsForApplicationResult& WithAttributeGroupsDetails(const Aws::Vector<AttributeGroupDetails>& value) { SetAttributeGroupsDetails(value); return *this;}
-    inline ListAttributeGroupsForApplicationResult& WithAttributeGroupsDetails(Aws::Vector<AttributeGroupDetails>&& value) { SetAttributeGroupsDetails(std::move(value)); return *this;}
-    inline ListAttributeGroupsForApplicationResult& AddAttributeGroupsDetails(const AttributeGroupDetails& value) { m_attributeGroupsDetails.push_back(value); return *this; }
-    inline ListAttributeGroupsForApplicationResult& AddAttributeGroupsDetails(AttributeGroupDetails&& value) { m_attributeGroupsDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AttributeGroupDetails>& GetAttributeGroupsDetails() const { return m_attributeGroupsDetails; }
+    template<typename AttributeGroupsDetailsT = Aws::Vector<AttributeGroupDetails>>
+    void SetAttributeGroupsDetails(AttributeGroupsDetailsT&& value) { m_attributeGroupsDetailsHasBeenSet = true; m_attributeGroupsDetails = std::forward<AttributeGroupsDetailsT>(value); }
+    template<typename AttributeGroupsDetailsT = Aws::Vector<AttributeGroupDetails>>
+    ListAttributeGroupsForApplicationResult& WithAttributeGroupsDetails(AttributeGroupsDetailsT&& value) { SetAttributeGroupsDetails(std::forward<AttributeGroupsDetailsT>(value)); return *this;}
+    template<typename AttributeGroupsDetailsT = AttributeGroupDetails>
+    ListAttributeGroupsForApplicationResult& AddAttributeGroupsDetails(AttributeGroupsDetailsT&& value) { m_attributeGroupsDetailsHasBeenSet = true; m_attributeGroupsDetails.emplace_back(std::forward<AttributeGroupsDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to get the next page of results after a previous API
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAttributeGroupsForApplicationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAttributeGroupsForApplicationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAttributeGroupsForApplicationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAttributeGroupsForApplicationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAttributeGroupsForApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAttributeGroupsForApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAttributeGroupsForApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAttributeGroupsForApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AttributeGroupDetails> m_attributeGroupsDetails;
+    bool m_attributeGroupsDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

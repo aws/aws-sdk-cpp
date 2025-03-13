@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-ScheduleConfiguration::ScheduleConfiguration() : 
-    m_transitionHasBeenSet(false),
-    m_clipRangeHasBeenSet(false)
-{
-}
-
 ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
-  : ScheduleConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ScheduleConfiguration& ScheduleConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Transition"))
   {
     m_transition = jsonValue.GetObject("Transition");
-
     m_transitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClipRange"))
   {
     m_clipRange = jsonValue.GetObject("ClipRange");
-
     m_clipRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

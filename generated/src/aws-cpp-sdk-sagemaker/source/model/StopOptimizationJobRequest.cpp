@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopOptimizationJobRequest::StopOptimizationJobRequest() : 
-    m_optimizationJobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopOptimizationJobRequest::SerializePayload() const
 {
   JsonValue payload;

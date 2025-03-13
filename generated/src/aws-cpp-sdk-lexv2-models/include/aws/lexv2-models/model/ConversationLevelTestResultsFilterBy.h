@@ -32,7 +32,7 @@ namespace Model
   class ConversationLevelTestResultsFilterBy
   {
   public:
-    AWS_LEXMODELSV2_API ConversationLevelTestResultsFilterBy();
+    AWS_LEXMODELSV2_API ConversationLevelTestResultsFilterBy() = default;
     AWS_LEXMODELSV2_API ConversationLevelTestResultsFilterBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ConversationLevelTestResultsFilterBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The selection of matched or mismatched end-to-end status to filter test set
      * results data at the conversation level.</p>
      */
-    inline const TestResultMatchStatus& GetEndToEndResult() const{ return m_endToEndResult; }
+    inline TestResultMatchStatus GetEndToEndResult() const { return m_endToEndResult; }
     inline bool EndToEndResultHasBeenSet() const { return m_endToEndResultHasBeenSet; }
-    inline void SetEndToEndResult(const TestResultMatchStatus& value) { m_endToEndResultHasBeenSet = true; m_endToEndResult = value; }
-    inline void SetEndToEndResult(TestResultMatchStatus&& value) { m_endToEndResultHasBeenSet = true; m_endToEndResult = std::move(value); }
-    inline ConversationLevelTestResultsFilterBy& WithEndToEndResult(const TestResultMatchStatus& value) { SetEndToEndResult(value); return *this;}
-    inline ConversationLevelTestResultsFilterBy& WithEndToEndResult(TestResultMatchStatus&& value) { SetEndToEndResult(std::move(value)); return *this;}
+    inline void SetEndToEndResult(TestResultMatchStatus value) { m_endToEndResultHasBeenSet = true; m_endToEndResult = value; }
+    inline ConversationLevelTestResultsFilterBy& WithEndToEndResult(TestResultMatchStatus value) { SetEndToEndResult(value); return *this;}
     ///@}
   private:
 
-    TestResultMatchStatus m_endToEndResult;
+    TestResultMatchStatus m_endToEndResult{TestResultMatchStatus::NOT_SET};
     bool m_endToEndResultHasBeenSet = false;
   };
 

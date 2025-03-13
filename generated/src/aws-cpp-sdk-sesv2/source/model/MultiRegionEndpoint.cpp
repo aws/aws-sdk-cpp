@@ -18,19 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MultiRegionEndpoint::MultiRegionEndpoint() : 
-    m_endpointNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
-{
-}
-
 MultiRegionEndpoint::MultiRegionEndpoint(JsonView jsonValue)
-  : MultiRegionEndpoint()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ MultiRegionEndpoint& MultiRegionEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("Regions");
@@ -67,21 +49,16 @@ MultiRegionEndpoint& MultiRegionEndpoint::operator =(JsonView jsonValue)
     }
     m_regionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

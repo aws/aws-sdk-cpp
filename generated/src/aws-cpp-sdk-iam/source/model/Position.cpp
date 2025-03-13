@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Position::Position() : 
-    m_line(0),
-    m_lineHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false)
-{
-}
-
 Position::Position(const XmlNode& xmlNode)
-  : Position()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ Position& Position::operator =(const XmlNode& xmlNode)
     {
       m_line = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lineNode.GetText()).c_str()).c_str());
       m_lineHasBeenSet = true;
+       m_lineHasBeenSet = true;
     }
     XmlNode columnNode = resultNode.FirstChild("Column");
     if(!columnNode.IsNull())
     {
       m_column = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(columnNode.GetText()).c_str()).c_str());
       m_columnHasBeenSet = true;
+       m_columnHasBeenSet = true;
     }
   }
 

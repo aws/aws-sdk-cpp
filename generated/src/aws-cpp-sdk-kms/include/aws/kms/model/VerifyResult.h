@@ -28,7 +28,7 @@ namespace Model
   class VerifyResult
   {
   public:
-    AWS_KMS_API VerifyResult();
+    AWS_KMS_API VerifyResult() = default;
     AWS_KMS_API VerifyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API VerifyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
      * ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
-    inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyId.assign(value); }
-    inline VerifyResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline VerifyResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline VerifyResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    VerifyResult& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,8 +55,8 @@ namespace Model
      * <code>Verify</code> operation fails with a
      * <code>KMSInvalidSignatureException</code> exception. </p>
      */
-    inline bool GetSignatureValid() const{ return m_signatureValid; }
-    inline void SetSignatureValid(bool value) { m_signatureValid = value; }
+    inline bool GetSignatureValid() const { return m_signatureValid; }
+    inline void SetSignatureValid(bool value) { m_signatureValidHasBeenSet = true; m_signatureValid = value; }
     inline VerifyResult& WithSignatureValid(bool value) { SetSignatureValid(value); return *this;}
     ///@}
 
@@ -66,32 +64,32 @@ namespace Model
     /**
      * <p>The signing algorithm that was used to verify the signature.</p>
      */
-    inline const SigningAlgorithmSpec& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
-    inline void SetSigningAlgorithm(const SigningAlgorithmSpec& value) { m_signingAlgorithm = value; }
-    inline void SetSigningAlgorithm(SigningAlgorithmSpec&& value) { m_signingAlgorithm = std::move(value); }
-    inline VerifyResult& WithSigningAlgorithm(const SigningAlgorithmSpec& value) { SetSigningAlgorithm(value); return *this;}
-    inline VerifyResult& WithSigningAlgorithm(SigningAlgorithmSpec&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
+    inline SigningAlgorithmSpec GetSigningAlgorithm() const { return m_signingAlgorithm; }
+    inline void SetSigningAlgorithm(SigningAlgorithmSpec value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
+    inline VerifyResult& WithSigningAlgorithm(SigningAlgorithmSpec value) { SetSigningAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline VerifyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline VerifyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline VerifyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    VerifyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyId;
+    bool m_keyIdHasBeenSet = false;
 
-    bool m_signatureValid;
+    bool m_signatureValid{false};
+    bool m_signatureValidHasBeenSet = false;
 
-    SigningAlgorithmSpec m_signingAlgorithm;
+    SigningAlgorithmSpec m_signingAlgorithm{SigningAlgorithmSpec::NOT_SET};
+    bool m_signingAlgorithmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

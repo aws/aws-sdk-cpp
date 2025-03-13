@@ -18,21 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-RepositoryDescription::RepositoryDescription() : 
-    m_nameHasBeenSet(false),
-    m_administratorAccountHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_upstreamsHasBeenSet(false),
-    m_externalConnectionsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 RepositoryDescription::RepositoryDescription(JsonView jsonValue)
-  : RepositoryDescription()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ RepositoryDescription& RepositoryDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("administratorAccount"))
   {
     m_administratorAccount = jsonValue.GetString("administratorAccount");
-
     m_administratorAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainOwner"))
   {
     m_domainOwner = jsonValue.GetString("domainOwner");
-
     m_domainOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreams"))
   {
     Aws::Utils::Array<JsonView> upstreamsJsonList = jsonValue.GetArray("upstreams");
@@ -90,7 +64,6 @@ RepositoryDescription& RepositoryDescription::operator =(JsonView jsonValue)
     }
     m_upstreamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalConnections"))
   {
     Aws::Utils::Array<JsonView> externalConnectionsJsonList = jsonValue.GetArray("externalConnections");
@@ -100,14 +73,11 @@ RepositoryDescription& RepositoryDescription::operator =(JsonView jsonValue)
     }
     m_externalConnectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

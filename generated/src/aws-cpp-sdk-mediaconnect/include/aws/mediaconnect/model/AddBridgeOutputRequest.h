@@ -31,7 +31,7 @@ namespace Model
   class AddBridgeOutputRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddBridgeOutputRequest();
+    AWS_MEDIACONNECT_API AddBridgeOutputRequest() = default;
     AWS_MEDIACONNECT_API AddBridgeOutputRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API AddBridgeOutputRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const AddBridgeNetworkOutputRequest& GetNetworkOutput() const{ return m_networkOutput; }
+    inline const AddBridgeNetworkOutputRequest& GetNetworkOutput() const { return m_networkOutput; }
     inline bool NetworkOutputHasBeenSet() const { return m_networkOutputHasBeenSet; }
-    inline void SetNetworkOutput(const AddBridgeNetworkOutputRequest& value) { m_networkOutputHasBeenSet = true; m_networkOutput = value; }
-    inline void SetNetworkOutput(AddBridgeNetworkOutputRequest&& value) { m_networkOutputHasBeenSet = true; m_networkOutput = std::move(value); }
-    inline AddBridgeOutputRequest& WithNetworkOutput(const AddBridgeNetworkOutputRequest& value) { SetNetworkOutput(value); return *this;}
-    inline AddBridgeOutputRequest& WithNetworkOutput(AddBridgeNetworkOutputRequest&& value) { SetNetworkOutput(std::move(value)); return *this;}
+    template<typename NetworkOutputT = AddBridgeNetworkOutputRequest>
+    void SetNetworkOutput(NetworkOutputT&& value) { m_networkOutputHasBeenSet = true; m_networkOutput = std::forward<NetworkOutputT>(value); }
+    template<typename NetworkOutputT = AddBridgeNetworkOutputRequest>
+    AddBridgeOutputRequest& WithNetworkOutput(NetworkOutputT&& value) { SetNetworkOutput(std::forward<NetworkOutputT>(value)); return *this;}
     ///@}
   private:
 

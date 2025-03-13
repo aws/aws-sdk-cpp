@@ -29,7 +29,7 @@ namespace Model
   class GetDedicatedIpsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API GetDedicatedIpsRequest();
+    AWS_SESV2_API GetDedicatedIpsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the IP pool that the dedicated IP address is associated with.</p>
      */
-    inline const Aws::String& GetPoolName() const{ return m_poolName; }
+    inline const Aws::String& GetPoolName() const { return m_poolName; }
     inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
-    inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
-    inline void SetPoolName(Aws::String&& value) { m_poolNameHasBeenSet = true; m_poolName = std::move(value); }
-    inline void SetPoolName(const char* value) { m_poolNameHasBeenSet = true; m_poolName.assign(value); }
-    inline GetDedicatedIpsRequest& WithPoolName(const Aws::String& value) { SetPoolName(value); return *this;}
-    inline GetDedicatedIpsRequest& WithPoolName(Aws::String&& value) { SetPoolName(std::move(value)); return *this;}
-    inline GetDedicatedIpsRequest& WithPoolName(const char* value) { SetPoolName(value); return *this;}
+    template<typename PoolNameT = Aws::String>
+    void SetPoolName(PoolNameT&& value) { m_poolNameHasBeenSet = true; m_poolName = std::forward<PoolNameT>(value); }
+    template<typename PoolNameT = Aws::String>
+    GetDedicatedIpsRequest& WithPoolName(PoolNameT&& value) { SetPoolName(std::forward<PoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>A token returned from a previous call to <code>GetDedicatedIps</code> to
      * indicate the position of the dedicated IP pool in the list of IP pools.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetDedicatedIpsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetDedicatedIpsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetDedicatedIpsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetDedicatedIpsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * <code>NextToken</code> element, which you can use to obtain additional
      * results.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline GetDedicatedIpsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

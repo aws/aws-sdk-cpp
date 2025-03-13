@@ -26,7 +26,7 @@ namespace Model
   class ListStepsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API ListStepsRequest();
+    AWS_EMR_API ListStepsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,25 @@ namespace Model
     /**
      * <p>The identifier of the cluster for which to list the steps.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline ListStepsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline ListStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline ListStepsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    ListStepsRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter to limit the step list based on certain states.</p>
      */
-    inline const Aws::Vector<StepState>& GetStepStates() const{ return m_stepStates; }
+    inline const Aws::Vector<StepState>& GetStepStates() const { return m_stepStates; }
     inline bool StepStatesHasBeenSet() const { return m_stepStatesHasBeenSet; }
-    inline void SetStepStates(const Aws::Vector<StepState>& value) { m_stepStatesHasBeenSet = true; m_stepStates = value; }
-    inline void SetStepStates(Aws::Vector<StepState>&& value) { m_stepStatesHasBeenSet = true; m_stepStates = std::move(value); }
-    inline ListStepsRequest& WithStepStates(const Aws::Vector<StepState>& value) { SetStepStates(value); return *this;}
-    inline ListStepsRequest& WithStepStates(Aws::Vector<StepState>&& value) { SetStepStates(std::move(value)); return *this;}
-    inline ListStepsRequest& AddStepStates(const StepState& value) { m_stepStatesHasBeenSet = true; m_stepStates.push_back(value); return *this; }
-    inline ListStepsRequest& AddStepStates(StepState&& value) { m_stepStatesHasBeenSet = true; m_stepStates.push_back(std::move(value)); return *this; }
+    template<typename StepStatesT = Aws::Vector<StepState>>
+    void SetStepStates(StepStatesT&& value) { m_stepStatesHasBeenSet = true; m_stepStates = std::forward<StepStatesT>(value); }
+    template<typename StepStatesT = Aws::Vector<StepState>>
+    ListStepsRequest& WithStepStates(StepStatesT&& value) { SetStepStates(std::forward<StepStatesT>(value)); return *this;}
+    inline ListStepsRequest& AddStepStates(StepState value) { m_stepStatesHasBeenSet = true; m_stepStates.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +70,14 @@ namespace Model
      * can specify a maximum of ten Step IDs. The character constraint applies to the
      * overall length of the array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
+    inline const Aws::Vector<Aws::String>& GetStepIds() const { return m_stepIds; }
     inline bool StepIdsHasBeenSet() const { return m_stepIdsHasBeenSet; }
-    inline void SetStepIds(const Aws::Vector<Aws::String>& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
-    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::move(value); }
-    inline ListStepsRequest& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
-    inline ListStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(std::move(value)); return *this;}
-    inline ListStepsRequest& AddStepIds(const Aws::String& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
-    inline ListStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(std::move(value)); return *this; }
-    inline ListStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+    template<typename StepIdsT = Aws::Vector<Aws::String>>
+    void SetStepIds(StepIdsT&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::forward<StepIdsT>(value); }
+    template<typename StepIdsT = Aws::Vector<Aws::String>>
+    ListStepsRequest& WithStepIds(StepIdsT&& value) { SetStepIds(std::forward<StepIdsT>(value)); return *this;}
+    template<typename StepIdsT = Aws::String>
+    ListStepsRequest& AddStepIds(StepIdsT&& value) { m_stepIdsHasBeenSet = true; m_stepIds.emplace_back(std::forward<StepIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * which is a pagination token that indicates the next set of results to
      * retrieve.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListStepsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListStepsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListStepsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListStepsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 

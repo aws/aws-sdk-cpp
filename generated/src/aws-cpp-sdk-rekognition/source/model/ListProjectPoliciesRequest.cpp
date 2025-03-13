@@ -12,14 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProjectPoliciesRequest::ListProjectPoliciesRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListProjectPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

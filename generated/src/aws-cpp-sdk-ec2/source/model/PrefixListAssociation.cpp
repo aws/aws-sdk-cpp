@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixListAssociation::PrefixListAssociation() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 PrefixListAssociation::PrefixListAssociation(const XmlNode& xmlNode)
-  : PrefixListAssociation()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PrefixListAssociation& PrefixListAssociation::operator =(const XmlNode& xmlNode)
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceOwnerNode = resultNode.FirstChild("resourceOwner");
     if(!resourceOwnerNode.IsNull())
     {
       m_resourceOwner = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerNode.GetText());
       m_resourceOwnerHasBeenSet = true;
+       m_resourceOwnerHasBeenSet = true;
     }
   }
 

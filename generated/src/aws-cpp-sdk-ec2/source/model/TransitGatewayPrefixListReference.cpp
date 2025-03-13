@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPrefixListReference::TransitGatewayPrefixListReference() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_prefixListOwnerIdHasBeenSet(false),
-    m_state(TransitGatewayPrefixListReferenceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_blackhole(false),
-    m_blackholeHasBeenSet(false),
-    m_transitGatewayAttachmentHasBeenSet(false)
-{
-}
-
 TransitGatewayPrefixListReference::TransitGatewayPrefixListReference(const XmlNode& xmlNode)
-  : TransitGatewayPrefixListReference()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,42 @@ TransitGatewayPrefixListReference& TransitGatewayPrefixListReference::operator =
     {
       m_transitGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableIdNode.GetText());
       m_transitGatewayRouteTableIdHasBeenSet = true;
+       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode prefixListOwnerIdNode = resultNode.FirstChild("prefixListOwnerId");
     if(!prefixListOwnerIdNode.IsNull())
     {
       m_prefixListOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListOwnerIdNode.GetText());
       m_prefixListOwnerIdHasBeenSet = true;
+       m_prefixListOwnerIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayPrefixListReferenceStateMapper::GetTransitGatewayPrefixListReferenceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayPrefixListReferenceStateMapper::GetTransitGatewayPrefixListReferenceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode blackholeNode = resultNode.FirstChild("blackhole");
     if(!blackholeNode.IsNull())
     {
       m_blackhole = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(blackholeNode.GetText()).c_str()).c_str());
       m_blackholeHasBeenSet = true;
+       m_blackholeHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentNode = resultNode.FirstChild("transitGatewayAttachment");
     if(!transitGatewayAttachmentNode.IsNull())
     {
       m_transitGatewayAttachment = transitGatewayAttachmentNode;
       m_transitGatewayAttachmentHasBeenSet = true;
+       m_transitGatewayAttachmentHasBeenSet = true;
     }
   }
 

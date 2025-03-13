@@ -14,12 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetHostedZoneLimitRequest::GetHostedZoneLimitRequest() : 
-    m_type(HostedZoneLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false)
-{
-}
 
 Aws::String GetHostedZoneLimitRequest::SerializePayload() const
 {

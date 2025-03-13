@@ -33,7 +33,7 @@ namespace Model
   class AIMLOptionsStatus
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AIMLOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API AIMLOptionsStatus() = default;
     AWS_OPENSEARCHSERVICE_API AIMLOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API AIMLOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,22 +43,22 @@ namespace Model
     /**
      * <p>Machine learning options on the specified domain.</p>
      */
-    inline const AIMLOptionsOutput& GetOptions() const{ return m_options; }
+    inline const AIMLOptionsOutput& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const AIMLOptionsOutput& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(AIMLOptionsOutput&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline AIMLOptionsStatus& WithOptions(const AIMLOptionsOutput& value) { SetOptions(value); return *this;}
-    inline AIMLOptionsStatus& WithOptions(AIMLOptionsOutput&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = AIMLOptionsOutput>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = AIMLOptionsOutput>
+    AIMLOptionsStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AIMLOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline AIMLOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    AIMLOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes() : 
-    m_resultHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
-{
-}
-
 ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes(JsonView jsonValue)
-  : ActivityTaskCompletedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ActivityTaskCompletedEventAttributes& ActivityTaskCompletedEventAttributes::oper
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetString("result");
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledEventId"))
   {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
-
     m_scheduledEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

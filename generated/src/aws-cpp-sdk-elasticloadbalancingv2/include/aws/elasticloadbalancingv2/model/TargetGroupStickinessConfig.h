@@ -30,7 +30,7 @@ namespace Model
   class TargetGroupStickinessConfig
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TargetGroupStickinessConfig();
+    AWS_ELASTICLOADBALANCINGV2_API TargetGroupStickinessConfig() = default;
     AWS_ELASTICLOADBALANCINGV2_API TargetGroupStickinessConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TargetGroupStickinessConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Indicates whether target group stickiness is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline TargetGroupStickinessConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * <p>The time period, in seconds, during which requests from a client should be
      * routed to the same target group. The range is 1-604800 seconds (7 days).</p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline TargetGroupStickinessConfig& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
   };
 

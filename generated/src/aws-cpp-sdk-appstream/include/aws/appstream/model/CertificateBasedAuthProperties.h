@@ -40,7 +40,7 @@ namespace Model
   class CertificateBasedAuthProperties
   {
   public:
-    AWS_APPSTREAM_API CertificateBasedAuthProperties();
+    AWS_APPSTREAM_API CertificateBasedAuthProperties() = default;
     AWS_APPSTREAM_API CertificateBasedAuthProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API CertificateBasedAuthProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,30 +50,26 @@ namespace Model
     /**
      * <p>The status of the certificate-based authentication properties.</p>
      */
-    inline const CertificateBasedAuthStatus& GetStatus() const{ return m_status; }
+    inline CertificateBasedAuthStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CertificateBasedAuthStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CertificateBasedAuthStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CertificateBasedAuthProperties& WithStatus(const CertificateBasedAuthStatus& value) { SetStatus(value); return *this;}
-    inline CertificateBasedAuthProperties& WithStatus(CertificateBasedAuthStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CertificateBasedAuthStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CertificateBasedAuthProperties& WithStatus(CertificateBasedAuthStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the AWS Certificate Manager Private CA resource.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    CertificateBasedAuthProperties& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
   private:
 
-    CertificateBasedAuthStatus m_status;
+    CertificateBasedAuthStatus m_status{CertificateBasedAuthStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;

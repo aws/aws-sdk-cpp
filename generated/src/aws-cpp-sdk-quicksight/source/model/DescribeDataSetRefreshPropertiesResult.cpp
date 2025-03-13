@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataSetRefreshPropertiesResult::DescribeDataSetRefreshPropertiesResult() : 
-    m_status(0)
-{
-}
-
 DescribeDataSetRefreshPropertiesResult::DescribeDataSetRefreshPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDataSetRefreshPropertiesResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeDataSetRefreshPropertiesResult& DescribeDataSetRefreshPropertiesResult::
   if(jsonValue.ValueExists("DataSetRefreshProperties"))
   {
     m_dataSetRefreshProperties = jsonValue.GetObject("DataSetRefreshProperties");
-
+    m_dataSetRefreshPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

@@ -12,11 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopAccessLoggingRequest::StopAccessLoggingRequest() : 
-    m_containerNameHasBeenSet(false)
-{
-}
-
 Aws::String StopAccessLoggingRequest::SerializePayload() const
 {
   JsonValue payload;

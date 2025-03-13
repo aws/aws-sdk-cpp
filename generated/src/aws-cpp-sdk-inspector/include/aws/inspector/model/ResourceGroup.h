@@ -37,7 +37,7 @@ namespace Model
   class ResourceGroup
   {
   public:
-    AWS_INSPECTOR_API ResourceGroup();
+    AWS_INSPECTOR_API ResourceGroup() = default;
     AWS_INSPECTOR_API ResourceGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API ResourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The ARN of the resource group.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ResourceGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ResourceGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ResourceGroup& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ResourceGroup& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,26 @@ namespace Model
      * <p>The tags (key and value pairs) of the resource group. This data type property
      * is used in the <a>CreateResourceGroup</a> action.</p>
      */
-    inline const Aws::Vector<ResourceGroupTag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<ResourceGroupTag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<ResourceGroupTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<ResourceGroupTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ResourceGroup& WithTags(const Aws::Vector<ResourceGroupTag>& value) { SetTags(value); return *this;}
-    inline ResourceGroup& WithTags(Aws::Vector<ResourceGroupTag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ResourceGroup& AddTags(const ResourceGroupTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ResourceGroup& AddTags(ResourceGroupTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<ResourceGroupTag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<ResourceGroupTag>>
+    ResourceGroup& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = ResourceGroupTag>
+    ResourceGroup& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time at which resource group is created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ResourceGroup& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ResourceGroup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ResourceGroup& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -91,7 +89,7 @@ namespace Model
     Aws::Vector<ResourceGroupTag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
   };
 

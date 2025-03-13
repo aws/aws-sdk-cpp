@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ActivateEvaluationFormResult::ActivateEvaluationFormResult() : 
-    m_evaluationFormVersion(0)
-{
-}
-
 ActivateEvaluationFormResult::ActivateEvaluationFormResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ActivateEvaluationFormResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ ActivateEvaluationFormResult& ActivateEvaluationFormResult::operator =(const Aws
   if(jsonValue.ValueExists("EvaluationFormId"))
   {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");
-
+    m_evaluationFormIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationFormArn"))
   {
     m_evaluationFormArn = jsonValue.GetString("EvaluationFormArn");
-
+    m_evaluationFormArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationFormVersion"))
   {
     m_evaluationFormVersion = jsonValue.GetInteger("EvaluationFormVersion");
-
+    m_evaluationFormVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

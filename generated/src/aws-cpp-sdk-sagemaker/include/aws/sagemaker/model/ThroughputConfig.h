@@ -43,7 +43,7 @@ namespace Model
   class ThroughputConfig
   {
   public:
-    AWS_SAGEMAKER_API ThroughputConfig();
+    AWS_SAGEMAKER_API ThroughputConfig() = default;
     AWS_SAGEMAKER_API ThroughputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ThroughputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
      * <code>PROVISIONED</code>. </p>
      */
-    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+    inline ThroughputMode GetThroughputMode() const { return m_throughputMode; }
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
-    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
-    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
-    inline ThroughputConfig& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
-    inline ThroughputConfig& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+    inline void SetThroughputMode(ThroughputMode value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+    inline ThroughputConfig& WithThroughputMode(ThroughputMode value) { SetThroughputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * read throughput you are billed for and can consume without throttling. </p>
      * <p>This field is not applicable for on-demand feature groups. </p>
      */
-    inline int GetProvisionedReadCapacityUnits() const{ return m_provisionedReadCapacityUnits; }
+    inline int GetProvisionedReadCapacityUnits() const { return m_provisionedReadCapacityUnits; }
     inline bool ProvisionedReadCapacityUnitsHasBeenSet() const { return m_provisionedReadCapacityUnitsHasBeenSet; }
     inline void SetProvisionedReadCapacityUnits(int value) { m_provisionedReadCapacityUnitsHasBeenSet = true; m_provisionedReadCapacityUnits = value; }
     inline ThroughputConfig& WithProvisionedReadCapacityUnits(int value) { SetProvisionedReadCapacityUnits(value); return *this;}
@@ -80,20 +78,20 @@ namespace Model
      * billed for and can consume without throttling. </p> <p>This field is not
      * applicable for on-demand feature groups. </p>
      */
-    inline int GetProvisionedWriteCapacityUnits() const{ return m_provisionedWriteCapacityUnits; }
+    inline int GetProvisionedWriteCapacityUnits() const { return m_provisionedWriteCapacityUnits; }
     inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
     inline void SetProvisionedWriteCapacityUnits(int value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
     inline ThroughputConfig& WithProvisionedWriteCapacityUnits(int value) { SetProvisionedWriteCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    ThroughputMode m_throughputMode;
+    ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
     bool m_throughputModeHasBeenSet = false;
 
-    int m_provisionedReadCapacityUnits;
+    int m_provisionedReadCapacityUnits{0};
     bool m_provisionedReadCapacityUnitsHasBeenSet = false;
 
-    int m_provisionedWriteCapacityUnits;
+    int m_provisionedWriteCapacityUnits{0};
     bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
   };
 

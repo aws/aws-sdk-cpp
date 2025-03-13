@@ -18,24 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Catalog::Catalog() : 
-    m_catalogIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_targetRedshiftCatalogHasBeenSet(false),
-    m_federatedCatalogHasBeenSet(false),
-    m_catalogPropertiesHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_createDatabaseDefaultPermissionsHasBeenSet(false)
-{
-}
-
 Catalog::Catalog(JsonView jsonValue)
-  : Catalog()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ Catalog& Catalog::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -79,42 +54,31 @@ Catalog& Catalog::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetRedshiftCatalog"))
   {
     m_targetRedshiftCatalog = jsonValue.GetObject("TargetRedshiftCatalog");
-
     m_targetRedshiftCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederatedCatalog"))
   {
     m_federatedCatalog = jsonValue.GetObject("FederatedCatalog");
-
     m_federatedCatalogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogProperties"))
   {
     m_catalogProperties = jsonValue.GetObject("CatalogProperties");
-
     m_catalogPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
@@ -124,7 +88,6 @@ Catalog& Catalog::operator =(JsonView jsonValue)
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDatabaseDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createDatabaseDefaultPermissionsJsonList = jsonValue.GetArray("CreateDatabaseDefaultPermissions");
@@ -134,7 +97,6 @@ Catalog& Catalog::operator =(JsonView jsonValue)
     }
     m_createDatabaseDefaultPermissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

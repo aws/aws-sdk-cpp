@@ -19,7 +19,7 @@ namespace Model
   class IsVpcPeeredRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API IsVpcPeeredRequest();
+    AWS_LIGHTSAIL_API IsVpcPeeredRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

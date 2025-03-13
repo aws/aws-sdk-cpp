@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAIAgentRequest::GetAIAgentRequest() : 
-    m_aiAgentIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAIAgentRequest::SerializePayload() const
 {
   return {};

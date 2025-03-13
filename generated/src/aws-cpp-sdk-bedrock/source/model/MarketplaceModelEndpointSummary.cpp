@@ -18,19 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-MarketplaceModelEndpointSummary::MarketplaceModelEndpointSummary() : 
-    m_endpointArnHasBeenSet(false),
-    m_modelSourceIdentifierHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 MarketplaceModelEndpointSummary::MarketplaceModelEndpointSummary(JsonView jsonValue)
-  : MarketplaceModelEndpointSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ MarketplaceModelEndpointSummary& MarketplaceModelEndpointSummary::operator =(Jso
   if(jsonValue.ValueExists("endpointArn"))
   {
     m_endpointArn = jsonValue.GetString("endpointArn");
-
     m_endpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelSourceIdentifier"))
   {
     m_modelSourceIdentifier = jsonValue.GetString("modelSourceIdentifier");
-
     m_modelSourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

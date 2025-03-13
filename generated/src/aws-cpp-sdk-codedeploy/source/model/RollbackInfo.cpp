@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-RollbackInfo::RollbackInfo() : 
-    m_rollbackDeploymentIdHasBeenSet(false),
-    m_rollbackTriggeringDeploymentIdHasBeenSet(false),
-    m_rollbackMessageHasBeenSet(false)
-{
-}
-
 RollbackInfo::RollbackInfo(JsonView jsonValue)
-  : RollbackInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RollbackInfo& RollbackInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rollbackDeploymentId"))
   {
     m_rollbackDeploymentId = jsonValue.GetString("rollbackDeploymentId");
-
     m_rollbackDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollbackTriggeringDeploymentId"))
   {
     m_rollbackTriggeringDeploymentId = jsonValue.GetString("rollbackTriggeringDeploymentId");
-
     m_rollbackTriggeringDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollbackMessage"))
   {
     m_rollbackMessage = jsonValue.GetString("rollbackMessage");
-
     m_rollbackMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

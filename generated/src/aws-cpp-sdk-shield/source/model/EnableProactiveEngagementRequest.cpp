@@ -12,10 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableProactiveEngagementRequest::EnableProactiveEngagementRequest()
-{
-}
-
 Aws::String EnableProactiveEngagementRequest::SerializePayload() const
 {
   return "{}";

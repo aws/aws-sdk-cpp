@@ -12,14 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelStepsRequest::CancelStepsRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_stepIdsHasBeenSet(false),
-    m_stepCancellationOption(StepCancellationOption::NOT_SET),
-    m_stepCancellationOptionHasBeenSet(false)
-{
-}
-
 Aws::String CancelStepsRequest::SerializePayload() const
 {
   JsonValue payload;

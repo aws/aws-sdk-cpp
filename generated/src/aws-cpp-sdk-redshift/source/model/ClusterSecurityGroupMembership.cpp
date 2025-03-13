@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterSecurityGroupMembership::ClusterSecurityGroupMembership() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClusterSecurityGroupMembership::ClusterSecurityGroupMembership(const XmlNode& xmlNode)
-  : ClusterSecurityGroupMembership()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ClusterSecurityGroupMembership& ClusterSecurityGroupMembership::operator =(const
     {
       m_clusterSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(clusterSecurityGroupNameNode.GetText());
       m_clusterSecurityGroupNameHasBeenSet = true;
+       m_clusterSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

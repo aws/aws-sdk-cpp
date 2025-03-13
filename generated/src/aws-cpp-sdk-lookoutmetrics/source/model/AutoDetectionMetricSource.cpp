@@ -18,13 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AutoDetectionMetricSource::AutoDetectionMetricSource() : 
-    m_s3SourceConfigHasBeenSet(false)
-{
-}
-
 AutoDetectionMetricSource::AutoDetectionMetricSource(JsonView jsonValue)
-  : AutoDetectionMetricSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AutoDetectionMetricSource& AutoDetectionMetricSource::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("S3SourceConfig"))
   {
     m_s3SourceConfig = jsonValue.GetObject("S3SourceConfig");
-
     m_s3SourceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

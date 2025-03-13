@@ -39,7 +39,7 @@ namespace Model
   class ManagedRuleSetSummary
   {
   public:
-    AWS_WAFV2_API ManagedRuleSetSummary();
+    AWS_WAFV2_API ManagedRuleSetSummary() = default;
     AWS_WAFV2_API ManagedRuleSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ManagedRuleSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * to identify the rule set.</p> <p>This name is assigned to the corresponding
      * managed rule group, which your customers can access and use. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ManagedRuleSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ManagedRuleSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ManagedRuleSetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ManagedRuleSetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,28 +65,24 @@ namespace Model
      * responses to commands like <code>list</code>. You provide it to operations like
      * <code>get</code> and <code>update</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ManagedRuleSetSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ManagedRuleSetSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ManagedRuleSetSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ManagedRuleSetSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the set that helps with identification. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ManagedRuleSetSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ManagedRuleSetSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ManagedRuleSetSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ManagedRuleSetSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,28 +96,24 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
     inline bool LockTokenHasBeenSet() const { return m_lockTokenHasBeenSet; }
-    inline void SetLockToken(const Aws::String& value) { m_lockTokenHasBeenSet = true; m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockTokenHasBeenSet = true; m_lockToken.assign(value); }
-    inline ManagedRuleSetSummary& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline ManagedRuleSetSummary& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline ManagedRuleSetSummary& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    ManagedRuleSetSummary& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the entity.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline ManagedRuleSetSummary& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline ManagedRuleSetSummary& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline ManagedRuleSetSummary& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    ManagedRuleSetSummary& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +129,12 @@ namespace Model
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
      * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLabelNamespace() const{ return m_labelNamespace; }
+    inline const Aws::String& GetLabelNamespace() const { return m_labelNamespace; }
     inline bool LabelNamespaceHasBeenSet() const { return m_labelNamespaceHasBeenSet; }
-    inline void SetLabelNamespace(const Aws::String& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = value; }
-    inline void SetLabelNamespace(Aws::String&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::move(value); }
-    inline void SetLabelNamespace(const char* value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace.assign(value); }
-    inline ManagedRuleSetSummary& WithLabelNamespace(const Aws::String& value) { SetLabelNamespace(value); return *this;}
-    inline ManagedRuleSetSummary& WithLabelNamespace(Aws::String&& value) { SetLabelNamespace(std::move(value)); return *this;}
-    inline ManagedRuleSetSummary& WithLabelNamespace(const char* value) { SetLabelNamespace(value); return *this;}
+    template<typename LabelNamespaceT = Aws::String>
+    void SetLabelNamespace(LabelNamespaceT&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::forward<LabelNamespaceT>(value); }
+    template<typename LabelNamespaceT = Aws::String>
+    ManagedRuleSetSummary& WithLabelNamespace(LabelNamespaceT&& value) { SetLabelNamespace(std::forward<LabelNamespaceT>(value)); return *this;}
     ///@}
   private:
 

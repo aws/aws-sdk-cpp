@@ -33,7 +33,7 @@ namespace Model
   class UserSetting
   {
   public:
-    AWS_WORKSPACES_API UserSetting();
+    AWS_WORKSPACES_API UserSetting() = default;
     AWS_WORKSPACES_API UserSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API UserSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,40 @@ namespace Model
     /**
      * <p>Indicates the type of action.</p>
      */
-    inline const UserSettingActionEnum& GetAction() const{ return m_action; }
+    inline UserSettingActionEnum GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const UserSettingActionEnum& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(UserSettingActionEnum&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UserSetting& WithAction(const UserSettingActionEnum& value) { SetAction(value); return *this;}
-    inline UserSetting& WithAction(UserSettingActionEnum&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(UserSettingActionEnum value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UserSetting& WithAction(UserSettingActionEnum value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates if the setting is enabled or disabled.</p>
      */
-    inline const UserSettingPermissionEnum& GetPermission() const{ return m_permission; }
+    inline UserSettingPermissionEnum GetPermission() const { return m_permission; }
     inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
-    inline void SetPermission(const UserSettingPermissionEnum& value) { m_permissionHasBeenSet = true; m_permission = value; }
-    inline void SetPermission(UserSettingPermissionEnum&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
-    inline UserSetting& WithPermission(const UserSettingPermissionEnum& value) { SetPermission(value); return *this;}
-    inline UserSetting& WithPermission(UserSettingPermissionEnum&& value) { SetPermission(std::move(value)); return *this;}
+    inline void SetPermission(UserSettingPermissionEnum value) { m_permissionHasBeenSet = true; m_permission = value; }
+    inline UserSetting& WithPermission(UserSettingPermissionEnum value) { SetPermission(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the maximum character length for the specified user setting.</p>
      */
-    inline int GetMaximumLength() const{ return m_maximumLength; }
+    inline int GetMaximumLength() const { return m_maximumLength; }
     inline bool MaximumLengthHasBeenSet() const { return m_maximumLengthHasBeenSet; }
     inline void SetMaximumLength(int value) { m_maximumLengthHasBeenSet = true; m_maximumLength = value; }
     inline UserSetting& WithMaximumLength(int value) { SetMaximumLength(value); return *this;}
     ///@}
   private:
 
-    UserSettingActionEnum m_action;
+    UserSettingActionEnum m_action{UserSettingActionEnum::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    UserSettingPermissionEnum m_permission;
+    UserSettingPermissionEnum m_permission{UserSettingPermissionEnum::NOT_SET};
     bool m_permissionHasBeenSet = false;
 
-    int m_maximumLength;
+    int m_maximumLength{0};
     bool m_maximumLengthHasBeenSet = false;
   };
 

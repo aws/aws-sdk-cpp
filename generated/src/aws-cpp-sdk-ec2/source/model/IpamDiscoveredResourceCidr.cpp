@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr() : 
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_ipSource(IpamResourceCidrIpSource::NOT_SET),
-    m_ipSourceHasBeenSet(false),
-    m_resourceType(IpamResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_ipUsage(0.0),
-    m_ipUsageHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_networkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus::NOT_SET),
-    m_networkInterfaceAttachmentStatusHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
-{
-}
-
 IpamDiscoveredResourceCidr::IpamDiscoveredResourceCidr(const XmlNode& xmlNode)
-  : IpamDiscoveredResourceCidr()
 {
   *this = xmlNode;
 }
@@ -59,90 +36,104 @@ IpamDiscoveredResourceCidr& IpamDiscoveredResourceCidr::operator =(const XmlNode
     {
       m_ipamResourceDiscoveryId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryIdNode.GetText());
       m_ipamResourceDiscoveryIdHasBeenSet = true;
+       m_ipamResourceDiscoveryIdHasBeenSet = true;
     }
     XmlNode resourceRegionNode = resultNode.FirstChild("resourceRegion");
     if(!resourceRegionNode.IsNull())
     {
       m_resourceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(resourceRegionNode.GetText());
       m_resourceRegionHasBeenSet = true;
+       m_resourceRegionHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceOwnerIdNode = resultNode.FirstChild("resourceOwnerId");
     if(!resourceOwnerIdNode.IsNull())
     {
       m_resourceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerIdNode.GetText());
       m_resourceOwnerIdHasBeenSet = true;
+       m_resourceOwnerIdHasBeenSet = true;
     }
     XmlNode resourceCidrNode = resultNode.FirstChild("resourceCidr");
     if(!resourceCidrNode.IsNull())
     {
       m_resourceCidr = Aws::Utils::Xml::DecodeEscapedXmlText(resourceCidrNode.GetText());
       m_resourceCidrHasBeenSet = true;
+       m_resourceCidrHasBeenSet = true;
     }
     XmlNode ipSourceNode = resultNode.FirstChild("ipSource");
     if(!ipSourceNode.IsNull())
     {
-      m_ipSource = IpamResourceCidrIpSourceMapper::GetIpamResourceCidrIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipSourceNode.GetText()).c_str()).c_str());
+      m_ipSource = IpamResourceCidrIpSourceMapper::GetIpamResourceCidrIpSourceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipSourceNode.GetText()).c_str()));
       m_ipSourceHasBeenSet = true;
+       m_ipSourceHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamResourceTypeMapper::GetIpamResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamResourceTypeMapper::GetIpamResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceTagsNode = resultNode.FirstChild("resourceTagSet");
     if(!resourceTagsNode.IsNull())
     {
       XmlNode resourceTagsMember = resourceTagsNode.FirstChild("item");
+      m_resourceTagsHasBeenSet = !resourceTagsMember.IsNull();
       while(!resourceTagsMember.IsNull())
       {
         m_resourceTags.push_back(resourceTagsMember);
         resourceTagsMember = resourceTagsMember.NextNode("item");
       }
 
-      m_resourceTagsHasBeenSet = true;
+       m_resourceTagsHasBeenSet = true;
     }
     XmlNode ipUsageNode = resultNode.FirstChild("ipUsage");
     if(!ipUsageNode.IsNull())
     {
       m_ipUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipUsageNode.GetText()).c_str()).c_str());
       m_ipUsageHasBeenSet = true;
+       m_ipUsageHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode networkInterfaceAttachmentStatusNode = resultNode.FirstChild("networkInterfaceAttachmentStatus");
     if(!networkInterfaceAttachmentStatusNode.IsNull())
     {
-      m_networkInterfaceAttachmentStatus = IpamNetworkInterfaceAttachmentStatusMapper::GetIpamNetworkInterfaceAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceAttachmentStatusNode.GetText()).c_str()).c_str());
+      m_networkInterfaceAttachmentStatus = IpamNetworkInterfaceAttachmentStatusMapper::GetIpamNetworkInterfaceAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceAttachmentStatusNode.GetText()).c_str()));
       m_networkInterfaceAttachmentStatusHasBeenSet = true;
+       m_networkInterfaceAttachmentStatusHasBeenSet = true;
     }
     XmlNode sampleTimeNode = resultNode.FirstChild("sampleTime");
     if(!sampleTimeNode.IsNull())
     {
       m_sampleTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_sampleTimeHasBeenSet = true;
+       m_sampleTimeHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
   }
 

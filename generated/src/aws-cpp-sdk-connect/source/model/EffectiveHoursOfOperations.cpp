@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EffectiveHoursOfOperations::EffectiveHoursOfOperations() : 
-    m_dateHasBeenSet(false),
-    m_operationalHoursHasBeenSet(false)
-{
-}
-
 EffectiveHoursOfOperations::EffectiveHoursOfOperations(JsonView jsonValue)
-  : EffectiveHoursOfOperations()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EffectiveHoursOfOperations& EffectiveHoursOfOperations::operator =(JsonView json
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetString("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationalHours"))
   {
     Aws::Utils::Array<JsonView> operationalHoursJsonList = jsonValue.GetArray("OperationalHours");
@@ -48,7 +39,6 @@ EffectiveHoursOfOperations& EffectiveHoursOfOperations::operator =(JsonView json
     }
     m_operationalHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

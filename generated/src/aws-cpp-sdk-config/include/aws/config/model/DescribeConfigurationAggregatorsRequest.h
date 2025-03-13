@@ -22,7 +22,7 @@ namespace Model
   class DescribeConfigurationAggregatorsRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeConfigurationAggregatorsRequest();
+    AWS_CONFIGSERVICE_API DescribeConfigurationAggregatorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>The name of the configuration aggregators.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigurationAggregatorNames() const{ return m_configurationAggregatorNames; }
+    inline const Aws::Vector<Aws::String>& GetConfigurationAggregatorNames() const { return m_configurationAggregatorNames; }
     inline bool ConfigurationAggregatorNamesHasBeenSet() const { return m_configurationAggregatorNamesHasBeenSet; }
-    inline void SetConfigurationAggregatorNames(const Aws::Vector<Aws::String>& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames = value; }
-    inline void SetConfigurationAggregatorNames(Aws::Vector<Aws::String>&& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames = std::move(value); }
-    inline DescribeConfigurationAggregatorsRequest& WithConfigurationAggregatorNames(const Aws::Vector<Aws::String>& value) { SetConfigurationAggregatorNames(value); return *this;}
-    inline DescribeConfigurationAggregatorsRequest& WithConfigurationAggregatorNames(Aws::Vector<Aws::String>&& value) { SetConfigurationAggregatorNames(std::move(value)); return *this;}
-    inline DescribeConfigurationAggregatorsRequest& AddConfigurationAggregatorNames(const Aws::String& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames.push_back(value); return *this; }
-    inline DescribeConfigurationAggregatorsRequest& AddConfigurationAggregatorNames(Aws::String&& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames.push_back(std::move(value)); return *this; }
-    inline DescribeConfigurationAggregatorsRequest& AddConfigurationAggregatorNames(const char* value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames.push_back(value); return *this; }
+    template<typename ConfigurationAggregatorNamesT = Aws::Vector<Aws::String>>
+    void SetConfigurationAggregatorNames(ConfigurationAggregatorNamesT&& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames = std::forward<ConfigurationAggregatorNamesT>(value); }
+    template<typename ConfigurationAggregatorNamesT = Aws::Vector<Aws::String>>
+    DescribeConfigurationAggregatorsRequest& WithConfigurationAggregatorNames(ConfigurationAggregatorNamesT&& value) { SetConfigurationAggregatorNames(std::forward<ConfigurationAggregatorNamesT>(value)); return *this;}
+    template<typename ConfigurationAggregatorNamesT = Aws::String>
+    DescribeConfigurationAggregatorsRequest& AddConfigurationAggregatorNames(ConfigurationAggregatorNamesT&& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames.emplace_back(std::forward<ConfigurationAggregatorNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,14 +54,12 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeConfigurationAggregatorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeConfigurationAggregatorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeConfigurationAggregatorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeConfigurationAggregatorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +67,7 @@ namespace Model
      * <p>The maximum number of configuration aggregators returned on each page. The
      * default is maximum. If you specify 0, Config uses the default.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeConfigurationAggregatorsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -83,7 +80,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

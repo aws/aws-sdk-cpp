@@ -33,7 +33,7 @@ namespace Model
   class ImageRepository
   {
   public:
-    AWS_APPRUNNER_API ImageRepository();
+    AWS_APPRUNNER_API ImageRepository() = default;
     AWS_APPRUNNER_API ImageRepository(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API ImageRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling
      * an image</a> in the <i>Amazon ECR User Guide</i>.</p>
      */
-    inline const Aws::String& GetImageIdentifier() const{ return m_imageIdentifier; }
+    inline const Aws::String& GetImageIdentifier() const { return m_imageIdentifier; }
     inline bool ImageIdentifierHasBeenSet() const { return m_imageIdentifierHasBeenSet; }
-    inline void SetImageIdentifier(const Aws::String& value) { m_imageIdentifierHasBeenSet = true; m_imageIdentifier = value; }
-    inline void SetImageIdentifier(Aws::String&& value) { m_imageIdentifierHasBeenSet = true; m_imageIdentifier = std::move(value); }
-    inline void SetImageIdentifier(const char* value) { m_imageIdentifierHasBeenSet = true; m_imageIdentifier.assign(value); }
-    inline ImageRepository& WithImageIdentifier(const Aws::String& value) { SetImageIdentifier(value); return *this;}
-    inline ImageRepository& WithImageIdentifier(Aws::String&& value) { SetImageIdentifier(std::move(value)); return *this;}
-    inline ImageRepository& WithImageIdentifier(const char* value) { SetImageIdentifier(value); return *this;}
+    template<typename ImageIdentifierT = Aws::String>
+    void SetImageIdentifier(ImageIdentifierT&& value) { m_imageIdentifierHasBeenSet = true; m_imageIdentifier = std::forward<ImageIdentifierT>(value); }
+    template<typename ImageIdentifierT = Aws::String>
+    ImageRepository& WithImageIdentifier(ImageIdentifierT&& value) { SetImageIdentifier(std::forward<ImageIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration for running the identified image.</p>
      */
-    inline const ImageConfiguration& GetImageConfiguration() const{ return m_imageConfiguration; }
+    inline const ImageConfiguration& GetImageConfiguration() const { return m_imageConfiguration; }
     inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
-    inline void SetImageConfiguration(const ImageConfiguration& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
-    inline void SetImageConfiguration(ImageConfiguration&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
-    inline ImageRepository& WithImageConfiguration(const ImageConfiguration& value) { SetImageConfiguration(value); return *this;}
-    inline ImageRepository& WithImageConfiguration(ImageConfiguration&& value) { SetImageConfiguration(std::move(value)); return *this;}
+    template<typename ImageConfigurationT = ImageConfiguration>
+    void SetImageConfiguration(ImageConfigurationT&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::forward<ImageConfigurationT>(value); }
+    template<typename ImageConfigurationT = ImageConfiguration>
+    ImageRepository& WithImageConfiguration(ImageConfigurationT&& value) { SetImageConfiguration(std::forward<ImageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * <p>The type of the image repository. This reflects the repository provider and
      * whether the repository is private or public.</p>
      */
-    inline const ImageRepositoryType& GetImageRepositoryType() const{ return m_imageRepositoryType; }
+    inline ImageRepositoryType GetImageRepositoryType() const { return m_imageRepositoryType; }
     inline bool ImageRepositoryTypeHasBeenSet() const { return m_imageRepositoryTypeHasBeenSet; }
-    inline void SetImageRepositoryType(const ImageRepositoryType& value) { m_imageRepositoryTypeHasBeenSet = true; m_imageRepositoryType = value; }
-    inline void SetImageRepositoryType(ImageRepositoryType&& value) { m_imageRepositoryTypeHasBeenSet = true; m_imageRepositoryType = std::move(value); }
-    inline ImageRepository& WithImageRepositoryType(const ImageRepositoryType& value) { SetImageRepositoryType(value); return *this;}
-    inline ImageRepository& WithImageRepositoryType(ImageRepositoryType&& value) { SetImageRepositoryType(std::move(value)); return *this;}
+    inline void SetImageRepositoryType(ImageRepositoryType value) { m_imageRepositoryTypeHasBeenSet = true; m_imageRepositoryType = value; }
+    inline ImageRepository& WithImageRepositoryType(ImageRepositoryType value) { SetImageRepositoryType(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +84,7 @@ namespace Model
     ImageConfiguration m_imageConfiguration;
     bool m_imageConfigurationHasBeenSet = false;
 
-    ImageRepositoryType m_imageRepositoryType;
+    ImageRepositoryType m_imageRepositoryType{ImageRepositoryType::NOT_SET};
     bool m_imageRepositoryTypeHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class WorkflowTypeConfiguration
   {
   public:
-    AWS_SWF_API WorkflowTypeConfiguration();
+    AWS_SWF_API WorkflowTypeConfiguration() = default;
     AWS_SWF_API WorkflowTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const{ return m_defaultTaskStartToCloseTimeout; }
+    inline const Aws::String& GetDefaultTaskStartToCloseTimeout() const { return m_defaultTaskStartToCloseTimeout; }
     inline bool DefaultTaskStartToCloseTimeoutHasBeenSet() const { return m_defaultTaskStartToCloseTimeoutHasBeenSet; }
-    inline void SetDefaultTaskStartToCloseTimeout(const Aws::String& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = value; }
-    inline void SetDefaultTaskStartToCloseTimeout(Aws::String&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::move(value); }
-    inline void SetDefaultTaskStartToCloseTimeout(const char* value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout.assign(value); }
-    inline WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(const Aws::String& value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(Aws::String&& value) { SetDefaultTaskStartToCloseTimeout(std::move(value)); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(const char* value) { SetDefaultTaskStartToCloseTimeout(value); return *this;}
+    template<typename DefaultTaskStartToCloseTimeoutT = Aws::String>
+    void SetDefaultTaskStartToCloseTimeout(DefaultTaskStartToCloseTimeoutT&& value) { m_defaultTaskStartToCloseTimeoutHasBeenSet = true; m_defaultTaskStartToCloseTimeout = std::forward<DefaultTaskStartToCloseTimeoutT>(value); }
+    template<typename DefaultTaskStartToCloseTimeoutT = Aws::String>
+    WorkflowTypeConfiguration& WithDefaultTaskStartToCloseTimeout(DefaultTaskStartToCloseTimeoutT&& value) { SetDefaultTaskStartToCloseTimeout(std::forward<DefaultTaskStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * duration is specified in seconds, an integer greater than or equal to
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetDefaultExecutionStartToCloseTimeout() const{ return m_defaultExecutionStartToCloseTimeout; }
+    inline const Aws::String& GetDefaultExecutionStartToCloseTimeout() const { return m_defaultExecutionStartToCloseTimeout; }
     inline bool DefaultExecutionStartToCloseTimeoutHasBeenSet() const { return m_defaultExecutionStartToCloseTimeoutHasBeenSet; }
-    inline void SetDefaultExecutionStartToCloseTimeout(const Aws::String& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = value; }
-    inline void SetDefaultExecutionStartToCloseTimeout(Aws::String&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = std::move(value); }
-    inline void SetDefaultExecutionStartToCloseTimeout(const char* value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout.assign(value); }
-    inline WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(const Aws::String& value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(Aws::String&& value) { SetDefaultExecutionStartToCloseTimeout(std::move(value)); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(const char* value) { SetDefaultExecutionStartToCloseTimeout(value); return *this;}
+    template<typename DefaultExecutionStartToCloseTimeoutT = Aws::String>
+    void SetDefaultExecutionStartToCloseTimeout(DefaultExecutionStartToCloseTimeoutT&& value) { m_defaultExecutionStartToCloseTimeoutHasBeenSet = true; m_defaultExecutionStartToCloseTimeout = std::forward<DefaultExecutionStartToCloseTimeoutT>(value); }
+    template<typename DefaultExecutionStartToCloseTimeoutT = Aws::String>
+    WorkflowTypeConfiguration& WithDefaultExecutionStartToCloseTimeout(DefaultExecutionStartToCloseTimeoutT&& value) { SetDefaultExecutionStartToCloseTimeout(std::forward<DefaultExecutionStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * <a>StartWorkflowExecution</a> action or the
      * <code>StartChildWorkflowExecution</code> <a>Decision</a>.</p>
      */
-    inline const TaskList& GetDefaultTaskList() const{ return m_defaultTaskList; }
+    inline const TaskList& GetDefaultTaskList() const { return m_defaultTaskList; }
     inline bool DefaultTaskListHasBeenSet() const { return m_defaultTaskListHasBeenSet; }
-    inline void SetDefaultTaskList(const TaskList& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = value; }
-    inline void SetDefaultTaskList(TaskList&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::move(value); }
-    inline WorkflowTypeConfiguration& WithDefaultTaskList(const TaskList& value) { SetDefaultTaskList(value); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultTaskList(TaskList&& value) { SetDefaultTaskList(std::move(value)); return *this;}
+    template<typename DefaultTaskListT = TaskList>
+    void SetDefaultTaskList(DefaultTaskListT&& value) { m_defaultTaskListHasBeenSet = true; m_defaultTaskList = std::forward<DefaultTaskListT>(value); }
+    template<typename DefaultTaskListT = TaskList>
+    WorkflowTypeConfiguration& WithDefaultTaskList(DefaultTaskListT&& value) { SetDefaultTaskList(std::forward<DefaultTaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDefaultTaskPriority() const{ return m_defaultTaskPriority; }
+    inline const Aws::String& GetDefaultTaskPriority() const { return m_defaultTaskPriority; }
     inline bool DefaultTaskPriorityHasBeenSet() const { return m_defaultTaskPriorityHasBeenSet; }
-    inline void SetDefaultTaskPriority(const Aws::String& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = value; }
-    inline void SetDefaultTaskPriority(Aws::String&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::move(value); }
-    inline void SetDefaultTaskPriority(const char* value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority.assign(value); }
-    inline WorkflowTypeConfiguration& WithDefaultTaskPriority(const Aws::String& value) { SetDefaultTaskPriority(value); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultTaskPriority(Aws::String&& value) { SetDefaultTaskPriority(std::move(value)); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultTaskPriority(const char* value) { SetDefaultTaskPriority(value); return *this;}
+    template<typename DefaultTaskPriorityT = Aws::String>
+    void SetDefaultTaskPriority(DefaultTaskPriorityT&& value) { m_defaultTaskPriorityHasBeenSet = true; m_defaultTaskPriority = std::forward<DefaultTaskPriorityT>(value); }
+    template<typename DefaultTaskPriorityT = Aws::String>
+    WorkflowTypeConfiguration& WithDefaultTaskPriority(DefaultTaskPriorityT&& value) { SetDefaultTaskPriority(std::forward<DefaultTaskPriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +129,10 @@ namespace Model
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
      * The child executions continue to run.</p> </li> </ul>
      */
-    inline const ChildPolicy& GetDefaultChildPolicy() const{ return m_defaultChildPolicy; }
+    inline ChildPolicy GetDefaultChildPolicy() const { return m_defaultChildPolicy; }
     inline bool DefaultChildPolicyHasBeenSet() const { return m_defaultChildPolicyHasBeenSet; }
-    inline void SetDefaultChildPolicy(const ChildPolicy& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = value; }
-    inline void SetDefaultChildPolicy(ChildPolicy&& value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = std::move(value); }
-    inline WorkflowTypeConfiguration& WithDefaultChildPolicy(const ChildPolicy& value) { SetDefaultChildPolicy(value); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultChildPolicy(ChildPolicy&& value) { SetDefaultChildPolicy(std::move(value)); return *this;}
+    inline void SetDefaultChildPolicy(ChildPolicy value) { m_defaultChildPolicyHasBeenSet = true; m_defaultChildPolicy = value; }
+    inline WorkflowTypeConfiguration& WithDefaultChildPolicy(ChildPolicy value) { SetDefaultChildPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -152,14 +144,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
      * in the <i>Amazon SWF Developer Guide</i>.</p> 
      */
-    inline const Aws::String& GetDefaultLambdaRole() const{ return m_defaultLambdaRole; }
+    inline const Aws::String& GetDefaultLambdaRole() const { return m_defaultLambdaRole; }
     inline bool DefaultLambdaRoleHasBeenSet() const { return m_defaultLambdaRoleHasBeenSet; }
-    inline void SetDefaultLambdaRole(const Aws::String& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = value; }
-    inline void SetDefaultLambdaRole(Aws::String&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::move(value); }
-    inline void SetDefaultLambdaRole(const char* value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole.assign(value); }
-    inline WorkflowTypeConfiguration& WithDefaultLambdaRole(const Aws::String& value) { SetDefaultLambdaRole(value); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultLambdaRole(Aws::String&& value) { SetDefaultLambdaRole(std::move(value)); return *this;}
-    inline WorkflowTypeConfiguration& WithDefaultLambdaRole(const char* value) { SetDefaultLambdaRole(value); return *this;}
+    template<typename DefaultLambdaRoleT = Aws::String>
+    void SetDefaultLambdaRole(DefaultLambdaRoleT&& value) { m_defaultLambdaRoleHasBeenSet = true; m_defaultLambdaRole = std::forward<DefaultLambdaRoleT>(value); }
+    template<typename DefaultLambdaRoleT = Aws::String>
+    WorkflowTypeConfiguration& WithDefaultLambdaRole(DefaultLambdaRoleT&& value) { SetDefaultLambdaRole(std::forward<DefaultLambdaRoleT>(value)); return *this;}
     ///@}
   private:
 
@@ -175,7 +165,7 @@ namespace Model
     Aws::String m_defaultTaskPriority;
     bool m_defaultTaskPriorityHasBeenSet = false;
 
-    ChildPolicy m_defaultChildPolicy;
+    ChildPolicy m_defaultChildPolicy{ChildPolicy::NOT_SET};
     bool m_defaultChildPolicyHasBeenSet = false;
 
     Aws::String m_defaultLambdaRole;

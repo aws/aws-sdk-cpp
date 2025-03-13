@@ -28,7 +28,7 @@ namespace Model
   class GetCatalogImportStatusResult
   {
   public:
-    AWS_GLUE_API GetCatalogImportStatusResult();
+    AWS_GLUE_API GetCatalogImportStatusResult() = default;
     AWS_GLUE_API GetCatalogImportStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetCatalogImportStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The status of the specified catalog migration.</p>
      */
-    inline const CatalogImportStatus& GetImportStatus() const{ return m_importStatus; }
-    inline void SetImportStatus(const CatalogImportStatus& value) { m_importStatus = value; }
-    inline void SetImportStatus(CatalogImportStatus&& value) { m_importStatus = std::move(value); }
-    inline GetCatalogImportStatusResult& WithImportStatus(const CatalogImportStatus& value) { SetImportStatus(value); return *this;}
-    inline GetCatalogImportStatusResult& WithImportStatus(CatalogImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
+    inline const CatalogImportStatus& GetImportStatus() const { return m_importStatus; }
+    template<typename ImportStatusT = CatalogImportStatus>
+    void SetImportStatus(ImportStatusT&& value) { m_importStatusHasBeenSet = true; m_importStatus = std::forward<ImportStatusT>(value); }
+    template<typename ImportStatusT = CatalogImportStatus>
+    GetCatalogImportStatusResult& WithImportStatus(ImportStatusT&& value) { SetImportStatus(std::forward<ImportStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCatalogImportStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCatalogImportStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCatalogImportStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCatalogImportStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CatalogImportStatus m_importStatus;
+    bool m_importStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

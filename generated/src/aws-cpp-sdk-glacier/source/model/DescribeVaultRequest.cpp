@@ -12,12 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVaultRequest::DescribeVaultRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVaultRequest::SerializePayload() const
 {
   return {};

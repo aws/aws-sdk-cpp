@@ -33,7 +33,7 @@ namespace Model
   class NetworkStatus
   {
   public:
-    AWS_PANORAMA_API NetworkStatus();
+    AWS_PANORAMA_API NetworkStatus() = default;
     AWS_PANORAMA_API NetworkStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API NetworkStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,48 @@ namespace Model
     /**
      * <p>The status of Ethernet port 0.</p>
      */
-    inline const EthernetStatus& GetEthernet0Status() const{ return m_ethernet0Status; }
+    inline const EthernetStatus& GetEthernet0Status() const { return m_ethernet0Status; }
     inline bool Ethernet0StatusHasBeenSet() const { return m_ethernet0StatusHasBeenSet; }
-    inline void SetEthernet0Status(const EthernetStatus& value) { m_ethernet0StatusHasBeenSet = true; m_ethernet0Status = value; }
-    inline void SetEthernet0Status(EthernetStatus&& value) { m_ethernet0StatusHasBeenSet = true; m_ethernet0Status = std::move(value); }
-    inline NetworkStatus& WithEthernet0Status(const EthernetStatus& value) { SetEthernet0Status(value); return *this;}
-    inline NetworkStatus& WithEthernet0Status(EthernetStatus&& value) { SetEthernet0Status(std::move(value)); return *this;}
+    template<typename Ethernet0StatusT = EthernetStatus>
+    void SetEthernet0Status(Ethernet0StatusT&& value) { m_ethernet0StatusHasBeenSet = true; m_ethernet0Status = std::forward<Ethernet0StatusT>(value); }
+    template<typename Ethernet0StatusT = EthernetStatus>
+    NetworkStatus& WithEthernet0Status(Ethernet0StatusT&& value) { SetEthernet0Status(std::forward<Ethernet0StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of Ethernet port 1.</p>
      */
-    inline const EthernetStatus& GetEthernet1Status() const{ return m_ethernet1Status; }
+    inline const EthernetStatus& GetEthernet1Status() const { return m_ethernet1Status; }
     inline bool Ethernet1StatusHasBeenSet() const { return m_ethernet1StatusHasBeenSet; }
-    inline void SetEthernet1Status(const EthernetStatus& value) { m_ethernet1StatusHasBeenSet = true; m_ethernet1Status = value; }
-    inline void SetEthernet1Status(EthernetStatus&& value) { m_ethernet1StatusHasBeenSet = true; m_ethernet1Status = std::move(value); }
-    inline NetworkStatus& WithEthernet1Status(const EthernetStatus& value) { SetEthernet1Status(value); return *this;}
-    inline NetworkStatus& WithEthernet1Status(EthernetStatus&& value) { SetEthernet1Status(std::move(value)); return *this;}
+    template<typename Ethernet1StatusT = EthernetStatus>
+    void SetEthernet1Status(Ethernet1StatusT&& value) { m_ethernet1StatusHasBeenSet = true; m_ethernet1Status = std::forward<Ethernet1StatusT>(value); }
+    template<typename Ethernet1StatusT = EthernetStatus>
+    NetworkStatus& WithEthernet1Status(Ethernet1StatusT&& value) { SetEthernet1Status(std::forward<Ethernet1StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the network status changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline NetworkStatus& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline NetworkStatus& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    NetworkStatus& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about a network time protocol (NTP) server connection.</p>
      */
-    inline const NtpStatus& GetNtpStatus() const{ return m_ntpStatus; }
+    inline const NtpStatus& GetNtpStatus() const { return m_ntpStatus; }
     inline bool NtpStatusHasBeenSet() const { return m_ntpStatusHasBeenSet; }
-    inline void SetNtpStatus(const NtpStatus& value) { m_ntpStatusHasBeenSet = true; m_ntpStatus = value; }
-    inline void SetNtpStatus(NtpStatus&& value) { m_ntpStatusHasBeenSet = true; m_ntpStatus = std::move(value); }
-    inline NetworkStatus& WithNtpStatus(const NtpStatus& value) { SetNtpStatus(value); return *this;}
-    inline NetworkStatus& WithNtpStatus(NtpStatus&& value) { SetNtpStatus(std::move(value)); return *this;}
+    template<typename NtpStatusT = NtpStatus>
+    void SetNtpStatus(NtpStatusT&& value) { m_ntpStatusHasBeenSet = true; m_ntpStatus = std::forward<NtpStatusT>(value); }
+    template<typename NtpStatusT = NtpStatus>
+    NetworkStatus& WithNtpStatus(NtpStatusT&& value) { SetNtpStatus(std::forward<NtpStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -94,7 +94,7 @@ namespace Model
     EthernetStatus m_ethernet1Status;
     bool m_ethernet1StatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     NtpStatus m_ntpStatus;

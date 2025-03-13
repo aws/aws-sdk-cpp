@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-TimedMetadataScheduleActionSettings::TimedMetadataScheduleActionSettings() : 
-    m_id3HasBeenSet(false)
-{
-}
-
 TimedMetadataScheduleActionSettings::TimedMetadataScheduleActionSettings(JsonView jsonValue)
-  : TimedMetadataScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TimedMetadataScheduleActionSettings& TimedMetadataScheduleActionSettings::operat
   if(jsonValue.ValueExists("id3"))
   {
     m_id3 = jsonValue.GetString("id3");
-
     m_id3HasBeenSet = true;
   }
-
   return *this;
 }
 

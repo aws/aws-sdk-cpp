@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AclConfiguration::AclConfiguration() : 
-    m_allowedGroupsColumnNameHasBeenSet(false)
-{
-}
-
 AclConfiguration::AclConfiguration(JsonView jsonValue)
-  : AclConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AclConfiguration& AclConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllowedGroupsColumnName"))
   {
     m_allowedGroupsColumnName = jsonValue.GetString("AllowedGroupsColumnName");
-
     m_allowedGroupsColumnNameHasBeenSet = true;
   }
-
   return *this;
 }
 

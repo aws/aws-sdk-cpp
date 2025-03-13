@@ -32,7 +32,7 @@ namespace Model
   class StatusReason
   {
   public:
-    AWS_IOT_API StatusReason();
+    AWS_IOT_API StatusReason() = default;
     AWS_IOT_API StatusReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API StatusReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A code that provides additional context for the command execution status.</p>
      */
-    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+    inline const Aws::String& GetReasonCode() const { return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
-    inline StatusReason& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
-    inline StatusReason& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
-    inline StatusReason& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+    template<typename ReasonCodeT = Aws::String>
+    void SetReasonCode(ReasonCodeT&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::forward<ReasonCodeT>(value); }
+    template<typename ReasonCodeT = Aws::String>
+    StatusReason& WithReasonCode(ReasonCodeT&& value) { SetReasonCode(std::forward<ReasonCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>A literal string for devices to optionally provide additional information
      * about the reason code for a command execution status.</p>
      */
-    inline const Aws::String& GetReasonDescription() const{ return m_reasonDescription; }
+    inline const Aws::String& GetReasonDescription() const { return m_reasonDescription; }
     inline bool ReasonDescriptionHasBeenSet() const { return m_reasonDescriptionHasBeenSet; }
-    inline void SetReasonDescription(const Aws::String& value) { m_reasonDescriptionHasBeenSet = true; m_reasonDescription = value; }
-    inline void SetReasonDescription(Aws::String&& value) { m_reasonDescriptionHasBeenSet = true; m_reasonDescription = std::move(value); }
-    inline void SetReasonDescription(const char* value) { m_reasonDescriptionHasBeenSet = true; m_reasonDescription.assign(value); }
-    inline StatusReason& WithReasonDescription(const Aws::String& value) { SetReasonDescription(value); return *this;}
-    inline StatusReason& WithReasonDescription(Aws::String&& value) { SetReasonDescription(std::move(value)); return *this;}
-    inline StatusReason& WithReasonDescription(const char* value) { SetReasonDescription(value); return *this;}
+    template<typename ReasonDescriptionT = Aws::String>
+    void SetReasonDescription(ReasonDescriptionT&& value) { m_reasonDescriptionHasBeenSet = true; m_reasonDescription = std::forward<ReasonDescriptionT>(value); }
+    template<typename ReasonDescriptionT = Aws::String>
+    StatusReason& WithReasonDescription(ReasonDescriptionT&& value) { SetReasonDescription(std::forward<ReasonDescriptionT>(value)); return *this;}
     ///@}
   private:
 

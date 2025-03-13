@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePrefetchScheduleRequest::DeletePrefetchScheduleRequest() : 
-    m_nameHasBeenSet(false),
-    m_playbackConfigurationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePrefetchScheduleRequest::SerializePayload() const
 {
   return {};

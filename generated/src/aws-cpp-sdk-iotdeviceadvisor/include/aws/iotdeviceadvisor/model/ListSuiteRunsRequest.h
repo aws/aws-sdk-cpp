@@ -25,7 +25,7 @@ namespace Model
   class ListSuiteRunsRequest : public IoTDeviceAdvisorRequest
   {
   public:
-    AWS_IOTDEVICEADVISOR_API ListSuiteRunsRequest();
+    AWS_IOTDEVICEADVISOR_API ListSuiteRunsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Lists the test suite runs of the specified test suite based on suite
      * definition ID.</p>
      */
-    inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
+    inline const Aws::String& GetSuiteDefinitionId() const { return m_suiteDefinitionId; }
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
-    inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
-    inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
-    inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
-    inline ListSuiteRunsRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
-    inline ListSuiteRunsRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
-    inline ListSuiteRunsRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
+    template<typename SuiteDefinitionIdT = Aws::String>
+    void SetSuiteDefinitionId(SuiteDefinitionIdT&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::forward<SuiteDefinitionIdT>(value); }
+    template<typename SuiteDefinitionIdT = Aws::String>
+    ListSuiteRunsRequest& WithSuiteDefinitionId(SuiteDefinitionIdT&& value) { SetSuiteDefinitionId(std::forward<SuiteDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,21 +56,19 @@ namespace Model
      * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
      * suite runs of the specified test suite based on suite definition version.</p>
      */
-    inline const Aws::String& GetSuiteDefinitionVersion() const{ return m_suiteDefinitionVersion; }
+    inline const Aws::String& GetSuiteDefinitionVersion() const { return m_suiteDefinitionVersion; }
     inline bool SuiteDefinitionVersionHasBeenSet() const { return m_suiteDefinitionVersionHasBeenSet; }
-    inline void SetSuiteDefinitionVersion(const Aws::String& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = value; }
-    inline void SetSuiteDefinitionVersion(Aws::String&& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = std::move(value); }
-    inline void SetSuiteDefinitionVersion(const char* value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion.assign(value); }
-    inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(const Aws::String& value) { SetSuiteDefinitionVersion(value); return *this;}
-    inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(Aws::String&& value) { SetSuiteDefinitionVersion(std::move(value)); return *this;}
-    inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(const char* value) { SetSuiteDefinitionVersion(value); return *this;}
+    template<typename SuiteDefinitionVersionT = Aws::String>
+    void SetSuiteDefinitionVersion(SuiteDefinitionVersionT&& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = std::forward<SuiteDefinitionVersionT>(value); }
+    template<typename SuiteDefinitionVersionT = Aws::String>
+    ListSuiteRunsRequest& WithSuiteDefinitionVersion(SuiteDefinitionVersionT&& value) { SetSuiteDefinitionVersion(std::forward<SuiteDefinitionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at once.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSuiteRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,14 +78,12 @@ namespace Model
     /**
      * <p>A token to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSuiteRunsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSuiteRunsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSuiteRunsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSuiteRunsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_suiteDefinitionVersion;
     bool m_suiteDefinitionVersionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

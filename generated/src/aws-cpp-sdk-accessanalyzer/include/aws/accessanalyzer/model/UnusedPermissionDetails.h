@@ -38,7 +38,7 @@ namespace Model
   class UnusedPermissionDetails
   {
   public:
-    AWS_ACCESSANALYZER_API UnusedPermissionDetails();
+    AWS_ACCESSANALYZER_API UnusedPermissionDetails() = default;
     AWS_ACCESSANALYZER_API UnusedPermissionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API UnusedPermissionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * <p>A list of unused actions for which the unused access finding was
      * generated.</p>
      */
-    inline const Aws::Vector<UnusedAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<UnusedAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<UnusedAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<UnusedAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline UnusedPermissionDetails& WithActions(const Aws::Vector<UnusedAction>& value) { SetActions(value); return *this;}
-    inline UnusedPermissionDetails& WithActions(Aws::Vector<UnusedAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline UnusedPermissionDetails& AddActions(const UnusedAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline UnusedPermissionDetails& AddActions(UnusedAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<UnusedAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<UnusedAction>>
+    UnusedPermissionDetails& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = UnusedAction>
+    UnusedPermissionDetails& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,26 +64,24 @@ namespace Model
      * <p>The namespace of the Amazon Web Services service that contains the unused
      * actions.</p>
      */
-    inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline const Aws::String& GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const Aws::String& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(Aws::String&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline void SetServiceNamespace(const char* value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace.assign(value); }
-    inline UnusedPermissionDetails& WithServiceNamespace(const Aws::String& value) { SetServiceNamespace(value); return *this;}
-    inline UnusedPermissionDetails& WithServiceNamespace(Aws::String&& value) { SetServiceNamespace(std::move(value)); return *this;}
-    inline UnusedPermissionDetails& WithServiceNamespace(const char* value) { SetServiceNamespace(value); return *this;}
+    template<typename ServiceNamespaceT = Aws::String>
+    void SetServiceNamespace(ServiceNamespaceT&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::forward<ServiceNamespaceT>(value); }
+    template<typename ServiceNamespaceT = Aws::String>
+    UnusedPermissionDetails& WithServiceNamespace(ServiceNamespaceT&& value) { SetServiceNamespace(std::forward<ServiceNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the permission was last accessed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAccessed() const{ return m_lastAccessed; }
+    inline const Aws::Utils::DateTime& GetLastAccessed() const { return m_lastAccessed; }
     inline bool LastAccessedHasBeenSet() const { return m_lastAccessedHasBeenSet; }
-    inline void SetLastAccessed(const Aws::Utils::DateTime& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = value; }
-    inline void SetLastAccessed(Aws::Utils::DateTime&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::move(value); }
-    inline UnusedPermissionDetails& WithLastAccessed(const Aws::Utils::DateTime& value) { SetLastAccessed(value); return *this;}
-    inline UnusedPermissionDetails& WithLastAccessed(Aws::Utils::DateTime&& value) { SetLastAccessed(std::move(value)); return *this;}
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    void SetLastAccessed(LastAccessedT&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::forward<LastAccessedT>(value); }
+    template<typename LastAccessedT = Aws::Utils::DateTime>
+    UnusedPermissionDetails& WithLastAccessed(LastAccessedT&& value) { SetLastAccessed(std::forward<LastAccessedT>(value)); return *this;}
     ///@}
   private:
 
@@ -93,7 +91,7 @@ namespace Model
     Aws::String m_serviceNamespace;
     bool m_serviceNamespaceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAccessed;
+    Aws::Utils::DateTime m_lastAccessed{};
     bool m_lastAccessedHasBeenSet = false;
   };
 

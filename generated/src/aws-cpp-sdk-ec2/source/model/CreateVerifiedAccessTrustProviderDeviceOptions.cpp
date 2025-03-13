@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProviderDeviceOptions() : 
-    m_tenantIdHasBeenSet(false),
-    m_publicSigningKeyUrlHasBeenSet(false)
-{
-}
-
 CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode)
-  : CreateVerifiedAccessTrustProviderDeviceOptions()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CreateVerifiedAccessTrustProviderDeviceOptions& CreateVerifiedAccessTrustProvide
     {
       m_tenantId = Aws::Utils::Xml::DecodeEscapedXmlText(tenantIdNode.GetText());
       m_tenantIdHasBeenSet = true;
+       m_tenantIdHasBeenSet = true;
     }
     XmlNode publicSigningKeyUrlNode = resultNode.FirstChild("PublicSigningKeyUrl");
     if(!publicSigningKeyUrlNode.IsNull())
     {
       m_publicSigningKeyUrl = Aws::Utils::Xml::DecodeEscapedXmlText(publicSigningKeyUrlNode.GetText());
       m_publicSigningKeyUrlHasBeenSet = true;
+       m_publicSigningKeyUrlHasBeenSet = true;
     }
   }
 

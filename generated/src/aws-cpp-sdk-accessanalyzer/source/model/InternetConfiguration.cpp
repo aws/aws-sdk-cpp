@@ -18,10 +18,6 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-InternetConfiguration::InternetConfiguration()
-{
-}
-
 InternetConfiguration::InternetConfiguration(JsonView jsonValue)
 {
   *this = jsonValue;

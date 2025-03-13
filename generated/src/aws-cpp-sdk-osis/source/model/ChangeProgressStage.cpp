@@ -18,17 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-ChangeProgressStage::ChangeProgressStage() : 
-    m_nameHasBeenSet(false),
-    m_status(ChangeProgressStageStatuses::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 ChangeProgressStage::ChangeProgressStage(JsonView jsonValue)
-  : ChangeProgressStage()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ChangeProgressStage& ChangeProgressStage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChangeProgressStageStatusesMapper::GetChangeProgressStageStatusesForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

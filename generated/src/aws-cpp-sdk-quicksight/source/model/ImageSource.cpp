@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ImageSource::ImageSource() : 
-    m_publicUrlHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 ImageSource::ImageSource(JsonView jsonValue)
-  : ImageSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageSource& ImageSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PublicUrl"))
   {
     m_publicUrl = jsonValue.GetString("PublicUrl");
-
     m_publicUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

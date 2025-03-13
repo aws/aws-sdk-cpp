@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionMetadata::FunctionMetadata() : 
-    m_functionARNHasBeenSet(false),
-    m_stage(FunctionStage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 FunctionMetadata::FunctionMetadata(const XmlNode& xmlNode)
-  : FunctionMetadata()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ FunctionMetadata& FunctionMetadata::operator =(const XmlNode& xmlNode)
     {
       m_functionARN = Aws::Utils::Xml::DecodeEscapedXmlText(functionARNNode.GetText());
       m_functionARNHasBeenSet = true;
+       m_functionARNHasBeenSet = true;
     }
     XmlNode stageNode = resultNode.FirstChild("Stage");
     if(!stageNode.IsNull())
     {
-      m_stage = FunctionStageMapper::GetFunctionStageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stageNode.GetText()).c_str()).c_str());
+      m_stage = FunctionStageMapper::GetFunctionStageForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stageNode.GetText()).c_str()));
       m_stageHasBeenSet = true;
+       m_stageHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
+       m_createdTimeHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
   }
 

@@ -12,11 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSlackWorkspaceConfigurationRequest::DeleteSlackWorkspaceConfigurationRequest() : 
-    m_teamIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlackWorkspaceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

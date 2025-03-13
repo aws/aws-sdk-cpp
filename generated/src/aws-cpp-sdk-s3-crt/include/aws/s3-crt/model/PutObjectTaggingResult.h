@@ -27,7 +27,7 @@ namespace Model
   class PutObjectTaggingResult
   {
   public:
-    AWS_S3CRT_API PutObjectTaggingResult();
+    AWS_S3CRT_API PutObjectTaggingResult() = default;
     AWS_S3CRT_API PutObjectTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API PutObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The versionId of the object the tag-set was added to.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
-    inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionId.assign(value); }
-    inline PutObjectTaggingResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline PutObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline PutObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    PutObjectTaggingResult& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutObjectTaggingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutObjectTaggingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutObjectTaggingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutObjectTaggingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_versionId;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

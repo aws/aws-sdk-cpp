@@ -27,7 +27,7 @@ namespace Model
   class CreateUserPoolDomainResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolDomainResult();
+    AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolDomainResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
      * <code>1</code> indicates hosted UI (classic) and a version of <code>2</code>
      * indicates managed login.</p>
      */
-    inline int GetManagedLoginVersion() const{ return m_managedLoginVersion; }
-    inline void SetManagedLoginVersion(int value) { m_managedLoginVersion = value; }
+    inline int GetManagedLoginVersion() const { return m_managedLoginVersion; }
+    inline void SetManagedLoginVersion(int value) { m_managedLoginVersionHasBeenSet = true; m_managedLoginVersion = value; }
     inline CreateUserPoolDomainResult& WithManagedLoginVersion(int value) { SetManagedLoginVersion(value); return *this;}
     ///@}
 
@@ -52,32 +52,31 @@ namespace Model
      * <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain,
      * this parameter returns null.</p>
      */
-    inline const Aws::String& GetCloudFrontDomain() const{ return m_cloudFrontDomain; }
-    inline void SetCloudFrontDomain(const Aws::String& value) { m_cloudFrontDomain = value; }
-    inline void SetCloudFrontDomain(Aws::String&& value) { m_cloudFrontDomain = std::move(value); }
-    inline void SetCloudFrontDomain(const char* value) { m_cloudFrontDomain.assign(value); }
-    inline CreateUserPoolDomainResult& WithCloudFrontDomain(const Aws::String& value) { SetCloudFrontDomain(value); return *this;}
-    inline CreateUserPoolDomainResult& WithCloudFrontDomain(Aws::String&& value) { SetCloudFrontDomain(std::move(value)); return *this;}
-    inline CreateUserPoolDomainResult& WithCloudFrontDomain(const char* value) { SetCloudFrontDomain(value); return *this;}
+    inline const Aws::String& GetCloudFrontDomain() const { return m_cloudFrontDomain; }
+    template<typename CloudFrontDomainT = Aws::String>
+    void SetCloudFrontDomain(CloudFrontDomainT&& value) { m_cloudFrontDomainHasBeenSet = true; m_cloudFrontDomain = std::forward<CloudFrontDomainT>(value); }
+    template<typename CloudFrontDomainT = Aws::String>
+    CreateUserPoolDomainResult& WithCloudFrontDomain(CloudFrontDomainT&& value) { SetCloudFrontDomain(std::forward<CloudFrontDomainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateUserPoolDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateUserPoolDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateUserPoolDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_managedLoginVersion;
+    int m_managedLoginVersion{0};
+    bool m_managedLoginVersionHasBeenSet = false;
 
     Aws::String m_cloudFrontDomain;
+    bool m_cloudFrontDomainHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

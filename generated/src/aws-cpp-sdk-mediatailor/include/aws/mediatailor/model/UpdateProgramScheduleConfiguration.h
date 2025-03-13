@@ -32,7 +32,7 @@ namespace Model
   class UpdateProgramScheduleConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API UpdateProgramScheduleConfiguration();
+    AWS_MEDIATAILOR_API UpdateProgramScheduleConfiguration() = default;
     AWS_MEDIATAILOR_API UpdateProgramScheduleConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API UpdateProgramScheduleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Program transition configuration.</p>
      */
-    inline const UpdateProgramTransition& GetTransition() const{ return m_transition; }
+    inline const UpdateProgramTransition& GetTransition() const { return m_transition; }
     inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
-    inline void SetTransition(const UpdateProgramTransition& value) { m_transitionHasBeenSet = true; m_transition = value; }
-    inline void SetTransition(UpdateProgramTransition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
-    inline UpdateProgramScheduleConfiguration& WithTransition(const UpdateProgramTransition& value) { SetTransition(value); return *this;}
-    inline UpdateProgramScheduleConfiguration& WithTransition(UpdateProgramTransition&& value) { SetTransition(std::move(value)); return *this;}
+    template<typename TransitionT = UpdateProgramTransition>
+    void SetTransition(TransitionT&& value) { m_transitionHasBeenSet = true; m_transition = std::forward<TransitionT>(value); }
+    template<typename TransitionT = UpdateProgramTransition>
+    UpdateProgramScheduleConfiguration& WithTransition(TransitionT&& value) { SetTransition(std::forward<TransitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Program clip range configuration.</p>
      */
-    inline const ClipRange& GetClipRange() const{ return m_clipRange; }
+    inline const ClipRange& GetClipRange() const { return m_clipRange; }
     inline bool ClipRangeHasBeenSet() const { return m_clipRangeHasBeenSet; }
-    inline void SetClipRange(const ClipRange& value) { m_clipRangeHasBeenSet = true; m_clipRange = value; }
-    inline void SetClipRange(ClipRange&& value) { m_clipRangeHasBeenSet = true; m_clipRange = std::move(value); }
-    inline UpdateProgramScheduleConfiguration& WithClipRange(const ClipRange& value) { SetClipRange(value); return *this;}
-    inline UpdateProgramScheduleConfiguration& WithClipRange(ClipRange&& value) { SetClipRange(std::move(value)); return *this;}
+    template<typename ClipRangeT = ClipRange>
+    void SetClipRange(ClipRangeT&& value) { m_clipRangeHasBeenSet = true; m_clipRange = std::forward<ClipRangeT>(value); }
+    template<typename ClipRangeT = ClipRange>
+    UpdateProgramScheduleConfiguration& WithClipRange(ClipRangeT&& value) { SetClipRange(std::forward<ClipRangeT>(value)); return *this;}
     ///@}
   private:
 

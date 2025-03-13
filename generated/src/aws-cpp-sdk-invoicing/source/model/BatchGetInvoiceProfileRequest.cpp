@@ -12,11 +12,6 @@ using namespace Aws::Invoicing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetInvoiceProfileRequest::BatchGetInvoiceProfileRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetInvoiceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

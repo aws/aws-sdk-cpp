@@ -33,7 +33,7 @@ namespace Model
   class IngressBooleanToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API IngressBooleanToEvaluate();
+    AWS_MAILMANAGER_API IngressBooleanToEvaluate() = default;
     AWS_MAILMANAGER_API IngressBooleanToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressBooleanToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The structure type for a boolean condition stating the Add On ARN and its
      * returned value.</p>
      */
-    inline const IngressAnalysis& GetAnalysis() const{ return m_analysis; }
+    inline const IngressAnalysis& GetAnalysis() const { return m_analysis; }
     inline bool AnalysisHasBeenSet() const { return m_analysisHasBeenSet; }
-    inline void SetAnalysis(const IngressAnalysis& value) { m_analysisHasBeenSet = true; m_analysis = value; }
-    inline void SetAnalysis(IngressAnalysis&& value) { m_analysisHasBeenSet = true; m_analysis = std::move(value); }
-    inline IngressBooleanToEvaluate& WithAnalysis(const IngressAnalysis& value) { SetAnalysis(value); return *this;}
-    inline IngressBooleanToEvaluate& WithAnalysis(IngressAnalysis&& value) { SetAnalysis(std::move(value)); return *this;}
+    template<typename AnalysisT = IngressAnalysis>
+    void SetAnalysis(AnalysisT&& value) { m_analysisHasBeenSet = true; m_analysis = std::forward<AnalysisT>(value); }
+    template<typename AnalysisT = IngressAnalysis>
+    IngressBooleanToEvaluate& WithAnalysis(AnalysisT&& value) { SetAnalysis(std::forward<AnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The structure type for a boolean condition that provides the address lists to
      * evaluate incoming traffic on.</p>
      */
-    inline const IngressIsInAddressList& GetIsInAddressList() const{ return m_isInAddressList; }
+    inline const IngressIsInAddressList& GetIsInAddressList() const { return m_isInAddressList; }
     inline bool IsInAddressListHasBeenSet() const { return m_isInAddressListHasBeenSet; }
-    inline void SetIsInAddressList(const IngressIsInAddressList& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = value; }
-    inline void SetIsInAddressList(IngressIsInAddressList&& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = std::move(value); }
-    inline IngressBooleanToEvaluate& WithIsInAddressList(const IngressIsInAddressList& value) { SetIsInAddressList(value); return *this;}
-    inline IngressBooleanToEvaluate& WithIsInAddressList(IngressIsInAddressList&& value) { SetIsInAddressList(std::move(value)); return *this;}
+    template<typename IsInAddressListT = IngressIsInAddressList>
+    void SetIsInAddressList(IsInAddressListT&& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = std::forward<IsInAddressListT>(value); }
+    template<typename IsInAddressListT = IngressIsInAddressList>
+    IngressBooleanToEvaluate& WithIsInAddressList(IsInAddressListT&& value) { SetIsInAddressList(std::forward<IsInAddressListT>(value)); return *this;}
     ///@}
   private:
 

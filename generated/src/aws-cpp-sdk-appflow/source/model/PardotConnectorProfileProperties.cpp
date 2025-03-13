@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-PardotConnectorProfileProperties::PardotConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false),
-    m_isSandboxEnvironment(false),
-    m_isSandboxEnvironmentHasBeenSet(false),
-    m_businessUnitIdHasBeenSet(false)
-{
-}
-
 PardotConnectorProfileProperties::PardotConnectorProfileProperties(JsonView jsonValue)
-  : PardotConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PardotConnectorProfileProperties& PardotConnectorProfileProperties::operator =(J
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isSandboxEnvironment"))
   {
     m_isSandboxEnvironment = jsonValue.GetBool("isSandboxEnvironment");
-
     m_isSandboxEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("businessUnitId"))
   {
     m_businessUnitId = jsonValue.GetString("businessUnitId");
-
     m_businessUnitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-PushNotificationConfiguration::PushNotificationConfiguration() : 
-    m_titleHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_type(PushNotificationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 PushNotificationConfiguration::PushNotificationConfiguration(JsonView jsonValue)
-  : PushNotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PushNotificationConfiguration& PushNotificationConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PushNotificationTypeMapper::GetPushNotificationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

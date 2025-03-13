@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-WeightedQuantileLoss::WeightedQuantileLoss() : 
-    m_quantile(0.0),
-    m_quantileHasBeenSet(false),
-    m_lossValue(0.0),
-    m_lossValueHasBeenSet(false)
-{
-}
-
 WeightedQuantileLoss::WeightedQuantileLoss(JsonView jsonValue)
-  : WeightedQuantileLoss()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WeightedQuantileLoss& WeightedQuantileLoss::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Quantile"))
   {
     m_quantile = jsonValue.GetDouble("Quantile");
-
     m_quantileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LossValue"))
   {
     m_lossValue = jsonValue.GetDouble("LossValue");
-
     m_lossValueHasBeenSet = true;
   }
-
   return *this;
 }
 

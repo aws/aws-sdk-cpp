@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateRouteTableRequest::AssociateRouteTableRequest() : 
-    m_gatewayIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateRouteTableRequest::SerializePayload() const
 {
   Aws::StringStream ss;

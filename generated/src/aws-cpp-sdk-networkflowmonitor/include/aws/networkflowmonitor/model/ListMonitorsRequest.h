@@ -26,7 +26,7 @@ namespace Model
   class ListMonitorsRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API ListMonitorsRequest();
+    AWS_NETWORKFLOWMONITOR_API ListMonitorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,21 +44,19 @@ namespace Model
      * <p>The token for the next set of results. You receive this token from a previous
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMonitorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMonitorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMonitorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMonitorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of query results that you want to return with this call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMonitorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -74,22 +72,20 @@ namespace Model
      * <code>DELETING</code>: The monitor is in the process of being deleted.</p> </li>
      * </ul>
      */
-    inline const MonitorStatus& GetMonitorStatus() const{ return m_monitorStatus; }
+    inline MonitorStatus GetMonitorStatus() const { return m_monitorStatus; }
     inline bool MonitorStatusHasBeenSet() const { return m_monitorStatusHasBeenSet; }
-    inline void SetMonitorStatus(const MonitorStatus& value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = value; }
-    inline void SetMonitorStatus(MonitorStatus&& value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = std::move(value); }
-    inline ListMonitorsRequest& WithMonitorStatus(const MonitorStatus& value) { SetMonitorStatus(value); return *this;}
-    inline ListMonitorsRequest& WithMonitorStatus(MonitorStatus&& value) { SetMonitorStatus(std::move(value)); return *this;}
+    inline void SetMonitorStatus(MonitorStatus value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = value; }
+    inline ListMonitorsRequest& WithMonitorStatus(MonitorStatus value) { SetMonitorStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    MonitorStatus m_monitorStatus;
+    MonitorStatus m_monitorStatus{MonitorStatus::NOT_SET};
     bool m_monitorStatusHasBeenSet = false;
   };
 

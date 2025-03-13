@@ -32,7 +32,7 @@ namespace Model
   class AnonymousUserQSearchBarEmbeddingConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API AnonymousUserQSearchBarEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API AnonymousUserQSearchBarEmbeddingConfiguration() = default;
     AWS_QUICKSIGHT_API AnonymousUserQSearchBarEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AnonymousUserQSearchBarEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * parameter. Otherwise, the request fails with an
      * <code>InvalidParameterValueException</code> error.</p>
      */
-    inline const Aws::String& GetInitialTopicId() const{ return m_initialTopicId; }
+    inline const Aws::String& GetInitialTopicId() const { return m_initialTopicId; }
     inline bool InitialTopicIdHasBeenSet() const { return m_initialTopicIdHasBeenSet; }
-    inline void SetInitialTopicId(const Aws::String& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = value; }
-    inline void SetInitialTopicId(Aws::String&& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = std::move(value); }
-    inline void SetInitialTopicId(const char* value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId.assign(value); }
-    inline AnonymousUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(const Aws::String& value) { SetInitialTopicId(value); return *this;}
-    inline AnonymousUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(Aws::String&& value) { SetInitialTopicId(std::move(value)); return *this;}
-    inline AnonymousUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(const char* value) { SetInitialTopicId(value); return *this;}
+    template<typename InitialTopicIdT = Aws::String>
+    void SetInitialTopicId(InitialTopicIdT&& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = std::forward<InitialTopicIdT>(value); }
+    template<typename InitialTopicIdT = Aws::String>
+    AnonymousUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(InitialTopicIdT&& value) { SetInitialTopicId(std::forward<InitialTopicIdT>(value)); return *this;}
     ///@}
   private:
 

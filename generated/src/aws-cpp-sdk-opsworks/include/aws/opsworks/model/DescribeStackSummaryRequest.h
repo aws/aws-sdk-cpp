@@ -21,7 +21,7 @@ namespace Model
   class DescribeStackSummaryRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeStackSummaryRequest();
+    AWS_OPSWORKS_API DescribeStackSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline DescribeStackSummaryRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DescribeStackSummaryRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DescribeStackSummaryRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DescribeStackSummaryRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
   private:
 

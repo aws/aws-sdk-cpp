@@ -18,30 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelInferenceJobSummary::TrainedModelInferenceJobSummary() : 
-    m_trainedModelInferenceJobArnHasBeenSet(false),
-    m_configuredModelAlgorithmAssociationArnHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_trainedModelArnHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false),
-    m_status(TrainedModelInferenceJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_outputConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_metricsStatus(MetricsStatus::NOT_SET),
-    m_metricsStatusHasBeenSet(false),
-    m_metricsStatusDetailsHasBeenSet(false),
-    m_logsStatus(LogsStatus::NOT_SET),
-    m_logsStatusHasBeenSet(false),
-    m_logsStatusDetailsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 TrainedModelInferenceJobSummary::TrainedModelInferenceJobSummary(JsonView jsonValue)
-  : TrainedModelInferenceJobSummary()
 {
   *this = jsonValue;
 }
@@ -51,108 +28,78 @@ TrainedModelInferenceJobSummary& TrainedModelInferenceJobSummary::operator =(Jso
   if(jsonValue.ValueExists("trainedModelInferenceJobArn"))
   {
     m_trainedModelInferenceJobArn = jsonValue.GetString("trainedModelInferenceJobArn");
-
     m_trainedModelInferenceJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredModelAlgorithmAssociationArn"))
   {
     m_configuredModelAlgorithmAssociationArn = jsonValue.GetString("configuredModelAlgorithmAssociationArn");
-
     m_configuredModelAlgorithmAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
-
     m_membershipIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainedModelArn"))
   {
     m_trainedModelArn = jsonValue.GetString("trainedModelArn");
-
     m_trainedModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationIdentifier"))
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
-
     m_collaborationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TrainedModelInferenceJobStatusMapper::GetTrainedModelInferenceJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConfiguration"))
   {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
-
     m_outputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricsStatus"))
   {
     m_metricsStatus = MetricsStatusMapper::GetMetricsStatusForName(jsonValue.GetString("metricsStatus"));
-
     m_metricsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricsStatusDetails"))
   {
     m_metricsStatusDetails = jsonValue.GetString("metricsStatusDetails");
-
     m_metricsStatusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logsStatus"))
   {
     m_logsStatus = LogsStatusMapper::GetLogsStatusForName(jsonValue.GetString("logsStatus"));
-
     m_logsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logsStatusDetails"))
   {
     m_logsStatusDetails = jsonValue.GetString("logsStatusDetails");
-
     m_logsStatusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

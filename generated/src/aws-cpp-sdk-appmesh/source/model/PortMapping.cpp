@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-PortMapping::PortMapping() : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(PortProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 PortMapping::PortMapping(JsonView jsonValue)
-  : PortMapping()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PortMapping& PortMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = PortProtocolMapper::GetPortProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

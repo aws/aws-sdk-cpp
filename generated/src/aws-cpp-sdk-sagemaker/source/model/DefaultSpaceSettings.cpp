@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DefaultSpaceSettings::DefaultSpaceSettings() : 
-    m_executionRoleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_jupyterServerAppSettingsHasBeenSet(false),
-    m_kernelGatewayAppSettingsHasBeenSet(false),
-    m_jupyterLabAppSettingsHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false),
-    m_customPosixUserConfigHasBeenSet(false),
-    m_customFileSystemConfigsHasBeenSet(false)
-{
-}
-
 DefaultSpaceSettings::DefaultSpaceSettings(JsonView jsonValue)
-  : DefaultSpaceSettings()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ DefaultSpaceSettings& DefaultSpaceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionRole"))
   {
     m_executionRole = jsonValue.GetString("ExecutionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -54,42 +39,31 @@ DefaultSpaceSettings& DefaultSpaceSettings::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JupyterServerAppSettings"))
   {
     m_jupyterServerAppSettings = jsonValue.GetObject("JupyterServerAppSettings");
-
     m_jupyterServerAppSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KernelGatewayAppSettings"))
   {
     m_kernelGatewayAppSettings = jsonValue.GetObject("KernelGatewayAppSettings");
-
     m_kernelGatewayAppSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JupyterLabAppSettings"))
   {
     m_jupyterLabAppSettings = jsonValue.GetObject("JupyterLabAppSettings");
-
     m_jupyterLabAppSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceStorageSettings"))
   {
     m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
-
     m_spaceStorageSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomPosixUserConfig"))
   {
     m_customPosixUserConfig = jsonValue.GetObject("CustomPosixUserConfig");
-
     m_customPosixUserConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomFileSystemConfigs"))
   {
     Aws::Utils::Array<JsonView> customFileSystemConfigsJsonList = jsonValue.GetArray("CustomFileSystemConfigs");
@@ -99,7 +73,6 @@ DefaultSpaceSettings& DefaultSpaceSettings::operator =(JsonView jsonValue)
     }
     m_customFileSystemConfigsHasBeenSet = true;
   }
-
   return *this;
 }
 

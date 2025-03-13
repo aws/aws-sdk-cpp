@@ -12,11 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetRepositoryScanningConfigurationRequest::BatchGetRepositoryScanningConfigurationRequest() : 
-    m_repositoryNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetRepositoryScanningConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

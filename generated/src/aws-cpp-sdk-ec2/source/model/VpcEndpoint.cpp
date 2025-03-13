@@ -20,42 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointType(VpcEndpointType::NOT_SET),
-    m_vpcEndpointTypeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_dnsOptionsHasBeenSet(false),
-    m_privateDnsEnabled(false),
-    m_privateDnsEnabledHasBeenSet(false),
-    m_requesterManaged(false),
-    m_requesterManagedHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dnsEntriesHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_lastErrorHasBeenSet(false),
-    m_ipv4PrefixesHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_resourceConfigurationArnHasBeenSet(false),
-    m_serviceRegionHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode)
-  : VpcEndpoint()
 {
   *this = xmlNode;
 }
@@ -71,198 +36,223 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
+       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode vpcEndpointTypeNode = resultNode.FirstChild("vpcEndpointType");
     if(!vpcEndpointTypeNode.IsNull())
     {
-      m_vpcEndpointType = VpcEndpointTypeMapper::GetVpcEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointTypeNode.GetText()).c_str()).c_str());
+      m_vpcEndpointType = VpcEndpointTypeMapper::GetVpcEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointTypeNode.GetText()).c_str()));
       m_vpcEndpointTypeHasBeenSet = true;
+       m_vpcEndpointTypeHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
     if(!serviceNameNode.IsNull())
     {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
+       m_serviceNameHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = StateMapper::GetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("policyDocument");
     if(!policyDocumentNode.IsNull())
     {
       m_policyDocument = Aws::Utils::Xml::DecodeEscapedXmlText(policyDocumentNode.GetText());
       m_policyDocumentHasBeenSet = true;
+       m_policyDocumentHasBeenSet = true;
     }
     XmlNode routeTableIdsNode = resultNode.FirstChild("routeTableIdSet");
     if(!routeTableIdsNode.IsNull())
     {
       XmlNode routeTableIdsMember = routeTableIdsNode.FirstChild("item");
+      m_routeTableIdsHasBeenSet = !routeTableIdsMember.IsNull();
       while(!routeTableIdsMember.IsNull())
       {
         m_routeTableIds.push_back(routeTableIdsMember.GetText());
         routeTableIdsMember = routeTableIdsMember.NextNode("item");
       }
 
-      m_routeTableIdsHasBeenSet = true;
+       m_routeTableIdsHasBeenSet = true;
     }
     XmlNode subnetIdsNode = resultNode.FirstChild("subnetIdSet");
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
     XmlNode groupsNode = resultNode.FirstChild("groupSet");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("item");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember);
         groupsMember = groupsMember.NextNode("item");
       }
 
-      m_groupsHasBeenSet = true;
+       m_groupsHasBeenSet = true;
     }
     XmlNode ipAddressTypeNode = resultNode.FirstChild("ipAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
+       m_ipAddressTypeHasBeenSet = true;
     }
     XmlNode dnsOptionsNode = resultNode.FirstChild("dnsOptions");
     if(!dnsOptionsNode.IsNull())
     {
       m_dnsOptions = dnsOptionsNode;
       m_dnsOptionsHasBeenSet = true;
+       m_dnsOptionsHasBeenSet = true;
     }
     XmlNode privateDnsEnabledNode = resultNode.FirstChild("privateDnsEnabled");
     if(!privateDnsEnabledNode.IsNull())
     {
       m_privateDnsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsEnabledNode.GetText()).c_str()).c_str());
       m_privateDnsEnabledHasBeenSet = true;
+       m_privateDnsEnabledHasBeenSet = true;
     }
     XmlNode requesterManagedNode = resultNode.FirstChild("requesterManaged");
     if(!requesterManagedNode.IsNull())
     {
       m_requesterManaged = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requesterManagedNode.GetText()).c_str()).c_str());
       m_requesterManagedHasBeenSet = true;
+       m_requesterManagedHasBeenSet = true;
     }
     XmlNode networkInterfaceIdsNode = resultNode.FirstChild("networkInterfaceIdSet");
     if(!networkInterfaceIdsNode.IsNull())
     {
       XmlNode networkInterfaceIdsMember = networkInterfaceIdsNode.FirstChild("item");
+      m_networkInterfaceIdsHasBeenSet = !networkInterfaceIdsMember.IsNull();
       while(!networkInterfaceIdsMember.IsNull())
       {
         m_networkInterfaceIds.push_back(networkInterfaceIdsMember.GetText());
         networkInterfaceIdsMember = networkInterfaceIdsMember.NextNode("item");
       }
 
-      m_networkInterfaceIdsHasBeenSet = true;
+       m_networkInterfaceIdsHasBeenSet = true;
     }
     XmlNode dnsEntriesNode = resultNode.FirstChild("dnsEntrySet");
     if(!dnsEntriesNode.IsNull())
     {
       XmlNode dnsEntriesMember = dnsEntriesNode.FirstChild("item");
+      m_dnsEntriesHasBeenSet = !dnsEntriesMember.IsNull();
       while(!dnsEntriesMember.IsNull())
       {
         m_dnsEntries.push_back(dnsEntriesMember);
         dnsEntriesMember = dnsEntriesMember.NextNode("item");
       }
 
-      m_dnsEntriesHasBeenSet = true;
+       m_dnsEntriesHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
       m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
+       m_creationTimestampHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode lastErrorNode = resultNode.FirstChild("lastError");
     if(!lastErrorNode.IsNull())
     {
       m_lastError = lastErrorNode;
       m_lastErrorHasBeenSet = true;
+       m_lastErrorHasBeenSet = true;
     }
     XmlNode ipv4PrefixesNode = resultNode.FirstChild("ipv4PrefixSet");
     if(!ipv4PrefixesNode.IsNull())
     {
       XmlNode ipv4PrefixesMember = ipv4PrefixesNode.FirstChild("item");
+      m_ipv4PrefixesHasBeenSet = !ipv4PrefixesMember.IsNull();
       while(!ipv4PrefixesMember.IsNull())
       {
         m_ipv4Prefixes.push_back(ipv4PrefixesMember);
         ipv4PrefixesMember = ipv4PrefixesMember.NextNode("item");
       }
 
-      m_ipv4PrefixesHasBeenSet = true;
+       m_ipv4PrefixesHasBeenSet = true;
     }
     XmlNode ipv6PrefixesNode = resultNode.FirstChild("ipv6PrefixSet");
     if(!ipv6PrefixesNode.IsNull())
     {
       XmlNode ipv6PrefixesMember = ipv6PrefixesNode.FirstChild("item");
+      m_ipv6PrefixesHasBeenSet = !ipv6PrefixesMember.IsNull();
       while(!ipv6PrefixesMember.IsNull())
       {
         m_ipv6Prefixes.push_back(ipv6PrefixesMember);
         ipv6PrefixesMember = ipv6PrefixesMember.NextNode("item");
       }
 
-      m_ipv6PrefixesHasBeenSet = true;
+       m_ipv6PrefixesHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("failureReason");
     if(!failureReasonNode.IsNull())
     {
       m_failureReason = Aws::Utils::Xml::DecodeEscapedXmlText(failureReasonNode.GetText());
       m_failureReasonHasBeenSet = true;
+       m_failureReasonHasBeenSet = true;
     }
     XmlNode serviceNetworkArnNode = resultNode.FirstChild("serviceNetworkArn");
     if(!serviceNetworkArnNode.IsNull())
     {
       m_serviceNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNetworkArnNode.GetText());
       m_serviceNetworkArnHasBeenSet = true;
+       m_serviceNetworkArnHasBeenSet = true;
     }
     XmlNode resourceConfigurationArnNode = resultNode.FirstChild("resourceConfigurationArn");
     if(!resourceConfigurationArnNode.IsNull())
     {
       m_resourceConfigurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceConfigurationArnNode.GetText());
       m_resourceConfigurationArnHasBeenSet = true;
+       m_resourceConfigurationArnHasBeenSet = true;
     }
     XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
     if(!serviceRegionNode.IsNull())
     {
       m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
       m_serviceRegionHasBeenSet = true;
+       m_serviceRegionHasBeenSet = true;
     }
   }
 

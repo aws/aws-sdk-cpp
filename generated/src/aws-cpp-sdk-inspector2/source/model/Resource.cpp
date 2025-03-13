@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Resource::Resource() : 
-    m_detailsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_partitionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(ResourceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetObject("details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partition"))
   {
     m_partition = jsonValue.GetString("partition");
-
     m_partitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -74,14 +54,11 @@ Resource& Resource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

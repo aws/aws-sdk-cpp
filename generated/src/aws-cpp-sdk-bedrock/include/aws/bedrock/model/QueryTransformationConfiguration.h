@@ -32,7 +32,7 @@ namespace Model
   class QueryTransformationConfiguration
   {
   public:
-    AWS_BEDROCK_API QueryTransformationConfiguration();
+    AWS_BEDROCK_API QueryTransformationConfiguration() = default;
     AWS_BEDROCK_API QueryTransformationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API QueryTransformationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The type of transformation to apply to the prompt.</p>
      */
-    inline const QueryTransformationType& GetType() const{ return m_type; }
+    inline QueryTransformationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const QueryTransformationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(QueryTransformationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline QueryTransformationConfiguration& WithType(const QueryTransformationType& value) { SetType(value); return *this;}
-    inline QueryTransformationConfiguration& WithType(QueryTransformationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(QueryTransformationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline QueryTransformationConfiguration& WithType(QueryTransformationType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    QueryTransformationType m_type;
+    QueryTransformationType m_type{QueryTransformationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

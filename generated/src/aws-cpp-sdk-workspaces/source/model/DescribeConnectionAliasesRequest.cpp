@@ -12,15 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConnectionAliasesRequest::DescribeConnectionAliasesRequest() : 
-    m_aliasIdsHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConnectionAliasesRequest::SerializePayload() const
 {
   JsonValue payload;

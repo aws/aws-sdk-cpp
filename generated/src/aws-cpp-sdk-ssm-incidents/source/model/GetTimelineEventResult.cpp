@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTimelineEventResult::GetTimelineEventResult()
-{
-}
-
 GetTimelineEventResult::GetTimelineEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetTimelineEventResult& GetTimelineEventResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("event"))
   {
     m_event = jsonValue.GetObject("event");
-
+    m_eventHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

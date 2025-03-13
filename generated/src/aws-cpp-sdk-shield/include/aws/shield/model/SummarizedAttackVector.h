@@ -33,7 +33,7 @@ namespace Model
   class SummarizedAttackVector
   {
   public:
-    AWS_SHIELD_API SummarizedAttackVector();
+    AWS_SHIELD_API SummarizedAttackVector() = default;
     AWS_SHIELD_API SummarizedAttackVector(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API SummarizedAttackVector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The attack type, for example, SNMP reflection or SYN flood.</p>
      */
-    inline const Aws::String& GetVectorType() const{ return m_vectorType; }
+    inline const Aws::String& GetVectorType() const { return m_vectorType; }
     inline bool VectorTypeHasBeenSet() const { return m_vectorTypeHasBeenSet; }
-    inline void SetVectorType(const Aws::String& value) { m_vectorTypeHasBeenSet = true; m_vectorType = value; }
-    inline void SetVectorType(Aws::String&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = std::move(value); }
-    inline void SetVectorType(const char* value) { m_vectorTypeHasBeenSet = true; m_vectorType.assign(value); }
-    inline SummarizedAttackVector& WithVectorType(const Aws::String& value) { SetVectorType(value); return *this;}
-    inline SummarizedAttackVector& WithVectorType(Aws::String&& value) { SetVectorType(std::move(value)); return *this;}
-    inline SummarizedAttackVector& WithVectorType(const char* value) { SetVectorType(value); return *this;}
+    template<typename VectorTypeT = Aws::String>
+    void SetVectorType(VectorTypeT&& value) { m_vectorTypeHasBeenSet = true; m_vectorType = std::forward<VectorTypeT>(value); }
+    template<typename VectorTypeT = Aws::String>
+    SummarizedAttackVector& WithVectorType(VectorTypeT&& value) { SetVectorType(std::forward<VectorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of counters that describe the details of the attack.</p>
      */
-    inline const Aws::Vector<SummarizedCounter>& GetVectorCounters() const{ return m_vectorCounters; }
+    inline const Aws::Vector<SummarizedCounter>& GetVectorCounters() const { return m_vectorCounters; }
     inline bool VectorCountersHasBeenSet() const { return m_vectorCountersHasBeenSet; }
-    inline void SetVectorCounters(const Aws::Vector<SummarizedCounter>& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters = value; }
-    inline void SetVectorCounters(Aws::Vector<SummarizedCounter>&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters = std::move(value); }
-    inline SummarizedAttackVector& WithVectorCounters(const Aws::Vector<SummarizedCounter>& value) { SetVectorCounters(value); return *this;}
-    inline SummarizedAttackVector& WithVectorCounters(Aws::Vector<SummarizedCounter>&& value) { SetVectorCounters(std::move(value)); return *this;}
-    inline SummarizedAttackVector& AddVectorCounters(const SummarizedCounter& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters.push_back(value); return *this; }
-    inline SummarizedAttackVector& AddVectorCounters(SummarizedCounter&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters.push_back(std::move(value)); return *this; }
+    template<typename VectorCountersT = Aws::Vector<SummarizedCounter>>
+    void SetVectorCounters(VectorCountersT&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters = std::forward<VectorCountersT>(value); }
+    template<typename VectorCountersT = Aws::Vector<SummarizedCounter>>
+    SummarizedAttackVector& WithVectorCounters(VectorCountersT&& value) { SetVectorCounters(std::forward<VectorCountersT>(value)); return *this;}
+    template<typename VectorCountersT = SummarizedCounter>
+    SummarizedAttackVector& AddVectorCounters(VectorCountersT&& value) { m_vectorCountersHasBeenSet = true; m_vectorCounters.emplace_back(std::forward<VectorCountersT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-PerformanceInsightsStat::PerformanceInsightsStat() : 
-    m_typeHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 PerformanceInsightsStat::PerformanceInsightsStat(JsonView jsonValue)
-  : PerformanceInsightsStat()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PerformanceInsightsStat& PerformanceInsightsStat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

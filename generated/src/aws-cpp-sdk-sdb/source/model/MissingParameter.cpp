@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-MissingParameter::MissingParameter() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 MissingParameter::MissingParameter(const XmlNode& xmlNode)
-  : MissingParameter()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ MissingParameter& MissingParameter::operator =(const XmlNode& xmlNode)
     {
       m_boxUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(boxUsageNode.GetText()).c_str()).c_str());
       m_boxUsageHasBeenSet = true;
+       m_boxUsageHasBeenSet = true;
     }
   }
 

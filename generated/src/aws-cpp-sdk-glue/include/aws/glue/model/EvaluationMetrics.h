@@ -33,7 +33,7 @@ namespace Model
   class EvaluationMetrics
   {
   public:
-    AWS_GLUE_API EvaluationMetrics();
+    AWS_GLUE_API EvaluationMetrics() = default;
     AWS_GLUE_API EvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API EvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The type of machine learning transform.</p>
      */
-    inline const TransformType& GetTransformType() const{ return m_transformType; }
+    inline TransformType GetTransformType() const { return m_transformType; }
     inline bool TransformTypeHasBeenSet() const { return m_transformTypeHasBeenSet; }
-    inline void SetTransformType(const TransformType& value) { m_transformTypeHasBeenSet = true; m_transformType = value; }
-    inline void SetTransformType(TransformType&& value) { m_transformTypeHasBeenSet = true; m_transformType = std::move(value); }
-    inline EvaluationMetrics& WithTransformType(const TransformType& value) { SetTransformType(value); return *this;}
-    inline EvaluationMetrics& WithTransformType(TransformType&& value) { SetTransformType(std::move(value)); return *this;}
+    inline void SetTransformType(TransformType value) { m_transformTypeHasBeenSet = true; m_transformType = value; }
+    inline EvaluationMetrics& WithTransformType(TransformType value) { SetTransformType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The evaluation metrics for the find matches algorithm.</p>
      */
-    inline const FindMatchesMetrics& GetFindMatchesMetrics() const{ return m_findMatchesMetrics; }
+    inline const FindMatchesMetrics& GetFindMatchesMetrics() const { return m_findMatchesMetrics; }
     inline bool FindMatchesMetricsHasBeenSet() const { return m_findMatchesMetricsHasBeenSet; }
-    inline void SetFindMatchesMetrics(const FindMatchesMetrics& value) { m_findMatchesMetricsHasBeenSet = true; m_findMatchesMetrics = value; }
-    inline void SetFindMatchesMetrics(FindMatchesMetrics&& value) { m_findMatchesMetricsHasBeenSet = true; m_findMatchesMetrics = std::move(value); }
-    inline EvaluationMetrics& WithFindMatchesMetrics(const FindMatchesMetrics& value) { SetFindMatchesMetrics(value); return *this;}
-    inline EvaluationMetrics& WithFindMatchesMetrics(FindMatchesMetrics&& value) { SetFindMatchesMetrics(std::move(value)); return *this;}
+    template<typename FindMatchesMetricsT = FindMatchesMetrics>
+    void SetFindMatchesMetrics(FindMatchesMetricsT&& value) { m_findMatchesMetricsHasBeenSet = true; m_findMatchesMetrics = std::forward<FindMatchesMetricsT>(value); }
+    template<typename FindMatchesMetricsT = FindMatchesMetrics>
+    EvaluationMetrics& WithFindMatchesMetrics(FindMatchesMetricsT&& value) { SetFindMatchesMetrics(std::forward<FindMatchesMetricsT>(value)); return *this;}
     ///@}
   private:
 
-    TransformType m_transformType;
+    TransformType m_transformType{TransformType::NOT_SET};
     bool m_transformTypeHasBeenSet = false;
 
     FindMatchesMetrics m_findMatchesMetrics;

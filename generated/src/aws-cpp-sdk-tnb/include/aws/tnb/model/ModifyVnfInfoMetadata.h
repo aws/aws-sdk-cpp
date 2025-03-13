@@ -33,7 +33,7 @@ namespace Model
   class ModifyVnfInfoMetadata
   {
   public:
-    AWS_TNB_API ModifyVnfInfoMetadata();
+    AWS_TNB_API ModifyVnfInfoMetadata() = default;
     AWS_TNB_API ModifyVnfInfoMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API ModifyVnfInfoMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The configurable properties used during update of the network function
      * instance.</p>
      */
-    inline Aws::Utils::DocumentView GetVnfConfigurableProperties() const{ return m_vnfConfigurableProperties; }
+    inline Aws::Utils::DocumentView GetVnfConfigurableProperties() const { return m_vnfConfigurableProperties; }
     inline bool VnfConfigurablePropertiesHasBeenSet() const { return m_vnfConfigurablePropertiesHasBeenSet; }
-    inline void SetVnfConfigurableProperties(const Aws::Utils::Document& value) { m_vnfConfigurablePropertiesHasBeenSet = true; m_vnfConfigurableProperties = value; }
-    inline void SetVnfConfigurableProperties(Aws::Utils::Document&& value) { m_vnfConfigurablePropertiesHasBeenSet = true; m_vnfConfigurableProperties = std::move(value); }
-    inline ModifyVnfInfoMetadata& WithVnfConfigurableProperties(const Aws::Utils::Document& value) { SetVnfConfigurableProperties(value); return *this;}
-    inline ModifyVnfInfoMetadata& WithVnfConfigurableProperties(Aws::Utils::Document&& value) { SetVnfConfigurableProperties(std::move(value)); return *this;}
+    template<typename VnfConfigurablePropertiesT = Aws::Utils::Document>
+    void SetVnfConfigurableProperties(VnfConfigurablePropertiesT&& value) { m_vnfConfigurablePropertiesHasBeenSet = true; m_vnfConfigurableProperties = std::forward<VnfConfigurablePropertiesT>(value); }
+    template<typename VnfConfigurablePropertiesT = Aws::Utils::Document>
+    ModifyVnfInfoMetadata& WithVnfConfigurableProperties(VnfConfigurablePropertiesT&& value) { SetVnfConfigurableProperties(std::forward<VnfConfigurablePropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network function instance that was updated in the network instance.</p>
      */
-    inline const Aws::String& GetVnfInstanceId() const{ return m_vnfInstanceId; }
+    inline const Aws::String& GetVnfInstanceId() const { return m_vnfInstanceId; }
     inline bool VnfInstanceIdHasBeenSet() const { return m_vnfInstanceIdHasBeenSet; }
-    inline void SetVnfInstanceId(const Aws::String& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = value; }
-    inline void SetVnfInstanceId(Aws::String&& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = std::move(value); }
-    inline void SetVnfInstanceId(const char* value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId.assign(value); }
-    inline ModifyVnfInfoMetadata& WithVnfInstanceId(const Aws::String& value) { SetVnfInstanceId(value); return *this;}
-    inline ModifyVnfInfoMetadata& WithVnfInstanceId(Aws::String&& value) { SetVnfInstanceId(std::move(value)); return *this;}
-    inline ModifyVnfInfoMetadata& WithVnfInstanceId(const char* value) { SetVnfInstanceId(value); return *this;}
+    template<typename VnfInstanceIdT = Aws::String>
+    void SetVnfInstanceId(VnfInstanceIdT&& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = std::forward<VnfInstanceIdT>(value); }
+    template<typename VnfInstanceIdT = Aws::String>
+    ModifyVnfInfoMetadata& WithVnfInstanceId(VnfInstanceIdT&& value) { SetVnfInstanceId(std::forward<VnfInstanceIdT>(value)); return *this;}
     ///@}
   private:
 

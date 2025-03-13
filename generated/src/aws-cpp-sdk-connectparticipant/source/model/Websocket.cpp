@@ -18,14 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-Websocket::Websocket() : 
-    m_urlHasBeenSet(false),
-    m_connectionExpiryHasBeenSet(false)
-{
-}
-
 Websocket::Websocket(JsonView jsonValue)
-  : Websocket()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Websocket& Websocket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionExpiry"))
   {
     m_connectionExpiry = jsonValue.GetString("ConnectionExpiry");
-
     m_connectionExpiryHasBeenSet = true;
   }
-
   return *this;
 }
 

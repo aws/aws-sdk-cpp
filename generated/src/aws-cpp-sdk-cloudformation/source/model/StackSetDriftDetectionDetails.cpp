@@ -20,27 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetDriftDetectionDetails::StackSetDriftDetectionDetails() : 
-    m_driftStatus(StackSetDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_driftDetectionStatus(StackSetDriftDetectionStatus::NOT_SET),
-    m_driftDetectionStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_totalStackInstancesCount(0),
-    m_totalStackInstancesCountHasBeenSet(false),
-    m_driftedStackInstancesCount(0),
-    m_driftedStackInstancesCountHasBeenSet(false),
-    m_inSyncStackInstancesCount(0),
-    m_inSyncStackInstancesCountHasBeenSet(false),
-    m_inProgressStackInstancesCount(0),
-    m_inProgressStackInstancesCountHasBeenSet(false),
-    m_failedStackInstancesCount(0),
-    m_failedStackInstancesCountHasBeenSet(false)
-{
-}
-
 StackSetDriftDetectionDetails::StackSetDriftDetectionDetails(const XmlNode& xmlNode)
-  : StackSetDriftDetectionDetails()
 {
   *this = xmlNode;
 }
@@ -54,50 +34,58 @@ StackSetDriftDetectionDetails& StackSetDriftDetectionDetails::operator =(const X
     XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
     if(!driftStatusNode.IsNull())
     {
-      m_driftStatus = StackSetDriftStatusMapper::GetStackSetDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()).c_str());
+      m_driftStatus = StackSetDriftStatusMapper::GetStackSetDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()));
       m_driftStatusHasBeenSet = true;
+       m_driftStatusHasBeenSet = true;
     }
     XmlNode driftDetectionStatusNode = resultNode.FirstChild("DriftDetectionStatus");
     if(!driftDetectionStatusNode.IsNull())
     {
-      m_driftDetectionStatus = StackSetDriftDetectionStatusMapper::GetStackSetDriftDetectionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftDetectionStatusNode.GetText()).c_str()).c_str());
+      m_driftDetectionStatus = StackSetDriftDetectionStatusMapper::GetStackSetDriftDetectionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftDetectionStatusNode.GetText()).c_str()));
       m_driftDetectionStatusHasBeenSet = true;
+       m_driftDetectionStatusHasBeenSet = true;
     }
     XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");
     if(!lastDriftCheckTimestampNode.IsNull())
     {
       m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
+       m_lastDriftCheckTimestampHasBeenSet = true;
     }
     XmlNode totalStackInstancesCountNode = resultNode.FirstChild("TotalStackInstancesCount");
     if(!totalStackInstancesCountNode.IsNull())
     {
       m_totalStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalStackInstancesCountNode.GetText()).c_str()).c_str());
       m_totalStackInstancesCountHasBeenSet = true;
+       m_totalStackInstancesCountHasBeenSet = true;
     }
     XmlNode driftedStackInstancesCountNode = resultNode.FirstChild("DriftedStackInstancesCount");
     if(!driftedStackInstancesCountNode.IsNull())
     {
       m_driftedStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftedStackInstancesCountNode.GetText()).c_str()).c_str());
       m_driftedStackInstancesCountHasBeenSet = true;
+       m_driftedStackInstancesCountHasBeenSet = true;
     }
     XmlNode inSyncStackInstancesCountNode = resultNode.FirstChild("InSyncStackInstancesCount");
     if(!inSyncStackInstancesCountNode.IsNull())
     {
       m_inSyncStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(inSyncStackInstancesCountNode.GetText()).c_str()).c_str());
       m_inSyncStackInstancesCountHasBeenSet = true;
+       m_inSyncStackInstancesCountHasBeenSet = true;
     }
     XmlNode inProgressStackInstancesCountNode = resultNode.FirstChild("InProgressStackInstancesCount");
     if(!inProgressStackInstancesCountNode.IsNull())
     {
       m_inProgressStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(inProgressStackInstancesCountNode.GetText()).c_str()).c_str());
       m_inProgressStackInstancesCountHasBeenSet = true;
+       m_inProgressStackInstancesCountHasBeenSet = true;
     }
     XmlNode failedStackInstancesCountNode = resultNode.FirstChild("FailedStackInstancesCount");
     if(!failedStackInstancesCountNode.IsNull())
     {
       m_failedStackInstancesCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failedStackInstancesCountNode.GetText()).c_str()).c_str());
       m_failedStackInstancesCountHasBeenSet = true;
+       m_failedStackInstancesCountHasBeenSet = true;
     }
   }
 

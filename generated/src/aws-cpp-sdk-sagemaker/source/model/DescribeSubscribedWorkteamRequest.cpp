@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSubscribedWorkteamRequest::DescribeSubscribedWorkteamRequest() : 
-    m_workteamArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSubscribedWorkteamRequest::SerializePayload() const
 {
   JsonValue payload;

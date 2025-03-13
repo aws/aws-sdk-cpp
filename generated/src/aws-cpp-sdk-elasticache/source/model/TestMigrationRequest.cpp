@@ -10,12 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-TestMigrationRequest::TestMigrationRequest() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_customerNodeEndpointListHasBeenSet(false)
-{
-}
-
 Aws::String TestMigrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

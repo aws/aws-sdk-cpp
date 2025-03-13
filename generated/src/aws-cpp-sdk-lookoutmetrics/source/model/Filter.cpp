@@ -18,15 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-Filter::Filter() : 
-    m_dimensionValueHasBeenSet(false),
-    m_filterOperation(FilterOperation::NOT_SET),
-    m_filterOperationHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionValue"))
   {
     m_dimensionValue = jsonValue.GetString("DimensionValue");
-
     m_dimensionValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterOperation"))
   {
     m_filterOperation = FilterOperationMapper::GetFilterOperationForName(jsonValue.GetString("FilterOperation"));
-
     m_filterOperationHasBeenSet = true;
   }
-
   return *this;
 }
 

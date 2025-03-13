@@ -33,7 +33,7 @@ namespace Model
   class All
   {
   public:
-    AWS_WAFV2_API All();
+    AWS_WAFV2_API All() = default;
     AWS_WAFV2_API All(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API All& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

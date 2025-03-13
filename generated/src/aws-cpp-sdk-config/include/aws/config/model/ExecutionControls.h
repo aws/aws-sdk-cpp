@@ -32,7 +32,7 @@ namespace Model
   class ExecutionControls
   {
   public:
-    AWS_CONFIGSERVICE_API ExecutionControls();
+    AWS_CONFIGSERVICE_API ExecutionControls() = default;
     AWS_CONFIGSERVICE_API ExecutionControls(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ExecutionControls& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A SsmControls object.</p>
      */
-    inline const SsmControls& GetSsmControls() const{ return m_ssmControls; }
+    inline const SsmControls& GetSsmControls() const { return m_ssmControls; }
     inline bool SsmControlsHasBeenSet() const { return m_ssmControlsHasBeenSet; }
-    inline void SetSsmControls(const SsmControls& value) { m_ssmControlsHasBeenSet = true; m_ssmControls = value; }
-    inline void SetSsmControls(SsmControls&& value) { m_ssmControlsHasBeenSet = true; m_ssmControls = std::move(value); }
-    inline ExecutionControls& WithSsmControls(const SsmControls& value) { SetSsmControls(value); return *this;}
-    inline ExecutionControls& WithSsmControls(SsmControls&& value) { SetSsmControls(std::move(value)); return *this;}
+    template<typename SsmControlsT = SsmControls>
+    void SetSsmControls(SsmControlsT&& value) { m_ssmControlsHasBeenSet = true; m_ssmControls = std::forward<SsmControlsT>(value); }
+    template<typename SsmControlsT = SsmControls>
+    ExecutionControls& WithSsmControls(SsmControlsT&& value) { SetSsmControls(std::forward<SsmControlsT>(value)); return *this;}
     ///@}
   private:
 

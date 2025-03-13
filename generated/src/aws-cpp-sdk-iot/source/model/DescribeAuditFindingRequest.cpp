@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAuditFindingRequest::DescribeAuditFindingRequest() : 
-    m_findingIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAuditFindingRequest::SerializePayload() const
 {
   return {};

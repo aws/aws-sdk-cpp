@@ -31,7 +31,7 @@ namespace Model
   class EnvironmentVariable
   {
   public:
-    AWS_OPSWORKS_API EnvironmentVariable();
+    AWS_OPSWORKS_API EnvironmentVariable() = default;
     AWS_OPSWORKS_API EnvironmentVariable(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API EnvironmentVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * letters, numbers, and underscores (_), but it must start with a letter or
      * underscore.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline EnvironmentVariable& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline EnvironmentVariable& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline EnvironmentVariable& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    EnvironmentVariable& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * specify a value, it can contain up to 256 characters, which must all be
      * printable.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline EnvironmentVariable& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline EnvironmentVariable& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline EnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    EnvironmentVariable& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * <code>*****FILTERED*****</code> instead of the actual value. The default value
      * for <code>Secure</code> is <code>false</code>. </p>
      */
-    inline bool GetSecure() const{ return m_secure; }
+    inline bool GetSecure() const { return m_secure; }
     inline bool SecureHasBeenSet() const { return m_secureHasBeenSet; }
     inline void SetSecure(bool value) { m_secureHasBeenSet = true; m_secure = value; }
     inline EnvironmentVariable& WithSecure(bool value) { SetSecure(value); return *this;}
@@ -91,7 +87,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_secure;
+    bool m_secure{false};
     bool m_secureHasBeenSet = false;
   };
 

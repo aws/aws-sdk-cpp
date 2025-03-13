@@ -33,7 +33,7 @@ namespace Model
   class GuardrailConverseImageBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailConverseImageBlock();
+    AWS_BEDROCKRUNTIME_API GuardrailConverseImageBlock() = default;
     AWS_BEDROCKRUNTIME_API GuardrailConverseImageBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailConverseImageBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
      * <p>The format details for the image type of the guardrail converse image
      * block.</p>
      */
-    inline const GuardrailConverseImageFormat& GetFormat() const{ return m_format; }
+    inline GuardrailConverseImageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const GuardrailConverseImageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(GuardrailConverseImageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline GuardrailConverseImageBlock& WithFormat(const GuardrailConverseImageFormat& value) { SetFormat(value); return *this;}
-    inline GuardrailConverseImageBlock& WithFormat(GuardrailConverseImageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(GuardrailConverseImageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GuardrailConverseImageBlock& WithFormat(GuardrailConverseImageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image source (image bytes) of the guardrail converse image block.</p>
      */
-    inline const GuardrailConverseImageSource& GetSource() const{ return m_source; }
+    inline const GuardrailConverseImageSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const GuardrailConverseImageSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(GuardrailConverseImageSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline GuardrailConverseImageBlock& WithSource(const GuardrailConverseImageSource& value) { SetSource(value); return *this;}
-    inline GuardrailConverseImageBlock& WithSource(GuardrailConverseImageSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = GuardrailConverseImageSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = GuardrailConverseImageSource>
+    GuardrailConverseImageBlock& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    GuardrailConverseImageFormat m_format;
+    GuardrailConverseImageFormat m_format{GuardrailConverseImageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     GuardrailConverseImageSource m_source;

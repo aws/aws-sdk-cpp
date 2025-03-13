@@ -34,7 +34,7 @@ namespace Model
   class AccessControlListConfiguration
   {
   public:
-    AWS_KENDRA_API AccessControlListConfiguration();
+    AWS_KENDRA_API AccessControlListConfiguration() = default;
     AWS_KENDRA_API AccessControlListConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API AccessControlListConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Path to the Amazon S3 bucket that contains the ACL files.</p>
      */
-    inline const Aws::String& GetKeyPath() const{ return m_keyPath; }
+    inline const Aws::String& GetKeyPath() const { return m_keyPath; }
     inline bool KeyPathHasBeenSet() const { return m_keyPathHasBeenSet; }
-    inline void SetKeyPath(const Aws::String& value) { m_keyPathHasBeenSet = true; m_keyPath = value; }
-    inline void SetKeyPath(Aws::String&& value) { m_keyPathHasBeenSet = true; m_keyPath = std::move(value); }
-    inline void SetKeyPath(const char* value) { m_keyPathHasBeenSet = true; m_keyPath.assign(value); }
-    inline AccessControlListConfiguration& WithKeyPath(const Aws::String& value) { SetKeyPath(value); return *this;}
-    inline AccessControlListConfiguration& WithKeyPath(Aws::String&& value) { SetKeyPath(std::move(value)); return *this;}
-    inline AccessControlListConfiguration& WithKeyPath(const char* value) { SetKeyPath(value); return *this;}
+    template<typename KeyPathT = Aws::String>
+    void SetKeyPath(KeyPathT&& value) { m_keyPathHasBeenSet = true; m_keyPath = std::forward<KeyPathT>(value); }
+    template<typename KeyPathT = Aws::String>
+    AccessControlListConfiguration& WithKeyPath(KeyPathT&& value) { SetKeyPath(std::forward<KeyPathT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-MetadataTableConfigurationResult::MetadataTableConfigurationResult() : 
-    m_s3TablesDestinationResultHasBeenSet(false)
-{
-}
-
 MetadataTableConfigurationResult::MetadataTableConfigurationResult(const XmlNode& xmlNode)
-  : MetadataTableConfigurationResult()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ MetadataTableConfigurationResult& MetadataTableConfigurationResult::operator =(c
     {
       m_s3TablesDestinationResult = s3TablesDestinationResultNode;
       m_s3TablesDestinationResultHasBeenSet = true;
+       m_s3TablesDestinationResultHasBeenSet = true;
     }
   }
 

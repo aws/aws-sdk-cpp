@@ -18,18 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-Node::Node() : 
-    m_branchHasBeenSet(false),
-    m_sensorHasBeenSet(false),
-    m_actuatorHasBeenSet(false),
-    m_attributeHasBeenSet(false),
-    m_structHasBeenSet(false),
-    m_propertyHasBeenSet(false)
-{
-}
-
 Node::Node(JsonView jsonValue)
-  : Node()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Node& Node::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetObject("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensor"))
   {
     m_sensor = jsonValue.GetObject("sensor");
-
     m_sensorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actuator"))
   {
     m_actuator = jsonValue.GetObject("actuator");
-
     m_actuatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = jsonValue.GetObject("attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("struct"))
   {
     m_struct = jsonValue.GetObject("struct");
-
     m_structHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("property"))
   {
     m_property = jsonValue.GetObject("property");
-
     m_propertyHasBeenSet = true;
   }
-
   return *this;
 }
 

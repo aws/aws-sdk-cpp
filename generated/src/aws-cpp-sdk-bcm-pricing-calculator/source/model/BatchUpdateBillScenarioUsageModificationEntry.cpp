@@ -18,15 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchUpdateBillScenarioUsageModificationEntry::BatchUpdateBillScenarioUsageModificationEntry() : 
-    m_idHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_amountsHasBeenSet(false)
-{
-}
-
 BatchUpdateBillScenarioUsageModificationEntry::BatchUpdateBillScenarioUsageModificationEntry(JsonView jsonValue)
-  : BatchUpdateBillScenarioUsageModificationEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchUpdateBillScenarioUsageModificationEntry& BatchUpdateBillScenarioUsageModif
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amounts"))
   {
     Aws::Utils::Array<JsonView> amountsJsonList = jsonValue.GetArray("amounts");
@@ -56,7 +44,6 @@ BatchUpdateBillScenarioUsageModificationEntry& BatchUpdateBillScenarioUsageModif
     }
     m_amountsHasBeenSet = true;
   }
-
   return *this;
 }
 

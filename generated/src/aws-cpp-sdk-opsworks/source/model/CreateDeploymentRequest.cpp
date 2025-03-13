@@ -12,17 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentRequest::CreateDeploymentRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_layerIdsHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_customJsonHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

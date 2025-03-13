@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_uriHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketOwner"))
   {
     m_bucketOwner = jsonValue.GetString("bucketOwner");
-
     m_bucketOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

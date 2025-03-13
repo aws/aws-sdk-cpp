@@ -10,11 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-DeleteDBSubnetGroupRequest::DeleteDBSubnetGroupRequest() : 
-    m_dBSubnetGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

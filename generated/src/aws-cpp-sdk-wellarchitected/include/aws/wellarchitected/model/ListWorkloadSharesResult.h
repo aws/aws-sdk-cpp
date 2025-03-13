@@ -34,63 +34,61 @@ namespace Model
   class ListWorkloadSharesResult
   {
   public:
-    AWS_WELLARCHITECTED_API ListWorkloadSharesResult();
+    AWS_WELLARCHITECTED_API ListWorkloadSharesResult() = default;
     AWS_WELLARCHITECTED_API ListWorkloadSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API ListWorkloadSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-    inline ListWorkloadSharesResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline ListWorkloadSharesResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline ListWorkloadSharesResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    ListWorkloadSharesResult& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<WorkloadShareSummary>& GetWorkloadShareSummaries() const{ return m_workloadShareSummaries; }
-    inline void SetWorkloadShareSummaries(const Aws::Vector<WorkloadShareSummary>& value) { m_workloadShareSummaries = value; }
-    inline void SetWorkloadShareSummaries(Aws::Vector<WorkloadShareSummary>&& value) { m_workloadShareSummaries = std::move(value); }
-    inline ListWorkloadSharesResult& WithWorkloadShareSummaries(const Aws::Vector<WorkloadShareSummary>& value) { SetWorkloadShareSummaries(value); return *this;}
-    inline ListWorkloadSharesResult& WithWorkloadShareSummaries(Aws::Vector<WorkloadShareSummary>&& value) { SetWorkloadShareSummaries(std::move(value)); return *this;}
-    inline ListWorkloadSharesResult& AddWorkloadShareSummaries(const WorkloadShareSummary& value) { m_workloadShareSummaries.push_back(value); return *this; }
-    inline ListWorkloadSharesResult& AddWorkloadShareSummaries(WorkloadShareSummary&& value) { m_workloadShareSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WorkloadShareSummary>& GetWorkloadShareSummaries() const { return m_workloadShareSummaries; }
+    template<typename WorkloadShareSummariesT = Aws::Vector<WorkloadShareSummary>>
+    void SetWorkloadShareSummaries(WorkloadShareSummariesT&& value) { m_workloadShareSummariesHasBeenSet = true; m_workloadShareSummaries = std::forward<WorkloadShareSummariesT>(value); }
+    template<typename WorkloadShareSummariesT = Aws::Vector<WorkloadShareSummary>>
+    ListWorkloadSharesResult& WithWorkloadShareSummaries(WorkloadShareSummariesT&& value) { SetWorkloadShareSummaries(std::forward<WorkloadShareSummariesT>(value)); return *this;}
+    template<typename WorkloadShareSummariesT = WorkloadShareSummary>
+    ListWorkloadSharesResult& AddWorkloadShareSummaries(WorkloadShareSummariesT&& value) { m_workloadShareSummariesHasBeenSet = true; m_workloadShareSummaries.emplace_back(std::forward<WorkloadShareSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWorkloadSharesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkloadSharesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkloadSharesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkloadSharesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWorkloadSharesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWorkloadSharesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWorkloadSharesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWorkloadSharesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workloadId;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::Vector<WorkloadShareSummary> m_workloadShareSummaries;
+    bool m_workloadShareSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

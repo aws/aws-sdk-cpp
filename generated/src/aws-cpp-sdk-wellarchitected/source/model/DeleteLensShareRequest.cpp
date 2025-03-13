@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteLensShareRequest::DeleteLensShareRequest() : 
-    m_shareIdHasBeenSet(false),
-    m_lensAliasHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteLensShareRequest::SerializePayload() const
 {
   return {};

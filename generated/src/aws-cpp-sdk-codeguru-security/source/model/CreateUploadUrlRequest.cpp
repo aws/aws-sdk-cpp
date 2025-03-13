@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUploadUrlRequest::CreateUploadUrlRequest() : 
-    m_scanNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateUploadUrlRequest::SerializePayload() const
 {
   JsonValue payload;

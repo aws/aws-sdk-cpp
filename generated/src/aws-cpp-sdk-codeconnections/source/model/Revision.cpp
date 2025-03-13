@@ -18,19 +18,7 @@ namespace CodeConnections
 namespace Model
 {
 
-Revision::Revision() : 
-    m_branchHasBeenSet(false),
-    m_directoryHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_shaHasBeenSet(false)
-{
-}
-
 Revision::Revision(JsonView jsonValue)
-  : Revision()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Revision& Revision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Branch"))
   {
     m_branch = jsonValue.GetString("Branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Directory"))
   {
     m_directory = jsonValue.GetString("Directory");
-
     m_directoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryName"))
   {
     m_repositoryName = jsonValue.GetString("RepositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sha"))
   {
     m_sha = jsonValue.GetString("Sha");
-
     m_shaHasBeenSet = true;
   }
-
   return *this;
 }
 

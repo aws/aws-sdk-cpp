@@ -18,25 +18,7 @@ namespace RAM
 namespace Model
 {
 
-ResourceShare::ResourceShare() : 
-    m_resourceShareArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningAccountIdHasBeenSet(false),
-    m_allowExternalPrincipals(false),
-    m_allowExternalPrincipalsHasBeenSet(false),
-    m_status(ResourceShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_featureSet(ResourceShareFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false)
-{
-}
-
 ResourceShare::ResourceShare(JsonView jsonValue)
-  : ResourceShare()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ ResourceShare& ResourceShare::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceShareArn"))
   {
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
-
     m_resourceShareArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningAccountId"))
   {
     m_owningAccountId = jsonValue.GetString("owningAccountId");
-
     m_owningAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowExternalPrincipals"))
   {
     m_allowExternalPrincipals = jsonValue.GetBool("allowExternalPrincipals");
-
     m_allowExternalPrincipalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceShareStatusMapper::GetResourceShareStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -94,28 +64,21 @@ ResourceShare& ResourceShare::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("featureSet"))
   {
     m_featureSet = ResourceShareFeatureSetMapper::GetResourceShareFeatureSetForName(jsonValue.GetString("featureSet"));
-
     m_featureSetHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class VersionDifferences
   {
   public:
-    AWS_WELLARCHITECTED_API VersionDifferences();
+    AWS_WELLARCHITECTED_API VersionDifferences() = default;
     AWS_WELLARCHITECTED_API VersionDifferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API VersionDifferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The differences between the base and latest versions of the lens.</p>
      */
-    inline const Aws::Vector<PillarDifference>& GetPillarDifferences() const{ return m_pillarDifferences; }
+    inline const Aws::Vector<PillarDifference>& GetPillarDifferences() const { return m_pillarDifferences; }
     inline bool PillarDifferencesHasBeenSet() const { return m_pillarDifferencesHasBeenSet; }
-    inline void SetPillarDifferences(const Aws::Vector<PillarDifference>& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences = value; }
-    inline void SetPillarDifferences(Aws::Vector<PillarDifference>&& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences = std::move(value); }
-    inline VersionDifferences& WithPillarDifferences(const Aws::Vector<PillarDifference>& value) { SetPillarDifferences(value); return *this;}
-    inline VersionDifferences& WithPillarDifferences(Aws::Vector<PillarDifference>&& value) { SetPillarDifferences(std::move(value)); return *this;}
-    inline VersionDifferences& AddPillarDifferences(const PillarDifference& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences.push_back(value); return *this; }
-    inline VersionDifferences& AddPillarDifferences(PillarDifference&& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences.push_back(std::move(value)); return *this; }
+    template<typename PillarDifferencesT = Aws::Vector<PillarDifference>>
+    void SetPillarDifferences(PillarDifferencesT&& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences = std::forward<PillarDifferencesT>(value); }
+    template<typename PillarDifferencesT = Aws::Vector<PillarDifference>>
+    VersionDifferences& WithPillarDifferences(PillarDifferencesT&& value) { SetPillarDifferences(std::forward<PillarDifferencesT>(value)); return *this;}
+    template<typename PillarDifferencesT = PillarDifference>
+    VersionDifferences& AddPillarDifferences(PillarDifferencesT&& value) { m_pillarDifferencesHasBeenSet = true; m_pillarDifferences.emplace_back(std::forward<PillarDifferencesT>(value)); return *this; }
     ///@}
   private:
 

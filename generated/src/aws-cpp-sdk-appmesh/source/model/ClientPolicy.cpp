@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-ClientPolicy::ClientPolicy() : 
-    m_tlsHasBeenSet(false)
-{
-}
-
 ClientPolicy::ClientPolicy(JsonView jsonValue)
-  : ClientPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClientPolicy& ClientPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
-
     m_tlsHasBeenSet = true;
   }
-
   return *this;
 }
 

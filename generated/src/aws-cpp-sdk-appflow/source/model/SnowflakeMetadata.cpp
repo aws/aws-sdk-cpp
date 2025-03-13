@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SnowflakeMetadata::SnowflakeMetadata() : 
-    m_supportedRegionsHasBeenSet(false)
-{
-}
-
 SnowflakeMetadata::SnowflakeMetadata(JsonView jsonValue)
-  : SnowflakeMetadata()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnowflakeMetadata& SnowflakeMetadata::operator =(JsonView jsonValue)
     }
     m_supportedRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

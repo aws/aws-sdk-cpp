@@ -28,7 +28,7 @@ namespace Model
   class PutIndexPolicyResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutIndexPolicyResult();
+    AWS_CLOUDWATCHLOGS_API PutIndexPolicyResult() = default;
     AWS_CLOUDWATCHLOGS_API PutIndexPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API PutIndexPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The index policy that you just created or updated.</p>
      */
-    inline const IndexPolicy& GetIndexPolicy() const{ return m_indexPolicy; }
-    inline void SetIndexPolicy(const IndexPolicy& value) { m_indexPolicy = value; }
-    inline void SetIndexPolicy(IndexPolicy&& value) { m_indexPolicy = std::move(value); }
-    inline PutIndexPolicyResult& WithIndexPolicy(const IndexPolicy& value) { SetIndexPolicy(value); return *this;}
-    inline PutIndexPolicyResult& WithIndexPolicy(IndexPolicy&& value) { SetIndexPolicy(std::move(value)); return *this;}
+    inline const IndexPolicy& GetIndexPolicy() const { return m_indexPolicy; }
+    template<typename IndexPolicyT = IndexPolicy>
+    void SetIndexPolicy(IndexPolicyT&& value) { m_indexPolicyHasBeenSet = true; m_indexPolicy = std::forward<IndexPolicyT>(value); }
+    template<typename IndexPolicyT = IndexPolicy>
+    PutIndexPolicyResult& WithIndexPolicy(IndexPolicyT&& value) { SetIndexPolicy(std::forward<IndexPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutIndexPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutIndexPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutIndexPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutIndexPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IndexPolicy m_indexPolicy;
+    bool m_indexPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

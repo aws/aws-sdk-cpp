@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-ConnectAction::ConnectAction() : 
-    m_instanceARNHasBeenSet(false),
-    m_iAMRoleARNHasBeenSet(false)
-{
-}
-
 ConnectAction::ConnectAction(const XmlNode& xmlNode)
-  : ConnectAction()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ConnectAction& ConnectAction::operator =(const XmlNode& xmlNode)
     {
       m_instanceARN = Aws::Utils::Xml::DecodeEscapedXmlText(instanceARNNode.GetText());
       m_instanceARNHasBeenSet = true;
+       m_instanceARNHasBeenSet = true;
     }
     XmlNode iAMRoleARNNode = resultNode.FirstChild("IAMRoleARN");
     if(!iAMRoleARNNode.IsNull())
     {
       m_iAMRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleARNNode.GetText());
       m_iAMRoleARNHasBeenSet = true;
+       m_iAMRoleARNHasBeenSet = true;
     }
   }
 

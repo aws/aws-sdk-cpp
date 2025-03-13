@@ -12,14 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInstanceCustomHealthStatusRequest::UpdateInstanceCustomHealthStatusRequest() : 
-    m_serviceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_status(CustomHealthStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInstanceCustomHealthStatusRequest::SerializePayload() const
 {
   JsonValue payload;

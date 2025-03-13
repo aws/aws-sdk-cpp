@@ -18,21 +18,7 @@ namespace DLM
 namespace Model
 {
 
-CrossRegionCopyRule::CrossRegionCopyRule() : 
-    m_targetRegionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_cmkArnHasBeenSet(false),
-    m_copyTags(false),
-    m_copyTagsHasBeenSet(false),
-    m_retainRuleHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false)
-{
-}
-
 CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue)
-  : CrossRegionCopyRule()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ CrossRegionCopyRule& CrossRegionCopyRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetRegion"))
   {
     m_targetRegion = jsonValue.GetString("TargetRegion");
-
     m_targetRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CmkArn"))
   {
     m_cmkArn = jsonValue.GetString("CmkArn");
-
     m_cmkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTags"))
   {
     m_copyTags = jsonValue.GetBool("CopyTags");
-
     m_copyTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetainRule"))
   {
     m_retainRule = jsonValue.GetObject("RetainRule");
-
     m_retainRuleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeprecateRule"))
   {
     m_deprecateRule = jsonValue.GetObject("DeprecateRule");
-
     m_deprecateRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

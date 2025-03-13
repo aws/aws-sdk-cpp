@@ -12,11 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContactRequest::GetContactRequest() : 
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Aws::String GetContactRequest::SerializePayload() const
 {
   JsonValue payload;

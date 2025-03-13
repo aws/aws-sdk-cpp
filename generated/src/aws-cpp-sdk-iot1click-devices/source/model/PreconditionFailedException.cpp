@@ -18,14 +18,7 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-PreconditionFailedException::PreconditionFailedException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PreconditionFailedException::PreconditionFailedException(JsonView jsonValue)
-  : PreconditionFailedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PreconditionFailedException& PreconditionFailedException::operator =(JsonView js
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

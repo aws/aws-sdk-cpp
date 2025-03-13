@@ -29,7 +29,7 @@ namespace Model
   class ShutdownEventConfiguration
   {
   public:
-    AWS_OPSWORKS_API ShutdownEventConfiguration();
+    AWS_OPSWORKS_API ShutdownEventConfiguration() = default;
     AWS_OPSWORKS_API ShutdownEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API ShutdownEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown
      * event before shutting down an instance.</p>
      */
-    inline int GetExecutionTimeout() const{ return m_executionTimeout; }
+    inline int GetExecutionTimeout() const { return m_executionTimeout; }
     inline bool ExecutionTimeoutHasBeenSet() const { return m_executionTimeoutHasBeenSet; }
     inline void SetExecutionTimeout(int value) { m_executionTimeoutHasBeenSet = true; m_executionTimeout = value; }
     inline ShutdownEventConfiguration& WithExecutionTimeout(int value) { SetExecutionTimeout(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
      * Draining</a> </p>
      */
-    inline bool GetDelayUntilElbConnectionsDrained() const{ return m_delayUntilElbConnectionsDrained; }
+    inline bool GetDelayUntilElbConnectionsDrained() const { return m_delayUntilElbConnectionsDrained; }
     inline bool DelayUntilElbConnectionsDrainedHasBeenSet() const { return m_delayUntilElbConnectionsDrainedHasBeenSet; }
     inline void SetDelayUntilElbConnectionsDrained(bool value) { m_delayUntilElbConnectionsDrainedHasBeenSet = true; m_delayUntilElbConnectionsDrained = value; }
     inline ShutdownEventConfiguration& WithDelayUntilElbConnectionsDrained(bool value) { SetDelayUntilElbConnectionsDrained(value); return *this;}
     ///@}
   private:
 
-    int m_executionTimeout;
+    int m_executionTimeout{0};
     bool m_executionTimeoutHasBeenSet = false;
 
-    bool m_delayUntilElbConnectionsDrained;
+    bool m_delayUntilElbConnectionsDrained{false};
     bool m_delayUntilElbConnectionsDrainedHasBeenSet = false;
   };
 

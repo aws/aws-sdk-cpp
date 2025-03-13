@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-MarketoSourceProperties::MarketoSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 MarketoSourceProperties::MarketoSourceProperties(JsonView jsonValue)
-  : MarketoSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MarketoSourceProperties& MarketoSourceProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Object"))
   {
     m_object = jsonValue.GetString("Object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

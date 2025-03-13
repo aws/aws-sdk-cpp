@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkspacesResult::ListWorkspacesResult()
-{
-}
-
 ListWorkspacesResult::ListWorkspacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWorkspacesResult& ListWorkspacesResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspaces"))
   {
     Aws::Utils::Array<JsonView> workspacesJsonList = jsonValue.GetArray("workspaces");
@@ -42,14 +37,15 @@ ListWorkspacesResult& ListWorkspacesResult::operator =(const Aws::AmazonWebServi
     {
       m_workspaces.push_back(workspacesJsonList[workspacesIndex].AsObject());
     }
+    m_workspacesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

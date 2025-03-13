@@ -21,7 +21,7 @@ namespace Model
   class ModifyClusterDbRevisionRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API ModifyClusterDbRevisionRequest();
+    AWS_REDSHIFT_API ModifyClusterDbRevisionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The unique identifier of a cluster whose database revision you want to
      * modify. </p> <p>Example: <code>examplecluster</code> </p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline ModifyClusterDbRevisionRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline ModifyClusterDbRevisionRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline ModifyClusterDbRevisionRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    ModifyClusterDbRevisionRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The identifier of the database revision. You can retrieve this value from the
      * response to the <a>DescribeClusterDbRevisions</a> request.</p>
      */
-    inline const Aws::String& GetRevisionTarget() const{ return m_revisionTarget; }
+    inline const Aws::String& GetRevisionTarget() const { return m_revisionTarget; }
     inline bool RevisionTargetHasBeenSet() const { return m_revisionTargetHasBeenSet; }
-    inline void SetRevisionTarget(const Aws::String& value) { m_revisionTargetHasBeenSet = true; m_revisionTarget = value; }
-    inline void SetRevisionTarget(Aws::String&& value) { m_revisionTargetHasBeenSet = true; m_revisionTarget = std::move(value); }
-    inline void SetRevisionTarget(const char* value) { m_revisionTargetHasBeenSet = true; m_revisionTarget.assign(value); }
-    inline ModifyClusterDbRevisionRequest& WithRevisionTarget(const Aws::String& value) { SetRevisionTarget(value); return *this;}
-    inline ModifyClusterDbRevisionRequest& WithRevisionTarget(Aws::String&& value) { SetRevisionTarget(std::move(value)); return *this;}
-    inline ModifyClusterDbRevisionRequest& WithRevisionTarget(const char* value) { SetRevisionTarget(value); return *this;}
+    template<typename RevisionTargetT = Aws::String>
+    void SetRevisionTarget(RevisionTargetT&& value) { m_revisionTargetHasBeenSet = true; m_revisionTarget = std::forward<RevisionTargetT>(value); }
+    template<typename RevisionTargetT = Aws::String>
+    ModifyClusterDbRevisionRequest& WithRevisionTarget(RevisionTargetT&& value) { SetRevisionTarget(std::forward<RevisionTargetT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterListConfiguration::FilterListConfiguration() : 
-    m_matchOperator(CategoryFilterMatchOperator::NOT_SET),
-    m_matchOperatorHasBeenSet(false),
-    m_categoryValuesHasBeenSet(false),
-    m_selectAllOptions(CategoryFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false),
-    m_nullOption(FilterNullOption::NOT_SET),
-    m_nullOptionHasBeenSet(false)
-{
-}
-
 FilterListConfiguration::FilterListConfiguration(JsonView jsonValue)
-  : FilterListConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ FilterListConfiguration& FilterListConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MatchOperator"))
   {
     m_matchOperator = CategoryFilterMatchOperatorMapper::GetCategoryFilterMatchOperatorForName(jsonValue.GetString("MatchOperator"));
-
     m_matchOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryValues"))
   {
     Aws::Utils::Array<JsonView> categoryValuesJsonList = jsonValue.GetArray("CategoryValues");
@@ -53,21 +39,16 @@ FilterListConfiguration& FilterListConfiguration::operator =(JsonView jsonValue)
     }
     m_categoryValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectAllOptions"))
   {
     m_selectAllOptions = CategoryFilterSelectAllOptionsMapper::GetCategoryFilterSelectAllOptionsForName(jsonValue.GetString("SelectAllOptions"));
-
     m_selectAllOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullOption"))
   {
     m_nullOption = FilterNullOptionMapper::GetFilterNullOptionForName(jsonValue.GetString("NullOption"));
-
     m_nullOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

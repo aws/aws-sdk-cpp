@@ -25,7 +25,7 @@ namespace Model
   class GetDASHStreamingSessionURLRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>You must specify either the <code>StreamName</code> or the
      * <code>StreamARN</code>.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline GetDASHStreamingSessionURLRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    GetDASHStreamingSessionURLRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * MPEG-DASH manifest URL.</p> <p>You must specify either the
      * <code>StreamName</code> or the <code>StreamARN</code>.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline GetDASHStreamingSessionURLRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    GetDASHStreamingSessionURLRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +106,10 @@ namespace Model
      * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
      * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
-    inline const DASHPlaybackMode& GetPlaybackMode() const{ return m_playbackMode; }
+    inline DASHPlaybackMode GetPlaybackMode() const { return m_playbackMode; }
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
-    inline void SetPlaybackMode(const DASHPlaybackMode& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
-    inline void SetPlaybackMode(DASHPlaybackMode&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
-    inline GetDASHStreamingSessionURLRequest& WithPlaybackMode(const DASHPlaybackMode& value) { SetPlaybackMode(value); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithPlaybackMode(DASHPlaybackMode&& value) { SetPlaybackMode(std::move(value)); return *this;}
+    inline void SetPlaybackMode(DASHPlaybackMode value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
+    inline GetDASHStreamingSessionURLRequest& WithPlaybackMode(DASHPlaybackMode value) { SetPlaybackMode(value); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +129,10 @@ namespace Model
      * is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
      * timestamps. </p>
      */
-    inline const DASHDisplayFragmentTimestamp& GetDisplayFragmentTimestamp() const{ return m_displayFragmentTimestamp; }
+    inline DASHDisplayFragmentTimestamp GetDisplayFragmentTimestamp() const { return m_displayFragmentTimestamp; }
     inline bool DisplayFragmentTimestampHasBeenSet() const { return m_displayFragmentTimestampHasBeenSet; }
-    inline void SetDisplayFragmentTimestamp(const DASHDisplayFragmentTimestamp& value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = value; }
-    inline void SetDisplayFragmentTimestamp(DASHDisplayFragmentTimestamp&& value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = std::move(value); }
-    inline GetDASHStreamingSessionURLRequest& WithDisplayFragmentTimestamp(const DASHDisplayFragmentTimestamp& value) { SetDisplayFragmentTimestamp(value); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithDisplayFragmentTimestamp(DASHDisplayFragmentTimestamp&& value) { SetDisplayFragmentTimestamp(std::move(value)); return *this;}
+    inline void SetDisplayFragmentTimestamp(DASHDisplayFragmentTimestamp value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = value; }
+    inline GetDASHStreamingSessionURLRequest& WithDisplayFragmentTimestamp(DASHDisplayFragmentTimestamp value) { SetDisplayFragmentTimestamp(value); return *this;}
     ///@}
 
     ///@{
@@ -154,12 +146,10 @@ namespace Model
      * necessary to leverage these this custom attribute.</p> <p>The default value is
      * <code>NEVER</code>.</p>
      */
-    inline const DASHDisplayFragmentNumber& GetDisplayFragmentNumber() const{ return m_displayFragmentNumber; }
+    inline DASHDisplayFragmentNumber GetDisplayFragmentNumber() const { return m_displayFragmentNumber; }
     inline bool DisplayFragmentNumberHasBeenSet() const { return m_displayFragmentNumberHasBeenSet; }
-    inline void SetDisplayFragmentNumber(const DASHDisplayFragmentNumber& value) { m_displayFragmentNumberHasBeenSet = true; m_displayFragmentNumber = value; }
-    inline void SetDisplayFragmentNumber(DASHDisplayFragmentNumber&& value) { m_displayFragmentNumberHasBeenSet = true; m_displayFragmentNumber = std::move(value); }
-    inline GetDASHStreamingSessionURLRequest& WithDisplayFragmentNumber(const DASHDisplayFragmentNumber& value) { SetDisplayFragmentNumber(value); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithDisplayFragmentNumber(DASHDisplayFragmentNumber&& value) { SetDisplayFragmentNumber(std::move(value)); return *this;}
+    inline void SetDisplayFragmentNumber(DASHDisplayFragmentNumber value) { m_displayFragmentNumberHasBeenSet = true; m_displayFragmentNumber = value; }
+    inline GetDASHStreamingSessionURLRequest& WithDisplayFragmentNumber(DASHDisplayFragmentNumber value) { SetDisplayFragmentNumber(value); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +164,12 @@ namespace Model
      * <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be
      * set.</p>
      */
-    inline const DASHFragmentSelector& GetDASHFragmentSelector() const{ return m_dASHFragmentSelector; }
+    inline const DASHFragmentSelector& GetDASHFragmentSelector() const { return m_dASHFragmentSelector; }
     inline bool DASHFragmentSelectorHasBeenSet() const { return m_dASHFragmentSelectorHasBeenSet; }
-    inline void SetDASHFragmentSelector(const DASHFragmentSelector& value) { m_dASHFragmentSelectorHasBeenSet = true; m_dASHFragmentSelector = value; }
-    inline void SetDASHFragmentSelector(DASHFragmentSelector&& value) { m_dASHFragmentSelectorHasBeenSet = true; m_dASHFragmentSelector = std::move(value); }
-    inline GetDASHStreamingSessionURLRequest& WithDASHFragmentSelector(const DASHFragmentSelector& value) { SetDASHFragmentSelector(value); return *this;}
-    inline GetDASHStreamingSessionURLRequest& WithDASHFragmentSelector(DASHFragmentSelector&& value) { SetDASHFragmentSelector(std::move(value)); return *this;}
+    template<typename DASHFragmentSelectorT = DASHFragmentSelector>
+    void SetDASHFragmentSelector(DASHFragmentSelectorT&& value) { m_dASHFragmentSelectorHasBeenSet = true; m_dASHFragmentSelector = std::forward<DASHFragmentSelectorT>(value); }
+    template<typename DASHFragmentSelectorT = DASHFragmentSelector>
+    GetDASHStreamingSessionURLRequest& WithDASHFragmentSelector(DASHFragmentSelectorT&& value) { SetDASHFragmentSelector(std::forward<DASHFragmentSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,7 +180,7 @@ namespace Model
      * <code>GetMP4MediaFragment</code> can be made for that session.</p> <p>The
      * default is 300 (5 minutes).</p>
      */
-    inline int GetExpires() const{ return m_expires; }
+    inline int GetExpires() const { return m_expires; }
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
     inline void SetExpires(int value) { m_expiresHasBeenSet = true; m_expires = value; }
     inline GetDASHStreamingSessionURLRequest& WithExpires(int value) { SetExpires(value); return *this;}
@@ -214,7 +204,7 @@ namespace Model
      * streams with 1-second fragments, and more than 2 1/2 hours of video on streams
      * with 10-second fragments.</p>
      */
-    inline long long GetMaxManifestFragmentResults() const{ return m_maxManifestFragmentResults; }
+    inline long long GetMaxManifestFragmentResults() const { return m_maxManifestFragmentResults; }
     inline bool MaxManifestFragmentResultsHasBeenSet() const { return m_maxManifestFragmentResultsHasBeenSet; }
     inline void SetMaxManifestFragmentResults(long long value) { m_maxManifestFragmentResultsHasBeenSet = true; m_maxManifestFragmentResults = value; }
     inline GetDASHStreamingSessionURLRequest& WithMaxManifestFragmentResults(long long value) { SetMaxManifestFragmentResults(value); return *this;}
@@ -227,22 +217,22 @@ namespace Model
     Aws::String m_streamARN;
     bool m_streamARNHasBeenSet = false;
 
-    DASHPlaybackMode m_playbackMode;
+    DASHPlaybackMode m_playbackMode{DASHPlaybackMode::NOT_SET};
     bool m_playbackModeHasBeenSet = false;
 
-    DASHDisplayFragmentTimestamp m_displayFragmentTimestamp;
+    DASHDisplayFragmentTimestamp m_displayFragmentTimestamp{DASHDisplayFragmentTimestamp::NOT_SET};
     bool m_displayFragmentTimestampHasBeenSet = false;
 
-    DASHDisplayFragmentNumber m_displayFragmentNumber;
+    DASHDisplayFragmentNumber m_displayFragmentNumber{DASHDisplayFragmentNumber::NOT_SET};
     bool m_displayFragmentNumberHasBeenSet = false;
 
     DASHFragmentSelector m_dASHFragmentSelector;
     bool m_dASHFragmentSelectorHasBeenSet = false;
 
-    int m_expires;
+    int m_expires{0};
     bool m_expiresHasBeenSet = false;
 
-    long long m_maxManifestFragmentResults;
+    long long m_maxManifestFragmentResults{0};
     bool m_maxManifestFragmentResultsHasBeenSet = false;
   };
 

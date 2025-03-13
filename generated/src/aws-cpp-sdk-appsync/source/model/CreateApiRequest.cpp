@@ -12,14 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApiRequest::CreateApiRequest() : 
-    m_nameHasBeenSet(false),
-    m_ownerContactHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eventConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateApiRequest::SerializePayload() const
 {
   JsonValue payload;

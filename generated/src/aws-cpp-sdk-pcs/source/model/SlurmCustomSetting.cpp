@@ -18,14 +18,7 @@ namespace PCS
 namespace Model
 {
 
-SlurmCustomSetting::SlurmCustomSetting() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 SlurmCustomSetting::SlurmCustomSetting(JsonView jsonValue)
-  : SlurmCustomSetting()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SlurmCustomSetting& SlurmCustomSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("parameterName"))
   {
     m_parameterName = jsonValue.GetString("parameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterValue"))
   {
     m_parameterValue = jsonValue.GetString("parameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

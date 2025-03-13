@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ContentBlockStart::ContentBlockStart() : 
-    m_toolUseHasBeenSet(false)
-{
-}
-
 ContentBlockStart::ContentBlockStart(JsonView jsonValue)
-  : ContentBlockStart()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContentBlockStart& ContentBlockStart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("toolUse"))
   {
     m_toolUse = jsonValue.GetObject("toolUse");
-
     m_toolUseHasBeenSet = true;
   }
-
   return *this;
 }
 

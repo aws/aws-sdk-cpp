@@ -35,7 +35,7 @@ namespace Model
   class GetUpgradeStatusResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API GetUpgradeStatusResult();
+    AWS_ELASTICSEARCHSERVICE_API GetUpgradeStatusResult() = default;
     AWS_ELASTICSEARCHSERVICE_API GetUpgradeStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API GetUpgradeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,11 +46,9 @@ namespace Model
      * through: <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul>
      * </p>
      */
-    inline const UpgradeStep& GetUpgradeStep() const{ return m_upgradeStep; }
-    inline void SetUpgradeStep(const UpgradeStep& value) { m_upgradeStep = value; }
-    inline void SetUpgradeStep(UpgradeStep&& value) { m_upgradeStep = std::move(value); }
-    inline GetUpgradeStatusResult& WithUpgradeStep(const UpgradeStep& value) { SetUpgradeStep(value); return *this;}
-    inline GetUpgradeStatusResult& WithUpgradeStep(UpgradeStep&& value) { SetUpgradeStep(std::move(value)); return *this;}
+    inline UpgradeStep GetUpgradeStep() const { return m_upgradeStep; }
+    inline void SetUpgradeStep(UpgradeStep value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = value; }
+    inline GetUpgradeStatusResult& WithUpgradeStep(UpgradeStep value) { SetUpgradeStep(value); return *this;}
     ///@}
 
     ///@{
@@ -60,45 +58,43 @@ namespace Model
      * following values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded
      * with Issues</li> <li>Failed</li> </ul> </p>
      */
-    inline const UpgradeStatus& GetStepStatus() const{ return m_stepStatus; }
-    inline void SetStepStatus(const UpgradeStatus& value) { m_stepStatus = value; }
-    inline void SetStepStatus(UpgradeStatus&& value) { m_stepStatus = std::move(value); }
-    inline GetUpgradeStatusResult& WithStepStatus(const UpgradeStatus& value) { SetStepStatus(value); return *this;}
-    inline GetUpgradeStatusResult& WithStepStatus(UpgradeStatus&& value) { SetStepStatus(std::move(value)); return *this;}
+    inline UpgradeStatus GetStepStatus() const { return m_stepStatus; }
+    inline void SetStepStatus(UpgradeStatus value) { m_stepStatusHasBeenSet = true; m_stepStatus = value; }
+    inline GetUpgradeStatusResult& WithStepStatus(UpgradeStatus value) { SetStepStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that describes the update briefly</p>
      */
-    inline const Aws::String& GetUpgradeName() const{ return m_upgradeName; }
-    inline void SetUpgradeName(const Aws::String& value) { m_upgradeName = value; }
-    inline void SetUpgradeName(Aws::String&& value) { m_upgradeName = std::move(value); }
-    inline void SetUpgradeName(const char* value) { m_upgradeName.assign(value); }
-    inline GetUpgradeStatusResult& WithUpgradeName(const Aws::String& value) { SetUpgradeName(value); return *this;}
-    inline GetUpgradeStatusResult& WithUpgradeName(Aws::String&& value) { SetUpgradeName(std::move(value)); return *this;}
-    inline GetUpgradeStatusResult& WithUpgradeName(const char* value) { SetUpgradeName(value); return *this;}
+    inline const Aws::String& GetUpgradeName() const { return m_upgradeName; }
+    template<typename UpgradeNameT = Aws::String>
+    void SetUpgradeName(UpgradeNameT&& value) { m_upgradeNameHasBeenSet = true; m_upgradeName = std::forward<UpgradeNameT>(value); }
+    template<typename UpgradeNameT = Aws::String>
+    GetUpgradeStatusResult& WithUpgradeName(UpgradeNameT&& value) { SetUpgradeName(std::forward<UpgradeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUpgradeStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUpgradeStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUpgradeStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUpgradeStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    UpgradeStep m_upgradeStep;
+    UpgradeStep m_upgradeStep{UpgradeStep::NOT_SET};
+    bool m_upgradeStepHasBeenSet = false;
 
-    UpgradeStatus m_stepStatus;
+    UpgradeStatus m_stepStatus{UpgradeStatus::NOT_SET};
+    bool m_stepStatusHasBeenSet = false;
 
     Aws::String m_upgradeName;
+    bool m_upgradeNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

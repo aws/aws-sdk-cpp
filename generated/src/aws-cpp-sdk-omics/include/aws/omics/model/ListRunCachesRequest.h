@@ -25,7 +25,7 @@ namespace Model
   class ListRunCachesRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API ListRunCachesRequest();
+    AWS_OMICS_API ListRunCachesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRunCachesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
      * <p>Optional pagination token returned from a prior call to the
      * <code>ListRunCaches</code> API operation.</p>
      */
-    inline const Aws::String& GetStartingToken() const{ return m_startingToken; }
+    inline const Aws::String& GetStartingToken() const { return m_startingToken; }
     inline bool StartingTokenHasBeenSet() const { return m_startingTokenHasBeenSet; }
-    inline void SetStartingToken(const Aws::String& value) { m_startingTokenHasBeenSet = true; m_startingToken = value; }
-    inline void SetStartingToken(Aws::String&& value) { m_startingTokenHasBeenSet = true; m_startingToken = std::move(value); }
-    inline void SetStartingToken(const char* value) { m_startingTokenHasBeenSet = true; m_startingToken.assign(value); }
-    inline ListRunCachesRequest& WithStartingToken(const Aws::String& value) { SetStartingToken(value); return *this;}
-    inline ListRunCachesRequest& WithStartingToken(Aws::String&& value) { SetStartingToken(std::move(value)); return *this;}
-    inline ListRunCachesRequest& WithStartingToken(const char* value) { SetStartingToken(value); return *this;}
+    template<typename StartingTokenT = Aws::String>
+    void SetStartingToken(StartingTokenT&& value) { m_startingTokenHasBeenSet = true; m_startingToken = std::forward<StartingTokenT>(value); }
+    template<typename StartingTokenT = Aws::String>
+    ListRunCachesRequest& WithStartingToken(StartingTokenT&& value) { SetStartingToken(std::forward<StartingTokenT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_startingToken;

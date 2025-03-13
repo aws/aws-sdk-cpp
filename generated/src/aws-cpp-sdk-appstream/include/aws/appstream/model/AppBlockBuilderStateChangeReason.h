@@ -33,7 +33,7 @@ namespace Model
   class AppBlockBuilderStateChangeReason
   {
   public:
-    AWS_APPSTREAM_API AppBlockBuilderStateChangeReason();
+    AWS_APPSTREAM_API AppBlockBuilderStateChangeReason() = default;
     AWS_APPSTREAM_API AppBlockBuilderStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API AppBlockBuilderStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The state change reason code.</p>
      */
-    inline const AppBlockBuilderStateChangeReasonCode& GetCode() const{ return m_code; }
+    inline AppBlockBuilderStateChangeReasonCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const AppBlockBuilderStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(AppBlockBuilderStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline AppBlockBuilderStateChangeReason& WithCode(const AppBlockBuilderStateChangeReasonCode& value) { SetCode(value); return *this;}
-    inline AppBlockBuilderStateChangeReason& WithCode(AppBlockBuilderStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(AppBlockBuilderStateChangeReasonCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline AppBlockBuilderStateChangeReason& WithCode(AppBlockBuilderStateChangeReasonCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state change reason message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AppBlockBuilderStateChangeReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AppBlockBuilderStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AppBlockBuilderStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AppBlockBuilderStateChangeReason& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    AppBlockBuilderStateChangeReasonCode m_code;
+    AppBlockBuilderStateChangeReasonCode m_code{AppBlockBuilderStateChangeReasonCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

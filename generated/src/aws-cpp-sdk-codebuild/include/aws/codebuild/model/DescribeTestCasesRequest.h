@@ -22,7 +22,7 @@ namespace Model
   class DescribeTestCasesRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API DescribeTestCasesRequest();
+    AWS_CODEBUILD_API DescribeTestCasesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p> The ARN of the report for which test cases are returned. </p>
      */
-    inline const Aws::String& GetReportArn() const{ return m_reportArn; }
+    inline const Aws::String& GetReportArn() const { return m_reportArn; }
     inline bool ReportArnHasBeenSet() const { return m_reportArnHasBeenSet; }
-    inline void SetReportArn(const Aws::String& value) { m_reportArnHasBeenSet = true; m_reportArn = value; }
-    inline void SetReportArn(Aws::String&& value) { m_reportArnHasBeenSet = true; m_reportArn = std::move(value); }
-    inline void SetReportArn(const char* value) { m_reportArnHasBeenSet = true; m_reportArn.assign(value); }
-    inline DescribeTestCasesRequest& WithReportArn(const Aws::String& value) { SetReportArn(value); return *this;}
-    inline DescribeTestCasesRequest& WithReportArn(Aws::String&& value) { SetReportArn(std::move(value)); return *this;}
-    inline DescribeTestCasesRequest& WithReportArn(const char* value) { SetReportArn(value); return *this;}
+    template<typename ReportArnT = Aws::String>
+    void SetReportArn(ReportArnT&& value) { m_reportArnHasBeenSet = true; m_reportArn = std::forward<ReportArnT>(value); }
+    template<typename ReportArnT = Aws::String>
+    DescribeTestCasesRequest& WithReportArn(ReportArnT&& value) { SetReportArn(std::forward<ReportArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * each subsequent next token that is returned, until no more next tokens are
      * returned. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeTestCasesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTestCasesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTestCasesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTestCasesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * <code>nextToken</code> to iterate pages in the list of returned
      * <code>TestCase</code> objects. The default value is 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeTestCasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -86,12 +82,12 @@ namespace Model
      * <p> A <code>TestCaseFilter</code> object used to filter the returned reports.
      * </p>
      */
-    inline const TestCaseFilter& GetFilter() const{ return m_filter; }
+    inline const TestCaseFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const TestCaseFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(TestCaseFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline DescribeTestCasesRequest& WithFilter(const TestCaseFilter& value) { SetFilter(value); return *this;}
-    inline DescribeTestCasesRequest& WithFilter(TestCaseFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = TestCaseFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = TestCaseFilter>
+    DescribeTestCasesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +97,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     TestCaseFilter m_filter;

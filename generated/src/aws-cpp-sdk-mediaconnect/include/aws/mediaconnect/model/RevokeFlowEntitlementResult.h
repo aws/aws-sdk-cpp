@@ -27,7 +27,7 @@ namespace Model
   class RevokeFlowEntitlementResult
   {
   public:
-    AWS_MEDIACONNECT_API RevokeFlowEntitlementResult();
+    AWS_MEDIACONNECT_API RevokeFlowEntitlementResult() = default;
     AWS_MEDIACONNECT_API RevokeFlowEntitlementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API RevokeFlowEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * The ARN of the entitlement that was revoked.
      */
-    inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
-    inline void SetEntitlementArn(const Aws::String& value) { m_entitlementArn = value; }
-    inline void SetEntitlementArn(Aws::String&& value) { m_entitlementArn = std::move(value); }
-    inline void SetEntitlementArn(const char* value) { m_entitlementArn.assign(value); }
-    inline RevokeFlowEntitlementResult& WithEntitlementArn(const Aws::String& value) { SetEntitlementArn(value); return *this;}
-    inline RevokeFlowEntitlementResult& WithEntitlementArn(Aws::String&& value) { SetEntitlementArn(std::move(value)); return *this;}
-    inline RevokeFlowEntitlementResult& WithEntitlementArn(const char* value) { SetEntitlementArn(value); return *this;}
+    inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
+    template<typename EntitlementArnT = Aws::String>
+    void SetEntitlementArn(EntitlementArnT&& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = std::forward<EntitlementArnT>(value); }
+    template<typename EntitlementArnT = Aws::String>
+    RevokeFlowEntitlementResult& WithEntitlementArn(EntitlementArnT&& value) { SetEntitlementArn(std::forward<EntitlementArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the flow that the entitlement was revoked from.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-    inline RevokeFlowEntitlementResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline RevokeFlowEntitlementResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline RevokeFlowEntitlementResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    RevokeFlowEntitlementResult& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RevokeFlowEntitlementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RevokeFlowEntitlementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RevokeFlowEntitlementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RevokeFlowEntitlementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_entitlementArn;
+    bool m_entitlementArnHasBeenSet = false;
 
     Aws::String m_flowArn;
+    bool m_flowArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

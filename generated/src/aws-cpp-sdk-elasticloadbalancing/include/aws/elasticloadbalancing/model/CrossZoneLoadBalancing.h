@@ -30,7 +30,7 @@ namespace Model
   class CrossZoneLoadBalancing
   {
   public:
-    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing();
+    AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing() = default;
     AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API CrossZoneLoadBalancing& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
      * <p>Specifies whether cross-zone load balancing is enabled for the load
      * balancer.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CrossZoneLoadBalancing& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

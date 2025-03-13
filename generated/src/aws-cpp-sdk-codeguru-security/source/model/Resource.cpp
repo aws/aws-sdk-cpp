@@ -18,14 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-Resource::Resource() : 
-    m_idHasBeenSet(false),
-    m_subResourceIdHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subResourceId"))
   {
     m_subResourceId = jsonValue.GetString("subResourceId");
-
     m_subResourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

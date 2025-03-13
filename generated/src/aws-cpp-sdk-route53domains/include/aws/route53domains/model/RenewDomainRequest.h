@@ -25,7 +25,7 @@ namespace Model
   class RenewDomainRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API RenewDomainRequest();
+    AWS_ROUTE53DOMAINS_API RenewDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the domain that you want to renew.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline RenewDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline RenewDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline RenewDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    RenewDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
-    inline int GetDurationInYears() const{ return m_durationInYears; }
+    inline int GetDurationInYears() const { return m_durationInYears; }
     inline bool DurationInYearsHasBeenSet() const { return m_durationInYearsHasBeenSet; }
     inline void SetDurationInYears(int value) { m_durationInYearsHasBeenSet = true; m_durationInYears = value; }
     inline RenewDomainRequest& WithDurationInYears(int value) { SetDurationInYears(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
      * <p>The year when the registration for the domain is set to expire. This value
      * must match the current expiration date for the domain.</p>
      */
-    inline int GetCurrentExpiryYear() const{ return m_currentExpiryYear; }
+    inline int GetCurrentExpiryYear() const { return m_currentExpiryYear; }
     inline bool CurrentExpiryYearHasBeenSet() const { return m_currentExpiryYearHasBeenSet; }
     inline void SetCurrentExpiryYear(int value) { m_currentExpiryYearHasBeenSet = true; m_currentExpiryYear = value; }
     inline RenewDomainRequest& WithCurrentExpiryYear(int value) { SetCurrentExpiryYear(value); return *this;}
@@ -82,10 +80,10 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    int m_durationInYears;
+    int m_durationInYears{0};
     bool m_durationInYearsHasBeenSet = false;
 
-    int m_currentExpiryYear;
+    int m_currentExpiryYear{0};
     bool m_currentExpiryYearHasBeenSet = false;
   };
 

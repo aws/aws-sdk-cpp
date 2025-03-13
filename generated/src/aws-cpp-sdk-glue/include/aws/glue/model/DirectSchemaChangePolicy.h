@@ -33,7 +33,7 @@ namespace Model
   class DirectSchemaChangePolicy
   {
   public:
-    AWS_GLUE_API DirectSchemaChangePolicy();
+    AWS_GLUE_API DirectSchemaChangePolicy() = default;
     AWS_GLUE_API DirectSchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DirectSchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Whether to use the specified update behavior when the crawler finds a changed
      * schema.</p>
      */
-    inline bool GetEnableUpdateCatalog() const{ return m_enableUpdateCatalog; }
+    inline bool GetEnableUpdateCatalog() const { return m_enableUpdateCatalog; }
     inline bool EnableUpdateCatalogHasBeenSet() const { return m_enableUpdateCatalogHasBeenSet; }
     inline void SetEnableUpdateCatalog(bool value) { m_enableUpdateCatalogHasBeenSet = true; m_enableUpdateCatalog = value; }
     inline DirectSchemaChangePolicy& WithEnableUpdateCatalog(bool value) { SetEnableUpdateCatalog(value); return *this;}
@@ -54,12 +54,10 @@ namespace Model
     /**
      * <p>The update behavior when the crawler finds a changed schema.</p>
      */
-    inline const UpdateCatalogBehavior& GetUpdateBehavior() const{ return m_updateBehavior; }
+    inline UpdateCatalogBehavior GetUpdateBehavior() const { return m_updateBehavior; }
     inline bool UpdateBehaviorHasBeenSet() const { return m_updateBehaviorHasBeenSet; }
-    inline void SetUpdateBehavior(const UpdateCatalogBehavior& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
-    inline void SetUpdateBehavior(UpdateCatalogBehavior&& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = std::move(value); }
-    inline DirectSchemaChangePolicy& WithUpdateBehavior(const UpdateCatalogBehavior& value) { SetUpdateBehavior(value); return *this;}
-    inline DirectSchemaChangePolicy& WithUpdateBehavior(UpdateCatalogBehavior&& value) { SetUpdateBehavior(std::move(value)); return *this;}
+    inline void SetUpdateBehavior(UpdateCatalogBehavior value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
+    inline DirectSchemaChangePolicy& WithUpdateBehavior(UpdateCatalogBehavior value) { SetUpdateBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -67,35 +65,31 @@ namespace Model
      * <p>Specifies the table in the database that the schema change policy applies
      * to.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline DirectSchemaChangePolicy& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline DirectSchemaChangePolicy& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline DirectSchemaChangePolicy& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    DirectSchemaChangePolicy& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the database that the schema change policy applies to.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline DirectSchemaChangePolicy& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline DirectSchemaChangePolicy& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline DirectSchemaChangePolicy& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    DirectSchemaChangePolicy& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableUpdateCatalog;
+    bool m_enableUpdateCatalog{false};
     bool m_enableUpdateCatalogHasBeenSet = false;
 
-    UpdateCatalogBehavior m_updateBehavior;
+    UpdateCatalogBehavior m_updateBehavior{UpdateCatalogBehavior::NOT_SET};
     bool m_updateBehaviorHasBeenSet = false;
 
     Aws::String m_table;

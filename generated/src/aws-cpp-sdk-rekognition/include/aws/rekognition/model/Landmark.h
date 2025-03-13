@@ -32,7 +32,7 @@ namespace Model
   class Landmark
   {
   public:
-    AWS_REKOGNITION_API Landmark();
+    AWS_REKOGNITION_API Landmark() = default;
     AWS_REKOGNITION_API Landmark(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Landmark& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>Type of landmark.</p>
      */
-    inline const LandmarkType& GetType() const{ return m_type; }
+    inline LandmarkType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const LandmarkType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(LandmarkType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Landmark& WithType(const LandmarkType& value) { SetType(value); return *this;}
-    inline Landmark& WithType(LandmarkType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(LandmarkType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Landmark& WithType(LandmarkType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * example, if the image is 700 pixels wide and the x-coordinate of the landmark is
      * at 350 pixels, this value is 0.5. </p>
      */
-    inline double GetX() const{ return m_x; }
+    inline double GetX() const { return m_x; }
     inline bool XHasBeenSet() const { return m_xHasBeenSet; }
     inline void SetX(double value) { m_xHasBeenSet = true; m_x = value; }
     inline Landmark& WithX(double value) { SetX(value); return *this;}
@@ -70,20 +68,20 @@ namespace Model
      * the image height is 200 pixels and the y-coordinate of the landmark is at 50
      * pixels, this value is 0.25.</p>
      */
-    inline double GetY() const{ return m_y; }
+    inline double GetY() const { return m_y; }
     inline bool YHasBeenSet() const { return m_yHasBeenSet; }
     inline void SetY(double value) { m_yHasBeenSet = true; m_y = value; }
     inline Landmark& WithY(double value) { SetY(value); return *this;}
     ///@}
   private:
 
-    LandmarkType m_type;
+    LandmarkType m_type{LandmarkType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_x;
+    double m_x{0.0};
     bool m_xHasBeenSet = false;
 
-    double m_y;
+    double m_y{0.0};
     bool m_yHasBeenSet = false;
   };
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadLayerPartResult::UploadLayerPartResult() : 
-    m_lastByteReceived(0)
-{
-}
-
 UploadLayerPartResult::UploadLayerPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UploadLayerPartResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UploadLayerPartResult& UploadLayerPartResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
+    m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");
-
+    m_uploadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastByteReceived"))
   {
     m_lastByteReceived = jsonValue.GetInt64("lastByteReceived");
-
+    m_lastByteReceivedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

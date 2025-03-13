@@ -12,14 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNamedQueryRequest::UpdateNamedQueryRequest() : 
-    m_namedQueryIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNamedQueryRequest::SerializePayload() const
 {
   JsonValue payload;

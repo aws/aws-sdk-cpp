@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-PrometheusInfo::PrometheusInfo() : 
-    m_jmxExporterHasBeenSet(false),
-    m_nodeExporterHasBeenSet(false)
-{
-}
-
 PrometheusInfo::PrometheusInfo(JsonView jsonValue)
-  : PrometheusInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PrometheusInfo& PrometheusInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jmxExporter"))
   {
     m_jmxExporter = jsonValue.GetObject("jmxExporter");
-
     m_jmxExporterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeExporter"))
   {
     m_nodeExporter = jsonValue.GetObject("nodeExporter");
-
     m_nodeExporterHasBeenSet = true;
   }
-
   return *this;
 }
 

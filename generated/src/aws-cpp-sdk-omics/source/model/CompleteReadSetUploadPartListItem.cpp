@@ -18,17 +18,7 @@ namespace Omics
 namespace Model
 {
 
-CompleteReadSetUploadPartListItem::CompleteReadSetUploadPartListItem() : 
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_partSource(ReadSetPartSource::NOT_SET),
-    m_partSourceHasBeenSet(false),
-    m_checksumHasBeenSet(false)
-{
-}
-
 CompleteReadSetUploadPartListItem::CompleteReadSetUploadPartListItem(JsonView jsonValue)
-  : CompleteReadSetUploadPartListItem()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CompleteReadSetUploadPartListItem& CompleteReadSetUploadPartListItem::operator =
   if(jsonValue.ValueExists("partNumber"))
   {
     m_partNumber = jsonValue.GetInteger("partNumber");
-
     m_partNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partSource"))
   {
     m_partSource = ReadSetPartSourceMapper::GetReadSetPartSourceForName(jsonValue.GetString("partSource"));
-
     m_partSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
-
     m_checksumHasBeenSet = true;
   }
-
   return *this;
 }
 

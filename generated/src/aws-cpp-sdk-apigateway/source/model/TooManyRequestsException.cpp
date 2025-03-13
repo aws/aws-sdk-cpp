@@ -19,14 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-TooManyRequestsException::TooManyRequestsException() : 
-    m_retryAfterSecondsHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 TooManyRequestsException::TooManyRequestsException(JsonView jsonValue)
-  : TooManyRequestsException()
 {
   *this = jsonValue;
 }
@@ -36,10 +29,8 @@ TooManyRequestsException& TooManyRequestsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

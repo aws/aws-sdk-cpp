@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUploadBufferRequest::DescribeUploadBufferRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUploadBufferRequest::SerializePayload() const
 {
   JsonValue payload;

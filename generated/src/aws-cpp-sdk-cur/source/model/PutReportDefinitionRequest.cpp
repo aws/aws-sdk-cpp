@@ -12,12 +12,6 @@ using namespace Aws::CostandUsageReportService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutReportDefinitionRequest::PutReportDefinitionRequest() : 
-    m_reportDefinitionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutReportDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

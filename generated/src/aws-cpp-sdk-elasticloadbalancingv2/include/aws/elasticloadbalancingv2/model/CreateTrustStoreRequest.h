@@ -23,7 +23,7 @@ namespace Model
   class CreateTrustStoreRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API CreateTrustStoreRequest();
+    AWS_ELASTICLOADBALANCINGV2_API CreateTrustStoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,36 @@ namespace Model
      * <p>The name of the trust store.</p> <p>This name must be unique per region and
      * can't be changed after creation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateTrustStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTrustStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTrustStoreRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTrustStoreRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 bucket for the ca certificates bundle.</p>
      */
-    inline const Aws::String& GetCaCertificatesBundleS3Bucket() const{ return m_caCertificatesBundleS3Bucket; }
+    inline const Aws::String& GetCaCertificatesBundleS3Bucket() const { return m_caCertificatesBundleS3Bucket; }
     inline bool CaCertificatesBundleS3BucketHasBeenSet() const { return m_caCertificatesBundleS3BucketHasBeenSet; }
-    inline void SetCaCertificatesBundleS3Bucket(const Aws::String& value) { m_caCertificatesBundleS3BucketHasBeenSet = true; m_caCertificatesBundleS3Bucket = value; }
-    inline void SetCaCertificatesBundleS3Bucket(Aws::String&& value) { m_caCertificatesBundleS3BucketHasBeenSet = true; m_caCertificatesBundleS3Bucket = std::move(value); }
-    inline void SetCaCertificatesBundleS3Bucket(const char* value) { m_caCertificatesBundleS3BucketHasBeenSet = true; m_caCertificatesBundleS3Bucket.assign(value); }
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3Bucket(const Aws::String& value) { SetCaCertificatesBundleS3Bucket(value); return *this;}
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3Bucket(Aws::String&& value) { SetCaCertificatesBundleS3Bucket(std::move(value)); return *this;}
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3Bucket(const char* value) { SetCaCertificatesBundleS3Bucket(value); return *this;}
+    template<typename CaCertificatesBundleS3BucketT = Aws::String>
+    void SetCaCertificatesBundleS3Bucket(CaCertificatesBundleS3BucketT&& value) { m_caCertificatesBundleS3BucketHasBeenSet = true; m_caCertificatesBundleS3Bucket = std::forward<CaCertificatesBundleS3BucketT>(value); }
+    template<typename CaCertificatesBundleS3BucketT = Aws::String>
+    CreateTrustStoreRequest& WithCaCertificatesBundleS3Bucket(CaCertificatesBundleS3BucketT&& value) { SetCaCertificatesBundleS3Bucket(std::forward<CaCertificatesBundleS3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 path for the ca certificates bundle.</p>
      */
-    inline const Aws::String& GetCaCertificatesBundleS3Key() const{ return m_caCertificatesBundleS3Key; }
+    inline const Aws::String& GetCaCertificatesBundleS3Key() const { return m_caCertificatesBundleS3Key; }
     inline bool CaCertificatesBundleS3KeyHasBeenSet() const { return m_caCertificatesBundleS3KeyHasBeenSet; }
-    inline void SetCaCertificatesBundleS3Key(const Aws::String& value) { m_caCertificatesBundleS3KeyHasBeenSet = true; m_caCertificatesBundleS3Key = value; }
-    inline void SetCaCertificatesBundleS3Key(Aws::String&& value) { m_caCertificatesBundleS3KeyHasBeenSet = true; m_caCertificatesBundleS3Key = std::move(value); }
-    inline void SetCaCertificatesBundleS3Key(const char* value) { m_caCertificatesBundleS3KeyHasBeenSet = true; m_caCertificatesBundleS3Key.assign(value); }
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3Key(const Aws::String& value) { SetCaCertificatesBundleS3Key(value); return *this;}
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3Key(Aws::String&& value) { SetCaCertificatesBundleS3Key(std::move(value)); return *this;}
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3Key(const char* value) { SetCaCertificatesBundleS3Key(value); return *this;}
+    template<typename CaCertificatesBundleS3KeyT = Aws::String>
+    void SetCaCertificatesBundleS3Key(CaCertificatesBundleS3KeyT&& value) { m_caCertificatesBundleS3KeyHasBeenSet = true; m_caCertificatesBundleS3Key = std::forward<CaCertificatesBundleS3KeyT>(value); }
+    template<typename CaCertificatesBundleS3KeyT = Aws::String>
+    CreateTrustStoreRequest& WithCaCertificatesBundleS3Key(CaCertificatesBundleS3KeyT&& value) { SetCaCertificatesBundleS3Key(std::forward<CaCertificatesBundleS3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +80,26 @@ namespace Model
      * <p>The Amazon S3 object version for the ca certificates bundle. If undefined the
      * current version is used.</p>
      */
-    inline const Aws::String& GetCaCertificatesBundleS3ObjectVersion() const{ return m_caCertificatesBundleS3ObjectVersion; }
+    inline const Aws::String& GetCaCertificatesBundleS3ObjectVersion() const { return m_caCertificatesBundleS3ObjectVersion; }
     inline bool CaCertificatesBundleS3ObjectVersionHasBeenSet() const { return m_caCertificatesBundleS3ObjectVersionHasBeenSet; }
-    inline void SetCaCertificatesBundleS3ObjectVersion(const Aws::String& value) { m_caCertificatesBundleS3ObjectVersionHasBeenSet = true; m_caCertificatesBundleS3ObjectVersion = value; }
-    inline void SetCaCertificatesBundleS3ObjectVersion(Aws::String&& value) { m_caCertificatesBundleS3ObjectVersionHasBeenSet = true; m_caCertificatesBundleS3ObjectVersion = std::move(value); }
-    inline void SetCaCertificatesBundleS3ObjectVersion(const char* value) { m_caCertificatesBundleS3ObjectVersionHasBeenSet = true; m_caCertificatesBundleS3ObjectVersion.assign(value); }
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3ObjectVersion(const Aws::String& value) { SetCaCertificatesBundleS3ObjectVersion(value); return *this;}
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3ObjectVersion(Aws::String&& value) { SetCaCertificatesBundleS3ObjectVersion(std::move(value)); return *this;}
-    inline CreateTrustStoreRequest& WithCaCertificatesBundleS3ObjectVersion(const char* value) { SetCaCertificatesBundleS3ObjectVersion(value); return *this;}
+    template<typename CaCertificatesBundleS3ObjectVersionT = Aws::String>
+    void SetCaCertificatesBundleS3ObjectVersion(CaCertificatesBundleS3ObjectVersionT&& value) { m_caCertificatesBundleS3ObjectVersionHasBeenSet = true; m_caCertificatesBundleS3ObjectVersion = std::forward<CaCertificatesBundleS3ObjectVersionT>(value); }
+    template<typename CaCertificatesBundleS3ObjectVersionT = Aws::String>
+    CreateTrustStoreRequest& WithCaCertificatesBundleS3ObjectVersion(CaCertificatesBundleS3ObjectVersionT&& value) { SetCaCertificatesBundleS3ObjectVersion(std::forward<CaCertificatesBundleS3ObjectVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the trust store.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTrustStoreRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTrustStoreRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTrustStoreRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTrustStoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTrustStoreRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTrustStoreRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

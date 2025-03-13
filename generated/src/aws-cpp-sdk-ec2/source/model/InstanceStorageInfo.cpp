@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStorageInfo::InstanceStorageInfo() : 
-    m_totalSizeInGB(0),
-    m_totalSizeInGBHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
-    m_nvmeSupportHasBeenSet(false),
-    m_encryptionSupport(InstanceStorageEncryptionSupport::NOT_SET),
-    m_encryptionSupportHasBeenSet(false)
-{
-}
-
 InstanceStorageInfo::InstanceStorageInfo(const XmlNode& xmlNode)
-  : InstanceStorageInfo()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,34 @@ InstanceStorageInfo& InstanceStorageInfo::operator =(const XmlNode& xmlNode)
     {
       m_totalSizeInGB = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalSizeInGBNode.GetText()).c_str()).c_str());
       m_totalSizeInGBHasBeenSet = true;
+       m_totalSizeInGBHasBeenSet = true;
     }
     XmlNode disksNode = resultNode.FirstChild("disks");
     if(!disksNode.IsNull())
     {
       XmlNode disksMember = disksNode.FirstChild("item");
+      m_disksHasBeenSet = !disksMember.IsNull();
       while(!disksMember.IsNull())
       {
         m_disks.push_back(disksMember);
         disksMember = disksMember.NextNode("item");
       }
 
-      m_disksHasBeenSet = true;
+       m_disksHasBeenSet = true;
     }
     XmlNode nvmeSupportNode = resultNode.FirstChild("nvmeSupport");
     if(!nvmeSupportNode.IsNull())
     {
-      m_nvmeSupport = EphemeralNvmeSupportMapper::GetEphemeralNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()).c_str());
+      m_nvmeSupport = EphemeralNvmeSupportMapper::GetEphemeralNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()));
       m_nvmeSupportHasBeenSet = true;
+       m_nvmeSupportHasBeenSet = true;
     }
     XmlNode encryptionSupportNode = resultNode.FirstChild("encryptionSupport");
     if(!encryptionSupportNode.IsNull())
     {
-      m_encryptionSupport = InstanceStorageEncryptionSupportMapper::GetInstanceStorageEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()).c_str());
+      m_encryptionSupport = InstanceStorageEncryptionSupportMapper::GetInstanceStorageEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()));
       m_encryptionSupportHasBeenSet = true;
+       m_encryptionSupportHasBeenSet = true;
     }
   }
 

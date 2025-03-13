@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-BatchDeleteDocumentResponseFailedDocument::BatchDeleteDocumentResponseFailedDocument() : 
-    m_idHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchDeleteDocumentResponseFailedDocument::BatchDeleteDocumentResponseFailedDocument(JsonView jsonValue)
-  : BatchDeleteDocumentResponseFailedDocument()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ BatchDeleteDocumentResponseFailedDocument& BatchDeleteDocumentResponseFailedDocu
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

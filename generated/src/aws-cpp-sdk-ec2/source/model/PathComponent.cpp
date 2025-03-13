@@ -20,33 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PathComponent::PathComponent() : 
-    m_sequenceNumber(0),
-    m_sequenceNumberHasBeenSet(false),
-    m_aclRuleHasBeenSet(false),
-    m_attachedToHasBeenSet(false),
-    m_componentHasBeenSet(false),
-    m_destinationVpcHasBeenSet(false),
-    m_outboundHeaderHasBeenSet(false),
-    m_inboundHeaderHasBeenSet(false),
-    m_routeTableRouteHasBeenSet(false),
-    m_securityGroupRuleHasBeenSet(false),
-    m_sourceVpcHasBeenSet(false),
-    m_subnetHasBeenSet(false),
-    m_vpcHasBeenSet(false),
-    m_additionalDetailsHasBeenSet(false),
-    m_transitGatewayHasBeenSet(false),
-    m_transitGatewayRouteTableRouteHasBeenSet(false),
-    m_explanationsHasBeenSet(false),
-    m_elasticLoadBalancerListenerHasBeenSet(false),
-    m_firewallStatelessRuleHasBeenSet(false),
-    m_firewallStatefulRuleHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 PathComponent::PathComponent(const XmlNode& xmlNode)
-  : PathComponent()
 {
   *this = xmlNode;
 }
@@ -62,132 +36,152 @@ PathComponent& PathComponent::operator =(const XmlNode& xmlNode)
     {
       m_sequenceNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sequenceNumberNode.GetText()).c_str()).c_str());
       m_sequenceNumberHasBeenSet = true;
+       m_sequenceNumberHasBeenSet = true;
     }
     XmlNode aclRuleNode = resultNode.FirstChild("aclRule");
     if(!aclRuleNode.IsNull())
     {
       m_aclRule = aclRuleNode;
       m_aclRuleHasBeenSet = true;
+       m_aclRuleHasBeenSet = true;
     }
     XmlNode attachedToNode = resultNode.FirstChild("attachedTo");
     if(!attachedToNode.IsNull())
     {
       m_attachedTo = attachedToNode;
       m_attachedToHasBeenSet = true;
+       m_attachedToHasBeenSet = true;
     }
     XmlNode componentNode = resultNode.FirstChild("component");
     if(!componentNode.IsNull())
     {
       m_component = componentNode;
       m_componentHasBeenSet = true;
+       m_componentHasBeenSet = true;
     }
     XmlNode destinationVpcNode = resultNode.FirstChild("destinationVpc");
     if(!destinationVpcNode.IsNull())
     {
       m_destinationVpc = destinationVpcNode;
       m_destinationVpcHasBeenSet = true;
+       m_destinationVpcHasBeenSet = true;
     }
     XmlNode outboundHeaderNode = resultNode.FirstChild("outboundHeader");
     if(!outboundHeaderNode.IsNull())
     {
       m_outboundHeader = outboundHeaderNode;
       m_outboundHeaderHasBeenSet = true;
+       m_outboundHeaderHasBeenSet = true;
     }
     XmlNode inboundHeaderNode = resultNode.FirstChild("inboundHeader");
     if(!inboundHeaderNode.IsNull())
     {
       m_inboundHeader = inboundHeaderNode;
       m_inboundHeaderHasBeenSet = true;
+       m_inboundHeaderHasBeenSet = true;
     }
     XmlNode routeTableRouteNode = resultNode.FirstChild("routeTableRoute");
     if(!routeTableRouteNode.IsNull())
     {
       m_routeTableRoute = routeTableRouteNode;
       m_routeTableRouteHasBeenSet = true;
+       m_routeTableRouteHasBeenSet = true;
     }
     XmlNode securityGroupRuleNode = resultNode.FirstChild("securityGroupRule");
     if(!securityGroupRuleNode.IsNull())
     {
       m_securityGroupRule = securityGroupRuleNode;
       m_securityGroupRuleHasBeenSet = true;
+       m_securityGroupRuleHasBeenSet = true;
     }
     XmlNode sourceVpcNode = resultNode.FirstChild("sourceVpc");
     if(!sourceVpcNode.IsNull())
     {
       m_sourceVpc = sourceVpcNode;
       m_sourceVpcHasBeenSet = true;
+       m_sourceVpcHasBeenSet = true;
     }
     XmlNode subnetNode = resultNode.FirstChild("subnet");
     if(!subnetNode.IsNull())
     {
       m_subnet = subnetNode;
       m_subnetHasBeenSet = true;
+       m_subnetHasBeenSet = true;
     }
     XmlNode vpcNode = resultNode.FirstChild("vpc");
     if(!vpcNode.IsNull())
     {
       m_vpc = vpcNode;
       m_vpcHasBeenSet = true;
+       m_vpcHasBeenSet = true;
     }
     XmlNode additionalDetailsNode = resultNode.FirstChild("additionalDetailSet");
     if(!additionalDetailsNode.IsNull())
     {
       XmlNode additionalDetailsMember = additionalDetailsNode.FirstChild("item");
+      m_additionalDetailsHasBeenSet = !additionalDetailsMember.IsNull();
       while(!additionalDetailsMember.IsNull())
       {
         m_additionalDetails.push_back(additionalDetailsMember);
         additionalDetailsMember = additionalDetailsMember.NextNode("item");
       }
 
-      m_additionalDetailsHasBeenSet = true;
+       m_additionalDetailsHasBeenSet = true;
     }
     XmlNode transitGatewayNode = resultNode.FirstChild("transitGateway");
     if(!transitGatewayNode.IsNull())
     {
       m_transitGateway = transitGatewayNode;
       m_transitGatewayHasBeenSet = true;
+       m_transitGatewayHasBeenSet = true;
     }
     XmlNode transitGatewayRouteTableRouteNode = resultNode.FirstChild("transitGatewayRouteTableRoute");
     if(!transitGatewayRouteTableRouteNode.IsNull())
     {
       m_transitGatewayRouteTableRoute = transitGatewayRouteTableRouteNode;
       m_transitGatewayRouteTableRouteHasBeenSet = true;
+       m_transitGatewayRouteTableRouteHasBeenSet = true;
     }
     XmlNode explanationsNode = resultNode.FirstChild("explanationSet");
     if(!explanationsNode.IsNull())
     {
       XmlNode explanationsMember = explanationsNode.FirstChild("item");
+      m_explanationsHasBeenSet = !explanationsMember.IsNull();
       while(!explanationsMember.IsNull())
       {
         m_explanations.push_back(explanationsMember);
         explanationsMember = explanationsMember.NextNode("item");
       }
 
-      m_explanationsHasBeenSet = true;
+       m_explanationsHasBeenSet = true;
     }
     XmlNode elasticLoadBalancerListenerNode = resultNode.FirstChild("elasticLoadBalancerListener");
     if(!elasticLoadBalancerListenerNode.IsNull())
     {
       m_elasticLoadBalancerListener = elasticLoadBalancerListenerNode;
       m_elasticLoadBalancerListenerHasBeenSet = true;
+       m_elasticLoadBalancerListenerHasBeenSet = true;
     }
     XmlNode firewallStatelessRuleNode = resultNode.FirstChild("firewallStatelessRule");
     if(!firewallStatelessRuleNode.IsNull())
     {
       m_firewallStatelessRule = firewallStatelessRuleNode;
       m_firewallStatelessRuleHasBeenSet = true;
+       m_firewallStatelessRuleHasBeenSet = true;
     }
     XmlNode firewallStatefulRuleNode = resultNode.FirstChild("firewallStatefulRule");
     if(!firewallStatefulRuleNode.IsNull())
     {
       m_firewallStatefulRule = firewallStatefulRuleNode;
       m_firewallStatefulRuleHasBeenSet = true;
+       m_firewallStatefulRuleHasBeenSet = true;
     }
     XmlNode serviceNameNode = resultNode.FirstChild("serviceName");
     if(!serviceNameNode.IsNull())
     {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
+       m_serviceNameHasBeenSet = true;
     }
   }
 

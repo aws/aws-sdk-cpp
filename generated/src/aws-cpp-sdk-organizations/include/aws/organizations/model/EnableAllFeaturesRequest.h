@@ -19,7 +19,7 @@ namespace Model
   class EnableAllFeaturesRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API EnableAllFeaturesRequest();
+    AWS_ORGANIZATIONS_API EnableAllFeaturesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

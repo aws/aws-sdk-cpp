@@ -18,15 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-TargetTrackingMetric::TargetTrackingMetric() : 
-    m_dimensionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 TargetTrackingMetric::TargetTrackingMetric(JsonView jsonValue)
-  : TargetTrackingMetric()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ TargetTrackingMetric& TargetTrackingMetric::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

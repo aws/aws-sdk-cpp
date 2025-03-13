@@ -18,18 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-PropertygraphData::PropertygraphData() : 
-    m_idHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 PropertygraphData::PropertygraphData(JsonView jsonValue)
-  : PropertygraphData()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PropertygraphData& PropertygraphData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetString("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetString("to");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace Billing
 namespace Model
 {
 
-BillingViewElement::BillingViewElement() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_billingViewType(BillingViewType::NOT_SET),
-    m_billingViewTypeHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_dataFilterExpressionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 BillingViewElement::BillingViewElement(JsonView jsonValue)
-  : BillingViewElement()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ BillingViewElement& BillingViewElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingViewType"))
   {
     m_billingViewType = BillingViewTypeMapper::GetBillingViewTypeForName(jsonValue.GetString("billingViewType"));
-
     m_billingViewTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataFilterExpression"))
   {
     m_dataFilterExpression = jsonValue.GetObject("dataFilterExpression");
-
     m_dataFilterExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

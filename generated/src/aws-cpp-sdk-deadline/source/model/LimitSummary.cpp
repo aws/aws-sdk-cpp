@@ -18,24 +18,7 @@ namespace deadline
 namespace Model
 {
 
-LimitSummary::LimitSummary() : 
-    m_displayNameHasBeenSet(false),
-    m_amountRequirementNameHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_limitIdHasBeenSet(false),
-    m_currentCount(0),
-    m_currentCountHasBeenSet(false)
-{
-}
-
 LimitSummary::LimitSummary(JsonView jsonValue)
-  : LimitSummary()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ LimitSummary& LimitSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amountRequirementName"))
   {
     m_amountRequirementName = jsonValue.GetString("amountRequirementName");
-
     m_amountRequirementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxCount"))
   {
     m_maxCount = jsonValue.GetInteger("maxCount");
-
     m_maxCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
-
     m_farmIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("limitId"))
   {
     m_limitId = jsonValue.GetString("limitId");
-
     m_limitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentCount"))
   {
     m_currentCount = jsonValue.GetInteger("currentCount");
-
     m_currentCountHasBeenSet = true;
   }
-
   return *this;
 }
 

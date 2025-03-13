@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsConfiguration
   {
   public:
-    AWS_S3CRT_API AnalyticsConfiguration();
+    AWS_S3CRT_API AnalyticsConfiguration() = default;
     AWS_S3CRT_API AnalyticsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API AnalyticsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID that identifies the analytics configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AnalyticsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AnalyticsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AnalyticsConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AnalyticsConfiguration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
      * filter is provided, all objects will be considered in any analysis.</p>
      */
-    inline const AnalyticsFilter& GetFilter() const{ return m_filter; }
+    inline const AnalyticsFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const AnalyticsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(AnalyticsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline AnalyticsConfiguration& WithFilter(const AnalyticsFilter& value) { SetFilter(value); return *this;}
-    inline AnalyticsConfiguration& WithFilter(AnalyticsFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = AnalyticsFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = AnalyticsFilter>
+    AnalyticsConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,12 @@ namespace Model
      * <p> Contains data related to access patterns to be collected and made available
      * to analyze the tradeoffs between different storage classes. </p>
      */
-    inline const StorageClassAnalysis& GetStorageClassAnalysis() const{ return m_storageClassAnalysis; }
+    inline const StorageClassAnalysis& GetStorageClassAnalysis() const { return m_storageClassAnalysis; }
     inline bool StorageClassAnalysisHasBeenSet() const { return m_storageClassAnalysisHasBeenSet; }
-    inline void SetStorageClassAnalysis(const StorageClassAnalysis& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = value; }
-    inline void SetStorageClassAnalysis(StorageClassAnalysis&& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = std::move(value); }
-    inline AnalyticsConfiguration& WithStorageClassAnalysis(const StorageClassAnalysis& value) { SetStorageClassAnalysis(value); return *this;}
-    inline AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysis&& value) { SetStorageClassAnalysis(std::move(value)); return *this;}
+    template<typename StorageClassAnalysisT = StorageClassAnalysis>
+    void SetStorageClassAnalysis(StorageClassAnalysisT&& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = std::forward<StorageClassAnalysisT>(value); }
+    template<typename StorageClassAnalysisT = StorageClassAnalysis>
+    AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysisT&& value) { SetStorageClassAnalysis(std::forward<StorageClassAnalysisT>(value)); return *this;}
     ///@}
   private:
 

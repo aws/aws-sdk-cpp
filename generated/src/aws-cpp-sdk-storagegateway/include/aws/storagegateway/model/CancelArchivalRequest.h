@@ -24,7 +24,7 @@ namespace Model
   class CancelArchivalRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API CancelArchivalRequest();
+    AWS_STORAGEGATEWAY_API CancelArchivalRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline CancelArchivalRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline CancelArchivalRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline CancelArchivalRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    CancelArchivalRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel
      * archiving for.</p>
      */
-    inline const Aws::String& GetTapeARN() const{ return m_tapeARN; }
+    inline const Aws::String& GetTapeARN() const { return m_tapeARN; }
     inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
-    inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
-    inline void SetTapeARN(Aws::String&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::move(value); }
-    inline void SetTapeARN(const char* value) { m_tapeARNHasBeenSet = true; m_tapeARN.assign(value); }
-    inline CancelArchivalRequest& WithTapeARN(const Aws::String& value) { SetTapeARN(value); return *this;}
-    inline CancelArchivalRequest& WithTapeARN(Aws::String&& value) { SetTapeARN(std::move(value)); return *this;}
-    inline CancelArchivalRequest& WithTapeARN(const char* value) { SetTapeARN(value); return *this;}
+    template<typename TapeARNT = Aws::String>
+    void SetTapeARN(TapeARNT&& value) { m_tapeARNHasBeenSet = true; m_tapeARN = std::forward<TapeARNT>(value); }
+    template<typename TapeARNT = Aws::String>
+    CancelArchivalRequest& WithTapeARN(TapeARNT&& value) { SetTapeARN(std::forward<TapeARNT>(value)); return *this;}
     ///@}
   private:
 

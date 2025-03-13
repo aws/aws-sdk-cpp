@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReadPipelineResult::ReadPipelineResult()
-{
-}
-
 ReadPipelineResult::ReadPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ReadPipelineResult& ReadPipelineResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Pipeline"))
   {
     m_pipeline = jsonValue.GetObject("Pipeline");
-
+    m_pipelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
@@ -42,14 +37,15 @@ ReadPipelineResult& ReadPipelineResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
+    m_warningsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

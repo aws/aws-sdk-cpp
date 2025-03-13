@@ -32,7 +32,7 @@ namespace Model
   class AudioChannelMapping
   {
   public:
-    AWS_MEDIALIVE_API AudioChannelMapping();
+    AWS_MEDIALIVE_API AudioChannelMapping() = default;
     AWS_MEDIALIVE_API AudioChannelMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,21 @@ namespace Model
      * Indices and gain values for each input channel that should be remixed into this
      * output channel.
      */
-    inline const Aws::Vector<InputChannelLevel>& GetInputChannelLevels() const{ return m_inputChannelLevels; }
+    inline const Aws::Vector<InputChannelLevel>& GetInputChannelLevels() const { return m_inputChannelLevels; }
     inline bool InputChannelLevelsHasBeenSet() const { return m_inputChannelLevelsHasBeenSet; }
-    inline void SetInputChannelLevels(const Aws::Vector<InputChannelLevel>& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels = value; }
-    inline void SetInputChannelLevels(Aws::Vector<InputChannelLevel>&& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels = std::move(value); }
-    inline AudioChannelMapping& WithInputChannelLevels(const Aws::Vector<InputChannelLevel>& value) { SetInputChannelLevels(value); return *this;}
-    inline AudioChannelMapping& WithInputChannelLevels(Aws::Vector<InputChannelLevel>&& value) { SetInputChannelLevels(std::move(value)); return *this;}
-    inline AudioChannelMapping& AddInputChannelLevels(const InputChannelLevel& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels.push_back(value); return *this; }
-    inline AudioChannelMapping& AddInputChannelLevels(InputChannelLevel&& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels.push_back(std::move(value)); return *this; }
+    template<typename InputChannelLevelsT = Aws::Vector<InputChannelLevel>>
+    void SetInputChannelLevels(InputChannelLevelsT&& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels = std::forward<InputChannelLevelsT>(value); }
+    template<typename InputChannelLevelsT = Aws::Vector<InputChannelLevel>>
+    AudioChannelMapping& WithInputChannelLevels(InputChannelLevelsT&& value) { SetInputChannelLevels(std::forward<InputChannelLevelsT>(value)); return *this;}
+    template<typename InputChannelLevelsT = InputChannelLevel>
+    AudioChannelMapping& AddInputChannelLevels(InputChannelLevelsT&& value) { m_inputChannelLevelsHasBeenSet = true; m_inputChannelLevels.emplace_back(std::forward<InputChannelLevelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The index of the output channel being produced.
      */
-    inline int GetOutputChannel() const{ return m_outputChannel; }
+    inline int GetOutputChannel() const { return m_outputChannel; }
     inline bool OutputChannelHasBeenSet() const { return m_outputChannelHasBeenSet; }
     inline void SetOutputChannel(int value) { m_outputChannelHasBeenSet = true; m_outputChannel = value; }
     inline AudioChannelMapping& WithOutputChannel(int value) { SetOutputChannel(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
     Aws::Vector<InputChannelLevel> m_inputChannelLevels;
     bool m_inputChannelLevelsHasBeenSet = false;
 
-    int m_outputChannel;
+    int m_outputChannel{0};
     bool m_outputChannelHasBeenSet = false;
   };
 

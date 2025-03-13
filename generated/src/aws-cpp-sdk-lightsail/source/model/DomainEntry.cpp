@@ -18,18 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-DomainEntry::DomainEntry() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_isAlias(false),
-    m_isAliasHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 DomainEntry::DomainEntry(JsonView jsonValue)
-  : DomainEntry()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DomainEntry& DomainEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isAlias"))
   {
     m_isAlias = jsonValue.GetBool("isAlias");
-
     m_isAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

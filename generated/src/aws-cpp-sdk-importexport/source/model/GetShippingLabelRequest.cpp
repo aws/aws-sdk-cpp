@@ -10,22 +10,6 @@
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-GetShippingLabelRequest::GetShippingLabelRequest() : 
-    m_jobIdsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_companyHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_stateOrProvinceHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_street1HasBeenSet(false),
-    m_street2HasBeenSet(false),
-    m_street3HasBeenSet(false),
-    m_aPIVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetShippingLabelRequest::SerializePayload() const
 {
   Aws::StringStream ss;

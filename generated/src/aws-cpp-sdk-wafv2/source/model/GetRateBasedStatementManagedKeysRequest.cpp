@@ -12,16 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRateBasedStatementManagedKeysRequest::GetRateBasedStatementManagedKeysRequest() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_webACLNameHasBeenSet(false),
-    m_webACLIdHasBeenSet(false),
-    m_ruleGroupRuleNameHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetRateBasedStatementManagedKeysRequest::SerializePayload() const
 {
   JsonValue payload;

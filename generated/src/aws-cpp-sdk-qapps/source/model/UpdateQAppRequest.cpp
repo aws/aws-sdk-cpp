@@ -13,15 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQAppRequest::UpdateQAppRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_appDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQAppRequest::SerializePayload() const
 {
   JsonValue payload;

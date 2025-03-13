@@ -58,7 +58,7 @@ namespace Model
   class ApiKey
   {
   public:
-    AWS_APPSYNC_API ApiKey();
+    AWS_APPSYNC_API ApiKey() = default;
     AWS_APPSYNC_API ApiKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API ApiKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,28 +68,24 @@ namespace Model
     /**
      * <p>The API key ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ApiKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ApiKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ApiKey& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ApiKey& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the purpose of the API key.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ApiKey& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ApiKey& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ApiKey& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ApiKey& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +93,7 @@ namespace Model
      * <p>The time after which the API key expires. The date is represented as seconds
      * since the epoch, rounded down to the nearest hour.</p>
      */
-    inline long long GetExpires() const{ return m_expires; }
+    inline long long GetExpires() const { return m_expires; }
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
     inline void SetExpires(long long value) { m_expiresHasBeenSet = true; m_expires = value; }
     inline ApiKey& WithExpires(long long value) { SetExpires(value); return *this;}
@@ -108,7 +104,7 @@ namespace Model
      * <p>The time after which the API key is deleted. The date is represented as
      * seconds since the epoch, rounded down to the nearest hour.</p>
      */
-    inline long long GetDeletes() const{ return m_deletes; }
+    inline long long GetDeletes() const { return m_deletes; }
     inline bool DeletesHasBeenSet() const { return m_deletesHasBeenSet; }
     inline void SetDeletes(long long value) { m_deletesHasBeenSet = true; m_deletes = value; }
     inline ApiKey& WithDeletes(long long value) { SetDeletes(value); return *this;}
@@ -121,10 +117,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    long long m_expires;
+    long long m_expires{0};
     bool m_expiresHasBeenSet = false;
 
-    long long m_deletes;
+    long long m_deletes{0};
     bool m_deletesHasBeenSet = false;
   };
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResourceLogLevelRequest::GetResourceLogLevelRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceLogLevelRequest::SerializePayload() const
 {
   return {};

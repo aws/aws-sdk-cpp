@@ -28,35 +28,35 @@ namespace Model
   class DescribeAuditFindingResult
   {
   public:
-    AWS_IOT_API DescribeAuditFindingResult();
+    AWS_IOT_API DescribeAuditFindingResult() = default;
     AWS_IOT_API DescribeAuditFindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeAuditFindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const AuditFinding& GetFinding() const{ return m_finding; }
-    inline void SetFinding(const AuditFinding& value) { m_finding = value; }
-    inline void SetFinding(AuditFinding&& value) { m_finding = std::move(value); }
-    inline DescribeAuditFindingResult& WithFinding(const AuditFinding& value) { SetFinding(value); return *this;}
-    inline DescribeAuditFindingResult& WithFinding(AuditFinding&& value) { SetFinding(std::move(value)); return *this;}
+    inline const AuditFinding& GetFinding() const { return m_finding; }
+    template<typename FindingT = AuditFinding>
+    void SetFinding(FindingT&& value) { m_findingHasBeenSet = true; m_finding = std::forward<FindingT>(value); }
+    template<typename FindingT = AuditFinding>
+    DescribeAuditFindingResult& WithFinding(FindingT&& value) { SetFinding(std::forward<FindingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAuditFindingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAuditFindingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAuditFindingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAuditFindingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuditFinding m_finding;
+    bool m_findingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,23 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListClusterSchedulerConfigsRequest::ListClusterSchedulerConfigsRequest() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_status(SchedulerResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sortBy(SortClusterSchedulerConfigBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListClusterSchedulerConfigsRequest::SerializePayload() const
 {
   JsonValue payload;

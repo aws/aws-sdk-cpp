@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputClippingSettings::InputClippingSettings() : 
-    m_inputTimecodeSource(InputTimecodeSource::NOT_SET),
-    m_inputTimecodeSourceHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false),
-    m_stopTimecodeHasBeenSet(false)
-{
-}
-
 InputClippingSettings::InputClippingSettings(JsonView jsonValue)
-  : InputClippingSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InputClippingSettings& InputClippingSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputTimecodeSource"))
   {
     m_inputTimecodeSource = InputTimecodeSourceMapper::GetInputTimecodeSourceForName(jsonValue.GetString("inputTimecodeSource"));
-
     m_inputTimecodeSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimecode"))
   {
     m_startTimecode = jsonValue.GetObject("startTimecode");
-
     m_startTimecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopTimecode"))
   {
     m_stopTimecode = jsonValue.GetObject("stopTimecode");
-
     m_stopTimecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

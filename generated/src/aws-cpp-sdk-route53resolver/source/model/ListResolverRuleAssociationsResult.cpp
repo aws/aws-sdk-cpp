@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResolverRuleAssociationsResult::ListResolverRuleAssociationsResult() : 
-    m_maxResults(0)
-{
-}
-
 ListResolverRuleAssociationsResult::ListResolverRuleAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListResolverRuleAssociationsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListResolverRuleAssociationsResult& ListResolverRuleAssociationsResult::operator
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
+    m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverRuleAssociations"))
   {
     Aws::Utils::Array<JsonView> resolverRuleAssociationsJsonList = jsonValue.GetArray("ResolverRuleAssociations");
@@ -50,14 +42,15 @@ ListResolverRuleAssociationsResult& ListResolverRuleAssociationsResult::operator
     {
       m_resolverRuleAssociations.push_back(resolverRuleAssociationsJsonList[resolverRuleAssociationsIndex].AsObject());
     }
+    m_resolverRuleAssociationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

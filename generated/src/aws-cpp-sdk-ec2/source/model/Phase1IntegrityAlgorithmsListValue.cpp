@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase1IntegrityAlgorithmsListValue::Phase1IntegrityAlgorithmsListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase1IntegrityAlgorithmsListValue::Phase1IntegrityAlgorithmsListValue(const XmlNode& xmlNode)
-  : Phase1IntegrityAlgorithmsListValue()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Phase1IntegrityAlgorithmsListValue& Phase1IntegrityAlgorithmsListValue::operator
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

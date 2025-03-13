@@ -37,7 +37,7 @@ namespace Model
   class DBProxyTargetGroup
   {
   public:
-    AWS_RDS_API DBProxyTargetGroup();
+    AWS_RDS_API DBProxyTargetGroup() = default;
     AWS_RDS_API DBProxyTargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DBProxyTargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The identifier for the RDS proxy associated with this target group.</p>
      */
-    inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
+    inline const Aws::String& GetDBProxyName() const { return m_dBProxyName; }
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
-    inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
-    inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
-    inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
-    inline DBProxyTargetGroup& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
-    inline DBProxyTargetGroup& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
-    inline DBProxyTargetGroup& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
+    template<typename DBProxyNameT = Aws::String>
+    void SetDBProxyName(DBProxyNameT&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::forward<DBProxyNameT>(value); }
+    template<typename DBProxyNameT = Aws::String>
+    DBProxyTargetGroup& WithDBProxyName(DBProxyNameT&& value) { SetDBProxyName(std::forward<DBProxyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,28 +63,24 @@ namespace Model
      * groups owned by your Amazon Web Services account in the specified Amazon Web
      * Services Region.</p>
      */
-    inline const Aws::String& GetTargetGroupName() const{ return m_targetGroupName; }
+    inline const Aws::String& GetTargetGroupName() const { return m_targetGroupName; }
     inline bool TargetGroupNameHasBeenSet() const { return m_targetGroupNameHasBeenSet; }
-    inline void SetTargetGroupName(const Aws::String& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = value; }
-    inline void SetTargetGroupName(Aws::String&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::move(value); }
-    inline void SetTargetGroupName(const char* value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName.assign(value); }
-    inline DBProxyTargetGroup& WithTargetGroupName(const Aws::String& value) { SetTargetGroupName(value); return *this;}
-    inline DBProxyTargetGroup& WithTargetGroupName(Aws::String&& value) { SetTargetGroupName(std::move(value)); return *this;}
-    inline DBProxyTargetGroup& WithTargetGroupName(const char* value) { SetTargetGroupName(value); return *this;}
+    template<typename TargetGroupNameT = Aws::String>
+    void SetTargetGroupName(TargetGroupNameT&& value) { m_targetGroupNameHasBeenSet = true; m_targetGroupName = std::forward<TargetGroupNameT>(value); }
+    template<typename TargetGroupNameT = Aws::String>
+    DBProxyTargetGroup& WithTargetGroupName(TargetGroupNameT&& value) { SetTargetGroupName(std::forward<TargetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) representing the target group.</p>
      */
-    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+    inline const Aws::String& GetTargetGroupArn() const { return m_targetGroupArn; }
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
-    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
-    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
-    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
-    inline DBProxyTargetGroup& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
-    inline DBProxyTargetGroup& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
-    inline DBProxyTargetGroup& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
+    template<typename TargetGroupArnT = Aws::String>
+    void SetTargetGroupArn(TargetGroupArnT&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::forward<TargetGroupArnT>(value); }
+    template<typename TargetGroupArnT = Aws::String>
+    DBProxyTargetGroup& WithTargetGroupArn(TargetGroupArnT&& value) { SetTargetGroupArn(std::forward<TargetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +90,7 @@ namespace Model
      * with a single target group, currently this setting is always
      * <code>true</code>.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline DBProxyTargetGroup& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -109,14 +103,12 @@ namespace Model
      * indicate that you must wait for the target group to be ready, or take some
      * action to resolve an issue.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DBProxyTargetGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DBProxyTargetGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DBProxyTargetGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DBProxyTargetGroup& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,36 +116,36 @@ namespace Model
      * <p>The settings that determine the size and behavior of the connection pool for
      * the target group.</p>
      */
-    inline const ConnectionPoolConfigurationInfo& GetConnectionPoolConfig() const{ return m_connectionPoolConfig; }
+    inline const ConnectionPoolConfigurationInfo& GetConnectionPoolConfig() const { return m_connectionPoolConfig; }
     inline bool ConnectionPoolConfigHasBeenSet() const { return m_connectionPoolConfigHasBeenSet; }
-    inline void SetConnectionPoolConfig(const ConnectionPoolConfigurationInfo& value) { m_connectionPoolConfigHasBeenSet = true; m_connectionPoolConfig = value; }
-    inline void SetConnectionPoolConfig(ConnectionPoolConfigurationInfo&& value) { m_connectionPoolConfigHasBeenSet = true; m_connectionPoolConfig = std::move(value); }
-    inline DBProxyTargetGroup& WithConnectionPoolConfig(const ConnectionPoolConfigurationInfo& value) { SetConnectionPoolConfig(value); return *this;}
-    inline DBProxyTargetGroup& WithConnectionPoolConfig(ConnectionPoolConfigurationInfo&& value) { SetConnectionPoolConfig(std::move(value)); return *this;}
+    template<typename ConnectionPoolConfigT = ConnectionPoolConfigurationInfo>
+    void SetConnectionPoolConfig(ConnectionPoolConfigT&& value) { m_connectionPoolConfigHasBeenSet = true; m_connectionPoolConfig = std::forward<ConnectionPoolConfigT>(value); }
+    template<typename ConnectionPoolConfigT = ConnectionPoolConfigurationInfo>
+    DBProxyTargetGroup& WithConnectionPoolConfig(ConnectionPoolConfigT&& value) { SetConnectionPoolConfig(std::forward<ConnectionPoolConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the target group was first created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline DBProxyTargetGroup& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline DBProxyTargetGroup& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    DBProxyTargetGroup& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the target group was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
+    inline const Aws::Utils::DateTime& GetUpdatedDate() const { return m_updatedDate; }
     inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
-    inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDateHasBeenSet = true; m_updatedDate = value; }
-    inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::move(value); }
-    inline DBProxyTargetGroup& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
-    inline DBProxyTargetGroup& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
+    template<typename UpdatedDateT = Aws::Utils::DateTime>
+    void SetUpdatedDate(UpdatedDateT&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::forward<UpdatedDateT>(value); }
+    template<typename UpdatedDateT = Aws::Utils::DateTime>
+    DBProxyTargetGroup& WithUpdatedDate(UpdatedDateT&& value) { SetUpdatedDate(std::forward<UpdatedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -166,7 +158,7 @@ namespace Model
     Aws::String m_targetGroupArn;
     bool m_targetGroupArnHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_status;
@@ -175,10 +167,10 @@ namespace Model
     ConnectionPoolConfigurationInfo m_connectionPoolConfig;
     bool m_connectionPoolConfigHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedDate;
+    Aws::Utils::DateTime m_updatedDate{};
     bool m_updatedDateHasBeenSet = false;
   };
 

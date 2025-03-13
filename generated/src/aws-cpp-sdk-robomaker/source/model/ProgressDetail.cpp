@@ -18,19 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-ProgressDetail::ProgressDetail() : 
-    m_currentProgress(RobotDeploymentStep::NOT_SET),
-    m_currentProgressHasBeenSet(false),
-    m_percentDone(0.0),
-    m_percentDoneHasBeenSet(false),
-    m_estimatedTimeRemainingSeconds(0),
-    m_estimatedTimeRemainingSecondsHasBeenSet(false),
-    m_targetResourceHasBeenSet(false)
-{
-}
-
 ProgressDetail::ProgressDetail(JsonView jsonValue)
-  : ProgressDetail()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ProgressDetail& ProgressDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("currentProgress"))
   {
     m_currentProgress = RobotDeploymentStepMapper::GetRobotDeploymentStepForName(jsonValue.GetString("currentProgress"));
-
     m_currentProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("percentDone"))
   {
     m_percentDone = jsonValue.GetDouble("percentDone");
-
     m_percentDoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("estimatedTimeRemainingSeconds"))
   {
     m_estimatedTimeRemainingSeconds = jsonValue.GetInteger("estimatedTimeRemainingSeconds");
-
     m_estimatedTimeRemainingSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResource"))
   {
     m_targetResource = jsonValue.GetString("targetResource");
-
     m_targetResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

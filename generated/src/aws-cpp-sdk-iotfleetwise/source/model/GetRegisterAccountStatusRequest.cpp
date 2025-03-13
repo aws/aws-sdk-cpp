@@ -12,10 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegisterAccountStatusRequest::GetRegisterAccountStatusRequest()
-{
-}
-
 Aws::String GetRegisterAccountStatusRequest::SerializePayload() const
 {
   return "{}";

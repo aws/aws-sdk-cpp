@@ -33,7 +33,7 @@ namespace Model
   class GetCustomVerificationEmailTemplateResult
   {
   public:
-    AWS_SESV2_API GetCustomVerificationEmailTemplateResult();
+    AWS_SESV2_API GetCustomVerificationEmailTemplateResult() = default;
     AWS_SESV2_API GetCustomVerificationEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetCustomVerificationEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,52 +42,44 @@ namespace Model
     /**
      * <p>The name of the custom verification email template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address that the custom verification email is sent from.</p>
      */
-    inline const Aws::String& GetFromEmailAddress() const{ return m_fromEmailAddress; }
-    inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddress = value; }
-    inline void SetFromEmailAddress(Aws::String&& value) { m_fromEmailAddress = std::move(value); }
-    inline void SetFromEmailAddress(const char* value) { m_fromEmailAddress.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithFromEmailAddress(const Aws::String& value) { SetFromEmailAddress(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithFromEmailAddress(Aws::String&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithFromEmailAddress(const char* value) { SetFromEmailAddress(value); return *this;}
+    inline const Aws::String& GetFromEmailAddress() const { return m_fromEmailAddress; }
+    template<typename FromEmailAddressT = Aws::String>
+    void SetFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::forward<FromEmailAddressT>(value); }
+    template<typename FromEmailAddressT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithFromEmailAddress(FromEmailAddressT&& value) { SetFromEmailAddress(std::forward<FromEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subject line of the custom verification email.</p>
      */
-    inline const Aws::String& GetTemplateSubject() const{ return m_templateSubject; }
-    inline void SetTemplateSubject(const Aws::String& value) { m_templateSubject = value; }
-    inline void SetTemplateSubject(Aws::String&& value) { m_templateSubject = std::move(value); }
-    inline void SetTemplateSubject(const char* value) { m_templateSubject.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateSubject(const Aws::String& value) { SetTemplateSubject(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateSubject(Aws::String&& value) { SetTemplateSubject(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateSubject(const char* value) { SetTemplateSubject(value); return *this;}
+    inline const Aws::String& GetTemplateSubject() const { return m_templateSubject; }
+    template<typename TemplateSubjectT = Aws::String>
+    void SetTemplateSubject(TemplateSubjectT&& value) { m_templateSubjectHasBeenSet = true; m_templateSubject = std::forward<TemplateSubjectT>(value); }
+    template<typename TemplateSubjectT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithTemplateSubject(TemplateSubjectT&& value) { SetTemplateSubject(std::forward<TemplateSubjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the custom verification email.</p>
      */
-    inline const Aws::String& GetTemplateContent() const{ return m_templateContent; }
-    inline void SetTemplateContent(const Aws::String& value) { m_templateContent = value; }
-    inline void SetTemplateContent(Aws::String&& value) { m_templateContent = std::move(value); }
-    inline void SetTemplateContent(const char* value) { m_templateContent.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateContent(const Aws::String& value) { SetTemplateContent(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateContent(Aws::String&& value) { SetTemplateContent(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithTemplateContent(const char* value) { SetTemplateContent(value); return *this;}
+    inline const Aws::String& GetTemplateContent() const { return m_templateContent; }
+    template<typename TemplateContentT = Aws::String>
+    void SetTemplateContent(TemplateContentT&& value) { m_templateContentHasBeenSet = true; m_templateContent = std::forward<TemplateContentT>(value); }
+    template<typename TemplateContentT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithTemplateContent(TemplateContentT&& value) { SetTemplateContent(std::forward<TemplateContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,13 +87,11 @@ namespace Model
      * <p>The URL that the recipient of the verification email is sent to if his or her
      * address is successfully verified.</p>
      */
-    inline const Aws::String& GetSuccessRedirectionURL() const{ return m_successRedirectionURL; }
-    inline void SetSuccessRedirectionURL(const Aws::String& value) { m_successRedirectionURL = value; }
-    inline void SetSuccessRedirectionURL(Aws::String&& value) { m_successRedirectionURL = std::move(value); }
-    inline void SetSuccessRedirectionURL(const char* value) { m_successRedirectionURL.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithSuccessRedirectionURL(const Aws::String& value) { SetSuccessRedirectionURL(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithSuccessRedirectionURL(Aws::String&& value) { SetSuccessRedirectionURL(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithSuccessRedirectionURL(const char* value) { SetSuccessRedirectionURL(value); return *this;}
+    inline const Aws::String& GetSuccessRedirectionURL() const { return m_successRedirectionURL; }
+    template<typename SuccessRedirectionURLT = Aws::String>
+    void SetSuccessRedirectionURL(SuccessRedirectionURLT&& value) { m_successRedirectionURLHasBeenSet = true; m_successRedirectionURL = std::forward<SuccessRedirectionURLT>(value); }
+    template<typename SuccessRedirectionURLT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithSuccessRedirectionURL(SuccessRedirectionURLT&& value) { SetSuccessRedirectionURL(std::forward<SuccessRedirectionURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,40 +99,43 @@ namespace Model
      * <p>The URL that the recipient of the verification email is sent to if his or her
      * address is not successfully verified.</p>
      */
-    inline const Aws::String& GetFailureRedirectionURL() const{ return m_failureRedirectionURL; }
-    inline void SetFailureRedirectionURL(const Aws::String& value) { m_failureRedirectionURL = value; }
-    inline void SetFailureRedirectionURL(Aws::String&& value) { m_failureRedirectionURL = std::move(value); }
-    inline void SetFailureRedirectionURL(const char* value) { m_failureRedirectionURL.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithFailureRedirectionURL(const Aws::String& value) { SetFailureRedirectionURL(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithFailureRedirectionURL(Aws::String&& value) { SetFailureRedirectionURL(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithFailureRedirectionURL(const char* value) { SetFailureRedirectionURL(value); return *this;}
+    inline const Aws::String& GetFailureRedirectionURL() const { return m_failureRedirectionURL; }
+    template<typename FailureRedirectionURLT = Aws::String>
+    void SetFailureRedirectionURL(FailureRedirectionURLT&& value) { m_failureRedirectionURLHasBeenSet = true; m_failureRedirectionURL = std::forward<FailureRedirectionURLT>(value); }
+    template<typename FailureRedirectionURLT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithFailureRedirectionURL(FailureRedirectionURLT&& value) { SetFailureRedirectionURL(std::forward<FailureRedirectionURLT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCustomVerificationEmailTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCustomVerificationEmailTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCustomVerificationEmailTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_templateName;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::String m_templateSubject;
+    bool m_templateSubjectHasBeenSet = false;
 
     Aws::String m_templateContent;
+    bool m_templateContentHasBeenSet = false;
 
     Aws::String m_successRedirectionURL;
+    bool m_successRedirectionURLHasBeenSet = false;
 
     Aws::String m_failureRedirectionURL;
+    bool m_failureRedirectionURLHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

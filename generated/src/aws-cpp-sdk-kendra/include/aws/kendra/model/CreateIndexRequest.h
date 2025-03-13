@@ -29,7 +29,7 @@ namespace Model
   class CreateIndexRequest : public KendraRequest
   {
   public:
-    AWS_KENDRA_API CreateIndexRequest();
+    AWS_KENDRA_API CreateIndexRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>A name for the index.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateIndexRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateIndexRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateIndexRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateIndexRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * indices, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
-    inline const IndexEdition& GetEdition() const{ return m_edition; }
+    inline IndexEdition GetEdition() const { return m_edition; }
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
-    inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
-    inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
-    inline CreateIndexRequest& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
-    inline CreateIndexRequest& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
+    inline void SetEdition(IndexEdition value) { m_editionHasBeenSet = true; m_edition = value; }
+    inline CreateIndexRequest& WithEdition(IndexEdition value) { SetEdition(value); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateIndexRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateIndexRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateIndexRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateIndexRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,26 +94,24 @@ namespace Model
      * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
      * CMKs.</p>
      */
-    inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
+    inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const { return m_serverSideEncryptionConfiguration; }
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
-    inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
-    inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
-    inline CreateIndexRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
-    inline CreateIndexRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename ServerSideEncryptionConfigurationT = ServerSideEncryptionConfiguration>
+    void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationT&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::forward<ServerSideEncryptionConfigurationT>(value); }
+    template<typename ServerSideEncryptionConfigurationT = ServerSideEncryptionConfiguration>
+    CreateIndexRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationT&& value) { SetServerSideEncryptionConfiguration(std::forward<ServerSideEncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the index.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateIndexRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +120,12 @@ namespace Model
      * calls to the <code>CreateIndex</code> API with the same client token will create
      * only one index.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateIndexRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateIndexRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateIndexRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateIndexRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +135,14 @@ namespace Model
      * Unicode letters, digits, white space, and any of the following symbols: _ . : /
      * = + - @.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateIndexRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateIndexRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateIndexRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateIndexRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateIndexRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateIndexRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,14 +152,14 @@ namespace Model
      * <code>UserTokenConfigurations</code> to configure user context policy, Amazon
      * Kendra returns a <code>ValidationException</code> error.</p> 
      */
-    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const{ return m_userTokenConfigurations; }
+    inline const Aws::Vector<UserTokenConfiguration>& GetUserTokenConfigurations() const { return m_userTokenConfigurations; }
     inline bool UserTokenConfigurationsHasBeenSet() const { return m_userTokenConfigurationsHasBeenSet; }
-    inline void SetUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = value; }
-    inline void SetUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = std::move(value); }
-    inline CreateIndexRequest& WithUserTokenConfigurations(const Aws::Vector<UserTokenConfiguration>& value) { SetUserTokenConfigurations(value); return *this;}
-    inline CreateIndexRequest& WithUserTokenConfigurations(Aws::Vector<UserTokenConfiguration>&& value) { SetUserTokenConfigurations(std::move(value)); return *this;}
-    inline CreateIndexRequest& AddUserTokenConfigurations(const UserTokenConfiguration& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(value); return *this; }
-    inline CreateIndexRequest& AddUserTokenConfigurations(UserTokenConfiguration&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.push_back(std::move(value)); return *this; }
+    template<typename UserTokenConfigurationsT = Aws::Vector<UserTokenConfiguration>>
+    void SetUserTokenConfigurations(UserTokenConfigurationsT&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations = std::forward<UserTokenConfigurationsT>(value); }
+    template<typename UserTokenConfigurationsT = Aws::Vector<UserTokenConfiguration>>
+    CreateIndexRequest& WithUserTokenConfigurations(UserTokenConfigurationsT&& value) { SetUserTokenConfigurations(std::forward<UserTokenConfigurationsT>(value)); return *this;}
+    template<typename UserTokenConfigurationsT = UserTokenConfiguration>
+    CreateIndexRequest& AddUserTokenConfigurations(UserTokenConfigurationsT&& value) { m_userTokenConfigurationsHasBeenSet = true; m_userTokenConfigurations.emplace_back(std::forward<UserTokenConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -189,12 +179,10 @@ namespace Model
      * documents with no access control and all documents accessible to the user will
      * be searchable and displayable. </p> </dd> </dl>
      */
-    inline const UserContextPolicy& GetUserContextPolicy() const{ return m_userContextPolicy; }
+    inline UserContextPolicy GetUserContextPolicy() const { return m_userContextPolicy; }
     inline bool UserContextPolicyHasBeenSet() const { return m_userContextPolicyHasBeenSet; }
-    inline void SetUserContextPolicy(const UserContextPolicy& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
-    inline void SetUserContextPolicy(UserContextPolicy&& value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = std::move(value); }
-    inline CreateIndexRequest& WithUserContextPolicy(const UserContextPolicy& value) { SetUserContextPolicy(value); return *this;}
-    inline CreateIndexRequest& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
+    inline void SetUserContextPolicy(UserContextPolicy value) { m_userContextPolicyHasBeenSet = true; m_userContextPolicy = value; }
+    inline CreateIndexRequest& WithUserContextPolicy(UserContextPolicy value) { SetUserContextPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -207,19 +195,19 @@ namespace Model
      * you're using an Amazon Kendra Gen AI Enterprise Edition index,
      * <code>UserGroupResolutionConfiguration</code> isn't supported.</p> 
      */
-    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const { return m_userGroupResolutionConfiguration; }
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
-    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
-    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
-    inline CreateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
-    inline CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
+    template<typename UserGroupResolutionConfigurationT = UserGroupResolutionConfiguration>
+    void SetUserGroupResolutionConfiguration(UserGroupResolutionConfigurationT&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::forward<UserGroupResolutionConfigurationT>(value); }
+    template<typename UserGroupResolutionConfigurationT = UserGroupResolutionConfiguration>
+    CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfigurationT&& value) { SetUserGroupResolutionConfiguration(std::forward<UserGroupResolutionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    IndexEdition m_edition;
+    IndexEdition m_edition{IndexEdition::NOT_SET};
     bool m_editionHasBeenSet = false;
 
     Aws::String m_roleArn;
@@ -240,7 +228,7 @@ namespace Model
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
     bool m_userTokenConfigurationsHasBeenSet = false;
 
-    UserContextPolicy m_userContextPolicy;
+    UserContextPolicy m_userContextPolicy{UserContextPolicy::NOT_SET};
     bool m_userContextPolicyHasBeenSet = false;
 
     UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;

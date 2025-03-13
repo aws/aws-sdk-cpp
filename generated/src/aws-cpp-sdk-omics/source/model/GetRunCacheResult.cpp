@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRunCacheResult::GetRunCacheResult() : 
-    m_cacheBehavior(CacheBehavior::NOT_SET),
-    m_status(RunCacheStatus::NOT_SET)
-{
-}
-
 GetRunCacheResult::GetRunCacheResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRunCacheResult()
 {
   *this = result;
 }
@@ -35,57 +28,48 @@ GetRunCacheResult& GetRunCacheResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheBehavior"))
   {
     m_cacheBehavior = CacheBehaviorMapper::GetCacheBehaviorForName(jsonValue.GetString("cacheBehavior"));
-
+    m_cacheBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheBucketOwnerId"))
   {
     m_cacheBucketOwnerId = jsonValue.GetString("cacheBucketOwnerId");
-
+    m_cacheBucketOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheS3Uri"))
   {
     m_cacheS3Uri = jsonValue.GetString("cacheS3Uri");
-
+    m_cacheS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RunCacheStatusMapper::GetRunCacheStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -93,14 +77,15 @@ GetRunCacheResult& GetRunCacheResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

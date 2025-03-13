@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMultipartReadSetUploadsRequest::ListMultipartReadSetUploadsRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListMultipartReadSetUploadsRequest::SerializePayload() const
 {
   return {};

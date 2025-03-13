@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-SearchTextRequest::SearchTextRequest() : 
-    m_queryTextHasBeenSet(false),
-    m_queryIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_additionalFeaturesHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_intendedUse(SearchTextIntendedUse::NOT_SET),
-    m_intendedUseHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String SearchTextRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace finspace
 namespace Model
 {
 
-IcmpTypeCode::IcmpTypeCode() : 
-    m_type(0),
-    m_typeHasBeenSet(false),
-    m_code(0),
-    m_codeHasBeenSet(false)
-{
-}
-
 IcmpTypeCode::IcmpTypeCode(JsonView jsonValue)
-  : IcmpTypeCode()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IcmpTypeCode& IcmpTypeCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetInteger("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetInteger("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

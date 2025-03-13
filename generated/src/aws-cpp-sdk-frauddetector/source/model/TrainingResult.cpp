@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-TrainingResult::TrainingResult() : 
-    m_dataValidationMetricsHasBeenSet(false),
-    m_trainingMetricsHasBeenSet(false),
-    m_variableImportanceMetricsHasBeenSet(false)
-{
-}
-
 TrainingResult::TrainingResult(JsonView jsonValue)
-  : TrainingResult()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TrainingResult& TrainingResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataValidationMetrics"))
   {
     m_dataValidationMetrics = jsonValue.GetObject("dataValidationMetrics");
-
     m_dataValidationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainingMetrics"))
   {
     m_trainingMetrics = jsonValue.GetObject("trainingMetrics");
-
     m_trainingMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variableImportanceMetrics"))
   {
     m_variableImportanceMetrics = jsonValue.GetObject("variableImportanceMetrics");
-
     m_variableImportanceMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-SearchJobBackupsResult::SearchJobBackupsResult() : 
-    m_status(SearchJobState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_backupResourceArnHasBeenSet(false),
-    m_sourceResourceArnHasBeenSet(false),
-    m_indexCreationTimeHasBeenSet(false),
-    m_backupCreationTimeHasBeenSet(false)
-{
-}
-
 SearchJobBackupsResult::SearchJobBackupsResult(JsonView jsonValue)
-  : SearchJobBackupsResult()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ SearchJobBackupsResult& SearchJobBackupsResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SearchJobStateMapper::GetSearchJobStateForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupResourceArn"))
   {
     m_backupResourceArn = jsonValue.GetString("BackupResourceArn");
-
     m_backupResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResourceArn"))
   {
     m_sourceResourceArn = jsonValue.GetString("SourceResourceArn");
-
     m_sourceResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexCreationTime"))
   {
     m_indexCreationTime = jsonValue.GetDouble("IndexCreationTime");
-
     m_indexCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupCreationTime"))
   {
     m_backupCreationTime = jsonValue.GetDouble("BackupCreationTime");
-
     m_backupCreationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

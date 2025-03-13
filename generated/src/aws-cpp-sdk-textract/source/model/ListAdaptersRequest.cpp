@@ -12,15 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAdaptersRequest::ListAdaptersRequest() : 
-    m_afterCreationTimeHasBeenSet(false),
-    m_beforeCreationTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAdaptersRequest::SerializePayload() const
 {
   JsonValue payload;

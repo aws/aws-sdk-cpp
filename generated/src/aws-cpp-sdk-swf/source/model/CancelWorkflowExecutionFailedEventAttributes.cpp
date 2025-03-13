@@ -18,16 +18,7 @@ namespace SWF
 namespace Model
 {
 
-CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes() : 
-    m_cause(CancelWorkflowExecutionFailedCause::NOT_SET),
-    m_causeHasBeenSet(false),
-    m_decisionTaskCompletedEventId(0),
-    m_decisionTaskCompletedEventIdHasBeenSet(false)
-{
-}
-
 CancelWorkflowExecutionFailedEventAttributes::CancelWorkflowExecutionFailedEventAttributes(JsonView jsonValue)
-  : CancelWorkflowExecutionFailedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CancelWorkflowExecutionFailedEventAttributes& CancelWorkflowExecutionFailedEvent
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = CancelWorkflowExecutionFailedCauseMapper::GetCancelWorkflowExecutionFailedCauseForName(jsonValue.GetString("cause"));
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decisionTaskCompletedEventId"))
   {
     m_decisionTaskCompletedEventId = jsonValue.GetInt64("decisionTaskCompletedEventId");
-
     m_decisionTaskCompletedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

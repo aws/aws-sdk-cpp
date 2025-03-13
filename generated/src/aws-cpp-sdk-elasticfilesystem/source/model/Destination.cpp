@@ -18,20 +18,7 @@ namespace EFS
 namespace Model
 {
 
-Destination::Destination() : 
-    m_status(ReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_lastReplicatedTimestampHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ReplicationStatusMapper::GetReplicationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastReplicatedTimestamp"))
   {
     m_lastReplicatedTimestamp = jsonValue.GetDouble("LastReplicatedTimestamp");
-
     m_lastReplicatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

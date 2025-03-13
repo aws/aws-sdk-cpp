@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilledMapConfiguration::FilledMapConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_windowOptionsHasBeenSet(false),
-    m_mapStyleOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 FilledMapConfiguration::FilledMapConfiguration(JsonView jsonValue)
-  : FilledMapConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ FilledMapConfiguration& FilledMapConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowOptions"))
   {
     m_windowOptions = jsonValue.GetObject("WindowOptions");
-
     m_windowOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapStyleOptions"))
   {
     m_mapStyleOptions = jsonValue.GetObject("MapStyleOptions");
-
     m_mapStyleOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

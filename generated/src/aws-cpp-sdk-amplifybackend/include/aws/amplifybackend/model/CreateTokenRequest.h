@@ -21,7 +21,7 @@ namespace Model
   class CreateTokenRequest : public AmplifyBackendRequest
   {
   public:
-    AWS_AMPLIFYBACKEND_API CreateTokenRequest();
+    AWS_AMPLIFYBACKEND_API CreateTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline CreateTokenRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline CreateTokenRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline CreateTokenRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    CreateTokenRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
   private:
 

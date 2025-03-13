@@ -21,7 +21,7 @@ namespace Model
   class CancelGremlinQueryRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API CancelGremlinQueryRequest();
+    AWS_NEPTUNEDATA_API CancelGremlinQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier that identifies the query to be canceled.</p>
      */
-    inline const Aws::String& GetQueryId() const{ return m_queryId; }
+    inline const Aws::String& GetQueryId() const { return m_queryId; }
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
-    inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
-    inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
-    inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
-    inline CancelGremlinQueryRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
-    inline CancelGremlinQueryRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
-    inline CancelGremlinQueryRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
+    template<typename QueryIdT = Aws::String>
+    void SetQueryId(QueryIdT&& value) { m_queryIdHasBeenSet = true; m_queryId = std::forward<QueryIdT>(value); }
+    template<typename QueryIdT = Aws::String>
+    CancelGremlinQueryRequest& WithQueryId(QueryIdT&& value) { SetQueryId(std::forward<QueryIdT>(value)); return *this;}
     ///@}
   private:
 

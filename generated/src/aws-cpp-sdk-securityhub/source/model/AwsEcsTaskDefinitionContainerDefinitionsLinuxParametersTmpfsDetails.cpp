@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails() : 
-    m_containerPathHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails::AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& AwsEcsTaskD
   if(jsonValue.ValueExists("ContainerPath"))
   {
     m_containerPath = jsonValue.GetString("ContainerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountOptions"))
   {
     Aws::Utils::Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("MountOptions");
@@ -50,14 +39,11 @@ AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails& AwsEcsTaskD
     }
     m_mountOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInteger("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

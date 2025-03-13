@@ -13,15 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDocumentVersionRequest::UpdateDocumentVersionRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_versionStatus(DocumentVersionStatus::NOT_SET),
-    m_versionStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDocumentVersionRequest::SerializePayload() const
 {
   JsonValue payload;

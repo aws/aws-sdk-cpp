@@ -38,7 +38,7 @@ namespace Model
   class ApplicationSummary
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API ApplicationSummary();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApplicationSummary() = default;
     AWS_MIGRATIONHUBREFACTORSPACES_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,118 +48,108 @@ namespace Model
     /**
      * <p>The endpoint URL of the Amazon API Gateway proxy. </p>
      */
-    inline const ApiGatewayProxySummary& GetApiGatewayProxy() const{ return m_apiGatewayProxy; }
+    inline const ApiGatewayProxySummary& GetApiGatewayProxy() const { return m_apiGatewayProxy; }
     inline bool ApiGatewayProxyHasBeenSet() const { return m_apiGatewayProxyHasBeenSet; }
-    inline void SetApiGatewayProxy(const ApiGatewayProxySummary& value) { m_apiGatewayProxyHasBeenSet = true; m_apiGatewayProxy = value; }
-    inline void SetApiGatewayProxy(ApiGatewayProxySummary&& value) { m_apiGatewayProxyHasBeenSet = true; m_apiGatewayProxy = std::move(value); }
-    inline ApplicationSummary& WithApiGatewayProxy(const ApiGatewayProxySummary& value) { SetApiGatewayProxy(value); return *this;}
-    inline ApplicationSummary& WithApiGatewayProxy(ApiGatewayProxySummary&& value) { SetApiGatewayProxy(std::move(value)); return *this;}
+    template<typename ApiGatewayProxyT = ApiGatewayProxySummary>
+    void SetApiGatewayProxy(ApiGatewayProxyT&& value) { m_apiGatewayProxyHasBeenSet = true; m_apiGatewayProxy = std::forward<ApiGatewayProxyT>(value); }
+    template<typename ApiGatewayProxyT = ApiGatewayProxySummary>
+    ApplicationSummary& WithApiGatewayProxy(ApiGatewayProxyT&& value) { SetApiGatewayProxy(std::forward<ApiGatewayProxyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the application. </p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline ApplicationSummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline ApplicationSummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    ApplicationSummary& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the application. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ApplicationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ApplicationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ApplicationSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ApplicationSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the application creator. </p>
      */
-    inline const Aws::String& GetCreatedByAccountId() const{ return m_createdByAccountId; }
+    inline const Aws::String& GetCreatedByAccountId() const { return m_createdByAccountId; }
     inline bool CreatedByAccountIdHasBeenSet() const { return m_createdByAccountIdHasBeenSet; }
-    inline void SetCreatedByAccountId(const Aws::String& value) { m_createdByAccountIdHasBeenSet = true; m_createdByAccountId = value; }
-    inline void SetCreatedByAccountId(Aws::String&& value) { m_createdByAccountIdHasBeenSet = true; m_createdByAccountId = std::move(value); }
-    inline void SetCreatedByAccountId(const char* value) { m_createdByAccountIdHasBeenSet = true; m_createdByAccountId.assign(value); }
-    inline ApplicationSummary& WithCreatedByAccountId(const Aws::String& value) { SetCreatedByAccountId(value); return *this;}
-    inline ApplicationSummary& WithCreatedByAccountId(Aws::String&& value) { SetCreatedByAccountId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithCreatedByAccountId(const char* value) { SetCreatedByAccountId(value); return *this;}
+    template<typename CreatedByAccountIdT = Aws::String>
+    void SetCreatedByAccountId(CreatedByAccountIdT&& value) { m_createdByAccountIdHasBeenSet = true; m_createdByAccountId = std::forward<CreatedByAccountIdT>(value); }
+    template<typename CreatedByAccountIdT = Aws::String>
+    ApplicationSummary& WithCreatedByAccountId(CreatedByAccountIdT&& value) { SetCreatedByAccountId(std::forward<CreatedByAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that indicates when the application is created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline ApplicationSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline ApplicationSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    ApplicationSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the environment. </p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline ApplicationSummary& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline ApplicationSummary& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    ApplicationSummary& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any error associated with the application resource. </p>
      */
-    inline const ErrorResponse& GetError() const{ return m_error; }
+    inline const ErrorResponse& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorResponse& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorResponse&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ApplicationSummary& WithError(const ErrorResponse& value) { SetError(value); return *this;}
-    inline ApplicationSummary& WithError(ErrorResponse&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorResponse>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorResponse>
+    ApplicationSummary& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that indicates when the application was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline ApplicationSummary& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline ApplicationSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    ApplicationSummary& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ApplicationSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ApplicationSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ApplicationSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ApplicationSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,71 +157,60 @@ namespace Model
      * <p>The Amazon Web Services account ID of the application owner (which is always
      * the same as the environment owner account ID).</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
-    inline ApplicationSummary& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline ApplicationSummary& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    ApplicationSummary& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The proxy type of the proxy created within the application. </p>
      */
-    inline const ProxyType& GetProxyType() const{ return m_proxyType; }
+    inline ProxyType GetProxyType() const { return m_proxyType; }
     inline bool ProxyTypeHasBeenSet() const { return m_proxyTypeHasBeenSet; }
-    inline void SetProxyType(const ProxyType& value) { m_proxyTypeHasBeenSet = true; m_proxyType = value; }
-    inline void SetProxyType(ProxyType&& value) { m_proxyTypeHasBeenSet = true; m_proxyType = std::move(value); }
-    inline ApplicationSummary& WithProxyType(const ProxyType& value) { SetProxyType(value); return *this;}
-    inline ApplicationSummary& WithProxyType(ProxyType&& value) { SetProxyType(std::move(value)); return *this;}
+    inline void SetProxyType(ProxyType value) { m_proxyTypeHasBeenSet = true; m_proxyType = value; }
+    inline ApplicationSummary& WithProxyType(ProxyType value) { SetProxyType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the application. </p>
      */
-    inline const ApplicationState& GetState() const{ return m_state; }
+    inline ApplicationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ApplicationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ApplicationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ApplicationSummary& WithState(const ApplicationState& value) { SetState(value); return *this;}
-    inline ApplicationSummary& WithState(ApplicationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ApplicationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ApplicationSummary& WithState(ApplicationState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the application. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ApplicationSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ApplicationSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ApplicationSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ApplicationSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ApplicationSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ApplicationSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ApplicationSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ApplicationSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ApplicationSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ApplicationSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ApplicationSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the virtual private cloud (VPC). </p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline ApplicationSummary& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline ApplicationSummary& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    ApplicationSummary& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -247,7 +226,7 @@ namespace Model
     Aws::String m_createdByAccountId;
     bool m_createdByAccountIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_environmentId;
@@ -256,7 +235,7 @@ namespace Model
     ErrorResponse m_error;
     bool m_errorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_name;
@@ -265,10 +244,10 @@ namespace Model
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet = false;
 
-    ProxyType m_proxyType;
+    ProxyType m_proxyType{ProxyType::NOT_SET};
     bool m_proxyTypeHasBeenSet = false;
 
-    ApplicationState m_state;
+    ApplicationState m_state{ApplicationState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

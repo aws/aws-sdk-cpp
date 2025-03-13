@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVoiceProfileDomainResult::GetVoiceProfileDomainResult()
-{
-}
-
 GetVoiceProfileDomainResult::GetVoiceProfileDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVoiceProfileDomainResult& GetVoiceProfileDomainResult::operator =(const Aws::
   if(jsonValue.ValueExists("VoiceProfileDomain"))
   {
     m_voiceProfileDomain = jsonValue.GetObject("VoiceProfileDomain");
-
+    m_voiceProfileDomainHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

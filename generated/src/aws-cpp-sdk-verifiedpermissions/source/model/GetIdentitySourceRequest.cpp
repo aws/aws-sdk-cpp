@@ -12,12 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdentitySourceRequest::GetIdentitySourceRequest() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_identitySourceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentitySourceRequest::SerializePayload() const
 {
   JsonValue payload;

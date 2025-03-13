@@ -33,7 +33,7 @@ namespace Model
   class ListManagementOptions
   {
   public:
-    AWS_SESV2_API ListManagementOptions();
+    AWS_SESV2_API ListManagementOptions() = default;
     AWS_SESV2_API ListManagementOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ListManagementOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the contact list.</p>
      */
-    inline const Aws::String& GetContactListName() const{ return m_contactListName; }
+    inline const Aws::String& GetContactListName() const { return m_contactListName; }
     inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
-    inline void SetContactListName(const Aws::String& value) { m_contactListNameHasBeenSet = true; m_contactListName = value; }
-    inline void SetContactListName(Aws::String&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::move(value); }
-    inline void SetContactListName(const char* value) { m_contactListNameHasBeenSet = true; m_contactListName.assign(value); }
-    inline ListManagementOptions& WithContactListName(const Aws::String& value) { SetContactListName(value); return *this;}
-    inline ListManagementOptions& WithContactListName(Aws::String&& value) { SetContactListName(std::move(value)); return *this;}
-    inline ListManagementOptions& WithContactListName(const char* value) { SetContactListName(value); return *this;}
+    template<typename ContactListNameT = Aws::String>
+    void SetContactListName(ContactListNameT&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::forward<ContactListNameT>(value); }
+    template<typename ContactListNameT = Aws::String>
+    ListManagementOptions& WithContactListName(ContactListNameT&& value) { SetContactListName(std::forward<ContactListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the topic.</p>
      */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+    inline const Aws::String& GetTopicName() const { return m_topicName; }
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-    inline ListManagementOptions& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-    inline ListManagementOptions& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-    inline ListManagementOptions& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    template<typename TopicNameT = Aws::String>
+    void SetTopicName(TopicNameT&& value) { m_topicNameHasBeenSet = true; m_topicName = std::forward<TopicNameT>(value); }
+    template<typename TopicNameT = Aws::String>
+    ListManagementOptions& WithTopicName(TopicNameT&& value) { SetTopicName(std::forward<TopicNameT>(value)); return *this;}
     ///@}
   private:
 

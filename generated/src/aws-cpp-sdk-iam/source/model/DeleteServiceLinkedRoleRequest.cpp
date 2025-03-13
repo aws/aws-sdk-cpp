@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteServiceLinkedRoleRequest::DeleteServiceLinkedRoleRequest() : 
-    m_roleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceLinkedRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

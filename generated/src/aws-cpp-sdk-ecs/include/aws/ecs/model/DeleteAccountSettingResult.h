@@ -28,7 +28,7 @@ namespace Model
   class DeleteAccountSettingResult
   {
   public:
-    AWS_ECS_API DeleteAccountSettingResult();
+    AWS_ECS_API DeleteAccountSettingResult() = default;
     AWS_ECS_API DeleteAccountSettingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API DeleteAccountSettingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The account setting for the specified principal ARN.</p>
      */
-    inline const Setting& GetSetting() const{ return m_setting; }
-    inline void SetSetting(const Setting& value) { m_setting = value; }
-    inline void SetSetting(Setting&& value) { m_setting = std::move(value); }
-    inline DeleteAccountSettingResult& WithSetting(const Setting& value) { SetSetting(value); return *this;}
-    inline DeleteAccountSettingResult& WithSetting(Setting&& value) { SetSetting(std::move(value)); return *this;}
+    inline const Setting& GetSetting() const { return m_setting; }
+    template<typename SettingT = Setting>
+    void SetSetting(SettingT&& value) { m_settingHasBeenSet = true; m_setting = std::forward<SettingT>(value); }
+    template<typename SettingT = Setting>
+    DeleteAccountSettingResult& WithSetting(SettingT&& value) { SetSetting(std::forward<SettingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAccountSettingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAccountSettingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAccountSettingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAccountSettingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Setting m_setting;
+    bool m_settingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

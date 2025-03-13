@@ -34,7 +34,7 @@ namespace Model
   class RequestBasedServiceLevelIndicatorConfig
   {
   public:
-    AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorConfig();
+    AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorConfig() = default;
     AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Use this structure to specify the metric to be used for the SLO.</p>
      */
-    inline const RequestBasedServiceLevelIndicatorMetricConfig& GetRequestBasedSliMetricConfig() const{ return m_requestBasedSliMetricConfig; }
+    inline const RequestBasedServiceLevelIndicatorMetricConfig& GetRequestBasedSliMetricConfig() const { return m_requestBasedSliMetricConfig; }
     inline bool RequestBasedSliMetricConfigHasBeenSet() const { return m_requestBasedSliMetricConfigHasBeenSet; }
-    inline void SetRequestBasedSliMetricConfig(const RequestBasedServiceLevelIndicatorMetricConfig& value) { m_requestBasedSliMetricConfigHasBeenSet = true; m_requestBasedSliMetricConfig = value; }
-    inline void SetRequestBasedSliMetricConfig(RequestBasedServiceLevelIndicatorMetricConfig&& value) { m_requestBasedSliMetricConfigHasBeenSet = true; m_requestBasedSliMetricConfig = std::move(value); }
-    inline RequestBasedServiceLevelIndicatorConfig& WithRequestBasedSliMetricConfig(const RequestBasedServiceLevelIndicatorMetricConfig& value) { SetRequestBasedSliMetricConfig(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorConfig& WithRequestBasedSliMetricConfig(RequestBasedServiceLevelIndicatorMetricConfig&& value) { SetRequestBasedSliMetricConfig(std::move(value)); return *this;}
+    template<typename RequestBasedSliMetricConfigT = RequestBasedServiceLevelIndicatorMetricConfig>
+    void SetRequestBasedSliMetricConfig(RequestBasedSliMetricConfigT&& value) { m_requestBasedSliMetricConfigHasBeenSet = true; m_requestBasedSliMetricConfig = std::forward<RequestBasedSliMetricConfigT>(value); }
+    template<typename RequestBasedSliMetricConfigT = RequestBasedServiceLevelIndicatorMetricConfig>
+    RequestBasedServiceLevelIndicatorConfig& WithRequestBasedSliMetricConfig(RequestBasedSliMetricConfigT&& value) { SetRequestBasedSliMetricConfig(std::forward<RequestBasedSliMetricConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +57,7 @@ namespace Model
      * <p>The value that the SLI metric is compared to. This parameter is required if
      * this SLO is tracking the <code>Latency</code> metric.</p>
      */
-    inline double GetMetricThreshold() const{ return m_metricThreshold; }
+    inline double GetMetricThreshold() const { return m_metricThreshold; }
     inline bool MetricThresholdHasBeenSet() const { return m_metricThresholdHasBeenSet; }
     inline void SetMetricThreshold(double value) { m_metricThresholdHasBeenSet = true; m_metricThreshold = value; }
     inline RequestBasedServiceLevelIndicatorConfig& WithMetricThreshold(double value) { SetMetricThreshold(value); return *this;}
@@ -69,22 +69,20 @@ namespace Model
      * threshold. This parameter is required if this SLO is tracking the
      * <code>Latency</code> metric.</p>
      */
-    inline const ServiceLevelIndicatorComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ServiceLevelIndicatorComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ServiceLevelIndicatorComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ServiceLevelIndicatorComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline RequestBasedServiceLevelIndicatorConfig& WithComparisonOperator(const ServiceLevelIndicatorComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorConfig& WithComparisonOperator(ServiceLevelIndicatorComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ServiceLevelIndicatorComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline RequestBasedServiceLevelIndicatorConfig& WithComparisonOperator(ServiceLevelIndicatorComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
   private:
 
     RequestBasedServiceLevelIndicatorMetricConfig m_requestBasedSliMetricConfig;
     bool m_requestBasedSliMetricConfigHasBeenSet = false;
 
-    double m_metricThreshold;
+    double m_metricThreshold{0.0};
     bool m_metricThresholdHasBeenSet = false;
 
-    ServiceLevelIndicatorComparisonOperator m_comparisonOperator;
+    ServiceLevelIndicatorComparisonOperator m_comparisonOperator{ServiceLevelIndicatorComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
   };
 

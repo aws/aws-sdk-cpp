@@ -12,14 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSecurityHubConfigurationRequest::UpdateSecurityHubConfigurationRequest() : 
-    m_autoEnableControls(false),
-    m_autoEnableControlsHasBeenSet(false),
-    m_controlFindingGenerator(ControlFindingGenerator::NOT_SET),
-    m_controlFindingGeneratorHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSecurityHubConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

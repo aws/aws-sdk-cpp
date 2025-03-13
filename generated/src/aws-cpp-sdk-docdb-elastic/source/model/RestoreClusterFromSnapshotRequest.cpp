@@ -12,20 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreClusterFromSnapshotRequest::RestoreClusterFromSnapshotRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_shardCapacity(0),
-    m_shardCapacityHasBeenSet(false),
-    m_shardInstanceCount(0),
-    m_shardInstanceCountHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String RestoreClusterFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

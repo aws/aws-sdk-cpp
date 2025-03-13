@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVoiceConnectorGroupsResult::ListVoiceConnectorGroupsResult()
-{
-}
-
 ListVoiceConnectorGroupsResult::ListVoiceConnectorGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListVoiceConnectorGroupsResult& ListVoiceConnectorGroupsResult::operator =(const
     {
       m_voiceConnectorGroups.push_back(voiceConnectorGroupsJsonList[voiceConnectorGroupsIndex].AsObject());
     }
+    m_voiceConnectorGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class AutomatedEncodingSettings
   {
   public:
-    AWS_MEDIACONVERT_API AutomatedEncodingSettings();
+    AWS_MEDIACONVERT_API AutomatedEncodingSettings() = default;
     AWS_MEDIACONVERT_API AutomatedEncodingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AutomatedEncodingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * feature optimizes video quality while minimizing the overall size of your ABR
      * package.
      */
-    inline const AutomatedAbrSettings& GetAbrSettings() const{ return m_abrSettings; }
+    inline const AutomatedAbrSettings& GetAbrSettings() const { return m_abrSettings; }
     inline bool AbrSettingsHasBeenSet() const { return m_abrSettingsHasBeenSet; }
-    inline void SetAbrSettings(const AutomatedAbrSettings& value) { m_abrSettingsHasBeenSet = true; m_abrSettings = value; }
-    inline void SetAbrSettings(AutomatedAbrSettings&& value) { m_abrSettingsHasBeenSet = true; m_abrSettings = std::move(value); }
-    inline AutomatedEncodingSettings& WithAbrSettings(const AutomatedAbrSettings& value) { SetAbrSettings(value); return *this;}
-    inline AutomatedEncodingSettings& WithAbrSettings(AutomatedAbrSettings&& value) { SetAbrSettings(std::move(value)); return *this;}
+    template<typename AbrSettingsT = AutomatedAbrSettings>
+    void SetAbrSettings(AbrSettingsT&& value) { m_abrSettingsHasBeenSet = true; m_abrSettings = std::forward<AbrSettingsT>(value); }
+    template<typename AbrSettingsT = AutomatedAbrSettings>
+    AutomatedEncodingSettings& WithAbrSettings(AbrSettingsT&& value) { SetAbrSettings(std::forward<AbrSettingsT>(value)); return *this;}
     ///@}
   private:
 

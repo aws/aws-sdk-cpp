@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRegistrationAssociationsResult::ListRegistrationAssociationsResult()
-{
-}
-
 ListRegistrationAssociationsResult::ListRegistrationAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ ListRegistrationAssociationsResult& ListRegistrationAssociationsResult::operator
   if(jsonValue.ValueExists("RegistrationArn"))
   {
     m_registrationArn = jsonValue.GetString("RegistrationArn");
-
+    m_registrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
+    m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationType"))
   {
     m_registrationType = jsonValue.GetString("RegistrationType");
-
+    m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationAssociations"))
   {
     Aws::Utils::Array<JsonView> registrationAssociationsJsonList = jsonValue.GetArray("RegistrationAssociations");
@@ -54,20 +47,20 @@ ListRegistrationAssociationsResult& ListRegistrationAssociationsResult::operator
     {
       m_registrationAssociations.push_back(registrationAssociationsJsonList[registrationAssociationsIndex].AsObject());
     }
+    m_registrationAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

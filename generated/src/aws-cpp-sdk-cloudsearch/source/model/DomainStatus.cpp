@@ -20,31 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-DomainStatus::DomainStatus() : 
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_created(false),
-    m_createdHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_docServiceHasBeenSet(false),
-    m_searchServiceHasBeenSet(false),
-    m_requiresIndexDocuments(false),
-    m_requiresIndexDocumentsHasBeenSet(false),
-    m_processing(false),
-    m_processingHasBeenSet(false),
-    m_searchInstanceTypeHasBeenSet(false),
-    m_searchPartitionCount(0),
-    m_searchPartitionCountHasBeenSet(false),
-    m_searchInstanceCount(0),
-    m_searchInstanceCountHasBeenSet(false),
-    m_limitsHasBeenSet(false)
-{
-}
-
 DomainStatus::DomainStatus(const XmlNode& xmlNode)
-  : DomainStatus()
 {
   *this = xmlNode;
 }
@@ -60,78 +36,91 @@ DomainStatus& DomainStatus::operator =(const XmlNode& xmlNode)
     {
       m_domainId = Aws::Utils::Xml::DecodeEscapedXmlText(domainIdNode.GetText());
       m_domainIdHasBeenSet = true;
+       m_domainIdHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
+       m_domainNameHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode createdNode = resultNode.FirstChild("Created");
     if(!createdNode.IsNull())
     {
       m_created = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdNode.GetText()).c_str()).c_str());
       m_createdHasBeenSet = true;
+       m_createdHasBeenSet = true;
     }
     XmlNode deletedNode = resultNode.FirstChild("Deleted");
     if(!deletedNode.IsNull())
     {
       m_deleted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletedNode.GetText()).c_str()).c_str());
       m_deletedHasBeenSet = true;
+       m_deletedHasBeenSet = true;
     }
     XmlNode docServiceNode = resultNode.FirstChild("DocService");
     if(!docServiceNode.IsNull())
     {
       m_docService = docServiceNode;
       m_docServiceHasBeenSet = true;
+       m_docServiceHasBeenSet = true;
     }
     XmlNode searchServiceNode = resultNode.FirstChild("SearchService");
     if(!searchServiceNode.IsNull())
     {
       m_searchService = searchServiceNode;
       m_searchServiceHasBeenSet = true;
+       m_searchServiceHasBeenSet = true;
     }
     XmlNode requiresIndexDocumentsNode = resultNode.FirstChild("RequiresIndexDocuments");
     if(!requiresIndexDocumentsNode.IsNull())
     {
       m_requiresIndexDocuments = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requiresIndexDocumentsNode.GetText()).c_str()).c_str());
       m_requiresIndexDocumentsHasBeenSet = true;
+       m_requiresIndexDocumentsHasBeenSet = true;
     }
     XmlNode processingNode = resultNode.FirstChild("Processing");
     if(!processingNode.IsNull())
     {
       m_processing = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(processingNode.GetText()).c_str()).c_str());
       m_processingHasBeenSet = true;
+       m_processingHasBeenSet = true;
     }
     XmlNode searchInstanceTypeNode = resultNode.FirstChild("SearchInstanceType");
     if(!searchInstanceTypeNode.IsNull())
     {
       m_searchInstanceType = Aws::Utils::Xml::DecodeEscapedXmlText(searchInstanceTypeNode.GetText());
       m_searchInstanceTypeHasBeenSet = true;
+       m_searchInstanceTypeHasBeenSet = true;
     }
     XmlNode searchPartitionCountNode = resultNode.FirstChild("SearchPartitionCount");
     if(!searchPartitionCountNode.IsNull())
     {
       m_searchPartitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(searchPartitionCountNode.GetText()).c_str()).c_str());
       m_searchPartitionCountHasBeenSet = true;
+       m_searchPartitionCountHasBeenSet = true;
     }
     XmlNode searchInstanceCountNode = resultNode.FirstChild("SearchInstanceCount");
     if(!searchInstanceCountNode.IsNull())
     {
       m_searchInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(searchInstanceCountNode.GetText()).c_str()).c_str());
       m_searchInstanceCountHasBeenSet = true;
+       m_searchInstanceCountHasBeenSet = true;
     }
     XmlNode limitsNode = resultNode.FirstChild("Limits");
     if(!limitsNode.IsNull())
     {
       m_limits = limitsNode;
       m_limitsHasBeenSet = true;
+       m_limitsHasBeenSet = true;
     }
   }
 

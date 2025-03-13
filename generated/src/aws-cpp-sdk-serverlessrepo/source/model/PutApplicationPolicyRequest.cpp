@@ -12,12 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutApplicationPolicyRequest::PutApplicationPolicyRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_statementsHasBeenSet(false)
-{
-}
-
 Aws::String PutApplicationPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

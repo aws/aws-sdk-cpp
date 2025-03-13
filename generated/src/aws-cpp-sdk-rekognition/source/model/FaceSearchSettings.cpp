@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-FaceSearchSettings::FaceSearchSettings() : 
-    m_collectionIdHasBeenSet(false),
-    m_faceMatchThreshold(0.0),
-    m_faceMatchThresholdHasBeenSet(false)
-{
-}
-
 FaceSearchSettings::FaceSearchSettings(JsonView jsonValue)
-  : FaceSearchSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FaceSearchSettings& FaceSearchSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CollectionId"))
   {
     m_collectionId = jsonValue.GetString("CollectionId");
-
     m_collectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceMatchThreshold"))
   {
     m_faceMatchThreshold = jsonValue.GetDouble("FaceMatchThreshold");
-
     m_faceMatchThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ProvisionPermissionSetRequest::ProvisionPermissionSetRequest() : 
-    m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(ProvisionTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 Aws::String ProvisionPermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;

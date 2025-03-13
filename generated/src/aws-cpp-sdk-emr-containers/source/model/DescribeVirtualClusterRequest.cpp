@@ -12,11 +12,6 @@ using namespace Aws::EMRContainers::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVirtualClusterRequest::DescribeVirtualClusterRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVirtualClusterRequest::SerializePayload() const
 {
   return {};

@@ -21,7 +21,7 @@ namespace Model
   class RestoreSnapshotTierRequest : public EC2Request
   {
   public:
-    AWS_EC2_API RestoreSnapshotTierRequest();
+    AWS_EC2_API RestoreSnapshotTierRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the snapshot to restore.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline RestoreSnapshotTierRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline RestoreSnapshotTierRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline RestoreSnapshotTierRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    RestoreSnapshotTierRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * archived snapshot, specify the number of days and omit the
      * <b>PermanentRestore</b> parameter or set it to <code>false</code>.</p>
      */
-    inline int GetTemporaryRestoreDays() const{ return m_temporaryRestoreDays; }
+    inline int GetTemporaryRestoreDays() const { return m_temporaryRestoreDays; }
     inline bool TemporaryRestoreDaysHasBeenSet() const { return m_temporaryRestoreDaysHasBeenSet; }
     inline void SetTemporaryRestoreDays(int value) { m_temporaryRestoreDaysHasBeenSet = true; m_temporaryRestoreDays = value; }
     inline RestoreSnapshotTierRequest& WithTemporaryRestoreDays(int value) { SetTemporaryRestoreDays(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
      * restore an archived snapshot, specify <code>true</code> and omit the
      * <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b> parameter.</p>
      */
-    inline bool GetPermanentRestore() const{ return m_permanentRestore; }
+    inline bool GetPermanentRestore() const { return m_permanentRestore; }
     inline bool PermanentRestoreHasBeenSet() const { return m_permanentRestoreHasBeenSet; }
     inline void SetPermanentRestore(bool value) { m_permanentRestoreHasBeenSet = true; m_permanentRestore = value; }
     inline RestoreSnapshotTierRequest& WithPermanentRestore(bool value) { SetPermanentRestore(value); return *this;}
@@ -83,7 +81,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RestoreSnapshotTierRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -93,13 +91,13 @@ namespace Model
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_temporaryRestoreDays;
+    int m_temporaryRestoreDays{0};
     bool m_temporaryRestoreDaysHasBeenSet = false;
 
-    bool m_permanentRestore;
+    bool m_permanentRestore{false};
     bool m_permanentRestoreHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

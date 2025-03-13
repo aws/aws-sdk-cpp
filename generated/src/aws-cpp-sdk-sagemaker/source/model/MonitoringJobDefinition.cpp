@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringJobDefinition::MonitoringJobDefinition() : 
-    m_baselineConfigHasBeenSet(false),
-    m_monitoringInputsHasBeenSet(false),
-    m_monitoringOutputConfigHasBeenSet(false),
-    m_monitoringResourcesHasBeenSet(false),
-    m_monitoringAppSpecificationHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_networkConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 MonitoringJobDefinition::MonitoringJobDefinition(JsonView jsonValue)
-  : MonitoringJobDefinition()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ MonitoringJobDefinition& MonitoringJobDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BaselineConfig"))
   {
     m_baselineConfig = jsonValue.GetObject("BaselineConfig");
-
     m_baselineConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringInputs"))
   {
     Aws::Utils::Array<JsonView> monitoringInputsJsonList = jsonValue.GetArray("MonitoringInputs");
@@ -55,35 +39,26 @@ MonitoringJobDefinition& MonitoringJobDefinition::operator =(JsonView jsonValue)
     }
     m_monitoringInputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringOutputConfig"))
   {
     m_monitoringOutputConfig = jsonValue.GetObject("MonitoringOutputConfig");
-
     m_monitoringOutputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringResources"))
   {
     m_monitoringResources = jsonValue.GetObject("MonitoringResources");
-
     m_monitoringResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringAppSpecification"))
   {
     m_monitoringAppSpecification = jsonValue.GetObject("MonitoringAppSpecification");
-
     m_monitoringAppSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
-
     m_stoppingConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -93,21 +68,16 @@ MonitoringJobDefinition& MonitoringJobDefinition::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkConfig"))
   {
     m_networkConfig = jsonValue.GetObject("NetworkConfig");
-
     m_networkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class GetMetricStatisticsRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API GetMetricStatisticsRequest();
+    AWS_CLOUDWATCH_API GetMetricStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The namespace of the metric, with or without spaces.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline GetMetricStatisticsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline GetMetricStatisticsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline GetMetricStatisticsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    GetMetricStatisticsRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric, with or without spaces.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline GetMetricStatisticsRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline GetMetricStatisticsRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline GetMetricStatisticsRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    GetMetricStatisticsRequest& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
-    inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Dimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline GetMetricStatisticsRequest& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-    inline GetMetricStatisticsRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline GetMetricStatisticsRequest& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline GetMetricStatisticsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    GetMetricStatisticsRequest& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Dimension>
+    GetMetricStatisticsRequest& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,12 +110,12 @@ namespace Model
      * of data, using a period of 5 seconds, you receive data timestamped between
      * 15:02:15 and 15:07:15. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetMetricStatisticsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetMetricStatisticsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetMetricStatisticsRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +125,12 @@ namespace Model
      * time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format
      * (for example, 2016-10-10T23:00:00Z).</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetMetricStatisticsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetMetricStatisticsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetMetricStatisticsRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,7 +149,7 @@ namespace Model
      * seconds (5 minutes).</p> </li> <li> <p>Start time greater than 63 days ago - Use
      * a multiple of 3600 seconds (1 hour).</p> </li> </ul>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetMetricStatisticsRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -166,14 +162,13 @@ namespace Model
      * you must specify either <code>Statistics</code> or
      * <code>ExtendedStatistics</code>, but not both.</p>
      */
-    inline const Aws::Vector<Statistic>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<Statistic>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<Statistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<Statistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline GetMetricStatisticsRequest& WithStatistics(const Aws::Vector<Statistic>& value) { SetStatistics(value); return *this;}
-    inline GetMetricStatisticsRequest& WithStatistics(Aws::Vector<Statistic>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetMetricStatisticsRequest& AddStatistics(const Statistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline GetMetricStatisticsRequest& AddStatistics(Statistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+    template<typename StatisticsT = Aws::Vector<Statistic>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<Statistic>>
+    GetMetricStatisticsRequest& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    inline GetMetricStatisticsRequest& AddStatistics(Statistic value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -184,15 +179,14 @@ namespace Model
      * Percentile statistics are not available for metrics when any of the metric
      * values are negative numbers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExtendedStatistics() const{ return m_extendedStatistics; }
+    inline const Aws::Vector<Aws::String>& GetExtendedStatistics() const { return m_extendedStatistics; }
     inline bool ExtendedStatisticsHasBeenSet() const { return m_extendedStatisticsHasBeenSet; }
-    inline void SetExtendedStatistics(const Aws::Vector<Aws::String>& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = value; }
-    inline void SetExtendedStatistics(Aws::Vector<Aws::String>&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = std::move(value); }
-    inline GetMetricStatisticsRequest& WithExtendedStatistics(const Aws::Vector<Aws::String>& value) { SetExtendedStatistics(value); return *this;}
-    inline GetMetricStatisticsRequest& WithExtendedStatistics(Aws::Vector<Aws::String>&& value) { SetExtendedStatistics(std::move(value)); return *this;}
-    inline GetMetricStatisticsRequest& AddExtendedStatistics(const Aws::String& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
-    inline GetMetricStatisticsRequest& AddExtendedStatistics(Aws::String&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(std::move(value)); return *this; }
-    inline GetMetricStatisticsRequest& AddExtendedStatistics(const char* value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
+    template<typename ExtendedStatisticsT = Aws::Vector<Aws::String>>
+    void SetExtendedStatistics(ExtendedStatisticsT&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = std::forward<ExtendedStatisticsT>(value); }
+    template<typename ExtendedStatisticsT = Aws::Vector<Aws::String>>
+    GetMetricStatisticsRequest& WithExtendedStatistics(ExtendedStatisticsT&& value) { SetExtendedStatistics(std::forward<ExtendedStatisticsT>(value)); return *this;}
+    template<typename ExtendedStatisticsT = Aws::String>
+    GetMetricStatisticsRequest& AddExtendedStatistics(ExtendedStatisticsT&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.emplace_back(std::forward<ExtendedStatisticsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -204,12 +198,10 @@ namespace Model
      * you specify a unit that does not match the data collected, the results of the
      * operation are null. CloudWatch does not perform unit conversions.</p>
      */
-    inline const StandardUnit& GetUnit() const{ return m_unit; }
+    inline StandardUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline GetMetricStatisticsRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
-    inline GetMetricStatisticsRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(StandardUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline GetMetricStatisticsRequest& WithUnit(StandardUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
@@ -222,13 +214,13 @@ namespace Model
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
     Aws::Vector<Statistic> m_statistics;
@@ -237,7 +229,7 @@ namespace Model
     Aws::Vector<Aws::String> m_extendedStatistics;
     bool m_extendedStatisticsHasBeenSet = false;
 
-    StandardUnit m_unit;
+    StandardUnit m_unit{StandardUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

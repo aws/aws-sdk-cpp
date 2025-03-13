@@ -34,7 +34,7 @@ namespace Model
   class MetricQueryResult
   {
   public:
-    AWS_SAGEMAKERMETRICS_API MetricQueryResult();
+    AWS_SAGEMAKERMETRICS_API MetricQueryResult() = default;
     AWS_SAGEMAKERMETRICS_API MetricQueryResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERMETRICS_API MetricQueryResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,34 @@ namespace Model
     /**
      * <p>The status of the metric query.</p>
      */
-    inline const MetricQueryResultStatus& GetStatus() const{ return m_status; }
+    inline MetricQueryResultStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MetricQueryResultStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MetricQueryResultStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MetricQueryResult& WithStatus(const MetricQueryResultStatus& value) { SetStatus(value); return *this;}
-    inline MetricQueryResult& WithStatus(MetricQueryResultStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MetricQueryResultStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MetricQueryResult& WithStatus(MetricQueryResultStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message describing the status of the metric query.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline MetricQueryResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline MetricQueryResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline MetricQueryResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    MetricQueryResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values for the x-axis of the metrics.</p>
      */
-    inline const Aws::Vector<long long>& GetXAxisValues() const{ return m_xAxisValues; }
+    inline const Aws::Vector<long long>& GetXAxisValues() const { return m_xAxisValues; }
     inline bool XAxisValuesHasBeenSet() const { return m_xAxisValuesHasBeenSet; }
-    inline void SetXAxisValues(const Aws::Vector<long long>& value) { m_xAxisValuesHasBeenSet = true; m_xAxisValues = value; }
-    inline void SetXAxisValues(Aws::Vector<long long>&& value) { m_xAxisValuesHasBeenSet = true; m_xAxisValues = std::move(value); }
-    inline MetricQueryResult& WithXAxisValues(const Aws::Vector<long long>& value) { SetXAxisValues(value); return *this;}
-    inline MetricQueryResult& WithXAxisValues(Aws::Vector<long long>&& value) { SetXAxisValues(std::move(value)); return *this;}
+    template<typename XAxisValuesT = Aws::Vector<long long>>
+    void SetXAxisValues(XAxisValuesT&& value) { m_xAxisValuesHasBeenSet = true; m_xAxisValues = std::forward<XAxisValuesT>(value); }
+    template<typename XAxisValuesT = Aws::Vector<long long>>
+    MetricQueryResult& WithXAxisValues(XAxisValuesT&& value) { SetXAxisValues(std::forward<XAxisValuesT>(value)); return *this;}
     inline MetricQueryResult& AddXAxisValues(long long value) { m_xAxisValuesHasBeenSet = true; m_xAxisValues.push_back(value); return *this; }
     ///@}
 
@@ -83,17 +79,17 @@ namespace Model
     /**
      * <p>The metric values retrieved by the query.</p>
      */
-    inline const Aws::Vector<double>& GetMetricValues() const{ return m_metricValues; }
+    inline const Aws::Vector<double>& GetMetricValues() const { return m_metricValues; }
     inline bool MetricValuesHasBeenSet() const { return m_metricValuesHasBeenSet; }
-    inline void SetMetricValues(const Aws::Vector<double>& value) { m_metricValuesHasBeenSet = true; m_metricValues = value; }
-    inline void SetMetricValues(Aws::Vector<double>&& value) { m_metricValuesHasBeenSet = true; m_metricValues = std::move(value); }
-    inline MetricQueryResult& WithMetricValues(const Aws::Vector<double>& value) { SetMetricValues(value); return *this;}
-    inline MetricQueryResult& WithMetricValues(Aws::Vector<double>&& value) { SetMetricValues(std::move(value)); return *this;}
+    template<typename MetricValuesT = Aws::Vector<double>>
+    void SetMetricValues(MetricValuesT&& value) { m_metricValuesHasBeenSet = true; m_metricValues = std::forward<MetricValuesT>(value); }
+    template<typename MetricValuesT = Aws::Vector<double>>
+    MetricQueryResult& WithMetricValues(MetricValuesT&& value) { SetMetricValues(std::forward<MetricValuesT>(value)); return *this;}
     inline MetricQueryResult& AddMetricValues(double value) { m_metricValuesHasBeenSet = true; m_metricValues.push_back(value); return *this; }
     ///@}
   private:
 
-    MetricQueryResultStatus m_status;
+    MetricQueryResultStatus m_status{MetricQueryResultStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_message;

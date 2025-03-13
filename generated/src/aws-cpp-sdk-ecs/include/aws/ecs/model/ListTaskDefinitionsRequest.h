@@ -23,7 +23,7 @@ namespace Model
   class ListTaskDefinitionsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API ListTaskDefinitionsRequest();
+    AWS_ECS_API ListTaskDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * with. Specifying a <code>familyPrefix</code> limits the listed task definitions
      * to task definition revisions that belong to that family.</p>
      */
-    inline const Aws::String& GetFamilyPrefix() const{ return m_familyPrefix; }
+    inline const Aws::String& GetFamilyPrefix() const { return m_familyPrefix; }
     inline bool FamilyPrefixHasBeenSet() const { return m_familyPrefixHasBeenSet; }
-    inline void SetFamilyPrefix(const Aws::String& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = value; }
-    inline void SetFamilyPrefix(Aws::String&& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = std::move(value); }
-    inline void SetFamilyPrefix(const char* value) { m_familyPrefixHasBeenSet = true; m_familyPrefix.assign(value); }
-    inline ListTaskDefinitionsRequest& WithFamilyPrefix(const Aws::String& value) { SetFamilyPrefix(value); return *this;}
-    inline ListTaskDefinitionsRequest& WithFamilyPrefix(Aws::String&& value) { SetFamilyPrefix(std::move(value)); return *this;}
-    inline ListTaskDefinitionsRequest& WithFamilyPrefix(const char* value) { SetFamilyPrefix(value); return *this;}
+    template<typename FamilyPrefixT = Aws::String>
+    void SetFamilyPrefix(FamilyPrefixT&& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = std::forward<FamilyPrefixT>(value); }
+    template<typename FamilyPrefixT = Aws::String>
+    ListTaskDefinitionsRequest& WithFamilyPrefix(FamilyPrefixT&& value) { SetFamilyPrefix(std::forward<FamilyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * still references them. If you paginate the resulting output, be sure to keep the
      * <code>status</code> value constant in each subsequent request.</p>
      */
-    inline const TaskDefinitionStatus& GetStatus() const{ return m_status; }
+    inline TaskDefinitionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TaskDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TaskDefinitionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListTaskDefinitionsRequest& WithStatus(const TaskDefinitionStatus& value) { SetStatus(value); return *this;}
-    inline ListTaskDefinitionsRequest& WithStatus(TaskDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TaskDefinitionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListTaskDefinitionsRequest& WithStatus(TaskDefinitionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,10 @@ namespace Model
      * revision. This is so that the newest task definitions in a family are listed
      * first.</p>
      */
-    inline const SortOrder& GetSort() const{ return m_sort; }
+    inline SortOrder GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const SortOrder& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(SortOrder&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListTaskDefinitionsRequest& WithSort(const SortOrder& value) { SetSort(value); return *this;}
-    inline ListTaskDefinitionsRequest& WithSort(SortOrder&& value) { SetSort(std::move(value)); return *this;}
+    inline void SetSort(SortOrder value) { m_sortHasBeenSet = true; m_sort = value; }
+    inline ListTaskDefinitionsRequest& WithSort(SortOrder value) { SetSort(value); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTaskDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTaskDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTaskDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTaskDefinitionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +111,7 @@ namespace Model
      * 100. If this parameter isn't used, then <code>ListTaskDefinitions</code> returns
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTaskDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -129,16 +121,16 @@ namespace Model
     Aws::String m_familyPrefix;
     bool m_familyPrefixHasBeenSet = false;
 
-    TaskDefinitionStatus m_status;
+    TaskDefinitionStatus m_status{TaskDefinitionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    SortOrder m_sort;
+    SortOrder m_sort{SortOrder::NOT_SET};
     bool m_sortHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

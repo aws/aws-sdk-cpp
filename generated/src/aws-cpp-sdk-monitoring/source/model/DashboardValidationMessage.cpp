@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DashboardValidationMessage::DashboardValidationMessage() : 
-    m_dataPathHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DashboardValidationMessage::DashboardValidationMessage(const XmlNode& xmlNode)
-  : DashboardValidationMessage()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DashboardValidationMessage& DashboardValidationMessage::operator =(const XmlNode
     {
       m_dataPath = Aws::Utils::Xml::DecodeEscapedXmlText(dataPathNode.GetText());
       m_dataPathHasBeenSet = true;
+       m_dataPathHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

@@ -36,7 +36,7 @@ namespace Model
   class ServiceRegistry
   {
   public:
-    AWS_ECS_API ServiceRegistry();
+    AWS_ECS_API ServiceRegistry() = default;
     AWS_ECS_API ServiceRegistry(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceRegistry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * supported service registry is Cloud Map. For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html">CreateService</a>.</p>
      */
-    inline const Aws::String& GetRegistryArn() const{ return m_registryArn; }
+    inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
     inline bool RegistryArnHasBeenSet() const { return m_registryArnHasBeenSet; }
-    inline void SetRegistryArn(const Aws::String& value) { m_registryArnHasBeenSet = true; m_registryArn = value; }
-    inline void SetRegistryArn(Aws::String&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::move(value); }
-    inline void SetRegistryArn(const char* value) { m_registryArnHasBeenSet = true; m_registryArn.assign(value); }
-    inline ServiceRegistry& WithRegistryArn(const Aws::String& value) { SetRegistryArn(value); return *this;}
-    inline ServiceRegistry& WithRegistryArn(Aws::String&& value) { SetRegistryArn(std::move(value)); return *this;}
-    inline ServiceRegistry& WithRegistryArn(const char* value) { SetRegistryArn(value); return *this;}
+    template<typename RegistryArnT = Aws::String>
+    void SetRegistryArn(RegistryArnT&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::forward<RegistryArnT>(value); }
+    template<typename RegistryArnT = Aws::String>
+    ServiceRegistry& WithRegistryArn(RegistryArnT&& value) { SetRegistryArn(std::forward<RegistryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * record. This field might be used if both the <code>awsvpc</code> network mode
      * and SRV records are used.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline ServiceRegistry& WithPort(int value) { SetPort(value); return *this;}
@@ -82,14 +80,12 @@ namespace Model
      * <code>containerName</code> and <code>containerPort</code> combination or a
      * <code>port</code> value. However, you can't specify both.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline ServiceRegistry& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ServiceRegistry& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ServiceRegistry& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ServiceRegistry& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,7 +100,7 @@ namespace Model
      * <code>containerPort</code> combination or a <code>port</code> value. However,
      * you can't specify both.</p>
      */
-    inline int GetContainerPort() const{ return m_containerPort; }
+    inline int GetContainerPort() const { return m_containerPort; }
     inline bool ContainerPortHasBeenSet() const { return m_containerPortHasBeenSet; }
     inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
     inline ServiceRegistry& WithContainerPort(int value) { SetContainerPort(value); return *this;}
@@ -114,13 +110,13 @@ namespace Model
     Aws::String m_registryArn;
     bool m_registryArnHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet = false;
 
-    int m_containerPort;
+    int m_containerPort{0};
     bool m_containerPortHasBeenSet = false;
   };
 

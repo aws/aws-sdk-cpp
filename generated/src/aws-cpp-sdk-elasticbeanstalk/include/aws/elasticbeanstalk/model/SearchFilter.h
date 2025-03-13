@@ -41,7 +41,7 @@ namespace Model
   class SearchFilter
   {
   public:
-    AWS_ELASTICBEANSTALK_API SearchFilter();
+    AWS_ELASTICBEANSTALK_API SearchFilter() = default;
     AWS_ELASTICBEANSTALK_API SearchFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API SearchFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,14 +54,12 @@ namespace Model
      * <p>The result attribute to which the filter values are applied. Valid values
      * vary by API action.</p>
      */
-    inline const Aws::String& GetAttribute() const{ return m_attribute; }
+    inline const Aws::String& GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
-    inline SearchFilter& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-    inline SearchFilter& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-    inline SearchFilter& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+    template<typename AttributeT = Aws::String>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Aws::String>
+    SearchFilter& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <p>The operator to apply to the <code>Attribute</code> with each of the
      * <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
      */
-    inline const Aws::String& GetOperator() const{ return m_operator; }
+    inline const Aws::String& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Aws::String& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline void SetOperator(const char* value) { m_operatorHasBeenSet = true; m_operator.assign(value); }
-    inline SearchFilter& WithOperator(const Aws::String& value) { SetOperator(value); return *this;}
-    inline SearchFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
-    inline SearchFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
+    template<typename OperatorT = Aws::String>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = Aws::String>
+    SearchFilter& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,15 +81,14 @@ namespace Model
      * <code>Operator</code> attributes. Number of values and valid values vary by
      * <code>Attribute</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SearchFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline SearchFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline SearchFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SearchFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline SearchFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    SearchFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    SearchFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

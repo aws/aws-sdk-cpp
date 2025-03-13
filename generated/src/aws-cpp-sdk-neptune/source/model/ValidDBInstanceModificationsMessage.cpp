@@ -20,13 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage() : 
-    m_storageHasBeenSet(false)
-{
-}
-
 ValidDBInstanceModificationsMessage::ValidDBInstanceModificationsMessage(const XmlNode& xmlNode)
-  : ValidDBInstanceModificationsMessage()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ ValidDBInstanceModificationsMessage& ValidDBInstanceModificationsMessage::operat
     if(!storageNode.IsNull())
     {
       XmlNode storageMember = storageNode.FirstChild("ValidStorageOptions");
+      m_storageHasBeenSet = !storageMember.IsNull();
       while(!storageMember.IsNull())
       {
         m_storage.push_back(storageMember);
         storageMember = storageMember.NextNode("ValidStorageOptions");
       }
 
-      m_storageHasBeenSet = true;
+       m_storageHasBeenSet = true;
     }
   }
 

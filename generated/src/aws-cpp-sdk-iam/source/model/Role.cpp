@@ -20,24 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Role::Role() : 
-    m_pathHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_roleLastUsedHasBeenSet(false)
-{
-}
-
 Role::Role(const XmlNode& xmlNode)
-  : Role()
 {
   *this = xmlNode;
 }
@@ -53,72 +36,83 @@ Role& Role::operator =(const XmlNode& xmlNode)
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode roleNameNode = resultNode.FirstChild("RoleName");
     if(!roleNameNode.IsNull())
     {
       m_roleName = Aws::Utils::Xml::DecodeEscapedXmlText(roleNameNode.GetText());
       m_roleNameHasBeenSet = true;
+       m_roleNameHasBeenSet = true;
     }
     XmlNode roleIdNode = resultNode.FirstChild("RoleId");
     if(!roleIdNode.IsNull())
     {
       m_roleId = Aws::Utils::Xml::DecodeEscapedXmlText(roleIdNode.GetText());
       m_roleIdHasBeenSet = true;
+       m_roleIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode assumeRolePolicyDocumentNode = resultNode.FirstChild("AssumeRolePolicyDocument");
     if(!assumeRolePolicyDocumentNode.IsNull())
     {
       m_assumeRolePolicyDocument = Aws::Utils::Xml::DecodeEscapedXmlText(assumeRolePolicyDocumentNode.GetText());
       m_assumeRolePolicyDocumentHasBeenSet = true;
+       m_assumeRolePolicyDocumentHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode maxSessionDurationNode = resultNode.FirstChild("MaxSessionDuration");
     if(!maxSessionDurationNode.IsNull())
     {
       m_maxSessionDuration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSessionDurationNode.GetText()).c_str()).c_str());
       m_maxSessionDurationHasBeenSet = true;
+       m_maxSessionDurationHasBeenSet = true;
     }
     XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
     if(!permissionsBoundaryNode.IsNull())
     {
       m_permissionsBoundary = permissionsBoundaryNode;
       m_permissionsBoundaryHasBeenSet = true;
+       m_permissionsBoundaryHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode roleLastUsedNode = resultNode.FirstChild("RoleLastUsed");
     if(!roleLastUsedNode.IsNull())
     {
       m_roleLastUsed = roleLastUsedNode;
       m_roleLastUsedHasBeenSet = true;
+       m_roleLastUsedHasBeenSet = true;
     }
   }
 

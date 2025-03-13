@@ -27,7 +27,7 @@ namespace Model
   class UpdateSpaceResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateSpaceResult();
+    AWS_SAGEMAKER_API UpdateSpaceResult() = default;
     AWS_SAGEMAKER_API UpdateSpaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateSpaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The space's Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetSpaceArn() const{ return m_spaceArn; }
-    inline void SetSpaceArn(const Aws::String& value) { m_spaceArn = value; }
-    inline void SetSpaceArn(Aws::String&& value) { m_spaceArn = std::move(value); }
-    inline void SetSpaceArn(const char* value) { m_spaceArn.assign(value); }
-    inline UpdateSpaceResult& WithSpaceArn(const Aws::String& value) { SetSpaceArn(value); return *this;}
-    inline UpdateSpaceResult& WithSpaceArn(Aws::String&& value) { SetSpaceArn(std::move(value)); return *this;}
-    inline UpdateSpaceResult& WithSpaceArn(const char* value) { SetSpaceArn(value); return *this;}
+    inline const Aws::String& GetSpaceArn() const { return m_spaceArn; }
+    template<typename SpaceArnT = Aws::String>
+    void SetSpaceArn(SpaceArnT&& value) { m_spaceArnHasBeenSet = true; m_spaceArn = std::forward<SpaceArnT>(value); }
+    template<typename SpaceArnT = Aws::String>
+    UpdateSpaceResult& WithSpaceArn(SpaceArnT&& value) { SetSpaceArn(std::forward<SpaceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSpaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSpaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSpaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSpaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_spaceArn;
+    bool m_spaceArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

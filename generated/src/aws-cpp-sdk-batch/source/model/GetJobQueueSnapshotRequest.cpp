@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobQueueSnapshotRequest::GetJobQueueSnapshotRequest() : 
-    m_jobQueueHasBeenSet(false)
-{
-}
-
 Aws::String GetJobQueueSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

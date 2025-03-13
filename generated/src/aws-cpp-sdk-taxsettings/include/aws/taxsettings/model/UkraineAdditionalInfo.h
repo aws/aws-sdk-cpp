@@ -32,7 +32,7 @@ namespace Model
   class UkraineAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API UkraineAdditionalInfo();
+    AWS_TAXSETTINGS_API UkraineAdditionalInfo() = default;
     AWS_TAXSETTINGS_API UkraineAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API UkraineAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p> The tax registration type. </p>
      */
-    inline const UkraineTrnType& GetUkraineTrnType() const{ return m_ukraineTrnType; }
+    inline UkraineTrnType GetUkraineTrnType() const { return m_ukraineTrnType; }
     inline bool UkraineTrnTypeHasBeenSet() const { return m_ukraineTrnTypeHasBeenSet; }
-    inline void SetUkraineTrnType(const UkraineTrnType& value) { m_ukraineTrnTypeHasBeenSet = true; m_ukraineTrnType = value; }
-    inline void SetUkraineTrnType(UkraineTrnType&& value) { m_ukraineTrnTypeHasBeenSet = true; m_ukraineTrnType = std::move(value); }
-    inline UkraineAdditionalInfo& WithUkraineTrnType(const UkraineTrnType& value) { SetUkraineTrnType(value); return *this;}
-    inline UkraineAdditionalInfo& WithUkraineTrnType(UkraineTrnType&& value) { SetUkraineTrnType(std::move(value)); return *this;}
+    inline void SetUkraineTrnType(UkraineTrnType value) { m_ukraineTrnTypeHasBeenSet = true; m_ukraineTrnType = value; }
+    inline UkraineAdditionalInfo& WithUkraineTrnType(UkraineTrnType value) { SetUkraineTrnType(value); return *this;}
     ///@}
   private:
 
-    UkraineTrnType m_ukraineTrnType;
+    UkraineTrnType m_ukraineTrnType{UkraineTrnType::NOT_SET};
     bool m_ukraineTrnTypeHasBeenSet = false;
   };
 

@@ -18,19 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-DynamodbDataSourceConfig::DynamodbDataSourceConfig() : 
-    m_tableNameHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_useCallerCredentials(false),
-    m_useCallerCredentialsHasBeenSet(false),
-    m_deltaSyncConfigHasBeenSet(false),
-    m_versioned(false),
-    m_versionedHasBeenSet(false)
-{
-}
-
 DynamodbDataSourceConfig::DynamodbDataSourceConfig(JsonView jsonValue)
-  : DynamodbDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DynamodbDataSourceConfig& DynamodbDataSourceConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useCallerCredentials"))
   {
     m_useCallerCredentials = jsonValue.GetBool("useCallerCredentials");
-
     m_useCallerCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deltaSyncConfig"))
   {
     m_deltaSyncConfig = jsonValue.GetObject("deltaSyncConfig");
-
     m_deltaSyncConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versioned"))
   {
     m_versioned = jsonValue.GetBool("versioned");
-
     m_versionedHasBeenSet = true;
   }
-
   return *this;
 }
 

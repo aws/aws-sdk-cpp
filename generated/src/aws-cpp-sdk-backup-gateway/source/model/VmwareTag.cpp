@@ -18,15 +18,7 @@ namespace BackupGateway
 namespace Model
 {
 
-VmwareTag::VmwareTag() : 
-    m_vmwareCategoryHasBeenSet(false),
-    m_vmwareTagDescriptionHasBeenSet(false),
-    m_vmwareTagNameHasBeenSet(false)
-{
-}
-
 VmwareTag::VmwareTag(JsonView jsonValue)
-  : VmwareTag()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VmwareTag& VmwareTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VmwareCategory"))
   {
     m_vmwareCategory = jsonValue.GetString("VmwareCategory");
-
     m_vmwareCategoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VmwareTagDescription"))
   {
     m_vmwareTagDescription = jsonValue.GetString("VmwareTagDescription");
-
     m_vmwareTagDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VmwareTagName"))
   {
     m_vmwareTagName = jsonValue.GetString("VmwareTagName");
-
     m_vmwareTagNameHasBeenSet = true;
   }
-
   return *this;
 }
 

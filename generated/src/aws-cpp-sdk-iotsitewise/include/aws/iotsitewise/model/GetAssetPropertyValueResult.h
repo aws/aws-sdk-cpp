@@ -28,7 +28,7 @@ namespace Model
   class GetAssetPropertyValueResult
   {
   public:
-    AWS_IOTSITEWISE_API GetAssetPropertyValueResult();
+    AWS_IOTSITEWISE_API GetAssetPropertyValueResult() = default;
     AWS_IOTSITEWISE_API GetAssetPropertyValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API GetAssetPropertyValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The current asset property value.</p>
      */
-    inline const AssetPropertyValue& GetPropertyValue() const{ return m_propertyValue; }
-    inline void SetPropertyValue(const AssetPropertyValue& value) { m_propertyValue = value; }
-    inline void SetPropertyValue(AssetPropertyValue&& value) { m_propertyValue = std::move(value); }
-    inline GetAssetPropertyValueResult& WithPropertyValue(const AssetPropertyValue& value) { SetPropertyValue(value); return *this;}
-    inline GetAssetPropertyValueResult& WithPropertyValue(AssetPropertyValue&& value) { SetPropertyValue(std::move(value)); return *this;}
+    inline const AssetPropertyValue& GetPropertyValue() const { return m_propertyValue; }
+    template<typename PropertyValueT = AssetPropertyValue>
+    void SetPropertyValue(PropertyValueT&& value) { m_propertyValueHasBeenSet = true; m_propertyValue = std::forward<PropertyValueT>(value); }
+    template<typename PropertyValueT = AssetPropertyValue>
+    GetAssetPropertyValueResult& WithPropertyValue(PropertyValueT&& value) { SetPropertyValue(std::forward<PropertyValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAssetPropertyValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAssetPropertyValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAssetPropertyValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAssetPropertyValueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AssetPropertyValue m_propertyValue;
+    bool m_propertyValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

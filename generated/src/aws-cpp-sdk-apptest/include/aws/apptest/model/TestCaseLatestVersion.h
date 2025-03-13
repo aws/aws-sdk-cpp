@@ -32,7 +32,7 @@ namespace Model
   class TestCaseLatestVersion
   {
   public:
-    AWS_APPTEST_API TestCaseLatestVersion();
+    AWS_APPTEST_API TestCaseLatestVersion() = default;
     AWS_APPTEST_API TestCaseLatestVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TestCaseLatestVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The version of the test case latest version.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline TestCaseLatestVersion& WithVersion(int value) { SetVersion(value); return *this;}
@@ -52,33 +52,29 @@ namespace Model
     /**
      * <p>The status of the test case latest version.</p>
      */
-    inline const TestCaseLifecycle& GetStatus() const{ return m_status; }
+    inline TestCaseLifecycle GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TestCaseLifecycle& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TestCaseLifecycle&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TestCaseLatestVersion& WithStatus(const TestCaseLifecycle& value) { SetStatus(value); return *this;}
-    inline TestCaseLatestVersion& WithStatus(TestCaseLifecycle&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TestCaseLifecycle value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TestCaseLatestVersion& WithStatus(TestCaseLifecycle value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status reason of the test case latest version.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline TestCaseLatestVersion& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline TestCaseLatestVersion& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline TestCaseLatestVersion& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    TestCaseLatestVersion& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
   private:
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
 
-    TestCaseLifecycle m_status;
+    TestCaseLifecycle m_status{TestCaseLifecycle::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;

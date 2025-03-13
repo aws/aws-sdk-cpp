@@ -38,7 +38,7 @@ namespace Model
   class FirewallStatus
   {
   public:
-    AWS_NETWORKFIREWALL_API FirewallStatus();
+    AWS_NETWORKFIREWALL_API FirewallStatus() = default;
     AWS_NETWORKFIREWALL_API FirewallStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API FirewallStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * <code>Status</code> values for all of the configured subnets are
      * <code>READY</code>. </p>
      */
-    inline const FirewallStatusValue& GetStatus() const{ return m_status; }
+    inline FirewallStatusValue GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FirewallStatusValue& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FirewallStatusValue&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FirewallStatus& WithStatus(const FirewallStatusValue& value) { SetStatus(value); return *this;}
-    inline FirewallStatus& WithStatus(FirewallStatusValue&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FirewallStatusValue value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FirewallStatus& WithStatus(FirewallStatusValue value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,10 @@ namespace Model
      * indicate that the firewall is ready. The <code>Status</code> setting indicates
      * firewall readiness.</p>
      */
-    inline const ConfigurationSyncState& GetConfigurationSyncStateSummary() const{ return m_configurationSyncStateSummary; }
+    inline ConfigurationSyncState GetConfigurationSyncStateSummary() const { return m_configurationSyncStateSummary; }
     inline bool ConfigurationSyncStateSummaryHasBeenSet() const { return m_configurationSyncStateSummaryHasBeenSet; }
-    inline void SetConfigurationSyncStateSummary(const ConfigurationSyncState& value) { m_configurationSyncStateSummaryHasBeenSet = true; m_configurationSyncStateSummary = value; }
-    inline void SetConfigurationSyncStateSummary(ConfigurationSyncState&& value) { m_configurationSyncStateSummaryHasBeenSet = true; m_configurationSyncStateSummary = std::move(value); }
-    inline FirewallStatus& WithConfigurationSyncStateSummary(const ConfigurationSyncState& value) { SetConfigurationSyncStateSummary(value); return *this;}
-    inline FirewallStatus& WithConfigurationSyncStateSummary(ConfigurationSyncState&& value) { SetConfigurationSyncStateSummary(std::move(value)); return *this;}
+    inline void SetConfigurationSyncStateSummary(ConfigurationSyncState value) { m_configurationSyncStateSummaryHasBeenSet = true; m_configurationSyncStateSummary = value; }
+    inline FirewallStatus& WithConfigurationSyncStateSummary(ConfigurationSyncState value) { SetConfigurationSyncStateSummary(value); return *this;}
     ///@}
 
     ///@{
@@ -90,18 +86,16 @@ namespace Model
      * the <code>ConfigurationSyncStateSummary</code> and <code>Status</code>, broken
      * down by zone and configuration object. </p>
      */
-    inline const Aws::Map<Aws::String, SyncState>& GetSyncStates() const{ return m_syncStates; }
+    inline const Aws::Map<Aws::String, SyncState>& GetSyncStates() const { return m_syncStates; }
     inline bool SyncStatesHasBeenSet() const { return m_syncStatesHasBeenSet; }
-    inline void SetSyncStates(const Aws::Map<Aws::String, SyncState>& value) { m_syncStatesHasBeenSet = true; m_syncStates = value; }
-    inline void SetSyncStates(Aws::Map<Aws::String, SyncState>&& value) { m_syncStatesHasBeenSet = true; m_syncStates = std::move(value); }
-    inline FirewallStatus& WithSyncStates(const Aws::Map<Aws::String, SyncState>& value) { SetSyncStates(value); return *this;}
-    inline FirewallStatus& WithSyncStates(Aws::Map<Aws::String, SyncState>&& value) { SetSyncStates(std::move(value)); return *this;}
-    inline FirewallStatus& AddSyncStates(const Aws::String& key, const SyncState& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(key, value); return *this; }
-    inline FirewallStatus& AddSyncStates(Aws::String&& key, const SyncState& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(std::move(key), value); return *this; }
-    inline FirewallStatus& AddSyncStates(const Aws::String& key, SyncState&& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(key, std::move(value)); return *this; }
-    inline FirewallStatus& AddSyncStates(Aws::String&& key, SyncState&& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(std::move(key), std::move(value)); return *this; }
-    inline FirewallStatus& AddSyncStates(const char* key, SyncState&& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(key, std::move(value)); return *this; }
-    inline FirewallStatus& AddSyncStates(const char* key, const SyncState& value) { m_syncStatesHasBeenSet = true; m_syncStates.emplace(key, value); return *this; }
+    template<typename SyncStatesT = Aws::Map<Aws::String, SyncState>>
+    void SetSyncStates(SyncStatesT&& value) { m_syncStatesHasBeenSet = true; m_syncStates = std::forward<SyncStatesT>(value); }
+    template<typename SyncStatesT = Aws::Map<Aws::String, SyncState>>
+    FirewallStatus& WithSyncStates(SyncStatesT&& value) { SetSyncStates(std::forward<SyncStatesT>(value)); return *this;}
+    template<typename SyncStatesKeyT = Aws::String, typename SyncStatesValueT = SyncState>
+    FirewallStatus& AddSyncStates(SyncStatesKeyT&& key, SyncStatesValueT&& value) {
+      m_syncStatesHasBeenSet = true; m_syncStates.emplace(std::forward<SyncStatesKeyT>(key), std::forward<SyncStatesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -111,19 +105,19 @@ namespace Model
      * aggregated count of all of the resources used by all of the reference sets in a
      * firewall.</p>
      */
-    inline const CapacityUsageSummary& GetCapacityUsageSummary() const{ return m_capacityUsageSummary; }
+    inline const CapacityUsageSummary& GetCapacityUsageSummary() const { return m_capacityUsageSummary; }
     inline bool CapacityUsageSummaryHasBeenSet() const { return m_capacityUsageSummaryHasBeenSet; }
-    inline void SetCapacityUsageSummary(const CapacityUsageSummary& value) { m_capacityUsageSummaryHasBeenSet = true; m_capacityUsageSummary = value; }
-    inline void SetCapacityUsageSummary(CapacityUsageSummary&& value) { m_capacityUsageSummaryHasBeenSet = true; m_capacityUsageSummary = std::move(value); }
-    inline FirewallStatus& WithCapacityUsageSummary(const CapacityUsageSummary& value) { SetCapacityUsageSummary(value); return *this;}
-    inline FirewallStatus& WithCapacityUsageSummary(CapacityUsageSummary&& value) { SetCapacityUsageSummary(std::move(value)); return *this;}
+    template<typename CapacityUsageSummaryT = CapacityUsageSummary>
+    void SetCapacityUsageSummary(CapacityUsageSummaryT&& value) { m_capacityUsageSummaryHasBeenSet = true; m_capacityUsageSummary = std::forward<CapacityUsageSummaryT>(value); }
+    template<typename CapacityUsageSummaryT = CapacityUsageSummary>
+    FirewallStatus& WithCapacityUsageSummary(CapacityUsageSummaryT&& value) { SetCapacityUsageSummary(std::forward<CapacityUsageSummaryT>(value)); return *this;}
     ///@}
   private:
 
-    FirewallStatusValue m_status;
+    FirewallStatusValue m_status{FirewallStatusValue::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ConfigurationSyncState m_configurationSyncStateSummary;
+    ConfigurationSyncState m_configurationSyncStateSummary{ConfigurationSyncState::NOT_SET};
     bool m_configurationSyncStateSummaryHasBeenSet = false;
 
     Aws::Map<Aws::String, SyncState> m_syncStates;

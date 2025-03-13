@@ -18,18 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-ConfigurationProfileSummary::ConfigurationProfileSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_locationUriHasBeenSet(false),
-    m_validatorTypesHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ConfigurationProfileSummary::ConfigurationProfileSummary(JsonView jsonValue)
-  : ConfigurationProfileSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ConfigurationProfileSummary& ConfigurationProfileSummary::operator =(JsonView js
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
     m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidatorTypes"))
   {
     Aws::Utils::Array<JsonView> validatorTypesJsonList = jsonValue.GetArray("ValidatorTypes");
@@ -73,14 +54,11 @@ ConfigurationProfileSummary& ConfigurationProfileSummary::operator =(JsonView js
     }
     m_validatorTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

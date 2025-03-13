@@ -12,16 +12,6 @@ using namespace Aws::BedrockRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAsyncInvokeRequest::StartAsyncInvokeRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_modelIdHasBeenSet(false),
-    m_modelInputHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartAsyncInvokeRequest::SerializePayload() const
 {
   JsonValue payload;

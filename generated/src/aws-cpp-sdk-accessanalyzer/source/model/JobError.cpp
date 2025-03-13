@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-JobError::JobError() : 
-    m_code(JobErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 JobError::JobError(JsonView jsonValue)
-  : JobError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ JobError& JobError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = JobErrorCodeMapper::GetJobErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

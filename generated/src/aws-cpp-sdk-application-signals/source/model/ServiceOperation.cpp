@@ -18,14 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceOperation::ServiceOperation() : 
-    m_nameHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
-{
-}
-
 ServiceOperation::ServiceOperation(JsonView jsonValue)
-  : ServiceOperation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ServiceOperation& ServiceOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricReferences"))
   {
     Aws::Utils::Array<JsonView> metricReferencesJsonList = jsonValue.GetArray("MetricReferences");
@@ -48,7 +39,6 @@ ServiceOperation& ServiceOperation::operator =(JsonView jsonValue)
     }
     m_metricReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

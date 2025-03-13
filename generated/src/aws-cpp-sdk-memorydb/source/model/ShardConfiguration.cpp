@@ -18,15 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ShardConfiguration::ShardConfiguration() : 
-    m_slotsHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false)
-{
-}
-
 ShardConfiguration::ShardConfiguration(JsonView jsonValue)
-  : ShardConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ShardConfiguration& ShardConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Slots"))
   {
     m_slots = jsonValue.GetString("Slots");
-
     m_slotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaCount"))
   {
     m_replicaCount = jsonValue.GetInteger("ReplicaCount");
-
     m_replicaCountHasBeenSet = true;
   }
-
   return *this;
 }
 

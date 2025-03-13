@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetControlLayoutConfiguration::SheetControlLayoutConfiguration() : 
-    m_gridLayoutHasBeenSet(false)
-{
-}
-
 SheetControlLayoutConfiguration::SheetControlLayoutConfiguration(JsonView jsonValue)
-  : SheetControlLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SheetControlLayoutConfiguration& SheetControlLayoutConfiguration::operator =(Jso
   if(jsonValue.ValueExists("GridLayout"))
   {
     m_gridLayout = jsonValue.GetObject("GridLayout");
-
     m_gridLayoutHasBeenSet = true;
   }
-
   return *this;
 }
 

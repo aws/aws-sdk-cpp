@@ -12,13 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PollForActivityTaskRequest::PollForActivityTaskRequest() : 
-    m_domainHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_identityHasBeenSet(false)
-{
-}
-
 Aws::String PollForActivityTaskRequest::SerializePayload() const
 {
   JsonValue payload;

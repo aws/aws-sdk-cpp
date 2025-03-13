@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Typography::Typography() : 
-    m_fontFamiliesHasBeenSet(false)
-{
-}
-
 Typography::Typography(JsonView jsonValue)
-  : Typography()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Typography& Typography::operator =(JsonView jsonValue)
     }
     m_fontFamiliesHasBeenSet = true;
   }
-
   return *this;
 }
 

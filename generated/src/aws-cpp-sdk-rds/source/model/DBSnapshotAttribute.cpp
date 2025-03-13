@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSnapshotAttribute::DBSnapshotAttribute() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValuesHasBeenSet(false)
-{
-}
-
 DBSnapshotAttribute::DBSnapshotAttribute(const XmlNode& xmlNode)
-  : DBSnapshotAttribute()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ DBSnapshotAttribute& DBSnapshotAttribute::operator =(const XmlNode& xmlNode)
     {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
+       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValuesNode = resultNode.FirstChild("AttributeValues");
     if(!attributeValuesNode.IsNull())
     {
       XmlNode attributeValuesMember = attributeValuesNode.FirstChild("AttributeValue");
+      m_attributeValuesHasBeenSet = !attributeValuesMember.IsNull();
       while(!attributeValuesMember.IsNull())
       {
         m_attributeValues.push_back(attributeValuesMember.GetText());
         attributeValuesMember = attributeValuesMember.NextNode("AttributeValue");
       }
 
-      m_attributeValuesHasBeenSet = true;
+       m_attributeValuesHasBeenSet = true;
     }
   }
 

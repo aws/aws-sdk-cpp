@@ -28,7 +28,7 @@ namespace Model
   class GetRoleCredentialsResult
   {
   public:
-    AWS_SSO_API GetRoleCredentialsResult();
+    AWS_SSO_API GetRoleCredentialsResult() = default;
     AWS_SSO_API GetRoleCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSO_API GetRoleCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The credentials for the role that is assigned to the user.</p>
      */
-    inline const RoleCredentials& GetRoleCredentials() const{ return m_roleCredentials; }
-    inline void SetRoleCredentials(const RoleCredentials& value) { m_roleCredentials = value; }
-    inline void SetRoleCredentials(RoleCredentials&& value) { m_roleCredentials = std::move(value); }
-    inline GetRoleCredentialsResult& WithRoleCredentials(const RoleCredentials& value) { SetRoleCredentials(value); return *this;}
-    inline GetRoleCredentialsResult& WithRoleCredentials(RoleCredentials&& value) { SetRoleCredentials(std::move(value)); return *this;}
+    inline const RoleCredentials& GetRoleCredentials() const { return m_roleCredentials; }
+    template<typename RoleCredentialsT = RoleCredentials>
+    void SetRoleCredentials(RoleCredentialsT&& value) { m_roleCredentialsHasBeenSet = true; m_roleCredentials = std::forward<RoleCredentialsT>(value); }
+    template<typename RoleCredentialsT = RoleCredentials>
+    GetRoleCredentialsResult& WithRoleCredentials(RoleCredentialsT&& value) { SetRoleCredentials(std::forward<RoleCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRoleCredentialsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRoleCredentialsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRoleCredentialsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRoleCredentialsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RoleCredentials m_roleCredentials;
+    bool m_roleCredentialsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

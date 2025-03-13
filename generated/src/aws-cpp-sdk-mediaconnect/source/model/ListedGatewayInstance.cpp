@@ -18,17 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-ListedGatewayInstance::ListedGatewayInstance() : 
-    m_gatewayArnHasBeenSet(false),
-    m_gatewayInstanceArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false)
-{
-}
-
 ListedGatewayInstance::ListedGatewayInstance(JsonView jsonValue)
-  : ListedGatewayInstance()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ListedGatewayInstance& ListedGatewayInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("gatewayArn"))
   {
     m_gatewayArn = jsonValue.GetString("gatewayArn");
-
     m_gatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayInstanceArn"))
   {
     m_gatewayInstanceArn = jsonValue.GetString("gatewayInstanceArn");
-
     m_gatewayInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceState"))
   {
     m_instanceState = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("instanceState"));
-
     m_instanceStateHasBeenSet = true;
   }
-
   return *this;
 }
 

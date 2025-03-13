@@ -33,7 +33,7 @@ namespace Model
   class LexBotConfig
   {
   public:
-    AWS_CONNECT_API LexBotConfig();
+    AWS_CONNECT_API LexBotConfig() = default;
     AWS_CONNECT_API LexBotConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API LexBotConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
 
     ///@{
     
-    inline const LexBot& GetLexBot() const{ return m_lexBot; }
+    inline const LexBot& GetLexBot() const { return m_lexBot; }
     inline bool LexBotHasBeenSet() const { return m_lexBotHasBeenSet; }
-    inline void SetLexBot(const LexBot& value) { m_lexBotHasBeenSet = true; m_lexBot = value; }
-    inline void SetLexBot(LexBot&& value) { m_lexBotHasBeenSet = true; m_lexBot = std::move(value); }
-    inline LexBotConfig& WithLexBot(const LexBot& value) { SetLexBot(value); return *this;}
-    inline LexBotConfig& WithLexBot(LexBot&& value) { SetLexBot(std::move(value)); return *this;}
+    template<typename LexBotT = LexBot>
+    void SetLexBot(LexBotT&& value) { m_lexBotHasBeenSet = true; m_lexBot = std::forward<LexBotT>(value); }
+    template<typename LexBotT = LexBot>
+    LexBotConfig& WithLexBot(LexBotT&& value) { SetLexBot(std::forward<LexBotT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information of an Amazon Lex V2 bot.</p>
      */
-    inline const LexV2Bot& GetLexV2Bot() const{ return m_lexV2Bot; }
+    inline const LexV2Bot& GetLexV2Bot() const { return m_lexV2Bot; }
     inline bool LexV2BotHasBeenSet() const { return m_lexV2BotHasBeenSet; }
-    inline void SetLexV2Bot(const LexV2Bot& value) { m_lexV2BotHasBeenSet = true; m_lexV2Bot = value; }
-    inline void SetLexV2Bot(LexV2Bot&& value) { m_lexV2BotHasBeenSet = true; m_lexV2Bot = std::move(value); }
-    inline LexBotConfig& WithLexV2Bot(const LexV2Bot& value) { SetLexV2Bot(value); return *this;}
-    inline LexBotConfig& WithLexV2Bot(LexV2Bot&& value) { SetLexV2Bot(std::move(value)); return *this;}
+    template<typename LexV2BotT = LexV2Bot>
+    void SetLexV2Bot(LexV2BotT&& value) { m_lexV2BotHasBeenSet = true; m_lexV2Bot = std::forward<LexV2BotT>(value); }
+    template<typename LexV2BotT = LexV2Bot>
+    LexBotConfig& WithLexV2Bot(LexV2BotT&& value) { SetLexV2Bot(std::forward<LexV2BotT>(value)); return *this;}
     ///@}
   private:
 

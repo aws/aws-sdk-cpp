@@ -18,18 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AgentsAlreadyRunningAssessmentException::AgentsAlreadyRunningAssessmentException() : 
-    m_messageHasBeenSet(false),
-    m_agentsHasBeenSet(false),
-    m_agentsTruncated(false),
-    m_agentsTruncatedHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
-{
-}
-
 AgentsAlreadyRunningAssessmentException::AgentsAlreadyRunningAssessmentException(JsonView jsonValue)
-  : AgentsAlreadyRunningAssessmentException()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ AgentsAlreadyRunningAssessmentException& AgentsAlreadyRunningAssessmentException
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agents"))
   {
     Aws::Utils::Array<JsonView> agentsJsonList = jsonValue.GetArray("agents");
@@ -52,21 +39,16 @@ AgentsAlreadyRunningAssessmentException& AgentsAlreadyRunningAssessmentException
     }
     m_agentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentsTruncated"))
   {
     m_agentsTruncated = jsonValue.GetBool("agentsTruncated");
-
     m_agentsTruncatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canRetry"))
   {
     m_canRetry = jsonValue.GetBool("canRetry");
-
     m_canRetryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestMetricFilterRequest::TestMetricFilterRequest() : 
-    m_filterPatternHasBeenSet(false),
-    m_logEventMessagesHasBeenSet(false)
-{
-}
-
 Aws::String TestMetricFilterRequest::SerializePayload() const
 {
   JsonValue payload;

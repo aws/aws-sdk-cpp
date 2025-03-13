@@ -24,7 +24,7 @@ namespace Model
   class CreateCustomKeyStoreRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API CreateCustomKeyStoreRequest();
+    AWS_KMS_API CreateCustomKeyStoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * sensitive information in this field. This field may be displayed in plaintext in
      * CloudTrail logs and other output.</p> 
      */
-    inline const Aws::String& GetCustomKeyStoreName() const{ return m_customKeyStoreName; }
+    inline const Aws::String& GetCustomKeyStoreName() const { return m_customKeyStoreName; }
     inline bool CustomKeyStoreNameHasBeenSet() const { return m_customKeyStoreNameHasBeenSet; }
-    inline void SetCustomKeyStoreName(const Aws::String& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = value; }
-    inline void SetCustomKeyStoreName(Aws::String&& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = std::move(value); }
-    inline void SetCustomKeyStoreName(const char* value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(const Aws::String& value) { SetCustomKeyStoreName(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(Aws::String&& value) { SetCustomKeyStoreName(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(const char* value) { SetCustomKeyStoreName(value); return *this;}
+    template<typename CustomKeyStoreNameT = Aws::String>
+    void SetCustomKeyStoreName(CustomKeyStoreNameT&& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = std::forward<CustomKeyStoreNameT>(value); }
+    template<typename CustomKeyStoreNameT = Aws::String>
+    CreateCustomKeyStoreRequest& WithCustomKeyStoreName(CustomKeyStoreNameT&& value) { SetCustomKeyStoreName(std::forward<CustomKeyStoreNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation.</p>
      */
-    inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
+    inline const Aws::String& GetCloudHsmClusterId() const { return m_cloudHsmClusterId; }
     inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
-    inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
-    inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
-    inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithCloudHsmClusterId(const char* value) { SetCloudHsmClusterId(value); return *this;}
+    template<typename CloudHsmClusterIdT = Aws::String>
+    void SetCloudHsmClusterId(CloudHsmClusterIdT&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::forward<CloudHsmClusterIdT>(value); }
+    template<typename CloudHsmClusterIdT = Aws::String>
+    CreateCustomKeyStoreRequest& WithCloudHsmClusterId(CloudHsmClusterIdT&& value) { SetCloudHsmClusterId(std::forward<CloudHsmClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
-    inline const Aws::String& GetTrustAnchorCertificate() const{ return m_trustAnchorCertificate; }
+    inline const Aws::String& GetTrustAnchorCertificate() const { return m_trustAnchorCertificate; }
     inline bool TrustAnchorCertificateHasBeenSet() const { return m_trustAnchorCertificateHasBeenSet; }
-    inline void SetTrustAnchorCertificate(const Aws::String& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = value; }
-    inline void SetTrustAnchorCertificate(Aws::String&& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = std::move(value); }
-    inline void SetTrustAnchorCertificate(const char* value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithTrustAnchorCertificate(const Aws::String& value) { SetTrustAnchorCertificate(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithTrustAnchorCertificate(Aws::String&& value) { SetTrustAnchorCertificate(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithTrustAnchorCertificate(const char* value) { SetTrustAnchorCertificate(value); return *this;}
+    template<typename TrustAnchorCertificateT = Aws::String>
+    void SetTrustAnchorCertificate(TrustAnchorCertificateT&& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = std::forward<TrustAnchorCertificateT>(value); }
+    template<typename TrustAnchorCertificateT = Aws::String>
+    CreateCustomKeyStoreRequest& WithTrustAnchorCertificate(TrustAnchorCertificateT&& value) { SetTrustAnchorCertificate(std::forward<TrustAnchorCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +102,12 @@ namespace Model
      * case sensitive.</p> <p>This parameter tells KMS the <code>kmsuser</code> account
      * password; it does not change the password in the CloudHSM cluster.</p>
      */
-    inline const Aws::String& GetKeyStorePassword() const{ return m_keyStorePassword; }
+    inline const Aws::String& GetKeyStorePassword() const { return m_keyStorePassword; }
     inline bool KeyStorePasswordHasBeenSet() const { return m_keyStorePasswordHasBeenSet; }
-    inline void SetKeyStorePassword(const Aws::String& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = value; }
-    inline void SetKeyStorePassword(Aws::String&& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = std::move(value); }
-    inline void SetKeyStorePassword(const char* value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithKeyStorePassword(const Aws::String& value) { SetKeyStorePassword(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithKeyStorePassword(Aws::String&& value) { SetKeyStorePassword(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithKeyStorePassword(const char* value) { SetKeyStorePassword(value); return *this;}
+    template<typename KeyStorePasswordT = Aws::String>
+    void SetKeyStorePassword(KeyStorePasswordT&& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = std::forward<KeyStorePasswordT>(value); }
+    template<typename KeyStorePasswordT = Aws::String>
+    CreateCustomKeyStoreRequest& WithKeyStorePassword(KeyStorePasswordT&& value) { SetKeyStorePassword(std::forward<KeyStorePasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +119,10 @@ namespace Model
      * <code>EXTERNAL_KEY_STORE</code>. You cannot change this property after the key
      * store is created.</p>
      */
-    inline const CustomKeyStoreType& GetCustomKeyStoreType() const{ return m_customKeyStoreType; }
+    inline CustomKeyStoreType GetCustomKeyStoreType() const { return m_customKeyStoreType; }
     inline bool CustomKeyStoreTypeHasBeenSet() const { return m_customKeyStoreTypeHasBeenSet; }
-    inline void SetCustomKeyStoreType(const CustomKeyStoreType& value) { m_customKeyStoreTypeHasBeenSet = true; m_customKeyStoreType = value; }
-    inline void SetCustomKeyStoreType(CustomKeyStoreType&& value) { m_customKeyStoreTypeHasBeenSet = true; m_customKeyStoreType = std::move(value); }
-    inline CreateCustomKeyStoreRequest& WithCustomKeyStoreType(const CustomKeyStoreType& value) { SetCustomKeyStoreType(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithCustomKeyStoreType(CustomKeyStoreType&& value) { SetCustomKeyStoreType(std::move(value)); return *this;}
+    inline void SetCustomKeyStoreType(CustomKeyStoreType value) { m_customKeyStoreTypeHasBeenSet = true; m_customKeyStoreType = value; }
+    inline CreateCustomKeyStoreRequest& WithCustomKeyStoreType(CustomKeyStoreType value) { SetCustomKeyStoreType(value); return *this;}
     ///@}
 
     ///@{
@@ -165,14 +155,12 @@ namespace Model
      * <code>VPC_ENDPOINT_SERVICE</code> connectivity (private DNS name) must be unique
      * in the Amazon Web Services account and Region.</p> </li> </ul>
      */
-    inline const Aws::String& GetXksProxyUriEndpoint() const{ return m_xksProxyUriEndpoint; }
+    inline const Aws::String& GetXksProxyUriEndpoint() const { return m_xksProxyUriEndpoint; }
     inline bool XksProxyUriEndpointHasBeenSet() const { return m_xksProxyUriEndpointHasBeenSet; }
-    inline void SetXksProxyUriEndpoint(const Aws::String& value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint = value; }
-    inline void SetXksProxyUriEndpoint(Aws::String&& value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint = std::move(value); }
-    inline void SetXksProxyUriEndpoint(const char* value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithXksProxyUriEndpoint(const Aws::String& value) { SetXksProxyUriEndpoint(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyUriEndpoint(Aws::String&& value) { SetXksProxyUriEndpoint(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyUriEndpoint(const char* value) { SetXksProxyUriEndpoint(value); return *this;}
+    template<typename XksProxyUriEndpointT = Aws::String>
+    void SetXksProxyUriEndpoint(XksProxyUriEndpointT&& value) { m_xksProxyUriEndpointHasBeenSet = true; m_xksProxyUriEndpoint = std::forward<XksProxyUriEndpointT>(value); }
+    template<typename XksProxyUriEndpointT = Aws::String>
+    CreateCustomKeyStoreRequest& WithXksProxyUriEndpoint(XksProxyUriEndpointT&& value) { SetXksProxyUriEndpoint(std::forward<XksProxyUriEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +177,12 @@ namespace Model
      * <code>XksProxyUriPath</code> values must be unique in the Amazon Web Services
      * account and Region.</p> </li> </ul>
      */
-    inline const Aws::String& GetXksProxyUriPath() const{ return m_xksProxyUriPath; }
+    inline const Aws::String& GetXksProxyUriPath() const { return m_xksProxyUriPath; }
     inline bool XksProxyUriPathHasBeenSet() const { return m_xksProxyUriPathHasBeenSet; }
-    inline void SetXksProxyUriPath(const Aws::String& value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath = value; }
-    inline void SetXksProxyUriPath(Aws::String&& value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath = std::move(value); }
-    inline void SetXksProxyUriPath(const char* value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithXksProxyUriPath(const Aws::String& value) { SetXksProxyUriPath(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyUriPath(Aws::String&& value) { SetXksProxyUriPath(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyUriPath(const char* value) { SetXksProxyUriPath(value); return *this;}
+    template<typename XksProxyUriPathT = Aws::String>
+    void SetXksProxyUriPath(XksProxyUriPathT&& value) { m_xksProxyUriPathHasBeenSet = true; m_xksProxyUriPath = std::forward<XksProxyUriPathT>(value); }
+    template<typename XksProxyUriPathT = Aws::String>
+    CreateCustomKeyStoreRequest& WithXksProxyUriPath(XksProxyUriPathT&& value) { SetXksProxyUriPath(std::forward<XksProxyUriPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,14 +200,12 @@ namespace Model
      * external key store must have its own VPC endpoint service and private DNS
      * name.</p> </li> </ul>
      */
-    inline const Aws::String& GetXksProxyVpcEndpointServiceName() const{ return m_xksProxyVpcEndpointServiceName; }
+    inline const Aws::String& GetXksProxyVpcEndpointServiceName() const { return m_xksProxyVpcEndpointServiceName; }
     inline bool XksProxyVpcEndpointServiceNameHasBeenSet() const { return m_xksProxyVpcEndpointServiceNameHasBeenSet; }
-    inline void SetXksProxyVpcEndpointServiceName(const Aws::String& value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName = value; }
-    inline void SetXksProxyVpcEndpointServiceName(Aws::String&& value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName = std::move(value); }
-    inline void SetXksProxyVpcEndpointServiceName(const char* value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName.assign(value); }
-    inline CreateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(const Aws::String& value) { SetXksProxyVpcEndpointServiceName(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(Aws::String&& value) { SetXksProxyVpcEndpointServiceName(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(const char* value) { SetXksProxyVpcEndpointServiceName(value); return *this;}
+    template<typename XksProxyVpcEndpointServiceNameT = Aws::String>
+    void SetXksProxyVpcEndpointServiceName(XksProxyVpcEndpointServiceNameT&& value) { m_xksProxyVpcEndpointServiceNameHasBeenSet = true; m_xksProxyVpcEndpointServiceName = std::forward<XksProxyVpcEndpointServiceNameT>(value); }
+    template<typename XksProxyVpcEndpointServiceNameT = Aws::String>
+    CreateCustomKeyStoreRequest& WithXksProxyVpcEndpointServiceName(XksProxyVpcEndpointServiceNameT&& value) { SetXksProxyVpcEndpointServiceName(std::forward<XksProxyVpcEndpointServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,12 +226,12 @@ namespace Model
      * If you rotate your proxy authentication credential, use the
      * <a>UpdateCustomKeyStore</a> operation to provide the new credential to KMS.</p>
      */
-    inline const XksProxyAuthenticationCredentialType& GetXksProxyAuthenticationCredential() const{ return m_xksProxyAuthenticationCredential; }
+    inline const XksProxyAuthenticationCredentialType& GetXksProxyAuthenticationCredential() const { return m_xksProxyAuthenticationCredential; }
     inline bool XksProxyAuthenticationCredentialHasBeenSet() const { return m_xksProxyAuthenticationCredentialHasBeenSet; }
-    inline void SetXksProxyAuthenticationCredential(const XksProxyAuthenticationCredentialType& value) { m_xksProxyAuthenticationCredentialHasBeenSet = true; m_xksProxyAuthenticationCredential = value; }
-    inline void SetXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialType&& value) { m_xksProxyAuthenticationCredentialHasBeenSet = true; m_xksProxyAuthenticationCredential = std::move(value); }
-    inline CreateCustomKeyStoreRequest& WithXksProxyAuthenticationCredential(const XksProxyAuthenticationCredentialType& value) { SetXksProxyAuthenticationCredential(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialType&& value) { SetXksProxyAuthenticationCredential(std::move(value)); return *this;}
+    template<typename XksProxyAuthenticationCredentialT = XksProxyAuthenticationCredentialType>
+    void SetXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialT&& value) { m_xksProxyAuthenticationCredentialHasBeenSet = true; m_xksProxyAuthenticationCredential = std::forward<XksProxyAuthenticationCredentialT>(value); }
+    template<typename XksProxyAuthenticationCredentialT = XksProxyAuthenticationCredentialType>
+    CreateCustomKeyStoreRequest& WithXksProxyAuthenticationCredential(XksProxyAuthenticationCredentialT&& value) { SetXksProxyAuthenticationCredential(std::forward<XksProxyAuthenticationCredentialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,12 +257,10 @@ namespace Model
      * within the VPC or outside of Amazon Web Services such as in your corporate data
      * center.</p>
      */
-    inline const XksProxyConnectivityType& GetXksProxyConnectivity() const{ return m_xksProxyConnectivity; }
+    inline XksProxyConnectivityType GetXksProxyConnectivity() const { return m_xksProxyConnectivity; }
     inline bool XksProxyConnectivityHasBeenSet() const { return m_xksProxyConnectivityHasBeenSet; }
-    inline void SetXksProxyConnectivity(const XksProxyConnectivityType& value) { m_xksProxyConnectivityHasBeenSet = true; m_xksProxyConnectivity = value; }
-    inline void SetXksProxyConnectivity(XksProxyConnectivityType&& value) { m_xksProxyConnectivityHasBeenSet = true; m_xksProxyConnectivity = std::move(value); }
-    inline CreateCustomKeyStoreRequest& WithXksProxyConnectivity(const XksProxyConnectivityType& value) { SetXksProxyConnectivity(value); return *this;}
-    inline CreateCustomKeyStoreRequest& WithXksProxyConnectivity(XksProxyConnectivityType&& value) { SetXksProxyConnectivity(std::move(value)); return *this;}
+    inline void SetXksProxyConnectivity(XksProxyConnectivityType value) { m_xksProxyConnectivityHasBeenSet = true; m_xksProxyConnectivity = value; }
+    inline CreateCustomKeyStoreRequest& WithXksProxyConnectivity(XksProxyConnectivityType value) { SetXksProxyConnectivity(value); return *this;}
     ///@}
   private:
 
@@ -294,7 +276,7 @@ namespace Model
     Aws::String m_keyStorePassword;
     bool m_keyStorePasswordHasBeenSet = false;
 
-    CustomKeyStoreType m_customKeyStoreType;
+    CustomKeyStoreType m_customKeyStoreType{CustomKeyStoreType::NOT_SET};
     bool m_customKeyStoreTypeHasBeenSet = false;
 
     Aws::String m_xksProxyUriEndpoint;
@@ -309,7 +291,7 @@ namespace Model
     XksProxyAuthenticationCredentialType m_xksProxyAuthenticationCredential;
     bool m_xksProxyAuthenticationCredentialHasBeenSet = false;
 
-    XksProxyConnectivityType m_xksProxyConnectivity;
+    XksProxyConnectivityType m_xksProxyConnectivity{XksProxyConnectivityType::NOT_SET};
     bool m_xksProxyConnectivityHasBeenSet = false;
   };
 

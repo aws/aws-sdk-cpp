@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SnapshotRecycleBinInfo::SnapshotRecycleBinInfo() : 
-    m_snapshotIdHasBeenSet(false),
-    m_recycleBinEnterTimeHasBeenSet(false),
-    m_recycleBinExitTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_volumeIdHasBeenSet(false)
-{
-}
-
 SnapshotRecycleBinInfo::SnapshotRecycleBinInfo(const XmlNode& xmlNode)
-  : SnapshotRecycleBinInfo()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ SnapshotRecycleBinInfo& SnapshotRecycleBinInfo::operator =(const XmlNode& xmlNod
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode recycleBinEnterTimeNode = resultNode.FirstChild("recycleBinEnterTime");
     if(!recycleBinEnterTimeNode.IsNull())
     {
       m_recycleBinEnterTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinEnterTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_recycleBinEnterTimeHasBeenSet = true;
+       m_recycleBinEnterTimeHasBeenSet = true;
     }
     XmlNode recycleBinExitTimeNode = resultNode.FirstChild("recycleBinExitTime");
     if(!recycleBinExitTimeNode.IsNull())
     {
       m_recycleBinExitTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recycleBinExitTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_recycleBinExitTimeHasBeenSet = true;
+       m_recycleBinExitTimeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+       m_volumeIdHasBeenSet = true;
     }
   }
 

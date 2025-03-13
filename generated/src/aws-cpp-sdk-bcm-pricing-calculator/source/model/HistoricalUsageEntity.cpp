@@ -18,19 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-HistoricalUsageEntity::HistoricalUsageEntity() : 
-    m_serviceCodeHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_billIntervalHasBeenSet(false),
-    m_filterExpressionHasBeenSet(false)
-{
-}
-
 HistoricalUsageEntity::HistoricalUsageEntity(JsonView jsonValue)
-  : HistoricalUsageEntity()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ HistoricalUsageEntity& HistoricalUsageEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = jsonValue.GetString("serviceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetString("operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billInterval"))
   {
     m_billInterval = jsonValue.GetObject("billInterval");
-
     m_billIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterExpression"))
   {
     m_filterExpression = jsonValue.GetObject("filterExpression");
-
     m_filterExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

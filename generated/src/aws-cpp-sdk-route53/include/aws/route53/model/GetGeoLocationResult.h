@@ -34,7 +34,7 @@ namespace Model
   class GetGeoLocationResult
   {
   public:
-    AWS_ROUTE53_API GetGeoLocationResult();
+    AWS_ROUTE53_API GetGeoLocationResult() = default;
     AWS_ROUTE53_API GetGeoLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetGeoLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A complex type that contains the codes and full continent, country, and
      * subdivision names for the specified geolocation code.</p>
      */
-    inline const GeoLocationDetails& GetGeoLocationDetails() const{ return m_geoLocationDetails; }
-    inline void SetGeoLocationDetails(const GeoLocationDetails& value) { m_geoLocationDetails = value; }
-    inline void SetGeoLocationDetails(GeoLocationDetails&& value) { m_geoLocationDetails = std::move(value); }
-    inline GetGeoLocationResult& WithGeoLocationDetails(const GeoLocationDetails& value) { SetGeoLocationDetails(value); return *this;}
-    inline GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetails&& value) { SetGeoLocationDetails(std::move(value)); return *this;}
+    inline const GeoLocationDetails& GetGeoLocationDetails() const { return m_geoLocationDetails; }
+    template<typename GeoLocationDetailsT = GeoLocationDetails>
+    void SetGeoLocationDetails(GeoLocationDetailsT&& value) { m_geoLocationDetailsHasBeenSet = true; m_geoLocationDetails = std::forward<GeoLocationDetailsT>(value); }
+    template<typename GeoLocationDetailsT = GeoLocationDetails>
+    GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetailsT&& value) { SetGeoLocationDetails(std::forward<GeoLocationDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGeoLocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGeoLocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGeoLocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGeoLocationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GeoLocationDetails m_geoLocationDetails;
+    bool m_geoLocationDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

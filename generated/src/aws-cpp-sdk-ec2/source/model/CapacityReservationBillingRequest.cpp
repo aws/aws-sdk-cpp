@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationBillingRequest::CapacityReservationBillingRequest() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_requestedByHasBeenSet(false),
-    m_unusedReservationBillingOwnerIdHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(CapacityReservationBillingRequestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_capacityReservationInfoHasBeenSet(false)
-{
-}
-
 CapacityReservationBillingRequest::CapacityReservationBillingRequest(const XmlNode& xmlNode)
-  : CapacityReservationBillingRequest()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ CapacityReservationBillingRequest& CapacityReservationBillingRequest::operator =
     {
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
+       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode requestedByNode = resultNode.FirstChild("requestedBy");
     if(!requestedByNode.IsNull())
     {
       m_requestedBy = Aws::Utils::Xml::DecodeEscapedXmlText(requestedByNode.GetText());
       m_requestedByHasBeenSet = true;
+       m_requestedByHasBeenSet = true;
     }
     XmlNode unusedReservationBillingOwnerIdNode = resultNode.FirstChild("unusedReservationBillingOwnerId");
     if(!unusedReservationBillingOwnerIdNode.IsNull())
     {
       m_unusedReservationBillingOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(unusedReservationBillingOwnerIdNode.GetText());
       m_unusedReservationBillingOwnerIdHasBeenSet = true;
+       m_unusedReservationBillingOwnerIdHasBeenSet = true;
     }
     XmlNode lastUpdateTimeNode = resultNode.FirstChild("lastUpdateTime");
     if(!lastUpdateTimeNode.IsNull())
     {
       m_lastUpdateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdateTimeHasBeenSet = true;
+       m_lastUpdateTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = CapacityReservationBillingRequestStatusMapper::GetCapacityReservationBillingRequestStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = CapacityReservationBillingRequestStatusMapper::GetCapacityReservationBillingRequestStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode capacityReservationInfoNode = resultNode.FirstChild("capacityReservationInfo");
     if(!capacityReservationInfoNode.IsNull())
     {
       m_capacityReservationInfo = capacityReservationInfoNode;
       m_capacityReservationInfoHasBeenSet = true;
+       m_capacityReservationInfoHasBeenSet = true;
     }
   }
 

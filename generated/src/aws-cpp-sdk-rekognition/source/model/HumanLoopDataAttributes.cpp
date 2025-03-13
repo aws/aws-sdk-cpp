@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-HumanLoopDataAttributes::HumanLoopDataAttributes() : 
-    m_contentClassifiersHasBeenSet(false)
-{
-}
-
 HumanLoopDataAttributes::HumanLoopDataAttributes(JsonView jsonValue)
-  : HumanLoopDataAttributes()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ HumanLoopDataAttributes& HumanLoopDataAttributes::operator =(JsonView jsonValue)
     }
     m_contentClassifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

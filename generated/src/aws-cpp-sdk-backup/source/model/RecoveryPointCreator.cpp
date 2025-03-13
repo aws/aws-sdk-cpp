@@ -18,16 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RecoveryPointCreator::RecoveryPointCreator() : 
-    m_backupPlanIdHasBeenSet(false),
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanVersionHasBeenSet(false),
-    m_backupRuleIdHasBeenSet(false)
-{
-}
-
 RecoveryPointCreator::RecoveryPointCreator(JsonView jsonValue)
-  : RecoveryPointCreator()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RecoveryPointCreator& RecoveryPointCreator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupPlanId"))
   {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");
-
     m_backupPlanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanArn"))
   {
     m_backupPlanArn = jsonValue.GetString("BackupPlanArn");
-
     m_backupPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanVersion"))
   {
     m_backupPlanVersion = jsonValue.GetString("BackupPlanVersion");
-
     m_backupPlanVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupRuleId"))
   {
     m_backupRuleId = jsonValue.GetString("BackupRuleId");
-
     m_backupRuleIdHasBeenSet = true;
   }
-
   return *this;
 }
 

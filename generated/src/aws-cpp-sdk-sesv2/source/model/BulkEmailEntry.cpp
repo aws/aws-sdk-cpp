@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-BulkEmailEntry::BulkEmailEntry() : 
-    m_destinationHasBeenSet(false),
-    m_replacementTagsHasBeenSet(false),
-    m_replacementEmailContentHasBeenSet(false),
-    m_replacementHeadersHasBeenSet(false)
-{
-}
-
 BulkEmailEntry::BulkEmailEntry(JsonView jsonValue)
-  : BulkEmailEntry()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ BulkEmailEntry& BulkEmailEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetObject("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplacementTags"))
   {
     Aws::Utils::Array<JsonView> replacementTagsJsonList = jsonValue.GetArray("ReplacementTags");
@@ -50,14 +39,11 @@ BulkEmailEntry& BulkEmailEntry::operator =(JsonView jsonValue)
     }
     m_replacementTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplacementEmailContent"))
   {
     m_replacementEmailContent = jsonValue.GetObject("ReplacementEmailContent");
-
     m_replacementEmailContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplacementHeaders"))
   {
     Aws::Utils::Array<JsonView> replacementHeadersJsonList = jsonValue.GetArray("ReplacementHeaders");
@@ -67,7 +53,6 @@ BulkEmailEntry& BulkEmailEntry::operator =(JsonView jsonValue)
     }
     m_replacementHeadersHasBeenSet = true;
   }
-
   return *this;
 }
 

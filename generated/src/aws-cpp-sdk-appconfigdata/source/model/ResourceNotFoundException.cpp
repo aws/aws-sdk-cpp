@@ -18,16 +18,7 @@ namespace AppConfigData
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_messageHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_referencedByHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferencedBy"))
   {
     Aws::Map<Aws::String, JsonView> referencedByJsonMap = jsonValue.GetObject("ReferencedBy").GetAllObjects();
@@ -57,7 +44,6 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
     }
     m_referencedByHasBeenSet = true;
   }
-
   return *this;
 }
 

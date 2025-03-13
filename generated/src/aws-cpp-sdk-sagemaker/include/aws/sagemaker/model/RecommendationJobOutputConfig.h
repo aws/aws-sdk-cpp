@@ -33,7 +33,7 @@ namespace Model
   class RecommendationJobOutputConfig
   {
   public:
-    AWS_SAGEMAKER_API RecommendationJobOutputConfig();
+    AWS_SAGEMAKER_API RecommendationJobOutputConfig() = default;
     AWS_SAGEMAKER_API RecommendationJobOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RecommendationJobOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * identifiers (KeyID)</a> in the Amazon Web Services Key Management Service
      * (Amazon Web Services KMS) documentation.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline RecommendationJobOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline RecommendationJobOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline RecommendationJobOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    RecommendationJobOutputConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>Provides information about the output configuration for the compiled
      * model.</p>
      */
-    inline const RecommendationJobCompiledOutputConfig& GetCompiledOutputConfig() const{ return m_compiledOutputConfig; }
+    inline const RecommendationJobCompiledOutputConfig& GetCompiledOutputConfig() const { return m_compiledOutputConfig; }
     inline bool CompiledOutputConfigHasBeenSet() const { return m_compiledOutputConfigHasBeenSet; }
-    inline void SetCompiledOutputConfig(const RecommendationJobCompiledOutputConfig& value) { m_compiledOutputConfigHasBeenSet = true; m_compiledOutputConfig = value; }
-    inline void SetCompiledOutputConfig(RecommendationJobCompiledOutputConfig&& value) { m_compiledOutputConfigHasBeenSet = true; m_compiledOutputConfig = std::move(value); }
-    inline RecommendationJobOutputConfig& WithCompiledOutputConfig(const RecommendationJobCompiledOutputConfig& value) { SetCompiledOutputConfig(value); return *this;}
-    inline RecommendationJobOutputConfig& WithCompiledOutputConfig(RecommendationJobCompiledOutputConfig&& value) { SetCompiledOutputConfig(std::move(value)); return *this;}
+    template<typename CompiledOutputConfigT = RecommendationJobCompiledOutputConfig>
+    void SetCompiledOutputConfig(CompiledOutputConfigT&& value) { m_compiledOutputConfigHasBeenSet = true; m_compiledOutputConfig = std::forward<CompiledOutputConfigT>(value); }
+    template<typename CompiledOutputConfigT = RecommendationJobCompiledOutputConfig>
+    RecommendationJobOutputConfig& WithCompiledOutputConfig(CompiledOutputConfigT&& value) { SetCompiledOutputConfig(std::forward<CompiledOutputConfigT>(value)); return *this;}
     ///@}
   private:
 

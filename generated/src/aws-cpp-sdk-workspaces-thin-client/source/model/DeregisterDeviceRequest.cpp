@@ -12,15 +12,6 @@ using namespace Aws::WorkSpacesThinClient::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterDeviceRequest::DeregisterDeviceRequest() : 
-    m_idHasBeenSet(false),
-    m_targetDeviceStatus(TargetDeviceStatus::NOT_SET),
-    m_targetDeviceStatusHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeregisterDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

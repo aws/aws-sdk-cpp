@@ -12,11 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetManagedViewRequest::GetManagedViewRequest() : 
-    m_managedViewArnHasBeenSet(false)
-{
-}
-
 Aws::String GetManagedViewRequest::SerializePayload() const
 {
   JsonValue payload;

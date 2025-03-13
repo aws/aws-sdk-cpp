@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIpamPoolCidrsResponse::GetIpamPoolCidrsResponse()
-{
-}
-
 GetIpamPoolCidrsResponse::GetIpamPoolCidrsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetIpamPoolCidrsResponse& GetIpamPoolCidrsResponse::operator =(const Aws::Amazon
     if(!ipamPoolCidrsNode.IsNull())
     {
       XmlNode ipamPoolCidrsMember = ipamPoolCidrsNode.FirstChild("item");
+      m_ipamPoolCidrsHasBeenSet = !ipamPoolCidrsMember.IsNull();
       while(!ipamPoolCidrsMember.IsNull())
       {
         m_ipamPoolCidrs.push_back(ipamPoolCidrsMember);
@@ -53,6 +50,7 @@ GetIpamPoolCidrsResponse& GetIpamPoolCidrsResponse::operator =(const Aws::Amazon
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ GetIpamPoolCidrsResponse& GetIpamPoolCidrsResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetIpamPoolCidrsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

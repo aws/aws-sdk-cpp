@@ -25,7 +25,7 @@ namespace Model
   class GetMapStyleDescriptorRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorRequest();
+    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The map resource to retrieve the style descriptor from.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
+    inline const Aws::String& GetMapName() const { return m_mapName; }
     inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-    inline GetMapStyleDescriptorRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-    inline GetMapStyleDescriptorRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-    inline GetMapStyleDescriptorRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+    template<typename MapNameT = Aws::String>
+    void SetMapName(MapNameT&& value) { m_mapNameHasBeenSet = true; m_mapName = std::forward<MapNameT>(value); }
+    template<typename MapNameT = Aws::String>
+    GetMapStyleDescriptorRequest& WithMapName(MapNameT&& value) { SetMapName(std::forward<MapNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetMapStyleDescriptorRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetMapStyleDescriptorRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetMapStyleDescriptorRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetMapStyleDescriptorRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

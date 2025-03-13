@@ -12,16 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSpeakerSearchTaskRequest::StartSpeakerSearchTaskRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_voiceProfileDomainIdHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_callLeg(CallLegType::NOT_SET),
-    m_callLegHasBeenSet(false)
-{
-}
-
 Aws::String StartSpeakerSearchTaskRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class SalesforceMetadata
   {
   public:
-    AWS_APPFLOW_API SalesforceMetadata();
+    AWS_APPFLOW_API SalesforceMetadata() = default;
     AWS_APPFLOW_API SalesforceMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SalesforceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
     /**
      * <p> The desired authorization scope for the Salesforce account. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOAuthScopes() const{ return m_oAuthScopes; }
+    inline const Aws::Vector<Aws::String>& GetOAuthScopes() const { return m_oAuthScopes; }
     inline bool OAuthScopesHasBeenSet() const { return m_oAuthScopesHasBeenSet; }
-    inline void SetOAuthScopes(const Aws::Vector<Aws::String>& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = value; }
-    inline void SetOAuthScopes(Aws::Vector<Aws::String>&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::move(value); }
-    inline SalesforceMetadata& WithOAuthScopes(const Aws::Vector<Aws::String>& value) { SetOAuthScopes(value); return *this;}
-    inline SalesforceMetadata& WithOAuthScopes(Aws::Vector<Aws::String>&& value) { SetOAuthScopes(std::move(value)); return *this;}
-    inline SalesforceMetadata& AddOAuthScopes(const Aws::String& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
-    inline SalesforceMetadata& AddOAuthScopes(Aws::String&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(std::move(value)); return *this; }
-    inline SalesforceMetadata& AddOAuthScopes(const char* value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
+    template<typename OAuthScopesT = Aws::Vector<Aws::String>>
+    void SetOAuthScopes(OAuthScopesT&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::forward<OAuthScopesT>(value); }
+    template<typename OAuthScopesT = Aws::Vector<Aws::String>>
+    SalesforceMetadata& WithOAuthScopes(OAuthScopesT&& value) { SetOAuthScopes(std::forward<OAuthScopesT>(value)); return *this;}
+    template<typename OAuthScopesT = Aws::String>
+    SalesforceMetadata& AddOAuthScopes(OAuthScopesT&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.emplace_back(std::forward<OAuthScopesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +60,13 @@ namespace Model
      * <p>The Salesforce APIs that you can have Amazon AppFlow use when your flows
      * transfers data to or from Salesforce.</p>
      */
-    inline const Aws::Vector<SalesforceDataTransferApi>& GetDataTransferApis() const{ return m_dataTransferApis; }
+    inline const Aws::Vector<SalesforceDataTransferApi>& GetDataTransferApis() const { return m_dataTransferApis; }
     inline bool DataTransferApisHasBeenSet() const { return m_dataTransferApisHasBeenSet; }
-    inline void SetDataTransferApis(const Aws::Vector<SalesforceDataTransferApi>& value) { m_dataTransferApisHasBeenSet = true; m_dataTransferApis = value; }
-    inline void SetDataTransferApis(Aws::Vector<SalesforceDataTransferApi>&& value) { m_dataTransferApisHasBeenSet = true; m_dataTransferApis = std::move(value); }
-    inline SalesforceMetadata& WithDataTransferApis(const Aws::Vector<SalesforceDataTransferApi>& value) { SetDataTransferApis(value); return *this;}
-    inline SalesforceMetadata& WithDataTransferApis(Aws::Vector<SalesforceDataTransferApi>&& value) { SetDataTransferApis(std::move(value)); return *this;}
-    inline SalesforceMetadata& AddDataTransferApis(const SalesforceDataTransferApi& value) { m_dataTransferApisHasBeenSet = true; m_dataTransferApis.push_back(value); return *this; }
-    inline SalesforceMetadata& AddDataTransferApis(SalesforceDataTransferApi&& value) { m_dataTransferApisHasBeenSet = true; m_dataTransferApis.push_back(std::move(value)); return *this; }
+    template<typename DataTransferApisT = Aws::Vector<SalesforceDataTransferApi>>
+    void SetDataTransferApis(DataTransferApisT&& value) { m_dataTransferApisHasBeenSet = true; m_dataTransferApis = std::forward<DataTransferApisT>(value); }
+    template<typename DataTransferApisT = Aws::Vector<SalesforceDataTransferApi>>
+    SalesforceMetadata& WithDataTransferApis(DataTransferApisT&& value) { SetDataTransferApis(std::forward<DataTransferApisT>(value)); return *this;}
+    inline SalesforceMetadata& AddDataTransferApis(SalesforceDataTransferApi value) { m_dataTransferApisHasBeenSet = true; m_dataTransferApis.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -87,14 +85,13 @@ namespace Model
      * Amazon AppFlow to access your records.</p> </dd> </dl>  <p>The
      * CLIENT_CREDENTIALS value is not supported for Salesforce.</p> 
      */
-    inline const Aws::Vector<OAuth2GrantType>& GetOauth2GrantTypesSupported() const{ return m_oauth2GrantTypesSupported; }
+    inline const Aws::Vector<OAuth2GrantType>& GetOauth2GrantTypesSupported() const { return m_oauth2GrantTypesSupported; }
     inline bool Oauth2GrantTypesSupportedHasBeenSet() const { return m_oauth2GrantTypesSupportedHasBeenSet; }
-    inline void SetOauth2GrantTypesSupported(const Aws::Vector<OAuth2GrantType>& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported = value; }
-    inline void SetOauth2GrantTypesSupported(Aws::Vector<OAuth2GrantType>&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported = std::move(value); }
-    inline SalesforceMetadata& WithOauth2GrantTypesSupported(const Aws::Vector<OAuth2GrantType>& value) { SetOauth2GrantTypesSupported(value); return *this;}
-    inline SalesforceMetadata& WithOauth2GrantTypesSupported(Aws::Vector<OAuth2GrantType>&& value) { SetOauth2GrantTypesSupported(std::move(value)); return *this;}
-    inline SalesforceMetadata& AddOauth2GrantTypesSupported(const OAuth2GrantType& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(value); return *this; }
-    inline SalesforceMetadata& AddOauth2GrantTypesSupported(OAuth2GrantType&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(std::move(value)); return *this; }
+    template<typename Oauth2GrantTypesSupportedT = Aws::Vector<OAuth2GrantType>>
+    void SetOauth2GrantTypesSupported(Oauth2GrantTypesSupportedT&& value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported = std::forward<Oauth2GrantTypesSupportedT>(value); }
+    template<typename Oauth2GrantTypesSupportedT = Aws::Vector<OAuth2GrantType>>
+    SalesforceMetadata& WithOauth2GrantTypesSupported(Oauth2GrantTypesSupportedT&& value) { SetOauth2GrantTypesSupported(std::forward<Oauth2GrantTypesSupportedT>(value)); return *this;}
+    inline SalesforceMetadata& AddOauth2GrantTypesSupported(OAuth2GrantType value) { m_oauth2GrantTypesSupportedHasBeenSet = true; m_oauth2GrantTypesSupported.push_back(value); return *this; }
     ///@}
   private:
 

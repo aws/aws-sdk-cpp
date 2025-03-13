@@ -12,13 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PollForTaskRequest::PollForTaskRequest() : 
-    m_workerGroupHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_instanceIdentityHasBeenSet(false)
-{
-}
-
 Aws::String PollForTaskRequest::SerializePayload() const
 {
   JsonValue payload;

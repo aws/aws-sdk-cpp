@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FieldFolder::FieldFolder() : 
-    m_descriptionHasBeenSet(false),
-    m_columnsHasBeenSet(false)
-{
-}
-
 FieldFolder::FieldFolder(JsonView jsonValue)
-  : FieldFolder()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FieldFolder& FieldFolder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("columns");
@@ -48,7 +39,6 @@ FieldFolder& FieldFolder::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

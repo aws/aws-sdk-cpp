@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-InventoryDestination::InventoryDestination() : 
-    m_s3BucketDestinationHasBeenSet(false)
-{
-}
-
 InventoryDestination::InventoryDestination(const XmlNode& xmlNode)
-  : InventoryDestination()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InventoryDestination& InventoryDestination::operator =(const XmlNode& xmlNode)
     {
       m_s3BucketDestination = s3BucketDestinationNode;
       m_s3BucketDestinationHasBeenSet = true;
+       m_s3BucketDestinationHasBeenSet = true;
     }
   }
 

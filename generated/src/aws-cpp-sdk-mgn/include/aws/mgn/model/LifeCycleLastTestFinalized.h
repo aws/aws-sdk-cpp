@@ -31,7 +31,7 @@ namespace Model
   class LifeCycleLastTestFinalized
   {
   public:
-    AWS_MGN_API LifeCycleLastTestFinalized();
+    AWS_MGN_API LifeCycleLastTestFinalized() = default;
     AWS_MGN_API LifeCycleLastTestFinalized(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API LifeCycleLastTestFinalized& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Lifecycle Test failed API call date and time.</p>
      */
-    inline const Aws::String& GetApiCallDateTime() const{ return m_apiCallDateTime; }
+    inline const Aws::String& GetApiCallDateTime() const { return m_apiCallDateTime; }
     inline bool ApiCallDateTimeHasBeenSet() const { return m_apiCallDateTimeHasBeenSet; }
-    inline void SetApiCallDateTime(const Aws::String& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = value; }
-    inline void SetApiCallDateTime(Aws::String&& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = std::move(value); }
-    inline void SetApiCallDateTime(const char* value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime.assign(value); }
-    inline LifeCycleLastTestFinalized& WithApiCallDateTime(const Aws::String& value) { SetApiCallDateTime(value); return *this;}
-    inline LifeCycleLastTestFinalized& WithApiCallDateTime(Aws::String&& value) { SetApiCallDateTime(std::move(value)); return *this;}
-    inline LifeCycleLastTestFinalized& WithApiCallDateTime(const char* value) { SetApiCallDateTime(value); return *this;}
+    template<typename ApiCallDateTimeT = Aws::String>
+    void SetApiCallDateTime(ApiCallDateTimeT&& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = std::forward<ApiCallDateTimeT>(value); }
+    template<typename ApiCallDateTimeT = Aws::String>
+    LifeCycleLastTestFinalized& WithApiCallDateTime(ApiCallDateTimeT&& value) { SetApiCallDateTime(std::forward<ApiCallDateTimeT>(value)); return *this;}
     ///@}
   private:
 

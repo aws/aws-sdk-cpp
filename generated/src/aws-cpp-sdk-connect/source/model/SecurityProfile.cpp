@@ -18,24 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SecurityProfile::SecurityProfile() : 
-    m_idHasBeenSet(false),
-    m_organizationResourceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_allowedAccessControlTagsHasBeenSet(false),
-    m_tagRestrictedResourcesHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false),
-    m_hierarchyRestrictedResourcesHasBeenSet(false),
-    m_allowedAccessControlHierarchyGroupIdHasBeenSet(false)
-{
-}
-
 SecurityProfile::SecurityProfile(JsonView jsonValue)
-  : SecurityProfile()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationResourceId"))
   {
     m_organizationResourceId = jsonValue.GetString("OrganizationResourceId");
-
     m_organizationResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("SecurityProfileName");
-
     m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -86,7 +59,6 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedAccessControlTags"))
   {
     Aws::Map<Aws::String, JsonView> allowedAccessControlTagsJsonMap = jsonValue.GetObject("AllowedAccessControlTags").GetAllObjects();
@@ -96,7 +68,6 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
     }
     m_allowedAccessControlTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagRestrictedResources"))
   {
     Aws::Utils::Array<JsonView> tagRestrictedResourcesJsonList = jsonValue.GetArray("TagRestrictedResources");
@@ -106,21 +77,16 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
     }
     m_tagRestrictedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyRestrictedResources"))
   {
     Aws::Utils::Array<JsonView> hierarchyRestrictedResourcesJsonList = jsonValue.GetArray("HierarchyRestrictedResources");
@@ -130,14 +96,11 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
     }
     m_hierarchyRestrictedResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedAccessControlHierarchyGroupId"))
   {
     m_allowedAccessControlHierarchyGroupId = jsonValue.GetString("AllowedAccessControlHierarchyGroupId");
-
     m_allowedAccessControlHierarchyGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

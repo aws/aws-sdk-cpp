@@ -33,7 +33,7 @@ namespace Model
   class DefaultRelativeDateTimeControlOptions
   {
   public:
-    AWS_QUICKSIGHT_API DefaultRelativeDateTimeControlOptions();
+    AWS_QUICKSIGHT_API DefaultRelativeDateTimeControlOptions() = default;
     AWS_QUICKSIGHT_API DefaultRelativeDateTimeControlOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultRelativeDateTimeControlOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The display options of a control.</p>
      */
-    inline const RelativeDateTimeControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const RelativeDateTimeControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const RelativeDateTimeControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(RelativeDateTimeControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline DefaultRelativeDateTimeControlOptions& WithDisplayOptions(const RelativeDateTimeControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline DefaultRelativeDateTimeControlOptions& WithDisplayOptions(RelativeDateTimeControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = RelativeDateTimeControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = RelativeDateTimeControlDisplayOptions>
+    DefaultRelativeDateTimeControlOptions& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +56,17 @@ namespace Model
      * <p>The visibility configuration of the Apply button on a
      * <code>RelativeDateTimeControl</code>.</p>
      */
-    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline CommitMode GetCommitMode() const { return m_commitMode; }
     inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
-    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
-    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
-    inline DefaultRelativeDateTimeControlOptions& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
-    inline DefaultRelativeDateTimeControlOptions& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    inline void SetCommitMode(CommitMode value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline DefaultRelativeDateTimeControlOptions& WithCommitMode(CommitMode value) { SetCommitMode(value); return *this;}
     ///@}
   private:
 
     RelativeDateTimeControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    CommitMode m_commitMode;
+    CommitMode m_commitMode{CommitMode::NOT_SET};
     bool m_commitModeHasBeenSet = false;
   };
 

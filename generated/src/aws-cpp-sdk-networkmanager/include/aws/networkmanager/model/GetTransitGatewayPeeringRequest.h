@@ -21,7 +21,7 @@ namespace Model
   class GetTransitGatewayPeeringRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API GetTransitGatewayPeeringRequest();
+    AWS_NETWORKMANAGER_API GetTransitGatewayPeeringRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the peering request.</p>
      */
-    inline const Aws::String& GetPeeringId() const{ return m_peeringId; }
+    inline const Aws::String& GetPeeringId() const { return m_peeringId; }
     inline bool PeeringIdHasBeenSet() const { return m_peeringIdHasBeenSet; }
-    inline void SetPeeringId(const Aws::String& value) { m_peeringIdHasBeenSet = true; m_peeringId = value; }
-    inline void SetPeeringId(Aws::String&& value) { m_peeringIdHasBeenSet = true; m_peeringId = std::move(value); }
-    inline void SetPeeringId(const char* value) { m_peeringIdHasBeenSet = true; m_peeringId.assign(value); }
-    inline GetTransitGatewayPeeringRequest& WithPeeringId(const Aws::String& value) { SetPeeringId(value); return *this;}
-    inline GetTransitGatewayPeeringRequest& WithPeeringId(Aws::String&& value) { SetPeeringId(std::move(value)); return *this;}
-    inline GetTransitGatewayPeeringRequest& WithPeeringId(const char* value) { SetPeeringId(value); return *this;}
+    template<typename PeeringIdT = Aws::String>
+    void SetPeeringId(PeeringIdT&& value) { m_peeringIdHasBeenSet = true; m_peeringId = std::forward<PeeringIdT>(value); }
+    template<typename PeeringIdT = Aws::String>
+    GetTransitGatewayPeeringRequest& WithPeeringId(PeeringIdT&& value) { SetPeeringId(std::forward<PeeringIdT>(value)); return *this;}
     ///@}
   private:
 

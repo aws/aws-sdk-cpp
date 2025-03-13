@@ -21,7 +21,7 @@ namespace Model
   class DescribeLabelGroupRequest : public LookoutEquipmentRequest
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API DescribeLabelGroupRequest();
+    AWS_LOOKOUTEQUIPMENT_API DescribeLabelGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> Returns the name of the label group. </p>
      */
-    inline const Aws::String& GetLabelGroupName() const{ return m_labelGroupName; }
+    inline const Aws::String& GetLabelGroupName() const { return m_labelGroupName; }
     inline bool LabelGroupNameHasBeenSet() const { return m_labelGroupNameHasBeenSet; }
-    inline void SetLabelGroupName(const Aws::String& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = value; }
-    inline void SetLabelGroupName(Aws::String&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::move(value); }
-    inline void SetLabelGroupName(const char* value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName.assign(value); }
-    inline DescribeLabelGroupRequest& WithLabelGroupName(const Aws::String& value) { SetLabelGroupName(value); return *this;}
-    inline DescribeLabelGroupRequest& WithLabelGroupName(Aws::String&& value) { SetLabelGroupName(std::move(value)); return *this;}
-    inline DescribeLabelGroupRequest& WithLabelGroupName(const char* value) { SetLabelGroupName(value); return *this;}
+    template<typename LabelGroupNameT = Aws::String>
+    void SetLabelGroupName(LabelGroupNameT&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::forward<LabelGroupNameT>(value); }
+    template<typename LabelGroupNameT = Aws::String>
+    DescribeLabelGroupRequest& WithLabelGroupName(LabelGroupNameT&& value) { SetLabelGroupName(std::forward<LabelGroupNameT>(value)); return *this;}
     ///@}
   private:
 

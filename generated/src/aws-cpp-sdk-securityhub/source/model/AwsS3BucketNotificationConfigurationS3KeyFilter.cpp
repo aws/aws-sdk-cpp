@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketNotificationConfigurationS3KeyFilter::AwsS3BucketNotificationConfigurationS3KeyFilter() : 
-    m_filterRulesHasBeenSet(false)
-{
-}
-
 AwsS3BucketNotificationConfigurationS3KeyFilter::AwsS3BucketNotificationConfigurationS3KeyFilter(JsonView jsonValue)
-  : AwsS3BucketNotificationConfigurationS3KeyFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsS3BucketNotificationConfigurationS3KeyFilter& AwsS3BucketNotificationConfigur
     }
     m_filterRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

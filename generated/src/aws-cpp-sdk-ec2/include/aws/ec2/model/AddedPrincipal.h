@@ -32,7 +32,7 @@ namespace Model
   class AddedPrincipal
   {
   public:
-    AWS_EC2_API AddedPrincipal();
+    AWS_EC2_API AddedPrincipal() = default;
     AWS_EC2_API AddedPrincipal(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AddedPrincipal& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,58 +44,50 @@ namespace Model
     /**
      * <p>The type of principal.</p>
      */
-    inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+    inline PrincipalType GetPrincipalType() const { return m_principalType; }
     inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
-    inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
-    inline void SetPrincipalType(PrincipalType&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
-    inline AddedPrincipal& WithPrincipalType(const PrincipalType& value) { SetPrincipalType(value); return *this;}
-    inline AddedPrincipal& WithPrincipalType(PrincipalType&& value) { SetPrincipalType(std::move(value)); return *this;}
+    inline void SetPrincipalType(PrincipalType value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+    inline AddedPrincipal& WithPrincipalType(PrincipalType value) { SetPrincipalType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the principal.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline AddedPrincipal& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline AddedPrincipal& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline AddedPrincipal& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    AddedPrincipal& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service permission.</p>
      */
-    inline const Aws::String& GetServicePermissionId() const{ return m_servicePermissionId; }
+    inline const Aws::String& GetServicePermissionId() const { return m_servicePermissionId; }
     inline bool ServicePermissionIdHasBeenSet() const { return m_servicePermissionIdHasBeenSet; }
-    inline void SetServicePermissionId(const Aws::String& value) { m_servicePermissionIdHasBeenSet = true; m_servicePermissionId = value; }
-    inline void SetServicePermissionId(Aws::String&& value) { m_servicePermissionIdHasBeenSet = true; m_servicePermissionId = std::move(value); }
-    inline void SetServicePermissionId(const char* value) { m_servicePermissionIdHasBeenSet = true; m_servicePermissionId.assign(value); }
-    inline AddedPrincipal& WithServicePermissionId(const Aws::String& value) { SetServicePermissionId(value); return *this;}
-    inline AddedPrincipal& WithServicePermissionId(Aws::String&& value) { SetServicePermissionId(std::move(value)); return *this;}
-    inline AddedPrincipal& WithServicePermissionId(const char* value) { SetServicePermissionId(value); return *this;}
+    template<typename ServicePermissionIdT = Aws::String>
+    void SetServicePermissionId(ServicePermissionIdT&& value) { m_servicePermissionIdHasBeenSet = true; m_servicePermissionId = std::forward<ServicePermissionIdT>(value); }
+    template<typename ServicePermissionIdT = Aws::String>
+    AddedPrincipal& WithServicePermissionId(ServicePermissionIdT&& value) { SetServicePermissionId(std::forward<ServicePermissionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service.</p>
      */
-    inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+    inline const Aws::String& GetServiceId() const { return m_serviceId; }
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-    inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-    inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-    inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-    inline AddedPrincipal& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-    inline AddedPrincipal& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-    inline AddedPrincipal& WithServiceId(const char* value) { SetServiceId(value); return *this;}
+    template<typename ServiceIdT = Aws::String>
+    void SetServiceId(ServiceIdT&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::forward<ServiceIdT>(value); }
+    template<typename ServiceIdT = Aws::String>
+    AddedPrincipal& WithServiceId(ServiceIdT&& value) { SetServiceId(std::forward<ServiceIdT>(value)); return *this;}
     ///@}
   private:
 
-    PrincipalType m_principalType;
+    PrincipalType m_principalType{PrincipalType::NOT_SET};
     bool m_principalTypeHasBeenSet = false;
 
     Aws::String m_principal;

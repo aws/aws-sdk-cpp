@@ -19,15 +19,7 @@ namespace IoT
 namespace Model
 {
 
-MqttContext::MqttContext() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
-{
-}
-
 MqttContext::MqttContext(JsonView jsonValue)
-  : MqttContext()
 {
   *this = jsonValue;
 }
@@ -37,23 +29,18 @@ MqttContext& MqttContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("password"))
   {
     m_password = HashingUtils::Base64Decode(jsonValue.GetString("password"));
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientId"))
   {
     m_clientId = jsonValue.GetString("clientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   return *this;
 }
 

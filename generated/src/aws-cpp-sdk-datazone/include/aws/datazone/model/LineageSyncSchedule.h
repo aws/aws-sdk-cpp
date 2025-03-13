@@ -31,7 +31,7 @@ namespace Model
   class LineageSyncSchedule
   {
   public:
-    AWS_DATAZONE_API LineageSyncSchedule();
+    AWS_DATAZONE_API LineageSyncSchedule() = default;
     AWS_DATAZONE_API LineageSyncSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API LineageSyncSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The lineage sync schedule.</p>
      */
-    inline const Aws::String& GetSchedule() const{ return m_schedule; }
+    inline const Aws::String& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
-    inline LineageSyncSchedule& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
-    inline LineageSyncSchedule& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
-    inline LineageSyncSchedule& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+    template<typename ScheduleT = Aws::String>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Aws::String>
+    LineageSyncSchedule& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
   private:
 

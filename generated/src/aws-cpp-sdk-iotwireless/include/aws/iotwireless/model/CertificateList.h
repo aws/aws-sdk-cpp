@@ -32,7 +32,7 @@ namespace Model
   class CertificateList
   {
   public:
-    AWS_IOTWIRELESS_API CertificateList();
+    AWS_IOTWIRELESS_API CertificateList() = default;
     AWS_IOTWIRELESS_API CertificateList(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API CertificateList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The certificate chain algorithm provided by sidewalk.</p>
      */
-    inline const SigningAlg& GetSigningAlg() const{ return m_signingAlg; }
+    inline SigningAlg GetSigningAlg() const { return m_signingAlg; }
     inline bool SigningAlgHasBeenSet() const { return m_signingAlgHasBeenSet; }
-    inline void SetSigningAlg(const SigningAlg& value) { m_signingAlgHasBeenSet = true; m_signingAlg = value; }
-    inline void SetSigningAlg(SigningAlg&& value) { m_signingAlgHasBeenSet = true; m_signingAlg = std::move(value); }
-    inline CertificateList& WithSigningAlg(const SigningAlg& value) { SetSigningAlg(value); return *this;}
-    inline CertificateList& WithSigningAlg(SigningAlg&& value) { SetSigningAlg(std::move(value)); return *this;}
+    inline void SetSigningAlg(SigningAlg value) { m_signingAlgHasBeenSet = true; m_signingAlg = value; }
+    inline CertificateList& WithSigningAlg(SigningAlg value) { SetSigningAlg(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the chosen sidewalk certificate.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline CertificateList& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline CertificateList& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline CertificateList& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    CertificateList& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    SigningAlg m_signingAlg;
+    SigningAlg m_signingAlg{SigningAlg::NOT_SET};
     bool m_signingAlgHasBeenSet = false;
 
     Aws::String m_value;

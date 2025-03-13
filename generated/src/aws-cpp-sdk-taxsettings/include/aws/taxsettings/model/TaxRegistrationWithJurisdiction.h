@@ -39,7 +39,7 @@ namespace Model
   class TaxRegistrationWithJurisdiction
   {
   public:
-    AWS_TAXSETTINGS_API TaxRegistrationWithJurisdiction();
+    AWS_TAXSETTINGS_API TaxRegistrationWithJurisdiction() = default;
     AWS_TAXSETTINGS_API TaxRegistrationWithJurisdiction(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API TaxRegistrationWithJurisdiction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,66 +49,60 @@ namespace Model
     /**
      * <p>Additional tax information associated with your TRN. </p>
      */
-    inline const AdditionalInfoResponse& GetAdditionalTaxInformation() const{ return m_additionalTaxInformation; }
+    inline const AdditionalInfoResponse& GetAdditionalTaxInformation() const { return m_additionalTaxInformation; }
     inline bool AdditionalTaxInformationHasBeenSet() const { return m_additionalTaxInformationHasBeenSet; }
-    inline void SetAdditionalTaxInformation(const AdditionalInfoResponse& value) { m_additionalTaxInformationHasBeenSet = true; m_additionalTaxInformation = value; }
-    inline void SetAdditionalTaxInformation(AdditionalInfoResponse&& value) { m_additionalTaxInformationHasBeenSet = true; m_additionalTaxInformation = std::move(value); }
-    inline TaxRegistrationWithJurisdiction& WithAdditionalTaxInformation(const AdditionalInfoResponse& value) { SetAdditionalTaxInformation(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithAdditionalTaxInformation(AdditionalInfoResponse&& value) { SetAdditionalTaxInformation(std::move(value)); return *this;}
+    template<typename AdditionalTaxInformationT = AdditionalInfoResponse>
+    void SetAdditionalTaxInformation(AdditionalTaxInformationT&& value) { m_additionalTaxInformationHasBeenSet = true; m_additionalTaxInformation = std::forward<AdditionalTaxInformationT>(value); }
+    template<typename AdditionalTaxInformationT = AdditionalInfoResponse>
+    TaxRegistrationWithJurisdiction& WithAdditionalTaxInformation(AdditionalTaxInformationT&& value) { SetAdditionalTaxInformation(std::forward<AdditionalTaxInformationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address to receive VAT invoices.</p>
      */
-    inline const Aws::String& GetCertifiedEmailId() const{ return m_certifiedEmailId; }
+    inline const Aws::String& GetCertifiedEmailId() const { return m_certifiedEmailId; }
     inline bool CertifiedEmailIdHasBeenSet() const { return m_certifiedEmailIdHasBeenSet; }
-    inline void SetCertifiedEmailId(const Aws::String& value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId = value; }
-    inline void SetCertifiedEmailId(Aws::String&& value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId = std::move(value); }
-    inline void SetCertifiedEmailId(const char* value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId.assign(value); }
-    inline TaxRegistrationWithJurisdiction& WithCertifiedEmailId(const Aws::String& value) { SetCertifiedEmailId(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithCertifiedEmailId(Aws::String&& value) { SetCertifiedEmailId(std::move(value)); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithCertifiedEmailId(const char* value) { SetCertifiedEmailId(value); return *this;}
+    template<typename CertifiedEmailIdT = Aws::String>
+    void SetCertifiedEmailId(CertifiedEmailIdT&& value) { m_certifiedEmailIdHasBeenSet = true; m_certifiedEmailId = std::forward<CertifiedEmailIdT>(value); }
+    template<typename CertifiedEmailIdT = Aws::String>
+    TaxRegistrationWithJurisdiction& WithCertifiedEmailId(CertifiedEmailIdT&& value) { SetCertifiedEmailId(std::forward<CertifiedEmailIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The jurisdiction associated with your TRN information. </p>
      */
-    inline const Jurisdiction& GetJurisdiction() const{ return m_jurisdiction; }
+    inline const Jurisdiction& GetJurisdiction() const { return m_jurisdiction; }
     inline bool JurisdictionHasBeenSet() const { return m_jurisdictionHasBeenSet; }
-    inline void SetJurisdiction(const Jurisdiction& value) { m_jurisdictionHasBeenSet = true; m_jurisdiction = value; }
-    inline void SetJurisdiction(Jurisdiction&& value) { m_jurisdictionHasBeenSet = true; m_jurisdiction = std::move(value); }
-    inline TaxRegistrationWithJurisdiction& WithJurisdiction(const Jurisdiction& value) { SetJurisdiction(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithJurisdiction(Jurisdiction&& value) { SetJurisdiction(std::move(value)); return *this;}
+    template<typename JurisdictionT = Jurisdiction>
+    void SetJurisdiction(JurisdictionT&& value) { m_jurisdictionHasBeenSet = true; m_jurisdiction = std::forward<JurisdictionT>(value); }
+    template<typename JurisdictionT = Jurisdiction>
+    TaxRegistrationWithJurisdiction& WithJurisdiction(JurisdictionT&& value) { SetJurisdiction(std::forward<JurisdictionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The legal name associated with your TRN information. </p>
      */
-    inline const Aws::String& GetLegalName() const{ return m_legalName; }
+    inline const Aws::String& GetLegalName() const { return m_legalName; }
     inline bool LegalNameHasBeenSet() const { return m_legalNameHasBeenSet; }
-    inline void SetLegalName(const Aws::String& value) { m_legalNameHasBeenSet = true; m_legalName = value; }
-    inline void SetLegalName(Aws::String&& value) { m_legalNameHasBeenSet = true; m_legalName = std::move(value); }
-    inline void SetLegalName(const char* value) { m_legalNameHasBeenSet = true; m_legalName.assign(value); }
-    inline TaxRegistrationWithJurisdiction& WithLegalName(const Aws::String& value) { SetLegalName(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithLegalName(Aws::String&& value) { SetLegalName(std::move(value)); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithLegalName(const char* value) { SetLegalName(value); return *this;}
+    template<typename LegalNameT = Aws::String>
+    void SetLegalName(LegalNameT&& value) { m_legalNameHasBeenSet = true; m_legalName = std::forward<LegalNameT>(value); }
+    template<typename LegalNameT = Aws::String>
+    TaxRegistrationWithJurisdiction& WithLegalName(LegalNameT&& value) { SetLegalName(std::forward<LegalNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Your tax registration unique identifier. </p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
     inline bool RegistrationIdHasBeenSet() const { return m_registrationIdHasBeenSet; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationIdHasBeenSet = true; m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationIdHasBeenSet = true; m_registrationId.assign(value); }
-    inline TaxRegistrationWithJurisdiction& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    TaxRegistrationWithJurisdiction& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +110,10 @@ namespace Model
      * <p> The type of your tax registration. This can be either <code>VAT</code> or
      * <code>GST</code>. </p>
      */
-    inline const TaxRegistrationType& GetRegistrationType() const{ return m_registrationType; }
+    inline TaxRegistrationType GetRegistrationType() const { return m_registrationType; }
     inline bool RegistrationTypeHasBeenSet() const { return m_registrationTypeHasBeenSet; }
-    inline void SetRegistrationType(const TaxRegistrationType& value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
-    inline void SetRegistrationType(TaxRegistrationType&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::move(value); }
-    inline TaxRegistrationWithJurisdiction& WithRegistrationType(const TaxRegistrationType& value) { SetRegistrationType(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithRegistrationType(TaxRegistrationType&& value) { SetRegistrationType(std::move(value)); return *this;}
+    inline void SetRegistrationType(TaxRegistrationType value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
+    inline TaxRegistrationWithJurisdiction& WithRegistrationType(TaxRegistrationType value) { SetRegistrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +124,10 @@ namespace Model
      * certain values may not applicable for the request country. Please refer to
      * country specific information in API document. </p>
      */
-    inline const Sector& GetSector() const{ return m_sector; }
+    inline Sector GetSector() const { return m_sector; }
     inline bool SectorHasBeenSet() const { return m_sectorHasBeenSet; }
-    inline void SetSector(const Sector& value) { m_sectorHasBeenSet = true; m_sector = value; }
-    inline void SetSector(Sector&& value) { m_sectorHasBeenSet = true; m_sector = std::move(value); }
-    inline TaxRegistrationWithJurisdiction& WithSector(const Sector& value) { SetSector(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithSector(Sector&& value) { SetSector(std::move(value)); return *this;}
+    inline void SetSector(Sector value) { m_sectorHasBeenSet = true; m_sector = value; }
+    inline TaxRegistrationWithJurisdiction& WithSector(Sector value) { SetSector(value); return *this;}
     ///@}
 
     ///@{
@@ -145,26 +135,24 @@ namespace Model
      * <p>The status of your TRN. This can be either <code>Verified</code>,
      * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
      */
-    inline const TaxRegistrationStatus& GetStatus() const{ return m_status; }
+    inline TaxRegistrationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TaxRegistrationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TaxRegistrationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TaxRegistrationWithJurisdiction& WithStatus(const TaxRegistrationStatus& value) { SetStatus(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithStatus(TaxRegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TaxRegistrationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TaxRegistrationWithJurisdiction& WithStatus(TaxRegistrationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata for your tax document.</p>
      */
-    inline const Aws::Vector<TaxDocumentMetadata>& GetTaxDocumentMetadatas() const{ return m_taxDocumentMetadatas; }
+    inline const Aws::Vector<TaxDocumentMetadata>& GetTaxDocumentMetadatas() const { return m_taxDocumentMetadatas; }
     inline bool TaxDocumentMetadatasHasBeenSet() const { return m_taxDocumentMetadatasHasBeenSet; }
-    inline void SetTaxDocumentMetadatas(const Aws::Vector<TaxDocumentMetadata>& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas = value; }
-    inline void SetTaxDocumentMetadatas(Aws::Vector<TaxDocumentMetadata>&& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas = std::move(value); }
-    inline TaxRegistrationWithJurisdiction& WithTaxDocumentMetadatas(const Aws::Vector<TaxDocumentMetadata>& value) { SetTaxDocumentMetadatas(value); return *this;}
-    inline TaxRegistrationWithJurisdiction& WithTaxDocumentMetadatas(Aws::Vector<TaxDocumentMetadata>&& value) { SetTaxDocumentMetadatas(std::move(value)); return *this;}
-    inline TaxRegistrationWithJurisdiction& AddTaxDocumentMetadatas(const TaxDocumentMetadata& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas.push_back(value); return *this; }
-    inline TaxRegistrationWithJurisdiction& AddTaxDocumentMetadatas(TaxDocumentMetadata&& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas.push_back(std::move(value)); return *this; }
+    template<typename TaxDocumentMetadatasT = Aws::Vector<TaxDocumentMetadata>>
+    void SetTaxDocumentMetadatas(TaxDocumentMetadatasT&& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas = std::forward<TaxDocumentMetadatasT>(value); }
+    template<typename TaxDocumentMetadatasT = Aws::Vector<TaxDocumentMetadata>>
+    TaxRegistrationWithJurisdiction& WithTaxDocumentMetadatas(TaxDocumentMetadatasT&& value) { SetTaxDocumentMetadatas(std::forward<TaxDocumentMetadatasT>(value)); return *this;}
+    template<typename TaxDocumentMetadatasT = TaxDocumentMetadata>
+    TaxRegistrationWithJurisdiction& AddTaxDocumentMetadatas(TaxDocumentMetadatasT&& value) { m_taxDocumentMetadatasHasBeenSet = true; m_taxDocumentMetadatas.emplace_back(std::forward<TaxDocumentMetadatasT>(value)); return *this; }
     ///@}
   private:
 
@@ -183,13 +171,13 @@ namespace Model
     Aws::String m_registrationId;
     bool m_registrationIdHasBeenSet = false;
 
-    TaxRegistrationType m_registrationType;
+    TaxRegistrationType m_registrationType{TaxRegistrationType::NOT_SET};
     bool m_registrationTypeHasBeenSet = false;
 
-    Sector m_sector;
+    Sector m_sector{Sector::NOT_SET};
     bool m_sectorHasBeenSet = false;
 
-    TaxRegistrationStatus m_status;
+    TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<TaxDocumentMetadata> m_taxDocumentMetadatas;

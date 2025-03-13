@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-StartCodegenJobRequest::StartCodegenJobRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_codegenJobToCreateHasBeenSet(false)
-{
-}
-
 Aws::String StartCodegenJobRequest::SerializePayload() const
 {
   JsonValue payload;

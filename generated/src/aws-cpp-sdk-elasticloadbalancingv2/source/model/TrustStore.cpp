@@ -20,20 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TrustStore::TrustStore() : 
-    m_nameHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_status(TrustStoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_numberOfCaCertificates(0),
-    m_numberOfCaCertificatesHasBeenSet(false),
-    m_totalRevokedEntries(0),
-    m_totalRevokedEntriesHasBeenSet(false)
-{
-}
-
 TrustStore::TrustStore(const XmlNode& xmlNode)
-  : TrustStore()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ TrustStore& TrustStore::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode trustStoreArnNode = resultNode.FirstChild("TrustStoreArn");
     if(!trustStoreArnNode.IsNull())
     {
       m_trustStoreArn = Aws::Utils::Xml::DecodeEscapedXmlText(trustStoreArnNode.GetText());
       m_trustStoreArnHasBeenSet = true;
+       m_trustStoreArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = TrustStoreStatusMapper::GetTrustStoreStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = TrustStoreStatusMapper::GetTrustStoreStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode numberOfCaCertificatesNode = resultNode.FirstChild("NumberOfCaCertificates");
     if(!numberOfCaCertificatesNode.IsNull())
     {
       m_numberOfCaCertificates = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfCaCertificatesNode.GetText()).c_str()).c_str());
       m_numberOfCaCertificatesHasBeenSet = true;
+       m_numberOfCaCertificatesHasBeenSet = true;
     }
     XmlNode totalRevokedEntriesNode = resultNode.FirstChild("TotalRevokedEntries");
     if(!totalRevokedEntriesNode.IsNull())
     {
       m_totalRevokedEntries = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalRevokedEntriesNode.GetText()).c_str()).c_str());
       m_totalRevokedEntriesHasBeenSet = true;
+       m_totalRevokedEntriesHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class ObjectAttributeUpdate
   {
   public:
-    AWS_CLOUDDIRECTORY_API ObjectAttributeUpdate();
+    AWS_CLOUDDIRECTORY_API ObjectAttributeUpdate() = default;
     AWS_CLOUDDIRECTORY_API ObjectAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API ObjectAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The key of the attribute being updated.</p>
      */
-    inline const AttributeKey& GetObjectAttributeKey() const{ return m_objectAttributeKey; }
+    inline const AttributeKey& GetObjectAttributeKey() const { return m_objectAttributeKey; }
     inline bool ObjectAttributeKeyHasBeenSet() const { return m_objectAttributeKeyHasBeenSet; }
-    inline void SetObjectAttributeKey(const AttributeKey& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = value; }
-    inline void SetObjectAttributeKey(AttributeKey&& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = std::move(value); }
-    inline ObjectAttributeUpdate& WithObjectAttributeKey(const AttributeKey& value) { SetObjectAttributeKey(value); return *this;}
-    inline ObjectAttributeUpdate& WithObjectAttributeKey(AttributeKey&& value) { SetObjectAttributeKey(std::move(value)); return *this;}
+    template<typename ObjectAttributeKeyT = AttributeKey>
+    void SetObjectAttributeKey(ObjectAttributeKeyT&& value) { m_objectAttributeKeyHasBeenSet = true; m_objectAttributeKey = std::forward<ObjectAttributeKeyT>(value); }
+    template<typename ObjectAttributeKeyT = AttributeKey>
+    ObjectAttributeUpdate& WithObjectAttributeKey(ObjectAttributeKeyT&& value) { SetObjectAttributeKey(std::forward<ObjectAttributeKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action to perform as part of the attribute update.</p>
      */
-    inline const ObjectAttributeAction& GetObjectAttributeAction() const{ return m_objectAttributeAction; }
+    inline const ObjectAttributeAction& GetObjectAttributeAction() const { return m_objectAttributeAction; }
     inline bool ObjectAttributeActionHasBeenSet() const { return m_objectAttributeActionHasBeenSet; }
-    inline void SetObjectAttributeAction(const ObjectAttributeAction& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = value; }
-    inline void SetObjectAttributeAction(ObjectAttributeAction&& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = std::move(value); }
-    inline ObjectAttributeUpdate& WithObjectAttributeAction(const ObjectAttributeAction& value) { SetObjectAttributeAction(value); return *this;}
-    inline ObjectAttributeUpdate& WithObjectAttributeAction(ObjectAttributeAction&& value) { SetObjectAttributeAction(std::move(value)); return *this;}
+    template<typename ObjectAttributeActionT = ObjectAttributeAction>
+    void SetObjectAttributeAction(ObjectAttributeActionT&& value) { m_objectAttributeActionHasBeenSet = true; m_objectAttributeAction = std::forward<ObjectAttributeActionT>(value); }
+    template<typename ObjectAttributeActionT = ObjectAttributeAction>
+    ObjectAttributeUpdate& WithObjectAttributeAction(ObjectAttributeActionT&& value) { SetObjectAttributeAction(std::forward<ObjectAttributeActionT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccountPreferencesRequest::UpdateAccountPreferencesRequest() : 
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false),
-    m_trainingDataCollectionEnabled(false),
-    m_trainingDataCollectionEnabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

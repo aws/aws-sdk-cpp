@@ -21,7 +21,7 @@ namespace Model
   class AddThingToBillingGroupRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API AddThingToBillingGroupRequest();
+    AWS_IOT_API AddThingToBillingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,56 +37,48 @@ namespace Model
      * <p>The name of the billing group.</p>  <p>This call is asynchronous. It
      * might take several seconds for the detachment to propagate.</p> 
      */
-    inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
+    inline const Aws::String& GetBillingGroupName() const { return m_billingGroupName; }
     inline bool BillingGroupNameHasBeenSet() const { return m_billingGroupNameHasBeenSet; }
-    inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
-    inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::move(value); }
-    inline void SetBillingGroupName(const char* value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName.assign(value); }
-    inline AddThingToBillingGroupRequest& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
-    inline AddThingToBillingGroupRequest& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
-    inline AddThingToBillingGroupRequest& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
+    template<typename BillingGroupNameT = Aws::String>
+    void SetBillingGroupName(BillingGroupNameT&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::forward<BillingGroupNameT>(value); }
+    template<typename BillingGroupNameT = Aws::String>
+    AddThingToBillingGroupRequest& WithBillingGroupName(BillingGroupNameT&& value) { SetBillingGroupName(std::forward<BillingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the billing group.</p>
      */
-    inline const Aws::String& GetBillingGroupArn() const{ return m_billingGroupArn; }
+    inline const Aws::String& GetBillingGroupArn() const { return m_billingGroupArn; }
     inline bool BillingGroupArnHasBeenSet() const { return m_billingGroupArnHasBeenSet; }
-    inline void SetBillingGroupArn(const Aws::String& value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn = value; }
-    inline void SetBillingGroupArn(Aws::String&& value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn = std::move(value); }
-    inline void SetBillingGroupArn(const char* value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn.assign(value); }
-    inline AddThingToBillingGroupRequest& WithBillingGroupArn(const Aws::String& value) { SetBillingGroupArn(value); return *this;}
-    inline AddThingToBillingGroupRequest& WithBillingGroupArn(Aws::String&& value) { SetBillingGroupArn(std::move(value)); return *this;}
-    inline AddThingToBillingGroupRequest& WithBillingGroupArn(const char* value) { SetBillingGroupArn(value); return *this;}
+    template<typename BillingGroupArnT = Aws::String>
+    void SetBillingGroupArn(BillingGroupArnT&& value) { m_billingGroupArnHasBeenSet = true; m_billingGroupArn = std::forward<BillingGroupArnT>(value); }
+    template<typename BillingGroupArnT = Aws::String>
+    AddThingToBillingGroupRequest& WithBillingGroupArn(BillingGroupArnT&& value) { SetBillingGroupArn(std::forward<BillingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing to be added to the billing group.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline AddThingToBillingGroupRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline AddThingToBillingGroupRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline AddThingToBillingGroupRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    AddThingToBillingGroupRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the thing to be added to the billing group.</p>
      */
-    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+    inline const Aws::String& GetThingArn() const { return m_thingArn; }
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-    inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-    inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-    inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-    inline AddThingToBillingGroupRequest& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-    inline AddThingToBillingGroupRequest& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-    inline AddThingToBillingGroupRequest& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    template<typename ThingArnT = Aws::String>
+    void SetThingArn(ThingArnT&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::forward<ThingArnT>(value); }
+    template<typename ThingArnT = Aws::String>
+    AddThingToBillingGroupRequest& WithThingArn(ThingArnT&& value) { SetThingArn(std::forward<ThingArnT>(value)); return *this;}
     ///@}
   private:
 

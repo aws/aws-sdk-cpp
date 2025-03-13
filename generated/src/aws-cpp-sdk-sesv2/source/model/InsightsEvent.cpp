@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-InsightsEvent::InsightsEvent() : 
-    m_timestampHasBeenSet(false),
-    m_type(EventType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 InsightsEvent::InsightsEvent(JsonView jsonValue)
-  : InsightsEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InsightsEvent& InsightsEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetObject("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

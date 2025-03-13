@@ -28,7 +28,7 @@ namespace Model
   class ListJobRunsRequest : public EMRContainersRequest
   {
   public:
-    AWS_EMRCONTAINERS_API ListJobRunsRequest();
+    AWS_EMRCONTAINERS_API ListJobRunsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,73 +45,68 @@ namespace Model
     /**
      * <p>The ID of the virtual cluster for which to list the job run. </p>
      */
-    inline const Aws::String& GetVirtualClusterId() const{ return m_virtualClusterId; }
+    inline const Aws::String& GetVirtualClusterId() const { return m_virtualClusterId; }
     inline bool VirtualClusterIdHasBeenSet() const { return m_virtualClusterIdHasBeenSet; }
-    inline void SetVirtualClusterId(const Aws::String& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = value; }
-    inline void SetVirtualClusterId(Aws::String&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::move(value); }
-    inline void SetVirtualClusterId(const char* value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId.assign(value); }
-    inline ListJobRunsRequest& WithVirtualClusterId(const Aws::String& value) { SetVirtualClusterId(value); return *this;}
-    inline ListJobRunsRequest& WithVirtualClusterId(Aws::String&& value) { SetVirtualClusterId(std::move(value)); return *this;}
-    inline ListJobRunsRequest& WithVirtualClusterId(const char* value) { SetVirtualClusterId(value); return *this;}
+    template<typename VirtualClusterIdT = Aws::String>
+    void SetVirtualClusterId(VirtualClusterIdT&& value) { m_virtualClusterIdHasBeenSet = true; m_virtualClusterId = std::forward<VirtualClusterIdT>(value); }
+    template<typename VirtualClusterIdT = Aws::String>
+    ListJobRunsRequest& WithVirtualClusterId(VirtualClusterIdT&& value) { SetVirtualClusterId(std::forward<VirtualClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time before which the job runs were submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
+    inline const Aws::Utils::DateTime& GetCreatedBefore() const { return m_createdBefore; }
     inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
-    inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
-    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::move(value); }
-    inline ListJobRunsRequest& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
-    inline ListJobRunsRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    void SetCreatedBefore(CreatedBeforeT&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::forward<CreatedBeforeT>(value); }
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    ListJobRunsRequest& WithCreatedBefore(CreatedBeforeT&& value) { SetCreatedBefore(std::forward<CreatedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time after which the job runs were submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
+    inline const Aws::Utils::DateTime& GetCreatedAfter() const { return m_createdAfter; }
     inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
-    inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
-    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::move(value); }
-    inline ListJobRunsRequest& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
-    inline ListJobRunsRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    void SetCreatedAfter(CreatedAfterT&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::forward<CreatedAfterT>(value); }
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    ListJobRunsRequest& WithCreatedAfter(CreatedAfterT&& value) { SetCreatedAfter(std::forward<CreatedAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the job run.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ListJobRunsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListJobRunsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListJobRunsRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListJobRunsRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The states of the job run.</p>
      */
-    inline const Aws::Vector<JobRunState>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<JobRunState>& GetStates() const { return m_states; }
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
-    inline void SetStates(const Aws::Vector<JobRunState>& value) { m_statesHasBeenSet = true; m_states = value; }
-    inline void SetStates(Aws::Vector<JobRunState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
-    inline ListJobRunsRequest& WithStates(const Aws::Vector<JobRunState>& value) { SetStates(value); return *this;}
-    inline ListJobRunsRequest& WithStates(Aws::Vector<JobRunState>&& value) { SetStates(std::move(value)); return *this;}
-    inline ListJobRunsRequest& AddStates(const JobRunState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
-    inline ListJobRunsRequest& AddStates(JobRunState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    template<typename StatesT = Aws::Vector<JobRunState>>
+    void SetStates(StatesT&& value) { m_statesHasBeenSet = true; m_states = std::forward<StatesT>(value); }
+    template<typename StatesT = Aws::Vector<JobRunState>>
+    ListJobRunsRequest& WithStates(StatesT&& value) { SetStates(std::forward<StatesT>(value)); return *this;}
+    inline ListJobRunsRequest& AddStates(JobRunState value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of job runs that can be listed.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListJobRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -121,24 +116,22 @@ namespace Model
     /**
      * <p>The token for the next set of job runs to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListJobRunsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobRunsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobRunsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobRunsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_virtualClusterId;
     bool m_virtualClusterIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdBefore;
+    Aws::Utils::DateTime m_createdBefore{};
     bool m_createdBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAfter;
+    Aws::Utils::DateTime m_createdAfter{};
     bool m_createdAfterHasBeenSet = false;
 
     Aws::String m_name;
@@ -147,7 +140,7 @@ namespace Model
     Aws::Vector<JobRunState> m_states;
     bool m_statesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

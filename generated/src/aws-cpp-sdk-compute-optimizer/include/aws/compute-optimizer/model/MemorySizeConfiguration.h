@@ -30,7 +30,7 @@ namespace Model
   class MemorySizeConfiguration
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API MemorySizeConfiguration();
+    AWS_COMPUTEOPTIMIZER_API MemorySizeConfiguration() = default;
     AWS_COMPUTEOPTIMIZER_API MemorySizeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API MemorySizeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p> The amount of memory in the container. </p>
      */
-    inline int GetMemory() const{ return m_memory; }
+    inline int GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline MemorySizeConfiguration& WithMemory(int value) { SetMemory(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p> The limit of memory reserve for the container. </p>
      */
-    inline int GetMemoryReservation() const{ return m_memoryReservation; }
+    inline int GetMemoryReservation() const { return m_memoryReservation; }
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
     inline MemorySizeConfiguration& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
     ///@}
   private:
 
-    int m_memory;
+    int m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    int m_memoryReservation;
+    int m_memoryReservation{0};
     bool m_memoryReservationHasBeenSet = false;
   };
 

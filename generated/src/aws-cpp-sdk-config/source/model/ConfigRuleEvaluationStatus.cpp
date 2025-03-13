@@ -18,28 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() : 
-    m_configRuleNameHasBeenSet(false),
-    m_configRuleArnHasBeenSet(false),
-    m_configRuleIdHasBeenSet(false),
-    m_lastSuccessfulInvocationTimeHasBeenSet(false),
-    m_lastFailedInvocationTimeHasBeenSet(false),
-    m_lastSuccessfulEvaluationTimeHasBeenSet(false),
-    m_lastFailedEvaluationTimeHasBeenSet(false),
-    m_firstActivatedTimeHasBeenSet(false),
-    m_lastDeactivatedTimeHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false),
-    m_firstEvaluationStarted(false),
-    m_firstEvaluationStartedHasBeenSet(false),
-    m_lastDebugLogDeliveryStatusHasBeenSet(false),
-    m_lastDebugLogDeliveryStatusReasonHasBeenSet(false),
-    m_lastDebugLogDeliveryTimeHasBeenSet(false)
-{
-}
-
 ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue)
-  : ConfigRuleEvaluationStatus()
 {
   *this = jsonValue;
 }
@@ -49,108 +28,78 @@ ConfigRuleEvaluationStatus& ConfigRuleEvaluationStatus::operator =(JsonView json
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
-
     m_configRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleArn"))
   {
     m_configRuleArn = jsonValue.GetString("ConfigRuleArn");
-
     m_configRuleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleId"))
   {
     m_configRuleId = jsonValue.GetString("ConfigRuleId");
-
     m_configRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfulInvocationTime"))
   {
     m_lastSuccessfulInvocationTime = jsonValue.GetDouble("LastSuccessfulInvocationTime");
-
     m_lastSuccessfulInvocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailedInvocationTime"))
   {
     m_lastFailedInvocationTime = jsonValue.GetDouble("LastFailedInvocationTime");
-
     m_lastFailedInvocationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfulEvaluationTime"))
   {
     m_lastSuccessfulEvaluationTime = jsonValue.GetDouble("LastSuccessfulEvaluationTime");
-
     m_lastSuccessfulEvaluationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailedEvaluationTime"))
   {
     m_lastFailedEvaluationTime = jsonValue.GetDouble("LastFailedEvaluationTime");
-
     m_lastFailedEvaluationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstActivatedTime"))
   {
     m_firstActivatedTime = jsonValue.GetDouble("FirstActivatedTime");
-
     m_firstActivatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDeactivatedTime"))
   {
     m_lastDeactivatedTime = jsonValue.GetDouble("LastDeactivatedTime");
-
     m_lastDeactivatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastErrorCode"))
   {
     m_lastErrorCode = jsonValue.GetString("LastErrorCode");
-
     m_lastErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastErrorMessage"))
   {
     m_lastErrorMessage = jsonValue.GetString("LastErrorMessage");
-
     m_lastErrorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstEvaluationStarted"))
   {
     m_firstEvaluationStarted = jsonValue.GetBool("FirstEvaluationStarted");
-
     m_firstEvaluationStartedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDebugLogDeliveryStatus"))
   {
     m_lastDebugLogDeliveryStatus = jsonValue.GetString("LastDebugLogDeliveryStatus");
-
     m_lastDebugLogDeliveryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDebugLogDeliveryStatusReason"))
   {
     m_lastDebugLogDeliveryStatusReason = jsonValue.GetString("LastDebugLogDeliveryStatusReason");
-
     m_lastDebugLogDeliveryStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDebugLogDeliveryTime"))
   {
     m_lastDebugLogDeliveryTime = jsonValue.GetDouble("LastDebugLogDeliveryTime");
-
     m_lastDebugLogDeliveryTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RetentionConfiguration::RetentionConfiguration() : 
-    m_icebergConfigurationHasBeenSet(false)
-{
-}
-
 RetentionConfiguration::RetentionConfiguration(JsonView jsonValue)
-  : RetentionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetentionConfiguration& RetentionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("icebergConfiguration"))
   {
     m_icebergConfiguration = jsonValue.GetObject("icebergConfiguration");
-
     m_icebergConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

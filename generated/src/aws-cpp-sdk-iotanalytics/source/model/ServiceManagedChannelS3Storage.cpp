@@ -18,10 +18,6 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ServiceManagedChannelS3Storage::ServiceManagedChannelS3Storage()
-{
-}
-
 ServiceManagedChannelS3Storage::ServiceManagedChannelS3Storage(JsonView jsonValue)
 {
   *this = jsonValue;

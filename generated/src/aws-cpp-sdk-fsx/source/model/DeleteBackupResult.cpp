@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteBackupResult::DeleteBackupResult() : 
-    m_lifecycle(BackupLifecycle::NOT_SET)
-{
-}
-
 DeleteBackupResult::DeleteBackupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteBackupResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteBackupResult& DeleteBackupResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("BackupId"))
   {
     m_backupId = jsonValue.GetString("BackupId");
-
+    m_backupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = BackupLifecycleMapper::GetBackupLifecycleForName(jsonValue.GetString("Lifecycle"));
-
+    m_lifecycleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

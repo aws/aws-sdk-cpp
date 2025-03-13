@@ -18,14 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-LaunchExecution::LaunchExecution() : 
-    m_endedTimeHasBeenSet(false),
-    m_startedTimeHasBeenSet(false)
-{
-}
-
 LaunchExecution::LaunchExecution(JsonView jsonValue)
-  : LaunchExecution()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LaunchExecution& LaunchExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endedTime"))
   {
     m_endedTime = jsonValue.GetDouble("endedTime");
-
     m_endedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedTime"))
   {
     m_startedTime = jsonValue.GetDouble("startedTime");
-
     m_startedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AddonPodIdentityConfiguration::AddonPodIdentityConfiguration() : 
-    m_serviceAccountHasBeenSet(false),
-    m_recommendedManagedPoliciesHasBeenSet(false)
-{
-}
-
 AddonPodIdentityConfiguration::AddonPodIdentityConfiguration(JsonView jsonValue)
-  : AddonPodIdentityConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AddonPodIdentityConfiguration& AddonPodIdentityConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("serviceAccount"))
   {
     m_serviceAccount = jsonValue.GetString("serviceAccount");
-
     m_serviceAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendedManagedPolicies"))
   {
     Aws::Utils::Array<JsonView> recommendedManagedPoliciesJsonList = jsonValue.GetArray("recommendedManagedPolicies");
@@ -48,7 +39,6 @@ AddonPodIdentityConfiguration& AddonPodIdentityConfiguration::operator =(JsonVie
     }
     m_recommendedManagedPoliciesHasBeenSet = true;
   }
-
   return *this;
 }
 

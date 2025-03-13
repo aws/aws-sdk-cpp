@@ -12,13 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PublishStateMachineVersionRequest::PublishStateMachineVersionRequest() : 
-    m_stateMachineArnHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String PublishStateMachineVersionRequest::SerializePayload() const
 {
   JsonValue payload;

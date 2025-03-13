@@ -29,7 +29,7 @@ namespace Model
   class ListSimulationApplicationsResult
   {
   public:
-    AWS_ROBOMAKER_API ListSimulationApplicationsResult();
+    AWS_ROBOMAKER_API ListSimulationApplicationsResult() = default;
     AWS_ROBOMAKER_API ListSimulationApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API ListSimulationApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of simulation application summaries that meet the criteria of the
      * request.</p>
      */
-    inline const Aws::Vector<SimulationApplicationSummary>& GetSimulationApplicationSummaries() const{ return m_simulationApplicationSummaries; }
-    inline void SetSimulationApplicationSummaries(const Aws::Vector<SimulationApplicationSummary>& value) { m_simulationApplicationSummaries = value; }
-    inline void SetSimulationApplicationSummaries(Aws::Vector<SimulationApplicationSummary>&& value) { m_simulationApplicationSummaries = std::move(value); }
-    inline ListSimulationApplicationsResult& WithSimulationApplicationSummaries(const Aws::Vector<SimulationApplicationSummary>& value) { SetSimulationApplicationSummaries(value); return *this;}
-    inline ListSimulationApplicationsResult& WithSimulationApplicationSummaries(Aws::Vector<SimulationApplicationSummary>&& value) { SetSimulationApplicationSummaries(std::move(value)); return *this;}
-    inline ListSimulationApplicationsResult& AddSimulationApplicationSummaries(const SimulationApplicationSummary& value) { m_simulationApplicationSummaries.push_back(value); return *this; }
-    inline ListSimulationApplicationsResult& AddSimulationApplicationSummaries(SimulationApplicationSummary&& value) { m_simulationApplicationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SimulationApplicationSummary>& GetSimulationApplicationSummaries() const { return m_simulationApplicationSummaries; }
+    template<typename SimulationApplicationSummariesT = Aws::Vector<SimulationApplicationSummary>>
+    void SetSimulationApplicationSummaries(SimulationApplicationSummariesT&& value) { m_simulationApplicationSummariesHasBeenSet = true; m_simulationApplicationSummaries = std::forward<SimulationApplicationSummariesT>(value); }
+    template<typename SimulationApplicationSummariesT = Aws::Vector<SimulationApplicationSummary>>
+    ListSimulationApplicationsResult& WithSimulationApplicationSummaries(SimulationApplicationSummariesT&& value) { SetSimulationApplicationSummaries(std::forward<SimulationApplicationSummariesT>(value)); return *this;}
+    template<typename SimulationApplicationSummariesT = SimulationApplicationSummary>
+    ListSimulationApplicationsResult& AddSimulationApplicationSummaries(SimulationApplicationSummariesT&& value) { m_simulationApplicationSummariesHasBeenSet = true; m_simulationApplicationSummaries.emplace_back(std::forward<SimulationApplicationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * request object's <code>nextToken</code> parameter. If there are no remaining
      * results, the previous response object's NextToken parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSimulationApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSimulationApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSimulationApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSimulationApplicationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSimulationApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSimulationApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSimulationApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSimulationApplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SimulationApplicationSummary> m_simulationApplicationSummaries;
+    bool m_simulationApplicationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

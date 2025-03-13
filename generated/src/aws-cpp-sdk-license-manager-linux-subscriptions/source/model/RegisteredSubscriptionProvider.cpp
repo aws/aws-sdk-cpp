@@ -18,20 +18,7 @@ namespace LicenseManagerLinuxSubscriptions
 namespace Model
 {
 
-RegisteredSubscriptionProvider::RegisteredSubscriptionProvider() : 
-    m_lastSuccessfulDataRetrievalTimeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_subscriptionProviderArnHasBeenSet(false),
-    m_subscriptionProviderSource(SubscriptionProviderSource::NOT_SET),
-    m_subscriptionProviderSourceHasBeenSet(false),
-    m_subscriptionProviderStatus(SubscriptionProviderStatus::NOT_SET),
-    m_subscriptionProviderStatusHasBeenSet(false),
-    m_subscriptionProviderStatusMessageHasBeenSet(false)
-{
-}
-
 RegisteredSubscriptionProvider::RegisteredSubscriptionProvider(JsonView jsonValue)
-  : RegisteredSubscriptionProvider()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ RegisteredSubscriptionProvider& RegisteredSubscriptionProvider::operator =(JsonV
   if(jsonValue.ValueExists("LastSuccessfulDataRetrievalTime"))
   {
     m_lastSuccessfulDataRetrievalTime = jsonValue.GetString("LastSuccessfulDataRetrievalTime");
-
     m_lastSuccessfulDataRetrievalTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionProviderArn"))
   {
     m_subscriptionProviderArn = jsonValue.GetString("SubscriptionProviderArn");
-
     m_subscriptionProviderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionProviderSource"))
   {
     m_subscriptionProviderSource = SubscriptionProviderSourceMapper::GetSubscriptionProviderSourceForName(jsonValue.GetString("SubscriptionProviderSource"));
-
     m_subscriptionProviderSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionProviderStatus"))
   {
     m_subscriptionProviderStatus = SubscriptionProviderStatusMapper::GetSubscriptionProviderStatusForName(jsonValue.GetString("SubscriptionProviderStatus"));
-
     m_subscriptionProviderStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionProviderStatusMessage"))
   {
     m_subscriptionProviderStatusMessage = jsonValue.GetString("SubscriptionProviderStatusMessage");
-
     m_subscriptionProviderStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

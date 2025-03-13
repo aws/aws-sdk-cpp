@@ -18,16 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-FrozenFrames::FrozenFrames() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_thresholdSeconds(0),
-    m_thresholdSecondsHasBeenSet(false)
-{
-}
-
 FrozenFrames::FrozenFrames(JsonView jsonValue)
-  : FrozenFrames()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FrozenFrames& FrozenFrames::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thresholdSeconds"))
   {
     m_thresholdSeconds = jsonValue.GetInteger("thresholdSeconds");
-
     m_thresholdSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

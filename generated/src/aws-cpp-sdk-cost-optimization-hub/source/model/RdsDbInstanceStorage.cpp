@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-RdsDbInstanceStorage::RdsDbInstanceStorage() : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
-{
-}
-
 RdsDbInstanceStorage::RdsDbInstanceStorage(JsonView jsonValue)
-  : RdsDbInstanceStorage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RdsDbInstanceStorage& RdsDbInstanceStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCalculation"))
   {
     m_costCalculation = jsonValue.GetObject("costCalculation");
-
     m_costCalculationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-RoomSummary::RoomSummary() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_messageReviewHandlerHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_loggingConfigurationIdentifiersHasBeenSet(false)
-{
-}
-
 RoomSummary::RoomSummary(JsonView jsonValue)
-  : RoomSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageReviewHandler"))
   {
     m_messageReviewHandler = jsonValue.GetObject("messageReviewHandler");
-
     m_messageReviewHandlerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -89,7 +64,6 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loggingConfigurationIdentifiers"))
   {
     Aws::Utils::Array<JsonView> loggingConfigurationIdentifiersJsonList = jsonValue.GetArray("loggingConfigurationIdentifiers");
@@ -99,7 +73,6 @@ RoomSummary& RoomSummary::operator =(JsonView jsonValue)
     }
     m_loggingConfigurationIdentifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

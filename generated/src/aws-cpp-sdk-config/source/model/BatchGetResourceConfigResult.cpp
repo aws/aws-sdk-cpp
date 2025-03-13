@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetResourceConfigResult::BatchGetResourceConfigResult()
-{
-}
-
 BatchGetResourceConfigResult::BatchGetResourceConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetResourceConfigResult& BatchGetResourceConfigResult::operator =(const Aws
     {
       m_baseConfigurationItems.push_back(baseConfigurationItemsJsonList[baseConfigurationItemsIndex].AsObject());
     }
+    m_baseConfigurationItemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedResourceKeys"))
   {
     Aws::Utils::Array<JsonView> unprocessedResourceKeysJsonList = jsonValue.GetArray("unprocessedResourceKeys");
@@ -45,14 +41,15 @@ BatchGetResourceConfigResult& BatchGetResourceConfigResult::operator =(const Aws
     {
       m_unprocessedResourceKeys.push_back(unprocessedResourceKeysJsonList[unprocessedResourceKeysIndex].AsObject());
     }
+    m_unprocessedResourceKeysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

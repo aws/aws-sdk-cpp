@@ -19,14 +19,7 @@ namespace Translate
 namespace Model
 {
 
-Document::Document() : 
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 Document::Document(JsonView jsonValue)
-  : Document()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ Document& Document::operator =(JsonView jsonValue)
     m_content = HashingUtils::Base64Decode(jsonValue.GetString("Content"));
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

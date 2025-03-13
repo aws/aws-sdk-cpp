@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PublishSchemaResult::PublishSchemaResult()
-{
-}
-
 PublishSchemaResult::PublishSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PublishSchemaResult& PublishSchemaResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("PublishedSchemaArn"))
   {
     m_publishedSchemaArn = jsonValue.GetString("PublishedSchemaArn");
-
+    m_publishedSchemaArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

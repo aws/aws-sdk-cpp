@@ -37,7 +37,7 @@ namespace Model
   class LambdaTarget
   {
   public:
-    AWS_CODEDEPLOY_API LambdaTarget();
+    AWS_CODEDEPLOY_API LambdaTarget() = default;
     AWS_CODEDEPLOY_API LambdaTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API LambdaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline LambdaTarget& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline LambdaTarget& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline LambdaTarget& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    LambdaTarget& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,40 +60,34 @@ namespace Model
      * <p> The unique ID of a deployment target that has a type of
      * <code>lambdaTarget</code>. </p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline LambdaTarget& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline LambdaTarget& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline LambdaTarget& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    LambdaTarget& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline LambdaTarget& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline LambdaTarget& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline LambdaTarget& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    LambdaTarget& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status an Lambda deployment's target Lambda function. </p>
      */
-    inline const TargetStatus& GetStatus() const{ return m_status; }
+    inline TargetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TargetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LambdaTarget& WithStatus(const TargetStatus& value) { SetStatus(value); return *this;}
-    inline LambdaTarget& WithStatus(TargetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TargetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LambdaTarget& WithStatus(TargetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -103,26 +95,26 @@ namespace Model
      * <p> The date and time when the target Lambda function was updated by a
      * deployment. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline LambdaTarget& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline LambdaTarget& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    LambdaTarget& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The lifecycle events of the deployment to this target Lambda function. </p>
      */
-    inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
+    inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const { return m_lifecycleEvents; }
     inline bool LifecycleEventsHasBeenSet() const { return m_lifecycleEventsHasBeenSet; }
-    inline void SetLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = value; }
-    inline void SetLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::move(value); }
-    inline LambdaTarget& WithLifecycleEvents(const Aws::Vector<LifecycleEvent>& value) { SetLifecycleEvents(value); return *this;}
-    inline LambdaTarget& WithLifecycleEvents(Aws::Vector<LifecycleEvent>&& value) { SetLifecycleEvents(std::move(value)); return *this;}
-    inline LambdaTarget& AddLifecycleEvents(const LifecycleEvent& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(value); return *this; }
-    inline LambdaTarget& AddLifecycleEvents(LifecycleEvent&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.push_back(std::move(value)); return *this; }
+    template<typename LifecycleEventsT = Aws::Vector<LifecycleEvent>>
+    void SetLifecycleEvents(LifecycleEventsT&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents = std::forward<LifecycleEventsT>(value); }
+    template<typename LifecycleEventsT = Aws::Vector<LifecycleEvent>>
+    LambdaTarget& WithLifecycleEvents(LifecycleEventsT&& value) { SetLifecycleEvents(std::forward<LifecycleEventsT>(value)); return *this;}
+    template<typename LifecycleEventsT = LifecycleEvent>
+    LambdaTarget& AddLifecycleEvents(LifecycleEventsT&& value) { m_lifecycleEventsHasBeenSet = true; m_lifecycleEvents.emplace_back(std::forward<LifecycleEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,12 +122,12 @@ namespace Model
      * <p> A <code>LambdaFunctionInfo</code> object that describes a target Lambda
      * function. </p>
      */
-    inline const LambdaFunctionInfo& GetLambdaFunctionInfo() const{ return m_lambdaFunctionInfo; }
+    inline const LambdaFunctionInfo& GetLambdaFunctionInfo() const { return m_lambdaFunctionInfo; }
     inline bool LambdaFunctionInfoHasBeenSet() const { return m_lambdaFunctionInfoHasBeenSet; }
-    inline void SetLambdaFunctionInfo(const LambdaFunctionInfo& value) { m_lambdaFunctionInfoHasBeenSet = true; m_lambdaFunctionInfo = value; }
-    inline void SetLambdaFunctionInfo(LambdaFunctionInfo&& value) { m_lambdaFunctionInfoHasBeenSet = true; m_lambdaFunctionInfo = std::move(value); }
-    inline LambdaTarget& WithLambdaFunctionInfo(const LambdaFunctionInfo& value) { SetLambdaFunctionInfo(value); return *this;}
-    inline LambdaTarget& WithLambdaFunctionInfo(LambdaFunctionInfo&& value) { SetLambdaFunctionInfo(std::move(value)); return *this;}
+    template<typename LambdaFunctionInfoT = LambdaFunctionInfo>
+    void SetLambdaFunctionInfo(LambdaFunctionInfoT&& value) { m_lambdaFunctionInfoHasBeenSet = true; m_lambdaFunctionInfo = std::forward<LambdaFunctionInfoT>(value); }
+    template<typename LambdaFunctionInfoT = LambdaFunctionInfo>
+    LambdaTarget& WithLambdaFunctionInfo(LambdaFunctionInfoT&& value) { SetLambdaFunctionInfo(std::forward<LambdaFunctionInfoT>(value)); return *this;}
     ///@}
   private:
 
@@ -148,10 +140,10 @@ namespace Model
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet = false;
 
-    TargetStatus m_status;
+    TargetStatus m_status{TargetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;

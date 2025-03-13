@@ -23,7 +23,7 @@ namespace Model
   class UpdateCustomRoutingListenerRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API UpdateCustomRoutingListenerRequest();
+    AWS_GLOBALACCELERATOR_API UpdateCustomRoutingListenerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener to update.</p>
      */
-    inline const Aws::String& GetListenerArn() const{ return m_listenerArn; }
+    inline const Aws::String& GetListenerArn() const { return m_listenerArn; }
     inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
-    inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
-    inline void SetListenerArn(const char* value) { m_listenerArnHasBeenSet = true; m_listenerArn.assign(value); }
-    inline UpdateCustomRoutingListenerRequest& WithListenerArn(const Aws::String& value) { SetListenerArn(value); return *this;}
-    inline UpdateCustomRoutingListenerRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
-    inline UpdateCustomRoutingListenerRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+    template<typename ListenerArnT = Aws::String>
+    void SetListenerArn(ListenerArnT&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::forward<ListenerArnT>(value); }
+    template<typename ListenerArnT = Aws::String>
+    UpdateCustomRoutingListenerRequest& WithListenerArn(ListenerArnT&& value) { SetListenerArn(std::forward<ListenerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
      * endpoints for custom routing accelerators</a>.</p>
      */
-    inline const Aws::Vector<PortRange>& GetPortRanges() const{ return m_portRanges; }
+    inline const Aws::Vector<PortRange>& GetPortRanges() const { return m_portRanges; }
     inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
-    inline void SetPortRanges(const Aws::Vector<PortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
-    inline void SetPortRanges(Aws::Vector<PortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
-    inline UpdateCustomRoutingListenerRequest& WithPortRanges(const Aws::Vector<PortRange>& value) { SetPortRanges(value); return *this;}
-    inline UpdateCustomRoutingListenerRequest& WithPortRanges(Aws::Vector<PortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
-    inline UpdateCustomRoutingListenerRequest& AddPortRanges(const PortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
-    inline UpdateCustomRoutingListenerRequest& AddPortRanges(PortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
+    template<typename PortRangesT = Aws::Vector<PortRange>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<PortRange>>
+    UpdateCustomRoutingListenerRequest& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = PortRange>
+    UpdateCustomRoutingListenerRequest& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
   private:
 

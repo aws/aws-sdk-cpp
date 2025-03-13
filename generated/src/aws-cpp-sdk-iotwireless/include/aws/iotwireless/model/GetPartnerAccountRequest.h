@@ -26,7 +26,7 @@ namespace Model
   class GetPartnerAccountRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetPartnerAccountRequest();
+    AWS_IOTWIRELESS_API GetPartnerAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The partner account ID to disassociate from the AWS account.</p>
      */
-    inline const Aws::String& GetPartnerAccountId() const{ return m_partnerAccountId; }
+    inline const Aws::String& GetPartnerAccountId() const { return m_partnerAccountId; }
     inline bool PartnerAccountIdHasBeenSet() const { return m_partnerAccountIdHasBeenSet; }
-    inline void SetPartnerAccountId(const Aws::String& value) { m_partnerAccountIdHasBeenSet = true; m_partnerAccountId = value; }
-    inline void SetPartnerAccountId(Aws::String&& value) { m_partnerAccountIdHasBeenSet = true; m_partnerAccountId = std::move(value); }
-    inline void SetPartnerAccountId(const char* value) { m_partnerAccountIdHasBeenSet = true; m_partnerAccountId.assign(value); }
-    inline GetPartnerAccountRequest& WithPartnerAccountId(const Aws::String& value) { SetPartnerAccountId(value); return *this;}
-    inline GetPartnerAccountRequest& WithPartnerAccountId(Aws::String&& value) { SetPartnerAccountId(std::move(value)); return *this;}
-    inline GetPartnerAccountRequest& WithPartnerAccountId(const char* value) { SetPartnerAccountId(value); return *this;}
+    template<typename PartnerAccountIdT = Aws::String>
+    void SetPartnerAccountId(PartnerAccountIdT&& value) { m_partnerAccountIdHasBeenSet = true; m_partnerAccountId = std::forward<PartnerAccountIdT>(value); }
+    template<typename PartnerAccountIdT = Aws::String>
+    GetPartnerAccountRequest& WithPartnerAccountId(PartnerAccountIdT&& value) { SetPartnerAccountId(std::forward<PartnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The partner type.</p>
      */
-    inline const PartnerType& GetPartnerType() const{ return m_partnerType; }
+    inline PartnerType GetPartnerType() const { return m_partnerType; }
     inline bool PartnerTypeHasBeenSet() const { return m_partnerTypeHasBeenSet; }
-    inline void SetPartnerType(const PartnerType& value) { m_partnerTypeHasBeenSet = true; m_partnerType = value; }
-    inline void SetPartnerType(PartnerType&& value) { m_partnerTypeHasBeenSet = true; m_partnerType = std::move(value); }
-    inline GetPartnerAccountRequest& WithPartnerType(const PartnerType& value) { SetPartnerType(value); return *this;}
-    inline GetPartnerAccountRequest& WithPartnerType(PartnerType&& value) { SetPartnerType(std::move(value)); return *this;}
+    inline void SetPartnerType(PartnerType value) { m_partnerTypeHasBeenSet = true; m_partnerType = value; }
+    inline GetPartnerAccountRequest& WithPartnerType(PartnerType value) { SetPartnerType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_partnerAccountId;
     bool m_partnerAccountIdHasBeenSet = false;
 
-    PartnerType m_partnerType;
+    PartnerType m_partnerType{PartnerType::NOT_SET};
     bool m_partnerTypeHasBeenSet = false;
   };
 

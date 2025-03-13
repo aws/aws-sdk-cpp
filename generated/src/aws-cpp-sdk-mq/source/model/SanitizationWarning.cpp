@@ -18,16 +18,7 @@ namespace MQ
 namespace Model
 {
 
-SanitizationWarning::SanitizationWarning() : 
-    m_attributeNameHasBeenSet(false),
-    m_elementNameHasBeenSet(false),
-    m_reason(SanitizationWarningReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 SanitizationWarning::SanitizationWarning(JsonView jsonValue)
-  : SanitizationWarning()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SanitizationWarning& SanitizationWarning::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributeName"))
   {
     m_attributeName = jsonValue.GetString("attributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elementName"))
   {
     m_elementName = jsonValue.GetString("elementName");
-
     m_elementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = SanitizationWarningReasonMapper::GetSanitizationWarningReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

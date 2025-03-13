@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AnalyzeIDResult::AnalyzeIDResult()
-{
-}
-
 AnalyzeIDResult::AnalyzeIDResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ AnalyzeIDResult& AnalyzeIDResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_identityDocuments.push_back(identityDocumentsJsonList[identityDocumentsIndex].AsObject());
     }
+    m_identityDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentMetadata"))
   {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
-
+    m_documentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzeIDModelVersion"))
   {
     m_analyzeIDModelVersion = jsonValue.GetString("AnalyzeIDModelVersion");
-
+    m_analyzeIDModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

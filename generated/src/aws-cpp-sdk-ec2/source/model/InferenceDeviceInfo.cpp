@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InferenceDeviceInfo::InferenceDeviceInfo() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_manufacturerHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false)
-{
-}
-
 InferenceDeviceInfo::InferenceDeviceInfo(const XmlNode& xmlNode)
-  : InferenceDeviceInfo()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ InferenceDeviceInfo& InferenceDeviceInfo::operator =(const XmlNode& xmlNode)
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode manufacturerNode = resultNode.FirstChild("manufacturer");
     if(!manufacturerNode.IsNull())
     {
       m_manufacturer = Aws::Utils::Xml::DecodeEscapedXmlText(manufacturerNode.GetText());
       m_manufacturerHasBeenSet = true;
+       m_manufacturerHasBeenSet = true;
     }
     XmlNode memoryInfoNode = resultNode.FirstChild("memoryInfo");
     if(!memoryInfoNode.IsNull())
     {
       m_memoryInfo = memoryInfoNode;
       m_memoryInfoHasBeenSet = true;
+       m_memoryInfoHasBeenSet = true;
     }
   }
 

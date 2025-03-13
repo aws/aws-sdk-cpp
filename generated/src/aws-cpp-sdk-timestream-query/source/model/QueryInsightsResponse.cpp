@@ -18,26 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QueryInsightsResponse::QueryInsightsResponse() : 
-    m_querySpatialCoverageHasBeenSet(false),
-    m_queryTemporalRangeHasBeenSet(false),
-    m_queryTableCount(0),
-    m_queryTableCountHasBeenSet(false),
-    m_outputRows(0),
-    m_outputRowsHasBeenSet(false),
-    m_outputBytes(0),
-    m_outputBytesHasBeenSet(false),
-    m_unloadPartitionCount(0),
-    m_unloadPartitionCountHasBeenSet(false),
-    m_unloadWrittenRows(0),
-    m_unloadWrittenRowsHasBeenSet(false),
-    m_unloadWrittenBytes(0),
-    m_unloadWrittenBytesHasBeenSet(false)
-{
-}
-
 QueryInsightsResponse::QueryInsightsResponse(JsonView jsonValue)
-  : QueryInsightsResponse()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ QueryInsightsResponse& QueryInsightsResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuerySpatialCoverage"))
   {
     m_querySpatialCoverage = jsonValue.GetObject("QuerySpatialCoverage");
-
     m_querySpatialCoverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryTemporalRange"))
   {
     m_queryTemporalRange = jsonValue.GetObject("QueryTemporalRange");
-
     m_queryTemporalRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryTableCount"))
   {
     m_queryTableCount = jsonValue.GetInt64("QueryTableCount");
-
     m_queryTableCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputRows"))
   {
     m_outputRows = jsonValue.GetInt64("OutputRows");
-
     m_outputRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputBytes"))
   {
     m_outputBytes = jsonValue.GetInt64("OutputBytes");
-
     m_outputBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnloadPartitionCount"))
   {
     m_unloadPartitionCount = jsonValue.GetInt64("UnloadPartitionCount");
-
     m_unloadPartitionCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnloadWrittenRows"))
   {
     m_unloadWrittenRows = jsonValue.GetInt64("UnloadWrittenRows");
-
     m_unloadWrittenRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnloadWrittenBytes"))
   {
     m_unloadWrittenBytes = jsonValue.GetInt64("UnloadWrittenBytes");
-
     m_unloadWrittenBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

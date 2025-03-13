@@ -36,7 +36,7 @@ namespace Model
   class SqliMatchStatement
   {
   public:
-    AWS_WAFV2_API SqliMatchStatement();
+    AWS_WAFV2_API SqliMatchStatement() = default;
     AWS_WAFV2_API SqliMatchStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API SqliMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>The part of the web request that you want WAF to inspect. </p>
      */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+    inline const FieldToMatch& GetFieldToMatch() const { return m_fieldToMatch; }
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-    inline SqliMatchStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-    inline SqliMatchStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    template<typename FieldToMatchT = FieldToMatch>
+    void SetFieldToMatch(FieldToMatchT&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::forward<FieldToMatchT>(value); }
+    template<typename FieldToMatchT = FieldToMatch>
+    SqliMatchStatement& WithFieldToMatch(FieldToMatchT&& value) { SetFieldToMatch(std::forward<FieldToMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +65,14 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the transformed component contents. </p>
      */
-    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
+    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const { return m_textTransformations; }
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
-    inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
-    inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
-    inline SqliMatchStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
-    inline SqliMatchStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
-    inline SqliMatchStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
-    inline SqliMatchStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
+    template<typename TextTransformationsT = Aws::Vector<TextTransformation>>
+    void SetTextTransformations(TextTransformationsT&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::forward<TextTransformationsT>(value); }
+    template<typename TextTransformationsT = Aws::Vector<TextTransformation>>
+    SqliMatchStatement& WithTextTransformations(TextTransformationsT&& value) { SetTextTransformations(std::forward<TextTransformationsT>(value)); return *this;}
+    template<typename TextTransformationsT = TextTransformation>
+    SqliMatchStatement& AddTextTransformations(TextTransformationsT&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.emplace_back(std::forward<TextTransformationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,12 +88,10 @@ namespace Model
      * against SQL injection attacks or that have a low tolerance for false positives.
      * </p> <p>Default: <code>LOW</code> </p>
      */
-    inline const SensitivityLevel& GetSensitivityLevel() const{ return m_sensitivityLevel; }
+    inline SensitivityLevel GetSensitivityLevel() const { return m_sensitivityLevel; }
     inline bool SensitivityLevelHasBeenSet() const { return m_sensitivityLevelHasBeenSet; }
-    inline void SetSensitivityLevel(const SensitivityLevel& value) { m_sensitivityLevelHasBeenSet = true; m_sensitivityLevel = value; }
-    inline void SetSensitivityLevel(SensitivityLevel&& value) { m_sensitivityLevelHasBeenSet = true; m_sensitivityLevel = std::move(value); }
-    inline SqliMatchStatement& WithSensitivityLevel(const SensitivityLevel& value) { SetSensitivityLevel(value); return *this;}
-    inline SqliMatchStatement& WithSensitivityLevel(SensitivityLevel&& value) { SetSensitivityLevel(std::move(value)); return *this;}
+    inline void SetSensitivityLevel(SensitivityLevel value) { m_sensitivityLevelHasBeenSet = true; m_sensitivityLevel = value; }
+    inline SqliMatchStatement& WithSensitivityLevel(SensitivityLevel value) { SetSensitivityLevel(value); return *this;}
     ///@}
   private:
 
@@ -103,7 +101,7 @@ namespace Model
     Aws::Vector<TextTransformation> m_textTransformations;
     bool m_textTransformationsHasBeenSet = false;
 
-    SensitivityLevel m_sensitivityLevel;
+    SensitivityLevel m_sensitivityLevel{SensitivityLevel::NOT_SET};
     bool m_sensitivityLevelHasBeenSet = false;
   };
 

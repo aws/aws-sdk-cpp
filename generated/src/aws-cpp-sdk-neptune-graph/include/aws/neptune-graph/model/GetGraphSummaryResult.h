@@ -29,7 +29,7 @@ namespace Model
   class GetGraphSummaryResult
   {
   public:
-    AWS_NEPTUNEGRAPH_API GetGraphSummaryResult();
+    AWS_NEPTUNEGRAPH_API GetGraphSummaryResult() = default;
     AWS_NEPTUNEGRAPH_API GetGraphSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEGRAPH_API GetGraphSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>Display the version of this tool.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline GetGraphSummaryResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetGraphSummaryResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetGraphSummaryResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetGraphSummaryResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,43 +50,45 @@ namespace Model
      * <p>The timestamp, in ISO 8601 format, of the time at which Neptune Analytics
      * last computed statistics.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastStatisticsComputationTime() const{ return m_lastStatisticsComputationTime; }
-    inline void SetLastStatisticsComputationTime(const Aws::Utils::DateTime& value) { m_lastStatisticsComputationTime = value; }
-    inline void SetLastStatisticsComputationTime(Aws::Utils::DateTime&& value) { m_lastStatisticsComputationTime = std::move(value); }
-    inline GetGraphSummaryResult& WithLastStatisticsComputationTime(const Aws::Utils::DateTime& value) { SetLastStatisticsComputationTime(value); return *this;}
-    inline GetGraphSummaryResult& WithLastStatisticsComputationTime(Aws::Utils::DateTime&& value) { SetLastStatisticsComputationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastStatisticsComputationTime() const { return m_lastStatisticsComputationTime; }
+    template<typename LastStatisticsComputationTimeT = Aws::Utils::DateTime>
+    void SetLastStatisticsComputationTime(LastStatisticsComputationTimeT&& value) { m_lastStatisticsComputationTimeHasBeenSet = true; m_lastStatisticsComputationTime = std::forward<LastStatisticsComputationTimeT>(value); }
+    template<typename LastStatisticsComputationTimeT = Aws::Utils::DateTime>
+    GetGraphSummaryResult& WithLastStatisticsComputationTime(LastStatisticsComputationTimeT&& value) { SetLastStatisticsComputationTime(std::forward<LastStatisticsComputationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The graph summary.</p>
      */
-    inline const GraphDataSummary& GetGraphSummary() const{ return m_graphSummary; }
-    inline void SetGraphSummary(const GraphDataSummary& value) { m_graphSummary = value; }
-    inline void SetGraphSummary(GraphDataSummary&& value) { m_graphSummary = std::move(value); }
-    inline GetGraphSummaryResult& WithGraphSummary(const GraphDataSummary& value) { SetGraphSummary(value); return *this;}
-    inline GetGraphSummaryResult& WithGraphSummary(GraphDataSummary&& value) { SetGraphSummary(std::move(value)); return *this;}
+    inline const GraphDataSummary& GetGraphSummary() const { return m_graphSummary; }
+    template<typename GraphSummaryT = GraphDataSummary>
+    void SetGraphSummary(GraphSummaryT&& value) { m_graphSummaryHasBeenSet = true; m_graphSummary = std::forward<GraphSummaryT>(value); }
+    template<typename GraphSummaryT = GraphDataSummary>
+    GetGraphSummaryResult& WithGraphSummary(GraphSummaryT&& value) { SetGraphSummary(std::forward<GraphSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGraphSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGraphSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGraphSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGraphSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastStatisticsComputationTime;
+    Aws::Utils::DateTime m_lastStatisticsComputationTime{};
+    bool m_lastStatisticsComputationTimeHasBeenSet = false;
 
     GraphDataSummary m_graphSummary;
+    bool m_graphSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

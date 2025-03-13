@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ProvisionedResource::ProvisionedResource() : 
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provisioningEngine(ProvisionedResourceEngine::NOT_SET),
-    m_provisioningEngineHasBeenSet(false)
-{
-}
-
 ProvisionedResource::ProvisionedResource(JsonView jsonValue)
-  : ProvisionedResource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProvisionedResource& ProvisionedResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioningEngine"))
   {
     m_provisioningEngine = ProvisionedResourceEngineMapper::GetProvisionedResourceEngineForName(jsonValue.GetString("provisioningEngine"));
-
     m_provisioningEngineHasBeenSet = true;
   }
-
   return *this;
 }
 

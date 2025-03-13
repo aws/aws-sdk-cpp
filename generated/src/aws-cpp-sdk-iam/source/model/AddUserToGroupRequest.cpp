@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-AddUserToGroupRequest::AddUserToGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String AddUserToGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,20 +20,7 @@ namespace SES
 namespace Model
 {
 
-RecipientDsnFields::RecipientDsnFields() : 
-    m_finalRecipientHasBeenSet(false),
-    m_action(DsnAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_remoteMtaHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_diagnosticCodeHasBeenSet(false),
-    m_lastAttemptDateHasBeenSet(false),
-    m_extensionFieldsHasBeenSet(false)
-{
-}
-
 RecipientDsnFields::RecipientDsnFields(const XmlNode& xmlNode)
-  : RecipientDsnFields()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,55 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     {
       m_finalRecipient = Aws::Utils::Xml::DecodeEscapedXmlText(finalRecipientNode.GetText());
       m_finalRecipientHasBeenSet = true;
+       m_finalRecipientHasBeenSet = true;
     }
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
+      m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()));
       m_actionHasBeenSet = true;
+       m_actionHasBeenSet = true;
     }
     XmlNode remoteMtaNode = resultNode.FirstChild("RemoteMta");
     if(!remoteMtaNode.IsNull())
     {
       m_remoteMta = Aws::Utils::Xml::DecodeEscapedXmlText(remoteMtaNode.GetText());
       m_remoteMtaHasBeenSet = true;
+       m_remoteMtaHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode diagnosticCodeNode = resultNode.FirstChild("DiagnosticCode");
     if(!diagnosticCodeNode.IsNull())
     {
       m_diagnosticCode = Aws::Utils::Xml::DecodeEscapedXmlText(diagnosticCodeNode.GetText());
       m_diagnosticCodeHasBeenSet = true;
+       m_diagnosticCodeHasBeenSet = true;
     }
     XmlNode lastAttemptDateNode = resultNode.FirstChild("LastAttemptDate");
     if(!lastAttemptDateNode.IsNull())
     {
       m_lastAttemptDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAttemptDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAttemptDateHasBeenSet = true;
+       m_lastAttemptDateHasBeenSet = true;
     }
     XmlNode extensionFieldsNode = resultNode.FirstChild("ExtensionFields");
     if(!extensionFieldsNode.IsNull())
     {
       XmlNode extensionFieldsMember = extensionFieldsNode.FirstChild("member");
+      m_extensionFieldsHasBeenSet = !extensionFieldsMember.IsNull();
       while(!extensionFieldsMember.IsNull())
       {
         m_extensionFields.push_back(extensionFieldsMember);
         extensionFieldsMember = extensionFieldsMember.NextNode("member");
       }
 
-      m_extensionFieldsHasBeenSet = true;
+       m_extensionFieldsHasBeenSet = true;
     }
   }
 

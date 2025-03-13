@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStateChange::InstanceStateChange() : 
-    m_instanceIdHasBeenSet(false),
-    m_currentStateHasBeenSet(false),
-    m_previousStateHasBeenSet(false)
-{
-}
-
 InstanceStateChange::InstanceStateChange(const XmlNode& xmlNode)
-  : InstanceStateChange()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ InstanceStateChange& InstanceStateChange::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode currentStateNode = resultNode.FirstChild("currentState");
     if(!currentStateNode.IsNull())
     {
       m_currentState = currentStateNode;
       m_currentStateHasBeenSet = true;
+       m_currentStateHasBeenSet = true;
     }
     XmlNode previousStateNode = resultNode.FirstChild("previousState");
     if(!previousStateNode.IsNull())
     {
       m_previousState = previousStateNode;
       m_previousStateHasBeenSet = true;
+       m_previousStateHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-SchemaAttribute::SchemaAttribute() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeType(AttributeType::NOT_SET),
-    m_attributeTypeHasBeenSet(false)
-{
-}
-
 SchemaAttribute::SchemaAttribute(JsonView jsonValue)
-  : SchemaAttribute()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SchemaAttribute& SchemaAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeType"))
   {
     m_attributeType = AttributeTypeMapper::GetAttributeTypeForName(jsonValue.GetString("AttributeType"));
-
     m_attributeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

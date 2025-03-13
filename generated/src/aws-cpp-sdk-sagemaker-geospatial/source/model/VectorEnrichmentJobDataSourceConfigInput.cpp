@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-VectorEnrichmentJobDataSourceConfigInput::VectorEnrichmentJobDataSourceConfigInput() : 
-    m_s3DataHasBeenSet(false)
-{
-}
-
 VectorEnrichmentJobDataSourceConfigInput::VectorEnrichmentJobDataSourceConfigInput(JsonView jsonValue)
-  : VectorEnrichmentJobDataSourceConfigInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VectorEnrichmentJobDataSourceConfigInput& VectorEnrichmentJobDataSourceConfigInp
   if(jsonValue.ValueExists("S3Data"))
   {
     m_s3Data = jsonValue.GetObject("S3Data");
-
     m_s3DataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTestExecutionRequest::StartTestExecutionRequest() : 
-    m_testSetIdHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_apiMode(TestExecutionApiMode::NOT_SET),
-    m_apiModeHasBeenSet(false),
-    m_testExecutionModality(TestExecutionModality::NOT_SET),
-    m_testExecutionModalityHasBeenSet(false)
-{
-}
-
 Aws::String StartTestExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

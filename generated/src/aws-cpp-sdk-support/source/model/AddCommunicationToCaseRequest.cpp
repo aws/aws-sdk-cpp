@@ -12,14 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddCommunicationToCaseRequest::AddCommunicationToCaseRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_communicationBodyHasBeenSet(false),
-    m_ccEmailAddressesHasBeenSet(false),
-    m_attachmentSetIdHasBeenSet(false)
-{
-}
-
 Aws::String AddCommunicationToCaseRequest::SerializePayload() const
 {
   JsonValue payload;

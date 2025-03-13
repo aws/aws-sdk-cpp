@@ -18,17 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-ArrayValue::ArrayValue() : 
-    m_booleanValuesHasBeenSet(false),
-    m_longValuesHasBeenSet(false),
-    m_doubleValuesHasBeenSet(false),
-    m_stringValuesHasBeenSet(false),
-    m_arrayValuesHasBeenSet(false)
-{
-}
-
 ArrayValue::ArrayValue(JsonView jsonValue)
-  : ArrayValue()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     }
     m_booleanValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longValues"))
   {
     Aws::Utils::Array<JsonView> longValuesJsonList = jsonValue.GetArray("longValues");
@@ -54,7 +43,6 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     }
     m_longValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValues"))
   {
     Aws::Utils::Array<JsonView> doubleValuesJsonList = jsonValue.GetArray("doubleValues");
@@ -64,7 +52,6 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     }
     m_doubleValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValues"))
   {
     Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
@@ -74,7 +61,6 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     }
     m_stringValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arrayValues"))
   {
     Aws::Utils::Array<JsonView> arrayValuesJsonList = jsonValue.GetArray("arrayValues");
@@ -84,7 +70,6 @@ ArrayValue& ArrayValue::operator =(JsonView jsonValue)
     }
     m_arrayValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

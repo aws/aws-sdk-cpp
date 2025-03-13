@@ -35,7 +35,7 @@ namespace Model
   class DescribeFileSystemAliasesResult
   {
   public:
-    AWS_FSX_API DescribeFileSystemAliasesResult();
+    AWS_FSX_API DescribeFileSystemAliasesResult() = default;
     AWS_FSX_API DescribeFileSystemAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API DescribeFileSystemAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,13 +45,13 @@ namespace Model
      * <p>An array of one or more DNS aliases currently associated with the specified
      * file system.</p>
      */
-    inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
-    inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliases = value; }
-    inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliases = std::move(value); }
-    inline DescribeFileSystemAliasesResult& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
-    inline DescribeFileSystemAliasesResult& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
-    inline DescribeFileSystemAliasesResult& AddAliases(const Alias& value) { m_aliases.push_back(value); return *this; }
-    inline DescribeFileSystemAliasesResult& AddAliases(Alias&& value) { m_aliases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Alias>& GetAliases() const { return m_aliases; }
+    template<typename AliasesT = Aws::Vector<Alias>>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aws::Vector<Alias>>
+    DescribeFileSystemAliasesResult& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
+    template<typename AliasesT = Alias>
+    DescribeFileSystemAliasesResult& AddAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases.emplace_back(std::forward<AliasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,32 +60,31 @@ namespace Model
      * You can use the <code>NextToken</code> value in a later request to fetch
      * additional descriptions. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeFileSystemAliasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFileSystemAliasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFileSystemAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFileSystemAliasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFileSystemAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFileSystemAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFileSystemAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFileSystemAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Alias> m_aliases;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

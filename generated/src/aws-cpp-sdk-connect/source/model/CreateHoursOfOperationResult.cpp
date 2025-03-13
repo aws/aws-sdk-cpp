@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateHoursOfOperationResult::CreateHoursOfOperationResult()
-{
-}
-
 CreateHoursOfOperationResult::CreateHoursOfOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateHoursOfOperationResult& CreateHoursOfOperationResult::operator =(const Aws
   if(jsonValue.ValueExists("HoursOfOperationId"))
   {
     m_hoursOfOperationId = jsonValue.GetString("HoursOfOperationId");
-
+    m_hoursOfOperationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HoursOfOperationArn"))
   {
     m_hoursOfOperationArn = jsonValue.GetString("HoursOfOperationArn");
-
+    m_hoursOfOperationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

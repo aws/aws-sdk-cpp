@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRepositoryEndpointRequest::GetRepositoryEndpointRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetRepositoryEndpointRequest::SerializePayload() const
 {
   return {};

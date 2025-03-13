@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetIdentityNotificationAttributesRequest::GetIdentityNotificationAttributesRequest() : 
-    m_identitiesHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

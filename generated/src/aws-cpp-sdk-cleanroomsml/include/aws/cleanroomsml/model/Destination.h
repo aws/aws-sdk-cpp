@@ -32,7 +32,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_CLEANROOMSML_API Destination();
+    AWS_CLEANROOMSML_API Destination() = default;
     AWS_CLEANROOMSML_API Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const S3ConfigMap& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3ConfigMap& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3ConfigMap& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3ConfigMap&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline Destination& WithS3Destination(const S3ConfigMap& value) { SetS3Destination(value); return *this;}
-    inline Destination& WithS3Destination(S3ConfigMap&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3ConfigMap>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3ConfigMap>
+    Destination& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

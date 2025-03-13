@@ -18,15 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-BatchCreateRumMetricDefinitionsError::BatchCreateRumMetricDefinitionsError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_metricDefinitionHasBeenSet(false)
-{
-}
-
 BatchCreateRumMetricDefinitionsError::BatchCreateRumMetricDefinitionsError(JsonView jsonValue)
-  : BatchCreateRumMetricDefinitionsError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchCreateRumMetricDefinitionsError& BatchCreateRumMetricDefinitionsError::oper
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricDefinition"))
   {
     m_metricDefinition = jsonValue.GetObject("MetricDefinition");
-
     m_metricDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

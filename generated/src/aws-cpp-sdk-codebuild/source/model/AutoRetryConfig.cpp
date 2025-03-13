@@ -18,18 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-AutoRetryConfig::AutoRetryConfig() : 
-    m_autoRetryLimit(0),
-    m_autoRetryLimitHasBeenSet(false),
-    m_autoRetryNumber(0),
-    m_autoRetryNumberHasBeenSet(false),
-    m_nextAutoRetryHasBeenSet(false),
-    m_previousAutoRetryHasBeenSet(false)
-{
-}
-
 AutoRetryConfig::AutoRetryConfig(JsonView jsonValue)
-  : AutoRetryConfig()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AutoRetryConfig& AutoRetryConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoRetryLimit"))
   {
     m_autoRetryLimit = jsonValue.GetInteger("autoRetryLimit");
-
     m_autoRetryLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoRetryNumber"))
   {
     m_autoRetryNumber = jsonValue.GetInteger("autoRetryNumber");
-
     m_autoRetryNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextAutoRetry"))
   {
     m_nextAutoRetry = jsonValue.GetString("nextAutoRetry");
-
     m_nextAutoRetryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previousAutoRetry"))
   {
     m_previousAutoRetry = jsonValue.GetString("previousAutoRetry");
-
     m_previousAutoRetryHasBeenSet = true;
   }
-
   return *this;
 }
 

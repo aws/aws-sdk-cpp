@@ -30,7 +30,7 @@ namespace Model
   class LookoutMetricsDestinationProperties
   {
   public:
-    AWS_APPFLOW_API LookoutMetricsDestinationProperties();
+    AWS_APPFLOW_API LookoutMetricsDestinationProperties() = default;
     AWS_APPFLOW_API LookoutMetricsDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API LookoutMetricsDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

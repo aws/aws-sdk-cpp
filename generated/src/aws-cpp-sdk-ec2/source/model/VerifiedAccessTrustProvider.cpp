@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessTrustProvider::VerifiedAccessTrustProvider() : 
-    m_verifiedAccessTrustProviderIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_trustProviderType(TrustProviderType::NOT_SET),
-    m_trustProviderTypeHasBeenSet(false),
-    m_userTrustProviderType(UserTrustProviderType::NOT_SET),
-    m_userTrustProviderTypeHasBeenSet(false),
-    m_deviceTrustProviderType(DeviceTrustProviderType::NOT_SET),
-    m_deviceTrustProviderTypeHasBeenSet(false),
-    m_oidcOptionsHasBeenSet(false),
-    m_deviceOptionsHasBeenSet(false),
-    m_policyReferenceNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false),
-    m_nativeApplicationOidcOptionsHasBeenSet(false)
-{
-}
-
 VerifiedAccessTrustProvider::VerifiedAccessTrustProvider(const XmlNode& xmlNode)
-  : VerifiedAccessTrustProvider()
 {
   *this = xmlNode;
 }
@@ -57,84 +36,97 @@ VerifiedAccessTrustProvider& VerifiedAccessTrustProvider::operator =(const XmlNo
     {
       m_verifiedAccessTrustProviderId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessTrustProviderIdNode.GetText());
       m_verifiedAccessTrustProviderIdHasBeenSet = true;
+       m_verifiedAccessTrustProviderIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode trustProviderTypeNode = resultNode.FirstChild("trustProviderType");
     if(!trustProviderTypeNode.IsNull())
     {
-      m_trustProviderType = TrustProviderTypeMapper::GetTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustProviderTypeNode.GetText()).c_str()).c_str());
+      m_trustProviderType = TrustProviderTypeMapper::GetTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trustProviderTypeNode.GetText()).c_str()));
       m_trustProviderTypeHasBeenSet = true;
+       m_trustProviderTypeHasBeenSet = true;
     }
     XmlNode userTrustProviderTypeNode = resultNode.FirstChild("userTrustProviderType");
     if(!userTrustProviderTypeNode.IsNull())
     {
-      m_userTrustProviderType = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userTrustProviderTypeNode.GetText()).c_str()).c_str());
+      m_userTrustProviderType = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userTrustProviderTypeNode.GetText()).c_str()));
       m_userTrustProviderTypeHasBeenSet = true;
+       m_userTrustProviderTypeHasBeenSet = true;
     }
     XmlNode deviceTrustProviderTypeNode = resultNode.FirstChild("deviceTrustProviderType");
     if(!deviceTrustProviderTypeNode.IsNull())
     {
-      m_deviceTrustProviderType = DeviceTrustProviderTypeMapper::GetDeviceTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceTrustProviderTypeNode.GetText()).c_str()).c_str());
+      m_deviceTrustProviderType = DeviceTrustProviderTypeMapper::GetDeviceTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceTrustProviderTypeNode.GetText()).c_str()));
       m_deviceTrustProviderTypeHasBeenSet = true;
+       m_deviceTrustProviderTypeHasBeenSet = true;
     }
     XmlNode oidcOptionsNode = resultNode.FirstChild("oidcOptions");
     if(!oidcOptionsNode.IsNull())
     {
       m_oidcOptions = oidcOptionsNode;
       m_oidcOptionsHasBeenSet = true;
+       m_oidcOptionsHasBeenSet = true;
     }
     XmlNode deviceOptionsNode = resultNode.FirstChild("deviceOptions");
     if(!deviceOptionsNode.IsNull())
     {
       m_deviceOptions = deviceOptionsNode;
       m_deviceOptionsHasBeenSet = true;
+       m_deviceOptionsHasBeenSet = true;
     }
     XmlNode policyReferenceNameNode = resultNode.FirstChild("policyReferenceName");
     if(!policyReferenceNameNode.IsNull())
     {
       m_policyReferenceName = Aws::Utils::Xml::DecodeEscapedXmlText(policyReferenceNameNode.GetText());
       m_policyReferenceNameHasBeenSet = true;
+       m_policyReferenceNameHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText());
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("lastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText());
       m_lastUpdatedTimeHasBeenSet = true;
+       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
     if(!sseSpecificationNode.IsNull())
     {
       m_sseSpecification = sseSpecificationNode;
       m_sseSpecificationHasBeenSet = true;
+       m_sseSpecificationHasBeenSet = true;
     }
     XmlNode nativeApplicationOidcOptionsNode = resultNode.FirstChild("nativeApplicationOidcOptions");
     if(!nativeApplicationOidcOptionsNode.IsNull())
     {
       m_nativeApplicationOidcOptions = nativeApplicationOidcOptionsNode;
       m_nativeApplicationOidcOptionsHasBeenSet = true;
+       m_nativeApplicationOidcOptionsHasBeenSet = true;
     }
   }
 

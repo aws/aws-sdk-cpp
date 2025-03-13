@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-CloudWatchLoggingOptions::CloudWatchLoggingOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false)
-{
-}
-
 CloudWatchLoggingOptions::CloudWatchLoggingOptions(JsonView jsonValue)
-  : CloudWatchLoggingOptions()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CloudWatchLoggingOptions& CloudWatchLoggingOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogStreamName"))
   {
     m_logStreamName = jsonValue.GetString("LogStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class GetResourcePositionRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetResourcePositionRequest();
+    AWS_IOTWIRELESS_API GetResourcePositionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * It can be the wireless device ID or the wireless gateway ID, depending on the
      * resource type.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline GetResourcePositionRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline GetResourcePositionRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline GetResourcePositionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    GetResourcePositionRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>The type of resource for which position information is retrieved, which can
      * be a wireless device or a wireless gateway.</p>
      */
-    inline const PositionResourceType& GetResourceType() const{ return m_resourceType; }
+    inline PositionResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const PositionResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(PositionResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline GetResourcePositionRequest& WithResourceType(const PositionResourceType& value) { SetResourceType(value); return *this;}
-    inline GetResourcePositionRequest& WithResourceType(PositionResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(PositionResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetResourcePositionRequest& WithResourceType(PositionResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
-    PositionResourceType m_resourceType;
+    PositionResourceType m_resourceType{PositionResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

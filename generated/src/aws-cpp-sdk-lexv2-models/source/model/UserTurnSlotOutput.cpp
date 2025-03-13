@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UserTurnSlotOutput::UserTurnSlotOutput() : 
-    m_valueHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_subSlotsHasBeenSet(false)
-{
-}
-
 UserTurnSlotOutput::UserTurnSlotOutput(JsonView jsonValue)
-  : UserTurnSlotOutput()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ UserTurnSlotOutput& UserTurnSlotOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ UserTurnSlotOutput& UserTurnSlotOutput::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subSlots"))
   {
     Aws::Map<Aws::String, JsonView> subSlotsJsonMap = jsonValue.GetObject("subSlots").GetAllObjects();
@@ -59,7 +48,6 @@ UserTurnSlotOutput& UserTurnSlotOutput::operator =(JsonView jsonValue)
     }
     m_subSlotsHasBeenSet = true;
   }
-
   return *this;
 }
 

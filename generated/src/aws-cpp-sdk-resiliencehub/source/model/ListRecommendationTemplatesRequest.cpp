@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecommendationTemplatesRequest::ListRecommendationTemplatesRequest() : 
-    m_assessmentArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_recommendationTemplateArnHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendationTemplatesRequest::SerializePayload() const
 {
   return {};

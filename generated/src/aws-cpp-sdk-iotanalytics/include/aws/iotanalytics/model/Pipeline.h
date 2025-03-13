@@ -35,7 +35,7 @@ namespace Model
   class Pipeline
   {
   public:
-    AWS_IOTANALYTICS_API Pipeline();
+    AWS_IOTANALYTICS_API Pipeline() = default;
     AWS_IOTANALYTICS_API Pipeline(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,80 +45,76 @@ namespace Model
     /**
      * <p>The name of the pipeline.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Pipeline& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Pipeline& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Pipeline& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Pipeline& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the pipeline.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Pipeline& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Pipeline& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Pipeline& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Pipeline& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The activities that perform transformations on the messages.</p>
      */
-    inline const Aws::Vector<PipelineActivity>& GetActivities() const{ return m_activities; }
+    inline const Aws::Vector<PipelineActivity>& GetActivities() const { return m_activities; }
     inline bool ActivitiesHasBeenSet() const { return m_activitiesHasBeenSet; }
-    inline void SetActivities(const Aws::Vector<PipelineActivity>& value) { m_activitiesHasBeenSet = true; m_activities = value; }
-    inline void SetActivities(Aws::Vector<PipelineActivity>&& value) { m_activitiesHasBeenSet = true; m_activities = std::move(value); }
-    inline Pipeline& WithActivities(const Aws::Vector<PipelineActivity>& value) { SetActivities(value); return *this;}
-    inline Pipeline& WithActivities(Aws::Vector<PipelineActivity>&& value) { SetActivities(std::move(value)); return *this;}
-    inline Pipeline& AddActivities(const PipelineActivity& value) { m_activitiesHasBeenSet = true; m_activities.push_back(value); return *this; }
-    inline Pipeline& AddActivities(PipelineActivity&& value) { m_activitiesHasBeenSet = true; m_activities.push_back(std::move(value)); return *this; }
+    template<typename ActivitiesT = Aws::Vector<PipelineActivity>>
+    void SetActivities(ActivitiesT&& value) { m_activitiesHasBeenSet = true; m_activities = std::forward<ActivitiesT>(value); }
+    template<typename ActivitiesT = Aws::Vector<PipelineActivity>>
+    Pipeline& WithActivities(ActivitiesT&& value) { SetActivities(std::forward<ActivitiesT>(value)); return *this;}
+    template<typename ActivitiesT = PipelineActivity>
+    Pipeline& AddActivities(ActivitiesT&& value) { m_activitiesHasBeenSet = true; m_activities.emplace_back(std::forward<ActivitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A summary of information about the pipeline reprocessing.</p>
      */
-    inline const Aws::Vector<ReprocessingSummary>& GetReprocessingSummaries() const{ return m_reprocessingSummaries; }
+    inline const Aws::Vector<ReprocessingSummary>& GetReprocessingSummaries() const { return m_reprocessingSummaries; }
     inline bool ReprocessingSummariesHasBeenSet() const { return m_reprocessingSummariesHasBeenSet; }
-    inline void SetReprocessingSummaries(const Aws::Vector<ReprocessingSummary>& value) { m_reprocessingSummariesHasBeenSet = true; m_reprocessingSummaries = value; }
-    inline void SetReprocessingSummaries(Aws::Vector<ReprocessingSummary>&& value) { m_reprocessingSummariesHasBeenSet = true; m_reprocessingSummaries = std::move(value); }
-    inline Pipeline& WithReprocessingSummaries(const Aws::Vector<ReprocessingSummary>& value) { SetReprocessingSummaries(value); return *this;}
-    inline Pipeline& WithReprocessingSummaries(Aws::Vector<ReprocessingSummary>&& value) { SetReprocessingSummaries(std::move(value)); return *this;}
-    inline Pipeline& AddReprocessingSummaries(const ReprocessingSummary& value) { m_reprocessingSummariesHasBeenSet = true; m_reprocessingSummaries.push_back(value); return *this; }
-    inline Pipeline& AddReprocessingSummaries(ReprocessingSummary&& value) { m_reprocessingSummariesHasBeenSet = true; m_reprocessingSummaries.push_back(std::move(value)); return *this; }
+    template<typename ReprocessingSummariesT = Aws::Vector<ReprocessingSummary>>
+    void SetReprocessingSummaries(ReprocessingSummariesT&& value) { m_reprocessingSummariesHasBeenSet = true; m_reprocessingSummaries = std::forward<ReprocessingSummariesT>(value); }
+    template<typename ReprocessingSummariesT = Aws::Vector<ReprocessingSummary>>
+    Pipeline& WithReprocessingSummaries(ReprocessingSummariesT&& value) { SetReprocessingSummaries(std::forward<ReprocessingSummariesT>(value)); return *this;}
+    template<typename ReprocessingSummariesT = ReprocessingSummary>
+    Pipeline& AddReprocessingSummaries(ReprocessingSummariesT&& value) { m_reprocessingSummariesHasBeenSet = true; m_reprocessingSummaries.emplace_back(std::forward<ReprocessingSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>When the pipeline was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Pipeline& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Pipeline& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Pipeline& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the pipeline was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline Pipeline& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline Pipeline& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    Pipeline& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -134,10 +130,10 @@ namespace Model
     Aws::Vector<ReprocessingSummary> m_reprocessingSummaries;
     bool m_reprocessingSummariesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
   };
 

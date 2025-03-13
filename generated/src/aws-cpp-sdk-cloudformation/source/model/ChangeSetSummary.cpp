@@ -20,29 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ChangeSetSummary::ChangeSetSummary() : 
-    m_stackIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_status(ChangeSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_includeNestedStacks(false),
-    m_includeNestedStacksHasBeenSet(false),
-    m_parentChangeSetIdHasBeenSet(false),
-    m_rootChangeSetIdHasBeenSet(false),
-    m_importExistingResources(false),
-    m_importExistingResourcesHasBeenSet(false)
-{
-}
-
 ChangeSetSummary::ChangeSetSummary(const XmlNode& xmlNode)
-  : ChangeSetSummary()
 {
   *this = xmlNode;
 }
@@ -58,78 +36,91 @@ ChangeSetSummary& ChangeSetSummary::operator =(const XmlNode& xmlNode)
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
+       m_stackIdHasBeenSet = true;
     }
     XmlNode stackNameNode = resultNode.FirstChild("StackName");
     if(!stackNameNode.IsNull())
     {
       m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
       m_stackNameHasBeenSet = true;
+       m_stackNameHasBeenSet = true;
     }
     XmlNode changeSetIdNode = resultNode.FirstChild("ChangeSetId");
     if(!changeSetIdNode.IsNull())
     {
       m_changeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetIdNode.GetText());
       m_changeSetIdHasBeenSet = true;
+       m_changeSetIdHasBeenSet = true;
     }
     XmlNode changeSetNameNode = resultNode.FirstChild("ChangeSetName");
     if(!changeSetNameNode.IsNull())
     {
       m_changeSetName = Aws::Utils::Xml::DecodeEscapedXmlText(changeSetNameNode.GetText());
       m_changeSetNameHasBeenSet = true;
+       m_changeSetNameHasBeenSet = true;
     }
     XmlNode executionStatusNode = resultNode.FirstChild("ExecutionStatus");
     if(!executionStatusNode.IsNull())
     {
-      m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusNode.GetText()).c_str()).c_str());
+      m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusNode.GetText()).c_str()));
       m_executionStatusHasBeenSet = true;
+       m_executionStatusHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ChangeSetStatusMapper::GetChangeSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ChangeSetStatusMapper::GetChangeSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode includeNestedStacksNode = resultNode.FirstChild("IncludeNestedStacks");
     if(!includeNestedStacksNode.IsNull())
     {
       m_includeNestedStacks = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeNestedStacksNode.GetText()).c_str()).c_str());
       m_includeNestedStacksHasBeenSet = true;
+       m_includeNestedStacksHasBeenSet = true;
     }
     XmlNode parentChangeSetIdNode = resultNode.FirstChild("ParentChangeSetId");
     if(!parentChangeSetIdNode.IsNull())
     {
       m_parentChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(parentChangeSetIdNode.GetText());
       m_parentChangeSetIdHasBeenSet = true;
+       m_parentChangeSetIdHasBeenSet = true;
     }
     XmlNode rootChangeSetIdNode = resultNode.FirstChild("RootChangeSetId");
     if(!rootChangeSetIdNode.IsNull())
     {
       m_rootChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(rootChangeSetIdNode.GetText());
       m_rootChangeSetIdHasBeenSet = true;
+       m_rootChangeSetIdHasBeenSet = true;
     }
     XmlNode importExistingResourcesNode = resultNode.FirstChild("ImportExistingResources");
     if(!importExistingResourcesNode.IsNull())
     {
       m_importExistingResources = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(importExistingResourcesNode.GetText()).c_str()).c_str());
       m_importExistingResourcesHasBeenSet = true;
+       m_importExistingResourcesHasBeenSet = true;
     }
   }
 

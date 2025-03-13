@@ -18,15 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-GrantItem::GrantItem() : 
-    m_grantHasBeenSet(false),
-    m_grantType(GrantType::NOT_SET),
-    m_grantTypeHasBeenSet(false)
-{
-}
-
 GrantItem::GrantItem(JsonView jsonValue)
-  : GrantItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GrantItem& GrantItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Grant"))
   {
     m_grant = jsonValue.GetObject("Grant");
-
     m_grantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantType"))
   {
     m_grantType = GrantTypeMapper::GetGrantTypeForName(jsonValue.GetString("GrantType"));
-
     m_grantTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,30 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNFSFileShareRequest::UpdateNFSFileShareRequest() : 
-    m_fileShareARNHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_nFSFileShareDefaultsHasBeenSet(false),
-    m_defaultStorageClassHasBeenSet(false),
-    m_objectACL(ObjectACL::NOT_SET),
-    m_objectACLHasBeenSet(false),
-    m_clientListHasBeenSet(false),
-    m_squashHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_guessMIMETypeEnabled(false),
-    m_guessMIMETypeEnabledHasBeenSet(false),
-    m_requesterPays(false),
-    m_requesterPaysHasBeenSet(false),
-    m_fileShareNameHasBeenSet(false),
-    m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false),
-    m_auditDestinationARNHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNFSFileShareRequest::SerializePayload() const
 {
   JsonValue payload;

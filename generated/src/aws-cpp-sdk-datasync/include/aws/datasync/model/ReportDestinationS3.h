@@ -33,7 +33,7 @@ namespace Model
   class ReportDestinationS3
   {
   public:
-    AWS_DATASYNC_API ReportDestinationS3();
+    AWS_DATASYNC_API ReportDestinationS3() = default;
     AWS_DATASYNC_API ReportDestinationS3(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API ReportDestinationS3& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>Specifies a bucket prefix for your report.</p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline ReportDestinationS3& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline ReportDestinationS3& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline ReportDestinationS3& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    ReportDestinationS3& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the ARN of the S3 bucket where DataSync uploads your report.</p>
      */
-    inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
+    inline const Aws::String& GetS3BucketArn() const { return m_s3BucketArn; }
     inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
-    inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = value; }
-    inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::move(value); }
-    inline void SetS3BucketArn(const char* value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn.assign(value); }
-    inline ReportDestinationS3& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
-    inline ReportDestinationS3& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
-    inline ReportDestinationS3& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
+    template<typename S3BucketArnT = Aws::String>
+    void SetS3BucketArn(S3BucketArnT&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::forward<S3BucketArnT>(value); }
+    template<typename S3BucketArnT = Aws::String>
+    ReportDestinationS3& WithS3BucketArn(S3BucketArnT&& value) { SetS3BucketArn(std::forward<S3BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Allowing
      * DataSync to upload a task report to an Amazon S3 bucket</a>.</p>
      */
-    inline const Aws::String& GetBucketAccessRoleArn() const{ return m_bucketAccessRoleArn; }
+    inline const Aws::String& GetBucketAccessRoleArn() const { return m_bucketAccessRoleArn; }
     inline bool BucketAccessRoleArnHasBeenSet() const { return m_bucketAccessRoleArnHasBeenSet; }
-    inline void SetBucketAccessRoleArn(const Aws::String& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = value; }
-    inline void SetBucketAccessRoleArn(Aws::String&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::move(value); }
-    inline void SetBucketAccessRoleArn(const char* value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn.assign(value); }
-    inline ReportDestinationS3& WithBucketAccessRoleArn(const Aws::String& value) { SetBucketAccessRoleArn(value); return *this;}
-    inline ReportDestinationS3& WithBucketAccessRoleArn(Aws::String&& value) { SetBucketAccessRoleArn(std::move(value)); return *this;}
-    inline ReportDestinationS3& WithBucketAccessRoleArn(const char* value) { SetBucketAccessRoleArn(value); return *this;}
+    template<typename BucketAccessRoleArnT = Aws::String>
+    void SetBucketAccessRoleArn(BucketAccessRoleArnT&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::forward<BucketAccessRoleArnT>(value); }
+    template<typename BucketAccessRoleArnT = Aws::String>
+    ReportDestinationS3& WithBucketAccessRoleArn(BucketAccessRoleArnT&& value) { SetBucketAccessRoleArn(std::forward<BucketAccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ClusterSummary::ClusterSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_normalizedInstanceHours(0),
-    m_normalizedInstanceHoursHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
-{
-}
-
 ClusterSummary::ClusterSummary(JsonView jsonValue)
-  : ClusterSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NormalizedInstanceHours"))
   {
     m_normalizedInstanceHours = jsonValue.GetInteger("NormalizedInstanceHours");
-
     m_normalizedInstanceHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutpostArn"))
   {
     m_outpostArn = jsonValue.GetString("OutpostArn");
-
     m_outpostArnHasBeenSet = true;
   }
-
   return *this;
 }
 

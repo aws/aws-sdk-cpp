@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionSummary::FunctionSummary() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_functionConfigHasBeenSet(false),
-    m_functionMetadataHasBeenSet(false)
-{
-}
-
 FunctionSummary::FunctionSummary(const XmlNode& xmlNode)
-  : FunctionSummary()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ FunctionSummary& FunctionSummary::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode functionConfigNode = resultNode.FirstChild("FunctionConfig");
     if(!functionConfigNode.IsNull())
     {
       m_functionConfig = functionConfigNode;
       m_functionConfigHasBeenSet = true;
+       m_functionConfigHasBeenSet = true;
     }
     XmlNode functionMetadataNode = resultNode.FirstChild("FunctionMetadata");
     if(!functionMetadataNode.IsNull())
     {
       m_functionMetadata = functionMetadataNode;
       m_functionMetadataHasBeenSet = true;
+       m_functionMetadataHasBeenSet = true;
     }
   }
 

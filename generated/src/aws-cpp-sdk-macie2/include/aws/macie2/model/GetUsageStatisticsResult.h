@@ -30,7 +30,7 @@ namespace Model
   class GetUsageStatisticsResult
   {
   public:
-    AWS_MACIE2_API GetUsageStatisticsResult();
+    AWS_MACIE2_API GetUsageStatisticsResult() = default;
     AWS_MACIE2_API GetUsageStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetUsageStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetUsageStatisticsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetUsageStatisticsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetUsageStatisticsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetUsageStatisticsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,13 +53,13 @@ namespace Model
      * contains the data for an account that matches the filter criteria specified in
      * the request.</p>
      */
-    inline const Aws::Vector<UsageRecord>& GetRecords() const{ return m_records; }
-    inline void SetRecords(const Aws::Vector<UsageRecord>& value) { m_records = value; }
-    inline void SetRecords(Aws::Vector<UsageRecord>&& value) { m_records = std::move(value); }
-    inline GetUsageStatisticsResult& WithRecords(const Aws::Vector<UsageRecord>& value) { SetRecords(value); return *this;}
-    inline GetUsageStatisticsResult& WithRecords(Aws::Vector<UsageRecord>&& value) { SetRecords(std::move(value)); return *this;}
-    inline GetUsageStatisticsResult& AddRecords(const UsageRecord& value) { m_records.push_back(value); return *this; }
-    inline GetUsageStatisticsResult& AddRecords(UsageRecord&& value) { m_records.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UsageRecord>& GetRecords() const { return m_records; }
+    template<typename RecordsT = Aws::Vector<UsageRecord>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<UsageRecord>>
+    GetUsageStatisticsResult& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = UsageRecord>
+    GetUsageStatisticsResult& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,32 +68,32 @@ namespace Model
      * are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS,
      * for the preceding 30 days.</p>
      */
-    inline const TimeRange& GetTimeRange() const{ return m_timeRange; }
-    inline void SetTimeRange(const TimeRange& value) { m_timeRange = value; }
-    inline void SetTimeRange(TimeRange&& value) { m_timeRange = std::move(value); }
-    inline GetUsageStatisticsResult& WithTimeRange(const TimeRange& value) { SetTimeRange(value); return *this;}
-    inline GetUsageStatisticsResult& WithTimeRange(TimeRange&& value) { SetTimeRange(std::move(value)); return *this;}
+    inline TimeRange GetTimeRange() const { return m_timeRange; }
+    inline void SetTimeRange(TimeRange value) { m_timeRangeHasBeenSet = true; m_timeRange = value; }
+    inline GetUsageStatisticsResult& WithTimeRange(TimeRange value) { SetTimeRange(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUsageStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUsageStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUsageStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUsageStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<UsageRecord> m_records;
+    bool m_recordsHasBeenSet = false;
 
-    TimeRange m_timeRange;
+    TimeRange m_timeRange{TimeRange::NOT_SET};
+    bool m_timeRangeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

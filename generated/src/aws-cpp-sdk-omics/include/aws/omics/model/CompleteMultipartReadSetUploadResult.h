@@ -27,7 +27,7 @@ namespace Model
   class CompleteMultipartReadSetUploadResult
   {
   public:
-    AWS_OMICS_API CompleteMultipartReadSetUploadResult();
+    AWS_OMICS_API CompleteMultipartReadSetUploadResult() = default;
     AWS_OMICS_API CompleteMultipartReadSetUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API CompleteMultipartReadSetUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The read set ID created for an uploaded read set.</p>
      */
-    inline const Aws::String& GetReadSetId() const{ return m_readSetId; }
-    inline void SetReadSetId(const Aws::String& value) { m_readSetId = value; }
-    inline void SetReadSetId(Aws::String&& value) { m_readSetId = std::move(value); }
-    inline void SetReadSetId(const char* value) { m_readSetId.assign(value); }
-    inline CompleteMultipartReadSetUploadResult& WithReadSetId(const Aws::String& value) { SetReadSetId(value); return *this;}
-    inline CompleteMultipartReadSetUploadResult& WithReadSetId(Aws::String&& value) { SetReadSetId(std::move(value)); return *this;}
-    inline CompleteMultipartReadSetUploadResult& WithReadSetId(const char* value) { SetReadSetId(value); return *this;}
+    inline const Aws::String& GetReadSetId() const { return m_readSetId; }
+    template<typename ReadSetIdT = Aws::String>
+    void SetReadSetId(ReadSetIdT&& value) { m_readSetIdHasBeenSet = true; m_readSetId = std::forward<ReadSetIdT>(value); }
+    template<typename ReadSetIdT = Aws::String>
+    CompleteMultipartReadSetUploadResult& WithReadSetId(ReadSetIdT&& value) { SetReadSetId(std::forward<ReadSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CompleteMultipartReadSetUploadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CompleteMultipartReadSetUploadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CompleteMultipartReadSetUploadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CompleteMultipartReadSetUploadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_readSetId;
+    bool m_readSetIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVTLDevicesResult::DescribeVTLDevicesResult()
-{
-}
-
 DescribeVTLDevicesResult::DescribeVTLDevicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VTLDevices"))
   {
     Aws::Utils::Array<JsonView> vTLDevicesJsonList = jsonValue.GetArray("VTLDevices");
@@ -42,20 +37,20 @@ DescribeVTLDevicesResult& DescribeVTLDevicesResult::operator =(const Aws::Amazon
     {
       m_vTLDevices.push_back(vTLDevicesJsonList[vTLDevicesIndex].AsObject());
     }
+    m_vTLDevicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

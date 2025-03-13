@@ -12,13 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEncoderConfigurationRequest::CreateEncoderConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEncoderConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

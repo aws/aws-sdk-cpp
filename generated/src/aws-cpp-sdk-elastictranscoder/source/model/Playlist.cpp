@@ -18,19 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Playlist::Playlist() : 
-    m_nameHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_outputKeysHasBeenSet(false),
-    m_hlsContentProtectionHasBeenSet(false),
-    m_playReadyDrmHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDetailHasBeenSet(false)
-{
-}
-
 Playlist::Playlist(JsonView jsonValue)
-  : Playlist()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ Playlist& Playlist::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputKeys"))
   {
     Aws::Utils::Array<JsonView> outputKeysJsonList = jsonValue.GetArray("OutputKeys");
@@ -60,35 +44,26 @@ Playlist& Playlist::operator =(JsonView jsonValue)
     }
     m_outputKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HlsContentProtection"))
   {
     m_hlsContentProtection = jsonValue.GetObject("HlsContentProtection");
-
     m_hlsContentProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayReadyDrm"))
   {
     m_playReadyDrm = jsonValue.GetObject("PlayReadyDrm");
-
     m_playReadyDrmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetail"))
   {
     m_statusDetail = jsonValue.GetString("StatusDetail");
-
     m_statusDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoadSnapSnappedTracePoint::RoadSnapSnappedTracePoint() : 
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_originalPositionHasBeenSet(false),
-    m_snappedPositionHasBeenSet(false)
-{
-}
-
 RoadSnapSnappedTracePoint::RoadSnapSnappedTracePoint(JsonView jsonValue)
-  : RoadSnapSnappedTracePoint()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ RoadSnapSnappedTracePoint& RoadSnapSnappedTracePoint::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalPosition"))
   {
     Aws::Utils::Array<JsonView> originalPositionJsonList = jsonValue.GetArray("OriginalPosition");
@@ -50,7 +39,6 @@ RoadSnapSnappedTracePoint& RoadSnapSnappedTracePoint::operator =(JsonView jsonVa
     }
     m_originalPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnappedPosition"))
   {
     Aws::Utils::Array<JsonView> snappedPositionJsonList = jsonValue.GetArray("SnappedPosition");
@@ -60,7 +48,6 @@ RoadSnapSnappedTracePoint& RoadSnapSnappedTracePoint::operator =(JsonView jsonVa
     }
     m_snappedPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

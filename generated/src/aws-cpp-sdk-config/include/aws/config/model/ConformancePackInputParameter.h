@@ -34,7 +34,7 @@ namespace Model
   class ConformancePackInputParameter
   {
   public:
-    AWS_CONFIGSERVICE_API ConformancePackInputParameter();
+    AWS_CONFIGSERVICE_API ConformancePackInputParameter() = default;
     AWS_CONFIGSERVICE_API ConformancePackInputParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ConformancePackInputParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>One part of a key-value pair.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline ConformancePackInputParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline ConformancePackInputParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline ConformancePackInputParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    ConformancePackInputParameter& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Another part of the key-value pair. </p>
      */
-    inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+    inline const Aws::String& GetParameterValue() const { return m_parameterValue; }
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
-    inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
-    inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
-    inline ConformancePackInputParameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
-    inline ConformancePackInputParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
-    inline ConformancePackInputParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
+    template<typename ParameterValueT = Aws::String>
+    void SetParameterValue(ParameterValueT&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::forward<ParameterValueT>(value); }
+    template<typename ParameterValueT = Aws::String>
+    ConformancePackInputParameter& WithParameterValue(ParameterValueT&& value) { SetParameterValue(std::forward<ParameterValueT>(value)); return *this;}
     ///@}
   private:
 

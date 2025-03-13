@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutResourcePolicyResult::PutResourcePolicyResult()
-{
-}
-
 PutResourcePolicyResult::PutResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutResourcePolicyResult& PutResourcePolicyResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("resourcePolicy"))
   {
     m_resourcePolicy = jsonValue.GetObject("resourcePolicy");
-
+    m_resourcePolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRuleRequest::GetRuleRequest() : 
-    m_listenerIdentifierHasBeenSet(false),
-    m_ruleIdentifierHasBeenSet(false),
-    m_serviceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetRuleRequest::SerializePayload() const
 {
   return {};

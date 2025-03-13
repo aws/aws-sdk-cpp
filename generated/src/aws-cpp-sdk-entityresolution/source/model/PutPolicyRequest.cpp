@@ -12,13 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPolicyRequest::PutPolicyRequest() : 
-    m_arnHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String PutPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace SagemakerEdgeManager
 namespace Model
 {
 
-Definition::Definition() : 
-    m_modelHandleHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_state(ModelState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 Definition::Definition(JsonView jsonValue)
-  : Definition()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Definition& Definition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelHandle"))
   {
     m_modelHandle = jsonValue.GetString("ModelHandle");
-
     m_modelHandleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
     m_s3UrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Checksum"))
   {
     m_checksum = jsonValue.GetObject("Checksum");
-
     m_checksumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ModelStateMapper::GetModelStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

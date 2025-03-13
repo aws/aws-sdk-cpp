@@ -18,24 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity() : 
-    m_windowExecutionIdHasBeenSet(false),
-    m_taskExecutionIdHasBeenSet(false),
-    m_status(MaintenanceWindowExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_taskType(MaintenanceWindowTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false)
-{
-}
-
 MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity(JsonView jsonValue)
-  : MaintenanceWindowExecutionTaskIdentity()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ MaintenanceWindowExecutionTaskIdentity& MaintenanceWindowExecutionTaskIdentity::
   if(jsonValue.ValueExists("WindowExecutionId"))
   {
     m_windowExecutionId = jsonValue.GetString("WindowExecutionId");
-
     m_windowExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskExecutionId"))
   {
     m_taskExecutionId = jsonValue.GetString("TaskExecutionId");
-
     m_taskExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MaintenanceWindowExecutionStatusMapper::GetMaintenanceWindowExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     m_statusDetails = jsonValue.GetString("StatusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskType"))
   {
     m_taskType = MaintenanceWindowTaskTypeMapper::GetMaintenanceWindowTaskTypeForName(jsonValue.GetString("TaskType"));
-
     m_taskTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
-
     m_alarmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
@@ -114,7 +79,6 @@ MaintenanceWindowExecutionTaskIdentity& MaintenanceWindowExecutionTaskIdentity::
     }
     m_triggeredAlarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

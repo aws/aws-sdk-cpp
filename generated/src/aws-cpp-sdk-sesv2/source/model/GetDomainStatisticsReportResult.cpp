@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDomainStatisticsReportResult::GetDomainStatisticsReportResult()
-{
-}
-
 GetDomainStatisticsReportResult::GetDomainStatisticsReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetDomainStatisticsReportResult& GetDomainStatisticsReportResult::operator =(con
   if(jsonValue.ValueExists("OverallVolume"))
   {
     m_overallVolume = jsonValue.GetObject("OverallVolume");
-
+    m_overallVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyVolumes"))
   {
     Aws::Utils::Array<JsonView> dailyVolumesJsonList = jsonValue.GetArray("DailyVolumes");
@@ -42,14 +37,15 @@ GetDomainStatisticsReportResult& GetDomainStatisticsReportResult::operator =(con
     {
       m_dailyVolumes.push_back(dailyVolumesJsonList[dailyVolumesIndex].AsObject());
     }
+    m_dailyVolumesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

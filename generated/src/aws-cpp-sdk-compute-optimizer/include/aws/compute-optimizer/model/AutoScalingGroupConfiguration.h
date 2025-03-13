@@ -35,7 +35,7 @@ namespace Model
   class AutoScalingGroupConfiguration
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupConfiguration();
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupConfiguration() = default;
     AWS_COMPUTEOPTIMIZER_API AutoScalingGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API AutoScalingGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * <p>The desired capacity, or number of instances, for the EC2 Auto Scaling
      * group.</p>
      */
-    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const { return m_desiredCapacity; }
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
     inline AutoScalingGroupConfiguration& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
@@ -57,7 +57,7 @@ namespace Model
      * <p>The minimum size, or minimum number of instances, for the EC2 Auto Scaling
      * group.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline AutoScalingGroupConfiguration& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * <p>The maximum size, or maximum number of instances, for the EC2 Auto Scaling
      * group.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline AutoScalingGroupConfiguration& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -78,14 +78,12 @@ namespace Model
     /**
      * <p>The instance type for the EC2 Auto Scaling group.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline AutoScalingGroupConfiguration& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline AutoScalingGroupConfiguration& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline AutoScalingGroupConfiguration& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    AutoScalingGroupConfiguration& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +92,10 @@ namespace Model
      * field is only available for EC2 Auto Scaling groups with mixed instance types.
      * </p>
      */
-    inline const AllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline AllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const AllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(AllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline AutoScalingGroupConfiguration& WithAllocationStrategy(const AllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline AutoScalingGroupConfiguration& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(AllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline AutoScalingGroupConfiguration& WithAllocationStrategy(AllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +104,7 @@ namespace Model
      * adopting the recommended configuration. This field is only available for EC2
      * Auto Scaling groups with scaling policies. </p>
      */
-    inline double GetEstimatedInstanceHourReductionPercentage() const{ return m_estimatedInstanceHourReductionPercentage; }
+    inline double GetEstimatedInstanceHourReductionPercentage() const { return m_estimatedInstanceHourReductionPercentage; }
     inline bool EstimatedInstanceHourReductionPercentageHasBeenSet() const { return m_estimatedInstanceHourReductionPercentageHasBeenSet; }
     inline void SetEstimatedInstanceHourReductionPercentage(double value) { m_estimatedInstanceHourReductionPercentageHasBeenSet = true; m_estimatedInstanceHourReductionPercentage = value; }
     inline AutoScalingGroupConfiguration& WithEstimatedInstanceHourReductionPercentage(double value) { SetEstimatedInstanceHourReductionPercentage(value); return *this;}
@@ -119,12 +115,10 @@ namespace Model
      * <p> Describes whether the EC2 Auto Scaling group has a single instance type or a
      * mixed instance type configuration. </p>
      */
-    inline const AsgType& GetType() const{ return m_type; }
+    inline AsgType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AsgType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AsgType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AutoScalingGroupConfiguration& WithType(const AsgType& value) { SetType(value); return *this;}
-    inline AutoScalingGroupConfiguration& WithType(AsgType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AsgType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AutoScalingGroupConfiguration& WithType(AsgType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -132,37 +126,36 @@ namespace Model
      * <p> List the instance types within an EC2 Auto Scaling group that has mixed
      * instance types. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMixedInstanceTypes() const{ return m_mixedInstanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetMixedInstanceTypes() const { return m_mixedInstanceTypes; }
     inline bool MixedInstanceTypesHasBeenSet() const { return m_mixedInstanceTypesHasBeenSet; }
-    inline void SetMixedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes = value; }
-    inline void SetMixedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes = std::move(value); }
-    inline AutoScalingGroupConfiguration& WithMixedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetMixedInstanceTypes(value); return *this;}
-    inline AutoScalingGroupConfiguration& WithMixedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetMixedInstanceTypes(std::move(value)); return *this;}
-    inline AutoScalingGroupConfiguration& AddMixedInstanceTypes(const Aws::String& value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes.push_back(value); return *this; }
-    inline AutoScalingGroupConfiguration& AddMixedInstanceTypes(Aws::String&& value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes.push_back(std::move(value)); return *this; }
-    inline AutoScalingGroupConfiguration& AddMixedInstanceTypes(const char* value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes.push_back(value); return *this; }
+    template<typename MixedInstanceTypesT = Aws::Vector<Aws::String>>
+    void SetMixedInstanceTypes(MixedInstanceTypesT&& value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes = std::forward<MixedInstanceTypesT>(value); }
+    template<typename MixedInstanceTypesT = Aws::Vector<Aws::String>>
+    AutoScalingGroupConfiguration& WithMixedInstanceTypes(MixedInstanceTypesT&& value) { SetMixedInstanceTypes(std::forward<MixedInstanceTypesT>(value)); return *this;}
+    template<typename MixedInstanceTypesT = Aws::String>
+    AutoScalingGroupConfiguration& AddMixedInstanceTypes(MixedInstanceTypesT&& value) { m_mixedInstanceTypesHasBeenSet = true; m_mixedInstanceTypes.emplace_back(std::forward<MixedInstanceTypesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_desiredCapacity;
+    int m_desiredCapacity{0};
     bool m_desiredCapacityHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    AllocationStrategy m_allocationStrategy;
+    AllocationStrategy m_allocationStrategy{AllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
-    double m_estimatedInstanceHourReductionPercentage;
+    double m_estimatedInstanceHourReductionPercentage{0.0};
     bool m_estimatedInstanceHourReductionPercentageHasBeenSet = false;
 
-    AsgType m_type;
+    AsgType m_type{AsgType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_mixedInstanceTypes;

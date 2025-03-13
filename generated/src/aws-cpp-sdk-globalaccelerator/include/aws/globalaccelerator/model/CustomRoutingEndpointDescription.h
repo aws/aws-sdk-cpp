@@ -33,7 +33,7 @@ namespace Model
   class CustomRoutingEndpointDescription
   {
   public:
-    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointDescription();
+    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointDescription() = default;
     AWS_GLOBALACCELERATOR_API CustomRoutingEndpointDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API CustomRoutingEndpointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>An ID for the endpoint. For custom routing accelerators, this is the virtual
      * private cloud (VPC) subnet ID. </p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline CustomRoutingEndpointDescription& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline CustomRoutingEndpointDescription& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline CustomRoutingEndpointDescription& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    CustomRoutingEndpointDescription& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
   private:
 

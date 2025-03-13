@@ -25,7 +25,7 @@ namespace Model
   class DeleteAnalysisRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DeleteAnalysisRequest();
+    AWS_QUICKSIGHT_API DeleteAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p>The ID of the Amazon Web Services account where you want to delete an
      * analysis.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DeleteAnalysisRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DeleteAnalysisRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DeleteAnalysisRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DeleteAnalysisRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the analysis that you're deleting.</p>
      */
-    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
+    inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
     inline bool AnalysisIdHasBeenSet() const { return m_analysisIdHasBeenSet; }
-    inline void SetAnalysisId(const Aws::String& value) { m_analysisIdHasBeenSet = true; m_analysisId = value; }
-    inline void SetAnalysisId(Aws::String&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::move(value); }
-    inline void SetAnalysisId(const char* value) { m_analysisIdHasBeenSet = true; m_analysisId.assign(value); }
-    inline DeleteAnalysisRequest& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-    inline DeleteAnalysisRequest& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-    inline DeleteAnalysisRequest& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    template<typename AnalysisIdT = Aws::String>
+    void SetAnalysisId(AnalysisIdT&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::forward<AnalysisIdT>(value); }
+    template<typename AnalysisIdT = Aws::String>
+    DeleteAnalysisRequest& WithAnalysisId(AnalysisIdT&& value) { SetAnalysisId(std::forward<AnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default
      * value is 30.</p>
      */
-    inline long long GetRecoveryWindowInDays() const{ return m_recoveryWindowInDays; }
+    inline long long GetRecoveryWindowInDays() const { return m_recoveryWindowInDays; }
     inline bool RecoveryWindowInDaysHasBeenSet() const { return m_recoveryWindowInDaysHasBeenSet; }
     inline void SetRecoveryWindowInDays(long long value) { m_recoveryWindowInDaysHasBeenSet = true; m_recoveryWindowInDays = value; }
     inline DeleteAnalysisRequest& WithRecoveryWindowInDays(long long value) { SetRecoveryWindowInDays(value); return *this;}
@@ -87,7 +83,7 @@ namespace Model
      * <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis
      * after it's deleted. </p>
      */
-    inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
+    inline bool GetForceDeleteWithoutRecovery() const { return m_forceDeleteWithoutRecovery; }
     inline bool ForceDeleteWithoutRecoveryHasBeenSet() const { return m_forceDeleteWithoutRecoveryHasBeenSet; }
     inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
     inline DeleteAnalysisRequest& WithForceDeleteWithoutRecovery(bool value) { SetForceDeleteWithoutRecovery(value); return *this;}
@@ -100,10 +96,10 @@ namespace Model
     Aws::String m_analysisId;
     bool m_analysisIdHasBeenSet = false;
 
-    long long m_recoveryWindowInDays;
+    long long m_recoveryWindowInDays{0};
     bool m_recoveryWindowInDaysHasBeenSet = false;
 
-    bool m_forceDeleteWithoutRecovery;
+    bool m_forceDeleteWithoutRecovery{false};
     bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
   };
 

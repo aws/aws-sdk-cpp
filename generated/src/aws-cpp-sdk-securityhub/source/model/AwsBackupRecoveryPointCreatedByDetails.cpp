@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupRecoveryPointCreatedByDetails::AwsBackupRecoveryPointCreatedByDetails() : 
-    m_backupPlanArnHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_backupPlanVersionHasBeenSet(false),
-    m_backupRuleIdHasBeenSet(false)
-{
-}
-
 AwsBackupRecoveryPointCreatedByDetails::AwsBackupRecoveryPointCreatedByDetails(JsonView jsonValue)
-  : AwsBackupRecoveryPointCreatedByDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsBackupRecoveryPointCreatedByDetails& AwsBackupRecoveryPointCreatedByDetails::
   if(jsonValue.ValueExists("BackupPlanArn"))
   {
     m_backupPlanArn = jsonValue.GetString("BackupPlanArn");
-
     m_backupPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanId"))
   {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");
-
     m_backupPlanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanVersion"))
   {
     m_backupPlanVersion = jsonValue.GetString("BackupPlanVersion");
-
     m_backupPlanVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupRuleId"))
   {
     m_backupRuleId = jsonValue.GetString("BackupRuleId");
-
     m_backupRuleIdHasBeenSet = true;
   }
-
   return *this;
 }
 

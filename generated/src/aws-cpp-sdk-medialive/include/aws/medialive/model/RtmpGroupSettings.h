@@ -37,7 +37,7 @@ namespace Model
   class RtmpGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API RtmpGroupSettings();
+    AWS_MEDIALIVE_API RtmpGroupSettings() = default;
     AWS_MEDIALIVE_API RtmpGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API RtmpGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,26 +49,23 @@ namespace Model
      * based on the content of each SCTE-35 message, format it for that marker type,
      * and insert it in the datastream.
      */
-    inline const Aws::Vector<RtmpAdMarkers>& GetAdMarkers() const{ return m_adMarkers; }
+    inline const Aws::Vector<RtmpAdMarkers>& GetAdMarkers() const { return m_adMarkers; }
     inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
-    inline void SetAdMarkers(const Aws::Vector<RtmpAdMarkers>& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
-    inline void SetAdMarkers(Aws::Vector<RtmpAdMarkers>&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::move(value); }
-    inline RtmpGroupSettings& WithAdMarkers(const Aws::Vector<RtmpAdMarkers>& value) { SetAdMarkers(value); return *this;}
-    inline RtmpGroupSettings& WithAdMarkers(Aws::Vector<RtmpAdMarkers>&& value) { SetAdMarkers(std::move(value)); return *this;}
-    inline RtmpGroupSettings& AddAdMarkers(const RtmpAdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(value); return *this; }
-    inline RtmpGroupSettings& AddAdMarkers(RtmpAdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(std::move(value)); return *this; }
+    template<typename AdMarkersT = Aws::Vector<RtmpAdMarkers>>
+    void SetAdMarkers(AdMarkersT&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::forward<AdMarkersT>(value); }
+    template<typename AdMarkersT = Aws::Vector<RtmpAdMarkers>>
+    RtmpGroupSettings& WithAdMarkers(AdMarkersT&& value) { SetAdMarkers(std::forward<AdMarkersT>(value)); return *this;}
+    inline RtmpGroupSettings& AddAdMarkers(RtmpAdMarkers value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * Authentication scheme to use when connecting with CDN
      */
-    inline const AuthenticationScheme& GetAuthenticationScheme() const{ return m_authenticationScheme; }
+    inline AuthenticationScheme GetAuthenticationScheme() const { return m_authenticationScheme; }
     inline bool AuthenticationSchemeHasBeenSet() const { return m_authenticationSchemeHasBeenSet; }
-    inline void SetAuthenticationScheme(const AuthenticationScheme& value) { m_authenticationSchemeHasBeenSet = true; m_authenticationScheme = value; }
-    inline void SetAuthenticationScheme(AuthenticationScheme&& value) { m_authenticationSchemeHasBeenSet = true; m_authenticationScheme = std::move(value); }
-    inline RtmpGroupSettings& WithAuthenticationScheme(const AuthenticationScheme& value) { SetAuthenticationScheme(value); return *this;}
-    inline RtmpGroupSettings& WithAuthenticationScheme(AuthenticationScheme&& value) { SetAuthenticationScheme(std::move(value)); return *this;}
+    inline void SetAuthenticationScheme(AuthenticationScheme value) { m_authenticationSchemeHasBeenSet = true; m_authenticationScheme = value; }
+    inline RtmpGroupSettings& WithAuthenticationScheme(AuthenticationScheme value) { SetAuthenticationScheme(value); return *this;}
     ///@}
 
     ///@{
@@ -81,19 +78,17 @@ namespace Model
      * restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5
      * minutes to allow the origin server to begin accepting data again.
      */
-    inline const RtmpCacheFullBehavior& GetCacheFullBehavior() const{ return m_cacheFullBehavior; }
+    inline RtmpCacheFullBehavior GetCacheFullBehavior() const { return m_cacheFullBehavior; }
     inline bool CacheFullBehaviorHasBeenSet() const { return m_cacheFullBehaviorHasBeenSet; }
-    inline void SetCacheFullBehavior(const RtmpCacheFullBehavior& value) { m_cacheFullBehaviorHasBeenSet = true; m_cacheFullBehavior = value; }
-    inline void SetCacheFullBehavior(RtmpCacheFullBehavior&& value) { m_cacheFullBehaviorHasBeenSet = true; m_cacheFullBehavior = std::move(value); }
-    inline RtmpGroupSettings& WithCacheFullBehavior(const RtmpCacheFullBehavior& value) { SetCacheFullBehavior(value); return *this;}
-    inline RtmpGroupSettings& WithCacheFullBehavior(RtmpCacheFullBehavior&& value) { SetCacheFullBehavior(std::move(value)); return *this;}
+    inline void SetCacheFullBehavior(RtmpCacheFullBehavior value) { m_cacheFullBehaviorHasBeenSet = true; m_cacheFullBehavior = value; }
+    inline RtmpGroupSettings& WithCacheFullBehavior(RtmpCacheFullBehavior value) { SetCacheFullBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Cache length, in seconds, is used to calculate buffer size.
      */
-    inline int GetCacheLength() const{ return m_cacheLength; }
+    inline int GetCacheLength() const { return m_cacheLength; }
     inline bool CacheLengthHasBeenSet() const { return m_cacheLengthHasBeenSet; }
     inline void SetCacheLength(int value) { m_cacheLengthHasBeenSet = true; m_cacheLength = value; }
     inline RtmpGroupSettings& WithCacheLength(int value) { SetCacheLength(value); return *this;}
@@ -107,12 +102,10 @@ namespace Model
      * both fields will be passed. If set to 'field1608' then only the data carried in
      * 608 from field 1 video will be passed.
      */
-    inline const RtmpCaptionData& GetCaptionData() const{ return m_captionData; }
+    inline RtmpCaptionData GetCaptionData() const { return m_captionData; }
     inline bool CaptionDataHasBeenSet() const { return m_captionDataHasBeenSet; }
-    inline void SetCaptionData(const RtmpCaptionData& value) { m_captionDataHasBeenSet = true; m_captionData = value; }
-    inline void SetCaptionData(RtmpCaptionData&& value) { m_captionDataHasBeenSet = true; m_captionData = std::move(value); }
-    inline RtmpGroupSettings& WithCaptionData(const RtmpCaptionData& value) { SetCaptionData(value); return *this;}
-    inline RtmpGroupSettings& WithCaptionData(RtmpCaptionData&& value) { SetCaptionData(std::move(value)); return *this;}
+    inline void SetCaptionData(RtmpCaptionData value) { m_captionDataHasBeenSet = true; m_captionData = value; }
+    inline RtmpGroupSettings& WithCaptionData(RtmpCaptionData value) { SetCaptionData(value); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +117,10 @@ namespace Model
 - pauseOutput: Stop transmitting
      * data until input returns. This does not close the underlying RTMP connection.
      */
-    inline const InputLossActionForRtmpOut& GetInputLossAction() const{ return m_inputLossAction; }
+    inline InputLossActionForRtmpOut GetInputLossAction() const { return m_inputLossAction; }
     inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
-    inline void SetInputLossAction(const InputLossActionForRtmpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
-    inline void SetInputLossAction(InputLossActionForRtmpOut&& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = std::move(value); }
-    inline RtmpGroupSettings& WithInputLossAction(const InputLossActionForRtmpOut& value) { SetInputLossAction(value); return *this;}
-    inline RtmpGroupSettings& WithInputLossAction(InputLossActionForRtmpOut&& value) { SetInputLossAction(std::move(value)); return *this;}
+    inline void SetInputLossAction(InputLossActionForRtmpOut value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
+    inline RtmpGroupSettings& WithInputLossAction(InputLossActionForRtmpOut value) { SetInputLossAction(value); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +128,7 @@ namespace Model
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
-    inline int GetRestartDelay() const{ return m_restartDelay; }
+    inline int GetRestartDelay() const { return m_restartDelay; }
     inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
     inline void SetRestartDelay(int value) { m_restartDelayHasBeenSet = true; m_restartDelay = value; }
     inline RtmpGroupSettings& WithRestartDelay(int value) { SetRestartDelay(value); return *this;}
@@ -151,37 +142,35 @@ namespace Model
      * there is no padding, the bandwidth varies (up to the bitrate value in the codec
      * settings). We recommend that you choose Auto.
      */
-    inline const IncludeFillerNalUnits& GetIncludeFillerNalUnits() const{ return m_includeFillerNalUnits; }
+    inline IncludeFillerNalUnits GetIncludeFillerNalUnits() const { return m_includeFillerNalUnits; }
     inline bool IncludeFillerNalUnitsHasBeenSet() const { return m_includeFillerNalUnitsHasBeenSet; }
-    inline void SetIncludeFillerNalUnits(const IncludeFillerNalUnits& value) { m_includeFillerNalUnitsHasBeenSet = true; m_includeFillerNalUnits = value; }
-    inline void SetIncludeFillerNalUnits(IncludeFillerNalUnits&& value) { m_includeFillerNalUnitsHasBeenSet = true; m_includeFillerNalUnits = std::move(value); }
-    inline RtmpGroupSettings& WithIncludeFillerNalUnits(const IncludeFillerNalUnits& value) { SetIncludeFillerNalUnits(value); return *this;}
-    inline RtmpGroupSettings& WithIncludeFillerNalUnits(IncludeFillerNalUnits&& value) { SetIncludeFillerNalUnits(std::move(value)); return *this;}
+    inline void SetIncludeFillerNalUnits(IncludeFillerNalUnits value) { m_includeFillerNalUnitsHasBeenSet = true; m_includeFillerNalUnits = value; }
+    inline RtmpGroupSettings& WithIncludeFillerNalUnits(IncludeFillerNalUnits value) { SetIncludeFillerNalUnits(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<RtmpAdMarkers> m_adMarkers;
     bool m_adMarkersHasBeenSet = false;
 
-    AuthenticationScheme m_authenticationScheme;
+    AuthenticationScheme m_authenticationScheme{AuthenticationScheme::NOT_SET};
     bool m_authenticationSchemeHasBeenSet = false;
 
-    RtmpCacheFullBehavior m_cacheFullBehavior;
+    RtmpCacheFullBehavior m_cacheFullBehavior{RtmpCacheFullBehavior::NOT_SET};
     bool m_cacheFullBehaviorHasBeenSet = false;
 
-    int m_cacheLength;
+    int m_cacheLength{0};
     bool m_cacheLengthHasBeenSet = false;
 
-    RtmpCaptionData m_captionData;
+    RtmpCaptionData m_captionData{RtmpCaptionData::NOT_SET};
     bool m_captionDataHasBeenSet = false;
 
-    InputLossActionForRtmpOut m_inputLossAction;
+    InputLossActionForRtmpOut m_inputLossAction{InputLossActionForRtmpOut::NOT_SET};
     bool m_inputLossActionHasBeenSet = false;
 
-    int m_restartDelay;
+    int m_restartDelay{0};
     bool m_restartDelayHasBeenSet = false;
 
-    IncludeFillerNalUnits m_includeFillerNalUnits;
+    IncludeFillerNalUnits m_includeFillerNalUnits{IncludeFillerNalUnits::NOT_SET};
     bool m_includeFillerNalUnitsHasBeenSet = false;
   };
 

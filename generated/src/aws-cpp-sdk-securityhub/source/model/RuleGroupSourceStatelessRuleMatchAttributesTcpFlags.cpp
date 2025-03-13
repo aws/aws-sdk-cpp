@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags() : 
-    m_flagsHasBeenSet(false),
-    m_masksHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatelessRuleMatchAttributesTcpFlags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(JsonView jsonValue)
-  : RuleGroupSourceStatelessRuleMatchAttributesTcpFlags()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& RuleGroupSourceStatelessRul
     }
     m_flagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Masks"))
   {
     Aws::Utils::Array<JsonView> masksJsonList = jsonValue.GetArray("Masks");
@@ -51,7 +43,6 @@ RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& RuleGroupSourceStatelessRul
     }
     m_masksHasBeenSet = true;
   }
-
   return *this;
 }
 

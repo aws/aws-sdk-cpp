@@ -20,28 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeSummary::TypeSummary() : 
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_defaultVersionIdHasBeenSet(false),
-    m_typeArnHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_originalTypeNameHasBeenSet(false),
-    m_publicVersionNumberHasBeenSet(false),
-    m_latestPublicVersionHasBeenSet(false),
-    m_publisherIdentity(IdentityProvider::NOT_SET),
-    m_publisherIdentityHasBeenSet(false),
-    m_publisherNameHasBeenSet(false),
-    m_isActivated(false),
-    m_isActivatedHasBeenSet(false)
-{
-}
-
 TypeSummary::TypeSummary(const XmlNode& xmlNode)
-  : TypeSummary()
 {
   *this = xmlNode;
 }
@@ -55,80 +34,93 @@ TypeSummary& TypeSummary::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RegistryTypeMapper::GetRegistryTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");
     if(!typeNameNode.IsNull())
     {
       m_typeName = Aws::Utils::Xml::DecodeEscapedXmlText(typeNameNode.GetText());
       m_typeNameHasBeenSet = true;
+       m_typeNameHasBeenSet = true;
     }
     XmlNode defaultVersionIdNode = resultNode.FirstChild("DefaultVersionId");
     if(!defaultVersionIdNode.IsNull())
     {
       m_defaultVersionId = Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionIdNode.GetText());
       m_defaultVersionIdHasBeenSet = true;
+       m_defaultVersionIdHasBeenSet = true;
     }
     XmlNode typeArnNode = resultNode.FirstChild("TypeArn");
     if(!typeArnNode.IsNull())
     {
       m_typeArn = Aws::Utils::Xml::DecodeEscapedXmlText(typeArnNode.GetText());
       m_typeArnHasBeenSet = true;
+       m_typeArnHasBeenSet = true;
     }
     XmlNode lastUpdatedNode = resultNode.FirstChild("LastUpdated");
     if(!lastUpdatedNode.IsNull())
     {
       m_lastUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdatedHasBeenSet = true;
+       m_lastUpdatedHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");
     if(!publisherIdNode.IsNull())
     {
       m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
       m_publisherIdHasBeenSet = true;
+       m_publisherIdHasBeenSet = true;
     }
     XmlNode originalTypeNameNode = resultNode.FirstChild("OriginalTypeName");
     if(!originalTypeNameNode.IsNull())
     {
       m_originalTypeName = Aws::Utils::Xml::DecodeEscapedXmlText(originalTypeNameNode.GetText());
       m_originalTypeNameHasBeenSet = true;
+       m_originalTypeNameHasBeenSet = true;
     }
     XmlNode publicVersionNumberNode = resultNode.FirstChild("PublicVersionNumber");
     if(!publicVersionNumberNode.IsNull())
     {
       m_publicVersionNumber = Aws::Utils::Xml::DecodeEscapedXmlText(publicVersionNumberNode.GetText());
       m_publicVersionNumberHasBeenSet = true;
+       m_publicVersionNumberHasBeenSet = true;
     }
     XmlNode latestPublicVersionNode = resultNode.FirstChild("LatestPublicVersion");
     if(!latestPublicVersionNode.IsNull())
     {
       m_latestPublicVersion = Aws::Utils::Xml::DecodeEscapedXmlText(latestPublicVersionNode.GetText());
       m_latestPublicVersionHasBeenSet = true;
+       m_latestPublicVersionHasBeenSet = true;
     }
     XmlNode publisherIdentityNode = resultNode.FirstChild("PublisherIdentity");
     if(!publisherIdentityNode.IsNull())
     {
-      m_publisherIdentity = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdentityNode.GetText()).c_str()).c_str());
+      m_publisherIdentity = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdentityNode.GetText()).c_str()));
       m_publisherIdentityHasBeenSet = true;
+       m_publisherIdentityHasBeenSet = true;
     }
     XmlNode publisherNameNode = resultNode.FirstChild("PublisherName");
     if(!publisherNameNode.IsNull())
     {
       m_publisherName = Aws::Utils::Xml::DecodeEscapedXmlText(publisherNameNode.GetText());
       m_publisherNameHasBeenSet = true;
+       m_publisherNameHasBeenSet = true;
     }
     XmlNode isActivatedNode = resultNode.FirstChild("IsActivated");
     if(!isActivatedNode.IsNull())
     {
       m_isActivated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isActivatedNode.GetText()).c_str()).c_str());
       m_isActivatedHasBeenSet = true;
+       m_isActivatedHasBeenSet = true;
     }
   }
 

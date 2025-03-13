@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTriggerRequest::DeleteTriggerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTriggerRequest::SerializePayload() const
 {
   JsonValue payload;

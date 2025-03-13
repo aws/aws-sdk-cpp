@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterContainerImageResult::RegisterContainerImageResult()
-{
-}
-
 RegisterContainerImageResult::RegisterContainerImageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RegisterContainerImageResult& RegisterContainerImageResult::operator =(const Aws
   if(jsonValue.ValueExists("containerImage"))
   {
     m_containerImage = jsonValue.GetObject("containerImage");
-
+    m_containerImageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

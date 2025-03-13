@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTapeArchiveResult::DeleteTapeArchiveResult()
-{
-}
-
 DeleteTapeArchiveResult::DeleteTapeArchiveResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteTapeArchiveResult& DeleteTapeArchiveResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("TapeARN"))
   {
     m_tapeARN = jsonValue.GetString("TapeARN");
-
+    m_tapeARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

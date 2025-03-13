@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-FailedScheduledUpdateGroupActionRequest::FailedScheduledUpdateGroupActionRequest() : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailedScheduledUpdateGroupActionRequest::FailedScheduledUpdateGroupActionRequest(const XmlNode& xmlNode)
-  : FailedScheduledUpdateGroupActionRequest()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ FailedScheduledUpdateGroupActionRequest& FailedScheduledUpdateGroupActionRequest
     {
       m_scheduledActionName = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledActionNameNode.GetText());
       m_scheduledActionNameHasBeenSet = true;
+       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode errorCodeNode = resultNode.FirstChild("ErrorCode");
     if(!errorCodeNode.IsNull())
     {
       m_errorCode = Aws::Utils::Xml::DecodeEscapedXmlText(errorCodeNode.GetText());
       m_errorCodeHasBeenSet = true;
+       m_errorCodeHasBeenSet = true;
     }
     XmlNode errorMessageNode = resultNode.FirstChild("ErrorMessage");
     if(!errorMessageNode.IsNull())
     {
       m_errorMessage = Aws::Utils::Xml::DecodeEscapedXmlText(errorMessageNode.GetText());
       m_errorMessageHasBeenSet = true;
+       m_errorMessageHasBeenSet = true;
     }
   }
 

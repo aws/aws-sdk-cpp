@@ -25,7 +25,7 @@ namespace Model
   class UpdateClusterRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API UpdateClusterRequest();
+    AWS_MEDIALIVE_API UpdateClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * The ID of the cluster
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline UpdateClusterRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline UpdateClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    UpdateClusterRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * Cluster. Specify a name that is unique in the AWS account. You can't change the
      * name. Names are case-sensitive.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateClusterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateClusterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateClusterRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateClusterRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,12 @@ namespace Model
      * Include this property only if you want to change the current connections between
      * the Nodes in the Cluster and the Networks the Cluster is associated with.
      */
-    inline const ClusterNetworkSettingsUpdateRequest& GetNetworkSettings() const{ return m_networkSettings; }
+    inline const ClusterNetworkSettingsUpdateRequest& GetNetworkSettings() const { return m_networkSettings; }
     inline bool NetworkSettingsHasBeenSet() const { return m_networkSettingsHasBeenSet; }
-    inline void SetNetworkSettings(const ClusterNetworkSettingsUpdateRequest& value) { m_networkSettingsHasBeenSet = true; m_networkSettings = value; }
-    inline void SetNetworkSettings(ClusterNetworkSettingsUpdateRequest&& value) { m_networkSettingsHasBeenSet = true; m_networkSettings = std::move(value); }
-    inline UpdateClusterRequest& WithNetworkSettings(const ClusterNetworkSettingsUpdateRequest& value) { SetNetworkSettings(value); return *this;}
-    inline UpdateClusterRequest& WithNetworkSettings(ClusterNetworkSettingsUpdateRequest&& value) { SetNetworkSettings(std::move(value)); return *this;}
+    template<typename NetworkSettingsT = ClusterNetworkSettingsUpdateRequest>
+    void SetNetworkSettings(NetworkSettingsT&& value) { m_networkSettingsHasBeenSet = true; m_networkSettings = std::forward<NetworkSettingsT>(value); }
+    template<typename NetworkSettingsT = ClusterNetworkSettingsUpdateRequest>
+    UpdateClusterRequest& WithNetworkSettings(NetworkSettingsT&& value) { SetNetworkSettings(std::forward<NetworkSettingsT>(value)); return *this;}
     ///@}
   private:
 

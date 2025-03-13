@@ -32,7 +32,7 @@ namespace Model
   class EndpointConfiguration
   {
   public:
-    AWS_GLOBALACCELERATOR_API EndpointConfiguration();
+    AWS_GLOBALACCELERATOR_API EndpointConfiguration() = default;
     AWS_GLOBALACCELERATOR_API EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * resource must be valid and active when you add it as an endpoint.</p> <p>For
      * cross-account endpoints, this must be the ARN of the resource.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline EndpointConfiguration& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline EndpointConfiguration& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline EndpointConfiguration& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    EndpointConfiguration& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * weights</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline EndpointConfiguration& WithWeight(int value) { SetWeight(value); return *this;}
@@ -90,7 +88,7 @@ namespace Model
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
-    inline bool GetClientIPPreservationEnabled() const{ return m_clientIPPreservationEnabled; }
+    inline bool GetClientIPPreservationEnabled() const { return m_clientIPPreservationEnabled; }
     inline bool ClientIPPreservationEnabledHasBeenSet() const { return m_clientIPPreservationEnabledHasBeenSet; }
     inline void SetClientIPPreservationEnabled(bool value) { m_clientIPPreservationEnabledHasBeenSet = true; m_clientIPPreservationEnabled = value; }
     inline EndpointConfiguration& WithClientIPPreservationEnabled(bool value) { SetClientIPPreservationEnabled(value); return *this;}
@@ -102,24 +100,22 @@ namespace Model
      * the endpoints (resources) that can be added to accelerators and principals that
      * have permission to add the endpoints.</p>
      */
-    inline const Aws::String& GetAttachmentArn() const{ return m_attachmentArn; }
+    inline const Aws::String& GetAttachmentArn() const { return m_attachmentArn; }
     inline bool AttachmentArnHasBeenSet() const { return m_attachmentArnHasBeenSet; }
-    inline void SetAttachmentArn(const Aws::String& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = value; }
-    inline void SetAttachmentArn(Aws::String&& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = std::move(value); }
-    inline void SetAttachmentArn(const char* value) { m_attachmentArnHasBeenSet = true; m_attachmentArn.assign(value); }
-    inline EndpointConfiguration& WithAttachmentArn(const Aws::String& value) { SetAttachmentArn(value); return *this;}
-    inline EndpointConfiguration& WithAttachmentArn(Aws::String&& value) { SetAttachmentArn(std::move(value)); return *this;}
-    inline EndpointConfiguration& WithAttachmentArn(const char* value) { SetAttachmentArn(value); return *this;}
+    template<typename AttachmentArnT = Aws::String>
+    void SetAttachmentArn(AttachmentArnT&& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = std::forward<AttachmentArnT>(value); }
+    template<typename AttachmentArnT = Aws::String>
+    EndpointConfiguration& WithAttachmentArn(AttachmentArnT&& value) { SetAttachmentArn(std::forward<AttachmentArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointId;
     bool m_endpointIdHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
 
-    bool m_clientIPPreservationEnabled;
+    bool m_clientIPPreservationEnabled{false};
     bool m_clientIPPreservationEnabledHasBeenSet = false;
 
     Aws::String m_attachmentArn;

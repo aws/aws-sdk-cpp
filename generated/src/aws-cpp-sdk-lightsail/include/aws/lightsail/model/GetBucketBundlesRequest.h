@@ -19,7 +19,7 @@ namespace Model
   class GetBucketBundlesRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetBucketBundlesRequest();
+    AWS_LIGHTSAIL_API GetBucketBundlesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
      * <p>A Boolean value that indicates whether to include inactive (unavailable)
      * bundles in the response of your request.</p>
      */
-    inline bool GetIncludeInactive() const{ return m_includeInactive; }
+    inline bool GetIncludeInactive() const { return m_includeInactive; }
     inline bool IncludeInactiveHasBeenSet() const { return m_includeInactiveHasBeenSet; }
     inline void SetIncludeInactive(bool value) { m_includeInactiveHasBeenSet = true; m_includeInactive = value; }
     inline GetBucketBundlesRequest& WithIncludeInactive(bool value) { SetIncludeInactive(value); return *this;}
     ///@}
   private:
 
-    bool m_includeInactive;
+    bool m_includeInactive{false};
     bool m_includeInactiveHasBeenSet = false;
   };
 

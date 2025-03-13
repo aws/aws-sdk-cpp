@@ -29,7 +29,7 @@ namespace Model
   class RunPipelineActivityResult
   {
   public:
-    AWS_IOTANALYTICS_API RunPipelineActivityResult();
+    AWS_IOTANALYTICS_API RunPipelineActivityResult() = default;
     AWS_IOTANALYTICS_API RunPipelineActivityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTANALYTICS_API RunPipelineActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * strings. (The results of running the pipeline activity on each input sample
      * message payload, encoded in base64.)</p>
      */
-    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const{ return m_payloads; }
-    inline void SetPayloads(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_payloads = value; }
-    inline void SetPayloads(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_payloads = std::move(value); }
-    inline RunPipelineActivityResult& WithPayloads(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { SetPayloads(value); return *this;}
-    inline RunPipelineActivityResult& WithPayloads(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetPayloads(std::move(value)); return *this;}
-    inline RunPipelineActivityResult& AddPayloads(const Aws::Utils::ByteBuffer& value) { m_payloads.push_back(value); return *this; }
-    inline RunPipelineActivityResult& AddPayloads(Aws::Utils::ByteBuffer&& value) { m_payloads.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const { return m_payloads; }
+    template<typename PayloadsT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    void SetPayloads(PayloadsT&& value) { m_payloadsHasBeenSet = true; m_payloads = std::forward<PayloadsT>(value); }
+    template<typename PayloadsT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    RunPipelineActivityResult& WithPayloads(PayloadsT&& value) { SetPayloads(std::forward<PayloadsT>(value)); return *this;}
+    template<typename PayloadsT = Aws::Utils::ByteBuffer>
+    RunPipelineActivityResult& AddPayloads(PayloadsT&& value) { m_payloadsHasBeenSet = true; m_payloads.emplace_back(std::forward<PayloadsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>In case the pipeline activity fails, the log message that is generated.</p>
      */
-    inline const Aws::String& GetLogResult() const{ return m_logResult; }
-    inline void SetLogResult(const Aws::String& value) { m_logResult = value; }
-    inline void SetLogResult(Aws::String&& value) { m_logResult = std::move(value); }
-    inline void SetLogResult(const char* value) { m_logResult.assign(value); }
-    inline RunPipelineActivityResult& WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
-    inline RunPipelineActivityResult& WithLogResult(Aws::String&& value) { SetLogResult(std::move(value)); return *this;}
-    inline RunPipelineActivityResult& WithLogResult(const char* value) { SetLogResult(value); return *this;}
+    inline const Aws::String& GetLogResult() const { return m_logResult; }
+    template<typename LogResultT = Aws::String>
+    void SetLogResult(LogResultT&& value) { m_logResultHasBeenSet = true; m_logResult = std::forward<LogResultT>(value); }
+    template<typename LogResultT = Aws::String>
+    RunPipelineActivityResult& WithLogResult(LogResultT&& value) { SetLogResult(std::forward<LogResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RunPipelineActivityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RunPipelineActivityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RunPipelineActivityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RunPipelineActivityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_payloads;
+    bool m_payloadsHasBeenSet = false;
 
     Aws::String m_logResult;
+    bool m_logResultHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class IsraelAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API IsraelAdditionalInfo();
+    AWS_TAXSETTINGS_API IsraelAdditionalInfo() = default;
     AWS_TAXSETTINGS_API IsraelAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API IsraelAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * or <code>Individual</code>. Use <code>Business</code>for entities such as
      * not-for-profit and financial institutions.</p>
      */
-    inline const IsraelCustomerType& GetCustomerType() const{ return m_customerType; }
+    inline IsraelCustomerType GetCustomerType() const { return m_customerType; }
     inline bool CustomerTypeHasBeenSet() const { return m_customerTypeHasBeenSet; }
-    inline void SetCustomerType(const IsraelCustomerType& value) { m_customerTypeHasBeenSet = true; m_customerType = value; }
-    inline void SetCustomerType(IsraelCustomerType&& value) { m_customerTypeHasBeenSet = true; m_customerType = std::move(value); }
-    inline IsraelAdditionalInfo& WithCustomerType(const IsraelCustomerType& value) { SetCustomerType(value); return *this;}
-    inline IsraelAdditionalInfo& WithCustomerType(IsraelCustomerType&& value) { SetCustomerType(std::move(value)); return *this;}
+    inline void SetCustomerType(IsraelCustomerType value) { m_customerTypeHasBeenSet = true; m_customerType = value; }
+    inline IsraelAdditionalInfo& WithCustomerType(IsraelCustomerType value) { SetCustomerType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * with an Israeli VAT ID, specify your tax identification number so that Amazon
      * Web Services can send you a compliant tax invoice.</p>
      */
-    inline const IsraelDealerType& GetDealerType() const{ return m_dealerType; }
+    inline IsraelDealerType GetDealerType() const { return m_dealerType; }
     inline bool DealerTypeHasBeenSet() const { return m_dealerTypeHasBeenSet; }
-    inline void SetDealerType(const IsraelDealerType& value) { m_dealerTypeHasBeenSet = true; m_dealerType = value; }
-    inline void SetDealerType(IsraelDealerType&& value) { m_dealerTypeHasBeenSet = true; m_dealerType = std::move(value); }
-    inline IsraelAdditionalInfo& WithDealerType(const IsraelDealerType& value) { SetDealerType(value); return *this;}
-    inline IsraelAdditionalInfo& WithDealerType(IsraelDealerType&& value) { SetDealerType(std::move(value)); return *this;}
+    inline void SetDealerType(IsraelDealerType value) { m_dealerTypeHasBeenSet = true; m_dealerType = value; }
+    inline IsraelAdditionalInfo& WithDealerType(IsraelDealerType value) { SetDealerType(value); return *this;}
     ///@}
   private:
 
-    IsraelCustomerType m_customerType;
+    IsraelCustomerType m_customerType{IsraelCustomerType::NOT_SET};
     bool m_customerTypeHasBeenSet = false;
 
-    IsraelDealerType m_dealerType;
+    IsraelDealerType m_dealerType{IsraelDealerType::NOT_SET};
     bool m_dealerTypeHasBeenSet = false;
   };
 

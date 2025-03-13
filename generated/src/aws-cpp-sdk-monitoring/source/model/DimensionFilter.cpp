@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DimensionFilter::DimensionFilter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DimensionFilter::DimensionFilter(const XmlNode& xmlNode)
-  : DimensionFilter()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DimensionFilter& DimensionFilter::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

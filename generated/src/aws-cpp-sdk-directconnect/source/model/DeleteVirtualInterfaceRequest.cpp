@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVirtualInterfaceRequest::DeleteVirtualInterfaceRequest() : 
-    m_virtualInterfaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVirtualInterfaceRequest::SerializePayload() const
 {
   JsonValue payload;

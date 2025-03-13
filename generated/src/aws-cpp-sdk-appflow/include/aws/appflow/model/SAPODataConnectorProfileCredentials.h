@@ -33,7 +33,7 @@ namespace Model
   class SAPODataConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API SAPODataConnectorProfileCredentials();
+    AWS_APPFLOW_API SAPODataConnectorProfileCredentials() = default;
     AWS_APPFLOW_API SAPODataConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SAPODataConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p> The SAPOData basic authentication credentials. </p>
      */
-    inline const BasicAuthCredentials& GetBasicAuthCredentials() const{ return m_basicAuthCredentials; }
+    inline const BasicAuthCredentials& GetBasicAuthCredentials() const { return m_basicAuthCredentials; }
     inline bool BasicAuthCredentialsHasBeenSet() const { return m_basicAuthCredentialsHasBeenSet; }
-    inline void SetBasicAuthCredentials(const BasicAuthCredentials& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = value; }
-    inline void SetBasicAuthCredentials(BasicAuthCredentials&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::move(value); }
-    inline SAPODataConnectorProfileCredentials& WithBasicAuthCredentials(const BasicAuthCredentials& value) { SetBasicAuthCredentials(value); return *this;}
-    inline SAPODataConnectorProfileCredentials& WithBasicAuthCredentials(BasicAuthCredentials&& value) { SetBasicAuthCredentials(std::move(value)); return *this;}
+    template<typename BasicAuthCredentialsT = BasicAuthCredentials>
+    void SetBasicAuthCredentials(BasicAuthCredentialsT&& value) { m_basicAuthCredentialsHasBeenSet = true; m_basicAuthCredentials = std::forward<BasicAuthCredentialsT>(value); }
+    template<typename BasicAuthCredentialsT = BasicAuthCredentials>
+    SAPODataConnectorProfileCredentials& WithBasicAuthCredentials(BasicAuthCredentialsT&& value) { SetBasicAuthCredentials(std::forward<BasicAuthCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The SAPOData OAuth type authentication credentials. </p>
      */
-    inline const OAuthCredentials& GetOAuthCredentials() const{ return m_oAuthCredentials; }
+    inline const OAuthCredentials& GetOAuthCredentials() const { return m_oAuthCredentials; }
     inline bool OAuthCredentialsHasBeenSet() const { return m_oAuthCredentialsHasBeenSet; }
-    inline void SetOAuthCredentials(const OAuthCredentials& value) { m_oAuthCredentialsHasBeenSet = true; m_oAuthCredentials = value; }
-    inline void SetOAuthCredentials(OAuthCredentials&& value) { m_oAuthCredentialsHasBeenSet = true; m_oAuthCredentials = std::move(value); }
-    inline SAPODataConnectorProfileCredentials& WithOAuthCredentials(const OAuthCredentials& value) { SetOAuthCredentials(value); return *this;}
-    inline SAPODataConnectorProfileCredentials& WithOAuthCredentials(OAuthCredentials&& value) { SetOAuthCredentials(std::move(value)); return *this;}
+    template<typename OAuthCredentialsT = OAuthCredentials>
+    void SetOAuthCredentials(OAuthCredentialsT&& value) { m_oAuthCredentialsHasBeenSet = true; m_oAuthCredentials = std::forward<OAuthCredentialsT>(value); }
+    template<typename OAuthCredentialsT = OAuthCredentials>
+    SAPODataConnectorProfileCredentials& WithOAuthCredentials(OAuthCredentialsT&& value) { SetOAuthCredentials(std::forward<OAuthCredentialsT>(value)); return *this;}
     ///@}
   private:
 

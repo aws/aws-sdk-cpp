@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AdvancedInputFilterSettings::AdvancedInputFilterSettings() : 
-    m_addTexture(AdvancedInputFilterAddTexture::NOT_SET),
-    m_addTextureHasBeenSet(false),
-    m_sharpening(AdvancedInputFilterSharpen::NOT_SET),
-    m_sharpeningHasBeenSet(false)
-{
-}
-
 AdvancedInputFilterSettings::AdvancedInputFilterSettings(JsonView jsonValue)
-  : AdvancedInputFilterSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AdvancedInputFilterSettings& AdvancedInputFilterSettings::operator =(JsonView js
   if(jsonValue.ValueExists("addTexture"))
   {
     m_addTexture = AdvancedInputFilterAddTextureMapper::GetAdvancedInputFilterAddTextureForName(jsonValue.GetString("addTexture"));
-
     m_addTextureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharpening"))
   {
     m_sharpening = AdvancedInputFilterSharpenMapper::GetAdvancedInputFilterSharpenForName(jsonValue.GetString("sharpening"));
-
     m_sharpeningHasBeenSet = true;
   }
-
   return *this;
 }
 

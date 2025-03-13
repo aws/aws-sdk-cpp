@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CodeGenEdge::CodeGenEdge() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetParameterHasBeenSet(false)
-{
-}
-
 CodeGenEdge::CodeGenEdge(JsonView jsonValue)
-  : CodeGenEdge()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CodeGenEdge& CodeGenEdge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetParameter"))
   {
     m_targetParameter = jsonValue.GetString("TargetParameter");
-
     m_targetParameterHasBeenSet = true;
   }
-
   return *this;
 }
 

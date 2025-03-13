@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetInputDataConfig::DatasetInputDataConfig() : 
-    m_augmentedManifestsHasBeenSet(false),
-    m_dataFormat(DatasetDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_documentClassifierInputDataConfigHasBeenSet(false),
-    m_entityRecognizerInputDataConfigHasBeenSet(false)
-{
-}
-
 DatasetInputDataConfig::DatasetInputDataConfig(JsonView jsonValue)
-  : DatasetInputDataConfig()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ DatasetInputDataConfig& DatasetInputDataConfig::operator =(JsonView jsonValue)
     }
     m_augmentedManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = DatasetDataFormatMapper::GetDatasetDataFormatForName(jsonValue.GetString("DataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentClassifierInputDataConfig"))
   {
     m_documentClassifierInputDataConfig = jsonValue.GetObject("DocumentClassifierInputDataConfig");
-
     m_documentClassifierInputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityRecognizerInputDataConfig"))
   {
     m_entityRecognizerInputDataConfig = jsonValue.GetObject("EntityRecognizerInputDataConfig");
-
     m_entityRecognizerInputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLineLayer::GeospatialLineLayer() : 
-    m_styleHasBeenSet(false)
-{
-}
-
 GeospatialLineLayer::GeospatialLineLayer(JsonView jsonValue)
-  : GeospatialLineLayer()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialLineLayer& GeospatialLineLayer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Style"))
   {
     m_style = jsonValue.GetObject("Style");
-
     m_styleHasBeenSet = true;
   }
-
   return *this;
 }
 

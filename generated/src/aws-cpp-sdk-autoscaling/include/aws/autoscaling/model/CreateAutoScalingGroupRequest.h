@@ -31,7 +31,7 @@ namespace Model
   class CreateAutoScalingGroupRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API CreateAutoScalingGroupRequest();
+    AWS_AUTOSCALING_API CreateAutoScalingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * most punctuation characters, digits, and upper and lowercased letters.</p>
      *  <p>You cannot use a colon (:) in the name.</p> 
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    CreateAutoScalingGroupRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * configuration (<code>LaunchConfigurationName</code> or
      * <code>InstanceId</code>).</p>
      */
-    inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
+    inline const Aws::String& GetLaunchConfigurationName() const { return m_launchConfigurationName; }
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
-    inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
-    inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
-    inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
+    template<typename LaunchConfigurationNameT = Aws::String>
+    void SetLaunchConfigurationName(LaunchConfigurationNameT&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::forward<LaunchConfigurationNameT>(value); }
+    template<typename LaunchConfigurationNameT = Aws::String>
+    CreateAutoScalingGroupRequest& WithLaunchConfigurationName(LaunchConfigurationNameT&& value) { SetLaunchConfigurationName(std::forward<LaunchConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,12 @@ namespace Model
      * a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.</p> 
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    CreateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +105,12 @@ namespace Model
      * Scaling groups with multiple instance types and purchase options</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
+    inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const { return m_mixedInstancesPolicy; }
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
-    inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
-    inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
+    template<typename MixedInstancesPolicyT = MixedInstancesPolicy>
+    void SetMixedInstancesPolicy(MixedInstancesPolicyT&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::forward<MixedInstancesPolicyT>(value); }
+    template<typename MixedInstancesPolicyT = MixedInstancesPolicy>
+    CreateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicyT&& value) { SetMixedInstancesPolicy(std::forward<MixedInstancesPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,21 +125,19 @@ namespace Model
      * an Auto Scaling group using parameters from an existing instance</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CreateAutoScalingGroupRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline CreateAutoScalingGroupRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -158,7 +152,7 @@ namespace Model
      * largest instance weight (weights that define how many units each instance
      * contributes to the desired capacity of the group).</p> 
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline CreateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -173,7 +167,7 @@ namespace Model
      * maximum size of the group. If you do not specify a desired capacity, the default
      * is the minimum size of the group.</p>
      */
-    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const { return m_desiredCapacity; }
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
     inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
@@ -188,7 +182,7 @@ namespace Model
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>Default: <code>300</code> seconds</p>
      */
-    inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
+    inline int GetDefaultCooldown() const { return m_defaultCooldown; }
     inline bool DefaultCooldownHasBeenSet() const { return m_defaultCooldownHasBeenSet; }
     inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
     inline CreateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
@@ -202,15 +196,14 @@ namespace Model
      * attaching a network interface when an existing network interface ID is specified
      * in a launch template.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-    inline CreateAutoScalingGroupRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    CreateAutoScalingGroupRequest& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = Aws::String>
+    CreateAutoScalingGroupRequest& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,15 +212,14 @@ namespace Model
      * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
+    inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const { return m_loadBalancerNames; }
     inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
-    inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
-    inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
-    inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+    template<typename LoadBalancerNamesT = Aws::Vector<Aws::String>>
+    void SetLoadBalancerNames(LoadBalancerNamesT&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::forward<LoadBalancerNamesT>(value); }
+    template<typename LoadBalancerNamesT = Aws::Vector<Aws::String>>
+    CreateAutoScalingGroupRequest& WithLoadBalancerNames(LoadBalancerNamesT&& value) { SetLoadBalancerNames(std::forward<LoadBalancerNamesT>(value)); return *this;}
+    template<typename LoadBalancerNamesT = Aws::String>
+    CreateAutoScalingGroupRequest& AddLoadBalancerNames(LoadBalancerNamesT&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.emplace_back(std::forward<LoadBalancerNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -240,15 +232,14 @@ namespace Model
      * Elastic Load Balancing to distribute traffic across the instances in your Auto
      * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
+    inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const { return m_targetGroupARNs; }
     inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
-    inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
-    inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
-    inline CreateAutoScalingGroupRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
+    template<typename TargetGroupARNsT = Aws::Vector<Aws::String>>
+    void SetTargetGroupARNs(TargetGroupARNsT&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::forward<TargetGroupARNsT>(value); }
+    template<typename TargetGroupARNsT = Aws::Vector<Aws::String>>
+    CreateAutoScalingGroupRequest& WithTargetGroupARNs(TargetGroupARNsT&& value) { SetTargetGroupARNs(std::forward<TargetGroupARNsT>(value)); return *this;}
+    template<typename TargetGroupARNsT = Aws::String>
+    CreateAutoScalingGroupRequest& AddTargetGroupARNs(TargetGroupARNsT&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.emplace_back(std::forward<TargetGroupARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -262,14 +253,12 @@ namespace Model
      * Scaling User Guide</i>.</p> <p>Only specify <code>EC2</code> if you must clear a
      * value that was previously set.</p>
      */
-    inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
+    inline const Aws::String& GetHealthCheckType() const { return m_healthCheckType; }
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
-    inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
-    inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
-    inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
+    template<typename HealthCheckTypeT = Aws::String>
+    void SetHealthCheckType(HealthCheckTypeT&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::forward<HealthCheckTypeT>(value); }
+    template<typename HealthCheckTypeT = Aws::String>
+    CreateAutoScalingGroupRequest& WithHealthCheckType(HealthCheckTypeT&& value) { SetHealthCheckType(std::forward<HealthCheckTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -283,7 +272,7 @@ namespace Model
      * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p> <p>Default: <code>0</code> seconds</p>
      */
-    inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
+    inline int GetHealthCheckGracePeriod() const { return m_healthCheckGracePeriod; }
     inline bool HealthCheckGracePeriodHasBeenSet() const { return m_healthCheckGracePeriodHasBeenSet; }
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
     inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
@@ -299,14 +288,12 @@ namespace Model
      * single Availability Zone. You cannot specify multiple Availability Zones and a
      * cluster placement group. </p> 
      */
-    inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
+    inline const Aws::String& GetPlacementGroup() const { return m_placementGroup; }
     inline bool PlacementGroupHasBeenSet() const { return m_placementGroupHasBeenSet; }
-    inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
-    inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
-    inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
+    template<typename PlacementGroupT = Aws::String>
+    void SetPlacementGroup(PlacementGroupT&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::forward<PlacementGroupT>(value); }
+    template<typename PlacementGroupT = Aws::String>
+    CreateAutoScalingGroupRequest& WithPlacementGroup(PlacementGroupT&& value) { SetPlacementGroup(std::forward<PlacementGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -316,14 +303,12 @@ namespace Model
      * <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets
      * that you specify must reside in those Availability Zones.</p>
      */
-    inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
+    inline const Aws::String& GetVPCZoneIdentifier() const { return m_vPCZoneIdentifier; }
     inline bool VPCZoneIdentifierHasBeenSet() const { return m_vPCZoneIdentifierHasBeenSet; }
-    inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
-    inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::move(value); }
-    inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
+    template<typename VPCZoneIdentifierT = Aws::String>
+    void SetVPCZoneIdentifier(VPCZoneIdentifierT&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::forward<VPCZoneIdentifierT>(value); }
+    template<typename VPCZoneIdentifierT = Aws::String>
+    CreateAutoScalingGroupRequest& WithVPCZoneIdentifier(VPCZoneIdentifierT&& value) { SetVPCZoneIdentifier(std::forward<VPCZoneIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -339,15 +324,14 @@ namespace Model
      * <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> |
      * <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
+    inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const { return m_terminationPolicies; }
     inline bool TerminationPoliciesHasBeenSet() const { return m_terminationPoliciesHasBeenSet; }
-    inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
-    inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(std::move(value)); return *this; }
-    inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
+    template<typename TerminationPoliciesT = Aws::Vector<Aws::String>>
+    void SetTerminationPolicies(TerminationPoliciesT&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::forward<TerminationPoliciesT>(value); }
+    template<typename TerminationPoliciesT = Aws::Vector<Aws::String>>
+    CreateAutoScalingGroupRequest& WithTerminationPolicies(TerminationPoliciesT&& value) { SetTerminationPolicies(std::forward<TerminationPoliciesT>(value)); return *this;}
+    template<typename TerminationPoliciesT = Aws::String>
+    CreateAutoScalingGroupRequest& AddTerminationPolicies(TerminationPoliciesT&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.emplace_back(std::forward<TerminationPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -359,7 +343,7 @@ namespace Model
      * instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
-    inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
+    inline bool GetNewInstancesProtectedFromScaleIn() const { return m_newInstancesProtectedFromScaleIn; }
     inline bool NewInstancesProtectedFromScaleInHasBeenSet() const { return m_newInstancesProtectedFromScaleInHasBeenSet; }
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
     inline CreateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
@@ -376,7 +360,7 @@ namespace Model
      * Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+    inline bool GetCapacityRebalance() const { return m_capacityRebalance; }
     inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
     inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
     inline CreateAutoScalingGroupRequest& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
@@ -387,14 +371,14 @@ namespace Model
      * <p>One or more lifecycle hooks to add to the Auto Scaling group before instances
      * are launched.</p>
      */
-    inline const Aws::Vector<LifecycleHookSpecification>& GetLifecycleHookSpecificationList() const{ return m_lifecycleHookSpecificationList; }
+    inline const Aws::Vector<LifecycleHookSpecification>& GetLifecycleHookSpecificationList() const { return m_lifecycleHookSpecificationList; }
     inline bool LifecycleHookSpecificationListHasBeenSet() const { return m_lifecycleHookSpecificationListHasBeenSet; }
-    inline void SetLifecycleHookSpecificationList(const Aws::Vector<LifecycleHookSpecification>& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = value; }
-    inline void SetLifecycleHookSpecificationList(Aws::Vector<LifecycleHookSpecification>&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(const Aws::Vector<LifecycleHookSpecification>& value) { SetLifecycleHookSpecificationList(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(Aws::Vector<LifecycleHookSpecification>&& value) { SetLifecycleHookSpecificationList(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(const LifecycleHookSpecification& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(LifecycleHookSpecification&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.push_back(std::move(value)); return *this; }
+    template<typename LifecycleHookSpecificationListT = Aws::Vector<LifecycleHookSpecification>>
+    void SetLifecycleHookSpecificationList(LifecycleHookSpecificationListT&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList = std::forward<LifecycleHookSpecificationListT>(value); }
+    template<typename LifecycleHookSpecificationListT = Aws::Vector<LifecycleHookSpecification>>
+    CreateAutoScalingGroupRequest& WithLifecycleHookSpecificationList(LifecycleHookSpecificationListT&& value) { SetLifecycleHookSpecificationList(std::forward<LifecycleHookSpecificationListT>(value)); return *this;}
+    template<typename LifecycleHookSpecificationListT = LifecycleHookSpecification>
+    CreateAutoScalingGroupRequest& AddLifecycleHookSpecificationList(LifecycleHookSpecificationListT&& value) { m_lifecycleHookSpecificationListHasBeenSet = true; m_lifecycleHookSpecificationList.emplace_back(std::forward<LifecycleHookSpecificationListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -410,14 +394,14 @@ namespace Model
      * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAutoScalingGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAutoScalingGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -430,14 +414,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
+    inline const Aws::String& GetServiceLinkedRoleARN() const { return m_serviceLinkedRoleARN; }
     inline bool ServiceLinkedRoleARNHasBeenSet() const { return m_serviceLinkedRoleARNHasBeenSet; }
-    inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
-    inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
-    inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
+    template<typename ServiceLinkedRoleARNT = Aws::String>
+    void SetServiceLinkedRoleARN(ServiceLinkedRoleARNT&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::forward<ServiceLinkedRoleARNT>(value); }
+    template<typename ServiceLinkedRoleARNT = Aws::String>
+    CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(ServiceLinkedRoleARNT&& value) { SetServiceLinkedRoleARN(std::forward<ServiceLinkedRoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -449,7 +431,7 @@ namespace Model
      * Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon
      * EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
+    inline int GetMaxInstanceLifetime() const { return m_maxInstanceLifetime; }
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
     inline CreateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
@@ -459,14 +441,12 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetContext() const{ return m_context; }
+    inline const Aws::String& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithContext(const char* value) { SetContext(value); return *this;}
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    CreateAutoScalingGroupRequest& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -481,14 +461,12 @@ namespace Model
      * instances.</p> <p>Valid values: <code>units</code> | <code>vcpu</code> |
      * <code>memory-mib</code> </p>
      */
-    inline const Aws::String& GetDesiredCapacityType() const{ return m_desiredCapacityType; }
+    inline const Aws::String& GetDesiredCapacityType() const { return m_desiredCapacityType; }
     inline bool DesiredCapacityTypeHasBeenSet() const { return m_desiredCapacityTypeHasBeenSet; }
-    inline void SetDesiredCapacityType(const Aws::String& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = value; }
-    inline void SetDesiredCapacityType(Aws::String&& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = std::move(value); }
-    inline void SetDesiredCapacityType(const char* value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType.assign(value); }
-    inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(const Aws::String& value) { SetDesiredCapacityType(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(Aws::String&& value) { SetDesiredCapacityType(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& WithDesiredCapacityType(const char* value) { SetDesiredCapacityType(value); return *this;}
+    template<typename DesiredCapacityTypeT = Aws::String>
+    void SetDesiredCapacityType(DesiredCapacityTypeT&& value) { m_desiredCapacityTypeHasBeenSet = true; m_desiredCapacityType = std::forward<DesiredCapacityTypeT>(value); }
+    template<typename DesiredCapacityTypeT = Aws::String>
+    CreateAutoScalingGroupRequest& WithDesiredCapacityType(DesiredCapacityTypeT&& value) { SetDesiredCapacityType(std::forward<DesiredCapacityTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -511,7 +489,7 @@ namespace Model
      * specifying a value of <code>0</code> or other nominal value.</p> 
      * <p>Default: None </p>
      */
-    inline int GetDefaultInstanceWarmup() const{ return m_defaultInstanceWarmup; }
+    inline int GetDefaultInstanceWarmup() const { return m_defaultInstanceWarmup; }
     inline bool DefaultInstanceWarmupHasBeenSet() const { return m_defaultInstanceWarmupHasBeenSet; }
     inline void SetDefaultInstanceWarmup(int value) { m_defaultInstanceWarmupHasBeenSet = true; m_defaultInstanceWarmup = value; }
     inline CreateAutoScalingGroupRequest& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
@@ -524,14 +502,14 @@ namespace Model
      * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
      * Balancer, and VPC Lattice.</p>
      */
-    inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
+    inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const { return m_trafficSources; }
     inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
-    inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
-    inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
-    inline CreateAutoScalingGroupRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
-    inline CreateAutoScalingGroupRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
+    template<typename TrafficSourcesT = Aws::Vector<TrafficSourceIdentifier>>
+    void SetTrafficSources(TrafficSourcesT&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::forward<TrafficSourcesT>(value); }
+    template<typename TrafficSourcesT = Aws::Vector<TrafficSourceIdentifier>>
+    CreateAutoScalingGroupRequest& WithTrafficSources(TrafficSourcesT&& value) { SetTrafficSources(std::forward<TrafficSourcesT>(value)); return *this;}
+    template<typename TrafficSourcesT = TrafficSourceIdentifier>
+    CreateAutoScalingGroupRequest& AddTrafficSources(TrafficSourcesT&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.emplace_back(std::forward<TrafficSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -541,36 +519,36 @@ namespace Model
      * instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p>
      */
-    inline const InstanceMaintenancePolicy& GetInstanceMaintenancePolicy() const{ return m_instanceMaintenancePolicy; }
+    inline const InstanceMaintenancePolicy& GetInstanceMaintenancePolicy() const { return m_instanceMaintenancePolicy; }
     inline bool InstanceMaintenancePolicyHasBeenSet() const { return m_instanceMaintenancePolicyHasBeenSet; }
-    inline void SetInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = value; }
-    inline void SetInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(const InstanceMaintenancePolicy& value) { SetInstanceMaintenancePolicy(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(InstanceMaintenancePolicy&& value) { SetInstanceMaintenancePolicy(std::move(value)); return *this;}
+    template<typename InstanceMaintenancePolicyT = InstanceMaintenancePolicy>
+    void SetInstanceMaintenancePolicy(InstanceMaintenancePolicyT&& value) { m_instanceMaintenancePolicyHasBeenSet = true; m_instanceMaintenancePolicy = std::forward<InstanceMaintenancePolicyT>(value); }
+    template<typename InstanceMaintenancePolicyT = InstanceMaintenancePolicy>
+    CreateAutoScalingGroupRequest& WithInstanceMaintenancePolicy(InstanceMaintenancePolicyT&& value) { SetInstanceMaintenancePolicy(std::forward<InstanceMaintenancePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance capacity distribution across Availability Zones.</p>
      */
-    inline const AvailabilityZoneDistribution& GetAvailabilityZoneDistribution() const{ return m_availabilityZoneDistribution; }
+    inline const AvailabilityZoneDistribution& GetAvailabilityZoneDistribution() const { return m_availabilityZoneDistribution; }
     inline bool AvailabilityZoneDistributionHasBeenSet() const { return m_availabilityZoneDistributionHasBeenSet; }
-    inline void SetAvailabilityZoneDistribution(const AvailabilityZoneDistribution& value) { m_availabilityZoneDistributionHasBeenSet = true; m_availabilityZoneDistribution = value; }
-    inline void SetAvailabilityZoneDistribution(AvailabilityZoneDistribution&& value) { m_availabilityZoneDistributionHasBeenSet = true; m_availabilityZoneDistribution = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(const AvailabilityZoneDistribution& value) { SetAvailabilityZoneDistribution(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(AvailabilityZoneDistribution&& value) { SetAvailabilityZoneDistribution(std::move(value)); return *this;}
+    template<typename AvailabilityZoneDistributionT = AvailabilityZoneDistribution>
+    void SetAvailabilityZoneDistribution(AvailabilityZoneDistributionT&& value) { m_availabilityZoneDistributionHasBeenSet = true; m_availabilityZoneDistribution = std::forward<AvailabilityZoneDistributionT>(value); }
+    template<typename AvailabilityZoneDistributionT = AvailabilityZoneDistribution>
+    CreateAutoScalingGroupRequest& WithAvailabilityZoneDistribution(AvailabilityZoneDistributionT&& value) { SetAvailabilityZoneDistribution(std::forward<AvailabilityZoneDistributionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The policy for Availability Zone impairment. </p>
      */
-    inline const AvailabilityZoneImpairmentPolicy& GetAvailabilityZoneImpairmentPolicy() const{ return m_availabilityZoneImpairmentPolicy; }
+    inline const AvailabilityZoneImpairmentPolicy& GetAvailabilityZoneImpairmentPolicy() const { return m_availabilityZoneImpairmentPolicy; }
     inline bool AvailabilityZoneImpairmentPolicyHasBeenSet() const { return m_availabilityZoneImpairmentPolicyHasBeenSet; }
-    inline void SetAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = value; }
-    inline void SetAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneImpairmentPolicy(const AvailabilityZoneImpairmentPolicy& value) { SetAvailabilityZoneImpairmentPolicy(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicy&& value) { SetAvailabilityZoneImpairmentPolicy(std::move(value)); return *this;}
+    template<typename AvailabilityZoneImpairmentPolicyT = AvailabilityZoneImpairmentPolicy>
+    void SetAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicyT&& value) { m_availabilityZoneImpairmentPolicyHasBeenSet = true; m_availabilityZoneImpairmentPolicy = std::forward<AvailabilityZoneImpairmentPolicyT>(value); }
+    template<typename AvailabilityZoneImpairmentPolicyT = AvailabilityZoneImpairmentPolicy>
+    CreateAutoScalingGroupRequest& WithAvailabilityZoneImpairmentPolicy(AvailabilityZoneImpairmentPolicyT&& value) { SetAvailabilityZoneImpairmentPolicy(std::forward<AvailabilityZoneImpairmentPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -582,7 +560,7 @@ namespace Model
      * Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
-    inline bool GetSkipZonalShiftValidation() const{ return m_skipZonalShiftValidation; }
+    inline bool GetSkipZonalShiftValidation() const { return m_skipZonalShiftValidation; }
     inline bool SkipZonalShiftValidationHasBeenSet() const { return m_skipZonalShiftValidationHasBeenSet; }
     inline void SetSkipZonalShiftValidation(bool value) { m_skipZonalShiftValidationHasBeenSet = true; m_skipZonalShiftValidation = value; }
     inline CreateAutoScalingGroupRequest& WithSkipZonalShiftValidation(bool value) { SetSkipZonalShiftValidation(value); return *this;}
@@ -592,12 +570,12 @@ namespace Model
     /**
      * <p> The capacity reservation specification for the Auto Scaling group. </p>
      */
-    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const { return m_capacityReservationSpecification; }
     inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
-    inline void SetCapacityReservationSpecification(const CapacityReservationSpecification& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
-    inline void SetCapacityReservationSpecification(CapacityReservationSpecification&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
-    inline CreateAutoScalingGroupRequest& WithCapacityReservationSpecification(const CapacityReservationSpecification& value) { SetCapacityReservationSpecification(value); return *this;}
-    inline CreateAutoScalingGroupRequest& WithCapacityReservationSpecification(CapacityReservationSpecification&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+    template<typename CapacityReservationSpecificationT = CapacityReservationSpecification>
+    void SetCapacityReservationSpecification(CapacityReservationSpecificationT&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::forward<CapacityReservationSpecificationT>(value); }
+    template<typename CapacityReservationSpecificationT = CapacityReservationSpecification>
+    CreateAutoScalingGroupRequest& WithCapacityReservationSpecification(CapacityReservationSpecificationT&& value) { SetCapacityReservationSpecification(std::forward<CapacityReservationSpecificationT>(value)); return *this;}
     ///@}
   private:
 
@@ -616,16 +594,16 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
-    int m_desiredCapacity;
+    int m_desiredCapacity{0};
     bool m_desiredCapacityHasBeenSet = false;
 
-    int m_defaultCooldown;
+    int m_defaultCooldown{0};
     bool m_defaultCooldownHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -640,7 +618,7 @@ namespace Model
     Aws::String m_healthCheckType;
     bool m_healthCheckTypeHasBeenSet = false;
 
-    int m_healthCheckGracePeriod;
+    int m_healthCheckGracePeriod{0};
     bool m_healthCheckGracePeriodHasBeenSet = false;
 
     Aws::String m_placementGroup;
@@ -652,10 +630,10 @@ namespace Model
     Aws::Vector<Aws::String> m_terminationPolicies;
     bool m_terminationPoliciesHasBeenSet = false;
 
-    bool m_newInstancesProtectedFromScaleIn;
+    bool m_newInstancesProtectedFromScaleIn{false};
     bool m_newInstancesProtectedFromScaleInHasBeenSet = false;
 
-    bool m_capacityRebalance;
+    bool m_capacityRebalance{false};
     bool m_capacityRebalanceHasBeenSet = false;
 
     Aws::Vector<LifecycleHookSpecification> m_lifecycleHookSpecificationList;
@@ -667,7 +645,7 @@ namespace Model
     Aws::String m_serviceLinkedRoleARN;
     bool m_serviceLinkedRoleARNHasBeenSet = false;
 
-    int m_maxInstanceLifetime;
+    int m_maxInstanceLifetime{0};
     bool m_maxInstanceLifetimeHasBeenSet = false;
 
     Aws::String m_context;
@@ -676,7 +654,7 @@ namespace Model
     Aws::String m_desiredCapacityType;
     bool m_desiredCapacityTypeHasBeenSet = false;
 
-    int m_defaultInstanceWarmup;
+    int m_defaultInstanceWarmup{0};
     bool m_defaultInstanceWarmupHasBeenSet = false;
 
     Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
@@ -691,7 +669,7 @@ namespace Model
     AvailabilityZoneImpairmentPolicy m_availabilityZoneImpairmentPolicy;
     bool m_availabilityZoneImpairmentPolicyHasBeenSet = false;
 
-    bool m_skipZonalShiftValidation;
+    bool m_skipZonalShiftValidation{false};
     bool m_skipZonalShiftValidationHasBeenSet = false;
 
     CapacityReservationSpecification m_capacityReservationSpecification;

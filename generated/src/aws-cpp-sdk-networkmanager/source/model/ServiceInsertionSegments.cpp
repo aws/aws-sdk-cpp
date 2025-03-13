@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ServiceInsertionSegments::ServiceInsertionSegments() : 
-    m_sendViaHasBeenSet(false),
-    m_sendToHasBeenSet(false)
-{
-}
-
 ServiceInsertionSegments::ServiceInsertionSegments(JsonView jsonValue)
-  : ServiceInsertionSegments()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ServiceInsertionSegments& ServiceInsertionSegments::operator =(JsonView jsonValu
     }
     m_sendViaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendTo"))
   {
     Aws::Utils::Array<JsonView> sendToJsonList = jsonValue.GetArray("SendTo");
@@ -51,7 +43,6 @@ ServiceInsertionSegments& ServiceInsertionSegments::operator =(JsonView jsonValu
     }
     m_sendToHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AnalyzerConfiguration::AnalyzerConfiguration() : 
-    m_unusedAccessHasBeenSet(false)
-{
-}
-
 AnalyzerConfiguration::AnalyzerConfiguration(JsonView jsonValue)
-  : AnalyzerConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalyzerConfiguration& AnalyzerConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unusedAccess"))
   {
     m_unusedAccess = jsonValue.GetObject("unusedAccess");
-
     m_unusedAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

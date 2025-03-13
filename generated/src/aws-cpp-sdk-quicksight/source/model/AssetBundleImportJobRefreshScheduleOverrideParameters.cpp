@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobRefreshScheduleOverrideParameters::AssetBundleImportJobRefreshScheduleOverrideParameters() : 
-    m_dataSetIdHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false),
-    m_startAfterDateTimeHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobRefreshScheduleOverrideParameters::AssetBundleImportJobRefreshScheduleOverrideParameters(JsonView jsonValue)
-  : AssetBundleImportJobRefreshScheduleOverrideParameters()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssetBundleImportJobRefreshScheduleOverrideParameters& AssetBundleImportJobRefre
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleId"))
   {
     m_scheduleId = jsonValue.GetString("ScheduleId");
-
     m_scheduleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartAfterDateTime"))
   {
     m_startAfterDateTime = jsonValue.GetDouble("StartAfterDateTime");
-
     m_startAfterDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

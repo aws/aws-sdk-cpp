@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateOpenIDConnectProviderRequest::CreateOpenIDConnectProviderRequest() : 
-    m_urlHasBeenSet(false),
-    m_clientIDListHasBeenSet(false),
-    m_thumbprintListHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

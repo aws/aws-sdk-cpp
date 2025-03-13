@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-EC2Capacity::EC2Capacity() : 
-    m_familyHasBeenSet(false),
-    m_maxSizeHasBeenSet(false),
-    m_quantityHasBeenSet(false)
-{
-}
-
 EC2Capacity::EC2Capacity(JsonView jsonValue)
-  : EC2Capacity()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EC2Capacity& EC2Capacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSize"))
   {
     m_maxSize = jsonValue.GetString("MaxSize");
-
     m_maxSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quantity"))
   {
     m_quantity = jsonValue.GetString("Quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   return *this;
 }
 

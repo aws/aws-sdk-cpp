@@ -37,7 +37,7 @@ namespace Model
   class Api
   {
   public:
-    AWS_APPSYNC_API Api();
+    AWS_APPSYNC_API Api() = default;
     AWS_APPSYNC_API Api(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Api& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,59 +47,50 @@ namespace Model
     /**
      * <p>The <code>Api</code> ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline Api& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline Api& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline Api& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    Api& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>Api</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Api& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Api& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Api& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Api& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner contact information for the <code>Api</code> </p>
      */
-    inline const Aws::String& GetOwnerContact() const{ return m_ownerContact; }
+    inline const Aws::String& GetOwnerContact() const { return m_ownerContact; }
     inline bool OwnerContactHasBeenSet() const { return m_ownerContactHasBeenSet; }
-    inline void SetOwnerContact(const Aws::String& value) { m_ownerContactHasBeenSet = true; m_ownerContact = value; }
-    inline void SetOwnerContact(Aws::String&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::move(value); }
-    inline void SetOwnerContact(const char* value) { m_ownerContactHasBeenSet = true; m_ownerContact.assign(value); }
-    inline Api& WithOwnerContact(const Aws::String& value) { SetOwnerContact(value); return *this;}
-    inline Api& WithOwnerContact(Aws::String&& value) { SetOwnerContact(std::move(value)); return *this;}
-    inline Api& WithOwnerContact(const char* value) { SetOwnerContact(value); return *this;}
+    template<typename OwnerContactT = Aws::String>
+    void SetOwnerContact(OwnerContactT&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::forward<OwnerContactT>(value); }
+    template<typename OwnerContactT = Aws::String>
+    Api& WithOwnerContact(OwnerContactT&& value) { SetOwnerContact(std::forward<OwnerContactT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Api& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Api& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Api& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Api& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Api& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Api& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Api& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Api& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Api& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Api& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Api& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -107,52 +98,47 @@ namespace Model
      * <p>The DNS records for the API. This will include an HTTP and a real-time
      * endpoint.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDns() const{ return m_dns; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDns() const { return m_dns; }
     inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
-    inline void SetDns(const Aws::Map<Aws::String, Aws::String>& value) { m_dnsHasBeenSet = true; m_dns = value; }
-    inline void SetDns(Aws::Map<Aws::String, Aws::String>&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
-    inline Api& WithDns(const Aws::Map<Aws::String, Aws::String>& value) { SetDns(value); return *this;}
-    inline Api& WithDns(Aws::Map<Aws::String, Aws::String>&& value) { SetDns(std::move(value)); return *this;}
-    inline Api& AddDns(const Aws::String& key, const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, value); return *this; }
-    inline Api& AddDns(Aws::String&& key, const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), value); return *this; }
-    inline Api& AddDns(const Aws::String& key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, std::move(value)); return *this; }
-    inline Api& AddDns(Aws::String&& key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), std::move(value)); return *this; }
-    inline Api& AddDns(const char* key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, std::move(value)); return *this; }
-    inline Api& AddDns(Aws::String&& key, const char* value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), value); return *this; }
-    inline Api& AddDns(const char* key, const char* value) { m_dnsHasBeenSet = true; m_dns.emplace(key, value); return *this; }
+    template<typename DnsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDns(DnsT&& value) { m_dnsHasBeenSet = true; m_dns = std::forward<DnsT>(value); }
+    template<typename DnsT = Aws::Map<Aws::String, Aws::String>>
+    Api& WithDns(DnsT&& value) { SetDns(std::forward<DnsT>(value)); return *this;}
+    template<typename DnsKeyT = Aws::String, typename DnsValueT = Aws::String>
+    Api& AddDns(DnsKeyT&& key, DnsValueT&& value) {
+      m_dnsHasBeenSet = true; m_dns.emplace(std::forward<DnsKeyT>(key), std::forward<DnsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the <code>Api</code>.</p>
      */
-    inline const Aws::String& GetApiArn() const{ return m_apiArn; }
+    inline const Aws::String& GetApiArn() const { return m_apiArn; }
     inline bool ApiArnHasBeenSet() const { return m_apiArnHasBeenSet; }
-    inline void SetApiArn(const Aws::String& value) { m_apiArnHasBeenSet = true; m_apiArn = value; }
-    inline void SetApiArn(Aws::String&& value) { m_apiArnHasBeenSet = true; m_apiArn = std::move(value); }
-    inline void SetApiArn(const char* value) { m_apiArnHasBeenSet = true; m_apiArn.assign(value); }
-    inline Api& WithApiArn(const Aws::String& value) { SetApiArn(value); return *this;}
-    inline Api& WithApiArn(Aws::String&& value) { SetApiArn(std::move(value)); return *this;}
-    inline Api& WithApiArn(const char* value) { SetApiArn(value); return *this;}
+    template<typename ApiArnT = Aws::String>
+    void SetApiArn(ApiArnT&& value) { m_apiArnHasBeenSet = true; m_apiArn = std::forward<ApiArnT>(value); }
+    template<typename ApiArnT = Aws::String>
+    Api& WithApiArn(ApiArnT&& value) { SetApiArn(std::forward<ApiArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the <code>Api</code> was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline Api& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline Api& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    Api& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A flag indicating whether to use X-Ray tracing for this <code>Api</code>.</p>
      */
-    inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
+    inline bool GetXrayEnabled() const { return m_xrayEnabled; }
     inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
     inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
     inline Api& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
@@ -163,14 +149,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the WAF web access control list (web ACL)
      * associated with this <code>Api</code>, if one exists.</p>
      */
-    inline const Aws::String& GetWafWebAclArn() const{ return m_wafWebAclArn; }
+    inline const Aws::String& GetWafWebAclArn() const { return m_wafWebAclArn; }
     inline bool WafWebAclArnHasBeenSet() const { return m_wafWebAclArnHasBeenSet; }
-    inline void SetWafWebAclArn(const Aws::String& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = value; }
-    inline void SetWafWebAclArn(Aws::String&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::move(value); }
-    inline void SetWafWebAclArn(const char* value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn.assign(value); }
-    inline Api& WithWafWebAclArn(const Aws::String& value) { SetWafWebAclArn(value); return *this;}
-    inline Api& WithWafWebAclArn(Aws::String&& value) { SetWafWebAclArn(std::move(value)); return *this;}
-    inline Api& WithWafWebAclArn(const char* value) { SetWafWebAclArn(value); return *this;}
+    template<typename WafWebAclArnT = Aws::String>
+    void SetWafWebAclArn(WafWebAclArnT&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::forward<WafWebAclArnT>(value); }
+    template<typename WafWebAclArnT = Aws::String>
+    Api& WithWafWebAclArn(WafWebAclArnT&& value) { SetWafWebAclArn(std::forward<WafWebAclArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +162,12 @@ namespace Model
      * <p>The Event API configuration. This includes the default authorization
      * configuration for connecting, publishing, and subscribing to an Event API.</p>
      */
-    inline const EventConfig& GetEventConfig() const{ return m_eventConfig; }
+    inline const EventConfig& GetEventConfig() const { return m_eventConfig; }
     inline bool EventConfigHasBeenSet() const { return m_eventConfigHasBeenSet; }
-    inline void SetEventConfig(const EventConfig& value) { m_eventConfigHasBeenSet = true; m_eventConfig = value; }
-    inline void SetEventConfig(EventConfig&& value) { m_eventConfigHasBeenSet = true; m_eventConfig = std::move(value); }
-    inline Api& WithEventConfig(const EventConfig& value) { SetEventConfig(value); return *this;}
-    inline Api& WithEventConfig(EventConfig&& value) { SetEventConfig(std::move(value)); return *this;}
+    template<typename EventConfigT = EventConfig>
+    void SetEventConfig(EventConfigT&& value) { m_eventConfigHasBeenSet = true; m_eventConfig = std::forward<EventConfigT>(value); }
+    template<typename EventConfigT = EventConfig>
+    Api& WithEventConfig(EventConfigT&& value) { SetEventConfig(std::forward<EventConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -205,10 +189,10 @@ namespace Model
     Aws::String m_apiArn;
     bool m_apiArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
-    bool m_xrayEnabled;
+    bool m_xrayEnabled{false};
     bool m_xrayEnabledHasBeenSet = false;
 
     Aws::String m_wafWebAclArn;

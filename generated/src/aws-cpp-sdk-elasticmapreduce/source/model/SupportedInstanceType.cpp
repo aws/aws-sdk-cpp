@@ -18,31 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SupportedInstanceType::SupportedInstanceType() : 
-    m_typeHasBeenSet(false),
-    m_memoryGB(0.0),
-    m_memoryGBHasBeenSet(false),
-    m_storageGB(0),
-    m_storageGBHasBeenSet(false),
-    m_vCPU(0),
-    m_vCPUHasBeenSet(false),
-    m_is64BitsOnly(false),
-    m_is64BitsOnlyHasBeenSet(false),
-    m_instanceFamilyIdHasBeenSet(false),
-    m_ebsOptimizedAvailable(false),
-    m_ebsOptimizedAvailableHasBeenSet(false),
-    m_ebsOptimizedByDefault(false),
-    m_ebsOptimizedByDefaultHasBeenSet(false),
-    m_numberOfDisks(0),
-    m_numberOfDisksHasBeenSet(false),
-    m_ebsStorageOnly(false),
-    m_ebsStorageOnlyHasBeenSet(false),
-    m_architectureHasBeenSet(false)
-{
-}
-
 SupportedInstanceType::SupportedInstanceType(JsonView jsonValue)
-  : SupportedInstanceType()
 {
   *this = jsonValue;
 }
@@ -52,80 +28,58 @@ SupportedInstanceType& SupportedInstanceType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryGB"))
   {
     m_memoryGB = jsonValue.GetDouble("MemoryGB");
-
     m_memoryGBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageGB"))
   {
     m_storageGB = jsonValue.GetInteger("StorageGB");
-
     m_storageGBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VCPU"))
   {
     m_vCPU = jsonValue.GetInteger("VCPU");
-
     m_vCPUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Is64BitsOnly"))
   {
     m_is64BitsOnly = jsonValue.GetBool("Is64BitsOnly");
-
     m_is64BitsOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFamilyId"))
   {
     m_instanceFamilyId = jsonValue.GetString("InstanceFamilyId");
-
     m_instanceFamilyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsOptimizedAvailable"))
   {
     m_ebsOptimizedAvailable = jsonValue.GetBool("EbsOptimizedAvailable");
-
     m_ebsOptimizedAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsOptimizedByDefault"))
   {
     m_ebsOptimizedByDefault = jsonValue.GetBool("EbsOptimizedByDefault");
-
     m_ebsOptimizedByDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDisks"))
   {
     m_numberOfDisks = jsonValue.GetInteger("NumberOfDisks");
-
     m_numberOfDisksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsStorageOnly"))
   {
     m_ebsStorageOnly = jsonValue.GetBool("EbsStorageOnly");
-
     m_ebsStorageOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Architecture"))
   {
     m_architecture = jsonValue.GetString("Architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   return *this;
 }
 

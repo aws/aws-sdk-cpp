@@ -30,7 +30,7 @@ namespace Model
   class AttackVolumeStatistics
   {
   public:
-    AWS_SHIELD_API AttackVolumeStatistics();
+    AWS_SHIELD_API AttackVolumeStatistics() = default;
     AWS_SHIELD_API AttackVolumeStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API AttackVolumeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The maximum attack volume observed for the given unit.</p>
      */
-    inline double GetMax() const{ return m_max; }
+    inline double GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
     inline AttackVolumeStatistics& WithMax(double value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    double m_max;
+    double m_max{0.0};
     bool m_maxHasBeenSet = false;
   };
 

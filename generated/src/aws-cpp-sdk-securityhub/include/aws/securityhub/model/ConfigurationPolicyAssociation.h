@@ -34,7 +34,7 @@ namespace Model
   class ConfigurationPolicyAssociation
   {
   public:
-    AWS_SECURITYHUB_API ConfigurationPolicyAssociation();
+    AWS_SECURITYHUB_API ConfigurationPolicyAssociation() = default;
     AWS_SECURITYHUB_API ConfigurationPolicyAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API ConfigurationPolicyAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p> The target account, organizational unit, or the root. </p>
      */
-    inline const Target& GetTarget() const{ return m_target; }
+    inline const Target& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline ConfigurationPolicyAssociation& WithTarget(const Target& value) { SetTarget(value); return *this;}
-    inline ConfigurationPolicyAssociation& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = Target>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Target>
+    ConfigurationPolicyAssociation& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

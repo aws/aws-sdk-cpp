@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-MessageTemplateType::MessageTemplateType() : 
-    m_sMSMessageHasBeenSet(false),
-    m_emailMessageHasBeenSet(false),
-    m_emailSubjectHasBeenSet(false)
-{
-}
-
 MessageTemplateType::MessageTemplateType(JsonView jsonValue)
-  : MessageTemplateType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MessageTemplateType& MessageTemplateType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SMSMessage"))
   {
     m_sMSMessage = jsonValue.GetString("SMSMessage");
-
     m_sMSMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailMessage"))
   {
     m_emailMessage = jsonValue.GetString("EmailMessage");
-
     m_emailMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailSubject"))
   {
     m_emailSubject = jsonValue.GetString("EmailSubject");
-
     m_emailSubjectHasBeenSet = true;
   }
-
   return *this;
 }
 

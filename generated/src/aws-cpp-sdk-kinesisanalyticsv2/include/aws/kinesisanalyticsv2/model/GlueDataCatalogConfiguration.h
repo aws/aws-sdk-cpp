@@ -33,7 +33,7 @@ namespace Model
   class GlueDataCatalogConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfiguration();
+    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfiguration() = default;
     AWS_KINESISANALYTICSV2_API GlueDataCatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API GlueDataCatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the database.</p>
      */
-    inline const Aws::String& GetDatabaseARN() const{ return m_databaseARN; }
+    inline const Aws::String& GetDatabaseARN() const { return m_databaseARN; }
     inline bool DatabaseARNHasBeenSet() const { return m_databaseARNHasBeenSet; }
-    inline void SetDatabaseARN(const Aws::String& value) { m_databaseARNHasBeenSet = true; m_databaseARN = value; }
-    inline void SetDatabaseARN(Aws::String&& value) { m_databaseARNHasBeenSet = true; m_databaseARN = std::move(value); }
-    inline void SetDatabaseARN(const char* value) { m_databaseARNHasBeenSet = true; m_databaseARN.assign(value); }
-    inline GlueDataCatalogConfiguration& WithDatabaseARN(const Aws::String& value) { SetDatabaseARN(value); return *this;}
-    inline GlueDataCatalogConfiguration& WithDatabaseARN(Aws::String&& value) { SetDatabaseARN(std::move(value)); return *this;}
-    inline GlueDataCatalogConfiguration& WithDatabaseARN(const char* value) { SetDatabaseARN(value); return *this;}
+    template<typename DatabaseARNT = Aws::String>
+    void SetDatabaseARN(DatabaseARNT&& value) { m_databaseARNHasBeenSet = true; m_databaseARN = std::forward<DatabaseARNT>(value); }
+    template<typename DatabaseARNT = Aws::String>
+    GlueDataCatalogConfiguration& WithDatabaseARN(DatabaseARNT&& value) { SetDatabaseARN(std::forward<DatabaseARNT>(value)); return *this;}
     ///@}
   private:
 

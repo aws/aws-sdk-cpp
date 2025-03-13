@@ -12,15 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationPresignedUrlRequest::CreateApplicationPresignedUrlRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_urlType(UrlType::NOT_SET),
-    m_urlTypeHasBeenSet(false),
-    m_sessionExpirationDurationInSeconds(0),
-    m_sessionExpirationDurationInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationPresignedUrlRequest::SerializePayload() const
 {
   JsonValue payload;

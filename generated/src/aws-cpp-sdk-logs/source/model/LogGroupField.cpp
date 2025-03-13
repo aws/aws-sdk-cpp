@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-LogGroupField::LogGroupField() : 
-    m_nameHasBeenSet(false),
-    m_percent(0),
-    m_percentHasBeenSet(false)
-{
-}
-
 LogGroupField::LogGroupField(JsonView jsonValue)
-  : LogGroupField()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LogGroupField& LogGroupField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("percent"))
   {
     m_percent = jsonValue.GetInteger("percent");
-
     m_percentHasBeenSet = true;
   }
-
   return *this;
 }
 

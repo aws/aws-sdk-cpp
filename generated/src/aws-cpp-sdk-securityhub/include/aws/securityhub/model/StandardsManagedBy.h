@@ -32,7 +32,7 @@ namespace Model
   class StandardsManagedBy
   {
   public:
-    AWS_SECURITYHUB_API StandardsManagedBy();
+    AWS_SECURITYHUB_API StandardsManagedBy() = default;
     AWS_SECURITYHUB_API StandardsManagedBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StandardsManagedBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>An identifier for the company that manages a specific security standard. For
      * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
      */
-    inline const Aws::String& GetCompany() const{ return m_company; }
+    inline const Aws::String& GetCompany() const { return m_company; }
     inline bool CompanyHasBeenSet() const { return m_companyHasBeenSet; }
-    inline void SetCompany(const Aws::String& value) { m_companyHasBeenSet = true; m_company = value; }
-    inline void SetCompany(Aws::String&& value) { m_companyHasBeenSet = true; m_company = std::move(value); }
-    inline void SetCompany(const char* value) { m_companyHasBeenSet = true; m_company.assign(value); }
-    inline StandardsManagedBy& WithCompany(const Aws::String& value) { SetCompany(value); return *this;}
-    inline StandardsManagedBy& WithCompany(Aws::String&& value) { SetCompany(std::move(value)); return *this;}
-    inline StandardsManagedBy& WithCompany(const char* value) { SetCompany(value); return *this;}
+    template<typename CompanyT = Aws::String>
+    void SetCompany(CompanyT&& value) { m_companyHasBeenSet = true; m_company = std::forward<CompanyT>(value); }
+    template<typename CompanyT = Aws::String>
+    StandardsManagedBy& WithCompany(CompanyT&& value) { SetCompany(std::forward<CompanyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * existing standards, the value is equal to the Amazon Web Services service that
      * manages the standard.</p>
      */
-    inline const Aws::String& GetProduct() const{ return m_product; }
+    inline const Aws::String& GetProduct() const { return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-    inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-    inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-    inline StandardsManagedBy& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-    inline StandardsManagedBy& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-    inline StandardsManagedBy& WithProduct(const char* value) { SetProduct(value); return *this;}
+    template<typename ProductT = Aws::String>
+    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
+    template<typename ProductT = Aws::String>
+    StandardsManagedBy& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
   private:
 

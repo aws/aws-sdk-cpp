@@ -32,7 +32,7 @@ namespace Model
   class AutoMLJobObjective
   {
   public:
-    AWS_SAGEMAKER_API AutoMLJobObjective();
+    AWS_SAGEMAKER_API AutoMLJobObjective() = default;
     AWS_SAGEMAKER_API AutoMLJobObjective(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLJobObjective& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -83,16 +83,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html">Metrics
      * for fine-tuning LLMs in Autopilot</a>.</p> </li> </ul>
      */
-    inline const AutoMLMetricEnum& GetMetricName() const{ return m_metricName; }
+    inline AutoMLMetricEnum GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const AutoMLMetricEnum& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(AutoMLMetricEnum&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline AutoMLJobObjective& WithMetricName(const AutoMLMetricEnum& value) { SetMetricName(value); return *this;}
-    inline AutoMLJobObjective& WithMetricName(AutoMLMetricEnum&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(AutoMLMetricEnum value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline AutoMLJobObjective& WithMetricName(AutoMLMetricEnum value) { SetMetricName(value); return *this;}
     ///@}
   private:
 
-    AutoMLMetricEnum m_metricName;
+    AutoMLMetricEnum m_metricName{AutoMLMetricEnum::NOT_SET};
     bool m_metricNameHasBeenSet = false;
   };
 

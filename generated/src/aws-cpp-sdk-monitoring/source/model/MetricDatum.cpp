@@ -20,24 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricDatum::MetricDatum() : 
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_statisticValuesHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_countsHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_storageResolution(0),
-    m_storageResolutionHasBeenSet(false)
-{
-}
-
 MetricDatum::MetricDatum(const XmlNode& xmlNode)
-  : MetricDatum()
 {
   *this = xmlNode;
 }
@@ -53,72 +36,81 @@ MetricDatum& MetricDatum::operator =(const XmlNode& xmlNode)
     {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
+       m_metricNameHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("member");
       }
 
-      m_dimensionsHasBeenSet = true;
+       m_dimensionsHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode statisticValuesNode = resultNode.FirstChild("StatisticValues");
     if(!statisticValuesNode.IsNull())
     {
       m_statisticValues = statisticValuesNode;
       m_statisticValuesHasBeenSet = true;
+       m_statisticValuesHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
         valuesMember = valuesMember.NextNode("member");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
     XmlNode countsNode = resultNode.FirstChild("Counts");
     if(!countsNode.IsNull())
     {
       XmlNode countsMember = countsNode.FirstChild("member");
+      m_countsHasBeenSet = !countsMember.IsNull();
       while(!countsMember.IsNull())
       {
         m_counts.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(countsMember.GetText().c_str()).c_str()));
         countsMember = countsMember.NextNode("member");
       }
 
-      m_countsHasBeenSet = true;
+       m_countsHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
     XmlNode storageResolutionNode = resultNode.FirstChild("StorageResolution");
     if(!storageResolutionNode.IsNull())
     {
       m_storageResolution = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageResolutionNode.GetText()).c_str()).c_str());
       m_storageResolutionHasBeenSet = true;
+       m_storageResolutionHasBeenSet = true;
     }
   }
 

@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssetFilterRequest::DeleteAssetFilterRequest() : 
-    m_assetIdentifierHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssetFilterRequest::SerializePayload() const
 {
   return {};

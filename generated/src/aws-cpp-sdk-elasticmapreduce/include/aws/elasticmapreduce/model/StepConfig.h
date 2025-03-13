@@ -33,7 +33,7 @@ namespace Model
   class StepConfig
   {
   public:
-    AWS_EMR_API StepConfig();
+    AWS_EMR_API StepConfig() = default;
     AWS_EMR_API StepConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API StepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StepConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StepConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StepConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StepConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,31 +73,29 @@ namespace Model
      * canceled; for a step that fails with this parameter set to
      * <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.</p>
      */
-    inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
+    inline ActionOnFailure GetActionOnFailure() const { return m_actionOnFailure; }
     inline bool ActionOnFailureHasBeenSet() const { return m_actionOnFailureHasBeenSet; }
-    inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
-    inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = std::move(value); }
-    inline StepConfig& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
-    inline StepConfig& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(std::move(value)); return *this;}
+    inline void SetActionOnFailure(ActionOnFailure value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
+    inline StepConfig& WithActionOnFailure(ActionOnFailure value) { SetActionOnFailure(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JAR file used for the step.</p>
      */
-    inline const HadoopJarStepConfig& GetHadoopJarStep() const{ return m_hadoopJarStep; }
+    inline const HadoopJarStepConfig& GetHadoopJarStep() const { return m_hadoopJarStep; }
     inline bool HadoopJarStepHasBeenSet() const { return m_hadoopJarStepHasBeenSet; }
-    inline void SetHadoopJarStep(const HadoopJarStepConfig& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = value; }
-    inline void SetHadoopJarStep(HadoopJarStepConfig&& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = std::move(value); }
-    inline StepConfig& WithHadoopJarStep(const HadoopJarStepConfig& value) { SetHadoopJarStep(value); return *this;}
-    inline StepConfig& WithHadoopJarStep(HadoopJarStepConfig&& value) { SetHadoopJarStep(std::move(value)); return *this;}
+    template<typename HadoopJarStepT = HadoopJarStepConfig>
+    void SetHadoopJarStep(HadoopJarStepT&& value) { m_hadoopJarStepHasBeenSet = true; m_hadoopJarStep = std::forward<HadoopJarStepT>(value); }
+    template<typename HadoopJarStepT = HadoopJarStepConfig>
+    StepConfig& WithHadoopJarStep(HadoopJarStepT&& value) { SetHadoopJarStep(std::forward<HadoopJarStepT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ActionOnFailure m_actionOnFailure;
+    ActionOnFailure m_actionOnFailure{ActionOnFailure::NOT_SET};
     bool m_actionOnFailureHasBeenSet = false;
 
     HadoopJarStepConfig m_hadoopJarStep;

@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SourceConfiguration::SourceConfiguration() : 
-    m_applicationNameHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 SourceConfiguration::SourceConfiguration(const XmlNode& xmlNode)
-  : SourceConfiguration()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SourceConfiguration& SourceConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
       m_applicationNameHasBeenSet = true;
+       m_applicationNameHasBeenSet = true;
     }
     XmlNode templateNameNode = resultNode.FirstChild("TemplateName");
     if(!templateNameNode.IsNull())
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
   }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDetectorModelResult::UpdateDetectorModelResult()
-{
-}
-
 UpdateDetectorModelResult::UpdateDetectorModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateDetectorModelResult& UpdateDetectorModelResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("detectorModelConfiguration"))
   {
     m_detectorModelConfiguration = jsonValue.GetObject("detectorModelConfiguration");
-
+    m_detectorModelConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

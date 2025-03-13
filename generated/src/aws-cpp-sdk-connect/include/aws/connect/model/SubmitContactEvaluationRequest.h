@@ -24,7 +24,7 @@ namespace Model
   class SubmitContactEvaluationRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API SubmitContactEvaluationRequest();
+    AWS_CONNECT_API SubmitContactEvaluationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,64 +41,56 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline SubmitContactEvaluationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline SubmitContactEvaluationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline SubmitContactEvaluationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    SubmitContactEvaluationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the contact evaluation.</p>
      */
-    inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
+    inline const Aws::String& GetEvaluationId() const { return m_evaluationId; }
     inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
-    inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
-    inline void SetEvaluationId(const char* value) { m_evaluationIdHasBeenSet = true; m_evaluationId.assign(value); }
-    inline SubmitContactEvaluationRequest& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-    inline SubmitContactEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-    inline SubmitContactEvaluationRequest& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    template<typename EvaluationIdT = Aws::String>
+    void SetEvaluationId(EvaluationIdT&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::forward<EvaluationIdT>(value); }
+    template<typename EvaluationIdT = Aws::String>
+    SubmitContactEvaluationRequest& WithEvaluationId(EvaluationIdT&& value) { SetEvaluationId(std::forward<EvaluationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map of question identifiers to answer value.</p>
      */
-    inline const Aws::Map<Aws::String, EvaluationAnswerInput>& GetAnswers() const{ return m_answers; }
+    inline const Aws::Map<Aws::String, EvaluationAnswerInput>& GetAnswers() const { return m_answers; }
     inline bool AnswersHasBeenSet() const { return m_answersHasBeenSet; }
-    inline void SetAnswers(const Aws::Map<Aws::String, EvaluationAnswerInput>& value) { m_answersHasBeenSet = true; m_answers = value; }
-    inline void SetAnswers(Aws::Map<Aws::String, EvaluationAnswerInput>&& value) { m_answersHasBeenSet = true; m_answers = std::move(value); }
-    inline SubmitContactEvaluationRequest& WithAnswers(const Aws::Map<Aws::String, EvaluationAnswerInput>& value) { SetAnswers(value); return *this;}
-    inline SubmitContactEvaluationRequest& WithAnswers(Aws::Map<Aws::String, EvaluationAnswerInput>&& value) { SetAnswers(std::move(value)); return *this;}
-    inline SubmitContactEvaluationRequest& AddAnswers(const Aws::String& key, const EvaluationAnswerInput& value) { m_answersHasBeenSet = true; m_answers.emplace(key, value); return *this; }
-    inline SubmitContactEvaluationRequest& AddAnswers(Aws::String&& key, const EvaluationAnswerInput& value) { m_answersHasBeenSet = true; m_answers.emplace(std::move(key), value); return *this; }
-    inline SubmitContactEvaluationRequest& AddAnswers(const Aws::String& key, EvaluationAnswerInput&& value) { m_answersHasBeenSet = true; m_answers.emplace(key, std::move(value)); return *this; }
-    inline SubmitContactEvaluationRequest& AddAnswers(Aws::String&& key, EvaluationAnswerInput&& value) { m_answersHasBeenSet = true; m_answers.emplace(std::move(key), std::move(value)); return *this; }
-    inline SubmitContactEvaluationRequest& AddAnswers(const char* key, EvaluationAnswerInput&& value) { m_answersHasBeenSet = true; m_answers.emplace(key, std::move(value)); return *this; }
-    inline SubmitContactEvaluationRequest& AddAnswers(const char* key, const EvaluationAnswerInput& value) { m_answersHasBeenSet = true; m_answers.emplace(key, value); return *this; }
+    template<typename AnswersT = Aws::Map<Aws::String, EvaluationAnswerInput>>
+    void SetAnswers(AnswersT&& value) { m_answersHasBeenSet = true; m_answers = std::forward<AnswersT>(value); }
+    template<typename AnswersT = Aws::Map<Aws::String, EvaluationAnswerInput>>
+    SubmitContactEvaluationRequest& WithAnswers(AnswersT&& value) { SetAnswers(std::forward<AnswersT>(value)); return *this;}
+    template<typename AnswersKeyT = Aws::String, typename AnswersValueT = EvaluationAnswerInput>
+    SubmitContactEvaluationRequest& AddAnswers(AnswersKeyT&& key, AnswersValueT&& value) {
+      m_answersHasBeenSet = true; m_answers.emplace(std::forward<AnswersKeyT>(key), std::forward<AnswersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A map of question identifiers to note value.</p>
      */
-    inline const Aws::Map<Aws::String, EvaluationNote>& GetNotes() const{ return m_notes; }
+    inline const Aws::Map<Aws::String, EvaluationNote>& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::Map<Aws::String, EvaluationNote>& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::Map<Aws::String, EvaluationNote>&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline SubmitContactEvaluationRequest& WithNotes(const Aws::Map<Aws::String, EvaluationNote>& value) { SetNotes(value); return *this;}
-    inline SubmitContactEvaluationRequest& WithNotes(Aws::Map<Aws::String, EvaluationNote>&& value) { SetNotes(std::move(value)); return *this;}
-    inline SubmitContactEvaluationRequest& AddNotes(const Aws::String& key, const EvaluationNote& value) { m_notesHasBeenSet = true; m_notes.emplace(key, value); return *this; }
-    inline SubmitContactEvaluationRequest& AddNotes(Aws::String&& key, const EvaluationNote& value) { m_notesHasBeenSet = true; m_notes.emplace(std::move(key), value); return *this; }
-    inline SubmitContactEvaluationRequest& AddNotes(const Aws::String& key, EvaluationNote&& value) { m_notesHasBeenSet = true; m_notes.emplace(key, std::move(value)); return *this; }
-    inline SubmitContactEvaluationRequest& AddNotes(Aws::String&& key, EvaluationNote&& value) { m_notesHasBeenSet = true; m_notes.emplace(std::move(key), std::move(value)); return *this; }
-    inline SubmitContactEvaluationRequest& AddNotes(const char* key, EvaluationNote&& value) { m_notesHasBeenSet = true; m_notes.emplace(key, std::move(value)); return *this; }
-    inline SubmitContactEvaluationRequest& AddNotes(const char* key, const EvaluationNote& value) { m_notesHasBeenSet = true; m_notes.emplace(key, value); return *this; }
+    template<typename NotesT = Aws::Map<Aws::String, EvaluationNote>>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::Map<Aws::String, EvaluationNote>>
+    SubmitContactEvaluationRequest& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
+    template<typename NotesKeyT = Aws::String, typename NotesValueT = EvaluationNote>
+    SubmitContactEvaluationRequest& AddNotes(NotesKeyT&& key, NotesValueT&& value) {
+      m_notesHasBeenSet = true; m_notes.emplace(std::forward<NotesKeyT>(key), std::forward<NotesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

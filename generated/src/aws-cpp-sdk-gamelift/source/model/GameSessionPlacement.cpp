@@ -18,34 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameSessionPlacement::GameSessionPlacement() : 
-    m_placementIdHasBeenSet(false),
-    m_gameSessionQueueNameHasBeenSet(false),
-    m_status(GameSessionPlacementState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_gamePropertiesHasBeenSet(false),
-    m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false),
-    m_gameSessionNameHasBeenSet(false),
-    m_gameSessionIdHasBeenSet(false),
-    m_gameSessionArnHasBeenSet(false),
-    m_gameSessionRegionHasBeenSet(false),
-    m_playerLatenciesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_placedPlayerSessionsHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false),
-    m_matchmakerDataHasBeenSet(false),
-    m_priorityConfigurationOverrideHasBeenSet(false)
-{
-}
-
 GameSessionPlacement::GameSessionPlacement(JsonView jsonValue)
-  : GameSessionPlacement()
 {
   *this = jsonValue;
 }
@@ -55,24 +28,18 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlacementId"))
   {
     m_placementId = jsonValue.GetString("PlacementId");
-
     m_placementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionQueueName"))
   {
     m_gameSessionQueueName = jsonValue.GetString("GameSessionQueueName");
-
     m_gameSessionQueueNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = GameSessionPlacementStateMapper::GetGameSessionPlacementStateForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameProperties"))
   {
     Aws::Utils::Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
@@ -82,42 +49,31 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
     }
     m_gamePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumPlayerSessionCount"))
   {
     m_maximumPlayerSessionCount = jsonValue.GetInteger("MaximumPlayerSessionCount");
-
     m_maximumPlayerSessionCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionName"))
   {
     m_gameSessionName = jsonValue.GetString("GameSessionName");
-
     m_gameSessionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionId"))
   {
     m_gameSessionId = jsonValue.GetString("GameSessionId");
-
     m_gameSessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionArn"))
   {
     m_gameSessionArn = jsonValue.GetString("GameSessionArn");
-
     m_gameSessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionRegion"))
   {
     m_gameSessionRegion = jsonValue.GetString("GameSessionRegion");
-
     m_gameSessionRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayerLatencies"))
   {
     Aws::Utils::Array<JsonView> playerLatenciesJsonList = jsonValue.GetArray("PlayerLatencies");
@@ -127,42 +83,31 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
     }
     m_playerLatenciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacedPlayerSessions"))
   {
     Aws::Utils::Array<JsonView> placedPlayerSessionsJsonList = jsonValue.GetArray("PlacedPlayerSessions");
@@ -172,28 +117,21 @@ GameSessionPlacement& GameSessionPlacement::operator =(JsonView jsonValue)
     }
     m_placedPlayerSessionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameSessionData"))
   {
     m_gameSessionData = jsonValue.GetString("GameSessionData");
-
     m_gameSessionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchmakerData"))
   {
     m_matchmakerData = jsonValue.GetString("MatchmakerData");
-
     m_matchmakerDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PriorityConfigurationOverride"))
   {
     m_priorityConfigurationOverride = jsonValue.GetObject("PriorityConfigurationOverride");
-
     m_priorityConfigurationOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

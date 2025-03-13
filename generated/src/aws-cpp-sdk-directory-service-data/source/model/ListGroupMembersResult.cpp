@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGroupMembersResult::ListGroupMembersResult()
-{
-}
-
 ListGroupMembersResult::ListGroupMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListGroupMembersResult& ListGroupMembersResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
+    m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberRealm"))
   {
     m_memberRealm = jsonValue.GetString("MemberRealm");
-
+    m_memberRealmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Members"))
   {
     Aws::Utils::Array<JsonView> membersJsonList = jsonValue.GetArray("Members");
@@ -48,26 +42,25 @@ ListGroupMembersResult& ListGroupMembersResult::operator =(const Aws::AmazonWebS
     {
       m_members.push_back(membersJsonList[membersIndex].AsObject());
     }
+    m_membersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Realm"))
   {
     m_realm = jsonValue.GetString("Realm");
-
+    m_realmHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

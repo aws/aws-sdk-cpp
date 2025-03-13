@@ -12,16 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAnalyzedResourcesRequest::ListAnalyzedResourcesRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAnalyzedResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

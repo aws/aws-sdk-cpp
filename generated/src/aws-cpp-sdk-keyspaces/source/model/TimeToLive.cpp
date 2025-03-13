@@ -18,14 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-TimeToLive::TimeToLive() : 
-    m_status(TimeToLiveStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 TimeToLive::TimeToLive(JsonView jsonValue)
-  : TimeToLive()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TimeToLive& TimeToLive::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = TimeToLiveStatusMapper::GetTimeToLiveStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

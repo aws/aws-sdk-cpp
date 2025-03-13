@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutRuntimeManagementConfigRequest::PutRuntimeManagementConfigRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_updateRuntimeOn(UpdateRuntimeOn::NOT_SET),
-    m_updateRuntimeOnHasBeenSet(false),
-    m_runtimeVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String PutRuntimeManagementConfigRequest::SerializePayload() const
 {
   JsonValue payload;

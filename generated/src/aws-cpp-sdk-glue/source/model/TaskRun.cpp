@@ -18,24 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TaskRun::TaskRun() : 
-    m_transformIdHasBeenSet(false),
-    m_taskRunIdHasBeenSet(false),
-    m_status(TaskStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_errorStringHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false)
-{
-}
-
 TaskRun::TaskRun(JsonView jsonValue)
-  : TaskRun()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ TaskRun& TaskRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransformId"))
   {
     m_transformId = jsonValue.GetString("TransformId");
-
     m_transformIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskRunId"))
   {
     m_taskRunId = jsonValue.GetString("TaskRunId");
-
     m_taskRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TaskStatusTypeMapper::GetTaskStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     m_properties = jsonValue.GetObject("Properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorString"))
   {
     m_errorString = jsonValue.GetString("ErrorString");
-
     m_errorStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTime"))
   {
     m_executionTime = jsonValue.GetInteger("ExecutionTime");
-
     m_executionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

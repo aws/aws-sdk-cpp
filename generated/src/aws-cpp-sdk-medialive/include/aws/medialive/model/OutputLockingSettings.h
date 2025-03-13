@@ -32,7 +32,7 @@ namespace Model
   class OutputLockingSettings
   {
   public:
-    AWS_MEDIALIVE_API OutputLockingSettings();
+    AWS_MEDIALIVE_API OutputLockingSettings() = default;
     AWS_MEDIALIVE_API OutputLockingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API OutputLockingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const EpochLockingSettings& GetEpochLockingSettings() const{ return m_epochLockingSettings; }
+    inline const EpochLockingSettings& GetEpochLockingSettings() const { return m_epochLockingSettings; }
     inline bool EpochLockingSettingsHasBeenSet() const { return m_epochLockingSettingsHasBeenSet; }
-    inline void SetEpochLockingSettings(const EpochLockingSettings& value) { m_epochLockingSettingsHasBeenSet = true; m_epochLockingSettings = value; }
-    inline void SetEpochLockingSettings(EpochLockingSettings&& value) { m_epochLockingSettingsHasBeenSet = true; m_epochLockingSettings = std::move(value); }
-    inline OutputLockingSettings& WithEpochLockingSettings(const EpochLockingSettings& value) { SetEpochLockingSettings(value); return *this;}
-    inline OutputLockingSettings& WithEpochLockingSettings(EpochLockingSettings&& value) { SetEpochLockingSettings(std::move(value)); return *this;}
+    template<typename EpochLockingSettingsT = EpochLockingSettings>
+    void SetEpochLockingSettings(EpochLockingSettingsT&& value) { m_epochLockingSettingsHasBeenSet = true; m_epochLockingSettings = std::forward<EpochLockingSettingsT>(value); }
+    template<typename EpochLockingSettingsT = EpochLockingSettings>
+    OutputLockingSettings& WithEpochLockingSettings(EpochLockingSettingsT&& value) { SetEpochLockingSettings(std::forward<EpochLockingSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PipelineLockingSettings& GetPipelineLockingSettings() const{ return m_pipelineLockingSettings; }
+    inline const PipelineLockingSettings& GetPipelineLockingSettings() const { return m_pipelineLockingSettings; }
     inline bool PipelineLockingSettingsHasBeenSet() const { return m_pipelineLockingSettingsHasBeenSet; }
-    inline void SetPipelineLockingSettings(const PipelineLockingSettings& value) { m_pipelineLockingSettingsHasBeenSet = true; m_pipelineLockingSettings = value; }
-    inline void SetPipelineLockingSettings(PipelineLockingSettings&& value) { m_pipelineLockingSettingsHasBeenSet = true; m_pipelineLockingSettings = std::move(value); }
-    inline OutputLockingSettings& WithPipelineLockingSettings(const PipelineLockingSettings& value) { SetPipelineLockingSettings(value); return *this;}
-    inline OutputLockingSettings& WithPipelineLockingSettings(PipelineLockingSettings&& value) { SetPipelineLockingSettings(std::move(value)); return *this;}
+    template<typename PipelineLockingSettingsT = PipelineLockingSettings>
+    void SetPipelineLockingSettings(PipelineLockingSettingsT&& value) { m_pipelineLockingSettingsHasBeenSet = true; m_pipelineLockingSettings = std::forward<PipelineLockingSettingsT>(value); }
+    template<typename PipelineLockingSettingsT = PipelineLockingSettings>
+    OutputLockingSettings& WithPipelineLockingSettings(PipelineLockingSettingsT&& value) { SetPipelineLockingSettings(std::forward<PipelineLockingSettingsT>(value)); return *this;}
     ///@}
   private:
 

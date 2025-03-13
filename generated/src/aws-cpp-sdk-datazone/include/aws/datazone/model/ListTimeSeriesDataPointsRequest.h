@@ -27,7 +27,7 @@ namespace Model
   class ListTimeSeriesDataPointsRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListTimeSeriesDataPointsRequest();
+    AWS_DATAZONE_API ListTimeSeriesDataPointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,66 +45,58 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain that houses the assets for which you
      * want to list time series data points.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline ListTimeSeriesDataPointsRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    ListTimeSeriesDataPointsRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the data points that you wanted to list ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
+    inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
     inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
-    inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
-    inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
-    inline ListTimeSeriesDataPointsRequest& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    void SetEndedAt(EndedAtT&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::forward<EndedAtT>(value); }
+    template<typename EndedAtT = Aws::Utils::DateTime>
+    ListTimeSeriesDataPointsRequest& WithEndedAt(EndedAtT&& value) { SetEndedAt(std::forward<EndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset for which you want to list data points.</p>
      */
-    inline const Aws::String& GetEntityIdentifier() const{ return m_entityIdentifier; }
+    inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
     inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
-    inline void SetEntityIdentifier(const Aws::String& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = value; }
-    inline void SetEntityIdentifier(Aws::String&& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = std::move(value); }
-    inline void SetEntityIdentifier(const char* value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier.assign(value); }
-    inline ListTimeSeriesDataPointsRequest& WithEntityIdentifier(const Aws::String& value) { SetEntityIdentifier(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithEntityIdentifier(Aws::String&& value) { SetEntityIdentifier(std::move(value)); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithEntityIdentifier(const char* value) { SetEntityIdentifier(value); return *this;}
+    template<typename EntityIdentifierT = Aws::String>
+    void SetEntityIdentifier(EntityIdentifierT&& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = std::forward<EntityIdentifierT>(value); }
+    template<typename EntityIdentifierT = Aws::String>
+    ListTimeSeriesDataPointsRequest& WithEntityIdentifier(EntityIdentifierT&& value) { SetEntityIdentifier(std::forward<EntityIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the asset for which you want to list data points.</p>
      */
-    inline const TimeSeriesEntityType& GetEntityType() const{ return m_entityType; }
+    inline TimeSeriesEntityType GetEntityType() const { return m_entityType; }
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-    inline void SetEntityType(const TimeSeriesEntityType& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
-    inline void SetEntityType(TimeSeriesEntityType&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
-    inline ListTimeSeriesDataPointsRequest& WithEntityType(const TimeSeriesEntityType& value) { SetEntityType(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithEntityType(TimeSeriesEntityType&& value) { SetEntityType(std::move(value)); return *this;}
+    inline void SetEntityType(TimeSeriesEntityType value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
+    inline ListTimeSeriesDataPointsRequest& WithEntityType(TimeSeriesEntityType value) { SetEntityType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the time series data points form.</p>
      */
-    inline const Aws::String& GetFormName() const{ return m_formName; }
+    inline const Aws::String& GetFormName() const { return m_formName; }
     inline bool FormNameHasBeenSet() const { return m_formNameHasBeenSet; }
-    inline void SetFormName(const Aws::String& value) { m_formNameHasBeenSet = true; m_formName = value; }
-    inline void SetFormName(Aws::String&& value) { m_formNameHasBeenSet = true; m_formName = std::move(value); }
-    inline void SetFormName(const char* value) { m_formNameHasBeenSet = true; m_formName.assign(value); }
-    inline ListTimeSeriesDataPointsRequest& WithFormName(const Aws::String& value) { SetFormName(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithFormName(Aws::String&& value) { SetFormName(std::move(value)); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithFormName(const char* value) { SetFormName(value); return *this;}
+    template<typename FormNameT = Aws::String>
+    void SetFormName(FormNameT&& value) { m_formNameHasBeenSet = true; m_formName = std::forward<FormNameT>(value); }
+    template<typename FormNameT = Aws::String>
+    ListTimeSeriesDataPointsRequest& WithFormName(FormNameT&& value) { SetFormName(std::forward<FormNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +107,7 @@ namespace Model
      * can use in a subsequent call to ListTimeSeriesDataPoints to list the next set of
      * data points.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTimeSeriesDataPointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -129,51 +121,49 @@ namespace Model
      * named NextToken. You can specify this NextToken value in a subsequent call to
      * ListTimeSeriesDataPoints to list the next set of data points.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTimeSeriesDataPointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTimeSeriesDataPointsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the data points that you want to list started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline ListTimeSeriesDataPointsRequest& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline ListTimeSeriesDataPointsRequest& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    ListTimeSeriesDataPointsRequest& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endedAt;
+    Aws::Utils::DateTime m_endedAt{};
     bool m_endedAtHasBeenSet = false;
 
     Aws::String m_entityIdentifier;
     bool m_entityIdentifierHasBeenSet = false;
 
-    TimeSeriesEntityType m_entityType;
+    TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
     bool m_entityTypeHasBeenSet = false;
 
     Aws::String m_formName;
     bool m_formNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
   };
 

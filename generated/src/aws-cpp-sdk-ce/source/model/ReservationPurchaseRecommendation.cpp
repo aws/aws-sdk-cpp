@@ -18,23 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ReservationPurchaseRecommendation::ReservationPurchaseRecommendation() : 
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_serviceSpecificationHasBeenSet(false),
-    m_recommendationDetailsHasBeenSet(false),
-    m_recommendationSummaryHasBeenSet(false)
-{
-}
-
 ReservationPurchaseRecommendation::ReservationPurchaseRecommendation(JsonView jsonValue)
-  : ReservationPurchaseRecommendation()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ ReservationPurchaseRecommendation& ReservationPurchaseRecommendation::operator =
   if(jsonValue.ValueExists("AccountScope"))
   {
     m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("AccountScope"));
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookbackPeriodInDays"))
   {
     m_lookbackPeriodInDays = LookbackPeriodInDaysMapper::GetLookbackPeriodInDaysForName(jsonValue.GetString("LookbackPeriodInDays"));
-
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TermInYears"))
   {
     m_termInYears = TermInYearsMapper::GetTermInYearsForName(jsonValue.GetString("TermInYears"));
-
     m_termInYearsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceSpecification"))
   {
     m_serviceSpecification = jsonValue.GetObject("ServiceSpecification");
-
     m_serviceSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationDetails"))
   {
     Aws::Utils::Array<JsonView> recommendationDetailsJsonList = jsonValue.GetArray("RecommendationDetails");
@@ -85,14 +59,11 @@ ReservationPurchaseRecommendation& ReservationPurchaseRecommendation::operator =
     }
     m_recommendationDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationSummary"))
   {
     m_recommendationSummary = jsonValue.GetObject("RecommendationSummary");
-
     m_recommendationSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSubscriptionAttributesResult::GetSubscriptionAttributesResult()
-{
-}
-
 GetSubscriptionAttributesResult::GetSubscriptionAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ GetSubscriptionAttributesResult& GetSubscriptionAttributesResult::operator =(con
     if(!attributesNode.IsNull())
     {
       XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      m_attributesHasBeenSet = !attributesEntry.IsNull();
       while(!attributesEntry.IsNull())
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
@@ -58,6 +55,7 @@ GetSubscriptionAttributesResult& GetSubscriptionAttributesResult::operator =(con
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::GetSubscriptionAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -19,7 +19,7 @@ namespace Model
   class GetAdministratorAccountRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API GetAdministratorAccountRequest();
+    AWS_MACIE2_API GetAdministratorAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

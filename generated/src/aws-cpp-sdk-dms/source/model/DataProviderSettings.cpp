@@ -18,22 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DataProviderSettings::DataProviderSettings() : 
-    m_redshiftSettingsHasBeenSet(false),
-    m_postgreSqlSettingsHasBeenSet(false),
-    m_mySqlSettingsHasBeenSet(false),
-    m_oracleSettingsHasBeenSet(false),
-    m_microsoftSqlServerSettingsHasBeenSet(false),
-    m_docDbSettingsHasBeenSet(false),
-    m_mariaDbSettingsHasBeenSet(false),
-    m_ibmDb2LuwSettingsHasBeenSet(false),
-    m_ibmDb2zOsSettingsHasBeenSet(false),
-    m_mongoDbSettingsHasBeenSet(false)
-{
-}
-
 DataProviderSettings::DataProviderSettings(JsonView jsonValue)
-  : DataProviderSettings()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ DataProviderSettings& DataProviderSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RedshiftSettings"))
   {
     m_redshiftSettings = jsonValue.GetObject("RedshiftSettings");
-
     m_redshiftSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostgreSqlSettings"))
   {
     m_postgreSqlSettings = jsonValue.GetObject("PostgreSqlSettings");
-
     m_postgreSqlSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MySqlSettings"))
   {
     m_mySqlSettings = jsonValue.GetObject("MySqlSettings");
-
     m_mySqlSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OracleSettings"))
   {
     m_oracleSettings = jsonValue.GetObject("OracleSettings");
-
     m_oracleSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MicrosoftSqlServerSettings"))
   {
     m_microsoftSqlServerSettings = jsonValue.GetObject("MicrosoftSqlServerSettings");
-
     m_microsoftSqlServerSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocDbSettings"))
   {
     m_docDbSettings = jsonValue.GetObject("DocDbSettings");
-
     m_docDbSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MariaDbSettings"))
   {
     m_mariaDbSettings = jsonValue.GetObject("MariaDbSettings");
-
     m_mariaDbSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IbmDb2LuwSettings"))
   {
     m_ibmDb2LuwSettings = jsonValue.GetObject("IbmDb2LuwSettings");
-
     m_ibmDb2LuwSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IbmDb2zOsSettings"))
   {
     m_ibmDb2zOsSettings = jsonValue.GetObject("IbmDb2zOsSettings");
-
     m_ibmDb2zOsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MongoDbSettings"))
   {
     m_mongoDbSettings = jsonValue.GetObject("MongoDbSettings");
-
     m_mongoDbSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

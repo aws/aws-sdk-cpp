@@ -35,7 +35,7 @@ namespace Model
   class LineChartLineStyleSettings
   {
   public:
-    AWS_QUICKSIGHT_API LineChartLineStyleSettings();
+    AWS_QUICKSIGHT_API LineChartLineStyleSettings() = default;
     AWS_QUICKSIGHT_API LineChartLineStyleSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LineChartLineStyleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>Configuration option that determines whether to show the line for the
      * series.</p>
      */
-    inline const Visibility& GetLineVisibility() const{ return m_lineVisibility; }
+    inline Visibility GetLineVisibility() const { return m_lineVisibility; }
     inline bool LineVisibilityHasBeenSet() const { return m_lineVisibilityHasBeenSet; }
-    inline void SetLineVisibility(const Visibility& value) { m_lineVisibilityHasBeenSet = true; m_lineVisibility = value; }
-    inline void SetLineVisibility(Visibility&& value) { m_lineVisibilityHasBeenSet = true; m_lineVisibility = std::move(value); }
-    inline LineChartLineStyleSettings& WithLineVisibility(const Visibility& value) { SetLineVisibility(value); return *this;}
-    inline LineChartLineStyleSettings& WithLineVisibility(Visibility&& value) { SetLineVisibility(std::move(value)); return *this;}
+    inline void SetLineVisibility(Visibility value) { m_lineVisibilityHasBeenSet = true; m_lineVisibility = value; }
+    inline LineChartLineStyleSettings& WithLineVisibility(Visibility value) { SetLineVisibility(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * smooth curve.</p> </li> <li> <p> <code>STEPPED</code>: Show steps in line.</p>
      * </li> </ul>
      */
-    inline const LineInterpolation& GetLineInterpolation() const{ return m_lineInterpolation; }
+    inline LineInterpolation GetLineInterpolation() const { return m_lineInterpolation; }
     inline bool LineInterpolationHasBeenSet() const { return m_lineInterpolationHasBeenSet; }
-    inline void SetLineInterpolation(const LineInterpolation& value) { m_lineInterpolationHasBeenSet = true; m_lineInterpolation = value; }
-    inline void SetLineInterpolation(LineInterpolation&& value) { m_lineInterpolationHasBeenSet = true; m_lineInterpolation = std::move(value); }
-    inline LineChartLineStyleSettings& WithLineInterpolation(const LineInterpolation& value) { SetLineInterpolation(value); return *this;}
-    inline LineChartLineStyleSettings& WithLineInterpolation(LineInterpolation&& value) { SetLineInterpolation(std::move(value)); return *this;}
+    inline void SetLineInterpolation(LineInterpolation value) { m_lineInterpolationHasBeenSet = true; m_lineInterpolation = value; }
+    inline LineChartLineStyleSettings& WithLineInterpolation(LineInterpolation value) { SetLineInterpolation(value); return *this;}
     ///@}
 
     ///@{
@@ -75,36 +71,32 @@ namespace Model
      * solid line.</p> </li> <li> <p> <code>DOTTED</code>: Show as a dotted line.</p>
      * </li> <li> <p> <code>DASHED</code>: Show as a dashed line.</p> </li> </ul>
      */
-    inline const LineChartLineStyle& GetLineStyle() const{ return m_lineStyle; }
+    inline LineChartLineStyle GetLineStyle() const { return m_lineStyle; }
     inline bool LineStyleHasBeenSet() const { return m_lineStyleHasBeenSet; }
-    inline void SetLineStyle(const LineChartLineStyle& value) { m_lineStyleHasBeenSet = true; m_lineStyle = value; }
-    inline void SetLineStyle(LineChartLineStyle&& value) { m_lineStyleHasBeenSet = true; m_lineStyle = std::move(value); }
-    inline LineChartLineStyleSettings& WithLineStyle(const LineChartLineStyle& value) { SetLineStyle(value); return *this;}
-    inline LineChartLineStyleSettings& WithLineStyle(LineChartLineStyle&& value) { SetLineStyle(std::move(value)); return *this;}
+    inline void SetLineStyle(LineChartLineStyle value) { m_lineStyleHasBeenSet = true; m_lineStyle = value; }
+    inline LineChartLineStyleSettings& WithLineStyle(LineChartLineStyle value) { SetLineStyle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Width that determines the line thickness.</p>
      */
-    inline const Aws::String& GetLineWidth() const{ return m_lineWidth; }
+    inline const Aws::String& GetLineWidth() const { return m_lineWidth; }
     inline bool LineWidthHasBeenSet() const { return m_lineWidthHasBeenSet; }
-    inline void SetLineWidth(const Aws::String& value) { m_lineWidthHasBeenSet = true; m_lineWidth = value; }
-    inline void SetLineWidth(Aws::String&& value) { m_lineWidthHasBeenSet = true; m_lineWidth = std::move(value); }
-    inline void SetLineWidth(const char* value) { m_lineWidthHasBeenSet = true; m_lineWidth.assign(value); }
-    inline LineChartLineStyleSettings& WithLineWidth(const Aws::String& value) { SetLineWidth(value); return *this;}
-    inline LineChartLineStyleSettings& WithLineWidth(Aws::String&& value) { SetLineWidth(std::move(value)); return *this;}
-    inline LineChartLineStyleSettings& WithLineWidth(const char* value) { SetLineWidth(value); return *this;}
+    template<typename LineWidthT = Aws::String>
+    void SetLineWidth(LineWidthT&& value) { m_lineWidthHasBeenSet = true; m_lineWidth = std::forward<LineWidthT>(value); }
+    template<typename LineWidthT = Aws::String>
+    LineChartLineStyleSettings& WithLineWidth(LineWidthT&& value) { SetLineWidth(std::forward<LineWidthT>(value)); return *this;}
     ///@}
   private:
 
-    Visibility m_lineVisibility;
+    Visibility m_lineVisibility{Visibility::NOT_SET};
     bool m_lineVisibilityHasBeenSet = false;
 
-    LineInterpolation m_lineInterpolation;
+    LineInterpolation m_lineInterpolation{LineInterpolation::NOT_SET};
     bool m_lineInterpolationHasBeenSet = false;
 
-    LineChartLineStyle m_lineStyle;
+    LineChartLineStyle m_lineStyle{LineChartLineStyle::NOT_SET};
     bool m_lineStyleHasBeenSet = false;
 
     Aws::String m_lineWidth;

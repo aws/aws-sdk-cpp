@@ -36,7 +36,7 @@ namespace Model
   class SourceMetadata
   {
   public:
-    AWS_NETWORKFIREWALL_API SourceMetadata();
+    AWS_NETWORKFIREWALL_API SourceMetadata() = default;
     AWS_NETWORKFIREWALL_API SourceMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API SourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the rule group that your own rule group is
      * copied from.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline SourceMetadata& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline SourceMetadata& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline SourceMetadata& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    SourceMetadata& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * group, call <a
      * href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</p>
      */
-    inline const Aws::String& GetSourceUpdateToken() const{ return m_sourceUpdateToken; }
+    inline const Aws::String& GetSourceUpdateToken() const { return m_sourceUpdateToken; }
     inline bool SourceUpdateTokenHasBeenSet() const { return m_sourceUpdateTokenHasBeenSet; }
-    inline void SetSourceUpdateToken(const Aws::String& value) { m_sourceUpdateTokenHasBeenSet = true; m_sourceUpdateToken = value; }
-    inline void SetSourceUpdateToken(Aws::String&& value) { m_sourceUpdateTokenHasBeenSet = true; m_sourceUpdateToken = std::move(value); }
-    inline void SetSourceUpdateToken(const char* value) { m_sourceUpdateTokenHasBeenSet = true; m_sourceUpdateToken.assign(value); }
-    inline SourceMetadata& WithSourceUpdateToken(const Aws::String& value) { SetSourceUpdateToken(value); return *this;}
-    inline SourceMetadata& WithSourceUpdateToken(Aws::String&& value) { SetSourceUpdateToken(std::move(value)); return *this;}
-    inline SourceMetadata& WithSourceUpdateToken(const char* value) { SetSourceUpdateToken(value); return *this;}
+    template<typename SourceUpdateTokenT = Aws::String>
+    void SetSourceUpdateToken(SourceUpdateTokenT&& value) { m_sourceUpdateTokenHasBeenSet = true; m_sourceUpdateToken = std::forward<SourceUpdateTokenT>(value); }
+    template<typename SourceUpdateTokenT = Aws::String>
+    SourceMetadata& WithSourceUpdateToken(SourceUpdateTokenT&& value) { SetSourceUpdateToken(std::forward<SourceUpdateTokenT>(value)); return *this;}
     ///@}
   private:
 

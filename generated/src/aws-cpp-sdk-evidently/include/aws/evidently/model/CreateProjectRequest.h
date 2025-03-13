@@ -24,7 +24,7 @@ namespace Model
   class CreateProjectRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API CreateProjectRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API CreateProjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,12 +50,12 @@ namespace Model
      * project that uses client-side evaluation, you must have the
      * <code>evidently:ExportProjectAsConfiguration</code> permission.</p>
      */
-    inline const ProjectAppConfigResourceConfig& GetAppConfigResource() const{ return m_appConfigResource; }
+    inline const ProjectAppConfigResourceConfig& GetAppConfigResource() const { return m_appConfigResource; }
     inline bool AppConfigResourceHasBeenSet() const { return m_appConfigResourceHasBeenSet; }
-    inline void SetAppConfigResource(const ProjectAppConfigResourceConfig& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = value; }
-    inline void SetAppConfigResource(ProjectAppConfigResourceConfig&& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = std::move(value); }
-    inline CreateProjectRequest& WithAppConfigResource(const ProjectAppConfigResourceConfig& value) { SetAppConfigResource(value); return *this;}
-    inline CreateProjectRequest& WithAppConfigResource(ProjectAppConfigResourceConfig&& value) { SetAppConfigResource(std::move(value)); return *this;}
+    template<typename AppConfigResourceT = ProjectAppConfigResourceConfig>
+    void SetAppConfigResource(AppConfigResourceT&& value) { m_appConfigResourceHasBeenSet = true; m_appConfigResource = std::forward<AppConfigResourceT>(value); }
+    template<typename AppConfigResourceT = ProjectAppConfigResourceConfig>
+    CreateProjectRequest& WithAppConfigResource(AppConfigResourceT&& value) { SetAppConfigResource(std::forward<AppConfigResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,40 +65,36 @@ namespace Model
      * not to store these events, Evidently deletes them after using them to produce
      * metrics and other experiment results that you can view.</p>
      */
-    inline const ProjectDataDeliveryConfig& GetDataDelivery() const{ return m_dataDelivery; }
+    inline const ProjectDataDeliveryConfig& GetDataDelivery() const { return m_dataDelivery; }
     inline bool DataDeliveryHasBeenSet() const { return m_dataDeliveryHasBeenSet; }
-    inline void SetDataDelivery(const ProjectDataDeliveryConfig& value) { m_dataDeliveryHasBeenSet = true; m_dataDelivery = value; }
-    inline void SetDataDelivery(ProjectDataDeliveryConfig&& value) { m_dataDeliveryHasBeenSet = true; m_dataDelivery = std::move(value); }
-    inline CreateProjectRequest& WithDataDelivery(const ProjectDataDeliveryConfig& value) { SetDataDelivery(value); return *this;}
-    inline CreateProjectRequest& WithDataDelivery(ProjectDataDeliveryConfig&& value) { SetDataDelivery(std::move(value)); return *this;}
+    template<typename DataDeliveryT = ProjectDataDeliveryConfig>
+    void SetDataDelivery(DataDeliveryT&& value) { m_dataDeliveryHasBeenSet = true; m_dataDelivery = std::forward<DataDeliveryT>(value); }
+    template<typename DataDeliveryT = ProjectDataDeliveryConfig>
+    CreateProjectRequest& WithDataDelivery(DataDeliveryT&& value) { SetDataDelivery(std::forward<DataDeliveryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of the project.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateProjectRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateProjectRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateProjectRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the project.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateProjectRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,19 +109,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProjectRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateProjectRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProjectRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateProjectRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProjectRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProjectRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateProjectRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProjectRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProjectRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateProjectRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateProjectRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

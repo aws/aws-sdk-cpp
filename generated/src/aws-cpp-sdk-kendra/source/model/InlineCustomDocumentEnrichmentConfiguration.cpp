@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-InlineCustomDocumentEnrichmentConfiguration::InlineCustomDocumentEnrichmentConfiguration() : 
-    m_conditionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_documentContentDeletion(false),
-    m_documentContentDeletionHasBeenSet(false)
-{
-}
-
 InlineCustomDocumentEnrichmentConfiguration::InlineCustomDocumentEnrichmentConfiguration(JsonView jsonValue)
-  : InlineCustomDocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InlineCustomDocumentEnrichmentConfiguration& InlineCustomDocumentEnrichmentConfi
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = jsonValue.GetObject("Condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetObject("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentContentDeletion"))
   {
     m_documentContentDeletion = jsonValue.GetBool("DocumentContentDeletion");
-
     m_documentContentDeletionHasBeenSet = true;
   }
-
   return *this;
 }
 

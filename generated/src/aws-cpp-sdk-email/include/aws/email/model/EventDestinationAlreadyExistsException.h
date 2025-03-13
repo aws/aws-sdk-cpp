@@ -32,7 +32,7 @@ namespace Model
   class EventDestinationAlreadyExistsException
   {
   public:
-    AWS_SES_API EventDestinationAlreadyExistsException();
+    AWS_SES_API EventDestinationAlreadyExistsException() = default;
     AWS_SES_API EventDestinationAlreadyExistsException(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API EventDestinationAlreadyExistsException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>Indicates that the configuration set does not exist.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
-    inline EventDestinationAlreadyExistsException& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline EventDestinationAlreadyExistsException& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline EventDestinationAlreadyExistsException& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    EventDestinationAlreadyExistsException& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates that the event destination does not exist.</p>
      */
-    inline const Aws::String& GetEventDestinationName() const{ return m_eventDestinationName; }
+    inline const Aws::String& GetEventDestinationName() const { return m_eventDestinationName; }
     inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
-    inline void SetEventDestinationName(const Aws::String& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = value; }
-    inline void SetEventDestinationName(Aws::String&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = std::move(value); }
-    inline void SetEventDestinationName(const char* value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName.assign(value); }
-    inline EventDestinationAlreadyExistsException& WithEventDestinationName(const Aws::String& value) { SetEventDestinationName(value); return *this;}
-    inline EventDestinationAlreadyExistsException& WithEventDestinationName(Aws::String&& value) { SetEventDestinationName(std::move(value)); return *this;}
-    inline EventDestinationAlreadyExistsException& WithEventDestinationName(const char* value) { SetEventDestinationName(value); return *this;}
+    template<typename EventDestinationNameT = Aws::String>
+    void SetEventDestinationName(EventDestinationNameT&& value) { m_eventDestinationNameHasBeenSet = true; m_eventDestinationName = std::forward<EventDestinationNameT>(value); }
+    template<typename EventDestinationNameT = Aws::String>
+    EventDestinationAlreadyExistsException& WithEventDestinationName(EventDestinationNameT&& value) { SetEventDestinationName(std::forward<EventDestinationNameT>(value)); return *this;}
     ///@}
   private:
 

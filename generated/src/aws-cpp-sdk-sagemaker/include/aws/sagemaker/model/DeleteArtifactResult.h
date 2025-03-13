@@ -27,7 +27,7 @@ namespace Model
   class DeleteArtifactResult
   {
   public:
-    AWS_SAGEMAKER_API DeleteArtifactResult();
+    AWS_SAGEMAKER_API DeleteArtifactResult() = default;
     AWS_SAGEMAKER_API DeleteArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DeleteArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the artifact.</p>
      */
-    inline const Aws::String& GetArtifactArn() const{ return m_artifactArn; }
-    inline void SetArtifactArn(const Aws::String& value) { m_artifactArn = value; }
-    inline void SetArtifactArn(Aws::String&& value) { m_artifactArn = std::move(value); }
-    inline void SetArtifactArn(const char* value) { m_artifactArn.assign(value); }
-    inline DeleteArtifactResult& WithArtifactArn(const Aws::String& value) { SetArtifactArn(value); return *this;}
-    inline DeleteArtifactResult& WithArtifactArn(Aws::String&& value) { SetArtifactArn(std::move(value)); return *this;}
-    inline DeleteArtifactResult& WithArtifactArn(const char* value) { SetArtifactArn(value); return *this;}
+    inline const Aws::String& GetArtifactArn() const { return m_artifactArn; }
+    template<typename ArtifactArnT = Aws::String>
+    void SetArtifactArn(ArtifactArnT&& value) { m_artifactArnHasBeenSet = true; m_artifactArn = std::forward<ArtifactArnT>(value); }
+    template<typename ArtifactArnT = Aws::String>
+    DeleteArtifactResult& WithArtifactArn(ArtifactArnT&& value) { SetArtifactArn(std::forward<ArtifactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteArtifactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteArtifactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteArtifactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteArtifactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_artifactArn;
+    bool m_artifactArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

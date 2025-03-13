@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateGroupRequest::CreateGroupRequest() : 
-    m_pathHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

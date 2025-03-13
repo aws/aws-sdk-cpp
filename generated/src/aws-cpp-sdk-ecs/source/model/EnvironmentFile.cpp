@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-EnvironmentFile::EnvironmentFile() : 
-    m_valueHasBeenSet(false),
-    m_type(EnvironmentFileType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EnvironmentFile::EnvironmentFile(JsonView jsonValue)
-  : EnvironmentFile()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EnvironmentFile& EnvironmentFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EnvironmentFileTypeMapper::GetEnvironmentFileTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

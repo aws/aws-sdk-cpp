@@ -29,7 +29,7 @@ namespace Model
   class ListAnnotationImportJobsResult
   {
   public:
-    AWS_OMICS_API ListAnnotationImportJobsResult();
+    AWS_OMICS_API ListAnnotationImportJobsResult() = default;
     AWS_OMICS_API ListAnnotationImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListAnnotationImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of jobs.</p>
      */
-    inline const Aws::Vector<AnnotationImportJobItem>& GetAnnotationImportJobs() const{ return m_annotationImportJobs; }
-    inline void SetAnnotationImportJobs(const Aws::Vector<AnnotationImportJobItem>& value) { m_annotationImportJobs = value; }
-    inline void SetAnnotationImportJobs(Aws::Vector<AnnotationImportJobItem>&& value) { m_annotationImportJobs = std::move(value); }
-    inline ListAnnotationImportJobsResult& WithAnnotationImportJobs(const Aws::Vector<AnnotationImportJobItem>& value) { SetAnnotationImportJobs(value); return *this;}
-    inline ListAnnotationImportJobsResult& WithAnnotationImportJobs(Aws::Vector<AnnotationImportJobItem>&& value) { SetAnnotationImportJobs(std::move(value)); return *this;}
-    inline ListAnnotationImportJobsResult& AddAnnotationImportJobs(const AnnotationImportJobItem& value) { m_annotationImportJobs.push_back(value); return *this; }
-    inline ListAnnotationImportJobsResult& AddAnnotationImportJobs(AnnotationImportJobItem&& value) { m_annotationImportJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnnotationImportJobItem>& GetAnnotationImportJobs() const { return m_annotationImportJobs; }
+    template<typename AnnotationImportJobsT = Aws::Vector<AnnotationImportJobItem>>
+    void SetAnnotationImportJobs(AnnotationImportJobsT&& value) { m_annotationImportJobsHasBeenSet = true; m_annotationImportJobs = std::forward<AnnotationImportJobsT>(value); }
+    template<typename AnnotationImportJobsT = Aws::Vector<AnnotationImportJobItem>>
+    ListAnnotationImportJobsResult& WithAnnotationImportJobs(AnnotationImportJobsT&& value) { SetAnnotationImportJobs(std::forward<AnnotationImportJobsT>(value)); return *this;}
+    template<typename AnnotationImportJobsT = AnnotationImportJobItem>
+    ListAnnotationImportJobsResult& AddAnnotationImportJobs(AnnotationImportJobsT&& value) { m_annotationImportJobsHasBeenSet = true; m_annotationImportJobs.emplace_back(std::forward<AnnotationImportJobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>Specifies the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAnnotationImportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnnotationImportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnnotationImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnnotationImportJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAnnotationImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAnnotationImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAnnotationImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAnnotationImportJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnnotationImportJobItem> m_annotationImportJobs;
+    bool m_annotationImportJobsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

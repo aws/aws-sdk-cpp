@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLexiconResult::GetLexiconResult()
-{
-}
-
 GetLexiconResult::GetLexiconResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetLexiconResult& GetLexiconResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Lexicon"))
   {
     m_lexicon = jsonValue.GetObject("Lexicon");
-
+    m_lexiconHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LexiconAttributes"))
   {
     m_lexiconAttributes = jsonValue.GetObject("LexiconAttributes");
-
+    m_lexiconAttributesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

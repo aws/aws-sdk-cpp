@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ScannedResource::ScannedResource() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_managedByStack(false),
-    m_managedByStackHasBeenSet(false)
-{
-}
-
 ScannedResource::ScannedResource(const XmlNode& xmlNode)
-  : ScannedResource()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ScannedResource& ScannedResource::operator =(const XmlNode& xmlNode)
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceIdentifierNode = resultNode.FirstChild("ResourceIdentifier");
 
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");
@@ -60,13 +53,14 @@ ScannedResource& ScannedResource::operator =(const XmlNode& xmlNode)
         resourceIdentifierEntry = resourceIdentifierEntry.NextNode("entry");
       }
 
-      m_resourceIdentifierHasBeenSet = true;
+       m_resourceIdentifierHasBeenSet = true;
     }
     XmlNode managedByStackNode = resultNode.FirstChild("ManagedByStack");
     if(!managedByStackNode.IsNull())
     {
       m_managedByStack = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByStackNode.GetText()).c_str()).c_str());
       m_managedByStackHasBeenSet = true;
+       m_managedByStackHasBeenSet = true;
     }
   }
 

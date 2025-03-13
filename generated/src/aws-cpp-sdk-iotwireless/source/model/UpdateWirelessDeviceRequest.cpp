@@ -12,17 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWirelessDeviceRequest::UpdateWirelessDeviceRequest() : 
-    m_idHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_loRaWANHasBeenSet(false),
-    m_positioning(PositioningConfigStatus::NOT_SET),
-    m_positioningHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWirelessDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

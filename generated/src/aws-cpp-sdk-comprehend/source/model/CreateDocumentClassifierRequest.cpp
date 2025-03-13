@@ -12,26 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() : 
-    m_documentClassifierNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_modelPolicyHasBeenSet(false)
-{
-}
-
 Aws::String CreateDocumentClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

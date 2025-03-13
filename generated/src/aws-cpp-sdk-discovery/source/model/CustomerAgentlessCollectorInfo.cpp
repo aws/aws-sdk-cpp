@@ -18,26 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-CustomerAgentlessCollectorInfo::CustomerAgentlessCollectorInfo() : 
-    m_activeAgentlessCollectors(0),
-    m_activeAgentlessCollectorsHasBeenSet(false),
-    m_healthyAgentlessCollectors(0),
-    m_healthyAgentlessCollectorsHasBeenSet(false),
-    m_denyListedAgentlessCollectors(0),
-    m_denyListedAgentlessCollectorsHasBeenSet(false),
-    m_shutdownAgentlessCollectors(0),
-    m_shutdownAgentlessCollectorsHasBeenSet(false),
-    m_unhealthyAgentlessCollectors(0),
-    m_unhealthyAgentlessCollectorsHasBeenSet(false),
-    m_totalAgentlessCollectors(0),
-    m_totalAgentlessCollectorsHasBeenSet(false),
-    m_unknownAgentlessCollectors(0),
-    m_unknownAgentlessCollectorsHasBeenSet(false)
-{
-}
-
 CustomerAgentlessCollectorInfo::CustomerAgentlessCollectorInfo(JsonView jsonValue)
-  : CustomerAgentlessCollectorInfo()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ CustomerAgentlessCollectorInfo& CustomerAgentlessCollectorInfo::operator =(JsonV
   if(jsonValue.ValueExists("activeAgentlessCollectors"))
   {
     m_activeAgentlessCollectors = jsonValue.GetInteger("activeAgentlessCollectors");
-
     m_activeAgentlessCollectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthyAgentlessCollectors"))
   {
     m_healthyAgentlessCollectors = jsonValue.GetInteger("healthyAgentlessCollectors");
-
     m_healthyAgentlessCollectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denyListedAgentlessCollectors"))
   {
     m_denyListedAgentlessCollectors = jsonValue.GetInteger("denyListedAgentlessCollectors");
-
     m_denyListedAgentlessCollectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shutdownAgentlessCollectors"))
   {
     m_shutdownAgentlessCollectors = jsonValue.GetInteger("shutdownAgentlessCollectors");
-
     m_shutdownAgentlessCollectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unhealthyAgentlessCollectors"))
   {
     m_unhealthyAgentlessCollectors = jsonValue.GetInteger("unhealthyAgentlessCollectors");
-
     m_unhealthyAgentlessCollectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalAgentlessCollectors"))
   {
     m_totalAgentlessCollectors = jsonValue.GetInteger("totalAgentlessCollectors");
-
     m_totalAgentlessCollectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknownAgentlessCollectors"))
   {
     m_unknownAgentlessCollectors = jsonValue.GetInteger("unknownAgentlessCollectors");
-
     m_unknownAgentlessCollectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

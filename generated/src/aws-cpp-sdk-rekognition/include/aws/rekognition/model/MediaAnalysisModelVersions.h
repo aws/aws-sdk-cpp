@@ -32,7 +32,7 @@ namespace Model
   class MediaAnalysisModelVersions
   {
   public:
-    AWS_REKOGNITION_API MediaAnalysisModelVersions();
+    AWS_REKOGNITION_API MediaAnalysisModelVersions() = default;
     AWS_REKOGNITION_API MediaAnalysisModelVersions(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API MediaAnalysisModelVersions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Moderation base model version.</p>
      */
-    inline const Aws::String& GetModeration() const{ return m_moderation; }
+    inline const Aws::String& GetModeration() const { return m_moderation; }
     inline bool ModerationHasBeenSet() const { return m_moderationHasBeenSet; }
-    inline void SetModeration(const Aws::String& value) { m_moderationHasBeenSet = true; m_moderation = value; }
-    inline void SetModeration(Aws::String&& value) { m_moderationHasBeenSet = true; m_moderation = std::move(value); }
-    inline void SetModeration(const char* value) { m_moderationHasBeenSet = true; m_moderation.assign(value); }
-    inline MediaAnalysisModelVersions& WithModeration(const Aws::String& value) { SetModeration(value); return *this;}
-    inline MediaAnalysisModelVersions& WithModeration(Aws::String&& value) { SetModeration(std::move(value)); return *this;}
-    inline MediaAnalysisModelVersions& WithModeration(const char* value) { SetModeration(value); return *this;}
+    template<typename ModerationT = Aws::String>
+    void SetModeration(ModerationT&& value) { m_moderationHasBeenSet = true; m_moderation = std::forward<ModerationT>(value); }
+    template<typename ModerationT = Aws::String>
+    MediaAnalysisModelVersions& WithModeration(ModerationT&& value) { SetModeration(std::forward<ModerationT>(value)); return *this;}
     ///@}
   private:
 

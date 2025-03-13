@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListQueuesRequest::ListQueuesRequest() : 
-    m_listBy(QueueListBy::NOT_SET),
-    m_listByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_order(Order::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 Aws::String ListQueuesRequest::SerializePayload() const
 {
   return {};

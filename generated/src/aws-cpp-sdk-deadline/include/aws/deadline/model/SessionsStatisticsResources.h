@@ -33,7 +33,7 @@ namespace Model
   class SessionsStatisticsResources
   {
   public:
-    AWS_DEADLINE_API SessionsStatisticsResources();
+    AWS_DEADLINE_API SessionsStatisticsResources() = default;
     AWS_DEADLINE_API SessionsStatisticsResources(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API SessionsStatisticsResources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * specify the <code>queueIds</code> field, you can't specify the
      * <code>fleetIds</code> field.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueueIds() const{ return m_queueIds; }
+    inline const Aws::Vector<Aws::String>& GetQueueIds() const { return m_queueIds; }
     inline bool QueueIdsHasBeenSet() const { return m_queueIdsHasBeenSet; }
-    inline void SetQueueIds(const Aws::Vector<Aws::String>& value) { m_queueIdsHasBeenSet = true; m_queueIds = value; }
-    inline void SetQueueIds(Aws::Vector<Aws::String>&& value) { m_queueIdsHasBeenSet = true; m_queueIds = std::move(value); }
-    inline SessionsStatisticsResources& WithQueueIds(const Aws::Vector<Aws::String>& value) { SetQueueIds(value); return *this;}
-    inline SessionsStatisticsResources& WithQueueIds(Aws::Vector<Aws::String>&& value) { SetQueueIds(std::move(value)); return *this;}
-    inline SessionsStatisticsResources& AddQueueIds(const Aws::String& value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(value); return *this; }
-    inline SessionsStatisticsResources& AddQueueIds(Aws::String&& value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(std::move(value)); return *this; }
-    inline SessionsStatisticsResources& AddQueueIds(const char* value) { m_queueIdsHasBeenSet = true; m_queueIds.push_back(value); return *this; }
+    template<typename QueueIdsT = Aws::Vector<Aws::String>>
+    void SetQueueIds(QueueIdsT&& value) { m_queueIdsHasBeenSet = true; m_queueIds = std::forward<QueueIdsT>(value); }
+    template<typename QueueIdsT = Aws::Vector<Aws::String>>
+    SessionsStatisticsResources& WithQueueIds(QueueIdsT&& value) { SetQueueIds(std::forward<QueueIdsT>(value)); return *this;}
+    template<typename QueueIdsT = Aws::String>
+    SessionsStatisticsResources& AddQueueIds(QueueIdsT&& value) { m_queueIdsHasBeenSet = true; m_queueIds.emplace_back(std::forward<QueueIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,15 +61,14 @@ namespace Model
      * specify the <code>fleetIds</code> field, you can't specify the
      * <code>queueIds</code> field.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
+    inline const Aws::Vector<Aws::String>& GetFleetIds() const { return m_fleetIds; }
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
-    inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
-    inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
-    inline SessionsStatisticsResources& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
-    inline SessionsStatisticsResources& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
-    inline SessionsStatisticsResources& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
-    inline SessionsStatisticsResources& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
-    inline SessionsStatisticsResources& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
+    template<typename FleetIdsT = Aws::Vector<Aws::String>>
+    void SetFleetIds(FleetIdsT&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::forward<FleetIdsT>(value); }
+    template<typename FleetIdsT = Aws::Vector<Aws::String>>
+    SessionsStatisticsResources& WithFleetIds(FleetIdsT&& value) { SetFleetIds(std::forward<FleetIdsT>(value)); return *this;}
+    template<typename FleetIdsT = Aws::String>
+    SessionsStatisticsResources& AddFleetIds(FleetIdsT&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.emplace_back(std::forward<FleetIdsT>(value)); return *this; }
     ///@}
   private:
 

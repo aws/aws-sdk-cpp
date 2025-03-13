@@ -29,7 +29,7 @@ namespace Model
   class ListExperimentResolvedTargetsResult
   {
   public:
-    AWS_FIS_API ListExperimentResolvedTargetsResult();
+    AWS_FIS_API ListExperimentResolvedTargetsResult() = default;
     AWS_FIS_API ListExperimentResolvedTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIS_API ListExperimentResolvedTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The resolved targets.</p>
      */
-    inline const Aws::Vector<ResolvedTarget>& GetResolvedTargets() const{ return m_resolvedTargets; }
-    inline void SetResolvedTargets(const Aws::Vector<ResolvedTarget>& value) { m_resolvedTargets = value; }
-    inline void SetResolvedTargets(Aws::Vector<ResolvedTarget>&& value) { m_resolvedTargets = std::move(value); }
-    inline ListExperimentResolvedTargetsResult& WithResolvedTargets(const Aws::Vector<ResolvedTarget>& value) { SetResolvedTargets(value); return *this;}
-    inline ListExperimentResolvedTargetsResult& WithResolvedTargets(Aws::Vector<ResolvedTarget>&& value) { SetResolvedTargets(std::move(value)); return *this;}
-    inline ListExperimentResolvedTargetsResult& AddResolvedTargets(const ResolvedTarget& value) { m_resolvedTargets.push_back(value); return *this; }
-    inline ListExperimentResolvedTargetsResult& AddResolvedTargets(ResolvedTarget&& value) { m_resolvedTargets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResolvedTarget>& GetResolvedTargets() const { return m_resolvedTargets; }
+    template<typename ResolvedTargetsT = Aws::Vector<ResolvedTarget>>
+    void SetResolvedTargets(ResolvedTargetsT&& value) { m_resolvedTargetsHasBeenSet = true; m_resolvedTargets = std::forward<ResolvedTargetsT>(value); }
+    template<typename ResolvedTargetsT = Aws::Vector<ResolvedTarget>>
+    ListExperimentResolvedTargetsResult& WithResolvedTargets(ResolvedTargetsT&& value) { SetResolvedTargets(std::forward<ResolvedTargetsT>(value)); return *this;}
+    template<typename ResolvedTargetsT = ResolvedTarget>
+    ListExperimentResolvedTargetsResult& AddResolvedTargets(ResolvedTargetsT&& value) { m_resolvedTargetsHasBeenSet = true; m_resolvedTargets.emplace_back(std::forward<ResolvedTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListExperimentResolvedTargetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExperimentResolvedTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExperimentResolvedTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExperimentResolvedTargetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListExperimentResolvedTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListExperimentResolvedTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListExperimentResolvedTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListExperimentResolvedTargetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResolvedTarget> m_resolvedTargets;
+    bool m_resolvedTargetsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

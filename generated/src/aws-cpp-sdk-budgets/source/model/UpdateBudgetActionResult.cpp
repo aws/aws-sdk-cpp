@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateBudgetActionResult::UpdateBudgetActionResult()
-{
-}
-
 UpdateBudgetActionResult::UpdateBudgetActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ UpdateBudgetActionResult& UpdateBudgetActionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
+    m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetName"))
   {
     m_budgetName = jsonValue.GetString("BudgetName");
-
+    m_budgetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OldAction"))
   {
     m_oldAction = jsonValue.GetObject("OldAction");
-
+    m_oldActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewAction"))
   {
     m_newAction = jsonValue.GetObject("NewAction");
-
+    m_newActionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

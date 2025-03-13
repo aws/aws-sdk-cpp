@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CommunicationLimits::CommunicationLimits() : 
-    m_communicationLimitsListHasBeenSet(false)
-{
-}
-
 CommunicationLimits::CommunicationLimits(JsonView jsonValue)
-  : CommunicationLimits()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CommunicationLimits& CommunicationLimits::operator =(JsonView jsonValue)
     }
     m_communicationLimitsListHasBeenSet = true;
   }
-
   return *this;
 }
 

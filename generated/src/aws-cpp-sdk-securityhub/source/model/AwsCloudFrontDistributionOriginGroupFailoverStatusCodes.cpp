@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionOriginGroupFailoverStatusCodes::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes() : 
-    m_itemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionOriginGroupFailoverStatusCodes::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes(JsonView jsonValue)
-  : AwsCloudFrontDistributionOriginGroupFailoverStatusCodes()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& AwsCloudFrontDistributi
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Quantity"))
   {
     m_quantity = jsonValue.GetInteger("Quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   return *this;
 }
 

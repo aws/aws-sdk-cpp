@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeSpotFleetRequestHistoryRequest::DescribeSpotFleetRequestHistoryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSpotFleetRequestHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

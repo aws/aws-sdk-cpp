@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ActiveDirectoryConfig::ActiveDirectoryConfig() : 
-    m_domainNameHasBeenSet(false),
-    m_serviceAccountSecretArnHasBeenSet(false)
-{
-}
-
 ActiveDirectoryConfig::ActiveDirectoryConfig(JsonView jsonValue)
-  : ActiveDirectoryConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActiveDirectoryConfig& ActiveDirectoryConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccountSecretArn"))
   {
     m_serviceAccountSecretArn = jsonValue.GetString("ServiceAccountSecretArn");
-
     m_serviceAccountSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -13,13 +13,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCrlRequest::UpdateCrlRequest() : 
-    m_crlDataHasBeenSet(false),
-    m_crlIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCrlRequest::SerializePayload() const
 {
   JsonValue payload;

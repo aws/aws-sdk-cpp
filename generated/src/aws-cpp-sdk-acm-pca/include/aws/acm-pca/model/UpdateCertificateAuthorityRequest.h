@@ -23,7 +23,7 @@ namespace Model
   class UpdateCertificateAuthorityRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API UpdateCertificateAuthorityRequest();
+    AWS_ACMPCA_API UpdateCertificateAuthorityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    UpdateCertificateAuthorityRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,24 +88,22 @@ namespace Model
      * in your CRL configuration if you might need to change the S3 bucket name in the
      * future.</p> 
      */
-    inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
+    inline const RevocationConfiguration& GetRevocationConfiguration() const { return m_revocationConfiguration; }
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
-    inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
-    inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
-    inline UpdateCertificateAuthorityRequest& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
-    inline UpdateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
+    template<typename RevocationConfigurationT = RevocationConfiguration>
+    void SetRevocationConfiguration(RevocationConfigurationT&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::forward<RevocationConfigurationT>(value); }
+    template<typename RevocationConfigurationT = RevocationConfiguration>
+    UpdateCertificateAuthorityRequest& WithRevocationConfiguration(RevocationConfigurationT&& value) { SetRevocationConfiguration(std::forward<RevocationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of your private CA.</p>
      */
-    inline const CertificateAuthorityStatus& GetStatus() const{ return m_status; }
+    inline CertificateAuthorityStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CertificateAuthorityStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CertificateAuthorityStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateCertificateAuthorityRequest& WithStatus(const CertificateAuthorityStatus& value) { SetStatus(value); return *this;}
-    inline UpdateCertificateAuthorityRequest& WithStatus(CertificateAuthorityStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CertificateAuthorityStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateCertificateAuthorityRequest& WithStatus(CertificateAuthorityStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -117,7 +113,7 @@ namespace Model
     RevocationConfiguration m_revocationConfiguration;
     bool m_revocationConfigurationHasBeenSet = false;
 
-    CertificateAuthorityStatus m_status;
+    CertificateAuthorityStatus m_status{CertificateAuthorityStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

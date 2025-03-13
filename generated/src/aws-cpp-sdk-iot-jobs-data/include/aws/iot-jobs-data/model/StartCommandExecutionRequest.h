@@ -24,7 +24,7 @@ namespace Model
   class StartCommandExecutionRequest : public IoTJobsDataPlaneRequest
   {
   public:
-    AWS_IOTJOBSDATAPLANE_API StartCommandExecutionRequest();
+    AWS_IOTJOBSDATAPLANE_API StartCommandExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the device where the command execution is
      * occurring.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline StartCommandExecutionRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline StartCommandExecutionRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline StartCommandExecutionRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    StartCommandExecutionRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <code>arn:aws:iot:&lt;region&gt;:&lt;accountid&gt;:command/&lt;commandName&gt;</code>
      * </p>
      */
-    inline const Aws::String& GetCommandArn() const{ return m_commandArn; }
+    inline const Aws::String& GetCommandArn() const { return m_commandArn; }
     inline bool CommandArnHasBeenSet() const { return m_commandArnHasBeenSet; }
-    inline void SetCommandArn(const Aws::String& value) { m_commandArnHasBeenSet = true; m_commandArn = value; }
-    inline void SetCommandArn(Aws::String&& value) { m_commandArnHasBeenSet = true; m_commandArn = std::move(value); }
-    inline void SetCommandArn(const char* value) { m_commandArnHasBeenSet = true; m_commandArn.assign(value); }
-    inline StartCommandExecutionRequest& WithCommandArn(const Aws::String& value) { SetCommandArn(value); return *this;}
-    inline StartCommandExecutionRequest& WithCommandArn(Aws::String&& value) { SetCommandArn(std::move(value)); return *this;}
-    inline StartCommandExecutionRequest& WithCommandArn(const char* value) { SetCommandArn(value); return *this;}
+    template<typename CommandArnT = Aws::String>
+    void SetCommandArn(CommandArnT&& value) { m_commandArnHasBeenSet = true; m_commandArn = std::forward<CommandArnT>(value); }
+    template<typename CommandArnT = Aws::String>
+    StartCommandExecutionRequest& WithCommandArn(CommandArnT&& value) { SetCommandArn(std::forward<CommandArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,18 +68,16 @@ namespace Model
      * <code>StartCommandExecution</code> API when performing the command on a
      * device.</p>
      */
-    inline const Aws::Map<Aws::String, CommandParameterValue>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, CommandParameterValue>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, CommandParameterValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, CommandParameterValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline StartCommandExecutionRequest& WithParameters(const Aws::Map<Aws::String, CommandParameterValue>& value) { SetParameters(value); return *this;}
-    inline StartCommandExecutionRequest& WithParameters(Aws::Map<Aws::String, CommandParameterValue>&& value) { SetParameters(std::move(value)); return *this;}
-    inline StartCommandExecutionRequest& AddParameters(const Aws::String& key, const CommandParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline StartCommandExecutionRequest& AddParameters(Aws::String&& key, const CommandParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline StartCommandExecutionRequest& AddParameters(const Aws::String& key, CommandParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline StartCommandExecutionRequest& AddParameters(Aws::String&& key, CommandParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartCommandExecutionRequest& AddParameters(const char* key, CommandParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline StartCommandExecutionRequest& AddParameters(const char* key, const CommandParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, CommandParameterValue>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, CommandParameterValue>>
+    StartCommandExecutionRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = CommandParameterValue>
+    StartCommandExecutionRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -93,7 +87,7 @@ namespace Model
      * the command execution status is not set to another terminal state before the
      * timer expires, it will automatically update to <code>TIMED_OUT</code>.</p>
      */
-    inline long long GetExecutionTimeoutSeconds() const{ return m_executionTimeoutSeconds; }
+    inline long long GetExecutionTimeoutSeconds() const { return m_executionTimeoutSeconds; }
     inline bool ExecutionTimeoutSecondsHasBeenSet() const { return m_executionTimeoutSecondsHasBeenSet; }
     inline void SetExecutionTimeoutSeconds(long long value) { m_executionTimeoutSecondsHasBeenSet = true; m_executionTimeoutSeconds = value; }
     inline StartCommandExecutionRequest& WithExecutionTimeoutSeconds(long long value) { SetExecutionTimeoutSeconds(value); return *this;}
@@ -108,14 +102,12 @@ namespace Model
      * 409 conflict occurs. If you omit this value, Amazon Web Services SDKs will
      * automatically generate a unique client request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartCommandExecutionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartCommandExecutionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartCommandExecutionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartCommandExecutionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -128,7 +120,7 @@ namespace Model
     Aws::Map<Aws::String, CommandParameterValue> m_parameters;
     bool m_parametersHasBeenSet = false;
 
-    long long m_executionTimeoutSeconds;
+    long long m_executionTimeoutSeconds{0};
     bool m_executionTimeoutSecondsHasBeenSet = false;
 
     Aws::String m_clientToken;

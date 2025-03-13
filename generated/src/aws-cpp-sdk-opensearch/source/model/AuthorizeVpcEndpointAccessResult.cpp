@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AuthorizeVpcEndpointAccessResult::AuthorizeVpcEndpointAccessResult()
-{
-}
-
 AuthorizeVpcEndpointAccessResult::AuthorizeVpcEndpointAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AuthorizeVpcEndpointAccessResult& AuthorizeVpcEndpointAccessResult::operator =(c
   if(jsonValue.ValueExists("AuthorizedPrincipal"))
   {
     m_authorizedPrincipal = jsonValue.GetObject("AuthorizedPrincipal");
-
+    m_authorizedPrincipalHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,17 +18,7 @@ namespace XRay
 namespace Model
 {
 
-EncryptionConfig::EncryptionConfig() : 
-    m_keyIdHasBeenSet(false),
-    m_status(EncryptionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-  : EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EncryptionStatusMapper::GetEncryptionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

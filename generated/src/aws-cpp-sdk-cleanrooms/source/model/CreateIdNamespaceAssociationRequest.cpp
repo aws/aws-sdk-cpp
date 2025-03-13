@@ -12,16 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdNamespaceAssociationRequest::CreateIdNamespaceAssociationRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_inputReferenceConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idMappingConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdNamespaceAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

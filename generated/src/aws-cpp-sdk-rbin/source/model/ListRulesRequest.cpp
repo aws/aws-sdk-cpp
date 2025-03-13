@@ -12,19 +12,6 @@ using namespace Aws::RecycleBin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRulesRequest::ListRulesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_lockState(LockState::NOT_SET),
-    m_lockStateHasBeenSet(false),
-    m_excludeResourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String ListRulesRequest::SerializePayload() const
 {
   JsonValue payload;

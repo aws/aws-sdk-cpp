@@ -32,7 +32,7 @@ namespace Model
   class DocumentExtractionGranularity
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DocumentExtractionGranularity();
+    AWS_BEDROCKDATAAUTOMATION_API DocumentExtractionGranularity() = default;
     AWS_BEDROCKDATAAUTOMATION_API DocumentExtractionGranularity(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API DocumentExtractionGranularity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,13 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<DocumentExtractionGranularityType>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<DocumentExtractionGranularityType>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<DocumentExtractionGranularityType>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<DocumentExtractionGranularityType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline DocumentExtractionGranularity& WithTypes(const Aws::Vector<DocumentExtractionGranularityType>& value) { SetTypes(value); return *this;}
-    inline DocumentExtractionGranularity& WithTypes(Aws::Vector<DocumentExtractionGranularityType>&& value) { SetTypes(std::move(value)); return *this;}
-    inline DocumentExtractionGranularity& AddTypes(const DocumentExtractionGranularityType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline DocumentExtractionGranularity& AddTypes(DocumentExtractionGranularityType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    template<typename TypesT = Aws::Vector<DocumentExtractionGranularityType>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<DocumentExtractionGranularityType>>
+    DocumentExtractionGranularity& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    inline DocumentExtractionGranularity& AddTypes(DocumentExtractionGranularityType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
   private:
 

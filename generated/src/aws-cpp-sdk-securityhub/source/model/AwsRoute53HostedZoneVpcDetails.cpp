@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRoute53HostedZoneVpcDetails::AwsRoute53HostedZoneVpcDetails() : 
-    m_idHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 AwsRoute53HostedZoneVpcDetails::AwsRoute53HostedZoneVpcDetails(JsonView jsonValue)
-  : AwsRoute53HostedZoneVpcDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRoute53HostedZoneVpcDetails& AwsRoute53HostedZoneVpcDetails::operator =(JsonV
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

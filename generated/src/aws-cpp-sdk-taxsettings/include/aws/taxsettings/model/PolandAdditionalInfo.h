@@ -32,7 +32,7 @@ namespace Model
   class PolandAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API PolandAdditionalInfo();
+    AWS_TAXSETTINGS_API PolandAdditionalInfo() = default;
     AWS_TAXSETTINGS_API PolandAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API PolandAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The individual tax registration number (NIP). Individual NIP is valid for
      * other taxes excluding VAT purposes. </p>
      */
-    inline const Aws::String& GetIndividualRegistrationNumber() const{ return m_individualRegistrationNumber; }
+    inline const Aws::String& GetIndividualRegistrationNumber() const { return m_individualRegistrationNumber; }
     inline bool IndividualRegistrationNumberHasBeenSet() const { return m_individualRegistrationNumberHasBeenSet; }
-    inline void SetIndividualRegistrationNumber(const Aws::String& value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber = value; }
-    inline void SetIndividualRegistrationNumber(Aws::String&& value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber = std::move(value); }
-    inline void SetIndividualRegistrationNumber(const char* value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber.assign(value); }
-    inline PolandAdditionalInfo& WithIndividualRegistrationNumber(const Aws::String& value) { SetIndividualRegistrationNumber(value); return *this;}
-    inline PolandAdditionalInfo& WithIndividualRegistrationNumber(Aws::String&& value) { SetIndividualRegistrationNumber(std::move(value)); return *this;}
-    inline PolandAdditionalInfo& WithIndividualRegistrationNumber(const char* value) { SetIndividualRegistrationNumber(value); return *this;}
+    template<typename IndividualRegistrationNumberT = Aws::String>
+    void SetIndividualRegistrationNumber(IndividualRegistrationNumberT&& value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber = std::forward<IndividualRegistrationNumberT>(value); }
+    template<typename IndividualRegistrationNumberT = Aws::String>
+    PolandAdditionalInfo& WithIndividualRegistrationNumber(IndividualRegistrationNumberT&& value) { SetIndividualRegistrationNumber(std::forward<IndividualRegistrationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p> True if your business is a member of a VAT group with a NIP active for VAT
      * purposes. Otherwise, this is false. </p>
      */
-    inline bool GetIsGroupVatEnabled() const{ return m_isGroupVatEnabled; }
+    inline bool GetIsGroupVatEnabled() const { return m_isGroupVatEnabled; }
     inline bool IsGroupVatEnabledHasBeenSet() const { return m_isGroupVatEnabledHasBeenSet; }
     inline void SetIsGroupVatEnabled(bool value) { m_isGroupVatEnabledHasBeenSet = true; m_isGroupVatEnabled = value; }
     inline PolandAdditionalInfo& WithIsGroupVatEnabled(bool value) { SetIsGroupVatEnabled(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_individualRegistrationNumber;
     bool m_individualRegistrationNumberHasBeenSet = false;
 
-    bool m_isGroupVatEnabled;
+    bool m_isGroupVatEnabled{false};
     bool m_isGroupVatEnabledHasBeenSet = false;
   };
 

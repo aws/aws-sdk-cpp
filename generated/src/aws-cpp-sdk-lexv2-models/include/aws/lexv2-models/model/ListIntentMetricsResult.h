@@ -29,7 +29,7 @@ namespace Model
   class ListIntentMetricsResult
   {
   public:
-    AWS_LEXMODELSV2_API ListIntentMetricsResult();
+    AWS_LEXMODELSV2_API ListIntentMetricsResult() = default;
     AWS_LEXMODELSV2_API ListIntentMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListIntentMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The identifier for the bot for which you retrieved intent metrics.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListIntentMetricsResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListIntentMetricsResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListIntentMetricsResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListIntentMetricsResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The results for the intent metrics.</p>
      */
-    inline const Aws::Vector<AnalyticsIntentResult>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<AnalyticsIntentResult>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<AnalyticsIntentResult>&& value) { m_results = std::move(value); }
-    inline ListIntentMetricsResult& WithResults(const Aws::Vector<AnalyticsIntentResult>& value) { SetResults(value); return *this;}
-    inline ListIntentMetricsResult& WithResults(Aws::Vector<AnalyticsIntentResult>&& value) { SetResults(std::move(value)); return *this;}
-    inline ListIntentMetricsResult& AddResults(const AnalyticsIntentResult& value) { m_results.push_back(value); return *this; }
-    inline ListIntentMetricsResult& AddResults(AnalyticsIntentResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalyticsIntentResult>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<AnalyticsIntentResult>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<AnalyticsIntentResult>>
+    ListIntentMetricsResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = AnalyticsIntentResult>
+    ListIntentMetricsResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,34 +67,34 @@ namespace Model
      * of results, call the ListIntentMetrics operation until the nextToken returned in
      * the response is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIntentMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIntentMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIntentMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIntentMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIntentMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIntentMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIntentMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIntentMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::Vector<AnalyticsIntentResult> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

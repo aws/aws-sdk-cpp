@@ -29,7 +29,7 @@ namespace Model
   class DescribeCustomKeyStoresResult
   {
   public:
-    AWS_KMS_API DescribeCustomKeyStoresResult();
+    AWS_KMS_API DescribeCustomKeyStoresResult() = default;
     AWS_KMS_API DescribeCustomKeyStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API DescribeCustomKeyStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Contains metadata about each custom key store.</p>
      */
-    inline const Aws::Vector<CustomKeyStoresListEntry>& GetCustomKeyStores() const{ return m_customKeyStores; }
-    inline void SetCustomKeyStores(const Aws::Vector<CustomKeyStoresListEntry>& value) { m_customKeyStores = value; }
-    inline void SetCustomKeyStores(Aws::Vector<CustomKeyStoresListEntry>&& value) { m_customKeyStores = std::move(value); }
-    inline DescribeCustomKeyStoresResult& WithCustomKeyStores(const Aws::Vector<CustomKeyStoresListEntry>& value) { SetCustomKeyStores(value); return *this;}
-    inline DescribeCustomKeyStoresResult& WithCustomKeyStores(Aws::Vector<CustomKeyStoresListEntry>&& value) { SetCustomKeyStores(std::move(value)); return *this;}
-    inline DescribeCustomKeyStoresResult& AddCustomKeyStores(const CustomKeyStoresListEntry& value) { m_customKeyStores.push_back(value); return *this; }
-    inline DescribeCustomKeyStoresResult& AddCustomKeyStores(CustomKeyStoresListEntry&& value) { m_customKeyStores.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomKeyStoresListEntry>& GetCustomKeyStores() const { return m_customKeyStores; }
+    template<typename CustomKeyStoresT = Aws::Vector<CustomKeyStoresListEntry>>
+    void SetCustomKeyStores(CustomKeyStoresT&& value) { m_customKeyStoresHasBeenSet = true; m_customKeyStores = std::forward<CustomKeyStoresT>(value); }
+    template<typename CustomKeyStoresT = Aws::Vector<CustomKeyStoresListEntry>>
+    DescribeCustomKeyStoresResult& WithCustomKeyStores(CustomKeyStoresT&& value) { SetCustomKeyStores(std::forward<CustomKeyStoresT>(value)); return *this;}
+    template<typename CustomKeyStoresT = CustomKeyStoresListEntry>
+    DescribeCustomKeyStoresResult& AddCustomKeyStores(CustomKeyStoresT&& value) { m_customKeyStoresHasBeenSet = true; m_customKeyStores.emplace_back(std::forward<CustomKeyStoresT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,13 +52,11 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline DescribeCustomKeyStoresResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline DescribeCustomKeyStoresResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline DescribeCustomKeyStoresResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    DescribeCustomKeyStoresResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,30 +66,32 @@ namespace Model
      * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline bool GetTruncated() const{ return m_truncated; }
-    inline void SetTruncated(bool value) { m_truncated = value; }
+    inline bool GetTruncated() const { return m_truncated; }
+    inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
     inline DescribeCustomKeyStoresResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCustomKeyStoresResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCustomKeyStoresResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCustomKeyStoresResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCustomKeyStoresResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CustomKeyStoresListEntry> m_customKeyStores;
+    bool m_customKeyStoresHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
-    bool m_truncated;
+    bool m_truncated{false};
+    bool m_truncatedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

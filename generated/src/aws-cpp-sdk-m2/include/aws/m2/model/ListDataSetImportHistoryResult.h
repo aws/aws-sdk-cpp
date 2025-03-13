@@ -29,7 +29,7 @@ namespace Model
   class ListDataSetImportHistoryResult
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API ListDataSetImportHistoryResult();
+    AWS_MAINFRAMEMODERNIZATION_API ListDataSetImportHistoryResult() = default;
     AWS_MAINFRAMEMODERNIZATION_API ListDataSetImportHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAINFRAMEMODERNIZATION_API ListDataSetImportHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The data set import tasks.</p>
      */
-    inline const Aws::Vector<DataSetImportTask>& GetDataSetImportTasks() const{ return m_dataSetImportTasks; }
-    inline void SetDataSetImportTasks(const Aws::Vector<DataSetImportTask>& value) { m_dataSetImportTasks = value; }
-    inline void SetDataSetImportTasks(Aws::Vector<DataSetImportTask>&& value) { m_dataSetImportTasks = std::move(value); }
-    inline ListDataSetImportHistoryResult& WithDataSetImportTasks(const Aws::Vector<DataSetImportTask>& value) { SetDataSetImportTasks(value); return *this;}
-    inline ListDataSetImportHistoryResult& WithDataSetImportTasks(Aws::Vector<DataSetImportTask>&& value) { SetDataSetImportTasks(std::move(value)); return *this;}
-    inline ListDataSetImportHistoryResult& AddDataSetImportTasks(const DataSetImportTask& value) { m_dataSetImportTasks.push_back(value); return *this; }
-    inline ListDataSetImportHistoryResult& AddDataSetImportTasks(DataSetImportTask&& value) { m_dataSetImportTasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataSetImportTask>& GetDataSetImportTasks() const { return m_dataSetImportTasks; }
+    template<typename DataSetImportTasksT = Aws::Vector<DataSetImportTask>>
+    void SetDataSetImportTasks(DataSetImportTasksT&& value) { m_dataSetImportTasksHasBeenSet = true; m_dataSetImportTasks = std::forward<DataSetImportTasksT>(value); }
+    template<typename DataSetImportTasksT = Aws::Vector<DataSetImportTask>>
+    ListDataSetImportHistoryResult& WithDataSetImportTasks(DataSetImportTasksT&& value) { SetDataSetImportTasks(std::forward<DataSetImportTasksT>(value)); return *this;}
+    template<typename DataSetImportTasksT = DataSetImportTask>
+    ListDataSetImportHistoryResult& AddDataSetImportTasks(DataSetImportTasksT&& value) { m_dataSetImportTasksHasBeenSet = true; m_dataSetImportTasks.emplace_back(std::forward<DataSetImportTasksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more items to return, this contains a token that is passed to a
      * subsequent call to this operation to retrieve the next set of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDataSetImportHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDataSetImportHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDataSetImportHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDataSetImportHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDataSetImportHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDataSetImportHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDataSetImportHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDataSetImportHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataSetImportTask> m_dataSetImportTasks;
+    bool m_dataSetImportTasksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

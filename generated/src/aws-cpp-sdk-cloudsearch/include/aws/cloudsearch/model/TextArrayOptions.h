@@ -34,7 +34,7 @@ namespace Model
   class TextArrayOptions
   {
   public:
-    AWS_CLOUDSEARCH_API TextArrayOptions();
+    AWS_CLOUDSEARCH_API TextArrayOptions() = default;
     AWS_CLOUDSEARCH_API TextArrayOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API TextArrayOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,35 +46,31 @@ namespace Model
     /**
      * A value to use for the field if the field isn't specified for a document.
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline TextArrayOptions& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline TextArrayOptions& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline TextArrayOptions& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    TextArrayOptions& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of source fields to map to the field. </p>
      */
-    inline const Aws::String& GetSourceFields() const{ return m_sourceFields; }
+    inline const Aws::String& GetSourceFields() const { return m_sourceFields; }
     inline bool SourceFieldsHasBeenSet() const { return m_sourceFieldsHasBeenSet; }
-    inline void SetSourceFields(const Aws::String& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = value; }
-    inline void SetSourceFields(Aws::String&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::move(value); }
-    inline void SetSourceFields(const char* value) { m_sourceFieldsHasBeenSet = true; m_sourceFields.assign(value); }
-    inline TextArrayOptions& WithSourceFields(const Aws::String& value) { SetSourceFields(value); return *this;}
-    inline TextArrayOptions& WithSourceFields(Aws::String&& value) { SetSourceFields(std::move(value)); return *this;}
-    inline TextArrayOptions& WithSourceFields(const char* value) { SetSourceFields(value); return *this;}
+    template<typename SourceFieldsT = Aws::String>
+    void SetSourceFields(SourceFieldsT&& value) { m_sourceFieldsHasBeenSet = true; m_sourceFields = std::forward<SourceFieldsT>(value); }
+    template<typename SourceFieldsT = Aws::String>
+    TextArrayOptions& WithSourceFields(SourceFieldsT&& value) { SetSourceFields(std::forward<SourceFieldsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
-    inline bool GetReturnEnabled() const{ return m_returnEnabled; }
+    inline bool GetReturnEnabled() const { return m_returnEnabled; }
     inline bool ReturnEnabledHasBeenSet() const { return m_returnEnabledHasBeenSet; }
     inline void SetReturnEnabled(bool value) { m_returnEnabledHasBeenSet = true; m_returnEnabled = value; }
     inline TextArrayOptions& WithReturnEnabled(bool value) { SetReturnEnabled(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     /**
      * <p>Whether highlights can be returned for the field.</p>
      */
-    inline bool GetHighlightEnabled() const{ return m_highlightEnabled; }
+    inline bool GetHighlightEnabled() const { return m_highlightEnabled; }
     inline bool HighlightEnabledHasBeenSet() const { return m_highlightEnabledHasBeenSet; }
     inline void SetHighlightEnabled(bool value) { m_highlightEnabledHasBeenSet = true; m_highlightEnabled = value; }
     inline TextArrayOptions& WithHighlightEnabled(bool value) { SetHighlightEnabled(value); return *this;}
@@ -94,14 +90,12 @@ namespace Model
     /**
      * <p>The name of an analysis scheme for a <code>text-array</code> field.</p>
      */
-    inline const Aws::String& GetAnalysisScheme() const{ return m_analysisScheme; }
+    inline const Aws::String& GetAnalysisScheme() const { return m_analysisScheme; }
     inline bool AnalysisSchemeHasBeenSet() const { return m_analysisSchemeHasBeenSet; }
-    inline void SetAnalysisScheme(const Aws::String& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = value; }
-    inline void SetAnalysisScheme(Aws::String&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::move(value); }
-    inline void SetAnalysisScheme(const char* value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme.assign(value); }
-    inline TextArrayOptions& WithAnalysisScheme(const Aws::String& value) { SetAnalysisScheme(value); return *this;}
-    inline TextArrayOptions& WithAnalysisScheme(Aws::String&& value) { SetAnalysisScheme(std::move(value)); return *this;}
-    inline TextArrayOptions& WithAnalysisScheme(const char* value) { SetAnalysisScheme(value); return *this;}
+    template<typename AnalysisSchemeT = Aws::String>
+    void SetAnalysisScheme(AnalysisSchemeT&& value) { m_analysisSchemeHasBeenSet = true; m_analysisScheme = std::forward<AnalysisSchemeT>(value); }
+    template<typename AnalysisSchemeT = Aws::String>
+    TextArrayOptions& WithAnalysisScheme(AnalysisSchemeT&& value) { SetAnalysisScheme(std::forward<AnalysisSchemeT>(value)); return *this;}
     ///@}
   private:
 
@@ -111,10 +105,10 @@ namespace Model
     Aws::String m_sourceFields;
     bool m_sourceFieldsHasBeenSet = false;
 
-    bool m_returnEnabled;
+    bool m_returnEnabled{false};
     bool m_returnEnabledHasBeenSet = false;
 
-    bool m_highlightEnabled;
+    bool m_highlightEnabled{false};
     bool m_highlightEnabledHasBeenSet = false;
 
     Aws::String m_analysisScheme;

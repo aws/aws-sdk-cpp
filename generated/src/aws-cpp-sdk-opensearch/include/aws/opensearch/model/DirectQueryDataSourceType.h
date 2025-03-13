@@ -34,7 +34,7 @@ namespace Model
   class DirectQueryDataSourceType
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DirectQueryDataSourceType();
+    AWS_OPENSEARCHSERVICE_API DirectQueryDataSourceType() = default;
     AWS_OPENSEARCHSERVICE_API DirectQueryDataSourceType(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API DirectQueryDataSourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p> Specifies CloudWatch Logs as a type of data source for direct queries. </p>
      */
-    inline const CloudWatchDirectQueryDataSource& GetCloudWatchLog() const{ return m_cloudWatchLog; }
+    inline const CloudWatchDirectQueryDataSource& GetCloudWatchLog() const { return m_cloudWatchLog; }
     inline bool CloudWatchLogHasBeenSet() const { return m_cloudWatchLogHasBeenSet; }
-    inline void SetCloudWatchLog(const CloudWatchDirectQueryDataSource& value) { m_cloudWatchLogHasBeenSet = true; m_cloudWatchLog = value; }
-    inline void SetCloudWatchLog(CloudWatchDirectQueryDataSource&& value) { m_cloudWatchLogHasBeenSet = true; m_cloudWatchLog = std::move(value); }
-    inline DirectQueryDataSourceType& WithCloudWatchLog(const CloudWatchDirectQueryDataSource& value) { SetCloudWatchLog(value); return *this;}
-    inline DirectQueryDataSourceType& WithCloudWatchLog(CloudWatchDirectQueryDataSource&& value) { SetCloudWatchLog(std::move(value)); return *this;}
+    template<typename CloudWatchLogT = CloudWatchDirectQueryDataSource>
+    void SetCloudWatchLog(CloudWatchLogT&& value) { m_cloudWatchLogHasBeenSet = true; m_cloudWatchLog = std::forward<CloudWatchLogT>(value); }
+    template<typename CloudWatchLogT = CloudWatchDirectQueryDataSource>
+    DirectQueryDataSourceType& WithCloudWatchLog(CloudWatchLogT&& value) { SetCloudWatchLog(std::forward<CloudWatchLogT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies Security Lake as a type of data source for direct queries. </p>
      */
-    inline const SecurityLakeDirectQueryDataSource& GetSecurityLake() const{ return m_securityLake; }
+    inline const SecurityLakeDirectQueryDataSource& GetSecurityLake() const { return m_securityLake; }
     inline bool SecurityLakeHasBeenSet() const { return m_securityLakeHasBeenSet; }
-    inline void SetSecurityLake(const SecurityLakeDirectQueryDataSource& value) { m_securityLakeHasBeenSet = true; m_securityLake = value; }
-    inline void SetSecurityLake(SecurityLakeDirectQueryDataSource&& value) { m_securityLakeHasBeenSet = true; m_securityLake = std::move(value); }
-    inline DirectQueryDataSourceType& WithSecurityLake(const SecurityLakeDirectQueryDataSource& value) { SetSecurityLake(value); return *this;}
-    inline DirectQueryDataSourceType& WithSecurityLake(SecurityLakeDirectQueryDataSource&& value) { SetSecurityLake(std::move(value)); return *this;}
+    template<typename SecurityLakeT = SecurityLakeDirectQueryDataSource>
+    void SetSecurityLake(SecurityLakeT&& value) { m_securityLakeHasBeenSet = true; m_securityLake = std::forward<SecurityLakeT>(value); }
+    template<typename SecurityLakeT = SecurityLakeDirectQueryDataSource>
+    DirectQueryDataSourceType& WithSecurityLake(SecurityLakeT&& value) { SetSecurityLake(std::forward<SecurityLakeT>(value)); return *this;}
     ///@}
   private:
 

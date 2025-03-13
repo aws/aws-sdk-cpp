@@ -33,7 +33,7 @@ namespace Model
   class DataSourceDetails
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DataSourceDetails();
+    AWS_OPENSEARCHSERVICE_API DataSourceDetails() = default;
     AWS_OPENSEARCHSERVICE_API DataSourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API DataSourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,46 @@ namespace Model
     /**
      * <p>The type of data source.</p>
      */
-    inline const DataSourceType& GetDataSourceType() const{ return m_dataSourceType; }
+    inline const DataSourceType& GetDataSourceType() const { return m_dataSourceType; }
     inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
-    inline void SetDataSourceType(const DataSourceType& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
-    inline void SetDataSourceType(DataSourceType&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::move(value); }
-    inline DataSourceDetails& WithDataSourceType(const DataSourceType& value) { SetDataSourceType(value); return *this;}
-    inline DataSourceDetails& WithDataSourceType(DataSourceType&& value) { SetDataSourceType(std::move(value)); return *this;}
+    template<typename DataSourceTypeT = DataSourceType>
+    void SetDataSourceType(DataSourceTypeT&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::forward<DataSourceTypeT>(value); }
+    template<typename DataSourceTypeT = DataSourceType>
+    DataSourceDetails& WithDataSourceType(DataSourceTypeT&& value) { SetDataSourceType(std::forward<DataSourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DataSourceDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DataSourceDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DataSourceDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DataSourceDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the data source.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DataSourceDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DataSourceDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DataSourceDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DataSourceDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the data source.</p>
      */
-    inline const DataSourceStatus& GetStatus() const{ return m_status; }
+    inline DataSourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataSourceDetails& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
-    inline DataSourceDetails& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataSourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataSourceDetails& WithStatus(DataSourceStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -101,7 +95,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    DataSourceStatus m_status;
+    DataSourceStatus m_status{DataSourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

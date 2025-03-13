@@ -20,17 +20,7 @@ namespace RDS
 namespace Model
 {
 
-AccountQuota::AccountQuota() : 
-    m_accountQuotaNameHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AccountQuota::AccountQuota(const XmlNode& xmlNode)
-  : AccountQuota()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ AccountQuota& AccountQuota::operator =(const XmlNode& xmlNode)
     {
       m_accountQuotaName = Aws::Utils::Xml::DecodeEscapedXmlText(accountQuotaNameNode.GetText());
       m_accountQuotaNameHasBeenSet = true;
+       m_accountQuotaNameHasBeenSet = true;
     }
     XmlNode usedNode = resultNode.FirstChild("Used");
     if(!usedNode.IsNull())
     {
       m_used = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(usedNode.GetText()).c_str()).c_str());
       m_usedHasBeenSet = true;
+       m_usedHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
       m_max = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

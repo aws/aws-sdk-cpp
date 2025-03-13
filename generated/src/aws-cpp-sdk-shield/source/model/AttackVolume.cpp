@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-AttackVolume::AttackVolume() : 
-    m_bitsPerSecondHasBeenSet(false),
-    m_packetsPerSecondHasBeenSet(false),
-    m_requestsPerSecondHasBeenSet(false)
-{
-}
-
 AttackVolume::AttackVolume(JsonView jsonValue)
-  : AttackVolume()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AttackVolume& AttackVolume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BitsPerSecond"))
   {
     m_bitsPerSecond = jsonValue.GetObject("BitsPerSecond");
-
     m_bitsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PacketsPerSecond"))
   {
     m_packetsPerSecond = jsonValue.GetObject("PacketsPerSecond");
-
     m_packetsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestsPerSecond"))
   {
     m_requestsPerSecond = jsonValue.GetObject("RequestsPerSecond");
-
     m_requestsPerSecondHasBeenSet = true;
   }
-
   return *this;
 }
 

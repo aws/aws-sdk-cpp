@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_encryptionOption(EncryptionOption::NOT_SET),
-    m_encryptionOptionHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EncryptionOption"))
   {
     m_encryptionOption = EncryptionOptionMapper::GetEncryptionOptionForName(jsonValue.GetString("EncryptionOption"));
-
     m_encryptionOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKey"))
   {
     m_kmsKey = jsonValue.GetString("KmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

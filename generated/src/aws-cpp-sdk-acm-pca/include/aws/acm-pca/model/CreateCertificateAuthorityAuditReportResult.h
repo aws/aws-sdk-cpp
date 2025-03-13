@@ -27,7 +27,7 @@ namespace Model
   class CreateCertificateAuthorityAuditReportResult
   {
   public:
-    AWS_ACMPCA_API CreateCertificateAuthorityAuditReportResult();
+    AWS_ACMPCA_API CreateCertificateAuthorityAuditReportResult() = default;
     AWS_ACMPCA_API CreateCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACMPCA_API CreateCertificateAuthorityAuditReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>An alphanumeric string that contains a report identifier.</p>
      */
-    inline const Aws::String& GetAuditReportId() const{ return m_auditReportId; }
-    inline void SetAuditReportId(const Aws::String& value) { m_auditReportId = value; }
-    inline void SetAuditReportId(Aws::String&& value) { m_auditReportId = std::move(value); }
-    inline void SetAuditReportId(const char* value) { m_auditReportId.assign(value); }
-    inline CreateCertificateAuthorityAuditReportResult& WithAuditReportId(const Aws::String& value) { SetAuditReportId(value); return *this;}
-    inline CreateCertificateAuthorityAuditReportResult& WithAuditReportId(Aws::String&& value) { SetAuditReportId(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityAuditReportResult& WithAuditReportId(const char* value) { SetAuditReportId(value); return *this;}
+    inline const Aws::String& GetAuditReportId() const { return m_auditReportId; }
+    template<typename AuditReportIdT = Aws::String>
+    void SetAuditReportId(AuditReportIdT&& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = std::forward<AuditReportIdT>(value); }
+    template<typename AuditReportIdT = Aws::String>
+    CreateCertificateAuthorityAuditReportResult& WithAuditReportId(AuditReportIdT&& value) { SetAuditReportId(std::forward<AuditReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +48,31 @@ namespace Model
      * <p>The <b>key</b> that uniquely identifies the report file in your S3
      * bucket.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
-    inline void SetS3Key(const Aws::String& value) { m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3Key.assign(value); }
-    inline CreateCertificateAuthorityAuditReportResult& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline CreateCertificateAuthorityAuditReportResult& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityAuditReportResult& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    CreateCertificateAuthorityAuditReportResult& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCertificateAuthorityAuditReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCertificateAuthorityAuditReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCertificateAuthorityAuditReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCertificateAuthorityAuditReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_auditReportId;
+    bool m_auditReportIdHasBeenSet = false;
 
     Aws::String m_s3Key;
+    bool m_s3KeyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

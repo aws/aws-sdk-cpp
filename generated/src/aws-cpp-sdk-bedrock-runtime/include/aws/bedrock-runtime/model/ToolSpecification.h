@@ -32,7 +32,7 @@ namespace Model
   class ToolSpecification
   {
   public:
-    AWS_BEDROCKRUNTIME_API ToolSpecification();
+    AWS_BEDROCKRUNTIME_API ToolSpecification() = default;
     AWS_BEDROCKRUNTIME_API ToolSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ToolSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The name for the tool.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ToolSpecification& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ToolSpecification& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ToolSpecification& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ToolSpecification& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the tool.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ToolSpecification& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ToolSpecification& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ToolSpecification& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ToolSpecification& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input schema for the tool in JSON format.</p>
      */
-    inline const ToolInputSchema& GetInputSchema() const{ return m_inputSchema; }
+    inline const ToolInputSchema& GetInputSchema() const { return m_inputSchema; }
     inline bool InputSchemaHasBeenSet() const { return m_inputSchemaHasBeenSet; }
-    inline void SetInputSchema(const ToolInputSchema& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = value; }
-    inline void SetInputSchema(ToolInputSchema&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::move(value); }
-    inline ToolSpecification& WithInputSchema(const ToolInputSchema& value) { SetInputSchema(value); return *this;}
-    inline ToolSpecification& WithInputSchema(ToolInputSchema&& value) { SetInputSchema(std::move(value)); return *this;}
+    template<typename InputSchemaT = ToolInputSchema>
+    void SetInputSchema(InputSchemaT&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::forward<InputSchemaT>(value); }
+    template<typename InputSchemaT = ToolInputSchema>
+    ToolSpecification& WithInputSchema(InputSchemaT&& value) { SetInputSchema(std::forward<InputSchemaT>(value)); return *this;}
     ///@}
   private:
 

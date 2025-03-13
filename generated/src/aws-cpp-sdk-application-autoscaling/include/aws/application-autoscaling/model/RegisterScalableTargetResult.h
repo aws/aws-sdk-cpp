@@ -27,7 +27,7 @@ namespace Model
   class RegisterScalableTargetResult
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult();
+    AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult() = default;
     AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the scalable target.</p>
      */
-    inline const Aws::String& GetScalableTargetARN() const{ return m_scalableTargetARN; }
-    inline void SetScalableTargetARN(const Aws::String& value) { m_scalableTargetARN = value; }
-    inline void SetScalableTargetARN(Aws::String&& value) { m_scalableTargetARN = std::move(value); }
-    inline void SetScalableTargetARN(const char* value) { m_scalableTargetARN.assign(value); }
-    inline RegisterScalableTargetResult& WithScalableTargetARN(const Aws::String& value) { SetScalableTargetARN(value); return *this;}
-    inline RegisterScalableTargetResult& WithScalableTargetARN(Aws::String&& value) { SetScalableTargetARN(std::move(value)); return *this;}
-    inline RegisterScalableTargetResult& WithScalableTargetARN(const char* value) { SetScalableTargetARN(value); return *this;}
+    inline const Aws::String& GetScalableTargetARN() const { return m_scalableTargetARN; }
+    template<typename ScalableTargetARNT = Aws::String>
+    void SetScalableTargetARN(ScalableTargetARNT&& value) { m_scalableTargetARNHasBeenSet = true; m_scalableTargetARN = std::forward<ScalableTargetARNT>(value); }
+    template<typename ScalableTargetARNT = Aws::String>
+    RegisterScalableTargetResult& WithScalableTargetARN(ScalableTargetARNT&& value) { SetScalableTargetARN(std::forward<ScalableTargetARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterScalableTargetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterScalableTargetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterScalableTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterScalableTargetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scalableTargetARN;
+    bool m_scalableTargetARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

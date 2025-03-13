@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelStepMetadata::ModelStepMetadata() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 ModelStepMetadata::ModelStepMetadata(JsonView jsonValue)
-  : ModelStepMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelStepMetadata& ModelStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

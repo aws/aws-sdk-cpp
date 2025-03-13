@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_orchestratorHasBeenSet(false),
-    m_nodeRecovery(ClusterNodeRecovery::NOT_SET),
-    m_nodeRecoveryHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

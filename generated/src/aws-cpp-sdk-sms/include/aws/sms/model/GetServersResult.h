@@ -31,7 +31,7 @@ namespace Model
   class GetServersResult
   {
   public:
-    AWS_SMS_API GetServersResult();
+    AWS_SMS_API GetServersResult() = default;
     AWS_SMS_API GetServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API GetServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,35 +40,33 @@ namespace Model
     /**
      * <p>The time when the server was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOn = std::move(value); }
-    inline GetServersResult& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline GetServersResult& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    GetServersResult& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the server catalog.</p>
      */
-    inline const ServerCatalogStatus& GetServerCatalogStatus() const{ return m_serverCatalogStatus; }
-    inline void SetServerCatalogStatus(const ServerCatalogStatus& value) { m_serverCatalogStatus = value; }
-    inline void SetServerCatalogStatus(ServerCatalogStatus&& value) { m_serverCatalogStatus = std::move(value); }
-    inline GetServersResult& WithServerCatalogStatus(const ServerCatalogStatus& value) { SetServerCatalogStatus(value); return *this;}
-    inline GetServersResult& WithServerCatalogStatus(ServerCatalogStatus&& value) { SetServerCatalogStatus(std::move(value)); return *this;}
+    inline ServerCatalogStatus GetServerCatalogStatus() const { return m_serverCatalogStatus; }
+    inline void SetServerCatalogStatus(ServerCatalogStatus value) { m_serverCatalogStatusHasBeenSet = true; m_serverCatalogStatus = value; }
+    inline GetServersResult& WithServerCatalogStatus(ServerCatalogStatus value) { SetServerCatalogStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the servers.</p>
      */
-    inline const Aws::Vector<Server>& GetServerList() const{ return m_serverList; }
-    inline void SetServerList(const Aws::Vector<Server>& value) { m_serverList = value; }
-    inline void SetServerList(Aws::Vector<Server>&& value) { m_serverList = std::move(value); }
-    inline GetServersResult& WithServerList(const Aws::Vector<Server>& value) { SetServerList(value); return *this;}
-    inline GetServersResult& WithServerList(Aws::Vector<Server>&& value) { SetServerList(std::move(value)); return *this;}
-    inline GetServersResult& AddServerList(const Server& value) { m_serverList.push_back(value); return *this; }
-    inline GetServersResult& AddServerList(Server&& value) { m_serverList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Server>& GetServerList() const { return m_serverList; }
+    template<typename ServerListT = Aws::Vector<Server>>
+    void SetServerList(ServerListT&& value) { m_serverListHasBeenSet = true; m_serverList = std::forward<ServerListT>(value); }
+    template<typename ServerListT = Aws::Vector<Server>>
+    GetServersResult& WithServerList(ServerListT&& value) { SetServerList(std::forward<ServerListT>(value)); return *this;}
+    template<typename ServerListT = Server>
+    GetServersResult& AddServerList(ServerListT&& value) { m_serverListHasBeenSet = true; m_serverList.emplace_back(std::forward<ServerListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,36 +74,37 @@ namespace Model
      * <p>The token required to retrieve the next set of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetServersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetServersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetServersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetServersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
+    bool m_lastModifiedOnHasBeenSet = false;
 
-    ServerCatalogStatus m_serverCatalogStatus;
+    ServerCatalogStatus m_serverCatalogStatus{ServerCatalogStatus::NOT_SET};
+    bool m_serverCatalogStatusHasBeenSet = false;
 
     Aws::Vector<Server> m_serverList;
+    bool m_serverListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,7 +44,7 @@ namespace Model
   class AttributeValue
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API AttributeValue();
+    AWS_VERIFIEDPERMISSIONS_API AttributeValue() = default;
     AWS_VERIFIEDPERMISSIONS_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,7 +56,7 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#boolean">Boolean</a>
      * type.</p> <p>Example: <code>{"boolean": true}</code> </p>
      */
-    inline bool GetBoolean() const{ return m_boolean; }
+    inline bool GetBoolean() const { return m_boolean; }
     inline bool BooleanHasBeenSet() const { return m_booleanHasBeenSet; }
     inline void SetBoolean(bool value) { m_booleanHasBeenSet = true; m_boolean = value; }
     inline AttributeValue& WithBoolean(bool value) { SetBoolean(value); return *this;}
@@ -69,12 +69,12 @@ namespace Model
      * <p>Example: <code>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType":
      * "&lt;entity type&gt;"}</code> </p>
      */
-    inline const EntityIdentifier& GetEntityIdentifier() const{ return m_entityIdentifier; }
+    inline const EntityIdentifier& GetEntityIdentifier() const { return m_entityIdentifier; }
     inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
-    inline void SetEntityIdentifier(const EntityIdentifier& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = value; }
-    inline void SetEntityIdentifier(EntityIdentifier&& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = std::move(value); }
-    inline AttributeValue& WithEntityIdentifier(const EntityIdentifier& value) { SetEntityIdentifier(value); return *this;}
-    inline AttributeValue& WithEntityIdentifier(EntityIdentifier&& value) { SetEntityIdentifier(std::move(value)); return *this;}
+    template<typename EntityIdentifierT = EntityIdentifier>
+    void SetEntityIdentifier(EntityIdentifierT&& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = std::forward<EntityIdentifierT>(value); }
+    template<typename EntityIdentifierT = EntityIdentifier>
+    AttributeValue& WithEntityIdentifier(EntityIdentifierT&& value) { SetEntityIdentifier(std::forward<EntityIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +83,7 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#long">Long</a>
      * type.</p> <p>Example: <code>{"long": 0}</code> </p>
      */
-    inline long long GetLong() const{ return m_long; }
+    inline long long GetLong() const { return m_long; }
     inline bool LongHasBeenSet() const { return m_longHasBeenSet; }
     inline void SetLong(long long value) { m_longHasBeenSet = true; m_long = value; }
     inline AttributeValue& WithLong(long long value) { SetLong(value); return *this;}
@@ -95,14 +95,12 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
-    inline const Aws::String& GetString() const{ return m_string; }
+    inline const Aws::String& GetString() const { return m_string; }
     inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
-    inline void SetString(const Aws::String& value) { m_stringHasBeenSet = true; m_string = value; }
-    inline void SetString(Aws::String&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
-    inline void SetString(const char* value) { m_stringHasBeenSet = true; m_string.assign(value); }
-    inline AttributeValue& WithString(const Aws::String& value) { SetString(value); return *this;}
-    inline AttributeValue& WithString(Aws::String&& value) { SetString(std::move(value)); return *this;}
-    inline AttributeValue& WithString(const char* value) { SetString(value); return *this;}
+    template<typename StringT = Aws::String>
+    void SetString(StringT&& value) { m_stringHasBeenSet = true; m_string = std::forward<StringT>(value); }
+    template<typename StringT = Aws::String>
+    AttributeValue& WithString(StringT&& value) { SetString(std::forward<StringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +109,14 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#set">Set</a>
      * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
-    inline const Aws::Vector<AttributeValue>& GetSet() const{ return m_set; }
+    inline const Aws::Vector<AttributeValue>& GetSet() const { return m_set; }
     inline bool SetHasBeenSet() const { return m_setHasBeenSet; }
-    inline void SetSet(const Aws::Vector<AttributeValue>& value) { m_setHasBeenSet = true; m_set = value; }
-    inline void SetSet(Aws::Vector<AttributeValue>&& value) { m_setHasBeenSet = true; m_set = std::move(value); }
-    inline AttributeValue& WithSet(const Aws::Vector<AttributeValue>& value) { SetSet(value); return *this;}
-    inline AttributeValue& WithSet(Aws::Vector<AttributeValue>&& value) { SetSet(std::move(value)); return *this;}
-    inline AttributeValue& AddSet(const AttributeValue& value) { m_setHasBeenSet = true; m_set.push_back(value); return *this; }
-    inline AttributeValue& AddSet(AttributeValue&& value) { m_setHasBeenSet = true; m_set.push_back(std::move(value)); return *this; }
+    template<typename SetT = Aws::Vector<AttributeValue>>
+    void SetSet(SetT&& value) { m_setHasBeenSet = true; m_set = std::forward<SetT>(value); }
+    template<typename SetT = Aws::Vector<AttributeValue>>
+    AttributeValue& WithSet(SetT&& value) { SetSet(std::forward<SetT>(value)); return *this;}
+    template<typename SetT = AttributeValue>
+    AttributeValue& AddSet(SetT&& value) { m_setHasBeenSet = true; m_set.emplace_back(std::forward<SetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,18 +125,16 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetRecord() const{ return m_record; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetRecord() const { return m_record; }
     inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
-    inline void SetRecord(const Aws::Map<Aws::String, AttributeValue>& value) { m_recordHasBeenSet = true; m_record = value; }
-    inline void SetRecord(Aws::Map<Aws::String, AttributeValue>&& value) { m_recordHasBeenSet = true; m_record = std::move(value); }
-    inline AttributeValue& WithRecord(const Aws::Map<Aws::String, AttributeValue>& value) { SetRecord(value); return *this;}
-    inline AttributeValue& WithRecord(Aws::Map<Aws::String, AttributeValue>&& value) { SetRecord(std::move(value)); return *this;}
-    inline AttributeValue& AddRecord(const Aws::String& key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
-    inline AttributeValue& AddRecord(Aws::String&& key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), value); return *this; }
-    inline AttributeValue& AddRecord(const Aws::String& key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
-    inline AttributeValue& AddRecord(Aws::String&& key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), std::move(value)); return *this; }
-    inline AttributeValue& AddRecord(const char* key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
-    inline AttributeValue& AddRecord(const char* key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
+    template<typename RecordT = Aws::Map<Aws::String, AttributeValue>>
+    void SetRecord(RecordT&& value) { m_recordHasBeenSet = true; m_record = std::forward<RecordT>(value); }
+    template<typename RecordT = Aws::Map<Aws::String, AttributeValue>>
+    AttributeValue& WithRecord(RecordT&& value) { SetRecord(std::forward<RecordT>(value)); return *this;}
+    template<typename RecordKeyT = Aws::String, typename RecordValueT = AttributeValue>
+    AttributeValue& AddRecord(RecordKeyT&& key, RecordValueT&& value) {
+      m_recordHasBeenSet = true; m_record.emplace(std::forward<RecordKeyT>(key), std::forward<RecordValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -147,14 +143,12 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-ipaddr">ipaddr</a>
      * type.</p> <p>Example: <code>{"ip": "192.168.1.100"}</code> </p>
      */
-    inline const Aws::String& GetIpaddr() const{ return m_ipaddr; }
+    inline const Aws::String& GetIpaddr() const { return m_ipaddr; }
     inline bool IpaddrHasBeenSet() const { return m_ipaddrHasBeenSet; }
-    inline void SetIpaddr(const Aws::String& value) { m_ipaddrHasBeenSet = true; m_ipaddr = value; }
-    inline void SetIpaddr(Aws::String&& value) { m_ipaddrHasBeenSet = true; m_ipaddr = std::move(value); }
-    inline void SetIpaddr(const char* value) { m_ipaddrHasBeenSet = true; m_ipaddr.assign(value); }
-    inline AttributeValue& WithIpaddr(const Aws::String& value) { SetIpaddr(value); return *this;}
-    inline AttributeValue& WithIpaddr(Aws::String&& value) { SetIpaddr(std::move(value)); return *this;}
-    inline AttributeValue& WithIpaddr(const char* value) { SetIpaddr(value); return *this;}
+    template<typename IpaddrT = Aws::String>
+    void SetIpaddr(IpaddrT&& value) { m_ipaddrHasBeenSet = true; m_ipaddr = std::forward<IpaddrT>(value); }
+    template<typename IpaddrT = Aws::String>
+    AttributeValue& WithIpaddr(IpaddrT&& value) { SetIpaddr(std::forward<IpaddrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,24 +157,22 @@ namespace Model
      * href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-decimal">decimal</a>
      * type.</p> <p>Example: <code>{"decimal": "1.1"}</code> </p>
      */
-    inline const Aws::String& GetDecimal() const{ return m_decimal; }
+    inline const Aws::String& GetDecimal() const { return m_decimal; }
     inline bool DecimalHasBeenSet() const { return m_decimalHasBeenSet; }
-    inline void SetDecimal(const Aws::String& value) { m_decimalHasBeenSet = true; m_decimal = value; }
-    inline void SetDecimal(Aws::String&& value) { m_decimalHasBeenSet = true; m_decimal = std::move(value); }
-    inline void SetDecimal(const char* value) { m_decimalHasBeenSet = true; m_decimal.assign(value); }
-    inline AttributeValue& WithDecimal(const Aws::String& value) { SetDecimal(value); return *this;}
-    inline AttributeValue& WithDecimal(Aws::String&& value) { SetDecimal(std::move(value)); return *this;}
-    inline AttributeValue& WithDecimal(const char* value) { SetDecimal(value); return *this;}
+    template<typename DecimalT = Aws::String>
+    void SetDecimal(DecimalT&& value) { m_decimalHasBeenSet = true; m_decimal = std::forward<DecimalT>(value); }
+    template<typename DecimalT = Aws::String>
+    AttributeValue& WithDecimal(DecimalT&& value) { SetDecimal(std::forward<DecimalT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_boolean;
+    bool m_boolean{false};
     bool m_booleanHasBeenSet = false;
 
     EntityIdentifier m_entityIdentifier;
     bool m_entityIdentifierHasBeenSet = false;
 
-    long long m_long;
+    long long m_long{0};
     bool m_longHasBeenSet = false;
 
     Aws::String m_string;

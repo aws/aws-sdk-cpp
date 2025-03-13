@@ -33,7 +33,7 @@ namespace Model
   class CreateVpnGatewayResponse
   {
   public:
-    AWS_EC2_API CreateVpnGatewayResponse();
+    AWS_EC2_API CreateVpnGatewayResponse() = default;
     AWS_EC2_API CreateVpnGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateVpnGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,26 +42,28 @@ namespace Model
     /**
      * <p>Information about the virtual private gateway.</p>
      */
-    inline const VpnGateway& GetVpnGateway() const{ return m_vpnGateway; }
-    inline void SetVpnGateway(const VpnGateway& value) { m_vpnGateway = value; }
-    inline void SetVpnGateway(VpnGateway&& value) { m_vpnGateway = std::move(value); }
-    inline CreateVpnGatewayResponse& WithVpnGateway(const VpnGateway& value) { SetVpnGateway(value); return *this;}
-    inline CreateVpnGatewayResponse& WithVpnGateway(VpnGateway&& value) { SetVpnGateway(std::move(value)); return *this;}
+    inline const VpnGateway& GetVpnGateway() const { return m_vpnGateway; }
+    template<typename VpnGatewayT = VpnGateway>
+    void SetVpnGateway(VpnGatewayT&& value) { m_vpnGatewayHasBeenSet = true; m_vpnGateway = std::forward<VpnGatewayT>(value); }
+    template<typename VpnGatewayT = VpnGateway>
+    CreateVpnGatewayResponse& WithVpnGateway(VpnGatewayT&& value) { SetVpnGateway(std::forward<VpnGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateVpnGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateVpnGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateVpnGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpnGateway m_vpnGateway;
+    bool m_vpnGatewayHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

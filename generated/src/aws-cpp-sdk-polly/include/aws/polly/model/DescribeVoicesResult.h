@@ -29,7 +29,7 @@ namespace Model
   class DescribeVoicesResult
   {
   public:
-    AWS_POLLY_API DescribeVoicesResult();
+    AWS_POLLY_API DescribeVoicesResult() = default;
     AWS_POLLY_API DescribeVoicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_POLLY_API DescribeVoicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of voices with their properties.</p>
      */
-    inline const Aws::Vector<Voice>& GetVoices() const{ return m_voices; }
-    inline void SetVoices(const Aws::Vector<Voice>& value) { m_voices = value; }
-    inline void SetVoices(Aws::Vector<Voice>&& value) { m_voices = std::move(value); }
-    inline DescribeVoicesResult& WithVoices(const Aws::Vector<Voice>& value) { SetVoices(value); return *this;}
-    inline DescribeVoicesResult& WithVoices(Aws::Vector<Voice>&& value) { SetVoices(std::move(value)); return *this;}
-    inline DescribeVoicesResult& AddVoices(const Voice& value) { m_voices.push_back(value); return *this; }
-    inline DescribeVoicesResult& AddVoices(Voice&& value) { m_voices.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Voice>& GetVoices() const { return m_voices; }
+    template<typename VoicesT = Aws::Vector<Voice>>
+    void SetVoices(VoicesT&& value) { m_voicesHasBeenSet = true; m_voices = std::forward<VoicesT>(value); }
+    template<typename VoicesT = Aws::Vector<Voice>>
+    DescribeVoicesResult& WithVoices(VoicesT&& value) { SetVoices(std::forward<VoicesT>(value)); return *this;}
+    template<typename VoicesT = Voice>
+    DescribeVoicesResult& AddVoices(VoicesT&& value) { m_voicesHasBeenSet = true; m_voices.emplace_back(std::forward<VoicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * voices. <code>NextToken</code> is returned only if the response is
      * truncated.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVoicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVoicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVoicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVoicesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVoicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVoicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVoicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVoicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Voice> m_voices;
+    bool m_voicesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

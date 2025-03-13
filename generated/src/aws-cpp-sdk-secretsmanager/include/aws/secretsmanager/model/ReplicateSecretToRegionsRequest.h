@@ -23,7 +23,7 @@ namespace Model
   class ReplicateSecretToRegionsRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsRequest();
+    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p>The ARN or name of the secret to replicate.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline ReplicateSecretToRegionsRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline ReplicateSecretToRegionsRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline ReplicateSecretToRegionsRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    ReplicateSecretToRegionsRequest& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of Regions in which to replicate the secret.</p>
      */
-    inline const Aws::Vector<ReplicaRegionType>& GetAddReplicaRegions() const{ return m_addReplicaRegions; }
+    inline const Aws::Vector<ReplicaRegionType>& GetAddReplicaRegions() const { return m_addReplicaRegions; }
     inline bool AddReplicaRegionsHasBeenSet() const { return m_addReplicaRegionsHasBeenSet; }
-    inline void SetAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = value; }
-    inline void SetAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = std::move(value); }
-    inline ReplicateSecretToRegionsRequest& WithAddReplicaRegions(const Aws::Vector<ReplicaRegionType>& value) { SetAddReplicaRegions(value); return *this;}
-    inline ReplicateSecretToRegionsRequest& WithAddReplicaRegions(Aws::Vector<ReplicaRegionType>&& value) { SetAddReplicaRegions(std::move(value)); return *this;}
-    inline ReplicateSecretToRegionsRequest& AddAddReplicaRegions(const ReplicaRegionType& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(value); return *this; }
-    inline ReplicateSecretToRegionsRequest& AddAddReplicaRegions(ReplicaRegionType&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.push_back(std::move(value)); return *this; }
+    template<typename AddReplicaRegionsT = Aws::Vector<ReplicaRegionType>>
+    void SetAddReplicaRegions(AddReplicaRegionsT&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions = std::forward<AddReplicaRegionsT>(value); }
+    template<typename AddReplicaRegionsT = Aws::Vector<ReplicaRegionType>>
+    ReplicateSecretToRegionsRequest& WithAddReplicaRegions(AddReplicaRegionsT&& value) { SetAddReplicaRegions(std::forward<AddReplicaRegionsT>(value)); return *this;}
+    template<typename AddReplicaRegionsT = ReplicaRegionType>
+    ReplicateSecretToRegionsRequest& AddAddReplicaRegions(AddReplicaRegionsT&& value) { m_addReplicaRegionsHasBeenSet = true; m_addReplicaRegions.emplace_back(std::forward<AddReplicaRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * <p>Specifies whether to overwrite a secret with the same name in the destination
      * Region. By default, secrets aren't overwritten.</p>
      */
-    inline bool GetForceOverwriteReplicaSecret() const{ return m_forceOverwriteReplicaSecret; }
+    inline bool GetForceOverwriteReplicaSecret() const { return m_forceOverwriteReplicaSecret; }
     inline bool ForceOverwriteReplicaSecretHasBeenSet() const { return m_forceOverwriteReplicaSecretHasBeenSet; }
     inline void SetForceOverwriteReplicaSecret(bool value) { m_forceOverwriteReplicaSecretHasBeenSet = true; m_forceOverwriteReplicaSecret = value; }
     inline ReplicateSecretToRegionsRequest& WithForceOverwriteReplicaSecret(bool value) { SetForceOverwriteReplicaSecret(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     Aws::Vector<ReplicaRegionType> m_addReplicaRegions;
     bool m_addReplicaRegionsHasBeenSet = false;
 
-    bool m_forceOverwriteReplicaSecret;
+    bool m_forceOverwriteReplicaSecret{false};
     bool m_forceOverwriteReplicaSecretHasBeenSet = false;
   };
 

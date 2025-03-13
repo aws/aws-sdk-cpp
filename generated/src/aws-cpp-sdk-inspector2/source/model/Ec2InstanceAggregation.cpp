@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Ec2InstanceAggregation::Ec2InstanceAggregation() : 
-    m_amisHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_operatingSystemsHasBeenSet(false),
-    m_sortBy(Ec2InstanceSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Ec2InstanceAggregation::Ec2InstanceAggregation(JsonView jsonValue)
-  : Ec2InstanceAggregation()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
     }
     m_amisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceIds"))
   {
     Aws::Utils::Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("instanceIds");
@@ -57,7 +43,6 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
     }
     m_instanceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTags"))
   {
     Aws::Utils::Array<JsonView> instanceTagsJsonList = jsonValue.GetArray("instanceTags");
@@ -67,7 +52,6 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
     }
     m_instanceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystems"))
   {
     Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
@@ -77,21 +61,16 @@ Ec2InstanceAggregation& Ec2InstanceAggregation::operator =(JsonView jsonValue)
     }
     m_operatingSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = Ec2InstanceSortByMapper::GetEc2InstanceSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

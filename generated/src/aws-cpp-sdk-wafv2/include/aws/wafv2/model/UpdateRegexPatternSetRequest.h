@@ -24,7 +24,7 @@ namespace Model
   class UpdateRegexPatternSetRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API UpdateRegexPatternSetRequest();
+    AWS_WAFV2_API UpdateRegexPatternSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateRegexPatternSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateRegexPatternSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateRegexPatternSetRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateRegexPatternSetRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline UpdateRegexPatternSetRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline UpdateRegexPatternSetRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline UpdateRegexPatternSetRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -74,42 +70,38 @@ namespace Model
      * create and list commands. You provide it to operations like update and
      * delete.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateRegexPatternSetRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateRegexPatternSetRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateRegexPatternSetRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateRegexPatternSetRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the set that helps with identification. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateRegexPatternSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateRegexPatternSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateRegexPatternSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateRegexPatternSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<Regex>& GetRegularExpressionList() const{ return m_regularExpressionList; }
+    inline const Aws::Vector<Regex>& GetRegularExpressionList() const { return m_regularExpressionList; }
     inline bool RegularExpressionListHasBeenSet() const { return m_regularExpressionListHasBeenSet; }
-    inline void SetRegularExpressionList(const Aws::Vector<Regex>& value) { m_regularExpressionListHasBeenSet = true; m_regularExpressionList = value; }
-    inline void SetRegularExpressionList(Aws::Vector<Regex>&& value) { m_regularExpressionListHasBeenSet = true; m_regularExpressionList = std::move(value); }
-    inline UpdateRegexPatternSetRequest& WithRegularExpressionList(const Aws::Vector<Regex>& value) { SetRegularExpressionList(value); return *this;}
-    inline UpdateRegexPatternSetRequest& WithRegularExpressionList(Aws::Vector<Regex>&& value) { SetRegularExpressionList(std::move(value)); return *this;}
-    inline UpdateRegexPatternSetRequest& AddRegularExpressionList(const Regex& value) { m_regularExpressionListHasBeenSet = true; m_regularExpressionList.push_back(value); return *this; }
-    inline UpdateRegexPatternSetRequest& AddRegularExpressionList(Regex&& value) { m_regularExpressionListHasBeenSet = true; m_regularExpressionList.push_back(std::move(value)); return *this; }
+    template<typename RegularExpressionListT = Aws::Vector<Regex>>
+    void SetRegularExpressionList(RegularExpressionListT&& value) { m_regularExpressionListHasBeenSet = true; m_regularExpressionList = std::forward<RegularExpressionListT>(value); }
+    template<typename RegularExpressionListT = Aws::Vector<Regex>>
+    UpdateRegexPatternSetRequest& WithRegularExpressionList(RegularExpressionListT&& value) { SetRegularExpressionList(std::forward<RegularExpressionListT>(value)); return *this;}
+    template<typename RegularExpressionListT = Regex>
+    UpdateRegexPatternSetRequest& AddRegularExpressionList(RegularExpressionListT&& value) { m_regularExpressionListHasBeenSet = true; m_regularExpressionList.emplace_back(std::forward<RegularExpressionListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -123,21 +115,19 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
     inline bool LockTokenHasBeenSet() const { return m_lockTokenHasBeenSet; }
-    inline void SetLockToken(const Aws::String& value) { m_lockTokenHasBeenSet = true; m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockTokenHasBeenSet = true; m_lockToken.assign(value); }
-    inline UpdateRegexPatternSetRequest& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline UpdateRegexPatternSetRequest& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline UpdateRegexPatternSetRequest& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    UpdateRegexPatternSetRequest& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_id;

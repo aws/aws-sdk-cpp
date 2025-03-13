@@ -19,7 +19,7 @@ namespace Model
   class GetSMSSandboxAccountStatusRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API GetSMSSandboxAccountStatusRequest();
+    AWS_SNS_API GetSMSSandboxAccountStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

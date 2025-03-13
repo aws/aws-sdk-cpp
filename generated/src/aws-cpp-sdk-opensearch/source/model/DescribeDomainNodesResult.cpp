@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDomainNodesResult::DescribeDomainNodesResult()
-{
-}
-
 DescribeDomainNodesResult::DescribeDomainNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeDomainNodesResult& DescribeDomainNodesResult::operator =(const Aws::Amaz
     {
       m_domainNodesStatusList.push_back(domainNodesStatusListJsonList[domainNodesStatusListIndex].AsObject());
     }
+    m_domainNodesStatusListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

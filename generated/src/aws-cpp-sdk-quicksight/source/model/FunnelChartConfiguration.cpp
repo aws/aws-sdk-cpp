@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FunnelChartConfiguration::FunnelChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_valueLabelOptionsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_dataLabelOptionsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 FunnelChartConfiguration::FunnelChartConfiguration(JsonView jsonValue)
-  : FunnelChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ FunnelChartConfiguration& FunnelChartConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelOptions"))
   {
     m_categoryLabelOptions = jsonValue.GetObject("CategoryLabelOptions");
-
     m_categoryLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueLabelOptions"))
   {
     m_valueLabelOptions = jsonValue.GetObject("ValueLabelOptions");
-
     m_valueLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabelOptions"))
   {
     m_dataLabelOptions = jsonValue.GetObject("DataLabelOptions");
-
     m_dataLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class IntentSummary
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API IntentSummary();
+    AWS_LEXRUNTIMESERVICE_API IntentSummary() = default;
     AWS_LEXRUNTIMESERVICE_API IntentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the intent.</p>
      */
-    inline const Aws::String& GetIntentName() const{ return m_intentName; }
+    inline const Aws::String& GetIntentName() const { return m_intentName; }
     inline bool IntentNameHasBeenSet() const { return m_intentNameHasBeenSet; }
-    inline void SetIntentName(const Aws::String& value) { m_intentNameHasBeenSet = true; m_intentName = value; }
-    inline void SetIntentName(Aws::String&& value) { m_intentNameHasBeenSet = true; m_intentName = std::move(value); }
-    inline void SetIntentName(const char* value) { m_intentNameHasBeenSet = true; m_intentName.assign(value); }
-    inline IntentSummary& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-    inline IntentSummary& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-    inline IntentSummary& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+    template<typename IntentNameT = Aws::String>
+    void SetIntentName(IntentNameT&& value) { m_intentNameHasBeenSet = true; m_intentName = std::forward<IntentNameT>(value); }
+    template<typename IntentNameT = Aws::String>
+    IntentSummary& WithIntentName(IntentNameT&& value) { SetIntentName(std::forward<IntentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,33 +64,28 @@ namespace Model
      * <code>GetSessionRequest</code> operation to filter the intents returned by the
      * operation to those with only the specified label.</p>
      */
-    inline const Aws::String& GetCheckpointLabel() const{ return m_checkpointLabel; }
+    inline const Aws::String& GetCheckpointLabel() const { return m_checkpointLabel; }
     inline bool CheckpointLabelHasBeenSet() const { return m_checkpointLabelHasBeenSet; }
-    inline void SetCheckpointLabel(const Aws::String& value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel = value; }
-    inline void SetCheckpointLabel(Aws::String&& value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel = std::move(value); }
-    inline void SetCheckpointLabel(const char* value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel.assign(value); }
-    inline IntentSummary& WithCheckpointLabel(const Aws::String& value) { SetCheckpointLabel(value); return *this;}
-    inline IntentSummary& WithCheckpointLabel(Aws::String&& value) { SetCheckpointLabel(std::move(value)); return *this;}
-    inline IntentSummary& WithCheckpointLabel(const char* value) { SetCheckpointLabel(value); return *this;}
+    template<typename CheckpointLabelT = Aws::String>
+    void SetCheckpointLabel(CheckpointLabelT&& value) { m_checkpointLabelHasBeenSet = true; m_checkpointLabel = std::forward<CheckpointLabelT>(value); }
+    template<typename CheckpointLabelT = Aws::String>
+    IntentSummary& WithCheckpointLabel(CheckpointLabelT&& value) { SetCheckpointLabel(std::forward<CheckpointLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Map of the slots that have been gathered and their values. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSlots() const{ return m_slots; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSlots() const { return m_slots; }
     inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
-    inline void SetSlots(const Aws::Map<Aws::String, Aws::String>& value) { m_slotsHasBeenSet = true; m_slots = value; }
-    inline void SetSlots(Aws::Map<Aws::String, Aws::String>&& value) { m_slotsHasBeenSet = true; m_slots = std::move(value); }
-    inline IntentSummary& WithSlots(const Aws::Map<Aws::String, Aws::String>& value) { SetSlots(value); return *this;}
-    inline IntentSummary& WithSlots(Aws::Map<Aws::String, Aws::String>&& value) { SetSlots(std::move(value)); return *this;}
-    inline IntentSummary& AddSlots(const Aws::String& key, const Aws::String& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, value); return *this; }
-    inline IntentSummary& AddSlots(Aws::String&& key, const Aws::String& value) { m_slotsHasBeenSet = true; m_slots.emplace(std::move(key), value); return *this; }
-    inline IntentSummary& AddSlots(const Aws::String& key, Aws::String&& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, std::move(value)); return *this; }
-    inline IntentSummary& AddSlots(Aws::String&& key, Aws::String&& value) { m_slotsHasBeenSet = true; m_slots.emplace(std::move(key), std::move(value)); return *this; }
-    inline IntentSummary& AddSlots(const char* key, Aws::String&& value) { m_slotsHasBeenSet = true; m_slots.emplace(key, std::move(value)); return *this; }
-    inline IntentSummary& AddSlots(Aws::String&& key, const char* value) { m_slotsHasBeenSet = true; m_slots.emplace(std::move(key), value); return *this; }
-    inline IntentSummary& AddSlots(const char* key, const char* value) { m_slotsHasBeenSet = true; m_slots.emplace(key, value); return *this; }
+    template<typename SlotsT = Aws::Map<Aws::String, Aws::String>>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::Map<Aws::String, Aws::String>>
+    IntentSummary& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
+    template<typename SlotsKeyT = Aws::String, typename SlotsValueT = Aws::String>
+    IntentSummary& AddSlots(SlotsKeyT&& key, SlotsValueT&& value) {
+      m_slotsHasBeenSet = true; m_slots.emplace(std::forward<SlotsKeyT>(key), std::forward<SlotsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -108,12 +101,10 @@ namespace Model
      * never been prompted for confirmation; or, the user was prompted but did not
      * confirm or deny the prompt.</p> </li> </ul>
      */
-    inline const ConfirmationStatus& GetConfirmationStatus() const{ return m_confirmationStatus; }
+    inline ConfirmationStatus GetConfirmationStatus() const { return m_confirmationStatus; }
     inline bool ConfirmationStatusHasBeenSet() const { return m_confirmationStatusHasBeenSet; }
-    inline void SetConfirmationStatus(const ConfirmationStatus& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = value; }
-    inline void SetConfirmationStatus(ConfirmationStatus&& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = std::move(value); }
-    inline IntentSummary& WithConfirmationStatus(const ConfirmationStatus& value) { SetConfirmationStatus(value); return *this;}
-    inline IntentSummary& WithConfirmationStatus(ConfirmationStatus&& value) { SetConfirmationStatus(std::move(value)); return *this;}
+    inline void SetConfirmationStatus(ConfirmationStatus value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = value; }
+    inline IntentSummary& WithConfirmationStatus(ConfirmationStatus value) { SetConfirmationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +120,10 @@ namespace Model
      * <code>ElicitSlot</code> - The next action is to elicit a slot value from the
      * user.</p> </li> </ul>
      */
-    inline const DialogActionType& GetDialogActionType() const{ return m_dialogActionType; }
+    inline DialogActionType GetDialogActionType() const { return m_dialogActionType; }
     inline bool DialogActionTypeHasBeenSet() const { return m_dialogActionTypeHasBeenSet; }
-    inline void SetDialogActionType(const DialogActionType& value) { m_dialogActionTypeHasBeenSet = true; m_dialogActionType = value; }
-    inline void SetDialogActionType(DialogActionType&& value) { m_dialogActionTypeHasBeenSet = true; m_dialogActionType = std::move(value); }
-    inline IntentSummary& WithDialogActionType(const DialogActionType& value) { SetDialogActionType(value); return *this;}
-    inline IntentSummary& WithDialogActionType(DialogActionType&& value) { SetDialogActionType(std::move(value)); return *this;}
+    inline void SetDialogActionType(DialogActionType value) { m_dialogActionTypeHasBeenSet = true; m_dialogActionType = value; }
+    inline IntentSummary& WithDialogActionType(DialogActionType value) { SetDialogActionType(value); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +136,10 @@ namespace Model
      * intent is present and the intent ready to be fulfilled by the client
      * application.</p> </li> </ul>
      */
-    inline const FulfillmentState& GetFulfillmentState() const{ return m_fulfillmentState; }
+    inline FulfillmentState GetFulfillmentState() const { return m_fulfillmentState; }
     inline bool FulfillmentStateHasBeenSet() const { return m_fulfillmentStateHasBeenSet; }
-    inline void SetFulfillmentState(const FulfillmentState& value) { m_fulfillmentStateHasBeenSet = true; m_fulfillmentState = value; }
-    inline void SetFulfillmentState(FulfillmentState&& value) { m_fulfillmentStateHasBeenSet = true; m_fulfillmentState = std::move(value); }
-    inline IntentSummary& WithFulfillmentState(const FulfillmentState& value) { SetFulfillmentState(value); return *this;}
-    inline IntentSummary& WithFulfillmentState(FulfillmentState&& value) { SetFulfillmentState(std::move(value)); return *this;}
+    inline void SetFulfillmentState(FulfillmentState value) { m_fulfillmentStateHasBeenSet = true; m_fulfillmentState = value; }
+    inline IntentSummary& WithFulfillmentState(FulfillmentState value) { SetFulfillmentState(value); return *this;}
     ///@}
 
     ///@{
@@ -160,14 +147,12 @@ namespace Model
      * <p>The next slot to elicit from the user. If there is not slot to elicit, the
      * field is blank.</p>
      */
-    inline const Aws::String& GetSlotToElicit() const{ return m_slotToElicit; }
+    inline const Aws::String& GetSlotToElicit() const { return m_slotToElicit; }
     inline bool SlotToElicitHasBeenSet() const { return m_slotToElicitHasBeenSet; }
-    inline void SetSlotToElicit(const Aws::String& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = value; }
-    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = std::move(value); }
-    inline void SetSlotToElicit(const char* value) { m_slotToElicitHasBeenSet = true; m_slotToElicit.assign(value); }
-    inline IntentSummary& WithSlotToElicit(const Aws::String& value) { SetSlotToElicit(value); return *this;}
-    inline IntentSummary& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(std::move(value)); return *this;}
-    inline IntentSummary& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
+    template<typename SlotToElicitT = Aws::String>
+    void SetSlotToElicit(SlotToElicitT&& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = std::forward<SlotToElicitT>(value); }
+    template<typename SlotToElicitT = Aws::String>
+    IntentSummary& WithSlotToElicit(SlotToElicitT&& value) { SetSlotToElicit(std::forward<SlotToElicitT>(value)); return *this;}
     ///@}
   private:
 
@@ -180,13 +165,13 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_slots;
     bool m_slotsHasBeenSet = false;
 
-    ConfirmationStatus m_confirmationStatus;
+    ConfirmationStatus m_confirmationStatus{ConfirmationStatus::NOT_SET};
     bool m_confirmationStatusHasBeenSet = false;
 
-    DialogActionType m_dialogActionType;
+    DialogActionType m_dialogActionType{DialogActionType::NOT_SET};
     bool m_dialogActionTypeHasBeenSet = false;
 
-    FulfillmentState m_fulfillmentState;
+    FulfillmentState m_fulfillmentState{FulfillmentState::NOT_SET};
     bool m_fulfillmentStateHasBeenSet = false;
 
     Aws::String m_slotToElicit;

@@ -12,17 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBuildRequest::CreateBuildRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_storageLocationHasBeenSet(false),
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_serverSdkVersionHasBeenSet(false)
-{
-}
-
 Aws::String CreateBuildRequest::SerializePayload() const
 {
   JsonValue payload;

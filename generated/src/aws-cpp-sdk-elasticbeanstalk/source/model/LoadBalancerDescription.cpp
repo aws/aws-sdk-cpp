@@ -20,15 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-LoadBalancerDescription::LoadBalancerDescription() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_listenersHasBeenSet(false)
-{
-}
-
 LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode)
-  : LoadBalancerDescription()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     {
       m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
+       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode domainNode = resultNode.FirstChild("Domain");
     if(!domainNode.IsNull())
     {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
+       m_domainHasBeenSet = true;
     }
     XmlNode listenersNode = resultNode.FirstChild("Listeners");
     if(!listenersNode.IsNull())
     {
       XmlNode listenersMember = listenersNode.FirstChild("member");
+      m_listenersHasBeenSet = !listenersMember.IsNull();
       while(!listenersMember.IsNull())
       {
         m_listeners.push_back(listenersMember);
         listenersMember = listenersMember.NextNode("member");
       }
 
-      m_listenersHasBeenSet = true;
+       m_listenersHasBeenSet = true;
     }
   }
 

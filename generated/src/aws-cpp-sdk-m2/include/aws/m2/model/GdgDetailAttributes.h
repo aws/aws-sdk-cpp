@@ -36,7 +36,7 @@ namespace Model
   class GdgDetailAttributes
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes() = default;
     AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API GdgDetailAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The maximum number of generation data sets, up to 255, in a GDG.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GdgDetailAttributes& WithLimit(int value) { SetLimit(value); return *this;}
@@ -56,18 +56,16 @@ namespace Model
     /**
      * <p>The disposition of the data set in the catalog.</p>
      */
-    inline const Aws::String& GetRollDisposition() const{ return m_rollDisposition; }
+    inline const Aws::String& GetRollDisposition() const { return m_rollDisposition; }
     inline bool RollDispositionHasBeenSet() const { return m_rollDispositionHasBeenSet; }
-    inline void SetRollDisposition(const Aws::String& value) { m_rollDispositionHasBeenSet = true; m_rollDisposition = value; }
-    inline void SetRollDisposition(Aws::String&& value) { m_rollDispositionHasBeenSet = true; m_rollDisposition = std::move(value); }
-    inline void SetRollDisposition(const char* value) { m_rollDispositionHasBeenSet = true; m_rollDisposition.assign(value); }
-    inline GdgDetailAttributes& WithRollDisposition(const Aws::String& value) { SetRollDisposition(value); return *this;}
-    inline GdgDetailAttributes& WithRollDisposition(Aws::String&& value) { SetRollDisposition(std::move(value)); return *this;}
-    inline GdgDetailAttributes& WithRollDisposition(const char* value) { SetRollDisposition(value); return *this;}
+    template<typename RollDispositionT = Aws::String>
+    void SetRollDisposition(RollDispositionT&& value) { m_rollDispositionHasBeenSet = true; m_rollDisposition = std::forward<RollDispositionT>(value); }
+    template<typename RollDispositionT = Aws::String>
+    GdgDetailAttributes& WithRollDisposition(RollDispositionT&& value) { SetRollDisposition(std::forward<RollDispositionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_rollDisposition;

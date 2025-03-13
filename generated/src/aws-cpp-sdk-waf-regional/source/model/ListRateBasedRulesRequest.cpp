@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRateBasedRulesRequest::ListRateBasedRulesRequest() : 
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListRateBasedRulesRequest::SerializePayload() const
 {
   JsonValue payload;

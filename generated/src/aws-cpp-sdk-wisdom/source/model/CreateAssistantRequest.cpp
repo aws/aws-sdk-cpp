@@ -12,18 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssistantRequest::CreateAssistantRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(AssistantType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssistantRequest::SerializePayload() const
 {
   JsonValue payload;

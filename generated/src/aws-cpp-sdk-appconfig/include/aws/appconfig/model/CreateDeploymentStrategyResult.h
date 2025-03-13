@@ -29,7 +29,7 @@ namespace Model
   class CreateDeploymentStrategyResult
   {
   public:
-    AWS_APPCONFIG_API CreateDeploymentStrategyResult();
+    AWS_APPCONFIG_API CreateDeploymentStrategyResult() = default;
     AWS_APPCONFIG_API CreateDeploymentStrategyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPCONFIG_API CreateDeploymentStrategyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,47 +38,41 @@ namespace Model
     /**
      * <p>The deployment strategy ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateDeploymentStrategyResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateDeploymentStrategyResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateDeploymentStrategyResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateDeploymentStrategyResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the deployment strategy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateDeploymentStrategyResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateDeploymentStrategyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateDeploymentStrategyResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateDeploymentStrategyResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the deployment strategy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateDeploymentStrategyResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateDeploymentStrategyResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateDeploymentStrategyResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateDeploymentStrategyResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Total amount of time the deployment lasted.</p>
      */
-    inline int GetDeploymentDurationInMinutes() const{ return m_deploymentDurationInMinutes; }
-    inline void SetDeploymentDurationInMinutes(int value) { m_deploymentDurationInMinutes = value; }
+    inline int GetDeploymentDurationInMinutes() const { return m_deploymentDurationInMinutes; }
+    inline void SetDeploymentDurationInMinutes(int value) { m_deploymentDurationInMinutesHasBeenSet = true; m_deploymentDurationInMinutes = value; }
     inline CreateDeploymentStrategyResult& WithDeploymentDurationInMinutes(int value) { SetDeploymentDurationInMinutes(value); return *this;}
     ///@}
 
@@ -86,11 +80,9 @@ namespace Model
     /**
      * <p>The algorithm used to define how percentage grew over time.</p>
      */
-    inline const GrowthType& GetGrowthType() const{ return m_growthType; }
-    inline void SetGrowthType(const GrowthType& value) { m_growthType = value; }
-    inline void SetGrowthType(GrowthType&& value) { m_growthType = std::move(value); }
-    inline CreateDeploymentStrategyResult& WithGrowthType(const GrowthType& value) { SetGrowthType(value); return *this;}
-    inline CreateDeploymentStrategyResult& WithGrowthType(GrowthType&& value) { SetGrowthType(std::move(value)); return *this;}
+    inline GrowthType GetGrowthType() const { return m_growthType; }
+    inline void SetGrowthType(GrowthType value) { m_growthTypeHasBeenSet = true; m_growthType = value; }
+    inline CreateDeploymentStrategyResult& WithGrowthType(GrowthType value) { SetGrowthType(value); return *this;}
     ///@}
 
     ///@{
@@ -98,8 +90,8 @@ namespace Model
      * <p>The percentage of targets that received a deployed configuration during each
      * interval.</p>
      */
-    inline double GetGrowthFactor() const{ return m_growthFactor; }
-    inline void SetGrowthFactor(double value) { m_growthFactor = value; }
+    inline double GetGrowthFactor() const { return m_growthFactor; }
+    inline void SetGrowthFactor(double value) { m_growthFactorHasBeenSet = true; m_growthFactor = value; }
     inline CreateDeploymentStrategyResult& WithGrowthFactor(double value) { SetGrowthFactor(value); return *this;}
     ///@}
 
@@ -108,8 +100,8 @@ namespace Model
      * <p>The amount of time that AppConfig monitored for alarms before considering the
      * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
-    inline int GetFinalBakeTimeInMinutes() const{ return m_finalBakeTimeInMinutes; }
-    inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutes = value; }
+    inline int GetFinalBakeTimeInMinutes() const { return m_finalBakeTimeInMinutes; }
+    inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutesHasBeenSet = true; m_finalBakeTimeInMinutes = value; }
     inline CreateDeploymentStrategyResult& WithFinalBakeTimeInMinutes(int value) { SetFinalBakeTimeInMinutes(value); return *this;}
     ///@}
 
@@ -117,42 +109,47 @@ namespace Model
     /**
      * <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
      */
-    inline const ReplicateTo& GetReplicateTo() const{ return m_replicateTo; }
-    inline void SetReplicateTo(const ReplicateTo& value) { m_replicateTo = value; }
-    inline void SetReplicateTo(ReplicateTo&& value) { m_replicateTo = std::move(value); }
-    inline CreateDeploymentStrategyResult& WithReplicateTo(const ReplicateTo& value) { SetReplicateTo(value); return *this;}
-    inline CreateDeploymentStrategyResult& WithReplicateTo(ReplicateTo&& value) { SetReplicateTo(std::move(value)); return *this;}
+    inline ReplicateTo GetReplicateTo() const { return m_replicateTo; }
+    inline void SetReplicateTo(ReplicateTo value) { m_replicateToHasBeenSet = true; m_replicateTo = value; }
+    inline CreateDeploymentStrategyResult& WithReplicateTo(ReplicateTo value) { SetReplicateTo(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeploymentStrategyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeploymentStrategyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeploymentStrategyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeploymentStrategyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    int m_deploymentDurationInMinutes;
+    int m_deploymentDurationInMinutes{0};
+    bool m_deploymentDurationInMinutesHasBeenSet = false;
 
-    GrowthType m_growthType;
+    GrowthType m_growthType{GrowthType::NOT_SET};
+    bool m_growthTypeHasBeenSet = false;
 
-    double m_growthFactor;
+    double m_growthFactor{0.0};
+    bool m_growthFactorHasBeenSet = false;
 
-    int m_finalBakeTimeInMinutes;
+    int m_finalBakeTimeInMinutes{0};
+    bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
-    ReplicateTo m_replicateTo;
+    ReplicateTo m_replicateTo{ReplicateTo::NOT_SET};
+    bool m_replicateToHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

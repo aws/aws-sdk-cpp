@@ -18,21 +18,7 @@ namespace KMS
 namespace Model
 {
 
-GrantListEntry::GrantListEntry() : 
-    m_keyIdHasBeenSet(false),
-    m_grantIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false),
-    m_issuingAccountHasBeenSet(false),
-    m_operationsHasBeenSet(false),
-    m_constraintsHasBeenSet(false)
-{
-}
-
 GrantListEntry::GrantListEntry(JsonView jsonValue)
-  : GrantListEntry()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ GrantListEntry& GrantListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantId"))
   {
     m_grantId = jsonValue.GetString("GrantId");
-
     m_grantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GranteePrincipal"))
   {
     m_granteePrincipal = jsonValue.GetString("GranteePrincipal");
-
     m_granteePrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetiringPrincipal"))
   {
     m_retiringPrincipal = jsonValue.GetString("RetiringPrincipal");
-
     m_retiringPrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssuingAccount"))
   {
     m_issuingAccount = jsonValue.GetString("IssuingAccount");
-
     m_issuingAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operations"))
   {
     Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("Operations");
@@ -97,14 +69,11 @@ GrantListEntry& GrantListEntry::operator =(JsonView jsonValue)
     }
     m_operationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");
-
     m_constraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

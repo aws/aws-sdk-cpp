@@ -35,7 +35,7 @@ namespace Model
   class DefaultFilterDropDownControlOptions
   {
   public:
-    AWS_QUICKSIGHT_API DefaultFilterDropDownControlOptions();
+    AWS_QUICKSIGHT_API DefaultFilterDropDownControlOptions() = default;
     AWS_QUICKSIGHT_API DefaultFilterDropDownControlOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultFilterDropDownControlOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The display options of a control.</p>
      */
-    inline const DropDownControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const DropDownControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const DropDownControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(DropDownControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline DefaultFilterDropDownControlOptions& WithDisplayOptions(const DropDownControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline DefaultFilterDropDownControlOptions& WithDisplayOptions(DropDownControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = DropDownControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = DropDownControlDisplayOptions>
+    DefaultFilterDropDownControlOptions& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,24 +61,22 @@ namespace Model
      * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
      * menu.</p> </li> </ul>
      */
-    inline const SheetControlListType& GetType() const{ return m_type; }
+    inline SheetControlListType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SheetControlListType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SheetControlListType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DefaultFilterDropDownControlOptions& WithType(const SheetControlListType& value) { SetType(value); return *this;}
-    inline DefaultFilterDropDownControlOptions& WithType(SheetControlListType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SheetControlListType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DefaultFilterDropDownControlOptions& WithType(SheetControlListType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of selectable values that are used in a control.</p>
      */
-    inline const FilterSelectableValues& GetSelectableValues() const{ return m_selectableValues; }
+    inline const FilterSelectableValues& GetSelectableValues() const { return m_selectableValues; }
     inline bool SelectableValuesHasBeenSet() const { return m_selectableValuesHasBeenSet; }
-    inline void SetSelectableValues(const FilterSelectableValues& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = value; }
-    inline void SetSelectableValues(FilterSelectableValues&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::move(value); }
-    inline DefaultFilterDropDownControlOptions& WithSelectableValues(const FilterSelectableValues& value) { SetSelectableValues(value); return *this;}
-    inline DefaultFilterDropDownControlOptions& WithSelectableValues(FilterSelectableValues&& value) { SetSelectableValues(std::move(value)); return *this;}
+    template<typename SelectableValuesT = FilterSelectableValues>
+    void SetSelectableValues(SelectableValuesT&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::forward<SelectableValuesT>(value); }
+    template<typename SelectableValuesT = FilterSelectableValues>
+    DefaultFilterDropDownControlOptions& WithSelectableValues(SelectableValuesT&& value) { SetSelectableValues(std::forward<SelectableValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,25 +84,23 @@ namespace Model
      * <p>The visibility configuration of the Apply button on a
      * <code>FilterDropDownControl</code>.</p>
      */
-    inline const CommitMode& GetCommitMode() const{ return m_commitMode; }
+    inline CommitMode GetCommitMode() const { return m_commitMode; }
     inline bool CommitModeHasBeenSet() const { return m_commitModeHasBeenSet; }
-    inline void SetCommitMode(const CommitMode& value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
-    inline void SetCommitMode(CommitMode&& value) { m_commitModeHasBeenSet = true; m_commitMode = std::move(value); }
-    inline DefaultFilterDropDownControlOptions& WithCommitMode(const CommitMode& value) { SetCommitMode(value); return *this;}
-    inline DefaultFilterDropDownControlOptions& WithCommitMode(CommitMode&& value) { SetCommitMode(std::move(value)); return *this;}
+    inline void SetCommitMode(CommitMode value) { m_commitModeHasBeenSet = true; m_commitMode = value; }
+    inline DefaultFilterDropDownControlOptions& WithCommitMode(CommitMode value) { SetCommitMode(value); return *this;}
     ///@}
   private:
 
     DropDownControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    SheetControlListType m_type;
+    SheetControlListType m_type{SheetControlListType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     FilterSelectableValues m_selectableValues;
     bool m_selectableValuesHasBeenSet = false;
 
-    CommitMode m_commitMode;
+    CommitMode m_commitMode{CommitMode::NOT_SET};
     bool m_commitModeHasBeenSet = false;
   };
 

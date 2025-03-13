@@ -26,7 +26,7 @@ namespace Model
   class UpdateQueueRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API UpdateQueueRequest();
+    AWS_DEADLINE_API UpdateQueueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The idempotency token to update in the queue.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateQueueRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateQueueRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateQueueRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateQueueRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The farm ID to update in the queue.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline UpdateQueueRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline UpdateQueueRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline UpdateQueueRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    UpdateQueueRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The queue ID to update.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline UpdateQueueRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline UpdateQueueRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline UpdateQueueRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    UpdateQueueRequest& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * webpage or any other system that might interpret the content of this field.</p>
      * 
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateQueueRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateQueueRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateQueueRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateQueueRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * webpage or any other system that might interpret the content of this field.</p>
      * 
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateQueueRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateQueueRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateQueueRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateQueueRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,110 +110,102 @@ namespace Model
      * <p>The default action to take for a queue update if a budget isn't
      * configured.</p>
      */
-    inline const DefaultQueueBudgetAction& GetDefaultBudgetAction() const{ return m_defaultBudgetAction; }
+    inline DefaultQueueBudgetAction GetDefaultBudgetAction() const { return m_defaultBudgetAction; }
     inline bool DefaultBudgetActionHasBeenSet() const { return m_defaultBudgetActionHasBeenSet; }
-    inline void SetDefaultBudgetAction(const DefaultQueueBudgetAction& value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = value; }
-    inline void SetDefaultBudgetAction(DefaultQueueBudgetAction&& value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = std::move(value); }
-    inline UpdateQueueRequest& WithDefaultBudgetAction(const DefaultQueueBudgetAction& value) { SetDefaultBudgetAction(value); return *this;}
-    inline UpdateQueueRequest& WithDefaultBudgetAction(DefaultQueueBudgetAction&& value) { SetDefaultBudgetAction(std::move(value)); return *this;}
+    inline void SetDefaultBudgetAction(DefaultQueueBudgetAction value) { m_defaultBudgetActionHasBeenSet = true; m_defaultBudgetAction = value; }
+    inline UpdateQueueRequest& WithDefaultBudgetAction(DefaultQueueBudgetAction value) { SetDefaultBudgetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job attachment settings to update for the queue.</p>
      */
-    inline const JobAttachmentSettings& GetJobAttachmentSettings() const{ return m_jobAttachmentSettings; }
+    inline const JobAttachmentSettings& GetJobAttachmentSettings() const { return m_jobAttachmentSettings; }
     inline bool JobAttachmentSettingsHasBeenSet() const { return m_jobAttachmentSettingsHasBeenSet; }
-    inline void SetJobAttachmentSettings(const JobAttachmentSettings& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = value; }
-    inline void SetJobAttachmentSettings(JobAttachmentSettings&& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = std::move(value); }
-    inline UpdateQueueRequest& WithJobAttachmentSettings(const JobAttachmentSettings& value) { SetJobAttachmentSettings(value); return *this;}
-    inline UpdateQueueRequest& WithJobAttachmentSettings(JobAttachmentSettings&& value) { SetJobAttachmentSettings(std::move(value)); return *this;}
+    template<typename JobAttachmentSettingsT = JobAttachmentSettings>
+    void SetJobAttachmentSettings(JobAttachmentSettingsT&& value) { m_jobAttachmentSettingsHasBeenSet = true; m_jobAttachmentSettings = std::forward<JobAttachmentSettingsT>(value); }
+    template<typename JobAttachmentSettingsT = JobAttachmentSettings>
+    UpdateQueueRequest& WithJobAttachmentSettings(JobAttachmentSettingsT&& value) { SetJobAttachmentSettings(std::forward<JobAttachmentSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role ARN that's used to run jobs from this queue.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateQueueRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateQueueRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateQueueRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateQueueRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Update the jobs in the queue to run as a specified POSIX user.</p>
      */
-    inline const JobRunAsUser& GetJobRunAsUser() const{ return m_jobRunAsUser; }
+    inline const JobRunAsUser& GetJobRunAsUser() const { return m_jobRunAsUser; }
     inline bool JobRunAsUserHasBeenSet() const { return m_jobRunAsUserHasBeenSet; }
-    inline void SetJobRunAsUser(const JobRunAsUser& value) { m_jobRunAsUserHasBeenSet = true; m_jobRunAsUser = value; }
-    inline void SetJobRunAsUser(JobRunAsUser&& value) { m_jobRunAsUserHasBeenSet = true; m_jobRunAsUser = std::move(value); }
-    inline UpdateQueueRequest& WithJobRunAsUser(const JobRunAsUser& value) { SetJobRunAsUser(value); return *this;}
-    inline UpdateQueueRequest& WithJobRunAsUser(JobRunAsUser&& value) { SetJobRunAsUser(std::move(value)); return *this;}
+    template<typename JobRunAsUserT = JobRunAsUser>
+    void SetJobRunAsUser(JobRunAsUserT&& value) { m_jobRunAsUserHasBeenSet = true; m_jobRunAsUser = std::forward<JobRunAsUserT>(value); }
+    template<typename JobRunAsUserT = JobRunAsUser>
+    UpdateQueueRequest& WithJobRunAsUser(JobRunAsUserT&& value) { SetJobRunAsUser(std::forward<JobRunAsUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required file system location names to add to the queue.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequiredFileSystemLocationNamesToAdd() const{ return m_requiredFileSystemLocationNamesToAdd; }
+    inline const Aws::Vector<Aws::String>& GetRequiredFileSystemLocationNamesToAdd() const { return m_requiredFileSystemLocationNamesToAdd; }
     inline bool RequiredFileSystemLocationNamesToAddHasBeenSet() const { return m_requiredFileSystemLocationNamesToAddHasBeenSet; }
-    inline void SetRequiredFileSystemLocationNamesToAdd(const Aws::Vector<Aws::String>& value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd = value; }
-    inline void SetRequiredFileSystemLocationNamesToAdd(Aws::Vector<Aws::String>&& value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd = std::move(value); }
-    inline UpdateQueueRequest& WithRequiredFileSystemLocationNamesToAdd(const Aws::Vector<Aws::String>& value) { SetRequiredFileSystemLocationNamesToAdd(value); return *this;}
-    inline UpdateQueueRequest& WithRequiredFileSystemLocationNamesToAdd(Aws::Vector<Aws::String>&& value) { SetRequiredFileSystemLocationNamesToAdd(std::move(value)); return *this;}
-    inline UpdateQueueRequest& AddRequiredFileSystemLocationNamesToAdd(const Aws::String& value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd.push_back(value); return *this; }
-    inline UpdateQueueRequest& AddRequiredFileSystemLocationNamesToAdd(Aws::String&& value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd.push_back(std::move(value)); return *this; }
-    inline UpdateQueueRequest& AddRequiredFileSystemLocationNamesToAdd(const char* value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd.push_back(value); return *this; }
+    template<typename RequiredFileSystemLocationNamesToAddT = Aws::Vector<Aws::String>>
+    void SetRequiredFileSystemLocationNamesToAdd(RequiredFileSystemLocationNamesToAddT&& value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd = std::forward<RequiredFileSystemLocationNamesToAddT>(value); }
+    template<typename RequiredFileSystemLocationNamesToAddT = Aws::Vector<Aws::String>>
+    UpdateQueueRequest& WithRequiredFileSystemLocationNamesToAdd(RequiredFileSystemLocationNamesToAddT&& value) { SetRequiredFileSystemLocationNamesToAdd(std::forward<RequiredFileSystemLocationNamesToAddT>(value)); return *this;}
+    template<typename RequiredFileSystemLocationNamesToAddT = Aws::String>
+    UpdateQueueRequest& AddRequiredFileSystemLocationNamesToAdd(RequiredFileSystemLocationNamesToAddT&& value) { m_requiredFileSystemLocationNamesToAddHasBeenSet = true; m_requiredFileSystemLocationNamesToAdd.emplace_back(std::forward<RequiredFileSystemLocationNamesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The required file system location names to remove from the queue.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequiredFileSystemLocationNamesToRemove() const{ return m_requiredFileSystemLocationNamesToRemove; }
+    inline const Aws::Vector<Aws::String>& GetRequiredFileSystemLocationNamesToRemove() const { return m_requiredFileSystemLocationNamesToRemove; }
     inline bool RequiredFileSystemLocationNamesToRemoveHasBeenSet() const { return m_requiredFileSystemLocationNamesToRemoveHasBeenSet; }
-    inline void SetRequiredFileSystemLocationNamesToRemove(const Aws::Vector<Aws::String>& value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove = value; }
-    inline void SetRequiredFileSystemLocationNamesToRemove(Aws::Vector<Aws::String>&& value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove = std::move(value); }
-    inline UpdateQueueRequest& WithRequiredFileSystemLocationNamesToRemove(const Aws::Vector<Aws::String>& value) { SetRequiredFileSystemLocationNamesToRemove(value); return *this;}
-    inline UpdateQueueRequest& WithRequiredFileSystemLocationNamesToRemove(Aws::Vector<Aws::String>&& value) { SetRequiredFileSystemLocationNamesToRemove(std::move(value)); return *this;}
-    inline UpdateQueueRequest& AddRequiredFileSystemLocationNamesToRemove(const Aws::String& value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove.push_back(value); return *this; }
-    inline UpdateQueueRequest& AddRequiredFileSystemLocationNamesToRemove(Aws::String&& value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove.push_back(std::move(value)); return *this; }
-    inline UpdateQueueRequest& AddRequiredFileSystemLocationNamesToRemove(const char* value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove.push_back(value); return *this; }
+    template<typename RequiredFileSystemLocationNamesToRemoveT = Aws::Vector<Aws::String>>
+    void SetRequiredFileSystemLocationNamesToRemove(RequiredFileSystemLocationNamesToRemoveT&& value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove = std::forward<RequiredFileSystemLocationNamesToRemoveT>(value); }
+    template<typename RequiredFileSystemLocationNamesToRemoveT = Aws::Vector<Aws::String>>
+    UpdateQueueRequest& WithRequiredFileSystemLocationNamesToRemove(RequiredFileSystemLocationNamesToRemoveT&& value) { SetRequiredFileSystemLocationNamesToRemove(std::forward<RequiredFileSystemLocationNamesToRemoveT>(value)); return *this;}
+    template<typename RequiredFileSystemLocationNamesToRemoveT = Aws::String>
+    UpdateQueueRequest& AddRequiredFileSystemLocationNamesToRemove(RequiredFileSystemLocationNamesToRemoveT&& value) { m_requiredFileSystemLocationNamesToRemoveHasBeenSet = true; m_requiredFileSystemLocationNamesToRemove.emplace_back(std::forward<RequiredFileSystemLocationNamesToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The storage profile IDs to add.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedStorageProfileIdsToAdd() const{ return m_allowedStorageProfileIdsToAdd; }
+    inline const Aws::Vector<Aws::String>& GetAllowedStorageProfileIdsToAdd() const { return m_allowedStorageProfileIdsToAdd; }
     inline bool AllowedStorageProfileIdsToAddHasBeenSet() const { return m_allowedStorageProfileIdsToAddHasBeenSet; }
-    inline void SetAllowedStorageProfileIdsToAdd(const Aws::Vector<Aws::String>& value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd = value; }
-    inline void SetAllowedStorageProfileIdsToAdd(Aws::Vector<Aws::String>&& value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd = std::move(value); }
-    inline UpdateQueueRequest& WithAllowedStorageProfileIdsToAdd(const Aws::Vector<Aws::String>& value) { SetAllowedStorageProfileIdsToAdd(value); return *this;}
-    inline UpdateQueueRequest& WithAllowedStorageProfileIdsToAdd(Aws::Vector<Aws::String>&& value) { SetAllowedStorageProfileIdsToAdd(std::move(value)); return *this;}
-    inline UpdateQueueRequest& AddAllowedStorageProfileIdsToAdd(const Aws::String& value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd.push_back(value); return *this; }
-    inline UpdateQueueRequest& AddAllowedStorageProfileIdsToAdd(Aws::String&& value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd.push_back(std::move(value)); return *this; }
-    inline UpdateQueueRequest& AddAllowedStorageProfileIdsToAdd(const char* value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd.push_back(value); return *this; }
+    template<typename AllowedStorageProfileIdsToAddT = Aws::Vector<Aws::String>>
+    void SetAllowedStorageProfileIdsToAdd(AllowedStorageProfileIdsToAddT&& value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd = std::forward<AllowedStorageProfileIdsToAddT>(value); }
+    template<typename AllowedStorageProfileIdsToAddT = Aws::Vector<Aws::String>>
+    UpdateQueueRequest& WithAllowedStorageProfileIdsToAdd(AllowedStorageProfileIdsToAddT&& value) { SetAllowedStorageProfileIdsToAdd(std::forward<AllowedStorageProfileIdsToAddT>(value)); return *this;}
+    template<typename AllowedStorageProfileIdsToAddT = Aws::String>
+    UpdateQueueRequest& AddAllowedStorageProfileIdsToAdd(AllowedStorageProfileIdsToAddT&& value) { m_allowedStorageProfileIdsToAddHasBeenSet = true; m_allowedStorageProfileIdsToAdd.emplace_back(std::forward<AllowedStorageProfileIdsToAddT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The storage profile ID to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedStorageProfileIdsToRemove() const{ return m_allowedStorageProfileIdsToRemove; }
+    inline const Aws::Vector<Aws::String>& GetAllowedStorageProfileIdsToRemove() const { return m_allowedStorageProfileIdsToRemove; }
     inline bool AllowedStorageProfileIdsToRemoveHasBeenSet() const { return m_allowedStorageProfileIdsToRemoveHasBeenSet; }
-    inline void SetAllowedStorageProfileIdsToRemove(const Aws::Vector<Aws::String>& value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove = value; }
-    inline void SetAllowedStorageProfileIdsToRemove(Aws::Vector<Aws::String>&& value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove = std::move(value); }
-    inline UpdateQueueRequest& WithAllowedStorageProfileIdsToRemove(const Aws::Vector<Aws::String>& value) { SetAllowedStorageProfileIdsToRemove(value); return *this;}
-    inline UpdateQueueRequest& WithAllowedStorageProfileIdsToRemove(Aws::Vector<Aws::String>&& value) { SetAllowedStorageProfileIdsToRemove(std::move(value)); return *this;}
-    inline UpdateQueueRequest& AddAllowedStorageProfileIdsToRemove(const Aws::String& value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove.push_back(value); return *this; }
-    inline UpdateQueueRequest& AddAllowedStorageProfileIdsToRemove(Aws::String&& value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove.push_back(std::move(value)); return *this; }
-    inline UpdateQueueRequest& AddAllowedStorageProfileIdsToRemove(const char* value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove.push_back(value); return *this; }
+    template<typename AllowedStorageProfileIdsToRemoveT = Aws::Vector<Aws::String>>
+    void SetAllowedStorageProfileIdsToRemove(AllowedStorageProfileIdsToRemoveT&& value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove = std::forward<AllowedStorageProfileIdsToRemoveT>(value); }
+    template<typename AllowedStorageProfileIdsToRemoveT = Aws::Vector<Aws::String>>
+    UpdateQueueRequest& WithAllowedStorageProfileIdsToRemove(AllowedStorageProfileIdsToRemoveT&& value) { SetAllowedStorageProfileIdsToRemove(std::forward<AllowedStorageProfileIdsToRemoveT>(value)); return *this;}
+    template<typename AllowedStorageProfileIdsToRemoveT = Aws::String>
+    UpdateQueueRequest& AddAllowedStorageProfileIdsToRemove(AllowedStorageProfileIdsToRemoveT&& value) { m_allowedStorageProfileIdsToRemoveHasBeenSet = true; m_allowedStorageProfileIdsToRemove.emplace_back(std::forward<AllowedStorageProfileIdsToRemoveT>(value)); return *this; }
     ///@}
   private:
 
@@ -242,7 +224,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    DefaultQueueBudgetAction m_defaultBudgetAction;
+    DefaultQueueBudgetAction m_defaultBudgetAction{DefaultQueueBudgetAction::NOT_SET};
     bool m_defaultBudgetActionHasBeenSet = false;
 
     JobAttachmentSettings m_jobAttachmentSettings;

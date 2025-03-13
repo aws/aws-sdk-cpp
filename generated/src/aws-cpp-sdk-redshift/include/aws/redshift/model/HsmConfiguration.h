@@ -36,7 +36,7 @@ namespace Model
   class HsmConfiguration
   {
   public:
-    AWS_REDSHIFT_API HsmConfiguration();
+    AWS_REDSHIFT_API HsmConfiguration() = default;
     AWS_REDSHIFT_API HsmConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API HsmConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
      */
-    inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
+    inline const Aws::String& GetHsmConfigurationIdentifier() const { return m_hsmConfigurationIdentifier; }
     inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
-    inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
-    inline void SetHsmConfigurationIdentifier(Aws::String&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::move(value); }
-    inline void SetHsmConfigurationIdentifier(const char* value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier.assign(value); }
-    inline HsmConfiguration& WithHsmConfigurationIdentifier(const Aws::String& value) { SetHsmConfigurationIdentifier(value); return *this;}
-    inline HsmConfiguration& WithHsmConfigurationIdentifier(Aws::String&& value) { SetHsmConfigurationIdentifier(std::move(value)); return *this;}
-    inline HsmConfiguration& WithHsmConfigurationIdentifier(const char* value) { SetHsmConfigurationIdentifier(value); return *this;}
+    template<typename HsmConfigurationIdentifierT = Aws::String>
+    void SetHsmConfigurationIdentifier(HsmConfigurationIdentifierT&& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = std::forward<HsmConfigurationIdentifierT>(value); }
+    template<typename HsmConfigurationIdentifierT = Aws::String>
+    HsmConfiguration& WithHsmConfigurationIdentifier(HsmConfigurationIdentifierT&& value) { SetHsmConfigurationIdentifier(std::forward<HsmConfigurationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A text description of the HSM configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline HsmConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline HsmConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline HsmConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    HsmConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <p>The IP address that the Amazon Redshift cluster must use to access the
      * HSM.</p>
      */
-    inline const Aws::String& GetHsmIpAddress() const{ return m_hsmIpAddress; }
+    inline const Aws::String& GetHsmIpAddress() const { return m_hsmIpAddress; }
     inline bool HsmIpAddressHasBeenSet() const { return m_hsmIpAddressHasBeenSet; }
-    inline void SetHsmIpAddress(const Aws::String& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = value; }
-    inline void SetHsmIpAddress(Aws::String&& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = std::move(value); }
-    inline void SetHsmIpAddress(const char* value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress.assign(value); }
-    inline HsmConfiguration& WithHsmIpAddress(const Aws::String& value) { SetHsmIpAddress(value); return *this;}
-    inline HsmConfiguration& WithHsmIpAddress(Aws::String&& value) { SetHsmIpAddress(std::move(value)); return *this;}
-    inline HsmConfiguration& WithHsmIpAddress(const char* value) { SetHsmIpAddress(value); return *this;}
+    template<typename HsmIpAddressT = Aws::String>
+    void SetHsmIpAddress(HsmIpAddressT&& value) { m_hsmIpAddressHasBeenSet = true; m_hsmIpAddress = std::forward<HsmIpAddressT>(value); }
+    template<typename HsmIpAddressT = Aws::String>
+    HsmConfiguration& WithHsmIpAddress(HsmIpAddressT&& value) { SetHsmIpAddress(std::forward<HsmIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,28 +86,26 @@ namespace Model
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
      */
-    inline const Aws::String& GetHsmPartitionName() const{ return m_hsmPartitionName; }
+    inline const Aws::String& GetHsmPartitionName() const { return m_hsmPartitionName; }
     inline bool HsmPartitionNameHasBeenSet() const { return m_hsmPartitionNameHasBeenSet; }
-    inline void SetHsmPartitionName(const Aws::String& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
-    inline void SetHsmPartitionName(Aws::String&& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = std::move(value); }
-    inline void SetHsmPartitionName(const char* value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName.assign(value); }
-    inline HsmConfiguration& WithHsmPartitionName(const Aws::String& value) { SetHsmPartitionName(value); return *this;}
-    inline HsmConfiguration& WithHsmPartitionName(Aws::String&& value) { SetHsmPartitionName(std::move(value)); return *this;}
-    inline HsmConfiguration& WithHsmPartitionName(const char* value) { SetHsmPartitionName(value); return *this;}
+    template<typename HsmPartitionNameT = Aws::String>
+    void SetHsmPartitionName(HsmPartitionNameT&& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = std::forward<HsmPartitionNameT>(value); }
+    template<typename HsmPartitionNameT = Aws::String>
+    HsmConfiguration& WithHsmPartitionName(HsmPartitionNameT&& value) { SetHsmPartitionName(std::forward<HsmPartitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags for the HSM configuration.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline HsmConfiguration& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline HsmConfiguration& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline HsmConfiguration& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline HsmConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    HsmConfiguration& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    HsmConfiguration& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

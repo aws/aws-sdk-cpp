@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSetupHistoryRequest::GetSetupHistoryRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetSetupHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-RecommendationItem::RecommendationItem() : 
-    m_alreadyImplemented(false),
-    m_alreadyImplementedHasBeenSet(false),
-    m_discoveredAlarmHasBeenSet(false),
-    m_excludeReason(ExcludeRecommendationReason::NOT_SET),
-    m_excludeReasonHasBeenSet(false),
-    m_excluded(false),
-    m_excludedHasBeenSet(false),
-    m_latestDiscoveredExperimentHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_targetAccountIdHasBeenSet(false),
-    m_targetRegionHasBeenSet(false)
-{
-}
-
 RecommendationItem::RecommendationItem(JsonView jsonValue)
-  : RecommendationItem()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ RecommendationItem& RecommendationItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alreadyImplemented"))
   {
     m_alreadyImplemented = jsonValue.GetBool("alreadyImplemented");
-
     m_alreadyImplementedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("discoveredAlarm"))
   {
     m_discoveredAlarm = jsonValue.GetObject("discoveredAlarm");
-
     m_discoveredAlarmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludeReason"))
   {
     m_excludeReason = ExcludeRecommendationReasonMapper::GetExcludeRecommendationReasonForName(jsonValue.GetString("excludeReason"));
-
     m_excludeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excluded"))
   {
     m_excluded = jsonValue.GetBool("excluded");
-
     m_excludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestDiscoveredExperiment"))
   {
     m_latestDiscoveredExperiment = jsonValue.GetObject("latestDiscoveredExperiment");
-
     m_latestDiscoveredExperimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccountId"))
   {
     m_targetAccountId = jsonValue.GetString("targetAccountId");
-
     m_targetAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRegion"))
   {
     m_targetRegion = jsonValue.GetString("targetRegion");
-
     m_targetRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

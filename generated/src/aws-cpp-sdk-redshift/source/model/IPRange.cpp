@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-IPRange::IPRange() : 
-    m_statusHasBeenSet(false),
-    m_cIDRIPHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IPRange::IPRange(const XmlNode& xmlNode)
-  : IPRange()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ IPRange& IPRange::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode cIDRIPNode = resultNode.FirstChild("CIDRIP");
     if(!cIDRIPNode.IsNull())
     {
       m_cIDRIP = Aws::Utils::Xml::DecodeEscapedXmlText(cIDRIPNode.GetText());
       m_cIDRIPHasBeenSet = true;
+       m_cIDRIPHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

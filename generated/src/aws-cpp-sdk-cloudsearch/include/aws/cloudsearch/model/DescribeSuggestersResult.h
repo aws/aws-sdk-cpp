@@ -35,7 +35,7 @@ namespace Model
   class DescribeSuggestersResult
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeSuggestersResult();
+    AWS_CLOUDSEARCH_API DescribeSuggestersResult() = default;
     AWS_CLOUDSEARCH_API DescribeSuggestersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DescribeSuggestersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>The suggesters configured for the domain specified in the request.</p>
      */
-    inline const Aws::Vector<SuggesterStatus>& GetSuggesters() const{ return m_suggesters; }
-    inline void SetSuggesters(const Aws::Vector<SuggesterStatus>& value) { m_suggesters = value; }
-    inline void SetSuggesters(Aws::Vector<SuggesterStatus>&& value) { m_suggesters = std::move(value); }
-    inline DescribeSuggestersResult& WithSuggesters(const Aws::Vector<SuggesterStatus>& value) { SetSuggesters(value); return *this;}
-    inline DescribeSuggestersResult& WithSuggesters(Aws::Vector<SuggesterStatus>&& value) { SetSuggesters(std::move(value)); return *this;}
-    inline DescribeSuggestersResult& AddSuggesters(const SuggesterStatus& value) { m_suggesters.push_back(value); return *this; }
-    inline DescribeSuggestersResult& AddSuggesters(SuggesterStatus&& value) { m_suggesters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuggesterStatus>& GetSuggesters() const { return m_suggesters; }
+    template<typename SuggestersT = Aws::Vector<SuggesterStatus>>
+    void SetSuggesters(SuggestersT&& value) { m_suggestersHasBeenSet = true; m_suggesters = std::forward<SuggestersT>(value); }
+    template<typename SuggestersT = Aws::Vector<SuggesterStatus>>
+    DescribeSuggestersResult& WithSuggesters(SuggestersT&& value) { SetSuggesters(std::forward<SuggestersT>(value)); return *this;}
+    template<typename SuggestersT = SuggesterStatus>
+    DescribeSuggestersResult& AddSuggesters(SuggestersT&& value) { m_suggestersHasBeenSet = true; m_suggesters.emplace_back(std::forward<SuggestersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeSuggestersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeSuggestersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeSuggestersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SuggesterStatus> m_suggesters;
+    bool m_suggestersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class InternetGatewayAttachment
   {
   public:
-    AWS_EC2_API InternetGatewayAttachment();
+    AWS_EC2_API InternetGatewayAttachment() = default;
     AWS_EC2_API InternetGatewayAttachment(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InternetGatewayAttachment& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,30 +47,26 @@ namespace Model
      * <code>available</code> when attached to a VPC; otherwise, this value is not
      * returned.</p>
      */
-    inline const AttachmentStatus& GetState() const{ return m_state; }
+    inline AttachmentStatus GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const AttachmentStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(AttachmentStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline InternetGatewayAttachment& WithState(const AttachmentStatus& value) { SetState(value); return *this;}
-    inline InternetGatewayAttachment& WithState(AttachmentStatus&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(AttachmentStatus value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InternetGatewayAttachment& WithState(AttachmentStatus value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline InternetGatewayAttachment& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline InternetGatewayAttachment& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline InternetGatewayAttachment& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    InternetGatewayAttachment& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 
-    AttachmentStatus m_state;
+    AttachmentStatus m_state{AttachmentStatus::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_vpcId;

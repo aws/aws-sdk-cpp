@@ -12,16 +12,6 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportBackendAuthRequest::ImportBackendAuthRequest() : 
-    m_appIdHasBeenSet(false),
-    m_backendEnvironmentNameHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_nativeClientIdHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_webClientIdHasBeenSet(false)
-{
-}
-
 Aws::String ImportBackendAuthRequest::SerializePayload() const
 {
   JsonValue payload;

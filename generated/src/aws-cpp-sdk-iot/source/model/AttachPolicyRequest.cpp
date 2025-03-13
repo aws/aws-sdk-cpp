@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachPolicyRequest::AttachPolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String AttachPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class Rollback
   {
   public:
-    AWS_ECS_API Rollback();
+    AWS_ECS_API Rollback() = default;
     AWS_ECS_API Rollback(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Rollback& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The reason the rollback happened. For example, the circuit breaker initiated
      * the rollback operation.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline Rollback& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline Rollback& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline Rollback& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    Rollback& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>Time time that the rollback started. The format is yyyy-MM-dd
      * HH:mm:ss.SSSSSS.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+    inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
-    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
-    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
-    inline Rollback& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-    inline Rollback& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    void SetStartedAt(StartedAtT&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::forward<StartedAtT>(value); }
+    template<typename StartedAtT = Aws::Utils::DateTime>
+    Rollback& WithStartedAt(StartedAtT&& value) { SetStartedAt(std::forward<StartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,21 +76,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
      * specified in a task definition.</p>
      */
-    inline const Aws::String& GetServiceRevisionArn() const{ return m_serviceRevisionArn; }
+    inline const Aws::String& GetServiceRevisionArn() const { return m_serviceRevisionArn; }
     inline bool ServiceRevisionArnHasBeenSet() const { return m_serviceRevisionArnHasBeenSet; }
-    inline void SetServiceRevisionArn(const Aws::String& value) { m_serviceRevisionArnHasBeenSet = true; m_serviceRevisionArn = value; }
-    inline void SetServiceRevisionArn(Aws::String&& value) { m_serviceRevisionArnHasBeenSet = true; m_serviceRevisionArn = std::move(value); }
-    inline void SetServiceRevisionArn(const char* value) { m_serviceRevisionArnHasBeenSet = true; m_serviceRevisionArn.assign(value); }
-    inline Rollback& WithServiceRevisionArn(const Aws::String& value) { SetServiceRevisionArn(value); return *this;}
-    inline Rollback& WithServiceRevisionArn(Aws::String&& value) { SetServiceRevisionArn(std::move(value)); return *this;}
-    inline Rollback& WithServiceRevisionArn(const char* value) { SetServiceRevisionArn(value); return *this;}
+    template<typename ServiceRevisionArnT = Aws::String>
+    void SetServiceRevisionArn(ServiceRevisionArnT&& value) { m_serviceRevisionArnHasBeenSet = true; m_serviceRevisionArn = std::forward<ServiceRevisionArnT>(value); }
+    template<typename ServiceRevisionArnT = Aws::String>
+    Rollback& WithServiceRevisionArn(ServiceRevisionArnT&& value) { SetServiceRevisionArn(std::forward<ServiceRevisionArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAt;
+    Aws::Utils::DateTime m_startedAt{};
     bool m_startedAtHasBeenSet = false;
 
     Aws::String m_serviceRevisionArn;

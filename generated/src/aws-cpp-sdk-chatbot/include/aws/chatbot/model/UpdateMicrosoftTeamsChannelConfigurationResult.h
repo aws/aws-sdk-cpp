@@ -28,7 +28,7 @@ namespace Model
   class UpdateMicrosoftTeamsChannelConfigurationResult
   {
   public:
-    AWS_CHATBOT_API UpdateMicrosoftTeamsChannelConfigurationResult();
+    AWS_CHATBOT_API UpdateMicrosoftTeamsChannelConfigurationResult() = default;
     AWS_CHATBOT_API UpdateMicrosoftTeamsChannelConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API UpdateMicrosoftTeamsChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The configuration for a Microsoft Teams channel configured with AWS
      * Chatbot.</p>
      */
-    inline const TeamsChannelConfiguration& GetChannelConfiguration() const{ return m_channelConfiguration; }
-    inline void SetChannelConfiguration(const TeamsChannelConfiguration& value) { m_channelConfiguration = value; }
-    inline void SetChannelConfiguration(TeamsChannelConfiguration&& value) { m_channelConfiguration = std::move(value); }
-    inline UpdateMicrosoftTeamsChannelConfigurationResult& WithChannelConfiguration(const TeamsChannelConfiguration& value) { SetChannelConfiguration(value); return *this;}
-    inline UpdateMicrosoftTeamsChannelConfigurationResult& WithChannelConfiguration(TeamsChannelConfiguration&& value) { SetChannelConfiguration(std::move(value)); return *this;}
+    inline const TeamsChannelConfiguration& GetChannelConfiguration() const { return m_channelConfiguration; }
+    template<typename ChannelConfigurationT = TeamsChannelConfiguration>
+    void SetChannelConfiguration(ChannelConfigurationT&& value) { m_channelConfigurationHasBeenSet = true; m_channelConfiguration = std::forward<ChannelConfigurationT>(value); }
+    template<typename ChannelConfigurationT = TeamsChannelConfiguration>
+    UpdateMicrosoftTeamsChannelConfigurationResult& WithChannelConfiguration(ChannelConfigurationT&& value) { SetChannelConfiguration(std::forward<ChannelConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMicrosoftTeamsChannelConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMicrosoftTeamsChannelConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMicrosoftTeamsChannelConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMicrosoftTeamsChannelConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TeamsChannelConfiguration m_channelConfiguration;
+    bool m_channelConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

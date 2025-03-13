@@ -10,21 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVpcEndpointServiceConfigurationRequest::CreateVpcEndpointServiceConfigurationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_supportedIpAddressTypesHasBeenSet(false),
-    m_supportedRegionsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcEndpointServiceConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

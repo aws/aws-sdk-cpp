@@ -22,7 +22,7 @@ namespace Model
   class PredictRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API PredictRequest();
+    AWS_MACHINELEARNING_API PredictRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,43 +39,36 @@ namespace Model
     /**
      * <p>A unique identifier of the <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
     inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelIdHasBeenSet = true; m_mLModelId.assign(value); }
-    inline PredictRequest& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline PredictRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline PredictRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    PredictRequest& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const{ return m_record; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const { return m_record; }
     inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
-    inline void SetRecord(const Aws::Map<Aws::String, Aws::String>& value) { m_recordHasBeenSet = true; m_record = value; }
-    inline void SetRecord(Aws::Map<Aws::String, Aws::String>&& value) { m_recordHasBeenSet = true; m_record = std::move(value); }
-    inline PredictRequest& WithRecord(const Aws::Map<Aws::String, Aws::String>& value) { SetRecord(value); return *this;}
-    inline PredictRequest& WithRecord(Aws::Map<Aws::String, Aws::String>&& value) { SetRecord(std::move(value)); return *this;}
-    inline PredictRequest& AddRecord(const Aws::String& key, const Aws::String& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
-    inline PredictRequest& AddRecord(Aws::String&& key, const Aws::String& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), value); return *this; }
-    inline PredictRequest& AddRecord(const Aws::String& key, Aws::String&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
-    inline PredictRequest& AddRecord(Aws::String&& key, Aws::String&& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), std::move(value)); return *this; }
-    inline PredictRequest& AddRecord(const char* key, Aws::String&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
-    inline PredictRequest& AddRecord(Aws::String&& key, const char* value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), value); return *this; }
-    inline PredictRequest& AddRecord(const char* key, const char* value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
+    template<typename RecordT = Aws::Map<Aws::String, Aws::String>>
+    void SetRecord(RecordT&& value) { m_recordHasBeenSet = true; m_record = std::forward<RecordT>(value); }
+    template<typename RecordT = Aws::Map<Aws::String, Aws::String>>
+    PredictRequest& WithRecord(RecordT&& value) { SetRecord(std::forward<RecordT>(value)); return *this;}
+    template<typename RecordKeyT = Aws::String, typename RecordValueT = Aws::String>
+    PredictRequest& AddRecord(RecordKeyT&& key, RecordValueT&& value) {
+      m_recordHasBeenSet = true; m_record.emplace(std::forward<RecordKeyT>(key), std::forward<RecordValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPredictEndpoint() const{ return m_predictEndpoint; }
+    inline const Aws::String& GetPredictEndpoint() const { return m_predictEndpoint; }
     inline bool PredictEndpointHasBeenSet() const { return m_predictEndpointHasBeenSet; }
-    inline void SetPredictEndpoint(const Aws::String& value) { m_predictEndpointHasBeenSet = true; m_predictEndpoint = value; }
-    inline void SetPredictEndpoint(Aws::String&& value) { m_predictEndpointHasBeenSet = true; m_predictEndpoint = std::move(value); }
-    inline void SetPredictEndpoint(const char* value) { m_predictEndpointHasBeenSet = true; m_predictEndpoint.assign(value); }
-    inline PredictRequest& WithPredictEndpoint(const Aws::String& value) { SetPredictEndpoint(value); return *this;}
-    inline PredictRequest& WithPredictEndpoint(Aws::String&& value) { SetPredictEndpoint(std::move(value)); return *this;}
-    inline PredictRequest& WithPredictEndpoint(const char* value) { SetPredictEndpoint(value); return *this;}
+    template<typename PredictEndpointT = Aws::String>
+    void SetPredictEndpoint(PredictEndpointT&& value) { m_predictEndpointHasBeenSet = true; m_predictEndpoint = std::forward<PredictEndpointT>(value); }
+    template<typename PredictEndpointT = Aws::String>
+    PredictRequest& WithPredictEndpoint(PredictEndpointT&& value) { SetPredictEndpoint(std::forward<PredictEndpointT>(value)); return *this;}
     ///@}
   private:
 

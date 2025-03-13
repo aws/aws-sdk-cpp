@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppRequest::CreateAppRequest() : 
-    m_createApplicationRequestHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppRequest::SerializePayload() const
 {
   JsonValue payload;

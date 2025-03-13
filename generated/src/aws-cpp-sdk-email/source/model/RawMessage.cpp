@@ -21,13 +21,7 @@ namespace SES
 namespace Model
 {
 
-RawMessage::RawMessage() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 RawMessage::RawMessage(const XmlNode& xmlNode)
-  : RawMessage()
 {
   *this = xmlNode;
 }
@@ -43,6 +37,7 @@ RawMessage& RawMessage::operator =(const XmlNode& xmlNode)
     {
       m_data = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText()));
       m_dataHasBeenSet = true;
+       m_dataHasBeenSet = true;
     }
   }
 

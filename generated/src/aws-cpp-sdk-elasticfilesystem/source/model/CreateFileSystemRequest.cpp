@@ -12,25 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFileSystemRequest::CreateFileSystemRequest() : 
-    m_creationToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creationTokenHasBeenSet(true),
-    m_performanceMode(PerformanceMode::NOT_SET),
-    m_performanceModeHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_provisionedThroughputInMibps(0.0),
-    m_provisionedThroughputInMibpsHasBeenSet(false),
-    m_availabilityZoneNameHasBeenSet(false),
-    m_backup(false),
-    m_backupHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFileSystemRequest::SerializePayload() const
 {
   JsonValue payload;

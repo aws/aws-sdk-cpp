@@ -33,7 +33,7 @@ namespace Model
   class FieldLevelEncryptionConfig
   {
   public:
-    AWS_CLOUDFRONT_API FieldLevelEncryptionConfig();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionConfig() = default;
     AWS_CLOUDFRONT_API FieldLevelEncryptionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FieldLevelEncryptionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A unique number that ensures the request can't be replayed.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline FieldLevelEncryptionConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline FieldLevelEncryptionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline FieldLevelEncryptionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    FieldLevelEncryptionConfig& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>An optional comment about the configuration. The comment cannot be longer
      * than 128 characters.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline FieldLevelEncryptionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline FieldLevelEncryptionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline FieldLevelEncryptionConfig& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    FieldLevelEncryptionConfig& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,12 @@ namespace Model
      * <p>A complex data type that specifies when to forward content if a profile isn't
      * found and the profile that can be provided as a query argument in a request.</p>
      */
-    inline const QueryArgProfileConfig& GetQueryArgProfileConfig() const{ return m_queryArgProfileConfig; }
+    inline const QueryArgProfileConfig& GetQueryArgProfileConfig() const { return m_queryArgProfileConfig; }
     inline bool QueryArgProfileConfigHasBeenSet() const { return m_queryArgProfileConfigHasBeenSet; }
-    inline void SetQueryArgProfileConfig(const QueryArgProfileConfig& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = value; }
-    inline void SetQueryArgProfileConfig(QueryArgProfileConfig&& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = std::move(value); }
-    inline FieldLevelEncryptionConfig& WithQueryArgProfileConfig(const QueryArgProfileConfig& value) { SetQueryArgProfileConfig(value); return *this;}
-    inline FieldLevelEncryptionConfig& WithQueryArgProfileConfig(QueryArgProfileConfig&& value) { SetQueryArgProfileConfig(std::move(value)); return *this;}
+    template<typename QueryArgProfileConfigT = QueryArgProfileConfig>
+    void SetQueryArgProfileConfig(QueryArgProfileConfigT&& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = std::forward<QueryArgProfileConfigT>(value); }
+    template<typename QueryArgProfileConfigT = QueryArgProfileConfig>
+    FieldLevelEncryptionConfig& WithQueryArgProfileConfig(QueryArgProfileConfigT&& value) { SetQueryArgProfileConfig(std::forward<QueryArgProfileConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * isn't recognized and profiles to use as by default in a request if a query
      * argument doesn't specify a profile to use.</p>
      */
-    inline const ContentTypeProfileConfig& GetContentTypeProfileConfig() const{ return m_contentTypeProfileConfig; }
+    inline const ContentTypeProfileConfig& GetContentTypeProfileConfig() const { return m_contentTypeProfileConfig; }
     inline bool ContentTypeProfileConfigHasBeenSet() const { return m_contentTypeProfileConfigHasBeenSet; }
-    inline void SetContentTypeProfileConfig(const ContentTypeProfileConfig& value) { m_contentTypeProfileConfigHasBeenSet = true; m_contentTypeProfileConfig = value; }
-    inline void SetContentTypeProfileConfig(ContentTypeProfileConfig&& value) { m_contentTypeProfileConfigHasBeenSet = true; m_contentTypeProfileConfig = std::move(value); }
-    inline FieldLevelEncryptionConfig& WithContentTypeProfileConfig(const ContentTypeProfileConfig& value) { SetContentTypeProfileConfig(value); return *this;}
-    inline FieldLevelEncryptionConfig& WithContentTypeProfileConfig(ContentTypeProfileConfig&& value) { SetContentTypeProfileConfig(std::move(value)); return *this;}
+    template<typename ContentTypeProfileConfigT = ContentTypeProfileConfig>
+    void SetContentTypeProfileConfig(ContentTypeProfileConfigT&& value) { m_contentTypeProfileConfigHasBeenSet = true; m_contentTypeProfileConfig = std::forward<ContentTypeProfileConfigT>(value); }
+    template<typename ContentTypeProfileConfigT = ContentTypeProfileConfig>
+    FieldLevelEncryptionConfig& WithContentTypeProfileConfig(ContentTypeProfileConfigT&& value) { SetContentTypeProfileConfig(std::forward<ContentTypeProfileConfigT>(value)); return *this;}
     ///@}
   private:
 

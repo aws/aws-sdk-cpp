@@ -12,22 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartImportTaskRequest::StartImportTaskRequest() : 
-    m_importOptionsHasBeenSet(false),
-    m_failOnError(false),
-    m_failOnErrorHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_parquetType(ParquetType::NOT_SET),
-    m_parquetTypeHasBeenSet(false),
-    m_blankNodeHandling(BlankNodeHandling::NOT_SET),
-    m_blankNodeHandlingHasBeenSet(false),
-    m_graphIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String StartImportTaskRequest::SerializePayload() const
 {
   JsonValue payload;

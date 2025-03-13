@@ -28,35 +28,35 @@ namespace Model
   class GetTrailResult
   {
   public:
-    AWS_CLOUDTRAIL_API GetTrailResult();
+    AWS_CLOUDTRAIL_API GetTrailResult() = default;
     AWS_CLOUDTRAIL_API GetTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API GetTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Trail& GetTrail() const{ return m_trail; }
-    inline void SetTrail(const Trail& value) { m_trail = value; }
-    inline void SetTrail(Trail&& value) { m_trail = std::move(value); }
-    inline GetTrailResult& WithTrail(const Trail& value) { SetTrail(value); return *this;}
-    inline GetTrailResult& WithTrail(Trail&& value) { SetTrail(std::move(value)); return *this;}
+    inline const Trail& GetTrail() const { return m_trail; }
+    template<typename TrailT = Trail>
+    void SetTrail(TrailT&& value) { m_trailHasBeenSet = true; m_trail = std::forward<TrailT>(value); }
+    template<typename TrailT = Trail>
+    GetTrailResult& WithTrail(TrailT&& value) { SetTrail(std::forward<TrailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTrailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTrailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTrailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTrailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Trail m_trail;
+    bool m_trailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

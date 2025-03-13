@@ -28,7 +28,7 @@ namespace Model
   class StartTargetedSentimentDetectionJobResult
   {
   public:
-    AWS_COMPREHEND_API StartTargetedSentimentDetectionJobResult();
+    AWS_COMPREHEND_API StartTargetedSentimentDetectionJobResult() = default;
     AWS_COMPREHEND_API StartTargetedSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API StartTargetedSentimentDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * identifier with the <code>DescribeTargetedSentimentDetectionJob</code>
      * operation.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline StartTargetedSentimentDetectionJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    StartTargetedSentimentDetectionJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,13 +57,11 @@ namespace Model
      * <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
      * </p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-    inline StartTargetedSentimentDetectionJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    StartTargetedSentimentDetectionJobResult& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,32 +73,32 @@ namespace Model
      * The job did not complete. To get details, use the
      * <code>DescribeTargetedSentimentDetectionJob</code> operation.</p> </li> </ul>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
-    inline StartTargetedSentimentDetectionJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline StartTargetedSentimentDetectionJobResult& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartTargetedSentimentDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartTargetedSentimentDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartTargetedSentimentDetectionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
+    bool m_jobStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

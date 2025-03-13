@@ -12,10 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVirtualGatewaysRequest::DescribeVirtualGatewaysRequest()
-{
-}
-
 Aws::String DescribeVirtualGatewaysRequest::SerializePayload() const
 {
   return "{}";

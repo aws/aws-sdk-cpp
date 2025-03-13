@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ManagedExecution::ManagedExecution() : 
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 ManagedExecution::ManagedExecution(const XmlNode& xmlNode)
-  : ManagedExecution()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ManagedExecution& ManagedExecution::operator =(const XmlNode& xmlNode)
     {
       m_active = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activeNode.GetText()).c_str()).c_str());
       m_activeHasBeenSet = true;
+       m_activeHasBeenSet = true;
     }
   }
 

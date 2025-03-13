@@ -32,7 +32,7 @@ namespace Model
   class JiraSelectedQuestionConfiguration
   {
   public:
-    AWS_WELLARCHITECTED_API JiraSelectedQuestionConfiguration();
+    AWS_WELLARCHITECTED_API JiraSelectedQuestionConfiguration() = default;
     AWS_WELLARCHITECTED_API JiraSelectedQuestionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API JiraSelectedQuestionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>Selected pillars in the workload.</p>
      */
-    inline const Aws::Vector<SelectedPillar>& GetSelectedPillars() const{ return m_selectedPillars; }
+    inline const Aws::Vector<SelectedPillar>& GetSelectedPillars() const { return m_selectedPillars; }
     inline bool SelectedPillarsHasBeenSet() const { return m_selectedPillarsHasBeenSet; }
-    inline void SetSelectedPillars(const Aws::Vector<SelectedPillar>& value) { m_selectedPillarsHasBeenSet = true; m_selectedPillars = value; }
-    inline void SetSelectedPillars(Aws::Vector<SelectedPillar>&& value) { m_selectedPillarsHasBeenSet = true; m_selectedPillars = std::move(value); }
-    inline JiraSelectedQuestionConfiguration& WithSelectedPillars(const Aws::Vector<SelectedPillar>& value) { SetSelectedPillars(value); return *this;}
-    inline JiraSelectedQuestionConfiguration& WithSelectedPillars(Aws::Vector<SelectedPillar>&& value) { SetSelectedPillars(std::move(value)); return *this;}
-    inline JiraSelectedQuestionConfiguration& AddSelectedPillars(const SelectedPillar& value) { m_selectedPillarsHasBeenSet = true; m_selectedPillars.push_back(value); return *this; }
-    inline JiraSelectedQuestionConfiguration& AddSelectedPillars(SelectedPillar&& value) { m_selectedPillarsHasBeenSet = true; m_selectedPillars.push_back(std::move(value)); return *this; }
+    template<typename SelectedPillarsT = Aws::Vector<SelectedPillar>>
+    void SetSelectedPillars(SelectedPillarsT&& value) { m_selectedPillarsHasBeenSet = true; m_selectedPillars = std::forward<SelectedPillarsT>(value); }
+    template<typename SelectedPillarsT = Aws::Vector<SelectedPillar>>
+    JiraSelectedQuestionConfiguration& WithSelectedPillars(SelectedPillarsT&& value) { SetSelectedPillars(std::forward<SelectedPillarsT>(value)); return *this;}
+    template<typename SelectedPillarsT = SelectedPillar>
+    JiraSelectedQuestionConfiguration& AddSelectedPillars(SelectedPillarsT&& value) { m_selectedPillarsHasBeenSet = true; m_selectedPillars.emplace_back(std::forward<SelectedPillarsT>(value)); return *this; }
     ///@}
   private:
 

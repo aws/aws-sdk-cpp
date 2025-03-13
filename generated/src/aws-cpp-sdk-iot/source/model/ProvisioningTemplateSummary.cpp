@@ -18,21 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ProvisioningTemplateSummary::ProvisioningTemplateSummary() : 
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_type(TemplateType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ProvisioningTemplateSummary::ProvisioningTemplateSummary(JsonView jsonValue)
-  : ProvisioningTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ProvisioningTemplateSummary& ProvisioningTemplateSummary::operator =(JsonView js
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TemplateTypeMapper::GetTemplateTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

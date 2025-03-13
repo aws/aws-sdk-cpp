@@ -12,12 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKeyPolicyRequest::GetKeyPolicyRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKeyPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

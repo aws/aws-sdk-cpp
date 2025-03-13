@@ -32,7 +32,7 @@ namespace Model
   class LineItemAssetInformation
   {
   public:
-    AWS_OUTPOSTS_API LineItemAssetInformation();
+    AWS_OUTPOSTS_API LineItemAssetInformation() = default;
     AWS_OUTPOSTS_API LineItemAssetInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API LineItemAssetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,26 @@ namespace Model
     /**
      * <p> The ID of the asset. </p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline LineItemAssetInformation& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline LineItemAssetInformation& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline LineItemAssetInformation& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    LineItemAssetInformation& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The MAC addresses of the asset. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMacAddressList() const{ return m_macAddressList; }
+    inline const Aws::Vector<Aws::String>& GetMacAddressList() const { return m_macAddressList; }
     inline bool MacAddressListHasBeenSet() const { return m_macAddressListHasBeenSet; }
-    inline void SetMacAddressList(const Aws::Vector<Aws::String>& value) { m_macAddressListHasBeenSet = true; m_macAddressList = value; }
-    inline void SetMacAddressList(Aws::Vector<Aws::String>&& value) { m_macAddressListHasBeenSet = true; m_macAddressList = std::move(value); }
-    inline LineItemAssetInformation& WithMacAddressList(const Aws::Vector<Aws::String>& value) { SetMacAddressList(value); return *this;}
-    inline LineItemAssetInformation& WithMacAddressList(Aws::Vector<Aws::String>&& value) { SetMacAddressList(std::move(value)); return *this;}
-    inline LineItemAssetInformation& AddMacAddressList(const Aws::String& value) { m_macAddressListHasBeenSet = true; m_macAddressList.push_back(value); return *this; }
-    inline LineItemAssetInformation& AddMacAddressList(Aws::String&& value) { m_macAddressListHasBeenSet = true; m_macAddressList.push_back(std::move(value)); return *this; }
-    inline LineItemAssetInformation& AddMacAddressList(const char* value) { m_macAddressListHasBeenSet = true; m_macAddressList.push_back(value); return *this; }
+    template<typename MacAddressListT = Aws::Vector<Aws::String>>
+    void SetMacAddressList(MacAddressListT&& value) { m_macAddressListHasBeenSet = true; m_macAddressList = std::forward<MacAddressListT>(value); }
+    template<typename MacAddressListT = Aws::Vector<Aws::String>>
+    LineItemAssetInformation& WithMacAddressList(MacAddressListT&& value) { SetMacAddressList(std::forward<MacAddressListT>(value)); return *this;}
+    template<typename MacAddressListT = Aws::String>
+    LineItemAssetInformation& AddMacAddressList(MacAddressListT&& value) { m_macAddressListHasBeenSet = true; m_macAddressList.emplace_back(std::forward<MacAddressListT>(value)); return *this; }
     ///@}
   private:
 

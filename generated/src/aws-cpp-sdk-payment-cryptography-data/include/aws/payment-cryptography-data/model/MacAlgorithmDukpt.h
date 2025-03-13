@@ -34,7 +34,7 @@ namespace Model
   class MacAlgorithmDukpt
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API MacAlgorithmDukpt();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API MacAlgorithmDukpt() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API MacAlgorithmDukpt(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API MacAlgorithmDukpt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * encrypting device using DUKPT encryption method. The KSN is derived from the
      * encrypting device unique identifier and an internal transaction counter.</p>
      */
-    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
+    inline const Aws::String& GetKeySerialNumber() const { return m_keySerialNumber; }
     inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
-    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
-    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
-    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
-    inline MacAlgorithmDukpt& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
-    inline MacAlgorithmDukpt& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
-    inline MacAlgorithmDukpt& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
+    template<typename KeySerialNumberT = Aws::String>
+    void SetKeySerialNumber(KeySerialNumberT&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::forward<KeySerialNumberT>(value); }
+    template<typename KeySerialNumberT = Aws::String>
+    MacAlgorithmDukpt& WithKeySerialNumber(KeySerialNumberT&& value) { SetKeySerialNumber(std::forward<KeySerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <p>The type of use of DUKPT, which can be MAC generation, MAC verification, or
      * both.</p>
      */
-    inline const DukptKeyVariant& GetDukptKeyVariant() const{ return m_dukptKeyVariant; }
+    inline DukptKeyVariant GetDukptKeyVariant() const { return m_dukptKeyVariant; }
     inline bool DukptKeyVariantHasBeenSet() const { return m_dukptKeyVariantHasBeenSet; }
-    inline void SetDukptKeyVariant(const DukptKeyVariant& value) { m_dukptKeyVariantHasBeenSet = true; m_dukptKeyVariant = value; }
-    inline void SetDukptKeyVariant(DukptKeyVariant&& value) { m_dukptKeyVariantHasBeenSet = true; m_dukptKeyVariant = std::move(value); }
-    inline MacAlgorithmDukpt& WithDukptKeyVariant(const DukptKeyVariant& value) { SetDukptKeyVariant(value); return *this;}
-    inline MacAlgorithmDukpt& WithDukptKeyVariant(DukptKeyVariant&& value) { SetDukptKeyVariant(std::move(value)); return *this;}
+    inline void SetDukptKeyVariant(DukptKeyVariant value) { m_dukptKeyVariantHasBeenSet = true; m_dukptKeyVariant = value; }
+    inline MacAlgorithmDukpt& WithDukptKeyVariant(DukptKeyVariant value) { SetDukptKeyVariant(value); return *this;}
     ///@}
 
     ///@{
@@ -76,22 +72,20 @@ namespace Model
      * For example, you can't use <code>AES_128</code> as a derivation type for a BDK
      * of <code>AES_128</code> or <code>TDES_2KEY</code>.</p>
      */
-    inline const DukptDerivationType& GetDukptDerivationType() const{ return m_dukptDerivationType; }
+    inline DukptDerivationType GetDukptDerivationType() const { return m_dukptDerivationType; }
     inline bool DukptDerivationTypeHasBeenSet() const { return m_dukptDerivationTypeHasBeenSet; }
-    inline void SetDukptDerivationType(const DukptDerivationType& value) { m_dukptDerivationTypeHasBeenSet = true; m_dukptDerivationType = value; }
-    inline void SetDukptDerivationType(DukptDerivationType&& value) { m_dukptDerivationTypeHasBeenSet = true; m_dukptDerivationType = std::move(value); }
-    inline MacAlgorithmDukpt& WithDukptDerivationType(const DukptDerivationType& value) { SetDukptDerivationType(value); return *this;}
-    inline MacAlgorithmDukpt& WithDukptDerivationType(DukptDerivationType&& value) { SetDukptDerivationType(std::move(value)); return *this;}
+    inline void SetDukptDerivationType(DukptDerivationType value) { m_dukptDerivationTypeHasBeenSet = true; m_dukptDerivationType = value; }
+    inline MacAlgorithmDukpt& WithDukptDerivationType(DukptDerivationType value) { SetDukptDerivationType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keySerialNumber;
     bool m_keySerialNumberHasBeenSet = false;
 
-    DukptKeyVariant m_dukptKeyVariant;
+    DukptKeyVariant m_dukptKeyVariant{DukptKeyVariant::NOT_SET};
     bool m_dukptKeyVariantHasBeenSet = false;
 
-    DukptDerivationType m_dukptDerivationType;
+    DukptDerivationType m_dukptDerivationType{DukptDerivationType::NOT_SET};
     bool m_dukptDerivationTypeHasBeenSet = false;
   };
 

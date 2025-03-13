@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-BlueGreenDeploymentTask::BlueGreenDeploymentTask() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 BlueGreenDeploymentTask::BlueGreenDeploymentTask(const XmlNode& xmlNode)
-  : BlueGreenDeploymentTask()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ BlueGreenDeploymentTask& BlueGreenDeploymentTask::operator =(const XmlNode& xmlN
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

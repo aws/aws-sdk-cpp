@@ -21,7 +21,7 @@ namespace Model
   class UpdateSecurityHubConfigurationRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API UpdateSecurityHubConfigurationRequest();
+    AWS_SECURITYHUB_API UpdateSecurityHubConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * designation regardless of whether you have <code>AutoEnableControls</code> set
      * to <code>true</code>.</p>
      */
-    inline bool GetAutoEnableControls() const{ return m_autoEnableControls; }
+    inline bool GetAutoEnableControls() const { return m_autoEnableControls; }
     inline bool AutoEnableControlsHasBeenSet() const { return m_autoEnableControlsHasBeenSet; }
     inline void SetAutoEnableControls(bool value) { m_autoEnableControlsHasBeenSet = true; m_autoEnableControls = value; }
     inline UpdateSecurityHubConfigurationRequest& WithAutoEnableControls(bool value) { SetAutoEnableControls(value); return *this;}
@@ -64,19 +64,17 @@ namespace Model
      * accounts that are part of an organization, this value can only be updated in the
      * administrator account.</p>
      */
-    inline const ControlFindingGenerator& GetControlFindingGenerator() const{ return m_controlFindingGenerator; }
+    inline ControlFindingGenerator GetControlFindingGenerator() const { return m_controlFindingGenerator; }
     inline bool ControlFindingGeneratorHasBeenSet() const { return m_controlFindingGeneratorHasBeenSet; }
-    inline void SetControlFindingGenerator(const ControlFindingGenerator& value) { m_controlFindingGeneratorHasBeenSet = true; m_controlFindingGenerator = value; }
-    inline void SetControlFindingGenerator(ControlFindingGenerator&& value) { m_controlFindingGeneratorHasBeenSet = true; m_controlFindingGenerator = std::move(value); }
-    inline UpdateSecurityHubConfigurationRequest& WithControlFindingGenerator(const ControlFindingGenerator& value) { SetControlFindingGenerator(value); return *this;}
-    inline UpdateSecurityHubConfigurationRequest& WithControlFindingGenerator(ControlFindingGenerator&& value) { SetControlFindingGenerator(std::move(value)); return *this;}
+    inline void SetControlFindingGenerator(ControlFindingGenerator value) { m_controlFindingGeneratorHasBeenSet = true; m_controlFindingGenerator = value; }
+    inline UpdateSecurityHubConfigurationRequest& WithControlFindingGenerator(ControlFindingGenerator value) { SetControlFindingGenerator(value); return *this;}
     ///@}
   private:
 
-    bool m_autoEnableControls;
+    bool m_autoEnableControls{false};
     bool m_autoEnableControlsHasBeenSet = false;
 
-    ControlFindingGenerator m_controlFindingGenerator;
+    ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
     bool m_controlFindingGeneratorHasBeenSet = false;
   };
 

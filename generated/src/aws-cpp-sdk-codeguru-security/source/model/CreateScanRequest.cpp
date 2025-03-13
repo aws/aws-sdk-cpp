@@ -12,19 +12,6 @@ using namespace Aws::CodeGuruSecurity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateScanRequest::CreateScanRequest() : 
-    m_analysisType(AnalysisType::NOT_SET),
-    m_analysisTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_resourceIdHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateScanRequest::SerializePayload() const
 {
   JsonValue payload;

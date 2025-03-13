@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateListingChangeSetResult::CreateListingChangeSetResult() : 
-    m_status(ListingStatus::NOT_SET)
-{
-}
-
 CreateListingChangeSetResult::CreateListingChangeSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateListingChangeSetResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateListingChangeSetResult& CreateListingChangeSetResult::operator =(const Aws
   if(jsonValue.ValueExists("listingId"))
   {
     m_listingId = jsonValue.GetString("listingId");
-
+    m_listingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingRevision"))
   {
     m_listingRevision = jsonValue.GetString("listingRevision");
-
+    m_listingRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ListingStatusMapper::GetListingStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

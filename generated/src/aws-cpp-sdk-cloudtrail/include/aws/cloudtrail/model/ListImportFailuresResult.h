@@ -29,7 +29,7 @@ namespace Model
   class ListImportFailuresResult
   {
   public:
-    AWS_CLOUDTRAIL_API ListImportFailuresResult();
+    AWS_CLOUDTRAIL_API ListImportFailuresResult() = default;
     AWS_CLOUDTRAIL_API ListImportFailuresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API ListImportFailuresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p> Contains information about the import failures. </p>
      */
-    inline const Aws::Vector<ImportFailureListItem>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<ImportFailureListItem>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<ImportFailureListItem>&& value) { m_failures = std::move(value); }
-    inline ListImportFailuresResult& WithFailures(const Aws::Vector<ImportFailureListItem>& value) { SetFailures(value); return *this;}
-    inline ListImportFailuresResult& WithFailures(Aws::Vector<ImportFailureListItem>&& value) { SetFailures(std::move(value)); return *this;}
-    inline ListImportFailuresResult& AddFailures(const ImportFailureListItem& value) { m_failures.push_back(value); return *this; }
-    inline ListImportFailuresResult& AddFailures(ImportFailureListItem&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImportFailureListItem>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<ImportFailureListItem>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<ImportFailureListItem>>
+    ListImportFailuresResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = ImportFailureListItem>
+    ListImportFailuresResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> A token you can use to get the next page of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListImportFailuresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportFailuresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportFailuresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportFailuresResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListImportFailuresResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListImportFailuresResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListImportFailuresResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListImportFailuresResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ImportFailureListItem> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

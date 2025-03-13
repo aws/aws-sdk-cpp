@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExplainabilityRequest::DescribeExplainabilityRequest() : 
-    m_explainabilityArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExplainabilityRequest::SerializePayload() const
 {
   JsonValue payload;

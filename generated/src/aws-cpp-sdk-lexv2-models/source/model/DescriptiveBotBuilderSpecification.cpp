@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DescriptiveBotBuilderSpecification::DescriptiveBotBuilderSpecification() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_bedrockModelSpecificationHasBeenSet(false)
-{
-}
-
 DescriptiveBotBuilderSpecification::DescriptiveBotBuilderSpecification(JsonView jsonValue)
-  : DescriptiveBotBuilderSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DescriptiveBotBuilderSpecification& DescriptiveBotBuilderSpecification::operator
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bedrockModelSpecification"))
   {
     m_bedrockModelSpecification = jsonValue.GetObject("bedrockModelSpecification");
-
     m_bedrockModelSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

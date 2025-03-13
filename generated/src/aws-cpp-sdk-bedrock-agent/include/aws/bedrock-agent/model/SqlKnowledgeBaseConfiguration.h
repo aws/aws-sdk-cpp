@@ -37,7 +37,7 @@ namespace Model
   class SqlKnowledgeBaseConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API SqlKnowledgeBaseConfiguration();
+    AWS_BEDROCKAGENT_API SqlKnowledgeBaseConfiguration() = default;
     AWS_BEDROCKAGENT_API SqlKnowledgeBaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SqlKnowledgeBaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,31 +48,29 @@ namespace Model
      * <p>Specifies configurations for a knowledge base connected to an Amazon Redshift
      * database.</p>
      */
-    inline const RedshiftConfiguration& GetRedshiftConfiguration() const{ return m_redshiftConfiguration; }
+    inline const RedshiftConfiguration& GetRedshiftConfiguration() const { return m_redshiftConfiguration; }
     inline bool RedshiftConfigurationHasBeenSet() const { return m_redshiftConfigurationHasBeenSet; }
-    inline void SetRedshiftConfiguration(const RedshiftConfiguration& value) { m_redshiftConfigurationHasBeenSet = true; m_redshiftConfiguration = value; }
-    inline void SetRedshiftConfiguration(RedshiftConfiguration&& value) { m_redshiftConfigurationHasBeenSet = true; m_redshiftConfiguration = std::move(value); }
-    inline SqlKnowledgeBaseConfiguration& WithRedshiftConfiguration(const RedshiftConfiguration& value) { SetRedshiftConfiguration(value); return *this;}
-    inline SqlKnowledgeBaseConfiguration& WithRedshiftConfiguration(RedshiftConfiguration&& value) { SetRedshiftConfiguration(std::move(value)); return *this;}
+    template<typename RedshiftConfigurationT = RedshiftConfiguration>
+    void SetRedshiftConfiguration(RedshiftConfigurationT&& value) { m_redshiftConfigurationHasBeenSet = true; m_redshiftConfiguration = std::forward<RedshiftConfigurationT>(value); }
+    template<typename RedshiftConfigurationT = RedshiftConfiguration>
+    SqlKnowledgeBaseConfiguration& WithRedshiftConfiguration(RedshiftConfigurationT&& value) { SetRedshiftConfiguration(std::forward<RedshiftConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of SQL database to connect to the knowledge base.</p>
      */
-    inline const QueryEngineType& GetType() const{ return m_type; }
+    inline QueryEngineType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const QueryEngineType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(QueryEngineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SqlKnowledgeBaseConfiguration& WithType(const QueryEngineType& value) { SetType(value); return *this;}
-    inline SqlKnowledgeBaseConfiguration& WithType(QueryEngineType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(QueryEngineType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SqlKnowledgeBaseConfiguration& WithType(QueryEngineType value) { SetType(value); return *this;}
     ///@}
   private:
 
     RedshiftConfiguration m_redshiftConfiguration;
     bool m_redshiftConfigurationHasBeenSet = false;
 
-    QueryEngineType m_type;
+    QueryEngineType m_type{QueryEngineType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

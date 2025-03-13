@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLagRequest::DeleteLagRequest() : 
-    m_lagIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLagRequest::SerializePayload() const
 {
   JsonValue payload;

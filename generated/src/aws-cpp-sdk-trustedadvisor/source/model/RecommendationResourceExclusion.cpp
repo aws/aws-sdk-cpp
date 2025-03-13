@@ -18,15 +18,7 @@ namespace TrustedAdvisor
 namespace Model
 {
 
-RecommendationResourceExclusion::RecommendationResourceExclusion() : 
-    m_arnHasBeenSet(false),
-    m_isExcluded(false),
-    m_isExcludedHasBeenSet(false)
-{
-}
-
 RecommendationResourceExclusion::RecommendationResourceExclusion(JsonView jsonValue)
-  : RecommendationResourceExclusion()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RecommendationResourceExclusion& RecommendationResourceExclusion::operator =(Jso
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isExcluded"))
   {
     m_isExcluded = jsonValue.GetBool("isExcluded");
-
     m_isExcludedHasBeenSet = true;
   }
-
   return *this;
 }
 

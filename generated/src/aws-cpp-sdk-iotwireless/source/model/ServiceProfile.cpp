@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ServiceProfile::ServiceProfile() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 ServiceProfile::ServiceProfile(JsonView jsonValue)
-  : ServiceProfile()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServiceProfile& ServiceProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

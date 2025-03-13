@@ -12,12 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAnomalyMonitorRequest::CreateAnomalyMonitorRequest() : 
-    m_anomalyMonitorHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAnomalyMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

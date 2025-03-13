@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplate::LaunchTemplate() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_defaultVersionNumber(0),
-    m_defaultVersionNumberHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_operatorHasBeenSet(false)
-{
-}
-
 LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
-  : LaunchTemplate()
 {
   *this = xmlNode;
 }
@@ -51,54 +36,62 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
     {
       m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
+       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("launchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
       m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
+       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode createdByNode = resultNode.FirstChild("createdBy");
     if(!createdByNode.IsNull())
     {
       m_createdBy = Aws::Utils::Xml::DecodeEscapedXmlText(createdByNode.GetText());
       m_createdByHasBeenSet = true;
+       m_createdByHasBeenSet = true;
     }
     XmlNode defaultVersionNumberNode = resultNode.FirstChild("defaultVersionNumber");
     if(!defaultVersionNumberNode.IsNull())
     {
       m_defaultVersionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionNumberNode.GetText()).c_str()).c_str());
       m_defaultVersionNumberHasBeenSet = true;
+       m_defaultVersionNumberHasBeenSet = true;
     }
     XmlNode latestVersionNumberNode = resultNode.FirstChild("latestVersionNumber");
     if(!latestVersionNumberNode.IsNull())
     {
       m_latestVersionNumber = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(latestVersionNumberNode.GetText()).c_str()).c_str());
       m_latestVersionNumberHasBeenSet = true;
+       m_latestVersionNumberHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
     if(!operatorNode.IsNull())
     {
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
+       m_operatorHasBeenSet = true;
     }
   }
 

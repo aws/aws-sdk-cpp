@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-InlineContent::InlineContent() : 
-    m_byteContentHasBeenSet(false),
-    m_textContentHasBeenSet(false),
-    m_type(InlineContentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 InlineContent::InlineContent(JsonView jsonValue)
-  : InlineContent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InlineContent& InlineContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("byteContent"))
   {
     m_byteContent = jsonValue.GetObject("byteContent");
-
     m_byteContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textContent"))
   {
     m_textContent = jsonValue.GetObject("textContent");
-
     m_textContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = InlineContentTypeMapper::GetInlineContentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

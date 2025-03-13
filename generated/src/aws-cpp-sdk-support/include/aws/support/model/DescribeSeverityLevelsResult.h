@@ -35,7 +35,7 @@ namespace Model
   class DescribeSeverityLevelsResult
   {
   public:
-    AWS_SUPPORT_API DescribeSeverityLevelsResult();
+    AWS_SUPPORT_API DescribeSeverityLevelsResult() = default;
     AWS_SUPPORT_API DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API DescribeSeverityLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>The available severity levels for the support case. Available severity levels
      * are defined by your service level agreement with Amazon Web Services.</p>
      */
-    inline const Aws::Vector<SeverityLevel>& GetSeverityLevels() const{ return m_severityLevels; }
-    inline void SetSeverityLevels(const Aws::Vector<SeverityLevel>& value) { m_severityLevels = value; }
-    inline void SetSeverityLevels(Aws::Vector<SeverityLevel>&& value) { m_severityLevels = std::move(value); }
-    inline DescribeSeverityLevelsResult& WithSeverityLevels(const Aws::Vector<SeverityLevel>& value) { SetSeverityLevels(value); return *this;}
-    inline DescribeSeverityLevelsResult& WithSeverityLevels(Aws::Vector<SeverityLevel>&& value) { SetSeverityLevels(std::move(value)); return *this;}
-    inline DescribeSeverityLevelsResult& AddSeverityLevels(const SeverityLevel& value) { m_severityLevels.push_back(value); return *this; }
-    inline DescribeSeverityLevelsResult& AddSeverityLevels(SeverityLevel&& value) { m_severityLevels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SeverityLevel>& GetSeverityLevels() const { return m_severityLevels; }
+    template<typename SeverityLevelsT = Aws::Vector<SeverityLevel>>
+    void SetSeverityLevels(SeverityLevelsT&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels = std::forward<SeverityLevelsT>(value); }
+    template<typename SeverityLevelsT = Aws::Vector<SeverityLevel>>
+    DescribeSeverityLevelsResult& WithSeverityLevels(SeverityLevelsT&& value) { SetSeverityLevels(std::forward<SeverityLevelsT>(value)); return *this;}
+    template<typename SeverityLevelsT = SeverityLevel>
+    DescribeSeverityLevelsResult& AddSeverityLevels(SeverityLevelsT&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels.emplace_back(std::forward<SeverityLevelsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSeverityLevelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSeverityLevelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSeverityLevelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSeverityLevelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SeverityLevel> m_severityLevels;
+    bool m_severityLevelsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

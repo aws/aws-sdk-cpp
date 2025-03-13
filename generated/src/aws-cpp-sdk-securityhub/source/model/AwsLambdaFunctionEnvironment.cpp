@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionEnvironment::AwsLambdaFunctionEnvironment() : 
-    m_variablesHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionEnvironment::AwsLambdaFunctionEnvironment(JsonView jsonValue)
-  : AwsLambdaFunctionEnvironment()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AwsLambdaFunctionEnvironment& AwsLambdaFunctionEnvironment::operator =(JsonView 
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

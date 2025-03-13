@@ -12,18 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataAutomationProjectRequest::UpdateDataAutomationProjectRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_projectStage(DataAutomationProjectStage::NOT_SET),
-    m_projectStageHasBeenSet(false),
-    m_projectDescriptionHasBeenSet(false),
-    m_standardOutputConfigurationHasBeenSet(false),
-    m_customOutputConfigurationHasBeenSet(false),
-    m_overrideConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataAutomationProjectRequest::SerializePayload() const
 {
   JsonValue payload;

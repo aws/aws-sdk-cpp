@@ -18,16 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-ListSourceRepositoryBranchesItem::ListSourceRepositoryBranchesItem() : 
-    m_refHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_headCommitIdHasBeenSet(false)
-{
-}
-
 ListSourceRepositoryBranchesItem::ListSourceRepositoryBranchesItem(JsonView jsonValue)
-  : ListSourceRepositoryBranchesItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ListSourceRepositoryBranchesItem& ListSourceRepositoryBranchesItem::operator =(J
   if(jsonValue.ValueExists("ref"))
   {
     m_ref = jsonValue.GetString("ref");
-
     m_refHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headCommitId"))
   {
     m_headCommitId = jsonValue.GetString("headCommitId");
-
     m_headCommitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

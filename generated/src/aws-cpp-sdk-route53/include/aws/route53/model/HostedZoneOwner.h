@@ -33,7 +33,7 @@ namespace Model
   class HostedZoneOwner
   {
   public:
-    AWS_ROUTE53_API HostedZoneOwner();
+    AWS_ROUTE53_API HostedZoneOwner() = default;
     AWS_ROUTE53_API HostedZoneOwner(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API HostedZoneOwner& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
      * creates the hosted zone using the current Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetOwningAccount() const{ return m_owningAccount; }
+    inline const Aws::String& GetOwningAccount() const { return m_owningAccount; }
     inline bool OwningAccountHasBeenSet() const { return m_owningAccountHasBeenSet; }
-    inline void SetOwningAccount(const Aws::String& value) { m_owningAccountHasBeenSet = true; m_owningAccount = value; }
-    inline void SetOwningAccount(Aws::String&& value) { m_owningAccountHasBeenSet = true; m_owningAccount = std::move(value); }
-    inline void SetOwningAccount(const char* value) { m_owningAccountHasBeenSet = true; m_owningAccount.assign(value); }
-    inline HostedZoneOwner& WithOwningAccount(const Aws::String& value) { SetOwningAccount(value); return *this;}
-    inline HostedZoneOwner& WithOwningAccount(Aws::String&& value) { SetOwningAccount(std::move(value)); return *this;}
-    inline HostedZoneOwner& WithOwningAccount(const char* value) { SetOwningAccount(value); return *this;}
+    template<typename OwningAccountT = Aws::String>
+    void SetOwningAccount(OwningAccountT&& value) { m_owningAccountHasBeenSet = true; m_owningAccount = std::forward<OwningAccountT>(value); }
+    template<typename OwningAccountT = Aws::String>
+    HostedZoneOwner& WithOwningAccount(OwningAccountT&& value) { SetOwningAccount(std::forward<OwningAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * and associated a VPC with the hosted zone, the value of
      * <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
      */
-    inline const Aws::String& GetOwningService() const{ return m_owningService; }
+    inline const Aws::String& GetOwningService() const { return m_owningService; }
     inline bool OwningServiceHasBeenSet() const { return m_owningServiceHasBeenSet; }
-    inline void SetOwningService(const Aws::String& value) { m_owningServiceHasBeenSet = true; m_owningService = value; }
-    inline void SetOwningService(Aws::String&& value) { m_owningServiceHasBeenSet = true; m_owningService = std::move(value); }
-    inline void SetOwningService(const char* value) { m_owningServiceHasBeenSet = true; m_owningService.assign(value); }
-    inline HostedZoneOwner& WithOwningService(const Aws::String& value) { SetOwningService(value); return *this;}
-    inline HostedZoneOwner& WithOwningService(Aws::String&& value) { SetOwningService(std::move(value)); return *this;}
-    inline HostedZoneOwner& WithOwningService(const char* value) { SetOwningService(value); return *this;}
+    template<typename OwningServiceT = Aws::String>
+    void SetOwningService(OwningServiceT&& value) { m_owningServiceHasBeenSet = true; m_owningService = std::forward<OwningServiceT>(value); }
+    template<typename OwningServiceT = Aws::String>
+    HostedZoneOwner& WithOwningService(OwningServiceT&& value) { SetOwningService(std::forward<OwningServiceT>(value)); return *this;}
     ///@}
   private:
 

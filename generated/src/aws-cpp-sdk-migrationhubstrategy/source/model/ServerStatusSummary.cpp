@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ServerStatusSummary::ServerStatusSummary() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_runTimeAssessmentStatus(RunTimeAssessmentStatus::NOT_SET),
-    m_runTimeAssessmentStatusHasBeenSet(false)
-{
-}
-
 ServerStatusSummary::ServerStatusSummary(JsonView jsonValue)
-  : ServerStatusSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ServerStatusSummary& ServerStatusSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runTimeAssessmentStatus"))
   {
     m_runTimeAssessmentStatus = RunTimeAssessmentStatusMapper::GetRunTimeAssessmentStatusForName(jsonValue.GetString("runTimeAssessmentStatus"));
-
     m_runTimeAssessmentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

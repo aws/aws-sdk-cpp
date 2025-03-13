@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BodySectionContent::BodySectionContent() : 
-    m_layoutHasBeenSet(false)
-{
-}
-
 BodySectionContent::BodySectionContent(JsonView jsonValue)
-  : BodySectionContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BodySectionContent& BodySectionContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Layout"))
   {
     m_layout = jsonValue.GetObject("Layout");
-
     m_layoutHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMemberFromQueueRequest::DisassociateMemberFromQueueRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMemberFromQueueRequest::SerializePayload() const
 {
   return {};

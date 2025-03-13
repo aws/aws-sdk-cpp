@@ -32,7 +32,7 @@ namespace Model
   class ChangeRequest
   {
   public:
-    AWS_FINSPACE_API ChangeRequest();
+    AWS_FINSPACE_API ChangeRequest() = default;
     AWS_FINSPACE_API ChangeRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API ChangeRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * database.</p> </li> <li> <p>DELETE – Deletes files in a database.</p> </li>
      * </ul>
      */
-    inline const ChangeType& GetChangeType() const{ return m_changeType; }
+    inline ChangeType GetChangeType() const { return m_changeType; }
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-    inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-    inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-    inline ChangeRequest& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
-    inline ChangeRequest& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
+    inline void SetChangeType(ChangeType value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+    inline ChangeRequest& WithChangeType(ChangeType value) { SetChangeType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,32 +56,28 @@ namespace Model
      * <p>Defines the S3 path of the source file that is required to add or update
      * files in a database.</p>
      */
-    inline const Aws::String& GetS3Path() const{ return m_s3Path; }
+    inline const Aws::String& GetS3Path() const { return m_s3Path; }
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
-    inline void SetS3Path(const Aws::String& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
-    inline void SetS3Path(Aws::String&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
-    inline void SetS3Path(const char* value) { m_s3PathHasBeenSet = true; m_s3Path.assign(value); }
-    inline ChangeRequest& WithS3Path(const Aws::String& value) { SetS3Path(value); return *this;}
-    inline ChangeRequest& WithS3Path(Aws::String&& value) { SetS3Path(std::move(value)); return *this;}
-    inline ChangeRequest& WithS3Path(const char* value) { SetS3Path(value); return *this;}
+    template<typename S3PathT = Aws::String>
+    void SetS3Path(S3PathT&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::forward<S3PathT>(value); }
+    template<typename S3PathT = Aws::String>
+    ChangeRequest& WithS3Path(S3PathT&& value) { SetS3Path(std::forward<S3PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the path within the database directory. </p>
      */
-    inline const Aws::String& GetDbPath() const{ return m_dbPath; }
+    inline const Aws::String& GetDbPath() const { return m_dbPath; }
     inline bool DbPathHasBeenSet() const { return m_dbPathHasBeenSet; }
-    inline void SetDbPath(const Aws::String& value) { m_dbPathHasBeenSet = true; m_dbPath = value; }
-    inline void SetDbPath(Aws::String&& value) { m_dbPathHasBeenSet = true; m_dbPath = std::move(value); }
-    inline void SetDbPath(const char* value) { m_dbPathHasBeenSet = true; m_dbPath.assign(value); }
-    inline ChangeRequest& WithDbPath(const Aws::String& value) { SetDbPath(value); return *this;}
-    inline ChangeRequest& WithDbPath(Aws::String&& value) { SetDbPath(std::move(value)); return *this;}
-    inline ChangeRequest& WithDbPath(const char* value) { SetDbPath(value); return *this;}
+    template<typename DbPathT = Aws::String>
+    void SetDbPath(DbPathT&& value) { m_dbPathHasBeenSet = true; m_dbPath = std::forward<DbPathT>(value); }
+    template<typename DbPathT = Aws::String>
+    ChangeRequest& WithDbPath(DbPathT&& value) { SetDbPath(std::forward<DbPathT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeType m_changeType;
+    ChangeType m_changeType{ChangeType::NOT_SET};
     bool m_changeTypeHasBeenSet = false;
 
     Aws::String m_s3Path;

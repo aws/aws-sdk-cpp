@@ -18,15 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-HeaderMatchType::HeaderMatchType() : 
-    m_containsHasBeenSet(false),
-    m_exactHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 HeaderMatchType::HeaderMatchType(JsonView jsonValue)
-  : HeaderMatchType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HeaderMatchType& HeaderMatchType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contains"))
   {
     m_contains = jsonValue.GetString("contains");
-
     m_containsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exact"))
   {
     m_exact = jsonValue.GetString("exact");
-
     m_exactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

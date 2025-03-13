@@ -18,18 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-SnoozeAlarmActionRequest::SnoozeAlarmActionRequest() : 
-    m_requestIdHasBeenSet(false),
-    m_alarmModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_noteHasBeenSet(false),
-    m_snoozeDuration(0),
-    m_snoozeDurationHasBeenSet(false)
-{
-}
-
 SnoozeAlarmActionRequest::SnoozeAlarmActionRequest(JsonView jsonValue)
-  : SnoozeAlarmActionRequest()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SnoozeAlarmActionRequest& SnoozeAlarmActionRequest::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmModelName"))
   {
     m_alarmModelName = jsonValue.GetString("alarmModelName");
-
     m_alarmModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("note"))
   {
     m_note = jsonValue.GetString("note");
-
     m_noteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snoozeDuration"))
   {
     m_snoozeDuration = jsonValue.GetInteger("snoozeDuration");
-
     m_snoozeDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

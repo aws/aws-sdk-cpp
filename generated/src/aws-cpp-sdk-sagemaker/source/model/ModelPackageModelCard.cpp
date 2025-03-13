@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelPackageModelCard::ModelPackageModelCard() : 
-    m_modelCardContentHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false)
-{
-}
-
 ModelPackageModelCard::ModelPackageModelCard(JsonView jsonValue)
-  : ModelPackageModelCard()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelPackageModelCard& ModelPackageModelCard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelCardContent"))
   {
     m_modelCardContent = jsonValue.GetString("ModelCardContent");
-
     m_modelCardContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardStatus"))
   {
     m_modelCardStatus = ModelCardStatusMapper::GetModelCardStatusForName(jsonValue.GetString("ModelCardStatus"));
-
     m_modelCardStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

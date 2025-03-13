@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeprovisionIpamByoasnResponse::DeprovisionIpamByoasnResponse()
-{
-}
-
 DeprovisionIpamByoasnResponse::DeprovisionIpamByoasnResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeprovisionIpamByoasnResponse& DeprovisionIpamByoasnResponse::operator =(const A
     if(!byoasnNode.IsNull())
     {
       m_byoasn = byoasnNode;
+      m_byoasnHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeprovisionIpamByoasnResponse& DeprovisionIpamByoasnResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeprovisionIpamByoasnResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

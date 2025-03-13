@@ -10,12 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DeleteIndexFieldRequest::DeleteIndexFieldRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIndexFieldRequest::SerializePayload() const
 {
   Aws::StringStream ss;

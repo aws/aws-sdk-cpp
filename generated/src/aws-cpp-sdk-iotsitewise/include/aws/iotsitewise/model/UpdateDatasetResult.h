@@ -28,7 +28,7 @@ namespace Model
   class UpdateDatasetResult
   {
   public:
-    AWS_IOTSITEWISE_API UpdateDatasetResult();
+    AWS_IOTSITEWISE_API UpdateDatasetResult() = default;
     AWS_IOTSITEWISE_API UpdateDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API UpdateDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ID of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetId() const{ return m_datasetId; }
-    inline void SetDatasetId(const Aws::String& value) { m_datasetId = value; }
-    inline void SetDatasetId(Aws::String&& value) { m_datasetId = std::move(value); }
-    inline void SetDatasetId(const char* value) { m_datasetId.assign(value); }
-    inline UpdateDatasetResult& WithDatasetId(const Aws::String& value) { SetDatasetId(value); return *this;}
-    inline UpdateDatasetResult& WithDatasetId(Aws::String&& value) { SetDatasetId(std::move(value)); return *this;}
-    inline UpdateDatasetResult& WithDatasetId(const char* value) { SetDatasetId(value); return *this;}
+    inline const Aws::String& GetDatasetId() const { return m_datasetId; }
+    template<typename DatasetIdT = Aws::String>
+    void SetDatasetId(DatasetIdT&& value) { m_datasetIdHasBeenSet = true; m_datasetId = std::forward<DatasetIdT>(value); }
+    template<typename DatasetIdT = Aws::String>
+    UpdateDatasetResult& WithDatasetId(DatasetIdT&& value) { SetDatasetId(std::forward<DatasetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * of the dataset. The format is
      * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dataset/${DatasetId}</code>.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArn.assign(value); }
-    inline UpdateDatasetResult& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline UpdateDatasetResult& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline UpdateDatasetResult& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    UpdateDatasetResult& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,32 +65,34 @@ namespace Model
      * associated error message. The state is <code>ACTIVE</code> when ready to
      * use.</p>
      */
-    inline const DatasetStatus& GetDatasetStatus() const{ return m_datasetStatus; }
-    inline void SetDatasetStatus(const DatasetStatus& value) { m_datasetStatus = value; }
-    inline void SetDatasetStatus(DatasetStatus&& value) { m_datasetStatus = std::move(value); }
-    inline UpdateDatasetResult& WithDatasetStatus(const DatasetStatus& value) { SetDatasetStatus(value); return *this;}
-    inline UpdateDatasetResult& WithDatasetStatus(DatasetStatus&& value) { SetDatasetStatus(std::move(value)); return *this;}
+    inline const DatasetStatus& GetDatasetStatus() const { return m_datasetStatus; }
+    template<typename DatasetStatusT = DatasetStatus>
+    void SetDatasetStatus(DatasetStatusT&& value) { m_datasetStatusHasBeenSet = true; m_datasetStatus = std::forward<DatasetStatusT>(value); }
+    template<typename DatasetStatusT = DatasetStatus>
+    UpdateDatasetResult& WithDatasetStatus(DatasetStatusT&& value) { SetDatasetStatus(std::forward<DatasetStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datasetId;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_datasetArn;
+    bool m_datasetArnHasBeenSet = false;
 
     DatasetStatus m_datasetStatus;
+    bool m_datasetStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

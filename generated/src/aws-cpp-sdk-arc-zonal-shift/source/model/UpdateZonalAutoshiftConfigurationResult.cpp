@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateZonalAutoshiftConfigurationResult::UpdateZonalAutoshiftConfigurationResult() : 
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
-{
-}
-
 UpdateZonalAutoshiftConfigurationResult::UpdateZonalAutoshiftConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateZonalAutoshiftConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateZonalAutoshiftConfigurationResult& UpdateZonalAutoshiftConfigurationResult
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
-
+    m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalAutoshiftStatus"))
   {
     m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
-
+    m_zonalAutoshiftStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

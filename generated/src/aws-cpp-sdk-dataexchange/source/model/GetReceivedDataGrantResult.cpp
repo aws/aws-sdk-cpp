@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReceivedDataGrantResult::GetReceivedDataGrantResult() : 
-    m_acceptanceState(DataGrantAcceptanceState::NOT_SET),
-    m_grantDistributionScope(GrantDistributionScope::NOT_SET)
-{
-}
-
 GetReceivedDataGrantResult::GetReceivedDataGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetReceivedDataGrantResult()
 {
   *this = result;
 }
@@ -35,87 +28,75 @@ GetReceivedDataGrantResult& GetReceivedDataGrantResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderPrincipal"))
   {
     m_senderPrincipal = jsonValue.GetString("SenderPrincipal");
-
+    m_senderPrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiverPrincipal"))
   {
     m_receiverPrincipal = jsonValue.GetString("ReceiverPrincipal");
-
+    m_receiverPrincipalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptanceState"))
   {
     m_acceptanceState = DataGrantAcceptanceStateMapper::GetDataGrantAcceptanceStateForName(jsonValue.GetString("AcceptanceState"));
-
+    m_acceptanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AcceptedAt"))
   {
     m_acceptedAt = jsonValue.GetString("AcceptedAt");
-
+    m_acceptedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndsAt"))
   {
     m_endsAt = jsonValue.GetString("EndsAt");
-
+    m_endsAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantDistributionScope"))
   {
     m_grantDistributionScope = GrantDistributionScopeMapper::GetGrantDistributionScopeForName(jsonValue.GetString("GrantDistributionScope"));
-
+    m_grantDistributionScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
+    m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

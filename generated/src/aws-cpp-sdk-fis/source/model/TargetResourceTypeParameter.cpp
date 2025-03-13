@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-TargetResourceTypeParameter::TargetResourceTypeParameter() : 
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false)
-{
-}
-
 TargetResourceTypeParameter::TargetResourceTypeParameter(JsonView jsonValue)
-  : TargetResourceTypeParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TargetResourceTypeParameter& TargetResourceTypeParameter::operator =(JsonView js
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

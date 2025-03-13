@@ -36,7 +36,7 @@ namespace Model
   class Slot
   {
   public:
-    AWS_LEXRUNTIMEV2_API Slot();
+    AWS_LEXRUNTIMEV2_API Slot() = default;
     AWS_LEXRUNTIMEV2_API Slot(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Slot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>The current value of the slot.</p>
      */
-    inline const Value& GetValue() const{ return m_value; }
+    inline const Value& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Value& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Value&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline Slot& WithValue(const Value& value) { SetValue(value); return *this;}
-    inline Slot& WithValue(Value&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Value>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Value>
+    Slot& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,10 @@ namespace Model
      * <code>Scalar</code>, it indicates that the <code>value</code> field contains a
      * single value.</p>
      */
-    inline const Shape& GetShape() const{ return m_shape; }
+    inline Shape GetShape() const { return m_shape; }
     inline bool ShapeHasBeenSet() const { return m_shapeHasBeenSet; }
-    inline void SetShape(const Shape& value) { m_shapeHasBeenSet = true; m_shape = value; }
-    inline void SetShape(Shape&& value) { m_shapeHasBeenSet = true; m_shape = std::move(value); }
-    inline Slot& WithShape(const Shape& value) { SetShape(value); return *this;}
-    inline Slot& WithShape(Shape&& value) { SetShape(std::move(value)); return *this;}
+    inline void SetShape(Shape value) { m_shapeHasBeenSet = true; m_shape = value; }
+    inline Slot& WithShape(Shape value) { SetShape(value); return *this;}
     ///@}
 
     ///@{
@@ -75,39 +73,37 @@ namespace Model
      * example, if a for a slot that elicits pizza toppings, the values might be
      * "pepperoni" and "pineapple." </p>
      */
-    inline const Aws::Vector<Slot>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Slot>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Slot>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Slot>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline Slot& WithValues(const Aws::Vector<Slot>& value) { SetValues(value); return *this;}
-    inline Slot& WithValues(Aws::Vector<Slot>&& value) { SetValues(std::move(value)); return *this;}
-    inline Slot& AddValues(const Slot& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline Slot& AddValues(Slot&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<Slot>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Slot>>
+    Slot& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Slot>
+    Slot& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The constituent sub slots of a composite slot.</p>
      */
-    inline const Aws::Map<Aws::String, Slot>& GetSubSlots() const{ return m_subSlots; }
+    inline const Aws::Map<Aws::String, Slot>& GetSubSlots() const { return m_subSlots; }
     inline bool SubSlotsHasBeenSet() const { return m_subSlotsHasBeenSet; }
-    inline void SetSubSlots(const Aws::Map<Aws::String, Slot>& value) { m_subSlotsHasBeenSet = true; m_subSlots = value; }
-    inline void SetSubSlots(Aws::Map<Aws::String, Slot>&& value) { m_subSlotsHasBeenSet = true; m_subSlots = std::move(value); }
-    inline Slot& WithSubSlots(const Aws::Map<Aws::String, Slot>& value) { SetSubSlots(value); return *this;}
-    inline Slot& WithSubSlots(Aws::Map<Aws::String, Slot>&& value) { SetSubSlots(std::move(value)); return *this;}
-    inline Slot& AddSubSlots(const Aws::String& key, const Slot& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, value); return *this; }
-    inline Slot& AddSubSlots(Aws::String&& key, const Slot& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::move(key), value); return *this; }
-    inline Slot& AddSubSlots(const Aws::String& key, Slot&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, std::move(value)); return *this; }
-    inline Slot& AddSubSlots(Aws::String&& key, Slot&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::move(key), std::move(value)); return *this; }
-    inline Slot& AddSubSlots(const char* key, Slot&& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, std::move(value)); return *this; }
-    inline Slot& AddSubSlots(const char* key, const Slot& value) { m_subSlotsHasBeenSet = true; m_subSlots.emplace(key, value); return *this; }
+    template<typename SubSlotsT = Aws::Map<Aws::String, Slot>>
+    void SetSubSlots(SubSlotsT&& value) { m_subSlotsHasBeenSet = true; m_subSlots = std::forward<SubSlotsT>(value); }
+    template<typename SubSlotsT = Aws::Map<Aws::String, Slot>>
+    Slot& WithSubSlots(SubSlotsT&& value) { SetSubSlots(std::forward<SubSlotsT>(value)); return *this;}
+    template<typename SubSlotsKeyT = Aws::String, typename SubSlotsValueT = Slot>
+    Slot& AddSubSlots(SubSlotsKeyT&& key, SubSlotsValueT&& value) {
+      m_subSlotsHasBeenSet = true; m_subSlots.emplace(std::forward<SubSlotsKeyT>(key), std::forward<SubSlotsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Value m_value;
     bool m_valueHasBeenSet = false;
 
-    Shape m_shape;
+    Shape m_shape{Shape::NOT_SET};
     bool m_shapeHasBeenSet = false;
 
     Aws::Vector<Slot> m_values;

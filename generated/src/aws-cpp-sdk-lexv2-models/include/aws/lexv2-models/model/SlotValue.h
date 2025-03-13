@@ -31,7 +31,7 @@ namespace Model
   class SlotValue
   {
   public:
-    AWS_LEXMODELSV2_API SlotValue();
+    AWS_LEXMODELSV2_API SlotValue() = default;
     AWS_LEXMODELSV2_API SlotValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * use the value entered by the user, or you can have Amazon Lex choose the first
      * value in the <code>resolvedValues</code> list.</p>
      */
-    inline const Aws::String& GetInterpretedValue() const{ return m_interpretedValue; }
+    inline const Aws::String& GetInterpretedValue() const { return m_interpretedValue; }
     inline bool InterpretedValueHasBeenSet() const { return m_interpretedValueHasBeenSet; }
-    inline void SetInterpretedValue(const Aws::String& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = value; }
-    inline void SetInterpretedValue(Aws::String&& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = std::move(value); }
-    inline void SetInterpretedValue(const char* value) { m_interpretedValueHasBeenSet = true; m_interpretedValue.assign(value); }
-    inline SlotValue& WithInterpretedValue(const Aws::String& value) { SetInterpretedValue(value); return *this;}
-    inline SlotValue& WithInterpretedValue(Aws::String&& value) { SetInterpretedValue(std::move(value)); return *this;}
-    inline SlotValue& WithInterpretedValue(const char* value) { SetInterpretedValue(value); return *this;}
+    template<typename InterpretedValueT = Aws::String>
+    void SetInterpretedValue(InterpretedValueT&& value) { m_interpretedValueHasBeenSet = true; m_interpretedValue = std::forward<InterpretedValueT>(value); }
+    template<typename InterpretedValueT = Aws::String>
+    SlotValue& WithInterpretedValue(InterpretedValueT&& value) { SetInterpretedValue(std::forward<InterpretedValueT>(value)); return *this;}
     ///@}
   private:
 

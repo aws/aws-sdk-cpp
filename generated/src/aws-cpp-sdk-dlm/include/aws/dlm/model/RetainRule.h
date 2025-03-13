@@ -62,7 +62,7 @@ namespace Model
   class RetainRule
   {
   public:
-    AWS_DLM_API RetainRule();
+    AWS_DLM_API RetainRule() = default;
     AWS_DLM_API RetainRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API RetainRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,7 +77,7 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline RetainRule& WithCount(int value) { SetCount(value); return *this;}
@@ -88,7 +88,7 @@ namespace Model
      * <p>The amount of time to retain each snapshot. The maximum is 100 years. This is
      * equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline RetainRule& WithInterval(int value) { SetInterval(value); return *this;}
@@ -103,22 +103,20 @@ namespace Model
      * an <a
      * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>.</p>
      */
-    inline const RetentionIntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
+    inline RetentionIntervalUnitValues GetIntervalUnit() const { return m_intervalUnit; }
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
-    inline void SetIntervalUnit(const RetentionIntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
-    inline void SetIntervalUnit(RetentionIntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
-    inline RetainRule& WithIntervalUnit(const RetentionIntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
-    inline RetainRule& WithIntervalUnit(RetentionIntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
+    inline void SetIntervalUnit(RetentionIntervalUnitValues value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
+    inline RetainRule& WithIntervalUnit(RetentionIntervalUnitValues value) { SetIntervalUnit(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    RetentionIntervalUnitValues m_intervalUnit;
+    RetentionIntervalUnitValues m_intervalUnit{RetentionIntervalUnitValues::NOT_SET};
     bool m_intervalUnitHasBeenSet = false;
   };
 

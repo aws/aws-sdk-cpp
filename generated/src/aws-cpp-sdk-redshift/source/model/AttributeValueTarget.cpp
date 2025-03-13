@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AttributeValueTarget::AttributeValueTarget() : 
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 AttributeValueTarget::AttributeValueTarget(const XmlNode& xmlNode)
-  : AttributeValueTarget()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AttributeValueTarget& AttributeValueTarget::operator =(const XmlNode& xmlNode)
     {
       m_attributeValue = Aws::Utils::Xml::DecodeEscapedXmlText(attributeValueNode.GetText());
       m_attributeValueHasBeenSet = true;
+       m_attributeValueHasBeenSet = true;
     }
   }
 

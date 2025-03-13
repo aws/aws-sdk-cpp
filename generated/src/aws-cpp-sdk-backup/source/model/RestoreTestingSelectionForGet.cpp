@@ -18,23 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreTestingSelectionForGet::RestoreTestingSelectionForGet() : 
-    m_creationTimeHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_protectedResourceArnsHasBeenSet(false),
-    m_protectedResourceConditionsHasBeenSet(false),
-    m_protectedResourceTypeHasBeenSet(false),
-    m_restoreMetadataOverridesHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_restoreTestingSelectionNameHasBeenSet(false),
-    m_validationWindowHours(0),
-    m_validationWindowHoursHasBeenSet(false)
-{
-}
-
 RestoreTestingSelectionForGet::RestoreTestingSelectionForGet(JsonView jsonValue)
-  : RestoreTestingSelectionForGet()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ RestoreTestingSelectionForGet& RestoreTestingSelectionForGet::operator =(JsonVie
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectedResourceArns"))
   {
     Aws::Utils::Array<JsonView> protectedResourceArnsJsonList = jsonValue.GetArray("ProtectedResourceArns");
@@ -71,21 +49,16 @@ RestoreTestingSelectionForGet& RestoreTestingSelectionForGet::operator =(JsonVie
     }
     m_protectedResourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectedResourceConditions"))
   {
     m_protectedResourceConditions = jsonValue.GetObject("ProtectedResourceConditions");
-
     m_protectedResourceConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectedResourceType"))
   {
     m_protectedResourceType = jsonValue.GetString("ProtectedResourceType");
-
     m_protectedResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreMetadataOverrides"))
   {
     Aws::Map<Aws::String, JsonView> restoreMetadataOverridesJsonMap = jsonValue.GetObject("RestoreMetadataOverrides").GetAllObjects();
@@ -95,28 +68,21 @@ RestoreTestingSelectionForGet& RestoreTestingSelectionForGet::operator =(JsonVie
     }
     m_restoreMetadataOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanName"))
   {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
-
     m_restoreTestingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingSelectionName"))
   {
     m_restoreTestingSelectionName = jsonValue.GetString("RestoreTestingSelectionName");
-
     m_restoreTestingSelectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationWindowHours"))
   {
     m_validationWindowHours = jsonValue.GetInteger("ValidationWindowHours");
-
     m_validationWindowHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

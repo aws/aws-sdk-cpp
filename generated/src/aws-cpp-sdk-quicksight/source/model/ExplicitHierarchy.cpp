@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ExplicitHierarchy::ExplicitHierarchy() : 
-    m_hierarchyIdHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_drillDownFiltersHasBeenSet(false)
-{
-}
-
 ExplicitHierarchy::ExplicitHierarchy(JsonView jsonValue)
-  : ExplicitHierarchy()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ExplicitHierarchy& ExplicitHierarchy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HierarchyId"))
   {
     m_hierarchyId = jsonValue.GetString("HierarchyId");
-
     m_hierarchyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -49,7 +39,6 @@ ExplicitHierarchy& ExplicitHierarchy::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrillDownFilters"))
   {
     Aws::Utils::Array<JsonView> drillDownFiltersJsonList = jsonValue.GetArray("DrillDownFilters");
@@ -59,7 +48,6 @@ ExplicitHierarchy& ExplicitHierarchy::operator =(JsonView jsonValue)
     }
     m_drillDownFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

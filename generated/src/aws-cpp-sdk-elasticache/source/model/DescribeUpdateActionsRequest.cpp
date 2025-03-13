@@ -10,22 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeUpdateActionsRequest::DescribeUpdateActionsRequest() : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_replicationGroupIdsHasBeenSet(false),
-    m_cacheClusterIdsHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateTimeRangeHasBeenSet(false),
-    m_updateActionStatusHasBeenSet(false),
-    m_showNodeLevelUpdateStatus(false),
-    m_showNodeLevelUpdateStatusHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUpdateActionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

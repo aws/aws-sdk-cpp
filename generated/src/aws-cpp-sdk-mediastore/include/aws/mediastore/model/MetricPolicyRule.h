@@ -37,7 +37,7 @@ namespace Model
   class MetricPolicyRule
   {
   public:
-    AWS_MEDIASTORE_API MetricPolicyRule();
+    AWS_MEDIASTORE_API MetricPolicyRule() = default;
     AWS_MEDIASTORE_API MetricPolicyRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIASTORE_API MetricPolicyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * <p>A path or file name that defines which objects to include in the group.
      * Wildcards (*) are acceptable.</p>
      */
-    inline const Aws::String& GetObjectGroup() const{ return m_objectGroup; }
+    inline const Aws::String& GetObjectGroup() const { return m_objectGroup; }
     inline bool ObjectGroupHasBeenSet() const { return m_objectGroupHasBeenSet; }
-    inline void SetObjectGroup(const Aws::String& value) { m_objectGroupHasBeenSet = true; m_objectGroup = value; }
-    inline void SetObjectGroup(Aws::String&& value) { m_objectGroupHasBeenSet = true; m_objectGroup = std::move(value); }
-    inline void SetObjectGroup(const char* value) { m_objectGroupHasBeenSet = true; m_objectGroup.assign(value); }
-    inline MetricPolicyRule& WithObjectGroup(const Aws::String& value) { SetObjectGroup(value); return *this;}
-    inline MetricPolicyRule& WithObjectGroup(Aws::String&& value) { SetObjectGroup(std::move(value)); return *this;}
-    inline MetricPolicyRule& WithObjectGroup(const char* value) { SetObjectGroup(value); return *this;}
+    template<typename ObjectGroupT = Aws::String>
+    void SetObjectGroup(ObjectGroupT&& value) { m_objectGroupHasBeenSet = true; m_objectGroup = std::forward<ObjectGroupT>(value); }
+    template<typename ObjectGroupT = Aws::String>
+    MetricPolicyRule& WithObjectGroup(ObjectGroupT&& value) { SetObjectGroup(std::forward<ObjectGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name that allows you to refer to the object group.</p>
      */
-    inline const Aws::String& GetObjectGroupName() const{ return m_objectGroupName; }
+    inline const Aws::String& GetObjectGroupName() const { return m_objectGroupName; }
     inline bool ObjectGroupNameHasBeenSet() const { return m_objectGroupNameHasBeenSet; }
-    inline void SetObjectGroupName(const Aws::String& value) { m_objectGroupNameHasBeenSet = true; m_objectGroupName = value; }
-    inline void SetObjectGroupName(Aws::String&& value) { m_objectGroupNameHasBeenSet = true; m_objectGroupName = std::move(value); }
-    inline void SetObjectGroupName(const char* value) { m_objectGroupNameHasBeenSet = true; m_objectGroupName.assign(value); }
-    inline MetricPolicyRule& WithObjectGroupName(const Aws::String& value) { SetObjectGroupName(value); return *this;}
-    inline MetricPolicyRule& WithObjectGroupName(Aws::String&& value) { SetObjectGroupName(std::move(value)); return *this;}
-    inline MetricPolicyRule& WithObjectGroupName(const char* value) { SetObjectGroupName(value); return *this;}
+    template<typename ObjectGroupNameT = Aws::String>
+    void SetObjectGroupName(ObjectGroupNameT&& value) { m_objectGroupNameHasBeenSet = true; m_objectGroupName = std::forward<ObjectGroupNameT>(value); }
+    template<typename ObjectGroupNameT = Aws::String>
+    MetricPolicyRule& WithObjectGroupName(ObjectGroupNameT&& value) { SetObjectGroupName(std::forward<ObjectGroupNameT>(value)); return *this;}
     ///@}
   private:
 

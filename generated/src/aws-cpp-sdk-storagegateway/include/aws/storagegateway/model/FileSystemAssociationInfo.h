@@ -37,7 +37,7 @@ namespace Model
   class FileSystemAssociationInfo
   {
   public:
-    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo();
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo() = default;
     AWS_STORAGEGATEWAY_API FileSystemAssociationInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API FileSystemAssociationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file system association.</p>
      */
-    inline const Aws::String& GetFileSystemAssociationARN() const{ return m_fileSystemAssociationARN; }
+    inline const Aws::String& GetFileSystemAssociationARN() const { return m_fileSystemAssociationARN; }
     inline bool FileSystemAssociationARNHasBeenSet() const { return m_fileSystemAssociationARNHasBeenSet; }
-    inline void SetFileSystemAssociationARN(const Aws::String& value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN = value; }
-    inline void SetFileSystemAssociationARN(Aws::String&& value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN = std::move(value); }
-    inline void SetFileSystemAssociationARN(const char* value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN.assign(value); }
-    inline FileSystemAssociationInfo& WithFileSystemAssociationARN(const Aws::String& value) { SetFileSystemAssociationARN(value); return *this;}
-    inline FileSystemAssociationInfo& WithFileSystemAssociationARN(Aws::String&& value) { SetFileSystemAssociationARN(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& WithFileSystemAssociationARN(const char* value) { SetFileSystemAssociationARN(value); return *this;}
+    template<typename FileSystemAssociationARNT = Aws::String>
+    void SetFileSystemAssociationARN(FileSystemAssociationARNT&& value) { m_fileSystemAssociationARNHasBeenSet = true; m_fileSystemAssociationARN = std::forward<FileSystemAssociationARNT>(value); }
+    template<typename FileSystemAssociationARNT = Aws::String>
+    FileSystemAssociationInfo& WithFileSystemAssociationARN(FileSystemAssociationARNT&& value) { SetFileSystemAssociationARN(std::forward<FileSystemAssociationARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_FileSystem.html">FileSystem</a>
      * in the <i>Amazon FSx API Reference</i>.</p>
      */
-    inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
+    inline const Aws::String& GetLocationARN() const { return m_locationARN; }
     inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
-    inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
-    inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
-    inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
-    inline FileSystemAssociationInfo& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
-    inline FileSystemAssociationInfo& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
+    template<typename LocationARNT = Aws::String>
+    void SetLocationARN(LocationARNT&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::forward<LocationARNT>(value); }
+    template<typename LocationARNT = Aws::String>
+    FileSystemAssociationInfo& WithLocationARN(LocationARNT&& value) { SetLocationARN(std::forward<LocationARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,40 +76,34 @@ namespace Model
      * <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
      * <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
      */
-    inline const Aws::String& GetFileSystemAssociationStatus() const{ return m_fileSystemAssociationStatus; }
+    inline const Aws::String& GetFileSystemAssociationStatus() const { return m_fileSystemAssociationStatus; }
     inline bool FileSystemAssociationStatusHasBeenSet() const { return m_fileSystemAssociationStatusHasBeenSet; }
-    inline void SetFileSystemAssociationStatus(const Aws::String& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = value; }
-    inline void SetFileSystemAssociationStatus(Aws::String&& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = std::move(value); }
-    inline void SetFileSystemAssociationStatus(const char* value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus.assign(value); }
-    inline FileSystemAssociationInfo& WithFileSystemAssociationStatus(const Aws::String& value) { SetFileSystemAssociationStatus(value); return *this;}
-    inline FileSystemAssociationInfo& WithFileSystemAssociationStatus(Aws::String&& value) { SetFileSystemAssociationStatus(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& WithFileSystemAssociationStatus(const char* value) { SetFileSystemAssociationStatus(value); return *this;}
+    template<typename FileSystemAssociationStatusT = Aws::String>
+    void SetFileSystemAssociationStatus(FileSystemAssociationStatusT&& value) { m_fileSystemAssociationStatusHasBeenSet = true; m_fileSystemAssociationStatus = std::forward<FileSystemAssociationStatusT>(value); }
+    template<typename FileSystemAssociationStatusT = Aws::String>
+    FileSystemAssociationInfo& WithFileSystemAssociationStatus(FileSystemAssociationStatusT&& value) { SetFileSystemAssociationStatus(std::forward<FileSystemAssociationStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
      */
-    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+    inline const Aws::String& GetAuditDestinationARN() const { return m_auditDestinationARN; }
     inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
-    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
-    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
-    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
-    inline FileSystemAssociationInfo& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
-    inline FileSystemAssociationInfo& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+    template<typename AuditDestinationARNT = Aws::String>
+    void SetAuditDestinationARN(AuditDestinationARNT&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::forward<AuditDestinationARNT>(value); }
+    template<typename AuditDestinationARNT = Aws::String>
+    FileSystemAssociationInfo& WithAuditDestinationARN(AuditDestinationARNT&& value) { SetAuditDestinationARN(std::forward<AuditDestinationARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline FileSystemAssociationInfo& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline FileSystemAssociationInfo& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    FileSystemAssociationInfo& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,24 +111,24 @@ namespace Model
      * <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically
      * by key name. Each tag is a key-value pair.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline FileSystemAssociationInfo& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline FileSystemAssociationInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline FileSystemAssociationInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    FileSystemAssociationInfo& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    FileSystemAssociationInfo& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
+    inline const CacheAttributes& GetCacheAttributes() const { return m_cacheAttributes; }
     inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
-    inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
-    inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
-    inline FileSystemAssociationInfo& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
-    inline FileSystemAssociationInfo& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
+    template<typename CacheAttributesT = CacheAttributes>
+    void SetCacheAttributes(CacheAttributesT&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::forward<CacheAttributesT>(value); }
+    template<typename CacheAttributesT = CacheAttributes>
+    FileSystemAssociationInfo& WithCacheAttributes(CacheAttributesT&& value) { SetCacheAttributes(std::forward<CacheAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +138,12 @@ namespace Model
      * associated with this gateway, this parameter's <code>IpAddresses</code> field is
      * required.</p> 
      */
-    inline const EndpointNetworkConfiguration& GetEndpointNetworkConfiguration() const{ return m_endpointNetworkConfiguration; }
+    inline const EndpointNetworkConfiguration& GetEndpointNetworkConfiguration() const { return m_endpointNetworkConfiguration; }
     inline bool EndpointNetworkConfigurationHasBeenSet() const { return m_endpointNetworkConfigurationHasBeenSet; }
-    inline void SetEndpointNetworkConfiguration(const EndpointNetworkConfiguration& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = value; }
-    inline void SetEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = std::move(value); }
-    inline FileSystemAssociationInfo& WithEndpointNetworkConfiguration(const EndpointNetworkConfiguration& value) { SetEndpointNetworkConfiguration(value); return *this;}
-    inline FileSystemAssociationInfo& WithEndpointNetworkConfiguration(EndpointNetworkConfiguration&& value) { SetEndpointNetworkConfiguration(std::move(value)); return *this;}
+    template<typename EndpointNetworkConfigurationT = EndpointNetworkConfiguration>
+    void SetEndpointNetworkConfiguration(EndpointNetworkConfigurationT&& value) { m_endpointNetworkConfigurationHasBeenSet = true; m_endpointNetworkConfiguration = std::forward<EndpointNetworkConfigurationT>(value); }
+    template<typename EndpointNetworkConfigurationT = EndpointNetworkConfiguration>
+    FileSystemAssociationInfo& WithEndpointNetworkConfiguration(EndpointNetworkConfigurationT&& value) { SetEndpointNetworkConfiguration(std::forward<EndpointNetworkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,14 +151,14 @@ namespace Model
      * <p>An array containing the FileSystemAssociationStatusDetail data type, which
      * provides detailed information on file system association status.</p>
      */
-    inline const Aws::Vector<FileSystemAssociationStatusDetail>& GetFileSystemAssociationStatusDetails() const{ return m_fileSystemAssociationStatusDetails; }
+    inline const Aws::Vector<FileSystemAssociationStatusDetail>& GetFileSystemAssociationStatusDetails() const { return m_fileSystemAssociationStatusDetails; }
     inline bool FileSystemAssociationStatusDetailsHasBeenSet() const { return m_fileSystemAssociationStatusDetailsHasBeenSet; }
-    inline void SetFileSystemAssociationStatusDetails(const Aws::Vector<FileSystemAssociationStatusDetail>& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails = value; }
-    inline void SetFileSystemAssociationStatusDetails(Aws::Vector<FileSystemAssociationStatusDetail>&& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails = std::move(value); }
-    inline FileSystemAssociationInfo& WithFileSystemAssociationStatusDetails(const Aws::Vector<FileSystemAssociationStatusDetail>& value) { SetFileSystemAssociationStatusDetails(value); return *this;}
-    inline FileSystemAssociationInfo& WithFileSystemAssociationStatusDetails(Aws::Vector<FileSystemAssociationStatusDetail>&& value) { SetFileSystemAssociationStatusDetails(std::move(value)); return *this;}
-    inline FileSystemAssociationInfo& AddFileSystemAssociationStatusDetails(const FileSystemAssociationStatusDetail& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails.push_back(value); return *this; }
-    inline FileSystemAssociationInfo& AddFileSystemAssociationStatusDetails(FileSystemAssociationStatusDetail&& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails.push_back(std::move(value)); return *this; }
+    template<typename FileSystemAssociationStatusDetailsT = Aws::Vector<FileSystemAssociationStatusDetail>>
+    void SetFileSystemAssociationStatusDetails(FileSystemAssociationStatusDetailsT&& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails = std::forward<FileSystemAssociationStatusDetailsT>(value); }
+    template<typename FileSystemAssociationStatusDetailsT = Aws::Vector<FileSystemAssociationStatusDetail>>
+    FileSystemAssociationInfo& WithFileSystemAssociationStatusDetails(FileSystemAssociationStatusDetailsT&& value) { SetFileSystemAssociationStatusDetails(std::forward<FileSystemAssociationStatusDetailsT>(value)); return *this;}
+    template<typename FileSystemAssociationStatusDetailsT = FileSystemAssociationStatusDetail>
+    FileSystemAssociationInfo& AddFileSystemAssociationStatusDetails(FileSystemAssociationStatusDetailsT&& value) { m_fileSystemAssociationStatusDetailsHasBeenSet = true; m_fileSystemAssociationStatusDetails.emplace_back(std::forward<FileSystemAssociationStatusDetailsT>(value)); return *this; }
     ///@}
   private:
 

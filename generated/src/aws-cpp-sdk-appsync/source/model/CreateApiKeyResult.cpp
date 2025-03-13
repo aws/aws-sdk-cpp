@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateApiKeyResult::CreateApiKeyResult()
-{
-}
-
 CreateApiKeyResult::CreateApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateApiKeyResult& CreateApiKeyResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("apiKey"))
   {
     m_apiKey = jsonValue.GetObject("apiKey");
-
+    m_apiKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

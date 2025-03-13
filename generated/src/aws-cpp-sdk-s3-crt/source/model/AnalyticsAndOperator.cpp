@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AnalyticsAndOperator::AnalyticsAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AnalyticsAndOperator::AnalyticsAndOperator(const XmlNode& xmlNode)
-  : AnalyticsAndOperator()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ AnalyticsAndOperator& AnalyticsAndOperator::operator =(const XmlNode& xmlNode)
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tag");
     if(!tagsNode.IsNull())
     {
       XmlNode tagMember = tagsNode;
+      m_tagsHasBeenSet = !tagMember.IsNull();
       while(!tagMember.IsNull())
       {
         m_tags.push_back(tagMember);
         tagMember = tagMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

@@ -22,7 +22,7 @@ namespace Model
   class SendPipelineExecutionStepFailureRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API SendPipelineExecutionStepFailureRequest();
+    AWS_SAGEMAKER_API SendPipelineExecutionStepFailureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The pipeline generated token from the Amazon SQS queue.</p>
      */
-    inline const Aws::String& GetCallbackToken() const{ return m_callbackToken; }
+    inline const Aws::String& GetCallbackToken() const { return m_callbackToken; }
     inline bool CallbackTokenHasBeenSet() const { return m_callbackTokenHasBeenSet; }
-    inline void SetCallbackToken(const Aws::String& value) { m_callbackTokenHasBeenSet = true; m_callbackToken = value; }
-    inline void SetCallbackToken(Aws::String&& value) { m_callbackTokenHasBeenSet = true; m_callbackToken = std::move(value); }
-    inline void SetCallbackToken(const char* value) { m_callbackTokenHasBeenSet = true; m_callbackToken.assign(value); }
-    inline SendPipelineExecutionStepFailureRequest& WithCallbackToken(const Aws::String& value) { SetCallbackToken(value); return *this;}
-    inline SendPipelineExecutionStepFailureRequest& WithCallbackToken(Aws::String&& value) { SetCallbackToken(std::move(value)); return *this;}
-    inline SendPipelineExecutionStepFailureRequest& WithCallbackToken(const char* value) { SetCallbackToken(value); return *this;}
+    template<typename CallbackTokenT = Aws::String>
+    void SetCallbackToken(CallbackTokenT&& value) { m_callbackTokenHasBeenSet = true; m_callbackToken = std::forward<CallbackTokenT>(value); }
+    template<typename CallbackTokenT = Aws::String>
+    SendPipelineExecutionStepFailureRequest& WithCallbackToken(CallbackTokenT&& value) { SetCallbackToken(std::forward<CallbackTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message describing why the step failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline SendPipelineExecutionStepFailureRequest& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline SendPipelineExecutionStepFailureRequest& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline SendPipelineExecutionStepFailureRequest& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    SendPipelineExecutionStepFailureRequest& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * idempotency of the operation. An idempotent operation completes no more than one
      * time.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline SendPipelineExecutionStepFailureRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline SendPipelineExecutionStepFailureRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline SendPipelineExecutionStepFailureRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    SendPipelineExecutionStepFailureRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

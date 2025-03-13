@@ -19,18 +19,7 @@ namespace Lambda
 namespace Model
 {
 
-FunctionCode::FunctionCode() : 
-    m_zipFileHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_imageUriHasBeenSet(false),
-    m_sourceKMSKeyArnHasBeenSet(false)
-{
-}
-
 FunctionCode::FunctionCode(JsonView jsonValue)
-  : FunctionCode()
 {
   *this = jsonValue;
 }
@@ -42,42 +31,31 @@ FunctionCode& FunctionCode::operator =(JsonView jsonValue)
     m_zipFile = HashingUtils::Base64Decode(jsonValue.GetString("ZipFile"));
     m_zipFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ObjectVersion"))
   {
     m_s3ObjectVersion = jsonValue.GetString("S3ObjectVersion");
-
     m_s3ObjectVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceKMSKeyArn"))
   {
     m_sourceKMSKeyArn = jsonValue.GetString("SourceKMSKeyArn");
-
     m_sourceKMSKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

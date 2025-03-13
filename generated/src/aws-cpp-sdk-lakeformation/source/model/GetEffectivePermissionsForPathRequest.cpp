@@ -12,15 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEffectivePermissionsForPathRequest::GetEffectivePermissionsForPathRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetEffectivePermissionsForPathRequest::SerializePayload() const
 {
   JsonValue payload;

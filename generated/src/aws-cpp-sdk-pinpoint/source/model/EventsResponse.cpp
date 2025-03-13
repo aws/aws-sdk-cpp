@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventsResponse::EventsResponse() : 
-    m_resultsHasBeenSet(false)
-{
-}
-
 EventsResponse::EventsResponse(JsonView jsonValue)
-  : EventsResponse()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EventsResponse& EventsResponse::operator =(JsonView jsonValue)
     }
     m_resultsHasBeenSet = true;
   }
-
   return *this;
 }
 

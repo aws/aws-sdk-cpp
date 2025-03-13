@@ -33,7 +33,7 @@ namespace Model
   class OriginRequestPolicyCookiesConfig
   {
   public:
-    AWS_CLOUDFRONT_API OriginRequestPolicyCookiesConfig();
+    AWS_CLOUDFRONT_API OriginRequestPolicyCookiesConfig() = default;
     AWS_CLOUDFRONT_API OriginRequestPolicyCookiesConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginRequestPolicyCookiesConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,26 +57,24 @@ namespace Model
      * listed in the <code>CookieNames</code> type, which are not included.</p> </li>
      * </ul>
      */
-    inline const OriginRequestPolicyCookieBehavior& GetCookieBehavior() const{ return m_cookieBehavior; }
+    inline OriginRequestPolicyCookieBehavior GetCookieBehavior() const { return m_cookieBehavior; }
     inline bool CookieBehaviorHasBeenSet() const { return m_cookieBehaviorHasBeenSet; }
-    inline void SetCookieBehavior(const OriginRequestPolicyCookieBehavior& value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = value; }
-    inline void SetCookieBehavior(OriginRequestPolicyCookieBehavior&& value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = std::move(value); }
-    inline OriginRequestPolicyCookiesConfig& WithCookieBehavior(const OriginRequestPolicyCookieBehavior& value) { SetCookieBehavior(value); return *this;}
-    inline OriginRequestPolicyCookiesConfig& WithCookieBehavior(OriginRequestPolicyCookieBehavior&& value) { SetCookieBehavior(std::move(value)); return *this;}
+    inline void SetCookieBehavior(OriginRequestPolicyCookieBehavior value) { m_cookieBehaviorHasBeenSet = true; m_cookieBehavior = value; }
+    inline OriginRequestPolicyCookiesConfig& WithCookieBehavior(OriginRequestPolicyCookieBehavior value) { SetCookieBehavior(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const CookieNames& GetCookies() const{ return m_cookies; }
+    inline const CookieNames& GetCookies() const { return m_cookies; }
     inline bool CookiesHasBeenSet() const { return m_cookiesHasBeenSet; }
-    inline void SetCookies(const CookieNames& value) { m_cookiesHasBeenSet = true; m_cookies = value; }
-    inline void SetCookies(CookieNames&& value) { m_cookiesHasBeenSet = true; m_cookies = std::move(value); }
-    inline OriginRequestPolicyCookiesConfig& WithCookies(const CookieNames& value) { SetCookies(value); return *this;}
-    inline OriginRequestPolicyCookiesConfig& WithCookies(CookieNames&& value) { SetCookies(std::move(value)); return *this;}
+    template<typename CookiesT = CookieNames>
+    void SetCookies(CookiesT&& value) { m_cookiesHasBeenSet = true; m_cookies = std::forward<CookiesT>(value); }
+    template<typename CookiesT = CookieNames>
+    OriginRequestPolicyCookiesConfig& WithCookies(CookiesT&& value) { SetCookies(std::forward<CookiesT>(value)); return *this;}
     ///@}
   private:
 
-    OriginRequestPolicyCookieBehavior m_cookieBehavior;
+    OriginRequestPolicyCookieBehavior m_cookieBehavior{OriginRequestPolicyCookieBehavior::NOT_SET};
     bool m_cookieBehaviorHasBeenSet = false;
 
     CookieNames m_cookies;

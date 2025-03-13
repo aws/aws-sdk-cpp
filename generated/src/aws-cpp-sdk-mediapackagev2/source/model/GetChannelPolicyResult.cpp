@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetChannelPolicyResult::GetChannelPolicyResult()
-{
-}
-
 GetChannelPolicyResult::GetChannelPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetChannelPolicyResult& GetChannelPolicyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ChannelGroupName"))
   {
     m_channelGroupName = jsonValue.GetString("ChannelGroupName");
-
+    m_channelGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelName"))
   {
     m_channelName = jsonValue.GetString("ChannelName");
-
+    m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
-
+    m_policyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

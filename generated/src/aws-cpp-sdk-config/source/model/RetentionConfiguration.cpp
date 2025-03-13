@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RetentionConfiguration::RetentionConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_retentionPeriodInDays(0),
-    m_retentionPeriodInDaysHasBeenSet(false)
-{
-}
-
 RetentionConfiguration::RetentionConfiguration(JsonView jsonValue)
-  : RetentionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RetentionConfiguration& RetentionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriodInDays"))
   {
     m_retentionPeriodInDays = jsonValue.GetInteger("RetentionPeriodInDays");
-
     m_retentionPeriodInDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

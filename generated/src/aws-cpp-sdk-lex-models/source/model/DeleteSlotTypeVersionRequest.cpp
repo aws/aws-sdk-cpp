@@ -12,12 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSlotTypeVersionRequest::DeleteSlotTypeVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlotTypeVersionRequest::SerializePayload() const
 {
   return {};

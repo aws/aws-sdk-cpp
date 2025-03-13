@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2InstanceMonitoringDetails::AwsEc2InstanceMonitoringDetails() : 
-    m_stateHasBeenSet(false)
-{
-}
-
 AwsEc2InstanceMonitoringDetails::AwsEc2InstanceMonitoringDetails(JsonView jsonValue)
-  : AwsEc2InstanceMonitoringDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2InstanceMonitoringDetails& AwsEc2InstanceMonitoringDetails::operator =(Jso
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

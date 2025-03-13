@@ -21,7 +21,7 @@ namespace Model
   class DeleteContactRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API DeleteContactRequest();
+    AWS_SESV2_API DeleteContactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The name of the contact list from which the contact should be removed.</p>
      */
-    inline const Aws::String& GetContactListName() const{ return m_contactListName; }
+    inline const Aws::String& GetContactListName() const { return m_contactListName; }
     inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
-    inline void SetContactListName(const Aws::String& value) { m_contactListNameHasBeenSet = true; m_contactListName = value; }
-    inline void SetContactListName(Aws::String&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::move(value); }
-    inline void SetContactListName(const char* value) { m_contactListNameHasBeenSet = true; m_contactListName.assign(value); }
-    inline DeleteContactRequest& WithContactListName(const Aws::String& value) { SetContactListName(value); return *this;}
-    inline DeleteContactRequest& WithContactListName(Aws::String&& value) { SetContactListName(std::move(value)); return *this;}
-    inline DeleteContactRequest& WithContactListName(const char* value) { SetContactListName(value); return *this;}
+    template<typename ContactListNameT = Aws::String>
+    void SetContactListName(ContactListNameT&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::forward<ContactListNameT>(value); }
+    template<typename ContactListNameT = Aws::String>
+    DeleteContactRequest& WithContactListName(ContactListNameT&& value) { SetContactListName(std::forward<ContactListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contact's email address.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline DeleteContactRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline DeleteContactRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline DeleteContactRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    DeleteContactRequest& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
   private:
 

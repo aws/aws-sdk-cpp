@@ -18,15 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-PutProjectEventsResultEntry::PutProjectEventsResultEntry() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
-{
-}
-
 PutProjectEventsResultEntry::PutProjectEventsResultEntry(JsonView jsonValue)
-  : PutProjectEventsResultEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PutProjectEventsResultEntry& PutProjectEventsResultEntry::operator =(JsonView js
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

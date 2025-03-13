@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget() : 
-    m_aggregationsHasBeenSet(false),
-    m_epsilon(0),
-    m_epsilonHasBeenSet(false)
-{
-}
-
 DifferentialPrivacyPrivacyBudget::DifferentialPrivacyPrivacyBudget(JsonView jsonValue)
-  : DifferentialPrivacyPrivacyBudget()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ DifferentialPrivacyPrivacyBudget& DifferentialPrivacyPrivacyBudget::operator =(J
     }
     m_aggregationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("epsilon"))
   {
     m_epsilon = jsonValue.GetInteger("epsilon");
-
     m_epsilonHasBeenSet = true;
   }
-
   return *this;
 }
 

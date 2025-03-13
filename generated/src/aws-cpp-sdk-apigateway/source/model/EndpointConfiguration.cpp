@@ -18,14 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-EndpointConfiguration::EndpointConfiguration() : 
-    m_typesHasBeenSet(false),
-    m_vpcEndpointIdsHasBeenSet(false)
-{
-}
-
 EndpointConfiguration::EndpointConfiguration(JsonView jsonValue)
-  : EndpointConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointIds"))
   {
     Aws::Utils::Array<JsonView> vpcEndpointIdsJsonList = jsonValue.GetArray("vpcEndpointIds");
@@ -51,7 +43,6 @@ EndpointConfiguration& EndpointConfiguration::operator =(JsonView jsonValue)
     }
     m_vpcEndpointIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

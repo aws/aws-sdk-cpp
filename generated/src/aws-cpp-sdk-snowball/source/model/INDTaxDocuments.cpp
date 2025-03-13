@@ -18,13 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-INDTaxDocuments::INDTaxDocuments() : 
-    m_gSTINHasBeenSet(false)
-{
-}
-
 INDTaxDocuments::INDTaxDocuments(JsonView jsonValue)
-  : INDTaxDocuments()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ INDTaxDocuments& INDTaxDocuments::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GSTIN"))
   {
     m_gSTIN = jsonValue.GetString("GSTIN");
-
     m_gSTINHasBeenSet = true;
   }
-
   return *this;
 }
 

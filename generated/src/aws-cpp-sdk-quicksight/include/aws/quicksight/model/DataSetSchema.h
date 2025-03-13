@@ -32,7 +32,7 @@ namespace Model
   class DataSetSchema
   {
   public:
-    AWS_QUICKSIGHT_API DataSetSchema();
+    AWS_QUICKSIGHT_API DataSetSchema() = default;
     AWS_QUICKSIGHT_API DataSetSchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataSetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>A structure containing the list of column schemas.</p>
      */
-    inline const Aws::Vector<ColumnSchema>& GetColumnSchemaList() const{ return m_columnSchemaList; }
+    inline const Aws::Vector<ColumnSchema>& GetColumnSchemaList() const { return m_columnSchemaList; }
     inline bool ColumnSchemaListHasBeenSet() const { return m_columnSchemaListHasBeenSet; }
-    inline void SetColumnSchemaList(const Aws::Vector<ColumnSchema>& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList = value; }
-    inline void SetColumnSchemaList(Aws::Vector<ColumnSchema>&& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList = std::move(value); }
-    inline DataSetSchema& WithColumnSchemaList(const Aws::Vector<ColumnSchema>& value) { SetColumnSchemaList(value); return *this;}
-    inline DataSetSchema& WithColumnSchemaList(Aws::Vector<ColumnSchema>&& value) { SetColumnSchemaList(std::move(value)); return *this;}
-    inline DataSetSchema& AddColumnSchemaList(const ColumnSchema& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList.push_back(value); return *this; }
-    inline DataSetSchema& AddColumnSchemaList(ColumnSchema&& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList.push_back(std::move(value)); return *this; }
+    template<typename ColumnSchemaListT = Aws::Vector<ColumnSchema>>
+    void SetColumnSchemaList(ColumnSchemaListT&& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList = std::forward<ColumnSchemaListT>(value); }
+    template<typename ColumnSchemaListT = Aws::Vector<ColumnSchema>>
+    DataSetSchema& WithColumnSchemaList(ColumnSchemaListT&& value) { SetColumnSchemaList(std::forward<ColumnSchemaListT>(value)); return *this;}
+    template<typename ColumnSchemaListT = ColumnSchema>
+    DataSetSchema& AddColumnSchemaList(ColumnSchemaListT&& value) { m_columnSchemaListHasBeenSet = true; m_columnSchemaList.emplace_back(std::forward<ColumnSchemaListT>(value)); return *this; }
     ///@}
   private:
 

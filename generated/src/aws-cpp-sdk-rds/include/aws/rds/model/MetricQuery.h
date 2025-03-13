@@ -31,7 +31,7 @@ namespace Model
   class MetricQuery
   {
   public:
-    AWS_RDS_API MetricQuery();
+    AWS_RDS_API MetricQuery() = default;
     AWS_RDS_API MetricQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API MetricQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
      * <p>The Performance Insights query that you can use to retrieve Performance
      * Insights metric data points.</p>
      */
-    inline const PerformanceInsightsMetricQuery& GetPerformanceInsightsMetricQuery() const{ return m_performanceInsightsMetricQuery; }
+    inline const PerformanceInsightsMetricQuery& GetPerformanceInsightsMetricQuery() const { return m_performanceInsightsMetricQuery; }
     inline bool PerformanceInsightsMetricQueryHasBeenSet() const { return m_performanceInsightsMetricQueryHasBeenSet; }
-    inline void SetPerformanceInsightsMetricQuery(const PerformanceInsightsMetricQuery& value) { m_performanceInsightsMetricQueryHasBeenSet = true; m_performanceInsightsMetricQuery = value; }
-    inline void SetPerformanceInsightsMetricQuery(PerformanceInsightsMetricQuery&& value) { m_performanceInsightsMetricQueryHasBeenSet = true; m_performanceInsightsMetricQuery = std::move(value); }
-    inline MetricQuery& WithPerformanceInsightsMetricQuery(const PerformanceInsightsMetricQuery& value) { SetPerformanceInsightsMetricQuery(value); return *this;}
-    inline MetricQuery& WithPerformanceInsightsMetricQuery(PerformanceInsightsMetricQuery&& value) { SetPerformanceInsightsMetricQuery(std::move(value)); return *this;}
+    template<typename PerformanceInsightsMetricQueryT = PerformanceInsightsMetricQuery>
+    void SetPerformanceInsightsMetricQuery(PerformanceInsightsMetricQueryT&& value) { m_performanceInsightsMetricQueryHasBeenSet = true; m_performanceInsightsMetricQuery = std::forward<PerformanceInsightsMetricQueryT>(value); }
+    template<typename PerformanceInsightsMetricQueryT = PerformanceInsightsMetricQuery>
+    MetricQuery& WithPerformanceInsightsMetricQuery(PerformanceInsightsMetricQueryT&& value) { SetPerformanceInsightsMetricQuery(std::forward<PerformanceInsightsMetricQueryT>(value)); return *this;}
     ///@}
   private:
 

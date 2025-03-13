@@ -33,7 +33,7 @@ namespace Model
   class LendingDetection
   {
   public:
-    AWS_TEXTRACT_API LendingDetection();
+    AWS_TEXTRACT_API LendingDetection() = default;
     AWS_TEXTRACT_API LendingDetection(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API LendingDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The text extracted for a detected value in a lending document.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline LendingDetection& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline LendingDetection& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline LendingDetection& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    LendingDetection& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,22 +56,20 @@ namespace Model
      * <p>The selection status of a selection element, such as an option button or
      * check box.</p>
      */
-    inline const SelectionStatus& GetSelectionStatus() const{ return m_selectionStatus; }
+    inline SelectionStatus GetSelectionStatus() const { return m_selectionStatus; }
     inline bool SelectionStatusHasBeenSet() const { return m_selectionStatusHasBeenSet; }
-    inline void SetSelectionStatus(const SelectionStatus& value) { m_selectionStatusHasBeenSet = true; m_selectionStatus = value; }
-    inline void SetSelectionStatus(SelectionStatus&& value) { m_selectionStatusHasBeenSet = true; m_selectionStatus = std::move(value); }
-    inline LendingDetection& WithSelectionStatus(const SelectionStatus& value) { SetSelectionStatus(value); return *this;}
-    inline LendingDetection& WithSelectionStatus(SelectionStatus&& value) { SetSelectionStatus(std::move(value)); return *this;}
+    inline void SetSelectionStatus(SelectionStatus value) { m_selectionStatusHasBeenSet = true; m_selectionStatus = value; }
+    inline LendingDetection& WithSelectionStatus(SelectionStatus value) { SetSelectionStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Geometry& GetGeometry() const{ return m_geometry; }
+    inline const Geometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const Geometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(Geometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline LendingDetection& WithGeometry(const Geometry& value) { SetGeometry(value); return *this;}
-    inline LendingDetection& WithGeometry(Geometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = Geometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = Geometry>
+    LendingDetection& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * <p>The confidence level for the text of a detected value in a lending
      * document.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline LendingDetection& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -91,13 +87,13 @@ namespace Model
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    SelectionStatus m_selectionStatus;
+    SelectionStatus m_selectionStatus{SelectionStatus::NOT_SET};
     bool m_selectionStatusHasBeenSet = false;
 
     Geometry m_geometry;
     bool m_geometryHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

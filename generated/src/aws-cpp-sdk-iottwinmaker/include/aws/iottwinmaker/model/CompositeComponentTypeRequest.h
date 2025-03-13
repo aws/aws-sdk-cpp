@@ -32,7 +32,7 @@ namespace Model
   class CompositeComponentTypeRequest
   {
   public:
-    AWS_IOTTWINMAKER_API CompositeComponentTypeRequest();
+    AWS_IOTTWINMAKER_API CompositeComponentTypeRequest() = default;
     AWS_IOTTWINMAKER_API CompositeComponentTypeRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API CompositeComponentTypeRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>This is the <code>componentTypeId</code> that the
      * <code>compositeComponentType</code> refers to.</p>
      */
-    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
+    inline const Aws::String& GetComponentTypeId() const { return m_componentTypeId; }
     inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-    inline CompositeComponentTypeRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-    inline CompositeComponentTypeRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-    inline CompositeComponentTypeRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    template<typename ComponentTypeIdT = Aws::String>
+    void SetComponentTypeId(ComponentTypeIdT&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::forward<ComponentTypeIdT>(value); }
+    template<typename ComponentTypeIdT = Aws::String>
+    CompositeComponentTypeRequest& WithComponentTypeId(ComponentTypeIdT&& value) { SetComponentTypeId(std::forward<ComponentTypeIdT>(value)); return *this;}
     ///@}
   private:
 

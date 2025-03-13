@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPortalRequest::GetPortalRequest() : 
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String GetPortalRequest::SerializePayload() const
 {
   return {};

@@ -38,7 +38,7 @@ namespace Model
   class PromptTemplate
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API PromptTemplate();
+    AWS_BEDROCKAGENTRUNTIME_API PromptTemplate() = default;
     AWS_BEDROCKAGENTRUNTIME_API PromptTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API PromptTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * href="https://docs.anthropic.com/claude/docs/use-xml-tags">Use XML tags with
      * Anthropic Claude models</a> </p> </li> </ul>
      */
-    inline const Aws::String& GetTextPromptTemplate() const{ return m_textPromptTemplate; }
+    inline const Aws::String& GetTextPromptTemplate() const { return m_textPromptTemplate; }
     inline bool TextPromptTemplateHasBeenSet() const { return m_textPromptTemplateHasBeenSet; }
-    inline void SetTextPromptTemplate(const Aws::String& value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate = value; }
-    inline void SetTextPromptTemplate(Aws::String&& value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate = std::move(value); }
-    inline void SetTextPromptTemplate(const char* value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate.assign(value); }
-    inline PromptTemplate& WithTextPromptTemplate(const Aws::String& value) { SetTextPromptTemplate(value); return *this;}
-    inline PromptTemplate& WithTextPromptTemplate(Aws::String&& value) { SetTextPromptTemplate(std::move(value)); return *this;}
-    inline PromptTemplate& WithTextPromptTemplate(const char* value) { SetTextPromptTemplate(value); return *this;}
+    template<typename TextPromptTemplateT = Aws::String>
+    void SetTextPromptTemplate(TextPromptTemplateT&& value) { m_textPromptTemplateHasBeenSet = true; m_textPromptTemplate = std::forward<TextPromptTemplateT>(value); }
+    template<typename TextPromptTemplateT = Aws::String>
+    PromptTemplate& WithTextPromptTemplate(TextPromptTemplateT&& value) { SetTextPromptTemplate(std::forward<TextPromptTemplateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,10 +18,6 @@ namespace ConnectCases
 namespace Model
 {
 
-CommentFilter::CommentFilter()
-{
-}
-
 CommentFilter::CommentFilter(JsonView jsonValue)
 {
   *this = jsonValue;

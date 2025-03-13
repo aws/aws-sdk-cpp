@@ -21,7 +21,7 @@ namespace Model
   class PromotePermissionCreatedFromPolicyRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API PromotePermissionCreatedFromPolicyRequest();
+    AWS_RAM_API PromotePermissionCreatedFromPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * Resource Name (ARN)</a> by calling the <a>ListResourceSharePermissions</a>
      * operation.</p>
      */
-    inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
+    inline const Aws::String& GetPermissionArn() const { return m_permissionArn; }
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
-    inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
-    inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
-    inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
-    inline PromotePermissionCreatedFromPolicyRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
-    inline PromotePermissionCreatedFromPolicyRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
-    inline PromotePermissionCreatedFromPolicyRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+    template<typename PermissionArnT = Aws::String>
+    void SetPermissionArn(PermissionArnT&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::forward<PermissionArnT>(value); }
+    template<typename PermissionArnT = Aws::String>
+    PromotePermissionCreatedFromPolicyRequest& WithPermissionArn(PermissionArnT&& value) { SetPermissionArn(std::forward<PermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a name for the promoted customer managed permission.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PromotePermissionCreatedFromPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PromotePermissionCreatedFromPolicyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PromotePermissionCreatedFromPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PromotePermissionCreatedFromPolicyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline PromotePermissionCreatedFromPolicyRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline PromotePermissionCreatedFromPolicyRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline PromotePermissionCreatedFromPolicyRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    PromotePermissionCreatedFromPolicyRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

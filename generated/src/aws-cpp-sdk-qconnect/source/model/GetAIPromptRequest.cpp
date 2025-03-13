@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAIPromptRequest::GetAIPromptRequest() : 
-    m_aiPromptIdHasBeenSet(false),
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAIPromptRequest::SerializePayload() const
 {
   return {};

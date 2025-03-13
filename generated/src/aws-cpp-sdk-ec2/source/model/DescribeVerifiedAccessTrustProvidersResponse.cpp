@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVerifiedAccessTrustProvidersResponse::DescribeVerifiedAccessTrustProvidersResponse()
-{
-}
-
 DescribeVerifiedAccessTrustProvidersResponse::DescribeVerifiedAccessTrustProvidersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVerifiedAccessTrustProvidersResponse& DescribeVerifiedAccessTrustProvide
     if(!verifiedAccessTrustProvidersNode.IsNull())
     {
       XmlNode verifiedAccessTrustProvidersMember = verifiedAccessTrustProvidersNode.FirstChild("item");
+      m_verifiedAccessTrustProvidersHasBeenSet = !verifiedAccessTrustProvidersMember.IsNull();
       while(!verifiedAccessTrustProvidersMember.IsNull())
       {
         m_verifiedAccessTrustProviders.push_back(verifiedAccessTrustProvidersMember);
@@ -53,6 +50,7 @@ DescribeVerifiedAccessTrustProvidersResponse& DescribeVerifiedAccessTrustProvide
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeVerifiedAccessTrustProvidersResponse& DescribeVerifiedAccessTrustProvide
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVerifiedAccessTrustProvidersResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

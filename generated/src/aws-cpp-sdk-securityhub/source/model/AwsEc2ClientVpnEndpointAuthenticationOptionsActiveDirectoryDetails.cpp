@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetails& AwsEc2Client
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   return *this;
 }
 

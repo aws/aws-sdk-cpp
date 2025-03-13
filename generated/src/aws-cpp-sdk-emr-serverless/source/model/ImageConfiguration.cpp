@@ -18,14 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-ImageConfiguration::ImageConfiguration() : 
-    m_imageUriHasBeenSet(false),
-    m_resolvedImageDigestHasBeenSet(false)
-{
-}
-
 ImageConfiguration::ImageConfiguration(JsonView jsonValue)
-  : ImageConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageConfiguration& ImageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageUri"))
   {
     m_imageUri = jsonValue.GetString("imageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedImageDigest"))
   {
     m_resolvedImageDigest = jsonValue.GetString("resolvedImageDigest");
-
     m_resolvedImageDigestHasBeenSet = true;
   }
-
   return *this;
 }
 

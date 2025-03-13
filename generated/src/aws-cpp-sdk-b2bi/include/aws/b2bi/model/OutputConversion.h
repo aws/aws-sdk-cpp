@@ -34,7 +34,7 @@ namespace Model
   class OutputConversion
   {
   public:
-    AWS_B2BI_API OutputConversion();
+    AWS_B2BI_API OutputConversion() = default;
     AWS_B2BI_API OutputConversion(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API OutputConversion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The format for the output from an outbound transformer: only X12 is currently
      * supported.</p>
      */
-    inline const ToFormat& GetToFormat() const{ return m_toFormat; }
+    inline ToFormat GetToFormat() const { return m_toFormat; }
     inline bool ToFormatHasBeenSet() const { return m_toFormatHasBeenSet; }
-    inline void SetToFormat(const ToFormat& value) { m_toFormatHasBeenSet = true; m_toFormat = value; }
-    inline void SetToFormat(ToFormat&& value) { m_toFormatHasBeenSet = true; m_toFormat = std::move(value); }
-    inline OutputConversion& WithToFormat(const ToFormat& value) { SetToFormat(value); return *this;}
-    inline OutputConversion& WithToFormat(ToFormat&& value) { SetToFormat(std::move(value)); return *this;}
+    inline void SetToFormat(ToFormat value) { m_toFormatHasBeenSet = true; m_toFormat = value; }
+    inline OutputConversion& WithToFormat(ToFormat value) { SetToFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p>A structure that contains the X12 transaction set and version for the
      * transformer output.</p>
      */
-    inline const FormatOptions& GetFormatOptions() const{ return m_formatOptions; }
+    inline const FormatOptions& GetFormatOptions() const { return m_formatOptions; }
     inline bool FormatOptionsHasBeenSet() const { return m_formatOptionsHasBeenSet; }
-    inline void SetFormatOptions(const FormatOptions& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = value; }
-    inline void SetFormatOptions(FormatOptions&& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = std::move(value); }
-    inline OutputConversion& WithFormatOptions(const FormatOptions& value) { SetFormatOptions(value); return *this;}
-    inline OutputConversion& WithFormatOptions(FormatOptions&& value) { SetFormatOptions(std::move(value)); return *this;}
+    template<typename FormatOptionsT = FormatOptions>
+    void SetFormatOptions(FormatOptionsT&& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = std::forward<FormatOptionsT>(value); }
+    template<typename FormatOptionsT = FormatOptions>
+    OutputConversion& WithFormatOptions(FormatOptionsT&& value) { SetFormatOptions(std::forward<FormatOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    ToFormat m_toFormat;
+    ToFormat m_toFormat{ToFormat::NOT_SET};
     bool m_toFormatHasBeenSet = false;
 
     FormatOptions m_formatOptions;

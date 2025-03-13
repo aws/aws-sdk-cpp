@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePrimaryEmailAddressRequest::UpdatePrimaryEmailAddressRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePrimaryEmailAddressRequest::SerializePayload() const
 {
   JsonValue payload;

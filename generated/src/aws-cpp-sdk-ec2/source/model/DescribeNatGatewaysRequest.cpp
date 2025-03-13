@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_natGatewayIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNatGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;

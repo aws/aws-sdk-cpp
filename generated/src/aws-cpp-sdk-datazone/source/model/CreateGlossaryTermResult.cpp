@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGlossaryTermResult::CreateGlossaryTermResult() : 
-    m_status(GlossaryTermStatus::NOT_SET)
-{
-}
-
 CreateGlossaryTermResult::CreateGlossaryTermResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateGlossaryTermResult()
 {
   *this = result;
 }
@@ -34,57 +28,50 @@ CreateGlossaryTermResult& CreateGlossaryTermResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryId"))
   {
     m_glossaryId = jsonValue.GetString("glossaryId");
-
+    m_glossaryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longDescription"))
   {
     m_longDescription = jsonValue.GetString("longDescription");
-
+    m_longDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shortDescription"))
   {
     m_shortDescription = jsonValue.GetString("shortDescription");
-
+    m_shortDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = GlossaryTermStatusMapper::GetGlossaryTermStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("termRelations"))
   {
     m_termRelations = jsonValue.GetObject("termRelations");
-
+    m_termRelationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesMonitoring::ScheduledInstancesMonitoring() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 ScheduledInstancesMonitoring::ScheduledInstancesMonitoring(const XmlNode& xmlNode)
-  : ScheduledInstancesMonitoring()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ScheduledInstancesMonitoring& ScheduledInstancesMonitoring::operator =(const Xml
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ImportFindingsError::ImportFindingsError() : 
-    m_idHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ImportFindingsError::ImportFindingsError(JsonView jsonValue)
-  : ImportFindingsError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ImportFindingsError& ImportFindingsError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace ACM
 namespace Model
 {
 
-RenewalSummary::RenewalSummary() : 
-    m_renewalStatus(RenewalStatus::NOT_SET),
-    m_renewalStatusHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false),
-    m_renewalStatusReason(FailureReason::NOT_SET),
-    m_renewalStatusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 RenewalSummary::RenewalSummary(JsonView jsonValue)
-  : RenewalSummary()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ RenewalSummary& RenewalSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RenewalStatus"))
   {
     m_renewalStatus = RenewalStatusMapper::GetRenewalStatusForName(jsonValue.GetString("RenewalStatus"));
-
     m_renewalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainValidationOptions"))
   {
     Aws::Utils::Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
@@ -52,21 +39,16 @@ RenewalSummary& RenewalSummary::operator =(JsonView jsonValue)
     }
     m_domainValidationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenewalStatusReason"))
   {
     m_renewalStatusReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("RenewalStatusReason"));
-
     m_renewalStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

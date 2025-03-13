@@ -31,7 +31,7 @@ namespace Model
   class IotEventsAction
   {
   public:
-    AWS_IOT_API IotEventsAction();
+    AWS_IOT_API IotEventsAction() = default;
     AWS_IOT_API IotEventsAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API IotEventsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the IoT Events input.</p>
      */
-    inline const Aws::String& GetInputName() const{ return m_inputName; }
+    inline const Aws::String& GetInputName() const { return m_inputName; }
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
-    inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
-    inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
-    inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
-    inline IotEventsAction& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
-    inline IotEventsAction& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
-    inline IotEventsAction& WithInputName(const char* value) { SetInputName(value); return *this;}
+    template<typename InputNameT = Aws::String>
+    void SetInputName(InputNameT&& value) { m_inputNameHasBeenSet = true; m_inputName = std::forward<InputNameT>(value); }
+    template<typename InputNameT = Aws::String>
+    IotEventsAction& WithInputName(InputNameT&& value) { SetInputName(std::forward<InputNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Assign a value to this property to ensure that only one input (message) with
      * a given <code>messageId</code> will be processed by an IoT Events detector.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline IotEventsAction& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline IotEventsAction& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline IotEventsAction& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    IotEventsAction& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10
      * messages.</p>
      */
-    inline bool GetBatchMode() const{ return m_batchMode; }
+    inline bool GetBatchMode() const { return m_batchMode; }
     inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
     inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
     inline IotEventsAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
@@ -92,14 +88,12 @@ namespace Model
      * <p>The ARN of the role that grants IoT permission to send an input to an IoT
      * Events detector. ("Action":"iotevents:BatchPutMessage").</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline IotEventsAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline IotEventsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline IotEventsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    IotEventsAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -109,7 +103,7 @@ namespace Model
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    bool m_batchMode;
+    bool m_batchMode{false};
     bool m_batchModeHasBeenSet = false;
 
     Aws::String m_roleArn;

@@ -18,16 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ShardDetail::ShardDetail() : 
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_sizeHasBeenSet(false),
-    m_snapshotCreationTimeHasBeenSet(false)
-{
-}
-
 ShardDetail::ShardDetail(JsonView jsonValue)
-  : ShardDetail()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ShardDetail& ShardDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetString("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotCreationTime"))
   {
     m_snapshotCreationTime = jsonValue.GetDouble("SnapshotCreationTime");
-
     m_snapshotCreationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ExpenseDetection
   {
   public:
-    AWS_TEXTRACT_API ExpenseDetection();
+    AWS_TEXTRACT_API ExpenseDetection() = default;
     AWS_TEXTRACT_API ExpenseDetection(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API ExpenseDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The word or line of text recognized by Amazon Textract</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline ExpenseDetection& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline ExpenseDetection& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline ExpenseDetection& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    ExpenseDetection& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Geometry& GetGeometry() const{ return m_geometry; }
+    inline const Geometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const Geometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(Geometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline ExpenseDetection& WithGeometry(const Geometry& value) { SetGeometry(value); return *this;}
-    inline ExpenseDetection& WithGeometry(Geometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = Geometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = Geometry>
+    ExpenseDetection& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The confidence in detection, as a percentage</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline ExpenseDetection& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     Geometry m_geometry;
     bool m_geometryHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

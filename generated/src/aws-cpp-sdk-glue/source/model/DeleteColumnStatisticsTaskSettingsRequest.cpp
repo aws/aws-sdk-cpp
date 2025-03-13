@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteColumnStatisticsTaskSettingsRequest::DeleteColumnStatisticsTaskSettingsRequest() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteColumnStatisticsTaskSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

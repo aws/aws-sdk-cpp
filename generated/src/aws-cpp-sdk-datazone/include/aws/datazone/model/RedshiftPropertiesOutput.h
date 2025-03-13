@@ -35,7 +35,7 @@ namespace Model
   class RedshiftPropertiesOutput
   {
   public:
-    AWS_DATAZONE_API RedshiftPropertiesOutput();
+    AWS_DATAZONE_API RedshiftPropertiesOutput() = default;
     AWS_DATAZONE_API RedshiftPropertiesOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RedshiftPropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,31 @@ namespace Model
     /**
      * <p>The Amazon Redshift credentials.</p>
      */
-    inline const RedshiftCredentials& GetCredentials() const{ return m_credentials; }
+    inline const RedshiftCredentials& GetCredentials() const { return m_credentials; }
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
-    inline void SetCredentials(const RedshiftCredentials& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
-    inline void SetCredentials(RedshiftCredentials&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
-    inline RedshiftPropertiesOutput& WithCredentials(const RedshiftCredentials& value) { SetCredentials(value); return *this;}
-    inline RedshiftPropertiesOutput& WithCredentials(RedshiftCredentials&& value) { SetCredentials(std::move(value)); return *this;}
+    template<typename CredentialsT = RedshiftCredentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = RedshiftCredentials>
+    RedshiftPropertiesOutput& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Redshift database name.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline RedshiftPropertiesOutput& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline RedshiftPropertiesOutput& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline RedshiftPropertiesOutput& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    RedshiftPropertiesOutput& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether Amaon Redshift properties has a provisioned secret.</p>
      */
-    inline bool GetIsProvisionedSecret() const{ return m_isProvisionedSecret; }
+    inline bool GetIsProvisionedSecret() const { return m_isProvisionedSecret; }
     inline bool IsProvisionedSecretHasBeenSet() const { return m_isProvisionedSecretHasBeenSet; }
     inline void SetIsProvisionedSecret(bool value) { m_isProvisionedSecretHasBeenSet = true; m_isProvisionedSecret = value; }
     inline RedshiftPropertiesOutput& WithIsProvisionedSecret(bool value) { SetIsProvisionedSecret(value); return *this;}
@@ -81,78 +79,70 @@ namespace Model
     /**
      * <p>The jdbcIam URL of the Amazon Redshift properties.</p>
      */
-    inline const Aws::String& GetJdbcIamUrl() const{ return m_jdbcIamUrl; }
+    inline const Aws::String& GetJdbcIamUrl() const { return m_jdbcIamUrl; }
     inline bool JdbcIamUrlHasBeenSet() const { return m_jdbcIamUrlHasBeenSet; }
-    inline void SetJdbcIamUrl(const Aws::String& value) { m_jdbcIamUrlHasBeenSet = true; m_jdbcIamUrl = value; }
-    inline void SetJdbcIamUrl(Aws::String&& value) { m_jdbcIamUrlHasBeenSet = true; m_jdbcIamUrl = std::move(value); }
-    inline void SetJdbcIamUrl(const char* value) { m_jdbcIamUrlHasBeenSet = true; m_jdbcIamUrl.assign(value); }
-    inline RedshiftPropertiesOutput& WithJdbcIamUrl(const Aws::String& value) { SetJdbcIamUrl(value); return *this;}
-    inline RedshiftPropertiesOutput& WithJdbcIamUrl(Aws::String&& value) { SetJdbcIamUrl(std::move(value)); return *this;}
-    inline RedshiftPropertiesOutput& WithJdbcIamUrl(const char* value) { SetJdbcIamUrl(value); return *this;}
+    template<typename JdbcIamUrlT = Aws::String>
+    void SetJdbcIamUrl(JdbcIamUrlT&& value) { m_jdbcIamUrlHasBeenSet = true; m_jdbcIamUrl = std::forward<JdbcIamUrlT>(value); }
+    template<typename JdbcIamUrlT = Aws::String>
+    RedshiftPropertiesOutput& WithJdbcIamUrl(JdbcIamUrlT&& value) { SetJdbcIamUrl(std::forward<JdbcIamUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The jdbcURL of the Amazon Redshift properties. </p>
      */
-    inline const Aws::String& GetJdbcUrl() const{ return m_jdbcUrl; }
+    inline const Aws::String& GetJdbcUrl() const { return m_jdbcUrl; }
     inline bool JdbcUrlHasBeenSet() const { return m_jdbcUrlHasBeenSet; }
-    inline void SetJdbcUrl(const Aws::String& value) { m_jdbcUrlHasBeenSet = true; m_jdbcUrl = value; }
-    inline void SetJdbcUrl(Aws::String&& value) { m_jdbcUrlHasBeenSet = true; m_jdbcUrl = std::move(value); }
-    inline void SetJdbcUrl(const char* value) { m_jdbcUrlHasBeenSet = true; m_jdbcUrl.assign(value); }
-    inline RedshiftPropertiesOutput& WithJdbcUrl(const Aws::String& value) { SetJdbcUrl(value); return *this;}
-    inline RedshiftPropertiesOutput& WithJdbcUrl(Aws::String&& value) { SetJdbcUrl(std::move(value)); return *this;}
-    inline RedshiftPropertiesOutput& WithJdbcUrl(const char* value) { SetJdbcUrl(value); return *this;}
+    template<typename JdbcUrlT = Aws::String>
+    void SetJdbcUrl(JdbcUrlT&& value) { m_jdbcUrlHasBeenSet = true; m_jdbcUrl = std::forward<JdbcUrlT>(value); }
+    template<typename JdbcUrlT = Aws::String>
+    RedshiftPropertiesOutput& WithJdbcUrl(JdbcUrlT&& value) { SetJdbcUrl(std::forward<JdbcUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lineage syn of the Amazon Redshift properties.</p>
      */
-    inline const RedshiftLineageSyncConfigurationOutput& GetLineageSync() const{ return m_lineageSync; }
+    inline const RedshiftLineageSyncConfigurationOutput& GetLineageSync() const { return m_lineageSync; }
     inline bool LineageSyncHasBeenSet() const { return m_lineageSyncHasBeenSet; }
-    inline void SetLineageSync(const RedshiftLineageSyncConfigurationOutput& value) { m_lineageSyncHasBeenSet = true; m_lineageSync = value; }
-    inline void SetLineageSync(RedshiftLineageSyncConfigurationOutput&& value) { m_lineageSyncHasBeenSet = true; m_lineageSync = std::move(value); }
-    inline RedshiftPropertiesOutput& WithLineageSync(const RedshiftLineageSyncConfigurationOutput& value) { SetLineageSync(value); return *this;}
-    inline RedshiftPropertiesOutput& WithLineageSync(RedshiftLineageSyncConfigurationOutput&& value) { SetLineageSync(std::move(value)); return *this;}
+    template<typename LineageSyncT = RedshiftLineageSyncConfigurationOutput>
+    void SetLineageSync(LineageSyncT&& value) { m_lineageSyncHasBeenSet = true; m_lineageSync = std::forward<LineageSyncT>(value); }
+    template<typename LineageSyncT = RedshiftLineageSyncConfigurationOutput>
+    RedshiftPropertiesOutput& WithLineageSync(LineageSyncT&& value) { SetLineageSync(std::forward<LineageSyncT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The redshiftTempDir of the Amazon Redshift properties.</p>
      */
-    inline const Aws::String& GetRedshiftTempDir() const{ return m_redshiftTempDir; }
+    inline const Aws::String& GetRedshiftTempDir() const { return m_redshiftTempDir; }
     inline bool RedshiftTempDirHasBeenSet() const { return m_redshiftTempDirHasBeenSet; }
-    inline void SetRedshiftTempDir(const Aws::String& value) { m_redshiftTempDirHasBeenSet = true; m_redshiftTempDir = value; }
-    inline void SetRedshiftTempDir(Aws::String&& value) { m_redshiftTempDirHasBeenSet = true; m_redshiftTempDir = std::move(value); }
-    inline void SetRedshiftTempDir(const char* value) { m_redshiftTempDirHasBeenSet = true; m_redshiftTempDir.assign(value); }
-    inline RedshiftPropertiesOutput& WithRedshiftTempDir(const Aws::String& value) { SetRedshiftTempDir(value); return *this;}
-    inline RedshiftPropertiesOutput& WithRedshiftTempDir(Aws::String&& value) { SetRedshiftTempDir(std::move(value)); return *this;}
-    inline RedshiftPropertiesOutput& WithRedshiftTempDir(const char* value) { SetRedshiftTempDir(value); return *this;}
+    template<typename RedshiftTempDirT = Aws::String>
+    void SetRedshiftTempDir(RedshiftTempDirT&& value) { m_redshiftTempDirHasBeenSet = true; m_redshiftTempDir = std::forward<RedshiftTempDirT>(value); }
+    template<typename RedshiftTempDirT = Aws::String>
+    RedshiftPropertiesOutput& WithRedshiftTempDir(RedshiftTempDirT&& value) { SetRedshiftTempDir(std::forward<RedshiftTempDirT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status in the Amazon Redshift properties.</p>
      */
-    inline const ConnectionStatus& GetStatus() const{ return m_status; }
+    inline ConnectionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RedshiftPropertiesOutput& WithStatus(const ConnectionStatus& value) { SetStatus(value); return *this;}
-    inline RedshiftPropertiesOutput& WithStatus(ConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConnectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RedshiftPropertiesOutput& WithStatus(ConnectionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage in the Amazon Redshift properties.</p>
      */
-    inline const RedshiftStorageProperties& GetStorage() const{ return m_storage; }
+    inline const RedshiftStorageProperties& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const RedshiftStorageProperties& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(RedshiftStorageProperties&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline RedshiftPropertiesOutput& WithStorage(const RedshiftStorageProperties& value) { SetStorage(value); return *this;}
-    inline RedshiftPropertiesOutput& WithStorage(RedshiftStorageProperties&& value) { SetStorage(std::move(value)); return *this;}
+    template<typename StorageT = RedshiftStorageProperties>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = RedshiftStorageProperties>
+    RedshiftPropertiesOutput& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
     ///@}
   private:
 
@@ -162,7 +152,7 @@ namespace Model
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
 
-    bool m_isProvisionedSecret;
+    bool m_isProvisionedSecret{false};
     bool m_isProvisionedSecretHasBeenSet = false;
 
     Aws::String m_jdbcIamUrl;
@@ -177,7 +167,7 @@ namespace Model
     Aws::String m_redshiftTempDir;
     bool m_redshiftTempDirHasBeenSet = false;
 
-    ConnectionStatus m_status;
+    ConnectionStatus m_status{ConnectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     RedshiftStorageProperties m_storage;

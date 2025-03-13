@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventStreamRequest::DeleteEventStreamRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_eventStreamNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventStreamRequest::SerializePayload() const
 {
   return {};

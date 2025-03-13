@@ -18,35 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Component::Component() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_type(ComponentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_supportedOsVersionsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_obfuscate(false),
-    m_obfuscateHasBeenSet(false),
-    m_productCodesHasBeenSet(false)
-{
-}
-
 Component::Component(JsonView jsonValue)
-  : Component()
 {
   *this = jsonValue;
 }
@@ -56,52 +28,38 @@ Component& Component::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changeDescription"))
   {
     m_changeDescription = jsonValue.GetString("changeDescription");
-
     m_changeDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ComponentTypeMapper::GetComponentTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedOsVersions"))
   {
     Aws::Utils::Array<JsonView> supportedOsVersionsJsonList = jsonValue.GetArray("supportedOsVersions");
@@ -111,14 +69,11 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_supportedOsVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -128,42 +83,31 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encrypted"))
   {
     m_encrypted = jsonValue.GetBool("encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -173,21 +117,16 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publisher"))
   {
     m_publisher = jsonValue.GetString("publisher");
-
     m_publisherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("obfuscate"))
   {
     m_obfuscate = jsonValue.GetBool("obfuscate");
-
     m_obfuscateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCodes"))
   {
     Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
@@ -197,7 +136,6 @@ Component& Component::operator =(JsonView jsonValue)
     }
     m_productCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

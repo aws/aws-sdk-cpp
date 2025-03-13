@@ -31,7 +31,7 @@ namespace Model
   class LogConfigurations
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API LogConfigurations();
+    AWS_MANAGEDBLOCKCHAIN_API LogConfigurations() = default;
     AWS_MANAGEDBLOCKCHAIN_API LogConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API LogConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Parameters for publishing logs to Amazon CloudWatch Logs.</p>
      */
-    inline const LogConfiguration& GetCloudwatch() const{ return m_cloudwatch; }
+    inline const LogConfiguration& GetCloudwatch() const { return m_cloudwatch; }
     inline bool CloudwatchHasBeenSet() const { return m_cloudwatchHasBeenSet; }
-    inline void SetCloudwatch(const LogConfiguration& value) { m_cloudwatchHasBeenSet = true; m_cloudwatch = value; }
-    inline void SetCloudwatch(LogConfiguration&& value) { m_cloudwatchHasBeenSet = true; m_cloudwatch = std::move(value); }
-    inline LogConfigurations& WithCloudwatch(const LogConfiguration& value) { SetCloudwatch(value); return *this;}
-    inline LogConfigurations& WithCloudwatch(LogConfiguration&& value) { SetCloudwatch(std::move(value)); return *this;}
+    template<typename CloudwatchT = LogConfiguration>
+    void SetCloudwatch(CloudwatchT&& value) { m_cloudwatchHasBeenSet = true; m_cloudwatch = std::forward<CloudwatchT>(value); }
+    template<typename CloudwatchT = LogConfiguration>
+    LogConfigurations& WithCloudwatch(CloudwatchT&& value) { SetCloudwatch(std::forward<CloudwatchT>(value)); return *this;}
     ///@}
   private:
 

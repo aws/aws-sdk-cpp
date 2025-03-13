@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOtaTaskRequest::DeleteOtaTaskRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOtaTaskRequest::SerializePayload() const
 {
   return {};

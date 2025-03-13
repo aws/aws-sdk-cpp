@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-InsightResultValue::InsightResultValue() : 
-    m_groupByAttributeValueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 InsightResultValue::InsightResultValue(JsonView jsonValue)
-  : InsightResultValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InsightResultValue& InsightResultValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupByAttributeValue"))
   {
     m_groupByAttributeValue = jsonValue.GetString("GroupByAttributeValue");
-
     m_groupByAttributeValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

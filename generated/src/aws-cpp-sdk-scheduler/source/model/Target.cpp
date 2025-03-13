@@ -18,22 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-Target::Target() : 
-    m_arnHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false),
-    m_eventBridgeParametersHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_kinesisParametersHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_sageMakerPipelineParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeadLetterConfig"))
   {
     m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
-
     m_deadLetterConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EcsParameters"))
   {
     m_ecsParameters = jsonValue.GetObject("EcsParameters");
-
     m_ecsParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeParameters"))
   {
     m_eventBridgeParameters = jsonValue.GetObject("EventBridgeParameters");
-
     m_eventBridgeParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetString("Input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisParameters"))
   {
     m_kinesisParameters = jsonValue.GetObject("KinesisParameters");
-
     m_kinesisParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryPolicy"))
   {
     m_retryPolicy = jsonValue.GetObject("RetryPolicy");
-
     m_retryPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerPipelineParameters"))
   {
     m_sageMakerPipelineParameters = jsonValue.GetObject("SageMakerPipelineParameters");
-
     m_sageMakerPipelineParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqsParameters"))
   {
     m_sqsParameters = jsonValue.GetObject("SqsParameters");
-
     m_sqsParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

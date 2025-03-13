@@ -29,7 +29,7 @@ namespace Model
   class ListPreparedStatementsResult
   {
   public:
-    AWS_ATHENA_API ListPreparedStatementsResult();
+    AWS_ATHENA_API ListPreparedStatementsResult() = default;
     AWS_ATHENA_API ListPreparedStatementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListPreparedStatementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of prepared statements for the workgroup.</p>
      */
-    inline const Aws::Vector<PreparedStatementSummary>& GetPreparedStatements() const{ return m_preparedStatements; }
-    inline void SetPreparedStatements(const Aws::Vector<PreparedStatementSummary>& value) { m_preparedStatements = value; }
-    inline void SetPreparedStatements(Aws::Vector<PreparedStatementSummary>&& value) { m_preparedStatements = std::move(value); }
-    inline ListPreparedStatementsResult& WithPreparedStatements(const Aws::Vector<PreparedStatementSummary>& value) { SetPreparedStatements(value); return *this;}
-    inline ListPreparedStatementsResult& WithPreparedStatements(Aws::Vector<PreparedStatementSummary>&& value) { SetPreparedStatements(std::move(value)); return *this;}
-    inline ListPreparedStatementsResult& AddPreparedStatements(const PreparedStatementSummary& value) { m_preparedStatements.push_back(value); return *this; }
-    inline ListPreparedStatementsResult& AddPreparedStatements(PreparedStatementSummary&& value) { m_preparedStatements.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PreparedStatementSummary>& GetPreparedStatements() const { return m_preparedStatements; }
+    template<typename PreparedStatementsT = Aws::Vector<PreparedStatementSummary>>
+    void SetPreparedStatements(PreparedStatementsT&& value) { m_preparedStatementsHasBeenSet = true; m_preparedStatements = std::forward<PreparedStatementsT>(value); }
+    template<typename PreparedStatementsT = Aws::Vector<PreparedStatementSummary>>
+    ListPreparedStatementsResult& WithPreparedStatements(PreparedStatementsT&& value) { SetPreparedStatements(std::forward<PreparedStatementsT>(value)); return *this;}
+    template<typename PreparedStatementsT = PreparedStatementSummary>
+    ListPreparedStatementsResult& AddPreparedStatements(PreparedStatementsT&& value) { m_preparedStatementsHasBeenSet = true; m_preparedStatements.emplace_back(std::forward<PreparedStatementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPreparedStatementsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPreparedStatementsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPreparedStatementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPreparedStatementsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPreparedStatementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPreparedStatementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPreparedStatementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPreparedStatementsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PreparedStatementSummary> m_preparedStatements;
+    bool m_preparedStatementsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

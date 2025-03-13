@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStackRefactorsResult::ListStackRefactorsResult()
-{
-}
-
 ListStackRefactorsResult::ListStackRefactorsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListStackRefactorsResult& ListStackRefactorsResult::operator =(const Aws::Amazon
     if(!stackRefactorSummariesNode.IsNull())
     {
       XmlNode stackRefactorSummariesMember = stackRefactorSummariesNode.FirstChild("member");
+      m_stackRefactorSummariesHasBeenSet = !stackRefactorSummariesMember.IsNull();
       while(!stackRefactorSummariesMember.IsNull())
       {
         m_stackRefactorSummaries.push_back(stackRefactorSummariesMember);
@@ -53,12 +50,14 @@ ListStackRefactorsResult& ListStackRefactorsResult::operator =(const Aws::Amazon
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListStackRefactorsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

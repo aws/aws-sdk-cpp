@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultS3Location::RetrievalResultS3Location() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 RetrievalResultS3Location::RetrievalResultS3Location(JsonView jsonValue)
-  : RetrievalResultS3Location()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalResultS3Location& RetrievalResultS3Location::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

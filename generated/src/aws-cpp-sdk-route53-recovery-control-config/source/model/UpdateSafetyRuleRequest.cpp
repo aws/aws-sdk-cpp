@@ -12,12 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSafetyRuleRequest::UpdateSafetyRuleRequest() : 
-    m_assertionRuleUpdateHasBeenSet(false),
-    m_gatingRuleUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSafetyRuleRequest::SerializePayload() const
 {
   JsonValue payload;

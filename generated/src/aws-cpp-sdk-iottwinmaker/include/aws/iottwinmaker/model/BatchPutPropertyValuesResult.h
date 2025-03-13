@@ -29,7 +29,7 @@ namespace Model
   class BatchPutPropertyValuesResult
   {
   public:
-    AWS_IOTTWINMAKER_API BatchPutPropertyValuesResult();
+    AWS_IOTTWINMAKER_API BatchPutPropertyValuesResult() = default;
     AWS_IOTTWINMAKER_API BatchPutPropertyValuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API BatchPutPropertyValuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Entries that caused errors in the batch put operation.</p>
      */
-    inline const Aws::Vector<BatchPutPropertyErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
-    inline void SetErrorEntries(const Aws::Vector<BatchPutPropertyErrorEntry>& value) { m_errorEntries = value; }
-    inline void SetErrorEntries(Aws::Vector<BatchPutPropertyErrorEntry>&& value) { m_errorEntries = std::move(value); }
-    inline BatchPutPropertyValuesResult& WithErrorEntries(const Aws::Vector<BatchPutPropertyErrorEntry>& value) { SetErrorEntries(value); return *this;}
-    inline BatchPutPropertyValuesResult& WithErrorEntries(Aws::Vector<BatchPutPropertyErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
-    inline BatchPutPropertyValuesResult& AddErrorEntries(const BatchPutPropertyErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
-    inline BatchPutPropertyValuesResult& AddErrorEntries(BatchPutPropertyErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchPutPropertyErrorEntry>& GetErrorEntries() const { return m_errorEntries; }
+    template<typename ErrorEntriesT = Aws::Vector<BatchPutPropertyErrorEntry>>
+    void SetErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries = std::forward<ErrorEntriesT>(value); }
+    template<typename ErrorEntriesT = Aws::Vector<BatchPutPropertyErrorEntry>>
+    BatchPutPropertyValuesResult& WithErrorEntries(ErrorEntriesT&& value) { SetErrorEntries(std::forward<ErrorEntriesT>(value)); return *this;}
+    template<typename ErrorEntriesT = BatchPutPropertyErrorEntry>
+    BatchPutPropertyValuesResult& AddErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries.emplace_back(std::forward<ErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchPutPropertyValuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchPutPropertyValuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchPutPropertyValuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchPutPropertyValuesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchPutPropertyErrorEntry> m_errorEntries;
+    bool m_errorEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

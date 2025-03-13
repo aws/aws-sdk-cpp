@@ -31,7 +31,7 @@ namespace Model
   class AwsCertificateManagerCertificateOptions
   {
   public:
-    AWS_SECURITYHUB_API AwsCertificateManagerCertificateOptions();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateOptions() = default;
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>Whether to add the certificate to a transparency log.</p> <p>Valid values:
      * <code>DISABLED</code> | <code>ENABLED</code> </p>
      */
-    inline const Aws::String& GetCertificateTransparencyLoggingPreference() const{ return m_certificateTransparencyLoggingPreference; }
+    inline const Aws::String& GetCertificateTransparencyLoggingPreference() const { return m_certificateTransparencyLoggingPreference; }
     inline bool CertificateTransparencyLoggingPreferenceHasBeenSet() const { return m_certificateTransparencyLoggingPreferenceHasBeenSet; }
-    inline void SetCertificateTransparencyLoggingPreference(const Aws::String& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = value; }
-    inline void SetCertificateTransparencyLoggingPreference(Aws::String&& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = std::move(value); }
-    inline void SetCertificateTransparencyLoggingPreference(const char* value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference.assign(value); }
-    inline AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(const Aws::String& value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
-    inline AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(Aws::String&& value) { SetCertificateTransparencyLoggingPreference(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(const char* value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
+    template<typename CertificateTransparencyLoggingPreferenceT = Aws::String>
+    void SetCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreferenceT&& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = std::forward<CertificateTransparencyLoggingPreferenceT>(value); }
+    template<typename CertificateTransparencyLoggingPreferenceT = Aws::String>
+    AwsCertificateManagerCertificateOptions& WithCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreferenceT&& value) { SetCertificateTransparencyLoggingPreference(std::forward<CertificateTransparencyLoggingPreferenceT>(value)); return *this;}
     ///@}
   private:
 

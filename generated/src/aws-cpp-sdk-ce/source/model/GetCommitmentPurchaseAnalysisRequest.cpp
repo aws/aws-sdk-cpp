@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCommitmentPurchaseAnalysisRequest::GetCommitmentPurchaseAnalysisRequest() : 
-    m_analysisIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCommitmentPurchaseAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

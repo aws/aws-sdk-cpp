@@ -12,12 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceRequest::UpdateServiceRequest() : 
-    m_idHasBeenSet(false),
-    m_serviceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

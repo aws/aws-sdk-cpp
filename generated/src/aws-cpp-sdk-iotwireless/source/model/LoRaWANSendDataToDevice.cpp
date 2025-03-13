@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANSendDataToDevice::LoRaWANSendDataToDevice() : 
-    m_fPort(0),
-    m_fPortHasBeenSet(false),
-    m_participatingGatewaysHasBeenSet(false)
-{
-}
-
 LoRaWANSendDataToDevice::LoRaWANSendDataToDevice(JsonView jsonValue)
-  : LoRaWANSendDataToDevice()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LoRaWANSendDataToDevice& LoRaWANSendDataToDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FPort"))
   {
     m_fPort = jsonValue.GetInteger("FPort");
-
     m_fPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipatingGateways"))
   {
     m_participatingGateways = jsonValue.GetObject("ParticipatingGateways");
-
     m_participatingGatewaysHasBeenSet = true;
   }
-
   return *this;
 }
 

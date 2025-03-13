@@ -18,15 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-MediaExtractionConfiguration::MediaExtractionConfiguration() : 
-    m_imageExtractionConfigurationHasBeenSet(false),
-    m_audioExtractionConfigurationHasBeenSet(false),
-    m_videoExtractionConfigurationHasBeenSet(false)
-{
-}
-
 MediaExtractionConfiguration::MediaExtractionConfiguration(JsonView jsonValue)
-  : MediaExtractionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MediaExtractionConfiguration& MediaExtractionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("imageExtractionConfiguration"))
   {
     m_imageExtractionConfiguration = jsonValue.GetObject("imageExtractionConfiguration");
-
     m_imageExtractionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioExtractionConfiguration"))
   {
     m_audioExtractionConfiguration = jsonValue.GetObject("audioExtractionConfiguration");
-
     m_audioExtractionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoExtractionConfiguration"))
   {
     m_videoExtractionConfiguration = jsonValue.GetObject("videoExtractionConfiguration");
-
     m_videoExtractionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateSnapshotsRequest::CreateSnapshotsRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_instanceSpecificationHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_copyTagsFromSource(CopyTagsFromSource::NOT_SET),
-    m_copyTagsFromSourceHasBeenSet(false),
-    m_location(SnapshotLocationEnum::NOT_SET),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,12 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectTextRequest::DetectTextRequest() : 
-    m_imageHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DetectTextRequest::SerializePayload() const
 {
   JsonValue payload;

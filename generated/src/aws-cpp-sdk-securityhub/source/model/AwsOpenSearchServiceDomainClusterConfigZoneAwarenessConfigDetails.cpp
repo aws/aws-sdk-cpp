@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails() : 
-    m_availabilityZoneCount(0),
-    m_availabilityZoneCountHasBeenSet(false)
-{
-}
-
 AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails(JsonView jsonValue)
-  : AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails& AwsOpenSearch
   if(jsonValue.ValueExists("AvailabilityZoneCount"))
   {
     m_availabilityZoneCount = jsonValue.GetInteger("AvailabilityZoneCount");
-
     m_availabilityZoneCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -39,7 +39,7 @@ namespace Model
   class FraudDetectionResult
   {
   public:
-    AWS_VOICEID_API FraudDetectionResult();
+    AWS_VOICEID_API FraudDetectionResult() = default;
     AWS_VOICEID_API FraudDetectionResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API FraudDetectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <p>A timestamp of when audio aggregation ended for this fraud detection
      * result.</p>
      */
-    inline const Aws::Utils::DateTime& GetAudioAggregationEndedAt() const{ return m_audioAggregationEndedAt; }
+    inline const Aws::Utils::DateTime& GetAudioAggregationEndedAt() const { return m_audioAggregationEndedAt; }
     inline bool AudioAggregationEndedAtHasBeenSet() const { return m_audioAggregationEndedAtHasBeenSet; }
-    inline void SetAudioAggregationEndedAt(const Aws::Utils::DateTime& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = value; }
-    inline void SetAudioAggregationEndedAt(Aws::Utils::DateTime&& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = std::move(value); }
-    inline FraudDetectionResult& WithAudioAggregationEndedAt(const Aws::Utils::DateTime& value) { SetAudioAggregationEndedAt(value); return *this;}
-    inline FraudDetectionResult& WithAudioAggregationEndedAt(Aws::Utils::DateTime&& value) { SetAudioAggregationEndedAt(std::move(value)); return *this;}
+    template<typename AudioAggregationEndedAtT = Aws::Utils::DateTime>
+    void SetAudioAggregationEndedAt(AudioAggregationEndedAtT&& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = std::forward<AudioAggregationEndedAtT>(value); }
+    template<typename AudioAggregationEndedAtT = Aws::Utils::DateTime>
+    FraudDetectionResult& WithAudioAggregationEndedAt(AudioAggregationEndedAtT&& value) { SetAudioAggregationEndedAt(std::forward<AudioAggregationEndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>A timestamp of when audio aggregation started for this fraud detection
      * result.</p>
      */
-    inline const Aws::Utils::DateTime& GetAudioAggregationStartedAt() const{ return m_audioAggregationStartedAt; }
+    inline const Aws::Utils::DateTime& GetAudioAggregationStartedAt() const { return m_audioAggregationStartedAt; }
     inline bool AudioAggregationStartedAtHasBeenSet() const { return m_audioAggregationStartedAtHasBeenSet; }
-    inline void SetAudioAggregationStartedAt(const Aws::Utils::DateTime& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = value; }
-    inline void SetAudioAggregationStartedAt(Aws::Utils::DateTime&& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = std::move(value); }
-    inline FraudDetectionResult& WithAudioAggregationStartedAt(const Aws::Utils::DateTime& value) { SetAudioAggregationStartedAt(value); return *this;}
-    inline FraudDetectionResult& WithAudioAggregationStartedAt(Aws::Utils::DateTime&& value) { SetAudioAggregationStartedAt(std::move(value)); return *this;}
+    template<typename AudioAggregationStartedAtT = Aws::Utils::DateTime>
+    void SetAudioAggregationStartedAt(AudioAggregationStartedAtT&& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = std::forward<AudioAggregationStartedAtT>(value); }
+    template<typename AudioAggregationStartedAtT = Aws::Utils::DateTime>
+    FraudDetectionResult& WithAudioAggregationStartedAt(AudioAggregationStartedAtT&& value) { SetAudioAggregationStartedAt(std::forward<AudioAggregationStartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud
      * detection result.</p>
      */
-    inline const FraudDetectionConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const FraudDetectionConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const FraudDetectionConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(FraudDetectionConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline FraudDetectionResult& WithConfiguration(const FraudDetectionConfiguration& value) { SetConfiguration(value); return *this;}
-    inline FraudDetectionResult& WithConfiguration(FraudDetectionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = FraudDetectionConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = FraudDetectionConfiguration>
+    FraudDetectionResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,10 @@ namespace Model
      * <p>The fraud detection decision produced by Voice ID, processed against the
      * current session state and streamed audio of the speaker.</p>
      */
-    inline const FraudDetectionDecision& GetDecision() const{ return m_decision; }
+    inline FraudDetectionDecision GetDecision() const { return m_decision; }
     inline bool DecisionHasBeenSet() const { return m_decisionHasBeenSet; }
-    inline void SetDecision(const FraudDetectionDecision& value) { m_decisionHasBeenSet = true; m_decision = value; }
-    inline void SetDecision(FraudDetectionDecision&& value) { m_decisionHasBeenSet = true; m_decision = std::move(value); }
-    inline FraudDetectionResult& WithDecision(const FraudDetectionDecision& value) { SetDecision(value); return *this;}
-    inline FraudDetectionResult& WithDecision(FraudDetectionDecision&& value) { SetDecision(std::move(value)); return *this;}
+    inline void SetDecision(FraudDetectionDecision value) { m_decisionHasBeenSet = true; m_decision = value; }
+    inline FraudDetectionResult& WithDecision(FraudDetectionDecision value) { SetDecision(value); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +103,12 @@ namespace Model
      * that in the absence of any new streaming activity or risk threshold changes,
      * Voice ID always returns cached Fraud Detection result for this API.</p>
      */
-    inline const Aws::String& GetFraudDetectionResultId() const{ return m_fraudDetectionResultId; }
+    inline const Aws::String& GetFraudDetectionResultId() const { return m_fraudDetectionResultId; }
     inline bool FraudDetectionResultIdHasBeenSet() const { return m_fraudDetectionResultIdHasBeenSet; }
-    inline void SetFraudDetectionResultId(const Aws::String& value) { m_fraudDetectionResultIdHasBeenSet = true; m_fraudDetectionResultId = value; }
-    inline void SetFraudDetectionResultId(Aws::String&& value) { m_fraudDetectionResultIdHasBeenSet = true; m_fraudDetectionResultId = std::move(value); }
-    inline void SetFraudDetectionResultId(const char* value) { m_fraudDetectionResultIdHasBeenSet = true; m_fraudDetectionResultId.assign(value); }
-    inline FraudDetectionResult& WithFraudDetectionResultId(const Aws::String& value) { SetFraudDetectionResultId(value); return *this;}
-    inline FraudDetectionResult& WithFraudDetectionResultId(Aws::String&& value) { SetFraudDetectionResultId(std::move(value)); return *this;}
-    inline FraudDetectionResult& WithFraudDetectionResultId(const char* value) { SetFraudDetectionResultId(value); return *this;}
+    template<typename FraudDetectionResultIdT = Aws::String>
+    void SetFraudDetectionResultId(FraudDetectionResultIdT&& value) { m_fraudDetectionResultIdHasBeenSet = true; m_fraudDetectionResultId = std::forward<FraudDetectionResultIdT>(value); }
+    template<typename FraudDetectionResultIdT = Aws::String>
+    FraudDetectionResult& WithFraudDetectionResultId(FraudDetectionResultIdT&& value) { SetFraudDetectionResultId(std::forward<FraudDetectionResultIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +118,13 @@ namespace Model
      * following possible values: <code>KNOWN_FRAUDSTER</code> and
      * <code>VOICE_SPOOFING</code>.</p>
      */
-    inline const Aws::Vector<FraudDetectionReason>& GetReasons() const{ return m_reasons; }
+    inline const Aws::Vector<FraudDetectionReason>& GetReasons() const { return m_reasons; }
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
-    inline void SetReasons(const Aws::Vector<FraudDetectionReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
-    inline void SetReasons(Aws::Vector<FraudDetectionReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
-    inline FraudDetectionResult& WithReasons(const Aws::Vector<FraudDetectionReason>& value) { SetReasons(value); return *this;}
-    inline FraudDetectionResult& WithReasons(Aws::Vector<FraudDetectionReason>&& value) { SetReasons(std::move(value)); return *this;}
-    inline FraudDetectionResult& AddReasons(const FraudDetectionReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
-    inline FraudDetectionResult& AddReasons(FraudDetectionReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
+    template<typename ReasonsT = Aws::Vector<FraudDetectionReason>>
+    void SetReasons(ReasonsT&& value) { m_reasonsHasBeenSet = true; m_reasons = std::forward<ReasonsT>(value); }
+    template<typename ReasonsT = Aws::Vector<FraudDetectionReason>>
+    FraudDetectionResult& WithReasons(ReasonsT&& value) { SetReasons(std::forward<ReasonsT>(value)); return *this;}
+    inline FraudDetectionResult& AddReasons(FraudDetectionReason value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -137,25 +132,25 @@ namespace Model
      * <p>Details about each risk analyzed for this speaker. Currently, this contains
      * KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
      */
-    inline const FraudRiskDetails& GetRiskDetails() const{ return m_riskDetails; }
+    inline const FraudRiskDetails& GetRiskDetails() const { return m_riskDetails; }
     inline bool RiskDetailsHasBeenSet() const { return m_riskDetailsHasBeenSet; }
-    inline void SetRiskDetails(const FraudRiskDetails& value) { m_riskDetailsHasBeenSet = true; m_riskDetails = value; }
-    inline void SetRiskDetails(FraudRiskDetails&& value) { m_riskDetailsHasBeenSet = true; m_riskDetails = std::move(value); }
-    inline FraudDetectionResult& WithRiskDetails(const FraudRiskDetails& value) { SetRiskDetails(value); return *this;}
-    inline FraudDetectionResult& WithRiskDetails(FraudRiskDetails&& value) { SetRiskDetails(std::move(value)); return *this;}
+    template<typename RiskDetailsT = FraudRiskDetails>
+    void SetRiskDetails(RiskDetailsT&& value) { m_riskDetailsHasBeenSet = true; m_riskDetails = std::forward<RiskDetailsT>(value); }
+    template<typename RiskDetailsT = FraudRiskDetails>
+    FraudDetectionResult& WithRiskDetails(RiskDetailsT&& value) { SetRiskDetails(std::forward<RiskDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_audioAggregationEndedAt;
+    Aws::Utils::DateTime m_audioAggregationEndedAt{};
     bool m_audioAggregationEndedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_audioAggregationStartedAt;
+    Aws::Utils::DateTime m_audioAggregationStartedAt{};
     bool m_audioAggregationStartedAtHasBeenSet = false;
 
     FraudDetectionConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    FraudDetectionDecision m_decision;
+    FraudDetectionDecision m_decision{FraudDetectionDecision::NOT_SET};
     bool m_decisionHasBeenSet = false;
 
     Aws::String m_fraudDetectionResultId;

@@ -35,7 +35,7 @@ namespace Model
   class AnalyticsDataAssociationResult
   {
   public:
-    AWS_CONNECT_API AnalyticsDataAssociationResult();
+    AWS_CONNECT_API AnalyticsDataAssociationResult() = default;
     AWS_CONNECT_API AnalyticsDataAssociationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AnalyticsDataAssociationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,70 +45,60 @@ namespace Model
     /**
      * <p>The identifier of the dataset.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-    inline AnalyticsDataAssociationResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline AnalyticsDataAssociationResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline AnalyticsDataAssociationResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    AnalyticsDataAssociationResult& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the target account. </p>
      */
-    inline const Aws::String& GetTargetAccountId() const{ return m_targetAccountId; }
+    inline const Aws::String& GetTargetAccountId() const { return m_targetAccountId; }
     inline bool TargetAccountIdHasBeenSet() const { return m_targetAccountIdHasBeenSet; }
-    inline void SetTargetAccountId(const Aws::String& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = value; }
-    inline void SetTargetAccountId(Aws::String&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::move(value); }
-    inline void SetTargetAccountId(const char* value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId.assign(value); }
-    inline AnalyticsDataAssociationResult& WithTargetAccountId(const Aws::String& value) { SetTargetAccountId(value); return *this;}
-    inline AnalyticsDataAssociationResult& WithTargetAccountId(Aws::String&& value) { SetTargetAccountId(std::move(value)); return *this;}
-    inline AnalyticsDataAssociationResult& WithTargetAccountId(const char* value) { SetTargetAccountId(value); return *this;}
+    template<typename TargetAccountIdT = Aws::String>
+    void SetTargetAccountId(TargetAccountIdT&& value) { m_targetAccountIdHasBeenSet = true; m_targetAccountId = std::forward<TargetAccountIdT>(value); }
+    template<typename TargetAccountIdT = Aws::String>
+    AnalyticsDataAssociationResult& WithTargetAccountId(TargetAccountIdT&& value) { SetTargetAccountId(std::forward<TargetAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Resource Access Manager share ID.</p>
      */
-    inline const Aws::String& GetResourceShareId() const{ return m_resourceShareId; }
+    inline const Aws::String& GetResourceShareId() const { return m_resourceShareId; }
     inline bool ResourceShareIdHasBeenSet() const { return m_resourceShareIdHasBeenSet; }
-    inline void SetResourceShareId(const Aws::String& value) { m_resourceShareIdHasBeenSet = true; m_resourceShareId = value; }
-    inline void SetResourceShareId(Aws::String&& value) { m_resourceShareIdHasBeenSet = true; m_resourceShareId = std::move(value); }
-    inline void SetResourceShareId(const char* value) { m_resourceShareIdHasBeenSet = true; m_resourceShareId.assign(value); }
-    inline AnalyticsDataAssociationResult& WithResourceShareId(const Aws::String& value) { SetResourceShareId(value); return *this;}
-    inline AnalyticsDataAssociationResult& WithResourceShareId(Aws::String&& value) { SetResourceShareId(std::move(value)); return *this;}
-    inline AnalyticsDataAssociationResult& WithResourceShareId(const char* value) { SetResourceShareId(value); return *this;}
+    template<typename ResourceShareIdT = Aws::String>
+    void SetResourceShareId(ResourceShareIdT&& value) { m_resourceShareIdHasBeenSet = true; m_resourceShareId = std::forward<ResourceShareIdT>(value); }
+    template<typename ResourceShareIdT = Aws::String>
+    AnalyticsDataAssociationResult& WithResourceShareId(ResourceShareIdT&& value) { SetResourceShareId(std::forward<ResourceShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Resource Access Manager share. </p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline AnalyticsDataAssociationResult& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline AnalyticsDataAssociationResult& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline AnalyticsDataAssociationResult& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    AnalyticsDataAssociationResult& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Resource Access Manager status of association.</p>
      */
-    inline const Aws::String& GetResourceShareStatus() const{ return m_resourceShareStatus; }
+    inline const Aws::String& GetResourceShareStatus() const { return m_resourceShareStatus; }
     inline bool ResourceShareStatusHasBeenSet() const { return m_resourceShareStatusHasBeenSet; }
-    inline void SetResourceShareStatus(const Aws::String& value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus = value; }
-    inline void SetResourceShareStatus(Aws::String&& value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus = std::move(value); }
-    inline void SetResourceShareStatus(const char* value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus.assign(value); }
-    inline AnalyticsDataAssociationResult& WithResourceShareStatus(const Aws::String& value) { SetResourceShareStatus(value); return *this;}
-    inline AnalyticsDataAssociationResult& WithResourceShareStatus(Aws::String&& value) { SetResourceShareStatus(std::move(value)); return *this;}
-    inline AnalyticsDataAssociationResult& WithResourceShareStatus(const char* value) { SetResourceShareStatus(value); return *this;}
+    template<typename ResourceShareStatusT = Aws::String>
+    void SetResourceShareStatus(ResourceShareStatusT&& value) { m_resourceShareStatusHasBeenSet = true; m_resourceShareStatus = std::forward<ResourceShareStatusT>(value); }
+    template<typename ResourceShareStatusT = Aws::String>
+    AnalyticsDataAssociationResult& WithResourceShareStatus(ResourceShareStatusT&& value) { SetResourceShareStatus(std::forward<ResourceShareStatusT>(value)); return *this;}
     ///@}
   private:
 

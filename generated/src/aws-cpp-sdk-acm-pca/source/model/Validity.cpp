@@ -18,16 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-Validity::Validity() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_type(ValidityPeriodType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Validity::Validity(JsonView jsonValue)
-  : Validity()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Validity& Validity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInt64("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ValidityPeriodTypeMapper::GetValidityPeriodTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

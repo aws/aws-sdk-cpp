@@ -18,22 +18,7 @@ namespace Omics
 namespace Model
 {
 
-WorkflowListItem::WorkflowListItem() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(WorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_digestHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 WorkflowListItem::WorkflowListItem(JsonView jsonValue)
-  : WorkflowListItem()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ WorkflowListItem& WorkflowListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkflowStatusMapper::GetWorkflowStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("digest"))
   {
     m_digest = jsonValue.GetString("digest");
-
     m_digestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -98,7 +69,6 @@ WorkflowListItem& WorkflowListItem::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

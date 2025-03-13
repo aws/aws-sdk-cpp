@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Distribution::Distribution() : 
-    m_regionHasBeenSet(false),
-    m_percentage(0),
-    m_percentageHasBeenSet(false)
-{
-}
-
 Distribution::Distribution(JsonView jsonValue)
-  : Distribution()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Distribution& Distribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Percentage"))
   {
     m_percentage = jsonValue.GetInteger("Percentage");
-
     m_percentageHasBeenSet = true;
   }
-
   return *this;
 }
 

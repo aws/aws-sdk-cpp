@@ -12,13 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitializeClusterRequest::InitializeClusterRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_signedCertHasBeenSet(false),
-    m_trustAnchorHasBeenSet(false)
-{
-}
-
 Aws::String InitializeClusterRequest::SerializePayload() const
 {
   JsonValue payload;

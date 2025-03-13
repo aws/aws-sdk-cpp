@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrivateIpAddressSpecification::PrivateIpAddressSpecification() : 
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 PrivateIpAddressSpecification::PrivateIpAddressSpecification(const XmlNode& xmlNode)
-  : PrivateIpAddressSpecification()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ PrivateIpAddressSpecification& PrivateIpAddressSpecification::operator =(const X
     {
       m_primary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryNode.GetText()).c_str()).c_str());
       m_primaryHasBeenSet = true;
+       m_primaryHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
   }
 

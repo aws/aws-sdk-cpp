@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTransitGatewayConnectResponse::CreateTransitGatewayConnectResponse()
-{
-}
-
 CreateTransitGatewayConnectResponse::CreateTransitGatewayConnectResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateTransitGatewayConnectResponse& CreateTransitGatewayConnectResponse::operat
     if(!transitGatewayConnectNode.IsNull())
     {
       m_transitGatewayConnect = transitGatewayConnectNode;
+      m_transitGatewayConnectHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateTransitGatewayConnectResponse& CreateTransitGatewayConnectResponse::operat
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateTransitGatewayConnectResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

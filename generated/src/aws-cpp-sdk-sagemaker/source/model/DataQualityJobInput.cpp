@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataQualityJobInput::DataQualityJobInput() : 
-    m_endpointInputHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
-{
-}
-
 DataQualityJobInput::DataQualityJobInput(JsonView jsonValue)
-  : DataQualityJobInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataQualityJobInput& DataQualityJobInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointInput"))
   {
     m_endpointInput = jsonValue.GetObject("EndpointInput");
-
     m_endpointInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchTransformInput"))
   {
     m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
-
     m_batchTransformInputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class ListControlsRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API ListControlsRequest();
+    AWS_AUDITMANAGER_API ListControlsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>A filter that narrows the list of controls to a specific type. </p>
      */
-    inline const ControlType& GetControlType() const{ return m_controlType; }
+    inline ControlType GetControlType() const { return m_controlType; }
     inline bool ControlTypeHasBeenSet() const { return m_controlTypeHasBeenSet; }
-    inline void SetControlType(const ControlType& value) { m_controlTypeHasBeenSet = true; m_controlType = value; }
-    inline void SetControlType(ControlType&& value) { m_controlTypeHasBeenSet = true; m_controlType = std::move(value); }
-    inline ListControlsRequest& WithControlType(const ControlType& value) { SetControlType(value); return *this;}
-    inline ListControlsRequest& WithControlType(ControlType&& value) { SetControlType(std::move(value)); return *this;}
+    inline void SetControlType(ControlType value) { m_controlTypeHasBeenSet = true; m_controlType = value; }
+    inline ListControlsRequest& WithControlType(ControlType value) { SetControlType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListControlsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListControlsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListControlsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListControlsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results on a page or for an API request call. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListControlsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -96,24 +92,22 @@ namespace Model
      * operation might return a list of custom controls that don't belong to any
      * control domain or control objective.</p>
      */
-    inline const Aws::String& GetControlCatalogId() const{ return m_controlCatalogId; }
+    inline const Aws::String& GetControlCatalogId() const { return m_controlCatalogId; }
     inline bool ControlCatalogIdHasBeenSet() const { return m_controlCatalogIdHasBeenSet; }
-    inline void SetControlCatalogId(const Aws::String& value) { m_controlCatalogIdHasBeenSet = true; m_controlCatalogId = value; }
-    inline void SetControlCatalogId(Aws::String&& value) { m_controlCatalogIdHasBeenSet = true; m_controlCatalogId = std::move(value); }
-    inline void SetControlCatalogId(const char* value) { m_controlCatalogIdHasBeenSet = true; m_controlCatalogId.assign(value); }
-    inline ListControlsRequest& WithControlCatalogId(const Aws::String& value) { SetControlCatalogId(value); return *this;}
-    inline ListControlsRequest& WithControlCatalogId(Aws::String&& value) { SetControlCatalogId(std::move(value)); return *this;}
-    inline ListControlsRequest& WithControlCatalogId(const char* value) { SetControlCatalogId(value); return *this;}
+    template<typename ControlCatalogIdT = Aws::String>
+    void SetControlCatalogId(ControlCatalogIdT&& value) { m_controlCatalogIdHasBeenSet = true; m_controlCatalogId = std::forward<ControlCatalogIdT>(value); }
+    template<typename ControlCatalogIdT = Aws::String>
+    ListControlsRequest& WithControlCatalogId(ControlCatalogIdT&& value) { SetControlCatalogId(std::forward<ControlCatalogIdT>(value)); return *this;}
     ///@}
   private:
 
-    ControlType m_controlType;
+    ControlType m_controlType{ControlType::NOT_SET};
     bool m_controlTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_controlCatalogId;

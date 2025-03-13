@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixBoundary::RouteMatrixBoundary() : 
-    m_geometryHasBeenSet(false),
-    m_unbounded(false),
-    m_unboundedHasBeenSet(false)
-{
-}
-
 RouteMatrixBoundary::RouteMatrixBoundary(JsonView jsonValue)
-  : RouteMatrixBoundary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RouteMatrixBoundary& RouteMatrixBoundary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unbounded"))
   {
     m_unbounded = jsonValue.GetBool("Unbounded");
-
     m_unboundedHasBeenSet = true;
   }
-
   return *this;
 }
 

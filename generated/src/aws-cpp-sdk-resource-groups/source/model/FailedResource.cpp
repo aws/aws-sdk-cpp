@@ -18,15 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-FailedResource::FailedResource() : 
-    m_resourceArnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 FailedResource::FailedResource(JsonView jsonValue)
-  : FailedResource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FailedResource& FailedResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

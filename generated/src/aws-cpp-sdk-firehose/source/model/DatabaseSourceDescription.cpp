@@ -18,27 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DatabaseSourceDescription::DatabaseSourceDescription() : 
-    m_type(DatabaseType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_sSLMode(SSLMode::NOT_SET),
-    m_sSLModeHasBeenSet(false),
-    m_databasesHasBeenSet(false),
-    m_tablesHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_surrogateKeysHasBeenSet(false),
-    m_snapshotWatermarkTableHasBeenSet(false),
-    m_snapshotInfoHasBeenSet(false),
-    m_databaseSourceAuthenticationConfigurationHasBeenSet(false),
-    m_databaseSourceVPCConfigurationHasBeenSet(false)
-{
-}
-
 DatabaseSourceDescription::DatabaseSourceDescription(JsonView jsonValue)
-  : DatabaseSourceDescription()
 {
   *this = jsonValue;
 }
@@ -48,52 +28,38 @@ DatabaseSourceDescription& DatabaseSourceDescription::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DatabaseTypeMapper::GetDatabaseTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSLMode"))
   {
     m_sSLMode = SSLModeMapper::GetSSLModeForName(jsonValue.GetString("SSLMode"));
-
     m_sSLModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Databases"))
   {
     m_databases = jsonValue.GetObject("Databases");
-
     m_databasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tables"))
   {
     m_tables = jsonValue.GetObject("Tables");
-
     m_tablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     m_columns = jsonValue.GetObject("Columns");
-
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SurrogateKeys"))
   {
     Aws::Utils::Array<JsonView> surrogateKeysJsonList = jsonValue.GetArray("SurrogateKeys");
@@ -103,14 +69,11 @@ DatabaseSourceDescription& DatabaseSourceDescription::operator =(JsonView jsonVa
     }
     m_surrogateKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotWatermarkTable"))
   {
     m_snapshotWatermarkTable = jsonValue.GetString("SnapshotWatermarkTable");
-
     m_snapshotWatermarkTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotInfo"))
   {
     Aws::Utils::Array<JsonView> snapshotInfoJsonList = jsonValue.GetArray("SnapshotInfo");
@@ -120,21 +83,16 @@ DatabaseSourceDescription& DatabaseSourceDescription::operator =(JsonView jsonVa
     }
     m_snapshotInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseSourceAuthenticationConfiguration"))
   {
     m_databaseSourceAuthenticationConfiguration = jsonValue.GetObject("DatabaseSourceAuthenticationConfiguration");
-
     m_databaseSourceAuthenticationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseSourceVPCConfiguration"))
   {
     m_databaseSourceVPCConfiguration = jsonValue.GetObject("DatabaseSourceVPCConfiguration");
-
     m_databaseSourceVPCConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

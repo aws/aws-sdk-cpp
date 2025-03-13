@@ -33,7 +33,7 @@ namespace Model
   class DescribeSourceNetworksRequestFilters
   {
   public:
-    AWS_DRS_API DescribeSourceNetworksRequestFilters();
+    AWS_DRS_API DescribeSourceNetworksRequestFilters() = default;
     AWS_DRS_API DescribeSourceNetworksRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API DescribeSourceNetworksRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>Filter Source Networks by account ID containing the protected VPCs.</p>
      */
-    inline const Aws::String& GetOriginAccountID() const{ return m_originAccountID; }
+    inline const Aws::String& GetOriginAccountID() const { return m_originAccountID; }
     inline bool OriginAccountIDHasBeenSet() const { return m_originAccountIDHasBeenSet; }
-    inline void SetOriginAccountID(const Aws::String& value) { m_originAccountIDHasBeenSet = true; m_originAccountID = value; }
-    inline void SetOriginAccountID(Aws::String&& value) { m_originAccountIDHasBeenSet = true; m_originAccountID = std::move(value); }
-    inline void SetOriginAccountID(const char* value) { m_originAccountIDHasBeenSet = true; m_originAccountID.assign(value); }
-    inline DescribeSourceNetworksRequestFilters& WithOriginAccountID(const Aws::String& value) { SetOriginAccountID(value); return *this;}
-    inline DescribeSourceNetworksRequestFilters& WithOriginAccountID(Aws::String&& value) { SetOriginAccountID(std::move(value)); return *this;}
-    inline DescribeSourceNetworksRequestFilters& WithOriginAccountID(const char* value) { SetOriginAccountID(value); return *this;}
+    template<typename OriginAccountIDT = Aws::String>
+    void SetOriginAccountID(OriginAccountIDT&& value) { m_originAccountIDHasBeenSet = true; m_originAccountID = std::forward<OriginAccountIDT>(value); }
+    template<typename OriginAccountIDT = Aws::String>
+    DescribeSourceNetworksRequestFilters& WithOriginAccountID(OriginAccountIDT&& value) { SetOriginAccountID(std::forward<OriginAccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter Source Networks by the region containing the protected VPCs.</p>
      */
-    inline const Aws::String& GetOriginRegion() const{ return m_originRegion; }
+    inline const Aws::String& GetOriginRegion() const { return m_originRegion; }
     inline bool OriginRegionHasBeenSet() const { return m_originRegionHasBeenSet; }
-    inline void SetOriginRegion(const Aws::String& value) { m_originRegionHasBeenSet = true; m_originRegion = value; }
-    inline void SetOriginRegion(Aws::String&& value) { m_originRegionHasBeenSet = true; m_originRegion = std::move(value); }
-    inline void SetOriginRegion(const char* value) { m_originRegionHasBeenSet = true; m_originRegion.assign(value); }
-    inline DescribeSourceNetworksRequestFilters& WithOriginRegion(const Aws::String& value) { SetOriginRegion(value); return *this;}
-    inline DescribeSourceNetworksRequestFilters& WithOriginRegion(Aws::String&& value) { SetOriginRegion(std::move(value)); return *this;}
-    inline DescribeSourceNetworksRequestFilters& WithOriginRegion(const char* value) { SetOriginRegion(value); return *this;}
+    template<typename OriginRegionT = Aws::String>
+    void SetOriginRegion(OriginRegionT&& value) { m_originRegionHasBeenSet = true; m_originRegion = std::forward<OriginRegionT>(value); }
+    template<typename OriginRegionT = Aws::String>
+    DescribeSourceNetworksRequestFilters& WithOriginRegion(OriginRegionT&& value) { SetOriginRegion(std::forward<OriginRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,15 +68,14 @@ namespace Model
      * <p>An array of Source Network IDs that should be returned. An empty array means
      * all Source Networks.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceNetworkIDs() const{ return m_sourceNetworkIDs; }
+    inline const Aws::Vector<Aws::String>& GetSourceNetworkIDs() const { return m_sourceNetworkIDs; }
     inline bool SourceNetworkIDsHasBeenSet() const { return m_sourceNetworkIDsHasBeenSet; }
-    inline void SetSourceNetworkIDs(const Aws::Vector<Aws::String>& value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs = value; }
-    inline void SetSourceNetworkIDs(Aws::Vector<Aws::String>&& value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs = std::move(value); }
-    inline DescribeSourceNetworksRequestFilters& WithSourceNetworkIDs(const Aws::Vector<Aws::String>& value) { SetSourceNetworkIDs(value); return *this;}
-    inline DescribeSourceNetworksRequestFilters& WithSourceNetworkIDs(Aws::Vector<Aws::String>&& value) { SetSourceNetworkIDs(std::move(value)); return *this;}
-    inline DescribeSourceNetworksRequestFilters& AddSourceNetworkIDs(const Aws::String& value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs.push_back(value); return *this; }
-    inline DescribeSourceNetworksRequestFilters& AddSourceNetworkIDs(Aws::String&& value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs.push_back(std::move(value)); return *this; }
-    inline DescribeSourceNetworksRequestFilters& AddSourceNetworkIDs(const char* value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs.push_back(value); return *this; }
+    template<typename SourceNetworkIDsT = Aws::Vector<Aws::String>>
+    void SetSourceNetworkIDs(SourceNetworkIDsT&& value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs = std::forward<SourceNetworkIDsT>(value); }
+    template<typename SourceNetworkIDsT = Aws::Vector<Aws::String>>
+    DescribeSourceNetworksRequestFilters& WithSourceNetworkIDs(SourceNetworkIDsT&& value) { SetSourceNetworkIDs(std::forward<SourceNetworkIDsT>(value)); return *this;}
+    template<typename SourceNetworkIDsT = Aws::String>
+    DescribeSourceNetworksRequestFilters& AddSourceNetworkIDs(SourceNetworkIDsT&& value) { m_sourceNetworkIDsHasBeenSet = true; m_sourceNetworkIDs.emplace_back(std::forward<SourceNetworkIDsT>(value)); return *this; }
     ///@}
   private:
 

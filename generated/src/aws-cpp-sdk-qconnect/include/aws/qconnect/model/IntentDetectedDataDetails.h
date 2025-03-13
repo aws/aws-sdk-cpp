@@ -31,7 +31,7 @@ namespace Model
   class IntentDetectedDataDetails
   {
   public:
-    AWS_QCONNECT_API IntentDetectedDataDetails();
+    AWS_QCONNECT_API IntentDetectedDataDetails() = default;
     AWS_QCONNECT_API IntentDetectedDataDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API IntentDetectedDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The detected intent.</p>
      */
-    inline const Aws::String& GetIntent() const{ return m_intent; }
+    inline const Aws::String& GetIntent() const { return m_intent; }
     inline bool IntentHasBeenSet() const { return m_intentHasBeenSet; }
-    inline void SetIntent(const Aws::String& value) { m_intentHasBeenSet = true; m_intent = value; }
-    inline void SetIntent(Aws::String&& value) { m_intentHasBeenSet = true; m_intent = std::move(value); }
-    inline void SetIntent(const char* value) { m_intentHasBeenSet = true; m_intent.assign(value); }
-    inline IntentDetectedDataDetails& WithIntent(const Aws::String& value) { SetIntent(value); return *this;}
-    inline IntentDetectedDataDetails& WithIntent(Aws::String&& value) { SetIntent(std::move(value)); return *this;}
-    inline IntentDetectedDataDetails& WithIntent(const char* value) { SetIntent(value); return *this;}
+    template<typename IntentT = Aws::String>
+    void SetIntent(IntentT&& value) { m_intentHasBeenSet = true; m_intent = std::forward<IntentT>(value); }
+    template<typename IntentT = Aws::String>
+    IntentDetectedDataDetails& WithIntent(IntentT&& value) { SetIntent(std::forward<IntentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the detected intent.</p>
      */
-    inline const Aws::String& GetIntentId() const{ return m_intentId; }
+    inline const Aws::String& GetIntentId() const { return m_intentId; }
     inline bool IntentIdHasBeenSet() const { return m_intentIdHasBeenSet; }
-    inline void SetIntentId(const Aws::String& value) { m_intentIdHasBeenSet = true; m_intentId = value; }
-    inline void SetIntentId(Aws::String&& value) { m_intentIdHasBeenSet = true; m_intentId = std::move(value); }
-    inline void SetIntentId(const char* value) { m_intentIdHasBeenSet = true; m_intentId.assign(value); }
-    inline IntentDetectedDataDetails& WithIntentId(const Aws::String& value) { SetIntentId(value); return *this;}
-    inline IntentDetectedDataDetails& WithIntentId(Aws::String&& value) { SetIntentId(std::move(value)); return *this;}
-    inline IntentDetectedDataDetails& WithIntentId(const char* value) { SetIntentId(value); return *this;}
+    template<typename IntentIdT = Aws::String>
+    void SetIntentId(IntentIdT&& value) { m_intentIdHasBeenSet = true; m_intentId = std::forward<IntentIdT>(value); }
+    template<typename IntentIdT = Aws::String>
+    IntentDetectedDataDetails& WithIntentId(IntentIdT&& value) { SetIntentId(std::forward<IntentIdT>(value)); return *this;}
     ///@}
   private:
 

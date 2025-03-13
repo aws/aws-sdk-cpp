@@ -34,7 +34,7 @@ namespace Model
   class ScheduledActionType
   {
   public:
-    AWS_REDSHIFT_API ScheduledActionType();
+    AWS_REDSHIFT_API ScheduledActionType() = default;
     AWS_REDSHIFT_API ScheduledActionType(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ScheduledActionType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,36 +46,36 @@ namespace Model
     /**
      * <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
      */
-    inline const ResizeClusterMessage& GetResizeCluster() const{ return m_resizeCluster; }
+    inline const ResizeClusterMessage& GetResizeCluster() const { return m_resizeCluster; }
     inline bool ResizeClusterHasBeenSet() const { return m_resizeClusterHasBeenSet; }
-    inline void SetResizeCluster(const ResizeClusterMessage& value) { m_resizeClusterHasBeenSet = true; m_resizeCluster = value; }
-    inline void SetResizeCluster(ResizeClusterMessage&& value) { m_resizeClusterHasBeenSet = true; m_resizeCluster = std::move(value); }
-    inline ScheduledActionType& WithResizeCluster(const ResizeClusterMessage& value) { SetResizeCluster(value); return *this;}
-    inline ScheduledActionType& WithResizeCluster(ResizeClusterMessage&& value) { SetResizeCluster(std::move(value)); return *this;}
+    template<typename ResizeClusterT = ResizeClusterMessage>
+    void SetResizeCluster(ResizeClusterT&& value) { m_resizeClusterHasBeenSet = true; m_resizeCluster = std::forward<ResizeClusterT>(value); }
+    template<typename ResizeClusterT = ResizeClusterMessage>
+    ScheduledActionType& WithResizeCluster(ResizeClusterT&& value) { SetResizeCluster(std::forward<ResizeClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
      */
-    inline const PauseClusterMessage& GetPauseCluster() const{ return m_pauseCluster; }
+    inline const PauseClusterMessage& GetPauseCluster() const { return m_pauseCluster; }
     inline bool PauseClusterHasBeenSet() const { return m_pauseClusterHasBeenSet; }
-    inline void SetPauseCluster(const PauseClusterMessage& value) { m_pauseClusterHasBeenSet = true; m_pauseCluster = value; }
-    inline void SetPauseCluster(PauseClusterMessage&& value) { m_pauseClusterHasBeenSet = true; m_pauseCluster = std::move(value); }
-    inline ScheduledActionType& WithPauseCluster(const PauseClusterMessage& value) { SetPauseCluster(value); return *this;}
-    inline ScheduledActionType& WithPauseCluster(PauseClusterMessage&& value) { SetPauseCluster(std::move(value)); return *this;}
+    template<typename PauseClusterT = PauseClusterMessage>
+    void SetPauseCluster(PauseClusterT&& value) { m_pauseClusterHasBeenSet = true; m_pauseCluster = std::forward<PauseClusterT>(value); }
+    template<typename PauseClusterT = PauseClusterMessage>
+    ScheduledActionType& WithPauseCluster(PauseClusterT&& value) { SetPauseCluster(std::forward<PauseClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
      */
-    inline const ResumeClusterMessage& GetResumeCluster() const{ return m_resumeCluster; }
+    inline const ResumeClusterMessage& GetResumeCluster() const { return m_resumeCluster; }
     inline bool ResumeClusterHasBeenSet() const { return m_resumeClusterHasBeenSet; }
-    inline void SetResumeCluster(const ResumeClusterMessage& value) { m_resumeClusterHasBeenSet = true; m_resumeCluster = value; }
-    inline void SetResumeCluster(ResumeClusterMessage&& value) { m_resumeClusterHasBeenSet = true; m_resumeCluster = std::move(value); }
-    inline ScheduledActionType& WithResumeCluster(const ResumeClusterMessage& value) { SetResumeCluster(value); return *this;}
-    inline ScheduledActionType& WithResumeCluster(ResumeClusterMessage&& value) { SetResumeCluster(std::move(value)); return *this;}
+    template<typename ResumeClusterT = ResumeClusterMessage>
+    void SetResumeCluster(ResumeClusterT&& value) { m_resumeClusterHasBeenSet = true; m_resumeCluster = std::forward<ResumeClusterT>(value); }
+    template<typename ResumeClusterT = ResumeClusterMessage>
+    ScheduledActionType& WithResumeCluster(ResumeClusterT&& value) { SetResumeCluster(std::forward<ResumeClusterT>(value)); return *this;}
     ///@}
   private:
 

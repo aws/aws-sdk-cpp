@@ -21,7 +21,7 @@ namespace Model
   class GetResolverRuleRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetResolverRuleRequest();
+    AWS_ROUTE53RESOLVER_API GetResolverRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the Resolver rule that you want to get information about.</p>
      */
-    inline const Aws::String& GetResolverRuleId() const{ return m_resolverRuleId; }
+    inline const Aws::String& GetResolverRuleId() const { return m_resolverRuleId; }
     inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
-    inline void SetResolverRuleId(const Aws::String& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = value; }
-    inline void SetResolverRuleId(Aws::String&& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = std::move(value); }
-    inline void SetResolverRuleId(const char* value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId.assign(value); }
-    inline GetResolverRuleRequest& WithResolverRuleId(const Aws::String& value) { SetResolverRuleId(value); return *this;}
-    inline GetResolverRuleRequest& WithResolverRuleId(Aws::String&& value) { SetResolverRuleId(std::move(value)); return *this;}
-    inline GetResolverRuleRequest& WithResolverRuleId(const char* value) { SetResolverRuleId(value); return *this;}
+    template<typename ResolverRuleIdT = Aws::String>
+    void SetResolverRuleId(ResolverRuleIdT&& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = std::forward<ResolverRuleIdT>(value); }
+    template<typename ResolverRuleIdT = Aws::String>
+    GetResolverRuleRequest& WithResolverRuleId(ResolverRuleIdT&& value) { SetResolverRuleId(std::forward<ResolverRuleIdT>(value)); return *this;}
     ///@}
   private:
 

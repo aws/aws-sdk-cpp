@@ -18,28 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Ingestion::Ingestion() : 
-    m_arnHasBeenSet(false),
-    m_ingestionIdHasBeenSet(false),
-    m_ingestionStatus(IngestionStatus::NOT_SET),
-    m_ingestionStatusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_rowInfoHasBeenSet(false),
-    m_queueInfoHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_ingestionTimeInSeconds(0),
-    m_ingestionTimeInSecondsHasBeenSet(false),
-    m_ingestionSizeInBytes(0),
-    m_ingestionSizeInBytesHasBeenSet(false),
-    m_requestSource(IngestionRequestSource::NOT_SET),
-    m_requestSourceHasBeenSet(false),
-    m_requestType(IngestionRequestType::NOT_SET),
-    m_requestTypeHasBeenSet(false)
-{
-}
-
 Ingestion::Ingestion(JsonView jsonValue)
-  : Ingestion()
 {
   *this = jsonValue;
 }
@@ -49,80 +28,58 @@ Ingestion& Ingestion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionId"))
   {
     m_ingestionId = jsonValue.GetString("IngestionId");
-
     m_ingestionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionStatus"))
   {
     m_ingestionStatus = IngestionStatusMapper::GetIngestionStatusForName(jsonValue.GetString("IngestionStatus"));
-
     m_ingestionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("ErrorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowInfo"))
   {
     m_rowInfo = jsonValue.GetObject("RowInfo");
-
     m_rowInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueInfo"))
   {
     m_queueInfo = jsonValue.GetObject("QueueInfo");
-
     m_queueInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionTimeInSeconds"))
   {
     m_ingestionTimeInSeconds = jsonValue.GetInt64("IngestionTimeInSeconds");
-
     m_ingestionTimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngestionSizeInBytes"))
   {
     m_ingestionSizeInBytes = jsonValue.GetInt64("IngestionSizeInBytes");
-
     m_ingestionSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestSource"))
   {
     m_requestSource = IngestionRequestSourceMapper::GetIngestionRequestSourceForName(jsonValue.GetString("RequestSource"));
-
     m_requestSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestType"))
   {
     m_requestType = IngestionRequestTypeMapper::GetIngestionRequestTypeForName(jsonValue.GetString("RequestType"));
-
     m_requestTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribePlacementResult
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API DescribePlacementResult();
+    AWS_IOT1CLICKPROJECTS_API DescribePlacementResult() = default;
     AWS_IOT1CLICKPROJECTS_API DescribePlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT1CLICKPROJECTS_API DescribePlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object describing the placement.</p>
      */
-    inline const PlacementDescription& GetPlacement() const{ return m_placement; }
-    inline void SetPlacement(const PlacementDescription& value) { m_placement = value; }
-    inline void SetPlacement(PlacementDescription&& value) { m_placement = std::move(value); }
-    inline DescribePlacementResult& WithPlacement(const PlacementDescription& value) { SetPlacement(value); return *this;}
-    inline DescribePlacementResult& WithPlacement(PlacementDescription&& value) { SetPlacement(std::move(value)); return *this;}
+    inline const PlacementDescription& GetPlacement() const { return m_placement; }
+    template<typename PlacementT = PlacementDescription>
+    void SetPlacement(PlacementT&& value) { m_placementHasBeenSet = true; m_placement = std::forward<PlacementT>(value); }
+    template<typename PlacementT = PlacementDescription>
+    DescribePlacementResult& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePlacementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePlacementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePlacementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePlacementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PlacementDescription m_placement;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

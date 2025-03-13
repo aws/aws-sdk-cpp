@@ -18,17 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-NamespaceRuleBasedProperties::NamespaceRuleBasedProperties() : 
-    m_attributeMatchingModel(AttributeMatchingModel::NOT_SET),
-    m_attributeMatchingModelHasBeenSet(false),
-    m_recordMatchingModelsHasBeenSet(false),
-    m_ruleDefinitionTypesHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 NamespaceRuleBasedProperties::NamespaceRuleBasedProperties(JsonView jsonValue)
-  : NamespaceRuleBasedProperties()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ NamespaceRuleBasedProperties& NamespaceRuleBasedProperties::operator =(JsonView 
   if(jsonValue.ValueExists("attributeMatchingModel"))
   {
     m_attributeMatchingModel = AttributeMatchingModelMapper::GetAttributeMatchingModelForName(jsonValue.GetString("attributeMatchingModel"));
-
     m_attributeMatchingModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordMatchingModels"))
   {
     Aws::Utils::Array<JsonView> recordMatchingModelsJsonList = jsonValue.GetArray("recordMatchingModels");
@@ -51,7 +39,6 @@ NamespaceRuleBasedProperties& NamespaceRuleBasedProperties::operator =(JsonView 
     }
     m_recordMatchingModelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleDefinitionTypes"))
   {
     Aws::Utils::Array<JsonView> ruleDefinitionTypesJsonList = jsonValue.GetArray("ruleDefinitionTypes");
@@ -61,7 +48,6 @@ NamespaceRuleBasedProperties& NamespaceRuleBasedProperties::operator =(JsonView 
     }
     m_ruleDefinitionTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -71,7 +57,6 @@ NamespaceRuleBasedProperties& NamespaceRuleBasedProperties::operator =(JsonView 
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

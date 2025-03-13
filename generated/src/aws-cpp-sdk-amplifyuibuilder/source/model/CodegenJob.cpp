@@ -18,28 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenJob::CodegenJob() : 
-    m_idHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_renderConfigHasBeenSet(false),
-    m_genericDataSchemaHasBeenSet(false),
-    m_autoGenerateForms(false),
-    m_autoGenerateFormsHasBeenSet(false),
-    m_featuresHasBeenSet(false),
-    m_status(CodegenJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_assetHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_dependenciesHasBeenSet(false)
-{
-}
-
 CodegenJob::CodegenJob(JsonView jsonValue)
-  : CodegenJob()
 {
   *this = jsonValue;
 }
@@ -49,73 +28,53 @@ CodegenJob& CodegenJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renderConfig"))
   {
     m_renderConfig = jsonValue.GetObject("renderConfig");
-
     m_renderConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("genericDataSchema"))
   {
     m_genericDataSchema = jsonValue.GetObject("genericDataSchema");
-
     m_genericDataSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoGenerateForms"))
   {
     m_autoGenerateForms = jsonValue.GetBool("autoGenerateForms");
-
     m_autoGenerateFormsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("features"))
   {
     m_features = jsonValue.GetObject("features");
-
     m_featuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CodegenJobStatusMapper::GetCodegenJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("asset"))
   {
     m_asset = jsonValue.GetObject("asset");
-
     m_assetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -125,21 +84,16 @@ CodegenJob& CodegenJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependencies"))
   {
     Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
@@ -149,7 +103,6 @@ CodegenJob& CodegenJob::operator =(JsonView jsonValue)
     }
     m_dependenciesHasBeenSet = true;
   }
-
   return *this;
 }
 

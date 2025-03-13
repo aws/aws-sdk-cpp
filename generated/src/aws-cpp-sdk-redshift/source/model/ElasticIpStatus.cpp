@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ElasticIpStatus::ElasticIpStatus() : 
-    m_elasticIpHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ElasticIpStatus::ElasticIpStatus(const XmlNode& xmlNode)
-  : ElasticIpStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ElasticIpStatus& ElasticIpStatus::operator =(const XmlNode& xmlNode)
     {
       m_elasticIp = Aws::Utils::Xml::DecodeEscapedXmlText(elasticIpNode.GetText());
       m_elasticIpHasBeenSet = true;
+       m_elasticIpHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

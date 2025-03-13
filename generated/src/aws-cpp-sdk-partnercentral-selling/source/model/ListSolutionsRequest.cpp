@@ -12,18 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSolutionsRequest::ListSolutionsRequest() : 
-    m_catalogHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListSolutionsRequest::SerializePayload() const
 {
   JsonValue payload;

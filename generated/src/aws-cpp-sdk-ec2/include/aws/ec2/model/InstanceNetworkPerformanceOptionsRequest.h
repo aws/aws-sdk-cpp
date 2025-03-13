@@ -33,7 +33,7 @@ namespace Model
   class InstanceNetworkPerformanceOptionsRequest
   {
   public:
-    AWS_EC2_API InstanceNetworkPerformanceOptionsRequest();
+    AWS_EC2_API InstanceNetworkPerformanceOptionsRequest() = default;
     AWS_EC2_API InstanceNetworkPerformanceOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceNetworkPerformanceOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,16 +51,14 @@ namespace Model
      * option boosts your EBS baseline bandwidth and reduces your networking baseline
      * bandwidth.</p> </dd> </dl>
      */
-    inline const InstanceBandwidthWeighting& GetBandwidthWeighting() const{ return m_bandwidthWeighting; }
+    inline InstanceBandwidthWeighting GetBandwidthWeighting() const { return m_bandwidthWeighting; }
     inline bool BandwidthWeightingHasBeenSet() const { return m_bandwidthWeightingHasBeenSet; }
-    inline void SetBandwidthWeighting(const InstanceBandwidthWeighting& value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
-    inline void SetBandwidthWeighting(InstanceBandwidthWeighting&& value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = std::move(value); }
-    inline InstanceNetworkPerformanceOptionsRequest& WithBandwidthWeighting(const InstanceBandwidthWeighting& value) { SetBandwidthWeighting(value); return *this;}
-    inline InstanceNetworkPerformanceOptionsRequest& WithBandwidthWeighting(InstanceBandwidthWeighting&& value) { SetBandwidthWeighting(std::move(value)); return *this;}
+    inline void SetBandwidthWeighting(InstanceBandwidthWeighting value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
+    inline InstanceNetworkPerformanceOptionsRequest& WithBandwidthWeighting(InstanceBandwidthWeighting value) { SetBandwidthWeighting(value); return *this;}
     ///@}
   private:
 
-    InstanceBandwidthWeighting m_bandwidthWeighting;
+    InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
     bool m_bandwidthWeightingHasBeenSet = false;
   };
 

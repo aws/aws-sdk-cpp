@@ -32,7 +32,7 @@ namespace Model
   class SourceRegion
   {
   public:
-    AWS_RDS_API SourceRegion();
+    AWS_RDS_API SourceRegion() = default;
     AWS_RDS_API SourceRegion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API SourceRegion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The name of the source Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline SourceRegion& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline SourceRegion& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline SourceRegion& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    SourceRegion& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint for the source Amazon Web Services Region endpoint.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline SourceRegion& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline SourceRegion& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline SourceRegion& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    SourceRegion& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the source Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline SourceRegion& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline SourceRegion& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline SourceRegion& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    SourceRegion& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * <p>Indicates whether the source Amazon Web Services Region supports replicating
      * automated backups to the current Amazon Web Services Region.</p>
      */
-    inline bool GetSupportsDBInstanceAutomatedBackupsReplication() const{ return m_supportsDBInstanceAutomatedBackupsReplication; }
+    inline bool GetSupportsDBInstanceAutomatedBackupsReplication() const { return m_supportsDBInstanceAutomatedBackupsReplication; }
     inline bool SupportsDBInstanceAutomatedBackupsReplicationHasBeenSet() const { return m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet; }
     inline void SetSupportsDBInstanceAutomatedBackupsReplication(bool value) { m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true; m_supportsDBInstanceAutomatedBackupsReplication = value; }
     inline SourceRegion& WithSupportsDBInstanceAutomatedBackupsReplication(bool value) { SetSupportsDBInstanceAutomatedBackupsReplication(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    bool m_supportsDBInstanceAutomatedBackupsReplication;
+    bool m_supportsDBInstanceAutomatedBackupsReplication{false};
     bool m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = false;
   };
 

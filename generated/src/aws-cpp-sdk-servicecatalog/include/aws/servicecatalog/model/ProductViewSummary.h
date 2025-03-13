@@ -32,7 +32,7 @@ namespace Model
   class ProductViewSummary
   {
   public:
-    AWS_SERVICECATALOG_API ProductViewSummary();
+    AWS_SERVICECATALOG_API ProductViewSummary() = default;
     AWS_SERVICECATALOG_API ProductViewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProductViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The product view identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ProductViewSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ProductViewSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ProductViewSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ProductViewSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier.</p>
      */
-    inline const Aws::String& GetProductId() const{ return m_productId; }
+    inline const Aws::String& GetProductId() const { return m_productId; }
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-    inline ProductViewSummary& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-    inline ProductViewSummary& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-    inline ProductViewSummary& WithProductId(const char* value) { SetProductId(value); return *this;}
+    template<typename ProductIdT = Aws::String>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = Aws::String>
+    ProductViewSummary& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the product.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ProductViewSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ProductViewSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ProductViewSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ProductViewSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,28 +79,24 @@ namespace Model
      * <p>The owner of the product. Contact the product administrator for the
      * significance of this value.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline ProductViewSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline ProductViewSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline ProductViewSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    ProductViewSummary& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Short description of the product.</p>
      */
-    inline const Aws::String& GetShortDescription() const{ return m_shortDescription; }
+    inline const Aws::String& GetShortDescription() const { return m_shortDescription; }
     inline bool ShortDescriptionHasBeenSet() const { return m_shortDescriptionHasBeenSet; }
-    inline void SetShortDescription(const Aws::String& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = value; }
-    inline void SetShortDescription(Aws::String&& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = std::move(value); }
-    inline void SetShortDescription(const char* value) { m_shortDescriptionHasBeenSet = true; m_shortDescription.assign(value); }
-    inline ProductViewSummary& WithShortDescription(const Aws::String& value) { SetShortDescription(value); return *this;}
-    inline ProductViewSummary& WithShortDescription(Aws::String&& value) { SetShortDescription(std::move(value)); return *this;}
-    inline ProductViewSummary& WithShortDescription(const char* value) { SetShortDescription(value); return *this;}
+    template<typename ShortDescriptionT = Aws::String>
+    void SetShortDescription(ShortDescriptionT&& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = std::forward<ShortDescriptionT>(value); }
+    template<typename ShortDescriptionT = Aws::String>
+    ProductViewSummary& WithShortDescription(ShortDescriptionT&& value) { SetShortDescription(std::forward<ShortDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +105,10 @@ namespace Model
      * this value. If this value is <code>MARKETPLACE</code>, the product was created
      * by Amazon Web Services Marketplace.</p>
      */
-    inline const ProductType& GetType() const{ return m_type; }
+    inline ProductType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ProductType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ProductType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProductViewSummary& WithType(const ProductType& value) { SetType(value); return *this;}
-    inline ProductViewSummary& WithType(ProductType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ProductType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProductViewSummary& WithType(ProductType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +116,12 @@ namespace Model
      * <p>The distributor of the product. Contact the product administrator for the
      * significance of this value.</p>
      */
-    inline const Aws::String& GetDistributor() const{ return m_distributor; }
+    inline const Aws::String& GetDistributor() const { return m_distributor; }
     inline bool DistributorHasBeenSet() const { return m_distributorHasBeenSet; }
-    inline void SetDistributor(const Aws::String& value) { m_distributorHasBeenSet = true; m_distributor = value; }
-    inline void SetDistributor(Aws::String&& value) { m_distributorHasBeenSet = true; m_distributor = std::move(value); }
-    inline void SetDistributor(const char* value) { m_distributorHasBeenSet = true; m_distributor.assign(value); }
-    inline ProductViewSummary& WithDistributor(const Aws::String& value) { SetDistributor(value); return *this;}
-    inline ProductViewSummary& WithDistributor(Aws::String&& value) { SetDistributor(std::move(value)); return *this;}
-    inline ProductViewSummary& WithDistributor(const char* value) { SetDistributor(value); return *this;}
+    template<typename DistributorT = Aws::String>
+    void SetDistributor(DistributorT&& value) { m_distributorHasBeenSet = true; m_distributor = std::forward<DistributorT>(value); }
+    template<typename DistributorT = Aws::String>
+    ProductViewSummary& WithDistributor(DistributorT&& value) { SetDistributor(std::forward<DistributorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,7 +132,7 @@ namespace Model
      * <a>ProductViewSummary</a> can be used directly with
      * <a>DescribeProvisioningParameters</a>.</p>
      */
-    inline bool GetHasDefaultPath() const{ return m_hasDefaultPath; }
+    inline bool GetHasDefaultPath() const { return m_hasDefaultPath; }
     inline bool HasDefaultPathHasBeenSet() const { return m_hasDefaultPathHasBeenSet; }
     inline void SetHasDefaultPath(bool value) { m_hasDefaultPathHasBeenSet = true; m_hasDefaultPath = value; }
     inline ProductViewSummary& WithHasDefaultPath(bool value) { SetHasDefaultPath(value); return *this;}
@@ -156,42 +142,36 @@ namespace Model
     /**
      * <p>The email contact information to obtain support for this Product.</p>
      */
-    inline const Aws::String& GetSupportEmail() const{ return m_supportEmail; }
+    inline const Aws::String& GetSupportEmail() const { return m_supportEmail; }
     inline bool SupportEmailHasBeenSet() const { return m_supportEmailHasBeenSet; }
-    inline void SetSupportEmail(const Aws::String& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
-    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
-    inline void SetSupportEmail(const char* value) { m_supportEmailHasBeenSet = true; m_supportEmail.assign(value); }
-    inline ProductViewSummary& WithSupportEmail(const Aws::String& value) { SetSupportEmail(value); return *this;}
-    inline ProductViewSummary& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
-    inline ProductViewSummary& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
+    template<typename SupportEmailT = Aws::String>
+    void SetSupportEmail(SupportEmailT&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::forward<SupportEmailT>(value); }
+    template<typename SupportEmailT = Aws::String>
+    ProductViewSummary& WithSupportEmail(SupportEmailT&& value) { SetSupportEmail(std::forward<SupportEmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the support for this Product.</p>
      */
-    inline const Aws::String& GetSupportDescription() const{ return m_supportDescription; }
+    inline const Aws::String& GetSupportDescription() const { return m_supportDescription; }
     inline bool SupportDescriptionHasBeenSet() const { return m_supportDescriptionHasBeenSet; }
-    inline void SetSupportDescription(const Aws::String& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = value; }
-    inline void SetSupportDescription(Aws::String&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::move(value); }
-    inline void SetSupportDescription(const char* value) { m_supportDescriptionHasBeenSet = true; m_supportDescription.assign(value); }
-    inline ProductViewSummary& WithSupportDescription(const Aws::String& value) { SetSupportDescription(value); return *this;}
-    inline ProductViewSummary& WithSupportDescription(Aws::String&& value) { SetSupportDescription(std::move(value)); return *this;}
-    inline ProductViewSummary& WithSupportDescription(const char* value) { SetSupportDescription(value); return *this;}
+    template<typename SupportDescriptionT = Aws::String>
+    void SetSupportDescription(SupportDescriptionT&& value) { m_supportDescriptionHasBeenSet = true; m_supportDescription = std::forward<SupportDescriptionT>(value); }
+    template<typename SupportDescriptionT = Aws::String>
+    ProductViewSummary& WithSupportDescription(SupportDescriptionT&& value) { SetSupportDescription(std::forward<SupportDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL information to obtain support for this Product.</p>
      */
-    inline const Aws::String& GetSupportUrl() const{ return m_supportUrl; }
+    inline const Aws::String& GetSupportUrl() const { return m_supportUrl; }
     inline bool SupportUrlHasBeenSet() const { return m_supportUrlHasBeenSet; }
-    inline void SetSupportUrl(const Aws::String& value) { m_supportUrlHasBeenSet = true; m_supportUrl = value; }
-    inline void SetSupportUrl(Aws::String&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::move(value); }
-    inline void SetSupportUrl(const char* value) { m_supportUrlHasBeenSet = true; m_supportUrl.assign(value); }
-    inline ProductViewSummary& WithSupportUrl(const Aws::String& value) { SetSupportUrl(value); return *this;}
-    inline ProductViewSummary& WithSupportUrl(Aws::String&& value) { SetSupportUrl(std::move(value)); return *this;}
-    inline ProductViewSummary& WithSupportUrl(const char* value) { SetSupportUrl(value); return *this;}
+    template<typename SupportUrlT = Aws::String>
+    void SetSupportUrl(SupportUrlT&& value) { m_supportUrlHasBeenSet = true; m_supportUrl = std::forward<SupportUrlT>(value); }
+    template<typename SupportUrlT = Aws::String>
+    ProductViewSummary& WithSupportUrl(SupportUrlT&& value) { SetSupportUrl(std::forward<SupportUrlT>(value)); return *this;}
     ///@}
   private:
 
@@ -210,13 +190,13 @@ namespace Model
     Aws::String m_shortDescription;
     bool m_shortDescriptionHasBeenSet = false;
 
-    ProductType m_type;
+    ProductType m_type{ProductType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_distributor;
     bool m_distributorHasBeenSet = false;
 
-    bool m_hasDefaultPath;
+    bool m_hasDefaultPath{false};
     bool m_hasDefaultPathHasBeenSet = false;
 
     Aws::String m_supportEmail;

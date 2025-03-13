@@ -20,17 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TargetTrackingMetricStat::TargetTrackingMetricStat() : 
-    m_metricHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false)
-{
-}
-
 TargetTrackingMetricStat::TargetTrackingMetricStat(const XmlNode& xmlNode)
-  : TargetTrackingMetricStat()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ TargetTrackingMetricStat& TargetTrackingMetricStat::operator =(const XmlNode& xm
     {
       m_metric = metricNode;
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
     XmlNode statNode = resultNode.FirstChild("Stat");
     if(!statNode.IsNull())
     {
       m_stat = Aws::Utils::Xml::DecodeEscapedXmlText(statNode.GetText());
       m_statHasBeenSet = true;
+       m_statHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
       m_unit = Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText());
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("Period");
     if(!periodNode.IsNull())
     {
       m_period = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
       m_periodHasBeenSet = true;
+       m_periodHasBeenSet = true;
     }
   }
 

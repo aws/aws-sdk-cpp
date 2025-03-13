@@ -18,14 +18,7 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-DeviceMethod::DeviceMethod() : 
-    m_deviceTypeHasBeenSet(false),
-    m_methodNameHasBeenSet(false)
-{
-}
-
 DeviceMethod::DeviceMethod(JsonView jsonValue)
-  : DeviceMethod()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DeviceMethod& DeviceMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deviceType"))
   {
     m_deviceType = jsonValue.GetString("deviceType");
-
     m_deviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("methodName"))
   {
     m_methodName = jsonValue.GetString("methodName");
-
     m_methodNameHasBeenSet = true;
   }
-
   return *this;
 }
 

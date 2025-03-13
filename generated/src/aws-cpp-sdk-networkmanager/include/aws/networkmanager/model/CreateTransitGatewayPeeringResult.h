@@ -28,7 +28,7 @@ namespace Model
   class CreateTransitGatewayPeeringResult
   {
   public:
-    AWS_NETWORKMANAGER_API CreateTransitGatewayPeeringResult();
+    AWS_NETWORKMANAGER_API CreateTransitGatewayPeeringResult() = default;
     AWS_NETWORKMANAGER_API CreateTransitGatewayPeeringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API CreateTransitGatewayPeeringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns information about the transit gateway peering connection request.</p>
      */
-    inline const TransitGatewayPeering& GetTransitGatewayPeering() const{ return m_transitGatewayPeering; }
-    inline void SetTransitGatewayPeering(const TransitGatewayPeering& value) { m_transitGatewayPeering = value; }
-    inline void SetTransitGatewayPeering(TransitGatewayPeering&& value) { m_transitGatewayPeering = std::move(value); }
-    inline CreateTransitGatewayPeeringResult& WithTransitGatewayPeering(const TransitGatewayPeering& value) { SetTransitGatewayPeering(value); return *this;}
-    inline CreateTransitGatewayPeeringResult& WithTransitGatewayPeering(TransitGatewayPeering&& value) { SetTransitGatewayPeering(std::move(value)); return *this;}
+    inline const TransitGatewayPeering& GetTransitGatewayPeering() const { return m_transitGatewayPeering; }
+    template<typename TransitGatewayPeeringT = TransitGatewayPeering>
+    void SetTransitGatewayPeering(TransitGatewayPeeringT&& value) { m_transitGatewayPeeringHasBeenSet = true; m_transitGatewayPeering = std::forward<TransitGatewayPeeringT>(value); }
+    template<typename TransitGatewayPeeringT = TransitGatewayPeering>
+    CreateTransitGatewayPeeringResult& WithTransitGatewayPeering(TransitGatewayPeeringT&& value) { SetTransitGatewayPeering(std::forward<TransitGatewayPeeringT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateTransitGatewayPeeringResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateTransitGatewayPeeringResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateTransitGatewayPeeringResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateTransitGatewayPeeringResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayPeering m_transitGatewayPeering;
+    bool m_transitGatewayPeeringHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

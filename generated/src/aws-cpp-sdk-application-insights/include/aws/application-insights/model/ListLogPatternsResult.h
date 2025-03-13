@@ -29,7 +29,7 @@ namespace Model
   class ListLogPatternsResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API ListLogPatternsResult();
+    AWS_APPLICATIONINSIGHTS_API ListLogPatternsResult() = default;
     AWS_APPLICATIONINSIGHTS_API ListLogPatternsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API ListLogPatternsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,39 +38,35 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupName.assign(value); }
-    inline ListLogPatternsResult& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline ListLogPatternsResult& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline ListLogPatternsResult& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    ListLogPatternsResult& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID for the resource group owner.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
-    inline ListLogPatternsResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListLogPatternsResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListLogPatternsResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListLogPatternsResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of log patterns.</p>
      */
-    inline const Aws::Vector<LogPattern>& GetLogPatterns() const{ return m_logPatterns; }
-    inline void SetLogPatterns(const Aws::Vector<LogPattern>& value) { m_logPatterns = value; }
-    inline void SetLogPatterns(Aws::Vector<LogPattern>&& value) { m_logPatterns = std::move(value); }
-    inline ListLogPatternsResult& WithLogPatterns(const Aws::Vector<LogPattern>& value) { SetLogPatterns(value); return *this;}
-    inline ListLogPatternsResult& WithLogPatterns(Aws::Vector<LogPattern>&& value) { SetLogPatterns(std::move(value)); return *this;}
-    inline ListLogPatternsResult& AddLogPatterns(const LogPattern& value) { m_logPatterns.push_back(value); return *this; }
-    inline ListLogPatternsResult& AddLogPatterns(LogPattern&& value) { m_logPatterns.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LogPattern>& GetLogPatterns() const { return m_logPatterns; }
+    template<typename LogPatternsT = Aws::Vector<LogPattern>>
+    void SetLogPatterns(LogPatternsT&& value) { m_logPatternsHasBeenSet = true; m_logPatterns = std::forward<LogPatternsT>(value); }
+    template<typename LogPatternsT = Aws::Vector<LogPattern>>
+    ListLogPatternsResult& WithLogPatterns(LogPatternsT&& value) { SetLogPatterns(std::forward<LogPatternsT>(value)); return *this;}
+    template<typename LogPatternsT = LogPattern>
+    ListLogPatternsResult& AddLogPatterns(LogPatternsT&& value) { m_logPatternsHasBeenSet = true; m_logPatterns.emplace_back(std::forward<LogPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,36 +74,37 @@ namespace Model
      * <p>The token used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLogPatternsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLogPatternsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLogPatternsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLogPatternsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLogPatternsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLogPatternsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLogPatternsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLogPatternsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceGroupName;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<LogPattern> m_logPatterns;
+    bool m_logPatternsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

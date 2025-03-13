@@ -35,7 +35,7 @@ namespace Model
   class FirewallManagerRuleGroup
   {
   public:
-    AWS_WAFV2_API FirewallManagerRuleGroup();
+    AWS_WAFV2_API FirewallManagerRuleGroup() = default;
     AWS_WAFV2_API FirewallManagerRuleGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API FirewallManagerRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the rule group. You cannot change the name of a rule group after
      * you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FirewallManagerRuleGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FirewallManagerRuleGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FirewallManagerRuleGroup& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FirewallManagerRuleGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * starting from the lowest priority setting. The priorities don't need to be
      * consecutive, but they must all be different.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline FirewallManagerRuleGroup& WithPriority(int value) { SetPriority(value); return *this;}
@@ -74,12 +72,12 @@ namespace Model
      * <p>The processing guidance for an Firewall Manager rule. This is like a regular
      * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
-    inline const FirewallManagerStatement& GetFirewallManagerStatement() const{ return m_firewallManagerStatement; }
+    inline const FirewallManagerStatement& GetFirewallManagerStatement() const { return m_firewallManagerStatement; }
     inline bool FirewallManagerStatementHasBeenSet() const { return m_firewallManagerStatementHasBeenSet; }
-    inline void SetFirewallManagerStatement(const FirewallManagerStatement& value) { m_firewallManagerStatementHasBeenSet = true; m_firewallManagerStatement = value; }
-    inline void SetFirewallManagerStatement(FirewallManagerStatement&& value) { m_firewallManagerStatementHasBeenSet = true; m_firewallManagerStatement = std::move(value); }
-    inline FirewallManagerRuleGroup& WithFirewallManagerStatement(const FirewallManagerStatement& value) { SetFirewallManagerStatement(value); return *this;}
-    inline FirewallManagerRuleGroup& WithFirewallManagerStatement(FirewallManagerStatement&& value) { SetFirewallManagerStatement(std::move(value)); return *this;}
+    template<typename FirewallManagerStatementT = FirewallManagerStatement>
+    void SetFirewallManagerStatement(FirewallManagerStatementT&& value) { m_firewallManagerStatementHasBeenSet = true; m_firewallManagerStatement = std::forward<FirewallManagerStatementT>(value); }
+    template<typename FirewallManagerStatementT = FirewallManagerStatement>
+    FirewallManagerRuleGroup& WithFirewallManagerStatement(FirewallManagerStatementT&& value) { SetFirewallManagerStatement(std::forward<FirewallManagerStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,12 @@ namespace Model
      * and instead use the rule action override option, with <code>Count</code> action,
      * in your rule group reference statement settings. </p> 
      */
-    inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
+    inline const OverrideAction& GetOverrideAction() const { return m_overrideAction; }
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
-    inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
-    inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
-    inline FirewallManagerRuleGroup& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
-    inline FirewallManagerRuleGroup& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
+    template<typename OverrideActionT = OverrideAction>
+    void SetOverrideAction(OverrideActionT&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::forward<OverrideActionT>(value); }
+    template<typename OverrideActionT = OverrideAction>
+    FirewallManagerRuleGroup& WithOverrideAction(OverrideActionT&& value) { SetOverrideAction(std::forward<OverrideActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,19 +106,19 @@ namespace Model
      * <p>Defines and enables Amazon CloudWatch metrics and web request sample
      * collection. </p>
      */
-    inline const VisibilityConfig& GetVisibilityConfig() const{ return m_visibilityConfig; }
+    inline const VisibilityConfig& GetVisibilityConfig() const { return m_visibilityConfig; }
     inline bool VisibilityConfigHasBeenSet() const { return m_visibilityConfigHasBeenSet; }
-    inline void SetVisibilityConfig(const VisibilityConfig& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = value; }
-    inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
-    inline FirewallManagerRuleGroup& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
-    inline FirewallManagerRuleGroup& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
+    template<typename VisibilityConfigT = VisibilityConfig>
+    void SetVisibilityConfig(VisibilityConfigT&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::forward<VisibilityConfigT>(value); }
+    template<typename VisibilityConfigT = VisibilityConfig>
+    FirewallManagerRuleGroup& WithVisibilityConfig(VisibilityConfigT&& value) { SetVisibilityConfig(std::forward<VisibilityConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     FirewallManagerStatement m_firewallManagerStatement;

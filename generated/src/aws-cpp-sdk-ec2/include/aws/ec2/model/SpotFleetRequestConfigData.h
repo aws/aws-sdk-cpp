@@ -45,7 +45,7 @@ namespace Model
   class SpotFleetRequestConfigData
   {
   public:
-    AWS_EC2_API SpotFleetRequestConfigData();
+    AWS_EC2_API SpotFleetRequestConfigData() = default;
     AWS_EC2_API SpotFleetRequestConfigData(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SpotFleetRequestConfigData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -93,12 +93,10 @@ namespace Model
      * capacity availability, it might lead to high interruption rates.</p> </dd> </dl>
      * <p>Default: <code>lowestPrice</code> </p>
      */
-    inline const AllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline AllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const AllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(AllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline SpotFleetRequestConfigData& WithAllocationStrategy(const AllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(AllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +108,10 @@ namespace Model
      * Spot Fleet launch template override, launching the highest priority first. If
      * you do not specify a value, Spot Fleet defaults to <code>lowestPrice</code>.</p>
      */
-    inline const OnDemandAllocationStrategy& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
+    inline OnDemandAllocationStrategy GetOnDemandAllocationStrategy() const { return m_onDemandAllocationStrategy; }
     inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
-    inline void SetOnDemandAllocationStrategy(const OnDemandAllocationStrategy& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = value; }
-    inline void SetOnDemandAllocationStrategy(OnDemandAllocationStrategy&& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = std::move(value); }
-    inline SpotFleetRequestConfigData& WithOnDemandAllocationStrategy(const OnDemandAllocationStrategy& value) { SetOnDemandAllocationStrategy(value); return *this;}
-    inline SpotFleetRequestConfigData& WithOnDemandAllocationStrategy(OnDemandAllocationStrategy&& value) { SetOnDemandAllocationStrategy(std::move(value)); return *this;}
+    inline void SetOnDemandAllocationStrategy(OnDemandAllocationStrategy value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = value; }
+    inline SpotFleetRequestConfigData& WithOnDemandAllocationStrategy(OnDemandAllocationStrategy value) { SetOnDemandAllocationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +119,12 @@ namespace Model
      * <p>The strategies for managing your Spot Instances that are at an elevated risk
      * of being interrupted.</p>
      */
-    inline const SpotMaintenanceStrategies& GetSpotMaintenanceStrategies() const{ return m_spotMaintenanceStrategies; }
+    inline const SpotMaintenanceStrategies& GetSpotMaintenanceStrategies() const { return m_spotMaintenanceStrategies; }
     inline bool SpotMaintenanceStrategiesHasBeenSet() const { return m_spotMaintenanceStrategiesHasBeenSet; }
-    inline void SetSpotMaintenanceStrategies(const SpotMaintenanceStrategies& value) { m_spotMaintenanceStrategiesHasBeenSet = true; m_spotMaintenanceStrategies = value; }
-    inline void SetSpotMaintenanceStrategies(SpotMaintenanceStrategies&& value) { m_spotMaintenanceStrategiesHasBeenSet = true; m_spotMaintenanceStrategies = std::move(value); }
-    inline SpotFleetRequestConfigData& WithSpotMaintenanceStrategies(const SpotMaintenanceStrategies& value) { SetSpotMaintenanceStrategies(value); return *this;}
-    inline SpotFleetRequestConfigData& WithSpotMaintenanceStrategies(SpotMaintenanceStrategies&& value) { SetSpotMaintenanceStrategies(std::move(value)); return *this;}
+    template<typename SpotMaintenanceStrategiesT = SpotMaintenanceStrategies>
+    void SetSpotMaintenanceStrategies(SpotMaintenanceStrategiesT&& value) { m_spotMaintenanceStrategiesHasBeenSet = true; m_spotMaintenanceStrategies = std::forward<SpotMaintenanceStrategiesT>(value); }
+    template<typename SpotMaintenanceStrategiesT = SpotMaintenanceStrategies>
+    SpotFleetRequestConfigData& WithSpotMaintenanceStrategies(SpotMaintenanceStrategiesT&& value) { SetSpotMaintenanceStrategies(std::forward<SpotMaintenanceStrategiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +135,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline SpotFleetRequestConfigData& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline SpotFleetRequestConfigData& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    SpotFleetRequestConfigData& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +149,10 @@ namespace Model
      * target capacity of the Spot Fleet request below the current size of the Spot
      * Fleet.</p> <p>Supported only for fleets of type <code>maintain</code>.</p>
      */
-    inline const ExcessCapacityTerminationPolicy& GetExcessCapacityTerminationPolicy() const{ return m_excessCapacityTerminationPolicy; }
+    inline ExcessCapacityTerminationPolicy GetExcessCapacityTerminationPolicy() const { return m_excessCapacityTerminationPolicy; }
     inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
-    inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
-    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = std::move(value); }
-    inline SpotFleetRequestConfigData& WithExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { SetExcessCapacityTerminationPolicy(value); return *this;}
-    inline SpotFleetRequestConfigData& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy&& value) { SetExcessCapacityTerminationPolicy(std::move(value)); return *this;}
+    inline void SetExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
+    inline SpotFleetRequestConfigData& WithExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy value) { SetExcessCapacityTerminationPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -168,7 +160,7 @@ namespace Model
      * <p>The number of units fulfilled by this request compared to the set target
      * capacity. You cannot set this value.</p>
      */
-    inline double GetFulfilledCapacity() const{ return m_fulfilledCapacity; }
+    inline double GetFulfilledCapacity() const { return m_fulfilledCapacity; }
     inline bool FulfilledCapacityHasBeenSet() const { return m_fulfilledCapacityHasBeenSet; }
     inline void SetFulfilledCapacity(double value) { m_fulfilledCapacityHasBeenSet = true; m_fulfilledCapacity = value; }
     inline SpotFleetRequestConfigData& WithFulfilledCapacity(double value) { SetFulfilledCapacity(value); return *this;}
@@ -179,7 +171,7 @@ namespace Model
      * <p>The number of On-Demand units fulfilled by this request compared to the set
      * target On-Demand capacity.</p>
      */
-    inline double GetOnDemandFulfilledCapacity() const{ return m_onDemandFulfilledCapacity; }
+    inline double GetOnDemandFulfilledCapacity() const { return m_onDemandFulfilledCapacity; }
     inline bool OnDemandFulfilledCapacityHasBeenSet() const { return m_onDemandFulfilledCapacityHasBeenSet; }
     inline void SetOnDemandFulfilledCapacity(double value) { m_onDemandFulfilledCapacityHasBeenSet = true; m_onDemandFulfilledCapacity = value; }
     inline SpotFleetRequestConfigData& WithOnDemandFulfilledCapacity(double value) { SetOnDemandFulfilledCapacity(value); return *this;}
@@ -198,14 +190,12 @@ namespace Model
      * or when the Spot Fleet request expires, if you set
      * <code>TerminateInstancesWithExpiration</code>.</p>
      */
-    inline const Aws::String& GetIamFleetRole() const{ return m_iamFleetRole; }
+    inline const Aws::String& GetIamFleetRole() const { return m_iamFleetRole; }
     inline bool IamFleetRoleHasBeenSet() const { return m_iamFleetRoleHasBeenSet; }
-    inline void SetIamFleetRole(const Aws::String& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = value; }
-    inline void SetIamFleetRole(Aws::String&& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = std::move(value); }
-    inline void SetIamFleetRole(const char* value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole.assign(value); }
-    inline SpotFleetRequestConfigData& WithIamFleetRole(const Aws::String& value) { SetIamFleetRole(value); return *this;}
-    inline SpotFleetRequestConfigData& WithIamFleetRole(Aws::String&& value) { SetIamFleetRole(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& WithIamFleetRole(const char* value) { SetIamFleetRole(value); return *this;}
+    template<typename IamFleetRoleT = Aws::String>
+    void SetIamFleetRole(IamFleetRoleT&& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = std::forward<IamFleetRoleT>(value); }
+    template<typename IamFleetRoleT = Aws::String>
+    SpotFleetRequestConfigData& WithIamFleetRole(IamFleetRoleT&& value) { SetIamFleetRole(std::forward<IamFleetRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,14 +208,14 @@ namespace Model
      * instances can be launched from the AMI. For fleets of type
      * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
-    inline const Aws::Vector<SpotFleetLaunchSpecification>& GetLaunchSpecifications() const{ return m_launchSpecifications; }
+    inline const Aws::Vector<SpotFleetLaunchSpecification>& GetLaunchSpecifications() const { return m_launchSpecifications; }
     inline bool LaunchSpecificationsHasBeenSet() const { return m_launchSpecificationsHasBeenSet; }
-    inline void SetLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
-    inline void SetLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::move(value); }
-    inline SpotFleetRequestConfigData& WithLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { SetLaunchSpecifications(value); return *this;}
-    inline SpotFleetRequestConfigData& WithLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& AddLaunchSpecifications(const SpotFleetLaunchSpecification& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(value); return *this; }
-    inline SpotFleetRequestConfigData& AddLaunchSpecifications(SpotFleetLaunchSpecification&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(std::move(value)); return *this; }
+    template<typename LaunchSpecificationsT = Aws::Vector<SpotFleetLaunchSpecification>>
+    void SetLaunchSpecifications(LaunchSpecificationsT&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::forward<LaunchSpecificationsT>(value); }
+    template<typename LaunchSpecificationsT = Aws::Vector<SpotFleetLaunchSpecification>>
+    SpotFleetRequestConfigData& WithLaunchSpecifications(LaunchSpecificationsT&& value) { SetLaunchSpecifications(std::forward<LaunchSpecificationsT>(value)); return *this;}
+    template<typename LaunchSpecificationsT = SpotFleetLaunchSpecification>
+    SpotFleetRequestConfigData& AddLaunchSpecifications(LaunchSpecificationsT&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.emplace_back(std::forward<LaunchSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -235,14 +225,14 @@ namespace Model
      * <code>LaunchSpecifications</code>. If you include On-Demand capacity in your
      * request, you must use <code>LaunchTemplateConfigs</code>.</p>
      */
-    inline const Aws::Vector<LaunchTemplateConfig>& GetLaunchTemplateConfigs() const{ return m_launchTemplateConfigs; }
+    inline const Aws::Vector<LaunchTemplateConfig>& GetLaunchTemplateConfigs() const { return m_launchTemplateConfigs; }
     inline bool LaunchTemplateConfigsHasBeenSet() const { return m_launchTemplateConfigsHasBeenSet; }
-    inline void SetLaunchTemplateConfigs(const Aws::Vector<LaunchTemplateConfig>& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = value; }
-    inline void SetLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = std::move(value); }
-    inline SpotFleetRequestConfigData& WithLaunchTemplateConfigs(const Aws::Vector<LaunchTemplateConfig>& value) { SetLaunchTemplateConfigs(value); return *this;}
-    inline SpotFleetRequestConfigData& WithLaunchTemplateConfigs(Aws::Vector<LaunchTemplateConfig>&& value) { SetLaunchTemplateConfigs(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& AddLaunchTemplateConfigs(const LaunchTemplateConfig& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(value); return *this; }
-    inline SpotFleetRequestConfigData& AddLaunchTemplateConfigs(LaunchTemplateConfig&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.push_back(std::move(value)); return *this; }
+    template<typename LaunchTemplateConfigsT = Aws::Vector<LaunchTemplateConfig>>
+    void SetLaunchTemplateConfigs(LaunchTemplateConfigsT&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs = std::forward<LaunchTemplateConfigsT>(value); }
+    template<typename LaunchTemplateConfigsT = Aws::Vector<LaunchTemplateConfig>>
+    SpotFleetRequestConfigData& WithLaunchTemplateConfigs(LaunchTemplateConfigsT&& value) { SetLaunchTemplateConfigs(std::forward<LaunchTemplateConfigsT>(value)); return *this;}
+    template<typename LaunchTemplateConfigsT = LaunchTemplateConfig>
+    SpotFleetRequestConfigData& AddLaunchTemplateConfigs(LaunchTemplateConfigsT&& value) { m_launchTemplateConfigsHasBeenSet = true; m_launchTemplateConfigs.emplace_back(std::forward<LaunchTemplateConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -254,14 +244,12 @@ namespace Model
      * instances will be interrupted more frequently than if you do not specify this
      * parameter.</p> 
      */
-    inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+    inline const Aws::String& GetSpotPrice() const { return m_spotPrice; }
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
-    inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
-    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
-    inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
-    inline SpotFleetRequestConfigData& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
-    inline SpotFleetRequestConfigData& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
+    template<typename SpotPriceT = Aws::String>
+    void SetSpotPrice(SpotPriceT&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::forward<SpotPriceT>(value); }
+    template<typename SpotPriceT = Aws::String>
+    SpotFleetRequestConfigData& WithSpotPrice(SpotPriceT&& value) { SetSpotPrice(std::forward<SpotPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,7 +260,7 @@ namespace Model
      * request type is <code>maintain</code>, you can specify a target capacity of 0
      * and add capacity later.</p>
      */
-    inline int GetTargetCapacity() const{ return m_targetCapacity; }
+    inline int GetTargetCapacity() const { return m_targetCapacity; }
     inline bool TargetCapacityHasBeenSet() const { return m_targetCapacityHasBeenSet; }
     inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
     inline SpotFleetRequestConfigData& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
@@ -286,7 +274,7 @@ namespace Model
      * is <code>maintain</code>, you can specify a target capacity of 0 and add
      * capacity later.</p>
      */
-    inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
+    inline int GetOnDemandTargetCapacity() const { return m_onDemandTargetCapacity; }
     inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
     inline void SetOnDemandTargetCapacity(int value) { m_onDemandTargetCapacityHasBeenSet = true; m_onDemandTargetCapacity = value; }
     inline SpotFleetRequestConfigData& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
@@ -311,14 +299,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
      * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
-    inline const Aws::String& GetOnDemandMaxTotalPrice() const{ return m_onDemandMaxTotalPrice; }
+    inline const Aws::String& GetOnDemandMaxTotalPrice() const { return m_onDemandMaxTotalPrice; }
     inline bool OnDemandMaxTotalPriceHasBeenSet() const { return m_onDemandMaxTotalPriceHasBeenSet; }
-    inline void SetOnDemandMaxTotalPrice(const Aws::String& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = value; }
-    inline void SetOnDemandMaxTotalPrice(Aws::String&& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = std::move(value); }
-    inline void SetOnDemandMaxTotalPrice(const char* value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice.assign(value); }
-    inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const Aws::String& value) { SetOnDemandMaxTotalPrice(value); return *this;}
-    inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(Aws::String&& value) { SetOnDemandMaxTotalPrice(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(const char* value) { SetOnDemandMaxTotalPrice(value); return *this;}
+    template<typename OnDemandMaxTotalPriceT = Aws::String>
+    void SetOnDemandMaxTotalPrice(OnDemandMaxTotalPriceT&& value) { m_onDemandMaxTotalPriceHasBeenSet = true; m_onDemandMaxTotalPrice = std::forward<OnDemandMaxTotalPriceT>(value); }
+    template<typename OnDemandMaxTotalPriceT = Aws::String>
+    SpotFleetRequestConfigData& WithOnDemandMaxTotalPrice(OnDemandMaxTotalPriceT&& value) { SetOnDemandMaxTotalPrice(std::forward<OnDemandMaxTotalPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -340,14 +326,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
      * credits can incur charges</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
-    inline const Aws::String& GetSpotMaxTotalPrice() const{ return m_spotMaxTotalPrice; }
+    inline const Aws::String& GetSpotMaxTotalPrice() const { return m_spotMaxTotalPrice; }
     inline bool SpotMaxTotalPriceHasBeenSet() const { return m_spotMaxTotalPriceHasBeenSet; }
-    inline void SetSpotMaxTotalPrice(const Aws::String& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = value; }
-    inline void SetSpotMaxTotalPrice(Aws::String&& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = std::move(value); }
-    inline void SetSpotMaxTotalPrice(const char* value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice.assign(value); }
-    inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(const Aws::String& value) { SetSpotMaxTotalPrice(value); return *this;}
-    inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(Aws::String&& value) { SetSpotMaxTotalPrice(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& WithSpotMaxTotalPrice(const char* value) { SetSpotMaxTotalPrice(value); return *this;}
+    template<typename SpotMaxTotalPriceT = Aws::String>
+    void SetSpotMaxTotalPrice(SpotMaxTotalPriceT&& value) { m_spotMaxTotalPriceHasBeenSet = true; m_spotMaxTotalPrice = std::forward<SpotMaxTotalPriceT>(value); }
+    template<typename SpotMaxTotalPriceT = Aws::String>
+    SpotFleetRequestConfigData& WithSpotMaxTotalPrice(SpotMaxTotalPriceT&& value) { SetSpotMaxTotalPrice(std::forward<SpotMaxTotalPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -355,7 +339,7 @@ namespace Model
      * <p>Indicates whether running Spot Instances are terminated when the Spot Fleet
      * request expires.</p>
      */
-    inline bool GetTerminateInstancesWithExpiration() const{ return m_terminateInstancesWithExpiration; }
+    inline bool GetTerminateInstancesWithExpiration() const { return m_terminateInstancesWithExpiration; }
     inline bool TerminateInstancesWithExpirationHasBeenSet() const { return m_terminateInstancesWithExpirationHasBeenSet; }
     inline void SetTerminateInstancesWithExpiration(bool value) { m_terminateInstancesWithExpirationHasBeenSet = true; m_terminateInstancesWithExpiration = value; }
     inline SpotFleetRequestConfigData& WithTerminateInstancesWithExpiration(bool value) { SetTerminateInstancesWithExpiration(value); return *this;}
@@ -374,12 +358,10 @@ namespace Model
      * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
      * Fleet.</p>
      */
-    inline const FleetType& GetType() const{ return m_type; }
+    inline FleetType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SpotFleetRequestConfigData& WithType(const FleetType& value) { SetType(value); return *this;}
-    inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FleetType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SpotFleetRequestConfigData& WithType(FleetType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -388,12 +370,12 @@ namespace Model
      * (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). By default,
      * Amazon EC2 starts fulfilling the request immediately.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
+    inline const Aws::Utils::DateTime& GetValidFrom() const { return m_validFrom; }
     inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
-    inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
-    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = std::move(value); }
-    inline SpotFleetRequestConfigData& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
-    inline SpotFleetRequestConfigData& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
+    template<typename ValidFromT = Aws::Utils::DateTime>
+    void SetValidFrom(ValidFromT&& value) { m_validFromHasBeenSet = true; m_validFrom = std::forward<ValidFromT>(value); }
+    template<typename ValidFromT = Aws::Utils::DateTime>
+    SpotFleetRequestConfigData& WithValidFrom(ValidFromT&& value) { SetValidFrom(std::forward<ValidFromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -404,19 +386,19 @@ namespace Model
      * request. If no value is specified, the Spot Fleet request remains until you
      * cancel it.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const { return m_validUntil; }
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
-    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
-    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
-    inline SpotFleetRequestConfigData& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
-    inline SpotFleetRequestConfigData& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
+    template<typename ValidUntilT = Aws::Utils::DateTime>
+    void SetValidUntil(ValidUntilT&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::forward<ValidUntilT>(value); }
+    template<typename ValidUntilT = Aws::Utils::DateTime>
+    SpotFleetRequestConfigData& WithValidUntil(ValidUntilT&& value) { SetValidUntil(std::forward<ValidUntilT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether Spot Fleet should replace unhealthy instances.</p>
      */
-    inline bool GetReplaceUnhealthyInstances() const{ return m_replaceUnhealthyInstances; }
+    inline bool GetReplaceUnhealthyInstances() const { return m_replaceUnhealthyInstances; }
     inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
     inline SpotFleetRequestConfigData& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
@@ -427,12 +409,10 @@ namespace Model
      * <p>The behavior when a Spot Instance is interrupted. The default is
      * <code>terminate</code>.</p>
      */
-    inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+    inline InstanceInterruptionBehavior GetInstanceInterruptionBehavior() const { return m_instanceInterruptionBehavior; }
     inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
-    inline void SetInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
-    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
-    inline SpotFleetRequestConfigData& WithInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
-    inline SpotFleetRequestConfigData& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
+    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
+    inline SpotFleetRequestConfigData& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior value) { SetInstanceInterruptionBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -444,12 +424,12 @@ namespace Model
      * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and
      * T1.</p>
      */
-    inline const LoadBalancersConfig& GetLoadBalancersConfig() const{ return m_loadBalancersConfig; }
+    inline const LoadBalancersConfig& GetLoadBalancersConfig() const { return m_loadBalancersConfig; }
     inline bool LoadBalancersConfigHasBeenSet() const { return m_loadBalancersConfigHasBeenSet; }
-    inline void SetLoadBalancersConfig(const LoadBalancersConfig& value) { m_loadBalancersConfigHasBeenSet = true; m_loadBalancersConfig = value; }
-    inline void SetLoadBalancersConfig(LoadBalancersConfig&& value) { m_loadBalancersConfigHasBeenSet = true; m_loadBalancersConfig = std::move(value); }
-    inline SpotFleetRequestConfigData& WithLoadBalancersConfig(const LoadBalancersConfig& value) { SetLoadBalancersConfig(value); return *this;}
-    inline SpotFleetRequestConfigData& WithLoadBalancersConfig(LoadBalancersConfig&& value) { SetLoadBalancersConfig(std::move(value)); return *this;}
+    template<typename LoadBalancersConfigT = LoadBalancersConfig>
+    void SetLoadBalancersConfig(LoadBalancersConfigT&& value) { m_loadBalancersConfigHasBeenSet = true; m_loadBalancersConfig = std::forward<LoadBalancersConfigT>(value); }
+    template<typename LoadBalancersConfigT = LoadBalancersConfig>
+    SpotFleetRequestConfigData& WithLoadBalancersConfig(LoadBalancersConfigT&& value) { SetLoadBalancersConfig(std::forward<LoadBalancersConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -467,7 +447,7 @@ namespace Model
      * capacity, you might receive your full target capacity from fewer than the number
      * of pools that you specified.</p>
      */
-    inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
+    inline int GetInstancePoolsToUseCount() const { return m_instancePoolsToUseCount; }
     inline bool InstancePoolsToUseCountHasBeenSet() const { return m_instancePoolsToUseCountHasBeenSet; }
     inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
     inline SpotFleetRequestConfigData& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
@@ -477,14 +457,12 @@ namespace Model
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetContext() const{ return m_context; }
+    inline const Aws::String& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
-    inline SpotFleetRequestConfigData& WithContext(const Aws::String& value) { SetContext(value); return *this;}
-    inline SpotFleetRequestConfigData& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& WithContext(const char* value) { SetContext(value); return *this;}
+    template<typename ContextT = Aws::String>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::String>
+    SpotFleetRequestConfigData& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -493,12 +471,10 @@ namespace Model
      * using attribute-based instance type selection.</p> <p>Default:
      * <code>units</code> (the number of instances)</p>
      */
-    inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
+    inline TargetCapacityUnitType GetTargetCapacityUnitType() const { return m_targetCapacityUnitType; }
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
-    inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
-    inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
-    inline SpotFleetRequestConfigData& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
-    inline SpotFleetRequestConfigData& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
+    inline void SetTargetCapacityUnitType(TargetCapacityUnitType value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
+    inline SpotFleetRequestConfigData& WithTargetCapacityUnitType(TargetCapacityUnitType value) { SetTargetCapacityUnitType(value); return *this;}
     ///@}
 
     ///@{
@@ -516,21 +492,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline SpotFleetRequestConfigData& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline SpotFleetRequestConfigData& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline SpotFleetRequestConfigData& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline SpotFleetRequestConfigData& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    SpotFleetRequestConfigData& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    SpotFleetRequestConfigData& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
   private:
 
-    AllocationStrategy m_allocationStrategy;
+    AllocationStrategy m_allocationStrategy{AllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
 
-    OnDemandAllocationStrategy m_onDemandAllocationStrategy;
+    OnDemandAllocationStrategy m_onDemandAllocationStrategy{OnDemandAllocationStrategy::NOT_SET};
     bool m_onDemandAllocationStrategyHasBeenSet = false;
 
     SpotMaintenanceStrategies m_spotMaintenanceStrategies;
@@ -539,13 +515,13 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
+    ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy{ExcessCapacityTerminationPolicy::NOT_SET};
     bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
-    double m_fulfilledCapacity;
+    double m_fulfilledCapacity{0.0};
     bool m_fulfilledCapacityHasBeenSet = false;
 
-    double m_onDemandFulfilledCapacity;
+    double m_onDemandFulfilledCapacity{0.0};
     bool m_onDemandFulfilledCapacityHasBeenSet = false;
 
     Aws::String m_iamFleetRole;
@@ -560,10 +536,10 @@ namespace Model
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet = false;
 
-    int m_targetCapacity;
+    int m_targetCapacity{0};
     bool m_targetCapacityHasBeenSet = false;
 
-    int m_onDemandTargetCapacity;
+    int m_onDemandTargetCapacity{0};
     bool m_onDemandTargetCapacityHasBeenSet = false;
 
     Aws::String m_onDemandMaxTotalPrice;
@@ -572,34 +548,34 @@ namespace Model
     Aws::String m_spotMaxTotalPrice;
     bool m_spotMaxTotalPriceHasBeenSet = false;
 
-    bool m_terminateInstancesWithExpiration;
+    bool m_terminateInstancesWithExpiration{false};
     bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
-    FleetType m_type;
+    FleetType m_type{FleetType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validFrom;
+    Aws::Utils::DateTime m_validFrom{};
     bool m_validFromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validUntil;
+    Aws::Utils::DateTime m_validUntil{};
     bool m_validUntilHasBeenSet = false;
 
-    bool m_replaceUnhealthyInstances;
+    bool m_replaceUnhealthyInstances{false};
     bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
-    InstanceInterruptionBehavior m_instanceInterruptionBehavior;
+    InstanceInterruptionBehavior m_instanceInterruptionBehavior{InstanceInterruptionBehavior::NOT_SET};
     bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
     LoadBalancersConfig m_loadBalancersConfig;
     bool m_loadBalancersConfigHasBeenSet = false;
 
-    int m_instancePoolsToUseCount;
+    int m_instancePoolsToUseCount{0};
     bool m_instancePoolsToUseCountHasBeenSet = false;
 
     Aws::String m_context;
     bool m_contextHasBeenSet = false;
 
-    TargetCapacityUnitType m_targetCapacityUnitType;
+    TargetCapacityUnitType m_targetCapacityUnitType{TargetCapacityUnitType::NOT_SET};
     bool m_targetCapacityUnitTypeHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;

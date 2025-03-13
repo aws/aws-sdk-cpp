@@ -29,7 +29,7 @@ namespace Model
   class ListNetworkSitesResult
   {
   public:
-    AWS_PRIVATENETWORKS_API ListNetworkSitesResult();
+    AWS_PRIVATENETWORKS_API ListNetworkSitesResult() = default;
     AWS_PRIVATENETWORKS_API ListNetworkSitesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API ListNetworkSitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Information about the network sites.</p>
      */
-    inline const Aws::Vector<NetworkSite>& GetNetworkSites() const{ return m_networkSites; }
-    inline void SetNetworkSites(const Aws::Vector<NetworkSite>& value) { m_networkSites = value; }
-    inline void SetNetworkSites(Aws::Vector<NetworkSite>&& value) { m_networkSites = std::move(value); }
-    inline ListNetworkSitesResult& WithNetworkSites(const Aws::Vector<NetworkSite>& value) { SetNetworkSites(value); return *this;}
-    inline ListNetworkSitesResult& WithNetworkSites(Aws::Vector<NetworkSite>&& value) { SetNetworkSites(std::move(value)); return *this;}
-    inline ListNetworkSitesResult& AddNetworkSites(const NetworkSite& value) { m_networkSites.push_back(value); return *this; }
-    inline ListNetworkSitesResult& AddNetworkSites(NetworkSite&& value) { m_networkSites.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NetworkSite>& GetNetworkSites() const { return m_networkSites; }
+    template<typename NetworkSitesT = Aws::Vector<NetworkSite>>
+    void SetNetworkSites(NetworkSitesT&& value) { m_networkSitesHasBeenSet = true; m_networkSites = std::forward<NetworkSitesT>(value); }
+    template<typename NetworkSitesT = Aws::Vector<NetworkSite>>
+    ListNetworkSitesResult& WithNetworkSites(NetworkSitesT&& value) { SetNetworkSites(std::forward<NetworkSitesT>(value)); return *this;}
+    template<typename NetworkSitesT = NetworkSite>
+    ListNetworkSitesResult& AddNetworkSites(NetworkSitesT&& value) { m_networkSitesHasBeenSet = true; m_networkSites.emplace_back(std::forward<NetworkSitesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNetworkSitesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNetworkSitesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNetworkSitesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNetworkSitesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNetworkSitesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNetworkSitesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNetworkSitesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNetworkSitesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NetworkSite> m_networkSites;
+    bool m_networkSitesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

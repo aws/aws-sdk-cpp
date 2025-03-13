@@ -12,15 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceConfigurationRequest::UpdateResourceConfigurationRequest() : 
-    m_allowAssociationToShareableServiceNetwork(false),
-    m_allowAssociationToShareableServiceNetworkHasBeenSet(false),
-    m_portRangesHasBeenSet(false),
-    m_resourceConfigurationDefinitionHasBeenSet(false),
-    m_resourceConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

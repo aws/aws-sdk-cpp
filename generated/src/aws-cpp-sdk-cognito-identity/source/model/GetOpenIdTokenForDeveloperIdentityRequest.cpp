@@ -12,16 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOpenIdTokenForDeveloperIdentityRequest::GetOpenIdTokenForDeveloperIdentityRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_loginsHasBeenSet(false),
-    m_principalTagsHasBeenSet(false),
-    m_tokenDuration(0),
-    m_tokenDurationHasBeenSet(false)
-{
-}
-
 Aws::String GetOpenIdTokenForDeveloperIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

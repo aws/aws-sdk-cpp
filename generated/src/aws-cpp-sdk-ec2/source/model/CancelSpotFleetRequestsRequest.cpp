@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelSpotFleetRequestsRequest::CancelSpotFleetRequestsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_spotFleetRequestIdsHasBeenSet(false),
-    m_terminateInstances(false),
-    m_terminateInstancesHasBeenSet(false)
-{
-}
-
 Aws::String CancelSpotFleetRequestsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

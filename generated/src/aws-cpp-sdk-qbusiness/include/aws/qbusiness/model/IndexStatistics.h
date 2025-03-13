@@ -32,7 +32,7 @@ namespace Model
   class IndexStatistics
   {
   public:
-    AWS_QBUSINESS_API IndexStatistics();
+    AWS_QBUSINESS_API IndexStatistics() = default;
     AWS_QBUSINESS_API IndexStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API IndexStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The number of documents indexed.</p>
      */
-    inline const TextDocumentStatistics& GetTextDocumentStatistics() const{ return m_textDocumentStatistics; }
+    inline const TextDocumentStatistics& GetTextDocumentStatistics() const { return m_textDocumentStatistics; }
     inline bool TextDocumentStatisticsHasBeenSet() const { return m_textDocumentStatisticsHasBeenSet; }
-    inline void SetTextDocumentStatistics(const TextDocumentStatistics& value) { m_textDocumentStatisticsHasBeenSet = true; m_textDocumentStatistics = value; }
-    inline void SetTextDocumentStatistics(TextDocumentStatistics&& value) { m_textDocumentStatisticsHasBeenSet = true; m_textDocumentStatistics = std::move(value); }
-    inline IndexStatistics& WithTextDocumentStatistics(const TextDocumentStatistics& value) { SetTextDocumentStatistics(value); return *this;}
-    inline IndexStatistics& WithTextDocumentStatistics(TextDocumentStatistics&& value) { SetTextDocumentStatistics(std::move(value)); return *this;}
+    template<typename TextDocumentStatisticsT = TextDocumentStatistics>
+    void SetTextDocumentStatistics(TextDocumentStatisticsT&& value) { m_textDocumentStatisticsHasBeenSet = true; m_textDocumentStatistics = std::forward<TextDocumentStatisticsT>(value); }
+    template<typename TextDocumentStatisticsT = TextDocumentStatistics>
+    IndexStatistics& WithTextDocumentStatistics(TextDocumentStatisticsT&& value) { SetTextDocumentStatistics(std::forward<TextDocumentStatisticsT>(value)); return *this;}
     ///@}
   private:
 

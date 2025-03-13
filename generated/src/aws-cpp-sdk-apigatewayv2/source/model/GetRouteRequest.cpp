@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRouteRequest::GetRouteRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_routeIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRouteRequest::SerializePayload() const
 {
   return {};

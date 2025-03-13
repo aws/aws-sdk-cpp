@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVoiceChannelRequest::UpdateVoiceChannelRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_voiceChannelRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVoiceChannelRequest::SerializePayload() const
 {
   JsonValue payload;

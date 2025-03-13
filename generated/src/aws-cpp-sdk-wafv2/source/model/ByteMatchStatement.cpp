@@ -19,17 +19,7 @@ namespace WAFV2
 namespace Model
 {
 
-ByteMatchStatement::ByteMatchStatement() : 
-    m_searchStringHasBeenSet(false),
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformationsHasBeenSet(false),
-    m_positionalConstraint(PositionalConstraint::NOT_SET),
-    m_positionalConstraintHasBeenSet(false)
-{
-}
-
 ByteMatchStatement::ByteMatchStatement(JsonView jsonValue)
-  : ByteMatchStatement()
 {
   *this = jsonValue;
 }
@@ -41,14 +31,11 @@ ByteMatchStatement& ByteMatchStatement::operator =(JsonView jsonValue)
     m_searchString = HashingUtils::Base64Decode(jsonValue.GetString("SearchString"));
     m_searchStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformations"))
   {
     Aws::Utils::Array<JsonView> textTransformationsJsonList = jsonValue.GetArray("TextTransformations");
@@ -58,14 +45,11 @@ ByteMatchStatement& ByteMatchStatement::operator =(JsonView jsonValue)
     }
     m_textTransformationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PositionalConstraint"))
   {
     m_positionalConstraint = PositionalConstraintMapper::GetPositionalConstraintForName(jsonValue.GetString("PositionalConstraint"));
-
     m_positionalConstraintHasBeenSet = true;
   }
-
   return *this;
 }
 

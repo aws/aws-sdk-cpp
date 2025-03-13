@@ -38,7 +38,7 @@ namespace Model
   class TimeSeriesCondition
   {
   public:
-    AWS_FORECASTSERVICE_API TimeSeriesCondition();
+    AWS_FORECASTSERVICE_API TimeSeriesCondition() = default;
     AWS_FORECASTSERVICE_API TimeSeriesCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API TimeSeriesCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
      * <p>The item_id, dimension name, IM name, or timestamp that you are
      * modifying.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline TimeSeriesCondition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline TimeSeriesCondition& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline TimeSeriesCondition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    TimeSeriesCondition& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that is applied for the chosen <code>Condition</code>.</p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline TimeSeriesCondition& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline TimeSeriesCondition& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline TimeSeriesCondition& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    TimeSeriesCondition& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,10 @@ namespace Model
      * <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and
      * <code>GREATER_THAN</code>.</p>
      */
-    inline const Condition& GetCondition() const{ return m_condition; }
+    inline Condition GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline TimeSeriesCondition& WithCondition(const Condition& value) { SetCondition(value); return *this;}
-    inline TimeSeriesCondition& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+    inline void SetCondition(Condition value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline TimeSeriesCondition& WithCondition(Condition value) { SetCondition(value); return *this;}
     ///@}
   private:
 
@@ -94,7 +88,7 @@ namespace Model
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet = false;
 
-    Condition m_condition;
+    Condition m_condition{Condition::NOT_SET};
     bool m_conditionHasBeenSet = false;
   };
 

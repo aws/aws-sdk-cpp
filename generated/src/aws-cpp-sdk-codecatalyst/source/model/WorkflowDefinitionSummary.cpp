@@ -18,13 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-WorkflowDefinitionSummary::WorkflowDefinitionSummary() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 WorkflowDefinitionSummary::WorkflowDefinitionSummary(JsonView jsonValue)
-  : WorkflowDefinitionSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorkflowDefinitionSummary& WorkflowDefinitionSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

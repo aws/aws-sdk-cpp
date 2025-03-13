@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EfaInfo::EfaInfo() : 
-    m_maximumEfaInterfaces(0),
-    m_maximumEfaInterfacesHasBeenSet(false)
-{
-}
-
 EfaInfo::EfaInfo(const XmlNode& xmlNode)
-  : EfaInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ EfaInfo& EfaInfo::operator =(const XmlNode& xmlNode)
     {
       m_maximumEfaInterfaces = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumEfaInterfacesNode.GetText()).c_str()).c_str());
       m_maximumEfaInterfacesHasBeenSet = true;
+       m_maximumEfaInterfacesHasBeenSet = true;
     }
   }
 

@@ -18,25 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-RetrievalFilter::RetrievalFilter() : 
-    m_equalsHasBeenSet(false),
-    m_notEqualsHasBeenSet(false),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqualsHasBeenSet(false),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualsHasBeenSet(false),
-    m_inHasBeenSet(false),
-    m_notInHasBeenSet(false),
-    m_startsWithHasBeenSet(false),
-    m_listContainsHasBeenSet(false),
-    m_stringContainsHasBeenSet(false),
-    m_andAllHasBeenSet(false),
-    m_orAllHasBeenSet(false)
-{
-}
-
 RetrievalFilter::RetrievalFilter(JsonView jsonValue)
-  : RetrievalFilter()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("equals"))
   {
     m_equals = jsonValue.GetObject("equals");
-
     m_equalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notEquals"))
   {
     m_notEquals = jsonValue.GetObject("notEquals");
-
     m_notEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThan"))
   {
     m_greaterThan = jsonValue.GetObject("greaterThan");
-
     m_greaterThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThanOrEquals"))
   {
     m_greaterThanOrEquals = jsonValue.GetObject("greaterThanOrEquals");
-
     m_greaterThanOrEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThan"))
   {
     m_lessThan = jsonValue.GetObject("lessThan");
-
     m_lessThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThanOrEquals"))
   {
     m_lessThanOrEquals = jsonValue.GetObject("lessThanOrEquals");
-
     m_lessThanOrEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("in"))
   {
     m_in = jsonValue.GetObject("in");
-
     m_inHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notIn"))
   {
     m_notIn = jsonValue.GetObject("notIn");
-
     m_notInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startsWith"))
   {
     m_startsWith = jsonValue.GetObject("startsWith");
-
     m_startsWithHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listContains"))
   {
     m_listContains = jsonValue.GetObject("listContains");
-
     m_listContainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringContains"))
   {
     m_stringContains = jsonValue.GetObject("stringContains");
-
     m_stringContainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("andAll"))
   {
     Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
@@ -129,7 +89,6 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     }
     m_andAllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orAll"))
   {
     Aws::Utils::Array<JsonView> orAllJsonList = jsonValue.GetArray("orAll");
@@ -139,7 +98,6 @@ RetrievalFilter& RetrievalFilter::operator =(JsonView jsonValue)
     }
     m_orAllHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class CreateTableRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API CreateTableRequest();
+    AWS_S3TABLES_API CreateTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,66 +39,58 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the table bucket to create the table
      * in.</p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline CreateTableRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline CreateTableRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline CreateTableRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    CreateTableRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace to associated with the table.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline CreateTableRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline CreateTableRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline CreateTableRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    CreateTableRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the table.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateTableRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateTableRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateTableRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateTableRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format for the table.</p>
      */
-    inline const OpenTableFormat& GetFormat() const{ return m_format; }
+    inline OpenTableFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const OpenTableFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(OpenTableFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline CreateTableRequest& WithFormat(const OpenTableFormat& value) { SetFormat(value); return *this;}
-    inline CreateTableRequest& WithFormat(OpenTableFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(OpenTableFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline CreateTableRequest& WithFormat(OpenTableFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata for the table.</p>
      */
-    inline const TableMetadata& GetMetadata() const{ return m_metadata; }
+    inline const TableMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const TableMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(TableMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline CreateTableRequest& WithMetadata(const TableMetadata& value) { SetMetadata(value); return *this;}
-    inline CreateTableRequest& WithMetadata(TableMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = TableMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = TableMetadata>
+    CreateTableRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
   private:
 
@@ -111,7 +103,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    OpenTableFormat m_format;
+    OpenTableFormat m_format{OpenTableFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     TableMetadata m_metadata;

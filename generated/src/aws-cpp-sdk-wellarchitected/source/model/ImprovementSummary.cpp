@@ -18,20 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ImprovementSummary::ImprovementSummary() : 
-    m_questionIdHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_improvementPlanUrlHasBeenSet(false),
-    m_improvementPlansHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
-{
-}
-
 ImprovementSummary::ImprovementSummary(JsonView jsonValue)
-  : ImprovementSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ImprovementSummary& ImprovementSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PillarId"))
   {
     m_pillarId = jsonValue.GetString("PillarId");
-
     m_pillarIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionTitle"))
   {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
-
     m_questionTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Risk"))
   {
     m_risk = RiskMapper::GetRiskForName(jsonValue.GetString("Risk"));
-
     m_riskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementPlanUrl"))
   {
     m_improvementPlanUrl = jsonValue.GetString("ImprovementPlanUrl");
-
     m_improvementPlanUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementPlans"))
   {
     Aws::Utils::Array<JsonView> improvementPlansJsonList = jsonValue.GetArray("ImprovementPlans");
@@ -82,14 +59,11 @@ ImprovementSummary& ImprovementSummary::operator =(JsonView jsonValue)
     }
     m_improvementPlansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JiraConfiguration"))
   {
     m_jiraConfiguration = jsonValue.GetObject("JiraConfiguration");
-
     m_jiraConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

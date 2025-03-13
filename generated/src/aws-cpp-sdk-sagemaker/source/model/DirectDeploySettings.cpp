@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DirectDeploySettings::DirectDeploySettings() : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DirectDeploySettings::DirectDeploySettings(JsonView jsonValue)
-  : DirectDeploySettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DirectDeploySettings& DirectDeploySettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

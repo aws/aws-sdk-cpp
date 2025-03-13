@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceUserTrustProviderClientConfiguration::VerifiedAccessInstanceUserTrustProviderClientConfiguration() : 
-    m_type(UserTrustProviderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_publicSigningKeyEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_pkceEnabled(false),
-    m_pkceEnabledHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceUserTrustProviderClientConfiguration::VerifiedAccessInstanceUserTrustProviderClientConfiguration(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceUserTrustProviderClientConfiguration()
 {
   *this = xmlNode;
 }
@@ -51,62 +34,72 @@ VerifiedAccessInstanceUserTrustProviderClientConfiguration& VerifiedAccessInstan
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode scopesNode = resultNode.FirstChild("scopes");
     if(!scopesNode.IsNull())
     {
       m_scopes = Aws::Utils::Xml::DecodeEscapedXmlText(scopesNode.GetText());
       m_scopesHasBeenSet = true;
+       m_scopesHasBeenSet = true;
     }
     XmlNode issuerNode = resultNode.FirstChild("issuer");
     if(!issuerNode.IsNull())
     {
       m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
       m_issuerHasBeenSet = true;
+       m_issuerHasBeenSet = true;
     }
     XmlNode authorizationEndpointNode = resultNode.FirstChild("authorizationEndpoint");
     if(!authorizationEndpointNode.IsNull())
     {
       m_authorizationEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(authorizationEndpointNode.GetText());
       m_authorizationEndpointHasBeenSet = true;
+       m_authorizationEndpointHasBeenSet = true;
     }
     XmlNode publicSigningKeyEndpointNode = resultNode.FirstChild("publicSigningKeyEndpoint");
     if(!publicSigningKeyEndpointNode.IsNull())
     {
       m_publicSigningKeyEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(publicSigningKeyEndpointNode.GetText());
       m_publicSigningKeyEndpointHasBeenSet = true;
+       m_publicSigningKeyEndpointHasBeenSet = true;
     }
     XmlNode tokenEndpointNode = resultNode.FirstChild("tokenEndpoint");
     if(!tokenEndpointNode.IsNull())
     {
       m_tokenEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(tokenEndpointNode.GetText());
       m_tokenEndpointHasBeenSet = true;
+       m_tokenEndpointHasBeenSet = true;
     }
     XmlNode userInfoEndpointNode = resultNode.FirstChild("userInfoEndpoint");
     if(!userInfoEndpointNode.IsNull())
     {
       m_userInfoEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(userInfoEndpointNode.GetText());
       m_userInfoEndpointHasBeenSet = true;
+       m_userInfoEndpointHasBeenSet = true;
     }
     XmlNode clientIdNode = resultNode.FirstChild("clientId");
     if(!clientIdNode.IsNull())
     {
       m_clientId = Aws::Utils::Xml::DecodeEscapedXmlText(clientIdNode.GetText());
       m_clientIdHasBeenSet = true;
+       m_clientIdHasBeenSet = true;
     }
     XmlNode clientSecretNode = resultNode.FirstChild("clientSecret");
     if(!clientSecretNode.IsNull())
     {
       m_clientSecret = Aws::Utils::Xml::DecodeEscapedXmlText(clientSecretNode.GetText());
       m_clientSecretHasBeenSet = true;
+       m_clientSecretHasBeenSet = true;
     }
     XmlNode pkceEnabledNode = resultNode.FirstChild("pkceEnabled");
     if(!pkceEnabledNode.IsNull())
     {
       m_pkceEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pkceEnabledNode.GetText()).c_str()).c_str());
       m_pkceEnabledHasBeenSet = true;
+       m_pkceEnabledHasBeenSet = true;
     }
   }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelBundleTaskResponse::CancelBundleTaskResponse()
-{
-}
-
 CancelBundleTaskResponse::CancelBundleTaskResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CancelBundleTaskResponse& CancelBundleTaskResponse::operator =(const Aws::Amazon
     if(!bundleTaskNode.IsNull())
     {
       m_bundleTask = bundleTaskNode;
+      m_bundleTaskHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CancelBundleTaskResponse& CancelBundleTaskResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CancelBundleTaskResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

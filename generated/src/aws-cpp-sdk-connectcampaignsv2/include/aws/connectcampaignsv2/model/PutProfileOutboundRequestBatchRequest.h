@@ -27,7 +27,7 @@ namespace Model
   class PutProfileOutboundRequestBatchRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API PutProfileOutboundRequestBatchRequest();
+    AWS_CONNECTCAMPAIGNSV2_API PutProfileOutboundRequestBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PutProfileOutboundRequestBatchRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PutProfileOutboundRequestBatchRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PutProfileOutboundRequestBatchRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PutProfileOutboundRequestBatchRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<ProfileOutboundRequest>& GetProfileOutboundRequests() const{ return m_profileOutboundRequests; }
+    inline const Aws::Vector<ProfileOutboundRequest>& GetProfileOutboundRequests() const { return m_profileOutboundRequests; }
     inline bool ProfileOutboundRequestsHasBeenSet() const { return m_profileOutboundRequestsHasBeenSet; }
-    inline void SetProfileOutboundRequests(const Aws::Vector<ProfileOutboundRequest>& value) { m_profileOutboundRequestsHasBeenSet = true; m_profileOutboundRequests = value; }
-    inline void SetProfileOutboundRequests(Aws::Vector<ProfileOutboundRequest>&& value) { m_profileOutboundRequestsHasBeenSet = true; m_profileOutboundRequests = std::move(value); }
-    inline PutProfileOutboundRequestBatchRequest& WithProfileOutboundRequests(const Aws::Vector<ProfileOutboundRequest>& value) { SetProfileOutboundRequests(value); return *this;}
-    inline PutProfileOutboundRequestBatchRequest& WithProfileOutboundRequests(Aws::Vector<ProfileOutboundRequest>&& value) { SetProfileOutboundRequests(std::move(value)); return *this;}
-    inline PutProfileOutboundRequestBatchRequest& AddProfileOutboundRequests(const ProfileOutboundRequest& value) { m_profileOutboundRequestsHasBeenSet = true; m_profileOutboundRequests.push_back(value); return *this; }
-    inline PutProfileOutboundRequestBatchRequest& AddProfileOutboundRequests(ProfileOutboundRequest&& value) { m_profileOutboundRequestsHasBeenSet = true; m_profileOutboundRequests.push_back(std::move(value)); return *this; }
+    template<typename ProfileOutboundRequestsT = Aws::Vector<ProfileOutboundRequest>>
+    void SetProfileOutboundRequests(ProfileOutboundRequestsT&& value) { m_profileOutboundRequestsHasBeenSet = true; m_profileOutboundRequests = std::forward<ProfileOutboundRequestsT>(value); }
+    template<typename ProfileOutboundRequestsT = Aws::Vector<ProfileOutboundRequest>>
+    PutProfileOutboundRequestBatchRequest& WithProfileOutboundRequests(ProfileOutboundRequestsT&& value) { SetProfileOutboundRequests(std::forward<ProfileOutboundRequestsT>(value)); return *this;}
+    template<typename ProfileOutboundRequestsT = ProfileOutboundRequest>
+    PutProfileOutboundRequestBatchRequest& AddProfileOutboundRequests(ProfileOutboundRequestsT&& value) { m_profileOutboundRequestsHasBeenSet = true; m_profileOutboundRequests.emplace_back(std::forward<ProfileOutboundRequestsT>(value)); return *this; }
     ///@}
   private:
 

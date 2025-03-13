@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProjectsRequest::ListProjectsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_userIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListProjectsRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpQueryParameter::HttpQueryParameter() : 
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 HttpQueryParameter::HttpQueryParameter(JsonView jsonValue)
-  : HttpQueryParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HttpQueryParameter& HttpQueryParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SuggestionQuery::SuggestionQuery() : 
-    m_propertyNameQueryHasBeenSet(false)
-{
-}
-
 SuggestionQuery::SuggestionQuery(JsonView jsonValue)
-  : SuggestionQuery()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SuggestionQuery& SuggestionQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PropertyNameQuery"))
   {
     m_propertyNameQuery = jsonValue.GetObject("PropertyNameQuery");
-
     m_propertyNameQueryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,23 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-DoubleOptions::DoubleOptions() : 
-    m_defaultValue(0.0),
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false)
-{
-}
-
 DoubleOptions::DoubleOptions(const XmlNode& xmlNode)
-  : DoubleOptions()
 {
   *this = xmlNode;
 }
@@ -52,36 +36,42 @@ DoubleOptions& DoubleOptions::operator =(const XmlNode& xmlNode)
     {
       m_defaultValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText()).c_str()).c_str());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldNode = resultNode.FirstChild("SourceField");
     if(!sourceFieldNode.IsNull())
     {
       m_sourceField = Aws::Utils::Xml::DecodeEscapedXmlText(sourceFieldNode.GetText());
       m_sourceFieldHasBeenSet = true;
+       m_sourceFieldHasBeenSet = true;
     }
     XmlNode facetEnabledNode = resultNode.FirstChild("FacetEnabled");
     if(!facetEnabledNode.IsNull())
     {
       m_facetEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(facetEnabledNode.GetText()).c_str()).c_str());
       m_facetEnabledHasBeenSet = true;
+       m_facetEnabledHasBeenSet = true;
     }
     XmlNode searchEnabledNode = resultNode.FirstChild("SearchEnabled");
     if(!searchEnabledNode.IsNull())
     {
       m_searchEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(searchEnabledNode.GetText()).c_str()).c_str());
       m_searchEnabledHasBeenSet = true;
+       m_searchEnabledHasBeenSet = true;
     }
     XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
     if(!returnEnabledNode.IsNull())
     {
       m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnEnabledNode.GetText()).c_str()).c_str());
       m_returnEnabledHasBeenSet = true;
+       m_returnEnabledHasBeenSet = true;
     }
     XmlNode sortEnabledNode = resultNode.FirstChild("SortEnabled");
     if(!sortEnabledNode.IsNull())
     {
       m_sortEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sortEnabledNode.GetText()).c_str()).c_str());
       m_sortEnabledHasBeenSet = true;
+       m_sortEnabledHasBeenSet = true;
     }
   }
 

@@ -28,7 +28,7 @@ namespace Model
   class UpdateThemeForStackResult
   {
   public:
-    AWS_APPSTREAM_API UpdateThemeForStackResult();
+    AWS_APPSTREAM_API UpdateThemeForStackResult() = default;
     AWS_APPSTREAM_API UpdateThemeForStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API UpdateThemeForStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The theme object that contains the metadata of the custom branding.</p>
      */
-    inline const Theme& GetTheme() const{ return m_theme; }
-    inline void SetTheme(const Theme& value) { m_theme = value; }
-    inline void SetTheme(Theme&& value) { m_theme = std::move(value); }
-    inline UpdateThemeForStackResult& WithTheme(const Theme& value) { SetTheme(value); return *this;}
-    inline UpdateThemeForStackResult& WithTheme(Theme&& value) { SetTheme(std::move(value)); return *this;}
+    inline const Theme& GetTheme() const { return m_theme; }
+    template<typename ThemeT = Theme>
+    void SetTheme(ThemeT&& value) { m_themeHasBeenSet = true; m_theme = std::forward<ThemeT>(value); }
+    template<typename ThemeT = Theme>
+    UpdateThemeForStackResult& WithTheme(ThemeT&& value) { SetTheme(std::forward<ThemeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateThemeForStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateThemeForStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateThemeForStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateThemeForStackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Theme m_theme;
+    bool m_themeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

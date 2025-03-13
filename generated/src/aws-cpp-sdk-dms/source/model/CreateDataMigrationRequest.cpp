@@ -12,23 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataMigrationRequest::CreateDataMigrationRequest() : 
-    m_dataMigrationNameHasBeenSet(false),
-    m_migrationProjectIdentifierHasBeenSet(false),
-    m_dataMigrationType(MigrationTypeValue::NOT_SET),
-    m_dataMigrationTypeHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_enableCloudwatchLogs(false),
-    m_enableCloudwatchLogsHasBeenSet(false),
-    m_sourceDataSettingsHasBeenSet(false),
-    m_targetDataSettingsHasBeenSet(false),
-    m_numberOfJobs(0),
-    m_numberOfJobsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_selectionRulesHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataMigrationRequest::SerializePayload() const
 {
   JsonValue payload;

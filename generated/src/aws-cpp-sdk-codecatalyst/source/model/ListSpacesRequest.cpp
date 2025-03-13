@@ -12,11 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSpacesRequest::ListSpacesRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSpacesRequest::SerializePayload() const
 {
   JsonValue payload;

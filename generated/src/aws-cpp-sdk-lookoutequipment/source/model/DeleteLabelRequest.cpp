@@ -12,12 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLabelRequest::DeleteLabelRequest() : 
-    m_labelGroupNameHasBeenSet(false),
-    m_labelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLabelRequest::SerializePayload() const
 {
   JsonValue payload;

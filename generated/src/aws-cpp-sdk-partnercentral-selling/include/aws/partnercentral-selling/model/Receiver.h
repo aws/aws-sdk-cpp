@@ -33,7 +33,7 @@ namespace Model
   class Receiver
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API Receiver();
+    AWS_PARTNERCENTRALSELLING_API Receiver() = default;
     AWS_PARTNERCENTRALSELLING_API Receiver(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Receiver& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * Invitation. This field is used to track the invitation recipient within the AWS
      * ecosystem.</p>
      */
-    inline const AccountReceiver& GetAccount() const{ return m_account; }
+    inline const AccountReceiver& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const AccountReceiver& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(AccountReceiver&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline Receiver& WithAccount(const AccountReceiver& value) { SetAccount(value); return *this;}
-    inline Receiver& WithAccount(AccountReceiver&& value) { SetAccount(std::move(value)); return *this;}
+    template<typename AccountT = AccountReceiver>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = AccountReceiver>
+    Receiver& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
   private:
 

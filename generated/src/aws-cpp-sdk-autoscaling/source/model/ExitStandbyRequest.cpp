@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-ExitStandbyRequest::ExitStandbyRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ExitStandbyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

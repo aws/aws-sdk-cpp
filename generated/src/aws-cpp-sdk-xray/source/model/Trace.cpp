@@ -18,18 +18,7 @@ namespace XRay
 namespace Model
 {
 
-Trace::Trace() : 
-    m_idHasBeenSet(false),
-    m_duration(0.0),
-    m_durationHasBeenSet(false),
-    m_limitExceeded(false),
-    m_limitExceededHasBeenSet(false),
-    m_segmentsHasBeenSet(false)
-{
-}
-
 Trace::Trace(JsonView jsonValue)
-  : Trace()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Trace& Trace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetDouble("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitExceeded"))
   {
     m_limitExceeded = jsonValue.GetBool("LimitExceeded");
-
     m_limitExceededHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Segments"))
   {
     Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
@@ -66,7 +49,6 @@ Trace& Trace::operator =(JsonView jsonValue)
     }
     m_segmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

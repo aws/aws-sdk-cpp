@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult() : 
-    m_status(DeleteUniqueIdStatus::NOT_SET)
-{
-}
-
 BatchDeleteUniqueIdResult::BatchDeleteUniqueIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : BatchDeleteUniqueIdResult()
 {
   *this = result;
 }
@@ -38,8 +32,8 @@ BatchDeleteUniqueIdResult& BatchDeleteUniqueIdResult::operator =(const Aws::Amaz
     {
       m_deleted.push_back(deletedJsonList[deletedIndex].AsObject());
     }
+    m_deletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disconnectedUniqueIds"))
   {
     Aws::Utils::Array<JsonView> disconnectedUniqueIdsJsonList = jsonValue.GetArray("disconnectedUniqueIds");
@@ -47,8 +41,8 @@ BatchDeleteUniqueIdResult& BatchDeleteUniqueIdResult::operator =(const Aws::Amaz
     {
       m_disconnectedUniqueIds.push_back(disconnectedUniqueIdsJsonList[disconnectedUniqueIdsIndex].AsString());
     }
+    m_disconnectedUniqueIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -56,20 +50,20 @@ BatchDeleteUniqueIdResult& BatchDeleteUniqueIdResult::operator =(const Aws::Amaz
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeleteUniqueIdStatusMapper::GetDeleteUniqueIdStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

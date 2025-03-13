@@ -28,7 +28,7 @@ namespace Model
   class DescribeAlgorithmResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeAlgorithmResult();
+    AWS_PERSONALIZE_API DescribeAlgorithmResult() = default;
     AWS_PERSONALIZE_API DescribeAlgorithmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeAlgorithmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A listing of the properties of the algorithm.</p>
      */
-    inline const Algorithm& GetAlgorithm() const{ return m_algorithm; }
-    inline void SetAlgorithm(const Algorithm& value) { m_algorithm = value; }
-    inline void SetAlgorithm(Algorithm&& value) { m_algorithm = std::move(value); }
-    inline DescribeAlgorithmResult& WithAlgorithm(const Algorithm& value) { SetAlgorithm(value); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithm(Algorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
+    inline const Algorithm& GetAlgorithm() const { return m_algorithm; }
+    template<typename AlgorithmT = Algorithm>
+    void SetAlgorithm(AlgorithmT&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::forward<AlgorithmT>(value); }
+    template<typename AlgorithmT = Algorithm>
+    DescribeAlgorithmResult& WithAlgorithm(AlgorithmT&& value) { SetAlgorithm(std::forward<AlgorithmT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAlgorithmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAlgorithmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAlgorithmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAlgorithmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Algorithm m_algorithm;
+    bool m_algorithmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,7 @@ namespace Model
   class DescribeOrganizationOverviewRequest : public DevOpsGuruRequest
   {
   public:
-    AWS_DEVOPSGURU_API DescribeOrganizationOverviewRequest();
+    AWS_DEVOPSGURU_API DescribeOrganizationOverviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
      * day level. The floor of the start time is used. Returned information occurred
      * after this day. </p>
      */
-    inline const Aws::Utils::DateTime& GetFromTime() const{ return m_fromTime; }
+    inline const Aws::Utils::DateTime& GetFromTime() const { return m_fromTime; }
     inline bool FromTimeHasBeenSet() const { return m_fromTimeHasBeenSet; }
-    inline void SetFromTime(const Aws::Utils::DateTime& value) { m_fromTimeHasBeenSet = true; m_fromTime = value; }
-    inline void SetFromTime(Aws::Utils::DateTime&& value) { m_fromTimeHasBeenSet = true; m_fromTime = std::move(value); }
-    inline DescribeOrganizationOverviewRequest& WithFromTime(const Aws::Utils::DateTime& value) { SetFromTime(value); return *this;}
-    inline DescribeOrganizationOverviewRequest& WithFromTime(Aws::Utils::DateTime&& value) { SetFromTime(std::move(value)); return *this;}
+    template<typename FromTimeT = Aws::Utils::DateTime>
+    void SetFromTime(FromTimeT&& value) { m_fromTimeHasBeenSet = true; m_fromTime = std::forward<FromTimeT>(value); }
+    template<typename FromTimeT = Aws::Utils::DateTime>
+    DescribeOrganizationOverviewRequest& WithFromTime(FromTimeT&& value) { SetFromTime(std::forward<FromTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,49 +54,47 @@ namespace Model
      * day level. The floor of the start time is used. Returned information occurred
      * before this day. If this is not specified, then the current day is used. </p>
      */
-    inline const Aws::Utils::DateTime& GetToTime() const{ return m_toTime; }
+    inline const Aws::Utils::DateTime& GetToTime() const { return m_toTime; }
     inline bool ToTimeHasBeenSet() const { return m_toTimeHasBeenSet; }
-    inline void SetToTime(const Aws::Utils::DateTime& value) { m_toTimeHasBeenSet = true; m_toTime = value; }
-    inline void SetToTime(Aws::Utils::DateTime&& value) { m_toTimeHasBeenSet = true; m_toTime = std::move(value); }
-    inline DescribeOrganizationOverviewRequest& WithToTime(const Aws::Utils::DateTime& value) { SetToTime(value); return *this;}
-    inline DescribeOrganizationOverviewRequest& WithToTime(Aws::Utils::DateTime&& value) { SetToTime(std::move(value)); return *this;}
+    template<typename ToTimeT = Aws::Utils::DateTime>
+    void SetToTime(ToTimeT&& value) { m_toTimeHasBeenSet = true; m_toTime = std::forward<ToTimeT>(value); }
+    template<typename ToTimeT = Aws::Utils::DateTime>
+    DescribeOrganizationOverviewRequest& WithToTime(ToTimeT&& value) { SetToTime(std::forward<ToTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline DescribeOrganizationOverviewRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline DescribeOrganizationOverviewRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline DescribeOrganizationOverviewRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline DescribeOrganizationOverviewRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline DescribeOrganizationOverviewRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    DescribeOrganizationOverviewRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    DescribeOrganizationOverviewRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the organizational unit.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
+    inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const { return m_organizationalUnitIds; }
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
-    inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
-    inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
-    inline DescribeOrganizationOverviewRequest& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
-    inline DescribeOrganizationOverviewRequest& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
-    inline DescribeOrganizationOverviewRequest& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
-    inline DescribeOrganizationOverviewRequest& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
-    inline DescribeOrganizationOverviewRequest& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
+    template<typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+    void SetOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::forward<OrganizationalUnitIdsT>(value); }
+    template<typename OrganizationalUnitIdsT = Aws::Vector<Aws::String>>
+    DescribeOrganizationOverviewRequest& WithOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { SetOrganizationalUnitIds(std::forward<OrganizationalUnitIdsT>(value)); return *this;}
+    template<typename OrganizationalUnitIdsT = Aws::String>
+    DescribeOrganizationOverviewRequest& AddOrganizationalUnitIds(OrganizationalUnitIdsT&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.emplace_back(std::forward<OrganizationalUnitIdsT>(value)); return *this; }
     ///@}
   private:
 
-    Aws::Utils::DateTime m_fromTime;
+    Aws::Utils::DateTime m_fromTime{};
     bool m_fromTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toTime;
+    Aws::Utils::DateTime m_toTime{};
     bool m_toTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;

@@ -18,22 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ConsolidatedReportMetric::ConsolidatedReportMetric() : 
-    m_metricType(MetricType::NOT_SET),
-    m_metricTypeHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_workloadArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_lensesAppliedCount(0),
-    m_lensesAppliedCountHasBeenSet(false)
-{
-}
-
 ConsolidatedReportMetric::ConsolidatedReportMetric(JsonView jsonValue)
-  : ConsolidatedReportMetric()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ ConsolidatedReportMetric& ConsolidatedReportMetric::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("MetricType"))
   {
     m_metricType = MetricTypeMapper::GetMetricTypeForName(jsonValue.GetString("MetricType"));
-
     m_metricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> riskCountsJsonMap = jsonValue.GetObject("RiskCounts").GetAllObjects();
@@ -56,35 +39,26 @@ ConsolidatedReportMetric& ConsolidatedReportMetric::operator =(JsonView jsonValu
     }
     m_riskCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
     m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadArn"))
   {
     m_workloadArn = jsonValue.GetString("WorkloadArn");
-
     m_workloadArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lenses"))
   {
     Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
@@ -94,14 +68,11 @@ ConsolidatedReportMetric& ConsolidatedReportMetric::operator =(JsonView jsonValu
     }
     m_lensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensesAppliedCount"))
   {
     m_lensesAppliedCount = jsonValue.GetInteger("LensesAppliedCount");
-
     m_lensesAppliedCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLOutputDataConfig::AutoMLOutputDataConfig() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3OutputPathHasBeenSet(false)
-{
-}
-
 AutoMLOutputDataConfig::AutoMLOutputDataConfig(JsonView jsonValue)
-  : AutoMLOutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoMLOutputDataConfig& AutoMLOutputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   return *this;
 }
 

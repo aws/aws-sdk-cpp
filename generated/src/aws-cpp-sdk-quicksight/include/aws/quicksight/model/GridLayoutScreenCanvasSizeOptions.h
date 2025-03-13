@@ -33,7 +33,7 @@ namespace Model
   class GridLayoutScreenCanvasSizeOptions
   {
   public:
-    AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions();
+    AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions() = default;
     AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * the canvas will be responsive and optimized to the view port. In the Amazon
      * QuickSight console, this option is called <code>Tiled</code>.</p> </li> </ul>
      */
-    inline const ResizeOption& GetResizeOption() const{ return m_resizeOption; }
+    inline ResizeOption GetResizeOption() const { return m_resizeOption; }
     inline bool ResizeOptionHasBeenSet() const { return m_resizeOptionHasBeenSet; }
-    inline void SetResizeOption(const ResizeOption& value) { m_resizeOptionHasBeenSet = true; m_resizeOption = value; }
-    inline void SetResizeOption(ResizeOption&& value) { m_resizeOptionHasBeenSet = true; m_resizeOption = std::move(value); }
-    inline GridLayoutScreenCanvasSizeOptions& WithResizeOption(const ResizeOption& value) { SetResizeOption(value); return *this;}
-    inline GridLayoutScreenCanvasSizeOptions& WithResizeOption(ResizeOption&& value) { SetResizeOption(std::move(value)); return *this;}
+    inline void SetResizeOption(ResizeOption value) { m_resizeOptionHasBeenSet = true; m_resizeOption = value; }
+    inline GridLayoutScreenCanvasSizeOptions& WithResizeOption(ResizeOption value) { SetResizeOption(value); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,16 @@ namespace Model
      * <p>The width that the view port will be optimized for when the layout
      * renders.</p>
      */
-    inline const Aws::String& GetOptimizedViewPortWidth() const{ return m_optimizedViewPortWidth; }
+    inline const Aws::String& GetOptimizedViewPortWidth() const { return m_optimizedViewPortWidth; }
     inline bool OptimizedViewPortWidthHasBeenSet() const { return m_optimizedViewPortWidthHasBeenSet; }
-    inline void SetOptimizedViewPortWidth(const Aws::String& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = value; }
-    inline void SetOptimizedViewPortWidth(Aws::String&& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = std::move(value); }
-    inline void SetOptimizedViewPortWidth(const char* value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth.assign(value); }
-    inline GridLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(const Aws::String& value) { SetOptimizedViewPortWidth(value); return *this;}
-    inline GridLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(Aws::String&& value) { SetOptimizedViewPortWidth(std::move(value)); return *this;}
-    inline GridLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(const char* value) { SetOptimizedViewPortWidth(value); return *this;}
+    template<typename OptimizedViewPortWidthT = Aws::String>
+    void SetOptimizedViewPortWidth(OptimizedViewPortWidthT&& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = std::forward<OptimizedViewPortWidthT>(value); }
+    template<typename OptimizedViewPortWidthT = Aws::String>
+    GridLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(OptimizedViewPortWidthT&& value) { SetOptimizedViewPortWidth(std::forward<OptimizedViewPortWidthT>(value)); return *this;}
     ///@}
   private:
 
-    ResizeOption m_resizeOption;
+    ResizeOption m_resizeOption{ResizeOption::NOT_SET};
     bool m_resizeOptionHasBeenSet = false;
 
     Aws::String m_optimizedViewPortWidth;

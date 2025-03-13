@@ -18,19 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-DeviceInstance::DeviceInstance() : 
-    m_arnHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_status(InstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_udidHasBeenSet(false),
-    m_instanceProfileHasBeenSet(false)
-{
-}
-
 DeviceInstance::DeviceInstance(JsonView jsonValue)
-  : DeviceInstance()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ DeviceInstance& DeviceInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceArn"))
   {
     m_deviceArn = jsonValue.GetString("deviceArn");
-
     m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
@@ -60,28 +44,21 @@ DeviceInstance& DeviceInstance::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = InstanceStatusMapper::GetInstanceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("udid"))
   {
     m_udid = jsonValue.GetString("udid");
-
     m_udidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceProfile"))
   {
     m_instanceProfile = jsonValue.GetObject("instanceProfile");
-
     m_instanceProfileHasBeenSet = true;
   }
-
   return *this;
 }
 

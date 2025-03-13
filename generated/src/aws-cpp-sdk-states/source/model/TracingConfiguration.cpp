@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-TracingConfiguration::TracingConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 TracingConfiguration::TracingConfiguration(JsonView jsonValue)
-  : TracingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TracingConfiguration& TracingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

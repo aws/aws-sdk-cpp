@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCodeReviewsRequest::ListCodeReviewsRequest() : 
-    m_providerTypesHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_repositoryNamesHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCodeReviewsRequest::SerializePayload() const
 {
   return {};

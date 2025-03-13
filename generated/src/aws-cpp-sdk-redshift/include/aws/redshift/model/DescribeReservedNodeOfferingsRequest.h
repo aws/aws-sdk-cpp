@@ -24,7 +24,7 @@ namespace Model
   class DescribeReservedNodeOfferingsRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeReservedNodeOfferingsRequest();
+    AWS_REDSHIFT_API DescribeReservedNodeOfferingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The unique identifier for the offering.</p>
      */
-    inline const Aws::String& GetReservedNodeOfferingId() const{ return m_reservedNodeOfferingId; }
+    inline const Aws::String& GetReservedNodeOfferingId() const { return m_reservedNodeOfferingId; }
     inline bool ReservedNodeOfferingIdHasBeenSet() const { return m_reservedNodeOfferingIdHasBeenSet; }
-    inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
-    inline void SetReservedNodeOfferingId(Aws::String&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::move(value); }
-    inline void SetReservedNodeOfferingId(const char* value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId.assign(value); }
-    inline DescribeReservedNodeOfferingsRequest& WithReservedNodeOfferingId(const Aws::String& value) { SetReservedNodeOfferingId(value); return *this;}
-    inline DescribeReservedNodeOfferingsRequest& WithReservedNodeOfferingId(Aws::String&& value) { SetReservedNodeOfferingId(std::move(value)); return *this;}
-    inline DescribeReservedNodeOfferingsRequest& WithReservedNodeOfferingId(const char* value) { SetReservedNodeOfferingId(value); return *this;}
+    template<typename ReservedNodeOfferingIdT = Aws::String>
+    void SetReservedNodeOfferingId(ReservedNodeOfferingIdT&& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = std::forward<ReservedNodeOfferingIdT>(value); }
+    template<typename ReservedNodeOfferingIdT = Aws::String>
+    DescribeReservedNodeOfferingsRequest& WithReservedNodeOfferingId(ReservedNodeOfferingIdT&& value) { SetReservedNodeOfferingId(std::forward<ReservedNodeOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeReservedNodeOfferingsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -77,21 +75,19 @@ namespace Model
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeReservedNodeOfferingsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReservedNodeOfferingsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReservedNodeOfferingsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReservedNodeOfferingsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reservedNodeOfferingId;
     bool m_reservedNodeOfferingIdHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

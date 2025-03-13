@@ -29,7 +29,7 @@ namespace Model
   class ListSuggestedResiliencyPoliciesResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListSuggestedResiliencyPoliciesResult();
+    AWS_RESILIENCEHUB_API ListSuggestedResiliencyPoliciesResult() = default;
     AWS_RESILIENCEHUB_API ListSuggestedResiliencyPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListSuggestedResiliencyPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSuggestedResiliencyPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSuggestedResiliencyPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSuggestedResiliencyPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSuggestedResiliencyPoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The suggested resiliency policies for the Resilience Hub applications.</p>
      */
-    inline const Aws::Vector<ResiliencyPolicy>& GetResiliencyPolicies() const{ return m_resiliencyPolicies; }
-    inline void SetResiliencyPolicies(const Aws::Vector<ResiliencyPolicy>& value) { m_resiliencyPolicies = value; }
-    inline void SetResiliencyPolicies(Aws::Vector<ResiliencyPolicy>&& value) { m_resiliencyPolicies = std::move(value); }
-    inline ListSuggestedResiliencyPoliciesResult& WithResiliencyPolicies(const Aws::Vector<ResiliencyPolicy>& value) { SetResiliencyPolicies(value); return *this;}
-    inline ListSuggestedResiliencyPoliciesResult& WithResiliencyPolicies(Aws::Vector<ResiliencyPolicy>&& value) { SetResiliencyPolicies(std::move(value)); return *this;}
-    inline ListSuggestedResiliencyPoliciesResult& AddResiliencyPolicies(const ResiliencyPolicy& value) { m_resiliencyPolicies.push_back(value); return *this; }
-    inline ListSuggestedResiliencyPoliciesResult& AddResiliencyPolicies(ResiliencyPolicy&& value) { m_resiliencyPolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResiliencyPolicy>& GetResiliencyPolicies() const { return m_resiliencyPolicies; }
+    template<typename ResiliencyPoliciesT = Aws::Vector<ResiliencyPolicy>>
+    void SetResiliencyPolicies(ResiliencyPoliciesT&& value) { m_resiliencyPoliciesHasBeenSet = true; m_resiliencyPolicies = std::forward<ResiliencyPoliciesT>(value); }
+    template<typename ResiliencyPoliciesT = Aws::Vector<ResiliencyPolicy>>
+    ListSuggestedResiliencyPoliciesResult& WithResiliencyPolicies(ResiliencyPoliciesT&& value) { SetResiliencyPolicies(std::forward<ResiliencyPoliciesT>(value)); return *this;}
+    template<typename ResiliencyPoliciesT = ResiliencyPolicy>
+    ListSuggestedResiliencyPoliciesResult& AddResiliencyPolicies(ResiliencyPoliciesT&& value) { m_resiliencyPoliciesHasBeenSet = true; m_resiliencyPolicies.emplace_back(std::forward<ResiliencyPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSuggestedResiliencyPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSuggestedResiliencyPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSuggestedResiliencyPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSuggestedResiliencyPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ResiliencyPolicy> m_resiliencyPolicies;
+    bool m_resiliencyPoliciesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

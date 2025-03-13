@@ -18,18 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-UserStackAssociation::UserStackAssociation() : 
-    m_stackNameHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_sendEmailNotification(false),
-    m_sendEmailNotificationHasBeenSet(false)
-{
-}
-
 UserStackAssociation::UserStackAssociation(JsonView jsonValue)
-  : UserStackAssociation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ UserStackAssociation& UserStackAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StackName"))
   {
     m_stackName = jsonValue.GetString("StackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendEmailNotification"))
   {
     m_sendEmailNotification = jsonValue.GetBool("SendEmailNotification");
-
     m_sendEmailNotificationHasBeenSet = true;
   }
-
   return *this;
 }
 

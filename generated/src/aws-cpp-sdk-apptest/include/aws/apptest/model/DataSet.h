@@ -33,7 +33,7 @@ namespace Model
   class DataSet
   {
   public:
-    AWS_APPTEST_API DataSet();
+    AWS_APPTEST_API DataSet() = default;
     AWS_APPTEST_API DataSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,66 +43,58 @@ namespace Model
     /**
      * <p>The type of the data set.</p>
      */
-    inline const DataSetType& GetType() const{ return m_type; }
+    inline DataSetType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataSetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataSetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DataSet& WithType(const DataSetType& value) { SetType(value); return *this;}
-    inline DataSet& WithType(DataSetType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataSetType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DataSet& WithType(DataSetType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data set.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DataSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DataSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DataSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DataSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CCSID of the data set.</p>
      */
-    inline const Aws::String& GetCcsid() const{ return m_ccsid; }
+    inline const Aws::String& GetCcsid() const { return m_ccsid; }
     inline bool CcsidHasBeenSet() const { return m_ccsidHasBeenSet; }
-    inline void SetCcsid(const Aws::String& value) { m_ccsidHasBeenSet = true; m_ccsid = value; }
-    inline void SetCcsid(Aws::String&& value) { m_ccsidHasBeenSet = true; m_ccsid = std::move(value); }
-    inline void SetCcsid(const char* value) { m_ccsidHasBeenSet = true; m_ccsid.assign(value); }
-    inline DataSet& WithCcsid(const Aws::String& value) { SetCcsid(value); return *this;}
-    inline DataSet& WithCcsid(Aws::String&& value) { SetCcsid(std::move(value)); return *this;}
-    inline DataSet& WithCcsid(const char* value) { SetCcsid(value); return *this;}
+    template<typename CcsidT = Aws::String>
+    void SetCcsid(CcsidT&& value) { m_ccsidHasBeenSet = true; m_ccsid = std::forward<CcsidT>(value); }
+    template<typename CcsidT = Aws::String>
+    DataSet& WithCcsid(CcsidT&& value) { SetCcsid(std::forward<CcsidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the data set.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline DataSet& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline DataSet& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline DataSet& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The length of the data set.</p>
      */
-    inline int GetLength() const{ return m_length; }
+    inline int GetLength() const { return m_length; }
     inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
     inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
     inline DataSet& WithLength(int value) { SetLength(value); return *this;}
     ///@}
   private:
 
-    DataSetType m_type;
+    DataSetType m_type{DataSetType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
@@ -111,10 +103,10 @@ namespace Model
     Aws::String m_ccsid;
     bool m_ccsidHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    int m_length;
+    int m_length{0};
     bool m_lengthHasBeenSet = false;
   };
 

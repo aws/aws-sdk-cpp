@@ -22,7 +22,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public TimestreamQueryRequest
   {
   public:
-    AWS_TIMESTREAMQUERY_API UpdateAccountSettingsRequest();
+    AWS_TIMESTREAMQUERY_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,7 +51,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
      * quotas</a>.</p>
      */
-    inline int GetMaxQueryTCU() const{ return m_maxQueryTCU; }
+    inline int GetMaxQueryTCU() const { return m_maxQueryTCU; }
     inline bool MaxQueryTCUHasBeenSet() const { return m_maxQueryTCUHasBeenSet; }
     inline void SetMaxQueryTCU(int value) { m_maxQueryTCUHasBeenSet = true; m_maxQueryTCU = value; }
     inline UpdateAccountSettingsRequest& WithMaxQueryTCU(int value) { SetMaxQueryTCU(value); return *this;}
@@ -64,12 +64,10 @@ namespace Model
      * operations; however, the <code>UpdateAccountSettings</code> API operation
      * doesn't recognize any values other than <code>COMPUTE_UNITS</code>.</p> 
      */
-    inline const QueryPricingModel& GetQueryPricingModel() const{ return m_queryPricingModel; }
+    inline QueryPricingModel GetQueryPricingModel() const { return m_queryPricingModel; }
     inline bool QueryPricingModelHasBeenSet() const { return m_queryPricingModelHasBeenSet; }
-    inline void SetQueryPricingModel(const QueryPricingModel& value) { m_queryPricingModelHasBeenSet = true; m_queryPricingModel = value; }
-    inline void SetQueryPricingModel(QueryPricingModel&& value) { m_queryPricingModelHasBeenSet = true; m_queryPricingModel = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithQueryPricingModel(const QueryPricingModel& value) { SetQueryPricingModel(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithQueryPricingModel(QueryPricingModel&& value) { SetQueryPricingModel(std::move(value)); return *this;}
+    inline void SetQueryPricingModel(QueryPricingModel value) { m_queryPricingModelHasBeenSet = true; m_queryPricingModel = value; }
+    inline UpdateAccountSettingsRequest& WithQueryPricingModel(QueryPricingModel value) { SetQueryPricingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -80,19 +78,19 @@ namespace Model
      * request multiple times will have the same effect as making the request once.</p>
      * 
      */
-    inline const QueryComputeRequest& GetQueryCompute() const{ return m_queryCompute; }
+    inline const QueryComputeRequest& GetQueryCompute() const { return m_queryCompute; }
     inline bool QueryComputeHasBeenSet() const { return m_queryComputeHasBeenSet; }
-    inline void SetQueryCompute(const QueryComputeRequest& value) { m_queryComputeHasBeenSet = true; m_queryCompute = value; }
-    inline void SetQueryCompute(QueryComputeRequest&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithQueryCompute(const QueryComputeRequest& value) { SetQueryCompute(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithQueryCompute(QueryComputeRequest&& value) { SetQueryCompute(std::move(value)); return *this;}
+    template<typename QueryComputeT = QueryComputeRequest>
+    void SetQueryCompute(QueryComputeT&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::forward<QueryComputeT>(value); }
+    template<typename QueryComputeT = QueryComputeRequest>
+    UpdateAccountSettingsRequest& WithQueryCompute(QueryComputeT&& value) { SetQueryCompute(std::forward<QueryComputeT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxQueryTCU;
+    int m_maxQueryTCU{0};
     bool m_maxQueryTCUHasBeenSet = false;
 
-    QueryPricingModel m_queryPricingModel;
+    QueryPricingModel m_queryPricingModel{QueryPricingModel::NOT_SET};
     bool m_queryPricingModelHasBeenSet = false;
 
     QueryComputeRequest m_queryCompute;

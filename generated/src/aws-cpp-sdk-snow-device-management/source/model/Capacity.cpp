@@ -18,20 +18,7 @@ namespace SnowDeviceManagement
 namespace Model
 {
 
-Capacity::Capacity() : 
-    m_available(0),
-    m_availableHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false)
-{
-}
-
 Capacity::Capacity(JsonView jsonValue)
-  : Capacity()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ Capacity& Capacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("available"))
   {
     m_available = jsonValue.GetInt64("available");
-
     m_availableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetInt64("total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("used"))
   {
     m_used = jsonValue.GetInt64("used");
-
     m_usedHasBeenSet = true;
   }
-
   return *this;
 }
 

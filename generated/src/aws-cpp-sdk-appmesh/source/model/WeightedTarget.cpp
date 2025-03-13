@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-WeightedTarget::WeightedTarget() : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_virtualNodeHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 WeightedTarget::WeightedTarget(JsonView jsonValue)
-  : WeightedTarget()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ WeightedTarget& WeightedTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("virtualNode"))
   {
     m_virtualNode = jsonValue.GetString("virtualNode");
-
     m_virtualNodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("weight"))
   {
     m_weight = jsonValue.GetInteger("weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-Attribute::Attribute() : 
-    m_jsonPathHasBeenSet(false)
-{
-}
-
 Attribute::Attribute(JsonView jsonValue)
-  : Attribute()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Attribute& Attribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jsonPath"))
   {
     m_jsonPath = jsonValue.GetString("jsonPath");
-
     m_jsonPathHasBeenSet = true;
   }
-
   return *this;
 }
 

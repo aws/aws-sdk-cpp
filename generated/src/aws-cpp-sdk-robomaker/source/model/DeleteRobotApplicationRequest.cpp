@@ -12,12 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRobotApplicationRequest::DeleteRobotApplicationRequest() : 
-    m_applicationHasBeenSet(false),
-    m_applicationVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRobotApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

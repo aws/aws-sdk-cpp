@@ -18,17 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AggregationConstraint::AggregationConstraint() : 
-    m_columnNameHasBeenSet(false),
-    m_minimum(0),
-    m_minimumHasBeenSet(false),
-    m_type(AggregationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AggregationConstraint::AggregationConstraint(JsonView jsonValue)
-  : AggregationConstraint()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AggregationConstraint& AggregationConstraint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimum"))
   {
     m_minimum = jsonValue.GetInteger("minimum");
-
     m_minimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AggregationTypeMapper::GetAggregationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateListenerResult::CreateListenerResult()
-{
-}
-
 CreateListenerResult::CreateListenerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateListenerResult& CreateListenerResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Listener"))
   {
     m_listener = jsonValue.GetObject("Listener");
-
+    m_listenerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

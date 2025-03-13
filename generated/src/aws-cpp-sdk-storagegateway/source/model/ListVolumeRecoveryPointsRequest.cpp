@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVolumeRecoveryPointsRequest::ListVolumeRecoveryPointsRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String ListVolumeRecoveryPointsRequest::SerializePayload() const
 {
   JsonValue payload;

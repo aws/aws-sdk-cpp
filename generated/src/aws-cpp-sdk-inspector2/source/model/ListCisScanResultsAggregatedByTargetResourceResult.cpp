@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCisScanResultsAggregatedByTargetResourceResult::ListCisScanResultsAggregatedByTargetResourceResult()
-{
-}
-
 ListCisScanResultsAggregatedByTargetResourceResult::ListCisScanResultsAggregatedByTargetResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListCisScanResultsAggregatedByTargetResourceResult& ListCisScanResultsAggregated
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceAggregations"))
   {
     Aws::Utils::Array<JsonView> targetResourceAggregationsJsonList = jsonValue.GetArray("targetResourceAggregations");
@@ -42,14 +37,15 @@ ListCisScanResultsAggregatedByTargetResourceResult& ListCisScanResultsAggregated
     {
       m_targetResourceAggregations.push_back(targetResourceAggregationsJsonList[targetResourceAggregationsIndex].AsObject());
     }
+    m_targetResourceAggregationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

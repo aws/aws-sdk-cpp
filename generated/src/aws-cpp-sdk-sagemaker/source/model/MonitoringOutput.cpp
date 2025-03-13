@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringOutput::MonitoringOutput() : 
-    m_s3OutputHasBeenSet(false)
-{
-}
-
 MonitoringOutput::MonitoringOutput(JsonView jsonValue)
-  : MonitoringOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitoringOutput& MonitoringOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Output"))
   {
     m_s3Output = jsonValue.GetObject("S3Output");
-
     m_s3OutputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class FleetLaunchTemplateConfigRequest
   {
   public:
-    AWS_EC2_API FleetLaunchTemplateConfigRequest();
+    AWS_EC2_API FleetLaunchTemplateConfigRequest() = default;
     AWS_EC2_API FleetLaunchTemplateConfigRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FleetLaunchTemplateConfigRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,12 @@ namespace Model
      * <p>The launch template to use. You must specify either the launch template ID or
      * launch template name in the request. </p>
      */
-    inline const FleetLaunchTemplateSpecificationRequest& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
+    inline const FleetLaunchTemplateSpecificationRequest& GetLaunchTemplateSpecification() const { return m_launchTemplateSpecification; }
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
-    inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecificationRequest& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
-    inline void SetLaunchTemplateSpecification(FleetLaunchTemplateSpecificationRequest&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
-    inline FleetLaunchTemplateConfigRequest& WithLaunchTemplateSpecification(const FleetLaunchTemplateSpecificationRequest& value) { SetLaunchTemplateSpecification(value); return *this;}
-    inline FleetLaunchTemplateConfigRequest& WithLaunchTemplateSpecification(FleetLaunchTemplateSpecificationRequest&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+    template<typename LaunchTemplateSpecificationT = FleetLaunchTemplateSpecificationRequest>
+    void SetLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::forward<LaunchTemplateSpecificationT>(value); }
+    template<typename LaunchTemplateSpecificationT = FleetLaunchTemplateSpecificationRequest>
+    FleetLaunchTemplateConfigRequest& WithLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { SetLaunchTemplateSpecification(std::forward<LaunchTemplateSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +61,14 @@ namespace Model
      * <code>maintain</code>, a maximum of 300 items is allowed across all launch
      * templates.</p>
      */
-    inline const Aws::Vector<FleetLaunchTemplateOverridesRequest>& GetOverrides() const{ return m_overrides; }
+    inline const Aws::Vector<FleetLaunchTemplateOverridesRequest>& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const Aws::Vector<FleetLaunchTemplateOverridesRequest>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(Aws::Vector<FleetLaunchTemplateOverridesRequest>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline FleetLaunchTemplateConfigRequest& WithOverrides(const Aws::Vector<FleetLaunchTemplateOverridesRequest>& value) { SetOverrides(value); return *this;}
-    inline FleetLaunchTemplateConfigRequest& WithOverrides(Aws::Vector<FleetLaunchTemplateOverridesRequest>&& value) { SetOverrides(std::move(value)); return *this;}
-    inline FleetLaunchTemplateConfigRequest& AddOverrides(const FleetLaunchTemplateOverridesRequest& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-    inline FleetLaunchTemplateConfigRequest& AddOverrides(FleetLaunchTemplateOverridesRequest&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
+    template<typename OverridesT = Aws::Vector<FleetLaunchTemplateOverridesRequest>>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = Aws::Vector<FleetLaunchTemplateOverridesRequest>>
+    FleetLaunchTemplateConfigRequest& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
+    template<typename OverridesT = FleetLaunchTemplateOverridesRequest>
+    FleetLaunchTemplateConfigRequest& AddOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides.emplace_back(std::forward<OverridesT>(value)); return *this; }
     ///@}
   private:
 

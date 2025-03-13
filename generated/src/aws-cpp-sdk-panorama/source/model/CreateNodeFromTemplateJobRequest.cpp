@@ -12,18 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNodeFromTemplateJobRequest::CreateNodeFromTemplateJobRequest() : 
-    m_jobTagsHasBeenSet(false),
-    m_nodeDescriptionHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_outputPackageNameHasBeenSet(false),
-    m_outputPackageVersionHasBeenSet(false),
-    m_templateParametersHasBeenSet(false),
-    m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateNodeFromTemplateJobRequest::SerializePayload() const
 {
   JsonValue payload;

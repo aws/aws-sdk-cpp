@@ -12,11 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteArchiveRequest::DeleteArchiveRequest() : 
-    m_archiveNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteArchiveRequest::SerializePayload() const
 {
   JsonValue payload;

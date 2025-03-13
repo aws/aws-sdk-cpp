@@ -37,7 +37,7 @@ namespace Model
   class User
   {
   public:
-    AWS_CONNECT_API User();
+    AWS_CONNECT_API User() = default;
     AWS_CONNECT_API User(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,66 +47,60 @@ namespace Model
     /**
      * <p>The identifier of the user account.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline User& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline User& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline User& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    User& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user account.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline User& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline User& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline User& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    User& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user name assigned to the user account.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline User& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline User& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline User& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    User& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the user identity.</p>
      */
-    inline const UserIdentityInfo& GetIdentityInfo() const{ return m_identityInfo; }
+    inline const UserIdentityInfo& GetIdentityInfo() const { return m_identityInfo; }
     inline bool IdentityInfoHasBeenSet() const { return m_identityInfoHasBeenSet; }
-    inline void SetIdentityInfo(const UserIdentityInfo& value) { m_identityInfoHasBeenSet = true; m_identityInfo = value; }
-    inline void SetIdentityInfo(UserIdentityInfo&& value) { m_identityInfoHasBeenSet = true; m_identityInfo = std::move(value); }
-    inline User& WithIdentityInfo(const UserIdentityInfo& value) { SetIdentityInfo(value); return *this;}
-    inline User& WithIdentityInfo(UserIdentityInfo&& value) { SetIdentityInfo(std::move(value)); return *this;}
+    template<typename IdentityInfoT = UserIdentityInfo>
+    void SetIdentityInfo(IdentityInfoT&& value) { m_identityInfoHasBeenSet = true; m_identityInfo = std::forward<IdentityInfoT>(value); }
+    template<typename IdentityInfoT = UserIdentityInfo>
+    User& WithIdentityInfo(IdentityInfoT&& value) { SetIdentityInfo(std::forward<IdentityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the phone configuration for the user.</p>
      */
-    inline const UserPhoneConfig& GetPhoneConfig() const{ return m_phoneConfig; }
+    inline const UserPhoneConfig& GetPhoneConfig() const { return m_phoneConfig; }
     inline bool PhoneConfigHasBeenSet() const { return m_phoneConfigHasBeenSet; }
-    inline void SetPhoneConfig(const UserPhoneConfig& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = value; }
-    inline void SetPhoneConfig(UserPhoneConfig&& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = std::move(value); }
-    inline User& WithPhoneConfig(const UserPhoneConfig& value) { SetPhoneConfig(value); return *this;}
-    inline User& WithPhoneConfig(UserPhoneConfig&& value) { SetPhoneConfig(std::move(value)); return *this;}
+    template<typename PhoneConfigT = UserPhoneConfig>
+    void SetPhoneConfig(PhoneConfigT&& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = std::forward<PhoneConfigT>(value); }
+    template<typename PhoneConfigT = UserPhoneConfig>
+    User& WithPhoneConfig(PhoneConfigT&& value) { SetPhoneConfig(std::forward<PhoneConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,102 +108,90 @@ namespace Model
      * <p>The identifier of the user account in the directory used for identity
      * management.</p>
      */
-    inline const Aws::String& GetDirectoryUserId() const{ return m_directoryUserId; }
+    inline const Aws::String& GetDirectoryUserId() const { return m_directoryUserId; }
     inline bool DirectoryUserIdHasBeenSet() const { return m_directoryUserIdHasBeenSet; }
-    inline void SetDirectoryUserId(const Aws::String& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = value; }
-    inline void SetDirectoryUserId(Aws::String&& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = std::move(value); }
-    inline void SetDirectoryUserId(const char* value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId.assign(value); }
-    inline User& WithDirectoryUserId(const Aws::String& value) { SetDirectoryUserId(value); return *this;}
-    inline User& WithDirectoryUserId(Aws::String&& value) { SetDirectoryUserId(std::move(value)); return *this;}
-    inline User& WithDirectoryUserId(const char* value) { SetDirectoryUserId(value); return *this;}
+    template<typename DirectoryUserIdT = Aws::String>
+    void SetDirectoryUserId(DirectoryUserIdT&& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = std::forward<DirectoryUserIdT>(value); }
+    template<typename DirectoryUserIdT = Aws::String>
+    User& WithDirectoryUserId(DirectoryUserIdT&& value) { SetDirectoryUserId(std::forward<DirectoryUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifiers of the security profiles for the user.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityProfileIds() const{ return m_securityProfileIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityProfileIds() const { return m_securityProfileIds; }
     inline bool SecurityProfileIdsHasBeenSet() const { return m_securityProfileIdsHasBeenSet; }
-    inline void SetSecurityProfileIds(const Aws::Vector<Aws::String>& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = value; }
-    inline void SetSecurityProfileIds(Aws::Vector<Aws::String>&& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = std::move(value); }
-    inline User& WithSecurityProfileIds(const Aws::Vector<Aws::String>& value) { SetSecurityProfileIds(value); return *this;}
-    inline User& WithSecurityProfileIds(Aws::Vector<Aws::String>&& value) { SetSecurityProfileIds(std::move(value)); return *this;}
-    inline User& AddSecurityProfileIds(const Aws::String& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.push_back(value); return *this; }
-    inline User& AddSecurityProfileIds(Aws::String&& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.push_back(std::move(value)); return *this; }
-    inline User& AddSecurityProfileIds(const char* value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.push_back(value); return *this; }
+    template<typename SecurityProfileIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityProfileIds(SecurityProfileIdsT&& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds = std::forward<SecurityProfileIdsT>(value); }
+    template<typename SecurityProfileIdsT = Aws::Vector<Aws::String>>
+    User& WithSecurityProfileIds(SecurityProfileIdsT&& value) { SetSecurityProfileIds(std::forward<SecurityProfileIdsT>(value)); return *this;}
+    template<typename SecurityProfileIdsT = Aws::String>
+    User& AddSecurityProfileIds(SecurityProfileIdsT&& value) { m_securityProfileIdsHasBeenSet = true; m_securityProfileIds.emplace_back(std::forward<SecurityProfileIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the routing profile for the user.</p>
      */
-    inline const Aws::String& GetRoutingProfileId() const{ return m_routingProfileId; }
+    inline const Aws::String& GetRoutingProfileId() const { return m_routingProfileId; }
     inline bool RoutingProfileIdHasBeenSet() const { return m_routingProfileIdHasBeenSet; }
-    inline void SetRoutingProfileId(const Aws::String& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = value; }
-    inline void SetRoutingProfileId(Aws::String&& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = std::move(value); }
-    inline void SetRoutingProfileId(const char* value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId.assign(value); }
-    inline User& WithRoutingProfileId(const Aws::String& value) { SetRoutingProfileId(value); return *this;}
-    inline User& WithRoutingProfileId(Aws::String&& value) { SetRoutingProfileId(std::move(value)); return *this;}
-    inline User& WithRoutingProfileId(const char* value) { SetRoutingProfileId(value); return *this;}
+    template<typename RoutingProfileIdT = Aws::String>
+    void SetRoutingProfileId(RoutingProfileIdT&& value) { m_routingProfileIdHasBeenSet = true; m_routingProfileId = std::forward<RoutingProfileIdT>(value); }
+    template<typename RoutingProfileIdT = Aws::String>
+    User& WithRoutingProfileId(RoutingProfileIdT&& value) { SetRoutingProfileId(std::forward<RoutingProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the hierarchy group for the user.</p>
      */
-    inline const Aws::String& GetHierarchyGroupId() const{ return m_hierarchyGroupId; }
+    inline const Aws::String& GetHierarchyGroupId() const { return m_hierarchyGroupId; }
     inline bool HierarchyGroupIdHasBeenSet() const { return m_hierarchyGroupIdHasBeenSet; }
-    inline void SetHierarchyGroupId(const Aws::String& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = value; }
-    inline void SetHierarchyGroupId(Aws::String&& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = std::move(value); }
-    inline void SetHierarchyGroupId(const char* value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId.assign(value); }
-    inline User& WithHierarchyGroupId(const Aws::String& value) { SetHierarchyGroupId(value); return *this;}
-    inline User& WithHierarchyGroupId(Aws::String&& value) { SetHierarchyGroupId(std::move(value)); return *this;}
-    inline User& WithHierarchyGroupId(const char* value) { SetHierarchyGroupId(value); return *this;}
+    template<typename HierarchyGroupIdT = Aws::String>
+    void SetHierarchyGroupId(HierarchyGroupIdT&& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = std::forward<HierarchyGroupIdT>(value); }
+    template<typename HierarchyGroupIdT = Aws::String>
+    User& WithHierarchyGroupId(HierarchyGroupIdT&& value) { SetHierarchyGroupId(std::forward<HierarchyGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline User& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline User& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline User& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline User& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline User& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline User& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline User& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline User& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline User& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    User& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    User& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when this resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline User& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline User& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    User& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where this resource was last modified.</p>
      */
-    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+    inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
     inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
-    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
-    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
-    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
-    inline User& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
-    inline User& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
-    inline User& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+    template<typename LastModifiedRegionT = Aws::String>
+    void SetLastModifiedRegion(LastModifiedRegionT&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value); }
+    template<typename LastModifiedRegionT = Aws::String>
+    User& WithLastModifiedRegion(LastModifiedRegionT&& value) { SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value)); return *this;}
     ///@}
   private:
 
@@ -243,7 +225,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_lastModifiedRegion;

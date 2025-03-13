@@ -18,17 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-ScriptDetails::ScriptDetails() : 
-    m_scriptS3LocationHasBeenSet(false),
-    m_executablePathHasBeenSet(false),
-    m_executableParametersHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
-{
-}
-
 ScriptDetails::ScriptDetails(JsonView jsonValue)
-  : ScriptDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ScriptDetails& ScriptDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScriptS3Location"))
   {
     m_scriptS3Location = jsonValue.GetObject("ScriptS3Location");
-
     m_scriptS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutablePath"))
   {
     m_executablePath = jsonValue.GetString("ExecutablePath");
-
     m_executablePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutableParameters"))
   {
     m_executableParameters = jsonValue.GetString("ExecutableParameters");
-
     m_executableParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("TimeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

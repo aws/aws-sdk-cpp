@@ -18,24 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-HlsImageBasedTrickPlaySettings::HlsImageBasedTrickPlaySettings() : 
-    m_intervalCadence(HlsIntervalCadence::NOT_SET),
-    m_intervalCadenceHasBeenSet(false),
-    m_thumbnailHeight(0),
-    m_thumbnailHeightHasBeenSet(false),
-    m_thumbnailInterval(0.0),
-    m_thumbnailIntervalHasBeenSet(false),
-    m_thumbnailWidth(0),
-    m_thumbnailWidthHasBeenSet(false),
-    m_tileHeight(0),
-    m_tileHeightHasBeenSet(false),
-    m_tileWidth(0),
-    m_tileWidthHasBeenSet(false)
-{
-}
-
 HlsImageBasedTrickPlaySettings::HlsImageBasedTrickPlaySettings(JsonView jsonValue)
-  : HlsImageBasedTrickPlaySettings()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ HlsImageBasedTrickPlaySettings& HlsImageBasedTrickPlaySettings::operator =(JsonV
   if(jsonValue.ValueExists("intervalCadence"))
   {
     m_intervalCadence = HlsIntervalCadenceMapper::GetHlsIntervalCadenceForName(jsonValue.GetString("intervalCadence"));
-
     m_intervalCadenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailHeight"))
   {
     m_thumbnailHeight = jsonValue.GetInteger("thumbnailHeight");
-
     m_thumbnailHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailInterval"))
   {
     m_thumbnailInterval = jsonValue.GetDouble("thumbnailInterval");
-
     m_thumbnailIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailWidth"))
   {
     m_thumbnailWidth = jsonValue.GetInteger("thumbnailWidth");
-
     m_thumbnailWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tileHeight"))
   {
     m_tileHeight = jsonValue.GetInteger("tileHeight");
-
     m_tileHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tileWidth"))
   {
     m_tileWidth = jsonValue.GetInteger("tileWidth");
-
     m_tileWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

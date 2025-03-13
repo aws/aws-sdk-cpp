@@ -18,15 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AudioChannelTaggingSettings::AudioChannelTaggingSettings() : 
-    m_channelTag(AudioChannelTag::NOT_SET),
-    m_channelTagHasBeenSet(false),
-    m_channelTagsHasBeenSet(false)
-{
-}
-
 AudioChannelTaggingSettings::AudioChannelTaggingSettings(JsonView jsonValue)
-  : AudioChannelTaggingSettings()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AudioChannelTaggingSettings& AudioChannelTaggingSettings::operator =(JsonView js
   if(jsonValue.ValueExists("channelTag"))
   {
     m_channelTag = AudioChannelTagMapper::GetAudioChannelTagForName(jsonValue.GetString("channelTag"));
-
     m_channelTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelTags"))
   {
     Aws::Utils::Array<JsonView> channelTagsJsonList = jsonValue.GetArray("channelTags");
@@ -49,7 +39,6 @@ AudioChannelTaggingSettings& AudioChannelTaggingSettings::operator =(JsonView js
     }
     m_channelTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

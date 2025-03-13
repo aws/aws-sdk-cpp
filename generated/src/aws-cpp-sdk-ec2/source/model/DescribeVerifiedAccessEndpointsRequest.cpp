@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeVerifiedAccessEndpointsRequest::DescribeVerifiedAccessEndpointsRequest() : 
-    m_verifiedAccessEndpointIdsHasBeenSet(false),
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVerifiedAccessEndpointsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

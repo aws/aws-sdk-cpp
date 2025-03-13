@@ -29,7 +29,7 @@ namespace Model
   class ListPodIdentityAssociationsResult
   {
   public:
-    AWS_EKS_API ListPodIdentityAssociationsResult();
+    AWS_EKS_API ListPodIdentityAssociationsResult() = default;
     AWS_EKS_API ListPodIdentityAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API ListPodIdentityAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,13 @@ namespace Model
      * that the association was modified at:. <code>modifiedAt</code> </p> </li> <li>
      * <p>The tags on the association: <code>tags</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<PodIdentityAssociationSummary>& GetAssociations() const{ return m_associations; }
-    inline void SetAssociations(const Aws::Vector<PodIdentityAssociationSummary>& value) { m_associations = value; }
-    inline void SetAssociations(Aws::Vector<PodIdentityAssociationSummary>&& value) { m_associations = std::move(value); }
-    inline ListPodIdentityAssociationsResult& WithAssociations(const Aws::Vector<PodIdentityAssociationSummary>& value) { SetAssociations(value); return *this;}
-    inline ListPodIdentityAssociationsResult& WithAssociations(Aws::Vector<PodIdentityAssociationSummary>&& value) { SetAssociations(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsResult& AddAssociations(const PodIdentityAssociationSummary& value) { m_associations.push_back(value); return *this; }
-    inline ListPodIdentityAssociationsResult& AddAssociations(PodIdentityAssociationSummary&& value) { m_associations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PodIdentityAssociationSummary>& GetAssociations() const { return m_associations; }
+    template<typename AssociationsT = Aws::Vector<PodIdentityAssociationSummary>>
+    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
+    template<typename AssociationsT = Aws::Vector<PodIdentityAssociationSummary>>
+    ListPodIdentityAssociationsResult& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
+    template<typename AssociationsT = PodIdentityAssociationSummary>
+    ListPodIdentityAssociationsResult& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,32 +65,31 @@ namespace Model
      * token should be treated as an opaque identifier that is used only to retrieve
      * the next items in a list and not for other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPodIdentityAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPodIdentityAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPodIdentityAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPodIdentityAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPodIdentityAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPodIdentityAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPodIdentityAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PodIdentityAssociationSummary> m_associations;
+    bool m_associationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

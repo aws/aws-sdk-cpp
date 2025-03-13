@@ -32,7 +32,7 @@ namespace Model
   class CompareDatabaseCDCSummary
   {
   public:
-    AWS_APPTEST_API CompareDatabaseCDCSummary();
+    AWS_APPTEST_API CompareDatabaseCDCSummary() = default;
     AWS_APPTEST_API CompareDatabaseCDCSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareDatabaseCDCSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The step input of the compare database CDC summary.</p>
      */
-    inline const CompareDatabaseCDCStepInput& GetStepInput() const{ return m_stepInput; }
+    inline const CompareDatabaseCDCStepInput& GetStepInput() const { return m_stepInput; }
     inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
-    inline void SetStepInput(const CompareDatabaseCDCStepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
-    inline void SetStepInput(CompareDatabaseCDCStepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
-    inline CompareDatabaseCDCSummary& WithStepInput(const CompareDatabaseCDCStepInput& value) { SetStepInput(value); return *this;}
-    inline CompareDatabaseCDCSummary& WithStepInput(CompareDatabaseCDCStepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    template<typename StepInputT = CompareDatabaseCDCStepInput>
+    void SetStepInput(StepInputT&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::forward<StepInputT>(value); }
+    template<typename StepInputT = CompareDatabaseCDCStepInput>
+    CompareDatabaseCDCSummary& WithStepInput(StepInputT&& value) { SetStepInput(std::forward<StepInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step output of the compare database CDC summary.</p>
      */
-    inline const CompareDatabaseCDCStepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline const CompareDatabaseCDCStepOutput& GetStepOutput() const { return m_stepOutput; }
     inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
-    inline void SetStepOutput(const CompareDatabaseCDCStepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
-    inline void SetStepOutput(CompareDatabaseCDCStepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
-    inline CompareDatabaseCDCSummary& WithStepOutput(const CompareDatabaseCDCStepOutput& value) { SetStepOutput(value); return *this;}
-    inline CompareDatabaseCDCSummary& WithStepOutput(CompareDatabaseCDCStepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    template<typename StepOutputT = CompareDatabaseCDCStepOutput>
+    void SetStepOutput(StepOutputT&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::forward<StepOutputT>(value); }
+    template<typename StepOutputT = CompareDatabaseCDCStepOutput>
+    CompareDatabaseCDCSummary& WithStepOutput(StepOutputT&& value) { SetStepOutput(std::forward<StepOutputT>(value)); return *this;}
     ///@}
   private:
 

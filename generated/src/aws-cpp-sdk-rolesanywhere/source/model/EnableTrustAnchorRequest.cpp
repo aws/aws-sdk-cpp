@@ -12,11 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableTrustAnchorRequest::EnableTrustAnchorRequest() : 
-    m_trustAnchorIdHasBeenSet(false)
-{
-}
-
 Aws::String EnableTrustAnchorRequest::SerializePayload() const
 {
   return {};

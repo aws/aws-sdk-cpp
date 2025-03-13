@@ -18,20 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-Step::Step() : 
-    m_startPositionHasBeenSet(false),
-    m_endPositionHasBeenSet(false),
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_geometryOffset(0),
-    m_geometryOffsetHasBeenSet(false)
-{
-}
-
 Step::Step(JsonView jsonValue)
-  : Step()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ Step& Step::operator =(JsonView jsonValue)
     }
     m_startPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndPosition"))
   {
     Aws::Utils::Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
@@ -57,28 +43,21 @@ Step& Step::operator =(JsonView jsonValue)
     }
     m_endPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetDouble("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationSeconds"))
   {
     m_durationSeconds = jsonValue.GetDouble("DurationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeometryOffset"))
   {
     m_geometryOffset = jsonValue.GetInteger("GeometryOffset");
-
     m_geometryOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

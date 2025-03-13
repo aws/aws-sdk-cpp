@@ -18,18 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-JobTemplateData::JobTemplateData() : 
-    m_executionRoleArnHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_parameterConfigurationHasBeenSet(false),
-    m_jobTagsHasBeenSet(false)
-{
-}
-
 JobTemplateData::JobTemplateData(JsonView jsonValue)
-  : JobTemplateData()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ JobTemplateData& JobTemplateData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationOverrides"))
   {
     m_configurationOverrides = jsonValue.GetObject("configurationOverrides");
-
     m_configurationOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobDriver"))
   {
     m_jobDriver = jsonValue.GetObject("jobDriver");
-
     m_jobDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> parameterConfigurationJsonMap = jsonValue.GetObject("parameterConfiguration").GetAllObjects();
@@ -73,7 +54,6 @@ JobTemplateData& JobTemplateData::operator =(JsonView jsonValue)
     }
     m_parameterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTags"))
   {
     Aws::Map<Aws::String, JsonView> jobTagsJsonMap = jsonValue.GetObject("jobTags").GetAllObjects();
@@ -83,7 +63,6 @@ JobTemplateData& JobTemplateData::operator =(JsonView jsonValue)
     }
     m_jobTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

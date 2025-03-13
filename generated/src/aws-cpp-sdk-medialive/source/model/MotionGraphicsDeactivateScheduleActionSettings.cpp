@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-MotionGraphicsDeactivateScheduleActionSettings::MotionGraphicsDeactivateScheduleActionSettings()
-{
-}
-
 MotionGraphicsDeactivateScheduleActionSettings::MotionGraphicsDeactivateScheduleActionSettings(JsonView jsonValue)
 {
   *this = jsonValue;

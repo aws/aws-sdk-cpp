@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SetIpAddressTypeResult::SetIpAddressTypeResult() : 
-    m_ipAddressType(IpAddressType::NOT_SET)
-{
-}
-
 SetIpAddressTypeResult::SetIpAddressTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : SetIpAddressTypeResult()
 {
   *this = result;
 }
@@ -43,13 +37,15 @@ SetIpAddressTypeResult& SetIpAddressTypeResult::operator =(const Aws::AmazonWebS
     XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::SetIpAddressTypeResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEndpointConfigRequest::DeleteEndpointConfigRequest() : 
-    m_endpointConfigNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEndpointConfigRequest::SerializePayload() const
 {
   JsonValue payload;

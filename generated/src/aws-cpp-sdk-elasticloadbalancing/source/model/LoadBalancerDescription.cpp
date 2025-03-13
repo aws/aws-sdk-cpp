@@ -20,28 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-LoadBalancerDescription::LoadBalancerDescription() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_canonicalHostedZoneNameHasBeenSet(false),
-    m_canonicalHostedZoneNameIDHasBeenSet(false),
-    m_listenerDescriptionsHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_backendServerDescriptionsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_vPCIdHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_sourceSecurityGroupHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_schemeHasBeenSet(false)
-{
-}
-
 LoadBalancerDescription::LoadBalancerDescription(const XmlNode& xmlNode)
-  : LoadBalancerDescription()
 {
   *this = xmlNode;
 }
@@ -57,132 +36,148 @@ LoadBalancerDescription& LoadBalancerDescription::operator =(const XmlNode& xmlN
     {
       m_loadBalancerName = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerNameNode.GetText());
       m_loadBalancerNameHasBeenSet = true;
+       m_loadBalancerNameHasBeenSet = true;
     }
     XmlNode dNSNameNode = resultNode.FirstChild("DNSName");
     if(!dNSNameNode.IsNull())
     {
       m_dNSName = Aws::Utils::Xml::DecodeEscapedXmlText(dNSNameNode.GetText());
       m_dNSNameHasBeenSet = true;
+       m_dNSNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneNameNode = resultNode.FirstChild("CanonicalHostedZoneName");
     if(!canonicalHostedZoneNameNode.IsNull())
     {
       m_canonicalHostedZoneName = Aws::Utils::Xml::DecodeEscapedXmlText(canonicalHostedZoneNameNode.GetText());
       m_canonicalHostedZoneNameHasBeenSet = true;
+       m_canonicalHostedZoneNameHasBeenSet = true;
     }
     XmlNode canonicalHostedZoneNameIDNode = resultNode.FirstChild("CanonicalHostedZoneNameID");
     if(!canonicalHostedZoneNameIDNode.IsNull())
     {
       m_canonicalHostedZoneNameID = Aws::Utils::Xml::DecodeEscapedXmlText(canonicalHostedZoneNameIDNode.GetText());
       m_canonicalHostedZoneNameIDHasBeenSet = true;
+       m_canonicalHostedZoneNameIDHasBeenSet = true;
     }
     XmlNode listenerDescriptionsNode = resultNode.FirstChild("ListenerDescriptions");
     if(!listenerDescriptionsNode.IsNull())
     {
       XmlNode listenerDescriptionsMember = listenerDescriptionsNode.FirstChild("member");
+      m_listenerDescriptionsHasBeenSet = !listenerDescriptionsMember.IsNull();
       while(!listenerDescriptionsMember.IsNull())
       {
         m_listenerDescriptions.push_back(listenerDescriptionsMember);
         listenerDescriptionsMember = listenerDescriptionsMember.NextNode("member");
       }
 
-      m_listenerDescriptionsHasBeenSet = true;
+       m_listenerDescriptionsHasBeenSet = true;
     }
     XmlNode policiesNode = resultNode.FirstChild("Policies");
     if(!policiesNode.IsNull())
     {
       m_policies = policiesNode;
       m_policiesHasBeenSet = true;
+       m_policiesHasBeenSet = true;
     }
     XmlNode backendServerDescriptionsNode = resultNode.FirstChild("BackendServerDescriptions");
     if(!backendServerDescriptionsNode.IsNull())
     {
       XmlNode backendServerDescriptionsMember = backendServerDescriptionsNode.FirstChild("member");
+      m_backendServerDescriptionsHasBeenSet = !backendServerDescriptionsMember.IsNull();
       while(!backendServerDescriptionsMember.IsNull())
       {
         m_backendServerDescriptions.push_back(backendServerDescriptionsMember);
         backendServerDescriptionsMember = backendServerDescriptionsMember.NextNode("member");
       }
 
-      m_backendServerDescriptionsHasBeenSet = true;
+       m_backendServerDescriptionsHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
         availabilityZonesMember = availabilityZonesMember.NextNode("member");
       }
 
-      m_availabilityZonesHasBeenSet = true;
+       m_availabilityZonesHasBeenSet = true;
     }
     XmlNode subnetsNode = resultNode.FirstChild("Subnets");
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("member");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember.GetText());
         subnetsMember = subnetsMember.NextNode("member");
       }
 
-      m_subnetsHasBeenSet = true;
+       m_subnetsHasBeenSet = true;
     }
     XmlNode vPCIdNode = resultNode.FirstChild("VPCId");
     if(!vPCIdNode.IsNull())
     {
       m_vPCId = Aws::Utils::Xml::DecodeEscapedXmlText(vPCIdNode.GetText());
       m_vPCIdHasBeenSet = true;
+       m_vPCIdHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("Instances");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("member");
       }
 
-      m_instancesHasBeenSet = true;
+       m_instancesHasBeenSet = true;
     }
     XmlNode healthCheckNode = resultNode.FirstChild("HealthCheck");
     if(!healthCheckNode.IsNull())
     {
       m_healthCheck = healthCheckNode;
       m_healthCheckHasBeenSet = true;
+       m_healthCheckHasBeenSet = true;
     }
     XmlNode sourceSecurityGroupNode = resultNode.FirstChild("SourceSecurityGroup");
     if(!sourceSecurityGroupNode.IsNull())
     {
       m_sourceSecurityGroup = sourceSecurityGroupNode;
       m_sourceSecurityGroupHasBeenSet = true;
+       m_sourceSecurityGroupHasBeenSet = true;
     }
     XmlNode securityGroupsNode = resultNode.FirstChild("SecurityGroups");
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember.GetText());
         securityGroupsMember = securityGroupsMember.NextNode("member");
       }
 
-      m_securityGroupsHasBeenSet = true;
+       m_securityGroupsHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
+       m_createdTimeHasBeenSet = true;
     }
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
     if(!schemeNode.IsNull())
     {
       m_scheme = Aws::Utils::Xml::DecodeEscapedXmlText(schemeNode.GetText());
       m_schemeHasBeenSet = true;
+       m_schemeHasBeenSet = true;
     }
   }
 

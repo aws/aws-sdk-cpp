@@ -20,18 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Range::Range() : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false),
-    m_step(0),
-    m_stepHasBeenSet(false)
-{
-}
-
 Range::Range(const XmlNode& xmlNode)
-  : Range()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ Range& Range::operator =(const XmlNode& xmlNode)
     {
       m_from = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
+       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("To");
     if(!toNode.IsNull())
     {
       m_to = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
+       m_toHasBeenSet = true;
     }
     XmlNode stepNode = resultNode.FirstChild("Step");
     if(!stepNode.IsNull())
     {
       m_step = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stepNode.GetText()).c_str()).c_str());
       m_stepHasBeenSet = true;
+       m_stepHasBeenSet = true;
     }
   }
 

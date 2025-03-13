@@ -25,7 +25,7 @@ namespace Model
   class CreateDataRepositoryAssociationRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API CreateDataRepositoryAssociationRequest();
+    AWS_FSX_API CreateDataRepositoryAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline CreateDataRepositoryAssociationRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    CreateDataRepositoryAssociationRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * system path for the first data repository associated with a file system.</p>
      * 
      */
-    inline const Aws::String& GetFileSystemPath() const{ return m_fileSystemPath; }
+    inline const Aws::String& GetFileSystemPath() const { return m_fileSystemPath; }
     inline bool FileSystemPathHasBeenSet() const { return m_fileSystemPathHasBeenSet; }
-    inline void SetFileSystemPath(const Aws::String& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = value; }
-    inline void SetFileSystemPath(Aws::String&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::move(value); }
-    inline void SetFileSystemPath(const char* value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath.assign(value); }
-    inline CreateDataRepositoryAssociationRequest& WithFileSystemPath(const Aws::String& value) { SetFileSystemPath(value); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithFileSystemPath(Aws::String&& value) { SetFileSystemPath(std::move(value)); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithFileSystemPath(const char* value) { SetFileSystemPath(value); return *this;}
+    template<typename FileSystemPathT = Aws::String>
+    void SetFileSystemPath(FileSystemPathT&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::forward<FileSystemPathT>(value); }
+    template<typename FileSystemPathT = Aws::String>
+    CreateDataRepositoryAssociationRequest& WithFileSystemPath(FileSystemPathT&& value) { SetFileSystemPath(std::forward<FileSystemPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * This path specifies where in the S3 data repository files will be imported from
      * or exported to.</p>
      */
-    inline const Aws::String& GetDataRepositoryPath() const{ return m_dataRepositoryPath; }
+    inline const Aws::String& GetDataRepositoryPath() const { return m_dataRepositoryPath; }
     inline bool DataRepositoryPathHasBeenSet() const { return m_dataRepositoryPathHasBeenSet; }
-    inline void SetDataRepositoryPath(const Aws::String& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = value; }
-    inline void SetDataRepositoryPath(Aws::String&& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = std::move(value); }
-    inline void SetDataRepositoryPath(const char* value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath.assign(value); }
-    inline CreateDataRepositoryAssociationRequest& WithDataRepositoryPath(const Aws::String& value) { SetDataRepositoryPath(value); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithDataRepositoryPath(Aws::String&& value) { SetDataRepositoryPath(std::move(value)); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithDataRepositoryPath(const char* value) { SetDataRepositoryPath(value); return *this;}
+    template<typename DataRepositoryPathT = Aws::String>
+    void SetDataRepositoryPath(DataRepositoryPathT&& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = std::forward<DataRepositoryPathT>(value); }
+    template<typename DataRepositoryPathT = Aws::String>
+    CreateDataRepositoryAssociationRequest& WithDataRepositoryPath(DataRepositoryPathT&& value) { SetDataRepositoryPath(std::forward<DataRepositoryPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +95,7 @@ namespace Model
      * metadata from the data repository to the file system after the data repository
      * association is created. Default is <code>false</code>.</p>
      */
-    inline bool GetBatchImportMetaDataOnCreate() const{ return m_batchImportMetaDataOnCreate; }
+    inline bool GetBatchImportMetaDataOnCreate() const { return m_batchImportMetaDataOnCreate; }
     inline bool BatchImportMetaDataOnCreateHasBeenSet() const { return m_batchImportMetaDataOnCreateHasBeenSet; }
     inline void SetBatchImportMetaDataOnCreate(bool value) { m_batchImportMetaDataOnCreateHasBeenSet = true; m_batchImportMetaDataOnCreate = value; }
     inline CreateDataRepositoryAssociationRequest& WithBatchImportMetaDataOnCreate(bool value) { SetBatchImportMetaDataOnCreate(value); return *this;}
@@ -116,7 +110,7 @@ namespace Model
      * default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500
      * GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
-    inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
+    inline int GetImportedFileChunkSize() const { return m_importedFileChunkSize; }
     inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
     inline void SetImportedFileChunkSize(int value) { m_importedFileChunkSizeHasBeenSet = true; m_importedFileChunkSize = value; }
     inline CreateDataRepositoryAssociationRequest& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
@@ -130,36 +124,34 @@ namespace Model
      * automatically imported from the linked data repository to the file system or
      * automatically exported from the file system to the data repository.</p>
      */
-    inline const S3DataRepositoryConfiguration& GetS3() const{ return m_s3; }
+    inline const S3DataRepositoryConfiguration& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3DataRepositoryConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3DataRepositoryConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline CreateDataRepositoryAssociationRequest& WithS3(const S3DataRepositoryConfiguration& value) { SetS3(value); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithS3(S3DataRepositoryConfiguration&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3DataRepositoryConfiguration>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3DataRepositoryConfiguration>
+    CreateDataRepositoryAssociationRequest& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateDataRepositoryAssociationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateDataRepositoryAssociationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDataRepositoryAssociationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDataRepositoryAssociationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDataRepositoryAssociationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDataRepositoryAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDataRepositoryAssociationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDataRepositoryAssociationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -172,10 +164,10 @@ namespace Model
     Aws::String m_dataRepositoryPath;
     bool m_dataRepositoryPathHasBeenSet = false;
 
-    bool m_batchImportMetaDataOnCreate;
+    bool m_batchImportMetaDataOnCreate{false};
     bool m_batchImportMetaDataOnCreateHasBeenSet = false;
 
-    int m_importedFileChunkSize;
+    int m_importedFileChunkSize{0};
     bool m_importedFileChunkSizeHasBeenSet = false;
 
     S3DataRepositoryConfiguration m_s3;

@@ -12,11 +12,6 @@ using namespace Aws::NotificationsContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEmailContactRequest::DeleteEmailContactRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEmailContactRequest::SerializePayload() const
 {
   return {};

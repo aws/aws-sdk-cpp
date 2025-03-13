@@ -28,7 +28,7 @@ namespace Model
   class CreateKeyResult
   {
   public:
-    AWS_KMS_API CreateKeyResult();
+    AWS_KMS_API CreateKeyResult() = default;
     AWS_KMS_API CreateKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API CreateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Metadata associated with the KMS key.</p>
      */
-    inline const KeyMetadata& GetKeyMetadata() const{ return m_keyMetadata; }
-    inline void SetKeyMetadata(const KeyMetadata& value) { m_keyMetadata = value; }
-    inline void SetKeyMetadata(KeyMetadata&& value) { m_keyMetadata = std::move(value); }
-    inline CreateKeyResult& WithKeyMetadata(const KeyMetadata& value) { SetKeyMetadata(value); return *this;}
-    inline CreateKeyResult& WithKeyMetadata(KeyMetadata&& value) { SetKeyMetadata(std::move(value)); return *this;}
+    inline const KeyMetadata& GetKeyMetadata() const { return m_keyMetadata; }
+    template<typename KeyMetadataT = KeyMetadata>
+    void SetKeyMetadata(KeyMetadataT&& value) { m_keyMetadataHasBeenSet = true; m_keyMetadata = std::forward<KeyMetadataT>(value); }
+    template<typename KeyMetadataT = KeyMetadata>
+    CreateKeyResult& WithKeyMetadata(KeyMetadataT&& value) { SetKeyMetadata(std::forward<KeyMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     KeyMetadata m_keyMetadata;
+    bool m_keyMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

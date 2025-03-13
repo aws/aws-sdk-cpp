@@ -18,14 +18,7 @@ namespace signer
 namespace Model
 {
 
-S3SignedObject::S3SignedObject() : 
-    m_bucketNameHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 S3SignedObject::S3SignedObject(JsonView jsonValue)
-  : S3SignedObject()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3SignedObject& S3SignedObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

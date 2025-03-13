@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUserHierarchyStructureResult::DescribeUserHierarchyStructureResult()
-{
-}
-
 DescribeUserHierarchyStructureResult::DescribeUserHierarchyStructureResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeUserHierarchyStructureResult& DescribeUserHierarchyStructureResult::oper
   if(jsonValue.ValueExists("HierarchyStructure"))
   {
     m_hierarchyStructure = jsonValue.GetObject("HierarchyStructure");
-
+    m_hierarchyStructureHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

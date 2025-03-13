@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Sequence::Sequence() : 
-    m_uidHasBeenSet(false),
-    m_actorsHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_signalsHasBeenSet(false),
-    m_sequenceIndicatorsHasBeenSet(false)
-{
-}
-
 Sequence::Sequence(JsonView jsonValue)
-  : Sequence()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ Sequence& Sequence::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uid"))
   {
     m_uid = jsonValue.GetString("Uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actors"))
   {
     Aws::Utils::Array<JsonView> actorsJsonList = jsonValue.GetArray("Actors");
@@ -51,7 +39,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_actorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
@@ -61,7 +48,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signals"))
   {
     Aws::Utils::Array<JsonView> signalsJsonList = jsonValue.GetArray("Signals");
@@ -71,7 +57,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_signalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SequenceIndicators"))
   {
     Aws::Utils::Array<JsonView> sequenceIndicatorsJsonList = jsonValue.GetArray("SequenceIndicators");
@@ -81,7 +66,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_sequenceIndicatorsHasBeenSet = true;
   }
-
   return *this;
 }
 

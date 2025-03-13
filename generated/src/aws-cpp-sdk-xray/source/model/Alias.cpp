@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-Alias::Alias() : 
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Alias::Alias(JsonView jsonValue)
-  : Alias()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Alias& Alias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -49,14 +39,11 @@ Alias& Alias::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

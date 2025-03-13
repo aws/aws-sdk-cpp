@@ -18,25 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-FindingSummaryV2::FindingSummaryV2() : 
-    m_analyzedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
-    m_status(FindingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_findingType(FindingType::NOT_SET),
-    m_findingTypeHasBeenSet(false)
-{
-}
-
 FindingSummaryV2::FindingSummaryV2(JsonView jsonValue)
-  : FindingSummaryV2()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ FindingSummaryV2& FindingSummaryV2::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("analyzedAt"))
   {
     m_analyzedAt = jsonValue.GetString("analyzedAt");
-
     m_analyzedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceOwnerAccount"))
   {
     m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
-
     m_resourceOwnerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FindingStatusMapper::GetFindingStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingType"))
   {
     m_findingType = FindingTypeMapper::GetFindingTypeForName(jsonValue.GetString("findingType"));
-
     m_findingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

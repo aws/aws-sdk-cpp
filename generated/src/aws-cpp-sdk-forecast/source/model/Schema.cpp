@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-Schema::Schema() : 
-    m_attributesHasBeenSet(false)
-{
-}
-
 Schema::Schema(JsonView jsonValue)
-  : Schema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Schema& Schema::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

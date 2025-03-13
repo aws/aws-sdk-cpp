@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListKxVolumesRequest::ListKxVolumesRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_volumeType(KxVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListKxVolumesRequest::SerializePayload() const
 {
   return {};

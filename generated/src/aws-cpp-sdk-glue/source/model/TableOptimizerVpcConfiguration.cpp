@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TableOptimizerVpcConfiguration::TableOptimizerVpcConfiguration() : 
-    m_glueConnectionNameHasBeenSet(false)
-{
-}
-
 TableOptimizerVpcConfiguration::TableOptimizerVpcConfiguration(JsonView jsonValue)
-  : TableOptimizerVpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TableOptimizerVpcConfiguration& TableOptimizerVpcConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("glueConnectionName"))
   {
     m_glueConnectionName = jsonValue.GetString("glueConnectionName");
-
     m_glueConnectionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class BatchGetTokenBalanceInputItem
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceInputItem();
+    AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceInputItem() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceInputItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API BatchGetTokenBalanceInputItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,32 +42,32 @@ namespace Model
 
     ///@{
     
-    inline const TokenIdentifier& GetTokenIdentifier() const{ return m_tokenIdentifier; }
+    inline const TokenIdentifier& GetTokenIdentifier() const { return m_tokenIdentifier; }
     inline bool TokenIdentifierHasBeenSet() const { return m_tokenIdentifierHasBeenSet; }
-    inline void SetTokenIdentifier(const TokenIdentifier& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = value; }
-    inline void SetTokenIdentifier(TokenIdentifier&& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = std::move(value); }
-    inline BatchGetTokenBalanceInputItem& WithTokenIdentifier(const TokenIdentifier& value) { SetTokenIdentifier(value); return *this;}
-    inline BatchGetTokenBalanceInputItem& WithTokenIdentifier(TokenIdentifier&& value) { SetTokenIdentifier(std::move(value)); return *this;}
+    template<typename TokenIdentifierT = TokenIdentifier>
+    void SetTokenIdentifier(TokenIdentifierT&& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = std::forward<TokenIdentifierT>(value); }
+    template<typename TokenIdentifierT = TokenIdentifier>
+    BatchGetTokenBalanceInputItem& WithTokenIdentifier(TokenIdentifierT&& value) { SetTokenIdentifier(std::forward<TokenIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OwnerIdentifier& GetOwnerIdentifier() const{ return m_ownerIdentifier; }
+    inline const OwnerIdentifier& GetOwnerIdentifier() const { return m_ownerIdentifier; }
     inline bool OwnerIdentifierHasBeenSet() const { return m_ownerIdentifierHasBeenSet; }
-    inline void SetOwnerIdentifier(const OwnerIdentifier& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = value; }
-    inline void SetOwnerIdentifier(OwnerIdentifier&& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = std::move(value); }
-    inline BatchGetTokenBalanceInputItem& WithOwnerIdentifier(const OwnerIdentifier& value) { SetOwnerIdentifier(value); return *this;}
-    inline BatchGetTokenBalanceInputItem& WithOwnerIdentifier(OwnerIdentifier&& value) { SetOwnerIdentifier(std::move(value)); return *this;}
+    template<typename OwnerIdentifierT = OwnerIdentifier>
+    void SetOwnerIdentifier(OwnerIdentifierT&& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = std::forward<OwnerIdentifierT>(value); }
+    template<typename OwnerIdentifierT = OwnerIdentifier>
+    BatchGetTokenBalanceInputItem& WithOwnerIdentifier(OwnerIdentifierT&& value) { SetOwnerIdentifier(std::forward<OwnerIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BlockchainInstant& GetAtBlockchainInstant() const{ return m_atBlockchainInstant; }
+    inline const BlockchainInstant& GetAtBlockchainInstant() const { return m_atBlockchainInstant; }
     inline bool AtBlockchainInstantHasBeenSet() const { return m_atBlockchainInstantHasBeenSet; }
-    inline void SetAtBlockchainInstant(const BlockchainInstant& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = value; }
-    inline void SetAtBlockchainInstant(BlockchainInstant&& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = std::move(value); }
-    inline BatchGetTokenBalanceInputItem& WithAtBlockchainInstant(const BlockchainInstant& value) { SetAtBlockchainInstant(value); return *this;}
-    inline BatchGetTokenBalanceInputItem& WithAtBlockchainInstant(BlockchainInstant&& value) { SetAtBlockchainInstant(std::move(value)); return *this;}
+    template<typename AtBlockchainInstantT = BlockchainInstant>
+    void SetAtBlockchainInstant(AtBlockchainInstantT&& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = std::forward<AtBlockchainInstantT>(value); }
+    template<typename AtBlockchainInstantT = BlockchainInstant>
+    BatchGetTokenBalanceInputItem& WithAtBlockchainInstant(AtBlockchainInstantT&& value) { SetAtBlockchainInstant(std::forward<AtBlockchainInstantT>(value)); return *this;}
     ///@}
   private:
 

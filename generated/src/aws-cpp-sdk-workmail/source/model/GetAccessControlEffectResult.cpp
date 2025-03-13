@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessControlEffectResult::GetAccessControlEffectResult() : 
-    m_effect(AccessControlRuleEffect::NOT_SET)
-{
-}
-
 GetAccessControlEffectResult::GetAccessControlEffectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAccessControlEffectResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetAccessControlEffectResult& GetAccessControlEffectResult::operator =(const Aws
   if(jsonValue.ValueExists("Effect"))
   {
     m_effect = AccessControlRuleEffectMapper::GetAccessControlRuleEffectForName(jsonValue.GetString("Effect"));
-
+    m_effectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchedRules"))
   {
     Aws::Utils::Array<JsonView> matchedRulesJsonList = jsonValue.GetArray("MatchedRules");
@@ -44,14 +37,15 @@ GetAccessControlEffectResult& GetAccessControlEffectResult::operator =(const Aws
     {
       m_matchedRules.push_back(matchedRulesJsonList[matchedRulesIndex].AsString());
     }
+    m_matchedRulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

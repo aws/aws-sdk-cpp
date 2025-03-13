@@ -18,27 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-Trust::Trust() : 
-    m_directoryIdHasBeenSet(false),
-    m_trustIdHasBeenSet(false),
-    m_remoteDomainNameHasBeenSet(false),
-    m_trustType(TrustType::NOT_SET),
-    m_trustTypeHasBeenSet(false),
-    m_trustDirection(TrustDirection::NOT_SET),
-    m_trustDirectionHasBeenSet(false),
-    m_trustState(TrustState::NOT_SET),
-    m_trustStateHasBeenSet(false),
-    m_createdDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_stateLastUpdatedDateTimeHasBeenSet(false),
-    m_trustStateReasonHasBeenSet(false),
-    m_selectiveAuth(SelectiveAuth::NOT_SET),
-    m_selectiveAuthHasBeenSet(false)
-{
-}
-
 Trust::Trust(JsonView jsonValue)
-  : Trust()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ Trust& Trust::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustId"))
   {
     m_trustId = jsonValue.GetString("TrustId");
-
     m_trustIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteDomainName"))
   {
     m_remoteDomainName = jsonValue.GetString("RemoteDomainName");
-
     m_remoteDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustType"))
   {
     m_trustType = TrustTypeMapper::GetTrustTypeForName(jsonValue.GetString("TrustType"));
-
     m_trustTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustDirection"))
   {
     m_trustDirection = TrustDirectionMapper::GetTrustDirectionForName(jsonValue.GetString("TrustDirection"));
-
     m_trustDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustState"))
   {
     m_trustState = TrustStateMapper::GetTrustStateForName(jsonValue.GetString("TrustState"));
-
     m_trustStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDateTime"))
   {
     m_createdDateTime = jsonValue.GetDouble("CreatedDateTime");
-
     m_createdDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("LastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateLastUpdatedDateTime"))
   {
     m_stateLastUpdatedDateTime = jsonValue.GetDouble("StateLastUpdatedDateTime");
-
     m_stateLastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustStateReason"))
   {
     m_trustStateReason = jsonValue.GetString("TrustStateReason");
-
     m_trustStateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectiveAuth"))
   {
     m_selectiveAuth = SelectiveAuthMapper::GetSelectiveAuthForName(jsonValue.GetString("SelectiveAuth"));
-
     m_selectiveAuthHasBeenSet = true;
   }
-
   return *this;
 }
 

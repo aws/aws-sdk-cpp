@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteUserPermissionsBoundaryRequest::DeleteUserPermissionsBoundaryRequest() : 
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserPermissionsBoundaryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,18 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-EnvironmentActionSummary::EnvironmentActionSummary() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 EnvironmentActionSummary::EnvironmentActionSummary(JsonView jsonValue)
-  : EnvironmentActionSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EnvironmentActionSummary& EnvironmentActionSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetObject("parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class JobScheduleFrequency
   {
   public:
-    AWS_MACIE2_API JobScheduleFrequency();
+    AWS_MACIE2_API JobScheduleFrequency() = default;
     AWS_MACIE2_API JobScheduleFrequency(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API JobScheduleFrequency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>Specifies a daily recurrence pattern for running the job.</p>
      */
-    inline const DailySchedule& GetDailySchedule() const{ return m_dailySchedule; }
+    inline const DailySchedule& GetDailySchedule() const { return m_dailySchedule; }
     inline bool DailyScheduleHasBeenSet() const { return m_dailyScheduleHasBeenSet; }
-    inline void SetDailySchedule(const DailySchedule& value) { m_dailyScheduleHasBeenSet = true; m_dailySchedule = value; }
-    inline void SetDailySchedule(DailySchedule&& value) { m_dailyScheduleHasBeenSet = true; m_dailySchedule = std::move(value); }
-    inline JobScheduleFrequency& WithDailySchedule(const DailySchedule& value) { SetDailySchedule(value); return *this;}
-    inline JobScheduleFrequency& WithDailySchedule(DailySchedule&& value) { SetDailySchedule(std::move(value)); return *this;}
+    template<typename DailyScheduleT = DailySchedule>
+    void SetDailySchedule(DailyScheduleT&& value) { m_dailyScheduleHasBeenSet = true; m_dailySchedule = std::forward<DailyScheduleT>(value); }
+    template<typename DailyScheduleT = DailySchedule>
+    JobScheduleFrequency& WithDailySchedule(DailyScheduleT&& value) { SetDailySchedule(std::forward<DailyScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a monthly recurrence pattern for running the job.</p>
      */
-    inline const MonthlySchedule& GetMonthlySchedule() const{ return m_monthlySchedule; }
+    inline const MonthlySchedule& GetMonthlySchedule() const { return m_monthlySchedule; }
     inline bool MonthlyScheduleHasBeenSet() const { return m_monthlyScheduleHasBeenSet; }
-    inline void SetMonthlySchedule(const MonthlySchedule& value) { m_monthlyScheduleHasBeenSet = true; m_monthlySchedule = value; }
-    inline void SetMonthlySchedule(MonthlySchedule&& value) { m_monthlyScheduleHasBeenSet = true; m_monthlySchedule = std::move(value); }
-    inline JobScheduleFrequency& WithMonthlySchedule(const MonthlySchedule& value) { SetMonthlySchedule(value); return *this;}
-    inline JobScheduleFrequency& WithMonthlySchedule(MonthlySchedule&& value) { SetMonthlySchedule(std::move(value)); return *this;}
+    template<typename MonthlyScheduleT = MonthlySchedule>
+    void SetMonthlySchedule(MonthlyScheduleT&& value) { m_monthlyScheduleHasBeenSet = true; m_monthlySchedule = std::forward<MonthlyScheduleT>(value); }
+    template<typename MonthlyScheduleT = MonthlySchedule>
+    JobScheduleFrequency& WithMonthlySchedule(MonthlyScheduleT&& value) { SetMonthlySchedule(std::forward<MonthlyScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a weekly recurrence pattern for running the job.</p>
      */
-    inline const WeeklySchedule& GetWeeklySchedule() const{ return m_weeklySchedule; }
+    inline const WeeklySchedule& GetWeeklySchedule() const { return m_weeklySchedule; }
     inline bool WeeklyScheduleHasBeenSet() const { return m_weeklyScheduleHasBeenSet; }
-    inline void SetWeeklySchedule(const WeeklySchedule& value) { m_weeklyScheduleHasBeenSet = true; m_weeklySchedule = value; }
-    inline void SetWeeklySchedule(WeeklySchedule&& value) { m_weeklyScheduleHasBeenSet = true; m_weeklySchedule = std::move(value); }
-    inline JobScheduleFrequency& WithWeeklySchedule(const WeeklySchedule& value) { SetWeeklySchedule(value); return *this;}
-    inline JobScheduleFrequency& WithWeeklySchedule(WeeklySchedule&& value) { SetWeeklySchedule(std::move(value)); return *this;}
+    template<typename WeeklyScheduleT = WeeklySchedule>
+    void SetWeeklySchedule(WeeklyScheduleT&& value) { m_weeklyScheduleHasBeenSet = true; m_weeklySchedule = std::forward<WeeklyScheduleT>(value); }
+    template<typename WeeklyScheduleT = WeeklySchedule>
+    JobScheduleFrequency& WithWeeklySchedule(WeeklyScheduleT&& value) { SetWeeklySchedule(std::forward<WeeklyScheduleT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRecoveryGroupRequest::DeleteRecoveryGroupRequest() : 
-    m_recoveryGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRecoveryGroupRequest::SerializePayload() const
 {
   return {};

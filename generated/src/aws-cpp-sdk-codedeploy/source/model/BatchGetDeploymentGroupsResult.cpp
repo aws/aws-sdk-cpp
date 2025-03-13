@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetDeploymentGroupsResult::BatchGetDeploymentGroupsResult()
-{
-}
-
 BatchGetDeploymentGroupsResult::BatchGetDeploymentGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ BatchGetDeploymentGroupsResult& BatchGetDeploymentGroupsResult::operator =(const
     {
       m_deploymentGroupsInfo.push_back(deploymentGroupsInfoJsonList[deploymentGroupsInfoIndex].AsObject());
     }
+    m_deploymentGroupsInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

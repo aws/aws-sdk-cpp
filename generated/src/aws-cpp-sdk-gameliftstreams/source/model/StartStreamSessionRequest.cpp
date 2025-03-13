@@ -12,26 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartStreamSessionRequest::StartStreamSessionRequest() : 
-    m_additionalEnvironmentVariablesHasBeenSet(false),
-    m_additionalLaunchArgsHasBeenSet(false),
-    m_applicationIdentifierHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_connectionTimeoutSeconds(0),
-    m_connectionTimeoutSecondsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_locationsHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_sessionLengthSeconds(0),
-    m_sessionLengthSecondsHasBeenSet(false),
-    m_signalRequestHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String StartStreamSessionRequest::SerializePayload() const
 {
   JsonValue payload;

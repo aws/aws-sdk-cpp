@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-DeleteKeys::DeleteKeys() : 
-    m_withKeysHasBeenSet(false)
-{
-}
-
 DeleteKeys::DeleteKeys(JsonView jsonValue)
-  : DeleteKeys()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DeleteKeys& DeleteKeys::operator =(JsonView jsonValue)
     }
     m_withKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

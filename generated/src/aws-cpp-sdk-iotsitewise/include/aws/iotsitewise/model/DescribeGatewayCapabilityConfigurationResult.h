@@ -28,7 +28,7 @@ namespace Model
   class DescribeGatewayCapabilityConfigurationResult
   {
   public:
-    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult();
+    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult() = default;
     AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The ID of the gateway that defines the capability configuration.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayId.assign(value); }
-    inline DescribeGatewayCapabilityConfigurationResult& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    DescribeGatewayCapabilityConfigurationResult& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace of the gateway capability.</p>
      */
-    inline const Aws::String& GetCapabilityNamespace() const{ return m_capabilityNamespace; }
-    inline void SetCapabilityNamespace(const Aws::String& value) { m_capabilityNamespace = value; }
-    inline void SetCapabilityNamespace(Aws::String&& value) { m_capabilityNamespace = std::move(value); }
-    inline void SetCapabilityNamespace(const char* value) { m_capabilityNamespace.assign(value); }
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilityNamespace(const Aws::String& value) { SetCapabilityNamespace(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilityNamespace(Aws::String&& value) { SetCapabilityNamespace(std::move(value)); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilityNamespace(const char* value) { SetCapabilityNamespace(value); return *this;}
+    inline const Aws::String& GetCapabilityNamespace() const { return m_capabilityNamespace; }
+    template<typename CapabilityNamespaceT = Aws::String>
+    void SetCapabilityNamespace(CapabilityNamespaceT&& value) { m_capabilityNamespaceHasBeenSet = true; m_capabilityNamespace = std::forward<CapabilityNamespaceT>(value); }
+    template<typename CapabilityNamespaceT = Aws::String>
+    DescribeGatewayCapabilityConfigurationResult& WithCapabilityNamespace(CapabilityNamespaceT&& value) { SetCapabilityNamespace(std::forward<CapabilityNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +62,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
      * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetCapabilityConfiguration() const{ return m_capabilityConfiguration; }
-    inline void SetCapabilityConfiguration(const Aws::String& value) { m_capabilityConfiguration = value; }
-    inline void SetCapabilityConfiguration(Aws::String&& value) { m_capabilityConfiguration = std::move(value); }
-    inline void SetCapabilityConfiguration(const char* value) { m_capabilityConfiguration.assign(value); }
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilityConfiguration(const Aws::String& value) { SetCapabilityConfiguration(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilityConfiguration(Aws::String&& value) { SetCapabilityConfiguration(std::move(value)); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilityConfiguration(const char* value) { SetCapabilityConfiguration(value); return *this;}
+    inline const Aws::String& GetCapabilityConfiguration() const { return m_capabilityConfiguration; }
+    template<typename CapabilityConfigurationT = Aws::String>
+    void SetCapabilityConfiguration(CapabilityConfigurationT&& value) { m_capabilityConfigurationHasBeenSet = true; m_capabilityConfiguration = std::forward<CapabilityConfigurationT>(value); }
+    template<typename CapabilityConfigurationT = Aws::String>
+    DescribeGatewayCapabilityConfigurationResult& WithCapabilityConfiguration(CapabilityConfigurationT&& value) { SetCapabilityConfiguration(std::forward<CapabilityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,34 +83,35 @@ namespace Model
      * <code>UNKNOWN</code> – The synchronization status is currently unknown due to an
      * undetermined or temporary error.</p> </li> </ul>
      */
-    inline const CapabilitySyncStatus& GetCapabilitySyncStatus() const{ return m_capabilitySyncStatus; }
-    inline void SetCapabilitySyncStatus(const CapabilitySyncStatus& value) { m_capabilitySyncStatus = value; }
-    inline void SetCapabilitySyncStatus(CapabilitySyncStatus&& value) { m_capabilitySyncStatus = std::move(value); }
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(const CapabilitySyncStatus& value) { SetCapabilitySyncStatus(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(CapabilitySyncStatus&& value) { SetCapabilitySyncStatus(std::move(value)); return *this;}
+    inline CapabilitySyncStatus GetCapabilitySyncStatus() const { return m_capabilitySyncStatus; }
+    inline void SetCapabilitySyncStatus(CapabilitySyncStatus value) { m_capabilitySyncStatusHasBeenSet = true; m_capabilitySyncStatus = value; }
+    inline DescribeGatewayCapabilityConfigurationResult& WithCapabilitySyncStatus(CapabilitySyncStatus value) { SetCapabilitySyncStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGatewayCapabilityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGatewayCapabilityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGatewayCapabilityConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayId;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_capabilityNamespace;
+    bool m_capabilityNamespaceHasBeenSet = false;
 
     Aws::String m_capabilityConfiguration;
+    bool m_capabilityConfigurationHasBeenSet = false;
 
-    CapabilitySyncStatus m_capabilitySyncStatus;
+    CapabilitySyncStatus m_capabilitySyncStatus{CapabilitySyncStatus::NOT_SET};
+    bool m_capabilitySyncStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

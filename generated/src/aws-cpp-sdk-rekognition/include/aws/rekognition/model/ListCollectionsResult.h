@@ -28,7 +28,7 @@ namespace Model
   class ListCollectionsResult
   {
   public:
-    AWS_REKOGNITION_API ListCollectionsResult();
+    AWS_REKOGNITION_API ListCollectionsResult() = default;
     AWS_REKOGNITION_API ListCollectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API ListCollectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>An array of collection IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCollectionIds() const{ return m_collectionIds; }
-    inline void SetCollectionIds(const Aws::Vector<Aws::String>& value) { m_collectionIds = value; }
-    inline void SetCollectionIds(Aws::Vector<Aws::String>&& value) { m_collectionIds = std::move(value); }
-    inline ListCollectionsResult& WithCollectionIds(const Aws::Vector<Aws::String>& value) { SetCollectionIds(value); return *this;}
-    inline ListCollectionsResult& WithCollectionIds(Aws::Vector<Aws::String>&& value) { SetCollectionIds(std::move(value)); return *this;}
-    inline ListCollectionsResult& AddCollectionIds(const Aws::String& value) { m_collectionIds.push_back(value); return *this; }
-    inline ListCollectionsResult& AddCollectionIds(Aws::String&& value) { m_collectionIds.push_back(std::move(value)); return *this; }
-    inline ListCollectionsResult& AddCollectionIds(const char* value) { m_collectionIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCollectionIds() const { return m_collectionIds; }
+    template<typename CollectionIdsT = Aws::Vector<Aws::String>>
+    void SetCollectionIds(CollectionIdsT&& value) { m_collectionIdsHasBeenSet = true; m_collectionIds = std::forward<CollectionIdsT>(value); }
+    template<typename CollectionIdsT = Aws::Vector<Aws::String>>
+    ListCollectionsResult& WithCollectionIds(CollectionIdsT&& value) { SetCollectionIds(std::forward<CollectionIdsT>(value)); return *this;}
+    template<typename CollectionIdsT = Aws::String>
+    ListCollectionsResult& AddCollectionIds(CollectionIdsT&& value) { m_collectionIdsHasBeenSet = true; m_collectionIds.emplace_back(std::forward<CollectionIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,13 +52,11 @@ namespace Model
      * that you can use in the subsequent request to fetch the next set of collection
      * IDs.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCollectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCollectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCollectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCollectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,35 +66,36 @@ namespace Model
      * <code>FaceModelVersions[2]</code> is the version number for the face detection
      * model used by the collection in <code>CollectionId[2]</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFaceModelVersions() const{ return m_faceModelVersions; }
-    inline void SetFaceModelVersions(const Aws::Vector<Aws::String>& value) { m_faceModelVersions = value; }
-    inline void SetFaceModelVersions(Aws::Vector<Aws::String>&& value) { m_faceModelVersions = std::move(value); }
-    inline ListCollectionsResult& WithFaceModelVersions(const Aws::Vector<Aws::String>& value) { SetFaceModelVersions(value); return *this;}
-    inline ListCollectionsResult& WithFaceModelVersions(Aws::Vector<Aws::String>&& value) { SetFaceModelVersions(std::move(value)); return *this;}
-    inline ListCollectionsResult& AddFaceModelVersions(const Aws::String& value) { m_faceModelVersions.push_back(value); return *this; }
-    inline ListCollectionsResult& AddFaceModelVersions(Aws::String&& value) { m_faceModelVersions.push_back(std::move(value)); return *this; }
-    inline ListCollectionsResult& AddFaceModelVersions(const char* value) { m_faceModelVersions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetFaceModelVersions() const { return m_faceModelVersions; }
+    template<typename FaceModelVersionsT = Aws::Vector<Aws::String>>
+    void SetFaceModelVersions(FaceModelVersionsT&& value) { m_faceModelVersionsHasBeenSet = true; m_faceModelVersions = std::forward<FaceModelVersionsT>(value); }
+    template<typename FaceModelVersionsT = Aws::Vector<Aws::String>>
+    ListCollectionsResult& WithFaceModelVersions(FaceModelVersionsT&& value) { SetFaceModelVersions(std::forward<FaceModelVersionsT>(value)); return *this;}
+    template<typename FaceModelVersionsT = Aws::String>
+    ListCollectionsResult& AddFaceModelVersions(FaceModelVersionsT&& value) { m_faceModelVersionsHasBeenSet = true; m_faceModelVersions.emplace_back(std::forward<FaceModelVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCollectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCollectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCollectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCollectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_collectionIds;
+    bool m_collectionIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_faceModelVersions;
+    bool m_faceModelVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

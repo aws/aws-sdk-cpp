@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RegionalSummary::RegionalSummary() : 
-    m_regionNameHasBeenSet(false),
-    m_numberOfMatchedAccounts(0),
-    m_numberOfMatchedAccountsHasBeenSet(false),
-    m_numberOfUnmatchedAccounts(0),
-    m_numberOfUnmatchedAccountsHasBeenSet(false)
-{
-}
-
 RegionalSummary::RegionalSummary(const XmlNode& xmlNode)
-  : RegionalSummary()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ RegionalSummary& RegionalSummary::operator =(const XmlNode& xmlNode)
     {
       m_regionName = Aws::Utils::Xml::DecodeEscapedXmlText(regionNameNode.GetText());
       m_regionNameHasBeenSet = true;
+       m_regionNameHasBeenSet = true;
     }
     XmlNode numberOfMatchedAccountsNode = resultNode.FirstChild("numberOfMatchedAccounts");
     if(!numberOfMatchedAccountsNode.IsNull())
     {
       m_numberOfMatchedAccounts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfMatchedAccountsNode.GetText()).c_str()).c_str());
       m_numberOfMatchedAccountsHasBeenSet = true;
+       m_numberOfMatchedAccountsHasBeenSet = true;
     }
     XmlNode numberOfUnmatchedAccountsNode = resultNode.FirstChild("numberOfUnmatchedAccounts");
     if(!numberOfUnmatchedAccountsNode.IsNull())
     {
       m_numberOfUnmatchedAccounts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfUnmatchedAccountsNode.GetText()).c_str()).c_str());
       m_numberOfUnmatchedAccountsHasBeenSet = true;
+       m_numberOfUnmatchedAccountsHasBeenSet = true;
     }
   }
 

@@ -28,7 +28,7 @@ namespace Model
   class ProvisionIpamByoasnResponse
   {
   public:
-    AWS_EC2_API ProvisionIpamByoasnResponse();
+    AWS_EC2_API ProvisionIpamByoasnResponse() = default;
     AWS_EC2_API ProvisionIpamByoasnResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ProvisionIpamByoasnResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>An ASN and BYOIP CIDR association.</p>
      */
-    inline const Byoasn& GetByoasn() const{ return m_byoasn; }
-    inline void SetByoasn(const Byoasn& value) { m_byoasn = value; }
-    inline void SetByoasn(Byoasn&& value) { m_byoasn = std::move(value); }
-    inline ProvisionIpamByoasnResponse& WithByoasn(const Byoasn& value) { SetByoasn(value); return *this;}
-    inline ProvisionIpamByoasnResponse& WithByoasn(Byoasn&& value) { SetByoasn(std::move(value)); return *this;}
+    inline const Byoasn& GetByoasn() const { return m_byoasn; }
+    template<typename ByoasnT = Byoasn>
+    void SetByoasn(ByoasnT&& value) { m_byoasnHasBeenSet = true; m_byoasn = std::forward<ByoasnT>(value); }
+    template<typename ByoasnT = Byoasn>
+    ProvisionIpamByoasnResponse& WithByoasn(ByoasnT&& value) { SetByoasn(std::forward<ByoasnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ProvisionIpamByoasnResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ProvisionIpamByoasnResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ProvisionIpamByoasnResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Byoasn m_byoasn;
+    bool m_byoasnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

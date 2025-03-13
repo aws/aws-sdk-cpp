@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetResourceAccessForBucketRequest::SetResourceAccessForBucketRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_access(ResourceBucketAccess::NOT_SET),
-    m_accessHasBeenSet(false)
-{
-}
-
 Aws::String SetResourceAccessForBucketRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-FunctionDefinitionVersion::FunctionDefinitionVersion() : 
-    m_defaultConfigHasBeenSet(false),
-    m_functionsHasBeenSet(false)
-{
-}
-
 FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue)
-  : FunctionDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DefaultConfig"))
   {
     m_defaultConfig = jsonValue.GetObject("DefaultConfig");
-
     m_defaultConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Functions"))
   {
     Aws::Utils::Array<JsonView> functionsJsonList = jsonValue.GetArray("Functions");
@@ -48,7 +39,6 @@ FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonVa
     }
     m_functionsHasBeenSet = true;
   }
-
   return *this;
 }
 

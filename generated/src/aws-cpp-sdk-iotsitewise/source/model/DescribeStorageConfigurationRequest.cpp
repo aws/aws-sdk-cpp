@@ -12,10 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStorageConfigurationRequest::DescribeStorageConfigurationRequest()
-{
-}
-
 Aws::String DescribeStorageConfigurationRequest::SerializePayload() const
 {
   return {};

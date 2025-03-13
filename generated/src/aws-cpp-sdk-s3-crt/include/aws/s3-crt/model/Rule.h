@@ -42,7 +42,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_S3CRT_API Rule();
+    AWS_S3CRT_API Rule() = default;
     AWS_S3CRT_API Rule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Rule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,12 +53,12 @@ namespace Model
     /**
      * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
-    inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
+    inline const LifecycleExpiration& GetExpiration() const { return m_expiration; }
     inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
-    inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
-    inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
-    inline Rule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
-    inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
+    template<typename ExpirationT = LifecycleExpiration>
+    void SetExpiration(ExpirationT&& value) { m_expirationHasBeenSet = true; m_expiration = std::forward<ExpirationT>(value); }
+    template<typename ExpirationT = LifecycleExpiration>
+    Rule& WithExpiration(ExpirationT&& value) { SetExpiration(std::forward<ExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +66,12 @@ namespace Model
      * <p>Unique identifier for the rule. The value can't be longer than 255
      * characters.</p>
      */
-    inline const Aws::String& GetID() const{ return m_iD; }
+    inline const Aws::String& GetID() const { return m_iD; }
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
-    inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
-    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
-    inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
-    inline Rule& WithID(const Aws::String& value) { SetID(value); return *this;}
-    inline Rule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
-    inline Rule& WithID(const char* value) { SetID(value); return *this;}
+    template<typename IDT = Aws::String>
+    void SetID(IDT&& value) { m_iDHasBeenSet = true; m_iD = std::forward<IDT>(value); }
+    template<typename IDT = Aws::String>
+    Rule& WithID(IDT&& value) { SetID(std::forward<IDT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +83,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline Rule& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline Rule& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline Rule& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    Rule& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +96,10 @@ namespace Model
      * <p>If <code>Enabled</code>, the rule is currently being applied. If
      * <code>Disabled</code>, the rule is not currently being applied.</p>
      */
-    inline const ExpirationStatus& GetStatus() const{ return m_status; }
+    inline ExpirationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExpirationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Rule& WithStatus(const ExpirationStatus& value) { SetStatus(value); return *this;}
-    inline Rule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExpirationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Rule& WithStatus(ExpirationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -115,42 +109,42 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning
      * Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
-    inline const Transition& GetTransition() const{ return m_transition; }
+    inline const Transition& GetTransition() const { return m_transition; }
     inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
-    inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
-    inline void SetTransition(Transition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
-    inline Rule& WithTransition(const Transition& value) { SetTransition(value); return *this;}
-    inline Rule& WithTransition(Transition&& value) { SetTransition(std::move(value)); return *this;}
+    template<typename TransitionT = Transition>
+    void SetTransition(TransitionT&& value) { m_transitionHasBeenSet = true; m_transition = std::forward<TransitionT>(value); }
+    template<typename TransitionT = Transition>
+    Rule& WithTransition(TransitionT&& value) { SetTransition(std::forward<TransitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const{ return m_noncurrentVersionTransition; }
+    inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const { return m_noncurrentVersionTransition; }
     inline bool NoncurrentVersionTransitionHasBeenSet() const { return m_noncurrentVersionTransitionHasBeenSet; }
-    inline void SetNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = value; }
-    inline void SetNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = std::move(value); }
-    inline Rule& WithNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { SetNoncurrentVersionTransition(value); return *this;}
-    inline Rule& WithNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { SetNoncurrentVersionTransition(std::move(value)); return *this;}
+    template<typename NoncurrentVersionTransitionT = NoncurrentVersionTransition>
+    void SetNoncurrentVersionTransition(NoncurrentVersionTransitionT&& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = std::forward<NoncurrentVersionTransitionT>(value); }
+    template<typename NoncurrentVersionTransitionT = NoncurrentVersionTransition>
+    Rule& WithNoncurrentVersionTransition(NoncurrentVersionTransitionT&& value) { SetNoncurrentVersionTransition(std::forward<NoncurrentVersionTransitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
+    inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const { return m_noncurrentVersionExpiration; }
     inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
-    inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
-    inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::move(value); }
-    inline Rule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
-    inline Rule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
+    template<typename NoncurrentVersionExpirationT = NoncurrentVersionExpiration>
+    void SetNoncurrentVersionExpiration(NoncurrentVersionExpirationT&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::forward<NoncurrentVersionExpirationT>(value); }
+    template<typename NoncurrentVersionExpirationT = NoncurrentVersionExpiration>
+    Rule& WithNoncurrentVersionExpiration(NoncurrentVersionExpirationT&& value) { SetNoncurrentVersionExpiration(std::forward<NoncurrentVersionExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
+    inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const { return m_abortIncompleteMultipartUpload; }
     inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
-    inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
-    inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::move(value); }
-    inline Rule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
-    inline Rule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
+    template<typename AbortIncompleteMultipartUploadT = AbortIncompleteMultipartUpload>
+    void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUploadT&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::forward<AbortIncompleteMultipartUploadT>(value); }
+    template<typename AbortIncompleteMultipartUploadT = AbortIncompleteMultipartUpload>
+    Rule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUploadT&& value) { SetAbortIncompleteMultipartUpload(std::forward<AbortIncompleteMultipartUploadT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,7 +157,7 @@ namespace Model
     Aws::String m_prefix;
     bool m_prefixHasBeenSet = false;
 
-    ExpirationStatus m_status;
+    ExpirationStatus m_status{ExpirationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Transition m_transition;

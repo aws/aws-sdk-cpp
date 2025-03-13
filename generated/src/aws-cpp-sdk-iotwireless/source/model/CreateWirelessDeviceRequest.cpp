@@ -12,22 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWirelessDeviceRequest::CreateWirelessDeviceRequest() : 
-    m_type(WirelessDeviceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_loRaWANHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_positioning(PositioningConfigStatus::NOT_SET),
-    m_positioningHasBeenSet(false),
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 Aws::String CreateWirelessDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

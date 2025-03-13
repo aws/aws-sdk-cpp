@@ -20,21 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-WarmPoolConfiguration::WarmPoolConfiguration() : 
-    m_maxGroupPreparedCapacity(0),
-    m_maxGroupPreparedCapacityHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_poolState(WarmPoolState::NOT_SET),
-    m_poolStateHasBeenSet(false),
-    m_status(WarmPoolStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_instanceReusePolicyHasBeenSet(false)
-{
-}
-
 WarmPoolConfiguration::WarmPoolConfiguration(const XmlNode& xmlNode)
-  : WarmPoolConfiguration()
 {
   *this = xmlNode;
 }
@@ -50,30 +36,35 @@ WarmPoolConfiguration& WarmPoolConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_maxGroupPreparedCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxGroupPreparedCapacityNode.GetText()).c_str()).c_str());
       m_maxGroupPreparedCapacityHasBeenSet = true;
+       m_maxGroupPreparedCapacityHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
     if(!minSizeNode.IsNull())
     {
       m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minSizeNode.GetText()).c_str()).c_str());
       m_minSizeHasBeenSet = true;
+       m_minSizeHasBeenSet = true;
     }
     XmlNode poolStateNode = resultNode.FirstChild("PoolState");
     if(!poolStateNode.IsNull())
     {
-      m_poolState = WarmPoolStateMapper::GetWarmPoolStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(poolStateNode.GetText()).c_str()).c_str());
+      m_poolState = WarmPoolStateMapper::GetWarmPoolStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(poolStateNode.GetText()).c_str()));
       m_poolStateHasBeenSet = true;
+       m_poolStateHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = WarmPoolStatusMapper::GetWarmPoolStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = WarmPoolStatusMapper::GetWarmPoolStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode instanceReusePolicyNode = resultNode.FirstChild("InstanceReusePolicy");
     if(!instanceReusePolicyNode.IsNull())
     {
       m_instanceReusePolicy = instanceReusePolicyNode;
       m_instanceReusePolicyHasBeenSet = true;
+       m_instanceReusePolicyHasBeenSet = true;
     }
   }
 

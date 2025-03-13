@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFlywheelIterationResult::DescribeFlywheelIterationResult()
-{
-}
-
 DescribeFlywheelIterationResult::DescribeFlywheelIterationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeFlywheelIterationResult& DescribeFlywheelIterationResult::operator =(con
   if(jsonValue.ValueExists("FlywheelIterationProperties"))
   {
     m_flywheelIterationProperties = jsonValue.GetObject("FlywheelIterationProperties");
-
+    m_flywheelIterationPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -24,7 +24,7 @@ namespace Model
   class CreatePricingPlanRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API CreatePricingPlanRequest();
+    AWS_BILLINGCONDUCTOR_API CreatePricingPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p> The token that is needed to support idempotency. Idempotency isn't currently
      * supported, but will be implemented in a future update. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreatePricingPlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreatePricingPlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreatePricingPlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreatePricingPlanRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The name of the pricing plan. The names must be unique to each pricing plan.
      * </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreatePricingPlanRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreatePricingPlanRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreatePricingPlanRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePricingPlanRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the pricing plan. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreatePricingPlanRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreatePricingPlanRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreatePricingPlanRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreatePricingPlanRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,15 +80,14 @@ namespace Model
      * <p> A list of Amazon Resource Names (ARNs) that define the pricing plan
      * parameters. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetPricingRuleArns() const{ return m_pricingRuleArns; }
+    inline const Aws::Vector<Aws::String>& GetPricingRuleArns() const { return m_pricingRuleArns; }
     inline bool PricingRuleArnsHasBeenSet() const { return m_pricingRuleArnsHasBeenSet; }
-    inline void SetPricingRuleArns(const Aws::Vector<Aws::String>& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns = value; }
-    inline void SetPricingRuleArns(Aws::Vector<Aws::String>&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns = std::move(value); }
-    inline CreatePricingPlanRequest& WithPricingRuleArns(const Aws::Vector<Aws::String>& value) { SetPricingRuleArns(value); return *this;}
-    inline CreatePricingPlanRequest& WithPricingRuleArns(Aws::Vector<Aws::String>&& value) { SetPricingRuleArns(std::move(value)); return *this;}
-    inline CreatePricingPlanRequest& AddPricingRuleArns(const Aws::String& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.push_back(value); return *this; }
-    inline CreatePricingPlanRequest& AddPricingRuleArns(Aws::String&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.push_back(std::move(value)); return *this; }
-    inline CreatePricingPlanRequest& AddPricingRuleArns(const char* value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.push_back(value); return *this; }
+    template<typename PricingRuleArnsT = Aws::Vector<Aws::String>>
+    void SetPricingRuleArns(PricingRuleArnsT&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns = std::forward<PricingRuleArnsT>(value); }
+    template<typename PricingRuleArnsT = Aws::Vector<Aws::String>>
+    CreatePricingPlanRequest& WithPricingRuleArns(PricingRuleArnsT&& value) { SetPricingRuleArns(std::forward<PricingRuleArnsT>(value)); return *this;}
+    template<typename PricingRuleArnsT = Aws::String>
+    CreatePricingPlanRequest& AddPricingRuleArns(PricingRuleArnsT&& value) { m_pricingRuleArnsHasBeenSet = true; m_pricingRuleArns.emplace_back(std::forward<PricingRuleArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -102,19 +95,16 @@ namespace Model
      * <p> A map that contains tag keys and tag values that are attached to a pricing
      * plan. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePricingPlanRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreatePricingPlanRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePricingPlanRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreatePricingPlanRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePricingPlanRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePricingPlanRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePricingPlanRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePricingPlanRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePricingPlanRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreatePricingPlanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreatePricingPlanRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -19,38 +19,18 @@ namespace TimestreamQuery
 namespace Model
 {
 
-Datum::Datum() : 
-    m_scalarValueHasBeenSet(false),
-    m_timeSeriesValueHasBeenSet(false),
-    m_arrayValueHasBeenSet(false),
-    m_rowValueHasBeenSet(false),
-    m_nullValue(false),
-    m_nullValueHasBeenSet(false)
-{
-}
-
 Datum::Datum(JsonView jsonValue)
-  : Datum()
 {
   *this = jsonValue;
 }
-
-const Row& Datum::GetRowValue() const{ return *m_rowValue; }
-bool Datum::RowValueHasBeenSet() const { return m_rowValueHasBeenSet; }
-void Datum::SetRowValue(const Row& value) { m_rowValueHasBeenSet = true; m_rowValue = Aws::MakeShared<Row>("Datum", value); }
-void Datum::SetRowValue(Row&& value) { m_rowValueHasBeenSet = true; m_rowValue = Aws::MakeShared<Row>("Datum", std::move(value)); }
-Datum& Datum::WithRowValue(const Row& value) { SetRowValue(value); return *this;}
-Datum& Datum::WithRowValue(Row&& value) { SetRowValue(std::move(value)); return *this;}
 
 Datum& Datum::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ScalarValue"))
   {
     m_scalarValue = jsonValue.GetString("ScalarValue");
-
     m_scalarValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSeriesValue"))
   {
     Aws::Utils::Array<JsonView> timeSeriesValueJsonList = jsonValue.GetArray("TimeSeriesValue");
@@ -60,7 +40,6 @@ Datum& Datum::operator =(JsonView jsonValue)
     }
     m_timeSeriesValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArrayValue"))
   {
     Aws::Utils::Array<JsonView> arrayValueJsonList = jsonValue.GetArray("ArrayValue");
@@ -70,21 +49,16 @@ Datum& Datum::operator =(JsonView jsonValue)
     }
     m_arrayValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowValue"))
   {
     m_rowValue = Aws::MakeShared<Row>("Datum", jsonValue.GetObject("RowValue"));
-
     m_rowValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullValue"))
   {
     m_nullValue = jsonValue.GetBool("NullValue");
-
     m_nullValueHasBeenSet = true;
   }
-
   return *this;
 }
 

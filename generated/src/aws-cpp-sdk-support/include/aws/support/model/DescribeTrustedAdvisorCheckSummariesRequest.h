@@ -22,7 +22,7 @@ namespace Model
   class DescribeTrustedAdvisorCheckSummariesRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesRequest();
+    AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>The IDs of the Trusted Advisor checks.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCheckIds() const{ return m_checkIds; }
+    inline const Aws::Vector<Aws::String>& GetCheckIds() const { return m_checkIds; }
     inline bool CheckIdsHasBeenSet() const { return m_checkIdsHasBeenSet; }
-    inline void SetCheckIds(const Aws::Vector<Aws::String>& value) { m_checkIdsHasBeenSet = true; m_checkIds = value; }
-    inline void SetCheckIds(Aws::Vector<Aws::String>&& value) { m_checkIdsHasBeenSet = true; m_checkIds = std::move(value); }
-    inline DescribeTrustedAdvisorCheckSummariesRequest& WithCheckIds(const Aws::Vector<Aws::String>& value) { SetCheckIds(value); return *this;}
-    inline DescribeTrustedAdvisorCheckSummariesRequest& WithCheckIds(Aws::Vector<Aws::String>&& value) { SetCheckIds(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckSummariesRequest& AddCheckIds(const Aws::String& value) { m_checkIdsHasBeenSet = true; m_checkIds.push_back(value); return *this; }
-    inline DescribeTrustedAdvisorCheckSummariesRequest& AddCheckIds(Aws::String&& value) { m_checkIdsHasBeenSet = true; m_checkIds.push_back(std::move(value)); return *this; }
-    inline DescribeTrustedAdvisorCheckSummariesRequest& AddCheckIds(const char* value) { m_checkIdsHasBeenSet = true; m_checkIds.push_back(value); return *this; }
+    template<typename CheckIdsT = Aws::Vector<Aws::String>>
+    void SetCheckIds(CheckIdsT&& value) { m_checkIdsHasBeenSet = true; m_checkIds = std::forward<CheckIdsT>(value); }
+    template<typename CheckIdsT = Aws::Vector<Aws::String>>
+    DescribeTrustedAdvisorCheckSummariesRequest& WithCheckIds(CheckIdsT&& value) { SetCheckIds(std::forward<CheckIdsT>(value)); return *this;}
+    template<typename CheckIdsT = Aws::String>
+    DescribeTrustedAdvisorCheckSummariesRequest& AddCheckIds(CheckIdsT&& value) { m_checkIdsHasBeenSet = true; m_checkIds.emplace_back(std::forward<CheckIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,16 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSecretVersionIdsRequest::ListSecretVersionIdsRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_includeDeprecated(false),
-    m_includeDeprecatedHasBeenSet(false)
-{
-}
-
 Aws::String ListSecretVersionIdsRequest::SerializePayload() const
 {
   JsonValue payload;

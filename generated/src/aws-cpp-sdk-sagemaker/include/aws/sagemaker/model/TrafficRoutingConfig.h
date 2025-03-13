@@ -33,7 +33,7 @@ namespace Model
   class TrafficRoutingConfig
   {
   public:
-    AWS_SAGEMAKER_API TrafficRoutingConfig();
+    AWS_SAGEMAKER_API TrafficRoutingConfig() = default;
     AWS_SAGEMAKER_API TrafficRoutingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrafficRoutingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * Endpoint traffic shifts to the new fleet in n steps of a configurable size. </p>
      * </li> </ul>
      */
-    inline const TrafficRoutingConfigType& GetType() const{ return m_type; }
+    inline TrafficRoutingConfigType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TrafficRoutingConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TrafficRoutingConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TrafficRoutingConfig& WithType(const TrafficRoutingConfigType& value) { SetType(value); return *this;}
-    inline TrafficRoutingConfig& WithType(TrafficRoutingConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TrafficRoutingConfigType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TrafficRoutingConfig& WithType(TrafficRoutingConfigType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <p>The waiting time (in seconds) between incremental steps to turn on traffic on
      * the new endpoint fleet.</p>
      */
-    inline int GetWaitIntervalInSeconds() const{ return m_waitIntervalInSeconds; }
+    inline int GetWaitIntervalInSeconds() const { return m_waitIntervalInSeconds; }
     inline bool WaitIntervalInSecondsHasBeenSet() const { return m_waitIntervalInSecondsHasBeenSet; }
     inline void SetWaitIntervalInSeconds(int value) { m_waitIntervalInSecondsHasBeenSet = true; m_waitIntervalInSeconds = value; }
     inline TrafficRoutingConfig& WithWaitIntervalInSeconds(int value) { SetWaitIntervalInSeconds(value); return *this;}
@@ -74,12 +72,12 @@ namespace Model
      * <code>Value</code> must be less than or equal to 50% of the variant's total
      * instance count.</p>
      */
-    inline const CapacitySize& GetCanarySize() const{ return m_canarySize; }
+    inline const CapacitySize& GetCanarySize() const { return m_canarySize; }
     inline bool CanarySizeHasBeenSet() const { return m_canarySizeHasBeenSet; }
-    inline void SetCanarySize(const CapacitySize& value) { m_canarySizeHasBeenSet = true; m_canarySize = value; }
-    inline void SetCanarySize(CapacitySize&& value) { m_canarySizeHasBeenSet = true; m_canarySize = std::move(value); }
-    inline TrafficRoutingConfig& WithCanarySize(const CapacitySize& value) { SetCanarySize(value); return *this;}
-    inline TrafficRoutingConfig& WithCanarySize(CapacitySize&& value) { SetCanarySize(std::move(value)); return *this;}
+    template<typename CanarySizeT = CapacitySize>
+    void SetCanarySize(CanarySizeT&& value) { m_canarySizeHasBeenSet = true; m_canarySize = std::forward<CanarySizeT>(value); }
+    template<typename CanarySizeT = CapacitySize>
+    TrafficRoutingConfig& WithCanarySize(CanarySizeT&& value) { SetCanarySize(std::forward<CanarySizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,19 +85,19 @@ namespace Model
      * <p>Batch size for each step to turn on traffic on the new endpoint fleet.
      * <code>Value</code> must be 10-50% of the variant's total instance count.</p>
      */
-    inline const CapacitySize& GetLinearStepSize() const{ return m_linearStepSize; }
+    inline const CapacitySize& GetLinearStepSize() const { return m_linearStepSize; }
     inline bool LinearStepSizeHasBeenSet() const { return m_linearStepSizeHasBeenSet; }
-    inline void SetLinearStepSize(const CapacitySize& value) { m_linearStepSizeHasBeenSet = true; m_linearStepSize = value; }
-    inline void SetLinearStepSize(CapacitySize&& value) { m_linearStepSizeHasBeenSet = true; m_linearStepSize = std::move(value); }
-    inline TrafficRoutingConfig& WithLinearStepSize(const CapacitySize& value) { SetLinearStepSize(value); return *this;}
-    inline TrafficRoutingConfig& WithLinearStepSize(CapacitySize&& value) { SetLinearStepSize(std::move(value)); return *this;}
+    template<typename LinearStepSizeT = CapacitySize>
+    void SetLinearStepSize(LinearStepSizeT&& value) { m_linearStepSizeHasBeenSet = true; m_linearStepSize = std::forward<LinearStepSizeT>(value); }
+    template<typename LinearStepSizeT = CapacitySize>
+    TrafficRoutingConfig& WithLinearStepSize(LinearStepSizeT&& value) { SetLinearStepSize(std::forward<LinearStepSizeT>(value)); return *this;}
     ///@}
   private:
 
-    TrafficRoutingConfigType m_type;
+    TrafficRoutingConfigType m_type{TrafficRoutingConfigType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_waitIntervalInSeconds;
+    int m_waitIntervalInSeconds{0};
     bool m_waitIntervalInSecondsHasBeenSet = false;
 
     CapacitySize m_canarySize;

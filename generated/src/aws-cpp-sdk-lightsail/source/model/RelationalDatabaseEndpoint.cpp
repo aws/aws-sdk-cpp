@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseEndpoint::RelationalDatabaseEndpoint() : 
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_addressHasBeenSet(false)
-{
-}
-
 RelationalDatabaseEndpoint::RelationalDatabaseEndpoint(JsonView jsonValue)
-  : RelationalDatabaseEndpoint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RelationalDatabaseEndpoint& RelationalDatabaseEndpoint::operator =(JsonView json
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetString("address");
-
     m_addressHasBeenSet = true;
   }
-
   return *this;
 }
 

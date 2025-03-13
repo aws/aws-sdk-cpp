@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-MLUserDataEncryption::MLUserDataEncryption() : 
-    m_mlUserDataEncryptionMode(MLUserDataEncryptionModeString::NOT_SET),
-    m_mlUserDataEncryptionModeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 MLUserDataEncryption::MLUserDataEncryption(JsonView jsonValue)
-  : MLUserDataEncryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MLUserDataEncryption& MLUserDataEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MlUserDataEncryptionMode"))
   {
     m_mlUserDataEncryptionMode = MLUserDataEncryptionModeStringMapper::GetMLUserDataEncryptionModeStringForName(jsonValue.GetString("MlUserDataEncryptionMode"));
-
     m_mlUserDataEncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

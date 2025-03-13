@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ConversationContext::ConversationContext() : 
-    m_selfServiceConversationHistoryHasBeenSet(false)
-{
-}
-
 ConversationContext::ConversationContext(JsonView jsonValue)
-  : ConversationContext()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConversationContext& ConversationContext::operator =(JsonView jsonValue)
     }
     m_selfServiceConversationHistoryHasBeenSet = true;
   }
-
   return *this;
 }
 

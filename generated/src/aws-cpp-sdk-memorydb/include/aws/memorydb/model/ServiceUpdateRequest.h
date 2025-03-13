@@ -31,7 +31,7 @@ namespace Model
   class ServiceUpdateRequest
   {
   public:
-    AWS_MEMORYDB_API ServiceUpdateRequest();
+    AWS_MEMORYDB_API ServiceUpdateRequest() = default;
     AWS_MEMORYDB_API ServiceUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ServiceUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique ID of the service update</p>
      */
-    inline const Aws::String& GetServiceUpdateNameToApply() const{ return m_serviceUpdateNameToApply; }
+    inline const Aws::String& GetServiceUpdateNameToApply() const { return m_serviceUpdateNameToApply; }
     inline bool ServiceUpdateNameToApplyHasBeenSet() const { return m_serviceUpdateNameToApplyHasBeenSet; }
-    inline void SetServiceUpdateNameToApply(const Aws::String& value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply = value; }
-    inline void SetServiceUpdateNameToApply(Aws::String&& value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply = std::move(value); }
-    inline void SetServiceUpdateNameToApply(const char* value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply.assign(value); }
-    inline ServiceUpdateRequest& WithServiceUpdateNameToApply(const Aws::String& value) { SetServiceUpdateNameToApply(value); return *this;}
-    inline ServiceUpdateRequest& WithServiceUpdateNameToApply(Aws::String&& value) { SetServiceUpdateNameToApply(std::move(value)); return *this;}
-    inline ServiceUpdateRequest& WithServiceUpdateNameToApply(const char* value) { SetServiceUpdateNameToApply(value); return *this;}
+    template<typename ServiceUpdateNameToApplyT = Aws::String>
+    void SetServiceUpdateNameToApply(ServiceUpdateNameToApplyT&& value) { m_serviceUpdateNameToApplyHasBeenSet = true; m_serviceUpdateNameToApply = std::forward<ServiceUpdateNameToApplyT>(value); }
+    template<typename ServiceUpdateNameToApplyT = Aws::String>
+    ServiceUpdateRequest& WithServiceUpdateNameToApply(ServiceUpdateNameToApplyT&& value) { SetServiceUpdateNameToApply(std::forward<ServiceUpdateNameToApplyT>(value)); return *this;}
     ///@}
   private:
 

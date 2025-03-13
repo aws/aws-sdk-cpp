@@ -32,7 +32,7 @@ namespace Model
   class ReputationOptions
   {
   public:
-    AWS_SES_API ReputationOptions();
+    AWS_SES_API ReputationOptions() = default;
     AWS_SES_API ReputationOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API ReputationOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,7 +49,7 @@ namespace Model
      * <code>true</code>. You can change this setting using
      * <a>UpdateConfigurationSetSendingEnabled</a>.</p>
      */
-    inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
+    inline bool GetSendingEnabled() const { return m_sendingEnabled; }
     inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
     inline ReputationOptions& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * value is <code>false</code>, reputation metrics are not published. The default
      * value is <code>false</code>.</p>
      */
-    inline bool GetReputationMetricsEnabled() const{ return m_reputationMetricsEnabled; }
+    inline bool GetReputationMetricsEnabled() const { return m_reputationMetricsEnabled; }
     inline bool ReputationMetricsEnabledHasBeenSet() const { return m_reputationMetricsEnabledHasBeenSet; }
     inline void SetReputationMetricsEnabled(bool value) { m_reputationMetricsEnabledHasBeenSet = true; m_reputationMetricsEnabled = value; }
     inline ReputationOptions& WithReputationMetricsEnabled(bool value) { SetReputationMetricsEnabled(value); return *this;}
@@ -80,22 +80,22 @@ namespace Model
      * been disabled and later re-enabled, the value of this attribute is
      * <code>null</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastFreshStart() const{ return m_lastFreshStart; }
+    inline const Aws::Utils::DateTime& GetLastFreshStart() const { return m_lastFreshStart; }
     inline bool LastFreshStartHasBeenSet() const { return m_lastFreshStartHasBeenSet; }
-    inline void SetLastFreshStart(const Aws::Utils::DateTime& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = value; }
-    inline void SetLastFreshStart(Aws::Utils::DateTime&& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = std::move(value); }
-    inline ReputationOptions& WithLastFreshStart(const Aws::Utils::DateTime& value) { SetLastFreshStart(value); return *this;}
-    inline ReputationOptions& WithLastFreshStart(Aws::Utils::DateTime&& value) { SetLastFreshStart(std::move(value)); return *this;}
+    template<typename LastFreshStartT = Aws::Utils::DateTime>
+    void SetLastFreshStart(LastFreshStartT&& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = std::forward<LastFreshStartT>(value); }
+    template<typename LastFreshStartT = Aws::Utils::DateTime>
+    ReputationOptions& WithLastFreshStart(LastFreshStartT&& value) { SetLastFreshStart(std::forward<LastFreshStartT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_sendingEnabled;
+    bool m_sendingEnabled{false};
     bool m_sendingEnabledHasBeenSet = false;
 
-    bool m_reputationMetricsEnabled;
+    bool m_reputationMetricsEnabled{false};
     bool m_reputationMetricsEnabledHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastFreshStart;
+    Aws::Utils::DateTime m_lastFreshStart{};
     bool m_lastFreshStartHasBeenSet = false;
   };
 

@@ -18,22 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANDeviceMetadata::LoRaWANDeviceMetadata() : 
-    m_devEuiHasBeenSet(false),
-    m_fPort(0),
-    m_fPortHasBeenSet(false),
-    m_dataRate(0),
-    m_dataRateHasBeenSet(false),
-    m_frequency(0),
-    m_frequencyHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_gatewaysHasBeenSet(false),
-    m_publicGatewaysHasBeenSet(false)
-{
-}
-
 LoRaWANDeviceMetadata::LoRaWANDeviceMetadata(JsonView jsonValue)
-  : LoRaWANDeviceMetadata()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ LoRaWANDeviceMetadata& LoRaWANDeviceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DevEui"))
   {
     m_devEui = jsonValue.GetString("DevEui");
-
     m_devEuiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FPort"))
   {
     m_fPort = jsonValue.GetInteger("FPort");
-
     m_fPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRate"))
   {
     m_dataRate = jsonValue.GetInteger("DataRate");
-
     m_dataRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Frequency"))
   {
     m_frequency = jsonValue.GetInteger("Frequency");
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetString("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gateways"))
   {
     Aws::Utils::Array<JsonView> gatewaysJsonList = jsonValue.GetArray("Gateways");
@@ -84,7 +59,6 @@ LoRaWANDeviceMetadata& LoRaWANDeviceMetadata::operator =(JsonView jsonValue)
     }
     m_gatewaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicGateways"))
   {
     Aws::Utils::Array<JsonView> publicGatewaysJsonList = jsonValue.GetArray("PublicGateways");
@@ -94,7 +68,6 @@ LoRaWANDeviceMetadata& LoRaWANDeviceMetadata::operator =(JsonView jsonValue)
     }
     m_publicGatewaysHasBeenSet = true;
   }
-
   return *this;
 }
 

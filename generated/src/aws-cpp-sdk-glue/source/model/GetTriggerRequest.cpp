@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTriggerRequest::GetTriggerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetTriggerRequest::SerializePayload() const
 {
   JsonValue payload;

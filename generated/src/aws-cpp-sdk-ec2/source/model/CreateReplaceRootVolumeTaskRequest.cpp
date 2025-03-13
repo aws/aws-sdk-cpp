@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateReplaceRootVolumeTaskRequest::CreateReplaceRootVolumeTaskRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_deleteReplacedRootVolume(false),
-    m_deleteReplacedRootVolumeHasBeenSet(false)
-{
-}
-
 Aws::String CreateReplaceRootVolumeTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -21,7 +21,7 @@ namespace Model
   class AssociateAppBlockBuilderAppBlockRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockRequest();
+    AWS_APPSTREAM_API AssociateAppBlockBuilderAppBlockRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ARN of the app block.</p>
      */
-    inline const Aws::String& GetAppBlockArn() const{ return m_appBlockArn; }
+    inline const Aws::String& GetAppBlockArn() const { return m_appBlockArn; }
     inline bool AppBlockArnHasBeenSet() const { return m_appBlockArnHasBeenSet; }
-    inline void SetAppBlockArn(const Aws::String& value) { m_appBlockArnHasBeenSet = true; m_appBlockArn = value; }
-    inline void SetAppBlockArn(Aws::String&& value) { m_appBlockArnHasBeenSet = true; m_appBlockArn = std::move(value); }
-    inline void SetAppBlockArn(const char* value) { m_appBlockArnHasBeenSet = true; m_appBlockArn.assign(value); }
-    inline AssociateAppBlockBuilderAppBlockRequest& WithAppBlockArn(const Aws::String& value) { SetAppBlockArn(value); return *this;}
-    inline AssociateAppBlockBuilderAppBlockRequest& WithAppBlockArn(Aws::String&& value) { SetAppBlockArn(std::move(value)); return *this;}
-    inline AssociateAppBlockBuilderAppBlockRequest& WithAppBlockArn(const char* value) { SetAppBlockArn(value); return *this;}
+    template<typename AppBlockArnT = Aws::String>
+    void SetAppBlockArn(AppBlockArnT&& value) { m_appBlockArnHasBeenSet = true; m_appBlockArn = std::forward<AppBlockArnT>(value); }
+    template<typename AppBlockArnT = Aws::String>
+    AssociateAppBlockBuilderAppBlockRequest& WithAppBlockArn(AppBlockArnT&& value) { SetAppBlockArn(std::forward<AppBlockArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the app block builder.</p>
      */
-    inline const Aws::String& GetAppBlockBuilderName() const{ return m_appBlockBuilderName; }
+    inline const Aws::String& GetAppBlockBuilderName() const { return m_appBlockBuilderName; }
     inline bool AppBlockBuilderNameHasBeenSet() const { return m_appBlockBuilderNameHasBeenSet; }
-    inline void SetAppBlockBuilderName(const Aws::String& value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName = value; }
-    inline void SetAppBlockBuilderName(Aws::String&& value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName = std::move(value); }
-    inline void SetAppBlockBuilderName(const char* value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName.assign(value); }
-    inline AssociateAppBlockBuilderAppBlockRequest& WithAppBlockBuilderName(const Aws::String& value) { SetAppBlockBuilderName(value); return *this;}
-    inline AssociateAppBlockBuilderAppBlockRequest& WithAppBlockBuilderName(Aws::String&& value) { SetAppBlockBuilderName(std::move(value)); return *this;}
-    inline AssociateAppBlockBuilderAppBlockRequest& WithAppBlockBuilderName(const char* value) { SetAppBlockBuilderName(value); return *this;}
+    template<typename AppBlockBuilderNameT = Aws::String>
+    void SetAppBlockBuilderName(AppBlockBuilderNameT&& value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName = std::forward<AppBlockBuilderNameT>(value); }
+    template<typename AppBlockBuilderNameT = Aws::String>
+    AssociateAppBlockBuilderAppBlockRequest& WithAppBlockBuilderName(AppBlockBuilderNameT&& value) { SetAppBlockBuilderName(std::forward<AppBlockBuilderNameT>(value)); return *this;}
     ///@}
   private:
 

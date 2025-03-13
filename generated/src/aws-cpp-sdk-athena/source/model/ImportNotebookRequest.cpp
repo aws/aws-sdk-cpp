@@ -12,17 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportNotebookRequest::ImportNotebookRequest() : 
-    m_workGroupHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_type(NotebookType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_notebookS3LocationUriHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String ImportNotebookRequest::SerializePayload() const
 {
   JsonValue payload;

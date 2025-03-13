@@ -18,22 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-JobInput::JobInput() : 
-    m_keyHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false),
-    m_interlacedHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_timeSpanHasBeenSet(false),
-    m_inputCaptionsHasBeenSet(false),
-    m_detectedPropertiesHasBeenSet(false)
-{
-}
-
 JobInput::JobInput(JsonView jsonValue)
-  : JobInput()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ JobInput& JobInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameRate"))
   {
     m_frameRate = jsonValue.GetString("FrameRate");
-
     m_frameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resolution"))
   {
     m_resolution = jsonValue.GetString("Resolution");
-
     m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AspectRatio"))
   {
     m_aspectRatio = jsonValue.GetString("AspectRatio");
-
     m_aspectRatioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interlaced"))
   {
     m_interlaced = jsonValue.GetString("Interlaced");
-
     m_interlacedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Container"))
   {
     m_container = jsonValue.GetString("Container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSpan"))
   {
     m_timeSpan = jsonValue.GetObject("TimeSpan");
-
     m_timeSpanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputCaptions"))
   {
     m_inputCaptions = jsonValue.GetObject("InputCaptions");
-
     m_inputCaptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectedProperties"))
   {
     m_detectedProperties = jsonValue.GetObject("DetectedProperties");
-
     m_detectedPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

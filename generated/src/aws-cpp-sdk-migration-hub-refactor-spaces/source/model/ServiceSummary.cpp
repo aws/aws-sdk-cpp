@@ -18,31 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-ServiceSummary::ServiceSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByAccountIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_endpointType(ServiceEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_lambdaEndpointHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_state(ServiceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_urlEndpointHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 ServiceSummary::ServiceSummary(JsonView jsonValue)
-  : ServiceSummary()
 {
   *this = jsonValue;
 }
@@ -52,101 +28,73 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedByAccountId"))
   {
     m_createdByAccountId = jsonValue.GetString("CreatedByAccountId");
-
     m_createdByAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointType"))
   {
     m_endpointType = ServiceEndpointTypeMapper::GetServiceEndpointTypeForName(jsonValue.GetString("EndpointType"));
-
     m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentId"))
   {
     m_environmentId = jsonValue.GetString("EnvironmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaEndpoint"))
   {
     m_lambdaEndpoint = jsonValue.GetObject("LambdaEndpoint");
-
     m_lambdaEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceId"))
   {
     m_serviceId = jsonValue.GetString("ServiceId");
-
     m_serviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ServiceStateMapper::GetServiceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -156,21 +104,16 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UrlEndpoint"))
   {
     m_urlEndpoint = jsonValue.GetObject("UrlEndpoint");
-
     m_urlEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

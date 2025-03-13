@@ -40,7 +40,7 @@ namespace Model
   class SnowflakeDestinationUpdate
   {
   public:
-    AWS_FIREHOSE_API SnowflakeDestinationUpdate();
+    AWS_FIREHOSE_API SnowflakeDestinationUpdate() = default;
     AWS_FIREHOSE_API SnowflakeDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API SnowflakeDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * identifier</a>. Note that the protocol (https://) and port number are
      * optional.</p>
      */
-    inline const Aws::String& GetAccountUrl() const{ return m_accountUrl; }
+    inline const Aws::String& GetAccountUrl() const { return m_accountUrl; }
     inline bool AccountUrlHasBeenSet() const { return m_accountUrlHasBeenSet; }
-    inline void SetAccountUrl(const Aws::String& value) { m_accountUrlHasBeenSet = true; m_accountUrl = value; }
-    inline void SetAccountUrl(Aws::String&& value) { m_accountUrlHasBeenSet = true; m_accountUrl = std::move(value); }
-    inline void SetAccountUrl(const char* value) { m_accountUrlHasBeenSet = true; m_accountUrl.assign(value); }
-    inline SnowflakeDestinationUpdate& WithAccountUrl(const Aws::String& value) { SetAccountUrl(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithAccountUrl(Aws::String&& value) { SetAccountUrl(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithAccountUrl(const char* value) { SetAccountUrl(value); return *this;}
+    template<typename AccountUrlT = Aws::String>
+    void SetAccountUrl(AccountUrlT&& value) { m_accountUrlHasBeenSet = true; m_accountUrl = std::forward<AccountUrlT>(value); }
+    template<typename AccountUrlT = Aws::String>
+    SnowflakeDestinationUpdate& WithAccountUrl(AccountUrlT&& value) { SetAccountUrl(std::forward<AccountUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using
      * Key Pair Authentication &amp; Key Rotation</a>.</p>
      */
-    inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+    inline const Aws::String& GetPrivateKey() const { return m_privateKey; }
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
-    inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
-    inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
-    inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
-    inline SnowflakeDestinationUpdate& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
+    template<typename PrivateKeyT = Aws::String>
+    void SetPrivateKey(PrivateKeyT&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::forward<PrivateKeyT>(value); }
+    template<typename PrivateKeyT = Aws::String>
+    SnowflakeDestinationUpdate& WithPrivateKey(PrivateKeyT&& value) { SetPrivateKey(std::forward<PrivateKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,42 +83,36 @@ namespace Model
      * href="https://docs.snowflake.com/en/user-guide/data-load-snowpipe-streaming-configuration#using-key-pair-authentication-key-rotation">Using
      * Key Pair Authentication &amp; Key Rotation</a>.</p>
      */
-    inline const Aws::String& GetKeyPassphrase() const{ return m_keyPassphrase; }
+    inline const Aws::String& GetKeyPassphrase() const { return m_keyPassphrase; }
     inline bool KeyPassphraseHasBeenSet() const { return m_keyPassphraseHasBeenSet; }
-    inline void SetKeyPassphrase(const Aws::String& value) { m_keyPassphraseHasBeenSet = true; m_keyPassphrase = value; }
-    inline void SetKeyPassphrase(Aws::String&& value) { m_keyPassphraseHasBeenSet = true; m_keyPassphrase = std::move(value); }
-    inline void SetKeyPassphrase(const char* value) { m_keyPassphraseHasBeenSet = true; m_keyPassphrase.assign(value); }
-    inline SnowflakeDestinationUpdate& WithKeyPassphrase(const Aws::String& value) { SetKeyPassphrase(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithKeyPassphrase(Aws::String&& value) { SetKeyPassphrase(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithKeyPassphrase(const char* value) { SetKeyPassphrase(value); return *this;}
+    template<typename KeyPassphraseT = Aws::String>
+    void SetKeyPassphrase(KeyPassphraseT&& value) { m_keyPassphraseHasBeenSet = true; m_keyPassphrase = std::forward<KeyPassphraseT>(value); }
+    template<typename KeyPassphraseT = Aws::String>
+    SnowflakeDestinationUpdate& WithKeyPassphrase(KeyPassphraseT&& value) { SetKeyPassphrase(std::forward<KeyPassphraseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>User login name for the Snowflake account.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline SnowflakeDestinationUpdate& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    SnowflakeDestinationUpdate& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>All data in Snowflake is maintained in databases.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline SnowflakeDestinationUpdate& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    SnowflakeDestinationUpdate& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +120,12 @@ namespace Model
      * <p>Each database consists of one or more schemas, which are logical groupings of
      * database objects, such as tables and views</p>
      */
-    inline const Aws::String& GetSchema() const{ return m_schema; }
+    inline const Aws::String& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
-    inline SnowflakeDestinationUpdate& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithSchema(const char* value) { SetSchema(value); return *this;}
+    template<typename SchemaT = Aws::String>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Aws::String>
+    SnowflakeDestinationUpdate& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +133,12 @@ namespace Model
      * <p>All data in Snowflake is stored in database tables, logically structured as
      * collections of columns and rows.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline SnowflakeDestinationUpdate& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    SnowflakeDestinationUpdate& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,12 +146,12 @@ namespace Model
      * <p>Optionally configure a Snowflake role. Otherwise the default user role will
      * be used.</p>
      */
-    inline const SnowflakeRoleConfiguration& GetSnowflakeRoleConfiguration() const{ return m_snowflakeRoleConfiguration; }
+    inline const SnowflakeRoleConfiguration& GetSnowflakeRoleConfiguration() const { return m_snowflakeRoleConfiguration; }
     inline bool SnowflakeRoleConfigurationHasBeenSet() const { return m_snowflakeRoleConfigurationHasBeenSet; }
-    inline void SetSnowflakeRoleConfiguration(const SnowflakeRoleConfiguration& value) { m_snowflakeRoleConfigurationHasBeenSet = true; m_snowflakeRoleConfiguration = value; }
-    inline void SetSnowflakeRoleConfiguration(SnowflakeRoleConfiguration&& value) { m_snowflakeRoleConfigurationHasBeenSet = true; m_snowflakeRoleConfiguration = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithSnowflakeRoleConfiguration(const SnowflakeRoleConfiguration& value) { SetSnowflakeRoleConfiguration(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithSnowflakeRoleConfiguration(SnowflakeRoleConfiguration&& value) { SetSnowflakeRoleConfiguration(std::move(value)); return *this;}
+    template<typename SnowflakeRoleConfigurationT = SnowflakeRoleConfiguration>
+    void SetSnowflakeRoleConfiguration(SnowflakeRoleConfigurationT&& value) { m_snowflakeRoleConfigurationHasBeenSet = true; m_snowflakeRoleConfiguration = std::forward<SnowflakeRoleConfigurationT>(value); }
+    template<typename SnowflakeRoleConfigurationT = SnowflakeRoleConfiguration>
+    SnowflakeDestinationUpdate& WithSnowflakeRoleConfiguration(SnowflakeRoleConfigurationT&& value) { SetSnowflakeRoleConfiguration(std::forward<SnowflakeRoleConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,74 +160,66 @@ namespace Model
      * where content is mapped to a record content column and source metadata is mapped
      * to a record metadata column.</p>
      */
-    inline const SnowflakeDataLoadingOption& GetDataLoadingOption() const{ return m_dataLoadingOption; }
+    inline SnowflakeDataLoadingOption GetDataLoadingOption() const { return m_dataLoadingOption; }
     inline bool DataLoadingOptionHasBeenSet() const { return m_dataLoadingOptionHasBeenSet; }
-    inline void SetDataLoadingOption(const SnowflakeDataLoadingOption& value) { m_dataLoadingOptionHasBeenSet = true; m_dataLoadingOption = value; }
-    inline void SetDataLoadingOption(SnowflakeDataLoadingOption&& value) { m_dataLoadingOptionHasBeenSet = true; m_dataLoadingOption = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithDataLoadingOption(const SnowflakeDataLoadingOption& value) { SetDataLoadingOption(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithDataLoadingOption(SnowflakeDataLoadingOption&& value) { SetDataLoadingOption(std::move(value)); return *this;}
+    inline void SetDataLoadingOption(SnowflakeDataLoadingOption value) { m_dataLoadingOptionHasBeenSet = true; m_dataLoadingOption = value; }
+    inline SnowflakeDestinationUpdate& WithDataLoadingOption(SnowflakeDataLoadingOption value) { SetDataLoadingOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the record metadata column</p>
      */
-    inline const Aws::String& GetMetaDataColumnName() const{ return m_metaDataColumnName; }
+    inline const Aws::String& GetMetaDataColumnName() const { return m_metaDataColumnName; }
     inline bool MetaDataColumnNameHasBeenSet() const { return m_metaDataColumnNameHasBeenSet; }
-    inline void SetMetaDataColumnName(const Aws::String& value) { m_metaDataColumnNameHasBeenSet = true; m_metaDataColumnName = value; }
-    inline void SetMetaDataColumnName(Aws::String&& value) { m_metaDataColumnNameHasBeenSet = true; m_metaDataColumnName = std::move(value); }
-    inline void SetMetaDataColumnName(const char* value) { m_metaDataColumnNameHasBeenSet = true; m_metaDataColumnName.assign(value); }
-    inline SnowflakeDestinationUpdate& WithMetaDataColumnName(const Aws::String& value) { SetMetaDataColumnName(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithMetaDataColumnName(Aws::String&& value) { SetMetaDataColumnName(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithMetaDataColumnName(const char* value) { SetMetaDataColumnName(value); return *this;}
+    template<typename MetaDataColumnNameT = Aws::String>
+    void SetMetaDataColumnName(MetaDataColumnNameT&& value) { m_metaDataColumnNameHasBeenSet = true; m_metaDataColumnName = std::forward<MetaDataColumnNameT>(value); }
+    template<typename MetaDataColumnNameT = Aws::String>
+    SnowflakeDestinationUpdate& WithMetaDataColumnName(MetaDataColumnNameT&& value) { SetMetaDataColumnName(std::forward<MetaDataColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the content metadata column</p>
      */
-    inline const Aws::String& GetContentColumnName() const{ return m_contentColumnName; }
+    inline const Aws::String& GetContentColumnName() const { return m_contentColumnName; }
     inline bool ContentColumnNameHasBeenSet() const { return m_contentColumnNameHasBeenSet; }
-    inline void SetContentColumnName(const Aws::String& value) { m_contentColumnNameHasBeenSet = true; m_contentColumnName = value; }
-    inline void SetContentColumnName(Aws::String&& value) { m_contentColumnNameHasBeenSet = true; m_contentColumnName = std::move(value); }
-    inline void SetContentColumnName(const char* value) { m_contentColumnNameHasBeenSet = true; m_contentColumnName.assign(value); }
-    inline SnowflakeDestinationUpdate& WithContentColumnName(const Aws::String& value) { SetContentColumnName(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithContentColumnName(Aws::String&& value) { SetContentColumnName(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithContentColumnName(const char* value) { SetContentColumnName(value); return *this;}
+    template<typename ContentColumnNameT = Aws::String>
+    void SetContentColumnName(ContentColumnNameT&& value) { m_contentColumnNameHasBeenSet = true; m_contentColumnName = std::forward<ContentColumnNameT>(value); }
+    template<typename ContentColumnNameT = Aws::String>
+    SnowflakeDestinationUpdate& WithContentColumnName(ContentColumnNameT&& value) { SetContentColumnName(std::forward<ContentColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    SnowflakeDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const { return m_processingConfiguration; }
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    void SetProcessingConfiguration(ProcessingConfigurationT&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::forward<ProcessingConfigurationT>(value); }
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    SnowflakeDestinationUpdate& WithProcessingConfiguration(ProcessingConfigurationT&& value) { SetProcessingConfiguration(std::forward<ProcessingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Snowflake role</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline SnowflakeDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline SnowflakeDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    SnowflakeDestinationUpdate& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,12 +241,12 @@ namespace Model
      * expired. If you don't want Firehose to retry sending data, set this value to
      * 0.</p>
      */
-    inline const SnowflakeRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+    inline const SnowflakeRetryOptions& GetRetryOptions() const { return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-    inline void SetRetryOptions(const SnowflakeRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-    inline void SetRetryOptions(SnowflakeRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithRetryOptions(const SnowflakeRetryOptions& value) { SetRetryOptions(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithRetryOptions(SnowflakeRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    template<typename RetryOptionsT = SnowflakeRetryOptions>
+    void SetRetryOptions(RetryOptionsT&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::forward<RetryOptionsT>(value); }
+    template<typename RetryOptionsT = SnowflakeRetryOptions>
+    SnowflakeDestinationUpdate& WithRetryOptions(RetryOptionsT&& value) { SetRetryOptions(std::forward<RetryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -276,34 +254,32 @@ namespace Model
      * <p>Choose an S3 backup mode. Once you set the mode as <code>AllData</code>, you
      * can not change it to <code>FailedDataOnly</code>.</p>
      */
-    inline const SnowflakeS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+    inline SnowflakeS3BackupMode GetS3BackupMode() const { return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-    inline void SetS3BackupMode(const SnowflakeS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-    inline void SetS3BackupMode(SnowflakeS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithS3BackupMode(const SnowflakeS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithS3BackupMode(SnowflakeS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    inline void SetS3BackupMode(SnowflakeS3BackupMode value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+    inline SnowflakeDestinationUpdate& WithS3BackupMode(SnowflakeS3BackupMode value) { SetS3BackupMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3DestinationUpdate& GetS3Update() const{ return m_s3Update; }
+    inline const S3DestinationUpdate& GetS3Update() const { return m_s3Update; }
     inline bool S3UpdateHasBeenSet() const { return m_s3UpdateHasBeenSet; }
-    inline void SetS3Update(const S3DestinationUpdate& value) { m_s3UpdateHasBeenSet = true; m_s3Update = value; }
-    inline void SetS3Update(S3DestinationUpdate&& value) { m_s3UpdateHasBeenSet = true; m_s3Update = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithS3Update(const S3DestinationUpdate& value) { SetS3Update(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithS3Update(S3DestinationUpdate&& value) { SetS3Update(std::move(value)); return *this;}
+    template<typename S3UpdateT = S3DestinationUpdate>
+    void SetS3Update(S3UpdateT&& value) { m_s3UpdateHasBeenSet = true; m_s3Update = std::forward<S3UpdateT>(value); }
+    template<typename S3UpdateT = S3DestinationUpdate>
+    SnowflakeDestinationUpdate& WithS3Update(S3UpdateT&& value) { SetS3Update(std::forward<S3UpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Describes the Secrets Manager configuration in Snowflake. </p>
      */
-    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const{ return m_secretsManagerConfiguration; }
+    inline const SecretsManagerConfiguration& GetSecretsManagerConfiguration() const { return m_secretsManagerConfiguration; }
     inline bool SecretsManagerConfigurationHasBeenSet() const { return m_secretsManagerConfigurationHasBeenSet; }
-    inline void SetSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = value; }
-    inline void SetSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithSecretsManagerConfiguration(const SecretsManagerConfiguration& value) { SetSecretsManagerConfiguration(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithSecretsManagerConfiguration(SecretsManagerConfiguration&& value) { SetSecretsManagerConfiguration(std::move(value)); return *this;}
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    void SetSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { m_secretsManagerConfigurationHasBeenSet = true; m_secretsManagerConfiguration = std::forward<SecretsManagerConfigurationT>(value); }
+    template<typename SecretsManagerConfigurationT = SecretsManagerConfiguration>
+    SnowflakeDestinationUpdate& WithSecretsManagerConfiguration(SecretsManagerConfigurationT&& value) { SetSecretsManagerConfiguration(std::forward<SecretsManagerConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -311,12 +287,12 @@ namespace Model
      * <p> Describes the buffering to perform before delivering data to the Snowflake
      * destination. </p>
      */
-    inline const SnowflakeBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline const SnowflakeBufferingHints& GetBufferingHints() const { return m_bufferingHints; }
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
-    inline void SetBufferingHints(const SnowflakeBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
-    inline void SetBufferingHints(SnowflakeBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
-    inline SnowflakeDestinationUpdate& WithBufferingHints(const SnowflakeBufferingHints& value) { SetBufferingHints(value); return *this;}
-    inline SnowflakeDestinationUpdate& WithBufferingHints(SnowflakeBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    template<typename BufferingHintsT = SnowflakeBufferingHints>
+    void SetBufferingHints(BufferingHintsT&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::forward<BufferingHintsT>(value); }
+    template<typename BufferingHintsT = SnowflakeBufferingHints>
+    SnowflakeDestinationUpdate& WithBufferingHints(BufferingHintsT&& value) { SetBufferingHints(std::forward<BufferingHintsT>(value)); return *this;}
     ///@}
   private:
 
@@ -344,7 +320,7 @@ namespace Model
     SnowflakeRoleConfiguration m_snowflakeRoleConfiguration;
     bool m_snowflakeRoleConfigurationHasBeenSet = false;
 
-    SnowflakeDataLoadingOption m_dataLoadingOption;
+    SnowflakeDataLoadingOption m_dataLoadingOption{SnowflakeDataLoadingOption::NOT_SET};
     bool m_dataLoadingOptionHasBeenSet = false;
 
     Aws::String m_metaDataColumnName;
@@ -365,7 +341,7 @@ namespace Model
     SnowflakeRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet = false;
 
-    SnowflakeS3BackupMode m_s3BackupMode;
+    SnowflakeS3BackupMode m_s3BackupMode{SnowflakeS3BackupMode::NOT_SET};
     bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationUpdate m_s3Update;

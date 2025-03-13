@@ -18,19 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BatchGetCustomDataIdentifierSummary::BatchGetCustomDataIdentifierSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deleted(false),
-    m_deletedHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 BatchGetCustomDataIdentifierSummary::BatchGetCustomDataIdentifierSummary(JsonView jsonValue)
-  : BatchGetCustomDataIdentifierSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BatchGetCustomDataIdentifierSummary& BatchGetCustomDataIdentifierSummary::operat
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleted"))
   {
     m_deleted = jsonValue.GetBool("deleted");
-
     m_deletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

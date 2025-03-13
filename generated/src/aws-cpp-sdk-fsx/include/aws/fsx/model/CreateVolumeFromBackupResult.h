@@ -28,7 +28,7 @@ namespace Model
   class CreateVolumeFromBackupResult
   {
   public:
-    AWS_FSX_API CreateVolumeFromBackupResult();
+    AWS_FSX_API CreateVolumeFromBackupResult() = default;
     AWS_FSX_API CreateVolumeFromBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API CreateVolumeFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returned after a successful <code>CreateVolumeFromBackup</code> API
      * operation, describing the volume just created.</p>
      */
-    inline const Volume& GetVolume() const{ return m_volume; }
-    inline void SetVolume(const Volume& value) { m_volume = value; }
-    inline void SetVolume(Volume&& value) { m_volume = std::move(value); }
-    inline CreateVolumeFromBackupResult& WithVolume(const Volume& value) { SetVolume(value); return *this;}
-    inline CreateVolumeFromBackupResult& WithVolume(Volume&& value) { SetVolume(std::move(value)); return *this;}
+    inline const Volume& GetVolume() const { return m_volume; }
+    template<typename VolumeT = Volume>
+    void SetVolume(VolumeT&& value) { m_volumeHasBeenSet = true; m_volume = std::forward<VolumeT>(value); }
+    template<typename VolumeT = Volume>
+    CreateVolumeFromBackupResult& WithVolume(VolumeT&& value) { SetVolume(std::forward<VolumeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVolumeFromBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVolumeFromBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVolumeFromBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVolumeFromBackupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Volume m_volume;
+    bool m_volumeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

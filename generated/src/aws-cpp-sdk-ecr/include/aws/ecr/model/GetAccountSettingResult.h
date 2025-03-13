@@ -27,7 +27,7 @@ namespace Model
   class GetAccountSettingResult
   {
   public:
-    AWS_ECR_API GetAccountSettingResult();
+    AWS_ECR_API GetAccountSettingResult() = default;
     AWS_ECR_API GetAccountSettingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API GetAccountSettingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>Retrieves the name of the account setting.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetAccountSettingResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetAccountSettingResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetAccountSettingResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetAccountSettingResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * The following are valid values for the registry policy scope being used:
      * <code>V1</code> or <code>V2</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
-    inline void SetValue(const Aws::String& value) { m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_value.assign(value); }
-    inline GetAccountSettingResult& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline GetAccountSettingResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline GetAccountSettingResult& WithValue(const char* value) { SetValue(value); return *this;}
+    inline const Aws::String& GetValue() const { return m_value; }
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    GetAccountSettingResult& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountSettingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountSettingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountSettingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountSettingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

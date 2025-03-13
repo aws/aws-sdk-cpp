@@ -10,12 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-RestartAppServerRequest::RestartAppServerRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String RestartAppServerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

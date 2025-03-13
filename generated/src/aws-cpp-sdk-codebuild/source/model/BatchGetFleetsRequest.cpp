@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetFleetsRequest::BatchGetFleetsRequest() : 
-    m_namesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetFleetsRequest::SerializePayload() const
 {
   JsonValue payload;

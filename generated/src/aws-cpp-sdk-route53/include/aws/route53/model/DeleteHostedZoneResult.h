@@ -34,7 +34,7 @@ namespace Model
   class DeleteHostedZoneResult
   {
   public:
-    AWS_ROUTE53_API DeleteHostedZoneResult();
+    AWS_ROUTE53_API DeleteHostedZoneResult() = default;
     AWS_ROUTE53_API DeleteHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API DeleteHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A complex type that contains the ID, the status, and the date and time of a
      * request to delete a hosted zone.</p>
      */
-    inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
-    inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
-    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
-    inline DeleteHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
-    inline DeleteHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
+    inline const ChangeInfo& GetChangeInfo() const { return m_changeInfo; }
+    template<typename ChangeInfoT = ChangeInfo>
+    void SetChangeInfo(ChangeInfoT&& value) { m_changeInfoHasBeenSet = true; m_changeInfo = std::forward<ChangeInfoT>(value); }
+    template<typename ChangeInfoT = ChangeInfo>
+    DeleteHostedZoneResult& WithChangeInfo(ChangeInfoT&& value) { SetChangeInfo(std::forward<ChangeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteHostedZoneResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteHostedZoneResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteHostedZoneResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteHostedZoneResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChangeInfo m_changeInfo;
+    bool m_changeInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

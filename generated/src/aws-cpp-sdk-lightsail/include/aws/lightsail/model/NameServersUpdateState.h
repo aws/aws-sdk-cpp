@@ -37,7 +37,7 @@ namespace Model
   class NameServersUpdateState
   {
   public:
-    AWS_LIGHTSAIL_API NameServersUpdateState();
+    AWS_LIGHTSAIL_API NameServersUpdateState() = default;
     AWS_LIGHTSAIL_API NameServersUpdateState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API NameServersUpdateState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,30 +52,26 @@ namespace Model
      * - The name server record update failed.</p> </li> <li> <p> <code>STARTED</code>
      * - The automatic name server record update started.</p> </li> </ul>
      */
-    inline const NameServersUpdateStateCode& GetCode() const{ return m_code; }
+    inline NameServersUpdateStateCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const NameServersUpdateStateCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(NameServersUpdateStateCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline NameServersUpdateState& WithCode(const NameServersUpdateStateCode& value) { SetCode(value); return *this;}
-    inline NameServersUpdateState& WithCode(NameServersUpdateStateCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(NameServersUpdateStateCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline NameServersUpdateState& WithCode(NameServersUpdateStateCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message that describes the reason for the status code.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline NameServersUpdateState& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline NameServersUpdateState& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline NameServersUpdateState& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    NameServersUpdateState& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    NameServersUpdateStateCode m_code;
+    NameServersUpdateStateCode m_code{NameServersUpdateStateCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFleetLocationAttributesResult::DescribeFleetLocationAttributesResult()
-{
-}
-
 DescribeFleetLocationAttributesResult::DescribeFleetLocationAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ DescribeFleetLocationAttributesResult& DescribeFleetLocationAttributesResult::op
   if(jsonValue.ValueExists("FleetId"))
   {
     m_fleetId = jsonValue.GetString("FleetId");
-
+    m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
+    m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationAttributes"))
   {
     Aws::Utils::Array<JsonView> locationAttributesJsonList = jsonValue.GetArray("LocationAttributes");
@@ -48,20 +42,20 @@ DescribeFleetLocationAttributesResult& DescribeFleetLocationAttributesResult::op
     {
       m_locationAttributes.push_back(locationAttributesJsonList[locationAttributesIndex].AsObject());
     }
+    m_locationAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

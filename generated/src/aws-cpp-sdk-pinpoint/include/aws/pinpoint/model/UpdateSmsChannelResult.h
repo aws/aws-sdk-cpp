@@ -28,35 +28,35 @@ namespace Model
   class UpdateSmsChannelResult
   {
   public:
-    AWS_PINPOINT_API UpdateSmsChannelResult();
+    AWS_PINPOINT_API UpdateSmsChannelResult() = default;
     AWS_PINPOINT_API UpdateSmsChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API UpdateSmsChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const SMSChannelResponse& GetSMSChannelResponse() const{ return m_sMSChannelResponse; }
-    inline void SetSMSChannelResponse(const SMSChannelResponse& value) { m_sMSChannelResponse = value; }
-    inline void SetSMSChannelResponse(SMSChannelResponse&& value) { m_sMSChannelResponse = std::move(value); }
-    inline UpdateSmsChannelResult& WithSMSChannelResponse(const SMSChannelResponse& value) { SetSMSChannelResponse(value); return *this;}
-    inline UpdateSmsChannelResult& WithSMSChannelResponse(SMSChannelResponse&& value) { SetSMSChannelResponse(std::move(value)); return *this;}
+    inline const SMSChannelResponse& GetSMSChannelResponse() const { return m_sMSChannelResponse; }
+    template<typename SMSChannelResponseT = SMSChannelResponse>
+    void SetSMSChannelResponse(SMSChannelResponseT&& value) { m_sMSChannelResponseHasBeenSet = true; m_sMSChannelResponse = std::forward<SMSChannelResponseT>(value); }
+    template<typename SMSChannelResponseT = SMSChannelResponse>
+    UpdateSmsChannelResult& WithSMSChannelResponse(SMSChannelResponseT&& value) { SetSMSChannelResponse(std::forward<SMSChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateSmsChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateSmsChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateSmsChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateSmsChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SMSChannelResponse m_sMSChannelResponse;
+    bool m_sMSChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

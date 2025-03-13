@@ -23,7 +23,7 @@ namespace Model
   class ListWorkforcesRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListWorkforcesRequest();
+    AWS_SAGEMAKER_API ListWorkforcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,24 +40,20 @@ namespace Model
     /**
      * <p>Sort workforces using the workforce name or creation date.</p>
      */
-    inline const ListWorkforcesSortByOptions& GetSortBy() const{ return m_sortBy; }
+    inline ListWorkforcesSortByOptions GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ListWorkforcesSortByOptions& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ListWorkforcesSortByOptions&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListWorkforcesRequest& WithSortBy(const ListWorkforcesSortByOptions& value) { SetSortBy(value); return *this;}
-    inline ListWorkforcesRequest& WithSortBy(ListWorkforcesSortByOptions&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ListWorkforcesSortByOptions value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListWorkforcesRequest& WithSortBy(ListWorkforcesSortByOptions value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sort workforces in ascending or descending order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListWorkforcesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListWorkforcesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListWorkforcesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -65,45 +61,41 @@ namespace Model
      * <p>A filter you can use to search for workforces using part of the workforce
      * name.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline ListWorkforcesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline ListWorkforcesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline ListWorkforcesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    ListWorkforcesRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A token to resume pagination.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListWorkforcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWorkforcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWorkforcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWorkforcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of workforces returned in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListWorkforcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    ListWorkforcesSortByOptions m_sortBy;
+    ListWorkforcesSortByOptions m_sortBy{ListWorkforcesSortByOptions::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nameContains;
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

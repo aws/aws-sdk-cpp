@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-GlobalIdentity::GlobalIdentity() : 
-    m_lac(0),
-    m_lacHasBeenSet(false),
-    m_geranCid(0),
-    m_geranCidHasBeenSet(false)
-{
-}
-
 GlobalIdentity::GlobalIdentity(JsonView jsonValue)
-  : GlobalIdentity()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GlobalIdentity& GlobalIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Lac"))
   {
     m_lac = jsonValue.GetInteger("Lac");
-
     m_lacHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeranCid"))
   {
     m_geranCid = jsonValue.GetInteger("GeranCid");
-
     m_geranCidHasBeenSet = true;
   }
-
   return *this;
 }
 

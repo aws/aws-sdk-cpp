@@ -12,15 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetRequest::CreateDatasetRequest() : 
-    m_nameHasBeenSet(false),
-    m_schemaArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

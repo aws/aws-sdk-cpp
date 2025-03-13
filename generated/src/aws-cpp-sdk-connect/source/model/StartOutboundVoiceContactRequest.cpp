@@ -12,26 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartOutboundVoiceContactRequest::StartOutboundVoiceContactRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_sourcePhoneNumberHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_answerMachineDetectionConfigHasBeenSet(false),
-    m_campaignIdHasBeenSet(false),
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false)
-{
-}
-
 Aws::String StartOutboundVoiceContactRequest::SerializePayload() const
 {
   JsonValue payload;

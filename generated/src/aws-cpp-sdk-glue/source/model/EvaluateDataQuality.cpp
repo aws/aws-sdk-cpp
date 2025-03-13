@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-EvaluateDataQuality::EvaluateDataQuality() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_rulesetHasBeenSet(false),
-    m_output(DQTransformOutput::NOT_SET),
-    m_outputHasBeenSet(false),
-    m_publishingOptionsHasBeenSet(false),
-    m_stopJobOnFailureOptionsHasBeenSet(false)
-{
-}
-
 EvaluateDataQuality::EvaluateDataQuality(JsonView jsonValue)
-  : EvaluateDataQuality()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ EvaluateDataQuality& EvaluateDataQuality::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -53,35 +39,26 @@ EvaluateDataQuality& EvaluateDataQuality::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ruleset"))
   {
     m_ruleset = jsonValue.GetString("Ruleset");
-
     m_rulesetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Output"))
   {
     m_output = DQTransformOutputMapper::GetDQTransformOutputForName(jsonValue.GetString("Output"));
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishingOptions"))
   {
     m_publishingOptions = jsonValue.GetObject("PublishingOptions");
-
     m_publishingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopJobOnFailureOptions"))
   {
     m_stopJobOnFailureOptions = jsonValue.GetObject("StopJobOnFailureOptions");
-
     m_stopJobOnFailureOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

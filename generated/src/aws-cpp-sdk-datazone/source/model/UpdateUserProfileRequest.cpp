@@ -12,16 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserProfileRequest::UpdateUserProfileRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_status(UserProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(UserProfileType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_userIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

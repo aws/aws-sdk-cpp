@@ -32,7 +32,7 @@ namespace Model
   class SubmitAutoEvaluationActionDefinition
   {
   public:
-    AWS_CONNECT_API SubmitAutoEvaluationActionDefinition();
+    AWS_CONNECT_API SubmitAutoEvaluationActionDefinition() = default;
     AWS_CONNECT_API SubmitAutoEvaluationActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API SubmitAutoEvaluationActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the auto-evaluation enabled form.</p>
      */
-    inline const Aws::String& GetEvaluationFormId() const{ return m_evaluationFormId; }
+    inline const Aws::String& GetEvaluationFormId() const { return m_evaluationFormId; }
     inline bool EvaluationFormIdHasBeenSet() const { return m_evaluationFormIdHasBeenSet; }
-    inline void SetEvaluationFormId(const Aws::String& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = value; }
-    inline void SetEvaluationFormId(Aws::String&& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = std::move(value); }
-    inline void SetEvaluationFormId(const char* value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId.assign(value); }
-    inline SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(const Aws::String& value) { SetEvaluationFormId(value); return *this;}
-    inline SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(Aws::String&& value) { SetEvaluationFormId(std::move(value)); return *this;}
-    inline SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(const char* value) { SetEvaluationFormId(value); return *this;}
+    template<typename EvaluationFormIdT = Aws::String>
+    void SetEvaluationFormId(EvaluationFormIdT&& value) { m_evaluationFormIdHasBeenSet = true; m_evaluationFormId = std::forward<EvaluationFormIdT>(value); }
+    template<typename EvaluationFormIdT = Aws::String>
+    SubmitAutoEvaluationActionDefinition& WithEvaluationFormId(EvaluationFormIdT&& value) { SetEvaluationFormId(std::forward<EvaluationFormIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,21 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServerlessCacheSnapshot::ServerlessCacheSnapshot() : 
-    m_serverlessCacheSnapshotNameHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_expiryTimeHasBeenSet(false),
-    m_bytesUsedForCacheHasBeenSet(false),
-    m_serverlessCacheConfigurationHasBeenSet(false)
-{
-}
-
 ServerlessCacheSnapshot::ServerlessCacheSnapshot(const XmlNode& xmlNode)
-  : ServerlessCacheSnapshot()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,63 @@ ServerlessCacheSnapshot& ServerlessCacheSnapshot::operator =(const XmlNode& xmlN
     {
       m_serverlessCacheSnapshotName = Aws::Utils::Xml::DecodeEscapedXmlText(serverlessCacheSnapshotNameNode.GetText());
       m_serverlessCacheSnapshotNameHasBeenSet = true;
+       m_serverlessCacheSnapshotNameHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode kmsKeyIdNode = resultNode.FirstChild("KmsKeyId");
     if(!kmsKeyIdNode.IsNull())
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+       m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode snapshotTypeNode = resultNode.FirstChild("SnapshotType");
     if(!snapshotTypeNode.IsNull())
     {
       m_snapshotType = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTypeNode.GetText());
       m_snapshotTypeHasBeenSet = true;
+       m_snapshotTypeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode expiryTimeNode = resultNode.FirstChild("ExpiryTime");
     if(!expiryTimeNode.IsNull())
     {
       m_expiryTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expiryTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expiryTimeHasBeenSet = true;
+       m_expiryTimeHasBeenSet = true;
     }
     XmlNode bytesUsedForCacheNode = resultNode.FirstChild("BytesUsedForCache");
     if(!bytesUsedForCacheNode.IsNull())
     {
       m_bytesUsedForCache = Aws::Utils::Xml::DecodeEscapedXmlText(bytesUsedForCacheNode.GetText());
       m_bytesUsedForCacheHasBeenSet = true;
+       m_bytesUsedForCacheHasBeenSet = true;
     }
     XmlNode serverlessCacheConfigurationNode = resultNode.FirstChild("ServerlessCacheConfiguration");
     if(!serverlessCacheConfigurationNode.IsNull())
     {
       m_serverlessCacheConfiguration = serverlessCacheConfigurationNode;
       m_serverlessCacheConfigurationHasBeenSet = true;
+       m_serverlessCacheConfigurationHasBeenSet = true;
     }
   }
 

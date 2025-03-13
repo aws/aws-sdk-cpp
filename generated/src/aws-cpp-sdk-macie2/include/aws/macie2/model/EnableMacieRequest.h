@@ -24,7 +24,7 @@ namespace Model
   class EnableMacieRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API EnableMacieRequest();
+    AWS_MACIE2_API EnableMacieRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
      * the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline EnableMacieRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline EnableMacieRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline EnableMacieRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    EnableMacieRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,10 @@ namespace Model
      * This includes publishing updates to Security Hub and Amazon EventBridge
      * (formerly Amazon CloudWatch Events).</p>
      */
-    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+    inline FindingPublishingFrequency GetFindingPublishingFrequency() const { return m_findingPublishingFrequency; }
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
-    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
-    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
-    inline EnableMacieRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
-    inline EnableMacieRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
+    inline EnableMacieRequest& WithFindingPublishingFrequency(FindingPublishingFrequency value) { SetFindingPublishingFrequency(value); return *this;}
     ///@}
 
     ///@{
@@ -69,22 +65,20 @@ namespace Model
      * <p>Specifies the new status for the account. To enable Amazon Macie and start
      * all Macie activities for the account, set this value to ENABLED.</p>
      */
-    inline const MacieStatus& GetStatus() const{ return m_status; }
+    inline MacieStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MacieStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MacieStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EnableMacieRequest& WithStatus(const MacieStatus& value) { SetStatus(value); return *this;}
-    inline EnableMacieRequest& WithStatus(MacieStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MacieStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EnableMacieRequest& WithStatus(MacieStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    FindingPublishingFrequency m_findingPublishingFrequency;
+    FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
     bool m_findingPublishingFrequencyHasBeenSet = false;
 
-    MacieStatus m_status;
+    MacieStatus m_status{MacieStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

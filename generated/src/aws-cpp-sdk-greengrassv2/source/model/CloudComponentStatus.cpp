@@ -18,19 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-CloudComponentStatus::CloudComponentStatus() : 
-    m_componentState(CloudComponentState::NOT_SET),
-    m_componentStateHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_vendorGuidance(VendorGuidance::NOT_SET),
-    m_vendorGuidanceHasBeenSet(false),
-    m_vendorGuidanceMessageHasBeenSet(false)
-{
-}
-
 CloudComponentStatus::CloudComponentStatus(JsonView jsonValue)
-  : CloudComponentStatus()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ CloudComponentStatus& CloudComponentStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentState"))
   {
     m_componentState = CloudComponentStateMapper::GetCloudComponentStateForName(jsonValue.GetString("componentState"));
-
     m_componentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Map<Aws::String, JsonView> errorsJsonMap = jsonValue.GetObject("errors").GetAllObjects();
@@ -60,21 +44,16 @@ CloudComponentStatus& CloudComponentStatus::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendorGuidance"))
   {
     m_vendorGuidance = VendorGuidanceMapper::GetVendorGuidanceForName(jsonValue.GetString("vendorGuidance"));
-
     m_vendorGuidanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendorGuidanceMessage"))
   {
     m_vendorGuidanceMessage = jsonValue.GetString("vendorGuidanceMessage");
-
     m_vendorGuidanceMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

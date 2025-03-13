@@ -24,7 +24,7 @@ namespace Model
   class PutAttributesRequest : public SimpleDBRequest
   {
   public:
-    AWS_SIMPLEDB_API PutAttributesRequest();
+    AWS_SIMPLEDB_API PutAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,38 @@ namespace Model
     /**
      * The name of the domain in which to perform the operation.
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline PutAttributesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline PutAttributesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline PutAttributesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    PutAttributesRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the item.
      */
-    inline const Aws::String& GetItemName() const{ return m_itemName; }
+    inline const Aws::String& GetItemName() const { return m_itemName; }
     inline bool ItemNameHasBeenSet() const { return m_itemNameHasBeenSet; }
-    inline void SetItemName(const Aws::String& value) { m_itemNameHasBeenSet = true; m_itemName = value; }
-    inline void SetItemName(Aws::String&& value) { m_itemNameHasBeenSet = true; m_itemName = std::move(value); }
-    inline void SetItemName(const char* value) { m_itemNameHasBeenSet = true; m_itemName.assign(value); }
-    inline PutAttributesRequest& WithItemName(const Aws::String& value) { SetItemName(value); return *this;}
-    inline PutAttributesRequest& WithItemName(Aws::String&& value) { SetItemName(std::move(value)); return *this;}
-    inline PutAttributesRequest& WithItemName(const char* value) { SetItemName(value); return *this;}
+    template<typename ItemNameT = Aws::String>
+    void SetItemName(ItemNameT&& value) { m_itemNameHasBeenSet = true; m_itemName = std::forward<ItemNameT>(value); }
+    template<typename ItemNameT = Aws::String>
+    PutAttributesRequest& WithItemName(ItemNameT&& value) { SetItemName(std::forward<ItemNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The list of attributes.
      */
-    inline const Aws::Vector<ReplaceableAttribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<ReplaceableAttribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<ReplaceableAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<ReplaceableAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline PutAttributesRequest& WithAttributes(const Aws::Vector<ReplaceableAttribute>& value) { SetAttributes(value); return *this;}
-    inline PutAttributesRequest& WithAttributes(Aws::Vector<ReplaceableAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline PutAttributesRequest& AddAttributes(const ReplaceableAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline PutAttributesRequest& AddAttributes(ReplaceableAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<ReplaceableAttribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<ReplaceableAttribute>>
+    PutAttributesRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = ReplaceableAttribute>
+    PutAttributesRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -87,12 +83,12 @@ namespace Model
      * attributes will be updated or not. The update condition must be satisfied in
      * order for this request to be processed and the attributes to be updated.
      */
-    inline const UpdateCondition& GetExpected() const{ return m_expected; }
+    inline const UpdateCondition& GetExpected() const { return m_expected; }
     inline bool ExpectedHasBeenSet() const { return m_expectedHasBeenSet; }
-    inline void SetExpected(const UpdateCondition& value) { m_expectedHasBeenSet = true; m_expected = value; }
-    inline void SetExpected(UpdateCondition&& value) { m_expectedHasBeenSet = true; m_expected = std::move(value); }
-    inline PutAttributesRequest& WithExpected(const UpdateCondition& value) { SetExpected(value); return *this;}
-    inline PutAttributesRequest& WithExpected(UpdateCondition&& value) { SetExpected(std::move(value)); return *this;}
+    template<typename ExpectedT = UpdateCondition>
+    void SetExpected(ExpectedT&& value) { m_expectedHasBeenSet = true; m_expected = std::forward<ExpectedT>(value); }
+    template<typename ExpectedT = UpdateCondition>
+    PutAttributesRequest& WithExpected(ExpectedT&& value) { SetExpected(std::forward<ExpectedT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class CreateProfileRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API CreateProfileRequest();
+    AWS_WELLARCHITECTED_API CreateProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,73 +40,64 @@ namespace Model
     /**
      * <p>Name of the profile.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline CreateProfileRequest& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline CreateProfileRequest& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline CreateProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    CreateProfileRequest& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The profile description.</p>
      */
-    inline const Aws::String& GetProfileDescription() const{ return m_profileDescription; }
+    inline const Aws::String& GetProfileDescription() const { return m_profileDescription; }
     inline bool ProfileDescriptionHasBeenSet() const { return m_profileDescriptionHasBeenSet; }
-    inline void SetProfileDescription(const Aws::String& value) { m_profileDescriptionHasBeenSet = true; m_profileDescription = value; }
-    inline void SetProfileDescription(Aws::String&& value) { m_profileDescriptionHasBeenSet = true; m_profileDescription = std::move(value); }
-    inline void SetProfileDescription(const char* value) { m_profileDescriptionHasBeenSet = true; m_profileDescription.assign(value); }
-    inline CreateProfileRequest& WithProfileDescription(const Aws::String& value) { SetProfileDescription(value); return *this;}
-    inline CreateProfileRequest& WithProfileDescription(Aws::String&& value) { SetProfileDescription(std::move(value)); return *this;}
-    inline CreateProfileRequest& WithProfileDescription(const char* value) { SetProfileDescription(value); return *this;}
+    template<typename ProfileDescriptionT = Aws::String>
+    void SetProfileDescription(ProfileDescriptionT&& value) { m_profileDescriptionHasBeenSet = true; m_profileDescription = std::forward<ProfileDescriptionT>(value); }
+    template<typename ProfileDescriptionT = Aws::String>
+    CreateProfileRequest& WithProfileDescription(ProfileDescriptionT&& value) { SetProfileDescription(std::forward<ProfileDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The profile questions.</p>
      */
-    inline const Aws::Vector<ProfileQuestionUpdate>& GetProfileQuestions() const{ return m_profileQuestions; }
+    inline const Aws::Vector<ProfileQuestionUpdate>& GetProfileQuestions() const { return m_profileQuestions; }
     inline bool ProfileQuestionsHasBeenSet() const { return m_profileQuestionsHasBeenSet; }
-    inline void SetProfileQuestions(const Aws::Vector<ProfileQuestionUpdate>& value) { m_profileQuestionsHasBeenSet = true; m_profileQuestions = value; }
-    inline void SetProfileQuestions(Aws::Vector<ProfileQuestionUpdate>&& value) { m_profileQuestionsHasBeenSet = true; m_profileQuestions = std::move(value); }
-    inline CreateProfileRequest& WithProfileQuestions(const Aws::Vector<ProfileQuestionUpdate>& value) { SetProfileQuestions(value); return *this;}
-    inline CreateProfileRequest& WithProfileQuestions(Aws::Vector<ProfileQuestionUpdate>&& value) { SetProfileQuestions(std::move(value)); return *this;}
-    inline CreateProfileRequest& AddProfileQuestions(const ProfileQuestionUpdate& value) { m_profileQuestionsHasBeenSet = true; m_profileQuestions.push_back(value); return *this; }
-    inline CreateProfileRequest& AddProfileQuestions(ProfileQuestionUpdate&& value) { m_profileQuestionsHasBeenSet = true; m_profileQuestions.push_back(std::move(value)); return *this; }
+    template<typename ProfileQuestionsT = Aws::Vector<ProfileQuestionUpdate>>
+    void SetProfileQuestions(ProfileQuestionsT&& value) { m_profileQuestionsHasBeenSet = true; m_profileQuestions = std::forward<ProfileQuestionsT>(value); }
+    template<typename ProfileQuestionsT = Aws::Vector<ProfileQuestionUpdate>>
+    CreateProfileRequest& WithProfileQuestions(ProfileQuestionsT&& value) { SetProfileQuestions(std::forward<ProfileQuestionsT>(value)); return *this;}
+    template<typename ProfileQuestionsT = ProfileQuestionUpdate>
+    CreateProfileRequest& AddProfileQuestions(ProfileQuestionsT&& value) { m_profileQuestionsHasBeenSet = true; m_profileQuestions.emplace_back(std::forward<ProfileQuestionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateProfileRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateProfileRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateProfileRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateProfileRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the profile.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

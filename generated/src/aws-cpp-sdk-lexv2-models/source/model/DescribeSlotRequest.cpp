@@ -12,15 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSlotRequest::DescribeSlotRequest() : 
-    m_slotIdHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_intentIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSlotRequest::SerializePayload() const
 {
   return {};

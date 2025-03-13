@@ -37,7 +37,7 @@ namespace Model
   class TriggerUpdate
   {
   public:
-    AWS_GLUE_API TriggerUpdate();
+    AWS_GLUE_API TriggerUpdate() = default;
     AWS_GLUE_API TriggerUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TriggerUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TriggerUpdate& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TriggerUpdate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TriggerUpdate& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TriggerUpdate& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of this trigger.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TriggerUpdate& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TriggerUpdate& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TriggerUpdate& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TriggerUpdate& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,40 +74,38 @@ namespace Model
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
-    inline const Aws::String& GetSchedule() const{ return m_schedule; }
+    inline const Aws::String& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
-    inline TriggerUpdate& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
-    inline TriggerUpdate& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
-    inline TriggerUpdate& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+    template<typename ScheduleT = Aws::String>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Aws::String>
+    TriggerUpdate& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actions initiated by this trigger.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline TriggerUpdate& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline TriggerUpdate& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline TriggerUpdate& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline TriggerUpdate& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    TriggerUpdate& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    TriggerUpdate& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The predicate of this trigger, which defines when it will fire.</p>
      */
-    inline const Predicate& GetPredicate() const{ return m_predicate; }
+    inline const Predicate& GetPredicate() const { return m_predicate; }
     inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
-    inline void SetPredicate(const Predicate& value) { m_predicateHasBeenSet = true; m_predicate = value; }
-    inline void SetPredicate(Predicate&& value) { m_predicateHasBeenSet = true; m_predicate = std::move(value); }
-    inline TriggerUpdate& WithPredicate(const Predicate& value) { SetPredicate(value); return *this;}
-    inline TriggerUpdate& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
+    template<typename PredicateT = Predicate>
+    void SetPredicate(PredicateT&& value) { m_predicateHasBeenSet = true; m_predicate = std::forward<PredicateT>(value); }
+    template<typename PredicateT = Predicate>
+    TriggerUpdate& WithPredicate(PredicateT&& value) { SetPredicate(std::forward<PredicateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,12 @@ namespace Model
      * <p>Batch condition that must be met (specified number of events received or
      * batch time window expired) before EventBridge event trigger fires.</p>
      */
-    inline const EventBatchingCondition& GetEventBatchingCondition() const{ return m_eventBatchingCondition; }
+    inline const EventBatchingCondition& GetEventBatchingCondition() const { return m_eventBatchingCondition; }
     inline bool EventBatchingConditionHasBeenSet() const { return m_eventBatchingConditionHasBeenSet; }
-    inline void SetEventBatchingCondition(const EventBatchingCondition& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = value; }
-    inline void SetEventBatchingCondition(EventBatchingCondition&& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = std::move(value); }
-    inline TriggerUpdate& WithEventBatchingCondition(const EventBatchingCondition& value) { SetEventBatchingCondition(value); return *this;}
-    inline TriggerUpdate& WithEventBatchingCondition(EventBatchingCondition&& value) { SetEventBatchingCondition(std::move(value)); return *this;}
+    template<typename EventBatchingConditionT = EventBatchingCondition>
+    void SetEventBatchingCondition(EventBatchingConditionT&& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = std::forward<EventBatchingConditionT>(value); }
+    template<typename EventBatchingConditionT = EventBatchingCondition>
+    TriggerUpdate& WithEventBatchingCondition(EventBatchingConditionT&& value) { SetEventBatchingCondition(std::forward<EventBatchingConditionT>(value)); return *this;}
     ///@}
   private:
 

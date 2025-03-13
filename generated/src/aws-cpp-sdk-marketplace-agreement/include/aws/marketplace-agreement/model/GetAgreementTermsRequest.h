@@ -21,7 +21,7 @@ namespace Model
   class GetAgreementTermsRequest : public AgreementServiceRequest
   {
   public:
-    AWS_AGREEMENTSERVICE_API GetAgreementTermsRequest();
+    AWS_AGREEMENTSERVICE_API GetAgreementTermsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>The unique identifier of the agreement.</p>
      */
-    inline const Aws::String& GetAgreementId() const{ return m_agreementId; }
+    inline const Aws::String& GetAgreementId() const { return m_agreementId; }
     inline bool AgreementIdHasBeenSet() const { return m_agreementIdHasBeenSet; }
-    inline void SetAgreementId(const Aws::String& value) { m_agreementIdHasBeenSet = true; m_agreementId = value; }
-    inline void SetAgreementId(Aws::String&& value) { m_agreementIdHasBeenSet = true; m_agreementId = std::move(value); }
-    inline void SetAgreementId(const char* value) { m_agreementIdHasBeenSet = true; m_agreementId.assign(value); }
-    inline GetAgreementTermsRequest& WithAgreementId(const Aws::String& value) { SetAgreementId(value); return *this;}
-    inline GetAgreementTermsRequest& WithAgreementId(Aws::String&& value) { SetAgreementId(std::move(value)); return *this;}
-    inline GetAgreementTermsRequest& WithAgreementId(const char* value) { SetAgreementId(value); return *this;}
+    template<typename AgreementIdT = Aws::String>
+    void SetAgreementId(AgreementIdT&& value) { m_agreementIdHasBeenSet = true; m_agreementId = std::forward<AgreementIdT>(value); }
+    template<typename AgreementIdT = Aws::String>
+    GetAgreementTermsRequest& WithAgreementId(AgreementIdT&& value) { SetAgreementId(std::forward<AgreementIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of agreements to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAgreementTermsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,21 +60,19 @@ namespace Model
     /**
      * <p>A token to specify where to start pagination</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetAgreementTermsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAgreementTermsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAgreementTermsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAgreementTermsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agreementId;
     bool m_agreementIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

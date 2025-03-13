@@ -18,13 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-IngestionDestinationSummary::IngestionDestinationSummary() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 IngestionDestinationSummary::IngestionDestinationSummary(JsonView jsonValue)
-  : IngestionDestinationSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IngestionDestinationSummary& IngestionDestinationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

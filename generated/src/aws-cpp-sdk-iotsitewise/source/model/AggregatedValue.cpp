@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AggregatedValue::AggregatedValue() : 
-    m_timestampHasBeenSet(false),
-    m_quality(Quality::NOT_SET),
-    m_qualityHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AggregatedValue::AggregatedValue(JsonView jsonValue)
-  : AggregatedValue()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AggregatedValue& AggregatedValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quality"))
   {
     m_quality = QualityMapper::GetQualityForName(jsonValue.GetString("quality"));
-
     m_qualityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

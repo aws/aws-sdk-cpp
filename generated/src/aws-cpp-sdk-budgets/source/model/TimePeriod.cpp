@@ -18,14 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-TimePeriod::TimePeriod() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
-{
-}
-
 TimePeriod::TimePeriod(JsonView jsonValue)
-  : TimePeriod()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimePeriod& TimePeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetDouble("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetDouble("End");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

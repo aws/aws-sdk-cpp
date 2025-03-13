@@ -26,7 +26,7 @@ namespace Model
   class DeviceMethod
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod();
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod() = default;
     AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The type of the device, such as "button".</p>
      */
-    inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
+    inline const Aws::String& GetDeviceType() const { return m_deviceType; }
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
-    inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
-    inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
-    inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
-    inline DeviceMethod& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
-    inline DeviceMethod& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
-    inline DeviceMethod& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
+    template<typename DeviceTypeT = Aws::String>
+    void SetDeviceType(DeviceTypeT&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::forward<DeviceTypeT>(value); }
+    template<typename DeviceTypeT = Aws::String>
+    DeviceMethod& WithDeviceType(DeviceTypeT&& value) { SetDeviceType(std::forward<DeviceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the method applicable to the deviceType.</p>
      */
-    inline const Aws::String& GetMethodName() const{ return m_methodName; }
+    inline const Aws::String& GetMethodName() const { return m_methodName; }
     inline bool MethodNameHasBeenSet() const { return m_methodNameHasBeenSet; }
-    inline void SetMethodName(const Aws::String& value) { m_methodNameHasBeenSet = true; m_methodName = value; }
-    inline void SetMethodName(Aws::String&& value) { m_methodNameHasBeenSet = true; m_methodName = std::move(value); }
-    inline void SetMethodName(const char* value) { m_methodNameHasBeenSet = true; m_methodName.assign(value); }
-    inline DeviceMethod& WithMethodName(const Aws::String& value) { SetMethodName(value); return *this;}
-    inline DeviceMethod& WithMethodName(Aws::String&& value) { SetMethodName(std::move(value)); return *this;}
-    inline DeviceMethod& WithMethodName(const char* value) { SetMethodName(value); return *this;}
+    template<typename MethodNameT = Aws::String>
+    void SetMethodName(MethodNameT&& value) { m_methodNameHasBeenSet = true; m_methodName = std::forward<MethodNameT>(value); }
+    template<typename MethodNameT = Aws::String>
+    DeviceMethod& WithMethodName(MethodNameT&& value) { SetMethodName(std::forward<MethodNameT>(value)); return *this;}
     ///@}
   private:
 

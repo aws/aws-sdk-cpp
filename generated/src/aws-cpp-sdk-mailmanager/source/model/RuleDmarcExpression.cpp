@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleDmarcExpression::RuleDmarcExpression() : 
-    m_operator(RuleDmarcOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 RuleDmarcExpression::RuleDmarcExpression(JsonView jsonValue)
-  : RuleDmarcExpression()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RuleDmarcExpression& RuleDmarcExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = RuleDmarcOperatorMapper::GetRuleDmarcOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ RuleDmarcExpression& RuleDmarcExpression::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

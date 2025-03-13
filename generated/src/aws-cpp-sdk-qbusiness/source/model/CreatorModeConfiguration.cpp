@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-CreatorModeConfiguration::CreatorModeConfiguration() : 
-    m_creatorModeControl(CreatorModeControl::NOT_SET),
-    m_creatorModeControlHasBeenSet(false)
-{
-}
-
 CreatorModeConfiguration::CreatorModeConfiguration(JsonView jsonValue)
-  : CreatorModeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CreatorModeConfiguration& CreatorModeConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("creatorModeControl"))
   {
     m_creatorModeControl = CreatorModeControlMapper::GetCreatorModeControlForName(jsonValue.GetString("creatorModeControl"));
-
     m_creatorModeControlHasBeenSet = true;
   }
-
   return *this;
 }
 

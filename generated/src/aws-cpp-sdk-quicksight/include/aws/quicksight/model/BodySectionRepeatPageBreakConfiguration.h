@@ -32,7 +32,7 @@ namespace Model
   class BodySectionRepeatPageBreakConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API BodySectionRepeatPageBreakConfiguration();
+    AWS_QUICKSIGHT_API BodySectionRepeatPageBreakConfiguration() = default;
     AWS_QUICKSIGHT_API BodySectionRepeatPageBreakConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BodySectionRepeatPageBreakConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const SectionAfterPageBreak& GetAfter() const{ return m_after; }
+    inline const SectionAfterPageBreak& GetAfter() const { return m_after; }
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
-    inline void SetAfter(const SectionAfterPageBreak& value) { m_afterHasBeenSet = true; m_after = value; }
-    inline void SetAfter(SectionAfterPageBreak&& value) { m_afterHasBeenSet = true; m_after = std::move(value); }
-    inline BodySectionRepeatPageBreakConfiguration& WithAfter(const SectionAfterPageBreak& value) { SetAfter(value); return *this;}
-    inline BodySectionRepeatPageBreakConfiguration& WithAfter(SectionAfterPageBreak&& value) { SetAfter(std::move(value)); return *this;}
+    template<typename AfterT = SectionAfterPageBreak>
+    void SetAfter(AfterT&& value) { m_afterHasBeenSet = true; m_after = std::forward<AfterT>(value); }
+    template<typename AfterT = SectionAfterPageBreak>
+    BodySectionRepeatPageBreakConfiguration& WithAfter(AfterT&& value) { SetAfter(std::forward<AfterT>(value)); return *this;}
     ///@}
   private:
 

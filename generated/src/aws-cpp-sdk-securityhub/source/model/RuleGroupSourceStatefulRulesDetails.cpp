@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatefulRulesDetails::RuleGroupSourceStatefulRulesDetails() : 
-    m_actionHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatefulRulesDetails::RuleGroupSourceStatefulRulesDetails(JsonView jsonValue)
-  : RuleGroupSourceStatefulRulesDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RuleGroupSourceStatefulRulesDetails& RuleGroupSourceStatefulRulesDetails::operat
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Header"))
   {
     m_header = jsonValue.GetObject("Header");
-
     m_headerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleOptions"))
   {
     Aws::Utils::Array<JsonView> ruleOptionsJsonList = jsonValue.GetArray("RuleOptions");
@@ -56,7 +44,6 @@ RuleGroupSourceStatefulRulesDetails& RuleGroupSourceStatefulRulesDetails::operat
     }
     m_ruleOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

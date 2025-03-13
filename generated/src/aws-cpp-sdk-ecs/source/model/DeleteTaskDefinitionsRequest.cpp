@@ -12,11 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTaskDefinitionsRequest::DeleteTaskDefinitionsRequest() : 
-    m_taskDefinitionsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTaskDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;

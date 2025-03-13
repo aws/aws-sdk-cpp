@@ -18,16 +18,7 @@ namespace finspace
 namespace Model
 {
 
-PortRange::PortRange() : 
-    m_from(0),
-    m_fromHasBeenSet(false),
-    m_to(0),
-    m_toHasBeenSet(false)
-{
-}
-
 PortRange::PortRange(JsonView jsonValue)
-  : PortRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PortRange& PortRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("from"))
   {
     m_from = jsonValue.GetInteger("from");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("to"))
   {
     m_to = jsonValue.GetInteger("to");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

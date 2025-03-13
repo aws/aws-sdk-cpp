@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecutionDecisionAttributes() : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_signalNameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_controlHasBeenSet(false)
-{
-}
-
 SignalExternalWorkflowExecutionDecisionAttributes::SignalExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-  : SignalExternalWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SignalExternalWorkflowExecutionDecisionAttributes& SignalExternalWorkflowExecuti
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signalName"))
   {
     m_signalName = jsonValue.GetString("signalName");
-
     m_signalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   return *this;
 }
 

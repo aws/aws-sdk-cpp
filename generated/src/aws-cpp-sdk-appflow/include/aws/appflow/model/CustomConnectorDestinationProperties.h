@@ -36,7 +36,7 @@ namespace Model
   class CustomConnectorDestinationProperties
   {
   public:
-    AWS_APPFLOW_API CustomConnectorDestinationProperties();
+    AWS_APPFLOW_API CustomConnectorDestinationProperties() = default;
     AWS_APPFLOW_API CustomConnectorDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API CustomConnectorDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The entity specified in the custom connector as a destination in the
      * flow.</p>
      */
-    inline const Aws::String& GetEntityName() const{ return m_entityName; }
+    inline const Aws::String& GetEntityName() const { return m_entityName; }
     inline bool EntityNameHasBeenSet() const { return m_entityNameHasBeenSet; }
-    inline void SetEntityName(const Aws::String& value) { m_entityNameHasBeenSet = true; m_entityName = value; }
-    inline void SetEntityName(Aws::String&& value) { m_entityNameHasBeenSet = true; m_entityName = std::move(value); }
-    inline void SetEntityName(const char* value) { m_entityNameHasBeenSet = true; m_entityName.assign(value); }
-    inline CustomConnectorDestinationProperties& WithEntityName(const Aws::String& value) { SetEntityName(value); return *this;}
-    inline CustomConnectorDestinationProperties& WithEntityName(Aws::String&& value) { SetEntityName(std::move(value)); return *this;}
-    inline CustomConnectorDestinationProperties& WithEntityName(const char* value) { SetEntityName(value); return *this;}
+    template<typename EntityNameT = Aws::String>
+    void SetEntityName(EntityNameT&& value) { m_entityNameHasBeenSet = true; m_entityName = std::forward<EntityNameT>(value); }
+    template<typename EntityNameT = Aws::String>
+    CustomConnectorDestinationProperties& WithEntityName(EntityNameT&& value) { SetEntityName(std::forward<EntityNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * <p>The settings that determine how Amazon AppFlow handles an error when placing
      * data in the custom connector as destination.</p>
      */
-    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const{ return m_errorHandlingConfig; }
+    inline const ErrorHandlingConfig& GetErrorHandlingConfig() const { return m_errorHandlingConfig; }
     inline bool ErrorHandlingConfigHasBeenSet() const { return m_errorHandlingConfigHasBeenSet; }
-    inline void SetErrorHandlingConfig(const ErrorHandlingConfig& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = value; }
-    inline void SetErrorHandlingConfig(ErrorHandlingConfig&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::move(value); }
-    inline CustomConnectorDestinationProperties& WithErrorHandlingConfig(const ErrorHandlingConfig& value) { SetErrorHandlingConfig(value); return *this;}
-    inline CustomConnectorDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfig&& value) { SetErrorHandlingConfig(std::move(value)); return *this;}
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    void SetErrorHandlingConfig(ErrorHandlingConfigT&& value) { m_errorHandlingConfigHasBeenSet = true; m_errorHandlingConfig = std::forward<ErrorHandlingConfigT>(value); }
+    template<typename ErrorHandlingConfigT = ErrorHandlingConfig>
+    CustomConnectorDestinationProperties& WithErrorHandlingConfig(ErrorHandlingConfigT&& value) { SetErrorHandlingConfig(std::forward<ErrorHandlingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * <p>Specifies the type of write operation to be performed in the custom connector
      * when it's used as destination.</p>
      */
-    inline const WriteOperationType& GetWriteOperationType() const{ return m_writeOperationType; }
+    inline WriteOperationType GetWriteOperationType() const { return m_writeOperationType; }
     inline bool WriteOperationTypeHasBeenSet() const { return m_writeOperationTypeHasBeenSet; }
-    inline void SetWriteOperationType(const WriteOperationType& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
-    inline void SetWriteOperationType(WriteOperationType&& value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = std::move(value); }
-    inline CustomConnectorDestinationProperties& WithWriteOperationType(const WriteOperationType& value) { SetWriteOperationType(value); return *this;}
-    inline CustomConnectorDestinationProperties& WithWriteOperationType(WriteOperationType&& value) { SetWriteOperationType(std::move(value)); return *this;}
+    inline void SetWriteOperationType(WriteOperationType value) { m_writeOperationTypeHasBeenSet = true; m_writeOperationType = value; }
+    inline CustomConnectorDestinationProperties& WithWriteOperationType(WriteOperationType value) { SetWriteOperationType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,15 +84,14 @@ namespace Model
      * <p>The name of the field that Amazon AppFlow uses as an ID when performing a
      * write operation such as update, delete, or upsert.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const{ return m_idFieldNames; }
+    inline const Aws::Vector<Aws::String>& GetIdFieldNames() const { return m_idFieldNames; }
     inline bool IdFieldNamesHasBeenSet() const { return m_idFieldNamesHasBeenSet; }
-    inline void SetIdFieldNames(const Aws::Vector<Aws::String>& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = value; }
-    inline void SetIdFieldNames(Aws::Vector<Aws::String>&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::move(value); }
-    inline CustomConnectorDestinationProperties& WithIdFieldNames(const Aws::Vector<Aws::String>& value) { SetIdFieldNames(value); return *this;}
-    inline CustomConnectorDestinationProperties& WithIdFieldNames(Aws::Vector<Aws::String>&& value) { SetIdFieldNames(std::move(value)); return *this;}
-    inline CustomConnectorDestinationProperties& AddIdFieldNames(const Aws::String& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
-    inline CustomConnectorDestinationProperties& AddIdFieldNames(Aws::String&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(std::move(value)); return *this; }
-    inline CustomConnectorDestinationProperties& AddIdFieldNames(const char* value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.push_back(value); return *this; }
+    template<typename IdFieldNamesT = Aws::Vector<Aws::String>>
+    void SetIdFieldNames(IdFieldNamesT&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames = std::forward<IdFieldNamesT>(value); }
+    template<typename IdFieldNamesT = Aws::Vector<Aws::String>>
+    CustomConnectorDestinationProperties& WithIdFieldNames(IdFieldNamesT&& value) { SetIdFieldNames(std::forward<IdFieldNamesT>(value)); return *this;}
+    template<typename IdFieldNamesT = Aws::String>
+    CustomConnectorDestinationProperties& AddIdFieldNames(IdFieldNamesT&& value) { m_idFieldNamesHasBeenSet = true; m_idFieldNames.emplace_back(std::forward<IdFieldNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,19 +99,16 @@ namespace Model
      * <p>The custom properties that are specific to the connector when it's used as a
      * destination in the flow.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomProperties() const{ return m_customProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomProperties() const { return m_customProperties; }
     inline bool CustomPropertiesHasBeenSet() const { return m_customPropertiesHasBeenSet; }
-    inline void SetCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customPropertiesHasBeenSet = true; m_customProperties = value; }
-    inline void SetCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customPropertiesHasBeenSet = true; m_customProperties = std::move(value); }
-    inline CustomConnectorDestinationProperties& WithCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomProperties(value); return *this;}
-    inline CustomConnectorDestinationProperties& WithCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomProperties(std::move(value)); return *this;}
-    inline CustomConnectorDestinationProperties& AddCustomProperties(const Aws::String& key, const Aws::String& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
-    inline CustomConnectorDestinationProperties& AddCustomProperties(Aws::String&& key, const Aws::String& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), value); return *this; }
-    inline CustomConnectorDestinationProperties& AddCustomProperties(const Aws::String& key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, std::move(value)); return *this; }
-    inline CustomConnectorDestinationProperties& AddCustomProperties(Aws::String&& key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline CustomConnectorDestinationProperties& AddCustomProperties(const char* key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, std::move(value)); return *this; }
-    inline CustomConnectorDestinationProperties& AddCustomProperties(Aws::String&& key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), value); return *this; }
-    inline CustomConnectorDestinationProperties& AddCustomProperties(const char* key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
+    template<typename CustomPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomProperties(CustomPropertiesT&& value) { m_customPropertiesHasBeenSet = true; m_customProperties = std::forward<CustomPropertiesT>(value); }
+    template<typename CustomPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    CustomConnectorDestinationProperties& WithCustomProperties(CustomPropertiesT&& value) { SetCustomProperties(std::forward<CustomPropertiesT>(value)); return *this;}
+    template<typename CustomPropertiesKeyT = Aws::String, typename CustomPropertiesValueT = Aws::String>
+    CustomConnectorDestinationProperties& AddCustomProperties(CustomPropertiesKeyT&& key, CustomPropertiesValueT&& value) {
+      m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::forward<CustomPropertiesKeyT>(key), std::forward<CustomPropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -126,7 +118,7 @@ namespace Model
     ErrorHandlingConfig m_errorHandlingConfig;
     bool m_errorHandlingConfigHasBeenSet = false;
 
-    WriteOperationType m_writeOperationType;
+    WriteOperationType m_writeOperationType{WriteOperationType::NOT_SET};
     bool m_writeOperationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_idFieldNames;

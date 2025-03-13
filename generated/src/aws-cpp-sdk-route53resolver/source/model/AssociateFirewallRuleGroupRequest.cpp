@@ -12,20 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateFirewallRuleGroupRequest::AssociateFirewallRuleGroupRequest() : 
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_firewallRuleGroupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_mutationProtection(MutationProtectionStatus::NOT_SET),
-    m_mutationProtectionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AssociateFirewallRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

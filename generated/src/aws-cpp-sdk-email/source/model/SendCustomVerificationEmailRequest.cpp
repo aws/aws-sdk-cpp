@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SendCustomVerificationEmailRequest::SendCustomVerificationEmailRequest() : 
-    m_emailAddressHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String SendCustomVerificationEmailRequest::SerializePayload() const
 {
   Aws::StringStream ss;

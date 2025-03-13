@@ -35,7 +35,7 @@ namespace Model
   class MedicalScribeJobSummary
   {
   public:
-    AWS_TRANSCRIBESERVICE_API MedicalScribeJobSummary();
+    AWS_TRANSCRIBESERVICE_API MedicalScribeJobSummary() = default;
     AWS_TRANSCRIBESERVICE_API MedicalScribeJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API MedicalScribeJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The name of the Medical Scribe job. Job names are case sensitive and must be
      * unique within an Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetMedicalScribeJobName() const{ return m_medicalScribeJobName; }
+    inline const Aws::String& GetMedicalScribeJobName() const { return m_medicalScribeJobName; }
     inline bool MedicalScribeJobNameHasBeenSet() const { return m_medicalScribeJobNameHasBeenSet; }
-    inline void SetMedicalScribeJobName(const Aws::String& value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName = value; }
-    inline void SetMedicalScribeJobName(Aws::String&& value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName = std::move(value); }
-    inline void SetMedicalScribeJobName(const char* value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName.assign(value); }
-    inline MedicalScribeJobSummary& WithMedicalScribeJobName(const Aws::String& value) { SetMedicalScribeJobName(value); return *this;}
-    inline MedicalScribeJobSummary& WithMedicalScribeJobName(Aws::String&& value) { SetMedicalScribeJobName(std::move(value)); return *this;}
-    inline MedicalScribeJobSummary& WithMedicalScribeJobName(const char* value) { SetMedicalScribeJobName(value); return *this;}
+    template<typename MedicalScribeJobNameT = Aws::String>
+    void SetMedicalScribeJobName(MedicalScribeJobNameT&& value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName = std::forward<MedicalScribeJobNameT>(value); }
+    template<typename MedicalScribeJobNameT = Aws::String>
+    MedicalScribeJobSummary& WithMedicalScribeJobName(MedicalScribeJobNameT&& value) { SetMedicalScribeJobName(std::forward<MedicalScribeJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical
      * Scribe job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline MedicalScribeJobSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline MedicalScribeJobSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    MedicalScribeJobSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,12 @@ namespace Model
      * <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job
      * that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline MedicalScribeJobSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline MedicalScribeJobSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    MedicalScribeJobSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +91,12 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical
      * Scribe job that finished processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
-    inline MedicalScribeJobSummary& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline MedicalScribeJobSummary& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    MedicalScribeJobSummary& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +105,10 @@ namespace Model
      * (<code>en-US</code>) is the only supported language for Medical Scribe jobs.
      * </p>
      */
-    inline const MedicalScribeLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline MedicalScribeLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const MedicalScribeLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(MedicalScribeLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline MedicalScribeJobSummary& WithLanguageCode(const MedicalScribeLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline MedicalScribeJobSummary& WithLanguageCode(MedicalScribeLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(MedicalScribeLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline MedicalScribeJobSummary& WithLanguageCode(MedicalScribeLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +119,10 @@ namespace Model
      * <code>FAILED</code>, <code>FailureReason</code> provides details on why your
      * Medical Scribe job failed.</p>
      */
-    inline const MedicalScribeJobStatus& GetMedicalScribeJobStatus() const{ return m_medicalScribeJobStatus; }
+    inline MedicalScribeJobStatus GetMedicalScribeJobStatus() const { return m_medicalScribeJobStatus; }
     inline bool MedicalScribeJobStatusHasBeenSet() const { return m_medicalScribeJobStatusHasBeenSet; }
-    inline void SetMedicalScribeJobStatus(const MedicalScribeJobStatus& value) { m_medicalScribeJobStatusHasBeenSet = true; m_medicalScribeJobStatus = value; }
-    inline void SetMedicalScribeJobStatus(MedicalScribeJobStatus&& value) { m_medicalScribeJobStatusHasBeenSet = true; m_medicalScribeJobStatus = std::move(value); }
-    inline MedicalScribeJobSummary& WithMedicalScribeJobStatus(const MedicalScribeJobStatus& value) { SetMedicalScribeJobStatus(value); return *this;}
-    inline MedicalScribeJobSummary& WithMedicalScribeJobStatus(MedicalScribeJobStatus&& value) { SetMedicalScribeJobStatus(std::move(value)); return *this;}
+    inline void SetMedicalScribeJobStatus(MedicalScribeJobStatus value) { m_medicalScribeJobStatusHasBeenSet = true; m_medicalScribeJobStatus = value; }
+    inline MedicalScribeJobSummary& WithMedicalScribeJobStatus(MedicalScribeJobStatus value) { SetMedicalScribeJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -139,33 +133,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline MedicalScribeJobSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline MedicalScribeJobSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline MedicalScribeJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    MedicalScribeJobSummary& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_medicalScribeJobName;
     bool m_medicalScribeJobNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
     bool m_completionTimeHasBeenSet = false;
 
-    MedicalScribeLanguageCode m_languageCode;
+    MedicalScribeLanguageCode m_languageCode{MedicalScribeLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    MedicalScribeJobStatus m_medicalScribeJobStatus;
+    MedicalScribeJobStatus m_medicalScribeJobStatus{MedicalScribeJobStatus::NOT_SET};
     bool m_medicalScribeJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;

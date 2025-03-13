@@ -15,24 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPackagesRequest::ListPackagesRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packagePrefixHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_publish(AllowPublish::NOT_SET),
-    m_publishHasBeenSet(false),
-    m_upstream(AllowUpstream::NOT_SET),
-    m_upstreamHasBeenSet(false)
-{
-}
-
 Aws::String ListPackagesRequest::SerializePayload() const
 {
   return {};

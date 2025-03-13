@@ -33,7 +33,7 @@ namespace Model
   class SageMakerEndpoint
   {
   public:
-    AWS_BEDROCK_API SageMakerEndpoint();
+    AWS_BEDROCK_API SageMakerEndpoint() = default;
     AWS_BEDROCK_API SageMakerEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API SageMakerEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The number of Amazon EC2 compute instances to deploy for initial endpoint
      * creation.</p>
      */
-    inline int GetInitialInstanceCount() const{ return m_initialInstanceCount; }
+    inline int GetInitialInstanceCount() const { return m_initialInstanceCount; }
     inline bool InitialInstanceCountHasBeenSet() const { return m_initialInstanceCountHasBeenSet; }
     inline void SetInitialInstanceCount(int value) { m_initialInstanceCountHasBeenSet = true; m_initialInstanceCount = value; }
     inline SageMakerEndpoint& WithInitialInstanceCount(int value) { SetInitialInstanceCount(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
     /**
      * <p>The Amazon EC2 compute instance type to deploy for hosting the model.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline SageMakerEndpoint& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline SageMakerEndpoint& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline SageMakerEndpoint& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    SageMakerEndpoint& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * artifacts and docker image for deployment on Amazon EC2 compute instances or for
      * batch transform jobs.</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline SageMakerEndpoint& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline SageMakerEndpoint& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline SageMakerEndpoint& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    SageMakerEndpoint& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,30 +82,28 @@ namespace Model
      * the storage volume attached to the Amazon EC2 compute instance that hosts the
      * endpoint.</p>
      */
-    inline const Aws::String& GetKmsEncryptionKey() const{ return m_kmsEncryptionKey; }
+    inline const Aws::String& GetKmsEncryptionKey() const { return m_kmsEncryptionKey; }
     inline bool KmsEncryptionKeyHasBeenSet() const { return m_kmsEncryptionKeyHasBeenSet; }
-    inline void SetKmsEncryptionKey(const Aws::String& value) { m_kmsEncryptionKeyHasBeenSet = true; m_kmsEncryptionKey = value; }
-    inline void SetKmsEncryptionKey(Aws::String&& value) { m_kmsEncryptionKeyHasBeenSet = true; m_kmsEncryptionKey = std::move(value); }
-    inline void SetKmsEncryptionKey(const char* value) { m_kmsEncryptionKeyHasBeenSet = true; m_kmsEncryptionKey.assign(value); }
-    inline SageMakerEndpoint& WithKmsEncryptionKey(const Aws::String& value) { SetKmsEncryptionKey(value); return *this;}
-    inline SageMakerEndpoint& WithKmsEncryptionKey(Aws::String&& value) { SetKmsEncryptionKey(std::move(value)); return *this;}
-    inline SageMakerEndpoint& WithKmsEncryptionKey(const char* value) { SetKmsEncryptionKey(value); return *this;}
+    template<typename KmsEncryptionKeyT = Aws::String>
+    void SetKmsEncryptionKey(KmsEncryptionKeyT&& value) { m_kmsEncryptionKeyHasBeenSet = true; m_kmsEncryptionKey = std::forward<KmsEncryptionKeyT>(value); }
+    template<typename KmsEncryptionKeyT = Aws::String>
+    SageMakerEndpoint& WithKmsEncryptionKey(KmsEncryptionKeyT&& value) { SetKmsEncryptionKey(std::forward<KmsEncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC configuration for the endpoint.</p>
      */
-    inline const VpcConfig& GetVpc() const{ return m_vpc; }
+    inline const VpcConfig& GetVpc() const { return m_vpc; }
     inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
-    inline void SetVpc(const VpcConfig& value) { m_vpcHasBeenSet = true; m_vpc = value; }
-    inline void SetVpc(VpcConfig&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
-    inline SageMakerEndpoint& WithVpc(const VpcConfig& value) { SetVpc(value); return *this;}
-    inline SageMakerEndpoint& WithVpc(VpcConfig&& value) { SetVpc(std::move(value)); return *this;}
+    template<typename VpcT = VpcConfig>
+    void SetVpc(VpcT&& value) { m_vpcHasBeenSet = true; m_vpc = std::forward<VpcT>(value); }
+    template<typename VpcT = VpcConfig>
+    SageMakerEndpoint& WithVpc(VpcT&& value) { SetVpc(std::forward<VpcT>(value)); return *this;}
     ///@}
   private:
 
-    int m_initialInstanceCount;
+    int m_initialInstanceCount{0};
     bool m_initialInstanceCountHasBeenSet = false;
 
     Aws::String m_instanceType;

@@ -31,7 +31,7 @@ namespace Model
   class AgentVersion
   {
   public:
-    AWS_SAGEMAKER_API AgentVersion();
+    AWS_SAGEMAKER_API AgentVersion() = default;
     AWS_SAGEMAKER_API AgentVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AgentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>Version of the agent.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline AgentVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline AgentVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline AgentVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    AgentVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of Edge Manager agents.</p>
      */
-    inline long long GetAgentCount() const{ return m_agentCount; }
+    inline long long GetAgentCount() const { return m_agentCount; }
     inline bool AgentCountHasBeenSet() const { return m_agentCountHasBeenSet; }
     inline void SetAgentCount(long long value) { m_agentCountHasBeenSet = true; m_agentCount = value; }
     inline AgentVersion& WithAgentCount(long long value) { SetAgentCount(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    long long m_agentCount;
+    long long m_agentCount{0};
     bool m_agentCountHasBeenSet = false;
   };
 

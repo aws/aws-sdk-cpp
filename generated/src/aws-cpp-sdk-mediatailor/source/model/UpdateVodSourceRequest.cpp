@@ -12,13 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVodSourceRequest::UpdateVodSourceRequest() : 
-    m_httpPackageConfigurationsHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVodSourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class DescribePipelinesRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API DescribePipelinesRequest();
+    AWS_DATAPIPELINE_API DescribePipelinesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
      * <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers
      * in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPipelineIds() const{ return m_pipelineIds; }
+    inline const Aws::Vector<Aws::String>& GetPipelineIds() const { return m_pipelineIds; }
     inline bool PipelineIdsHasBeenSet() const { return m_pipelineIdsHasBeenSet; }
-    inline void SetPipelineIds(const Aws::Vector<Aws::String>& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds = value; }
-    inline void SetPipelineIds(Aws::Vector<Aws::String>&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds = std::move(value); }
-    inline DescribePipelinesRequest& WithPipelineIds(const Aws::Vector<Aws::String>& value) { SetPipelineIds(value); return *this;}
-    inline DescribePipelinesRequest& WithPipelineIds(Aws::Vector<Aws::String>&& value) { SetPipelineIds(std::move(value)); return *this;}
-    inline DescribePipelinesRequest& AddPipelineIds(const Aws::String& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.push_back(value); return *this; }
-    inline DescribePipelinesRequest& AddPipelineIds(Aws::String&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.push_back(std::move(value)); return *this; }
-    inline DescribePipelinesRequest& AddPipelineIds(const char* value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.push_back(value); return *this; }
+    template<typename PipelineIdsT = Aws::Vector<Aws::String>>
+    void SetPipelineIds(PipelineIdsT&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds = std::forward<PipelineIdsT>(value); }
+    template<typename PipelineIdsT = Aws::Vector<Aws::String>>
+    DescribePipelinesRequest& WithPipelineIds(PipelineIdsT&& value) { SetPipelineIds(std::forward<PipelineIdsT>(value)); return *this;}
+    template<typename PipelineIdsT = Aws::String>
+    DescribePipelinesRequest& AddPipelineIds(PipelineIdsT&& value) { m_pipelineIdsHasBeenSet = true; m_pipelineIds.emplace_back(std::forward<PipelineIdsT>(value)); return *this; }
     ///@}
   private:
 

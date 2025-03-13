@@ -32,7 +32,7 @@ namespace Model
   class ClientConnectOptions
   {
   public:
-    AWS_EC2_API ClientConnectOptions();
+    AWS_EC2_API ClientConnectOptions() = default;
     AWS_EC2_API ClientConnectOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClientConnectOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
      * <p>Indicates whether client connect options are enabled. The default is
      * <code>false</code> (not enabled).</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ClientConnectOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -56,18 +56,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function used for connection
      * authorization.</p>
      */
-    inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
+    inline const Aws::String& GetLambdaFunctionArn() const { return m_lambdaFunctionArn; }
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
-    inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
-    inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
-    inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
-    inline ClientConnectOptions& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
-    inline ClientConnectOptions& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
-    inline ClientConnectOptions& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
+    template<typename LambdaFunctionArnT = Aws::String>
+    void SetLambdaFunctionArn(LambdaFunctionArnT&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::forward<LambdaFunctionArnT>(value); }
+    template<typename LambdaFunctionArnT = Aws::String>
+    ClientConnectOptions& WithLambdaFunctionArn(LambdaFunctionArnT&& value) { SetLambdaFunctionArn(std::forward<LambdaFunctionArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;

@@ -33,7 +33,7 @@ namespace Model
   class NumericSeparatorConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API NumericSeparatorConfiguration();
+    AWS_QUICKSIGHT_API NumericSeparatorConfiguration() = default;
     AWS_QUICKSIGHT_API NumericSeparatorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NumericSeparatorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>Determines the decimal separator.</p>
      */
-    inline const NumericSeparatorSymbol& GetDecimalSeparator() const{ return m_decimalSeparator; }
+    inline NumericSeparatorSymbol GetDecimalSeparator() const { return m_decimalSeparator; }
     inline bool DecimalSeparatorHasBeenSet() const { return m_decimalSeparatorHasBeenSet; }
-    inline void SetDecimalSeparator(const NumericSeparatorSymbol& value) { m_decimalSeparatorHasBeenSet = true; m_decimalSeparator = value; }
-    inline void SetDecimalSeparator(NumericSeparatorSymbol&& value) { m_decimalSeparatorHasBeenSet = true; m_decimalSeparator = std::move(value); }
-    inline NumericSeparatorConfiguration& WithDecimalSeparator(const NumericSeparatorSymbol& value) { SetDecimalSeparator(value); return *this;}
-    inline NumericSeparatorConfiguration& WithDecimalSeparator(NumericSeparatorSymbol&& value) { SetDecimalSeparator(std::move(value)); return *this;}
+    inline void SetDecimalSeparator(NumericSeparatorSymbol value) { m_decimalSeparatorHasBeenSet = true; m_decimalSeparator = value; }
+    inline NumericSeparatorConfiguration& WithDecimalSeparator(NumericSeparatorSymbol value) { SetDecimalSeparator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine the thousands separator configuration.</p>
      */
-    inline const ThousandSeparatorOptions& GetThousandsSeparator() const{ return m_thousandsSeparator; }
+    inline const ThousandSeparatorOptions& GetThousandsSeparator() const { return m_thousandsSeparator; }
     inline bool ThousandsSeparatorHasBeenSet() const { return m_thousandsSeparatorHasBeenSet; }
-    inline void SetThousandsSeparator(const ThousandSeparatorOptions& value) { m_thousandsSeparatorHasBeenSet = true; m_thousandsSeparator = value; }
-    inline void SetThousandsSeparator(ThousandSeparatorOptions&& value) { m_thousandsSeparatorHasBeenSet = true; m_thousandsSeparator = std::move(value); }
-    inline NumericSeparatorConfiguration& WithThousandsSeparator(const ThousandSeparatorOptions& value) { SetThousandsSeparator(value); return *this;}
-    inline NumericSeparatorConfiguration& WithThousandsSeparator(ThousandSeparatorOptions&& value) { SetThousandsSeparator(std::move(value)); return *this;}
+    template<typename ThousandsSeparatorT = ThousandSeparatorOptions>
+    void SetThousandsSeparator(ThousandsSeparatorT&& value) { m_thousandsSeparatorHasBeenSet = true; m_thousandsSeparator = std::forward<ThousandsSeparatorT>(value); }
+    template<typename ThousandsSeparatorT = ThousandSeparatorOptions>
+    NumericSeparatorConfiguration& WithThousandsSeparator(ThousandsSeparatorT&& value) { SetThousandsSeparator(std::forward<ThousandsSeparatorT>(value)); return *this;}
     ///@}
   private:
 
-    NumericSeparatorSymbol m_decimalSeparator;
+    NumericSeparatorSymbol m_decimalSeparator{NumericSeparatorSymbol::NOT_SET};
     bool m_decimalSeparatorHasBeenSet = false;
 
     ThousandSeparatorOptions m_thousandsSeparator;

@@ -28,35 +28,35 @@ namespace Model
   class CreateAddonResult
   {
   public:
-    AWS_EKS_API CreateAddonResult();
+    AWS_EKS_API CreateAddonResult() = default;
     AWS_EKS_API CreateAddonResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API CreateAddonResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Addon& GetAddon() const{ return m_addon; }
-    inline void SetAddon(const Addon& value) { m_addon = value; }
-    inline void SetAddon(Addon&& value) { m_addon = std::move(value); }
-    inline CreateAddonResult& WithAddon(const Addon& value) { SetAddon(value); return *this;}
-    inline CreateAddonResult& WithAddon(Addon&& value) { SetAddon(std::move(value)); return *this;}
+    inline const Addon& GetAddon() const { return m_addon; }
+    template<typename AddonT = Addon>
+    void SetAddon(AddonT&& value) { m_addonHasBeenSet = true; m_addon = std::forward<AddonT>(value); }
+    template<typename AddonT = Addon>
+    CreateAddonResult& WithAddon(AddonT&& value) { SetAddon(std::forward<AddonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAddonResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAddonResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAddonResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAddonResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Addon m_addon;
+    bool m_addonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendTaskHeartbeatRequest::SendTaskHeartbeatRequest() : 
-    m_taskTokenHasBeenSet(false)
-{
-}
-
 Aws::String SendTaskHeartbeatRequest::SerializePayload() const
 {
   JsonValue payload;

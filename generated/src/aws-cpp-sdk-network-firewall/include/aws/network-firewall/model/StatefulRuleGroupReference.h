@@ -33,7 +33,7 @@ namespace Model
   class StatefulRuleGroupReference
   {
   public:
-    AWS_NETWORKFIREWALL_API StatefulRuleGroupReference();
+    AWS_NETWORKFIREWALL_API StatefulRuleGroupReference() = default;
     AWS_NETWORKFIREWALL_API StatefulRuleGroupReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API StatefulRuleGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline StatefulRuleGroupReference& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline StatefulRuleGroupReference& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline StatefulRuleGroupReference& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    StatefulRuleGroupReference& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * time. To make it easier to insert rule groups later, number them so there's a
      * wide range in between, for example use 100, 200, and so on. </p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline StatefulRuleGroupReference& WithPriority(int value) { SetPriority(value); return *this;}
@@ -76,19 +74,19 @@ namespace Model
      * <p>The action that allows the policy owner to override the behavior of the rule
      * group within a policy.</p>
      */
-    inline const StatefulRuleGroupOverride& GetOverride() const{ return m_override; }
+    inline const StatefulRuleGroupOverride& GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
-    inline void SetOverride(const StatefulRuleGroupOverride& value) { m_overrideHasBeenSet = true; m_override = value; }
-    inline void SetOverride(StatefulRuleGroupOverride&& value) { m_overrideHasBeenSet = true; m_override = std::move(value); }
-    inline StatefulRuleGroupReference& WithOverride(const StatefulRuleGroupOverride& value) { SetOverride(value); return *this;}
-    inline StatefulRuleGroupReference& WithOverride(StatefulRuleGroupOverride&& value) { SetOverride(std::move(value)); return *this;}
+    template<typename OverrideT = StatefulRuleGroupOverride>
+    void SetOverride(OverrideT&& value) { m_overrideHasBeenSet = true; m_override = std::forward<OverrideT>(value); }
+    template<typename OverrideT = StatefulRuleGroupOverride>
+    StatefulRuleGroupReference& WithOverride(OverrideT&& value) { SetOverride(std::forward<OverrideT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     StatefulRuleGroupOverride m_override;

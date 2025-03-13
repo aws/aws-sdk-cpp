@@ -16,36 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeModelResult::InvokeModelResult() : 
-    m_performanceConfigLatency(PerformanceConfigLatency::NOT_SET)
-{
-}
-
-InvokeModelResult::InvokeModelResult(InvokeModelResult&& toMove) : 
-    m_body(std::move(toMove.m_body)),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_performanceConfigLatency(toMove.m_performanceConfigLatency),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-InvokeModelResult& InvokeModelResult::operator=(InvokeModelResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_body = std::move(toMove.m_body);
-   m_contentType = std::move(toMove.m_contentType);
-   m_performanceConfigLatency = toMove.m_performanceConfigLatency;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 InvokeModelResult::InvokeModelResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : InvokeModelResult()
 {
   *this = std::move(result);
 }
@@ -53,24 +24,28 @@ InvokeModelResult::InvokeModelResult(Aws::AmazonWebServiceResult<ResponseStream>
 InvokeModelResult& InvokeModelResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
+  m_bodyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& performanceConfigLatencyIter = headers.find("x-amzn-bedrock-performanceconfig-latency");
   if(performanceConfigLatencyIter != headers.end())
   {
     m_performanceConfigLatency = PerformanceConfigLatencyMapper::GetPerformanceConfigLatencyForName(performanceConfigLatencyIter->second);
+    m_performanceConfigLatencyHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

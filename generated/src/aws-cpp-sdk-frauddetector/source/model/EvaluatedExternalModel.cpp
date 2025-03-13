@@ -18,17 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-EvaluatedExternalModel::EvaluatedExternalModel() : 
-    m_modelEndpointHasBeenSet(false),
-    m_useEventVariables(false),
-    m_useEventVariablesHasBeenSet(false),
-    m_inputVariablesHasBeenSet(false),
-    m_outputVariablesHasBeenSet(false)
-{
-}
-
 EvaluatedExternalModel::EvaluatedExternalModel(JsonView jsonValue)
-  : EvaluatedExternalModel()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ EvaluatedExternalModel& EvaluatedExternalModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelEndpoint"))
   {
     m_modelEndpoint = jsonValue.GetString("modelEndpoint");
-
     m_modelEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useEventVariables"))
   {
     m_useEventVariables = jsonValue.GetBool("useEventVariables");
-
     m_useEventVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputVariables"))
   {
     Aws::Map<Aws::String, JsonView> inputVariablesJsonMap = jsonValue.GetObject("inputVariables").GetAllObjects();
@@ -58,7 +44,6 @@ EvaluatedExternalModel& EvaluatedExternalModel::operator =(JsonView jsonValue)
     }
     m_inputVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputVariables"))
   {
     Aws::Map<Aws::String, JsonView> outputVariablesJsonMap = jsonValue.GetObject("outputVariables").GetAllObjects();
@@ -68,7 +53,6 @@ EvaluatedExternalModel& EvaluatedExternalModel::operator =(JsonView jsonValue)
     }
     m_outputVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,19 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-NodeSnapshot::NodeSnapshot() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_nodeGroupIdHasBeenSet(false),
-    m_cacheNodeIdHasBeenSet(false),
-    m_nodeGroupConfigurationHasBeenSet(false),
-    m_cacheSizeHasBeenSet(false),
-    m_cacheNodeCreateTimeHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false)
-{
-}
-
 NodeSnapshot::NodeSnapshot(const XmlNode& xmlNode)
-  : NodeSnapshot()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,49 @@ NodeSnapshot& NodeSnapshot::operator =(const XmlNode& xmlNode)
     {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
+       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
     if(!nodeGroupIdNode.IsNull())
     {
       m_nodeGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(nodeGroupIdNode.GetText());
       m_nodeGroupIdHasBeenSet = true;
+       m_nodeGroupIdHasBeenSet = true;
     }
     XmlNode cacheNodeIdNode = resultNode.FirstChild("CacheNodeId");
     if(!cacheNodeIdNode.IsNull())
     {
       m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
+       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode nodeGroupConfigurationNode = resultNode.FirstChild("NodeGroupConfiguration");
     if(!nodeGroupConfigurationNode.IsNull())
     {
       m_nodeGroupConfiguration = nodeGroupConfigurationNode;
       m_nodeGroupConfigurationHasBeenSet = true;
+       m_nodeGroupConfigurationHasBeenSet = true;
     }
     XmlNode cacheSizeNode = resultNode.FirstChild("CacheSize");
     if(!cacheSizeNode.IsNull())
     {
       m_cacheSize = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSizeNode.GetText());
       m_cacheSizeHasBeenSet = true;
+       m_cacheSizeHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
     if(!cacheNodeCreateTimeNode.IsNull())
     {
       m_cacheNodeCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_cacheNodeCreateTimeHasBeenSet = true;
+       m_cacheNodeCreateTimeHasBeenSet = true;
     }
     XmlNode snapshotCreateTimeNode = resultNode.FirstChild("SnapshotCreateTime");
     if(!snapshotCreateTimeNode.IsNull())
     {
       m_snapshotCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(snapshotCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_snapshotCreateTimeHasBeenSet = true;
+       m_snapshotCreateTimeHasBeenSet = true;
     }
   }
 

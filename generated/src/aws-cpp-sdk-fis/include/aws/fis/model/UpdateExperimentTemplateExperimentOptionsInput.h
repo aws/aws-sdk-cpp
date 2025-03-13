@@ -32,7 +32,7 @@ namespace Model
   class UpdateExperimentTemplateExperimentOptionsInput
   {
   public:
-    AWS_FIS_API UpdateExperimentTemplateExperimentOptionsInput();
+    AWS_FIS_API UpdateExperimentTemplateExperimentOptionsInput() = default;
     AWS_FIS_API UpdateExperimentTemplateExperimentOptionsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API UpdateExperimentTemplateExperimentOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The empty target resolution mode of the experiment template.</p>
      */
-    inline const EmptyTargetResolutionMode& GetEmptyTargetResolutionMode() const{ return m_emptyTargetResolutionMode; }
+    inline EmptyTargetResolutionMode GetEmptyTargetResolutionMode() const { return m_emptyTargetResolutionMode; }
     inline bool EmptyTargetResolutionModeHasBeenSet() const { return m_emptyTargetResolutionModeHasBeenSet; }
-    inline void SetEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = value; }
-    inline void SetEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = std::move(value); }
-    inline UpdateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(const EmptyTargetResolutionMode& value) { SetEmptyTargetResolutionMode(value); return *this;}
-    inline UpdateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { SetEmptyTargetResolutionMode(std::move(value)); return *this;}
+    inline void SetEmptyTargetResolutionMode(EmptyTargetResolutionMode value) { m_emptyTargetResolutionModeHasBeenSet = true; m_emptyTargetResolutionMode = value; }
+    inline UpdateExperimentTemplateExperimentOptionsInput& WithEmptyTargetResolutionMode(EmptyTargetResolutionMode value) { SetEmptyTargetResolutionMode(value); return *this;}
     ///@}
   private:
 
-    EmptyTargetResolutionMode m_emptyTargetResolutionMode;
+    EmptyTargetResolutionMode m_emptyTargetResolutionMode{EmptyTargetResolutionMode::NOT_SET};
     bool m_emptyTargetResolutionModeHasBeenSet = false;
   };
 

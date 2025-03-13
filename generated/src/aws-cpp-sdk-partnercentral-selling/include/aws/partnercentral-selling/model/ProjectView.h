@@ -36,7 +36,7 @@ namespace Model
   class ProjectView
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ProjectView();
+    AWS_PARTNERCENTRALSELLING_API ProjectView() = default;
     AWS_PARTNERCENTRALSELLING_API ProjectView(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API ProjectView& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p> Specifies the proposed solution focus or type of workload for the project.
      * </p>
      */
-    inline const Aws::String& GetCustomerUseCase() const{ return m_customerUseCase; }
+    inline const Aws::String& GetCustomerUseCase() const { return m_customerUseCase; }
     inline bool CustomerUseCaseHasBeenSet() const { return m_customerUseCaseHasBeenSet; }
-    inline void SetCustomerUseCase(const Aws::String& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = value; }
-    inline void SetCustomerUseCase(Aws::String&& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = std::move(value); }
-    inline void SetCustomerUseCase(const char* value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase.assign(value); }
-    inline ProjectView& WithCustomerUseCase(const Aws::String& value) { SetCustomerUseCase(value); return *this;}
-    inline ProjectView& WithCustomerUseCase(Aws::String&& value) { SetCustomerUseCase(std::move(value)); return *this;}
-    inline ProjectView& WithCustomerUseCase(const char* value) { SetCustomerUseCase(value); return *this;}
+    template<typename CustomerUseCaseT = Aws::String>
+    void SetCustomerUseCase(CustomerUseCaseT&& value) { m_customerUseCaseHasBeenSet = true; m_customerUseCase = std::forward<CustomerUseCaseT>(value); }
+    template<typename CustomerUseCaseT = Aws::String>
+    ProjectView& WithCustomerUseCase(CustomerUseCaseT&& value) { SetCustomerUseCase(std::forward<CustomerUseCaseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,13 @@ namespace Model
      * offering. This field indicates how the project's solution will be delivered or
      * implemented for the customer. </p>
      */
-    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const{ return m_deliveryModels; }
+    inline const Aws::Vector<DeliveryModel>& GetDeliveryModels() const { return m_deliveryModels; }
     inline bool DeliveryModelsHasBeenSet() const { return m_deliveryModelsHasBeenSet; }
-    inline void SetDeliveryModels(const Aws::Vector<DeliveryModel>& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = value; }
-    inline void SetDeliveryModels(Aws::Vector<DeliveryModel>&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::move(value); }
-    inline ProjectView& WithDeliveryModels(const Aws::Vector<DeliveryModel>& value) { SetDeliveryModels(value); return *this;}
-    inline ProjectView& WithDeliveryModels(Aws::Vector<DeliveryModel>&& value) { SetDeliveryModels(std::move(value)); return *this;}
-    inline ProjectView& AddDeliveryModels(const DeliveryModel& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
-    inline ProjectView& AddDeliveryModels(DeliveryModel&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(std::move(value)); return *this; }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    void SetDeliveryModels(DeliveryModelsT&& value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels = std::forward<DeliveryModelsT>(value); }
+    template<typename DeliveryModelsT = Aws::Vector<DeliveryModel>>
+    ProjectView& WithDeliveryModels(DeliveryModelsT&& value) { SetDeliveryModels(std::forward<DeliveryModelsT>(value)); return *this;}
+    inline ProjectView& AddDeliveryModels(DeliveryModel value) { m_deliveryModelsHasBeenSet = true; m_deliveryModels.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +76,14 @@ namespace Model
      * project. This may include details such as amount, frequency, and currency of
      * expected expenditure. </p>
      */
-    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const{ return m_expectedCustomerSpend; }
+    inline const Aws::Vector<ExpectedCustomerSpend>& GetExpectedCustomerSpend() const { return m_expectedCustomerSpend; }
     inline bool ExpectedCustomerSpendHasBeenSet() const { return m_expectedCustomerSpendHasBeenSet; }
-    inline void SetExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = value; }
-    inline void SetExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::move(value); }
-    inline ProjectView& WithExpectedCustomerSpend(const Aws::Vector<ExpectedCustomerSpend>& value) { SetExpectedCustomerSpend(value); return *this;}
-    inline ProjectView& WithExpectedCustomerSpend(Aws::Vector<ExpectedCustomerSpend>&& value) { SetExpectedCustomerSpend(std::move(value)); return *this;}
-    inline ProjectView& AddExpectedCustomerSpend(const ExpectedCustomerSpend& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(value); return *this; }
-    inline ProjectView& AddExpectedCustomerSpend(ExpectedCustomerSpend&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.push_back(std::move(value)); return *this; }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    void SetExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend = std::forward<ExpectedCustomerSpendT>(value); }
+    template<typename ExpectedCustomerSpendT = Aws::Vector<ExpectedCustomerSpend>>
+    ProjectView& WithExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { SetExpectedCustomerSpend(std::forward<ExpectedCustomerSpendT>(value)); return *this;}
+    template<typename ExpectedCustomerSpendT = ExpectedCustomerSpend>
+    ProjectView& AddExpectedCustomerSpend(ExpectedCustomerSpendT&& value) { m_expectedCustomerSpendHasBeenSet = true; m_expectedCustomerSpend.emplace_back(std::forward<ExpectedCustomerSpendT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +91,12 @@ namespace Model
      * <p> Offers a description of other solutions if the standard solutions do not
      * adequately cover the project's scope. </p>
      */
-    inline const Aws::String& GetOtherSolutionDescription() const{ return m_otherSolutionDescription; }
+    inline const Aws::String& GetOtherSolutionDescription() const { return m_otherSolutionDescription; }
     inline bool OtherSolutionDescriptionHasBeenSet() const { return m_otherSolutionDescriptionHasBeenSet; }
-    inline void SetOtherSolutionDescription(const Aws::String& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = value; }
-    inline void SetOtherSolutionDescription(Aws::String&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::move(value); }
-    inline void SetOtherSolutionDescription(const char* value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription.assign(value); }
-    inline ProjectView& WithOtherSolutionDescription(const Aws::String& value) { SetOtherSolutionDescription(value); return *this;}
-    inline ProjectView& WithOtherSolutionDescription(Aws::String&& value) { SetOtherSolutionDescription(std::move(value)); return *this;}
-    inline ProjectView& WithOtherSolutionDescription(const char* value) { SetOtherSolutionDescription(value); return *this;}
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    void SetOtherSolutionDescription(OtherSolutionDescriptionT&& value) { m_otherSolutionDescriptionHasBeenSet = true; m_otherSolutionDescription = std::forward<OtherSolutionDescriptionT>(value); }
+    template<typename OtherSolutionDescriptionT = Aws::String>
+    ProjectView& WithOtherSolutionDescription(OtherSolutionDescriptionT&& value) { SetOtherSolutionDescription(std::forward<OtherSolutionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +106,13 @@ namespace Model
      * project is qualified for Co-Sell and helps drive assignment priority on the AWS
      * side. It provides insight into the engagement level with the customer. </p>
      */
-    inline const Aws::Vector<SalesActivity>& GetSalesActivities() const{ return m_salesActivities; }
+    inline const Aws::Vector<SalesActivity>& GetSalesActivities() const { return m_salesActivities; }
     inline bool SalesActivitiesHasBeenSet() const { return m_salesActivitiesHasBeenSet; }
-    inline void SetSalesActivities(const Aws::Vector<SalesActivity>& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities = value; }
-    inline void SetSalesActivities(Aws::Vector<SalesActivity>&& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities = std::move(value); }
-    inline ProjectView& WithSalesActivities(const Aws::Vector<SalesActivity>& value) { SetSalesActivities(value); return *this;}
-    inline ProjectView& WithSalesActivities(Aws::Vector<SalesActivity>&& value) { SetSalesActivities(std::move(value)); return *this;}
-    inline ProjectView& AddSalesActivities(const SalesActivity& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(value); return *this; }
-    inline ProjectView& AddSalesActivities(SalesActivity&& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(std::move(value)); return *this; }
+    template<typename SalesActivitiesT = Aws::Vector<SalesActivity>>
+    void SetSalesActivities(SalesActivitiesT&& value) { m_salesActivitiesHasBeenSet = true; m_salesActivities = std::forward<SalesActivitiesT>(value); }
+    template<typename SalesActivitiesT = Aws::Vector<SalesActivity>>
+    ProjectView& WithSalesActivities(SalesActivitiesT&& value) { SetSalesActivities(std::forward<SalesActivitiesT>(value)); return *this;}
+    inline ProjectView& AddSalesActivities(SalesActivity value) { m_salesActivitiesHasBeenSet = true; m_salesActivities.push_back(value); return *this; }
     ///@}
   private:
 

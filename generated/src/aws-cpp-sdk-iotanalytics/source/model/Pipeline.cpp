@@ -18,18 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-Pipeline::Pipeline() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_activitiesHasBeenSet(false),
-    m_reprocessingSummariesHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 Pipeline::Pipeline(JsonView jsonValue)
-  : Pipeline()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activities"))
   {
     Aws::Utils::Array<JsonView> activitiesJsonList = jsonValue.GetArray("activities");
@@ -59,7 +44,6 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
     }
     m_activitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reprocessingSummaries"))
   {
     Aws::Utils::Array<JsonView> reprocessingSummariesJsonList = jsonValue.GetArray("reprocessingSummaries");
@@ -69,21 +53,16 @@ Pipeline& Pipeline::operator =(JsonView jsonValue)
     }
     m_reprocessingSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

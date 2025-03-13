@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDomainResult::DeleteDomainResult() : 
-    m_status(DomainStatus::NOT_SET)
-{
-}
-
 DeleteDomainResult::DeleteDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDomainResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteDomainResult& DeleteDomainResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("status"))
   {
     m_status = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

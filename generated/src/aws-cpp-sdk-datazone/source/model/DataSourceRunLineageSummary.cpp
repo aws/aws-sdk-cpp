@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataSourceRunLineageSummary::DataSourceRunLineageSummary() : 
-    m_importStatus(LineageImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false)
-{
-}
-
 DataSourceRunLineageSummary::DataSourceRunLineageSummary(JsonView jsonValue)
-  : DataSourceRunLineageSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataSourceRunLineageSummary& DataSourceRunLineageSummary::operator =(JsonView js
   if(jsonValue.ValueExists("importStatus"))
   {
     m_importStatus = LineageImportStatusMapper::GetLineageImportStatusForName(jsonValue.GetString("importStatus"));
-
     m_importStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

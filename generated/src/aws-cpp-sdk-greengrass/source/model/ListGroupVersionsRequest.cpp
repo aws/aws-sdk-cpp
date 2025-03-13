@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListGroupVersionsRequest::ListGroupVersionsRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListGroupVersionsRequest::SerializePayload() const
 {
   return {};

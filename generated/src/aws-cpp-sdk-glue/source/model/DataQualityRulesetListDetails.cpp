@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityRulesetListDetails::DataQualityRulesetListDetails() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_recommendationRunIdHasBeenSet(false),
-    m_ruleCount(0),
-    m_ruleCountHasBeenSet(false)
-{
-}
-
 DataQualityRulesetListDetails::DataQualityRulesetListDetails(JsonView jsonValue)
-  : DataQualityRulesetListDetails()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ DataQualityRulesetListDetails& DataQualityRulesetListDetails::operator =(JsonVie
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedOn"))
   {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
-
     m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTable"))
   {
     m_targetTable = jsonValue.GetObject("TargetTable");
-
     m_targetTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationRunId"))
   {
     m_recommendationRunId = jsonValue.GetString("RecommendationRunId");
-
     m_recommendationRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleCount"))
   {
     m_ruleCount = jsonValue.GetInteger("RuleCount");
-
     m_ruleCountHasBeenSet = true;
   }
-
   return *this;
 }
 

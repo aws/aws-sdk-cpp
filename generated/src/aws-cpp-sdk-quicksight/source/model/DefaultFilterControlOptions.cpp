@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultFilterControlOptions::DefaultFilterControlOptions() : 
-    m_defaultDateTimePickerOptionsHasBeenSet(false),
-    m_defaultListOptionsHasBeenSet(false),
-    m_defaultDropdownOptionsHasBeenSet(false),
-    m_defaultTextFieldOptionsHasBeenSet(false),
-    m_defaultTextAreaOptionsHasBeenSet(false),
-    m_defaultSliderOptionsHasBeenSet(false),
-    m_defaultRelativeDateTimeOptionsHasBeenSet(false)
-{
-}
-
 DefaultFilterControlOptions::DefaultFilterControlOptions(JsonView jsonValue)
-  : DefaultFilterControlOptions()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ DefaultFilterControlOptions& DefaultFilterControlOptions::operator =(JsonView js
   if(jsonValue.ValueExists("DefaultDateTimePickerOptions"))
   {
     m_defaultDateTimePickerOptions = jsonValue.GetObject("DefaultDateTimePickerOptions");
-
     m_defaultDateTimePickerOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultListOptions"))
   {
     m_defaultListOptions = jsonValue.GetObject("DefaultListOptions");
-
     m_defaultListOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultDropdownOptions"))
   {
     m_defaultDropdownOptions = jsonValue.GetObject("DefaultDropdownOptions");
-
     m_defaultDropdownOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultTextFieldOptions"))
   {
     m_defaultTextFieldOptions = jsonValue.GetObject("DefaultTextFieldOptions");
-
     m_defaultTextFieldOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultTextAreaOptions"))
   {
     m_defaultTextAreaOptions = jsonValue.GetObject("DefaultTextAreaOptions");
-
     m_defaultTextAreaOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSliderOptions"))
   {
     m_defaultSliderOptions = jsonValue.GetObject("DefaultSliderOptions");
-
     m_defaultSliderOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRelativeDateTimeOptions"))
   {
     m_defaultRelativeDateTimeOptions = jsonValue.GetObject("DefaultRelativeDateTimeOptions");
-
     m_defaultRelativeDateTimeOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

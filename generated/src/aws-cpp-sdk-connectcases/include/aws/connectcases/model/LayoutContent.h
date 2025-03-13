@@ -32,7 +32,7 @@ namespace Model
   class LayoutContent
   {
   public:
-    AWS_CONNECTCASES_API LayoutContent();
+    AWS_CONNECTCASES_API LayoutContent() = default;
     AWS_CONNECTCASES_API LayoutContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API LayoutContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
      * the top panel and More Info tab of Cases user interface.</p>
      */
-    inline const BasicLayout& GetBasic() const{ return m_basic; }
+    inline const BasicLayout& GetBasic() const { return m_basic; }
     inline bool BasicHasBeenSet() const { return m_basicHasBeenSet; }
-    inline void SetBasic(const BasicLayout& value) { m_basicHasBeenSet = true; m_basic = value; }
-    inline void SetBasic(BasicLayout&& value) { m_basicHasBeenSet = true; m_basic = std::move(value); }
-    inline LayoutContent& WithBasic(const BasicLayout& value) { SetBasic(value); return *this;}
-    inline LayoutContent& WithBasic(BasicLayout&& value) { SetBasic(std::move(value)); return *this;}
+    template<typename BasicT = BasicLayout>
+    void SetBasic(BasicT&& value) { m_basicHasBeenSet = true; m_basic = std::forward<BasicT>(value); }
+    template<typename BasicT = BasicLayout>
+    LayoutContent& WithBasic(BasicT&& value) { SetBasic(std::forward<BasicT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FirewallStatefulRule::FirewallStatefulRule() : 
-    m_ruleGroupArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_directionHasBeenSet(false)
-{
-}
-
 FirewallStatefulRule::FirewallStatefulRule(const XmlNode& xmlNode)
-  : FirewallStatefulRule()
 {
   *this = xmlNode;
 }
@@ -49,72 +36,80 @@ FirewallStatefulRule& FirewallStatefulRule::operator =(const XmlNode& xmlNode)
     {
       m_ruleGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(ruleGroupArnNode.GetText());
       m_ruleGroupArnHasBeenSet = true;
+       m_ruleGroupArnHasBeenSet = true;
     }
     XmlNode sourcesNode = resultNode.FirstChild("sourceSet");
     if(!sourcesNode.IsNull())
     {
       XmlNode sourcesMember = sourcesNode.FirstChild("item");
+      m_sourcesHasBeenSet = !sourcesMember.IsNull();
       while(!sourcesMember.IsNull())
       {
         m_sources.push_back(sourcesMember.GetText());
         sourcesMember = sourcesMember.NextNode("item");
       }
 
-      m_sourcesHasBeenSet = true;
+       m_sourcesHasBeenSet = true;
     }
     XmlNode destinationsNode = resultNode.FirstChild("destinationSet");
     if(!destinationsNode.IsNull())
     {
       XmlNode destinationsMember = destinationsNode.FirstChild("item");
+      m_destinationsHasBeenSet = !destinationsMember.IsNull();
       while(!destinationsMember.IsNull())
       {
         m_destinations.push_back(destinationsMember.GetText());
         destinationsMember = destinationsMember.NextNode("item");
       }
 
-      m_destinationsHasBeenSet = true;
+       m_destinationsHasBeenSet = true;
     }
     XmlNode sourcePortsNode = resultNode.FirstChild("sourcePortSet");
     if(!sourcePortsNode.IsNull())
     {
       XmlNode sourcePortsMember = sourcePortsNode.FirstChild("item");
+      m_sourcePortsHasBeenSet = !sourcePortsMember.IsNull();
       while(!sourcePortsMember.IsNull())
       {
         m_sourcePorts.push_back(sourcePortsMember);
         sourcePortsMember = sourcePortsMember.NextNode("item");
       }
 
-      m_sourcePortsHasBeenSet = true;
+       m_sourcePortsHasBeenSet = true;
     }
     XmlNode destinationPortsNode = resultNode.FirstChild("destinationPortSet");
     if(!destinationPortsNode.IsNull())
     {
       XmlNode destinationPortsMember = destinationPortsNode.FirstChild("item");
+      m_destinationPortsHasBeenSet = !destinationPortsMember.IsNull();
       while(!destinationPortsMember.IsNull())
       {
         m_destinationPorts.push_back(destinationPortsMember);
         destinationPortsMember = destinationPortsMember.NextNode("item");
       }
 
-      m_destinationPortsHasBeenSet = true;
+       m_destinationPortsHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode ruleActionNode = resultNode.FirstChild("ruleAction");
     if(!ruleActionNode.IsNull())
     {
       m_ruleAction = Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText());
       m_ruleActionHasBeenSet = true;
+       m_ruleActionHasBeenSet = true;
     }
     XmlNode directionNode = resultNode.FirstChild("direction");
     if(!directionNode.IsNull())
     {
       m_direction = Aws::Utils::Xml::DecodeEscapedXmlText(directionNode.GetText());
       m_directionHasBeenSet = true;
+       m_directionHasBeenSet = true;
     }
   }
 

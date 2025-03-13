@@ -29,7 +29,7 @@ namespace Model
   class CreateJobForDevicesResult
   {
   public:
-    AWS_PANORAMA_API CreateJobForDevicesResult();
+    AWS_PANORAMA_API CreateJobForDevicesResult() = default;
     AWS_PANORAMA_API CreateJobForDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PANORAMA_API CreateJobForDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of jobs.</p>
      */
-    inline const Aws::Vector<Job>& GetJobs() const{ return m_jobs; }
-    inline void SetJobs(const Aws::Vector<Job>& value) { m_jobs = value; }
-    inline void SetJobs(Aws::Vector<Job>&& value) { m_jobs = std::move(value); }
-    inline CreateJobForDevicesResult& WithJobs(const Aws::Vector<Job>& value) { SetJobs(value); return *this;}
-    inline CreateJobForDevicesResult& WithJobs(Aws::Vector<Job>&& value) { SetJobs(std::move(value)); return *this;}
-    inline CreateJobForDevicesResult& AddJobs(const Job& value) { m_jobs.push_back(value); return *this; }
-    inline CreateJobForDevicesResult& AddJobs(Job&& value) { m_jobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Job>& GetJobs() const { return m_jobs; }
+    template<typename JobsT = Aws::Vector<Job>>
+    void SetJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs = std::forward<JobsT>(value); }
+    template<typename JobsT = Aws::Vector<Job>>
+    CreateJobForDevicesResult& WithJobs(JobsT&& value) { SetJobs(std::forward<JobsT>(value)); return *this;}
+    template<typename JobsT = Job>
+    CreateJobForDevicesResult& AddJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs.emplace_back(std::forward<JobsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateJobForDevicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateJobForDevicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateJobForDevicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateJobForDevicesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Job> m_jobs;
+    bool m_jobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

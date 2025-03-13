@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTrainingDocumentClassifierRequest::StopTrainingDocumentClassifierRequest() : 
-    m_documentClassifierArnHasBeenSet(false)
-{
-}
-
 Aws::String StopTrainingDocumentClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class NodeExporter
   {
   public:
-    AWS_KAFKA_API NodeExporter();
+    AWS_KAFKA_API NodeExporter() = default;
     AWS_KAFKA_API NodeExporter(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API NodeExporter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * Exporter.</p>
          
      */
-    inline bool GetEnabledInBroker() const{ return m_enabledInBroker; }
+    inline bool GetEnabledInBroker() const { return m_enabledInBroker; }
     inline bool EnabledInBrokerHasBeenSet() const { return m_enabledInBrokerHasBeenSet; }
     inline void SetEnabledInBroker(bool value) { m_enabledInBrokerHasBeenSet = true; m_enabledInBroker = value; }
     inline NodeExporter& WithEnabledInBroker(bool value) { SetEnabledInBroker(value); return *this;}
     ///@}
   private:
 
-    bool m_enabledInBroker;
+    bool m_enabledInBroker{false};
     bool m_enabledInBrokerHasBeenSet = false;
   };
 

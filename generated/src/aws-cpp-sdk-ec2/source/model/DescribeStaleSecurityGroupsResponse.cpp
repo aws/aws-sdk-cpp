@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStaleSecurityGroupsResponse::DescribeStaleSecurityGroupsResponse()
-{
-}
-
 DescribeStaleSecurityGroupsResponse::DescribeStaleSecurityGroupsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeStaleSecurityGroupsResponse& DescribeStaleSecurityGroupsResponse::operat
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode staleSecurityGroupSetNode = resultNode.FirstChild("staleSecurityGroupSet");
     if(!staleSecurityGroupSetNode.IsNull())
     {
       XmlNode staleSecurityGroupSetMember = staleSecurityGroupSetNode.FirstChild("item");
+      m_staleSecurityGroupSetHasBeenSet = !staleSecurityGroupSetMember.IsNull();
       while(!staleSecurityGroupSetMember.IsNull())
       {
         m_staleSecurityGroupSet.push_back(staleSecurityGroupSetMember);
@@ -61,6 +59,7 @@ DescribeStaleSecurityGroupsResponse& DescribeStaleSecurityGroupsResponse::operat
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeStaleSecurityGroupsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

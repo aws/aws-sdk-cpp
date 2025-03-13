@@ -18,19 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-AvailabilityConfiguration::AvailabilityConfiguration() : 
-    m_domainNameHasBeenSet(false),
-    m_providerType(AvailabilityProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_ewsProviderHasBeenSet(false),
-    m_lambdaProviderHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
-{
-}
-
 AvailabilityConfiguration::AvailabilityConfiguration(JsonView jsonValue)
-  : AvailabilityConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AvailabilityConfiguration& AvailabilityConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = AvailabilityProviderTypeMapper::GetAvailabilityProviderTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EwsProvider"))
   {
     m_ewsProvider = jsonValue.GetObject("EwsProvider");
-
     m_ewsProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaProvider"))
   {
     m_lambdaProvider = jsonValue.GetObject("LambdaProvider");
-
     m_lambdaProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateCreated"))
   {
     m_dateCreated = jsonValue.GetDouble("DateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateModified"))
   {
     m_dateModified = jsonValue.GetDouble("DateModified");
-
     m_dateModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

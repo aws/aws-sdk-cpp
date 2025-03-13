@@ -18,19 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ScheduledAuditMetadata::ScheduledAuditMetadata() : 
-    m_scheduledAuditNameHasBeenSet(false),
-    m_scheduledAuditArnHasBeenSet(false),
-    m_frequency(AuditFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false)
-{
-}
-
 ScheduledAuditMetadata::ScheduledAuditMetadata(JsonView jsonValue)
-  : ScheduledAuditMetadata()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ScheduledAuditMetadata& ScheduledAuditMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scheduledAuditName"))
   {
     m_scheduledAuditName = jsonValue.GetString("scheduledAuditName");
-
     m_scheduledAuditNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledAuditArn"))
   {
     m_scheduledAuditArn = jsonValue.GetString("scheduledAuditArn");
-
     m_scheduledAuditArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frequency"))
   {
     m_frequency = AuditFrequencyMapper::GetAuditFrequencyForName(jsonValue.GetString("frequency"));
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetString("dayOfMonth");
-
     m_dayOfMonthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("dayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   return *this;
 }
 

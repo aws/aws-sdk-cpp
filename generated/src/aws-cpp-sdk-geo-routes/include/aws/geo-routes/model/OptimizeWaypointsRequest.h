@@ -37,7 +37,7 @@ namespace Model
   class OptimizeWaypointsRequest : public GeoRoutesRequest
   {
   public:
-    AWS_GEOROUTES_API OptimizeWaypointsRequest();
+    AWS_GEOROUTES_API OptimizeWaypointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,12 +55,12 @@ namespace Model
      * <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance
      * can't be satisfied for a particular case, this setting is ignored.</p>
      */
-    inline const WaypointOptimizationAvoidanceOptions& GetAvoid() const{ return m_avoid; }
+    inline const WaypointOptimizationAvoidanceOptions& GetAvoid() const { return m_avoid; }
     inline bool AvoidHasBeenSet() const { return m_avoidHasBeenSet; }
-    inline void SetAvoid(const WaypointOptimizationAvoidanceOptions& value) { m_avoidHasBeenSet = true; m_avoid = value; }
-    inline void SetAvoid(WaypointOptimizationAvoidanceOptions&& value) { m_avoidHasBeenSet = true; m_avoid = std::move(value); }
-    inline OptimizeWaypointsRequest& WithAvoid(const WaypointOptimizationAvoidanceOptions& value) { SetAvoid(value); return *this;}
-    inline OptimizeWaypointsRequest& WithAvoid(WaypointOptimizationAvoidanceOptions&& value) { SetAvoid(std::move(value)); return *this;}
+    template<typename AvoidT = WaypointOptimizationAvoidanceOptions>
+    void SetAvoid(AvoidT&& value) { m_avoidHasBeenSet = true; m_avoid = std::forward<AvoidT>(value); }
+    template<typename AvoidT = WaypointOptimizationAvoidanceOptions>
+    OptimizeWaypointsRequest& WithAvoid(AvoidT&& value) { SetAvoid(std::forward<AvoidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,12 @@ namespace Model
      * <p>Clustering allows you to specify how nearby waypoints can be clustered to
      * improve the optimized sequence.</p>
      */
-    inline const WaypointOptimizationClusteringOptions& GetClustering() const{ return m_clustering; }
+    inline const WaypointOptimizationClusteringOptions& GetClustering() const { return m_clustering; }
     inline bool ClusteringHasBeenSet() const { return m_clusteringHasBeenSet; }
-    inline void SetClustering(const WaypointOptimizationClusteringOptions& value) { m_clusteringHasBeenSet = true; m_clustering = value; }
-    inline void SetClustering(WaypointOptimizationClusteringOptions&& value) { m_clusteringHasBeenSet = true; m_clustering = std::move(value); }
-    inline OptimizeWaypointsRequest& WithClustering(const WaypointOptimizationClusteringOptions& value) { SetClustering(value); return *this;}
-    inline OptimizeWaypointsRequest& WithClustering(WaypointOptimizationClusteringOptions&& value) { SetClustering(std::move(value)); return *this;}
+    template<typename ClusteringT = WaypointOptimizationClusteringOptions>
+    void SetClustering(ClusteringT&& value) { m_clusteringHasBeenSet = true; m_clustering = std::forward<ClusteringT>(value); }
+    template<typename ClusteringT = WaypointOptimizationClusteringOptions>
+    OptimizeWaypointsRequest& WithClustering(ClusteringT&& value) { SetClustering(std::forward<ClusteringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +83,12 @@ namespace Model
      * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
      * <code>2020-04-22T17:57:24+02:00</code> </p>
      */
-    inline const Aws::String& GetDepartureTime() const{ return m_departureTime; }
+    inline const Aws::String& GetDepartureTime() const { return m_departureTime; }
     inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
-    inline void SetDepartureTime(const Aws::String& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
-    inline void SetDepartureTime(Aws::String&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
-    inline void SetDepartureTime(const char* value) { m_departureTimeHasBeenSet = true; m_departureTime.assign(value); }
-    inline OptimizeWaypointsRequest& WithDepartureTime(const Aws::String& value) { SetDepartureTime(value); return *this;}
-    inline OptimizeWaypointsRequest& WithDepartureTime(Aws::String&& value) { SetDepartureTime(std::move(value)); return *this;}
-    inline OptimizeWaypointsRequest& WithDepartureTime(const char* value) { SetDepartureTime(value); return *this;}
+    template<typename DepartureTimeT = Aws::String>
+    void SetDepartureTime(DepartureTimeT&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::forward<DepartureTimeT>(value); }
+    template<typename DepartureTimeT = Aws::String>
+    OptimizeWaypointsRequest& WithDepartureTime(DepartureTimeT&& value) { SetDepartureTime(std::forward<DepartureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,12 @@ namespace Model
      * <p>The final position for the route in the World Geodetic System (WGS 84)
      * format: <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetDestination() const{ return m_destination; }
+    inline const Aws::Vector<double>& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::Vector<double>& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::Vector<double>&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline OptimizeWaypointsRequest& WithDestination(const Aws::Vector<double>& value) { SetDestination(value); return *this;}
-    inline OptimizeWaypointsRequest& WithDestination(Aws::Vector<double>&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = Aws::Vector<double>>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::Vector<double>>
+    OptimizeWaypointsRequest& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     inline OptimizeWaypointsRequest& AddDestination(double value) { m_destinationHasBeenSet = true; m_destination.push_back(value); return *this; }
     ///@}
 
@@ -111,36 +109,36 @@ namespace Model
     /**
      * <p>Destination related options.</p>
      */
-    inline const WaypointOptimizationDestinationOptions& GetDestinationOptions() const{ return m_destinationOptions; }
+    inline const WaypointOptimizationDestinationOptions& GetDestinationOptions() const { return m_destinationOptions; }
     inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
-    inline void SetDestinationOptions(const WaypointOptimizationDestinationOptions& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = value; }
-    inline void SetDestinationOptions(WaypointOptimizationDestinationOptions&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::move(value); }
-    inline OptimizeWaypointsRequest& WithDestinationOptions(const WaypointOptimizationDestinationOptions& value) { SetDestinationOptions(value); return *this;}
-    inline OptimizeWaypointsRequest& WithDestinationOptions(WaypointOptimizationDestinationOptions&& value) { SetDestinationOptions(std::move(value)); return *this;}
+    template<typename DestinationOptionsT = WaypointOptimizationDestinationOptions>
+    void SetDestinationOptions(DestinationOptionsT&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::forward<DestinationOptionsT>(value); }
+    template<typename DestinationOptionsT = WaypointOptimizationDestinationOptions>
+    OptimizeWaypointsRequest& WithDestinationOptions(DestinationOptionsT&& value) { SetDestinationOptions(std::forward<DestinationOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Driver related options.</p>
      */
-    inline const WaypointOptimizationDriverOptions& GetDriver() const{ return m_driver; }
+    inline const WaypointOptimizationDriverOptions& GetDriver() const { return m_driver; }
     inline bool DriverHasBeenSet() const { return m_driverHasBeenSet; }
-    inline void SetDriver(const WaypointOptimizationDriverOptions& value) { m_driverHasBeenSet = true; m_driver = value; }
-    inline void SetDriver(WaypointOptimizationDriverOptions&& value) { m_driverHasBeenSet = true; m_driver = std::move(value); }
-    inline OptimizeWaypointsRequest& WithDriver(const WaypointOptimizationDriverOptions& value) { SetDriver(value); return *this;}
-    inline OptimizeWaypointsRequest& WithDriver(WaypointOptimizationDriverOptions&& value) { SetDriver(std::move(value)); return *this;}
+    template<typename DriverT = WaypointOptimizationDriverOptions>
+    void SetDriver(DriverT&& value) { m_driverHasBeenSet = true; m_driver = std::forward<DriverT>(value); }
+    template<typename DriverT = WaypointOptimizationDriverOptions>
+    OptimizeWaypointsRequest& WithDriver(DriverT&& value) { SetDriver(std::forward<DriverT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Features to be strictly excluded while calculating the route.</p>
      */
-    inline const WaypointOptimizationExclusionOptions& GetExclude() const{ return m_exclude; }
+    inline const WaypointOptimizationExclusionOptions& GetExclude() const { return m_exclude; }
     inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }
-    inline void SetExclude(const WaypointOptimizationExclusionOptions& value) { m_excludeHasBeenSet = true; m_exclude = value; }
-    inline void SetExclude(WaypointOptimizationExclusionOptions&& value) { m_excludeHasBeenSet = true; m_exclude = std::move(value); }
-    inline OptimizeWaypointsRequest& WithExclude(const WaypointOptimizationExclusionOptions& value) { SetExclude(value); return *this;}
-    inline OptimizeWaypointsRequest& WithExclude(WaypointOptimizationExclusionOptions&& value) { SetExclude(std::move(value)); return *this;}
+    template<typename ExcludeT = WaypointOptimizationExclusionOptions>
+    void SetExclude(ExcludeT&& value) { m_excludeHasBeenSet = true; m_exclude = std::forward<ExcludeT>(value); }
+    template<typename ExcludeT = WaypointOptimizationExclusionOptions>
+    OptimizeWaypointsRequest& WithExclude(ExcludeT&& value) { SetExclude(std::forward<ExcludeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +146,12 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline OptimizeWaypointsRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline OptimizeWaypointsRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline OptimizeWaypointsRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    OptimizeWaypointsRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,24 +159,22 @@ namespace Model
      * <p>Specifies the optimization criteria for the calculated sequence.</p>
      * <p>Default Value: <code>FastestRoute</code>.</p>
      */
-    inline const WaypointOptimizationSequencingObjective& GetOptimizeSequencingFor() const{ return m_optimizeSequencingFor; }
+    inline WaypointOptimizationSequencingObjective GetOptimizeSequencingFor() const { return m_optimizeSequencingFor; }
     inline bool OptimizeSequencingForHasBeenSet() const { return m_optimizeSequencingForHasBeenSet; }
-    inline void SetOptimizeSequencingFor(const WaypointOptimizationSequencingObjective& value) { m_optimizeSequencingForHasBeenSet = true; m_optimizeSequencingFor = value; }
-    inline void SetOptimizeSequencingFor(WaypointOptimizationSequencingObjective&& value) { m_optimizeSequencingForHasBeenSet = true; m_optimizeSequencingFor = std::move(value); }
-    inline OptimizeWaypointsRequest& WithOptimizeSequencingFor(const WaypointOptimizationSequencingObjective& value) { SetOptimizeSequencingFor(value); return *this;}
-    inline OptimizeWaypointsRequest& WithOptimizeSequencingFor(WaypointOptimizationSequencingObjective&& value) { SetOptimizeSequencingFor(std::move(value)); return *this;}
+    inline void SetOptimizeSequencingFor(WaypointOptimizationSequencingObjective value) { m_optimizeSequencingForHasBeenSet = true; m_optimizeSequencingFor = value; }
+    inline OptimizeWaypointsRequest& WithOptimizeSequencingFor(WaypointOptimizationSequencingObjective value) { SetOptimizeSequencingFor(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start position for the route.</p>
      */
-    inline const Aws::Vector<double>& GetOrigin() const{ return m_origin; }
+    inline const Aws::Vector<double>& GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const Aws::Vector<double>& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(Aws::Vector<double>&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline OptimizeWaypointsRequest& WithOrigin(const Aws::Vector<double>& value) { SetOrigin(value); return *this;}
-    inline OptimizeWaypointsRequest& WithOrigin(Aws::Vector<double>&& value) { SetOrigin(std::move(value)); return *this;}
+    template<typename OriginT = Aws::Vector<double>>
+    void SetOrigin(OriginT&& value) { m_originHasBeenSet = true; m_origin = std::forward<OriginT>(value); }
+    template<typename OriginT = Aws::Vector<double>>
+    OptimizeWaypointsRequest& WithOrigin(OriginT&& value) { SetOrigin(std::forward<OriginT>(value)); return *this;}
     inline OptimizeWaypointsRequest& AddOrigin(double value) { m_originHasBeenSet = true; m_origin.push_back(value); return *this; }
     ///@}
 
@@ -188,24 +182,24 @@ namespace Model
     /**
      * <p>Origin related options.</p>
      */
-    inline const WaypointOptimizationOriginOptions& GetOriginOptions() const{ return m_originOptions; }
+    inline const WaypointOptimizationOriginOptions& GetOriginOptions() const { return m_originOptions; }
     inline bool OriginOptionsHasBeenSet() const { return m_originOptionsHasBeenSet; }
-    inline void SetOriginOptions(const WaypointOptimizationOriginOptions& value) { m_originOptionsHasBeenSet = true; m_originOptions = value; }
-    inline void SetOriginOptions(WaypointOptimizationOriginOptions&& value) { m_originOptionsHasBeenSet = true; m_originOptions = std::move(value); }
-    inline OptimizeWaypointsRequest& WithOriginOptions(const WaypointOptimizationOriginOptions& value) { SetOriginOptions(value); return *this;}
-    inline OptimizeWaypointsRequest& WithOriginOptions(WaypointOptimizationOriginOptions&& value) { SetOriginOptions(std::move(value)); return *this;}
+    template<typename OriginOptionsT = WaypointOptimizationOriginOptions>
+    void SetOriginOptions(OriginOptionsT&& value) { m_originOptionsHasBeenSet = true; m_originOptions = std::forward<OriginOptionsT>(value); }
+    template<typename OriginOptionsT = WaypointOptimizationOriginOptions>
+    OptimizeWaypointsRequest& WithOriginOptions(OriginOptionsT&& value) { SetOriginOptions(std::forward<OriginOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Traffic-related options.</p>
      */
-    inline const WaypointOptimizationTrafficOptions& GetTraffic() const{ return m_traffic; }
+    inline const WaypointOptimizationTrafficOptions& GetTraffic() const { return m_traffic; }
     inline bool TrafficHasBeenSet() const { return m_trafficHasBeenSet; }
-    inline void SetTraffic(const WaypointOptimizationTrafficOptions& value) { m_trafficHasBeenSet = true; m_traffic = value; }
-    inline void SetTraffic(WaypointOptimizationTrafficOptions&& value) { m_trafficHasBeenSet = true; m_traffic = std::move(value); }
-    inline OptimizeWaypointsRequest& WithTraffic(const WaypointOptimizationTrafficOptions& value) { SetTraffic(value); return *this;}
-    inline OptimizeWaypointsRequest& WithTraffic(WaypointOptimizationTrafficOptions&& value) { SetTraffic(std::move(value)); return *this;}
+    template<typename TrafficT = WaypointOptimizationTrafficOptions>
+    void SetTraffic(TrafficT&& value) { m_trafficHasBeenSet = true; m_traffic = std::forward<TrafficT>(value); }
+    template<typename TrafficT = WaypointOptimizationTrafficOptions>
+    OptimizeWaypointsRequest& WithTraffic(TrafficT&& value) { SetTraffic(std::forward<TrafficT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,24 +208,22 @@ namespace Model
      * the speed of travel and road compatibility.</p> <p>Default Value:
      * <code>Car</code> </p>
      */
-    inline const WaypointOptimizationTravelMode& GetTravelMode() const{ return m_travelMode; }
+    inline WaypointOptimizationTravelMode GetTravelMode() const { return m_travelMode; }
     inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
-    inline void SetTravelMode(const WaypointOptimizationTravelMode& value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
-    inline void SetTravelMode(WaypointOptimizationTravelMode&& value) { m_travelModeHasBeenSet = true; m_travelMode = std::move(value); }
-    inline OptimizeWaypointsRequest& WithTravelMode(const WaypointOptimizationTravelMode& value) { SetTravelMode(value); return *this;}
-    inline OptimizeWaypointsRequest& WithTravelMode(WaypointOptimizationTravelMode&& value) { SetTravelMode(std::move(value)); return *this;}
+    inline void SetTravelMode(WaypointOptimizationTravelMode value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
+    inline OptimizeWaypointsRequest& WithTravelMode(WaypointOptimizationTravelMode value) { SetTravelMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Travel mode related options for the provided travel mode.</p>
      */
-    inline const WaypointOptimizationTravelModeOptions& GetTravelModeOptions() const{ return m_travelModeOptions; }
+    inline const WaypointOptimizationTravelModeOptions& GetTravelModeOptions() const { return m_travelModeOptions; }
     inline bool TravelModeOptionsHasBeenSet() const { return m_travelModeOptionsHasBeenSet; }
-    inline void SetTravelModeOptions(const WaypointOptimizationTravelModeOptions& value) { m_travelModeOptionsHasBeenSet = true; m_travelModeOptions = value; }
-    inline void SetTravelModeOptions(WaypointOptimizationTravelModeOptions&& value) { m_travelModeOptionsHasBeenSet = true; m_travelModeOptions = std::move(value); }
-    inline OptimizeWaypointsRequest& WithTravelModeOptions(const WaypointOptimizationTravelModeOptions& value) { SetTravelModeOptions(value); return *this;}
-    inline OptimizeWaypointsRequest& WithTravelModeOptions(WaypointOptimizationTravelModeOptions&& value) { SetTravelModeOptions(std::move(value)); return *this;}
+    template<typename TravelModeOptionsT = WaypointOptimizationTravelModeOptions>
+    void SetTravelModeOptions(TravelModeOptionsT&& value) { m_travelModeOptionsHasBeenSet = true; m_travelModeOptions = std::forward<TravelModeOptionsT>(value); }
+    template<typename TravelModeOptionsT = WaypointOptimizationTravelModeOptions>
+    OptimizeWaypointsRequest& WithTravelModeOptions(TravelModeOptionsT&& value) { SetTravelModeOptions(std::forward<TravelModeOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,14 +231,14 @@ namespace Model
      * <p>List of waypoints between the <code>Origin</code> and
      * <code>Destination</code>.</p>
      */
-    inline const Aws::Vector<WaypointOptimizationWaypoint>& GetWaypoints() const{ return m_waypoints; }
+    inline const Aws::Vector<WaypointOptimizationWaypoint>& GetWaypoints() const { return m_waypoints; }
     inline bool WaypointsHasBeenSet() const { return m_waypointsHasBeenSet; }
-    inline void SetWaypoints(const Aws::Vector<WaypointOptimizationWaypoint>& value) { m_waypointsHasBeenSet = true; m_waypoints = value; }
-    inline void SetWaypoints(Aws::Vector<WaypointOptimizationWaypoint>&& value) { m_waypointsHasBeenSet = true; m_waypoints = std::move(value); }
-    inline OptimizeWaypointsRequest& WithWaypoints(const Aws::Vector<WaypointOptimizationWaypoint>& value) { SetWaypoints(value); return *this;}
-    inline OptimizeWaypointsRequest& WithWaypoints(Aws::Vector<WaypointOptimizationWaypoint>&& value) { SetWaypoints(std::move(value)); return *this;}
-    inline OptimizeWaypointsRequest& AddWaypoints(const WaypointOptimizationWaypoint& value) { m_waypointsHasBeenSet = true; m_waypoints.push_back(value); return *this; }
-    inline OptimizeWaypointsRequest& AddWaypoints(WaypointOptimizationWaypoint&& value) { m_waypointsHasBeenSet = true; m_waypoints.push_back(std::move(value)); return *this; }
+    template<typename WaypointsT = Aws::Vector<WaypointOptimizationWaypoint>>
+    void SetWaypoints(WaypointsT&& value) { m_waypointsHasBeenSet = true; m_waypoints = std::forward<WaypointsT>(value); }
+    template<typename WaypointsT = Aws::Vector<WaypointOptimizationWaypoint>>
+    OptimizeWaypointsRequest& WithWaypoints(WaypointsT&& value) { SetWaypoints(std::forward<WaypointsT>(value)); return *this;}
+    template<typename WaypointsT = WaypointOptimizationWaypoint>
+    OptimizeWaypointsRequest& AddWaypoints(WaypointsT&& value) { m_waypointsHasBeenSet = true; m_waypoints.emplace_back(std::forward<WaypointsT>(value)); return *this; }
     ///@}
   private:
 
@@ -274,7 +266,7 @@ namespace Model
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    WaypointOptimizationSequencingObjective m_optimizeSequencingFor;
+    WaypointOptimizationSequencingObjective m_optimizeSequencingFor{WaypointOptimizationSequencingObjective::NOT_SET};
     bool m_optimizeSequencingForHasBeenSet = false;
 
     Aws::Vector<double> m_origin;
@@ -286,7 +278,7 @@ namespace Model
     WaypointOptimizationTrafficOptions m_traffic;
     bool m_trafficHasBeenSet = false;
 
-    WaypointOptimizationTravelMode m_travelMode;
+    WaypointOptimizationTravelMode m_travelMode{WaypointOptimizationTravelMode::NOT_SET};
     bool m_travelModeHasBeenSet = false;
 
     WaypointOptimizationTravelModeOptions m_travelModeOptions;

@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-GeoMatchStatement::GeoMatchStatement() : 
-    m_countryCodesHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false)
-{
-}
-
 GeoMatchStatement::GeoMatchStatement(JsonView jsonValue)
-  : GeoMatchStatement()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ GeoMatchStatement& GeoMatchStatement::operator =(JsonView jsonValue)
     }
     m_countryCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForwardedIPConfig"))
   {
     m_forwardedIPConfig = jsonValue.GetObject("ForwardedIPConfig");
-
     m_forwardedIPConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

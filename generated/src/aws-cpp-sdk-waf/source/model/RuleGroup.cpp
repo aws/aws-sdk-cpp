@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-RuleGroup::RuleGroup() : 
-    m_ruleGroupIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
-{
-}
-
 RuleGroup::RuleGroup(JsonView jsonValue)
-  : RuleGroup()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleGroupId"))
   {
     m_ruleGroupId = jsonValue.GetString("RuleGroupId");
-
     m_ruleGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   return *this;
 }
 

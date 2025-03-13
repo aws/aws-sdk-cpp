@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMetricValuesRequest::ListMetricValuesRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionValueOperator(DimensionValueOperator::NOT_SET),
-    m_dimensionValueOperatorHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListMetricValuesRequest::SerializePayload() const
 {
   return {};

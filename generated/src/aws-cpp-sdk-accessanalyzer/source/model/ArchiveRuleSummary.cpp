@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-ArchiveRuleSummary::ArchiveRuleSummary() : 
-    m_ruleNameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ArchiveRuleSummary::ArchiveRuleSummary(JsonView jsonValue)
-  : ArchiveRuleSummary()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ArchiveRuleSummary& ArchiveRuleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleName"))
   {
     m_ruleName = jsonValue.GetString("ruleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     Aws::Map<Aws::String, JsonView> filterJsonMap = jsonValue.GetObject("filter").GetAllObjects();
@@ -50,21 +39,16 @@ ArchiveRuleSummary& ArchiveRuleSummary::operator =(JsonView jsonValue)
     }
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

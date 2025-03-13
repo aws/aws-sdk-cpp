@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConfigurationOptionsResult::DescribeConfigurationOptionsResult()
-{
-}
-
 DescribeConfigurationOptionsResult::DescribeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,16 +38,19 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
     if(!solutionStackNameNode.IsNull())
     {
       m_solutionStackName = Aws::Utils::Xml::DecodeEscapedXmlText(solutionStackNameNode.GetText());
+      m_solutionStackNameHasBeenSet = true;
     }
     XmlNode platformArnNode = resultNode.FirstChild("PlatformArn");
     if(!platformArnNode.IsNull())
     {
       m_platformArn = Aws::Utils::Xml::DecodeEscapedXmlText(platformArnNode.GetText());
+      m_platformArnHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("Options");
     if(!optionsNode.IsNull())
     {
       XmlNode optionsMember = optionsNode.FirstChild("member");
+      m_optionsHasBeenSet = !optionsMember.IsNull();
       while(!optionsMember.IsNull())
       {
         m_options.push_back(optionsMember);
@@ -64,6 +63,7 @@ DescribeConfigurationOptionsResult& DescribeConfigurationOptionsResult::operator
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeConfigurationOptionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,45 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserPoolClientType::UserPoolClientType() : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientNameHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_refreshTokenValidity(0),
-    m_refreshTokenValidityHasBeenSet(false),
-    m_accessTokenValidity(0),
-    m_accessTokenValidityHasBeenSet(false),
-    m_idTokenValidity(0),
-    m_idTokenValidityHasBeenSet(false),
-    m_tokenValidityUnitsHasBeenSet(false),
-    m_readAttributesHasBeenSet(false),
-    m_writeAttributesHasBeenSet(false),
-    m_explicitAuthFlowsHasBeenSet(false),
-    m_supportedIdentityProvidersHasBeenSet(false),
-    m_callbackURLsHasBeenSet(false),
-    m_logoutURLsHasBeenSet(false),
-    m_defaultRedirectURIHasBeenSet(false),
-    m_allowedOAuthFlowsHasBeenSet(false),
-    m_allowedOAuthScopesHasBeenSet(false),
-    m_allowedOAuthFlowsUserPoolClient(false),
-    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
-    m_analyticsConfigurationHasBeenSet(false),
-    m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false),
-    m_enableTokenRevocation(false),
-    m_enableTokenRevocationHasBeenSet(false),
-    m_enablePropagateAdditionalUserContextData(false),
-    m_enablePropagateAdditionalUserContextDataHasBeenSet(false),
-    m_authSessionValidity(0),
-    m_authSessionValidityHasBeenSet(false)
-{
-}
-
 UserPoolClientType::UserPoolClientType(JsonView jsonValue)
-  : UserPoolClientType()
 {
   *this = jsonValue;
 }
@@ -66,73 +28,53 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientName"))
   {
     m_clientName = jsonValue.GetString("ClientName");
-
     m_clientNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientSecret"))
   {
     m_clientSecret = jsonValue.GetString("ClientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshTokenValidity"))
   {
     m_refreshTokenValidity = jsonValue.GetInteger("RefreshTokenValidity");
-
     m_refreshTokenValidityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessTokenValidity"))
   {
     m_accessTokenValidity = jsonValue.GetInteger("AccessTokenValidity");
-
     m_accessTokenValidityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdTokenValidity"))
   {
     m_idTokenValidity = jsonValue.GetInteger("IdTokenValidity");
-
     m_idTokenValidityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenValidityUnits"))
   {
     m_tokenValidityUnits = jsonValue.GetObject("TokenValidityUnits");
-
     m_tokenValidityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadAttributes"))
   {
     Aws::Utils::Array<JsonView> readAttributesJsonList = jsonValue.GetArray("ReadAttributes");
@@ -142,7 +84,6 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_readAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteAttributes"))
   {
     Aws::Utils::Array<JsonView> writeAttributesJsonList = jsonValue.GetArray("WriteAttributes");
@@ -152,7 +93,6 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_writeAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExplicitAuthFlows"))
   {
     Aws::Utils::Array<JsonView> explicitAuthFlowsJsonList = jsonValue.GetArray("ExplicitAuthFlows");
@@ -162,7 +102,6 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_explicitAuthFlowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedIdentityProviders"))
   {
     Aws::Utils::Array<JsonView> supportedIdentityProvidersJsonList = jsonValue.GetArray("SupportedIdentityProviders");
@@ -172,7 +111,6 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_supportedIdentityProvidersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallbackURLs"))
   {
     Aws::Utils::Array<JsonView> callbackURLsJsonList = jsonValue.GetArray("CallbackURLs");
@@ -182,7 +120,6 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_callbackURLsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogoutURLs"))
   {
     Aws::Utils::Array<JsonView> logoutURLsJsonList = jsonValue.GetArray("LogoutURLs");
@@ -192,14 +129,11 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_logoutURLsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultRedirectURI"))
   {
     m_defaultRedirectURI = jsonValue.GetString("DefaultRedirectURI");
-
     m_defaultRedirectURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedOAuthFlows"))
   {
     Aws::Utils::Array<JsonView> allowedOAuthFlowsJsonList = jsonValue.GetArray("AllowedOAuthFlows");
@@ -209,7 +143,6 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_allowedOAuthFlowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedOAuthScopes"))
   {
     Aws::Utils::Array<JsonView> allowedOAuthScopesJsonList = jsonValue.GetArray("AllowedOAuthScopes");
@@ -219,49 +152,36 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     }
     m_allowedOAuthScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedOAuthFlowsUserPoolClient"))
   {
     m_allowedOAuthFlowsUserPoolClient = jsonValue.GetBool("AllowedOAuthFlowsUserPoolClient");
-
     m_allowedOAuthFlowsUserPoolClientHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyticsConfiguration"))
   {
     m_analyticsConfiguration = jsonValue.GetObject("AnalyticsConfiguration");
-
     m_analyticsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreventUserExistenceErrors"))
   {
     m_preventUserExistenceErrors = PreventUserExistenceErrorTypesMapper::GetPreventUserExistenceErrorTypesForName(jsonValue.GetString("PreventUserExistenceErrors"));
-
     m_preventUserExistenceErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableTokenRevocation"))
   {
     m_enableTokenRevocation = jsonValue.GetBool("EnableTokenRevocation");
-
     m_enableTokenRevocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnablePropagateAdditionalUserContextData"))
   {
     m_enablePropagateAdditionalUserContextData = jsonValue.GetBool("EnablePropagateAdditionalUserContextData");
-
     m_enablePropagateAdditionalUserContextDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthSessionValidity"))
   {
     m_authSessionValidity = jsonValue.GetInteger("AuthSessionValidity");
-
     m_authSessionValidityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchStartViewerSessionRevocationRequest::BatchStartViewerSessionRevocationRequest() : 
-    m_viewerSessionsHasBeenSet(false)
-{
-}
-
 Aws::String BatchStartViewerSessionRevocationRequest::SerializePayload() const
 {
   JsonValue payload;

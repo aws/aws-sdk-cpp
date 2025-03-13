@@ -31,7 +31,7 @@ namespace Model
   class ExpenseCurrency
   {
   public:
-    AWS_TEXTRACT_API ExpenseCurrency();
+    AWS_TEXTRACT_API ExpenseCurrency() = default;
     AWS_TEXTRACT_API ExpenseCurrency(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API ExpenseCurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,19 @@ namespace Model
      * </li> <li> <p>AUD</p> </li> <li> <p>CNY</p> </li> <li> <p>BZR</p> </li> <li>
      * <p>SEK</p> </li> <li> <p>HKD</p> </li> </ul>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ExpenseCurrency& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ExpenseCurrency& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ExpenseCurrency& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ExpenseCurrency& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Percentage confideence in the detected currency.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline ExpenseCurrency& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_code;
     bool m_codeHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
   };
 

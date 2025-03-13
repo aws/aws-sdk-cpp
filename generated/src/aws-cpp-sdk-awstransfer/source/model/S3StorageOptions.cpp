@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-S3StorageOptions::S3StorageOptions() : 
-    m_directoryListingOptimization(DirectoryListingOptimization::NOT_SET),
-    m_directoryListingOptimizationHasBeenSet(false)
-{
-}
-
 S3StorageOptions::S3StorageOptions(JsonView jsonValue)
-  : S3StorageOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ S3StorageOptions& S3StorageOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryListingOptimization"))
   {
     m_directoryListingOptimization = DirectoryListingOptimizationMapper::GetDirectoryListingOptimizationForName(jsonValue.GetString("DirectoryListingOptimization"));
-
     m_directoryListingOptimizationHasBeenSet = true;
   }
-
   return *this;
 }
 

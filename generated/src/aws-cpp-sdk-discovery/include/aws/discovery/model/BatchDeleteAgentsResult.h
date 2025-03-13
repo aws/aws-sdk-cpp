@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteAgentsResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteAgentsResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteAgentsResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p> A list of agent IDs that failed to delete during the deletion task, each
      * paired with an error message. </p>
      */
-    inline const Aws::Vector<BatchDeleteAgentError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteAgentError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteAgentError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteAgentsResult& WithErrors(const Aws::Vector<BatchDeleteAgentError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteAgentsResult& WithErrors(Aws::Vector<BatchDeleteAgentError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteAgentsResult& AddErrors(const BatchDeleteAgentError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteAgentsResult& AddErrors(BatchDeleteAgentError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteAgentError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteAgentError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteAgentError>>
+    BatchDeleteAgentsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteAgentError>
+    BatchDeleteAgentsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteAgentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteAgentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteAgentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteAgentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteAgentError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

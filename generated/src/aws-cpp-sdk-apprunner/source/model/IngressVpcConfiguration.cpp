@@ -18,14 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-IngressVpcConfiguration::IngressVpcConfiguration() : 
-    m_vpcIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false)
-{
-}
-
 IngressVpcConfiguration::IngressVpcConfiguration(JsonView jsonValue)
-  : IngressVpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IngressVpcConfiguration& IngressVpcConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   return *this;
 }
 

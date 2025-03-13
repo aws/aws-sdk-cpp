@@ -22,7 +22,7 @@ namespace Model
   class DeleteTaskDefinitionsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DeleteTaskDefinitionsRequest();
+    AWS_ECS_API DeleteTaskDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * definition to delete. You must specify a <code>revision</code>.</p> <p>You can
      * specify up to 10 task definitions as a comma separated list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTaskDefinitions() const{ return m_taskDefinitions; }
+    inline const Aws::Vector<Aws::String>& GetTaskDefinitions() const { return m_taskDefinitions; }
     inline bool TaskDefinitionsHasBeenSet() const { return m_taskDefinitionsHasBeenSet; }
-    inline void SetTaskDefinitions(const Aws::Vector<Aws::String>& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions = value; }
-    inline void SetTaskDefinitions(Aws::Vector<Aws::String>&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions = std::move(value); }
-    inline DeleteTaskDefinitionsRequest& WithTaskDefinitions(const Aws::Vector<Aws::String>& value) { SetTaskDefinitions(value); return *this;}
-    inline DeleteTaskDefinitionsRequest& WithTaskDefinitions(Aws::Vector<Aws::String>&& value) { SetTaskDefinitions(std::move(value)); return *this;}
-    inline DeleteTaskDefinitionsRequest& AddTaskDefinitions(const Aws::String& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.push_back(value); return *this; }
-    inline DeleteTaskDefinitionsRequest& AddTaskDefinitions(Aws::String&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.push_back(std::move(value)); return *this; }
-    inline DeleteTaskDefinitionsRequest& AddTaskDefinitions(const char* value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.push_back(value); return *this; }
+    template<typename TaskDefinitionsT = Aws::Vector<Aws::String>>
+    void SetTaskDefinitions(TaskDefinitionsT&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions = std::forward<TaskDefinitionsT>(value); }
+    template<typename TaskDefinitionsT = Aws::Vector<Aws::String>>
+    DeleteTaskDefinitionsRequest& WithTaskDefinitions(TaskDefinitionsT&& value) { SetTaskDefinitions(std::forward<TaskDefinitionsT>(value)); return *this;}
+    template<typename TaskDefinitionsT = Aws::String>
+    DeleteTaskDefinitionsRequest& AddTaskDefinitions(TaskDefinitionsT&& value) { m_taskDefinitionsHasBeenSet = true; m_taskDefinitions.emplace_back(std::forward<TaskDefinitionsT>(value)); return *this; }
     ///@}
   private:
 

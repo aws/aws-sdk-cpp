@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ProxyConfiguration::ProxyConfiguration() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 ProxyConfiguration::ProxyConfiguration(JsonView jsonValue)
-  : ProxyConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProxyConfiguration& ProxyConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetString("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

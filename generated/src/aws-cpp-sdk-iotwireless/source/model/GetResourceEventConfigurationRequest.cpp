@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResourceEventConfigurationRequest::GetResourceEventConfigurationRequest() : 
-    m_identifierHasBeenSet(false),
-    m_identifierType(IdentifierType::NOT_SET),
-    m_identifierTypeHasBeenSet(false),
-    m_partnerType(EventNotificationPartnerType::NOT_SET),
-    m_partnerTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceEventConfigurationRequest::SerializePayload() const
 {
   return {};

@@ -12,28 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQuickResponseRequest::UpdateQuickResponseRequest() : 
-    m_channelsHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupingConfigurationHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_quickResponseIdHasBeenSet(false),
-    m_removeDescription(false),
-    m_removeDescriptionHasBeenSet(false),
-    m_removeGroupingConfiguration(false),
-    m_removeGroupingConfigurationHasBeenSet(false),
-    m_removeShortcutKey(false),
-    m_removeShortcutKeyHasBeenSet(false),
-    m_shortcutKeyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQuickResponseRequest::SerializePayload() const
 {
   JsonValue payload;

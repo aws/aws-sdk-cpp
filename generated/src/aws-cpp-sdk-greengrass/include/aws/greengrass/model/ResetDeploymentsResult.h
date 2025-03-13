@@ -27,7 +27,7 @@ namespace Model
   class ResetDeploymentsResult
   {
   public:
-    AWS_GREENGRASS_API ResetDeploymentsResult();
+    AWS_GREENGRASS_API ResetDeploymentsResult() = default;
     AWS_GREENGRASS_API ResetDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API ResetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * The ARN of the deployment.
      */
-    inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
-    inline void SetDeploymentArn(const Aws::String& value) { m_deploymentArn = value; }
-    inline void SetDeploymentArn(Aws::String&& value) { m_deploymentArn = std::move(value); }
-    inline void SetDeploymentArn(const char* value) { m_deploymentArn.assign(value); }
-    inline ResetDeploymentsResult& WithDeploymentArn(const Aws::String& value) { SetDeploymentArn(value); return *this;}
-    inline ResetDeploymentsResult& WithDeploymentArn(Aws::String&& value) { SetDeploymentArn(std::move(value)); return *this;}
-    inline ResetDeploymentsResult& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
+    inline const Aws::String& GetDeploymentArn() const { return m_deploymentArn; }
+    template<typename DeploymentArnT = Aws::String>
+    void SetDeploymentArn(DeploymentArnT&& value) { m_deploymentArnHasBeenSet = true; m_deploymentArn = std::forward<DeploymentArnT>(value); }
+    template<typename DeploymentArnT = Aws::String>
+    ResetDeploymentsResult& WithDeploymentArn(DeploymentArnT&& value) { SetDeploymentArn(std::forward<DeploymentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the deployment.
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
-    inline ResetDeploymentsResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline ResetDeploymentsResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline ResetDeploymentsResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    ResetDeploymentsResult& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ResetDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResetDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResetDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResetDeploymentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_deploymentArn;
+    bool m_deploymentArnHasBeenSet = false;
 
     Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

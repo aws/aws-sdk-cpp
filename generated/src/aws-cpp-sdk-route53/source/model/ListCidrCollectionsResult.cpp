@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCidrCollectionsResult::ListCidrCollectionsResult()
-{
-}
-
 ListCidrCollectionsResult::ListCidrCollectionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,11 +32,13 @@ ListCidrCollectionsResult& ListCidrCollectionsResult::operator =(const Aws::Amaz
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode cidrCollectionsNode = resultNode.FirstChild("CidrCollections");
     if(!cidrCollectionsNode.IsNull())
     {
       XmlNode cidrCollectionsMember = cidrCollectionsNode.FirstChild("member");
+      m_cidrCollectionsHasBeenSet = !cidrCollectionsMember.IsNull();
       while(!cidrCollectionsMember.IsNull())
       {
         m_cidrCollections.push_back(cidrCollectionsMember);
@@ -55,6 +53,7 @@ ListCidrCollectionsResult& ListCidrCollectionsResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

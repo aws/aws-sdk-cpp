@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-APIKeySummary::APIKeySummary() : 
-    m_tokenDomainsHasBeenSet(false),
-    m_aPIKeyHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 APIKeySummary::APIKeySummary(JsonView jsonValue)
-  : APIKeySummary()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ APIKeySummary& APIKeySummary::operator =(JsonView jsonValue)
     }
     m_tokenDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APIKey"))
   {
     m_aPIKey = jsonValue.GetString("APIKey");
-
     m_aPIKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

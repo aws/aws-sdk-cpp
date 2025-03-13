@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-RealTimeAlertRule::RealTimeAlertRule() : 
-    m_type(RealTimeAlertRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_keywordMatchConfigurationHasBeenSet(false),
-    m_sentimentConfigurationHasBeenSet(false),
-    m_issueDetectionConfigurationHasBeenSet(false)
-{
-}
-
 RealTimeAlertRule::RealTimeAlertRule(JsonView jsonValue)
-  : RealTimeAlertRule()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RealTimeAlertRule& RealTimeAlertRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RealTimeAlertRuleTypeMapper::GetRealTimeAlertRuleTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeywordMatchConfiguration"))
   {
     m_keywordMatchConfiguration = jsonValue.GetObject("KeywordMatchConfiguration");
-
     m_keywordMatchConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentimentConfiguration"))
   {
     m_sentimentConfiguration = jsonValue.GetObject("SentimentConfiguration");
-
     m_sentimentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssueDetectionConfiguration"))
   {
     m_issueDetectionConfiguration = jsonValue.GetObject("IssueDetectionConfiguration");
-
     m_issueDetectionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

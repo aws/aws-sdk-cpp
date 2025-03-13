@@ -20,20 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReceiptAction::ReceiptAction() : 
-    m_s3ActionHasBeenSet(false),
-    m_bounceActionHasBeenSet(false),
-    m_workmailActionHasBeenSet(false),
-    m_lambdaActionHasBeenSet(false),
-    m_stopActionHasBeenSet(false),
-    m_addHeaderActionHasBeenSet(false),
-    m_sNSActionHasBeenSet(false),
-    m_connectActionHasBeenSet(false)
-{
-}
-
 ReceiptAction::ReceiptAction(const XmlNode& xmlNode)
-  : ReceiptAction()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,56 @@ ReceiptAction& ReceiptAction::operator =(const XmlNode& xmlNode)
     {
       m_s3Action = s3ActionNode;
       m_s3ActionHasBeenSet = true;
+       m_s3ActionHasBeenSet = true;
     }
     XmlNode bounceActionNode = resultNode.FirstChild("BounceAction");
     if(!bounceActionNode.IsNull())
     {
       m_bounceAction = bounceActionNode;
       m_bounceActionHasBeenSet = true;
+       m_bounceActionHasBeenSet = true;
     }
     XmlNode workmailActionNode = resultNode.FirstChild("WorkmailAction");
     if(!workmailActionNode.IsNull())
     {
       m_workmailAction = workmailActionNode;
       m_workmailActionHasBeenSet = true;
+       m_workmailActionHasBeenSet = true;
     }
     XmlNode lambdaActionNode = resultNode.FirstChild("LambdaAction");
     if(!lambdaActionNode.IsNull())
     {
       m_lambdaAction = lambdaActionNode;
       m_lambdaActionHasBeenSet = true;
+       m_lambdaActionHasBeenSet = true;
     }
     XmlNode stopActionNode = resultNode.FirstChild("StopAction");
     if(!stopActionNode.IsNull())
     {
       m_stopAction = stopActionNode;
       m_stopActionHasBeenSet = true;
+       m_stopActionHasBeenSet = true;
     }
     XmlNode addHeaderActionNode = resultNode.FirstChild("AddHeaderAction");
     if(!addHeaderActionNode.IsNull())
     {
       m_addHeaderAction = addHeaderActionNode;
       m_addHeaderActionHasBeenSet = true;
+       m_addHeaderActionHasBeenSet = true;
     }
     XmlNode sNSActionNode = resultNode.FirstChild("SNSAction");
     if(!sNSActionNode.IsNull())
     {
       m_sNSAction = sNSActionNode;
       m_sNSActionHasBeenSet = true;
+       m_sNSActionHasBeenSet = true;
     }
     XmlNode connectActionNode = resultNode.FirstChild("ConnectAction");
     if(!connectActionNode.IsNull())
     {
       m_connectAction = connectActionNode;
       m_connectActionHasBeenSet = true;
+       m_connectActionHasBeenSet = true;
     }
   }
 

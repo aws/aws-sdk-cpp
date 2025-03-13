@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-IdMappingTableInputReferenceProperties::IdMappingTableInputReferenceProperties() : 
-    m_idMappingTableInputSourceHasBeenSet(false)
-{
-}
-
 IdMappingTableInputReferenceProperties::IdMappingTableInputReferenceProperties(JsonView jsonValue)
-  : IdMappingTableInputReferenceProperties()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IdMappingTableInputReferenceProperties& IdMappingTableInputReferenceProperties::
     }
     m_idMappingTableInputSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

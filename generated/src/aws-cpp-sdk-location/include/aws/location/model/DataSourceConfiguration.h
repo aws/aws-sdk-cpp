@@ -41,7 +41,7 @@ namespace Model
   class DataSourceConfiguration
   {
   public:
-    AWS_LOCATIONSERVICE_API DataSourceConfiguration();
+    AWS_LOCATIONSERVICE_API DataSourceConfiguration() = default;
     AWS_LOCATIONSERVICE_API DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,16 +55,14 @@ namespace Model
      * that the result can be cached or stored in a database.</p> </li> </ul>
      * <p>Default value: <code>SingleUse</code> </p>
      */
-    inline const IntendedUse& GetIntendedUse() const{ return m_intendedUse; }
+    inline IntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }
-    inline void SetIntendedUse(const IntendedUse& value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
-    inline void SetIntendedUse(IntendedUse&& value) { m_intendedUseHasBeenSet = true; m_intendedUse = std::move(value); }
-    inline DataSourceConfiguration& WithIntendedUse(const IntendedUse& value) { SetIntendedUse(value); return *this;}
-    inline DataSourceConfiguration& WithIntendedUse(IntendedUse&& value) { SetIntendedUse(std::move(value)); return *this;}
+    inline void SetIntendedUse(IntendedUse value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
+    inline DataSourceConfiguration& WithIntendedUse(IntendedUse value) { SetIntendedUse(value); return *this;}
     ///@}
   private:
 
-    IntendedUse m_intendedUse;
+    IntendedUse m_intendedUse{IntendedUse::NOT_SET};
     bool m_intendedUseHasBeenSet = false;
   };
 

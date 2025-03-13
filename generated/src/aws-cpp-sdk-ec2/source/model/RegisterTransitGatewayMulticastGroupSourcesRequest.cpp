@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RegisterTransitGatewayMulticastGroupSourcesRequest::RegisterTransitGatewayMulticastGroupSourcesRequest() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_groupIpAddressHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RegisterTransitGatewayMulticastGroupSourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

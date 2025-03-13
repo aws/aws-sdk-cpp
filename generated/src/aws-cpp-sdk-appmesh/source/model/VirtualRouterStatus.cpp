@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualRouterStatus::VirtualRouterStatus() : 
-    m_status(VirtualRouterStatusCode::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 VirtualRouterStatus::VirtualRouterStatus(JsonView jsonValue)
-  : VirtualRouterStatus()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VirtualRouterStatus& VirtualRouterStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = VirtualRouterStatusCodeMapper::GetVirtualRouterStatusCodeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

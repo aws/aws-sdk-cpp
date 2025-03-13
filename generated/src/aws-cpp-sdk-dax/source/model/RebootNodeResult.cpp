@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RebootNodeResult::RebootNodeResult()
-{
-}
-
 RebootNodeResult::RebootNodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RebootNodeResult& RebootNodeResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Cluster"))
   {
     m_cluster = jsonValue.GetObject("Cluster");
-
+    m_clusterHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

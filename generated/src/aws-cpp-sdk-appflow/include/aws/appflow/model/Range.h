@@ -29,7 +29,7 @@ namespace Model
   class Range
   {
   public:
-    AWS_APPFLOW_API Range();
+    AWS_APPFLOW_API Range() = default;
     AWS_APPFLOW_API Range(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Range& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Maximum value supported by the field.</p>
      */
-    inline double GetMaximum() const{ return m_maximum; }
+    inline double GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
     inline Range& WithMaximum(double value) { SetMaximum(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>Minimum value supported by the field.</p>
      */
-    inline double GetMinimum() const{ return m_minimum; }
+    inline double GetMinimum() const { return m_minimum; }
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
     inline Range& WithMinimum(double value) { SetMinimum(value); return *this;}
     ///@}
   private:
 
-    double m_maximum;
+    double m_maximum{0.0};
     bool m_maximumHasBeenSet = false;
 
-    double m_minimum;
+    double m_minimum{0.0};
     bool m_minimumHasBeenSet = false;
   };
 

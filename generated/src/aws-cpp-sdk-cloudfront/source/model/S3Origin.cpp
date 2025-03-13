@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-S3Origin::S3Origin() : 
-    m_domainNameHasBeenSet(false),
-    m_originAccessIdentityHasBeenSet(false)
-{
-}
-
 S3Origin::S3Origin(const XmlNode& xmlNode)
-  : S3Origin()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ S3Origin& S3Origin::operator =(const XmlNode& xmlNode)
     {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
+       m_domainNameHasBeenSet = true;
     }
     XmlNode originAccessIdentityNode = resultNode.FirstChild("OriginAccessIdentity");
     if(!originAccessIdentityNode.IsNull())
     {
       m_originAccessIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(originAccessIdentityNode.GetText());
       m_originAccessIdentityHasBeenSet = true;
+       m_originAccessIdentityHasBeenSet = true;
     }
   }
 

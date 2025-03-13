@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary() : 
-    m_poolNameHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_poolArnHasBeenSet(false)
-{
-}
-
 KinesisVideoStreamPoolSummary::KinesisVideoStreamPoolSummary(JsonView jsonValue)
-  : KinesisVideoStreamPoolSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KinesisVideoStreamPoolSummary& KinesisVideoStreamPoolSummary::operator =(JsonVie
   if(jsonValue.ValueExists("PoolName"))
   {
     m_poolName = jsonValue.GetString("PoolName");
-
     m_poolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolId"))
   {
     m_poolId = jsonValue.GetString("PoolId");
-
     m_poolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolArn"))
   {
     m_poolArn = jsonValue.GetString("PoolArn");
-
     m_poolArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Health
 namespace Model
 {
 
-EventTypeFilter::EventTypeFilter() : 
-    m_eventTypeCodesHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_eventTypeCategoriesHasBeenSet(false)
-{
-}
-
 EventTypeFilter::EventTypeFilter(JsonView jsonValue)
-  : EventTypeFilter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
     }
     m_eventTypeCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("services"))
   {
     Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
@@ -52,7 +43,6 @@ EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
     }
     m_servicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeCategories"))
   {
     Aws::Utils::Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
@@ -62,7 +52,6 @@ EventTypeFilter& EventTypeFilter::operator =(JsonView jsonValue)
     }
     m_eventTypeCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

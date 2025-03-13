@@ -34,7 +34,7 @@ namespace Model
   class AuditMitigationActionsTaskMetadata
   {
   public:
-    AWS_IOT_API AuditMitigationActionsTaskMetadata();
+    AWS_IOT_API AuditMitigationActionsTaskMetadata() = default;
     AWS_IOT_API AuditMitigationActionsTaskMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuditMitigationActionsTaskMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,44 @@ namespace Model
     /**
      * <p>The unique identifier for the task.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline AuditMitigationActionsTaskMetadata& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline AuditMitigationActionsTaskMetadata& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline AuditMitigationActionsTaskMetadata& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    AuditMitigationActionsTaskMetadata& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the audit mitigation actions task was started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline AuditMitigationActionsTaskMetadata& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline AuditMitigationActionsTaskMetadata& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    AuditMitigationActionsTaskMetadata& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the audit mitigation actions task.</p>
      */
-    inline const AuditMitigationActionsTaskStatus& GetTaskStatus() const{ return m_taskStatus; }
+    inline AuditMitigationActionsTaskStatus GetTaskStatus() const { return m_taskStatus; }
     inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
-    inline void SetTaskStatus(const AuditMitigationActionsTaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
-    inline void SetTaskStatus(AuditMitigationActionsTaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = std::move(value); }
-    inline AuditMitigationActionsTaskMetadata& WithTaskStatus(const AuditMitigationActionsTaskStatus& value) { SetTaskStatus(value); return *this;}
-    inline AuditMitigationActionsTaskMetadata& WithTaskStatus(AuditMitigationActionsTaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
+    inline void SetTaskStatus(AuditMitigationActionsTaskStatus value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
+    inline AuditMitigationActionsTaskMetadata& WithTaskStatus(AuditMitigationActionsTaskStatus value) { SetTaskStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    AuditMitigationActionsTaskStatus m_taskStatus;
+    AuditMitigationActionsTaskStatus m_taskStatus{AuditMitigationActionsTaskStatus::NOT_SET};
     bool m_taskStatusHasBeenSet = false;
   };
 

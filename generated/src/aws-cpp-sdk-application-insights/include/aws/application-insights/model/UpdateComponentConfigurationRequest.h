@@ -22,7 +22,7 @@ namespace Model
   class UpdateComponentConfigurationRequest : public ApplicationInsightsRequest
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API UpdateComponentConfigurationRequest();
+    AWS_APPLICATIONINSIGHTS_API UpdateComponentConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,35 +39,31 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-    inline UpdateComponentConfigurationRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline UpdateComponentConfigurationRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline UpdateComponentConfigurationRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    UpdateComponentConfigurationRequest& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline UpdateComponentConfigurationRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline UpdateComponentConfigurationRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline UpdateComponentConfigurationRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    UpdateComponentConfigurationRequest& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the application component is monitored.</p>
      */
-    inline bool GetMonitor() const{ return m_monitor; }
+    inline bool GetMonitor() const { return m_monitor; }
     inline bool MonitorHasBeenSet() const { return m_monitorHasBeenSet; }
     inline void SetMonitor(bool value) { m_monitorHasBeenSet = true; m_monitor = value; }
     inline UpdateComponentConfigurationRequest& WithMonitor(bool value) { SetMonitor(value); return *this;}
@@ -77,12 +73,10 @@ namespace Model
     /**
      * <p>The tier of the application component.</p>
      */
-    inline const Tier& GetTier() const{ return m_tier; }
+    inline Tier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline UpdateComponentConfigurationRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
-    inline UpdateComponentConfigurationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(Tier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline UpdateComponentConfigurationRequest& WithTier(Tier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
      * Configuration</a>.</p>
      */
-    inline const Aws::String& GetComponentConfiguration() const{ return m_componentConfiguration; }
+    inline const Aws::String& GetComponentConfiguration() const { return m_componentConfiguration; }
     inline bool ComponentConfigurationHasBeenSet() const { return m_componentConfigurationHasBeenSet; }
-    inline void SetComponentConfiguration(const Aws::String& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = value; }
-    inline void SetComponentConfiguration(Aws::String&& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = std::move(value); }
-    inline void SetComponentConfiguration(const char* value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration.assign(value); }
-    inline UpdateComponentConfigurationRequest& WithComponentConfiguration(const Aws::String& value) { SetComponentConfiguration(value); return *this;}
-    inline UpdateComponentConfigurationRequest& WithComponentConfiguration(Aws::String&& value) { SetComponentConfiguration(std::move(value)); return *this;}
-    inline UpdateComponentConfigurationRequest& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
+    template<typename ComponentConfigurationT = Aws::String>
+    void SetComponentConfiguration(ComponentConfigurationT&& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = std::forward<ComponentConfigurationT>(value); }
+    template<typename ComponentConfigurationT = Aws::String>
+    UpdateComponentConfigurationRequest& WithComponentConfiguration(ComponentConfigurationT&& value) { SetComponentConfiguration(std::forward<ComponentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,7 +104,7 @@ namespace Model
      * <p> Automatically configures the component by applying the recommended
      * configurations. </p>
      */
-    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+    inline bool GetAutoConfigEnabled() const { return m_autoConfigEnabled; }
     inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
     inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
     inline UpdateComponentConfigurationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
@@ -125,16 +117,16 @@ namespace Model
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet = false;
 
-    bool m_monitor;
+    bool m_monitor{false};
     bool m_monitorHasBeenSet = false;
 
-    Tier m_tier;
+    Tier m_tier{Tier::NOT_SET};
     bool m_tierHasBeenSet = false;
 
     Aws::String m_componentConfiguration;
     bool m_componentConfigurationHasBeenSet = false;
 
-    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabled{false};
     bool m_autoConfigEnabledHasBeenSet = false;
   };
 

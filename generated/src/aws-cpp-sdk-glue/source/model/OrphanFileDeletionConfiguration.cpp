@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OrphanFileDeletionConfiguration::OrphanFileDeletionConfiguration() : 
-    m_icebergConfigurationHasBeenSet(false)
-{
-}
-
 OrphanFileDeletionConfiguration::OrphanFileDeletionConfiguration(JsonView jsonValue)
-  : OrphanFileDeletionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OrphanFileDeletionConfiguration& OrphanFileDeletionConfiguration::operator =(Jso
   if(jsonValue.ValueExists("icebergConfiguration"))
   {
     m_icebergConfiguration = jsonValue.GetObject("icebergConfiguration");
-
     m_icebergConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

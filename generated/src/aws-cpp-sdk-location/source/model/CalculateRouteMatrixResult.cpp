@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CalculateRouteMatrixResult::CalculateRouteMatrixResult()
-{
-}
-
 CalculateRouteMatrixResult::CalculateRouteMatrixResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -43,8 +39,8 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
       }
       m_routeMatrix.push_back(std::move(routeMatrixRowList));
     }
+    m_routeMatrixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnappedDeparturePositions"))
   {
     Aws::Utils::Array<JsonView> snappedDeparturePositionsJsonList = jsonValue.GetArray("SnappedDeparturePositions");
@@ -59,8 +55,8 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
       }
       m_snappedDeparturePositions.push_back(std::move(positionList));
     }
+    m_snappedDeparturePositionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnappedDestinationPositions"))
   {
     Aws::Utils::Array<JsonView> snappedDestinationPositionsJsonList = jsonValue.GetArray("SnappedDestinationPositions");
@@ -75,20 +71,20 @@ CalculateRouteMatrixResult& CalculateRouteMatrixResult::operator =(const Aws::Am
       }
       m_snappedDestinationPositions.push_back(std::move(positionList));
     }
+    m_snappedDestinationPositionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
+    m_summaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

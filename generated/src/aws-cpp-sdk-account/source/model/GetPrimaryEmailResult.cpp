@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPrimaryEmailResult::GetPrimaryEmailResult()
-{
-}
-
 GetPrimaryEmailResult::GetPrimaryEmailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPrimaryEmailResult& GetPrimaryEmailResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("PrimaryEmail"))
   {
     m_primaryEmail = jsonValue.GetString("PrimaryEmail");
-
+    m_primaryEmailHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

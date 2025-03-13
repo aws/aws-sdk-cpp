@@ -28,7 +28,7 @@ namespace Model
   class ListPipelinesRequest : public ElasticTranscoderRequest
   {
   public:
-    AWS_ELASTICTRANSCODER_API ListPipelinesRequest();
+    AWS_ELASTICTRANSCODER_API ListPipelinesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * created, enter <code>true</code>. To list pipelines in reverse chronological
      * order, enter <code>false</code>.</p>
      */
-    inline const Aws::String& GetAscending() const{ return m_ascending; }
+    inline const Aws::String& GetAscending() const { return m_ascending; }
     inline bool AscendingHasBeenSet() const { return m_ascendingHasBeenSet; }
-    inline void SetAscending(const Aws::String& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
-    inline void SetAscending(Aws::String&& value) { m_ascendingHasBeenSet = true; m_ascending = std::move(value); }
-    inline void SetAscending(const char* value) { m_ascendingHasBeenSet = true; m_ascending.assign(value); }
-    inline ListPipelinesRequest& WithAscending(const Aws::String& value) { SetAscending(value); return *this;}
-    inline ListPipelinesRequest& WithAscending(Aws::String&& value) { SetAscending(std::move(value)); return *this;}
-    inline ListPipelinesRequest& WithAscending(const char* value) { SetAscending(value); return *this;}
+    template<typename AscendingT = Aws::String>
+    void SetAscending(AscendingT&& value) { m_ascendingHasBeenSet = true; m_ascending = std::forward<AscendingT>(value); }
+    template<typename AscendingT = Aws::String>
+    ListPipelinesRequest& WithAscending(AscendingT&& value) { SetAscending(std::forward<AscendingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <code>pageToken</code> in subsequent <code>GET</code> requests to get each
      * successive page of results. </p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline ListPipelinesRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline ListPipelinesRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline ListPipelinesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    ListPipelinesRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-MemberFrameworkConfiguration::MemberFrameworkConfiguration() : 
-    m_fabricHasBeenSet(false)
-{
-}
-
 MemberFrameworkConfiguration::MemberFrameworkConfiguration(JsonView jsonValue)
-  : MemberFrameworkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MemberFrameworkConfiguration& MemberFrameworkConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("Fabric"))
   {
     m_fabric = jsonValue.GetObject("Fabric");
-
     m_fabricHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStreamProcessorRequest::UpdateStreamProcessorRequest() : 
-    m_nameHasBeenSet(false),
-    m_settingsForUpdateHasBeenSet(false),
-    m_regionsOfInterestForUpdateHasBeenSet(false),
-    m_dataSharingPreferenceForUpdateHasBeenSet(false),
-    m_parametersToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStreamProcessorRequest::SerializePayload() const
 {
   JsonValue payload;

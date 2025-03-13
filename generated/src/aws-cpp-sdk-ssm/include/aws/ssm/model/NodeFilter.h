@@ -34,7 +34,7 @@ namespace Model
   class NodeFilter
   {
   public:
-    AWS_SSM_API NodeFilter();
+    AWS_SSM_API NodeFilter() = default;
     AWS_SSM_API NodeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API NodeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
-    inline const NodeFilterKey& GetKey() const{ return m_key; }
+    inline NodeFilterKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const NodeFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(NodeFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline NodeFilter& WithKey(const NodeFilterKey& value) { SetKey(value); return *this;}
-    inline NodeFilter& WithKey(NodeFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(NodeFilterKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline NodeFilter& WithKey(NodeFilterKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -58,37 +56,34 @@ namespace Model
      * <code>PlatformType</code>, supported values include <code>Linux</code> and
      * <code>Windows</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline NodeFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline NodeFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline NodeFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline NodeFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline NodeFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    NodeFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    NodeFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of filter operator.</p>
      */
-    inline const NodeFilterOperatorType& GetType() const{ return m_type; }
+    inline NodeFilterOperatorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const NodeFilterOperatorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(NodeFilterOperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline NodeFilter& WithType(const NodeFilterOperatorType& value) { SetType(value); return *this;}
-    inline NodeFilter& WithType(NodeFilterOperatorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(NodeFilterOperatorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline NodeFilter& WithType(NodeFilterOperatorType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    NodeFilterKey m_key;
+    NodeFilterKey m_key{NodeFilterKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    NodeFilterOperatorType m_type;
+    NodeFilterOperatorType m_type{NodeFilterOperatorType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

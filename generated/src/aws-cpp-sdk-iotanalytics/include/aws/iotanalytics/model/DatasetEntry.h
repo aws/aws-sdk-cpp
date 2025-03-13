@@ -31,7 +31,7 @@ namespace Model
   class DatasetEntry
   {
   public:
-    AWS_IOTANALYTICS_API DatasetEntry();
+    AWS_IOTANALYTICS_API DatasetEntry() = default;
     AWS_IOTANALYTICS_API DatasetEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the dataset item.</p>
      */
-    inline const Aws::String& GetEntryName() const{ return m_entryName; }
+    inline const Aws::String& GetEntryName() const { return m_entryName; }
     inline bool EntryNameHasBeenSet() const { return m_entryNameHasBeenSet; }
-    inline void SetEntryName(const Aws::String& value) { m_entryNameHasBeenSet = true; m_entryName = value; }
-    inline void SetEntryName(Aws::String&& value) { m_entryNameHasBeenSet = true; m_entryName = std::move(value); }
-    inline void SetEntryName(const char* value) { m_entryNameHasBeenSet = true; m_entryName.assign(value); }
-    inline DatasetEntry& WithEntryName(const Aws::String& value) { SetEntryName(value); return *this;}
-    inline DatasetEntry& WithEntryName(Aws::String&& value) { SetEntryName(std::move(value)); return *this;}
-    inline DatasetEntry& WithEntryName(const char* value) { SetEntryName(value); return *this;}
+    template<typename EntryNameT = Aws::String>
+    void SetEntryName(EntryNameT&& value) { m_entryNameHasBeenSet = true; m_entryName = std::forward<EntryNameT>(value); }
+    template<typename EntryNameT = Aws::String>
+    DatasetEntry& WithEntryName(EntryNameT&& value) { SetEntryName(std::forward<EntryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The presigned URI of the dataset item.</p>
      */
-    inline const Aws::String& GetDataURI() const{ return m_dataURI; }
+    inline const Aws::String& GetDataURI() const { return m_dataURI; }
     inline bool DataURIHasBeenSet() const { return m_dataURIHasBeenSet; }
-    inline void SetDataURI(const Aws::String& value) { m_dataURIHasBeenSet = true; m_dataURI = value; }
-    inline void SetDataURI(Aws::String&& value) { m_dataURIHasBeenSet = true; m_dataURI = std::move(value); }
-    inline void SetDataURI(const char* value) { m_dataURIHasBeenSet = true; m_dataURI.assign(value); }
-    inline DatasetEntry& WithDataURI(const Aws::String& value) { SetDataURI(value); return *this;}
-    inline DatasetEntry& WithDataURI(Aws::String&& value) { SetDataURI(std::move(value)); return *this;}
-    inline DatasetEntry& WithDataURI(const char* value) { SetDataURI(value); return *this;}
+    template<typename DataURIT = Aws::String>
+    void SetDataURI(DataURIT&& value) { m_dataURIHasBeenSet = true; m_dataURI = std::forward<DataURIT>(value); }
+    template<typename DataURIT = Aws::String>
+    DatasetEntry& WithDataURI(DataURIT&& value) { SetDataURI(std::forward<DataURIT>(value)); return *this;}
     ///@}
   private:
 

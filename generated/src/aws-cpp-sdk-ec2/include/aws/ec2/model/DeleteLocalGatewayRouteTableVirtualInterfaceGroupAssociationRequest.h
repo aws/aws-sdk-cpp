@@ -21,7 +21,7 @@ namespace Model
   class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest();
+    AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p> The ID of the local gateway route table virtual interface group association.
      * </p>
      */
-    inline const Aws::String& GetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId() const{ return m_localGatewayRouteTableVirtualInterfaceGroupAssociationId; }
+    inline const Aws::String& GetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId() const { return m_localGatewayRouteTableVirtualInterfaceGroupAssociationId; }
     inline bool LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet() const { return m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet; }
-    inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(const Aws::String& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = true; m_localGatewayRouteTableVirtualInterfaceGroupAssociationId = value; }
-    inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(Aws::String&& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = true; m_localGatewayRouteTableVirtualInterfaceGroupAssociationId = std::move(value); }
-    inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(const char* value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = true; m_localGatewayRouteTableVirtualInterfaceGroupAssociationId.assign(value); }
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(const Aws::String& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(value); return *this;}
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(Aws::String&& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(std::move(value)); return *this;}
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(const char* value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(value); return *this;}
+    template<typename LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdT = Aws::String>
+    void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdT&& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = true; m_localGatewayRouteTableVirtualInterfaceGroupAssociationId = std::forward<LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdT>(value); }
+    template<typename LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdT = Aws::String>
+    DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdT&& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociationId(std::forward<LocalGatewayRouteTableVirtualInterfaceGroupAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_localGatewayRouteTableVirtualInterfaceGroupAssociationId;
     bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-StopRequest::StopRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 StopRequest::StopRequest(JsonView jsonValue)
-  : StopRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StopRequest& StopRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkspaceId"))
   {
     m_workspaceId = jsonValue.GetString("WorkspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

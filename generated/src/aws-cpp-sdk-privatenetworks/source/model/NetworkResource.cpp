@@ -18,32 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-NetworkResource::NetworkResource() : 
-    m_attributesHasBeenSet(false),
-    m_commitmentInformationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_health(HealthStatus::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkResourceArnHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_orderArnHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_returnInformationHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_status(NetworkResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_type(NetworkResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_vendorHasBeenSet(false)
-{
-}
-
 NetworkResource::NetworkResource(JsonView jsonValue)
-  : NetworkResource()
 {
   *this = jsonValue;
 }
@@ -59,119 +34,86 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitmentInformation"))
   {
     m_commitmentInformation = jsonValue.GetObject("commitmentInformation");
-
     m_commitmentInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("health"));
-
     m_healthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetString("model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkArn"))
   {
     m_networkArn = jsonValue.GetString("networkArn");
-
     m_networkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkResourceArn"))
   {
     m_networkResourceArn = jsonValue.GetString("networkResourceArn");
-
     m_networkResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkSiteArn"))
   {
     m_networkSiteArn = jsonValue.GetString("networkSiteArn");
-
     m_networkSiteArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderArn"))
   {
     m_orderArn = jsonValue.GetString("orderArn");
-
     m_orderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetObject("position");
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("returnInformation"))
   {
     m_returnInformation = jsonValue.GetObject("returnInformation");
-
     m_returnInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serialNumber"))
   {
     m_serialNumber = jsonValue.GetString("serialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NetworkResourceStatusMapper::GetNetworkResourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NetworkResourceTypeMapper::GetNetworkResourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vendor"))
   {
     m_vendor = jsonValue.GetString("vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   return *this;
 }
 

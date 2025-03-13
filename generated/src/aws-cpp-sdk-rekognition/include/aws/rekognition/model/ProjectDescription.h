@@ -38,7 +38,7 @@ namespace Model
   class ProjectDescription
   {
   public:
-    AWS_REKOGNITION_API ProjectDescription();
+    AWS_REKOGNITION_API ProjectDescription() = default;
     AWS_REKOGNITION_API ProjectDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API ProjectDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,64 +48,58 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline ProjectDescription& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline ProjectDescription& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline ProjectDescription& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    ProjectDescription& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Unix timestamp for the date and time that the project was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
-    inline ProjectDescription& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline ProjectDescription& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    ProjectDescription& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the project.</p>
      */
-    inline const ProjectStatus& GetStatus() const{ return m_status; }
+    inline ProjectStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProjectStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProjectStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProjectDescription& WithStatus(const ProjectStatus& value) { SetStatus(value); return *this;}
-    inline ProjectDescription& WithStatus(ProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProjectStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProjectDescription& WithStatus(ProjectStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about the training and test datasets in the project. </p>
      */
-    inline const Aws::Vector<DatasetMetadata>& GetDatasets() const{ return m_datasets; }
+    inline const Aws::Vector<DatasetMetadata>& GetDatasets() const { return m_datasets; }
     inline bool DatasetsHasBeenSet() const { return m_datasetsHasBeenSet; }
-    inline void SetDatasets(const Aws::Vector<DatasetMetadata>& value) { m_datasetsHasBeenSet = true; m_datasets = value; }
-    inline void SetDatasets(Aws::Vector<DatasetMetadata>&& value) { m_datasetsHasBeenSet = true; m_datasets = std::move(value); }
-    inline ProjectDescription& WithDatasets(const Aws::Vector<DatasetMetadata>& value) { SetDatasets(value); return *this;}
-    inline ProjectDescription& WithDatasets(Aws::Vector<DatasetMetadata>&& value) { SetDatasets(std::move(value)); return *this;}
-    inline ProjectDescription& AddDatasets(const DatasetMetadata& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(value); return *this; }
-    inline ProjectDescription& AddDatasets(DatasetMetadata&& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(std::move(value)); return *this; }
+    template<typename DatasetsT = Aws::Vector<DatasetMetadata>>
+    void SetDatasets(DatasetsT&& value) { m_datasetsHasBeenSet = true; m_datasets = std::forward<DatasetsT>(value); }
+    template<typename DatasetsT = Aws::Vector<DatasetMetadata>>
+    ProjectDescription& WithDatasets(DatasetsT&& value) { SetDatasets(std::forward<DatasetsT>(value)); return *this;}
+    template<typename DatasetsT = DatasetMetadata>
+    ProjectDescription& AddDatasets(DatasetsT&& value) { m_datasetsHasBeenSet = true; m_datasets.emplace_back(std::forward<DatasetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the project that is being customized.</p>
      */
-    inline const CustomizationFeature& GetFeature() const{ return m_feature; }
+    inline CustomizationFeature GetFeature() const { return m_feature; }
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-    inline void SetFeature(const CustomizationFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
-    inline void SetFeature(CustomizationFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-    inline ProjectDescription& WithFeature(const CustomizationFeature& value) { SetFeature(value); return *this;}
-    inline ProjectDescription& WithFeature(CustomizationFeature&& value) { SetFeature(std::move(value)); return *this;}
+    inline void SetFeature(CustomizationFeature value) { m_featureHasBeenSet = true; m_feature = value; }
+    inline ProjectDescription& WithFeature(CustomizationFeature value) { SetFeature(value); return *this;}
     ///@}
 
     ///@{
@@ -113,31 +107,29 @@ namespace Model
      * <p>Indicates whether automatic retraining will be attempted for the versions of
      * the project. Applies only to adapters. </p>
      */
-    inline const ProjectAutoUpdate& GetAutoUpdate() const{ return m_autoUpdate; }
+    inline ProjectAutoUpdate GetAutoUpdate() const { return m_autoUpdate; }
     inline bool AutoUpdateHasBeenSet() const { return m_autoUpdateHasBeenSet; }
-    inline void SetAutoUpdate(const ProjectAutoUpdate& value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
-    inline void SetAutoUpdate(ProjectAutoUpdate&& value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = std::move(value); }
-    inline ProjectDescription& WithAutoUpdate(const ProjectAutoUpdate& value) { SetAutoUpdate(value); return *this;}
-    inline ProjectDescription& WithAutoUpdate(ProjectAutoUpdate&& value) { SetAutoUpdate(std::move(value)); return *this;}
+    inline void SetAutoUpdate(ProjectAutoUpdate value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
+    inline ProjectDescription& WithAutoUpdate(ProjectAutoUpdate value) { SetAutoUpdate(value); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
     bool m_creationTimestampHasBeenSet = false;
 
-    ProjectStatus m_status;
+    ProjectStatus m_status{ProjectStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<DatasetMetadata> m_datasets;
     bool m_datasetsHasBeenSet = false;
 
-    CustomizationFeature m_feature;
+    CustomizationFeature m_feature{CustomizationFeature::NOT_SET};
     bool m_featureHasBeenSet = false;
 
-    ProjectAutoUpdate m_autoUpdate;
+    ProjectAutoUpdate m_autoUpdate{ProjectAutoUpdate::NOT_SET};
     bool m_autoUpdateHasBeenSet = false;
   };
 

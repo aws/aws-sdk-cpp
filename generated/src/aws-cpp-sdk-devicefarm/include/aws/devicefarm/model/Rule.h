@@ -33,7 +33,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_DEVICEFARM_API Rule();
+    AWS_DEVICEFARM_API Rule() = default;
     AWS_DEVICEFARM_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -80,12 +80,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
      * longer supported</a>, this filter is ignored.</p> </dd> </dl>
      */
-    inline const DeviceAttribute& GetAttribute() const{ return m_attribute; }
+    inline DeviceAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const DeviceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline Rule& WithAttribute(const DeviceAttribute& value) { SetAttribute(value); return *this;}
-    inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(DeviceAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline Rule& WithAttribute(DeviceAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -94,33 +92,29 @@ namespace Model
      * operators that are supported by each attribute, see the attribute
      * descriptions.</p>
      */
-    inline const RuleOperator& GetOperator() const{ return m_operator; }
+    inline RuleOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const RuleOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(RuleOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline Rule& WithOperator(const RuleOperator& value) { SetOperator(value); return *this;}
-    inline Rule& WithOperator(RuleOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(RuleOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline Rule& WithOperator(RuleOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule's value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Rule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Rule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Rule& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Rule& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    DeviceAttribute m_attribute;
+    DeviceAttribute m_attribute{DeviceAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    RuleOperator m_operator;
+    RuleOperator m_operator{RuleOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::String m_value;

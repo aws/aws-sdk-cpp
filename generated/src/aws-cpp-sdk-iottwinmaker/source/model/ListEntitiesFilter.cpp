@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ListEntitiesFilter::ListEntitiesFilter() : 
-    m_parentEntityIdHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 ListEntitiesFilter::ListEntitiesFilter(JsonView jsonValue)
-  : ListEntitiesFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListEntitiesFilter& ListEntitiesFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("parentEntityId"))
   {
     m_parentEntityId = jsonValue.GetString("parentEntityId");
-
     m_parentEntityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentTypeId"))
   {
     m_componentTypeId = jsonValue.GetString("componentTypeId");
-
     m_componentTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalId"))
   {
     m_externalId = jsonValue.GetString("externalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   return *this;
 }
 

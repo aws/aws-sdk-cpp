@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-IdentityDocument::IdentityDocument() : 
-    m_documentIndex(0),
-    m_documentIndexHasBeenSet(false),
-    m_identityDocumentFieldsHasBeenSet(false),
-    m_blocksHasBeenSet(false)
-{
-}
-
 IdentityDocument::IdentityDocument(JsonView jsonValue)
-  : IdentityDocument()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentIndex"))
   {
     m_documentIndex = jsonValue.GetInteger("DocumentIndex");
-
     m_documentIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityDocumentFields"))
   {
     Aws::Utils::Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
@@ -50,7 +39,6 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
     }
     m_identityDocumentFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocks"))
   {
     Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
@@ -60,7 +48,6 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
     }
     m_blocksHasBeenSet = true;
   }
-
   return *this;
 }
 

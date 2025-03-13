@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceImageMetadata::InstanceImageMetadata() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_zoneIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageMetadataHasBeenSet(false),
-    m_operatorHasBeenSet(false)
-{
-}
-
 InstanceImageMetadata::InstanceImageMetadata(const XmlNode& xmlNode)
-  : InstanceImageMetadata()
 {
   *this = xmlNode;
 }
@@ -52,66 +36,76 @@ InstanceImageMetadata& InstanceImageMetadata::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
     if(!launchTimeNode.IsNull())
     {
       m_launchTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(launchTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_launchTimeHasBeenSet = true;
+       m_launchTimeHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode zoneIdNode = resultNode.FirstChild("zoneId");
     if(!zoneIdNode.IsNull())
     {
       m_zoneId = Aws::Utils::Xml::DecodeEscapedXmlText(zoneIdNode.GetText());
       m_zoneIdHasBeenSet = true;
+       m_zoneIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("instanceState");
     if(!stateNode.IsNull())
     {
       m_state = stateNode;
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("instanceOwnerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode imageMetadataNode = resultNode.FirstChild("imageMetadata");
     if(!imageMetadataNode.IsNull())
     {
       m_imageMetadata = imageMetadataNode;
       m_imageMetadataHasBeenSet = true;
+       m_imageMetadataHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
     if(!operatorNode.IsNull())
     {
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
+       m_operatorHasBeenSet = true;
     }
   }
 

@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-LoggingConfig::LoggingConfig() : 
-    m_logRoleArnHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 LoggingConfig::LoggingConfig(const XmlNode& xmlNode)
-  : LoggingConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LoggingConfig& LoggingConfig::operator =(const XmlNode& xmlNode)
     {
       m_logRoleArn = Aws::Utils::Xml::DecodeEscapedXmlText(logRoleArnNode.GetText());
       m_logRoleArnHasBeenSet = true;
+       m_logRoleArnHasBeenSet = true;
     }
     XmlNode logGroupNameNode = resultNode.FirstChild("LogGroupName");
     if(!logGroupNameNode.IsNull())
     {
       m_logGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(logGroupNameNode.GetText());
       m_logGroupNameHasBeenSet = true;
+       m_logGroupNameHasBeenSet = true;
     }
   }
 

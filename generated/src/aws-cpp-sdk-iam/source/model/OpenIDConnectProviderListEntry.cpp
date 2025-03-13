@@ -20,13 +20,7 @@ namespace IAM
 namespace Model
 {
 
-OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 OpenIDConnectProviderListEntry::OpenIDConnectProviderListEntry(const XmlNode& xmlNode)
-  : OpenIDConnectProviderListEntry()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ OpenIDConnectProviderListEntry& OpenIDConnectProviderListEntry::operator =(const
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
   }
 

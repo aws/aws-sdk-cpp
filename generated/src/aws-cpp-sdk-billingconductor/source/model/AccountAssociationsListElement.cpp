@@ -18,16 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-AccountAssociationsListElement::AccountAssociationsListElement() : 
-    m_accountIdHasBeenSet(false),
-    m_billingGroupArnHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_accountEmailHasBeenSet(false)
-{
-}
-
 AccountAssociationsListElement::AccountAssociationsListElement(JsonView jsonValue)
-  : AccountAssociationsListElement()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AccountAssociationsListElement& AccountAssociationsListElement::operator =(JsonV
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingGroupArn"))
   {
     m_billingGroupArn = jsonValue.GetString("BillingGroupArn");
-
     m_billingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountName"))
   {
     m_accountName = jsonValue.GetString("AccountName");
-
     m_accountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountEmail"))
   {
     m_accountEmail = jsonValue.GetString("AccountEmail");
-
     m_accountEmailHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class PrincipalPermissions
   {
   public:
-    AWS_LAKEFORMATION_API PrincipalPermissions();
+    AWS_LAKEFORMATION_API PrincipalPermissions() = default;
     AWS_LAKEFORMATION_API PrincipalPermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API PrincipalPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,25 @@ namespace Model
     /**
      * <p>The principal who is granted permissions.</p>
      */
-    inline const DataLakePrincipal& GetPrincipal() const{ return m_principal; }
+    inline const DataLakePrincipal& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const DataLakePrincipal& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(DataLakePrincipal&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline PrincipalPermissions& WithPrincipal(const DataLakePrincipal& value) { SetPrincipal(value); return *this;}
-    inline PrincipalPermissions& WithPrincipal(DataLakePrincipal&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = DataLakePrincipal>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = DataLakePrincipal>
+    PrincipalPermissions& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The permissions that are granted to the principal.</p>
      */
-    inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
+    inline const Aws::Vector<Permission>& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline PrincipalPermissions& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-    inline PrincipalPermissions& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline PrincipalPermissions& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-    inline PrincipalPermissions& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    PrincipalPermissions& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    inline PrincipalPermissions& AddPermissions(Permission value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
     ///@}
   private:
 

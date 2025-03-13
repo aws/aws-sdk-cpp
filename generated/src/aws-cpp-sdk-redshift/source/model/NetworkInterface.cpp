@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_networkInterfaceIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(const XmlNode& xmlNode)
-  : NetworkInterface()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode ipv6AddressNode = resultNode.FirstChild("Ipv6Address");
     if(!ipv6AddressNode.IsNull())
     {
       m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
+       m_ipv6AddressHasBeenSet = true;
     }
   }
 

@@ -35,7 +35,7 @@ namespace Model
   class DescribeAccountAttributesResult
   {
   public:
-    AWS_RDS_API DescribeAccountAttributesResult();
+    AWS_RDS_API DescribeAccountAttributesResult() = default;
     AWS_RDS_API DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,28 +46,30 @@ namespace Model
      * a name, a count of usage toward the quota maximum, and a maximum value for the
      * quota.</p>
      */
-    inline const Aws::Vector<AccountQuota>& GetAccountQuotas() const{ return m_accountQuotas; }
-    inline void SetAccountQuotas(const Aws::Vector<AccountQuota>& value) { m_accountQuotas = value; }
-    inline void SetAccountQuotas(Aws::Vector<AccountQuota>&& value) { m_accountQuotas = std::move(value); }
-    inline DescribeAccountAttributesResult& WithAccountQuotas(const Aws::Vector<AccountQuota>& value) { SetAccountQuotas(value); return *this;}
-    inline DescribeAccountAttributesResult& WithAccountQuotas(Aws::Vector<AccountQuota>&& value) { SetAccountQuotas(std::move(value)); return *this;}
-    inline DescribeAccountAttributesResult& AddAccountQuotas(const AccountQuota& value) { m_accountQuotas.push_back(value); return *this; }
-    inline DescribeAccountAttributesResult& AddAccountQuotas(AccountQuota&& value) { m_accountQuotas.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountQuota>& GetAccountQuotas() const { return m_accountQuotas; }
+    template<typename AccountQuotasT = Aws::Vector<AccountQuota>>
+    void SetAccountQuotas(AccountQuotasT&& value) { m_accountQuotasHasBeenSet = true; m_accountQuotas = std::forward<AccountQuotasT>(value); }
+    template<typename AccountQuotasT = Aws::Vector<AccountQuota>>
+    DescribeAccountAttributesResult& WithAccountQuotas(AccountQuotasT&& value) { SetAccountQuotas(std::forward<AccountQuotasT>(value)); return *this;}
+    template<typename AccountQuotasT = AccountQuota>
+    DescribeAccountAttributesResult& AddAccountQuotas(AccountQuotasT&& value) { m_accountQuotasHasBeenSet = true; m_accountQuotas.emplace_back(std::forward<AccountQuotasT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAccountAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAccountAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAccountAttributesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountQuota> m_accountQuotas;
+    bool m_accountQuotasHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

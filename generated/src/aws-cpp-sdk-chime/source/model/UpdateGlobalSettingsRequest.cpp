@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlobalSettingsRequest::UpdateGlobalSettingsRequest() : 
-    m_businessCallingHasBeenSet(false),
-    m_voiceConnectorHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGlobalSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

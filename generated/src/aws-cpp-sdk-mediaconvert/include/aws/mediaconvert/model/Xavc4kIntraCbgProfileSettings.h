@@ -32,7 +32,7 @@ namespace Model
   class Xavc4kIntraCbgProfileSettings
   {
   public:
-    AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings();
+    AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings() = default;
     AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * of the same class have similar image quality over the operating points that are
      * valid for that class.
      */
-    inline const Xavc4kIntraCbgProfileClass& GetXavcClass() const{ return m_xavcClass; }
+    inline Xavc4kIntraCbgProfileClass GetXavcClass() const { return m_xavcClass; }
     inline bool XavcClassHasBeenSet() const { return m_xavcClassHasBeenSet; }
-    inline void SetXavcClass(const Xavc4kIntraCbgProfileClass& value) { m_xavcClassHasBeenSet = true; m_xavcClass = value; }
-    inline void SetXavcClass(Xavc4kIntraCbgProfileClass&& value) { m_xavcClassHasBeenSet = true; m_xavcClass = std::move(value); }
-    inline Xavc4kIntraCbgProfileSettings& WithXavcClass(const Xavc4kIntraCbgProfileClass& value) { SetXavcClass(value); return *this;}
-    inline Xavc4kIntraCbgProfileSettings& WithXavcClass(Xavc4kIntraCbgProfileClass&& value) { SetXavcClass(std::move(value)); return *this;}
+    inline void SetXavcClass(Xavc4kIntraCbgProfileClass value) { m_xavcClassHasBeenSet = true; m_xavcClass = value; }
+    inline Xavc4kIntraCbgProfileSettings& WithXavcClass(Xavc4kIntraCbgProfileClass value) { SetXavcClass(value); return *this;}
     ///@}
   private:
 
-    Xavc4kIntraCbgProfileClass m_xavcClass;
+    Xavc4kIntraCbgProfileClass m_xavcClass{Xavc4kIntraCbgProfileClass::NOT_SET};
     bool m_xavcClassHasBeenSet = false;
   };
 

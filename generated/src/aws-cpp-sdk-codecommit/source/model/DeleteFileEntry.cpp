@@ -18,13 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-DeleteFileEntry::DeleteFileEntry() : 
-    m_filePathHasBeenSet(false)
-{
-}
-
 DeleteFileEntry::DeleteFileEntry(JsonView jsonValue)
-  : DeleteFileEntry()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeleteFileEntry& DeleteFileEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   return *this;
 }
 

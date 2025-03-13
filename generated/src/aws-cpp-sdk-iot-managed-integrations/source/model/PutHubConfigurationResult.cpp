@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutHubConfigurationResult::PutHubConfigurationResult() : 
-    m_hubTokenTimerExpirySettingInSeconds(0)
-{
-}
-
 PutHubConfigurationResult::PutHubConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutHubConfigurationResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ PutHubConfigurationResult& PutHubConfigurationResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("HubTokenTimerExpirySettingInSeconds"))
   {
     m_hubTokenTimerExpirySettingInSeconds = jsonValue.GetInt64("HubTokenTimerExpirySettingInSeconds");
-
+    m_hubTokenTimerExpirySettingInSecondsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

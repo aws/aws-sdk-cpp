@@ -18,13 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-LambdaDataSourceConfig::LambdaDataSourceConfig() : 
-    m_lambdaFunctionArnHasBeenSet(false)
-{
-}
-
 LambdaDataSourceConfig::LambdaDataSourceConfig(JsonView jsonValue)
-  : LambdaDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaDataSourceConfig& LambdaDataSourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lambdaFunctionArn"))
   {
     m_lambdaFunctionArn = jsonValue.GetString("lambdaFunctionArn");
-
     m_lambdaFunctionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

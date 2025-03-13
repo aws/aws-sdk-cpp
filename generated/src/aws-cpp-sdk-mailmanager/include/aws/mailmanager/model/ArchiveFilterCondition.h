@@ -33,7 +33,7 @@ namespace Model
   class ArchiveFilterCondition
   {
   public:
-    AWS_MAILMANAGER_API ArchiveFilterCondition();
+    AWS_MAILMANAGER_API ArchiveFilterCondition() = default;
     AWS_MAILMANAGER_API ArchiveFilterCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ArchiveFilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>A boolean expression to evaluate against email attributes.</p>
      */
-    inline const ArchiveBooleanExpression& GetBooleanExpression() const{ return m_booleanExpression; }
+    inline const ArchiveBooleanExpression& GetBooleanExpression() const { return m_booleanExpression; }
     inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
-    inline void SetBooleanExpression(const ArchiveBooleanExpression& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = value; }
-    inline void SetBooleanExpression(ArchiveBooleanExpression&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::move(value); }
-    inline ArchiveFilterCondition& WithBooleanExpression(const ArchiveBooleanExpression& value) { SetBooleanExpression(value); return *this;}
-    inline ArchiveFilterCondition& WithBooleanExpression(ArchiveBooleanExpression&& value) { SetBooleanExpression(std::move(value)); return *this;}
+    template<typename BooleanExpressionT = ArchiveBooleanExpression>
+    void SetBooleanExpression(BooleanExpressionT&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::forward<BooleanExpressionT>(value); }
+    template<typename BooleanExpressionT = ArchiveBooleanExpression>
+    ArchiveFilterCondition& WithBooleanExpression(BooleanExpressionT&& value) { SetBooleanExpression(std::forward<BooleanExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string expression to evaluate against email attributes.</p>
      */
-    inline const ArchiveStringExpression& GetStringExpression() const{ return m_stringExpression; }
+    inline const ArchiveStringExpression& GetStringExpression() const { return m_stringExpression; }
     inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
-    inline void SetStringExpression(const ArchiveStringExpression& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = value; }
-    inline void SetStringExpression(ArchiveStringExpression&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::move(value); }
-    inline ArchiveFilterCondition& WithStringExpression(const ArchiveStringExpression& value) { SetStringExpression(value); return *this;}
-    inline ArchiveFilterCondition& WithStringExpression(ArchiveStringExpression&& value) { SetStringExpression(std::move(value)); return *this;}
+    template<typename StringExpressionT = ArchiveStringExpression>
+    void SetStringExpression(StringExpressionT&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::forward<StringExpressionT>(value); }
+    template<typename StringExpressionT = ArchiveStringExpression>
+    ArchiveFilterCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
     ///@}
   private:
 

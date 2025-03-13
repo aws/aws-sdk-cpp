@@ -22,7 +22,7 @@ namespace Model
   class ListFraudsterRegistrationJobsRequest : public VoiceIDRequest
   {
   public:
-    AWS_VOICEID_API ListFraudsterRegistrationJobsRequest();
+    AWS_VOICEID_API ListFraudsterRegistrationJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,22 @@ namespace Model
      * <p>The identifier of the domain that contains the fraudster registration
      * Jobs.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline ListFraudsterRegistrationJobsRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline ListFraudsterRegistrationJobsRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline ListFraudsterRegistrationJobsRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    ListFraudsterRegistrationJobsRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the status of your fraudster registration job.</p>
      */
-    inline const FraudsterRegistrationJobStatus& GetJobStatus() const{ return m_jobStatus; }
+    inline FraudsterRegistrationJobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-    inline void SetJobStatus(const FraudsterRegistrationJobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-    inline void SetJobStatus(FraudsterRegistrationJobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-    inline ListFraudsterRegistrationJobsRequest& WithJobStatus(const FraudsterRegistrationJobStatus& value) { SetJobStatus(value); return *this;}
-    inline ListFraudsterRegistrationJobsRequest& WithJobStatus(FraudsterRegistrationJobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline void SetJobStatus(FraudsterRegistrationJobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline ListFraudsterRegistrationJobsRequest& WithJobStatus(FraudsterRegistrationJobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +64,7 @@ namespace Model
      * <code>NextToken</code> to obtain more pages of results. The default is 100; the
      * maximum allowed page size is also 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFraudsterRegistrationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,24 +77,22 @@ namespace Model
      * the call again using the returned token to retrieve the next page. Keep all
      * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFraudsterRegistrationJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFraudsterRegistrationJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFraudsterRegistrationJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFraudsterRegistrationJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
-    FraudsterRegistrationJobStatus m_jobStatus;
+    FraudsterRegistrationJobStatus m_jobStatus{FraudsterRegistrationJobStatus::NOT_SET};
     bool m_jobStatusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

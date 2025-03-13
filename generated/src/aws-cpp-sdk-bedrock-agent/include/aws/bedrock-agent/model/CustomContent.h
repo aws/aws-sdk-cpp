@@ -36,7 +36,7 @@ namespace Model
   class CustomContent
   {
   public:
-    AWS_BEDROCKAGENT_API CustomContent();
+    AWS_BEDROCKAGENT_API CustomContent() = default;
     AWS_BEDROCKAGENT_API CustomContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CustomContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>A unique identifier for the document.</p>
      */
-    inline const CustomDocumentIdentifier& GetCustomDocumentIdentifier() const{ return m_customDocumentIdentifier; }
+    inline const CustomDocumentIdentifier& GetCustomDocumentIdentifier() const { return m_customDocumentIdentifier; }
     inline bool CustomDocumentIdentifierHasBeenSet() const { return m_customDocumentIdentifierHasBeenSet; }
-    inline void SetCustomDocumentIdentifier(const CustomDocumentIdentifier& value) { m_customDocumentIdentifierHasBeenSet = true; m_customDocumentIdentifier = value; }
-    inline void SetCustomDocumentIdentifier(CustomDocumentIdentifier&& value) { m_customDocumentIdentifierHasBeenSet = true; m_customDocumentIdentifier = std::move(value); }
-    inline CustomContent& WithCustomDocumentIdentifier(const CustomDocumentIdentifier& value) { SetCustomDocumentIdentifier(value); return *this;}
-    inline CustomContent& WithCustomDocumentIdentifier(CustomDocumentIdentifier&& value) { SetCustomDocumentIdentifier(std::move(value)); return *this;}
+    template<typename CustomDocumentIdentifierT = CustomDocumentIdentifier>
+    void SetCustomDocumentIdentifier(CustomDocumentIdentifierT&& value) { m_customDocumentIdentifierHasBeenSet = true; m_customDocumentIdentifier = std::forward<CustomDocumentIdentifierT>(value); }
+    template<typename CustomDocumentIdentifierT = CustomDocumentIdentifier>
+    CustomContent& WithCustomDocumentIdentifier(CustomDocumentIdentifierT&& value) { SetCustomDocumentIdentifier(std::forward<CustomDocumentIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>Contains information about content defined inline to ingest into a knowledge
      * base.</p>
      */
-    inline const InlineContent& GetInlineContent() const{ return m_inlineContent; }
+    inline const InlineContent& GetInlineContent() const { return m_inlineContent; }
     inline bool InlineContentHasBeenSet() const { return m_inlineContentHasBeenSet; }
-    inline void SetInlineContent(const InlineContent& value) { m_inlineContentHasBeenSet = true; m_inlineContent = value; }
-    inline void SetInlineContent(InlineContent&& value) { m_inlineContentHasBeenSet = true; m_inlineContent = std::move(value); }
-    inline CustomContent& WithInlineContent(const InlineContent& value) { SetInlineContent(value); return *this;}
-    inline CustomContent& WithInlineContent(InlineContent&& value) { SetInlineContent(std::move(value)); return *this;}
+    template<typename InlineContentT = InlineContent>
+    void SetInlineContent(InlineContentT&& value) { m_inlineContentHasBeenSet = true; m_inlineContent = std::forward<InlineContentT>(value); }
+    template<typename InlineContentT = InlineContent>
+    CustomContent& WithInlineContent(InlineContentT&& value) { SetInlineContent(std::forward<InlineContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,24 +72,22 @@ namespace Model
      * <p>Contains information about the Amazon S3 location of the file from which to
      * ingest data.</p>
      */
-    inline const CustomS3Location& GetS3Location() const{ return m_s3Location; }
+    inline const CustomS3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const CustomS3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(CustomS3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline CustomContent& WithS3Location(const CustomS3Location& value) { SetS3Location(value); return *this;}
-    inline CustomContent& WithS3Location(CustomS3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = CustomS3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = CustomS3Location>
+    CustomContent& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the data to ingest.</p>
      */
-    inline const CustomSourceType& GetSourceType() const{ return m_sourceType; }
+    inline CustomSourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const CustomSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(CustomSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline CustomContent& WithSourceType(const CustomSourceType& value) { SetSourceType(value); return *this;}
-    inline CustomContent& WithSourceType(CustomSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(CustomSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline CustomContent& WithSourceType(CustomSourceType value) { SetSourceType(value); return *this;}
     ///@}
   private:
 
@@ -102,7 +100,7 @@ namespace Model
     CustomS3Location m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
-    CustomSourceType m_sourceType;
+    CustomSourceType m_sourceType{CustomSourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
   };
 

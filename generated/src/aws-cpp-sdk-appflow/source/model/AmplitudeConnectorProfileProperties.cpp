@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-AmplitudeConnectorProfileProperties::AmplitudeConnectorProfileProperties()
-{
-}
-
 AmplitudeConnectorProfileProperties::AmplitudeConnectorProfileProperties(JsonView jsonValue)
 {
   *this = jsonValue;

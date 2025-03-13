@@ -18,49 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserPoolType::UserPoolType() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policiesHasBeenSet(false),
-    m_deletionProtection(DeletionProtectionType::NOT_SET),
-    m_deletionProtectionHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_schemaAttributesHasBeenSet(false),
-    m_autoVerifiedAttributesHasBeenSet(false),
-    m_aliasAttributesHasBeenSet(false),
-    m_usernameAttributesHasBeenSet(false),
-    m_smsVerificationMessageHasBeenSet(false),
-    m_emailVerificationMessageHasBeenSet(false),
-    m_emailVerificationSubjectHasBeenSet(false),
-    m_verificationMessageTemplateHasBeenSet(false),
-    m_smsAuthenticationMessageHasBeenSet(false),
-    m_userAttributeUpdateSettingsHasBeenSet(false),
-    m_mfaConfiguration(UserPoolMfaType::NOT_SET),
-    m_mfaConfigurationHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false),
-    m_estimatedNumberOfUsers(0),
-    m_estimatedNumberOfUsersHasBeenSet(false),
-    m_emailConfigurationHasBeenSet(false),
-    m_smsConfigurationHasBeenSet(false),
-    m_userPoolTagsHasBeenSet(false),
-    m_smsConfigurationFailureHasBeenSet(false),
-    m_emailConfigurationFailureHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_customDomainHasBeenSet(false),
-    m_adminCreateUserConfigHasBeenSet(false),
-    m_userPoolAddOnsHasBeenSet(false),
-    m_usernameConfigurationHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_accountRecoverySettingHasBeenSet(false),
-    m_userPoolTier(UserPoolTierType::NOT_SET),
-    m_userPoolTierHasBeenSet(false)
-{
-}
-
 UserPoolType::UserPoolType(JsonView jsonValue)
-  : UserPoolType()
 {
   *this = jsonValue;
 }
@@ -70,52 +28,38 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policies"))
   {
     m_policies = jsonValue.GetObject("Policies");
-
     m_policiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtection"))
   {
     m_deletionProtection = DeletionProtectionTypeMapper::GetDeletionProtectionTypeForName(jsonValue.GetString("DeletionProtection"));
-
     m_deletionProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaConfig"))
   {
     m_lambdaConfig = jsonValue.GetObject("LambdaConfig");
-
     m_lambdaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaAttributes"))
   {
     Aws::Utils::Array<JsonView> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
@@ -125,7 +69,6 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     }
     m_schemaAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoVerifiedAttributes"))
   {
     Aws::Utils::Array<JsonView> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
@@ -135,7 +78,6 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     }
     m_autoVerifiedAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AliasAttributes"))
   {
     Aws::Utils::Array<JsonView> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
@@ -145,7 +87,6 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     }
     m_aliasAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsernameAttributes"))
   {
     Aws::Utils::Array<JsonView> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
@@ -155,84 +96,61 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     }
     m_usernameAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmsVerificationMessage"))
   {
     m_smsVerificationMessage = jsonValue.GetString("SmsVerificationMessage");
-
     m_smsVerificationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailVerificationMessage"))
   {
     m_emailVerificationMessage = jsonValue.GetString("EmailVerificationMessage");
-
     m_emailVerificationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailVerificationSubject"))
   {
     m_emailVerificationSubject = jsonValue.GetString("EmailVerificationSubject");
-
     m_emailVerificationSubjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerificationMessageTemplate"))
   {
     m_verificationMessageTemplate = jsonValue.GetObject("VerificationMessageTemplate");
-
     m_verificationMessageTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmsAuthenticationMessage"))
   {
     m_smsAuthenticationMessage = jsonValue.GetString("SmsAuthenticationMessage");
-
     m_smsAuthenticationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserAttributeUpdateSettings"))
   {
     m_userAttributeUpdateSettings = jsonValue.GetObject("UserAttributeUpdateSettings");
-
     m_userAttributeUpdateSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MfaConfiguration"))
   {
     m_mfaConfiguration = UserPoolMfaTypeMapper::GetUserPoolMfaTypeForName(jsonValue.GetString("MfaConfiguration"));
-
     m_mfaConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceConfiguration"))
   {
     m_deviceConfiguration = jsonValue.GetObject("DeviceConfiguration");
-
     m_deviceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedNumberOfUsers"))
   {
     m_estimatedNumberOfUsers = jsonValue.GetInteger("EstimatedNumberOfUsers");
-
     m_estimatedNumberOfUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailConfiguration"))
   {
     m_emailConfiguration = jsonValue.GetObject("EmailConfiguration");
-
     m_emailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmsConfiguration"))
   {
     m_smsConfiguration = jsonValue.GetObject("SmsConfiguration");
-
     m_smsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolTags"))
   {
     Aws::Map<Aws::String, JsonView> userPoolTagsJsonMap = jsonValue.GetObject("UserPoolTags").GetAllObjects();
@@ -242,77 +160,56 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     }
     m_userPoolTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmsConfigurationFailure"))
   {
     m_smsConfigurationFailure = jsonValue.GetString("SmsConfigurationFailure");
-
     m_smsConfigurationFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailConfigurationFailure"))
   {
     m_emailConfigurationFailure = jsonValue.GetString("EmailConfigurationFailure");
-
     m_emailConfigurationFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDomain"))
   {
     m_customDomain = jsonValue.GetString("CustomDomain");
-
     m_customDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdminCreateUserConfig"))
   {
     m_adminCreateUserConfig = jsonValue.GetObject("AdminCreateUserConfig");
-
     m_adminCreateUserConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolAddOns"))
   {
     m_userPoolAddOns = jsonValue.GetObject("UserPoolAddOns");
-
     m_userPoolAddOnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsernameConfiguration"))
   {
     m_usernameConfiguration = jsonValue.GetObject("UsernameConfiguration");
-
     m_usernameConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountRecoverySetting"))
   {
     m_accountRecoverySetting = jsonValue.GetObject("AccountRecoverySetting");
-
     m_accountRecoverySettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolTier"))
   {
     m_userPoolTier = UserPoolTierTypeMapper::GetUserPoolTierTypeForName(jsonValue.GetString("UserPoolTier"));
-
     m_userPoolTierHasBeenSet = true;
   }
-
   return *this;
 }
 

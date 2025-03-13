@@ -18,17 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-BatchStepInput::BatchStepInput() : 
-    m_resourceHasBeenSet(false),
-    m_batchJobNameHasBeenSet(false),
-    m_batchJobParametersHasBeenSet(false),
-    m_exportDataSetNamesHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 BatchStepInput::BatchStepInput(JsonView jsonValue)
-  : BatchStepInput()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ BatchStepInput& BatchStepInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchJobName"))
   {
     m_batchJobName = jsonValue.GetString("batchJobName");
-
     m_batchJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchJobParameters"))
   {
     Aws::Map<Aws::String, JsonView> batchJobParametersJsonMap = jsonValue.GetObject("batchJobParameters").GetAllObjects();
@@ -58,7 +44,6 @@ BatchStepInput& BatchStepInput::operator =(JsonView jsonValue)
     }
     m_batchJobParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportDataSetNames"))
   {
     Aws::Utils::Array<JsonView> exportDataSetNamesJsonList = jsonValue.GetArray("exportDataSetNames");
@@ -68,14 +53,11 @@ BatchStepInput& BatchStepInput::operator =(JsonView jsonValue)
     }
     m_exportDataSetNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     m_properties = jsonValue.GetObject("properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

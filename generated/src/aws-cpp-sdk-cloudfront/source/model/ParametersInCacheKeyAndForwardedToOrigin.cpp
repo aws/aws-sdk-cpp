@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrigin() : 
-    m_enableAcceptEncodingGzip(false),
-    m_enableAcceptEncodingGzipHasBeenSet(false),
-    m_enableAcceptEncodingBrotli(false),
-    m_enableAcceptEncodingBrotliHasBeenSet(false),
-    m_headersConfigHasBeenSet(false),
-    m_cookiesConfigHasBeenSet(false),
-    m_queryStringsConfigHasBeenSet(false)
-{
-}
-
 ParametersInCacheKeyAndForwardedToOrigin::ParametersInCacheKeyAndForwardedToOrigin(const XmlNode& xmlNode)
-  : ParametersInCacheKeyAndForwardedToOrigin()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ ParametersInCacheKeyAndForwardedToOrigin& ParametersInCacheKeyAndForwardedToOrig
     {
       m_enableAcceptEncodingGzip = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAcceptEncodingGzipNode.GetText()).c_str()).c_str());
       m_enableAcceptEncodingGzipHasBeenSet = true;
+       m_enableAcceptEncodingGzipHasBeenSet = true;
     }
     XmlNode enableAcceptEncodingBrotliNode = resultNode.FirstChild("EnableAcceptEncodingBrotli");
     if(!enableAcceptEncodingBrotliNode.IsNull())
     {
       m_enableAcceptEncodingBrotli = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAcceptEncodingBrotliNode.GetText()).c_str()).c_str());
       m_enableAcceptEncodingBrotliHasBeenSet = true;
+       m_enableAcceptEncodingBrotliHasBeenSet = true;
     }
     XmlNode headersConfigNode = resultNode.FirstChild("HeadersConfig");
     if(!headersConfigNode.IsNull())
     {
       m_headersConfig = headersConfigNode;
       m_headersConfigHasBeenSet = true;
+       m_headersConfigHasBeenSet = true;
     }
     XmlNode cookiesConfigNode = resultNode.FirstChild("CookiesConfig");
     if(!cookiesConfigNode.IsNull())
     {
       m_cookiesConfig = cookiesConfigNode;
       m_cookiesConfigHasBeenSet = true;
+       m_cookiesConfigHasBeenSet = true;
     }
     XmlNode queryStringsConfigNode = resultNode.FirstChild("QueryStringsConfig");
     if(!queryStringsConfigNode.IsNull())
     {
       m_queryStringsConfig = queryStringsConfigNode;
       m_queryStringsConfigHasBeenSet = true;
+       m_queryStringsConfigHasBeenSet = true;
     }
   }
 

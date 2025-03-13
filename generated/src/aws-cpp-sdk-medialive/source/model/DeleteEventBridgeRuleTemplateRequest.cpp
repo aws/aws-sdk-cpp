@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventBridgeRuleTemplateRequest::DeleteEventBridgeRuleTemplateRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventBridgeRuleTemplateRequest::SerializePayload() const
 {
   return {};

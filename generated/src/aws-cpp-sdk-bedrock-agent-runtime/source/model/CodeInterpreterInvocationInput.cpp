@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-CodeInterpreterInvocationInput::CodeInterpreterInvocationInput() : 
-    m_codeHasBeenSet(false),
-    m_filesHasBeenSet(false)
-{
-}
-
 CodeInterpreterInvocationInput::CodeInterpreterInvocationInput(JsonView jsonValue)
-  : CodeInterpreterInvocationInput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CodeInterpreterInvocationInput& CodeInterpreterInvocationInput::operator =(JsonV
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("files"))
   {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -48,7 +39,6 @@ CodeInterpreterInvocationInput& CodeInterpreterInvocationInput::operator =(JsonV
     }
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

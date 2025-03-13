@@ -21,7 +21,7 @@ namespace Model
   class DeleteKeywordRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteKeywordRequest();
+    AWS_PINPOINTSMSVOICEV2_API DeleteKeywordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * Messaging SMS and Voice resource then you must use the full Amazon Resource
      * Name(ARN).</p> 
      */
-    inline const Aws::String& GetOriginationIdentity() const{ return m_originationIdentity; }
+    inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
     inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }
-    inline void SetOriginationIdentity(const Aws::String& value) { m_originationIdentityHasBeenSet = true; m_originationIdentity = value; }
-    inline void SetOriginationIdentity(Aws::String&& value) { m_originationIdentityHasBeenSet = true; m_originationIdentity = std::move(value); }
-    inline void SetOriginationIdentity(const char* value) { m_originationIdentityHasBeenSet = true; m_originationIdentity.assign(value); }
-    inline DeleteKeywordRequest& WithOriginationIdentity(const Aws::String& value) { SetOriginationIdentity(value); return *this;}
-    inline DeleteKeywordRequest& WithOriginationIdentity(Aws::String&& value) { SetOriginationIdentity(std::move(value)); return *this;}
-    inline DeleteKeywordRequest& WithOriginationIdentity(const char* value) { SetOriginationIdentity(value); return *this;}
+    template<typename OriginationIdentityT = Aws::String>
+    void SetOriginationIdentity(OriginationIdentityT&& value) { m_originationIdentityHasBeenSet = true; m_originationIdentity = std::forward<OriginationIdentityT>(value); }
+    template<typename OriginationIdentityT = Aws::String>
+    DeleteKeywordRequest& WithOriginationIdentity(OriginationIdentityT&& value) { SetOriginationIdentity(std::forward<OriginationIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keyword to delete.</p>
      */
-    inline const Aws::String& GetKeyword() const{ return m_keyword; }
+    inline const Aws::String& GetKeyword() const { return m_keyword; }
     inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
-    inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
-    inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
-    inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
-    inline DeleteKeywordRequest& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
-    inline DeleteKeywordRequest& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
-    inline DeleteKeywordRequest& WithKeyword(const char* value) { SetKeyword(value); return *this;}
+    template<typename KeywordT = Aws::String>
+    void SetKeyword(KeywordT&& value) { m_keywordHasBeenSet = true; m_keyword = std::forward<KeywordT>(value); }
+    template<typename KeywordT = Aws::String>
+    DeleteKeywordRequest& WithKeyword(KeywordT&& value) { SetKeyword(std::forward<KeywordT>(value)); return *this;}
     ///@}
   private:
 

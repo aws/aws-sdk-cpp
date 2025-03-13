@@ -12,10 +12,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMessagingSessionEndpointRequest::GetMessagingSessionEndpointRequest()
-{
-}
-
 Aws::String GetMessagingSessionEndpointRequest::SerializePayload() const
 {
   return {};

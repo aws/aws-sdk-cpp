@@ -18,25 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_activeOperationArnHasBeenSet(false),
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_provisionedHasBeenSet(false),
-    m_serverlessHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activeOperationArn"))
   {
     m_activeOperationArn = jsonValue.GetString("activeOperationArn");
-
     m_activeOperationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterType"))
   {
     m_clusterType = ClusterTypeMapper::GetClusterTypeForName(jsonValue.GetString("clusterType"));
-
     m_clusterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentVersion"))
   {
     m_currentVersion = jsonValue.GetString("currentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateInfo"))
   {
     m_stateInfo = jsonValue.GetObject("stateInfo");
-
     m_stateInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -108,21 +74,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisioned"))
   {
     m_provisioned = jsonValue.GetObject("provisioned");
-
     m_provisionedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverless"))
   {
     m_serverless = jsonValue.GetObject("serverless");
-
     m_serverlessHasBeenSet = true;
   }
-
   return *this;
 }
 

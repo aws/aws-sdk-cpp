@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationSetSuppressionOptionsRequest::PutConfigurationSetSuppressionOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_suppressedReasonsHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationSetSuppressionOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

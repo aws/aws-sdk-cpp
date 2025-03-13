@@ -35,7 +35,7 @@ namespace Model
   class AndStatement
   {
   public:
-    AWS_WAFV2_API AndStatement();
+    AWS_WAFV2_API AndStatement() = default;
     AWS_WAFV2_API AndStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API AndStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>The statements to combine with AND logic. You can use any statements that can
      * be nested. </p>
      */
-    inline const Aws::Vector<Statement>& GetStatements() const{ return m_statements; }
+    inline const Aws::Vector<Statement>& GetStatements() const { return m_statements; }
     inline bool StatementsHasBeenSet() const { return m_statementsHasBeenSet; }
-    inline void SetStatements(const Aws::Vector<Statement>& value) { m_statementsHasBeenSet = true; m_statements = value; }
-    inline void SetStatements(Aws::Vector<Statement>&& value) { m_statementsHasBeenSet = true; m_statements = std::move(value); }
-    inline AndStatement& WithStatements(const Aws::Vector<Statement>& value) { SetStatements(value); return *this;}
-    inline AndStatement& WithStatements(Aws::Vector<Statement>&& value) { SetStatements(std::move(value)); return *this;}
-    inline AndStatement& AddStatements(const Statement& value) { m_statementsHasBeenSet = true; m_statements.push_back(value); return *this; }
-    inline AndStatement& AddStatements(Statement&& value) { m_statementsHasBeenSet = true; m_statements.push_back(std::move(value)); return *this; }
+    template<typename StatementsT = Aws::Vector<Statement>>
+    void SetStatements(StatementsT&& value) { m_statementsHasBeenSet = true; m_statements = std::forward<StatementsT>(value); }
+    template<typename StatementsT = Aws::Vector<Statement>>
+    AndStatement& WithStatements(StatementsT&& value) { SetStatements(std::forward<StatementsT>(value)); return *this;}
+    template<typename StatementsT = Statement>
+    AndStatement& AddStatements(StatementsT&& value) { m_statementsHasBeenSet = true; m_statements.emplace_back(std::forward<StatementsT>(value)); return *this; }
     ///@}
   private:
 

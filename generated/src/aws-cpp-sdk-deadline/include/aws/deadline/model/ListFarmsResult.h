@@ -29,7 +29,7 @@ namespace Model
   class ListFarmsResult
   {
   public:
-    AWS_DEADLINE_API ListFarmsResult();
+    AWS_DEADLINE_API ListFarmsResult() = default;
     AWS_DEADLINE_API ListFarmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListFarmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFarmsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFarmsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFarmsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFarmsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Farms on the list.</p>
      */
-    inline const Aws::Vector<FarmSummary>& GetFarms() const{ return m_farms; }
-    inline void SetFarms(const Aws::Vector<FarmSummary>& value) { m_farms = value; }
-    inline void SetFarms(Aws::Vector<FarmSummary>&& value) { m_farms = std::move(value); }
-    inline ListFarmsResult& WithFarms(const Aws::Vector<FarmSummary>& value) { SetFarms(value); return *this;}
-    inline ListFarmsResult& WithFarms(Aws::Vector<FarmSummary>&& value) { SetFarms(std::move(value)); return *this;}
-    inline ListFarmsResult& AddFarms(const FarmSummary& value) { m_farms.push_back(value); return *this; }
-    inline ListFarmsResult& AddFarms(FarmSummary&& value) { m_farms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FarmSummary>& GetFarms() const { return m_farms; }
+    template<typename FarmsT = Aws::Vector<FarmSummary>>
+    void SetFarms(FarmsT&& value) { m_farmsHasBeenSet = true; m_farms = std::forward<FarmsT>(value); }
+    template<typename FarmsT = Aws::Vector<FarmSummary>>
+    ListFarmsResult& WithFarms(FarmsT&& value) { SetFarms(std::forward<FarmsT>(value)); return *this;}
+    template<typename FarmsT = FarmSummary>
+    ListFarmsResult& AddFarms(FarmsT&& value) { m_farmsHasBeenSet = true; m_farms.emplace_back(std::forward<FarmsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFarmsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFarmsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFarmsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFarmsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<FarmSummary> m_farms;
+    bool m_farmsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

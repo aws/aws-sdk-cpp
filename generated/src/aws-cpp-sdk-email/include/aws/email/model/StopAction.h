@@ -37,7 +37,7 @@ namespace Model
   class StopAction
   {
   public:
-    AWS_SES_API StopAction();
+    AWS_SES_API StopAction() = default;
     AWS_SES_API StopAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API StopAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,12 +50,10 @@ namespace Model
      * <p>The scope of the StopAction. The only acceptable value is
      * <code>RuleSet</code>.</p>
      */
-    inline const StopScope& GetScope() const{ return m_scope; }
+    inline StopScope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const StopScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(StopScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline StopAction& WithScope(const StopScope& value) { SetScope(value); return *this;}
-    inline StopAction& WithScope(StopScope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(StopScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline StopAction& WithScope(StopScope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +65,16 @@ namespace Model
      * the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon
      * SNS Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline StopAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline StopAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline StopAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    StopAction& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
   private:
 
-    StopScope m_scope;
+    StopScope m_scope{StopScope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_topicArn;

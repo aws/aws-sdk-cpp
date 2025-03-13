@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeEntityRequest::DescribeEntityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_entityIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEntityRequest::SerializePayload() const
 {
   return {};

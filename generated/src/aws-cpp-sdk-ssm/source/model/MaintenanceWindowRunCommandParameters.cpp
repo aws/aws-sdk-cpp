@@ -18,25 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowRunCommandParameters::MaintenanceWindowRunCommandParameters() : 
-    m_commentHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false),
-    m_documentHashHasBeenSet(false),
-    m_documentHashType(DocumentHashType::NOT_SET),
-    m_documentHashTypeHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false)
-{
-}
-
 MaintenanceWindowRunCommandParameters::MaintenanceWindowRunCommandParameters(JsonView jsonValue)
-  : MaintenanceWindowRunCommandParameters()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ MaintenanceWindowRunCommandParameters& MaintenanceWindowRunCommandParameters::op
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetString("Comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchOutputConfig"))
   {
     m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
-
     m_cloudWatchOutputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentHash"))
   {
     m_documentHash = jsonValue.GetString("DocumentHash");
-
     m_documentHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentHashType"))
   {
     m_documentHashType = DocumentHashTypeMapper::GetDocumentHashTypeForName(jsonValue.GetString("DocumentHashType"));
-
     m_documentHashTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfig"))
   {
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
-
     m_notificationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputS3BucketName"))
   {
     m_outputS3BucketName = jsonValue.GetString("OutputS3BucketName");
-
     m_outputS3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputS3KeyPrefix"))
   {
     m_outputS3KeyPrefix = jsonValue.GetString("OutputS3KeyPrefix");
-
     m_outputS3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -115,21 +81,16 @@ MaintenanceWindowRunCommandParameters& MaintenanceWindowRunCommandParameters::op
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRoleArn"))
   {
     m_serviceRoleArn = jsonValue.GetString("ServiceRoleArn");
-
     m_serviceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeoutSeconds"))
   {
     m_timeoutSeconds = jsonValue.GetInteger("TimeoutSeconds");
-
     m_timeoutSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AcceptRule::AcceptRule() : 
-    m_rule(AcceptRuleBehavior::NOT_SET),
-    m_ruleHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 AcceptRule::AcceptRule(JsonView jsonValue)
-  : AcceptRule()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AcceptRule& AcceptRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rule"))
   {
     m_rule = AcceptRuleBehaviorMapper::GetAcceptRuleBehaviorForName(jsonValue.GetString("rule"));
-
     m_ruleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetDouble("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

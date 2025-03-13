@@ -33,7 +33,7 @@ namespace Model
   class BatchDetachFromIndex
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchDetachFromIndex();
+    AWS_CLOUDDIRECTORY_API BatchDetachFromIndex() = default;
     AWS_CLOUDDIRECTORY_API BatchDetachFromIndex(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchDetachFromIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>A reference to the index object.</p>
      */
-    inline const ObjectReference& GetIndexReference() const{ return m_indexReference; }
+    inline const ObjectReference& GetIndexReference() const { return m_indexReference; }
     inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
-    inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
-    inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::move(value); }
-    inline BatchDetachFromIndex& WithIndexReference(const ObjectReference& value) { SetIndexReference(value); return *this;}
-    inline BatchDetachFromIndex& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+    template<typename IndexReferenceT = ObjectReference>
+    void SetIndexReference(IndexReferenceT&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::forward<IndexReferenceT>(value); }
+    template<typename IndexReferenceT = ObjectReference>
+    BatchDetachFromIndex& WithIndexReference(IndexReferenceT&& value) { SetIndexReference(std::forward<IndexReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A reference to the object being detached from the index.</p>
      */
-    inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
+    inline const ObjectReference& GetTargetReference() const { return m_targetReference; }
     inline bool TargetReferenceHasBeenSet() const { return m_targetReferenceHasBeenSet; }
-    inline void SetTargetReference(const ObjectReference& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
-    inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
-    inline BatchDetachFromIndex& WithTargetReference(const ObjectReference& value) { SetTargetReference(value); return *this;}
-    inline BatchDetachFromIndex& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
+    template<typename TargetReferenceT = ObjectReference>
+    void SetTargetReference(TargetReferenceT&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::forward<TargetReferenceT>(value); }
+    template<typename TargetReferenceT = ObjectReference>
+    BatchDetachFromIndex& WithTargetReference(TargetReferenceT&& value) { SetTargetReference(std::forward<TargetReferenceT>(value)); return *this;}
     ///@}
   private:
 

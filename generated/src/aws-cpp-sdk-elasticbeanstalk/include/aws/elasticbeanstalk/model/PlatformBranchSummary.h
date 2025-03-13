@@ -32,7 +32,7 @@ namespace Model
   class PlatformBranchSummary
   {
   public:
-    AWS_ELASTICBEANSTALK_API PlatformBranchSummary();
+    AWS_ELASTICBEANSTALK_API PlatformBranchSummary() = default;
     AWS_ELASTICBEANSTALK_API PlatformBranchSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API PlatformBranchSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the platform to which this platform branch belongs.</p>
      */
-    inline const Aws::String& GetPlatformName() const{ return m_platformName; }
+    inline const Aws::String& GetPlatformName() const { return m_platformName; }
     inline bool PlatformNameHasBeenSet() const { return m_platformNameHasBeenSet; }
-    inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
-    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = std::move(value); }
-    inline void SetPlatformName(const char* value) { m_platformNameHasBeenSet = true; m_platformName.assign(value); }
-    inline PlatformBranchSummary& WithPlatformName(const Aws::String& value) { SetPlatformName(value); return *this;}
-    inline PlatformBranchSummary& WithPlatformName(Aws::String&& value) { SetPlatformName(std::move(value)); return *this;}
-    inline PlatformBranchSummary& WithPlatformName(const char* value) { SetPlatformName(value); return *this;}
+    template<typename PlatformNameT = Aws::String>
+    void SetPlatformName(PlatformNameT&& value) { m_platformNameHasBeenSet = true; m_platformName = std::forward<PlatformNameT>(value); }
+    template<typename PlatformNameT = Aws::String>
+    PlatformBranchSummary& WithPlatformName(PlatformNameT&& value) { SetPlatformName(std::forward<PlatformNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the platform branch.</p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline PlatformBranchSummary& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline PlatformBranchSummary& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline PlatformBranchSummary& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    PlatformBranchSummary& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
      * <code>retired</code> </p>
      */
-    inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
+    inline const Aws::String& GetLifecycleState() const { return m_lifecycleState; }
     inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
-    inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
-    inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
-    inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
-    inline PlatformBranchSummary& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
-    inline PlatformBranchSummary& WithLifecycleState(Aws::String&& value) { SetLifecycleState(std::move(value)); return *this;}
-    inline PlatformBranchSummary& WithLifecycleState(const char* value) { SetLifecycleState(value); return *this;}
+    template<typename LifecycleStateT = Aws::String>
+    void SetLifecycleState(LifecycleStateT&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::forward<LifecycleStateT>(value); }
+    template<typename LifecycleStateT = Aws::String>
+    PlatformBranchSummary& WithLifecycleState(LifecycleStateT&& value) { SetLifecycleState(std::forward<LifecycleStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +86,7 @@ namespace Model
      * platform branches.</p> <p>A larger <code>BranchOrder</code> value designates a
      * newer platform branch within the platform.</p>
      */
-    inline int GetBranchOrder() const{ return m_branchOrder; }
+    inline int GetBranchOrder() const { return m_branchOrder; }
     inline bool BranchOrderHasBeenSet() const { return m_branchOrderHasBeenSet; }
     inline void SetBranchOrder(int value) { m_branchOrderHasBeenSet = true; m_branchOrder = value; }
     inline PlatformBranchSummary& WithBranchOrder(int value) { SetBranchOrder(value); return *this;}
@@ -104,15 +98,14 @@ namespace Model
      * <p>Possible values: <code>WebServer/Standard</code> |
      * <code>Worker/SQS/HTTP</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSupportedTierList() const{ return m_supportedTierList; }
+    inline const Aws::Vector<Aws::String>& GetSupportedTierList() const { return m_supportedTierList; }
     inline bool SupportedTierListHasBeenSet() const { return m_supportedTierListHasBeenSet; }
-    inline void SetSupportedTierList(const Aws::Vector<Aws::String>& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = value; }
-    inline void SetSupportedTierList(Aws::Vector<Aws::String>&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = std::move(value); }
-    inline PlatformBranchSummary& WithSupportedTierList(const Aws::Vector<Aws::String>& value) { SetSupportedTierList(value); return *this;}
-    inline PlatformBranchSummary& WithSupportedTierList(Aws::Vector<Aws::String>&& value) { SetSupportedTierList(std::move(value)); return *this;}
-    inline PlatformBranchSummary& AddSupportedTierList(const Aws::String& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
-    inline PlatformBranchSummary& AddSupportedTierList(Aws::String&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(std::move(value)); return *this; }
-    inline PlatformBranchSummary& AddSupportedTierList(const char* value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.push_back(value); return *this; }
+    template<typename SupportedTierListT = Aws::Vector<Aws::String>>
+    void SetSupportedTierList(SupportedTierListT&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList = std::forward<SupportedTierListT>(value); }
+    template<typename SupportedTierListT = Aws::Vector<Aws::String>>
+    PlatformBranchSummary& WithSupportedTierList(SupportedTierListT&& value) { SetSupportedTierList(std::forward<SupportedTierListT>(value)); return *this;}
+    template<typename SupportedTierListT = Aws::String>
+    PlatformBranchSummary& AddSupportedTierList(SupportedTierListT&& value) { m_supportedTierListHasBeenSet = true; m_supportedTierList.emplace_back(std::forward<SupportedTierListT>(value)); return *this; }
     ///@}
   private:
 
@@ -125,7 +118,7 @@ namespace Model
     Aws::String m_lifecycleState;
     bool m_lifecycleStateHasBeenSet = false;
 
-    int m_branchOrder;
+    int m_branchOrder{0};
     bool m_branchOrderHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedTierList;

@@ -30,7 +30,7 @@ namespace Model
   class DescribeReleaseLabelResult
   {
   public:
-    AWS_EMR_API DescribeReleaseLabelResult();
+    AWS_EMR_API DescribeReleaseLabelResult() = default;
     AWS_EMR_API DescribeReleaseLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API DescribeReleaseLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The target release label described in the response.</p>
      */
-    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
-    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabel = value; }
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabel = std::move(value); }
-    inline void SetReleaseLabel(const char* value) { m_releaseLabel.assign(value); }
-    inline DescribeReleaseLabelResult& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
-    inline DescribeReleaseLabelResult& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
-    inline DescribeReleaseLabelResult& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+    inline const Aws::String& GetReleaseLabel() const { return m_releaseLabel; }
+    template<typename ReleaseLabelT = Aws::String>
+    void SetReleaseLabel(ReleaseLabelT&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::forward<ReleaseLabelT>(value); }
+    template<typename ReleaseLabelT = Aws::String>
+    DescribeReleaseLabelResult& WithReleaseLabel(ReleaseLabelT&& value) { SetReleaseLabel(std::forward<ReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,24 @@ namespace Model
      * <code>Name</code> is the name of the application. <code>Version</code> is the
      * concise version of the application.</p>
      */
-    inline const Aws::Vector<SimplifiedApplication>& GetApplications() const{ return m_applications; }
-    inline void SetApplications(const Aws::Vector<SimplifiedApplication>& value) { m_applications = value; }
-    inline void SetApplications(Aws::Vector<SimplifiedApplication>&& value) { m_applications = std::move(value); }
-    inline DescribeReleaseLabelResult& WithApplications(const Aws::Vector<SimplifiedApplication>& value) { SetApplications(value); return *this;}
-    inline DescribeReleaseLabelResult& WithApplications(Aws::Vector<SimplifiedApplication>&& value) { SetApplications(std::move(value)); return *this;}
-    inline DescribeReleaseLabelResult& AddApplications(const SimplifiedApplication& value) { m_applications.push_back(value); return *this; }
-    inline DescribeReleaseLabelResult& AddApplications(SimplifiedApplication&& value) { m_applications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SimplifiedApplication>& GetApplications() const { return m_applications; }
+    template<typename ApplicationsT = Aws::Vector<SimplifiedApplication>>
+    void SetApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications = std::forward<ApplicationsT>(value); }
+    template<typename ApplicationsT = Aws::Vector<SimplifiedApplication>>
+    DescribeReleaseLabelResult& WithApplications(ApplicationsT&& value) { SetApplications(std::forward<ApplicationsT>(value)); return *this;}
+    template<typename ApplicationsT = SimplifiedApplication>
+    DescribeReleaseLabelResult& AddApplications(ApplicationsT&& value) { m_applicationsHasBeenSet = true; m_applications.emplace_back(std::forward<ApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token. Reserved for future use. Currently set to null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReleaseLabelResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReleaseLabelResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReleaseLabelResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReleaseLabelResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,36 +80,39 @@ namespace Model
      * <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a
      * href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
      */
-    inline const Aws::Vector<OSRelease>& GetAvailableOSReleases() const{ return m_availableOSReleases; }
-    inline void SetAvailableOSReleases(const Aws::Vector<OSRelease>& value) { m_availableOSReleases = value; }
-    inline void SetAvailableOSReleases(Aws::Vector<OSRelease>&& value) { m_availableOSReleases = std::move(value); }
-    inline DescribeReleaseLabelResult& WithAvailableOSReleases(const Aws::Vector<OSRelease>& value) { SetAvailableOSReleases(value); return *this;}
-    inline DescribeReleaseLabelResult& WithAvailableOSReleases(Aws::Vector<OSRelease>&& value) { SetAvailableOSReleases(std::move(value)); return *this;}
-    inline DescribeReleaseLabelResult& AddAvailableOSReleases(const OSRelease& value) { m_availableOSReleases.push_back(value); return *this; }
-    inline DescribeReleaseLabelResult& AddAvailableOSReleases(OSRelease&& value) { m_availableOSReleases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OSRelease>& GetAvailableOSReleases() const { return m_availableOSReleases; }
+    template<typename AvailableOSReleasesT = Aws::Vector<OSRelease>>
+    void SetAvailableOSReleases(AvailableOSReleasesT&& value) { m_availableOSReleasesHasBeenSet = true; m_availableOSReleases = std::forward<AvailableOSReleasesT>(value); }
+    template<typename AvailableOSReleasesT = Aws::Vector<OSRelease>>
+    DescribeReleaseLabelResult& WithAvailableOSReleases(AvailableOSReleasesT&& value) { SetAvailableOSReleases(std::forward<AvailableOSReleasesT>(value)); return *this;}
+    template<typename AvailableOSReleasesT = OSRelease>
+    DescribeReleaseLabelResult& AddAvailableOSReleases(AvailableOSReleasesT&& value) { m_availableOSReleasesHasBeenSet = true; m_availableOSReleases.emplace_back(std::forward<AvailableOSReleasesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReleaseLabelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReleaseLabelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReleaseLabelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReleaseLabelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_releaseLabel;
+    bool m_releaseLabelHasBeenSet = false;
 
     Aws::Vector<SimplifiedApplication> m_applications;
+    bool m_applicationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<OSRelease> m_availableOSReleases;
+    bool m_availableOSReleasesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

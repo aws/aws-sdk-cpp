@@ -12,22 +12,6 @@ using namespace Aws::Braket::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateQuantumTaskRequest::CreateQuantumTaskRequest() : 
-    m_actionHasBeenSet(false),
-    m_associationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_deviceArnHasBeenSet(false),
-    m_deviceParametersHasBeenSet(false),
-    m_jobTokenHasBeenSet(false),
-    m_outputS3BucketHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false),
-    m_shots(0),
-    m_shotsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateQuantumTaskRequest::SerializePayload() const
 {
   JsonValue payload;

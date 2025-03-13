@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MetricToRetain::MetricToRetain() : 
-    m_metricHasBeenSet(false),
-    m_metricDimensionHasBeenSet(false),
-    m_exportMetric(false),
-    m_exportMetricHasBeenSet(false)
-{
-}
-
 MetricToRetain::MetricToRetain(JsonView jsonValue)
-  : MetricToRetain()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MetricToRetain& MetricToRetain::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metric"))
   {
     m_metric = jsonValue.GetString("metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricDimension"))
   {
     m_metricDimension = jsonValue.GetObject("metricDimension");
-
     m_metricDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportMetric"))
   {
     m_exportMetric = jsonValue.GetBool("exportMetric");
-
     m_exportMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

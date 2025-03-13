@@ -12,11 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEmailMonitoringConfigurationRequest::DeleteEmailMonitoringConfigurationRequest() : 
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEmailMonitoringConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

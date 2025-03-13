@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-OpensearchConfiguration::OpensearchConfiguration() : 
-    m_domainEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_exactResponse(false),
-    m_exactResponseHasBeenSet(false),
-    m_exactResponseFieldsHasBeenSet(false),
-    m_includeFieldsHasBeenSet(false)
-{
-}
-
 OpensearchConfiguration::OpensearchConfiguration(JsonView jsonValue)
-  : OpensearchConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ OpensearchConfiguration& OpensearchConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainEndpoint"))
   {
     m_domainEndpoint = jsonValue.GetString("domainEndpoint");
-
     m_domainEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("indexName"))
   {
     m_indexName = jsonValue.GetString("indexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exactResponse"))
   {
     m_exactResponse = jsonValue.GetBool("exactResponse");
-
     m_exactResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exactResponseFields"))
   {
     m_exactResponseFields = jsonValue.GetObject("exactResponseFields");
-
     m_exactResponseFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeFields"))
   {
     Aws::Utils::Array<JsonView> includeFieldsJsonList = jsonValue.GetArray("includeFields");
@@ -73,7 +54,6 @@ OpensearchConfiguration& OpensearchConfiguration::operator =(JsonView jsonValue)
     }
     m_includeFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

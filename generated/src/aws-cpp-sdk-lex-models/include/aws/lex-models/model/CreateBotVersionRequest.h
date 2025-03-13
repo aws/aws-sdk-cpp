@@ -21,7 +21,7 @@ namespace Model
   class CreateBotVersionRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API CreateBotVersionRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API CreateBotVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The name of the bot that you want to create a new version of. The name is
      * case sensitive. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateBotVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateBotVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateBotVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateBotVersionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * is returned and Amazon Lex doesn't publish a new version. If you don't specify a
      * checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline CreateBotVersionRequest& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline CreateBotVersionRequest& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline CreateBotVersionRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    CreateBotVersionRequest& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
   private:
 

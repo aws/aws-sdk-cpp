@@ -29,7 +29,7 @@ namespace Model
   class ListJobParameterDefinitionsResult
   {
   public:
-    AWS_DEADLINE_API ListJobParameterDefinitionsResult();
+    AWS_DEADLINE_API ListJobParameterDefinitionsResult() = default;
     AWS_DEADLINE_API ListJobParameterDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListJobParameterDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Lists parameter definitions of a job.</p>
      */
-    inline const Aws::Vector<Aws::Utils::Document>& GetJobParameterDefinitions() const{ return m_jobParameterDefinitions; }
-    inline void SetJobParameterDefinitions(const Aws::Vector<Aws::Utils::Document>& value) { m_jobParameterDefinitions = value; }
-    inline void SetJobParameterDefinitions(Aws::Vector<Aws::Utils::Document>&& value) { m_jobParameterDefinitions = std::move(value); }
-    inline ListJobParameterDefinitionsResult& WithJobParameterDefinitions(const Aws::Vector<Aws::Utils::Document>& value) { SetJobParameterDefinitions(value); return *this;}
-    inline ListJobParameterDefinitionsResult& WithJobParameterDefinitions(Aws::Vector<Aws::Utils::Document>&& value) { SetJobParameterDefinitions(std::move(value)); return *this;}
-    inline ListJobParameterDefinitionsResult& AddJobParameterDefinitions(const Aws::Utils::Document& value) { m_jobParameterDefinitions.push_back(value); return *this; }
-    inline ListJobParameterDefinitionsResult& AddJobParameterDefinitions(Aws::Utils::Document&& value) { m_jobParameterDefinitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Utils::Document>& GetJobParameterDefinitions() const { return m_jobParameterDefinitions; }
+    template<typename JobParameterDefinitionsT = Aws::Vector<Aws::Utils::Document>>
+    void SetJobParameterDefinitions(JobParameterDefinitionsT&& value) { m_jobParameterDefinitionsHasBeenSet = true; m_jobParameterDefinitions = std::forward<JobParameterDefinitionsT>(value); }
+    template<typename JobParameterDefinitionsT = Aws::Vector<Aws::Utils::Document>>
+    ListJobParameterDefinitionsResult& WithJobParameterDefinitions(JobParameterDefinitionsT&& value) { SetJobParameterDefinitions(std::forward<JobParameterDefinitionsT>(value)); return *this;}
+    template<typename JobParameterDefinitionsT = Aws::Utils::Document>
+    ListJobParameterDefinitionsResult& AddJobParameterDefinitions(JobParameterDefinitionsT&& value) { m_jobParameterDefinitionsHasBeenSet = true; m_jobParameterDefinitions.emplace_back(std::forward<JobParameterDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListJobParameterDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobParameterDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobParameterDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobParameterDefinitionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListJobParameterDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListJobParameterDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListJobParameterDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListJobParameterDefinitionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::Utils::Document> m_jobParameterDefinitions;
+    bool m_jobParameterDefinitionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

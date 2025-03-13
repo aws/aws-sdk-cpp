@@ -28,7 +28,7 @@ namespace Model
   class UpdateCanaryRequest : public SyntheticsRequest
   {
   public:
-    AWS_SYNTHETICS_API UpdateCanaryRequest();
+    AWS_SYNTHETICS_API UpdateCanaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
      * <p>You cannot change the name of a canary that has already been created.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateCanaryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateCanaryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateCanaryRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateCanaryRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * running your script. If the script is stored in an S3 bucket, the bucket name,
      * key, and version are also included. </p>
      */
-    inline const CanaryCodeInput& GetCode() const{ return m_code; }
+    inline const CanaryCodeInput& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const CanaryCodeInput& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(CanaryCodeInput&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline UpdateCanaryRequest& WithCode(const CanaryCodeInput& value) { SetCode(value); return *this;}
-    inline UpdateCanaryRequest& WithCode(CanaryCodeInput&& value) { SetCode(std::move(value)); return *this;}
+    template<typename CodeT = CanaryCodeInput>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = CanaryCodeInput>
+    UpdateCanaryRequest& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * <code>logs:CreateLogStream</code> </p> </li> <li> <p>
      * <code>logs:CreateLogStream</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline UpdateCanaryRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline UpdateCanaryRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline UpdateCanaryRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    UpdateCanaryRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +96,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.</p>
      */
-    inline const Aws::String& GetRuntimeVersion() const{ return m_runtimeVersion; }
+    inline const Aws::String& GetRuntimeVersion() const { return m_runtimeVersion; }
     inline bool RuntimeVersionHasBeenSet() const { return m_runtimeVersionHasBeenSet; }
-    inline void SetRuntimeVersion(const Aws::String& value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion = value; }
-    inline void SetRuntimeVersion(Aws::String&& value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion = std::move(value); }
-    inline void SetRuntimeVersion(const char* value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion.assign(value); }
-    inline UpdateCanaryRequest& WithRuntimeVersion(const Aws::String& value) { SetRuntimeVersion(value); return *this;}
-    inline UpdateCanaryRequest& WithRuntimeVersion(Aws::String&& value) { SetRuntimeVersion(std::move(value)); return *this;}
-    inline UpdateCanaryRequest& WithRuntimeVersion(const char* value) { SetRuntimeVersion(value); return *this;}
+    template<typename RuntimeVersionT = Aws::String>
+    void SetRuntimeVersion(RuntimeVersionT&& value) { m_runtimeVersionHasBeenSet = true; m_runtimeVersion = std::forward<RuntimeVersionT>(value); }
+    template<typename RuntimeVersionT = Aws::String>
+    UpdateCanaryRequest& WithRuntimeVersion(RuntimeVersionT&& value) { SetRuntimeVersion(std::forward<RuntimeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +109,12 @@ namespace Model
      * <p>A structure that contains information about how often the canary is to run,
      * and when these runs are to stop.</p>
      */
-    inline const CanaryScheduleInput& GetSchedule() const{ return m_schedule; }
+    inline const CanaryScheduleInput& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const CanaryScheduleInput& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(CanaryScheduleInput&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline UpdateCanaryRequest& WithSchedule(const CanaryScheduleInput& value) { SetSchedule(value); return *this;}
-    inline UpdateCanaryRequest& WithSchedule(CanaryScheduleInput&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = CanaryScheduleInput>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = CanaryScheduleInput>
+    UpdateCanaryRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,19 +124,19 @@ namespace Model
      * are not encrypted. Do not store sensitive information in this field.</p>
      * 
      */
-    inline const CanaryRunConfigInput& GetRunConfig() const{ return m_runConfig; }
+    inline const CanaryRunConfigInput& GetRunConfig() const { return m_runConfig; }
     inline bool RunConfigHasBeenSet() const { return m_runConfigHasBeenSet; }
-    inline void SetRunConfig(const CanaryRunConfigInput& value) { m_runConfigHasBeenSet = true; m_runConfig = value; }
-    inline void SetRunConfig(CanaryRunConfigInput&& value) { m_runConfigHasBeenSet = true; m_runConfig = std::move(value); }
-    inline UpdateCanaryRequest& WithRunConfig(const CanaryRunConfigInput& value) { SetRunConfig(value); return *this;}
-    inline UpdateCanaryRequest& WithRunConfig(CanaryRunConfigInput&& value) { SetRunConfig(std::move(value)); return *this;}
+    template<typename RunConfigT = CanaryRunConfigInput>
+    void SetRunConfig(RunConfigT&& value) { m_runConfigHasBeenSet = true; m_runConfig = std::forward<RunConfigT>(value); }
+    template<typename RunConfigT = CanaryRunConfigInput>
+    UpdateCanaryRequest& WithRunConfig(RunConfigT&& value) { SetRunConfig(std::forward<RunConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days to retain data about successful runs of this canary.</p>
      */
-    inline int GetSuccessRetentionPeriodInDays() const{ return m_successRetentionPeriodInDays; }
+    inline int GetSuccessRetentionPeriodInDays() const { return m_successRetentionPeriodInDays; }
     inline bool SuccessRetentionPeriodInDaysHasBeenSet() const { return m_successRetentionPeriodInDaysHasBeenSet; }
     inline void SetSuccessRetentionPeriodInDays(int value) { m_successRetentionPeriodInDaysHasBeenSet = true; m_successRetentionPeriodInDays = value; }
     inline UpdateCanaryRequest& WithSuccessRetentionPeriodInDays(int value) { SetSuccessRetentionPeriodInDays(value); return *this;}
@@ -152,7 +146,7 @@ namespace Model
     /**
      * <p>The number of days to retain data about failed runs of this canary.</p>
      */
-    inline int GetFailureRetentionPeriodInDays() const{ return m_failureRetentionPeriodInDays; }
+    inline int GetFailureRetentionPeriodInDays() const { return m_failureRetentionPeriodInDays; }
     inline bool FailureRetentionPeriodInDaysHasBeenSet() const { return m_failureRetentionPeriodInDaysHasBeenSet; }
     inline void SetFailureRetentionPeriodInDays(int value) { m_failureRetentionPeriodInDaysHasBeenSet = true; m_failureRetentionPeriodInDays = value; }
     inline UpdateCanaryRequest& WithFailureRetentionPeriodInDays(int value) { SetFailureRetentionPeriodInDays(value); return *this;}
@@ -166,12 +160,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html">
      * Running a Canary in a VPC</a>.</p>
      */
-    inline const VpcConfigInput& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfigInput& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfigInput& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfigInput&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline UpdateCanaryRequest& WithVpcConfig(const VpcConfigInput& value) { SetVpcConfig(value); return *this;}
-    inline UpdateCanaryRequest& WithVpcConfig(VpcConfigInput&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfigInput>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfigInput>
+    UpdateCanaryRequest& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -186,12 +180,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html">
      * Visual monitoring blueprint</a> </p>
      */
-    inline const VisualReferenceInput& GetVisualReference() const{ return m_visualReference; }
+    inline const VisualReferenceInput& GetVisualReference() const { return m_visualReference; }
     inline bool VisualReferenceHasBeenSet() const { return m_visualReferenceHasBeenSet; }
-    inline void SetVisualReference(const VisualReferenceInput& value) { m_visualReferenceHasBeenSet = true; m_visualReference = value; }
-    inline void SetVisualReference(VisualReferenceInput&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::move(value); }
-    inline UpdateCanaryRequest& WithVisualReference(const VisualReferenceInput& value) { SetVisualReference(value); return *this;}
-    inline UpdateCanaryRequest& WithVisualReference(VisualReferenceInput&& value) { SetVisualReference(std::move(value)); return *this;}
+    template<typename VisualReferenceT = VisualReferenceInput>
+    void SetVisualReference(VisualReferenceT&& value) { m_visualReferenceHasBeenSet = true; m_visualReference = std::forward<VisualReferenceT>(value); }
+    template<typename VisualReferenceT = VisualReferenceInput>
+    UpdateCanaryRequest& WithVisualReference(VisualReferenceT&& value) { SetVisualReference(std::forward<VisualReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +194,12 @@ namespace Model
      * runs of this canary. Artifacts include the log file, screenshots, and HAR files.
      * The name of the S3 bucket can't include a period (.).</p>
      */
-    inline const Aws::String& GetArtifactS3Location() const{ return m_artifactS3Location; }
+    inline const Aws::String& GetArtifactS3Location() const { return m_artifactS3Location; }
     inline bool ArtifactS3LocationHasBeenSet() const { return m_artifactS3LocationHasBeenSet; }
-    inline void SetArtifactS3Location(const Aws::String& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = value; }
-    inline void SetArtifactS3Location(Aws::String&& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = std::move(value); }
-    inline void SetArtifactS3Location(const char* value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location.assign(value); }
-    inline UpdateCanaryRequest& WithArtifactS3Location(const Aws::String& value) { SetArtifactS3Location(value); return *this;}
-    inline UpdateCanaryRequest& WithArtifactS3Location(Aws::String&& value) { SetArtifactS3Location(std::move(value)); return *this;}
-    inline UpdateCanaryRequest& WithArtifactS3Location(const char* value) { SetArtifactS3Location(value); return *this;}
+    template<typename ArtifactS3LocationT = Aws::String>
+    void SetArtifactS3Location(ArtifactS3LocationT&& value) { m_artifactS3LocationHasBeenSet = true; m_artifactS3Location = std::forward<ArtifactS3LocationT>(value); }
+    template<typename ArtifactS3LocationT = Aws::String>
+    UpdateCanaryRequest& WithArtifactS3Location(ArtifactS3LocationT&& value) { SetArtifactS3Location(std::forward<ArtifactS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,12 +208,12 @@ namespace Model
      * the encryption-at-rest settings for artifacts that the canary uploads to Amazon
      * S3.</p>
      */
-    inline const ArtifactConfigInput& GetArtifactConfig() const{ return m_artifactConfig; }
+    inline const ArtifactConfigInput& GetArtifactConfig() const { return m_artifactConfig; }
     inline bool ArtifactConfigHasBeenSet() const { return m_artifactConfigHasBeenSet; }
-    inline void SetArtifactConfig(const ArtifactConfigInput& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = value; }
-    inline void SetArtifactConfig(ArtifactConfigInput&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::move(value); }
-    inline UpdateCanaryRequest& WithArtifactConfig(const ArtifactConfigInput& value) { SetArtifactConfig(value); return *this;}
-    inline UpdateCanaryRequest& WithArtifactConfig(ArtifactConfigInput&& value) { SetArtifactConfig(std::move(value)); return *this;}
+    template<typename ArtifactConfigT = ArtifactConfigInput>
+    void SetArtifactConfig(ArtifactConfigT&& value) { m_artifactConfigHasBeenSet = true; m_artifactConfig = std::forward<ArtifactConfigT>(value); }
+    template<typename ArtifactConfigT = ArtifactConfigInput>
+    UpdateCanaryRequest& WithArtifactConfig(ArtifactConfigT&& value) { SetArtifactConfig(std::forward<ArtifactConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,12 +226,10 @@ namespace Model
      * operation determines whether the Lambda functions and layers will be
      * deleted.</p>
      */
-    inline const ProvisionedResourceCleanupSetting& GetProvisionedResourceCleanup() const{ return m_provisionedResourceCleanup; }
+    inline ProvisionedResourceCleanupSetting GetProvisionedResourceCleanup() const { return m_provisionedResourceCleanup; }
     inline bool ProvisionedResourceCleanupHasBeenSet() const { return m_provisionedResourceCleanupHasBeenSet; }
-    inline void SetProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
-    inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = std::move(value); }
-    inline UpdateCanaryRequest& WithProvisionedResourceCleanup(const ProvisionedResourceCleanupSetting& value) { SetProvisionedResourceCleanup(value); return *this;}
-    inline UpdateCanaryRequest& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting&& value) { SetProvisionedResourceCleanup(std::move(value)); return *this;}
+    inline void SetProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { m_provisionedResourceCleanupHasBeenSet = true; m_provisionedResourceCleanup = value; }
+    inline UpdateCanaryRequest& WithProvisionedResourceCleanup(ProvisionedResourceCleanupSetting value) { SetProvisionedResourceCleanup(value); return *this;}
     ///@}
   private:
 
@@ -261,10 +251,10 @@ namespace Model
     CanaryRunConfigInput m_runConfig;
     bool m_runConfigHasBeenSet = false;
 
-    int m_successRetentionPeriodInDays;
+    int m_successRetentionPeriodInDays{0};
     bool m_successRetentionPeriodInDaysHasBeenSet = false;
 
-    int m_failureRetentionPeriodInDays;
+    int m_failureRetentionPeriodInDays{0};
     bool m_failureRetentionPeriodInDaysHasBeenSet = false;
 
     VpcConfigInput m_vpcConfig;
@@ -279,7 +269,7 @@ namespace Model
     ArtifactConfigInput m_artifactConfig;
     bool m_artifactConfigHasBeenSet = false;
 
-    ProvisionedResourceCleanupSetting m_provisionedResourceCleanup;
+    ProvisionedResourceCleanupSetting m_provisionedResourceCleanup{ProvisionedResourceCleanupSetting::NOT_SET};
     bool m_provisionedResourceCleanupHasBeenSet = false;
   };
 

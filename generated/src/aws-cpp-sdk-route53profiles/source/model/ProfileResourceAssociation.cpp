@@ -18,24 +18,7 @@ namespace Route53Profiles
 namespace Model
 {
 
-ProfileResourceAssociation::ProfileResourceAssociation() : 
-    m_creationTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_status(ProfileStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ProfileResourceAssociation::ProfileResourceAssociation(JsonView jsonValue)
-  : ProfileResourceAssociation()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ ProfileResourceAssociation& ProfileResourceAssociation::operator =(JsonView json
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModificationTime"))
   {
     m_modificationTime = jsonValue.GetDouble("ModificationTime");
-
     m_modificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceProperties"))
   {
     m_resourceProperties = jsonValue.GetString("ResourceProperties");
-
     m_resourcePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProfileStatusMapper::GetProfileStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

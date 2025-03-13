@@ -12,18 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUsageStatisticsRequest::GetUsageStatisticsRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_usageStatisticType(UsageStatisticType::NOT_SET),
-    m_usageStatisticTypeHasBeenSet(false),
-    m_usageCriteriaHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetUsageStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

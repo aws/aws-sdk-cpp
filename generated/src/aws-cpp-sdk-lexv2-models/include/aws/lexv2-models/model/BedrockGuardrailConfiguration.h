@@ -32,7 +32,7 @@ namespace Model
   class BedrockGuardrailConfiguration
   {
   public:
-    AWS_LEXMODELSV2_API BedrockGuardrailConfiguration();
+    AWS_LEXMODELSV2_API BedrockGuardrailConfiguration() = default;
     AWS_LEXMODELSV2_API BedrockGuardrailConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BedrockGuardrailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The unique guardrail id for the Bedrock guardrail configuration.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline BedrockGuardrailConfiguration& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline BedrockGuardrailConfiguration& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline BedrockGuardrailConfiguration& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    BedrockGuardrailConfiguration& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The guardrail version for the Bedrock guardrail configuration.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline BedrockGuardrailConfiguration& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline BedrockGuardrailConfiguration& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline BedrockGuardrailConfiguration& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    BedrockGuardrailConfiguration& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

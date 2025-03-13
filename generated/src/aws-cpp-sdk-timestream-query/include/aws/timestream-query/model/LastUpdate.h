@@ -34,7 +34,7 @@ namespace Model
   class LastUpdate
   {
   public:
-    AWS_TIMESTREAMQUERY_API LastUpdate();
+    AWS_TIMESTREAMQUERY_API LastUpdate() = default;
     AWS_TIMESTREAMQUERY_API LastUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API LastUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The number of TimeStream Compute Units (TCUs) requested in the last account
      * settings update.</p>
      */
-    inline int GetTargetQueryTCU() const{ return m_targetQueryTCU; }
+    inline int GetTargetQueryTCU() const { return m_targetQueryTCU; }
     inline bool TargetQueryTCUHasBeenSet() const { return m_targetQueryTCUHasBeenSet; }
     inline void SetTargetQueryTCU(int value) { m_targetQueryTCUHasBeenSet = true; m_targetQueryTCU = value; }
     inline LastUpdate& WithTargetQueryTCU(int value) { SetTargetQueryTCU(value); return *this;}
@@ -56,12 +56,10 @@ namespace Model
      * <p>The status of the last update. Can be either <code>PENDING</code>,
      * <code>FAILED</code>, or <code>SUCCEEDED</code>.</p>
      */
-    inline const LastUpdateStatus& GetStatus() const{ return m_status; }
+    inline LastUpdateStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LastUpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LastUpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LastUpdate& WithStatus(const LastUpdateStatus& value) { SetStatus(value); return *this;}
-    inline LastUpdate& WithStatus(LastUpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LastUpdateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LastUpdate& WithStatus(LastUpdateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -69,21 +67,19 @@ namespace Model
      * <p>Error message describing the last account settings update status, visible
      * only if an error occurred.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline LastUpdate& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline LastUpdate& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline LastUpdate& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    LastUpdate& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    int m_targetQueryTCU;
+    int m_targetQueryTCU{0};
     bool m_targetQueryTCUHasBeenSet = false;
 
-    LastUpdateStatus m_status;
+    LastUpdateStatus m_status{LastUpdateStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

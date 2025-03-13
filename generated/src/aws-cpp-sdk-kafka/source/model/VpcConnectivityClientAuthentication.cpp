@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-VpcConnectivityClientAuthentication::VpcConnectivityClientAuthentication() : 
-    m_saslHasBeenSet(false),
-    m_tlsHasBeenSet(false)
-{
-}
-
 VpcConnectivityClientAuthentication::VpcConnectivityClientAuthentication(JsonView jsonValue)
-  : VpcConnectivityClientAuthentication()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VpcConnectivityClientAuthentication& VpcConnectivityClientAuthentication::operat
   if(jsonValue.ValueExists("sasl"))
   {
     m_sasl = jsonValue.GetObject("sasl");
-
     m_saslHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tls"))
   {
     m_tls = jsonValue.GetObject("tls");
-
     m_tlsHasBeenSet = true;
   }
-
   return *this;
 }
 

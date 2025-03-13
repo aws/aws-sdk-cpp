@@ -18,16 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-SummarizationDimensionOverview::SummarizationDimensionOverview() : 
-    m_nameHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_sampleValuesHasBeenSet(false)
-{
-}
-
 SummarizationDimensionOverview::SummarizationDimensionOverview(JsonView jsonValue)
-  : SummarizationDimensionOverview()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SummarizationDimensionOverview& SummarizationDimensionOverview::operator =(JsonV
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleValues"))
   {
     Aws::Utils::Array<JsonView> sampleValuesJsonList = jsonValue.GetArray("sampleValues");
@@ -57,7 +44,6 @@ SummarizationDimensionOverview& SummarizationDimensionOverview::operator =(JsonV
     }
     m_sampleValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

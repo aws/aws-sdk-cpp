@@ -12,29 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitJobRequest::SubmitJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_jobQueueHasBeenSet(false),
-    m_shareIdentifierHasBeenSet(false),
-    m_schedulingPriorityOverride(0),
-    m_schedulingPriorityOverrideHasBeenSet(false),
-    m_arrayPropertiesHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_jobDefinitionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_containerOverridesHasBeenSet(false),
-    m_nodeOverridesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_propagateTags(false),
-    m_propagateTagsHasBeenSet(false),
-    m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eksPropertiesOverrideHasBeenSet(false),
-    m_ecsPropertiesOverrideHasBeenSet(false),
-    m_consumableResourcePropertiesOverrideHasBeenSet(false)
-{
-}
-
 Aws::String SubmitJobRequest::SerializePayload() const
 {
   JsonValue payload;

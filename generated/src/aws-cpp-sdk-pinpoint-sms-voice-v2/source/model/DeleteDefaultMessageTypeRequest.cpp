@@ -12,11 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDefaultMessageTypeRequest::DeleteDefaultMessageTypeRequest() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDefaultMessageTypeRequest::SerializePayload() const
 {
   JsonValue payload;

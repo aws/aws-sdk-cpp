@@ -18,24 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationTaskAssessmentRunResultStatistic::ReplicationTaskAssessmentRunResultStatistic() : 
-    m_passed(0),
-    m_passedHasBeenSet(false),
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_error(0),
-    m_errorHasBeenSet(false),
-    m_warning(0),
-    m_warningHasBeenSet(false),
-    m_cancelled(0),
-    m_cancelledHasBeenSet(false),
-    m_skipped(0),
-    m_skippedHasBeenSet(false)
-{
-}
-
 ReplicationTaskAssessmentRunResultStatistic::ReplicationTaskAssessmentRunResultStatistic(JsonView jsonValue)
-  : ReplicationTaskAssessmentRunResultStatistic()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ ReplicationTaskAssessmentRunResultStatistic& ReplicationTaskAssessmentRunResultS
   if(jsonValue.ValueExists("Passed"))
   {
     m_passed = jsonValue.GetInteger("Passed");
-
     m_passedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failed"))
   {
     m_failed = jsonValue.GetInteger("Failed");
-
     m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetInteger("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warning"))
   {
     m_warning = jsonValue.GetInteger("Warning");
-
     m_warningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cancelled"))
   {
     m_cancelled = jsonValue.GetInteger("Cancelled");
-
     m_cancelledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Skipped"))
   {
     m_skipped = jsonValue.GetInteger("Skipped");
-
     m_skippedHasBeenSet = true;
   }
-
   return *this;
 }
 

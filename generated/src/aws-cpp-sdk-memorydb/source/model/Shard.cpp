@@ -18,18 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Shard::Shard() : 
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_nodesHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false)
-{
-}
-
 Shard::Shard(JsonView jsonValue)
-  : Shard()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Shard& Shard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Slots"))
   {
     m_slots = jsonValue.GetString("Slots");
-
     m_slotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Nodes"))
   {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("Nodes");
@@ -66,14 +49,11 @@ Shard& Shard::operator =(JsonView jsonValue)
     }
     m_nodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNodes"))
   {
     m_numberOfNodes = jsonValue.GetInteger("NumberOfNodes");
-
     m_numberOfNodesHasBeenSet = true;
   }
-
   return *this;
 }
 

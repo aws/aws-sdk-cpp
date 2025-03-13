@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SCApplicationAttributes::SCApplicationAttributes() : 
-    m_s3BucketPathHasBeenSet(false),
-    m_s3BucketRoleArnHasBeenSet(false)
-{
-}
-
 SCApplicationAttributes::SCApplicationAttributes(JsonView jsonValue)
-  : SCApplicationAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SCApplicationAttributes& SCApplicationAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketPath"))
   {
     m_s3BucketPath = jsonValue.GetString("S3BucketPath");
-
     m_s3BucketPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketRoleArn"))
   {
     m_s3BucketRoleArn = jsonValue.GetString("S3BucketRoleArn");
-
     m_s3BucketRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

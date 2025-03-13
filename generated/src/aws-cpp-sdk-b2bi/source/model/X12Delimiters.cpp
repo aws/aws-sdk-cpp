@@ -18,15 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-X12Delimiters::X12Delimiters() : 
-    m_componentSeparatorHasBeenSet(false),
-    m_dataElementSeparatorHasBeenSet(false),
-    m_segmentTerminatorHasBeenSet(false)
-{
-}
-
 X12Delimiters::X12Delimiters(JsonView jsonValue)
-  : X12Delimiters()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ X12Delimiters& X12Delimiters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentSeparator"))
   {
     m_componentSeparator = jsonValue.GetString("componentSeparator");
-
     m_componentSeparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataElementSeparator"))
   {
     m_dataElementSeparator = jsonValue.GetString("dataElementSeparator");
-
     m_dataElementSeparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentTerminator"))
   {
     m_segmentTerminator = jsonValue.GetString("segmentTerminator");
-
     m_segmentTerminatorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-BadRequestException::BadRequestException() : 
-    m_errorDetailsHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BadRequestException::BadRequestException(JsonView jsonValue)
-  : BadRequestException()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BadRequestException& BadRequestException::operator =(JsonView jsonValue)
     }
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

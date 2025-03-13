@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterDBProxyTargetsResult::RegisterDBProxyTargetsResult()
-{
-}
-
 RegisterDBProxyTargetsResult::RegisterDBProxyTargetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RegisterDBProxyTargetsResult& RegisterDBProxyTargetsResult::operator =(const Aws
     if(!dBProxyTargetsNode.IsNull())
     {
       XmlNode dBProxyTargetsMember = dBProxyTargetsNode.FirstChild("member");
+      m_dBProxyTargetsHasBeenSet = !dBProxyTargetsMember.IsNull();
       while(!dBProxyTargetsMember.IsNull())
       {
         m_dBProxyTargets.push_back(dBProxyTargetsMember);
@@ -54,6 +51,7 @@ RegisterDBProxyTargetsResult& RegisterDBProxyTargetsResult::operator =(const Aws
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::RegisterDBProxyTargetsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

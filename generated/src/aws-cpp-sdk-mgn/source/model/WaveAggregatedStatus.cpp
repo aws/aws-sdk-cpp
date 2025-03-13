@@ -18,20 +18,7 @@ namespace mgn
 namespace Model
 {
 
-WaveAggregatedStatus::WaveAggregatedStatus() : 
-    m_healthStatus(WaveHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_lastUpdateDateTimeHasBeenSet(false),
-    m_progressStatus(WaveProgressStatus::NOT_SET),
-    m_progressStatusHasBeenSet(false),
-    m_replicationStartedDateTimeHasBeenSet(false),
-    m_totalApplications(0),
-    m_totalApplicationsHasBeenSet(false)
-{
-}
-
 WaveAggregatedStatus::WaveAggregatedStatus(JsonView jsonValue)
-  : WaveAggregatedStatus()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ WaveAggregatedStatus& WaveAggregatedStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("healthStatus"))
   {
     m_healthStatus = WaveHealthStatusMapper::GetWaveHealthStatusForName(jsonValue.GetString("healthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateDateTime"))
   {
     m_lastUpdateDateTime = jsonValue.GetString("lastUpdateDateTime");
-
     m_lastUpdateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressStatus"))
   {
     m_progressStatus = WaveProgressStatusMapper::GetWaveProgressStatusForName(jsonValue.GetString("progressStatus"));
-
     m_progressStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationStartedDateTime"))
   {
     m_replicationStartedDateTime = jsonValue.GetString("replicationStartedDateTime");
-
     m_replicationStartedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalApplications"))
   {
     m_totalApplications = jsonValue.GetInt64("totalApplications");
-
     m_totalApplicationsHasBeenSet = true;
   }
-
   return *this;
 }
 

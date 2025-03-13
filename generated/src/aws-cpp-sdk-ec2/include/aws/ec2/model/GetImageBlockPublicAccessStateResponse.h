@@ -29,7 +29,7 @@ namespace Model
   class GetImageBlockPublicAccessStateResponse
   {
   public:
-    AWS_EC2_API GetImageBlockPublicAccessStateResponse();
+    AWS_EC2_API GetImageBlockPublicAccessStateResponse() = default;
     AWS_EC2_API GetImageBlockPublicAccessStateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetImageBlockPublicAccessStateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * specified Region is blocked.</p> </li> <li> <p> <code>unblocked</code> - Your
      * AMIs in the specified Region can be publicly shared.</p> </li> </ul>
      */
-    inline const Aws::String& GetImageBlockPublicAccessState() const{ return m_imageBlockPublicAccessState; }
-    inline void SetImageBlockPublicAccessState(const Aws::String& value) { m_imageBlockPublicAccessState = value; }
-    inline void SetImageBlockPublicAccessState(Aws::String&& value) { m_imageBlockPublicAccessState = std::move(value); }
-    inline void SetImageBlockPublicAccessState(const char* value) { m_imageBlockPublicAccessState.assign(value); }
-    inline GetImageBlockPublicAccessStateResponse& WithImageBlockPublicAccessState(const Aws::String& value) { SetImageBlockPublicAccessState(value); return *this;}
-    inline GetImageBlockPublicAccessStateResponse& WithImageBlockPublicAccessState(Aws::String&& value) { SetImageBlockPublicAccessState(std::move(value)); return *this;}
-    inline GetImageBlockPublicAccessStateResponse& WithImageBlockPublicAccessState(const char* value) { SetImageBlockPublicAccessState(value); return *this;}
+    inline const Aws::String& GetImageBlockPublicAccessState() const { return m_imageBlockPublicAccessState; }
+    template<typename ImageBlockPublicAccessStateT = Aws::String>
+    void SetImageBlockPublicAccessState(ImageBlockPublicAccessStateT&& value) { m_imageBlockPublicAccessStateHasBeenSet = true; m_imageBlockPublicAccessState = std::forward<ImageBlockPublicAccessStateT>(value); }
+    template<typename ImageBlockPublicAccessStateT = Aws::String>
+    GetImageBlockPublicAccessStateResponse& WithImageBlockPublicAccessState(ImageBlockPublicAccessStateT&& value) { SetImageBlockPublicAccessState(std::forward<ImageBlockPublicAccessStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,29 @@ namespace Model
      * managed by a declarative policy and can't be modified by the account.</p> </li>
      * </ul>
      */
-    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
-    inline void SetManagedBy(const ManagedBy& value) { m_managedBy = value; }
-    inline void SetManagedBy(ManagedBy&& value) { m_managedBy = std::move(value); }
-    inline GetImageBlockPublicAccessStateResponse& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
-    inline GetImageBlockPublicAccessStateResponse& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    inline ManagedBy GetManagedBy() const { return m_managedBy; }
+    inline void SetManagedBy(ManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline GetImageBlockPublicAccessStateResponse& WithManagedBy(ManagedBy value) { SetManagedBy(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetImageBlockPublicAccessStateResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetImageBlockPublicAccessStateResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetImageBlockPublicAccessStateResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_imageBlockPublicAccessState;
+    bool m_imageBlockPublicAccessStateHasBeenSet = false;
 
-    ManagedBy m_managedBy;
+    ManagedBy m_managedBy{ManagedBy::NOT_SET};
+    bool m_managedByHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

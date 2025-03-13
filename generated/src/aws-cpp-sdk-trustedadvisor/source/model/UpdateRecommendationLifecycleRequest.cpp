@@ -12,16 +12,6 @@ using namespace Aws::TrustedAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRecommendationLifecycleRequest::UpdateRecommendationLifecycleRequest() : 
-    m_lifecycleStage(UpdateRecommendationLifecycleStage::NOT_SET),
-    m_lifecycleStageHasBeenSet(false),
-    m_recommendationIdentifierHasBeenSet(false),
-    m_updateReasonHasBeenSet(false),
-    m_updateReasonCode(UpdateRecommendationLifecycleStageReasonCode::NOT_SET),
-    m_updateReasonCodeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRecommendationLifecycleRequest::SerializePayload() const
 {
   JsonValue payload;

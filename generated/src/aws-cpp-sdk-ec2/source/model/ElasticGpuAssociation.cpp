@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticGpuAssociation::ElasticGpuAssociation() : 
-    m_elasticGpuIdHasBeenSet(false),
-    m_elasticGpuAssociationIdHasBeenSet(false),
-    m_elasticGpuAssociationStateHasBeenSet(false),
-    m_elasticGpuAssociationTimeHasBeenSet(false)
-{
-}
-
 ElasticGpuAssociation::ElasticGpuAssociation(const XmlNode& xmlNode)
-  : ElasticGpuAssociation()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ ElasticGpuAssociation& ElasticGpuAssociation::operator =(const XmlNode& xmlNode)
     {
       m_elasticGpuId = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuIdNode.GetText());
       m_elasticGpuIdHasBeenSet = true;
+       m_elasticGpuIdHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationIdNode = resultNode.FirstChild("elasticGpuAssociationId");
     if(!elasticGpuAssociationIdNode.IsNull())
     {
       m_elasticGpuAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuAssociationIdNode.GetText());
       m_elasticGpuAssociationIdHasBeenSet = true;
+       m_elasticGpuAssociationIdHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationStateNode = resultNode.FirstChild("elasticGpuAssociationState");
     if(!elasticGpuAssociationStateNode.IsNull())
     {
       m_elasticGpuAssociationState = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuAssociationStateNode.GetText());
       m_elasticGpuAssociationStateHasBeenSet = true;
+       m_elasticGpuAssociationStateHasBeenSet = true;
     }
     XmlNode elasticGpuAssociationTimeNode = resultNode.FirstChild("elasticGpuAssociationTime");
     if(!elasticGpuAssociationTimeNode.IsNull())
     {
       m_elasticGpuAssociationTime = Aws::Utils::Xml::DecodeEscapedXmlText(elasticGpuAssociationTimeNode.GetText());
       m_elasticGpuAssociationTimeHasBeenSet = true;
+       m_elasticGpuAssociationTimeHasBeenSet = true;
     }
   }
 

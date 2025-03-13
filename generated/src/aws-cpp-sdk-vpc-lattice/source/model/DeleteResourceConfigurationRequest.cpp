@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceConfigurationRequest::DeleteResourceConfigurationRequest() : 
-    m_resourceConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceConfigurationRequest::SerializePayload() const
 {
   return {};

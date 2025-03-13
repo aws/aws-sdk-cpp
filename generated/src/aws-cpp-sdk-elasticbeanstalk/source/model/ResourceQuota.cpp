@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ResourceQuota::ResourceQuota() : 
-    m_maximum(0),
-    m_maximumHasBeenSet(false)
-{
-}
-
 ResourceQuota::ResourceQuota(const XmlNode& xmlNode)
-  : ResourceQuota()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ResourceQuota& ResourceQuota::operator =(const XmlNode& xmlNode)
     {
       m_maximum = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
+       m_maximumHasBeenSet = true;
     }
   }
 

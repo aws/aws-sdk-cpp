@@ -29,7 +29,7 @@ namespace Model
   class ListJobsRequest : public GlacierRequest
   {
   public:
-    AWS_GLACIER_API ListJobsRequest();
+    AWS_GLACIER_API ListJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,28 +50,24 @@ namespace Model
      * ID associated with the credentials used to sign the request. If you use an
      * account ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListJobsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListJobsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListJobsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListJobsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vault.</p>
      */
-    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+    inline const Aws::String& GetVaultName() const { return m_vaultName; }
     inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
-    inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
-    inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
-    inline ListJobsRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-    inline ListJobsRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-    inline ListJobsRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    template<typename VaultNameT = Aws::String>
+    void SetVaultName(VaultNameT&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::forward<VaultNameT>(value); }
+    template<typename VaultNameT = Aws::String>
+    ListJobsRequest& WithVaultName(VaultNameT&& value) { SetVaultName(std::forward<VaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * number of jobs returned might be fewer than the specified limit, but the number
      * of returned jobs never exceeds the limit.</p>
      */
-    inline const Aws::String& GetLimit() const{ return m_limit; }
+    inline const Aws::String& GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-    inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
-    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
-    inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
-    inline ListJobsRequest& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
-    inline ListJobsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
-    inline ListJobsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
+    template<typename LimitT = Aws::String>
+    void SetLimit(LimitT&& value) { m_limitHasBeenSet = true; m_limit = std::forward<LimitT>(value); }
+    template<typename LimitT = Aws::String>
+    ListJobsRequest& WithLimit(LimitT&& value) { SetLimit(std::forward<LimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * response. You only need to include the marker if you are continuing the
      * pagination of results started in a previous List Jobs request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListJobsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListJobsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListJobsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListJobsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * <p>The type of job status to return. You can specify the following values:
      * <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
      */
-    inline const Aws::String& GetStatuscode() const{ return m_statuscode; }
+    inline const Aws::String& GetStatuscode() const { return m_statuscode; }
     inline bool StatuscodeHasBeenSet() const { return m_statuscodeHasBeenSet; }
-    inline void SetStatuscode(const Aws::String& value) { m_statuscodeHasBeenSet = true; m_statuscode = value; }
-    inline void SetStatuscode(Aws::String&& value) { m_statuscodeHasBeenSet = true; m_statuscode = std::move(value); }
-    inline void SetStatuscode(const char* value) { m_statuscodeHasBeenSet = true; m_statuscode.assign(value); }
-    inline ListJobsRequest& WithStatuscode(const Aws::String& value) { SetStatuscode(value); return *this;}
-    inline ListJobsRequest& WithStatuscode(Aws::String&& value) { SetStatuscode(std::move(value)); return *this;}
-    inline ListJobsRequest& WithStatuscode(const char* value) { SetStatuscode(value); return *this;}
+    template<typename StatuscodeT = Aws::String>
+    void SetStatuscode(StatuscodeT&& value) { m_statuscodeHasBeenSet = true; m_statuscode = std::forward<StatuscodeT>(value); }
+    template<typename StatuscodeT = Aws::String>
+    ListJobsRequest& WithStatuscode(StatuscodeT&& value) { SetStatuscode(std::forward<StatuscodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +117,12 @@ namespace Model
      * <p>The state of the jobs to return. You can specify <code>true</code> or
      * <code>false</code>.</p>
      */
-    inline const Aws::String& GetCompleted() const{ return m_completed; }
+    inline const Aws::String& GetCompleted() const { return m_completed; }
     inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
-    inline void SetCompleted(const Aws::String& value) { m_completedHasBeenSet = true; m_completed = value; }
-    inline void SetCompleted(Aws::String&& value) { m_completedHasBeenSet = true; m_completed = std::move(value); }
-    inline void SetCompleted(const char* value) { m_completedHasBeenSet = true; m_completed.assign(value); }
-    inline ListJobsRequest& WithCompleted(const Aws::String& value) { SetCompleted(value); return *this;}
-    inline ListJobsRequest& WithCompleted(Aws::String&& value) { SetCompleted(std::move(value)); return *this;}
-    inline ListJobsRequest& WithCompleted(const char* value) { SetCompleted(value); return *this;}
+    template<typename CompletedT = Aws::String>
+    void SetCompleted(CompletedT&& value) { m_completedHasBeenSet = true; m_completed = std::forward<CompletedT>(value); }
+    template<typename CompletedT = Aws::String>
+    ListJobsRequest& WithCompleted(CompletedT&& value) { SetCompleted(std::forward<CompletedT>(value)); return *this;}
     ///@}
   private:
 

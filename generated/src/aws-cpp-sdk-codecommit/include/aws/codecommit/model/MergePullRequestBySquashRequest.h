@@ -24,7 +24,7 @@ namespace Model
   class MergePullRequestBySquashRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API MergePullRequestBySquashRequest();
+    AWS_CODECOMMIT_API MergePullRequestBySquashRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline MergePullRequestBySquashRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline MergePullRequestBySquashRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    MergePullRequestBySquashRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository where the pull request was created.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline MergePullRequestBySquashRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline MergePullRequestBySquashRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    MergePullRequestBySquashRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * source branch. Pass this value if you want an exception thrown if the current
      * commit ID of the tip of the source branch does not match this commit ID.</p>
      */
-    inline const Aws::String& GetSourceCommitId() const{ return m_sourceCommitId; }
+    inline const Aws::String& GetSourceCommitId() const { return m_sourceCommitId; }
     inline bool SourceCommitIdHasBeenSet() const { return m_sourceCommitIdHasBeenSet; }
-    inline void SetSourceCommitId(const Aws::String& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = value; }
-    inline void SetSourceCommitId(Aws::String&& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = std::move(value); }
-    inline void SetSourceCommitId(const char* value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId.assign(value); }
-    inline MergePullRequestBySquashRequest& WithSourceCommitId(const Aws::String& value) { SetSourceCommitId(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithSourceCommitId(Aws::String&& value) { SetSourceCommitId(std::move(value)); return *this;}
-    inline MergePullRequestBySquashRequest& WithSourceCommitId(const char* value) { SetSourceCommitId(value); return *this;}
+    template<typename SourceCommitIdT = Aws::String>
+    void SetSourceCommitId(SourceCommitIdT&& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = std::forward<SourceCommitIdT>(value); }
+    template<typename SourceCommitIdT = Aws::String>
+    MergePullRequestBySquashRequest& WithSourceCommitId(SourceCommitIdT&& value) { SetSourceCommitId(std::forward<SourceCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +84,10 @@ namespace Model
      * mergeable if the same file in both branches has differences on the same
      * line.</p>
      */
-    inline const ConflictDetailLevelTypeEnum& GetConflictDetailLevel() const{ return m_conflictDetailLevel; }
+    inline ConflictDetailLevelTypeEnum GetConflictDetailLevel() const { return m_conflictDetailLevel; }
     inline bool ConflictDetailLevelHasBeenSet() const { return m_conflictDetailLevelHasBeenSet; }
-    inline void SetConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = value; }
-    inline void SetConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = std::move(value); }
-    inline MergePullRequestBySquashRequest& WithConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { SetConflictDetailLevel(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { SetConflictDetailLevel(std::move(value)); return *this;}
+    inline void SetConflictDetailLevel(ConflictDetailLevelTypeEnum value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = value; }
+    inline MergePullRequestBySquashRequest& WithConflictDetailLevel(ConflictDetailLevelTypeEnum value) { SetConflictDetailLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -105,26 +97,22 @@ namespace Model
      * requires any conflicts to be resolved manually before the merge operation is
      * successful.</p>
      */
-    inline const ConflictResolutionStrategyTypeEnum& GetConflictResolutionStrategy() const{ return m_conflictResolutionStrategy; }
+    inline ConflictResolutionStrategyTypeEnum GetConflictResolutionStrategy() const { return m_conflictResolutionStrategy; }
     inline bool ConflictResolutionStrategyHasBeenSet() const { return m_conflictResolutionStrategyHasBeenSet; }
-    inline void SetConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = value; }
-    inline void SetConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = std::move(value); }
-    inline MergePullRequestBySquashRequest& WithConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { SetConflictResolutionStrategy(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { SetConflictResolutionStrategy(std::move(value)); return *this;}
+    inline void SetConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = value; }
+    inline MergePullRequestBySquashRequest& WithConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum value) { SetConflictResolutionStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The commit message to include in the commit information for the merge.</p>
      */
-    inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
+    inline const Aws::String& GetCommitMessage() const { return m_commitMessage; }
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
-    inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
-    inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
-    inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
-    inline MergePullRequestBySquashRequest& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
-    inline MergePullRequestBySquashRequest& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
+    template<typename CommitMessageT = Aws::String>
+    void SetCommitMessage(CommitMessageT&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::forward<CommitMessageT>(value); }
+    template<typename CommitMessageT = Aws::String>
+    MergePullRequestBySquashRequest& WithCommitMessage(CommitMessageT&& value) { SetCommitMessage(std::forward<CommitMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +120,12 @@ namespace Model
      * <p>The name of the author who created the commit. This information is used as
      * both the author and committer for the commit.</p>
      */
-    inline const Aws::String& GetAuthorName() const{ return m_authorName; }
+    inline const Aws::String& GetAuthorName() const { return m_authorName; }
     inline bool AuthorNameHasBeenSet() const { return m_authorNameHasBeenSet; }
-    inline void SetAuthorName(const Aws::String& value) { m_authorNameHasBeenSet = true; m_authorName = value; }
-    inline void SetAuthorName(Aws::String&& value) { m_authorNameHasBeenSet = true; m_authorName = std::move(value); }
-    inline void SetAuthorName(const char* value) { m_authorNameHasBeenSet = true; m_authorName.assign(value); }
-    inline MergePullRequestBySquashRequest& WithAuthorName(const Aws::String& value) { SetAuthorName(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithAuthorName(Aws::String&& value) { SetAuthorName(std::move(value)); return *this;}
-    inline MergePullRequestBySquashRequest& WithAuthorName(const char* value) { SetAuthorName(value); return *this;}
+    template<typename AuthorNameT = Aws::String>
+    void SetAuthorName(AuthorNameT&& value) { m_authorNameHasBeenSet = true; m_authorName = std::forward<AuthorNameT>(value); }
+    template<typename AuthorNameT = Aws::String>
+    MergePullRequestBySquashRequest& WithAuthorName(AuthorNameT&& value) { SetAuthorName(std::forward<AuthorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +133,12 @@ namespace Model
      * <p>The email address of the person merging the branches. This information is
      * used in the commit information for the merge.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline MergePullRequestBySquashRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline MergePullRequestBySquashRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    MergePullRequestBySquashRequest& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,7 +147,7 @@ namespace Model
      * structure if the changes leave the folders empty. If true, a .gitkeep file is
      * created for empty folders. The default is false.</p>
      */
-    inline bool GetKeepEmptyFolders() const{ return m_keepEmptyFolders; }
+    inline bool GetKeepEmptyFolders() const { return m_keepEmptyFolders; }
     inline bool KeepEmptyFoldersHasBeenSet() const { return m_keepEmptyFoldersHasBeenSet; }
     inline void SetKeepEmptyFolders(bool value) { m_keepEmptyFoldersHasBeenSet = true; m_keepEmptyFolders = value; }
     inline MergePullRequestBySquashRequest& WithKeepEmptyFolders(bool value) { SetKeepEmptyFolders(value); return *this;}
@@ -174,12 +158,12 @@ namespace Model
      * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
      * when resolving conflicts during a merge.</p>
      */
-    inline const ConflictResolution& GetConflictResolution() const{ return m_conflictResolution; }
+    inline const ConflictResolution& GetConflictResolution() const { return m_conflictResolution; }
     inline bool ConflictResolutionHasBeenSet() const { return m_conflictResolutionHasBeenSet; }
-    inline void SetConflictResolution(const ConflictResolution& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = value; }
-    inline void SetConflictResolution(ConflictResolution&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::move(value); }
-    inline MergePullRequestBySquashRequest& WithConflictResolution(const ConflictResolution& value) { SetConflictResolution(value); return *this;}
-    inline MergePullRequestBySquashRequest& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
+    template<typename ConflictResolutionT = ConflictResolution>
+    void SetConflictResolution(ConflictResolutionT&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::forward<ConflictResolutionT>(value); }
+    template<typename ConflictResolutionT = ConflictResolution>
+    MergePullRequestBySquashRequest& WithConflictResolution(ConflictResolutionT&& value) { SetConflictResolution(std::forward<ConflictResolutionT>(value)); return *this;}
     ///@}
   private:
 
@@ -192,10 +176,10 @@ namespace Model
     Aws::String m_sourceCommitId;
     bool m_sourceCommitIdHasBeenSet = false;
 
-    ConflictDetailLevelTypeEnum m_conflictDetailLevel;
+    ConflictDetailLevelTypeEnum m_conflictDetailLevel{ConflictDetailLevelTypeEnum::NOT_SET};
     bool m_conflictDetailLevelHasBeenSet = false;
 
-    ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy;
+    ConflictResolutionStrategyTypeEnum m_conflictResolutionStrategy{ConflictResolutionStrategyTypeEnum::NOT_SET};
     bool m_conflictResolutionStrategyHasBeenSet = false;
 
     Aws::String m_commitMessage;
@@ -207,7 +191,7 @@ namespace Model
     Aws::String m_email;
     bool m_emailHasBeenSet = false;
 
-    bool m_keepEmptyFolders;
+    bool m_keepEmptyFolders{false};
     bool m_keepEmptyFoldersHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;

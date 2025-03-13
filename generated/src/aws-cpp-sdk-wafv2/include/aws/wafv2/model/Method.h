@@ -32,7 +32,7 @@ namespace Model
   class Method
   {
   public:
-    AWS_WAFV2_API Method();
+    AWS_WAFV2_API Method() = default;
     AWS_WAFV2_API Method(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Method& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

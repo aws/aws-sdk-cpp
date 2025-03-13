@@ -20,13 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Timezone::Timezone() : 
-    m_timezoneNameHasBeenSet(false)
-{
-}
-
 Timezone::Timezone(const XmlNode& xmlNode)
-  : Timezone()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Timezone& Timezone::operator =(const XmlNode& xmlNode)
     {
       m_timezoneName = Aws::Utils::Xml::DecodeEscapedXmlText(timezoneNameNode.GetText());
       m_timezoneNameHasBeenSet = true;
+       m_timezoneNameHasBeenSet = true;
     }
   }
 

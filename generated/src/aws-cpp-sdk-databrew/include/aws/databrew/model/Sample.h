@@ -32,7 +32,7 @@ namespace Model
   class Sample
   {
   public:
-    AWS_GLUEDATABREW_API Sample();
+    AWS_GLUEDATABREW_API Sample() = default;
     AWS_GLUEDATABREW_API Sample(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Sample& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of rows in the sample.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline Sample& WithSize(int value) { SetSize(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p>The way in which DataBrew obtains rows from a dataset.</p>
      */
-    inline const SampleType& GetType() const{ return m_type; }
+    inline SampleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SampleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SampleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Sample& WithType(const SampleType& value) { SetType(value); return *this;}
-    inline Sample& WithType(SampleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SampleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Sample& WithType(SampleType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
 
-    SampleType m_type;
+    SampleType m_type{SampleType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

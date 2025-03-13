@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateServiceLinkedRoleRequest::CreateServiceLinkedRoleRequest() : 
-    m_aWSServiceNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_customSuffixHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceLinkedRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

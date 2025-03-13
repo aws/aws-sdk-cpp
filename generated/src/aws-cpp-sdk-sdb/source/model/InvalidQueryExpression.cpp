@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-InvalidQueryExpression::InvalidQueryExpression() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 InvalidQueryExpression::InvalidQueryExpression(const XmlNode& xmlNode)
-  : InvalidQueryExpression()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ InvalidQueryExpression& InvalidQueryExpression::operator =(const XmlNode& xmlNod
     {
       m_boxUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(boxUsageNode.GetText()).c_str()).c_str());
       m_boxUsageHasBeenSet = true;
+       m_boxUsageHasBeenSet = true;
     }
   }
 

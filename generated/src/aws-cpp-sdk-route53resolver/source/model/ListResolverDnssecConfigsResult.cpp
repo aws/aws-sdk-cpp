@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResolverDnssecConfigsResult::ListResolverDnssecConfigsResult()
-{
-}
-
 ListResolverDnssecConfigsResult::ListResolverDnssecConfigsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListResolverDnssecConfigsResult& ListResolverDnssecConfigsResult::operator =(con
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverDnssecConfigs"))
   {
     Aws::Utils::Array<JsonView> resolverDnssecConfigsJsonList = jsonValue.GetArray("ResolverDnssecConfigs");
@@ -42,14 +37,15 @@ ListResolverDnssecConfigsResult& ListResolverDnssecConfigsResult::operator =(con
     {
       m_resolverDnssecConfigs.push_back(resolverDnssecConfigsJsonList[resolverDnssecConfigsIndex].AsObject());
     }
+    m_resolverDnssecConfigsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class AssociationConfigurationData
   {
   public:
-    AWS_QCONNECT_API AssociationConfigurationData();
+    AWS_QCONNECT_API AssociationConfigurationData() = default;
     AWS_QCONNECT_API AssociationConfigurationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AssociationConfigurationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The data of the configuration for a <code>KNOWLEDGE_BASE</code> type Amazon Q
      * in Connect Assistant Association.</p>
      */
-    inline const KnowledgeBaseAssociationConfigurationData& GetKnowledgeBaseAssociationConfigurationData() const{ return m_knowledgeBaseAssociationConfigurationData; }
+    inline const KnowledgeBaseAssociationConfigurationData& GetKnowledgeBaseAssociationConfigurationData() const { return m_knowledgeBaseAssociationConfigurationData; }
     inline bool KnowledgeBaseAssociationConfigurationDataHasBeenSet() const { return m_knowledgeBaseAssociationConfigurationDataHasBeenSet; }
-    inline void SetKnowledgeBaseAssociationConfigurationData(const KnowledgeBaseAssociationConfigurationData& value) { m_knowledgeBaseAssociationConfigurationDataHasBeenSet = true; m_knowledgeBaseAssociationConfigurationData = value; }
-    inline void SetKnowledgeBaseAssociationConfigurationData(KnowledgeBaseAssociationConfigurationData&& value) { m_knowledgeBaseAssociationConfigurationDataHasBeenSet = true; m_knowledgeBaseAssociationConfigurationData = std::move(value); }
-    inline AssociationConfigurationData& WithKnowledgeBaseAssociationConfigurationData(const KnowledgeBaseAssociationConfigurationData& value) { SetKnowledgeBaseAssociationConfigurationData(value); return *this;}
-    inline AssociationConfigurationData& WithKnowledgeBaseAssociationConfigurationData(KnowledgeBaseAssociationConfigurationData&& value) { SetKnowledgeBaseAssociationConfigurationData(std::move(value)); return *this;}
+    template<typename KnowledgeBaseAssociationConfigurationDataT = KnowledgeBaseAssociationConfigurationData>
+    void SetKnowledgeBaseAssociationConfigurationData(KnowledgeBaseAssociationConfigurationDataT&& value) { m_knowledgeBaseAssociationConfigurationDataHasBeenSet = true; m_knowledgeBaseAssociationConfigurationData = std::forward<KnowledgeBaseAssociationConfigurationDataT>(value); }
+    template<typename KnowledgeBaseAssociationConfigurationDataT = KnowledgeBaseAssociationConfigurationData>
+    AssociationConfigurationData& WithKnowledgeBaseAssociationConfigurationData(KnowledgeBaseAssociationConfigurationDataT&& value) { SetKnowledgeBaseAssociationConfigurationData(std::forward<KnowledgeBaseAssociationConfigurationDataT>(value)); return *this;}
     ///@}
   private:
 

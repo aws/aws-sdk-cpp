@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig() : 
-    m_serviceRoleHasBeenSet(false),
-    m_versionLifecycleConfigHasBeenSet(false)
-{
-}
-
 ApplicationResourceLifecycleConfig::ApplicationResourceLifecycleConfig(const XmlNode& xmlNode)
-  : ApplicationResourceLifecycleConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ApplicationResourceLifecycleConfig& ApplicationResourceLifecycleConfig::operator
     {
       m_serviceRole = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRoleNode.GetText());
       m_serviceRoleHasBeenSet = true;
+       m_serviceRoleHasBeenSet = true;
     }
     XmlNode versionLifecycleConfigNode = resultNode.FirstChild("VersionLifecycleConfig");
     if(!versionLifecycleConfigNode.IsNull())
     {
       m_versionLifecycleConfig = versionLifecycleConfigNode;
       m_versionLifecycleConfigHasBeenSet = true;
+       m_versionLifecycleConfigHasBeenSet = true;
     }
   }
 

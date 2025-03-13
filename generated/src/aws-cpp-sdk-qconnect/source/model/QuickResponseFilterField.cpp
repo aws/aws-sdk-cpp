@@ -18,18 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-QuickResponseFilterField::QuickResponseFilterField() : 
-    m_includeNoExistence(false),
-    m_includeNoExistenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_operator(QuickResponseFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 QuickResponseFilterField::QuickResponseFilterField(JsonView jsonValue)
-  : QuickResponseFilterField()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ QuickResponseFilterField& QuickResponseFilterField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("includeNoExistence"))
   {
     m_includeNoExistence = jsonValue.GetBool("includeNoExistence");
-
     m_includeNoExistenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = QuickResponseFilterOperatorMapper::GetQuickResponseFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -66,7 +49,6 @@ QuickResponseFilterField& QuickResponseFilterField::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

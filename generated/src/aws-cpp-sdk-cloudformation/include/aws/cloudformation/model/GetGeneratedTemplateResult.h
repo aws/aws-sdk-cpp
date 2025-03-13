@@ -29,7 +29,7 @@ namespace Model
   class GetGeneratedTemplateResult
   {
   public:
-    AWS_CLOUDFORMATION_API GetGeneratedTemplateResult();
+    AWS_CLOUDFORMATION_API GetGeneratedTemplateResult() = default;
     AWS_CLOUDFORMATION_API GetGeneratedTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API GetGeneratedTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -48,11 +48,9 @@ namespace Model
      * failed.</p> </li> <li> <p> <code>Complete</code> - the template operation is
      * complete.</p> </li> </ul>
      */
-    inline const GeneratedTemplateStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const GeneratedTemplateStatus& value) { m_status = value; }
-    inline void SetStatus(GeneratedTemplateStatus&& value) { m_status = std::move(value); }
-    inline GetGeneratedTemplateResult& WithStatus(const GeneratedTemplateStatus& value) { SetStatus(value); return *this;}
-    inline GetGeneratedTemplateResult& WithStatus(GeneratedTemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline GeneratedTemplateStatus GetStatus() const { return m_status; }
+    inline void SetStatus(GeneratedTemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetGeneratedTemplateResult& WithStatus(GeneratedTemplateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -60,30 +58,31 @@ namespace Model
      * <p>The template body of the generated template, in the language specified by the
      * <code>Language</code> parameter.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBody.assign(value); }
-    inline GetGeneratedTemplateResult& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline GetGeneratedTemplateResult& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline GetGeneratedTemplateResult& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    GetGeneratedTemplateResult& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetGeneratedTemplateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetGeneratedTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetGeneratedTemplateResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    GeneratedTemplateStatus m_status;
+    GeneratedTemplateStatus m_status{GeneratedTemplateStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_templateBody;
+    bool m_templateBodyHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

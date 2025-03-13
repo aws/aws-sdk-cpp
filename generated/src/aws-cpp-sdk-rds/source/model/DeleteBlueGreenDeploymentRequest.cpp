@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteBlueGreenDeploymentRequest::DeleteBlueGreenDeploymentRequest() : 
-    m_blueGreenDeploymentIdentifierHasBeenSet(false),
-    m_deleteTarget(false),
-    m_deleteTargetHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBlueGreenDeploymentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

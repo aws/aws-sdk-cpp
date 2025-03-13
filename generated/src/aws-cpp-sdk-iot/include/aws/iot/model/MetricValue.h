@@ -33,7 +33,7 @@ namespace Model
   class MetricValue
   {
   public:
-    AWS_IOT_API MetricValue();
+    AWS_IOT_API MetricValue() = default;
     AWS_IOT_API MetricValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to
      * specify that numeric value to be compared with the <code>metric</code>.</p>
      */
-    inline long long GetCount() const{ return m_count; }
+    inline long long GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline MetricValue& WithCount(long long value) { SetCount(value); return *this;}
@@ -55,15 +55,14 @@ namespace Model
      * <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to
      * specify that set to be compared with the <code>metric</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
+    inline const Aws::Vector<Aws::String>& GetCidrs() const { return m_cidrs; }
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
-    inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
-    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
-    inline MetricValue& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
-    inline MetricValue& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
-    inline MetricValue& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
-    inline MetricValue& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
-    inline MetricValue& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    void SetCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::forward<CidrsT>(value); }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    MetricValue& WithCidrs(CidrsT&& value) { SetCidrs(std::forward<CidrsT>(value)); return *this;}
+    template<typename CidrsT = Aws::String>
+    MetricValue& AddCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs.emplace_back(std::forward<CidrsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,12 +70,12 @@ namespace Model
      * <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to
      * specify that set to be compared with the <code>metric</code>.</p>
      */
-    inline const Aws::Vector<int>& GetPorts() const{ return m_ports; }
+    inline const Aws::Vector<int>& GetPorts() const { return m_ports; }
     inline bool PortsHasBeenSet() const { return m_portsHasBeenSet; }
-    inline void SetPorts(const Aws::Vector<int>& value) { m_portsHasBeenSet = true; m_ports = value; }
-    inline void SetPorts(Aws::Vector<int>&& value) { m_portsHasBeenSet = true; m_ports = std::move(value); }
-    inline MetricValue& WithPorts(const Aws::Vector<int>& value) { SetPorts(value); return *this;}
-    inline MetricValue& WithPorts(Aws::Vector<int>&& value) { SetPorts(std::move(value)); return *this;}
+    template<typename PortsT = Aws::Vector<int>>
+    void SetPorts(PortsT&& value) { m_portsHasBeenSet = true; m_ports = std::forward<PortsT>(value); }
+    template<typename PortsT = Aws::Vector<int>>
+    MetricValue& WithPorts(PortsT&& value) { SetPorts(std::forward<PortsT>(value)); return *this;}
     inline MetricValue& AddPorts(int value) { m_portsHasBeenSet = true; m_ports.push_back(value); return *this; }
     ///@}
 
@@ -84,7 +83,7 @@ namespace Model
     /**
      * <p> The numeral value of a metric. </p>
      */
-    inline double GetNumber() const{ return m_number; }
+    inline double GetNumber() const { return m_number; }
     inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
     inline void SetNumber(double value) { m_numberHasBeenSet = true; m_number = value; }
     inline MetricValue& WithNumber(double value) { SetNumber(value); return *this;}
@@ -94,12 +93,12 @@ namespace Model
     /**
      * <p> The numeral values of a metric. </p>
      */
-    inline const Aws::Vector<double>& GetNumbers() const{ return m_numbers; }
+    inline const Aws::Vector<double>& GetNumbers() const { return m_numbers; }
     inline bool NumbersHasBeenSet() const { return m_numbersHasBeenSet; }
-    inline void SetNumbers(const Aws::Vector<double>& value) { m_numbersHasBeenSet = true; m_numbers = value; }
-    inline void SetNumbers(Aws::Vector<double>&& value) { m_numbersHasBeenSet = true; m_numbers = std::move(value); }
-    inline MetricValue& WithNumbers(const Aws::Vector<double>& value) { SetNumbers(value); return *this;}
-    inline MetricValue& WithNumbers(Aws::Vector<double>&& value) { SetNumbers(std::move(value)); return *this;}
+    template<typename NumbersT = Aws::Vector<double>>
+    void SetNumbers(NumbersT&& value) { m_numbersHasBeenSet = true; m_numbers = std::forward<NumbersT>(value); }
+    template<typename NumbersT = Aws::Vector<double>>
+    MetricValue& WithNumbers(NumbersT&& value) { SetNumbers(std::forward<NumbersT>(value)); return *this;}
     inline MetricValue& AddNumbers(double value) { m_numbersHasBeenSet = true; m_numbers.push_back(value); return *this; }
     ///@}
 
@@ -107,19 +106,18 @@ namespace Model
     /**
      * <p> The string values of a metric. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStrings() const{ return m_strings; }
+    inline const Aws::Vector<Aws::String>& GetStrings() const { return m_strings; }
     inline bool StringsHasBeenSet() const { return m_stringsHasBeenSet; }
-    inline void SetStrings(const Aws::Vector<Aws::String>& value) { m_stringsHasBeenSet = true; m_strings = value; }
-    inline void SetStrings(Aws::Vector<Aws::String>&& value) { m_stringsHasBeenSet = true; m_strings = std::move(value); }
-    inline MetricValue& WithStrings(const Aws::Vector<Aws::String>& value) { SetStrings(value); return *this;}
-    inline MetricValue& WithStrings(Aws::Vector<Aws::String>&& value) { SetStrings(std::move(value)); return *this;}
-    inline MetricValue& AddStrings(const Aws::String& value) { m_stringsHasBeenSet = true; m_strings.push_back(value); return *this; }
-    inline MetricValue& AddStrings(Aws::String&& value) { m_stringsHasBeenSet = true; m_strings.push_back(std::move(value)); return *this; }
-    inline MetricValue& AddStrings(const char* value) { m_stringsHasBeenSet = true; m_strings.push_back(value); return *this; }
+    template<typename StringsT = Aws::Vector<Aws::String>>
+    void SetStrings(StringsT&& value) { m_stringsHasBeenSet = true; m_strings = std::forward<StringsT>(value); }
+    template<typename StringsT = Aws::Vector<Aws::String>>
+    MetricValue& WithStrings(StringsT&& value) { SetStrings(std::forward<StringsT>(value)); return *this;}
+    template<typename StringsT = Aws::String>
+    MetricValue& AddStrings(StringsT&& value) { m_stringsHasBeenSet = true; m_strings.emplace_back(std::forward<StringsT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_count;
+    long long m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cidrs;
@@ -128,7 +126,7 @@ namespace Model
     Aws::Vector<int> m_ports;
     bool m_portsHasBeenSet = false;
 
-    double m_number;
+    double m_number{0.0};
     bool m_numberHasBeenSet = false;
 
     Aws::Vector<double> m_numbers;

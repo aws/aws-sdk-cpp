@@ -18,13 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateReportConfigurationOutputsInput::ExperimentTemplateReportConfigurationOutputsInput() : 
-    m_s3ConfigurationHasBeenSet(false)
-{
-}
-
 ExperimentTemplateReportConfigurationOutputsInput::ExperimentTemplateReportConfigurationOutputsInput(JsonView jsonValue)
-  : ExperimentTemplateReportConfigurationOutputsInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExperimentTemplateReportConfigurationOutputsInput& ExperimentTemplateReportConfi
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

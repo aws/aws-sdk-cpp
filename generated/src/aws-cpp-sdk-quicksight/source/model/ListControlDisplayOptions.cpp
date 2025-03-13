@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ListControlDisplayOptions::ListControlDisplayOptions() : 
-    m_searchOptionsHasBeenSet(false),
-    m_selectAllOptionsHasBeenSet(false),
-    m_titleOptionsHasBeenSet(false),
-    m_infoIconLabelOptionsHasBeenSet(false)
-{
-}
-
 ListControlDisplayOptions::ListControlDisplayOptions(JsonView jsonValue)
-  : ListControlDisplayOptions()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ListControlDisplayOptions& ListControlDisplayOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SearchOptions"))
   {
     m_searchOptions = jsonValue.GetObject("SearchOptions");
-
     m_searchOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectAllOptions"))
   {
     m_selectAllOptions = jsonValue.GetObject("SelectAllOptions");
-
     m_selectAllOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TitleOptions"))
   {
     m_titleOptions = jsonValue.GetObject("TitleOptions");
-
     m_titleOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfoIconLabelOptions"))
   {
     m_infoIconLabelOptions = jsonValue.GetObject("InfoIconLabelOptions");
-
     m_infoIconLabelOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

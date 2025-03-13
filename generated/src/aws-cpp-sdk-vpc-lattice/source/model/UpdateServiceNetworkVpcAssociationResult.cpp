@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateServiceNetworkVpcAssociationResult::UpdateServiceNetworkVpcAssociationResult() : 
-    m_status(ServiceNetworkVpcAssociationStatus::NOT_SET)
-{
-}
-
 UpdateServiceNetworkVpcAssociationResult::UpdateServiceNetworkVpcAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateServiceNetworkVpcAssociationResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ UpdateServiceNetworkVpcAssociationResult& UpdateServiceNetworkVpcAssociationResu
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -56,20 +47,20 @@ UpdateServiceNetworkVpcAssociationResult& UpdateServiceNetworkVpcAssociationResu
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
+    m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceNetworkVpcAssociationStatusMapper::GetServiceNetworkVpcAssociationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

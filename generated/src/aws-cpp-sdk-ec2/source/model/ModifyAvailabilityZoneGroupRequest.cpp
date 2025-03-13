@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyAvailabilityZoneGroupRequest::ModifyAvailabilityZoneGroupRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_optInStatus(ModifyAvailabilityZoneOptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyAvailabilityZoneGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

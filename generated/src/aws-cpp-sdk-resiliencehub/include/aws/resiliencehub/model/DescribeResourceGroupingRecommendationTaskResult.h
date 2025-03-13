@@ -28,7 +28,7 @@ namespace Model
   class DescribeResourceGroupingRecommendationTaskResult
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeResourceGroupingRecommendationTaskResult();
+    AWS_RESILIENCEHUB_API DescribeResourceGroupingRecommendationTaskResult() = default;
     AWS_RESILIENCEHUB_API DescribeResourceGroupingRecommendationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DescribeResourceGroupingRecommendationTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>Error that occurred while generating a grouping recommendation.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline DescribeResourceGroupingRecommendationTaskResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribeResourceGroupingRecommendationTaskResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the grouping recommendation task.</p>
      */
-    inline const Aws::String& GetGroupingId() const{ return m_groupingId; }
-    inline void SetGroupingId(const Aws::String& value) { m_groupingId = value; }
-    inline void SetGroupingId(Aws::String&& value) { m_groupingId = std::move(value); }
-    inline void SetGroupingId(const char* value) { m_groupingId.assign(value); }
-    inline DescribeResourceGroupingRecommendationTaskResult& WithGroupingId(const Aws::String& value) { SetGroupingId(value); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithGroupingId(Aws::String&& value) { SetGroupingId(std::move(value)); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithGroupingId(const char* value) { SetGroupingId(value); return *this;}
+    inline const Aws::String& GetGroupingId() const { return m_groupingId; }
+    template<typename GroupingIdT = Aws::String>
+    void SetGroupingId(GroupingIdT&& value) { m_groupingIdHasBeenSet = true; m_groupingId = std::forward<GroupingIdT>(value); }
+    template<typename GroupingIdT = Aws::String>
+    DescribeResourceGroupingRecommendationTaskResult& WithGroupingId(GroupingIdT&& value) { SetGroupingId(std::forward<GroupingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the action.</p>
      */
-    inline const ResourcesGroupingRecGenStatusType& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ResourcesGroupingRecGenStatusType& value) { m_status = value; }
-    inline void SetStatus(ResourcesGroupingRecGenStatusType&& value) { m_status = std::move(value); }
-    inline DescribeResourceGroupingRecommendationTaskResult& WithStatus(const ResourcesGroupingRecGenStatusType& value) { SetStatus(value); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithStatus(ResourcesGroupingRecGenStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline ResourcesGroupingRecGenStatusType GetStatus() const { return m_status; }
+    inline void SetStatus(ResourcesGroupingRecGenStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeResourceGroupingRecommendationTaskResult& WithStatus(ResourcesGroupingRecGenStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeResourceGroupingRecommendationTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeResourceGroupingRecommendationTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeResourceGroupingRecommendationTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_groupingId;
+    bool m_groupingIdHasBeenSet = false;
 
-    ResourcesGroupingRecGenStatusType m_status;
+    ResourcesGroupingRecGenStatusType m_status{ResourcesGroupingRecGenStatusType::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

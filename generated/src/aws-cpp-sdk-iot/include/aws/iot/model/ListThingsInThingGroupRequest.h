@@ -25,7 +25,7 @@ namespace Model
   class ListThingsInThingGroupRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListThingsInThingGroupRequest();
+    AWS_IOT_API ListThingsInThingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The thing group name.</p>
      */
-    inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+    inline const Aws::String& GetThingGroupName() const { return m_thingGroupName; }
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-    inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-    inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-    inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-    inline ListThingsInThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-    inline ListThingsInThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-    inline ListThingsInThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    template<typename ThingGroupNameT = Aws::String>
+    void SetThingGroupName(ThingGroupNameT&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::forward<ThingGroupNameT>(value); }
+    template<typename ThingGroupNameT = Aws::String>
+    ListThingsInThingGroupRequest& WithThingGroupName(ThingGroupNameT&& value) { SetThingGroupName(std::forward<ThingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>When true, list things in this thing group and in all child groups as
      * well.</p>
      */
-    inline bool GetRecursive() const{ return m_recursive; }
+    inline bool GetRecursive() const { return m_recursive; }
     inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
     inline ListThingsInThingGroupRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
@@ -69,21 +67,19 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListThingsInThingGroupRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThingsInThingGroupRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThingsInThingGroupRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThingsInThingGroupRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListThingsInThingGroupRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -93,13 +89,13 @@ namespace Model
     Aws::String m_thingGroupName;
     bool m_thingGroupNameHasBeenSet = false;
 
-    bool m_recursive;
+    bool m_recursive{false};
     bool m_recursiveHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

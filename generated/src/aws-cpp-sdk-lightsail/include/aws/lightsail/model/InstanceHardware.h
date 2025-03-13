@@ -32,7 +32,7 @@ namespace Model
   class InstanceHardware
   {
   public:
-    AWS_LIGHTSAIL_API InstanceHardware();
+    AWS_LIGHTSAIL_API InstanceHardware() = default;
     AWS_LIGHTSAIL_API InstanceHardware(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API InstanceHardware& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of vCPUs the instance has.</p>
      */
-    inline int GetCpuCount() const{ return m_cpuCount; }
+    inline int GetCpuCount() const { return m_cpuCount; }
     inline bool CpuCountHasBeenSet() const { return m_cpuCountHasBeenSet; }
     inline void SetCpuCount(int value) { m_cpuCountHasBeenSet = true; m_cpuCount = value; }
     inline InstanceHardware& WithCpuCount(int value) { SetCpuCount(value); return *this;}
@@ -52,34 +52,34 @@ namespace Model
     /**
      * <p>The disks attached to the instance.</p>
      */
-    inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
+    inline const Aws::Vector<Disk>& GetDisks() const { return m_disks; }
     inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
-    inline void SetDisks(const Aws::Vector<Disk>& value) { m_disksHasBeenSet = true; m_disks = value; }
-    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disksHasBeenSet = true; m_disks = std::move(value); }
-    inline InstanceHardware& WithDisks(const Aws::Vector<Disk>& value) { SetDisks(value); return *this;}
-    inline InstanceHardware& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
-    inline InstanceHardware& AddDisks(const Disk& value) { m_disksHasBeenSet = true; m_disks.push_back(value); return *this; }
-    inline InstanceHardware& AddDisks(Disk&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
+    template<typename DisksT = Aws::Vector<Disk>>
+    void SetDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks = std::forward<DisksT>(value); }
+    template<typename DisksT = Aws::Vector<Disk>>
+    InstanceHardware& WithDisks(DisksT&& value) { SetDisks(std::forward<DisksT>(value)); return *this;}
+    template<typename DisksT = Disk>
+    InstanceHardware& AddDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks.emplace_back(std::forward<DisksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
      */
-    inline double GetRamSizeInGb() const{ return m_ramSizeInGb; }
+    inline double GetRamSizeInGb() const { return m_ramSizeInGb; }
     inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
     inline void SetRamSizeInGb(double value) { m_ramSizeInGbHasBeenSet = true; m_ramSizeInGb = value; }
     inline InstanceHardware& WithRamSizeInGb(double value) { SetRamSizeInGb(value); return *this;}
     ///@}
   private:
 
-    int m_cpuCount;
+    int m_cpuCount{0};
     bool m_cpuCountHasBeenSet = false;
 
     Aws::Vector<Disk> m_disks;
     bool m_disksHasBeenSet = false;
 
-    double m_ramSizeInGb;
+    double m_ramSizeInGb{0.0};
     bool m_ramSizeInGbHasBeenSet = false;
   };
 

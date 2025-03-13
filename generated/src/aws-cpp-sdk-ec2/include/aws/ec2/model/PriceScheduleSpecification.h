@@ -31,7 +31,7 @@ namespace Model
   class PriceScheduleSpecification
   {
   public:
-    AWS_EC2_API PriceScheduleSpecification();
+    AWS_EC2_API PriceScheduleSpecification() = default;
     AWS_EC2_API PriceScheduleSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PriceScheduleSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
      * <p>The number of months remaining in the reservation. For example, 2 is the
      * second to the last month before the capacity reservation expires.</p>
      */
-    inline long long GetTerm() const{ return m_term; }
+    inline long long GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
     inline void SetTerm(long long value) { m_termHasBeenSet = true; m_term = value; }
     inline PriceScheduleSpecification& WithTerm(long long value) { SetTerm(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The fixed price for the term.</p>
      */
-    inline double GetPrice() const{ return m_price; }
+    inline double GetPrice() const { return m_price; }
     inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
     inline PriceScheduleSpecification& WithPrice(double value) { SetPrice(value); return *this;}
@@ -65,22 +65,20 @@ namespace Model
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
      */
-    inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+    inline CurrencyCodeValues GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(CurrencyCodeValues&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline PriceScheduleSpecification& WithCurrencyCode(const CurrencyCodeValues& value) { SetCurrencyCode(value); return *this;}
-    inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues&& value) { SetCurrencyCode(std::move(value)); return *this;}
+    inline void SetCurrencyCode(CurrencyCodeValues value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
+    inline PriceScheduleSpecification& WithCurrencyCode(CurrencyCodeValues value) { SetCurrencyCode(value); return *this;}
     ///@}
   private:
 
-    long long m_term;
+    long long m_term{0};
     bool m_termHasBeenSet = false;
 
-    double m_price;
+    double m_price{0.0};
     bool m_priceHasBeenSet = false;
 
-    CurrencyCodeValues m_currencyCode;
+    CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
     bool m_currencyCodeHasBeenSet = false;
   };
 

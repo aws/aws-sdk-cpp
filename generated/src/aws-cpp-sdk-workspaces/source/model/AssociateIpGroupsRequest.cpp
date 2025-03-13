@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateIpGroupsRequest::AssociateIpGroupsRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_groupIdsHasBeenSet(false)
-{
-}
-
 Aws::String AssociateIpGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

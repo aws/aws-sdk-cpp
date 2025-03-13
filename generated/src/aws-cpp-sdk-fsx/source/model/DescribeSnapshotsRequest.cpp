@@ -12,17 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSnapshotsRequest::DescribeSnapshotsRequest() : 
-    m_snapshotIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_includeShared(false),
-    m_includeSharedHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSnapshotsRequest::SerializePayload() const
 {
   JsonValue payload;

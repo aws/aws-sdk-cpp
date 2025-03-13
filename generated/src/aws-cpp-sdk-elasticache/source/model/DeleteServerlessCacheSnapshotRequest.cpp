@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteServerlessCacheSnapshotRequest::DeleteServerlessCacheSnapshotRequest() : 
-    m_serverlessCacheSnapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServerlessCacheSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

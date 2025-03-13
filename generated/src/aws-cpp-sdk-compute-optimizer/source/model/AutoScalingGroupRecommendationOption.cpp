@@ -18,23 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption() : 
-    m_configurationHasBeenSet(false),
-    m_instanceGpuInfoHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_performanceRisk(0.0),
-    m_performanceRiskHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false),
-    m_migrationEffort(MigrationEffort::NOT_SET),
-    m_migrationEffortHasBeenSet(false)
-{
-}
-
 AutoScalingGroupRecommendationOption::AutoScalingGroupRecommendationOption(JsonView jsonValue)
-  : AutoScalingGroupRecommendationOption()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ AutoScalingGroupRecommendationOption& AutoScalingGroupRecommendationOption::oper
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceGpuInfo"))
   {
     m_instanceGpuInfo = jsonValue.GetObject("instanceGpuInfo");
-
     m_instanceGpuInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectedUtilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
@@ -64,42 +44,31 @@ AutoScalingGroupRecommendationOption& AutoScalingGroupRecommendationOption::oper
     }
     m_projectedUtilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceRisk"))
   {
     m_performanceRisk = jsonValue.GetDouble("performanceRisk");
-
     m_performanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
   {
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("migrationEffort"))
   {
     m_migrationEffort = MigrationEffortMapper::GetMigrationEffortForName(jsonValue.GetString("migrationEffort"));
-
     m_migrationEffortHasBeenSet = true;
   }
-
   return *this;
 }
 

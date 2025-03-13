@@ -34,7 +34,7 @@ namespace Model
   class ExecutionEngineConfig
   {
   public:
-    AWS_EMR_API ExecutionEngineConfig();
+    AWS_EMR_API ExecutionEngineConfig() = default;
     AWS_EMR_API ExecutionEngineConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ExecutionEngineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The unique identifier of the execution engine. For an Amazon EMR cluster,
      * this is the cluster ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ExecutionEngineConfig& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ExecutionEngineConfig& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ExecutionEngineConfig& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ExecutionEngineConfig& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * <p>The type of execution engine. A value of <code>EMR</code> specifies an Amazon
      * EMR cluster.</p>
      */
-    inline const ExecutionEngineType& GetType() const{ return m_type; }
+    inline ExecutionEngineType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ExecutionEngineType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ExecutionEngineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ExecutionEngineConfig& WithType(const ExecutionEngineType& value) { SetType(value); return *this;}
-    inline ExecutionEngineConfig& WithType(ExecutionEngineType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ExecutionEngineType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ExecutionEngineConfig& WithType(ExecutionEngineType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,35 +73,31 @@ namespace Model
      * Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>EMR Management
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetMasterInstanceSecurityGroupId() const{ return m_masterInstanceSecurityGroupId; }
+    inline const Aws::String& GetMasterInstanceSecurityGroupId() const { return m_masterInstanceSecurityGroupId; }
     inline bool MasterInstanceSecurityGroupIdHasBeenSet() const { return m_masterInstanceSecurityGroupIdHasBeenSet; }
-    inline void SetMasterInstanceSecurityGroupId(const Aws::String& value) { m_masterInstanceSecurityGroupIdHasBeenSet = true; m_masterInstanceSecurityGroupId = value; }
-    inline void SetMasterInstanceSecurityGroupId(Aws::String&& value) { m_masterInstanceSecurityGroupIdHasBeenSet = true; m_masterInstanceSecurityGroupId = std::move(value); }
-    inline void SetMasterInstanceSecurityGroupId(const char* value) { m_masterInstanceSecurityGroupIdHasBeenSet = true; m_masterInstanceSecurityGroupId.assign(value); }
-    inline ExecutionEngineConfig& WithMasterInstanceSecurityGroupId(const Aws::String& value) { SetMasterInstanceSecurityGroupId(value); return *this;}
-    inline ExecutionEngineConfig& WithMasterInstanceSecurityGroupId(Aws::String&& value) { SetMasterInstanceSecurityGroupId(std::move(value)); return *this;}
-    inline ExecutionEngineConfig& WithMasterInstanceSecurityGroupId(const char* value) { SetMasterInstanceSecurityGroupId(value); return *this;}
+    template<typename MasterInstanceSecurityGroupIdT = Aws::String>
+    void SetMasterInstanceSecurityGroupId(MasterInstanceSecurityGroupIdT&& value) { m_masterInstanceSecurityGroupIdHasBeenSet = true; m_masterInstanceSecurityGroupId = std::forward<MasterInstanceSecurityGroupIdT>(value); }
+    template<typename MasterInstanceSecurityGroupIdT = Aws::String>
+    ExecutionEngineConfig& WithMasterInstanceSecurityGroupId(MasterInstanceSecurityGroupIdT&& value) { SetMasterInstanceSecurityGroupId(std::forward<MasterInstanceSecurityGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The execution role ARN required for the notebook execution.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline ExecutionEngineConfig& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline ExecutionEngineConfig& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline ExecutionEngineConfig& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    ExecutionEngineConfig& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ExecutionEngineType m_type;
+    ExecutionEngineType m_type{ExecutionEngineType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_masterInstanceSecurityGroupId;

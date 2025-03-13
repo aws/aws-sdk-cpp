@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-GitFilePathFilterCriteria::GitFilePathFilterCriteria() : 
-    m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
-{
-}
-
 GitFilePathFilterCriteria::GitFilePathFilterCriteria(JsonView jsonValue)
-  : GitFilePathFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GitFilePathFilterCriteria& GitFilePathFilterCriteria::operator =(JsonView jsonVa
     }
     m_includesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludes"))
   {
     Aws::Utils::Array<JsonView> excludesJsonList = jsonValue.GetArray("excludes");
@@ -51,7 +43,6 @@ GitFilePathFilterCriteria& GitFilePathFilterCriteria::operator =(JsonView jsonVa
     }
     m_excludesHasBeenSet = true;
   }
-
   return *this;
 }
 

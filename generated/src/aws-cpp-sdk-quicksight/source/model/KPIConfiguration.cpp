@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIConfiguration::KPIConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_kPIOptionsHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 KPIConfiguration::KPIConfiguration(JsonView jsonValue)
-  : KPIConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ KPIConfiguration& KPIConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KPIOptions"))
   {
     m_kPIOptions = jsonValue.GetObject("KPIOptions");
-
     m_kPIOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

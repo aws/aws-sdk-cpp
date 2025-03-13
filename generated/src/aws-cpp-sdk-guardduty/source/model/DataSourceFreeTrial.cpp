@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DataSourceFreeTrial::DataSourceFreeTrial() : 
-    m_freeTrialDaysRemaining(0),
-    m_freeTrialDaysRemainingHasBeenSet(false)
-{
-}
-
 DataSourceFreeTrial::DataSourceFreeTrial(JsonView jsonValue)
-  : DataSourceFreeTrial()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataSourceFreeTrial& DataSourceFreeTrial::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("freeTrialDaysRemaining"))
   {
     m_freeTrialDaysRemaining = jsonValue.GetInteger("freeTrialDaysRemaining");
-
     m_freeTrialDaysRemainingHasBeenSet = true;
   }
-
   return *this;
 }
 

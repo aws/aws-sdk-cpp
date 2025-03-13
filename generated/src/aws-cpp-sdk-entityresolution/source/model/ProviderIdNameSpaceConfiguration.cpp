@@ -18,15 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ProviderIdNameSpaceConfiguration::ProviderIdNameSpaceConfiguration() : 
-    m_descriptionHasBeenSet(false),
-    m_providerSourceConfigurationDefinitionHasBeenSet(false),
-    m_providerTargetConfigurationDefinitionHasBeenSet(false)
-{
-}
-
 ProviderIdNameSpaceConfiguration::ProviderIdNameSpaceConfiguration(JsonView jsonValue)
-  : ProviderIdNameSpaceConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ProviderIdNameSpaceConfiguration& ProviderIdNameSpaceConfiguration::operator =(J
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerSourceConfigurationDefinition"))
   {
     m_providerSourceConfigurationDefinition = jsonValue.GetObject("providerSourceConfigurationDefinition");
-
     m_providerSourceConfigurationDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerTargetConfigurationDefinition"))
   {
     m_providerTargetConfigurationDefinition = jsonValue.GetObject("providerTargetConfigurationDefinition");
-
     m_providerTargetConfigurationDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

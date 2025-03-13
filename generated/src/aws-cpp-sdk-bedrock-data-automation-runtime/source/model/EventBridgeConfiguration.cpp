@@ -18,14 +18,7 @@ namespace BedrockDataAutomationRuntime
 namespace Model
 {
 
-EventBridgeConfiguration::EventBridgeConfiguration() : 
-    m_eventBridgeEnabled(false),
-    m_eventBridgeEnabledHasBeenSet(false)
-{
-}
-
 EventBridgeConfiguration::EventBridgeConfiguration(JsonView jsonValue)
-  : EventBridgeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EventBridgeConfiguration& EventBridgeConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("eventBridgeEnabled"))
   {
     m_eventBridgeEnabled = jsonValue.GetBool("eventBridgeEnabled");
-
     m_eventBridgeEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

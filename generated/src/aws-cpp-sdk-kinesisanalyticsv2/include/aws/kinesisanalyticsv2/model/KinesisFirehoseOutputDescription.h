@@ -33,7 +33,7 @@ namespace Model
   class KinesisFirehoseOutputDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputDescription();
+    AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputDescription() = default;
     AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline KinesisFirehoseOutputDescription& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline KinesisFirehoseOutputDescription& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline KinesisFirehoseOutputDescription& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    KinesisFirehoseOutputDescription& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * created with the current API version have an application-level service execution
      * role rather than a resource-level role.</p> 
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline KinesisFirehoseOutputDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline KinesisFirehoseOutputDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline KinesisFirehoseOutputDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    KinesisFirehoseOutputDescription& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
   private:
 

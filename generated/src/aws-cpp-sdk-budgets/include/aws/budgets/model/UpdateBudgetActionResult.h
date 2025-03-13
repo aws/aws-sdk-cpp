@@ -28,76 +28,75 @@ namespace Model
   class UpdateBudgetActionResult
   {
   public:
-    AWS_BUDGETS_API UpdateBudgetActionResult();
+    AWS_BUDGETS_API UpdateBudgetActionResult() = default;
     AWS_BUDGETS_API UpdateBudgetActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BUDGETS_API UpdateBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
-    inline UpdateBudgetActionResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline UpdateBudgetActionResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline UpdateBudgetActionResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    UpdateBudgetActionResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetName.assign(value); }
-    inline UpdateBudgetActionResult& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline UpdateBudgetActionResult& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline UpdateBudgetActionResult& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    UpdateBudgetActionResult& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The previous action resource information. </p>
      */
-    inline const Action& GetOldAction() const{ return m_oldAction; }
-    inline void SetOldAction(const Action& value) { m_oldAction = value; }
-    inline void SetOldAction(Action&& value) { m_oldAction = std::move(value); }
-    inline UpdateBudgetActionResult& WithOldAction(const Action& value) { SetOldAction(value); return *this;}
-    inline UpdateBudgetActionResult& WithOldAction(Action&& value) { SetOldAction(std::move(value)); return *this;}
+    inline const Action& GetOldAction() const { return m_oldAction; }
+    template<typename OldActionT = Action>
+    void SetOldAction(OldActionT&& value) { m_oldActionHasBeenSet = true; m_oldAction = std::forward<OldActionT>(value); }
+    template<typename OldActionT = Action>
+    UpdateBudgetActionResult& WithOldAction(OldActionT&& value) { SetOldAction(std::forward<OldActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The updated action resource information. </p>
      */
-    inline const Action& GetNewAction() const{ return m_newAction; }
-    inline void SetNewAction(const Action& value) { m_newAction = value; }
-    inline void SetNewAction(Action&& value) { m_newAction = std::move(value); }
-    inline UpdateBudgetActionResult& WithNewAction(const Action& value) { SetNewAction(value); return *this;}
-    inline UpdateBudgetActionResult& WithNewAction(Action&& value) { SetNewAction(std::move(value)); return *this;}
+    inline const Action& GetNewAction() const { return m_newAction; }
+    template<typename NewActionT = Action>
+    void SetNewAction(NewActionT&& value) { m_newActionHasBeenSet = true; m_newAction = std::forward<NewActionT>(value); }
+    template<typename NewActionT = Action>
+    UpdateBudgetActionResult& WithNewAction(NewActionT&& value) { SetNewAction(std::forward<NewActionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateBudgetActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateBudgetActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateBudgetActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateBudgetActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_budgetName;
+    bool m_budgetNameHasBeenSet = false;
 
     Action m_oldAction;
+    bool m_oldActionHasBeenSet = false;
 
     Action m_newAction;
+    bool m_newActionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

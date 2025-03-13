@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDeploymentGroupsResult::ListDeploymentGroupsResult()
-{
-}
-
 ListDeploymentGroupsResult::ListDeploymentGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListDeploymentGroupsResult& ListDeploymentGroupsResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
+    m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentGroups"))
   {
     Aws::Utils::Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
@@ -42,20 +37,20 @@ ListDeploymentGroupsResult& ListDeploymentGroupsResult::operator =(const Aws::Am
     {
       m_deploymentGroups.push_back(deploymentGroupsJsonList[deploymentGroupsIndex].AsString());
     }
+    m_deploymentGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

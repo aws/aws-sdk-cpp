@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InferenceOutputConfiguration::InferenceOutputConfiguration() : 
-    m_s3OutputConfigurationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 InferenceOutputConfiguration::InferenceOutputConfiguration(JsonView jsonValue)
-  : InferenceOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InferenceOutputConfiguration& InferenceOutputConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("S3OutputConfiguration"))
   {
     m_s3OutputConfiguration = jsonValue.GetObject("S3OutputConfiguration");
-
     m_s3OutputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

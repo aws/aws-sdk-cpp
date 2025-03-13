@@ -33,7 +33,7 @@ namespace Model
   class WordCloudFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API WordCloudFieldWells();
+    AWS_QUICKSIGHT_API WordCloudFieldWells() = default;
     AWS_QUICKSIGHT_API WordCloudFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WordCloudFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The aggregated field wells of a word cloud.</p>
      */
-    inline const WordCloudAggregatedFieldWells& GetWordCloudAggregatedFieldWells() const{ return m_wordCloudAggregatedFieldWells; }
+    inline const WordCloudAggregatedFieldWells& GetWordCloudAggregatedFieldWells() const { return m_wordCloudAggregatedFieldWells; }
     inline bool WordCloudAggregatedFieldWellsHasBeenSet() const { return m_wordCloudAggregatedFieldWellsHasBeenSet; }
-    inline void SetWordCloudAggregatedFieldWells(const WordCloudAggregatedFieldWells& value) { m_wordCloudAggregatedFieldWellsHasBeenSet = true; m_wordCloudAggregatedFieldWells = value; }
-    inline void SetWordCloudAggregatedFieldWells(WordCloudAggregatedFieldWells&& value) { m_wordCloudAggregatedFieldWellsHasBeenSet = true; m_wordCloudAggregatedFieldWells = std::move(value); }
-    inline WordCloudFieldWells& WithWordCloudAggregatedFieldWells(const WordCloudAggregatedFieldWells& value) { SetWordCloudAggregatedFieldWells(value); return *this;}
-    inline WordCloudFieldWells& WithWordCloudAggregatedFieldWells(WordCloudAggregatedFieldWells&& value) { SetWordCloudAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename WordCloudAggregatedFieldWellsT = WordCloudAggregatedFieldWells>
+    void SetWordCloudAggregatedFieldWells(WordCloudAggregatedFieldWellsT&& value) { m_wordCloudAggregatedFieldWellsHasBeenSet = true; m_wordCloudAggregatedFieldWells = std::forward<WordCloudAggregatedFieldWellsT>(value); }
+    template<typename WordCloudAggregatedFieldWellsT = WordCloudAggregatedFieldWells>
+    WordCloudFieldWells& WithWordCloudAggregatedFieldWells(WordCloudAggregatedFieldWellsT&& value) { SetWordCloudAggregatedFieldWells(std::forward<WordCloudAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

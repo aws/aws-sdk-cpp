@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FinalResponse::FinalResponse() : 
-    m_textHasBeenSet(false)
-{
-}
-
 FinalResponse::FinalResponse(JsonView jsonValue)
-  : FinalResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FinalResponse& FinalResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

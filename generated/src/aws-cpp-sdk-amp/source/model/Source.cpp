@@ -18,13 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-Source::Source() : 
-    m_eksConfigurationHasBeenSet(false)
-{
-}
-
 Source::Source(JsonView jsonValue)
-  : Source()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Source& Source::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eksConfiguration"))
   {
     m_eksConfiguration = jsonValue.GetObject("eksConfiguration");
-
     m_eksConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,25 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGameServerGroupRequest::CreateGameServerGroupRequest() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_instanceDefinitionsHasBeenSet(false),
-    m_autoScalingPolicyHasBeenSet(false),
-    m_balancingStrategy(BalancingStrategy::NOT_SET),
-    m_balancingStrategyHasBeenSet(false),
-    m_gameServerProtectionPolicy(GameServerProtectionPolicy::NOT_SET),
-    m_gameServerProtectionPolicyHasBeenSet(false),
-    m_vpcSubnetsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGameServerGroupRequest::SerializePayload() const
 {
   JsonValue payload;

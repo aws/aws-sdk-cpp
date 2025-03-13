@@ -44,7 +44,7 @@ namespace Model
   class Notification
   {
   public:
-    AWS_BUDGETS_API Notification();
+    AWS_BUDGETS_API Notification() = default;
     AWS_BUDGETS_API Notification(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,24 +56,20 @@ namespace Model
      * (<code>ACTUAL</code>) or for how much that you're forecasted to spend
      * (<code>FORECASTED</code>).</p>
      */
-    inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+    inline NotificationType GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline Notification& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-    inline Notification& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    inline void SetNotificationType(NotificationType value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline Notification& WithNotificationType(NotificationType value) { SetNotificationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comparison that's used for this notification.</p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline Notification& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline Notification& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline Notification& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * the budgeted amount. The maximum limit for your threshold is 1,000,000% above
      * the budgeted amount.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline Notification& WithThreshold(double value) { SetThreshold(value); return *this;}
@@ -99,12 +95,10 @@ namespace Model
      * for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, Amazon
      * Web Services notifies you when you go over 160 dollars.</p>
      */
-    inline const ThresholdType& GetThresholdType() const{ return m_thresholdType; }
+    inline ThresholdType GetThresholdType() const { return m_thresholdType; }
     inline bool ThresholdTypeHasBeenSet() const { return m_thresholdTypeHasBeenSet; }
-    inline void SetThresholdType(const ThresholdType& value) { m_thresholdTypeHasBeenSet = true; m_thresholdType = value; }
-    inline void SetThresholdType(ThresholdType&& value) { m_thresholdTypeHasBeenSet = true; m_thresholdType = std::move(value); }
-    inline Notification& WithThresholdType(const ThresholdType& value) { SetThresholdType(value); return *this;}
-    inline Notification& WithThresholdType(ThresholdType&& value) { SetThresholdType(std::move(value)); return *this;}
+    inline void SetThresholdType(ThresholdType value) { m_thresholdTypeHasBeenSet = true; m_thresholdType = value; }
+    inline Notification& WithThresholdType(ThresholdType value) { SetThresholdType(value); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +107,26 @@ namespace Model
      * in the <code>ALARM</code> state, you passed the set threshold for the
      * budget.</p>
      */
-    inline const NotificationState& GetNotificationState() const{ return m_notificationState; }
+    inline NotificationState GetNotificationState() const { return m_notificationState; }
     inline bool NotificationStateHasBeenSet() const { return m_notificationStateHasBeenSet; }
-    inline void SetNotificationState(const NotificationState& value) { m_notificationStateHasBeenSet = true; m_notificationState = value; }
-    inline void SetNotificationState(NotificationState&& value) { m_notificationStateHasBeenSet = true; m_notificationState = std::move(value); }
-    inline Notification& WithNotificationState(const NotificationState& value) { SetNotificationState(value); return *this;}
-    inline Notification& WithNotificationState(NotificationState&& value) { SetNotificationState(std::move(value)); return *this;}
+    inline void SetNotificationState(NotificationState value) { m_notificationStateHasBeenSet = true; m_notificationState = value; }
+    inline Notification& WithNotificationState(NotificationState value) { SetNotificationState(value); return *this;}
     ///@}
   private:
 
-    NotificationType m_notificationType;
+    NotificationType m_notificationType{NotificationType::NOT_SET};
     bool m_notificationTypeHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
 
-    ThresholdType m_thresholdType;
+    ThresholdType m_thresholdType{ThresholdType::NOT_SET};
     bool m_thresholdTypeHasBeenSet = false;
 
-    NotificationState m_notificationState;
+    NotificationState m_notificationState{NotificationState::NOT_SET};
     bool m_notificationStateHasBeenSet = false;
   };
 

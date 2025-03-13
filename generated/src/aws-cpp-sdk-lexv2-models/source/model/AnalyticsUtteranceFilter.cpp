@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsUtteranceFilter::AnalyticsUtteranceFilter() : 
-    m_name(AnalyticsUtteranceFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(AnalyticsFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 AnalyticsUtteranceFilter::AnalyticsUtteranceFilter(JsonView jsonValue)
-  : AnalyticsUtteranceFilter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AnalyticsUtteranceFilter& AnalyticsUtteranceFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsUtteranceFilterNameMapper::GetAnalyticsUtteranceFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = AnalyticsFilterOperatorMapper::GetAnalyticsFilterOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ AnalyticsUtteranceFilter& AnalyticsUtteranceFilter::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

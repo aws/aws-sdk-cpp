@@ -12,12 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchEvaluateGeofencesRequest::BatchEvaluateGeofencesRequest() : 
-    m_collectionNameHasBeenSet(false),
-    m_devicePositionUpdatesHasBeenSet(false)
-{
-}
-
 Aws::String BatchEvaluateGeofencesRequest::SerializePayload() const
 {
   JsonValue payload;

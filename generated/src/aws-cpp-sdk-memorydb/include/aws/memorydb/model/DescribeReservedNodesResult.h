@@ -29,7 +29,7 @@ namespace Model
   class DescribeReservedNodesResult
   {
   public:
-    AWS_MEMORYDB_API DescribeReservedNodesResult();
+    AWS_MEMORYDB_API DescribeReservedNodesResult() = default;
     AWS_MEMORYDB_API DescribeReservedNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API DescribeReservedNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * MaxRecords.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReservedNodesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReservedNodesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReservedNodesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReservedNodesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * <p>Returns information about reserved nodes for this account, or about a
      * specified reserved node.</p>
      */
-    inline const Aws::Vector<ReservedNode>& GetReservedNodes() const{ return m_reservedNodes; }
-    inline void SetReservedNodes(const Aws::Vector<ReservedNode>& value) { m_reservedNodes = value; }
-    inline void SetReservedNodes(Aws::Vector<ReservedNode>&& value) { m_reservedNodes = std::move(value); }
-    inline DescribeReservedNodesResult& WithReservedNodes(const Aws::Vector<ReservedNode>& value) { SetReservedNodes(value); return *this;}
-    inline DescribeReservedNodesResult& WithReservedNodes(Aws::Vector<ReservedNode>&& value) { SetReservedNodes(std::move(value)); return *this;}
-    inline DescribeReservedNodesResult& AddReservedNodes(const ReservedNode& value) { m_reservedNodes.push_back(value); return *this; }
-    inline DescribeReservedNodesResult& AddReservedNodes(ReservedNode&& value) { m_reservedNodes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedNode>& GetReservedNodes() const { return m_reservedNodes; }
+    template<typename ReservedNodesT = Aws::Vector<ReservedNode>>
+    void SetReservedNodes(ReservedNodesT&& value) { m_reservedNodesHasBeenSet = true; m_reservedNodes = std::forward<ReservedNodesT>(value); }
+    template<typename ReservedNodesT = Aws::Vector<ReservedNode>>
+    DescribeReservedNodesResult& WithReservedNodes(ReservedNodesT&& value) { SetReservedNodes(std::forward<ReservedNodesT>(value)); return *this;}
+    template<typename ReservedNodesT = ReservedNode>
+    DescribeReservedNodesResult& AddReservedNodes(ReservedNodesT&& value) { m_reservedNodesHasBeenSet = true; m_reservedNodes.emplace_back(std::forward<ReservedNodesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReservedNodesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReservedNodesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReservedNodesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReservedNodesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ReservedNode> m_reservedNodes;
+    bool m_reservedNodesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

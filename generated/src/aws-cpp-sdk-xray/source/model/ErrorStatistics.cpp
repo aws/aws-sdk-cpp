@@ -18,18 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ErrorStatistics::ErrorStatistics() : 
-    m_throttleCount(0),
-    m_throttleCountHasBeenSet(false),
-    m_otherCount(0),
-    m_otherCountHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
-{
-}
-
 ErrorStatistics::ErrorStatistics(JsonView jsonValue)
-  : ErrorStatistics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ErrorStatistics& ErrorStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ThrottleCount"))
   {
     m_throttleCount = jsonValue.GetInt64("ThrottleCount");
-
     m_throttleCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherCount"))
   {
     m_otherCount = jsonValue.GetInt64("OtherCount");
-
     m_otherCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

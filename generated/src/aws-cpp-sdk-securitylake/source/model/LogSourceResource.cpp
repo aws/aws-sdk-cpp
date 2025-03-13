@@ -18,14 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-LogSourceResource::LogSourceResource() : 
-    m_awsLogSourceHasBeenSet(false),
-    m_customLogSourceHasBeenSet(false)
-{
-}
-
 LogSourceResource::LogSourceResource(JsonView jsonValue)
-  : LogSourceResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LogSourceResource& LogSourceResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsLogSource"))
   {
     m_awsLogSource = jsonValue.GetObject("awsLogSource");
-
     m_awsLogSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customLogSource"))
   {
     m_customLogSource = jsonValue.GetObject("customLogSource");
-
     m_customLogSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

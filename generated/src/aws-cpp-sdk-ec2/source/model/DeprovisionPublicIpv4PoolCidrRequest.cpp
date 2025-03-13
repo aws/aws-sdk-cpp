@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeprovisionPublicIpv4PoolCidrRequest::DeprovisionPublicIpv4PoolCidrRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_cidrHasBeenSet(false)
-{
-}
-
 Aws::String DeprovisionPublicIpv4PoolCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

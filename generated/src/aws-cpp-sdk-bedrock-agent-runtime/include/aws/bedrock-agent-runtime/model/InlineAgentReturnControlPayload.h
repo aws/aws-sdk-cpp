@@ -36,7 +36,7 @@ namespace Model
   class InlineAgentReturnControlPayload
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InlineAgentReturnControlPayload();
+    AWS_BEDROCKAGENTRUNTIME_API InlineAgentReturnControlPayload() = default;
     AWS_BEDROCKAGENTRUNTIME_API InlineAgentReturnControlPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InlineAgentReturnControlPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The identifier of the action group invocation. </p>
      */
-    inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
     inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-    inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
-    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
-    inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
-    inline InlineAgentReturnControlPayload& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
-    inline InlineAgentReturnControlPayload& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
-    inline InlineAgentReturnControlPayload& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
+    template<typename InvocationIdT = Aws::String>
+    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
+    template<typename InvocationIdT = Aws::String>
+    InlineAgentReturnControlPayload& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * that need to be sent into the API operation or function, based on what the agent
      * determines from its session with the user.</p>
      */
-    inline const Aws::Vector<InvocationInputMember>& GetInvocationInputs() const{ return m_invocationInputs; }
+    inline const Aws::Vector<InvocationInputMember>& GetInvocationInputs() const { return m_invocationInputs; }
     inline bool InvocationInputsHasBeenSet() const { return m_invocationInputsHasBeenSet; }
-    inline void SetInvocationInputs(const Aws::Vector<InvocationInputMember>& value) { m_invocationInputsHasBeenSet = true; m_invocationInputs = value; }
-    inline void SetInvocationInputs(Aws::Vector<InvocationInputMember>&& value) { m_invocationInputsHasBeenSet = true; m_invocationInputs = std::move(value); }
-    inline InlineAgentReturnControlPayload& WithInvocationInputs(const Aws::Vector<InvocationInputMember>& value) { SetInvocationInputs(value); return *this;}
-    inline InlineAgentReturnControlPayload& WithInvocationInputs(Aws::Vector<InvocationInputMember>&& value) { SetInvocationInputs(std::move(value)); return *this;}
-    inline InlineAgentReturnControlPayload& AddInvocationInputs(const InvocationInputMember& value) { m_invocationInputsHasBeenSet = true; m_invocationInputs.push_back(value); return *this; }
-    inline InlineAgentReturnControlPayload& AddInvocationInputs(InvocationInputMember&& value) { m_invocationInputsHasBeenSet = true; m_invocationInputs.push_back(std::move(value)); return *this; }
+    template<typename InvocationInputsT = Aws::Vector<InvocationInputMember>>
+    void SetInvocationInputs(InvocationInputsT&& value) { m_invocationInputsHasBeenSet = true; m_invocationInputs = std::forward<InvocationInputsT>(value); }
+    template<typename InvocationInputsT = Aws::Vector<InvocationInputMember>>
+    InlineAgentReturnControlPayload& WithInvocationInputs(InvocationInputsT&& value) { SetInvocationInputs(std::forward<InvocationInputsT>(value)); return *this;}
+    template<typename InvocationInputsT = InvocationInputMember>
+    InlineAgentReturnControlPayload& AddInvocationInputs(InvocationInputsT&& value) { m_invocationInputsHasBeenSet = true; m_invocationInputs.emplace_back(std::forward<InvocationInputsT>(value)); return *this; }
     ///@}
   private:
 

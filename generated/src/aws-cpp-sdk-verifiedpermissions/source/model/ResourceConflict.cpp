@@ -18,15 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-ResourceConflict::ResourceConflict() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceConflict::ResourceConflict(JsonView jsonValue)
-  : ResourceConflict()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceConflict& ResourceConflict::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

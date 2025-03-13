@@ -33,7 +33,7 @@ namespace Model
   class GetDashboardResult
   {
   public:
-    AWS_CLOUDTRAIL_API GetDashboardResult();
+    AWS_CLOUDTRAIL_API GetDashboardResult() = default;
     AWS_CLOUDTRAIL_API GetDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API GetDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,151 +42,150 @@ namespace Model
     /**
      * <p> The ARN for the dashboard. </p>
      */
-    inline const Aws::String& GetDashboardArn() const{ return m_dashboardArn; }
-    inline void SetDashboardArn(const Aws::String& value) { m_dashboardArn = value; }
-    inline void SetDashboardArn(Aws::String&& value) { m_dashboardArn = std::move(value); }
-    inline void SetDashboardArn(const char* value) { m_dashboardArn.assign(value); }
-    inline GetDashboardResult& WithDashboardArn(const Aws::String& value) { SetDashboardArn(value); return *this;}
-    inline GetDashboardResult& WithDashboardArn(Aws::String&& value) { SetDashboardArn(std::move(value)); return *this;}
-    inline GetDashboardResult& WithDashboardArn(const char* value) { SetDashboardArn(value); return *this;}
+    inline const Aws::String& GetDashboardArn() const { return m_dashboardArn; }
+    template<typename DashboardArnT = Aws::String>
+    void SetDashboardArn(DashboardArnT&& value) { m_dashboardArnHasBeenSet = true; m_dashboardArn = std::forward<DashboardArnT>(value); }
+    template<typename DashboardArnT = Aws::String>
+    GetDashboardResult& WithDashboardArn(DashboardArnT&& value) { SetDashboardArn(std::forward<DashboardArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of dashboard. </p>
      */
-    inline const DashboardType& GetType() const{ return m_type; }
-    inline void SetType(const DashboardType& value) { m_type = value; }
-    inline void SetType(DashboardType&& value) { m_type = std::move(value); }
-    inline GetDashboardResult& WithType(const DashboardType& value) { SetType(value); return *this;}
-    inline GetDashboardResult& WithType(DashboardType&& value) { SetType(std::move(value)); return *this;}
+    inline DashboardType GetType() const { return m_type; }
+    inline void SetType(DashboardType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetDashboardResult& WithType(DashboardType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of the dashboard. </p>
      */
-    inline const DashboardStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DashboardStatus& value) { m_status = value; }
-    inline void SetStatus(DashboardStatus&& value) { m_status = std::move(value); }
-    inline GetDashboardResult& WithStatus(const DashboardStatus& value) { SetStatus(value); return *this;}
-    inline GetDashboardResult& WithStatus(DashboardStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DashboardStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DashboardStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDashboardResult& WithStatus(DashboardStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An array of widgets for the dashboard. </p>
      */
-    inline const Aws::Vector<Widget>& GetWidgets() const{ return m_widgets; }
-    inline void SetWidgets(const Aws::Vector<Widget>& value) { m_widgets = value; }
-    inline void SetWidgets(Aws::Vector<Widget>&& value) { m_widgets = std::move(value); }
-    inline GetDashboardResult& WithWidgets(const Aws::Vector<Widget>& value) { SetWidgets(value); return *this;}
-    inline GetDashboardResult& WithWidgets(Aws::Vector<Widget>&& value) { SetWidgets(std::move(value)); return *this;}
-    inline GetDashboardResult& AddWidgets(const Widget& value) { m_widgets.push_back(value); return *this; }
-    inline GetDashboardResult& AddWidgets(Widget&& value) { m_widgets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Widget>& GetWidgets() const { return m_widgets; }
+    template<typename WidgetsT = Aws::Vector<Widget>>
+    void SetWidgets(WidgetsT&& value) { m_widgetsHasBeenSet = true; m_widgets = std::forward<WidgetsT>(value); }
+    template<typename WidgetsT = Aws::Vector<Widget>>
+    GetDashboardResult& WithWidgets(WidgetsT&& value) { SetWidgets(std::forward<WidgetsT>(value)); return *this;}
+    template<typename WidgetsT = Widget>
+    GetDashboardResult& AddWidgets(WidgetsT&& value) { m_widgetsHasBeenSet = true; m_widgets.emplace_back(std::forward<WidgetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The refresh schedule for the dashboard, if configured. </p>
      */
-    inline const RefreshSchedule& GetRefreshSchedule() const{ return m_refreshSchedule; }
-    inline void SetRefreshSchedule(const RefreshSchedule& value) { m_refreshSchedule = value; }
-    inline void SetRefreshSchedule(RefreshSchedule&& value) { m_refreshSchedule = std::move(value); }
-    inline GetDashboardResult& WithRefreshSchedule(const RefreshSchedule& value) { SetRefreshSchedule(value); return *this;}
-    inline GetDashboardResult& WithRefreshSchedule(RefreshSchedule&& value) { SetRefreshSchedule(std::move(value)); return *this;}
+    inline const RefreshSchedule& GetRefreshSchedule() const { return m_refreshSchedule; }
+    template<typename RefreshScheduleT = RefreshSchedule>
+    void SetRefreshSchedule(RefreshScheduleT&& value) { m_refreshScheduleHasBeenSet = true; m_refreshSchedule = std::forward<RefreshScheduleT>(value); }
+    template<typename RefreshScheduleT = RefreshSchedule>
+    GetDashboardResult& WithRefreshSchedule(RefreshScheduleT&& value) { SetRefreshSchedule(std::forward<RefreshScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp that shows when the dashboard was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetDashboardResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetDashboardResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetDashboardResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp that shows when the dashboard was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestamp = std::move(value); }
-    inline GetDashboardResult& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline GetDashboardResult& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    GetDashboardResult& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the last dashboard refresh. </p>
      */
-    inline const Aws::String& GetLastRefreshId() const{ return m_lastRefreshId; }
-    inline void SetLastRefreshId(const Aws::String& value) { m_lastRefreshId = value; }
-    inline void SetLastRefreshId(Aws::String&& value) { m_lastRefreshId = std::move(value); }
-    inline void SetLastRefreshId(const char* value) { m_lastRefreshId.assign(value); }
-    inline GetDashboardResult& WithLastRefreshId(const Aws::String& value) { SetLastRefreshId(value); return *this;}
-    inline GetDashboardResult& WithLastRefreshId(Aws::String&& value) { SetLastRefreshId(std::move(value)); return *this;}
-    inline GetDashboardResult& WithLastRefreshId(const char* value) { SetLastRefreshId(value); return *this;}
+    inline const Aws::String& GetLastRefreshId() const { return m_lastRefreshId; }
+    template<typename LastRefreshIdT = Aws::String>
+    void SetLastRefreshId(LastRefreshIdT&& value) { m_lastRefreshIdHasBeenSet = true; m_lastRefreshId = std::forward<LastRefreshIdT>(value); }
+    template<typename LastRefreshIdT = Aws::String>
+    GetDashboardResult& WithLastRefreshId(LastRefreshIdT&& value) { SetLastRefreshId(std::forward<LastRefreshIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Provides information about failures for the last scheduled refresh. </p>
      */
-    inline const Aws::String& GetLastRefreshFailureReason() const{ return m_lastRefreshFailureReason; }
-    inline void SetLastRefreshFailureReason(const Aws::String& value) { m_lastRefreshFailureReason = value; }
-    inline void SetLastRefreshFailureReason(Aws::String&& value) { m_lastRefreshFailureReason = std::move(value); }
-    inline void SetLastRefreshFailureReason(const char* value) { m_lastRefreshFailureReason.assign(value); }
-    inline GetDashboardResult& WithLastRefreshFailureReason(const Aws::String& value) { SetLastRefreshFailureReason(value); return *this;}
-    inline GetDashboardResult& WithLastRefreshFailureReason(Aws::String&& value) { SetLastRefreshFailureReason(std::move(value)); return *this;}
-    inline GetDashboardResult& WithLastRefreshFailureReason(const char* value) { SetLastRefreshFailureReason(value); return *this;}
+    inline const Aws::String& GetLastRefreshFailureReason() const { return m_lastRefreshFailureReason; }
+    template<typename LastRefreshFailureReasonT = Aws::String>
+    void SetLastRefreshFailureReason(LastRefreshFailureReasonT&& value) { m_lastRefreshFailureReasonHasBeenSet = true; m_lastRefreshFailureReason = std::forward<LastRefreshFailureReasonT>(value); }
+    template<typename LastRefreshFailureReasonT = Aws::String>
+    GetDashboardResult& WithLastRefreshFailureReason(LastRefreshFailureReasonT&& value) { SetLastRefreshFailureReason(std::forward<LastRefreshFailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether termination protection is enabled for the dashboard. </p>
      */
-    inline bool GetTerminationProtectionEnabled() const{ return m_terminationProtectionEnabled; }
-    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabled = value; }
+    inline bool GetTerminationProtectionEnabled() const { return m_terminationProtectionEnabled; }
+    inline void SetTerminationProtectionEnabled(bool value) { m_terminationProtectionEnabledHasBeenSet = true; m_terminationProtectionEnabled = value; }
     inline GetDashboardResult& WithTerminationProtectionEnabled(bool value) { SetTerminationProtectionEnabled(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDashboardResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDashboardResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDashboardResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDashboardResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dashboardArn;
+    bool m_dashboardArnHasBeenSet = false;
 
-    DashboardType m_type;
+    DashboardType m_type{DashboardType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
-    DashboardStatus m_status;
+    DashboardStatus m_status{DashboardStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Widget> m_widgets;
+    bool m_widgetsHasBeenSet = false;
 
     RefreshSchedule m_refreshSchedule;
+    bool m_refreshScheduleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_lastRefreshId;
+    bool m_lastRefreshIdHasBeenSet = false;
 
     Aws::String m_lastRefreshFailureReason;
+    bool m_lastRefreshFailureReasonHasBeenSet = false;
 
-    bool m_terminationProtectionEnabled;
+    bool m_terminationProtectionEnabled{false};
+    bool m_terminationProtectionEnabledHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

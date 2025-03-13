@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElbAppCookieStickinessPolicy::AwsElbAppCookieStickinessPolicy() : 
-    m_cookieNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 AwsElbAppCookieStickinessPolicy::AwsElbAppCookieStickinessPolicy(JsonView jsonValue)
-  : AwsElbAppCookieStickinessPolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsElbAppCookieStickinessPolicy& AwsElbAppCookieStickinessPolicy::operator =(Jso
   if(jsonValue.ValueExists("CookieName"))
   {
     m_cookieName = jsonValue.GetString("CookieName");
-
     m_cookieNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

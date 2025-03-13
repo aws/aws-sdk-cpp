@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrainingDatasetRequest::DeleteTrainingDatasetRequest() : 
-    m_trainingDatasetArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrainingDatasetRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-CustomAttribute::CustomAttribute() : 
-    m_objectIdentifierHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CustomAttribute::CustomAttribute(JsonView jsonValue)
-  : CustomAttribute()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomAttribute& CustomAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

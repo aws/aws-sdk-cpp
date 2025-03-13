@@ -29,7 +29,7 @@ namespace Model
   class DescribeGlobalSettingsResult
   {
   public:
-    AWS_BACKUP_API DescribeGlobalSettingsResult();
+    AWS_BACKUP_API DescribeGlobalSettingsResult() = default;
     AWS_BACKUP_API DescribeGlobalSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API DescribeGlobalSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,18 +38,15 @@ namespace Model
     /**
      * <p>The status of the flag <code>isCrossAccountBackupEnabled</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const{ return m_globalSettings; }
-    inline void SetGlobalSettings(const Aws::Map<Aws::String, Aws::String>& value) { m_globalSettings = value; }
-    inline void SetGlobalSettings(Aws::Map<Aws::String, Aws::String>&& value) { m_globalSettings = std::move(value); }
-    inline DescribeGlobalSettingsResult& WithGlobalSettings(const Aws::Map<Aws::String, Aws::String>& value) { SetGlobalSettings(value); return *this;}
-    inline DescribeGlobalSettingsResult& WithGlobalSettings(Aws::Map<Aws::String, Aws::String>&& value) { SetGlobalSettings(std::move(value)); return *this;}
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(const Aws::String& key, const Aws::String& value) { m_globalSettings.emplace(key, value); return *this; }
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(Aws::String&& key, const Aws::String& value) { m_globalSettings.emplace(std::move(key), value); return *this; }
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(const Aws::String& key, Aws::String&& value) { m_globalSettings.emplace(key, std::move(value)); return *this; }
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(Aws::String&& key, Aws::String&& value) { m_globalSettings.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(const char* key, Aws::String&& value) { m_globalSettings.emplace(key, std::move(value)); return *this; }
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(Aws::String&& key, const char* value) { m_globalSettings.emplace(std::move(key), value); return *this; }
-    inline DescribeGlobalSettingsResult& AddGlobalSettings(const char* key, const char* value) { m_globalSettings.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetGlobalSettings() const { return m_globalSettings; }
+    template<typename GlobalSettingsT = Aws::Map<Aws::String, Aws::String>>
+    void SetGlobalSettings(GlobalSettingsT&& value) { m_globalSettingsHasBeenSet = true; m_globalSettings = std::forward<GlobalSettingsT>(value); }
+    template<typename GlobalSettingsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeGlobalSettingsResult& WithGlobalSettings(GlobalSettingsT&& value) { SetGlobalSettings(std::forward<GlobalSettingsT>(value)); return *this;}
+    template<typename GlobalSettingsKeyT = Aws::String, typename GlobalSettingsValueT = Aws::String>
+    DescribeGlobalSettingsResult& AddGlobalSettings(GlobalSettingsKeyT&& key, GlobalSettingsValueT&& value) {
+      m_globalSettingsHasBeenSet = true; m_globalSettings.emplace(std::forward<GlobalSettingsKeyT>(key), std::forward<GlobalSettingsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -60,30 +57,31 @@ namespace Model
      * example, the value 1516925490.087 represents Friday, January 26, 2018
      * 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTime = std::move(value); }
-    inline DescribeGlobalSettingsResult& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline DescribeGlobalSettingsResult& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    DescribeGlobalSettingsResult& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGlobalSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGlobalSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGlobalSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGlobalSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_globalSettings;
+    bool m_globalSettingsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

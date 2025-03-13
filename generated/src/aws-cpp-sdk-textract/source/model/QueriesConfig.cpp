@@ -18,13 +18,7 @@ namespace Textract
 namespace Model
 {
 
-QueriesConfig::QueriesConfig() : 
-    m_queriesHasBeenSet(false)
-{
-}
-
 QueriesConfig::QueriesConfig(JsonView jsonValue)
-  : QueriesConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ QueriesConfig& QueriesConfig::operator =(JsonView jsonValue)
     }
     m_queriesHasBeenSet = true;
   }
-
   return *this;
 }
 

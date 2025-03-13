@@ -18,14 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-TranscriptionConfiguration::TranscriptionConfiguration() : 
-    m_engineTranscribeSettingsHasBeenSet(false),
-    m_engineTranscribeMedicalSettingsHasBeenSet(false)
-{
-}
-
 TranscriptionConfiguration::TranscriptionConfiguration(JsonView jsonValue)
-  : TranscriptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TranscriptionConfiguration& TranscriptionConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("EngineTranscribeSettings"))
   {
     m_engineTranscribeSettings = jsonValue.GetObject("EngineTranscribeSettings");
-
     m_engineTranscribeSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineTranscribeMedicalSettings"))
   {
     m_engineTranscribeMedicalSettings = jsonValue.GetObject("EngineTranscribeMedicalSettings");
-
     m_engineTranscribeMedicalSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

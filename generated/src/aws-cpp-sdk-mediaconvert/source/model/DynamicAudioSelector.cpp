@@ -18,21 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DynamicAudioSelector::DynamicAudioSelector() : 
-    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
-    m_audioDurationCorrectionHasBeenSet(false),
-    m_externalAudioFileInputHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false),
-    m_selectorType(DynamicAudioSelectorType::NOT_SET),
-    m_selectorTypeHasBeenSet(false)
-{
-}
-
 DynamicAudioSelector::DynamicAudioSelector(JsonView jsonValue)
-  : DynamicAudioSelector()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ DynamicAudioSelector& DynamicAudioSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioDurationCorrection"))
   {
     m_audioDurationCorrection = AudioDurationCorrectionMapper::GetAudioDurationCorrectionForName(jsonValue.GetString("audioDurationCorrection"));
-
     m_audioDurationCorrectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalAudioFileInput"))
   {
     m_externalAudioFileInput = jsonValue.GetString("externalAudioFileInput");
-
     m_externalAudioFileInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetInteger("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectorType"))
   {
     m_selectorType = DynamicAudioSelectorTypeMapper::GetDynamicAudioSelectorTypeForName(jsonValue.GetString("selectorType"));
-
     m_selectorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

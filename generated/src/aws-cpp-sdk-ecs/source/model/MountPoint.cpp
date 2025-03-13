@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-MountPoint::MountPoint() : 
-    m_sourceVolumeHasBeenSet(false),
-    m_containerPathHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
-{
-}
-
 MountPoint::MountPoint(JsonView jsonValue)
-  : MountPoint()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MountPoint& MountPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceVolume"))
   {
     m_sourceVolume = jsonValue.GetString("sourceVolume");
-
     m_sourceVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerPath"))
   {
     m_containerPath = jsonValue.GetString("containerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readOnly"))
   {
     m_readOnly = jsonValue.GetBool("readOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

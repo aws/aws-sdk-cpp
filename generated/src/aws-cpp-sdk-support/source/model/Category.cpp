@@ -18,14 +18,7 @@ namespace Support
 namespace Model
 {
 
-Category::Category() : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Category::Category(JsonView jsonValue)
-  : Category()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Category& Category::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

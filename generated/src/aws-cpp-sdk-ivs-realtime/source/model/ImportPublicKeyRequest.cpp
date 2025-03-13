@@ -12,13 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportPublicKeyRequest::ImportPublicKeyRequest() : 
-    m_publicKeyMaterialHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportPublicKeyRequest::SerializePayload() const
 {
   JsonValue payload;

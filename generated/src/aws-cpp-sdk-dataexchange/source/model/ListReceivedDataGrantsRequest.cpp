@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListReceivedDataGrantsRequest::ListReceivedDataGrantsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_acceptanceStateHasBeenSet(false)
-{
-}
-
 Aws::String ListReceivedDataGrantsRequest::SerializePayload() const
 {
   return {};

@@ -12,15 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCasesForContactRequest::ListCasesForContactRequest() : 
-    m_contactArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCasesForContactRequest::SerializePayload() const
 {
   JsonValue payload;

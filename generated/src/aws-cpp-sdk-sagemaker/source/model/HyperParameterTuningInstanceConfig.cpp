@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTuningInstanceConfig::HyperParameterTuningInstanceConfig() : 
-    m_instanceType(TrainingInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
-{
-}
-
 HyperParameterTuningInstanceConfig::HyperParameterTuningInstanceConfig(JsonView jsonValue)
-  : HyperParameterTuningInstanceConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ HyperParameterTuningInstanceConfig& HyperParameterTuningInstanceConfig::operator
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = TrainingInstanceTypeMapper::GetTrainingInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class PublicKey
   {
   public:
-    AWS_CLOUDFRONT_API PublicKey();
+    AWS_CLOUDFRONT_API PublicKey() = default;
     AWS_CLOUDFRONT_API PublicKey(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API PublicKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,24 @@ namespace Model
     /**
      * <p>The identifier of the public key.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PublicKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PublicKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PublicKey& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PublicKey& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the public key was uploaded.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline PublicKey& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline PublicKey& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    PublicKey& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,19 +75,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
      * encryption</a>.</p>
      */
-    inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
+    inline const PublicKeyConfig& GetPublicKeyConfig() const { return m_publicKeyConfig; }
     inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
-    inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
-    inline void SetPublicKeyConfig(PublicKeyConfig&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::move(value); }
-    inline PublicKey& WithPublicKeyConfig(const PublicKeyConfig& value) { SetPublicKeyConfig(value); return *this;}
-    inline PublicKey& WithPublicKeyConfig(PublicKeyConfig&& value) { SetPublicKeyConfig(std::move(value)); return *this;}
+    template<typename PublicKeyConfigT = PublicKeyConfig>
+    void SetPublicKeyConfig(PublicKeyConfigT&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::forward<PublicKeyConfigT>(value); }
+    template<typename PublicKeyConfigT = PublicKeyConfig>
+    PublicKey& WithPublicKeyConfig(PublicKeyConfigT&& value) { SetPublicKeyConfig(std::forward<PublicKeyConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     PublicKeyConfig m_publicKeyConfig;

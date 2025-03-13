@@ -18,15 +18,7 @@ namespace MarketplaceMetering
 namespace Model
 {
 
-UsageAllocation::UsageAllocation() : 
-    m_allocatedUsageQuantity(0),
-    m_allocatedUsageQuantityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 UsageAllocation::UsageAllocation(JsonView jsonValue)
-  : UsageAllocation()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ UsageAllocation& UsageAllocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllocatedUsageQuantity"))
   {
     m_allocatedUsageQuantity = jsonValue.GetInteger("AllocatedUsageQuantity");
-
     m_allocatedUsageQuantityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -49,7 +39,6 @@ UsageAllocation& UsageAllocation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

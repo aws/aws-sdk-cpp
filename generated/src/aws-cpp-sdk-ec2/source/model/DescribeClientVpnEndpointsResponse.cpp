@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClientVpnEndpointsResponse::DescribeClientVpnEndpointsResponse()
-{
-}
-
 DescribeClientVpnEndpointsResponse::DescribeClientVpnEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeClientVpnEndpointsResponse& DescribeClientVpnEndpointsResponse::operator
     if(!clientVpnEndpointsNode.IsNull())
     {
       XmlNode clientVpnEndpointsMember = clientVpnEndpointsNode.FirstChild("item");
+      m_clientVpnEndpointsHasBeenSet = !clientVpnEndpointsMember.IsNull();
       while(!clientVpnEndpointsMember.IsNull())
       {
         m_clientVpnEndpoints.push_back(clientVpnEndpointsMember);
@@ -53,6 +50,7 @@ DescribeClientVpnEndpointsResponse& DescribeClientVpnEndpointsResponse::operator
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeClientVpnEndpointsResponse& DescribeClientVpnEndpointsResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeClientVpnEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

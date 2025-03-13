@@ -29,7 +29,7 @@ namespace Model
   class ListBatchInferenceJobsResult
   {
   public:
-    AWS_PERSONALIZE_API ListBatchInferenceJobsResult();
+    AWS_PERSONALIZE_API ListBatchInferenceJobsResult() = default;
     AWS_PERSONALIZE_API ListBatchInferenceJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API ListBatchInferenceJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list containing information on each job that is returned.</p>
      */
-    inline const Aws::Vector<BatchInferenceJobSummary>& GetBatchInferenceJobs() const{ return m_batchInferenceJobs; }
-    inline void SetBatchInferenceJobs(const Aws::Vector<BatchInferenceJobSummary>& value) { m_batchInferenceJobs = value; }
-    inline void SetBatchInferenceJobs(Aws::Vector<BatchInferenceJobSummary>&& value) { m_batchInferenceJobs = std::move(value); }
-    inline ListBatchInferenceJobsResult& WithBatchInferenceJobs(const Aws::Vector<BatchInferenceJobSummary>& value) { SetBatchInferenceJobs(value); return *this;}
-    inline ListBatchInferenceJobsResult& WithBatchInferenceJobs(Aws::Vector<BatchInferenceJobSummary>&& value) { SetBatchInferenceJobs(std::move(value)); return *this;}
-    inline ListBatchInferenceJobsResult& AddBatchInferenceJobs(const BatchInferenceJobSummary& value) { m_batchInferenceJobs.push_back(value); return *this; }
-    inline ListBatchInferenceJobsResult& AddBatchInferenceJobs(BatchInferenceJobSummary&& value) { m_batchInferenceJobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchInferenceJobSummary>& GetBatchInferenceJobs() const { return m_batchInferenceJobs; }
+    template<typename BatchInferenceJobsT = Aws::Vector<BatchInferenceJobSummary>>
+    void SetBatchInferenceJobs(BatchInferenceJobsT&& value) { m_batchInferenceJobsHasBeenSet = true; m_batchInferenceJobs = std::forward<BatchInferenceJobsT>(value); }
+    template<typename BatchInferenceJobsT = Aws::Vector<BatchInferenceJobSummary>>
+    ListBatchInferenceJobsResult& WithBatchInferenceJobs(BatchInferenceJobsT&& value) { SetBatchInferenceJobs(std::forward<BatchInferenceJobsT>(value)); return *this;}
+    template<typename BatchInferenceJobsT = BatchInferenceJobSummary>
+    ListBatchInferenceJobsResult& AddBatchInferenceJobs(BatchInferenceJobsT&& value) { m_batchInferenceJobsHasBeenSet = true; m_batchInferenceJobs.emplace_back(std::forward<BatchInferenceJobsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. The value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBatchInferenceJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBatchInferenceJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBatchInferenceJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBatchInferenceJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBatchInferenceJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBatchInferenceJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBatchInferenceJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBatchInferenceJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchInferenceJobSummary> m_batchInferenceJobs;
+    bool m_batchInferenceJobsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

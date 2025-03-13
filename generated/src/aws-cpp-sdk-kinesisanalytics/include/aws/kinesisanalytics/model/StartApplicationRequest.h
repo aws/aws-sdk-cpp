@@ -26,7 +26,7 @@ namespace Model
   class StartApplicationRequest : public KinesisAnalyticsRequest
   {
   public:
-    AWS_KINESISANALYTICS_API StartApplicationRequest();
+    AWS_KINESISANALYTICS_API StartApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline StartApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline StartApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline StartApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    StartApplicationRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * input. You can also specify where in the streaming source you want Amazon
      * Kinesis Analytics to start reading.</p>
      */
-    inline const Aws::Vector<InputConfiguration>& GetInputConfigurations() const{ return m_inputConfigurations; }
+    inline const Aws::Vector<InputConfiguration>& GetInputConfigurations() const { return m_inputConfigurations; }
     inline bool InputConfigurationsHasBeenSet() const { return m_inputConfigurationsHasBeenSet; }
-    inline void SetInputConfigurations(const Aws::Vector<InputConfiguration>& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations = value; }
-    inline void SetInputConfigurations(Aws::Vector<InputConfiguration>&& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations = std::move(value); }
-    inline StartApplicationRequest& WithInputConfigurations(const Aws::Vector<InputConfiguration>& value) { SetInputConfigurations(value); return *this;}
-    inline StartApplicationRequest& WithInputConfigurations(Aws::Vector<InputConfiguration>&& value) { SetInputConfigurations(std::move(value)); return *this;}
-    inline StartApplicationRequest& AddInputConfigurations(const InputConfiguration& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations.push_back(value); return *this; }
-    inline StartApplicationRequest& AddInputConfigurations(InputConfiguration&& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations.push_back(std::move(value)); return *this; }
+    template<typename InputConfigurationsT = Aws::Vector<InputConfiguration>>
+    void SetInputConfigurations(InputConfigurationsT&& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations = std::forward<InputConfigurationsT>(value); }
+    template<typename InputConfigurationsT = Aws::Vector<InputConfiguration>>
+    StartApplicationRequest& WithInputConfigurations(InputConfigurationsT&& value) { SetInputConfigurations(std::forward<InputConfigurationsT>(value)); return *this;}
+    template<typename InputConfigurationsT = InputConfiguration>
+    StartApplicationRequest& AddInputConfigurations(InputConfigurationsT&& value) { m_inputConfigurationsHasBeenSet = true; m_inputConfigurations.emplace_back(std::forward<InputConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

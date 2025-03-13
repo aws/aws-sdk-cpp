@@ -46,7 +46,7 @@ namespace Model
   class ServiceSetting
   {
   public:
-    AWS_SSM_API ServiceSetting();
+    AWS_SSM_API ServiceSetting() = default;
     AWS_SSM_API ServiceSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ServiceSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,40 +56,36 @@ namespace Model
     /**
      * <p>The ID of the service setting.</p>
      */
-    inline const Aws::String& GetSettingId() const{ return m_settingId; }
+    inline const Aws::String& GetSettingId() const { return m_settingId; }
     inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
-    inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
-    inline void SetSettingId(Aws::String&& value) { m_settingIdHasBeenSet = true; m_settingId = std::move(value); }
-    inline void SetSettingId(const char* value) { m_settingIdHasBeenSet = true; m_settingId.assign(value); }
-    inline ServiceSetting& WithSettingId(const Aws::String& value) { SetSettingId(value); return *this;}
-    inline ServiceSetting& WithSettingId(Aws::String&& value) { SetSettingId(std::move(value)); return *this;}
-    inline ServiceSetting& WithSettingId(const char* value) { SetSettingId(value); return *this;}
+    template<typename SettingIdT = Aws::String>
+    void SetSettingId(SettingIdT&& value) { m_settingIdHasBeenSet = true; m_settingId = std::forward<SettingIdT>(value); }
+    template<typename SettingIdT = Aws::String>
+    ServiceSetting& WithSettingId(SettingIdT&& value) { SetSettingId(std::forward<SettingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the service setting.</p>
      */
-    inline const Aws::String& GetSettingValue() const{ return m_settingValue; }
+    inline const Aws::String& GetSettingValue() const { return m_settingValue; }
     inline bool SettingValueHasBeenSet() const { return m_settingValueHasBeenSet; }
-    inline void SetSettingValue(const Aws::String& value) { m_settingValueHasBeenSet = true; m_settingValue = value; }
-    inline void SetSettingValue(Aws::String&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::move(value); }
-    inline void SetSettingValue(const char* value) { m_settingValueHasBeenSet = true; m_settingValue.assign(value); }
-    inline ServiceSetting& WithSettingValue(const Aws::String& value) { SetSettingValue(value); return *this;}
-    inline ServiceSetting& WithSettingValue(Aws::String&& value) { SetSettingValue(std::move(value)); return *this;}
-    inline ServiceSetting& WithSettingValue(const char* value) { SetSettingValue(value); return *this;}
+    template<typename SettingValueT = Aws::String>
+    void SetSettingValue(SettingValueT&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::forward<SettingValueT>(value); }
+    template<typename SettingValueT = Aws::String>
+    ServiceSetting& WithSettingValue(SettingValueT&& value) { SetSettingValue(std::forward<SettingValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the service setting was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline ServiceSetting& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline ServiceSetting& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    ServiceSetting& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,28 +93,24 @@ namespace Model
      * <p>The ARN of the last modified user. This field is populated only if the
      * setting value was overwritten.</p>
      */
-    inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
+    inline const Aws::String& GetLastModifiedUser() const { return m_lastModifiedUser; }
     inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
-    inline void SetLastModifiedUser(const Aws::String& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = value; }
-    inline void SetLastModifiedUser(Aws::String&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::move(value); }
-    inline void SetLastModifiedUser(const char* value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser.assign(value); }
-    inline ServiceSetting& WithLastModifiedUser(const Aws::String& value) { SetLastModifiedUser(value); return *this;}
-    inline ServiceSetting& WithLastModifiedUser(Aws::String&& value) { SetLastModifiedUser(std::move(value)); return *this;}
-    inline ServiceSetting& WithLastModifiedUser(const char* value) { SetLastModifiedUser(value); return *this;}
+    template<typename LastModifiedUserT = Aws::String>
+    void SetLastModifiedUser(LastModifiedUserT&& value) { m_lastModifiedUserHasBeenSet = true; m_lastModifiedUser = std::forward<LastModifiedUserT>(value); }
+    template<typename LastModifiedUserT = Aws::String>
+    ServiceSetting& WithLastModifiedUser(LastModifiedUserT&& value) { SetLastModifiedUser(std::forward<LastModifiedUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the service setting.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline ServiceSetting& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline ServiceSetting& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline ServiceSetting& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    ServiceSetting& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +122,12 @@ namespace Model
      * customer.</p> </li> <li> <p>PendingUpdate: The current setting uses a default or
      * custom value, but a setting change request is pending approval.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ServiceSetting& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ServiceSetting& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ServiceSetting& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ServiceSetting& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,7 +137,7 @@ namespace Model
     Aws::String m_settingValue;
     bool m_settingValueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::String m_lastModifiedUser;

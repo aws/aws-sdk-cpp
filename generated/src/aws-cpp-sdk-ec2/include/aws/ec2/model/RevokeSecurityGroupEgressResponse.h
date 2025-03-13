@@ -30,7 +30,7 @@ namespace Model
   class RevokeSecurityGroupEgressResponse
   {
   public:
-    AWS_EC2_API RevokeSecurityGroupEgressResponse();
+    AWS_EC2_API RevokeSecurityGroupEgressResponse() = default;
     AWS_EC2_API RevokeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API RevokeSecurityGroupEgressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,8 +40,8 @@ namespace Model
      * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
      * error.</p>
      */
-    inline bool GetReturn() const{ return m_return; }
-    inline void SetReturn(bool value) { m_return = value; }
+    inline bool GetReturn() const { return m_return; }
+    inline void SetReturn(bool value) { m_returnHasBeenSet = true; m_return = value; }
     inline RevokeSecurityGroupEgressResponse& WithReturn(bool value) { SetReturn(value); return *this;}
     ///@}
 
@@ -51,45 +51,49 @@ namespace Model
      * <code>unknownIpPermissionSet</code> might be in a different format from the
      * request parameter. </p>
      */
-    inline const Aws::Vector<IpPermission>& GetUnknownIpPermissions() const{ return m_unknownIpPermissions; }
-    inline void SetUnknownIpPermissions(const Aws::Vector<IpPermission>& value) { m_unknownIpPermissions = value; }
-    inline void SetUnknownIpPermissions(Aws::Vector<IpPermission>&& value) { m_unknownIpPermissions = std::move(value); }
-    inline RevokeSecurityGroupEgressResponse& WithUnknownIpPermissions(const Aws::Vector<IpPermission>& value) { SetUnknownIpPermissions(value); return *this;}
-    inline RevokeSecurityGroupEgressResponse& WithUnknownIpPermissions(Aws::Vector<IpPermission>&& value) { SetUnknownIpPermissions(std::move(value)); return *this;}
-    inline RevokeSecurityGroupEgressResponse& AddUnknownIpPermissions(const IpPermission& value) { m_unknownIpPermissions.push_back(value); return *this; }
-    inline RevokeSecurityGroupEgressResponse& AddUnknownIpPermissions(IpPermission&& value) { m_unknownIpPermissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IpPermission>& GetUnknownIpPermissions() const { return m_unknownIpPermissions; }
+    template<typename UnknownIpPermissionsT = Aws::Vector<IpPermission>>
+    void SetUnknownIpPermissions(UnknownIpPermissionsT&& value) { m_unknownIpPermissionsHasBeenSet = true; m_unknownIpPermissions = std::forward<UnknownIpPermissionsT>(value); }
+    template<typename UnknownIpPermissionsT = Aws::Vector<IpPermission>>
+    RevokeSecurityGroupEgressResponse& WithUnknownIpPermissions(UnknownIpPermissionsT&& value) { SetUnknownIpPermissions(std::forward<UnknownIpPermissionsT>(value)); return *this;}
+    template<typename UnknownIpPermissionsT = IpPermission>
+    RevokeSecurityGroupEgressResponse& AddUnknownIpPermissions(UnknownIpPermissionsT&& value) { m_unknownIpPermissionsHasBeenSet = true; m_unknownIpPermissions.emplace_back(std::forward<UnknownIpPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Details about the revoked security group rules.</p>
      */
-    inline const Aws::Vector<RevokedSecurityGroupRule>& GetRevokedSecurityGroupRules() const{ return m_revokedSecurityGroupRules; }
-    inline void SetRevokedSecurityGroupRules(const Aws::Vector<RevokedSecurityGroupRule>& value) { m_revokedSecurityGroupRules = value; }
-    inline void SetRevokedSecurityGroupRules(Aws::Vector<RevokedSecurityGroupRule>&& value) { m_revokedSecurityGroupRules = std::move(value); }
-    inline RevokeSecurityGroupEgressResponse& WithRevokedSecurityGroupRules(const Aws::Vector<RevokedSecurityGroupRule>& value) { SetRevokedSecurityGroupRules(value); return *this;}
-    inline RevokeSecurityGroupEgressResponse& WithRevokedSecurityGroupRules(Aws::Vector<RevokedSecurityGroupRule>&& value) { SetRevokedSecurityGroupRules(std::move(value)); return *this;}
-    inline RevokeSecurityGroupEgressResponse& AddRevokedSecurityGroupRules(const RevokedSecurityGroupRule& value) { m_revokedSecurityGroupRules.push_back(value); return *this; }
-    inline RevokeSecurityGroupEgressResponse& AddRevokedSecurityGroupRules(RevokedSecurityGroupRule&& value) { m_revokedSecurityGroupRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RevokedSecurityGroupRule>& GetRevokedSecurityGroupRules() const { return m_revokedSecurityGroupRules; }
+    template<typename RevokedSecurityGroupRulesT = Aws::Vector<RevokedSecurityGroupRule>>
+    void SetRevokedSecurityGroupRules(RevokedSecurityGroupRulesT&& value) { m_revokedSecurityGroupRulesHasBeenSet = true; m_revokedSecurityGroupRules = std::forward<RevokedSecurityGroupRulesT>(value); }
+    template<typename RevokedSecurityGroupRulesT = Aws::Vector<RevokedSecurityGroupRule>>
+    RevokeSecurityGroupEgressResponse& WithRevokedSecurityGroupRules(RevokedSecurityGroupRulesT&& value) { SetRevokedSecurityGroupRules(std::forward<RevokedSecurityGroupRulesT>(value)); return *this;}
+    template<typename RevokedSecurityGroupRulesT = RevokedSecurityGroupRule>
+    RevokeSecurityGroupEgressResponse& AddRevokedSecurityGroupRules(RevokedSecurityGroupRulesT&& value) { m_revokedSecurityGroupRulesHasBeenSet = true; m_revokedSecurityGroupRules.emplace_back(std::forward<RevokedSecurityGroupRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RevokeSecurityGroupEgressResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RevokeSecurityGroupEgressResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RevokeSecurityGroupEgressResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_return;
+    bool m_return{false};
+    bool m_returnHasBeenSet = false;
 
     Aws::Vector<IpPermission> m_unknownIpPermissions;
+    bool m_unknownIpPermissionsHasBeenSet = false;
 
     Aws::Vector<RevokedSecurityGroupRule> m_revokedSecurityGroupRules;
+    bool m_revokedSecurityGroupRulesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

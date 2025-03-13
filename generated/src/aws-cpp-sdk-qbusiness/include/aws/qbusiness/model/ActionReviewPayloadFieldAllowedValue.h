@@ -33,7 +33,7 @@ namespace Model
   class ActionReviewPayloadFieldAllowedValue
   {
   public:
-    AWS_QBUSINESS_API ActionReviewPayloadFieldAllowedValue();
+    AWS_QBUSINESS_API ActionReviewPayloadFieldAllowedValue() = default;
     AWS_QBUSINESS_API ActionReviewPayloadFieldAllowedValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionReviewPayloadFieldAllowedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The field value.</p>
      */
-    inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
+    inline Aws::Utils::DocumentView GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ActionReviewPayloadFieldAllowedValue& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-    inline ActionReviewPayloadFieldAllowedValue& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::Document>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::Document>
+    ActionReviewPayloadFieldAllowedValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the field.</p>
      */
-    inline Aws::Utils::DocumentView GetDisplayValue() const{ return m_displayValue; }
+    inline Aws::Utils::DocumentView GetDisplayValue() const { return m_displayValue; }
     inline bool DisplayValueHasBeenSet() const { return m_displayValueHasBeenSet; }
-    inline void SetDisplayValue(const Aws::Utils::Document& value) { m_displayValueHasBeenSet = true; m_displayValue = value; }
-    inline void SetDisplayValue(Aws::Utils::Document&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::move(value); }
-    inline ActionReviewPayloadFieldAllowedValue& WithDisplayValue(const Aws::Utils::Document& value) { SetDisplayValue(value); return *this;}
-    inline ActionReviewPayloadFieldAllowedValue& WithDisplayValue(Aws::Utils::Document&& value) { SetDisplayValue(std::move(value)); return *this;}
+    template<typename DisplayValueT = Aws::Utils::Document>
+    void SetDisplayValue(DisplayValueT&& value) { m_displayValueHasBeenSet = true; m_displayValue = std::forward<DisplayValueT>(value); }
+    template<typename DisplayValueT = Aws::Utils::Document>
+    ActionReviewPayloadFieldAllowedValue& WithDisplayValue(DisplayValueT&& value) { SetDisplayValue(std::forward<DisplayValueT>(value)); return *this;}
     ///@}
   private:
 

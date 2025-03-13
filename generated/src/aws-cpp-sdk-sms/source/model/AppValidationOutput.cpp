@@ -18,13 +18,7 @@ namespace SMS
 namespace Model
 {
 
-AppValidationOutput::AppValidationOutput() : 
-    m_ssmOutputHasBeenSet(false)
-{
-}
-
 AppValidationOutput::AppValidationOutput(JsonView jsonValue)
-  : AppValidationOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AppValidationOutput& AppValidationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ssmOutput"))
   {
     m_ssmOutput = jsonValue.GetObject("ssmOutput");
-
     m_ssmOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

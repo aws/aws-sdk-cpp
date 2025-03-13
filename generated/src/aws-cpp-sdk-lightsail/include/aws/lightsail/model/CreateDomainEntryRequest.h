@@ -22,7 +22,7 @@ namespace Model
   class CreateDomainEntryRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API CreateDomainEntryRequest();
+    AWS_LIGHTSAIL_API CreateDomainEntryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The domain name (<code>example.com</code>) for which you want to create the
      * domain entry.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CreateDomainEntryRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CreateDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CreateDomainEntryRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CreateDomainEntryRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>An array of key-value pairs containing information about the domain entry
      * request.</p>
      */
-    inline const DomainEntry& GetDomainEntry() const{ return m_domainEntry; }
+    inline const DomainEntry& GetDomainEntry() const { return m_domainEntry; }
     inline bool DomainEntryHasBeenSet() const { return m_domainEntryHasBeenSet; }
-    inline void SetDomainEntry(const DomainEntry& value) { m_domainEntryHasBeenSet = true; m_domainEntry = value; }
-    inline void SetDomainEntry(DomainEntry&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = std::move(value); }
-    inline CreateDomainEntryRequest& WithDomainEntry(const DomainEntry& value) { SetDomainEntry(value); return *this;}
-    inline CreateDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(std::move(value)); return *this;}
+    template<typename DomainEntryT = DomainEntry>
+    void SetDomainEntry(DomainEntryT&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = std::forward<DomainEntryT>(value); }
+    template<typename DomainEntryT = DomainEntry>
+    CreateDomainEntryRequest& WithDomainEntry(DomainEntryT&& value) { SetDomainEntry(std::forward<DomainEntryT>(value)); return *this;}
     ///@}
   private:
 

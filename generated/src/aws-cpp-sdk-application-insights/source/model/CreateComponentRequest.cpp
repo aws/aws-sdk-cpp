@@ -12,13 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateComponentRequest::CreateComponentRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_resourceListHasBeenSet(false)
-{
-}
-
 Aws::String CreateComponentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class CopyCommand
   {
   public:
-    AWS_FIREHOSE_API CopyCommand();
+    AWS_FIREHOSE_API CopyCommand() = default;
     AWS_FIREHOSE_API CopyCommand(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API CopyCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The name of the target table. The table must already exist in the
      * database.</p>
      */
-    inline const Aws::String& GetDataTableName() const{ return m_dataTableName; }
+    inline const Aws::String& GetDataTableName() const { return m_dataTableName; }
     inline bool DataTableNameHasBeenSet() const { return m_dataTableNameHasBeenSet; }
-    inline void SetDataTableName(const Aws::String& value) { m_dataTableNameHasBeenSet = true; m_dataTableName = value; }
-    inline void SetDataTableName(Aws::String&& value) { m_dataTableNameHasBeenSet = true; m_dataTableName = std::move(value); }
-    inline void SetDataTableName(const char* value) { m_dataTableNameHasBeenSet = true; m_dataTableName.assign(value); }
-    inline CopyCommand& WithDataTableName(const Aws::String& value) { SetDataTableName(value); return *this;}
-    inline CopyCommand& WithDataTableName(Aws::String&& value) { SetDataTableName(std::move(value)); return *this;}
-    inline CopyCommand& WithDataTableName(const char* value) { SetDataTableName(value); return *this;}
+    template<typename DataTableNameT = Aws::String>
+    void SetDataTableName(DataTableNameT&& value) { m_dataTableNameHasBeenSet = true; m_dataTableName = std::forward<DataTableNameT>(value); }
+    template<typename DataTableNameT = Aws::String>
+    CopyCommand& WithDataTableName(DataTableNameT&& value) { SetDataTableName(std::forward<DataTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A comma-separated list of column names.</p>
      */
-    inline const Aws::String& GetDataTableColumns() const{ return m_dataTableColumns; }
+    inline const Aws::String& GetDataTableColumns() const { return m_dataTableColumns; }
     inline bool DataTableColumnsHasBeenSet() const { return m_dataTableColumnsHasBeenSet; }
-    inline void SetDataTableColumns(const Aws::String& value) { m_dataTableColumnsHasBeenSet = true; m_dataTableColumns = value; }
-    inline void SetDataTableColumns(Aws::String&& value) { m_dataTableColumnsHasBeenSet = true; m_dataTableColumns = std::move(value); }
-    inline void SetDataTableColumns(const char* value) { m_dataTableColumnsHasBeenSet = true; m_dataTableColumns.assign(value); }
-    inline CopyCommand& WithDataTableColumns(const Aws::String& value) { SetDataTableColumns(value); return *this;}
-    inline CopyCommand& WithDataTableColumns(Aws::String&& value) { SetDataTableColumns(std::move(value)); return *this;}
-    inline CopyCommand& WithDataTableColumns(const char* value) { SetDataTableColumns(value); return *this;}
+    template<typename DataTableColumnsT = Aws::String>
+    void SetDataTableColumns(DataTableColumnsT&& value) { m_dataTableColumnsHasBeenSet = true; m_dataTableColumns = std::forward<DataTableColumnsT>(value); }
+    template<typename DataTableColumnsT = Aws::String>
+    CopyCommand& WithDataTableColumns(DataTableColumnsT&& value) { SetDataTableColumns(std::forward<DataTableColumnsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html">Amazon
      * Redshift COPY command examples</a>.</p>
      */
-    inline const Aws::String& GetCopyOptions() const{ return m_copyOptions; }
+    inline const Aws::String& GetCopyOptions() const { return m_copyOptions; }
     inline bool CopyOptionsHasBeenSet() const { return m_copyOptionsHasBeenSet; }
-    inline void SetCopyOptions(const Aws::String& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = value; }
-    inline void SetCopyOptions(Aws::String&& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = std::move(value); }
-    inline void SetCopyOptions(const char* value) { m_copyOptionsHasBeenSet = true; m_copyOptions.assign(value); }
-    inline CopyCommand& WithCopyOptions(const Aws::String& value) { SetCopyOptions(value); return *this;}
-    inline CopyCommand& WithCopyOptions(Aws::String&& value) { SetCopyOptions(std::move(value)); return *this;}
-    inline CopyCommand& WithCopyOptions(const char* value) { SetCopyOptions(value); return *this;}
+    template<typename CopyOptionsT = Aws::String>
+    void SetCopyOptions(CopyOptionsT&& value) { m_copyOptionsHasBeenSet = true; m_copyOptions = std::forward<CopyOptionsT>(value); }
+    template<typename CopyOptionsT = Aws::String>
+    CopyCommand& WithCopyOptions(CopyOptionsT&& value) { SetCopyOptions(std::forward<CopyOptionsT>(value)); return *this;}
     ///@}
   private:
 

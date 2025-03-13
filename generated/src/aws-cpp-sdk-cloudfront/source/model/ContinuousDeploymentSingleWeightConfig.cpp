@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentSingleWeightConfig::ContinuousDeploymentSingleWeightConfig() : 
-    m_weight(0.0),
-    m_weightHasBeenSet(false),
-    m_sessionStickinessConfigHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentSingleWeightConfig::ContinuousDeploymentSingleWeightConfig(const XmlNode& xmlNode)
-  : ContinuousDeploymentSingleWeightConfig()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ContinuousDeploymentSingleWeightConfig& ContinuousDeploymentSingleWeightConfig::
     {
       m_weight = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(weightNode.GetText()).c_str()).c_str());
       m_weightHasBeenSet = true;
+       m_weightHasBeenSet = true;
     }
     XmlNode sessionStickinessConfigNode = resultNode.FirstChild("SessionStickinessConfig");
     if(!sessionStickinessConfigNode.IsNull())
     {
       m_sessionStickinessConfig = sessionStickinessConfigNode;
       m_sessionStickinessConfigHasBeenSet = true;
+       m_sessionStickinessConfigHasBeenSet = true;
     }
   }
 

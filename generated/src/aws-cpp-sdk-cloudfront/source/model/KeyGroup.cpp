@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KeyGroup::KeyGroup() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_keyGroupConfigHasBeenSet(false)
-{
-}
-
 KeyGroup::KeyGroup(const XmlNode& xmlNode)
-  : KeyGroup()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ KeyGroup& KeyGroup::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode keyGroupConfigNode = resultNode.FirstChild("KeyGroupConfig");
     if(!keyGroupConfigNode.IsNull())
     {
       m_keyGroupConfig = keyGroupConfigNode;
       m_keyGroupConfigHasBeenSet = true;
+       m_keyGroupConfigHasBeenSet = true;
     }
   }
 

@@ -20,17 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ResourceQuotas::ResourceQuotas() : 
-    m_applicationQuotaHasBeenSet(false),
-    m_applicationVersionQuotaHasBeenSet(false),
-    m_environmentQuotaHasBeenSet(false),
-    m_configurationTemplateQuotaHasBeenSet(false),
-    m_customPlatformQuotaHasBeenSet(false)
-{
-}
-
 ResourceQuotas::ResourceQuotas(const XmlNode& xmlNode)
-  : ResourceQuotas()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ ResourceQuotas& ResourceQuotas::operator =(const XmlNode& xmlNode)
     {
       m_applicationQuota = applicationQuotaNode;
       m_applicationQuotaHasBeenSet = true;
+       m_applicationQuotaHasBeenSet = true;
     }
     XmlNode applicationVersionQuotaNode = resultNode.FirstChild("ApplicationVersionQuota");
     if(!applicationVersionQuotaNode.IsNull())
     {
       m_applicationVersionQuota = applicationVersionQuotaNode;
       m_applicationVersionQuotaHasBeenSet = true;
+       m_applicationVersionQuotaHasBeenSet = true;
     }
     XmlNode environmentQuotaNode = resultNode.FirstChild("EnvironmentQuota");
     if(!environmentQuotaNode.IsNull())
     {
       m_environmentQuota = environmentQuotaNode;
       m_environmentQuotaHasBeenSet = true;
+       m_environmentQuotaHasBeenSet = true;
     }
     XmlNode configurationTemplateQuotaNode = resultNode.FirstChild("ConfigurationTemplateQuota");
     if(!configurationTemplateQuotaNode.IsNull())
     {
       m_configurationTemplateQuota = configurationTemplateQuotaNode;
       m_configurationTemplateQuotaHasBeenSet = true;
+       m_configurationTemplateQuotaHasBeenSet = true;
     }
     XmlNode customPlatformQuotaNode = resultNode.FirstChild("CustomPlatformQuota");
     if(!customPlatformQuotaNode.IsNull())
     {
       m_customPlatformQuota = customPlatformQuotaNode;
       m_customPlatformQuotaHasBeenSet = true;
+       m_customPlatformQuotaHasBeenSet = true;
     }
   }
 

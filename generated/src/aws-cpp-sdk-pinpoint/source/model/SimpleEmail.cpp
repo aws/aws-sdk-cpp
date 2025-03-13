@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SimpleEmail::SimpleEmail() : 
-    m_htmlPartHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 SimpleEmail::SimpleEmail(JsonView jsonValue)
-  : SimpleEmail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SimpleEmail& SimpleEmail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HtmlPart"))
   {
     m_htmlPart = jsonValue.GetObject("HtmlPart");
-
     m_htmlPartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetObject("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextPart"))
   {
     m_textPart = jsonValue.GetObject("TextPart");
-
     m_textPartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
@@ -64,7 +49,6 @@ SimpleEmail& SimpleEmail::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

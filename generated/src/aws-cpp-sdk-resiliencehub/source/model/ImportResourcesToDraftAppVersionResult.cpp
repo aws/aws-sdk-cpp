@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportResourcesToDraftAppVersionResult::ImportResourcesToDraftAppVersionResult() : 
-    m_status(ResourceImportStatusType::NOT_SET)
-{
-}
-
 ImportResourcesToDraftAppVersionResult::ImportResourcesToDraftAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ImportResourcesToDraftAppVersionResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksSources"))
   {
     Aws::Utils::Array<JsonView> eksSourcesJsonList = jsonValue.GetArray("eksSources");
@@ -50,8 +42,8 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
     {
       m_eksSources.push_back(eksSourcesJsonList[eksSourcesIndex].AsObject());
     }
+    m_eksSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceArns"))
   {
     Aws::Utils::Array<JsonView> sourceArnsJsonList = jsonValue.GetArray("sourceArns");
@@ -59,14 +51,13 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
     {
       m_sourceArns.push_back(sourceArnsJsonList[sourceArnsIndex].AsString());
     }
+    m_sourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceImportStatusTypeMapper::GetResourceImportStatusTypeForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terraformSources"))
   {
     Aws::Utils::Array<JsonView> terraformSourcesJsonList = jsonValue.GetArray("terraformSources");
@@ -74,14 +65,15 @@ ImportResourcesToDraftAppVersionResult& ImportResourcesToDraftAppVersionResult::
     {
       m_terraformSources.push_back(terraformSourcesJsonList[terraformSourcesIndex].AsObject());
     }
+    m_terraformSourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

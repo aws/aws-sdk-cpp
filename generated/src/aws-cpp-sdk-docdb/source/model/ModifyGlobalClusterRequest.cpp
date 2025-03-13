@@ -10,14 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-ModifyGlobalClusterRequest::ModifyGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_newGlobalClusterIdentifierHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

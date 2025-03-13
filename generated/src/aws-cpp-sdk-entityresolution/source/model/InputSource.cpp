@@ -18,16 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-InputSource::InputSource() : 
-    m_applyNormalization(false),
-    m_applyNormalizationHasBeenSet(false),
-    m_inputSourceARNHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
-{
-}
-
 InputSource::InputSource(JsonView jsonValue)
-  : InputSource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InputSource& InputSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applyNormalization"))
   {
     m_applyNormalization = jsonValue.GetBool("applyNormalization");
-
     m_applyNormalizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputSourceARN"))
   {
     m_inputSourceARN = jsonValue.GetString("inputSourceARN");
-
     m_inputSourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaName"))
   {
     m_schemaName = jsonValue.GetString("schemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResourceGroupsRequest::DescribeResourceGroupsRequest() : 
-    m_resourceGroupArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourceGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class VideoBlock
   {
   public:
-    AWS_BEDROCKRUNTIME_API VideoBlock();
+    AWS_BEDROCKRUNTIME_API VideoBlock() = default;
     AWS_BEDROCKRUNTIME_API VideoBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API VideoBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The block's format.</p>
      */
-    inline const VideoFormat& GetFormat() const{ return m_format; }
+    inline VideoFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const VideoFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(VideoFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline VideoBlock& WithFormat(const VideoFormat& value) { SetFormat(value); return *this;}
-    inline VideoBlock& WithFormat(VideoFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(VideoFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline VideoBlock& WithFormat(VideoFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The block's source.</p>
      */
-    inline const VideoSource& GetSource() const{ return m_source; }
+    inline const VideoSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const VideoSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(VideoSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline VideoBlock& WithSource(const VideoSource& value) { SetSource(value); return *this;}
-    inline VideoBlock& WithSource(VideoSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = VideoSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = VideoSource>
+    VideoBlock& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
   private:
 
-    VideoFormat m_format;
+    VideoFormat m_format{VideoFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     VideoSource m_source;

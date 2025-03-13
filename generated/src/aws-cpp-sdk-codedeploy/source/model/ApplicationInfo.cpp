@@ -18,20 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-ApplicationInfo::ApplicationInfo() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_linkedToGitHub(false),
-    m_linkedToGitHubHasBeenSet(false),
-    m_gitHubAccountNameHasBeenSet(false),
-    m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
-{
-}
-
 ApplicationInfo::ApplicationInfo(JsonView jsonValue)
-  : ApplicationInfo()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linkedToGitHub"))
   {
     m_linkedToGitHub = jsonValue.GetBool("linkedToGitHub");
-
     m_linkedToGitHubHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gitHubAccountName"))
   {
     m_gitHubAccountName = jsonValue.GetString("gitHubAccountName");
-
     m_gitHubAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computePlatform"))
   {
     m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
-
     m_computePlatformHasBeenSet = true;
   }
-
   return *this;
 }
 

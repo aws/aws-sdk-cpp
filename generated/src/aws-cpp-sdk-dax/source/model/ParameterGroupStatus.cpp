@@ -18,15 +18,7 @@ namespace DAX
 namespace Model
 {
 
-ParameterGroupStatus::ParameterGroupStatus() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_nodeIdsToRebootHasBeenSet(false)
-{
-}
-
 ParameterGroupStatus::ParameterGroupStatus(JsonView jsonValue)
-  : ParameterGroupStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ParameterGroupStatus& ParameterGroupStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParameterGroupName"))
   {
     m_parameterGroupName = jsonValue.GetString("ParameterGroupName");
-
     m_parameterGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterApplyStatus"))
   {
     m_parameterApplyStatus = jsonValue.GetString("ParameterApplyStatus");
-
     m_parameterApplyStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeIdsToReboot"))
   {
     Aws::Utils::Array<JsonView> nodeIdsToRebootJsonList = jsonValue.GetArray("NodeIdsToReboot");
@@ -56,7 +44,6 @@ ParameterGroupStatus& ParameterGroupStatus::operator =(JsonView jsonValue)
     }
     m_nodeIdsToRebootHasBeenSet = true;
   }
-
   return *this;
 }
 

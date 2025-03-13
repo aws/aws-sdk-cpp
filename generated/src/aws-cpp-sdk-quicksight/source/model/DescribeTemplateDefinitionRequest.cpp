@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeTemplateDefinitionRequest::DescribeTemplateDefinitionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTemplateDefinitionRequest::SerializePayload() const
 {
   return {};

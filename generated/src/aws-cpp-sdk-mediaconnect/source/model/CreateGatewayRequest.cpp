@@ -12,13 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGatewayRequest::CreateGatewayRequest() : 
-    m_egressCidrBlocksHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networksHasBeenSet(false)
-{
-}
-
 Aws::String CreateGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

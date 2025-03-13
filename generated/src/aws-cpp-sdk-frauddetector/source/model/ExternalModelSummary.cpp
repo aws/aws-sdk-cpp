@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ExternalModelSummary::ExternalModelSummary() : 
-    m_modelEndpointHasBeenSet(false),
-    m_modelSource(ModelSource::NOT_SET),
-    m_modelSourceHasBeenSet(false)
-{
-}
-
 ExternalModelSummary::ExternalModelSummary(JsonView jsonValue)
-  : ExternalModelSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExternalModelSummary& ExternalModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelEndpoint"))
   {
     m_modelEndpoint = jsonValue.GetString("modelEndpoint");
-
     m_modelEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelSource"))
   {
     m_modelSource = ModelSourceMapper::GetModelSourceForName(jsonValue.GetString("modelSource"));
-
     m_modelSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

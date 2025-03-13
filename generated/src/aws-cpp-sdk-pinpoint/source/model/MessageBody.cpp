@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-MessageBody::MessageBody() : 
-    m_messageHasBeenSet(false),
-    m_requestIDHasBeenSet(false)
-{
-}
-
 MessageBody::MessageBody(JsonView jsonValue)
-  : MessageBody()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MessageBody& MessageBody::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestID"))
   {
     m_requestID = jsonValue.GetString("RequestID");
-
     m_requestIDHasBeenSet = true;
   }
-
   return *this;
 }
 

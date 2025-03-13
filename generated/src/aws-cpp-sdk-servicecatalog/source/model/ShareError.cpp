@@ -18,15 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ShareError::ShareError() : 
-    m_accountsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 ShareError::ShareError(JsonView jsonValue)
-  : ShareError()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ShareError& ShareError::operator =(JsonView jsonValue)
     }
     m_accountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

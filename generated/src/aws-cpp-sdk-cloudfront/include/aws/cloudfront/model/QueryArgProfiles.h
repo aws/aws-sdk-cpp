@@ -32,7 +32,7 @@ namespace Model
   class QueryArgProfiles
   {
   public:
-    AWS_CLOUDFRONT_API QueryArgProfiles();
+    AWS_CLOUDFRONT_API QueryArgProfiles() = default;
     AWS_CLOUDFRONT_API QueryArgProfiles(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API QueryArgProfiles& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
      * <p>Number of profiles for query argument-profile mapping for field-level
      * encryption.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline QueryArgProfiles& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
      * <p>Number of items for query argument-profile mapping for field-level
      * encryption.</p>
      */
-    inline const Aws::Vector<QueryArgProfile>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<QueryArgProfile>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<QueryArgProfile>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<QueryArgProfile>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline QueryArgProfiles& WithItems(const Aws::Vector<QueryArgProfile>& value) { SetItems(value); return *this;}
-    inline QueryArgProfiles& WithItems(Aws::Vector<QueryArgProfile>&& value) { SetItems(std::move(value)); return *this;}
-    inline QueryArgProfiles& AddItems(const QueryArgProfile& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline QueryArgProfiles& AddItems(QueryArgProfile&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<QueryArgProfile>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<QueryArgProfile>>
+    QueryArgProfiles& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = QueryArgProfile>
+    QueryArgProfiles& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<QueryArgProfile> m_items;

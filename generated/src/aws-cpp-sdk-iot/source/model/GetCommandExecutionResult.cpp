@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCommandExecutionResult::GetCommandExecutionResult() : 
-    m_status(CommandExecutionStatus::NOT_SET),
-    m_executionTimeoutSeconds(0)
-{
-}
-
 GetCommandExecutionResult::GetCommandExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCommandExecutionResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ GetCommandExecutionResult& GetCommandExecutionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
+    m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commandArn"))
   {
     m_commandArn = jsonValue.GetString("commandArn");
-
+    m_commandArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
+    m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CommandExecutionStatusMapper::GetCommandExecutionStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetObject("statusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     Aws::Map<Aws::String, JsonView> resultJsonMap = jsonValue.GetObject("result").GetAllObjects();
@@ -69,8 +57,8 @@ GetCommandExecutionResult& GetCommandExecutionResult::operator =(const Aws::Amaz
     {
       m_result[resultItem.first] = resultItem.second.AsObject();
     }
+    m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -78,50 +66,45 @@ GetCommandExecutionResult& GetCommandExecutionResult::operator =(const Aws::Amaz
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsObject();
     }
+    m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionTimeoutSeconds"))
   {
     m_executionTimeoutSeconds = jsonValue.GetInt64("executionTimeoutSeconds");
-
+    m_executionTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
+    m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedAt"))
   {
     m_completedAt = jsonValue.GetDouble("completedAt");
-
+    m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeToLive"))
   {
     m_timeToLive = jsonValue.GetDouble("timeToLive");
-
+    m_timeToLiveHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

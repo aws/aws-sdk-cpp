@@ -20,24 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Integration::Integration() : 
-    m_integrationArnHasBeenSet(false),
-    m_integrationNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(ZeroETLIntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Integration::Integration(const XmlNode& xmlNode)
-  : Integration()
 {
   *this = xmlNode;
 }
@@ -53,66 +36,76 @@ Integration& Integration::operator =(const XmlNode& xmlNode)
     {
       m_integrationArn = Aws::Utils::Xml::DecodeEscapedXmlText(integrationArnNode.GetText());
       m_integrationArnHasBeenSet = true;
+       m_integrationArnHasBeenSet = true;
     }
     XmlNode integrationNameNode = resultNode.FirstChild("IntegrationName");
     if(!integrationNameNode.IsNull())
     {
       m_integrationName = Aws::Utils::Xml::DecodeEscapedXmlText(integrationNameNode.GetText());
       m_integrationNameHasBeenSet = true;
+       m_integrationNameHasBeenSet = true;
     }
     XmlNode sourceArnNode = resultNode.FirstChild("SourceArn");
     if(!sourceArnNode.IsNull())
     {
       m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
       m_sourceArnHasBeenSet = true;
+       m_sourceArnHasBeenSet = true;
     }
     XmlNode targetArnNode = resultNode.FirstChild("TargetArn");
     if(!targetArnNode.IsNull())
     {
       m_targetArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetArnNode.GetText());
       m_targetArnHasBeenSet = true;
+       m_targetArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("Errors");
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("IntegrationError");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
         errorsMember = errorsMember.NextNode("IntegrationError");
       }
 
-      m_errorsHasBeenSet = true;
+       m_errorsHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
     if(!kMSKeyIdNode.IsNull())
     {
       m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
       m_kMSKeyIdHasBeenSet = true;
+       m_kMSKeyIdHasBeenSet = true;
     }
     XmlNode additionalEncryptionContextNode = resultNode.FirstChild("AdditionalEncryptionContext");
 
     if(!additionalEncryptionContextNode.IsNull())
     {
       XmlNode additionalEncryptionContextEntry = additionalEncryptionContextNode.FirstChild("entry");
+      m_additionalEncryptionContextHasBeenSet = !additionalEncryptionContextEntry.IsNull();
       while(!additionalEncryptionContextEntry.IsNull())
       {
         XmlNode keyNode = additionalEncryptionContextEntry.FirstChild("key");
@@ -122,19 +115,20 @@ Integration& Integration::operator =(const XmlNode& xmlNode)
         additionalEncryptionContextEntry = additionalEncryptionContextEntry.NextNode("entry");
       }
 
-      m_additionalEncryptionContextHasBeenSet = true;
+       m_additionalEncryptionContextHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

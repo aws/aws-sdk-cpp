@@ -23,7 +23,7 @@ namespace Model
   class CreateBlueGreenDeploymentRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CreateBlueGreenDeploymentRequest();
+    AWS_RDS_API CreateBlueGreenDeploymentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>Can't be the same as an existing blue/green deployment name in the same
      * account and Amazon Web Services Region.</p> </li> </ul>
      */
-    inline const Aws::String& GetBlueGreenDeploymentName() const{ return m_blueGreenDeploymentName; }
+    inline const Aws::String& GetBlueGreenDeploymentName() const { return m_blueGreenDeploymentName; }
     inline bool BlueGreenDeploymentNameHasBeenSet() const { return m_blueGreenDeploymentNameHasBeenSet; }
-    inline void SetBlueGreenDeploymentName(const Aws::String& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = value; }
-    inline void SetBlueGreenDeploymentName(Aws::String&& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = std::move(value); }
-    inline void SetBlueGreenDeploymentName(const char* value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(const Aws::String& value) { SetBlueGreenDeploymentName(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(Aws::String&& value) { SetBlueGreenDeploymentName(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(const char* value) { SetBlueGreenDeploymentName(value); return *this;}
+    template<typename BlueGreenDeploymentNameT = Aws::String>
+    void SetBlueGreenDeploymentName(BlueGreenDeploymentNameT&& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = std::forward<BlueGreenDeploymentNameT>(value); }
+    template<typename BlueGreenDeploymentNameT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(BlueGreenDeploymentNameT&& value) { SetBlueGreenDeploymentName(std::forward<BlueGreenDeploymentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * are ready, you can switch the database in the green environment to be the
      * production database.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <p>The engine version of the database in the green environment.</p> <p>Specify
      * the engine version to upgrade to in the green environment.</p>
      */
-    inline const Aws::String& GetTargetEngineVersion() const{ return m_targetEngineVersion; }
+    inline const Aws::String& GetTargetEngineVersion() const { return m_targetEngineVersion; }
     inline bool TargetEngineVersionHasBeenSet() const { return m_targetEngineVersionHasBeenSet; }
-    inline void SetTargetEngineVersion(const Aws::String& value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion = value; }
-    inline void SetTargetEngineVersion(Aws::String&& value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion = std::move(value); }
-    inline void SetTargetEngineVersion(const char* value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(const Aws::String& value) { SetTargetEngineVersion(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(Aws::String&& value) { SetTargetEngineVersion(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(const char* value) { SetTargetEngineVersion(value); return *this;}
+    template<typename TargetEngineVersionT = Aws::String>
+    void SetTargetEngineVersion(TargetEngineVersionT&& value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion = std::forward<TargetEngineVersionT>(value); }
+    template<typename TargetEngineVersionT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(TargetEngineVersionT&& value) { SetTargetEngineVersion(std::forward<TargetEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,12 @@ namespace Model
      * environment.</p> <p>To test parameter changes, specify a DB parameter group that
      * is different from the one associated with the source DB instance.</p>
      */
-    inline const Aws::String& GetTargetDBParameterGroupName() const{ return m_targetDBParameterGroupName; }
+    inline const Aws::String& GetTargetDBParameterGroupName() const { return m_targetDBParameterGroupName; }
     inline bool TargetDBParameterGroupNameHasBeenSet() const { return m_targetDBParameterGroupNameHasBeenSet; }
-    inline void SetTargetDBParameterGroupName(const Aws::String& value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName = value; }
-    inline void SetTargetDBParameterGroupName(Aws::String&& value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName = std::move(value); }
-    inline void SetTargetDBParameterGroupName(const char* value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(const Aws::String& value) { SetTargetDBParameterGroupName(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(Aws::String&& value) { SetTargetDBParameterGroupName(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(const char* value) { SetTargetDBParameterGroupName(value); return *this;}
+    template<typename TargetDBParameterGroupNameT = Aws::String>
+    void SetTargetDBParameterGroupName(TargetDBParameterGroupNameT&& value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName = std::forward<TargetDBParameterGroupNameT>(value); }
+    template<typename TargetDBParameterGroupNameT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(TargetDBParameterGroupNameT&& value) { SetTargetDBParameterGroupName(std::forward<TargetDBParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,28 +103,26 @@ namespace Model
      * parameter group that is different from the one associated with the source DB
      * cluster.</p>
      */
-    inline const Aws::String& GetTargetDBClusterParameterGroupName() const{ return m_targetDBClusterParameterGroupName; }
+    inline const Aws::String& GetTargetDBClusterParameterGroupName() const { return m_targetDBClusterParameterGroupName; }
     inline bool TargetDBClusterParameterGroupNameHasBeenSet() const { return m_targetDBClusterParameterGroupNameHasBeenSet; }
-    inline void SetTargetDBClusterParameterGroupName(const Aws::String& value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName = value; }
-    inline void SetTargetDBClusterParameterGroupName(Aws::String&& value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName = std::move(value); }
-    inline void SetTargetDBClusterParameterGroupName(const char* value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(const Aws::String& value) { SetTargetDBClusterParameterGroupName(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(Aws::String&& value) { SetTargetDBClusterParameterGroupName(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(const char* value) { SetTargetDBClusterParameterGroupName(value); return *this;}
+    template<typename TargetDBClusterParameterGroupNameT = Aws::String>
+    void SetTargetDBClusterParameterGroupName(TargetDBClusterParameterGroupNameT&& value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName = std::forward<TargetDBClusterParameterGroupNameT>(value); }
+    template<typename TargetDBClusterParameterGroupNameT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(TargetDBClusterParameterGroupNameT&& value) { SetTargetDBClusterParameterGroupName(std::forward<TargetDBClusterParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags to assign to the blue/green deployment.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateBlueGreenDeploymentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateBlueGreenDeploymentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateBlueGreenDeploymentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateBlueGreenDeploymentRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -144,14 +134,12 @@ namespace Model
      * parameter. After the green environment is created, you can individually modify
      * the instance classes of the DB instances within the green DB cluster.</p>
      */
-    inline const Aws::String& GetTargetDBInstanceClass() const{ return m_targetDBInstanceClass; }
+    inline const Aws::String& GetTargetDBInstanceClass() const { return m_targetDBInstanceClass; }
     inline bool TargetDBInstanceClassHasBeenSet() const { return m_targetDBInstanceClassHasBeenSet; }
-    inline void SetTargetDBInstanceClass(const Aws::String& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = value; }
-    inline void SetTargetDBInstanceClass(Aws::String&& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = std::move(value); }
-    inline void SetTargetDBInstanceClass(const char* value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const Aws::String& value) { SetTargetDBInstanceClass(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(Aws::String&& value) { SetTargetDBInstanceClass(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const char* value) { SetTargetDBInstanceClass(value); return *this;}
+    template<typename TargetDBInstanceClassT = Aws::String>
+    void SetTargetDBInstanceClass(TargetDBInstanceClassT&& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = std::forward<TargetDBInstanceClassT>(value); }
+    template<typename TargetDBInstanceClassT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(TargetDBInstanceClassT&& value) { SetTargetDBInstanceClass(std::forward<TargetDBInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,7 +150,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
      * the storage file system for a DB instance</a>.</p>
      */
-    inline bool GetUpgradeTargetStorageConfig() const{ return m_upgradeTargetStorageConfig; }
+    inline bool GetUpgradeTargetStorageConfig() const { return m_upgradeTargetStorageConfig; }
     inline bool UpgradeTargetStorageConfigHasBeenSet() const { return m_upgradeTargetStorageConfigHasBeenSet; }
     inline void SetUpgradeTargetStorageConfig(bool value) { m_upgradeTargetStorageConfigHasBeenSet = true; m_upgradeTargetStorageConfig = value; }
     inline CreateBlueGreenDeploymentRequest& WithUpgradeTargetStorageConfig(bool value) { SetUpgradeTargetStorageConfig(value); return *this;}
@@ -177,7 +165,7 @@ namespace Model
      * RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to Amazon Aurora blue/green deployments.</p>
      */
-    inline int GetTargetIops() const{ return m_targetIops; }
+    inline int GetTargetIops() const { return m_targetIops; }
     inline bool TargetIopsHasBeenSet() const { return m_targetIopsHasBeenSet; }
     inline void SetTargetIops(int value) { m_targetIopsHasBeenSet = true; m_targetIops = value; }
     inline CreateBlueGreenDeploymentRequest& WithTargetIops(int value) { SetTargetIops(value); return *this;}
@@ -189,14 +177,12 @@ namespace Model
      * Values: <code>gp2 | gp3 | io1 | io2</code> </p> <p>This setting doesn't apply to
      * Amazon Aurora blue/green deployments.</p>
      */
-    inline const Aws::String& GetTargetStorageType() const{ return m_targetStorageType; }
+    inline const Aws::String& GetTargetStorageType() const { return m_targetStorageType; }
     inline bool TargetStorageTypeHasBeenSet() const { return m_targetStorageTypeHasBeenSet; }
-    inline void SetTargetStorageType(const Aws::String& value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType = value; }
-    inline void SetTargetStorageType(Aws::String&& value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType = std::move(value); }
-    inline void SetTargetStorageType(const char* value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType.assign(value); }
-    inline CreateBlueGreenDeploymentRequest& WithTargetStorageType(const Aws::String& value) { SetTargetStorageType(value); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetStorageType(Aws::String&& value) { SetTargetStorageType(std::move(value)); return *this;}
-    inline CreateBlueGreenDeploymentRequest& WithTargetStorageType(const char* value) { SetTargetStorageType(value); return *this;}
+    template<typename TargetStorageTypeT = Aws::String>
+    void SetTargetStorageType(TargetStorageTypeT&& value) { m_targetStorageTypeHasBeenSet = true; m_targetStorageType = std::forward<TargetStorageTypeT>(value); }
+    template<typename TargetStorageTypeT = Aws::String>
+    CreateBlueGreenDeploymentRequest& WithTargetStorageType(TargetStorageTypeT&& value) { SetTargetStorageType(std::forward<TargetStorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,7 +192,7 @@ namespace Model
      * green DB instance.</p> <p>This setting doesn't apply to Amazon Aurora blue/green
      * deployments.</p>
      */
-    inline int GetTargetAllocatedStorage() const{ return m_targetAllocatedStorage; }
+    inline int GetTargetAllocatedStorage() const { return m_targetAllocatedStorage; }
     inline bool TargetAllocatedStorageHasBeenSet() const { return m_targetAllocatedStorageHasBeenSet; }
     inline void SetTargetAllocatedStorage(int value) { m_targetAllocatedStorageHasBeenSet = true; m_targetAllocatedStorage = value; }
     inline CreateBlueGreenDeploymentRequest& WithTargetAllocatedStorage(int value) { SetTargetAllocatedStorage(value); return *this;}
@@ -218,7 +204,7 @@ namespace Model
      * applies only to the <code>gp3</code> storage type.</p> <p>This setting doesn't
      * apply to Amazon Aurora blue/green deployments.</p>
      */
-    inline int GetTargetStorageThroughput() const{ return m_targetStorageThroughput; }
+    inline int GetTargetStorageThroughput() const { return m_targetStorageThroughput; }
     inline bool TargetStorageThroughputHasBeenSet() const { return m_targetStorageThroughputHasBeenSet; }
     inline void SetTargetStorageThroughput(int value) { m_targetStorageThroughputHasBeenSet = true; m_targetStorageThroughput = value; }
     inline CreateBlueGreenDeploymentRequest& WithTargetStorageThroughput(int value) { SetTargetStorageThroughput(value); return *this;}
@@ -246,19 +232,19 @@ namespace Model
     Aws::String m_targetDBInstanceClass;
     bool m_targetDBInstanceClassHasBeenSet = false;
 
-    bool m_upgradeTargetStorageConfig;
+    bool m_upgradeTargetStorageConfig{false};
     bool m_upgradeTargetStorageConfigHasBeenSet = false;
 
-    int m_targetIops;
+    int m_targetIops{0};
     bool m_targetIopsHasBeenSet = false;
 
     Aws::String m_targetStorageType;
     bool m_targetStorageTypeHasBeenSet = false;
 
-    int m_targetAllocatedStorage;
+    int m_targetAllocatedStorage{0};
     bool m_targetAllocatedStorageHasBeenSet = false;
 
-    int m_targetStorageThroughput;
+    int m_targetStorageThroughput{0};
     bool m_targetStorageThroughputHasBeenSet = false;
   };
 

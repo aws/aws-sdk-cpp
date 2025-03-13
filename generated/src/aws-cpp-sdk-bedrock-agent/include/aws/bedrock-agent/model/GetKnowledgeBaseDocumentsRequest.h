@@ -23,7 +23,7 @@ namespace Model
   class GetKnowledgeBaseDocumentsRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API GetKnowledgeBaseDocumentsRequest();
+    AWS_BEDROCKAGENT_API GetKnowledgeBaseDocumentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier of the data source that contains the documents.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline GetKnowledgeBaseDocumentsRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline GetKnowledgeBaseDocumentsRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline GetKnowledgeBaseDocumentsRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    GetKnowledgeBaseDocumentsRequest& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,14 @@ namespace Model
      * <p>A list of objects, each of which contains information to identify a document
      * for which to retrieve information.</p>
      */
-    inline const Aws::Vector<DocumentIdentifier>& GetDocumentIdentifiers() const{ return m_documentIdentifiers; }
+    inline const Aws::Vector<DocumentIdentifier>& GetDocumentIdentifiers() const { return m_documentIdentifiers; }
     inline bool DocumentIdentifiersHasBeenSet() const { return m_documentIdentifiersHasBeenSet; }
-    inline void SetDocumentIdentifiers(const Aws::Vector<DocumentIdentifier>& value) { m_documentIdentifiersHasBeenSet = true; m_documentIdentifiers = value; }
-    inline void SetDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { m_documentIdentifiersHasBeenSet = true; m_documentIdentifiers = std::move(value); }
-    inline GetKnowledgeBaseDocumentsRequest& WithDocumentIdentifiers(const Aws::Vector<DocumentIdentifier>& value) { SetDocumentIdentifiers(value); return *this;}
-    inline GetKnowledgeBaseDocumentsRequest& WithDocumentIdentifiers(Aws::Vector<DocumentIdentifier>&& value) { SetDocumentIdentifiers(std::move(value)); return *this;}
-    inline GetKnowledgeBaseDocumentsRequest& AddDocumentIdentifiers(const DocumentIdentifier& value) { m_documentIdentifiersHasBeenSet = true; m_documentIdentifiers.push_back(value); return *this; }
-    inline GetKnowledgeBaseDocumentsRequest& AddDocumentIdentifiers(DocumentIdentifier&& value) { m_documentIdentifiersHasBeenSet = true; m_documentIdentifiers.push_back(std::move(value)); return *this; }
+    template<typename DocumentIdentifiersT = Aws::Vector<DocumentIdentifier>>
+    void SetDocumentIdentifiers(DocumentIdentifiersT&& value) { m_documentIdentifiersHasBeenSet = true; m_documentIdentifiers = std::forward<DocumentIdentifiersT>(value); }
+    template<typename DocumentIdentifiersT = Aws::Vector<DocumentIdentifier>>
+    GetKnowledgeBaseDocumentsRequest& WithDocumentIdentifiers(DocumentIdentifiersT&& value) { SetDocumentIdentifiers(std::forward<DocumentIdentifiersT>(value)); return *this;}
+    template<typename DocumentIdentifiersT = DocumentIdentifier>
+    GetKnowledgeBaseDocumentsRequest& AddDocumentIdentifiers(DocumentIdentifiersT&& value) { m_documentIdentifiersHasBeenSet = true; m_documentIdentifiers.emplace_back(std::forward<DocumentIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p>The unique identifier of the knowledge base that is connected to the data
      * source.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline GetKnowledgeBaseDocumentsRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline GetKnowledgeBaseDocumentsRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline GetKnowledgeBaseDocumentsRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    GetKnowledgeBaseDocumentsRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
   private:
 

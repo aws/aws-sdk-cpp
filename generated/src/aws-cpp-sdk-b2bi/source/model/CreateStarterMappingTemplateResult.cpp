@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStarterMappingTemplateResult::CreateStarterMappingTemplateResult()
-{
-}
-
 CreateStarterMappingTemplateResult::CreateStarterMappingTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateStarterMappingTemplateResult& CreateStarterMappingTemplateResult::operator
   if(jsonValue.ValueExists("mappingTemplate"))
   {
     m_mappingTemplate = jsonValue.GetString("mappingTemplate");
-
+    m_mappingTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

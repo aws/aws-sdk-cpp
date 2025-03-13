@@ -30,7 +30,7 @@ namespace Model
   class ListStackInstancesResult
   {
   public:
-    AWS_CLOUDFORMATION_API ListStackInstancesResult();
+    AWS_CLOUDFORMATION_API ListStackInstancesResult() = default;
     AWS_CLOUDFORMATION_API ListStackInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API ListStackInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>A list of <code>StackInstanceSummary</code> structures that contain
      * information about the specified stack instances.</p>
      */
-    inline const Aws::Vector<StackInstanceSummary>& GetSummaries() const{ return m_summaries; }
-    inline void SetSummaries(const Aws::Vector<StackInstanceSummary>& value) { m_summaries = value; }
-    inline void SetSummaries(Aws::Vector<StackInstanceSummary>&& value) { m_summaries = std::move(value); }
-    inline ListStackInstancesResult& WithSummaries(const Aws::Vector<StackInstanceSummary>& value) { SetSummaries(value); return *this;}
-    inline ListStackInstancesResult& WithSummaries(Aws::Vector<StackInstanceSummary>&& value) { SetSummaries(std::move(value)); return *this;}
-    inline ListStackInstancesResult& AddSummaries(const StackInstanceSummary& value) { m_summaries.push_back(value); return *this; }
-    inline ListStackInstancesResult& AddSummaries(StackInstanceSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StackInstanceSummary>& GetSummaries() const { return m_summaries; }
+    template<typename SummariesT = Aws::Vector<StackInstanceSummary>>
+    void SetSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries = std::forward<SummariesT>(value); }
+    template<typename SummariesT = Aws::Vector<StackInstanceSummary>>
+    ListStackInstancesResult& WithSummaries(SummariesT&& value) { SetSummaries(std::forward<SummariesT>(value)); return *this;}
+    template<typename SummariesT = StackInstanceSummary>
+    ListStackInstancesResult& AddSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries.emplace_back(std::forward<SummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,30 +57,31 @@ namespace Model
      * object's <code>NextToken</code> parameter. If the request returns all results,
      * <code>NextToken</code> is set to <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStackInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStackInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStackInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStackInstancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListStackInstancesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListStackInstancesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListStackInstancesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StackInstanceSummary> m_summaries;
+    bool m_summariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

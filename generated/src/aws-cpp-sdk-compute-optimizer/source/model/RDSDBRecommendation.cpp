@@ -18,39 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSDBRecommendation::RDSDBRecommendation() : 
-    m_resourceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_currentDBInstanceClassHasBeenSet(false),
-    m_currentStorageConfigurationHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_idle(Idle::NOT_SET),
-    m_idleHasBeenSet(false),
-    m_instanceFinding(RDSInstanceFinding::NOT_SET),
-    m_instanceFindingHasBeenSet(false),
-    m_storageFinding(RDSStorageFinding::NOT_SET),
-    m_storageFindingHasBeenSet(false),
-    m_instanceFindingReasonCodesHasBeenSet(false),
-    m_currentInstancePerformanceRisk(RDSCurrentInstancePerformanceRisk::NOT_SET),
-    m_currentInstancePerformanceRiskHasBeenSet(false),
-    m_storageFindingReasonCodesHasBeenSet(false),
-    m_instanceRecommendationOptionsHasBeenSet(false),
-    m_storageRecommendationOptionsHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RDSDBRecommendation::RDSDBRecommendation(JsonView jsonValue)
-  : RDSDBRecommendation()
 {
   *this = jsonValue;
 }
@@ -60,80 +28,58 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = jsonValue.GetString("engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promotionTier"))
   {
     m_promotionTier = jsonValue.GetInteger("promotionTier");
-
     m_promotionTierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentDBInstanceClass"))
   {
     m_currentDBInstanceClass = jsonValue.GetString("currentDBInstanceClass");
-
     m_currentDBInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentStorageConfiguration"))
   {
     m_currentStorageConfiguration = jsonValue.GetObject("currentStorageConfiguration");
-
     m_currentStorageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbClusterIdentifier"))
   {
     m_dbClusterIdentifier = jsonValue.GetString("dbClusterIdentifier");
-
     m_dbClusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idle"))
   {
     m_idle = IdleMapper::GetIdleForName(jsonValue.GetString("idle"));
-
     m_idleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceFinding"))
   {
     m_instanceFinding = RDSInstanceFindingMapper::GetRDSInstanceFindingForName(jsonValue.GetString("instanceFinding"));
-
     m_instanceFindingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageFinding"))
   {
     m_storageFinding = RDSStorageFindingMapper::GetRDSStorageFindingForName(jsonValue.GetString("storageFinding"));
-
     m_storageFindingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceFindingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> instanceFindingReasonCodesJsonList = jsonValue.GetArray("instanceFindingReasonCodes");
@@ -143,14 +89,11 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     }
     m_instanceFindingReasonCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentInstancePerformanceRisk"))
   {
     m_currentInstancePerformanceRisk = RDSCurrentInstancePerformanceRiskMapper::GetRDSCurrentInstancePerformanceRiskForName(jsonValue.GetString("currentInstancePerformanceRisk"));
-
     m_currentInstancePerformanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageFindingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> storageFindingReasonCodesJsonList = jsonValue.GetArray("storageFindingReasonCodes");
@@ -160,7 +103,6 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     }
     m_storageFindingReasonCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceRecommendationOptions"))
   {
     Aws::Utils::Array<JsonView> instanceRecommendationOptionsJsonList = jsonValue.GetArray("instanceRecommendationOptions");
@@ -170,7 +112,6 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     }
     m_instanceRecommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageRecommendationOptions"))
   {
     Aws::Utils::Array<JsonView> storageRecommendationOptionsJsonList = jsonValue.GetArray("storageRecommendationOptions");
@@ -180,7 +121,6 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     }
     m_storageRecommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
@@ -190,28 +130,21 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     }
     m_utilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
   {
     m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
     m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookbackPeriodInDays"))
   {
     m_lookbackPeriodInDays = jsonValue.GetDouble("lookbackPeriodInDays");
-
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -221,7 +154,6 @@ RDSDBRecommendation& RDSDBRecommendation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

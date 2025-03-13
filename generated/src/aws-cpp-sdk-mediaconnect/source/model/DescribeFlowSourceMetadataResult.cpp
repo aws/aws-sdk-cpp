@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFlowSourceMetadataResult::DescribeFlowSourceMetadataResult()
-{
-}
-
 DescribeFlowSourceMetadataResult::DescribeFlowSourceMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeFlowSourceMetadataResult& DescribeFlowSourceMetadataResult::operator =(c
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
@@ -42,26 +37,25 @@ DescribeFlowSourceMetadataResult& DescribeFlowSourceMetadataResult::operator =(c
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
     }
+    m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
+    m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transportMediaInfo"))
   {
     m_transportMediaInfo = jsonValue.GetObject("transportMediaInfo");
-
+    m_transportMediaInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

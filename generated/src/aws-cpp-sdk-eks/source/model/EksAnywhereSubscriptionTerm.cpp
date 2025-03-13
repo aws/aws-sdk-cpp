@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-EksAnywhereSubscriptionTerm::EksAnywhereSubscriptionTerm() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_unit(EksAnywhereSubscriptionTermUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 EksAnywhereSubscriptionTerm::EksAnywhereSubscriptionTerm(JsonView jsonValue)
-  : EksAnywhereSubscriptionTerm()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EksAnywhereSubscriptionTerm& EksAnywhereSubscriptionTerm::operator =(JsonView js
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInteger("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = EksAnywhereSubscriptionTermUnitMapper::GetEksAnywhereSubscriptionTermUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

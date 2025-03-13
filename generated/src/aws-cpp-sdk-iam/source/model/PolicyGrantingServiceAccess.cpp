@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyGrantingServiceAccess::PolicyGrantingServiceAccess() : 
-    m_policyNameHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_entityType(PolicyOwnerEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_entityNameHasBeenSet(false)
-{
-}
-
 PolicyGrantingServiceAccess::PolicyGrantingServiceAccess(const XmlNode& xmlNode)
-  : PolicyGrantingServiceAccess()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ PolicyGrantingServiceAccess& PolicyGrantingServiceAccess::operator =(const XmlNo
     {
       m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
+       m_policyNameHasBeenSet = true;
     }
     XmlNode policyTypeNode = resultNode.FirstChild("PolicyType");
     if(!policyTypeNode.IsNull())
     {
-      m_policyType = PolicyTypeMapper::GetPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyTypeNode.GetText()).c_str()).c_str());
+      m_policyType = PolicyTypeMapper::GetPolicyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(policyTypeNode.GetText()).c_str()));
       m_policyTypeHasBeenSet = true;
+       m_policyTypeHasBeenSet = true;
     }
     XmlNode policyArnNode = resultNode.FirstChild("PolicyArn");
     if(!policyArnNode.IsNull())
     {
       m_policyArn = Aws::Utils::Xml::DecodeEscapedXmlText(policyArnNode.GetText());
       m_policyArnHasBeenSet = true;
+       m_policyArnHasBeenSet = true;
     }
     XmlNode entityTypeNode = resultNode.FirstChild("EntityType");
     if(!entityTypeNode.IsNull())
     {
-      m_entityType = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(entityTypeNode.GetText()).c_str()).c_str());
+      m_entityType = PolicyOwnerEntityTypeMapper::GetPolicyOwnerEntityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(entityTypeNode.GetText()).c_str()));
       m_entityTypeHasBeenSet = true;
+       m_entityTypeHasBeenSet = true;
     }
     XmlNode entityNameNode = resultNode.FirstChild("EntityName");
     if(!entityNameNode.IsNull())
     {
       m_entityName = Aws::Utils::Xml::DecodeEscapedXmlText(entityNameNode.GetText());
       m_entityNameHasBeenSet = true;
+       m_entityNameHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class DestinationConfiguration
   {
   public:
-    AWS_IOTTWINMAKER_API DestinationConfiguration();
+    AWS_IOTTWINMAKER_API DestinationConfiguration() = default;
     AWS_IOTTWINMAKER_API DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,22 @@ namespace Model
     /**
      * <p>The destination type.</p>
      */
-    inline const DestinationType& GetType() const{ return m_type; }
+    inline DestinationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DestinationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DestinationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DestinationConfiguration& WithType(const DestinationType& value) { SetType(value); return *this;}
-    inline DestinationConfiguration& WithType(DestinationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DestinationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DestinationConfiguration& WithType(DestinationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata transfer job S3 configuration. [need to add S3 entity]</p>
      */
-    inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3DestinationConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline DestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline DestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    DestinationConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,16 +67,16 @@ namespace Model
      * <p>The metadata transfer job Amazon Web Services IoT TwinMaker
      * configuration.</p>
      */
-    inline const IotTwinMakerDestinationConfiguration& GetIotTwinMakerConfiguration() const{ return m_iotTwinMakerConfiguration; }
+    inline const IotTwinMakerDestinationConfiguration& GetIotTwinMakerConfiguration() const { return m_iotTwinMakerConfiguration; }
     inline bool IotTwinMakerConfigurationHasBeenSet() const { return m_iotTwinMakerConfigurationHasBeenSet; }
-    inline void SetIotTwinMakerConfiguration(const IotTwinMakerDestinationConfiguration& value) { m_iotTwinMakerConfigurationHasBeenSet = true; m_iotTwinMakerConfiguration = value; }
-    inline void SetIotTwinMakerConfiguration(IotTwinMakerDestinationConfiguration&& value) { m_iotTwinMakerConfigurationHasBeenSet = true; m_iotTwinMakerConfiguration = std::move(value); }
-    inline DestinationConfiguration& WithIotTwinMakerConfiguration(const IotTwinMakerDestinationConfiguration& value) { SetIotTwinMakerConfiguration(value); return *this;}
-    inline DestinationConfiguration& WithIotTwinMakerConfiguration(IotTwinMakerDestinationConfiguration&& value) { SetIotTwinMakerConfiguration(std::move(value)); return *this;}
+    template<typename IotTwinMakerConfigurationT = IotTwinMakerDestinationConfiguration>
+    void SetIotTwinMakerConfiguration(IotTwinMakerConfigurationT&& value) { m_iotTwinMakerConfigurationHasBeenSet = true; m_iotTwinMakerConfiguration = std::forward<IotTwinMakerConfigurationT>(value); }
+    template<typename IotTwinMakerConfigurationT = IotTwinMakerDestinationConfiguration>
+    DestinationConfiguration& WithIotTwinMakerConfiguration(IotTwinMakerConfigurationT&& value) { SetIotTwinMakerConfiguration(std::forward<IotTwinMakerConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    DestinationType m_type;
+    DestinationType m_type{DestinationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3Configuration;

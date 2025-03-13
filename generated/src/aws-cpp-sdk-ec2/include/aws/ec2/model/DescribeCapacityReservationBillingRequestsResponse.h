@@ -30,7 +30,7 @@ namespace Model
   class DescribeCapacityReservationBillingRequestsResponse
   {
   public:
-    AWS_EC2_API DescribeCapacityReservationBillingRequestsResponse();
+    AWS_EC2_API DescribeCapacityReservationBillingRequestsResponse() = default;
     AWS_EC2_API DescribeCapacityReservationBillingRequestsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeCapacityReservationBillingRequestsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeCapacityReservationBillingRequestsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCapacityReservationBillingRequestsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCapacityReservationBillingRequestsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCapacityReservationBillingRequestsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the request.</p>
      */
-    inline const Aws::Vector<CapacityReservationBillingRequest>& GetCapacityReservationBillingRequests() const{ return m_capacityReservationBillingRequests; }
-    inline void SetCapacityReservationBillingRequests(const Aws::Vector<CapacityReservationBillingRequest>& value) { m_capacityReservationBillingRequests = value; }
-    inline void SetCapacityReservationBillingRequests(Aws::Vector<CapacityReservationBillingRequest>&& value) { m_capacityReservationBillingRequests = std::move(value); }
-    inline DescribeCapacityReservationBillingRequestsResponse& WithCapacityReservationBillingRequests(const Aws::Vector<CapacityReservationBillingRequest>& value) { SetCapacityReservationBillingRequests(value); return *this;}
-    inline DescribeCapacityReservationBillingRequestsResponse& WithCapacityReservationBillingRequests(Aws::Vector<CapacityReservationBillingRequest>&& value) { SetCapacityReservationBillingRequests(std::move(value)); return *this;}
-    inline DescribeCapacityReservationBillingRequestsResponse& AddCapacityReservationBillingRequests(const CapacityReservationBillingRequest& value) { m_capacityReservationBillingRequests.push_back(value); return *this; }
-    inline DescribeCapacityReservationBillingRequestsResponse& AddCapacityReservationBillingRequests(CapacityReservationBillingRequest&& value) { m_capacityReservationBillingRequests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapacityReservationBillingRequest>& GetCapacityReservationBillingRequests() const { return m_capacityReservationBillingRequests; }
+    template<typename CapacityReservationBillingRequestsT = Aws::Vector<CapacityReservationBillingRequest>>
+    void SetCapacityReservationBillingRequests(CapacityReservationBillingRequestsT&& value) { m_capacityReservationBillingRequestsHasBeenSet = true; m_capacityReservationBillingRequests = std::forward<CapacityReservationBillingRequestsT>(value); }
+    template<typename CapacityReservationBillingRequestsT = Aws::Vector<CapacityReservationBillingRequest>>
+    DescribeCapacityReservationBillingRequestsResponse& WithCapacityReservationBillingRequests(CapacityReservationBillingRequestsT&& value) { SetCapacityReservationBillingRequests(std::forward<CapacityReservationBillingRequestsT>(value)); return *this;}
+    template<typename CapacityReservationBillingRequestsT = CapacityReservationBillingRequest>
+    DescribeCapacityReservationBillingRequestsResponse& AddCapacityReservationBillingRequests(CapacityReservationBillingRequestsT&& value) { m_capacityReservationBillingRequestsHasBeenSet = true; m_capacityReservationBillingRequests.emplace_back(std::forward<CapacityReservationBillingRequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCapacityReservationBillingRequestsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCapacityReservationBillingRequestsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCapacityReservationBillingRequestsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CapacityReservationBillingRequest> m_capacityReservationBillingRequests;
+    bool m_capacityReservationBillingRequestsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

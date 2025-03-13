@@ -29,7 +29,7 @@ namespace Model
   class ListFirewallRuleGroupAssociationsResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API ListFirewallRuleGroupAssociationsResult();
+    AWS_ROUTE53RESOLVER_API ListFirewallRuleGroupAssociationsResult() = default;
     AWS_ROUTE53RESOLVER_API ListFirewallRuleGroupAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API ListFirewallRuleGroupAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * the response. To retrieve the next batch of objects, provide this token in your
      * next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFirewallRuleGroupAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFirewallRuleGroupAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFirewallRuleGroupAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFirewallRuleGroupAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * partial list of the associations that you have defined. For information, see
      * <code>MaxResults</code>. </p>
      */
-    inline const Aws::Vector<FirewallRuleGroupAssociation>& GetFirewallRuleGroupAssociations() const{ return m_firewallRuleGroupAssociations; }
-    inline void SetFirewallRuleGroupAssociations(const Aws::Vector<FirewallRuleGroupAssociation>& value) { m_firewallRuleGroupAssociations = value; }
-    inline void SetFirewallRuleGroupAssociations(Aws::Vector<FirewallRuleGroupAssociation>&& value) { m_firewallRuleGroupAssociations = std::move(value); }
-    inline ListFirewallRuleGroupAssociationsResult& WithFirewallRuleGroupAssociations(const Aws::Vector<FirewallRuleGroupAssociation>& value) { SetFirewallRuleGroupAssociations(value); return *this;}
-    inline ListFirewallRuleGroupAssociationsResult& WithFirewallRuleGroupAssociations(Aws::Vector<FirewallRuleGroupAssociation>&& value) { SetFirewallRuleGroupAssociations(std::move(value)); return *this;}
-    inline ListFirewallRuleGroupAssociationsResult& AddFirewallRuleGroupAssociations(const FirewallRuleGroupAssociation& value) { m_firewallRuleGroupAssociations.push_back(value); return *this; }
-    inline ListFirewallRuleGroupAssociationsResult& AddFirewallRuleGroupAssociations(FirewallRuleGroupAssociation&& value) { m_firewallRuleGroupAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FirewallRuleGroupAssociation>& GetFirewallRuleGroupAssociations() const { return m_firewallRuleGroupAssociations; }
+    template<typename FirewallRuleGroupAssociationsT = Aws::Vector<FirewallRuleGroupAssociation>>
+    void SetFirewallRuleGroupAssociations(FirewallRuleGroupAssociationsT&& value) { m_firewallRuleGroupAssociationsHasBeenSet = true; m_firewallRuleGroupAssociations = std::forward<FirewallRuleGroupAssociationsT>(value); }
+    template<typename FirewallRuleGroupAssociationsT = Aws::Vector<FirewallRuleGroupAssociation>>
+    ListFirewallRuleGroupAssociationsResult& WithFirewallRuleGroupAssociations(FirewallRuleGroupAssociationsT&& value) { SetFirewallRuleGroupAssociations(std::forward<FirewallRuleGroupAssociationsT>(value)); return *this;}
+    template<typename FirewallRuleGroupAssociationsT = FirewallRuleGroupAssociation>
+    ListFirewallRuleGroupAssociationsResult& AddFirewallRuleGroupAssociations(FirewallRuleGroupAssociationsT&& value) { m_firewallRuleGroupAssociationsHasBeenSet = true; m_firewallRuleGroupAssociations.emplace_back(std::forward<FirewallRuleGroupAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFirewallRuleGroupAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFirewallRuleGroupAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFirewallRuleGroupAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFirewallRuleGroupAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<FirewallRuleGroupAssociation> m_firewallRuleGroupAssociations;
+    bool m_firewallRuleGroupAssociationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

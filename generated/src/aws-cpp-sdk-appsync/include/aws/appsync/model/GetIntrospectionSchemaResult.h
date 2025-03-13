@@ -22,10 +22,9 @@ namespace Model
   class GetIntrospectionSchemaResult
   {
   public:
-    AWS_APPSYNC_API GetIntrospectionSchemaResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_APPSYNC_API GetIntrospectionSchemaResult(GetIntrospectionSchemaResult&&);
-    AWS_APPSYNC_API GetIntrospectionSchemaResult& operator=(GetIntrospectionSchemaResult&&);
+    AWS_APPSYNC_API GetIntrospectionSchemaResult() = default;
+    AWS_APPSYNC_API GetIntrospectionSchemaResult(GetIntrospectionSchemaResult&&) = default;
+    AWS_APPSYNC_API GetIntrospectionSchemaResult& operator=(GetIntrospectionSchemaResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetIntrospectionSchemaResult(const GetIntrospectionSchemaResult&) = delete;
@@ -50,19 +49,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIntrospectionSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIntrospectionSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIntrospectionSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIntrospectionSchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_schema;
+    Aws::Utils::Stream::ResponseStream m_schema{};
+    bool m_schemaHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

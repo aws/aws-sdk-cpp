@@ -18,16 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-LFTagPolicyDetails::LFTagPolicyDetails() : 
-    m_catalogIdHasBeenSet(false),
-    m_resourceType(LFResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false)
-{
-}
-
 LFTagPolicyDetails::LFTagPolicyDetails(JsonView jsonValue)
-  : LFTagPolicyDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LFTagPolicyDetails& LFTagPolicyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = LFResourceTypeMapper::GetLFResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDetails"))
   {
     m_resourceDetails = jsonValue.GetObject("ResourceDetails");
-
     m_resourceDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

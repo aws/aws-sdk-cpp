@@ -31,7 +31,7 @@ namespace Model
   class WorkerSetting
   {
   public:
-    AWS_KAFKACONNECT_API WorkerSetting();
+    AWS_KAFKACONNECT_API WorkerSetting() = default;
     AWS_KAFKACONNECT_API WorkerSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API WorkerSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const CapacityDescription& GetCapacity() const{ return m_capacity; }
+    inline const CapacityDescription& GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
-    inline void SetCapacity(const CapacityDescription& value) { m_capacityHasBeenSet = true; m_capacity = value; }
-    inline void SetCapacity(CapacityDescription&& value) { m_capacityHasBeenSet = true; m_capacity = std::move(value); }
-    inline WorkerSetting& WithCapacity(const CapacityDescription& value) { SetCapacity(value); return *this;}
-    inline WorkerSetting& WithCapacity(CapacityDescription&& value) { SetCapacity(std::move(value)); return *this;}
+    template<typename CapacityT = CapacityDescription>
+    void SetCapacity(CapacityT&& value) { m_capacityHasBeenSet = true; m_capacity = std::forward<CapacityT>(value); }
+    template<typename CapacityT = CapacityDescription>
+    WorkerSetting& WithCapacity(CapacityT&& value) { SetCapacity(std::forward<CapacityT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class DeleteTLSInspectionConfigurationResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DeleteTLSInspectionConfigurationResult();
+    AWS_NETWORKFIREWALL_API DeleteTLSInspectionConfigurationResult() = default;
     AWS_NETWORKFIREWALL_API DeleteTLSInspectionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DeleteTLSInspectionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * You can retrieve all objects for a TLS inspection configuration by calling
      * <a>DescribeTLSInspectionConfiguration</a>. </p>
      */
-    inline const TLSInspectionConfigurationResponse& GetTLSInspectionConfigurationResponse() const{ return m_tLSInspectionConfigurationResponse; }
-    inline void SetTLSInspectionConfigurationResponse(const TLSInspectionConfigurationResponse& value) { m_tLSInspectionConfigurationResponse = value; }
-    inline void SetTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponse&& value) { m_tLSInspectionConfigurationResponse = std::move(value); }
-    inline DeleteTLSInspectionConfigurationResult& WithTLSInspectionConfigurationResponse(const TLSInspectionConfigurationResponse& value) { SetTLSInspectionConfigurationResponse(value); return *this;}
-    inline DeleteTLSInspectionConfigurationResult& WithTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponse&& value) { SetTLSInspectionConfigurationResponse(std::move(value)); return *this;}
+    inline const TLSInspectionConfigurationResponse& GetTLSInspectionConfigurationResponse() const { return m_tLSInspectionConfigurationResponse; }
+    template<typename TLSInspectionConfigurationResponseT = TLSInspectionConfigurationResponse>
+    void SetTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponseT&& value) { m_tLSInspectionConfigurationResponseHasBeenSet = true; m_tLSInspectionConfigurationResponse = std::forward<TLSInspectionConfigurationResponseT>(value); }
+    template<typename TLSInspectionConfigurationResponseT = TLSInspectionConfigurationResponse>
+    DeleteTLSInspectionConfigurationResult& WithTLSInspectionConfigurationResponse(TLSInspectionConfigurationResponseT&& value) { SetTLSInspectionConfigurationResponse(std::forward<TLSInspectionConfigurationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteTLSInspectionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteTLSInspectionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteTLSInspectionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteTLSInspectionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TLSInspectionConfigurationResponse m_tLSInspectionConfigurationResponse;
+    bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

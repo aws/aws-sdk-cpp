@@ -12,17 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CountClosedWorkflowExecutionsRequest::CountClosedWorkflowExecutionsRequest() : 
-    m_domainHasBeenSet(false),
-    m_startTimeFilterHasBeenSet(false),
-    m_closeTimeFilterHasBeenSet(false),
-    m_executionFilterHasBeenSet(false),
-    m_typeFilterHasBeenSet(false),
-    m_tagFilterHasBeenSet(false),
-    m_closeStatusFilterHasBeenSet(false)
-{
-}
-
 Aws::String CountClosedWorkflowExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

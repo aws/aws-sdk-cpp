@@ -28,7 +28,7 @@ namespace Model
   class UpdateLinkResult
   {
   public:
-    AWS_NETWORKMANAGER_API UpdateLinkResult();
+    AWS_NETWORKMANAGER_API UpdateLinkResult() = default;
     AWS_NETWORKMANAGER_API UpdateLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API UpdateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the link.</p>
      */
-    inline const Link& GetLink() const{ return m_link; }
-    inline void SetLink(const Link& value) { m_link = value; }
-    inline void SetLink(Link&& value) { m_link = std::move(value); }
-    inline UpdateLinkResult& WithLink(const Link& value) { SetLink(value); return *this;}
-    inline UpdateLinkResult& WithLink(Link&& value) { SetLink(std::move(value)); return *this;}
+    inline const Link& GetLink() const { return m_link; }
+    template<typename LinkT = Link>
+    void SetLink(LinkT&& value) { m_linkHasBeenSet = true; m_link = std::forward<LinkT>(value); }
+    template<typename LinkT = Link>
+    UpdateLinkResult& WithLink(LinkT&& value) { SetLink(std::forward<LinkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateLinkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Link m_link;
+    bool m_linkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

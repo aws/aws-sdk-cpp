@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RecommendedActionUpdate::RecommendedActionUpdate() : 
-    m_actionIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 RecommendedActionUpdate::RecommendedActionUpdate(const XmlNode& xmlNode)
-  : RecommendedActionUpdate()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ RecommendedActionUpdate& RecommendedActionUpdate::operator =(const XmlNode& xmlN
     {
       m_actionId = Aws::Utils::Xml::DecodeEscapedXmlText(actionIdNode.GetText());
       m_actionIdHasBeenSet = true;
+       m_actionIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

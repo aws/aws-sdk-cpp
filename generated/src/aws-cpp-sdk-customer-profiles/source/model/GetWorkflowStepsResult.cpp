@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkflowStepsResult::GetWorkflowStepsResult() : 
-    m_workflowType(WorkflowType::NOT_SET)
-{
-}
-
 GetWorkflowStepsResult::GetWorkflowStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWorkflowStepsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetWorkflowStepsResult& GetWorkflowStepsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
+    m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowType"))
   {
     m_workflowType = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("WorkflowType"));
-
+    m_workflowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -50,20 +42,20 @@ GetWorkflowStepsResult& GetWorkflowStepsResult::operator =(const Aws::AmazonWebS
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

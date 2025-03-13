@@ -32,7 +32,7 @@ namespace Model
   class RegionLimitExceededException
   {
   public:
-    AWS_DIRECTORYSERVICE_API RegionLimitExceededException();
+    AWS_DIRECTORYSERVICE_API RegionLimitExceededException() = default;
     AWS_DIRECTORYSERVICE_API RegionLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API RegionLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,26 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline RegionLimitExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline RegionLimitExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline RegionLimitExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    RegionLimitExceededException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline RegionLimitExceededException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegionLimitExceededException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegionLimitExceededException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegionLimitExceededException& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

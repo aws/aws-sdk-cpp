@@ -33,7 +33,7 @@ namespace Model
   class DetectedField
   {
   public:
-    AWS_LOOKOUTMETRICS_API DetectedField();
+    AWS_LOOKOUTMETRICS_API DetectedField() = default;
     AWS_LOOKOUTMETRICS_API DetectedField(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API DetectedField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,41 @@ namespace Model
     /**
      * <p>The field's value.</p>
      */
-    inline const AttributeValue& GetValue() const{ return m_value; }
+    inline const AttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline DetectedField& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
-    inline DetectedField& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = AttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = AttributeValue>
+    DetectedField& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field's confidence.</p>
      */
-    inline const Confidence& GetConfidence() const{ return m_confidence; }
+    inline Confidence GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-    inline void SetConfidence(const Confidence& value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-    inline void SetConfidence(Confidence&& value) { m_confidenceHasBeenSet = true; m_confidence = std::move(value); }
-    inline DetectedField& WithConfidence(const Confidence& value) { SetConfidence(value); return *this;}
-    inline DetectedField& WithConfidence(Confidence&& value) { SetConfidence(std::move(value)); return *this;}
+    inline void SetConfidence(Confidence value) { m_confidenceHasBeenSet = true; m_confidence = value; }
+    inline DetectedField& WithConfidence(Confidence value) { SetConfidence(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The field's message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DetectedField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DetectedField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DetectedField& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DetectedField& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
     AttributeValue m_value;
     bool m_valueHasBeenSet = false;
 
-    Confidence m_confidence;
+    Confidence m_confidence{Confidence::NOT_SET};
     bool m_confidenceHasBeenSet = false;
 
     Aws::String m_message;

@@ -12,15 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreVolumeFromSnapshotRequest::RestoreVolumeFromSnapshotRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_volumeIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String RestoreVolumeFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class BackendAPIAuthType
   {
   public:
-    AWS_AMPLIFYBACKEND_API BackendAPIAuthType();
+    AWS_AMPLIFYBACKEND_API BackendAPIAuthType() = default;
     AWS_AMPLIFYBACKEND_API BackendAPIAuthType(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API BackendAPIAuthType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>Describes the authentication mode.</p>
      */
-    inline const Mode& GetMode() const{ return m_mode; }
+    inline Mode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline BackendAPIAuthType& WithMode(const Mode& value) { SetMode(value); return *this;}
-    inline BackendAPIAuthType& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(Mode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline BackendAPIAuthType& WithMode(Mode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes settings for the authentication mode.</p>
      */
-    inline const BackendAPIAppSyncAuthSettings& GetSettings() const{ return m_settings; }
+    inline const BackendAPIAppSyncAuthSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const BackendAPIAppSyncAuthSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(BackendAPIAppSyncAuthSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline BackendAPIAuthType& WithSettings(const BackendAPIAppSyncAuthSettings& value) { SetSettings(value); return *this;}
-    inline BackendAPIAuthType& WithSettings(BackendAPIAppSyncAuthSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = BackendAPIAppSyncAuthSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = BackendAPIAppSyncAuthSettings>
+    BackendAPIAuthType& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 
-    Mode m_mode;
+    Mode m_mode{Mode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     BackendAPIAppSyncAuthSettings m_settings;

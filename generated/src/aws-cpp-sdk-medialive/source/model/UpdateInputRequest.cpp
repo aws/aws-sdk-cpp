@@ -12,20 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInputRequest::UpdateInputRequest() : 
-    m_destinationsHasBeenSet(false),
-    m_inputDevicesHasBeenSet(false),
-    m_inputIdHasBeenSet(false),
-    m_inputSecurityGroupsHasBeenSet(false),
-    m_mediaConnectFlowsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_srtSettingsHasBeenSet(false),
-    m_multicastSettingsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInputRequest::SerializePayload() const
 {
   JsonValue payload;

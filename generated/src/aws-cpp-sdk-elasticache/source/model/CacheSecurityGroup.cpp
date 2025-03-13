@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheSecurityGroup::CacheSecurityGroup() : 
-    m_ownerIdHasBeenSet(false),
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 CacheSecurityGroup::CacheSecurityGroup(const XmlNode& xmlNode)
-  : CacheSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,41 @@ CacheSecurityGroup& CacheSecurityGroup::operator =(const XmlNode& xmlNode)
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode cacheSecurityGroupNameNode = resultNode.FirstChild("CacheSecurityGroupName");
     if(!cacheSecurityGroupNameNode.IsNull())
     {
       m_cacheSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSecurityGroupNameNode.GetText());
       m_cacheSecurityGroupNameHasBeenSet = true;
+       m_cacheSecurityGroupNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupsNode = resultNode.FirstChild("EC2SecurityGroups");
     if(!eC2SecurityGroupsNode.IsNull())
     {
       XmlNode eC2SecurityGroupsMember = eC2SecurityGroupsNode.FirstChild("EC2SecurityGroup");
+      m_eC2SecurityGroupsHasBeenSet = !eC2SecurityGroupsMember.IsNull();
       while(!eC2SecurityGroupsMember.IsNull())
       {
         m_eC2SecurityGroups.push_back(eC2SecurityGroupsMember);
         eC2SecurityGroupsMember = eC2SecurityGroupsMember.NextNode("EC2SecurityGroup");
       }
 
-      m_eC2SecurityGroupsHasBeenSet = true;
+       m_eC2SecurityGroupsHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
   }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCertificateAuthorityAuditReportResult::DescribeCertificateAuthorityAuditReportResult() : 
-    m_auditReportStatus(AuditReportStatus::NOT_SET)
-{
-}
-
 DescribeCertificateAuthorityAuditReportResult::DescribeCertificateAuthorityAuditReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeCertificateAuthorityAuditReportResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ DescribeCertificateAuthorityAuditReportResult& DescribeCertificateAuthorityAudit
   if(jsonValue.ValueExists("AuditReportStatus"))
   {
     m_auditReportStatus = AuditReportStatusMapper::GetAuditReportStatusForName(jsonValue.GetString("AuditReportStatus"));
-
+    m_auditReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
+    m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
+    m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

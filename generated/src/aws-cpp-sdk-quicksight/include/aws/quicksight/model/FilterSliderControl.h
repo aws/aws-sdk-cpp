@@ -34,7 +34,7 @@ namespace Model
   class FilterSliderControl
   {
   public:
-    AWS_QUICKSIGHT_API FilterSliderControl();
+    AWS_QUICKSIGHT_API FilterSliderControl() = default;
     AWS_QUICKSIGHT_API FilterSliderControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FilterSliderControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,48 @@ namespace Model
     /**
      * <p>The ID of the <code>FilterSliderControl</code>.</p>
      */
-    inline const Aws::String& GetFilterControlId() const{ return m_filterControlId; }
+    inline const Aws::String& GetFilterControlId() const { return m_filterControlId; }
     inline bool FilterControlIdHasBeenSet() const { return m_filterControlIdHasBeenSet; }
-    inline void SetFilterControlId(const Aws::String& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = value; }
-    inline void SetFilterControlId(Aws::String&& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = std::move(value); }
-    inline void SetFilterControlId(const char* value) { m_filterControlIdHasBeenSet = true; m_filterControlId.assign(value); }
-    inline FilterSliderControl& WithFilterControlId(const Aws::String& value) { SetFilterControlId(value); return *this;}
-    inline FilterSliderControl& WithFilterControlId(Aws::String&& value) { SetFilterControlId(std::move(value)); return *this;}
-    inline FilterSliderControl& WithFilterControlId(const char* value) { SetFilterControlId(value); return *this;}
+    template<typename FilterControlIdT = Aws::String>
+    void SetFilterControlId(FilterControlIdT&& value) { m_filterControlIdHasBeenSet = true; m_filterControlId = std::forward<FilterControlIdT>(value); }
+    template<typename FilterControlIdT = Aws::String>
+    FilterSliderControl& WithFilterControlId(FilterControlIdT&& value) { SetFilterControlId(std::forward<FilterControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the <code>FilterSliderControl</code>.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline FilterSliderControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline FilterSliderControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline FilterSliderControl& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    FilterSliderControl& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source filter ID of the <code>FilterSliderControl</code>.</p>
      */
-    inline const Aws::String& GetSourceFilterId() const{ return m_sourceFilterId; }
+    inline const Aws::String& GetSourceFilterId() const { return m_sourceFilterId; }
     inline bool SourceFilterIdHasBeenSet() const { return m_sourceFilterIdHasBeenSet; }
-    inline void SetSourceFilterId(const Aws::String& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = value; }
-    inline void SetSourceFilterId(Aws::String&& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = std::move(value); }
-    inline void SetSourceFilterId(const char* value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId.assign(value); }
-    inline FilterSliderControl& WithSourceFilterId(const Aws::String& value) { SetSourceFilterId(value); return *this;}
-    inline FilterSliderControl& WithSourceFilterId(Aws::String&& value) { SetSourceFilterId(std::move(value)); return *this;}
-    inline FilterSliderControl& WithSourceFilterId(const char* value) { SetSourceFilterId(value); return *this;}
+    template<typename SourceFilterIdT = Aws::String>
+    void SetSourceFilterId(SourceFilterIdT&& value) { m_sourceFilterIdHasBeenSet = true; m_sourceFilterId = std::forward<SourceFilterIdT>(value); }
+    template<typename SourceFilterIdT = Aws::String>
+    FilterSliderControl& WithSourceFilterId(SourceFilterIdT&& value) { SetSourceFilterId(std::forward<SourceFilterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display options of a control.</p>
      */
-    inline const SliderControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const SliderControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const SliderControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(SliderControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline FilterSliderControl& WithDisplayOptions(const SliderControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline FilterSliderControl& WithDisplayOptions(SliderControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = SliderControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = SliderControlDisplayOptions>
+    FilterSliderControl& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,19 +95,17 @@ namespace Model
      * single data point.</p> </li> <li> <p> <code>RANGE</code>: Filter data that is in
      * a specified range.</p> </li> </ul>
      */
-    inline const SheetControlSliderType& GetType() const{ return m_type; }
+    inline SheetControlSliderType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SheetControlSliderType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SheetControlSliderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FilterSliderControl& WithType(const SheetControlSliderType& value) { SetType(value); return *this;}
-    inline FilterSliderControl& WithType(SheetControlSliderType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SheetControlSliderType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FilterSliderControl& WithType(SheetControlSliderType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The larger value that is displayed at the right of the slider.</p>
      */
-    inline double GetMaximumValue() const{ return m_maximumValue; }
+    inline double GetMaximumValue() const { return m_maximumValue; }
     inline bool MaximumValueHasBeenSet() const { return m_maximumValueHasBeenSet; }
     inline void SetMaximumValue(double value) { m_maximumValueHasBeenSet = true; m_maximumValue = value; }
     inline FilterSliderControl& WithMaximumValue(double value) { SetMaximumValue(value); return *this;}
@@ -123,7 +115,7 @@ namespace Model
     /**
      * <p>The smaller value that is displayed at the left of the slider.</p>
      */
-    inline double GetMinimumValue() const{ return m_minimumValue; }
+    inline double GetMinimumValue() const { return m_minimumValue; }
     inline bool MinimumValueHasBeenSet() const { return m_minimumValueHasBeenSet; }
     inline void SetMinimumValue(double value) { m_minimumValueHasBeenSet = true; m_minimumValue = value; }
     inline FilterSliderControl& WithMinimumValue(double value) { SetMinimumValue(value); return *this;}
@@ -133,7 +125,7 @@ namespace Model
     /**
      * <p>The number of increments that the slider bar is divided into.</p>
      */
-    inline double GetStepSize() const{ return m_stepSize; }
+    inline double GetStepSize() const { return m_stepSize; }
     inline bool StepSizeHasBeenSet() const { return m_stepSizeHasBeenSet; }
     inline void SetStepSize(double value) { m_stepSizeHasBeenSet = true; m_stepSize = value; }
     inline FilterSliderControl& WithStepSize(double value) { SetStepSize(value); return *this;}
@@ -152,16 +144,16 @@ namespace Model
     SliderControlDisplayOptions m_displayOptions;
     bool m_displayOptionsHasBeenSet = false;
 
-    SheetControlSliderType m_type;
+    SheetControlSliderType m_type{SheetControlSliderType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_maximumValue;
+    double m_maximumValue{0.0};
     bool m_maximumValueHasBeenSet = false;
 
-    double m_minimumValue;
+    double m_minimumValue{0.0};
     bool m_minimumValueHasBeenSet = false;
 
-    double m_stepSize;
+    double m_stepSize{0.0};
     bool m_stepSizeHasBeenSet = false;
   };
 

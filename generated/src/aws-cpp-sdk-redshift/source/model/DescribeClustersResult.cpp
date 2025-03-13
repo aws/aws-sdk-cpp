@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClustersResult::DescribeClustersResult()
-{
-}
-
 DescribeClustersResult::DescribeClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode clustersNode = resultNode.FirstChild("Clusters");
     if(!clustersNode.IsNull())
     {
       XmlNode clustersMember = clustersNode.FirstChild("Cluster");
+      m_clustersHasBeenSet = !clustersMember.IsNull();
       while(!clustersMember.IsNull())
       {
         m_clusters.push_back(clustersMember);
@@ -59,6 +57,7 @@ DescribeClustersResult& DescribeClustersResult::operator =(const Aws::AmazonWebS
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

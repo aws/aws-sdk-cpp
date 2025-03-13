@@ -36,7 +36,7 @@ namespace Model
   class ActionTypeExecutor
   {
   public:
-    AWS_CODEPIPELINE_API ActionTypeExecutor();
+    AWS_CODEPIPELINE_API ActionTypeExecutor() = default;
     AWS_CODEPIPELINE_API ActionTypeExecutor(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ActionTypeExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>The action configuration properties for the action type. These properties are
      * specified in the action definition when the action type is created.</p>
      */
-    inline const ExecutorConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ExecutorConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ExecutorConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ExecutorConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline ActionTypeExecutor& WithConfiguration(const ExecutorConfiguration& value) { SetConfiguration(value); return *this;}
-    inline ActionTypeExecutor& WithConfiguration(ExecutorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ExecutorConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ExecutorConfiguration>
+    ActionTypeExecutor& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,10 @@ namespace Model
      * <p>The integration model used to create and update the action type,
      * <code>Lambda</code> or <code>JobWorker</code>. </p>
      */
-    inline const ExecutorType& GetType() const{ return m_type; }
+    inline ExecutorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ExecutorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ExecutorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ActionTypeExecutor& WithType(const ExecutorType& value) { SetType(value); return *this;}
-    inline ActionTypeExecutor& WithType(ExecutorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ExecutorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ActionTypeExecutor& WithType(ExecutorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * <code>codepipeline.amazonaws.com</code>.</p>  <p>The size of the passed
      * JSON policy document cannot exceed 2048 characters.</p> 
      */
-    inline const Aws::String& GetPolicyStatementsTemplate() const{ return m_policyStatementsTemplate; }
+    inline const Aws::String& GetPolicyStatementsTemplate() const { return m_policyStatementsTemplate; }
     inline bool PolicyStatementsTemplateHasBeenSet() const { return m_policyStatementsTemplateHasBeenSet; }
-    inline void SetPolicyStatementsTemplate(const Aws::String& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = value; }
-    inline void SetPolicyStatementsTemplate(Aws::String&& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = std::move(value); }
-    inline void SetPolicyStatementsTemplate(const char* value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate.assign(value); }
-    inline ActionTypeExecutor& WithPolicyStatementsTemplate(const Aws::String& value) { SetPolicyStatementsTemplate(value); return *this;}
-    inline ActionTypeExecutor& WithPolicyStatementsTemplate(Aws::String&& value) { SetPolicyStatementsTemplate(std::move(value)); return *this;}
-    inline ActionTypeExecutor& WithPolicyStatementsTemplate(const char* value) { SetPolicyStatementsTemplate(value); return *this;}
+    template<typename PolicyStatementsTemplateT = Aws::String>
+    void SetPolicyStatementsTemplate(PolicyStatementsTemplateT&& value) { m_policyStatementsTemplateHasBeenSet = true; m_policyStatementsTemplate = std::forward<PolicyStatementsTemplateT>(value); }
+    template<typename PolicyStatementsTemplateT = Aws::String>
+    ActionTypeExecutor& WithPolicyStatementsTemplate(PolicyStatementsTemplateT&& value) { SetPolicyStatementsTemplate(std::forward<PolicyStatementsTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * <p>The timeout in seconds for the job. An action execution can have multiple
      * jobs. This is the timeout for a single job, not the entire action execution.</p>
      */
-    inline int GetJobTimeout() const{ return m_jobTimeout; }
+    inline int GetJobTimeout() const { return m_jobTimeout; }
     inline bool JobTimeoutHasBeenSet() const { return m_jobTimeoutHasBeenSet; }
     inline void SetJobTimeout(int value) { m_jobTimeoutHasBeenSet = true; m_jobTimeout = value; }
     inline ActionTypeExecutor& WithJobTimeout(int value) { SetJobTimeout(value); return *this;}
@@ -102,13 +98,13 @@ namespace Model
     ExecutorConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    ExecutorType m_type;
+    ExecutorType m_type{ExecutorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_policyStatementsTemplate;
     bool m_policyStatementsTemplateHasBeenSet = false;
 
-    int m_jobTimeout;
+    int m_jobTimeout{0};
     bool m_jobTimeoutHasBeenSet = false;
   };
 

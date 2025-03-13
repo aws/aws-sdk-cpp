@@ -12,13 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RedriveExecutionRequest::RedriveExecutionRequest() : 
-    m_executionArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String RedriveExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

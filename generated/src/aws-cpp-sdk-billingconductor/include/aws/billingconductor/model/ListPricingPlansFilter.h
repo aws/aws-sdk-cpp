@@ -33,7 +33,7 @@ namespace Model
   class ListPricingPlansFilter
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListPricingPlansFilter();
+    AWS_BILLINGCONDUCTOR_API ListPricingPlansFilter() = default;
     AWS_BILLINGCONDUCTOR_API ListPricingPlansFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListPricingPlansFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve
      * information.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
+    inline const Aws::Vector<Aws::String>& GetArns() const { return m_arns; }
     inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
-    inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
-    inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
-    inline ListPricingPlansFilter& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
-    inline ListPricingPlansFilter& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
-    inline ListPricingPlansFilter& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-    inline ListPricingPlansFilter& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
-    inline ListPricingPlansFilter& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
+    template<typename ArnsT = Aws::Vector<Aws::String>>
+    void SetArns(ArnsT&& value) { m_arnsHasBeenSet = true; m_arns = std::forward<ArnsT>(value); }
+    template<typename ArnsT = Aws::Vector<Aws::String>>
+    ListPricingPlansFilter& WithArns(ArnsT&& value) { SetArns(std::forward<ArnsT>(value)); return *this;}
+    template<typename ArnsT = Aws::String>
+    ListPricingPlansFilter& AddArns(ArnsT&& value) { m_arnsHasBeenSet = true; m_arns.emplace_back(std::forward<ArnsT>(value)); return *this; }
     ///@}
   private:
 

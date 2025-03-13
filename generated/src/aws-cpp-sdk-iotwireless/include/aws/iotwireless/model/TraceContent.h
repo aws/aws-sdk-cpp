@@ -34,7 +34,7 @@ namespace Model
   class TraceContent
   {
   public:
-    AWS_IOTWIRELESS_API TraceContent();
+    AWS_IOTWIRELESS_API TraceContent() = default;
     AWS_IOTWIRELESS_API TraceContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API TraceContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
 
     ///@{
     
-    inline const WirelessDeviceFrameInfo& GetWirelessDeviceFrameInfo() const{ return m_wirelessDeviceFrameInfo; }
+    inline WirelessDeviceFrameInfo GetWirelessDeviceFrameInfo() const { return m_wirelessDeviceFrameInfo; }
     inline bool WirelessDeviceFrameInfoHasBeenSet() const { return m_wirelessDeviceFrameInfoHasBeenSet; }
-    inline void SetWirelessDeviceFrameInfo(const WirelessDeviceFrameInfo& value) { m_wirelessDeviceFrameInfoHasBeenSet = true; m_wirelessDeviceFrameInfo = value; }
-    inline void SetWirelessDeviceFrameInfo(WirelessDeviceFrameInfo&& value) { m_wirelessDeviceFrameInfoHasBeenSet = true; m_wirelessDeviceFrameInfo = std::move(value); }
-    inline TraceContent& WithWirelessDeviceFrameInfo(const WirelessDeviceFrameInfo& value) { SetWirelessDeviceFrameInfo(value); return *this;}
-    inline TraceContent& WithWirelessDeviceFrameInfo(WirelessDeviceFrameInfo&& value) { SetWirelessDeviceFrameInfo(std::move(value)); return *this;}
+    inline void SetWirelessDeviceFrameInfo(WirelessDeviceFrameInfo value) { m_wirelessDeviceFrameInfoHasBeenSet = true; m_wirelessDeviceFrameInfo = value; }
+    inline TraceContent& WithWirelessDeviceFrameInfo(WirelessDeviceFrameInfo value) { SetWirelessDeviceFrameInfo(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline TraceContent& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline TraceContent& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline TraceContent& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const MulticastFrameInfo& GetMulticastFrameInfo() const{ return m_multicastFrameInfo; }
+    inline MulticastFrameInfo GetMulticastFrameInfo() const { return m_multicastFrameInfo; }
     inline bool MulticastFrameInfoHasBeenSet() const { return m_multicastFrameInfoHasBeenSet; }
-    inline void SetMulticastFrameInfo(const MulticastFrameInfo& value) { m_multicastFrameInfoHasBeenSet = true; m_multicastFrameInfo = value; }
-    inline void SetMulticastFrameInfo(MulticastFrameInfo&& value) { m_multicastFrameInfoHasBeenSet = true; m_multicastFrameInfo = std::move(value); }
-    inline TraceContent& WithMulticastFrameInfo(const MulticastFrameInfo& value) { SetMulticastFrameInfo(value); return *this;}
-    inline TraceContent& WithMulticastFrameInfo(MulticastFrameInfo&& value) { SetMulticastFrameInfo(std::move(value)); return *this;}
+    inline void SetMulticastFrameInfo(MulticastFrameInfo value) { m_multicastFrameInfoHasBeenSet = true; m_multicastFrameInfo = value; }
+    inline TraceContent& WithMulticastFrameInfo(MulticastFrameInfo value) { SetMulticastFrameInfo(value); return *this;}
     ///@}
   private:
 
-    WirelessDeviceFrameInfo m_wirelessDeviceFrameInfo;
+    WirelessDeviceFrameInfo m_wirelessDeviceFrameInfo{WirelessDeviceFrameInfo::NOT_SET};
     bool m_wirelessDeviceFrameInfoHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
 
-    MulticastFrameInfo m_multicastFrameInfo;
+    MulticastFrameInfo m_multicastFrameInfo{MulticastFrameInfo::NOT_SET};
     bool m_multicastFrameInfoHasBeenSet = false;
   };
 

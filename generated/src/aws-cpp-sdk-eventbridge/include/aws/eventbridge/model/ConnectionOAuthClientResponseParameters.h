@@ -32,7 +32,7 @@ namespace Model
   class ConnectionOAuthClientResponseParameters
   {
   public:
-    AWS_EVENTBRIDGE_API ConnectionOAuthClientResponseParameters();
+    AWS_EVENTBRIDGE_API ConnectionOAuthClientResponseParameters() = default;
     AWS_EVENTBRIDGE_API ConnectionOAuthClientResponseParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ConnectionOAuthClientResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The client ID associated with the response to the connection request.</p>
      */
-    inline const Aws::String& GetClientID() const{ return m_clientID; }
+    inline const Aws::String& GetClientID() const { return m_clientID; }
     inline bool ClientIDHasBeenSet() const { return m_clientIDHasBeenSet; }
-    inline void SetClientID(const Aws::String& value) { m_clientIDHasBeenSet = true; m_clientID = value; }
-    inline void SetClientID(Aws::String&& value) { m_clientIDHasBeenSet = true; m_clientID = std::move(value); }
-    inline void SetClientID(const char* value) { m_clientIDHasBeenSet = true; m_clientID.assign(value); }
-    inline ConnectionOAuthClientResponseParameters& WithClientID(const Aws::String& value) { SetClientID(value); return *this;}
-    inline ConnectionOAuthClientResponseParameters& WithClientID(Aws::String&& value) { SetClientID(std::move(value)); return *this;}
-    inline ConnectionOAuthClientResponseParameters& WithClientID(const char* value) { SetClientID(value); return *this;}
+    template<typename ClientIDT = Aws::String>
+    void SetClientID(ClientIDT&& value) { m_clientIDHasBeenSet = true; m_clientID = std::forward<ClientIDT>(value); }
+    template<typename ClientIDT = Aws::String>
+    ConnectionOAuthClientResponseParameters& WithClientID(ClientIDT&& value) { SetClientID(std::forward<ClientIDT>(value)); return *this;}
     ///@}
   private:
 

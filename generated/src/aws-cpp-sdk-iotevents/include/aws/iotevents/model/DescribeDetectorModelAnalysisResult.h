@@ -28,7 +28,7 @@ namespace Model
   class DescribeDetectorModelAnalysisResult
   {
   public:
-    AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult();
+    AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult() = default;
     AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API DescribeDetectorModelAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,26 @@ namespace Model
      * detector model.</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events couldn't
      * analyze your detector model. Try again later.</p> </li> </ul>
      */
-    inline const AnalysisStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AnalysisStatus& value) { m_status = value; }
-    inline void SetStatus(AnalysisStatus&& value) { m_status = std::move(value); }
-    inline DescribeDetectorModelAnalysisResult& WithStatus(const AnalysisStatus& value) { SetStatus(value); return *this;}
-    inline DescribeDetectorModelAnalysisResult& WithStatus(AnalysisStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AnalysisStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AnalysisStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeDetectorModelAnalysisResult& WithStatus(AnalysisStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDetectorModelAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDetectorModelAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDetectorModelAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDetectorModelAnalysisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AnalysisStatus m_status;
+    AnalysisStatus m_status{AnalysisStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

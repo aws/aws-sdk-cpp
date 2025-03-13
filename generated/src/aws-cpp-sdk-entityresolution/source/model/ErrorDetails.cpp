@@ -18,13 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(JsonView jsonValue)
-  : ErrorDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

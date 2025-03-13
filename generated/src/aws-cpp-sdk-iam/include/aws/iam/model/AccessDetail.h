@@ -37,7 +37,7 @@ namespace Model
   class AccessDetail
   {
   public:
-    AWS_IAM_API AccessDetail();
+    AWS_IAM_API AccessDetail() = default;
     AWS_IAM_API AccessDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API AccessDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name of the service in which access was attempted.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline AccessDetail& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline AccessDetail& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline AccessDetail& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    AccessDetail& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * Web Services service namespaces</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline const Aws::String& GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const Aws::String& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(Aws::String&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline void SetServiceNamespace(const char* value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace.assign(value); }
-    inline AccessDetail& WithServiceNamespace(const Aws::String& value) { SetServiceNamespace(value); return *this;}
-    inline AccessDetail& WithServiceNamespace(Aws::String&& value) { SetServiceNamespace(std::move(value)); return *this;}
-    inline AccessDetail& WithServiceNamespace(const char* value) { SetServiceNamespace(value); return *this;}
+    template<typename ServiceNamespaceT = Aws::String>
+    void SetServiceNamespace(ServiceNamespaceT&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::forward<ServiceNamespaceT>(value); }
+    template<typename ServiceNamespaceT = Aws::String>
+    AccessDetail& WithServiceNamespace(ServiceNamespaceT&& value) { SetServiceNamespace(std::forward<ServiceNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline AccessDetail& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline AccessDetail& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline AccessDetail& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    AccessDetail& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +105,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::String& GetEntityPath() const{ return m_entityPath; }
+    inline const Aws::String& GetEntityPath() const { return m_entityPath; }
     inline bool EntityPathHasBeenSet() const { return m_entityPathHasBeenSet; }
-    inline void SetEntityPath(const Aws::String& value) { m_entityPathHasBeenSet = true; m_entityPath = value; }
-    inline void SetEntityPath(Aws::String&& value) { m_entityPathHasBeenSet = true; m_entityPath = std::move(value); }
-    inline void SetEntityPath(const char* value) { m_entityPathHasBeenSet = true; m_entityPath.assign(value); }
-    inline AccessDetail& WithEntityPath(const Aws::String& value) { SetEntityPath(value); return *this;}
-    inline AccessDetail& WithEntityPath(Aws::String&& value) { SetEntityPath(std::move(value)); return *this;}
-    inline AccessDetail& WithEntityPath(const char* value) { SetEntityPath(value); return *this;}
+    template<typename EntityPathT = Aws::String>
+    void SetEntityPath(EntityPathT&& value) { m_entityPathHasBeenSet = true; m_entityPath = std::forward<EntityPathT>(value); }
+    template<typename EntityPathT = Aws::String>
+    AccessDetail& WithEntityPath(EntityPathT&& value) { SetEntityPath(std::forward<EntityPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +123,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAuthenticatedTime() const{ return m_lastAuthenticatedTime; }
+    inline const Aws::Utils::DateTime& GetLastAuthenticatedTime() const { return m_lastAuthenticatedTime; }
     inline bool LastAuthenticatedTimeHasBeenSet() const { return m_lastAuthenticatedTimeHasBeenSet; }
-    inline void SetLastAuthenticatedTime(const Aws::Utils::DateTime& value) { m_lastAuthenticatedTimeHasBeenSet = true; m_lastAuthenticatedTime = value; }
-    inline void SetLastAuthenticatedTime(Aws::Utils::DateTime&& value) { m_lastAuthenticatedTimeHasBeenSet = true; m_lastAuthenticatedTime = std::move(value); }
-    inline AccessDetail& WithLastAuthenticatedTime(const Aws::Utils::DateTime& value) { SetLastAuthenticatedTime(value); return *this;}
-    inline AccessDetail& WithLastAuthenticatedTime(Aws::Utils::DateTime&& value) { SetLastAuthenticatedTime(std::move(value)); return *this;}
+    template<typename LastAuthenticatedTimeT = Aws::Utils::DateTime>
+    void SetLastAuthenticatedTime(LastAuthenticatedTimeT&& value) { m_lastAuthenticatedTimeHasBeenSet = true; m_lastAuthenticatedTime = std::forward<LastAuthenticatedTimeT>(value); }
+    template<typename LastAuthenticatedTimeT = Aws::Utils::DateTime>
+    AccessDetail& WithLastAuthenticatedTime(LastAuthenticatedTimeT&& value) { SetLastAuthenticatedTime(std::forward<LastAuthenticatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,7 +136,7 @@ namespace Model
      * <p>The number of accounts with authenticated principals (root user, IAM users,
      * and IAM roles) that attempted to access the service in the tracking period.</p>
      */
-    inline int GetTotalAuthenticatedEntities() const{ return m_totalAuthenticatedEntities; }
+    inline int GetTotalAuthenticatedEntities() const { return m_totalAuthenticatedEntities; }
     inline bool TotalAuthenticatedEntitiesHasBeenSet() const { return m_totalAuthenticatedEntitiesHasBeenSet; }
     inline void SetTotalAuthenticatedEntities(int value) { m_totalAuthenticatedEntitiesHasBeenSet = true; m_totalAuthenticatedEntities = value; }
     inline AccessDetail& WithTotalAuthenticatedEntities(int value) { SetTotalAuthenticatedEntities(value); return *this;}
@@ -163,10 +155,10 @@ namespace Model
     Aws::String m_entityPath;
     bool m_entityPathHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAuthenticatedTime;
+    Aws::Utils::DateTime m_lastAuthenticatedTime{};
     bool m_lastAuthenticatedTimeHasBeenSet = false;
 
-    int m_totalAuthenticatedEntities;
+    int m_totalAuthenticatedEntities{0};
     bool m_totalAuthenticatedEntitiesHasBeenSet = false;
   };
 

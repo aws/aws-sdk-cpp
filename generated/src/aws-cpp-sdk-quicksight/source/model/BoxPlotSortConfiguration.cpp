@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BoxPlotSortConfiguration::BoxPlotSortConfiguration() : 
-    m_categorySortHasBeenSet(false),
-    m_paginationConfigurationHasBeenSet(false)
-{
-}
-
 BoxPlotSortConfiguration::BoxPlotSortConfiguration(JsonView jsonValue)
-  : BoxPlotSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ BoxPlotSortConfiguration& BoxPlotSortConfiguration::operator =(JsonView jsonValu
     }
     m_categorySortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaginationConfiguration"))
   {
     m_paginationConfiguration = jsonValue.GetObject("PaginationConfiguration");
-
     m_paginationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

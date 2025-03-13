@@ -30,7 +30,7 @@ namespace Model
   class DescribePublisherResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribePublisherResult();
+    AWS_CLOUDFORMATION_API DescribePublisherResult() = default;
     AWS_CLOUDFORMATION_API DescribePublisherResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribePublisherResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The ID of the extension publisher.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherId.assign(value); }
-    inline DescribePublisherResult& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline DescribePublisherResult& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline DescribePublisherResult& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    DescribePublisherResult& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,11 +51,9 @@ namespace Model
      * <p>Whether the publisher is verified. Currently, all registered publishers are
      * verified.</p>
      */
-    inline const PublisherStatus& GetPublisherStatus() const{ return m_publisherStatus; }
-    inline void SetPublisherStatus(const PublisherStatus& value) { m_publisherStatus = value; }
-    inline void SetPublisherStatus(PublisherStatus&& value) { m_publisherStatus = std::move(value); }
-    inline DescribePublisherResult& WithPublisherStatus(const PublisherStatus& value) { SetPublisherStatus(value); return *this;}
-    inline DescribePublisherResult& WithPublisherStatus(PublisherStatus&& value) { SetPublisherStatus(std::move(value)); return *this;}
+    inline PublisherStatus GetPublisherStatus() const { return m_publisherStatus; }
+    inline void SetPublisherStatus(PublisherStatus value) { m_publisherStatusHasBeenSet = true; m_publisherStatus = value; }
+    inline DescribePublisherResult& WithPublisherStatus(PublisherStatus value) { SetPublisherStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -65,45 +61,46 @@ namespace Model
      * <p>The type of account used as the identity provider when registering this
      * publisher with CloudFormation.</p>
      */
-    inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
-    inline void SetIdentityProvider(const IdentityProvider& value) { m_identityProvider = value; }
-    inline void SetIdentityProvider(IdentityProvider&& value) { m_identityProvider = std::move(value); }
-    inline DescribePublisherResult& WithIdentityProvider(const IdentityProvider& value) { SetIdentityProvider(value); return *this;}
-    inline DescribePublisherResult& WithIdentityProvider(IdentityProvider&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    inline IdentityProvider GetIdentityProvider() const { return m_identityProvider; }
+    inline void SetIdentityProvider(IdentityProvider value) { m_identityProviderHasBeenSet = true; m_identityProvider = value; }
+    inline DescribePublisherResult& WithIdentityProvider(IdentityProvider value) { SetIdentityProvider(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL to the publisher's profile with the identity provider.</p>
      */
-    inline const Aws::String& GetPublisherProfile() const{ return m_publisherProfile; }
-    inline void SetPublisherProfile(const Aws::String& value) { m_publisherProfile = value; }
-    inline void SetPublisherProfile(Aws::String&& value) { m_publisherProfile = std::move(value); }
-    inline void SetPublisherProfile(const char* value) { m_publisherProfile.assign(value); }
-    inline DescribePublisherResult& WithPublisherProfile(const Aws::String& value) { SetPublisherProfile(value); return *this;}
-    inline DescribePublisherResult& WithPublisherProfile(Aws::String&& value) { SetPublisherProfile(std::move(value)); return *this;}
-    inline DescribePublisherResult& WithPublisherProfile(const char* value) { SetPublisherProfile(value); return *this;}
+    inline const Aws::String& GetPublisherProfile() const { return m_publisherProfile; }
+    template<typename PublisherProfileT = Aws::String>
+    void SetPublisherProfile(PublisherProfileT&& value) { m_publisherProfileHasBeenSet = true; m_publisherProfile = std::forward<PublisherProfileT>(value); }
+    template<typename PublisherProfileT = Aws::String>
+    DescribePublisherResult& WithPublisherProfile(PublisherProfileT&& value) { SetPublisherProfile(std::forward<PublisherProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribePublisherResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribePublisherResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribePublisherResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_publisherId;
+    bool m_publisherIdHasBeenSet = false;
 
-    PublisherStatus m_publisherStatus;
+    PublisherStatus m_publisherStatus{PublisherStatus::NOT_SET};
+    bool m_publisherStatusHasBeenSet = false;
 
-    IdentityProvider m_identityProvider;
+    IdentityProvider m_identityProvider{IdentityProvider::NOT_SET};
+    bool m_identityProviderHasBeenSet = false;
 
     Aws::String m_publisherProfile;
+    bool m_publisherProfileHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class PhoneNumberCapabilities
   {
   public:
-    AWS_CHIME_API PhoneNumberCapabilities();
+    AWS_CHIME_API PhoneNumberCapabilities() = default;
     AWS_CHIME_API PhoneNumberCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API PhoneNumberCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Allows or denies inbound calling for the specified phone number.</p>
      */
-    inline bool GetInboundCall() const{ return m_inboundCall; }
+    inline bool GetInboundCall() const { return m_inboundCall; }
     inline bool InboundCallHasBeenSet() const { return m_inboundCallHasBeenSet; }
     inline void SetInboundCall(bool value) { m_inboundCallHasBeenSet = true; m_inboundCall = value; }
     inline PhoneNumberCapabilities& WithInboundCall(bool value) { SetInboundCall(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Allows or denies outbound calling for the specified phone number.</p>
      */
-    inline bool GetOutboundCall() const{ return m_outboundCall; }
+    inline bool GetOutboundCall() const { return m_outboundCall; }
     inline bool OutboundCallHasBeenSet() const { return m_outboundCallHasBeenSet; }
     inline void SetOutboundCall(bool value) { m_outboundCallHasBeenSet = true; m_outboundCall = value; }
     inline PhoneNumberCapabilities& WithOutboundCall(bool value) { SetOutboundCall(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
      */
-    inline bool GetInboundSMS() const{ return m_inboundSMS; }
+    inline bool GetInboundSMS() const { return m_inboundSMS; }
     inline bool InboundSMSHasBeenSet() const { return m_inboundSMSHasBeenSet; }
     inline void SetInboundSMS(bool value) { m_inboundSMSHasBeenSet = true; m_inboundSMS = value; }
     inline PhoneNumberCapabilities& WithInboundSMS(bool value) { SetInboundSMS(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
      */
-    inline bool GetOutboundSMS() const{ return m_outboundSMS; }
+    inline bool GetOutboundSMS() const { return m_outboundSMS; }
     inline bool OutboundSMSHasBeenSet() const { return m_outboundSMSHasBeenSet; }
     inline void SetOutboundSMS(bool value) { m_outboundSMSHasBeenSet = true; m_outboundSMS = value; }
     inline PhoneNumberCapabilities& WithOutboundSMS(bool value) { SetOutboundSMS(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
      */
-    inline bool GetInboundMMS() const{ return m_inboundMMS; }
+    inline bool GetInboundMMS() const { return m_inboundMMS; }
     inline bool InboundMMSHasBeenSet() const { return m_inboundMMSHasBeenSet; }
     inline void SetInboundMMS(bool value) { m_inboundMMSHasBeenSet = true; m_inboundMMS = value; }
     inline PhoneNumberCapabilities& WithInboundMMS(bool value) { SetInboundMMS(value); return *this;}
@@ -91,29 +91,29 @@ namespace Model
     /**
      * <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
      */
-    inline bool GetOutboundMMS() const{ return m_outboundMMS; }
+    inline bool GetOutboundMMS() const { return m_outboundMMS; }
     inline bool OutboundMMSHasBeenSet() const { return m_outboundMMSHasBeenSet; }
     inline void SetOutboundMMS(bool value) { m_outboundMMSHasBeenSet = true; m_outboundMMS = value; }
     inline PhoneNumberCapabilities& WithOutboundMMS(bool value) { SetOutboundMMS(value); return *this;}
     ///@}
   private:
 
-    bool m_inboundCall;
+    bool m_inboundCall{false};
     bool m_inboundCallHasBeenSet = false;
 
-    bool m_outboundCall;
+    bool m_outboundCall{false};
     bool m_outboundCallHasBeenSet = false;
 
-    bool m_inboundSMS;
+    bool m_inboundSMS{false};
     bool m_inboundSMSHasBeenSet = false;
 
-    bool m_outboundSMS;
+    bool m_outboundSMS{false};
     bool m_outboundSMSHasBeenSet = false;
 
-    bool m_inboundMMS;
+    bool m_inboundMMS{false};
     bool m_inboundMMSHasBeenSet = false;
 
-    bool m_outboundMMS;
+    bool m_outboundMMS{false};
     bool m_outboundMMSHasBeenSet = false;
   };
 

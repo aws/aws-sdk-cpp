@@ -18,21 +18,7 @@ namespace Omics
 namespace Model
 {
 
-RunCacheListItem::RunCacheListItem() : 
-    m_arnHasBeenSet(false),
-    m_cacheBehavior(CacheBehavior::NOT_SET),
-    m_cacheBehaviorHasBeenSet(false),
-    m_cacheS3UriHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(RunCacheStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RunCacheListItem::RunCacheListItem(JsonView jsonValue)
-  : RunCacheListItem()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ RunCacheListItem& RunCacheListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheBehavior"))
   {
     m_cacheBehavior = CacheBehaviorMapper::GetCacheBehaviorForName(jsonValue.GetString("cacheBehavior"));
-
     m_cacheBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheS3Uri"))
   {
     m_cacheS3Uri = jsonValue.GetString("cacheS3Uri");
-
     m_cacheS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RunCacheStatusMapper::GetRunCacheStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

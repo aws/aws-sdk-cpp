@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TeletextSourceSettings::TeletextSourceSettings() : 
-    m_pageNumberHasBeenSet(false)
-{
-}
-
 TeletextSourceSettings::TeletextSourceSettings(JsonView jsonValue)
-  : TeletextSourceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TeletextSourceSettings& TeletextSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pageNumber"))
   {
     m_pageNumber = jsonValue.GetString("pageNumber");
-
     m_pageNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

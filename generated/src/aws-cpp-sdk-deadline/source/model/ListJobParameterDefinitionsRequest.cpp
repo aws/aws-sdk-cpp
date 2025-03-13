@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobParameterDefinitionsRequest::ListJobParameterDefinitionsRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListJobParameterDefinitionsRequest::SerializePayload() const
 {
   return {};

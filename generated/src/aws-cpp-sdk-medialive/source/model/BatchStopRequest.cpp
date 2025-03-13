@@ -12,12 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchStopRequest::BatchStopRequest() : 
-    m_channelIdsHasBeenSet(false),
-    m_multiplexIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchStopRequest::SerializePayload() const
 {
   JsonValue payload;

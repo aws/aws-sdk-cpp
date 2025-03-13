@@ -32,7 +32,7 @@ namespace Model
   class BackendAuthSocialProviderConfig
   {
   public:
-    AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig();
+    AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig() = default;
     AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Describes the client_id, which can be obtained from the third-party social
      * federation provider.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline BackendAuthSocialProviderConfig& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline BackendAuthSocialProviderConfig& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline BackendAuthSocialProviderConfig& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    BackendAuthSocialProviderConfig& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Describes the client_secret, which can be obtained from third-party social
      * federation providers.</p>
      */
-    inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
+    inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-    inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
-    inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
-    inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
-    inline BackendAuthSocialProviderConfig& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
-    inline BackendAuthSocialProviderConfig& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
-    inline BackendAuthSocialProviderConfig& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
+    template<typename ClientSecretT = Aws::String>
+    void SetClientSecret(ClientSecretT&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::forward<ClientSecretT>(value); }
+    template<typename ClientSecretT = Aws::String>
+    BackendAuthSocialProviderConfig& WithClientSecret(ClientSecretT&& value) { SetClientSecret(std::forward<ClientSecretT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class ProfilingStatus
   {
   public:
-    AWS_CODEGURUPROFILER_API ProfilingStatus();
+    AWS_CODEGURUPROFILER_API ProfilingStatus() = default;
     AWS_CODEGURUPROFILER_API ProfilingStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API ProfilingStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
      * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestAgentOrchestratedAt() const{ return m_latestAgentOrchestratedAt; }
+    inline const Aws::Utils::DateTime& GetLatestAgentOrchestratedAt() const { return m_latestAgentOrchestratedAt; }
     inline bool LatestAgentOrchestratedAtHasBeenSet() const { return m_latestAgentOrchestratedAtHasBeenSet; }
-    inline void SetLatestAgentOrchestratedAt(const Aws::Utils::DateTime& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = value; }
-    inline void SetLatestAgentOrchestratedAt(Aws::Utils::DateTime&& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = std::move(value); }
-    inline ProfilingStatus& WithLatestAgentOrchestratedAt(const Aws::Utils::DateTime& value) { SetLatestAgentOrchestratedAt(value); return *this;}
-    inline ProfilingStatus& WithLatestAgentOrchestratedAt(Aws::Utils::DateTime&& value) { SetLatestAgentOrchestratedAt(std::move(value)); return *this;}
+    template<typename LatestAgentOrchestratedAtT = Aws::Utils::DateTime>
+    void SetLatestAgentOrchestratedAt(LatestAgentOrchestratedAtT&& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = std::forward<LatestAgentOrchestratedAtT>(value); }
+    template<typename LatestAgentOrchestratedAtT = Aws::Utils::DateTime>
+    ProfilingStatus& WithLatestAgentOrchestratedAt(LatestAgentOrchestratedAtT&& value) { SetLatestAgentOrchestratedAt(std::forward<LatestAgentOrchestratedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
      * millisecond past June 1, 2020 1:15:02 PM UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestAgentProfileReportedAt() const{ return m_latestAgentProfileReportedAt; }
+    inline const Aws::Utils::DateTime& GetLatestAgentProfileReportedAt() const { return m_latestAgentProfileReportedAt; }
     inline bool LatestAgentProfileReportedAtHasBeenSet() const { return m_latestAgentProfileReportedAtHasBeenSet; }
-    inline void SetLatestAgentProfileReportedAt(const Aws::Utils::DateTime& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = value; }
-    inline void SetLatestAgentProfileReportedAt(Aws::Utils::DateTime&& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = std::move(value); }
-    inline ProfilingStatus& WithLatestAgentProfileReportedAt(const Aws::Utils::DateTime& value) { SetLatestAgentProfileReportedAt(value); return *this;}
-    inline ProfilingStatus& WithLatestAgentProfileReportedAt(Aws::Utils::DateTime&& value) { SetLatestAgentProfileReportedAt(std::move(value)); return *this;}
+    template<typename LatestAgentProfileReportedAtT = Aws::Utils::DateTime>
+    void SetLatestAgentProfileReportedAt(LatestAgentProfileReportedAtT&& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = std::forward<LatestAgentProfileReportedAtT>(value); }
+    template<typename LatestAgentProfileReportedAtT = Aws::Utils::DateTime>
+    ProfilingStatus& WithLatestAgentProfileReportedAt(LatestAgentProfileReportedAtT&& value) { SetLatestAgentProfileReportedAt(std::forward<LatestAgentProfileReportedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,19 +76,19 @@ namespace Model
      * <code>AggregatedProfileTime</code> </a> object that contains the aggregation
      * period and start time for an aggregated profile. </p>
      */
-    inline const AggregatedProfileTime& GetLatestAggregatedProfile() const{ return m_latestAggregatedProfile; }
+    inline const AggregatedProfileTime& GetLatestAggregatedProfile() const { return m_latestAggregatedProfile; }
     inline bool LatestAggregatedProfileHasBeenSet() const { return m_latestAggregatedProfileHasBeenSet; }
-    inline void SetLatestAggregatedProfile(const AggregatedProfileTime& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = value; }
-    inline void SetLatestAggregatedProfile(AggregatedProfileTime&& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = std::move(value); }
-    inline ProfilingStatus& WithLatestAggregatedProfile(const AggregatedProfileTime& value) { SetLatestAggregatedProfile(value); return *this;}
-    inline ProfilingStatus& WithLatestAggregatedProfile(AggregatedProfileTime&& value) { SetLatestAggregatedProfile(std::move(value)); return *this;}
+    template<typename LatestAggregatedProfileT = AggregatedProfileTime>
+    void SetLatestAggregatedProfile(LatestAggregatedProfileT&& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = std::forward<LatestAggregatedProfileT>(value); }
+    template<typename LatestAggregatedProfileT = AggregatedProfileTime>
+    ProfilingStatus& WithLatestAggregatedProfile(LatestAggregatedProfileT&& value) { SetLatestAggregatedProfile(std::forward<LatestAggregatedProfileT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_latestAgentOrchestratedAt;
+    Aws::Utils::DateTime m_latestAgentOrchestratedAt{};
     bool m_latestAgentOrchestratedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestAgentProfileReportedAt;
+    Aws::Utils::DateTime m_latestAgentProfileReportedAt{};
     bool m_latestAgentProfileReportedAtHasBeenSet = false;
 
     AggregatedProfileTime m_latestAggregatedProfile;

@@ -39,7 +39,7 @@ namespace Model
   class SftpConnectorConfig
   {
   public:
-    AWS_TRANSFER_API SftpConnectorConfig();
+    AWS_TRANSFER_API SftpConnectorConfig() = default;
     AWS_TRANSFER_API SftpConnectorConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API SftpConnectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * contains the SFTP user's private key, password, or both. The identifier must be
      * the Amazon Resource Name (ARN) of the secret.</p>
      */
-    inline const Aws::String& GetUserSecretId() const{ return m_userSecretId; }
+    inline const Aws::String& GetUserSecretId() const { return m_userSecretId; }
     inline bool UserSecretIdHasBeenSet() const { return m_userSecretIdHasBeenSet; }
-    inline void SetUserSecretId(const Aws::String& value) { m_userSecretIdHasBeenSet = true; m_userSecretId = value; }
-    inline void SetUserSecretId(Aws::String&& value) { m_userSecretIdHasBeenSet = true; m_userSecretId = std::move(value); }
-    inline void SetUserSecretId(const char* value) { m_userSecretIdHasBeenSet = true; m_userSecretId.assign(value); }
-    inline SftpConnectorConfig& WithUserSecretId(const Aws::String& value) { SetUserSecretId(value); return *this;}
-    inline SftpConnectorConfig& WithUserSecretId(Aws::String&& value) { SetUserSecretId(std::move(value)); return *this;}
-    inline SftpConnectorConfig& WithUserSecretId(const char* value) { SetUserSecretId(value); return *this;}
+    template<typename UserSecretIdT = Aws::String>
+    void SetUserSecretId(UserSecretIdT&& value) { m_userSecretIdHasBeenSet = true; m_userSecretId = std::forward<UserSecretIdT>(value); }
+    template<typename UserSecretIdT = Aws::String>
+    SftpConnectorConfig& WithUserSecretId(UserSecretIdT&& value) { SetUserSecretId(std::forward<UserSecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,15 +83,14 @@ namespace Model
      * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
      * in the console.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTrustedHostKeys() const{ return m_trustedHostKeys; }
+    inline const Aws::Vector<Aws::String>& GetTrustedHostKeys() const { return m_trustedHostKeys; }
     inline bool TrustedHostKeysHasBeenSet() const { return m_trustedHostKeysHasBeenSet; }
-    inline void SetTrustedHostKeys(const Aws::Vector<Aws::String>& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys = value; }
-    inline void SetTrustedHostKeys(Aws::Vector<Aws::String>&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys = std::move(value); }
-    inline SftpConnectorConfig& WithTrustedHostKeys(const Aws::Vector<Aws::String>& value) { SetTrustedHostKeys(value); return *this;}
-    inline SftpConnectorConfig& WithTrustedHostKeys(Aws::Vector<Aws::String>&& value) { SetTrustedHostKeys(std::move(value)); return *this;}
-    inline SftpConnectorConfig& AddTrustedHostKeys(const Aws::String& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.push_back(value); return *this; }
-    inline SftpConnectorConfig& AddTrustedHostKeys(Aws::String&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.push_back(std::move(value)); return *this; }
-    inline SftpConnectorConfig& AddTrustedHostKeys(const char* value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.push_back(value); return *this; }
+    template<typename TrustedHostKeysT = Aws::Vector<Aws::String>>
+    void SetTrustedHostKeys(TrustedHostKeysT&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys = std::forward<TrustedHostKeysT>(value); }
+    template<typename TrustedHostKeysT = Aws::Vector<Aws::String>>
+    SftpConnectorConfig& WithTrustedHostKeys(TrustedHostKeysT&& value) { SetTrustedHostKeys(std::forward<TrustedHostKeysT>(value)); return *this;}
+    template<typename TrustedHostKeysT = Aws::String>
+    SftpConnectorConfig& AddTrustedHostKeys(TrustedHostKeysT&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.emplace_back(std::forward<TrustedHostKeysT>(value)); return *this; }
     ///@}
   private:
 

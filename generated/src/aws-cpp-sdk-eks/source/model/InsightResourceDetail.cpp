@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-InsightResourceDetail::InsightResourceDetail() : 
-    m_insightStatusHasBeenSet(false),
-    m_kubernetesResourceUriHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 InsightResourceDetail::InsightResourceDetail(JsonView jsonValue)
-  : InsightResourceDetail()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InsightResourceDetail& InsightResourceDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("insightStatus"))
   {
     m_insightStatus = jsonValue.GetObject("insightStatus");
-
     m_insightStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesResourceUri"))
   {
     m_kubernetesResourceUri = jsonValue.GetString("kubernetesResourceUri");
-
     m_kubernetesResourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

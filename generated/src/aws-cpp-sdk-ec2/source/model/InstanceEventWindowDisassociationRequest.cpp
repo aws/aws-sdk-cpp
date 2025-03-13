@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceEventWindowDisassociationRequest::InstanceEventWindowDisassociationRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_dedicatedHostIdsHasBeenSet(false)
-{
-}
-
 InstanceEventWindowDisassociationRequest::InstanceEventWindowDisassociationRequest(const XmlNode& xmlNode)
-  : InstanceEventWindowDisassociationRequest()
 {
   *this = xmlNode;
 }
@@ -43,37 +35,40 @@ InstanceEventWindowDisassociationRequest& InstanceEventWindowDisassociationReque
     if(!instanceIdsNode.IsNull())
     {
       XmlNode instanceIdsMember = instanceIdsNode.FirstChild("item");
+      m_instanceIdsHasBeenSet = !instanceIdsMember.IsNull();
       while(!instanceIdsMember.IsNull())
       {
         m_instanceIds.push_back(instanceIdsMember.GetText());
         instanceIdsMember = instanceIdsMember.NextNode("item");
       }
 
-      m_instanceIdsHasBeenSet = true;
+       m_instanceIdsHasBeenSet = true;
     }
     XmlNode instanceTagsNode = resultNode.FirstChild("InstanceTag");
     if(!instanceTagsNode.IsNull())
     {
       XmlNode instanceTagsMember = instanceTagsNode.FirstChild("item");
+      m_instanceTagsHasBeenSet = !instanceTagsMember.IsNull();
       while(!instanceTagsMember.IsNull())
       {
         m_instanceTags.push_back(instanceTagsMember);
         instanceTagsMember = instanceTagsMember.NextNode("item");
       }
 
-      m_instanceTagsHasBeenSet = true;
+       m_instanceTagsHasBeenSet = true;
     }
     XmlNode dedicatedHostIdsNode = resultNode.FirstChild("DedicatedHostId");
     if(!dedicatedHostIdsNode.IsNull())
     {
       XmlNode dedicatedHostIdsMember = dedicatedHostIdsNode.FirstChild("item");
+      m_dedicatedHostIdsHasBeenSet = !dedicatedHostIdsMember.IsNull();
       while(!dedicatedHostIdsMember.IsNull())
       {
         m_dedicatedHostIds.push_back(dedicatedHostIdsMember.GetText());
         dedicatedHostIdsMember = dedicatedHostIdsMember.NextNode("item");
       }
 
-      m_dedicatedHostIdsHasBeenSet = true;
+       m_dedicatedHostIdsHasBeenSet = true;
     }
   }
 

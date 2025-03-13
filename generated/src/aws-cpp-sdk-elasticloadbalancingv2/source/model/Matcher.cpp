@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Matcher::Matcher() : 
-    m_httpCodeHasBeenSet(false),
-    m_grpcCodeHasBeenSet(false)
-{
-}
-
 Matcher::Matcher(const XmlNode& xmlNode)
-  : Matcher()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Matcher& Matcher::operator =(const XmlNode& xmlNode)
     {
       m_httpCode = Aws::Utils::Xml::DecodeEscapedXmlText(httpCodeNode.GetText());
       m_httpCodeHasBeenSet = true;
+       m_httpCodeHasBeenSet = true;
     }
     XmlNode grpcCodeNode = resultNode.FirstChild("GrpcCode");
     if(!grpcCodeNode.IsNull())
     {
       m_grpcCode = Aws::Utils::Xml::DecodeEscapedXmlText(grpcCodeNode.GetText());
       m_grpcCodeHasBeenSet = true;
+       m_grpcCodeHasBeenSet = true;
     }
   }
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ExportApiRequest::ExportApiRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_exportVersionHasBeenSet(false),
-    m_includeExtensions(false),
-    m_includeExtensionsHasBeenSet(false),
-    m_outputTypeHasBeenSet(false),
-    m_specificationHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 Aws::String ExportApiRequest::SerializePayload() const
 {
   return {};

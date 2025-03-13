@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttributeBooleanValue::AttributeBooleanValue() : 
-    m_value(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AttributeBooleanValue::AttributeBooleanValue(const XmlNode& xmlNode)
-  : AttributeBooleanValue()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ AttributeBooleanValue& AttributeBooleanValue::operator =(const XmlNode& xmlNode)
     {
       m_value = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateEmailAddressMetadataResult::UpdateEmailAddressMetadataResult()
-{
-}
-
 UpdateEmailAddressMetadataResult::UpdateEmailAddressMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateEmailAddressMetadataResult& UpdateEmailAddressMetadataResult::operator =(c
   if(jsonValue.ValueExists("EmailAddressId"))
   {
     m_emailAddressId = jsonValue.GetString("EmailAddressId");
-
+    m_emailAddressIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddressArn"))
   {
     m_emailAddressArn = jsonValue.GetString("EmailAddressArn");
-
+    m_emailAddressArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

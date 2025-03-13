@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFleetsResponse::DescribeFleetsResponse()
-{
-}
-
 DescribeFleetsResponse::DescribeFleetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeFleetsResponse& DescribeFleetsResponse::operator =(const Aws::AmazonWebS
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode fleetsNode = resultNode.FirstChild("fleetSet");
     if(!fleetsNode.IsNull())
     {
       XmlNode fleetsMember = fleetsNode.FirstChild("item");
+      m_fleetsHasBeenSet = !fleetsMember.IsNull();
       while(!fleetsMember.IsNull())
       {
         m_fleets.push_back(fleetsMember);
@@ -61,6 +59,7 @@ DescribeFleetsResponse& DescribeFleetsResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeFleetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

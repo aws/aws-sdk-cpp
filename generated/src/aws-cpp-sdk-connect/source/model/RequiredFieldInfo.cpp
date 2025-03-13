@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RequiredFieldInfo::RequiredFieldInfo() : 
-    m_idHasBeenSet(false)
-{
-}
-
 RequiredFieldInfo::RequiredFieldInfo(JsonView jsonValue)
-  : RequiredFieldInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RequiredFieldInfo& RequiredFieldInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetObject("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

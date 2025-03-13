@@ -15,16 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateHostedConfigurationVersionRequest::CreateHostedConfigurationVersionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false),
-    m_versionLabelHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection CreateHostedConfigurationVersionRequest::GetRequestSpecificHeaders() const

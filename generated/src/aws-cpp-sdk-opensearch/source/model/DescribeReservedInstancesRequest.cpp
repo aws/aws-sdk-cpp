@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeReservedInstancesRequest::DescribeReservedInstancesRequest() : 
-    m_reservedInstanceIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedInstancesRequest::SerializePayload() const
 {
   return {};

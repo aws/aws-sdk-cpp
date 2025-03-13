@@ -37,7 +37,7 @@ namespace Model
   class ActionReviewEvent
   {
   public:
-    AWS_QBUSINESS_API ActionReviewEvent();
+    AWS_QBUSINESS_API ActionReviewEvent() = default;
     AWS_QBUSINESS_API ActionReviewEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionReviewEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>The identifier of the conversation with which the action review event is
      * associated.</p>
      */
-    inline const Aws::String& GetConversationId() const{ return m_conversationId; }
+    inline const Aws::String& GetConversationId() const { return m_conversationId; }
     inline bool ConversationIdHasBeenSet() const { return m_conversationIdHasBeenSet; }
-    inline void SetConversationId(const Aws::String& value) { m_conversationIdHasBeenSet = true; m_conversationId = value; }
-    inline void SetConversationId(Aws::String&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::move(value); }
-    inline void SetConversationId(const char* value) { m_conversationIdHasBeenSet = true; m_conversationId.assign(value); }
-    inline ActionReviewEvent& WithConversationId(const Aws::String& value) { SetConversationId(value); return *this;}
-    inline ActionReviewEvent& WithConversationId(Aws::String&& value) { SetConversationId(std::move(value)); return *this;}
-    inline ActionReviewEvent& WithConversationId(const char* value) { SetConversationId(value); return *this;}
+    template<typename ConversationIdT = Aws::String>
+    void SetConversationId(ConversationIdT&& value) { m_conversationIdHasBeenSet = true; m_conversationId = std::forward<ConversationIdT>(value); }
+    template<typename ConversationIdT = Aws::String>
+    ActionReviewEvent& WithConversationId(ConversationIdT&& value) { SetConversationId(std::forward<ConversationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The identifier of the conversation with which the plugin action is
      * associated.</p>
      */
-    inline const Aws::String& GetUserMessageId() const{ return m_userMessageId; }
+    inline const Aws::String& GetUserMessageId() const { return m_userMessageId; }
     inline bool UserMessageIdHasBeenSet() const { return m_userMessageIdHasBeenSet; }
-    inline void SetUserMessageId(const Aws::String& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = value; }
-    inline void SetUserMessageId(Aws::String&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::move(value); }
-    inline void SetUserMessageId(const char* value) { m_userMessageIdHasBeenSet = true; m_userMessageId.assign(value); }
-    inline ActionReviewEvent& WithUserMessageId(const Aws::String& value) { SetUserMessageId(value); return *this;}
-    inline ActionReviewEvent& WithUserMessageId(Aws::String&& value) { SetUserMessageId(std::move(value)); return *this;}
-    inline ActionReviewEvent& WithUserMessageId(const char* value) { SetUserMessageId(value); return *this;}
+    template<typename UserMessageIdT = Aws::String>
+    void SetUserMessageId(UserMessageIdT&& value) { m_userMessageIdHasBeenSet = true; m_userMessageId = std::forward<UserMessageIdT>(value); }
+    template<typename UserMessageIdT = Aws::String>
+    ActionReviewEvent& WithUserMessageId(UserMessageIdT&& value) { SetUserMessageId(std::forward<UserMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,40 +74,34 @@ namespace Model
      * <p>The identifier of an Amazon Q Business AI generated associated with the
      * action review event.</p>
      */
-    inline const Aws::String& GetSystemMessageId() const{ return m_systemMessageId; }
+    inline const Aws::String& GetSystemMessageId() const { return m_systemMessageId; }
     inline bool SystemMessageIdHasBeenSet() const { return m_systemMessageIdHasBeenSet; }
-    inline void SetSystemMessageId(const Aws::String& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = value; }
-    inline void SetSystemMessageId(Aws::String&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::move(value); }
-    inline void SetSystemMessageId(const char* value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId.assign(value); }
-    inline ActionReviewEvent& WithSystemMessageId(const Aws::String& value) { SetSystemMessageId(value); return *this;}
-    inline ActionReviewEvent& WithSystemMessageId(Aws::String&& value) { SetSystemMessageId(std::move(value)); return *this;}
-    inline ActionReviewEvent& WithSystemMessageId(const char* value) { SetSystemMessageId(value); return *this;}
+    template<typename SystemMessageIdT = Aws::String>
+    void SetSystemMessageId(SystemMessageIdT&& value) { m_systemMessageIdHasBeenSet = true; m_systemMessageId = std::forward<SystemMessageIdT>(value); }
+    template<typename SystemMessageIdT = Aws::String>
+    ActionReviewEvent& WithSystemMessageId(SystemMessageIdT&& value) { SetSystemMessageId(std::forward<SystemMessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the plugin associated with the action review event.</p>
      */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+    inline const Aws::String& GetPluginId() const { return m_pluginId; }
     inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
-    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
-    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
-    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
-    inline ActionReviewEvent& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-    inline ActionReviewEvent& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-    inline ActionReviewEvent& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+    template<typename PluginIdT = Aws::String>
+    void SetPluginId(PluginIdT&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::forward<PluginIdT>(value); }
+    template<typename PluginIdT = Aws::String>
+    ActionReviewEvent& WithPluginId(PluginIdT&& value) { SetPluginId(std::forward<PluginIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of plugin.</p>
      */
-    inline const PluginType& GetPluginType() const{ return m_pluginType; }
+    inline PluginType GetPluginType() const { return m_pluginType; }
     inline bool PluginTypeHasBeenSet() const { return m_pluginTypeHasBeenSet; }
-    inline void SetPluginType(const PluginType& value) { m_pluginTypeHasBeenSet = true; m_pluginType = value; }
-    inline void SetPluginType(PluginType&& value) { m_pluginTypeHasBeenSet = true; m_pluginType = std::move(value); }
-    inline ActionReviewEvent& WithPluginType(const PluginType& value) { SetPluginType(value); return *this;}
-    inline ActionReviewEvent& WithPluginType(PluginType&& value) { SetPluginType(std::move(value)); return *this;}
+    inline void SetPluginType(PluginType value) { m_pluginTypeHasBeenSet = true; m_pluginType = value; }
+    inline ActionReviewEvent& WithPluginType(PluginType value) { SetPluginType(value); return *this;}
     ///@}
 
     ///@{
@@ -119,18 +109,16 @@ namespace Model
      * <p>Field values that an end user needs to provide to Amazon Q Business for
      * Amazon Q Business to perform the requested plugin action.</p>
      */
-    inline const Aws::Map<Aws::String, ActionReviewPayloadField>& GetPayload() const{ return m_payload; }
+    inline const Aws::Map<Aws::String, ActionReviewPayloadField>& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::Map<Aws::String, ActionReviewPayloadField>& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::Map<Aws::String, ActionReviewPayloadField>&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline ActionReviewEvent& WithPayload(const Aws::Map<Aws::String, ActionReviewPayloadField>& value) { SetPayload(value); return *this;}
-    inline ActionReviewEvent& WithPayload(Aws::Map<Aws::String, ActionReviewPayloadField>&& value) { SetPayload(std::move(value)); return *this;}
-    inline ActionReviewEvent& AddPayload(const Aws::String& key, const ActionReviewPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
-    inline ActionReviewEvent& AddPayload(Aws::String&& key, const ActionReviewPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), value); return *this; }
-    inline ActionReviewEvent& AddPayload(const Aws::String& key, ActionReviewPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
-    inline ActionReviewEvent& AddPayload(Aws::String&& key, ActionReviewPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), std::move(value)); return *this; }
-    inline ActionReviewEvent& AddPayload(const char* key, ActionReviewPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
-    inline ActionReviewEvent& AddPayload(const char* key, const ActionReviewPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
+    template<typename PayloadT = Aws::Map<Aws::String, ActionReviewPayloadField>>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Map<Aws::String, ActionReviewPayloadField>>
+    ActionReviewEvent& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
+    template<typename PayloadKeyT = Aws::String, typename PayloadValueT = ActionReviewPayloadField>
+    ActionReviewEvent& AddPayload(PayloadKeyT&& key, PayloadValueT&& value) {
+      m_payloadHasBeenSet = true; m_payload.emplace(std::forward<PayloadKeyT>(key), std::forward<PayloadValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -138,14 +126,12 @@ namespace Model
      * <p>A string used to retain information about the hierarchical contexts within an
      * action review event payload.</p>
      */
-    inline const Aws::String& GetPayloadFieldNameSeparator() const{ return m_payloadFieldNameSeparator; }
+    inline const Aws::String& GetPayloadFieldNameSeparator() const { return m_payloadFieldNameSeparator; }
     inline bool PayloadFieldNameSeparatorHasBeenSet() const { return m_payloadFieldNameSeparatorHasBeenSet; }
-    inline void SetPayloadFieldNameSeparator(const Aws::String& value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator = value; }
-    inline void SetPayloadFieldNameSeparator(Aws::String&& value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator = std::move(value); }
-    inline void SetPayloadFieldNameSeparator(const char* value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator.assign(value); }
-    inline ActionReviewEvent& WithPayloadFieldNameSeparator(const Aws::String& value) { SetPayloadFieldNameSeparator(value); return *this;}
-    inline ActionReviewEvent& WithPayloadFieldNameSeparator(Aws::String&& value) { SetPayloadFieldNameSeparator(std::move(value)); return *this;}
-    inline ActionReviewEvent& WithPayloadFieldNameSeparator(const char* value) { SetPayloadFieldNameSeparator(value); return *this;}
+    template<typename PayloadFieldNameSeparatorT = Aws::String>
+    void SetPayloadFieldNameSeparator(PayloadFieldNameSeparatorT&& value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator = std::forward<PayloadFieldNameSeparatorT>(value); }
+    template<typename PayloadFieldNameSeparatorT = Aws::String>
+    ActionReviewEvent& WithPayloadFieldNameSeparator(PayloadFieldNameSeparatorT&& value) { SetPayloadFieldNameSeparator(std::forward<PayloadFieldNameSeparatorT>(value)); return *this;}
     ///@}
   private:
 
@@ -161,7 +147,7 @@ namespace Model
     Aws::String m_pluginId;
     bool m_pluginIdHasBeenSet = false;
 
-    PluginType m_pluginType;
+    PluginType m_pluginType{PluginType::NOT_SET};
     bool m_pluginTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, ActionReviewPayloadField> m_payload;

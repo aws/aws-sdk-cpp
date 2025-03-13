@@ -21,7 +21,7 @@ namespace Model
   class GetAssociatedIpv6PoolCidrsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetAssociatedIpv6PoolCidrsRequest();
+    AWS_EC2_API GetAssociatedIpv6PoolCidrsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The ID of the IPv6 address pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline GetAssociatedIpv6PoolCidrsRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline GetAssociatedIpv6PoolCidrsRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline GetAssociatedIpv6PoolCidrsRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    GetAssociatedIpv6PoolCidrsRequest& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetAssociatedIpv6PoolCidrsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAssociatedIpv6PoolCidrsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAssociatedIpv6PoolCidrsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAssociatedIpv6PoolCidrsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAssociatedIpv6PoolCidrsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetAssociatedIpv6PoolCidrsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -96,10 +92,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

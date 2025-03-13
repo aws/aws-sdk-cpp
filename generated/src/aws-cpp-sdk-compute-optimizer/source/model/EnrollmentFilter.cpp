@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-EnrollmentFilter::EnrollmentFilter() : 
-    m_name(EnrollmentFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 EnrollmentFilter::EnrollmentFilter(JsonView jsonValue)
-  : EnrollmentFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EnrollmentFilter& EnrollmentFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = EnrollmentFilterNameMapper::GetEnrollmentFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ EnrollmentFilter& EnrollmentFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

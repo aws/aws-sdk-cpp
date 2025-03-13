@@ -41,7 +41,7 @@ namespace Model
   class RecommendedOptionProjectedMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RecommendedOptionProjectedMetric();
+    AWS_COMPUTEOPTIMIZER_API RecommendedOptionProjectedMetric() = default;
     AWS_COMPUTEOPTIMIZER_API RecommendedOptionProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RecommendedOptionProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The recommended instance type.</p>
      */
-    inline const Aws::String& GetRecommendedInstanceType() const{ return m_recommendedInstanceType; }
+    inline const Aws::String& GetRecommendedInstanceType() const { return m_recommendedInstanceType; }
     inline bool RecommendedInstanceTypeHasBeenSet() const { return m_recommendedInstanceTypeHasBeenSet; }
-    inline void SetRecommendedInstanceType(const Aws::String& value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType = value; }
-    inline void SetRecommendedInstanceType(Aws::String&& value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType = std::move(value); }
-    inline void SetRecommendedInstanceType(const char* value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType.assign(value); }
-    inline RecommendedOptionProjectedMetric& WithRecommendedInstanceType(const Aws::String& value) { SetRecommendedInstanceType(value); return *this;}
-    inline RecommendedOptionProjectedMetric& WithRecommendedInstanceType(Aws::String&& value) { SetRecommendedInstanceType(std::move(value)); return *this;}
-    inline RecommendedOptionProjectedMetric& WithRecommendedInstanceType(const char* value) { SetRecommendedInstanceType(value); return *this;}
+    template<typename RecommendedInstanceTypeT = Aws::String>
+    void SetRecommendedInstanceType(RecommendedInstanceTypeT&& value) { m_recommendedInstanceTypeHasBeenSet = true; m_recommendedInstanceType = std::forward<RecommendedInstanceTypeT>(value); }
+    template<typename RecommendedInstanceTypeT = Aws::String>
+    RecommendedOptionProjectedMetric& WithRecommendedInstanceType(RecommendedInstanceTypeT&& value) { SetRecommendedInstanceType(std::forward<RecommendedInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * metric ranked as <code>1</code> is related to the recommendation option that is
      * also ranked as <code>1</code> in the same response.</p>
      */
-    inline int GetRank() const{ return m_rank; }
+    inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
     inline RecommendedOptionProjectedMetric& WithRank(int value) { SetRank(value); return *this;}
@@ -79,21 +77,21 @@ namespace Model
     /**
      * <p>An array of objects that describe a projected utilization metric.</p>
      */
-    inline const Aws::Vector<ProjectedMetric>& GetProjectedMetrics() const{ return m_projectedMetrics; }
+    inline const Aws::Vector<ProjectedMetric>& GetProjectedMetrics() const { return m_projectedMetrics; }
     inline bool ProjectedMetricsHasBeenSet() const { return m_projectedMetricsHasBeenSet; }
-    inline void SetProjectedMetrics(const Aws::Vector<ProjectedMetric>& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = value; }
-    inline void SetProjectedMetrics(Aws::Vector<ProjectedMetric>&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::move(value); }
-    inline RecommendedOptionProjectedMetric& WithProjectedMetrics(const Aws::Vector<ProjectedMetric>& value) { SetProjectedMetrics(value); return *this;}
-    inline RecommendedOptionProjectedMetric& WithProjectedMetrics(Aws::Vector<ProjectedMetric>&& value) { SetProjectedMetrics(std::move(value)); return *this;}
-    inline RecommendedOptionProjectedMetric& AddProjectedMetrics(const ProjectedMetric& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(value); return *this; }
-    inline RecommendedOptionProjectedMetric& AddProjectedMetrics(ProjectedMetric&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(std::move(value)); return *this; }
+    template<typename ProjectedMetricsT = Aws::Vector<ProjectedMetric>>
+    void SetProjectedMetrics(ProjectedMetricsT&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::forward<ProjectedMetricsT>(value); }
+    template<typename ProjectedMetricsT = Aws::Vector<ProjectedMetric>>
+    RecommendedOptionProjectedMetric& WithProjectedMetrics(ProjectedMetricsT&& value) { SetProjectedMetrics(std::forward<ProjectedMetricsT>(value)); return *this;}
+    template<typename ProjectedMetricsT = ProjectedMetric>
+    RecommendedOptionProjectedMetric& AddProjectedMetrics(ProjectedMetricsT&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.emplace_back(std::forward<ProjectedMetricsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_recommendedInstanceType;
     bool m_recommendedInstanceTypeHasBeenSet = false;
 
-    int m_rank;
+    int m_rank{0};
     bool m_rankHasBeenSet = false;
 
     Aws::Vector<ProjectedMetric> m_projectedMetrics;

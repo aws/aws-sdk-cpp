@@ -21,7 +21,7 @@ namespace Model
   class RevokeGrantRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API RevokeGrantRequest();
+    AWS_KMS_API RevokeGrantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline RevokeGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline RevokeGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline RevokeGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    RevokeGrantRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
      * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
-    inline const Aws::String& GetGrantId() const{ return m_grantId; }
+    inline const Aws::String& GetGrantId() const { return m_grantId; }
     inline bool GrantIdHasBeenSet() const { return m_grantIdHasBeenSet; }
-    inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
-    inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = std::move(value); }
-    inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
-    inline RevokeGrantRequest& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
-    inline RevokeGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
-    inline RevokeGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
+    template<typename GrantIdT = Aws::String>
+    void SetGrantId(GrantIdT&& value) { m_grantIdHasBeenSet = true; m_grantId = std::forward<GrantIdT>(value); }
+    template<typename GrantIdT = Aws::String>
+    RevokeGrantRequest& WithGrantId(GrantIdT&& value) { SetGrantId(std::forward<GrantIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
      * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RevokeGrantRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -91,7 +87,7 @@ namespace Model
     Aws::String m_grantId;
     bool m_grantIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

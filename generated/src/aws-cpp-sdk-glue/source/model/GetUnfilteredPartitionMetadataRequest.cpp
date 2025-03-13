@@ -12,18 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUnfilteredPartitionMetadataRequest::GetUnfilteredPartitionMetadataRequest() : 
-    m_regionHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_partitionValuesHasBeenSet(false),
-    m_auditContextHasBeenSet(false),
-    m_supportedPermissionTypesHasBeenSet(false),
-    m_querySessionContextHasBeenSet(false)
-{
-}
-
 Aws::String GetUnfilteredPartitionMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,18 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartIncidentRequest::StartIncidentRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_relatedItemsHasBeenSet(false),
-    m_responsePlanArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_triggerDetailsHasBeenSet(false)
-{
-}
-
 Aws::String StartIncidentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class InferenceComponentCapacitySize
   {
   public:
-    AWS_SAGEMAKER_API InferenceComponentCapacitySize();
+    AWS_SAGEMAKER_API InferenceComponentCapacitySize() = default;
     AWS_SAGEMAKER_API InferenceComponentCapacitySize(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceComponentCapacitySize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * </dd> <dt>CAPACITY_PERCENT</dt> <dd> <p>The endpoint activates based on the
      * specified percentage of capacity.</p> </dd> </dl>
      */
-    inline const InferenceComponentCapacitySizeType& GetType() const{ return m_type; }
+    inline InferenceComponentCapacitySizeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InferenceComponentCapacitySizeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InferenceComponentCapacitySizeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline InferenceComponentCapacitySize& WithType(const InferenceComponentCapacitySizeType& value) { SetType(value); return *this;}
-    inline InferenceComponentCapacitySize& WithType(InferenceComponentCapacitySizeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InferenceComponentCapacitySizeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline InferenceComponentCapacitySize& WithType(InferenceComponentCapacitySizeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,17 +62,17 @@ namespace Model
      * <p>Defines the capacity size, either as a number of inference component copies
      * or a capacity percentage.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline InferenceComponentCapacitySize& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    InferenceComponentCapacitySizeType m_type;
+    InferenceComponentCapacitySizeType m_type{InferenceComponentCapacitySizeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

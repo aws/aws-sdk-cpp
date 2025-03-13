@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcPeeringConnection::VpcPeeringConnection() : 
-    m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_requesterVpcInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 VpcPeeringConnection::VpcPeeringConnection(const XmlNode& xmlNode)
-  : VpcPeeringConnection()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,48 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     {
       m_accepterVpcInfo = accepterVpcInfoNode;
       m_accepterVpcInfoHasBeenSet = true;
+       m_accepterVpcInfoHasBeenSet = true;
     }
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
       m_expirationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_expirationTimeHasBeenSet = true;
+       m_expirationTimeHasBeenSet = true;
     }
     XmlNode requesterVpcInfoNode = resultNode.FirstChild("requesterVpcInfo");
     if(!requesterVpcInfoNode.IsNull())
     {
       m_requesterVpcInfo = requesterVpcInfoNode;
       m_requesterVpcInfoHasBeenSet = true;
+       m_requesterVpcInfoHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode vpcPeeringConnectionIdNode = resultNode.FirstChild("vpcPeeringConnectionId");
     if(!vpcPeeringConnectionIdNode.IsNull())
     {
       m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
+       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
   }
 

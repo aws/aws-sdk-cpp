@@ -18,14 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-ExternalSystemsConfiguration::ExternalSystemsConfiguration() : 
-    m_sessionBorderControllerTypesHasBeenSet(false),
-    m_contactCenterSystemTypesHasBeenSet(false)
-{
-}
-
 ExternalSystemsConfiguration::ExternalSystemsConfiguration(JsonView jsonValue)
-  : ExternalSystemsConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ExternalSystemsConfiguration& ExternalSystemsConfiguration::operator =(JsonView 
     }
     m_sessionBorderControllerTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactCenterSystemTypes"))
   {
     Aws::Utils::Array<JsonView> contactCenterSystemTypesJsonList = jsonValue.GetArray("ContactCenterSystemTypes");
@@ -51,7 +43,6 @@ ExternalSystemsConfiguration& ExternalSystemsConfiguration::operator =(JsonView 
     }
     m_contactCenterSystemTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

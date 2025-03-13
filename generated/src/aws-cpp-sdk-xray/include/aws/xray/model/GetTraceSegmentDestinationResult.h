@@ -29,7 +29,7 @@ namespace Model
   class GetTraceSegmentDestinationResult
   {
   public:
-    AWS_XRAY_API GetTraceSegmentDestinationResult();
+    AWS_XRAY_API GetTraceSegmentDestinationResult() = default;
     AWS_XRAY_API GetTraceSegmentDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API GetTraceSegmentDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,38 @@ namespace Model
     /**
      * <p> Retrieves the current destination. </p>
      */
-    inline const TraceSegmentDestination& GetDestination() const{ return m_destination; }
-    inline void SetDestination(const TraceSegmentDestination& value) { m_destination = value; }
-    inline void SetDestination(TraceSegmentDestination&& value) { m_destination = std::move(value); }
-    inline GetTraceSegmentDestinationResult& WithDestination(const TraceSegmentDestination& value) { SetDestination(value); return *this;}
-    inline GetTraceSegmentDestinationResult& WithDestination(TraceSegmentDestination&& value) { SetDestination(std::move(value)); return *this;}
+    inline TraceSegmentDestination GetDestination() const { return m_destination; }
+    inline void SetDestination(TraceSegmentDestination value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline GetTraceSegmentDestinationResult& WithDestination(TraceSegmentDestination value) { SetDestination(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Status of the retrieval. </p>
      */
-    inline const TraceSegmentDestinationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TraceSegmentDestinationStatus& value) { m_status = value; }
-    inline void SetStatus(TraceSegmentDestinationStatus&& value) { m_status = std::move(value); }
-    inline GetTraceSegmentDestinationResult& WithStatus(const TraceSegmentDestinationStatus& value) { SetStatus(value); return *this;}
-    inline GetTraceSegmentDestinationResult& WithStatus(TraceSegmentDestinationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TraceSegmentDestinationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TraceSegmentDestinationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetTraceSegmentDestinationResult& WithStatus(TraceSegmentDestinationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTraceSegmentDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTraceSegmentDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTraceSegmentDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTraceSegmentDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    TraceSegmentDestination m_destination;
+    TraceSegmentDestination m_destination{TraceSegmentDestination::NOT_SET};
+    bool m_destinationHasBeenSet = false;
 
-    TraceSegmentDestinationStatus m_status;
+    TraceSegmentDestinationStatus m_status{TraceSegmentDestinationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

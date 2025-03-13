@@ -22,7 +22,7 @@ namespace Model
   class UpdateVoiceChannelRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateVoiceChannelRequest();
+    AWS_PINPOINT_API UpdateVoiceChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateVoiceChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateVoiceChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateVoiceChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateVoiceChannelRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VoiceChannelRequest& GetVoiceChannelRequest() const{ return m_voiceChannelRequest; }
+    inline const VoiceChannelRequest& GetVoiceChannelRequest() const { return m_voiceChannelRequest; }
     inline bool VoiceChannelRequestHasBeenSet() const { return m_voiceChannelRequestHasBeenSet; }
-    inline void SetVoiceChannelRequest(const VoiceChannelRequest& value) { m_voiceChannelRequestHasBeenSet = true; m_voiceChannelRequest = value; }
-    inline void SetVoiceChannelRequest(VoiceChannelRequest&& value) { m_voiceChannelRequestHasBeenSet = true; m_voiceChannelRequest = std::move(value); }
-    inline UpdateVoiceChannelRequest& WithVoiceChannelRequest(const VoiceChannelRequest& value) { SetVoiceChannelRequest(value); return *this;}
-    inline UpdateVoiceChannelRequest& WithVoiceChannelRequest(VoiceChannelRequest&& value) { SetVoiceChannelRequest(std::move(value)); return *this;}
+    template<typename VoiceChannelRequestT = VoiceChannelRequest>
+    void SetVoiceChannelRequest(VoiceChannelRequestT&& value) { m_voiceChannelRequestHasBeenSet = true; m_voiceChannelRequest = std::forward<VoiceChannelRequestT>(value); }
+    template<typename VoiceChannelRequestT = VoiceChannelRequest>
+    UpdateVoiceChannelRequest& WithVoiceChannelRequest(VoiceChannelRequestT&& value) { SetVoiceChannelRequest(std::forward<VoiceChannelRequestT>(value)); return *this;}
     ///@}
   private:
 

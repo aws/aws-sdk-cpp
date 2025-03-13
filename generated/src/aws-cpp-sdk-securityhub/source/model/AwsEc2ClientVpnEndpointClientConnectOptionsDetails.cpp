@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointClientConnectOptionsDetails::AwsEc2ClientVpnEndpointClientConnectOptionsDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointClientConnectOptionsDetails::AwsEc2ClientVpnEndpointClientConnectOptionsDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointClientConnectOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsEc2ClientVpnEndpointClientConnectOptionsDetails& AwsEc2ClientVpnEndpointClien
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaFunctionArn"))
   {
     m_lambdaFunctionArn = jsonValue.GetString("LambdaFunctionArn");
-
     m_lambdaFunctionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

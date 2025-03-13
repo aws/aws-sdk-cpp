@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-CertificateAssociation::CertificateAssociation() : 
-    m_customDomainNameHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 CertificateAssociation::CertificateAssociation(const XmlNode& xmlNode)
-  : CertificateAssociation()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CertificateAssociation& CertificateAssociation::operator =(const XmlNode& xmlNod
     {
       m_customDomainName = Aws::Utils::Xml::DecodeEscapedXmlText(customDomainNameNode.GetText());
       m_customDomainNameHasBeenSet = true;
+       m_customDomainNameHasBeenSet = true;
     }
     XmlNode clusterIdentifierNode = resultNode.FirstChild("ClusterIdentifier");
     if(!clusterIdentifierNode.IsNull())
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
+       m_clusterIdentifierHasBeenSet = true;
     }
   }
 

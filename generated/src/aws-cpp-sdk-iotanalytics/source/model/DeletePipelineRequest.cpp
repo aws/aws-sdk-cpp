@@ -12,11 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePipelineRequest::DeletePipelineRequest() : 
-    m_pipelineNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePipelineRequest::SerializePayload() const
 {
   return {};

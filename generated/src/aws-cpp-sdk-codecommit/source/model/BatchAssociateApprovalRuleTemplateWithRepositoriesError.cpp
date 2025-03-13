@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-BatchAssociateApprovalRuleTemplateWithRepositoriesError::BatchAssociateApprovalRuleTemplateWithRepositoriesError() : 
-    m_repositoryNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchAssociateApprovalRuleTemplateWithRepositoriesError::BatchAssociateApprovalRuleTemplateWithRepositoriesError(JsonView jsonValue)
-  : BatchAssociateApprovalRuleTemplateWithRepositoriesError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesError& BatchAssociateApprovalR
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

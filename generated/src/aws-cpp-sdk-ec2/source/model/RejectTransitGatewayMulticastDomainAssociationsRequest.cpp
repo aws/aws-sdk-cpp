@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RejectTransitGatewayMulticastDomainAssociationsRequest::RejectTransitGatewayMulticastDomainAssociationsRequest() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RejectTransitGatewayMulticastDomainAssociationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

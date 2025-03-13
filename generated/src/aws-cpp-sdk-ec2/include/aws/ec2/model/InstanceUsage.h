@@ -32,7 +32,7 @@ namespace Model
   class InstanceUsage
   {
   public:
-    AWS_EC2_API InstanceUsage();
+    AWS_EC2_API InstanceUsage() = default;
     AWS_EC2_API InstanceUsage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceUsage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that is making use of the Capacity
      * Reservation.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline InstanceUsage& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline InstanceUsage& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline InstanceUsage& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    InstanceUsage& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The number of instances the Amazon Web Services account currently has in the
      * Capacity Reservation.</p>
      */
-    inline int GetUsedInstanceCount() const{ return m_usedInstanceCount; }
+    inline int GetUsedInstanceCount() const { return m_usedInstanceCount; }
     inline bool UsedInstanceCountHasBeenSet() const { return m_usedInstanceCountHasBeenSet; }
     inline void SetUsedInstanceCount(int value) { m_usedInstanceCountHasBeenSet = true; m_usedInstanceCount = value; }
     inline InstanceUsage& WithUsedInstanceCount(int value) { SetUsedInstanceCount(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    int m_usedInstanceCount;
+    int m_usedInstanceCount{0};
     bool m_usedInstanceCountHasBeenSet = false;
   };
 

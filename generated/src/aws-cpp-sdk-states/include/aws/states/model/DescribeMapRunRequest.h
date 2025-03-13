@@ -21,7 +21,7 @@ namespace Model
   class DescribeMapRunRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API DescribeMapRunRequest();
+    AWS_SFN_API DescribeMapRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
      */
-    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+    inline const Aws::String& GetMapRunArn() const { return m_mapRunArn; }
     inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
-    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
-    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
-    inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
-    inline DescribeMapRunRequest& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-    inline DescribeMapRunRequest& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-    inline DescribeMapRunRequest& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+    template<typename MapRunArnT = Aws::String>
+    void SetMapRunArn(MapRunArnT&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::forward<MapRunArnT>(value); }
+    template<typename MapRunArnT = Aws::String>
+    DescribeMapRunRequest& WithMapRunArn(MapRunArnT&& value) { SetMapRunArn(std::forward<MapRunArnT>(value)); return *this;}
     ///@}
   private:
 

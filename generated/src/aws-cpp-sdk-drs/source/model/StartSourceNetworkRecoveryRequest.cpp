@@ -12,14 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSourceNetworkRecoveryRequest::StartSourceNetworkRecoveryRequest() : 
-    m_deployAsNew(false),
-    m_deployAsNewHasBeenSet(false),
-    m_sourceNetworksHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartSourceNetworkRecoveryRequest::SerializePayload() const
 {
   JsonValue payload;

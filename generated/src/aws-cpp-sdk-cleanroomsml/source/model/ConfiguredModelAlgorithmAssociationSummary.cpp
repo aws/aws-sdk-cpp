@@ -18,20 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ConfiguredModelAlgorithmAssociationSummary::ConfiguredModelAlgorithmAssociationSummary() : 
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_configuredModelAlgorithmAssociationArnHasBeenSet(false),
-    m_configuredModelAlgorithmArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false)
-{
-}
-
 ConfiguredModelAlgorithmAssociationSummary::ConfiguredModelAlgorithmAssociationSummary(JsonView jsonValue)
-  : ConfiguredModelAlgorithmAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ConfiguredModelAlgorithmAssociationSummary& ConfiguredModelAlgorithmAssociationS
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetString("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredModelAlgorithmAssociationArn"))
   {
     m_configuredModelAlgorithmAssociationArn = jsonValue.GetString("configuredModelAlgorithmAssociationArn");
-
     m_configuredModelAlgorithmAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredModelAlgorithmArn"))
   {
     m_configuredModelAlgorithmArn = jsonValue.GetString("configuredModelAlgorithmArn");
-
     m_configuredModelAlgorithmArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipIdentifier"))
   {
     m_membershipIdentifier = jsonValue.GetString("membershipIdentifier");
-
     m_membershipIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationIdentifier"))
   {
     m_collaborationIdentifier = jsonValue.GetString("collaborationIdentifier");
-
     m_collaborationIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

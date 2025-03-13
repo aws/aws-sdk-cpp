@@ -18,18 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceRegistry::ServiceRegistry() : 
-    m_registryArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_containerPort(0),
-    m_containerPortHasBeenSet(false)
-{
-}
-
 ServiceRegistry::ServiceRegistry(JsonView jsonValue)
-  : ServiceRegistry()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ServiceRegistry& ServiceRegistry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("registryArn"))
   {
     m_registryArn = jsonValue.GetString("registryArn");
-
     m_registryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerName"))
   {
     m_containerName = jsonValue.GetString("containerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerPort"))
   {
     m_containerPort = jsonValue.GetInteger("containerPort");
-
     m_containerPortHasBeenSet = true;
   }
-
   return *this;
 }
 

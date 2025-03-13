@@ -18,21 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-ListedFlow::ListedFlow() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_maintenanceHasBeenSet(false)
-{
-}
-
 ListedFlow::ListedFlow(JsonView jsonValue)
-  : ListedFlow()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ListedFlow& ListedFlow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
     m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenance"))
   {
     m_maintenance = jsonValue.GetObject("maintenance");
-
     m_maintenanceHasBeenSet = true;
   }
-
   return *this;
 }
 

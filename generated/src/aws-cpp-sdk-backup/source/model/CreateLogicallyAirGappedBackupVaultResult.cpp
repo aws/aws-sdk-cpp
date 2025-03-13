@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLogicallyAirGappedBackupVaultResult::CreateLogicallyAirGappedBackupVaultResult() : 
-    m_vaultState(VaultState::NOT_SET)
-{
-}
-
 CreateLogicallyAirGappedBackupVaultResult::CreateLogicallyAirGappedBackupVaultResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateLogicallyAirGappedBackupVaultResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ CreateLogicallyAirGappedBackupVaultResult& CreateLogicallyAirGappedBackupVaultRe
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
+    m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
+    m_backupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VaultState"))
   {
     m_vaultState = VaultStateMapper::GetVaultStateForName(jsonValue.GetString("VaultState"));
-
+    m_vaultStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

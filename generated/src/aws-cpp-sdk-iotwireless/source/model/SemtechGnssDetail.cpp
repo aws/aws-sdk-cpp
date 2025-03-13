@@ -18,20 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SemtechGnssDetail::SemtechGnssDetail() : 
-    m_provider(PositionSolverProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_type(PositionSolverType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(PositionConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fec(PositionConfigurationFec::NOT_SET),
-    m_fecHasBeenSet(false)
-{
-}
-
 SemtechGnssDetail::SemtechGnssDetail(JsonView jsonValue)
-  : SemtechGnssDetail()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ SemtechGnssDetail& SemtechGnssDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Provider"))
   {
     m_provider = PositionSolverProviderMapper::GetPositionSolverProviderForName(jsonValue.GetString("Provider"));
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PositionSolverTypeMapper::GetPositionSolverTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PositionConfigurationStatusMapper::GetPositionConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fec"))
   {
     m_fec = PositionConfigurationFecMapper::GetPositionConfigurationFecForName(jsonValue.GetString("Fec"));
-
     m_fecHasBeenSet = true;
   }
-
   return *this;
 }
 

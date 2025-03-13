@@ -14,10 +14,5 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateSolFunctionPackageContentRequest::ValidateSolFunctionPackageContentRequest() : 
-    m_vnfPkgIdHasBeenSet(false)
-{
-}
-
 
 

@@ -33,7 +33,7 @@ namespace Model
   class StartTechnicalCueDetectionFilter
   {
   public:
-    AWS_REKOGNITION_API StartTechnicalCueDetectionFilter();
+    AWS_REKOGNITION_API StartTechnicalCueDetectionFilter() = default;
     AWS_REKOGNITION_API StartTechnicalCueDetectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StartTechnicalCueDetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <code>GetSegmentDetection</code> returns segments with confidence values greater
      * than or equal to 50 percent.</p>
      */
-    inline double GetMinSegmentConfidence() const{ return m_minSegmentConfidence; }
+    inline double GetMinSegmentConfidence() const { return m_minSegmentConfidence; }
     inline bool MinSegmentConfidenceHasBeenSet() const { return m_minSegmentConfidenceHasBeenSet; }
     inline void SetMinSegmentConfidence(double value) { m_minSegmentConfidenceHasBeenSet = true; m_minSegmentConfidence = value; }
     inline StartTechnicalCueDetectionFilter& WithMinSegmentConfidence(double value) { SetMinSegmentConfidence(value); return *this;}
@@ -63,16 +63,16 @@ namespace Model
      * from multiple sources, formats, and time periods, with different standards and
      * varying noise levels for black frames that need to be accounted for. </p>
      */
-    inline const BlackFrame& GetBlackFrame() const{ return m_blackFrame; }
+    inline const BlackFrame& GetBlackFrame() const { return m_blackFrame; }
     inline bool BlackFrameHasBeenSet() const { return m_blackFrameHasBeenSet; }
-    inline void SetBlackFrame(const BlackFrame& value) { m_blackFrameHasBeenSet = true; m_blackFrame = value; }
-    inline void SetBlackFrame(BlackFrame&& value) { m_blackFrameHasBeenSet = true; m_blackFrame = std::move(value); }
-    inline StartTechnicalCueDetectionFilter& WithBlackFrame(const BlackFrame& value) { SetBlackFrame(value); return *this;}
-    inline StartTechnicalCueDetectionFilter& WithBlackFrame(BlackFrame&& value) { SetBlackFrame(std::move(value)); return *this;}
+    template<typename BlackFrameT = BlackFrame>
+    void SetBlackFrame(BlackFrameT&& value) { m_blackFrameHasBeenSet = true; m_blackFrame = std::forward<BlackFrameT>(value); }
+    template<typename BlackFrameT = BlackFrame>
+    StartTechnicalCueDetectionFilter& WithBlackFrame(BlackFrameT&& value) { SetBlackFrame(std::forward<BlackFrameT>(value)); return *this;}
     ///@}
   private:
 
-    double m_minSegmentConfidence;
+    double m_minSegmentConfidence{0.0};
     bool m_minSegmentConfidenceHasBeenSet = false;
 
     BlackFrame m_blackFrame;

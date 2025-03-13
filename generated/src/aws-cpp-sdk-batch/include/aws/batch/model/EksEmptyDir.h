@@ -40,7 +40,7 @@ namespace Model
   class EksEmptyDir
   {
   public:
-    AWS_BATCH_API EksEmptyDir();
+    AWS_BATCH_API EksEmptyDir() = default;
     AWS_BATCH_API EksEmptyDir(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksEmptyDir& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * volume are lost when the node reboots, and any storage on the volume counts
      * against the container's memory limit.</p> </dd> </dl>
      */
-    inline const Aws::String& GetMedium() const{ return m_medium; }
+    inline const Aws::String& GetMedium() const { return m_medium; }
     inline bool MediumHasBeenSet() const { return m_mediumHasBeenSet; }
-    inline void SetMedium(const Aws::String& value) { m_mediumHasBeenSet = true; m_medium = value; }
-    inline void SetMedium(Aws::String&& value) { m_mediumHasBeenSet = true; m_medium = std::move(value); }
-    inline void SetMedium(const char* value) { m_mediumHasBeenSet = true; m_medium.assign(value); }
-    inline EksEmptyDir& WithMedium(const Aws::String& value) { SetMedium(value); return *this;}
-    inline EksEmptyDir& WithMedium(Aws::String&& value) { SetMedium(std::move(value)); return *this;}
-    inline EksEmptyDir& WithMedium(const char* value) { SetMedium(value); return *this;}
+    template<typename MediumT = Aws::String>
+    void SetMedium(MediumT&& value) { m_mediumHasBeenSet = true; m_medium = std::forward<MediumT>(value); }
+    template<typename MediumT = Aws::String>
+    EksEmptyDir& WithMedium(MediumT&& value) { SetMedium(std::forward<MediumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The maximum size of the volume. By default, there's no maximum size
      * defined.</p>
      */
-    inline const Aws::String& GetSizeLimit() const{ return m_sizeLimit; }
+    inline const Aws::String& GetSizeLimit() const { return m_sizeLimit; }
     inline bool SizeLimitHasBeenSet() const { return m_sizeLimitHasBeenSet; }
-    inline void SetSizeLimit(const Aws::String& value) { m_sizeLimitHasBeenSet = true; m_sizeLimit = value; }
-    inline void SetSizeLimit(Aws::String&& value) { m_sizeLimitHasBeenSet = true; m_sizeLimit = std::move(value); }
-    inline void SetSizeLimit(const char* value) { m_sizeLimitHasBeenSet = true; m_sizeLimit.assign(value); }
-    inline EksEmptyDir& WithSizeLimit(const Aws::String& value) { SetSizeLimit(value); return *this;}
-    inline EksEmptyDir& WithSizeLimit(Aws::String&& value) { SetSizeLimit(std::move(value)); return *this;}
-    inline EksEmptyDir& WithSizeLimit(const char* value) { SetSizeLimit(value); return *this;}
+    template<typename SizeLimitT = Aws::String>
+    void SetSizeLimit(SizeLimitT&& value) { m_sizeLimitHasBeenSet = true; m_sizeLimit = std::forward<SizeLimitT>(value); }
+    template<typename SizeLimitT = Aws::String>
+    EksEmptyDir& WithSizeLimit(SizeLimitT&& value) { SetSizeLimit(std::forward<SizeLimitT>(value)); return *this;}
     ///@}
   private:
 

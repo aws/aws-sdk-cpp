@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-Sort::Sort() : 
-    m_ascending(false),
-    m_ascendingHasBeenSet(false),
-    m_fieldHasBeenSet(false)
-{
-}
-
 Sort::Sort(JsonView jsonValue)
-  : Sort()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Sort& Sort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ascending"))
   {
     m_ascending = jsonValue.GetBool("ascending");
-
     m_ascendingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("field"))
   {
     m_field = jsonValue.GetString("field");
-
     m_fieldHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails() : 
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_instanceInterruptionBehaviorHasBeenSet(false),
-    m_maxPriceHasBeenSet(false),
-    m_spotInstanceTypeHasBeenSet(false),
-    m_validUntilHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails& AwsEc2LaunchTem
   if(jsonValue.ValueExists("BlockDurationMinutes"))
   {
     m_blockDurationMinutes = jsonValue.GetInteger("BlockDurationMinutes");
-
     m_blockDurationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceInterruptionBehavior"))
   {
     m_instanceInterruptionBehavior = jsonValue.GetString("InstanceInterruptionBehavior");
-
     m_instanceInterruptionBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxPrice"))
   {
     m_maxPrice = jsonValue.GetString("MaxPrice");
-
     m_maxPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpotInstanceType"))
   {
     m_spotInstanceType = jsonValue.GetString("SpotInstanceType");
-
     m_spotInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidUntil"))
   {
     m_validUntil = jsonValue.GetString("ValidUntil");
-
     m_validUntilHasBeenSet = true;
   }
-
   return *this;
 }
 

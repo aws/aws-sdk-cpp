@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ScheduledActionType::ScheduledActionType() : 
-    m_resizeClusterHasBeenSet(false),
-    m_pauseClusterHasBeenSet(false),
-    m_resumeClusterHasBeenSet(false)
-{
-}
-
 ScheduledActionType::ScheduledActionType(const XmlNode& xmlNode)
-  : ScheduledActionType()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ScheduledActionType& ScheduledActionType::operator =(const XmlNode& xmlNode)
     {
       m_resizeCluster = resizeClusterNode;
       m_resizeClusterHasBeenSet = true;
+       m_resizeClusterHasBeenSet = true;
     }
     XmlNode pauseClusterNode = resultNode.FirstChild("PauseCluster");
     if(!pauseClusterNode.IsNull())
     {
       m_pauseCluster = pauseClusterNode;
       m_pauseClusterHasBeenSet = true;
+       m_pauseClusterHasBeenSet = true;
     }
     XmlNode resumeClusterNode = resultNode.FirstChild("ResumeCluster");
     if(!resumeClusterNode.IsNull())
     {
       m_resumeCluster = resumeClusterNode;
       m_resumeClusterHasBeenSet = true;
+       m_resumeClusterHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class FunctionArtifactMeta
   {
   public:
-    AWS_TNB_API FunctionArtifactMeta();
+    AWS_TNB_API FunctionArtifactMeta() = default;
     AWS_TNB_API FunctionArtifactMeta(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API FunctionArtifactMeta& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>Lists of function package overrides.</p>
      */
-    inline const Aws::Vector<ToscaOverride>& GetOverrides() const{ return m_overrides; }
+    inline const Aws::Vector<ToscaOverride>& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const Aws::Vector<ToscaOverride>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(Aws::Vector<ToscaOverride>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline FunctionArtifactMeta& WithOverrides(const Aws::Vector<ToscaOverride>& value) { SetOverrides(value); return *this;}
-    inline FunctionArtifactMeta& WithOverrides(Aws::Vector<ToscaOverride>&& value) { SetOverrides(std::move(value)); return *this;}
-    inline FunctionArtifactMeta& AddOverrides(const ToscaOverride& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-    inline FunctionArtifactMeta& AddOverrides(ToscaOverride&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
+    template<typename OverridesT = Aws::Vector<ToscaOverride>>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = Aws::Vector<ToscaOverride>>
+    FunctionArtifactMeta& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
+    template<typename OverridesT = ToscaOverride>
+    FunctionArtifactMeta& AddOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides.emplace_back(std::forward<OverridesT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig() : 
-    m_headerBehavior(OriginRequestPolicyHeaderBehavior::NOT_SET),
-    m_headerBehaviorHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 OriginRequestPolicyHeadersConfig::OriginRequestPolicyHeadersConfig(const XmlNode& xmlNode)
-  : OriginRequestPolicyHeadersConfig()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ OriginRequestPolicyHeadersConfig& OriginRequestPolicyHeadersConfig::operator =(c
     XmlNode headerBehaviorNode = resultNode.FirstChild("HeaderBehavior");
     if(!headerBehaviorNode.IsNull())
     {
-      m_headerBehavior = OriginRequestPolicyHeaderBehaviorMapper::GetOriginRequestPolicyHeaderBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headerBehaviorNode.GetText()).c_str()).c_str());
+      m_headerBehavior = OriginRequestPolicyHeaderBehaviorMapper::GetOriginRequestPolicyHeaderBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headerBehaviorNode.GetText()).c_str()));
       m_headerBehaviorHasBeenSet = true;
+       m_headerBehaviorHasBeenSet = true;
     }
     XmlNode headersNode = resultNode.FirstChild("Headers");
     if(!headersNode.IsNull())
     {
       m_headers = headersNode;
       m_headersHasBeenSet = true;
+       m_headersHasBeenSet = true;
     }
   }
 

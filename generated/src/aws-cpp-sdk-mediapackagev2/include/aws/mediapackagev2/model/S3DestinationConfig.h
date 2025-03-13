@@ -32,7 +32,7 @@ namespace Model
   class S3DestinationConfig
   {
   public:
-    AWS_MEDIAPACKAGEV2_API S3DestinationConfig();
+    AWS_MEDIAPACKAGEV2_API S3DestinationConfig() = default;
     AWS_MEDIAPACKAGEV2_API S3DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API S3DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of an S3 bucket within which harvested content will be exported.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3DestinationConfig& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3DestinationConfig& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3DestinationConfig& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3DestinationConfig& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The path within the specified S3 bucket where the harvested content will be
      * placed.</p>
      */
-    inline const Aws::String& GetDestinationPath() const{ return m_destinationPath; }
+    inline const Aws::String& GetDestinationPath() const { return m_destinationPath; }
     inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
-    inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
-    inline void SetDestinationPath(Aws::String&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::move(value); }
-    inline void SetDestinationPath(const char* value) { m_destinationPathHasBeenSet = true; m_destinationPath.assign(value); }
-    inline S3DestinationConfig& WithDestinationPath(const Aws::String& value) { SetDestinationPath(value); return *this;}
-    inline S3DestinationConfig& WithDestinationPath(Aws::String&& value) { SetDestinationPath(std::move(value)); return *this;}
-    inline S3DestinationConfig& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
+    template<typename DestinationPathT = Aws::String>
+    void SetDestinationPath(DestinationPathT&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::forward<DestinationPathT>(value); }
+    template<typename DestinationPathT = Aws::String>
+    S3DestinationConfig& WithDestinationPath(DestinationPathT&& value) { SetDestinationPath(std::forward<DestinationPathT>(value)); return *this;}
     ///@}
   private:
 

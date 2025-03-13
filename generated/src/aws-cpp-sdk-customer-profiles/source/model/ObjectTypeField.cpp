@@ -18,16 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ObjectTypeField::ObjectTypeField() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_contentType(FieldContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 ObjectTypeField::ObjectTypeField(JsonView jsonValue)
-  : ObjectTypeField()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ObjectTypeField& ObjectTypeField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = FieldContentTypeMapper::GetFieldContentTypeForName(jsonValue.GetString("ContentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

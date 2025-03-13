@@ -21,7 +21,7 @@ namespace Model
   class CreateCrossAccountAuthorizationRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API CreateCrossAccountAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The cross-account authorization.</p>
      */
-    inline const Aws::String& GetCrossAccountAuthorization() const{ return m_crossAccountAuthorization; }
+    inline const Aws::String& GetCrossAccountAuthorization() const { return m_crossAccountAuthorization; }
     inline bool CrossAccountAuthorizationHasBeenSet() const { return m_crossAccountAuthorizationHasBeenSet; }
-    inline void SetCrossAccountAuthorization(const Aws::String& value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization = value; }
-    inline void SetCrossAccountAuthorization(Aws::String&& value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization = std::move(value); }
-    inline void SetCrossAccountAuthorization(const char* value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization.assign(value); }
-    inline CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(const Aws::String& value) { SetCrossAccountAuthorization(value); return *this;}
-    inline CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(Aws::String&& value) { SetCrossAccountAuthorization(std::move(value)); return *this;}
-    inline CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(const char* value) { SetCrossAccountAuthorization(value); return *this;}
+    template<typename CrossAccountAuthorizationT = Aws::String>
+    void SetCrossAccountAuthorization(CrossAccountAuthorizationT&& value) { m_crossAccountAuthorizationHasBeenSet = true; m_crossAccountAuthorization = std::forward<CrossAccountAuthorizationT>(value); }
+    template<typename CrossAccountAuthorizationT = Aws::String>
+    CreateCrossAccountAuthorizationRequest& WithCrossAccountAuthorization(CrossAccountAuthorizationT&& value) { SetCrossAccountAuthorization(std::forward<CrossAccountAuthorizationT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignDialerConfigRequest::UpdateCampaignDialerConfigRequest() : 
-    m_idHasBeenSet(false),
-    m_dialerConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignDialerConfigRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AsyncInferenceClientConfig::AsyncInferenceClientConfig() : 
-    m_maxConcurrentInvocationsPerInstance(0),
-    m_maxConcurrentInvocationsPerInstanceHasBeenSet(false)
-{
-}
-
 AsyncInferenceClientConfig::AsyncInferenceClientConfig(JsonView jsonValue)
-  : AsyncInferenceClientConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AsyncInferenceClientConfig& AsyncInferenceClientConfig::operator =(JsonView json
   if(jsonValue.ValueExists("MaxConcurrentInvocationsPerInstance"))
   {
     m_maxConcurrentInvocationsPerInstance = jsonValue.GetInteger("MaxConcurrentInvocationsPerInstance");
-
     m_maxConcurrentInvocationsPerInstanceHasBeenSet = true;
   }
-
   return *this;
 }
 

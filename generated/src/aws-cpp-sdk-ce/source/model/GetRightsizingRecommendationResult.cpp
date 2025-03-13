@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRightsizingRecommendationResult::GetRightsizingRecommendationResult()
-{
-}
-
 GetRightsizingRecommendationResult::GetRightsizingRecommendationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetRightsizingRecommendationResult& GetRightsizingRecommendationResult::operator
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");
-
+    m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
+    m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RightsizingRecommendations"))
   {
     Aws::Utils::Array<JsonView> rightsizingRecommendationsJsonList = jsonValue.GetArray("RightsizingRecommendations");
@@ -48,26 +42,25 @@ GetRightsizingRecommendationResult& GetRightsizingRecommendationResult::operator
     {
       m_rightsizingRecommendations.push_back(rightsizingRecommendationsJsonList[rightsizingRecommendationsIndex].AsObject());
     }
+    m_rightsizingRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
-
+    m_configurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

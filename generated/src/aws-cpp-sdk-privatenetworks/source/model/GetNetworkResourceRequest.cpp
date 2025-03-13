@@ -12,11 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNetworkResourceRequest::GetNetworkResourceRequest() : 
-    m_networkResourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetNetworkResourceRequest::SerializePayload() const
 {
   return {};

@@ -18,26 +18,7 @@ namespace FSx
 namespace Model
 {
 
-Volume::Volume() : 
-    m_creationTimeHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_lifecycle(VolumeLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_lifecycleTransitionReasonHasBeenSet(false),
-    m_administrativeActionsHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
-{
-}
-
 Volume::Volume(JsonView jsonValue)
-  : Volume()
 {
   *this = jsonValue;
 }
@@ -47,45 +28,33 @@ Volume& Volume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = VolumeLifecycleMapper::GetVolumeLifecycleForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OntapConfiguration"))
   {
     m_ontapConfiguration = jsonValue.GetObject("OntapConfiguration");
-
     m_ontapConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -95,28 +64,21 @@ Volume& Volume::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
     m_volumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(jsonValue.GetString("VolumeType"));
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifecycleTransitionReason"))
   {
     m_lifecycleTransitionReason = jsonValue.GetObject("LifecycleTransitionReason");
-
     m_lifecycleTransitionReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdministrativeActions"))
   {
     Aws::Utils::Array<JsonView> administrativeActionsJsonList = jsonValue.GetArray("AdministrativeActions");
@@ -126,14 +88,11 @@ Volume& Volume::operator =(JsonView jsonValue)
     }
     m_administrativeActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenZFSConfiguration"))
   {
     m_openZFSConfiguration = jsonValue.GetObject("OpenZFSConfiguration");
-
     m_openZFSConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClusterNodeRequest::DescribeClusterNodeRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterNodeRequest::SerializePayload() const
 {
   JsonValue payload;

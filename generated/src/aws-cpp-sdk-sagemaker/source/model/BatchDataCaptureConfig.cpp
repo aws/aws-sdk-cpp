@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-BatchDataCaptureConfig::BatchDataCaptureConfig() : 
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_generateInferenceId(false),
-    m_generateInferenceIdHasBeenSet(false)
-{
-}
-
 BatchDataCaptureConfig::BatchDataCaptureConfig(JsonView jsonValue)
-  : BatchDataCaptureConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchDataCaptureConfig& BatchDataCaptureConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationS3Uri"))
   {
     m_destinationS3Uri = jsonValue.GetString("DestinationS3Uri");
-
     m_destinationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerateInferenceId"))
   {
     m_generateInferenceId = jsonValue.GetBool("GenerateInferenceId");
-
     m_generateInferenceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

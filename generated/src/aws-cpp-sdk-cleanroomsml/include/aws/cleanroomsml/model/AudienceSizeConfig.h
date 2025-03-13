@@ -40,7 +40,7 @@ namespace Model
   class AudienceSizeConfig
   {
   public:
-    AWS_CLEANROOMSML_API AudienceSizeConfig();
+    AWS_CLEANROOMSML_API AudienceSizeConfig() = default;
     AWS_CLEANROOMSML_API AudienceSizeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API AudienceSizeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,29 +51,27 @@ namespace Model
      * <p>Whether the audience output sizes are defined as an absolute number or a
      * percentage.</p>
      */
-    inline const AudienceSizeType& GetAudienceSizeType() const{ return m_audienceSizeType; }
+    inline AudienceSizeType GetAudienceSizeType() const { return m_audienceSizeType; }
     inline bool AudienceSizeTypeHasBeenSet() const { return m_audienceSizeTypeHasBeenSet; }
-    inline void SetAudienceSizeType(const AudienceSizeType& value) { m_audienceSizeTypeHasBeenSet = true; m_audienceSizeType = value; }
-    inline void SetAudienceSizeType(AudienceSizeType&& value) { m_audienceSizeTypeHasBeenSet = true; m_audienceSizeType = std::move(value); }
-    inline AudienceSizeConfig& WithAudienceSizeType(const AudienceSizeType& value) { SetAudienceSizeType(value); return *this;}
-    inline AudienceSizeConfig& WithAudienceSizeType(AudienceSizeType&& value) { SetAudienceSizeType(std::move(value)); return *this;}
+    inline void SetAudienceSizeType(AudienceSizeType value) { m_audienceSizeTypeHasBeenSet = true; m_audienceSizeType = value; }
+    inline AudienceSizeConfig& WithAudienceSizeType(AudienceSizeType value) { SetAudienceSizeType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of the different audience output sizes.</p>
      */
-    inline const Aws::Vector<int>& GetAudienceSizeBins() const{ return m_audienceSizeBins; }
+    inline const Aws::Vector<int>& GetAudienceSizeBins() const { return m_audienceSizeBins; }
     inline bool AudienceSizeBinsHasBeenSet() const { return m_audienceSizeBinsHasBeenSet; }
-    inline void SetAudienceSizeBins(const Aws::Vector<int>& value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins = value; }
-    inline void SetAudienceSizeBins(Aws::Vector<int>&& value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins = std::move(value); }
-    inline AudienceSizeConfig& WithAudienceSizeBins(const Aws::Vector<int>& value) { SetAudienceSizeBins(value); return *this;}
-    inline AudienceSizeConfig& WithAudienceSizeBins(Aws::Vector<int>&& value) { SetAudienceSizeBins(std::move(value)); return *this;}
+    template<typename AudienceSizeBinsT = Aws::Vector<int>>
+    void SetAudienceSizeBins(AudienceSizeBinsT&& value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins = std::forward<AudienceSizeBinsT>(value); }
+    template<typename AudienceSizeBinsT = Aws::Vector<int>>
+    AudienceSizeConfig& WithAudienceSizeBins(AudienceSizeBinsT&& value) { SetAudienceSizeBins(std::forward<AudienceSizeBinsT>(value)); return *this;}
     inline AudienceSizeConfig& AddAudienceSizeBins(int value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins.push_back(value); return *this; }
     ///@}
   private:
 
-    AudienceSizeType m_audienceSizeType;
+    AudienceSizeType m_audienceSizeType{AudienceSizeType::NOT_SET};
     bool m_audienceSizeTypeHasBeenSet = false;
 
     Aws::Vector<int> m_audienceSizeBins;

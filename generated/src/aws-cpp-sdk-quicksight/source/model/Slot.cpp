@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Slot::Slot() : 
-    m_slotIdHasBeenSet(false),
-    m_visualIdHasBeenSet(false)
-{
-}
-
 Slot::Slot(JsonView jsonValue)
-  : Slot()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Slot& Slot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SlotId"))
   {
     m_slotId = jsonValue.GetString("SlotId");
-
     m_slotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualId"))
   {
     m_visualId = jsonValue.GetString("VisualId");
-
     m_visualIdHasBeenSet = true;
   }
-
   return *this;
 }
 

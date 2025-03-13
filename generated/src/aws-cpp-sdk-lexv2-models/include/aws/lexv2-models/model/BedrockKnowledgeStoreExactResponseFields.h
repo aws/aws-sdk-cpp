@@ -32,7 +32,7 @@ namespace Model
   class BedrockKnowledgeStoreExactResponseFields
   {
   public:
-    AWS_LEXMODELSV2_API BedrockKnowledgeStoreExactResponseFields();
+    AWS_LEXMODELSV2_API BedrockKnowledgeStoreExactResponseFields() = default;
     AWS_LEXMODELSV2_API BedrockKnowledgeStoreExactResponseFields(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BedrockKnowledgeStoreExactResponseFields& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The answer field used for an exact response from Bedrock Knowledge Store.</p>
      */
-    inline const Aws::String& GetAnswerField() const{ return m_answerField; }
+    inline const Aws::String& GetAnswerField() const { return m_answerField; }
     inline bool AnswerFieldHasBeenSet() const { return m_answerFieldHasBeenSet; }
-    inline void SetAnswerField(const Aws::String& value) { m_answerFieldHasBeenSet = true; m_answerField = value; }
-    inline void SetAnswerField(Aws::String&& value) { m_answerFieldHasBeenSet = true; m_answerField = std::move(value); }
-    inline void SetAnswerField(const char* value) { m_answerFieldHasBeenSet = true; m_answerField.assign(value); }
-    inline BedrockKnowledgeStoreExactResponseFields& WithAnswerField(const Aws::String& value) { SetAnswerField(value); return *this;}
-    inline BedrockKnowledgeStoreExactResponseFields& WithAnswerField(Aws::String&& value) { SetAnswerField(std::move(value)); return *this;}
-    inline BedrockKnowledgeStoreExactResponseFields& WithAnswerField(const char* value) { SetAnswerField(value); return *this;}
+    template<typename AnswerFieldT = Aws::String>
+    void SetAnswerField(AnswerFieldT&& value) { m_answerFieldHasBeenSet = true; m_answerField = std::forward<AnswerFieldT>(value); }
+    template<typename AnswerFieldT = Aws::String>
+    BedrockKnowledgeStoreExactResponseFields& WithAnswerField(AnswerFieldT&& value) { SetAnswerField(std::forward<AnswerFieldT>(value)); return *this;}
     ///@}
   private:
 

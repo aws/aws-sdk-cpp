@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisassociateTrunkInterfaceRequest::DisassociateTrunkInterfaceRequest() : 
-    m_associationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateTrunkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-RecommendationRelatedEvent::RecommendationRelatedEvent() : 
-    m_nameHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 RecommendationRelatedEvent::RecommendationRelatedEvent(JsonView jsonValue)
-  : RecommendationRelatedEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RecommendationRelatedEvent& RecommendationRelatedEvent::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -48,7 +39,6 @@ RecommendationRelatedEvent& RecommendationRelatedEvent::operator =(JsonView json
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

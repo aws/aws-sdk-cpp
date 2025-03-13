@@ -12,10 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPoliciesStatsRequest::GetPoliciesStatsRequest()
-{
-}
-
 Aws::String GetPoliciesStatsRequest::SerializePayload() const
 {
   return "{}";

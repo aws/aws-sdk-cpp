@@ -18,18 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-PolicyGeneration::PolicyGeneration() : 
-    m_jobIdHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false)
-{
-}
-
 PolicyGeneration::PolicyGeneration(JsonView jsonValue)
-  : PolicyGeneration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ PolicyGeneration& PolicyGeneration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalArn"))
   {
     m_principalArn = jsonValue.GetString("principalArn");
-
     m_principalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedOn"))
   {
     m_startedOn = jsonValue.GetString("startedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedOn"))
   {
     m_completedOn = jsonValue.GetString("completedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   return *this;
 }
 

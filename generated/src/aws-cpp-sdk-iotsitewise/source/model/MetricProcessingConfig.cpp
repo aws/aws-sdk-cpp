@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-MetricProcessingConfig::MetricProcessingConfig() : 
-    m_computeLocation(ComputeLocation::NOT_SET),
-    m_computeLocationHasBeenSet(false)
-{
-}
-
 MetricProcessingConfig::MetricProcessingConfig(JsonView jsonValue)
-  : MetricProcessingConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MetricProcessingConfig& MetricProcessingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("computeLocation"))
   {
     m_computeLocation = ComputeLocationMapper::GetComputeLocationForName(jsonValue.GetString("computeLocation"));
-
     m_computeLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

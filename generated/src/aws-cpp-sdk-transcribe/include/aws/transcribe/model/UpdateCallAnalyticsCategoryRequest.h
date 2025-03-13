@@ -24,7 +24,7 @@ namespace Model
   class UpdateCallAnalyticsCategoryRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API UpdateCallAnalyticsCategoryRequest();
+    AWS_TRANSCRIBESERVICE_API UpdateCallAnalyticsCategoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name of the Call Analytics category you want to update. Category names
      * are case sensitive.</p>
      */
-    inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
+    inline const Aws::String& GetCategoryName() const { return m_categoryName; }
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
-    inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
-    inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
-    inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
-    inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
-    inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
-    inline UpdateCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}
+    template<typename CategoryNameT = Aws::String>
+    void SetCategoryName(CategoryNameT&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::forward<CategoryNameT>(value); }
+    template<typename CategoryNameT = Aws::String>
+    UpdateCallAnalyticsCategoryRequest& WithCategoryName(CategoryNameT&& value) { SetCategoryName(std::forward<CategoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,14 @@ namespace Model
      * in this field replace the ones that are currently being used in the specified
      * category.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline UpdateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline UpdateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline UpdateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline UpdateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    UpdateCallAnalyticsCategoryRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    UpdateCallAnalyticsCategoryRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,12 +74,10 @@ namespace Model
      * input type, you must use <code>POST_CALL</code> as the input type when updating
      * this category.</p>
      */
-    inline const InputType& GetInputType() const{ return m_inputType; }
+    inline InputType GetInputType() const { return m_inputType; }
     inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
-    inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
-    inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
-    inline UpdateCallAnalyticsCategoryRequest& WithInputType(const InputType& value) { SetInputType(value); return *this;}
-    inline UpdateCallAnalyticsCategoryRequest& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+    inline void SetInputType(InputType value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+    inline UpdateCallAnalyticsCategoryRequest& WithInputType(InputType value) { SetInputType(value); return *this;}
     ///@}
   private:
 
@@ -91,7 +87,7 @@ namespace Model
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;
 
-    InputType m_inputType;
+    InputType m_inputType{InputType::NOT_SET};
     bool m_inputTypeHasBeenSet = false;
   };
 

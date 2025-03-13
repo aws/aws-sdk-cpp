@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-AuthorizeClusterSecurityGroupIngressRequest::AuthorizeClusterSecurityGroupIngressRequest() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_cIDRIPHasBeenSet(false),
-    m_eC2SecurityGroupNameHasBeenSet(false),
-    m_eC2SecurityGroupOwnerIdHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

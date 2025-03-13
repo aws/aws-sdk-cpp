@@ -12,13 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ProvideAnomalyFeedbackRequest::ProvideAnomalyFeedbackRequest() : 
-    m_anomalyIdHasBeenSet(false),
-    m_feedback(AnomalyFeedbackType::NOT_SET),
-    m_feedbackHasBeenSet(false)
-{
-}
-
 Aws::String ProvideAnomalyFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,17 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBotAliasRequest::PutBotAliasRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_conversationLogsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutBotAliasRequest::SerializePayload() const
 {
   JsonValue payload;

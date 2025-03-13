@@ -33,7 +33,7 @@ namespace Model
   class RuleGroupSourceStatelessRuleDefinition
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition() = default;
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * (<code>aws:pass</code>, <code>aws:drop</code>, or
      * <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Aws::String>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline RuleGroupSourceStatelessRuleDefinition& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-    inline RuleGroupSourceStatelessRuleDefinition& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleDefinition& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleDefinition& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-    inline RuleGroupSourceStatelessRuleDefinition& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    RuleGroupSourceStatelessRuleDefinition& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Aws::String>
+    RuleGroupSourceStatelessRuleDefinition& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,12 +61,12 @@ namespace Model
      * <p>The criteria for Network Firewall to use to inspect an individual packet in a
      * stateless rule inspection.</p>
      */
-    inline const RuleGroupSourceStatelessRuleMatchAttributes& GetMatchAttributes() const{ return m_matchAttributes; }
+    inline const RuleGroupSourceStatelessRuleMatchAttributes& GetMatchAttributes() const { return m_matchAttributes; }
     inline bool MatchAttributesHasBeenSet() const { return m_matchAttributesHasBeenSet; }
-    inline void SetMatchAttributes(const RuleGroupSourceStatelessRuleMatchAttributes& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = value; }
-    inline void SetMatchAttributes(RuleGroupSourceStatelessRuleMatchAttributes&& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = std::move(value); }
-    inline RuleGroupSourceStatelessRuleDefinition& WithMatchAttributes(const RuleGroupSourceStatelessRuleMatchAttributes& value) { SetMatchAttributes(value); return *this;}
-    inline RuleGroupSourceStatelessRuleDefinition& WithMatchAttributes(RuleGroupSourceStatelessRuleMatchAttributes&& value) { SetMatchAttributes(std::move(value)); return *this;}
+    template<typename MatchAttributesT = RuleGroupSourceStatelessRuleMatchAttributes>
+    void SetMatchAttributes(MatchAttributesT&& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = std::forward<MatchAttributesT>(value); }
+    template<typename MatchAttributesT = RuleGroupSourceStatelessRuleMatchAttributes>
+    RuleGroupSourceStatelessRuleDefinition& WithMatchAttributes(MatchAttributesT&& value) { SetMatchAttributes(std::forward<MatchAttributesT>(value)); return *this;}
     ///@}
   private:
 

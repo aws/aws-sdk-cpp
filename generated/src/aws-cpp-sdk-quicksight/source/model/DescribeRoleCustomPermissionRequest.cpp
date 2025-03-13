@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRoleCustomPermissionRequest::DescribeRoleCustomPermissionRequest() : 
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRoleCustomPermissionRequest::SerializePayload() const
 {
   return {};

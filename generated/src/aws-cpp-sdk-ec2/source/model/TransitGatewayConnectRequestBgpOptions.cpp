@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions() : 
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false)
-{
-}
-
 TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions(const XmlNode& xmlNode)
-  : TransitGatewayConnectRequestBgpOptions()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ TransitGatewayConnectRequestBgpOptions& TransitGatewayConnectRequestBgpOptions::
     {
       m_peerAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerAsnNode.GetText()).c_str()).c_str());
       m_peerAsnHasBeenSet = true;
+       m_peerAsnHasBeenSet = true;
     }
   }
 

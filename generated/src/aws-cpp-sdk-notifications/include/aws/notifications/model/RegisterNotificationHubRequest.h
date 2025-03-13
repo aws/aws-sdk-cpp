@@ -21,7 +21,7 @@ namespace Model
   class RegisterNotificationHubRequest : public NotificationsRequest
   {
   public:
-    AWS_NOTIFICATIONS_API RegisterNotificationHubRequest();
+    AWS_NOTIFICATIONS_API RegisterNotificationHubRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Region of the <code>NotificationHub</code>.</p>
      */
-    inline const Aws::String& GetNotificationHubRegion() const{ return m_notificationHubRegion; }
+    inline const Aws::String& GetNotificationHubRegion() const { return m_notificationHubRegion; }
     inline bool NotificationHubRegionHasBeenSet() const { return m_notificationHubRegionHasBeenSet; }
-    inline void SetNotificationHubRegion(const Aws::String& value) { m_notificationHubRegionHasBeenSet = true; m_notificationHubRegion = value; }
-    inline void SetNotificationHubRegion(Aws::String&& value) { m_notificationHubRegionHasBeenSet = true; m_notificationHubRegion = std::move(value); }
-    inline void SetNotificationHubRegion(const char* value) { m_notificationHubRegionHasBeenSet = true; m_notificationHubRegion.assign(value); }
-    inline RegisterNotificationHubRequest& WithNotificationHubRegion(const Aws::String& value) { SetNotificationHubRegion(value); return *this;}
-    inline RegisterNotificationHubRequest& WithNotificationHubRegion(Aws::String&& value) { SetNotificationHubRegion(std::move(value)); return *this;}
-    inline RegisterNotificationHubRequest& WithNotificationHubRegion(const char* value) { SetNotificationHubRegion(value); return *this;}
+    template<typename NotificationHubRegionT = Aws::String>
+    void SetNotificationHubRegion(NotificationHubRegionT&& value) { m_notificationHubRegionHasBeenSet = true; m_notificationHubRegion = std::forward<NotificationHubRegionT>(value); }
+    template<typename NotificationHubRegionT = Aws::String>
+    RegisterNotificationHubRequest& WithNotificationHubRegion(NotificationHubRegionT&& value) { SetNotificationHubRegion(std::forward<NotificationHubRegionT>(value)); return *this;}
     ///@}
   private:
 

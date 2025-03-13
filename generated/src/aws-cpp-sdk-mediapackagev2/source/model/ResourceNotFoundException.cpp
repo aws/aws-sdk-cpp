@@ -18,15 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeNotFound(ResourceTypeNotFound::NOT_SET),
-    m_resourceTypeNotFoundHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypeNotFound"))
   {
     m_resourceTypeNotFound = ResourceTypeNotFoundMapper::GetResourceTypeNotFoundForName(jsonValue.GetString("ResourceTypeNotFound"));
-
     m_resourceTypeNotFoundHasBeenSet = true;
   }
-
   return *this;
 }
 

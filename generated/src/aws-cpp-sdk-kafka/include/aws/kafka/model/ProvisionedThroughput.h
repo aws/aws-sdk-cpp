@@ -33,7 +33,7 @@ namespace Model
   class ProvisionedThroughput
   {
   public:
-    AWS_KAFKA_API ProvisionedThroughput();
+    AWS_KAFKA_API ProvisionedThroughput() = default;
     AWS_KAFKA_API ProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
             <p>Provisioned throughput is enabled or not.</p>
          
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ProvisionedThroughput& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -58,17 +58,17 @@ namespace Model
      * kafka broker node in MiB per second.</p>
          
      */
-    inline int GetVolumeThroughput() const{ return m_volumeThroughput; }
+    inline int GetVolumeThroughput() const { return m_volumeThroughput; }
     inline bool VolumeThroughputHasBeenSet() const { return m_volumeThroughputHasBeenSet; }
     inline void SetVolumeThroughput(int value) { m_volumeThroughputHasBeenSet = true; m_volumeThroughput = value; }
     inline ProvisionedThroughput& WithVolumeThroughput(int value) { SetVolumeThroughput(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_volumeThroughput;
+    int m_volumeThroughput{0};
     bool m_volumeThroughputHasBeenSet = false;
   };
 

@@ -20,33 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamResourceCidr::IpamResourceCidr() : 
-    m_ipamIdHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_resourceCidrHasBeenSet(false),
-    m_resourceType(IpamResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_ipUsage(0.0),
-    m_ipUsageHasBeenSet(false),
-    m_complianceStatus(IpamComplianceStatus::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_managementState(IpamManagementState::NOT_SET),
-    m_managementStateHasBeenSet(false),
-    m_overlapStatus(IpamOverlapStatus::NOT_SET),
-    m_overlapStatusHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
-{
-}
-
 IpamResourceCidr::IpamResourceCidr(const XmlNode& xmlNode)
-  : IpamResourceCidr()
 {
   *this = xmlNode;
 }
@@ -62,102 +36,118 @@ IpamResourceCidr& IpamResourceCidr::operator =(const XmlNode& xmlNode)
     {
       m_ipamId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamIdNode.GetText());
       m_ipamIdHasBeenSet = true;
+       m_ipamIdHasBeenSet = true;
     }
     XmlNode ipamScopeIdNode = resultNode.FirstChild("ipamScopeId");
     if(!ipamScopeIdNode.IsNull())
     {
       m_ipamScopeId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamScopeIdNode.GetText());
       m_ipamScopeIdHasBeenSet = true;
+       m_ipamScopeIdHasBeenSet = true;
     }
     XmlNode ipamPoolIdNode = resultNode.FirstChild("ipamPoolId");
     if(!ipamPoolIdNode.IsNull())
     {
       m_ipamPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamPoolIdNode.GetText());
       m_ipamPoolIdHasBeenSet = true;
+       m_ipamPoolIdHasBeenSet = true;
     }
     XmlNode resourceRegionNode = resultNode.FirstChild("resourceRegion");
     if(!resourceRegionNode.IsNull())
     {
       m_resourceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(resourceRegionNode.GetText());
       m_resourceRegionHasBeenSet = true;
+       m_resourceRegionHasBeenSet = true;
     }
     XmlNode resourceOwnerIdNode = resultNode.FirstChild("resourceOwnerId");
     if(!resourceOwnerIdNode.IsNull())
     {
       m_resourceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceOwnerIdNode.GetText());
       m_resourceOwnerIdHasBeenSet = true;
+       m_resourceOwnerIdHasBeenSet = true;
     }
     XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
     if(!resourceIdNode.IsNull())
     {
       m_resourceId = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdNode.GetText());
       m_resourceIdHasBeenSet = true;
+       m_resourceIdHasBeenSet = true;
     }
     XmlNode resourceNameNode = resultNode.FirstChild("resourceName");
     if(!resourceNameNode.IsNull())
     {
       m_resourceName = Aws::Utils::Xml::DecodeEscapedXmlText(resourceNameNode.GetText());
       m_resourceNameHasBeenSet = true;
+       m_resourceNameHasBeenSet = true;
     }
     XmlNode resourceCidrNode = resultNode.FirstChild("resourceCidr");
     if(!resourceCidrNode.IsNull())
     {
       m_resourceCidr = Aws::Utils::Xml::DecodeEscapedXmlText(resourceCidrNode.GetText());
       m_resourceCidrHasBeenSet = true;
+       m_resourceCidrHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamResourceTypeMapper::GetIpamResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamResourceTypeMapper::GetIpamResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceTagsNode = resultNode.FirstChild("resourceTagSet");
     if(!resourceTagsNode.IsNull())
     {
       XmlNode resourceTagsMember = resourceTagsNode.FirstChild("item");
+      m_resourceTagsHasBeenSet = !resourceTagsMember.IsNull();
       while(!resourceTagsMember.IsNull())
       {
         m_resourceTags.push_back(resourceTagsMember);
         resourceTagsMember = resourceTagsMember.NextNode("item");
       }
 
-      m_resourceTagsHasBeenSet = true;
+       m_resourceTagsHasBeenSet = true;
     }
     XmlNode ipUsageNode = resultNode.FirstChild("ipUsage");
     if(!ipUsageNode.IsNull())
     {
       m_ipUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipUsageNode.GetText()).c_str()).c_str());
       m_ipUsageHasBeenSet = true;
+       m_ipUsageHasBeenSet = true;
     }
     XmlNode complianceStatusNode = resultNode.FirstChild("complianceStatus");
     if(!complianceStatusNode.IsNull())
     {
-      m_complianceStatus = IpamComplianceStatusMapper::GetIpamComplianceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(complianceStatusNode.GetText()).c_str()).c_str());
+      m_complianceStatus = IpamComplianceStatusMapper::GetIpamComplianceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(complianceStatusNode.GetText()).c_str()));
       m_complianceStatusHasBeenSet = true;
+       m_complianceStatusHasBeenSet = true;
     }
     XmlNode managementStateNode = resultNode.FirstChild("managementState");
     if(!managementStateNode.IsNull())
     {
-      m_managementState = IpamManagementStateMapper::GetIpamManagementStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managementStateNode.GetText()).c_str()).c_str());
+      m_managementState = IpamManagementStateMapper::GetIpamManagementStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managementStateNode.GetText()).c_str()));
       m_managementStateHasBeenSet = true;
+       m_managementStateHasBeenSet = true;
     }
     XmlNode overlapStatusNode = resultNode.FirstChild("overlapStatus");
     if(!overlapStatusNode.IsNull())
     {
-      m_overlapStatus = IpamOverlapStatusMapper::GetIpamOverlapStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overlapStatusNode.GetText()).c_str()).c_str());
+      m_overlapStatus = IpamOverlapStatusMapper::GetIpamOverlapStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overlapStatusNode.GetText()).c_str()));
       m_overlapStatusHasBeenSet = true;
+       m_overlapStatusHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
   }
 

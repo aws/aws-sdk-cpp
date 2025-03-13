@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterJobDefinitionRequest::DeregisterJobDefinitionRequest() : 
-    m_jobDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

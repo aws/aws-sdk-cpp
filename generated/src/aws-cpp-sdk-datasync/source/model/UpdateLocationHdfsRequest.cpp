@@ -13,26 +13,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLocationHdfsRequest::UpdateLocationHdfsRequest() : 
-    m_locationArnHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_nameNodesHasBeenSet(false),
-    m_blockSize(0),
-    m_blockSizeHasBeenSet(false),
-    m_replicationFactor(0),
-    m_replicationFactorHasBeenSet(false),
-    m_kmsKeyProviderUriHasBeenSet(false),
-    m_qopConfigurationHasBeenSet(false),
-    m_authenticationType(HdfsAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_simpleUserHasBeenSet(false),
-    m_kerberosPrincipalHasBeenSet(false),
-    m_kerberosKeytabHasBeenSet(false),
-    m_kerberosKrb5ConfHasBeenSet(false),
-    m_agentArnsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLocationHdfsRequest::SerializePayload() const
 {
   JsonValue payload;

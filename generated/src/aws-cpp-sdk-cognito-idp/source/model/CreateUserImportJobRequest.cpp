@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserImportJobRequest::CreateUserImportJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_cloudWatchLogsRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountSettingsResult::DescribeAccountSettingsResult() : 
-    m_maxQueryTCU(0),
-    m_queryPricingModel(QueryPricingModel::NOT_SET)
-{
-}
-
 DescribeAccountSettingsResult::DescribeAccountSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAccountSettingsResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ DescribeAccountSettingsResult& DescribeAccountSettingsResult::operator =(const A
   if(jsonValue.ValueExists("MaxQueryTCU"))
   {
     m_maxQueryTCU = jsonValue.GetInteger("MaxQueryTCU");
-
+    m_maxQueryTCUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryPricingModel"))
   {
     m_queryPricingModel = QueryPricingModelMapper::GetQueryPricingModelForName(jsonValue.GetString("QueryPricingModel"));
-
+    m_queryPricingModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryCompute"))
   {
     m_queryCompute = jsonValue.GetObject("QueryCompute");
-
+    m_queryComputeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

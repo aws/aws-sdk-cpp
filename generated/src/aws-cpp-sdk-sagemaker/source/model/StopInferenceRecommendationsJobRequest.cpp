@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopInferenceRecommendationsJobRequest::StopInferenceRecommendationsJobRequest() : 
-    m_jobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopInferenceRecommendationsJobRequest::SerializePayload() const
 {
   JsonValue payload;

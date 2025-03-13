@@ -18,17 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-PathElement::PathElement() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_substringHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 PathElement::PathElement(JsonView jsonValue)
-  : PathElement()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PathElement& PathElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetInteger("index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("substring"))
   {
     m_substring = jsonValue.GetObject("substring");
-
     m_substringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

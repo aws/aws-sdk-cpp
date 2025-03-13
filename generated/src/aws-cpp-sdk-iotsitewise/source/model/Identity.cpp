@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Identity::Identity() : 
-    m_userHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_iamUserHasBeenSet(false),
-    m_iamRoleHasBeenSet(false)
-{
-}
-
 Identity::Identity(JsonView jsonValue)
-  : Identity()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Identity& Identity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetObject("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamUser"))
   {
     m_iamUser = jsonValue.GetObject("iamUser");
-
     m_iamUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRole"))
   {
     m_iamRole = jsonValue.GetObject("iamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

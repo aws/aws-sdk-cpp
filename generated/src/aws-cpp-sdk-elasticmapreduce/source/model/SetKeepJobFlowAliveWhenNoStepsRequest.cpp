@@ -12,13 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetKeepJobFlowAliveWhenNoStepsRequest::SetKeepJobFlowAliveWhenNoStepsRequest() : 
-    m_jobFlowIdsHasBeenSet(false),
-    m_keepJobFlowAliveWhenNoSteps(false),
-    m_keepJobFlowAliveWhenNoStepsHasBeenSet(false)
-{
-}
-
 Aws::String SetKeepJobFlowAliveWhenNoStepsRequest::SerializePayload() const
 {
   JsonValue payload;

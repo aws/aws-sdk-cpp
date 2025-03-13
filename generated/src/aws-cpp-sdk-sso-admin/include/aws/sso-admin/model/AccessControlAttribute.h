@@ -38,7 +38,7 @@ namespace Model
   class AccessControlAttribute
   {
   public:
-    AWS_SSOADMIN_API AccessControlAttribute();
+    AWS_SSOADMIN_API AccessControlAttribute() = default;
     AWS_SSOADMIN_API AccessControlAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AccessControlAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,26 +50,24 @@ namespace Model
      * source. This is used to map a specified attribute in your identity source with
      * an attribute in IAM Identity Center.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline AccessControlAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline AccessControlAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline AccessControlAttribute& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    AccessControlAttribute& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value used for mapping a specified attribute to an identity source.</p>
      */
-    inline const AccessControlAttributeValue& GetValue() const{ return m_value; }
+    inline const AccessControlAttributeValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const AccessControlAttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(AccessControlAttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline AccessControlAttribute& WithValue(const AccessControlAttributeValue& value) { SetValue(value); return *this;}
-    inline AccessControlAttribute& WithValue(AccessControlAttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = AccessControlAttributeValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = AccessControlAttributeValue>
+    AccessControlAttribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

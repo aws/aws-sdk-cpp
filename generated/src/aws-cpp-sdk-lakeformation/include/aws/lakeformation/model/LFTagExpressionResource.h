@@ -32,7 +32,7 @@ namespace Model
   class LFTagExpressionResource
   {
   public:
-    AWS_LAKEFORMATION_API LFTagExpressionResource();
+    AWS_LAKEFORMATION_API LFTagExpressionResource() = default;
     AWS_LAKEFORMATION_API LFTagExpressionResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API LFTagExpressionResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. </p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline LFTagExpressionResource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline LFTagExpressionResource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline LFTagExpressionResource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    LFTagExpressionResource& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the LF-Tag expression to grant permissions on.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline LFTagExpressionResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline LFTagExpressionResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline LFTagExpressionResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    LFTagExpressionResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

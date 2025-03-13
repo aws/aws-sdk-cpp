@@ -12,13 +12,6 @@ using namespace Aws::AutoScalingPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScalingPlanRequest::DeleteScalingPlanRequest() : 
-    m_scalingPlanNameHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScalingPlanRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLogDeliveryConfigurationResult::GetLogDeliveryConfigurationResult()
-{
-}
-
 GetLogDeliveryConfigurationResult::GetLogDeliveryConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetLogDeliveryConfigurationResult& GetLogDeliveryConfigurationResult::operator =
   if(jsonValue.ValueExists("LogDeliveryConfiguration"))
   {
     m_logDeliveryConfiguration = jsonValue.GetObject("LogDeliveryConfiguration");
-
+    m_logDeliveryConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

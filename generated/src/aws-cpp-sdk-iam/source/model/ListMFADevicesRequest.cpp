@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListMFADevicesRequest::ListMFADevicesRequest() : 
-    m_userNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListMFADevicesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

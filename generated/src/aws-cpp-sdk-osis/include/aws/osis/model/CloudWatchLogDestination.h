@@ -32,7 +32,7 @@ namespace Model
   class CloudWatchLogDestination
   {
   public:
-    AWS_OSIS_API CloudWatchLogDestination();
+    AWS_OSIS_API CloudWatchLogDestination() = default;
     AWS_OSIS_API CloudWatchLogDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API CloudWatchLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * specify an existing log group or create a new one. For example,
      * <code>/aws/vendedlogs/OpenSearchService/pipelines</code>.</p>
      */
-    inline const Aws::String& GetLogGroup() const{ return m_logGroup; }
+    inline const Aws::String& GetLogGroup() const { return m_logGroup; }
     inline bool LogGroupHasBeenSet() const { return m_logGroupHasBeenSet; }
-    inline void SetLogGroup(const Aws::String& value) { m_logGroupHasBeenSet = true; m_logGroup = value; }
-    inline void SetLogGroup(Aws::String&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::move(value); }
-    inline void SetLogGroup(const char* value) { m_logGroupHasBeenSet = true; m_logGroup.assign(value); }
-    inline CloudWatchLogDestination& WithLogGroup(const Aws::String& value) { SetLogGroup(value); return *this;}
-    inline CloudWatchLogDestination& WithLogGroup(Aws::String&& value) { SetLogGroup(std::move(value)); return *this;}
-    inline CloudWatchLogDestination& WithLogGroup(const char* value) { SetLogGroup(value); return *this;}
+    template<typename LogGroupT = Aws::String>
+    void SetLogGroup(LogGroupT&& value) { m_logGroupHasBeenSet = true; m_logGroup = std::forward<LogGroupT>(value); }
+    template<typename LogGroupT = Aws::String>
+    CloudWatchLogDestination& WithLogGroup(LogGroupT&& value) { SetLogGroup(std::forward<LogGroupT>(value)); return *this;}
     ///@}
   private:
 

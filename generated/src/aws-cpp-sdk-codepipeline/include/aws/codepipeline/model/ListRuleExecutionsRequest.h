@@ -22,7 +22,7 @@ namespace Model
   class ListRuleExecutionsRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API ListRuleExecutionsRequest();
+    AWS_CODEPIPELINE_API ListRuleExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The name of the pipeline for which you want to get execution summary
      * information.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline ListRuleExecutionsRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline ListRuleExecutionsRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline ListRuleExecutionsRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    ListRuleExecutionsRequest& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input information used to filter rule execution history.</p>
      */
-    inline const RuleExecutionFilter& GetFilter() const{ return m_filter; }
+    inline const RuleExecutionFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const RuleExecutionFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(RuleExecutionFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListRuleExecutionsRequest& WithFilter(const RuleExecutionFilter& value) { SetFilter(value); return *this;}
-    inline ListRuleExecutionsRequest& WithFilter(RuleExecutionFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = RuleExecutionFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = RuleExecutionFilter>
+    ListRuleExecutionsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * history is limited to the most recent 12 months, based on pipeline execution
      * start times. Default value is 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRuleExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,14 +79,12 @@ namespace Model
      * call, which can be used to return the next set of rule executions in the
      * list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRuleExecutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRuleExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRuleExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRuleExecutionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     RuleExecutionFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

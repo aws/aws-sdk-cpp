@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FieldLabelType::FieldLabelType() : 
-    m_fieldIdHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 FieldLabelType::FieldLabelType(JsonView jsonValue)
-  : FieldLabelType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FieldLabelType& FieldLabelType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

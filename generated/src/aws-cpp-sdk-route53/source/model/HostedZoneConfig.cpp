@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZoneConfig::HostedZoneConfig() : 
-    m_commentHasBeenSet(false),
-    m_privateZone(false),
-    m_privateZoneHasBeenSet(false)
-{
-}
-
 HostedZoneConfig::HostedZoneConfig(const XmlNode& xmlNode)
-  : HostedZoneConfig()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ HostedZoneConfig& HostedZoneConfig::operator =(const XmlNode& xmlNode)
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode privateZoneNode = resultNode.FirstChild("PrivateZone");
     if(!privateZoneNode.IsNull())
     {
       m_privateZone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateZoneNode.GetText()).c_str()).c_str());
       m_privateZoneHasBeenSet = true;
+       m_privateZoneHasBeenSet = true;
     }
   }
 

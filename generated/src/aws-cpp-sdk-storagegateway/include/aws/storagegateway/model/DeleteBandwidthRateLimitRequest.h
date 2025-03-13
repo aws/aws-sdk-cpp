@@ -26,7 +26,7 @@ namespace Model
   class DeleteBandwidthRateLimitRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitRequest();
+    AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline DeleteBandwidthRateLimitRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DeleteBandwidthRateLimitRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DeleteBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DeleteBandwidthRateLimitRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * limit to delete.</p> <p>Valid Values: <code>UPLOAD</code> |
      * <code>DOWNLOAD</code> | <code>ALL</code> </p>
      */
-    inline const Aws::String& GetBandwidthType() const{ return m_bandwidthType; }
+    inline const Aws::String& GetBandwidthType() const { return m_bandwidthType; }
     inline bool BandwidthTypeHasBeenSet() const { return m_bandwidthTypeHasBeenSet; }
-    inline void SetBandwidthType(const Aws::String& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = value; }
-    inline void SetBandwidthType(Aws::String&& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = std::move(value); }
-    inline void SetBandwidthType(const char* value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType.assign(value); }
-    inline DeleteBandwidthRateLimitRequest& WithBandwidthType(const Aws::String& value) { SetBandwidthType(value); return *this;}
-    inline DeleteBandwidthRateLimitRequest& WithBandwidthType(Aws::String&& value) { SetBandwidthType(std::move(value)); return *this;}
-    inline DeleteBandwidthRateLimitRequest& WithBandwidthType(const char* value) { SetBandwidthType(value); return *this;}
+    template<typename BandwidthTypeT = Aws::String>
+    void SetBandwidthType(BandwidthTypeT&& value) { m_bandwidthTypeHasBeenSet = true; m_bandwidthType = std::forward<BandwidthTypeT>(value); }
+    template<typename BandwidthTypeT = Aws::String>
+    DeleteBandwidthRateLimitRequest& WithBandwidthType(BandwidthTypeT&& value) { SetBandwidthType(std::forward<BandwidthTypeT>(value)); return *this;}
     ///@}
   private:
 

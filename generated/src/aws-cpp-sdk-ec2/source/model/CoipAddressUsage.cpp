@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CoipAddressUsage::CoipAddressUsage() : 
-    m_allocationIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsServiceHasBeenSet(false),
-    m_coIpHasBeenSet(false)
-{
-}
-
 CoipAddressUsage::CoipAddressUsage(const XmlNode& xmlNode)
-  : CoipAddressUsage()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ CoipAddressUsage& CoipAddressUsage::operator =(const XmlNode& xmlNode)
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
+       m_allocationIdHasBeenSet = true;
     }
     XmlNode awsAccountIdNode = resultNode.FirstChild("awsAccountId");
     if(!awsAccountIdNode.IsNull())
     {
       m_awsAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(awsAccountIdNode.GetText());
       m_awsAccountIdHasBeenSet = true;
+       m_awsAccountIdHasBeenSet = true;
     }
     XmlNode awsServiceNode = resultNode.FirstChild("awsService");
     if(!awsServiceNode.IsNull())
     {
       m_awsService = Aws::Utils::Xml::DecodeEscapedXmlText(awsServiceNode.GetText());
       m_awsServiceHasBeenSet = true;
+       m_awsServiceHasBeenSet = true;
     }
     XmlNode coIpNode = resultNode.FirstChild("coIp");
     if(!coIpNode.IsNull())
     {
       m_coIp = Aws::Utils::Xml::DecodeEscapedXmlText(coIpNode.GetText());
       m_coIpHasBeenSet = true;
+       m_coIpHasBeenSet = true;
     }
   }
 

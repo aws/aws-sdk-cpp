@@ -28,7 +28,7 @@ namespace Model
   class CreateCustomPluginResult
   {
   public:
-    AWS_KAFKACONNECT_API CreateCustomPluginResult();
+    AWS_KAFKACONNECT_API CreateCustomPluginResult() = default;
     AWS_KAFKACONNECT_API CreateCustomPluginResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API CreateCustomPluginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,69 +37,66 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
      */
-    inline const Aws::String& GetCustomPluginArn() const{ return m_customPluginArn; }
-    inline void SetCustomPluginArn(const Aws::String& value) { m_customPluginArn = value; }
-    inline void SetCustomPluginArn(Aws::String&& value) { m_customPluginArn = std::move(value); }
-    inline void SetCustomPluginArn(const char* value) { m_customPluginArn.assign(value); }
-    inline CreateCustomPluginResult& WithCustomPluginArn(const Aws::String& value) { SetCustomPluginArn(value); return *this;}
-    inline CreateCustomPluginResult& WithCustomPluginArn(Aws::String&& value) { SetCustomPluginArn(std::move(value)); return *this;}
-    inline CreateCustomPluginResult& WithCustomPluginArn(const char* value) { SetCustomPluginArn(value); return *this;}
+    inline const Aws::String& GetCustomPluginArn() const { return m_customPluginArn; }
+    template<typename CustomPluginArnT = Aws::String>
+    void SetCustomPluginArn(CustomPluginArnT&& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = std::forward<CustomPluginArnT>(value); }
+    template<typename CustomPluginArnT = Aws::String>
+    CreateCustomPluginResult& WithCustomPluginArn(CustomPluginArnT&& value) { SetCustomPluginArn(std::forward<CustomPluginArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the custom plugin.</p>
      */
-    inline const CustomPluginState& GetCustomPluginState() const{ return m_customPluginState; }
-    inline void SetCustomPluginState(const CustomPluginState& value) { m_customPluginState = value; }
-    inline void SetCustomPluginState(CustomPluginState&& value) { m_customPluginState = std::move(value); }
-    inline CreateCustomPluginResult& WithCustomPluginState(const CustomPluginState& value) { SetCustomPluginState(value); return *this;}
-    inline CreateCustomPluginResult& WithCustomPluginState(CustomPluginState&& value) { SetCustomPluginState(std::move(value)); return *this;}
+    inline CustomPluginState GetCustomPluginState() const { return m_customPluginState; }
+    inline void SetCustomPluginState(CustomPluginState value) { m_customPluginStateHasBeenSet = true; m_customPluginState = value; }
+    inline CreateCustomPluginResult& WithCustomPluginState(CustomPluginState value) { SetCustomPluginState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the custom plugin.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateCustomPluginResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCustomPluginResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCustomPluginResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCustomPluginResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the custom plugin.</p>
      */
-    inline long long GetRevision() const{ return m_revision; }
-    inline void SetRevision(long long value) { m_revision = value; }
+    inline long long GetRevision() const { return m_revision; }
+    inline void SetRevision(long long value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline CreateCustomPluginResult& WithRevision(long long value) { SetRevision(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCustomPluginResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCustomPluginResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCustomPluginResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCustomPluginResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customPluginArn;
+    bool m_customPluginArnHasBeenSet = false;
 
-    CustomPluginState m_customPluginState;
+    CustomPluginState m_customPluginState{CustomPluginState::NOT_SET};
+    bool m_customPluginStateHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    long long m_revision;
+    long long m_revision{0};
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

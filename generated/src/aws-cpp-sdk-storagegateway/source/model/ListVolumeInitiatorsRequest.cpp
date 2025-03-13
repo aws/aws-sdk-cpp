@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVolumeInitiatorsRequest::ListVolumeInitiatorsRequest() : 
-    m_volumeARNHasBeenSet(false)
-{
-}
-
 Aws::String ListVolumeInitiatorsRequest::SerializePayload() const
 {
   JsonValue payload;

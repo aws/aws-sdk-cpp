@@ -18,19 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AvailabilityZoneInfo::AvailabilityZoneInfo() : 
-    m_availabilityZoneNameHasBeenSet(false),
-    m_zoneStatus(ZoneStatus::NOT_SET),
-    m_zoneStatusHasBeenSet(false),
-    m_configuredDataNodeCountHasBeenSet(false),
-    m_availableDataNodeCountHasBeenSet(false),
-    m_totalShardsHasBeenSet(false),
-    m_totalUnAssignedShardsHasBeenSet(false)
-{
-}
-
 AvailabilityZoneInfo::AvailabilityZoneInfo(JsonView jsonValue)
-  : AvailabilityZoneInfo()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AvailabilityZoneInfo& AvailabilityZoneInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvailabilityZoneName"))
   {
     m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
-
     m_availabilityZoneNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZoneStatus"))
   {
     m_zoneStatus = ZoneStatusMapper::GetZoneStatusForName(jsonValue.GetString("ZoneStatus"));
-
     m_zoneStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfiguredDataNodeCount"))
   {
     m_configuredDataNodeCount = jsonValue.GetString("ConfiguredDataNodeCount");
-
     m_configuredDataNodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableDataNodeCount"))
   {
     m_availableDataNodeCount = jsonValue.GetString("AvailableDataNodeCount");
-
     m_availableDataNodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalShards"))
   {
     m_totalShards = jsonValue.GetString("TotalShards");
-
     m_totalShardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalUnAssignedShards"))
   {
     m_totalUnAssignedShards = jsonValue.GetString("TotalUnAssignedShards");
-
     m_totalUnAssignedShardsHasBeenSet = true;
   }
-
   return *this;
 }
 

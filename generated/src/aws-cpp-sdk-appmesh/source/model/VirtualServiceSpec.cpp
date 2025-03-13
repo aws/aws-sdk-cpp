@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualServiceSpec::VirtualServiceSpec() : 
-    m_providerHasBeenSet(false)
-{
-}
-
 VirtualServiceSpec::VirtualServiceSpec(JsonView jsonValue)
-  : VirtualServiceSpec()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualServiceSpec& VirtualServiceSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = jsonValue.GetObject("provider");
-
     m_providerHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class AdminCreateUserResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The new user's profile details.</p>
      */
-    inline const UserType& GetUser() const{ return m_user; }
-    inline void SetUser(const UserType& value) { m_user = value; }
-    inline void SetUser(UserType&& value) { m_user = std::move(value); }
-    inline AdminCreateUserResult& WithUser(const UserType& value) { SetUser(value); return *this;}
-    inline AdminCreateUserResult& WithUser(UserType&& value) { SetUser(std::move(value)); return *this;}
+    inline const UserType& GetUser() const { return m_user; }
+    template<typename UserT = UserType>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = UserType>
+    AdminCreateUserResult& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AdminCreateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AdminCreateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AdminCreateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AdminCreateUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UserType m_user;
+    bool m_userHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

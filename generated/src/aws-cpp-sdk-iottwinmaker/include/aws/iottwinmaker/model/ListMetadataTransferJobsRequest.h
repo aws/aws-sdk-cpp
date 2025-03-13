@@ -25,7 +25,7 @@ namespace Model
   class ListMetadataTransferJobsRequest : public IoTTwinMakerRequest
   {
   public:
-    AWS_IOTTWINMAKER_API ListMetadataTransferJobsRequest();
+    AWS_IOTTWINMAKER_API ListMetadataTransferJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,69 +40,63 @@ namespace Model
     /**
      * <p>The metadata transfer job's source type.</p>
      */
-    inline const SourceType& GetSourceType() const{ return m_sourceType; }
+    inline SourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline ListMetadataTransferJobsRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
-    inline ListMetadataTransferJobsRequest& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(SourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline ListMetadataTransferJobsRequest& WithSourceType(SourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata transfer job's destination type.</p>
      */
-    inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
+    inline DestinationType GetDestinationType() const { return m_destinationType; }
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
-    inline void SetDestinationType(const DestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
-    inline void SetDestinationType(DestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
-    inline ListMetadataTransferJobsRequest& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
-    inline ListMetadataTransferJobsRequest& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    inline void SetDestinationType(DestinationType value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
+    inline ListMetadataTransferJobsRequest& WithDestinationType(DestinationType value) { SetDestinationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that filters metadata transfer jobs.</p>
      */
-    inline const Aws::Vector<ListMetadataTransferJobsFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ListMetadataTransferJobsFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ListMetadataTransferJobsFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ListMetadataTransferJobsFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListMetadataTransferJobsRequest& WithFilters(const Aws::Vector<ListMetadataTransferJobsFilter>& value) { SetFilters(value); return *this;}
-    inline ListMetadataTransferJobsRequest& WithFilters(Aws::Vector<ListMetadataTransferJobsFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListMetadataTransferJobsRequest& AddFilters(const ListMetadataTransferJobsFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListMetadataTransferJobsRequest& AddFilters(ListMetadataTransferJobsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ListMetadataTransferJobsFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ListMetadataTransferJobsFilter>>
+    ListMetadataTransferJobsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ListMetadataTransferJobsFilter>
+    ListMetadataTransferJobsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The string that specifies the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMetadataTransferJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMetadataTransferJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMetadataTransferJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMetadataTransferJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMetadataTransferJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    SourceType m_sourceType;
+    SourceType m_sourceType{SourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
-    DestinationType m_destinationType;
+    DestinationType m_destinationType{DestinationType::NOT_SET};
     bool m_destinationTypeHasBeenSet = false;
 
     Aws::Vector<ListMetadataTransferJobsFilter> m_filters;
@@ -111,7 +105,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagOpenIDConnectProviderRequest::TagOpenIDConnectProviderRequest() : 
-    m_openIDConnectProviderArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagOpenIDConnectProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-TagKeys::TagKeys() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 TagKeys::TagKeys(const XmlNode& xmlNode)
-  : TagKeys()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ TagKeys& TagKeys::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("Key");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());
         itemsMember = itemsMember.NextNode("Key");
       }
 
-      m_itemsHasBeenSet = true;
+       m_itemsHasBeenSet = true;
     }
   }
 

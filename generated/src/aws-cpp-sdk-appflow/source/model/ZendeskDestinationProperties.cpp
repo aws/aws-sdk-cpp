@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ZendeskDestinationProperties::ZendeskDestinationProperties() : 
-    m_objectHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false)
-{
-}
-
 ZendeskDestinationProperties::ZendeskDestinationProperties(JsonView jsonValue)
-  : ZendeskDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ZendeskDestinationProperties& ZendeskDestinationProperties::operator =(JsonView 
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idFieldNames"))
   {
     Aws::Utils::Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
@@ -51,21 +39,16 @@ ZendeskDestinationProperties& ZendeskDestinationProperties::operator =(JsonView 
     }
     m_idFieldNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeOperationType"))
   {
     m_writeOperationType = WriteOperationTypeMapper::GetWriteOperationTypeForName(jsonValue.GetString("writeOperationType"));
-
     m_writeOperationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

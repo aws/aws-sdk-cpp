@@ -18,16 +18,7 @@ namespace DirectoryServiceData
 namespace Model
 {
 
-Member::Member() : 
-    m_memberType(MemberType::NOT_SET),
-    m_memberTypeHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false),
-    m_sIDHasBeenSet(false)
-{
-}
-
 Member::Member(JsonView jsonValue)
-  : Member()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Member& Member::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MemberType"))
   {
     m_memberType = MemberTypeMapper::GetMemberTypeForName(jsonValue.GetString("MemberType"));
-
     m_memberTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SAMAccountName"))
   {
     m_sAMAccountName = jsonValue.GetString("SAMAccountName");
-
     m_sAMAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SID"))
   {
     m_sID = jsonValue.GetString("SID");
-
     m_sIDHasBeenSet = true;
   }
-
   return *this;
 }
 

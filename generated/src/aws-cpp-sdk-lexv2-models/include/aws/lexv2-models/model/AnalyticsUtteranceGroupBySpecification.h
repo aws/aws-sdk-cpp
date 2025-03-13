@@ -32,7 +32,7 @@ namespace Model
   class AnalyticsUtteranceGroupBySpecification
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsUtteranceGroupBySpecification();
+    AWS_LEXMODELSV2_API AnalyticsUtteranceGroupBySpecification() = default;
     AWS_LEXMODELSV2_API AnalyticsUtteranceGroupBySpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsUtteranceGroupBySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>Specifies whether to group the utterances by their text or their state.</p>
      */
-    inline const AnalyticsUtteranceField& GetName() const{ return m_name; }
+    inline AnalyticsUtteranceField GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsUtteranceField& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsUtteranceField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsUtteranceGroupBySpecification& WithName(const AnalyticsUtteranceField& value) { SetName(value); return *this;}
-    inline AnalyticsUtteranceGroupBySpecification& WithName(AnalyticsUtteranceField&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsUtteranceField value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsUtteranceGroupBySpecification& WithName(AnalyticsUtteranceField value) { SetName(value); return *this;}
     ///@}
   private:
 
-    AnalyticsUtteranceField m_name;
+    AnalyticsUtteranceField m_name{AnalyticsUtteranceField::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

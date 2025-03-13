@@ -37,7 +37,7 @@ namespace Model
   class MediaStreamPipeline
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API MediaStreamPipeline();
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaStreamPipeline() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API MediaStreamPipeline(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API MediaStreamPipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,92 +47,86 @@ namespace Model
     /**
      * <p>The ID of the media stream pipeline</p>
      */
-    inline const Aws::String& GetMediaPipelineId() const{ return m_mediaPipelineId; }
+    inline const Aws::String& GetMediaPipelineId() const { return m_mediaPipelineId; }
     inline bool MediaPipelineIdHasBeenSet() const { return m_mediaPipelineIdHasBeenSet; }
-    inline void SetMediaPipelineId(const Aws::String& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = value; }
-    inline void SetMediaPipelineId(Aws::String&& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = std::move(value); }
-    inline void SetMediaPipelineId(const char* value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId.assign(value); }
-    inline MediaStreamPipeline& WithMediaPipelineId(const Aws::String& value) { SetMediaPipelineId(value); return *this;}
-    inline MediaStreamPipeline& WithMediaPipelineId(Aws::String&& value) { SetMediaPipelineId(std::move(value)); return *this;}
-    inline MediaStreamPipeline& WithMediaPipelineId(const char* value) { SetMediaPipelineId(value); return *this;}
+    template<typename MediaPipelineIdT = Aws::String>
+    void SetMediaPipelineId(MediaPipelineIdT&& value) { m_mediaPipelineIdHasBeenSet = true; m_mediaPipelineId = std::forward<MediaPipelineIdT>(value); }
+    template<typename MediaPipelineIdT = Aws::String>
+    MediaStreamPipeline& WithMediaPipelineId(MediaPipelineIdT&& value) { SetMediaPipelineId(std::forward<MediaPipelineIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the media stream pipeline.</p>
      */
-    inline const Aws::String& GetMediaPipelineArn() const{ return m_mediaPipelineArn; }
+    inline const Aws::String& GetMediaPipelineArn() const { return m_mediaPipelineArn; }
     inline bool MediaPipelineArnHasBeenSet() const { return m_mediaPipelineArnHasBeenSet; }
-    inline void SetMediaPipelineArn(const Aws::String& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = value; }
-    inline void SetMediaPipelineArn(Aws::String&& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = std::move(value); }
-    inline void SetMediaPipelineArn(const char* value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn.assign(value); }
-    inline MediaStreamPipeline& WithMediaPipelineArn(const Aws::String& value) { SetMediaPipelineArn(value); return *this;}
-    inline MediaStreamPipeline& WithMediaPipelineArn(Aws::String&& value) { SetMediaPipelineArn(std::move(value)); return *this;}
-    inline MediaStreamPipeline& WithMediaPipelineArn(const char* value) { SetMediaPipelineArn(value); return *this;}
+    template<typename MediaPipelineArnT = Aws::String>
+    void SetMediaPipelineArn(MediaPipelineArnT&& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = std::forward<MediaPipelineArnT>(value); }
+    template<typename MediaPipelineArnT = Aws::String>
+    MediaStreamPipeline& WithMediaPipelineArn(MediaPipelineArnT&& value) { SetMediaPipelineArn(std::forward<MediaPipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the media stream pipeline was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline MediaStreamPipeline& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline MediaStreamPipeline& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    MediaStreamPipeline& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the media stream pipeline was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
-    inline MediaStreamPipeline& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline MediaStreamPipeline& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    MediaStreamPipeline& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the media stream pipeline.</p>
      */
-    inline const MediaPipelineStatus& GetStatus() const{ return m_status; }
+    inline MediaPipelineStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MediaPipelineStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MediaPipelineStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MediaStreamPipeline& WithStatus(const MediaPipelineStatus& value) { SetStatus(value); return *this;}
-    inline MediaStreamPipeline& WithStatus(MediaPipelineStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MediaPipelineStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MediaStreamPipeline& WithStatus(MediaPipelineStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The media stream pipeline's data sources.</p>
      */
-    inline const Aws::Vector<MediaStreamSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<MediaStreamSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<MediaStreamSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<MediaStreamSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline MediaStreamPipeline& WithSources(const Aws::Vector<MediaStreamSource>& value) { SetSources(value); return *this;}
-    inline MediaStreamPipeline& WithSources(Aws::Vector<MediaStreamSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline MediaStreamPipeline& AddSources(const MediaStreamSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline MediaStreamPipeline& AddSources(MediaStreamSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<MediaStreamSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<MediaStreamSource>>
+    MediaStreamPipeline& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = MediaStreamSource>
+    MediaStreamPipeline& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The media stream pipeline's data sinks.</p>
      */
-    inline const Aws::Vector<MediaStreamSink>& GetSinks() const{ return m_sinks; }
+    inline const Aws::Vector<MediaStreamSink>& GetSinks() const { return m_sinks; }
     inline bool SinksHasBeenSet() const { return m_sinksHasBeenSet; }
-    inline void SetSinks(const Aws::Vector<MediaStreamSink>& value) { m_sinksHasBeenSet = true; m_sinks = value; }
-    inline void SetSinks(Aws::Vector<MediaStreamSink>&& value) { m_sinksHasBeenSet = true; m_sinks = std::move(value); }
-    inline MediaStreamPipeline& WithSinks(const Aws::Vector<MediaStreamSink>& value) { SetSinks(value); return *this;}
-    inline MediaStreamPipeline& WithSinks(Aws::Vector<MediaStreamSink>&& value) { SetSinks(std::move(value)); return *this;}
-    inline MediaStreamPipeline& AddSinks(const MediaStreamSink& value) { m_sinksHasBeenSet = true; m_sinks.push_back(value); return *this; }
-    inline MediaStreamPipeline& AddSinks(MediaStreamSink&& value) { m_sinksHasBeenSet = true; m_sinks.push_back(std::move(value)); return *this; }
+    template<typename SinksT = Aws::Vector<MediaStreamSink>>
+    void SetSinks(SinksT&& value) { m_sinksHasBeenSet = true; m_sinks = std::forward<SinksT>(value); }
+    template<typename SinksT = Aws::Vector<MediaStreamSink>>
+    MediaStreamPipeline& WithSinks(SinksT&& value) { SetSinks(std::forward<SinksT>(value)); return *this;}
+    template<typename SinksT = MediaStreamSink>
+    MediaStreamPipeline& AddSinks(SinksT&& value) { m_sinksHasBeenSet = true; m_sinks.emplace_back(std::forward<SinksT>(value)); return *this; }
     ///@}
   private:
 
@@ -142,13 +136,13 @@ namespace Model
     Aws::String m_mediaPipelineArn;
     bool m_mediaPipelineArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
     bool m_updatedTimestampHasBeenSet = false;
 
-    MediaPipelineStatus m_status;
+    MediaPipelineStatus m_status{MediaPipelineStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<MediaStreamSource> m_sources;

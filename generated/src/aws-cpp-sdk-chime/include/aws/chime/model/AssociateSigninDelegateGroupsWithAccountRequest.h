@@ -23,7 +23,7 @@ namespace Model
   class AssociateSigninDelegateGroupsWithAccountRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API AssociateSigninDelegateGroupsWithAccountRequest();
+    AWS_CHIME_API AssociateSigninDelegateGroupsWithAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,26 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AssociateSigninDelegateGroupsWithAccountRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AssociateSigninDelegateGroupsWithAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AssociateSigninDelegateGroupsWithAccountRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AssociateSigninDelegateGroupsWithAccountRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sign-in delegate groups.</p>
      */
-    inline const Aws::Vector<SigninDelegateGroup>& GetSigninDelegateGroups() const{ return m_signinDelegateGroups; }
+    inline const Aws::Vector<SigninDelegateGroup>& GetSigninDelegateGroups() const { return m_signinDelegateGroups; }
     inline bool SigninDelegateGroupsHasBeenSet() const { return m_signinDelegateGroupsHasBeenSet; }
-    inline void SetSigninDelegateGroups(const Aws::Vector<SigninDelegateGroup>& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups = value; }
-    inline void SetSigninDelegateGroups(Aws::Vector<SigninDelegateGroup>&& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups = std::move(value); }
-    inline AssociateSigninDelegateGroupsWithAccountRequest& WithSigninDelegateGroups(const Aws::Vector<SigninDelegateGroup>& value) { SetSigninDelegateGroups(value); return *this;}
-    inline AssociateSigninDelegateGroupsWithAccountRequest& WithSigninDelegateGroups(Aws::Vector<SigninDelegateGroup>&& value) { SetSigninDelegateGroups(std::move(value)); return *this;}
-    inline AssociateSigninDelegateGroupsWithAccountRequest& AddSigninDelegateGroups(const SigninDelegateGroup& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups.push_back(value); return *this; }
-    inline AssociateSigninDelegateGroupsWithAccountRequest& AddSigninDelegateGroups(SigninDelegateGroup&& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups.push_back(std::move(value)); return *this; }
+    template<typename SigninDelegateGroupsT = Aws::Vector<SigninDelegateGroup>>
+    void SetSigninDelegateGroups(SigninDelegateGroupsT&& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups = std::forward<SigninDelegateGroupsT>(value); }
+    template<typename SigninDelegateGroupsT = Aws::Vector<SigninDelegateGroup>>
+    AssociateSigninDelegateGroupsWithAccountRequest& WithSigninDelegateGroups(SigninDelegateGroupsT&& value) { SetSigninDelegateGroups(std::forward<SigninDelegateGroupsT>(value)); return *this;}
+    template<typename SigninDelegateGroupsT = SigninDelegateGroup>
+    AssociateSigninDelegateGroupsWithAccountRequest& AddSigninDelegateGroups(SigninDelegateGroupsT&& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups.emplace_back(std::forward<SigninDelegateGroupsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SiteMapsConfiguration::SiteMapsConfiguration() : 
-    m_siteMapsHasBeenSet(false)
-{
-}
-
 SiteMapsConfiguration::SiteMapsConfiguration(JsonView jsonValue)
-  : SiteMapsConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SiteMapsConfiguration& SiteMapsConfiguration::operator =(JsonView jsonValue)
     }
     m_siteMapsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::InternetMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopQueryRequest::StopQueryRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String StopQueryRequest::SerializePayload() const
 {
   return {};

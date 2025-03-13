@@ -12,12 +12,6 @@ using namespace Aws::RecycleBin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-LockRuleRequest::LockRuleRequest() : 
-    m_identifierHasBeenSet(false),
-    m_lockConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String LockRuleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInternetGatewaysResponse::DescribeInternetGatewaysResponse()
-{
-}
-
 DescribeInternetGatewaysResponse::DescribeInternetGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeInternetGatewaysResponse& DescribeInternetGatewaysResponse::operator =(c
     if(!internetGatewaysNode.IsNull())
     {
       XmlNode internetGatewaysMember = internetGatewaysNode.FirstChild("item");
+      m_internetGatewaysHasBeenSet = !internetGatewaysMember.IsNull();
       while(!internetGatewaysMember.IsNull())
       {
         m_internetGateways.push_back(internetGatewaysMember);
@@ -53,6 +50,7 @@ DescribeInternetGatewaysResponse& DescribeInternetGatewaysResponse::operator =(c
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeInternetGatewaysResponse& DescribeInternetGatewaysResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeInternetGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

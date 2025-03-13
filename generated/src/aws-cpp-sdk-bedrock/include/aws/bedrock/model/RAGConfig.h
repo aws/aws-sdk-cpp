@@ -32,7 +32,7 @@ namespace Model
   class RAGConfig
   {
   public:
-    AWS_BEDROCK_API RAGConfig();
+    AWS_BEDROCK_API RAGConfig() = default;
     AWS_BEDROCK_API RAGConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API RAGConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Contains configuration details for knowledge base retrieval and response
      * generation.</p>
      */
-    inline const KnowledgeBaseConfig& GetKnowledgeBaseConfig() const{ return m_knowledgeBaseConfig; }
+    inline const KnowledgeBaseConfig& GetKnowledgeBaseConfig() const { return m_knowledgeBaseConfig; }
     inline bool KnowledgeBaseConfigHasBeenSet() const { return m_knowledgeBaseConfigHasBeenSet; }
-    inline void SetKnowledgeBaseConfig(const KnowledgeBaseConfig& value) { m_knowledgeBaseConfigHasBeenSet = true; m_knowledgeBaseConfig = value; }
-    inline void SetKnowledgeBaseConfig(KnowledgeBaseConfig&& value) { m_knowledgeBaseConfigHasBeenSet = true; m_knowledgeBaseConfig = std::move(value); }
-    inline RAGConfig& WithKnowledgeBaseConfig(const KnowledgeBaseConfig& value) { SetKnowledgeBaseConfig(value); return *this;}
-    inline RAGConfig& WithKnowledgeBaseConfig(KnowledgeBaseConfig&& value) { SetKnowledgeBaseConfig(std::move(value)); return *this;}
+    template<typename KnowledgeBaseConfigT = KnowledgeBaseConfig>
+    void SetKnowledgeBaseConfig(KnowledgeBaseConfigT&& value) { m_knowledgeBaseConfigHasBeenSet = true; m_knowledgeBaseConfig = std::forward<KnowledgeBaseConfigT>(value); }
+    template<typename KnowledgeBaseConfigT = KnowledgeBaseConfig>
+    RAGConfig& WithKnowledgeBaseConfig(KnowledgeBaseConfigT&& value) { SetKnowledgeBaseConfig(std::forward<KnowledgeBaseConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-BatchDeleteDevicePositionHistoryError::BatchDeleteDevicePositionHistoryError() : 
-    m_deviceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 BatchDeleteDevicePositionHistoryError::BatchDeleteDevicePositionHistoryError(JsonView jsonValue)
-  : BatchDeleteDevicePositionHistoryError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchDeleteDevicePositionHistoryError& BatchDeleteDevicePositionHistoryError::op
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

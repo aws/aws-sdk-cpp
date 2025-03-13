@@ -12,15 +12,6 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterDeviceRequest::RegisterDeviceRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String RegisterDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

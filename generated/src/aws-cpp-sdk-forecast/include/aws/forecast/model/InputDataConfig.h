@@ -37,7 +37,7 @@ namespace Model
   class InputDataConfig
   {
   public:
-    AWS_FORECASTSERVICE_API InputDataConfig();
+    AWS_FORECASTSERVICE_API InputDataConfig() = default;
     AWS_FORECASTSERVICE_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset group.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-    inline InputDataConfig& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline InputDataConfig& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline InputDataConfig& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    InputDataConfig& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * <p>An array of supplementary features. The only supported feature is a holiday
      * calendar.</p>
      */
-    inline const Aws::Vector<SupplementaryFeature>& GetSupplementaryFeatures() const{ return m_supplementaryFeatures; }
+    inline const Aws::Vector<SupplementaryFeature>& GetSupplementaryFeatures() const { return m_supplementaryFeatures; }
     inline bool SupplementaryFeaturesHasBeenSet() const { return m_supplementaryFeaturesHasBeenSet; }
-    inline void SetSupplementaryFeatures(const Aws::Vector<SupplementaryFeature>& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures = value; }
-    inline void SetSupplementaryFeatures(Aws::Vector<SupplementaryFeature>&& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures = std::move(value); }
-    inline InputDataConfig& WithSupplementaryFeatures(const Aws::Vector<SupplementaryFeature>& value) { SetSupplementaryFeatures(value); return *this;}
-    inline InputDataConfig& WithSupplementaryFeatures(Aws::Vector<SupplementaryFeature>&& value) { SetSupplementaryFeatures(std::move(value)); return *this;}
-    inline InputDataConfig& AddSupplementaryFeatures(const SupplementaryFeature& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures.push_back(value); return *this; }
-    inline InputDataConfig& AddSupplementaryFeatures(SupplementaryFeature&& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures.push_back(std::move(value)); return *this; }
+    template<typename SupplementaryFeaturesT = Aws::Vector<SupplementaryFeature>>
+    void SetSupplementaryFeatures(SupplementaryFeaturesT&& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures = std::forward<SupplementaryFeaturesT>(value); }
+    template<typename SupplementaryFeaturesT = Aws::Vector<SupplementaryFeature>>
+    InputDataConfig& WithSupplementaryFeatures(SupplementaryFeaturesT&& value) { SetSupplementaryFeatures(std::forward<SupplementaryFeaturesT>(value)); return *this;}
+    template<typename SupplementaryFeaturesT = SupplementaryFeature>
+    InputDataConfig& AddSupplementaryFeatures(SupplementaryFeaturesT&& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures.emplace_back(std::forward<SupplementaryFeaturesT>(value)); return *this; }
     ///@}
   private:
 

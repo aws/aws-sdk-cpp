@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingDistributionConfigWithTags::StreamingDistributionConfigWithTags() : 
-    m_streamingDistributionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 StreamingDistributionConfigWithTags::StreamingDistributionConfigWithTags(const XmlNode& xmlNode)
-  : StreamingDistributionConfigWithTags()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ StreamingDistributionConfigWithTags& StreamingDistributionConfigWithTags::operat
     {
       m_streamingDistributionConfig = streamingDistributionConfigNode;
       m_streamingDistributionConfigHasBeenSet = true;
+       m_streamingDistributionConfigHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       m_tags = tagsNode;
       m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

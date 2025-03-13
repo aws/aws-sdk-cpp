@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-AnomalyDateInterval::AnomalyDateInterval() : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
-{
-}
-
 AnomalyDateInterval::AnomalyDateInterval(JsonView jsonValue)
-  : AnomalyDateInterval()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AnomalyDateInterval& AnomalyDateInterval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetString("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDate"))
   {
     m_endDate = jsonValue.GetString("EndDate");
-
     m_endDateHasBeenSet = true;
   }
-
   return *this;
 }
 

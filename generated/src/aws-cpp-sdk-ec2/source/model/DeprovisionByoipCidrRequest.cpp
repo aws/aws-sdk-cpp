@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeprovisionByoipCidrRequest::DeprovisionByoipCidrRequest() : 
-    m_cidrHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeprovisionByoipCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

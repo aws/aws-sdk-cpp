@@ -18,15 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AssessmentRiskRecommendation::AssessmentRiskRecommendation() : 
-    m_appComponentsHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_riskHasBeenSet(false)
-{
-}
-
 AssessmentRiskRecommendation::AssessmentRiskRecommendation(JsonView jsonValue)
-  : AssessmentRiskRecommendation()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ AssessmentRiskRecommendation& AssessmentRiskRecommendation::operator =(JsonView 
     }
     m_appComponentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendation"))
   {
     m_recommendation = jsonValue.GetString("recommendation");
-
     m_recommendationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("risk"))
   {
     m_risk = jsonValue.GetString("risk");
-
     m_riskHasBeenSet = true;
   }
-
   return *this;
 }
 

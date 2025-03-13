@@ -34,7 +34,7 @@ namespace Model
   class LoRaWANUpdateDevice
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANUpdateDevice();
+    AWS_IOTWIRELESS_API LoRaWANUpdateDevice() = default;
     AWS_IOTWIRELESS_API LoRaWANUpdateDevice(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANUpdateDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,64 +44,60 @@ namespace Model
     /**
      * <p>The ID of the device profile for the wireless device.</p>
      */
-    inline const Aws::String& GetDeviceProfileId() const{ return m_deviceProfileId; }
+    inline const Aws::String& GetDeviceProfileId() const { return m_deviceProfileId; }
     inline bool DeviceProfileIdHasBeenSet() const { return m_deviceProfileIdHasBeenSet; }
-    inline void SetDeviceProfileId(const Aws::String& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = value; }
-    inline void SetDeviceProfileId(Aws::String&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::move(value); }
-    inline void SetDeviceProfileId(const char* value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId.assign(value); }
-    inline LoRaWANUpdateDevice& WithDeviceProfileId(const Aws::String& value) { SetDeviceProfileId(value); return *this;}
-    inline LoRaWANUpdateDevice& WithDeviceProfileId(Aws::String&& value) { SetDeviceProfileId(std::move(value)); return *this;}
-    inline LoRaWANUpdateDevice& WithDeviceProfileId(const char* value) { SetDeviceProfileId(value); return *this;}
+    template<typename DeviceProfileIdT = Aws::String>
+    void SetDeviceProfileId(DeviceProfileIdT&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::forward<DeviceProfileIdT>(value); }
+    template<typename DeviceProfileIdT = Aws::String>
+    LoRaWANUpdateDevice& WithDeviceProfileId(DeviceProfileIdT&& value) { SetDeviceProfileId(std::forward<DeviceProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service profile.</p>
      */
-    inline const Aws::String& GetServiceProfileId() const{ return m_serviceProfileId; }
+    inline const Aws::String& GetServiceProfileId() const { return m_serviceProfileId; }
     inline bool ServiceProfileIdHasBeenSet() const { return m_serviceProfileIdHasBeenSet; }
-    inline void SetServiceProfileId(const Aws::String& value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId = value; }
-    inline void SetServiceProfileId(Aws::String&& value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId = std::move(value); }
-    inline void SetServiceProfileId(const char* value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId.assign(value); }
-    inline LoRaWANUpdateDevice& WithServiceProfileId(const Aws::String& value) { SetServiceProfileId(value); return *this;}
-    inline LoRaWANUpdateDevice& WithServiceProfileId(Aws::String&& value) { SetServiceProfileId(std::move(value)); return *this;}
-    inline LoRaWANUpdateDevice& WithServiceProfileId(const char* value) { SetServiceProfileId(value); return *this;}
+    template<typename ServiceProfileIdT = Aws::String>
+    void SetServiceProfileId(ServiceProfileIdT&& value) { m_serviceProfileIdHasBeenSet = true; m_serviceProfileId = std::forward<ServiceProfileIdT>(value); }
+    template<typename ServiceProfileIdT = Aws::String>
+    LoRaWANUpdateDevice& WithServiceProfileId(ServiceProfileIdT&& value) { SetServiceProfileId(std::forward<ServiceProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ABP device object for update APIs for v1.1</p>
      */
-    inline const UpdateAbpV1_1& GetAbpV1_1() const{ return m_abpV1_1; }
+    inline const UpdateAbpV1_1& GetAbpV1_1() const { return m_abpV1_1; }
     inline bool AbpV1_1HasBeenSet() const { return m_abpV1_1HasBeenSet; }
-    inline void SetAbpV1_1(const UpdateAbpV1_1& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = value; }
-    inline void SetAbpV1_1(UpdateAbpV1_1&& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = std::move(value); }
-    inline LoRaWANUpdateDevice& WithAbpV1_1(const UpdateAbpV1_1& value) { SetAbpV1_1(value); return *this;}
-    inline LoRaWANUpdateDevice& WithAbpV1_1(UpdateAbpV1_1&& value) { SetAbpV1_1(std::move(value)); return *this;}
+    template<typename AbpV1_1T = UpdateAbpV1_1>
+    void SetAbpV1_1(AbpV1_1T&& value) { m_abpV1_1HasBeenSet = true; m_abpV1_1 = std::forward<AbpV1_1T>(value); }
+    template<typename AbpV1_1T = UpdateAbpV1_1>
+    LoRaWANUpdateDevice& WithAbpV1_1(AbpV1_1T&& value) { SetAbpV1_1(std::forward<AbpV1_1T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ABP device object for update APIs for v1.0.x</p>
      */
-    inline const UpdateAbpV1_0_x& GetAbpV1_0_x() const{ return m_abpV1_0_x; }
+    inline const UpdateAbpV1_0_x& GetAbpV1_0_x() const { return m_abpV1_0_x; }
     inline bool AbpV1_0_xHasBeenSet() const { return m_abpV1_0_xHasBeenSet; }
-    inline void SetAbpV1_0_x(const UpdateAbpV1_0_x& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = value; }
-    inline void SetAbpV1_0_x(UpdateAbpV1_0_x&& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = std::move(value); }
-    inline LoRaWANUpdateDevice& WithAbpV1_0_x(const UpdateAbpV1_0_x& value) { SetAbpV1_0_x(value); return *this;}
-    inline LoRaWANUpdateDevice& WithAbpV1_0_x(UpdateAbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
+    template<typename AbpV1_0_xT = UpdateAbpV1_0_x>
+    void SetAbpV1_0_x(AbpV1_0_xT&& value) { m_abpV1_0_xHasBeenSet = true; m_abpV1_0_x = std::forward<AbpV1_0_xT>(value); }
+    template<typename AbpV1_0_xT = UpdateAbpV1_0_x>
+    LoRaWANUpdateDevice& WithAbpV1_0_x(AbpV1_0_xT&& value) { SetAbpV1_0_x(std::forward<AbpV1_0_xT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>FPorts object for the positioning information of the device.</p>
      */
-    inline const UpdateFPorts& GetFPorts() const{ return m_fPorts; }
+    inline const UpdateFPorts& GetFPorts() const { return m_fPorts; }
     inline bool FPortsHasBeenSet() const { return m_fPortsHasBeenSet; }
-    inline void SetFPorts(const UpdateFPorts& value) { m_fPortsHasBeenSet = true; m_fPorts = value; }
-    inline void SetFPorts(UpdateFPorts&& value) { m_fPortsHasBeenSet = true; m_fPorts = std::move(value); }
-    inline LoRaWANUpdateDevice& WithFPorts(const UpdateFPorts& value) { SetFPorts(value); return *this;}
-    inline LoRaWANUpdateDevice& WithFPorts(UpdateFPorts&& value) { SetFPorts(std::move(value)); return *this;}
+    template<typename FPortsT = UpdateFPorts>
+    void SetFPorts(FPortsT&& value) { m_fPortsHasBeenSet = true; m_fPorts = std::forward<FPortsT>(value); }
+    template<typename FPortsT = UpdateFPorts>
+    LoRaWANUpdateDevice& WithFPorts(FPortsT&& value) { SetFPorts(std::forward<FPortsT>(value)); return *this;}
     ///@}
   private:
 

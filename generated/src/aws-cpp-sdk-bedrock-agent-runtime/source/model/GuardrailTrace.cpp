@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailTrace::GuardrailTrace() : 
-    m_action(GuardrailAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_inputAssessmentsHasBeenSet(false),
-    m_outputAssessmentsHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 GuardrailTrace::GuardrailTrace(JsonView jsonValue)
-  : GuardrailTrace()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailActionMapper::GetGuardrailActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputAssessments"))
   {
     Aws::Utils::Array<JsonView> inputAssessmentsJsonList = jsonValue.GetArray("inputAssessments");
@@ -51,7 +39,6 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
     }
     m_inputAssessmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputAssessments"))
   {
     Aws::Utils::Array<JsonView> outputAssessmentsJsonList = jsonValue.GetArray("outputAssessments");
@@ -61,14 +48,11 @@ GuardrailTrace& GuardrailTrace::operator =(JsonView jsonValue)
     }
     m_outputAssessmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

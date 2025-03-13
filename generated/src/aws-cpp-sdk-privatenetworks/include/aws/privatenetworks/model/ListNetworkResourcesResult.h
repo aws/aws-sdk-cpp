@@ -29,7 +29,7 @@ namespace Model
   class ListNetworkResourcesResult
   {
   public:
-    AWS_PRIVATENETWORKS_API ListNetworkResourcesResult();
+    AWS_PRIVATENETWORKS_API ListNetworkResourcesResult() = default;
     AWS_PRIVATENETWORKS_API ListNetworkResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API ListNetworkResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Information about network resources.</p>
      */
-    inline const Aws::Vector<NetworkResource>& GetNetworkResources() const{ return m_networkResources; }
-    inline void SetNetworkResources(const Aws::Vector<NetworkResource>& value) { m_networkResources = value; }
-    inline void SetNetworkResources(Aws::Vector<NetworkResource>&& value) { m_networkResources = std::move(value); }
-    inline ListNetworkResourcesResult& WithNetworkResources(const Aws::Vector<NetworkResource>& value) { SetNetworkResources(value); return *this;}
-    inline ListNetworkResourcesResult& WithNetworkResources(Aws::Vector<NetworkResource>&& value) { SetNetworkResources(std::move(value)); return *this;}
-    inline ListNetworkResourcesResult& AddNetworkResources(const NetworkResource& value) { m_networkResources.push_back(value); return *this; }
-    inline ListNetworkResourcesResult& AddNetworkResources(NetworkResource&& value) { m_networkResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NetworkResource>& GetNetworkResources() const { return m_networkResources; }
+    template<typename NetworkResourcesT = Aws::Vector<NetworkResource>>
+    void SetNetworkResources(NetworkResourcesT&& value) { m_networkResourcesHasBeenSet = true; m_networkResources = std::forward<NetworkResourcesT>(value); }
+    template<typename NetworkResourcesT = Aws::Vector<NetworkResource>>
+    ListNetworkResourcesResult& WithNetworkResources(NetworkResourcesT&& value) { SetNetworkResources(std::forward<NetworkResourcesT>(value)); return *this;}
+    template<typename NetworkResourcesT = NetworkResource>
+    ListNetworkResourcesResult& AddNetworkResources(NetworkResourcesT&& value) { m_networkResourcesHasBeenSet = true; m_networkResources.emplace_back(std::forward<NetworkResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNetworkResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNetworkResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNetworkResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNetworkResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNetworkResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNetworkResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNetworkResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNetworkResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NetworkResource> m_networkResources;
+    bool m_networkResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

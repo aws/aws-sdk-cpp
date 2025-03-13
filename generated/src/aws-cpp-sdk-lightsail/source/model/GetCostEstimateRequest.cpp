@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCostEstimateRequest::GetCostEstimateRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetCostEstimateRequest::SerializePayload() const
 {
   JsonValue payload;

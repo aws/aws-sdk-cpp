@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails() : 
-    m_accessPointIdHasBeenSet(false),
-    m_iamHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails& Aws
   if(jsonValue.ValueExists("AccessPointId"))
   {
     m_accessPointId = jsonValue.GetString("AccessPointId");
-
     m_accessPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iam"))
   {
     m_iam = jsonValue.GetString("Iam");
-
     m_iamHasBeenSet = true;
   }
-
   return *this;
 }
 

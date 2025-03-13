@@ -18,18 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-EntityTypeFilters::EntityTypeFilters() : 
-    m_dataProductFiltersHasBeenSet(false),
-    m_saaSProductFiltersHasBeenSet(false),
-    m_amiProductFiltersHasBeenSet(false),
-    m_offerFiltersHasBeenSet(false),
-    m_containerProductFiltersHasBeenSet(false),
-    m_resaleAuthorizationFiltersHasBeenSet(false)
-{
-}
-
 EntityTypeFilters::EntityTypeFilters(JsonView jsonValue)
-  : EntityTypeFilters()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ EntityTypeFilters& EntityTypeFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataProductFilters"))
   {
     m_dataProductFilters = jsonValue.GetObject("DataProductFilters");
-
     m_dataProductFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SaaSProductFilters"))
   {
     m_saaSProductFilters = jsonValue.GetObject("SaaSProductFilters");
-
     m_saaSProductFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmiProductFilters"))
   {
     m_amiProductFilters = jsonValue.GetObject("AmiProductFilters");
-
     m_amiProductFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferFilters"))
   {
     m_offerFilters = jsonValue.GetObject("OfferFilters");
-
     m_offerFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerProductFilters"))
   {
     m_containerProductFilters = jsonValue.GetObject("ContainerProductFilters");
-
     m_containerProductFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResaleAuthorizationFilters"))
   {
     m_resaleAuthorizationFilters = jsonValue.GetObject("ResaleAuthorizationFilters");
-
     m_resaleAuthorizationFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

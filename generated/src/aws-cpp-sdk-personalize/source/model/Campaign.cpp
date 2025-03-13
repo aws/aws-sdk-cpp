@@ -18,23 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-Campaign::Campaign() : 
-    m_nameHasBeenSet(false),
-    m_campaignArnHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_minProvisionedTPS(0),
-    m_minProvisionedTPSHasBeenSet(false),
-    m_campaignConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestCampaignUpdateHasBeenSet(false)
-{
-}
-
 Campaign::Campaign(JsonView jsonValue)
-  : Campaign()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ Campaign& Campaign::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("campaignArn"))
   {
     m_campaignArn = jsonValue.GetString("campaignArn");
-
     m_campaignArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionVersionArn"))
   {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
-
     m_solutionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minProvisionedTPS"))
   {
     m_minProvisionedTPS = jsonValue.GetInteger("minProvisionedTPS");
-
     m_minProvisionedTPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("campaignConfig"))
   {
     m_campaignConfig = jsonValue.GetObject("campaignConfig");
-
     m_campaignConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestCampaignUpdate"))
   {
     m_latestCampaignUpdate = jsonValue.GetObject("latestCampaignUpdate");
-
     m_latestCampaignUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

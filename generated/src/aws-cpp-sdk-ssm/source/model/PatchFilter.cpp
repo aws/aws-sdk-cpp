@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-PatchFilter::PatchFilter() : 
-    m_key(PatchFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 PatchFilter::PatchFilter(JsonView jsonValue)
-  : PatchFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PatchFilter& PatchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = PatchFilterKeyMapper::GetPatchFilterKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ PatchFilter& PatchFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

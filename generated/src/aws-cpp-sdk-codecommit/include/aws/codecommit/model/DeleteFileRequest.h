@@ -21,7 +21,7 @@ namespace Model
   class DeleteFileRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API DeleteFileRequest();
+    AWS_CODECOMMIT_API DeleteFileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the repository that contains the file to delete.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline DeleteFileRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline DeleteFileRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    DeleteFileRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the branch where the commit that deletes the file is made.</p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline DeleteFileRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline DeleteFileRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    DeleteFileRequest& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * name and extension of that file. For example, /examples/file.md is a fully
      * qualified path to a file named file.md in a folder named examples.</p>
      */
-    inline const Aws::String& GetFilePath() const{ return m_filePath; }
+    inline const Aws::String& GetFilePath() const { return m_filePath; }
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-    inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
-    inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
-    inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
-    inline DeleteFileRequest& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
-    inline DeleteFileRequest& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+    template<typename FilePathT = Aws::String>
+    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
+    template<typename FilePathT = Aws::String>
+    DeleteFileRequest& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,12 @@ namespace Model
      * the commit that deletes the file. This must be the HEAD commit for the branch.
      * The commit that deletes the file is created from this commit ID.</p>
      */
-    inline const Aws::String& GetParentCommitId() const{ return m_parentCommitId; }
+    inline const Aws::String& GetParentCommitId() const { return m_parentCommitId; }
     inline bool ParentCommitIdHasBeenSet() const { return m_parentCommitIdHasBeenSet; }
-    inline void SetParentCommitId(const Aws::String& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = value; }
-    inline void SetParentCommitId(Aws::String&& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = std::move(value); }
-    inline void SetParentCommitId(const char* value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId.assign(value); }
-    inline DeleteFileRequest& WithParentCommitId(const Aws::String& value) { SetParentCommitId(value); return *this;}
-    inline DeleteFileRequest& WithParentCommitId(Aws::String&& value) { SetParentCommitId(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithParentCommitId(const char* value) { SetParentCommitId(value); return *this;}
+    template<typename ParentCommitIdT = Aws::String>
+    void SetParentCommitId(ParentCommitIdT&& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = std::forward<ParentCommitIdT>(value); }
+    template<typename ParentCommitIdT = Aws::String>
+    DeleteFileRequest& WithParentCommitId(ParentCommitIdT&& value) { SetParentCommitId(std::forward<ParentCommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +95,7 @@ namespace Model
      * and dir3 are empty, deleting the last file in dir4 also deletes the empty
      * folders dir4, dir3, and dir2.</p>
      */
-    inline bool GetKeepEmptyFolders() const{ return m_keepEmptyFolders; }
+    inline bool GetKeepEmptyFolders() const { return m_keepEmptyFolders; }
     inline bool KeepEmptyFoldersHasBeenSet() const { return m_keepEmptyFoldersHasBeenSet; }
     inline void SetKeepEmptyFolders(bool value) { m_keepEmptyFoldersHasBeenSet = true; m_keepEmptyFolders = value; }
     inline DeleteFileRequest& WithKeepEmptyFolders(bool value) { SetKeepEmptyFolders(value); return *this;}
@@ -115,14 +107,12 @@ namespace Model
      * messages are limited to 256 KB. If no message is specified, a default message is
      * used.</p>
      */
-    inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
+    inline const Aws::String& GetCommitMessage() const { return m_commitMessage; }
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
-    inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
-    inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
-    inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
-    inline DeleteFileRequest& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
-    inline DeleteFileRequest& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
+    template<typename CommitMessageT = Aws::String>
+    void SetCommitMessage(CommitMessageT&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::forward<CommitMessageT>(value); }
+    template<typename CommitMessageT = Aws::String>
+    DeleteFileRequest& WithCommitMessage(CommitMessageT&& value) { SetCommitMessage(std::forward<CommitMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +120,12 @@ namespace Model
      * <p>The name of the author of the commit that deletes the file. If no name is
      * specified, the user's ARN is used as the author name and committer name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteFileRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteFileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteFileRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +133,12 @@ namespace Model
      * <p>The email address for the commit that deletes the file. If no email address
      * is specified, the email address is left blank.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline DeleteFileRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline DeleteFileRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline DeleteFileRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    DeleteFileRequest& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
   private:
 
@@ -168,7 +154,7 @@ namespace Model
     Aws::String m_parentCommitId;
     bool m_parentCommitIdHasBeenSet = false;
 
-    bool m_keepEmptyFolders;
+    bool m_keepEmptyFolders{false};
     bool m_keepEmptyFoldersHasBeenSet = false;
 
     Aws::String m_commitMessage;

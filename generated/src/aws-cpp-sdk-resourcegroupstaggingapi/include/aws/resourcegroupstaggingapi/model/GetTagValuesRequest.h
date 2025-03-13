@@ -21,7 +21,7 @@ namespace Model
   class GetTagValuesRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API GetTagValuesRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetTagValuesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * request to indicate that you want the next page of results. Leave this parameter
      * empty in your initial request.</p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-    inline GetTagValuesRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline GetTagValuesRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline GetTagValuesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    GetTagValuesRequest& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * currently used in the specified Amazon Web Services Region for the calling
      * account.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetTagValuesRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetTagValuesRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetTagValuesRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetTagValuesRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

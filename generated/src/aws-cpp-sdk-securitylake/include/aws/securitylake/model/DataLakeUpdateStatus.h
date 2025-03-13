@@ -36,7 +36,7 @@ namespace Model
   class DataLakeUpdateStatus
   {
   public:
-    AWS_SECURITYLAKE_API DataLakeUpdateStatus();
+    AWS_SECURITYLAKE_API DataLakeUpdateStatus() = default;
     AWS_SECURITYLAKE_API DataLakeUpdateStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API DataLakeUpdateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>The details of the last <code>UpdateDataLake</code>or
      * <code>DeleteDataLake</code> API request which failed.</p>
      */
-    inline const DataLakeUpdateException& GetException() const{ return m_exception; }
+    inline const DataLakeUpdateException& GetException() const { return m_exception; }
     inline bool ExceptionHasBeenSet() const { return m_exceptionHasBeenSet; }
-    inline void SetException(const DataLakeUpdateException& value) { m_exceptionHasBeenSet = true; m_exception = value; }
-    inline void SetException(DataLakeUpdateException&& value) { m_exceptionHasBeenSet = true; m_exception = std::move(value); }
-    inline DataLakeUpdateStatus& WithException(const DataLakeUpdateException& value) { SetException(value); return *this;}
-    inline DataLakeUpdateStatus& WithException(DataLakeUpdateException&& value) { SetException(std::move(value)); return *this;}
+    template<typename ExceptionT = DataLakeUpdateException>
+    void SetException(ExceptionT&& value) { m_exceptionHasBeenSet = true; m_exception = std::forward<ExceptionT>(value); }
+    template<typename ExceptionT = DataLakeUpdateException>
+    DataLakeUpdateStatus& WithException(ExceptionT&& value) { SetException(std::forward<ExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * <p>The unique ID for the last <code>UpdateDataLake</code> or
      * <code>DeleteDataLake</code> API request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline DataLakeUpdateStatus& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DataLakeUpdateStatus& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DataLakeUpdateStatus& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DataLakeUpdateStatus& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * <p>The status of the last <code>UpdateDataLake</code> or
      * <code>DeleteDataLake</code> API request that was requested.</p>
      */
-    inline const DataLakeStatus& GetStatus() const{ return m_status; }
+    inline DataLakeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataLakeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataLakeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataLakeUpdateStatus& WithStatus(const DataLakeStatus& value) { SetStatus(value); return *this;}
-    inline DataLakeUpdateStatus& WithStatus(DataLakeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataLakeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataLakeUpdateStatus& WithStatus(DataLakeStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -90,7 +86,7 @@ namespace Model
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    DataLakeStatus m_status;
+    DataLakeStatus m_status{DataLakeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

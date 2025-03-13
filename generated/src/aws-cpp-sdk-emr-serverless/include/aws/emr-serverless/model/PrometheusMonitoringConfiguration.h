@@ -33,7 +33,7 @@ namespace Model
   class PrometheusMonitoringConfiguration
   {
   public:
-    AWS_EMRSERVERLESS_API PrometheusMonitoringConfiguration();
+    AWS_EMRSERVERLESS_API PrometheusMonitoringConfiguration() = default;
     AWS_EMRSERVERLESS_API PrometheusMonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API PrometheusMonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The remote write URL in the Amazon Managed Service for Prometheus workspace
      * to send metrics to.</p>
      */
-    inline const Aws::String& GetRemoteWriteUrl() const{ return m_remoteWriteUrl; }
+    inline const Aws::String& GetRemoteWriteUrl() const { return m_remoteWriteUrl; }
     inline bool RemoteWriteUrlHasBeenSet() const { return m_remoteWriteUrlHasBeenSet; }
-    inline void SetRemoteWriteUrl(const Aws::String& value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl = value; }
-    inline void SetRemoteWriteUrl(Aws::String&& value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl = std::move(value); }
-    inline void SetRemoteWriteUrl(const char* value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl.assign(value); }
-    inline PrometheusMonitoringConfiguration& WithRemoteWriteUrl(const Aws::String& value) { SetRemoteWriteUrl(value); return *this;}
-    inline PrometheusMonitoringConfiguration& WithRemoteWriteUrl(Aws::String&& value) { SetRemoteWriteUrl(std::move(value)); return *this;}
-    inline PrometheusMonitoringConfiguration& WithRemoteWriteUrl(const char* value) { SetRemoteWriteUrl(value); return *this;}
+    template<typename RemoteWriteUrlT = Aws::String>
+    void SetRemoteWriteUrl(RemoteWriteUrlT&& value) { m_remoteWriteUrlHasBeenSet = true; m_remoteWriteUrl = std::forward<RemoteWriteUrlT>(value); }
+    template<typename RemoteWriteUrlT = Aws::String>
+    PrometheusMonitoringConfiguration& WithRemoteWriteUrl(RemoteWriteUrlT&& value) { SetRemoteWriteUrl(std::forward<RemoteWriteUrlT>(value)); return *this;}
     ///@}
   private:
 

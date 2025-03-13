@@ -12,39 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBrokerRequest::CreateBrokerRequest() : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_authenticationStrategyHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_brokerNameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_deploymentMode(DeploymentMode::NOT_SET),
-    m_deploymentModeHasBeenSet(false),
-    m_encryptionOptionsHasBeenSet(false),
-    m_engineType(EngineType::NOT_SET),
-    m_engineTypeHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_hostInstanceTypeHasBeenSet(false),
-    m_ldapServerMetadataHasBeenSet(false),
-    m_logsHasBeenSet(false),
-    m_maintenanceWindowStartTimeHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_storageType(BrokerStorageType::NOT_SET),
-    m_storageTypeHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usersHasBeenSet(false),
-    m_dataReplicationMode(DataReplicationMode::NOT_SET),
-    m_dataReplicationModeHasBeenSet(false),
-    m_dataReplicationPrimaryBrokerArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateBrokerRequest::SerializePayload() const
 {
   JsonValue payload;

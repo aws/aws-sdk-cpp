@@ -28,7 +28,7 @@ namespace Model
   class DescribeVocabularyResult
   {
   public:
-    AWS_CONNECT_API DescribeVocabularyResult();
+    AWS_CONNECT_API DescribeVocabularyResult() = default;
     AWS_CONNECT_API DescribeVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * recognize in your audio input. They are generally domain-specific words and
      * phrases, words that Contact Lens is not recognizing, or proper nouns.</p>
      */
-    inline const Vocabulary& GetVocabulary() const{ return m_vocabulary; }
-    inline void SetVocabulary(const Vocabulary& value) { m_vocabulary = value; }
-    inline void SetVocabulary(Vocabulary&& value) { m_vocabulary = std::move(value); }
-    inline DescribeVocabularyResult& WithVocabulary(const Vocabulary& value) { SetVocabulary(value); return *this;}
-    inline DescribeVocabularyResult& WithVocabulary(Vocabulary&& value) { SetVocabulary(std::move(value)); return *this;}
+    inline const Vocabulary& GetVocabulary() const { return m_vocabulary; }
+    template<typename VocabularyT = Vocabulary>
+    void SetVocabulary(VocabularyT&& value) { m_vocabularyHasBeenSet = true; m_vocabulary = std::forward<VocabularyT>(value); }
+    template<typename VocabularyT = Vocabulary>
+    DescribeVocabularyResult& WithVocabulary(VocabularyT&& value) { SetVocabulary(std::forward<VocabularyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVocabularyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVocabularyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVocabularyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVocabularyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Vocabulary m_vocabulary;
+    bool m_vocabularyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

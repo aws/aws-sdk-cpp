@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkspaceBundleRequest::UpdateWorkspaceBundleRequest() : 
-    m_bundleIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkspaceBundleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetUserRequest::GetUserRequest() : 
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String GetUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-BatchUpdateFindingsUnprocessedFinding::BatchUpdateFindingsUnprocessedFinding() : 
-    m_findingIdentifierHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchUpdateFindingsUnprocessedFinding::BatchUpdateFindingsUnprocessedFinding(JsonView jsonValue)
-  : BatchUpdateFindingsUnprocessedFinding()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchUpdateFindingsUnprocessedFinding& BatchUpdateFindingsUnprocessedFinding::op
   if(jsonValue.ValueExists("FindingIdentifier"))
   {
     m_findingIdentifier = jsonValue.GetObject("FindingIdentifier");
-
     m_findingIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

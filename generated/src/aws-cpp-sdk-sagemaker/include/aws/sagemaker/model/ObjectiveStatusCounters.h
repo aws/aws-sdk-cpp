@@ -33,7 +33,7 @@ namespace Model
   class ObjectiveStatusCounters
   {
   public:
-    AWS_SAGEMAKER_API ObjectiveStatusCounters();
+    AWS_SAGEMAKER_API ObjectiveStatusCounters() = default;
     AWS_SAGEMAKER_API ObjectiveStatusCounters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ObjectiveStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The number of training jobs whose final objective metric was evaluated by the
      * hyperparameter tuning job and used in the hyperparameter tuning process.</p>
      */
-    inline int GetSucceeded() const{ return m_succeeded; }
+    inline int GetSucceeded() const { return m_succeeded; }
     inline bool SucceededHasBeenSet() const { return m_succeededHasBeenSet; }
     inline void SetSucceeded(int value) { m_succeededHasBeenSet = true; m_succeeded = value; }
     inline ObjectiveStatusCounters& WithSucceeded(int value) { SetSucceeded(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * <p>The number of training jobs that are in progress and pending evaluation of
      * their final objective metric.</p>
      */
-    inline int GetPending() const{ return m_pending; }
+    inline int GetPending() const { return m_pending; }
     inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
     inline void SetPending(int value) { m_pendingHasBeenSet = true; m_pending = value; }
     inline ObjectiveStatusCounters& WithPending(int value) { SetPending(value); return *this;}
@@ -67,20 +67,20 @@ namespace Model
      * and used in the hyperparameter tuning process. This typically occurs when the
      * training job failed or did not emit an objective metric.</p>
      */
-    inline int GetFailed() const{ return m_failed; }
+    inline int GetFailed() const { return m_failed; }
     inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
     inline void SetFailed(int value) { m_failedHasBeenSet = true; m_failed = value; }
     inline ObjectiveStatusCounters& WithFailed(int value) { SetFailed(value); return *this;}
     ///@}
   private:
 
-    int m_succeeded;
+    int m_succeeded{0};
     bool m_succeededHasBeenSet = false;
 
-    int m_pending;
+    int m_pending{0};
     bool m_pendingHasBeenSet = false;
 
-    int m_failed;
+    int m_failed{0};
     bool m_failedHasBeenSet = false;
   };
 

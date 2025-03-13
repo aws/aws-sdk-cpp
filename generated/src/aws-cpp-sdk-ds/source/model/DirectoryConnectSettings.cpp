@@ -18,16 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-DirectoryConnectSettings::DirectoryConnectSettings() : 
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_customerDnsIpsHasBeenSet(false),
-    m_customerUserNameHasBeenSet(false)
-{
-}
-
 DirectoryConnectSettings::DirectoryConnectSettings(JsonView jsonValue)
-  : DirectoryConnectSettings()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -50,7 +39,6 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValu
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerDnsIps"))
   {
     Aws::Utils::Array<JsonView> customerDnsIpsJsonList = jsonValue.GetArray("CustomerDnsIps");
@@ -60,14 +48,11 @@ DirectoryConnectSettings& DirectoryConnectSettings::operator =(JsonView jsonValu
     }
     m_customerDnsIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerUserName"))
   {
     m_customerUserName = jsonValue.GetString("CustomerUserName");
-
     m_customerUserNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ResultConfiguration::ResultConfiguration() : 
-    m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_aclConfigurationHasBeenSet(false)
-{
-}
-
 ResultConfiguration::ResultConfiguration(JsonView jsonValue)
-  : ResultConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResultConfiguration& ResultConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputLocation"))
   {
     m_outputLocation = jsonValue.GetString("OutputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedBucketOwner"))
   {
     m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
-
     m_expectedBucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AclConfiguration"))
   {
     m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
-
     m_aclConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

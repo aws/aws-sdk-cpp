@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-TestRenderTemplateRequest::TestRenderTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateDataHasBeenSet(false)
-{
-}
-
 Aws::String TestRenderTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

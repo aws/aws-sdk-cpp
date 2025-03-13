@@ -12,15 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRunCacheRequest::UpdateRunCacheRequest() : 
-    m_cacheBehavior(CacheBehavior::NOT_SET),
-    m_cacheBehaviorHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRunCacheRequest::SerializePayload() const
 {
   JsonValue payload;

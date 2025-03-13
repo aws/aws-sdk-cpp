@@ -27,7 +27,7 @@ namespace Model
   class BatchDeleteRumMetricDefinitionsRequest : public CloudWatchRUMRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsRequest();
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
      */
-    inline const Aws::String& GetAppMonitorName() const{ return m_appMonitorName; }
+    inline const Aws::String& GetAppMonitorName() const { return m_appMonitorName; }
     inline bool AppMonitorNameHasBeenSet() const { return m_appMonitorNameHasBeenSet; }
-    inline void SetAppMonitorName(const Aws::String& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = value; }
-    inline void SetAppMonitorName(Aws::String&& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = std::move(value); }
-    inline void SetAppMonitorName(const char* value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName.assign(value); }
-    inline BatchDeleteRumMetricDefinitionsRequest& WithAppMonitorName(const Aws::String& value) { SetAppMonitorName(value); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& WithAppMonitorName(Aws::String&& value) { SetAppMonitorName(std::move(value)); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& WithAppMonitorName(const char* value) { SetAppMonitorName(value); return *this;}
+    template<typename AppMonitorNameT = Aws::String>
+    void SetAppMonitorName(AppMonitorNameT&& value) { m_appMonitorNameHasBeenSet = true; m_appMonitorName = std::forward<AppMonitorNameT>(value); }
+    template<typename AppMonitorNameT = Aws::String>
+    BatchDeleteRumMetricDefinitionsRequest& WithAppMonitorName(AppMonitorNameT&& value) { SetAppMonitorName(std::forward<AppMonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * CloudWatchEvidently experiment that is to be the destination and an IAM role
      * that has permission to write to the experiment.</p>
      */
-    inline const MetricDestination& GetDestination() const{ return m_destination; }
+    inline MetricDestination GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const MetricDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(MetricDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline BatchDeleteRumMetricDefinitionsRequest& WithDestination(const MetricDestination& value) { SetDestination(value); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& WithDestination(MetricDestination&& value) { SetDestination(std::move(value)); return *this;}
+    inline void SetDestination(MetricDestination value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline BatchDeleteRumMetricDefinitionsRequest& WithDestination(MetricDestination value) { SetDestination(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * do not use this parameter. </p> <p>This parameter specifies the ARN of the
      * Evidently experiment that was receiving the metrics that are being deleted.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline BatchDeleteRumMetricDefinitionsRequest& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    BatchDeleteRumMetricDefinitionsRequest& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,22 +86,21 @@ namespace Model
      * <p>An array of structures which define the metrics that you want to stop
      * sending.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricDefinitionIds() const{ return m_metricDefinitionIds; }
+    inline const Aws::Vector<Aws::String>& GetMetricDefinitionIds() const { return m_metricDefinitionIds; }
     inline bool MetricDefinitionIdsHasBeenSet() const { return m_metricDefinitionIdsHasBeenSet; }
-    inline void SetMetricDefinitionIds(const Aws::Vector<Aws::String>& value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds = value; }
-    inline void SetMetricDefinitionIds(Aws::Vector<Aws::String>&& value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds = std::move(value); }
-    inline BatchDeleteRumMetricDefinitionsRequest& WithMetricDefinitionIds(const Aws::Vector<Aws::String>& value) { SetMetricDefinitionIds(value); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& WithMetricDefinitionIds(Aws::Vector<Aws::String>&& value) { SetMetricDefinitionIds(std::move(value)); return *this;}
-    inline BatchDeleteRumMetricDefinitionsRequest& AddMetricDefinitionIds(const Aws::String& value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds.push_back(value); return *this; }
-    inline BatchDeleteRumMetricDefinitionsRequest& AddMetricDefinitionIds(Aws::String&& value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteRumMetricDefinitionsRequest& AddMetricDefinitionIds(const char* value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds.push_back(value); return *this; }
+    template<typename MetricDefinitionIdsT = Aws::Vector<Aws::String>>
+    void SetMetricDefinitionIds(MetricDefinitionIdsT&& value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds = std::forward<MetricDefinitionIdsT>(value); }
+    template<typename MetricDefinitionIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteRumMetricDefinitionsRequest& WithMetricDefinitionIds(MetricDefinitionIdsT&& value) { SetMetricDefinitionIds(std::forward<MetricDefinitionIdsT>(value)); return *this;}
+    template<typename MetricDefinitionIdsT = Aws::String>
+    BatchDeleteRumMetricDefinitionsRequest& AddMetricDefinitionIds(MetricDefinitionIdsT&& value) { m_metricDefinitionIdsHasBeenSet = true; m_metricDefinitionIds.emplace_back(std::forward<MetricDefinitionIdsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_appMonitorName;
     bool m_appMonitorNameHasBeenSet = false;
 
-    MetricDestination m_destination;
+    MetricDestination m_destination{MetricDestination::NOT_SET};
     bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationArn;

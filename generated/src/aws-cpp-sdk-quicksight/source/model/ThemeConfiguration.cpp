@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ThemeConfiguration::ThemeConfiguration() : 
-    m_dataColorPaletteHasBeenSet(false),
-    m_uIColorPaletteHasBeenSet(false),
-    m_sheetHasBeenSet(false),
-    m_typographyHasBeenSet(false)
-{
-}
-
 ThemeConfiguration::ThemeConfiguration(JsonView jsonValue)
-  : ThemeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ThemeConfiguration& ThemeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataColorPalette"))
   {
     m_dataColorPalette = jsonValue.GetObject("DataColorPalette");
-
     m_dataColorPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UIColorPalette"))
   {
     m_uIColorPalette = jsonValue.GetObject("UIColorPalette");
-
     m_uIColorPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sheet"))
   {
     m_sheet = jsonValue.GetObject("Sheet");
-
     m_sheetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Typography"))
   {
     m_typography = jsonValue.GetObject("Typography");
-
     m_typographyHasBeenSet = true;
   }
-
   return *this;
 }
 

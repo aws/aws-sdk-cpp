@@ -29,7 +29,7 @@ namespace Model
   class Hdr10Plus
   {
   public:
-    AWS_MEDIACONVERT_API Hdr10Plus();
+    AWS_MEDIACONVERT_API Hdr10Plus() = default;
     AWS_MEDIACONVERT_API Hdr10Plus(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Hdr10Plus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * the normalized actual peak luminance of the mastering display, as defined by ST
      * 2094-40.
      */
-    inline int GetMasteringMonitorNits() const{ return m_masteringMonitorNits; }
+    inline int GetMasteringMonitorNits() const { return m_masteringMonitorNits; }
     inline bool MasteringMonitorNitsHasBeenSet() const { return m_masteringMonitorNitsHasBeenSet; }
     inline void SetMasteringMonitorNits(int value) { m_masteringMonitorNitsHasBeenSet = true; m_masteringMonitorNits = value; }
     inline Hdr10Plus& WithMasteringMonitorNits(int value) { SetMasteringMonitorNits(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * Specify the HDR10+ target display nominal peak luminance, in nits. This is the
      * nominal maximum luminance of the target display as defined by ST 2094-40.
      */
-    inline int GetTargetMonitorNits() const{ return m_targetMonitorNits; }
+    inline int GetTargetMonitorNits() const { return m_targetMonitorNits; }
     inline bool TargetMonitorNitsHasBeenSet() const { return m_targetMonitorNitsHasBeenSet; }
     inline void SetTargetMonitorNits(int value) { m_targetMonitorNitsHasBeenSet = true; m_targetMonitorNits = value; }
     inline Hdr10Plus& WithTargetMonitorNits(int value) { SetTargetMonitorNits(value); return *this;}
     ///@}
   private:
 
-    int m_masteringMonitorNits;
+    int m_masteringMonitorNits{0};
     bool m_masteringMonitorNitsHasBeenSet = false;
 
-    int m_targetMonitorNits;
+    int m_targetMonitorNits{0};
     bool m_targetMonitorNitsHasBeenSet = false;
   };
 

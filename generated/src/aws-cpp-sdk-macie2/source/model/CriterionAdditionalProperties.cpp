@@ -18,23 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-CriterionAdditionalProperties::CriterionAdditionalProperties() : 
-    m_eqHasBeenSet(false),
-    m_eqExactMatchHasBeenSet(false),
-    m_gt(0),
-    m_gtHasBeenSet(false),
-    m_gte(0),
-    m_gteHasBeenSet(false),
-    m_lt(0),
-    m_ltHasBeenSet(false),
-    m_lte(0),
-    m_lteHasBeenSet(false),
-    m_neqHasBeenSet(false)
-{
-}
-
 CriterionAdditionalProperties::CriterionAdditionalProperties(JsonView jsonValue)
-  : CriterionAdditionalProperties()
 {
   *this = jsonValue;
 }
@@ -50,7 +34,6 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
     }
     m_eqHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eqExactMatch"))
   {
     Aws::Utils::Array<JsonView> eqExactMatchJsonList = jsonValue.GetArray("eqExactMatch");
@@ -60,35 +43,26 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
     }
     m_eqExactMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gt"))
   {
     m_gt = jsonValue.GetInt64("gt");
-
     m_gtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gte"))
   {
     m_gte = jsonValue.GetInt64("gte");
-
     m_gteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lt"))
   {
     m_lt = jsonValue.GetInt64("lt");
-
     m_ltHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lte"))
   {
     m_lte = jsonValue.GetInt64("lte");
-
     m_lteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("neq"))
   {
     Aws::Utils::Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
@@ -98,7 +72,6 @@ CriterionAdditionalProperties& CriterionAdditionalProperties::operator =(JsonVie
     }
     m_neqHasBeenSet = true;
   }
-
   return *this;
 }
 

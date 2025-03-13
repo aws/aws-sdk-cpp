@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-BackupPolicy::BackupPolicy() : 
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 BackupPolicy::BackupPolicy(JsonView jsonValue)
-  : BackupPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BackupPolicy& BackupPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

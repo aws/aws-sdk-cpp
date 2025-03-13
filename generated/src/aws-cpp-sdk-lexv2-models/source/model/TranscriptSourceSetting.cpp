@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TranscriptSourceSetting::TranscriptSourceSetting() : 
-    m_s3BucketTranscriptSourceHasBeenSet(false)
-{
-}
-
 TranscriptSourceSetting::TranscriptSourceSetting(JsonView jsonValue)
-  : TranscriptSourceSetting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TranscriptSourceSetting& TranscriptSourceSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3BucketTranscriptSource"))
   {
     m_s3BucketTranscriptSource = jsonValue.GetObject("s3BucketTranscriptSource");
-
     m_s3BucketTranscriptSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class CreateNFSFileShareRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API CreateNFSFileShareRequest();
+    AWS_STORAGEGATEWAY_API CreateNFSFileShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,26 +48,24 @@ namespace Model
      * <p>A unique string value that you supply that is used by S3 File Gateway to
      * ensure idempotent file share creation.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateNFSFileShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateNFSFileShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateNFSFileShareRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>File share default values. Optional.</p>
      */
-    inline const NFSFileShareDefaults& GetNFSFileShareDefaults() const{ return m_nFSFileShareDefaults; }
+    inline const NFSFileShareDefaults& GetNFSFileShareDefaults() const { return m_nFSFileShareDefaults; }
     inline bool NFSFileShareDefaultsHasBeenSet() const { return m_nFSFileShareDefaultsHasBeenSet; }
-    inline void SetNFSFileShareDefaults(const NFSFileShareDefaults& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = value; }
-    inline void SetNFSFileShareDefaults(NFSFileShareDefaults&& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = std::move(value); }
-    inline CreateNFSFileShareRequest& WithNFSFileShareDefaults(const NFSFileShareDefaults& value) { SetNFSFileShareDefaults(value); return *this;}
-    inline CreateNFSFileShareRequest& WithNFSFileShareDefaults(NFSFileShareDefaults&& value) { SetNFSFileShareDefaults(std::move(value)); return *this;}
+    template<typename NFSFileShareDefaultsT = NFSFileShareDefaults>
+    void SetNFSFileShareDefaults(NFSFileShareDefaultsT&& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = std::forward<NFSFileShareDefaultsT>(value); }
+    template<typename NFSFileShareDefaultsT = NFSFileShareDefaults>
+    CreateNFSFileShareRequest& WithNFSFileShareDefaults(NFSFileShareDefaultsT&& value) { SetNFSFileShareDefaults(std::forward<NFSFileShareDefaultsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to
      * create a file share.</p>
      */
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline CreateNFSFileShareRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline CreateNFSFileShareRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    CreateNFSFileShareRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +94,10 @@ namespace Model
      * <code>EncryptionType</code> is <code>SseKms</code> or <code>DsseKms</code>, then
      * <code>KMSEncrypted</code> must be <code>true</code>.</p> 
      */
-    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+    inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline CreateNFSFileShareRequest& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline CreateNFSFileShareRequest& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline void SetEncryptionType(EncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline CreateNFSFileShareRequest& WithEncryptionType(EncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,12 @@ namespace Model
      * <code>true</code>, or if <code>EncryptionType</code> is <code>SseKms</code> or
      * <code>DsseKms</code>.</p>
      */
-    inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+    inline const Aws::String& GetKMSKey() const { return m_kMSKey; }
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
-    inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
-    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
-    inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
-    inline CreateNFSFileShareRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
-    inline CreateNFSFileShareRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
+    template<typename KMSKeyT = Aws::String>
+    void SetKMSKey(KMSKeyT&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::forward<KMSKeyT>(value); }
+    template<typename KMSKeyT = Aws::String>
+    CreateNFSFileShareRequest& WithKMSKey(KMSKeyT&& value) { SetKMSKey(std::forward<KMSKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +121,12 @@ namespace Model
      * <p>The ARN of the Identity and Access Management (IAM) role that an S3 File
      * Gateway assumes when it accesses the underlying storage.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline CreateNFSFileShareRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline CreateNFSFileShareRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    CreateNFSFileShareRequest& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +146,12 @@ namespace Model
      * <p>Access point alias:</p> <p>
      * <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> 
      */
-    inline const Aws::String& GetLocationARN() const{ return m_locationARN; }
+    inline const Aws::String& GetLocationARN() const { return m_locationARN; }
     inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
-    inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
-    inline void SetLocationARN(Aws::String&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::move(value); }
-    inline void SetLocationARN(const char* value) { m_locationARNHasBeenSet = true; m_locationARN.assign(value); }
-    inline CreateNFSFileShareRequest& WithLocationARN(const Aws::String& value) { SetLocationARN(value); return *this;}
-    inline CreateNFSFileShareRequest& WithLocationARN(Aws::String&& value) { SetLocationARN(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithLocationARN(const char* value) { SetLocationARN(value); return *this;}
+    template<typename LocationARNT = Aws::String>
+    void SetLocationARN(LocationARNT&& value) { m_locationARNHasBeenSet = true; m_locationARN = std::forward<LocationARNT>(value); }
+    template<typename LocationARNT = Aws::String>
+    CreateNFSFileShareRequest& WithLocationARN(LocationARNT&& value) { SetLocationARN(std::forward<LocationARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,14 +161,12 @@ namespace Model
      * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
      * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
-    inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
+    inline const Aws::String& GetDefaultStorageClass() const { return m_defaultStorageClass; }
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
-    inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
-    inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
-    inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
-    inline CreateNFSFileShareRequest& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
-    inline CreateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
+    template<typename DefaultStorageClassT = Aws::String>
+    void SetDefaultStorageClass(DefaultStorageClassT&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::forward<DefaultStorageClassT>(value); }
+    template<typename DefaultStorageClassT = Aws::String>
+    CreateNFSFileShareRequest& WithDefaultStorageClass(DefaultStorageClassT&& value) { SetDefaultStorageClass(std::forward<DefaultStorageClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +175,10 @@ namespace Model
      * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
-    inline const ObjectACL& GetObjectACL() const{ return m_objectACL; }
+    inline ObjectACL GetObjectACL() const { return m_objectACL; }
     inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
-    inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
-    inline void SetObjectACL(ObjectACL&& value) { m_objectACLHasBeenSet = true; m_objectACL = std::move(value); }
-    inline CreateNFSFileShareRequest& WithObjectACL(const ObjectACL& value) { SetObjectACL(value); return *this;}
-    inline CreateNFSFileShareRequest& WithObjectACL(ObjectACL&& value) { SetObjectACL(std::move(value)); return *this;}
+    inline void SetObjectACL(ObjectACL value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
+    inline CreateNFSFileShareRequest& WithObjectACL(ObjectACL value) { SetObjectACL(value); return *this;}
     ///@}
 
     ///@{
@@ -202,15 +186,14 @@ namespace Model
      * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
+    inline const Aws::Vector<Aws::String>& GetClientList() const { return m_clientList; }
     inline bool ClientListHasBeenSet() const { return m_clientListHasBeenSet; }
-    inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
-    inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = std::move(value); }
-    inline CreateNFSFileShareRequest& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
-    inline CreateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
-    inline CreateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(std::move(value)); return *this; }
-    inline CreateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
+    template<typename ClientListT = Aws::Vector<Aws::String>>
+    void SetClientList(ClientListT&& value) { m_clientListHasBeenSet = true; m_clientList = std::forward<ClientListT>(value); }
+    template<typename ClientListT = Aws::Vector<Aws::String>>
+    CreateNFSFileShareRequest& WithClientList(ClientListT&& value) { SetClientList(std::forward<ClientListT>(value)); return *this;}
+    template<typename ClientListT = Aws::String>
+    CreateNFSFileShareRequest& AddClientList(ClientListT&& value) { m_clientListHasBeenSet = true; m_clientList.emplace_back(std::forward<ClientListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -221,14 +204,12 @@ namespace Model
      * anonymous user.</p> </li> <li> <p> <code>AllSquash</code>: Everyone is mapped to
      * anonymous user.</p> </li> </ul>
      */
-    inline const Aws::String& GetSquash() const{ return m_squash; }
+    inline const Aws::String& GetSquash() const { return m_squash; }
     inline bool SquashHasBeenSet() const { return m_squashHasBeenSet; }
-    inline void SetSquash(const Aws::String& value) { m_squashHasBeenSet = true; m_squash = value; }
-    inline void SetSquash(Aws::String&& value) { m_squashHasBeenSet = true; m_squash = std::move(value); }
-    inline void SetSquash(const char* value) { m_squashHasBeenSet = true; m_squash.assign(value); }
-    inline CreateNFSFileShareRequest& WithSquash(const Aws::String& value) { SetSquash(value); return *this;}
-    inline CreateNFSFileShareRequest& WithSquash(Aws::String&& value) { SetSquash(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithSquash(const char* value) { SetSquash(value); return *this;}
+    template<typename SquashT = Aws::String>
+    void SetSquash(SquashT&& value) { m_squashHasBeenSet = true; m_squash = std::forward<SquashT>(value); }
+    template<typename SquashT = Aws::String>
+    CreateNFSFileShareRequest& WithSquash(SquashT&& value) { SetSquash(std::forward<SquashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,7 +219,7 @@ namespace Model
      * <code>false</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline CreateNFSFileShareRequest& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -252,7 +233,7 @@ namespace Model
      * <code>true</code>.</p> <p>Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
-    inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
+    inline bool GetGuessMIMETypeEnabled() const { return m_guessMIMETypeEnabled; }
     inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
     inline void SetGuessMIMETypeEnabled(bool value) { m_guessMIMETypeEnabledHasBeenSet = true; m_guessMIMETypeEnabled = value; }
     inline CreateNFSFileShareRequest& WithGuessMIMETypeEnabled(bool value) { SetGuessMIMETypeEnabled(value); return *this;}
@@ -269,7 +250,7 @@ namespace Model
      * the same as the S3 bucket configuration.</p>  <p>Valid Values:
      * <code>true</code> | <code>false</code> </p>
      */
-    inline bool GetRequesterPays() const{ return m_requesterPays; }
+    inline bool GetRequesterPays() const { return m_requesterPays; }
     inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
     inline CreateNFSFileShareRequest& WithRequesterPays(bool value) { SetRequesterPays(value); return *this;}
@@ -283,14 +264,14 @@ namespace Model
      * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateNFSFileShareRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateNFSFileShareRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateNFSFileShareRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateNFSFileShareRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateNFSFileShareRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -303,26 +284,24 @@ namespace Model
      * <code>0</code>-<code>9</code>, <code>-</code>, <code>.</code>, and
      * <code>_</code>.</p> 
      */
-    inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
+    inline const Aws::String& GetFileShareName() const { return m_fileShareName; }
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
-    inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
-    inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
-    inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
-    inline CreateNFSFileShareRequest& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
-    inline CreateNFSFileShareRequest& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
+    template<typename FileShareNameT = Aws::String>
+    void SetFileShareName(FileShareNameT&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::forward<FileShareNameT>(value); }
+    template<typename FileShareNameT = Aws::String>
+    CreateNFSFileShareRequest& WithFileShareName(FileShareNameT&& value) { SetFileShareName(std::forward<FileShareNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies refresh cache information for the file share.</p>
      */
-    inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
+    inline const CacheAttributes& GetCacheAttributes() const { return m_cacheAttributes; }
     inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
-    inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
-    inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
-    inline CreateNFSFileShareRequest& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
-    inline CreateNFSFileShareRequest& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
+    template<typename CacheAttributesT = CacheAttributes>
+    void SetCacheAttributes(CacheAttributesT&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::forward<CacheAttributesT>(value); }
+    template<typename CacheAttributesT = CacheAttributes>
+    CreateNFSFileShareRequest& WithCacheAttributes(CacheAttributesT&& value) { SetCacheAttributes(std::forward<CacheAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -343,14 +322,12 @@ namespace Model
      * <p>The following example sets <code>NotificationPolicy</code> off.</p> <p>
      * <code>{}</code> </p>
      */
-    inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
+    inline const Aws::String& GetNotificationPolicy() const { return m_notificationPolicy; }
     inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
-    inline void SetNotificationPolicy(const Aws::String& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = value; }
-    inline void SetNotificationPolicy(Aws::String&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::move(value); }
-    inline void SetNotificationPolicy(const char* value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy.assign(value); }
-    inline CreateNFSFileShareRequest& WithNotificationPolicy(const Aws::String& value) { SetNotificationPolicy(value); return *this;}
-    inline CreateNFSFileShareRequest& WithNotificationPolicy(Aws::String&& value) { SetNotificationPolicy(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
+    template<typename NotificationPolicyT = Aws::String>
+    void SetNotificationPolicy(NotificationPolicyT&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::forward<NotificationPolicyT>(value); }
+    template<typename NotificationPolicyT = Aws::String>
+    CreateNFSFileShareRequest& WithNotificationPolicy(NotificationPolicyT&& value) { SetNotificationPolicy(std::forward<NotificationPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -360,14 +337,12 @@ namespace Model
      * shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or
      * an access point alias that points to a VPC access point.</p> 
      */
-    inline const Aws::String& GetVPCEndpointDNSName() const{ return m_vPCEndpointDNSName; }
+    inline const Aws::String& GetVPCEndpointDNSName() const { return m_vPCEndpointDNSName; }
     inline bool VPCEndpointDNSNameHasBeenSet() const { return m_vPCEndpointDNSNameHasBeenSet; }
-    inline void SetVPCEndpointDNSName(const Aws::String& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = value; }
-    inline void SetVPCEndpointDNSName(Aws::String&& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = std::move(value); }
-    inline void SetVPCEndpointDNSName(const char* value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName.assign(value); }
-    inline CreateNFSFileShareRequest& WithVPCEndpointDNSName(const Aws::String& value) { SetVPCEndpointDNSName(value); return *this;}
-    inline CreateNFSFileShareRequest& WithVPCEndpointDNSName(Aws::String&& value) { SetVPCEndpointDNSName(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithVPCEndpointDNSName(const char* value) { SetVPCEndpointDNSName(value); return *this;}
+    template<typename VPCEndpointDNSNameT = Aws::String>
+    void SetVPCEndpointDNSName(VPCEndpointDNSNameT&& value) { m_vPCEndpointDNSNameHasBeenSet = true; m_vPCEndpointDNSName = std::forward<VPCEndpointDNSNameT>(value); }
+    template<typename VPCEndpointDNSNameT = Aws::String>
+    CreateNFSFileShareRequest& WithVPCEndpointDNSName(VPCEndpointDNSNameT&& value) { SetVPCEndpointDNSName(std::forward<VPCEndpointDNSNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -377,28 +352,24 @@ namespace Model
      * to Amazon S3 through a VPC endpoint, a VPC access point, or an access point
      * alias that points to a VPC access point.</p> 
      */
-    inline const Aws::String& GetBucketRegion() const{ return m_bucketRegion; }
+    inline const Aws::String& GetBucketRegion() const { return m_bucketRegion; }
     inline bool BucketRegionHasBeenSet() const { return m_bucketRegionHasBeenSet; }
-    inline void SetBucketRegion(const Aws::String& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = value; }
-    inline void SetBucketRegion(Aws::String&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::move(value); }
-    inline void SetBucketRegion(const char* value) { m_bucketRegionHasBeenSet = true; m_bucketRegion.assign(value); }
-    inline CreateNFSFileShareRequest& WithBucketRegion(const Aws::String& value) { SetBucketRegion(value); return *this;}
-    inline CreateNFSFileShareRequest& WithBucketRegion(Aws::String&& value) { SetBucketRegion(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithBucketRegion(const char* value) { SetBucketRegion(value); return *this;}
+    template<typename BucketRegionT = Aws::String>
+    void SetBucketRegion(BucketRegionT&& value) { m_bucketRegionHasBeenSet = true; m_bucketRegion = std::forward<BucketRegionT>(value); }
+    template<typename BucketRegionT = Aws::String>
+    CreateNFSFileShareRequest& WithBucketRegion(BucketRegionT&& value) { SetBucketRegion(std::forward<BucketRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
      */
-    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+    inline const Aws::String& GetAuditDestinationARN() const { return m_auditDestinationARN; }
     inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
-    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
-    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
-    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
-    inline CreateNFSFileShareRequest& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
-    inline CreateNFSFileShareRequest& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
-    inline CreateNFSFileShareRequest& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+    template<typename AuditDestinationARNT = Aws::String>
+    void SetAuditDestinationARN(AuditDestinationARNT&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::forward<AuditDestinationARNT>(value); }
+    template<typename AuditDestinationARNT = Aws::String>
+    CreateNFSFileShareRequest& WithAuditDestinationARN(AuditDestinationARNT&& value) { SetAuditDestinationARN(std::forward<AuditDestinationARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -411,7 +382,7 @@ namespace Model
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet = false;
 
-    EncryptionType m_encryptionType;
+    EncryptionType m_encryptionType{EncryptionType::NOT_SET};
     bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kMSKey;
@@ -426,7 +397,7 @@ namespace Model
     Aws::String m_defaultStorageClass;
     bool m_defaultStorageClassHasBeenSet = false;
 
-    ObjectACL m_objectACL;
+    ObjectACL m_objectACL{ObjectACL::NOT_SET};
     bool m_objectACLHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clientList;
@@ -435,13 +406,13 @@ namespace Model
     Aws::String m_squash;
     bool m_squashHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
 
-    bool m_guessMIMETypeEnabled;
+    bool m_guessMIMETypeEnabled{false};
     bool m_guessMIMETypeEnabledHasBeenSet = false;
 
-    bool m_requesterPays;
+    bool m_requesterPays{false};
     bool m_requesterPaysHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

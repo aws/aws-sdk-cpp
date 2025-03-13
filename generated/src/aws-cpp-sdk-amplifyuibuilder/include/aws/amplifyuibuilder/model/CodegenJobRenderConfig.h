@@ -32,7 +32,7 @@ namespace Model
   class CodegenJobRenderConfig
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API CodegenJobRenderConfig();
+    AWS_AMPLIFYUIBUILDER_API CodegenJobRenderConfig() = default;
     AWS_AMPLIFYUIBUILDER_API CodegenJobRenderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API CodegenJobRenderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The name of the <code>ReactStartCodegenJobData</code> object.</p>
      */
-    inline const ReactStartCodegenJobData& GetReact() const{ return m_react; }
+    inline const ReactStartCodegenJobData& GetReact() const { return m_react; }
     inline bool ReactHasBeenSet() const { return m_reactHasBeenSet; }
-    inline void SetReact(const ReactStartCodegenJobData& value) { m_reactHasBeenSet = true; m_react = value; }
-    inline void SetReact(ReactStartCodegenJobData&& value) { m_reactHasBeenSet = true; m_react = std::move(value); }
-    inline CodegenJobRenderConfig& WithReact(const ReactStartCodegenJobData& value) { SetReact(value); return *this;}
-    inline CodegenJobRenderConfig& WithReact(ReactStartCodegenJobData&& value) { SetReact(std::move(value)); return *this;}
+    template<typename ReactT = ReactStartCodegenJobData>
+    void SetReact(ReactT&& value) { m_reactHasBeenSet = true; m_react = std::forward<ReactT>(value); }
+    template<typename ReactT = ReactStartCodegenJobData>
+    CodegenJobRenderConfig& WithReact(ReactT&& value) { SetReact(std::forward<ReactT>(value)); return *this;}
     ///@}
   private:
 

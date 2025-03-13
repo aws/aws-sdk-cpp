@@ -34,7 +34,7 @@ namespace Model
   class ContactSearchSummarySegmentAttributeValue
   {
   public:
-    AWS_CONNECT_API ContactSearchSummarySegmentAttributeValue();
+    AWS_CONNECT_API ContactSearchSummarySegmentAttributeValue() = default;
     AWS_CONNECT_API ContactSearchSummarySegmentAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactSearchSummarySegmentAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The value of a segment attribute represented as a string.</p>
      */
-    inline const Aws::String& GetValueString() const{ return m_valueString; }
+    inline const Aws::String& GetValueString() const { return m_valueString; }
     inline bool ValueStringHasBeenSet() const { return m_valueStringHasBeenSet; }
-    inline void SetValueString(const Aws::String& value) { m_valueStringHasBeenSet = true; m_valueString = value; }
-    inline void SetValueString(Aws::String&& value) { m_valueStringHasBeenSet = true; m_valueString = std::move(value); }
-    inline void SetValueString(const char* value) { m_valueStringHasBeenSet = true; m_valueString.assign(value); }
-    inline ContactSearchSummarySegmentAttributeValue& WithValueString(const Aws::String& value) { SetValueString(value); return *this;}
-    inline ContactSearchSummarySegmentAttributeValue& WithValueString(Aws::String&& value) { SetValueString(std::move(value)); return *this;}
-    inline ContactSearchSummarySegmentAttributeValue& WithValueString(const char* value) { SetValueString(value); return *this;}
+    template<typename ValueStringT = Aws::String>
+    void SetValueString(ValueStringT&& value) { m_valueStringHasBeenSet = true; m_valueString = std::forward<ValueStringT>(value); }
+    template<typename ValueStringT = Aws::String>
+    ContactSearchSummarySegmentAttributeValue& WithValueString(ValueStringT&& value) { SetValueString(std::forward<ValueStringT>(value)); return *this;}
     ///@}
   private:
 

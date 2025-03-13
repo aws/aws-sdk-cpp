@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EvaluateCodeResult::EvaluateCodeResult()
-{
-}
-
 EvaluateCodeResult::EvaluateCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ EvaluateCodeResult& EvaluateCodeResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("evaluationResult"))
   {
     m_evaluationResult = jsonValue.GetString("evaluationResult");
-
+    m_evaluationResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
+    m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logs"))
   {
     Aws::Utils::Array<JsonView> logsJsonList = jsonValue.GetArray("logs");
@@ -48,26 +42,25 @@ EvaluateCodeResult& EvaluateCodeResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_logs.push_back(logsJsonList[logsIndex].AsString());
     }
+    m_logsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stash"))
   {
     m_stash = jsonValue.GetString("stash");
-
+    m_stashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outErrors"))
   {
     m_outErrors = jsonValue.GetString("outErrors");
-
+    m_outErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

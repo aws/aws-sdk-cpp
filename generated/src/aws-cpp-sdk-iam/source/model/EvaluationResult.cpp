@@ -20,22 +20,7 @@ namespace IAM
 namespace Model
 {
 
-EvaluationResult::EvaluationResult() : 
-    m_evalActionNameHasBeenSet(false),
-    m_evalResourceNameHasBeenSet(false),
-    m_evalDecision(PolicyEvaluationDecisionType::NOT_SET),
-    m_evalDecisionHasBeenSet(false),
-    m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false),
-    m_organizationsDecisionDetailHasBeenSet(false),
-    m_permissionsBoundaryDecisionDetailHasBeenSet(false),
-    m_evalDecisionDetailsHasBeenSet(false),
-    m_resourceSpecificResultsHasBeenSet(false)
-{
-}
-
 EvaluationResult::EvaluationResult(const XmlNode& xmlNode)
-  : EvaluationResult()
 {
   *this = xmlNode;
 }
@@ -51,60 +36,68 @@ EvaluationResult& EvaluationResult::operator =(const XmlNode& xmlNode)
     {
       m_evalActionName = Aws::Utils::Xml::DecodeEscapedXmlText(evalActionNameNode.GetText());
       m_evalActionNameHasBeenSet = true;
+       m_evalActionNameHasBeenSet = true;
     }
     XmlNode evalResourceNameNode = resultNode.FirstChild("EvalResourceName");
     if(!evalResourceNameNode.IsNull())
     {
       m_evalResourceName = Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceNameNode.GetText());
       m_evalResourceNameHasBeenSet = true;
+       m_evalResourceNameHasBeenSet = true;
     }
     XmlNode evalDecisionNode = resultNode.FirstChild("EvalDecision");
     if(!evalDecisionNode.IsNull())
     {
-      m_evalDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalDecisionNode.GetText()).c_str()).c_str());
+      m_evalDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalDecisionNode.GetText()).c_str()));
       m_evalDecisionHasBeenSet = true;
+       m_evalDecisionHasBeenSet = true;
     }
     XmlNode matchedStatementsNode = resultNode.FirstChild("MatchedStatements");
     if(!matchedStatementsNode.IsNull())
     {
       XmlNode matchedStatementsMember = matchedStatementsNode.FirstChild("member");
+      m_matchedStatementsHasBeenSet = !matchedStatementsMember.IsNull();
       while(!matchedStatementsMember.IsNull())
       {
         m_matchedStatements.push_back(matchedStatementsMember);
         matchedStatementsMember = matchedStatementsMember.NextNode("member");
       }
 
-      m_matchedStatementsHasBeenSet = true;
+       m_matchedStatementsHasBeenSet = true;
     }
     XmlNode missingContextValuesNode = resultNode.FirstChild("MissingContextValues");
     if(!missingContextValuesNode.IsNull())
     {
       XmlNode missingContextValuesMember = missingContextValuesNode.FirstChild("member");
+      m_missingContextValuesHasBeenSet = !missingContextValuesMember.IsNull();
       while(!missingContextValuesMember.IsNull())
       {
         m_missingContextValues.push_back(missingContextValuesMember.GetText());
         missingContextValuesMember = missingContextValuesMember.NextNode("member");
       }
 
-      m_missingContextValuesHasBeenSet = true;
+       m_missingContextValuesHasBeenSet = true;
     }
     XmlNode organizationsDecisionDetailNode = resultNode.FirstChild("OrganizationsDecisionDetail");
     if(!organizationsDecisionDetailNode.IsNull())
     {
       m_organizationsDecisionDetail = organizationsDecisionDetailNode;
       m_organizationsDecisionDetailHasBeenSet = true;
+       m_organizationsDecisionDetailHasBeenSet = true;
     }
     XmlNode permissionsBoundaryDecisionDetailNode = resultNode.FirstChild("PermissionsBoundaryDecisionDetail");
     if(!permissionsBoundaryDecisionDetailNode.IsNull())
     {
       m_permissionsBoundaryDecisionDetail = permissionsBoundaryDecisionDetailNode;
       m_permissionsBoundaryDecisionDetailHasBeenSet = true;
+       m_permissionsBoundaryDecisionDetailHasBeenSet = true;
     }
     XmlNode evalDecisionDetailsNode = resultNode.FirstChild("EvalDecisionDetails");
 
     if(!evalDecisionDetailsNode.IsNull())
     {
       XmlNode evalDecisionDetailsEntry = evalDecisionDetailsNode.FirstChild("entry");
+      m_evalDecisionDetailsHasBeenSet = !evalDecisionDetailsEntry.IsNull();
       while(!evalDecisionDetailsEntry.IsNull())
       {
         XmlNode keyNode = evalDecisionDetailsEntry.FirstChild("key");
@@ -114,19 +107,20 @@ EvaluationResult& EvaluationResult::operator =(const XmlNode& xmlNode)
         evalDecisionDetailsEntry = evalDecisionDetailsEntry.NextNode("entry");
       }
 
-      m_evalDecisionDetailsHasBeenSet = true;
+       m_evalDecisionDetailsHasBeenSet = true;
     }
     XmlNode resourceSpecificResultsNode = resultNode.FirstChild("ResourceSpecificResults");
     if(!resourceSpecificResultsNode.IsNull())
     {
       XmlNode resourceSpecificResultsMember = resourceSpecificResultsNode.FirstChild("member");
+      m_resourceSpecificResultsHasBeenSet = !resourceSpecificResultsMember.IsNull();
       while(!resourceSpecificResultsMember.IsNull())
       {
         m_resourceSpecificResults.push_back(resourceSpecificResultsMember);
         resourceSpecificResultsMember = resourceSpecificResultsMember.NextNode("member");
       }
 
-      m_resourceSpecificResultsHasBeenSet = true;
+       m_resourceSpecificResultsHasBeenSet = true;
     }
   }
 

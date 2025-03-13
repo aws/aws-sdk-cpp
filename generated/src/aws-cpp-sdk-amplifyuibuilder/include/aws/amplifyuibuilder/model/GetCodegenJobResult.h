@@ -28,7 +28,7 @@ namespace Model
   class GetCodegenJobResult
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API GetCodegenJobResult();
+    AWS_AMPLIFYUIBUILDER_API GetCodegenJobResult() = default;
     AWS_AMPLIFYUIBUILDER_API GetCodegenJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYUIBUILDER_API GetCodegenJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The configuration settings for the code generation job.</p>
      */
-    inline const CodegenJob& GetJob() const{ return m_job; }
-    inline void SetJob(const CodegenJob& value) { m_job = value; }
-    inline void SetJob(CodegenJob&& value) { m_job = std::move(value); }
-    inline GetCodegenJobResult& WithJob(const CodegenJob& value) { SetJob(value); return *this;}
-    inline GetCodegenJobResult& WithJob(CodegenJob&& value) { SetJob(std::move(value)); return *this;}
+    inline const CodegenJob& GetJob() const { return m_job; }
+    template<typename JobT = CodegenJob>
+    void SetJob(JobT&& value) { m_jobHasBeenSet = true; m_job = std::forward<JobT>(value); }
+    template<typename JobT = CodegenJob>
+    GetCodegenJobResult& WithJob(JobT&& value) { SetJob(std::forward<JobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCodegenJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCodegenJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCodegenJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCodegenJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CodegenJob m_job;
+    bool m_jobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

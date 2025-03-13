@@ -35,7 +35,7 @@ namespace Model
   class RetrieveEnvironmentInfoResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult();
+    AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult() = default;
     AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
      */
-    inline const Aws::Vector<EnvironmentInfoDescription>& GetEnvironmentInfo() const{ return m_environmentInfo; }
-    inline void SetEnvironmentInfo(const Aws::Vector<EnvironmentInfoDescription>& value) { m_environmentInfo = value; }
-    inline void SetEnvironmentInfo(Aws::Vector<EnvironmentInfoDescription>&& value) { m_environmentInfo = std::move(value); }
-    inline RetrieveEnvironmentInfoResult& WithEnvironmentInfo(const Aws::Vector<EnvironmentInfoDescription>& value) { SetEnvironmentInfo(value); return *this;}
-    inline RetrieveEnvironmentInfoResult& WithEnvironmentInfo(Aws::Vector<EnvironmentInfoDescription>&& value) { SetEnvironmentInfo(std::move(value)); return *this;}
-    inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(const EnvironmentInfoDescription& value) { m_environmentInfo.push_back(value); return *this; }
-    inline RetrieveEnvironmentInfoResult& AddEnvironmentInfo(EnvironmentInfoDescription&& value) { m_environmentInfo.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnvironmentInfoDescription>& GetEnvironmentInfo() const { return m_environmentInfo; }
+    template<typename EnvironmentInfoT = Aws::Vector<EnvironmentInfoDescription>>
+    void SetEnvironmentInfo(EnvironmentInfoT&& value) { m_environmentInfoHasBeenSet = true; m_environmentInfo = std::forward<EnvironmentInfoT>(value); }
+    template<typename EnvironmentInfoT = Aws::Vector<EnvironmentInfoDescription>>
+    RetrieveEnvironmentInfoResult& WithEnvironmentInfo(EnvironmentInfoT&& value) { SetEnvironmentInfo(std::forward<EnvironmentInfoT>(value)); return *this;}
+    template<typename EnvironmentInfoT = EnvironmentInfoDescription>
+    RetrieveEnvironmentInfoResult& AddEnvironmentInfo(EnvironmentInfoT&& value) { m_environmentInfoHasBeenSet = true; m_environmentInfo.emplace_back(std::forward<EnvironmentInfoT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RetrieveEnvironmentInfoResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RetrieveEnvironmentInfoResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RetrieveEnvironmentInfoResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EnvironmentInfoDescription> m_environmentInfo;
+    bool m_environmentInfoHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

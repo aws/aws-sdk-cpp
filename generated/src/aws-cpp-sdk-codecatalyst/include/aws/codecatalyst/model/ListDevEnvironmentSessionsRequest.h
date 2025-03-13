@@ -21,7 +21,7 @@ namespace Model
   class ListDevEnvironmentSessionsRequest : public CodeCatalystRequest
   {
   public:
-    AWS_CODECATALYST_API ListDevEnvironmentSessionsRequest();
+    AWS_CODECATALYST_API ListDevEnvironmentSessionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-    inline ListDevEnvironmentSessionsRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    ListDevEnvironmentSessionsRequest& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline ListDevEnvironmentSessionsRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    ListDevEnvironmentSessionsRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated unique ID of the Dev Environment.</p>
      */
-    inline const Aws::String& GetDevEnvironmentId() const{ return m_devEnvironmentId; }
+    inline const Aws::String& GetDevEnvironmentId() const { return m_devEnvironmentId; }
     inline bool DevEnvironmentIdHasBeenSet() const { return m_devEnvironmentIdHasBeenSet; }
-    inline void SetDevEnvironmentId(const Aws::String& value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId = value; }
-    inline void SetDevEnvironmentId(Aws::String&& value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId = std::move(value); }
-    inline void SetDevEnvironmentId(const char* value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId.assign(value); }
-    inline ListDevEnvironmentSessionsRequest& WithDevEnvironmentId(const Aws::String& value) { SetDevEnvironmentId(value); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithDevEnvironmentId(Aws::String&& value) { SetDevEnvironmentId(std::move(value)); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithDevEnvironmentId(const char* value) { SetDevEnvironmentId(value); return *this;}
+    template<typename DevEnvironmentIdT = Aws::String>
+    void SetDevEnvironmentId(DevEnvironmentIdT&& value) { m_devEnvironmentIdHasBeenSet = true; m_devEnvironmentId = std::forward<DevEnvironmentIdT>(value); }
+    template<typename DevEnvironmentIdT = Aws::String>
+    ListDevEnvironmentSessionsRequest& WithDevEnvironmentId(DevEnvironmentIdT&& value) { SetDevEnvironmentId(std::forward<DevEnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +73,12 @@ namespace Model
      * <p>A token returned from a call to this API to indicate the next batch of
      * results to return, if any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDevEnvironmentSessionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDevEnvironmentSessionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDevEnvironmentSessionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +88,7 @@ namespace Model
      * include a <code>NextToken</code> element, which you can use to obtain additional
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDevEnvironmentSessionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -115,7 +107,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

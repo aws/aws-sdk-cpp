@@ -21,7 +21,7 @@ namespace Model
   class GetDeliveryDestinationPolicyRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetDeliveryDestinationPolicyRequest();
+    AWS_CLOUDWATCHLOGS_API GetDeliveryDestinationPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the delivery destination that you want to retrieve the policy
      * of.</p>
      */
-    inline const Aws::String& GetDeliveryDestinationName() const{ return m_deliveryDestinationName; }
+    inline const Aws::String& GetDeliveryDestinationName() const { return m_deliveryDestinationName; }
     inline bool DeliveryDestinationNameHasBeenSet() const { return m_deliveryDestinationNameHasBeenSet; }
-    inline void SetDeliveryDestinationName(const Aws::String& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = value; }
-    inline void SetDeliveryDestinationName(Aws::String&& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = std::move(value); }
-    inline void SetDeliveryDestinationName(const char* value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName.assign(value); }
-    inline GetDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(const Aws::String& value) { SetDeliveryDestinationName(value); return *this;}
-    inline GetDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(Aws::String&& value) { SetDeliveryDestinationName(std::move(value)); return *this;}
-    inline GetDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(const char* value) { SetDeliveryDestinationName(value); return *this;}
+    template<typename DeliveryDestinationNameT = Aws::String>
+    void SetDeliveryDestinationName(DeliveryDestinationNameT&& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = std::forward<DeliveryDestinationNameT>(value); }
+    template<typename DeliveryDestinationNameT = Aws::String>
+    GetDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(DeliveryDestinationNameT&& value) { SetDeliveryDestinationName(std::forward<DeliveryDestinationNameT>(value)); return *this;}
     ///@}
   private:
 

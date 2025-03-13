@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteClusterRequest::DeleteClusterRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_skipFinalClusterSnapshot(false),
-    m_skipFinalClusterSnapshotHasBeenSet(false),
-    m_finalClusterSnapshotIdentifierHasBeenSet(false),
-    m_finalClusterSnapshotRetentionPeriod(0),
-    m_finalClusterSnapshotRetentionPeriodHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisconnectRecoveryInstanceRequest::DisconnectRecoveryInstanceRequest() : 
-    m_recoveryInstanceIDHasBeenSet(false)
-{
-}
-
 Aws::String DisconnectRecoveryInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-ConnectionDetails::ConnectionDetails() : 
-    m_clientPublicKeyHasBeenSet(false),
-    m_serverPublicKeyHasBeenSet(false),
-    m_serverEndpointHasBeenSet(false),
-    m_clientTunnelAddressHasBeenSet(false),
-    m_serverTunnelAddressHasBeenSet(false),
-    m_allowedIpsHasBeenSet(false)
-{
-}
-
 ConnectionDetails::ConnectionDetails(JsonView jsonValue)
-  : ConnectionDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ConnectionDetails& ConnectionDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientPublicKey"))
   {
     m_clientPublicKey = jsonValue.GetString("ClientPublicKey");
-
     m_clientPublicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerPublicKey"))
   {
     m_serverPublicKey = jsonValue.GetString("ServerPublicKey");
-
     m_serverPublicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerEndpoint"))
   {
     m_serverEndpoint = jsonValue.GetString("ServerEndpoint");
-
     m_serverEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientTunnelAddress"))
   {
     m_clientTunnelAddress = jsonValue.GetString("ClientTunnelAddress");
-
     m_clientTunnelAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerTunnelAddress"))
   {
     m_serverTunnelAddress = jsonValue.GetString("ServerTunnelAddress");
-
     m_serverTunnelAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedIps"))
   {
     Aws::Utils::Array<JsonView> allowedIpsJsonList = jsonValue.GetArray("AllowedIps");
@@ -80,7 +59,6 @@ ConnectionDetails& ConnectionDetails::operator =(JsonView jsonValue)
     }
     m_allowedIpsHasBeenSet = true;
   }
-
   return *this;
 }
 

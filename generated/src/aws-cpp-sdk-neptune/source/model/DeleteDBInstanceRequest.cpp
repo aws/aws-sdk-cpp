@@ -10,14 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DeleteDBInstanceRequest::DeleteDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_skipFinalSnapshot(false),
-    m_skipFinalSnapshotHasBeenSet(false),
-    m_finalDBSnapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -33,7 +33,7 @@ namespace Model
   class ListingSummaryItem
   {
   public:
-    AWS_DATAZONE_API ListingSummaryItem();
+    AWS_DATAZONE_API ListingSummaryItem() = default;
     AWS_DATAZONE_API ListingSummaryItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ListingSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,38 @@ namespace Model
     /**
      * <p>The glossary terms of the data product listing.</p>
      */
-    inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const{ return m_glossaryTerms; }
+    inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const { return m_glossaryTerms; }
     inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-    inline void SetGlossaryTerms(const Aws::Vector<DetailedGlossaryTerm>& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = value; }
-    inline void SetGlossaryTerms(Aws::Vector<DetailedGlossaryTerm>&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::move(value); }
-    inline ListingSummaryItem& WithGlossaryTerms(const Aws::Vector<DetailedGlossaryTerm>& value) { SetGlossaryTerms(value); return *this;}
-    inline ListingSummaryItem& WithGlossaryTerms(Aws::Vector<DetailedGlossaryTerm>&& value) { SetGlossaryTerms(std::move(value)); return *this;}
-    inline ListingSummaryItem& AddGlossaryTerms(const DetailedGlossaryTerm& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
-    inline ListingSummaryItem& AddGlossaryTerms(DetailedGlossaryTerm&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(std::move(value)); return *this; }
+    template<typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    void SetGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::forward<GlossaryTermsT>(value); }
+    template<typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    ListingSummaryItem& WithGlossaryTerms(GlossaryTermsT&& value) { SetGlossaryTerms(std::forward<GlossaryTermsT>(value)); return *this;}
+    template<typename GlossaryTermsT = DetailedGlossaryTerm>
+    ListingSummaryItem& AddGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the data product listing.</p>
      */
-    inline const Aws::String& GetListingId() const{ return m_listingId; }
+    inline const Aws::String& GetListingId() const { return m_listingId; }
     inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
-    inline void SetListingId(const Aws::String& value) { m_listingIdHasBeenSet = true; m_listingId = value; }
-    inline void SetListingId(Aws::String&& value) { m_listingIdHasBeenSet = true; m_listingId = std::move(value); }
-    inline void SetListingId(const char* value) { m_listingIdHasBeenSet = true; m_listingId.assign(value); }
-    inline ListingSummaryItem& WithListingId(const Aws::String& value) { SetListingId(value); return *this;}
-    inline ListingSummaryItem& WithListingId(Aws::String&& value) { SetListingId(std::move(value)); return *this;}
-    inline ListingSummaryItem& WithListingId(const char* value) { SetListingId(value); return *this;}
+    template<typename ListingIdT = Aws::String>
+    void SetListingId(ListingIdT&& value) { m_listingIdHasBeenSet = true; m_listingId = std::forward<ListingIdT>(value); }
+    template<typename ListingIdT = Aws::String>
+    ListingSummaryItem& WithListingId(ListingIdT&& value) { SetListingId(std::forward<ListingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the data product listing.</p>
      */
-    inline const Aws::String& GetListingRevision() const{ return m_listingRevision; }
+    inline const Aws::String& GetListingRevision() const { return m_listingRevision; }
     inline bool ListingRevisionHasBeenSet() const { return m_listingRevisionHasBeenSet; }
-    inline void SetListingRevision(const Aws::String& value) { m_listingRevisionHasBeenSet = true; m_listingRevision = value; }
-    inline void SetListingRevision(Aws::String&& value) { m_listingRevisionHasBeenSet = true; m_listingRevision = std::move(value); }
-    inline void SetListingRevision(const char* value) { m_listingRevisionHasBeenSet = true; m_listingRevision.assign(value); }
-    inline ListingSummaryItem& WithListingRevision(const Aws::String& value) { SetListingRevision(value); return *this;}
-    inline ListingSummaryItem& WithListingRevision(Aws::String&& value) { SetListingRevision(std::move(value)); return *this;}
-    inline ListingSummaryItem& WithListingRevision(const char* value) { SetListingRevision(value); return *this;}
+    template<typename ListingRevisionT = Aws::String>
+    void SetListingRevision(ListingRevisionT&& value) { m_listingRevisionHasBeenSet = true; m_listingRevision = std::forward<ListingRevisionT>(value); }
+    template<typename ListingRevisionT = Aws::String>
+    ListingSummaryItem& WithListingRevision(ListingRevisionT&& value) { SetListingRevision(std::forward<ListingRevisionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ChartAxisLabelOptions::ChartAxisLabelOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_sortIconVisibility(Visibility::NOT_SET),
-    m_sortIconVisibilityHasBeenSet(false),
-    m_axisLabelOptionsHasBeenSet(false)
-{
-}
-
 ChartAxisLabelOptions::ChartAxisLabelOptions(JsonView jsonValue)
-  : ChartAxisLabelOptions()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ChartAxisLabelOptions& ChartAxisLabelOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortIconVisibility"))
   {
     m_sortIconVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("SortIconVisibility"));
-
     m_sortIconVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxisLabelOptions"))
   {
     Aws::Utils::Array<JsonView> axisLabelOptionsJsonList = jsonValue.GetArray("AxisLabelOptions");
@@ -58,7 +44,6 @@ ChartAxisLabelOptions& ChartAxisLabelOptions::operator =(JsonView jsonValue)
     }
     m_axisLabelOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

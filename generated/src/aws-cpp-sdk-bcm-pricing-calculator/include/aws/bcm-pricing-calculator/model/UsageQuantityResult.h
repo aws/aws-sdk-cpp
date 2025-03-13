@@ -32,7 +32,7 @@ namespace Model
   class UsageQuantityResult
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API UsageQuantityResult();
+    AWS_BCMPRICINGCALCULATOR_API UsageQuantityResult() = default;
     AWS_BCMPRICINGCALCULATOR_API UsageQuantityResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API UsageQuantityResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> The numeric value of the usage quantity result. </p>
      */
-    inline double GetAmount() const{ return m_amount; }
+    inline double GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
     inline UsageQuantityResult& WithAmount(double value) { SetAmount(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p> The unit of measurement for the usage quantity result. </p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline UsageQuantityResult& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline UsageQuantityResult& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline UsageQuantityResult& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    UsageQuantityResult& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
   private:
 
-    double m_amount;
+    double m_amount{0.0};
     bool m_amountHasBeenSet = false;
 
     Aws::String m_unit;

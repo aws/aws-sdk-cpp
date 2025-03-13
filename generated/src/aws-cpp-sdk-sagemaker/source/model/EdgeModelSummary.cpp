@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgeModelSummary::EdgeModelSummary() : 
-    m_modelNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false)
-{
-}
-
 EdgeModelSummary::EdgeModelSummary(JsonView jsonValue)
-  : EdgeModelSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EdgeModelSummary& EdgeModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelName"))
   {
     m_modelName = jsonValue.GetString("ModelName");
-
     m_modelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

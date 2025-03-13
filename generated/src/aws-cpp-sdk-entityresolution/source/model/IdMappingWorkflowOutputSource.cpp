@@ -18,14 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-IdMappingWorkflowOutputSource::IdMappingWorkflowOutputSource() : 
-    m_kMSArnHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false)
-{
-}
-
 IdMappingWorkflowOutputSource::IdMappingWorkflowOutputSource(JsonView jsonValue)
-  : IdMappingWorkflowOutputSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdMappingWorkflowOutputSource& IdMappingWorkflowOutputSource::operator =(JsonVie
   if(jsonValue.ValueExists("KMSArn"))
   {
     m_kMSArn = jsonValue.GetString("KMSArn");
-
     m_kMSArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("outputS3Path");
-
     m_outputS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

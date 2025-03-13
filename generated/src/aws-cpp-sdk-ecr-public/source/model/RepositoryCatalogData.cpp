@@ -18,20 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-RepositoryCatalogData::RepositoryCatalogData() : 
-    m_descriptionHasBeenSet(false),
-    m_architecturesHasBeenSet(false),
-    m_operatingSystemsHasBeenSet(false),
-    m_logoUrlHasBeenSet(false),
-    m_aboutTextHasBeenSet(false),
-    m_usageTextHasBeenSet(false),
-    m_marketplaceCertified(false),
-    m_marketplaceCertifiedHasBeenSet(false)
-{
-}
-
 RepositoryCatalogData::RepositoryCatalogData(JsonView jsonValue)
-  : RepositoryCatalogData()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ RepositoryCatalogData& RepositoryCatalogData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architectures"))
   {
     Aws::Utils::Array<JsonView> architecturesJsonList = jsonValue.GetArray("architectures");
@@ -54,7 +39,6 @@ RepositoryCatalogData& RepositoryCatalogData::operator =(JsonView jsonValue)
     }
     m_architecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystems"))
   {
     Aws::Utils::Array<JsonView> operatingSystemsJsonList = jsonValue.GetArray("operatingSystems");
@@ -64,35 +48,26 @@ RepositoryCatalogData& RepositoryCatalogData::operator =(JsonView jsonValue)
     }
     m_operatingSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logoUrl"))
   {
     m_logoUrl = jsonValue.GetString("logoUrl");
-
     m_logoUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aboutText"))
   {
     m_aboutText = jsonValue.GetString("aboutText");
-
     m_aboutTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageText"))
   {
     m_usageText = jsonValue.GetString("usageText");
-
     m_usageTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("marketplaceCertified"))
   {
     m_marketplaceCertified = jsonValue.GetBool("marketplaceCertified");
-
     m_marketplaceCertifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

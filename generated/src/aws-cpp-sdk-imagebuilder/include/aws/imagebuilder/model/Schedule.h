@@ -33,7 +33,7 @@ namespace Model
   class Schedule
   {
   public:
-    AWS_IMAGEBUILDER_API Schedule();
+    AWS_IMAGEBUILDER_API Schedule() = default;
     AWS_IMAGEBUILDER_API Schedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use
      * cron expressions in EC2 Image Builder</a>.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline Schedule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline Schedule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline Schedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    Schedule& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
      * If not specified this defaults to UTC.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline Schedule& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline Schedule& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline Schedule& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    Schedule& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * builds a new image every time the CRON expression matches the current time.</p>
      * </li> </ul>
      */
-    inline const PipelineExecutionStartCondition& GetPipelineExecutionStartCondition() const{ return m_pipelineExecutionStartCondition; }
+    inline PipelineExecutionStartCondition GetPipelineExecutionStartCondition() const { return m_pipelineExecutionStartCondition; }
     inline bool PipelineExecutionStartConditionHasBeenSet() const { return m_pipelineExecutionStartConditionHasBeenSet; }
-    inline void SetPipelineExecutionStartCondition(const PipelineExecutionStartCondition& value) { m_pipelineExecutionStartConditionHasBeenSet = true; m_pipelineExecutionStartCondition = value; }
-    inline void SetPipelineExecutionStartCondition(PipelineExecutionStartCondition&& value) { m_pipelineExecutionStartConditionHasBeenSet = true; m_pipelineExecutionStartCondition = std::move(value); }
-    inline Schedule& WithPipelineExecutionStartCondition(const PipelineExecutionStartCondition& value) { SetPipelineExecutionStartCondition(value); return *this;}
-    inline Schedule& WithPipelineExecutionStartCondition(PipelineExecutionStartCondition&& value) { SetPipelineExecutionStartCondition(std::move(value)); return *this;}
+    inline void SetPipelineExecutionStartCondition(PipelineExecutionStartCondition value) { m_pipelineExecutionStartConditionHasBeenSet = true; m_pipelineExecutionStartCondition = value; }
+    inline Schedule& WithPipelineExecutionStartCondition(PipelineExecutionStartCondition value) { SetPipelineExecutionStartCondition(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet = false;
 
-    PipelineExecutionStartCondition m_pipelineExecutionStartCondition;
+    PipelineExecutionStartCondition m_pipelineExecutionStartCondition{PipelineExecutionStartCondition::NOT_SET};
     bool m_pipelineExecutionStartConditionHasBeenSet = false;
   };
 

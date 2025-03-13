@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-PublicKey::PublicKey() : 
-    m_idHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_publicKeyConfigHasBeenSet(false)
-{
-}
-
 PublicKey::PublicKey(const XmlNode& xmlNode)
-  : PublicKey()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ PublicKey& PublicKey::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
+       m_createdTimeHasBeenSet = true;
     }
     XmlNode publicKeyConfigNode = resultNode.FirstChild("PublicKeyConfig");
     if(!publicKeyConfigNode.IsNull())
     {
       m_publicKeyConfig = publicKeyConfigNode;
       m_publicKeyConfigHasBeenSet = true;
+       m_publicKeyConfigHasBeenSet = true;
     }
   }
 

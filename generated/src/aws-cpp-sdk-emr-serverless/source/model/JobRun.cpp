@@ -18,45 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-JobRun::JobRun() : 
-    m_applicationIdHasBeenSet(false),
-    m_jobRunIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_state(JobRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateDetailsHasBeenSet(false),
-    m_releaseLabelHasBeenSet(false),
-    m_configurationOverridesHasBeenSet(false),
-    m_jobDriverHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_totalResourceUtilizationHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_totalExecutionDurationSeconds(0),
-    m_totalExecutionDurationSecondsHasBeenSet(false),
-    m_executionTimeoutMinutes(0),
-    m_executionTimeoutMinutesHasBeenSet(false),
-    m_billedResourceUtilizationHasBeenSet(false),
-    m_mode(JobRunMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_attemptCreatedAtHasBeenSet(false),
-    m_attemptUpdatedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_queuedDurationMilliseconds(0),
-    m_queuedDurationMillisecondsHasBeenSet(false)
-{
-}
-
 JobRun::JobRun(JsonView jsonValue)
-  : JobRun()
 {
   *this = jsonValue;
 }
@@ -66,94 +28,68 @@ JobRun& JobRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobRunId"))
   {
     m_jobRunId = jsonValue.GetString("jobRunId");
-
     m_jobRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRole"))
   {
     m_executionRole = jsonValue.GetString("executionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = JobRunStateMapper::GetJobRunStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateDetails"))
   {
     m_stateDetails = jsonValue.GetString("stateDetails");
-
     m_stateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("releaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("releaseLabel");
-
     m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationOverrides"))
   {
     m_configurationOverrides = jsonValue.GetObject("configurationOverrides");
-
     m_configurationOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobDriver"))
   {
     m_jobDriver = jsonValue.GetObject("jobDriver");
-
     m_jobDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -163,98 +99,71 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResourceUtilization"))
   {
     m_totalResourceUtilization = jsonValue.GetObject("totalResourceUtilization");
-
     m_totalResourceUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalExecutionDurationSeconds"))
   {
     m_totalExecutionDurationSeconds = jsonValue.GetInteger("totalExecutionDurationSeconds");
-
     m_totalExecutionDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionTimeoutMinutes"))
   {
     m_executionTimeoutMinutes = jsonValue.GetInt64("executionTimeoutMinutes");
-
     m_executionTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billedResourceUtilization"))
   {
     m_billedResourceUtilization = jsonValue.GetObject("billedResourceUtilization");
-
     m_billedResourceUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = JobRunModeMapper::GetJobRunModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryPolicy"))
   {
     m_retryPolicy = jsonValue.GetObject("retryPolicy");
-
     m_retryPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attempt"))
   {
     m_attempt = jsonValue.GetInteger("attempt");
-
     m_attemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attemptCreatedAt"))
   {
     m_attemptCreatedAt = jsonValue.GetDouble("attemptCreatedAt");
-
     m_attemptCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attemptUpdatedAt"))
   {
     m_attemptUpdatedAt = jsonValue.GetDouble("attemptUpdatedAt");
-
     m_attemptUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetDouble("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queuedDurationMilliseconds"))
   {
     m_queuedDurationMilliseconds = jsonValue.GetInt64("queuedDurationMilliseconds");
-
     m_queuedDurationMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

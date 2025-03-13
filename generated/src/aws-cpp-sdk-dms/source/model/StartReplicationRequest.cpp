@@ -12,16 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartReplicationRequest::StartReplicationRequest() : 
-    m_replicationConfigArnHasBeenSet(false),
-    m_startReplicationTypeHasBeenSet(false),
-    m_premigrationAssessmentSettingsHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false),
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false)
-{
-}
-
 Aws::String StartReplicationRequest::SerializePayload() const
 {
   JsonValue payload;

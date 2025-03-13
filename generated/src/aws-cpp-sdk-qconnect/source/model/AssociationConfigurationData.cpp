@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AssociationConfigurationData::AssociationConfigurationData() : 
-    m_knowledgeBaseAssociationConfigurationDataHasBeenSet(false)
-{
-}
-
 AssociationConfigurationData::AssociationConfigurationData(JsonView jsonValue)
-  : AssociationConfigurationData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssociationConfigurationData& AssociationConfigurationData::operator =(JsonView 
   if(jsonValue.ValueExists("knowledgeBaseAssociationConfigurationData"))
   {
     m_knowledgeBaseAssociationConfigurationData = jsonValue.GetObject("knowledgeBaseAssociationConfigurationData");
-
     m_knowledgeBaseAssociationConfigurationDataHasBeenSet = true;
   }
-
   return *this;
 }
 

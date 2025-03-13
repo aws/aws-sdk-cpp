@@ -18,18 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormSection::EvaluationFormSection() : 
-    m_titleHasBeenSet(false),
-    m_refIdHasBeenSet(false),
-    m_instructionsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_weight(0.0),
-    m_weightHasBeenSet(false)
-{
-}
-
 EvaluationFormSection::EvaluationFormSection(JsonView jsonValue)
-  : EvaluationFormSection()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EvaluationFormSection& EvaluationFormSection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefId"))
   {
     m_refId = jsonValue.GetString("RefId");
-
     m_refIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Instructions"))
   {
     m_instructions = jsonValue.GetString("Instructions");
-
     m_instructionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -66,14 +49,11 @@ EvaluationFormSection& EvaluationFormSection::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetDouble("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

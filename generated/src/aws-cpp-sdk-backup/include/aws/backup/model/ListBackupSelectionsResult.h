@@ -29,7 +29,7 @@ namespace Model
   class ListBackupSelectionsResult
   {
   public:
-    AWS_BACKUP_API ListBackupSelectionsResult();
+    AWS_BACKUP_API ListBackupSelectionsResult() = default;
     AWS_BACKUP_API ListBackupSelectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API ListBackupSelectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBackupSelectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBackupSelectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBackupSelectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBackupSelectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * <p>An array of backup selection list items containing metadata about each
      * resource in the list.</p>
      */
-    inline const Aws::Vector<BackupSelectionsListMember>& GetBackupSelectionsList() const{ return m_backupSelectionsList; }
-    inline void SetBackupSelectionsList(const Aws::Vector<BackupSelectionsListMember>& value) { m_backupSelectionsList = value; }
-    inline void SetBackupSelectionsList(Aws::Vector<BackupSelectionsListMember>&& value) { m_backupSelectionsList = std::move(value); }
-    inline ListBackupSelectionsResult& WithBackupSelectionsList(const Aws::Vector<BackupSelectionsListMember>& value) { SetBackupSelectionsList(value); return *this;}
-    inline ListBackupSelectionsResult& WithBackupSelectionsList(Aws::Vector<BackupSelectionsListMember>&& value) { SetBackupSelectionsList(std::move(value)); return *this;}
-    inline ListBackupSelectionsResult& AddBackupSelectionsList(const BackupSelectionsListMember& value) { m_backupSelectionsList.push_back(value); return *this; }
-    inline ListBackupSelectionsResult& AddBackupSelectionsList(BackupSelectionsListMember&& value) { m_backupSelectionsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BackupSelectionsListMember>& GetBackupSelectionsList() const { return m_backupSelectionsList; }
+    template<typename BackupSelectionsListT = Aws::Vector<BackupSelectionsListMember>>
+    void SetBackupSelectionsList(BackupSelectionsListT&& value) { m_backupSelectionsListHasBeenSet = true; m_backupSelectionsList = std::forward<BackupSelectionsListT>(value); }
+    template<typename BackupSelectionsListT = Aws::Vector<BackupSelectionsListMember>>
+    ListBackupSelectionsResult& WithBackupSelectionsList(BackupSelectionsListT&& value) { SetBackupSelectionsList(std::forward<BackupSelectionsListT>(value)); return *this;}
+    template<typename BackupSelectionsListT = BackupSelectionsListMember>
+    ListBackupSelectionsResult& AddBackupSelectionsList(BackupSelectionsListT&& value) { m_backupSelectionsListHasBeenSet = true; m_backupSelectionsList.emplace_back(std::forward<BackupSelectionsListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBackupSelectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBackupSelectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBackupSelectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBackupSelectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<BackupSelectionsListMember> m_backupSelectionsList;
+    bool m_backupSelectionsListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

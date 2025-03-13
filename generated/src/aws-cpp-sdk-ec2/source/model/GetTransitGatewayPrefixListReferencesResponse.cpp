@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTransitGatewayPrefixListReferencesResponse::GetTransitGatewayPrefixListReferencesResponse()
-{
-}
-
 GetTransitGatewayPrefixListReferencesResponse::GetTransitGatewayPrefixListReferencesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetTransitGatewayPrefixListReferencesResponse& GetTransitGatewayPrefixListRefere
     if(!transitGatewayPrefixListReferencesNode.IsNull())
     {
       XmlNode transitGatewayPrefixListReferencesMember = transitGatewayPrefixListReferencesNode.FirstChild("item");
+      m_transitGatewayPrefixListReferencesHasBeenSet = !transitGatewayPrefixListReferencesMember.IsNull();
       while(!transitGatewayPrefixListReferencesMember.IsNull())
       {
         m_transitGatewayPrefixListReferences.push_back(transitGatewayPrefixListReferencesMember);
@@ -53,6 +50,7 @@ GetTransitGatewayPrefixListReferencesResponse& GetTransitGatewayPrefixListRefere
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ GetTransitGatewayPrefixListReferencesResponse& GetTransitGatewayPrefixListRefere
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayPrefixListReferencesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

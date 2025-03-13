@@ -12,15 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFindingsRequest::GetFindingsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingsRequest::SerializePayload() const
 {
   JsonValue payload;

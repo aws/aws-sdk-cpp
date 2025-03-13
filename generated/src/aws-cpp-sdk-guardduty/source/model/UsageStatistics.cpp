@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UsageStatistics::UsageStatistics() : 
-    m_sumByAccountHasBeenSet(false),
-    m_topAccountsByFeatureHasBeenSet(false),
-    m_sumByDataSourceHasBeenSet(false),
-    m_sumByResourceHasBeenSet(false),
-    m_topResourcesHasBeenSet(false),
-    m_sumByFeatureHasBeenSet(false)
-{
-}
-
 UsageStatistics::UsageStatistics(JsonView jsonValue)
-  : UsageStatistics()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
     }
     m_sumByAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topAccountsByFeature"))
   {
     Aws::Utils::Array<JsonView> topAccountsByFeatureJsonList = jsonValue.GetArray("topAccountsByFeature");
@@ -55,7 +43,6 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
     }
     m_topAccountsByFeatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sumByDataSource"))
   {
     Aws::Utils::Array<JsonView> sumByDataSourceJsonList = jsonValue.GetArray("sumByDataSource");
@@ -65,7 +52,6 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
     }
     m_sumByDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sumByResource"))
   {
     Aws::Utils::Array<JsonView> sumByResourceJsonList = jsonValue.GetArray("sumByResource");
@@ -75,7 +61,6 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
     }
     m_sumByResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topResources"))
   {
     Aws::Utils::Array<JsonView> topResourcesJsonList = jsonValue.GetArray("topResources");
@@ -85,7 +70,6 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
     }
     m_topResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sumByFeature"))
   {
     Aws::Utils::Array<JsonView> sumByFeatureJsonList = jsonValue.GetArray("sumByFeature");
@@ -95,7 +79,6 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
     }
     m_sumByFeatureHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,27 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ClusterPendingModifiedValues::ClusterPendingModifiedValues() : 
-    m_pendingCloudwatchLogsExportsHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_rdsCustomClusterConfigurationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false)
-{
-}
-
 ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNode)
-  : ClusterPendingModifiedValues()
 {
   *this = xmlNode;
 }
@@ -56,66 +36,77 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
     {
       m_pendingCloudwatchLogsExports = pendingCloudwatchLogsExportsNode;
       m_pendingCloudwatchLogsExportsHasBeenSet = true;
+       m_pendingCloudwatchLogsExportsHasBeenSet = true;
     }
     XmlNode dBClusterIdentifierNode = resultNode.FirstChild("DBClusterIdentifier");
     if(!dBClusterIdentifierNode.IsNull())
     {
       m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
       m_dBClusterIdentifierHasBeenSet = true;
+       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode masterUserPasswordNode = resultNode.FirstChild("MasterUserPassword");
     if(!masterUserPasswordNode.IsNull())
     {
       m_masterUserPassword = Aws::Utils::Xml::DecodeEscapedXmlText(masterUserPasswordNode.GetText());
       m_masterUserPasswordHasBeenSet = true;
+       m_masterUserPasswordHasBeenSet = true;
     }
     XmlNode iAMDatabaseAuthenticationEnabledNode = resultNode.FirstChild("IAMDatabaseAuthenticationEnabled");
     if(!iAMDatabaseAuthenticationEnabledNode.IsNull())
     {
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMDatabaseAuthenticationEnabledNode.GetText()).c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
+       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode backupRetentionPeriodNode = resultNode.FirstChild("BackupRetentionPeriod");
     if(!backupRetentionPeriodNode.IsNull())
     {
       m_backupRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backupRetentionPeriodNode.GetText()).c_str()).c_str());
       m_backupRetentionPeriodHasBeenSet = true;
+       m_backupRetentionPeriodHasBeenSet = true;
     }
     XmlNode allocatedStorageNode = resultNode.FirstChild("AllocatedStorage");
     if(!allocatedStorageNode.IsNull())
     {
       m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocatedStorageNode.GetText()).c_str()).c_str());
       m_allocatedStorageHasBeenSet = true;
+       m_allocatedStorageHasBeenSet = true;
     }
     XmlNode rdsCustomClusterConfigurationNode = resultNode.FirstChild("RdsCustomClusterConfiguration");
     if(!rdsCustomClusterConfigurationNode.IsNull())
     {
       m_rdsCustomClusterConfiguration = rdsCustomClusterConfigurationNode;
       m_rdsCustomClusterConfigurationHasBeenSet = true;
+       m_rdsCustomClusterConfigurationHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
     if(!iopsNode.IsNull())
     {
       m_iops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iopsNode.GetText()).c_str()).c_str());
       m_iopsHasBeenSet = true;
+       m_iopsHasBeenSet = true;
     }
     XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
     if(!storageTypeNode.IsNull())
     {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
+       m_storageTypeHasBeenSet = true;
     }
     XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
     if(!certificateDetailsNode.IsNull())
     {
       m_certificateDetails = certificateDetailsNode;
       m_certificateDetailsHasBeenSet = true;
+       m_certificateDetailsHasBeenSet = true;
     }
   }
 

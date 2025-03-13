@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMultipartUploadsRequest::ListMultipartUploadsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListMultipartUploadsRequest::SerializePayload() const
 {
   return {};

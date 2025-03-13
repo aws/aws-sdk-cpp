@@ -33,7 +33,7 @@ namespace Model
   class PatchGroupPatchBaselineMapping
   {
   public:
-    AWS_SSM_API PatchGroupPatchBaselineMapping();
+    AWS_SSM_API PatchGroupPatchBaselineMapping() = default;
     AWS_SSM_API PatchGroupPatchBaselineMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchGroupPatchBaselineMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
      */
-    inline const Aws::String& GetPatchGroup() const{ return m_patchGroup; }
+    inline const Aws::String& GetPatchGroup() const { return m_patchGroup; }
     inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
-    inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::move(value); }
-    inline void SetPatchGroup(const char* value) { m_patchGroupHasBeenSet = true; m_patchGroup.assign(value); }
-    inline PatchGroupPatchBaselineMapping& WithPatchGroup(const Aws::String& value) { SetPatchGroup(value); return *this;}
-    inline PatchGroupPatchBaselineMapping& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
-    inline PatchGroupPatchBaselineMapping& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
+    template<typename PatchGroupT = Aws::String>
+    void SetPatchGroup(PatchGroupT&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::forward<PatchGroupT>(value); }
+    template<typename PatchGroupT = Aws::String>
+    PatchGroupPatchBaselineMapping& WithPatchGroup(PatchGroupT&& value) { SetPatchGroup(std::forward<PatchGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The patch baseline the patch group is registered with.</p>
      */
-    inline const PatchBaselineIdentity& GetBaselineIdentity() const{ return m_baselineIdentity; }
+    inline const PatchBaselineIdentity& GetBaselineIdentity() const { return m_baselineIdentity; }
     inline bool BaselineIdentityHasBeenSet() const { return m_baselineIdentityHasBeenSet; }
-    inline void SetBaselineIdentity(const PatchBaselineIdentity& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = value; }
-    inline void SetBaselineIdentity(PatchBaselineIdentity&& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = std::move(value); }
-    inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(const PatchBaselineIdentity& value) { SetBaselineIdentity(value); return *this;}
-    inline PatchGroupPatchBaselineMapping& WithBaselineIdentity(PatchBaselineIdentity&& value) { SetBaselineIdentity(std::move(value)); return *this;}
+    template<typename BaselineIdentityT = PatchBaselineIdentity>
+    void SetBaselineIdentity(BaselineIdentityT&& value) { m_baselineIdentityHasBeenSet = true; m_baselineIdentity = std::forward<BaselineIdentityT>(value); }
+    template<typename BaselineIdentityT = PatchBaselineIdentity>
+    PatchGroupPatchBaselineMapping& WithBaselineIdentity(BaselineIdentityT&& value) { SetBaselineIdentity(std::forward<BaselineIdentityT>(value)); return *this;}
     ///@}
   private:
 

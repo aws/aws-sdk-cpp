@@ -32,7 +32,7 @@ namespace Model
   class AwsCodeBuildProjectLogsConfigS3LogsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails() = default;
     AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCodeBuildProjectLogsConfigS3LogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Whether to disable encryption of the S3 build log output.</p>
      */
-    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+    inline bool GetEncryptionDisabled() const { return m_encryptionDisabled; }
     inline bool EncryptionDisabledHasBeenSet() const { return m_encryptionDisabledHasBeenSet; }
     inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
     inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
@@ -52,32 +52,28 @@ namespace Model
     /**
      * <p>The ARN of the S3 bucket and the path prefix for S3 logs.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    AwsCodeBuildProjectLogsConfigS3LogsDetails& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the S3 build logs.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsCodeBuildProjectLogsConfigS3LogsDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_encryptionDisabled;
+    bool m_encryptionDisabled{false};
     bool m_encryptionDisabledHasBeenSet = false;
 
     Aws::String m_location;

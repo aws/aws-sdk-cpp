@@ -33,7 +33,7 @@ namespace Model
   class LaunchTemplateConfig
   {
   public:
-    AWS_EC2_API LaunchTemplateConfig();
+    AWS_EC2_API LaunchTemplateConfig() = default;
     AWS_EC2_API LaunchTemplateConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,12 @@ namespace Model
      * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
      * a network interface ID in a Spot Fleet.</p>
      */
-    inline const FleetLaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
+    inline const FleetLaunchTemplateSpecification& GetLaunchTemplateSpecification() const { return m_launchTemplateSpecification; }
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
-    inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
-    inline void SetLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
-    inline LaunchTemplateConfig& WithLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
-    inline LaunchTemplateConfig& WithLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
+    template<typename LaunchTemplateSpecificationT = FleetLaunchTemplateSpecification>
+    void SetLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::forward<LaunchTemplateSpecificationT>(value); }
+    template<typename LaunchTemplateSpecificationT = FleetLaunchTemplateSpecification>
+    LaunchTemplateConfig& WithLaunchTemplateSpecification(LaunchTemplateSpecificationT&& value) { SetLaunchTemplateSpecification(std::forward<LaunchTemplateSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>Any parameters that you specify override the same parameters in the launch
      * template.</p>
      */
-    inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
+    inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const { return m_overrides; }
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-    inline void SetOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-    inline void SetOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-    inline LaunchTemplateConfig& WithOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { SetOverrides(value); return *this;}
-    inline LaunchTemplateConfig& WithOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { SetOverrides(std::move(value)); return *this;}
-    inline LaunchTemplateConfig& AddOverrides(const LaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-    inline LaunchTemplateConfig& AddOverrides(LaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
+    template<typename OverridesT = Aws::Vector<LaunchTemplateOverrides>>
+    void SetOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides = std::forward<OverridesT>(value); }
+    template<typename OverridesT = Aws::Vector<LaunchTemplateOverrides>>
+    LaunchTemplateConfig& WithOverrides(OverridesT&& value) { SetOverrides(std::forward<OverridesT>(value)); return *this;}
+    template<typename OverridesT = LaunchTemplateOverrides>
+    LaunchTemplateConfig& AddOverrides(OverridesT&& value) { m_overridesHasBeenSet = true; m_overrides.emplace_back(std::forward<OverridesT>(value)); return *this; }
     ///@}
   private:
 

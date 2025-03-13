@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNodeFromTemplateJobsRequest::ListNodeFromTemplateJobsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListNodeFromTemplateJobsRequest::SerializePayload() const
 {
   return {};

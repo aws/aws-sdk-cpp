@@ -12,15 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInstancesHealthStatusRequest::GetInstancesHealthStatusRequest() : 
-    m_serviceIdHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetInstancesHealthStatusRequest::SerializePayload() const
 {
   JsonValue payload;

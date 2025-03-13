@@ -12,15 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKxUserRequest::UpdateKxUserRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateKxUserRequest::SerializePayload() const
 {
   JsonValue payload;

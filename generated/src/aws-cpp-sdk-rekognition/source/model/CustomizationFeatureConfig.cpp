@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CustomizationFeatureConfig::CustomizationFeatureConfig() : 
-    m_contentModerationHasBeenSet(false)
-{
-}
-
 CustomizationFeatureConfig::CustomizationFeatureConfig(JsonView jsonValue)
-  : CustomizationFeatureConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomizationFeatureConfig& CustomizationFeatureConfig::operator =(JsonView json
   if(jsonValue.ValueExists("ContentModeration"))
   {
     m_contentModeration = jsonValue.GetObject("ContentModeration");
-
     m_contentModerationHasBeenSet = true;
   }
-
   return *this;
 }
 

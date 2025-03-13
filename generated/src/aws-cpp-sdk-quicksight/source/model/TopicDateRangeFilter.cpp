@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicDateRangeFilter::TopicDateRangeFilter() : 
-    m_inclusive(false),
-    m_inclusiveHasBeenSet(false),
-    m_constantHasBeenSet(false)
-{
-}
-
 TopicDateRangeFilter::TopicDateRangeFilter(JsonView jsonValue)
-  : TopicDateRangeFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TopicDateRangeFilter& TopicDateRangeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Inclusive"))
   {
     m_inclusive = jsonValue.GetBool("Inclusive");
-
     m_inclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constant"))
   {
     m_constant = jsonValue.GetObject("Constant");
-
     m_constantHasBeenSet = true;
   }
-
   return *this;
 }
 

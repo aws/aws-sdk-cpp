@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AuthorizationCodeProperties::AuthorizationCodeProperties() : 
-    m_authorizationCodeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
-{
-}
-
 AuthorizationCodeProperties::AuthorizationCodeProperties(JsonView jsonValue)
-  : AuthorizationCodeProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuthorizationCodeProperties& AuthorizationCodeProperties::operator =(JsonView js
   if(jsonValue.ValueExists("AuthorizationCode"))
   {
     m_authorizationCode = jsonValue.GetString("AuthorizationCode");
-
     m_authorizationCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedirectUri"))
   {
     m_redirectUri = jsonValue.GetString("RedirectUri");
-
     m_redirectUriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PerformanceConfiguration::PerformanceConfiguration() : 
-    m_uniqueKeysHasBeenSet(false)
-{
-}
-
 PerformanceConfiguration::PerformanceConfiguration(JsonView jsonValue)
-  : PerformanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PerformanceConfiguration& PerformanceConfiguration::operator =(JsonView jsonValu
     }
     m_uniqueKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

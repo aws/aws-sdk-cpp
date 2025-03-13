@@ -19,65 +19,38 @@ namespace deadline
 namespace Model
 {
 
-SearchFilterExpression::SearchFilterExpression() : 
-    m_dateTimeFilterHasBeenSet(false),
-    m_parameterFilterHasBeenSet(false),
-    m_searchTermFilterHasBeenSet(false),
-    m_stringFilterHasBeenSet(false),
-    m_groupFilterHasBeenSet(false)
-{
-}
-
 SearchFilterExpression::SearchFilterExpression(JsonView jsonValue)
-  : SearchFilterExpression()
 {
   *this = jsonValue;
 }
-
-const SearchGroupedFilterExpressions& SearchFilterExpression::GetGroupFilter() const{ return *m_groupFilter; }
-bool SearchFilterExpression::GroupFilterHasBeenSet() const { return m_groupFilterHasBeenSet; }
-void SearchFilterExpression::SetGroupFilter(const SearchGroupedFilterExpressions& value) { m_groupFilterHasBeenSet = true; m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", value); }
-void SearchFilterExpression::SetGroupFilter(SearchGroupedFilterExpressions&& value) { m_groupFilterHasBeenSet = true; m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", std::move(value)); }
-SearchFilterExpression& SearchFilterExpression::WithGroupFilter(const SearchGroupedFilterExpressions& value) { SetGroupFilter(value); return *this;}
-SearchFilterExpression& SearchFilterExpression::WithGroupFilter(SearchGroupedFilterExpressions&& value) { SetGroupFilter(std::move(value)); return *this;}
 
 SearchFilterExpression& SearchFilterExpression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dateTimeFilter"))
   {
     m_dateTimeFilter = jsonValue.GetObject("dateTimeFilter");
-
     m_dateTimeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterFilter"))
   {
     m_parameterFilter = jsonValue.GetObject("parameterFilter");
-
     m_parameterFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("searchTermFilter"))
   {
     m_searchTermFilter = jsonValue.GetObject("searchTermFilter");
-
     m_searchTermFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringFilter"))
   {
     m_stringFilter = jsonValue.GetObject("stringFilter");
-
     m_stringFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupFilter"))
   {
     m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", jsonValue.GetObject("groupFilter"));
-
     m_groupFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

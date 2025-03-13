@@ -33,7 +33,7 @@ namespace Model
   class EndPoint
   {
   public:
-    AWS_CLOUDFRONT_API EndPoint();
+    AWS_CLOUDFRONT_API EndPoint() = default;
     AWS_CLOUDFRONT_API EndPoint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API EndPoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The type of data stream where you are sending real-time log data. The only
      * valid value is <code>Kinesis</code>.</p>
      */
-    inline const Aws::String& GetStreamType() const{ return m_streamType; }
+    inline const Aws::String& GetStreamType() const { return m_streamType; }
     inline bool StreamTypeHasBeenSet() const { return m_streamTypeHasBeenSet; }
-    inline void SetStreamType(const Aws::String& value) { m_streamTypeHasBeenSet = true; m_streamType = value; }
-    inline void SetStreamType(Aws::String&& value) { m_streamTypeHasBeenSet = true; m_streamType = std::move(value); }
-    inline void SetStreamType(const char* value) { m_streamTypeHasBeenSet = true; m_streamType.assign(value); }
-    inline EndPoint& WithStreamType(const Aws::String& value) { SetStreamType(value); return *this;}
-    inline EndPoint& WithStreamType(Aws::String&& value) { SetStreamType(std::move(value)); return *this;}
-    inline EndPoint& WithStreamType(const char* value) { SetStreamType(value); return *this;}
+    template<typename StreamTypeT = Aws::String>
+    void SetStreamType(StreamTypeT&& value) { m_streamTypeHasBeenSet = true; m_streamType = std::forward<StreamTypeT>(value); }
+    template<typename StreamTypeT = Aws::String>
+    EndPoint& WithStreamType(StreamTypeT&& value) { SetStreamType(std::forward<StreamTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>Contains information about the Amazon Kinesis data stream where you are
      * sending real-time log data.</p>
      */
-    inline const KinesisStreamConfig& GetKinesisStreamConfig() const{ return m_kinesisStreamConfig; }
+    inline const KinesisStreamConfig& GetKinesisStreamConfig() const { return m_kinesisStreamConfig; }
     inline bool KinesisStreamConfigHasBeenSet() const { return m_kinesisStreamConfigHasBeenSet; }
-    inline void SetKinesisStreamConfig(const KinesisStreamConfig& value) { m_kinesisStreamConfigHasBeenSet = true; m_kinesisStreamConfig = value; }
-    inline void SetKinesisStreamConfig(KinesisStreamConfig&& value) { m_kinesisStreamConfigHasBeenSet = true; m_kinesisStreamConfig = std::move(value); }
-    inline EndPoint& WithKinesisStreamConfig(const KinesisStreamConfig& value) { SetKinesisStreamConfig(value); return *this;}
-    inline EndPoint& WithKinesisStreamConfig(KinesisStreamConfig&& value) { SetKinesisStreamConfig(std::move(value)); return *this;}
+    template<typename KinesisStreamConfigT = KinesisStreamConfig>
+    void SetKinesisStreamConfig(KinesisStreamConfigT&& value) { m_kinesisStreamConfigHasBeenSet = true; m_kinesisStreamConfig = std::forward<KinesisStreamConfigT>(value); }
+    template<typename KinesisStreamConfigT = KinesisStreamConfig>
+    EndPoint& WithKinesisStreamConfig(KinesisStreamConfigT&& value) { SetKinesisStreamConfig(std::forward<KinesisStreamConfigT>(value)); return *this;}
     ///@}
   private:
 

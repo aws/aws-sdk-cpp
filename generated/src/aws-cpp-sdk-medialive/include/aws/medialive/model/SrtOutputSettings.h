@@ -33,7 +33,7 @@ namespace Model
   class SrtOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API SrtOutputSettings();
+    AWS_MEDIALIVE_API SrtOutputSettings() = default;
     AWS_MEDIALIVE_API SrtOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SrtOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * low-jitter SRT output, and it accommodates clock recovery, input switching,
      * input disruptions, picture reordering, and so on. Range: 0-10000 milliseconds.
      */
-    inline int GetBufferMsec() const{ return m_bufferMsec; }
+    inline int GetBufferMsec() const { return m_bufferMsec; }
     inline bool BufferMsecHasBeenSet() const { return m_bufferMsecHasBeenSet; }
     inline void SetBufferMsec(int value) { m_bufferMsecHasBeenSet = true; m_bufferMsec = value; }
     inline SrtOutputSettings& WithBufferMsec(int value) { SetBufferMsec(value); return *this;}
@@ -54,22 +54,22 @@ namespace Model
 
     ///@{
     
-    inline const UdpContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+    inline const UdpContainerSettings& GetContainerSettings() const { return m_containerSettings; }
     inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
-    inline void SetContainerSettings(const UdpContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
-    inline void SetContainerSettings(UdpContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
-    inline SrtOutputSettings& WithContainerSettings(const UdpContainerSettings& value) { SetContainerSettings(value); return *this;}
-    inline SrtOutputSettings& WithContainerSettings(UdpContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
+    template<typename ContainerSettingsT = UdpContainerSettings>
+    void SetContainerSettings(ContainerSettingsT&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::forward<ContainerSettingsT>(value); }
+    template<typename ContainerSettingsT = UdpContainerSettings>
+    SrtOutputSettings& WithContainerSettings(ContainerSettingsT&& value) { SetContainerSettings(std::forward<ContainerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline SrtOutputSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline SrtOutputSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    SrtOutputSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +78,10 @@ namespace Model
      * You and the downstream system should plan how to set this field because the
      * values must not conflict with each other.
      */
-    inline const SrtEncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+    inline SrtEncryptionType GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const SrtEncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(SrtEncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline SrtOutputSettings& WithEncryptionType(const SrtEncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline SrtOutputSettings& WithEncryptionType(SrtEncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline void SetEncryptionType(SrtEncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline SrtOutputSettings& WithEncryptionType(SrtEncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +94,14 @@ namespace Model
      * aiding in packet recovery and matching as closely as possible the packet timing
      * of the sender. Range: 40-16000 milliseconds.
      */
-    inline int GetLatency() const{ return m_latency; }
+    inline int GetLatency() const { return m_latency; }
     inline bool LatencyHasBeenSet() const { return m_latencyHasBeenSet; }
     inline void SetLatency(int value) { m_latencyHasBeenSet = true; m_latency = value; }
     inline SrtOutputSettings& WithLatency(int value) { SetLatency(value); return *this;}
     ///@}
   private:
 
-    int m_bufferMsec;
+    int m_bufferMsec{0};
     bool m_bufferMsecHasBeenSet = false;
 
     UdpContainerSettings m_containerSettings;
@@ -112,10 +110,10 @@ namespace Model
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet = false;
 
-    SrtEncryptionType m_encryptionType;
+    SrtEncryptionType m_encryptionType{SrtEncryptionType::NOT_SET};
     bool m_encryptionTypeHasBeenSet = false;
 
-    int m_latency;
+    int m_latency{0};
     bool m_latencyHasBeenSet = false;
   };
 

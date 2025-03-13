@@ -24,7 +24,7 @@ namespace Model
   class UpdateSessionDataRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API UpdateSessionDataRequest();
+    AWS_QCONNECT_API UpdateSessionDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline UpdateSessionDataRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline UpdateSessionDataRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline UpdateSessionDataRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    UpdateSessionDataRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data stored on the Amazon Q in Connect Session.</p>
      */
-    inline const Aws::Vector<RuntimeSessionData>& GetData() const{ return m_data; }
+    inline const Aws::Vector<RuntimeSessionData>& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Vector<RuntimeSessionData>& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Vector<RuntimeSessionData>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline UpdateSessionDataRequest& WithData(const Aws::Vector<RuntimeSessionData>& value) { SetData(value); return *this;}
-    inline UpdateSessionDataRequest& WithData(Aws::Vector<RuntimeSessionData>&& value) { SetData(std::move(value)); return *this;}
-    inline UpdateSessionDataRequest& AddData(const RuntimeSessionData& value) { m_dataHasBeenSet = true; m_data.push_back(value); return *this; }
-    inline UpdateSessionDataRequest& AddData(RuntimeSessionData&& value) { m_dataHasBeenSet = true; m_data.push_back(std::move(value)); return *this; }
+    template<typename DataT = Aws::Vector<RuntimeSessionData>>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Vector<RuntimeSessionData>>
+    UpdateSessionDataRequest& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    template<typename DataT = RuntimeSessionData>
+    UpdateSessionDataRequest& AddData(DataT&& value) { m_dataHasBeenSet = true; m_data.emplace_back(std::forward<DataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * <p>The namespace into which the session data is stored. Supported namespaces
      * are: Custom</p>
      */
-    inline const SessionDataNamespace& GetNamespace() const{ return m_namespace; }
+    inline SessionDataNamespace GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const SessionDataNamespace& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(SessionDataNamespace&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline UpdateSessionDataRequest& WithNamespace(const SessionDataNamespace& value) { SetNamespace(value); return *this;}
-    inline UpdateSessionDataRequest& WithNamespace(SessionDataNamespace&& value) { SetNamespace(std::move(value)); return *this;}
+    inline void SetNamespace(SessionDataNamespace value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline UpdateSessionDataRequest& WithNamespace(SessionDataNamespace value) { SetNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot
      * contain the ARN.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline UpdateSessionDataRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline UpdateSessionDataRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline UpdateSessionDataRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    UpdateSessionDataRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +93,7 @@ namespace Model
     Aws::Vector<RuntimeSessionData> m_data;
     bool m_dataHasBeenSet = false;
 
-    SessionDataNamespace m_namespace;
+    SessionDataNamespace m_namespace{SessionDataNamespace::NOT_SET};
     bool m_namespaceHasBeenSet = false;
 
     Aws::String m_sessionId;

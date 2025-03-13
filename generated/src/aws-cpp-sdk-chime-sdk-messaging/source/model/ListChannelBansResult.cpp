@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListChannelBansResult::ListChannelBansResult()
-{
-}
-
 ListChannelBansResult::ListChannelBansResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListChannelBansResult& ListChannelBansResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
+    m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelBans"))
   {
     Aws::Utils::Array<JsonView> channelBansJsonList = jsonValue.GetArray("ChannelBans");
@@ -48,14 +42,15 @@ ListChannelBansResult& ListChannelBansResult::operator =(const Aws::AmazonWebSer
     {
       m_channelBans.push_back(channelBansJsonList[channelBansIndex].AsObject());
     }
+    m_channelBansHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

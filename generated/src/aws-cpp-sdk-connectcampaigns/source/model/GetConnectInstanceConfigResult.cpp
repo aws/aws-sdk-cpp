@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConnectInstanceConfigResult::GetConnectInstanceConfigResult()
-{
-}
-
 GetConnectInstanceConfigResult::GetConnectInstanceConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetConnectInstanceConfigResult& GetConnectInstanceConfigResult::operator =(const
   if(jsonValue.ValueExists("connectInstanceConfig"))
   {
     m_connectInstanceConfig = jsonValue.GetObject("connectInstanceConfig");
-
+    m_connectInstanceConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

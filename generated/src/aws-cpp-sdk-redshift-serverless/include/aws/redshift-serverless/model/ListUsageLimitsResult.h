@@ -29,7 +29,7 @@ namespace Model
   class ListUsageLimitsResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ListUsageLimitsResult();
+    AWS_REDSHIFTSERVERLESS_API ListUsageLimitsResult() = default;
     AWS_REDSHIFTSERVERLESS_API ListUsageLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API ListUsageLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Make the call again using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListUsageLimitsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUsageLimitsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUsageLimitsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUsageLimitsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of returned usage limit objects.</p>
      */
-    inline const Aws::Vector<UsageLimit>& GetUsageLimits() const{ return m_usageLimits; }
-    inline void SetUsageLimits(const Aws::Vector<UsageLimit>& value) { m_usageLimits = value; }
-    inline void SetUsageLimits(Aws::Vector<UsageLimit>&& value) { m_usageLimits = std::move(value); }
-    inline ListUsageLimitsResult& WithUsageLimits(const Aws::Vector<UsageLimit>& value) { SetUsageLimits(value); return *this;}
-    inline ListUsageLimitsResult& WithUsageLimits(Aws::Vector<UsageLimit>&& value) { SetUsageLimits(std::move(value)); return *this;}
-    inline ListUsageLimitsResult& AddUsageLimits(const UsageLimit& value) { m_usageLimits.push_back(value); return *this; }
-    inline ListUsageLimitsResult& AddUsageLimits(UsageLimit&& value) { m_usageLimits.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UsageLimit>& GetUsageLimits() const { return m_usageLimits; }
+    template<typename UsageLimitsT = Aws::Vector<UsageLimit>>
+    void SetUsageLimits(UsageLimitsT&& value) { m_usageLimitsHasBeenSet = true; m_usageLimits = std::forward<UsageLimitsT>(value); }
+    template<typename UsageLimitsT = Aws::Vector<UsageLimit>>
+    ListUsageLimitsResult& WithUsageLimits(UsageLimitsT&& value) { SetUsageLimits(std::forward<UsageLimitsT>(value)); return *this;}
+    template<typename UsageLimitsT = UsageLimit>
+    ListUsageLimitsResult& AddUsageLimits(UsageLimitsT&& value) { m_usageLimitsHasBeenSet = true; m_usageLimits.emplace_back(std::forward<UsageLimitsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListUsageLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListUsageLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListUsageLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListUsageLimitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<UsageLimit> m_usageLimits;
+    bool m_usageLimitsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

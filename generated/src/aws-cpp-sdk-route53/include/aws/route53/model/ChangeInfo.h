@@ -33,7 +33,7 @@ namespace Model
   class ChangeInfo
   {
   public:
-    AWS_ROUTE53_API ChangeInfo();
+    AWS_ROUTE53_API ChangeInfo() = default;
     AWS_ROUTE53_API ChangeInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API ChangeInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
      * action to get detailed information about the change.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ChangeInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ChangeInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ChangeInfo& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ChangeInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
      */
-    inline const ChangeStatus& GetStatus() const{ return m_status; }
+    inline ChangeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ChangeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ChangeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ChangeInfo& WithStatus(const ChangeStatus& value) { SetStatus(value); return *this;}
-    inline ChangeInfo& WithStatus(ChangeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ChangeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ChangeInfo& WithStatus(ChangeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -77,36 +73,34 @@ namespace Model
      * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
      * UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmittedAt() const{ return m_submittedAt; }
+    inline const Aws::Utils::DateTime& GetSubmittedAt() const { return m_submittedAt; }
     inline bool SubmittedAtHasBeenSet() const { return m_submittedAtHasBeenSet; }
-    inline void SetSubmittedAt(const Aws::Utils::DateTime& value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
-    inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = std::move(value); }
-    inline ChangeInfo& WithSubmittedAt(const Aws::Utils::DateTime& value) { SetSubmittedAt(value); return *this;}
-    inline ChangeInfo& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(std::move(value)); return *this;}
+    template<typename SubmittedAtT = Aws::Utils::DateTime>
+    void SetSubmittedAt(SubmittedAtT&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = std::forward<SubmittedAtT>(value); }
+    template<typename SubmittedAtT = Aws::Utils::DateTime>
+    ChangeInfo& WithSubmittedAt(SubmittedAtT&& value) { SetSubmittedAt(std::forward<SubmittedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A comment you can provide.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline ChangeInfo& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline ChangeInfo& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline ChangeInfo& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    ChangeInfo& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ChangeStatus m_status;
+    ChangeStatus m_status{ChangeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submittedAt;
+    Aws::Utils::DateTime m_submittedAt{};
     bool m_submittedAtHasBeenSet = false;
 
     Aws::String m_comment;

@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-NoneAction::NoneAction()
-{
-}
-
 NoneAction::NoneAction(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-EFSAuthorizationConfig::EFSAuthorizationConfig() : 
-    m_accessPointIdHasBeenSet(false),
-    m_iam(EFSAuthorizationConfigIAM::NOT_SET),
-    m_iamHasBeenSet(false)
-{
-}
-
 EFSAuthorizationConfig::EFSAuthorizationConfig(JsonView jsonValue)
-  : EFSAuthorizationConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EFSAuthorizationConfig& EFSAuthorizationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessPointId"))
   {
     m_accessPointId = jsonValue.GetString("accessPointId");
-
     m_accessPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iam"))
   {
     m_iam = EFSAuthorizationConfigIAMMapper::GetEFSAuthorizationConfigIAMForName(jsonValue.GetString("iam"));
-
     m_iamHasBeenSet = true;
   }
-
   return *this;
 }
 

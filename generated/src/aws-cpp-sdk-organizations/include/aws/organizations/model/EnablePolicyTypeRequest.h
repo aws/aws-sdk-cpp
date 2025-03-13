@@ -22,7 +22,7 @@ namespace Model
   class EnablePolicyTypeRequest : public OrganizationsRequest
   {
   public:
-    AWS_ORGANIZATIONS_API EnablePolicyTypeRequest();
+    AWS_ORGANIZATIONS_API EnablePolicyTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
-    inline const Aws::String& GetRootId() const{ return m_rootId; }
+    inline const Aws::String& GetRootId() const { return m_rootId; }
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
-    inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
-    inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
-    inline void SetRootId(const char* value) { m_rootIdHasBeenSet = true; m_rootId.assign(value); }
-    inline EnablePolicyTypeRequest& WithRootId(const Aws::String& value) { SetRootId(value); return *this;}
-    inline EnablePolicyTypeRequest& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
-    inline EnablePolicyTypeRequest& WithRootId(const char* value) { SetRootId(value); return *this;}
+    template<typename RootIdT = Aws::String>
+    void SetRootId(RootIdT&& value) { m_rootIdHasBeenSet = true; m_rootId = std::forward<RootIdT>(value); }
+    template<typename RootIdT = Aws::String>
+    EnablePolicyTypeRequest& WithRootId(RootIdT&& value) { SetRootId(std::forward<RootIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +69,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
      * </p> </li> </ul>
      */
-    inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+    inline PolicyType GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline EnablePolicyTypeRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-    inline EnablePolicyTypeRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+    inline void SetPolicyType(PolicyType value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+    inline EnablePolicyTypeRequest& WithPolicyType(PolicyType value) { SetPolicyType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_rootId;
     bool m_rootIdHasBeenSet = false;
 
-    PolicyType m_policyType;
+    PolicyType m_policyType{PolicyType::NOT_SET};
     bool m_policyTypeHasBeenSet = false;
   };
 

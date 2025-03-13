@@ -18,15 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentActionState::ExperimentActionState() : 
-    m_status(ExperimentActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ExperimentActionState::ExperimentActionState(JsonView jsonValue)
-  : ExperimentActionState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExperimentActionState& ExperimentActionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExperimentActionStatusMapper::GetExperimentActionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,25 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetOperationPreferences::StackSetOperationPreferences() : 
-    m_regionConcurrencyType(RegionConcurrencyType::NOT_SET),
-    m_regionConcurrencyTypeHasBeenSet(false),
-    m_regionOrderHasBeenSet(false),
-    m_failureToleranceCount(0),
-    m_failureToleranceCountHasBeenSet(false),
-    m_failureTolerancePercentage(0),
-    m_failureTolerancePercentageHasBeenSet(false),
-    m_maxConcurrentCount(0),
-    m_maxConcurrentCountHasBeenSet(false),
-    m_maxConcurrentPercentage(0),
-    m_maxConcurrentPercentageHasBeenSet(false),
-    m_concurrencyMode(ConcurrencyMode::NOT_SET),
-    m_concurrencyModeHasBeenSet(false)
-{
-}
-
 StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNode)
-  : StackSetOperationPreferences()
 {
   *this = xmlNode;
 }
@@ -52,50 +34,57 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
     XmlNode regionConcurrencyTypeNode = resultNode.FirstChild("RegionConcurrencyType");
     if(!regionConcurrencyTypeNode.IsNull())
     {
-      m_regionConcurrencyType = RegionConcurrencyTypeMapper::GetRegionConcurrencyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionConcurrencyTypeNode.GetText()).c_str()).c_str());
+      m_regionConcurrencyType = RegionConcurrencyTypeMapper::GetRegionConcurrencyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(regionConcurrencyTypeNode.GetText()).c_str()));
       m_regionConcurrencyTypeHasBeenSet = true;
+       m_regionConcurrencyTypeHasBeenSet = true;
     }
     XmlNode regionOrderNode = resultNode.FirstChild("RegionOrder");
     if(!regionOrderNode.IsNull())
     {
       XmlNode regionOrderMember = regionOrderNode.FirstChild("member");
+      m_regionOrderHasBeenSet = !regionOrderMember.IsNull();
       while(!regionOrderMember.IsNull())
       {
         m_regionOrder.push_back(regionOrderMember.GetText());
         regionOrderMember = regionOrderMember.NextNode("member");
       }
 
-      m_regionOrderHasBeenSet = true;
+       m_regionOrderHasBeenSet = true;
     }
     XmlNode failureToleranceCountNode = resultNode.FirstChild("FailureToleranceCount");
     if(!failureToleranceCountNode.IsNull())
     {
       m_failureToleranceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureToleranceCountNode.GetText()).c_str()).c_str());
       m_failureToleranceCountHasBeenSet = true;
+       m_failureToleranceCountHasBeenSet = true;
     }
     XmlNode failureTolerancePercentageNode = resultNode.FirstChild("FailureTolerancePercentage");
     if(!failureTolerancePercentageNode.IsNull())
     {
       m_failureTolerancePercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureTolerancePercentageNode.GetText()).c_str()).c_str());
       m_failureTolerancePercentageHasBeenSet = true;
+       m_failureTolerancePercentageHasBeenSet = true;
     }
     XmlNode maxConcurrentCountNode = resultNode.FirstChild("MaxConcurrentCount");
     if(!maxConcurrentCountNode.IsNull())
     {
       m_maxConcurrentCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentCountNode.GetText()).c_str()).c_str());
       m_maxConcurrentCountHasBeenSet = true;
+       m_maxConcurrentCountHasBeenSet = true;
     }
     XmlNode maxConcurrentPercentageNode = resultNode.FirstChild("MaxConcurrentPercentage");
     if(!maxConcurrentPercentageNode.IsNull())
     {
       m_maxConcurrentPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentPercentageNode.GetText()).c_str()).c_str());
       m_maxConcurrentPercentageHasBeenSet = true;
+       m_maxConcurrentPercentageHasBeenSet = true;
     }
     XmlNode concurrencyModeNode = resultNode.FirstChild("ConcurrencyMode");
     if(!concurrencyModeNode.IsNull())
     {
-      m_concurrencyMode = ConcurrencyModeMapper::GetConcurrencyModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(concurrencyModeNode.GetText()).c_str()).c_str());
+      m_concurrencyMode = ConcurrencyModeMapper::GetConcurrencyModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(concurrencyModeNode.GetText()).c_str()));
       m_concurrencyModeHasBeenSet = true;
+       m_concurrencyModeHasBeenSet = true;
     }
   }
 

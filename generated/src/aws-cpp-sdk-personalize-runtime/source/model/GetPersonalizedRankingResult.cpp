@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPersonalizedRankingResult::GetPersonalizedRankingResult()
-{
-}
-
 GetPersonalizedRankingResult::GetPersonalizedRankingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetPersonalizedRankingResult& GetPersonalizedRankingResult::operator =(const Aws
     {
       m_personalizedRanking.push_back(personalizedRankingJsonList[personalizedRankingIndex].AsObject());
     }
+    m_personalizedRankingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationId"))
   {
     m_recommendationId = jsonValue.GetString("recommendationId");
-
+    m_recommendationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

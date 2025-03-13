@@ -18,14 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-Template::Template() : 
-    m_templateArnHasBeenSet(false),
-    m_templateDataHasBeenSet(false)
-{
-}
-
 Template::Template(JsonView jsonValue)
-  : Template()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Template& Template::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateData"))
   {
     m_templateData = jsonValue.GetString("TemplateData");
-
     m_templateDataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListResolverQueryLogConfigsResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API ListResolverQueryLogConfigsResult();
+    AWS_ROUTE53RESOLVER_API ListResolverQueryLogConfigsResult() = default;
     AWS_ROUTE53RESOLVER_API ListResolverQueryLogConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API ListResolverQueryLogConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * the next group of configurations. In the next request, specify the value of
      * <code>NextToken</code> from the previous response. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResolverQueryLogConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResolverQueryLogConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResolverQueryLogConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResolverQueryLogConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,8 +56,8 @@ namespace Model
      * <code>ListResolverQueryLogConfigs</code> response, depending on the values that
      * you specify in the request.</p>
      */
-    inline int GetTotalCount() const{ return m_totalCount; }
-    inline void SetTotalCount(int value) { m_totalCount = value; }
+    inline int GetTotalCount() const { return m_totalCount; }
+    inline void SetTotalCount(int value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline ListResolverQueryLogConfigsResult& WithTotalCount(int value) { SetTotalCount(value); return *this;}
     ///@}
 
@@ -71,8 +69,8 @@ namespace Model
      * number of query logging configurations that were created by the current account
      * in the specified Region, see <code>TotalCount</code>.</p>
      */
-    inline int GetTotalFilteredCount() const{ return m_totalFilteredCount; }
-    inline void SetTotalFilteredCount(int value) { m_totalFilteredCount = value; }
+    inline int GetTotalFilteredCount() const { return m_totalFilteredCount; }
+    inline void SetTotalFilteredCount(int value) { m_totalFilteredCountHasBeenSet = true; m_totalFilteredCount = value; }
     inline ListResolverQueryLogConfigsResult& WithTotalFilteredCount(int value) { SetTotalFilteredCount(value); return *this;}
     ///@}
 
@@ -82,36 +80,39 @@ namespace Model
      * query logging configuration that matches the values that you specified for
      * <code>Filter</code>.</p>
      */
-    inline const Aws::Vector<ResolverQueryLogConfig>& GetResolverQueryLogConfigs() const{ return m_resolverQueryLogConfigs; }
-    inline void SetResolverQueryLogConfigs(const Aws::Vector<ResolverQueryLogConfig>& value) { m_resolverQueryLogConfigs = value; }
-    inline void SetResolverQueryLogConfigs(Aws::Vector<ResolverQueryLogConfig>&& value) { m_resolverQueryLogConfigs = std::move(value); }
-    inline ListResolverQueryLogConfigsResult& WithResolverQueryLogConfigs(const Aws::Vector<ResolverQueryLogConfig>& value) { SetResolverQueryLogConfigs(value); return *this;}
-    inline ListResolverQueryLogConfigsResult& WithResolverQueryLogConfigs(Aws::Vector<ResolverQueryLogConfig>&& value) { SetResolverQueryLogConfigs(std::move(value)); return *this;}
-    inline ListResolverQueryLogConfigsResult& AddResolverQueryLogConfigs(const ResolverQueryLogConfig& value) { m_resolverQueryLogConfigs.push_back(value); return *this; }
-    inline ListResolverQueryLogConfigsResult& AddResolverQueryLogConfigs(ResolverQueryLogConfig&& value) { m_resolverQueryLogConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResolverQueryLogConfig>& GetResolverQueryLogConfigs() const { return m_resolverQueryLogConfigs; }
+    template<typename ResolverQueryLogConfigsT = Aws::Vector<ResolverQueryLogConfig>>
+    void SetResolverQueryLogConfigs(ResolverQueryLogConfigsT&& value) { m_resolverQueryLogConfigsHasBeenSet = true; m_resolverQueryLogConfigs = std::forward<ResolverQueryLogConfigsT>(value); }
+    template<typename ResolverQueryLogConfigsT = Aws::Vector<ResolverQueryLogConfig>>
+    ListResolverQueryLogConfigsResult& WithResolverQueryLogConfigs(ResolverQueryLogConfigsT&& value) { SetResolverQueryLogConfigs(std::forward<ResolverQueryLogConfigsT>(value)); return *this;}
+    template<typename ResolverQueryLogConfigsT = ResolverQueryLogConfig>
+    ListResolverQueryLogConfigsResult& AddResolverQueryLogConfigs(ResolverQueryLogConfigsT&& value) { m_resolverQueryLogConfigsHasBeenSet = true; m_resolverQueryLogConfigs.emplace_back(std::forward<ResolverQueryLogConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResolverQueryLogConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResolverQueryLogConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResolverQueryLogConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResolverQueryLogConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    int m_totalCount;
+    int m_totalCount{0};
+    bool m_totalCountHasBeenSet = false;
 
-    int m_totalFilteredCount;
+    int m_totalFilteredCount{0};
+    bool m_totalFilteredCountHasBeenSet = false;
 
     Aws::Vector<ResolverQueryLogConfig> m_resolverQueryLogConfigs;
+    bool m_resolverQueryLogConfigsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

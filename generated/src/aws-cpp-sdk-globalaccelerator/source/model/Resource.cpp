@@ -18,15 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-Resource::Resource() : 
-    m_endpointIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cidr"))
   {
     m_cidr = jsonValue.GetString("Cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

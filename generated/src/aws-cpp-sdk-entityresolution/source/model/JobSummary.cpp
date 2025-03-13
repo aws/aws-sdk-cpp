@@ -18,17 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-JobSummary::JobSummary() : 
-    m_endTimeHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 JobSummary::JobSummary(JsonView jsonValue)
-  : JobSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

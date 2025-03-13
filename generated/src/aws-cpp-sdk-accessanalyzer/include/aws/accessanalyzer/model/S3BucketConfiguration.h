@@ -48,7 +48,7 @@ namespace Model
   class S3BucketConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API S3BucketConfiguration();
+    AWS_ACCESSANALYZER_API S3BucketConfiguration() = default;
     AWS_ACCESSANALYZER_API S3BucketConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API S3BucketConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
     /**
      * <p>The proposed bucket policy for the Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketPolicy() const{ return m_bucketPolicy; }
+    inline const Aws::String& GetBucketPolicy() const { return m_bucketPolicy; }
     inline bool BucketPolicyHasBeenSet() const { return m_bucketPolicyHasBeenSet; }
-    inline void SetBucketPolicy(const Aws::String& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = value; }
-    inline void SetBucketPolicy(Aws::String&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::move(value); }
-    inline void SetBucketPolicy(const char* value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy.assign(value); }
-    inline S3BucketConfiguration& WithBucketPolicy(const Aws::String& value) { SetBucketPolicy(value); return *this;}
-    inline S3BucketConfiguration& WithBucketPolicy(Aws::String&& value) { SetBucketPolicy(std::move(value)); return *this;}
-    inline S3BucketConfiguration& WithBucketPolicy(const char* value) { SetBucketPolicy(value); return *this;}
+    template<typename BucketPolicyT = Aws::String>
+    void SetBucketPolicy(BucketPolicyT&& value) { m_bucketPolicyHasBeenSet = true; m_bucketPolicy = std::forward<BucketPolicyT>(value); }
+    template<typename BucketPolicyT = Aws::String>
+    S3BucketConfiguration& WithBucketPolicy(BucketPolicyT&& value) { SetBucketPolicy(std::forward<BucketPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,26 +74,26 @@ namespace Model
      * configurations in place of the existing grants. Otherwise, the access preview
      * uses the existing grants for the bucket.</p>
      */
-    inline const Aws::Vector<S3BucketAclGrantConfiguration>& GetBucketAclGrants() const{ return m_bucketAclGrants; }
+    inline const Aws::Vector<S3BucketAclGrantConfiguration>& GetBucketAclGrants() const { return m_bucketAclGrants; }
     inline bool BucketAclGrantsHasBeenSet() const { return m_bucketAclGrantsHasBeenSet; }
-    inline void SetBucketAclGrants(const Aws::Vector<S3BucketAclGrantConfiguration>& value) { m_bucketAclGrantsHasBeenSet = true; m_bucketAclGrants = value; }
-    inline void SetBucketAclGrants(Aws::Vector<S3BucketAclGrantConfiguration>&& value) { m_bucketAclGrantsHasBeenSet = true; m_bucketAclGrants = std::move(value); }
-    inline S3BucketConfiguration& WithBucketAclGrants(const Aws::Vector<S3BucketAclGrantConfiguration>& value) { SetBucketAclGrants(value); return *this;}
-    inline S3BucketConfiguration& WithBucketAclGrants(Aws::Vector<S3BucketAclGrantConfiguration>&& value) { SetBucketAclGrants(std::move(value)); return *this;}
-    inline S3BucketConfiguration& AddBucketAclGrants(const S3BucketAclGrantConfiguration& value) { m_bucketAclGrantsHasBeenSet = true; m_bucketAclGrants.push_back(value); return *this; }
-    inline S3BucketConfiguration& AddBucketAclGrants(S3BucketAclGrantConfiguration&& value) { m_bucketAclGrantsHasBeenSet = true; m_bucketAclGrants.push_back(std::move(value)); return *this; }
+    template<typename BucketAclGrantsT = Aws::Vector<S3BucketAclGrantConfiguration>>
+    void SetBucketAclGrants(BucketAclGrantsT&& value) { m_bucketAclGrantsHasBeenSet = true; m_bucketAclGrants = std::forward<BucketAclGrantsT>(value); }
+    template<typename BucketAclGrantsT = Aws::Vector<S3BucketAclGrantConfiguration>>
+    S3BucketConfiguration& WithBucketAclGrants(BucketAclGrantsT&& value) { SetBucketAclGrants(std::forward<BucketAclGrantsT>(value)); return *this;}
+    template<typename BucketAclGrantsT = S3BucketAclGrantConfiguration>
+    S3BucketConfiguration& AddBucketAclGrants(BucketAclGrantsT&& value) { m_bucketAclGrantsHasBeenSet = true; m_bucketAclGrants.emplace_back(std::forward<BucketAclGrantsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
      */
-    inline const S3PublicAccessBlockConfiguration& GetBucketPublicAccessBlock() const{ return m_bucketPublicAccessBlock; }
+    inline const S3PublicAccessBlockConfiguration& GetBucketPublicAccessBlock() const { return m_bucketPublicAccessBlock; }
     inline bool BucketPublicAccessBlockHasBeenSet() const { return m_bucketPublicAccessBlockHasBeenSet; }
-    inline void SetBucketPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { m_bucketPublicAccessBlockHasBeenSet = true; m_bucketPublicAccessBlock = value; }
-    inline void SetBucketPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { m_bucketPublicAccessBlockHasBeenSet = true; m_bucketPublicAccessBlock = std::move(value); }
-    inline S3BucketConfiguration& WithBucketPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { SetBucketPublicAccessBlock(value); return *this;}
-    inline S3BucketConfiguration& WithBucketPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { SetBucketPublicAccessBlock(std::move(value)); return *this;}
+    template<typename BucketPublicAccessBlockT = S3PublicAccessBlockConfiguration>
+    void SetBucketPublicAccessBlock(BucketPublicAccessBlockT&& value) { m_bucketPublicAccessBlockHasBeenSet = true; m_bucketPublicAccessBlock = std::forward<BucketPublicAccessBlockT>(value); }
+    template<typename BucketPublicAccessBlockT = S3PublicAccessBlockConfiguration>
+    S3BucketConfiguration& WithBucketPublicAccessBlock(BucketPublicAccessBlockT&& value) { SetBucketPublicAccessBlock(std::forward<BucketPublicAccessBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,18 +101,16 @@ namespace Model
      * <p>The configuration of Amazon S3 access points or multi-region access points
      * for the bucket. You can propose up to 10 new access points per bucket.</p>
      */
-    inline const Aws::Map<Aws::String, S3AccessPointConfiguration>& GetAccessPoints() const{ return m_accessPoints; }
+    inline const Aws::Map<Aws::String, S3AccessPointConfiguration>& GetAccessPoints() const { return m_accessPoints; }
     inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
-    inline void SetAccessPoints(const Aws::Map<Aws::String, S3AccessPointConfiguration>& value) { m_accessPointsHasBeenSet = true; m_accessPoints = value; }
-    inline void SetAccessPoints(Aws::Map<Aws::String, S3AccessPointConfiguration>&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::move(value); }
-    inline S3BucketConfiguration& WithAccessPoints(const Aws::Map<Aws::String, S3AccessPointConfiguration>& value) { SetAccessPoints(value); return *this;}
-    inline S3BucketConfiguration& WithAccessPoints(Aws::Map<Aws::String, S3AccessPointConfiguration>&& value) { SetAccessPoints(std::move(value)); return *this;}
-    inline S3BucketConfiguration& AddAccessPoints(const Aws::String& key, const S3AccessPointConfiguration& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, value); return *this; }
-    inline S3BucketConfiguration& AddAccessPoints(Aws::String&& key, const S3AccessPointConfiguration& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(std::move(key), value); return *this; }
-    inline S3BucketConfiguration& AddAccessPoints(const Aws::String& key, S3AccessPointConfiguration&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, std::move(value)); return *this; }
-    inline S3BucketConfiguration& AddAccessPoints(Aws::String&& key, S3AccessPointConfiguration&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(std::move(key), std::move(value)); return *this; }
-    inline S3BucketConfiguration& AddAccessPoints(const char* key, S3AccessPointConfiguration&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, std::move(value)); return *this; }
-    inline S3BucketConfiguration& AddAccessPoints(const char* key, const S3AccessPointConfiguration& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace(key, value); return *this; }
+    template<typename AccessPointsT = Aws::Map<Aws::String, S3AccessPointConfiguration>>
+    void SetAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::forward<AccessPointsT>(value); }
+    template<typename AccessPointsT = Aws::Map<Aws::String, S3AccessPointConfiguration>>
+    S3BucketConfiguration& WithAccessPoints(AccessPointsT&& value) { SetAccessPoints(std::forward<AccessPointsT>(value)); return *this;}
+    template<typename AccessPointsKeyT = Aws::String, typename AccessPointsValueT = S3AccessPointConfiguration>
+    S3BucketConfiguration& AddAccessPoints(AccessPointsKeyT&& key, AccessPointsValueT&& value) {
+      m_accessPointsHasBeenSet = true; m_accessPoints.emplace(std::forward<AccessPointsKeyT>(key), std::forward<AccessPointsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

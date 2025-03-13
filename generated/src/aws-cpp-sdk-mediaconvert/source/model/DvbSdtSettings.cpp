@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DvbSdtSettings::DvbSdtSettings() : 
-    m_outputSdt(OutputSdt::NOT_SET),
-    m_outputSdtHasBeenSet(false),
-    m_sdtInterval(0),
-    m_sdtIntervalHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceProviderNameHasBeenSet(false)
-{
-}
-
 DvbSdtSettings::DvbSdtSettings(JsonView jsonValue)
-  : DvbSdtSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DvbSdtSettings& DvbSdtSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("outputSdt"))
   {
     m_outputSdt = OutputSdtMapper::GetOutputSdtForName(jsonValue.GetString("outputSdt"));
-
     m_outputSdtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sdtInterval"))
   {
     m_sdtInterval = jsonValue.GetInteger("sdtInterval");
-
     m_sdtIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceProviderName"))
   {
     m_serviceProviderName = jsonValue.GetString("serviceProviderName");
-
     m_serviceProviderNameHasBeenSet = true;
   }
-
   return *this;
 }
 

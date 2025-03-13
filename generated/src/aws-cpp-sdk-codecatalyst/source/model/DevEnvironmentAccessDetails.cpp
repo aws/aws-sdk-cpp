@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-DevEnvironmentAccessDetails::DevEnvironmentAccessDetails() : 
-    m_streamUrlHasBeenSet(false),
-    m_tokenValueHasBeenSet(false)
-{
-}
-
 DevEnvironmentAccessDetails::DevEnvironmentAccessDetails(JsonView jsonValue)
-  : DevEnvironmentAccessDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DevEnvironmentAccessDetails& DevEnvironmentAccessDetails::operator =(JsonView js
   if(jsonValue.ValueExists("streamUrl"))
   {
     m_streamUrl = jsonValue.GetString("streamUrl");
-
     m_streamUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenValue"))
   {
     m_tokenValue = jsonValue.GetString("tokenValue");
-
     m_tokenValueHasBeenSet = true;
   }
-
   return *this;
 }
 

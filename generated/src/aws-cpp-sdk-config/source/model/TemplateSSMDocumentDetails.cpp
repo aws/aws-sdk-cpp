@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-TemplateSSMDocumentDetails::TemplateSSMDocumentDetails() : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false)
-{
-}
-
 TemplateSSMDocumentDetails::TemplateSSMDocumentDetails(JsonView jsonValue)
-  : TemplateSSMDocumentDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TemplateSSMDocumentDetails& TemplateSSMDocumentDetails::operator =(JsonView json
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

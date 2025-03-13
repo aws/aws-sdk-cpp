@@ -42,7 +42,7 @@ namespace Model
   class ContainerServiceECRImagePullerRole
   {
   public:
-    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRole();
+    AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRole() = default;
     AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRole(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API ContainerServiceECRImagePullerRole& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>A Boolean value that indicates whether the role is activated.</p>
      */
-    inline bool GetIsActive() const{ return m_isActive; }
+    inline bool GetIsActive() const { return m_isActive; }
     inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
     inline ContainerServiceECRImagePullerRole& WithIsActive(bool value) { SetIsActive(value); return *this;}
@@ -62,18 +62,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role, if it is activated.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline ContainerServiceECRImagePullerRole& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline ContainerServiceECRImagePullerRole& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline ContainerServiceECRImagePullerRole& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    ContainerServiceECRImagePullerRole& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isActive;
+    bool m_isActive{false};
     bool m_isActiveHasBeenSet = false;
 
     Aws::String m_principalArn;

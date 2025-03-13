@@ -30,7 +30,7 @@ namespace Model
   class AxisDisplayDataDrivenRange
   {
   public:
-    AWS_QUICKSIGHT_API AxisDisplayDataDrivenRange();
+    AWS_QUICKSIGHT_API AxisDisplayDataDrivenRange() = default;
     AWS_QUICKSIGHT_API AxisDisplayDataDrivenRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AxisDisplayDataDrivenRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;

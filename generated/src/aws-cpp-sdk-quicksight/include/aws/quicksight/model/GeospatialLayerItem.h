@@ -39,7 +39,7 @@ namespace Model
   class GeospatialLayerItem
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLayerItem();
+    AWS_QUICKSIGHT_API GeospatialLayerItem() = default;
     AWS_QUICKSIGHT_API GeospatialLayerItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLayerItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,119 +49,111 @@ namespace Model
     /**
      * <p>The ID of the layer.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
-    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
-    inline GeospatialLayerItem& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline GeospatialLayerItem& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline GeospatialLayerItem& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    GeospatialLayerItem& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The layer type.</p>
      */
-    inline const GeospatialLayerType& GetLayerType() const{ return m_layerType; }
+    inline GeospatialLayerType GetLayerType() const { return m_layerType; }
     inline bool LayerTypeHasBeenSet() const { return m_layerTypeHasBeenSet; }
-    inline void SetLayerType(const GeospatialLayerType& value) { m_layerTypeHasBeenSet = true; m_layerType = value; }
-    inline void SetLayerType(GeospatialLayerType&& value) { m_layerTypeHasBeenSet = true; m_layerType = std::move(value); }
-    inline GeospatialLayerItem& WithLayerType(const GeospatialLayerType& value) { SetLayerType(value); return *this;}
-    inline GeospatialLayerItem& WithLayerType(GeospatialLayerType&& value) { SetLayerType(std::move(value)); return *this;}
+    inline void SetLayerType(GeospatialLayerType value) { m_layerTypeHasBeenSet = true; m_layerType = value; }
+    inline GeospatialLayerItem& WithLayerType(GeospatialLayerType value) { SetLayerType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data source for the layer.</p>
      */
-    inline const GeospatialDataSourceItem& GetDataSource() const{ return m_dataSource; }
+    inline const GeospatialDataSourceItem& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const GeospatialDataSourceItem& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(GeospatialDataSourceItem&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline GeospatialLayerItem& WithDataSource(const GeospatialDataSourceItem& value) { SetDataSource(value); return *this;}
-    inline GeospatialLayerItem& WithDataSource(GeospatialDataSourceItem&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = GeospatialDataSourceItem>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = GeospatialDataSourceItem>
+    GeospatialLayerItem& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The label that is displayed for the layer.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline GeospatialLayerItem& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline GeospatialLayerItem& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline GeospatialLayerItem& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    GeospatialLayerItem& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of visibility for the layer.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline GeospatialLayerItem& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline GeospatialLayerItem& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline GeospatialLayerItem& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition properties for a layer.</p>
      */
-    inline const GeospatialLayerDefinition& GetLayerDefinition() const{ return m_layerDefinition; }
+    inline const GeospatialLayerDefinition& GetLayerDefinition() const { return m_layerDefinition; }
     inline bool LayerDefinitionHasBeenSet() const { return m_layerDefinitionHasBeenSet; }
-    inline void SetLayerDefinition(const GeospatialLayerDefinition& value) { m_layerDefinitionHasBeenSet = true; m_layerDefinition = value; }
-    inline void SetLayerDefinition(GeospatialLayerDefinition&& value) { m_layerDefinitionHasBeenSet = true; m_layerDefinition = std::move(value); }
-    inline GeospatialLayerItem& WithLayerDefinition(const GeospatialLayerDefinition& value) { SetLayerDefinition(value); return *this;}
-    inline GeospatialLayerItem& WithLayerDefinition(GeospatialLayerDefinition&& value) { SetLayerDefinition(std::move(value)); return *this;}
+    template<typename LayerDefinitionT = GeospatialLayerDefinition>
+    void SetLayerDefinition(LayerDefinitionT&& value) { m_layerDefinitionHasBeenSet = true; m_layerDefinition = std::forward<LayerDefinitionT>(value); }
+    template<typename LayerDefinitionT = GeospatialLayerDefinition>
+    GeospatialLayerItem& WithLayerDefinition(LayerDefinitionT&& value) { SetLayerDefinition(std::forward<LayerDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TooltipOptions& GetTooltip() const{ return m_tooltip; }
+    inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-    inline void SetTooltip(const TooltipOptions& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-    inline void SetTooltip(TooltipOptions&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-    inline GeospatialLayerItem& WithTooltip(const TooltipOptions& value) { SetTooltip(value); return *this;}
-    inline GeospatialLayerItem& WithTooltip(TooltipOptions&& value) { SetTooltip(std::move(value)); return *this;}
+    template<typename TooltipT = TooltipOptions>
+    void SetTooltip(TooltipT&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::forward<TooltipT>(value); }
+    template<typename TooltipT = TooltipOptions>
+    GeospatialLayerItem& WithTooltip(TooltipT&& value) { SetTooltip(std::forward<TooltipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The join definition properties for a layer.</p>
      */
-    inline const GeospatialLayerJoinDefinition& GetJoinDefinition() const{ return m_joinDefinition; }
+    inline const GeospatialLayerJoinDefinition& GetJoinDefinition() const { return m_joinDefinition; }
     inline bool JoinDefinitionHasBeenSet() const { return m_joinDefinitionHasBeenSet; }
-    inline void SetJoinDefinition(const GeospatialLayerJoinDefinition& value) { m_joinDefinitionHasBeenSet = true; m_joinDefinition = value; }
-    inline void SetJoinDefinition(GeospatialLayerJoinDefinition&& value) { m_joinDefinitionHasBeenSet = true; m_joinDefinition = std::move(value); }
-    inline GeospatialLayerItem& WithJoinDefinition(const GeospatialLayerJoinDefinition& value) { SetJoinDefinition(value); return *this;}
-    inline GeospatialLayerItem& WithJoinDefinition(GeospatialLayerJoinDefinition&& value) { SetJoinDefinition(std::move(value)); return *this;}
+    template<typename JoinDefinitionT = GeospatialLayerJoinDefinition>
+    void SetJoinDefinition(JoinDefinitionT&& value) { m_joinDefinitionHasBeenSet = true; m_joinDefinition = std::forward<JoinDefinitionT>(value); }
+    template<typename JoinDefinitionT = GeospatialLayerJoinDefinition>
+    GeospatialLayerItem& WithJoinDefinition(JoinDefinitionT&& value) { SetJoinDefinition(std::forward<JoinDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of custom actions for a layer.</p>
      */
-    inline const Aws::Vector<LayerCustomAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<LayerCustomAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<LayerCustomAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<LayerCustomAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline GeospatialLayerItem& WithActions(const Aws::Vector<LayerCustomAction>& value) { SetActions(value); return *this;}
-    inline GeospatialLayerItem& WithActions(Aws::Vector<LayerCustomAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline GeospatialLayerItem& AddActions(const LayerCustomAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline GeospatialLayerItem& AddActions(LayerCustomAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<LayerCustomAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<LayerCustomAction>>
+    GeospatialLayerItem& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = LayerCustomAction>
+    GeospatialLayerItem& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_layerId;
     bool m_layerIdHasBeenSet = false;
 
-    GeospatialLayerType m_layerType;
+    GeospatialLayerType m_layerType{GeospatialLayerType::NOT_SET};
     bool m_layerTypeHasBeenSet = false;
 
     GeospatialDataSourceItem m_dataSource;
@@ -170,7 +162,7 @@ namespace Model
     Aws::String m_label;
     bool m_labelHasBeenSet = false;
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
 
     GeospatialLayerDefinition m_layerDefinition;

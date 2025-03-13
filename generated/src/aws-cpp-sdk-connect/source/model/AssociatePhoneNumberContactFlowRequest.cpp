@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociatePhoneNumberContactFlowRequest::AssociatePhoneNumberContactFlowRequest() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociatePhoneNumberContactFlowRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class InputTransformer
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API InputTransformer();
+    AWS_CLOUDWATCHEVENTS_API InputTransformer() = default;
     AWS_CLOUDWATCHEVENTS_API InputTransformer(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVENTS_API InputTransformer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,19 +49,16 @@ namespace Model
      * key-value pairs. You must use JSON dot notation, not bracket notation.</p>
      * <p>The keys cannot start with "Amazon Web Services." </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetInputPathsMap() const{ return m_inputPathsMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetInputPathsMap() const { return m_inputPathsMap; }
     inline bool InputPathsMapHasBeenSet() const { return m_inputPathsMapHasBeenSet; }
-    inline void SetInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = value; }
-    inline void SetInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = std::move(value); }
-    inline InputTransformer& WithInputPathsMap(const Aws::Map<Aws::String, Aws::String>& value) { SetInputPathsMap(value); return *this;}
-    inline InputTransformer& WithInputPathsMap(Aws::Map<Aws::String, Aws::String>&& value) { SetInputPathsMap(std::move(value)); return *this;}
-    inline InputTransformer& AddInputPathsMap(const Aws::String& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
-    inline InputTransformer& AddInputPathsMap(Aws::String&& key, const Aws::String& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
-    inline InputTransformer& AddInputPathsMap(const Aws::String& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
-    inline InputTransformer& AddInputPathsMap(Aws::String&& key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline InputTransformer& AddInputPathsMap(const char* key, Aws::String&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, std::move(value)); return *this; }
-    inline InputTransformer& AddInputPathsMap(Aws::String&& key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::move(key), value); return *this; }
-    inline InputTransformer& AddInputPathsMap(const char* key, const char* value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(key, value); return *this; }
+    template<typename InputPathsMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetInputPathsMap(InputPathsMapT&& value) { m_inputPathsMapHasBeenSet = true; m_inputPathsMap = std::forward<InputPathsMapT>(value); }
+    template<typename InputPathsMapT = Aws::Map<Aws::String, Aws::String>>
+    InputTransformer& WithInputPathsMap(InputPathsMapT&& value) { SetInputPathsMap(std::forward<InputPathsMapT>(value)); return *this;}
+    template<typename InputPathsMapKeyT = Aws::String, typename InputPathsMapValueT = Aws::String>
+    InputTransformer& AddInputPathsMap(InputPathsMapKeyT&& key, InputPathsMapValueT&& value) {
+      m_inputPathsMapHasBeenSet = true; m_inputPathsMap.emplace(std::forward<InputPathsMapKeyT>(key), std::forward<InputPathsMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -92,14 +89,12 @@ namespace Model
      * "&lt;instance&gt; is in state \"&lt;status&gt;\""}'</code> </p> <p>
      * <code>}</code> </p>
      */
-    inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
+    inline const Aws::String& GetInputTemplate() const { return m_inputTemplate; }
     inline bool InputTemplateHasBeenSet() const { return m_inputTemplateHasBeenSet; }
-    inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
-    inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
-    inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
-    inline InputTransformer& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
-    inline InputTransformer& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
-    inline InputTransformer& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
+    template<typename InputTemplateT = Aws::String>
+    void SetInputTemplate(InputTemplateT&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::forward<InputTemplateT>(value); }
+    template<typename InputTemplateT = Aws::String>
+    InputTransformer& WithInputTemplate(InputTemplateT&& value) { SetInputTemplate(std::forward<InputTemplateT>(value)); return *this;}
     ///@}
   private:
 

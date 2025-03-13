@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOfferingRequest::DescribeOfferingRequest() : 
-    m_offeringArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOfferingRequest::SerializePayload() const
 {
   return {};

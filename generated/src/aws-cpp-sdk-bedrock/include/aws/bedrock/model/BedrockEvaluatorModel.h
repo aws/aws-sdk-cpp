@@ -33,7 +33,7 @@ namespace Model
   class BedrockEvaluatorModel
   {
   public:
-    AWS_BEDROCK_API BedrockEvaluatorModel();
+    AWS_BEDROCK_API BedrockEvaluatorModel() = default;
     AWS_BEDROCK_API BedrockEvaluatorModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API BedrockEvaluatorModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the evaluator model used used in knowledge
      * base evaluation job or in model evaluation job that use a model as judge.</p>
      */
-    inline const Aws::String& GetModelIdentifier() const{ return m_modelIdentifier; }
+    inline const Aws::String& GetModelIdentifier() const { return m_modelIdentifier; }
     inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
-    inline void SetModelIdentifier(const Aws::String& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = value; }
-    inline void SetModelIdentifier(Aws::String&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::move(value); }
-    inline void SetModelIdentifier(const char* value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier.assign(value); }
-    inline BedrockEvaluatorModel& WithModelIdentifier(const Aws::String& value) { SetModelIdentifier(value); return *this;}
-    inline BedrockEvaluatorModel& WithModelIdentifier(Aws::String&& value) { SetModelIdentifier(std::move(value)); return *this;}
-    inline BedrockEvaluatorModel& WithModelIdentifier(const char* value) { SetModelIdentifier(value); return *this;}
+    template<typename ModelIdentifierT = Aws::String>
+    void SetModelIdentifier(ModelIdentifierT&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::forward<ModelIdentifierT>(value); }
+    template<typename ModelIdentifierT = Aws::String>
+    BedrockEvaluatorModel& WithModelIdentifier(ModelIdentifierT&& value) { SetModelIdentifier(std::forward<ModelIdentifierT>(value)); return *this;}
     ///@}
   private:
 

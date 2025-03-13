@@ -33,7 +33,7 @@ namespace Model
   class AdaptersConfig
   {
   public:
-    AWS_TEXTRACT_API AdaptersConfig();
+    AWS_TEXTRACT_API AdaptersConfig() = default;
     AWS_TEXTRACT_API AdaptersConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API AdaptersConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of adapters to be used when analyzing the specified document.</p>
      */
-    inline const Aws::Vector<Adapter>& GetAdapters() const{ return m_adapters; }
+    inline const Aws::Vector<Adapter>& GetAdapters() const { return m_adapters; }
     inline bool AdaptersHasBeenSet() const { return m_adaptersHasBeenSet; }
-    inline void SetAdapters(const Aws::Vector<Adapter>& value) { m_adaptersHasBeenSet = true; m_adapters = value; }
-    inline void SetAdapters(Aws::Vector<Adapter>&& value) { m_adaptersHasBeenSet = true; m_adapters = std::move(value); }
-    inline AdaptersConfig& WithAdapters(const Aws::Vector<Adapter>& value) { SetAdapters(value); return *this;}
-    inline AdaptersConfig& WithAdapters(Aws::Vector<Adapter>&& value) { SetAdapters(std::move(value)); return *this;}
-    inline AdaptersConfig& AddAdapters(const Adapter& value) { m_adaptersHasBeenSet = true; m_adapters.push_back(value); return *this; }
-    inline AdaptersConfig& AddAdapters(Adapter&& value) { m_adaptersHasBeenSet = true; m_adapters.push_back(std::move(value)); return *this; }
+    template<typename AdaptersT = Aws::Vector<Adapter>>
+    void SetAdapters(AdaptersT&& value) { m_adaptersHasBeenSet = true; m_adapters = std::forward<AdaptersT>(value); }
+    template<typename AdaptersT = Aws::Vector<Adapter>>
+    AdaptersConfig& WithAdapters(AdaptersT&& value) { SetAdapters(std::forward<AdaptersT>(value)); return *this;}
+    template<typename AdaptersT = Adapter>
+    AdaptersConfig& AddAdapters(AdaptersT&& value) { m_adaptersHasBeenSet = true; m_adapters.emplace_back(std::forward<AdaptersT>(value)); return *this; }
     ///@}
   private:
 

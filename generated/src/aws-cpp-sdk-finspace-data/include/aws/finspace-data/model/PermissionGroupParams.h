@@ -38,7 +38,7 @@ namespace Model
   class PermissionGroupParams
   {
   public:
-    AWS_FINSPACEDATA_API PermissionGroupParams();
+    AWS_FINSPACEDATA_API PermissionGroupParams() = default;
     AWS_FINSPACEDATA_API PermissionGroupParams(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API PermissionGroupParams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,26 @@ namespace Model
     /**
      * <p>The unique identifier for the <code>PermissionGroup</code>.</p>
      */
-    inline const Aws::String& GetPermissionGroupId() const{ return m_permissionGroupId; }
+    inline const Aws::String& GetPermissionGroupId() const { return m_permissionGroupId; }
     inline bool PermissionGroupIdHasBeenSet() const { return m_permissionGroupIdHasBeenSet; }
-    inline void SetPermissionGroupId(const Aws::String& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = value; }
-    inline void SetPermissionGroupId(Aws::String&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::move(value); }
-    inline void SetPermissionGroupId(const char* value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId.assign(value); }
-    inline PermissionGroupParams& WithPermissionGroupId(const Aws::String& value) { SetPermissionGroupId(value); return *this;}
-    inline PermissionGroupParams& WithPermissionGroupId(Aws::String&& value) { SetPermissionGroupId(std::move(value)); return *this;}
-    inline PermissionGroupParams& WithPermissionGroupId(const char* value) { SetPermissionGroupId(value); return *this;}
+    template<typename PermissionGroupIdT = Aws::String>
+    void SetPermissionGroupId(PermissionGroupIdT&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::forward<PermissionGroupIdT>(value); }
+    template<typename PermissionGroupIdT = Aws::String>
+    PermissionGroupParams& WithPermissionGroupId(PermissionGroupIdT&& value) { SetPermissionGroupId(std::forward<PermissionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of resource permissions.</p>
      */
-    inline const Aws::Vector<ResourcePermission>& GetDatasetPermissions() const{ return m_datasetPermissions; }
+    inline const Aws::Vector<ResourcePermission>& GetDatasetPermissions() const { return m_datasetPermissions; }
     inline bool DatasetPermissionsHasBeenSet() const { return m_datasetPermissionsHasBeenSet; }
-    inline void SetDatasetPermissions(const Aws::Vector<ResourcePermission>& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions = value; }
-    inline void SetDatasetPermissions(Aws::Vector<ResourcePermission>&& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions = std::move(value); }
-    inline PermissionGroupParams& WithDatasetPermissions(const Aws::Vector<ResourcePermission>& value) { SetDatasetPermissions(value); return *this;}
-    inline PermissionGroupParams& WithDatasetPermissions(Aws::Vector<ResourcePermission>&& value) { SetDatasetPermissions(std::move(value)); return *this;}
-    inline PermissionGroupParams& AddDatasetPermissions(const ResourcePermission& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions.push_back(value); return *this; }
-    inline PermissionGroupParams& AddDatasetPermissions(ResourcePermission&& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions.push_back(std::move(value)); return *this; }
+    template<typename DatasetPermissionsT = Aws::Vector<ResourcePermission>>
+    void SetDatasetPermissions(DatasetPermissionsT&& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions = std::forward<DatasetPermissionsT>(value); }
+    template<typename DatasetPermissionsT = Aws::Vector<ResourcePermission>>
+    PermissionGroupParams& WithDatasetPermissions(DatasetPermissionsT&& value) { SetDatasetPermissions(std::forward<DatasetPermissionsT>(value)); return *this;}
+    template<typename DatasetPermissionsT = ResourcePermission>
+    PermissionGroupParams& AddDatasetPermissions(DatasetPermissionsT&& value) { m_datasetPermissionsHasBeenSet = true; m_datasetPermissions.emplace_back(std::forward<DatasetPermissionsT>(value)); return *this; }
     ///@}
   private:
 

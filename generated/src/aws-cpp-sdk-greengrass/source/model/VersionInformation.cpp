@@ -18,16 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-VersionInformation::VersionInformation() : 
-    m_arnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 VersionInformation::VersionInformation(JsonView jsonValue)
-  : VersionInformation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VersionInformation& VersionInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetString("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

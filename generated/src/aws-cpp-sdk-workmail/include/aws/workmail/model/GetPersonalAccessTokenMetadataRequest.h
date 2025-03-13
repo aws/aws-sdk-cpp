@@ -21,7 +21,7 @@ namespace Model
   class GetPersonalAccessTokenMetadataRequest : public WorkMailRequest
   {
   public:
-    AWS_WORKMAIL_API GetPersonalAccessTokenMetadataRequest();
+    AWS_WORKMAIL_API GetPersonalAccessTokenMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p> The Organization ID. </p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline GetPersonalAccessTokenMetadataRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline GetPersonalAccessTokenMetadataRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    GetPersonalAccessTokenMetadataRequest& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Personal Access Token ID.</p>
      */
-    inline const Aws::String& GetPersonalAccessTokenId() const{ return m_personalAccessTokenId; }
+    inline const Aws::String& GetPersonalAccessTokenId() const { return m_personalAccessTokenId; }
     inline bool PersonalAccessTokenIdHasBeenSet() const { return m_personalAccessTokenIdHasBeenSet; }
-    inline void SetPersonalAccessTokenId(const Aws::String& value) { m_personalAccessTokenIdHasBeenSet = true; m_personalAccessTokenId = value; }
-    inline void SetPersonalAccessTokenId(Aws::String&& value) { m_personalAccessTokenIdHasBeenSet = true; m_personalAccessTokenId = std::move(value); }
-    inline void SetPersonalAccessTokenId(const char* value) { m_personalAccessTokenIdHasBeenSet = true; m_personalAccessTokenId.assign(value); }
-    inline GetPersonalAccessTokenMetadataRequest& WithPersonalAccessTokenId(const Aws::String& value) { SetPersonalAccessTokenId(value); return *this;}
-    inline GetPersonalAccessTokenMetadataRequest& WithPersonalAccessTokenId(Aws::String&& value) { SetPersonalAccessTokenId(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataRequest& WithPersonalAccessTokenId(const char* value) { SetPersonalAccessTokenId(value); return *this;}
+    template<typename PersonalAccessTokenIdT = Aws::String>
+    void SetPersonalAccessTokenId(PersonalAccessTokenIdT&& value) { m_personalAccessTokenIdHasBeenSet = true; m_personalAccessTokenId = std::forward<PersonalAccessTokenIdT>(value); }
+    template<typename PersonalAccessTokenIdT = Aws::String>
+    GetPersonalAccessTokenMetadataRequest& WithPersonalAccessTokenId(PersonalAccessTokenIdT&& value) { SetPersonalAccessTokenId(std::forward<PersonalAccessTokenIdT>(value)); return *this;}
     ///@}
   private:
 

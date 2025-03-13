@@ -34,7 +34,7 @@ namespace Model
   class BatchDetectSentimentItemResult
   {
   public:
-    AWS_COMPREHEND_API BatchDetectSentimentItemResult();
+    AWS_COMPREHEND_API BatchDetectSentimentItemResult() = default;
     AWS_COMPREHEND_API BatchDetectSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BatchDetectSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
-    inline int GetIndex() const{ return m_index; }
+    inline int GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
     inline BatchDetectSentimentItemResult& WithIndex(int value) { SetIndex(value); return *this;}
@@ -54,12 +54,10 @@ namespace Model
     /**
      * <p>The sentiment detected in the document.</p>
      */
-    inline const SentimentType& GetSentiment() const{ return m_sentiment; }
+    inline SentimentType GetSentiment() const { return m_sentiment; }
     inline bool SentimentHasBeenSet() const { return m_sentimentHasBeenSet; }
-    inline void SetSentiment(const SentimentType& value) { m_sentimentHasBeenSet = true; m_sentiment = value; }
-    inline void SetSentiment(SentimentType&& value) { m_sentimentHasBeenSet = true; m_sentiment = std::move(value); }
-    inline BatchDetectSentimentItemResult& WithSentiment(const SentimentType& value) { SetSentiment(value); return *this;}
-    inline BatchDetectSentimentItemResult& WithSentiment(SentimentType&& value) { SetSentiment(std::move(value)); return *this;}
+    inline void SetSentiment(SentimentType value) { m_sentimentHasBeenSet = true; m_sentiment = value; }
+    inline BatchDetectSentimentItemResult& WithSentiment(SentimentType value) { SetSentiment(value); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,19 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
      * sentiment detection.</p>
      */
-    inline const SentimentScore& GetSentimentScore() const{ return m_sentimentScore; }
+    inline const SentimentScore& GetSentimentScore() const { return m_sentimentScore; }
     inline bool SentimentScoreHasBeenSet() const { return m_sentimentScoreHasBeenSet; }
-    inline void SetSentimentScore(const SentimentScore& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = value; }
-    inline void SetSentimentScore(SentimentScore&& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = std::move(value); }
-    inline BatchDetectSentimentItemResult& WithSentimentScore(const SentimentScore& value) { SetSentimentScore(value); return *this;}
-    inline BatchDetectSentimentItemResult& WithSentimentScore(SentimentScore&& value) { SetSentimentScore(std::move(value)); return *this;}
+    template<typename SentimentScoreT = SentimentScore>
+    void SetSentimentScore(SentimentScoreT&& value) { m_sentimentScoreHasBeenSet = true; m_sentimentScore = std::forward<SentimentScoreT>(value); }
+    template<typename SentimentScoreT = SentimentScore>
+    BatchDetectSentimentItemResult& WithSentimentScore(SentimentScoreT&& value) { SetSentimentScore(std::forward<SentimentScoreT>(value)); return *this;}
     ///@}
   private:
 
-    int m_index;
+    int m_index{0};
     bool m_indexHasBeenSet = false;
 
-    SentimentType m_sentiment;
+    SentimentType m_sentiment{SentimentType::NOT_SET};
     bool m_sentimentHasBeenSet = false;
 
     SentimentScore m_sentimentScore;

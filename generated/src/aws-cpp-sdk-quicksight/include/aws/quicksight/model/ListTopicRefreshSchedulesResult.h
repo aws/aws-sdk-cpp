@@ -29,7 +29,7 @@ namespace Model
   class ListTopicRefreshSchedulesResult
   {
   public:
-    AWS_QUICKSIGHT_API ListTopicRefreshSchedulesResult();
+    AWS_QUICKSIGHT_API ListTopicRefreshSchedulesResult() = default;
     AWS_QUICKSIGHT_API ListTopicRefreshSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API ListTopicRefreshSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,71 +39,70 @@ namespace Model
      * <p>The ID for the topic that you want to describe. This ID is unique per Amazon
      * Web Services Region for each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetTopicId() const{ return m_topicId; }
-    inline void SetTopicId(const Aws::String& value) { m_topicId = value; }
-    inline void SetTopicId(Aws::String&& value) { m_topicId = std::move(value); }
-    inline void SetTopicId(const char* value) { m_topicId.assign(value); }
-    inline ListTopicRefreshSchedulesResult& WithTopicId(const Aws::String& value) { SetTopicId(value); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithTopicId(Aws::String&& value) { SetTopicId(std::move(value)); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithTopicId(const char* value) { SetTopicId(value); return *this;}
+    inline const Aws::String& GetTopicId() const { return m_topicId; }
+    template<typename TopicIdT = Aws::String>
+    void SetTopicId(TopicIdT&& value) { m_topicIdHasBeenSet = true; m_topicId = std::forward<TopicIdT>(value); }
+    template<typename TopicIdT = Aws::String>
+    ListTopicRefreshSchedulesResult& WithTopicId(TopicIdT&& value) { SetTopicId(std::forward<TopicIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the topic.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
-    inline ListTopicRefreshSchedulesResult& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    ListTopicRefreshSchedulesResult& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of topic refresh schedules.</p>
      */
-    inline const Aws::Vector<TopicRefreshScheduleSummary>& GetRefreshSchedules() const{ return m_refreshSchedules; }
-    inline void SetRefreshSchedules(const Aws::Vector<TopicRefreshScheduleSummary>& value) { m_refreshSchedules = value; }
-    inline void SetRefreshSchedules(Aws::Vector<TopicRefreshScheduleSummary>&& value) { m_refreshSchedules = std::move(value); }
-    inline ListTopicRefreshSchedulesResult& WithRefreshSchedules(const Aws::Vector<TopicRefreshScheduleSummary>& value) { SetRefreshSchedules(value); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithRefreshSchedules(Aws::Vector<TopicRefreshScheduleSummary>&& value) { SetRefreshSchedules(std::move(value)); return *this;}
-    inline ListTopicRefreshSchedulesResult& AddRefreshSchedules(const TopicRefreshScheduleSummary& value) { m_refreshSchedules.push_back(value); return *this; }
-    inline ListTopicRefreshSchedulesResult& AddRefreshSchedules(TopicRefreshScheduleSummary&& value) { m_refreshSchedules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TopicRefreshScheduleSummary>& GetRefreshSchedules() const { return m_refreshSchedules; }
+    template<typename RefreshSchedulesT = Aws::Vector<TopicRefreshScheduleSummary>>
+    void SetRefreshSchedules(RefreshSchedulesT&& value) { m_refreshSchedulesHasBeenSet = true; m_refreshSchedules = std::forward<RefreshSchedulesT>(value); }
+    template<typename RefreshSchedulesT = Aws::Vector<TopicRefreshScheduleSummary>>
+    ListTopicRefreshSchedulesResult& WithRefreshSchedules(RefreshSchedulesT&& value) { SetRefreshSchedules(std::forward<RefreshSchedulesT>(value)); return *this;}
+    template<typename RefreshSchedulesT = TopicRefreshScheduleSummary>
+    ListTopicRefreshSchedulesResult& AddRefreshSchedules(RefreshSchedulesT&& value) { m_refreshSchedulesHasBeenSet = true; m_refreshSchedules.emplace_back(std::forward<RefreshSchedulesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListTopicRefreshSchedulesResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTopicRefreshSchedulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTopicRefreshSchedulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTopicRefreshSchedulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_topicId;
+    bool m_topicIdHasBeenSet = false;
 
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<TopicRefreshScheduleSummary> m_refreshSchedules;
+    bool m_refreshSchedulesHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

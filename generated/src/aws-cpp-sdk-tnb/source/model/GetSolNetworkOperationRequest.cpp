@@ -12,11 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSolNetworkOperationRequest::GetSolNetworkOperationRequest() : 
-    m_nsLcmOpOccIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSolNetworkOperationRequest::SerializePayload() const
 {
   return {};

@@ -31,7 +31,7 @@ namespace Model
   class Position
   {
   public:
-    AWS_IAM_API Position();
+    AWS_IAM_API Position() = default;
     AWS_IAM_API Position(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API Position& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The line containing the specified position in the document.</p>
      */
-    inline int GetLine() const{ return m_line; }
+    inline int GetLine() const { return m_line; }
     inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
     inline void SetLine(int value) { m_lineHasBeenSet = true; m_line = value; }
     inline Position& WithLine(int value) { SetLine(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
     /**
      * <p>The column in the line containing the specified position in the document.</p>
      */
-    inline int GetColumn() const{ return m_column; }
+    inline int GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
     inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
     inline Position& WithColumn(int value) { SetColumn(value); return *this;}
     ///@}
   private:
 
-    int m_line;
+    int m_line{0};
     bool m_lineHasBeenSet = false;
 
-    int m_column;
+    int m_column{0};
     bool m_columnHasBeenSet = false;
   };
 

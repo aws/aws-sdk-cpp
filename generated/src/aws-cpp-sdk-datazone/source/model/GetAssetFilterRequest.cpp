@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAssetFilterRequest::GetAssetFilterRequest() : 
-    m_assetIdentifierHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAssetFilterRequest::SerializePayload() const
 {
   return {};

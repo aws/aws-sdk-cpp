@@ -34,7 +34,7 @@ namespace Model
   class EventTriggerLimits
   {
   public:
-    AWS_CUSTOMERPROFILES_API EventTriggerLimits();
+    AWS_CUSTOMERPROFILES_API EventTriggerLimits() = default;
     AWS_CUSTOMERPROFILES_API EventTriggerLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API EventTriggerLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>In milliseconds. Specifies that an event will only trigger the destination if
      * it is processed within a certain latency period.</p>
      */
-    inline long long GetEventExpiration() const{ return m_eventExpiration; }
+    inline long long GetEventExpiration() const { return m_eventExpiration; }
     inline bool EventExpirationHasBeenSet() const { return m_eventExpirationHasBeenSet; }
     inline void SetEventExpiration(long long value) { m_eventExpirationHasBeenSet = true; m_eventExpiration = value; }
     inline EventTriggerLimits& WithEventExpiration(long long value) { SetEventExpiration(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
     /**
      * <p>A list of time periods during which the limits apply.</p>
      */
-    inline const Aws::Vector<Period>& GetPeriods() const{ return m_periods; }
+    inline const Aws::Vector<Period>& GetPeriods() const { return m_periods; }
     inline bool PeriodsHasBeenSet() const { return m_periodsHasBeenSet; }
-    inline void SetPeriods(const Aws::Vector<Period>& value) { m_periodsHasBeenSet = true; m_periods = value; }
-    inline void SetPeriods(Aws::Vector<Period>&& value) { m_periodsHasBeenSet = true; m_periods = std::move(value); }
-    inline EventTriggerLimits& WithPeriods(const Aws::Vector<Period>& value) { SetPeriods(value); return *this;}
-    inline EventTriggerLimits& WithPeriods(Aws::Vector<Period>&& value) { SetPeriods(std::move(value)); return *this;}
-    inline EventTriggerLimits& AddPeriods(const Period& value) { m_periodsHasBeenSet = true; m_periods.push_back(value); return *this; }
-    inline EventTriggerLimits& AddPeriods(Period&& value) { m_periodsHasBeenSet = true; m_periods.push_back(std::move(value)); return *this; }
+    template<typename PeriodsT = Aws::Vector<Period>>
+    void SetPeriods(PeriodsT&& value) { m_periodsHasBeenSet = true; m_periods = std::forward<PeriodsT>(value); }
+    template<typename PeriodsT = Aws::Vector<Period>>
+    EventTriggerLimits& WithPeriods(PeriodsT&& value) { SetPeriods(std::forward<PeriodsT>(value)); return *this;}
+    template<typename PeriodsT = Period>
+    EventTriggerLimits& AddPeriods(PeriodsT&& value) { m_periodsHasBeenSet = true; m_periods.emplace_back(std::forward<PeriodsT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_eventExpiration;
+    long long m_eventExpiration{0};
     bool m_eventExpirationHasBeenSet = false;
 
     Aws::Vector<Period> m_periods;

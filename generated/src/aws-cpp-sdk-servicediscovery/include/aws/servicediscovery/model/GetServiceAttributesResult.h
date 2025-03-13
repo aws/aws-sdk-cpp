@@ -28,7 +28,7 @@ namespace Model
   class GetServiceAttributesResult
   {
   public:
-    AWS_SERVICEDISCOVERY_API GetServiceAttributesResult();
+    AWS_SERVICEDISCOVERY_API GetServiceAttributesResult() = default;
     AWS_SERVICEDISCOVERY_API GetServiceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICEDISCOVERY_API GetServiceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A complex type that contains the service ARN and a list of attribute
      * key-value pairs associated with the service.</p>
      */
-    inline const ServiceAttributes& GetServiceAttributes() const{ return m_serviceAttributes; }
-    inline void SetServiceAttributes(const ServiceAttributes& value) { m_serviceAttributes = value; }
-    inline void SetServiceAttributes(ServiceAttributes&& value) { m_serviceAttributes = std::move(value); }
-    inline GetServiceAttributesResult& WithServiceAttributes(const ServiceAttributes& value) { SetServiceAttributes(value); return *this;}
-    inline GetServiceAttributesResult& WithServiceAttributes(ServiceAttributes&& value) { SetServiceAttributes(std::move(value)); return *this;}
+    inline const ServiceAttributes& GetServiceAttributes() const { return m_serviceAttributes; }
+    template<typename ServiceAttributesT = ServiceAttributes>
+    void SetServiceAttributes(ServiceAttributesT&& value) { m_serviceAttributesHasBeenSet = true; m_serviceAttributes = std::forward<ServiceAttributesT>(value); }
+    template<typename ServiceAttributesT = ServiceAttributes>
+    GetServiceAttributesResult& WithServiceAttributes(ServiceAttributesT&& value) { SetServiceAttributes(std::forward<ServiceAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceAttributes m_serviceAttributes;
+    bool m_serviceAttributesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

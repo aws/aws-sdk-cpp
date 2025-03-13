@@ -12,19 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlowMediaStreamRequest::UpdateFlowMediaStreamRequest() : 
-    m_attributesHasBeenSet(false),
-    m_clockRate(0),
-    m_clockRateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_mediaStreamNameHasBeenSet(false),
-    m_mediaStreamType(MediaStreamType::NOT_SET),
-    m_mediaStreamTypeHasBeenSet(false),
-    m_videoFormatHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFlowMediaStreamRequest::SerializePayload() const
 {
   JsonValue payload;

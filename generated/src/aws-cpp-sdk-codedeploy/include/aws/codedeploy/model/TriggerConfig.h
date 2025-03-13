@@ -34,7 +34,7 @@ namespace Model
   class TriggerConfig
   {
   public:
-    AWS_CODEDEPLOY_API TriggerConfig();
+    AWS_CODEDEPLOY_API TriggerConfig() = default;
     AWS_CODEDEPLOY_API TriggerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API TriggerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the notification trigger.</p>
      */
-    inline const Aws::String& GetTriggerName() const{ return m_triggerName; }
+    inline const Aws::String& GetTriggerName() const { return m_triggerName; }
     inline bool TriggerNameHasBeenSet() const { return m_triggerNameHasBeenSet; }
-    inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
-    inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::move(value); }
-    inline void SetTriggerName(const char* value) { m_triggerNameHasBeenSet = true; m_triggerName.assign(value); }
-    inline TriggerConfig& WithTriggerName(const Aws::String& value) { SetTriggerName(value); return *this;}
-    inline TriggerConfig& WithTriggerName(Aws::String&& value) { SetTriggerName(std::move(value)); return *this;}
-    inline TriggerConfig& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
+    template<typename TriggerNameT = Aws::String>
+    void SetTriggerName(TriggerNameT&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::forward<TriggerNameT>(value); }
+    template<typename TriggerNameT = Aws::String>
+    TriggerConfig& WithTriggerName(TriggerNameT&& value) { SetTriggerName(std::forward<TriggerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,25 @@ namespace Model
      * topic through which notifications about deployment or instance events are
      * sent.</p>
      */
-    inline const Aws::String& GetTriggerTargetArn() const{ return m_triggerTargetArn; }
+    inline const Aws::String& GetTriggerTargetArn() const { return m_triggerTargetArn; }
     inline bool TriggerTargetArnHasBeenSet() const { return m_triggerTargetArnHasBeenSet; }
-    inline void SetTriggerTargetArn(const Aws::String& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = value; }
-    inline void SetTriggerTargetArn(Aws::String&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = std::move(value); }
-    inline void SetTriggerTargetArn(const char* value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn.assign(value); }
-    inline TriggerConfig& WithTriggerTargetArn(const Aws::String& value) { SetTriggerTargetArn(value); return *this;}
-    inline TriggerConfig& WithTriggerTargetArn(Aws::String&& value) { SetTriggerTargetArn(std::move(value)); return *this;}
-    inline TriggerConfig& WithTriggerTargetArn(const char* value) { SetTriggerTargetArn(value); return *this;}
+    template<typename TriggerTargetArnT = Aws::String>
+    void SetTriggerTargetArn(TriggerTargetArnT&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = std::forward<TriggerTargetArnT>(value); }
+    template<typename TriggerTargetArnT = Aws::String>
+    TriggerConfig& WithTriggerTargetArn(TriggerTargetArnT&& value) { SetTriggerTargetArn(std::forward<TriggerTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event type or types for which notifications are triggered.</p>
      */
-    inline const Aws::Vector<TriggerEventType>& GetTriggerEvents() const{ return m_triggerEvents; }
+    inline const Aws::Vector<TriggerEventType>& GetTriggerEvents() const { return m_triggerEvents; }
     inline bool TriggerEventsHasBeenSet() const { return m_triggerEventsHasBeenSet; }
-    inline void SetTriggerEvents(const Aws::Vector<TriggerEventType>& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = value; }
-    inline void SetTriggerEvents(Aws::Vector<TriggerEventType>&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = std::move(value); }
-    inline TriggerConfig& WithTriggerEvents(const Aws::Vector<TriggerEventType>& value) { SetTriggerEvents(value); return *this;}
-    inline TriggerConfig& WithTriggerEvents(Aws::Vector<TriggerEventType>&& value) { SetTriggerEvents(std::move(value)); return *this;}
-    inline TriggerConfig& AddTriggerEvents(const TriggerEventType& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(value); return *this; }
-    inline TriggerConfig& AddTriggerEvents(TriggerEventType&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(std::move(value)); return *this; }
+    template<typename TriggerEventsT = Aws::Vector<TriggerEventType>>
+    void SetTriggerEvents(TriggerEventsT&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = std::forward<TriggerEventsT>(value); }
+    template<typename TriggerEventsT = Aws::Vector<TriggerEventType>>
+    TriggerConfig& WithTriggerEvents(TriggerEventsT&& value) { SetTriggerEvents(std::forward<TriggerEventsT>(value)); return *this;}
+    inline TriggerConfig& AddTriggerEvents(TriggerEventType value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(value); return *this; }
     ///@}
   private:
 

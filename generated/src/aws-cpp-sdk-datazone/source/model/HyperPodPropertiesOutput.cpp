@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-HyperPodPropertiesOutput::HyperPodPropertiesOutput() : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_orchestrator(HyperPodOrchestrator::NOT_SET),
-    m_orchestratorHasBeenSet(false)
-{
-}
-
 HyperPodPropertiesOutput::HyperPodPropertiesOutput(JsonView jsonValue)
-  : HyperPodPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HyperPodPropertiesOutput& HyperPodPropertiesOutput::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orchestrator"))
   {
     m_orchestrator = HyperPodOrchestratorMapper::GetHyperPodOrchestratorForName(jsonValue.GetString("orchestrator"));
-
     m_orchestratorHasBeenSet = true;
   }
-
   return *this;
 }
 

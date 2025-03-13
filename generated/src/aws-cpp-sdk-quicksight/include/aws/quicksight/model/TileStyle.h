@@ -31,7 +31,7 @@ namespace Model
   class TileStyle
   {
   public:
-    AWS_QUICKSIGHT_API TileStyle();
+    AWS_QUICKSIGHT_API TileStyle() = default;
     AWS_QUICKSIGHT_API TileStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TileStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The border around a tile.</p>
      */
-    inline const BorderStyle& GetBorder() const{ return m_border; }
+    inline const BorderStyle& GetBorder() const { return m_border; }
     inline bool BorderHasBeenSet() const { return m_borderHasBeenSet; }
-    inline void SetBorder(const BorderStyle& value) { m_borderHasBeenSet = true; m_border = value; }
-    inline void SetBorder(BorderStyle&& value) { m_borderHasBeenSet = true; m_border = std::move(value); }
-    inline TileStyle& WithBorder(const BorderStyle& value) { SetBorder(value); return *this;}
-    inline TileStyle& WithBorder(BorderStyle&& value) { SetBorder(std::move(value)); return *this;}
+    template<typename BorderT = BorderStyle>
+    void SetBorder(BorderT&& value) { m_borderHasBeenSet = true; m_border = std::forward<BorderT>(value); }
+    template<typename BorderT = BorderStyle>
+    TileStyle& WithBorder(BorderT&& value) { SetBorder(std::forward<BorderT>(value)); return *this;}
     ///@}
   private:
 

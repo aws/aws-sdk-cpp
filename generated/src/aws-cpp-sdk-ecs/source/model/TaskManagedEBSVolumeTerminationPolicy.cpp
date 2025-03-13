@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-TaskManagedEBSVolumeTerminationPolicy::TaskManagedEBSVolumeTerminationPolicy() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
-{
-}
-
 TaskManagedEBSVolumeTerminationPolicy::TaskManagedEBSVolumeTerminationPolicy(JsonView jsonValue)
-  : TaskManagedEBSVolumeTerminationPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TaskManagedEBSVolumeTerminationPolicy& TaskManagedEBSVolumeTerminationPolicy::op
   if(jsonValue.ValueExists("deleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("deleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   return *this;
 }
 

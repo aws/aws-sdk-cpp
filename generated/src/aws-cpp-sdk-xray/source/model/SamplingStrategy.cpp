@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-SamplingStrategy::SamplingStrategy() : 
-    m_name(SamplingStrategyName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 SamplingStrategy::SamplingStrategy(JsonView jsonValue)
-  : SamplingStrategy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SamplingStrategy& SamplingStrategy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = SamplingStrategyNameMapper::GetSamplingStrategyNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class EbsStatusSummary
   {
   public:
-    AWS_EC2_API EbsStatusSummary();
+    AWS_EC2_API EbsStatusSummary() = default;
     AWS_EC2_API EbsStatusSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EbsStatusSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,33 +46,31 @@ namespace Model
     /**
      * <p>Details about the attached EBS status check for an instance.</p>
      */
-    inline const Aws::Vector<EbsStatusDetails>& GetDetails() const{ return m_details; }
+    inline const Aws::Vector<EbsStatusDetails>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Vector<EbsStatusDetails>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Vector<EbsStatusDetails>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline EbsStatusSummary& WithDetails(const Aws::Vector<EbsStatusDetails>& value) { SetDetails(value); return *this;}
-    inline EbsStatusSummary& WithDetails(Aws::Vector<EbsStatusDetails>&& value) { SetDetails(std::move(value)); return *this;}
-    inline EbsStatusSummary& AddDetails(const EbsStatusDetails& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
-    inline EbsStatusSummary& AddDetails(EbsStatusDetails&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
+    template<typename DetailsT = Aws::Vector<EbsStatusDetails>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Vector<EbsStatusDetails>>
+    EbsStatusSummary& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    template<typename DetailsT = EbsStatusDetails>
+    EbsStatusSummary& AddDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details.emplace_back(std::forward<DetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current status.</p>
      */
-    inline const SummaryStatus& GetStatus() const{ return m_status; }
+    inline SummaryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SummaryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SummaryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EbsStatusSummary& WithStatus(const SummaryStatus& value) { SetStatus(value); return *this;}
-    inline EbsStatusSummary& WithStatus(SummaryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SummaryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EbsStatusSummary& WithStatus(SummaryStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<EbsStatusDetails> m_details;
     bool m_detailsHasBeenSet = false;
 
-    SummaryStatus m_status;
+    SummaryStatus m_status{SummaryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

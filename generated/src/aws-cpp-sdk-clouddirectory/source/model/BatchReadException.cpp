@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchReadException::BatchReadException() : 
-    m_type(BatchReadExceptionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchReadException::BatchReadException(JsonView jsonValue)
-  : BatchReadException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchReadException& BatchReadException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BatchReadExceptionTypeMapper::GetBatchReadExceptionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

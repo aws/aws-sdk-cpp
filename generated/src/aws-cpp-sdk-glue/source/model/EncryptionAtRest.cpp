@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-EncryptionAtRest::EncryptionAtRest() : 
-    m_catalogEncryptionMode(CatalogEncryptionMode::NOT_SET),
-    m_catalogEncryptionModeHasBeenSet(false),
-    m_sseAwsKmsKeyIdHasBeenSet(false),
-    m_catalogEncryptionServiceRoleHasBeenSet(false)
-{
-}
-
 EncryptionAtRest::EncryptionAtRest(JsonView jsonValue)
-  : EncryptionAtRest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EncryptionAtRest& EncryptionAtRest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogEncryptionMode"))
   {
     m_catalogEncryptionMode = CatalogEncryptionModeMapper::GetCatalogEncryptionModeForName(jsonValue.GetString("CatalogEncryptionMode"));
-
     m_catalogEncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SseAwsKmsKeyId"))
   {
     m_sseAwsKmsKeyId = jsonValue.GetString("SseAwsKmsKeyId");
-
     m_sseAwsKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogEncryptionServiceRole"))
   {
     m_catalogEncryptionServiceRole = jsonValue.GetString("CatalogEncryptionServiceRole");
-
     m_catalogEncryptionServiceRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

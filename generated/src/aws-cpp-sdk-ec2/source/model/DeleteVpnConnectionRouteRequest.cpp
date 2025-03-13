@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVpnConnectionRouteRequest::DeleteVpnConnectionRouteRequest() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_vpnConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpnConnectionRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

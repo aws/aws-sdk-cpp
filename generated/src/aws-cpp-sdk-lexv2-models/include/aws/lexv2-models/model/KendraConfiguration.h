@@ -34,7 +34,7 @@ namespace Model
   class KendraConfiguration
   {
   public:
-    AWS_LEXMODELSV2_API KendraConfiguration();
+    AWS_LEXMODELSV2_API KendraConfiguration() = default;
     AWS_LEXMODELSV2_API KendraConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API KendraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>AMAZON.KendraSearchIntent</code> intent to search. The index must be in
      * the same account and Region as the Amazon Lex bot.</p>
      */
-    inline const Aws::String& GetKendraIndex() const{ return m_kendraIndex; }
+    inline const Aws::String& GetKendraIndex() const { return m_kendraIndex; }
     inline bool KendraIndexHasBeenSet() const { return m_kendraIndexHasBeenSet; }
-    inline void SetKendraIndex(const Aws::String& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = value; }
-    inline void SetKendraIndex(Aws::String&& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = std::move(value); }
-    inline void SetKendraIndex(const char* value) { m_kendraIndexHasBeenSet = true; m_kendraIndex.assign(value); }
-    inline KendraConfiguration& WithKendraIndex(const Aws::String& value) { SetKendraIndex(value); return *this;}
-    inline KendraConfiguration& WithKendraIndex(Aws::String&& value) { SetKendraIndex(std::move(value)); return *this;}
-    inline KendraConfiguration& WithKendraIndex(const char* value) { SetKendraIndex(value); return *this;}
+    template<typename KendraIndexT = Aws::String>
+    void SetKendraIndex(KendraIndexT&& value) { m_kendraIndexHasBeenSet = true; m_kendraIndex = std::forward<KendraIndexT>(value); }
+    template<typename KendraIndexT = Aws::String>
+    KendraConfiguration& WithKendraIndex(KendraIndexT&& value) { SetKendraIndex(std::forward<KendraIndexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a
      * custom query string to query the Amazon Kendra index.</p>
      */
-    inline bool GetQueryFilterStringEnabled() const{ return m_queryFilterStringEnabled; }
+    inline bool GetQueryFilterStringEnabled() const { return m_queryFilterStringEnabled; }
     inline bool QueryFilterStringEnabledHasBeenSet() const { return m_queryFilterStringEnabledHasBeenSet; }
     inline void SetQueryFilterStringEnabled(bool value) { m_queryFilterStringEnabledHasBeenSet = true; m_queryFilterStringEnabled = value; }
     inline KendraConfiguration& WithQueryFilterStringEnabled(bool value) { SetQueryFilterStringEnabled(value); return *this;}
@@ -75,21 +73,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering
      * queries</a>.</p>
      */
-    inline const Aws::String& GetQueryFilterString() const{ return m_queryFilterString; }
+    inline const Aws::String& GetQueryFilterString() const { return m_queryFilterString; }
     inline bool QueryFilterStringHasBeenSet() const { return m_queryFilterStringHasBeenSet; }
-    inline void SetQueryFilterString(const Aws::String& value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString = value; }
-    inline void SetQueryFilterString(Aws::String&& value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString = std::move(value); }
-    inline void SetQueryFilterString(const char* value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString.assign(value); }
-    inline KendraConfiguration& WithQueryFilterString(const Aws::String& value) { SetQueryFilterString(value); return *this;}
-    inline KendraConfiguration& WithQueryFilterString(Aws::String&& value) { SetQueryFilterString(std::move(value)); return *this;}
-    inline KendraConfiguration& WithQueryFilterString(const char* value) { SetQueryFilterString(value); return *this;}
+    template<typename QueryFilterStringT = Aws::String>
+    void SetQueryFilterString(QueryFilterStringT&& value) { m_queryFilterStringHasBeenSet = true; m_queryFilterString = std::forward<QueryFilterStringT>(value); }
+    template<typename QueryFilterStringT = Aws::String>
+    KendraConfiguration& WithQueryFilterString(QueryFilterStringT&& value) { SetQueryFilterString(std::forward<QueryFilterStringT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_kendraIndex;
     bool m_kendraIndexHasBeenSet = false;
 
-    bool m_queryFilterStringEnabled;
+    bool m_queryFilterStringEnabled{false};
     bool m_queryFilterStringEnabledHasBeenSet = false;
 
     Aws::String m_queryFilterString;

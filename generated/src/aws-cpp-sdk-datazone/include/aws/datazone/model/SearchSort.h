@@ -32,7 +32,7 @@ namespace Model
   class SearchSort
   {
   public:
-    AWS_DATAZONE_API SearchSort();
+    AWS_DATAZONE_API SearchSort() = default;
     AWS_DATAZONE_API SearchSort(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SearchSort& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The attribute detail of the way to sort search results.</p>
      */
-    inline const Aws::String& GetAttribute() const{ return m_attribute; }
+    inline const Aws::String& GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
-    inline SearchSort& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-    inline SearchSort& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-    inline SearchSort& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+    template<typename AttributeT = Aws::String>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Aws::String>
+    SearchSort& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order detail of the wya to sort search results.</p>
      */
-    inline const SortOrder& GetOrder() const{ return m_order; }
+    inline SortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline SearchSort& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-    inline SearchSort& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(SortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline SearchSort& WithOrder(SortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_attribute;
     bool m_attributeHasBeenSet = false;
 
-    SortOrder m_order;
+    SortOrder m_order{SortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

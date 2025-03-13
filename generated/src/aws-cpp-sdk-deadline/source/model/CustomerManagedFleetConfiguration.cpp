@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-CustomerManagedFleetConfiguration::CustomerManagedFleetConfiguration() : 
-    m_mode(AutoScalingMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_workerCapabilitiesHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false)
-{
-}
-
 CustomerManagedFleetConfiguration::CustomerManagedFleetConfiguration(JsonView jsonValue)
-  : CustomerManagedFleetConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomerManagedFleetConfiguration& CustomerManagedFleetConfiguration::operator =
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = AutoScalingModeMapper::GetAutoScalingModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerCapabilities"))
   {
     m_workerCapabilities = jsonValue.GetObject("workerCapabilities");
-
     m_workerCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageProfileId"))
   {
     m_storageProfileId = jsonValue.GetString("storageProfileId");
-
     m_storageProfileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

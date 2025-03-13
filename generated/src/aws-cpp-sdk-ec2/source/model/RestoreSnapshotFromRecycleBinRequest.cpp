@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RestoreSnapshotFromRecycleBinRequest::RestoreSnapshotFromRecycleBinRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RestoreSnapshotFromRecycleBinRequest::SerializePayload() const
 {
   Aws::StringStream ss;

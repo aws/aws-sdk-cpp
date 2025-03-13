@@ -12,12 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCopyProductStatusRequest::DescribeCopyProductStatusRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_copyProductTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCopyProductStatusRequest::SerializePayload() const
 {
   JsonValue payload;

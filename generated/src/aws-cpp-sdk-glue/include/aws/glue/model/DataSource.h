@@ -32,7 +32,7 @@ namespace Model
   class DataSource
   {
   public:
-    AWS_GLUE_API DataSource();
+    AWS_GLUE_API DataSource() = default;
     AWS_GLUE_API DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An Glue table.</p>
      */
-    inline const GlueTable& GetGlueTable() const{ return m_glueTable; }
+    inline const GlueTable& GetGlueTable() const { return m_glueTable; }
     inline bool GlueTableHasBeenSet() const { return m_glueTableHasBeenSet; }
-    inline void SetGlueTable(const GlueTable& value) { m_glueTableHasBeenSet = true; m_glueTable = value; }
-    inline void SetGlueTable(GlueTable&& value) { m_glueTableHasBeenSet = true; m_glueTable = std::move(value); }
-    inline DataSource& WithGlueTable(const GlueTable& value) { SetGlueTable(value); return *this;}
-    inline DataSource& WithGlueTable(GlueTable&& value) { SetGlueTable(std::move(value)); return *this;}
+    template<typename GlueTableT = GlueTable>
+    void SetGlueTable(GlueTableT&& value) { m_glueTableHasBeenSet = true; m_glueTable = std::forward<GlueTableT>(value); }
+    template<typename GlueTableT = GlueTable>
+    DataSource& WithGlueTable(GlueTableT&& value) { SetGlueTable(std::forward<GlueTableT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,17 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopySnapshotAndUpdateVolumeRequest::CopySnapshotAndUpdateVolumeRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_volumeIdHasBeenSet(false),
-    m_sourceSnapshotARNHasBeenSet(false),
-    m_copyStrategy(OpenZFSCopyStrategy::NOT_SET),
-    m_copyStrategyHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String CopySnapshotAndUpdateVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

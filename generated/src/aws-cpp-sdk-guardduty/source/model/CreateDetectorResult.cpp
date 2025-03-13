@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDetectorResult::CreateDetectorResult()
-{
-}
-
 CreateDetectorResult::CreateDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateDetectorResult& CreateDetectorResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
+    m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedDataSources"))
   {
     m_unprocessedDataSources = jsonValue.GetObject("unprocessedDataSources");
-
+    m_unprocessedDataSourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

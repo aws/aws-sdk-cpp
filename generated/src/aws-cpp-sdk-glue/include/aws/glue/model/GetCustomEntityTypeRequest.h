@@ -21,7 +21,7 @@ namespace Model
   class GetCustomEntityTypeRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetCustomEntityTypeRequest();
+    AWS_GLUE_API GetCustomEntityTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the custom pattern that you want to retrieve.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetCustomEntityTypeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetCustomEntityTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetCustomEntityTypeRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetCustomEntityTypeRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

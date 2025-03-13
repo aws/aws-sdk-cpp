@@ -12,15 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAdapterRequest::UpdateAdapterRequest() : 
-    m_adapterIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_adapterNameHasBeenSet(false),
-    m_autoUpdate(AutoUpdate::NOT_SET),
-    m_autoUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAdapterRequest::SerializePayload() const
 {
   JsonValue payload;

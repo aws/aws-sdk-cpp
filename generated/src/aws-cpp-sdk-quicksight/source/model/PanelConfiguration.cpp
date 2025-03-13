@@ -18,25 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PanelConfiguration::PanelConfiguration() : 
-    m_titleHasBeenSet(false),
-    m_borderVisibility(Visibility::NOT_SET),
-    m_borderVisibilityHasBeenSet(false),
-    m_borderThicknessHasBeenSet(false),
-    m_borderStyle(PanelBorderStyle::NOT_SET),
-    m_borderStyleHasBeenSet(false),
-    m_borderColorHasBeenSet(false),
-    m_gutterVisibility(Visibility::NOT_SET),
-    m_gutterVisibilityHasBeenSet(false),
-    m_gutterSpacingHasBeenSet(false),
-    m_backgroundVisibility(Visibility::NOT_SET),
-    m_backgroundVisibilityHasBeenSet(false),
-    m_backgroundColorHasBeenSet(false)
-{
-}
-
 PanelConfiguration::PanelConfiguration(JsonView jsonValue)
-  : PanelConfiguration()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ PanelConfiguration& PanelConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetObject("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderVisibility"))
   {
     m_borderVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("BorderVisibility"));
-
     m_borderVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderThickness"))
   {
     m_borderThickness = jsonValue.GetString("BorderThickness");
-
     m_borderThicknessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderStyle"))
   {
     m_borderStyle = PanelBorderStyleMapper::GetPanelBorderStyleForName(jsonValue.GetString("BorderStyle"));
-
     m_borderStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderColor"))
   {
     m_borderColor = jsonValue.GetString("BorderColor");
-
     m_borderColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GutterVisibility"))
   {
     m_gutterVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("GutterVisibility"));
-
     m_gutterVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GutterSpacing"))
   {
     m_gutterSpacing = jsonValue.GetString("GutterSpacing");
-
     m_gutterSpacingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackgroundVisibility"))
   {
     m_backgroundVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("BackgroundVisibility"));
-
     m_backgroundVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetString("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   return *this;
 }
 

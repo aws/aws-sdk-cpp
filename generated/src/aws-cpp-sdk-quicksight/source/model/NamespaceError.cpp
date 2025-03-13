@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NamespaceError::NamespaceError() : 
-    m_type(NamespaceErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 NamespaceError::NamespaceError(JsonView jsonValue)
-  : NamespaceError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NamespaceError& NamespaceError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = NamespaceErrorTypeMapper::GetNamespaceErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

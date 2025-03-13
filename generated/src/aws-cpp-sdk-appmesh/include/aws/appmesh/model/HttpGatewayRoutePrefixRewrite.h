@@ -33,7 +33,7 @@ namespace Model
   class HttpGatewayRoutePrefixRewrite
   {
   public:
-    AWS_APPMESH_API HttpGatewayRoutePrefixRewrite();
+    AWS_APPMESH_API HttpGatewayRoutePrefixRewrite() = default;
     AWS_APPMESH_API HttpGatewayRoutePrefixRewrite(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API HttpGatewayRoutePrefixRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The default prefix used to replace the incoming route prefix when
      * rewritten.</p>
      */
-    inline const DefaultGatewayRouteRewrite& GetDefaultPrefix() const{ return m_defaultPrefix; }
+    inline DefaultGatewayRouteRewrite GetDefaultPrefix() const { return m_defaultPrefix; }
     inline bool DefaultPrefixHasBeenSet() const { return m_defaultPrefixHasBeenSet; }
-    inline void SetDefaultPrefix(const DefaultGatewayRouteRewrite& value) { m_defaultPrefixHasBeenSet = true; m_defaultPrefix = value; }
-    inline void SetDefaultPrefix(DefaultGatewayRouteRewrite&& value) { m_defaultPrefixHasBeenSet = true; m_defaultPrefix = std::move(value); }
-    inline HttpGatewayRoutePrefixRewrite& WithDefaultPrefix(const DefaultGatewayRouteRewrite& value) { SetDefaultPrefix(value); return *this;}
-    inline HttpGatewayRoutePrefixRewrite& WithDefaultPrefix(DefaultGatewayRouteRewrite&& value) { SetDefaultPrefix(std::move(value)); return *this;}
+    inline void SetDefaultPrefix(DefaultGatewayRouteRewrite value) { m_defaultPrefixHasBeenSet = true; m_defaultPrefix = value; }
+    inline HttpGatewayRoutePrefixRewrite& WithDefaultPrefix(DefaultGatewayRouteRewrite value) { SetDefaultPrefix(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value used to replace the incoming route prefix when rewritten.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline HttpGatewayRoutePrefixRewrite& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline HttpGatewayRoutePrefixRewrite& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline HttpGatewayRoutePrefixRewrite& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    HttpGatewayRoutePrefixRewrite& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    DefaultGatewayRouteRewrite m_defaultPrefix;
+    DefaultGatewayRouteRewrite m_defaultPrefix{DefaultGatewayRouteRewrite::NOT_SET};
     bool m_defaultPrefixHasBeenSet = false;
 
     Aws::String m_value;

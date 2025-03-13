@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KinesisStreamConfig::KinesisStreamConfig() : 
-    m_roleARNHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 KinesisStreamConfig::KinesisStreamConfig(const XmlNode& xmlNode)
-  : KinesisStreamConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ KinesisStreamConfig& KinesisStreamConfig::operator =(const XmlNode& xmlNode)
     {
       m_roleARN = Aws::Utils::Xml::DecodeEscapedXmlText(roleARNNode.GetText());
       m_roleARNHasBeenSet = true;
+       m_roleARNHasBeenSet = true;
     }
     XmlNode streamARNNode = resultNode.FirstChild("StreamARN");
     if(!streamARNNode.IsNull())
     {
       m_streamARN = Aws::Utils::Xml::DecodeEscapedXmlText(streamARNNode.GetText());
       m_streamARNHasBeenSet = true;
+       m_streamARNHasBeenSet = true;
     }
   }
 

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-GrpcConfig::GrpcConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 GrpcConfig::GrpcConfig(const XmlNode& xmlNode)
-  : GrpcConfig()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ GrpcConfig& GrpcConfig::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

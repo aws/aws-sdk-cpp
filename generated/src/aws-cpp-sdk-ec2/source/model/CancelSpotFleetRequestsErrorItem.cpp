@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CancelSpotFleetRequestsErrorItem::CancelSpotFleetRequestsErrorItem() : 
-    m_errorHasBeenSet(false),
-    m_spotFleetRequestIdHasBeenSet(false)
-{
-}
-
 CancelSpotFleetRequestsErrorItem::CancelSpotFleetRequestsErrorItem(const XmlNode& xmlNode)
-  : CancelSpotFleetRequestsErrorItem()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CancelSpotFleetRequestsErrorItem& CancelSpotFleetRequestsErrorItem::operator =(c
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
     XmlNode spotFleetRequestIdNode = resultNode.FirstChild("spotFleetRequestId");
     if(!spotFleetRequestIdNode.IsNull())
     {
       m_spotFleetRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotFleetRequestIdNode.GetText());
       m_spotFleetRequestIdHasBeenSet = true;
+       m_spotFleetRequestIdHasBeenSet = true;
     }
   }
 

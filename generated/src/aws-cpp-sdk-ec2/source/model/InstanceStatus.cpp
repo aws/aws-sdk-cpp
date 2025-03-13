@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStatus::InstanceStatus() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_systemStatusHasBeenSet(false),
-    m_attachedEbsStatusHasBeenSet(false)
-{
-}
-
 InstanceStatus::InstanceStatus(const XmlNode& xmlNode)
-  : InstanceStatus()
 {
   *this = xmlNode;
 }
@@ -50,60 +36,69 @@ InstanceStatus& InstanceStatus::operator =(const XmlNode& xmlNode)
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
     if(!outpostArnNode.IsNull())
     {
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
+       m_outpostArnHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
     if(!operatorNode.IsNull())
     {
       m_operator = operatorNode;
       m_operatorHasBeenSet = true;
+       m_operatorHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("item");
+      m_eventsHasBeenSet = !eventsMember.IsNull();
       while(!eventsMember.IsNull())
       {
         m_events.push_back(eventsMember);
         eventsMember = eventsMember.NextNode("item");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceStateNode = resultNode.FirstChild("instanceState");
     if(!instanceStateNode.IsNull())
     {
       m_instanceState = instanceStateNode;
       m_instanceStateHasBeenSet = true;
+       m_instanceStateHasBeenSet = true;
     }
     XmlNode instanceStatusNode = resultNode.FirstChild("instanceStatus");
     if(!instanceStatusNode.IsNull())
     {
       m_instanceStatus = instanceStatusNode;
       m_instanceStatusHasBeenSet = true;
+       m_instanceStatusHasBeenSet = true;
     }
     XmlNode systemStatusNode = resultNode.FirstChild("systemStatus");
     if(!systemStatusNode.IsNull())
     {
       m_systemStatus = systemStatusNode;
       m_systemStatusHasBeenSet = true;
+       m_systemStatusHasBeenSet = true;
     }
     XmlNode attachedEbsStatusNode = resultNode.FirstChild("attachedEbsStatus");
     if(!attachedEbsStatusNode.IsNull())
     {
       m_attachedEbsStatus = attachedEbsStatusNode;
       m_attachedEbsStatusHasBeenSet = true;
+       m_attachedEbsStatusHasBeenSet = true;
     }
   }
 

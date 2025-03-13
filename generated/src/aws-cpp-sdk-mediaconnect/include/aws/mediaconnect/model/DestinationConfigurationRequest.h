@@ -33,7 +33,7 @@ namespace Model
   class DestinationConfigurationRequest
   {
   public:
-    AWS_MEDIACONNECT_API DestinationConfigurationRequest();
+    AWS_MEDIACONNECT_API DestinationConfigurationRequest() = default;
     AWS_MEDIACONNECT_API DestinationConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API DestinationConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * The IP address where you want MediaConnect to send contents of the media stream.
      */
-    inline const Aws::String& GetDestinationIp() const{ return m_destinationIp; }
+    inline const Aws::String& GetDestinationIp() const { return m_destinationIp; }
     inline bool DestinationIpHasBeenSet() const { return m_destinationIpHasBeenSet; }
-    inline void SetDestinationIp(const Aws::String& value) { m_destinationIpHasBeenSet = true; m_destinationIp = value; }
-    inline void SetDestinationIp(Aws::String&& value) { m_destinationIpHasBeenSet = true; m_destinationIp = std::move(value); }
-    inline void SetDestinationIp(const char* value) { m_destinationIpHasBeenSet = true; m_destinationIp.assign(value); }
-    inline DestinationConfigurationRequest& WithDestinationIp(const Aws::String& value) { SetDestinationIp(value); return *this;}
-    inline DestinationConfigurationRequest& WithDestinationIp(Aws::String&& value) { SetDestinationIp(std::move(value)); return *this;}
-    inline DestinationConfigurationRequest& WithDestinationIp(const char* value) { SetDestinationIp(value); return *this;}
+    template<typename DestinationIpT = Aws::String>
+    void SetDestinationIp(DestinationIpT&& value) { m_destinationIpHasBeenSet = true; m_destinationIp = std::forward<DestinationIpT>(value); }
+    template<typename DestinationIpT = Aws::String>
+    DestinationConfigurationRequest& WithDestinationIp(DestinationIpT&& value) { SetDestinationIp(std::forward<DestinationIpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * The port that you want MediaConnect to use when it distributes the media stream
      * to the output.
      */
-    inline int GetDestinationPort() const{ return m_destinationPort; }
+    inline int GetDestinationPort() const { return m_destinationPort; }
     inline bool DestinationPortHasBeenSet() const { return m_destinationPortHasBeenSet; }
     inline void SetDestinationPort(int value) { m_destinationPortHasBeenSet = true; m_destinationPort = value; }
     inline DestinationConfigurationRequest& WithDestinationPort(int value) { SetDestinationPort(value); return *this;}
@@ -69,19 +67,19 @@ namespace Model
      * The VPC interface that you want to use for the media stream associated with the
      * output.
      */
-    inline const InterfaceRequest& GetInterface() const{ return m_interface; }
+    inline const InterfaceRequest& GetInterface() const { return m_interface; }
     inline bool InterfaceHasBeenSet() const { return m_interfaceHasBeenSet; }
-    inline void SetInterface(const InterfaceRequest& value) { m_interfaceHasBeenSet = true; m_interface = value; }
-    inline void SetInterface(InterfaceRequest&& value) { m_interfaceHasBeenSet = true; m_interface = std::move(value); }
-    inline DestinationConfigurationRequest& WithInterface(const InterfaceRequest& value) { SetInterface(value); return *this;}
-    inline DestinationConfigurationRequest& WithInterface(InterfaceRequest&& value) { SetInterface(std::move(value)); return *this;}
+    template<typename InterfaceT = InterfaceRequest>
+    void SetInterface(InterfaceT&& value) { m_interfaceHasBeenSet = true; m_interface = std::forward<InterfaceT>(value); }
+    template<typename InterfaceT = InterfaceRequest>
+    DestinationConfigurationRequest& WithInterface(InterfaceT&& value) { SetInterface(std::forward<InterfaceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationIp;
     bool m_destinationIpHasBeenSet = false;
 
-    int m_destinationPort;
+    int m_destinationPort{0};
     bool m_destinationPortHasBeenSet = false;
 
     InterfaceRequest m_interface;

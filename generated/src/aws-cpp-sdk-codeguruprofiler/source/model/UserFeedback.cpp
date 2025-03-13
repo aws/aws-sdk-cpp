@@ -18,14 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-UserFeedback::UserFeedback() : 
-    m_type(FeedbackType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 UserFeedback::UserFeedback(JsonView jsonValue)
-  : UserFeedback()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UserFeedback& UserFeedback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = FeedbackTypeMapper::GetFeedbackTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBlueprintRequest::UpdateBlueprintRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_blueprintLocationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBlueprintRequest::SerializePayload() const
 {
   JsonValue payload;

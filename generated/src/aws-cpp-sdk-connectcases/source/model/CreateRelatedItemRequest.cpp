@@ -12,16 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRelatedItemRequest::CreateRelatedItemRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_performedByHasBeenSet(false),
-    m_type(RelatedItemType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateRelatedItemRequest::SerializePayload() const
 {
   JsonValue payload;

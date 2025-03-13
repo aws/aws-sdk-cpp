@@ -43,7 +43,7 @@ namespace Model
   class ShuffleConfig
   {
   public:
-    AWS_SAGEMAKER_API ShuffleConfig();
+    AWS_SAGEMAKER_API ShuffleConfig() = default;
     AWS_SAGEMAKER_API ShuffleConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ShuffleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,14 @@ namespace Model
     /**
      * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
      */
-    inline long long GetSeed() const{ return m_seed; }
+    inline long long GetSeed() const { return m_seed; }
     inline bool SeedHasBeenSet() const { return m_seedHasBeenSet; }
     inline void SetSeed(long long value) { m_seedHasBeenSet = true; m_seed = value; }
     inline ShuffleConfig& WithSeed(long long value) { SetSeed(value); return *this;}
     ///@}
   private:
 
-    long long m_seed;
+    long long m_seed{0};
     bool m_seedHasBeenSet = false;
   };
 

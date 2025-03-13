@@ -18,16 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DefaultCategoricalHyperParameterRange::DefaultCategoricalHyperParameterRange() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_isTunable(false),
-    m_isTunableHasBeenSet(false)
-{
-}
-
 DefaultCategoricalHyperParameterRange::DefaultCategoricalHyperParameterRange(JsonView jsonValue)
-  : DefaultCategoricalHyperParameterRange()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DefaultCategoricalHyperParameterRange& DefaultCategoricalHyperParameterRange::op
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -50,14 +39,11 @@ DefaultCategoricalHyperParameterRange& DefaultCategoricalHyperParameterRange::op
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isTunable"))
   {
     m_isTunable = jsonValue.GetBool("isTunable");
-
     m_isTunableHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSessionsRequest::ListSessionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_portalIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sortBy(SessionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_status(SessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String ListSessionsRequest::SerializePayload() const
 {
   return {};

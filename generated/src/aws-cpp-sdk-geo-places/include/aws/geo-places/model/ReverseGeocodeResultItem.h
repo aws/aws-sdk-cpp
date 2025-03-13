@@ -40,7 +40,7 @@ namespace Model
   class ReverseGeocodeResultItem
   {
   public:
-    AWS_GEOPLACES_API ReverseGeocodeResultItem();
+    AWS_GEOPLACES_API ReverseGeocodeResultItem() = default;
     AWS_GEOPLACES_API ReverseGeocodeResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API ReverseGeocodeResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>The <code>PlaceId</code> of the place you wish to receive the information
      * for.</p>
      */
-    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
+    inline const Aws::String& GetPlaceId() const { return m_placeId; }
     inline bool PlaceIdHasBeenSet() const { return m_placeIdHasBeenSet; }
-    inline void SetPlaceId(const Aws::String& value) { m_placeIdHasBeenSet = true; m_placeId = value; }
-    inline void SetPlaceId(Aws::String&& value) { m_placeIdHasBeenSet = true; m_placeId = std::move(value); }
-    inline void SetPlaceId(const char* value) { m_placeIdHasBeenSet = true; m_placeId.assign(value); }
-    inline ReverseGeocodeResultItem& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
-    inline ReverseGeocodeResultItem& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+    template<typename PlaceIdT = Aws::String>
+    void SetPlaceId(PlaceIdT&& value) { m_placeIdHasBeenSet = true; m_placeId = std::forward<PlaceIdT>(value); }
+    template<typename PlaceIdT = Aws::String>
+    ReverseGeocodeResultItem& WithPlaceId(PlaceIdT&& value) { SetPlaceId(std::forward<PlaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * <p>A <code>PlaceType</code> is a category that the result place must belong
      * to.</p>
      */
-    inline const PlaceType& GetPlaceType() const{ return m_placeType; }
+    inline PlaceType GetPlaceType() const { return m_placeType; }
     inline bool PlaceTypeHasBeenSet() const { return m_placeTypeHasBeenSet; }
-    inline void SetPlaceType(const PlaceType& value) { m_placeTypeHasBeenSet = true; m_placeType = value; }
-    inline void SetPlaceType(PlaceType&& value) { m_placeTypeHasBeenSet = true; m_placeType = std::move(value); }
-    inline ReverseGeocodeResultItem& WithPlaceType(const PlaceType& value) { SetPlaceType(value); return *this;}
-    inline ReverseGeocodeResultItem& WithPlaceType(PlaceType&& value) { SetPlaceType(std::move(value)); return *this;}
+    inline void SetPlaceType(PlaceType value) { m_placeTypeHasBeenSet = true; m_placeType = value; }
+    inline ReverseGeocodeResultItem& WithPlaceType(PlaceType value) { SetPlaceType(value); return *this;}
     ///@}
 
     ///@{
@@ -79,33 +75,31 @@ namespace Model
      * <p>The localized display name of this result item based on request parameter
      * <code>language</code>. </p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ReverseGeocodeResultItem& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ReverseGeocodeResultItem& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ReverseGeocodeResultItem& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The place's address.</p>
      */
-    inline const Address& GetAddress() const{ return m_address; }
+    inline const Address& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Address& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Address&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline ReverseGeocodeResultItem& WithAddress(const Address& value) { SetAddress(value); return *this;}
-    inline ReverseGeocodeResultItem& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    template<typename AddressT = Address>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Address>
+    ReverseGeocodeResultItem& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Boolean indicating if the address provided has been corrected.</p>
      */
-    inline bool GetAddressNumberCorrected() const{ return m_addressNumberCorrected; }
+    inline bool GetAddressNumberCorrected() const { return m_addressNumberCorrected; }
     inline bool AddressNumberCorrectedHasBeenSet() const { return m_addressNumberCorrectedHasBeenSet; }
     inline void SetAddressNumberCorrected(bool value) { m_addressNumberCorrectedHasBeenSet = true; m_addressNumberCorrected = value; }
     inline ReverseGeocodeResultItem& WithAddressNumberCorrected(bool value) { SetAddressNumberCorrected(value); return *this;}
@@ -115,26 +109,26 @@ namespace Model
     /**
      * <p>Contains details about the postal code of the place/result. </p>
      */
-    inline const Aws::Vector<PostalCodeDetails>& GetPostalCodeDetails() const{ return m_postalCodeDetails; }
+    inline const Aws::Vector<PostalCodeDetails>& GetPostalCodeDetails() const { return m_postalCodeDetails; }
     inline bool PostalCodeDetailsHasBeenSet() const { return m_postalCodeDetailsHasBeenSet; }
-    inline void SetPostalCodeDetails(const Aws::Vector<PostalCodeDetails>& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails = value; }
-    inline void SetPostalCodeDetails(Aws::Vector<PostalCodeDetails>&& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails = std::move(value); }
-    inline ReverseGeocodeResultItem& WithPostalCodeDetails(const Aws::Vector<PostalCodeDetails>& value) { SetPostalCodeDetails(value); return *this;}
-    inline ReverseGeocodeResultItem& WithPostalCodeDetails(Aws::Vector<PostalCodeDetails>&& value) { SetPostalCodeDetails(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& AddPostalCodeDetails(const PostalCodeDetails& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails.push_back(value); return *this; }
-    inline ReverseGeocodeResultItem& AddPostalCodeDetails(PostalCodeDetails&& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails.push_back(std::move(value)); return *this; }
+    template<typename PostalCodeDetailsT = Aws::Vector<PostalCodeDetails>>
+    void SetPostalCodeDetails(PostalCodeDetailsT&& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails = std::forward<PostalCodeDetailsT>(value); }
+    template<typename PostalCodeDetailsT = Aws::Vector<PostalCodeDetails>>
+    ReverseGeocodeResultItem& WithPostalCodeDetails(PostalCodeDetailsT&& value) { SetPostalCodeDetails(std::forward<PostalCodeDetailsT>(value)); return *this;}
+    template<typename PostalCodeDetailsT = PostalCodeDetails>
+    ReverseGeocodeResultItem& AddPostalCodeDetails(PostalCodeDetailsT&& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails.emplace_back(std::forward<PostalCodeDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The position in longitude and latitude.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline ReverseGeocodeResultItem& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline ReverseGeocodeResultItem& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    ReverseGeocodeResultItem& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline ReverseGeocodeResultItem& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
@@ -142,7 +136,7 @@ namespace Model
     /**
      * <p>The distance in meters from the QueryPosition.</p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline ReverseGeocodeResultItem& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -155,12 +149,12 @@ namespace Model
      * coordinates: <code>[{westward lng}, {southern lat}, {eastward lng}, {northern
      * lat}]</code> </p>
      */
-    inline const Aws::Vector<double>& GetMapView() const{ return m_mapView; }
+    inline const Aws::Vector<double>& GetMapView() const { return m_mapView; }
     inline bool MapViewHasBeenSet() const { return m_mapViewHasBeenSet; }
-    inline void SetMapView(const Aws::Vector<double>& value) { m_mapViewHasBeenSet = true; m_mapView = value; }
-    inline void SetMapView(Aws::Vector<double>&& value) { m_mapViewHasBeenSet = true; m_mapView = std::move(value); }
-    inline ReverseGeocodeResultItem& WithMapView(const Aws::Vector<double>& value) { SetMapView(value); return *this;}
-    inline ReverseGeocodeResultItem& WithMapView(Aws::Vector<double>&& value) { SetMapView(std::move(value)); return *this;}
+    template<typename MapViewT = Aws::Vector<double>>
+    void SetMapView(MapViewT&& value) { m_mapViewHasBeenSet = true; m_mapView = std::forward<MapViewT>(value); }
+    template<typename MapViewT = Aws::Vector<double>>
+    ReverseGeocodeResultItem& WithMapView(MapViewT&& value) { SetMapView(std::forward<MapViewT>(value)); return *this;}
     inline ReverseGeocodeResultItem& AddMapView(double value) { m_mapViewHasBeenSet = true; m_mapView.push_back(value); return *this; }
     ///@}
 
@@ -168,54 +162,54 @@ namespace Model
     /**
      * <p>Categories of results that results must belong to.</p>
      */
-    inline const Aws::Vector<Category>& GetCategories() const{ return m_categories; }
+    inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-    inline void SetCategories(const Aws::Vector<Category>& value) { m_categoriesHasBeenSet = true; m_categories = value; }
-    inline void SetCategories(Aws::Vector<Category>&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
-    inline ReverseGeocodeResultItem& WithCategories(const Aws::Vector<Category>& value) { SetCategories(value); return *this;}
-    inline ReverseGeocodeResultItem& WithCategories(Aws::Vector<Category>&& value) { SetCategories(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& AddCategories(const Category& value) { m_categoriesHasBeenSet = true; m_categories.push_back(value); return *this; }
-    inline ReverseGeocodeResultItem& AddCategories(Category&& value) { m_categoriesHasBeenSet = true; m_categories.push_back(std::move(value)); return *this; }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    ReverseGeocodeResultItem& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
+    template<typename CategoriesT = Category>
+    ReverseGeocodeResultItem& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of food types offered by this result.</p>
      */
-    inline const Aws::Vector<FoodType>& GetFoodTypes() const{ return m_foodTypes; }
+    inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
     inline bool FoodTypesHasBeenSet() const { return m_foodTypesHasBeenSet; }
-    inline void SetFoodTypes(const Aws::Vector<FoodType>& value) { m_foodTypesHasBeenSet = true; m_foodTypes = value; }
-    inline void SetFoodTypes(Aws::Vector<FoodType>&& value) { m_foodTypesHasBeenSet = true; m_foodTypes = std::move(value); }
-    inline ReverseGeocodeResultItem& WithFoodTypes(const Aws::Vector<FoodType>& value) { SetFoodTypes(value); return *this;}
-    inline ReverseGeocodeResultItem& WithFoodTypes(Aws::Vector<FoodType>&& value) { SetFoodTypes(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& AddFoodTypes(const FoodType& value) { m_foodTypesHasBeenSet = true; m_foodTypes.push_back(value); return *this; }
-    inline ReverseGeocodeResultItem& AddFoodTypes(FoodType&& value) { m_foodTypesHasBeenSet = true; m_foodTypes.push_back(std::move(value)); return *this; }
+    template<typename FoodTypesT = Aws::Vector<FoodType>>
+    void SetFoodTypes(FoodTypesT&& value) { m_foodTypesHasBeenSet = true; m_foodTypes = std::forward<FoodTypesT>(value); }
+    template<typename FoodTypesT = Aws::Vector<FoodType>>
+    ReverseGeocodeResultItem& WithFoodTypes(FoodTypesT&& value) { SetFoodTypes(std::forward<FoodTypesT>(value)); return *this;}
+    template<typename FoodTypesT = FoodType>
+    ReverseGeocodeResultItem& AddFoodTypes(FoodTypesT&& value) { m_foodTypesHasBeenSet = true; m_foodTypes.emplace_back(std::forward<FoodTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Position of the access point represent by longitude and latitude.</p>
      */
-    inline const Aws::Vector<AccessPoint>& GetAccessPoints() const{ return m_accessPoints; }
+    inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
     inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
-    inline void SetAccessPoints(const Aws::Vector<AccessPoint>& value) { m_accessPointsHasBeenSet = true; m_accessPoints = value; }
-    inline void SetAccessPoints(Aws::Vector<AccessPoint>&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::move(value); }
-    inline ReverseGeocodeResultItem& WithAccessPoints(const Aws::Vector<AccessPoint>& value) { SetAccessPoints(value); return *this;}
-    inline ReverseGeocodeResultItem& WithAccessPoints(Aws::Vector<AccessPoint>&& value) { SetAccessPoints(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& AddAccessPoints(const AccessPoint& value) { m_accessPointsHasBeenSet = true; m_accessPoints.push_back(value); return *this; }
-    inline ReverseGeocodeResultItem& AddAccessPoints(AccessPoint&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.push_back(std::move(value)); return *this; }
+    template<typename AccessPointsT = Aws::Vector<AccessPoint>>
+    void SetAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::forward<AccessPointsT>(value); }
+    template<typename AccessPointsT = Aws::Vector<AccessPoint>>
+    ReverseGeocodeResultItem& WithAccessPoints(AccessPointsT&& value) { SetAccessPoints(std::forward<AccessPointsT>(value)); return *this;}
+    template<typename AccessPointsT = AccessPoint>
+    ReverseGeocodeResultItem& AddAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace_back(std::forward<AccessPointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time zone in which the place is located.</p>
      */
-    inline const TimeZone& GetTimeZone() const{ return m_timeZone; }
+    inline const TimeZone& GetTimeZone() const { return m_timeZone; }
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
-    inline void SetTimeZone(const TimeZone& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
-    inline void SetTimeZone(TimeZone&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
-    inline ReverseGeocodeResultItem& WithTimeZone(const TimeZone& value) { SetTimeZone(value); return *this;}
-    inline ReverseGeocodeResultItem& WithTimeZone(TimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
+    template<typename TimeZoneT = TimeZone>
+    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
+    template<typename TimeZoneT = TimeZone>
+    ReverseGeocodeResultItem& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,21 +218,19 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline ReverseGeocodeResultItem& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline ReverseGeocodeResultItem& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline ReverseGeocodeResultItem& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    ReverseGeocodeResultItem& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_placeId;
     bool m_placeIdHasBeenSet = false;
 
-    PlaceType m_placeType;
+    PlaceType m_placeType{PlaceType::NOT_SET};
     bool m_placeTypeHasBeenSet = false;
 
     Aws::String m_title;
@@ -247,7 +239,7 @@ namespace Model
     Address m_address;
     bool m_addressHasBeenSet = false;
 
-    bool m_addressNumberCorrected;
+    bool m_addressNumberCorrected{false};
     bool m_addressNumberCorrectedHasBeenSet = false;
 
     Aws::Vector<PostalCodeDetails> m_postalCodeDetails;
@@ -256,7 +248,7 @@ namespace Model
     Aws::Vector<double> m_position;
     bool m_positionHasBeenSet = false;
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
     Aws::Vector<double> m_mapView;

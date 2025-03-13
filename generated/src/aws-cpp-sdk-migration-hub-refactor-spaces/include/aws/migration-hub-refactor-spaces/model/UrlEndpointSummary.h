@@ -32,7 +32,7 @@ namespace Model
   class UrlEndpointSummary
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointSummary();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointSummary() = default;
     AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * is a private endpoint inside a virtual private cloud (VPC), the health URL must
      * also be a private endpoint, and the host must be the same as the URL.</p>
      */
-    inline const Aws::String& GetHealthUrl() const{ return m_healthUrl; }
+    inline const Aws::String& GetHealthUrl() const { return m_healthUrl; }
     inline bool HealthUrlHasBeenSet() const { return m_healthUrlHasBeenSet; }
-    inline void SetHealthUrl(const Aws::String& value) { m_healthUrlHasBeenSet = true; m_healthUrl = value; }
-    inline void SetHealthUrl(Aws::String&& value) { m_healthUrlHasBeenSet = true; m_healthUrl = std::move(value); }
-    inline void SetHealthUrl(const char* value) { m_healthUrlHasBeenSet = true; m_healthUrl.assign(value); }
-    inline UrlEndpointSummary& WithHealthUrl(const Aws::String& value) { SetHealthUrl(value); return *this;}
-    inline UrlEndpointSummary& WithHealthUrl(Aws::String&& value) { SetHealthUrl(std::move(value)); return *this;}
-    inline UrlEndpointSummary& WithHealthUrl(const char* value) { SetHealthUrl(value); return *this;}
+    template<typename HealthUrlT = Aws::String>
+    void SetHealthUrl(HealthUrlT&& value) { m_healthUrlHasBeenSet = true; m_healthUrl = std::forward<HealthUrlT>(value); }
+    template<typename HealthUrlT = Aws::String>
+    UrlEndpointSummary& WithHealthUrl(HealthUrlT&& value) { SetHealthUrl(std::forward<HealthUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * must be listed in the <a href="https://www.iana.org/domains/root/db">IANA root
      * zone database</a>. </p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline UrlEndpointSummary& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline UrlEndpointSummary& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline UrlEndpointSummary& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    UrlEndpointSummary& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

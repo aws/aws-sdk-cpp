@@ -31,7 +31,7 @@ namespace Model
   class Target
   {
   public:
-    AWS_VPCLATTICE_API Target();
+    AWS_VPCLATTICE_API Target() = default;
     AWS_VPCLATTICE_API Target(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
      * of an Application Load Balancer.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Target& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Target& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The port on which the target is listening. For HTTP, the default is 80. For
      * HTTPS, the default is 443.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline Target& WithPort(int value) { SetPort(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

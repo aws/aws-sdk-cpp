@@ -18,18 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-HttpsNotificationConfiguration::HttpsNotificationConfiguration() : 
-    m_authorizationApiKeyNameHasBeenSet(false),
-    m_authorizationApiKeyValueHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_httpMethod(HttpMethod::NOT_SET),
-    m_httpMethodHasBeenSet(false),
-    m_targetRoleArnHasBeenSet(false)
-{
-}
-
 HttpsNotificationConfiguration::HttpsNotificationConfiguration(JsonView jsonValue)
-  : HttpsNotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ HttpsNotificationConfiguration& HttpsNotificationConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("authorizationApiKeyName"))
   {
     m_authorizationApiKeyName = jsonValue.GetString("authorizationApiKeyName");
-
     m_authorizationApiKeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorizationApiKeyValue"))
   {
     m_authorizationApiKeyValue = jsonValue.GetString("authorizationApiKeyValue");
-
     m_authorizationApiKeyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpMethod"))
   {
     m_httpMethod = HttpMethodMapper::GetHttpMethodForName(jsonValue.GetString("httpMethod"));
-
     m_httpMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRoleArn"))
   {
     m_targetRoleArn = jsonValue.GetString("targetRoleArn");
-
     m_targetRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

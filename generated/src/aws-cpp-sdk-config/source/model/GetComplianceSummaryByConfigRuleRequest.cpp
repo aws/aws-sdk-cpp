@@ -12,10 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetComplianceSummaryByConfigRuleRequest::GetComplianceSummaryByConfigRuleRequest()
-{
-}
-
 Aws::String GetComplianceSummaryByConfigRuleRequest::SerializePayload() const
 {
   return "{}";

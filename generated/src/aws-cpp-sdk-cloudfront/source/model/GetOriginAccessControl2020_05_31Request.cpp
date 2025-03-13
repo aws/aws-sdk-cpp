@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetOriginAccessControl2020_05_31Request::GetOriginAccessControl2020_05_31Request() : 
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String GetOriginAccessControl2020_05_31Request::SerializePayload() const
 {

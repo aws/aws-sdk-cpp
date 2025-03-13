@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetGroup::TargetGroup() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 TargetGroup::TargetGroup(const XmlNode& xmlNode)
-  : TargetGroup()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
   }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateTransitGatewayRouteTableAnnouncementResponse
   {
   public:
-    AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse();
+    AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse() = default;
     AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Provides details about the transit gateway route table announcement.</p>
      */
-    inline const TransitGatewayRouteTableAnnouncement& GetTransitGatewayRouteTableAnnouncement() const{ return m_transitGatewayRouteTableAnnouncement; }
-    inline void SetTransitGatewayRouteTableAnnouncement(const TransitGatewayRouteTableAnnouncement& value) { m_transitGatewayRouteTableAnnouncement = value; }
-    inline void SetTransitGatewayRouteTableAnnouncement(TransitGatewayRouteTableAnnouncement&& value) { m_transitGatewayRouteTableAnnouncement = std::move(value); }
-    inline CreateTransitGatewayRouteTableAnnouncementResponse& WithTransitGatewayRouteTableAnnouncement(const TransitGatewayRouteTableAnnouncement& value) { SetTransitGatewayRouteTableAnnouncement(value); return *this;}
-    inline CreateTransitGatewayRouteTableAnnouncementResponse& WithTransitGatewayRouteTableAnnouncement(TransitGatewayRouteTableAnnouncement&& value) { SetTransitGatewayRouteTableAnnouncement(std::move(value)); return *this;}
+    inline const TransitGatewayRouteTableAnnouncement& GetTransitGatewayRouteTableAnnouncement() const { return m_transitGatewayRouteTableAnnouncement; }
+    template<typename TransitGatewayRouteTableAnnouncementT = TransitGatewayRouteTableAnnouncement>
+    void SetTransitGatewayRouteTableAnnouncement(TransitGatewayRouteTableAnnouncementT&& value) { m_transitGatewayRouteTableAnnouncementHasBeenSet = true; m_transitGatewayRouteTableAnnouncement = std::forward<TransitGatewayRouteTableAnnouncementT>(value); }
+    template<typename TransitGatewayRouteTableAnnouncementT = TransitGatewayRouteTableAnnouncement>
+    CreateTransitGatewayRouteTableAnnouncementResponse& WithTransitGatewayRouteTableAnnouncement(TransitGatewayRouteTableAnnouncementT&& value) { SetTransitGatewayRouteTableAnnouncement(std::forward<TransitGatewayRouteTableAnnouncementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTransitGatewayRouteTableAnnouncementResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTransitGatewayRouteTableAnnouncementResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTransitGatewayRouteTableAnnouncementResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayRouteTableAnnouncement m_transitGatewayRouteTableAnnouncement;
+    bool m_transitGatewayRouteTableAnnouncementHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

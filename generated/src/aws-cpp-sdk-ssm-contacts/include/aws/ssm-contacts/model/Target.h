@@ -33,7 +33,7 @@ namespace Model
   class Target
   {
   public:
-    AWS_SSMCONTACTS_API Target();
+    AWS_SSMCONTACTS_API Target() = default;
     AWS_SSMCONTACTS_API Target(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Information about the contact channel Incident Manager is engaging.</p>
      */
-    inline const ChannelTargetInfo& GetChannelTargetInfo() const{ return m_channelTargetInfo; }
+    inline const ChannelTargetInfo& GetChannelTargetInfo() const { return m_channelTargetInfo; }
     inline bool ChannelTargetInfoHasBeenSet() const { return m_channelTargetInfoHasBeenSet; }
-    inline void SetChannelTargetInfo(const ChannelTargetInfo& value) { m_channelTargetInfoHasBeenSet = true; m_channelTargetInfo = value; }
-    inline void SetChannelTargetInfo(ChannelTargetInfo&& value) { m_channelTargetInfoHasBeenSet = true; m_channelTargetInfo = std::move(value); }
-    inline Target& WithChannelTargetInfo(const ChannelTargetInfo& value) { SetChannelTargetInfo(value); return *this;}
-    inline Target& WithChannelTargetInfo(ChannelTargetInfo&& value) { SetChannelTargetInfo(std::move(value)); return *this;}
+    template<typename ChannelTargetInfoT = ChannelTargetInfo>
+    void SetChannelTargetInfo(ChannelTargetInfoT&& value) { m_channelTargetInfoHasBeenSet = true; m_channelTargetInfo = std::forward<ChannelTargetInfoT>(value); }
+    template<typename ChannelTargetInfoT = ChannelTargetInfo>
+    Target& WithChannelTargetInfo(ChannelTargetInfoT&& value) { SetChannelTargetInfo(std::forward<ChannelTargetInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the contact that Incident Manager is engaging.</p>
      */
-    inline const ContactTargetInfo& GetContactTargetInfo() const{ return m_contactTargetInfo; }
+    inline const ContactTargetInfo& GetContactTargetInfo() const { return m_contactTargetInfo; }
     inline bool ContactTargetInfoHasBeenSet() const { return m_contactTargetInfoHasBeenSet; }
-    inline void SetContactTargetInfo(const ContactTargetInfo& value) { m_contactTargetInfoHasBeenSet = true; m_contactTargetInfo = value; }
-    inline void SetContactTargetInfo(ContactTargetInfo&& value) { m_contactTargetInfoHasBeenSet = true; m_contactTargetInfo = std::move(value); }
-    inline Target& WithContactTargetInfo(const ContactTargetInfo& value) { SetContactTargetInfo(value); return *this;}
-    inline Target& WithContactTargetInfo(ContactTargetInfo&& value) { SetContactTargetInfo(std::move(value)); return *this;}
+    template<typename ContactTargetInfoT = ContactTargetInfo>
+    void SetContactTargetInfo(ContactTargetInfoT&& value) { m_contactTargetInfoHasBeenSet = true; m_contactTargetInfo = std::forward<ContactTargetInfoT>(value); }
+    template<typename ContactTargetInfoT = ContactTargetInfo>
+    Target& WithContactTargetInfo(ContactTargetInfoT&& value) { SetContactTargetInfo(std::forward<ContactTargetInfoT>(value)); return *this;}
     ///@}
   private:
 

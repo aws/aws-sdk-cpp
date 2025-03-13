@@ -12,18 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateActivationRequest::CreateActivationRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_defaultInstanceNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_registrationLimit(0),
-    m_registrationLimitHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_registrationMetadataHasBeenSet(false)
-{
-}
-
 Aws::String CreateActivationRequest::SerializePayload() const
 {
   JsonValue payload;

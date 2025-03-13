@@ -20,16 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBParameterGroup::DBParameterGroup() : 
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dBParameterGroupArnHasBeenSet(false)
-{
-}
-
 DBParameterGroup::DBParameterGroup(const XmlNode& xmlNode)
-  : DBParameterGroup()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ DBParameterGroup& DBParameterGroup::operator =(const XmlNode& xmlNode)
     {
       m_dBParameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupNameNode.GetText());
       m_dBParameterGroupNameHasBeenSet = true;
+       m_dBParameterGroupNameHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
+       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode dBParameterGroupArnNode = resultNode.FirstChild("DBParameterGroupArn");
     if(!dBParameterGroupArnNode.IsNull())
     {
       m_dBParameterGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupArnNode.GetText());
       m_dBParameterGroupArnHasBeenSet = true;
+       m_dBParameterGroupArnHasBeenSet = true;
     }
   }
 

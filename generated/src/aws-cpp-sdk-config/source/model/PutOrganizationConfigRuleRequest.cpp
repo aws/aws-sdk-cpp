@@ -12,15 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutOrganizationConfigRuleRequest::PutOrganizationConfigRuleRequest() : 
-    m_organizationConfigRuleNameHasBeenSet(false),
-    m_organizationManagedRuleMetadataHasBeenSet(false),
-    m_organizationCustomRuleMetadataHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false),
-    m_organizationCustomPolicyRuleMetadataHasBeenSet(false)
-{
-}
-
 Aws::String PutOrganizationConfigRuleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class DescribeAggregationAuthorizationsResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeAggregationAuthorizationsResult();
+    AWS_CONFIGSERVICE_API DescribeAggregationAuthorizationsResult() = default;
     AWS_CONFIGSERVICE_API DescribeAggregationAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeAggregationAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>Returns a list of authorizations granted to various aggregator accounts and
      * regions.</p>
      */
-    inline const Aws::Vector<AggregationAuthorization>& GetAggregationAuthorizations() const{ return m_aggregationAuthorizations; }
-    inline void SetAggregationAuthorizations(const Aws::Vector<AggregationAuthorization>& value) { m_aggregationAuthorizations = value; }
-    inline void SetAggregationAuthorizations(Aws::Vector<AggregationAuthorization>&& value) { m_aggregationAuthorizations = std::move(value); }
-    inline DescribeAggregationAuthorizationsResult& WithAggregationAuthorizations(const Aws::Vector<AggregationAuthorization>& value) { SetAggregationAuthorizations(value); return *this;}
-    inline DescribeAggregationAuthorizationsResult& WithAggregationAuthorizations(Aws::Vector<AggregationAuthorization>&& value) { SetAggregationAuthorizations(std::move(value)); return *this;}
-    inline DescribeAggregationAuthorizationsResult& AddAggregationAuthorizations(const AggregationAuthorization& value) { m_aggregationAuthorizations.push_back(value); return *this; }
-    inline DescribeAggregationAuthorizationsResult& AddAggregationAuthorizations(AggregationAuthorization&& value) { m_aggregationAuthorizations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AggregationAuthorization>& GetAggregationAuthorizations() const { return m_aggregationAuthorizations; }
+    template<typename AggregationAuthorizationsT = Aws::Vector<AggregationAuthorization>>
+    void SetAggregationAuthorizations(AggregationAuthorizationsT&& value) { m_aggregationAuthorizationsHasBeenSet = true; m_aggregationAuthorizations = std::forward<AggregationAuthorizationsT>(value); }
+    template<typename AggregationAuthorizationsT = Aws::Vector<AggregationAuthorization>>
+    DescribeAggregationAuthorizationsResult& WithAggregationAuthorizations(AggregationAuthorizationsT&& value) { SetAggregationAuthorizations(std::forward<AggregationAuthorizationsT>(value)); return *this;}
+    template<typename AggregationAuthorizationsT = AggregationAuthorization>
+    DescribeAggregationAuthorizationsResult& AddAggregationAuthorizations(AggregationAuthorizationsT&& value) { m_aggregationAuthorizationsHasBeenSet = true; m_aggregationAuthorizations.emplace_back(std::forward<AggregationAuthorizationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAggregationAuthorizationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAggregationAuthorizationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAggregationAuthorizationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAggregationAuthorizationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAggregationAuthorizationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAggregationAuthorizationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAggregationAuthorizationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAggregationAuthorizationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AggregationAuthorization> m_aggregationAuthorizations;
+    bool m_aggregationAuthorizationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

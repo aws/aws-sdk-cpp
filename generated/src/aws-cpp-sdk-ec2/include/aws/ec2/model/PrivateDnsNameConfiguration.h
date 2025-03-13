@@ -33,7 +33,7 @@ namespace Model
   class PrivateDnsNameConfiguration
   {
   public:
-    AWS_EC2_API PrivateDnsNameConfiguration();
+    AWS_EC2_API PrivateDnsNameConfiguration() = default;
     AWS_EC2_API PrivateDnsNameConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PrivateDnsNameConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,22 @@ namespace Model
      * the endpoint service can use the private name only when the state is
      * <code>verified</code>.</p>
      */
-    inline const DnsNameState& GetState() const{ return m_state; }
+    inline DnsNameState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const DnsNameState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(DnsNameState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline PrivateDnsNameConfiguration& WithState(const DnsNameState& value) { SetState(value); return *this;}
-    inline PrivateDnsNameConfiguration& WithState(DnsNameState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(DnsNameState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline PrivateDnsNameConfiguration& WithState(DnsNameState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint service verification type, for example TXT.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline PrivateDnsNameConfiguration& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline PrivateDnsNameConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline PrivateDnsNameConfiguration& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    PrivateDnsNameConfiguration& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The value the service provider adds to the private DNS name domain record
      * before verification.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PrivateDnsNameConfiguration& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PrivateDnsNameConfiguration& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PrivateDnsNameConfiguration& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PrivateDnsNameConfiguration& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,18 +83,16 @@ namespace Model
      * <p>The name of the record subdomain the service provider needs to create. The
      * service provider adds the <code>value</code> text to the <code>name</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PrivateDnsNameConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PrivateDnsNameConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PrivateDnsNameConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PrivateDnsNameConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    DnsNameState m_state;
+    DnsNameState m_state{DnsNameState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_type;

@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TargetGroupStickinessConfig::TargetGroupStickinessConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
-{
-}
-
 TargetGroupStickinessConfig::TargetGroupStickinessConfig(const XmlNode& xmlNode)
-  : TargetGroupStickinessConfig()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ TargetGroupStickinessConfig& TargetGroupStickinessConfig::operator =(const XmlNo
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode durationSecondsNode = resultNode.FirstChild("DurationSeconds");
     if(!durationSecondsNode.IsNull())
     {
       m_durationSeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationSecondsNode.GetText()).c_str()).c_str());
       m_durationSecondsHasBeenSet = true;
+       m_durationSecondsHasBeenSet = true;
     }
   }
 

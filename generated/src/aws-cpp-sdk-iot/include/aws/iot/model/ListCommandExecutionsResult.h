@@ -29,7 +29,7 @@ namespace Model
   class ListCommandExecutionsResult
   {
   public:
-    AWS_IOT_API ListCommandExecutionsResult();
+    AWS_IOT_API ListCommandExecutionsResult() = default;
     AWS_IOT_API ListCommandExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListCommandExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of command executions.</p>
      */
-    inline const Aws::Vector<CommandExecutionSummary>& GetCommandExecutions() const{ return m_commandExecutions; }
-    inline void SetCommandExecutions(const Aws::Vector<CommandExecutionSummary>& value) { m_commandExecutions = value; }
-    inline void SetCommandExecutions(Aws::Vector<CommandExecutionSummary>&& value) { m_commandExecutions = std::move(value); }
-    inline ListCommandExecutionsResult& WithCommandExecutions(const Aws::Vector<CommandExecutionSummary>& value) { SetCommandExecutions(value); return *this;}
-    inline ListCommandExecutionsResult& WithCommandExecutions(Aws::Vector<CommandExecutionSummary>&& value) { SetCommandExecutions(std::move(value)); return *this;}
-    inline ListCommandExecutionsResult& AddCommandExecutions(const CommandExecutionSummary& value) { m_commandExecutions.push_back(value); return *this; }
-    inline ListCommandExecutionsResult& AddCommandExecutions(CommandExecutionSummary&& value) { m_commandExecutions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CommandExecutionSummary>& GetCommandExecutions() const { return m_commandExecutions; }
+    template<typename CommandExecutionsT = Aws::Vector<CommandExecutionSummary>>
+    void SetCommandExecutions(CommandExecutionsT&& value) { m_commandExecutionsHasBeenSet = true; m_commandExecutions = std::forward<CommandExecutionsT>(value); }
+    template<typename CommandExecutionsT = Aws::Vector<CommandExecutionSummary>>
+    ListCommandExecutionsResult& WithCommandExecutions(CommandExecutionsT&& value) { SetCommandExecutions(std::forward<CommandExecutionsT>(value)); return *this;}
+    template<typename CommandExecutionsT = CommandExecutionSummary>
+    ListCommandExecutionsResult& AddCommandExecutions(CommandExecutionsT&& value) { m_commandExecutionsHasBeenSet = true; m_commandExecutions.emplace_back(std::forward<CommandExecutionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to get the next set of results, or <code>null</code> if
      * there are no additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCommandExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCommandExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCommandExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCommandExecutionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCommandExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCommandExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCommandExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCommandExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CommandExecutionSummary> m_commandExecutions;
+    bool m_commandExecutionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

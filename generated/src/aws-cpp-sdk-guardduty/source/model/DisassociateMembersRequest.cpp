@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateMembersRequest::DisassociateMembersRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateMembersRequest::SerializePayload() const
 {
   JsonValue payload;

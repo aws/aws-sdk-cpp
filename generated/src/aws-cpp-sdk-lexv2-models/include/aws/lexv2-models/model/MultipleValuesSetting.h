@@ -30,7 +30,7 @@ namespace Model
   class MultipleValuesSetting
   {
   public:
-    AWS_LEXMODELSV2_API MultipleValuesSetting();
+    AWS_LEXMODELSV2_API MultipleValuesSetting() = default;
     AWS_LEXMODELSV2_API MultipleValuesSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API MultipleValuesSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * the <code>allowMutlipleValues</code> is not set, the default value is
      * <code>false</code>.</p>
      */
-    inline bool GetAllowMultipleValues() const{ return m_allowMultipleValues; }
+    inline bool GetAllowMultipleValues() const { return m_allowMultipleValues; }
     inline bool AllowMultipleValuesHasBeenSet() const { return m_allowMultipleValuesHasBeenSet; }
     inline void SetAllowMultipleValues(bool value) { m_allowMultipleValuesHasBeenSet = true; m_allowMultipleValues = value; }
     inline MultipleValuesSetting& WithAllowMultipleValues(bool value) { SetAllowMultipleValues(value); return *this;}
     ///@}
   private:
 
-    bool m_allowMultipleValues;
+    bool m_allowMultipleValues{false};
     bool m_allowMultipleValuesHasBeenSet = false;
   };
 

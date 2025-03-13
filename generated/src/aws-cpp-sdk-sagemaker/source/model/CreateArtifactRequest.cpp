@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateArtifactRequest::CreateArtifactRequest() : 
-    m_artifactNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_artifactTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_metadataPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateArtifactRequest::SerializePayload() const
 {
   JsonValue payload;

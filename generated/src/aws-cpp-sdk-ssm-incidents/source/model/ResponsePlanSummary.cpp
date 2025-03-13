@@ -18,15 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ResponsePlanSummary::ResponsePlanSummary() : 
-    m_arnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ResponsePlanSummary::ResponsePlanSummary(JsonView jsonValue)
-  : ResponsePlanSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResponsePlanSummary& ResponsePlanSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

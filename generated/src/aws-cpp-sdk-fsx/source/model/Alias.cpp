@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-Alias::Alias() : 
-    m_nameHasBeenSet(false),
-    m_lifecycle(AliasLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false)
-{
-}
-
 Alias::Alias(JsonView jsonValue)
-  : Alias()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Alias& Alias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = AliasLifecycleMapper::GetAliasLifecycleForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   return *this;
 }
 

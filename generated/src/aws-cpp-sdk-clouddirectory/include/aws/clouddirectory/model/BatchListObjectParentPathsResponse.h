@@ -34,7 +34,7 @@ namespace Model
   class BatchListObjectParentPathsResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchListObjectParentPathsResponse();
+    AWS_CLOUDDIRECTORY_API BatchListObjectParentPathsResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchListObjectParentPathsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchListObjectParentPathsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated
      * with the directory.</p>
      */
-    inline const Aws::Vector<PathToObjectIdentifiers>& GetPathToObjectIdentifiersList() const{ return m_pathToObjectIdentifiersList; }
+    inline const Aws::Vector<PathToObjectIdentifiers>& GetPathToObjectIdentifiersList() const { return m_pathToObjectIdentifiersList; }
     inline bool PathToObjectIdentifiersListHasBeenSet() const { return m_pathToObjectIdentifiersListHasBeenSet; }
-    inline void SetPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList = value; }
-    inline void SetPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList = std::move(value); }
-    inline BatchListObjectParentPathsResponse& WithPathToObjectIdentifiersList(const Aws::Vector<PathToObjectIdentifiers>& value) { SetPathToObjectIdentifiersList(value); return *this;}
-    inline BatchListObjectParentPathsResponse& WithPathToObjectIdentifiersList(Aws::Vector<PathToObjectIdentifiers>&& value) { SetPathToObjectIdentifiersList(std::move(value)); return *this;}
-    inline BatchListObjectParentPathsResponse& AddPathToObjectIdentifiersList(const PathToObjectIdentifiers& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList.push_back(value); return *this; }
-    inline BatchListObjectParentPathsResponse& AddPathToObjectIdentifiersList(PathToObjectIdentifiers&& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList.push_back(std::move(value)); return *this; }
+    template<typename PathToObjectIdentifiersListT = Aws::Vector<PathToObjectIdentifiers>>
+    void SetPathToObjectIdentifiersList(PathToObjectIdentifiersListT&& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList = std::forward<PathToObjectIdentifiersListT>(value); }
+    template<typename PathToObjectIdentifiersListT = Aws::Vector<PathToObjectIdentifiers>>
+    BatchListObjectParentPathsResponse& WithPathToObjectIdentifiersList(PathToObjectIdentifiersListT&& value) { SetPathToObjectIdentifiersList(std::forward<PathToObjectIdentifiersListT>(value)); return *this;}
+    template<typename PathToObjectIdentifiersListT = PathToObjectIdentifiers>
+    BatchListObjectParentPathsResponse& AddPathToObjectIdentifiersList(PathToObjectIdentifiersListT&& value) { m_pathToObjectIdentifiersListHasBeenSet = true; m_pathToObjectIdentifiersList.emplace_back(std::forward<PathToObjectIdentifiersListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline BatchListObjectParentPathsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchListObjectParentPathsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchListObjectParentPathsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchListObjectParentPathsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkflowRequest::DeleteWorkflowRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkflowRequest::SerializePayload() const
 {
   return {};

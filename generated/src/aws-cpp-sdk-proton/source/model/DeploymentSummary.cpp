@@ -18,29 +18,7 @@ namespace Proton
 namespace Model
 {
 
-DeploymentSummary::DeploymentSummary() : 
-    m_arnHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastAttemptedDeploymentIdHasBeenSet(false),
-    m_lastModifiedAtHasBeenSet(false),
-    m_lastSucceededDeploymentIdHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_targetResourceCreatedAtHasBeenSet(false),
-    m_targetResourceType(DeploymentTargetResourceType::NOT_SET),
-    m_targetResourceTypeHasBeenSet(false)
-{
-}
-
 DeploymentSummary::DeploymentSummary(JsonView jsonValue)
-  : DeploymentSummary()
 {
   *this = jsonValue;
 }
@@ -50,108 +28,78 @@ DeploymentSummary& DeploymentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedAt"))
   {
     m_completedAt = jsonValue.GetDouble("completedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAttemptedDeploymentId"))
   {
     m_lastAttemptedDeploymentId = jsonValue.GetString("lastAttemptedDeploymentId");
-
     m_lastAttemptedDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetDouble("lastModifiedAt");
-
     m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSucceededDeploymentId"))
   {
     m_lastSucceededDeploymentId = jsonValue.GetString("lastSucceededDeploymentId");
-
     m_lastSucceededDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceInstanceName"))
   {
     m_serviceInstanceName = jsonValue.GetString("serviceInstanceName");
-
     m_serviceInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceCreatedAt"))
   {
     m_targetResourceCreatedAt = jsonValue.GetDouble("targetResourceCreatedAt");
-
     m_targetResourceCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceType"))
   {
     m_targetResourceType = DeploymentTargetResourceTypeMapper::GetDeploymentTargetResourceTypeForName(jsonValue.GetString("targetResourceType"));
-
     m_targetResourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

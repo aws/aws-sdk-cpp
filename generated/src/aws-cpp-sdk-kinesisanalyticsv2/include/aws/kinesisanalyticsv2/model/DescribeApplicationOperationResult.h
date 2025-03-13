@@ -34,35 +34,35 @@ namespace Model
   class DescribeApplicationOperationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API DescribeApplicationOperationResult();
+    AWS_KINESISANALYTICSV2_API DescribeApplicationOperationResult() = default;
     AWS_KINESISANALYTICSV2_API DescribeApplicationOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API DescribeApplicationOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ApplicationOperationInfoDetails& GetApplicationOperationInfoDetails() const{ return m_applicationOperationInfoDetails; }
-    inline void SetApplicationOperationInfoDetails(const ApplicationOperationInfoDetails& value) { m_applicationOperationInfoDetails = value; }
-    inline void SetApplicationOperationInfoDetails(ApplicationOperationInfoDetails&& value) { m_applicationOperationInfoDetails = std::move(value); }
-    inline DescribeApplicationOperationResult& WithApplicationOperationInfoDetails(const ApplicationOperationInfoDetails& value) { SetApplicationOperationInfoDetails(value); return *this;}
-    inline DescribeApplicationOperationResult& WithApplicationOperationInfoDetails(ApplicationOperationInfoDetails&& value) { SetApplicationOperationInfoDetails(std::move(value)); return *this;}
+    inline const ApplicationOperationInfoDetails& GetApplicationOperationInfoDetails() const { return m_applicationOperationInfoDetails; }
+    template<typename ApplicationOperationInfoDetailsT = ApplicationOperationInfoDetails>
+    void SetApplicationOperationInfoDetails(ApplicationOperationInfoDetailsT&& value) { m_applicationOperationInfoDetailsHasBeenSet = true; m_applicationOperationInfoDetails = std::forward<ApplicationOperationInfoDetailsT>(value); }
+    template<typename ApplicationOperationInfoDetailsT = ApplicationOperationInfoDetails>
+    DescribeApplicationOperationResult& WithApplicationOperationInfoDetails(ApplicationOperationInfoDetailsT&& value) { SetApplicationOperationInfoDetails(std::forward<ApplicationOperationInfoDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeApplicationOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeApplicationOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeApplicationOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeApplicationOperationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationOperationInfoDetails m_applicationOperationInfoDetails;
+    bool m_applicationOperationInfoDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

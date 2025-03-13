@@ -18,22 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-AsyncInvokeSummary::AsyncInvokeSummary() : 
-    m_invocationArnHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_status(AsyncInvokeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
-{
-}
-
 AsyncInvokeSummary::AsyncInvokeSummary(JsonView jsonValue)
-  : AsyncInvokeSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ AsyncInvokeSummary& AsyncInvokeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invocationArn"))
   {
     m_invocationArn = jsonValue.GetString("invocationArn");
-
     m_invocationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
     m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AsyncInvokeStatusMapper::GetAsyncInvokeStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submitTime"))
   {
     m_submitTime = jsonValue.GetString("submitTime");
-
     m_submitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("outputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

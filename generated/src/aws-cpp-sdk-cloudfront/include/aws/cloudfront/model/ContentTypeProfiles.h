@@ -31,7 +31,7 @@ namespace Model
   class ContentTypeProfiles
   {
   public:
-    AWS_CLOUDFRONT_API ContentTypeProfiles();
+    AWS_CLOUDFRONT_API ContentTypeProfiles() = default;
     AWS_CLOUDFRONT_API ContentTypeProfiles(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ContentTypeProfiles& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of field-level encryption content type-profile mappings.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline ContentTypeProfiles& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -52,18 +52,18 @@ namespace Model
     /**
      * <p>Items in a field-level encryption content type-profile mapping.</p>
      */
-    inline const Aws::Vector<ContentTypeProfile>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<ContentTypeProfile>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<ContentTypeProfile>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<ContentTypeProfile>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline ContentTypeProfiles& WithItems(const Aws::Vector<ContentTypeProfile>& value) { SetItems(value); return *this;}
-    inline ContentTypeProfiles& WithItems(Aws::Vector<ContentTypeProfile>&& value) { SetItems(std::move(value)); return *this;}
-    inline ContentTypeProfiles& AddItems(const ContentTypeProfile& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline ContentTypeProfiles& AddItems(ContentTypeProfile&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<ContentTypeProfile>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ContentTypeProfile>>
+    ContentTypeProfiles& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ContentTypeProfile>
+    ContentTypeProfiles& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<ContentTypeProfile> m_items;

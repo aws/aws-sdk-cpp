@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeServiceDeploymentsResult::DescribeServiceDeploymentsResult()
-{
-}
-
 DescribeServiceDeploymentsResult::DescribeServiceDeploymentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeServiceDeploymentsResult& DescribeServiceDeploymentsResult::operator =(c
     {
       m_serviceDeployments.push_back(serviceDeploymentsJsonList[serviceDeploymentsIndex].AsObject());
     }
+    m_serviceDeploymentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
@@ -45,14 +41,15 @@ DescribeServiceDeploymentsResult& DescribeServiceDeploymentsResult::operator =(c
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
     }
+    m_failuresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

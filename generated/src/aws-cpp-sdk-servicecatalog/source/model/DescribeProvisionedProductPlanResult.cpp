@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeProvisionedProductPlanResult::DescribeProvisionedProductPlanResult()
-{
-}
-
 DescribeProvisionedProductPlanResult::DescribeProvisionedProductPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeProvisionedProductPlanResult& DescribeProvisionedProductPlanResult::oper
   if(jsonValue.ValueExists("ProvisionedProductPlanDetails"))
   {
     m_provisionedProductPlanDetails = jsonValue.GetObject("ProvisionedProductPlanDetails");
-
+    m_provisionedProductPlanDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceChanges"))
   {
     Aws::Utils::Array<JsonView> resourceChangesJsonList = jsonValue.GetArray("ResourceChanges");
@@ -42,20 +37,20 @@ DescribeProvisionedProductPlanResult& DescribeProvisionedProductPlanResult::oper
     {
       m_resourceChanges.push_back(resourceChangesJsonList[resourceChangesIndex].AsObject());
     }
+    m_resourceChangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

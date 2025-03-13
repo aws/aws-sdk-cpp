@@ -30,7 +30,7 @@ namespace Model
   class DescribeWorkerConfigurationResult
   {
   public:
-    AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult();
+    AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult() = default;
     AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,99 +39,96 @@ namespace Model
     /**
      * <p>The time that the worker configuration was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeWorkerConfigurationResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeWorkerConfigurationResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the worker configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeWorkerConfigurationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeWorkerConfigurationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeWorkerConfigurationResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest revision of the custom configuration.</p>
      */
-    inline const WorkerConfigurationRevisionDescription& GetLatestRevision() const{ return m_latestRevision; }
-    inline void SetLatestRevision(const WorkerConfigurationRevisionDescription& value) { m_latestRevision = value; }
-    inline void SetLatestRevision(WorkerConfigurationRevisionDescription&& value) { m_latestRevision = std::move(value); }
-    inline DescribeWorkerConfigurationResult& WithLatestRevision(const WorkerConfigurationRevisionDescription& value) { SetLatestRevision(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithLatestRevision(WorkerConfigurationRevisionDescription&& value) { SetLatestRevision(std::move(value)); return *this;}
+    inline const WorkerConfigurationRevisionDescription& GetLatestRevision() const { return m_latestRevision; }
+    template<typename LatestRevisionT = WorkerConfigurationRevisionDescription>
+    void SetLatestRevision(LatestRevisionT&& value) { m_latestRevisionHasBeenSet = true; m_latestRevision = std::forward<LatestRevisionT>(value); }
+    template<typename LatestRevisionT = WorkerConfigurationRevisionDescription>
+    DescribeWorkerConfigurationResult& WithLatestRevision(LatestRevisionT&& value) { SetLatestRevision(std::forward<LatestRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the worker configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeWorkerConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeWorkerConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeWorkerConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
      */
-    inline const Aws::String& GetWorkerConfigurationArn() const{ return m_workerConfigurationArn; }
-    inline void SetWorkerConfigurationArn(const Aws::String& value) { m_workerConfigurationArn = value; }
-    inline void SetWorkerConfigurationArn(Aws::String&& value) { m_workerConfigurationArn = std::move(value); }
-    inline void SetWorkerConfigurationArn(const char* value) { m_workerConfigurationArn.assign(value); }
-    inline DescribeWorkerConfigurationResult& WithWorkerConfigurationArn(const Aws::String& value) { SetWorkerConfigurationArn(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithWorkerConfigurationArn(Aws::String&& value) { SetWorkerConfigurationArn(std::move(value)); return *this;}
-    inline DescribeWorkerConfigurationResult& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
+    inline const Aws::String& GetWorkerConfigurationArn() const { return m_workerConfigurationArn; }
+    template<typename WorkerConfigurationArnT = Aws::String>
+    void SetWorkerConfigurationArn(WorkerConfigurationArnT&& value) { m_workerConfigurationArnHasBeenSet = true; m_workerConfigurationArn = std::forward<WorkerConfigurationArnT>(value); }
+    template<typename WorkerConfigurationArnT = Aws::String>
+    DescribeWorkerConfigurationResult& WithWorkerConfigurationArn(WorkerConfigurationArnT&& value) { SetWorkerConfigurationArn(std::forward<WorkerConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the worker configuration.</p>
      */
-    inline const WorkerConfigurationState& GetWorkerConfigurationState() const{ return m_workerConfigurationState; }
-    inline void SetWorkerConfigurationState(const WorkerConfigurationState& value) { m_workerConfigurationState = value; }
-    inline void SetWorkerConfigurationState(WorkerConfigurationState&& value) { m_workerConfigurationState = std::move(value); }
-    inline DescribeWorkerConfigurationResult& WithWorkerConfigurationState(const WorkerConfigurationState& value) { SetWorkerConfigurationState(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithWorkerConfigurationState(WorkerConfigurationState&& value) { SetWorkerConfigurationState(std::move(value)); return *this;}
+    inline WorkerConfigurationState GetWorkerConfigurationState() const { return m_workerConfigurationState; }
+    inline void SetWorkerConfigurationState(WorkerConfigurationState value) { m_workerConfigurationStateHasBeenSet = true; m_workerConfigurationState = value; }
+    inline DescribeWorkerConfigurationResult& WithWorkerConfigurationState(WorkerConfigurationState value) { SetWorkerConfigurationState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWorkerConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWorkerConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWorkerConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWorkerConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     WorkerConfigurationRevisionDescription m_latestRevision;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_workerConfigurationArn;
+    bool m_workerConfigurationArnHasBeenSet = false;
 
-    WorkerConfigurationState m_workerConfigurationState;
+    WorkerConfigurationState m_workerConfigurationState{WorkerConfigurationState::NOT_SET};
+    bool m_workerConfigurationStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

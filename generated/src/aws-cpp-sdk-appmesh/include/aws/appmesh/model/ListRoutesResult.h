@@ -34,7 +34,7 @@ namespace Model
   class ListRoutesResult
   {
   public:
-    AWS_APPMESH_API ListRoutesResult();
+    AWS_APPMESH_API ListRoutesResult() = default;
     AWS_APPMESH_API ListRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API ListRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,13 +47,11 @@ namespace Model
      * page of results. This value is <code>null</code> when there are no more results
      * to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRoutesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRoutesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRoutesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRoutesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,32 +59,33 @@ namespace Model
      * <p>The list of existing routes for the specified service mesh and virtual
      * router.</p>
      */
-    inline const Aws::Vector<RouteRef>& GetRoutes() const{ return m_routes; }
-    inline void SetRoutes(const Aws::Vector<RouteRef>& value) { m_routes = value; }
-    inline void SetRoutes(Aws::Vector<RouteRef>&& value) { m_routes = std::move(value); }
-    inline ListRoutesResult& WithRoutes(const Aws::Vector<RouteRef>& value) { SetRoutes(value); return *this;}
-    inline ListRoutesResult& WithRoutes(Aws::Vector<RouteRef>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline ListRoutesResult& AddRoutes(const RouteRef& value) { m_routes.push_back(value); return *this; }
-    inline ListRoutesResult& AddRoutes(RouteRef&& value) { m_routes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RouteRef>& GetRoutes() const { return m_routes; }
+    template<typename RoutesT = Aws::Vector<RouteRef>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<RouteRef>>
+    ListRoutesResult& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = RouteRef>
+    ListRoutesResult& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRoutesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRoutesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRoutesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRoutesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RouteRef> m_routes;
+    bool m_routesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

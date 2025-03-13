@@ -32,7 +32,7 @@ namespace Model
   class NodeInstance
   {
   public:
-    AWS_PANORAMA_API NodeInstance();
+    AWS_PANORAMA_API NodeInstance() = default;
     AWS_PANORAMA_API NodeInstance(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API NodeInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,100 +42,86 @@ namespace Model
     /**
      * <p>The instance's current status.</p>
      */
-    inline const NodeInstanceStatus& GetCurrentStatus() const{ return m_currentStatus; }
+    inline NodeInstanceStatus GetCurrentStatus() const { return m_currentStatus; }
     inline bool CurrentStatusHasBeenSet() const { return m_currentStatusHasBeenSet; }
-    inline void SetCurrentStatus(const NodeInstanceStatus& value) { m_currentStatusHasBeenSet = true; m_currentStatus = value; }
-    inline void SetCurrentStatus(NodeInstanceStatus&& value) { m_currentStatusHasBeenSet = true; m_currentStatus = std::move(value); }
-    inline NodeInstance& WithCurrentStatus(const NodeInstanceStatus& value) { SetCurrentStatus(value); return *this;}
-    inline NodeInstance& WithCurrentStatus(NodeInstanceStatus&& value) { SetCurrentStatus(std::move(value)); return *this;}
+    inline void SetCurrentStatus(NodeInstanceStatus value) { m_currentStatusHasBeenSet = true; m_currentStatus = value; }
+    inline NodeInstance& WithCurrentStatus(NodeInstanceStatus value) { SetCurrentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node's ID.</p>
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const Aws::String& GetNodeId() const { return m_nodeId; }
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-    inline NodeInstance& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-    inline NodeInstance& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-    inline NodeInstance& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    template<typename NodeIdT = Aws::String>
+    void SetNodeId(NodeIdT&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::forward<NodeIdT>(value); }
+    template<typename NodeIdT = Aws::String>
+    NodeInstance& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's ID.</p>
      */
-    inline const Aws::String& GetNodeInstanceId() const{ return m_nodeInstanceId; }
+    inline const Aws::String& GetNodeInstanceId() const { return m_nodeInstanceId; }
     inline bool NodeInstanceIdHasBeenSet() const { return m_nodeInstanceIdHasBeenSet; }
-    inline void SetNodeInstanceId(const Aws::String& value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId = value; }
-    inline void SetNodeInstanceId(Aws::String&& value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId = std::move(value); }
-    inline void SetNodeInstanceId(const char* value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId.assign(value); }
-    inline NodeInstance& WithNodeInstanceId(const Aws::String& value) { SetNodeInstanceId(value); return *this;}
-    inline NodeInstance& WithNodeInstanceId(Aws::String&& value) { SetNodeInstanceId(std::move(value)); return *this;}
-    inline NodeInstance& WithNodeInstanceId(const char* value) { SetNodeInstanceId(value); return *this;}
+    template<typename NodeInstanceIdT = Aws::String>
+    void SetNodeInstanceId(NodeInstanceIdT&& value) { m_nodeInstanceIdHasBeenSet = true; m_nodeInstanceId = std::forward<NodeInstanceIdT>(value); }
+    template<typename NodeInstanceIdT = Aws::String>
+    NodeInstance& WithNodeInstanceId(NodeInstanceIdT&& value) { SetNodeInstanceId(std::forward<NodeInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's name.</p>
      */
-    inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+    inline const Aws::String& GetNodeName() const { return m_nodeName; }
     inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
-    inline void SetNodeName(const Aws::String& value) { m_nodeNameHasBeenSet = true; m_nodeName = value; }
-    inline void SetNodeName(Aws::String&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::move(value); }
-    inline void SetNodeName(const char* value) { m_nodeNameHasBeenSet = true; m_nodeName.assign(value); }
-    inline NodeInstance& WithNodeName(const Aws::String& value) { SetNodeName(value); return *this;}
-    inline NodeInstance& WithNodeName(Aws::String&& value) { SetNodeName(std::move(value)); return *this;}
-    inline NodeInstance& WithNodeName(const char* value) { SetNodeName(value); return *this;}
+    template<typename NodeNameT = Aws::String>
+    void SetNodeName(NodeNameT&& value) { m_nodeNameHasBeenSet = true; m_nodeName = std::forward<NodeNameT>(value); }
+    template<typename NodeNameT = Aws::String>
+    NodeInstance& WithNodeName(NodeNameT&& value) { SetNodeName(std::forward<NodeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's package name.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
+    inline const Aws::String& GetPackageName() const { return m_packageName; }
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
-    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
-    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
-    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
-    inline NodeInstance& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-    inline NodeInstance& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-    inline NodeInstance& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    template<typename PackageNameT = Aws::String>
+    void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
+    template<typename PackageNameT = Aws::String>
+    NodeInstance& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's package patch version.</p>
      */
-    inline const Aws::String& GetPackagePatchVersion() const{ return m_packagePatchVersion; }
+    inline const Aws::String& GetPackagePatchVersion() const { return m_packagePatchVersion; }
     inline bool PackagePatchVersionHasBeenSet() const { return m_packagePatchVersionHasBeenSet; }
-    inline void SetPackagePatchVersion(const Aws::String& value) { m_packagePatchVersionHasBeenSet = true; m_packagePatchVersion = value; }
-    inline void SetPackagePatchVersion(Aws::String&& value) { m_packagePatchVersionHasBeenSet = true; m_packagePatchVersion = std::move(value); }
-    inline void SetPackagePatchVersion(const char* value) { m_packagePatchVersionHasBeenSet = true; m_packagePatchVersion.assign(value); }
-    inline NodeInstance& WithPackagePatchVersion(const Aws::String& value) { SetPackagePatchVersion(value); return *this;}
-    inline NodeInstance& WithPackagePatchVersion(Aws::String&& value) { SetPackagePatchVersion(std::move(value)); return *this;}
-    inline NodeInstance& WithPackagePatchVersion(const char* value) { SetPackagePatchVersion(value); return *this;}
+    template<typename PackagePatchVersionT = Aws::String>
+    void SetPackagePatchVersion(PackagePatchVersionT&& value) { m_packagePatchVersionHasBeenSet = true; m_packagePatchVersion = std::forward<PackagePatchVersionT>(value); }
+    template<typename PackagePatchVersionT = Aws::String>
+    NodeInstance& WithPackagePatchVersion(PackagePatchVersionT&& value) { SetPackagePatchVersion(std::forward<PackagePatchVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's package version.</p>
      */
-    inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
+    inline const Aws::String& GetPackageVersion() const { return m_packageVersion; }
     inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
-    inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
-    inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
-    inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
-    inline NodeInstance& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
-    inline NodeInstance& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
-    inline NodeInstance& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
+    template<typename PackageVersionT = Aws::String>
+    void SetPackageVersion(PackageVersionT&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::forward<PackageVersionT>(value); }
+    template<typename PackageVersionT = Aws::String>
+    NodeInstance& WithPackageVersion(PackageVersionT&& value) { SetPackageVersion(std::forward<PackageVersionT>(value)); return *this;}
     ///@}
   private:
 
-    NodeInstanceStatus m_currentStatus;
+    NodeInstanceStatus m_currentStatus{NodeInstanceStatus::NOT_SET};
     bool m_currentStatusHasBeenSet = false;
 
     Aws::String m_nodeId;

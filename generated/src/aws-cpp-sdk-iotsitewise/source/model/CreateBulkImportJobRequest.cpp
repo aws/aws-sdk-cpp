@@ -12,19 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBulkImportJobRequest::CreateBulkImportJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_jobRoleArnHasBeenSet(false),
-    m_filesHasBeenSet(false),
-    m_errorReportLocationHasBeenSet(false),
-    m_jobConfigurationHasBeenSet(false),
-    m_adaptiveIngestion(false),
-    m_adaptiveIngestionHasBeenSet(false),
-    m_deleteFilesAfterImport(false),
-    m_deleteFilesAfterImportHasBeenSet(false)
-{
-}
-
 Aws::String CreateBulkImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

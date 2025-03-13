@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-BooleanCondition::BooleanCondition() : 
-    m_equalToHasBeenSet(false),
-    m_notEqualToHasBeenSet(false)
-{
-}
-
 BooleanCondition::BooleanCondition(JsonView jsonValue)
-  : BooleanCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BooleanCondition& BooleanCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("equalTo"))
   {
     m_equalTo = jsonValue.GetObject("equalTo");
-
     m_equalToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notEqualTo"))
   {
     m_notEqualTo = jsonValue.GetObject("notEqualTo");
-
     m_notEqualToHasBeenSet = true;
   }
-
   return *this;
 }
 

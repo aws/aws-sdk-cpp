@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SpecificToolChoice::SpecificToolChoice() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 SpecificToolChoice::SpecificToolChoice(JsonView jsonValue)
-  : SpecificToolChoice()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SpecificToolChoice& SpecificToolChoice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-AudioMetadata::AudioMetadata() : 
-    m_codecHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_numberOfChannels(0),
-    m_numberOfChannelsHasBeenSet(false)
-{
-}
-
 AudioMetadata::AudioMetadata(JsonView jsonValue)
-  : AudioMetadata()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AudioMetadata& AudioMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Codec"))
   {
     m_codec = jsonValue.GetString("Codec");
-
     m_codecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMillis"))
   {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
     m_durationMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleRate"))
   {
     m_sampleRate = jsonValue.GetInt64("SampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfChannels"))
   {
     m_numberOfChannels = jsonValue.GetInt64("NumberOfChannels");
-
     m_numberOfChannelsHasBeenSet = true;
   }
-
   return *this;
 }
 

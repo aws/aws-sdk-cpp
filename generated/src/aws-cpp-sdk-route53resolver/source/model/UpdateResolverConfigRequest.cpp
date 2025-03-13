@@ -12,13 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResolverConfigRequest::UpdateResolverConfigRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_autodefinedReverseFlag(AutodefinedReverseFlag::NOT_SET),
-    m_autodefinedReverseFlagHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResolverConfigRequest::SerializePayload() const
 {
   JsonValue payload;

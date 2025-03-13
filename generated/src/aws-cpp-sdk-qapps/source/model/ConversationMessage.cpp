@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-ConversationMessage::ConversationMessage() : 
-    m_bodyHasBeenSet(false),
-    m_type(Sender::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ConversationMessage::ConversationMessage(JsonView jsonValue)
-  : ConversationMessage()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConversationMessage& ConversationMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = SenderMapper::GetSenderForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

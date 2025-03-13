@@ -17,19 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMLTransformResult::GetMLTransformResult() : 
-    m_status(TransformStatusType::NOT_SET),
-    m_labelCount(0),
-    m_maxCapacity(0.0),
-    m_workerType(WorkerType::NOT_SET),
-    m_numberOfWorkers(0),
-    m_timeout(0),
-    m_maxRetries(0)
-{
-}
-
 GetMLTransformResult::GetMLTransformResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMLTransformResult()
 {
   *this = result;
 }
@@ -40,39 +28,33 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("TransformId"))
   {
     m_transformId = jsonValue.GetString("TransformId");
-
+    m_transformIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TransformStatusTypeMapper::GetTransformStatusTypeForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedOn"))
   {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
-
+    m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
+    m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputRecordTables"))
   {
     Aws::Utils::Array<JsonView> inputRecordTablesJsonList = jsonValue.GetArray("InputRecordTables");
@@ -80,26 +62,23 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
     {
       m_inputRecordTables.push_back(inputRecordTablesJsonList[inputRecordTablesIndex].AsObject());
     }
+    m_inputRecordTablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     m_parameters = jsonValue.GetObject("Parameters");
-
+    m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMetrics"))
   {
     m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
-
+    m_evaluationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelCount"))
   {
     m_labelCount = jsonValue.GetInteger("LabelCount");
-
+    m_labelCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     Aws::Utils::Array<JsonView> schemaJsonList = jsonValue.GetArray("Schema");
@@ -107,62 +86,55 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
     {
       m_schema.push_back(schemaJsonList[schemaIndex].AsObject());
     }
+    m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
+    m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlueVersion"))
   {
     m_glueVersion = jsonValue.GetString("GlueVersion");
-
+    m_glueVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetDouble("MaxCapacity");
-
+    m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerType"))
   {
     m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
-
+    m_workerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfWorkers"))
   {
     m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
-
+    m_numberOfWorkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
+    m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxRetries"))
   {
     m_maxRetries = jsonValue.GetInteger("MaxRetries");
-
+    m_maxRetriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformEncryption"))
   {
     m_transformEncryption = jsonValue.GetObject("TransformEncryption");
-
+    m_transformEncryptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

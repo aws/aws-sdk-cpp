@@ -21,7 +21,7 @@ namespace Model
   class CancelSchemaExtensionRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API CancelSchemaExtensionRequest();
+    AWS_DIRECTORYSERVICE_API CancelSchemaExtensionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline CancelSchemaExtensionRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline CancelSchemaExtensionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline CancelSchemaExtensionRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    CancelSchemaExtensionRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>
      */
-    inline const Aws::String& GetSchemaExtensionId() const{ return m_schemaExtensionId; }
+    inline const Aws::String& GetSchemaExtensionId() const { return m_schemaExtensionId; }
     inline bool SchemaExtensionIdHasBeenSet() const { return m_schemaExtensionIdHasBeenSet; }
-    inline void SetSchemaExtensionId(const Aws::String& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = value; }
-    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = std::move(value); }
-    inline void SetSchemaExtensionId(const char* value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId.assign(value); }
-    inline CancelSchemaExtensionRequest& WithSchemaExtensionId(const Aws::String& value) { SetSchemaExtensionId(value); return *this;}
-    inline CancelSchemaExtensionRequest& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(std::move(value)); return *this;}
-    inline CancelSchemaExtensionRequest& WithSchemaExtensionId(const char* value) { SetSchemaExtensionId(value); return *this;}
+    template<typename SchemaExtensionIdT = Aws::String>
+    void SetSchemaExtensionId(SchemaExtensionIdT&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = std::forward<SchemaExtensionIdT>(value); }
+    template<typename SchemaExtensionIdT = Aws::String>
+    CancelSchemaExtensionRequest& WithSchemaExtensionId(SchemaExtensionIdT&& value) { SetSchemaExtensionId(std::forward<SchemaExtensionIdT>(value)); return *this;}
     ///@}
   private:
 

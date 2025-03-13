@@ -18,14 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_labelDelimiterHasBeenSet(false)
-{
-}
-
 DatasetDocumentClassifierInputDataConfig::DatasetDocumentClassifierInputDataConfig(JsonView jsonValue)
-  : DatasetDocumentClassifierInputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatasetDocumentClassifierInputDataConfig& DatasetDocumentClassifierInputDataConf
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelDelimiter"))
   {
     m_labelDelimiter = jsonValue.GetString("LabelDelimiter");
-
     m_labelDelimiterHasBeenSet = true;
   }
-
   return *this;
 }
 

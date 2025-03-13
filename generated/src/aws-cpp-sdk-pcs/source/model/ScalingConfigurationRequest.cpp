@@ -18,16 +18,7 @@ namespace PCS
 namespace Model
 {
 
-ScalingConfigurationRequest::ScalingConfigurationRequest() : 
-    m_minInstanceCount(0),
-    m_minInstanceCountHasBeenSet(false),
-    m_maxInstanceCount(0),
-    m_maxInstanceCountHasBeenSet(false)
-{
-}
-
 ScalingConfigurationRequest::ScalingConfigurationRequest(JsonView jsonValue)
-  : ScalingConfigurationRequest()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ScalingConfigurationRequest& ScalingConfigurationRequest::operator =(JsonView js
   if(jsonValue.ValueExists("minInstanceCount"))
   {
     m_minInstanceCount = jsonValue.GetInteger("minInstanceCount");
-
     m_minInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxInstanceCount"))
   {
     m_maxInstanceCount = jsonValue.GetInteger("maxInstanceCount");
-
     m_maxInstanceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

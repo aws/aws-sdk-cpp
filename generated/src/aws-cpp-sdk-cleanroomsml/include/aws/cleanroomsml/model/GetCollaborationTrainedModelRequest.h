@@ -21,7 +21,7 @@ namespace Model
   class GetCollaborationTrainedModelRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API GetCollaborationTrainedModelRequest();
+    AWS_CLEANROOMSML_API GetCollaborationTrainedModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the trained model that you want to return
      * information about.</p>
      */
-    inline const Aws::String& GetTrainedModelArn() const{ return m_trainedModelArn; }
+    inline const Aws::String& GetTrainedModelArn() const { return m_trainedModelArn; }
     inline bool TrainedModelArnHasBeenSet() const { return m_trainedModelArnHasBeenSet; }
-    inline void SetTrainedModelArn(const Aws::String& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = value; }
-    inline void SetTrainedModelArn(Aws::String&& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = std::move(value); }
-    inline void SetTrainedModelArn(const char* value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn.assign(value); }
-    inline GetCollaborationTrainedModelRequest& WithTrainedModelArn(const Aws::String& value) { SetTrainedModelArn(value); return *this;}
-    inline GetCollaborationTrainedModelRequest& WithTrainedModelArn(Aws::String&& value) { SetTrainedModelArn(std::move(value)); return *this;}
-    inline GetCollaborationTrainedModelRequest& WithTrainedModelArn(const char* value) { SetTrainedModelArn(value); return *this;}
+    template<typename TrainedModelArnT = Aws::String>
+    void SetTrainedModelArn(TrainedModelArnT&& value) { m_trainedModelArnHasBeenSet = true; m_trainedModelArn = std::forward<TrainedModelArnT>(value); }
+    template<typename TrainedModelArnT = Aws::String>
+    GetCollaborationTrainedModelRequest& WithTrainedModelArn(TrainedModelArnT&& value) { SetTrainedModelArn(std::forward<TrainedModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The collaboration ID that contains the trained model that you want to return
      * information about.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-    inline GetCollaborationTrainedModelRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline GetCollaborationTrainedModelRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline GetCollaborationTrainedModelRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    GetCollaborationTrainedModelRequest& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

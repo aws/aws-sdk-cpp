@@ -18,22 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-PlacementStatistics::PlacementStatistics() : 
-    m_inboxPercentage(0.0),
-    m_inboxPercentageHasBeenSet(false),
-    m_spamPercentage(0.0),
-    m_spamPercentageHasBeenSet(false),
-    m_missingPercentage(0.0),
-    m_missingPercentageHasBeenSet(false),
-    m_spfPercentage(0.0),
-    m_spfPercentageHasBeenSet(false),
-    m_dkimPercentage(0.0),
-    m_dkimPercentageHasBeenSet(false)
-{
-}
-
 PlacementStatistics::PlacementStatistics(JsonView jsonValue)
-  : PlacementStatistics()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ PlacementStatistics& PlacementStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InboxPercentage"))
   {
     m_inboxPercentage = jsonValue.GetDouble("InboxPercentage");
-
     m_inboxPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpamPercentage"))
   {
     m_spamPercentage = jsonValue.GetDouble("SpamPercentage");
-
     m_spamPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingPercentage"))
   {
     m_missingPercentage = jsonValue.GetDouble("MissingPercentage");
-
     m_missingPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpfPercentage"))
   {
     m_spfPercentage = jsonValue.GetDouble("SpfPercentage");
-
     m_spfPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DkimPercentage"))
   {
     m_dkimPercentage = jsonValue.GetDouble("DkimPercentage");
-
     m_dkimPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

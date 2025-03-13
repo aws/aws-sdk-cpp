@@ -12,15 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutInvocationStepRequest::PutInvocationStepRequest() : 
-    m_invocationIdentifierHasBeenSet(false),
-    m_invocationStepIdHasBeenSet(false),
-    m_invocationStepTimeHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_sessionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String PutInvocationStepRequest::SerializePayload() const
 {
   JsonValue payload;

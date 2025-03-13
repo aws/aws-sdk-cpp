@@ -18,26 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-CacheReportInfo::CacheReportInfo() : 
-    m_cacheReportARNHasBeenSet(false),
-    m_cacheReportStatus(CacheReportStatus::NOT_SET),
-    m_cacheReportStatusHasBeenSet(false),
-    m_reportCompletionPercent(0),
-    m_reportCompletionPercentHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_fileShareARNHasBeenSet(false),
-    m_locationARNHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_inclusionFiltersHasBeenSet(false),
-    m_exclusionFiltersHasBeenSet(false),
-    m_reportNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CacheReportInfo::CacheReportInfo(JsonView jsonValue)
-  : CacheReportInfo()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ CacheReportInfo& CacheReportInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CacheReportARN"))
   {
     m_cacheReportARN = jsonValue.GetString("CacheReportARN");
-
     m_cacheReportARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheReportStatus"))
   {
     m_cacheReportStatus = CacheReportStatusMapper::GetCacheReportStatusForName(jsonValue.GetString("CacheReportStatus"));
-
     m_cacheReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportCompletionPercent"))
   {
     m_reportCompletionPercent = jsonValue.GetInteger("ReportCompletionPercent");
-
     m_reportCompletionPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");
-
     m_fileShareARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationARN"))
   {
     m_locationARN = jsonValue.GetString("LocationARN");
-
     m_locationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionFilters"))
   {
     Aws::Utils::Array<JsonView> inclusionFiltersJsonList = jsonValue.GetArray("InclusionFilters");
@@ -109,7 +74,6 @@ CacheReportInfo& CacheReportInfo::operator =(JsonView jsonValue)
     }
     m_inclusionFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionFilters"))
   {
     Aws::Utils::Array<JsonView> exclusionFiltersJsonList = jsonValue.GetArray("ExclusionFilters");
@@ -119,14 +83,11 @@ CacheReportInfo& CacheReportInfo::operator =(JsonView jsonValue)
     }
     m_exclusionFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportName"))
   {
     m_reportName = jsonValue.GetString("ReportName");
-
     m_reportNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -136,7 +97,6 @@ CacheReportInfo& CacheReportInfo::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

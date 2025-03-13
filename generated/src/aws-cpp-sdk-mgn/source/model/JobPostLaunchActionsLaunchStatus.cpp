@@ -18,19 +18,7 @@ namespace mgn
 namespace Model
 {
 
-JobPostLaunchActionsLaunchStatus::JobPostLaunchActionsLaunchStatus() : 
-    m_executionIDHasBeenSet(false),
-    m_executionStatus(PostLaunchActionExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_ssmDocumentHasBeenSet(false),
-    m_ssmDocumentType(SsmDocumentType::NOT_SET),
-    m_ssmDocumentTypeHasBeenSet(false)
-{
-}
-
 JobPostLaunchActionsLaunchStatus::JobPostLaunchActionsLaunchStatus(JsonView jsonValue)
-  : JobPostLaunchActionsLaunchStatus()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ JobPostLaunchActionsLaunchStatus& JobPostLaunchActionsLaunchStatus::operator =(J
   if(jsonValue.ValueExists("executionID"))
   {
     m_executionID = jsonValue.GetString("executionID");
-
     m_executionIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionStatus"))
   {
     m_executionStatus = PostLaunchActionExecutionStatusMapper::GetPostLaunchActionExecutionStatusForName(jsonValue.GetString("executionStatus"));
-
     m_executionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmDocument"))
   {
     m_ssmDocument = jsonValue.GetObject("ssmDocument");
-
     m_ssmDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmDocumentType"))
   {
     m_ssmDocumentType = SsmDocumentTypeMapper::GetSsmDocumentTypeForName(jsonValue.GetString("ssmDocumentType"));
-
     m_ssmDocumentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

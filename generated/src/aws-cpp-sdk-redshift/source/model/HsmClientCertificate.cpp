@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-HsmClientCertificate::HsmClientCertificate() : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmClientCertificatePublicKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 HsmClientCertificate::HsmClientCertificate(const XmlNode& xmlNode)
-  : HsmClientCertificate()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ HsmClientCertificate& HsmClientCertificate::operator =(const XmlNode& xmlNode)
     {
       m_hsmClientCertificateIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificateIdentifierNode.GetText());
       m_hsmClientCertificateIdentifierHasBeenSet = true;
+       m_hsmClientCertificateIdentifierHasBeenSet = true;
     }
     XmlNode hsmClientCertificatePublicKeyNode = resultNode.FirstChild("HsmClientCertificatePublicKey");
     if(!hsmClientCertificatePublicKeyNode.IsNull())
     {
       m_hsmClientCertificatePublicKey = Aws::Utils::Xml::DecodeEscapedXmlText(hsmClientCertificatePublicKeyNode.GetText());
       m_hsmClientCertificatePublicKeyHasBeenSet = true;
+       m_hsmClientCertificatePublicKeyHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

@@ -12,18 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDetectorVersionRequest::CreateDetectorVersionRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_externalModelEndpointsHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_modelVersionsHasBeenSet(false),
-    m_ruleExecutionMode(RuleExecutionMode::NOT_SET),
-    m_ruleExecutionModeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDetectorVersionRequest::SerializePayload() const
 {
   JsonValue payload;

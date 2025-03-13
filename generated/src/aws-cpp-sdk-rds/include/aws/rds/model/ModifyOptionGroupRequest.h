@@ -26,7 +26,7 @@ namespace Model
   class ModifyOptionGroupRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API ModifyOptionGroupRequest();
+    AWS_RDS_API ModifyOptionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline ModifyOptionGroupRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline ModifyOptionGroupRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline ModifyOptionGroupRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    ModifyOptionGroupRequest& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,29 +61,28 @@ namespace Model
      * <p>Options in this list are added to the option group or, if already present,
      * the specified configuration is used to update the existing configuration.</p>
      */
-    inline const Aws::Vector<OptionConfiguration>& GetOptionsToInclude() const{ return m_optionsToInclude; }
+    inline const Aws::Vector<OptionConfiguration>& GetOptionsToInclude() const { return m_optionsToInclude; }
     inline bool OptionsToIncludeHasBeenSet() const { return m_optionsToIncludeHasBeenSet; }
-    inline void SetOptionsToInclude(const Aws::Vector<OptionConfiguration>& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = value; }
-    inline void SetOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = std::move(value); }
-    inline ModifyOptionGroupRequest& WithOptionsToInclude(const Aws::Vector<OptionConfiguration>& value) { SetOptionsToInclude(value); return *this;}
-    inline ModifyOptionGroupRequest& WithOptionsToInclude(Aws::Vector<OptionConfiguration>&& value) { SetOptionsToInclude(std::move(value)); return *this;}
-    inline ModifyOptionGroupRequest& AddOptionsToInclude(const OptionConfiguration& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(value); return *this; }
-    inline ModifyOptionGroupRequest& AddOptionsToInclude(OptionConfiguration&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.push_back(std::move(value)); return *this; }
+    template<typename OptionsToIncludeT = Aws::Vector<OptionConfiguration>>
+    void SetOptionsToInclude(OptionsToIncludeT&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = std::forward<OptionsToIncludeT>(value); }
+    template<typename OptionsToIncludeT = Aws::Vector<OptionConfiguration>>
+    ModifyOptionGroupRequest& WithOptionsToInclude(OptionsToIncludeT&& value) { SetOptionsToInclude(std::forward<OptionsToIncludeT>(value)); return *this;}
+    template<typename OptionsToIncludeT = OptionConfiguration>
+    ModifyOptionGroupRequest& AddOptionsToInclude(OptionsToIncludeT&& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude.emplace_back(std::forward<OptionsToIncludeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Options in this list are removed from the option group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOptionsToRemove() const{ return m_optionsToRemove; }
+    inline const Aws::Vector<Aws::String>& GetOptionsToRemove() const { return m_optionsToRemove; }
     inline bool OptionsToRemoveHasBeenSet() const { return m_optionsToRemoveHasBeenSet; }
-    inline void SetOptionsToRemove(const Aws::Vector<Aws::String>& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
-    inline void SetOptionsToRemove(Aws::Vector<Aws::String>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::move(value); }
-    inline ModifyOptionGroupRequest& WithOptionsToRemove(const Aws::Vector<Aws::String>& value) { SetOptionsToRemove(value); return *this;}
-    inline ModifyOptionGroupRequest& WithOptionsToRemove(Aws::Vector<Aws::String>&& value) { SetOptionsToRemove(std::move(value)); return *this;}
-    inline ModifyOptionGroupRequest& AddOptionsToRemove(const Aws::String& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
-    inline ModifyOptionGroupRequest& AddOptionsToRemove(Aws::String&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
-    inline ModifyOptionGroupRequest& AddOptionsToRemove(const char* value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
+    template<typename OptionsToRemoveT = Aws::Vector<Aws::String>>
+    void SetOptionsToRemove(OptionsToRemoveT&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::forward<OptionsToRemoveT>(value); }
+    template<typename OptionsToRemoveT = Aws::Vector<Aws::String>>
+    ModifyOptionGroupRequest& WithOptionsToRemove(OptionsToRemoveT&& value) { SetOptionsToRemove(std::forward<OptionsToRemoveT>(value)); return *this;}
+    template<typename OptionsToRemoveT = Aws::String>
+    ModifyOptionGroupRequest& AddOptionsToRemove(OptionsToRemoveT&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.emplace_back(std::forward<OptionsToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,7 +90,7 @@ namespace Model
      * <p>Specifies whether to apply the change immediately or during the next
      * maintenance window for each instance associated with the option group.</p>
      */
-    inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+    inline bool GetApplyImmediately() const { return m_applyImmediately; }
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
     inline ModifyOptionGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
@@ -109,7 +106,7 @@ namespace Model
     Aws::Vector<Aws::String> m_optionsToRemove;
     bool m_optionsToRemoveHasBeenSet = false;
 
-    bool m_applyImmediately;
+    bool m_applyImmediately{false};
     bool m_applyImmediatelyHasBeenSet = false;
   };
 

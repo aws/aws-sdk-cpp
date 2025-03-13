@@ -12,11 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMountTargetSecurityGroupsRequest::DescribeMountTargetSecurityGroupsRequest() : 
-    m_mountTargetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMountTargetSecurityGroupsRequest::SerializePayload() const
 {
   return {};

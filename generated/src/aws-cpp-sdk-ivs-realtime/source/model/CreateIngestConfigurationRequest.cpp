@@ -12,19 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIngestConfigurationRequest::CreateIngestConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_stageArnHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_ingestProtocol(IngestProtocol::NOT_SET),
-    m_ingestProtocolHasBeenSet(false),
-    m_insecureIngest(false),
-    m_insecureIngestHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIngestConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -42,7 +42,7 @@ namespace Model
   class Validity
   {
   public:
-    AWS_ACMPCA_API Validity();
+    AWS_ACMPCA_API Validity() = default;
     AWS_ACMPCA_API Validity(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Validity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * <p>A long integer interpreted according to the value of <code>Type</code>,
      * below.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline Validity& WithValue(long long value) { SetValue(value); return *this;}
@@ -84,19 +84,17 @@ namespace Model
      * validity for a certificate using absolute time (<code>ABSOLUTE</code> or
      * <code>END_DATE</code>) is one second.</p>
      */
-    inline const ValidityPeriodType& GetType() const{ return m_type; }
+    inline ValidityPeriodType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ValidityPeriodType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ValidityPeriodType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Validity& WithType(const ValidityPeriodType& value) { SetType(value); return *this;}
-    inline Validity& WithType(ValidityPeriodType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ValidityPeriodType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Validity& WithType(ValidityPeriodType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
 
-    ValidityPeriodType m_type;
+    ValidityPeriodType m_type{ValidityPeriodType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

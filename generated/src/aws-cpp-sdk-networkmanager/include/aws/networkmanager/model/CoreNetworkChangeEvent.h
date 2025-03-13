@@ -37,7 +37,7 @@ namespace Model
   class CoreNetworkChangeEvent
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkChangeEvent();
+    AWS_NETWORKMANAGER_API CoreNetworkChangeEvent() = default;
     AWS_NETWORKMANAGER_API CoreNetworkChangeEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkChangeEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,20 @@ namespace Model
     /**
      * <p>Describes the type of change event. </p>
      */
-    inline const ChangeType& GetType() const{ return m_type; }
+    inline ChangeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChangeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChangeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CoreNetworkChangeEvent& WithType(const ChangeType& value) { SetType(value); return *this;}
-    inline CoreNetworkChangeEvent& WithType(ChangeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChangeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CoreNetworkChangeEvent& WithType(ChangeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action taken for the change event.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline CoreNetworkChangeEvent& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline CoreNetworkChangeEvent& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline CoreNetworkChangeEvent& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -73,66 +69,62 @@ namespace Model
      * the <code>IdentifierPath</code> for a core network segment change might be
      * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
      */
-    inline const Aws::String& GetIdentifierPath() const{ return m_identifierPath; }
+    inline const Aws::String& GetIdentifierPath() const { return m_identifierPath; }
     inline bool IdentifierPathHasBeenSet() const { return m_identifierPathHasBeenSet; }
-    inline void SetIdentifierPath(const Aws::String& value) { m_identifierPathHasBeenSet = true; m_identifierPath = value; }
-    inline void SetIdentifierPath(Aws::String&& value) { m_identifierPathHasBeenSet = true; m_identifierPath = std::move(value); }
-    inline void SetIdentifierPath(const char* value) { m_identifierPathHasBeenSet = true; m_identifierPath.assign(value); }
-    inline CoreNetworkChangeEvent& WithIdentifierPath(const Aws::String& value) { SetIdentifierPath(value); return *this;}
-    inline CoreNetworkChangeEvent& WithIdentifierPath(Aws::String&& value) { SetIdentifierPath(std::move(value)); return *this;}
-    inline CoreNetworkChangeEvent& WithIdentifierPath(const char* value) { SetIdentifierPath(value); return *this;}
+    template<typename IdentifierPathT = Aws::String>
+    void SetIdentifierPath(IdentifierPathT&& value) { m_identifierPathHasBeenSet = true; m_identifierPath = std::forward<IdentifierPathT>(value); }
+    template<typename IdentifierPathT = Aws::String>
+    CoreNetworkChangeEvent& WithIdentifierPath(IdentifierPathT&& value) { SetIdentifierPath(std::forward<IdentifierPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for an event change in status.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline CoreNetworkChangeEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline CoreNetworkChangeEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    CoreNetworkChangeEvent& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the core network change event.</p>
      */
-    inline const ChangeStatus& GetStatus() const{ return m_status; }
+    inline ChangeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ChangeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ChangeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CoreNetworkChangeEvent& WithStatus(const ChangeStatus& value) { SetStatus(value); return *this;}
-    inline CoreNetworkChangeEvent& WithStatus(ChangeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ChangeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CoreNetworkChangeEvent& WithStatus(ChangeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of the change event.</p>
      */
-    inline const CoreNetworkChangeEventValues& GetValues() const{ return m_values; }
+    inline const CoreNetworkChangeEventValues& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const CoreNetworkChangeEventValues& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(CoreNetworkChangeEventValues&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline CoreNetworkChangeEvent& WithValues(const CoreNetworkChangeEventValues& value) { SetValues(value); return *this;}
-    inline CoreNetworkChangeEvent& WithValues(CoreNetworkChangeEventValues&& value) { SetValues(std::move(value)); return *this;}
+    template<typename ValuesT = CoreNetworkChangeEventValues>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = CoreNetworkChangeEventValues>
+    CoreNetworkChangeEvent& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeType m_type;
+    ChangeType m_type{ChangeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_identifierPath;
     bool m_identifierPathHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
     bool m_eventTimeHasBeenSet = false;
 
-    ChangeStatus m_status;
+    ChangeStatus m_status{ChangeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     CoreNetworkChangeEventValues m_values;

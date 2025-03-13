@@ -21,7 +21,7 @@ namespace Model
   class DeauthorizeDataShareRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DeauthorizeDataShareRequest();
+    AWS_REDSHIFT_API DeauthorizeDataShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
      * authorization from.</p>
      */
-    inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
+    inline const Aws::String& GetDataShareArn() const { return m_dataShareArn; }
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-    inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-    inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-    inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-    inline DeauthorizeDataShareRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-    inline DeauthorizeDataShareRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-    inline DeauthorizeDataShareRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    template<typename DataShareArnT = Aws::String>
+    void SetDataShareArn(DataShareArnT&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::forward<DataShareArnT>(value); }
+    template<typename DataShareArnT = Aws::String>
+    DeauthorizeDataShareRequest& WithDataShareArn(DataShareArnT&& value) { SetDataShareArn(std::forward<DataShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * from the datashare. This identifier is an Amazon Web Services account ID or a
      * keyword, such as ADX.</p>
      */
-    inline const Aws::String& GetConsumerIdentifier() const{ return m_consumerIdentifier; }
+    inline const Aws::String& GetConsumerIdentifier() const { return m_consumerIdentifier; }
     inline bool ConsumerIdentifierHasBeenSet() const { return m_consumerIdentifierHasBeenSet; }
-    inline void SetConsumerIdentifier(const Aws::String& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = value; }
-    inline void SetConsumerIdentifier(Aws::String&& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = std::move(value); }
-    inline void SetConsumerIdentifier(const char* value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier.assign(value); }
-    inline DeauthorizeDataShareRequest& WithConsumerIdentifier(const Aws::String& value) { SetConsumerIdentifier(value); return *this;}
-    inline DeauthorizeDataShareRequest& WithConsumerIdentifier(Aws::String&& value) { SetConsumerIdentifier(std::move(value)); return *this;}
-    inline DeauthorizeDataShareRequest& WithConsumerIdentifier(const char* value) { SetConsumerIdentifier(value); return *this;}
+    template<typename ConsumerIdentifierT = Aws::String>
+    void SetConsumerIdentifier(ConsumerIdentifierT&& value) { m_consumerIdentifierHasBeenSet = true; m_consumerIdentifier = std::forward<ConsumerIdentifierT>(value); }
+    template<typename ConsumerIdentifierT = Aws::String>
+    DeauthorizeDataShareRequest& WithConsumerIdentifier(ConsumerIdentifierT&& value) { SetConsumerIdentifier(std::forward<ConsumerIdentifierT>(value)); return *this;}
     ///@}
   private:
 

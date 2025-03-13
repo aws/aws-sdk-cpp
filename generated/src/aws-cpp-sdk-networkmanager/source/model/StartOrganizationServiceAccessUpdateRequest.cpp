@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartOrganizationServiceAccessUpdateRequest::StartOrganizationServiceAccessUpdateRequest() : 
-    m_actionHasBeenSet(false)
-{
-}
-
 Aws::String StartOrganizationServiceAccessUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,27 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-ScalableTarget::ScalableTarget() : 
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_predictedCapacity(0),
-    m_predictedCapacityHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_suspendedStateHasBeenSet(false),
-    m_scalableTargetARNHasBeenSet(false)
-{
-}
-
 ScalableTarget::ScalableTarget(JsonView jsonValue)
-  : ScalableTarget()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ ScalableTarget& ScalableTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
     m_serviceNamespace = ServiceNamespaceMapper::GetServiceNamespaceForName(jsonValue.GetString("ServiceNamespace"));
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableDimension"))
   {
     m_scalableDimension = ScalableDimensionMapper::GetScalableDimensionForName(jsonValue.GetString("ScalableDimension"));
-
     m_scalableDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinCapacity"))
   {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
-
     m_minCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictedCapacity"))
   {
     m_predictedCapacity = jsonValue.GetInteger("PredictedCapacity");
-
     m_predictedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuspendedState"))
   {
     m_suspendedState = jsonValue.GetObject("SuspendedState");
-
     m_suspendedStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableTargetARN"))
   {
     m_scalableTargetARN = jsonValue.GetString("ScalableTargetARN");
-
     m_scalableTargetARNHasBeenSet = true;
   }
-
   return *this;
 }
 

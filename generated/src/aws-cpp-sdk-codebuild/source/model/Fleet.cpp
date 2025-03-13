@@ -18,33 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-Fleet::Fleet() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_environmentType(EnvironmentType::NOT_SET),
-    m_environmentTypeHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_computeConfigurationHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
-    m_overflowBehaviorHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_fleetServiceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Fleet::Fleet(JsonView jsonValue)
-  : Fleet()
 {
   *this = jsonValue;
 }
@@ -54,115 +28,83 @@ Fleet& Fleet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetDouble("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseCapacity"))
   {
     m_baseCapacity = jsonValue.GetInteger("baseCapacity");
-
     m_baseCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentType"))
   {
     m_environmentType = EnvironmentTypeMapper::GetEnvironmentTypeForName(jsonValue.GetString("environmentType"));
-
     m_environmentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeType"))
   {
     m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
-
     m_computeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeConfiguration"))
   {
     m_computeConfiguration = jsonValue.GetObject("computeConfiguration");
-
     m_computeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingConfiguration"))
   {
     m_scalingConfiguration = jsonValue.GetObject("scalingConfiguration");
-
     m_scalingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overflowBehavior"))
   {
     m_overflowBehavior = FleetOverflowBehaviorMapper::GetFleetOverflowBehaviorForName(jsonValue.GetString("overflowBehavior"));
-
     m_overflowBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proxyConfiguration"))
   {
     m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
-
     m_proxyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetString("imageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetServiceRole"))
   {
     m_fleetServiceRole = jsonValue.GetString("fleetServiceRole");
-
     m_fleetServiceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -172,7 +114,6 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

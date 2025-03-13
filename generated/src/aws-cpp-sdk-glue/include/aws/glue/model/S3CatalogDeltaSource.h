@@ -36,7 +36,7 @@ namespace Model
   class S3CatalogDeltaSource
   {
   public:
-    AWS_GLUE_API S3CatalogDeltaSource();
+    AWS_GLUE_API S3CatalogDeltaSource() = default;
     AWS_GLUE_API S3CatalogDeltaSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API S3CatalogDeltaSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,75 +46,66 @@ namespace Model
     /**
      * <p>The name of the Delta Lake data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3CatalogDeltaSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3CatalogDeltaSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3CatalogDeltaSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3CatalogDeltaSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database to read from.</p>
      */
-    inline const Aws::String& GetDatabase() const{ return m_database; }
+    inline const Aws::String& GetDatabase() const { return m_database; }
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-    inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
-    inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-    inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
-    inline S3CatalogDeltaSource& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
-    inline S3CatalogDeltaSource& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
-    inline S3CatalogDeltaSource& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+    template<typename DatabaseT = Aws::String>
+    void SetDatabase(DatabaseT&& value) { m_databaseHasBeenSet = true; m_database = std::forward<DatabaseT>(value); }
+    template<typename DatabaseT = Aws::String>
+    S3CatalogDeltaSource& WithDatabase(DatabaseT&& value) { SetDatabase(std::forward<DatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table in the database to read from.</p>
      */
-    inline const Aws::String& GetTable() const{ return m_table; }
+    inline const Aws::String& GetTable() const { return m_table; }
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-    inline void SetTable(const Aws::String& value) { m_tableHasBeenSet = true; m_table = value; }
-    inline void SetTable(Aws::String&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-    inline void SetTable(const char* value) { m_tableHasBeenSet = true; m_table.assign(value); }
-    inline S3CatalogDeltaSource& WithTable(const Aws::String& value) { SetTable(value); return *this;}
-    inline S3CatalogDeltaSource& WithTable(Aws::String&& value) { SetTable(std::move(value)); return *this;}
-    inline S3CatalogDeltaSource& WithTable(const char* value) { SetTable(value); return *this;}
+    template<typename TableT = Aws::String>
+    void SetTable(TableT&& value) { m_tableHasBeenSet = true; m_table = std::forward<TableT>(value); }
+    template<typename TableT = Aws::String>
+    S3CatalogDeltaSource& WithTable(TableT&& value) { SetTable(std::forward<TableT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies additional connection options.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalDeltaOptions() const{ return m_additionalDeltaOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalDeltaOptions() const { return m_additionalDeltaOptions; }
     inline bool AdditionalDeltaOptionsHasBeenSet() const { return m_additionalDeltaOptionsHasBeenSet; }
-    inline void SetAdditionalDeltaOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions = value; }
-    inline void SetAdditionalDeltaOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions = std::move(value); }
-    inline S3CatalogDeltaSource& WithAdditionalDeltaOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalDeltaOptions(value); return *this;}
-    inline S3CatalogDeltaSource& WithAdditionalDeltaOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalDeltaOptions(std::move(value)); return *this;}
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(const Aws::String& key, const Aws::String& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(key, value); return *this; }
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(Aws::String&& key, const Aws::String& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(std::move(key), value); return *this; }
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(const Aws::String& key, Aws::String&& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(key, std::move(value)); return *this; }
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(Aws::String&& key, Aws::String&& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(const char* key, Aws::String&& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(key, std::move(value)); return *this; }
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(Aws::String&& key, const char* value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(std::move(key), value); return *this; }
-    inline S3CatalogDeltaSource& AddAdditionalDeltaOptions(const char* key, const char* value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(key, value); return *this; }
+    template<typename AdditionalDeltaOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalDeltaOptions(AdditionalDeltaOptionsT&& value) { m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions = std::forward<AdditionalDeltaOptionsT>(value); }
+    template<typename AdditionalDeltaOptionsT = Aws::Map<Aws::String, Aws::String>>
+    S3CatalogDeltaSource& WithAdditionalDeltaOptions(AdditionalDeltaOptionsT&& value) { SetAdditionalDeltaOptions(std::forward<AdditionalDeltaOptionsT>(value)); return *this;}
+    template<typename AdditionalDeltaOptionsKeyT = Aws::String, typename AdditionalDeltaOptionsValueT = Aws::String>
+    S3CatalogDeltaSource& AddAdditionalDeltaOptions(AdditionalDeltaOptionsKeyT&& key, AdditionalDeltaOptionsValueT&& value) {
+      m_additionalDeltaOptionsHasBeenSet = true; m_additionalDeltaOptions.emplace(std::forward<AdditionalDeltaOptionsKeyT>(key), std::forward<AdditionalDeltaOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data schema for the Delta Lake source.</p>
      */
-    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const{ return m_outputSchemas; }
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
     inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
-    inline void SetOutputSchemas(const Aws::Vector<GlueSchema>& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = value; }
-    inline void SetOutputSchemas(Aws::Vector<GlueSchema>&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::move(value); }
-    inline S3CatalogDeltaSource& WithOutputSchemas(const Aws::Vector<GlueSchema>& value) { SetOutputSchemas(value); return *this;}
-    inline S3CatalogDeltaSource& WithOutputSchemas(Aws::Vector<GlueSchema>&& value) { SetOutputSchemas(std::move(value)); return *this;}
-    inline S3CatalogDeltaSource& AddOutputSchemas(const GlueSchema& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(value); return *this; }
-    inline S3CatalogDeltaSource& AddOutputSchemas(GlueSchema&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(std::move(value)); return *this; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    S3CatalogDeltaSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    S3CatalogDeltaSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
     ///@}
   private:
 

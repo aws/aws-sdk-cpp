@@ -18,17 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-AgentListEntry::AgentListEntry() : 
-    m_agentArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(AgentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_platformHasBeenSet(false)
-{
-}
-
 AgentListEntry::AgentListEntry(JsonView jsonValue)
-  : AgentListEntry()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AgentListEntry& AgentListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AgentArn"))
   {
     m_agentArn = jsonValue.GetString("AgentArn");
-
     m_agentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetObject("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   return *this;
 }
 

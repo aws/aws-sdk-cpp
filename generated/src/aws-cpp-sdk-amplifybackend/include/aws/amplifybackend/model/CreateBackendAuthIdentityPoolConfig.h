@@ -32,7 +32,7 @@ namespace Model
   class CreateBackendAuthIdentityPoolConfig
   {
   public:
-    AWS_AMPLIFYBACKEND_API CreateBackendAuthIdentityPoolConfig();
+    AWS_AMPLIFYBACKEND_API CreateBackendAuthIdentityPoolConfig() = default;
     AWS_AMPLIFYBACKEND_API CreateBackendAuthIdentityPoolConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API CreateBackendAuthIdentityPoolConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Name of the Amazon Cognito identity pool used for authorization.</p>
      */
-    inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
+    inline const Aws::String& GetIdentityPoolName() const { return m_identityPoolName; }
     inline bool IdentityPoolNameHasBeenSet() const { return m_identityPoolNameHasBeenSet; }
-    inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
-    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::move(value); }
-    inline void SetIdentityPoolName(const char* value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName.assign(value); }
-    inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
-    inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(std::move(value)); return *this;}
-    inline CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
+    template<typename IdentityPoolNameT = Aws::String>
+    void SetIdentityPoolName(IdentityPoolNameT&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::forward<IdentityPoolNameT>(value); }
+    template<typename IdentityPoolNameT = Aws::String>
+    CreateBackendAuthIdentityPoolConfig& WithIdentityPoolName(IdentityPoolNameT&& value) { SetIdentityPoolName(std::forward<IdentityPoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Set to true or false based on whether you want to enable guest authorization
      * to your Amplify app.</p>
      */
-    inline bool GetUnauthenticatedLogin() const{ return m_unauthenticatedLogin; }
+    inline bool GetUnauthenticatedLogin() const { return m_unauthenticatedLogin; }
     inline bool UnauthenticatedLoginHasBeenSet() const { return m_unauthenticatedLoginHasBeenSet; }
     inline void SetUnauthenticatedLogin(bool value) { m_unauthenticatedLoginHasBeenSet = true; m_unauthenticatedLogin = value; }
     inline CreateBackendAuthIdentityPoolConfig& WithUnauthenticatedLogin(bool value) { SetUnauthenticatedLogin(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_identityPoolName;
     bool m_identityPoolNameHasBeenSet = false;
 
-    bool m_unauthenticatedLogin;
+    bool m_unauthenticatedLogin{false};
     bool m_unauthenticatedLoginHasBeenSet = false;
   };
 

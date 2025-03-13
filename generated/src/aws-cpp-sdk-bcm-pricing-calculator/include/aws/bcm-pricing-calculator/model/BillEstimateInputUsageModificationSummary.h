@@ -35,7 +35,7 @@ namespace Model
   class BillEstimateInputUsageModificationSummary
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BillEstimateInputUsageModificationSummary();
+    AWS_BCMPRICINGCALCULATOR_API BillEstimateInputUsageModificationSummary() = default;
     AWS_BCMPRICINGCALCULATOR_API BillEstimateInputUsageModificationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BillEstimateInputUsageModificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,48 @@ namespace Model
     /**
      * <p> The Amazon Web Services service code for this usage modification. </p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of usage being modified. </p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The specific operation associated with this usage modification. </p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The location associated with this usage modification. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,42 +94,36 @@ namespace Model
      * <p> The availability zone associated with this usage modification, if
      * applicable. </p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique identifier of the usage modification. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The group identifier for the usage modification. </p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,40 +131,38 @@ namespace Model
      * <p> The Amazon Web Services account ID associated with this usage modification.
      * </p>
      */
-    inline const Aws::String& GetUsageAccountId() const{ return m_usageAccountId; }
+    inline const Aws::String& GetUsageAccountId() const { return m_usageAccountId; }
     inline bool UsageAccountIdHasBeenSet() const { return m_usageAccountIdHasBeenSet; }
-    inline void SetUsageAccountId(const Aws::String& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = value; }
-    inline void SetUsageAccountId(Aws::String&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::move(value); }
-    inline void SetUsageAccountId(const char* value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId.assign(value); }
-    inline BillEstimateInputUsageModificationSummary& WithUsageAccountId(const Aws::String& value) { SetUsageAccountId(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithUsageAccountId(Aws::String&& value) { SetUsageAccountId(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithUsageAccountId(const char* value) { SetUsageAccountId(value); return *this;}
+    template<typename UsageAccountIdT = Aws::String>
+    void SetUsageAccountId(UsageAccountIdT&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::forward<UsageAccountIdT>(value); }
+    template<typename UsageAccountIdT = Aws::String>
+    BillEstimateInputUsageModificationSummary& WithUsageAccountId(UsageAccountIdT&& value) { SetUsageAccountId(std::forward<UsageAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The modified usage quantities. </p>
      */
-    inline const Aws::Vector<UsageQuantity>& GetQuantities() const{ return m_quantities; }
+    inline const Aws::Vector<UsageQuantity>& GetQuantities() const { return m_quantities; }
     inline bool QuantitiesHasBeenSet() const { return m_quantitiesHasBeenSet; }
-    inline void SetQuantities(const Aws::Vector<UsageQuantity>& value) { m_quantitiesHasBeenSet = true; m_quantities = value; }
-    inline void SetQuantities(Aws::Vector<UsageQuantity>&& value) { m_quantitiesHasBeenSet = true; m_quantities = std::move(value); }
-    inline BillEstimateInputUsageModificationSummary& WithQuantities(const Aws::Vector<UsageQuantity>& value) { SetQuantities(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithQuantities(Aws::Vector<UsageQuantity>&& value) { SetQuantities(std::move(value)); return *this;}
-    inline BillEstimateInputUsageModificationSummary& AddQuantities(const UsageQuantity& value) { m_quantitiesHasBeenSet = true; m_quantities.push_back(value); return *this; }
-    inline BillEstimateInputUsageModificationSummary& AddQuantities(UsageQuantity&& value) { m_quantitiesHasBeenSet = true; m_quantities.push_back(std::move(value)); return *this; }
+    template<typename QuantitiesT = Aws::Vector<UsageQuantity>>
+    void SetQuantities(QuantitiesT&& value) { m_quantitiesHasBeenSet = true; m_quantities = std::forward<QuantitiesT>(value); }
+    template<typename QuantitiesT = Aws::Vector<UsageQuantity>>
+    BillEstimateInputUsageModificationSummary& WithQuantities(QuantitiesT&& value) { SetQuantities(std::forward<QuantitiesT>(value)); return *this;}
+    template<typename QuantitiesT = UsageQuantity>
+    BillEstimateInputUsageModificationSummary& AddQuantities(QuantitiesT&& value) { m_quantitiesHasBeenSet = true; m_quantities.emplace_back(std::forward<QuantitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Historical usage data associated with this modification, if available. </p>
      */
-    inline const HistoricalUsageEntity& GetHistoricalUsage() const{ return m_historicalUsage; }
+    inline const HistoricalUsageEntity& GetHistoricalUsage() const { return m_historicalUsage; }
     inline bool HistoricalUsageHasBeenSet() const { return m_historicalUsageHasBeenSet; }
-    inline void SetHistoricalUsage(const HistoricalUsageEntity& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = value; }
-    inline void SetHistoricalUsage(HistoricalUsageEntity&& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = std::move(value); }
-    inline BillEstimateInputUsageModificationSummary& WithHistoricalUsage(const HistoricalUsageEntity& value) { SetHistoricalUsage(value); return *this;}
-    inline BillEstimateInputUsageModificationSummary& WithHistoricalUsage(HistoricalUsageEntity&& value) { SetHistoricalUsage(std::move(value)); return *this;}
+    template<typename HistoricalUsageT = HistoricalUsageEntity>
+    void SetHistoricalUsage(HistoricalUsageT&& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = std::forward<HistoricalUsageT>(value); }
+    template<typename HistoricalUsageT = HistoricalUsageEntity>
+    BillEstimateInputUsageModificationSummary& WithHistoricalUsage(HistoricalUsageT&& value) { SetHistoricalUsage(std::forward<HistoricalUsageT>(value)); return *this;}
     ///@}
   private:
 

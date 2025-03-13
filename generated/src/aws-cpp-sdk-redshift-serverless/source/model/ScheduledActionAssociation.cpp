@@ -18,14 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-ScheduledActionAssociation::ScheduledActionAssociation() : 
-    m_namespaceNameHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false)
-{
-}
-
 ScheduledActionAssociation::ScheduledActionAssociation(JsonView jsonValue)
-  : ScheduledActionAssociation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ScheduledActionAssociation& ScheduledActionAssociation::operator =(JsonView json
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledActionName"))
   {
     m_scheduledActionName = jsonValue.GetString("scheduledActionName");
-
     m_scheduledActionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

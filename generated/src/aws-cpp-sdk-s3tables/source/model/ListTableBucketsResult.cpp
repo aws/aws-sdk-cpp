@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTableBucketsResult::ListTableBucketsResult()
-{
-}
-
 ListTableBucketsResult::ListTableBucketsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListTableBucketsResult& ListTableBucketsResult::operator =(const Aws::AmazonWebS
     {
       m_tableBuckets.push_back(tableBucketsJsonList[tableBucketsIndex].AsObject());
     }
+    m_tableBucketsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("continuationToken"))
   {
     m_continuationToken = jsonValue.GetString("continuationToken");
-
+    m_continuationTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

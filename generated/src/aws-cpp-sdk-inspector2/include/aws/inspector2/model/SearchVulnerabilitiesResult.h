@@ -29,7 +29,7 @@ namespace Model
   class SearchVulnerabilitiesResult
   {
   public:
-    AWS_INSPECTOR2_API SearchVulnerabilitiesResult();
+    AWS_INSPECTOR2_API SearchVulnerabilitiesResult() = default;
     AWS_INSPECTOR2_API SearchVulnerabilitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API SearchVulnerabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The pagination parameter to be used on the next list operation to retrieve
      * more items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchVulnerabilitiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchVulnerabilitiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchVulnerabilitiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchVulnerabilitiesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the listed vulnerability.</p>
      */
-    inline const Aws::Vector<Vulnerability>& GetVulnerabilities() const{ return m_vulnerabilities; }
-    inline void SetVulnerabilities(const Aws::Vector<Vulnerability>& value) { m_vulnerabilities = value; }
-    inline void SetVulnerabilities(Aws::Vector<Vulnerability>&& value) { m_vulnerabilities = std::move(value); }
-    inline SearchVulnerabilitiesResult& WithVulnerabilities(const Aws::Vector<Vulnerability>& value) { SetVulnerabilities(value); return *this;}
-    inline SearchVulnerabilitiesResult& WithVulnerabilities(Aws::Vector<Vulnerability>&& value) { SetVulnerabilities(std::move(value)); return *this;}
-    inline SearchVulnerabilitiesResult& AddVulnerabilities(const Vulnerability& value) { m_vulnerabilities.push_back(value); return *this; }
-    inline SearchVulnerabilitiesResult& AddVulnerabilities(Vulnerability&& value) { m_vulnerabilities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Vulnerability>& GetVulnerabilities() const { return m_vulnerabilities; }
+    template<typename VulnerabilitiesT = Aws::Vector<Vulnerability>>
+    void SetVulnerabilities(VulnerabilitiesT&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities = std::forward<VulnerabilitiesT>(value); }
+    template<typename VulnerabilitiesT = Aws::Vector<Vulnerability>>
+    SearchVulnerabilitiesResult& WithVulnerabilities(VulnerabilitiesT&& value) { SetVulnerabilities(std::forward<VulnerabilitiesT>(value)); return *this;}
+    template<typename VulnerabilitiesT = Vulnerability>
+    SearchVulnerabilitiesResult& AddVulnerabilities(VulnerabilitiesT&& value) { m_vulnerabilitiesHasBeenSet = true; m_vulnerabilities.emplace_back(std::forward<VulnerabilitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchVulnerabilitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchVulnerabilitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchVulnerabilitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchVulnerabilitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Vulnerability> m_vulnerabilities;
+    bool m_vulnerabilitiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

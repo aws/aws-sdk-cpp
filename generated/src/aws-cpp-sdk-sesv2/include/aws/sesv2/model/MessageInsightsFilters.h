@@ -43,7 +43,7 @@ namespace Model
   class MessageInsightsFilters
   {
   public:
-    AWS_SESV2_API MessageInsightsFilters();
+    AWS_SESV2_API MessageInsightsFilters() = default;
     AWS_SESV2_API MessageInsightsFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API MessageInsightsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,60 +53,56 @@ namespace Model
     /**
      * <p>The from address used to send the message.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFromEmailAddress() const{ return m_fromEmailAddress; }
+    inline const Aws::Vector<Aws::String>& GetFromEmailAddress() const { return m_fromEmailAddress; }
     inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
-    inline void SetFromEmailAddress(const Aws::Vector<Aws::String>& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
-    inline void SetFromEmailAddress(Aws::Vector<Aws::String>&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::move(value); }
-    inline MessageInsightsFilters& WithFromEmailAddress(const Aws::Vector<Aws::String>& value) { SetFromEmailAddress(value); return *this;}
-    inline MessageInsightsFilters& WithFromEmailAddress(Aws::Vector<Aws::String>&& value) { SetFromEmailAddress(std::move(value)); return *this;}
-    inline MessageInsightsFilters& AddFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.push_back(value); return *this; }
-    inline MessageInsightsFilters& AddFromEmailAddress(Aws::String&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.push_back(std::move(value)); return *this; }
-    inline MessageInsightsFilters& AddFromEmailAddress(const char* value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.push_back(value); return *this; }
+    template<typename FromEmailAddressT = Aws::Vector<Aws::String>>
+    void SetFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = std::forward<FromEmailAddressT>(value); }
+    template<typename FromEmailAddressT = Aws::Vector<Aws::String>>
+    MessageInsightsFilters& WithFromEmailAddress(FromEmailAddressT&& value) { SetFromEmailAddress(std::forward<FromEmailAddressT>(value)); return *this;}
+    template<typename FromEmailAddressT = Aws::String>
+    MessageInsightsFilters& AddFromEmailAddress(FromEmailAddressT&& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress.emplace_back(std::forward<FromEmailAddressT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The recipient's email address.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestination() const{ return m_destination; }
+    inline const Aws::Vector<Aws::String>& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::Vector<Aws::String>& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::Vector<Aws::String>&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline MessageInsightsFilters& WithDestination(const Aws::Vector<Aws::String>& value) { SetDestination(value); return *this;}
-    inline MessageInsightsFilters& WithDestination(Aws::Vector<Aws::String>&& value) { SetDestination(std::move(value)); return *this;}
-    inline MessageInsightsFilters& AddDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination.push_back(value); return *this; }
-    inline MessageInsightsFilters& AddDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination.push_back(std::move(value)); return *this; }
-    inline MessageInsightsFilters& AddDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.push_back(value); return *this; }
+    template<typename DestinationT = Aws::Vector<Aws::String>>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::Vector<Aws::String>>
+    MessageInsightsFilters& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
+    template<typename DestinationT = Aws::String>
+    MessageInsightsFilters& AddDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination.emplace_back(std::forward<DestinationT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subject line of the message.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubject() const{ return m_subject; }
+    inline const Aws::Vector<Aws::String>& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::Vector<Aws::String>& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::Vector<Aws::String>&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline MessageInsightsFilters& WithSubject(const Aws::Vector<Aws::String>& value) { SetSubject(value); return *this;}
-    inline MessageInsightsFilters& WithSubject(Aws::Vector<Aws::String>&& value) { SetSubject(std::move(value)); return *this;}
-    inline MessageInsightsFilters& AddSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject.push_back(value); return *this; }
-    inline MessageInsightsFilters& AddSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject.push_back(std::move(value)); return *this; }
-    inline MessageInsightsFilters& AddSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.push_back(value); return *this; }
+    template<typename SubjectT = Aws::Vector<Aws::String>>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::Vector<Aws::String>>
+    MessageInsightsFilters& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
+    template<typename SubjectT = Aws::String>
+    MessageInsightsFilters& AddSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject.emplace_back(std::forward<SubjectT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIsp() const{ return m_isp; }
+    inline const Aws::Vector<Aws::String>& GetIsp() const { return m_isp; }
     inline bool IspHasBeenSet() const { return m_ispHasBeenSet; }
-    inline void SetIsp(const Aws::Vector<Aws::String>& value) { m_ispHasBeenSet = true; m_isp = value; }
-    inline void SetIsp(Aws::Vector<Aws::String>&& value) { m_ispHasBeenSet = true; m_isp = std::move(value); }
-    inline MessageInsightsFilters& WithIsp(const Aws::Vector<Aws::String>& value) { SetIsp(value); return *this;}
-    inline MessageInsightsFilters& WithIsp(Aws::Vector<Aws::String>&& value) { SetIsp(std::move(value)); return *this;}
-    inline MessageInsightsFilters& AddIsp(const Aws::String& value) { m_ispHasBeenSet = true; m_isp.push_back(value); return *this; }
-    inline MessageInsightsFilters& AddIsp(Aws::String&& value) { m_ispHasBeenSet = true; m_isp.push_back(std::move(value)); return *this; }
-    inline MessageInsightsFilters& AddIsp(const char* value) { m_ispHasBeenSet = true; m_isp.push_back(value); return *this; }
+    template<typename IspT = Aws::Vector<Aws::String>>
+    void SetIsp(IspT&& value) { m_ispHasBeenSet = true; m_isp = std::forward<IspT>(value); }
+    template<typename IspT = Aws::Vector<Aws::String>>
+    MessageInsightsFilters& WithIsp(IspT&& value) { SetIsp(std::forward<IspT>(value)); return *this;}
+    template<typename IspT = Aws::String>
+    MessageInsightsFilters& AddIsp(IspT&& value) { m_ispHasBeenSet = true; m_isp.emplace_back(std::forward<IspT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,14 +111,13 @@ namespace Model
      * follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code>
      * &lt; <code>COMPLAINT</code>. </p>
      */
-    inline const Aws::Vector<DeliveryEventType>& GetLastDeliveryEvent() const{ return m_lastDeliveryEvent; }
+    inline const Aws::Vector<DeliveryEventType>& GetLastDeliveryEvent() const { return m_lastDeliveryEvent; }
     inline bool LastDeliveryEventHasBeenSet() const { return m_lastDeliveryEventHasBeenSet; }
-    inline void SetLastDeliveryEvent(const Aws::Vector<DeliveryEventType>& value) { m_lastDeliveryEventHasBeenSet = true; m_lastDeliveryEvent = value; }
-    inline void SetLastDeliveryEvent(Aws::Vector<DeliveryEventType>&& value) { m_lastDeliveryEventHasBeenSet = true; m_lastDeliveryEvent = std::move(value); }
-    inline MessageInsightsFilters& WithLastDeliveryEvent(const Aws::Vector<DeliveryEventType>& value) { SetLastDeliveryEvent(value); return *this;}
-    inline MessageInsightsFilters& WithLastDeliveryEvent(Aws::Vector<DeliveryEventType>&& value) { SetLastDeliveryEvent(std::move(value)); return *this;}
-    inline MessageInsightsFilters& AddLastDeliveryEvent(const DeliveryEventType& value) { m_lastDeliveryEventHasBeenSet = true; m_lastDeliveryEvent.push_back(value); return *this; }
-    inline MessageInsightsFilters& AddLastDeliveryEvent(DeliveryEventType&& value) { m_lastDeliveryEventHasBeenSet = true; m_lastDeliveryEvent.push_back(std::move(value)); return *this; }
+    template<typename LastDeliveryEventT = Aws::Vector<DeliveryEventType>>
+    void SetLastDeliveryEvent(LastDeliveryEventT&& value) { m_lastDeliveryEventHasBeenSet = true; m_lastDeliveryEvent = std::forward<LastDeliveryEventT>(value); }
+    template<typename LastDeliveryEventT = Aws::Vector<DeliveryEventType>>
+    MessageInsightsFilters& WithLastDeliveryEvent(LastDeliveryEventT&& value) { SetLastDeliveryEvent(std::forward<LastDeliveryEventT>(value)); return *this;}
+    inline MessageInsightsFilters& AddLastDeliveryEvent(DeliveryEventType value) { m_lastDeliveryEventHasBeenSet = true; m_lastDeliveryEvent.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -133,14 +128,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/vdm-settings.html">Engagement
      * tracking</a> is enabled. </p>
      */
-    inline const Aws::Vector<EngagementEventType>& GetLastEngagementEvent() const{ return m_lastEngagementEvent; }
+    inline const Aws::Vector<EngagementEventType>& GetLastEngagementEvent() const { return m_lastEngagementEvent; }
     inline bool LastEngagementEventHasBeenSet() const { return m_lastEngagementEventHasBeenSet; }
-    inline void SetLastEngagementEvent(const Aws::Vector<EngagementEventType>& value) { m_lastEngagementEventHasBeenSet = true; m_lastEngagementEvent = value; }
-    inline void SetLastEngagementEvent(Aws::Vector<EngagementEventType>&& value) { m_lastEngagementEventHasBeenSet = true; m_lastEngagementEvent = std::move(value); }
-    inline MessageInsightsFilters& WithLastEngagementEvent(const Aws::Vector<EngagementEventType>& value) { SetLastEngagementEvent(value); return *this;}
-    inline MessageInsightsFilters& WithLastEngagementEvent(Aws::Vector<EngagementEventType>&& value) { SetLastEngagementEvent(std::move(value)); return *this;}
-    inline MessageInsightsFilters& AddLastEngagementEvent(const EngagementEventType& value) { m_lastEngagementEventHasBeenSet = true; m_lastEngagementEvent.push_back(value); return *this; }
-    inline MessageInsightsFilters& AddLastEngagementEvent(EngagementEventType&& value) { m_lastEngagementEventHasBeenSet = true; m_lastEngagementEvent.push_back(std::move(value)); return *this; }
+    template<typename LastEngagementEventT = Aws::Vector<EngagementEventType>>
+    void SetLastEngagementEvent(LastEngagementEventT&& value) { m_lastEngagementEventHasBeenSet = true; m_lastEngagementEvent = std::forward<LastEngagementEventT>(value); }
+    template<typename LastEngagementEventT = Aws::Vector<EngagementEventType>>
+    MessageInsightsFilters& WithLastEngagementEvent(LastEngagementEventT&& value) { SetLastEngagementEvent(std::forward<LastEngagementEventT>(value)); return *this;}
+    inline MessageInsightsFilters& AddLastEngagementEvent(EngagementEventType value) { m_lastEngagementEventHasBeenSet = true; m_lastEngagementEvent.push_back(value); return *this; }
     ///@}
   private:
 

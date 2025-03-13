@@ -24,7 +24,7 @@ namespace Model
   class UpdateCisScanConfigurationRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API UpdateCisScanConfigurationRequest();
+    AWS_INSPECTOR2_API UpdateCisScanConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,40 +39,36 @@ namespace Model
     /**
      * <p>The CIS scan configuration ARN.</p>
      */
-    inline const Aws::String& GetScanConfigurationArn() const{ return m_scanConfigurationArn; }
+    inline const Aws::String& GetScanConfigurationArn() const { return m_scanConfigurationArn; }
     inline bool ScanConfigurationArnHasBeenSet() const { return m_scanConfigurationArnHasBeenSet; }
-    inline void SetScanConfigurationArn(const Aws::String& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = value; }
-    inline void SetScanConfigurationArn(Aws::String&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::move(value); }
-    inline void SetScanConfigurationArn(const char* value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn.assign(value); }
-    inline UpdateCisScanConfigurationRequest& WithScanConfigurationArn(const Aws::String& value) { SetScanConfigurationArn(value); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithScanConfigurationArn(Aws::String&& value) { SetScanConfigurationArn(std::move(value)); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithScanConfigurationArn(const char* value) { SetScanConfigurationArn(value); return *this;}
+    template<typename ScanConfigurationArnT = Aws::String>
+    void SetScanConfigurationArn(ScanConfigurationArnT&& value) { m_scanConfigurationArnHasBeenSet = true; m_scanConfigurationArn = std::forward<ScanConfigurationArnT>(value); }
+    template<typename ScanConfigurationArnT = Aws::String>
+    UpdateCisScanConfigurationRequest& WithScanConfigurationArn(ScanConfigurationArnT&& value) { SetScanConfigurationArn(std::forward<ScanConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scan name for the CIS scan configuration.</p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
+    inline const Aws::String& GetScanName() const { return m_scanName; }
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-    inline UpdateCisScanConfigurationRequest& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithScanName(const char* value) { SetScanName(value); return *this;}
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    UpdateCisScanConfigurationRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schedule for the CIS scan configuration.</p>
      */
-    inline const Schedule& GetSchedule() const{ return m_schedule; }
+    inline const Schedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline UpdateCisScanConfigurationRequest& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = Schedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Schedule>
+    UpdateCisScanConfigurationRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,24 +76,22 @@ namespace Model
      * <p> The security level for the CIS scan configuration. Security level refers to
      * the Benchmark levels that CIS assigns to a profile. </p>
      */
-    inline const CisSecurityLevel& GetSecurityLevel() const{ return m_securityLevel; }
+    inline CisSecurityLevel GetSecurityLevel() const { return m_securityLevel; }
     inline bool SecurityLevelHasBeenSet() const { return m_securityLevelHasBeenSet; }
-    inline void SetSecurityLevel(const CisSecurityLevel& value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
-    inline void SetSecurityLevel(CisSecurityLevel&& value) { m_securityLevelHasBeenSet = true; m_securityLevel = std::move(value); }
-    inline UpdateCisScanConfigurationRequest& WithSecurityLevel(const CisSecurityLevel& value) { SetSecurityLevel(value); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithSecurityLevel(CisSecurityLevel&& value) { SetSecurityLevel(std::move(value)); return *this;}
+    inline void SetSecurityLevel(CisSecurityLevel value) { m_securityLevelHasBeenSet = true; m_securityLevel = value; }
+    inline UpdateCisScanConfigurationRequest& WithSecurityLevel(CisSecurityLevel value) { SetSecurityLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The targets for the CIS scan configuration.</p>
      */
-    inline const UpdateCisTargets& GetTargets() const{ return m_targets; }
+    inline const UpdateCisTargets& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const UpdateCisTargets& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(UpdateCisTargets&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline UpdateCisScanConfigurationRequest& WithTargets(const UpdateCisTargets& value) { SetTargets(value); return *this;}
-    inline UpdateCisScanConfigurationRequest& WithTargets(UpdateCisTargets&& value) { SetTargets(std::move(value)); return *this;}
+    template<typename TargetsT = UpdateCisTargets>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = UpdateCisTargets>
+    UpdateCisScanConfigurationRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
     ///@}
   private:
 
@@ -110,7 +104,7 @@ namespace Model
     Schedule m_schedule;
     bool m_scheduleHasBeenSet = false;
 
-    CisSecurityLevel m_securityLevel;
+    CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
     bool m_securityLevelHasBeenSet = false;
 
     UpdateCisTargets m_targets;

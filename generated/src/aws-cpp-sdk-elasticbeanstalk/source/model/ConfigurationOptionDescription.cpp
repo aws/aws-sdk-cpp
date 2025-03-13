@@ -20,28 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ConfigurationOptionDescription::ConfigurationOptionDescription() : 
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_changeSeverityHasBeenSet(false),
-    m_userDefined(false),
-    m_userDefinedHasBeenSet(false),
-    m_valueType(ConfigurationOptionValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false),
-    m_valueOptionsHasBeenSet(false),
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_maxLength(0),
-    m_maxLengthHasBeenSet(false),
-    m_regexHasBeenSet(false)
-{
-}
-
 ConfigurationOptionDescription::ConfigurationOptionDescription(const XmlNode& xmlNode)
-  : ConfigurationOptionDescription()
 {
   *this = xmlNode;
 }
@@ -57,72 +36,83 @@ ConfigurationOptionDescription& ConfigurationOptionDescription::operator =(const
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode changeSeverityNode = resultNode.FirstChild("ChangeSeverity");
     if(!changeSeverityNode.IsNull())
     {
       m_changeSeverity = Aws::Utils::Xml::DecodeEscapedXmlText(changeSeverityNode.GetText());
       m_changeSeverityHasBeenSet = true;
+       m_changeSeverityHasBeenSet = true;
     }
     XmlNode userDefinedNode = resultNode.FirstChild("UserDefined");
     if(!userDefinedNode.IsNull())
     {
       m_userDefined = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(userDefinedNode.GetText()).c_str()).c_str());
       m_userDefinedHasBeenSet = true;
+       m_userDefinedHasBeenSet = true;
     }
     XmlNode valueTypeNode = resultNode.FirstChild("ValueType");
     if(!valueTypeNode.IsNull())
     {
-      m_valueType = ConfigurationOptionValueTypeMapper::GetConfigurationOptionValueTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueTypeNode.GetText()).c_str()).c_str());
+      m_valueType = ConfigurationOptionValueTypeMapper::GetConfigurationOptionValueTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueTypeNode.GetText()).c_str()));
       m_valueTypeHasBeenSet = true;
+       m_valueTypeHasBeenSet = true;
     }
     XmlNode valueOptionsNode = resultNode.FirstChild("ValueOptions");
     if(!valueOptionsNode.IsNull())
     {
       XmlNode valueOptionsMember = valueOptionsNode.FirstChild("member");
+      m_valueOptionsHasBeenSet = !valueOptionsMember.IsNull();
       while(!valueOptionsMember.IsNull())
       {
         m_valueOptions.push_back(valueOptionsMember.GetText());
         valueOptionsMember = valueOptionsMember.NextNode("member");
       }
 
-      m_valueOptionsHasBeenSet = true;
+       m_valueOptionsHasBeenSet = true;
     }
     XmlNode minValueNode = resultNode.FirstChild("MinValue");
     if(!minValueNode.IsNull())
     {
       m_minValue = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minValueNode.GetText()).c_str()).c_str());
       m_minValueHasBeenSet = true;
+       m_minValueHasBeenSet = true;
     }
     XmlNode maxValueNode = resultNode.FirstChild("MaxValue");
     if(!maxValueNode.IsNull())
     {
       m_maxValue = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxValueNode.GetText()).c_str()).c_str());
       m_maxValueHasBeenSet = true;
+       m_maxValueHasBeenSet = true;
     }
     XmlNode maxLengthNode = resultNode.FirstChild("MaxLength");
     if(!maxLengthNode.IsNull())
     {
       m_maxLength = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxLengthNode.GetText()).c_str()).c_str());
       m_maxLengthHasBeenSet = true;
+       m_maxLengthHasBeenSet = true;
     }
     XmlNode regexNode = resultNode.FirstChild("Regex");
     if(!regexNode.IsNull())
     {
       m_regex = regexNode;
       m_regexHasBeenSet = true;
+       m_regexHasBeenSet = true;
     }
   }
 

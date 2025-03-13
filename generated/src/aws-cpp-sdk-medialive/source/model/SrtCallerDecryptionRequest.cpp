@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-SrtCallerDecryptionRequest::SrtCallerDecryptionRequest() : 
-    m_algorithm(Algorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_passphraseSecretArnHasBeenSet(false)
-{
-}
-
 SrtCallerDecryptionRequest::SrtCallerDecryptionRequest(JsonView jsonValue)
-  : SrtCallerDecryptionRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SrtCallerDecryptionRequest& SrtCallerDecryptionRequest::operator =(JsonView json
   if(jsonValue.ValueExists("algorithm"))
   {
     m_algorithm = AlgorithmMapper::GetAlgorithmForName(jsonValue.GetString("algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passphraseSecretArn"))
   {
     m_passphraseSecretArn = jsonValue.GetString("passphraseSecretArn");
-
     m_passphraseSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

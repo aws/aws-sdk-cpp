@@ -31,7 +31,7 @@ namespace Model
   class GetServiceResult
   {
   public:
-    AWS_APPLICATIONSIGNALS_API GetServiceResult();
+    AWS_APPLICATIONSIGNALS_API GetServiceResult() = default;
     AWS_APPLICATIONSIGNALS_API GetServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONSIGNALS_API GetServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,11 @@ namespace Model
     /**
      * <p>A structure containing information about the service.</p>
      */
-    inline const Service& GetService() const{ return m_service; }
-    inline void SetService(const Service& value) { m_service = value; }
-    inline void SetService(Service&& value) { m_service = std::move(value); }
-    inline GetServiceResult& WithService(const Service& value) { SetService(value); return *this;}
-    inline GetServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    inline const Service& GetService() const { return m_service; }
+    template<typename ServiceT = Service>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Service>
+    GetServiceResult& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,11 +55,11 @@ namespace Model
      * used for the request. It might not match your request exactly, because it was
      * rounded to the nearest hour.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetServiceResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetServiceResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetServiceResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,11 +70,11 @@ namespace Model
      * used for the request. It might not match your request exactly, because it was
      * rounded to the nearest hour.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetServiceResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetServiceResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetServiceResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,36 +85,39 @@ namespace Model
      * </li> <li> <p> <code>"ResourceType": "AWS::Logs::LogGroup"</code> </p> </li>
      * <li> <p> <code>"Identifier": "<i>name-of-log-group</i>"</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetLogGroupReferences() const{ return m_logGroupReferences; }
-    inline void SetLogGroupReferences(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_logGroupReferences = value; }
-    inline void SetLogGroupReferences(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_logGroupReferences = std::move(value); }
-    inline GetServiceResult& WithLogGroupReferences(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetLogGroupReferences(value); return *this;}
-    inline GetServiceResult& WithLogGroupReferences(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetLogGroupReferences(std::move(value)); return *this;}
-    inline GetServiceResult& AddLogGroupReferences(const Aws::Map<Aws::String, Aws::String>& value) { m_logGroupReferences.push_back(value); return *this; }
-    inline GetServiceResult& AddLogGroupReferences(Aws::Map<Aws::String, Aws::String>&& value) { m_logGroupReferences.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetLogGroupReferences() const { return m_logGroupReferences; }
+    template<typename LogGroupReferencesT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    void SetLogGroupReferences(LogGroupReferencesT&& value) { m_logGroupReferencesHasBeenSet = true; m_logGroupReferences = std::forward<LogGroupReferencesT>(value); }
+    template<typename LogGroupReferencesT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    GetServiceResult& WithLogGroupReferences(LogGroupReferencesT&& value) { SetLogGroupReferences(std::forward<LogGroupReferencesT>(value)); return *this;}
+    template<typename LogGroupReferencesT = Aws::Map<Aws::String, Aws::String>>
+    GetServiceResult& AddLogGroupReferences(LogGroupReferencesT&& value) { m_logGroupReferencesHasBeenSet = true; m_logGroupReferences.emplace_back(std::forward<LogGroupReferencesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Service m_service;
+    bool m_serviceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_logGroupReferences;
+    bool m_logGroupReferencesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace ImportExport
 namespace Model
 {
 
-Artifact::Artifact() : 
-    m_descriptionHasBeenSet(false),
-    m_uRLHasBeenSet(false)
-{
-}
-
 Artifact::Artifact(const XmlNode& xmlNode)
-  : Artifact()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Artifact& Artifact::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode uRLNode = resultNode.FirstChild("URL");
     if(!uRLNode.IsNull())
     {
       m_uRL = Aws::Utils::Xml::DecodeEscapedXmlText(uRLNode.GetText());
       m_uRLHasBeenSet = true;
+       m_uRLHasBeenSet = true;
     }
   }
 

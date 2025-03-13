@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-VariableValue::VariableValue() : 
-    m_propertyIdHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_propertyPathHasBeenSet(false)
-{
-}
-
 VariableValue::VariableValue(JsonView jsonValue)
-  : VariableValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VariableValue& VariableValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("propertyId"))
   {
     m_propertyId = jsonValue.GetString("propertyId");
-
     m_propertyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hierarchyId"))
   {
     m_hierarchyId = jsonValue.GetString("hierarchyId");
-
     m_hierarchyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyPath"))
   {
     Aws::Utils::Array<JsonView> propertyPathJsonList = jsonValue.GetArray("propertyPath");
@@ -56,7 +44,6 @@ VariableValue& VariableValue::operator =(JsonView jsonValue)
     }
     m_propertyPathHasBeenSet = true;
   }
-
   return *this;
 }
 

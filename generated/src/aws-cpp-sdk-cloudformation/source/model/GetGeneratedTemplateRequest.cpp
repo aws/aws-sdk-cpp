@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-GetGeneratedTemplateRequest::GetGeneratedTemplateRequest() : 
-    m_format(TemplateFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_generatedTemplateNameHasBeenSet(false)
-{
-}
-
 Aws::String GetGeneratedTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

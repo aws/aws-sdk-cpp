@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStatusDetails::InstanceStatusDetails() : 
-    m_impairedSinceHasBeenSet(false),
-    m_name(StatusName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 InstanceStatusDetails::InstanceStatusDetails(const XmlNode& xmlNode)
-  : InstanceStatusDetails()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ InstanceStatusDetails& InstanceStatusDetails::operator =(const XmlNode& xmlNode)
     {
       m_impairedSince = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(impairedSinceNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_impairedSinceHasBeenSet = true;
+       m_impairedSinceHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = StatusNameMapper::GetStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = StatusNameMapper::GetStatusNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusTypeMapper::GetStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

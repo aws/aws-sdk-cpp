@@ -41,7 +41,7 @@ namespace Model
   class RouteLeg
   {
   public:
-    AWS_GEOROUTES_API RouteLeg();
+    AWS_GEOROUTES_API RouteLeg() = default;
     AWS_GEOROUTES_API RouteLeg(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteLeg& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,50 +52,48 @@ namespace Model
      * <p>FerryLegDetails is populated when the Leg type is Ferry, and provides
      * additional information that is specific</p>
      */
-    inline const RouteFerryLegDetails& GetFerryLegDetails() const{ return m_ferryLegDetails; }
+    inline const RouteFerryLegDetails& GetFerryLegDetails() const { return m_ferryLegDetails; }
     inline bool FerryLegDetailsHasBeenSet() const { return m_ferryLegDetailsHasBeenSet; }
-    inline void SetFerryLegDetails(const RouteFerryLegDetails& value) { m_ferryLegDetailsHasBeenSet = true; m_ferryLegDetails = value; }
-    inline void SetFerryLegDetails(RouteFerryLegDetails&& value) { m_ferryLegDetailsHasBeenSet = true; m_ferryLegDetails = std::move(value); }
-    inline RouteLeg& WithFerryLegDetails(const RouteFerryLegDetails& value) { SetFerryLegDetails(value); return *this;}
-    inline RouteLeg& WithFerryLegDetails(RouteFerryLegDetails&& value) { SetFerryLegDetails(std::move(value)); return *this;}
+    template<typename FerryLegDetailsT = RouteFerryLegDetails>
+    void SetFerryLegDetails(FerryLegDetailsT&& value) { m_ferryLegDetailsHasBeenSet = true; m_ferryLegDetails = std::forward<FerryLegDetailsT>(value); }
+    template<typename FerryLegDetailsT = RouteFerryLegDetails>
+    RouteLeg& WithFerryLegDetails(FerryLegDetailsT&& value) { SetFerryLegDetails(std::forward<FerryLegDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Geometry of the area to be avoided.</p>
      */
-    inline const RouteLegGeometry& GetGeometry() const{ return m_geometry; }
+    inline const RouteLegGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const RouteLegGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(RouteLegGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline RouteLeg& WithGeometry(const RouteLegGeometry& value) { SetGeometry(value); return *this;}
-    inline RouteLeg& WithGeometry(RouteLegGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = RouteLegGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = RouteLegGeometry>
+    RouteLeg& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of languages for instructions within steps in the response.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline RouteLeg& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline RouteLeg& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline RouteLeg& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    RouteLeg& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details related to the pedestrian leg.</p>
      */
-    inline const RoutePedestrianLegDetails& GetPedestrianLegDetails() const{ return m_pedestrianLegDetails; }
+    inline const RoutePedestrianLegDetails& GetPedestrianLegDetails() const { return m_pedestrianLegDetails; }
     inline bool PedestrianLegDetailsHasBeenSet() const { return m_pedestrianLegDetailsHasBeenSet; }
-    inline void SetPedestrianLegDetails(const RoutePedestrianLegDetails& value) { m_pedestrianLegDetailsHasBeenSet = true; m_pedestrianLegDetails = value; }
-    inline void SetPedestrianLegDetails(RoutePedestrianLegDetails&& value) { m_pedestrianLegDetailsHasBeenSet = true; m_pedestrianLegDetails = std::move(value); }
-    inline RouteLeg& WithPedestrianLegDetails(const RoutePedestrianLegDetails& value) { SetPedestrianLegDetails(value); return *this;}
-    inline RouteLeg& WithPedestrianLegDetails(RoutePedestrianLegDetails&& value) { SetPedestrianLegDetails(std::move(value)); return *this;}
+    template<typename PedestrianLegDetailsT = RoutePedestrianLegDetails>
+    void SetPedestrianLegDetails(PedestrianLegDetailsT&& value) { m_pedestrianLegDetailsHasBeenSet = true; m_pedestrianLegDetails = std::forward<PedestrianLegDetailsT>(value); }
+    template<typename PedestrianLegDetailsT = RoutePedestrianLegDetails>
+    RouteLeg& WithPedestrianLegDetails(PedestrianLegDetailsT&& value) { SetPedestrianLegDetails(std::forward<PedestrianLegDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,36 +102,32 @@ namespace Model
      * the speed of travel and road compatibility.</p> <p>Default Value:
      * <code>Car</code> </p>
      */
-    inline const RouteLegTravelMode& GetTravelMode() const{ return m_travelMode; }
+    inline RouteLegTravelMode GetTravelMode() const { return m_travelMode; }
     inline bool TravelModeHasBeenSet() const { return m_travelModeHasBeenSet; }
-    inline void SetTravelMode(const RouteLegTravelMode& value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
-    inline void SetTravelMode(RouteLegTravelMode&& value) { m_travelModeHasBeenSet = true; m_travelMode = std::move(value); }
-    inline RouteLeg& WithTravelMode(const RouteLegTravelMode& value) { SetTravelMode(value); return *this;}
-    inline RouteLeg& WithTravelMode(RouteLegTravelMode&& value) { SetTravelMode(std::move(value)); return *this;}
+    inline void SetTravelMode(RouteLegTravelMode value) { m_travelModeHasBeenSet = true; m_travelMode = value; }
+    inline RouteLeg& WithTravelMode(RouteLegTravelMode value) { SetTravelMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the leg.</p>
      */
-    inline const RouteLegType& GetType() const{ return m_type; }
+    inline RouteLegType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RouteLegType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RouteLegType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RouteLeg& WithType(const RouteLegType& value) { SetType(value); return *this;}
-    inline RouteLeg& WithType(RouteLegType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RouteLegType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RouteLeg& WithType(RouteLegType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details related to the vehicle leg.</p>
      */
-    inline const RouteVehicleLegDetails& GetVehicleLegDetails() const{ return m_vehicleLegDetails; }
+    inline const RouteVehicleLegDetails& GetVehicleLegDetails() const { return m_vehicleLegDetails; }
     inline bool VehicleLegDetailsHasBeenSet() const { return m_vehicleLegDetailsHasBeenSet; }
-    inline void SetVehicleLegDetails(const RouteVehicleLegDetails& value) { m_vehicleLegDetailsHasBeenSet = true; m_vehicleLegDetails = value; }
-    inline void SetVehicleLegDetails(RouteVehicleLegDetails&& value) { m_vehicleLegDetailsHasBeenSet = true; m_vehicleLegDetails = std::move(value); }
-    inline RouteLeg& WithVehicleLegDetails(const RouteVehicleLegDetails& value) { SetVehicleLegDetails(value); return *this;}
-    inline RouteLeg& WithVehicleLegDetails(RouteVehicleLegDetails&& value) { SetVehicleLegDetails(std::move(value)); return *this;}
+    template<typename VehicleLegDetailsT = RouteVehicleLegDetails>
+    void SetVehicleLegDetails(VehicleLegDetailsT&& value) { m_vehicleLegDetailsHasBeenSet = true; m_vehicleLegDetails = std::forward<VehicleLegDetailsT>(value); }
+    template<typename VehicleLegDetailsT = RouteVehicleLegDetails>
+    RouteLeg& WithVehicleLegDetails(VehicleLegDetailsT&& value) { SetVehicleLegDetails(std::forward<VehicleLegDetailsT>(value)); return *this;}
     ///@}
   private:
 
@@ -149,10 +143,10 @@ namespace Model
     RoutePedestrianLegDetails m_pedestrianLegDetails;
     bool m_pedestrianLegDetailsHasBeenSet = false;
 
-    RouteLegTravelMode m_travelMode;
+    RouteLegTravelMode m_travelMode{RouteLegTravelMode::NOT_SET};
     bool m_travelModeHasBeenSet = false;
 
-    RouteLegType m_type;
+    RouteLegType m_type{RouteLegType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     RouteVehicleLegDetails m_vehicleLegDetails;

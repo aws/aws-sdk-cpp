@@ -29,7 +29,7 @@ namespace Model
   class PutDefaultEncryptionConfigurationResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API PutDefaultEncryptionConfigurationResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API PutDefaultEncryptionConfigurationResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API PutDefaultEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API PutDefaultEncryptionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,22 +39,20 @@ namespace Model
      * <p>Provides the status of the default encryption configuration for an Amazon Web
      * Services account.</p>
      */
-    inline const ConfigurationStatus& GetConfigurationStatus() const{ return m_configurationStatus; }
-    inline void SetConfigurationStatus(const ConfigurationStatus& value) { m_configurationStatus = value; }
-    inline void SetConfigurationStatus(ConfigurationStatus&& value) { m_configurationStatus = std::move(value); }
-    inline PutDefaultEncryptionConfigurationResult& WithConfigurationStatus(const ConfigurationStatus& value) { SetConfigurationStatus(value); return *this;}
-    inline PutDefaultEncryptionConfigurationResult& WithConfigurationStatus(ConfigurationStatus&& value) { SetConfigurationStatus(std::move(value)); return *this;}
+    inline const ConfigurationStatus& GetConfigurationStatus() const { return m_configurationStatus; }
+    template<typename ConfigurationStatusT = ConfigurationStatus>
+    void SetConfigurationStatus(ConfigurationStatusT&& value) { m_configurationStatusHasBeenSet = true; m_configurationStatus = std::forward<ConfigurationStatusT>(value); }
+    template<typename ConfigurationStatusT = ConfigurationStatus>
+    PutDefaultEncryptionConfigurationResult& WithConfigurationStatus(ConfigurationStatusT&& value) { SetConfigurationStatus(std::forward<ConfigurationStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of encryption used for the encryption configuration.</p>
      */
-    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
-    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
-    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
-    inline PutDefaultEncryptionConfigurationResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline PutDefaultEncryptionConfigurationResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
+    inline void SetEncryptionType(EncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline PutDefaultEncryptionConfigurationResult& WithEncryptionType(EncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,34 @@ namespace Model
      * <p>The Key Amazon Resource Name (ARN) of the AWS KMS key used for KMS encryption
      * if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-    inline PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutDefaultEncryptionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutDefaultEncryptionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutDefaultEncryptionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutDefaultEncryptionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConfigurationStatus m_configurationStatus;
+    bool m_configurationStatusHasBeenSet = false;
 
-    EncryptionType m_encryptionType;
+    EncryptionType m_encryptionType{EncryptionType::NOT_SET};
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
+    bool m_kmsKeyArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

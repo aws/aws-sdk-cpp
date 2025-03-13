@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GatewayRouteSpec::GatewayRouteSpec() : 
-    m_grpcRouteHasBeenSet(false),
-    m_http2RouteHasBeenSet(false),
-    m_httpRouteHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 GatewayRouteSpec::GatewayRouteSpec(JsonView jsonValue)
-  : GatewayRouteSpec()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ GatewayRouteSpec& GatewayRouteSpec::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("grpcRoute"))
   {
     m_grpcRoute = jsonValue.GetObject("grpcRoute");
-
     m_grpcRouteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("http2Route"))
   {
     m_http2Route = jsonValue.GetObject("http2Route");
-
     m_http2RouteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpRoute"))
   {
     m_httpRoute = jsonValue.GetObject("httpRoute");
-
     m_httpRouteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

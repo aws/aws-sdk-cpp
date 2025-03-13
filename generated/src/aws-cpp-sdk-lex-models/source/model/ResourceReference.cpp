@@ -18,14 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-ResourceReference::ResourceReference() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ResourceReference::ResourceReference(JsonView jsonValue)
-  : ResourceReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceReference& ResourceReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

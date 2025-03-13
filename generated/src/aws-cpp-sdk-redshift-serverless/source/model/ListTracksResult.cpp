@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTracksResult::ListTracksResult()
-{
-}
-
 ListTracksResult::ListTracksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTracksResult& ListTracksResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tracks"))
   {
     Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
@@ -42,14 +37,15 @@ ListTracksResult& ListTracksResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_tracks.push_back(tracksJsonList[tracksIndex].AsObject());
     }
+    m_tracksHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

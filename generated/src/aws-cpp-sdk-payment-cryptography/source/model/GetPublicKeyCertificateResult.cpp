@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPublicKeyCertificateResult::GetPublicKeyCertificateResult()
-{
-}
-
 GetPublicKeyCertificateResult::GetPublicKeyCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetPublicKeyCertificateResult& GetPublicKeyCertificateResult::operator =(const A
   if(jsonValue.ValueExists("KeyCertificate"))
   {
     m_keyCertificate = jsonValue.GetString("KeyCertificate");
-
+    m_keyCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCertificateChain"))
   {
     m_keyCertificateChain = jsonValue.GetString("KeyCertificateChain");
-
+    m_keyCertificateChainHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

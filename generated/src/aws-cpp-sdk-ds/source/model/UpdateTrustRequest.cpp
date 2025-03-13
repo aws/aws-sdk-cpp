@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrustRequest::UpdateTrustRequest() : 
-    m_trustIdHasBeenSet(false),
-    m_selectiveAuth(SelectiveAuth::NOT_SET),
-    m_selectiveAuthHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrustRequest::SerializePayload() const
 {
   JsonValue payload;

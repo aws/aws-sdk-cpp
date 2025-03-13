@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-CostAmount::CostAmount() : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_currency(CurrencyCode::NOT_SET),
-    m_currencyHasBeenSet(false)
-{
-}
-
 CostAmount::CostAmount(JsonView jsonValue)
-  : CostAmount()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CostAmount& CostAmount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetDouble("amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   return *this;
 }
 

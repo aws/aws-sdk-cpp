@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PostCommentReplyResult::PostCommentReplyResult()
-{
-}
-
 PostCommentReplyResult::PostCommentReplyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PostCommentReplyResult& PostCommentReplyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetObject("comment");
-
+    m_commentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,28 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepSearchSummary::StepSearchSummary() : 
-    m_stepIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lifecycleStatus(StepLifecycleStatus::NOT_SET),
-    m_lifecycleStatusHasBeenSet(false),
-    m_lifecycleStatusMessageHasBeenSet(false),
-    m_taskRunStatus(TaskRunStatus::NOT_SET),
-    m_taskRunStatusHasBeenSet(false),
-    m_targetTaskRunStatus(StepTargetTaskRunStatus::NOT_SET),
-    m_targetTaskRunStatusHasBeenSet(false),
-    m_taskRunStatusCountsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_parameterSpaceHasBeenSet(false)
-{
-}
-
 StepSearchSummary::StepSearchSummary(JsonView jsonValue)
-  : StepSearchSummary()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ StepSearchSummary& StepSearchSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStatus"))
   {
     m_lifecycleStatus = StepLifecycleStatusMapper::GetStepLifecycleStatusForName(jsonValue.GetString("lifecycleStatus"));
-
     m_lifecycleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleStatusMessage"))
   {
     m_lifecycleStatusMessage = jsonValue.GetString("lifecycleStatusMessage");
-
     m_lifecycleStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRunStatus"))
   {
     m_taskRunStatus = TaskRunStatusMapper::GetTaskRunStatusForName(jsonValue.GetString("taskRunStatus"));
-
     m_taskRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetTaskRunStatus"))
   {
     m_targetTaskRunStatus = StepTargetTaskRunStatusMapper::GetStepTargetTaskRunStatusForName(jsonValue.GetString("targetTaskRunStatus"));
-
     m_targetTaskRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRunStatusCounts"))
   {
     Aws::Map<Aws::String, JsonView> taskRunStatusCountsJsonMap = jsonValue.GetObject("taskRunStatusCounts").GetAllObjects();
@@ -111,35 +74,26 @@ StepSearchSummary& StepSearchSummary::operator =(JsonView jsonValue)
     }
     m_taskRunStatusCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterSpace"))
   {
     m_parameterSpace = jsonValue.GetObject("parameterSpace");
-
     m_parameterSpaceHasBeenSet = true;
   }
-
   return *this;
 }
 

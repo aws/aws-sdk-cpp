@@ -21,17 +21,7 @@ namespace EC2
 namespace Model
 {
 
-S3Storage::S3Storage() : 
-    m_aWSAccessKeyIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_uploadPolicyHasBeenSet(false),
-    m_uploadPolicySignatureHasBeenSet(false)
-{
-}
-
 S3Storage::S3Storage(const XmlNode& xmlNode)
-  : S3Storage()
 {
   *this = xmlNode;
 }
@@ -47,30 +37,35 @@ S3Storage& S3Storage::operator =(const XmlNode& xmlNode)
     {
       m_aWSAccessKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(aWSAccessKeyIdNode.GetText());
       m_aWSAccessKeyIdHasBeenSet = true;
+       m_aWSAccessKeyIdHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode prefixNode = resultNode.FirstChild("prefix");
     if(!prefixNode.IsNull())
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode uploadPolicyNode = resultNode.FirstChild("uploadPolicy");
     if(!uploadPolicyNode.IsNull())
     {
       m_uploadPolicy = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(uploadPolicyNode.GetText()));
       m_uploadPolicyHasBeenSet = true;
+       m_uploadPolicyHasBeenSet = true;
     }
     XmlNode uploadPolicySignatureNode = resultNode.FirstChild("uploadPolicySignature");
     if(!uploadPolicySignatureNode.IsNull())
     {
       m_uploadPolicySignature = Aws::Utils::Xml::DecodeEscapedXmlText(uploadPolicySignatureNode.GetText());
       m_uploadPolicySignatureHasBeenSet = true;
+       m_uploadPolicySignatureHasBeenSet = true;
     }
   }
 

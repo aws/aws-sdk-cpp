@@ -12,18 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkSettingsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

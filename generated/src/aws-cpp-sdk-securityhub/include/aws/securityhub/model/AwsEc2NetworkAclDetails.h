@@ -35,7 +35,7 @@ namespace Model
   class AwsEc2NetworkAclDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2NetworkAclDetails();
+    AWS_SECURITYHUB_API AwsEc2NetworkAclDetails() = default;
     AWS_SECURITYHUB_API AwsEc2NetworkAclDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2NetworkAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>Whether this is the default network ACL for the VPC.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline AwsEc2NetworkAclDetails& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>The identifier of the network ACL.</p>
      */
-    inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
+    inline const Aws::String& GetNetworkAclId() const { return m_networkAclId; }
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-    inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-    inline void SetNetworkAclId(const char* value) { m_networkAclIdHasBeenSet = true; m_networkAclId.assign(value); }
-    inline AwsEc2NetworkAclDetails& WithNetworkAclId(const Aws::String& value) { SetNetworkAclId(value); return *this;}
-    inline AwsEc2NetworkAclDetails& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
-    inline AwsEc2NetworkAclDetails& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
+    template<typename NetworkAclIdT = Aws::String>
+    void SetNetworkAclId(NetworkAclIdT&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::forward<NetworkAclIdT>(value); }
+    template<typename NetworkAclIdT = Aws::String>
+    AwsEc2NetworkAclDetails& WithNetworkAclId(NetworkAclIdT&& value) { SetNetworkAclId(std::forward<NetworkAclIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,60 +68,56 @@ namespace Model
      * <p>The identifier of the Amazon Web Services account that owns the network
      * ACL.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline AwsEc2NetworkAclDetails& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline AwsEc2NetworkAclDetails& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline AwsEc2NetworkAclDetails& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    AwsEc2NetworkAclDetails& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the VPC for the network ACL.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AwsEc2NetworkAclDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AwsEc2NetworkAclDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AwsEc2NetworkAclDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsEc2NetworkAclDetails& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Associations between the network ACL and subnets.</p>
      */
-    inline const Aws::Vector<AwsEc2NetworkAclAssociation>& GetAssociations() const{ return m_associations; }
+    inline const Aws::Vector<AwsEc2NetworkAclAssociation>& GetAssociations() const { return m_associations; }
     inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
-    inline void SetAssociations(const Aws::Vector<AwsEc2NetworkAclAssociation>& value) { m_associationsHasBeenSet = true; m_associations = value; }
-    inline void SetAssociations(Aws::Vector<AwsEc2NetworkAclAssociation>&& value) { m_associationsHasBeenSet = true; m_associations = std::move(value); }
-    inline AwsEc2NetworkAclDetails& WithAssociations(const Aws::Vector<AwsEc2NetworkAclAssociation>& value) { SetAssociations(value); return *this;}
-    inline AwsEc2NetworkAclDetails& WithAssociations(Aws::Vector<AwsEc2NetworkAclAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
-    inline AwsEc2NetworkAclDetails& AddAssociations(const AwsEc2NetworkAclAssociation& value) { m_associationsHasBeenSet = true; m_associations.push_back(value); return *this; }
-    inline AwsEc2NetworkAclDetails& AddAssociations(AwsEc2NetworkAclAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
+    template<typename AssociationsT = Aws::Vector<AwsEc2NetworkAclAssociation>>
+    void SetAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations = std::forward<AssociationsT>(value); }
+    template<typename AssociationsT = Aws::Vector<AwsEc2NetworkAclAssociation>>
+    AwsEc2NetworkAclDetails& WithAssociations(AssociationsT&& value) { SetAssociations(std::forward<AssociationsT>(value)); return *this;}
+    template<typename AssociationsT = AwsEc2NetworkAclAssociation>
+    AwsEc2NetworkAclDetails& AddAssociations(AssociationsT&& value) { m_associationsHasBeenSet = true; m_associations.emplace_back(std::forward<AssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The set of rules in the network ACL.</p>
      */
-    inline const Aws::Vector<AwsEc2NetworkAclEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<AwsEc2NetworkAclEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<AwsEc2NetworkAclEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<AwsEc2NetworkAclEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline AwsEc2NetworkAclDetails& WithEntries(const Aws::Vector<AwsEc2NetworkAclEntry>& value) { SetEntries(value); return *this;}
-    inline AwsEc2NetworkAclDetails& WithEntries(Aws::Vector<AwsEc2NetworkAclEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline AwsEc2NetworkAclDetails& AddEntries(const AwsEc2NetworkAclEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline AwsEc2NetworkAclDetails& AddEntries(AwsEc2NetworkAclEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<AwsEc2NetworkAclEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<AwsEc2NetworkAclEntry>>
+    AwsEc2NetworkAclDetails& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = AwsEc2NetworkAclEntry>
+    AwsEc2NetworkAclDetails& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
 
     Aws::String m_networkAclId;

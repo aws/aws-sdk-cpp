@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ArcAxisDisplayRange::ArcAxisDisplayRange() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 ArcAxisDisplayRange::ArcAxisDisplayRange(JsonView jsonValue)
-  : ArcAxisDisplayRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ArcAxisDisplayRange& ArcAxisDisplayRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetDouble("Min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetDouble("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

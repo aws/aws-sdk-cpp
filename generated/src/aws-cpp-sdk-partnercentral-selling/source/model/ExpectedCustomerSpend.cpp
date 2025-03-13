@@ -18,19 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ExpectedCustomerSpend::ExpectedCustomerSpend() : 
-    m_amountHasBeenSet(false),
-    m_currencyCode(ExpectedCustomerSpendCurrencyCodeEnum::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_estimationUrlHasBeenSet(false),
-    m_frequency(PaymentFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false),
-    m_targetCompanyHasBeenSet(false)
-{
-}
-
 ExpectedCustomerSpend::ExpectedCustomerSpend(JsonView jsonValue)
-  : ExpectedCustomerSpend()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ExpectedCustomerSpend& ExpectedCustomerSpend::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Amount"))
   {
     m_amount = jsonValue.GetString("Amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = ExpectedCustomerSpendCurrencyCodeEnumMapper::GetExpectedCustomerSpendCurrencyCodeEnumForName(jsonValue.GetString("CurrencyCode"));
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimationUrl"))
   {
     m_estimationUrl = jsonValue.GetString("EstimationUrl");
-
     m_estimationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Frequency"))
   {
     m_frequency = PaymentFrequencyMapper::GetPaymentFrequencyForName(jsonValue.GetString("Frequency"));
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCompany"))
   {
     m_targetCompany = jsonValue.GetString("TargetCompany");
-
     m_targetCompanyHasBeenSet = true;
   }
-
   return *this;
 }
 

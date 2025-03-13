@@ -12,12 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInvestigationRequest::GetInvestigationRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_investigationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetInvestigationRequest::SerializePayload() const
 {
   JsonValue payload;

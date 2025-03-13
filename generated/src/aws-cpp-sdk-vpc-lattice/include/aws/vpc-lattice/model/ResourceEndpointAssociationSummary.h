@@ -33,7 +33,7 @@ namespace Model
   class ResourceEndpointAssociationSummary
   {
   public:
-    AWS_VPCLATTICE_API ResourceEndpointAssociationSummary();
+    AWS_VPCLATTICE_API ResourceEndpointAssociationSummary() = default;
     AWS_VPCLATTICE_API ResourceEndpointAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API ResourceEndpointAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the VPC endpoint association.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ResourceEndpointAssociationSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,117 +56,103 @@ namespace Model
      * <p>The date and time that the VPC endpoint association was created, in ISO-8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ResourceEndpointAssociationSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ResourceEndpointAssociationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account that created the association.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    ResourceEndpointAssociationSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC endpoint association.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResourceEndpointAssociationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
      */
-    inline const Aws::String& GetResourceConfigurationArn() const{ return m_resourceConfigurationArn; }
+    inline const Aws::String& GetResourceConfigurationArn() const { return m_resourceConfigurationArn; }
     inline bool ResourceConfigurationArnHasBeenSet() const { return m_resourceConfigurationArnHasBeenSet; }
-    inline void SetResourceConfigurationArn(const Aws::String& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = value; }
-    inline void SetResourceConfigurationArn(Aws::String&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::move(value); }
-    inline void SetResourceConfigurationArn(const char* value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationArn(const Aws::String& value) { SetResourceConfigurationArn(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationArn(Aws::String&& value) { SetResourceConfigurationArn(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationArn(const char* value) { SetResourceConfigurationArn(value); return *this;}
+    template<typename ResourceConfigurationArnT = Aws::String>
+    void SetResourceConfigurationArn(ResourceConfigurationArnT&& value) { m_resourceConfigurationArnHasBeenSet = true; m_resourceConfigurationArn = std::forward<ResourceConfigurationArnT>(value); }
+    template<typename ResourceConfigurationArnT = Aws::String>
+    ResourceEndpointAssociationSummary& WithResourceConfigurationArn(ResourceConfigurationArnT&& value) { SetResourceConfigurationArn(std::forward<ResourceConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource configuration.</p>
      */
-    inline const Aws::String& GetResourceConfigurationId() const{ return m_resourceConfigurationId; }
+    inline const Aws::String& GetResourceConfigurationId() const { return m_resourceConfigurationId; }
     inline bool ResourceConfigurationIdHasBeenSet() const { return m_resourceConfigurationIdHasBeenSet; }
-    inline void SetResourceConfigurationId(const Aws::String& value) { m_resourceConfigurationIdHasBeenSet = true; m_resourceConfigurationId = value; }
-    inline void SetResourceConfigurationId(Aws::String&& value) { m_resourceConfigurationIdHasBeenSet = true; m_resourceConfigurationId = std::move(value); }
-    inline void SetResourceConfigurationId(const char* value) { m_resourceConfigurationIdHasBeenSet = true; m_resourceConfigurationId.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationId(const Aws::String& value) { SetResourceConfigurationId(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationId(Aws::String&& value) { SetResourceConfigurationId(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationId(const char* value) { SetResourceConfigurationId(value); return *this;}
+    template<typename ResourceConfigurationIdT = Aws::String>
+    void SetResourceConfigurationId(ResourceConfigurationIdT&& value) { m_resourceConfigurationIdHasBeenSet = true; m_resourceConfigurationId = std::forward<ResourceConfigurationIdT>(value); }
+    template<typename ResourceConfigurationIdT = Aws::String>
+    ResourceEndpointAssociationSummary& WithResourceConfigurationId(ResourceConfigurationIdT&& value) { SetResourceConfigurationId(std::forward<ResourceConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource configuration.</p>
      */
-    inline const Aws::String& GetResourceConfigurationName() const{ return m_resourceConfigurationName; }
+    inline const Aws::String& GetResourceConfigurationName() const { return m_resourceConfigurationName; }
     inline bool ResourceConfigurationNameHasBeenSet() const { return m_resourceConfigurationNameHasBeenSet; }
-    inline void SetResourceConfigurationName(const Aws::String& value) { m_resourceConfigurationNameHasBeenSet = true; m_resourceConfigurationName = value; }
-    inline void SetResourceConfigurationName(Aws::String&& value) { m_resourceConfigurationNameHasBeenSet = true; m_resourceConfigurationName = std::move(value); }
-    inline void SetResourceConfigurationName(const char* value) { m_resourceConfigurationNameHasBeenSet = true; m_resourceConfigurationName.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationName(const Aws::String& value) { SetResourceConfigurationName(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationName(Aws::String&& value) { SetResourceConfigurationName(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithResourceConfigurationName(const char* value) { SetResourceConfigurationName(value); return *this;}
+    template<typename ResourceConfigurationNameT = Aws::String>
+    void SetResourceConfigurationName(ResourceConfigurationNameT&& value) { m_resourceConfigurationNameHasBeenSet = true; m_resourceConfigurationName = std::forward<ResourceConfigurationNameT>(value); }
+    template<typename ResourceConfigurationNameT = Aws::String>
+    ResourceEndpointAssociationSummary& WithResourceConfigurationName(ResourceConfigurationNameT&& value) { SetResourceConfigurationName(std::forward<ResourceConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    ResourceEndpointAssociationSummary& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the VPC endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointOwner() const{ return m_vpcEndpointOwner; }
+    inline const Aws::String& GetVpcEndpointOwner() const { return m_vpcEndpointOwner; }
     inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
-    inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
-    inline void SetVpcEndpointOwner(Aws::String&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::move(value); }
-    inline void SetVpcEndpointOwner(const char* value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner.assign(value); }
-    inline ResourceEndpointAssociationSummary& WithVpcEndpointOwner(const Aws::String& value) { SetVpcEndpointOwner(value); return *this;}
-    inline ResourceEndpointAssociationSummary& WithVpcEndpointOwner(Aws::String&& value) { SetVpcEndpointOwner(std::move(value)); return *this;}
-    inline ResourceEndpointAssociationSummary& WithVpcEndpointOwner(const char* value) { SetVpcEndpointOwner(value); return *this;}
+    template<typename VpcEndpointOwnerT = Aws::String>
+    void SetVpcEndpointOwner(VpcEndpointOwnerT&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::forward<VpcEndpointOwnerT>(value); }
+    template<typename VpcEndpointOwnerT = Aws::String>
+    ResourceEndpointAssociationSummary& WithVpcEndpointOwner(VpcEndpointOwnerT&& value) { SetVpcEndpointOwner(std::forward<VpcEndpointOwnerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;

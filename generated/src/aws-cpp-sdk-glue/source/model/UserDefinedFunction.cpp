@@ -18,21 +18,7 @@ namespace Glue
 namespace Model
 {
 
-UserDefinedFunction::UserDefinedFunction() : 
-    m_functionNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_ownerNameHasBeenSet(false),
-    m_ownerType(PrincipalType::NOT_SET),
-    m_ownerTypeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 UserDefinedFunction::UserDefinedFunction(JsonView jsonValue)
-  : UserDefinedFunction()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FunctionName"))
   {
     m_functionName = jsonValue.GetString("FunctionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClassName"))
   {
     m_className = jsonValue.GetString("ClassName");
-
     m_classNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerName"))
   {
     m_ownerName = jsonValue.GetString("OwnerName");
-
     m_ownerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerType"))
   {
     m_ownerType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("OwnerType"));
-
     m_ownerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceUris"))
   {
     Aws::Utils::Array<JsonView> resourceUrisJsonList = jsonValue.GetArray("ResourceUris");
@@ -90,14 +64,11 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
     }
     m_resourceUrisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   return *this;
 }
 

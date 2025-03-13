@@ -33,7 +33,7 @@ namespace Model
   class VectorEnrichmentJobInputConfig
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobInputConfig();
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobInputConfig() = default;
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,29 @@ namespace Model
      * <p>The input structure for the data source that represents the storage type of
      * the input data objects.</p>
      */
-    inline const VectorEnrichmentJobDataSourceConfigInput& GetDataSourceConfig() const{ return m_dataSourceConfig; }
+    inline const VectorEnrichmentJobDataSourceConfigInput& GetDataSourceConfig() const { return m_dataSourceConfig; }
     inline bool DataSourceConfigHasBeenSet() const { return m_dataSourceConfigHasBeenSet; }
-    inline void SetDataSourceConfig(const VectorEnrichmentJobDataSourceConfigInput& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = value; }
-    inline void SetDataSourceConfig(VectorEnrichmentJobDataSourceConfigInput&& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = std::move(value); }
-    inline VectorEnrichmentJobInputConfig& WithDataSourceConfig(const VectorEnrichmentJobDataSourceConfigInput& value) { SetDataSourceConfig(value); return *this;}
-    inline VectorEnrichmentJobInputConfig& WithDataSourceConfig(VectorEnrichmentJobDataSourceConfigInput&& value) { SetDataSourceConfig(std::move(value)); return *this;}
+    template<typename DataSourceConfigT = VectorEnrichmentJobDataSourceConfigInput>
+    void SetDataSourceConfig(DataSourceConfigT&& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = std::forward<DataSourceConfigT>(value); }
+    template<typename DataSourceConfigT = VectorEnrichmentJobDataSourceConfigInput>
+    VectorEnrichmentJobInputConfig& WithDataSourceConfig(DataSourceConfigT&& value) { SetDataSourceConfig(std::forward<DataSourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input structure that defines the data source file type.</p>
      */
-    inline const VectorEnrichmentJobDocumentType& GetDocumentType() const{ return m_documentType; }
+    inline VectorEnrichmentJobDocumentType GetDocumentType() const { return m_documentType; }
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
-    inline void SetDocumentType(const VectorEnrichmentJobDocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
-    inline void SetDocumentType(VectorEnrichmentJobDocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
-    inline VectorEnrichmentJobInputConfig& WithDocumentType(const VectorEnrichmentJobDocumentType& value) { SetDocumentType(value); return *this;}
-    inline VectorEnrichmentJobInputConfig& WithDocumentType(VectorEnrichmentJobDocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
+    inline void SetDocumentType(VectorEnrichmentJobDocumentType value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+    inline VectorEnrichmentJobInputConfig& WithDocumentType(VectorEnrichmentJobDocumentType value) { SetDocumentType(value); return *this;}
     ///@}
   private:
 
     VectorEnrichmentJobDataSourceConfigInput m_dataSourceConfig;
     bool m_dataSourceConfigHasBeenSet = false;
 
-    VectorEnrichmentJobDocumentType m_documentType;
+    VectorEnrichmentJobDocumentType m_documentType{VectorEnrichmentJobDocumentType::NOT_SET};
     bool m_documentTypeHasBeenSet = false;
   };
 

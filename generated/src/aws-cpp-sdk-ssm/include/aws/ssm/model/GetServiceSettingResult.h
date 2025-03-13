@@ -34,7 +34,7 @@ namespace Model
   class GetServiceSettingResult
   {
   public:
-    AWS_SSM_API GetServiceSettingResult();
+    AWS_SSM_API GetServiceSettingResult() = default;
     AWS_SSM_API GetServiceSettingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetServiceSettingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The query result of the current service setting.</p>
      */
-    inline const ServiceSetting& GetServiceSetting() const{ return m_serviceSetting; }
-    inline void SetServiceSetting(const ServiceSetting& value) { m_serviceSetting = value; }
-    inline void SetServiceSetting(ServiceSetting&& value) { m_serviceSetting = std::move(value); }
-    inline GetServiceSettingResult& WithServiceSetting(const ServiceSetting& value) { SetServiceSetting(value); return *this;}
-    inline GetServiceSettingResult& WithServiceSetting(ServiceSetting&& value) { SetServiceSetting(std::move(value)); return *this;}
+    inline const ServiceSetting& GetServiceSetting() const { return m_serviceSetting; }
+    template<typename ServiceSettingT = ServiceSetting>
+    void SetServiceSetting(ServiceSettingT&& value) { m_serviceSettingHasBeenSet = true; m_serviceSetting = std::forward<ServiceSettingT>(value); }
+    template<typename ServiceSettingT = ServiceSetting>
+    GetServiceSettingResult& WithServiceSetting(ServiceSettingT&& value) { SetServiceSetting(std::forward<ServiceSettingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceSettingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceSettingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceSettingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceSettingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceSetting m_serviceSetting;
+    bool m_serviceSettingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

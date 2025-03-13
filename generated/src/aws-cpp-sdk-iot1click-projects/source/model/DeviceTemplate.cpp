@@ -18,14 +18,7 @@ namespace IoT1ClickProjects
 namespace Model
 {
 
-DeviceTemplate::DeviceTemplate() : 
-    m_deviceTypeHasBeenSet(false),
-    m_callbackOverridesHasBeenSet(false)
-{
-}
-
 DeviceTemplate::DeviceTemplate(JsonView jsonValue)
-  : DeviceTemplate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DeviceTemplate& DeviceTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deviceType"))
   {
     m_deviceType = jsonValue.GetString("deviceType");
-
     m_deviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("callbackOverrides"))
   {
     Aws::Map<Aws::String, JsonView> callbackOverridesJsonMap = jsonValue.GetObject("callbackOverrides").GetAllObjects();
@@ -48,7 +39,6 @@ DeviceTemplate& DeviceTemplate::operator =(JsonView jsonValue)
     }
     m_callbackOverridesHasBeenSet = true;
   }
-
   return *this;
 }
 

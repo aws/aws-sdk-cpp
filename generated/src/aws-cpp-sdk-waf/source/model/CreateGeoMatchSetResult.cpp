@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGeoMatchSetResult::CreateGeoMatchSetResult()
-{
-}
-
 CreateGeoMatchSetResult::CreateGeoMatchSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateGeoMatchSetResult& CreateGeoMatchSetResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("GeoMatchSet"))
   {
     m_geoMatchSet = jsonValue.GetObject("GeoMatchSet");
-
+    m_geoMatchSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeToken"))
   {
     m_changeToken = jsonValue.GetString("ChangeToken");
-
+    m_changeTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,18 +18,7 @@ namespace Textract
 namespace Model
 {
 
-LendingDetection::LendingDetection() : 
-    m_textHasBeenSet(false),
-    m_selectionStatus(SelectionStatus::NOT_SET),
-    m_selectionStatusHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 LendingDetection::LendingDetection(JsonView jsonValue)
-  : LendingDetection()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ LendingDetection& LendingDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectionStatus"))
   {
     m_selectionStatus = SelectionStatusMapper::GetSelectionStatusForName(jsonValue.GetString("SelectionStatus"));
-
     m_selectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

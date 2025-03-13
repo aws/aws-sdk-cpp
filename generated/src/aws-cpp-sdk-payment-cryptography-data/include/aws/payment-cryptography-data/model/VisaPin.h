@@ -30,7 +30,7 @@ namespace Model
   class VisaPin
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
      * calculate the PVV (PIN Verification Value).</p>
      */
-    inline int GetPinVerificationKeyIndex() const{ return m_pinVerificationKeyIndex; }
+    inline int GetPinVerificationKeyIndex() const { return m_pinVerificationKeyIndex; }
     inline bool PinVerificationKeyIndexHasBeenSet() const { return m_pinVerificationKeyIndexHasBeenSet; }
     inline void SetPinVerificationKeyIndex(int value) { m_pinVerificationKeyIndexHasBeenSet = true; m_pinVerificationKeyIndex = value; }
     inline VisaPin& WithPinVerificationKeyIndex(int value) { SetPinVerificationKeyIndex(value); return *this;}
     ///@}
   private:
 
-    int m_pinVerificationKeyIndex;
+    int m_pinVerificationKeyIndex{0};
     bool m_pinVerificationKeyIndexHasBeenSet = false;
   };
 

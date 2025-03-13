@@ -20,15 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SAMLProviderListEntry::SAMLProviderListEntry() : 
-    m_arnHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 SAMLProviderListEntry::SAMLProviderListEntry(const XmlNode& xmlNode)
-  : SAMLProviderListEntry()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ SAMLProviderListEntry& SAMLProviderListEntry::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("ValidUntil");
     if(!validUntilNode.IsNull())
     {
       m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
+       m_validUntilHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
   }
 

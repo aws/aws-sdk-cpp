@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStorediSCSIVolumesRequest::DescribeStorediSCSIVolumesRequest() : 
-    m_volumeARNsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStorediSCSIVolumesRequest::SerializePayload() const
 {
   JsonValue payload;

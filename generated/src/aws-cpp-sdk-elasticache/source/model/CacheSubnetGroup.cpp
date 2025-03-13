@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheSubnetGroup::CacheSubnetGroup() : 
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupDescriptionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
-{
-}
-
 CacheSubnetGroup::CacheSubnetGroup(const XmlNode& xmlNode)
-  : CacheSubnetGroup()
 {
   *this = xmlNode;
 }
@@ -47,48 +36,54 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
     {
       m_cacheSubnetGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSubnetGroupNameNode.GetText());
       m_cacheSubnetGroupNameHasBeenSet = true;
+       m_cacheSubnetGroupNameHasBeenSet = true;
     }
     XmlNode cacheSubnetGroupDescriptionNode = resultNode.FirstChild("CacheSubnetGroupDescription");
     if(!cacheSubnetGroupDescriptionNode.IsNull())
     {
       m_cacheSubnetGroupDescription = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSubnetGroupDescriptionNode.GetText());
       m_cacheSubnetGroupDescriptionHasBeenSet = true;
+       m_cacheSubnetGroupDescriptionHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode subnetsNode = resultNode.FirstChild("Subnets");
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("Subnet");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember);
         subnetsMember = subnetsMember.NextNode("Subnet");
       }
 
-      m_subnetsHasBeenSet = true;
+       m_subnetsHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
     if(!supportedNetworkTypesNode.IsNull())
     {
       XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
       while(!supportedNetworkTypesMember.IsNull())
       {
         m_supportedNetworkTypes.push_back(NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(supportedNetworkTypesMember.GetText().c_str())));
         supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
       }
 
-      m_supportedNetworkTypesHasBeenSet = true;
+       m_supportedNetworkTypesHasBeenSet = true;
     }
   }
 

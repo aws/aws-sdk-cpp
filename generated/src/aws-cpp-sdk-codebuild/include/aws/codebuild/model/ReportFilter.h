@@ -32,7 +32,7 @@ namespace Model
   class ReportFilter
   {
   public:
-    AWS_CODEBUILD_API ReportFilter();
+    AWS_CODEBUILD_API ReportFilter() = default;
     AWS_CODEBUILD_API ReportFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ReportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> The status used to filter reports. You can filter using one status only.
      * </p>
      */
-    inline const ReportStatusType& GetStatus() const{ return m_status; }
+    inline ReportStatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReportStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReportStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReportFilter& WithStatus(const ReportStatusType& value) { SetStatus(value); return *this;}
-    inline ReportFilter& WithStatus(ReportStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReportStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReportFilter& WithStatus(ReportStatusType value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ReportStatusType m_status;
+    ReportStatusType m_status{ReportStatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

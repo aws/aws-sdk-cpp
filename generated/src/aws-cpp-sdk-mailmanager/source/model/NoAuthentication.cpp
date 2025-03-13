@@ -18,10 +18,6 @@ namespace MailManager
 namespace Model
 {
 
-NoAuthentication::NoAuthentication()
-{
-}
-
 NoAuthentication::NoAuthentication(JsonView jsonValue)
 {
   *this = jsonValue;

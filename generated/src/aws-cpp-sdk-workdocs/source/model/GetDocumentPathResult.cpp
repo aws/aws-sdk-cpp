@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDocumentPathResult::GetDocumentPathResult()
-{
-}
-
 GetDocumentPathResult::GetDocumentPathResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDocumentPathResult& GetDocumentPathResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetObject("Path");
-
+    m_pathHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

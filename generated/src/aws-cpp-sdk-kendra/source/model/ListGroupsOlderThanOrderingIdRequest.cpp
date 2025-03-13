@@ -12,17 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGroupsOlderThanOrderingIdRequest::ListGroupsOlderThanOrderingIdRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_orderingId(0),
-    m_orderingIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListGroupsOlderThanOrderingIdRequest::SerializePayload() const
 {
   JsonValue payload;

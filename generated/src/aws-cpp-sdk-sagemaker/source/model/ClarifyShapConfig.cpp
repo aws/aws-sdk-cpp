@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClarifyShapConfig::ClarifyShapConfig() : 
-    m_shapBaselineConfigHasBeenSet(false),
-    m_numberOfSamples(0),
-    m_numberOfSamplesHasBeenSet(false),
-    m_useLogit(false),
-    m_useLogitHasBeenSet(false),
-    m_seed(0),
-    m_seedHasBeenSet(false),
-    m_textConfigHasBeenSet(false)
-{
-}
-
 ClarifyShapConfig::ClarifyShapConfig(JsonView jsonValue)
-  : ClarifyShapConfig()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ClarifyShapConfig& ClarifyShapConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShapBaselineConfig"))
   {
     m_shapBaselineConfig = jsonValue.GetObject("ShapBaselineConfig");
-
     m_shapBaselineConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfSamples"))
   {
     m_numberOfSamples = jsonValue.GetInteger("NumberOfSamples");
-
     m_numberOfSamplesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseLogit"))
   {
     m_useLogit = jsonValue.GetBool("UseLogit");
-
     m_useLogitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Seed"))
   {
     m_seed = jsonValue.GetInteger("Seed");
-
     m_seedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextConfig"))
   {
     m_textConfig = jsonValue.GetObject("TextConfig");
-
     m_textConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

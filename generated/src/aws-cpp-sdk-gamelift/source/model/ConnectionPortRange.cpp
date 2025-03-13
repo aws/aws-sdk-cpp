@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ConnectionPortRange::ConnectionPortRange() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
-{
-}
-
 ConnectionPortRange::ConnectionPortRange(JsonView jsonValue)
-  : ConnectionPortRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConnectionPortRange& ConnectionPortRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromPort"))
   {
     m_fromPort = jsonValue.GetInteger("FromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToPort"))
   {
     m_toPort = jsonValue.GetInteger("ToPort");
-
     m_toPortHasBeenSet = true;
   }
-
   return *this;
 }
 

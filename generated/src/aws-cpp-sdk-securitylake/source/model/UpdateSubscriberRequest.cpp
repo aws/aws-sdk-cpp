@@ -12,15 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriberRequest::UpdateSubscriberRequest() : 
-    m_sourcesHasBeenSet(false),
-    m_subscriberDescriptionHasBeenSet(false),
-    m_subscriberIdHasBeenSet(false),
-    m_subscriberIdentityHasBeenSet(false),
-    m_subscriberNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriberRequest::SerializePayload() const
 {
   JsonValue payload;

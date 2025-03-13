@@ -18,16 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkEdge::CoreNetworkEdge() : 
-    m_edgeLocationHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false)
-{
-}
-
 CoreNetworkEdge::CoreNetworkEdge(JsonView jsonValue)
-  : CoreNetworkEdge()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CoreNetworkEdge& CoreNetworkEdge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EdgeLocation"))
   {
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
-
     m_edgeLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Asn"))
   {
     m_asn = jsonValue.GetInt64("Asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsideCidrBlocks"))
   {
     Aws::Utils::Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
@@ -57,7 +44,6 @@ CoreNetworkEdge& CoreNetworkEdge::operator =(JsonView jsonValue)
     }
     m_insideCidrBlocksHasBeenSet = true;
   }
-
   return *this;
 }
 

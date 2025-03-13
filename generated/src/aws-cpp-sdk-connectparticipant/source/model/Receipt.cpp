@@ -18,15 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-Receipt::Receipt() : 
-    m_deliveredTimestampHasBeenSet(false),
-    m_readTimestampHasBeenSet(false),
-    m_recipientParticipantIdHasBeenSet(false)
-{
-}
-
 Receipt::Receipt(JsonView jsonValue)
-  : Receipt()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Receipt& Receipt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeliveredTimestamp"))
   {
     m_deliveredTimestamp = jsonValue.GetString("DeliveredTimestamp");
-
     m_deliveredTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadTimestamp"))
   {
     m_readTimestamp = jsonValue.GetString("ReadTimestamp");
-
     m_readTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipientParticipantId"))
   {
     m_recipientParticipantId = jsonValue.GetString("RecipientParticipantId");
-
     m_recipientParticipantIdHasBeenSet = true;
   }
-
   return *this;
 }
 

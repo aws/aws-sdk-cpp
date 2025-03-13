@@ -12,15 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterGameServerRequest::RegisterGameServerRequest() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_gameServerIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_connectionInfoHasBeenSet(false),
-    m_gameServerDataHasBeenSet(false)
-{
-}
-
 Aws::String RegisterGameServerRequest::SerializePayload() const
 {
   JsonValue payload;

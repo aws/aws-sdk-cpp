@@ -34,7 +34,7 @@ namespace Model
   class AwsCertificateManagerCertificateRenewalSummary
   {
   public:
-    AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary() = default;
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * it pertains to Certificate Manager managed renewal. Provided only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
-    inline const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
+    inline const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& GetDomainValidationOptions() const { return m_domainValidationOptions; }
     inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
-    inline void SetDomainValidationOptions(const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
-    inline void SetDomainValidationOptions(Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
-    inline AwsCertificateManagerCertificateRenewalSummary& WithDomainValidationOptions(const Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>& value) { SetDomainValidationOptions(value); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithDomainValidationOptions(Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& AddDomainValidationOptions(const AwsCertificateManagerCertificateDomainValidationOption& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
-    inline AwsCertificateManagerCertificateRenewalSummary& AddDomainValidationOptions(AwsCertificateManagerCertificateDomainValidationOption&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
+    template<typename DomainValidationOptionsT = Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>>
+    void SetDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::forward<DomainValidationOptionsT>(value); }
+    template<typename DomainValidationOptionsT = Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption>>
+    AwsCertificateManagerCertificateRenewalSummary& WithDomainValidationOptions(DomainValidationOptionsT&& value) { SetDomainValidationOptions(std::forward<DomainValidationOptionsT>(value)); return *this;}
+    template<typename DomainValidationOptionsT = AwsCertificateManagerCertificateDomainValidationOption>
+    AwsCertificateManagerCertificateRenewalSummary& AddDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.emplace_back(std::forward<DomainValidationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +63,12 @@ namespace Model
      * <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code>
      * </p>
      */
-    inline const Aws::String& GetRenewalStatus() const{ return m_renewalStatus; }
+    inline const Aws::String& GetRenewalStatus() const { return m_renewalStatus; }
     inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
-    inline void SetRenewalStatus(const Aws::String& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
-    inline void SetRenewalStatus(Aws::String&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
-    inline void SetRenewalStatus(const char* value) { m_renewalStatusHasBeenSet = true; m_renewalStatus.assign(value); }
-    inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatus(const Aws::String& value) { SetRenewalStatus(value); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatus(Aws::String&& value) { SetRenewalStatus(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatus(const char* value) { SetRenewalStatus(value); return *this;}
+    template<typename RenewalStatusT = Aws::String>
+    void SetRenewalStatus(RenewalStatusT&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::forward<RenewalStatusT>(value); }
+    template<typename RenewalStatusT = Aws::String>
+    AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatus(RenewalStatusT&& value) { SetRenewalStatus(std::forward<RenewalStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> |
      * <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
      */
-    inline const Aws::String& GetRenewalStatusReason() const{ return m_renewalStatusReason; }
+    inline const Aws::String& GetRenewalStatusReason() const { return m_renewalStatusReason; }
     inline bool RenewalStatusReasonHasBeenSet() const { return m_renewalStatusReasonHasBeenSet; }
-    inline void SetRenewalStatusReason(const Aws::String& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = value; }
-    inline void SetRenewalStatusReason(Aws::String&& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = std::move(value); }
-    inline void SetRenewalStatusReason(const char* value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason.assign(value); }
-    inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatusReason(const Aws::String& value) { SetRenewalStatusReason(value); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatusReason(Aws::String&& value) { SetRenewalStatusReason(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatusReason(const char* value) { SetRenewalStatusReason(value); return *this;}
+    template<typename RenewalStatusReasonT = Aws::String>
+    void SetRenewalStatusReason(RenewalStatusReasonT&& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = std::forward<RenewalStatusReasonT>(value); }
+    template<typename RenewalStatusReasonT = Aws::String>
+    AwsCertificateManagerCertificateRenewalSummary& WithRenewalStatusReason(RenewalStatusReasonT&& value) { SetRenewalStatusReason(std::forward<RenewalStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +100,12 @@ namespace Model
      * Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::String& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
-    inline AwsCertificateManagerCertificateRenewalSummary& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
-    inline AwsCertificateManagerCertificateRenewalSummary& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
+    template<typename UpdatedAtT = Aws::String>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::String>
+    AwsCertificateManagerCertificateRenewalSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 

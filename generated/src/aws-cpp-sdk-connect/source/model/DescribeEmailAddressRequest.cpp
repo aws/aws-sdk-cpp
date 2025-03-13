@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEmailAddressRequest::DescribeEmailAddressRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_emailAddressIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEmailAddressRequest::SerializePayload() const
 {
   return {};

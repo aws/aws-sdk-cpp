@@ -31,7 +31,7 @@ namespace Model
   class ScriptBatchJobDefinition
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobDefinition();
+    AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobDefinition() = default;
     AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API ScriptBatchJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the script containing the batch job definition.</p>
      */
-    inline const Aws::String& GetScriptName() const{ return m_scriptName; }
+    inline const Aws::String& GetScriptName() const { return m_scriptName; }
     inline bool ScriptNameHasBeenSet() const { return m_scriptNameHasBeenSet; }
-    inline void SetScriptName(const Aws::String& value) { m_scriptNameHasBeenSet = true; m_scriptName = value; }
-    inline void SetScriptName(Aws::String&& value) { m_scriptNameHasBeenSet = true; m_scriptName = std::move(value); }
-    inline void SetScriptName(const char* value) { m_scriptNameHasBeenSet = true; m_scriptName.assign(value); }
-    inline ScriptBatchJobDefinition& WithScriptName(const Aws::String& value) { SetScriptName(value); return *this;}
-    inline ScriptBatchJobDefinition& WithScriptName(Aws::String&& value) { SetScriptName(std::move(value)); return *this;}
-    inline ScriptBatchJobDefinition& WithScriptName(const char* value) { SetScriptName(value); return *this;}
+    template<typename ScriptNameT = Aws::String>
+    void SetScriptName(ScriptNameT&& value) { m_scriptNameHasBeenSet = true; m_scriptName = std::forward<ScriptNameT>(value); }
+    template<typename ScriptNameT = Aws::String>
+    ScriptBatchJobDefinition& WithScriptName(ScriptNameT&& value) { SetScriptName(std::forward<ScriptNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -23,7 +23,7 @@ namespace Model
   class ListParticipantsRequest : public IvsrealtimeRequest
   {
   public:
-    AWS_IVSREALTIME_API ListParticipantsRequest();
+    AWS_IVSREALTIME_API ListParticipantsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>Stage ARN.</p>
      */
-    inline const Aws::String& GetStageArn() const{ return m_stageArn; }
+    inline const Aws::String& GetStageArn() const { return m_stageArn; }
     inline bool StageArnHasBeenSet() const { return m_stageArnHasBeenSet; }
-    inline void SetStageArn(const Aws::String& value) { m_stageArnHasBeenSet = true; m_stageArn = value; }
-    inline void SetStageArn(Aws::String&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::move(value); }
-    inline void SetStageArn(const char* value) { m_stageArnHasBeenSet = true; m_stageArn.assign(value); }
-    inline ListParticipantsRequest& WithStageArn(const Aws::String& value) { SetStageArn(value); return *this;}
-    inline ListParticipantsRequest& WithStageArn(Aws::String&& value) { SetStageArn(std::move(value)); return *this;}
-    inline ListParticipantsRequest& WithStageArn(const char* value) { SetStageArn(value); return *this;}
+    template<typename StageArnT = Aws::String>
+    void SetStageArn(StageArnT&& value) { m_stageArnHasBeenSet = true; m_stageArn = std::forward<StageArnT>(value); }
+    template<typename StageArnT = Aws::String>
+    ListParticipantsRequest& WithStageArn(StageArnT&& value) { SetStageArn(std::forward<StageArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>ID of the session within the stage.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ListParticipantsRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ListParticipantsRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ListParticipantsRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ListParticipantsRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * identify the token; this can be used to link a participant to a user in the
      * customer’s own systems.</p>
      */
-    inline const Aws::String& GetFilterByUserId() const{ return m_filterByUserId; }
+    inline const Aws::String& GetFilterByUserId() const { return m_filterByUserId; }
     inline bool FilterByUserIdHasBeenSet() const { return m_filterByUserIdHasBeenSet; }
-    inline void SetFilterByUserId(const Aws::String& value) { m_filterByUserIdHasBeenSet = true; m_filterByUserId = value; }
-    inline void SetFilterByUserId(Aws::String&& value) { m_filterByUserIdHasBeenSet = true; m_filterByUserId = std::move(value); }
-    inline void SetFilterByUserId(const char* value) { m_filterByUserIdHasBeenSet = true; m_filterByUserId.assign(value); }
-    inline ListParticipantsRequest& WithFilterByUserId(const Aws::String& value) { SetFilterByUserId(value); return *this;}
-    inline ListParticipantsRequest& WithFilterByUserId(Aws::String&& value) { SetFilterByUserId(std::move(value)); return *this;}
-    inline ListParticipantsRequest& WithFilterByUserId(const char* value) { SetFilterByUserId(value); return *this;}
+    template<typename FilterByUserIdT = Aws::String>
+    void SetFilterByUserId(FilterByUserIdT&& value) { m_filterByUserIdHasBeenSet = true; m_filterByUserId = std::forward<FilterByUserIdT>(value); }
+    template<typename FilterByUserIdT = Aws::String>
+    ListParticipantsRequest& WithFilterByUserId(FilterByUserIdT&& value) { SetFilterByUserId(std::forward<FilterByUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * <code>filterByPublished</code>, <code>filterByState</code>, or
      * <code>filterByRecordingState</code> can be provided per request.</p>
      */
-    inline bool GetFilterByPublished() const{ return m_filterByPublished; }
+    inline bool GetFilterByPublished() const { return m_filterByPublished; }
     inline bool FilterByPublishedHasBeenSet() const { return m_filterByPublishedHasBeenSet; }
     inline void SetFilterByPublished(bool value) { m_filterByPublishedHasBeenSet = true; m_filterByPublished = value; }
     inline ListParticipantsRequest& WithFilterByPublished(bool value) { SetFilterByPublished(value); return *this;}
@@ -101,12 +95,10 @@ namespace Model
      * <code>filterByState</code>, or <code>filterByRecordingState</code> can be
      * provided per request.</p>
      */
-    inline const ParticipantState& GetFilterByState() const{ return m_filterByState; }
+    inline ParticipantState GetFilterByState() const { return m_filterByState; }
     inline bool FilterByStateHasBeenSet() const { return m_filterByStateHasBeenSet; }
-    inline void SetFilterByState(const ParticipantState& value) { m_filterByStateHasBeenSet = true; m_filterByState = value; }
-    inline void SetFilterByState(ParticipantState&& value) { m_filterByStateHasBeenSet = true; m_filterByState = std::move(value); }
-    inline ListParticipantsRequest& WithFilterByState(const ParticipantState& value) { SetFilterByState(value); return *this;}
-    inline ListParticipantsRequest& WithFilterByState(ParticipantState&& value) { SetFilterByState(std::move(value)); return *this;}
+    inline void SetFilterByState(ParticipantState value) { m_filterByStateHasBeenSet = true; m_filterByState = value; }
+    inline ListParticipantsRequest& WithFilterByState(ParticipantState value) { SetFilterByState(value); return *this;}
     ///@}
 
     ///@{
@@ -114,21 +106,19 @@ namespace Model
      * <p>The first participant to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListParticipantsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListParticipantsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListParticipantsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListParticipantsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results to return. Default: 50.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListParticipantsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -141,12 +131,10 @@ namespace Model
      * <code>filterByPublished</code>, <code>filterByState</code>, or
      * <code>filterByRecordingState</code> can be provided per request.</p>
      */
-    inline const ParticipantRecordingFilterByRecordingState& GetFilterByRecordingState() const{ return m_filterByRecordingState; }
+    inline ParticipantRecordingFilterByRecordingState GetFilterByRecordingState() const { return m_filterByRecordingState; }
     inline bool FilterByRecordingStateHasBeenSet() const { return m_filterByRecordingStateHasBeenSet; }
-    inline void SetFilterByRecordingState(const ParticipantRecordingFilterByRecordingState& value) { m_filterByRecordingStateHasBeenSet = true; m_filterByRecordingState = value; }
-    inline void SetFilterByRecordingState(ParticipantRecordingFilterByRecordingState&& value) { m_filterByRecordingStateHasBeenSet = true; m_filterByRecordingState = std::move(value); }
-    inline ListParticipantsRequest& WithFilterByRecordingState(const ParticipantRecordingFilterByRecordingState& value) { SetFilterByRecordingState(value); return *this;}
-    inline ListParticipantsRequest& WithFilterByRecordingState(ParticipantRecordingFilterByRecordingState&& value) { SetFilterByRecordingState(std::move(value)); return *this;}
+    inline void SetFilterByRecordingState(ParticipantRecordingFilterByRecordingState value) { m_filterByRecordingStateHasBeenSet = true; m_filterByRecordingState = value; }
+    inline ListParticipantsRequest& WithFilterByRecordingState(ParticipantRecordingFilterByRecordingState value) { SetFilterByRecordingState(value); return *this;}
     ///@}
   private:
 
@@ -159,19 +147,19 @@ namespace Model
     Aws::String m_filterByUserId;
     bool m_filterByUserIdHasBeenSet = false;
 
-    bool m_filterByPublished;
+    bool m_filterByPublished{false};
     bool m_filterByPublishedHasBeenSet = false;
 
-    ParticipantState m_filterByState;
+    ParticipantState m_filterByState{ParticipantState::NOT_SET};
     bool m_filterByStateHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    ParticipantRecordingFilterByRecordingState m_filterByRecordingState;
+    ParticipantRecordingFilterByRecordingState m_filterByRecordingState{ParticipantRecordingFilterByRecordingState::NOT_SET};
     bool m_filterByRecordingStateHasBeenSet = false;
   };
 

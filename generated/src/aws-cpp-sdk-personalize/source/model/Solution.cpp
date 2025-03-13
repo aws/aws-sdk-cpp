@@ -18,30 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-Solution::Solution() : 
-    m_nameHasBeenSet(false),
-    m_solutionArnHasBeenSet(false),
-    m_performHPO(false),
-    m_performHPOHasBeenSet(false),
-    m_performAutoML(false),
-    m_performAutoMLHasBeenSet(false),
-    m_performAutoTraining(false),
-    m_performAutoTrainingHasBeenSet(false),
-    m_recipeArnHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_solutionConfigHasBeenSet(false),
-    m_autoMLResultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_latestSolutionVersionHasBeenSet(false),
-    m_latestSolutionUpdateHasBeenSet(false)
-{
-}
-
 Solution::Solution(JsonView jsonValue)
-  : Solution()
 {
   *this = jsonValue;
 }
@@ -51,108 +28,78 @@ Solution& Solution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionArn"))
   {
     m_solutionArn = jsonValue.GetString("solutionArn");
-
     m_solutionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performHPO"))
   {
     m_performHPO = jsonValue.GetBool("performHPO");
-
     m_performHPOHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performAutoML"))
   {
     m_performAutoML = jsonValue.GetBool("performAutoML");
-
     m_performAutoMLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performAutoTraining"))
   {
     m_performAutoTraining = jsonValue.GetBool("performAutoTraining");
-
     m_performAutoTrainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recipeArn"))
   {
     m_recipeArn = jsonValue.GetString("recipeArn");
-
     m_recipeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = jsonValue.GetString("eventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionConfig"))
   {
     m_solutionConfig = jsonValue.GetObject("solutionConfig");
-
     m_solutionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoMLResult"))
   {
     m_autoMLResult = jsonValue.GetObject("autoMLResult");
-
     m_autoMLResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestSolutionVersion"))
   {
     m_latestSolutionVersion = jsonValue.GetObject("latestSolutionVersion");
-
     m_latestSolutionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestSolutionUpdate"))
   {
     m_latestSolutionUpdate = jsonValue.GetObject("latestSolutionUpdate");
-
     m_latestSolutionUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

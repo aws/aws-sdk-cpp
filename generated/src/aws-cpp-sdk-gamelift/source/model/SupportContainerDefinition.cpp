@@ -18,26 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-SupportContainerDefinition::SupportContainerDefinition() : 
-    m_containerNameHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_environmentOverrideHasBeenSet(false),
-    m_essential(false),
-    m_essentialHasBeenSet(false),
-    m_healthCheckHasBeenSet(false),
-    m_imageUriHasBeenSet(false),
-    m_memoryHardLimitMebibytes(0),
-    m_memoryHardLimitMebibytesHasBeenSet(false),
-    m_portConfigurationHasBeenSet(false),
-    m_resolvedImageDigestHasBeenSet(false),
-    m_vcpu(0.0),
-    m_vcpuHasBeenSet(false)
-{
-}
-
 SupportContainerDefinition::SupportContainerDefinition(JsonView jsonValue)
-  : SupportContainerDefinition()
 {
   *this = jsonValue;
 }
@@ -47,10 +28,8 @@ SupportContainerDefinition& SupportContainerDefinition::operator =(JsonView json
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependsOn"))
   {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("DependsOn");
@@ -60,7 +39,6 @@ SupportContainerDefinition& SupportContainerDefinition::operator =(JsonView json
     }
     m_dependsOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MountPoints"))
   {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("MountPoints");
@@ -70,7 +48,6 @@ SupportContainerDefinition& SupportContainerDefinition::operator =(JsonView json
     }
     m_mountPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentOverride"))
   {
     Aws::Utils::Array<JsonView> environmentOverrideJsonList = jsonValue.GetArray("EnvironmentOverride");
@@ -80,56 +57,41 @@ SupportContainerDefinition& SupportContainerDefinition::operator =(JsonView json
     }
     m_environmentOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Essential"))
   {
     m_essential = jsonValue.GetBool("Essential");
-
     m_essentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheck"))
   {
     m_healthCheck = jsonValue.GetObject("HealthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryHardLimitMebibytes"))
   {
     m_memoryHardLimitMebibytes = jsonValue.GetInteger("MemoryHardLimitMebibytes");
-
     m_memoryHardLimitMebibytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortConfiguration"))
   {
     m_portConfiguration = jsonValue.GetObject("PortConfiguration");
-
     m_portConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolvedImageDigest"))
   {
     m_resolvedImageDigest = jsonValue.GetString("ResolvedImageDigest");
-
     m_resolvedImageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vcpu"))
   {
     m_vcpu = jsonValue.GetDouble("Vcpu");
-
     m_vcpuHasBeenSet = true;
   }
-
   return *this;
 }
 

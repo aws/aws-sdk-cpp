@@ -29,7 +29,7 @@ namespace Model
   class ListDistributionsByWebACLId2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API ListDistributionsByWebACLId2020_05_31Request();
+    AWS_CLOUDFRONT_API ListDistributionsByWebACLId2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
      * response. (For the first request, omit <code>Marker</code>.)</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListDistributionsByWebACLId2020_05_31Request& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The maximum number of distributions that you want CloudFront to return in the
      * response body. The maximum and default values are both 100.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListDistributionsByWebACLId2020_05_31Request& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p>For WAF Classic, this is the ID of the web ACL, such as
      * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
-    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+    inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-    inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-    inline ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    template<typename WebACLIdT = Aws::String>
+    void SetWebACLId(WebACLIdT&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::forward<WebACLIdT>(value); }
+    template<typename WebACLIdT = Aws::String>
+    ListDistributionsByWebACLId2020_05_31Request& WithWebACLId(WebACLIdT&& value) { SetWebACLId(std::forward<WebACLIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class ChatEvent
   {
   public:
-    AWS_CONNECT_API ChatEvent();
+    AWS_CONNECT_API ChatEvent() = default;
     AWS_CONNECT_API ChatEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ChatEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>Type of chat integration event. </p>
      */
-    inline const ChatEventType& GetType() const{ return m_type; }
+    inline ChatEventType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChatEventType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChatEventType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ChatEvent& WithType(const ChatEventType& value) { SetType(value); return *this;}
-    inline ChatEvent& WithType(ChatEventType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChatEventType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ChatEvent& WithType(ChatEventType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline ChatEvent& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline ChatEvent& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline ChatEvent& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    ChatEvent& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,18 +86,16 @@ namespace Model
      * topic in the <i>Amazon Connect Participant Service API Reference</i>. </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline ChatEvent& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline ChatEvent& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline ChatEvent& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    ChatEvent& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 
-    ChatEventType m_type;
+    ChatEventType m_type{ChatEventType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_contentType;

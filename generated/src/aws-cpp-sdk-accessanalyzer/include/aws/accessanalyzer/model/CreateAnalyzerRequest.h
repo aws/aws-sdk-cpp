@@ -30,7 +30,7 @@ namespace Model
   class CreateAnalyzerRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API CreateAnalyzerRequest();
+    AWS_ACCESSANALYZER_API CreateAnalyzerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the analyzer to create.</p>
      */
-    inline const Aws::String& GetAnalyzerName() const{ return m_analyzerName; }
+    inline const Aws::String& GetAnalyzerName() const { return m_analyzerName; }
     inline bool AnalyzerNameHasBeenSet() const { return m_analyzerNameHasBeenSet; }
-    inline void SetAnalyzerName(const Aws::String& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = value; }
-    inline void SetAnalyzerName(Aws::String&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::move(value); }
-    inline void SetAnalyzerName(const char* value) { m_analyzerNameHasBeenSet = true; m_analyzerName.assign(value); }
-    inline CreateAnalyzerRequest& WithAnalyzerName(const Aws::String& value) { SetAnalyzerName(value); return *this;}
-    inline CreateAnalyzerRequest& WithAnalyzerName(Aws::String&& value) { SetAnalyzerName(std::move(value)); return *this;}
-    inline CreateAnalyzerRequest& WithAnalyzerName(const char* value) { SetAnalyzerName(value); return *this;}
+    template<typename AnalyzerNameT = Aws::String>
+    void SetAnalyzerName(AnalyzerNameT&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::forward<AnalyzerNameT>(value); }
+    template<typename AnalyzerNameT = Aws::String>
+    CreateAnalyzerRequest& WithAnalyzerName(AnalyzerNameT&& value) { SetAnalyzerName(std::forward<AnalyzerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * only one analyzer per account per Region. You can create up to 5 analyzers per
      * organization per Region.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateAnalyzerRequest& WithType(const Type& value) { SetType(value); return *this;}
-    inline CreateAnalyzerRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateAnalyzerRequest& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,14 @@ namespace Model
      * automatically archive findings that meet the criteria you define for the
      * rule.</p>
      */
-    inline const Aws::Vector<InlineArchiveRule>& GetArchiveRules() const{ return m_archiveRules; }
+    inline const Aws::Vector<InlineArchiveRule>& GetArchiveRules() const { return m_archiveRules; }
     inline bool ArchiveRulesHasBeenSet() const { return m_archiveRulesHasBeenSet; }
-    inline void SetArchiveRules(const Aws::Vector<InlineArchiveRule>& value) { m_archiveRulesHasBeenSet = true; m_archiveRules = value; }
-    inline void SetArchiveRules(Aws::Vector<InlineArchiveRule>&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules = std::move(value); }
-    inline CreateAnalyzerRequest& WithArchiveRules(const Aws::Vector<InlineArchiveRule>& value) { SetArchiveRules(value); return *this;}
-    inline CreateAnalyzerRequest& WithArchiveRules(Aws::Vector<InlineArchiveRule>&& value) { SetArchiveRules(std::move(value)); return *this;}
-    inline CreateAnalyzerRequest& AddArchiveRules(const InlineArchiveRule& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.push_back(value); return *this; }
-    inline CreateAnalyzerRequest& AddArchiveRules(InlineArchiveRule&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.push_back(std::move(value)); return *this; }
+    template<typename ArchiveRulesT = Aws::Vector<InlineArchiveRule>>
+    void SetArchiveRules(ArchiveRulesT&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules = std::forward<ArchiveRulesT>(value); }
+    template<typename ArchiveRulesT = Aws::Vector<InlineArchiveRule>>
+    CreateAnalyzerRequest& WithArchiveRules(ArchiveRulesT&& value) { SetArchiveRules(std::forward<ArchiveRulesT>(value)); return *this;}
+    template<typename ArchiveRulesT = InlineArchiveRule>
+    CreateAnalyzerRequest& AddArchiveRules(ArchiveRulesT&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.emplace_back(std::forward<ArchiveRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,33 +92,28 @@ namespace Model
      * cannot be prefixed with <code>aws:</code>.</p> <p>For the tag value, you can
      * specify a value that is 0 to 256 characters in length.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAnalyzerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAnalyzerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAnalyzerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAnalyzerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAnalyzerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAnalyzerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAnalyzerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAnalyzerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAnalyzerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAnalyzerRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAnalyzerRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A client token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAnalyzerRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAnalyzerRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAnalyzerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAnalyzerRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,19 +122,19 @@ namespace Model
      * access analyzer, the specified scope of unused access is used for the
      * configuration.</p>
      */
-    inline const AnalyzerConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AnalyzerConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AnalyzerConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AnalyzerConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline CreateAnalyzerRequest& WithConfiguration(const AnalyzerConfiguration& value) { SetConfiguration(value); return *this;}
-    inline CreateAnalyzerRequest& WithConfiguration(AnalyzerConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AnalyzerConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AnalyzerConfiguration>
+    CreateAnalyzerRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_analyzerName;
     bool m_analyzerNameHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<InlineArchiveRule> m_archiveRules;

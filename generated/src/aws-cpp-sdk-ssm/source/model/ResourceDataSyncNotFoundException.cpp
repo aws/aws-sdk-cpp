@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncNotFoundException::ResourceDataSyncNotFoundException() : 
-    m_syncNameHasBeenSet(false),
-    m_syncTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourceDataSyncNotFoundException::ResourceDataSyncNotFoundException(JsonView jsonValue)
-  : ResourceDataSyncNotFoundException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourceDataSyncNotFoundException& ResourceDataSyncNotFoundException::operator =
   if(jsonValue.ValueExists("SyncName"))
   {
     m_syncName = jsonValue.GetString("SyncName");
-
     m_syncNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncType"))
   {
     m_syncType = jsonValue.GetString("SyncType");
-
     m_syncTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

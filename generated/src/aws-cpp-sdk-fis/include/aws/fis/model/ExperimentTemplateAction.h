@@ -33,7 +33,7 @@ namespace Model
   class ExperimentTemplateAction
   {
   public:
-    AWS_FIS_API ExperimentTemplateAction();
+    AWS_FIS_API ExperimentTemplateAction() = default;
     AWS_FIS_API ExperimentTemplateAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ExperimentTemplateAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,66 +43,56 @@ namespace Model
     /**
      * <p>The ID of the action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
+    inline const Aws::String& GetActionId() const { return m_actionId; }
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-    inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-    inline ExperimentTemplateAction& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline ExperimentTemplateAction& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline ExperimentTemplateAction& WithActionId(const char* value) { SetActionId(value); return *this;}
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    ExperimentTemplateAction& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the action.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ExperimentTemplateAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ExperimentTemplateAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ExperimentTemplateAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ExperimentTemplateAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for the action.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ExperimentTemplateAction& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline ExperimentTemplateAction& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ExperimentTemplateAction& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline ExperimentTemplateAction& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateAction& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateAction& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    ExperimentTemplateAction& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    ExperimentTemplateAction& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The targets for the action.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTargets() const{ return m_targets; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Map<Aws::String, Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Map<Aws::String, Aws::String>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline ExperimentTemplateAction& WithTargets(const Aws::Map<Aws::String, Aws::String>& value) { SetTargets(value); return *this;}
-    inline ExperimentTemplateAction& WithTargets(Aws::Map<Aws::String, Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-    inline ExperimentTemplateAction& AddTargets(const Aws::String& key, const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this; }
-    inline ExperimentTemplateAction& AddTargets(Aws::String&& key, const Aws::String& value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateAction& AddTargets(const Aws::String& key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddTargets(Aws::String&& key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddTargets(const char* key, Aws::String&& value) { m_targetsHasBeenSet = true; m_targets.emplace(key, std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddTargets(Aws::String&& key, const char* value) { m_targetsHasBeenSet = true; m_targets.emplace(std::move(key), value); return *this; }
-    inline ExperimentTemplateAction& AddTargets(const char* key, const char* value) { m_targetsHasBeenSet = true; m_targets.emplace(key, value); return *this; }
+    template<typename TargetsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Map<Aws::String, Aws::String>>
+    ExperimentTemplateAction& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsKeyT = Aws::String, typename TargetsValueT = Aws::String>
+    ExperimentTemplateAction& AddTargets(TargetsKeyT&& key, TargetsValueT&& value) {
+      m_targetsHasBeenSet = true; m_targets.emplace(std::forward<TargetsKeyT>(key), std::forward<TargetsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -110,15 +100,14 @@ namespace Model
      * <p>The name of the action that must be completed before the current action
      * starts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStartAfter() const{ return m_startAfter; }
+    inline const Aws::Vector<Aws::String>& GetStartAfter() const { return m_startAfter; }
     inline bool StartAfterHasBeenSet() const { return m_startAfterHasBeenSet; }
-    inline void SetStartAfter(const Aws::Vector<Aws::String>& value) { m_startAfterHasBeenSet = true; m_startAfter = value; }
-    inline void SetStartAfter(Aws::Vector<Aws::String>&& value) { m_startAfterHasBeenSet = true; m_startAfter = std::move(value); }
-    inline ExperimentTemplateAction& WithStartAfter(const Aws::Vector<Aws::String>& value) { SetStartAfter(value); return *this;}
-    inline ExperimentTemplateAction& WithStartAfter(Aws::Vector<Aws::String>&& value) { SetStartAfter(std::move(value)); return *this;}
-    inline ExperimentTemplateAction& AddStartAfter(const Aws::String& value) { m_startAfterHasBeenSet = true; m_startAfter.push_back(value); return *this; }
-    inline ExperimentTemplateAction& AddStartAfter(Aws::String&& value) { m_startAfterHasBeenSet = true; m_startAfter.push_back(std::move(value)); return *this; }
-    inline ExperimentTemplateAction& AddStartAfter(const char* value) { m_startAfterHasBeenSet = true; m_startAfter.push_back(value); return *this; }
+    template<typename StartAfterT = Aws::Vector<Aws::String>>
+    void SetStartAfter(StartAfterT&& value) { m_startAfterHasBeenSet = true; m_startAfter = std::forward<StartAfterT>(value); }
+    template<typename StartAfterT = Aws::Vector<Aws::String>>
+    ExperimentTemplateAction& WithStartAfter(StartAfterT&& value) { SetStartAfter(std::forward<StartAfterT>(value)); return *this;}
+    template<typename StartAfterT = Aws::String>
+    ExperimentTemplateAction& AddStartAfter(StartAfterT&& value) { m_startAfterHasBeenSet = true; m_startAfter.emplace_back(std::forward<StartAfterT>(value)); return *this; }
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class DiscoverPollEndpointResult
   {
   public:
-    AWS_ECS_API DiscoverPollEndpointResult();
+    AWS_ECS_API DiscoverPollEndpointResult() = default;
     AWS_ECS_API DiscoverPollEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API DiscoverPollEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,22 @@ namespace Model
     /**
      * <p>The endpoint for the Amazon ECS agent to poll.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpoint.assign(value); }
-    inline DiscoverPollEndpointResult& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline DiscoverPollEndpointResult& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline DiscoverPollEndpointResult& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    DiscoverPollEndpointResult& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The telemetry endpoint for the Amazon ECS agent.</p>
      */
-    inline const Aws::String& GetTelemetryEndpoint() const{ return m_telemetryEndpoint; }
-    inline void SetTelemetryEndpoint(const Aws::String& value) { m_telemetryEndpoint = value; }
-    inline void SetTelemetryEndpoint(Aws::String&& value) { m_telemetryEndpoint = std::move(value); }
-    inline void SetTelemetryEndpoint(const char* value) { m_telemetryEndpoint.assign(value); }
-    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const Aws::String& value) { SetTelemetryEndpoint(value); return *this;}
-    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(Aws::String&& value) { SetTelemetryEndpoint(std::move(value)); return *this;}
-    inline DiscoverPollEndpointResult& WithTelemetryEndpoint(const char* value) { SetTelemetryEndpoint(value); return *this;}
+    inline const Aws::String& GetTelemetryEndpoint() const { return m_telemetryEndpoint; }
+    template<typename TelemetryEndpointT = Aws::String>
+    void SetTelemetryEndpoint(TelemetryEndpointT&& value) { m_telemetryEndpointHasBeenSet = true; m_telemetryEndpoint = std::forward<TelemetryEndpointT>(value); }
+    template<typename TelemetryEndpointT = Aws::String>
+    DiscoverPollEndpointResult& WithTelemetryEndpoint(TelemetryEndpointT&& value) { SetTelemetryEndpoint(std::forward<TelemetryEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,34 +61,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetServiceConnectEndpoint() const{ return m_serviceConnectEndpoint; }
-    inline void SetServiceConnectEndpoint(const Aws::String& value) { m_serviceConnectEndpoint = value; }
-    inline void SetServiceConnectEndpoint(Aws::String&& value) { m_serviceConnectEndpoint = std::move(value); }
-    inline void SetServiceConnectEndpoint(const char* value) { m_serviceConnectEndpoint.assign(value); }
-    inline DiscoverPollEndpointResult& WithServiceConnectEndpoint(const Aws::String& value) { SetServiceConnectEndpoint(value); return *this;}
-    inline DiscoverPollEndpointResult& WithServiceConnectEndpoint(Aws::String&& value) { SetServiceConnectEndpoint(std::move(value)); return *this;}
-    inline DiscoverPollEndpointResult& WithServiceConnectEndpoint(const char* value) { SetServiceConnectEndpoint(value); return *this;}
+    inline const Aws::String& GetServiceConnectEndpoint() const { return m_serviceConnectEndpoint; }
+    template<typename ServiceConnectEndpointT = Aws::String>
+    void SetServiceConnectEndpoint(ServiceConnectEndpointT&& value) { m_serviceConnectEndpointHasBeenSet = true; m_serviceConnectEndpoint = std::forward<ServiceConnectEndpointT>(value); }
+    template<typename ServiceConnectEndpointT = Aws::String>
+    DiscoverPollEndpointResult& WithServiceConnectEndpoint(ServiceConnectEndpointT&& value) { SetServiceConnectEndpoint(std::forward<ServiceConnectEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DiscoverPollEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DiscoverPollEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DiscoverPollEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DiscoverPollEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpoint;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_telemetryEndpoint;
+    bool m_telemetryEndpointHasBeenSet = false;
 
     Aws::String m_serviceConnectEndpoint;
+    bool m_serviceConnectEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

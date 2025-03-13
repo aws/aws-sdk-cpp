@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessSseSpecificationResponse::VerifiedAccessSseSpecificationResponse() : 
-    m_customerManagedKeyEnabled(false),
-    m_customerManagedKeyEnabledHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 VerifiedAccessSseSpecificationResponse::VerifiedAccessSseSpecificationResponse(const XmlNode& xmlNode)
-  : VerifiedAccessSseSpecificationResponse()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ VerifiedAccessSseSpecificationResponse& VerifiedAccessSseSpecificationResponse::
     {
       m_customerManagedKeyEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerManagedKeyEnabledNode.GetText()).c_str()).c_str());
       m_customerManagedKeyEnabledHasBeenSet = true;
+       m_customerManagedKeyEnabledHasBeenSet = true;
     }
     XmlNode kmsKeyArnNode = resultNode.FirstChild("kmsKeyArn");
     if(!kmsKeyArnNode.IsNull())
     {
       m_kmsKeyArn = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyArnNode.GetText());
       m_kmsKeyArnHasBeenSet = true;
+       m_kmsKeyArnHasBeenSet = true;
     }
   }
 

@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-SingularMetadata::SingularMetadata()
-{
-}
-
 SingularMetadata::SingularMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

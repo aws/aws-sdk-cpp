@@ -31,7 +31,7 @@ namespace Model
   class WorkloadDataSummary
   {
   public:
-    AWS_LAUNCHWIZARD_API WorkloadDataSummary();
+    AWS_LAUNCHWIZARD_API WorkloadDataSummary() = default;
     AWS_LAUNCHWIZARD_API WorkloadDataSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API WorkloadDataSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The display name of the workload data.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline WorkloadDataSummary& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline WorkloadDataSummary& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline WorkloadDataSummary& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    WorkloadDataSummary& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workload.</p>
      */
-    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+    inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-    inline WorkloadDataSummary& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-    inline WorkloadDataSummary& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-    inline WorkloadDataSummary& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    template<typename WorkloadNameT = Aws::String>
+    void SetWorkloadName(WorkloadNameT&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::forward<WorkloadNameT>(value); }
+    template<typename WorkloadNameT = Aws::String>
+    WorkloadDataSummary& WithWorkloadName(WorkloadNameT&& value) { SetWorkloadName(std::forward<WorkloadNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-ReplaceableItem::ReplaceableItem() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 ReplaceableItem::ReplaceableItem(const XmlNode& xmlNode)
-  : ReplaceableItem()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ReplaceableItem& ReplaceableItem::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attribute");
     if(!attributesNode.IsNull())
     {
       XmlNode attributeMember = attributesNode;
+      m_attributesHasBeenSet = !attributeMember.IsNull();
       while(!attributeMember.IsNull())
       {
         m_attributes.push_back(attributeMember);
         attributeMember = attributeMember.NextNode("Attribute");
       }
 
-      m_attributesHasBeenSet = true;
+       m_attributesHasBeenSet = true;
     }
   }
 

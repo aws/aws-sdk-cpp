@@ -37,7 +37,7 @@ namespace Model
   class ModelArtifacts
   {
   public:
-    AWS_SAGEMAKER_API ModelArtifacts();
+    AWS_SAGEMAKER_API ModelArtifacts() = default;
     AWS_SAGEMAKER_API ModelArtifacts(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>The path of the S3 object that contains the model artifacts. For example,
      * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
      */
-    inline const Aws::String& GetS3ModelArtifacts() const{ return m_s3ModelArtifacts; }
+    inline const Aws::String& GetS3ModelArtifacts() const { return m_s3ModelArtifacts; }
     inline bool S3ModelArtifactsHasBeenSet() const { return m_s3ModelArtifactsHasBeenSet; }
-    inline void SetS3ModelArtifacts(const Aws::String& value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts = value; }
-    inline void SetS3ModelArtifacts(Aws::String&& value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts = std::move(value); }
-    inline void SetS3ModelArtifacts(const char* value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts.assign(value); }
-    inline ModelArtifacts& WithS3ModelArtifacts(const Aws::String& value) { SetS3ModelArtifacts(value); return *this;}
-    inline ModelArtifacts& WithS3ModelArtifacts(Aws::String&& value) { SetS3ModelArtifacts(std::move(value)); return *this;}
-    inline ModelArtifacts& WithS3ModelArtifacts(const char* value) { SetS3ModelArtifacts(value); return *this;}
+    template<typename S3ModelArtifactsT = Aws::String>
+    void SetS3ModelArtifacts(S3ModelArtifactsT&& value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts = std::forward<S3ModelArtifactsT>(value); }
+    template<typename S3ModelArtifactsT = Aws::String>
+    ModelArtifacts& WithS3ModelArtifacts(S3ModelArtifactsT&& value) { SetS3ModelArtifacts(std::forward<S3ModelArtifactsT>(value)); return *this;}
     ///@}
   private:
 

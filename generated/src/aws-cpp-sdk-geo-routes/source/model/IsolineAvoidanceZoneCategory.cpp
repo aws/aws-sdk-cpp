@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineAvoidanceZoneCategory::IsolineAvoidanceZoneCategory() : 
-    m_category(IsolineZoneCategory::NOT_SET),
-    m_categoryHasBeenSet(false)
-{
-}
-
 IsolineAvoidanceZoneCategory::IsolineAvoidanceZoneCategory(JsonView jsonValue)
-  : IsolineAvoidanceZoneCategory()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ IsolineAvoidanceZoneCategory& IsolineAvoidanceZoneCategory::operator =(JsonView 
   if(jsonValue.ValueExists("Category"))
   {
     m_category = IsolineZoneCategoryMapper::GetIsolineZoneCategoryForName(jsonValue.GetString("Category"));
-
     m_categoryHasBeenSet = true;
   }
-
   return *this;
 }
 

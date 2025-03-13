@@ -14,13 +14,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteUniqueIdRequest::BatchDeleteUniqueIdRequest() : 
-    m_inputSourceHasBeenSet(false),
-    m_uniqueIdsHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteUniqueIdRequest::SerializePayload() const
 {
   return {};

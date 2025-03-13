@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InferenceAcceleratorInfo::InferenceAcceleratorInfo() : 
-    m_acceleratorsHasBeenSet(false),
-    m_totalInferenceMemoryInMiB(0),
-    m_totalInferenceMemoryInMiBHasBeenSet(false)
-{
-}
-
 InferenceAcceleratorInfo::InferenceAcceleratorInfo(const XmlNode& xmlNode)
-  : InferenceAcceleratorInfo()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ InferenceAcceleratorInfo& InferenceAcceleratorInfo::operator =(const XmlNode& xm
     if(!acceleratorsNode.IsNull())
     {
       XmlNode acceleratorsMember = acceleratorsNode.FirstChild("member");
+      m_acceleratorsHasBeenSet = !acceleratorsMember.IsNull();
       while(!acceleratorsMember.IsNull())
       {
         m_accelerators.push_back(acceleratorsMember);
         acceleratorsMember = acceleratorsMember.NextNode("member");
       }
 
-      m_acceleratorsHasBeenSet = true;
+       m_acceleratorsHasBeenSet = true;
     }
     XmlNode totalInferenceMemoryInMiBNode = resultNode.FirstChild("totalInferenceMemoryInMiB");
     if(!totalInferenceMemoryInMiBNode.IsNull())
     {
       m_totalInferenceMemoryInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalInferenceMemoryInMiBNode.GetText()).c_str()).c_str());
       m_totalInferenceMemoryInMiBHasBeenSet = true;
+       m_totalInferenceMemoryInMiBHasBeenSet = true;
     }
   }
 

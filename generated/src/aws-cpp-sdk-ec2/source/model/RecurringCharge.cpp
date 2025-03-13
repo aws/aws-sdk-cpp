@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RecurringCharge::RecurringCharge() : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_frequency(RecurringChargeFrequency::NOT_SET),
-    m_frequencyHasBeenSet(false)
-{
-}
-
 RecurringCharge::RecurringCharge(const XmlNode& xmlNode)
-  : RecurringCharge()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ RecurringCharge& RecurringCharge::operator =(const XmlNode& xmlNode)
     {
       m_amount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amountNode.GetText()).c_str()).c_str());
       m_amountHasBeenSet = true;
+       m_amountHasBeenSet = true;
     }
     XmlNode frequencyNode = resultNode.FirstChild("frequency");
     if(!frequencyNode.IsNull())
     {
-      m_frequency = RecurringChargeFrequencyMapper::GetRecurringChargeFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frequencyNode.GetText()).c_str()).c_str());
+      m_frequency = RecurringChargeFrequencyMapper::GetRecurringChargeFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(frequencyNode.GetText()).c_str()));
       m_frequencyHasBeenSet = true;
+       m_frequencyHasBeenSet = true;
     }
   }
 

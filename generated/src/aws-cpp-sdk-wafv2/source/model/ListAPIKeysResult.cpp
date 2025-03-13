@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAPIKeysResult::ListAPIKeysResult()
-{
-}
-
 ListAPIKeysResult::ListAPIKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAPIKeysResult& ListAPIKeysResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("APIKeySummaries"))
   {
     Aws::Utils::Array<JsonView> aPIKeySummariesJsonList = jsonValue.GetArray("APIKeySummaries");
@@ -42,20 +37,20 @@ ListAPIKeysResult& ListAPIKeysResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_aPIKeySummaries.push_back(aPIKeySummariesJsonList[aPIKeySummariesIndex].AsObject());
     }
+    m_aPIKeySummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationIntegrationURL"))
   {
     m_applicationIntegrationURL = jsonValue.GetString("ApplicationIntegrationURL");
-
+    m_applicationIntegrationURLHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribePromptRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DescribePromptRequest();
+    AWS_CONNECT_API DescribePromptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribePromptRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribePromptRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribePromptRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribePromptRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the prompt.</p>
      */
-    inline const Aws::String& GetPromptId() const{ return m_promptId; }
+    inline const Aws::String& GetPromptId() const { return m_promptId; }
     inline bool PromptIdHasBeenSet() const { return m_promptIdHasBeenSet; }
-    inline void SetPromptId(const Aws::String& value) { m_promptIdHasBeenSet = true; m_promptId = value; }
-    inline void SetPromptId(Aws::String&& value) { m_promptIdHasBeenSet = true; m_promptId = std::move(value); }
-    inline void SetPromptId(const char* value) { m_promptIdHasBeenSet = true; m_promptId.assign(value); }
-    inline DescribePromptRequest& WithPromptId(const Aws::String& value) { SetPromptId(value); return *this;}
-    inline DescribePromptRequest& WithPromptId(Aws::String&& value) { SetPromptId(std::move(value)); return *this;}
-    inline DescribePromptRequest& WithPromptId(const char* value) { SetPromptId(value); return *this;}
+    template<typename PromptIdT = Aws::String>
+    void SetPromptId(PromptIdT&& value) { m_promptIdHasBeenSet = true; m_promptId = std::forward<PromptIdT>(value); }
+    template<typename PromptIdT = Aws::String>
+    DescribePromptRequest& WithPromptId(PromptIdT&& value) { SetPromptId(std::forward<PromptIdT>(value)); return *this;}
     ///@}
   private:
 

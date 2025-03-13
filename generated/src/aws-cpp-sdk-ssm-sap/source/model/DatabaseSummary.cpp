@@ -18,19 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-DatabaseSummary::DatabaseSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_componentIdHasBeenSet(false),
-    m_databaseIdHasBeenSet(false),
-    m_databaseType(DatabaseType::NOT_SET),
-    m_databaseTypeHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DatabaseSummary::DatabaseSummary(JsonView jsonValue)
-  : DatabaseSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DatabaseSummary& DatabaseSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentId"))
   {
     m_componentId = jsonValue.GetString("ComponentId");
-
     m_componentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseId"))
   {
     m_databaseId = jsonValue.GetString("DatabaseId");
-
     m_databaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseType"))
   {
     m_databaseType = DatabaseTypeMapper::GetDatabaseTypeForName(jsonValue.GetString("DatabaseType"));
-
     m_databaseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -81,7 +59,6 @@ DatabaseSummary& DatabaseSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

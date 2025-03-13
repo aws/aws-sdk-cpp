@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-SourceSecurityGroup::SourceSecurityGroup() : 
-    m_ownerAliasHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 SourceSecurityGroup::SourceSecurityGroup(const XmlNode& xmlNode)
-  : SourceSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SourceSecurityGroup& SourceSecurityGroup::operator =(const XmlNode& xmlNode)
     {
       m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
       m_ownerAliasHasBeenSet = true;
+       m_ownerAliasHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("GroupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
   }
 

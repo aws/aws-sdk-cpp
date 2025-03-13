@@ -18,25 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServicePipeline::ServicePipeline() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_deploymentStatusMessageHasBeenSet(false),
-    m_lastAttemptedDeploymentIdHasBeenSet(false),
-    m_lastDeploymentAttemptedAtHasBeenSet(false),
-    m_lastDeploymentSucceededAtHasBeenSet(false),
-    m_lastSucceededDeploymentIdHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 ServicePipeline::ServicePipeline(JsonView jsonValue)
-  : ServicePipeline()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ ServicePipeline& ServicePipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("deploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentStatusMessage"))
   {
     m_deploymentStatusMessage = jsonValue.GetString("deploymentStatusMessage");
-
     m_deploymentStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAttemptedDeploymentId"))
   {
     m_lastAttemptedDeploymentId = jsonValue.GetString("lastAttemptedDeploymentId");
-
     m_lastAttemptedDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastDeploymentAttemptedAt"))
   {
     m_lastDeploymentAttemptedAt = jsonValue.GetDouble("lastDeploymentAttemptedAt");
-
     m_lastDeploymentAttemptedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastDeploymentSucceededAt"))
   {
     m_lastDeploymentSucceededAt = jsonValue.GetDouble("lastDeploymentSucceededAt");
-
     m_lastDeploymentSucceededAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSucceededDeploymentId"))
   {
     m_lastSucceededDeploymentId = jsonValue.GetString("lastSucceededDeploymentId");
-
     m_lastSucceededDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spec"))
   {
     m_spec = jsonValue.GetString("spec");
-
     m_specHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateMajorVersion"))
   {
     m_templateMajorVersion = jsonValue.GetString("templateMajorVersion");
-
     m_templateMajorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateMinorVersion"))
   {
     m_templateMinorVersion = jsonValue.GetString("templateMinorVersion");
-
     m_templateMinorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

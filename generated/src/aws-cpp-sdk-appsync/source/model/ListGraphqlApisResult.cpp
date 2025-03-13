@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGraphqlApisResult::ListGraphqlApisResult()
-{
-}
-
 ListGraphqlApisResult::ListGraphqlApisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListGraphqlApisResult& ListGraphqlApisResult::operator =(const Aws::AmazonWebSer
     {
       m_graphqlApis.push_back(graphqlApisJsonList[graphqlApisIndex].AsObject());
     }
+    m_graphqlApisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

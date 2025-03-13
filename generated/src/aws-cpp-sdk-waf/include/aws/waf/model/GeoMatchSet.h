@@ -41,7 +41,7 @@ namespace Model
   class GeoMatchSet
   {
   public:
-    AWS_WAF_API GeoMatchSet();
+    AWS_WAF_API GeoMatchSet() = default;
     AWS_WAF_API GeoMatchSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API GeoMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * <a>DeleteGeoMatchSet</a>).</p> <p> <code>GeoMatchSetId</code> is returned by
      * <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.</p>
      */
-    inline const Aws::String& GetGeoMatchSetId() const{ return m_geoMatchSetId; }
+    inline const Aws::String& GetGeoMatchSetId() const { return m_geoMatchSetId; }
     inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
-    inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
-    inline void SetGeoMatchSetId(Aws::String&& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = std::move(value); }
-    inline void SetGeoMatchSetId(const char* value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId.assign(value); }
-    inline GeoMatchSet& WithGeoMatchSetId(const Aws::String& value) { SetGeoMatchSetId(value); return *this;}
-    inline GeoMatchSet& WithGeoMatchSetId(Aws::String&& value) { SetGeoMatchSetId(std::move(value)); return *this;}
-    inline GeoMatchSet& WithGeoMatchSetId(const char* value) { SetGeoMatchSetId(value); return *this;}
+    template<typename GeoMatchSetIdT = Aws::String>
+    void SetGeoMatchSetId(GeoMatchSetIdT&& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = std::forward<GeoMatchSetIdT>(value); }
+    template<typename GeoMatchSetIdT = Aws::String>
+    GeoMatchSet& WithGeoMatchSetId(GeoMatchSetIdT&& value) { SetGeoMatchSetId(std::forward<GeoMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change
      * the name of an <code>GeoMatchSet</code> after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GeoMatchSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GeoMatchSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GeoMatchSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GeoMatchSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,14 @@ namespace Model
      * <p>An array of <a>GeoMatchConstraint</a> objects, which contain the country that
      * you want AWS WAF to search for.</p>
      */
-    inline const Aws::Vector<GeoMatchConstraint>& GetGeoMatchConstraints() const{ return m_geoMatchConstraints; }
+    inline const Aws::Vector<GeoMatchConstraint>& GetGeoMatchConstraints() const { return m_geoMatchConstraints; }
     inline bool GeoMatchConstraintsHasBeenSet() const { return m_geoMatchConstraintsHasBeenSet; }
-    inline void SetGeoMatchConstraints(const Aws::Vector<GeoMatchConstraint>& value) { m_geoMatchConstraintsHasBeenSet = true; m_geoMatchConstraints = value; }
-    inline void SetGeoMatchConstraints(Aws::Vector<GeoMatchConstraint>&& value) { m_geoMatchConstraintsHasBeenSet = true; m_geoMatchConstraints = std::move(value); }
-    inline GeoMatchSet& WithGeoMatchConstraints(const Aws::Vector<GeoMatchConstraint>& value) { SetGeoMatchConstraints(value); return *this;}
-    inline GeoMatchSet& WithGeoMatchConstraints(Aws::Vector<GeoMatchConstraint>&& value) { SetGeoMatchConstraints(std::move(value)); return *this;}
-    inline GeoMatchSet& AddGeoMatchConstraints(const GeoMatchConstraint& value) { m_geoMatchConstraintsHasBeenSet = true; m_geoMatchConstraints.push_back(value); return *this; }
-    inline GeoMatchSet& AddGeoMatchConstraints(GeoMatchConstraint&& value) { m_geoMatchConstraintsHasBeenSet = true; m_geoMatchConstraints.push_back(std::move(value)); return *this; }
+    template<typename GeoMatchConstraintsT = Aws::Vector<GeoMatchConstraint>>
+    void SetGeoMatchConstraints(GeoMatchConstraintsT&& value) { m_geoMatchConstraintsHasBeenSet = true; m_geoMatchConstraints = std::forward<GeoMatchConstraintsT>(value); }
+    template<typename GeoMatchConstraintsT = Aws::Vector<GeoMatchConstraint>>
+    GeoMatchSet& WithGeoMatchConstraints(GeoMatchConstraintsT&& value) { SetGeoMatchConstraints(std::forward<GeoMatchConstraintsT>(value)); return *this;}
+    template<typename GeoMatchConstraintsT = GeoMatchConstraint>
+    GeoMatchSet& AddGeoMatchConstraints(GeoMatchConstraintsT&& value) { m_geoMatchConstraintsHasBeenSet = true; m_geoMatchConstraints.emplace_back(std::forward<GeoMatchConstraintsT>(value)); return *this; }
     ///@}
   private:
 

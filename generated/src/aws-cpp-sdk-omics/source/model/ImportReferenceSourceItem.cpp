@@ -18,20 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ImportReferenceSourceItem::ImportReferenceSourceItem() : 
-    m_sourceFileHasBeenSet(false),
-    m_status(ReferenceImportJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_referenceIdHasBeenSet(false)
-{
-}
-
 ImportReferenceSourceItem::ImportReferenceSourceItem(JsonView jsonValue)
-  : ImportReferenceSourceItem()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ImportReferenceSourceItem& ImportReferenceSourceItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("sourceFile"))
   {
     m_sourceFile = jsonValue.GetString("sourceFile");
-
     m_sourceFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReferenceImportJobItemStatusMapper::GetReferenceImportJobItemStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -82,14 +59,11 @@ ImportReferenceSourceItem& ImportReferenceSourceItem::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

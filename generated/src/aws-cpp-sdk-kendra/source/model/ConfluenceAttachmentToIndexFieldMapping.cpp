@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConfluenceAttachmentToIndexFieldMapping::ConfluenceAttachmentToIndexFieldMapping() : 
-    m_dataSourceFieldName(ConfluenceAttachmentFieldName::NOT_SET),
-    m_dataSourceFieldNameHasBeenSet(false),
-    m_dateFieldFormatHasBeenSet(false),
-    m_indexFieldNameHasBeenSet(false)
-{
-}
-
 ConfluenceAttachmentToIndexFieldMapping::ConfluenceAttachmentToIndexFieldMapping(JsonView jsonValue)
-  : ConfluenceAttachmentToIndexFieldMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConfluenceAttachmentToIndexFieldMapping& ConfluenceAttachmentToIndexFieldMapping
   if(jsonValue.ValueExists("DataSourceFieldName"))
   {
     m_dataSourceFieldName = ConfluenceAttachmentFieldNameMapper::GetConfluenceAttachmentFieldNameForName(jsonValue.GetString("DataSourceFieldName"));
-
     m_dataSourceFieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateFieldFormat"))
   {
     m_dateFieldFormat = jsonValue.GetString("DateFieldFormat");
-
     m_dateFieldFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexFieldName"))
   {
     m_indexFieldName = jsonValue.GetString("IndexFieldName");
-
     m_indexFieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

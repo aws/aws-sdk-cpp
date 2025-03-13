@@ -34,7 +34,7 @@ namespace Model
   class GetRetainedMessageResult
   {
   public:
-    AWS_IOTDATAPLANE_API GetRetainedMessageResult();
+    AWS_IOTDATAPLANE_API GetRetainedMessageResult() = default;
     AWS_IOTDATAPLANE_API GetRetainedMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTDATAPLANE_API GetRetainedMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,32 +43,30 @@ namespace Model
     /**
      * <p>The topic name to which the retained message was published.</p>
      */
-    inline const Aws::String& GetTopic() const{ return m_topic; }
-    inline void SetTopic(const Aws::String& value) { m_topic = value; }
-    inline void SetTopic(Aws::String&& value) { m_topic = std::move(value); }
-    inline void SetTopic(const char* value) { m_topic.assign(value); }
-    inline GetRetainedMessageResult& WithTopic(const Aws::String& value) { SetTopic(value); return *this;}
-    inline GetRetainedMessageResult& WithTopic(Aws::String&& value) { SetTopic(std::move(value)); return *this;}
-    inline GetRetainedMessageResult& WithTopic(const char* value) { SetTopic(value); return *this;}
+    inline const Aws::String& GetTopic() const { return m_topic; }
+    template<typename TopicT = Aws::String>
+    void SetTopic(TopicT&& value) { m_topicHasBeenSet = true; m_topic = std::forward<TopicT>(value); }
+    template<typename TopicT = Aws::String>
+    GetRetainedMessageResult& WithTopic(TopicT&& value) { SetTopic(std::forward<TopicT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Base64-encoded message payload of the retained message body.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
-    inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payload = value; }
-    inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payload = std::move(value); }
-    inline GetRetainedMessageResult& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
-    inline GetRetainedMessageResult& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetPayload() const { return m_payload; }
+    template<typename PayloadT = Aws::Utils::ByteBuffer>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Utils::ByteBuffer>
+    GetRetainedMessageResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quality of service (QoS) level used to publish the retained message.</p>
      */
-    inline int GetQos() const{ return m_qos; }
-    inline void SetQos(int value) { m_qos = value; }
+    inline int GetQos() const { return m_qos; }
+    inline void SetQos(int value) { m_qosHasBeenSet = true; m_qos = value; }
     inline GetRetainedMessageResult& WithQos(int value) { SetQos(value); return *this;}
     ///@}
 
@@ -77,8 +75,8 @@ namespace Model
      * <p>The Epoch date and time, in milliseconds, when the retained message was
      * stored by IoT.</p>
      */
-    inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
+    inline long long GetLastModifiedTime() const { return m_lastModifiedTime; }
+    inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
     inline GetRetainedMessageResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
     ///@}
 
@@ -90,36 +88,40 @@ namespace Model
      * represents two user properties. Note that it will be base64-encoded:</p> <p>
      * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetUserProperties() const{ return m_userProperties; }
-    inline void SetUserProperties(const Aws::Utils::ByteBuffer& value) { m_userProperties = value; }
-    inline void SetUserProperties(Aws::Utils::ByteBuffer&& value) { m_userProperties = std::move(value); }
-    inline GetRetainedMessageResult& WithUserProperties(const Aws::Utils::ByteBuffer& value) { SetUserProperties(value); return *this;}
-    inline GetRetainedMessageResult& WithUserProperties(Aws::Utils::ByteBuffer&& value) { SetUserProperties(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetUserProperties() const { return m_userProperties; }
+    template<typename UserPropertiesT = Aws::Utils::ByteBuffer>
+    void SetUserProperties(UserPropertiesT&& value) { m_userPropertiesHasBeenSet = true; m_userProperties = std::forward<UserPropertiesT>(value); }
+    template<typename UserPropertiesT = Aws::Utils::ByteBuffer>
+    GetRetainedMessageResult& WithUserProperties(UserPropertiesT&& value) { SetUserProperties(std::forward<UserPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRetainedMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRetainedMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRetainedMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRetainedMessageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_topic;
+    bool m_topicHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_payload;
+    Aws::Utils::ByteBuffer m_payload{};
+    bool m_payloadHasBeenSet = false;
 
-    int m_qos;
+    int m_qos{0};
+    bool m_qosHasBeenSet = false;
 
-    long long m_lastModifiedTime;
+    long long m_lastModifiedTime{0};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_userProperties;
+    Aws::Utils::ByteBuffer m_userProperties{};
+    bool m_userPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

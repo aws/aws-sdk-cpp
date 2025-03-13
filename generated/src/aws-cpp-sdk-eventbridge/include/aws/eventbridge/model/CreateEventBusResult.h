@@ -28,7 +28,7 @@ namespace Model
   class CreateEventBusResult
   {
   public:
-    AWS_EVENTBRIDGE_API CreateEventBusResult();
+    AWS_EVENTBRIDGE_API CreateEventBusResult() = default;
     AWS_EVENTBRIDGE_API CreateEventBusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EVENTBRIDGE_API CreateEventBusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The ARN of the new event bus.</p>
      */
-    inline const Aws::String& GetEventBusArn() const{ return m_eventBusArn; }
-    inline void SetEventBusArn(const Aws::String& value) { m_eventBusArn = value; }
-    inline void SetEventBusArn(Aws::String&& value) { m_eventBusArn = std::move(value); }
-    inline void SetEventBusArn(const char* value) { m_eventBusArn.assign(value); }
-    inline CreateEventBusResult& WithEventBusArn(const Aws::String& value) { SetEventBusArn(value); return *this;}
-    inline CreateEventBusResult& WithEventBusArn(Aws::String&& value) { SetEventBusArn(std::move(value)); return *this;}
-    inline CreateEventBusResult& WithEventBusArn(const char* value) { SetEventBusArn(value); return *this;}
+    inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
+    template<typename EventBusArnT = Aws::String>
+    void SetEventBusArn(EventBusArnT&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::forward<EventBusArnT>(value); }
+    template<typename EventBusArnT = Aws::String>
+    CreateEventBusResult& WithEventBusArn(EventBusArnT&& value) { SetEventBusArn(std::forward<EventBusArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event bus description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateEventBusResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateEventBusResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateEventBusResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateEventBusResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,45 +63,46 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-encryption.html">Data
      * encryption in EventBridge</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
-    inline CreateEventBusResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline CreateEventBusResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline CreateEventBusResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    CreateEventBusResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
-    inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfig = value; }
-    inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfig = std::move(value); }
-    inline CreateEventBusResult& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
-    inline CreateEventBusResult& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
+    inline const DeadLetterConfig& GetDeadLetterConfig() const { return m_deadLetterConfig; }
+    template<typename DeadLetterConfigT = DeadLetterConfig>
+    void SetDeadLetterConfig(DeadLetterConfigT&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::forward<DeadLetterConfigT>(value); }
+    template<typename DeadLetterConfigT = DeadLetterConfig>
+    CreateEventBusResult& WithDeadLetterConfig(DeadLetterConfigT&& value) { SetDeadLetterConfig(std::forward<DeadLetterConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEventBusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEventBusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEventBusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEventBusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventBusArn;
+    bool m_eventBusArnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
 
     DeadLetterConfig m_deadLetterConfig;
+    bool m_deadLetterConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

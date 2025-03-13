@@ -18,24 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Session::Session() : 
-    m_sessionIdHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_status(SessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_outputUrlHasBeenSet(false),
-    m_maxSessionDurationHasBeenSet(false)
-{
-}
-
 Session::Session(JsonView jsonValue)
-  : Session()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ Session& Session::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetDouble("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDate"))
   {
     m_endDate = jsonValue.GetDouble("EndDate");
-
     m_endDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetString("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputUrl"))
   {
     m_outputUrl = jsonValue.GetObject("OutputUrl");
-
     m_outputUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSessionDuration"))
   {
     m_maxSessionDuration = jsonValue.GetString("MaxSessionDuration");
-
     m_maxSessionDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

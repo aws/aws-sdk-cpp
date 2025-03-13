@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFindingAggregatorRequest::GetFindingAggregatorRequest() : 
-    m_findingAggregatorArnHasBeenSet(false)
-{
-}
-
 Aws::String GetFindingAggregatorRequest::SerializePayload() const
 {
   return {};

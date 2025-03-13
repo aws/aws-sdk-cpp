@@ -31,7 +31,7 @@ namespace Model
   class SnoozeAlarmActionRequest
   {
   public:
-    AWS_IOTEVENTSDATA_API SnoozeAlarmActionRequest();
+    AWS_IOTEVENTSDATA_API SnoozeAlarmActionRequest() = default;
     AWS_IOTEVENTSDATA_API SnoozeAlarmActionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API SnoozeAlarmActionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The request ID. Each ID must be unique within each batch.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline SnoozeAlarmActionRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SnoozeAlarmActionRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SnoozeAlarmActionRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SnoozeAlarmActionRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
+    inline const Aws::String& GetAlarmModelName() const { return m_alarmModelName; }
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-    inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-    inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-    inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-    inline SnoozeAlarmActionRequest& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-    inline SnoozeAlarmActionRequest& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-    inline SnoozeAlarmActionRequest& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    template<typename AlarmModelNameT = Aws::String>
+    void SetAlarmModelName(AlarmModelNameT&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::forward<AlarmModelNameT>(value); }
+    template<typename AlarmModelNameT = Aws::String>
+    SnoozeAlarmActionRequest& WithAlarmModelName(AlarmModelNameT&& value) { SetAlarmModelName(std::forward<AlarmModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * with the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
      */
-    inline const Aws::String& GetKeyValue() const{ return m_keyValue; }
+    inline const Aws::String& GetKeyValue() const { return m_keyValue; }
     inline bool KeyValueHasBeenSet() const { return m_keyValueHasBeenSet; }
-    inline void SetKeyValue(const Aws::String& value) { m_keyValueHasBeenSet = true; m_keyValue = value; }
-    inline void SetKeyValue(Aws::String&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::move(value); }
-    inline void SetKeyValue(const char* value) { m_keyValueHasBeenSet = true; m_keyValue.assign(value); }
-    inline SnoozeAlarmActionRequest& WithKeyValue(const Aws::String& value) { SetKeyValue(value); return *this;}
-    inline SnoozeAlarmActionRequest& WithKeyValue(Aws::String&& value) { SetKeyValue(std::move(value)); return *this;}
-    inline SnoozeAlarmActionRequest& WithKeyValue(const char* value) { SetKeyValue(value); return *this;}
+    template<typename KeyValueT = Aws::String>
+    void SetKeyValue(KeyValueT&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::forward<KeyValueT>(value); }
+    template<typename KeyValueT = Aws::String>
+    SnoozeAlarmActionRequest& WithKeyValue(KeyValueT&& value) { SetKeyValue(std::forward<KeyValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The note that you can leave when you snooze the alarm.</p>
      */
-    inline const Aws::String& GetNote() const{ return m_note; }
+    inline const Aws::String& GetNote() const { return m_note; }
     inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
-    inline void SetNote(const Aws::String& value) { m_noteHasBeenSet = true; m_note = value; }
-    inline void SetNote(Aws::String&& value) { m_noteHasBeenSet = true; m_note = std::move(value); }
-    inline void SetNote(const char* value) { m_noteHasBeenSet = true; m_note.assign(value); }
-    inline SnoozeAlarmActionRequest& WithNote(const Aws::String& value) { SetNote(value); return *this;}
-    inline SnoozeAlarmActionRequest& WithNote(Aws::String&& value) { SetNote(std::move(value)); return *this;}
-    inline SnoozeAlarmActionRequest& WithNote(const char* value) { SetNote(value); return *this;}
+    template<typename NoteT = Aws::String>
+    void SetNote(NoteT&& value) { m_noteHasBeenSet = true; m_note = std::forward<NoteT>(value); }
+    template<typename NoteT = Aws::String>
+    SnoozeAlarmActionRequest& WithNote(NoteT&& value) { SetNote(std::forward<NoteT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +92,7 @@ namespace Model
      * <p>The snooze time in seconds. The alarm automatically changes to the
      * <code>NORMAL</code> state after this duration.</p>
      */
-    inline int GetSnoozeDuration() const{ return m_snoozeDuration; }
+    inline int GetSnoozeDuration() const { return m_snoozeDuration; }
     inline bool SnoozeDurationHasBeenSet() const { return m_snoozeDurationHasBeenSet; }
     inline void SetSnoozeDuration(int value) { m_snoozeDurationHasBeenSet = true; m_snoozeDuration = value; }
     inline SnoozeAlarmActionRequest& WithSnoozeDuration(int value) { SetSnoozeDuration(value); return *this;}
@@ -119,7 +111,7 @@ namespace Model
     Aws::String m_note;
     bool m_noteHasBeenSet = false;
 
-    int m_snoozeDuration;
+    int m_snoozeDuration{0};
     bool m_snoozeDurationHasBeenSet = false;
   };
 

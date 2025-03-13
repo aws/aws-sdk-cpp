@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ScannedResourceIdentifier::ScannedResourceIdentifier() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 ScannedResourceIdentifier::ScannedResourceIdentifier(const XmlNode& xmlNode)
-  : ScannedResourceIdentifier()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ScannedResourceIdentifier& ScannedResourceIdentifier::operator =(const XmlNode& 
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceIdentifierNode = resultNode.FirstChild("ResourceIdentifier");
 
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");
@@ -58,7 +53,7 @@ ScannedResourceIdentifier& ScannedResourceIdentifier::operator =(const XmlNode& 
         resourceIdentifierEntry = resourceIdentifierEntry.NextNode("entry");
       }
 
-      m_resourceIdentifierHasBeenSet = true;
+       m_resourceIdentifierHasBeenSet = true;
     }
   }
 

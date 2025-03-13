@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSearchSuggestionsResult::GetSearchSuggestionsResult()
-{
-}
-
 GetSearchSuggestionsResult::GetSearchSuggestionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetSearchSuggestionsResult& GetSearchSuggestionsResult::operator =(const Aws::Am
     {
       m_propertyNameSuggestions.push_back(propertyNameSuggestionsJsonList[propertyNameSuggestionsIndex].AsObject());
     }
+    m_propertyNameSuggestionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

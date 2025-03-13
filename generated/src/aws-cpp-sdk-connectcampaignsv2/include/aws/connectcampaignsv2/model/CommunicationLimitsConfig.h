@@ -31,7 +31,7 @@ namespace Model
   class CommunicationLimitsConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CommunicationLimitsConfig();
+    AWS_CONNECTCAMPAIGNSV2_API CommunicationLimitsConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API CommunicationLimitsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CommunicationLimitsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const CommunicationLimits& GetAllChannelSubtypes() const{ return m_allChannelSubtypes; }
+    inline const CommunicationLimits& GetAllChannelSubtypes() const { return m_allChannelSubtypes; }
     inline bool AllChannelSubtypesHasBeenSet() const { return m_allChannelSubtypesHasBeenSet; }
-    inline void SetAllChannelSubtypes(const CommunicationLimits& value) { m_allChannelSubtypesHasBeenSet = true; m_allChannelSubtypes = value; }
-    inline void SetAllChannelSubtypes(CommunicationLimits&& value) { m_allChannelSubtypesHasBeenSet = true; m_allChannelSubtypes = std::move(value); }
-    inline CommunicationLimitsConfig& WithAllChannelSubtypes(const CommunicationLimits& value) { SetAllChannelSubtypes(value); return *this;}
-    inline CommunicationLimitsConfig& WithAllChannelSubtypes(CommunicationLimits&& value) { SetAllChannelSubtypes(std::move(value)); return *this;}
+    template<typename AllChannelSubtypesT = CommunicationLimits>
+    void SetAllChannelSubtypes(AllChannelSubtypesT&& value) { m_allChannelSubtypesHasBeenSet = true; m_allChannelSubtypes = std::forward<AllChannelSubtypesT>(value); }
+    template<typename AllChannelSubtypesT = CommunicationLimits>
+    CommunicationLimitsConfig& WithAllChannelSubtypes(AllChannelSubtypesT&& value) { SetAllChannelSubtypes(std::forward<AllChannelSubtypesT>(value)); return *this;}
     ///@}
   private:
 

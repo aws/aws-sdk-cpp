@@ -12,11 +12,6 @@ using namespace Aws::NetworkMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMonitorRequest::DeleteMonitorRequest() : 
-    m_monitorNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMonitorRequest::SerializePayload() const
 {
   return {};

@@ -28,7 +28,7 @@ namespace Model
   class GetCatalogItemResult
   {
   public:
-    AWS_OUTPOSTS_API GetCatalogItemResult();
+    AWS_OUTPOSTS_API GetCatalogItemResult() = default;
     AWS_OUTPOSTS_API GetCatalogItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API GetCatalogItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about this catalog item.</p>
      */
-    inline const CatalogItem& GetCatalogItem() const{ return m_catalogItem; }
-    inline void SetCatalogItem(const CatalogItem& value) { m_catalogItem = value; }
-    inline void SetCatalogItem(CatalogItem&& value) { m_catalogItem = std::move(value); }
-    inline GetCatalogItemResult& WithCatalogItem(const CatalogItem& value) { SetCatalogItem(value); return *this;}
-    inline GetCatalogItemResult& WithCatalogItem(CatalogItem&& value) { SetCatalogItem(std::move(value)); return *this;}
+    inline const CatalogItem& GetCatalogItem() const { return m_catalogItem; }
+    template<typename CatalogItemT = CatalogItem>
+    void SetCatalogItem(CatalogItemT&& value) { m_catalogItemHasBeenSet = true; m_catalogItem = std::forward<CatalogItemT>(value); }
+    template<typename CatalogItemT = CatalogItem>
+    GetCatalogItemResult& WithCatalogItem(CatalogItemT&& value) { SetCatalogItem(std::forward<CatalogItemT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCatalogItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCatalogItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCatalogItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCatalogItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CatalogItem m_catalogItem;
+    bool m_catalogItemHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

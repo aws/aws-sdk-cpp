@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDatasetExportJobsRequest::ListDatasetExportJobsRequest() : 
-    m_datasetArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDatasetExportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

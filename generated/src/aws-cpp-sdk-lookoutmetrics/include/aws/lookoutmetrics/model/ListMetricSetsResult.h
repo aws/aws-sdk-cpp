@@ -29,7 +29,7 @@ namespace Model
   class ListMetricSetsResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API ListMetricSetsResult();
+    AWS_LOOKOUTMETRICS_API ListMetricSetsResult() = default;
     AWS_LOOKOUTMETRICS_API ListMetricSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API ListMetricSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of the datasets in the AWS Region, with configuration details for
      * each.</p>
      */
-    inline const Aws::Vector<MetricSetSummary>& GetMetricSetSummaryList() const{ return m_metricSetSummaryList; }
-    inline void SetMetricSetSummaryList(const Aws::Vector<MetricSetSummary>& value) { m_metricSetSummaryList = value; }
-    inline void SetMetricSetSummaryList(Aws::Vector<MetricSetSummary>&& value) { m_metricSetSummaryList = std::move(value); }
-    inline ListMetricSetsResult& WithMetricSetSummaryList(const Aws::Vector<MetricSetSummary>& value) { SetMetricSetSummaryList(value); return *this;}
-    inline ListMetricSetsResult& WithMetricSetSummaryList(Aws::Vector<MetricSetSummary>&& value) { SetMetricSetSummaryList(std::move(value)); return *this;}
-    inline ListMetricSetsResult& AddMetricSetSummaryList(const MetricSetSummary& value) { m_metricSetSummaryList.push_back(value); return *this; }
-    inline ListMetricSetsResult& AddMetricSetSummaryList(MetricSetSummary&& value) { m_metricSetSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricSetSummary>& GetMetricSetSummaryList() const { return m_metricSetSummaryList; }
+    template<typename MetricSetSummaryListT = Aws::Vector<MetricSetSummary>>
+    void SetMetricSetSummaryList(MetricSetSummaryListT&& value) { m_metricSetSummaryListHasBeenSet = true; m_metricSetSummaryList = std::forward<MetricSetSummaryListT>(value); }
+    template<typename MetricSetSummaryListT = Aws::Vector<MetricSetSummary>>
+    ListMetricSetsResult& WithMetricSetSummaryList(MetricSetSummaryListT&& value) { SetMetricSetSummaryList(std::forward<MetricSetSummaryListT>(value)); return *this;}
+    template<typename MetricSetSummaryListT = MetricSetSummary>
+    ListMetricSetsResult& AddMetricSetSummaryList(MetricSetSummaryListT&& value) { m_metricSetSummaryListHasBeenSet = true; m_metricSetSummaryList.emplace_back(std::forward<MetricSetSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, the list call returns this token. To retrieve
      * the next set of results, use the token in the next list request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMetricSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMetricSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMetricSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMetricSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMetricSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMetricSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMetricSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMetricSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MetricSetSummary> m_metricSetSummaryList;
+    bool m_metricSetSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

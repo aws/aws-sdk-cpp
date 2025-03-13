@@ -18,23 +18,7 @@ namespace IoTJobsDataPlane
 namespace Model
 {
 
-JobExecutionSummary::JobExecutionSummary() : 
-    m_jobIdHasBeenSet(false),
-    m_queuedAt(0),
-    m_queuedAtHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAt(0),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
-{
-}
-
 JobExecutionSummary::JobExecutionSummary(JsonView jsonValue)
-  : JobExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ JobExecutionSummary& JobExecutionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queuedAt"))
   {
     m_queuedAt = jsonValue.GetInt64("queuedAt");
-
     m_queuedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetInt64("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetInt64("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionNumber"))
   {
     m_executionNumber = jsonValue.GetInt64("executionNumber");
-
     m_executionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

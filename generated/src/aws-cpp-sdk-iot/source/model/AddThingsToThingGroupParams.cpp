@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AddThingsToThingGroupParams::AddThingsToThingGroupParams() : 
-    m_thingGroupNamesHasBeenSet(false),
-    m_overrideDynamicGroups(false),
-    m_overrideDynamicGroupsHasBeenSet(false)
-{
-}
-
 AddThingsToThingGroupParams::AddThingsToThingGroupParams(JsonView jsonValue)
-  : AddThingsToThingGroupParams()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AddThingsToThingGroupParams& AddThingsToThingGroupParams::operator =(JsonView js
     }
     m_thingGroupNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideDynamicGroups"))
   {
     m_overrideDynamicGroups = jsonValue.GetBool("overrideDynamicGroups");
-
     m_overrideDynamicGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

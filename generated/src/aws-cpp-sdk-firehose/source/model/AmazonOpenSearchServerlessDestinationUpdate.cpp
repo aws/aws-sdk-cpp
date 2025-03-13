@@ -18,20 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-AmazonOpenSearchServerlessDestinationUpdate::AmazonOpenSearchServerlessDestinationUpdate() : 
-    m_roleARNHasBeenSet(false),
-    m_collectionEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
-{
-}
-
 AmazonOpenSearchServerlessDestinationUpdate::AmazonOpenSearchServerlessDestinationUpdate(JsonView jsonValue)
-  : AmazonOpenSearchServerlessDestinationUpdate()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ AmazonOpenSearchServerlessDestinationUpdate& AmazonOpenSearchServerlessDestinati
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionEndpoint"))
   {
     m_collectionEndpoint = jsonValue.GetString("CollectionEndpoint");
-
     m_collectionEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferingHints"))
   {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
-
     m_bufferingHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryOptions"))
   {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
-
     m_retryOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Update"))
   {
     m_s3Update = jsonValue.GetObject("S3Update");
-
     m_s3UpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingConfiguration"))
   {
     m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
-
     m_processingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
-
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

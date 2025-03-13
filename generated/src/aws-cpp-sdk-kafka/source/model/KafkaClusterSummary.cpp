@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-KafkaClusterSummary::KafkaClusterSummary() : 
-    m_amazonMskClusterHasBeenSet(false),
-    m_kafkaClusterAliasHasBeenSet(false)
-{
-}
-
 KafkaClusterSummary::KafkaClusterSummary(JsonView jsonValue)
-  : KafkaClusterSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KafkaClusterSummary& KafkaClusterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amazonMskCluster"))
   {
     m_amazonMskCluster = jsonValue.GetObject("amazonMskCluster");
-
     m_amazonMskClusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kafkaClusterAlias"))
   {
     m_kafkaClusterAlias = jsonValue.GetString("kafkaClusterAlias");
-
     m_kafkaClusterAliasHasBeenSet = true;
   }
-
   return *this;
 }
 

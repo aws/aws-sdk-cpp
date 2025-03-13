@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-InvalidSequenceTokenException::InvalidSequenceTokenException() : 
-    m_expectedSequenceTokenHasBeenSet(false)
-{
-}
-
 InvalidSequenceTokenException::InvalidSequenceTokenException(JsonView jsonValue)
-  : InvalidSequenceTokenException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InvalidSequenceTokenException& InvalidSequenceTokenException::operator =(JsonVie
   if(jsonValue.ValueExists("expectedSequenceToken"))
   {
     m_expectedSequenceToken = jsonValue.GetString("expectedSequenceToken");
-
     m_expectedSequenceTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

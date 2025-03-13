@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDomainMaintenanceStatusRequest::GetDomainMaintenanceStatusRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_maintenanceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainMaintenanceStatusRequest::SerializePayload() const
 {
   return {};

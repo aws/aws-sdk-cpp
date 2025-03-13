@@ -12,13 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEntityTypeRequest::PutEntityTypeRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutEntityTypeRequest::SerializePayload() const
 {
   JsonValue payload;

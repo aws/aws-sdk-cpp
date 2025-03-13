@@ -32,7 +32,7 @@ namespace Model
   class Scte35InputScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API Scte35InputScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35InputScheduleActionSettings() = default;
     AWS_MEDIALIVE_API Scte35InputScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Scte35InputScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
      * In fixed mode, enter the name of the input attachment that you want to use as a
      * SCTE-35 input. (Don't enter the ID of the input.)"
      */
-    inline const Aws::String& GetInputAttachmentNameReference() const{ return m_inputAttachmentNameReference; }
+    inline const Aws::String& GetInputAttachmentNameReference() const { return m_inputAttachmentNameReference; }
     inline bool InputAttachmentNameReferenceHasBeenSet() const { return m_inputAttachmentNameReferenceHasBeenSet; }
-    inline void SetInputAttachmentNameReference(const Aws::String& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = value; }
-    inline void SetInputAttachmentNameReference(Aws::String&& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = std::move(value); }
-    inline void SetInputAttachmentNameReference(const char* value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference.assign(value); }
-    inline Scte35InputScheduleActionSettings& WithInputAttachmentNameReference(const Aws::String& value) { SetInputAttachmentNameReference(value); return *this;}
-    inline Scte35InputScheduleActionSettings& WithInputAttachmentNameReference(Aws::String&& value) { SetInputAttachmentNameReference(std::move(value)); return *this;}
-    inline Scte35InputScheduleActionSettings& WithInputAttachmentNameReference(const char* value) { SetInputAttachmentNameReference(value); return *this;}
+    template<typename InputAttachmentNameReferenceT = Aws::String>
+    void SetInputAttachmentNameReference(InputAttachmentNameReferenceT&& value) { m_inputAttachmentNameReferenceHasBeenSet = true; m_inputAttachmentNameReference = std::forward<InputAttachmentNameReferenceT>(value); }
+    template<typename InputAttachmentNameReferenceT = Aws::String>
+    Scte35InputScheduleActionSettings& WithInputAttachmentNameReference(InputAttachmentNameReferenceT&& value) { SetInputAttachmentNameReference(std::forward<InputAttachmentNameReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Whether the SCTE-35 input should be the active input or a fixed input.
      */
-    inline const Scte35InputMode& GetMode() const{ return m_mode; }
+    inline Scte35InputMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Scte35InputMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Scte35InputMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline Scte35InputScheduleActionSettings& WithMode(const Scte35InputMode& value) { SetMode(value); return *this;}
-    inline Scte35InputScheduleActionSettings& WithMode(Scte35InputMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(Scte35InputMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline Scte35InputScheduleActionSettings& WithMode(Scte35InputMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_inputAttachmentNameReference;
     bool m_inputAttachmentNameReferenceHasBeenSet = false;
 
-    Scte35InputMode m_mode;
+    Scte35InputMode m_mode{Scte35InputMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

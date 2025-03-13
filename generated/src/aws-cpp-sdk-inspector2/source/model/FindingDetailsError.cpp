@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FindingDetailsError::FindingDetailsError() : 
-    m_errorCode(FindingDetailsErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_findingArnHasBeenSet(false)
-{
-}
-
 FindingDetailsError::FindingDetailsError(JsonView jsonValue)
-  : FindingDetailsError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FindingDetailsError& FindingDetailsError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = FindingDetailsErrorCodeMapper::GetFindingDetailsErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingArn"))
   {
     m_findingArn = jsonValue.GetString("findingArn");
-
     m_findingArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ExportVerifiedAccessInstanceClientConfigurationRequest::ExportVerifiedAccessInstanceClientConfigurationRequest() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ExportVerifiedAccessInstanceClientConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class DescribeInferenceComponentResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeInferenceComponentResult();
+    AWS_SAGEMAKER_API DescribeInferenceComponentResult() = default;
     AWS_SAGEMAKER_API DescribeInferenceComponentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeInferenceComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,39 +41,33 @@ namespace Model
     /**
      * <p>The name of the inference component.</p>
      */
-    inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
-    inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentName = value; }
-    inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentName = std::move(value); }
-    inline void SetInferenceComponentName(const char* value) { m_inferenceComponentName.assign(value); }
-    inline DescribeInferenceComponentResult& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
-    inline DescribeInferenceComponentResult& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+    inline const Aws::String& GetInferenceComponentName() const { return m_inferenceComponentName; }
+    template<typename InferenceComponentNameT = Aws::String>
+    void SetInferenceComponentName(InferenceComponentNameT&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::forward<InferenceComponentNameT>(value); }
+    template<typename InferenceComponentNameT = Aws::String>
+    DescribeInferenceComponentResult& WithInferenceComponentName(InferenceComponentNameT&& value) { SetInferenceComponentName(std::forward<InferenceComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the inference component.</p>
      */
-    inline const Aws::String& GetInferenceComponentArn() const{ return m_inferenceComponentArn; }
-    inline void SetInferenceComponentArn(const Aws::String& value) { m_inferenceComponentArn = value; }
-    inline void SetInferenceComponentArn(Aws::String&& value) { m_inferenceComponentArn = std::move(value); }
-    inline void SetInferenceComponentArn(const char* value) { m_inferenceComponentArn.assign(value); }
-    inline DescribeInferenceComponentResult& WithInferenceComponentArn(const Aws::String& value) { SetInferenceComponentArn(value); return *this;}
-    inline DescribeInferenceComponentResult& WithInferenceComponentArn(Aws::String&& value) { SetInferenceComponentArn(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithInferenceComponentArn(const char* value) { SetInferenceComponentArn(value); return *this;}
+    inline const Aws::String& GetInferenceComponentArn() const { return m_inferenceComponentArn; }
+    template<typename InferenceComponentArnT = Aws::String>
+    void SetInferenceComponentArn(InferenceComponentArnT&& value) { m_inferenceComponentArnHasBeenSet = true; m_inferenceComponentArn = std::forward<InferenceComponentArnT>(value); }
+    template<typename InferenceComponentArnT = Aws::String>
+    DescribeInferenceComponentResult& WithInferenceComponentArn(InferenceComponentArnT&& value) { SetInferenceComponentArn(std::forward<InferenceComponentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the endpoint that hosts the inference component.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointName.assign(value); }
-    inline DescribeInferenceComponentResult& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline DescribeInferenceComponentResult& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    DescribeInferenceComponentResult& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,26 +75,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the endpoint that hosts the inference
      * component.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
-    inline DescribeInferenceComponentResult& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline DescribeInferenceComponentResult& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    DescribeInferenceComponentResult& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the production variant that hosts the inference component.</p>
      */
-    inline const Aws::String& GetVariantName() const{ return m_variantName; }
-    inline void SetVariantName(const Aws::String& value) { m_variantName = value; }
-    inline void SetVariantName(Aws::String&& value) { m_variantName = std::move(value); }
-    inline void SetVariantName(const char* value) { m_variantName.assign(value); }
-    inline DescribeInferenceComponentResult& WithVariantName(const Aws::String& value) { SetVariantName(value); return *this;}
-    inline DescribeInferenceComponentResult& WithVariantName(Aws::String&& value) { SetVariantName(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithVariantName(const char* value) { SetVariantName(value); return *this;}
+    inline const Aws::String& GetVariantName() const { return m_variantName; }
+    template<typename VariantNameT = Aws::String>
+    void SetVariantName(VariantNameT&& value) { m_variantNameHasBeenSet = true; m_variantName = std::forward<VariantNameT>(value); }
+    template<typename VariantNameT = Aws::String>
+    DescribeInferenceComponentResult& WithVariantName(VariantNameT&& value) { SetVariantName(std::forward<VariantNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,13 +98,11 @@ namespace Model
      * <p>If the inference component status is <code>Failed</code>, the reason for the
      * failure.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeInferenceComponentResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeInferenceComponentResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeInferenceComponentResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,11 +110,11 @@ namespace Model
      * <p>Details about the resources that are deployed with this inference
      * component.</p>
      */
-    inline const InferenceComponentSpecificationSummary& GetSpecification() const{ return m_specification; }
-    inline void SetSpecification(const InferenceComponentSpecificationSummary& value) { m_specification = value; }
-    inline void SetSpecification(InferenceComponentSpecificationSummary&& value) { m_specification = std::move(value); }
-    inline DescribeInferenceComponentResult& WithSpecification(const InferenceComponentSpecificationSummary& value) { SetSpecification(value); return *this;}
-    inline DescribeInferenceComponentResult& WithSpecification(InferenceComponentSpecificationSummary&& value) { SetSpecification(std::move(value)); return *this;}
+    inline const InferenceComponentSpecificationSummary& GetSpecification() const { return m_specification; }
+    template<typename SpecificationT = InferenceComponentSpecificationSummary>
+    void SetSpecification(SpecificationT&& value) { m_specificationHasBeenSet = true; m_specification = std::forward<SpecificationT>(value); }
+    template<typename SpecificationT = InferenceComponentSpecificationSummary>
+    DescribeInferenceComponentResult& WithSpecification(SpecificationT&& value) { SetSpecification(std::forward<SpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,44 +122,42 @@ namespace Model
      * <p>Details about the runtime settings for the model that is deployed with the
      * inference component.</p>
      */
-    inline const InferenceComponentRuntimeConfigSummary& GetRuntimeConfig() const{ return m_runtimeConfig; }
-    inline void SetRuntimeConfig(const InferenceComponentRuntimeConfigSummary& value) { m_runtimeConfig = value; }
-    inline void SetRuntimeConfig(InferenceComponentRuntimeConfigSummary&& value) { m_runtimeConfig = std::move(value); }
-    inline DescribeInferenceComponentResult& WithRuntimeConfig(const InferenceComponentRuntimeConfigSummary& value) { SetRuntimeConfig(value); return *this;}
-    inline DescribeInferenceComponentResult& WithRuntimeConfig(InferenceComponentRuntimeConfigSummary&& value) { SetRuntimeConfig(std::move(value)); return *this;}
+    inline const InferenceComponentRuntimeConfigSummary& GetRuntimeConfig() const { return m_runtimeConfig; }
+    template<typename RuntimeConfigT = InferenceComponentRuntimeConfigSummary>
+    void SetRuntimeConfig(RuntimeConfigT&& value) { m_runtimeConfigHasBeenSet = true; m_runtimeConfig = std::forward<RuntimeConfigT>(value); }
+    template<typename RuntimeConfigT = InferenceComponentRuntimeConfigSummary>
+    DescribeInferenceComponentResult& WithRuntimeConfig(RuntimeConfigT&& value) { SetRuntimeConfig(std::forward<RuntimeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the inference component was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeInferenceComponentResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeInferenceComponentResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeInferenceComponentResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the inference component was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeInferenceComponentResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeInferenceComponentResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeInferenceComponentResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the inference component.</p>
      */
-    inline const InferenceComponentStatus& GetInferenceComponentStatus() const{ return m_inferenceComponentStatus; }
-    inline void SetInferenceComponentStatus(const InferenceComponentStatus& value) { m_inferenceComponentStatus = value; }
-    inline void SetInferenceComponentStatus(InferenceComponentStatus&& value) { m_inferenceComponentStatus = std::move(value); }
-    inline DescribeInferenceComponentResult& WithInferenceComponentStatus(const InferenceComponentStatus& value) { SetInferenceComponentStatus(value); return *this;}
-    inline DescribeInferenceComponentResult& WithInferenceComponentStatus(InferenceComponentStatus&& value) { SetInferenceComponentStatus(std::move(value)); return *this;}
+    inline InferenceComponentStatus GetInferenceComponentStatus() const { return m_inferenceComponentStatus; }
+    inline void SetInferenceComponentStatus(InferenceComponentStatus value) { m_inferenceComponentStatusHasBeenSet = true; m_inferenceComponentStatus = value; }
+    inline DescribeInferenceComponentResult& WithInferenceComponentStatus(InferenceComponentStatus value) { SetInferenceComponentStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -179,50 +165,61 @@ namespace Model
      * <p>The deployment and rollback settings that you assigned to the inference
      * component.</p>
      */
-    inline const InferenceComponentDeploymentConfig& GetLastDeploymentConfig() const{ return m_lastDeploymentConfig; }
-    inline void SetLastDeploymentConfig(const InferenceComponentDeploymentConfig& value) { m_lastDeploymentConfig = value; }
-    inline void SetLastDeploymentConfig(InferenceComponentDeploymentConfig&& value) { m_lastDeploymentConfig = std::move(value); }
-    inline DescribeInferenceComponentResult& WithLastDeploymentConfig(const InferenceComponentDeploymentConfig& value) { SetLastDeploymentConfig(value); return *this;}
-    inline DescribeInferenceComponentResult& WithLastDeploymentConfig(InferenceComponentDeploymentConfig&& value) { SetLastDeploymentConfig(std::move(value)); return *this;}
+    inline const InferenceComponentDeploymentConfig& GetLastDeploymentConfig() const { return m_lastDeploymentConfig; }
+    template<typename LastDeploymentConfigT = InferenceComponentDeploymentConfig>
+    void SetLastDeploymentConfig(LastDeploymentConfigT&& value) { m_lastDeploymentConfigHasBeenSet = true; m_lastDeploymentConfig = std::forward<LastDeploymentConfigT>(value); }
+    template<typename LastDeploymentConfigT = InferenceComponentDeploymentConfig>
+    DescribeInferenceComponentResult& WithLastDeploymentConfig(LastDeploymentConfigT&& value) { SetLastDeploymentConfig(std::forward<LastDeploymentConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInferenceComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInferenceComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInferenceComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInferenceComponentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inferenceComponentName;
+    bool m_inferenceComponentNameHasBeenSet = false;
 
     Aws::String m_inferenceComponentArn;
+    bool m_inferenceComponentArnHasBeenSet = false;
 
     Aws::String m_endpointName;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_endpointArn;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_variantName;
+    bool m_variantNameHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     InferenceComponentSpecificationSummary m_specification;
+    bool m_specificationHasBeenSet = false;
 
     InferenceComponentRuntimeConfigSummary m_runtimeConfig;
+    bool m_runtimeConfigHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    InferenceComponentStatus m_inferenceComponentStatus;
+    InferenceComponentStatus m_inferenceComponentStatus{InferenceComponentStatus::NOT_SET};
+    bool m_inferenceComponentStatusHasBeenSet = false;
 
     InferenceComponentDeploymentConfig m_lastDeploymentConfig;
+    bool m_lastDeploymentConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

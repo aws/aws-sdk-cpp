@@ -18,13 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetKinesisStreamParameters::PipeTargetKinesisStreamParameters() : 
-    m_partitionKeyHasBeenSet(false)
-{
-}
-
 PipeTargetKinesisStreamParameters::PipeTargetKinesisStreamParameters(JsonView jsonValue)
-  : PipeTargetKinesisStreamParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PipeTargetKinesisStreamParameters& PipeTargetKinesisStreamParameters::operator =
   if(jsonValue.ValueExists("PartitionKey"))
   {
     m_partitionKey = jsonValue.GetString("PartitionKey");
-
     m_partitionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

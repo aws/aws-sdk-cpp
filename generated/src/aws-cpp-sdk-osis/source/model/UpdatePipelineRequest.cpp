@@ -12,19 +12,6 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePipelineRequest::UpdatePipelineRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_minUnits(0),
-    m_minUnitsHasBeenSet(false),
-    m_maxUnits(0),
-    m_maxUnitsHasBeenSet(false),
-    m_pipelineConfigurationBodyHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_bufferOptionsHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

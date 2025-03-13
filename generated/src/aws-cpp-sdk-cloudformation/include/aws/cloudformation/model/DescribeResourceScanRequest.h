@@ -21,7 +21,7 @@ namespace Model
   class DescribeResourceScanRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeResourceScanRequest();
+    AWS_CLOUDFORMATION_API DescribeResourceScanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
      */
-    inline const Aws::String& GetResourceScanId() const{ return m_resourceScanId; }
+    inline const Aws::String& GetResourceScanId() const { return m_resourceScanId; }
     inline bool ResourceScanIdHasBeenSet() const { return m_resourceScanIdHasBeenSet; }
-    inline void SetResourceScanId(const Aws::String& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = value; }
-    inline void SetResourceScanId(Aws::String&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::move(value); }
-    inline void SetResourceScanId(const char* value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId.assign(value); }
-    inline DescribeResourceScanRequest& WithResourceScanId(const Aws::String& value) { SetResourceScanId(value); return *this;}
-    inline DescribeResourceScanRequest& WithResourceScanId(Aws::String&& value) { SetResourceScanId(std::move(value)); return *this;}
-    inline DescribeResourceScanRequest& WithResourceScanId(const char* value) { SetResourceScanId(value); return *this;}
+    template<typename ResourceScanIdT = Aws::String>
+    void SetResourceScanId(ResourceScanIdT&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::forward<ResourceScanIdT>(value); }
+    template<typename ResourceScanIdT = Aws::String>
+    DescribeResourceScanRequest& WithResourceScanId(ResourceScanIdT&& value) { SetResourceScanId(std::forward<ResourceScanIdT>(value)); return *this;}
     ///@}
   private:
 

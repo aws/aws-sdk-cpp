@@ -12,21 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomDataIdentifierRequest::CreateCustomDataIdentifierRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_ignoreWordsHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_maximumMatchDistance(0),
-    m_maximumMatchDistanceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_severityLevelsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomDataIdentifierRequest::SerializePayload() const
 {
   JsonValue payload;

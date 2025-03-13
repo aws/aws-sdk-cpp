@@ -18,20 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-CsvFormatDescriptor::CsvFormatDescriptor() : 
-    m_fileCompression(CSVFileCompression::NOT_SET),
-    m_fileCompressionHasBeenSet(false),
-    m_charsetHasBeenSet(false),
-    m_containsHeader(false),
-    m_containsHeaderHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_headerListHasBeenSet(false),
-    m_quoteSymbolHasBeenSet(false)
-{
-}
-
 CsvFormatDescriptor::CsvFormatDescriptor(JsonView jsonValue)
-  : CsvFormatDescriptor()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ CsvFormatDescriptor& CsvFormatDescriptor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileCompression"))
   {
     m_fileCompression = CSVFileCompressionMapper::GetCSVFileCompressionForName(jsonValue.GetString("FileCompression"));
-
     m_fileCompressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Charset"))
   {
     m_charset = jsonValue.GetString("Charset");
-
     m_charsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainsHeader"))
   {
     m_containsHeader = jsonValue.GetBool("ContainsHeader");
-
     m_containsHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderList"))
   {
     Aws::Utils::Array<JsonView> headerListJsonList = jsonValue.GetArray("HeaderList");
@@ -75,14 +54,11 @@ CsvFormatDescriptor& CsvFormatDescriptor::operator =(JsonView jsonValue)
     }
     m_headerListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteSymbol"))
   {
     m_quoteSymbol = jsonValue.GetString("QuoteSymbol");
-
     m_quoteSymbolHasBeenSet = true;
   }
-
   return *this;
 }
 

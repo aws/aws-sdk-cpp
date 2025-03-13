@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceDefinition::ResourceDefinition() : 
-    m_resourceTypeHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 ResourceDefinition::ResourceDefinition(const XmlNode& xmlNode)
-  : ResourceDefinition()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ResourceDefinition& ResourceDefinition::operator =(const XmlNode& xmlNode)
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode resourceIdentifierNode = resultNode.FirstChild("ResourceIdentifier");
 
     if(!resourceIdentifierNode.IsNull())
     {
       XmlNode resourceIdentifierEntry = resourceIdentifierNode.FirstChild("entry");
+      m_resourceIdentifierHasBeenSet = !resourceIdentifierEntry.IsNull();
       while(!resourceIdentifierEntry.IsNull())
       {
         XmlNode keyNode = resourceIdentifierEntry.FirstChild("key");
@@ -65,7 +60,7 @@ ResourceDefinition& ResourceDefinition::operator =(const XmlNode& xmlNode)
         resourceIdentifierEntry = resourceIdentifierEntry.NextNode("entry");
       }
 
-      m_resourceIdentifierHasBeenSet = true;
+       m_resourceIdentifierHasBeenSet = true;
     }
   }
 

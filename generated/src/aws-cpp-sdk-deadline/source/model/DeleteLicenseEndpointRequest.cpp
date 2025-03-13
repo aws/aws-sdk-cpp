@@ -12,11 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLicenseEndpointRequest::DeleteLicenseEndpointRequest() : 
-    m_licenseEndpointIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLicenseEndpointRequest::SerializePayload() const
 {
   return {};

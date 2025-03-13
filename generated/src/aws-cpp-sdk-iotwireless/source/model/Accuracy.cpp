@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-Accuracy::Accuracy() : 
-    m_horizontalAccuracy(0.0),
-    m_horizontalAccuracyHasBeenSet(false),
-    m_verticalAccuracy(0.0),
-    m_verticalAccuracyHasBeenSet(false)
-{
-}
-
 Accuracy::Accuracy(JsonView jsonValue)
-  : Accuracy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Accuracy& Accuracy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HorizontalAccuracy"))
   {
     m_horizontalAccuracy = jsonValue.GetDouble("HorizontalAccuracy");
-
     m_horizontalAccuracyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerticalAccuracy"))
   {
     m_verticalAccuracy = jsonValue.GetDouble("VerticalAccuracy");
-
     m_verticalAccuracyHasBeenSet = true;
   }
-
   return *this;
 }
 

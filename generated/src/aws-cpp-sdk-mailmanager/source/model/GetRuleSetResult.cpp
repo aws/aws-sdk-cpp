@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRuleSetResult::GetRuleSetResult()
-{
-}
-
 GetRuleSetResult::GetRuleSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,28 @@ GetRuleSetResult& GetRuleSetResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
+    m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationDate"))
   {
     m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
-
+    m_lastModificationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetArn"))
   {
     m_ruleSetArn = jsonValue.GetString("RuleSetArn");
-
+    m_ruleSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetId"))
   {
     m_ruleSetId = jsonValue.GetString("RuleSetId");
-
+    m_ruleSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetName"))
   {
     m_ruleSetName = jsonValue.GetString("RuleSetName");
-
+    m_ruleSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -66,14 +57,15 @@ GetRuleSetResult& GetRuleSetResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
     }
+    m_rulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

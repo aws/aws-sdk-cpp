@@ -36,7 +36,7 @@ namespace Model
   class ListTrafficPolicyInstancesResult
   {
   public:
-    AWS_ROUTE53_API ListTrafficPolicyInstancesResult();
+    AWS_ROUTE53_API ListTrafficPolicyInstancesResult() = default;
     AWS_ROUTE53_API ListTrafficPolicyInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListTrafficPolicyInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,13 +46,13 @@ namespace Model
      * <p>A list that contains one <code>TrafficPolicyInstance</code> element for each
      * traffic policy instance that matches the elements in the request.</p>
      */
-    inline const Aws::Vector<TrafficPolicyInstance>& GetTrafficPolicyInstances() const{ return m_trafficPolicyInstances; }
-    inline void SetTrafficPolicyInstances(const Aws::Vector<TrafficPolicyInstance>& value) { m_trafficPolicyInstances = value; }
-    inline void SetTrafficPolicyInstances(Aws::Vector<TrafficPolicyInstance>&& value) { m_trafficPolicyInstances = std::move(value); }
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstances(const Aws::Vector<TrafficPolicyInstance>& value) { SetTrafficPolicyInstances(value); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstances(Aws::Vector<TrafficPolicyInstance>&& value) { SetTrafficPolicyInstances(std::move(value)); return *this;}
-    inline ListTrafficPolicyInstancesResult& AddTrafficPolicyInstances(const TrafficPolicyInstance& value) { m_trafficPolicyInstances.push_back(value); return *this; }
-    inline ListTrafficPolicyInstancesResult& AddTrafficPolicyInstances(TrafficPolicyInstance&& value) { m_trafficPolicyInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrafficPolicyInstance>& GetTrafficPolicyInstances() const { return m_trafficPolicyInstances; }
+    template<typename TrafficPolicyInstancesT = Aws::Vector<TrafficPolicyInstance>>
+    void SetTrafficPolicyInstances(TrafficPolicyInstancesT&& value) { m_trafficPolicyInstancesHasBeenSet = true; m_trafficPolicyInstances = std::forward<TrafficPolicyInstancesT>(value); }
+    template<typename TrafficPolicyInstancesT = Aws::Vector<TrafficPolicyInstance>>
+    ListTrafficPolicyInstancesResult& WithTrafficPolicyInstances(TrafficPolicyInstancesT&& value) { SetTrafficPolicyInstances(std::forward<TrafficPolicyInstancesT>(value)); return *this;}
+    template<typename TrafficPolicyInstancesT = TrafficPolicyInstance>
+    ListTrafficPolicyInstancesResult& AddTrafficPolicyInstances(TrafficPolicyInstancesT&& value) { m_trafficPolicyInstancesHasBeenSet = true; m_trafficPolicyInstances.emplace_back(std::forward<TrafficPolicyInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,13 +62,11 @@ namespace Model
      * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
-    inline const Aws::String& GetHostedZoneIdMarker() const{ return m_hostedZoneIdMarker; }
-    inline void SetHostedZoneIdMarker(const Aws::String& value) { m_hostedZoneIdMarker = value; }
-    inline void SetHostedZoneIdMarker(Aws::String&& value) { m_hostedZoneIdMarker = std::move(value); }
-    inline void SetHostedZoneIdMarker(const char* value) { m_hostedZoneIdMarker.assign(value); }
-    inline ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(const Aws::String& value) { SetHostedZoneIdMarker(value); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(Aws::String&& value) { SetHostedZoneIdMarker(std::move(value)); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
+    inline const Aws::String& GetHostedZoneIdMarker() const { return m_hostedZoneIdMarker; }
+    template<typename HostedZoneIdMarkerT = Aws::String>
+    void SetHostedZoneIdMarker(HostedZoneIdMarkerT&& value) { m_hostedZoneIdMarkerHasBeenSet = true; m_hostedZoneIdMarker = std::forward<HostedZoneIdMarkerT>(value); }
+    template<typename HostedZoneIdMarkerT = Aws::String>
+    ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(HostedZoneIdMarkerT&& value) { SetHostedZoneIdMarker(std::forward<HostedZoneIdMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,13 +76,11 @@ namespace Model
      * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
-    inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const{ return m_trafficPolicyInstanceNameMarker; }
-    inline void SetTrafficPolicyInstanceNameMarker(const Aws::String& value) { m_trafficPolicyInstanceNameMarker = value; }
-    inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarker = std::move(value); }
-    inline void SetTrafficPolicyInstanceNameMarker(const char* value) { m_trafficPolicyInstanceNameMarker.assign(value); }
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(const Aws::String& value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(std::move(value)); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
+    inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const { return m_trafficPolicyInstanceNameMarker; }
+    template<typename TrafficPolicyInstanceNameMarkerT = Aws::String>
+    void SetTrafficPolicyInstanceNameMarker(TrafficPolicyInstanceNameMarkerT&& value) { m_trafficPolicyInstanceNameMarkerHasBeenSet = true; m_trafficPolicyInstanceNameMarker = std::forward<TrafficPolicyInstanceNameMarkerT>(value); }
+    template<typename TrafficPolicyInstanceNameMarkerT = Aws::String>
+    ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(TrafficPolicyInstanceNameMarkerT&& value) { SetTrafficPolicyInstanceNameMarker(std::forward<TrafficPolicyInstanceNameMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,11 +91,9 @@ namespace Model
      * Amazon Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
-    inline const RRType& GetTrafficPolicyInstanceTypeMarker() const{ return m_trafficPolicyInstanceTypeMarker; }
-    inline void SetTrafficPolicyInstanceTypeMarker(const RRType& value) { m_trafficPolicyInstanceTypeMarker = value; }
-    inline void SetTrafficPolicyInstanceTypeMarker(RRType&& value) { m_trafficPolicyInstanceTypeMarker = std::move(value); }
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceTypeMarker(const RRType& value) { SetTrafficPolicyInstanceTypeMarker(value); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceTypeMarker(RRType&& value) { SetTrafficPolicyInstanceTypeMarker(std::move(value)); return *this;}
+    inline RRType GetTrafficPolicyInstanceTypeMarker() const { return m_trafficPolicyInstanceTypeMarker; }
+    inline void SetTrafficPolicyInstanceTypeMarker(RRType value) { m_trafficPolicyInstanceTypeMarkerHasBeenSet = true; m_trafficPolicyInstanceTypeMarker = value; }
+    inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceTypeMarker(RRType value) { SetTrafficPolicyInstanceTypeMarker(value); return *this;}
     ///@}
 
     ///@{
@@ -112,8 +106,8 @@ namespace Model
      * <code>TrafficPolicyInstanceTypeMarker</code> in the corresponding request
      * parameters.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListTrafficPolicyInstancesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -123,40 +117,43 @@ namespace Model
      * call to <code>ListTrafficPolicyInstances</code> that produced the current
      * response.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
-    inline ListTrafficPolicyInstancesResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListTrafficPolicyInstancesResult& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTrafficPolicyInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTrafficPolicyInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTrafficPolicyInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrafficPolicyInstance> m_trafficPolicyInstances;
+    bool m_trafficPolicyInstancesHasBeenSet = false;
 
     Aws::String m_hostedZoneIdMarker;
+    bool m_hostedZoneIdMarkerHasBeenSet = false;
 
     Aws::String m_trafficPolicyInstanceNameMarker;
+    bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
-    RRType m_trafficPolicyInstanceTypeMarker;
+    RRType m_trafficPolicyInstanceTypeMarker{RRType::NOT_SET};
+    bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_maxItems;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

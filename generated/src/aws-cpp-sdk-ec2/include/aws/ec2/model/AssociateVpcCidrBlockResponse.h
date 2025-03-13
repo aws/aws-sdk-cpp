@@ -30,7 +30,7 @@ namespace Model
   class AssociateVpcCidrBlockResponse
   {
   public:
-    AWS_EC2_API AssociateVpcCidrBlockResponse();
+    AWS_EC2_API AssociateVpcCidrBlockResponse() = default;
     AWS_EC2_API AssociateVpcCidrBlockResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateVpcCidrBlockResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,54 +39,56 @@ namespace Model
     /**
      * <p>Information about the IPv6 CIDR block association.</p>
      */
-    inline const VpcIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
-    inline void SetIpv6CidrBlockAssociation(const VpcIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
-    inline void SetIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
-    inline AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(const VpcIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
-    inline AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
+    inline const VpcIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const { return m_ipv6CidrBlockAssociation; }
+    template<typename Ipv6CidrBlockAssociationT = VpcIpv6CidrBlockAssociation>
+    void SetIpv6CidrBlockAssociation(Ipv6CidrBlockAssociationT&& value) { m_ipv6CidrBlockAssociationHasBeenSet = true; m_ipv6CidrBlockAssociation = std::forward<Ipv6CidrBlockAssociationT>(value); }
+    template<typename Ipv6CidrBlockAssociationT = VpcIpv6CidrBlockAssociation>
+    AssociateVpcCidrBlockResponse& WithIpv6CidrBlockAssociation(Ipv6CidrBlockAssociationT&& value) { SetIpv6CidrBlockAssociation(std::forward<Ipv6CidrBlockAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the IPv4 CIDR block association.</p>
      */
-    inline const VpcCidrBlockAssociation& GetCidrBlockAssociation() const{ return m_cidrBlockAssociation; }
-    inline void SetCidrBlockAssociation(const VpcCidrBlockAssociation& value) { m_cidrBlockAssociation = value; }
-    inline void SetCidrBlockAssociation(VpcCidrBlockAssociation&& value) { m_cidrBlockAssociation = std::move(value); }
-    inline AssociateVpcCidrBlockResponse& WithCidrBlockAssociation(const VpcCidrBlockAssociation& value) { SetCidrBlockAssociation(value); return *this;}
-    inline AssociateVpcCidrBlockResponse& WithCidrBlockAssociation(VpcCidrBlockAssociation&& value) { SetCidrBlockAssociation(std::move(value)); return *this;}
+    inline const VpcCidrBlockAssociation& GetCidrBlockAssociation() const { return m_cidrBlockAssociation; }
+    template<typename CidrBlockAssociationT = VpcCidrBlockAssociation>
+    void SetCidrBlockAssociation(CidrBlockAssociationT&& value) { m_cidrBlockAssociationHasBeenSet = true; m_cidrBlockAssociation = std::forward<CidrBlockAssociationT>(value); }
+    template<typename CidrBlockAssociationT = VpcCidrBlockAssociation>
+    AssociateVpcCidrBlockResponse& WithCidrBlockAssociation(CidrBlockAssociationT&& value) { SetCidrBlockAssociation(std::forward<CidrBlockAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
-    inline AssociateVpcCidrBlockResponse& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AssociateVpcCidrBlockResponse& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AssociateVpcCidrBlockResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AssociateVpcCidrBlockResponse& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateVpcCidrBlockResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateVpcCidrBlockResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateVpcCidrBlockResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
+    bool m_ipv6CidrBlockAssociationHasBeenSet = false;
 
     VpcCidrBlockAssociation m_cidrBlockAssociation;
+    bool m_cidrBlockAssociationHasBeenSet = false;
 
     Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

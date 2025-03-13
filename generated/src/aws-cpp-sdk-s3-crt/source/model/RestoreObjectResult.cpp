@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreObjectResult::RestoreObjectResult() : 
-    m_requestCharged(RequestCharged::NOT_SET)
-{
-}
-
 RestoreObjectResult::RestoreObjectResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RestoreObjectResult()
 {
   *this = result;
 }
@@ -41,18 +35,21 @@ RestoreObjectResult& RestoreObjectResult::operator =(const Aws::AmazonWebService
   if(requestChargedIter != headers.end())
   {
     m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+    m_requestChargedHasBeenSet = true;
   }
 
   const auto& restoreOutputPathIter = headers.find("x-amz-restore-output-path");
   if(restoreOutputPathIter != headers.end())
   {
     m_restoreOutputPath = restoreOutputPathIter->second;
+    m_restoreOutputPathHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

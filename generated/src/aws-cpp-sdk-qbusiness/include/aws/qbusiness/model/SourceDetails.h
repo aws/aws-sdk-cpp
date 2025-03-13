@@ -34,7 +34,7 @@ namespace Model
   class SourceDetails
   {
   public:
-    AWS_QBUSINESS_API SourceDetails();
+    AWS_QBUSINESS_API SourceDetails() = default;
     AWS_QBUSINESS_API SourceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>Details specific to image content within the source.</p>
      */
-    inline const ImageSourceDetails& GetImageSourceDetails() const{ return m_imageSourceDetails; }
+    inline const ImageSourceDetails& GetImageSourceDetails() const { return m_imageSourceDetails; }
     inline bool ImageSourceDetailsHasBeenSet() const { return m_imageSourceDetailsHasBeenSet; }
-    inline void SetImageSourceDetails(const ImageSourceDetails& value) { m_imageSourceDetailsHasBeenSet = true; m_imageSourceDetails = value; }
-    inline void SetImageSourceDetails(ImageSourceDetails&& value) { m_imageSourceDetailsHasBeenSet = true; m_imageSourceDetails = std::move(value); }
-    inline SourceDetails& WithImageSourceDetails(const ImageSourceDetails& value) { SetImageSourceDetails(value); return *this;}
-    inline SourceDetails& WithImageSourceDetails(ImageSourceDetails&& value) { SetImageSourceDetails(std::move(value)); return *this;}
+    template<typename ImageSourceDetailsT = ImageSourceDetails>
+    void SetImageSourceDetails(ImageSourceDetailsT&& value) { m_imageSourceDetailsHasBeenSet = true; m_imageSourceDetails = std::forward<ImageSourceDetailsT>(value); }
+    template<typename ImageSourceDetailsT = ImageSourceDetails>
+    SourceDetails& WithImageSourceDetails(ImageSourceDetailsT&& value) { SetImageSourceDetails(std::forward<ImageSourceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details specific to audio content within the source.</p>
      */
-    inline const AudioSourceDetails& GetAudioSourceDetails() const{ return m_audioSourceDetails; }
+    inline const AudioSourceDetails& GetAudioSourceDetails() const { return m_audioSourceDetails; }
     inline bool AudioSourceDetailsHasBeenSet() const { return m_audioSourceDetailsHasBeenSet; }
-    inline void SetAudioSourceDetails(const AudioSourceDetails& value) { m_audioSourceDetailsHasBeenSet = true; m_audioSourceDetails = value; }
-    inline void SetAudioSourceDetails(AudioSourceDetails&& value) { m_audioSourceDetailsHasBeenSet = true; m_audioSourceDetails = std::move(value); }
-    inline SourceDetails& WithAudioSourceDetails(const AudioSourceDetails& value) { SetAudioSourceDetails(value); return *this;}
-    inline SourceDetails& WithAudioSourceDetails(AudioSourceDetails&& value) { SetAudioSourceDetails(std::move(value)); return *this;}
+    template<typename AudioSourceDetailsT = AudioSourceDetails>
+    void SetAudioSourceDetails(AudioSourceDetailsT&& value) { m_audioSourceDetailsHasBeenSet = true; m_audioSourceDetails = std::forward<AudioSourceDetailsT>(value); }
+    template<typename AudioSourceDetailsT = AudioSourceDetails>
+    SourceDetails& WithAudioSourceDetails(AudioSourceDetailsT&& value) { SetAudioSourceDetails(std::forward<AudioSourceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details specific to video content within the source.</p>
      */
-    inline const VideoSourceDetails& GetVideoSourceDetails() const{ return m_videoSourceDetails; }
+    inline const VideoSourceDetails& GetVideoSourceDetails() const { return m_videoSourceDetails; }
     inline bool VideoSourceDetailsHasBeenSet() const { return m_videoSourceDetailsHasBeenSet; }
-    inline void SetVideoSourceDetails(const VideoSourceDetails& value) { m_videoSourceDetailsHasBeenSet = true; m_videoSourceDetails = value; }
-    inline void SetVideoSourceDetails(VideoSourceDetails&& value) { m_videoSourceDetailsHasBeenSet = true; m_videoSourceDetails = std::move(value); }
-    inline SourceDetails& WithVideoSourceDetails(const VideoSourceDetails& value) { SetVideoSourceDetails(value); return *this;}
-    inline SourceDetails& WithVideoSourceDetails(VideoSourceDetails&& value) { SetVideoSourceDetails(std::move(value)); return *this;}
+    template<typename VideoSourceDetailsT = VideoSourceDetails>
+    void SetVideoSourceDetails(VideoSourceDetailsT&& value) { m_videoSourceDetailsHasBeenSet = true; m_videoSourceDetails = std::forward<VideoSourceDetailsT>(value); }
+    template<typename VideoSourceDetailsT = VideoSourceDetails>
+    SourceDetails& WithVideoSourceDetails(VideoSourceDetailsT&& value) { SetVideoSourceDetails(std::forward<VideoSourceDetailsT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBotLocaleRequest::DeleteBotLocaleRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBotLocaleRequest::SerializePayload() const
 {
   return {};

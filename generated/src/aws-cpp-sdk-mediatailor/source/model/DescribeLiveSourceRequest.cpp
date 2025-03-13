@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLiveSourceRequest::DescribeLiveSourceRequest() : 
-    m_liveSourceNameHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLiveSourceRequest::SerializePayload() const
 {
   return {};

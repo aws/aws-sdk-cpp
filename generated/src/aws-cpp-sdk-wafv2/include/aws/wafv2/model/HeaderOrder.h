@@ -37,7 +37,7 @@ namespace Model
   class HeaderOrder
   {
   public:
-    AWS_WAFV2_API HeaderOrder();
+    AWS_WAFV2_API HeaderOrder() = default;
     AWS_WAFV2_API HeaderOrder(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API HeaderOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,16 +56,14 @@ namespace Model
      * applies the rule action to the request.</p> </li> <li> <p> <code>NO_MATCH</code>
      * - Treat the web request as not matching the rule statement.</p> </li> </ul>
      */
-    inline const OversizeHandling& GetOversizeHandling() const{ return m_oversizeHandling; }
+    inline OversizeHandling GetOversizeHandling() const { return m_oversizeHandling; }
     inline bool OversizeHandlingHasBeenSet() const { return m_oversizeHandlingHasBeenSet; }
-    inline void SetOversizeHandling(const OversizeHandling& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
-    inline void SetOversizeHandling(OversizeHandling&& value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = std::move(value); }
-    inline HeaderOrder& WithOversizeHandling(const OversizeHandling& value) { SetOversizeHandling(value); return *this;}
-    inline HeaderOrder& WithOversizeHandling(OversizeHandling&& value) { SetOversizeHandling(std::move(value)); return *this;}
+    inline void SetOversizeHandling(OversizeHandling value) { m_oversizeHandlingHasBeenSet = true; m_oversizeHandling = value; }
+    inline HeaderOrder& WithOversizeHandling(OversizeHandling value) { SetOversizeHandling(value); return *this;}
     ///@}
   private:
 
-    OversizeHandling m_oversizeHandling;
+    OversizeHandling m_oversizeHandling{OversizeHandling::NOT_SET};
     bool m_oversizeHandlingHasBeenSet = false;
   };
 

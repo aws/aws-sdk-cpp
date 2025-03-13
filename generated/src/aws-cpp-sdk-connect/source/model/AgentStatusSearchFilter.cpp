@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentStatusSearchFilter::AgentStatusSearchFilter() : 
-    m_attributeFilterHasBeenSet(false)
-{
-}
-
 AgentStatusSearchFilter::AgentStatusSearchFilter(JsonView jsonValue)
-  : AgentStatusSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentStatusSearchFilter& AgentStatusSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeFilter"))
   {
     m_attributeFilter = jsonValue.GetObject("AttributeFilter");
-
     m_attributeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

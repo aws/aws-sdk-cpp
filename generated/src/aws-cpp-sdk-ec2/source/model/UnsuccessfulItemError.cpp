@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UnsuccessfulItemError::UnsuccessfulItemError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnsuccessfulItemError::UnsuccessfulItemError(const XmlNode& xmlNode)
-  : UnsuccessfulItemError()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ UnsuccessfulItemError& UnsuccessfulItemError::operator =(const XmlNode& xmlNode)
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

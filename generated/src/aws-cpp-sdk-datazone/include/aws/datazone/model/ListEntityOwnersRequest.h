@@ -26,7 +26,7 @@ namespace Model
   class ListEntityOwnersRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListEntityOwnersRequest();
+    AWS_DATAZONE_API ListEntityOwnersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The ID of the domain where you want to list entity owners.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline ListEntityOwnersRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline ListEntityOwnersRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline ListEntityOwnersRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    ListEntityOwnersRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the entity that you want to list.</p>
      */
-    inline const Aws::String& GetEntityIdentifier() const{ return m_entityIdentifier; }
+    inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
     inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
-    inline void SetEntityIdentifier(const Aws::String& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = value; }
-    inline void SetEntityIdentifier(Aws::String&& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = std::move(value); }
-    inline void SetEntityIdentifier(const char* value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier.assign(value); }
-    inline ListEntityOwnersRequest& WithEntityIdentifier(const Aws::String& value) { SetEntityIdentifier(value); return *this;}
-    inline ListEntityOwnersRequest& WithEntityIdentifier(Aws::String&& value) { SetEntityIdentifier(std::move(value)); return *this;}
-    inline ListEntityOwnersRequest& WithEntityIdentifier(const char* value) { SetEntityIdentifier(value); return *this;}
+    template<typename EntityIdentifierT = Aws::String>
+    void SetEntityIdentifier(EntityIdentifierT&& value) { m_entityIdentifierHasBeenSet = true; m_entityIdentifier = std::forward<EntityIdentifierT>(value); }
+    template<typename EntityIdentifierT = Aws::String>
+    ListEntityOwnersRequest& WithEntityIdentifier(EntityIdentifierT&& value) { SetEntityIdentifier(std::forward<EntityIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the entity that you want to list.</p>
      */
-    inline const DataZoneEntityType& GetEntityType() const{ return m_entityType; }
+    inline DataZoneEntityType GetEntityType() const { return m_entityType; }
     inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
-    inline void SetEntityType(const DataZoneEntityType& value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
-    inline void SetEntityType(DataZoneEntityType&& value) { m_entityTypeHasBeenSet = true; m_entityType = std::move(value); }
-    inline ListEntityOwnersRequest& WithEntityType(const DataZoneEntityType& value) { SetEntityType(value); return *this;}
-    inline ListEntityOwnersRequest& WithEntityType(DataZoneEntityType&& value) { SetEntityType(std::move(value)); return *this;}
+    inline void SetEntityType(DataZoneEntityType value) { m_entityTypeHasBeenSet = true; m_entityType = value; }
+    inline ListEntityOwnersRequest& WithEntityType(DataZoneEntityType value) { SetEntityType(value); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * <code>NextToken</code> value that you can use in a subsequent call to
      * <code>ListEntityOwners</code> to list the next set of entities.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEntityOwnersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -102,14 +96,12 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to
      * <code>ListEntityOwners</code> to list the next set of entities.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEntityOwnersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEntityOwnersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEntityOwnersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEntityOwnersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -119,10 +111,10 @@ namespace Model
     Aws::String m_entityIdentifier;
     bool m_entityIdentifierHasBeenSet = false;
 
-    DataZoneEntityType m_entityType;
+    DataZoneEntityType m_entityType{DataZoneEntityType::NOT_SET};
     bool m_entityTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

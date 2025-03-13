@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet() : 
-    m_loginPathHasBeenSet(false),
-    m_requestInspectionHasBeenSet(false),
-    m_responseInspectionHasBeenSet(false),
-    m_enableRegexInPath(false),
-    m_enableRegexInPathHasBeenSet(false)
-{
-}
-
 AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet(JsonView jsonValue)
-  : AWSManagedRulesATPRuleSet()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AWSManagedRulesATPRuleSet& AWSManagedRulesATPRuleSet::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("LoginPath"))
   {
     m_loginPath = jsonValue.GetString("LoginPath");
-
     m_loginPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestInspection"))
   {
     m_requestInspection = jsonValue.GetObject("RequestInspection");
-
     m_requestInspectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseInspection"))
   {
     m_responseInspection = jsonValue.GetObject("ResponseInspection");
-
     m_responseInspectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableRegexInPath"))
   {
     m_enableRegexInPath = jsonValue.GetBool("EnableRegexInPath");
-
     m_enableRegexInPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-LogConfigurationForChannel::LogConfigurationForChannel() : 
-    m_logTypesHasBeenSet(false)
-{
-}
-
 LogConfigurationForChannel::LogConfigurationForChannel(JsonView jsonValue)
-  : LogConfigurationForChannel()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LogConfigurationForChannel& LogConfigurationForChannel::operator =(JsonView json
     }
     m_logTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,29 +18,7 @@ namespace Chime
 namespace Model
 {
 
-User::User() : 
-    m_userIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_primaryEmailHasBeenSet(false),
-    m_primaryProvisionedNumberHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_licenseType(License::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false),
-    m_userRegistrationStatus(RegistrationStatus::NOT_SET),
-    m_userRegistrationStatusHasBeenSet(false),
-    m_userInvitationStatus(InviteStatus::NOT_SET),
-    m_userInvitationStatusHasBeenSet(false),
-    m_registeredOnHasBeenSet(false),
-    m_invitedOnHasBeenSet(false),
-    m_alexaForBusinessMetadataHasBeenSet(false),
-    m_personalPINHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -50,94 +28,68 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryEmail"))
   {
     m_primaryEmail = jsonValue.GetString("PrimaryEmail");
-
     m_primaryEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryProvisionedNumber"))
   {
     m_primaryProvisionedNumber = jsonValue.GetString("PrimaryProvisionedNumber");
-
     m_primaryProvisionedNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseType"))
   {
     m_licenseType = LicenseMapper::GetLicenseForName(jsonValue.GetString("LicenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserType"))
   {
     m_userType = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("UserType"));
-
     m_userTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserRegistrationStatus"))
   {
     m_userRegistrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("UserRegistrationStatus"));
-
     m_userRegistrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserInvitationStatus"))
   {
     m_userInvitationStatus = InviteStatusMapper::GetInviteStatusForName(jsonValue.GetString("UserInvitationStatus"));
-
     m_userInvitationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredOn"))
   {
     m_registeredOn = jsonValue.GetString("RegisteredOn");
-
     m_registeredOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitedOn"))
   {
     m_invitedOn = jsonValue.GetString("InvitedOn");
-
     m_invitedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlexaForBusinessMetadata"))
   {
     m_alexaForBusinessMetadata = jsonValue.GetObject("AlexaForBusinessMetadata");
-
     m_alexaForBusinessMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PersonalPIN"))
   {
     m_personalPIN = jsonValue.GetString("PersonalPIN");
-
     m_personalPINHasBeenSet = true;
   }
-
   return *this;
 }
 

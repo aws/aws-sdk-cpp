@@ -12,15 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLocationNfsRequest::CreateLocationNfsRequest() : 
-    m_subdirectoryHasBeenSet(false),
-    m_serverHostnameHasBeenSet(false),
-    m_onPremConfigHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocationNfsRequest::SerializePayload() const
 {
   JsonValue payload;

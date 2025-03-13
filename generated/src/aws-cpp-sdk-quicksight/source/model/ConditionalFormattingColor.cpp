@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ConditionalFormattingColor::ConditionalFormattingColor() : 
-    m_solidHasBeenSet(false),
-    m_gradientHasBeenSet(false)
-{
-}
-
 ConditionalFormattingColor::ConditionalFormattingColor(JsonView jsonValue)
-  : ConditionalFormattingColor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConditionalFormattingColor& ConditionalFormattingColor::operator =(JsonView json
   if(jsonValue.ValueExists("Solid"))
   {
     m_solid = jsonValue.GetObject("Solid");
-
     m_solidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Gradient"))
   {
     m_gradient = jsonValue.GetObject("Gradient");
-
     m_gradientHasBeenSet = true;
   }
-
   return *this;
 }
 

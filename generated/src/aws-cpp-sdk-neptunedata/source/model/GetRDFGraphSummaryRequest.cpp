@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRDFGraphSummaryRequest::GetRDFGraphSummaryRequest() : 
-    m_mode(GraphSummaryType::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Aws::String GetRDFGraphSummaryRequest::SerializePayload() const
 {
   return {};

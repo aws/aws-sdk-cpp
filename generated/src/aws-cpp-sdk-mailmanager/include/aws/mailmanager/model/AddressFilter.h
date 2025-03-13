@@ -32,7 +32,7 @@ namespace Model
   class AddressFilter
   {
   public:
-    AWS_MAILMANAGER_API AddressFilter();
+    AWS_MAILMANAGER_API AddressFilter() = default;
     AWS_MAILMANAGER_API AddressFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API AddressFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Filter to limit the results to addresses having the provided prefix.</p>
      */
-    inline const Aws::String& GetAddressPrefix() const{ return m_addressPrefix; }
+    inline const Aws::String& GetAddressPrefix() const { return m_addressPrefix; }
     inline bool AddressPrefixHasBeenSet() const { return m_addressPrefixHasBeenSet; }
-    inline void SetAddressPrefix(const Aws::String& value) { m_addressPrefixHasBeenSet = true; m_addressPrefix = value; }
-    inline void SetAddressPrefix(Aws::String&& value) { m_addressPrefixHasBeenSet = true; m_addressPrefix = std::move(value); }
-    inline void SetAddressPrefix(const char* value) { m_addressPrefixHasBeenSet = true; m_addressPrefix.assign(value); }
-    inline AddressFilter& WithAddressPrefix(const Aws::String& value) { SetAddressPrefix(value); return *this;}
-    inline AddressFilter& WithAddressPrefix(Aws::String&& value) { SetAddressPrefix(std::move(value)); return *this;}
-    inline AddressFilter& WithAddressPrefix(const char* value) { SetAddressPrefix(value); return *this;}
+    template<typename AddressPrefixT = Aws::String>
+    void SetAddressPrefix(AddressPrefixT&& value) { m_addressPrefixHasBeenSet = true; m_addressPrefix = std::forward<AddressPrefixT>(value); }
+    template<typename AddressPrefixT = Aws::String>
+    AddressFilter& WithAddressPrefix(AddressPrefixT&& value) { SetAddressPrefix(std::forward<AddressPrefixT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class SummaryMetricConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API SummaryMetricConfiguration();
+    AWS_IOTWIRELESS_API SummaryMetricConfiguration() = default;
     AWS_IOTWIRELESS_API SummaryMetricConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SummaryMetricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The status of the configuration of summary metrics.</p>
      */
-    inline const SummaryMetricConfigurationStatus& GetStatus() const{ return m_status; }
+    inline SummaryMetricConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SummaryMetricConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SummaryMetricConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SummaryMetricConfiguration& WithStatus(const SummaryMetricConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline SummaryMetricConfiguration& WithStatus(SummaryMetricConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SummaryMetricConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SummaryMetricConfiguration& WithStatus(SummaryMetricConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    SummaryMetricConfigurationStatus m_status;
+    SummaryMetricConfigurationStatus m_status{SummaryMetricConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

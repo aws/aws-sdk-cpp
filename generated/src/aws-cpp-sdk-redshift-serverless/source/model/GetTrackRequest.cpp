@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTrackRequest::GetTrackRequest() : 
-    m_trackNameHasBeenSet(false)
-{
-}
-
 Aws::String GetTrackRequest::SerializePayload() const
 {
   JsonValue payload;

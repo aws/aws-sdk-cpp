@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-TagLimitExceededException::TagLimitExceededException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 TagLimitExceededException::TagLimitExceededException(JsonView jsonValue)
-  : TagLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TagLimitExceededException& TagLimitExceededException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

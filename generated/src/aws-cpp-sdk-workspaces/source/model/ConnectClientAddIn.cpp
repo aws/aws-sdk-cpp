@@ -18,16 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ConnectClientAddIn::ConnectClientAddIn() : 
-    m_addInIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_uRLHasBeenSet(false)
-{
-}
-
 ConnectClientAddIn::ConnectClientAddIn(JsonView jsonValue)
-  : ConnectClientAddIn()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ConnectClientAddIn& ConnectClientAddIn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddInId"))
   {
     m_addInId = jsonValue.GetString("AddInId");
-
     m_addInIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URL"))
   {
     m_uRL = jsonValue.GetString("URL");
-
     m_uRLHasBeenSet = true;
   }
-
   return *this;
 }
 

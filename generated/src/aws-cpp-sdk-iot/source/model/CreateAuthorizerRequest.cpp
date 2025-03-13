@@ -12,21 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAuthorizerRequest::CreateAuthorizerRequest() : 
-    m_authorizerNameHasBeenSet(false),
-    m_authorizerFunctionArnHasBeenSet(false),
-    m_tokenKeyNameHasBeenSet(false),
-    m_tokenSigningPublicKeysHasBeenSet(false),
-    m_status(AuthorizerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_signingDisabled(false),
-    m_signingDisabledHasBeenSet(false),
-    m_enableCachingForHttp(false),
-    m_enableCachingForHttpHasBeenSet(false)
-{
-}
-
 Aws::String CreateAuthorizerRequest::SerializePayload() const
 {
   JsonValue payload;

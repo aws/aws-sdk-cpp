@@ -18,18 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-RecommenderConfig::RecommenderConfig() : 
-    m_itemExplorationConfigHasBeenSet(false),
-    m_minRecommendationRequestsPerSecond(0),
-    m_minRecommendationRequestsPerSecondHasBeenSet(false),
-    m_trainingDataConfigHasBeenSet(false),
-    m_enableMetadataWithRecommendations(false),
-    m_enableMetadataWithRecommendationsHasBeenSet(false)
-{
-}
-
 RecommenderConfig::RecommenderConfig(JsonView jsonValue)
-  : RecommenderConfig()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ RecommenderConfig& RecommenderConfig::operator =(JsonView jsonValue)
     }
     m_itemExplorationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minRecommendationRequestsPerSecond"))
   {
     m_minRecommendationRequestsPerSecond = jsonValue.GetInteger("minRecommendationRequestsPerSecond");
-
     m_minRecommendationRequestsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainingDataConfig"))
   {
     m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
-
     m_trainingDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableMetadataWithRecommendations"))
   {
     m_enableMetadataWithRecommendations = jsonValue.GetBool("enableMetadataWithRecommendations");
-
     m_enableMetadataWithRecommendationsHasBeenSet = true;
   }
-
   return *this;
 }
 

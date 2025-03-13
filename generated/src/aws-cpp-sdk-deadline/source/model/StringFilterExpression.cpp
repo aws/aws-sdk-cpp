@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StringFilterExpression::StringFilterExpression() : 
-    m_nameHasBeenSet(false),
-    m_operator(ComparisonOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 StringFilterExpression::StringFilterExpression(JsonView jsonValue)
-  : StringFilterExpression()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ StringFilterExpression& StringFilterExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

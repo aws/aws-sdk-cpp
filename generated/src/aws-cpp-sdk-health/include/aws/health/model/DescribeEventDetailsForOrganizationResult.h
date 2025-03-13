@@ -30,7 +30,7 @@ namespace Model
   class DescribeEventDetailsForOrganizationResult
   {
   public:
-    AWS_HEALTH_API DescribeEventDetailsForOrganizationResult();
+    AWS_HEALTH_API DescribeEventDetailsForOrganizationResult() = default;
     AWS_HEALTH_API DescribeEventDetailsForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_HEALTH_API DescribeEventDetailsForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Information about the events that could be retrieved.</p>
      */
-    inline const Aws::Vector<OrganizationEventDetails>& GetSuccessfulSet() const{ return m_successfulSet; }
-    inline void SetSuccessfulSet(const Aws::Vector<OrganizationEventDetails>& value) { m_successfulSet = value; }
-    inline void SetSuccessfulSet(Aws::Vector<OrganizationEventDetails>&& value) { m_successfulSet = std::move(value); }
-    inline DescribeEventDetailsForOrganizationResult& WithSuccessfulSet(const Aws::Vector<OrganizationEventDetails>& value) { SetSuccessfulSet(value); return *this;}
-    inline DescribeEventDetailsForOrganizationResult& WithSuccessfulSet(Aws::Vector<OrganizationEventDetails>&& value) { SetSuccessfulSet(std::move(value)); return *this;}
-    inline DescribeEventDetailsForOrganizationResult& AddSuccessfulSet(const OrganizationEventDetails& value) { m_successfulSet.push_back(value); return *this; }
-    inline DescribeEventDetailsForOrganizationResult& AddSuccessfulSet(OrganizationEventDetails&& value) { m_successfulSet.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationEventDetails>& GetSuccessfulSet() const { return m_successfulSet; }
+    template<typename SuccessfulSetT = Aws::Vector<OrganizationEventDetails>>
+    void SetSuccessfulSet(SuccessfulSetT&& value) { m_successfulSetHasBeenSet = true; m_successfulSet = std::forward<SuccessfulSetT>(value); }
+    template<typename SuccessfulSetT = Aws::Vector<OrganizationEventDetails>>
+    DescribeEventDetailsForOrganizationResult& WithSuccessfulSet(SuccessfulSetT&& value) { SetSuccessfulSet(std::forward<SuccessfulSetT>(value)); return *this;}
+    template<typename SuccessfulSetT = OrganizationEventDetails>
+    DescribeEventDetailsForOrganizationResult& AddSuccessfulSet(SuccessfulSetT&& value) { m_successfulSetHasBeenSet = true; m_successfulSet.emplace_back(std::forward<SuccessfulSetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Error messages for any events that could not be retrieved.</p>
      */
-    inline const Aws::Vector<OrganizationEventDetailsErrorItem>& GetFailedSet() const{ return m_failedSet; }
-    inline void SetFailedSet(const Aws::Vector<OrganizationEventDetailsErrorItem>& value) { m_failedSet = value; }
-    inline void SetFailedSet(Aws::Vector<OrganizationEventDetailsErrorItem>&& value) { m_failedSet = std::move(value); }
-    inline DescribeEventDetailsForOrganizationResult& WithFailedSet(const Aws::Vector<OrganizationEventDetailsErrorItem>& value) { SetFailedSet(value); return *this;}
-    inline DescribeEventDetailsForOrganizationResult& WithFailedSet(Aws::Vector<OrganizationEventDetailsErrorItem>&& value) { SetFailedSet(std::move(value)); return *this;}
-    inline DescribeEventDetailsForOrganizationResult& AddFailedSet(const OrganizationEventDetailsErrorItem& value) { m_failedSet.push_back(value); return *this; }
-    inline DescribeEventDetailsForOrganizationResult& AddFailedSet(OrganizationEventDetailsErrorItem&& value) { m_failedSet.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationEventDetailsErrorItem>& GetFailedSet() const { return m_failedSet; }
+    template<typename FailedSetT = Aws::Vector<OrganizationEventDetailsErrorItem>>
+    void SetFailedSet(FailedSetT&& value) { m_failedSetHasBeenSet = true; m_failedSet = std::forward<FailedSetT>(value); }
+    template<typename FailedSetT = Aws::Vector<OrganizationEventDetailsErrorItem>>
+    DescribeEventDetailsForOrganizationResult& WithFailedSet(FailedSetT&& value) { SetFailedSet(std::forward<FailedSetT>(value)); return *this;}
+    template<typename FailedSetT = OrganizationEventDetailsErrorItem>
+    DescribeEventDetailsForOrganizationResult& AddFailedSet(FailedSetT&& value) { m_failedSetHasBeenSet = true; m_failedSet.emplace_back(std::forward<FailedSetT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEventDetailsForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEventDetailsForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEventDetailsForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEventDetailsForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OrganizationEventDetails> m_successfulSet;
+    bool m_successfulSetHasBeenSet = false;
 
     Aws::Vector<OrganizationEventDetailsErrorItem> m_failedSet;
+    bool m_failedSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,28 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() : 
-    m_adDecisionServerUrlHasBeenSet(false),
-    m_availSuppressionHasBeenSet(false),
-    m_bumperHasBeenSet(false),
-    m_cdnConfigurationHasBeenSet(false),
-    m_configurationAliasesHasBeenSet(false),
-    m_dashConfigurationHasBeenSet(false),
-    m_insertionMode(InsertionMode::NOT_SET),
-    m_insertionModeHasBeenSet(false),
-    m_livePreRollConfigurationHasBeenSet(false),
-    m_manifestProcessingRulesHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_personalizationThresholdSeconds(0),
-    m_personalizationThresholdSecondsHasBeenSet(false),
-    m_slateAdUrlHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_transcodeProfileNameHasBeenSet(false),
-    m_videoContentSourceUrlHasBeenSet(false),
-    m_adConditioningConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

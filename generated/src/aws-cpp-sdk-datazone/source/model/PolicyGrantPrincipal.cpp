@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-PolicyGrantPrincipal::PolicyGrantPrincipal() : 
-    m_domainUnitHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 PolicyGrantPrincipal::PolicyGrantPrincipal(JsonView jsonValue)
-  : PolicyGrantPrincipal()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PolicyGrantPrincipal& PolicyGrantPrincipal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainUnit"))
   {
     m_domainUnit = jsonValue.GetObject("domainUnit");
-
     m_domainUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetObject("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("project"))
   {
     m_project = jsonValue.GetObject("project");
-
     m_projectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

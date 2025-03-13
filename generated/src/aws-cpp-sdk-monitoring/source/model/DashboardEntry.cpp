@@ -20,17 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DashboardEntry::DashboardEntry() : 
-    m_dashboardNameHasBeenSet(false),
-    m_dashboardArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 DashboardEntry::DashboardEntry(const XmlNode& xmlNode)
-  : DashboardEntry()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ DashboardEntry& DashboardEntry::operator =(const XmlNode& xmlNode)
     {
       m_dashboardName = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardNameNode.GetText());
       m_dashboardNameHasBeenSet = true;
+       m_dashboardNameHasBeenSet = true;
     }
     XmlNode dashboardArnNode = resultNode.FirstChild("DashboardArn");
     if(!dashboardArnNode.IsNull())
     {
       m_dashboardArn = Aws::Utils::Xml::DecodeEscapedXmlText(dashboardArnNode.GetText());
       m_dashboardArnHasBeenSet = true;
+       m_dashboardArnHasBeenSet = true;
     }
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
       m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
+       m_lastModifiedHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
     if(!sizeNode.IsNull())
     {
       m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
+       m_sizeHasBeenSet = true;
     }
   }
 

@@ -28,7 +28,7 @@ namespace Model
   class GetAccountPreferencesResult
   {
   public:
-    AWS_CHATBOT_API GetAccountPreferencesResult();
+    AWS_CHATBOT_API GetAccountPreferencesResult() = default;
     AWS_CHATBOT_API GetAccountPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API GetAccountPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The preferences related to AWS Chatbot usage in the calling AWS account.</p>
      */
-    inline const AccountPreferences& GetAccountPreferences() const{ return m_accountPreferences; }
-    inline void SetAccountPreferences(const AccountPreferences& value) { m_accountPreferences = value; }
-    inline void SetAccountPreferences(AccountPreferences&& value) { m_accountPreferences = std::move(value); }
-    inline GetAccountPreferencesResult& WithAccountPreferences(const AccountPreferences& value) { SetAccountPreferences(value); return *this;}
-    inline GetAccountPreferencesResult& WithAccountPreferences(AccountPreferences&& value) { SetAccountPreferences(std::move(value)); return *this;}
+    inline const AccountPreferences& GetAccountPreferences() const { return m_accountPreferences; }
+    template<typename AccountPreferencesT = AccountPreferences>
+    void SetAccountPreferences(AccountPreferencesT&& value) { m_accountPreferencesHasBeenSet = true; m_accountPreferences = std::forward<AccountPreferencesT>(value); }
+    template<typename AccountPreferencesT = AccountPreferences>
+    GetAccountPreferencesResult& WithAccountPreferences(AccountPreferencesT&& value) { SetAccountPreferences(std::forward<AccountPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountPreferencesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountPreferencesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountPreferencesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountPreferencesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountPreferences m_accountPreferences;
+    bool m_accountPreferencesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

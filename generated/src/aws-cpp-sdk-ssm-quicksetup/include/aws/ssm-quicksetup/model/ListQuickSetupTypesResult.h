@@ -29,7 +29,7 @@ namespace Model
   class ListQuickSetupTypesResult
   {
   public:
-    AWS_SSMQUICKSETUP_API ListQuickSetupTypesResult();
+    AWS_SSMQUICKSETUP_API ListQuickSetupTypesResult() = default;
     AWS_SSMQUICKSETUP_API ListQuickSetupTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSMQUICKSETUP_API ListQuickSetupTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>An array of Quick Setup types.</p>
      */
-    inline const Aws::Vector<QuickSetupTypeOutput>& GetQuickSetupTypeList() const{ return m_quickSetupTypeList; }
-    inline void SetQuickSetupTypeList(const Aws::Vector<QuickSetupTypeOutput>& value) { m_quickSetupTypeList = value; }
-    inline void SetQuickSetupTypeList(Aws::Vector<QuickSetupTypeOutput>&& value) { m_quickSetupTypeList = std::move(value); }
-    inline ListQuickSetupTypesResult& WithQuickSetupTypeList(const Aws::Vector<QuickSetupTypeOutput>& value) { SetQuickSetupTypeList(value); return *this;}
-    inline ListQuickSetupTypesResult& WithQuickSetupTypeList(Aws::Vector<QuickSetupTypeOutput>&& value) { SetQuickSetupTypeList(std::move(value)); return *this;}
-    inline ListQuickSetupTypesResult& AddQuickSetupTypeList(const QuickSetupTypeOutput& value) { m_quickSetupTypeList.push_back(value); return *this; }
-    inline ListQuickSetupTypesResult& AddQuickSetupTypeList(QuickSetupTypeOutput&& value) { m_quickSetupTypeList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QuickSetupTypeOutput>& GetQuickSetupTypeList() const { return m_quickSetupTypeList; }
+    template<typename QuickSetupTypeListT = Aws::Vector<QuickSetupTypeOutput>>
+    void SetQuickSetupTypeList(QuickSetupTypeListT&& value) { m_quickSetupTypeListHasBeenSet = true; m_quickSetupTypeList = std::forward<QuickSetupTypeListT>(value); }
+    template<typename QuickSetupTypeListT = Aws::Vector<QuickSetupTypeOutput>>
+    ListQuickSetupTypesResult& WithQuickSetupTypeList(QuickSetupTypeListT&& value) { SetQuickSetupTypeList(std::forward<QuickSetupTypeListT>(value)); return *this;}
+    template<typename QuickSetupTypeListT = QuickSetupTypeOutput>
+    ListQuickSetupTypesResult& AddQuickSetupTypeList(QuickSetupTypeListT&& value) { m_quickSetupTypeListHasBeenSet = true; m_quickSetupTypeList.emplace_back(std::forward<QuickSetupTypeListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQuickSetupTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQuickSetupTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQuickSetupTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQuickSetupTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QuickSetupTypeOutput> m_quickSetupTypeList;
+    bool m_quickSetupTypeListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

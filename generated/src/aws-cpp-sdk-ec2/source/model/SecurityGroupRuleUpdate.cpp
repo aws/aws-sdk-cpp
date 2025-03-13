@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupRuleUpdate::SecurityGroupRuleUpdate() : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_securityGroupRuleHasBeenSet(false)
-{
-}
-
 SecurityGroupRuleUpdate::SecurityGroupRuleUpdate(const XmlNode& xmlNode)
-  : SecurityGroupRuleUpdate()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SecurityGroupRuleUpdate& SecurityGroupRuleUpdate::operator =(const XmlNode& xmlN
     {
       m_securityGroupRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleIdNode.GetText());
       m_securityGroupRuleIdHasBeenSet = true;
+       m_securityGroupRuleIdHasBeenSet = true;
     }
     XmlNode securityGroupRuleNode = resultNode.FirstChild("SecurityGroupRule");
     if(!securityGroupRuleNode.IsNull())
     {
       m_securityGroupRule = securityGroupRuleNode;
       m_securityGroupRuleHasBeenSet = true;
+       m_securityGroupRuleHasBeenSet = true;
     }
   }
 

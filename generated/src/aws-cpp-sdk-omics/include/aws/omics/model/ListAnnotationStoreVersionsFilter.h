@@ -33,7 +33,7 @@ namespace Model
   class ListAnnotationStoreVersionsFilter
   {
   public:
-    AWS_OMICS_API ListAnnotationStoreVersionsFilter();
+    AWS_OMICS_API ListAnnotationStoreVersionsFilter() = default;
     AWS_OMICS_API ListAnnotationStoreVersionsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ListAnnotationStoreVersionsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>The status of an annotation store version.</p>
      */
-    inline const VersionStatus& GetStatus() const{ return m_status; }
+    inline VersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListAnnotationStoreVersionsFilter& WithStatus(const VersionStatus& value) { SetStatus(value); return *this;}
-    inline ListAnnotationStoreVersionsFilter& WithStatus(VersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListAnnotationStoreVersionsFilter& WithStatus(VersionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    VersionStatus m_status;
+    VersionStatus m_status{VersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

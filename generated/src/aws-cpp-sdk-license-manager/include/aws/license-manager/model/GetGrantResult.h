@@ -28,7 +28,7 @@ namespace Model
   class GetGrantResult
   {
   public:
-    AWS_LICENSEMANAGER_API GetGrantResult();
+    AWS_LICENSEMANAGER_API GetGrantResult() = default;
     AWS_LICENSEMANAGER_API GetGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API GetGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Grant details.</p>
      */
-    inline const Grant& GetGrant() const{ return m_grant; }
-    inline void SetGrant(const Grant& value) { m_grant = value; }
-    inline void SetGrant(Grant&& value) { m_grant = std::move(value); }
-    inline GetGrantResult& WithGrant(const Grant& value) { SetGrant(value); return *this;}
-    inline GetGrantResult& WithGrant(Grant&& value) { SetGrant(std::move(value)); return *this;}
+    inline const Grant& GetGrant() const { return m_grant; }
+    template<typename GrantT = Grant>
+    void SetGrant(GrantT&& value) { m_grantHasBeenSet = true; m_grant = std::forward<GrantT>(value); }
+    template<typename GrantT = Grant>
+    GetGrantResult& WithGrant(GrantT&& value) { SetGrant(std::forward<GrantT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGrantResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGrantResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGrantResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGrantResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Grant m_grant;
+    bool m_grantHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

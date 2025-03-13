@@ -33,7 +33,7 @@ namespace Model
   class BlockedPhrasesConfigurationUpdate
   {
   public:
-    AWS_QBUSINESS_API BlockedPhrasesConfigurationUpdate();
+    AWS_QBUSINESS_API BlockedPhrasesConfigurationUpdate() = default;
     AWS_QBUSINESS_API BlockedPhrasesConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API BlockedPhrasesConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>Creates or updates a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedPhrasesToCreateOrUpdate() const{ return m_blockedPhrasesToCreateOrUpdate; }
+    inline const Aws::Vector<Aws::String>& GetBlockedPhrasesToCreateOrUpdate() const { return m_blockedPhrasesToCreateOrUpdate; }
     inline bool BlockedPhrasesToCreateOrUpdateHasBeenSet() const { return m_blockedPhrasesToCreateOrUpdateHasBeenSet; }
-    inline void SetBlockedPhrasesToCreateOrUpdate(const Aws::Vector<Aws::String>& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate = value; }
-    inline void SetBlockedPhrasesToCreateOrUpdate(Aws::Vector<Aws::String>&& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate = std::move(value); }
-    inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToCreateOrUpdate(const Aws::Vector<Aws::String>& value) { SetBlockedPhrasesToCreateOrUpdate(value); return *this;}
-    inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToCreateOrUpdate(Aws::Vector<Aws::String>&& value) { SetBlockedPhrasesToCreateOrUpdate(std::move(value)); return *this;}
-    inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(const Aws::String& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.push_back(value); return *this; }
-    inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(Aws::String&& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.push_back(std::move(value)); return *this; }
-    inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(const char* value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.push_back(value); return *this; }
+    template<typename BlockedPhrasesToCreateOrUpdateT = Aws::Vector<Aws::String>>
+    void SetBlockedPhrasesToCreateOrUpdate(BlockedPhrasesToCreateOrUpdateT&& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate = std::forward<BlockedPhrasesToCreateOrUpdateT>(value); }
+    template<typename BlockedPhrasesToCreateOrUpdateT = Aws::Vector<Aws::String>>
+    BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToCreateOrUpdate(BlockedPhrasesToCreateOrUpdateT&& value) { SetBlockedPhrasesToCreateOrUpdate(std::forward<BlockedPhrasesToCreateOrUpdateT>(value)); return *this;}
+    template<typename BlockedPhrasesToCreateOrUpdateT = Aws::String>
+    BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToCreateOrUpdate(BlockedPhrasesToCreateOrUpdateT&& value) { m_blockedPhrasesToCreateOrUpdateHasBeenSet = true; m_blockedPhrasesToCreateOrUpdate.emplace_back(std::forward<BlockedPhrasesToCreateOrUpdateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>Deletes a blocked phrases configuration in your Amazon Q Business
      * application.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedPhrasesToDelete() const{ return m_blockedPhrasesToDelete; }
+    inline const Aws::Vector<Aws::String>& GetBlockedPhrasesToDelete() const { return m_blockedPhrasesToDelete; }
     inline bool BlockedPhrasesToDeleteHasBeenSet() const { return m_blockedPhrasesToDeleteHasBeenSet; }
-    inline void SetBlockedPhrasesToDelete(const Aws::Vector<Aws::String>& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete = value; }
-    inline void SetBlockedPhrasesToDelete(Aws::Vector<Aws::String>&& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete = std::move(value); }
-    inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToDelete(const Aws::Vector<Aws::String>& value) { SetBlockedPhrasesToDelete(value); return *this;}
-    inline BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToDelete(Aws::Vector<Aws::String>&& value) { SetBlockedPhrasesToDelete(std::move(value)); return *this;}
-    inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(const Aws::String& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.push_back(value); return *this; }
-    inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(Aws::String&& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.push_back(std::move(value)); return *this; }
-    inline BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(const char* value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.push_back(value); return *this; }
+    template<typename BlockedPhrasesToDeleteT = Aws::Vector<Aws::String>>
+    void SetBlockedPhrasesToDelete(BlockedPhrasesToDeleteT&& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete = std::forward<BlockedPhrasesToDeleteT>(value); }
+    template<typename BlockedPhrasesToDeleteT = Aws::Vector<Aws::String>>
+    BlockedPhrasesConfigurationUpdate& WithBlockedPhrasesToDelete(BlockedPhrasesToDeleteT&& value) { SetBlockedPhrasesToDelete(std::forward<BlockedPhrasesToDeleteT>(value)); return *this;}
+    template<typename BlockedPhrasesToDeleteT = Aws::String>
+    BlockedPhrasesConfigurationUpdate& AddBlockedPhrasesToDelete(BlockedPhrasesToDeleteT&& value) { m_blockedPhrasesToDeleteHasBeenSet = true; m_blockedPhrasesToDelete.emplace_back(std::forward<BlockedPhrasesToDeleteT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +74,12 @@ namespace Model
      * <p>The configured custom message displayed to your end user when they use
      * blocked phrase during chat.</p>
      */
-    inline const Aws::String& GetSystemMessageOverride() const{ return m_systemMessageOverride; }
+    inline const Aws::String& GetSystemMessageOverride() const { return m_systemMessageOverride; }
     inline bool SystemMessageOverrideHasBeenSet() const { return m_systemMessageOverrideHasBeenSet; }
-    inline void SetSystemMessageOverride(const Aws::String& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = value; }
-    inline void SetSystemMessageOverride(Aws::String&& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = std::move(value); }
-    inline void SetSystemMessageOverride(const char* value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride.assign(value); }
-    inline BlockedPhrasesConfigurationUpdate& WithSystemMessageOverride(const Aws::String& value) { SetSystemMessageOverride(value); return *this;}
-    inline BlockedPhrasesConfigurationUpdate& WithSystemMessageOverride(Aws::String&& value) { SetSystemMessageOverride(std::move(value)); return *this;}
-    inline BlockedPhrasesConfigurationUpdate& WithSystemMessageOverride(const char* value) { SetSystemMessageOverride(value); return *this;}
+    template<typename SystemMessageOverrideT = Aws::String>
+    void SetSystemMessageOverride(SystemMessageOverrideT&& value) { m_systemMessageOverrideHasBeenSet = true; m_systemMessageOverride = std::forward<SystemMessageOverrideT>(value); }
+    template<typename SystemMessageOverrideT = Aws::String>
+    BlockedPhrasesConfigurationUpdate& WithSystemMessageOverride(SystemMessageOverrideT&& value) { SetSystemMessageOverride(std::forward<SystemMessageOverrideT>(value)); return *this;}
     ///@}
   private:
 

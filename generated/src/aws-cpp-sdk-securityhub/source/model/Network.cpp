@@ -18,27 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Network::Network() : 
-    m_direction(NetworkDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_openPortRangeHasBeenSet(false),
-    m_sourceIpV4HasBeenSet(false),
-    m_sourceIpV6HasBeenSet(false),
-    m_sourcePort(0),
-    m_sourcePortHasBeenSet(false),
-    m_sourceDomainHasBeenSet(false),
-    m_sourceMacHasBeenSet(false),
-    m_destinationIpV4HasBeenSet(false),
-    m_destinationIpV6HasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_destinationDomainHasBeenSet(false)
-{
-}
-
 Network::Network(JsonView jsonValue)
-  : Network()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ Network& Network::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = NetworkDirectionMapper::GetNetworkDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenPortRange"))
   {
     m_openPortRange = jsonValue.GetObject("OpenPortRange");
-
     m_openPortRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceIpV4"))
   {
     m_sourceIpV4 = jsonValue.GetString("SourceIpV4");
-
     m_sourceIpV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceIpV6"))
   {
     m_sourceIpV6 = jsonValue.GetString("SourceIpV6");
-
     m_sourceIpV6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePort"))
   {
     m_sourcePort = jsonValue.GetInteger("SourcePort");
-
     m_sourcePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDomain"))
   {
     m_sourceDomain = jsonValue.GetString("SourceDomain");
-
     m_sourceDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceMac"))
   {
     m_sourceMac = jsonValue.GetString("SourceMac");
-
     m_sourceMacHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationIpV4"))
   {
     m_destinationIpV4 = jsonValue.GetString("DestinationIpV4");
-
     m_destinationIpV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationIpV6"))
   {
     m_destinationIpV6 = jsonValue.GetString("DestinationIpV6");
-
     m_destinationIpV6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPort"))
   {
     m_destinationPort = jsonValue.GetInteger("DestinationPort");
-
     m_destinationPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationDomain"))
   {
     m_destinationDomain = jsonValue.GetString("DestinationDomain");
-
     m_destinationDomainHasBeenSet = true;
   }
-
   return *this;
 }
 

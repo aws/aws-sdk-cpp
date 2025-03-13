@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeliverabilityTestReportResult::GetDeliverabilityTestReportResult()
-{
-}
-
 GetDeliverabilityTestReportResult::GetDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetDeliverabilityTestReportResult& GetDeliverabilityTestReportResult::operator =
   if(jsonValue.ValueExists("DeliverabilityTestReport"))
   {
     m_deliverabilityTestReport = jsonValue.GetObject("DeliverabilityTestReport");
-
+    m_deliverabilityTestReportHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverallPlacement"))
   {
     m_overallPlacement = jsonValue.GetObject("OverallPlacement");
-
+    m_overallPlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IspPlacements"))
   {
     Aws::Utils::Array<JsonView> ispPlacementsJsonList = jsonValue.GetArray("IspPlacements");
@@ -48,14 +42,13 @@ GetDeliverabilityTestReportResult& GetDeliverabilityTestReportResult::operator =
     {
       m_ispPlacements.push_back(ispPlacementsJsonList[ispPlacementsIndex].AsObject());
     }
+    m_ispPlacementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -63,14 +56,15 @@ GetDeliverabilityTestReportResult& GetDeliverabilityTestReportResult::operator =
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

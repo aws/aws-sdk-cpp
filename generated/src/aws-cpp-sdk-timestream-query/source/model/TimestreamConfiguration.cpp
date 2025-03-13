@@ -18,19 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-TimestreamConfiguration::TimestreamConfiguration() : 
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_timeColumnHasBeenSet(false),
-    m_dimensionMappingsHasBeenSet(false),
-    m_multiMeasureMappingsHasBeenSet(false),
-    m_mixedMeasureMappingsHasBeenSet(false),
-    m_measureNameColumnHasBeenSet(false)
-{
-}
-
 TimestreamConfiguration::TimestreamConfiguration(JsonView jsonValue)
-  : TimestreamConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ TimestreamConfiguration& TimestreamConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeColumn"))
   {
     m_timeColumn = jsonValue.GetString("TimeColumn");
-
     m_timeColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionMappings"))
   {
     Aws::Utils::Array<JsonView> dimensionMappingsJsonList = jsonValue.GetArray("DimensionMappings");
@@ -67,14 +49,11 @@ TimestreamConfiguration& TimestreamConfiguration::operator =(JsonView jsonValue)
     }
     m_dimensionMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiMeasureMappings"))
   {
     m_multiMeasureMappings = jsonValue.GetObject("MultiMeasureMappings");
-
     m_multiMeasureMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MixedMeasureMappings"))
   {
     Aws::Utils::Array<JsonView> mixedMeasureMappingsJsonList = jsonValue.GetArray("MixedMeasureMappings");
@@ -84,14 +63,11 @@ TimestreamConfiguration& TimestreamConfiguration::operator =(JsonView jsonValue)
     }
     m_mixedMeasureMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureNameColumn"))
   {
     m_measureNameColumn = jsonValue.GetString("MeasureNameColumn");
-
     m_measureNameColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

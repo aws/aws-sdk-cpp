@@ -18,16 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-SchemaDefinition::SchemaDefinition() : 
-    m_allColumnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_clusteringKeysHasBeenSet(false),
-    m_staticColumnsHasBeenSet(false)
-{
-}
-
 SchemaDefinition::SchemaDefinition(JsonView jsonValue)
-  : SchemaDefinition()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
     }
     m_allColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("partitionKeys");
@@ -53,7 +43,6 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
     }
     m_partitionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusteringKeys"))
   {
     Aws::Utils::Array<JsonView> clusteringKeysJsonList = jsonValue.GetArray("clusteringKeys");
@@ -63,7 +52,6 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
     }
     m_clusteringKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("staticColumns"))
   {
     Aws::Utils::Array<JsonView> staticColumnsJsonList = jsonValue.GetArray("staticColumns");
@@ -73,7 +61,6 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
     }
     m_staticColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

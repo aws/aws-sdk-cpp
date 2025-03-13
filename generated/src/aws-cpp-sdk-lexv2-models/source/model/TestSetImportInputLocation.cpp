@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetImportInputLocation::TestSetImportInputLocation() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3PathHasBeenSet(false)
-{
-}
-
 TestSetImportInputLocation::TestSetImportInputLocation(JsonView jsonValue)
-  : TestSetImportInputLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TestSetImportInputLocation& TestSetImportInputLocation::operator =(JsonView json
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Path"))
   {
     m_s3Path = jsonValue.GetString("s3Path");
-
     m_s3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

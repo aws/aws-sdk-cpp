@@ -34,7 +34,7 @@ namespace Model
   class EnvironmentPlatform
   {
   public:
-    AWS_CODEBUILD_API EnvironmentPlatform();
+    AWS_CODEBUILD_API EnvironmentPlatform() = default;
     AWS_CODEBUILD_API EnvironmentPlatform(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API EnvironmentPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The platform's name.</p>
      */
-    inline const PlatformType& GetPlatform() const{ return m_platform; }
+    inline PlatformType GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const PlatformType& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(PlatformType&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline EnvironmentPlatform& WithPlatform(const PlatformType& value) { SetPlatform(value); return *this;}
-    inline EnvironmentPlatform& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(PlatformType value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline EnvironmentPlatform& WithPlatform(PlatformType value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -57,18 +55,18 @@ namespace Model
      * <p>The list of programming languages that are available for the specified
      * platform.</p>
      */
-    inline const Aws::Vector<EnvironmentLanguage>& GetLanguages() const{ return m_languages; }
+    inline const Aws::Vector<EnvironmentLanguage>& GetLanguages() const { return m_languages; }
     inline bool LanguagesHasBeenSet() const { return m_languagesHasBeenSet; }
-    inline void SetLanguages(const Aws::Vector<EnvironmentLanguage>& value) { m_languagesHasBeenSet = true; m_languages = value; }
-    inline void SetLanguages(Aws::Vector<EnvironmentLanguage>&& value) { m_languagesHasBeenSet = true; m_languages = std::move(value); }
-    inline EnvironmentPlatform& WithLanguages(const Aws::Vector<EnvironmentLanguage>& value) { SetLanguages(value); return *this;}
-    inline EnvironmentPlatform& WithLanguages(Aws::Vector<EnvironmentLanguage>&& value) { SetLanguages(std::move(value)); return *this;}
-    inline EnvironmentPlatform& AddLanguages(const EnvironmentLanguage& value) { m_languagesHasBeenSet = true; m_languages.push_back(value); return *this; }
-    inline EnvironmentPlatform& AddLanguages(EnvironmentLanguage&& value) { m_languagesHasBeenSet = true; m_languages.push_back(std::move(value)); return *this; }
+    template<typename LanguagesT = Aws::Vector<EnvironmentLanguage>>
+    void SetLanguages(LanguagesT&& value) { m_languagesHasBeenSet = true; m_languages = std::forward<LanguagesT>(value); }
+    template<typename LanguagesT = Aws::Vector<EnvironmentLanguage>>
+    EnvironmentPlatform& WithLanguages(LanguagesT&& value) { SetLanguages(std::forward<LanguagesT>(value)); return *this;}
+    template<typename LanguagesT = EnvironmentLanguage>
+    EnvironmentPlatform& AddLanguages(LanguagesT&& value) { m_languagesHasBeenSet = true; m_languages.emplace_back(std::forward<LanguagesT>(value)); return *this; }
     ///@}
   private:
 
-    PlatformType m_platform;
+    PlatformType m_platform{PlatformType::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::Vector<EnvironmentLanguage> m_languages;

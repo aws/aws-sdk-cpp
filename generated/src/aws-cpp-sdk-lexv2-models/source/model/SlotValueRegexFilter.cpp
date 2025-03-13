@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotValueRegexFilter::SlotValueRegexFilter() : 
-    m_patternHasBeenSet(false)
-{
-}
-
 SlotValueRegexFilter::SlotValueRegexFilter(JsonView jsonValue)
-  : SlotValueRegexFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SlotValueRegexFilter& SlotValueRegexFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pattern"))
   {
     m_pattern = jsonValue.GetString("pattern");
-
     m_patternHasBeenSet = true;
   }
-
   return *this;
 }
 

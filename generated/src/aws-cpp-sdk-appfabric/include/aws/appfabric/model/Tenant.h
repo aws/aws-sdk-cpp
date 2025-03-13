@@ -31,7 +31,7 @@ namespace Model
   class Tenant
   {
   public:
-    AWS_APPFABRIC_API Tenant();
+    AWS_APPFABRIC_API Tenant() = default;
     AWS_APPFABRIC_API Tenant(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Tenant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID of the application tenant.</p>
      */
-    inline const Aws::String& GetTenantIdentifier() const{ return m_tenantIdentifier; }
+    inline const Aws::String& GetTenantIdentifier() const { return m_tenantIdentifier; }
     inline bool TenantIdentifierHasBeenSet() const { return m_tenantIdentifierHasBeenSet; }
-    inline void SetTenantIdentifier(const Aws::String& value) { m_tenantIdentifierHasBeenSet = true; m_tenantIdentifier = value; }
-    inline void SetTenantIdentifier(Aws::String&& value) { m_tenantIdentifierHasBeenSet = true; m_tenantIdentifier = std::move(value); }
-    inline void SetTenantIdentifier(const char* value) { m_tenantIdentifierHasBeenSet = true; m_tenantIdentifier.assign(value); }
-    inline Tenant& WithTenantIdentifier(const Aws::String& value) { SetTenantIdentifier(value); return *this;}
-    inline Tenant& WithTenantIdentifier(Aws::String&& value) { SetTenantIdentifier(std::move(value)); return *this;}
-    inline Tenant& WithTenantIdentifier(const char* value) { SetTenantIdentifier(value); return *this;}
+    template<typename TenantIdentifierT = Aws::String>
+    void SetTenantIdentifier(TenantIdentifierT&& value) { m_tenantIdentifierHasBeenSet = true; m_tenantIdentifier = std::forward<TenantIdentifierT>(value); }
+    template<typename TenantIdentifierT = Aws::String>
+    Tenant& WithTenantIdentifier(TenantIdentifierT&& value) { SetTenantIdentifier(std::forward<TenantIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the tenant.</p>
      */
-    inline const Aws::String& GetTenantDisplayName() const{ return m_tenantDisplayName; }
+    inline const Aws::String& GetTenantDisplayName() const { return m_tenantDisplayName; }
     inline bool TenantDisplayNameHasBeenSet() const { return m_tenantDisplayNameHasBeenSet; }
-    inline void SetTenantDisplayName(const Aws::String& value) { m_tenantDisplayNameHasBeenSet = true; m_tenantDisplayName = value; }
-    inline void SetTenantDisplayName(Aws::String&& value) { m_tenantDisplayNameHasBeenSet = true; m_tenantDisplayName = std::move(value); }
-    inline void SetTenantDisplayName(const char* value) { m_tenantDisplayNameHasBeenSet = true; m_tenantDisplayName.assign(value); }
-    inline Tenant& WithTenantDisplayName(const Aws::String& value) { SetTenantDisplayName(value); return *this;}
-    inline Tenant& WithTenantDisplayName(Aws::String&& value) { SetTenantDisplayName(std::move(value)); return *this;}
-    inline Tenant& WithTenantDisplayName(const char* value) { SetTenantDisplayName(value); return *this;}
+    template<typename TenantDisplayNameT = Aws::String>
+    void SetTenantDisplayName(TenantDisplayNameT&& value) { m_tenantDisplayNameHasBeenSet = true; m_tenantDisplayName = std::forward<TenantDisplayNameT>(value); }
+    template<typename TenantDisplayNameT = Aws::String>
+    Tenant& WithTenantDisplayName(TenantDisplayNameT&& value) { SetTenantDisplayName(std::forward<TenantDisplayNameT>(value)); return *this;}
     ///@}
   private:
 

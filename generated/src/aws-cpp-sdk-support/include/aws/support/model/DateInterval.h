@@ -32,7 +32,7 @@ namespace Model
   class DateInterval
   {
   public:
-    AWS_SUPPORT_API DateInterval();
+    AWS_SUPPORT_API DateInterval() = default;
     AWS_SUPPORT_API DateInterval(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API DateInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p> A JSON object containing start and date time (UTC). Date and time format is
      * RFC 3339 : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
      */
-    inline const Aws::String& GetStartDateTime() const{ return m_startDateTime; }
+    inline const Aws::String& GetStartDateTime() const { return m_startDateTime; }
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-    inline void SetStartDateTime(const Aws::String& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-    inline void SetStartDateTime(Aws::String&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-    inline void SetStartDateTime(const char* value) { m_startDateTimeHasBeenSet = true; m_startDateTime.assign(value); }
-    inline DateInterval& WithStartDateTime(const Aws::String& value) { SetStartDateTime(value); return *this;}
-    inline DateInterval& WithStartDateTime(Aws::String&& value) { SetStartDateTime(std::move(value)); return *this;}
-    inline DateInterval& WithStartDateTime(const char* value) { SetStartDateTime(value); return *this;}
+    template<typename StartDateTimeT = Aws::String>
+    void SetStartDateTime(StartDateTimeT&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::forward<StartDateTimeT>(value); }
+    template<typename StartDateTimeT = Aws::String>
+    DateInterval& WithStartDateTime(StartDateTimeT&& value) { SetStartDateTime(std::forward<StartDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> End Date Time (UTC). RFC 3339 format : 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ'. </p>
      */
-    inline const Aws::String& GetEndDateTime() const{ return m_endDateTime; }
+    inline const Aws::String& GetEndDateTime() const { return m_endDateTime; }
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-    inline void SetEndDateTime(const Aws::String& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-    inline void SetEndDateTime(Aws::String&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-    inline void SetEndDateTime(const char* value) { m_endDateTimeHasBeenSet = true; m_endDateTime.assign(value); }
-    inline DateInterval& WithEndDateTime(const Aws::String& value) { SetEndDateTime(value); return *this;}
-    inline DateInterval& WithEndDateTime(Aws::String&& value) { SetEndDateTime(std::move(value)); return *this;}
-    inline DateInterval& WithEndDateTime(const char* value) { SetEndDateTime(value); return *this;}
+    template<typename EndDateTimeT = Aws::String>
+    void SetEndDateTime(EndDateTimeT&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::forward<EndDateTimeT>(value); }
+    template<typename EndDateTimeT = Aws::String>
+    DateInterval& WithEndDateTime(EndDateTimeT&& value) { SetEndDateTime(std::forward<EndDateTimeT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignCommunicationTimeRequest::UpdateCampaignCommunicationTimeRequest() : 
-    m_idHasBeenSet(false),
-    m_communicationTimeConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignCommunicationTimeRequest::SerializePayload() const
 {
   JsonValue payload;

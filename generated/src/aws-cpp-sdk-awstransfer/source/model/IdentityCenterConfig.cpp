@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-IdentityCenterConfig::IdentityCenterConfig() : 
-    m_instanceArnHasBeenSet(false),
-    m_roleHasBeenSet(false)
-{
-}
-
 IdentityCenterConfig::IdentityCenterConfig(JsonView jsonValue)
-  : IdentityCenterConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdentityCenterConfig& IdentityCenterConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceArn"))
   {
     m_instanceArn = jsonValue.GetString("InstanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

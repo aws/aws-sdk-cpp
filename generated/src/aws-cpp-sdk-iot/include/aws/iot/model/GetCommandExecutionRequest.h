@@ -25,7 +25,7 @@ namespace Model
   class GetCommandExecutionRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetCommandExecutionRequest();
+    AWS_IOT_API GetCommandExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique identifier for the command execution. This information is returned
      * as a response of the <code>StartCommandExecution</code> API request.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline GetCommandExecutionRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline GetCommandExecutionRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline GetCommandExecutionRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    GetCommandExecutionRequest& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the device on which the command execution
      * is being performed.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline GetCommandExecutionRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline GetCommandExecutionRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline GetCommandExecutionRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    GetCommandExecutionRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * field to provide additional information about the command execution. You only
      * need to specify this field when using the <code>AWS-IoT</code> namespace.</p>
      */
-    inline bool GetIncludeResult() const{ return m_includeResult; }
+    inline bool GetIncludeResult() const { return m_includeResult; }
     inline bool IncludeResultHasBeenSet() const { return m_includeResultHasBeenSet; }
     inline void SetIncludeResult(bool value) { m_includeResultHasBeenSet = true; m_includeResult = value; }
     inline GetCommandExecutionRequest& WithIncludeResult(bool value) { SetIncludeResult(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet = false;
 
-    bool m_includeResult;
+    bool m_includeResult{false};
     bool m_includeResultHasBeenSet = false;
   };
 

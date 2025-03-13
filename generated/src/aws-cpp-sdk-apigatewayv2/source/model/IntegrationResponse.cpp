@@ -18,19 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-IntegrationResponse::IntegrationResponse() : 
-    m_contentHandlingStrategy(ContentHandlingStrategy::NOT_SET),
-    m_contentHandlingStrategyHasBeenSet(false),
-    m_integrationResponseIdHasBeenSet(false),
-    m_integrationResponseKeyHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false),
-    m_templateSelectionExpressionHasBeenSet(false)
-{
-}
-
 IntegrationResponse::IntegrationResponse(JsonView jsonValue)
-  : IntegrationResponse()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("contentHandlingStrategy"))
   {
     m_contentHandlingStrategy = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandlingStrategy"));
-
     m_contentHandlingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationResponseId"))
   {
     m_integrationResponseId = jsonValue.GetString("integrationResponseId");
-
     m_integrationResponseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationResponseKey"))
   {
     m_integrationResponseKey = jsonValue.GetString("integrationResponseKey");
-
     m_integrationResponseKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -67,7 +49,6 @@ IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
     }
     m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseTemplates"))
   {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
@@ -77,14 +58,11 @@ IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
     }
     m_responseTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateSelectionExpression"))
   {
     m_templateSelectionExpression = jsonValue.GetString("templateSelectionExpression");
-
     m_templateSelectionExpressionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrialRequest::DescribeTrialRequest() : 
-    m_trialNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrialRequest::SerializePayload() const
 {
   JsonValue payload;

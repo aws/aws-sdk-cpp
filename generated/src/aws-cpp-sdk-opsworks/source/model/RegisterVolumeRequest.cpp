@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterVolumeRequest::RegisterVolumeRequest() : 
-    m_ec2VolumeIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

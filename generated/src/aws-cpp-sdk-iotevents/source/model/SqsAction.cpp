@@ -18,16 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-SqsAction::SqsAction() : 
-    m_queueUrlHasBeenSet(false),
-    m_useBase64(false),
-    m_useBase64HasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 SqsAction::SqsAction(JsonView jsonValue)
-  : SqsAction()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SqsAction& SqsAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queueUrl"))
   {
     m_queueUrl = jsonValue.GetString("queueUrl");
-
     m_queueUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useBase64"))
   {
     m_useBase64 = jsonValue.GetBool("useBase64");
-
     m_useBase64HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
     m_payloadHasBeenSet = true;
   }
-
   return *this;
 }
 

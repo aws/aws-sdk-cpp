@@ -32,7 +32,7 @@ namespace Model
   class Country
   {
   public:
-    AWS_GEOPLACES_API Country();
+    AWS_GEOPLACES_API Country() = default;
     AWS_GEOPLACES_API Country(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Country& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>Country, represented by its alpha 2-character code. </p>
      */
-    inline const Aws::String& GetCode2() const{ return m_code2; }
+    inline const Aws::String& GetCode2() const { return m_code2; }
     inline bool Code2HasBeenSet() const { return m_code2HasBeenSet; }
-    inline void SetCode2(const Aws::String& value) { m_code2HasBeenSet = true; m_code2 = value; }
-    inline void SetCode2(Aws::String&& value) { m_code2HasBeenSet = true; m_code2 = std::move(value); }
-    inline void SetCode2(const char* value) { m_code2HasBeenSet = true; m_code2.assign(value); }
-    inline Country& WithCode2(const Aws::String& value) { SetCode2(value); return *this;}
-    inline Country& WithCode2(Aws::String&& value) { SetCode2(std::move(value)); return *this;}
-    inline Country& WithCode2(const char* value) { SetCode2(value); return *this;}
+    template<typename Code2T = Aws::String>
+    void SetCode2(Code2T&& value) { m_code2HasBeenSet = true; m_code2 = std::forward<Code2T>(value); }
+    template<typename Code2T = Aws::String>
+    Country& WithCode2(Code2T&& value) { SetCode2(std::forward<Code2T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Country, represented by its alpha t-character code. </p>
      */
-    inline const Aws::String& GetCode3() const{ return m_code3; }
+    inline const Aws::String& GetCode3() const { return m_code3; }
     inline bool Code3HasBeenSet() const { return m_code3HasBeenSet; }
-    inline void SetCode3(const Aws::String& value) { m_code3HasBeenSet = true; m_code3 = value; }
-    inline void SetCode3(Aws::String&& value) { m_code3HasBeenSet = true; m_code3 = std::move(value); }
-    inline void SetCode3(const char* value) { m_code3HasBeenSet = true; m_code3.assign(value); }
-    inline Country& WithCode3(const Aws::String& value) { SetCode3(value); return *this;}
-    inline Country& WithCode3(Aws::String&& value) { SetCode3(std::move(value)); return *this;}
-    inline Country& WithCode3(const char* value) { SetCode3(value); return *this;}
+    template<typename Code3T = Aws::String>
+    void SetCode3(Code3T&& value) { m_code3HasBeenSet = true; m_code3 = std::forward<Code3T>(value); }
+    template<typename Code3T = Aws::String>
+    Country& WithCode3(Code3T&& value) { SetCode3(std::forward<Code3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the country.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Country& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Country& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Country& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Country& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

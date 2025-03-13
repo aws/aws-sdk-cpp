@@ -18,19 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationOperationInfoDetails::ApplicationOperationInfoDetails() : 
-    m_operationHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_operationStatus(OperationStatus::NOT_SET),
-    m_operationStatusHasBeenSet(false),
-    m_applicationVersionChangeDetailsHasBeenSet(false),
-    m_operationFailureDetailsHasBeenSet(false)
-{
-}
-
 ApplicationOperationInfoDetails::ApplicationOperationInfoDetails(JsonView jsonValue)
-  : ApplicationOperationInfoDetails()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ApplicationOperationInfoDetails& ApplicationOperationInfoDetails::operator =(Jso
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = jsonValue.GetString("Operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationStatus"))
   {
     m_operationStatus = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("OperationStatus"));
-
     m_operationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionChangeDetails"))
   {
     m_applicationVersionChangeDetails = jsonValue.GetObject("ApplicationVersionChangeDetails");
-
     m_applicationVersionChangeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationFailureDetails"))
   {
     m_operationFailureDetails = jsonValue.GetObject("OperationFailureDetails");
-
     m_operationFailureDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

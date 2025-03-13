@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-Ec2Configuration::Ec2Configuration() : 
-    m_imageTypeHasBeenSet(false),
-    m_imageIdOverrideHasBeenSet(false),
-    m_imageKubernetesVersionHasBeenSet(false)
-{
-}
-
 Ec2Configuration::Ec2Configuration(JsonView jsonValue)
-  : Ec2Configuration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Ec2Configuration& Ec2Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageType"))
   {
     m_imageType = jsonValue.GetString("imageType");
-
     m_imageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageIdOverride"))
   {
     m_imageIdOverride = jsonValue.GetString("imageIdOverride");
-
     m_imageIdOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageKubernetesVersion"))
   {
     m_imageKubernetesVersion = jsonValue.GetString("imageKubernetesVersion");
-
     m_imageKubernetesVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

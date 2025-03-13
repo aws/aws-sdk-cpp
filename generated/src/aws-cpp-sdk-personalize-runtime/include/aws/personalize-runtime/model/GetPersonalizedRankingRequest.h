@@ -23,7 +23,7 @@ namespace Model
   class GetPersonalizedRankingRequest : public PersonalizeRuntimeRequest
   {
   public:
-    AWS_PERSONALIZERUNTIME_API GetPersonalizedRankingRequest();
+    AWS_PERSONALIZERUNTIME_API GetPersonalizedRankingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the campaign to use for generating the
      * personalized ranking.</p>
      */
-    inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
+    inline const Aws::String& GetCampaignArn() const { return m_campaignArn; }
     inline bool CampaignArnHasBeenSet() const { return m_campaignArnHasBeenSet; }
-    inline void SetCampaignArn(const Aws::String& value) { m_campaignArnHasBeenSet = true; m_campaignArn = value; }
-    inline void SetCampaignArn(Aws::String&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::move(value); }
-    inline void SetCampaignArn(const char* value) { m_campaignArnHasBeenSet = true; m_campaignArn.assign(value); }
-    inline GetPersonalizedRankingRequest& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    template<typename CampaignArnT = Aws::String>
+    void SetCampaignArn(CampaignArnT&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::forward<CampaignArnT>(value); }
+    template<typename CampaignArnT = Aws::String>
+    GetPersonalizedRankingRequest& WithCampaignArn(CampaignArnT&& value) { SetCampaignArn(std::forward<CampaignArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * If you are including metadata in recommendations, the maximum is 50. Otherwise,
      * the maximum is 500.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputList() const{ return m_inputList; }
+    inline const Aws::Vector<Aws::String>& GetInputList() const { return m_inputList; }
     inline bool InputListHasBeenSet() const { return m_inputListHasBeenSet; }
-    inline void SetInputList(const Aws::Vector<Aws::String>& value) { m_inputListHasBeenSet = true; m_inputList = value; }
-    inline void SetInputList(Aws::Vector<Aws::String>&& value) { m_inputListHasBeenSet = true; m_inputList = std::move(value); }
-    inline GetPersonalizedRankingRequest& WithInputList(const Aws::Vector<Aws::String>& value) { SetInputList(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithInputList(Aws::Vector<Aws::String>&& value) { SetInputList(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& AddInputList(const Aws::String& value) { m_inputListHasBeenSet = true; m_inputList.push_back(value); return *this; }
-    inline GetPersonalizedRankingRequest& AddInputList(Aws::String&& value) { m_inputListHasBeenSet = true; m_inputList.push_back(std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddInputList(const char* value) { m_inputListHasBeenSet = true; m_inputList.push_back(value); return *this; }
+    template<typename InputListT = Aws::Vector<Aws::String>>
+    void SetInputList(InputListT&& value) { m_inputListHasBeenSet = true; m_inputList = std::forward<InputListT>(value); }
+    template<typename InputListT = Aws::Vector<Aws::String>>
+    GetPersonalizedRankingRequest& WithInputList(InputListT&& value) { SetInputList(std::forward<InputListT>(value)); return *this;}
+    template<typename InputListT = Aws::String>
+    GetPersonalizedRankingRequest& AddInputList(InputListT&& value) { m_inputListHasBeenSet = true; m_inputList.emplace_back(std::forward<InputListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,14 +69,12 @@ namespace Model
      * <p>The user for which you want the campaign to provide a personalized
      * ranking.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline GetPersonalizedRankingRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    GetPersonalizedRankingRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,19 +84,16 @@ namespace Model
      * getting a user's recommendations, such as the user's current location or device
      * type.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetContext() const { return m_context; }
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
-    inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
-    inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
-    inline GetPersonalizedRankingRequest& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
-    inline GetPersonalizedRankingRequest& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline GetPersonalizedRankingRequest& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
-    inline GetPersonalizedRankingRequest& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetContext(ContextT&& value) { m_contextHasBeenSet = true; m_context = std::forward<ContextT>(value); }
+    template<typename ContextT = Aws::Map<Aws::String, Aws::String>>
+    GetPersonalizedRankingRequest& WithContext(ContextT&& value) { SetContext(std::forward<ContextT>(value)); return *this;}
+    template<typename ContextKeyT = Aws::String, typename ContextValueT = Aws::String>
+    GetPersonalizedRankingRequest& AddContext(ContextKeyT&& key, ContextValueT&& value) {
+      m_contextHasBeenSet = true; m_context.emplace(std::forward<ContextKeyT>(key), std::forward<ContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
      * Recommendations</a>.</p>
      */
-    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
-    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
-    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
-    inline GetPersonalizedRankingRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+    template<typename FilterArnT = Aws::String>
+    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
+    template<typename FilterArnT = Aws::String>
+    GetPersonalizedRankingRequest& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,19 +127,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
      * Recommendations</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const{ return m_filterValues; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const { return m_filterValues; }
     inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
-    inline void SetFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
-    inline void SetFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
-    inline GetPersonalizedRankingRequest& WithFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { SetFilterValues(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& AddFilterValues(const Aws::String& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
-    inline GetPersonalizedRankingRequest& AddFilterValues(Aws::String&& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
-    inline GetPersonalizedRankingRequest& AddFilterValues(const Aws::String& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddFilterValues(Aws::String&& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddFilterValues(const char* key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddFilterValues(Aws::String&& key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
-    inline GetPersonalizedRankingRequest& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
+    template<typename FilterValuesT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilterValues(FilterValuesT&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::forward<FilterValuesT>(value); }
+    template<typename FilterValuesT = Aws::Map<Aws::String, Aws::String>>
+    GetPersonalizedRankingRequest& WithFilterValues(FilterValuesT&& value) { SetFilterValues(std::forward<FilterValuesT>(value)); return *this;}
+    template<typename FilterValuesKeyT = Aws::String, typename FilterValuesValueT = Aws::String>
+    GetPersonalizedRankingRequest& AddFilterValues(FilterValuesKeyT&& key, FilterValuesValueT&& value) {
+      m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::forward<FilterValuesKeyT>(key), std::forward<FilterValuesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -163,18 +150,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
      * metadata in recommendations for a campaign</a>. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMetadataColumns() const{ return m_metadataColumns; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMetadataColumns() const { return m_metadataColumns; }
     inline bool MetadataColumnsHasBeenSet() const { return m_metadataColumnsHasBeenSet; }
-    inline void SetMetadataColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = value; }
-    inline void SetMetadataColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = std::move(value); }
-    inline GetPersonalizedRankingRequest& WithMetadataColumns(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetMetadataColumns(value); return *this;}
-    inline GetPersonalizedRankingRequest& WithMetadataColumns(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetMetadataColumns(std::move(value)); return *this;}
-    inline GetPersonalizedRankingRequest& AddMetadataColumns(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, value); return *this; }
-    inline GetPersonalizedRankingRequest& AddMetadataColumns(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::move(key), value); return *this; }
-    inline GetPersonalizedRankingRequest& AddMetadataColumns(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddMetadataColumns(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddMetadataColumns(const char* key, Aws::Vector<Aws::String>&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, std::move(value)); return *this; }
-    inline GetPersonalizedRankingRequest& AddMetadataColumns(const char* key, const Aws::Vector<Aws::String>& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(key, value); return *this; }
+    template<typename MetadataColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetMetadataColumns(MetadataColumnsT&& value) { m_metadataColumnsHasBeenSet = true; m_metadataColumns = std::forward<MetadataColumnsT>(value); }
+    template<typename MetadataColumnsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    GetPersonalizedRankingRequest& WithMetadataColumns(MetadataColumnsT&& value) { SetMetadataColumns(std::forward<MetadataColumnsT>(value)); return *this;}
+    template<typename MetadataColumnsKeyT = Aws::String, typename MetadataColumnsValueT = Aws::Vector<Aws::String>>
+    GetPersonalizedRankingRequest& AddMetadataColumns(MetadataColumnsKeyT&& key, MetadataColumnsValueT&& value) {
+      m_metadataColumnsHasBeenSet = true; m_metadataColumns.emplace(std::forward<MetadataColumnsKeyT>(key), std::forward<MetadataColumnsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class TlsConfig
   {
   public:
-    AWS_APIGATEWAY_API TlsConfig();
+    AWS_APIGATEWAY_API TlsConfig() = default;
     AWS_APIGATEWAY_API TlsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API TlsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * <code>insecureSkipVerification</code>, you increase the risk of
      * man-in-the-middle attacks.</p> 
      */
-    inline bool GetInsecureSkipVerification() const{ return m_insecureSkipVerification; }
+    inline bool GetInsecureSkipVerification() const { return m_insecureSkipVerification; }
     inline bool InsecureSkipVerificationHasBeenSet() const { return m_insecureSkipVerificationHasBeenSet; }
     inline void SetInsecureSkipVerification(bool value) { m_insecureSkipVerificationHasBeenSet = true; m_insecureSkipVerification = value; }
     inline TlsConfig& WithInsecureSkipVerification(bool value) { SetInsecureSkipVerification(value); return *this;}
     ///@}
   private:
 
-    bool m_insecureSkipVerification;
+    bool m_insecureSkipVerification{false};
     bool m_insecureSkipVerificationHasBeenSet = false;
   };
 

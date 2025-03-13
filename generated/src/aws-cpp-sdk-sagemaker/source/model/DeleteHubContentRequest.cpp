@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteHubContentRequest::DeleteHubContentRequest() : 
-    m_hubNameHasBeenSet(false),
-    m_hubContentType(HubContentType::NOT_SET),
-    m_hubContentTypeHasBeenSet(false),
-    m_hubContentNameHasBeenSet(false),
-    m_hubContentVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteHubContentRequest::SerializePayload() const
 {
   JsonValue payload;

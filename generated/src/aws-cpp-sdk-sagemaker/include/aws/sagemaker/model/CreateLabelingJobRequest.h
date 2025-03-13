@@ -28,7 +28,7 @@ namespace Model
   class CreateLabelingJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateLabelingJobRequest();
+    AWS_SAGEMAKER_API CreateLabelingJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * For example, Example-job and example-job are considered the same labeling job
      * name by Ground Truth.</p>
      */
-    inline const Aws::String& GetLabelingJobName() const{ return m_labelingJobName; }
+    inline const Aws::String& GetLabelingJobName() const { return m_labelingJobName; }
     inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
-    inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
-    inline void SetLabelingJobName(Aws::String&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::move(value); }
-    inline void SetLabelingJobName(const char* value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName.assign(value); }
-    inline CreateLabelingJobRequest& WithLabelingJobName(const Aws::String& value) { SetLabelingJobName(value); return *this;}
-    inline CreateLabelingJobRequest& WithLabelingJobName(Aws::String&& value) { SetLabelingJobName(std::move(value)); return *this;}
-    inline CreateLabelingJobRequest& WithLabelingJobName(const char* value) { SetLabelingJobName(value); return *this;}
+    template<typename LabelingJobNameT = Aws::String>
+    void SetLabelingJobName(LabelingJobNameT&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::forward<LabelingJobNameT>(value); }
+    template<typename LabelingJobNameT = Aws::String>
+    CreateLabelingJobRequest& WithLabelingJobName(LabelingJobNameT&& value) { SetLabelingJobName(std::forward<LabelingJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +92,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
      * and Adjust Labels</a>.</p> 
      */
-    inline const Aws::String& GetLabelAttributeName() const{ return m_labelAttributeName; }
+    inline const Aws::String& GetLabelAttributeName() const { return m_labelAttributeName; }
     inline bool LabelAttributeNameHasBeenSet() const { return m_labelAttributeNameHasBeenSet; }
-    inline void SetLabelAttributeName(const Aws::String& value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName = value; }
-    inline void SetLabelAttributeName(Aws::String&& value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName = std::move(value); }
-    inline void SetLabelAttributeName(const char* value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName.assign(value); }
-    inline CreateLabelingJobRequest& WithLabelAttributeName(const Aws::String& value) { SetLabelAttributeName(value); return *this;}
-    inline CreateLabelingJobRequest& WithLabelAttributeName(Aws::String&& value) { SetLabelAttributeName(std::move(value)); return *this;}
-    inline CreateLabelingJobRequest& WithLabelAttributeName(const char* value) { SetLabelAttributeName(value); return *this;}
+    template<typename LabelAttributeNameT = Aws::String>
+    void SetLabelAttributeName(LabelAttributeNameT&& value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName = std::forward<LabelAttributeNameT>(value); }
+    template<typename LabelAttributeNameT = Aws::String>
+    CreateLabelingJobRequest& WithLabelAttributeName(LabelAttributeNameT&& value) { SetLabelAttributeName(std::forward<LabelAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +118,12 @@ namespace Model
      * information. Use <code>ContentClassifiers</code> to specify that your data is
      * free of personally identifiable information and adult content.</p>
      */
-    inline const LabelingJobInputConfig& GetInputConfig() const{ return m_inputConfig; }
+    inline const LabelingJobInputConfig& GetInputConfig() const { return m_inputConfig; }
     inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
-    inline void SetInputConfig(const LabelingJobInputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
-    inline void SetInputConfig(LabelingJobInputConfig&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::move(value); }
-    inline CreateLabelingJobRequest& WithInputConfig(const LabelingJobInputConfig& value) { SetInputConfig(value); return *this;}
-    inline CreateLabelingJobRequest& WithInputConfig(LabelingJobInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
+    template<typename InputConfigT = LabelingJobInputConfig>
+    void SetInputConfig(InputConfigT&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::forward<InputConfigT>(value); }
+    template<typename InputConfigT = LabelingJobInputConfig>
+    CreateLabelingJobRequest& WithInputConfig(InputConfigT&& value) { SetInputConfig(std::forward<InputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +131,12 @@ namespace Model
      * <p>The location of the output data and the Amazon Web Services Key Management
      * Service key ID for the key used to encrypt the output data, if any.</p>
      */
-    inline const LabelingJobOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+    inline const LabelingJobOutputConfig& GetOutputConfig() const { return m_outputConfig; }
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-    inline void SetOutputConfig(const LabelingJobOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-    inline void SetOutputConfig(LabelingJobOutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-    inline CreateLabelingJobRequest& WithOutputConfig(const LabelingJobOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline CreateLabelingJobRequest& WithOutputConfig(LabelingJobOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    template<typename OutputConfigT = LabelingJobOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = LabelingJobOutputConfig>
+    CreateLabelingJobRequest& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,14 +146,12 @@ namespace Model
      * necessary permissions so that Amazon SageMaker can successfully complete data
      * labeling.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateLabelingJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateLabelingJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateLabelingJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateLabelingJobRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,14 +193,12 @@ namespace Model
      * <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or
      * verify annotations of.</p> </li> </ul>
      */
-    inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
+    inline const Aws::String& GetLabelCategoryConfigS3Uri() const { return m_labelCategoryConfigS3Uri; }
     inline bool LabelCategoryConfigS3UriHasBeenSet() const { return m_labelCategoryConfigS3UriHasBeenSet; }
-    inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = value; }
-    inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::move(value); }
-    inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri.assign(value); }
-    inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
-    inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
-    inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const char* value) { SetLabelCategoryConfigS3Uri(value); return *this;}
+    template<typename LabelCategoryConfigS3UriT = Aws::String>
+    void SetLabelCategoryConfigS3Uri(LabelCategoryConfigS3UriT&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::forward<LabelCategoryConfigS3UriT>(value); }
+    template<typename LabelCategoryConfigS3UriT = Aws::String>
+    CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(LabelCategoryConfigS3UriT&& value) { SetLabelCategoryConfigS3Uri(std::forward<LabelCategoryConfigS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,24 +207,24 @@ namespace Model
      * are met, the job is automatically stopped. You can use these conditions to
      * control the cost of data labeling.</p>
      */
-    inline const LabelingJobStoppingConditions& GetStoppingConditions() const{ return m_stoppingConditions; }
+    inline const LabelingJobStoppingConditions& GetStoppingConditions() const { return m_stoppingConditions; }
     inline bool StoppingConditionsHasBeenSet() const { return m_stoppingConditionsHasBeenSet; }
-    inline void SetStoppingConditions(const LabelingJobStoppingConditions& value) { m_stoppingConditionsHasBeenSet = true; m_stoppingConditions = value; }
-    inline void SetStoppingConditions(LabelingJobStoppingConditions&& value) { m_stoppingConditionsHasBeenSet = true; m_stoppingConditions = std::move(value); }
-    inline CreateLabelingJobRequest& WithStoppingConditions(const LabelingJobStoppingConditions& value) { SetStoppingConditions(value); return *this;}
-    inline CreateLabelingJobRequest& WithStoppingConditions(LabelingJobStoppingConditions&& value) { SetStoppingConditions(std::move(value)); return *this;}
+    template<typename StoppingConditionsT = LabelingJobStoppingConditions>
+    void SetStoppingConditions(StoppingConditionsT&& value) { m_stoppingConditionsHasBeenSet = true; m_stoppingConditions = std::forward<StoppingConditionsT>(value); }
+    template<typename StoppingConditionsT = LabelingJobStoppingConditions>
+    CreateLabelingJobRequest& WithStoppingConditions(StoppingConditionsT&& value) { SetStoppingConditions(std::forward<StoppingConditionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configures the information required to perform automated data labeling.</p>
      */
-    inline const LabelingJobAlgorithmsConfig& GetLabelingJobAlgorithmsConfig() const{ return m_labelingJobAlgorithmsConfig; }
+    inline const LabelingJobAlgorithmsConfig& GetLabelingJobAlgorithmsConfig() const { return m_labelingJobAlgorithmsConfig; }
     inline bool LabelingJobAlgorithmsConfigHasBeenSet() const { return m_labelingJobAlgorithmsConfigHasBeenSet; }
-    inline void SetLabelingJobAlgorithmsConfig(const LabelingJobAlgorithmsConfig& value) { m_labelingJobAlgorithmsConfigHasBeenSet = true; m_labelingJobAlgorithmsConfig = value; }
-    inline void SetLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfig&& value) { m_labelingJobAlgorithmsConfigHasBeenSet = true; m_labelingJobAlgorithmsConfig = std::move(value); }
-    inline CreateLabelingJobRequest& WithLabelingJobAlgorithmsConfig(const LabelingJobAlgorithmsConfig& value) { SetLabelingJobAlgorithmsConfig(value); return *this;}
-    inline CreateLabelingJobRequest& WithLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfig&& value) { SetLabelingJobAlgorithmsConfig(std::move(value)); return *this;}
+    template<typename LabelingJobAlgorithmsConfigT = LabelingJobAlgorithmsConfig>
+    void SetLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfigT&& value) { m_labelingJobAlgorithmsConfigHasBeenSet = true; m_labelingJobAlgorithmsConfig = std::forward<LabelingJobAlgorithmsConfigT>(value); }
+    template<typename LabelingJobAlgorithmsConfigT = LabelingJobAlgorithmsConfig>
+    CreateLabelingJobRequest& WithLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfigT&& value) { SetLabelingJobAlgorithmsConfig(std::forward<LabelingJobAlgorithmsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,12 +232,12 @@ namespace Model
      * <p>Configures the labeling task and how it is presented to workers; including,
      * but not limited to price, keywords, and batch size (task count).</p>
      */
-    inline const HumanTaskConfig& GetHumanTaskConfig() const{ return m_humanTaskConfig; }
+    inline const HumanTaskConfig& GetHumanTaskConfig() const { return m_humanTaskConfig; }
     inline bool HumanTaskConfigHasBeenSet() const { return m_humanTaskConfigHasBeenSet; }
-    inline void SetHumanTaskConfig(const HumanTaskConfig& value) { m_humanTaskConfigHasBeenSet = true; m_humanTaskConfig = value; }
-    inline void SetHumanTaskConfig(HumanTaskConfig&& value) { m_humanTaskConfigHasBeenSet = true; m_humanTaskConfig = std::move(value); }
-    inline CreateLabelingJobRequest& WithHumanTaskConfig(const HumanTaskConfig& value) { SetHumanTaskConfig(value); return *this;}
-    inline CreateLabelingJobRequest& WithHumanTaskConfig(HumanTaskConfig&& value) { SetHumanTaskConfig(std::move(value)); return *this;}
+    template<typename HumanTaskConfigT = HumanTaskConfig>
+    void SetHumanTaskConfig(HumanTaskConfigT&& value) { m_humanTaskConfigHasBeenSet = true; m_humanTaskConfig = std::forward<HumanTaskConfigT>(value); }
+    template<typename HumanTaskConfigT = HumanTaskConfig>
+    CreateLabelingJobRequest& WithHumanTaskConfig(HumanTaskConfigT&& value) { SetHumanTaskConfig(std::forward<HumanTaskConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,14 +247,14 @@ namespace Model
      * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
      * Management User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLabelingJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateLabelingJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLabelingJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLabelingJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateLabelingJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateLabelingJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

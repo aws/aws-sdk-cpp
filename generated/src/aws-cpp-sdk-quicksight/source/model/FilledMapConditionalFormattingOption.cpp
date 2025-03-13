@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilledMapConditionalFormattingOption::FilledMapConditionalFormattingOption() : 
-    m_shapeHasBeenSet(false)
-{
-}
-
 FilledMapConditionalFormattingOption::FilledMapConditionalFormattingOption(JsonView jsonValue)
-  : FilledMapConditionalFormattingOption()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilledMapConditionalFormattingOption& FilledMapConditionalFormattingOption::oper
   if(jsonValue.ValueExists("Shape"))
   {
     m_shape = jsonValue.GetObject("Shape");
-
     m_shapeHasBeenSet = true;
   }
-
   return *this;
 }
 

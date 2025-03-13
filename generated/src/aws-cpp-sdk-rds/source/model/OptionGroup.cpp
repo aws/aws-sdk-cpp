@@ -20,24 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionGroup::OptionGroup() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_optionGroupDescriptionHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_allowsVpcAndNonVpcInstanceMemberships(false),
-    m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_optionGroupArnHasBeenSet(false),
-    m_sourceOptionGroupHasBeenSet(false),
-    m_sourceAccountIdHasBeenSet(false),
-    m_copyTimestampHasBeenSet(false)
-{
-}
-
 OptionGroup::OptionGroup(const XmlNode& xmlNode)
-  : OptionGroup()
 {
   *this = xmlNode;
 }
@@ -53,72 +36,83 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
     {
       m_optionGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupNameNode.GetText());
       m_optionGroupNameHasBeenSet = true;
+       m_optionGroupNameHasBeenSet = true;
     }
     XmlNode optionGroupDescriptionNode = resultNode.FirstChild("OptionGroupDescription");
     if(!optionGroupDescriptionNode.IsNull())
     {
       m_optionGroupDescription = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupDescriptionNode.GetText());
       m_optionGroupDescriptionHasBeenSet = true;
+       m_optionGroupDescriptionHasBeenSet = true;
     }
     XmlNode engineNameNode = resultNode.FirstChild("EngineName");
     if(!engineNameNode.IsNull())
     {
       m_engineName = Aws::Utils::Xml::DecodeEscapedXmlText(engineNameNode.GetText());
       m_engineNameHasBeenSet = true;
+       m_engineNameHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
       m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
       m_majorEngineVersionHasBeenSet = true;
+       m_majorEngineVersionHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("Options");
     if(!optionsNode.IsNull())
     {
       XmlNode optionsMember = optionsNode.FirstChild("Option");
+      m_optionsHasBeenSet = !optionsMember.IsNull();
       while(!optionsMember.IsNull())
       {
         m_options.push_back(optionsMember);
         optionsMember = optionsMember.NextNode("Option");
       }
 
-      m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode allowsVpcAndNonVpcInstanceMembershipsNode = resultNode.FirstChild("AllowsVpcAndNonVpcInstanceMemberships");
     if(!allowsVpcAndNonVpcInstanceMembershipsNode.IsNull())
     {
       m_allowsVpcAndNonVpcInstanceMemberships = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsVpcAndNonVpcInstanceMembershipsNode.GetText()).c_str()).c_str());
       m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true;
+       m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode optionGroupArnNode = resultNode.FirstChild("OptionGroupArn");
     if(!optionGroupArnNode.IsNull())
     {
       m_optionGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(optionGroupArnNode.GetText());
       m_optionGroupArnHasBeenSet = true;
+       m_optionGroupArnHasBeenSet = true;
     }
     XmlNode sourceOptionGroupNode = resultNode.FirstChild("SourceOptionGroup");
     if(!sourceOptionGroupNode.IsNull())
     {
       m_sourceOptionGroup = Aws::Utils::Xml::DecodeEscapedXmlText(sourceOptionGroupNode.GetText());
       m_sourceOptionGroupHasBeenSet = true;
+       m_sourceOptionGroupHasBeenSet = true;
     }
     XmlNode sourceAccountIdNode = resultNode.FirstChild("SourceAccountId");
     if(!sourceAccountIdNode.IsNull())
     {
       m_sourceAccountId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceAccountIdNode.GetText());
       m_sourceAccountIdHasBeenSet = true;
+       m_sourceAccountIdHasBeenSet = true;
     }
     XmlNode copyTimestampNode = resultNode.FirstChild("CopyTimestamp");
     if(!copyTimestampNode.IsNull())
     {
       m_copyTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_copyTimestampHasBeenSet = true;
+       m_copyTimestampHasBeenSet = true;
     }
   }
 

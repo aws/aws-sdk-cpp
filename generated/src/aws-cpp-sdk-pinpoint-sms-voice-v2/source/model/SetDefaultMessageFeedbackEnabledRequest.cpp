@@ -12,13 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetDefaultMessageFeedbackEnabledRequest::SetDefaultMessageFeedbackEnabledRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_messageFeedbackEnabled(false),
-    m_messageFeedbackEnabledHasBeenSet(false)
-{
-}
-
 Aws::String SetDefaultMessageFeedbackEnabledRequest::SerializePayload() const
 {
   JsonValue payload;

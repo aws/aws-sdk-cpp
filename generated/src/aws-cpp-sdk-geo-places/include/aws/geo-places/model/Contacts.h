@@ -33,7 +33,7 @@ namespace Model
   class Contacts
   {
   public:
-    AWS_GEOPLACES_API Contacts();
+    AWS_GEOPLACES_API Contacts() = default;
     AWS_GEOPLACES_API Contacts(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Contacts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>List of phone numbers for the results contact. </p>
      */
-    inline const Aws::Vector<ContactDetails>& GetPhones() const{ return m_phones; }
+    inline const Aws::Vector<ContactDetails>& GetPhones() const { return m_phones; }
     inline bool PhonesHasBeenSet() const { return m_phonesHasBeenSet; }
-    inline void SetPhones(const Aws::Vector<ContactDetails>& value) { m_phonesHasBeenSet = true; m_phones = value; }
-    inline void SetPhones(Aws::Vector<ContactDetails>&& value) { m_phonesHasBeenSet = true; m_phones = std::move(value); }
-    inline Contacts& WithPhones(const Aws::Vector<ContactDetails>& value) { SetPhones(value); return *this;}
-    inline Contacts& WithPhones(Aws::Vector<ContactDetails>&& value) { SetPhones(std::move(value)); return *this;}
-    inline Contacts& AddPhones(const ContactDetails& value) { m_phonesHasBeenSet = true; m_phones.push_back(value); return *this; }
-    inline Contacts& AddPhones(ContactDetails&& value) { m_phonesHasBeenSet = true; m_phones.push_back(std::move(value)); return *this; }
+    template<typename PhonesT = Aws::Vector<ContactDetails>>
+    void SetPhones(PhonesT&& value) { m_phonesHasBeenSet = true; m_phones = std::forward<PhonesT>(value); }
+    template<typename PhonesT = Aws::Vector<ContactDetails>>
+    Contacts& WithPhones(PhonesT&& value) { SetPhones(std::forward<PhonesT>(value)); return *this;}
+    template<typename PhonesT = ContactDetails>
+    Contacts& AddPhones(PhonesT&& value) { m_phonesHasBeenSet = true; m_phones.emplace_back(std::forward<PhonesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of fax addresses for the result contact. </p>
      */
-    inline const Aws::Vector<ContactDetails>& GetFaxes() const{ return m_faxes; }
+    inline const Aws::Vector<ContactDetails>& GetFaxes() const { return m_faxes; }
     inline bool FaxesHasBeenSet() const { return m_faxesHasBeenSet; }
-    inline void SetFaxes(const Aws::Vector<ContactDetails>& value) { m_faxesHasBeenSet = true; m_faxes = value; }
-    inline void SetFaxes(Aws::Vector<ContactDetails>&& value) { m_faxesHasBeenSet = true; m_faxes = std::move(value); }
-    inline Contacts& WithFaxes(const Aws::Vector<ContactDetails>& value) { SetFaxes(value); return *this;}
-    inline Contacts& WithFaxes(Aws::Vector<ContactDetails>&& value) { SetFaxes(std::move(value)); return *this;}
-    inline Contacts& AddFaxes(const ContactDetails& value) { m_faxesHasBeenSet = true; m_faxes.push_back(value); return *this; }
-    inline Contacts& AddFaxes(ContactDetails&& value) { m_faxesHasBeenSet = true; m_faxes.push_back(std::move(value)); return *this; }
+    template<typename FaxesT = Aws::Vector<ContactDetails>>
+    void SetFaxes(FaxesT&& value) { m_faxesHasBeenSet = true; m_faxes = std::forward<FaxesT>(value); }
+    template<typename FaxesT = Aws::Vector<ContactDetails>>
+    Contacts& WithFaxes(FaxesT&& value) { SetFaxes(std::forward<FaxesT>(value)); return *this;}
+    template<typename FaxesT = ContactDetails>
+    Contacts& AddFaxes(FaxesT&& value) { m_faxesHasBeenSet = true; m_faxes.emplace_back(std::forward<FaxesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of website URLs that belong to the result. </p>
      */
-    inline const Aws::Vector<ContactDetails>& GetWebsites() const{ return m_websites; }
+    inline const Aws::Vector<ContactDetails>& GetWebsites() const { return m_websites; }
     inline bool WebsitesHasBeenSet() const { return m_websitesHasBeenSet; }
-    inline void SetWebsites(const Aws::Vector<ContactDetails>& value) { m_websitesHasBeenSet = true; m_websites = value; }
-    inline void SetWebsites(Aws::Vector<ContactDetails>&& value) { m_websitesHasBeenSet = true; m_websites = std::move(value); }
-    inline Contacts& WithWebsites(const Aws::Vector<ContactDetails>& value) { SetWebsites(value); return *this;}
-    inline Contacts& WithWebsites(Aws::Vector<ContactDetails>&& value) { SetWebsites(std::move(value)); return *this;}
-    inline Contacts& AddWebsites(const ContactDetails& value) { m_websitesHasBeenSet = true; m_websites.push_back(value); return *this; }
-    inline Contacts& AddWebsites(ContactDetails&& value) { m_websitesHasBeenSet = true; m_websites.push_back(std::move(value)); return *this; }
+    template<typename WebsitesT = Aws::Vector<ContactDetails>>
+    void SetWebsites(WebsitesT&& value) { m_websitesHasBeenSet = true; m_websites = std::forward<WebsitesT>(value); }
+    template<typename WebsitesT = Aws::Vector<ContactDetails>>
+    Contacts& WithWebsites(WebsitesT&& value) { SetWebsites(std::forward<WebsitesT>(value)); return *this;}
+    template<typename WebsitesT = ContactDetails>
+    Contacts& AddWebsites(WebsitesT&& value) { m_websitesHasBeenSet = true; m_websites.emplace_back(std::forward<WebsitesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of emails for contacts of the result. </p>
      */
-    inline const Aws::Vector<ContactDetails>& GetEmails() const{ return m_emails; }
+    inline const Aws::Vector<ContactDetails>& GetEmails() const { return m_emails; }
     inline bool EmailsHasBeenSet() const { return m_emailsHasBeenSet; }
-    inline void SetEmails(const Aws::Vector<ContactDetails>& value) { m_emailsHasBeenSet = true; m_emails = value; }
-    inline void SetEmails(Aws::Vector<ContactDetails>&& value) { m_emailsHasBeenSet = true; m_emails = std::move(value); }
-    inline Contacts& WithEmails(const Aws::Vector<ContactDetails>& value) { SetEmails(value); return *this;}
-    inline Contacts& WithEmails(Aws::Vector<ContactDetails>&& value) { SetEmails(std::move(value)); return *this;}
-    inline Contacts& AddEmails(const ContactDetails& value) { m_emailsHasBeenSet = true; m_emails.push_back(value); return *this; }
-    inline Contacts& AddEmails(ContactDetails&& value) { m_emailsHasBeenSet = true; m_emails.push_back(std::move(value)); return *this; }
+    template<typename EmailsT = Aws::Vector<ContactDetails>>
+    void SetEmails(EmailsT&& value) { m_emailsHasBeenSet = true; m_emails = std::forward<EmailsT>(value); }
+    template<typename EmailsT = Aws::Vector<ContactDetails>>
+    Contacts& WithEmails(EmailsT&& value) { SetEmails(std::forward<EmailsT>(value)); return *this;}
+    template<typename EmailsT = ContactDetails>
+    Contacts& AddEmails(EmailsT&& value) { m_emailsHasBeenSet = true; m_emails.emplace_back(std::forward<EmailsT>(value)); return *this; }
     ///@}
   private:
 

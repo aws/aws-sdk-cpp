@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-TechnicalCueSegment::TechnicalCueSegment() : 
-    m_type(TechnicalCueType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 TechnicalCueSegment::TechnicalCueSegment(JsonView jsonValue)
-  : TechnicalCueSegment()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TechnicalCueSegment& TechnicalCueSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TechnicalCueTypeMapper::GetTechnicalCueTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

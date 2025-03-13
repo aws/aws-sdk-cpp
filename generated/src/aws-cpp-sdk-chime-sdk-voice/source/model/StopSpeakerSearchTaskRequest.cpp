@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopSpeakerSearchTaskRequest::StopSpeakerSearchTaskRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_speakerSearchTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String StopSpeakerSearchTaskRequest::SerializePayload() const
 {
   return {};

@@ -10,15 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DescribePendingMaintenanceActionsRequest::DescribePendingMaintenanceActionsRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribePendingMaintenanceActionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

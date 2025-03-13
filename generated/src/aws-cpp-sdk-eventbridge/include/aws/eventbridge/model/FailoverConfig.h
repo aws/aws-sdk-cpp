@@ -33,7 +33,7 @@ namespace Model
   class FailoverConfig
   {
   public:
-    AWS_EVENTBRIDGE_API FailoverConfig();
+    AWS_EVENTBRIDGE_API FailoverConfig() = default;
     AWS_EVENTBRIDGE_API FailoverConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API FailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The main Region of the endpoint.</p>
      */
-    inline const Primary& GetPrimary() const{ return m_primary; }
+    inline const Primary& GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
-    inline void SetPrimary(const Primary& value) { m_primaryHasBeenSet = true; m_primary = value; }
-    inline void SetPrimary(Primary&& value) { m_primaryHasBeenSet = true; m_primary = std::move(value); }
-    inline FailoverConfig& WithPrimary(const Primary& value) { SetPrimary(value); return *this;}
-    inline FailoverConfig& WithPrimary(Primary&& value) { SetPrimary(std::move(value)); return *this;}
+    template<typename PrimaryT = Primary>
+    void SetPrimary(PrimaryT&& value) { m_primaryHasBeenSet = true; m_primary = std::forward<PrimaryT>(value); }
+    template<typename PrimaryT = Primary>
+    FailoverConfig& WithPrimary(PrimaryT&& value) { SetPrimary(std::forward<PrimaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The Region that events are routed to when failover is triggered or event
      * replication is enabled.</p>
      */
-    inline const Secondary& GetSecondary() const{ return m_secondary; }
+    inline const Secondary& GetSecondary() const { return m_secondary; }
     inline bool SecondaryHasBeenSet() const { return m_secondaryHasBeenSet; }
-    inline void SetSecondary(const Secondary& value) { m_secondaryHasBeenSet = true; m_secondary = value; }
-    inline void SetSecondary(Secondary&& value) { m_secondaryHasBeenSet = true; m_secondary = std::move(value); }
-    inline FailoverConfig& WithSecondary(const Secondary& value) { SetSecondary(value); return *this;}
-    inline FailoverConfig& WithSecondary(Secondary&& value) { SetSecondary(std::move(value)); return *this;}
+    template<typename SecondaryT = Secondary>
+    void SetSecondary(SecondaryT&& value) { m_secondaryHasBeenSet = true; m_secondary = std::forward<SecondaryT>(value); }
+    template<typename SecondaryT = Secondary>
+    FailoverConfig& WithSecondary(SecondaryT&& value) { SetSecondary(std::forward<SecondaryT>(value)); return *this;}
     ///@}
   private:
 

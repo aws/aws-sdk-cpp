@@ -30,7 +30,7 @@ namespace Model
   class WebAppUnits
   {
   public:
-    AWS_TRANSFER_API WebAppUnits();
+    AWS_TRANSFER_API WebAppUnits() = default;
     AWS_TRANSFER_API WebAppUnits(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API WebAppUnits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * value of <code>1</code> sets the number of concurrent sessions to 250;
      * <code>2</code> sets a value of 500, and so on. </p>
      */
-    inline int GetProvisioned() const{ return m_provisioned; }
+    inline int GetProvisioned() const { return m_provisioned; }
     inline bool ProvisionedHasBeenSet() const { return m_provisionedHasBeenSet; }
     inline void SetProvisioned(int value) { m_provisionedHasBeenSet = true; m_provisioned = value; }
     inline WebAppUnits& WithProvisioned(int value) { SetProvisioned(value); return *this;}
     ///@}
   private:
 
-    int m_provisioned;
+    int m_provisioned{0};
     bool m_provisionedHasBeenSet = false;
   };
 

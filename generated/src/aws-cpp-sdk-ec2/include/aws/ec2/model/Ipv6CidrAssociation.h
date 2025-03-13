@@ -31,7 +31,7 @@ namespace Model
   class Ipv6CidrAssociation
   {
   public:
-    AWS_EC2_API Ipv6CidrAssociation();
+    AWS_EC2_API Ipv6CidrAssociation() = default;
     AWS_EC2_API Ipv6CidrAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Ipv6CidrAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The IPv6 CIDR block.</p>
      */
-    inline const Aws::String& GetIpv6Cidr() const{ return m_ipv6Cidr; }
+    inline const Aws::String& GetIpv6Cidr() const { return m_ipv6Cidr; }
     inline bool Ipv6CidrHasBeenSet() const { return m_ipv6CidrHasBeenSet; }
-    inline void SetIpv6Cidr(const Aws::String& value) { m_ipv6CidrHasBeenSet = true; m_ipv6Cidr = value; }
-    inline void SetIpv6Cidr(Aws::String&& value) { m_ipv6CidrHasBeenSet = true; m_ipv6Cidr = std::move(value); }
-    inline void SetIpv6Cidr(const char* value) { m_ipv6CidrHasBeenSet = true; m_ipv6Cidr.assign(value); }
-    inline Ipv6CidrAssociation& WithIpv6Cidr(const Aws::String& value) { SetIpv6Cidr(value); return *this;}
-    inline Ipv6CidrAssociation& WithIpv6Cidr(Aws::String&& value) { SetIpv6Cidr(std::move(value)); return *this;}
-    inline Ipv6CidrAssociation& WithIpv6Cidr(const char* value) { SetIpv6Cidr(value); return *this;}
+    template<typename Ipv6CidrT = Aws::String>
+    void SetIpv6Cidr(Ipv6CidrT&& value) { m_ipv6CidrHasBeenSet = true; m_ipv6Cidr = std::forward<Ipv6CidrT>(value); }
+    template<typename Ipv6CidrT = Aws::String>
+    Ipv6CidrAssociation& WithIpv6Cidr(Ipv6CidrT&& value) { SetIpv6Cidr(std::forward<Ipv6CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource that's associated with the IPv6 CIDR block.</p>
      */
-    inline const Aws::String& GetAssociatedResource() const{ return m_associatedResource; }
+    inline const Aws::String& GetAssociatedResource() const { return m_associatedResource; }
     inline bool AssociatedResourceHasBeenSet() const { return m_associatedResourceHasBeenSet; }
-    inline void SetAssociatedResource(const Aws::String& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = value; }
-    inline void SetAssociatedResource(Aws::String&& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = std::move(value); }
-    inline void SetAssociatedResource(const char* value) { m_associatedResourceHasBeenSet = true; m_associatedResource.assign(value); }
-    inline Ipv6CidrAssociation& WithAssociatedResource(const Aws::String& value) { SetAssociatedResource(value); return *this;}
-    inline Ipv6CidrAssociation& WithAssociatedResource(Aws::String&& value) { SetAssociatedResource(std::move(value)); return *this;}
-    inline Ipv6CidrAssociation& WithAssociatedResource(const char* value) { SetAssociatedResource(value); return *this;}
+    template<typename AssociatedResourceT = Aws::String>
+    void SetAssociatedResource(AssociatedResourceT&& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = std::forward<AssociatedResourceT>(value); }
+    template<typename AssociatedResourceT = Aws::String>
+    Ipv6CidrAssociation& WithAssociatedResource(AssociatedResourceT&& value) { SetAssociatedResource(std::forward<AssociatedResourceT>(value)); return *this;}
     ///@}
   private:
 

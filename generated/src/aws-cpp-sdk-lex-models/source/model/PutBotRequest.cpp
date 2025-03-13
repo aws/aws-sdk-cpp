@@ -12,34 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBotRequest::PutBotRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_intentsHasBeenSet(false),
-    m_enableModelImprovements(false),
-    m_enableModelImprovementsHasBeenSet(false),
-    m_nluIntentConfidenceThreshold(0.0),
-    m_nluIntentConfidenceThresholdHasBeenSet(false),
-    m_clarificationPromptHasBeenSet(false),
-    m_abortStatementHasBeenSet(false),
-    m_idleSessionTTLInSeconds(0),
-    m_idleSessionTTLInSecondsHasBeenSet(false),
-    m_voiceIdHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_processBehavior(ProcessBehavior::NOT_SET),
-    m_processBehaviorHasBeenSet(false),
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_childDirected(false),
-    m_childDirectedHasBeenSet(false),
-    m_detectSentiment(false),
-    m_detectSentimentHasBeenSet(false),
-    m_createVersion(false),
-    m_createVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PutBotRequest::SerializePayload() const
 {
   JsonValue payload;

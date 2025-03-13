@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-InvalidRequestException::InvalidRequestException() : 
-    m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_datasyncErrorCodeHasBeenSet(false)
-{
-}
-
 InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-  : InvalidRequestException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasyncErrorCode"))
   {
     m_datasyncErrorCode = jsonValue.GetString("datasyncErrorCode");
-
     m_datasyncErrorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

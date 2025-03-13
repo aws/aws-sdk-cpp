@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginCustomHeader::OriginCustomHeader() : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
-{
-}
-
 OriginCustomHeader::OriginCustomHeader(const XmlNode& xmlNode)
-  : OriginCustomHeader()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ OriginCustomHeader& OriginCustomHeader::operator =(const XmlNode& xmlNode)
     {
       m_headerName = Aws::Utils::Xml::DecodeEscapedXmlText(headerNameNode.GetText());
       m_headerNameHasBeenSet = true;
+       m_headerNameHasBeenSet = true;
     }
     XmlNode headerValueNode = resultNode.FirstChild("HeaderValue");
     if(!headerValueNode.IsNull())
     {
       m_headerValue = Aws::Utils::Xml::DecodeEscapedXmlText(headerValueNode.GetText());
       m_headerValueHasBeenSet = true;
+       m_headerValueHasBeenSet = true;
     }
   }
 

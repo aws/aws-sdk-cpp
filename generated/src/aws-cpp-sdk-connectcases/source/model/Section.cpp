@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-Section::Section() : 
-    m_fieldGroupHasBeenSet(false)
-{
-}
-
 Section::Section(JsonView jsonValue)
-  : Section()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Section& Section::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldGroup"))
   {
     m_fieldGroup = jsonValue.GetObject("fieldGroup");
-
     m_fieldGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

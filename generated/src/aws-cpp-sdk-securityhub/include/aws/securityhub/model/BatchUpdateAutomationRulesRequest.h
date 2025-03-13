@@ -22,7 +22,7 @@ namespace Model
   class BatchUpdateAutomationRulesRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchUpdateAutomationRulesRequest();
+    AWS_SECURITYHUB_API BatchUpdateAutomationRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p> An array of ARNs for the rules that are to be updated. Optionally, you can
      * also include <code>RuleStatus</code> and <code>RuleOrder</code>. </p>
      */
-    inline const Aws::Vector<UpdateAutomationRulesRequestItem>& GetUpdateAutomationRulesRequestItems() const{ return m_updateAutomationRulesRequestItems; }
+    inline const Aws::Vector<UpdateAutomationRulesRequestItem>& GetUpdateAutomationRulesRequestItems() const { return m_updateAutomationRulesRequestItems; }
     inline bool UpdateAutomationRulesRequestItemsHasBeenSet() const { return m_updateAutomationRulesRequestItemsHasBeenSet; }
-    inline void SetUpdateAutomationRulesRequestItems(const Aws::Vector<UpdateAutomationRulesRequestItem>& value) { m_updateAutomationRulesRequestItemsHasBeenSet = true; m_updateAutomationRulesRequestItems = value; }
-    inline void SetUpdateAutomationRulesRequestItems(Aws::Vector<UpdateAutomationRulesRequestItem>&& value) { m_updateAutomationRulesRequestItemsHasBeenSet = true; m_updateAutomationRulesRequestItems = std::move(value); }
-    inline BatchUpdateAutomationRulesRequest& WithUpdateAutomationRulesRequestItems(const Aws::Vector<UpdateAutomationRulesRequestItem>& value) { SetUpdateAutomationRulesRequestItems(value); return *this;}
-    inline BatchUpdateAutomationRulesRequest& WithUpdateAutomationRulesRequestItems(Aws::Vector<UpdateAutomationRulesRequestItem>&& value) { SetUpdateAutomationRulesRequestItems(std::move(value)); return *this;}
-    inline BatchUpdateAutomationRulesRequest& AddUpdateAutomationRulesRequestItems(const UpdateAutomationRulesRequestItem& value) { m_updateAutomationRulesRequestItemsHasBeenSet = true; m_updateAutomationRulesRequestItems.push_back(value); return *this; }
-    inline BatchUpdateAutomationRulesRequest& AddUpdateAutomationRulesRequestItems(UpdateAutomationRulesRequestItem&& value) { m_updateAutomationRulesRequestItemsHasBeenSet = true; m_updateAutomationRulesRequestItems.push_back(std::move(value)); return *this; }
+    template<typename UpdateAutomationRulesRequestItemsT = Aws::Vector<UpdateAutomationRulesRequestItem>>
+    void SetUpdateAutomationRulesRequestItems(UpdateAutomationRulesRequestItemsT&& value) { m_updateAutomationRulesRequestItemsHasBeenSet = true; m_updateAutomationRulesRequestItems = std::forward<UpdateAutomationRulesRequestItemsT>(value); }
+    template<typename UpdateAutomationRulesRequestItemsT = Aws::Vector<UpdateAutomationRulesRequestItem>>
+    BatchUpdateAutomationRulesRequest& WithUpdateAutomationRulesRequestItems(UpdateAutomationRulesRequestItemsT&& value) { SetUpdateAutomationRulesRequestItems(std::forward<UpdateAutomationRulesRequestItemsT>(value)); return *this;}
+    template<typename UpdateAutomationRulesRequestItemsT = UpdateAutomationRulesRequestItem>
+    BatchUpdateAutomationRulesRequest& AddUpdateAutomationRulesRequestItems(UpdateAutomationRulesRequestItemsT&& value) { m_updateAutomationRulesRequestItemsHasBeenSet = true; m_updateAutomationRulesRequestItems.emplace_back(std::forward<UpdateAutomationRulesRequestItemsT>(value)); return *this; }
     ///@}
   private:
 

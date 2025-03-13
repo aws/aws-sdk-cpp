@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-HumanLoopActivationOutput::HumanLoopActivationOutput() : 
-    m_humanLoopArnHasBeenSet(false),
-    m_humanLoopActivationReasonsHasBeenSet(false),
-    m_humanLoopActivationConditionsEvaluationResultsHasBeenSet(false)
-{
-}
-
 HumanLoopActivationOutput::HumanLoopActivationOutput(JsonView jsonValue)
-  : HumanLoopActivationOutput()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ HumanLoopActivationOutput& HumanLoopActivationOutput::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("HumanLoopArn"))
   {
     m_humanLoopArn = jsonValue.GetString("HumanLoopArn");
-
     m_humanLoopArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanLoopActivationReasons"))
   {
     Aws::Utils::Array<JsonView> humanLoopActivationReasonsJsonList = jsonValue.GetArray("HumanLoopActivationReasons");
@@ -49,14 +39,11 @@ HumanLoopActivationOutput& HumanLoopActivationOutput::operator =(JsonView jsonVa
     }
     m_humanLoopActivationReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanLoopActivationConditionsEvaluationResults"))
   {
     m_humanLoopActivationConditionsEvaluationResults = jsonValue.GetString("HumanLoopActivationConditionsEvaluationResults");
-
     m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

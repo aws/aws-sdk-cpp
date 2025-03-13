@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-OpportunityInvitationPayload::OpportunityInvitationPayload() : 
-    m_customerHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_receiverResponsibilitiesHasBeenSet(false),
-    m_senderContactsHasBeenSet(false)
-{
-}
-
 OpportunityInvitationPayload::OpportunityInvitationPayload(JsonView jsonValue)
-  : OpportunityInvitationPayload()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OpportunityInvitationPayload& OpportunityInvitationPayload::operator =(JsonView 
   if(jsonValue.ValueExists("Customer"))
   {
     m_customer = jsonValue.GetObject("Customer");
-
     m_customerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Project"))
   {
     m_project = jsonValue.GetObject("Project");
-
     m_projectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceiverResponsibilities"))
   {
     Aws::Utils::Array<JsonView> receiverResponsibilitiesJsonList = jsonValue.GetArray("ReceiverResponsibilities");
@@ -57,7 +44,6 @@ OpportunityInvitationPayload& OpportunityInvitationPayload::operator =(JsonView 
     }
     m_receiverResponsibilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderContacts"))
   {
     Aws::Utils::Array<JsonView> senderContactsJsonList = jsonValue.GetArray("SenderContacts");
@@ -67,7 +53,6 @@ OpportunityInvitationPayload& OpportunityInvitationPayload::operator =(JsonView 
     }
     m_senderContactsHasBeenSet = true;
   }
-
   return *this;
 }
 

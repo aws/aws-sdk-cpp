@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-GlobalReplicationGroupMember::GlobalReplicationGroupMember() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupRegionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_automaticFailover(AutomaticFailoverStatus::NOT_SET),
-    m_automaticFailoverHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 GlobalReplicationGroupMember::GlobalReplicationGroupMember(const XmlNode& xmlNode)
-  : GlobalReplicationGroupMember()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ GlobalReplicationGroupMember& GlobalReplicationGroupMember::operator =(const Xml
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode replicationGroupRegionNode = resultNode.FirstChild("ReplicationGroupRegion");
     if(!replicationGroupRegionNode.IsNull())
     {
       m_replicationGroupRegion = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupRegionNode.GetText());
       m_replicationGroupRegionHasBeenSet = true;
+       m_replicationGroupRegionHasBeenSet = true;
     }
     XmlNode roleNode = resultNode.FirstChild("Role");
     if(!roleNode.IsNull())
     {
       m_role = Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText());
       m_roleHasBeenSet = true;
+       m_roleHasBeenSet = true;
     }
     XmlNode automaticFailoverNode = resultNode.FirstChild("AutomaticFailover");
     if(!automaticFailoverNode.IsNull())
     {
-      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()).c_str());
+      m_automaticFailover = AutomaticFailoverStatusMapper::GetAutomaticFailoverStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticFailoverNode.GetText()).c_str()));
       m_automaticFailoverHasBeenSet = true;
+       m_automaticFailoverHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

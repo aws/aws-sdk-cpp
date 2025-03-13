@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-OutputFormatConfiguration::OutputFormatConfiguration() : 
-    m_serializerHasBeenSet(false)
-{
-}
-
 OutputFormatConfiguration::OutputFormatConfiguration(JsonView jsonValue)
-  : OutputFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputFormatConfiguration& OutputFormatConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Serializer"))
   {
     m_serializer = jsonValue.GetObject("Serializer");
-
     m_serializerHasBeenSet = true;
   }
-
   return *this;
 }
 

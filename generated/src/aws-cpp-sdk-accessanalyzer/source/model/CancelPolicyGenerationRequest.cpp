@@ -12,11 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelPolicyGenerationRequest::CancelPolicyGenerationRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelPolicyGenerationRequest::SerializePayload() const
 {
   return {};

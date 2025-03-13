@@ -18,20 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-QuerySummary::QuerySummary() : 
-    m_idHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_waited(0),
-    m_waitedHasBeenSet(false),
-    m_elapsed(0),
-    m_elapsedHasBeenSet(false),
-    m_state(QueryState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 QuerySummary::QuerySummary(JsonView jsonValue)
-  : QuerySummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ QuerySummary& QuerySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waited"))
   {
     m_waited = jsonValue.GetInteger("waited");
-
     m_waitedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsed"))
   {
     m_elapsed = jsonValue.GetInteger("elapsed");
-
     m_elapsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = QueryStateMapper::GetQueryStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

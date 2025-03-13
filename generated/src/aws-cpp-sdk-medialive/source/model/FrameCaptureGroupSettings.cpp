@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FrameCaptureGroupSettings::FrameCaptureGroupSettings() : 
-    m_destinationHasBeenSet(false),
-    m_frameCaptureCdnSettingsHasBeenSet(false)
-{
-}
-
 FrameCaptureGroupSettings::FrameCaptureGroupSettings(JsonView jsonValue)
-  : FrameCaptureGroupSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FrameCaptureGroupSettings& FrameCaptureGroupSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameCaptureCdnSettings"))
   {
     m_frameCaptureCdnSettings = jsonValue.GetObject("frameCaptureCdnSettings");
-
     m_frameCaptureCdnSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

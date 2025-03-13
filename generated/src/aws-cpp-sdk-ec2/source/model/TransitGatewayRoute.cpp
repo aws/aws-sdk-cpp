@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayRoute::TransitGatewayRoute() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false),
-    m_transitGatewayAttachmentsHasBeenSet(false),
-    m_type(TransitGatewayRouteType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(TransitGatewayRouteState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 TransitGatewayRoute::TransitGatewayRoute(const XmlNode& xmlNode)
-  : TransitGatewayRoute()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,48 @@ TransitGatewayRoute& TransitGatewayRoute::operator =(const XmlNode& xmlNode)
     {
       m_destinationCidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(destinationCidrBlockNode.GetText());
       m_destinationCidrBlockHasBeenSet = true;
+       m_destinationCidrBlockHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode transitGatewayRouteTableAnnouncementIdNode = resultNode.FirstChild("transitGatewayRouteTableAnnouncementId");
     if(!transitGatewayRouteTableAnnouncementIdNode.IsNull())
     {
       m_transitGatewayRouteTableAnnouncementId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableAnnouncementIdNode.GetText());
       m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true;
+       m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true;
     }
     XmlNode transitGatewayAttachmentsNode = resultNode.FirstChild("transitGatewayAttachments");
     if(!transitGatewayAttachmentsNode.IsNull())
     {
       XmlNode transitGatewayAttachmentsMember = transitGatewayAttachmentsNode.FirstChild("item");
+      m_transitGatewayAttachmentsHasBeenSet = !transitGatewayAttachmentsMember.IsNull();
       while(!transitGatewayAttachmentsMember.IsNull())
       {
         m_transitGatewayAttachments.push_back(transitGatewayAttachmentsMember);
         transitGatewayAttachmentsMember = transitGatewayAttachmentsMember.NextNode("item");
       }
 
-      m_transitGatewayAttachmentsHasBeenSet = true;
+       m_transitGatewayAttachmentsHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = TransitGatewayRouteTypeMapper::GetTransitGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = TransitGatewayRouteTypeMapper::GetTransitGatewayRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayRouteStateMapper::GetTransitGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayRouteStateMapper::GetTransitGatewayRouteStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

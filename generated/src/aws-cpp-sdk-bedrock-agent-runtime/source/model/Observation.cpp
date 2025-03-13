@@ -18,21 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Observation::Observation() : 
-    m_actionGroupInvocationOutputHasBeenSet(false),
-    m_agentCollaboratorInvocationOutputHasBeenSet(false),
-    m_codeInterpreterInvocationOutputHasBeenSet(false),
-    m_finalResponseHasBeenSet(false),
-    m_knowledgeBaseLookupOutputHasBeenSet(false),
-    m_repromptResponseHasBeenSet(false),
-    m_traceIdHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Observation::Observation(JsonView jsonValue)
-  : Observation()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ Observation& Observation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroupInvocationOutput"))
   {
     m_actionGroupInvocationOutput = jsonValue.GetObject("actionGroupInvocationOutput");
-
     m_actionGroupInvocationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentCollaboratorInvocationOutput"))
   {
     m_agentCollaboratorInvocationOutput = jsonValue.GetObject("agentCollaboratorInvocationOutput");
-
     m_agentCollaboratorInvocationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeInterpreterInvocationOutput"))
   {
     m_codeInterpreterInvocationOutput = jsonValue.GetObject("codeInterpreterInvocationOutput");
-
     m_codeInterpreterInvocationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finalResponse"))
   {
     m_finalResponse = jsonValue.GetObject("finalResponse");
-
     m_finalResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseLookupOutput"))
   {
     m_knowledgeBaseLookupOutput = jsonValue.GetObject("knowledgeBaseLookupOutput");
-
     m_knowledgeBaseLookupOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repromptResponse"))
   {
     m_repromptResponse = jsonValue.GetObject("repromptResponse");
-
     m_repromptResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

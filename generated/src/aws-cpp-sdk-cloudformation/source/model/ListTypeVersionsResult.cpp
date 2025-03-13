@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTypeVersionsResult::ListTypeVersionsResult()
-{
-}
-
 ListTypeVersionsResult::ListTypeVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListTypeVersionsResult& ListTypeVersionsResult::operator =(const Aws::AmazonWebS
     if(!typeVersionSummariesNode.IsNull())
     {
       XmlNode typeVersionSummariesMember = typeVersionSummariesNode.FirstChild("member");
+      m_typeVersionSummariesHasBeenSet = !typeVersionSummariesMember.IsNull();
       while(!typeVersionSummariesMember.IsNull())
       {
         m_typeVersionSummaries.push_back(typeVersionSummariesMember);
@@ -53,12 +50,14 @@ ListTypeVersionsResult& ListTypeVersionsResult::operator =(const Aws::AmazonWebS
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::ListTypeVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

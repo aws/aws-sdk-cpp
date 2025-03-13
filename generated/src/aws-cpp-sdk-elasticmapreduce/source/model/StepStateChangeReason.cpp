@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-StepStateChangeReason::StepStateChangeReason() : 
-    m_code(StepStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 StepStateChangeReason::StepStateChangeReason(JsonView jsonValue)
-  : StepStateChangeReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StepStateChangeReason& StepStateChangeReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = StepStateChangeReasonCodeMapper::GetStepStateChangeReasonCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

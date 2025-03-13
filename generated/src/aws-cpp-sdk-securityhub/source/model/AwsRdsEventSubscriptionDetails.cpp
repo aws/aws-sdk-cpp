@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsEventSubscriptionDetails::AwsRdsEventSubscriptionDetails() : 
-    m_custSubscriptionIdHasBeenSet(false),
-    m_customerAwsIdHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_eventCategoriesListHasBeenSet(false),
-    m_eventSubscriptionArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_sourceIdsListHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subscriptionCreationTimeHasBeenSet(false)
-{
-}
-
 AwsRdsEventSubscriptionDetails::AwsRdsEventSubscriptionDetails(JsonView jsonValue)
-  : AwsRdsEventSubscriptionDetails()
 {
   *this = jsonValue;
 }
@@ -44,24 +28,18 @@ AwsRdsEventSubscriptionDetails& AwsRdsEventSubscriptionDetails::operator =(JsonV
   if(jsonValue.ValueExists("CustSubscriptionId"))
   {
     m_custSubscriptionId = jsonValue.GetString("CustSubscriptionId");
-
     m_custSubscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerAwsId"))
   {
     m_customerAwsId = jsonValue.GetString("CustomerAwsId");
-
     m_customerAwsIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventCategoriesList"))
   {
     Aws::Utils::Array<JsonView> eventCategoriesListJsonList = jsonValue.GetArray("EventCategoriesList");
@@ -71,21 +49,16 @@ AwsRdsEventSubscriptionDetails& AwsRdsEventSubscriptionDetails::operator =(JsonV
     }
     m_eventCategoriesListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSubscriptionArn"))
   {
     m_eventSubscriptionArn = jsonValue.GetString("EventSubscriptionArn");
-
     m_eventSubscriptionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceIdsList"))
   {
     Aws::Utils::Array<JsonView> sourceIdsListJsonList = jsonValue.GetArray("SourceIdsList");
@@ -95,28 +68,21 @@ AwsRdsEventSubscriptionDetails& AwsRdsEventSubscriptionDetails::operator =(JsonV
     }
     m_sourceIdsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubscriptionCreationTime"))
   {
     m_subscriptionCreationTime = jsonValue.GetString("SubscriptionCreationTime");
-
     m_subscriptionCreationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

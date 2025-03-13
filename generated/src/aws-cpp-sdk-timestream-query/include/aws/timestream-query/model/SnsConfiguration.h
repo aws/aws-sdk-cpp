@@ -32,7 +32,7 @@ namespace Model
   class SnsConfiguration
   {
   public:
-    AWS_TIMESTREAMQUERY_API SnsConfiguration();
+    AWS_TIMESTREAMQUERY_API SnsConfiguration() = default;
     AWS_TIMESTREAMQUERY_API SnsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API SnsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>SNS topic ARN that the scheduled query status notifications will be sent
      * to.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline SnsConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline SnsConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline SnsConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    SnsConfiguration& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
   private:
 

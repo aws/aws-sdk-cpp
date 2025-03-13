@@ -32,7 +32,7 @@ namespace Model
   class MonitoringAlertActions
   {
   public:
-    AWS_SAGEMAKER_API MonitoringAlertActions();
+    AWS_SAGEMAKER_API MonitoringAlertActions() = default;
     AWS_SAGEMAKER_API MonitoringAlertActions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MonitoringAlertActions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>An alert action taken to light up an icon on the Model Dashboard when an
      * alert goes into <code>InAlert</code> status.</p>
      */
-    inline const ModelDashboardIndicatorAction& GetModelDashboardIndicator() const{ return m_modelDashboardIndicator; }
+    inline const ModelDashboardIndicatorAction& GetModelDashboardIndicator() const { return m_modelDashboardIndicator; }
     inline bool ModelDashboardIndicatorHasBeenSet() const { return m_modelDashboardIndicatorHasBeenSet; }
-    inline void SetModelDashboardIndicator(const ModelDashboardIndicatorAction& value) { m_modelDashboardIndicatorHasBeenSet = true; m_modelDashboardIndicator = value; }
-    inline void SetModelDashboardIndicator(ModelDashboardIndicatorAction&& value) { m_modelDashboardIndicatorHasBeenSet = true; m_modelDashboardIndicator = std::move(value); }
-    inline MonitoringAlertActions& WithModelDashboardIndicator(const ModelDashboardIndicatorAction& value) { SetModelDashboardIndicator(value); return *this;}
-    inline MonitoringAlertActions& WithModelDashboardIndicator(ModelDashboardIndicatorAction&& value) { SetModelDashboardIndicator(std::move(value)); return *this;}
+    template<typename ModelDashboardIndicatorT = ModelDashboardIndicatorAction>
+    void SetModelDashboardIndicator(ModelDashboardIndicatorT&& value) { m_modelDashboardIndicatorHasBeenSet = true; m_modelDashboardIndicator = std::forward<ModelDashboardIndicatorT>(value); }
+    template<typename ModelDashboardIndicatorT = ModelDashboardIndicatorAction>
+    MonitoringAlertActions& WithModelDashboardIndicator(ModelDashboardIndicatorT&& value) { SetModelDashboardIndicator(std::forward<ModelDashboardIndicatorT>(value)); return *this;}
     ///@}
   private:
 

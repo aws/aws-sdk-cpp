@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStreamKeyRequest::DeleteStreamKeyRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStreamKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,19 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRuleGroupsRequest::ListRuleGroupsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_scope(ResourceManagedStatus::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_managedType(ResourceManagedType::NOT_SET),
-    m_managedTypeHasBeenSet(false),
-    m_type(RuleGroupType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListRuleGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class SelfservicePermissions
   {
   public:
-    AWS_WORKSPACES_API SelfservicePermissions();
+    AWS_WORKSPACES_API SelfservicePermissions() = default;
     AWS_WORKSPACES_API SelfservicePermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API SelfservicePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>Specifies whether users can restart their WorkSpace.</p>
      */
-    inline const ReconnectEnum& GetRestartWorkspace() const{ return m_restartWorkspace; }
+    inline ReconnectEnum GetRestartWorkspace() const { return m_restartWorkspace; }
     inline bool RestartWorkspaceHasBeenSet() const { return m_restartWorkspaceHasBeenSet; }
-    inline void SetRestartWorkspace(const ReconnectEnum& value) { m_restartWorkspaceHasBeenSet = true; m_restartWorkspace = value; }
-    inline void SetRestartWorkspace(ReconnectEnum&& value) { m_restartWorkspaceHasBeenSet = true; m_restartWorkspace = std::move(value); }
-    inline SelfservicePermissions& WithRestartWorkspace(const ReconnectEnum& value) { SetRestartWorkspace(value); return *this;}
-    inline SelfservicePermissions& WithRestartWorkspace(ReconnectEnum&& value) { SetRestartWorkspace(std::move(value)); return *this;}
+    inline void SetRestartWorkspace(ReconnectEnum value) { m_restartWorkspaceHasBeenSet = true; m_restartWorkspace = value; }
+    inline SelfservicePermissions& WithRestartWorkspace(ReconnectEnum value) { SetRestartWorkspace(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>Specifies whether users can increase the volume size of the drives on their
      * WorkSpace.</p>
      */
-    inline const ReconnectEnum& GetIncreaseVolumeSize() const{ return m_increaseVolumeSize; }
+    inline ReconnectEnum GetIncreaseVolumeSize() const { return m_increaseVolumeSize; }
     inline bool IncreaseVolumeSizeHasBeenSet() const { return m_increaseVolumeSizeHasBeenSet; }
-    inline void SetIncreaseVolumeSize(const ReconnectEnum& value) { m_increaseVolumeSizeHasBeenSet = true; m_increaseVolumeSize = value; }
-    inline void SetIncreaseVolumeSize(ReconnectEnum&& value) { m_increaseVolumeSizeHasBeenSet = true; m_increaseVolumeSize = std::move(value); }
-    inline SelfservicePermissions& WithIncreaseVolumeSize(const ReconnectEnum& value) { SetIncreaseVolumeSize(value); return *this;}
-    inline SelfservicePermissions& WithIncreaseVolumeSize(ReconnectEnum&& value) { SetIncreaseVolumeSize(std::move(value)); return *this;}
+    inline void SetIncreaseVolumeSize(ReconnectEnum value) { m_increaseVolumeSizeHasBeenSet = true; m_increaseVolumeSize = value; }
+    inline SelfservicePermissions& WithIncreaseVolumeSize(ReconnectEnum value) { SetIncreaseVolumeSize(value); return *this;}
     ///@}
 
     ///@{
@@ -71,24 +67,20 @@ namespace Model
      * <p>Specifies whether users can change the compute type (bundle) for their
      * WorkSpace.</p>
      */
-    inline const ReconnectEnum& GetChangeComputeType() const{ return m_changeComputeType; }
+    inline ReconnectEnum GetChangeComputeType() const { return m_changeComputeType; }
     inline bool ChangeComputeTypeHasBeenSet() const { return m_changeComputeTypeHasBeenSet; }
-    inline void SetChangeComputeType(const ReconnectEnum& value) { m_changeComputeTypeHasBeenSet = true; m_changeComputeType = value; }
-    inline void SetChangeComputeType(ReconnectEnum&& value) { m_changeComputeTypeHasBeenSet = true; m_changeComputeType = std::move(value); }
-    inline SelfservicePermissions& WithChangeComputeType(const ReconnectEnum& value) { SetChangeComputeType(value); return *this;}
-    inline SelfservicePermissions& WithChangeComputeType(ReconnectEnum&& value) { SetChangeComputeType(std::move(value)); return *this;}
+    inline void SetChangeComputeType(ReconnectEnum value) { m_changeComputeTypeHasBeenSet = true; m_changeComputeType = value; }
+    inline SelfservicePermissions& WithChangeComputeType(ReconnectEnum value) { SetChangeComputeType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
      */
-    inline const ReconnectEnum& GetSwitchRunningMode() const{ return m_switchRunningMode; }
+    inline ReconnectEnum GetSwitchRunningMode() const { return m_switchRunningMode; }
     inline bool SwitchRunningModeHasBeenSet() const { return m_switchRunningModeHasBeenSet; }
-    inline void SetSwitchRunningMode(const ReconnectEnum& value) { m_switchRunningModeHasBeenSet = true; m_switchRunningMode = value; }
-    inline void SetSwitchRunningMode(ReconnectEnum&& value) { m_switchRunningModeHasBeenSet = true; m_switchRunningMode = std::move(value); }
-    inline SelfservicePermissions& WithSwitchRunningMode(const ReconnectEnum& value) { SetSwitchRunningMode(value); return *this;}
-    inline SelfservicePermissions& WithSwitchRunningMode(ReconnectEnum&& value) { SetSwitchRunningMode(std::move(value)); return *this;}
+    inline void SetSwitchRunningMode(ReconnectEnum value) { m_switchRunningModeHasBeenSet = true; m_switchRunningMode = value; }
+    inline SelfservicePermissions& WithSwitchRunningMode(ReconnectEnum value) { SetSwitchRunningMode(value); return *this;}
     ///@}
 
     ///@{
@@ -96,28 +88,26 @@ namespace Model
      * <p>Specifies whether users can rebuild the operating system of a WorkSpace to
      * its original state.</p>
      */
-    inline const ReconnectEnum& GetRebuildWorkspace() const{ return m_rebuildWorkspace; }
+    inline ReconnectEnum GetRebuildWorkspace() const { return m_rebuildWorkspace; }
     inline bool RebuildWorkspaceHasBeenSet() const { return m_rebuildWorkspaceHasBeenSet; }
-    inline void SetRebuildWorkspace(const ReconnectEnum& value) { m_rebuildWorkspaceHasBeenSet = true; m_rebuildWorkspace = value; }
-    inline void SetRebuildWorkspace(ReconnectEnum&& value) { m_rebuildWorkspaceHasBeenSet = true; m_rebuildWorkspace = std::move(value); }
-    inline SelfservicePermissions& WithRebuildWorkspace(const ReconnectEnum& value) { SetRebuildWorkspace(value); return *this;}
-    inline SelfservicePermissions& WithRebuildWorkspace(ReconnectEnum&& value) { SetRebuildWorkspace(std::move(value)); return *this;}
+    inline void SetRebuildWorkspace(ReconnectEnum value) { m_rebuildWorkspaceHasBeenSet = true; m_rebuildWorkspace = value; }
+    inline SelfservicePermissions& WithRebuildWorkspace(ReconnectEnum value) { SetRebuildWorkspace(value); return *this;}
     ///@}
   private:
 
-    ReconnectEnum m_restartWorkspace;
+    ReconnectEnum m_restartWorkspace{ReconnectEnum::NOT_SET};
     bool m_restartWorkspaceHasBeenSet = false;
 
-    ReconnectEnum m_increaseVolumeSize;
+    ReconnectEnum m_increaseVolumeSize{ReconnectEnum::NOT_SET};
     bool m_increaseVolumeSizeHasBeenSet = false;
 
-    ReconnectEnum m_changeComputeType;
+    ReconnectEnum m_changeComputeType{ReconnectEnum::NOT_SET};
     bool m_changeComputeTypeHasBeenSet = false;
 
-    ReconnectEnum m_switchRunningMode;
+    ReconnectEnum m_switchRunningMode{ReconnectEnum::NOT_SET};
     bool m_switchRunningModeHasBeenSet = false;
 
-    ReconnectEnum m_rebuildWorkspace;
+    ReconnectEnum m_rebuildWorkspace{ReconnectEnum::NOT_SET};
     bool m_rebuildWorkspaceHasBeenSet = false;
   };
 

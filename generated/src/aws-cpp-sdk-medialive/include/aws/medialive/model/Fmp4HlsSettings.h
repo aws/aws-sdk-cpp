@@ -33,7 +33,7 @@ namespace Model
   class Fmp4HlsSettings
   {
   public:
-    AWS_MEDIALIVE_API Fmp4HlsSettings();
+    AWS_MEDIALIVE_API Fmp4HlsSettings() = default;
     AWS_MEDIALIVE_API Fmp4HlsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Fmp4HlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * List all the audio groups that are used with the video output stream. Input all
      * the audio GROUP-IDs that are associated to the video, separate by ','.
      */
-    inline const Aws::String& GetAudioRenditionSets() const{ return m_audioRenditionSets; }
+    inline const Aws::String& GetAudioRenditionSets() const { return m_audioRenditionSets; }
     inline bool AudioRenditionSetsHasBeenSet() const { return m_audioRenditionSetsHasBeenSet; }
-    inline void SetAudioRenditionSets(const Aws::String& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = value; }
-    inline void SetAudioRenditionSets(Aws::String&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::move(value); }
-    inline void SetAudioRenditionSets(const char* value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets.assign(value); }
-    inline Fmp4HlsSettings& WithAudioRenditionSets(const Aws::String& value) { SetAudioRenditionSets(value); return *this;}
-    inline Fmp4HlsSettings& WithAudioRenditionSets(Aws::String&& value) { SetAudioRenditionSets(std::move(value)); return *this;}
-    inline Fmp4HlsSettings& WithAudioRenditionSets(const char* value) { SetAudioRenditionSets(value); return *this;}
+    template<typename AudioRenditionSetsT = Aws::String>
+    void SetAudioRenditionSets(AudioRenditionSetsT&& value) { m_audioRenditionSetsHasBeenSet = true; m_audioRenditionSets = std::forward<AudioRenditionSetsT>(value); }
+    template<typename AudioRenditionSetsT = Aws::String>
+    Fmp4HlsSettings& WithAudioRenditionSets(AudioRenditionSetsT&& value) { SetAudioRenditionSets(std::forward<AudioRenditionSetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * detected in the input audio and an equivalent ID3 tag will be inserted in the
      * output.
      */
-    inline const Fmp4NielsenId3Behavior& GetNielsenId3Behavior() const{ return m_nielsenId3Behavior; }
+    inline Fmp4NielsenId3Behavior GetNielsenId3Behavior() const { return m_nielsenId3Behavior; }
     inline bool NielsenId3BehaviorHasBeenSet() const { return m_nielsenId3BehaviorHasBeenSet; }
-    inline void SetNielsenId3Behavior(const Fmp4NielsenId3Behavior& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
-    inline void SetNielsenId3Behavior(Fmp4NielsenId3Behavior&& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = std::move(value); }
-    inline Fmp4HlsSettings& WithNielsenId3Behavior(const Fmp4NielsenId3Behavior& value) { SetNielsenId3Behavior(value); return *this;}
-    inline Fmp4HlsSettings& WithNielsenId3Behavior(Fmp4NielsenId3Behavior&& value) { SetNielsenId3Behavior(std::move(value)); return *this;}
+    inline void SetNielsenId3Behavior(Fmp4NielsenId3Behavior value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
+    inline Fmp4HlsSettings& WithNielsenId3Behavior(Fmp4NielsenId3Behavior value) { SetNielsenId3Behavior(value); return *this;}
     ///@}
 
     ///@{
@@ -74,22 +70,20 @@ namespace Model
      * configure other parameters in the output group or individual outputs, or you add
      * an ID3 action to the channel schedule.
      */
-    inline const Fmp4TimedMetadataBehavior& GetTimedMetadataBehavior() const{ return m_timedMetadataBehavior; }
+    inline Fmp4TimedMetadataBehavior GetTimedMetadataBehavior() const { return m_timedMetadataBehavior; }
     inline bool TimedMetadataBehaviorHasBeenSet() const { return m_timedMetadataBehaviorHasBeenSet; }
-    inline void SetTimedMetadataBehavior(const Fmp4TimedMetadataBehavior& value) { m_timedMetadataBehaviorHasBeenSet = true; m_timedMetadataBehavior = value; }
-    inline void SetTimedMetadataBehavior(Fmp4TimedMetadataBehavior&& value) { m_timedMetadataBehaviorHasBeenSet = true; m_timedMetadataBehavior = std::move(value); }
-    inline Fmp4HlsSettings& WithTimedMetadataBehavior(const Fmp4TimedMetadataBehavior& value) { SetTimedMetadataBehavior(value); return *this;}
-    inline Fmp4HlsSettings& WithTimedMetadataBehavior(Fmp4TimedMetadataBehavior&& value) { SetTimedMetadataBehavior(std::move(value)); return *this;}
+    inline void SetTimedMetadataBehavior(Fmp4TimedMetadataBehavior value) { m_timedMetadataBehaviorHasBeenSet = true; m_timedMetadataBehavior = value; }
+    inline Fmp4HlsSettings& WithTimedMetadataBehavior(Fmp4TimedMetadataBehavior value) { SetTimedMetadataBehavior(value); return *this;}
     ///@}
   private:
 
     Aws::String m_audioRenditionSets;
     bool m_audioRenditionSetsHasBeenSet = false;
 
-    Fmp4NielsenId3Behavior m_nielsenId3Behavior;
+    Fmp4NielsenId3Behavior m_nielsenId3Behavior{Fmp4NielsenId3Behavior::NOT_SET};
     bool m_nielsenId3BehaviorHasBeenSet = false;
 
-    Fmp4TimedMetadataBehavior m_timedMetadataBehavior;
+    Fmp4TimedMetadataBehavior m_timedMetadataBehavior{Fmp4TimedMetadataBehavior::NOT_SET};
     bool m_timedMetadataBehaviorHasBeenSet = false;
   };
 

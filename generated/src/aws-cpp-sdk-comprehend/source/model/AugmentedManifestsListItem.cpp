@@ -18,20 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-AugmentedManifestsListItem::AugmentedManifestsListItem() : 
-    m_s3UriHasBeenSet(false),
-    m_split(Split::NOT_SET),
-    m_splitHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
-    m_annotationDataS3UriHasBeenSet(false),
-    m_sourceDocumentsS3UriHasBeenSet(false),
-    m_documentType(AugmentedManifestsDocumentTypeFormat::NOT_SET),
-    m_documentTypeHasBeenSet(false)
-{
-}
-
 AugmentedManifestsListItem::AugmentedManifestsListItem(JsonView jsonValue)
-  : AugmentedManifestsListItem()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ AugmentedManifestsListItem& AugmentedManifestsListItem::operator =(JsonView json
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Split"))
   {
     m_split = SplitMapper::GetSplitForName(jsonValue.GetString("Split"));
-
     m_splitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeNames"))
   {
     Aws::Utils::Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
@@ -61,28 +44,21 @@ AugmentedManifestsListItem& AugmentedManifestsListItem::operator =(JsonView json
     }
     m_attributeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnnotationDataS3Uri"))
   {
     m_annotationDataS3Uri = jsonValue.GetString("AnnotationDataS3Uri");
-
     m_annotationDataS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDocumentsS3Uri"))
   {
     m_sourceDocumentsS3Uri = jsonValue.GetString("SourceDocumentsS3Uri");
-
     m_sourceDocumentsS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentType"))
   {
     m_documentType = AugmentedManifestsDocumentTypeFormatMapper::GetAugmentedManifestsDocumentTypeFormatForName(jsonValue.GetString("DocumentType"));
-
     m_documentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribePredefinedAttributeResult
   {
   public:
-    AWS_CONNECT_API DescribePredefinedAttributeResult();
+    AWS_CONNECT_API DescribePredefinedAttributeResult() = default;
     AWS_CONNECT_API DescribePredefinedAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribePredefinedAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the predefined attribute.</p>
      */
-    inline const PredefinedAttribute& GetPredefinedAttribute() const{ return m_predefinedAttribute; }
-    inline void SetPredefinedAttribute(const PredefinedAttribute& value) { m_predefinedAttribute = value; }
-    inline void SetPredefinedAttribute(PredefinedAttribute&& value) { m_predefinedAttribute = std::move(value); }
-    inline DescribePredefinedAttributeResult& WithPredefinedAttribute(const PredefinedAttribute& value) { SetPredefinedAttribute(value); return *this;}
-    inline DescribePredefinedAttributeResult& WithPredefinedAttribute(PredefinedAttribute&& value) { SetPredefinedAttribute(std::move(value)); return *this;}
+    inline const PredefinedAttribute& GetPredefinedAttribute() const { return m_predefinedAttribute; }
+    template<typename PredefinedAttributeT = PredefinedAttribute>
+    void SetPredefinedAttribute(PredefinedAttributeT&& value) { m_predefinedAttributeHasBeenSet = true; m_predefinedAttribute = std::forward<PredefinedAttributeT>(value); }
+    template<typename PredefinedAttributeT = PredefinedAttribute>
+    DescribePredefinedAttributeResult& WithPredefinedAttribute(PredefinedAttributeT&& value) { SetPredefinedAttribute(std::forward<PredefinedAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePredefinedAttributeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePredefinedAttributeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePredefinedAttributeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePredefinedAttributeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PredefinedAttribute m_predefinedAttribute;
+    bool m_predefinedAttributeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

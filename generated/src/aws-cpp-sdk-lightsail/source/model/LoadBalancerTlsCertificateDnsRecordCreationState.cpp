@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LoadBalancerTlsCertificateDnsRecordCreationState::LoadBalancerTlsCertificateDnsRecordCreationState() : 
-    m_code(LoadBalancerTlsCertificateDnsRecordCreationStateCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 LoadBalancerTlsCertificateDnsRecordCreationState::LoadBalancerTlsCertificateDnsRecordCreationState(JsonView jsonValue)
-  : LoadBalancerTlsCertificateDnsRecordCreationState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LoadBalancerTlsCertificateDnsRecordCreationState& LoadBalancerTlsCertificateDnsR
   if(jsonValue.ValueExists("code"))
   {
     m_code = LoadBalancerTlsCertificateDnsRecordCreationStateCodeMapper::GetLoadBalancerTlsCertificateDnsRecordCreationStateCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

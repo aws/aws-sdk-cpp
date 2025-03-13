@@ -32,7 +32,7 @@ namespace Model
   class CapacityAllocation
   {
   public:
-    AWS_EC2_API CapacityAllocation();
+    AWS_EC2_API CapacityAllocation() = default;
     AWS_EC2_API CapacityAllocation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityAllocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,10 @@ namespace Model
      * <p>The usage type. <code>used</code> indicates that the instance capacity is in
      * use by instances that are running in the Capacity Reservation.</p>
      */
-    inline const AllocationType& GetAllocationType() const{ return m_allocationType; }
+    inline AllocationType GetAllocationType() const { return m_allocationType; }
     inline bool AllocationTypeHasBeenSet() const { return m_allocationTypeHasBeenSet; }
-    inline void SetAllocationType(const AllocationType& value) { m_allocationTypeHasBeenSet = true; m_allocationType = value; }
-    inline void SetAllocationType(AllocationType&& value) { m_allocationTypeHasBeenSet = true; m_allocationType = std::move(value); }
-    inline CapacityAllocation& WithAllocationType(const AllocationType& value) { SetAllocationType(value); return *this;}
-    inline CapacityAllocation& WithAllocationType(AllocationType&& value) { SetAllocationType(std::move(value)); return *this;}
+    inline void SetAllocationType(AllocationType value) { m_allocationTypeHasBeenSet = true; m_allocationType = value; }
+    inline CapacityAllocation& WithAllocationType(AllocationType value) { SetAllocationType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,17 +57,17 @@ namespace Model
      * value of <code>4</code> indicates that instance capacity for 4 instances is
      * currently in use.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline CapacityAllocation& WithCount(int value) { SetCount(value); return *this;}
     ///@}
   private:
 
-    AllocationType m_allocationType;
+    AllocationType m_allocationType{AllocationType::NOT_SET};
     bool m_allocationTypeHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

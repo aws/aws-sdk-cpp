@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-GitPullRequestFilter::GitPullRequestFilter() : 
-    m_eventsHasBeenSet(false),
-    m_branchesHasBeenSet(false),
-    m_filePathsHasBeenSet(false)
-{
-}
-
 GitPullRequestFilter::GitPullRequestFilter(JsonView jsonValue)
-  : GitPullRequestFilter()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ GitPullRequestFilter& GitPullRequestFilter::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branches"))
   {
     m_branches = jsonValue.GetObject("branches");
-
     m_branchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePaths"))
   {
     m_filePaths = jsonValue.GetObject("filePaths");
-
     m_filePathsHasBeenSet = true;
   }
-
   return *this;
 }
 

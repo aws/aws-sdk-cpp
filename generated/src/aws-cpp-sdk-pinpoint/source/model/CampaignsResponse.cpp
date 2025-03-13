@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignsResponse::CampaignsResponse() : 
-    m_itemHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 CampaignsResponse::CampaignsResponse(JsonView jsonValue)
-  : CampaignsResponse()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ CampaignsResponse& CampaignsResponse::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

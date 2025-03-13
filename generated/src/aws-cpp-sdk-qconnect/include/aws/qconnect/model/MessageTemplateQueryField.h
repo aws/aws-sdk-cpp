@@ -36,7 +36,7 @@ namespace Model
   class MessageTemplateQueryField
   {
   public:
-    AWS_QCONNECT_API MessageTemplateQueryField();
+    AWS_QCONNECT_API MessageTemplateQueryField() = default;
     AWS_QCONNECT_API MessageTemplateQueryField(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API MessageTemplateQueryField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * The results of the query will only include exact matches if this parameter is
      * set to false.</p>
      */
-    inline bool GetAllowFuzziness() const{ return m_allowFuzziness; }
+    inline bool GetAllowFuzziness() const { return m_allowFuzziness; }
     inline bool AllowFuzzinessHasBeenSet() const { return m_allowFuzzinessHasBeenSet; }
     inline void SetAllowFuzziness(bool value) { m_allowFuzzinessHasBeenSet = true; m_allowFuzziness = value; }
     inline MessageTemplateQueryField& WithAllowFuzziness(bool value) { SetAllowFuzziness(value); return *this;}
@@ -58,26 +58,22 @@ namespace Model
     /**
      * <p>The name of the attribute to query the message templates by.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MessageTemplateQueryField& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MessageTemplateQueryField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MessageTemplateQueryField& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MessageTemplateQueryField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operator to use for matching attribute field values in the query.</p>
      */
-    inline const MessageTemplateQueryOperator& GetOperator() const{ return m_operator; }
+    inline MessageTemplateQueryOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const MessageTemplateQueryOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(MessageTemplateQueryOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline MessageTemplateQueryField& WithOperator(const MessageTemplateQueryOperator& value) { SetOperator(value); return *this;}
-    inline MessageTemplateQueryField& WithOperator(MessageTemplateQueryOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(MessageTemplateQueryOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline MessageTemplateQueryField& WithOperator(MessageTemplateQueryOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -86,40 +82,37 @@ namespace Model
      * scores. The value set for this parameter affects the ordering of search
      * results.</p>
      */
-    inline const Priority& GetPriority() const{ return m_priority; }
+    inline Priority GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-    inline void SetPriority(const Priority& value) { m_priorityHasBeenSet = true; m_priority = value; }
-    inline void SetPriority(Priority&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
-    inline MessageTemplateQueryField& WithPriority(const Priority& value) { SetPriority(value); return *this;}
-    inline MessageTemplateQueryField& WithPriority(Priority&& value) { SetPriority(std::move(value)); return *this;}
+    inline void SetPriority(Priority value) { m_priorityHasBeenSet = true; m_priority = value; }
+    inline MessageTemplateQueryField& WithPriority(Priority value) { SetPriority(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The values of the attribute to query the message templates by.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline MessageTemplateQueryField& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline MessageTemplateQueryField& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline MessageTemplateQueryField& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline MessageTemplateQueryField& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline MessageTemplateQueryField& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    MessageTemplateQueryField& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    MessageTemplateQueryField& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_allowFuzziness;
+    bool m_allowFuzziness{false};
     bool m_allowFuzzinessHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    MessageTemplateQueryOperator m_operator;
+    MessageTemplateQueryOperator m_operator{MessageTemplateQueryOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    Priority m_priority;
+    Priority m_priority{Priority::NOT_SET};
     bool m_priorityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

@@ -12,10 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRegistryPolicyRequest::DeleteRegistryPolicyRequest()
-{
-}
-
 Aws::String DeleteRegistryPolicyRequest::SerializePayload() const
 {
   return "{}";

@@ -27,7 +27,7 @@ namespace Model
   class DescribeCustomerGatewaysRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeCustomerGatewaysRequest();
+    AWS_EC2_API DescribeCustomerGatewaysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,15 +47,14 @@ namespace Model
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
      * gateways.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomerGatewayIds() const{ return m_customerGatewayIds; }
+    inline const Aws::Vector<Aws::String>& GetCustomerGatewayIds() const { return m_customerGatewayIds; }
     inline bool CustomerGatewayIdsHasBeenSet() const { return m_customerGatewayIdsHasBeenSet; }
-    inline void SetCustomerGatewayIds(const Aws::Vector<Aws::String>& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds = value; }
-    inline void SetCustomerGatewayIds(Aws::Vector<Aws::String>&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds = std::move(value); }
-    inline DescribeCustomerGatewaysRequest& WithCustomerGatewayIds(const Aws::Vector<Aws::String>& value) { SetCustomerGatewayIds(value); return *this;}
-    inline DescribeCustomerGatewaysRequest& WithCustomerGatewayIds(Aws::Vector<Aws::String>&& value) { SetCustomerGatewayIds(std::move(value)); return *this;}
-    inline DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(const Aws::String& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.push_back(value); return *this; }
-    inline DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(Aws::String&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.push_back(std::move(value)); return *this; }
-    inline DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(const char* value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.push_back(value); return *this; }
+    template<typename CustomerGatewayIdsT = Aws::Vector<Aws::String>>
+    void SetCustomerGatewayIds(CustomerGatewayIdsT&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds = std::forward<CustomerGatewayIdsT>(value); }
+    template<typename CustomerGatewayIdsT = Aws::Vector<Aws::String>>
+    DescribeCustomerGatewaysRequest& WithCustomerGatewayIds(CustomerGatewayIdsT&& value) { SetCustomerGatewayIds(std::forward<CustomerGatewayIdsT>(value)); return *this;}
+    template<typename CustomerGatewayIdsT = Aws::String>
+    DescribeCustomerGatewaysRequest& AddCustomerGatewayIds(CustomerGatewayIdsT&& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds.emplace_back(std::forward<CustomerGatewayIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,14 +77,14 @@ namespace Model
      * the resource. Use this filter to find all resources assigned a tag with a
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeCustomerGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeCustomerGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeCustomerGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeCustomerGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeCustomerGatewaysRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeCustomerGatewaysRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,7 +94,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeCustomerGatewaysRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -108,7 +107,7 @@ namespace Model
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

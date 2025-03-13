@@ -12,23 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIndexRequest::CreateIndexRequest() : 
-    m_nameHasBeenSet(false),
-    m_edition(IndexEdition::NOT_SET),
-    m_editionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_userTokenConfigurationsHasBeenSet(false),
-    m_userContextPolicy(UserContextPolicy::NOT_SET),
-    m_userContextPolicyHasBeenSet(false),
-    m_userGroupResolutionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateIndexRequest::SerializePayload() const
 {
   JsonValue payload;

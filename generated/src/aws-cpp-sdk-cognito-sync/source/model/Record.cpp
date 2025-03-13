@@ -18,19 +18,7 @@ namespace CognitoSync
 namespace Model
 {
 
-Record::Record() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_syncCount(0),
-    m_syncCountHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_deviceLastModifiedDateHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Record& Record::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncCount"))
   {
     m_syncCount = jsonValue.GetInt64("SyncCount");
-
     m_syncCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceLastModifiedDate"))
   {
     m_deviceLastModifiedDate = jsonValue.GetDouble("DeviceLastModifiedDate");
-
     m_deviceLastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(const XmlNode& xmlNode)
-  : AttributeValue()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AttributeValue& AttributeValue::operator =(const XmlNode& xmlNode)
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

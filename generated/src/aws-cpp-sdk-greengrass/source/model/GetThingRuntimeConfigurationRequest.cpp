@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetThingRuntimeConfigurationRequest::GetThingRuntimeConfigurationRequest() : 
-    m_thingNameHasBeenSet(false)
-{
-}
-
 Aws::String GetThingRuntimeConfigurationRequest::SerializePayload() const
 {
   return {};

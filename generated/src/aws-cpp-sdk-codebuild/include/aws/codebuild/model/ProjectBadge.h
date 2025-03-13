@@ -32,7 +32,7 @@ namespace Model
   class ProjectBadge
   {
   public:
-    AWS_CODEBUILD_API ProjectBadge();
+    AWS_CODEBUILD_API ProjectBadge() = default;
     AWS_CODEBUILD_API ProjectBadge(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectBadge& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
-    inline bool GetBadgeEnabled() const{ return m_badgeEnabled; }
+    inline bool GetBadgeEnabled() const { return m_badgeEnabled; }
     inline bool BadgeEnabledHasBeenSet() const { return m_badgeEnabledHasBeenSet; }
     inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
     inline ProjectBadge& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * <p>The publicly-accessible URL through which you can access the build badge for
      * your project. </p>
      */
-    inline const Aws::String& GetBadgeRequestUrl() const{ return m_badgeRequestUrl; }
+    inline const Aws::String& GetBadgeRequestUrl() const { return m_badgeRequestUrl; }
     inline bool BadgeRequestUrlHasBeenSet() const { return m_badgeRequestUrlHasBeenSet; }
-    inline void SetBadgeRequestUrl(const Aws::String& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = value; }
-    inline void SetBadgeRequestUrl(Aws::String&& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = std::move(value); }
-    inline void SetBadgeRequestUrl(const char* value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl.assign(value); }
-    inline ProjectBadge& WithBadgeRequestUrl(const Aws::String& value) { SetBadgeRequestUrl(value); return *this;}
-    inline ProjectBadge& WithBadgeRequestUrl(Aws::String&& value) { SetBadgeRequestUrl(std::move(value)); return *this;}
-    inline ProjectBadge& WithBadgeRequestUrl(const char* value) { SetBadgeRequestUrl(value); return *this;}
+    template<typename BadgeRequestUrlT = Aws::String>
+    void SetBadgeRequestUrl(BadgeRequestUrlT&& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = std::forward<BadgeRequestUrlT>(value); }
+    template<typename BadgeRequestUrlT = Aws::String>
+    ProjectBadge& WithBadgeRequestUrl(BadgeRequestUrlT&& value) { SetBadgeRequestUrl(std::forward<BadgeRequestUrlT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_badgeEnabled;
+    bool m_badgeEnabled{false};
     bool m_badgeEnabledHasBeenSet = false;
 
     Aws::String m_badgeRequestUrl;

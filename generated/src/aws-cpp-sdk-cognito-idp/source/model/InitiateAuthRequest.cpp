@@ -12,18 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitiateAuthRequest::InitiateAuthRequest() : 
-    m_authFlow(AuthFlowType::NOT_SET),
-    m_authFlowHasBeenSet(false),
-    m_authParametersHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_analyticsMetadataHasBeenSet(false),
-    m_userContextDataHasBeenSet(false),
-    m_sessionHasBeenSet(false)
-{
-}
-
 Aws::String InitiateAuthRequest::SerializePayload() const
 {
   JsonValue payload;

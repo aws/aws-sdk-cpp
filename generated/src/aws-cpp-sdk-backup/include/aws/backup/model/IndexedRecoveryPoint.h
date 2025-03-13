@@ -35,7 +35,7 @@ namespace Model
   class IndexedRecoveryPoint
   {
   public:
-    AWS_BACKUP_API IndexedRecoveryPoint();
+    AWS_BACKUP_API IndexedRecoveryPoint() = default;
     AWS_BACKUP_API IndexedRecoveryPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API IndexedRecoveryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>
      * </p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
     inline bool RecoveryPointArnHasBeenSet() const { return m_recoveryPointArnHasBeenSet; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn.assign(value); }
-    inline IndexedRecoveryPoint& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline IndexedRecoveryPoint& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline IndexedRecoveryPoint& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    IndexedRecoveryPoint& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>A string of the Amazon Resource Name (ARN) that uniquely identifies the
      * source resource.</p>
      */
-    inline const Aws::String& GetSourceResourceArn() const{ return m_sourceResourceArn; }
+    inline const Aws::String& GetSourceResourceArn() const { return m_sourceResourceArn; }
     inline bool SourceResourceArnHasBeenSet() const { return m_sourceResourceArnHasBeenSet; }
-    inline void SetSourceResourceArn(const Aws::String& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = value; }
-    inline void SetSourceResourceArn(Aws::String&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::move(value); }
-    inline void SetSourceResourceArn(const char* value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn.assign(value); }
-    inline IndexedRecoveryPoint& WithSourceResourceArn(const Aws::String& value) { SetSourceResourceArn(value); return *this;}
-    inline IndexedRecoveryPoint& WithSourceResourceArn(Aws::String&& value) { SetSourceResourceArn(std::move(value)); return *this;}
-    inline IndexedRecoveryPoint& WithSourceResourceArn(const char* value) { SetSourceResourceArn(value); return *this;}
+    template<typename SourceResourceArnT = Aws::String>
+    void SetSourceResourceArn(SourceResourceArnT&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::forward<SourceResourceArnT>(value); }
+    template<typename SourceResourceArnT = Aws::String>
+    IndexedRecoveryPoint& WithSourceResourceArn(SourceResourceArnT&& value) { SetSourceResourceArn(std::forward<SourceResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <p>This specifies the IAM role ARN used for this operation.</p> <p>For example,
      * arn:aws:iam::123456789012:role/S3Access</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline IndexedRecoveryPoint& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline IndexedRecoveryPoint& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline IndexedRecoveryPoint& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    IndexedRecoveryPoint& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,12 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetBackupCreationDate() const{ return m_backupCreationDate; }
+    inline const Aws::Utils::DateTime& GetBackupCreationDate() const { return m_backupCreationDate; }
     inline bool BackupCreationDateHasBeenSet() const { return m_backupCreationDateHasBeenSet; }
-    inline void SetBackupCreationDate(const Aws::Utils::DateTime& value) { m_backupCreationDateHasBeenSet = true; m_backupCreationDate = value; }
-    inline void SetBackupCreationDate(Aws::Utils::DateTime&& value) { m_backupCreationDateHasBeenSet = true; m_backupCreationDate = std::move(value); }
-    inline IndexedRecoveryPoint& WithBackupCreationDate(const Aws::Utils::DateTime& value) { SetBackupCreationDate(value); return *this;}
-    inline IndexedRecoveryPoint& WithBackupCreationDate(Aws::Utils::DateTime&& value) { SetBackupCreationDate(std::move(value)); return *this;}
+    template<typename BackupCreationDateT = Aws::Utils::DateTime>
+    void SetBackupCreationDate(BackupCreationDateT&& value) { m_backupCreationDateHasBeenSet = true; m_backupCreationDate = std::forward<BackupCreationDateT>(value); }
+    template<typename BackupCreationDateT = Aws::Utils::DateTime>
+    IndexedRecoveryPoint& WithBackupCreationDate(BackupCreationDateT&& value) { SetBackupCreationDate(std::forward<BackupCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +102,12 @@ namespace Model
      * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
      * <code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline IndexedRecoveryPoint& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline IndexedRecoveryPoint& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline IndexedRecoveryPoint& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    IndexedRecoveryPoint& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +117,12 @@ namespace Model
      * accurate to milliseconds. For example, the value 1516925490.087 represents
      * Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetIndexCreationDate() const{ return m_indexCreationDate; }
+    inline const Aws::Utils::DateTime& GetIndexCreationDate() const { return m_indexCreationDate; }
     inline bool IndexCreationDateHasBeenSet() const { return m_indexCreationDateHasBeenSet; }
-    inline void SetIndexCreationDate(const Aws::Utils::DateTime& value) { m_indexCreationDateHasBeenSet = true; m_indexCreationDate = value; }
-    inline void SetIndexCreationDate(Aws::Utils::DateTime&& value) { m_indexCreationDateHasBeenSet = true; m_indexCreationDate = std::move(value); }
-    inline IndexedRecoveryPoint& WithIndexCreationDate(const Aws::Utils::DateTime& value) { SetIndexCreationDate(value); return *this;}
-    inline IndexedRecoveryPoint& WithIndexCreationDate(Aws::Utils::DateTime&& value) { SetIndexCreationDate(std::move(value)); return *this;}
+    template<typename IndexCreationDateT = Aws::Utils::DateTime>
+    void SetIndexCreationDate(IndexCreationDateT&& value) { m_indexCreationDateHasBeenSet = true; m_indexCreationDate = std::forward<IndexCreationDateT>(value); }
+    template<typename IndexCreationDateT = Aws::Utils::DateTime>
+    IndexedRecoveryPoint& WithIndexCreationDate(IndexCreationDateT&& value) { SetIndexCreationDate(std::forward<IndexCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +133,10 @@ namespace Model
      * index that has the status of <code>ACTIVE</code> can be included in a
      * search.</p>
      */
-    inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+    inline IndexStatus GetIndexStatus() const { return m_indexStatus; }
     inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
-    inline void SetIndexStatus(const IndexStatus& value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
-    inline void SetIndexStatus(IndexStatus&& value) { m_indexStatusHasBeenSet = true; m_indexStatus = std::move(value); }
-    inline IndexedRecoveryPoint& WithIndexStatus(const IndexStatus& value) { SetIndexStatus(value); return *this;}
-    inline IndexedRecoveryPoint& WithIndexStatus(IndexStatus&& value) { SetIndexStatus(std::move(value)); return *this;}
+    inline void SetIndexStatus(IndexStatus value) { m_indexStatusHasBeenSet = true; m_indexStatus = value; }
+    inline IndexedRecoveryPoint& WithIndexStatus(IndexStatus value) { SetIndexStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +144,12 @@ namespace Model
      * <p>A string in the form of a detailed message explaining the status of a backup
      * index associated with the recovery point.</p>
      */
-    inline const Aws::String& GetIndexStatusMessage() const{ return m_indexStatusMessage; }
+    inline const Aws::String& GetIndexStatusMessage() const { return m_indexStatusMessage; }
     inline bool IndexStatusMessageHasBeenSet() const { return m_indexStatusMessageHasBeenSet; }
-    inline void SetIndexStatusMessage(const Aws::String& value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage = value; }
-    inline void SetIndexStatusMessage(Aws::String&& value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage = std::move(value); }
-    inline void SetIndexStatusMessage(const char* value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage.assign(value); }
-    inline IndexedRecoveryPoint& WithIndexStatusMessage(const Aws::String& value) { SetIndexStatusMessage(value); return *this;}
-    inline IndexedRecoveryPoint& WithIndexStatusMessage(Aws::String&& value) { SetIndexStatusMessage(std::move(value)); return *this;}
-    inline IndexedRecoveryPoint& WithIndexStatusMessage(const char* value) { SetIndexStatusMessage(value); return *this;}
+    template<typename IndexStatusMessageT = Aws::String>
+    void SetIndexStatusMessage(IndexStatusMessageT&& value) { m_indexStatusMessageHasBeenSet = true; m_indexStatusMessage = std::forward<IndexStatusMessageT>(value); }
+    template<typename IndexStatusMessageT = Aws::String>
+    IndexedRecoveryPoint& WithIndexStatusMessage(IndexStatusMessageT&& value) { SetIndexStatusMessage(std::forward<IndexStatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,14 +158,12 @@ namespace Model
      * index is stored.</p> <p>For example,
      * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
-    inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
     inline bool BackupVaultArnHasBeenSet() const { return m_backupVaultArnHasBeenSet; }
-    inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = value; }
-    inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::move(value); }
-    inline void SetBackupVaultArn(const char* value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn.assign(value); }
-    inline IndexedRecoveryPoint& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-    inline IndexedRecoveryPoint& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-    inline IndexedRecoveryPoint& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    IndexedRecoveryPoint& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -190,16 +176,16 @@ namespace Model
     Aws::String m_iamRoleArn;
     bool m_iamRoleArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_backupCreationDate;
+    Aws::Utils::DateTime m_backupCreationDate{};
     bool m_backupCreationDateHasBeenSet = false;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_indexCreationDate;
+    Aws::Utils::DateTime m_indexCreationDate{};
     bool m_indexCreationDateHasBeenSet = false;
 
-    IndexStatus m_indexStatus;
+    IndexStatus m_indexStatus{IndexStatus::NOT_SET};
     bool m_indexStatusHasBeenSet = false;
 
     Aws::String m_indexStatusMessage;

@@ -18,23 +18,7 @@ namespace IoT
 namespace Model
 {
 
-BehaviorCriteria::BehaviorCriteria() : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_consecutiveDatapointsToAlarm(0),
-    m_consecutiveDatapointsToAlarmHasBeenSet(false),
-    m_consecutiveDatapointsToClear(0),
-    m_consecutiveDatapointsToClearHasBeenSet(false),
-    m_statisticalThresholdHasBeenSet(false),
-    m_mlDetectionConfigHasBeenSet(false)
-{
-}
-
 BehaviorCriteria::BehaviorCriteria(JsonView jsonValue)
-  : BehaviorCriteria()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ BehaviorCriteria& BehaviorCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("comparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationSeconds"))
   {
     m_durationSeconds = jsonValue.GetInteger("durationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consecutiveDatapointsToAlarm"))
   {
     m_consecutiveDatapointsToAlarm = jsonValue.GetInteger("consecutiveDatapointsToAlarm");
-
     m_consecutiveDatapointsToAlarmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consecutiveDatapointsToClear"))
   {
     m_consecutiveDatapointsToClear = jsonValue.GetInteger("consecutiveDatapointsToClear");
-
     m_consecutiveDatapointsToClearHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statisticalThreshold"))
   {
     m_statisticalThreshold = jsonValue.GetObject("statisticalThreshold");
-
     m_statisticalThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mlDetectionConfig"))
   {
     m_mlDetectionConfig = jsonValue.GetObject("mlDetectionConfig");
-
     m_mlDetectionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

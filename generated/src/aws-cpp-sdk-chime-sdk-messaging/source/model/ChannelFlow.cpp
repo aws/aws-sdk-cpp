@@ -18,17 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelFlow::ChannelFlow() : 
-    m_channelFlowArnHasBeenSet(false),
-    m_processorsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
-{
-}
-
 ChannelFlow::ChannelFlow(JsonView jsonValue)
-  : ChannelFlow()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ChannelFlow& ChannelFlow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelFlowArn"))
   {
     m_channelFlowArn = jsonValue.GetString("ChannelFlowArn");
-
     m_channelFlowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Processors"))
   {
     Aws::Utils::Array<JsonView> processorsJsonList = jsonValue.GetArray("Processors");
@@ -51,28 +39,21 @@ ChannelFlow& ChannelFlow::operator =(JsonView jsonValue)
     }
     m_processorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

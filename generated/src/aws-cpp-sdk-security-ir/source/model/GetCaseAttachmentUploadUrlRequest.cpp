@@ -12,16 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCaseAttachmentUploadUrlRequest::GetCaseAttachmentUploadUrlRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String GetCaseAttachmentUploadUrlRequest::SerializePayload() const
 {
   JsonValue payload;

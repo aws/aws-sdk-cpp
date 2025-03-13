@@ -12,14 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateScheduleRequest::CreateScheduleRequest() : 
-    m_jobNamesHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

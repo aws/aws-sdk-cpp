@@ -38,7 +38,7 @@ namespace Model
   class DebugRuleConfiguration
   {
   public:
-    AWS_SAGEMAKER_API DebugRuleConfiguration();
+    AWS_SAGEMAKER_API DebugRuleConfiguration() = default;
     AWS_SAGEMAKER_API DebugRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DebugRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The name of the rule configuration. It must be unique relative to other rule
      * configuration names.</p>
      */
-    inline const Aws::String& GetRuleConfigurationName() const{ return m_ruleConfigurationName; }
+    inline const Aws::String& GetRuleConfigurationName() const { return m_ruleConfigurationName; }
     inline bool RuleConfigurationNameHasBeenSet() const { return m_ruleConfigurationNameHasBeenSet; }
-    inline void SetRuleConfigurationName(const Aws::String& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = value; }
-    inline void SetRuleConfigurationName(Aws::String&& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = std::move(value); }
-    inline void SetRuleConfigurationName(const char* value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName.assign(value); }
-    inline DebugRuleConfiguration& WithRuleConfigurationName(const Aws::String& value) { SetRuleConfigurationName(value); return *this;}
-    inline DebugRuleConfiguration& WithRuleConfigurationName(Aws::String&& value) { SetRuleConfigurationName(std::move(value)); return *this;}
-    inline DebugRuleConfiguration& WithRuleConfigurationName(const char* value) { SetRuleConfigurationName(value); return *this;}
+    template<typename RuleConfigurationNameT = Aws::String>
+    void SetRuleConfigurationName(RuleConfigurationNameT&& value) { m_ruleConfigurationNameHasBeenSet = true; m_ruleConfigurationName = std::forward<RuleConfigurationNameT>(value); }
+    template<typename RuleConfigurationNameT = Aws::String>
+    DebugRuleConfiguration& WithRuleConfigurationName(RuleConfigurationNameT&& value) { SetRuleConfigurationName(std::forward<RuleConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,54 +62,46 @@ namespace Model
      * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
-    inline const Aws::String& GetLocalPath() const{ return m_localPath; }
+    inline const Aws::String& GetLocalPath() const { return m_localPath; }
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
-    inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
-    inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
-    inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
-    inline DebugRuleConfiguration& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
-    inline DebugRuleConfiguration& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
-    inline DebugRuleConfiguration& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
+    template<typename LocalPathT = Aws::String>
+    void SetLocalPath(LocalPathT&& value) { m_localPathHasBeenSet = true; m_localPath = std::forward<LocalPathT>(value); }
+    template<typename LocalPathT = Aws::String>
+    DebugRuleConfiguration& WithLocalPath(LocalPathT&& value) { SetLocalPath(std::forward<LocalPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Path to Amazon S3 storage location for rules.</p>
      */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
+    inline const Aws::String& GetS3OutputPath() const { return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-    inline DebugRuleConfiguration& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-    inline DebugRuleConfiguration& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-    inline DebugRuleConfiguration& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    template<typename S3OutputPathT = Aws::String>
+    void SetS3OutputPath(S3OutputPathT&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::forward<S3OutputPathT>(value); }
+    template<typename S3OutputPathT = Aws::String>
+    DebugRuleConfiguration& WithS3OutputPath(S3OutputPathT&& value) { SetS3OutputPath(std::forward<S3OutputPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Elastic Container (ECR) Image for the managed rule evaluation.</p>
      */
-    inline const Aws::String& GetRuleEvaluatorImage() const{ return m_ruleEvaluatorImage; }
+    inline const Aws::String& GetRuleEvaluatorImage() const { return m_ruleEvaluatorImage; }
     inline bool RuleEvaluatorImageHasBeenSet() const { return m_ruleEvaluatorImageHasBeenSet; }
-    inline void SetRuleEvaluatorImage(const Aws::String& value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage = value; }
-    inline void SetRuleEvaluatorImage(Aws::String&& value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage = std::move(value); }
-    inline void SetRuleEvaluatorImage(const char* value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage.assign(value); }
-    inline DebugRuleConfiguration& WithRuleEvaluatorImage(const Aws::String& value) { SetRuleEvaluatorImage(value); return *this;}
-    inline DebugRuleConfiguration& WithRuleEvaluatorImage(Aws::String&& value) { SetRuleEvaluatorImage(std::move(value)); return *this;}
-    inline DebugRuleConfiguration& WithRuleEvaluatorImage(const char* value) { SetRuleEvaluatorImage(value); return *this;}
+    template<typename RuleEvaluatorImageT = Aws::String>
+    void SetRuleEvaluatorImage(RuleEvaluatorImageT&& value) { m_ruleEvaluatorImageHasBeenSet = true; m_ruleEvaluatorImage = std::forward<RuleEvaluatorImageT>(value); }
+    template<typename RuleEvaluatorImageT = Aws::String>
+    DebugRuleConfiguration& WithRuleEvaluatorImage(RuleEvaluatorImageT&& value) { SetRuleEvaluatorImage(std::forward<RuleEvaluatorImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type to deploy a custom rule for debugging a training job.</p>
      */
-    inline const ProcessingInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ProcessingInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ProcessingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ProcessingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline DebugRuleConfiguration& WithInstanceType(const ProcessingInstanceType& value) { SetInstanceType(value); return *this;}
-    inline DebugRuleConfiguration& WithInstanceType(ProcessingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ProcessingInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline DebugRuleConfiguration& WithInstanceType(ProcessingInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +109,7 @@ namespace Model
      * <p>The size, in GB, of the ML storage volume attached to the processing
      * instance.</p>
      */
-    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+    inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline DebugRuleConfiguration& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
@@ -129,19 +119,16 @@ namespace Model
     /**
      * <p>Runtime configuration for rule container.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRuleParameters() const{ return m_ruleParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRuleParameters() const { return m_ruleParameters; }
     inline bool RuleParametersHasBeenSet() const { return m_ruleParametersHasBeenSet; }
-    inline void SetRuleParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters = value; }
-    inline void SetRuleParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters = std::move(value); }
-    inline DebugRuleConfiguration& WithRuleParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRuleParameters(value); return *this;}
-    inline DebugRuleConfiguration& WithRuleParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRuleParameters(std::move(value)); return *this;}
-    inline DebugRuleConfiguration& AddRuleParameters(const Aws::String& key, const Aws::String& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, value); return *this; }
-    inline DebugRuleConfiguration& AddRuleParameters(Aws::String&& key, const Aws::String& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::move(key), value); return *this; }
-    inline DebugRuleConfiguration& AddRuleParameters(const Aws::String& key, Aws::String&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, std::move(value)); return *this; }
-    inline DebugRuleConfiguration& AddRuleParameters(Aws::String&& key, Aws::String&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline DebugRuleConfiguration& AddRuleParameters(const char* key, Aws::String&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, std::move(value)); return *this; }
-    inline DebugRuleConfiguration& AddRuleParameters(Aws::String&& key, const char* value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::move(key), value); return *this; }
-    inline DebugRuleConfiguration& AddRuleParameters(const char* key, const char* value) { m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(key, value); return *this; }
+    template<typename RuleParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetRuleParameters(RuleParametersT&& value) { m_ruleParametersHasBeenSet = true; m_ruleParameters = std::forward<RuleParametersT>(value); }
+    template<typename RuleParametersT = Aws::Map<Aws::String, Aws::String>>
+    DebugRuleConfiguration& WithRuleParameters(RuleParametersT&& value) { SetRuleParameters(std::forward<RuleParametersT>(value)); return *this;}
+    template<typename RuleParametersKeyT = Aws::String, typename RuleParametersValueT = Aws::String>
+    DebugRuleConfiguration& AddRuleParameters(RuleParametersKeyT&& key, RuleParametersValueT&& value) {
+      m_ruleParametersHasBeenSet = true; m_ruleParameters.emplace(std::forward<RuleParametersKeyT>(key), std::forward<RuleParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -157,10 +144,10 @@ namespace Model
     Aws::String m_ruleEvaluatorImage;
     bool m_ruleEvaluatorImageHasBeenSet = false;
 
-    ProcessingInstanceType m_instanceType;
+    ProcessingInstanceType m_instanceType{ProcessingInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_volumeSizeInGB;
+    int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_ruleParameters;

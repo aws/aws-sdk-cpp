@@ -33,7 +33,7 @@ namespace Model
   class DataProtection
   {
   public:
-    AWS_WAFV2_API DataProtection();
+    AWS_WAFV2_API DataProtection() = default;
     AWS_WAFV2_API DataProtection(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API DataProtection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Specifies the field type and optional keys to apply the protection behavior
      * to. </p>
      */
-    inline const FieldToProtect& GetField() const{ return m_field; }
+    inline const FieldToProtect& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const FieldToProtect& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(FieldToProtect&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline DataProtection& WithField(const FieldToProtect& value) { SetField(value); return *this;}
-    inline DataProtection& WithField(FieldToProtect&& value) { SetField(std::move(value)); return *this;}
+    template<typename FieldT = FieldToProtect>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = FieldToProtect>
+    DataProtection& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,10 @@ namespace Model
      * <code>ade099751dEXAMPLEHASH2ea9f3393f80dd5d3bEXAMPLEHASH966ae0d3cd5a1e</code>
      * </p> </li> <li> <p>Substitution example: <code>REDACTED</code> </p> </li> </ul>
      */
-    inline const DataProtectionAction& GetAction() const{ return m_action; }
+    inline DataProtectionAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const DataProtectionAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(DataProtectionAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline DataProtection& WithAction(const DataProtectionAction& value) { SetAction(value); return *this;}
-    inline DataProtection& WithAction(DataProtectionAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(DataProtectionAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline DataProtection& WithAction(DataProtectionAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +75,7 @@ namespace Model
      * fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
      * <p>Default: <code>FALSE</code> </p>
      */
-    inline bool GetExcludeRuleMatchDetails() const{ return m_excludeRuleMatchDetails; }
+    inline bool GetExcludeRuleMatchDetails() const { return m_excludeRuleMatchDetails; }
     inline bool ExcludeRuleMatchDetailsHasBeenSet() const { return m_excludeRuleMatchDetailsHasBeenSet; }
     inline void SetExcludeRuleMatchDetails(bool value) { m_excludeRuleMatchDetailsHasBeenSet = true; m_excludeRuleMatchDetails = value; }
     inline DataProtection& WithExcludeRuleMatchDetails(bool value) { SetExcludeRuleMatchDetails(value); return *this;}
@@ -93,7 +91,7 @@ namespace Model
      * fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
      * <p>Default: <code>FALSE</code> </p>
      */
-    inline bool GetExcludeRateBasedDetails() const{ return m_excludeRateBasedDetails; }
+    inline bool GetExcludeRateBasedDetails() const { return m_excludeRateBasedDetails; }
     inline bool ExcludeRateBasedDetailsHasBeenSet() const { return m_excludeRateBasedDetailsHasBeenSet; }
     inline void SetExcludeRateBasedDetails(bool value) { m_excludeRateBasedDetailsHasBeenSet = true; m_excludeRateBasedDetails = value; }
     inline DataProtection& WithExcludeRateBasedDetails(bool value) { SetExcludeRateBasedDetails(value); return *this;}
@@ -103,13 +101,13 @@ namespace Model
     FieldToProtect m_field;
     bool m_fieldHasBeenSet = false;
 
-    DataProtectionAction m_action;
+    DataProtectionAction m_action{DataProtectionAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    bool m_excludeRuleMatchDetails;
+    bool m_excludeRuleMatchDetails{false};
     bool m_excludeRuleMatchDetailsHasBeenSet = false;
 
-    bool m_excludeRateBasedDetails;
+    bool m_excludeRateBasedDetails{false};
     bool m_excludeRateBasedDetailsHasBeenSet = false;
   };
 

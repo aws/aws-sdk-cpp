@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceCapacityProviderStrategyDetails::AwsEcsServiceCapacityProviderStrategyDetails() : 
-    m_base(0),
-    m_baseHasBeenSet(false),
-    m_capacityProviderHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 AwsEcsServiceCapacityProviderStrategyDetails::AwsEcsServiceCapacityProviderStrategyDetails(JsonView jsonValue)
-  : AwsEcsServiceCapacityProviderStrategyDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsEcsServiceCapacityProviderStrategyDetails& AwsEcsServiceCapacityProviderStrat
   if(jsonValue.ValueExists("Base"))
   {
     m_base = jsonValue.GetInteger("Base");
-
     m_baseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityProvider"))
   {
     m_capacityProvider = jsonValue.GetString("CapacityProvider");
-
     m_capacityProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Weight"))
   {
     m_weight = jsonValue.GetInteger("Weight");
-
     m_weightHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContactMethodRequest::CreateContactMethodRequest() : 
-    m_protocol(ContactProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_contactEndpointHasBeenSet(false)
-{
-}
-
 Aws::String CreateContactMethodRequest::SerializePayload() const
 {
   JsonValue payload;

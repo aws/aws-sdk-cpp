@@ -55,7 +55,7 @@ namespace Model
   class ContainerDependency
   {
   public:
-    AWS_ECS_API ContainerDependency();
+    AWS_ECS_API ContainerDependency() = default;
     AWS_ECS_API ContainerDependency(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ContainerDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,14 +65,12 @@ namespace Model
     /**
      * <p>The name of a container.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline ContainerDependency& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ContainerDependency& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ContainerDependency& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ContainerDependency& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,19 +91,17 @@ namespace Model
      * requires that the dependent container has health checks configured. This
      * condition is confirmed only at task startup.</p> </li> </ul>
      */
-    inline const ContainerCondition& GetCondition() const{ return m_condition; }
+    inline ContainerCondition GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const ContainerCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(ContainerCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline ContainerDependency& WithCondition(const ContainerCondition& value) { SetCondition(value); return *this;}
-    inline ContainerDependency& WithCondition(ContainerCondition&& value) { SetCondition(std::move(value)); return *this;}
+    inline void SetCondition(ContainerCondition value) { m_conditionHasBeenSet = true; m_condition = value; }
+    inline ContainerDependency& WithCondition(ContainerCondition value) { SetCondition(value); return *this;}
     ///@}
   private:
 
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet = false;
 
-    ContainerCondition m_condition;
+    ContainerCondition m_condition{ContainerCondition::NOT_SET};
     bool m_conditionHasBeenSet = false;
   };
 

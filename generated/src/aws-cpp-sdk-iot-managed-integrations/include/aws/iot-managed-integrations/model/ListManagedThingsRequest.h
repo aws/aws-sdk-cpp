@@ -27,7 +27,7 @@ namespace Model
   class ListManagedThingsRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API ListManagedThingsRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API ListManagedThingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>Filter on device owners when listing managed things.</p>
      */
-    inline const Aws::String& GetOwnerFilter() const{ return m_ownerFilter; }
+    inline const Aws::String& GetOwnerFilter() const { return m_ownerFilter; }
     inline bool OwnerFilterHasBeenSet() const { return m_ownerFilterHasBeenSet; }
-    inline void SetOwnerFilter(const Aws::String& value) { m_ownerFilterHasBeenSet = true; m_ownerFilter = value; }
-    inline void SetOwnerFilter(Aws::String&& value) { m_ownerFilterHasBeenSet = true; m_ownerFilter = std::move(value); }
-    inline void SetOwnerFilter(const char* value) { m_ownerFilterHasBeenSet = true; m_ownerFilter.assign(value); }
-    inline ListManagedThingsRequest& WithOwnerFilter(const Aws::String& value) { SetOwnerFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithOwnerFilter(Aws::String&& value) { SetOwnerFilter(std::move(value)); return *this;}
-    inline ListManagedThingsRequest& WithOwnerFilter(const char* value) { SetOwnerFilter(value); return *this;}
+    template<typename OwnerFilterT = Aws::String>
+    void SetOwnerFilter(OwnerFilterT&& value) { m_ownerFilterHasBeenSet = true; m_ownerFilter = std::forward<OwnerFilterT>(value); }
+    template<typename OwnerFilterT = Aws::String>
+    ListManagedThingsRequest& WithOwnerFilter(OwnerFilterT&& value) { SetOwnerFilter(std::forward<OwnerFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on a credential locker for a managed thing.</p>
      */
-    inline const Aws::String& GetCredentialLockerFilter() const{ return m_credentialLockerFilter; }
+    inline const Aws::String& GetCredentialLockerFilter() const { return m_credentialLockerFilter; }
     inline bool CredentialLockerFilterHasBeenSet() const { return m_credentialLockerFilterHasBeenSet; }
-    inline void SetCredentialLockerFilter(const Aws::String& value) { m_credentialLockerFilterHasBeenSet = true; m_credentialLockerFilter = value; }
-    inline void SetCredentialLockerFilter(Aws::String&& value) { m_credentialLockerFilterHasBeenSet = true; m_credentialLockerFilter = std::move(value); }
-    inline void SetCredentialLockerFilter(const char* value) { m_credentialLockerFilterHasBeenSet = true; m_credentialLockerFilter.assign(value); }
-    inline ListManagedThingsRequest& WithCredentialLockerFilter(const Aws::String& value) { SetCredentialLockerFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithCredentialLockerFilter(Aws::String&& value) { SetCredentialLockerFilter(std::move(value)); return *this;}
-    inline ListManagedThingsRequest& WithCredentialLockerFilter(const char* value) { SetCredentialLockerFilter(value); return *this;}
+    template<typename CredentialLockerFilterT = Aws::String>
+    void SetCredentialLockerFilter(CredentialLockerFilterT&& value) { m_credentialLockerFilterHasBeenSet = true; m_credentialLockerFilter = std::forward<CredentialLockerFilterT>(value); }
+    template<typename CredentialLockerFilterT = Aws::String>
+    ListManagedThingsRequest& WithCredentialLockerFilter(CredentialLockerFilterT&& value) { SetCredentialLockerFilter(std::forward<CredentialLockerFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,87 +69,75 @@ namespace Model
      * <p>Filter on the type of device used. This will be the Amazon Web Services hub
      * controller, cloud device, or IoT device.</p>
      */
-    inline const Role& GetRoleFilter() const{ return m_roleFilter; }
+    inline Role GetRoleFilter() const { return m_roleFilter; }
     inline bool RoleFilterHasBeenSet() const { return m_roleFilterHasBeenSet; }
-    inline void SetRoleFilter(const Role& value) { m_roleFilterHasBeenSet = true; m_roleFilter = value; }
-    inline void SetRoleFilter(Role&& value) { m_roleFilterHasBeenSet = true; m_roleFilter = std::move(value); }
-    inline ListManagedThingsRequest& WithRoleFilter(const Role& value) { SetRoleFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithRoleFilter(Role&& value) { SetRoleFilter(std::move(value)); return *this;}
+    inline void SetRoleFilter(Role value) { m_roleFilterHasBeenSet = true; m_roleFilter = value; }
+    inline ListManagedThingsRequest& WithRoleFilter(Role value) { SetRoleFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on a parent controller id for a managed thing.</p>
      */
-    inline const Aws::String& GetParentControllerIdentifierFilter() const{ return m_parentControllerIdentifierFilter; }
+    inline const Aws::String& GetParentControllerIdentifierFilter() const { return m_parentControllerIdentifierFilter; }
     inline bool ParentControllerIdentifierFilterHasBeenSet() const { return m_parentControllerIdentifierFilterHasBeenSet; }
-    inline void SetParentControllerIdentifierFilter(const Aws::String& value) { m_parentControllerIdentifierFilterHasBeenSet = true; m_parentControllerIdentifierFilter = value; }
-    inline void SetParentControllerIdentifierFilter(Aws::String&& value) { m_parentControllerIdentifierFilterHasBeenSet = true; m_parentControllerIdentifierFilter = std::move(value); }
-    inline void SetParentControllerIdentifierFilter(const char* value) { m_parentControllerIdentifierFilterHasBeenSet = true; m_parentControllerIdentifierFilter.assign(value); }
-    inline ListManagedThingsRequest& WithParentControllerIdentifierFilter(const Aws::String& value) { SetParentControllerIdentifierFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithParentControllerIdentifierFilter(Aws::String&& value) { SetParentControllerIdentifierFilter(std::move(value)); return *this;}
-    inline ListManagedThingsRequest& WithParentControllerIdentifierFilter(const char* value) { SetParentControllerIdentifierFilter(value); return *this;}
+    template<typename ParentControllerIdentifierFilterT = Aws::String>
+    void SetParentControllerIdentifierFilter(ParentControllerIdentifierFilterT&& value) { m_parentControllerIdentifierFilterHasBeenSet = true; m_parentControllerIdentifierFilter = std::forward<ParentControllerIdentifierFilterT>(value); }
+    template<typename ParentControllerIdentifierFilterT = Aws::String>
+    ListManagedThingsRequest& WithParentControllerIdentifierFilter(ParentControllerIdentifierFilterT&& value) { SetParentControllerIdentifierFilter(std::forward<ParentControllerIdentifierFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on a connector policy id for a managed thing.</p>
      */
-    inline const Aws::String& GetConnectorPolicyIdFilter() const{ return m_connectorPolicyIdFilter; }
+    inline const Aws::String& GetConnectorPolicyIdFilter() const { return m_connectorPolicyIdFilter; }
     inline bool ConnectorPolicyIdFilterHasBeenSet() const { return m_connectorPolicyIdFilterHasBeenSet; }
-    inline void SetConnectorPolicyIdFilter(const Aws::String& value) { m_connectorPolicyIdFilterHasBeenSet = true; m_connectorPolicyIdFilter = value; }
-    inline void SetConnectorPolicyIdFilter(Aws::String&& value) { m_connectorPolicyIdFilterHasBeenSet = true; m_connectorPolicyIdFilter = std::move(value); }
-    inline void SetConnectorPolicyIdFilter(const char* value) { m_connectorPolicyIdFilterHasBeenSet = true; m_connectorPolicyIdFilter.assign(value); }
-    inline ListManagedThingsRequest& WithConnectorPolicyIdFilter(const Aws::String& value) { SetConnectorPolicyIdFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithConnectorPolicyIdFilter(Aws::String&& value) { SetConnectorPolicyIdFilter(std::move(value)); return *this;}
-    inline ListManagedThingsRequest& WithConnectorPolicyIdFilter(const char* value) { SetConnectorPolicyIdFilter(value); return *this;}
+    template<typename ConnectorPolicyIdFilterT = Aws::String>
+    void SetConnectorPolicyIdFilter(ConnectorPolicyIdFilterT&& value) { m_connectorPolicyIdFilterHasBeenSet = true; m_connectorPolicyIdFilter = std::forward<ConnectorPolicyIdFilterT>(value); }
+    template<typename ConnectorPolicyIdFilterT = Aws::String>
+    ListManagedThingsRequest& WithConnectorPolicyIdFilter(ConnectorPolicyIdFilterT&& value) { SetConnectorPolicyIdFilter(std::forward<ConnectorPolicyIdFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on the serial number of the device.</p>
      */
-    inline const Aws::String& GetSerialNumberFilter() const{ return m_serialNumberFilter; }
+    inline const Aws::String& GetSerialNumberFilter() const { return m_serialNumberFilter; }
     inline bool SerialNumberFilterHasBeenSet() const { return m_serialNumberFilterHasBeenSet; }
-    inline void SetSerialNumberFilter(const Aws::String& value) { m_serialNumberFilterHasBeenSet = true; m_serialNumberFilter = value; }
-    inline void SetSerialNumberFilter(Aws::String&& value) { m_serialNumberFilterHasBeenSet = true; m_serialNumberFilter = std::move(value); }
-    inline void SetSerialNumberFilter(const char* value) { m_serialNumberFilterHasBeenSet = true; m_serialNumberFilter.assign(value); }
-    inline ListManagedThingsRequest& WithSerialNumberFilter(const Aws::String& value) { SetSerialNumberFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithSerialNumberFilter(Aws::String&& value) { SetSerialNumberFilter(std::move(value)); return *this;}
-    inline ListManagedThingsRequest& WithSerialNumberFilter(const char* value) { SetSerialNumberFilter(value); return *this;}
+    template<typename SerialNumberFilterT = Aws::String>
+    void SetSerialNumberFilter(SerialNumberFilterT&& value) { m_serialNumberFilterHasBeenSet = true; m_serialNumberFilter = std::forward<SerialNumberFilterT>(value); }
+    template<typename SerialNumberFilterT = Aws::String>
+    ListManagedThingsRequest& WithSerialNumberFilter(SerialNumberFilterT&& value) { SetSerialNumberFilter(std::forward<SerialNumberFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter on the status of the device.</p>
      */
-    inline const ProvisioningStatus& GetProvisioningStatusFilter() const{ return m_provisioningStatusFilter; }
+    inline ProvisioningStatus GetProvisioningStatusFilter() const { return m_provisioningStatusFilter; }
     inline bool ProvisioningStatusFilterHasBeenSet() const { return m_provisioningStatusFilterHasBeenSet; }
-    inline void SetProvisioningStatusFilter(const ProvisioningStatus& value) { m_provisioningStatusFilterHasBeenSet = true; m_provisioningStatusFilter = value; }
-    inline void SetProvisioningStatusFilter(ProvisioningStatus&& value) { m_provisioningStatusFilterHasBeenSet = true; m_provisioningStatusFilter = std::move(value); }
-    inline ListManagedThingsRequest& WithProvisioningStatusFilter(const ProvisioningStatus& value) { SetProvisioningStatusFilter(value); return *this;}
-    inline ListManagedThingsRequest& WithProvisioningStatusFilter(ProvisioningStatus&& value) { SetProvisioningStatusFilter(std::move(value)); return *this;}
+    inline void SetProvisioningStatusFilter(ProvisioningStatus value) { m_provisioningStatusFilterHasBeenSet = true; m_provisioningStatusFilter = value; }
+    inline ListManagedThingsRequest& WithProvisioningStatusFilter(ProvisioningStatus value) { SetProvisioningStatusFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A token that can be used to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListManagedThingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListManagedThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListManagedThingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListManagedThingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListManagedThingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -166,7 +150,7 @@ namespace Model
     Aws::String m_credentialLockerFilter;
     bool m_credentialLockerFilterHasBeenSet = false;
 
-    Role m_roleFilter;
+    Role m_roleFilter{Role::NOT_SET};
     bool m_roleFilterHasBeenSet = false;
 
     Aws::String m_parentControllerIdentifierFilter;
@@ -178,13 +162,13 @@ namespace Model
     Aws::String m_serialNumberFilter;
     bool m_serialNumberFilterHasBeenSet = false;
 
-    ProvisioningStatus m_provisioningStatusFilter;
+    ProvisioningStatus m_provisioningStatusFilter{ProvisioningStatus::NOT_SET};
     bool m_provisioningStatusFilterHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

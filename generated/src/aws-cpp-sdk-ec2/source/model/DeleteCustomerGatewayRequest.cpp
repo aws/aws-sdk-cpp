@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteCustomerGatewayRequest::DeleteCustomerGatewayRequest() : 
-    m_customerGatewayIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomerGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

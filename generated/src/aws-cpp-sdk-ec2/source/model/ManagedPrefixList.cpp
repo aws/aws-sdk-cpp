@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ManagedPrefixList::ManagedPrefixList() : 
-    m_prefixListIdHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_state(PrefixListState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_prefixListArnHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false),
-    m_maxEntries(0),
-    m_maxEntriesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 ManagedPrefixList::ManagedPrefixList(const XmlNode& xmlNode)
-  : ManagedPrefixList()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,76 @@ ManagedPrefixList& ManagedPrefixList::operator =(const XmlNode& xmlNode)
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode addressFamilyNode = resultNode.FirstChild("addressFamily");
     if(!addressFamilyNode.IsNull())
     {
       m_addressFamily = Aws::Utils::Xml::DecodeEscapedXmlText(addressFamilyNode.GetText());
       m_addressFamilyHasBeenSet = true;
+       m_addressFamilyHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = PrefixListStateMapper::GetPrefixListStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = PrefixListStateMapper::GetPrefixListStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
     if(!stateMessageNode.IsNull())
     {
       m_stateMessage = Aws::Utils::Xml::DecodeEscapedXmlText(stateMessageNode.GetText());
       m_stateMessageHasBeenSet = true;
+       m_stateMessageHasBeenSet = true;
     }
     XmlNode prefixListArnNode = resultNode.FirstChild("prefixListArn");
     if(!prefixListArnNode.IsNull())
     {
       m_prefixListArn = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListArnNode.GetText());
       m_prefixListArnHasBeenSet = true;
+       m_prefixListArnHasBeenSet = true;
     }
     XmlNode prefixListNameNode = resultNode.FirstChild("prefixListName");
     if(!prefixListNameNode.IsNull())
     {
       m_prefixListName = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListNameNode.GetText());
       m_prefixListNameHasBeenSet = true;
+       m_prefixListNameHasBeenSet = true;
     }
     XmlNode maxEntriesNode = resultNode.FirstChild("maxEntries");
     if(!maxEntriesNode.IsNull())
     {
       m_maxEntries = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxEntriesNode.GetText()).c_str()).c_str());
       m_maxEntriesHasBeenSet = true;
+       m_maxEntriesHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("version");
     if(!versionNode.IsNull())
     {
       m_version = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText()).c_str()).c_str());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
   }
 

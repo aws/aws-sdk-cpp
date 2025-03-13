@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TotalAggregationOption::TotalAggregationOption() : 
-    m_fieldIdHasBeenSet(false),
-    m_totalAggregationFunctionHasBeenSet(false)
-{
-}
-
 TotalAggregationOption::TotalAggregationOption(JsonView jsonValue)
-  : TotalAggregationOption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TotalAggregationOption& TotalAggregationOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalAggregationFunction"))
   {
     m_totalAggregationFunction = jsonValue.GetObject("TotalAggregationFunction");
-
     m_totalAggregationFunctionHasBeenSet = true;
   }
-
   return *this;
 }
 

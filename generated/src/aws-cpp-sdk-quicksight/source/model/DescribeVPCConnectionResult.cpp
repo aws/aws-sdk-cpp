@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVPCConnectionResult::DescribeVPCConnectionResult() : 
-    m_status(0)
-{
-}
-
 DescribeVPCConnectionResult::DescribeVPCConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeVPCConnectionResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DescribeVPCConnectionResult& DescribeVPCConnectionResult::operator =(const Aws::
   if(jsonValue.ValueExists("VPCConnection"))
   {
     m_vPCConnection = jsonValue.GetObject("VPCConnection");
-
+    m_vPCConnectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

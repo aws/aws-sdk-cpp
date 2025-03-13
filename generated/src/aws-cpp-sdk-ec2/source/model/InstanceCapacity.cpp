@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceCapacity::InstanceCapacity() : 
-    m_availableCapacity(0),
-    m_availableCapacityHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_totalCapacity(0),
-    m_totalCapacityHasBeenSet(false)
-{
-}
-
 InstanceCapacity::InstanceCapacity(const XmlNode& xmlNode)
-  : InstanceCapacity()
 {
   *this = xmlNode;
 }
@@ -46,18 +36,21 @@ InstanceCapacity& InstanceCapacity::operator =(const XmlNode& xmlNode)
     {
       m_availableCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableCapacityNode.GetText()).c_str()).c_str());
       m_availableCapacityHasBeenSet = true;
+       m_availableCapacityHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode totalCapacityNode = resultNode.FirstChild("totalCapacity");
     if(!totalCapacityNode.IsNull())
     {
       m_totalCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalCapacityNode.GetText()).c_str()).c_str());
       m_totalCapacityHasBeenSet = true;
+       m_totalCapacityHasBeenSet = true;
     }
   }
 

@@ -22,7 +22,7 @@ namespace Model
   class AdminLinkProviderForUserRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminLinkProviderForUserRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminLinkProviderForUserRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to link a federated identity.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminLinkProviderForUserRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminLinkProviderForUserRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminLinkProviderForUserRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminLinkProviderForUserRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * the user any immutable custom attributes, the operation won't succeed.</p>
      * 
      */
-    inline const ProviderUserIdentifierType& GetDestinationUser() const{ return m_destinationUser; }
+    inline const ProviderUserIdentifierType& GetDestinationUser() const { return m_destinationUser; }
     inline bool DestinationUserHasBeenSet() const { return m_destinationUserHasBeenSet; }
-    inline void SetDestinationUser(const ProviderUserIdentifierType& value) { m_destinationUserHasBeenSet = true; m_destinationUser = value; }
-    inline void SetDestinationUser(ProviderUserIdentifierType&& value) { m_destinationUserHasBeenSet = true; m_destinationUser = std::move(value); }
-    inline AdminLinkProviderForUserRequest& WithDestinationUser(const ProviderUserIdentifierType& value) { SetDestinationUser(value); return *this;}
-    inline AdminLinkProviderForUserRequest& WithDestinationUser(ProviderUserIdentifierType&& value) { SetDestinationUser(std::move(value)); return *this;}
+    template<typename DestinationUserT = ProviderUserIdentifierType>
+    void SetDestinationUser(DestinationUserT&& value) { m_destinationUserHasBeenSet = true; m_destinationUser = std::forward<DestinationUserT>(value); }
+    template<typename DestinationUserT = ProviderUserIdentifierType>
+    AdminLinkProviderForUserRequest& WithDestinationUser(DestinationUserT&& value) { SetDestinationUser(std::forward<DestinationUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +100,12 @@ namespace Model
      * Cognito will automatically parse the default unique identifier found in the
      * subject from the IdP token.</p> </li> </ul>
      */
-    inline const ProviderUserIdentifierType& GetSourceUser() const{ return m_sourceUser; }
+    inline const ProviderUserIdentifierType& GetSourceUser() const { return m_sourceUser; }
     inline bool SourceUserHasBeenSet() const { return m_sourceUserHasBeenSet; }
-    inline void SetSourceUser(const ProviderUserIdentifierType& value) { m_sourceUserHasBeenSet = true; m_sourceUser = value; }
-    inline void SetSourceUser(ProviderUserIdentifierType&& value) { m_sourceUserHasBeenSet = true; m_sourceUser = std::move(value); }
-    inline AdminLinkProviderForUserRequest& WithSourceUser(const ProviderUserIdentifierType& value) { SetSourceUser(value); return *this;}
-    inline AdminLinkProviderForUserRequest& WithSourceUser(ProviderUserIdentifierType&& value) { SetSourceUser(std::move(value)); return *this;}
+    template<typename SourceUserT = ProviderUserIdentifierType>
+    void SetSourceUser(SourceUserT&& value) { m_sourceUserHasBeenSet = true; m_sourceUser = std::forward<SourceUserT>(value); }
+    template<typename SourceUserT = ProviderUserIdentifierType>
+    AdminLinkProviderForUserRequest& WithSourceUser(SourceUserT&& value) { SetSourceUser(std::forward<SourceUserT>(value)); return *this;}
     ///@}
   private:
 

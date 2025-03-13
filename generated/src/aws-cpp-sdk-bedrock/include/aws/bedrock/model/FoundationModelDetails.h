@@ -36,7 +36,7 @@ namespace Model
   class FoundationModelDetails
   {
   public:
-    AWS_BEDROCK_API FoundationModelDetails();
+    AWS_BEDROCK_API FoundationModelDetails() = default;
     AWS_BEDROCK_API FoundationModelDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API FoundationModelDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,91 +46,81 @@ namespace Model
     /**
      * <p>The model Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline FoundationModelDetails& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline FoundationModelDetails& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline FoundationModelDetails& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    FoundationModelDetails& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model identifier.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline FoundationModelDetails& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline FoundationModelDetails& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline FoundationModelDetails& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    FoundationModelDetails& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model name.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline FoundationModelDetails& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline FoundationModelDetails& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline FoundationModelDetails& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    FoundationModelDetails& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model's provider name.</p>
      */
-    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
-    inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
-    inline FoundationModelDetails& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-    inline FoundationModelDetails& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-    inline FoundationModelDetails& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    FoundationModelDetails& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input modalities that the model supports.</p>
      */
-    inline const Aws::Vector<ModelModality>& GetInputModalities() const{ return m_inputModalities; }
+    inline const Aws::Vector<ModelModality>& GetInputModalities() const { return m_inputModalities; }
     inline bool InputModalitiesHasBeenSet() const { return m_inputModalitiesHasBeenSet; }
-    inline void SetInputModalities(const Aws::Vector<ModelModality>& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = value; }
-    inline void SetInputModalities(Aws::Vector<ModelModality>&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::move(value); }
-    inline FoundationModelDetails& WithInputModalities(const Aws::Vector<ModelModality>& value) { SetInputModalities(value); return *this;}
-    inline FoundationModelDetails& WithInputModalities(Aws::Vector<ModelModality>&& value) { SetInputModalities(std::move(value)); return *this;}
-    inline FoundationModelDetails& AddInputModalities(const ModelModality& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
-    inline FoundationModelDetails& AddInputModalities(ModelModality&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(std::move(value)); return *this; }
+    template<typename InputModalitiesT = Aws::Vector<ModelModality>>
+    void SetInputModalities(InputModalitiesT&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::forward<InputModalitiesT>(value); }
+    template<typename InputModalitiesT = Aws::Vector<ModelModality>>
+    FoundationModelDetails& WithInputModalities(InputModalitiesT&& value) { SetInputModalities(std::forward<InputModalitiesT>(value)); return *this;}
+    inline FoundationModelDetails& AddInputModalities(ModelModality value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The output modalities that the model supports.</p>
      */
-    inline const Aws::Vector<ModelModality>& GetOutputModalities() const{ return m_outputModalities; }
+    inline const Aws::Vector<ModelModality>& GetOutputModalities() const { return m_outputModalities; }
     inline bool OutputModalitiesHasBeenSet() const { return m_outputModalitiesHasBeenSet; }
-    inline void SetOutputModalities(const Aws::Vector<ModelModality>& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = value; }
-    inline void SetOutputModalities(Aws::Vector<ModelModality>&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::move(value); }
-    inline FoundationModelDetails& WithOutputModalities(const Aws::Vector<ModelModality>& value) { SetOutputModalities(value); return *this;}
-    inline FoundationModelDetails& WithOutputModalities(Aws::Vector<ModelModality>&& value) { SetOutputModalities(std::move(value)); return *this;}
-    inline FoundationModelDetails& AddOutputModalities(const ModelModality& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
-    inline FoundationModelDetails& AddOutputModalities(ModelModality&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(std::move(value)); return *this; }
+    template<typename OutputModalitiesT = Aws::Vector<ModelModality>>
+    void SetOutputModalities(OutputModalitiesT&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::forward<OutputModalitiesT>(value); }
+    template<typename OutputModalitiesT = Aws::Vector<ModelModality>>
+    FoundationModelDetails& WithOutputModalities(OutputModalitiesT&& value) { SetOutputModalities(std::forward<OutputModalitiesT>(value)); return *this;}
+    inline FoundationModelDetails& AddOutputModalities(ModelModality value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the model supports streaming.</p>
      */
-    inline bool GetResponseStreamingSupported() const{ return m_responseStreamingSupported; }
+    inline bool GetResponseStreamingSupported() const { return m_responseStreamingSupported; }
     inline bool ResponseStreamingSupportedHasBeenSet() const { return m_responseStreamingSupportedHasBeenSet; }
     inline void SetResponseStreamingSupported(bool value) { m_responseStreamingSupportedHasBeenSet = true; m_responseStreamingSupported = value; }
     inline FoundationModelDetails& WithResponseStreamingSupported(bool value) { SetResponseStreamingSupported(value); return *this;}
@@ -140,40 +130,38 @@ namespace Model
     /**
      * <p>The customization that the model supports.</p>
      */
-    inline const Aws::Vector<ModelCustomization>& GetCustomizationsSupported() const{ return m_customizationsSupported; }
+    inline const Aws::Vector<ModelCustomization>& GetCustomizationsSupported() const { return m_customizationsSupported; }
     inline bool CustomizationsSupportedHasBeenSet() const { return m_customizationsSupportedHasBeenSet; }
-    inline void SetCustomizationsSupported(const Aws::Vector<ModelCustomization>& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = value; }
-    inline void SetCustomizationsSupported(Aws::Vector<ModelCustomization>&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = std::move(value); }
-    inline FoundationModelDetails& WithCustomizationsSupported(const Aws::Vector<ModelCustomization>& value) { SetCustomizationsSupported(value); return *this;}
-    inline FoundationModelDetails& WithCustomizationsSupported(Aws::Vector<ModelCustomization>&& value) { SetCustomizationsSupported(std::move(value)); return *this;}
-    inline FoundationModelDetails& AddCustomizationsSupported(const ModelCustomization& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(value); return *this; }
-    inline FoundationModelDetails& AddCustomizationsSupported(ModelCustomization&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(std::move(value)); return *this; }
+    template<typename CustomizationsSupportedT = Aws::Vector<ModelCustomization>>
+    void SetCustomizationsSupported(CustomizationsSupportedT&& value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported = std::forward<CustomizationsSupportedT>(value); }
+    template<typename CustomizationsSupportedT = Aws::Vector<ModelCustomization>>
+    FoundationModelDetails& WithCustomizationsSupported(CustomizationsSupportedT&& value) { SetCustomizationsSupported(std::forward<CustomizationsSupportedT>(value)); return *this;}
+    inline FoundationModelDetails& AddCustomizationsSupported(ModelCustomization value) { m_customizationsSupportedHasBeenSet = true; m_customizationsSupported.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The inference types that the model supports.</p>
      */
-    inline const Aws::Vector<InferenceType>& GetInferenceTypesSupported() const{ return m_inferenceTypesSupported; }
+    inline const Aws::Vector<InferenceType>& GetInferenceTypesSupported() const { return m_inferenceTypesSupported; }
     inline bool InferenceTypesSupportedHasBeenSet() const { return m_inferenceTypesSupportedHasBeenSet; }
-    inline void SetInferenceTypesSupported(const Aws::Vector<InferenceType>& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = value; }
-    inline void SetInferenceTypesSupported(Aws::Vector<InferenceType>&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = std::move(value); }
-    inline FoundationModelDetails& WithInferenceTypesSupported(const Aws::Vector<InferenceType>& value) { SetInferenceTypesSupported(value); return *this;}
-    inline FoundationModelDetails& WithInferenceTypesSupported(Aws::Vector<InferenceType>&& value) { SetInferenceTypesSupported(std::move(value)); return *this;}
-    inline FoundationModelDetails& AddInferenceTypesSupported(const InferenceType& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(value); return *this; }
-    inline FoundationModelDetails& AddInferenceTypesSupported(InferenceType&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(std::move(value)); return *this; }
+    template<typename InferenceTypesSupportedT = Aws::Vector<InferenceType>>
+    void SetInferenceTypesSupported(InferenceTypesSupportedT&& value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported = std::forward<InferenceTypesSupportedT>(value); }
+    template<typename InferenceTypesSupportedT = Aws::Vector<InferenceType>>
+    FoundationModelDetails& WithInferenceTypesSupported(InferenceTypesSupportedT&& value) { SetInferenceTypesSupported(std::forward<InferenceTypesSupportedT>(value)); return *this;}
+    inline FoundationModelDetails& AddInferenceTypesSupported(InferenceType value) { m_inferenceTypesSupportedHasBeenSet = true; m_inferenceTypesSupported.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contains details about whether a model version is available or deprecated</p>
      */
-    inline const FoundationModelLifecycle& GetModelLifecycle() const{ return m_modelLifecycle; }
+    inline const FoundationModelLifecycle& GetModelLifecycle() const { return m_modelLifecycle; }
     inline bool ModelLifecycleHasBeenSet() const { return m_modelLifecycleHasBeenSet; }
-    inline void SetModelLifecycle(const FoundationModelLifecycle& value) { m_modelLifecycleHasBeenSet = true; m_modelLifecycle = value; }
-    inline void SetModelLifecycle(FoundationModelLifecycle&& value) { m_modelLifecycleHasBeenSet = true; m_modelLifecycle = std::move(value); }
-    inline FoundationModelDetails& WithModelLifecycle(const FoundationModelLifecycle& value) { SetModelLifecycle(value); return *this;}
-    inline FoundationModelDetails& WithModelLifecycle(FoundationModelLifecycle&& value) { SetModelLifecycle(std::move(value)); return *this;}
+    template<typename ModelLifecycleT = FoundationModelLifecycle>
+    void SetModelLifecycle(ModelLifecycleT&& value) { m_modelLifecycleHasBeenSet = true; m_modelLifecycle = std::forward<ModelLifecycleT>(value); }
+    template<typename ModelLifecycleT = FoundationModelLifecycle>
+    FoundationModelDetails& WithModelLifecycle(ModelLifecycleT&& value) { SetModelLifecycle(std::forward<ModelLifecycleT>(value)); return *this;}
     ///@}
   private:
 
@@ -195,7 +183,7 @@ namespace Model
     Aws::Vector<ModelModality> m_outputModalities;
     bool m_outputModalitiesHasBeenSet = false;
 
-    bool m_responseStreamingSupported;
+    bool m_responseStreamingSupported{false};
     bool m_responseStreamingSupportedHasBeenSet = false;
 
     Aws::Vector<ModelCustomization> m_customizationsSupported;

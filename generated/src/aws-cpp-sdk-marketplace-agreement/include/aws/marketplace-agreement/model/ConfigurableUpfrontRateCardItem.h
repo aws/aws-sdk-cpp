@@ -37,7 +37,7 @@ namespace Model
   class ConfigurableUpfrontRateCardItem
   {
   public:
-    AWS_AGREEMENTSERVICE_API ConfigurableUpfrontRateCardItem();
+    AWS_AGREEMENTSERVICE_API ConfigurableUpfrontRateCardItem() = default;
     AWS_AGREEMENTSERVICE_API ConfigurableUpfrontRateCardItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API ConfigurableUpfrontRateCardItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,26 @@ namespace Model
     /**
      * <p>Defines limits on how the term can be configured by acceptors.</p>
      */
-    inline const Constraints& GetConstraints() const{ return m_constraints; }
+    inline const Constraints& GetConstraints() const { return m_constraints; }
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-    inline void SetConstraints(const Constraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-    inline void SetConstraints(Constraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-    inline ConfigurableUpfrontRateCardItem& WithConstraints(const Constraints& value) { SetConstraints(value); return *this;}
-    inline ConfigurableUpfrontRateCardItem& WithConstraints(Constraints&& value) { SetConstraints(std::move(value)); return *this;}
+    template<typename ConstraintsT = Constraints>
+    void SetConstraints(ConstraintsT&& value) { m_constraintsHasBeenSet = true; m_constraints = std::forward<ConstraintsT>(value); }
+    template<typename ConstraintsT = Constraints>
+    ConfigurableUpfrontRateCardItem& WithConstraints(ConstraintsT&& value) { SetConstraints(std::forward<ConstraintsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the per unit rates for product dimensions.</p>
      */
-    inline const Aws::Vector<RateCardItem>& GetRateCard() const{ return m_rateCard; }
+    inline const Aws::Vector<RateCardItem>& GetRateCard() const { return m_rateCard; }
     inline bool RateCardHasBeenSet() const { return m_rateCardHasBeenSet; }
-    inline void SetRateCard(const Aws::Vector<RateCardItem>& value) { m_rateCardHasBeenSet = true; m_rateCard = value; }
-    inline void SetRateCard(Aws::Vector<RateCardItem>&& value) { m_rateCardHasBeenSet = true; m_rateCard = std::move(value); }
-    inline ConfigurableUpfrontRateCardItem& WithRateCard(const Aws::Vector<RateCardItem>& value) { SetRateCard(value); return *this;}
-    inline ConfigurableUpfrontRateCardItem& WithRateCard(Aws::Vector<RateCardItem>&& value) { SetRateCard(std::move(value)); return *this;}
-    inline ConfigurableUpfrontRateCardItem& AddRateCard(const RateCardItem& value) { m_rateCardHasBeenSet = true; m_rateCard.push_back(value); return *this; }
-    inline ConfigurableUpfrontRateCardItem& AddRateCard(RateCardItem&& value) { m_rateCardHasBeenSet = true; m_rateCard.push_back(std::move(value)); return *this; }
+    template<typename RateCardT = Aws::Vector<RateCardItem>>
+    void SetRateCard(RateCardT&& value) { m_rateCardHasBeenSet = true; m_rateCard = std::forward<RateCardT>(value); }
+    template<typename RateCardT = Aws::Vector<RateCardItem>>
+    ConfigurableUpfrontRateCardItem& WithRateCard(RateCardT&& value) { SetRateCard(std::forward<RateCardT>(value)); return *this;}
+    template<typename RateCardT = RateCardItem>
+    ConfigurableUpfrontRateCardItem& AddRateCard(RateCardT&& value) { m_rateCardHasBeenSet = true; m_rateCard.emplace_back(std::forward<RateCardT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * <p>Differentiates between the mutually exclusive rate cards in the same pricing
      * term to be selected by the buyer.</p>
      */
-    inline const Selector& GetSelector() const{ return m_selector; }
+    inline const Selector& GetSelector() const { return m_selector; }
     inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
-    inline void SetSelector(const Selector& value) { m_selectorHasBeenSet = true; m_selector = value; }
-    inline void SetSelector(Selector&& value) { m_selectorHasBeenSet = true; m_selector = std::move(value); }
-    inline ConfigurableUpfrontRateCardItem& WithSelector(const Selector& value) { SetSelector(value); return *this;}
-    inline ConfigurableUpfrontRateCardItem& WithSelector(Selector&& value) { SetSelector(std::move(value)); return *this;}
+    template<typename SelectorT = Selector>
+    void SetSelector(SelectorT&& value) { m_selectorHasBeenSet = true; m_selector = std::forward<SelectorT>(value); }
+    template<typename SelectorT = Selector>
+    ConfigurableUpfrontRateCardItem& WithSelector(SelectorT&& value) { SetSelector(std::forward<SelectorT>(value)); return *this;}
     ///@}
   private:
 

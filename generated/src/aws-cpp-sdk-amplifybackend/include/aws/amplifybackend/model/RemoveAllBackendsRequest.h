@@ -24,7 +24,7 @@ namespace Model
   class RemoveAllBackendsRequest : public AmplifyBackendRequest
   {
   public:
-    AWS_AMPLIFYBACKEND_API RemoveAllBackendsRequest();
+    AWS_AMPLIFYBACKEND_API RemoveAllBackendsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline RemoveAllBackendsRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline RemoveAllBackendsRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline RemoveAllBackendsRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    RemoveAllBackendsRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Cleans up the Amplify Console app if this value is set to true.</p>
      */
-    inline bool GetCleanAmplifyApp() const{ return m_cleanAmplifyApp; }
+    inline bool GetCleanAmplifyApp() const { return m_cleanAmplifyApp; }
     inline bool CleanAmplifyAppHasBeenSet() const { return m_cleanAmplifyAppHasBeenSet; }
     inline void SetCleanAmplifyApp(bool value) { m_cleanAmplifyAppHasBeenSet = true; m_cleanAmplifyApp = value; }
     inline RemoveAllBackendsRequest& WithCleanAmplifyApp(bool value) { SetCleanAmplifyApp(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
 
-    bool m_cleanAmplifyApp;
+    bool m_cleanAmplifyApp{false};
     bool m_cleanAmplifyAppHasBeenSet = false;
   };
 

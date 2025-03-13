@@ -18,18 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-FolderConfiguration::FolderConfiguration() : 
-    m_name(FolderName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_action(RetentionAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false)
-{
-}
-
 FolderConfiguration::FolderConfiguration(JsonView jsonValue)
-  : FolderConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ FolderConfiguration& FolderConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = FolderNameMapper::GetFolderNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = RetentionActionMapper::GetRetentionActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Period"))
   {
     m_period = jsonValue.GetInteger("Period");
-
     m_periodHasBeenSet = true;
   }
-
   return *this;
 }
 

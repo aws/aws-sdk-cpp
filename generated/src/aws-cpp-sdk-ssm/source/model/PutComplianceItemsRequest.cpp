@@ -12,18 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutComplianceItemsRequest::PutComplianceItemsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false),
-    m_executionSummaryHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_itemContentHashHasBeenSet(false),
-    m_uploadType(ComplianceUploadType::NOT_SET),
-    m_uploadTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutComplianceItemsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AttributeSuggestionsDescribeConfig::AttributeSuggestionsDescribeConfig() : 
-    m_suggestableConfigListHasBeenSet(false),
-    m_attributeSuggestionsMode(AttributeSuggestionsMode::NOT_SET),
-    m_attributeSuggestionsModeHasBeenSet(false)
-{
-}
-
 AttributeSuggestionsDescribeConfig::AttributeSuggestionsDescribeConfig(JsonView jsonValue)
-  : AttributeSuggestionsDescribeConfig()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ AttributeSuggestionsDescribeConfig& AttributeSuggestionsDescribeConfig::operator
     }
     m_suggestableConfigListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeSuggestionsMode"))
   {
     m_attributeSuggestionsMode = AttributeSuggestionsModeMapper::GetAttributeSuggestionsModeForName(jsonValue.GetString("AttributeSuggestionsMode"));
-
     m_attributeSuggestionsModeHasBeenSet = true;
   }
-
   return *this;
 }
 

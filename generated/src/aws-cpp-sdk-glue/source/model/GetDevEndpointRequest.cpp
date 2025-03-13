@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDevEndpointRequest::GetDevEndpointRequest() : 
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDevEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

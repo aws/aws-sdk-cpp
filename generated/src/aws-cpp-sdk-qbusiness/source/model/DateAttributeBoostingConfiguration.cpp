@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration() : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false),
-    m_boostingDurationInSeconds(0),
-    m_boostingDurationInSecondsHasBeenSet(false)
-{
-}
-
 DateAttributeBoostingConfiguration::DateAttributeBoostingConfiguration(JsonView jsonValue)
-  : DateAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DateAttributeBoostingConfiguration& DateAttributeBoostingConfiguration::operator
   if(jsonValue.ValueExists("boostingLevel"))
   {
     m_boostingLevel = DocumentAttributeBoostingLevelMapper::GetDocumentAttributeBoostingLevelForName(jsonValue.GetString("boostingLevel"));
-
     m_boostingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("boostingDurationInSeconds"))
   {
     m_boostingDurationInSeconds = jsonValue.GetInt64("boostingDurationInSeconds");
-
     m_boostingDurationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

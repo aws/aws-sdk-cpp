@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-WorkerAttributeCapability::WorkerAttributeCapability() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 WorkerAttributeCapability::WorkerAttributeCapability(JsonView jsonValue)
-  : WorkerAttributeCapability()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WorkerAttributeCapability& WorkerAttributeCapability::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ WorkerAttributeCapability& WorkerAttributeCapability::operator =(JsonView jsonVa
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

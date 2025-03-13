@@ -37,7 +37,7 @@ namespace Model
   class HyperParameterTuningJobStrategyConfig
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobStrategyConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningJobStrategyConfig() = default;
     AWS_SAGEMAKER_API HyperParameterTuningJobStrategyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningJobStrategyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * selection for <code>Strategy</code> within the
      * <code>HyperParameterTuningJobConfig</code> API.</p>
      */
-    inline const HyperbandStrategyConfig& GetHyperbandStrategyConfig() const{ return m_hyperbandStrategyConfig; }
+    inline const HyperbandStrategyConfig& GetHyperbandStrategyConfig() const { return m_hyperbandStrategyConfig; }
     inline bool HyperbandStrategyConfigHasBeenSet() const { return m_hyperbandStrategyConfigHasBeenSet; }
-    inline void SetHyperbandStrategyConfig(const HyperbandStrategyConfig& value) { m_hyperbandStrategyConfigHasBeenSet = true; m_hyperbandStrategyConfig = value; }
-    inline void SetHyperbandStrategyConfig(HyperbandStrategyConfig&& value) { m_hyperbandStrategyConfigHasBeenSet = true; m_hyperbandStrategyConfig = std::move(value); }
-    inline HyperParameterTuningJobStrategyConfig& WithHyperbandStrategyConfig(const HyperbandStrategyConfig& value) { SetHyperbandStrategyConfig(value); return *this;}
-    inline HyperParameterTuningJobStrategyConfig& WithHyperbandStrategyConfig(HyperbandStrategyConfig&& value) { SetHyperbandStrategyConfig(std::move(value)); return *this;}
+    template<typename HyperbandStrategyConfigT = HyperbandStrategyConfig>
+    void SetHyperbandStrategyConfig(HyperbandStrategyConfigT&& value) { m_hyperbandStrategyConfigHasBeenSet = true; m_hyperbandStrategyConfig = std::forward<HyperbandStrategyConfigT>(value); }
+    template<typename HyperbandStrategyConfigT = HyperbandStrategyConfig>
+    HyperParameterTuningJobStrategyConfig& WithHyperbandStrategyConfig(HyperbandStrategyConfigT&& value) { SetHyperbandStrategyConfig(std::forward<HyperbandStrategyConfigT>(value)); return *this;}
     ///@}
   private:
 

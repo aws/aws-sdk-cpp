@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-NullValueField::NullValueField() : 
-    m_valueHasBeenSet(false),
-    m_datatypeHasBeenSet(false)
-{
-}
-
 NullValueField::NullValueField(JsonView jsonValue)
-  : NullValueField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NullValueField& NullValueField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Datatype"))
   {
     m_datatype = jsonValue.GetObject("Datatype");
-
     m_datatypeHasBeenSet = true;
   }
-
   return *this;
 }
 

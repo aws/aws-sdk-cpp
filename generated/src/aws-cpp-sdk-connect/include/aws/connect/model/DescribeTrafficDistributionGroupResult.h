@@ -28,7 +28,7 @@ namespace Model
   class DescribeTrafficDistributionGroupResult
   {
   public:
-    AWS_CONNECT_API DescribeTrafficDistributionGroupResult();
+    AWS_CONNECT_API DescribeTrafficDistributionGroupResult() = default;
     AWS_CONNECT_API DescribeTrafficDistributionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeTrafficDistributionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the traffic distribution group.</p>
      */
-    inline const TrafficDistributionGroup& GetTrafficDistributionGroup() const{ return m_trafficDistributionGroup; }
-    inline void SetTrafficDistributionGroup(const TrafficDistributionGroup& value) { m_trafficDistributionGroup = value; }
-    inline void SetTrafficDistributionGroup(TrafficDistributionGroup&& value) { m_trafficDistributionGroup = std::move(value); }
-    inline DescribeTrafficDistributionGroupResult& WithTrafficDistributionGroup(const TrafficDistributionGroup& value) { SetTrafficDistributionGroup(value); return *this;}
-    inline DescribeTrafficDistributionGroupResult& WithTrafficDistributionGroup(TrafficDistributionGroup&& value) { SetTrafficDistributionGroup(std::move(value)); return *this;}
+    inline const TrafficDistributionGroup& GetTrafficDistributionGroup() const { return m_trafficDistributionGroup; }
+    template<typename TrafficDistributionGroupT = TrafficDistributionGroup>
+    void SetTrafficDistributionGroup(TrafficDistributionGroupT&& value) { m_trafficDistributionGroupHasBeenSet = true; m_trafficDistributionGroup = std::forward<TrafficDistributionGroupT>(value); }
+    template<typename TrafficDistributionGroupT = TrafficDistributionGroup>
+    DescribeTrafficDistributionGroupResult& WithTrafficDistributionGroup(TrafficDistributionGroupT&& value) { SetTrafficDistributionGroup(std::forward<TrafficDistributionGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrafficDistributionGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrafficDistributionGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrafficDistributionGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrafficDistributionGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TrafficDistributionGroup m_trafficDistributionGroup;
+    bool m_trafficDistributionGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

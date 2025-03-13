@@ -12,13 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RequestCancelWorkflowExecutionRequest::RequestCancelWorkflowExecutionRequest() : 
-    m_domainHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 Aws::String RequestCancelWorkflowExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class StopAutoMLJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API StopAutoMLJobRequest();
+    AWS_SAGEMAKER_API StopAutoMLJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the object you are requesting.</p>
      */
-    inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
+    inline const Aws::String& GetAutoMLJobName() const { return m_autoMLJobName; }
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
-    inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
-    inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
-    inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
-    inline StopAutoMLJobRequest& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
-    inline StopAutoMLJobRequest& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
-    inline StopAutoMLJobRequest& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
+    template<typename AutoMLJobNameT = Aws::String>
+    void SetAutoMLJobName(AutoMLJobNameT&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::forward<AutoMLJobNameT>(value); }
+    template<typename AutoMLJobNameT = Aws::String>
+    StopAutoMLJobRequest& WithAutoMLJobName(AutoMLJobNameT&& value) { SetAutoMLJobName(std::forward<AutoMLJobNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class Location
   {
   public:
-    AWS_CODECOMMIT_API Location();
+    AWS_CODECOMMIT_API Location() = default;
     AWS_CODECOMMIT_API Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
      * <p>The name of the file being compared, including its extension and
      * subdirectory, if any.</p>
      */
-    inline const Aws::String& GetFilePath() const{ return m_filePath; }
+    inline const Aws::String& GetFilePath() const { return m_filePath; }
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-    inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
-    inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
-    inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
-    inline Location& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
-    inline Location& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
-    inline Location& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+    template<typename FilePathT = Aws::String>
+    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
+    template<typename FilePathT = Aws::String>
+    Location& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The position of a change in a compared file, in line number format.</p>
      */
-    inline long long GetFilePosition() const{ return m_filePosition; }
+    inline long long GetFilePosition() const { return m_filePosition; }
     inline bool FilePositionHasBeenSet() const { return m_filePositionHasBeenSet; }
     inline void SetFilePosition(long long value) { m_filePositionHasBeenSet = true; m_filePosition = value; }
     inline Location& WithFilePosition(long long value) { SetFilePosition(value); return *this;}
@@ -69,22 +67,20 @@ namespace Model
      * <p>In a comparison of commits or a pull request, whether the change is in the
      * before or after of that comparison.</p>
      */
-    inline const RelativeFileVersionEnum& GetRelativeFileVersion() const{ return m_relativeFileVersion; }
+    inline RelativeFileVersionEnum GetRelativeFileVersion() const { return m_relativeFileVersion; }
     inline bool RelativeFileVersionHasBeenSet() const { return m_relativeFileVersionHasBeenSet; }
-    inline void SetRelativeFileVersion(const RelativeFileVersionEnum& value) { m_relativeFileVersionHasBeenSet = true; m_relativeFileVersion = value; }
-    inline void SetRelativeFileVersion(RelativeFileVersionEnum&& value) { m_relativeFileVersionHasBeenSet = true; m_relativeFileVersion = std::move(value); }
-    inline Location& WithRelativeFileVersion(const RelativeFileVersionEnum& value) { SetRelativeFileVersion(value); return *this;}
-    inline Location& WithRelativeFileVersion(RelativeFileVersionEnum&& value) { SetRelativeFileVersion(std::move(value)); return *this;}
+    inline void SetRelativeFileVersion(RelativeFileVersionEnum value) { m_relativeFileVersionHasBeenSet = true; m_relativeFileVersion = value; }
+    inline Location& WithRelativeFileVersion(RelativeFileVersionEnum value) { SetRelativeFileVersion(value); return *this;}
     ///@}
   private:
 
     Aws::String m_filePath;
     bool m_filePathHasBeenSet = false;
 
-    long long m_filePosition;
+    long long m_filePosition{0};
     bool m_filePositionHasBeenSet = false;
 
-    RelativeFileVersionEnum m_relativeFileVersion;
+    RelativeFileVersionEnum m_relativeFileVersion{RelativeFileVersionEnum::NOT_SET};
     bool m_relativeFileVersionHasBeenSet = false;
   };
 

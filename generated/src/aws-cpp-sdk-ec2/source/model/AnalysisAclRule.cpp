@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisAclRule::AnalysisAclRule() : 
-    m_cidrHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false)
-{
-}
-
 AnalysisAclRule::AnalysisAclRule(const XmlNode& xmlNode)
-  : AnalysisAclRule()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,42 @@ AnalysisAclRule& AnalysisAclRule::operator =(const XmlNode& xmlNode)
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode egressNode = resultNode.FirstChild("egress");
     if(!egressNode.IsNull())
     {
       m_egress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(egressNode.GetText()).c_str()).c_str());
       m_egressHasBeenSet = true;
+       m_egressHasBeenSet = true;
     }
     XmlNode portRangeNode = resultNode.FirstChild("portRange");
     if(!portRangeNode.IsNull())
     {
       m_portRange = portRangeNode;
       m_portRangeHasBeenSet = true;
+       m_portRangeHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode ruleActionNode = resultNode.FirstChild("ruleAction");
     if(!ruleActionNode.IsNull())
     {
       m_ruleAction = Aws::Utils::Xml::DecodeEscapedXmlText(ruleActionNode.GetText());
       m_ruleActionHasBeenSet = true;
+       m_ruleActionHasBeenSet = true;
     }
     XmlNode ruleNumberNode = resultNode.FirstChild("ruleNumber");
     if(!ruleNumberNode.IsNull())
     {
       m_ruleNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ruleNumberNode.GetText()).c_str()).c_str());
       m_ruleNumberHasBeenSet = true;
+       m_ruleNumberHasBeenSet = true;
     }
   }
 

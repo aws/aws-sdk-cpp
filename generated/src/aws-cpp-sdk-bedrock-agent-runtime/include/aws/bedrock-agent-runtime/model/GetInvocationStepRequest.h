@@ -21,7 +21,7 @@ namespace Model
   class GetInvocationStepRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GetInvocationStepRequest();
+    AWS_BEDROCKAGENTRUNTIME_API GetInvocationStepRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier for the invocation in UUID format.</p>
      */
-    inline const Aws::String& GetInvocationIdentifier() const{ return m_invocationIdentifier; }
+    inline const Aws::String& GetInvocationIdentifier() const { return m_invocationIdentifier; }
     inline bool InvocationIdentifierHasBeenSet() const { return m_invocationIdentifierHasBeenSet; }
-    inline void SetInvocationIdentifier(const Aws::String& value) { m_invocationIdentifierHasBeenSet = true; m_invocationIdentifier = value; }
-    inline void SetInvocationIdentifier(Aws::String&& value) { m_invocationIdentifierHasBeenSet = true; m_invocationIdentifier = std::move(value); }
-    inline void SetInvocationIdentifier(const char* value) { m_invocationIdentifierHasBeenSet = true; m_invocationIdentifier.assign(value); }
-    inline GetInvocationStepRequest& WithInvocationIdentifier(const Aws::String& value) { SetInvocationIdentifier(value); return *this;}
-    inline GetInvocationStepRequest& WithInvocationIdentifier(Aws::String&& value) { SetInvocationIdentifier(std::move(value)); return *this;}
-    inline GetInvocationStepRequest& WithInvocationIdentifier(const char* value) { SetInvocationIdentifier(value); return *this;}
+    template<typename InvocationIdentifierT = Aws::String>
+    void SetInvocationIdentifier(InvocationIdentifierT&& value) { m_invocationIdentifierHasBeenSet = true; m_invocationIdentifier = std::forward<InvocationIdentifierT>(value); }
+    template<typename InvocationIdentifierT = Aws::String>
+    GetInvocationStepRequest& WithInvocationIdentifier(InvocationIdentifierT&& value) { SetInvocationIdentifier(std::forward<InvocationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The unique identifier (in UUID format) for the specific invocation step to
      * retrieve.</p>
      */
-    inline const Aws::String& GetInvocationStepId() const{ return m_invocationStepId; }
+    inline const Aws::String& GetInvocationStepId() const { return m_invocationStepId; }
     inline bool InvocationStepIdHasBeenSet() const { return m_invocationStepIdHasBeenSet; }
-    inline void SetInvocationStepId(const Aws::String& value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId = value; }
-    inline void SetInvocationStepId(Aws::String&& value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId = std::move(value); }
-    inline void SetInvocationStepId(const char* value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId.assign(value); }
-    inline GetInvocationStepRequest& WithInvocationStepId(const Aws::String& value) { SetInvocationStepId(value); return *this;}
-    inline GetInvocationStepRequest& WithInvocationStepId(Aws::String&& value) { SetInvocationStepId(std::move(value)); return *this;}
-    inline GetInvocationStepRequest& WithInvocationStepId(const char* value) { SetInvocationStepId(value); return *this;}
+    template<typename InvocationStepIdT = Aws::String>
+    void SetInvocationStepId(InvocationStepIdT&& value) { m_invocationStepIdHasBeenSet = true; m_invocationStepId = std::forward<InvocationStepIdT>(value); }
+    template<typename InvocationStepIdT = Aws::String>
+    GetInvocationStepRequest& WithInvocationStepId(InvocationStepIdT&& value) { SetInvocationStepId(std::forward<InvocationStepIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * specify either the session's <code>sessionId</code> or its Amazon Resource Name
      * (ARN).</p>
      */
-    inline const Aws::String& GetSessionIdentifier() const{ return m_sessionIdentifier; }
+    inline const Aws::String& GetSessionIdentifier() const { return m_sessionIdentifier; }
     inline bool SessionIdentifierHasBeenSet() const { return m_sessionIdentifierHasBeenSet; }
-    inline void SetSessionIdentifier(const Aws::String& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = value; }
-    inline void SetSessionIdentifier(Aws::String&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::move(value); }
-    inline void SetSessionIdentifier(const char* value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier.assign(value); }
-    inline GetInvocationStepRequest& WithSessionIdentifier(const Aws::String& value) { SetSessionIdentifier(value); return *this;}
-    inline GetInvocationStepRequest& WithSessionIdentifier(Aws::String&& value) { SetSessionIdentifier(std::move(value)); return *this;}
-    inline GetInvocationStepRequest& WithSessionIdentifier(const char* value) { SetSessionIdentifier(value); return *this;}
+    template<typename SessionIdentifierT = Aws::String>
+    void SetSessionIdentifier(SessionIdentifierT&& value) { m_sessionIdentifierHasBeenSet = true; m_sessionIdentifier = std::forward<SessionIdentifierT>(value); }
+    template<typename SessionIdentifierT = Aws::String>
+    GetInvocationStepRequest& WithSessionIdentifier(SessionIdentifierT&& value) { SetSessionIdentifier(std::forward<SessionIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAutoMLJobV2Result::CreateAutoMLJobV2Result()
-{
-}
-
 CreateAutoMLJobV2Result::CreateAutoMLJobV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAutoMLJobV2Result& CreateAutoMLJobV2Result::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("AutoMLJobArn"))
   {
     m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
-
+    m_autoMLJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

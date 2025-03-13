@@ -12,17 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLanguageModelRequest::CreateLanguageModelRequest() : 
-    m_languageCode(CLMLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_baseModelName(BaseModelName::NOT_SET),
-    m_baseModelNameHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLanguageModelRequest::SerializePayload() const
 {
   JsonValue payload;

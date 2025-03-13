@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationSettingsRequest::UpdateApplicationSettingsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_writeApplicationSettingsRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

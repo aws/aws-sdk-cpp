@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAgreementResult::CreateAgreementResult()
-{
-}
-
 CreateAgreementResult::CreateAgreementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAgreementResult& CreateAgreementResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("AgreementId"))
   {
     m_agreementId = jsonValue.GetString("AgreementId");
-
+    m_agreementIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

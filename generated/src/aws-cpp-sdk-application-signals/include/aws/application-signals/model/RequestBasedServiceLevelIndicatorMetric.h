@@ -37,7 +37,7 @@ namespace Model
   class RequestBasedServiceLevelIndicatorMetric
   {
   public:
-    AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorMetric();
+    AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorMetric() = default;
     AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API RequestBasedServiceLevelIndicatorMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,19 +60,16 @@ namespace Model
      * <code>Environment</code> specifies the location where this object is hosted, or
      * what it belongs to.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const { return m_keyAttributes; }
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-    inline void SetKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-    inline void SetKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-    inline RequestBasedServiceLevelIndicatorMetric& WithKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyAttributes(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& WithKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyAttributes(std::move(value)); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(const Aws::String& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(Aws::String&& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(const Aws::String& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(Aws::String&& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(const char* key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(Aws::String&& key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(const char* key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
+    template<typename KeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetKeyAttributes(KeyAttributesT&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::forward<KeyAttributesT>(value); }
+    template<typename KeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    RequestBasedServiceLevelIndicatorMetric& WithKeyAttributes(KeyAttributesT&& value) { SetKeyAttributes(std::forward<KeyAttributesT>(value)); return *this;}
+    template<typename KeyAttributesKeyT = Aws::String, typename KeyAttributesValueT = Aws::String>
+    RequestBasedServiceLevelIndicatorMetric& AddKeyAttributes(KeyAttributesKeyT&& key, KeyAttributesValueT&& value) {
+      m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::forward<KeyAttributesKeyT>(key), std::forward<KeyAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -80,14 +77,12 @@ namespace Model
      * <p>If the SLO monitors a specific operation of the service, this field displays
      * that operation name.</p>
      */
-    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+    inline const Aws::String& GetOperationName() const { return m_operationName; }
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-    inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-    inline RequestBasedServiceLevelIndicatorMetric& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    template<typename OperationNameT = Aws::String>
+    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
+    template<typename OperationNameT = Aws::String>
+    RequestBasedServiceLevelIndicatorMetric& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +91,10 @@ namespace Model
      * <code>AVAILABILITY</code> metric that Application Signals collects, this field
      * displays which of those metrics is used.</p>
      */
-    inline const ServiceLevelIndicatorMetricType& GetMetricType() const{ return m_metricType; }
+    inline ServiceLevelIndicatorMetricType GetMetricType() const { return m_metricType; }
     inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }
-    inline void SetMetricType(const ServiceLevelIndicatorMetricType& value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
-    inline void SetMetricType(ServiceLevelIndicatorMetricType&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::move(value); }
-    inline RequestBasedServiceLevelIndicatorMetric& WithMetricType(const ServiceLevelIndicatorMetricType& value) { SetMetricType(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& WithMetricType(ServiceLevelIndicatorMetricType&& value) { SetMetricType(std::move(value)); return *this;}
+    inline void SetMetricType(ServiceLevelIndicatorMetricType value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
+    inline RequestBasedServiceLevelIndicatorMetric& WithMetricType(ServiceLevelIndicatorMetricType value) { SetMetricType(value); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +104,14 @@ namespace Model
      * number of "good requests" or "bad requests" that is observed for the metric
      * defined in <code>MonitoredRequestCountMetric</code>.</p>
      */
-    inline const Aws::Vector<MetricDataQuery>& GetTotalRequestCountMetric() const{ return m_totalRequestCountMetric; }
+    inline const Aws::Vector<MetricDataQuery>& GetTotalRequestCountMetric() const { return m_totalRequestCountMetric; }
     inline bool TotalRequestCountMetricHasBeenSet() const { return m_totalRequestCountMetricHasBeenSet; }
-    inline void SetTotalRequestCountMetric(const Aws::Vector<MetricDataQuery>& value) { m_totalRequestCountMetricHasBeenSet = true; m_totalRequestCountMetric = value; }
-    inline void SetTotalRequestCountMetric(Aws::Vector<MetricDataQuery>&& value) { m_totalRequestCountMetricHasBeenSet = true; m_totalRequestCountMetric = std::move(value); }
-    inline RequestBasedServiceLevelIndicatorMetric& WithTotalRequestCountMetric(const Aws::Vector<MetricDataQuery>& value) { SetTotalRequestCountMetric(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& WithTotalRequestCountMetric(Aws::Vector<MetricDataQuery>&& value) { SetTotalRequestCountMetric(std::move(value)); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& AddTotalRequestCountMetric(const MetricDataQuery& value) { m_totalRequestCountMetricHasBeenSet = true; m_totalRequestCountMetric.push_back(value); return *this; }
-    inline RequestBasedServiceLevelIndicatorMetric& AddTotalRequestCountMetric(MetricDataQuery&& value) { m_totalRequestCountMetricHasBeenSet = true; m_totalRequestCountMetric.push_back(std::move(value)); return *this; }
+    template<typename TotalRequestCountMetricT = Aws::Vector<MetricDataQuery>>
+    void SetTotalRequestCountMetric(TotalRequestCountMetricT&& value) { m_totalRequestCountMetricHasBeenSet = true; m_totalRequestCountMetric = std::forward<TotalRequestCountMetricT>(value); }
+    template<typename TotalRequestCountMetricT = Aws::Vector<MetricDataQuery>>
+    RequestBasedServiceLevelIndicatorMetric& WithTotalRequestCountMetric(TotalRequestCountMetricT&& value) { SetTotalRequestCountMetric(std::forward<TotalRequestCountMetricT>(value)); return *this;}
+    template<typename TotalRequestCountMetricT = MetricDataQuery>
+    RequestBasedServiceLevelIndicatorMetric& AddTotalRequestCountMetric(TotalRequestCountMetricT&& value) { m_totalRequestCountMetricHasBeenSet = true; m_totalRequestCountMetric.emplace_back(std::forward<TotalRequestCountMetricT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,12 +122,12 @@ namespace Model
      * for <code>MonitoredRequestCountMetric</code> to determine the percentage of
      * successful requests that this SLO tracks.</p>
      */
-    inline const MonitoredRequestCountMetricDataQueries& GetMonitoredRequestCountMetric() const{ return m_monitoredRequestCountMetric; }
+    inline const MonitoredRequestCountMetricDataQueries& GetMonitoredRequestCountMetric() const { return m_monitoredRequestCountMetric; }
     inline bool MonitoredRequestCountMetricHasBeenSet() const { return m_monitoredRequestCountMetricHasBeenSet; }
-    inline void SetMonitoredRequestCountMetric(const MonitoredRequestCountMetricDataQueries& value) { m_monitoredRequestCountMetricHasBeenSet = true; m_monitoredRequestCountMetric = value; }
-    inline void SetMonitoredRequestCountMetric(MonitoredRequestCountMetricDataQueries&& value) { m_monitoredRequestCountMetricHasBeenSet = true; m_monitoredRequestCountMetric = std::move(value); }
-    inline RequestBasedServiceLevelIndicatorMetric& WithMonitoredRequestCountMetric(const MonitoredRequestCountMetricDataQueries& value) { SetMonitoredRequestCountMetric(value); return *this;}
-    inline RequestBasedServiceLevelIndicatorMetric& WithMonitoredRequestCountMetric(MonitoredRequestCountMetricDataQueries&& value) { SetMonitoredRequestCountMetric(std::move(value)); return *this;}
+    template<typename MonitoredRequestCountMetricT = MonitoredRequestCountMetricDataQueries>
+    void SetMonitoredRequestCountMetric(MonitoredRequestCountMetricT&& value) { m_monitoredRequestCountMetricHasBeenSet = true; m_monitoredRequestCountMetric = std::forward<MonitoredRequestCountMetricT>(value); }
+    template<typename MonitoredRequestCountMetricT = MonitoredRequestCountMetricDataQueries>
+    RequestBasedServiceLevelIndicatorMetric& WithMonitoredRequestCountMetric(MonitoredRequestCountMetricT&& value) { SetMonitoredRequestCountMetric(std::forward<MonitoredRequestCountMetricT>(value)); return *this;}
     ///@}
   private:
 
@@ -144,7 +137,7 @@ namespace Model
     Aws::String m_operationName;
     bool m_operationNameHasBeenSet = false;
 
-    ServiceLevelIndicatorMetricType m_metricType;
+    ServiceLevelIndicatorMetricType m_metricType{ServiceLevelIndicatorMetricType::NOT_SET};
     bool m_metricTypeHasBeenSet = false;
 
     Aws::Vector<MetricDataQuery> m_totalRequestCountMetric;

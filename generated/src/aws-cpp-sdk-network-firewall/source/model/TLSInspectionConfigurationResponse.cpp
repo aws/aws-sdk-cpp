@@ -18,25 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-TLSInspectionConfigurationResponse::TLSInspectionConfigurationResponse() : 
-    m_tLSInspectionConfigurationArnHasBeenSet(false),
-    m_tLSInspectionConfigurationNameHasBeenSet(false),
-    m_tLSInspectionConfigurationIdHasBeenSet(false),
-    m_tLSInspectionConfigurationStatus(ResourceStatus::NOT_SET),
-    m_tLSInspectionConfigurationStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_numberOfAssociations(0),
-    m_numberOfAssociationsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_certificateAuthorityHasBeenSet(false)
-{
-}
-
 TLSInspectionConfigurationResponse::TLSInspectionConfigurationResponse(JsonView jsonValue)
-  : TLSInspectionConfigurationResponse()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ TLSInspectionConfigurationResponse& TLSInspectionConfigurationResponse::operator
   if(jsonValue.ValueExists("TLSInspectionConfigurationArn"))
   {
     m_tLSInspectionConfigurationArn = jsonValue.GetString("TLSInspectionConfigurationArn");
-
     m_tLSInspectionConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSInspectionConfigurationName"))
   {
     m_tLSInspectionConfigurationName = jsonValue.GetString("TLSInspectionConfigurationName");
-
     m_tLSInspectionConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSInspectionConfigurationId"))
   {
     m_tLSInspectionConfigurationId = jsonValue.GetString("TLSInspectionConfigurationId");
-
     m_tLSInspectionConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSInspectionConfigurationStatus"))
   {
     m_tLSInspectionConfigurationStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("TLSInspectionConfigurationStatus"));
-
     m_tLSInspectionConfigurationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -87,28 +59,21 @@ TLSInspectionConfigurationResponse& TLSInspectionConfigurationResponse::operator
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssociations"))
   {
     m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
-
     m_numberOfAssociationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Certificates"))
   {
     Aws::Utils::Array<JsonView> certificatesJsonList = jsonValue.GetArray("Certificates");
@@ -118,14 +83,11 @@ TLSInspectionConfigurationResponse& TLSInspectionConfigurationResponse::operator
     }
     m_certificatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateAuthority"))
   {
     m_certificateAuthority = jsonValue.GetObject("CertificateAuthority");
-
     m_certificateAuthorityHasBeenSet = true;
   }
-
   return *this;
 }
 

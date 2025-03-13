@@ -22,7 +22,7 @@ namespace Model
   class PutRawMessageContentRequest : public WorkMailMessageFlowRequest
   {
   public:
-    AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentRequest();
+    AWS_WORKMAILMESSAGEFLOW_API PutRawMessageContentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The identifier of the email message being updated.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline PutRawMessageContentRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline PutRawMessageContentRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline PutRawMessageContentRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    PutRawMessageContentRequest& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the raw message content of the updated email message.</p>
      */
-    inline const RawMessageContent& GetContent() const{ return m_content; }
+    inline const RawMessageContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const RawMessageContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(RawMessageContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline PutRawMessageContentRequest& WithContent(const RawMessageContent& value) { SetContent(value); return *this;}
-    inline PutRawMessageContentRequest& WithContent(RawMessageContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = RawMessageContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = RawMessageContent>
+    PutRawMessageContentRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class MetadataCopies
   {
   public:
-    AWS_MEDICALIMAGING_API MetadataCopies();
+    AWS_MEDICALIMAGING_API MetadataCopies() = default;
     AWS_MEDICALIMAGING_API MetadataCopies(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API MetadataCopies& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The JSON string used to specify a subset of SOP Instances to copy from source
      * to destination image set.</p>
      */
-    inline const Aws::String& GetCopiableAttributes() const{ return m_copiableAttributes; }
+    inline const Aws::String& GetCopiableAttributes() const { return m_copiableAttributes; }
     inline bool CopiableAttributesHasBeenSet() const { return m_copiableAttributesHasBeenSet; }
-    inline void SetCopiableAttributes(const Aws::String& value) { m_copiableAttributesHasBeenSet = true; m_copiableAttributes = value; }
-    inline void SetCopiableAttributes(Aws::String&& value) { m_copiableAttributesHasBeenSet = true; m_copiableAttributes = std::move(value); }
-    inline void SetCopiableAttributes(const char* value) { m_copiableAttributesHasBeenSet = true; m_copiableAttributes.assign(value); }
-    inline MetadataCopies& WithCopiableAttributes(const Aws::String& value) { SetCopiableAttributes(value); return *this;}
-    inline MetadataCopies& WithCopiableAttributes(Aws::String&& value) { SetCopiableAttributes(std::move(value)); return *this;}
-    inline MetadataCopies& WithCopiableAttributes(const char* value) { SetCopiableAttributes(value); return *this;}
+    template<typename CopiableAttributesT = Aws::String>
+    void SetCopiableAttributes(CopiableAttributesT&& value) { m_copiableAttributesHasBeenSet = true; m_copiableAttributes = std::forward<CopiableAttributesT>(value); }
+    template<typename CopiableAttributesT = Aws::String>
+    MetadataCopies& WithCopiableAttributes(CopiableAttributesT&& value) { SetCopiableAttributes(std::forward<CopiableAttributesT>(value)); return *this;}
     ///@}
   private:
 

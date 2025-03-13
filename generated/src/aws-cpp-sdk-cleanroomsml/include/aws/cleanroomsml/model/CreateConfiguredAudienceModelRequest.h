@@ -27,7 +27,7 @@ namespace Model
   class CreateConfiguredAudienceModelRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API CreateConfiguredAudienceModelRequest();
+    AWS_CLEANROOMSML_API CreateConfiguredAudienceModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the configured audience model.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateConfiguredAudienceModelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConfiguredAudienceModelRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the audience model to use for the
      * configured audience model.</p>
      */
-    inline const Aws::String& GetAudienceModelArn() const{ return m_audienceModelArn; }
+    inline const Aws::String& GetAudienceModelArn() const { return m_audienceModelArn; }
     inline bool AudienceModelArnHasBeenSet() const { return m_audienceModelArnHasBeenSet; }
-    inline void SetAudienceModelArn(const Aws::String& value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn = value; }
-    inline void SetAudienceModelArn(Aws::String&& value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn = std::move(value); }
-    inline void SetAudienceModelArn(const char* value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn.assign(value); }
-    inline CreateConfiguredAudienceModelRequest& WithAudienceModelArn(const Aws::String& value) { SetAudienceModelArn(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithAudienceModelArn(Aws::String&& value) { SetAudienceModelArn(std::move(value)); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithAudienceModelArn(const char* value) { SetAudienceModelArn(value); return *this;}
+    template<typename AudienceModelArnT = Aws::String>
+    void SetAudienceModelArn(AudienceModelArnT&& value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn = std::forward<AudienceModelArnT>(value); }
+    template<typename AudienceModelArnT = Aws::String>
+    CreateConfiguredAudienceModelRequest& WithAudienceModelArn(AudienceModelArnT&& value) { SetAudienceModelArn(std::forward<AudienceModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,40 +71,37 @@ namespace Model
      * Amazon S3 location. If the destination is protected with Amazon S3 KMS-SSE, then
      * the Role must also have the required KMS permissions.</p>
      */
-    inline const ConfiguredAudienceModelOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
+    inline const ConfiguredAudienceModelOutputConfig& GetOutputConfig() const { return m_outputConfig; }
     inline bool OutputConfigHasBeenSet() const { return m_outputConfigHasBeenSet; }
-    inline void SetOutputConfig(const ConfiguredAudienceModelOutputConfig& value) { m_outputConfigHasBeenSet = true; m_outputConfig = value; }
-    inline void SetOutputConfig(ConfiguredAudienceModelOutputConfig&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::move(value); }
-    inline CreateConfiguredAudienceModelRequest& WithOutputConfig(const ConfiguredAudienceModelOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithOutputConfig(ConfiguredAudienceModelOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    template<typename OutputConfigT = ConfiguredAudienceModelOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = ConfiguredAudienceModelOutputConfig>
+    CreateConfiguredAudienceModelRequest& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the configured audience model.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateConfiguredAudienceModelRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateConfiguredAudienceModelRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether audience metrics are shared.</p>
      */
-    inline const Aws::Vector<SharedAudienceMetrics>& GetSharedAudienceMetrics() const{ return m_sharedAudienceMetrics; }
+    inline const Aws::Vector<SharedAudienceMetrics>& GetSharedAudienceMetrics() const { return m_sharedAudienceMetrics; }
     inline bool SharedAudienceMetricsHasBeenSet() const { return m_sharedAudienceMetricsHasBeenSet; }
-    inline void SetSharedAudienceMetrics(const Aws::Vector<SharedAudienceMetrics>& value) { m_sharedAudienceMetricsHasBeenSet = true; m_sharedAudienceMetrics = value; }
-    inline void SetSharedAudienceMetrics(Aws::Vector<SharedAudienceMetrics>&& value) { m_sharedAudienceMetricsHasBeenSet = true; m_sharedAudienceMetrics = std::move(value); }
-    inline CreateConfiguredAudienceModelRequest& WithSharedAudienceMetrics(const Aws::Vector<SharedAudienceMetrics>& value) { SetSharedAudienceMetrics(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithSharedAudienceMetrics(Aws::Vector<SharedAudienceMetrics>&& value) { SetSharedAudienceMetrics(std::move(value)); return *this;}
-    inline CreateConfiguredAudienceModelRequest& AddSharedAudienceMetrics(const SharedAudienceMetrics& value) { m_sharedAudienceMetricsHasBeenSet = true; m_sharedAudienceMetrics.push_back(value); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddSharedAudienceMetrics(SharedAudienceMetrics&& value) { m_sharedAudienceMetricsHasBeenSet = true; m_sharedAudienceMetrics.push_back(std::move(value)); return *this; }
+    template<typename SharedAudienceMetricsT = Aws::Vector<SharedAudienceMetrics>>
+    void SetSharedAudienceMetrics(SharedAudienceMetricsT&& value) { m_sharedAudienceMetricsHasBeenSet = true; m_sharedAudienceMetrics = std::forward<SharedAudienceMetricsT>(value); }
+    template<typename SharedAudienceMetricsT = Aws::Vector<SharedAudienceMetrics>>
+    CreateConfiguredAudienceModelRequest& WithSharedAudienceMetrics(SharedAudienceMetricsT&& value) { SetSharedAudienceMetrics(std::forward<SharedAudienceMetricsT>(value)); return *this;}
+    inline CreateConfiguredAudienceModelRequest& AddSharedAudienceMetrics(SharedAudienceMetrics value) { m_sharedAudienceMetricsHasBeenSet = true; m_sharedAudienceMetrics.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -116,7 +109,7 @@ namespace Model
      * <p>The minimum number of users from the seed audience that must match with users
      * in the training data of the audience model. The default value is 500.</p>
      */
-    inline int GetMinMatchingSeedSize() const{ return m_minMatchingSeedSize; }
+    inline int GetMinMatchingSeedSize() const { return m_minMatchingSeedSize; }
     inline bool MinMatchingSeedSizeHasBeenSet() const { return m_minMatchingSeedSizeHasBeenSet; }
     inline void SetMinMatchingSeedSize(int value) { m_minMatchingSeedSizeHasBeenSet = true; m_minMatchingSeedSize = value; }
     inline CreateConfiguredAudienceModelRequest& WithMinMatchingSeedSize(int value) { SetMinMatchingSeedSize(value); return *this;}
@@ -132,12 +125,12 @@ namespace Model
      * identifiers in the output. You can use the <code>Percentage</code>
      * <a>AudienceSize</a> to configure sizes in the range 1-100 percent.</p>
      */
-    inline const AudienceSizeConfig& GetAudienceSizeConfig() const{ return m_audienceSizeConfig; }
+    inline const AudienceSizeConfig& GetAudienceSizeConfig() const { return m_audienceSizeConfig; }
     inline bool AudienceSizeConfigHasBeenSet() const { return m_audienceSizeConfigHasBeenSet; }
-    inline void SetAudienceSizeConfig(const AudienceSizeConfig& value) { m_audienceSizeConfigHasBeenSet = true; m_audienceSizeConfig = value; }
-    inline void SetAudienceSizeConfig(AudienceSizeConfig&& value) { m_audienceSizeConfigHasBeenSet = true; m_audienceSizeConfig = std::move(value); }
-    inline CreateConfiguredAudienceModelRequest& WithAudienceSizeConfig(const AudienceSizeConfig& value) { SetAudienceSizeConfig(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithAudienceSizeConfig(AudienceSizeConfig&& value) { SetAudienceSizeConfig(std::move(value)); return *this;}
+    template<typename AudienceSizeConfigT = AudienceSizeConfig>
+    void SetAudienceSizeConfig(AudienceSizeConfigT&& value) { m_audienceSizeConfigHasBeenSet = true; m_audienceSizeConfig = std::forward<AudienceSizeConfigT>(value); }
+    template<typename AudienceSizeConfigT = AudienceSizeConfig>
+    CreateConfiguredAudienceModelRequest& WithAudienceSizeConfig(AudienceSizeConfigT&& value) { SetAudienceSizeConfig(std::forward<AudienceSizeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,19 +154,16 @@ namespace Model
      * count against the limit of 50 tags. Tags with only the key prefix of aws do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateConfiguredAudienceModelRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateConfiguredAudienceModelRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateConfiguredAudienceModelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateConfiguredAudienceModelRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateConfiguredAudienceModelRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -188,12 +178,10 @@ namespace Model
      * the tags from the client are never applied to a resource in the caller's
      * account.</p>
      */
-    inline const TagOnCreatePolicy& GetChildResourceTagOnCreatePolicy() const{ return m_childResourceTagOnCreatePolicy; }
+    inline TagOnCreatePolicy GetChildResourceTagOnCreatePolicy() const { return m_childResourceTagOnCreatePolicy; }
     inline bool ChildResourceTagOnCreatePolicyHasBeenSet() const { return m_childResourceTagOnCreatePolicyHasBeenSet; }
-    inline void SetChildResourceTagOnCreatePolicy(const TagOnCreatePolicy& value) { m_childResourceTagOnCreatePolicyHasBeenSet = true; m_childResourceTagOnCreatePolicy = value; }
-    inline void SetChildResourceTagOnCreatePolicy(TagOnCreatePolicy&& value) { m_childResourceTagOnCreatePolicyHasBeenSet = true; m_childResourceTagOnCreatePolicy = std::move(value); }
-    inline CreateConfiguredAudienceModelRequest& WithChildResourceTagOnCreatePolicy(const TagOnCreatePolicy& value) { SetChildResourceTagOnCreatePolicy(value); return *this;}
-    inline CreateConfiguredAudienceModelRequest& WithChildResourceTagOnCreatePolicy(TagOnCreatePolicy&& value) { SetChildResourceTagOnCreatePolicy(std::move(value)); return *this;}
+    inline void SetChildResourceTagOnCreatePolicy(TagOnCreatePolicy value) { m_childResourceTagOnCreatePolicyHasBeenSet = true; m_childResourceTagOnCreatePolicy = value; }
+    inline CreateConfiguredAudienceModelRequest& WithChildResourceTagOnCreatePolicy(TagOnCreatePolicy value) { SetChildResourceTagOnCreatePolicy(value); return *this;}
     ///@}
   private:
 
@@ -212,7 +200,7 @@ namespace Model
     Aws::Vector<SharedAudienceMetrics> m_sharedAudienceMetrics;
     bool m_sharedAudienceMetricsHasBeenSet = false;
 
-    int m_minMatchingSeedSize;
+    int m_minMatchingSeedSize{0};
     bool m_minMatchingSeedSizeHasBeenSet = false;
 
     AudienceSizeConfig m_audienceSizeConfig;
@@ -221,7 +209,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    TagOnCreatePolicy m_childResourceTagOnCreatePolicy;
+    TagOnCreatePolicy m_childResourceTagOnCreatePolicy{TagOnCreatePolicy::NOT_SET};
     bool m_childResourceTagOnCreatePolicyHasBeenSet = false;
   };
 

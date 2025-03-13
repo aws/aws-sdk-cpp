@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-OutputContext::OutputContext() : 
-    m_nameHasBeenSet(false),
-    m_timeToLiveInSeconds(0),
-    m_timeToLiveInSecondsHasBeenSet(false),
-    m_turnsToLive(0),
-    m_turnsToLiveHasBeenSet(false)
-{
-}
-
 OutputContext::OutputContext(JsonView jsonValue)
-  : OutputContext()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OutputContext& OutputContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeToLiveInSeconds"))
   {
     m_timeToLiveInSeconds = jsonValue.GetInteger("timeToLiveInSeconds");
-
     m_timeToLiveInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("turnsToLive"))
   {
     m_turnsToLive = jsonValue.GetInteger("turnsToLive");
-
     m_turnsToLiveHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstanceDataReplicationInfo::RecoveryInstanceDataReplicationInfo() : 
-    m_dataReplicationErrorHasBeenSet(false),
-    m_dataReplicationInitiationHasBeenSet(false),
-    m_dataReplicationState(RecoveryInstanceDataReplicationState::NOT_SET),
-    m_dataReplicationStateHasBeenSet(false),
-    m_etaDateTimeHasBeenSet(false),
-    m_lagDurationHasBeenSet(false),
-    m_replicatedDisksHasBeenSet(false),
-    m_stagingAvailabilityZoneHasBeenSet(false),
-    m_stagingOutpostArnHasBeenSet(false)
-{
-}
-
 RecoveryInstanceDataReplicationInfo::RecoveryInstanceDataReplicationInfo(JsonView jsonValue)
-  : RecoveryInstanceDataReplicationInfo()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ RecoveryInstanceDataReplicationInfo& RecoveryInstanceDataReplicationInfo::operat
   if(jsonValue.ValueExists("dataReplicationError"))
   {
     m_dataReplicationError = jsonValue.GetObject("dataReplicationError");
-
     m_dataReplicationErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataReplicationInitiation"))
   {
     m_dataReplicationInitiation = jsonValue.GetObject("dataReplicationInitiation");
-
     m_dataReplicationInitiationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataReplicationState"))
   {
     m_dataReplicationState = RecoveryInstanceDataReplicationStateMapper::GetRecoveryInstanceDataReplicationStateForName(jsonValue.GetString("dataReplicationState"));
-
     m_dataReplicationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("etaDateTime"))
   {
     m_etaDateTime = jsonValue.GetString("etaDateTime");
-
     m_etaDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagDuration"))
   {
     m_lagDuration = jsonValue.GetString("lagDuration");
-
     m_lagDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicatedDisks"))
   {
     Aws::Utils::Array<JsonView> replicatedDisksJsonList = jsonValue.GetArray("replicatedDisks");
@@ -83,21 +59,16 @@ RecoveryInstanceDataReplicationInfo& RecoveryInstanceDataReplicationInfo::operat
     }
     m_replicatedDisksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingAvailabilityZone"))
   {
     m_stagingAvailabilityZone = jsonValue.GetString("stagingAvailabilityZone");
-
     m_stagingAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingOutpostArn"))
   {
     m_stagingOutpostArn = jsonValue.GetString("stagingOutpostArn");
-
     m_stagingOutpostArnHasBeenSet = true;
   }
-
   return *this;
 }
 

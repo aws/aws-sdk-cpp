@@ -12,17 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLoggingConfigurationsRequest::ListLoggingConfigurationsRequest() : 
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_logScope(LogScope::NOT_SET),
-    m_logScopeHasBeenSet(false)
-{
-}
-
 Aws::String ListLoggingConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

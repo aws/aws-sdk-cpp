@@ -21,7 +21,7 @@ namespace Model
   class DisassociatePermissionRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API DisassociatePermissionRequest();
+    AWS_QBUSINESS_API DisassociatePermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the Amazon Q Business application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline DisassociatePermissionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline DisassociatePermissionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline DisassociatePermissionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    DisassociatePermissionRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The statement ID of the permission to remove.</p>
      */
-    inline const Aws::String& GetStatementId() const{ return m_statementId; }
+    inline const Aws::String& GetStatementId() const { return m_statementId; }
     inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
-    inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
-    inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
-    inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
-    inline DisassociatePermissionRequest& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
-    inline DisassociatePermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
-    inline DisassociatePermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
+    template<typename StatementIdT = Aws::String>
+    void SetStatementId(StatementIdT&& value) { m_statementIdHasBeenSet = true; m_statementId = std::forward<StatementIdT>(value); }
+    template<typename StatementIdT = Aws::String>
+    DisassociatePermissionRequest& WithStatementId(StatementIdT&& value) { SetStatementId(std::forward<StatementIdT>(value)); return *this;}
     ///@}
   private:
 

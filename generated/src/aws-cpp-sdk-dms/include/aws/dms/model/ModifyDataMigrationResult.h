@@ -28,7 +28,7 @@ namespace Model
   class ModifyDataMigrationResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyDataMigrationResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyDataMigrationResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ModifyDataMigrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API ModifyDataMigrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the modified data migration.</p>
      */
-    inline const DataMigration& GetDataMigration() const{ return m_dataMigration; }
-    inline void SetDataMigration(const DataMigration& value) { m_dataMigration = value; }
-    inline void SetDataMigration(DataMigration&& value) { m_dataMigration = std::move(value); }
-    inline ModifyDataMigrationResult& WithDataMigration(const DataMigration& value) { SetDataMigration(value); return *this;}
-    inline ModifyDataMigrationResult& WithDataMigration(DataMigration&& value) { SetDataMigration(std::move(value)); return *this;}
+    inline const DataMigration& GetDataMigration() const { return m_dataMigration; }
+    template<typename DataMigrationT = DataMigration>
+    void SetDataMigration(DataMigrationT&& value) { m_dataMigrationHasBeenSet = true; m_dataMigration = std::forward<DataMigrationT>(value); }
+    template<typename DataMigrationT = DataMigration>
+    ModifyDataMigrationResult& WithDataMigration(DataMigrationT&& value) { SetDataMigration(std::forward<DataMigrationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ModifyDataMigrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ModifyDataMigrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ModifyDataMigrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ModifyDataMigrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataMigration m_dataMigration;
+    bool m_dataMigrationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

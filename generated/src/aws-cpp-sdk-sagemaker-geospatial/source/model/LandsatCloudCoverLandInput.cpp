@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-LandsatCloudCoverLandInput::LandsatCloudCoverLandInput() : 
-    m_lowerBound(0.0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0.0),
-    m_upperBoundHasBeenSet(false)
-{
-}
-
 LandsatCloudCoverLandInput::LandsatCloudCoverLandInput(JsonView jsonValue)
-  : LandsatCloudCoverLandInput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LandsatCloudCoverLandInput& LandsatCloudCoverLandInput::operator =(JsonView json
   if(jsonValue.ValueExists("LowerBound"))
   {
     m_lowerBound = jsonValue.GetDouble("LowerBound");
-
     m_lowerBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperBound"))
   {
     m_upperBound = jsonValue.GetDouble("UpperBound");
-
     m_upperBoundHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class ListThingsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListThingsRequest();
+    AWS_IOT_API ListThingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,21 +47,19 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListThingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in this operation.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListThingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -71,42 +69,36 @@ namespace Model
     /**
      * <p>The attribute name used to search for things.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline ListThingsRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline ListThingsRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline ListThingsRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    ListThingsRequest& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attribute value used to search for things.</p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline ListThingsRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline ListThingsRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline ListThingsRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    ListThingsRequest& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing type used to search for things.</p>
      */
-    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+    inline const Aws::String& GetThingTypeName() const { return m_thingTypeName; }
     inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
-    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
-    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
-    inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
-    inline ListThingsRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-    inline ListThingsRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-    inline ListThingsRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    template<typename ThingTypeNameT = Aws::String>
+    void SetThingTypeName(ThingTypeNameT&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::forward<ThingTypeNameT>(value); }
+    template<typename ThingTypeNameT = Aws::String>
+    ListThingsRequest& WithThingTypeName(ThingTypeNameT&& value) { SetThingTypeName(std::forward<ThingTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +109,7 @@ namespace Model
      * with attribute values that match the entire <code>attributeValue</code>
      * provided. </p>
      */
-    inline bool GetUsePrefixAttributeValue() const{ return m_usePrefixAttributeValue; }
+    inline bool GetUsePrefixAttributeValue() const { return m_usePrefixAttributeValue; }
     inline bool UsePrefixAttributeValueHasBeenSet() const { return m_usePrefixAttributeValueHasBeenSet; }
     inline void SetUsePrefixAttributeValue(bool value) { m_usePrefixAttributeValueHasBeenSet = true; m_usePrefixAttributeValue = value; }
     inline ListThingsRequest& WithUsePrefixAttributeValue(bool value) { SetUsePrefixAttributeValue(value); return *this;}
@@ -127,7 +119,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_attributeName;
@@ -139,7 +131,7 @@ namespace Model
     Aws::String m_thingTypeName;
     bool m_thingTypeNameHasBeenSet = false;
 
-    bool m_usePrefixAttributeValue;
+    bool m_usePrefixAttributeValue{false};
     bool m_usePrefixAttributeValueHasBeenSet = false;
   };
 

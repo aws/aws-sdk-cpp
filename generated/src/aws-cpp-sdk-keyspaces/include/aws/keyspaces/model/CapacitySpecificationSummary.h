@@ -38,7 +38,7 @@ namespace Model
   class CapacitySpecificationSummary
   {
   public:
-    AWS_KEYSPACES_API CapacitySpecificationSummary();
+    AWS_KEYSPACES_API CapacitySpecificationSummary() = default;
     AWS_KEYSPACES_API CapacitySpecificationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API CapacitySpecificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write
      * capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
      */
-    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+    inline ThroughputMode GetThroughputMode() const { return m_throughputMode; }
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
-    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
-    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
-    inline CapacitySpecificationSummary& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
-    inline CapacitySpecificationSummary& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+    inline void SetThroughputMode(ThroughputMode value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+    inline CapacitySpecificationSummary& WithThroughputMode(ThroughputMode value) { SetThroughputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * <p>The throughput capacity specified for <code>read</code> operations defined in
      * <code>read capacity units</code> <code>(RCUs)</code>.</p>
      */
-    inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+    inline long long GetReadCapacityUnits() const { return m_readCapacityUnits; }
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
     inline CapacitySpecificationSummary& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
      * <p>The throughput capacity specified for <code>write</code> operations defined
      * in <code>write capacity units</code> <code>(WCUs)</code>.</p>
      */
-    inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+    inline long long GetWriteCapacityUnits() const { return m_writeCapacityUnits; }
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
     inline CapacitySpecificationSummary& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
@@ -91,25 +89,25 @@ namespace Model
      * <p>The timestamp of the last operation that changed the provisioned throughput
      * capacity of a table.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateToPayPerRequestTimestamp() const{ return m_lastUpdateToPayPerRequestTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdateToPayPerRequestTimestamp() const { return m_lastUpdateToPayPerRequestTimestamp; }
     inline bool LastUpdateToPayPerRequestTimestampHasBeenSet() const { return m_lastUpdateToPayPerRequestTimestampHasBeenSet; }
-    inline void SetLastUpdateToPayPerRequestTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateToPayPerRequestTimestampHasBeenSet = true; m_lastUpdateToPayPerRequestTimestamp = value; }
-    inline void SetLastUpdateToPayPerRequestTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateToPayPerRequestTimestampHasBeenSet = true; m_lastUpdateToPayPerRequestTimestamp = std::move(value); }
-    inline CapacitySpecificationSummary& WithLastUpdateToPayPerRequestTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateToPayPerRequestTimestamp(value); return *this;}
-    inline CapacitySpecificationSummary& WithLastUpdateToPayPerRequestTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateToPayPerRequestTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdateToPayPerRequestTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdateToPayPerRequestTimestamp(LastUpdateToPayPerRequestTimestampT&& value) { m_lastUpdateToPayPerRequestTimestampHasBeenSet = true; m_lastUpdateToPayPerRequestTimestamp = std::forward<LastUpdateToPayPerRequestTimestampT>(value); }
+    template<typename LastUpdateToPayPerRequestTimestampT = Aws::Utils::DateTime>
+    CapacitySpecificationSummary& WithLastUpdateToPayPerRequestTimestamp(LastUpdateToPayPerRequestTimestampT&& value) { SetLastUpdateToPayPerRequestTimestamp(std::forward<LastUpdateToPayPerRequestTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    ThroughputMode m_throughputMode;
+    ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
     bool m_throughputModeHasBeenSet = false;
 
-    long long m_readCapacityUnits;
+    long long m_readCapacityUnits{0};
     bool m_readCapacityUnitsHasBeenSet = false;
 
-    long long m_writeCapacityUnits;
+    long long m_writeCapacityUnits{0};
     bool m_writeCapacityUnitsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateToPayPerRequestTimestamp;
+    Aws::Utils::DateTime m_lastUpdateToPayPerRequestTimestamp{};
     bool m_lastUpdateToPayPerRequestTimestampHasBeenSet = false;
   };
 

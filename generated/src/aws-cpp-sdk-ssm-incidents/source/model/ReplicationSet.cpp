@@ -18,22 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ReplicationSet::ReplicationSet() : 
-    m_arnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_deletionProtected(false),
-    m_deletionProtectedHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_regionMapHasBeenSet(false),
-    m_status(ReplicationSetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ReplicationSet::ReplicationSet(JsonView jsonValue)
-  : ReplicationSet()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ReplicationSet& ReplicationSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deletionProtected"))
   {
     m_deletionProtected = jsonValue.GetBool("deletionProtected");
-
     m_deletionProtectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regionMap"))
   {
     Aws::Map<Aws::String, JsonView> regionMapJsonMap = jsonValue.GetObject("regionMap").GetAllObjects();
@@ -91,14 +64,11 @@ ReplicationSet& ReplicationSet::operator =(JsonView jsonValue)
     }
     m_regionMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReplicationSetStatusMapper::GetReplicationSetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

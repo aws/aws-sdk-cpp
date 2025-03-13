@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeAttachment::VolumeAttachment() : 
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false),
-    m_instanceOwningServiceHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_deviceHasBeenSet(false),
-    m_state(VolumeAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_attachTimeHasBeenSet(false)
-{
-}
-
 VolumeAttachment::VolumeAttachment(const XmlNode& xmlNode)
-  : VolumeAttachment()
 {
   *this = xmlNode;
 }
@@ -51,48 +36,56 @@ VolumeAttachment& VolumeAttachment::operator =(const XmlNode& xmlNode)
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode associatedResourceNode = resultNode.FirstChild("associatedResource");
     if(!associatedResourceNode.IsNull())
     {
       m_associatedResource = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceNode.GetText());
       m_associatedResourceHasBeenSet = true;
+       m_associatedResourceHasBeenSet = true;
     }
     XmlNode instanceOwningServiceNode = resultNode.FirstChild("instanceOwningService");
     if(!instanceOwningServiceNode.IsNull())
     {
       m_instanceOwningService = Aws::Utils::Xml::DecodeEscapedXmlText(instanceOwningServiceNode.GetText());
       m_instanceOwningServiceHasBeenSet = true;
+       m_instanceOwningServiceHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+       m_volumeIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode deviceNode = resultNode.FirstChild("device");
     if(!deviceNode.IsNull())
     {
       m_device = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNode.GetText());
       m_deviceHasBeenSet = true;
+       m_deviceHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
     {
-      m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VolumeAttachmentStateMapper::GetVolumeAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode attachTimeNode = resultNode.FirstChild("attachTime");
     if(!attachTimeNode.IsNull())
     {
       m_attachTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_attachTimeHasBeenSet = true;
+       m_attachTimeHasBeenSet = true;
     }
   }
 

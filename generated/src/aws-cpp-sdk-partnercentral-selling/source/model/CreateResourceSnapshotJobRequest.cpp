@@ -12,19 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourceSnapshotJobRequest::CreateResourceSnapshotJobRequest() : 
-    m_catalogHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_engagementIdentifierHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceSnapshotTemplateIdentifierHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourceSnapshotJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -13,14 +13,6 @@ using namespace Aws::CloudFrontKeyValueStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKeysRequest::UpdateKeysRequest() : 
-    m_kvsARNHasBeenSet(false),
-    m_ifMatchHasBeenSet(false),
-    m_putsHasBeenSet(false),
-    m_deletesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKeysRequest::SerializePayload() const
 {
   JsonValue payload;

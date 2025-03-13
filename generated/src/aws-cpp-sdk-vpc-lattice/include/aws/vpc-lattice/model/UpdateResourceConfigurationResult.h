@@ -32,7 +32,7 @@ namespace Model
   class UpdateResourceConfigurationResult
   {
   public:
-    AWS_VPCLATTICE_API UpdateResourceConfigurationResult();
+    AWS_VPCLATTICE_API UpdateResourceConfigurationResult() = default;
     AWS_VPCLATTICE_API UpdateResourceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API UpdateResourceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,8 +42,8 @@ namespace Model
      * <p>Indicates whether to add the resource configuration to service networks that
      * are shared with other accounts.</p>
      */
-    inline bool GetAllowAssociationToShareableServiceNetwork() const{ return m_allowAssociationToShareableServiceNetwork; }
-    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetwork = value; }
+    inline bool GetAllowAssociationToShareableServiceNetwork() const { return m_allowAssociationToShareableServiceNetwork; }
+    inline void SetAllowAssociationToShareableServiceNetwork(bool value) { m_allowAssociationToShareableServiceNetworkHasBeenSet = true; m_allowAssociationToShareableServiceNetwork = value; }
     inline UpdateResourceConfigurationResult& WithAllowAssociationToShareableServiceNetwork(bool value) { SetAllowAssociationToShareableServiceNetwork(value); return *this;}
     ///@}
 
@@ -51,39 +51,33 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateResourceConfigurationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateResourceConfigurationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateResourceConfigurationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateResourceConfigurationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateResourceConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateResourceConfigurationResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,49 +86,44 @@ namespace Model
      * configuration. You can separate port ranges with a comma. Example: 1-65535 or
      * 1,2,22-30</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPortRanges() const{ return m_portRanges; }
-    inline void SetPortRanges(const Aws::Vector<Aws::String>& value) { m_portRanges = value; }
-    inline void SetPortRanges(Aws::Vector<Aws::String>&& value) { m_portRanges = std::move(value); }
-    inline UpdateResourceConfigurationResult& WithPortRanges(const Aws::Vector<Aws::String>& value) { SetPortRanges(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithPortRanges(Aws::Vector<Aws::String>&& value) { SetPortRanges(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& AddPortRanges(const Aws::String& value) { m_portRanges.push_back(value); return *this; }
-    inline UpdateResourceConfigurationResult& AddPortRanges(Aws::String&& value) { m_portRanges.push_back(std::move(value)); return *this; }
-    inline UpdateResourceConfigurationResult& AddPortRanges(const char* value) { m_portRanges.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetPortRanges() const { return m_portRanges; }
+    template<typename PortRangesT = Aws::Vector<Aws::String>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<Aws::String>>
+    UpdateResourceConfigurationResult& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = Aws::String>
+    UpdateResourceConfigurationResult& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The TCP protocol accepted by the specified resource configuration.</p>
      */
-    inline const ProtocolType& GetProtocol() const{ return m_protocol; }
-    inline void SetProtocol(const ProtocolType& value) { m_protocol = value; }
-    inline void SetProtocol(ProtocolType&& value) { m_protocol = std::move(value); }
-    inline UpdateResourceConfigurationResult& WithProtocol(const ProtocolType& value) { SetProtocol(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithProtocol(ProtocolType&& value) { SetProtocol(std::move(value)); return *this;}
+    inline ProtocolType GetProtocol() const { return m_protocol; }
+    inline void SetProtocol(ProtocolType value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline UpdateResourceConfigurationResult& WithProtocol(ProtocolType value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource configuration.</p>
      */
-    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const{ return m_resourceConfigurationDefinition; }
-    inline void SetResourceConfigurationDefinition(const ResourceConfigurationDefinition& value) { m_resourceConfigurationDefinition = value; }
-    inline void SetResourceConfigurationDefinition(ResourceConfigurationDefinition&& value) { m_resourceConfigurationDefinition = std::move(value); }
-    inline UpdateResourceConfigurationResult& WithResourceConfigurationDefinition(const ResourceConfigurationDefinition& value) { SetResourceConfigurationDefinition(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithResourceConfigurationDefinition(ResourceConfigurationDefinition&& value) { SetResourceConfigurationDefinition(std::move(value)); return *this;}
+    inline const ResourceConfigurationDefinition& GetResourceConfigurationDefinition() const { return m_resourceConfigurationDefinition; }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    void SetResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { m_resourceConfigurationDefinitionHasBeenSet = true; m_resourceConfigurationDefinition = std::forward<ResourceConfigurationDefinitionT>(value); }
+    template<typename ResourceConfigurationDefinitionT = ResourceConfigurationDefinition>
+    UpdateResourceConfigurationResult& WithResourceConfigurationDefinition(ResourceConfigurationDefinitionT&& value) { SetResourceConfigurationDefinition(std::forward<ResourceConfigurationDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the group resource configuration.</p>
      */
-    inline const Aws::String& GetResourceConfigurationGroupId() const{ return m_resourceConfigurationGroupId; }
-    inline void SetResourceConfigurationGroupId(const Aws::String& value) { m_resourceConfigurationGroupId = value; }
-    inline void SetResourceConfigurationGroupId(Aws::String&& value) { m_resourceConfigurationGroupId = std::move(value); }
-    inline void SetResourceConfigurationGroupId(const char* value) { m_resourceConfigurationGroupId.assign(value); }
-    inline UpdateResourceConfigurationResult& WithResourceConfigurationGroupId(const Aws::String& value) { SetResourceConfigurationGroupId(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithResourceConfigurationGroupId(Aws::String&& value) { SetResourceConfigurationGroupId(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& WithResourceConfigurationGroupId(const char* value) { SetResourceConfigurationGroupId(value); return *this;}
+    inline const Aws::String& GetResourceConfigurationGroupId() const { return m_resourceConfigurationGroupId; }
+    template<typename ResourceConfigurationGroupIdT = Aws::String>
+    void SetResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { m_resourceConfigurationGroupIdHasBeenSet = true; m_resourceConfigurationGroupId = std::forward<ResourceConfigurationGroupIdT>(value); }
+    template<typename ResourceConfigurationGroupIdT = Aws::String>
+    UpdateResourceConfigurationResult& WithResourceConfigurationGroupId(ResourceConfigurationGroupIdT&& value) { SetResourceConfigurationGroupId(std::forward<ResourceConfigurationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,24 +131,20 @@ namespace Model
      * <p>The ID of the resource gateway associated with the resource
      * configuration.</p>
      */
-    inline const Aws::String& GetResourceGatewayId() const{ return m_resourceGatewayId; }
-    inline void SetResourceGatewayId(const Aws::String& value) { m_resourceGatewayId = value; }
-    inline void SetResourceGatewayId(Aws::String&& value) { m_resourceGatewayId = std::move(value); }
-    inline void SetResourceGatewayId(const char* value) { m_resourceGatewayId.assign(value); }
-    inline UpdateResourceConfigurationResult& WithResourceGatewayId(const Aws::String& value) { SetResourceGatewayId(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithResourceGatewayId(Aws::String&& value) { SetResourceGatewayId(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& WithResourceGatewayId(const char* value) { SetResourceGatewayId(value); return *this;}
+    inline const Aws::String& GetResourceGatewayId() const { return m_resourceGatewayId; }
+    template<typename ResourceGatewayIdT = Aws::String>
+    void SetResourceGatewayId(ResourceGatewayIdT&& value) { m_resourceGatewayIdHasBeenSet = true; m_resourceGatewayId = std::forward<ResourceGatewayIdT>(value); }
+    template<typename ResourceGatewayIdT = Aws::String>
+    UpdateResourceConfigurationResult& WithResourceGatewayId(ResourceGatewayIdT&& value) { SetResourceGatewayId(std::forward<ResourceGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the resource configuration.</p>
      */
-    inline const ResourceConfigurationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ResourceConfigurationStatus& value) { m_status = value; }
-    inline void SetStatus(ResourceConfigurationStatus&& value) { m_status = std::move(value); }
-    inline UpdateResourceConfigurationResult& WithStatus(const ResourceConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithStatus(ResourceConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ResourceConfigurationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ResourceConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateResourceConfigurationResult& WithStatus(ResourceConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -170,48 +155,56 @@ namespace Model
      * part of a group resource configuration.</p> </li> <li> <p> <code>ARN</code> - An
      * Amazon Web Services resource.</p> </li> </ul>
      */
-    inline const ResourceConfigurationType& GetType() const{ return m_type; }
-    inline void SetType(const ResourceConfigurationType& value) { m_type = value; }
-    inline void SetType(ResourceConfigurationType&& value) { m_type = std::move(value); }
-    inline UpdateResourceConfigurationResult& WithType(const ResourceConfigurationType& value) { SetType(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithType(ResourceConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline ResourceConfigurationType GetType() const { return m_type; }
+    inline void SetType(ResourceConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UpdateResourceConfigurationResult& WithType(ResourceConfigurationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateResourceConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateResourceConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateResourceConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateResourceConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_allowAssociationToShareableServiceNetwork;
+    bool m_allowAssociationToShareableServiceNetwork{false};
+    bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_portRanges;
+    bool m_portRangesHasBeenSet = false;
 
-    ProtocolType m_protocol;
+    ProtocolType m_protocol{ProtocolType::NOT_SET};
+    bool m_protocolHasBeenSet = false;
 
     ResourceConfigurationDefinition m_resourceConfigurationDefinition;
+    bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
     Aws::String m_resourceConfigurationGroupId;
+    bool m_resourceConfigurationGroupIdHasBeenSet = false;
 
     Aws::String m_resourceGatewayId;
+    bool m_resourceGatewayIdHasBeenSet = false;
 
-    ResourceConfigurationStatus m_status;
+    ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    ResourceConfigurationType m_type;
+    ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

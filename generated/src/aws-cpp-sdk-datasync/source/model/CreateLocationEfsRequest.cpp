@@ -12,18 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLocationEfsRequest::CreateLocationEfsRequest() : 
-    m_subdirectoryHasBeenSet(false),
-    m_efsFilesystemArnHasBeenSet(false),
-    m_ec2ConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_fileSystemAccessRoleArnHasBeenSet(false),
-    m_inTransitEncryption(EfsInTransitEncryption::NOT_SET),
-    m_inTransitEncryptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocationEfsRequest::SerializePayload() const
 {
   JsonValue payload;

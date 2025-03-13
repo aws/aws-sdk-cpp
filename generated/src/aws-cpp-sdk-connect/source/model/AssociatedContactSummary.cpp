@@ -18,23 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AssociatedContactSummary::AssociatedContactSummary() : 
-    m_contactIdHasBeenSet(false),
-    m_contactArnHasBeenSet(false),
-    m_initiationTimestampHasBeenSet(false),
-    m_disconnectTimestampHasBeenSet(false),
-    m_initialContactIdHasBeenSet(false),
-    m_previousContactIdHasBeenSet(false),
-    m_relatedContactIdHasBeenSet(false),
-    m_initiationMethod(ContactInitiationMethod::NOT_SET),
-    m_initiationMethodHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false)
-{
-}
-
 AssociatedContactSummary::AssociatedContactSummary(JsonView jsonValue)
-  : AssociatedContactSummary()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ AssociatedContactSummary& AssociatedContactSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactArn"))
   {
     m_contactArn = jsonValue.GetString("ContactArn");
-
     m_contactArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiationTimestamp"))
   {
     m_initiationTimestamp = jsonValue.GetDouble("InitiationTimestamp");
-
     m_initiationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisconnectTimestamp"))
   {
     m_disconnectTimestamp = jsonValue.GetDouble("DisconnectTimestamp");
-
     m_disconnectTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitialContactId"))
   {
     m_initialContactId = jsonValue.GetString("InitialContactId");
-
     m_initialContactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousContactId"))
   {
     m_previousContactId = jsonValue.GetString("PreviousContactId");
-
     m_previousContactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedContactId"))
   {
     m_relatedContactId = jsonValue.GetString("RelatedContactId");
-
     m_relatedContactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiationMethod"))
   {
     m_initiationMethod = ContactInitiationMethodMapper::GetContactInitiationMethodForName(jsonValue.GetString("InitiationMethod"));
-
     m_initiationMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channel"))
   {
     m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
-
     m_channelHasBeenSet = true;
   }
-
   return *this;
 }
 

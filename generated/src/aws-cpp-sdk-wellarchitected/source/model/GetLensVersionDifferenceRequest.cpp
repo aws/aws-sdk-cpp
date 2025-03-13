@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLensVersionDifferenceRequest::GetLensVersionDifferenceRequest() : 
-    m_lensAliasHasBeenSet(false),
-    m_baseLensVersionHasBeenSet(false),
-    m_targetLensVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetLensVersionDifferenceRequest::SerializePayload() const
 {
   return {};

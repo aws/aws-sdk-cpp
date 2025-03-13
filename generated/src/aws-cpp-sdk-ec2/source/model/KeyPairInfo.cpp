@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-KeyPairInfo::KeyPairInfo() : 
-    m_keyPairIdHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_keyFingerprintHasBeenSet(false)
-{
-}
-
 KeyPairInfo::KeyPairInfo(const XmlNode& xmlNode)
-  : KeyPairInfo()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,55 @@ KeyPairInfo& KeyPairInfo::operator =(const XmlNode& xmlNode)
     {
       m_keyPairId = Aws::Utils::Xml::DecodeEscapedXmlText(keyPairIdNode.GetText());
       m_keyPairIdHasBeenSet = true;
+       m_keyPairIdHasBeenSet = true;
     }
     XmlNode keyTypeNode = resultNode.FirstChild("keyType");
     if(!keyTypeNode.IsNull())
     {
-      m_keyType = KeyTypeMapper::GetKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()).c_str());
+      m_keyType = KeyTypeMapper::GetKeyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTypeNode.GetText()).c_str()));
       m_keyTypeHasBeenSet = true;
+       m_keyTypeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode publicKeyNode = resultNode.FirstChild("publicKey");
     if(!publicKeyNode.IsNull())
     {
       m_publicKey = Aws::Utils::Xml::DecodeEscapedXmlText(publicKeyNode.GetText());
       m_publicKeyHasBeenSet = true;
+       m_publicKeyHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode keyNameNode = resultNode.FirstChild("keyName");
     if(!keyNameNode.IsNull())
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
       m_keyNameHasBeenSet = true;
+       m_keyNameHasBeenSet = true;
     }
     XmlNode keyFingerprintNode = resultNode.FirstChild("keyFingerprint");
     if(!keyFingerprintNode.IsNull())
     {
       m_keyFingerprint = Aws::Utils::Xml::DecodeEscapedXmlText(keyFingerprintNode.GetText());
       m_keyFingerprintHasBeenSet = true;
+       m_keyFingerprintHasBeenSet = true;
     }
   }
 

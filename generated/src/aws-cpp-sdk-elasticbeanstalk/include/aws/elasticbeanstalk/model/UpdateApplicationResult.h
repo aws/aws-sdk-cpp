@@ -34,7 +34,7 @@ namespace Model
   class UpdateApplicationResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API UpdateApplicationResult();
+    AWS_ELASTICBEANSTALK_API UpdateApplicationResult() = default;
     AWS_ELASTICBEANSTALK_API UpdateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API UpdateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p> The <a>ApplicationDescription</a> of the application. </p>
      */
-    inline const ApplicationDescription& GetApplication() const{ return m_application; }
-    inline void SetApplication(const ApplicationDescription& value) { m_application = value; }
-    inline void SetApplication(ApplicationDescription&& value) { m_application = std::move(value); }
-    inline UpdateApplicationResult& WithApplication(const ApplicationDescription& value) { SetApplication(value); return *this;}
-    inline UpdateApplicationResult& WithApplication(ApplicationDescription&& value) { SetApplication(std::move(value)); return *this;}
+    inline const ApplicationDescription& GetApplication() const { return m_application; }
+    template<typename ApplicationT = ApplicationDescription>
+    void SetApplication(ApplicationT&& value) { m_applicationHasBeenSet = true; m_application = std::forward<ApplicationT>(value); }
+    template<typename ApplicationT = ApplicationDescription>
+    UpdateApplicationResult& WithApplication(ApplicationT&& value) { SetApplication(std::forward<ApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UpdateApplicationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UpdateApplicationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UpdateApplicationResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationDescription m_application;
+    bool m_applicationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

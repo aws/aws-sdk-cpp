@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePortalResult::CreatePortalResult()
-{
-}
-
 CreatePortalResult::CreatePortalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreatePortalResult& CreatePortalResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
-
+    m_portalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portalEndpoint"))
   {
     m_portalEndpoint = jsonValue.GetString("portalEndpoint");
-
+    m_portalEndpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,19 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedWebApp::DescribedWebApp() : 
-    m_arnHasBeenSet(false),
-    m_webAppIdHasBeenSet(false),
-    m_describedIdentityProviderDetailsHasBeenSet(false),
-    m_accessEndpointHasBeenSet(false),
-    m_webAppEndpointHasBeenSet(false),
-    m_webAppUnitsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DescribedWebApp::DescribedWebApp(JsonView jsonValue)
-  : DescribedWebApp()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DescribedWebApp& DescribedWebApp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAppId"))
   {
     m_webAppId = jsonValue.GetString("WebAppId");
-
     m_webAppIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DescribedIdentityProviderDetails"))
   {
     m_describedIdentityProviderDetails = jsonValue.GetObject("DescribedIdentityProviderDetails");
-
     m_describedIdentityProviderDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessEndpoint"))
   {
     m_accessEndpoint = jsonValue.GetString("AccessEndpoint");
-
     m_accessEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAppEndpoint"))
   {
     m_webAppEndpoint = jsonValue.GetString("WebAppEndpoint");
-
     m_webAppEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAppUnits"))
   {
     m_webAppUnits = jsonValue.GetObject("WebAppUnits");
-
     m_webAppUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -88,7 +64,6 @@ DescribedWebApp& DescribedWebApp::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

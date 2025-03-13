@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UserData::UserData() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 UserData::UserData(const XmlNode& xmlNode)
-  : UserData()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ UserData& UserData::operator =(const XmlNode& xmlNode)
     {
       m_data = Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText());
       m_dataHasBeenSet = true;
+       m_dataHasBeenSet = true;
     }
   }
 

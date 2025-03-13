@@ -35,7 +35,7 @@ namespace Model
   class MonitoringConfig
   {
   public:
-    AWS_MEDIACONNECT_API MonitoringConfig();
+    AWS_MEDIACONNECT_API MonitoringConfig() = default;
     AWS_MEDIACONNECT_API MonitoringConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API MonitoringConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,62 +45,58 @@ namespace Model
     /**
      * The state of thumbnail monitoring.
      */
-    inline const ThumbnailState& GetThumbnailState() const{ return m_thumbnailState; }
+    inline ThumbnailState GetThumbnailState() const { return m_thumbnailState; }
     inline bool ThumbnailStateHasBeenSet() const { return m_thumbnailStateHasBeenSet; }
-    inline void SetThumbnailState(const ThumbnailState& value) { m_thumbnailStateHasBeenSet = true; m_thumbnailState = value; }
-    inline void SetThumbnailState(ThumbnailState&& value) { m_thumbnailStateHasBeenSet = true; m_thumbnailState = std::move(value); }
-    inline MonitoringConfig& WithThumbnailState(const ThumbnailState& value) { SetThumbnailState(value); return *this;}
-    inline MonitoringConfig& WithThumbnailState(ThumbnailState&& value) { SetThumbnailState(std::move(value)); return *this;}
+    inline void SetThumbnailState(ThumbnailState value) { m_thumbnailStateHasBeenSet = true; m_thumbnailState = value; }
+    inline MonitoringConfig& WithThumbnailState(ThumbnailState value) { SetThumbnailState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Contains the settings for audio stream metrics monitoring.
      */
-    inline const Aws::Vector<AudioMonitoringSetting>& GetAudioMonitoringSettings() const{ return m_audioMonitoringSettings; }
+    inline const Aws::Vector<AudioMonitoringSetting>& GetAudioMonitoringSettings() const { return m_audioMonitoringSettings; }
     inline bool AudioMonitoringSettingsHasBeenSet() const { return m_audioMonitoringSettingsHasBeenSet; }
-    inline void SetAudioMonitoringSettings(const Aws::Vector<AudioMonitoringSetting>& value) { m_audioMonitoringSettingsHasBeenSet = true; m_audioMonitoringSettings = value; }
-    inline void SetAudioMonitoringSettings(Aws::Vector<AudioMonitoringSetting>&& value) { m_audioMonitoringSettingsHasBeenSet = true; m_audioMonitoringSettings = std::move(value); }
-    inline MonitoringConfig& WithAudioMonitoringSettings(const Aws::Vector<AudioMonitoringSetting>& value) { SetAudioMonitoringSettings(value); return *this;}
-    inline MonitoringConfig& WithAudioMonitoringSettings(Aws::Vector<AudioMonitoringSetting>&& value) { SetAudioMonitoringSettings(std::move(value)); return *this;}
-    inline MonitoringConfig& AddAudioMonitoringSettings(const AudioMonitoringSetting& value) { m_audioMonitoringSettingsHasBeenSet = true; m_audioMonitoringSettings.push_back(value); return *this; }
-    inline MonitoringConfig& AddAudioMonitoringSettings(AudioMonitoringSetting&& value) { m_audioMonitoringSettingsHasBeenSet = true; m_audioMonitoringSettings.push_back(std::move(value)); return *this; }
+    template<typename AudioMonitoringSettingsT = Aws::Vector<AudioMonitoringSetting>>
+    void SetAudioMonitoringSettings(AudioMonitoringSettingsT&& value) { m_audioMonitoringSettingsHasBeenSet = true; m_audioMonitoringSettings = std::forward<AudioMonitoringSettingsT>(value); }
+    template<typename AudioMonitoringSettingsT = Aws::Vector<AudioMonitoringSetting>>
+    MonitoringConfig& WithAudioMonitoringSettings(AudioMonitoringSettingsT&& value) { SetAudioMonitoringSettings(std::forward<AudioMonitoringSettingsT>(value)); return *this;}
+    template<typename AudioMonitoringSettingsT = AudioMonitoringSetting>
+    MonitoringConfig& AddAudioMonitoringSettings(AudioMonitoringSettingsT&& value) { m_audioMonitoringSettingsHasBeenSet = true; m_audioMonitoringSettings.emplace_back(std::forward<AudioMonitoringSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * Indicates whether content quality analysis is enabled or disabled.
      */
-    inline const ContentQualityAnalysisState& GetContentQualityAnalysisState() const{ return m_contentQualityAnalysisState; }
+    inline ContentQualityAnalysisState GetContentQualityAnalysisState() const { return m_contentQualityAnalysisState; }
     inline bool ContentQualityAnalysisStateHasBeenSet() const { return m_contentQualityAnalysisStateHasBeenSet; }
-    inline void SetContentQualityAnalysisState(const ContentQualityAnalysisState& value) { m_contentQualityAnalysisStateHasBeenSet = true; m_contentQualityAnalysisState = value; }
-    inline void SetContentQualityAnalysisState(ContentQualityAnalysisState&& value) { m_contentQualityAnalysisStateHasBeenSet = true; m_contentQualityAnalysisState = std::move(value); }
-    inline MonitoringConfig& WithContentQualityAnalysisState(const ContentQualityAnalysisState& value) { SetContentQualityAnalysisState(value); return *this;}
-    inline MonitoringConfig& WithContentQualityAnalysisState(ContentQualityAnalysisState&& value) { SetContentQualityAnalysisState(std::move(value)); return *this;}
+    inline void SetContentQualityAnalysisState(ContentQualityAnalysisState value) { m_contentQualityAnalysisStateHasBeenSet = true; m_contentQualityAnalysisState = value; }
+    inline MonitoringConfig& WithContentQualityAnalysisState(ContentQualityAnalysisState value) { SetContentQualityAnalysisState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Contains the settings for video stream metrics monitoring.
      */
-    inline const Aws::Vector<VideoMonitoringSetting>& GetVideoMonitoringSettings() const{ return m_videoMonitoringSettings; }
+    inline const Aws::Vector<VideoMonitoringSetting>& GetVideoMonitoringSettings() const { return m_videoMonitoringSettings; }
     inline bool VideoMonitoringSettingsHasBeenSet() const { return m_videoMonitoringSettingsHasBeenSet; }
-    inline void SetVideoMonitoringSettings(const Aws::Vector<VideoMonitoringSetting>& value) { m_videoMonitoringSettingsHasBeenSet = true; m_videoMonitoringSettings = value; }
-    inline void SetVideoMonitoringSettings(Aws::Vector<VideoMonitoringSetting>&& value) { m_videoMonitoringSettingsHasBeenSet = true; m_videoMonitoringSettings = std::move(value); }
-    inline MonitoringConfig& WithVideoMonitoringSettings(const Aws::Vector<VideoMonitoringSetting>& value) { SetVideoMonitoringSettings(value); return *this;}
-    inline MonitoringConfig& WithVideoMonitoringSettings(Aws::Vector<VideoMonitoringSetting>&& value) { SetVideoMonitoringSettings(std::move(value)); return *this;}
-    inline MonitoringConfig& AddVideoMonitoringSettings(const VideoMonitoringSetting& value) { m_videoMonitoringSettingsHasBeenSet = true; m_videoMonitoringSettings.push_back(value); return *this; }
-    inline MonitoringConfig& AddVideoMonitoringSettings(VideoMonitoringSetting&& value) { m_videoMonitoringSettingsHasBeenSet = true; m_videoMonitoringSettings.push_back(std::move(value)); return *this; }
+    template<typename VideoMonitoringSettingsT = Aws::Vector<VideoMonitoringSetting>>
+    void SetVideoMonitoringSettings(VideoMonitoringSettingsT&& value) { m_videoMonitoringSettingsHasBeenSet = true; m_videoMonitoringSettings = std::forward<VideoMonitoringSettingsT>(value); }
+    template<typename VideoMonitoringSettingsT = Aws::Vector<VideoMonitoringSetting>>
+    MonitoringConfig& WithVideoMonitoringSettings(VideoMonitoringSettingsT&& value) { SetVideoMonitoringSettings(std::forward<VideoMonitoringSettingsT>(value)); return *this;}
+    template<typename VideoMonitoringSettingsT = VideoMonitoringSetting>
+    MonitoringConfig& AddVideoMonitoringSettings(VideoMonitoringSettingsT&& value) { m_videoMonitoringSettingsHasBeenSet = true; m_videoMonitoringSettings.emplace_back(std::forward<VideoMonitoringSettingsT>(value)); return *this; }
     ///@}
   private:
 
-    ThumbnailState m_thumbnailState;
+    ThumbnailState m_thumbnailState{ThumbnailState::NOT_SET};
     bool m_thumbnailStateHasBeenSet = false;
 
     Aws::Vector<AudioMonitoringSetting> m_audioMonitoringSettings;
     bool m_audioMonitoringSettingsHasBeenSet = false;
 
-    ContentQualityAnalysisState m_contentQualityAnalysisState;
+    ContentQualityAnalysisState m_contentQualityAnalysisState{ContentQualityAnalysisState::NOT_SET};
     bool m_contentQualityAnalysisStateHasBeenSet = false;
 
     Aws::Vector<VideoMonitoringSetting> m_videoMonitoringSettings;

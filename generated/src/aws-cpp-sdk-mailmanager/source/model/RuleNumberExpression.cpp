@@ -18,17 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleNumberExpression::RuleNumberExpression() : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleNumberOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 RuleNumberExpression::RuleNumberExpression(JsonView jsonValue)
-  : RuleNumberExpression()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RuleNumberExpression& RuleNumberExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Evaluate"))
   {
     m_evaluate = jsonValue.GetObject("Evaluate");
-
     m_evaluateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = RuleNumberOperatorMapper::GetRuleNumberOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

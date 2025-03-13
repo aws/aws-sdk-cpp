@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelQueryResult::CancelQueryResult() : 
-    m_queryStatus(QueryStatus::NOT_SET)
-{
-}
-
 CancelQueryResult::CancelQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelQueryResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CancelQueryResult& CancelQueryResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
+    m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatus"))
   {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
-
+    m_queryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDataStoreOwnerAccountId"))
   {
     m_eventDataStoreOwnerAccountId = jsonValue.GetString("EventDataStoreOwnerAccountId");
-
+    m_eventDataStoreOwnerAccountIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

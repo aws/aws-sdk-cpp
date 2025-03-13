@@ -25,7 +25,7 @@ namespace Model
   class GetContainerServiceMetricDataRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetContainerServiceMetricDataRequest();
+    AWS_LIGHTSAIL_API GetContainerServiceMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the container service for which to get metric data.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline GetContainerServiceMetricDataRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline GetContainerServiceMetricDataRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline GetContainerServiceMetricDataRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    GetContainerServiceMetricDataRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,36 +67,34 @@ namespace Model
      * useful statistics are <code>Maximum</code> and <code>Average</code>.</p>
      * <p>Unit: The published unit is <code>Percent</code>.</p> </li> </ul>
      */
-    inline const ContainerServiceMetricName& GetMetricName() const{ return m_metricName; }
+    inline ContainerServiceMetricName GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const ContainerServiceMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(ContainerServiceMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline GetContainerServiceMetricDataRequest& WithMetricName(const ContainerServiceMetricName& value) { SetMetricName(value); return *this;}
-    inline GetContainerServiceMetricDataRequest& WithMetricName(ContainerServiceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(ContainerServiceMetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline GetContainerServiceMetricDataRequest& WithMetricName(ContainerServiceMetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the time period.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetContainerServiceMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetContainerServiceMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetContainerServiceMetricDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time of the time period.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetContainerServiceMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetContainerServiceMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetContainerServiceMetricDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +103,7 @@ namespace Model
      * container service metric data is available in 5-minute (300 seconds)
      * granularity.</p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline GetContainerServiceMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -132,30 +128,29 @@ namespace Model
      * - The count, or number, of data points used for the statistical calculation.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
+    inline const Aws::Vector<MetricStatistic>& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const Aws::Vector<MetricStatistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline GetContainerServiceMetricDataRequest& WithStatistics(const Aws::Vector<MetricStatistic>& value) { SetStatistics(value); return *this;}
-    inline GetContainerServiceMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
-    inline GetContainerServiceMetricDataRequest& AddStatistics(const MetricStatistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
-    inline GetContainerServiceMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = Aws::Vector<MetricStatistic>>
+    GetContainerServiceMetricDataRequest& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
+    inline GetContainerServiceMetricDataRequest& AddStatistics(MetricStatistic value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
-    ContainerServiceMetricName m_metricName;
+    ContainerServiceMetricName m_metricName{ContainerServiceMetricName::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
     Aws::Vector<MetricStatistic> m_statistics;

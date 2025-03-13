@@ -18,17 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-ConfigListItem::ConfigListItem() : 
-    m_configArnHasBeenSet(false),
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ConfigListItem::ConfigListItem(JsonView jsonValue)
-  : ConfigListItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConfigListItem& ConfigListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configArn"))
   {
     m_configArn = jsonValue.GetString("configArn");
-
     m_configArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configId"))
   {
     m_configId = jsonValue.GetString("configId");
-
     m_configIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configType"))
   {
     m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
-
     m_configTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

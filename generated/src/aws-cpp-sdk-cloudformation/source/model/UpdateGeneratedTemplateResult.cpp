@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGeneratedTemplateResult::UpdateGeneratedTemplateResult()
-{
-}
-
 UpdateGeneratedTemplateResult::UpdateGeneratedTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ UpdateGeneratedTemplateResult& UpdateGeneratedTemplateResult::operator =(const A
     if(!generatedTemplateIdNode.IsNull())
     {
       m_generatedTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(generatedTemplateIdNode.GetText());
+      m_generatedTemplateIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::UpdateGeneratedTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

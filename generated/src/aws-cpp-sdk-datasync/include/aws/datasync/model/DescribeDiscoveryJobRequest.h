@@ -21,7 +21,7 @@ namespace Model
   class DescribeDiscoveryJobRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API DescribeDiscoveryJobRequest();
+    AWS_DATASYNC_API DescribeDiscoveryJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
      * information about.</p>
      */
-    inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
+    inline const Aws::String& GetDiscoveryJobArn() const { return m_discoveryJobArn; }
     inline bool DiscoveryJobArnHasBeenSet() const { return m_discoveryJobArnHasBeenSet; }
-    inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = value; }
-    inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::move(value); }
-    inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn.assign(value); }
-    inline DescribeDiscoveryJobRequest& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-    inline DescribeDiscoveryJobRequest& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-    inline DescribeDiscoveryJobRequest& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
+    template<typename DiscoveryJobArnT = Aws::String>
+    void SetDiscoveryJobArn(DiscoveryJobArnT&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::forward<DiscoveryJobArnT>(value); }
+    template<typename DiscoveryJobArnT = Aws::String>
+    DescribeDiscoveryJobRequest& WithDiscoveryJobArn(DiscoveryJobArnT&& value) { SetDiscoveryJobArn(std::forward<DiscoveryJobArnT>(value)); return *this;}
     ///@}
   private:
 

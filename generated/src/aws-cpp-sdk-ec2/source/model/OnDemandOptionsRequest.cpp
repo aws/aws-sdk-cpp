@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-OnDemandOptionsRequest::OnDemandOptionsRequest() : 
-    m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_capacityReservationOptionsHasBeenSet(false),
-    m_singleInstanceType(false),
-    m_singleInstanceTypeHasBeenSet(false),
-    m_singleAvailabilityZone(false),
-    m_singleAvailabilityZoneHasBeenSet(false),
-    m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false),
-    m_maxTotalPriceHasBeenSet(false)
-{
-}
-
 OnDemandOptionsRequest::OnDemandOptionsRequest(const XmlNode& xmlNode)
-  : OnDemandOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -49,38 +34,44 @@ OnDemandOptionsRequest& OnDemandOptionsRequest::operator =(const XmlNode& xmlNod
     XmlNode allocationStrategyNode = resultNode.FirstChild("AllocationStrategy");
     if(!allocationStrategyNode.IsNull())
     {
-      m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
+      m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()));
       m_allocationStrategyHasBeenSet = true;
+       m_allocationStrategyHasBeenSet = true;
     }
     XmlNode capacityReservationOptionsNode = resultNode.FirstChild("CapacityReservationOptions");
     if(!capacityReservationOptionsNode.IsNull())
     {
       m_capacityReservationOptions = capacityReservationOptionsNode;
       m_capacityReservationOptionsHasBeenSet = true;
+       m_capacityReservationOptionsHasBeenSet = true;
     }
     XmlNode singleInstanceTypeNode = resultNode.FirstChild("SingleInstanceType");
     if(!singleInstanceTypeNode.IsNull())
     {
       m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleInstanceTypeNode.GetText()).c_str()).c_str());
       m_singleInstanceTypeHasBeenSet = true;
+       m_singleInstanceTypeHasBeenSet = true;
     }
     XmlNode singleAvailabilityZoneNode = resultNode.FirstChild("SingleAvailabilityZone");
     if(!singleAvailabilityZoneNode.IsNull())
     {
       m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleAvailabilityZoneNode.GetText()).c_str()).c_str());
       m_singleAvailabilityZoneHasBeenSet = true;
+       m_singleAvailabilityZoneHasBeenSet = true;
     }
     XmlNode minTargetCapacityNode = resultNode.FirstChild("MinTargetCapacity");
     if(!minTargetCapacityNode.IsNull())
     {
       m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTargetCapacityNode.GetText()).c_str()).c_str());
       m_minTargetCapacityHasBeenSet = true;
+       m_minTargetCapacityHasBeenSet = true;
     }
     XmlNode maxTotalPriceNode = resultNode.FirstChild("MaxTotalPrice");
     if(!maxTotalPriceNode.IsNull())
     {
       m_maxTotalPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxTotalPriceNode.GetText());
       m_maxTotalPriceHasBeenSet = true;
+       m_maxTotalPriceHasBeenSet = true;
     }
   }
 

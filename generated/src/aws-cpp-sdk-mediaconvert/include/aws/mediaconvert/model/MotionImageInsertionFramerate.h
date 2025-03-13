@@ -32,7 +32,7 @@ namespace Model
   class MotionImageInsertionFramerate
   {
   public:
-    AWS_MEDIACONVERT_API MotionImageInsertionFramerate();
+    AWS_MEDIACONVERT_API MotionImageInsertionFramerate() = default;
     AWS_MEDIACONVERT_API MotionImageInsertionFramerate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API MotionImageInsertionFramerate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * The bottom of the fraction that expresses your overlay frame rate. For example,
      * if your frame rate is 24 fps, set this value to 1.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline MotionImageInsertionFramerate& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * The top of the fraction that expresses your overlay frame rate. For example, if
      * your frame rate is 24 fps, set this value to 24.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline MotionImageInsertionFramerate& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
     ///@}
   private:
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class SuggestStatus
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API SuggestStatus();
+    AWS_CLOUDSEARCHDOMAIN_API SuggestStatus() = default;
     AWS_CLOUDSEARCHDOMAIN_API SuggestStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API SuggestStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>How long it took to process the request, in milliseconds.</p>
      */
-    inline long long GetTimems() const{ return m_timems; }
+    inline long long GetTimems() const { return m_timems; }
     inline bool TimemsHasBeenSet() const { return m_timemsHasBeenSet; }
     inline void SetTimems(long long value) { m_timemsHasBeenSet = true; m_timems = value; }
     inline SuggestStatus& WithTimems(long long value) { SetTimems(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The encrypted resource ID for the request.</p>
      */
-    inline const Aws::String& GetRid() const{ return m_rid; }
+    inline const Aws::String& GetRid() const { return m_rid; }
     inline bool RidHasBeenSet() const { return m_ridHasBeenSet; }
-    inline void SetRid(const Aws::String& value) { m_ridHasBeenSet = true; m_rid = value; }
-    inline void SetRid(Aws::String&& value) { m_ridHasBeenSet = true; m_rid = std::move(value); }
-    inline void SetRid(const char* value) { m_ridHasBeenSet = true; m_rid.assign(value); }
-    inline SuggestStatus& WithRid(const Aws::String& value) { SetRid(value); return *this;}
-    inline SuggestStatus& WithRid(Aws::String&& value) { SetRid(std::move(value)); return *this;}
-    inline SuggestStatus& WithRid(const char* value) { SetRid(value); return *this;}
+    template<typename RidT = Aws::String>
+    void SetRid(RidT&& value) { m_ridHasBeenSet = true; m_rid = std::forward<RidT>(value); }
+    template<typename RidT = Aws::String>
+    SuggestStatus& WithRid(RidT&& value) { SetRid(std::forward<RidT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_timems;
+    long long m_timems{0};
     bool m_timemsHasBeenSet = false;
 
     Aws::String m_rid;

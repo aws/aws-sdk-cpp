@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-PlatformProgrammingLanguage::PlatformProgrammingLanguage() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 PlatformProgrammingLanguage::PlatformProgrammingLanguage(const XmlNode& xmlNode)
-  : PlatformProgrammingLanguage()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PlatformProgrammingLanguage& PlatformProgrammingLanguage::operator =(const XmlNo
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
       m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class TransformationConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API TransformationConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API TransformationConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API TransformationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API TransformationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The mode of the transformation.</p>
      */
-    inline const QueryTransformationMode& GetMode() const{ return m_mode; }
+    inline QueryTransformationMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const QueryTransformationMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(QueryTransformationMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline TransformationConfiguration& WithMode(const QueryTransformationMode& value) { SetMode(value); return *this;}
-    inline TransformationConfiguration& WithMode(QueryTransformationMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(QueryTransformationMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline TransformationConfiguration& WithMode(QueryTransformationMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies configurations for transforming text to SQL.</p>
      */
-    inline const TextToSqlConfiguration& GetTextToSqlConfiguration() const{ return m_textToSqlConfiguration; }
+    inline const TextToSqlConfiguration& GetTextToSqlConfiguration() const { return m_textToSqlConfiguration; }
     inline bool TextToSqlConfigurationHasBeenSet() const { return m_textToSqlConfigurationHasBeenSet; }
-    inline void SetTextToSqlConfiguration(const TextToSqlConfiguration& value) { m_textToSqlConfigurationHasBeenSet = true; m_textToSqlConfiguration = value; }
-    inline void SetTextToSqlConfiguration(TextToSqlConfiguration&& value) { m_textToSqlConfigurationHasBeenSet = true; m_textToSqlConfiguration = std::move(value); }
-    inline TransformationConfiguration& WithTextToSqlConfiguration(const TextToSqlConfiguration& value) { SetTextToSqlConfiguration(value); return *this;}
-    inline TransformationConfiguration& WithTextToSqlConfiguration(TextToSqlConfiguration&& value) { SetTextToSqlConfiguration(std::move(value)); return *this;}
+    template<typename TextToSqlConfigurationT = TextToSqlConfiguration>
+    void SetTextToSqlConfiguration(TextToSqlConfigurationT&& value) { m_textToSqlConfigurationHasBeenSet = true; m_textToSqlConfiguration = std::forward<TextToSqlConfigurationT>(value); }
+    template<typename TextToSqlConfigurationT = TextToSqlConfiguration>
+    TransformationConfiguration& WithTextToSqlConfiguration(TextToSqlConfigurationT&& value) { SetTextToSqlConfiguration(std::forward<TextToSqlConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    QueryTransformationMode m_mode;
+    QueryTransformationMode m_mode{QueryTransformationMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     TextToSqlConfiguration m_textToSqlConfiguration;

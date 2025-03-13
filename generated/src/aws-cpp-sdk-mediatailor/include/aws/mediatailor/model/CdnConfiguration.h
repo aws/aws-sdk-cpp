@@ -32,7 +32,7 @@ namespace Model
   class CdnConfiguration
   {
   public:
-    AWS_MEDIATAILOR_API CdnConfiguration();
+    AWS_MEDIATAILOR_API CdnConfiguration() = default;
     AWS_MEDIATAILOR_API CdnConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API CdnConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * Elemental MediaTailor serves a manifest, it reports your CDN as the source for
      * ad segments.</p>
      */
-    inline const Aws::String& GetAdSegmentUrlPrefix() const{ return m_adSegmentUrlPrefix; }
+    inline const Aws::String& GetAdSegmentUrlPrefix() const { return m_adSegmentUrlPrefix; }
     inline bool AdSegmentUrlPrefixHasBeenSet() const { return m_adSegmentUrlPrefixHasBeenSet; }
-    inline void SetAdSegmentUrlPrefix(const Aws::String& value) { m_adSegmentUrlPrefixHasBeenSet = true; m_adSegmentUrlPrefix = value; }
-    inline void SetAdSegmentUrlPrefix(Aws::String&& value) { m_adSegmentUrlPrefixHasBeenSet = true; m_adSegmentUrlPrefix = std::move(value); }
-    inline void SetAdSegmentUrlPrefix(const char* value) { m_adSegmentUrlPrefixHasBeenSet = true; m_adSegmentUrlPrefix.assign(value); }
-    inline CdnConfiguration& WithAdSegmentUrlPrefix(const Aws::String& value) { SetAdSegmentUrlPrefix(value); return *this;}
-    inline CdnConfiguration& WithAdSegmentUrlPrefix(Aws::String&& value) { SetAdSegmentUrlPrefix(std::move(value)); return *this;}
-    inline CdnConfiguration& WithAdSegmentUrlPrefix(const char* value) { SetAdSegmentUrlPrefix(value); return *this;}
+    template<typename AdSegmentUrlPrefixT = Aws::String>
+    void SetAdSegmentUrlPrefix(AdSegmentUrlPrefixT&& value) { m_adSegmentUrlPrefixHasBeenSet = true; m_adSegmentUrlPrefix = std::forward<AdSegmentUrlPrefixT>(value); }
+    template<typename AdSegmentUrlPrefixT = Aws::String>
+    CdnConfiguration& WithAdSegmentUrlPrefix(AdSegmentUrlPrefixT&& value) { SetAdSegmentUrlPrefix(std::forward<AdSegmentUrlPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * this <code>ContentSegmentUrlPrefix</code>. When AWS Elemental MediaTailor serves
      * a manifest, it reports your CDN as the source for content segments.</p>
      */
-    inline const Aws::String& GetContentSegmentUrlPrefix() const{ return m_contentSegmentUrlPrefix; }
+    inline const Aws::String& GetContentSegmentUrlPrefix() const { return m_contentSegmentUrlPrefix; }
     inline bool ContentSegmentUrlPrefixHasBeenSet() const { return m_contentSegmentUrlPrefixHasBeenSet; }
-    inline void SetContentSegmentUrlPrefix(const Aws::String& value) { m_contentSegmentUrlPrefixHasBeenSet = true; m_contentSegmentUrlPrefix = value; }
-    inline void SetContentSegmentUrlPrefix(Aws::String&& value) { m_contentSegmentUrlPrefixHasBeenSet = true; m_contentSegmentUrlPrefix = std::move(value); }
-    inline void SetContentSegmentUrlPrefix(const char* value) { m_contentSegmentUrlPrefixHasBeenSet = true; m_contentSegmentUrlPrefix.assign(value); }
-    inline CdnConfiguration& WithContentSegmentUrlPrefix(const Aws::String& value) { SetContentSegmentUrlPrefix(value); return *this;}
-    inline CdnConfiguration& WithContentSegmentUrlPrefix(Aws::String&& value) { SetContentSegmentUrlPrefix(std::move(value)); return *this;}
-    inline CdnConfiguration& WithContentSegmentUrlPrefix(const char* value) { SetContentSegmentUrlPrefix(value); return *this;}
+    template<typename ContentSegmentUrlPrefixT = Aws::String>
+    void SetContentSegmentUrlPrefix(ContentSegmentUrlPrefixT&& value) { m_contentSegmentUrlPrefixHasBeenSet = true; m_contentSegmentUrlPrefix = std::forward<ContentSegmentUrlPrefixT>(value); }
+    template<typename ContentSegmentUrlPrefixT = Aws::String>
+    CdnConfiguration& WithContentSegmentUrlPrefix(ContentSegmentUrlPrefixT&& value) { SetContentSegmentUrlPrefix(std::forward<ContentSegmentUrlPrefixT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ParameterRange::ParameterRange() : 
-    m_integerParameterRangeSpecificationHasBeenSet(false),
-    m_continuousParameterRangeSpecificationHasBeenSet(false),
-    m_categoricalParameterRangeSpecificationHasBeenSet(false)
-{
-}
-
 ParameterRange::ParameterRange(JsonView jsonValue)
-  : ParameterRange()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ParameterRange& ParameterRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IntegerParameterRangeSpecification"))
   {
     m_integerParameterRangeSpecification = jsonValue.GetObject("IntegerParameterRangeSpecification");
-
     m_integerParameterRangeSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContinuousParameterRangeSpecification"))
   {
     m_continuousParameterRangeSpecification = jsonValue.GetObject("ContinuousParameterRangeSpecification");
-
     m_continuousParameterRangeSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoricalParameterRangeSpecification"))
   {
     m_categoricalParameterRangeSpecification = jsonValue.GetObject("CategoricalParameterRangeSpecification");
-
     m_categoricalParameterRangeSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

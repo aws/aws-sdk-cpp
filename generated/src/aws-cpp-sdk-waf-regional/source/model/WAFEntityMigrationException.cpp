@@ -18,16 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-WAFEntityMigrationException::WAFEntityMigrationException() : 
-    m_messageHasBeenSet(false),
-    m_migrationErrorType(MigrationErrorType::NOT_SET),
-    m_migrationErrorTypeHasBeenSet(false),
-    m_migrationErrorReasonHasBeenSet(false)
-{
-}
-
 WAFEntityMigrationException::WAFEntityMigrationException(JsonView jsonValue)
-  : WAFEntityMigrationException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ WAFEntityMigrationException& WAFEntityMigrationException::operator =(JsonView js
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationErrorType"))
   {
     m_migrationErrorType = MigrationErrorTypeMapper::GetMigrationErrorTypeForName(jsonValue.GetString("MigrationErrorType"));
-
     m_migrationErrorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationErrorReason"))
   {
     m_migrationErrorReason = jsonValue.GetString("MigrationErrorReason");
-
     m_migrationErrorReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

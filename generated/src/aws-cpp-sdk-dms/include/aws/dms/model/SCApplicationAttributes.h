@@ -32,7 +32,7 @@ namespace Model
   class SCApplicationAttributes
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API SCApplicationAttributes();
+    AWS_DATABASEMIGRATIONSERVICE_API SCApplicationAttributes() = default;
     AWS_DATABASEMIGRATIONSERVICE_API SCApplicationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API SCApplicationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The path for the Amazon S3 bucket that the application uses for exporting
      * assessment reports.</p>
      */
-    inline const Aws::String& GetS3BucketPath() const{ return m_s3BucketPath; }
+    inline const Aws::String& GetS3BucketPath() const { return m_s3BucketPath; }
     inline bool S3BucketPathHasBeenSet() const { return m_s3BucketPathHasBeenSet; }
-    inline void SetS3BucketPath(const Aws::String& value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath = value; }
-    inline void SetS3BucketPath(Aws::String&& value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath = std::move(value); }
-    inline void SetS3BucketPath(const char* value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath.assign(value); }
-    inline SCApplicationAttributes& WithS3BucketPath(const Aws::String& value) { SetS3BucketPath(value); return *this;}
-    inline SCApplicationAttributes& WithS3BucketPath(Aws::String&& value) { SetS3BucketPath(std::move(value)); return *this;}
-    inline SCApplicationAttributes& WithS3BucketPath(const char* value) { SetS3BucketPath(value); return *this;}
+    template<typename S3BucketPathT = Aws::String>
+    void SetS3BucketPath(S3BucketPathT&& value) { m_s3BucketPathHasBeenSet = true; m_s3BucketPath = std::forward<S3BucketPathT>(value); }
+    template<typename S3BucketPathT = Aws::String>
+    SCApplicationAttributes& WithS3BucketPath(S3BucketPathT&& value) { SetS3BucketPath(std::forward<S3BucketPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetS3BucketRoleArn() const{ return m_s3BucketRoleArn; }
+    inline const Aws::String& GetS3BucketRoleArn() const { return m_s3BucketRoleArn; }
     inline bool S3BucketRoleArnHasBeenSet() const { return m_s3BucketRoleArnHasBeenSet; }
-    inline void SetS3BucketRoleArn(const Aws::String& value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn = value; }
-    inline void SetS3BucketRoleArn(Aws::String&& value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn = std::move(value); }
-    inline void SetS3BucketRoleArn(const char* value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn.assign(value); }
-    inline SCApplicationAttributes& WithS3BucketRoleArn(const Aws::String& value) { SetS3BucketRoleArn(value); return *this;}
-    inline SCApplicationAttributes& WithS3BucketRoleArn(Aws::String&& value) { SetS3BucketRoleArn(std::move(value)); return *this;}
-    inline SCApplicationAttributes& WithS3BucketRoleArn(const char* value) { SetS3BucketRoleArn(value); return *this;}
+    template<typename S3BucketRoleArnT = Aws::String>
+    void SetS3BucketRoleArn(S3BucketRoleArnT&& value) { m_s3BucketRoleArnHasBeenSet = true; m_s3BucketRoleArn = std::forward<S3BucketRoleArnT>(value); }
+    template<typename S3BucketRoleArnT = Aws::String>
+    SCApplicationAttributes& WithS3BucketRoleArn(S3BucketRoleArnT&& value) { SetS3BucketRoleArn(std::forward<S3BucketRoleArnT>(value)); return *this;}
     ///@}
   private:
 

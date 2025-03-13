@@ -32,7 +32,7 @@ namespace Model
   class DeviceConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API DeviceConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API DeviceConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API DeviceConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * devices that have not been confirmed or remembered must still provide a second
      * factor in a user pool that requires MFA.</p> 
      */
-    inline bool GetChallengeRequiredOnNewDevice() const{ return m_challengeRequiredOnNewDevice; }
+    inline bool GetChallengeRequiredOnNewDevice() const { return m_challengeRequiredOnNewDevice; }
     inline bool ChallengeRequiredOnNewDeviceHasBeenSet() const { return m_challengeRequiredOnNewDeviceHasBeenSet; }
     inline void SetChallengeRequiredOnNewDevice(bool value) { m_challengeRequiredOnNewDeviceHasBeenSet = true; m_challengeRequiredOnNewDevice = value; }
     inline DeviceConfigurationType& WithChallengeRequiredOnNewDevice(bool value) { SetChallengeRequiredOnNewDevice(value); return *this;}
@@ -63,17 +63,17 @@ namespace Model
      * Amazon Cognito immediately remembers devices that you register in a
      * <code>ConfirmDevice</code> API request.</p>
      */
-    inline bool GetDeviceOnlyRememberedOnUserPrompt() const{ return m_deviceOnlyRememberedOnUserPrompt; }
+    inline bool GetDeviceOnlyRememberedOnUserPrompt() const { return m_deviceOnlyRememberedOnUserPrompt; }
     inline bool DeviceOnlyRememberedOnUserPromptHasBeenSet() const { return m_deviceOnlyRememberedOnUserPromptHasBeenSet; }
     inline void SetDeviceOnlyRememberedOnUserPrompt(bool value) { m_deviceOnlyRememberedOnUserPromptHasBeenSet = true; m_deviceOnlyRememberedOnUserPrompt = value; }
     inline DeviceConfigurationType& WithDeviceOnlyRememberedOnUserPrompt(bool value) { SetDeviceOnlyRememberedOnUserPrompt(value); return *this;}
     ///@}
   private:
 
-    bool m_challengeRequiredOnNewDevice;
+    bool m_challengeRequiredOnNewDevice{false};
     bool m_challengeRequiredOnNewDeviceHasBeenSet = false;
 
-    bool m_deviceOnlyRememberedOnUserPrompt;
+    bool m_deviceOnlyRememberedOnUserPrompt{false};
     bool m_deviceOnlyRememberedOnUserPromptHasBeenSet = false;
   };
 

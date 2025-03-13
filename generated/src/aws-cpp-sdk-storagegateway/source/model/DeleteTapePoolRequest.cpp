@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTapePoolRequest::DeleteTapePoolRequest() : 
-    m_poolARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTapePoolRequest::SerializePayload() const
 {
   JsonValue payload;

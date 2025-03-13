@@ -24,7 +24,7 @@ namespace Model
   class DescribeTrustedAdvisorCheckResultRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultRequest();
+    AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
-    inline const Aws::String& GetCheckId() const{ return m_checkId; }
+    inline const Aws::String& GetCheckId() const { return m_checkId; }
     inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
-    inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
-    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = std::move(value); }
-    inline void SetCheckId(const char* value) { m_checkIdHasBeenSet = true; m_checkId.assign(value); }
-    inline DescribeTrustedAdvisorCheckResultRequest& WithCheckId(const Aws::String& value) { SetCheckId(value); return *this;}
-    inline DescribeTrustedAdvisorCheckResultRequest& WithCheckId(Aws::String&& value) { SetCheckId(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckResultRequest& WithCheckId(const char* value) { SetCheckId(value); return *this;}
+    template<typename CheckIdT = Aws::String>
+    void SetCheckId(CheckIdT&& value) { m_checkIdHasBeenSet = true; m_checkId = std::forward<CheckIdT>(value); }
+    template<typename CheckIdT = Aws::String>
+    DescribeTrustedAdvisorCheckResultRequest& WithCheckId(CheckIdT&& value) { SetCheckId(std::forward<CheckIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>ko</code> </p> </li> <li> <p>Portuguese, Brazilian - <code>pt_BR</code>
      * </p> </li> <li> <p>Spanish - <code>es</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    DescribeTrustedAdvisorCheckResultRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
   private:
 

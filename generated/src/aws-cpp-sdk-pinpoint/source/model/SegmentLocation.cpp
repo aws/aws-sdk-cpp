@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentLocation::SegmentLocation() : 
-    m_countryHasBeenSet(false),
-    m_gPSPointHasBeenSet(false)
-{
-}
-
 SegmentLocation::SegmentLocation(JsonView jsonValue)
-  : SegmentLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SegmentLocation& SegmentLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetObject("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GPSPoint"))
   {
     m_gPSPoint = jsonValue.GetObject("GPSPoint");
-
     m_gPSPointHasBeenSet = true;
   }
-
   return *this;
 }
 

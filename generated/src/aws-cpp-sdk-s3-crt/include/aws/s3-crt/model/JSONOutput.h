@@ -31,7 +31,7 @@ namespace Model
   class JSONOutput
   {
   public:
-    AWS_S3CRT_API JSONOutput();
+    AWS_S3CRT_API JSONOutput() = default;
     AWS_S3CRT_API JSONOutput(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API JSONOutput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
      * <p>The value used to separate individual records in the output. If no value is
      * specified, Amazon S3 uses a newline character ('\n').</p>
      */
-    inline const Aws::String& GetRecordDelimiter() const{ return m_recordDelimiter; }
+    inline const Aws::String& GetRecordDelimiter() const { return m_recordDelimiter; }
     inline bool RecordDelimiterHasBeenSet() const { return m_recordDelimiterHasBeenSet; }
-    inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
-    inline void SetRecordDelimiter(Aws::String&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::move(value); }
-    inline void SetRecordDelimiter(const char* value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter.assign(value); }
-    inline JSONOutput& WithRecordDelimiter(const Aws::String& value) { SetRecordDelimiter(value); return *this;}
-    inline JSONOutput& WithRecordDelimiter(Aws::String&& value) { SetRecordDelimiter(std::move(value)); return *this;}
-    inline JSONOutput& WithRecordDelimiter(const char* value) { SetRecordDelimiter(value); return *this;}
+    template<typename RecordDelimiterT = Aws::String>
+    void SetRecordDelimiter(RecordDelimiterT&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::forward<RecordDelimiterT>(value); }
+    template<typename RecordDelimiterT = Aws::String>
+    JSONOutput& WithRecordDelimiter(RecordDelimiterT&& value) { SetRecordDelimiter(std::forward<RecordDelimiterT>(value)); return *this;}
     ///@}
   private:
 

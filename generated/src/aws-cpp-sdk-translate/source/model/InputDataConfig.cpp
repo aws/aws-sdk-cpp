@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-InputDataConfig::InputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 InputDataConfig::InputDataConfig(JsonView jsonValue)
-  : InputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

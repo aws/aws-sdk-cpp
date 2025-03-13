@@ -29,7 +29,7 @@ namespace Model
   class ListDatabasesResult
   {
   public:
-    AWS_ATHENA_API ListDatabasesResult();
+    AWS_ATHENA_API ListDatabasesResult() = default;
     AWS_ATHENA_API ListDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of databases from a data catalog.</p>
      */
-    inline const Aws::Vector<Database>& GetDatabaseList() const{ return m_databaseList; }
-    inline void SetDatabaseList(const Aws::Vector<Database>& value) { m_databaseList = value; }
-    inline void SetDatabaseList(Aws::Vector<Database>&& value) { m_databaseList = std::move(value); }
-    inline ListDatabasesResult& WithDatabaseList(const Aws::Vector<Database>& value) { SetDatabaseList(value); return *this;}
-    inline ListDatabasesResult& WithDatabaseList(Aws::Vector<Database>&& value) { SetDatabaseList(std::move(value)); return *this;}
-    inline ListDatabasesResult& AddDatabaseList(const Database& value) { m_databaseList.push_back(value); return *this; }
-    inline ListDatabasesResult& AddDatabaseList(Database&& value) { m_databaseList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Database>& GetDatabaseList() const { return m_databaseList; }
+    template<typename DatabaseListT = Aws::Vector<Database>>
+    void SetDatabaseList(DatabaseListT&& value) { m_databaseListHasBeenSet = true; m_databaseList = std::forward<DatabaseListT>(value); }
+    template<typename DatabaseListT = Aws::Vector<Database>>
+    ListDatabasesResult& WithDatabaseList(DatabaseListT&& value) { SetDatabaseList(std::forward<DatabaseListT>(value)); return *this;}
+    template<typename DatabaseListT = Database>
+    ListDatabasesResult& AddDatabaseList(DatabaseListT&& value) { m_databaseListHasBeenSet = true; m_databaseList.emplace_back(std::forward<DatabaseListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * pagination if a previous request was truncated. To obtain the next set of pages,
      * pass in the NextToken from the response object of the previous page call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDatabasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDatabasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDatabasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDatabasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDatabasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDatabasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDatabasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDatabasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Database> m_databaseList;
+    bool m_databaseListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

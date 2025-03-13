@@ -34,7 +34,7 @@ namespace Model
   class VerifiedAccessEndpointRdsOptions
   {
   public:
-    AWS_EC2_API VerifiedAccessEndpointRdsOptions();
+    AWS_EC2_API VerifiedAccessEndpointRdsOptions() = default;
     AWS_EC2_API VerifiedAccessEndpointRdsOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessEndpointRdsOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,19 +46,17 @@ namespace Model
     /**
      * <p>The protocol.</p>
      */
-    inline const VerifiedAccessEndpointProtocol& GetProtocol() const{ return m_protocol; }
+    inline VerifiedAccessEndpointProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const VerifiedAccessEndpointProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(VerifiedAccessEndpointProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline VerifiedAccessEndpointRdsOptions& WithProtocol(const VerifiedAccessEndpointProtocol& value) { SetProtocol(value); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithProtocol(VerifiedAccessEndpointProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(VerifiedAccessEndpointProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline VerifiedAccessEndpointRdsOptions& WithProtocol(VerifiedAccessEndpointProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline VerifiedAccessEndpointRdsOptions& WithPort(int value) { SetPort(value); return *this;}
@@ -68,78 +66,69 @@ namespace Model
     /**
      * <p>The ARN of the RDS instance.</p>
      */
-    inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
+    inline const Aws::String& GetRdsDbInstanceArn() const { return m_rdsDbInstanceArn; }
     inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
-    inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
-    inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = std::move(value); }
-    inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
+    template<typename RdsDbInstanceArnT = Aws::String>
+    void SetRdsDbInstanceArn(RdsDbInstanceArnT&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = std::forward<RdsDbInstanceArnT>(value); }
+    template<typename RdsDbInstanceArnT = Aws::String>
+    VerifiedAccessEndpointRdsOptions& WithRdsDbInstanceArn(RdsDbInstanceArnT&& value) { SetRdsDbInstanceArn(std::forward<RdsDbInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the DB cluster.</p>
      */
-    inline const Aws::String& GetRdsDbClusterArn() const{ return m_rdsDbClusterArn; }
+    inline const Aws::String& GetRdsDbClusterArn() const { return m_rdsDbClusterArn; }
     inline bool RdsDbClusterArnHasBeenSet() const { return m_rdsDbClusterArnHasBeenSet; }
-    inline void SetRdsDbClusterArn(const Aws::String& value) { m_rdsDbClusterArnHasBeenSet = true; m_rdsDbClusterArn = value; }
-    inline void SetRdsDbClusterArn(Aws::String&& value) { m_rdsDbClusterArnHasBeenSet = true; m_rdsDbClusterArn = std::move(value); }
-    inline void SetRdsDbClusterArn(const char* value) { m_rdsDbClusterArnHasBeenSet = true; m_rdsDbClusterArn.assign(value); }
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbClusterArn(const Aws::String& value) { SetRdsDbClusterArn(value); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbClusterArn(Aws::String&& value) { SetRdsDbClusterArn(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbClusterArn(const char* value) { SetRdsDbClusterArn(value); return *this;}
+    template<typename RdsDbClusterArnT = Aws::String>
+    void SetRdsDbClusterArn(RdsDbClusterArnT&& value) { m_rdsDbClusterArnHasBeenSet = true; m_rdsDbClusterArn = std::forward<RdsDbClusterArnT>(value); }
+    template<typename RdsDbClusterArnT = Aws::String>
+    VerifiedAccessEndpointRdsOptions& WithRdsDbClusterArn(RdsDbClusterArnT&& value) { SetRdsDbClusterArn(std::forward<RdsDbClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the RDS proxy.</p>
      */
-    inline const Aws::String& GetRdsDbProxyArn() const{ return m_rdsDbProxyArn; }
+    inline const Aws::String& GetRdsDbProxyArn() const { return m_rdsDbProxyArn; }
     inline bool RdsDbProxyArnHasBeenSet() const { return m_rdsDbProxyArnHasBeenSet; }
-    inline void SetRdsDbProxyArn(const Aws::String& value) { m_rdsDbProxyArnHasBeenSet = true; m_rdsDbProxyArn = value; }
-    inline void SetRdsDbProxyArn(Aws::String&& value) { m_rdsDbProxyArnHasBeenSet = true; m_rdsDbProxyArn = std::move(value); }
-    inline void SetRdsDbProxyArn(const char* value) { m_rdsDbProxyArnHasBeenSet = true; m_rdsDbProxyArn.assign(value); }
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbProxyArn(const Aws::String& value) { SetRdsDbProxyArn(value); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbProxyArn(Aws::String&& value) { SetRdsDbProxyArn(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsDbProxyArn(const char* value) { SetRdsDbProxyArn(value); return *this;}
+    template<typename RdsDbProxyArnT = Aws::String>
+    void SetRdsDbProxyArn(RdsDbProxyArnT&& value) { m_rdsDbProxyArnHasBeenSet = true; m_rdsDbProxyArn = std::forward<RdsDbProxyArnT>(value); }
+    template<typename RdsDbProxyArnT = Aws::String>
+    VerifiedAccessEndpointRdsOptions& WithRdsDbProxyArn(RdsDbProxyArnT&& value) { SetRdsDbProxyArn(std::forward<RdsDbProxyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The RDS endpoint.</p>
      */
-    inline const Aws::String& GetRdsEndpoint() const{ return m_rdsEndpoint; }
+    inline const Aws::String& GetRdsEndpoint() const { return m_rdsEndpoint; }
     inline bool RdsEndpointHasBeenSet() const { return m_rdsEndpointHasBeenSet; }
-    inline void SetRdsEndpoint(const Aws::String& value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint = value; }
-    inline void SetRdsEndpoint(Aws::String&& value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint = std::move(value); }
-    inline void SetRdsEndpoint(const char* value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint.assign(value); }
-    inline VerifiedAccessEndpointRdsOptions& WithRdsEndpoint(const Aws::String& value) { SetRdsEndpoint(value); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsEndpoint(Aws::String&& value) { SetRdsEndpoint(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithRdsEndpoint(const char* value) { SetRdsEndpoint(value); return *this;}
+    template<typename RdsEndpointT = Aws::String>
+    void SetRdsEndpoint(RdsEndpointT&& value) { m_rdsEndpointHasBeenSet = true; m_rdsEndpoint = std::forward<RdsEndpointT>(value); }
+    template<typename RdsEndpointT = Aws::String>
+    VerifiedAccessEndpointRdsOptions& WithRdsEndpoint(RdsEndpointT&& value) { SetRdsEndpoint(std::forward<RdsEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the subnets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline VerifiedAccessEndpointRdsOptions& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline VerifiedAccessEndpointRdsOptions& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline VerifiedAccessEndpointRdsOptions& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline VerifiedAccessEndpointRdsOptions& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    VerifiedAccessEndpointRdsOptions& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    VerifiedAccessEndpointRdsOptions& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
   private:
 
-    VerifiedAccessEndpointProtocol m_protocol;
+    VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_rdsDbInstanceArn;

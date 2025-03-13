@@ -35,7 +35,7 @@ namespace Model
   class WeightedTarget
   {
   public:
-    AWS_APPMESH_API WeightedTarget();
+    AWS_APPMESH_API WeightedTarget() = default;
     AWS_APPMESH_API WeightedTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API WeightedTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The targeted port of the weighted object.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline WeightedTarget& WithPort(int value) { SetPort(value); return *this;}
@@ -55,34 +55,32 @@ namespace Model
     /**
      * <p>The virtual node to associate with the weighted target.</p>
      */
-    inline const Aws::String& GetVirtualNode() const{ return m_virtualNode; }
+    inline const Aws::String& GetVirtualNode() const { return m_virtualNode; }
     inline bool VirtualNodeHasBeenSet() const { return m_virtualNodeHasBeenSet; }
-    inline void SetVirtualNode(const Aws::String& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = value; }
-    inline void SetVirtualNode(Aws::String&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::move(value); }
-    inline void SetVirtualNode(const char* value) { m_virtualNodeHasBeenSet = true; m_virtualNode.assign(value); }
-    inline WeightedTarget& WithVirtualNode(const Aws::String& value) { SetVirtualNode(value); return *this;}
-    inline WeightedTarget& WithVirtualNode(Aws::String&& value) { SetVirtualNode(std::move(value)); return *this;}
-    inline WeightedTarget& WithVirtualNode(const char* value) { SetVirtualNode(value); return *this;}
+    template<typename VirtualNodeT = Aws::String>
+    void SetVirtualNode(VirtualNodeT&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::forward<VirtualNodeT>(value); }
+    template<typename VirtualNodeT = Aws::String>
+    WeightedTarget& WithVirtualNode(VirtualNodeT&& value) { SetVirtualNode(std::forward<VirtualNodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relative weight of the weighted target.</p>
      */
-    inline int GetWeight() const{ return m_weight; }
+    inline int GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
     inline WeightedTarget& WithWeight(int value) { SetWeight(value); return *this;}
     ///@}
   private:
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_virtualNode;
     bool m_virtualNodeHasBeenSet = false;
 
-    int m_weight;
+    int m_weight{0};
     bool m_weightHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class MultiPolygonGeometryInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput();
+    AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The coordinates of the multipolygon geometry.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& GetCoordinates() const{ return m_coordinates; }
+    inline const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& GetCoordinates() const { return m_coordinates; }
     inline bool CoordinatesHasBeenSet() const { return m_coordinatesHasBeenSet; }
-    inline void SetCoordinates(const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& value) { m_coordinatesHasBeenSet = true; m_coordinates = value; }
-    inline void SetCoordinates(Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>&& value) { m_coordinatesHasBeenSet = true; m_coordinates = std::move(value); }
-    inline MultiPolygonGeometryInput& WithCoordinates(const Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>& value) { SetCoordinates(value); return *this;}
-    inline MultiPolygonGeometryInput& WithCoordinates(Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>&& value) { SetCoordinates(std::move(value)); return *this;}
-    inline MultiPolygonGeometryInput& AddCoordinates(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_coordinatesHasBeenSet = true; m_coordinates.push_back(value); return *this; }
-    inline MultiPolygonGeometryInput& AddCoordinates(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_coordinatesHasBeenSet = true; m_coordinates.push_back(std::move(value)); return *this; }
+    template<typename CoordinatesT = Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>>
+    void SetCoordinates(CoordinatesT&& value) { m_coordinatesHasBeenSet = true; m_coordinates = std::forward<CoordinatesT>(value); }
+    template<typename CoordinatesT = Aws::Vector<Aws::Vector<Aws::Vector<Aws::Vector<double>>>>>
+    MultiPolygonGeometryInput& WithCoordinates(CoordinatesT&& value) { SetCoordinates(std::forward<CoordinatesT>(value)); return *this;}
+    template<typename CoordinatesT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    MultiPolygonGeometryInput& AddCoordinates(CoordinatesT&& value) { m_coordinatesHasBeenSet = true; m_coordinates.emplace_back(std::forward<CoordinatesT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrafficMirrorTarget::TrafficMirrorTarget() : 
-    m_trafficMirrorTargetIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkLoadBalancerArnHasBeenSet(false),
-    m_type(TrafficMirrorTargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_gatewayLoadBalancerEndpointIdHasBeenSet(false)
-{
-}
-
 TrafficMirrorTarget::TrafficMirrorTarget(const XmlNode& xmlNode)
-  : TrafficMirrorTarget()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,62 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
     {
       m_trafficMirrorTargetId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorTargetIdNode.GetText());
       m_trafficMirrorTargetIdHasBeenSet = true;
+       m_trafficMirrorTargetIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode networkLoadBalancerArnNode = resultNode.FirstChild("networkLoadBalancerArn");
     if(!networkLoadBalancerArnNode.IsNull())
     {
       m_networkLoadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(networkLoadBalancerArnNode.GetText());
       m_networkLoadBalancerArnHasBeenSet = true;
+       m_networkLoadBalancerArnHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = TrafficMirrorTargetTypeMapper::GetTrafficMirrorTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = TrafficMirrorTargetTypeMapper::GetTrafficMirrorTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode gatewayLoadBalancerEndpointIdNode = resultNode.FirstChild("gatewayLoadBalancerEndpointId");
     if(!gatewayLoadBalancerEndpointIdNode.IsNull())
     {
       m_gatewayLoadBalancerEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayLoadBalancerEndpointIdNode.GetText());
       m_gatewayLoadBalancerEndpointIdHasBeenSet = true;
+       m_gatewayLoadBalancerEndpointIdHasBeenSet = true;
     }
   }
 

@@ -25,7 +25,7 @@ namespace Model
   class PutDedicatedIpInPoolRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API PutDedicatedIpInPoolRequest();
+    AWS_SESV2_API PutDedicatedIpInPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * specify has to be a dedicated IP address that's associated with your Amazon Web
      * Services account.</p>
      */
-    inline const Aws::String& GetIp() const{ return m_ip; }
+    inline const Aws::String& GetIp() const { return m_ip; }
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-    inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
-    inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-    inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
-    inline PutDedicatedIpInPoolRequest& WithIp(const Aws::String& value) { SetIp(value); return *this;}
-    inline PutDedicatedIpInPoolRequest& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
-    inline PutDedicatedIpInPoolRequest& WithIp(const char* value) { SetIp(value); return *this;}
+    template<typename IpT = Aws::String>
+    void SetIp(IpT&& value) { m_ipHasBeenSet = true; m_ip = std::forward<IpT>(value); }
+    template<typename IpT = Aws::String>
+    PutDedicatedIpInPoolRequest& WithIp(IpT&& value) { SetIp(std::forward<IpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The name of the IP pool that you want to add the dedicated IP address to. You
      * have to specify an IP pool that already exists.</p>
      */
-    inline const Aws::String& GetDestinationPoolName() const{ return m_destinationPoolName; }
+    inline const Aws::String& GetDestinationPoolName() const { return m_destinationPoolName; }
     inline bool DestinationPoolNameHasBeenSet() const { return m_destinationPoolNameHasBeenSet; }
-    inline void SetDestinationPoolName(const Aws::String& value) { m_destinationPoolNameHasBeenSet = true; m_destinationPoolName = value; }
-    inline void SetDestinationPoolName(Aws::String&& value) { m_destinationPoolNameHasBeenSet = true; m_destinationPoolName = std::move(value); }
-    inline void SetDestinationPoolName(const char* value) { m_destinationPoolNameHasBeenSet = true; m_destinationPoolName.assign(value); }
-    inline PutDedicatedIpInPoolRequest& WithDestinationPoolName(const Aws::String& value) { SetDestinationPoolName(value); return *this;}
-    inline PutDedicatedIpInPoolRequest& WithDestinationPoolName(Aws::String&& value) { SetDestinationPoolName(std::move(value)); return *this;}
-    inline PutDedicatedIpInPoolRequest& WithDestinationPoolName(const char* value) { SetDestinationPoolName(value); return *this;}
+    template<typename DestinationPoolNameT = Aws::String>
+    void SetDestinationPoolName(DestinationPoolNameT&& value) { m_destinationPoolNameHasBeenSet = true; m_destinationPoolName = std::forward<DestinationPoolNameT>(value); }
+    template<typename DestinationPoolNameT = Aws::String>
+    PutDedicatedIpInPoolRequest& WithDestinationPoolName(DestinationPoolNameT&& value) { SetDestinationPoolName(std::forward<DestinationPoolNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class CreateVolumePermissionModifications
   {
   public:
-    AWS_EC2_API CreateVolumePermissionModifications();
+    AWS_EC2_API CreateVolumePermissionModifications() = default;
     AWS_EC2_API CreateVolumePermissionModifications(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CreateVolumePermissionModifications& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
      */
-    inline const Aws::Vector<CreateVolumePermission>& GetAdd() const{ return m_add; }
+    inline const Aws::Vector<CreateVolumePermission>& GetAdd() const { return m_add; }
     inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
-    inline void SetAdd(const Aws::Vector<CreateVolumePermission>& value) { m_addHasBeenSet = true; m_add = value; }
-    inline void SetAdd(Aws::Vector<CreateVolumePermission>&& value) { m_addHasBeenSet = true; m_add = std::move(value); }
-    inline CreateVolumePermissionModifications& WithAdd(const Aws::Vector<CreateVolumePermission>& value) { SetAdd(value); return *this;}
-    inline CreateVolumePermissionModifications& WithAdd(Aws::Vector<CreateVolumePermission>&& value) { SetAdd(std::move(value)); return *this;}
-    inline CreateVolumePermissionModifications& AddAdd(const CreateVolumePermission& value) { m_addHasBeenSet = true; m_add.push_back(value); return *this; }
-    inline CreateVolumePermissionModifications& AddAdd(CreateVolumePermission&& value) { m_addHasBeenSet = true; m_add.push_back(std::move(value)); return *this; }
+    template<typename AddT = Aws::Vector<CreateVolumePermission>>
+    void SetAdd(AddT&& value) { m_addHasBeenSet = true; m_add = std::forward<AddT>(value); }
+    template<typename AddT = Aws::Vector<CreateVolumePermission>>
+    CreateVolumePermissionModifications& WithAdd(AddT&& value) { SetAdd(std::forward<AddT>(value)); return *this;}
+    template<typename AddT = CreateVolumePermission>
+    CreateVolumePermissionModifications& AddAdd(AddT&& value) { m_addHasBeenSet = true; m_add.emplace_back(std::forward<AddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>Removes the specified Amazon Web Services account ID or group from the
      * list.</p>
      */
-    inline const Aws::Vector<CreateVolumePermission>& GetRemove() const{ return m_remove; }
+    inline const Aws::Vector<CreateVolumePermission>& GetRemove() const { return m_remove; }
     inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
-    inline void SetRemove(const Aws::Vector<CreateVolumePermission>& value) { m_removeHasBeenSet = true; m_remove = value; }
-    inline void SetRemove(Aws::Vector<CreateVolumePermission>&& value) { m_removeHasBeenSet = true; m_remove = std::move(value); }
-    inline CreateVolumePermissionModifications& WithRemove(const Aws::Vector<CreateVolumePermission>& value) { SetRemove(value); return *this;}
-    inline CreateVolumePermissionModifications& WithRemove(Aws::Vector<CreateVolumePermission>&& value) { SetRemove(std::move(value)); return *this;}
-    inline CreateVolumePermissionModifications& AddRemove(const CreateVolumePermission& value) { m_removeHasBeenSet = true; m_remove.push_back(value); return *this; }
-    inline CreateVolumePermissionModifications& AddRemove(CreateVolumePermission&& value) { m_removeHasBeenSet = true; m_remove.push_back(std::move(value)); return *this; }
+    template<typename RemoveT = Aws::Vector<CreateVolumePermission>>
+    void SetRemove(RemoveT&& value) { m_removeHasBeenSet = true; m_remove = std::forward<RemoveT>(value); }
+    template<typename RemoveT = Aws::Vector<CreateVolumePermission>>
+    CreateVolumePermissionModifications& WithRemove(RemoveT&& value) { SetRemove(std::forward<RemoveT>(value)); return *this;}
+    template<typename RemoveT = CreateVolumePermission>
+    CreateVolumePermissionModifications& AddRemove(RemoveT&& value) { m_removeHasBeenSet = true; m_remove.emplace_back(std::forward<RemoveT>(value)); return *this; }
     ///@}
   private:
 

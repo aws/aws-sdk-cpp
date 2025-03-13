@@ -32,7 +32,7 @@ namespace Model
   class IsolineThresholds
   {
   public:
-    AWS_GEOROUTES_API IsolineThresholds();
+    AWS_GEOROUTES_API IsolineThresholds() = default;
     AWS_GEOROUTES_API IsolineThresholds(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineThresholds& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Distance to be used for the isoline calculation.</p>
      */
-    inline const Aws::Vector<long long>& GetDistance() const{ return m_distance; }
+    inline const Aws::Vector<long long>& GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
-    inline void SetDistance(const Aws::Vector<long long>& value) { m_distanceHasBeenSet = true; m_distance = value; }
-    inline void SetDistance(Aws::Vector<long long>&& value) { m_distanceHasBeenSet = true; m_distance = std::move(value); }
-    inline IsolineThresholds& WithDistance(const Aws::Vector<long long>& value) { SetDistance(value); return *this;}
-    inline IsolineThresholds& WithDistance(Aws::Vector<long long>&& value) { SetDistance(std::move(value)); return *this;}
+    template<typename DistanceT = Aws::Vector<long long>>
+    void SetDistance(DistanceT&& value) { m_distanceHasBeenSet = true; m_distance = std::forward<DistanceT>(value); }
+    template<typename DistanceT = Aws::Vector<long long>>
+    IsolineThresholds& WithDistance(DistanceT&& value) { SetDistance(std::forward<DistanceT>(value)); return *this;}
     inline IsolineThresholds& AddDistance(long long value) { m_distanceHasBeenSet = true; m_distance.push_back(value); return *this; }
     ///@}
 
@@ -55,12 +55,12 @@ namespace Model
     /**
      * <p>Time to be used for the isoline calculation.</p>
      */
-    inline const Aws::Vector<long long>& GetTime() const{ return m_time; }
+    inline const Aws::Vector<long long>& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::Vector<long long>& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::Vector<long long>&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline IsolineThresholds& WithTime(const Aws::Vector<long long>& value) { SetTime(value); return *this;}
-    inline IsolineThresholds& WithTime(Aws::Vector<long long>&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = Aws::Vector<long long>>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::Vector<long long>>
+    IsolineThresholds& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     inline IsolineThresholds& AddTime(long long value) { m_timeHasBeenSet = true; m_time.push_back(value); return *this; }
     ///@}
   private:

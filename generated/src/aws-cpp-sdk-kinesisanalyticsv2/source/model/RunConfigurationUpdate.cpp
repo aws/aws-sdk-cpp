@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-RunConfigurationUpdate::RunConfigurationUpdate() : 
-    m_flinkRunConfigurationHasBeenSet(false),
-    m_applicationRestoreConfigurationHasBeenSet(false)
-{
-}
-
 RunConfigurationUpdate::RunConfigurationUpdate(JsonView jsonValue)
-  : RunConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RunConfigurationUpdate& RunConfigurationUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FlinkRunConfiguration"))
   {
     m_flinkRunConfiguration = jsonValue.GetObject("FlinkRunConfiguration");
-
     m_flinkRunConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationRestoreConfiguration"))
   {
     m_applicationRestoreConfiguration = jsonValue.GetObject("ApplicationRestoreConfiguration");
-
     m_applicationRestoreConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

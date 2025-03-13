@@ -24,7 +24,7 @@ namespace Model
   class PutSecretValueRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API PutSecretValueRequest();
+    AWS_SECRETSMANAGER_API PutSecretValueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * a secret from a partial ARN</a>.</p> <p>If the secret doesn't already exist, use
      * <code>CreateSecret</code> instead.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline PutSecretValueRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline PutSecretValueRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline PutSecretValueRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    PutSecretValueRequest& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * secret values.</p> </li> </ul> <p>This value becomes the <code>VersionId</code>
      * of the new version.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline PutSecretValueRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline PutSecretValueRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline PutSecretValueRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    PutSecretValueRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,12 @@ namespace Model
      * service does not include it in CloudTrail log entries. If you create your own
      * log entries, you must also avoid logging the information in this field.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
+    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const { return m_secretBinary; }
     inline bool SecretBinaryHasBeenSet() const { return m_secretBinaryHasBeenSet; }
-    inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = value; }
-    inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::move(value); }
-    inline PutSecretValueRequest& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
-    inline PutSecretValueRequest& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
+    template<typename SecretBinaryT = Aws::Utils::CryptoBuffer>
+    void SetSecretBinary(SecretBinaryT&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::forward<SecretBinaryT>(value); }
+    template<typename SecretBinaryT = Aws::Utils::CryptoBuffer>
+    PutSecretValueRequest& WithSecretBinary(SecretBinaryT&& value) { SetSecretBinary(std::forward<SecretBinaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +116,12 @@ namespace Model
      * you create your own log entries, you must also avoid logging the information in
      * this field.</p>
      */
-    inline const Aws::String& GetSecretString() const{ return m_secretString; }
+    inline const Aws::String& GetSecretString() const { return m_secretString; }
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }
-    inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
-    inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
-    inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
-    inline PutSecretValueRequest& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
-    inline PutSecretValueRequest& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
-    inline PutSecretValueRequest& WithSecretString(const char* value) { SetSecretString(value); return *this;}
+    template<typename SecretStringT = Aws::String>
+    void SetSecretString(SecretStringT&& value) { m_secretStringHasBeenSet = true; m_secretString = std::forward<SecretStringT>(value); }
+    template<typename SecretStringT = Aws::String>
+    PutSecretValueRequest& WithSecretString(SecretStringT&& value) { SetSecretString(std::forward<SecretStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,15 +137,14 @@ namespace Model
      * include <code>VersionStages</code>, then Secrets Manager automatically moves the
      * staging label <code>AWSCURRENT</code> to this version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVersionStages() const{ return m_versionStages; }
+    inline const Aws::Vector<Aws::String>& GetVersionStages() const { return m_versionStages; }
     inline bool VersionStagesHasBeenSet() const { return m_versionStagesHasBeenSet; }
-    inline void SetVersionStages(const Aws::Vector<Aws::String>& value) { m_versionStagesHasBeenSet = true; m_versionStages = value; }
-    inline void SetVersionStages(Aws::Vector<Aws::String>&& value) { m_versionStagesHasBeenSet = true; m_versionStages = std::move(value); }
-    inline PutSecretValueRequest& WithVersionStages(const Aws::Vector<Aws::String>& value) { SetVersionStages(value); return *this;}
-    inline PutSecretValueRequest& WithVersionStages(Aws::Vector<Aws::String>&& value) { SetVersionStages(std::move(value)); return *this;}
-    inline PutSecretValueRequest& AddVersionStages(const Aws::String& value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(value); return *this; }
-    inline PutSecretValueRequest& AddVersionStages(Aws::String&& value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(std::move(value)); return *this; }
-    inline PutSecretValueRequest& AddVersionStages(const char* value) { m_versionStagesHasBeenSet = true; m_versionStages.push_back(value); return *this; }
+    template<typename VersionStagesT = Aws::Vector<Aws::String>>
+    void SetVersionStages(VersionStagesT&& value) { m_versionStagesHasBeenSet = true; m_versionStages = std::forward<VersionStagesT>(value); }
+    template<typename VersionStagesT = Aws::Vector<Aws::String>>
+    PutSecretValueRequest& WithVersionStages(VersionStagesT&& value) { SetVersionStages(std::forward<VersionStagesT>(value)); return *this;}
+    template<typename VersionStagesT = Aws::String>
+    PutSecretValueRequest& AddVersionStages(VersionStagesT&& value) { m_versionStagesHasBeenSet = true; m_versionStages.emplace_back(std::forward<VersionStagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -166,14 +159,12 @@ namespace Model
      * so the service does not include it in CloudTrail log entries. If you create your
      * own log entries, you must also avoid logging the information in this field.</p>
      */
-    inline const Aws::String& GetRotationToken() const{ return m_rotationToken; }
+    inline const Aws::String& GetRotationToken() const { return m_rotationToken; }
     inline bool RotationTokenHasBeenSet() const { return m_rotationTokenHasBeenSet; }
-    inline void SetRotationToken(const Aws::String& value) { m_rotationTokenHasBeenSet = true; m_rotationToken = value; }
-    inline void SetRotationToken(Aws::String&& value) { m_rotationTokenHasBeenSet = true; m_rotationToken = std::move(value); }
-    inline void SetRotationToken(const char* value) { m_rotationTokenHasBeenSet = true; m_rotationToken.assign(value); }
-    inline PutSecretValueRequest& WithRotationToken(const Aws::String& value) { SetRotationToken(value); return *this;}
-    inline PutSecretValueRequest& WithRotationToken(Aws::String&& value) { SetRotationToken(std::move(value)); return *this;}
-    inline PutSecretValueRequest& WithRotationToken(const char* value) { SetRotationToken(value); return *this;}
+    template<typename RotationTokenT = Aws::String>
+    void SetRotationToken(RotationTokenT&& value) { m_rotationTokenHasBeenSet = true; m_rotationToken = std::forward<RotationTokenT>(value); }
+    template<typename RotationTokenT = Aws::String>
+    PutSecretValueRequest& WithRotationToken(RotationTokenT&& value) { SetRotationToken(std::forward<RotationTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -183,7 +174,7 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_secretBinary;
+    Aws::Utils::CryptoBuffer m_secretBinary{};
     bool m_secretBinaryHasBeenSet = false;
 
     Aws::String m_secretString;

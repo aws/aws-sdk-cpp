@@ -18,15 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-AdditionalResources::AdditionalResources() : 
-    m_type(AdditionalResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 AdditionalResources::AdditionalResources(JsonView jsonValue)
-  : AdditionalResources()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AdditionalResources& AdditionalResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AdditionalResourceTypeMapper::GetAdditionalResourceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
@@ -49,7 +39,6 @@ AdditionalResources& AdditionalResources::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

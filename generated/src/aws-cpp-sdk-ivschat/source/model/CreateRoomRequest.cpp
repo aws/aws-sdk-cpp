@@ -12,18 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRoomRequest::CreateRoomRequest() : 
-    m_nameHasBeenSet(false),
-    m_maximumMessageRatePerSecond(0),
-    m_maximumMessageRatePerSecondHasBeenSet(false),
-    m_maximumMessageLength(0),
-    m_maximumMessageLengthHasBeenSet(false),
-    m_messageReviewHandlerHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_loggingConfigurationIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String CreateRoomRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteClusterNodesResult::BatchDeleteClusterNodesResult()
-{
-}
-
 BatchDeleteClusterNodesResult::BatchDeleteClusterNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDeleteClusterNodesResult& BatchDeleteClusterNodesResult::operator =(const A
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());
     }
+    m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Successful"))
   {
     Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");
@@ -45,14 +41,15 @@ BatchDeleteClusterNodesResult& BatchDeleteClusterNodesResult::operator =(const A
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsString());
     }
+    m_successfulHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class ScatterPlotSortConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ScatterPlotSortConfiguration();
+    AWS_QUICKSIGHT_API ScatterPlotSortConfiguration() = default;
     AWS_QUICKSIGHT_API ScatterPlotSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ScatterPlotSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const ItemsLimitConfiguration& GetScatterPlotLimitConfiguration() const{ return m_scatterPlotLimitConfiguration; }
+    inline const ItemsLimitConfiguration& GetScatterPlotLimitConfiguration() const { return m_scatterPlotLimitConfiguration; }
     inline bool ScatterPlotLimitConfigurationHasBeenSet() const { return m_scatterPlotLimitConfigurationHasBeenSet; }
-    inline void SetScatterPlotLimitConfiguration(const ItemsLimitConfiguration& value) { m_scatterPlotLimitConfigurationHasBeenSet = true; m_scatterPlotLimitConfiguration = value; }
-    inline void SetScatterPlotLimitConfiguration(ItemsLimitConfiguration&& value) { m_scatterPlotLimitConfigurationHasBeenSet = true; m_scatterPlotLimitConfiguration = std::move(value); }
-    inline ScatterPlotSortConfiguration& WithScatterPlotLimitConfiguration(const ItemsLimitConfiguration& value) { SetScatterPlotLimitConfiguration(value); return *this;}
-    inline ScatterPlotSortConfiguration& WithScatterPlotLimitConfiguration(ItemsLimitConfiguration&& value) { SetScatterPlotLimitConfiguration(std::move(value)); return *this;}
+    template<typename ScatterPlotLimitConfigurationT = ItemsLimitConfiguration>
+    void SetScatterPlotLimitConfiguration(ScatterPlotLimitConfigurationT&& value) { m_scatterPlotLimitConfigurationHasBeenSet = true; m_scatterPlotLimitConfiguration = std::forward<ScatterPlotLimitConfigurationT>(value); }
+    template<typename ScatterPlotLimitConfigurationT = ItemsLimitConfiguration>
+    ScatterPlotSortConfiguration& WithScatterPlotLimitConfiguration(ScatterPlotLimitConfigurationT&& value) { SetScatterPlotLimitConfiguration(std::forward<ScatterPlotLimitConfigurationT>(value)); return *this;}
     ///@}
   private:
 

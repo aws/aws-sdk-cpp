@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLayerMapConfiguration::GeospatialLayerMapConfiguration() : 
-    m_legendHasBeenSet(false),
-    m_mapLayersHasBeenSet(false),
-    m_mapStateHasBeenSet(false),
-    m_mapStyleHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 GeospatialLayerMapConfiguration::GeospatialLayerMapConfiguration(JsonView jsonValue)
-  : GeospatialLayerMapConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ GeospatialLayerMapConfiguration& GeospatialLayerMapConfiguration::operator =(Jso
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapLayers"))
   {
     Aws::Utils::Array<JsonView> mapLayersJsonList = jsonValue.GetArray("MapLayers");
@@ -51,28 +39,21 @@ GeospatialLayerMapConfiguration& GeospatialLayerMapConfiguration::operator =(Jso
     }
     m_mapLayersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapState"))
   {
     m_mapState = jsonValue.GetObject("MapState");
-
     m_mapStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapStyle"))
   {
     m_mapStyle = jsonValue.GetObject("MapStyle");
-
     m_mapStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

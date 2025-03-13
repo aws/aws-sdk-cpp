@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-SlateSource::SlateSource() : 
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
-{
-}
-
 SlateSource::SlateSource(JsonView jsonValue)
-  : SlateSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SlateSource& SlateSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
-
     m_sourceLocationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VodSourceName"))
   {
     m_vodSourceName = jsonValue.GetString("VodSourceName");
-
     m_vodSourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

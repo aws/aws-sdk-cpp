@@ -38,7 +38,7 @@ namespace Model
   class MetricStreamFilter
   {
   public:
-    AWS_CLOUDWATCH_API MetricStreamFilter();
+    AWS_CLOUDWATCH_API MetricStreamFilter() = default;
     AWS_CLOUDWATCH_API MetricStreamFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MetricStreamFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * contain only ASCII printable characters (ASCII range 32 through 126). It must
      * contain at least one non-whitespace character.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline MetricStreamFilter& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline MetricStreamFilter& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline MetricStreamFilter& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    MetricStreamFilter& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,15 +69,14 @@ namespace Model
      * characters (ASCII range 32 through 126). Each metric name must contain at least
      * one non-whitespace character.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricNames() const{ return m_metricNames; }
+    inline const Aws::Vector<Aws::String>& GetMetricNames() const { return m_metricNames; }
     inline bool MetricNamesHasBeenSet() const { return m_metricNamesHasBeenSet; }
-    inline void SetMetricNames(const Aws::Vector<Aws::String>& value) { m_metricNamesHasBeenSet = true; m_metricNames = value; }
-    inline void SetMetricNames(Aws::Vector<Aws::String>&& value) { m_metricNamesHasBeenSet = true; m_metricNames = std::move(value); }
-    inline MetricStreamFilter& WithMetricNames(const Aws::Vector<Aws::String>& value) { SetMetricNames(value); return *this;}
-    inline MetricStreamFilter& WithMetricNames(Aws::Vector<Aws::String>&& value) { SetMetricNames(std::move(value)); return *this;}
-    inline MetricStreamFilter& AddMetricNames(const Aws::String& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
-    inline MetricStreamFilter& AddMetricNames(Aws::String&& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(std::move(value)); return *this; }
-    inline MetricStreamFilter& AddMetricNames(const char* value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
+    template<typename MetricNamesT = Aws::Vector<Aws::String>>
+    void SetMetricNames(MetricNamesT&& value) { m_metricNamesHasBeenSet = true; m_metricNames = std::forward<MetricNamesT>(value); }
+    template<typename MetricNamesT = Aws::Vector<Aws::String>>
+    MetricStreamFilter& WithMetricNames(MetricNamesT&& value) { SetMetricNames(std::forward<MetricNamesT>(value)); return *this;}
+    template<typename MetricNamesT = Aws::String>
+    MetricStreamFilter& AddMetricNames(MetricNamesT&& value) { m_metricNamesHasBeenSet = true; m_metricNames.emplace_back(std::forward<MetricNamesT>(value)); return *this; }
     ///@}
   private:
 

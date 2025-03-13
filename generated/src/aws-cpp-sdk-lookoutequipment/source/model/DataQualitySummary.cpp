@@ -18,17 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-DataQualitySummary::DataQualitySummary() : 
-    m_insufficientSensorDataHasBeenSet(false),
-    m_missingSensorDataHasBeenSet(false),
-    m_invalidSensorDataHasBeenSet(false),
-    m_unsupportedTimestampsHasBeenSet(false),
-    m_duplicateTimestampsHasBeenSet(false)
-{
-}
-
 DataQualitySummary::DataQualitySummary(JsonView jsonValue)
-  : DataQualitySummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataQualitySummary& DataQualitySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InsufficientSensorData"))
   {
     m_insufficientSensorData = jsonValue.GetObject("InsufficientSensorData");
-
     m_insufficientSensorDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MissingSensorData"))
   {
     m_missingSensorData = jsonValue.GetObject("MissingSensorData");
-
     m_missingSensorDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidSensorData"))
   {
     m_invalidSensorData = jsonValue.GetObject("InvalidSensorData");
-
     m_invalidSensorDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnsupportedTimestamps"))
   {
     m_unsupportedTimestamps = jsonValue.GetObject("UnsupportedTimestamps");
-
     m_unsupportedTimestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DuplicateTimestamps"))
   {
     m_duplicateTimestamps = jsonValue.GetObject("DuplicateTimestamps");
-
     m_duplicateTimestampsHasBeenSet = true;
   }
-
   return *this;
 }
 

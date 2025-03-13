@@ -18,22 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-Handshake::Handshake() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_partiesHasBeenSet(false),
-    m_state(HandshakeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_requestedTimestampHasBeenSet(false),
-    m_expirationTimestampHasBeenSet(false),
-    m_action(ActionType::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 Handshake::Handshake(JsonView jsonValue)
-  : Handshake()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ Handshake& Handshake::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parties"))
   {
     Aws::Utils::Array<JsonView> partiesJsonList = jsonValue.GetArray("Parties");
@@ -63,35 +44,26 @@ Handshake& Handshake::operator =(JsonView jsonValue)
     }
     m_partiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = HandshakeStateMapper::GetHandshakeStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedTimestamp"))
   {
     m_requestedTimestamp = jsonValue.GetDouble("RequestedTimestamp");
-
     m_requestedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTimestamp"))
   {
     m_expirationTimestamp = jsonValue.GetDouble("ExpirationTimestamp");
-
     m_expirationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -101,7 +73,6 @@ Handshake& Handshake::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

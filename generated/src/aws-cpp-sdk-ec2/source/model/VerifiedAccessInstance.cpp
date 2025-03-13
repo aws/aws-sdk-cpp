@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstance::VerifiedAccessInstance() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_verifiedAccessTrustProvidersHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fipsEnabled(false),
-    m_fipsEnabledHasBeenSet(false),
-    m_cidrEndpointsCustomSubDomainHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstance::VerifiedAccessInstance(const XmlNode& xmlNode)
-  : VerifiedAccessInstance()
 {
   *this = xmlNode;
 }
@@ -50,60 +36,68 @@ VerifiedAccessInstance& VerifiedAccessInstance::operator =(const XmlNode& xmlNod
     {
       m_verifiedAccessInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessInstanceIdNode.GetText());
       m_verifiedAccessInstanceIdHasBeenSet = true;
+       m_verifiedAccessInstanceIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode verifiedAccessTrustProvidersNode = resultNode.FirstChild("verifiedAccessTrustProviderSet");
     if(!verifiedAccessTrustProvidersNode.IsNull())
     {
       XmlNode verifiedAccessTrustProvidersMember = verifiedAccessTrustProvidersNode.FirstChild("item");
+      m_verifiedAccessTrustProvidersHasBeenSet = !verifiedAccessTrustProvidersMember.IsNull();
       while(!verifiedAccessTrustProvidersMember.IsNull())
       {
         m_verifiedAccessTrustProviders.push_back(verifiedAccessTrustProvidersMember);
         verifiedAccessTrustProvidersMember = verifiedAccessTrustProvidersMember.NextNode("item");
       }
 
-      m_verifiedAccessTrustProvidersHasBeenSet = true;
+       m_verifiedAccessTrustProvidersHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText());
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("lastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText());
       m_lastUpdatedTimeHasBeenSet = true;
+       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode fipsEnabledNode = resultNode.FirstChild("fipsEnabled");
     if(!fipsEnabledNode.IsNull())
     {
       m_fipsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fipsEnabledNode.GetText()).c_str()).c_str());
       m_fipsEnabledHasBeenSet = true;
+       m_fipsEnabledHasBeenSet = true;
     }
     XmlNode cidrEndpointsCustomSubDomainNode = resultNode.FirstChild("cidrEndpointsCustomSubDomain");
     if(!cidrEndpointsCustomSubDomainNode.IsNull())
     {
       m_cidrEndpointsCustomSubDomain = cidrEndpointsCustomSubDomainNode;
       m_cidrEndpointsCustomSubDomainHasBeenSet = true;
+       m_cidrEndpointsCustomSubDomainHasBeenSet = true;
     }
   }
 

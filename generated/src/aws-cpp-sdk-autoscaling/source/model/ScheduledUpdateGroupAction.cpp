@@ -20,26 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-ScheduledUpdateGroupAction::ScheduledUpdateGroupAction() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false),
-    m_scheduledActionARNHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_recurrenceHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
-{
-}
-
 ScheduledUpdateGroupAction::ScheduledUpdateGroupAction(const XmlNode& xmlNode)
-  : ScheduledUpdateGroupAction()
 {
   *this = xmlNode;
 }
@@ -55,66 +36,77 @@ ScheduledUpdateGroupAction& ScheduledUpdateGroupAction::operator =(const XmlNode
     {
       m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
+       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode scheduledActionNameNode = resultNode.FirstChild("ScheduledActionName");
     if(!scheduledActionNameNode.IsNull())
     {
       m_scheduledActionName = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledActionNameNode.GetText());
       m_scheduledActionNameHasBeenSet = true;
+       m_scheduledActionNameHasBeenSet = true;
     }
     XmlNode scheduledActionARNNode = resultNode.FirstChild("ScheduledActionARN");
     if(!scheduledActionARNNode.IsNull())
     {
       m_scheduledActionARN = Aws::Utils::Xml::DecodeEscapedXmlText(scheduledActionARNNode.GetText());
       m_scheduledActionARNHasBeenSet = true;
+       m_scheduledActionARNHasBeenSet = true;
     }
     XmlNode timeNode = resultNode.FirstChild("Time");
     if(!timeNode.IsNull())
     {
       m_time = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timeHasBeenSet = true;
+       m_timeHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
       m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
+       m_endTimeHasBeenSet = true;
     }
     XmlNode recurrenceNode = resultNode.FirstChild("Recurrence");
     if(!recurrenceNode.IsNull())
     {
       m_recurrence = Aws::Utils::Xml::DecodeEscapedXmlText(recurrenceNode.GetText());
       m_recurrenceHasBeenSet = true;
+       m_recurrenceHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
     if(!minSizeNode.IsNull())
     {
       m_minSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minSizeNode.GetText()).c_str()).c_str());
       m_minSizeHasBeenSet = true;
+       m_minSizeHasBeenSet = true;
     }
     XmlNode maxSizeNode = resultNode.FirstChild("MaxSize");
     if(!maxSizeNode.IsNull())
     {
       m_maxSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxSizeNode.GetText()).c_str()).c_str());
       m_maxSizeHasBeenSet = true;
+       m_maxSizeHasBeenSet = true;
     }
     XmlNode desiredCapacityNode = resultNode.FirstChild("DesiredCapacity");
     if(!desiredCapacityNode.IsNull())
     {
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
+       m_desiredCapacityHasBeenSet = true;
     }
     XmlNode timeZoneNode = resultNode.FirstChild("TimeZone");
     if(!timeZoneNode.IsNull())
     {
       m_timeZone = Aws::Utils::Xml::DecodeEscapedXmlText(timeZoneNode.GetText());
       m_timeZoneHasBeenSet = true;
+       m_timeZoneHasBeenSet = true;
     }
   }
 

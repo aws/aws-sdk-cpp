@@ -13,12 +13,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportCertificateRequest::ExportCertificateRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_passphraseHasBeenSet(false)
-{
-}
-
 Aws::String ExportCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

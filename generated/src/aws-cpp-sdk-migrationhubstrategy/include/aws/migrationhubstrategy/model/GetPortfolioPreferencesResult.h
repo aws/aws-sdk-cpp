@@ -31,7 +31,7 @@ namespace Model
   class GetPortfolioPreferencesResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetPortfolioPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,67 +40,68 @@ namespace Model
     /**
      * <p>The classification for application component types.</p>
      */
-    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
-    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationMode = value; }
-    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationMode = std::move(value); }
-    inline GetPortfolioPreferencesResult& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
-    inline GetPortfolioPreferencesResult& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
+    inline ApplicationMode GetApplicationMode() const { return m_applicationMode; }
+    inline void SetApplicationMode(ApplicationMode value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+    inline GetPortfolioPreferencesResult& WithApplicationMode(ApplicationMode value) { SetApplicationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The transformation preferences for non-database applications. </p>
      */
-    inline const ApplicationPreferences& GetApplicationPreferences() const{ return m_applicationPreferences; }
-    inline void SetApplicationPreferences(const ApplicationPreferences& value) { m_applicationPreferences = value; }
-    inline void SetApplicationPreferences(ApplicationPreferences&& value) { m_applicationPreferences = std::move(value); }
-    inline GetPortfolioPreferencesResult& WithApplicationPreferences(const ApplicationPreferences& value) { SetApplicationPreferences(value); return *this;}
-    inline GetPortfolioPreferencesResult& WithApplicationPreferences(ApplicationPreferences&& value) { SetApplicationPreferences(std::move(value)); return *this;}
+    inline const ApplicationPreferences& GetApplicationPreferences() const { return m_applicationPreferences; }
+    template<typename ApplicationPreferencesT = ApplicationPreferences>
+    void SetApplicationPreferences(ApplicationPreferencesT&& value) { m_applicationPreferencesHasBeenSet = true; m_applicationPreferences = std::forward<ApplicationPreferencesT>(value); }
+    template<typename ApplicationPreferencesT = ApplicationPreferences>
+    GetPortfolioPreferencesResult& WithApplicationPreferences(ApplicationPreferencesT&& value) { SetApplicationPreferences(std::forward<ApplicationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The transformation preferences for database applications. </p>
      */
-    inline const DatabasePreferences& GetDatabasePreferences() const{ return m_databasePreferences; }
-    inline void SetDatabasePreferences(const DatabasePreferences& value) { m_databasePreferences = value; }
-    inline void SetDatabasePreferences(DatabasePreferences&& value) { m_databasePreferences = std::move(value); }
-    inline GetPortfolioPreferencesResult& WithDatabasePreferences(const DatabasePreferences& value) { SetDatabasePreferences(value); return *this;}
-    inline GetPortfolioPreferencesResult& WithDatabasePreferences(DatabasePreferences&& value) { SetDatabasePreferences(std::move(value)); return *this;}
+    inline const DatabasePreferences& GetDatabasePreferences() const { return m_databasePreferences; }
+    template<typename DatabasePreferencesT = DatabasePreferences>
+    void SetDatabasePreferences(DatabasePreferencesT&& value) { m_databasePreferencesHasBeenSet = true; m_databasePreferences = std::forward<DatabasePreferencesT>(value); }
+    template<typename DatabasePreferencesT = DatabasePreferences>
+    GetPortfolioPreferencesResult& WithDatabasePreferences(DatabasePreferencesT&& value) { SetDatabasePreferences(std::forward<DatabasePreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rank of business goals based on priority. </p>
      */
-    inline const PrioritizeBusinessGoals& GetPrioritizeBusinessGoals() const{ return m_prioritizeBusinessGoals; }
-    inline void SetPrioritizeBusinessGoals(const PrioritizeBusinessGoals& value) { m_prioritizeBusinessGoals = value; }
-    inline void SetPrioritizeBusinessGoals(PrioritizeBusinessGoals&& value) { m_prioritizeBusinessGoals = std::move(value); }
-    inline GetPortfolioPreferencesResult& WithPrioritizeBusinessGoals(const PrioritizeBusinessGoals& value) { SetPrioritizeBusinessGoals(value); return *this;}
-    inline GetPortfolioPreferencesResult& WithPrioritizeBusinessGoals(PrioritizeBusinessGoals&& value) { SetPrioritizeBusinessGoals(std::move(value)); return *this;}
+    inline const PrioritizeBusinessGoals& GetPrioritizeBusinessGoals() const { return m_prioritizeBusinessGoals; }
+    template<typename PrioritizeBusinessGoalsT = PrioritizeBusinessGoals>
+    void SetPrioritizeBusinessGoals(PrioritizeBusinessGoalsT&& value) { m_prioritizeBusinessGoalsHasBeenSet = true; m_prioritizeBusinessGoals = std::forward<PrioritizeBusinessGoalsT>(value); }
+    template<typename PrioritizeBusinessGoalsT = PrioritizeBusinessGoals>
+    GetPortfolioPreferencesResult& WithPrioritizeBusinessGoals(PrioritizeBusinessGoalsT&& value) { SetPrioritizeBusinessGoals(std::forward<PrioritizeBusinessGoalsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPortfolioPreferencesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPortfolioPreferencesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPortfolioPreferencesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPortfolioPreferencesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ApplicationMode m_applicationMode;
+    ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
+    bool m_applicationModeHasBeenSet = false;
 
     ApplicationPreferences m_applicationPreferences;
+    bool m_applicationPreferencesHasBeenSet = false;
 
     DatabasePreferences m_databasePreferences;
+    bool m_databasePreferencesHasBeenSet = false;
 
     PrioritizeBusinessGoals m_prioritizeBusinessGoals;
+    bool m_prioritizeBusinessGoalsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

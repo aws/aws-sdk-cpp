@@ -12,10 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRevealConfigurationRequest::GetRevealConfigurationRequest()
-{
-}
-
 Aws::String GetRevealConfigurationRequest::SerializePayload() const
 {
   return {};

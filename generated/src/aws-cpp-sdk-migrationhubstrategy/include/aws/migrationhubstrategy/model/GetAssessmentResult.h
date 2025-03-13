@@ -30,7 +30,7 @@ namespace Model
   class GetAssessmentResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetAssessmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,58 +39,58 @@ namespace Model
     /**
      * <p>List of criteria for assessment.</p>
      */
-    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const{ return m_assessmentTargets; }
-    inline void SetAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { m_assessmentTargets = value; }
-    inline void SetAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { m_assessmentTargets = std::move(value); }
-    inline GetAssessmentResult& WithAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { SetAssessmentTargets(value); return *this;}
-    inline GetAssessmentResult& WithAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { SetAssessmentTargets(std::move(value)); return *this;}
-    inline GetAssessmentResult& AddAssessmentTargets(const AssessmentTarget& value) { m_assessmentTargets.push_back(value); return *this; }
-    inline GetAssessmentResult& AddAssessmentTargets(AssessmentTarget&& value) { m_assessmentTargets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const { return m_assessmentTargets; }
+    template<typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
+    void SetAssessmentTargets(AssessmentTargetsT&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = std::forward<AssessmentTargetsT>(value); }
+    template<typename AssessmentTargetsT = Aws::Vector<AssessmentTarget>>
+    GetAssessmentResult& WithAssessmentTargets(AssessmentTargetsT&& value) { SetAssessmentTargets(std::forward<AssessmentTargetsT>(value)); return *this;}
+    template<typename AssessmentTargetsT = AssessmentTarget>
+    GetAssessmentResult& AddAssessmentTargets(AssessmentTargetsT&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.emplace_back(std::forward<AssessmentTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Detailed information about the assessment. </p>
      */
-    inline const DataCollectionDetails& GetDataCollectionDetails() const{ return m_dataCollectionDetails; }
-    inline void SetDataCollectionDetails(const DataCollectionDetails& value) { m_dataCollectionDetails = value; }
-    inline void SetDataCollectionDetails(DataCollectionDetails&& value) { m_dataCollectionDetails = std::move(value); }
-    inline GetAssessmentResult& WithDataCollectionDetails(const DataCollectionDetails& value) { SetDataCollectionDetails(value); return *this;}
-    inline GetAssessmentResult& WithDataCollectionDetails(DataCollectionDetails&& value) { SetDataCollectionDetails(std::move(value)); return *this;}
+    inline const DataCollectionDetails& GetDataCollectionDetails() const { return m_dataCollectionDetails; }
+    template<typename DataCollectionDetailsT = DataCollectionDetails>
+    void SetDataCollectionDetails(DataCollectionDetailsT&& value) { m_dataCollectionDetailsHasBeenSet = true; m_dataCollectionDetails = std::forward<DataCollectionDetailsT>(value); }
+    template<typename DataCollectionDetailsT = DataCollectionDetails>
+    GetAssessmentResult& WithDataCollectionDetails(DataCollectionDetailsT&& value) { SetDataCollectionDetails(std::forward<DataCollectionDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID for the specific assessment task. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetAssessmentResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetAssessmentResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetAssessmentResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetAssessmentResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAssessmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAssessmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAssessmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAssessmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssessmentTarget> m_assessmentTargets;
+    bool m_assessmentTargetsHasBeenSet = false;
 
     DataCollectionDetails m_dataCollectionDetails;
+    bool m_dataCollectionDetailsHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

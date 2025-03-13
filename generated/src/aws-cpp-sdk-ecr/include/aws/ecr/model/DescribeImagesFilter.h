@@ -32,7 +32,7 @@ namespace Model
   class DescribeImagesFilter
   {
   public:
-    AWS_ECR_API DescribeImagesFilter();
+    AWS_ECR_API DescribeImagesFilter() = default;
     AWS_ECR_API DescribeImagesFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API DescribeImagesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * can filter results based on whether they are <code>TAGGED</code> or
      * <code>UNTAGGED</code>.</p>
      */
-    inline const TagStatus& GetTagStatus() const{ return m_tagStatus; }
+    inline TagStatus GetTagStatus() const { return m_tagStatus; }
     inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
-    inline void SetTagStatus(const TagStatus& value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
-    inline void SetTagStatus(TagStatus&& value) { m_tagStatusHasBeenSet = true; m_tagStatus = std::move(value); }
-    inline DescribeImagesFilter& WithTagStatus(const TagStatus& value) { SetTagStatus(value); return *this;}
-    inline DescribeImagesFilter& WithTagStatus(TagStatus&& value) { SetTagStatus(std::move(value)); return *this;}
+    inline void SetTagStatus(TagStatus value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
+    inline DescribeImagesFilter& WithTagStatus(TagStatus value) { SetTagStatus(value); return *this;}
     ///@}
   private:
 
-    TagStatus m_tagStatus;
+    TagStatus m_tagStatus{TagStatus::NOT_SET};
     bool m_tagStatusHasBeenSet = false;
   };
 

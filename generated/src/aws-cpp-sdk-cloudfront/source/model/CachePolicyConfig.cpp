@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicyConfig::CachePolicyConfig() : 
-    m_commentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultTTL(0),
-    m_defaultTTLHasBeenSet(false),
-    m_maxTTL(0),
-    m_maxTTLHasBeenSet(false),
-    m_minTTL(0),
-    m_minTTLHasBeenSet(false),
-    m_parametersInCacheKeyAndForwardedToOriginHasBeenSet(false)
-{
-}
-
 CachePolicyConfig::CachePolicyConfig(const XmlNode& xmlNode)
-  : CachePolicyConfig()
 {
   *this = xmlNode;
 }
@@ -50,36 +36,42 @@ CachePolicyConfig& CachePolicyConfig::operator =(const XmlNode& xmlNode)
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode defaultTTLNode = resultNode.FirstChild("DefaultTTL");
     if(!defaultTTLNode.IsNull())
     {
       m_defaultTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultTTLNode.GetText()).c_str()).c_str());
       m_defaultTTLHasBeenSet = true;
+       m_defaultTTLHasBeenSet = true;
     }
     XmlNode maxTTLNode = resultNode.FirstChild("MaxTTL");
     if(!maxTTLNode.IsNull())
     {
       m_maxTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxTTLNode.GetText()).c_str()).c_str());
       m_maxTTLHasBeenSet = true;
+       m_maxTTLHasBeenSet = true;
     }
     XmlNode minTTLNode = resultNode.FirstChild("MinTTL");
     if(!minTTLNode.IsNull())
     {
       m_minTTL = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTTLNode.GetText()).c_str()).c_str());
       m_minTTLHasBeenSet = true;
+       m_minTTLHasBeenSet = true;
     }
     XmlNode parametersInCacheKeyAndForwardedToOriginNode = resultNode.FirstChild("ParametersInCacheKeyAndForwardedToOrigin");
     if(!parametersInCacheKeyAndForwardedToOriginNode.IsNull())
     {
       m_parametersInCacheKeyAndForwardedToOrigin = parametersInCacheKeyAndForwardedToOriginNode;
       m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true;
+       m_parametersInCacheKeyAndForwardedToOriginHasBeenSet = true;
     }
   }
 

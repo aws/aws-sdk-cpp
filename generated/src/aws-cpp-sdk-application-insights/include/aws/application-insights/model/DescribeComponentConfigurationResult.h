@@ -28,7 +28,7 @@ namespace Model
   class DescribeComponentConfigurationResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationResult();
+    AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationResult() = default;
     AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API DescribeComponentConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>Indicates whether the application component is monitored.</p>
      */
-    inline bool GetMonitor() const{ return m_monitor; }
-    inline void SetMonitor(bool value) { m_monitor = value; }
+    inline bool GetMonitor() const { return m_monitor; }
+    inline void SetMonitor(bool value) { m_monitorHasBeenSet = true; m_monitor = value; }
     inline DescribeComponentConfigurationResult& WithMonitor(bool value) { SetMonitor(value); return *this;}
     ///@}
 
@@ -48,11 +48,9 @@ namespace Model
      * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
      * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
      */
-    inline const Tier& GetTier() const{ return m_tier; }
-    inline void SetTier(const Tier& value) { m_tier = value; }
-    inline void SetTier(Tier&& value) { m_tier = std::move(value); }
-    inline DescribeComponentConfigurationResult& WithTier(const Tier& value) { SetTier(value); return *this;}
-    inline DescribeComponentConfigurationResult& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
+    inline Tier GetTier() const { return m_tier; }
+    inline void SetTier(Tier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline DescribeComponentConfigurationResult& WithTier(Tier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -60,34 +58,34 @@ namespace Model
      * <p>The configuration settings of the component. The value is the escaped JSON of
      * the configuration.</p>
      */
-    inline const Aws::String& GetComponentConfiguration() const{ return m_componentConfiguration; }
-    inline void SetComponentConfiguration(const Aws::String& value) { m_componentConfiguration = value; }
-    inline void SetComponentConfiguration(Aws::String&& value) { m_componentConfiguration = std::move(value); }
-    inline void SetComponentConfiguration(const char* value) { m_componentConfiguration.assign(value); }
-    inline DescribeComponentConfigurationResult& WithComponentConfiguration(const Aws::String& value) { SetComponentConfiguration(value); return *this;}
-    inline DescribeComponentConfigurationResult& WithComponentConfiguration(Aws::String&& value) { SetComponentConfiguration(std::move(value)); return *this;}
-    inline DescribeComponentConfigurationResult& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
+    inline const Aws::String& GetComponentConfiguration() const { return m_componentConfiguration; }
+    template<typename ComponentConfigurationT = Aws::String>
+    void SetComponentConfiguration(ComponentConfigurationT&& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = std::forward<ComponentConfigurationT>(value); }
+    template<typename ComponentConfigurationT = Aws::String>
+    DescribeComponentConfigurationResult& WithComponentConfiguration(ComponentConfigurationT&& value) { SetComponentConfiguration(std::forward<ComponentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeComponentConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeComponentConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeComponentConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeComponentConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_monitor;
+    bool m_monitor{false};
+    bool m_monitorHasBeenSet = false;
 
-    Tier m_tier;
+    Tier m_tier{Tier::NOT_SET};
+    bool m_tierHasBeenSet = false;
 
     Aws::String m_componentConfiguration;
+    bool m_componentConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContainerRecipesRequest::ListContainerRecipesRequest() : 
-    m_owner(Ownership::NOT_SET),
-    m_ownerHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListContainerRecipesRequest::SerializePayload() const
 {
   JsonValue payload;

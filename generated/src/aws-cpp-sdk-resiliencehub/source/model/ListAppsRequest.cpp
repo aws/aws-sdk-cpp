@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAppsRequest::ListAppsRequest() : 
-    m_appArnHasBeenSet(false),
-    m_awsApplicationArnHasBeenSet(false),
-    m_fromLastAssessmentTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false),
-    m_toLastAssessmentTimeHasBeenSet(false)
-{
-}
-
 Aws::String ListAppsRequest::SerializePayload() const
 {
   return {};

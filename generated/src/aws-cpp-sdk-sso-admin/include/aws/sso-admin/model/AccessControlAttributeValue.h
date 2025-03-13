@@ -36,7 +36,7 @@ namespace Model
   class AccessControlAttributeValue
   {
   public:
-    AWS_SSOADMIN_API AccessControlAttributeValue();
+    AWS_SSOADMIN_API AccessControlAttributeValue() = default;
     AWS_SSOADMIN_API AccessControlAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AccessControlAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p>The identity source to use when mapping a specified attribute to IAM Identity
      * Center.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSource() const{ return m_source; }
+    inline const Aws::Vector<Aws::String>& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::Vector<Aws::String>& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::Vector<Aws::String>&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline AccessControlAttributeValue& WithSource(const Aws::Vector<Aws::String>& value) { SetSource(value); return *this;}
-    inline AccessControlAttributeValue& WithSource(Aws::Vector<Aws::String>&& value) { SetSource(std::move(value)); return *this;}
-    inline AccessControlAttributeValue& AddSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source.push_back(value); return *this; }
-    inline AccessControlAttributeValue& AddSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source.push_back(std::move(value)); return *this; }
-    inline AccessControlAttributeValue& AddSource(const char* value) { m_sourceHasBeenSet = true; m_source.push_back(value); return *this; }
+    template<typename SourceT = Aws::Vector<Aws::String>>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::Vector<Aws::String>>
+    AccessControlAttributeValue& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
+    template<typename SourceT = Aws::String>
+    AccessControlAttributeValue& AddSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source.emplace_back(std::forward<SourceT>(value)); return *this; }
     ///@}
   private:
 

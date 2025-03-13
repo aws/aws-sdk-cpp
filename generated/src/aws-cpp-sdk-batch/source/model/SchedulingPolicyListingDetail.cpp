@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-SchedulingPolicyListingDetail::SchedulingPolicyListingDetail() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 SchedulingPolicyListingDetail::SchedulingPolicyListingDetail(JsonView jsonValue)
-  : SchedulingPolicyListingDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SchedulingPolicyListingDetail& SchedulingPolicyListingDetail::operator =(JsonVie
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

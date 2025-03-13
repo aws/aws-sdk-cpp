@@ -18,13 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-EncryptionConfig::EncryptionConfig() : 
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-  : EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

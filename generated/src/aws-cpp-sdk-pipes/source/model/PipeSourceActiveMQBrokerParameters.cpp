@@ -18,18 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeSourceActiveMQBrokerParameters::PipeSourceActiveMQBrokerParameters() : 
-    m_credentialsHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
-{
-}
-
 PipeSourceActiveMQBrokerParameters::PipeSourceActiveMQBrokerParameters(JsonView jsonValue)
-  : PipeSourceActiveMQBrokerParameters()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ PipeSourceActiveMQBrokerParameters& PipeSourceActiveMQBrokerParameters::operator
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueName"))
   {
     m_queueName = jsonValue.GetString("QueueName");
-
     m_queueNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
-
     m_batchSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
-
     m_maximumBatchingWindowInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

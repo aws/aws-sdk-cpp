@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateShareInvitationResult::UpdateShareInvitationResult()
-{
-}
-
 UpdateShareInvitationResult::UpdateShareInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateShareInvitationResult& UpdateShareInvitationResult::operator =(const Aws::
   if(jsonValue.ValueExists("ShareInvitation"))
   {
     m_shareInvitation = jsonValue.GetObject("ShareInvitation");
-
+    m_shareInvitationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

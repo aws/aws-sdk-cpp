@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInsightsAccessScopeContent::NetworkInsightsAccessScopeContent() : 
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_matchPathsHasBeenSet(false),
-    m_excludePathsHasBeenSet(false)
-{
-}
-
 NetworkInsightsAccessScopeContent::NetworkInsightsAccessScopeContent(const XmlNode& xmlNode)
-  : NetworkInsightsAccessScopeContent()
 {
   *this = xmlNode;
 }
@@ -44,30 +36,33 @@ NetworkInsightsAccessScopeContent& NetworkInsightsAccessScopeContent::operator =
     {
       m_networkInsightsAccessScopeId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeIdNode.GetText());
       m_networkInsightsAccessScopeIdHasBeenSet = true;
+       m_networkInsightsAccessScopeIdHasBeenSet = true;
     }
     XmlNode matchPathsNode = resultNode.FirstChild("matchPathSet");
     if(!matchPathsNode.IsNull())
     {
       XmlNode matchPathsMember = matchPathsNode.FirstChild("item");
+      m_matchPathsHasBeenSet = !matchPathsMember.IsNull();
       while(!matchPathsMember.IsNull())
       {
         m_matchPaths.push_back(matchPathsMember);
         matchPathsMember = matchPathsMember.NextNode("item");
       }
 
-      m_matchPathsHasBeenSet = true;
+       m_matchPathsHasBeenSet = true;
     }
     XmlNode excludePathsNode = resultNode.FirstChild("excludePathSet");
     if(!excludePathsNode.IsNull())
     {
       XmlNode excludePathsMember = excludePathsNode.FirstChild("item");
+      m_excludePathsHasBeenSet = !excludePathsMember.IsNull();
       while(!excludePathsMember.IsNull())
       {
         m_excludePaths.push_back(excludePathsMember);
         excludePathsMember = excludePathsMember.NextNode("item");
       }
 
-      m_excludePathsHasBeenSet = true;
+       m_excludePathsHasBeenSet = true;
     }
   }
 

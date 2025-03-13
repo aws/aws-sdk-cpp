@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-GeoMosaicConfigInput::GeoMosaicConfigInput() : 
-    m_algorithmName(AlgorithmNameGeoMosaic::NOT_SET),
-    m_algorithmNameHasBeenSet(false),
-    m_targetBandsHasBeenSet(false)
-{
-}
-
 GeoMosaicConfigInput::GeoMosaicConfigInput(JsonView jsonValue)
-  : GeoMosaicConfigInput()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ GeoMosaicConfigInput& GeoMosaicConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AlgorithmName"))
   {
     m_algorithmName = AlgorithmNameGeoMosaicMapper::GetAlgorithmNameGeoMosaicForName(jsonValue.GetString("AlgorithmName"));
-
     m_algorithmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetBands"))
   {
     Aws::Utils::Array<JsonView> targetBandsJsonList = jsonValue.GetArray("TargetBands");
@@ -49,7 +39,6 @@ GeoMosaicConfigInput& GeoMosaicConfigInput::operator =(JsonView jsonValue)
     }
     m_targetBandsHasBeenSet = true;
   }
-
   return *this;
 }
 

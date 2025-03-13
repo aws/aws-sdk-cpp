@@ -22,7 +22,7 @@ namespace Model
   class GetDeployablePatchSnapshotForInstanceRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetDeployablePatchSnapshotForInstanceRequest();
+    AWS_SSM_API GetDeployablePatchSnapshotForInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The ID of the managed node for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetDeployablePatchSnapshotForInstanceRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,26 +53,24 @@ namespace Model
      * <p>The snapshot ID provided by the user when running
      * <code>AWS-RunPatchBaseline</code>.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the basic information about a patch baseline override.</p>
      */
-    inline const BaselineOverride& GetBaselineOverride() const{ return m_baselineOverride; }
+    inline const BaselineOverride& GetBaselineOverride() const { return m_baselineOverride; }
     inline bool BaselineOverrideHasBeenSet() const { return m_baselineOverrideHasBeenSet; }
-    inline void SetBaselineOverride(const BaselineOverride& value) { m_baselineOverrideHasBeenSet = true; m_baselineOverride = value; }
-    inline void SetBaselineOverride(BaselineOverride&& value) { m_baselineOverrideHasBeenSet = true; m_baselineOverride = std::move(value); }
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithBaselineOverride(const BaselineOverride& value) { SetBaselineOverride(value); return *this;}
-    inline GetDeployablePatchSnapshotForInstanceRequest& WithBaselineOverride(BaselineOverride&& value) { SetBaselineOverride(std::move(value)); return *this;}
+    template<typename BaselineOverrideT = BaselineOverride>
+    void SetBaselineOverride(BaselineOverrideT&& value) { m_baselineOverrideHasBeenSet = true; m_baselineOverride = std::forward<BaselineOverrideT>(value); }
+    template<typename BaselineOverrideT = BaselineOverride>
+    GetDeployablePatchSnapshotForInstanceRequest& WithBaselineOverride(BaselineOverrideT&& value) { SetBaselineOverride(std::forward<BaselineOverrideT>(value)); return *this;}
     ///@}
   private:
 

@@ -38,7 +38,7 @@ namespace Model
   class AccountLimit
   {
   public:
-    AWS_CLOUDFORMATION_API AccountLimit();
+    AWS_CLOUDFORMATION_API AccountLimit() = default;
     AWS_CLOUDFORMATION_API AccountLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API AccountLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,21 +52,19 @@ namespace Model
      * <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> |
      * <code>StackOutputsLimit</code> </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AccountLimit& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AccountLimit& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AccountLimit& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AccountLimit& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that's associated with the account limit name.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline AccountLimit& WithValue(int value) { SetValue(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

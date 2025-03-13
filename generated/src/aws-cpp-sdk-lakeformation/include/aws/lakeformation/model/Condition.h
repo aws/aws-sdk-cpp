@@ -32,7 +32,7 @@ namespace Model
   class Condition
   {
   public:
-    AWS_LAKEFORMATION_API Condition();
+    AWS_LAKEFORMATION_API Condition() = default;
     AWS_LAKEFORMATION_API Condition(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>An expression written based on the Cedar Policy Language used to match the
      * principal attributes.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline Condition& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline Condition& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline Condition& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    Condition& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
   private:
 

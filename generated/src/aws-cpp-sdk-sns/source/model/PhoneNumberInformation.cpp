@@ -20,19 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PhoneNumberInformation::PhoneNumberInformation() : 
-    m_createdAtHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_iso2CountryCodeHasBeenSet(false),
-    m_routeType(RouteType::NOT_SET),
-    m_routeTypeHasBeenSet(false),
-    m_numberCapabilitiesHasBeenSet(false)
-{
-}
-
 PhoneNumberInformation::PhoneNumberInformation(const XmlNode& xmlNode)
-  : PhoneNumberInformation()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(const XmlNode& xmlNod
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAtHasBeenSet = true;
+       m_createdAtHasBeenSet = true;
     }
     XmlNode phoneNumberNode = resultNode.FirstChild("PhoneNumber");
     if(!phoneNumberNode.IsNull())
     {
       m_phoneNumber = Aws::Utils::Xml::DecodeEscapedXmlText(phoneNumberNode.GetText());
       m_phoneNumberHasBeenSet = true;
+       m_phoneNumberHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode iso2CountryCodeNode = resultNode.FirstChild("Iso2CountryCode");
     if(!iso2CountryCodeNode.IsNull())
     {
       m_iso2CountryCode = Aws::Utils::Xml::DecodeEscapedXmlText(iso2CountryCodeNode.GetText());
       m_iso2CountryCodeHasBeenSet = true;
+       m_iso2CountryCodeHasBeenSet = true;
     }
     XmlNode routeTypeNode = resultNode.FirstChild("RouteType");
     if(!routeTypeNode.IsNull())
     {
-      m_routeType = RouteTypeMapper::GetRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(routeTypeNode.GetText()).c_str()).c_str());
+      m_routeType = RouteTypeMapper::GetRouteTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(routeTypeNode.GetText()).c_str()));
       m_routeTypeHasBeenSet = true;
+       m_routeTypeHasBeenSet = true;
     }
     XmlNode numberCapabilitiesNode = resultNode.FirstChild("NumberCapabilities");
     if(!numberCapabilitiesNode.IsNull())
     {
       XmlNode numberCapabilitiesMember = numberCapabilitiesNode.FirstChild("member");
+      m_numberCapabilitiesHasBeenSet = !numberCapabilitiesMember.IsNull();
       while(!numberCapabilitiesMember.IsNull())
       {
         m_numberCapabilities.push_back(NumberCapabilityMapper::GetNumberCapabilityForName(StringUtils::Trim(numberCapabilitiesMember.GetText().c_str())));
         numberCapabilitiesMember = numberCapabilitiesMember.NextNode("member");
       }
 
-      m_numberCapabilitiesHasBeenSet = true;
+       m_numberCapabilitiesHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class FirewallPolicyStatelessCustomActionsDetails
   {
   public:
-    AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails();
+    AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails() = default;
     AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FirewallPolicyStatelessCustomActionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The definition of the custom action.</p>
      */
-    inline const StatelessCustomActionDefinition& GetActionDefinition() const{ return m_actionDefinition; }
+    inline const StatelessCustomActionDefinition& GetActionDefinition() const { return m_actionDefinition; }
     inline bool ActionDefinitionHasBeenSet() const { return m_actionDefinitionHasBeenSet; }
-    inline void SetActionDefinition(const StatelessCustomActionDefinition& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = value; }
-    inline void SetActionDefinition(StatelessCustomActionDefinition&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::move(value); }
-    inline FirewallPolicyStatelessCustomActionsDetails& WithActionDefinition(const StatelessCustomActionDefinition& value) { SetActionDefinition(value); return *this;}
-    inline FirewallPolicyStatelessCustomActionsDetails& WithActionDefinition(StatelessCustomActionDefinition&& value) { SetActionDefinition(std::move(value)); return *this;}
+    template<typename ActionDefinitionT = StatelessCustomActionDefinition>
+    void SetActionDefinition(ActionDefinitionT&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::forward<ActionDefinitionT>(value); }
+    template<typename ActionDefinitionT = StatelessCustomActionDefinition>
+    FirewallPolicyStatelessCustomActionsDetails& WithActionDefinition(ActionDefinitionT&& value) { SetActionDefinition(std::forward<ActionDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the custom action.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline FirewallPolicyStatelessCustomActionsDetails& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline FirewallPolicyStatelessCustomActionsDetails& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline FirewallPolicyStatelessCustomActionsDetails& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    FirewallPolicyStatelessCustomActionsDetails& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
   private:
 

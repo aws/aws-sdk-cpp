@@ -29,7 +29,7 @@ namespace Model
   class GetIceServerConfigResult
   {
   public:
-    AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult() = default;
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The list of ICE server information objects.</p>
      */
-    inline const Aws::Vector<IceServer>& GetIceServerList() const{ return m_iceServerList; }
-    inline void SetIceServerList(const Aws::Vector<IceServer>& value) { m_iceServerList = value; }
-    inline void SetIceServerList(Aws::Vector<IceServer>&& value) { m_iceServerList = std::move(value); }
-    inline GetIceServerConfigResult& WithIceServerList(const Aws::Vector<IceServer>& value) { SetIceServerList(value); return *this;}
-    inline GetIceServerConfigResult& WithIceServerList(Aws::Vector<IceServer>&& value) { SetIceServerList(std::move(value)); return *this;}
-    inline GetIceServerConfigResult& AddIceServerList(const IceServer& value) { m_iceServerList.push_back(value); return *this; }
-    inline GetIceServerConfigResult& AddIceServerList(IceServer&& value) { m_iceServerList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IceServer>& GetIceServerList() const { return m_iceServerList; }
+    template<typename IceServerListT = Aws::Vector<IceServer>>
+    void SetIceServerList(IceServerListT&& value) { m_iceServerListHasBeenSet = true; m_iceServerList = std::forward<IceServerListT>(value); }
+    template<typename IceServerListT = Aws::Vector<IceServer>>
+    GetIceServerConfigResult& WithIceServerList(IceServerListT&& value) { SetIceServerList(std::forward<IceServerListT>(value)); return *this;}
+    template<typename IceServerListT = IceServer>
+    GetIceServerConfigResult& AddIceServerList(IceServerListT&& value) { m_iceServerListHasBeenSet = true; m_iceServerList.emplace_back(std::forward<IceServerListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIceServerConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIceServerConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIceServerConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIceServerConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IceServer> m_iceServerList;
+    bool m_iceServerListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

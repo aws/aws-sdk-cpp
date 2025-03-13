@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImagePipelineResult::GetImagePipelineResult()
-{
-}
-
 GetImagePipelineResult::GetImagePipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ GetImagePipelineResult& GetImagePipelineResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePipeline"))
   {
     m_imagePipeline = jsonValue.GetObject("imagePipeline");
-
+    m_imagePipelineHasBeenSet = true;
   }
-
 
 
   return *this;

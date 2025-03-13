@@ -18,18 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-TargetSummary::TargetSummary() : 
-    m_idHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_reasonCodeHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 TargetSummary::TargetSummary(JsonView jsonValue)
-  : TargetSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TargetSummary& TargetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasonCode"))
   {
     m_reasonCode = jsonValue.GetString("reasonCode");
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TargetStatusMapper::GetTargetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

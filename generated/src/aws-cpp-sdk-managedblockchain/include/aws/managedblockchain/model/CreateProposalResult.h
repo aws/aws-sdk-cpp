@@ -27,7 +27,7 @@ namespace Model
   class CreateProposalResult
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API CreateProposalResult();
+    AWS_MANAGEDBLOCKCHAIN_API CreateProposalResult() = default;
     AWS_MANAGEDBLOCKCHAIN_API CreateProposalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDBLOCKCHAIN_API CreateProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of the proposal.</p>
      */
-    inline const Aws::String& GetProposalId() const{ return m_proposalId; }
-    inline void SetProposalId(const Aws::String& value) { m_proposalId = value; }
-    inline void SetProposalId(Aws::String&& value) { m_proposalId = std::move(value); }
-    inline void SetProposalId(const char* value) { m_proposalId.assign(value); }
-    inline CreateProposalResult& WithProposalId(const Aws::String& value) { SetProposalId(value); return *this;}
-    inline CreateProposalResult& WithProposalId(Aws::String&& value) { SetProposalId(std::move(value)); return *this;}
-    inline CreateProposalResult& WithProposalId(const char* value) { SetProposalId(value); return *this;}
+    inline const Aws::String& GetProposalId() const { return m_proposalId; }
+    template<typename ProposalIdT = Aws::String>
+    void SetProposalId(ProposalIdT&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::forward<ProposalIdT>(value); }
+    template<typename ProposalIdT = Aws::String>
+    CreateProposalResult& WithProposalId(ProposalIdT&& value) { SetProposalId(std::forward<ProposalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProposalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProposalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProposalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProposalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_proposalId;
+    bool m_proposalIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

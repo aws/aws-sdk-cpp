@@ -28,33 +28,35 @@ namespace Model
   class PurchaseReservedNodeOfferingResult
   {
   public:
-    AWS_REDSHIFT_API PurchaseReservedNodeOfferingResult();
+    AWS_REDSHIFT_API PurchaseReservedNodeOfferingResult() = default;
     AWS_REDSHIFT_API PurchaseReservedNodeOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API PurchaseReservedNodeOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ReservedNode& GetReservedNode() const{ return m_reservedNode; }
-    inline void SetReservedNode(const ReservedNode& value) { m_reservedNode = value; }
-    inline void SetReservedNode(ReservedNode&& value) { m_reservedNode = std::move(value); }
-    inline PurchaseReservedNodeOfferingResult& WithReservedNode(const ReservedNode& value) { SetReservedNode(value); return *this;}
-    inline PurchaseReservedNodeOfferingResult& WithReservedNode(ReservedNode&& value) { SetReservedNode(std::move(value)); return *this;}
+    inline const ReservedNode& GetReservedNode() const { return m_reservedNode; }
+    template<typename ReservedNodeT = ReservedNode>
+    void SetReservedNode(ReservedNodeT&& value) { m_reservedNodeHasBeenSet = true; m_reservedNode = std::forward<ReservedNodeT>(value); }
+    template<typename ReservedNodeT = ReservedNode>
+    PurchaseReservedNodeOfferingResult& WithReservedNode(ReservedNodeT&& value) { SetReservedNode(std::forward<ReservedNodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PurchaseReservedNodeOfferingResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PurchaseReservedNodeOfferingResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PurchaseReservedNodeOfferingResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ReservedNode m_reservedNode;
+    bool m_reservedNodeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

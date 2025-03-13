@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLendingAnalysisSummaryResult::GetLendingAnalysisSummaryResult() : 
-    m_jobStatus(JobStatus::NOT_SET)
-{
-}
-
 GetLendingAnalysisSummaryResult::GetLendingAnalysisSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLendingAnalysisSummaryResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetLendingAnalysisSummaryResult& GetLendingAnalysisSummaryResult::operator =(con
   if(jsonValue.ValueExists("DocumentMetadata"))
   {
     m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
-
+    m_documentMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
+    m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
@@ -56,26 +47,25 @@ GetLendingAnalysisSummaryResult& GetLendingAnalysisSummaryResult::operator =(con
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
     }
+    m_warningsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzeLendingModelVersion"))
   {
     m_analyzeLendingModelVersion = jsonValue.GetString("AnalyzeLendingModelVersion");
-
+    m_analyzeLendingModelVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

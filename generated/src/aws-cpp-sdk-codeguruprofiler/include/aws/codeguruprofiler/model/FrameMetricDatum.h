@@ -33,7 +33,7 @@ namespace Model
   class FrameMetricDatum
   {
   public:
-    AWS_CODEGURUPROFILER_API FrameMetricDatum();
+    AWS_CODEGURUPROFILER_API FrameMetricDatum() = default;
     AWS_CODEGURUPROFILER_API FrameMetricDatum(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API FrameMetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
 
     ///@{
     
-    inline const FrameMetric& GetFrameMetric() const{ return m_frameMetric; }
+    inline const FrameMetric& GetFrameMetric() const { return m_frameMetric; }
     inline bool FrameMetricHasBeenSet() const { return m_frameMetricHasBeenSet; }
-    inline void SetFrameMetric(const FrameMetric& value) { m_frameMetricHasBeenSet = true; m_frameMetric = value; }
-    inline void SetFrameMetric(FrameMetric&& value) { m_frameMetricHasBeenSet = true; m_frameMetric = std::move(value); }
-    inline FrameMetricDatum& WithFrameMetric(const FrameMetric& value) { SetFrameMetric(value); return *this;}
-    inline FrameMetricDatum& WithFrameMetric(FrameMetric&& value) { SetFrameMetric(std::move(value)); return *this;}
+    template<typename FrameMetricT = FrameMetric>
+    void SetFrameMetric(FrameMetricT&& value) { m_frameMetricHasBeenSet = true; m_frameMetric = std::forward<FrameMetricT>(value); }
+    template<typename FrameMetricT = FrameMetric>
+    FrameMetricDatum& WithFrameMetric(FrameMetricT&& value) { SetFrameMetric(std::forward<FrameMetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of values that are associated with a frame metric. </p>
      */
-    inline const Aws::Vector<double>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<double>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<double>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<double>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline FrameMetricDatum& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
-    inline FrameMetricDatum& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
+    template<typename ValuesT = Aws::Vector<double>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<double>>
+    FrameMetricDatum& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     inline FrameMetricDatum& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
     ///@}
   private:

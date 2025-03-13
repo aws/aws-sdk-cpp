@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PublishBatchResult::PublishBatchResult()
-{
-}
-
 PublishBatchResult::PublishBatchResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ PublishBatchResult& PublishBatchResult::operator =(const Aws::AmazonWebServiceRe
     if(!successfulNode.IsNull())
     {
       XmlNode successfulMember = successfulNode.FirstChild("member");
+      m_successfulHasBeenSet = !successfulMember.IsNull();
       while(!successfulMember.IsNull())
       {
         m_successful.push_back(successfulMember);
@@ -53,6 +50,7 @@ PublishBatchResult& PublishBatchResult::operator =(const Aws::AmazonWebServiceRe
     if(!failedNode.IsNull())
     {
       XmlNode failedMember = failedNode.FirstChild("member");
+      m_failedHasBeenSet = !failedMember.IsNull();
       while(!failedMember.IsNull())
       {
         m_failed.push_back(failedMember);
@@ -65,6 +63,7 @@ PublishBatchResult& PublishBatchResult::operator =(const Aws::AmazonWebServiceRe
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::PublishBatchResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

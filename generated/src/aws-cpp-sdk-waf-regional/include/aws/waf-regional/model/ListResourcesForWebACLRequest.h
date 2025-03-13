@@ -22,7 +22,7 @@ namespace Model
   class ListResourcesForWebACLRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API ListResourcesForWebACLRequest();
+    AWS_WAFREGIONAL_API ListResourcesForWebACLRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The unique identifier (ID) of the web ACL for which to list the associated
      * resources.</p>
      */
-    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+    inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-    inline ListResourcesForWebACLRequest& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-    inline ListResourcesForWebACLRequest& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-    inline ListResourcesForWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    template<typename WebACLIdT = Aws::String>
+    void SetWebACLId(WebACLIdT&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::forward<WebACLIdT>(value); }
+    template<typename WebACLIdT = Aws::String>
+    ListResourcesForWebACLRequest& WithWebACLId(WebACLIdT&& value) { SetWebACLId(std::forward<WebACLIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,19 +53,17 @@ namespace Model
      * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ListResourcesForWebACLRequest& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

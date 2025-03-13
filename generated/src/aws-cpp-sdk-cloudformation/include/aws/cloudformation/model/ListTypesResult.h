@@ -30,7 +30,7 @@ namespace Model
   class ListTypesResult
   {
   public:
-    AWS_CLOUDFORMATION_API ListTypesResult();
+    AWS_CLOUDFORMATION_API ListTypesResult() = default;
     AWS_CLOUDFORMATION_API ListTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API ListTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>A list of <code>TypeSummary</code> structures that contain information about
      * the specified extensions.</p>
      */
-    inline const Aws::Vector<TypeSummary>& GetTypeSummaries() const{ return m_typeSummaries; }
-    inline void SetTypeSummaries(const Aws::Vector<TypeSummary>& value) { m_typeSummaries = value; }
-    inline void SetTypeSummaries(Aws::Vector<TypeSummary>&& value) { m_typeSummaries = std::move(value); }
-    inline ListTypesResult& WithTypeSummaries(const Aws::Vector<TypeSummary>& value) { SetTypeSummaries(value); return *this;}
-    inline ListTypesResult& WithTypeSummaries(Aws::Vector<TypeSummary>&& value) { SetTypeSummaries(std::move(value)); return *this;}
-    inline ListTypesResult& AddTypeSummaries(const TypeSummary& value) { m_typeSummaries.push_back(value); return *this; }
-    inline ListTypesResult& AddTypeSummaries(TypeSummary&& value) { m_typeSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TypeSummary>& GetTypeSummaries() const { return m_typeSummaries; }
+    template<typename TypeSummariesT = Aws::Vector<TypeSummary>>
+    void SetTypeSummaries(TypeSummariesT&& value) { m_typeSummariesHasBeenSet = true; m_typeSummaries = std::forward<TypeSummariesT>(value); }
+    template<typename TypeSummariesT = Aws::Vector<TypeSummary>>
+    ListTypesResult& WithTypeSummaries(TypeSummariesT&& value) { SetTypeSummaries(std::forward<TypeSummariesT>(value)); return *this;}
+    template<typename TypeSummariesT = TypeSummary>
+    ListTypesResult& AddTypeSummaries(TypeSummariesT&& value) { m_typeSummariesHasBeenSet = true; m_typeSummaries.emplace_back(std::forward<TypeSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,30 +57,31 @@ namespace Model
      * <code>NextToken</code> parameter. If the request returns all results,
      * <code>NextToken</code> is set to <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTypesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListTypesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TypeSummary> m_typeSummaries;
+    bool m_typeSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

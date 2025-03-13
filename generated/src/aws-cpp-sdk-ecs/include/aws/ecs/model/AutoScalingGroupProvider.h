@@ -35,7 +35,7 @@ namespace Model
   class AutoScalingGroupProvider
   {
   public:
-    AWS_ECS_API AutoScalingGroupProvider();
+    AWS_ECS_API AutoScalingGroupProvider() = default;
     AWS_ECS_API AutoScalingGroupProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API AutoScalingGroupProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the Auto Scaling group, or the
      * Auto Scaling group name.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupArn() const{ return m_autoScalingGroupArn; }
+    inline const Aws::String& GetAutoScalingGroupArn() const { return m_autoScalingGroupArn; }
     inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
-    inline void SetAutoScalingGroupArn(const Aws::String& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = value; }
-    inline void SetAutoScalingGroupArn(Aws::String&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::move(value); }
-    inline void SetAutoScalingGroupArn(const char* value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn.assign(value); }
-    inline AutoScalingGroupProvider& WithAutoScalingGroupArn(const Aws::String& value) { SetAutoScalingGroupArn(value); return *this;}
-    inline AutoScalingGroupProvider& WithAutoScalingGroupArn(Aws::String&& value) { SetAutoScalingGroupArn(std::move(value)); return *this;}
-    inline AutoScalingGroupProvider& WithAutoScalingGroupArn(const char* value) { SetAutoScalingGroupArn(value); return *this;}
+    template<typename AutoScalingGroupArnT = Aws::String>
+    void SetAutoScalingGroupArn(AutoScalingGroupArnT&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::forward<AutoScalingGroupArnT>(value); }
+    template<typename AutoScalingGroupArnT = Aws::String>
+    AutoScalingGroupProvider& WithAutoScalingGroupArn(AutoScalingGroupArnT&& value) { SetAutoScalingGroupArn(std::forward<AutoScalingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>The managed scaling settings for the Auto Scaling group capacity
      * provider.</p>
      */
-    inline const ManagedScaling& GetManagedScaling() const{ return m_managedScaling; }
+    inline const ManagedScaling& GetManagedScaling() const { return m_managedScaling; }
     inline bool ManagedScalingHasBeenSet() const { return m_managedScalingHasBeenSet; }
-    inline void SetManagedScaling(const ManagedScaling& value) { m_managedScalingHasBeenSet = true; m_managedScaling = value; }
-    inline void SetManagedScaling(ManagedScaling&& value) { m_managedScalingHasBeenSet = true; m_managedScaling = std::move(value); }
-    inline AutoScalingGroupProvider& WithManagedScaling(const ManagedScaling& value) { SetManagedScaling(value); return *this;}
-    inline AutoScalingGroupProvider& WithManagedScaling(ManagedScaling&& value) { SetManagedScaling(std::move(value)); return *this;}
+    template<typename ManagedScalingT = ManagedScaling>
+    void SetManagedScaling(ManagedScalingT&& value) { m_managedScalingHasBeenSet = true; m_managedScaling = std::forward<ManagedScalingT>(value); }
+    template<typename ManagedScalingT = ManagedScaling>
+    AutoScalingGroupProvider& WithManagedScaling(ManagedScalingT&& value) { SetManagedScaling(std::forward<ManagedScalingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,10 @@ namespace Model
      * termination protection is off, your Amazon EC2 instances aren't protected from
      * termination when the Auto Scaling group scales in.</p>
      */
-    inline const ManagedTerminationProtection& GetManagedTerminationProtection() const{ return m_managedTerminationProtection; }
+    inline ManagedTerminationProtection GetManagedTerminationProtection() const { return m_managedTerminationProtection; }
     inline bool ManagedTerminationProtectionHasBeenSet() const { return m_managedTerminationProtectionHasBeenSet; }
-    inline void SetManagedTerminationProtection(const ManagedTerminationProtection& value) { m_managedTerminationProtectionHasBeenSet = true; m_managedTerminationProtection = value; }
-    inline void SetManagedTerminationProtection(ManagedTerminationProtection&& value) { m_managedTerminationProtectionHasBeenSet = true; m_managedTerminationProtection = std::move(value); }
-    inline AutoScalingGroupProvider& WithManagedTerminationProtection(const ManagedTerminationProtection& value) { SetManagedTerminationProtection(value); return *this;}
-    inline AutoScalingGroupProvider& WithManagedTerminationProtection(ManagedTerminationProtection&& value) { SetManagedTerminationProtection(std::move(value)); return *this;}
+    inline void SetManagedTerminationProtection(ManagedTerminationProtection value) { m_managedTerminationProtectionHasBeenSet = true; m_managedTerminationProtection = value; }
+    inline AutoScalingGroupProvider& WithManagedTerminationProtection(ManagedTerminationProtection value) { SetManagedTerminationProtection(value); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +96,10 @@ namespace Model
      * When you enable this, Amazon ECS manages and gracefully drains the EC2 container
      * instances that are in the Auto Scaling group capacity provider.</p>
      */
-    inline const ManagedDraining& GetManagedDraining() const{ return m_managedDraining; }
+    inline ManagedDraining GetManagedDraining() const { return m_managedDraining; }
     inline bool ManagedDrainingHasBeenSet() const { return m_managedDrainingHasBeenSet; }
-    inline void SetManagedDraining(const ManagedDraining& value) { m_managedDrainingHasBeenSet = true; m_managedDraining = value; }
-    inline void SetManagedDraining(ManagedDraining&& value) { m_managedDrainingHasBeenSet = true; m_managedDraining = std::move(value); }
-    inline AutoScalingGroupProvider& WithManagedDraining(const ManagedDraining& value) { SetManagedDraining(value); return *this;}
-    inline AutoScalingGroupProvider& WithManagedDraining(ManagedDraining&& value) { SetManagedDraining(std::move(value)); return *this;}
+    inline void SetManagedDraining(ManagedDraining value) { m_managedDrainingHasBeenSet = true; m_managedDraining = value; }
+    inline AutoScalingGroupProvider& WithManagedDraining(ManagedDraining value) { SetManagedDraining(value); return *this;}
     ///@}
   private:
 
@@ -115,10 +109,10 @@ namespace Model
     ManagedScaling m_managedScaling;
     bool m_managedScalingHasBeenSet = false;
 
-    ManagedTerminationProtection m_managedTerminationProtection;
+    ManagedTerminationProtection m_managedTerminationProtection{ManagedTerminationProtection::NOT_SET};
     bool m_managedTerminationProtectionHasBeenSet = false;
 
-    ManagedDraining m_managedDraining;
+    ManagedDraining m_managedDraining{ManagedDraining::NOT_SET};
     bool m_managedDrainingHasBeenSet = false;
   };
 

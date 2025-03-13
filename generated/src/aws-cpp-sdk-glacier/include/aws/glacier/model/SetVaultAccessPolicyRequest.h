@@ -25,7 +25,7 @@ namespace Model
   class SetVaultAccessPolicyRequest : public GlacierRequest
   {
   public:
-    AWS_GLACIER_API SetVaultAccessPolicyRequest();
+    AWS_GLACIER_API SetVaultAccessPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,40 +44,36 @@ namespace Model
      * ID associated with the credentials used to sign the request. If you use an
      * account ID, do not include any hyphens ('-') in the ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline SetVaultAccessPolicyRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline SetVaultAccessPolicyRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline SetVaultAccessPolicyRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    SetVaultAccessPolicyRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vault.</p>
      */
-    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+    inline const Aws::String& GetVaultName() const { return m_vaultName; }
     inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
-    inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
-    inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
-    inline SetVaultAccessPolicyRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-    inline SetVaultAccessPolicyRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-    inline SetVaultAccessPolicyRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    template<typename VaultNameT = Aws::String>
+    void SetVaultName(VaultNameT&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::forward<VaultNameT>(value); }
+    template<typename VaultNameT = Aws::String>
+    SetVaultAccessPolicyRequest& WithVaultName(VaultNameT&& value) { SetVaultName(std::forward<VaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The vault access policy as a JSON string.</p>
      */
-    inline const VaultAccessPolicy& GetPolicy() const{ return m_policy; }
+    inline const VaultAccessPolicy& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const VaultAccessPolicy& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(VaultAccessPolicy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline SetVaultAccessPolicyRequest& WithPolicy(const VaultAccessPolicy& value) { SetPolicy(value); return *this;}
-    inline SetVaultAccessPolicyRequest& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    template<typename PolicyT = VaultAccessPolicy>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = VaultAccessPolicy>
+    SetVaultAccessPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

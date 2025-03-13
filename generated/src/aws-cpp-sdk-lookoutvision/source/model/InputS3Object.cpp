@@ -18,15 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-InputS3Object::InputS3Object() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 InputS3Object::InputS3Object(JsonView jsonValue)
-  : InputS3Object()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InputS3Object& InputS3Object::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

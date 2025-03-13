@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterHsmStatus::AwsRedshiftClusterHsmStatus() : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterHsmStatus::AwsRedshiftClusterHsmStatus(JsonView jsonValue)
-  : AwsRedshiftClusterHsmStatus()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsRedshiftClusterHsmStatus& AwsRedshiftClusterHsmStatus::operator =(JsonView js
   if(jsonValue.ValueExists("HsmClientCertificateIdentifier"))
   {
     m_hsmClientCertificateIdentifier = jsonValue.GetString("HsmClientCertificateIdentifier");
-
     m_hsmClientCertificateIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsmConfigurationIdentifier"))
   {
     m_hsmConfigurationIdentifier = jsonValue.GetString("HsmConfigurationIdentifier");
-
     m_hsmConfigurationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

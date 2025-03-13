@@ -34,7 +34,7 @@ namespace Model
   class GetAccountLimitResult
   {
   public:
-    AWS_ROUTE53_API GetAccountLimitResult();
+    AWS_ROUTE53_API GetAccountLimitResult() = default;
     AWS_ROUTE53_API GetAccountLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetAccountLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,11 +46,11 @@ namespace Model
      * the request, the value of <code>Limit</code> is the maximum number of health
      * checks that you can create using the current account.</p>
      */
-    inline const AccountLimit& GetLimit() const{ return m_limit; }
-    inline void SetLimit(const AccountLimit& value) { m_limit = value; }
-    inline void SetLimit(AccountLimit&& value) { m_limit = std::move(value); }
-    inline GetAccountLimitResult& WithLimit(const AccountLimit& value) { SetLimit(value); return *this;}
-    inline GetAccountLimitResult& WithLimit(AccountLimit&& value) { SetLimit(std::move(value)); return *this;}
+    inline const AccountLimit& GetLimit() const { return m_limit; }
+    template<typename LimitT = AccountLimit>
+    void SetLimit(LimitT&& value) { m_limitHasBeenSet = true; m_limit = std::forward<LimitT>(value); }
+    template<typename LimitT = AccountLimit>
+    GetAccountLimitResult& WithLimit(LimitT&& value) { SetLimit(std::forward<LimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +61,29 @@ namespace Model
      * the current number of health checks that you have created using the current
      * account.</p>
      */
-    inline long long GetCount() const{ return m_count; }
-    inline void SetCount(long long value) { m_count = value; }
+    inline long long GetCount() const { return m_count; }
+    inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline GetAccountLimitResult& WithCount(long long value) { SetCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountLimitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountLimit m_limit;
+    bool m_limitHasBeenSet = false;
 
-    long long m_count;
+    long long m_count{0};
+    bool m_countHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

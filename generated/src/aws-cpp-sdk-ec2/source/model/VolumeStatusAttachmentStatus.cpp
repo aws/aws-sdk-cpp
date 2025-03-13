@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus() : 
-    m_ioPerformanceHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 VolumeStatusAttachmentStatus::VolumeStatusAttachmentStatus(const XmlNode& xmlNode)
-  : VolumeStatusAttachmentStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ VolumeStatusAttachmentStatus& VolumeStatusAttachmentStatus::operator =(const Xml
     {
       m_ioPerformance = Aws::Utils::Xml::DecodeEscapedXmlText(ioPerformanceNode.GetText());
       m_ioPerformanceHasBeenSet = true;
+       m_ioPerformanceHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
   }
 

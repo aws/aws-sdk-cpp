@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSMBLocalGroupsRequest::UpdateSMBLocalGroupsRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_sMBLocalGroupsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSMBLocalGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

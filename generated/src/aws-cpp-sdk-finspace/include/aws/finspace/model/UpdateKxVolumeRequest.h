@@ -23,7 +23,7 @@ namespace Model
   class UpdateKxVolumeRequest : public FinspaceRequest
   {
   public:
-    AWS_FINSPACE_API UpdateKxVolumeRequest();
+    AWS_FINSPACE_API UpdateKxVolumeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,56 +39,48 @@ namespace Model
      * <p>A unique identifier for the kdb environment where you created the storage
      * volume. </p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline UpdateKxVolumeRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline UpdateKxVolumeRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline UpdateKxVolumeRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    UpdateKxVolumeRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A unique identifier for the volume.</p>
      */
-    inline const Aws::String& GetVolumeName() const{ return m_volumeName; }
+    inline const Aws::String& GetVolumeName() const { return m_volumeName; }
     inline bool VolumeNameHasBeenSet() const { return m_volumeNameHasBeenSet; }
-    inline void SetVolumeName(const Aws::String& value) { m_volumeNameHasBeenSet = true; m_volumeName = value; }
-    inline void SetVolumeName(Aws::String&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::move(value); }
-    inline void SetVolumeName(const char* value) { m_volumeNameHasBeenSet = true; m_volumeName.assign(value); }
-    inline UpdateKxVolumeRequest& WithVolumeName(const Aws::String& value) { SetVolumeName(value); return *this;}
-    inline UpdateKxVolumeRequest& WithVolumeName(Aws::String&& value) { SetVolumeName(std::move(value)); return *this;}
-    inline UpdateKxVolumeRequest& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
+    template<typename VolumeNameT = Aws::String>
+    void SetVolumeName(VolumeNameT&& value) { m_volumeNameHasBeenSet = true; m_volumeName = std::forward<VolumeNameT>(value); }
+    template<typename VolumeNameT = Aws::String>
+    UpdateKxVolumeRequest& WithVolumeName(VolumeNameT&& value) { SetVolumeName(std::forward<VolumeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the volume. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateKxVolumeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateKxVolumeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateKxVolumeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateKxVolumeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateKxVolumeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateKxVolumeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateKxVolumeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateKxVolumeRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +88,12 @@ namespace Model
      * <p> Specifies the configuration for the Network attached storage (NAS_1) file
      * system volume.</p>
      */
-    inline const KxNAS1Configuration& GetNas1Configuration() const{ return m_nas1Configuration; }
+    inline const KxNAS1Configuration& GetNas1Configuration() const { return m_nas1Configuration; }
     inline bool Nas1ConfigurationHasBeenSet() const { return m_nas1ConfigurationHasBeenSet; }
-    inline void SetNas1Configuration(const KxNAS1Configuration& value) { m_nas1ConfigurationHasBeenSet = true; m_nas1Configuration = value; }
-    inline void SetNas1Configuration(KxNAS1Configuration&& value) { m_nas1ConfigurationHasBeenSet = true; m_nas1Configuration = std::move(value); }
-    inline UpdateKxVolumeRequest& WithNas1Configuration(const KxNAS1Configuration& value) { SetNas1Configuration(value); return *this;}
-    inline UpdateKxVolumeRequest& WithNas1Configuration(KxNAS1Configuration&& value) { SetNas1Configuration(std::move(value)); return *this;}
+    template<typename Nas1ConfigurationT = KxNAS1Configuration>
+    void SetNas1Configuration(Nas1ConfigurationT&& value) { m_nas1ConfigurationHasBeenSet = true; m_nas1Configuration = std::forward<Nas1ConfigurationT>(value); }
+    template<typename Nas1ConfigurationT = KxNAS1Configuration>
+    UpdateKxVolumeRequest& WithNas1Configuration(Nas1ConfigurationT&& value) { SetNas1Configuration(std::forward<Nas1ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

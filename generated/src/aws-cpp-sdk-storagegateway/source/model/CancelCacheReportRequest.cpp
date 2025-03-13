@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelCacheReportRequest::CancelCacheReportRequest() : 
-    m_cacheReportARNHasBeenSet(false)
-{
-}
-
 Aws::String CancelCacheReportRequest::SerializePayload() const
 {
   JsonValue payload;

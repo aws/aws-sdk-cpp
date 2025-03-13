@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ValidateSecurityProfileBehaviorsRequest::ValidateSecurityProfileBehaviorsRequest() : 
-    m_behaviorsHasBeenSet(false)
-{
-}
-
 Aws::String ValidateSecurityProfileBehaviorsRequest::SerializePayload() const
 {
   JsonValue payload;

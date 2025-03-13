@@ -12,14 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ProvisionDeviceRequest::ProvisionDeviceRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ProvisionDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

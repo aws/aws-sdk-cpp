@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UserBucketDetails::UserBucketDetails() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 UserBucketDetails::UserBucketDetails(const XmlNode& xmlNode)
-  : UserBucketDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ UserBucketDetails& UserBucketDetails::operator =(const XmlNode& xmlNode)
     {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
+       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3KeyNode = resultNode.FirstChild("s3Key");
     if(!s3KeyNode.IsNull())
     {
       m_s3Key = Aws::Utils::Xml::DecodeEscapedXmlText(s3KeyNode.GetText());
       m_s3KeyHasBeenSet = true;
+       m_s3KeyHasBeenSet = true;
     }
   }
 

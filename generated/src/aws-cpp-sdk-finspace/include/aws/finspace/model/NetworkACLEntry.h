@@ -39,7 +39,7 @@ namespace Model
   class NetworkACLEntry
   {
   public:
-    AWS_FINSPACE_API NetworkACLEntry();
+    AWS_FINSPACE_API NetworkACLEntry() = default;
     AWS_FINSPACE_API NetworkACLEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API NetworkACLEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * <p> The rule number for the entry. For example <i>100</i>. All the network ACL
      * entries are processed in ascending order by rule number. </p>
      */
-    inline int GetRuleNumber() const{ return m_ruleNumber; }
+    inline int GetRuleNumber() const { return m_ruleNumber; }
     inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
     inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
     inline NetworkACLEntry& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
@@ -60,50 +60,46 @@ namespace Model
     /**
      * <p> The protocol number. A value of <i>-1</i> means all the protocols. </p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline NetworkACLEntry& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline NetworkACLEntry& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline NetworkACLEntry& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    NetworkACLEntry& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether to allow or deny the traffic that matches the rule. </p>
      */
-    inline const RuleAction& GetRuleAction() const{ return m_ruleAction; }
+    inline RuleAction GetRuleAction() const { return m_ruleAction; }
     inline bool RuleActionHasBeenSet() const { return m_ruleActionHasBeenSet; }
-    inline void SetRuleAction(const RuleAction& value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
-    inline void SetRuleAction(RuleAction&& value) { m_ruleActionHasBeenSet = true; m_ruleAction = std::move(value); }
-    inline NetworkACLEntry& WithRuleAction(const RuleAction& value) { SetRuleAction(value); return *this;}
-    inline NetworkACLEntry& WithRuleAction(RuleAction&& value) { SetRuleAction(std::move(value)); return *this;}
+    inline void SetRuleAction(RuleAction value) { m_ruleActionHasBeenSet = true; m_ruleAction = value; }
+    inline NetworkACLEntry& WithRuleAction(RuleAction value) { SetRuleAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The range of ports the rule applies to. </p>
      */
-    inline const PortRange& GetPortRange() const{ return m_portRange; }
+    inline const PortRange& GetPortRange() const { return m_portRange; }
     inline bool PortRangeHasBeenSet() const { return m_portRangeHasBeenSet; }
-    inline void SetPortRange(const PortRange& value) { m_portRangeHasBeenSet = true; m_portRange = value; }
-    inline void SetPortRange(PortRange&& value) { m_portRangeHasBeenSet = true; m_portRange = std::move(value); }
-    inline NetworkACLEntry& WithPortRange(const PortRange& value) { SetPortRange(value); return *this;}
-    inline NetworkACLEntry& WithPortRange(PortRange&& value) { SetPortRange(std::move(value)); return *this;}
+    template<typename PortRangeT = PortRange>
+    void SetPortRange(PortRangeT&& value) { m_portRangeHasBeenSet = true; m_portRange = std::forward<PortRangeT>(value); }
+    template<typename PortRangeT = PortRange>
+    NetworkACLEntry& WithPortRange(PortRangeT&& value) { SetPortRange(std::forward<PortRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Defines the ICMP protocol that consists of the ICMP type and code. </p>
      */
-    inline const IcmpTypeCode& GetIcmpTypeCode() const{ return m_icmpTypeCode; }
+    inline const IcmpTypeCode& GetIcmpTypeCode() const { return m_icmpTypeCode; }
     inline bool IcmpTypeCodeHasBeenSet() const { return m_icmpTypeCodeHasBeenSet; }
-    inline void SetIcmpTypeCode(const IcmpTypeCode& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = value; }
-    inline void SetIcmpTypeCode(IcmpTypeCode&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::move(value); }
-    inline NetworkACLEntry& WithIcmpTypeCode(const IcmpTypeCode& value) { SetIcmpTypeCode(value); return *this;}
-    inline NetworkACLEntry& WithIcmpTypeCode(IcmpTypeCode&& value) { SetIcmpTypeCode(std::move(value)); return *this;}
+    template<typename IcmpTypeCodeT = IcmpTypeCode>
+    void SetIcmpTypeCode(IcmpTypeCodeT&& value) { m_icmpTypeCodeHasBeenSet = true; m_icmpTypeCode = std::forward<IcmpTypeCodeT>(value); }
+    template<typename IcmpTypeCodeT = IcmpTypeCode>
+    NetworkACLEntry& WithIcmpTypeCode(IcmpTypeCodeT&& value) { SetIcmpTypeCode(std::forward<IcmpTypeCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,24 +109,22 @@ namespace Model
      * form. For example, if you specify <code>100.68.0.18/18</code>, we modify it to
      * <code>100.68.0.0/18</code>. </p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline NetworkACLEntry& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline NetworkACLEntry& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline NetworkACLEntry& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    NetworkACLEntry& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
   private:
 
-    int m_ruleNumber;
+    int m_ruleNumber{0};
     bool m_ruleNumberHasBeenSet = false;
 
     Aws::String m_protocol;
     bool m_protocolHasBeenSet = false;
 
-    RuleAction m_ruleAction;
+    RuleAction m_ruleAction{RuleAction::NOT_SET};
     bool m_ruleActionHasBeenSet = false;
 
     PortRange m_portRange;

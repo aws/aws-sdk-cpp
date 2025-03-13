@@ -18,18 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-SdkConfigurationProperty::SdkConfigurationProperty() : 
-    m_nameHasBeenSet(false),
-    m_friendlyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_required(false),
-    m_requiredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 SdkConfigurationProperty::SdkConfigurationProperty(JsonView jsonValue)
-  : SdkConfigurationProperty()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SdkConfigurationProperty& SdkConfigurationProperty::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("friendlyName"))
   {
     m_friendlyName = jsonValue.GetString("friendlyName");
-
     m_friendlyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

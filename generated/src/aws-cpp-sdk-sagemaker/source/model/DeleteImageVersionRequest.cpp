@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImageVersionRequest::DeleteImageVersionRequest() : 
-    m_imageNameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImageVersionRequest::SerializePayload() const
 {
   JsonValue payload;

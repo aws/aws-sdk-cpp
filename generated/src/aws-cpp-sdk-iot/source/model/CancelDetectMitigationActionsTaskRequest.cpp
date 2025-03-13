@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelDetectMitigationActionsTaskRequest::CancelDetectMitigationActionsTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelDetectMitigationActionsTaskRequest::SerializePayload() const
 {
   return {};

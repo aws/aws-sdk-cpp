@@ -22,7 +22,7 @@ namespace Model
   class DetectSyntaxRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API DetectSyntaxRequest();
+    AWS_COMPREHEND_API DetectSyntaxRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>A UTF-8 string. The maximum string size is 5 KB.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline DetectSyntaxRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline DetectSyntaxRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline DetectSyntaxRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DetectSyntaxRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,19 +53,17 @@ namespace Model
      * following languages supported by Amazon Comprehend: German ("de"), English
      * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
-    inline const SyntaxLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline SyntaxLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const SyntaxLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(SyntaxLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline DetectSyntaxRequest& WithLanguageCode(const SyntaxLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline DetectSyntaxRequest& WithLanguageCode(SyntaxLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(SyntaxLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline DetectSyntaxRequest& WithLanguageCode(SyntaxLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    SyntaxLanguageCode m_languageCode;
+    SyntaxLanguageCode m_languageCode{SyntaxLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
   };
 

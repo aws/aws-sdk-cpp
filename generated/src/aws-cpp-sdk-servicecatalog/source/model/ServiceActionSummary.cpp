@@ -18,17 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ServiceActionSummary::ServiceActionSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_definitionType(ServiceActionDefinitionType::NOT_SET),
-    m_definitionTypeHasBeenSet(false)
-{
-}
-
 ServiceActionSummary::ServiceActionSummary(JsonView jsonValue)
-  : ServiceActionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ServiceActionSummary& ServiceActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefinitionType"))
   {
     m_definitionType = ServiceActionDefinitionTypeMapper::GetServiceActionDefinitionTypeForName(jsonValue.GetString("DefinitionType"));
-
     m_definitionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

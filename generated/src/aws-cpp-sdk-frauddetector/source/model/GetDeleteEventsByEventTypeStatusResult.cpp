@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeleteEventsByEventTypeStatusResult::GetDeleteEventsByEventTypeStatusResult() : 
-    m_eventsDeletionStatus(AsyncJobStatus::NOT_SET)
-{
-}
-
 GetDeleteEventsByEventTypeStatusResult::GetDeleteEventsByEventTypeStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDeleteEventsByEventTypeStatusResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetDeleteEventsByEventTypeStatusResult& GetDeleteEventsByEventTypeStatusResult::
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
+    m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventsDeletionStatus"))
   {
     m_eventsDeletionStatus = AsyncJobStatusMapper::GetAsyncJobStatusForName(jsonValue.GetString("eventsDeletionStatus"));
-
+    m_eventsDeletionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

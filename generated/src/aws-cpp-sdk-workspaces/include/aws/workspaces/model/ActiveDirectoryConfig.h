@@ -31,7 +31,7 @@ namespace Model
   class ActiveDirectoryConfig
   {
   public:
-    AWS_WORKSPACES_API ActiveDirectoryConfig();
+    AWS_WORKSPACES_API ActiveDirectoryConfig() = default;
     AWS_WORKSPACES_API ActiveDirectoryConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API ActiveDirectoryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline ActiveDirectoryConfig& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline ActiveDirectoryConfig& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline ActiveDirectoryConfig& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ActiveDirectoryConfig& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the secret ARN on the service account.</p>
      */
-    inline const Aws::String& GetServiceAccountSecretArn() const{ return m_serviceAccountSecretArn; }
+    inline const Aws::String& GetServiceAccountSecretArn() const { return m_serviceAccountSecretArn; }
     inline bool ServiceAccountSecretArnHasBeenSet() const { return m_serviceAccountSecretArnHasBeenSet; }
-    inline void SetServiceAccountSecretArn(const Aws::String& value) { m_serviceAccountSecretArnHasBeenSet = true; m_serviceAccountSecretArn = value; }
-    inline void SetServiceAccountSecretArn(Aws::String&& value) { m_serviceAccountSecretArnHasBeenSet = true; m_serviceAccountSecretArn = std::move(value); }
-    inline void SetServiceAccountSecretArn(const char* value) { m_serviceAccountSecretArnHasBeenSet = true; m_serviceAccountSecretArn.assign(value); }
-    inline ActiveDirectoryConfig& WithServiceAccountSecretArn(const Aws::String& value) { SetServiceAccountSecretArn(value); return *this;}
-    inline ActiveDirectoryConfig& WithServiceAccountSecretArn(Aws::String&& value) { SetServiceAccountSecretArn(std::move(value)); return *this;}
-    inline ActiveDirectoryConfig& WithServiceAccountSecretArn(const char* value) { SetServiceAccountSecretArn(value); return *this;}
+    template<typename ServiceAccountSecretArnT = Aws::String>
+    void SetServiceAccountSecretArn(ServiceAccountSecretArnT&& value) { m_serviceAccountSecretArnHasBeenSet = true; m_serviceAccountSecretArn = std::forward<ServiceAccountSecretArnT>(value); }
+    template<typename ServiceAccountSecretArnT = Aws::String>
+    ActiveDirectoryConfig& WithServiceAccountSecretArn(ServiceAccountSecretArnT&& value) { SetServiceAccountSecretArn(std::forward<ServiceAccountSecretArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,32 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RadarChartConfiguration::RadarChartConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_shape(RadarChartShape::NOT_SET),
-    m_shapeHasBeenSet(false),
-    m_baseSeriesSettingsHasBeenSet(false),
-    m_startAngle(0.0),
-    m_startAngleHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_alternateBandColorsVisibility(Visibility::NOT_SET),
-    m_alternateBandColorsVisibilityHasBeenSet(false),
-    m_alternateBandEvenColorHasBeenSet(false),
-    m_alternateBandOddColorHasBeenSet(false),
-    m_categoryAxisHasBeenSet(false),
-    m_categoryLabelOptionsHasBeenSet(false),
-    m_colorAxisHasBeenSet(false),
-    m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_axesRangeScale(RadarChartAxesRangeScale::NOT_SET),
-    m_axesRangeScaleHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 RadarChartConfiguration::RadarChartConfiguration(JsonView jsonValue)
-  : RadarChartConfiguration()
 {
   *this = jsonValue;
 }
@@ -53,115 +28,83 @@ RadarChartConfiguration& RadarChartConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shape"))
   {
     m_shape = RadarChartShapeMapper::GetRadarChartShapeForName(jsonValue.GetString("Shape"));
-
     m_shapeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseSeriesSettings"))
   {
     m_baseSeriesSettings = jsonValue.GetObject("BaseSeriesSettings");
-
     m_baseSeriesSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartAngle"))
   {
     m_startAngle = jsonValue.GetDouble("StartAngle");
-
     m_startAngleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlternateBandColorsVisibility"))
   {
     m_alternateBandColorsVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("AlternateBandColorsVisibility"));
-
     m_alternateBandColorsVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlternateBandEvenColor"))
   {
     m_alternateBandEvenColor = jsonValue.GetString("AlternateBandEvenColor");
-
     m_alternateBandEvenColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlternateBandOddColor"))
   {
     m_alternateBandOddColor = jsonValue.GetString("AlternateBandOddColor");
-
     m_alternateBandOddColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryAxis"))
   {
     m_categoryAxis = jsonValue.GetObject("CategoryAxis");
-
     m_categoryAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelOptions"))
   {
     m_categoryLabelOptions = jsonValue.GetObject("CategoryLabelOptions");
-
     m_categoryLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorAxis"))
   {
     m_colorAxis = jsonValue.GetObject("ColorAxis");
-
     m_colorAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorLabelOptions"))
   {
     m_colorLabelOptions = jsonValue.GetObject("ColorLabelOptions");
-
     m_colorLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AxesRangeScale"))
   {
     m_axesRangeScale = RadarChartAxesRangeScaleMapper::GetRadarChartAxesRangeScaleForName(jsonValue.GetString("AxesRangeScale"));
-
     m_axesRangeScaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

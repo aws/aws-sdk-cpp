@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGuardrailResult::UpdateGuardrailResult()
-{
-}
-
 UpdateGuardrailResult::UpdateGuardrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ UpdateGuardrailResult& UpdateGuardrailResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("guardrailId"))
   {
     m_guardrailId = jsonValue.GetString("guardrailId");
-
+    m_guardrailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailArn"))
   {
     m_guardrailArn = jsonValue.GetString("guardrailArn");
-
+    m_guardrailArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
+    m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

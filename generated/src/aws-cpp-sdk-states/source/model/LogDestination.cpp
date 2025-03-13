@@ -18,13 +18,7 @@ namespace SFN
 namespace Model
 {
 
-LogDestination::LogDestination() : 
-    m_cloudWatchLogsLogGroupHasBeenSet(false)
-{
-}
-
 LogDestination::LogDestination(JsonView jsonValue)
-  : LogDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LogDestination& LogDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cloudWatchLogsLogGroup"))
   {
     m_cloudWatchLogsLogGroup = jsonValue.GetObject("cloudWatchLogsLogGroup");
-
     m_cloudWatchLogsLogGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

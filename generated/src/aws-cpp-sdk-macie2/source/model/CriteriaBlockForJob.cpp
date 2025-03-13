@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-CriteriaBlockForJob::CriteriaBlockForJob() : 
-    m_andHasBeenSet(false)
-{
-}
-
 CriteriaBlockForJob::CriteriaBlockForJob(JsonView jsonValue)
-  : CriteriaBlockForJob()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CriteriaBlockForJob& CriteriaBlockForJob::operator =(JsonView jsonValue)
     }
     m_andHasBeenSet = true;
   }
-
   return *this;
 }
 

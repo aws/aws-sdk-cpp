@@ -28,7 +28,7 @@ namespace Model
   class CreateDirectConnectGatewayAssociationProposalResult
   {
   public:
-    AWS_DIRECTCONNECT_API CreateDirectConnectGatewayAssociationProposalResult();
+    AWS_DIRECTCONNECT_API CreateDirectConnectGatewayAssociationProposalResult() = default;
     AWS_DIRECTCONNECT_API CreateDirectConnectGatewayAssociationProposalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API CreateDirectConnectGatewayAssociationProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the Direct Connect gateway proposal.</p>
      */
-    inline const DirectConnectGatewayAssociationProposal& GetDirectConnectGatewayAssociationProposal() const{ return m_directConnectGatewayAssociationProposal; }
-    inline void SetDirectConnectGatewayAssociationProposal(const DirectConnectGatewayAssociationProposal& value) { m_directConnectGatewayAssociationProposal = value; }
-    inline void SetDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposal&& value) { m_directConnectGatewayAssociationProposal = std::move(value); }
-    inline CreateDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociationProposal(const DirectConnectGatewayAssociationProposal& value) { SetDirectConnectGatewayAssociationProposal(value); return *this;}
-    inline CreateDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposal&& value) { SetDirectConnectGatewayAssociationProposal(std::move(value)); return *this;}
+    inline const DirectConnectGatewayAssociationProposal& GetDirectConnectGatewayAssociationProposal() const { return m_directConnectGatewayAssociationProposal; }
+    template<typename DirectConnectGatewayAssociationProposalT = DirectConnectGatewayAssociationProposal>
+    void SetDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposalT&& value) { m_directConnectGatewayAssociationProposalHasBeenSet = true; m_directConnectGatewayAssociationProposal = std::forward<DirectConnectGatewayAssociationProposalT>(value); }
+    template<typename DirectConnectGatewayAssociationProposalT = DirectConnectGatewayAssociationProposal>
+    CreateDirectConnectGatewayAssociationProposalResult& WithDirectConnectGatewayAssociationProposal(DirectConnectGatewayAssociationProposalT&& value) { SetDirectConnectGatewayAssociationProposal(std::forward<DirectConnectGatewayAssociationProposalT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDirectConnectGatewayAssociationProposalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDirectConnectGatewayAssociationProposalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDirectConnectGatewayAssociationProposalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDirectConnectGatewayAssociationProposalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DirectConnectGatewayAssociationProposal m_directConnectGatewayAssociationProposal;
+    bool m_directConnectGatewayAssociationProposalHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

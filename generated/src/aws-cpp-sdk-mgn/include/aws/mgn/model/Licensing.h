@@ -29,7 +29,7 @@ namespace Model
   class Licensing
   {
   public:
-    AWS_MGN_API Licensing();
+    AWS_MGN_API Licensing() = default;
     AWS_MGN_API Licensing(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Licensing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Configure BYOL OS licensing.</p>
      */
-    inline bool GetOsByol() const{ return m_osByol; }
+    inline bool GetOsByol() const { return m_osByol; }
     inline bool OsByolHasBeenSet() const { return m_osByolHasBeenSet; }
     inline void SetOsByol(bool value) { m_osByolHasBeenSet = true; m_osByol = value; }
     inline Licensing& WithOsByol(bool value) { SetOsByol(value); return *this;}
     ///@}
   private:
 
-    bool m_osByol;
+    bool m_osByol{false};
     bool m_osByolHasBeenSet = false;
   };
 

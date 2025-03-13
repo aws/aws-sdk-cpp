@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CastColumnTypeOperation::CastColumnTypeOperation() : 
-    m_columnNameHasBeenSet(false),
-    m_newColumnType(ColumnDataType::NOT_SET),
-    m_newColumnTypeHasBeenSet(false),
-    m_subType(ColumnDataSubType::NOT_SET),
-    m_subTypeHasBeenSet(false),
-    m_formatHasBeenSet(false)
-{
-}
-
 CastColumnTypeOperation::CastColumnTypeOperation(JsonView jsonValue)
-  : CastColumnTypeOperation()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CastColumnTypeOperation& CastColumnTypeOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewColumnType"))
   {
     m_newColumnType = ColumnDataTypeMapper::GetColumnDataTypeForName(jsonValue.GetString("NewColumnType"));
-
     m_newColumnTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubType"))
   {
     m_subType = ColumnDataSubTypeMapper::GetColumnDataSubTypeForName(jsonValue.GetString("SubType"));
-
     m_subTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   return *this;
 }
 

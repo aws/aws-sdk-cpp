@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-WorkflowParameter::WorkflowParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 WorkflowParameter::WorkflowParameter(JsonView jsonValue)
-  : WorkflowParameter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WorkflowParameter& WorkflowParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("value");
@@ -48,7 +39,6 @@ WorkflowParameter& WorkflowParameter::operator =(JsonView jsonValue)
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

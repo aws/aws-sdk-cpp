@@ -32,7 +32,7 @@ namespace Model
   class DataViewErrorInfo
   {
   public:
-    AWS_FINSPACEDATA_API DataViewErrorInfo();
+    AWS_FINSPACEDATA_API DataViewErrorInfo() = default;
     AWS_FINSPACEDATA_API DataViewErrorInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API DataViewErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The text of the error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline DataViewErrorInfo& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DataViewErrorInfo& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DataViewErrorInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DataViewErrorInfo& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,17 @@ namespace Model
      * <p> <code>USER_RECOVERABLE</code> – A user recoverable error has occurred.</p>
      * </li> </ul>
      */
-    inline const ErrorCategory& GetErrorCategory() const{ return m_errorCategory; }
+    inline ErrorCategory GetErrorCategory() const { return m_errorCategory; }
     inline bool ErrorCategoryHasBeenSet() const { return m_errorCategoryHasBeenSet; }
-    inline void SetErrorCategory(const ErrorCategory& value) { m_errorCategoryHasBeenSet = true; m_errorCategory = value; }
-    inline void SetErrorCategory(ErrorCategory&& value) { m_errorCategoryHasBeenSet = true; m_errorCategory = std::move(value); }
-    inline DataViewErrorInfo& WithErrorCategory(const ErrorCategory& value) { SetErrorCategory(value); return *this;}
-    inline DataViewErrorInfo& WithErrorCategory(ErrorCategory&& value) { SetErrorCategory(std::move(value)); return *this;}
+    inline void SetErrorCategory(ErrorCategory value) { m_errorCategoryHasBeenSet = true; m_errorCategory = value; }
+    inline DataViewErrorInfo& WithErrorCategory(ErrorCategory value) { SetErrorCategory(value); return *this;}
     ///@}
   private:
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    ErrorCategory m_errorCategory;
+    ErrorCategory m_errorCategory{ErrorCategory::NOT_SET};
     bool m_errorCategoryHasBeenSet = false;
   };
 

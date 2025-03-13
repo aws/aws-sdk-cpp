@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListProfileObjectsRequest::ListProfileObjectsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_objectFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListProfileObjectsRequest::SerializePayload() const
 {
   JsonValue payload;

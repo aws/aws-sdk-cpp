@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-IpCountry::IpCountry() : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 IpCountry::IpCountry(JsonView jsonValue)
-  : IpCountry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IpCountry& IpCountry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class FileFormat
   {
   public:
-    AWS_IOTSITEWISE_API FileFormat();
+    AWS_IOTSITEWISE_API FileFormat() = default;
     AWS_IOTSITEWISE_API FileFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API FileFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The file is in .CSV format.</p>
      */
-    inline const Csv& GetCsv() const{ return m_csv; }
+    inline const Csv& GetCsv() const { return m_csv; }
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-    inline void SetCsv(const Csv& value) { m_csvHasBeenSet = true; m_csv = value; }
-    inline void SetCsv(Csv&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-    inline FileFormat& WithCsv(const Csv& value) { SetCsv(value); return *this;}
-    inline FileFormat& WithCsv(Csv&& value) { SetCsv(std::move(value)); return *this;}
+    template<typename CsvT = Csv>
+    void SetCsv(CsvT&& value) { m_csvHasBeenSet = true; m_csv = std::forward<CsvT>(value); }
+    template<typename CsvT = Csv>
+    FileFormat& WithCsv(CsvT&& value) { SetCsv(std::forward<CsvT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file is in parquet format.</p>
      */
-    inline const Parquet& GetParquet() const{ return m_parquet; }
+    inline const Parquet& GetParquet() const { return m_parquet; }
     inline bool ParquetHasBeenSet() const { return m_parquetHasBeenSet; }
-    inline void SetParquet(const Parquet& value) { m_parquetHasBeenSet = true; m_parquet = value; }
-    inline void SetParquet(Parquet&& value) { m_parquetHasBeenSet = true; m_parquet = std::move(value); }
-    inline FileFormat& WithParquet(const Parquet& value) { SetParquet(value); return *this;}
-    inline FileFormat& WithParquet(Parquet&& value) { SetParquet(std::move(value)); return *this;}
+    template<typename ParquetT = Parquet>
+    void SetParquet(ParquetT&& value) { m_parquetHasBeenSet = true; m_parquet = std::forward<ParquetT>(value); }
+    template<typename ParquetT = Parquet>
+    FileFormat& WithParquet(ParquetT&& value) { SetParquet(std::forward<ParquetT>(value)); return *this;}
     ///@}
   private:
 

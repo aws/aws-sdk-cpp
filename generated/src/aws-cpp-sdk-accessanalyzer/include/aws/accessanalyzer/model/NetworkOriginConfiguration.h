@@ -40,7 +40,7 @@ namespace Model
   class NetworkOriginConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API NetworkOriginConfiguration();
+    AWS_ACCESSANALYZER_API NetworkOriginConfiguration() = default;
     AWS_ACCESSANALYZER_API NetworkOriginConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API NetworkOriginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
 
     ///@{
     
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline NetworkOriginConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline NetworkOriginConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    NetworkOriginConfiguration& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <p>The configuration for the Amazon S3 access point or multi-region access point
      * with an <code>Internet</code> origin.</p>
      */
-    inline const InternetConfiguration& GetInternetConfiguration() const{ return m_internetConfiguration; }
+    inline const InternetConfiguration& GetInternetConfiguration() const { return m_internetConfiguration; }
     inline bool InternetConfigurationHasBeenSet() const { return m_internetConfigurationHasBeenSet; }
-    inline void SetInternetConfiguration(const InternetConfiguration& value) { m_internetConfigurationHasBeenSet = true; m_internetConfiguration = value; }
-    inline void SetInternetConfiguration(InternetConfiguration&& value) { m_internetConfigurationHasBeenSet = true; m_internetConfiguration = std::move(value); }
-    inline NetworkOriginConfiguration& WithInternetConfiguration(const InternetConfiguration& value) { SetInternetConfiguration(value); return *this;}
-    inline NetworkOriginConfiguration& WithInternetConfiguration(InternetConfiguration&& value) { SetInternetConfiguration(std::move(value)); return *this;}
+    template<typename InternetConfigurationT = InternetConfiguration>
+    void SetInternetConfiguration(InternetConfigurationT&& value) { m_internetConfigurationHasBeenSet = true; m_internetConfiguration = std::forward<InternetConfigurationT>(value); }
+    template<typename InternetConfigurationT = InternetConfiguration>
+    NetworkOriginConfiguration& WithInternetConfiguration(InternetConfigurationT&& value) { SetInternetConfiguration(std::forward<InternetConfigurationT>(value)); return *this;}
     ///@}
   private:
 

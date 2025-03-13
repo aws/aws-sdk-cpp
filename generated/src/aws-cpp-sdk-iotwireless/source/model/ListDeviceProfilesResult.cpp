@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDeviceProfilesResult::ListDeviceProfilesResult()
-{
-}
-
 ListDeviceProfilesResult::ListDeviceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListDeviceProfilesResult& ListDeviceProfilesResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceProfileList"))
   {
     Aws::Utils::Array<JsonView> deviceProfileListJsonList = jsonValue.GetArray("DeviceProfileList");
@@ -42,14 +37,15 @@ ListDeviceProfilesResult& ListDeviceProfilesResult::operator =(const Aws::Amazon
     {
       m_deviceProfileList.push_back(deviceProfileListJsonList[deviceProfileListIndex].AsObject());
     }
+    m_deviceProfileListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

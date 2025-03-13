@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLanguageModelRequest::DescribeLanguageModelRequest() : 
-    m_modelNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLanguageModelRequest::SerializePayload() const
 {
   JsonValue payload;

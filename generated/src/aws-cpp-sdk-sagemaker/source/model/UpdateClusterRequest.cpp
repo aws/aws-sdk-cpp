@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterRequest::UpdateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false),
-    m_nodeRecovery(ClusterNodeRecovery::NOT_SET),
-    m_nodeRecoveryHasBeenSet(false),
-    m_instanceGroupsToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

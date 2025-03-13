@@ -12,13 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTrafficPoliciesRequest::ListTrafficPoliciesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListTrafficPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-Grant::Grant() : 
-    m_authorizationCodeHasBeenSet(false),
-    m_jwtBearerHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_tokenExchangeHasBeenSet(false)
-{
-}
-
 Grant::Grant(JsonView jsonValue)
-  : Grant()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Grant& Grant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AuthorizationCode"))
   {
     m_authorizationCode = jsonValue.GetObject("AuthorizationCode");
-
     m_authorizationCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JwtBearer"))
   {
     m_jwtBearer = jsonValue.GetObject("JwtBearer");
-
     m_jwtBearerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshToken"))
   {
     m_refreshToken = jsonValue.GetObject("RefreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenExchange"))
   {
     m_tokenExchange = jsonValue.GetObject("TokenExchange");
-
     m_tokenExchangeHasBeenSet = true;
   }
-
   return *this;
 }
 

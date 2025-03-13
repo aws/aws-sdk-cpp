@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteWorkflowStepGroupRequest::DeleteWorkflowStepGroupRequest() : 
-    m_workflowIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkflowStepGroupRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-SqlApplicationConfiguration::SqlApplicationConfiguration() : 
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_referenceDataSourcesHasBeenSet(false)
-{
-}
-
 SqlApplicationConfiguration::SqlApplicationConfiguration(JsonView jsonValue)
-  : SqlApplicationConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ SqlApplicationConfiguration& SqlApplicationConfiguration::operator =(JsonView js
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
@@ -52,7 +43,6 @@ SqlApplicationConfiguration& SqlApplicationConfiguration::operator =(JsonView js
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceDataSources"))
   {
     Aws::Utils::Array<JsonView> referenceDataSourcesJsonList = jsonValue.GetArray("ReferenceDataSources");
@@ -62,7 +52,6 @@ SqlApplicationConfiguration& SqlApplicationConfiguration::operator =(JsonView js
     }
     m_referenceDataSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

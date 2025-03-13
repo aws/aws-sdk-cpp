@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AudioExtractionConfiguration::AudioExtractionConfiguration() : 
-    m_audioExtractionStatus(AudioExtractionStatus::NOT_SET),
-    m_audioExtractionStatusHasBeenSet(false)
-{
-}
-
 AudioExtractionConfiguration::AudioExtractionConfiguration(JsonView jsonValue)
-  : AudioExtractionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AudioExtractionConfiguration& AudioExtractionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("audioExtractionStatus"))
   {
     m_audioExtractionStatus = AudioExtractionStatusMapper::GetAudioExtractionStatusForName(jsonValue.GetString("audioExtractionStatus"));
-
     m_audioExtractionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

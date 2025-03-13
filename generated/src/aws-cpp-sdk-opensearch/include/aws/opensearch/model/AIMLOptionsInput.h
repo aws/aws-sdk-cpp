@@ -32,7 +32,7 @@ namespace Model
   class AIMLOptionsInput
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AIMLOptionsInput();
+    AWS_OPENSEARCHSERVICE_API AIMLOptionsInput() = default;
     AWS_OPENSEARCHSERVICE_API AIMLOptionsInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API AIMLOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Container for parameters required for natural language query generation on
      * the specified domain.</p>
      */
-    inline const NaturalLanguageQueryGenerationOptionsInput& GetNaturalLanguageQueryGenerationOptions() const{ return m_naturalLanguageQueryGenerationOptions; }
+    inline const NaturalLanguageQueryGenerationOptionsInput& GetNaturalLanguageQueryGenerationOptions() const { return m_naturalLanguageQueryGenerationOptions; }
     inline bool NaturalLanguageQueryGenerationOptionsHasBeenSet() const { return m_naturalLanguageQueryGenerationOptionsHasBeenSet; }
-    inline void SetNaturalLanguageQueryGenerationOptions(const NaturalLanguageQueryGenerationOptionsInput& value) { m_naturalLanguageQueryGenerationOptionsHasBeenSet = true; m_naturalLanguageQueryGenerationOptions = value; }
-    inline void SetNaturalLanguageQueryGenerationOptions(NaturalLanguageQueryGenerationOptionsInput&& value) { m_naturalLanguageQueryGenerationOptionsHasBeenSet = true; m_naturalLanguageQueryGenerationOptions = std::move(value); }
-    inline AIMLOptionsInput& WithNaturalLanguageQueryGenerationOptions(const NaturalLanguageQueryGenerationOptionsInput& value) { SetNaturalLanguageQueryGenerationOptions(value); return *this;}
-    inline AIMLOptionsInput& WithNaturalLanguageQueryGenerationOptions(NaturalLanguageQueryGenerationOptionsInput&& value) { SetNaturalLanguageQueryGenerationOptions(std::move(value)); return *this;}
+    template<typename NaturalLanguageQueryGenerationOptionsT = NaturalLanguageQueryGenerationOptionsInput>
+    void SetNaturalLanguageQueryGenerationOptions(NaturalLanguageQueryGenerationOptionsT&& value) { m_naturalLanguageQueryGenerationOptionsHasBeenSet = true; m_naturalLanguageQueryGenerationOptions = std::forward<NaturalLanguageQueryGenerationOptionsT>(value); }
+    template<typename NaturalLanguageQueryGenerationOptionsT = NaturalLanguageQueryGenerationOptionsInput>
+    AIMLOptionsInput& WithNaturalLanguageQueryGenerationOptions(NaturalLanguageQueryGenerationOptionsT&& value) { SetNaturalLanguageQueryGenerationOptions(std::forward<NaturalLanguageQueryGenerationOptionsT>(value)); return *this;}
     ///@}
   private:
 

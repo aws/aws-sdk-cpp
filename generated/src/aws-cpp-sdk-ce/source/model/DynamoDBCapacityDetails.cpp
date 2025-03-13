@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-DynamoDBCapacityDetails::DynamoDBCapacityDetails() : 
-    m_capacityUnitsHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 DynamoDBCapacityDetails::DynamoDBCapacityDetails(JsonView jsonValue)
-  : DynamoDBCapacityDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DynamoDBCapacityDetails& DynamoDBCapacityDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CapacityUnits"))
   {
     m_capacityUnits = jsonValue.GetString("CapacityUnits");
-
     m_capacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

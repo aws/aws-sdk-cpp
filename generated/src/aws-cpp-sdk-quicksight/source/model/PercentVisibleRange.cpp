@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PercentVisibleRange::PercentVisibleRange() : 
-    m_from(0.0),
-    m_fromHasBeenSet(false),
-    m_to(0.0),
-    m_toHasBeenSet(false)
-{
-}
-
 PercentVisibleRange::PercentVisibleRange(JsonView jsonValue)
-  : PercentVisibleRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PercentVisibleRange& PercentVisibleRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetDouble("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     m_to = jsonValue.GetDouble("To");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

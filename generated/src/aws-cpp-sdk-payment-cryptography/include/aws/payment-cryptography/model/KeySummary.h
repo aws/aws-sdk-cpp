@@ -34,7 +34,7 @@ namespace Model
   class KeySummary
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API KeySummary();
+    AWS_PAYMENTCRYPTOGRAPHY_API KeySummary() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API KeySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API KeySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the key.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-    inline KeySummary& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline KeySummary& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline KeySummary& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    KeySummary& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>The state of an Amazon Web Services Payment Cryptography that is being
      * created or deleted.</p>
      */
-    inline const KeyState& GetKeyState() const{ return m_keyState; }
+    inline KeyState GetKeyState() const { return m_keyState; }
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
-    inline void SetKeyState(const KeyState& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
-    inline void SetKeyState(KeyState&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
-    inline KeySummary& WithKeyState(const KeyState& value) { SetKeyState(value); return *this;}
-    inline KeySummary& WithKeyState(KeyState&& value) { SetKeyState(std::move(value)); return *this;}
+    inline void SetKeyState(KeyState value) { m_keyStateHasBeenSet = true; m_keyState = value; }
+    inline KeySummary& WithKeyState(KeyState value) { SetKeyState(value); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * operations allowed with the key. This data is immutable after the key is
      * created.</p>
      */
-    inline const KeyAttributes& GetKeyAttributes() const{ return m_keyAttributes; }
+    inline const KeyAttributes& GetKeyAttributes() const { return m_keyAttributes; }
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-    inline void SetKeyAttributes(const KeyAttributes& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-    inline void SetKeyAttributes(KeyAttributes&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-    inline KeySummary& WithKeyAttributes(const KeyAttributes& value) { SetKeyAttributes(value); return *this;}
-    inline KeySummary& WithKeyAttributes(KeyAttributes&& value) { SetKeyAttributes(std::move(value)); return *this;}
+    template<typename KeyAttributesT = KeyAttributes>
+    void SetKeyAttributes(KeyAttributesT&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::forward<KeyAttributesT>(value); }
+    template<typename KeyAttributesT = KeyAttributes>
+    KeySummary& WithKeyAttributes(KeyAttributesT&& value) { SetKeyAttributes(std::forward<KeyAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p>The key check value (KCV) is used to check if all parties holding a given key
      * have the same key or to detect that a key has changed.</p>
      */
-    inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
+    inline const Aws::String& GetKeyCheckValue() const { return m_keyCheckValue; }
     inline bool KeyCheckValueHasBeenSet() const { return m_keyCheckValueHasBeenSet; }
-    inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = value; }
-    inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::move(value); }
-    inline void SetKeyCheckValue(const char* value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue.assign(value); }
-    inline KeySummary& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
-    inline KeySummary& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
-    inline KeySummary& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
+    template<typename KeyCheckValueT = Aws::String>
+    void SetKeyCheckValue(KeyCheckValueT&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::forward<KeyCheckValueT>(value); }
+    template<typename KeyCheckValueT = Aws::String>
+    KeySummary& WithKeyCheckValue(KeyCheckValueT&& value) { SetKeyCheckValue(std::forward<KeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +95,7 @@ namespace Model
      * <p>Specifies whether the key is exportable. This data is immutable after the key
      * is created.</p>
      */
-    inline bool GetExportable() const{ return m_exportable; }
+    inline bool GetExportable() const { return m_exportable; }
     inline bool ExportableHasBeenSet() const { return m_exportableHasBeenSet; }
     inline void SetExportable(bool value) { m_exportableHasBeenSet = true; m_exportable = value; }
     inline KeySummary& WithExportable(bool value) { SetExportable(value); return *this;}
@@ -111,7 +105,7 @@ namespace Model
     /**
      * <p>Specifies whether the key is enabled. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline KeySummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -121,7 +115,7 @@ namespace Model
     Aws::String m_keyArn;
     bool m_keyArnHasBeenSet = false;
 
-    KeyState m_keyState;
+    KeyState m_keyState{KeyState::NOT_SET};
     bool m_keyStateHasBeenSet = false;
 
     KeyAttributes m_keyAttributes;
@@ -130,10 +124,10 @@ namespace Model
     Aws::String m_keyCheckValue;
     bool m_keyCheckValueHasBeenSet = false;
 
-    bool m_exportable;
+    bool m_exportable{false};
     bool m_exportableHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

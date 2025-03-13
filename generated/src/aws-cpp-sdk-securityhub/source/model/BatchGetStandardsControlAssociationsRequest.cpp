@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetStandardsControlAssociationsRequest::BatchGetStandardsControlAssociationsRequest() : 
-    m_standardsControlAssociationIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetStandardsControlAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

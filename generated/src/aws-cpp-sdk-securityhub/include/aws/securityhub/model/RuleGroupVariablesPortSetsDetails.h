@@ -32,7 +32,7 @@ namespace Model
   class RuleGroupVariablesPortSetsDetails
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupVariablesPortSetsDetails();
+    AWS_SECURITYHUB_API RuleGroupVariablesPortSetsDetails() = default;
     AWS_SECURITYHUB_API RuleGroupVariablesPortSetsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupVariablesPortSetsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The list of port ranges.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDefinition() const{ return m_definition; }
+    inline const Aws::Vector<Aws::String>& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::Vector<Aws::String>& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::Vector<Aws::String>&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline RuleGroupVariablesPortSetsDetails& WithDefinition(const Aws::Vector<Aws::String>& value) { SetDefinition(value); return *this;}
-    inline RuleGroupVariablesPortSetsDetails& WithDefinition(Aws::Vector<Aws::String>&& value) { SetDefinition(std::move(value)); return *this;}
-    inline RuleGroupVariablesPortSetsDetails& AddDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
-    inline RuleGroupVariablesPortSetsDetails& AddDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.push_back(std::move(value)); return *this; }
-    inline RuleGroupVariablesPortSetsDetails& AddDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.push_back(value); return *this; }
+    template<typename DefinitionT = Aws::Vector<Aws::String>>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::Vector<Aws::String>>
+    RuleGroupVariablesPortSetsDetails& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
+    template<typename DefinitionT = Aws::String>
+    RuleGroupVariablesPortSetsDetails& AddDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition.emplace_back(std::forward<DefinitionT>(value)); return *this; }
     ///@}
   private:
 

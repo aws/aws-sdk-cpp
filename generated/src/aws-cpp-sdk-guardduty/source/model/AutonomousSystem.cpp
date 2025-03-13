@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AutonomousSystem::AutonomousSystem() : 
-    m_nameHasBeenSet(false),
-    m_number(0),
-    m_numberHasBeenSet(false)
-{
-}
-
 AutonomousSystem::AutonomousSystem(JsonView jsonValue)
-  : AutonomousSystem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AutonomousSystem& AutonomousSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("number"))
   {
     m_number = jsonValue.GetInteger("number");
-
     m_numberHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CaptionDescriptionPreset::CaptionDescriptionPreset() : 
-    m_customLanguageCodeHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
-{
-}
-
 CaptionDescriptionPreset::CaptionDescriptionPreset(JsonView jsonValue)
-  : CaptionDescriptionPreset()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CaptionDescriptionPreset& CaptionDescriptionPreset::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("customLanguageCode"))
   {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
-
     m_customLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageDescription"))
   {
     m_languageDescription = jsonValue.GetString("languageDescription");
-
     m_languageDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

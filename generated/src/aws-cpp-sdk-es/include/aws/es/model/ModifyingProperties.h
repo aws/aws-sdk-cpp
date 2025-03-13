@@ -33,7 +33,7 @@ namespace Model
   class ModifyingProperties
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API ModifyingProperties();
+    AWS_ELASTICSEARCHSERVICE_API ModifyingProperties() = default;
     AWS_ELASTICSEARCHSERVICE_API ModifyingProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API ModifyingProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the property that is currently being modified.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ModifyingProperties& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ModifyingProperties& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ModifyingProperties& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ModifyingProperties& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current value of the domain property that is being modified.</p>
      */
-    inline const Aws::String& GetActiveValue() const{ return m_activeValue; }
+    inline const Aws::String& GetActiveValue() const { return m_activeValue; }
     inline bool ActiveValueHasBeenSet() const { return m_activeValueHasBeenSet; }
-    inline void SetActiveValue(const Aws::String& value) { m_activeValueHasBeenSet = true; m_activeValue = value; }
-    inline void SetActiveValue(Aws::String&& value) { m_activeValueHasBeenSet = true; m_activeValue = std::move(value); }
-    inline void SetActiveValue(const char* value) { m_activeValueHasBeenSet = true; m_activeValue.assign(value); }
-    inline ModifyingProperties& WithActiveValue(const Aws::String& value) { SetActiveValue(value); return *this;}
-    inline ModifyingProperties& WithActiveValue(Aws::String&& value) { SetActiveValue(std::move(value)); return *this;}
-    inline ModifyingProperties& WithActiveValue(const char* value) { SetActiveValue(value); return *this;}
+    template<typename ActiveValueT = Aws::String>
+    void SetActiveValue(ActiveValueT&& value) { m_activeValueHasBeenSet = true; m_activeValue = std::forward<ActiveValueT>(value); }
+    template<typename ActiveValueT = Aws::String>
+    ModifyingProperties& WithActiveValue(ActiveValueT&& value) { SetActiveValue(std::forward<ActiveValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The value that the property that is currently being modified will eventually
      * have.</p>
      */
-    inline const Aws::String& GetPendingValue() const{ return m_pendingValue; }
+    inline const Aws::String& GetPendingValue() const { return m_pendingValue; }
     inline bool PendingValueHasBeenSet() const { return m_pendingValueHasBeenSet; }
-    inline void SetPendingValue(const Aws::String& value) { m_pendingValueHasBeenSet = true; m_pendingValue = value; }
-    inline void SetPendingValue(Aws::String&& value) { m_pendingValueHasBeenSet = true; m_pendingValue = std::move(value); }
-    inline void SetPendingValue(const char* value) { m_pendingValueHasBeenSet = true; m_pendingValue.assign(value); }
-    inline ModifyingProperties& WithPendingValue(const Aws::String& value) { SetPendingValue(value); return *this;}
-    inline ModifyingProperties& WithPendingValue(Aws::String&& value) { SetPendingValue(std::move(value)); return *this;}
-    inline ModifyingProperties& WithPendingValue(const char* value) { SetPendingValue(value); return *this;}
+    template<typename PendingValueT = Aws::String>
+    void SetPendingValue(PendingValueT&& value) { m_pendingValueHasBeenSet = true; m_pendingValue = std::forward<PendingValueT>(value); }
+    template<typename PendingValueT = Aws::String>
+    ModifyingProperties& WithPendingValue(PendingValueT&& value) { SetPendingValue(std::forward<PendingValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,10 @@ namespace Model
      * "True", or "c5.large.search".</li> <li><b>STRINGIFIED_JSON</b>: Contain content
      * in JSON format, such as {"Enabled":"True"}".</li> </ul>
      */
-    inline const PropertyValueType& GetValueType() const{ return m_valueType; }
+    inline PropertyValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const PropertyValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(PropertyValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline ModifyingProperties& WithValueType(const PropertyValueType& value) { SetValueType(value); return *this;}
-    inline ModifyingProperties& WithValueType(PropertyValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(PropertyValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline ModifyingProperties& WithValueType(PropertyValueType value) { SetValueType(value); return *this;}
     ///@}
   private:
 
@@ -107,7 +99,7 @@ namespace Model
     Aws::String m_pendingValue;
     bool m_pendingValueHasBeenSet = false;
 
-    PropertyValueType m_valueType;
+    PropertyValueType m_valueType{PropertyValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
   };
 

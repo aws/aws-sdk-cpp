@@ -27,89 +27,83 @@ namespace Model
   class ExportSchemaResult
   {
   public:
-    AWS_SCHEMAS_API ExportSchemaResult();
+    AWS_SCHEMAS_API ExportSchemaResult() = default;
     AWS_SCHEMAS_API ExportSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SCHEMAS_API ExportSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetContent() const{ return m_content; }
-    inline void SetContent(const Aws::String& value) { m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_content.assign(value); }
-    inline ExportSchemaResult& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline ExportSchemaResult& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline ExportSchemaResult& WithContent(const char* value) { SetContent(value); return *this;}
+    inline const Aws::String& GetContent() const { return m_content; }
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    ExportSchemaResult& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
-    inline ExportSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline ExportSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline ExportSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    ExportSchemaResult& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaName.assign(value); }
-    inline ExportSchemaResult& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline ExportSchemaResult& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline ExportSchemaResult& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    ExportSchemaResult& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersion = value; }
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersion = std::move(value); }
-    inline void SetSchemaVersion(const char* value) { m_schemaVersion.assign(value); }
-    inline ExportSchemaResult& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-    inline ExportSchemaResult& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-    inline ExportSchemaResult& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
+    template<typename SchemaVersionT = Aws::String>
+    void SetSchemaVersion(SchemaVersionT&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::forward<SchemaVersionT>(value); }
+    template<typename SchemaVersionT = Aws::String>
+    ExportSchemaResult& WithSchemaVersion(SchemaVersionT&& value) { SetSchemaVersion(std::forward<SchemaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetType() const{ return m_type; }
-    inline void SetType(const Aws::String& value) { m_type = value; }
-    inline void SetType(Aws::String&& value) { m_type = std::move(value); }
-    inline void SetType(const char* value) { m_type.assign(value); }
-    inline ExportSchemaResult& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ExportSchemaResult& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ExportSchemaResult& WithType(const char* value) { SetType(value); return *this;}
+    inline const Aws::String& GetType() const { return m_type; }
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ExportSchemaResult& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportSchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_content;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_schemaArn;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

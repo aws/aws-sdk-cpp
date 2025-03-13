@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterParameterGroupStatus::ClusterParameterGroupStatus() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false),
-    m_clusterParameterStatusListHasBeenSet(false)
-{
-}
-
 ClusterParameterGroupStatus::ClusterParameterGroupStatus(const XmlNode& xmlNode)
-  : ClusterParameterGroupStatus()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ ClusterParameterGroupStatus& ClusterParameterGroupStatus::operator =(const XmlNo
     {
       m_parameterGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupNameNode.GetText());
       m_parameterGroupNameHasBeenSet = true;
+       m_parameterGroupNameHasBeenSet = true;
     }
     XmlNode parameterApplyStatusNode = resultNode.FirstChild("ParameterApplyStatus");
     if(!parameterApplyStatusNode.IsNull())
     {
       m_parameterApplyStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterApplyStatusNode.GetText());
       m_parameterApplyStatusHasBeenSet = true;
+       m_parameterApplyStatusHasBeenSet = true;
     }
     XmlNode clusterParameterStatusListNode = resultNode.FirstChild("ClusterParameterStatusList");
     if(!clusterParameterStatusListNode.IsNull())
     {
       XmlNode clusterParameterStatusListMember = clusterParameterStatusListNode.FirstChild("member");
+      m_clusterParameterStatusListHasBeenSet = !clusterParameterStatusListMember.IsNull();
       while(!clusterParameterStatusListMember.IsNull())
       {
         m_clusterParameterStatusList.push_back(clusterParameterStatusListMember);
         clusterParameterStatusListMember = clusterParameterStatusListMember.NextNode("member");
       }
 
-      m_clusterParameterStatusListHasBeenSet = true;
+       m_clusterParameterStatusListHasBeenSet = true;
     }
   }
 

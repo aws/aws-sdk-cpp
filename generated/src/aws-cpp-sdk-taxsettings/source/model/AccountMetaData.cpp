@@ -18,18 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-AccountMetaData::AccountMetaData() : 
-    m_accountNameHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_addressRoleMapHasBeenSet(false),
-    m_addressType(AddressRoleType::NOT_SET),
-    m_addressTypeHasBeenSet(false),
-    m_sellerHasBeenSet(false)
-{
-}
-
 AccountMetaData::AccountMetaData(JsonView jsonValue)
-  : AccountMetaData()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ AccountMetaData& AccountMetaData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountName"))
   {
     m_accountName = jsonValue.GetString("accountName");
-
     m_accountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetObject("address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressRoleMap"))
   {
     Aws::Map<Aws::String, JsonView> addressRoleMapJsonMap = jsonValue.GetObject("addressRoleMap").GetAllObjects();
@@ -59,21 +44,16 @@ AccountMetaData& AccountMetaData::operator =(JsonView jsonValue)
     }
     m_addressRoleMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressType"))
   {
     m_addressType = AddressRoleTypeMapper::GetAddressRoleTypeForName(jsonValue.GetString("addressType"));
-
     m_addressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("seller"))
   {
     m_seller = jsonValue.GetString("seller");
-
     m_sellerHasBeenSet = true;
   }
-
   return *this;
 }
 

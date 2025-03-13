@@ -18,20 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-UpdateVehicleRequestItem::UpdateVehicleRequestItem() : 
-    m_vehicleNameHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_decoderManifestArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_attributeUpdateMode(UpdateMode::NOT_SET),
-    m_attributeUpdateModeHasBeenSet(false),
-    m_stateTemplatesToAddHasBeenSet(false),
-    m_stateTemplatesToRemoveHasBeenSet(false)
-{
-}
-
 UpdateVehicleRequestItem::UpdateVehicleRequestItem(JsonView jsonValue)
-  : UpdateVehicleRequestItem()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ UpdateVehicleRequestItem& UpdateVehicleRequestItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("vehicleName"))
   {
     m_vehicleName = jsonValue.GetString("vehicleName");
-
     m_vehicleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelManifestArn"))
   {
     m_modelManifestArn = jsonValue.GetString("modelManifestArn");
-
     m_modelManifestArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decoderManifestArn"))
   {
     m_decoderManifestArn = jsonValue.GetString("decoderManifestArn");
-
     m_decoderManifestArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -68,14 +49,11 @@ UpdateVehicleRequestItem& UpdateVehicleRequestItem::operator =(JsonView jsonValu
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeUpdateMode"))
   {
     m_attributeUpdateMode = UpdateModeMapper::GetUpdateModeForName(jsonValue.GetString("attributeUpdateMode"));
-
     m_attributeUpdateModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateTemplatesToAdd"))
   {
     Aws::Utils::Array<JsonView> stateTemplatesToAddJsonList = jsonValue.GetArray("stateTemplatesToAdd");
@@ -85,7 +63,6 @@ UpdateVehicleRequestItem& UpdateVehicleRequestItem::operator =(JsonView jsonValu
     }
     m_stateTemplatesToAddHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateTemplatesToRemove"))
   {
     Aws::Utils::Array<JsonView> stateTemplatesToRemoveJsonList = jsonValue.GetArray("stateTemplatesToRemove");
@@ -95,7 +72,6 @@ UpdateVehicleRequestItem& UpdateVehicleRequestItem::operator =(JsonView jsonValu
     }
     m_stateTemplatesToRemoveHasBeenSet = true;
   }
-
   return *this;
 }
 

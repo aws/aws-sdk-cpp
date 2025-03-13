@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatastoreIotSiteWiseMultiLayerStorage::DatastoreIotSiteWiseMultiLayerStorage() : 
-    m_customerManagedS3StorageHasBeenSet(false)
-{
-}
-
 DatastoreIotSiteWiseMultiLayerStorage::DatastoreIotSiteWiseMultiLayerStorage(JsonView jsonValue)
-  : DatastoreIotSiteWiseMultiLayerStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatastoreIotSiteWiseMultiLayerStorage& DatastoreIotSiteWiseMultiLayerStorage::op
   if(jsonValue.ValueExists("customerManagedS3Storage"))
   {
     m_customerManagedS3Storage = jsonValue.GetObject("customerManagedS3Storage");
-
     m_customerManagedS3StorageHasBeenSet = true;
   }
-
   return *this;
 }
 

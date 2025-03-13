@@ -12,13 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReportGroupRequest::DeleteReportGroupRequest() : 
-    m_arnHasBeenSet(false),
-    m_deleteReports(false),
-    m_deleteReportsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReportGroupRequest::SerializePayload() const
 {
   JsonValue payload;

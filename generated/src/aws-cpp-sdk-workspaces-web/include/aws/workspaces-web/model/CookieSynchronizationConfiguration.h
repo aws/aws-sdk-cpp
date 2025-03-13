@@ -34,7 +34,7 @@ namespace Model
   class CookieSynchronizationConfiguration
   {
   public:
-    AWS_WORKSPACESWEB_API CookieSynchronizationConfiguration();
+    AWS_WORKSPACESWEB_API CookieSynchronizationConfiguration() = default;
     AWS_WORKSPACESWEB_API CookieSynchronizationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API CookieSynchronizationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>The list of cookie specifications that are allowed to be synchronized to the
      * remote browser.</p>
      */
-    inline const Aws::Vector<CookieSpecification>& GetAllowlist() const{ return m_allowlist; }
+    inline const Aws::Vector<CookieSpecification>& GetAllowlist() const { return m_allowlist; }
     inline bool AllowlistHasBeenSet() const { return m_allowlistHasBeenSet; }
-    inline void SetAllowlist(const Aws::Vector<CookieSpecification>& value) { m_allowlistHasBeenSet = true; m_allowlist = value; }
-    inline void SetAllowlist(Aws::Vector<CookieSpecification>&& value) { m_allowlistHasBeenSet = true; m_allowlist = std::move(value); }
-    inline CookieSynchronizationConfiguration& WithAllowlist(const Aws::Vector<CookieSpecification>& value) { SetAllowlist(value); return *this;}
-    inline CookieSynchronizationConfiguration& WithAllowlist(Aws::Vector<CookieSpecification>&& value) { SetAllowlist(std::move(value)); return *this;}
-    inline CookieSynchronizationConfiguration& AddAllowlist(const CookieSpecification& value) { m_allowlistHasBeenSet = true; m_allowlist.push_back(value); return *this; }
-    inline CookieSynchronizationConfiguration& AddAllowlist(CookieSpecification&& value) { m_allowlistHasBeenSet = true; m_allowlist.push_back(std::move(value)); return *this; }
+    template<typename AllowlistT = Aws::Vector<CookieSpecification>>
+    void SetAllowlist(AllowlistT&& value) { m_allowlistHasBeenSet = true; m_allowlist = std::forward<AllowlistT>(value); }
+    template<typename AllowlistT = Aws::Vector<CookieSpecification>>
+    CookieSynchronizationConfiguration& WithAllowlist(AllowlistT&& value) { SetAllowlist(std::forward<AllowlistT>(value)); return *this;}
+    template<typename AllowlistT = CookieSpecification>
+    CookieSynchronizationConfiguration& AddAllowlist(AllowlistT&& value) { m_allowlistHasBeenSet = true; m_allowlist.emplace_back(std::forward<AllowlistT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>The list of cookie specifications that are blocked from being synchronized to
      * the remote browser.</p>
      */
-    inline const Aws::Vector<CookieSpecification>& GetBlocklist() const{ return m_blocklist; }
+    inline const Aws::Vector<CookieSpecification>& GetBlocklist() const { return m_blocklist; }
     inline bool BlocklistHasBeenSet() const { return m_blocklistHasBeenSet; }
-    inline void SetBlocklist(const Aws::Vector<CookieSpecification>& value) { m_blocklistHasBeenSet = true; m_blocklist = value; }
-    inline void SetBlocklist(Aws::Vector<CookieSpecification>&& value) { m_blocklistHasBeenSet = true; m_blocklist = std::move(value); }
-    inline CookieSynchronizationConfiguration& WithBlocklist(const Aws::Vector<CookieSpecification>& value) { SetBlocklist(value); return *this;}
-    inline CookieSynchronizationConfiguration& WithBlocklist(Aws::Vector<CookieSpecification>&& value) { SetBlocklist(std::move(value)); return *this;}
-    inline CookieSynchronizationConfiguration& AddBlocklist(const CookieSpecification& value) { m_blocklistHasBeenSet = true; m_blocklist.push_back(value); return *this; }
-    inline CookieSynchronizationConfiguration& AddBlocklist(CookieSpecification&& value) { m_blocklistHasBeenSet = true; m_blocklist.push_back(std::move(value)); return *this; }
+    template<typename BlocklistT = Aws::Vector<CookieSpecification>>
+    void SetBlocklist(BlocklistT&& value) { m_blocklistHasBeenSet = true; m_blocklist = std::forward<BlocklistT>(value); }
+    template<typename BlocklistT = Aws::Vector<CookieSpecification>>
+    CookieSynchronizationConfiguration& WithBlocklist(BlocklistT&& value) { SetBlocklist(std::forward<BlocklistT>(value)); return *this;}
+    template<typename BlocklistT = CookieSpecification>
+    CookieSynchronizationConfiguration& AddBlocklist(BlocklistT&& value) { m_blocklistHasBeenSet = true; m_blocklist.emplace_back(std::forward<BlocklistT>(value)); return *this; }
     ///@}
   private:
 

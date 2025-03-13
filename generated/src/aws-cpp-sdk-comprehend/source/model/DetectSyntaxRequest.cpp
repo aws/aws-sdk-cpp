@@ -12,13 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectSyntaxRequest::DetectSyntaxRequest() : 
-    m_textHasBeenSet(false),
-    m_languageCode(SyntaxLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false)
-{
-}
-
 Aws::String DetectSyntaxRequest::SerializePayload() const
 {
   JsonValue payload;

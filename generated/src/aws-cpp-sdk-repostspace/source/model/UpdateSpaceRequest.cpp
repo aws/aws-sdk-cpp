@@ -12,15 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSpaceRequest::UpdateSpaceRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_spaceIdHasBeenSet(false),
-    m_tier(TierLevel::NOT_SET),
-    m_tierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSpaceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProductResult::UpdateProductResult()
-{
-}
-
 UpdateProductResult::UpdateProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ UpdateProductResult& UpdateProductResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ProductViewDetail"))
   {
     m_productViewDetail = jsonValue.GetObject("ProductViewDetail");
-
+    m_productViewDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -42,14 +37,15 @@ UpdateProductResult& UpdateProductResult::operator =(const Aws::AmazonWebService
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

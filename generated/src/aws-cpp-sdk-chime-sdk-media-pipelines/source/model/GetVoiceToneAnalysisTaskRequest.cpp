@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVoiceToneAnalysisTaskRequest::GetVoiceToneAnalysisTaskRequest() : 
-    m_identifierHasBeenSet(false),
-    m_voiceToneAnalysisTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetVoiceToneAnalysisTaskRequest::SerializePayload() const
 {
   return {};

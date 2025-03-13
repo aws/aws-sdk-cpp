@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentBehaviors::SegmentBehaviors() : 
-    m_recencyHasBeenSet(false)
-{
-}
-
 SegmentBehaviors::SegmentBehaviors(JsonView jsonValue)
-  : SegmentBehaviors()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SegmentBehaviors& SegmentBehaviors::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Recency"))
   {
     m_recency = jsonValue.GetObject("Recency");
-
     m_recencyHasBeenSet = true;
   }
-
   return *this;
 }
 

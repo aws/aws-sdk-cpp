@@ -12,30 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TransferDomainRequest::TransferDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_idnLangCodeHasBeenSet(false),
-    m_durationInYears(0),
-    m_durationInYearsHasBeenSet(false),
-    m_nameserversHasBeenSet(false),
-    m_authCodeHasBeenSet(false),
-    m_autoRenew(false),
-    m_autoRenewHasBeenSet(false),
-    m_adminContactHasBeenSet(false),
-    m_registrantContactHasBeenSet(false),
-    m_techContactHasBeenSet(false),
-    m_privacyProtectAdminContact(false),
-    m_privacyProtectAdminContactHasBeenSet(false),
-    m_privacyProtectRegistrantContact(false),
-    m_privacyProtectRegistrantContactHasBeenSet(false),
-    m_privacyProtectTechContact(false),
-    m_privacyProtectTechContactHasBeenSet(false),
-    m_billingContactHasBeenSet(false),
-    m_privacyProtectBillingContact(false),
-    m_privacyProtectBillingContactHasBeenSet(false)
-{
-}
-
 Aws::String TransferDomainRequest::SerializePayload() const
 {
   JsonValue payload;

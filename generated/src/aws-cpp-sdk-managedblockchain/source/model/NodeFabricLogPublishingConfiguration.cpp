@@ -18,14 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NodeFabricLogPublishingConfiguration::NodeFabricLogPublishingConfiguration() : 
-    m_chaincodeLogsHasBeenSet(false),
-    m_peerLogsHasBeenSet(false)
-{
-}
-
 NodeFabricLogPublishingConfiguration::NodeFabricLogPublishingConfiguration(JsonView jsonValue)
-  : NodeFabricLogPublishingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NodeFabricLogPublishingConfiguration& NodeFabricLogPublishingConfiguration::oper
   if(jsonValue.ValueExists("ChaincodeLogs"))
   {
     m_chaincodeLogs = jsonValue.GetObject("ChaincodeLogs");
-
     m_chaincodeLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeerLogs"))
   {
     m_peerLogs = jsonValue.GetObject("PeerLogs");
-
     m_peerLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class UpdateContainerAgentRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API UpdateContainerAgentRequest();
+    AWS_ECS_API UpdateContainerAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * container instance is running on. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline UpdateContainerAgentRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline UpdateContainerAgentRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline UpdateContainerAgentRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    UpdateContainerAgentRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The container instance ID or full ARN entries for the container instance
      * where you would like to update the Amazon ECS container agent.</p>
      */
-    inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
+    inline const Aws::String& GetContainerInstance() const { return m_containerInstance; }
     inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
-    inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
-    inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
-    inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
-    inline UpdateContainerAgentRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
-    inline UpdateContainerAgentRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
-    inline UpdateContainerAgentRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
+    template<typename ContainerInstanceT = Aws::String>
+    void SetContainerInstance(ContainerInstanceT&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::forward<ContainerInstanceT>(value); }
+    template<typename ContainerInstanceT = Aws::String>
+    UpdateContainerAgentRequest& WithContainerInstance(ContainerInstanceT&& value) { SetContainerInstance(std::forward<ContainerInstanceT>(value)); return *this;}
     ///@}
   private:
 

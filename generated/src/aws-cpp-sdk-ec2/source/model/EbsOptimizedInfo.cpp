@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsOptimizedInfo::EbsOptimizedInfo() : 
-    m_baselineBandwidthInMbps(0),
-    m_baselineBandwidthInMbpsHasBeenSet(false),
-    m_baselineThroughputInMBps(0.0),
-    m_baselineThroughputInMBpsHasBeenSet(false),
-    m_baselineIops(0),
-    m_baselineIopsHasBeenSet(false),
-    m_maximumBandwidthInMbps(0),
-    m_maximumBandwidthInMbpsHasBeenSet(false),
-    m_maximumThroughputInMBps(0.0),
-    m_maximumThroughputInMBpsHasBeenSet(false),
-    m_maximumIops(0),
-    m_maximumIopsHasBeenSet(false)
-{
-}
-
 EbsOptimizedInfo::EbsOptimizedInfo(const XmlNode& xmlNode)
-  : EbsOptimizedInfo()
 {
   *this = xmlNode;
 }
@@ -53,36 +36,42 @@ EbsOptimizedInfo& EbsOptimizedInfo::operator =(const XmlNode& xmlNode)
     {
       m_baselineBandwidthInMbps = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(baselineBandwidthInMbpsNode.GetText()).c_str()).c_str());
       m_baselineBandwidthInMbpsHasBeenSet = true;
+       m_baselineBandwidthInMbpsHasBeenSet = true;
     }
     XmlNode baselineThroughputInMBpsNode = resultNode.FirstChild("baselineThroughputInMBps");
     if(!baselineThroughputInMBpsNode.IsNull())
     {
       m_baselineThroughputInMBps = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(baselineThroughputInMBpsNode.GetText()).c_str()).c_str());
       m_baselineThroughputInMBpsHasBeenSet = true;
+       m_baselineThroughputInMBpsHasBeenSet = true;
     }
     XmlNode baselineIopsNode = resultNode.FirstChild("baselineIops");
     if(!baselineIopsNode.IsNull())
     {
       m_baselineIops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(baselineIopsNode.GetText()).c_str()).c_str());
       m_baselineIopsHasBeenSet = true;
+       m_baselineIopsHasBeenSet = true;
     }
     XmlNode maximumBandwidthInMbpsNode = resultNode.FirstChild("maximumBandwidthInMbps");
     if(!maximumBandwidthInMbpsNode.IsNull())
     {
       m_maximumBandwidthInMbps = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumBandwidthInMbpsNode.GetText()).c_str()).c_str());
       m_maximumBandwidthInMbpsHasBeenSet = true;
+       m_maximumBandwidthInMbpsHasBeenSet = true;
     }
     XmlNode maximumThroughputInMBpsNode = resultNode.FirstChild("maximumThroughputInMBps");
     if(!maximumThroughputInMBpsNode.IsNull())
     {
       m_maximumThroughputInMBps = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumThroughputInMBpsNode.GetText()).c_str()).c_str());
       m_maximumThroughputInMBpsHasBeenSet = true;
+       m_maximumThroughputInMBpsHasBeenSet = true;
     }
     XmlNode maximumIopsNode = resultNode.FirstChild("maximumIops");
     if(!maximumIopsNode.IsNull())
     {
       m_maximumIops = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumIopsNode.GetText()).c_str()).c_str());
       m_maximumIopsHasBeenSet = true;
+       m_maximumIopsHasBeenSet = true;
     }
   }
 

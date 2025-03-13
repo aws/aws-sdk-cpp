@@ -12,15 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceGraphRequest::GetServiceGraphRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupARNHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceGraphRequest::SerializePayload() const
 {
   JsonValue payload;

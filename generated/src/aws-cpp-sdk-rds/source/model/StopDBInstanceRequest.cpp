@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StopDBInstanceRequest::StopDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dBSnapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StopDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

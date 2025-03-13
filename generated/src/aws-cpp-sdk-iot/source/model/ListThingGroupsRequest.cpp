@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListThingGroupsRequest::ListThingGroupsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_parentGroupHasBeenSet(false),
-    m_namePrefixFilterHasBeenSet(false),
-    m_recursive(false),
-    m_recursiveHasBeenSet(false)
-{
-}
-
 Aws::String ListThingGroupsRequest::SerializePayload() const
 {
   return {};

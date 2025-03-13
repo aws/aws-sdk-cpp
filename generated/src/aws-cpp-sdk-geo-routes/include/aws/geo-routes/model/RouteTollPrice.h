@@ -32,7 +32,7 @@ namespace Model
   class RouteTollPrice
   {
   public:
-    AWS_GEOROUTES_API RouteTollPrice();
+    AWS_GEOROUTES_API RouteTollPrice() = default;
     AWS_GEOROUTES_API RouteTollPrice(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteTollPrice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
      * <p>Currency code corresponding to the price. This is the same as Currency
      * specified in the request.</p>
      */
-    inline const Aws::String& GetCurrency() const{ return m_currency; }
+    inline const Aws::String& GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Aws::String& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Aws::String&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline void SetCurrency(const char* value) { m_currencyHasBeenSet = true; m_currency.assign(value); }
-    inline RouteTollPrice& WithCurrency(const Aws::String& value) { SetCurrency(value); return *this;}
-    inline RouteTollPrice& WithCurrency(Aws::String&& value) { SetCurrency(std::move(value)); return *this;}
-    inline RouteTollPrice& WithCurrency(const char* value) { SetCurrency(value); return *this;}
+    template<typename CurrencyT = Aws::String>
+    void SetCurrency(CurrencyT&& value) { m_currencyHasBeenSet = true; m_currency = std::forward<CurrencyT>(value); }
+    template<typename CurrencyT = Aws::String>
+    RouteTollPrice& WithCurrency(CurrencyT&& value) { SetCurrency(std::forward<CurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the price is an estimate or an exact value. </p>
      */
-    inline bool GetEstimate() const{ return m_estimate; }
+    inline bool GetEstimate() const { return m_estimate; }
     inline bool EstimateHasBeenSet() const { return m_estimateHasBeenSet; }
     inline void SetEstimate(bool value) { m_estimateHasBeenSet = true; m_estimate = value; }
     inline RouteTollPrice& WithEstimate(bool value) { SetEstimate(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
      * <p>Duration for which the price corresponds to.</p> <p> <b>Unit</b>:
      * <code>seconds</code> </p>
      */
-    inline long long GetPerDuration() const{ return m_perDuration; }
+    inline long long GetPerDuration() const { return m_perDuration; }
     inline bool PerDurationHasBeenSet() const { return m_perDurationHasBeenSet; }
     inline void SetPerDuration(long long value) { m_perDurationHasBeenSet = true; m_perDuration = value; }
     inline RouteTollPrice& WithPerDuration(long long value) { SetPerDuration(value); return *this;}
@@ -79,7 +77,7 @@ namespace Model
      * <p>If the price is a range or an exact value. If any of the toll fares making up
      * the route is a range, the overall price is also a range.</p>
      */
-    inline bool GetRange() const{ return m_range; }
+    inline bool GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
     inline void SetRange(bool value) { m_rangeHasBeenSet = true; m_range = value; }
     inline RouteTollPrice& WithRange(bool value) { SetRange(value); return *this;}
@@ -89,19 +87,19 @@ namespace Model
     /**
      * <p>Price range with a minimum and maximum value, if a range.</p>
      */
-    inline const RouteTollPriceValueRange& GetRangeValue() const{ return m_rangeValue; }
+    inline const RouteTollPriceValueRange& GetRangeValue() const { return m_rangeValue; }
     inline bool RangeValueHasBeenSet() const { return m_rangeValueHasBeenSet; }
-    inline void SetRangeValue(const RouteTollPriceValueRange& value) { m_rangeValueHasBeenSet = true; m_rangeValue = value; }
-    inline void SetRangeValue(RouteTollPriceValueRange&& value) { m_rangeValueHasBeenSet = true; m_rangeValue = std::move(value); }
-    inline RouteTollPrice& WithRangeValue(const RouteTollPriceValueRange& value) { SetRangeValue(value); return *this;}
-    inline RouteTollPrice& WithRangeValue(RouteTollPriceValueRange&& value) { SetRangeValue(std::move(value)); return *this;}
+    template<typename RangeValueT = RouteTollPriceValueRange>
+    void SetRangeValue(RangeValueT&& value) { m_rangeValueHasBeenSet = true; m_rangeValue = std::forward<RangeValueT>(value); }
+    template<typename RangeValueT = RouteTollPriceValueRange>
+    RouteTollPrice& WithRangeValue(RangeValueT&& value) { SetRangeValue(std::forward<RangeValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Exact price, if not a range.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline RouteTollPrice& WithValue(double value) { SetValue(value); return *this;}
@@ -111,19 +109,19 @@ namespace Model
     Aws::String m_currency;
     bool m_currencyHasBeenSet = false;
 
-    bool m_estimate;
+    bool m_estimate{false};
     bool m_estimateHasBeenSet = false;
 
-    long long m_perDuration;
+    long long m_perDuration{0};
     bool m_perDurationHasBeenSet = false;
 
-    bool m_range;
+    bool m_range{false};
     bool m_rangeHasBeenSet = false;
 
     RouteTollPriceValueRange m_rangeValue;
     bool m_rangeValueHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

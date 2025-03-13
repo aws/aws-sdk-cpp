@@ -22,7 +22,7 @@ namespace Model
   class PutCaseEventConfigurationRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API PutCaseEventConfigurationRequest();
+    AWS_CONNECTCASES_API PutCaseEventConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline PutCaseEventConfigurationRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline PutCaseEventConfigurationRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline PutCaseEventConfigurationRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    PutCaseEventConfigurationRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,12 +50,12 @@ namespace Model
      * <p>Configuration to enable EventBridge case event delivery and determine what
      * data is delivered.</p>
      */
-    inline const EventBridgeConfiguration& GetEventBridge() const{ return m_eventBridge; }
+    inline const EventBridgeConfiguration& GetEventBridge() const { return m_eventBridge; }
     inline bool EventBridgeHasBeenSet() const { return m_eventBridgeHasBeenSet; }
-    inline void SetEventBridge(const EventBridgeConfiguration& value) { m_eventBridgeHasBeenSet = true; m_eventBridge = value; }
-    inline void SetEventBridge(EventBridgeConfiguration&& value) { m_eventBridgeHasBeenSet = true; m_eventBridge = std::move(value); }
-    inline PutCaseEventConfigurationRequest& WithEventBridge(const EventBridgeConfiguration& value) { SetEventBridge(value); return *this;}
-    inline PutCaseEventConfigurationRequest& WithEventBridge(EventBridgeConfiguration&& value) { SetEventBridge(std::move(value)); return *this;}
+    template<typename EventBridgeT = EventBridgeConfiguration>
+    void SetEventBridge(EventBridgeT&& value) { m_eventBridgeHasBeenSet = true; m_eventBridge = std::forward<EventBridgeT>(value); }
+    template<typename EventBridgeT = EventBridgeConfiguration>
+    PutCaseEventConfigurationRequest& WithEventBridge(EventBridgeT&& value) { SetEventBridge(std::forward<EventBridgeT>(value)); return *this;}
     ///@}
   private:
 

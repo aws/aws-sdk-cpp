@@ -32,7 +32,7 @@ namespace Model
   class AddressDimension
   {
   public:
-    AWS_CUSTOMERPROFILES_API AddressDimension();
+    AWS_CUSTOMERPROFILES_API AddressDimension() = default;
     AWS_CUSTOMERPROFILES_API AddressDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API AddressDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,72 +42,72 @@ namespace Model
     /**
      * <p>The city belonging to the address.</p>
      */
-    inline const ProfileDimension& GetCity() const{ return m_city; }
+    inline const ProfileDimension& GetCity() const { return m_city; }
     inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
-    inline void SetCity(const ProfileDimension& value) { m_cityHasBeenSet = true; m_city = value; }
-    inline void SetCity(ProfileDimension&& value) { m_cityHasBeenSet = true; m_city = std::move(value); }
-    inline AddressDimension& WithCity(const ProfileDimension& value) { SetCity(value); return *this;}
-    inline AddressDimension& WithCity(ProfileDimension&& value) { SetCity(std::move(value)); return *this;}
+    template<typename CityT = ProfileDimension>
+    void SetCity(CityT&& value) { m_cityHasBeenSet = true; m_city = std::forward<CityT>(value); }
+    template<typename CityT = ProfileDimension>
+    AddressDimension& WithCity(CityT&& value) { SetCity(std::forward<CityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The country belonging to the address.</p>
      */
-    inline const ProfileDimension& GetCountry() const{ return m_country; }
+    inline const ProfileDimension& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const ProfileDimension& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(ProfileDimension&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline AddressDimension& WithCountry(const ProfileDimension& value) { SetCountry(value); return *this;}
-    inline AddressDimension& WithCountry(ProfileDimension&& value) { SetCountry(std::move(value)); return *this;}
+    template<typename CountryT = ProfileDimension>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = ProfileDimension>
+    AddressDimension& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The county belonging to the address.</p>
      */
-    inline const ProfileDimension& GetCounty() const{ return m_county; }
+    inline const ProfileDimension& GetCounty() const { return m_county; }
     inline bool CountyHasBeenSet() const { return m_countyHasBeenSet; }
-    inline void SetCounty(const ProfileDimension& value) { m_countyHasBeenSet = true; m_county = value; }
-    inline void SetCounty(ProfileDimension&& value) { m_countyHasBeenSet = true; m_county = std::move(value); }
-    inline AddressDimension& WithCounty(const ProfileDimension& value) { SetCounty(value); return *this;}
-    inline AddressDimension& WithCounty(ProfileDimension&& value) { SetCounty(std::move(value)); return *this;}
+    template<typename CountyT = ProfileDimension>
+    void SetCounty(CountyT&& value) { m_countyHasBeenSet = true; m_county = std::forward<CountyT>(value); }
+    template<typename CountyT = ProfileDimension>
+    AddressDimension& WithCounty(CountyT&& value) { SetCounty(std::forward<CountyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The postal code belonging to the address.</p>
      */
-    inline const ProfileDimension& GetPostalCode() const{ return m_postalCode; }
+    inline const ProfileDimension& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
-    inline void SetPostalCode(const ProfileDimension& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
-    inline void SetPostalCode(ProfileDimension&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::move(value); }
-    inline AddressDimension& WithPostalCode(const ProfileDimension& value) { SetPostalCode(value); return *this;}
-    inline AddressDimension& WithPostalCode(ProfileDimension&& value) { SetPostalCode(std::move(value)); return *this;}
+    template<typename PostalCodeT = ProfileDimension>
+    void SetPostalCode(PostalCodeT&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::forward<PostalCodeT>(value); }
+    template<typename PostalCodeT = ProfileDimension>
+    AddressDimension& WithPostalCode(PostalCodeT&& value) { SetPostalCode(std::forward<PostalCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The province belonging to the address.</p>
      */
-    inline const ProfileDimension& GetProvince() const{ return m_province; }
+    inline const ProfileDimension& GetProvince() const { return m_province; }
     inline bool ProvinceHasBeenSet() const { return m_provinceHasBeenSet; }
-    inline void SetProvince(const ProfileDimension& value) { m_provinceHasBeenSet = true; m_province = value; }
-    inline void SetProvince(ProfileDimension&& value) { m_provinceHasBeenSet = true; m_province = std::move(value); }
-    inline AddressDimension& WithProvince(const ProfileDimension& value) { SetProvince(value); return *this;}
-    inline AddressDimension& WithProvince(ProfileDimension&& value) { SetProvince(std::move(value)); return *this;}
+    template<typename ProvinceT = ProfileDimension>
+    void SetProvince(ProvinceT&& value) { m_provinceHasBeenSet = true; m_province = std::forward<ProvinceT>(value); }
+    template<typename ProvinceT = ProfileDimension>
+    AddressDimension& WithProvince(ProvinceT&& value) { SetProvince(std::forward<ProvinceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state belonging to the address.</p>
      */
-    inline const ProfileDimension& GetState() const{ return m_state; }
+    inline const ProfileDimension& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ProfileDimension& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ProfileDimension&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline AddressDimension& WithState(const ProfileDimension& value) { SetState(value); return *this;}
-    inline AddressDimension& WithState(ProfileDimension&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = ProfileDimension>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = ProfileDimension>
+    AddressDimension& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
   private:
 

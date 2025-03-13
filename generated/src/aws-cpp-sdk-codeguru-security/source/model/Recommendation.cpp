@@ -18,14 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_textHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

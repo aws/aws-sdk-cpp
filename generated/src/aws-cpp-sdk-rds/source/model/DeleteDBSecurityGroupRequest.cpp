@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBSecurityGroupRequest::DeleteDBSecurityGroupRequest() : 
-    m_dBSecurityGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

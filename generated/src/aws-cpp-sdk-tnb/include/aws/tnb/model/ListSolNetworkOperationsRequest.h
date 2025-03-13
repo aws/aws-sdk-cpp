@@ -25,7 +25,7 @@ namespace Model
   class ListSolNetworkOperationsRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API ListSolNetworkOperationsRequest();
+    AWS_TNB_API ListSolNetworkOperationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The maximum number of results to include in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSolNetworkOperationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSolNetworkOperationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSolNetworkOperationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSolNetworkOperationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSolNetworkOperationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +65,16 @@ namespace Model
      * <p>Network instance id filter, to retrieve network operations associated to a
      * network instance.</p>
      */
-    inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
+    inline const Aws::String& GetNsInstanceId() const { return m_nsInstanceId; }
     inline bool NsInstanceIdHasBeenSet() const { return m_nsInstanceIdHasBeenSet; }
-    inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = value; }
-    inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::move(value); }
-    inline void SetNsInstanceId(const char* value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId.assign(value); }
-    inline ListSolNetworkOperationsRequest& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
-    inline ListSolNetworkOperationsRequest& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
-    inline ListSolNetworkOperationsRequest& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
+    template<typename NsInstanceIdT = Aws::String>
+    void SetNsInstanceId(NsInstanceIdT&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::forward<NsInstanceIdT>(value); }
+    template<typename NsInstanceIdT = Aws::String>
+    ListSolNetworkOperationsRequest& WithNsInstanceId(NsInstanceIdT&& value) { SetNsInstanceId(std::forward<NsInstanceIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

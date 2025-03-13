@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-RequiredField::RequiredField() : 
-    m_fieldIdHasBeenSet(false)
-{
-}
-
 RequiredField::RequiredField(JsonView jsonValue)
-  : RequiredField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RequiredField& RequiredField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldId"))
   {
     m_fieldId = jsonValue.GetString("fieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   return *this;
 }
 

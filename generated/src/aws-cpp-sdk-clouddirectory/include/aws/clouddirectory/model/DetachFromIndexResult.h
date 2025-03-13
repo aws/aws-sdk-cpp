@@ -27,7 +27,7 @@ namespace Model
   class DetachFromIndexResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API DetachFromIndexResult();
+    AWS_CLOUDDIRECTORY_API DetachFromIndexResult() = default;
     AWS_CLOUDDIRECTORY_API DetachFromIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API DetachFromIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> of the object that was detached from the
      * index.</p>
      */
-    inline const Aws::String& GetDetachedObjectIdentifier() const{ return m_detachedObjectIdentifier; }
-    inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifier = value; }
-    inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifier = std::move(value); }
-    inline void SetDetachedObjectIdentifier(const char* value) { m_detachedObjectIdentifier.assign(value); }
-    inline DetachFromIndexResult& WithDetachedObjectIdentifier(const Aws::String& value) { SetDetachedObjectIdentifier(value); return *this;}
-    inline DetachFromIndexResult& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(std::move(value)); return *this;}
-    inline DetachFromIndexResult& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
+    inline const Aws::String& GetDetachedObjectIdentifier() const { return m_detachedObjectIdentifier; }
+    template<typename DetachedObjectIdentifierT = Aws::String>
+    void SetDetachedObjectIdentifier(DetachedObjectIdentifierT&& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = std::forward<DetachedObjectIdentifierT>(value); }
+    template<typename DetachedObjectIdentifierT = Aws::String>
+    DetachFromIndexResult& WithDetachedObjectIdentifier(DetachedObjectIdentifierT&& value) { SetDetachedObjectIdentifier(std::forward<DetachedObjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetachFromIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetachFromIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetachFromIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetachFromIndexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_detachedObjectIdentifier;
+    bool m_detachedObjectIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

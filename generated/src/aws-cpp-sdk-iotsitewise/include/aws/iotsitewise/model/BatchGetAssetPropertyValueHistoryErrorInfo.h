@@ -33,7 +33,7 @@ namespace Model
   class BatchGetAssetPropertyValueHistoryErrorInfo
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryErrorInfo();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryErrorInfo() = default;
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryErrorInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistoryErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const BatchGetAssetPropertyValueHistoryErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline BatchGetAssetPropertyValueHistoryErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const BatchGetAssetPropertyValueHistoryErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(BatchGetAssetPropertyValueHistoryErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline BatchGetAssetPropertyValueHistoryErrorInfo& WithErrorCode(const BatchGetAssetPropertyValueHistoryErrorCode& value) { SetErrorCode(value); return *this;}
-    inline BatchGetAssetPropertyValueHistoryErrorInfo& WithErrorCode(BatchGetAssetPropertyValueHistoryErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(BatchGetAssetPropertyValueHistoryErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchGetAssetPropertyValueHistoryErrorInfo& WithErrorCode(BatchGetAssetPropertyValueHistoryErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the error occurred, in Unix epoch time.</p>
      */
-    inline const Aws::Utils::DateTime& GetErrorTimestamp() const{ return m_errorTimestamp; }
+    inline const Aws::Utils::DateTime& GetErrorTimestamp() const { return m_errorTimestamp; }
     inline bool ErrorTimestampHasBeenSet() const { return m_errorTimestampHasBeenSet; }
-    inline void SetErrorTimestamp(const Aws::Utils::DateTime& value) { m_errorTimestampHasBeenSet = true; m_errorTimestamp = value; }
-    inline void SetErrorTimestamp(Aws::Utils::DateTime&& value) { m_errorTimestampHasBeenSet = true; m_errorTimestamp = std::move(value); }
-    inline BatchGetAssetPropertyValueHistoryErrorInfo& WithErrorTimestamp(const Aws::Utils::DateTime& value) { SetErrorTimestamp(value); return *this;}
-    inline BatchGetAssetPropertyValueHistoryErrorInfo& WithErrorTimestamp(Aws::Utils::DateTime&& value) { SetErrorTimestamp(std::move(value)); return *this;}
+    template<typename ErrorTimestampT = Aws::Utils::DateTime>
+    void SetErrorTimestamp(ErrorTimestampT&& value) { m_errorTimestampHasBeenSet = true; m_errorTimestamp = std::forward<ErrorTimestampT>(value); }
+    template<typename ErrorTimestampT = Aws::Utils::DateTime>
+    BatchGetAssetPropertyValueHistoryErrorInfo& WithErrorTimestamp(ErrorTimestampT&& value) { SetErrorTimestamp(std::forward<ErrorTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    BatchGetAssetPropertyValueHistoryErrorCode m_errorCode;
+    BatchGetAssetPropertyValueHistoryErrorCode m_errorCode{BatchGetAssetPropertyValueHistoryErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_errorTimestamp;
+    Aws::Utils::DateTime m_errorTimestamp{};
     bool m_errorTimestampHasBeenSet = false;
   };
 

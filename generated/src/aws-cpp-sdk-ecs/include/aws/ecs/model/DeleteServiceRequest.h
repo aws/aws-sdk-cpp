@@ -21,7 +21,7 @@ namespace Model
   class DeleteServiceRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DeleteServiceRequest();
+    AWS_ECS_API DeleteServiceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * the service to delete. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline DeleteServiceRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline DeleteServiceRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline DeleteServiceRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    DeleteServiceRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service to delete.</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline DeleteServiceRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline DeleteServiceRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline DeleteServiceRequest& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    DeleteServiceRequest& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * down to zero tasks. It's only necessary to use this if the service uses the
      * <code>REPLICA</code> scheduling strategy.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteServiceRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_service;
     bool m_serviceHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

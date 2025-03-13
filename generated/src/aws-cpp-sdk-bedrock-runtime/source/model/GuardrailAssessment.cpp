@@ -18,18 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailAssessment::GuardrailAssessment() : 
-    m_topicPolicyHasBeenSet(false),
-    m_contentPolicyHasBeenSet(false),
-    m_wordPolicyHasBeenSet(false),
-    m_sensitiveInformationPolicyHasBeenSet(false),
-    m_contextualGroundingPolicyHasBeenSet(false),
-    m_invocationMetricsHasBeenSet(false)
-{
-}
-
 GuardrailAssessment::GuardrailAssessment(JsonView jsonValue)
-  : GuardrailAssessment()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ GuardrailAssessment& GuardrailAssessment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("topicPolicy"))
   {
     m_topicPolicy = jsonValue.GetObject("topicPolicy");
-
     m_topicPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentPolicy"))
   {
     m_contentPolicy = jsonValue.GetObject("contentPolicy");
-
     m_contentPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wordPolicy"))
   {
     m_wordPolicy = jsonValue.GetObject("wordPolicy");
-
     m_wordPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitiveInformationPolicy"))
   {
     m_sensitiveInformationPolicy = jsonValue.GetObject("sensitiveInformationPolicy");
-
     m_sensitiveInformationPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contextualGroundingPolicy"))
   {
     m_contextualGroundingPolicy = jsonValue.GetObject("contextualGroundingPolicy");
-
     m_contextualGroundingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationMetrics"))
   {
     m_invocationMetrics = jsonValue.GetObject("invocationMetrics");
-
     m_invocationMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

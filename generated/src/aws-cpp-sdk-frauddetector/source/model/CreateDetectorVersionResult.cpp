@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDetectorVersionResult::CreateDetectorVersionResult() : 
-    m_status(DetectorVersionStatus::NOT_SET)
-{
-}
-
 CreateDetectorVersionResult::CreateDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateDetectorVersionResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateDetectorVersionResult& CreateDetectorVersionResult::operator =(const Aws::
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
+    m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorVersionId"))
   {
     m_detectorVersionId = jsonValue.GetString("detectorVersionId");
-
+    m_detectorVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DetectorVersionStatusMapper::GetDetectorVersionStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

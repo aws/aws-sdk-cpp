@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotFleetMonitoring::SpotFleetMonitoring() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SpotFleetMonitoring::SpotFleetMonitoring(const XmlNode& xmlNode)
-  : SpotFleetMonitoring()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ SpotFleetMonitoring& SpotFleetMonitoring::operator =(const XmlNode& xmlNode)
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

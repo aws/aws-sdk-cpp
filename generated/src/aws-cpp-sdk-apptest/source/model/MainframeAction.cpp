@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-MainframeAction::MainframeAction() : 
-    m_resourceHasBeenSet(false),
-    m_actionTypeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 MainframeAction::MainframeAction(JsonView jsonValue)
-  : MainframeAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MainframeAction& MainframeAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = jsonValue.GetObject("actionType");
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     m_properties = jsonValue.GetObject("properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

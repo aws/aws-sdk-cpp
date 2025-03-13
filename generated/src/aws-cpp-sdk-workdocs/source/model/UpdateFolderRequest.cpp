@@ -13,16 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFolderRequest::UpdateFolderRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false),
-    m_resourceState(ResourceStateType::NOT_SET),
-    m_resourceStateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFolderRequest::SerializePayload() const
 {
   JsonValue payload;

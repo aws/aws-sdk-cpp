@@ -21,7 +21,7 @@ namespace Model
   class AcceptPrimaryEmailUpdateRequest : public AccountRequest
   {
   public:
-    AWS_ACCOUNT_API AcceptPrimaryEmailUpdateRequest();
+    AWS_ACCOUNT_API AcceptPrimaryEmailUpdateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * a member account.</p>  <p>The management account can't specify its own
      * <code>AccountId</code>.</p> 
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AcceptPrimaryEmailUpdateRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AcceptPrimaryEmailUpdateRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AcceptPrimaryEmailUpdateRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AcceptPrimaryEmailUpdateRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The OTP code sent to the <code>PrimaryEmail</code> specified on the
      * <code>StartPrimaryEmailUpdate</code> API call.</p>
      */
-    inline const Aws::String& GetOtp() const{ return m_otp; }
+    inline const Aws::String& GetOtp() const { return m_otp; }
     inline bool OtpHasBeenSet() const { return m_otpHasBeenSet; }
-    inline void SetOtp(const Aws::String& value) { m_otpHasBeenSet = true; m_otp = value; }
-    inline void SetOtp(Aws::String&& value) { m_otpHasBeenSet = true; m_otp = std::move(value); }
-    inline void SetOtp(const char* value) { m_otpHasBeenSet = true; m_otp.assign(value); }
-    inline AcceptPrimaryEmailUpdateRequest& WithOtp(const Aws::String& value) { SetOtp(value); return *this;}
-    inline AcceptPrimaryEmailUpdateRequest& WithOtp(Aws::String&& value) { SetOtp(std::move(value)); return *this;}
-    inline AcceptPrimaryEmailUpdateRequest& WithOtp(const char* value) { SetOtp(value); return *this;}
+    template<typename OtpT = Aws::String>
+    void SetOtp(OtpT&& value) { m_otpHasBeenSet = true; m_otp = std::forward<OtpT>(value); }
+    template<typename OtpT = Aws::String>
+    AcceptPrimaryEmailUpdateRequest& WithOtp(OtpT&& value) { SetOtp(std::forward<OtpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * match the <code>PrimaryEmail</code> from the
      * <code>StartPrimaryEmailUpdate</code> API call.</p>
      */
-    inline const Aws::String& GetPrimaryEmail() const{ return m_primaryEmail; }
+    inline const Aws::String& GetPrimaryEmail() const { return m_primaryEmail; }
     inline bool PrimaryEmailHasBeenSet() const { return m_primaryEmailHasBeenSet; }
-    inline void SetPrimaryEmail(const Aws::String& value) { m_primaryEmailHasBeenSet = true; m_primaryEmail = value; }
-    inline void SetPrimaryEmail(Aws::String&& value) { m_primaryEmailHasBeenSet = true; m_primaryEmail = std::move(value); }
-    inline void SetPrimaryEmail(const char* value) { m_primaryEmailHasBeenSet = true; m_primaryEmail.assign(value); }
-    inline AcceptPrimaryEmailUpdateRequest& WithPrimaryEmail(const Aws::String& value) { SetPrimaryEmail(value); return *this;}
-    inline AcceptPrimaryEmailUpdateRequest& WithPrimaryEmail(Aws::String&& value) { SetPrimaryEmail(std::move(value)); return *this;}
-    inline AcceptPrimaryEmailUpdateRequest& WithPrimaryEmail(const char* value) { SetPrimaryEmail(value); return *this;}
+    template<typename PrimaryEmailT = Aws::String>
+    void SetPrimaryEmail(PrimaryEmailT&& value) { m_primaryEmailHasBeenSet = true; m_primaryEmail = std::forward<PrimaryEmailT>(value); }
+    template<typename PrimaryEmailT = Aws::String>
+    AcceptPrimaryEmailUpdateRequest& WithPrimaryEmail(PrimaryEmailT&& value) { SetPrimaryEmail(std::forward<PrimaryEmailT>(value)); return *this;}
     ///@}
   private:
 

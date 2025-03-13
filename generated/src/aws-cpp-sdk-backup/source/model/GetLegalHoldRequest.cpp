@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLegalHoldRequest::GetLegalHoldRequest() : 
-    m_legalHoldIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLegalHoldRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-TransitGatewayPeering::TransitGatewayPeering() : 
-    m_peeringHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_transitGatewayPeeringAttachmentIdHasBeenSet(false)
-{
-}
-
 TransitGatewayPeering::TransitGatewayPeering(JsonView jsonValue)
-  : TransitGatewayPeering()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TransitGatewayPeering& TransitGatewayPeering::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Peering"))
   {
     m_peering = jsonValue.GetObject("Peering");
-
     m_peeringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayArn"))
   {
     m_transitGatewayArn = jsonValue.GetString("TransitGatewayArn");
-
     m_transitGatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayPeeringAttachmentId"))
   {
     m_transitGatewayPeeringAttachmentId = jsonValue.GetString("TransitGatewayPeeringAttachmentId");
-
     m_transitGatewayPeeringAttachmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDmsReplicationInstanceVpcSecurityGroupsDetails::AwsDmsReplicationInstanceVpcSecurityGroupsDetails() : 
-    m_vpcSecurityGroupIdHasBeenSet(false)
-{
-}
-
 AwsDmsReplicationInstanceVpcSecurityGroupsDetails::AwsDmsReplicationInstanceVpcSecurityGroupsDetails(JsonView jsonValue)
-  : AwsDmsReplicationInstanceVpcSecurityGroupsDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsDmsReplicationInstanceVpcSecurityGroupsDetails& AwsDmsReplicationInstanceVpcS
   if(jsonValue.ValueExists("VpcSecurityGroupId"))
   {
     m_vpcSecurityGroupId = jsonValue.GetString("VpcSecurityGroupId");
-
     m_vpcSecurityGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

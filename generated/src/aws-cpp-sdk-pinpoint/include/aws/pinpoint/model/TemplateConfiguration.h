@@ -32,7 +32,7 @@ namespace Model
   class TemplateConfiguration
   {
   public:
-    AWS_PINPOINT_API TemplateConfiguration();
+    AWS_PINPOINT_API TemplateConfiguration() = default;
     AWS_PINPOINT_API TemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API TemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,36 +42,36 @@ namespace Model
     /**
      * <p>The email template to use for the message.</p>
      */
-    inline const Template& GetEmailTemplate() const{ return m_emailTemplate; }
+    inline const Template& GetEmailTemplate() const { return m_emailTemplate; }
     inline bool EmailTemplateHasBeenSet() const { return m_emailTemplateHasBeenSet; }
-    inline void SetEmailTemplate(const Template& value) { m_emailTemplateHasBeenSet = true; m_emailTemplate = value; }
-    inline void SetEmailTemplate(Template&& value) { m_emailTemplateHasBeenSet = true; m_emailTemplate = std::move(value); }
-    inline TemplateConfiguration& WithEmailTemplate(const Template& value) { SetEmailTemplate(value); return *this;}
-    inline TemplateConfiguration& WithEmailTemplate(Template&& value) { SetEmailTemplate(std::move(value)); return *this;}
+    template<typename EmailTemplateT = Template>
+    void SetEmailTemplate(EmailTemplateT&& value) { m_emailTemplateHasBeenSet = true; m_emailTemplate = std::forward<EmailTemplateT>(value); }
+    template<typename EmailTemplateT = Template>
+    TemplateConfiguration& WithEmailTemplate(EmailTemplateT&& value) { SetEmailTemplate(std::forward<EmailTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The push notification template to use for the message.</p>
      */
-    inline const Template& GetPushTemplate() const{ return m_pushTemplate; }
+    inline const Template& GetPushTemplate() const { return m_pushTemplate; }
     inline bool PushTemplateHasBeenSet() const { return m_pushTemplateHasBeenSet; }
-    inline void SetPushTemplate(const Template& value) { m_pushTemplateHasBeenSet = true; m_pushTemplate = value; }
-    inline void SetPushTemplate(Template&& value) { m_pushTemplateHasBeenSet = true; m_pushTemplate = std::move(value); }
-    inline TemplateConfiguration& WithPushTemplate(const Template& value) { SetPushTemplate(value); return *this;}
-    inline TemplateConfiguration& WithPushTemplate(Template&& value) { SetPushTemplate(std::move(value)); return *this;}
+    template<typename PushTemplateT = Template>
+    void SetPushTemplate(PushTemplateT&& value) { m_pushTemplateHasBeenSet = true; m_pushTemplate = std::forward<PushTemplateT>(value); }
+    template<typename PushTemplateT = Template>
+    TemplateConfiguration& WithPushTemplate(PushTemplateT&& value) { SetPushTemplate(std::forward<PushTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SMS template to use for the message.</p>
      */
-    inline const Template& GetSMSTemplate() const{ return m_sMSTemplate; }
+    inline const Template& GetSMSTemplate() const { return m_sMSTemplate; }
     inline bool SMSTemplateHasBeenSet() const { return m_sMSTemplateHasBeenSet; }
-    inline void SetSMSTemplate(const Template& value) { m_sMSTemplateHasBeenSet = true; m_sMSTemplate = value; }
-    inline void SetSMSTemplate(Template&& value) { m_sMSTemplateHasBeenSet = true; m_sMSTemplate = std::move(value); }
-    inline TemplateConfiguration& WithSMSTemplate(const Template& value) { SetSMSTemplate(value); return *this;}
-    inline TemplateConfiguration& WithSMSTemplate(Template&& value) { SetSMSTemplate(std::move(value)); return *this;}
+    template<typename SMSTemplateT = Template>
+    void SetSMSTemplate(SMSTemplateT&& value) { m_sMSTemplateHasBeenSet = true; m_sMSTemplate = std::forward<SMSTemplateT>(value); }
+    template<typename SMSTemplateT = Template>
+    TemplateConfiguration& WithSMSTemplate(SMSTemplateT&& value) { SetSMSTemplate(std::forward<SMSTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * <p>The voice template to use for the message. This object isn't supported for
      * campaigns.</p>
      */
-    inline const Template& GetVoiceTemplate() const{ return m_voiceTemplate; }
+    inline const Template& GetVoiceTemplate() const { return m_voiceTemplate; }
     inline bool VoiceTemplateHasBeenSet() const { return m_voiceTemplateHasBeenSet; }
-    inline void SetVoiceTemplate(const Template& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = value; }
-    inline void SetVoiceTemplate(Template&& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = std::move(value); }
-    inline TemplateConfiguration& WithVoiceTemplate(const Template& value) { SetVoiceTemplate(value); return *this;}
-    inline TemplateConfiguration& WithVoiceTemplate(Template&& value) { SetVoiceTemplate(std::move(value)); return *this;}
+    template<typename VoiceTemplateT = Template>
+    void SetVoiceTemplate(VoiceTemplateT&& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = std::forward<VoiceTemplateT>(value); }
+    template<typename VoiceTemplateT = Template>
+    TemplateConfiguration& WithVoiceTemplate(VoiceTemplateT&& value) { SetVoiceTemplate(std::forward<VoiceTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +92,12 @@ namespace Model
      * <p>The InApp template to use for the message. The InApp template object is not
      * supported for SendMessages.</p>
      */
-    inline const Template& GetInAppTemplate() const{ return m_inAppTemplate; }
+    inline const Template& GetInAppTemplate() const { return m_inAppTemplate; }
     inline bool InAppTemplateHasBeenSet() const { return m_inAppTemplateHasBeenSet; }
-    inline void SetInAppTemplate(const Template& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = value; }
-    inline void SetInAppTemplate(Template&& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = std::move(value); }
-    inline TemplateConfiguration& WithInAppTemplate(const Template& value) { SetInAppTemplate(value); return *this;}
-    inline TemplateConfiguration& WithInAppTemplate(Template&& value) { SetInAppTemplate(std::move(value)); return *this;}
+    template<typename InAppTemplateT = Template>
+    void SetInAppTemplate(InAppTemplateT&& value) { m_inAppTemplateHasBeenSet = true; m_inAppTemplate = std::forward<InAppTemplateT>(value); }
+    template<typename InAppTemplateT = Template>
+    TemplateConfiguration& WithInAppTemplate(InAppTemplateT&& value) { SetInAppTemplate(std::forward<InAppTemplateT>(value)); return *this;}
     ///@}
   private:
 

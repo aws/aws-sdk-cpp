@@ -18,15 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-LogSource::LogSource() : 
-    m_accountHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_sourcesHasBeenSet(false)
-{
-}
-
 LogSource::LogSource(JsonView jsonValue)
-  : LogSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LogSource& LogSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("account"))
   {
     m_account = jsonValue.GetString("account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -56,7 +44,6 @@ LogSource& LogSource::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

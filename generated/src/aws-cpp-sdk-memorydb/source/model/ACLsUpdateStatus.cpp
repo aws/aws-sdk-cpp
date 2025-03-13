@@ -18,13 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ACLsUpdateStatus::ACLsUpdateStatus() : 
-    m_aCLToApplyHasBeenSet(false)
-{
-}
-
 ACLsUpdateStatus::ACLsUpdateStatus(JsonView jsonValue)
-  : ACLsUpdateStatus()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ACLsUpdateStatus& ACLsUpdateStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ACLToApply"))
   {
     m_aCLToApply = jsonValue.GetString("ACLToApply");
-
     m_aCLToApplyHasBeenSet = true;
   }
-
   return *this;
 }
 

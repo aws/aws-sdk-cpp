@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityRuleResult::DataQualityRuleResult() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_evaluationMessageHasBeenSet(false),
-    m_result(DataQualityRuleResultStatus::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_evaluatedMetricsHasBeenSet(false),
-    m_evaluatedRuleHasBeenSet(false)
-{
-}
-
 DataQualityRuleResult::DataQualityRuleResult(JsonView jsonValue)
-  : DataQualityRuleResult()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DataQualityRuleResult& DataQualityRuleResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMessage"))
   {
     m_evaluationMessage = jsonValue.GetString("EvaluationMessage");
-
     m_evaluationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Result"))
   {
     m_result = DataQualityRuleResultStatusMapper::GetDataQualityRuleResultStatusForName(jsonValue.GetString("Result"));
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluatedMetrics"))
   {
     Aws::Map<Aws::String, JsonView> evaluatedMetricsJsonMap = jsonValue.GetObject("EvaluatedMetrics").GetAllObjects();
@@ -74,14 +54,11 @@ DataQualityRuleResult& DataQualityRuleResult::operator =(JsonView jsonValue)
     }
     m_evaluatedMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluatedRule"))
   {
     m_evaluatedRule = jsonValue.GetString("EvaluatedRule");
-
     m_evaluatedRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FailedCapacityReservationFleetCancellationResponse::FailedCapacityReservationFleetCancellationResponse() : 
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_cancelCapacityReservationFleetErrorHasBeenSet(false)
-{
-}
-
 FailedCapacityReservationFleetCancellationResponse::FailedCapacityReservationFleetCancellationResponse(const XmlNode& xmlNode)
-  : FailedCapacityReservationFleetCancellationResponse()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ FailedCapacityReservationFleetCancellationResponse& FailedCapacityReservationFle
     {
       m_capacityReservationFleetId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationFleetIdNode.GetText());
       m_capacityReservationFleetIdHasBeenSet = true;
+       m_capacityReservationFleetIdHasBeenSet = true;
     }
     XmlNode cancelCapacityReservationFleetErrorNode = resultNode.FirstChild("cancelCapacityReservationFleetError");
     if(!cancelCapacityReservationFleetErrorNode.IsNull())
     {
       m_cancelCapacityReservationFleetError = cancelCapacityReservationFleetErrorNode;
       m_cancelCapacityReservationFleetErrorHasBeenSet = true;
+       m_cancelCapacityReservationFleetErrorHasBeenSet = true;
     }
   }
 

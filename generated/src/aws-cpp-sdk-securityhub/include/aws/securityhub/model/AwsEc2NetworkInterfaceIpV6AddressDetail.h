@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2NetworkInterfaceIpV6AddressDetail
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail();
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail() = default;
     AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2NetworkInterfaceIpV6AddressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The IPV6 address.</p>
      */
-    inline const Aws::String& GetIpV6Address() const{ return m_ipV6Address; }
+    inline const Aws::String& GetIpV6Address() const { return m_ipV6Address; }
     inline bool IpV6AddressHasBeenSet() const { return m_ipV6AddressHasBeenSet; }
-    inline void SetIpV6Address(const Aws::String& value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address = value; }
-    inline void SetIpV6Address(Aws::String&& value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address = std::move(value); }
-    inline void SetIpV6Address(const char* value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address.assign(value); }
-    inline AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(const Aws::String& value) { SetIpV6Address(value); return *this;}
-    inline AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(Aws::String&& value) { SetIpV6Address(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(const char* value) { SetIpV6Address(value); return *this;}
+    template<typename IpV6AddressT = Aws::String>
+    void SetIpV6Address(IpV6AddressT&& value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address = std::forward<IpV6AddressT>(value); }
+    template<typename IpV6AddressT = Aws::String>
+    AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(IpV6AddressT&& value) { SetIpV6Address(std::forward<IpV6AddressT>(value)); return *this;}
     ///@}
   private:
 

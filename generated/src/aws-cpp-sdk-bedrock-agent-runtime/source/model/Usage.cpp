@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Usage::Usage() : 
-    m_inputTokens(0),
-    m_inputTokensHasBeenSet(false),
-    m_outputTokens(0),
-    m_outputTokensHasBeenSet(false)
-{
-}
-
 Usage::Usage(JsonView jsonValue)
-  : Usage()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Usage& Usage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputTokens"))
   {
     m_inputTokens = jsonValue.GetInteger("inputTokens");
-
     m_inputTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputTokens"))
   {
     m_outputTokens = jsonValue.GetInteger("outputTokens");
-
     m_outputTokensHasBeenSet = true;
   }
-
   return *this;
 }
 

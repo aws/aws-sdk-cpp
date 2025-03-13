@@ -35,7 +35,7 @@ namespace Model
   class Forecast
   {
   public:
-    AWS_FORECASTQUERYSERVICE_API Forecast();
+    AWS_FORECASTQUERYSERVICE_API Forecast() = default;
     AWS_FORECASTQUERYSERVICE_API Forecast(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTQUERYSERVICE_API Forecast& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTQUERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,18 +51,16 @@ namespace Model
      * operation to change the values. The values will vary depending on how this is
      * set, with a minimum of <code>1</code> and a maximum of <code>5.</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& GetPredictions() const{ return m_predictions; }
+    inline const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& GetPredictions() const { return m_predictions; }
     inline bool PredictionsHasBeenSet() const { return m_predictionsHasBeenSet; }
-    inline void SetPredictions(const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& value) { m_predictionsHasBeenSet = true; m_predictions = value; }
-    inline void SetPredictions(Aws::Map<Aws::String, Aws::Vector<DataPoint>>&& value) { m_predictionsHasBeenSet = true; m_predictions = std::move(value); }
-    inline Forecast& WithPredictions(const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& value) { SetPredictions(value); return *this;}
-    inline Forecast& WithPredictions(Aws::Map<Aws::String, Aws::Vector<DataPoint>>&& value) { SetPredictions(std::move(value)); return *this;}
-    inline Forecast& AddPredictions(const Aws::String& key, const Aws::Vector<DataPoint>& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, value); return *this; }
-    inline Forecast& AddPredictions(Aws::String&& key, const Aws::Vector<DataPoint>& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(std::move(key), value); return *this; }
-    inline Forecast& AddPredictions(const Aws::String& key, Aws::Vector<DataPoint>&& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, std::move(value)); return *this; }
-    inline Forecast& AddPredictions(Aws::String&& key, Aws::Vector<DataPoint>&& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(std::move(key), std::move(value)); return *this; }
-    inline Forecast& AddPredictions(const char* key, Aws::Vector<DataPoint>&& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, std::move(value)); return *this; }
-    inline Forecast& AddPredictions(const char* key, const Aws::Vector<DataPoint>& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, value); return *this; }
+    template<typename PredictionsT = Aws::Map<Aws::String, Aws::Vector<DataPoint>>>
+    void SetPredictions(PredictionsT&& value) { m_predictionsHasBeenSet = true; m_predictions = std::forward<PredictionsT>(value); }
+    template<typename PredictionsT = Aws::Map<Aws::String, Aws::Vector<DataPoint>>>
+    Forecast& WithPredictions(PredictionsT&& value) { SetPredictions(std::forward<PredictionsT>(value)); return *this;}
+    template<typename PredictionsKeyT = Aws::String, typename PredictionsValueT = Aws::Vector<DataPoint>>
+    Forecast& AddPredictions(PredictionsKeyT&& key, PredictionsValueT&& value) {
+      m_predictionsHasBeenSet = true; m_predictions.emplace(std::forward<PredictionsKeyT>(key), std::forward<PredictionsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

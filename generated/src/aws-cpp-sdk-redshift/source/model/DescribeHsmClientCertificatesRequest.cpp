@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeHsmClientCertificatesRequest::DescribeHsmClientCertificatesRequest() : 
-    m_hsmClientCertificateIdentifierHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHsmClientCertificatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

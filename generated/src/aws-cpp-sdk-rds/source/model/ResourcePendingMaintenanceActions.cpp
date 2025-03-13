@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_pendingMaintenanceActionDetailsHasBeenSet(false)
-{
-}
-
 ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(const XmlNode& xmlNode)
-  : ResourcePendingMaintenanceActions()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
     {
       m_resourceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(resourceIdentifierNode.GetText());
       m_resourceIdentifierHasBeenSet = true;
+       m_resourceIdentifierHasBeenSet = true;
     }
     XmlNode pendingMaintenanceActionDetailsNode = resultNode.FirstChild("PendingMaintenanceActionDetails");
     if(!pendingMaintenanceActionDetailsNode.IsNull())
     {
       XmlNode pendingMaintenanceActionDetailsMember = pendingMaintenanceActionDetailsNode.FirstChild("PendingMaintenanceAction");
+      m_pendingMaintenanceActionDetailsHasBeenSet = !pendingMaintenanceActionDetailsMember.IsNull();
       while(!pendingMaintenanceActionDetailsMember.IsNull())
       {
         m_pendingMaintenanceActionDetails.push_back(pendingMaintenanceActionDetailsMember);
         pendingMaintenanceActionDetailsMember = pendingMaintenanceActionDetailsMember.NextNode("PendingMaintenanceAction");
       }
 
-      m_pendingMaintenanceActionDetailsHasBeenSet = true;
+       m_pendingMaintenanceActionDetailsHasBeenSet = true;
     }
   }
 

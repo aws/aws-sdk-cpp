@@ -18,18 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-DeliverySource::DeliverySource() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_logTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DeliverySource::DeliverySource(JsonView jsonValue)
-  : DeliverySource()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ DeliverySource& DeliverySource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArns"))
   {
     Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
@@ -59,21 +44,16 @@ DeliverySource& DeliverySource::operator =(JsonView jsonValue)
     }
     m_resourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logType"))
   {
     m_logType = jsonValue.GetString("logType");
-
     m_logTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -83,7 +63,6 @@ DeliverySource& DeliverySource::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

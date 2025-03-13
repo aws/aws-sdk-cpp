@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamResourceDiscoveryAssociation::IpamResourceDiscoveryAssociation() : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamResourceDiscoveryAssociationIdHasBeenSet(false),
-    m_ipamResourceDiscoveryAssociationArnHasBeenSet(false),
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_resourceDiscoveryStatus(IpamAssociatedResourceDiscoveryStatus::NOT_SET),
-    m_resourceDiscoveryStatusHasBeenSet(false),
-    m_state(IpamResourceDiscoveryAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 IpamResourceDiscoveryAssociation::IpamResourceDiscoveryAssociation(const XmlNode& xmlNode)
-  : IpamResourceDiscoveryAssociation()
 {
   *this = xmlNode;
 }
@@ -55,72 +36,83 @@ IpamResourceDiscoveryAssociation& IpamResourceDiscoveryAssociation::operator =(c
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode ipamResourceDiscoveryAssociationIdNode = resultNode.FirstChild("ipamResourceDiscoveryAssociationId");
     if(!ipamResourceDiscoveryAssociationIdNode.IsNull())
     {
       m_ipamResourceDiscoveryAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryAssociationIdNode.GetText());
       m_ipamResourceDiscoveryAssociationIdHasBeenSet = true;
+       m_ipamResourceDiscoveryAssociationIdHasBeenSet = true;
     }
     XmlNode ipamResourceDiscoveryAssociationArnNode = resultNode.FirstChild("ipamResourceDiscoveryAssociationArn");
     if(!ipamResourceDiscoveryAssociationArnNode.IsNull())
     {
       m_ipamResourceDiscoveryAssociationArn = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryAssociationArnNode.GetText());
       m_ipamResourceDiscoveryAssociationArnHasBeenSet = true;
+       m_ipamResourceDiscoveryAssociationArnHasBeenSet = true;
     }
     XmlNode ipamResourceDiscoveryIdNode = resultNode.FirstChild("ipamResourceDiscoveryId");
     if(!ipamResourceDiscoveryIdNode.IsNull())
     {
       m_ipamResourceDiscoveryId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamResourceDiscoveryIdNode.GetText());
       m_ipamResourceDiscoveryIdHasBeenSet = true;
+       m_ipamResourceDiscoveryIdHasBeenSet = true;
     }
     XmlNode ipamIdNode = resultNode.FirstChild("ipamId");
     if(!ipamIdNode.IsNull())
     {
       m_ipamId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamIdNode.GetText());
       m_ipamIdHasBeenSet = true;
+       m_ipamIdHasBeenSet = true;
     }
     XmlNode ipamArnNode = resultNode.FirstChild("ipamArn");
     if(!ipamArnNode.IsNull())
     {
       m_ipamArn = Aws::Utils::Xml::DecodeEscapedXmlText(ipamArnNode.GetText());
       m_ipamArnHasBeenSet = true;
+       m_ipamArnHasBeenSet = true;
     }
     XmlNode ipamRegionNode = resultNode.FirstChild("ipamRegion");
     if(!ipamRegionNode.IsNull())
     {
       m_ipamRegion = Aws::Utils::Xml::DecodeEscapedXmlText(ipamRegionNode.GetText());
       m_ipamRegionHasBeenSet = true;
+       m_ipamRegionHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("isDefault");
     if(!isDefaultNode.IsNull())
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+       m_isDefaultHasBeenSet = true;
     }
     XmlNode resourceDiscoveryStatusNode = resultNode.FirstChild("resourceDiscoveryStatus");
     if(!resourceDiscoveryStatusNode.IsNull())
     {
-      m_resourceDiscoveryStatus = IpamAssociatedResourceDiscoveryStatusMapper::GetIpamAssociatedResourceDiscoveryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDiscoveryStatusNode.GetText()).c_str()).c_str());
+      m_resourceDiscoveryStatus = IpamAssociatedResourceDiscoveryStatusMapper::GetIpamAssociatedResourceDiscoveryStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceDiscoveryStatusNode.GetText()).c_str()));
       m_resourceDiscoveryStatusHasBeenSet = true;
+       m_resourceDiscoveryStatusHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamResourceDiscoveryAssociationStateMapper::GetIpamResourceDiscoveryAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamResourceDiscoveryAssociationStateMapper::GetIpamResourceDiscoveryAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

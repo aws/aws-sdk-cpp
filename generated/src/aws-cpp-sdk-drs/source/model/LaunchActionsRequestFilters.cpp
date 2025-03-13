@@ -18,13 +18,7 @@ namespace drs
 namespace Model
 {
 
-LaunchActionsRequestFilters::LaunchActionsRequestFilters() : 
-    m_actionIdsHasBeenSet(false)
-{
-}
-
 LaunchActionsRequestFilters::LaunchActionsRequestFilters(JsonView jsonValue)
-  : LaunchActionsRequestFilters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LaunchActionsRequestFilters& LaunchActionsRequestFilters::operator =(JsonView js
     }
     m_actionIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

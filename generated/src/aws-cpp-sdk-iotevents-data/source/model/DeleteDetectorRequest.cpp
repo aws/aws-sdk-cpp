@@ -18,15 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-DeleteDetectorRequest::DeleteDetectorRequest() : 
-    m_messageIdHasBeenSet(false),
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false)
-{
-}
-
 DeleteDetectorRequest::DeleteDetectorRequest(JsonView jsonValue)
-  : DeleteDetectorRequest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeleteDetectorRequest& DeleteDetectorRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelName"))
   {
     m_detectorModelName = jsonValue.GetString("detectorModelName");
-
     m_detectorModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   return *this;
 }
 

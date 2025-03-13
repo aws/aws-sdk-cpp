@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddLayerVersionPermissionResult::AddLayerVersionPermissionResult()
-{
-}
-
 AddLayerVersionPermissionResult::AddLayerVersionPermissionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AddLayerVersionPermissionResult& AddLayerVersionPermissionResult::operator =(con
   if(jsonValue.ValueExists("Statement"))
   {
     m_statement = jsonValue.GetString("Statement");
-
+    m_statementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
+    m_revisionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

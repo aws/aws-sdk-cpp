@@ -12,10 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceSettingsRequest::GetServiceSettingsRequest()
-{
-}
-
 Aws::String GetServiceSettingsRequest::SerializePayload() const
 {
   return {};

@@ -12,13 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateApplicationFromEntitlementRequest::DisassociateApplicationFromEntitlementRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_entitlementNameHasBeenSet(false),
-    m_applicationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateApplicationFromEntitlementRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-EntityFilter::EntityFilter() : 
-    m_name(EntityFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EntityFilter::EntityFilter(JsonView jsonValue)
-  : EntityFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = EntityFilterNameMapper::GetEntityFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("value");
@@ -49,7 +39,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

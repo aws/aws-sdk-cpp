@@ -32,7 +32,7 @@ namespace Model
   class DeletionConfig
   {
   public:
-    AWS_KINESISVIDEO_API DeletionConfig();
+    AWS_KINESISVIDEO_API DeletionConfig() = default;
     AWS_KINESISVIDEO_API DeletionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API DeletionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * Edge Agent. The default value of the retention time is 720 hours, which
      * translates to 30 days.</p>
      */
-    inline int GetEdgeRetentionInHours() const{ return m_edgeRetentionInHours; }
+    inline int GetEdgeRetentionInHours() const { return m_edgeRetentionInHours; }
     inline bool EdgeRetentionInHoursHasBeenSet() const { return m_edgeRetentionInHoursHasBeenSet; }
     inline void SetEdgeRetentionInHours(int value) { m_edgeRetentionInHoursHasBeenSet = true; m_edgeRetentionInHours = value; }
     inline DeletionConfig& WithEdgeRetentionInHours(int value) { SetEdgeRetentionInHours(value); return *this;}
@@ -55,12 +55,12 @@ namespace Model
      * <p>The value of the local size required in order to delete the edge
      * configuration.</p>
      */
-    inline const LocalSizeConfig& GetLocalSizeConfig() const{ return m_localSizeConfig; }
+    inline const LocalSizeConfig& GetLocalSizeConfig() const { return m_localSizeConfig; }
     inline bool LocalSizeConfigHasBeenSet() const { return m_localSizeConfigHasBeenSet; }
-    inline void SetLocalSizeConfig(const LocalSizeConfig& value) { m_localSizeConfigHasBeenSet = true; m_localSizeConfig = value; }
-    inline void SetLocalSizeConfig(LocalSizeConfig&& value) { m_localSizeConfigHasBeenSet = true; m_localSizeConfig = std::move(value); }
-    inline DeletionConfig& WithLocalSizeConfig(const LocalSizeConfig& value) { SetLocalSizeConfig(value); return *this;}
-    inline DeletionConfig& WithLocalSizeConfig(LocalSizeConfig&& value) { SetLocalSizeConfig(std::move(value)); return *this;}
+    template<typename LocalSizeConfigT = LocalSizeConfig>
+    void SetLocalSizeConfig(LocalSizeConfigT&& value) { m_localSizeConfigHasBeenSet = true; m_localSizeConfig = std::forward<LocalSizeConfigT>(value); }
+    template<typename LocalSizeConfigT = LocalSizeConfig>
+    DeletionConfig& WithLocalSizeConfig(LocalSizeConfigT&& value) { SetLocalSizeConfig(std::forward<LocalSizeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,20 +75,20 @@ namespace Model
      * media files are not being deleted before they are initially uploaded to the
      * Amazon Web Services cloud.</p>
      */
-    inline bool GetDeleteAfterUpload() const{ return m_deleteAfterUpload; }
+    inline bool GetDeleteAfterUpload() const { return m_deleteAfterUpload; }
     inline bool DeleteAfterUploadHasBeenSet() const { return m_deleteAfterUploadHasBeenSet; }
     inline void SetDeleteAfterUpload(bool value) { m_deleteAfterUploadHasBeenSet = true; m_deleteAfterUpload = value; }
     inline DeletionConfig& WithDeleteAfterUpload(bool value) { SetDeleteAfterUpload(value); return *this;}
     ///@}
   private:
 
-    int m_edgeRetentionInHours;
+    int m_edgeRetentionInHours{0};
     bool m_edgeRetentionInHoursHasBeenSet = false;
 
     LocalSizeConfig m_localSizeConfig;
     bool m_localSizeConfigHasBeenSet = false;
 
-    bool m_deleteAfterUpload;
+    bool m_deleteAfterUpload{false};
     bool m_deleteAfterUploadHasBeenSet = false;
   };
 

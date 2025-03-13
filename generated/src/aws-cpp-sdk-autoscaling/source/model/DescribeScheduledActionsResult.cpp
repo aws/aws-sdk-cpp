@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeScheduledActionsResult::DescribeScheduledActionsResult()
-{
-}
-
 DescribeScheduledActionsResult::DescribeScheduledActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const
     if(!scheduledUpdateGroupActionsNode.IsNull())
     {
       XmlNode scheduledUpdateGroupActionsMember = scheduledUpdateGroupActionsNode.FirstChild("member");
+      m_scheduledUpdateGroupActionsHasBeenSet = !scheduledUpdateGroupActionsMember.IsNull();
       while(!scheduledUpdateGroupActionsMember.IsNull())
       {
         m_scheduledUpdateGroupActions.push_back(scheduledUpdateGroupActionsMember);
@@ -53,12 +50,14 @@ DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeScheduledActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

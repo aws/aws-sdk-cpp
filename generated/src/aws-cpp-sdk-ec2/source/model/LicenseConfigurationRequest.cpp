@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LicenseConfigurationRequest::LicenseConfigurationRequest() : 
-    m_licenseConfigurationArnHasBeenSet(false)
-{
-}
-
 LicenseConfigurationRequest::LicenseConfigurationRequest(const XmlNode& xmlNode)
-  : LicenseConfigurationRequest()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ LicenseConfigurationRequest& LicenseConfigurationRequest::operator =(const XmlNo
     {
       m_licenseConfigurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(licenseConfigurationArnNode.GetText());
       m_licenseConfigurationArnHasBeenSet = true;
+       m_licenseConfigurationArnHasBeenSet = true;
     }
   }
 

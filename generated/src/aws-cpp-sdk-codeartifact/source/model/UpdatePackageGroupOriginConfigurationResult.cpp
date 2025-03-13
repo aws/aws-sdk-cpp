@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdatePackageGroupOriginConfigurationResult::UpdatePackageGroupOriginConfigurationResult()
-{
-}
-
 UpdatePackageGroupOriginConfigurationResult::UpdatePackageGroupOriginConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ UpdatePackageGroupOriginConfigurationResult& UpdatePackageGroupOriginConfigurati
   if(jsonValue.ValueExists("packageGroup"))
   {
     m_packageGroup = jsonValue.GetObject("packageGroup");
-
+    m_packageGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedRepositoryUpdates"))
   {
     Aws::Map<Aws::String, JsonView> allowedRepositoryUpdatesJsonMap = jsonValue.GetObject("allowedRepositoryUpdates").GetAllObjects();
@@ -55,14 +50,15 @@ UpdatePackageGroupOriginConfigurationResult& UpdatePackageGroupOriginConfigurati
       }
       m_allowedRepositoryUpdates[PackageGroupOriginRestrictionTypeMapper::GetPackageGroupOriginRestrictionTypeForName(allowedRepositoryUpdatesItem.first)] = std::move(packageGroupAllowedRepositoryUpdateMap);
     }
+    m_allowedRepositoryUpdatesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

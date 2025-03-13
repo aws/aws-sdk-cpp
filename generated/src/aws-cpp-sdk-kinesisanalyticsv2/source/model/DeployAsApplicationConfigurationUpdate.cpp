@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate() : 
-    m_s3ContentLocationUpdateHasBeenSet(false)
-{
-}
-
 DeployAsApplicationConfigurationUpdate::DeployAsApplicationConfigurationUpdate(JsonView jsonValue)
-  : DeployAsApplicationConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeployAsApplicationConfigurationUpdate& DeployAsApplicationConfigurationUpdate::
   if(jsonValue.ValueExists("S3ContentLocationUpdate"))
   {
     m_s3ContentLocationUpdate = jsonValue.GetObject("S3ContentLocationUpdate");
-
     m_s3ContentLocationUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

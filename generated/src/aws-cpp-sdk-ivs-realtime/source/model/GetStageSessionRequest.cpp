@@ -12,12 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStageSessionRequest::GetStageSessionRequest() : 
-    m_stageArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetStageSessionRequest::SerializePayload() const
 {
   JsonValue payload;

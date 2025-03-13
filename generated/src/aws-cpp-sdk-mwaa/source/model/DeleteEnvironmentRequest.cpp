@@ -12,11 +12,6 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentRequest::DeleteEnvironmentRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentRequest::SerializePayload() const
 {
   return {};

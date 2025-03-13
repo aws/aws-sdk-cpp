@@ -33,7 +33,7 @@ namespace Model
   class Connection
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API Connection();
+    AWS_DATABASEMIGRATIONSERVICE_API Connection() = default;
     AWS_DATABASEMIGRATIONSERVICE_API Connection(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The ARN of the replication instance.</p>
      */
-    inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
+    inline const Aws::String& GetReplicationInstanceArn() const { return m_replicationInstanceArn; }
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
-    inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
-    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
-    inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
-    inline Connection& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
-    inline Connection& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
-    inline Connection& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
+    template<typename ReplicationInstanceArnT = Aws::String>
+    void SetReplicationInstanceArn(ReplicationInstanceArnT&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::forward<ReplicationInstanceArnT>(value); }
+    template<typename ReplicationInstanceArnT = Aws::String>
+    Connection& WithReplicationInstanceArn(ReplicationInstanceArnT&& value) { SetReplicationInstanceArn(std::forward<ReplicationInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline Connection& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline Connection& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline Connection& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    Connection& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * <code>"testing"</code> </p> </li> <li> <p> <code>"failed"</code> </p> </li> <li>
      * <p> <code>"deleting"</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Connection& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Connection& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Connection& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Connection& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message when the connection last failed.</p>
      */
-    inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
+    inline const Aws::String& GetLastFailureMessage() const { return m_lastFailureMessage; }
     inline bool LastFailureMessageHasBeenSet() const { return m_lastFailureMessageHasBeenSet; }
-    inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = value; }
-    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::move(value); }
-    inline void SetLastFailureMessage(const char* value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage.assign(value); }
-    inline Connection& WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
-    inline Connection& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(std::move(value)); return *this;}
-    inline Connection& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+    template<typename LastFailureMessageT = Aws::String>
+    void SetLastFailureMessage(LastFailureMessageT&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::forward<LastFailureMessageT>(value); }
+    template<typename LastFailureMessageT = Aws::String>
+    Connection& WithLastFailureMessage(LastFailureMessageT&& value) { SetLastFailureMessage(std::forward<LastFailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +96,12 @@ namespace Model
      * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
      * contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
+    inline const Aws::String& GetEndpointIdentifier() const { return m_endpointIdentifier; }
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
-    inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
-    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
-    inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
-    inline Connection& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
-    inline Connection& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
-    inline Connection& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
+    template<typename EndpointIdentifierT = Aws::String>
+    void SetEndpointIdentifier(EndpointIdentifierT&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::forward<EndpointIdentifierT>(value); }
+    template<typename EndpointIdentifierT = Aws::String>
+    Connection& WithEndpointIdentifier(EndpointIdentifierT&& value) { SetEndpointIdentifier(std::forward<EndpointIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +109,12 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p>
      */
-    inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
+    inline const Aws::String& GetReplicationInstanceIdentifier() const { return m_replicationInstanceIdentifier; }
     inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
-    inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
-    inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
-    inline void SetReplicationInstanceIdentifier(const char* value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier.assign(value); }
-    inline Connection& WithReplicationInstanceIdentifier(const Aws::String& value) { SetReplicationInstanceIdentifier(value); return *this;}
-    inline Connection& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
-    inline Connection& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
+    template<typename ReplicationInstanceIdentifierT = Aws::String>
+    void SetReplicationInstanceIdentifier(ReplicationInstanceIdentifierT&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::forward<ReplicationInstanceIdentifierT>(value); }
+    template<typename ReplicationInstanceIdentifierT = Aws::String>
+    Connection& WithReplicationInstanceIdentifier(ReplicationInstanceIdentifierT&& value) { SetReplicationInstanceIdentifier(std::forward<ReplicationInstanceIdentifierT>(value)); return *this;}
     ///@}
   private:
 

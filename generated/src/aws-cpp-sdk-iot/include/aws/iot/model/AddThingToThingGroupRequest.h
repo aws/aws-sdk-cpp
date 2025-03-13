@@ -21,7 +21,7 @@ namespace Model
   class AddThingToThingGroupRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API AddThingToThingGroupRequest();
+    AWS_IOT_API AddThingToThingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,56 +36,48 @@ namespace Model
     /**
      * <p>The name of the group to which you are adding a thing.</p>
      */
-    inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+    inline const Aws::String& GetThingGroupName() const { return m_thingGroupName; }
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-    inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-    inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-    inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-    inline AddThingToThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-    inline AddThingToThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-    inline AddThingToThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    template<typename ThingGroupNameT = Aws::String>
+    void SetThingGroupName(ThingGroupNameT&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::forward<ThingGroupNameT>(value); }
+    template<typename ThingGroupNameT = Aws::String>
+    AddThingToThingGroupRequest& WithThingGroupName(ThingGroupNameT&& value) { SetThingGroupName(std::forward<ThingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the group to which you are adding a thing.</p>
      */
-    inline const Aws::String& GetThingGroupArn() const{ return m_thingGroupArn; }
+    inline const Aws::String& GetThingGroupArn() const { return m_thingGroupArn; }
     inline bool ThingGroupArnHasBeenSet() const { return m_thingGroupArnHasBeenSet; }
-    inline void SetThingGroupArn(const Aws::String& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = value; }
-    inline void SetThingGroupArn(Aws::String&& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = std::move(value); }
-    inline void SetThingGroupArn(const char* value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn.assign(value); }
-    inline AddThingToThingGroupRequest& WithThingGroupArn(const Aws::String& value) { SetThingGroupArn(value); return *this;}
-    inline AddThingToThingGroupRequest& WithThingGroupArn(Aws::String&& value) { SetThingGroupArn(std::move(value)); return *this;}
-    inline AddThingToThingGroupRequest& WithThingGroupArn(const char* value) { SetThingGroupArn(value); return *this;}
+    template<typename ThingGroupArnT = Aws::String>
+    void SetThingGroupArn(ThingGroupArnT&& value) { m_thingGroupArnHasBeenSet = true; m_thingGroupArn = std::forward<ThingGroupArnT>(value); }
+    template<typename ThingGroupArnT = Aws::String>
+    AddThingToThingGroupRequest& WithThingGroupArn(ThingGroupArnT&& value) { SetThingGroupArn(std::forward<ThingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing to add to a group.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline AddThingToThingGroupRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline AddThingToThingGroupRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline AddThingToThingGroupRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    AddThingToThingGroupRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the thing to add to a group.</p>
      */
-    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+    inline const Aws::String& GetThingArn() const { return m_thingArn; }
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-    inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-    inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-    inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-    inline AddThingToThingGroupRequest& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-    inline AddThingToThingGroupRequest& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-    inline AddThingToThingGroupRequest& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    template<typename ThingArnT = Aws::String>
+    void SetThingArn(ThingArnT&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::forward<ThingArnT>(value); }
+    template<typename ThingArnT = Aws::String>
+    AddThingToThingGroupRequest& WithThingArn(ThingArnT&& value) { SetThingArn(std::forward<ThingArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +87,7 @@ namespace Model
      * are dynamic thing groups, adding a thing to a static group removes the thing
      * from the last dynamic group.</p>
      */
-    inline bool GetOverrideDynamicGroups() const{ return m_overrideDynamicGroups; }
+    inline bool GetOverrideDynamicGroups() const { return m_overrideDynamicGroups; }
     inline bool OverrideDynamicGroupsHasBeenSet() const { return m_overrideDynamicGroupsHasBeenSet; }
     inline void SetOverrideDynamicGroups(bool value) { m_overrideDynamicGroupsHasBeenSet = true; m_overrideDynamicGroups = value; }
     inline AddThingToThingGroupRequest& WithOverrideDynamicGroups(bool value) { SetOverrideDynamicGroups(value); return *this;}
@@ -114,7 +106,7 @@ namespace Model
     Aws::String m_thingArn;
     bool m_thingArnHasBeenSet = false;
 
-    bool m_overrideDynamicGroups;
+    bool m_overrideDynamicGroups{false};
     bool m_overrideDynamicGroupsHasBeenSet = false;
   };
 

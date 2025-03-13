@@ -12,10 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSparqlStatisticsRequest::GetSparqlStatisticsRequest()
-{
-}
-
 Aws::String GetSparqlStatisticsRequest::SerializePayload() const
 {
   return {};

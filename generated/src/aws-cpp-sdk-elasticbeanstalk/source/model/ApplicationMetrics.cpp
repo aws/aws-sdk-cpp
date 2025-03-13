@@ -20,18 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationMetrics::ApplicationMetrics() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_requestCount(0),
-    m_requestCountHasBeenSet(false),
-    m_statusCodesHasBeenSet(false),
-    m_latencyHasBeenSet(false)
-{
-}
-
 ApplicationMetrics::ApplicationMetrics(const XmlNode& xmlNode)
-  : ApplicationMetrics()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ ApplicationMetrics& ApplicationMetrics::operator =(const XmlNode& xmlNode)
     {
       m_duration = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(durationNode.GetText()).c_str()).c_str());
       m_durationHasBeenSet = true;
+       m_durationHasBeenSet = true;
     }
     XmlNode requestCountNode = resultNode.FirstChild("RequestCount");
     if(!requestCountNode.IsNull())
     {
       m_requestCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestCountNode.GetText()).c_str()).c_str());
       m_requestCountHasBeenSet = true;
+       m_requestCountHasBeenSet = true;
     }
     XmlNode statusCodesNode = resultNode.FirstChild("StatusCodes");
     if(!statusCodesNode.IsNull())
     {
       m_statusCodes = statusCodesNode;
       m_statusCodesHasBeenSet = true;
+       m_statusCodesHasBeenSet = true;
     }
     XmlNode latencyNode = resultNode.FirstChild("Latency");
     if(!latencyNode.IsNull())
     {
       m_latency = latencyNode;
       m_latencyHasBeenSet = true;
+       m_latencyHasBeenSet = true;
     }
   }
 

@@ -38,7 +38,7 @@ namespace Model
   class DescribeImageAttributeResponse
   {
   public:
-    AWS_EC2_API DescribeImageAttributeResponse();
+    AWS_EC2_API DescribeImageAttributeResponse() = default;
     AWS_EC2_API DescribeImageAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeImageAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,33 +47,33 @@ namespace Model
     /**
      * <p>A description for the AMI.</p>
      */
-    inline const AttributeValue& GetDescription() const{ return m_description; }
-    inline void SetDescription(const AttributeValue& value) { m_description = value; }
-    inline void SetDescription(AttributeValue&& value) { m_description = std::move(value); }
-    inline DescribeImageAttributeResponse& WithDescription(const AttributeValue& value) { SetDescription(value); return *this;}
-    inline DescribeImageAttributeResponse& WithDescription(AttributeValue&& value) { SetDescription(std::move(value)); return *this;}
+    inline const AttributeValue& GetDescription() const { return m_description; }
+    template<typename DescriptionT = AttributeValue>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = AttributeValue>
+    DescribeImageAttributeResponse& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The kernel ID.</p>
      */
-    inline const AttributeValue& GetKernelId() const{ return m_kernelId; }
-    inline void SetKernelId(const AttributeValue& value) { m_kernelId = value; }
-    inline void SetKernelId(AttributeValue&& value) { m_kernelId = std::move(value); }
-    inline DescribeImageAttributeResponse& WithKernelId(const AttributeValue& value) { SetKernelId(value); return *this;}
-    inline DescribeImageAttributeResponse& WithKernelId(AttributeValue&& value) { SetKernelId(std::move(value)); return *this;}
+    inline const AttributeValue& GetKernelId() const { return m_kernelId; }
+    template<typename KernelIdT = AttributeValue>
+    void SetKernelId(KernelIdT&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::forward<KernelIdT>(value); }
+    template<typename KernelIdT = AttributeValue>
+    DescribeImageAttributeResponse& WithKernelId(KernelIdT&& value) { SetKernelId(std::forward<KernelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The RAM disk ID.</p>
      */
-    inline const AttributeValue& GetRamdiskId() const{ return m_ramdiskId; }
-    inline void SetRamdiskId(const AttributeValue& value) { m_ramdiskId = value; }
-    inline void SetRamdiskId(AttributeValue&& value) { m_ramdiskId = std::move(value); }
-    inline DescribeImageAttributeResponse& WithRamdiskId(const AttributeValue& value) { SetRamdiskId(value); return *this;}
-    inline DescribeImageAttributeResponse& WithRamdiskId(AttributeValue&& value) { SetRamdiskId(std::move(value)); return *this;}
+    inline const AttributeValue& GetRamdiskId() const { return m_ramdiskId; }
+    template<typename RamdiskIdT = AttributeValue>
+    void SetRamdiskId(RamdiskIdT&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::forward<RamdiskIdT>(value); }
+    template<typename RamdiskIdT = AttributeValue>
+    DescribeImageAttributeResponse& WithRamdiskId(RamdiskIdT&& value) { SetRamdiskId(std::forward<RamdiskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,22 +81,22 @@ namespace Model
      * <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function
      * interface is enabled.</p>
      */
-    inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
-    inline void SetSriovNetSupport(const AttributeValue& value) { m_sriovNetSupport = value; }
-    inline void SetSriovNetSupport(AttributeValue&& value) { m_sriovNetSupport = std::move(value); }
-    inline DescribeImageAttributeResponse& WithSriovNetSupport(const AttributeValue& value) { SetSriovNetSupport(value); return *this;}
-    inline DescribeImageAttributeResponse& WithSriovNetSupport(AttributeValue&& value) { SetSriovNetSupport(std::move(value)); return *this;}
+    inline const AttributeValue& GetSriovNetSupport() const { return m_sriovNetSupport; }
+    template<typename SriovNetSupportT = AttributeValue>
+    void SetSriovNetSupport(SriovNetSupportT&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::forward<SriovNetSupportT>(value); }
+    template<typename SriovNetSupportT = AttributeValue>
+    DescribeImageAttributeResponse& WithSriovNetSupport(SriovNetSupportT&& value) { SetSriovNetSupport(std::forward<SriovNetSupportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The boot mode.</p>
      */
-    inline const AttributeValue& GetBootMode() const{ return m_bootMode; }
-    inline void SetBootMode(const AttributeValue& value) { m_bootMode = value; }
-    inline void SetBootMode(AttributeValue&& value) { m_bootMode = std::move(value); }
-    inline DescribeImageAttributeResponse& WithBootMode(const AttributeValue& value) { SetBootMode(value); return *this;}
-    inline DescribeImageAttributeResponse& WithBootMode(AttributeValue&& value) { SetBootMode(std::move(value)); return *this;}
+    inline const AttributeValue& GetBootMode() const { return m_bootMode; }
+    template<typename BootModeT = AttributeValue>
+    void SetBootMode(BootModeT&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::forward<BootModeT>(value); }
+    template<typename BootModeT = AttributeValue>
+    DescribeImageAttributeResponse& WithBootMode(BootModeT&& value) { SetBootMode(std::forward<BootModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,11 +104,11 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>.</p>
      */
-    inline const AttributeValue& GetTpmSupport() const{ return m_tpmSupport; }
-    inline void SetTpmSupport(const AttributeValue& value) { m_tpmSupport = value; }
-    inline void SetTpmSupport(AttributeValue&& value) { m_tpmSupport = std::move(value); }
-    inline DescribeImageAttributeResponse& WithTpmSupport(const AttributeValue& value) { SetTpmSupport(value); return *this;}
-    inline DescribeImageAttributeResponse& WithTpmSupport(AttributeValue&& value) { SetTpmSupport(std::move(value)); return *this;}
+    inline const AttributeValue& GetTpmSupport() const { return m_tpmSupport; }
+    template<typename TpmSupportT = AttributeValue>
+    void SetTpmSupport(TpmSupportT&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::forward<TpmSupportT>(value); }
+    template<typename TpmSupportT = AttributeValue>
+    DescribeImageAttributeResponse& WithTpmSupport(TpmSupportT&& value) { SetTpmSupport(std::forward<TpmSupportT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,11 +122,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
      * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const AttributeValue& GetUefiData() const{ return m_uefiData; }
-    inline void SetUefiData(const AttributeValue& value) { m_uefiData = value; }
-    inline void SetUefiData(AttributeValue&& value) { m_uefiData = std::move(value); }
-    inline DescribeImageAttributeResponse& WithUefiData(const AttributeValue& value) { SetUefiData(value); return *this;}
-    inline DescribeImageAttributeResponse& WithUefiData(AttributeValue&& value) { SetUefiData(std::move(value)); return *this;}
+    inline const AttributeValue& GetUefiData() const { return m_uefiData; }
+    template<typename UefiDataT = AttributeValue>
+    void SetUefiData(UefiDataT&& value) { m_uefiDataHasBeenSet = true; m_uefiData = std::forward<UefiDataT>(value); }
+    template<typename UefiDataT = AttributeValue>
+    DescribeImageAttributeResponse& WithUefiData(UefiDataT&& value) { SetUefiData(std::forward<UefiDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,11 +137,11 @@ namespace Model
      * usage is reported.</p>  <p> <code>lastLaunchedTime</code> data is
      * available starting April 2017.</p> 
      */
-    inline const AttributeValue& GetLastLaunchedTime() const{ return m_lastLaunchedTime; }
-    inline void SetLastLaunchedTime(const AttributeValue& value) { m_lastLaunchedTime = value; }
-    inline void SetLastLaunchedTime(AttributeValue&& value) { m_lastLaunchedTime = std::move(value); }
-    inline DescribeImageAttributeResponse& WithLastLaunchedTime(const AttributeValue& value) { SetLastLaunchedTime(value); return *this;}
-    inline DescribeImageAttributeResponse& WithLastLaunchedTime(AttributeValue&& value) { SetLastLaunchedTime(std::move(value)); return *this;}
+    inline const AttributeValue& GetLastLaunchedTime() const { return m_lastLaunchedTime; }
+    template<typename LastLaunchedTimeT = AttributeValue>
+    void SetLastLaunchedTime(LastLaunchedTimeT&& value) { m_lastLaunchedTimeHasBeenSet = true; m_lastLaunchedTime = std::forward<LastLaunchedTimeT>(value); }
+    template<typename LastLaunchedTimeT = AttributeValue>
+    DescribeImageAttributeResponse& WithLastLaunchedTime(LastLaunchedTimeT&& value) { SetLastLaunchedTime(std::forward<LastLaunchedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,115 +155,128 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
      * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const AttributeValue& GetImdsSupport() const{ return m_imdsSupport; }
-    inline void SetImdsSupport(const AttributeValue& value) { m_imdsSupport = value; }
-    inline void SetImdsSupport(AttributeValue&& value) { m_imdsSupport = std::move(value); }
-    inline DescribeImageAttributeResponse& WithImdsSupport(const AttributeValue& value) { SetImdsSupport(value); return *this;}
-    inline DescribeImageAttributeResponse& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
+    inline const AttributeValue& GetImdsSupport() const { return m_imdsSupport; }
+    template<typename ImdsSupportT = AttributeValue>
+    void SetImdsSupport(ImdsSupportT&& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = std::forward<ImdsSupportT>(value); }
+    template<typename ImdsSupportT = AttributeValue>
+    DescribeImageAttributeResponse& WithImdsSupport(ImdsSupportT&& value) { SetImdsSupport(std::forward<ImdsSupportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether deregistration protection is enabled for the AMI.</p>
      */
-    inline const AttributeValue& GetDeregistrationProtection() const{ return m_deregistrationProtection; }
-    inline void SetDeregistrationProtection(const AttributeValue& value) { m_deregistrationProtection = value; }
-    inline void SetDeregistrationProtection(AttributeValue&& value) { m_deregistrationProtection = std::move(value); }
-    inline DescribeImageAttributeResponse& WithDeregistrationProtection(const AttributeValue& value) { SetDeregistrationProtection(value); return *this;}
-    inline DescribeImageAttributeResponse& WithDeregistrationProtection(AttributeValue&& value) { SetDeregistrationProtection(std::move(value)); return *this;}
+    inline const AttributeValue& GetDeregistrationProtection() const { return m_deregistrationProtection; }
+    template<typename DeregistrationProtectionT = AttributeValue>
+    void SetDeregistrationProtection(DeregistrationProtectionT&& value) { m_deregistrationProtectionHasBeenSet = true; m_deregistrationProtection = std::forward<DeregistrationProtectionT>(value); }
+    template<typename DeregistrationProtectionT = AttributeValue>
+    DescribeImageAttributeResponse& WithDeregistrationProtection(DeregistrationProtectionT&& value) { SetDeregistrationProtection(std::forward<DeregistrationProtectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the AMI.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
-    inline void SetImageId(const Aws::String& value) { m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageId.assign(value); }
-    inline DescribeImageAttributeResponse& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline DescribeImageAttributeResponse& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& WithImageId(const char* value) { SetImageId(value); return *this;}
+    inline const Aws::String& GetImageId() const { return m_imageId; }
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    DescribeImageAttributeResponse& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The launch permissions.</p>
      */
-    inline const Aws::Vector<LaunchPermission>& GetLaunchPermissions() const{ return m_launchPermissions; }
-    inline void SetLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { m_launchPermissions = value; }
-    inline void SetLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { m_launchPermissions = std::move(value); }
-    inline DescribeImageAttributeResponse& WithLaunchPermissions(const Aws::Vector<LaunchPermission>& value) { SetLaunchPermissions(value); return *this;}
-    inline DescribeImageAttributeResponse& WithLaunchPermissions(Aws::Vector<LaunchPermission>&& value) { SetLaunchPermissions(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& AddLaunchPermissions(const LaunchPermission& value) { m_launchPermissions.push_back(value); return *this; }
-    inline DescribeImageAttributeResponse& AddLaunchPermissions(LaunchPermission&& value) { m_launchPermissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LaunchPermission>& GetLaunchPermissions() const { return m_launchPermissions; }
+    template<typename LaunchPermissionsT = Aws::Vector<LaunchPermission>>
+    void SetLaunchPermissions(LaunchPermissionsT&& value) { m_launchPermissionsHasBeenSet = true; m_launchPermissions = std::forward<LaunchPermissionsT>(value); }
+    template<typename LaunchPermissionsT = Aws::Vector<LaunchPermission>>
+    DescribeImageAttributeResponse& WithLaunchPermissions(LaunchPermissionsT&& value) { SetLaunchPermissions(std::forward<LaunchPermissionsT>(value)); return *this;}
+    template<typename LaunchPermissionsT = LaunchPermission>
+    DescribeImageAttributeResponse& AddLaunchPermissions(LaunchPermissionsT&& value) { m_launchPermissionsHasBeenSet = true; m_launchPermissions.emplace_back(std::forward<LaunchPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The product codes.</p>
      */
-    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
-    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
-    inline DescribeImageAttributeResponse& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
-    inline DescribeImageAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& AddProductCodes(const ProductCode& value) { m_productCodes.push_back(value); return *this; }
-    inline DescribeImageAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProductCode>& GetProductCodes() const { return m_productCodes; }
+    template<typename ProductCodesT = Aws::Vector<ProductCode>>
+    void SetProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::forward<ProductCodesT>(value); }
+    template<typename ProductCodesT = Aws::Vector<ProductCode>>
+    DescribeImageAttributeResponse& WithProductCodes(ProductCodesT&& value) { SetProductCodes(std::forward<ProductCodesT>(value)); return *this;}
+    template<typename ProductCodesT = ProductCode>
+    DescribeImageAttributeResponse& AddProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes.emplace_back(std::forward<ProductCodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The block device mapping entries.</p>
      */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappings = std::move(value); }
-    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline DescribeImageAttributeResponse& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappings.push_back(value); return *this; }
-    inline DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    DescribeImageAttributeResponse& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = BlockDeviceMapping>
+    DescribeImageAttributeResponse& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeImageAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeImageAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeImageAttributeResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     AttributeValue m_description;
+    bool m_descriptionHasBeenSet = false;
 
     AttributeValue m_kernelId;
+    bool m_kernelIdHasBeenSet = false;
 
     AttributeValue m_ramdiskId;
+    bool m_ramdiskIdHasBeenSet = false;
 
     AttributeValue m_sriovNetSupport;
+    bool m_sriovNetSupportHasBeenSet = false;
 
     AttributeValue m_bootMode;
+    bool m_bootModeHasBeenSet = false;
 
     AttributeValue m_tpmSupport;
+    bool m_tpmSupportHasBeenSet = false;
 
     AttributeValue m_uefiData;
+    bool m_uefiDataHasBeenSet = false;
 
     AttributeValue m_lastLaunchedTime;
+    bool m_lastLaunchedTimeHasBeenSet = false;
 
     AttributeValue m_imdsSupport;
+    bool m_imdsSupportHasBeenSet = false;
 
     AttributeValue m_deregistrationProtection;
+    bool m_deregistrationProtectionHasBeenSet = false;
 
     Aws::String m_imageId;
+    bool m_imageIdHasBeenSet = false;
 
     Aws::Vector<LaunchPermission> m_launchPermissions;
+    bool m_launchPermissionsHasBeenSet = false;
 
     Aws::Vector<ProductCode> m_productCodes;
+    bool m_productCodesHasBeenSet = false;
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

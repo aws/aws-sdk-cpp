@@ -12,11 +12,6 @@ using namespace Aws::SimSpaceWeaver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopSimulationRequest::StopSimulationRequest() : 
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String StopSimulationRequest::SerializePayload() const
 {
   JsonValue payload;

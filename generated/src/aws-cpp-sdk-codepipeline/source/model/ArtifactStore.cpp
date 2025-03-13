@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ArtifactStore::ArtifactStore() : 
-    m_type(ArtifactStoreType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false)
-{
-}
-
 ArtifactStore::ArtifactStore(JsonView jsonValue)
-  : ArtifactStore()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ArtifactStore& ArtifactStore::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = ArtifactStoreTypeMapper::GetArtifactStoreTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetObject("encryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

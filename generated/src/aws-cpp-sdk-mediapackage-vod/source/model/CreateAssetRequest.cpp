@@ -12,16 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssetRequest::CreateAssetRequest() : 
-    m_idHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssetRequest::SerializePayload() const
 {
   JsonValue payload;

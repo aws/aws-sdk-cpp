@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DatabaseColumnList::DatabaseColumnList() : 
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false)
-{
-}
-
 DatabaseColumnList::DatabaseColumnList(JsonView jsonValue)
-  : DatabaseColumnList()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ DatabaseColumnList& DatabaseColumnList::operator =(JsonView jsonValue)
     }
     m_includeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclude"))
   {
     Aws::Utils::Array<JsonView> excludeJsonList = jsonValue.GetArray("Exclude");
@@ -51,7 +43,6 @@ DatabaseColumnList& DatabaseColumnList::operator =(JsonView jsonValue)
     }
     m_excludeHasBeenSet = true;
   }
-
   return *this;
 }
 

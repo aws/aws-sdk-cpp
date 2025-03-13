@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelOrderRequest::CancelOrderRequest() : 
-    m_orderIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelOrderRequest::SerializePayload() const
 {
   return {};

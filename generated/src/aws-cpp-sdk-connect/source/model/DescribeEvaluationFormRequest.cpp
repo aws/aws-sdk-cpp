@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeEvaluationFormRequest::DescribeEvaluationFormRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormVersion(0),
-    m_evaluationFormVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEvaluationFormRequest::SerializePayload() const
 {
   return {};

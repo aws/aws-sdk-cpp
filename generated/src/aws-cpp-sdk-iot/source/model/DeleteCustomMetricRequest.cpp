@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomMetricRequest::DeleteCustomMetricRequest() : 
-    m_metricNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomMetricRequest::SerializePayload() const
 {
   return {};

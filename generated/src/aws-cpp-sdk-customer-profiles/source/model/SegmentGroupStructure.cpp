@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-SegmentGroupStructure::SegmentGroupStructure() : 
-    m_groupsHasBeenSet(false),
-    m_include(IncludeOptions::NOT_SET),
-    m_includeHasBeenSet(false)
-{
-}
-
 SegmentGroupStructure::SegmentGroupStructure(JsonView jsonValue)
-  : SegmentGroupStructure()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SegmentGroupStructure& SegmentGroupStructure::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Include"))
   {
     m_include = IncludeOptionsMapper::GetIncludeOptionsForName(jsonValue.GetString("Include"));
-
     m_includeHasBeenSet = true;
   }
-
   return *this;
 }
 

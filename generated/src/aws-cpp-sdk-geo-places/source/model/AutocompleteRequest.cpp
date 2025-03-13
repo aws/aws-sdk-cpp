@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AutocompleteRequest::AutocompleteRequest() : 
-    m_queryTextHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_postalCodeMode(PostalCodeMode::NOT_SET),
-    m_postalCodeModeHasBeenSet(false),
-    m_additionalFeaturesHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_intendedUse(AutocompleteIntendedUse::NOT_SET),
-    m_intendedUseHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String AutocompleteRequest::SerializePayload() const
 {
   JsonValue payload;

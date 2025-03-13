@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedProfile::ListedProfile() : 
-    m_arnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_as2IdHasBeenSet(false),
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false)
-{
-}
-
 ListedProfile::ListedProfile(JsonView jsonValue)
-  : ListedProfile()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ListedProfile& ListedProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("As2Id"))
   {
     m_as2Id = jsonValue.GetString("As2Id");
-
     m_as2IdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileType"))
   {
     m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("ProfileType"));
-
     m_profileTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

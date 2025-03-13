@@ -18,22 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RuleExecution::RuleExecution() : 
-    m_ruleExecutionIdHasBeenSet(false),
-    m_status(RuleExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_externalExecutionIdHasBeenSet(false),
-    m_externalExecutionUrlHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
-{
-}
-
 RuleExecution::RuleExecution(JsonView jsonValue)
-  : RuleExecution()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ RuleExecution& RuleExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleExecutionId"))
   {
     m_ruleExecutionId = jsonValue.GetString("ruleExecutionId");
-
     m_ruleExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RuleExecutionStatusMapper::GetRuleExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatusChange"))
   {
     m_lastStatusChange = jsonValue.GetDouble("lastStatusChange");
-
     m_lastStatusChangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("token"))
   {
     m_token = jsonValue.GetString("token");
-
     m_tokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalExecutionId"))
   {
     m_externalExecutionId = jsonValue.GetString("externalExecutionId");
-
     m_externalExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalExecutionUrl"))
   {
     m_externalExecutionUrl = jsonValue.GetString("externalExecutionUrl");
-
     m_externalExecutionUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("errorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

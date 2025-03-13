@@ -34,7 +34,7 @@ namespace Model
   class CreateDeploymentResult
   {
   public:
-    AWS_AMPLIFY_API CreateDeploymentResult();
+    AWS_AMPLIFY_API CreateDeploymentResult() = default;
     AWS_AMPLIFY_API CreateDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API CreateDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
     /**
      * <p> The job ID for this deployment. will supply to start deployment api. </p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline CreateDeploymentResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline CreateDeploymentResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline CreateDeploymentResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    CreateDeploymentResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,15 @@ namespace Model
      * <code>fileUploadUrls</code> will contain a map of file names to upload URLs.
      * </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFileUploadUrls() const{ return m_fileUploadUrls; }
-    inline void SetFileUploadUrls(const Aws::Map<Aws::String, Aws::String>& value) { m_fileUploadUrls = value; }
-    inline void SetFileUploadUrls(Aws::Map<Aws::String, Aws::String>&& value) { m_fileUploadUrls = std::move(value); }
-    inline CreateDeploymentResult& WithFileUploadUrls(const Aws::Map<Aws::String, Aws::String>& value) { SetFileUploadUrls(value); return *this;}
-    inline CreateDeploymentResult& WithFileUploadUrls(Aws::Map<Aws::String, Aws::String>&& value) { SetFileUploadUrls(std::move(value)); return *this;}
-    inline CreateDeploymentResult& AddFileUploadUrls(const Aws::String& key, const Aws::String& value) { m_fileUploadUrls.emplace(key, value); return *this; }
-    inline CreateDeploymentResult& AddFileUploadUrls(Aws::String&& key, const Aws::String& value) { m_fileUploadUrls.emplace(std::move(key), value); return *this; }
-    inline CreateDeploymentResult& AddFileUploadUrls(const Aws::String& key, Aws::String&& value) { m_fileUploadUrls.emplace(key, std::move(value)); return *this; }
-    inline CreateDeploymentResult& AddFileUploadUrls(Aws::String&& key, Aws::String&& value) { m_fileUploadUrls.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDeploymentResult& AddFileUploadUrls(const char* key, Aws::String&& value) { m_fileUploadUrls.emplace(key, std::move(value)); return *this; }
-    inline CreateDeploymentResult& AddFileUploadUrls(Aws::String&& key, const char* value) { m_fileUploadUrls.emplace(std::move(key), value); return *this; }
-    inline CreateDeploymentResult& AddFileUploadUrls(const char* key, const char* value) { m_fileUploadUrls.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFileUploadUrls() const { return m_fileUploadUrls; }
+    template<typename FileUploadUrlsT = Aws::Map<Aws::String, Aws::String>>
+    void SetFileUploadUrls(FileUploadUrlsT&& value) { m_fileUploadUrlsHasBeenSet = true; m_fileUploadUrls = std::forward<FileUploadUrlsT>(value); }
+    template<typename FileUploadUrlsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDeploymentResult& WithFileUploadUrls(FileUploadUrlsT&& value) { SetFileUploadUrls(std::forward<FileUploadUrlsT>(value)); return *this;}
+    template<typename FileUploadUrlsKeyT = Aws::String, typename FileUploadUrlsValueT = Aws::String>
+    CreateDeploymentResult& AddFileUploadUrls(FileUploadUrlsKeyT&& key, FileUploadUrlsValueT&& value) {
+      m_fileUploadUrlsHasBeenSet = true; m_fileUploadUrls.emplace(std::forward<FileUploadUrlsKeyT>(key), std::forward<FileUploadUrlsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -77,34 +72,34 @@ namespace Model
      * <p> When the <code>fileMap</code> argument is not provided in the request, this
      * <code>zipUploadUrl</code> is returned. </p>
      */
-    inline const Aws::String& GetZipUploadUrl() const{ return m_zipUploadUrl; }
-    inline void SetZipUploadUrl(const Aws::String& value) { m_zipUploadUrl = value; }
-    inline void SetZipUploadUrl(Aws::String&& value) { m_zipUploadUrl = std::move(value); }
-    inline void SetZipUploadUrl(const char* value) { m_zipUploadUrl.assign(value); }
-    inline CreateDeploymentResult& WithZipUploadUrl(const Aws::String& value) { SetZipUploadUrl(value); return *this;}
-    inline CreateDeploymentResult& WithZipUploadUrl(Aws::String&& value) { SetZipUploadUrl(std::move(value)); return *this;}
-    inline CreateDeploymentResult& WithZipUploadUrl(const char* value) { SetZipUploadUrl(value); return *this;}
+    inline const Aws::String& GetZipUploadUrl() const { return m_zipUploadUrl; }
+    template<typename ZipUploadUrlT = Aws::String>
+    void SetZipUploadUrl(ZipUploadUrlT&& value) { m_zipUploadUrlHasBeenSet = true; m_zipUploadUrl = std::forward<ZipUploadUrlT>(value); }
+    template<typename ZipUploadUrlT = Aws::String>
+    CreateDeploymentResult& WithZipUploadUrl(ZipUploadUrlT&& value) { SetZipUploadUrl(std::forward<ZipUploadUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeploymentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_fileUploadUrls;
+    bool m_fileUploadUrlsHasBeenSet = false;
 
     Aws::String m_zipUploadUrl;
+    bool m_zipUploadUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

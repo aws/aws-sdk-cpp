@@ -34,7 +34,7 @@ namespace Model
   class ListTasksSortBase
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListTasksSortBase();
+    AWS_PARTNERCENTRALSELLING_API ListTasksSortBase() = default;
     AWS_PARTNERCENTRALSELLING_API ListTasksSortBase(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API ListTasksSortBase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,27 @@ namespace Model
     /**
      * <p> Specifies the field by which the task list should be sorted. </p>
      */
-    inline const ListTasksSortName& GetSortBy() const{ return m_sortBy; }
+    inline ListTasksSortName GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ListTasksSortName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ListTasksSortName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListTasksSortBase& WithSortBy(const ListTasksSortName& value) { SetSortBy(value); return *this;}
-    inline ListTasksSortBase& WithSortBy(ListTasksSortName&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ListTasksSortName value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListTasksSortBase& WithSortBy(ListTasksSortName value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Determines the order in which the sorted results are presented. </p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListTasksSortBase& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListTasksSortBase& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListTasksSortBase& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    ListTasksSortName m_sortBy;
+    ListTasksSortName m_sortBy{ListTasksSortName::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

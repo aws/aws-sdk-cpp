@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-VerifyEmailIdentityRequest::VerifyEmailIdentityRequest() : 
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 Aws::String VerifyEmailIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -28,7 +28,7 @@ namespace Model
   class DescribeStackSetResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeStackSetResult();
+    AWS_CLOUDFORMATION_API DescribeStackSetResult() = default;
     AWS_CLOUDFORMATION_API DescribeStackSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribeStackSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The specified stack set.</p>
      */
-    inline const StackSet& GetStackSet() const{ return m_stackSet; }
-    inline void SetStackSet(const StackSet& value) { m_stackSet = value; }
-    inline void SetStackSet(StackSet&& value) { m_stackSet = std::move(value); }
-    inline DescribeStackSetResult& WithStackSet(const StackSet& value) { SetStackSet(value); return *this;}
-    inline DescribeStackSetResult& WithStackSet(StackSet&& value) { SetStackSet(std::move(value)); return *this;}
+    inline const StackSet& GetStackSet() const { return m_stackSet; }
+    template<typename StackSetT = StackSet>
+    void SetStackSet(StackSetT&& value) { m_stackSetHasBeenSet = true; m_stackSet = std::forward<StackSetT>(value); }
+    template<typename StackSetT = StackSet>
+    DescribeStackSetResult& WithStackSet(StackSetT&& value) { SetStackSet(std::forward<StackSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeStackSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeStackSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeStackSetResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     StackSet m_stackSet;
+    bool m_stackSetHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

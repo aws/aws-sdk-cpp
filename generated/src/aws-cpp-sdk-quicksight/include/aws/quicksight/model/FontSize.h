@@ -33,7 +33,7 @@ namespace Model
   class FontSize
   {
   public:
-    AWS_QUICKSIGHT_API FontSize();
+    AWS_QUICKSIGHT_API FontSize() = default;
     AWS_QUICKSIGHT_API FontSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FontSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
      * <p>The lexical name for the text size, proportional to its surrounding
      * context.</p>
      */
-    inline const RelativeFontSize& GetRelative() const{ return m_relative; }
+    inline RelativeFontSize GetRelative() const { return m_relative; }
     inline bool RelativeHasBeenSet() const { return m_relativeHasBeenSet; }
-    inline void SetRelative(const RelativeFontSize& value) { m_relativeHasBeenSet = true; m_relative = value; }
-    inline void SetRelative(RelativeFontSize&& value) { m_relativeHasBeenSet = true; m_relative = std::move(value); }
-    inline FontSize& WithRelative(const RelativeFontSize& value) { SetRelative(value); return *this;}
-    inline FontSize& WithRelative(RelativeFontSize&& value) { SetRelative(std::move(value)); return *this;}
+    inline void SetRelative(RelativeFontSize value) { m_relativeHasBeenSet = true; m_relative = value; }
+    inline FontSize& WithRelative(RelativeFontSize value) { SetRelative(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The font size that you want to use in px.</p>
      */
-    inline const Aws::String& GetAbsolute() const{ return m_absolute; }
+    inline const Aws::String& GetAbsolute() const { return m_absolute; }
     inline bool AbsoluteHasBeenSet() const { return m_absoluteHasBeenSet; }
-    inline void SetAbsolute(const Aws::String& value) { m_absoluteHasBeenSet = true; m_absolute = value; }
-    inline void SetAbsolute(Aws::String&& value) { m_absoluteHasBeenSet = true; m_absolute = std::move(value); }
-    inline void SetAbsolute(const char* value) { m_absoluteHasBeenSet = true; m_absolute.assign(value); }
-    inline FontSize& WithAbsolute(const Aws::String& value) { SetAbsolute(value); return *this;}
-    inline FontSize& WithAbsolute(Aws::String&& value) { SetAbsolute(std::move(value)); return *this;}
-    inline FontSize& WithAbsolute(const char* value) { SetAbsolute(value); return *this;}
+    template<typename AbsoluteT = Aws::String>
+    void SetAbsolute(AbsoluteT&& value) { m_absoluteHasBeenSet = true; m_absolute = std::forward<AbsoluteT>(value); }
+    template<typename AbsoluteT = Aws::String>
+    FontSize& WithAbsolute(AbsoluteT&& value) { SetAbsolute(std::forward<AbsoluteT>(value)); return *this;}
     ///@}
   private:
 
-    RelativeFontSize m_relative;
+    RelativeFontSize m_relative{RelativeFontSize::NOT_SET};
     bool m_relativeHasBeenSet = false;
 
     Aws::String m_absolute;

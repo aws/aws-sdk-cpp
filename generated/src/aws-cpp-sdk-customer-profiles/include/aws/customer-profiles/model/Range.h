@@ -32,7 +32,7 @@ namespace Model
   class Range
   {
   public:
-    AWS_CUSTOMERPROFILES_API Range();
+    AWS_CUSTOMERPROFILES_API Range() = default;
     AWS_CUSTOMERPROFILES_API Range(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Range& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The amount of time of the specified unit.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline Range& WithValue(int value) { SetValue(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p>The unit of time.</p>
      */
-    inline const Unit& GetUnit() const{ return m_unit; }
+    inline Unit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline Range& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-    inline Range& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(Unit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline Range& WithUnit(Unit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
 
-    Unit m_unit;
+    Unit m_unit{Unit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

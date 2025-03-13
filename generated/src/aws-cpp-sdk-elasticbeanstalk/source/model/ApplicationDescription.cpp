@@ -20,20 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ApplicationDescription::ApplicationDescription() : 
-    m_applicationArnHasBeenSet(false),
-    m_applicationNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_versionsHasBeenSet(false),
-    m_configurationTemplatesHasBeenSet(false),
-    m_resourceLifecycleConfigHasBeenSet(false)
-{
-}
-
 ApplicationDescription::ApplicationDescription(const XmlNode& xmlNode)
-  : ApplicationDescription()
 {
   *this = xmlNode;
 }
@@ -49,60 +36,68 @@ ApplicationDescription& ApplicationDescription::operator =(const XmlNode& xmlNod
     {
       m_applicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(applicationArnNode.GetText());
       m_applicationArnHasBeenSet = true;
+       m_applicationArnHasBeenSet = true;
     }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
       m_applicationName = Aws::Utils::Xml::DecodeEscapedXmlText(applicationNameNode.GetText());
       m_applicationNameHasBeenSet = true;
+       m_applicationNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
     if(!dateCreatedNode.IsNull())
     {
       m_dateCreated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateCreatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateCreatedHasBeenSet = true;
+       m_dateCreatedHasBeenSet = true;
     }
     XmlNode dateUpdatedNode = resultNode.FirstChild("DateUpdated");
     if(!dateUpdatedNode.IsNull())
     {
       m_dateUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_dateUpdatedHasBeenSet = true;
+       m_dateUpdatedHasBeenSet = true;
     }
     XmlNode versionsNode = resultNode.FirstChild("Versions");
     if(!versionsNode.IsNull())
     {
       XmlNode versionsMember = versionsNode.FirstChild("member");
+      m_versionsHasBeenSet = !versionsMember.IsNull();
       while(!versionsMember.IsNull())
       {
         m_versions.push_back(versionsMember.GetText());
         versionsMember = versionsMember.NextNode("member");
       }
 
-      m_versionsHasBeenSet = true;
+       m_versionsHasBeenSet = true;
     }
     XmlNode configurationTemplatesNode = resultNode.FirstChild("ConfigurationTemplates");
     if(!configurationTemplatesNode.IsNull())
     {
       XmlNode configurationTemplatesMember = configurationTemplatesNode.FirstChild("member");
+      m_configurationTemplatesHasBeenSet = !configurationTemplatesMember.IsNull();
       while(!configurationTemplatesMember.IsNull())
       {
         m_configurationTemplates.push_back(configurationTemplatesMember.GetText());
         configurationTemplatesMember = configurationTemplatesMember.NextNode("member");
       }
 
-      m_configurationTemplatesHasBeenSet = true;
+       m_configurationTemplatesHasBeenSet = true;
     }
     XmlNode resourceLifecycleConfigNode = resultNode.FirstChild("ResourceLifecycleConfig");
     if(!resourceLifecycleConfigNode.IsNull())
     {
       m_resourceLifecycleConfig = resourceLifecycleConfigNode;
       m_resourceLifecycleConfigHasBeenSet = true;
+       m_resourceLifecycleConfigHasBeenSet = true;
     }
   }
 

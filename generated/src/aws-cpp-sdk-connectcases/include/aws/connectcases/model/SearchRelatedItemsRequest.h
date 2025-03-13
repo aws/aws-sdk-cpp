@@ -23,7 +23,7 @@ namespace Model
   class SearchRelatedItemsRequest : public ConnectCasesRequest
   {
   public:
-    AWS_CONNECTCASES_API SearchRelatedItemsRequest();
+    AWS_CONNECTCASES_API SearchRelatedItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>A unique identifier of the case.</p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline SearchRelatedItemsRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline SearchRelatedItemsRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline SearchRelatedItemsRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    SearchRelatedItemsRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the Cases domain. </p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline SearchRelatedItemsRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline SearchRelatedItemsRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline SearchRelatedItemsRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    SearchRelatedItemsRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,21 +63,21 @@ namespace Model
      * <p>The list of types of related items and their parameters to use for
      * filtering.</p>
      */
-    inline const Aws::Vector<RelatedItemTypeFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<RelatedItemTypeFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<RelatedItemTypeFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<RelatedItemTypeFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SearchRelatedItemsRequest& WithFilters(const Aws::Vector<RelatedItemTypeFilter>& value) { SetFilters(value); return *this;}
-    inline SearchRelatedItemsRequest& WithFilters(Aws::Vector<RelatedItemTypeFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline SearchRelatedItemsRequest& AddFilters(const RelatedItemTypeFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline SearchRelatedItemsRequest& AddFilters(RelatedItemTypeFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<RelatedItemTypeFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<RelatedItemTypeFilter>>
+    SearchRelatedItemsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = RelatedItemTypeFilter>
+    SearchRelatedItemsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchRelatedItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -92,14 +88,12 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchRelatedItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchRelatedItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchRelatedItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchRelatedItemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +106,7 @@ namespace Model
     Aws::Vector<RelatedItemTypeFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

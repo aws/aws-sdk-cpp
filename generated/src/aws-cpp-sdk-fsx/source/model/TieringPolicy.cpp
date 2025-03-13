@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-TieringPolicy::TieringPolicy() : 
-    m_coolingPeriod(0),
-    m_coolingPeriodHasBeenSet(false),
-    m_name(TieringPolicyName::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 TieringPolicy::TieringPolicy(JsonView jsonValue)
-  : TieringPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TieringPolicy& TieringPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CoolingPeriod"))
   {
     m_coolingPeriod = jsonValue.GetInteger("CoolingPeriod");
-
     m_coolingPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = TieringPolicyNameMapper::GetTieringPolicyNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

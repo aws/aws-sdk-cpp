@@ -32,7 +32,7 @@ namespace Model
   class IAMPolicyAssignmentSummary
   {
   public:
-    AWS_QUICKSIGHT_API IAMPolicyAssignmentSummary();
+    AWS_QUICKSIGHT_API IAMPolicyAssignmentSummary() = default;
     AWS_QUICKSIGHT_API IAMPolicyAssignmentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API IAMPolicyAssignmentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>Assignment name.</p>
      */
-    inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
+    inline const Aws::String& GetAssignmentName() const { return m_assignmentName; }
     inline bool AssignmentNameHasBeenSet() const { return m_assignmentNameHasBeenSet; }
-    inline void SetAssignmentName(const Aws::String& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = value; }
-    inline void SetAssignmentName(Aws::String&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::move(value); }
-    inline void SetAssignmentName(const char* value) { m_assignmentNameHasBeenSet = true; m_assignmentName.assign(value); }
-    inline IAMPolicyAssignmentSummary& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
-    inline IAMPolicyAssignmentSummary& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
-    inline IAMPolicyAssignmentSummary& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
+    template<typename AssignmentNameT = Aws::String>
+    void SetAssignmentName(AssignmentNameT&& value) { m_assignmentNameHasBeenSet = true; m_assignmentName = std::forward<AssignmentNameT>(value); }
+    template<typename AssignmentNameT = Aws::String>
+    IAMPolicyAssignmentSummary& WithAssignmentName(AssignmentNameT&& value) { SetAssignmentName(std::forward<AssignmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Assignment status.</p>
      */
-    inline const AssignmentStatus& GetAssignmentStatus() const{ return m_assignmentStatus; }
+    inline AssignmentStatus GetAssignmentStatus() const { return m_assignmentStatus; }
     inline bool AssignmentStatusHasBeenSet() const { return m_assignmentStatusHasBeenSet; }
-    inline void SetAssignmentStatus(const AssignmentStatus& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
-    inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = std::move(value); }
-    inline IAMPolicyAssignmentSummary& WithAssignmentStatus(const AssignmentStatus& value) { SetAssignmentStatus(value); return *this;}
-    inline IAMPolicyAssignmentSummary& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}
+    inline void SetAssignmentStatus(AssignmentStatus value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
+    inline IAMPolicyAssignmentSummary& WithAssignmentStatus(AssignmentStatus value) { SetAssignmentStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_assignmentName;
     bool m_assignmentNameHasBeenSet = false;
 
-    AssignmentStatus m_assignmentStatus;
+    AssignmentStatus m_assignmentStatus{AssignmentStatus::NOT_SET};
     bool m_assignmentStatusHasBeenSet = false;
   };
 

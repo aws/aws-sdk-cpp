@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-LambdaOutput::LambdaOutput() : 
-    m_resourceARNHasBeenSet(false)
-{
-}
-
 LambdaOutput::LambdaOutput(JsonView jsonValue)
-  : LambdaOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaOutput& LambdaOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   return *this;
 }
 

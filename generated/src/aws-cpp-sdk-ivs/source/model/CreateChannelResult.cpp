@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChannelResult::CreateChannelResult()
-{
-}
-
 CreateChannelResult::CreateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetObject("channel");
-
+    m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamKey"))
   {
     m_streamKey = jsonValue.GetObject("streamKey");
-
+    m_streamKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

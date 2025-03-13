@@ -18,36 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreJobsListMember::RestoreJobsListMember() : 
-    m_accountIdHasBeenSet(false),
-    m_restoreJobIdHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_status(RestoreJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_percentDoneHasBeenSet(false),
-    m_backupSizeInBytes(0),
-    m_backupSizeInBytesHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_expectedCompletionTimeMinutes(0),
-    m_expectedCompletionTimeMinutesHasBeenSet(false),
-    m_createdResourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_recoveryPointCreationDateHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_validationStatus(RestoreValidationStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_validationStatusMessageHasBeenSet(false),
-    m_deletionStatus(RestoreDeletionStatus::NOT_SET),
-    m_deletionStatusHasBeenSet(false),
-    m_deletionStatusMessageHasBeenSet(false)
-{
-}
-
 RestoreJobsListMember::RestoreJobsListMember(JsonView jsonValue)
-  : RestoreJobsListMember()
 {
   *this = jsonValue;
 }
@@ -57,136 +28,98 @@ RestoreJobsListMember& RestoreJobsListMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreJobId"))
   {
     m_restoreJobId = jsonValue.GetString("RestoreJobId");
-
     m_restoreJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
-
     m_recoveryPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetDouble("CompletionDate");
-
     m_completionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RestoreJobStatusMapper::GetRestoreJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentDone"))
   {
     m_percentDone = jsonValue.GetString("PercentDone");
-
     m_percentDoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupSizeInBytes"))
   {
     m_backupSizeInBytes = jsonValue.GetInt64("BackupSizeInBytes");
-
     m_backupSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedCompletionTimeMinutes"))
   {
     m_expectedCompletionTimeMinutes = jsonValue.GetInt64("ExpectedCompletionTimeMinutes");
-
     m_expectedCompletionTimeMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedResourceArn"))
   {
     m_createdResourceArn = jsonValue.GetString("CreatedResourceArn");
-
     m_createdResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointCreationDate"))
   {
     m_recoveryPointCreationDate = jsonValue.GetDouble("RecoveryPointCreationDate");
-
     m_recoveryPointCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationStatus"))
   {
     m_validationStatus = RestoreValidationStatusMapper::GetRestoreValidationStatusForName(jsonValue.GetString("ValidationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationStatusMessage"))
   {
     m_validationStatusMessage = jsonValue.GetString("ValidationStatusMessage");
-
     m_validationStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionStatus"))
   {
     m_deletionStatus = RestoreDeletionStatusMapper::GetRestoreDeletionStatusForName(jsonValue.GetString("DeletionStatus"));
-
     m_deletionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionStatusMessage"))
   {
     m_deletionStatusMessage = jsonValue.GetString("DeletionStatusMessage");
-
     m_deletionStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

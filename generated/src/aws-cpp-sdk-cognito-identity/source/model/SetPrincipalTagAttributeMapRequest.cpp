@@ -12,15 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetPrincipalTagAttributeMapRequest::SetPrincipalTagAttributeMapRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityProviderNameHasBeenSet(false),
-    m_useDefaults(false),
-    m_useDefaultsHasBeenSet(false),
-    m_principalTagsHasBeenSet(false)
-{
-}
-
 Aws::String SetPrincipalTagAttributeMapRequest::SerializePayload() const
 {
   JsonValue payload;

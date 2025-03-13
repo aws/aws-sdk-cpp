@@ -32,7 +32,7 @@ namespace Model
   class AdditionalAttribute
   {
   public:
-    AWS_ELASTICLOADBALANCING_API AdditionalAttribute();
+    AWS_ELASTICLOADBALANCING_API AdditionalAttribute() = default;
     AWS_ELASTICLOADBALANCING_API AdditionalAttribute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API AdditionalAttribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,28 +49,24 @@ namespace Model
      * <code>defensive</code>, and <code>strictest</code>. The default is
      * <code>defensive</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline AdditionalAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline AdditionalAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline AdditionalAttribute& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    AdditionalAttribute& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This value of the attribute.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AdditionalAttribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AdditionalAttribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AdditionalAttribute& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AdditionalAttribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

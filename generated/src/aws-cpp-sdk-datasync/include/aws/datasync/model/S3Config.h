@@ -35,7 +35,7 @@ namespace Model
   class S3Config
   {
   public:
-    AWS_DATASYNC_API S3Config();
+    AWS_DATASYNC_API S3Config() = default;
     AWS_DATASYNC_API S3Config(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API S3Config& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>Specifies the ARN of the IAM role that DataSync uses to access your S3
      * bucket.</p>
      */
-    inline const Aws::String& GetBucketAccessRoleArn() const{ return m_bucketAccessRoleArn; }
+    inline const Aws::String& GetBucketAccessRoleArn() const { return m_bucketAccessRoleArn; }
     inline bool BucketAccessRoleArnHasBeenSet() const { return m_bucketAccessRoleArnHasBeenSet; }
-    inline void SetBucketAccessRoleArn(const Aws::String& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = value; }
-    inline void SetBucketAccessRoleArn(Aws::String&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::move(value); }
-    inline void SetBucketAccessRoleArn(const char* value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn.assign(value); }
-    inline S3Config& WithBucketAccessRoleArn(const Aws::String& value) { SetBucketAccessRoleArn(value); return *this;}
-    inline S3Config& WithBucketAccessRoleArn(Aws::String&& value) { SetBucketAccessRoleArn(std::move(value)); return *this;}
-    inline S3Config& WithBucketAccessRoleArn(const char* value) { SetBucketAccessRoleArn(value); return *this;}
+    template<typename BucketAccessRoleArnT = Aws::String>
+    void SetBucketAccessRoleArn(BucketAccessRoleArnT&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::forward<BucketAccessRoleArnT>(value); }
+    template<typename BucketAccessRoleArnT = Aws::String>
+    S3Config& WithBucketAccessRoleArn(BucketAccessRoleArnT&& value) { SetBucketAccessRoleArn(std::forward<BucketAccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 

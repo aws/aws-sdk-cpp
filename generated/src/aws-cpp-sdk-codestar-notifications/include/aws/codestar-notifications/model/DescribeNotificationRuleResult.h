@@ -34,7 +34,7 @@ namespace Model
   class DescribeNotificationRuleResult
   {
   public:
-    AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult();
+    AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult() = default;
     AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODESTARNOTIFICATIONS_API DescribeNotificationRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,39 +43,35 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the notification rule.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeNotificationRuleResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeNotificationRuleResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeNotificationRuleResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the notification rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DescribeNotificationRuleResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DescribeNotificationRuleResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DescribeNotificationRuleResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the event types associated with the notification rule.</p>
      */
-    inline const Aws::Vector<EventTypeSummary>& GetEventTypes() const{ return m_eventTypes; }
-    inline void SetEventTypes(const Aws::Vector<EventTypeSummary>& value) { m_eventTypes = value; }
-    inline void SetEventTypes(Aws::Vector<EventTypeSummary>&& value) { m_eventTypes = std::move(value); }
-    inline DescribeNotificationRuleResult& WithEventTypes(const Aws::Vector<EventTypeSummary>& value) { SetEventTypes(value); return *this;}
-    inline DescribeNotificationRuleResult& WithEventTypes(Aws::Vector<EventTypeSummary>&& value) { SetEventTypes(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& AddEventTypes(const EventTypeSummary& value) { m_eventTypes.push_back(value); return *this; }
-    inline DescribeNotificationRuleResult& AddEventTypes(EventTypeSummary&& value) { m_eventTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventTypeSummary>& GetEventTypes() const { return m_eventTypes; }
+    template<typename EventTypesT = Aws::Vector<EventTypeSummary>>
+    void SetEventTypes(EventTypesT&& value) { m_eventTypesHasBeenSet = true; m_eventTypes = std::forward<EventTypesT>(value); }
+    template<typename EventTypesT = Aws::Vector<EventTypeSummary>>
+    DescribeNotificationRuleResult& WithEventTypes(EventTypesT&& value) { SetEventTypes(std::forward<EventTypesT>(value)); return *this;}
+    template<typename EventTypesT = EventTypeSummary>
+    DescribeNotificationRuleResult& AddEventTypes(EventTypesT&& value) { m_eventTypesHasBeenSet = true; m_eventTypes.emplace_back(std::forward<EventTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,13 +79,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource associated with the
      * notification rule.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
-    inline void SetResource(const Aws::String& value) { m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resource.assign(value); }
-    inline DescribeNotificationRuleResult& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline DescribeNotificationRuleResult& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& WithResource(const char* value) { SetResource(value); return *this;}
+    inline const Aws::String& GetResource() const { return m_resource; }
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    DescribeNotificationRuleResult& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,13 +91,13 @@ namespace Model
      * <p>A list of the Chatbot topics and Chatbot clients associated with the
      * notification rule.</p>
      */
-    inline const Aws::Vector<TargetSummary>& GetTargets() const{ return m_targets; }
-    inline void SetTargets(const Aws::Vector<TargetSummary>& value) { m_targets = value; }
-    inline void SetTargets(Aws::Vector<TargetSummary>&& value) { m_targets = std::move(value); }
-    inline DescribeNotificationRuleResult& WithTargets(const Aws::Vector<TargetSummary>& value) { SetTargets(value); return *this;}
-    inline DescribeNotificationRuleResult& WithTargets(Aws::Vector<TargetSummary>&& value) { SetTargets(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& AddTargets(const TargetSummary& value) { m_targets.push_back(value); return *this; }
-    inline DescribeNotificationRuleResult& AddTargets(TargetSummary&& value) { m_targets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetSummary>& GetTargets() const { return m_targets; }
+    template<typename TargetsT = Aws::Vector<TargetSummary>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<TargetSummary>>
+    DescribeNotificationRuleResult& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = TargetSummary>
+    DescribeNotificationRuleResult& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,24 +108,20 @@ namespace Model
      * CodeStar Notifications and/or the service for the resource for which the
      * notification is created.</p>
      */
-    inline const DetailType& GetDetailType() const{ return m_detailType; }
-    inline void SetDetailType(const DetailType& value) { m_detailType = value; }
-    inline void SetDetailType(DetailType&& value) { m_detailType = std::move(value); }
-    inline DescribeNotificationRuleResult& WithDetailType(const DetailType& value) { SetDetailType(value); return *this;}
-    inline DescribeNotificationRuleResult& WithDetailType(DetailType&& value) { SetDetailType(std::move(value)); return *this;}
+    inline DetailType GetDetailType() const { return m_detailType; }
+    inline void SetDetailType(DetailType value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
+    inline DescribeNotificationRuleResult& WithDetailType(DetailType value) { SetDetailType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or email alias of the person who created the notification rule.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline DescribeNotificationRuleResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline DescribeNotificationRuleResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    DescribeNotificationRuleResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,22 +129,20 @@ namespace Model
      * <p>The status of the notification rule. Valid statuses are on (sending
      * notifications) or off (not sending notifications).</p>
      */
-    inline const NotificationRuleStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const NotificationRuleStatus& value) { m_status = value; }
-    inline void SetStatus(NotificationRuleStatus&& value) { m_status = std::move(value); }
-    inline DescribeNotificationRuleResult& WithStatus(const NotificationRuleStatus& value) { SetStatus(value); return *this;}
-    inline DescribeNotificationRuleResult& WithStatus(NotificationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline NotificationRuleStatus GetStatus() const { return m_status; }
+    inline void SetStatus(NotificationRuleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeNotificationRuleResult& WithStatus(NotificationRuleStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the notification rule was created, in timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline DescribeNotificationRuleResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline DescribeNotificationRuleResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    DescribeNotificationRuleResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,66 +150,73 @@ namespace Model
      * <p>The date and time the notification rule was most recently updated, in
      * timestamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
-    inline void SetLastModifiedTimestamp(const Aws::Utils::DateTime& value) { m_lastModifiedTimestamp = value; }
-    inline void SetLastModifiedTimestamp(Aws::Utils::DateTime&& value) { m_lastModifiedTimestamp = std::move(value); }
-    inline DescribeNotificationRuleResult& WithLastModifiedTimestamp(const Aws::Utils::DateTime& value) { SetLastModifiedTimestamp(value); return *this;}
-    inline DescribeNotificationRuleResult& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    DescribeNotificationRuleResult& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the notification rule.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeNotificationRuleResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeNotificationRuleResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeNotificationRuleResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeNotificationRuleResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeNotificationRuleResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeNotificationRuleResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeNotificationRuleResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeNotificationRuleResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeNotificationRuleResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeNotificationRuleResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeNotificationRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeNotificationRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeNotificationRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeNotificationRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<EventTypeSummary> m_eventTypes;
+    bool m_eventTypesHasBeenSet = false;
 
     Aws::String m_resource;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Vector<TargetSummary> m_targets;
+    bool m_targetsHasBeenSet = false;
 
-    DetailType m_detailType;
+    DetailType m_detailType{DetailType::NOT_SET};
+    bool m_detailTypeHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    NotificationRuleStatus m_status;
+    NotificationRuleStatus m_status{NotificationRuleStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimestamp;
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
+    bool m_lastModifiedTimestampHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStudioRequest::DeleteStudioRequest() : 
-    m_studioIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStudioRequest::SerializePayload() const
 {
   JsonValue payload;

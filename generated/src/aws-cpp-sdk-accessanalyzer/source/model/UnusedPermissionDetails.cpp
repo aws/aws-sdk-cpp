@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedPermissionDetails::UnusedPermissionDetails() : 
-    m_actionsHasBeenSet(false),
-    m_serviceNamespaceHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false)
-{
-}
-
 UnusedPermissionDetails::UnusedPermissionDetails(JsonView jsonValue)
-  : UnusedPermissionDetails()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ UnusedPermissionDetails& UnusedPermissionDetails::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceNamespace"))
   {
     m_serviceNamespace = jsonValue.GetString("serviceNamespace");
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAccessed"))
   {
     m_lastAccessed = jsonValue.GetString("lastAccessed");
-
     m_lastAccessedHasBeenSet = true;
   }
-
   return *this;
 }
 

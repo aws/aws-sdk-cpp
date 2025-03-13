@@ -12,26 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCanaryRequest::UpdateCanaryRequest() : 
-    m_nameHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_runtimeVersionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_runConfigHasBeenSet(false),
-    m_successRetentionPeriodInDays(0),
-    m_successRetentionPeriodInDaysHasBeenSet(false),
-    m_failureRetentionPeriodInDays(0),
-    m_failureRetentionPeriodInDaysHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_visualReferenceHasBeenSet(false),
-    m_artifactS3LocationHasBeenSet(false),
-    m_artifactConfigHasBeenSet(false),
-    m_provisionedResourceCleanup(ProvisionedResourceCleanupSetting::NOT_SET),
-    m_provisionedResourceCleanupHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCanaryRequest::SerializePayload() const
 {
   JsonValue payload;

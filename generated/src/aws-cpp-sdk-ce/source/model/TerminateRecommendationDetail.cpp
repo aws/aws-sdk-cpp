@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-TerminateRecommendationDetail::TerminateRecommendationDetail() : 
-    m_estimatedMonthlySavingsHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 TerminateRecommendationDetail::TerminateRecommendationDetail(JsonView jsonValue)
-  : TerminateRecommendationDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TerminateRecommendationDetail& TerminateRecommendationDetail::operator =(JsonVie
   if(jsonValue.ValueExists("EstimatedMonthlySavings"))
   {
     m_estimatedMonthlySavings = jsonValue.GetString("EstimatedMonthlySavings");
-
     m_estimatedMonthlySavingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

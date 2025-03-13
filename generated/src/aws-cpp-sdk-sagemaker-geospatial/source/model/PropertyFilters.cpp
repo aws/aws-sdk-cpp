@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-PropertyFilters::PropertyFilters() : 
-    m_logicalOperator(LogicalOperator::NOT_SET),
-    m_logicalOperatorHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 PropertyFilters::PropertyFilters(JsonView jsonValue)
-  : PropertyFilters()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PropertyFilters& PropertyFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LogicalOperator"))
   {
     m_logicalOperator = LogicalOperatorMapper::GetLogicalOperatorForName(jsonValue.GetString("LogicalOperator"));
-
     m_logicalOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("Properties");
@@ -49,7 +39,6 @@ PropertyFilters& PropertyFilters::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

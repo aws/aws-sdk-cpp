@@ -12,11 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAliasRequest::GetAliasRequest() : 
-    m_aliasNameHasBeenSet(false)
-{
-}
-
 Aws::String GetAliasRequest::SerializePayload() const
 {
   JsonValue payload;

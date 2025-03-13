@@ -29,7 +29,7 @@ namespace Model
   class AssociateRouteTableResponse
   {
   public:
-    AWS_EC2_API AssociateRouteTableResponse();
+    AWS_EC2_API AssociateRouteTableResponse() = default;
     AWS_EC2_API AssociateRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,41 +39,42 @@ namespace Model
      * <p>The route table association ID. This ID is required for disassociating the
      * route table.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-    inline AssociateRouteTableResponse& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline AssociateRouteTableResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline AssociateRouteTableResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    AssociateRouteTableResponse& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the association.</p>
      */
-    inline const RouteTableAssociationState& GetAssociationState() const{ return m_associationState; }
-    inline void SetAssociationState(const RouteTableAssociationState& value) { m_associationState = value; }
-    inline void SetAssociationState(RouteTableAssociationState&& value) { m_associationState = std::move(value); }
-    inline AssociateRouteTableResponse& WithAssociationState(const RouteTableAssociationState& value) { SetAssociationState(value); return *this;}
-    inline AssociateRouteTableResponse& WithAssociationState(RouteTableAssociationState&& value) { SetAssociationState(std::move(value)); return *this;}
+    inline const RouteTableAssociationState& GetAssociationState() const { return m_associationState; }
+    template<typename AssociationStateT = RouteTableAssociationState>
+    void SetAssociationState(AssociationStateT&& value) { m_associationStateHasBeenSet = true; m_associationState = std::forward<AssociationStateT>(value); }
+    template<typename AssociationStateT = RouteTableAssociationState>
+    AssociateRouteTableResponse& WithAssociationState(AssociationStateT&& value) { SetAssociationState(std::forward<AssociationStateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateRouteTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateRouteTableResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
 
     RouteTableAssociationState m_associationState;
+    bool m_associationStateHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

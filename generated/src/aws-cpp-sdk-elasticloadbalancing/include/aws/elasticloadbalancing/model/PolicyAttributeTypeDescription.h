@@ -31,7 +31,7 @@ namespace Model
   class PolicyAttributeTypeDescription
   {
   public:
-    AWS_ELASTICLOADBALANCING_API PolicyAttributeTypeDescription();
+    AWS_ELASTICLOADBALANCING_API PolicyAttributeTypeDescription() = default;
     AWS_ELASTICLOADBALANCING_API PolicyAttributeTypeDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCING_API PolicyAttributeTypeDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline PolicyAttributeTypeDescription& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline PolicyAttributeTypeDescription& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline PolicyAttributeTypeDescription& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    PolicyAttributeTypeDescription& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,42 +56,36 @@ namespace Model
      * <p>The type of the attribute. For example, <code>Boolean</code> or
      * <code>Integer</code>.</p>
      */
-    inline const Aws::String& GetAttributeType() const{ return m_attributeType; }
+    inline const Aws::String& GetAttributeType() const { return m_attributeType; }
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
-    inline void SetAttributeType(const Aws::String& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
-    inline void SetAttributeType(Aws::String&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
-    inline void SetAttributeType(const char* value) { m_attributeTypeHasBeenSet = true; m_attributeType.assign(value); }
-    inline PolicyAttributeTypeDescription& WithAttributeType(const Aws::String& value) { SetAttributeType(value); return *this;}
-    inline PolicyAttributeTypeDescription& WithAttributeType(Aws::String&& value) { SetAttributeType(std::move(value)); return *this;}
-    inline PolicyAttributeTypeDescription& WithAttributeType(const char* value) { SetAttributeType(value); return *this;}
+    template<typename AttributeTypeT = Aws::String>
+    void SetAttributeType(AttributeTypeT&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::forward<AttributeTypeT>(value); }
+    template<typename AttributeTypeT = Aws::String>
+    PolicyAttributeTypeDescription& WithAttributeType(AttributeTypeT&& value) { SetAttributeType(std::forward<AttributeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the attribute.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PolicyAttributeTypeDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PolicyAttributeTypeDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PolicyAttributeTypeDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PolicyAttributeTypeDescription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value of the attribute, if applicable.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline PolicyAttributeTypeDescription& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline PolicyAttributeTypeDescription& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline PolicyAttributeTypeDescription& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    PolicyAttributeTypeDescription& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +96,12 @@ namespace Model
      * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
      * values are allowed</p> </li> </ul>
      */
-    inline const Aws::String& GetCardinality() const{ return m_cardinality; }
+    inline const Aws::String& GetCardinality() const { return m_cardinality; }
     inline bool CardinalityHasBeenSet() const { return m_cardinalityHasBeenSet; }
-    inline void SetCardinality(const Aws::String& value) { m_cardinalityHasBeenSet = true; m_cardinality = value; }
-    inline void SetCardinality(Aws::String&& value) { m_cardinalityHasBeenSet = true; m_cardinality = std::move(value); }
-    inline void SetCardinality(const char* value) { m_cardinalityHasBeenSet = true; m_cardinality.assign(value); }
-    inline PolicyAttributeTypeDescription& WithCardinality(const Aws::String& value) { SetCardinality(value); return *this;}
-    inline PolicyAttributeTypeDescription& WithCardinality(Aws::String&& value) { SetCardinality(std::move(value)); return *this;}
-    inline PolicyAttributeTypeDescription& WithCardinality(const char* value) { SetCardinality(value); return *this;}
+    template<typename CardinalityT = Aws::String>
+    void SetCardinality(CardinalityT&& value) { m_cardinalityHasBeenSet = true; m_cardinality = std::forward<CardinalityT>(value); }
+    template<typename CardinalityT = Aws::String>
+    PolicyAttributeTypeDescription& WithCardinality(CardinalityT&& value) { SetCardinality(std::forward<CardinalityT>(value)); return *this;}
     ///@}
   private:
 

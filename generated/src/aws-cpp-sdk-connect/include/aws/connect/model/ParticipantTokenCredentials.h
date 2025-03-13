@@ -31,7 +31,7 @@ namespace Model
   class ParticipantTokenCredentials
   {
   public:
-    AWS_CONNECT_API ParticipantTokenCredentials();
+    AWS_CONNECT_API ParticipantTokenCredentials() = default;
     AWS_CONNECT_API ParticipantTokenCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ParticipantTokenCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.
      * The participant token is valid for the lifetime of a chat participant. </p>
      */
-    inline const Aws::String& GetParticipantToken() const{ return m_participantToken; }
+    inline const Aws::String& GetParticipantToken() const { return m_participantToken; }
     inline bool ParticipantTokenHasBeenSet() const { return m_participantTokenHasBeenSet; }
-    inline void SetParticipantToken(const Aws::String& value) { m_participantTokenHasBeenSet = true; m_participantToken = value; }
-    inline void SetParticipantToken(Aws::String&& value) { m_participantTokenHasBeenSet = true; m_participantToken = std::move(value); }
-    inline void SetParticipantToken(const char* value) { m_participantTokenHasBeenSet = true; m_participantToken.assign(value); }
-    inline ParticipantTokenCredentials& WithParticipantToken(const Aws::String& value) { SetParticipantToken(value); return *this;}
-    inline ParticipantTokenCredentials& WithParticipantToken(Aws::String&& value) { SetParticipantToken(std::move(value)); return *this;}
-    inline ParticipantTokenCredentials& WithParticipantToken(const char* value) { SetParticipantToken(value); return *this;}
+    template<typename ParticipantTokenT = Aws::String>
+    void SetParticipantToken(ParticipantTokenT&& value) { m_participantTokenHasBeenSet = true; m_participantToken = std::forward<ParticipantTokenT>(value); }
+    template<typename ParticipantTokenT = Aws::String>
+    ParticipantTokenCredentials& WithParticipantToken(ParticipantTokenT&& value) { SetParticipantToken(std::forward<ParticipantTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The expiration of the token. It's specified in ISO 8601 format:
      * yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.</p>
      */
-    inline const Aws::String& GetExpiry() const{ return m_expiry; }
+    inline const Aws::String& GetExpiry() const { return m_expiry; }
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-    inline void SetExpiry(const Aws::String& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-    inline void SetExpiry(Aws::String&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-    inline void SetExpiry(const char* value) { m_expiryHasBeenSet = true; m_expiry.assign(value); }
-    inline ParticipantTokenCredentials& WithExpiry(const Aws::String& value) { SetExpiry(value); return *this;}
-    inline ParticipantTokenCredentials& WithExpiry(Aws::String&& value) { SetExpiry(std::move(value)); return *this;}
-    inline ParticipantTokenCredentials& WithExpiry(const char* value) { SetExpiry(value); return *this;}
+    template<typename ExpiryT = Aws::String>
+    void SetExpiry(ExpiryT&& value) { m_expiryHasBeenSet = true; m_expiry = std::forward<ExpiryT>(value); }
+    template<typename ExpiryT = Aws::String>
+    ParticipantTokenCredentials& WithExpiry(ExpiryT&& value) { SetExpiry(std::forward<ExpiryT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,28 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterWorkspaceDirectoryRequest::RegisterWorkspaceDirectoryRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_enableWorkDocs(false),
-    m_enableWorkDocsHasBeenSet(false),
-    m_enableSelfService(false),
-    m_enableSelfServiceHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceDirectoryNameHasBeenSet(false),
-    m_workspaceDirectoryDescriptionHasBeenSet(false),
-    m_userIdentityType(UserIdentityType::NOT_SET),
-    m_userIdentityTypeHasBeenSet(false),
-    m_idcInstanceArnHasBeenSet(false),
-    m_microsoftEntraConfigHasBeenSet(false),
-    m_workspaceType(WorkspaceType::NOT_SET),
-    m_workspaceTypeHasBeenSet(false),
-    m_activeDirectoryConfigHasBeenSet(false)
-{
-}
-
 Aws::String RegisterWorkspaceDirectoryRequest::SerializePayload() const
 {
   JsonValue payload;

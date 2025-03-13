@@ -35,7 +35,7 @@ namespace Model
   class UserTurnOutputSpecification
   {
   public:
-    AWS_LEXMODELSV2_API UserTurnOutputSpecification();
+    AWS_LEXMODELSV2_API UserTurnOutputSpecification() = default;
     AWS_LEXMODELSV2_API UserTurnOutputSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API UserTurnOutputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,38 @@ namespace Model
     /**
      * <p>Contains information about the intent.</p>
      */
-    inline const UserTurnIntentOutput& GetIntent() const{ return m_intent; }
+    inline const UserTurnIntentOutput& GetIntent() const { return m_intent; }
     inline bool IntentHasBeenSet() const { return m_intentHasBeenSet; }
-    inline void SetIntent(const UserTurnIntentOutput& value) { m_intentHasBeenSet = true; m_intent = value; }
-    inline void SetIntent(UserTurnIntentOutput&& value) { m_intentHasBeenSet = true; m_intent = std::move(value); }
-    inline UserTurnOutputSpecification& WithIntent(const UserTurnIntentOutput& value) { SetIntent(value); return *this;}
-    inline UserTurnOutputSpecification& WithIntent(UserTurnIntentOutput&& value) { SetIntent(std::move(value)); return *this;}
+    template<typename IntentT = UserTurnIntentOutput>
+    void SetIntent(IntentT&& value) { m_intentHasBeenSet = true; m_intent = std::forward<IntentT>(value); }
+    template<typename IntentT = UserTurnIntentOutput>
+    UserTurnOutputSpecification& WithIntent(IntentT&& value) { SetIntent(std::forward<IntentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contexts that are active in the turn.</p>
      */
-    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
+    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const { return m_activeContexts; }
     inline bool ActiveContextsHasBeenSet() const { return m_activeContextsHasBeenSet; }
-    inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContextsHasBeenSet = true; m_activeContexts = value; }
-    inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::move(value); }
-    inline UserTurnOutputSpecification& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
-    inline UserTurnOutputSpecification& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
-    inline UserTurnOutputSpecification& AddActiveContexts(const ActiveContext& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(value); return *this; }
-    inline UserTurnOutputSpecification& AddActiveContexts(ActiveContext&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(std::move(value)); return *this; }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    void SetActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::forward<ActiveContextsT>(value); }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    UserTurnOutputSpecification& WithActiveContexts(ActiveContextsT&& value) { SetActiveContexts(std::forward<ActiveContextsT>(value)); return *this;}
+    template<typename ActiveContextsT = ActiveContext>
+    UserTurnOutputSpecification& AddActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.emplace_back(std::forward<ActiveContextsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The transcript that is output for the user turn by the test execution.</p>
      */
-    inline const Aws::String& GetTranscript() const{ return m_transcript; }
+    inline const Aws::String& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const Aws::String& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(Aws::String&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline void SetTranscript(const char* value) { m_transcriptHasBeenSet = true; m_transcript.assign(value); }
-    inline UserTurnOutputSpecification& WithTranscript(const Aws::String& value) { SetTranscript(value); return *this;}
-    inline UserTurnOutputSpecification& WithTranscript(Aws::String&& value) { SetTranscript(std::move(value)); return *this;}
-    inline UserTurnOutputSpecification& WithTranscript(const char* value) { SetTranscript(value); return *this;}
+    template<typename TranscriptT = Aws::String>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = Aws::String>
+    UserTurnOutputSpecification& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
   private:
 

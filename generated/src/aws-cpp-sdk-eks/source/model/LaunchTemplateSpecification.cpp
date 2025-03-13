@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-LaunchTemplateSpecification::LaunchTemplateSpecification() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 LaunchTemplateSpecification::LaunchTemplateSpecification(JsonView jsonValue)
-  : LaunchTemplateSpecification()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LaunchTemplateSpecification& LaunchTemplateSpecification::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6CidrAssociation::Ipv6CidrAssociation() : 
-    m_ipv6CidrHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false)
-{
-}
-
 Ipv6CidrAssociation::Ipv6CidrAssociation(const XmlNode& xmlNode)
-  : Ipv6CidrAssociation()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Ipv6CidrAssociation& Ipv6CidrAssociation::operator =(const XmlNode& xmlNode)
     {
       m_ipv6Cidr = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6CidrNode.GetText());
       m_ipv6CidrHasBeenSet = true;
+       m_ipv6CidrHasBeenSet = true;
     }
     XmlNode associatedResourceNode = resultNode.FirstChild("associatedResource");
     if(!associatedResourceNode.IsNull())
     {
       m_associatedResource = Aws::Utils::Xml::DecodeEscapedXmlText(associatedResourceNode.GetText());
       m_associatedResourceHasBeenSet = true;
+       m_associatedResourceHasBeenSet = true;
     }
   }
 

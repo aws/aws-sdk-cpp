@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ApplyPendingMaintenanceActionResult::ApplyPendingMaintenanceActionResult()
-{
-}
-
 ApplyPendingMaintenanceActionResult::ApplyPendingMaintenanceActionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ApplyPendingMaintenanceActionResult& ApplyPendingMaintenanceActionResult::operat
     if(!resourcePendingMaintenanceActionsNode.IsNull())
     {
       m_resourcePendingMaintenanceActions = resourcePendingMaintenanceActionsNode;
+      m_resourcePendingMaintenanceActionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ApplyPendingMaintenanceActionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

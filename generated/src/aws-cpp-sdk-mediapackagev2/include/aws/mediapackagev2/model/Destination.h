@@ -32,7 +32,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_MEDIAPACKAGEV2_API Destination();
+    AWS_MEDIAPACKAGEV2_API Destination() = default;
     AWS_MEDIAPACKAGEV2_API Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * includes details such as the bucket name and destination path within the
      * bucket.</p>
      */
-    inline const S3DestinationConfig& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3DestinationConfig& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3DestinationConfig& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3DestinationConfig&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline Destination& WithS3Destination(const S3DestinationConfig& value) { SetS3Destination(value); return *this;}
-    inline Destination& WithS3Destination(S3DestinationConfig&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3DestinationConfig>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3DestinationConfig>
+    Destination& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace PrometheusService
 namespace Model
 {
 
-AmpConfiguration::AmpConfiguration() : 
-    m_workspaceArnHasBeenSet(false)
-{
-}
-
 AmpConfiguration::AmpConfiguration(JsonView jsonValue)
-  : AmpConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmpConfiguration& AmpConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workspaceArn"))
   {
     m_workspaceArn = jsonValue.GetString("workspaceArn");
-
     m_workspaceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

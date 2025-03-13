@@ -12,16 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLDAPSSettingsRequest::DescribeLDAPSSettingsRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_type(LDAPSType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLDAPSSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

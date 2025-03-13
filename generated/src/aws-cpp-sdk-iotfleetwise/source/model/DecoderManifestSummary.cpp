@@ -18,21 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-DecoderManifestSummary::DecoderManifestSummary() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_modelManifestArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ManifestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DecoderManifestSummary::DecoderManifestSummary(JsonView jsonValue)
-  : DecoderManifestSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ DecoderManifestSummary& DecoderManifestSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelManifestArn"))
   {
     m_modelManifestArn = jsonValue.GetString("modelManifestArn");
-
     m_modelManifestArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ManifestStatusMapper::GetManifestStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("lastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

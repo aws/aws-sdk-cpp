@@ -18,15 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ReportDeliveryChannel::ReportDeliveryChannel() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_formatsHasBeenSet(false)
-{
-}
-
 ReportDeliveryChannel::ReportDeliveryChannel(JsonView jsonValue)
-  : ReportDeliveryChannel()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ReportDeliveryChannel& ReportDeliveryChannel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Formats"))
   {
     Aws::Utils::Array<JsonView> formatsJsonList = jsonValue.GetArray("Formats");
@@ -56,7 +44,6 @@ ReportDeliveryChannel& ReportDeliveryChannel::operator =(JsonView jsonValue)
     }
     m_formatsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteActivationRequest::DeleteActivationRequest() : 
-    m_activationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteActivationRequest::SerializePayload() const
 {
   JsonValue payload;

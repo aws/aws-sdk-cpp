@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ConversationSource::ConversationSource() : 
-    m_conversationIdHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 ConversationSource::ConversationSource(JsonView jsonValue)
-  : ConversationSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConversationSource& ConversationSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentId"))
   {
     m_attachmentId = jsonValue.GetString("attachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

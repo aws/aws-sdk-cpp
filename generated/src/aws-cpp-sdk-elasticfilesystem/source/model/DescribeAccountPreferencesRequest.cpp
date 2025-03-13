@@ -12,13 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountPreferencesRequest::DescribeAccountPreferencesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccountPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

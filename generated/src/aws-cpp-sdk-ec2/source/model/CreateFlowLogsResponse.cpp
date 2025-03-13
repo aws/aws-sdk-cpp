@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFlowLogsResponse::CreateFlowLogsResponse()
-{
-}
-
 CreateFlowLogsResponse::CreateFlowLogsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebS
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
     XmlNode flowLogIdsNode = resultNode.FirstChild("flowLogIdSet");
     if(!flowLogIdsNode.IsNull())
     {
       XmlNode flowLogIdsMember = flowLogIdsNode.FirstChild("item");
+      m_flowLogIdsHasBeenSet = !flowLogIdsMember.IsNull();
       while(!flowLogIdsMember.IsNull())
       {
         m_flowLogIds.push_back(flowLogIdsMember.GetText());
@@ -58,6 +56,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebS
     if(!unsuccessfulNode.IsNull())
     {
       XmlNode unsuccessfulMember = unsuccessfulNode.FirstChild("item");
+      m_unsuccessfulHasBeenSet = !unsuccessfulMember.IsNull();
       while(!unsuccessfulMember.IsNull())
       {
         m_unsuccessful.push_back(unsuccessfulMember);
@@ -72,6 +71,7 @@ CreateFlowLogsResponse& CreateFlowLogsResponse::operator =(const Aws::AmazonWebS
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateFlowLogsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

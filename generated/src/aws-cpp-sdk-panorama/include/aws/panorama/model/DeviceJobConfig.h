@@ -31,7 +31,7 @@ namespace Model
   class DeviceJobConfig
   {
   public:
-    AWS_PANORAMA_API DeviceJobConfig();
+    AWS_PANORAMA_API DeviceJobConfig() = default;
     AWS_PANORAMA_API DeviceJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API DeviceJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
      */
-    inline const OTAJobConfig& GetOTAJobConfig() const{ return m_oTAJobConfig; }
+    inline const OTAJobConfig& GetOTAJobConfig() const { return m_oTAJobConfig; }
     inline bool OTAJobConfigHasBeenSet() const { return m_oTAJobConfigHasBeenSet; }
-    inline void SetOTAJobConfig(const OTAJobConfig& value) { m_oTAJobConfigHasBeenSet = true; m_oTAJobConfig = value; }
-    inline void SetOTAJobConfig(OTAJobConfig&& value) { m_oTAJobConfigHasBeenSet = true; m_oTAJobConfig = std::move(value); }
-    inline DeviceJobConfig& WithOTAJobConfig(const OTAJobConfig& value) { SetOTAJobConfig(value); return *this;}
-    inline DeviceJobConfig& WithOTAJobConfig(OTAJobConfig&& value) { SetOTAJobConfig(std::move(value)); return *this;}
+    template<typename OTAJobConfigT = OTAJobConfig>
+    void SetOTAJobConfig(OTAJobConfigT&& value) { m_oTAJobConfigHasBeenSet = true; m_oTAJobConfig = std::forward<OTAJobConfigT>(value); }
+    template<typename OTAJobConfigT = OTAJobConfig>
+    DeviceJobConfig& WithOTAJobConfig(OTAJobConfigT&& value) { SetOTAJobConfig(std::forward<OTAJobConfigT>(value)); return *this;}
     ///@}
   private:
 

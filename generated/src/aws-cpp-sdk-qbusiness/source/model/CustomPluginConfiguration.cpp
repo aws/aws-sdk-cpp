@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-CustomPluginConfiguration::CustomPluginConfiguration() : 
-    m_descriptionHasBeenSet(false),
-    m_apiSchemaType(APISchemaType::NOT_SET),
-    m_apiSchemaTypeHasBeenSet(false),
-    m_apiSchemaHasBeenSet(false)
-{
-}
-
 CustomPluginConfiguration::CustomPluginConfiguration(JsonView jsonValue)
-  : CustomPluginConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomPluginConfiguration& CustomPluginConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiSchemaType"))
   {
     m_apiSchemaType = APISchemaTypeMapper::GetAPISchemaTypeForName(jsonValue.GetString("apiSchemaType"));
-
     m_apiSchemaTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiSchema"))
   {
     m_apiSchema = jsonValue.GetObject("apiSchema");
-
     m_apiSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

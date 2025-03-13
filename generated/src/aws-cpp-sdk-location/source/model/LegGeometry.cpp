@@ -18,13 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-LegGeometry::LegGeometry() : 
-    m_lineStringHasBeenSet(false)
-{
-}
-
 LegGeometry::LegGeometry(JsonView jsonValue)
-  : LegGeometry()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ LegGeometry& LegGeometry::operator =(JsonView jsonValue)
     }
     m_lineStringHasBeenSet = true;
   }
-
   return *this;
 }
 

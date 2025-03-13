@@ -18,18 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-Detector::Detector() : 
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false),
-    m_detectorModelVersionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 Detector::Detector(JsonView jsonValue)
-  : Detector()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Detector& Detector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detectorModelName"))
   {
     m_detectorModelName = jsonValue.GetString("detectorModelName");
-
     m_detectorModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyValue"))
   {
     m_keyValue = jsonValue.GetString("keyValue");
-
     m_keyValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorModelVersion"))
   {
     m_detectorModelVersion = jsonValue.GetString("detectorModelVersion");
-
     m_detectorModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

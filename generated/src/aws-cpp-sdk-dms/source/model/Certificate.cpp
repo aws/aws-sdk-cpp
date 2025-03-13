@@ -19,23 +19,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_certificateIdentifierHasBeenSet(false),
-    m_certificateCreationDateHasBeenSet(false),
-    m_certificatePemHasBeenSet(false),
-    m_certificateWalletHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_certificateOwnerHasBeenSet(false),
-    m_validFromDateHasBeenSet(false),
-    m_validToDateHasBeenSet(false),
-    m_signingAlgorithmHasBeenSet(false),
-    m_keyLength(0),
-    m_keyLengthHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -45,72 +29,53 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CertificateIdentifier"))
   {
     m_certificateIdentifier = jsonValue.GetString("CertificateIdentifier");
-
     m_certificateIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateCreationDate"))
   {
     m_certificateCreationDate = jsonValue.GetDouble("CertificateCreationDate");
-
     m_certificateCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificatePem"))
   {
     m_certificatePem = jsonValue.GetString("CertificatePem");
-
     m_certificatePemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateWallet"))
   {
     m_certificateWallet = HashingUtils::Base64Decode(jsonValue.GetString("CertificateWallet"));
     m_certificateWalletHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateOwner"))
   {
     m_certificateOwner = jsonValue.GetString("CertificateOwner");
-
     m_certificateOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidFromDate"))
   {
     m_validFromDate = jsonValue.GetDouble("ValidFromDate");
-
     m_validFromDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidToDate"))
   {
     m_validToDate = jsonValue.GetDouble("ValidToDate");
-
     m_validToDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningAlgorithm"))
   {
     m_signingAlgorithm = jsonValue.GetString("SigningAlgorithm");
-
     m_signingAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyLength"))
   {
     m_keyLength = jsonValue.GetInteger("KeyLength");
-
     m_keyLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

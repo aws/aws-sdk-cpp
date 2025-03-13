@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TestCases::TestCases() : 
-    m_sequentialHasBeenSet(false)
-{
-}
-
 TestCases::TestCases(JsonView jsonValue)
-  : TestCases()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TestCases& TestCases::operator =(JsonView jsonValue)
     }
     m_sequentialHasBeenSet = true;
   }
-
   return *this;
 }
 

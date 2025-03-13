@@ -32,7 +32,7 @@ namespace Model
   class Metadata
   {
   public:
-    AWS_GLUEDATABREW_API Metadata();
+    AWS_GLUEDATABREW_API Metadata() = default;
     AWS_GLUEDATABREW_API Metadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) associated with the dataset. Currently,
      * DataBrew only supports ARNs from Amazon AppFlow.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline Metadata& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline Metadata& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline Metadata& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    Metadata& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayLogging::VirtualGatewayLogging() : 
-    m_accessLogHasBeenSet(false)
-{
-}
-
 VirtualGatewayLogging::VirtualGatewayLogging(JsonView jsonValue)
-  : VirtualGatewayLogging()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualGatewayLogging& VirtualGatewayLogging::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessLog"))
   {
     m_accessLog = jsonValue.GetObject("accessLog");
-
     m_accessLogHasBeenSet = true;
   }
-
   return *this;
 }
 

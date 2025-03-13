@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSessionsRequest::ListSessionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestOriginHasBeenSet(false)
-{
-}
-
 Aws::String ListSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

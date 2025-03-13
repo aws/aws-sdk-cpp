@@ -33,7 +33,7 @@ namespace Model
   class MapConfiguration
   {
   public:
-    AWS_LOCATIONSERVICE_API MapConfiguration();
+    AWS_LOCATIONSERVICE_API MapConfiguration() = default;
     AWS_LOCATIONSERVICE_API MapConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API MapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -116,14 +116,12 @@ namespace Model
      * map style is a dark-themed style with muted colors and fewer features that aids
      * in understanding overlaid data.</p> </li> </ul>
      */
-    inline const Aws::String& GetStyle() const{ return m_style; }
+    inline const Aws::String& GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const Aws::String& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(Aws::String&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline void SetStyle(const char* value) { m_styleHasBeenSet = true; m_style.assign(value); }
-    inline MapConfiguration& WithStyle(const Aws::String& value) { SetStyle(value); return *this;}
-    inline MapConfiguration& WithStyle(Aws::String&& value) { SetStyle(std::move(value)); return *this;}
-    inline MapConfiguration& WithStyle(const char* value) { SetStyle(value); return *this;}
+    template<typename StyleT = Aws::String>
+    void SetStyle(StyleT&& value) { m_styleHasBeenSet = true; m_style = std::forward<StyleT>(value); }
+    template<typename StyleT = Aws::String>
+    MapConfiguration& WithStyle(StyleT&& value) { SetStyle(std::forward<StyleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +134,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
      * views</a> for more information.</p> 
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline MapConfiguration& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline MapConfiguration& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline MapConfiguration& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    MapConfiguration& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,15 +150,14 @@ namespace Model
      * <code>unset</code>.</p>  <p>Not all map resources or styles support custom
      * layers. See Custom Layers for more information.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetCustomLayers() const{ return m_customLayers; }
+    inline const Aws::Vector<Aws::String>& GetCustomLayers() const { return m_customLayers; }
     inline bool CustomLayersHasBeenSet() const { return m_customLayersHasBeenSet; }
-    inline void SetCustomLayers(const Aws::Vector<Aws::String>& value) { m_customLayersHasBeenSet = true; m_customLayers = value; }
-    inline void SetCustomLayers(Aws::Vector<Aws::String>&& value) { m_customLayersHasBeenSet = true; m_customLayers = std::move(value); }
-    inline MapConfiguration& WithCustomLayers(const Aws::Vector<Aws::String>& value) { SetCustomLayers(value); return *this;}
-    inline MapConfiguration& WithCustomLayers(Aws::Vector<Aws::String>&& value) { SetCustomLayers(std::move(value)); return *this;}
-    inline MapConfiguration& AddCustomLayers(const Aws::String& value) { m_customLayersHasBeenSet = true; m_customLayers.push_back(value); return *this; }
-    inline MapConfiguration& AddCustomLayers(Aws::String&& value) { m_customLayersHasBeenSet = true; m_customLayers.push_back(std::move(value)); return *this; }
-    inline MapConfiguration& AddCustomLayers(const char* value) { m_customLayersHasBeenSet = true; m_customLayers.push_back(value); return *this; }
+    template<typename CustomLayersT = Aws::Vector<Aws::String>>
+    void SetCustomLayers(CustomLayersT&& value) { m_customLayersHasBeenSet = true; m_customLayers = std::forward<CustomLayersT>(value); }
+    template<typename CustomLayersT = Aws::Vector<Aws::String>>
+    MapConfiguration& WithCustomLayers(CustomLayersT&& value) { SetCustomLayers(std::forward<CustomLayersT>(value)); return *this;}
+    template<typename CustomLayersT = Aws::String>
+    MapConfiguration& AddCustomLayers(CustomLayersT&& value) { m_customLayersHasBeenSet = true; m_customLayers.emplace_back(std::forward<CustomLayersT>(value)); return *this; }
     ///@}
   private:
 

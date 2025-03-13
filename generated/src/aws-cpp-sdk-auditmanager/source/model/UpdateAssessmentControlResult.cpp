@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAssessmentControlResult::UpdateAssessmentControlResult()
-{
-}
-
 UpdateAssessmentControlResult::UpdateAssessmentControlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateAssessmentControlResult& UpdateAssessmentControlResult::operator =(const A
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetObject("control");
-
+    m_controlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

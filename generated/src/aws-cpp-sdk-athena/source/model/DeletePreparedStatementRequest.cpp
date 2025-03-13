@@ -12,12 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePreparedStatementRequest::DeletePreparedStatementRequest() : 
-    m_statementNameHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String DeletePreparedStatementRequest::SerializePayload() const
 {
   JsonValue payload;

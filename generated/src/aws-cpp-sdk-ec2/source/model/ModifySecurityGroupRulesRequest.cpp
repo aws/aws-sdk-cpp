@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifySecurityGroupRulesRequest::ModifySecurityGroupRulesRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_securityGroupRulesHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifySecurityGroupRulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

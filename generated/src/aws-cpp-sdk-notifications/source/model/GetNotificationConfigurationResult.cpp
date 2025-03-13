@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNotificationConfigurationResult::GetNotificationConfigurationResult() : 
-    m_status(NotificationConfigurationStatus::NOT_SET),
-    m_aggregationDuration(AggregationDuration::NOT_SET)
-{
-}
-
 GetNotificationConfigurationResult::GetNotificationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetNotificationConfigurationResult()
 {
   *this = result;
 }
@@ -35,45 +28,40 @@ GetNotificationConfigurationResult& GetNotificationConfigurationResult::operator
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = NotificationConfigurationStatusMapper::GetNotificationConfigurationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationDuration"))
   {
     m_aggregationDuration = AggregationDurationMapper::GetAggregationDurationForName(jsonValue.GetString("aggregationDuration"));
-
+    m_aggregationDurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

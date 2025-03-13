@@ -35,7 +35,7 @@ namespace Model
   class AlternateIdentifier
   {
   public:
-    AWS_IDENTITYSTORE_API AlternateIdentifier();
+    AWS_IDENTITYSTORE_API AlternateIdentifier() = default;
     AWS_IDENTITYSTORE_API AlternateIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API AlternateIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>The identifier issued to this resource by an external identity provider.</p>
      */
-    inline const ExternalId& GetExternalId() const{ return m_externalId; }
+    inline const ExternalId& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const ExternalId& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(ExternalId&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline AlternateIdentifier& WithExternalId(const ExternalId& value) { SetExternalId(value); return *this;}
-    inline AlternateIdentifier& WithExternalId(ExternalId&& value) { SetExternalId(std::move(value)); return *this;}
+    template<typename ExternalIdT = ExternalId>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = ExternalId>
+    AlternateIdentifier& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An entity attribute that's unique to a specific entity.</p>
      */
-    inline const UniqueAttribute& GetUniqueAttribute() const{ return m_uniqueAttribute; }
+    inline const UniqueAttribute& GetUniqueAttribute() const { return m_uniqueAttribute; }
     inline bool UniqueAttributeHasBeenSet() const { return m_uniqueAttributeHasBeenSet; }
-    inline void SetUniqueAttribute(const UniqueAttribute& value) { m_uniqueAttributeHasBeenSet = true; m_uniqueAttribute = value; }
-    inline void SetUniqueAttribute(UniqueAttribute&& value) { m_uniqueAttributeHasBeenSet = true; m_uniqueAttribute = std::move(value); }
-    inline AlternateIdentifier& WithUniqueAttribute(const UniqueAttribute& value) { SetUniqueAttribute(value); return *this;}
-    inline AlternateIdentifier& WithUniqueAttribute(UniqueAttribute&& value) { SetUniqueAttribute(std::move(value)); return *this;}
+    template<typename UniqueAttributeT = UniqueAttribute>
+    void SetUniqueAttribute(UniqueAttributeT&& value) { m_uniqueAttributeHasBeenSet = true; m_uniqueAttribute = std::forward<UniqueAttributeT>(value); }
+    template<typename UniqueAttributeT = UniqueAttribute>
+    AlternateIdentifier& WithUniqueAttribute(UniqueAttributeT&& value) { SetUniqueAttribute(std::forward<UniqueAttributeT>(value)); return *this;}
     ///@}
   private:
 

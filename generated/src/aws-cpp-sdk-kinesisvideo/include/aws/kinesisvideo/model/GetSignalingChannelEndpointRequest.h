@@ -22,7 +22,7 @@ namespace Model
   class GetSignalingChannelEndpointRequest : public KinesisVideoRequest
   {
   public:
-    AWS_KINESISVIDEO_API GetSignalingChannelEndpointRequest();
+    AWS_KINESISVIDEO_API GetSignalingChannelEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the signalling channel for which you want
      * to get an endpoint.</p>
      */
-    inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
+    inline const Aws::String& GetChannelARN() const { return m_channelARN; }
     inline bool ChannelARNHasBeenSet() const { return m_channelARNHasBeenSet; }
-    inline void SetChannelARN(const Aws::String& value) { m_channelARNHasBeenSet = true; m_channelARN = value; }
-    inline void SetChannelARN(Aws::String&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::move(value); }
-    inline void SetChannelARN(const char* value) { m_channelARNHasBeenSet = true; m_channelARN.assign(value); }
-    inline GetSignalingChannelEndpointRequest& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
-    inline GetSignalingChannelEndpointRequest& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
-    inline GetSignalingChannelEndpointRequest& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
+    template<typename ChannelARNT = Aws::String>
+    void SetChannelARN(ChannelARNT&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::forward<ChannelARNT>(value); }
+    template<typename ChannelARNT = Aws::String>
+    GetSignalingChannelEndpointRequest& WithChannelARN(ChannelARNT&& value) { SetChannelARN(std::forward<ChannelARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * <p>A structure containing the endpoint configuration for the
      * <code>SINGLE_MASTER</code> channel type.</p>
      */
-    inline const SingleMasterChannelEndpointConfiguration& GetSingleMasterChannelEndpointConfiguration() const{ return m_singleMasterChannelEndpointConfiguration; }
+    inline const SingleMasterChannelEndpointConfiguration& GetSingleMasterChannelEndpointConfiguration() const { return m_singleMasterChannelEndpointConfiguration; }
     inline bool SingleMasterChannelEndpointConfigurationHasBeenSet() const { return m_singleMasterChannelEndpointConfigurationHasBeenSet; }
-    inline void SetSingleMasterChannelEndpointConfiguration(const SingleMasterChannelEndpointConfiguration& value) { m_singleMasterChannelEndpointConfigurationHasBeenSet = true; m_singleMasterChannelEndpointConfiguration = value; }
-    inline void SetSingleMasterChannelEndpointConfiguration(SingleMasterChannelEndpointConfiguration&& value) { m_singleMasterChannelEndpointConfigurationHasBeenSet = true; m_singleMasterChannelEndpointConfiguration = std::move(value); }
-    inline GetSignalingChannelEndpointRequest& WithSingleMasterChannelEndpointConfiguration(const SingleMasterChannelEndpointConfiguration& value) { SetSingleMasterChannelEndpointConfiguration(value); return *this;}
-    inline GetSignalingChannelEndpointRequest& WithSingleMasterChannelEndpointConfiguration(SingleMasterChannelEndpointConfiguration&& value) { SetSingleMasterChannelEndpointConfiguration(std::move(value)); return *this;}
+    template<typename SingleMasterChannelEndpointConfigurationT = SingleMasterChannelEndpointConfiguration>
+    void SetSingleMasterChannelEndpointConfiguration(SingleMasterChannelEndpointConfigurationT&& value) { m_singleMasterChannelEndpointConfigurationHasBeenSet = true; m_singleMasterChannelEndpointConfiguration = std::forward<SingleMasterChannelEndpointConfigurationT>(value); }
+    template<typename SingleMasterChannelEndpointConfigurationT = SingleMasterChannelEndpointConfiguration>
+    GetSignalingChannelEndpointRequest& WithSingleMasterChannelEndpointConfiguration(SingleMasterChannelEndpointConfigurationT&& value) { SetSingleMasterChannelEndpointConfiguration(std::forward<SingleMasterChannelEndpointConfigurationT>(value)); return *this;}
     ///@}
   private:
 

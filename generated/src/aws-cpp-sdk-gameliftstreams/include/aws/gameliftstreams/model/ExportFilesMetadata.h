@@ -33,7 +33,7 @@ namespace Model
   class ExportFilesMetadata
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ExportFilesMetadata();
+    AWS_GAMELIFTSTREAMS_API ExportFilesMetadata() = default;
     AWS_GAMELIFTSTREAMS_API ExportFilesMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API ExportFilesMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,26 +53,22 @@ namespace Model
      * <code>s3://MyBucket/MyGameSessions_ExportedFiles/YYYYMMDD-HHMMSS-appId-sg-Id-sessionId.zip</code>
      * or another similar name. </p>
      */
-    inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
+    inline const Aws::String& GetOutputUri() const { return m_outputUri; }
     inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
-    inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
-    inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::move(value); }
-    inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
-    inline ExportFilesMetadata& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
-    inline ExportFilesMetadata& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
-    inline ExportFilesMetadata& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
+    template<typename OutputUriT = Aws::String>
+    void SetOutputUri(OutputUriT&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::forward<OutputUriT>(value); }
+    template<typename OutputUriT = Aws::String>
+    ExportFilesMetadata& WithOutputUri(OutputUriT&& value) { SetOutputUri(std::forward<OutputUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result of the <a>ExportStreamSessionFiles</a> operation.</p>
      */
-    inline const ExportFilesStatus& GetStatus() const{ return m_status; }
+    inline ExportFilesStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExportFilesStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExportFilesStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ExportFilesMetadata& WithStatus(const ExportFilesStatus& value) { SetStatus(value); return *this;}
-    inline ExportFilesMetadata& WithStatus(ExportFilesStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExportFilesStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ExportFilesMetadata& WithStatus(ExportFilesStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,21 +76,19 @@ namespace Model
      * <p>A short description of the reason the export is in <code>FAILED</code>
      * status.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline ExportFilesMetadata& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline ExportFilesMetadata& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline ExportFilesMetadata& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    ExportFilesMetadata& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_outputUri;
     bool m_outputUriHasBeenSet = false;
 
-    ExportFilesStatus m_status;
+    ExportFilesStatus m_status{ExportFilesStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;

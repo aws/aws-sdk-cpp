@@ -18,17 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-PhysicalResourceId::PhysicalResourceId() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_type(PhysicalIdentifierType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 PhysicalResourceId::PhysicalResourceId(JsonView jsonValue)
-  : PhysicalResourceId()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PhysicalResourceId& PhysicalResourceId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PhysicalIdentifierTypeMapper::GetPhysicalIdentifierTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

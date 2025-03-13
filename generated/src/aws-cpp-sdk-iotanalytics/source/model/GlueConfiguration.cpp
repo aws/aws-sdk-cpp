@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-GlueConfiguration::GlueConfiguration() : 
-    m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
-{
-}
-
 GlueConfiguration::GlueConfiguration(JsonView jsonValue)
-  : GlueConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GlueConfiguration& GlueConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   return *this;
 }
 

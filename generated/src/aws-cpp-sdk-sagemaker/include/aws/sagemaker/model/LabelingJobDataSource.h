@@ -40,7 +40,7 @@ namespace Model
   class LabelingJobDataSource
   {
   public:
-    AWS_SAGEMAKER_API LabelingJobDataSource();
+    AWS_SAGEMAKER_API LabelingJobDataSource() = default;
     AWS_SAGEMAKER_API LabelingJobDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API LabelingJobDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the input data objects.</p>
      */
-    inline const LabelingJobS3DataSource& GetS3DataSource() const{ return m_s3DataSource; }
+    inline const LabelingJobS3DataSource& GetS3DataSource() const { return m_s3DataSource; }
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
-    inline void SetS3DataSource(const LabelingJobS3DataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
-    inline void SetS3DataSource(LabelingJobS3DataSource&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::move(value); }
-    inline LabelingJobDataSource& WithS3DataSource(const LabelingJobS3DataSource& value) { SetS3DataSource(value); return *this;}
-    inline LabelingJobDataSource& WithS3DataSource(LabelingJobS3DataSource&& value) { SetS3DataSource(std::move(value)); return *this;}
+    template<typename S3DataSourceT = LabelingJobS3DataSource>
+    void SetS3DataSource(S3DataSourceT&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::forward<S3DataSourceT>(value); }
+    template<typename S3DataSourceT = LabelingJobS3DataSource>
+    LabelingJobDataSource& WithS3DataSource(S3DataSourceT&& value) { SetS3DataSource(std::forward<S3DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data">Send
      * Data to a Streaming Labeling Job</a>. </p>
      */
-    inline const LabelingJobSnsDataSource& GetSnsDataSource() const{ return m_snsDataSource; }
+    inline const LabelingJobSnsDataSource& GetSnsDataSource() const { return m_snsDataSource; }
     inline bool SnsDataSourceHasBeenSet() const { return m_snsDataSourceHasBeenSet; }
-    inline void SetSnsDataSource(const LabelingJobSnsDataSource& value) { m_snsDataSourceHasBeenSet = true; m_snsDataSource = value; }
-    inline void SetSnsDataSource(LabelingJobSnsDataSource&& value) { m_snsDataSourceHasBeenSet = true; m_snsDataSource = std::move(value); }
-    inline LabelingJobDataSource& WithSnsDataSource(const LabelingJobSnsDataSource& value) { SetSnsDataSource(value); return *this;}
-    inline LabelingJobDataSource& WithSnsDataSource(LabelingJobSnsDataSource&& value) { SetSnsDataSource(std::move(value)); return *this;}
+    template<typename SnsDataSourceT = LabelingJobSnsDataSource>
+    void SetSnsDataSource(SnsDataSourceT&& value) { m_snsDataSourceHasBeenSet = true; m_snsDataSource = std::forward<SnsDataSourceT>(value); }
+    template<typename SnsDataSourceT = LabelingJobSnsDataSource>
+    LabelingJobDataSource& WithSnsDataSource(SnsDataSourceT&& value) { SetSnsDataSource(std::forward<SnsDataSourceT>(value)); return *this;}
     ///@}
   private:
 

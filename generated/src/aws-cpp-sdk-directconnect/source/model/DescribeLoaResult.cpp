@@ -18,13 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLoaResult::DescribeLoaResult() : 
-    m_loaContentType(LoaContentType::NOT_SET)
-{
-}
-
 DescribeLoaResult::DescribeLoaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeLoaResult()
 {
   *this = result;
 }
@@ -35,20 +29,20 @@ DescribeLoaResult& DescribeLoaResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("loaContent"))
   {
     m_loaContent = HashingUtils::Base64Decode(jsonValue.GetString("loaContent"));
+    m_loaContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loaContentType"))
   {
     m_loaContentType = LoaContentTypeMapper::GetLoaContentTypeForName(jsonValue.GetString("loaContentType"));
-
+    m_loaContentTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

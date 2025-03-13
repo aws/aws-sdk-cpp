@@ -12,15 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrainingDatasetRequest::CreateTrainingDatasetRequest() : 
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_trainingDataHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrainingDatasetRequest::SerializePayload() const
 {
   JsonValue payload;

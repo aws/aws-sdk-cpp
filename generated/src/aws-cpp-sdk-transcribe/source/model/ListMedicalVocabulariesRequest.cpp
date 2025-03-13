@@ -12,16 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMedicalVocabulariesRequest::ListMedicalVocabulariesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_stateEquals(VocabularyState::NOT_SET),
-    m_stateEqualsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false)
-{
-}
-
 Aws::String ListMedicalVocabulariesRequest::SerializePayload() const
 {
   JsonValue payload;

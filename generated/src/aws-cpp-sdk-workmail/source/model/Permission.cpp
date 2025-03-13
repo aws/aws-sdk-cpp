@@ -18,16 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-Permission::Permission() : 
-    m_granteeIdHasBeenSet(false),
-    m_granteeType(MemberType::NOT_SET),
-    m_granteeTypeHasBeenSet(false),
-    m_permissionValuesHasBeenSet(false)
-{
-}
-
 Permission::Permission(JsonView jsonValue)
-  : Permission()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Permission& Permission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GranteeId"))
   {
     m_granteeId = jsonValue.GetString("GranteeId");
-
     m_granteeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GranteeType"))
   {
     m_granteeType = MemberTypeMapper::GetMemberTypeForName(jsonValue.GetString("GranteeType"));
-
     m_granteeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionValues"))
   {
     Aws::Utils::Array<JsonView> permissionValuesJsonList = jsonValue.GetArray("PermissionValues");
@@ -57,7 +44,6 @@ Permission& Permission::operator =(JsonView jsonValue)
     }
     m_permissionValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

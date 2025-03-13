@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-HostProperties::HostProperties() : 
-    m_cores(0),
-    m_coresHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_sockets(0),
-    m_socketsHasBeenSet(false),
-    m_totalVCpus(0),
-    m_totalVCpusHasBeenSet(false)
-{
-}
-
 HostProperties::HostProperties(const XmlNode& xmlNode)
-  : HostProperties()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ HostProperties& HostProperties::operator =(const XmlNode& xmlNode)
     {
       m_cores = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coresNode.GetText()).c_str()).c_str());
       m_coresHasBeenSet = true;
+       m_coresHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
     if(!instanceFamilyNode.IsNull())
     {
       m_instanceFamily = Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText());
       m_instanceFamilyHasBeenSet = true;
+       m_instanceFamilyHasBeenSet = true;
     }
     XmlNode socketsNode = resultNode.FirstChild("sockets");
     if(!socketsNode.IsNull())
     {
       m_sockets = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(socketsNode.GetText()).c_str()).c_str());
       m_socketsHasBeenSet = true;
+       m_socketsHasBeenSet = true;
     }
     XmlNode totalVCpusNode = resultNode.FirstChild("totalVCpus");
     if(!totalVCpusNode.IsNull())
     {
       m_totalVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalVCpusNode.GetText()).c_str()).c_str());
       m_totalVCpusHasBeenSet = true;
+       m_totalVCpusHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkPathComponentDetails::NetworkPathComponentDetails() : 
-    m_addressHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 NetworkPathComponentDetails::NetworkPathComponentDetails(JsonView jsonValue)
-  : NetworkPathComponentDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ NetworkPathComponentDetails& NetworkPathComponentDetails::operator =(JsonView js
     }
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortRanges"))
   {
     Aws::Utils::Array<JsonView> portRangesJsonList = jsonValue.GetArray("PortRanges");
@@ -51,7 +43,6 @@ NetworkPathComponentDetails& NetworkPathComponentDetails::operator =(JsonView js
     }
     m_portRangesHasBeenSet = true;
   }
-
   return *this;
 }
 

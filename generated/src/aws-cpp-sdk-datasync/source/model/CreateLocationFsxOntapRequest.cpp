@@ -12,15 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLocationFsxOntapRequest::CreateLocationFsxOntapRequest() : 
-    m_protocolHasBeenSet(false),
-    m_securityGroupArnsHasBeenSet(false),
-    m_storageVirtualMachineArnHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocationFsxOntapRequest::SerializePayload() const
 {
   JsonValue payload;

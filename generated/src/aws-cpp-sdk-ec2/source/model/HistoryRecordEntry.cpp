@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-HistoryRecordEntry::HistoryRecordEntry() : 
-    m_eventInformationHasBeenSet(false),
-    m_eventType(FleetEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 HistoryRecordEntry::HistoryRecordEntry(const XmlNode& xmlNode)
-  : HistoryRecordEntry()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ HistoryRecordEntry& HistoryRecordEntry::operator =(const XmlNode& xmlNode)
     {
       m_eventInformation = eventInformationNode;
       m_eventInformationHasBeenSet = true;
+       m_eventInformationHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = FleetEventTypeMapper::GetFleetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()).c_str());
+      m_eventType = FleetEventTypeMapper::GetFleetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
+       m_eventTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
   }
 

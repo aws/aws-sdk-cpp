@@ -29,7 +29,7 @@ namespace Model
   class ListEngagementResourceAssociationsResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListEngagementResourceAssociationsResult();
+    AWS_PARTNERCENTRALSELLING_API ListEngagementResourceAssociationsResult() = default;
     AWS_PARTNERCENTRALSELLING_API ListEngagementResourceAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API ListEngagementResourceAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> A list of engagement-resource association summaries. </p>
      */
-    inline const Aws::Vector<EngagementResourceAssociationSummary>& GetEngagementResourceAssociationSummaries() const{ return m_engagementResourceAssociationSummaries; }
-    inline void SetEngagementResourceAssociationSummaries(const Aws::Vector<EngagementResourceAssociationSummary>& value) { m_engagementResourceAssociationSummaries = value; }
-    inline void SetEngagementResourceAssociationSummaries(Aws::Vector<EngagementResourceAssociationSummary>&& value) { m_engagementResourceAssociationSummaries = std::move(value); }
-    inline ListEngagementResourceAssociationsResult& WithEngagementResourceAssociationSummaries(const Aws::Vector<EngagementResourceAssociationSummary>& value) { SetEngagementResourceAssociationSummaries(value); return *this;}
-    inline ListEngagementResourceAssociationsResult& WithEngagementResourceAssociationSummaries(Aws::Vector<EngagementResourceAssociationSummary>&& value) { SetEngagementResourceAssociationSummaries(std::move(value)); return *this;}
-    inline ListEngagementResourceAssociationsResult& AddEngagementResourceAssociationSummaries(const EngagementResourceAssociationSummary& value) { m_engagementResourceAssociationSummaries.push_back(value); return *this; }
-    inline ListEngagementResourceAssociationsResult& AddEngagementResourceAssociationSummaries(EngagementResourceAssociationSummary&& value) { m_engagementResourceAssociationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EngagementResourceAssociationSummary>& GetEngagementResourceAssociationSummaries() const { return m_engagementResourceAssociationSummaries; }
+    template<typename EngagementResourceAssociationSummariesT = Aws::Vector<EngagementResourceAssociationSummary>>
+    void SetEngagementResourceAssociationSummaries(EngagementResourceAssociationSummariesT&& value) { m_engagementResourceAssociationSummariesHasBeenSet = true; m_engagementResourceAssociationSummaries = std::forward<EngagementResourceAssociationSummariesT>(value); }
+    template<typename EngagementResourceAssociationSummariesT = Aws::Vector<EngagementResourceAssociationSummary>>
+    ListEngagementResourceAssociationsResult& WithEngagementResourceAssociationSummaries(EngagementResourceAssociationSummariesT&& value) { SetEngagementResourceAssociationSummaries(std::forward<EngagementResourceAssociationSummariesT>(value)); return *this;}
+    template<typename EngagementResourceAssociationSummariesT = EngagementResourceAssociationSummary>
+    ListEngagementResourceAssociationsResult& AddEngagementResourceAssociationSummaries(EngagementResourceAssociationSummariesT&& value) { m_engagementResourceAssociationSummariesHasBeenSet = true; m_engagementResourceAssociationSummaries.emplace_back(std::forward<EngagementResourceAssociationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p> A token to retrieve the next set of results. Use this token in a subsequent
      * request to retrieve additional results if the response was truncated. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEngagementResourceAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEngagementResourceAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEngagementResourceAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEngagementResourceAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEngagementResourceAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEngagementResourceAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEngagementResourceAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEngagementResourceAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EngagementResourceAssociationSummary> m_engagementResourceAssociationSummaries;
+    bool m_engagementResourceAssociationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIpamDiscoveredPublicAddressesResponse::GetIpamDiscoveredPublicAddressesResponse()
-{
-}
-
 GetIpamDiscoveredPublicAddressesResponse::GetIpamDiscoveredPublicAddressesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetIpamDiscoveredPublicAddressesResponse& GetIpamDiscoveredPublicAddressesRespon
     if(!ipamDiscoveredPublicAddressesNode.IsNull())
     {
       XmlNode ipamDiscoveredPublicAddressesMember = ipamDiscoveredPublicAddressesNode.FirstChild("item");
+      m_ipamDiscoveredPublicAddressesHasBeenSet = !ipamDiscoveredPublicAddressesMember.IsNull();
       while(!ipamDiscoveredPublicAddressesMember.IsNull())
       {
         m_ipamDiscoveredPublicAddresses.push_back(ipamDiscoveredPublicAddressesMember);
@@ -53,11 +50,13 @@ GetIpamDiscoveredPublicAddressesResponse& GetIpamDiscoveredPublicAddressesRespon
     if(!oldestSampleTimeNode.IsNull())
     {
       m_oldestSampleTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(oldestSampleTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_oldestSampleTimeHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -66,6 +65,7 @@ GetIpamDiscoveredPublicAddressesResponse& GetIpamDiscoveredPublicAddressesRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetIpamDiscoveredPublicAddressesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

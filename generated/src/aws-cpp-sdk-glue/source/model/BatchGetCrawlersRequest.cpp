@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCrawlersRequest::BatchGetCrawlersRequest() : 
-    m_crawlerNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCrawlersRequest::SerializePayload() const
 {
   JsonValue payload;

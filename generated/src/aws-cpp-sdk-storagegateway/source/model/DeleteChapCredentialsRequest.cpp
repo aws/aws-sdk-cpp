@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChapCredentialsRequest::DeleteChapCredentialsRequest() : 
-    m_targetARNHasBeenSet(false),
-    m_initiatorNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChapCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

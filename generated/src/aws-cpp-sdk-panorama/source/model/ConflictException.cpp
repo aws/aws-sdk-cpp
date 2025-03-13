@@ -18,17 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_errorArgumentsHasBeenSet(false),
-    m_errorIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -44,35 +34,26 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     }
     m_errorArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorId"))
   {
     m_errorId = jsonValue.GetString("ErrorId");
-
     m_errorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-CalendarInterval::CalendarInterval() : 
-    m_startTimeHasBeenSet(false),
-    m_durationUnit(DurationUnit::NOT_SET),
-    m_durationUnitHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false)
-{
-}
-
 CalendarInterval::CalendarInterval(JsonView jsonValue)
-  : CalendarInterval()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CalendarInterval& CalendarInterval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationUnit"))
   {
     m_durationUnit = DurationUnitMapper::GetDurationUnitForName(jsonValue.GetString("DurationUnit"));
-
     m_durationUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   return *this;
 }
 

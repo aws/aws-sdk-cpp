@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppImageConfigRequest::UpdateAppImageConfigRequest() : 
-    m_appImageConfigNameHasBeenSet(false),
-    m_kernelGatewayImageConfigHasBeenSet(false),
-    m_jupyterLabAppImageConfigHasBeenSet(false),
-    m_codeEditorAppImageConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppImageConfigRequest::SerializePayload() const
 {
   JsonValue payload;

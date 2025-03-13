@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ModifyVerifiedAccessNativeApplicationOidcOptions::ModifyVerifiedAccessNativeApplicationOidcOptions() : 
-    m_publicSigningKeyEndpointHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 ModifyVerifiedAccessNativeApplicationOidcOptions::ModifyVerifiedAccessNativeApplicationOidcOptions(const XmlNode& xmlNode)
-  : ModifyVerifiedAccessNativeApplicationOidcOptions()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,56 @@ ModifyVerifiedAccessNativeApplicationOidcOptions& ModifyVerifiedAccessNativeAppl
     {
       m_publicSigningKeyEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(publicSigningKeyEndpointNode.GetText());
       m_publicSigningKeyEndpointHasBeenSet = true;
+       m_publicSigningKeyEndpointHasBeenSet = true;
     }
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
     if(!issuerNode.IsNull())
     {
       m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
       m_issuerHasBeenSet = true;
+       m_issuerHasBeenSet = true;
     }
     XmlNode authorizationEndpointNode = resultNode.FirstChild("AuthorizationEndpoint");
     if(!authorizationEndpointNode.IsNull())
     {
       m_authorizationEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(authorizationEndpointNode.GetText());
       m_authorizationEndpointHasBeenSet = true;
+       m_authorizationEndpointHasBeenSet = true;
     }
     XmlNode tokenEndpointNode = resultNode.FirstChild("TokenEndpoint");
     if(!tokenEndpointNode.IsNull())
     {
       m_tokenEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(tokenEndpointNode.GetText());
       m_tokenEndpointHasBeenSet = true;
+       m_tokenEndpointHasBeenSet = true;
     }
     XmlNode userInfoEndpointNode = resultNode.FirstChild("UserInfoEndpoint");
     if(!userInfoEndpointNode.IsNull())
     {
       m_userInfoEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(userInfoEndpointNode.GetText());
       m_userInfoEndpointHasBeenSet = true;
+       m_userInfoEndpointHasBeenSet = true;
     }
     XmlNode clientIdNode = resultNode.FirstChild("ClientId");
     if(!clientIdNode.IsNull())
     {
       m_clientId = Aws::Utils::Xml::DecodeEscapedXmlText(clientIdNode.GetText());
       m_clientIdHasBeenSet = true;
+       m_clientIdHasBeenSet = true;
     }
     XmlNode clientSecretNode = resultNode.FirstChild("ClientSecret");
     if(!clientSecretNode.IsNull())
     {
       m_clientSecret = Aws::Utils::Xml::DecodeEscapedXmlText(clientSecretNode.GetText());
       m_clientSecretHasBeenSet = true;
+       m_clientSecretHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("Scope");
     if(!scopeNode.IsNull())
     {
       m_scope = Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText());
       m_scopeHasBeenSet = true;
+       m_scopeHasBeenSet = true;
     }
   }
 

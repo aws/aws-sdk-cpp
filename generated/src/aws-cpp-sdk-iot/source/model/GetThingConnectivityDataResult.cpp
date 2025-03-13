@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetThingConnectivityDataResult::GetThingConnectivityDataResult() : 
-    m_connected(false),
-    m_disconnectReason(DisconnectReasonValue::NOT_SET)
-{
-}
-
 GetThingConnectivityDataResult::GetThingConnectivityDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetThingConnectivityDataResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ GetThingConnectivityDataResult& GetThingConnectivityDataResult::operator =(const
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
+    m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connected"))
   {
     m_connected = jsonValue.GetBool("connected");
-
+    m_connectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
+    m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disconnectReason"))
   {
     m_disconnectReason = DisconnectReasonValueMapper::GetDisconnectReasonValueForName(jsonValue.GetString("disconnectReason"));
-
+    m_disconnectReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

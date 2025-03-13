@@ -12,12 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEntityAggregatesForOrganizationRequest::DescribeEntityAggregatesForOrganizationRequest() : 
-    m_eventArnsHasBeenSet(false),
-    m_awsAccountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEntityAggregatesForOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

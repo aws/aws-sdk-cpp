@@ -12,16 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartVoiceToneAnalysisTaskRequest::StartVoiceToneAnalysisTaskRequest() : 
-    m_identifierHasBeenSet(false),
-    m_languageCode(VoiceAnalyticsLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_kinesisVideoStreamSourceTaskConfigurationHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartVoiceToneAnalysisTaskRequest::SerializePayload() const
 {
   JsonValue payload;

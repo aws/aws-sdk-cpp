@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCoreDefinitionRequest::UpdateCoreDefinitionRequest() : 
-    m_coreDefinitionIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCoreDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

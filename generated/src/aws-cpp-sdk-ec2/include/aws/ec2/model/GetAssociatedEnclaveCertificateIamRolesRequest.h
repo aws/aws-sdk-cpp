@@ -21,7 +21,7 @@ namespace Model
   class GetAssociatedEnclaveCertificateIamRolesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetAssociatedEnclaveCertificateIamRolesRequest();
+    AWS_EC2_API GetAssociatedEnclaveCertificateIamRolesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
      * encryption keys, and Amazon S3 object information.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetAssociatedEnclaveCertificateIamRolesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

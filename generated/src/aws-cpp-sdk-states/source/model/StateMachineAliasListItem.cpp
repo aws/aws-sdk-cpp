@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-StateMachineAliasListItem::StateMachineAliasListItem() : 
-    m_stateMachineAliasArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 StateMachineAliasListItem::StateMachineAliasListItem(JsonView jsonValue)
-  : StateMachineAliasListItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StateMachineAliasListItem& StateMachineAliasListItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("stateMachineAliasArn"))
   {
     m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
-
     m_stateMachineAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

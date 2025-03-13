@@ -22,7 +22,7 @@ namespace Model
   class UpdateDetectorVersionStatusRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API UpdateDetectorVersionStatusRequest();
+    AWS_FRAUDDETECTOR_API UpdateDetectorVersionStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The detector ID. </p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline UpdateDetectorVersionStatusRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline UpdateDetectorVersionStatusRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline UpdateDetectorVersionStatusRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    UpdateDetectorVersionStatusRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector version ID. </p>
      */
-    inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
+    inline const Aws::String& GetDetectorVersionId() const { return m_detectorVersionId; }
     inline bool DetectorVersionIdHasBeenSet() const { return m_detectorVersionIdHasBeenSet; }
-    inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = value; }
-    inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::move(value); }
-    inline void SetDetectorVersionId(const char* value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId.assign(value); }
-    inline UpdateDetectorVersionStatusRequest& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-    inline UpdateDetectorVersionStatusRequest& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-    inline UpdateDetectorVersionStatusRequest& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    template<typename DetectorVersionIdT = Aws::String>
+    void SetDetectorVersionId(DetectorVersionIdT&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::forward<DetectorVersionIdT>(value); }
+    template<typename DetectorVersionIdT = Aws::String>
+    UpdateDetectorVersionStatusRequest& WithDetectorVersionId(DetectorVersionIdT&& value) { SetDetectorVersionId(std::forward<DetectorVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,10 @@ namespace Model
      * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
      * <code>INACTIVE</code> </p>
      */
-    inline const DetectorVersionStatus& GetStatus() const{ return m_status; }
+    inline DetectorVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DetectorVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DetectorVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateDetectorVersionStatusRequest& WithStatus(const DetectorVersionStatus& value) { SetStatus(value); return *this;}
-    inline UpdateDetectorVersionStatusRequest& WithStatus(DetectorVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DetectorVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateDetectorVersionStatusRequest& WithStatus(DetectorVersionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -83,7 +77,7 @@ namespace Model
     Aws::String m_detectorVersionId;
     bool m_detectorVersionIdHasBeenSet = false;
 
-    DetectorVersionStatus m_status;
+    DetectorVersionStatus m_status{DetectorVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

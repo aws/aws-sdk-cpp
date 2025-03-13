@@ -28,7 +28,7 @@ namespace Model
   class DescribeInputResult
   {
   public:
-    AWS_IOTEVENTS_API DescribeInputResult();
+    AWS_IOTEVENTS_API DescribeInputResult() = default;
     AWS_IOTEVENTS_API DescribeInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API DescribeInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the input.</p>
      */
-    inline const Input& GetInput() const{ return m_input; }
-    inline void SetInput(const Input& value) { m_input = value; }
-    inline void SetInput(Input&& value) { m_input = std::move(value); }
-    inline DescribeInputResult& WithInput(const Input& value) { SetInput(value); return *this;}
-    inline DescribeInputResult& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
+    inline const Input& GetInput() const { return m_input; }
+    template<typename InputT = Input>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Input>
+    DescribeInputResult& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInputResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInputResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInputResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInputResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Input m_input;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

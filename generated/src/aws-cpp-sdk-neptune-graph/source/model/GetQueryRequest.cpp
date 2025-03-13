@@ -13,12 +13,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryRequest::GetQueryRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryRequest::SerializePayload() const
 {
   return {};

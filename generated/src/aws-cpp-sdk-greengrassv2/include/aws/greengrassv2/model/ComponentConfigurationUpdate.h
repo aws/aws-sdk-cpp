@@ -36,7 +36,7 @@ namespace Model
   class ComponentConfigurationUpdate
   {
   public:
-    AWS_GREENGRASSV2_API ComponentConfigurationUpdate();
+    AWS_GREENGRASSV2_API ComponentConfigurationUpdate() = default;
     AWS_GREENGRASSV2_API ComponentConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API ComponentConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge
      * configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetMerge() const{ return m_merge; }
+    inline const Aws::String& GetMerge() const { return m_merge; }
     inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
-    inline void SetMerge(const Aws::String& value) { m_mergeHasBeenSet = true; m_merge = value; }
-    inline void SetMerge(Aws::String&& value) { m_mergeHasBeenSet = true; m_merge = std::move(value); }
-    inline void SetMerge(const char* value) { m_mergeHasBeenSet = true; m_merge.assign(value); }
-    inline ComponentConfigurationUpdate& WithMerge(const Aws::String& value) { SetMerge(value); return *this;}
-    inline ComponentConfigurationUpdate& WithMerge(Aws::String&& value) { SetMerge(std::move(value)); return *this;}
-    inline ComponentConfigurationUpdate& WithMerge(const char* value) { SetMerge(value); return *this;}
+    template<typename MergeT = Aws::String>
+    void SetMerge(MergeT&& value) { m_mergeHasBeenSet = true; m_merge = std::forward<MergeT>(value); }
+    template<typename MergeT = Aws::String>
+    ComponentConfigurationUpdate& WithMerge(MergeT&& value) { SetMerge(std::forward<MergeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +72,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset
      * configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReset() const{ return m_reset; }
+    inline const Aws::Vector<Aws::String>& GetReset() const { return m_reset; }
     inline bool ResetHasBeenSet() const { return m_resetHasBeenSet; }
-    inline void SetReset(const Aws::Vector<Aws::String>& value) { m_resetHasBeenSet = true; m_reset = value; }
-    inline void SetReset(Aws::Vector<Aws::String>&& value) { m_resetHasBeenSet = true; m_reset = std::move(value); }
-    inline ComponentConfigurationUpdate& WithReset(const Aws::Vector<Aws::String>& value) { SetReset(value); return *this;}
-    inline ComponentConfigurationUpdate& WithReset(Aws::Vector<Aws::String>&& value) { SetReset(std::move(value)); return *this;}
-    inline ComponentConfigurationUpdate& AddReset(const Aws::String& value) { m_resetHasBeenSet = true; m_reset.push_back(value); return *this; }
-    inline ComponentConfigurationUpdate& AddReset(Aws::String&& value) { m_resetHasBeenSet = true; m_reset.push_back(std::move(value)); return *this; }
-    inline ComponentConfigurationUpdate& AddReset(const char* value) { m_resetHasBeenSet = true; m_reset.push_back(value); return *this; }
+    template<typename ResetT = Aws::Vector<Aws::String>>
+    void SetReset(ResetT&& value) { m_resetHasBeenSet = true; m_reset = std::forward<ResetT>(value); }
+    template<typename ResetT = Aws::Vector<Aws::String>>
+    ComponentConfigurationUpdate& WithReset(ResetT&& value) { SetReset(std::forward<ResetT>(value)); return *this;}
+    template<typename ResetT = Aws::String>
+    ComponentConfigurationUpdate& AddReset(ResetT&& value) { m_resetHasBeenSet = true; m_reset.emplace_back(std::forward<ResetT>(value)); return *this; }
     ///@}
   private:
 

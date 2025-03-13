@@ -12,21 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAnalysisRequest::CreateAnalysisRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_analysisIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_sourceEntityHasBeenSet(false),
-    m_themeArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_validationStrategyHasBeenSet(false),
-    m_folderArnsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

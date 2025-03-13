@@ -12,15 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDomainSuggestionsRequest::GetDomainSuggestionsRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_suggestionCount(0),
-    m_suggestionCountHasBeenSet(false),
-    m_onlyAvailable(false),
-    m_onlyAvailableHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainSuggestionsRequest::SerializePayload() const
 {
   JsonValue payload;

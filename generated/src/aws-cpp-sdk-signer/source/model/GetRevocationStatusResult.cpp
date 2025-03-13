@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRevocationStatusResult::GetRevocationStatusResult()
-{
-}
-
 GetRevocationStatusResult::GetRevocationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetRevocationStatusResult& GetRevocationStatusResult::operator =(const Aws::Amaz
     {
       m_revokedEntities.push_back(revokedEntitiesJsonList[revokedEntitiesIndex].AsString());
     }
+    m_revokedEntitiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-IssuerCertificateIdentifier::IssuerCertificateIdentifier() : 
-    m_issuerCertificateSubjectHasBeenSet(false),
-    m_issuerIdHasBeenSet(false),
-    m_issuerCertificateSerialNumberHasBeenSet(false)
-{
-}
-
 IssuerCertificateIdentifier::IssuerCertificateIdentifier(JsonView jsonValue)
-  : IssuerCertificateIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IssuerCertificateIdentifier& IssuerCertificateIdentifier::operator =(JsonView js
   if(jsonValue.ValueExists("issuerCertificateSubject"))
   {
     m_issuerCertificateSubject = jsonValue.GetString("issuerCertificateSubject");
-
     m_issuerCertificateSubjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuerId"))
   {
     m_issuerId = jsonValue.GetString("issuerId");
-
     m_issuerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuerCertificateSerialNumber"))
   {
     m_issuerCertificateSerialNumber = jsonValue.GetString("issuerCertificateSerialNumber");
-
     m_issuerCertificateSerialNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

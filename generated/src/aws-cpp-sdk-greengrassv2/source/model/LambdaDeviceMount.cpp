@@ -18,17 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-LambdaDeviceMount::LambdaDeviceMount() : 
-    m_pathHasBeenSet(false),
-    m_permission(LambdaFilesystemPermission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_addGroupOwner(false),
-    m_addGroupOwnerHasBeenSet(false)
-{
-}
-
 LambdaDeviceMount::LambdaDeviceMount(JsonView jsonValue)
-  : LambdaDeviceMount()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LambdaDeviceMount& LambdaDeviceMount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = LambdaFilesystemPermissionMapper::GetLambdaFilesystemPermissionForName(jsonValue.GetString("permission"));
-
     m_permissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addGroupOwner"))
   {
     m_addGroupOwner = jsonValue.GetBool("addGroupOwner");
-
     m_addGroupOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

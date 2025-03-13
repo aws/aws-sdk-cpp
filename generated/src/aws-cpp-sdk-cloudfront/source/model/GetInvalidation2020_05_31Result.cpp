@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInvalidation2020_05_31Result::GetInvalidation2020_05_31Result()
-{
-}
-
 GetInvalidation2020_05_31Result::GetInvalidation2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetInvalidation2020_05_31Result& GetInvalidation2020_05_31Result::operator =(con
   if(!resultNode.IsNull())
   {
     m_invalidation = resultNode;
+    m_invalidationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetInvalidation2020_05_31Result& GetInvalidation2020_05_31Result::operator =(con
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

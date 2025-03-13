@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-InventoryEncryption::InventoryEncryption() : 
-    m_sSES3HasBeenSet(false),
-    m_sSEKMSHasBeenSet(false)
-{
-}
-
 InventoryEncryption::InventoryEncryption(const XmlNode& xmlNode)
-  : InventoryEncryption()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InventoryEncryption& InventoryEncryption::operator =(const XmlNode& xmlNode)
     {
       m_sSES3 = sSES3Node;
       m_sSES3HasBeenSet = true;
+       m_sSES3HasBeenSet = true;
     }
     XmlNode sSEKMSNode = resultNode.FirstChild("SSE-KMS");
     if(!sSEKMSNode.IsNull())
     {
       m_sSEKMS = sSEKMSNode;
       m_sSEKMSHasBeenSet = true;
+       m_sSEKMSHasBeenSet = true;
     }
   }
 

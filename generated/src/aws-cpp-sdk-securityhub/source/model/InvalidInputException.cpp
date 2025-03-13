@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-InvalidInputException::InvalidInputException() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 InvalidInputException::InvalidInputException(JsonView jsonValue)
-  : InvalidInputException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidInputException& InvalidInputException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

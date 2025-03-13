@@ -18,16 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ScanDetections::ScanDetections() : 
-    m_scannedItemCountHasBeenSet(false),
-    m_threatsDetectedItemCountHasBeenSet(false),
-    m_highestSeverityThreatDetailsHasBeenSet(false),
-    m_threatDetectedByNameHasBeenSet(false)
-{
-}
-
 ScanDetections::ScanDetections(JsonView jsonValue)
-  : ScanDetections()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ScanDetections& ScanDetections::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scannedItemCount"))
   {
     m_scannedItemCount = jsonValue.GetObject("scannedItemCount");
-
     m_scannedItemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threatsDetectedItemCount"))
   {
     m_threatsDetectedItemCount = jsonValue.GetObject("threatsDetectedItemCount");
-
     m_threatsDetectedItemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("highestSeverityThreatDetails"))
   {
     m_highestSeverityThreatDetails = jsonValue.GetObject("highestSeverityThreatDetails");
-
     m_highestSeverityThreatDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threatDetectedByName"))
   {
     m_threatDetectedByName = jsonValue.GetObject("threatDetectedByName");
-
     m_threatDetectedByNameHasBeenSet = true;
   }
-
   return *this;
 }
 

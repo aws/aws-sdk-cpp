@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-SuggestionHighlight::SuggestionHighlight() : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
-{
-}
-
 SuggestionHighlight::SuggestionHighlight(JsonView jsonValue)
-  : SuggestionHighlight()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SuggestionHighlight& SuggestionHighlight::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

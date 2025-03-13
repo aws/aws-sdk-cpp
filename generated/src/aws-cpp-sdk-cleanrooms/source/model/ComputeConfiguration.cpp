@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ComputeConfiguration::ComputeConfiguration() : 
-    m_workerHasBeenSet(false)
-{
-}
-
 ComputeConfiguration::ComputeConfiguration(JsonView jsonValue)
-  : ComputeConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("worker"))
   {
     m_worker = jsonValue.GetObject("worker");
-
     m_workerHasBeenSet = true;
   }
-
   return *this;
 }
 

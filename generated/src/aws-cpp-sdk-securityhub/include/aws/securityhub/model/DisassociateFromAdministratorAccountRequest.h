@@ -19,7 +19,7 @@ namespace Model
   class DisassociateFromAdministratorAccountRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API DisassociateFromAdministratorAccountRequest();
+    AWS_SECURITYHUB_API DisassociateFromAdministratorAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

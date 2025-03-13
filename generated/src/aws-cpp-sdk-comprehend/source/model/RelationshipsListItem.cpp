@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-RelationshipsListItem::RelationshipsListItem() : 
-    m_idsHasBeenSet(false),
-    m_type(RelationshipType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RelationshipsListItem::RelationshipsListItem(JsonView jsonValue)
-  : RelationshipsListItem()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ RelationshipsListItem& RelationshipsListItem::operator =(JsonView jsonValue)
     }
     m_idsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

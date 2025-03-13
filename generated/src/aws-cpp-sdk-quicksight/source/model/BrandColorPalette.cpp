@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BrandColorPalette::BrandColorPalette() : 
-    m_primaryHasBeenSet(false),
-    m_secondaryHasBeenSet(false),
-    m_accentHasBeenSet(false),
-    m_measureHasBeenSet(false),
-    m_dimensionHasBeenSet(false),
-    m_successHasBeenSet(false),
-    m_infoHasBeenSet(false),
-    m_warningHasBeenSet(false),
-    m_dangerHasBeenSet(false)
-{
-}
-
 BrandColorPalette::BrandColorPalette(JsonView jsonValue)
-  : BrandColorPalette()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ BrandColorPalette& BrandColorPalette::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetObject("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Secondary"))
   {
     m_secondary = jsonValue.GetObject("Secondary");
-
     m_secondaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accent"))
   {
     m_accent = jsonValue.GetObject("Accent");
-
     m_accentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Measure"))
   {
     m_measure = jsonValue.GetObject("Measure");
-
     m_measureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimension"))
   {
     m_dimension = jsonValue.GetObject("Dimension");
-
     m_dimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Success"))
   {
     m_success = jsonValue.GetObject("Success");
-
     m_successHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Info"))
   {
     m_info = jsonValue.GetObject("Info");
-
     m_infoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warning"))
   {
     m_warning = jsonValue.GetObject("Warning");
-
     m_warningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Danger"))
   {
     m_danger = jsonValue.GetObject("Danger");
-
     m_dangerHasBeenSet = true;
   }
-
   return *this;
 }
 

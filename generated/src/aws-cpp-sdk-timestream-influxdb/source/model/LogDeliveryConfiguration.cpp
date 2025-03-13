@@ -18,13 +18,7 @@ namespace TimestreamInfluxDB
 namespace Model
 {
 
-LogDeliveryConfiguration::LogDeliveryConfiguration() : 
-    m_s3ConfigurationHasBeenSet(false)
-{
-}
-
 LogDeliveryConfiguration::LogDeliveryConfiguration(JsonView jsonValue)
-  : LogDeliveryConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LogDeliveryConfiguration& LogDeliveryConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("s3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("s3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

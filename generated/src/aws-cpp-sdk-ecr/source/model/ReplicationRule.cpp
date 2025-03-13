@@ -18,14 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ReplicationRule::ReplicationRule() : 
-    m_destinationsHasBeenSet(false),
-    m_repositoryFiltersHasBeenSet(false)
-{
-}
-
 ReplicationRule::ReplicationRule(JsonView jsonValue)
-  : ReplicationRule()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ReplicationRule& ReplicationRule::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryFilters"))
   {
     Aws::Utils::Array<JsonView> repositoryFiltersJsonList = jsonValue.GetArray("repositoryFilters");
@@ -51,7 +43,6 @@ ReplicationRule& ReplicationRule::operator =(JsonView jsonValue)
     }
     m_repositoryFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

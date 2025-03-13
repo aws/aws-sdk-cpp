@@ -12,16 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceRequest::UpdateResourceRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_withFederation(false),
-    m_withFederationHasBeenSet(false),
-    m_hybridAccessEnabled(false),
-    m_hybridAccessEnabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceRequest::SerializePayload() const
 {
   JsonValue payload;

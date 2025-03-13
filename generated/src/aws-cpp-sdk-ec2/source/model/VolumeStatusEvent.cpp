@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusEvent::VolumeStatusEvent() : 
-    m_descriptionHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_eventTypeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 VolumeStatusEvent::VolumeStatusEvent(const XmlNode& xmlNode)
-  : VolumeStatusEvent()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ VolumeStatusEvent& VolumeStatusEvent::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode eventIdNode = resultNode.FirstChild("eventId");
     if(!eventIdNode.IsNull())
     {
       m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
+       m_eventIdHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
     if(!eventTypeNode.IsNull())
     {
       m_eventType = Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText());
       m_eventTypeHasBeenSet = true;
+       m_eventTypeHasBeenSet = true;
     }
     XmlNode notAfterNode = resultNode.FirstChild("notAfter");
     if(!notAfterNode.IsNull())
     {
       m_notAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notAfterNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_notAfterHasBeenSet = true;
+       m_notAfterHasBeenSet = true;
     }
     XmlNode notBeforeNode = resultNode.FirstChild("notBefore");
     if(!notBeforeNode.IsNull())
     {
       m_notBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(notBeforeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_notBeforeHasBeenSet = true;
+       m_notBeforeHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
   }
 

@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOutpostResolverRequest::DeleteOutpostResolverRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOutpostResolverRequest::SerializePayload() const
 {
   JsonValue payload;

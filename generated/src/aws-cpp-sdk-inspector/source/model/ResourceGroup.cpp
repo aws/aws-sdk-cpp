@@ -18,15 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-ResourceGroup::ResourceGroup() : 
-    m_arnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 ResourceGroup::ResourceGroup(JsonView jsonValue)
-  : ResourceGroup()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ResourceGroup& ResourceGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -49,14 +39,11 @@ ResourceGroup& ResourceGroup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

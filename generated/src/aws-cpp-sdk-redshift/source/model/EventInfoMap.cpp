@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EventInfoMap::EventInfoMap() : 
-    m_eventIdHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_eventDescriptionHasBeenSet(false),
-    m_severityHasBeenSet(false)
-{
-}
-
 EventInfoMap::EventInfoMap(const XmlNode& xmlNode)
-  : EventInfoMap()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ EventInfoMap& EventInfoMap::operator =(const XmlNode& xmlNode)
     {
       m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
+       m_eventIdHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
     if(!eventCategoriesNode.IsNull())
     {
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      m_eventCategoriesHasBeenSet = !eventCategoriesMember.IsNull();
       while(!eventCategoriesMember.IsNull())
       {
         m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
-      m_eventCategoriesHasBeenSet = true;
+       m_eventCategoriesHasBeenSet = true;
     }
     XmlNode eventDescriptionNode = resultNode.FirstChild("EventDescription");
     if(!eventDescriptionNode.IsNull())
     {
       m_eventDescription = Aws::Utils::Xml::DecodeEscapedXmlText(eventDescriptionNode.GetText());
       m_eventDescriptionHasBeenSet = true;
+       m_eventDescriptionHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
       m_severity = Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText());
       m_severityHasBeenSet = true;
+       m_severityHasBeenSet = true;
     }
   }
 

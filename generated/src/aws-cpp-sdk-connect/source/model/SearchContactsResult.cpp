@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchContactsResult::SearchContactsResult() : 
-    m_totalCount(0)
-{
-}
-
 SearchContactsResult::SearchContactsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchContactsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ SearchContactsResult& SearchContactsResult::operator =(const Aws::AmazonWebServi
     {
       m_contacts.push_back(contactsJsonList[contactsIndex].AsObject());
     }
+    m_contactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
+    m_totalCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

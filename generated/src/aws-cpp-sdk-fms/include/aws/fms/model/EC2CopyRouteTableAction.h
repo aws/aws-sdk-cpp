@@ -33,7 +33,7 @@ namespace Model
   class EC2CopyRouteTableAction
   {
   public:
-    AWS_FMS_API EC2CopyRouteTableAction();
+    AWS_FMS_API EC2CopyRouteTableAction() = default;
     AWS_FMS_API EC2CopyRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EC2CopyRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A description of the copied EC2 route table that is associated with the
      * remediation action.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EC2CopyRouteTableAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EC2CopyRouteTableAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EC2CopyRouteTableAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EC2CopyRouteTableAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The VPC ID of the copied EC2 route table that is associated with the
      * remediation action.</p>
      */
-    inline const ActionTarget& GetVpcId() const{ return m_vpcId; }
+    inline const ActionTarget& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const ActionTarget& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(ActionTarget&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline EC2CopyRouteTableAction& WithVpcId(const ActionTarget& value) { SetVpcId(value); return *this;}
-    inline EC2CopyRouteTableAction& WithVpcId(ActionTarget&& value) { SetVpcId(std::move(value)); return *this;}
+    template<typename VpcIdT = ActionTarget>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = ActionTarget>
+    EC2CopyRouteTableAction& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>The ID of the copied EC2 route table that is associated with the remediation
      * action.</p>
      */
-    inline const ActionTarget& GetRouteTableId() const{ return m_routeTableId; }
+    inline const ActionTarget& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const ActionTarget& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(ActionTarget&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline EC2CopyRouteTableAction& WithRouteTableId(const ActionTarget& value) { SetRouteTableId(value); return *this;}
-    inline EC2CopyRouteTableAction& WithRouteTableId(ActionTarget&& value) { SetRouteTableId(std::move(value)); return *this;}
+    template<typename RouteTableIdT = ActionTarget>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = ActionTarget>
+    EC2CopyRouteTableAction& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
   private:
 

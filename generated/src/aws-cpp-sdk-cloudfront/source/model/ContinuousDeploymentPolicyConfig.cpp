@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ContinuousDeploymentPolicyConfig::ContinuousDeploymentPolicyConfig() : 
-    m_stagingDistributionDnsNamesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_trafficConfigHasBeenSet(false)
-{
-}
-
 ContinuousDeploymentPolicyConfig::ContinuousDeploymentPolicyConfig(const XmlNode& xmlNode)
-  : ContinuousDeploymentPolicyConfig()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ContinuousDeploymentPolicyConfig& ContinuousDeploymentPolicyConfig::operator =(c
     {
       m_stagingDistributionDnsNames = stagingDistributionDnsNamesNode;
       m_stagingDistributionDnsNamesHasBeenSet = true;
+       m_stagingDistributionDnsNamesHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode trafficConfigNode = resultNode.FirstChild("TrafficConfig");
     if(!trafficConfigNode.IsNull())
     {
       m_trafficConfig = trafficConfigNode;
       m_trafficConfigHasBeenSet = true;
+       m_trafficConfigHasBeenSet = true;
     }
   }
 

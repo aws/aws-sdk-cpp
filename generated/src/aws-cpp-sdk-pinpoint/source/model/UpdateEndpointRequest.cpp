@@ -12,13 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointRequest::UpdateEndpointRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_endpointRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

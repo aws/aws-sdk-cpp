@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TrafficMirrorSession::TrafficMirrorSession() : 
-    m_trafficMirrorSessionIdHasBeenSet(false),
-    m_trafficMirrorTargetIdHasBeenSet(false),
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_packetLength(0),
-    m_packetLengthHasBeenSet(false),
-    m_sessionNumber(0),
-    m_sessionNumberHasBeenSet(false),
-    m_virtualNetworkId(0),
-    m_virtualNetworkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TrafficMirrorSession::TrafficMirrorSession(const XmlNode& xmlNode)
-  : TrafficMirrorSession()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,76 @@ TrafficMirrorSession& TrafficMirrorSession::operator =(const XmlNode& xmlNode)
     {
       m_trafficMirrorSessionId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorSessionIdNode.GetText());
       m_trafficMirrorSessionIdHasBeenSet = true;
+       m_trafficMirrorSessionIdHasBeenSet = true;
     }
     XmlNode trafficMirrorTargetIdNode = resultNode.FirstChild("trafficMirrorTargetId");
     if(!trafficMirrorTargetIdNode.IsNull())
     {
       m_trafficMirrorTargetId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorTargetIdNode.GetText());
       m_trafficMirrorTargetIdHasBeenSet = true;
+       m_trafficMirrorTargetIdHasBeenSet = true;
     }
     XmlNode trafficMirrorFilterIdNode = resultNode.FirstChild("trafficMirrorFilterId");
     if(!trafficMirrorFilterIdNode.IsNull())
     {
       m_trafficMirrorFilterId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficMirrorFilterIdNode.GetText());
       m_trafficMirrorFilterIdHasBeenSet = true;
+       m_trafficMirrorFilterIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode packetLengthNode = resultNode.FirstChild("packetLength");
     if(!packetLengthNode.IsNull())
     {
       m_packetLength = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packetLengthNode.GetText()).c_str()).c_str());
       m_packetLengthHasBeenSet = true;
+       m_packetLengthHasBeenSet = true;
     }
     XmlNode sessionNumberNode = resultNode.FirstChild("sessionNumber");
     if(!sessionNumberNode.IsNull())
     {
       m_sessionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionNumberNode.GetText()).c_str()).c_str());
       m_sessionNumberHasBeenSet = true;
+       m_sessionNumberHasBeenSet = true;
     }
     XmlNode virtualNetworkIdNode = resultNode.FirstChild("virtualNetworkId");
     if(!virtualNetworkIdNode.IsNull())
     {
       m_virtualNetworkId = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualNetworkIdNode.GetText()).c_str()).c_str());
       m_virtualNetworkIdHasBeenSet = true;
+       m_virtualNetworkIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

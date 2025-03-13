@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-NotEqualToExpression::NotEqualToExpression() : 
-    m_columnNameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 NotEqualToExpression::NotEqualToExpression(JsonView jsonValue)
-  : NotEqualToExpression()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotEqualToExpression& NotEqualToExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

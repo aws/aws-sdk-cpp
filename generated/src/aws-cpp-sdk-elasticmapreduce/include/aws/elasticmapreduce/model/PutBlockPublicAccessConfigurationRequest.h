@@ -21,7 +21,7 @@ namespace Model
   class PutBlockPublicAccessConfigurationRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API PutBlockPublicAccessConfigurationRequest();
+    AWS_EMR_API PutBlockPublicAccessConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,12 +52,12 @@ namespace Model
      * create an Amazon EMR cluster in a Region before this date, block public access
      * is enabled by default in that Region.</p> 
      */
-    inline const BlockPublicAccessConfiguration& GetBlockPublicAccessConfiguration() const{ return m_blockPublicAccessConfiguration; }
+    inline const BlockPublicAccessConfiguration& GetBlockPublicAccessConfiguration() const { return m_blockPublicAccessConfiguration; }
     inline bool BlockPublicAccessConfigurationHasBeenSet() const { return m_blockPublicAccessConfigurationHasBeenSet; }
-    inline void SetBlockPublicAccessConfiguration(const BlockPublicAccessConfiguration& value) { m_blockPublicAccessConfigurationHasBeenSet = true; m_blockPublicAccessConfiguration = value; }
-    inline void SetBlockPublicAccessConfiguration(BlockPublicAccessConfiguration&& value) { m_blockPublicAccessConfigurationHasBeenSet = true; m_blockPublicAccessConfiguration = std::move(value); }
-    inline PutBlockPublicAccessConfigurationRequest& WithBlockPublicAccessConfiguration(const BlockPublicAccessConfiguration& value) { SetBlockPublicAccessConfiguration(value); return *this;}
-    inline PutBlockPublicAccessConfigurationRequest& WithBlockPublicAccessConfiguration(BlockPublicAccessConfiguration&& value) { SetBlockPublicAccessConfiguration(std::move(value)); return *this;}
+    template<typename BlockPublicAccessConfigurationT = BlockPublicAccessConfiguration>
+    void SetBlockPublicAccessConfiguration(BlockPublicAccessConfigurationT&& value) { m_blockPublicAccessConfigurationHasBeenSet = true; m_blockPublicAccessConfiguration = std::forward<BlockPublicAccessConfigurationT>(value); }
+    template<typename BlockPublicAccessConfigurationT = BlockPublicAccessConfiguration>
+    PutBlockPublicAccessConfigurationRequest& WithBlockPublicAccessConfiguration(BlockPublicAccessConfigurationT&& value) { SetBlockPublicAccessConfiguration(std::forward<BlockPublicAccessConfigurationT>(value)); return *this;}
     ///@}
   private:
 

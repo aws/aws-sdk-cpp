@@ -15,13 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PostLineageEventRequest::PostLineageEventRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection PostLineageEventRequest::GetRequestSpecificHeaders() const

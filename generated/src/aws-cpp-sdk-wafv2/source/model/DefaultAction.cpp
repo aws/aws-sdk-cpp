@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-DefaultAction::DefaultAction() : 
-    m_blockHasBeenSet(false),
-    m_allowHasBeenSet(false)
-{
-}
-
 DefaultAction::DefaultAction(JsonView jsonValue)
-  : DefaultAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultAction& DefaultAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Block"))
   {
     m_block = jsonValue.GetObject("Block");
-
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Allow"))
   {
     m_allow = jsonValue.GetObject("Allow");
-
     m_allowHasBeenSet = true;
   }
-
   return *this;
 }
 

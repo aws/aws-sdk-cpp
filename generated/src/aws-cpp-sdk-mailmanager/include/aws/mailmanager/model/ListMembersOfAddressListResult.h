@@ -29,7 +29,7 @@ namespace Model
   class ListMembersOfAddressListResult
   {
   public:
-    AWS_MAILMANAGER_API ListMembersOfAddressListResult();
+    AWS_MAILMANAGER_API ListMembersOfAddressListResult() = default;
     AWS_MAILMANAGER_API ListMembersOfAddressListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API ListMembersOfAddressListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of addresses.</p>
      */
-    inline const Aws::Vector<SavedAddress>& GetAddresses() const{ return m_addresses; }
-    inline void SetAddresses(const Aws::Vector<SavedAddress>& value) { m_addresses = value; }
-    inline void SetAddresses(Aws::Vector<SavedAddress>&& value) { m_addresses = std::move(value); }
-    inline ListMembersOfAddressListResult& WithAddresses(const Aws::Vector<SavedAddress>& value) { SetAddresses(value); return *this;}
-    inline ListMembersOfAddressListResult& WithAddresses(Aws::Vector<SavedAddress>&& value) { SetAddresses(std::move(value)); return *this;}
-    inline ListMembersOfAddressListResult& AddAddresses(const SavedAddress& value) { m_addresses.push_back(value); return *this; }
-    inline ListMembersOfAddressListResult& AddAddresses(SavedAddress&& value) { m_addresses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SavedAddress>& GetAddresses() const { return m_addresses; }
+    template<typename AddressesT = Aws::Vector<SavedAddress>>
+    void SetAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses = std::forward<AddressesT>(value); }
+    template<typename AddressesT = Aws::Vector<SavedAddress>>
+    ListMembersOfAddressListResult& WithAddresses(AddressesT&& value) { SetAddresses(std::forward<AddressesT>(value)); return *this;}
+    template<typename AddressesT = SavedAddress>
+    ListMembersOfAddressListResult& AddAddresses(AddressesT&& value) { m_addressesHasBeenSet = true; m_addresses.emplace_back(std::forward<AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * NextToken is a unique pagination token for each page. Make the call again using
      * the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMembersOfAddressListResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMembersOfAddressListResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMembersOfAddressListResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMembersOfAddressListResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMembersOfAddressListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMembersOfAddressListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMembersOfAddressListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMembersOfAddressListResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SavedAddress> m_addresses;
+    bool m_addressesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

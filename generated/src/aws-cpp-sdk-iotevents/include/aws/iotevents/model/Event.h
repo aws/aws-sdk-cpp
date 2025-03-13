@@ -34,7 +34,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_IOTEVENTS_API Event();
+    AWS_IOTEVENTS_API Event() = default;
     AWS_IOTEVENTS_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the event.</p>
      */
-    inline const Aws::String& GetEventName() const{ return m_eventName; }
+    inline const Aws::String& GetEventName() const { return m_eventName; }
     inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
-    inline void SetEventName(const Aws::String& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
-    inline void SetEventName(Aws::String&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
-    inline void SetEventName(const char* value) { m_eventNameHasBeenSet = true; m_eventName.assign(value); }
-    inline Event& WithEventName(const Aws::String& value) { SetEventName(value); return *this;}
-    inline Event& WithEventName(Aws::String&& value) { SetEventName(std::move(value)); return *this;}
-    inline Event& WithEventName(const char* value) { SetEventName(value); return *this;}
+    template<typename EventNameT = Aws::String>
+    void SetEventName(EventNameT&& value) { m_eventNameHasBeenSet = true; m_eventName = std::forward<EventNameT>(value); }
+    template<typename EventNameT = Aws::String>
+    Event& WithEventName(EventNameT&& value) { SetEventName(std::forward<EventNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,26 @@ namespace Model
      * (=TRUE). If the expression result is not a Boolean value, the actions are not
      * performed (=FALSE).</p>
      */
-    inline const Aws::String& GetCondition() const{ return m_condition; }
+    inline const Aws::String& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-    inline Event& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-    inline Event& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-    inline Event& WithCondition(const char* value) { SetCondition(value); return *this;}
+    template<typename ConditionT = Aws::String>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::String>
+    Event& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actions to be performed.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline Event& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline Event& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline Event& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline Event& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    Event& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    Event& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 

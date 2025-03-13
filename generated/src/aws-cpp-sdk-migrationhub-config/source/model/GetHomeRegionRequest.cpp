@@ -12,10 +12,6 @@ using namespace Aws::MigrationHubConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetHomeRegionRequest::GetHomeRegionRequest()
-{
-}
-
 Aws::String GetHomeRegionRequest::SerializePayload() const
 {
   return "{}";

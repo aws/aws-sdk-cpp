@@ -20,39 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-DistributionSummary::DistributionSummary() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_originsHasBeenSet(false),
-    m_originGroupsHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_customErrorResponsesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_webACLIdHasBeenSet(false),
-    m_httpVersion(HttpVersion::NOT_SET),
-    m_httpVersionHasBeenSet(false),
-    m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false),
-    m_staging(false),
-    m_stagingHasBeenSet(false),
-    m_anycastIpListIdHasBeenSet(false)
-{
-}
-
 DistributionSummary::DistributionSummary(const XmlNode& xmlNode)
-  : DistributionSummary()
 {
   *this = xmlNode;
 }
@@ -68,138 +36,160 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
+       m_aRNHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode domainNameNode = resultNode.FirstChild("DomainName");
     if(!domainNameNode.IsNull())
     {
       m_domainName = Aws::Utils::Xml::DecodeEscapedXmlText(domainNameNode.GetText());
       m_domainNameHasBeenSet = true;
+       m_domainNameHasBeenSet = true;
     }
     XmlNode aliasesNode = resultNode.FirstChild("Aliases");
     if(!aliasesNode.IsNull())
     {
       m_aliases = aliasesNode;
       m_aliasesHasBeenSet = true;
+       m_aliasesHasBeenSet = true;
     }
     XmlNode originsNode = resultNode.FirstChild("Origins");
     if(!originsNode.IsNull())
     {
       m_origins = originsNode;
       m_originsHasBeenSet = true;
+       m_originsHasBeenSet = true;
     }
     XmlNode originGroupsNode = resultNode.FirstChild("OriginGroups");
     if(!originGroupsNode.IsNull())
     {
       m_originGroups = originGroupsNode;
       m_originGroupsHasBeenSet = true;
+       m_originGroupsHasBeenSet = true;
     }
     XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
     if(!defaultCacheBehaviorNode.IsNull())
     {
       m_defaultCacheBehavior = defaultCacheBehaviorNode;
       m_defaultCacheBehaviorHasBeenSet = true;
+       m_defaultCacheBehaviorHasBeenSet = true;
     }
     XmlNode cacheBehaviorsNode = resultNode.FirstChild("CacheBehaviors");
     if(!cacheBehaviorsNode.IsNull())
     {
       m_cacheBehaviors = cacheBehaviorsNode;
       m_cacheBehaviorsHasBeenSet = true;
+       m_cacheBehaviorsHasBeenSet = true;
     }
     XmlNode customErrorResponsesNode = resultNode.FirstChild("CustomErrorResponses");
     if(!customErrorResponsesNode.IsNull())
     {
       m_customErrorResponses = customErrorResponsesNode;
       m_customErrorResponsesHasBeenSet = true;
+       m_customErrorResponsesHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
     if(!priceClassNode.IsNull())
     {
-      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()).c_str());
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
       m_priceClassHasBeenSet = true;
+       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
     if(!enabledNode.IsNull())
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
     XmlNode viewerCertificateNode = resultNode.FirstChild("ViewerCertificate");
     if(!viewerCertificateNode.IsNull())
     {
       m_viewerCertificate = viewerCertificateNode;
       m_viewerCertificateHasBeenSet = true;
+       m_viewerCertificateHasBeenSet = true;
     }
     XmlNode restrictionsNode = resultNode.FirstChild("Restrictions");
     if(!restrictionsNode.IsNull())
     {
       m_restrictions = restrictionsNode;
       m_restrictionsHasBeenSet = true;
+       m_restrictionsHasBeenSet = true;
     }
     XmlNode webACLIdNode = resultNode.FirstChild("WebACLId");
     if(!webACLIdNode.IsNull())
     {
       m_webACLId = Aws::Utils::Xml::DecodeEscapedXmlText(webACLIdNode.GetText());
       m_webACLIdHasBeenSet = true;
+       m_webACLIdHasBeenSet = true;
     }
     XmlNode httpVersionNode = resultNode.FirstChild("HttpVersion");
     if(!httpVersionNode.IsNull())
     {
-      m_httpVersion = HttpVersionMapper::GetHttpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpVersionNode.GetText()).c_str()).c_str());
+      m_httpVersion = HttpVersionMapper::GetHttpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpVersionNode.GetText()).c_str()));
       m_httpVersionHasBeenSet = true;
+       m_httpVersionHasBeenSet = true;
     }
     XmlNode isIPV6EnabledNode = resultNode.FirstChild("IsIPV6Enabled");
     if(!isIPV6EnabledNode.IsNull())
     {
       m_isIPV6Enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isIPV6EnabledNode.GetText()).c_str()).c_str());
       m_isIPV6EnabledHasBeenSet = true;
+       m_isIPV6EnabledHasBeenSet = true;
     }
     XmlNode aliasICPRecordalsNode = resultNode.FirstChild("AliasICPRecordals");
     if(!aliasICPRecordalsNode.IsNull())
     {
       XmlNode aliasICPRecordalsMember = aliasICPRecordalsNode.FirstChild("AliasICPRecordal");
+      m_aliasICPRecordalsHasBeenSet = !aliasICPRecordalsMember.IsNull();
       while(!aliasICPRecordalsMember.IsNull())
       {
         m_aliasICPRecordals.push_back(aliasICPRecordalsMember);
         aliasICPRecordalsMember = aliasICPRecordalsMember.NextNode("AliasICPRecordal");
       }
 
-      m_aliasICPRecordalsHasBeenSet = true;
+       m_aliasICPRecordalsHasBeenSet = true;
     }
     XmlNode stagingNode = resultNode.FirstChild("Staging");
     if(!stagingNode.IsNull())
     {
       m_staging = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stagingNode.GetText()).c_str()).c_str());
       m_stagingHasBeenSet = true;
+       m_stagingHasBeenSet = true;
     }
     XmlNode anycastIpListIdNode = resultNode.FirstChild("AnycastIpListId");
     if(!anycastIpListIdNode.IsNull())
     {
       m_anycastIpListId = Aws::Utils::Xml::DecodeEscapedXmlText(anycastIpListIdNode.GetText());
       m_anycastIpListIdHasBeenSet = true;
+       m_anycastIpListIdHasBeenSet = true;
     }
   }
 

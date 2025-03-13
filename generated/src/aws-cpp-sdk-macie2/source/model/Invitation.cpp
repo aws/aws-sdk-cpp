@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-Invitation::Invitation() : 
-    m_accountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_relationshipStatus(RelationshipStatus::NOT_SET),
-    m_relationshipStatusHasBeenSet(false)
-{
-}
-
 Invitation::Invitation(JsonView jsonValue)
-  : Invitation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Invitation& Invitation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitationId"))
   {
     m_invitationId = jsonValue.GetString("invitationId");
-
     m_invitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invitedAt"))
   {
     m_invitedAt = jsonValue.GetString("invitedAt");
-
     m_invitedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = RelationshipStatusMapper::GetRelationshipStatusForName(jsonValue.GetString("relationshipStatus"));
-
     m_relationshipStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

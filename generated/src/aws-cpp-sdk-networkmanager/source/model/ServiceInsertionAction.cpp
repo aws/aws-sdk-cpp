@@ -18,18 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ServiceInsertionAction::ServiceInsertionAction() : 
-    m_action(SegmentActionServiceInsertion::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_mode(SendViaMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_whenSentToHasBeenSet(false),
-    m_viaHasBeenSet(false)
-{
-}
-
 ServiceInsertionAction::ServiceInsertionAction(JsonView jsonValue)
-  : ServiceInsertionAction()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ServiceInsertionAction& ServiceInsertionAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = SegmentActionServiceInsertionMapper::GetSegmentActionServiceInsertionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = SendViaModeMapper::GetSendViaModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WhenSentTo"))
   {
     m_whenSentTo = jsonValue.GetObject("WhenSentTo");
-
     m_whenSentToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Via"))
   {
     m_via = jsonValue.GetObject("Via");
-
     m_viaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FieldPosition::FieldPosition() : 
-    m_fixed(FixedPosition::NOT_SET),
-    m_fixedHasBeenSet(false),
-    m_rightOfHasBeenSet(false),
-    m_belowHasBeenSet(false)
-{
-}
-
 FieldPosition::FieldPosition(JsonView jsonValue)
-  : FieldPosition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FieldPosition& FieldPosition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fixed"))
   {
     m_fixed = FixedPositionMapper::GetFixedPositionForName(jsonValue.GetString("fixed"));
-
     m_fixedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rightOf"))
   {
     m_rightOf = jsonValue.GetString("rightOf");
-
     m_rightOfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("below"))
   {
     m_below = jsonValue.GetString("below");
-
     m_belowHasBeenSet = true;
   }
-
   return *this;
 }
 

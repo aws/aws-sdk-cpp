@@ -33,7 +33,7 @@ namespace Model
   class DescribeVaultResult
   {
   public:
-    AWS_GLACIER_API DescribeVaultResult();
+    AWS_GLACIER_API DescribeVaultResult() = default;
     AWS_GLACIER_API DescribeVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API DescribeVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,26 +42,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
      */
-    inline const Aws::String& GetVaultARN() const{ return m_vaultARN; }
-    inline void SetVaultARN(const Aws::String& value) { m_vaultARN = value; }
-    inline void SetVaultARN(Aws::String&& value) { m_vaultARN = std::move(value); }
-    inline void SetVaultARN(const char* value) { m_vaultARN.assign(value); }
-    inline DescribeVaultResult& WithVaultARN(const Aws::String& value) { SetVaultARN(value); return *this;}
-    inline DescribeVaultResult& WithVaultARN(Aws::String&& value) { SetVaultARN(std::move(value)); return *this;}
-    inline DescribeVaultResult& WithVaultARN(const char* value) { SetVaultARN(value); return *this;}
+    inline const Aws::String& GetVaultARN() const { return m_vaultARN; }
+    template<typename VaultARNT = Aws::String>
+    void SetVaultARN(VaultARNT&& value) { m_vaultARNHasBeenSet = true; m_vaultARN = std::forward<VaultARNT>(value); }
+    template<typename VaultARNT = Aws::String>
+    DescribeVaultResult& WithVaultARN(VaultARNT&& value) { SetVaultARN(std::forward<VaultARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vault.</p>
      */
-    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
-    inline void SetVaultName(const Aws::String& value) { m_vaultName = value; }
-    inline void SetVaultName(Aws::String&& value) { m_vaultName = std::move(value); }
-    inline void SetVaultName(const char* value) { m_vaultName.assign(value); }
-    inline DescribeVaultResult& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-    inline DescribeVaultResult& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-    inline DescribeVaultResult& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    inline const Aws::String& GetVaultName() const { return m_vaultName; }
+    template<typename VaultNameT = Aws::String>
+    void SetVaultName(VaultNameT&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::forward<VaultNameT>(value); }
+    template<typename VaultNameT = Aws::String>
+    DescribeVaultResult& WithVaultName(VaultNameT&& value) { SetVaultName(std::forward<VaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +66,11 @@ namespace Model
      * value should be a string in the ISO 8601 date format, for example
      * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDate.assign(value); }
-    inline DescribeVaultResult& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline DescribeVaultResult& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline DescribeVaultResult& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    DescribeVaultResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,13 +79,11 @@ namespace Model
      * the last vault inventory. This value should be a string in the ISO 8601 date
      * format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
-    inline const Aws::String& GetLastInventoryDate() const{ return m_lastInventoryDate; }
-    inline void SetLastInventoryDate(const Aws::String& value) { m_lastInventoryDate = value; }
-    inline void SetLastInventoryDate(Aws::String&& value) { m_lastInventoryDate = std::move(value); }
-    inline void SetLastInventoryDate(const char* value) { m_lastInventoryDate.assign(value); }
-    inline DescribeVaultResult& WithLastInventoryDate(const Aws::String& value) { SetLastInventoryDate(value); return *this;}
-    inline DescribeVaultResult& WithLastInventoryDate(Aws::String&& value) { SetLastInventoryDate(std::move(value)); return *this;}
-    inline DescribeVaultResult& WithLastInventoryDate(const char* value) { SetLastInventoryDate(value); return *this;}
+    inline const Aws::String& GetLastInventoryDate() const { return m_lastInventoryDate; }
+    template<typename LastInventoryDateT = Aws::String>
+    void SetLastInventoryDate(LastInventoryDateT&& value) { m_lastInventoryDateHasBeenSet = true; m_lastInventoryDate = std::forward<LastInventoryDateT>(value); }
+    template<typename LastInventoryDateT = Aws::String>
+    DescribeVaultResult& WithLastInventoryDate(LastInventoryDateT&& value) { SetLastInventoryDate(std::forward<LastInventoryDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,8 +92,8 @@ namespace Model
      * will return <code>null</code> if an inventory has not yet run on the vault, for
      * example if you just created the vault.</p>
      */
-    inline long long GetNumberOfArchives() const{ return m_numberOfArchives; }
-    inline void SetNumberOfArchives(long long value) { m_numberOfArchives = value; }
+    inline long long GetNumberOfArchives() const { return m_numberOfArchives; }
+    inline void SetNumberOfArchives(long long value) { m_numberOfArchivesHasBeenSet = true; m_numberOfArchives = value; }
     inline DescribeVaultResult& WithNumberOfArchives(long long value) { SetNumberOfArchives(value); return *this;}
     ///@}
 
@@ -111,36 +103,41 @@ namespace Model
      * date. This field will return null if an inventory has not yet run on the vault,
      * for example if you just created the vault.</p>
      */
-    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
-    inline void SetSizeInBytes(long long value) { m_sizeInBytes = value; }
+    inline long long GetSizeInBytes() const { return m_sizeInBytes; }
+    inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
     inline DescribeVaultResult& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVaultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVaultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVaultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVaultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vaultARN;
+    bool m_vaultARNHasBeenSet = false;
 
     Aws::String m_vaultName;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_creationDate;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_lastInventoryDate;
+    bool m_lastInventoryDateHasBeenSet = false;
 
-    long long m_numberOfArchives;
+    long long m_numberOfArchives{0};
+    bool m_numberOfArchivesHasBeenSet = false;
 
-    long long m_sizeInBytes;
+    long long m_sizeInBytes{0};
+    bool m_sizeInBytesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

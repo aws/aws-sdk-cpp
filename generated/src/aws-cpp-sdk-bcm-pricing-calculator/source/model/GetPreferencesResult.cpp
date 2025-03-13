@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPreferencesResult::GetPreferencesResult()
-{
-}
-
 GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetPreferencesResult& GetPreferencesResult::operator =(const Aws::AmazonWebServi
     {
       m_managementAccountRateTypeSelections.push_back(RateTypeMapper::GetRateTypeForName(managementAccountRateTypeSelectionsJsonList[managementAccountRateTypeSelectionsIndex].AsString()));
     }
+    m_managementAccountRateTypeSelectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberAccountRateTypeSelections"))
   {
     Aws::Utils::Array<JsonView> memberAccountRateTypeSelectionsJsonList = jsonValue.GetArray("memberAccountRateTypeSelections");
@@ -45,14 +41,15 @@ GetPreferencesResult& GetPreferencesResult::operator =(const Aws::AmazonWebServi
     {
       m_memberAccountRateTypeSelections.push_back(RateTypeMapper::GetRateTypeForName(memberAccountRateTypeSelectionsJsonList[memberAccountRateTypeSelectionsIndex].AsString()));
     }
+    m_memberAccountRateTypeSelectionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

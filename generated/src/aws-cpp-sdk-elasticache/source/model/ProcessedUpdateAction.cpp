@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ProcessedUpdateAction::ProcessedUpdateAction() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_updateActionStatus(UpdateActionStatus::NOT_SET),
-    m_updateActionStatusHasBeenSet(false)
-{
-}
-
 ProcessedUpdateAction::ProcessedUpdateAction(const XmlNode& xmlNode)
-  : ProcessedUpdateAction()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ ProcessedUpdateAction& ProcessedUpdateAction::operator =(const XmlNode& xmlNode)
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
+       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
       m_serviceUpdateName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateNameNode.GetText());
       m_serviceUpdateNameHasBeenSet = true;
+       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode updateActionStatusNode = resultNode.FirstChild("UpdateActionStatus");
     if(!updateActionStatusNode.IsNull())
     {
-      m_updateActionStatus = UpdateActionStatusMapper::GetUpdateActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusNode.GetText()).c_str()).c_str());
+      m_updateActionStatus = UpdateActionStatusMapper::GetUpdateActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusNode.GetText()).c_str()));
       m_updateActionStatusHasBeenSet = true;
+       m_updateActionStatusHasBeenSet = true;
     }
   }
 

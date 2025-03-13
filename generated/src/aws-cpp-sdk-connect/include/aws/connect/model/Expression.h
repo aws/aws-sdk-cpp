@@ -33,7 +33,7 @@ namespace Model
   class Expression
   {
   public:
-    AWS_CONNECT_API Expression();
+    AWS_CONNECT_API Expression() = default;
     AWS_CONNECT_API Expression(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,50 +43,50 @@ namespace Model
     /**
      * <p>An object to specify the predefined attribute condition.</p>
      */
-    inline const AttributeCondition& GetAttributeCondition() const{ return m_attributeCondition; }
+    inline const AttributeCondition& GetAttributeCondition() const { return m_attributeCondition; }
     inline bool AttributeConditionHasBeenSet() const { return m_attributeConditionHasBeenSet; }
-    inline void SetAttributeCondition(const AttributeCondition& value) { m_attributeConditionHasBeenSet = true; m_attributeCondition = value; }
-    inline void SetAttributeCondition(AttributeCondition&& value) { m_attributeConditionHasBeenSet = true; m_attributeCondition = std::move(value); }
-    inline Expression& WithAttributeCondition(const AttributeCondition& value) { SetAttributeCondition(value); return *this;}
-    inline Expression& WithAttributeCondition(AttributeCondition&& value) { SetAttributeCondition(std::move(value)); return *this;}
+    template<typename AttributeConditionT = AttributeCondition>
+    void SetAttributeCondition(AttributeConditionT&& value) { m_attributeConditionHasBeenSet = true; m_attributeCondition = std::forward<AttributeConditionT>(value); }
+    template<typename AttributeConditionT = AttributeCondition>
+    Expression& WithAttributeCondition(AttributeConditionT&& value) { SetAttributeCondition(std::forward<AttributeConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of routing expressions which will be AND-ed together.</p>
      */
-    inline const Aws::Vector<Expression>& GetAndExpression() const{ return m_andExpression; }
+    inline const Aws::Vector<Expression>& GetAndExpression() const { return m_andExpression; }
     inline bool AndExpressionHasBeenSet() const { return m_andExpressionHasBeenSet; }
-    inline void SetAndExpression(const Aws::Vector<Expression>& value) { m_andExpressionHasBeenSet = true; m_andExpression = value; }
-    inline void SetAndExpression(Aws::Vector<Expression>&& value) { m_andExpressionHasBeenSet = true; m_andExpression = std::move(value); }
-    inline Expression& WithAndExpression(const Aws::Vector<Expression>& value) { SetAndExpression(value); return *this;}
-    inline Expression& WithAndExpression(Aws::Vector<Expression>&& value) { SetAndExpression(std::move(value)); return *this;}
-    inline Expression& AddAndExpression(const Expression& value) { m_andExpressionHasBeenSet = true; m_andExpression.push_back(value); return *this; }
-    inline Expression& AddAndExpression(Expression&& value) { m_andExpressionHasBeenSet = true; m_andExpression.push_back(std::move(value)); return *this; }
+    template<typename AndExpressionT = Aws::Vector<Expression>>
+    void SetAndExpression(AndExpressionT&& value) { m_andExpressionHasBeenSet = true; m_andExpression = std::forward<AndExpressionT>(value); }
+    template<typename AndExpressionT = Aws::Vector<Expression>>
+    Expression& WithAndExpression(AndExpressionT&& value) { SetAndExpression(std::forward<AndExpressionT>(value)); return *this;}
+    template<typename AndExpressionT = Expression>
+    Expression& AddAndExpression(AndExpressionT&& value) { m_andExpressionHasBeenSet = true; m_andExpression.emplace_back(std::forward<AndExpressionT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of routing expressions which will be OR-ed together.</p>
      */
-    inline const Aws::Vector<Expression>& GetOrExpression() const{ return m_orExpression; }
+    inline const Aws::Vector<Expression>& GetOrExpression() const { return m_orExpression; }
     inline bool OrExpressionHasBeenSet() const { return m_orExpressionHasBeenSet; }
-    inline void SetOrExpression(const Aws::Vector<Expression>& value) { m_orExpressionHasBeenSet = true; m_orExpression = value; }
-    inline void SetOrExpression(Aws::Vector<Expression>&& value) { m_orExpressionHasBeenSet = true; m_orExpression = std::move(value); }
-    inline Expression& WithOrExpression(const Aws::Vector<Expression>& value) { SetOrExpression(value); return *this;}
-    inline Expression& WithOrExpression(Aws::Vector<Expression>&& value) { SetOrExpression(std::move(value)); return *this;}
-    inline Expression& AddOrExpression(const Expression& value) { m_orExpressionHasBeenSet = true; m_orExpression.push_back(value); return *this; }
-    inline Expression& AddOrExpression(Expression&& value) { m_orExpressionHasBeenSet = true; m_orExpression.push_back(std::move(value)); return *this; }
+    template<typename OrExpressionT = Aws::Vector<Expression>>
+    void SetOrExpression(OrExpressionT&& value) { m_orExpressionHasBeenSet = true; m_orExpression = std::forward<OrExpressionT>(value); }
+    template<typename OrExpressionT = Aws::Vector<Expression>>
+    Expression& WithOrExpression(OrExpressionT&& value) { SetOrExpression(std::forward<OrExpressionT>(value)); return *this;}
+    template<typename OrExpressionT = Expression>
+    Expression& AddOrExpression(OrExpressionT&& value) { m_orExpressionHasBeenSet = true; m_orExpression.emplace_back(std::forward<OrExpressionT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const AttributeCondition& GetNotAttributeCondition() const{ return m_notAttributeCondition; }
+    inline const AttributeCondition& GetNotAttributeCondition() const { return m_notAttributeCondition; }
     inline bool NotAttributeConditionHasBeenSet() const { return m_notAttributeConditionHasBeenSet; }
-    inline void SetNotAttributeCondition(const AttributeCondition& value) { m_notAttributeConditionHasBeenSet = true; m_notAttributeCondition = value; }
-    inline void SetNotAttributeCondition(AttributeCondition&& value) { m_notAttributeConditionHasBeenSet = true; m_notAttributeCondition = std::move(value); }
-    inline Expression& WithNotAttributeCondition(const AttributeCondition& value) { SetNotAttributeCondition(value); return *this;}
-    inline Expression& WithNotAttributeCondition(AttributeCondition&& value) { SetNotAttributeCondition(std::move(value)); return *this;}
+    template<typename NotAttributeConditionT = AttributeCondition>
+    void SetNotAttributeCondition(NotAttributeConditionT&& value) { m_notAttributeConditionHasBeenSet = true; m_notAttributeCondition = std::forward<NotAttributeConditionT>(value); }
+    template<typename NotAttributeConditionT = AttributeCondition>
+    Expression& WithNotAttributeCondition(NotAttributeConditionT&& value) { SetNotAttributeCondition(std::forward<NotAttributeConditionT>(value)); return *this;}
     ///@}
   private:
 

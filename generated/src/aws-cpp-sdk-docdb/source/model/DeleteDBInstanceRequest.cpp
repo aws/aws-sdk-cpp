@@ -10,11 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-DeleteDBInstanceRequest::DeleteDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

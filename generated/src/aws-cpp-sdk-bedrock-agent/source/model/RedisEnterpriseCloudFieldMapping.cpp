@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping() : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false)
-{
-}
-
 RedisEnterpriseCloudFieldMapping::RedisEnterpriseCloudFieldMapping(JsonView jsonValue)
-  : RedisEnterpriseCloudFieldMapping()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RedisEnterpriseCloudFieldMapping& RedisEnterpriseCloudFieldMapping::operator =(J
   if(jsonValue.ValueExists("metadataField"))
   {
     m_metadataField = jsonValue.GetString("metadataField");
-
     m_metadataFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
-
     m_textFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vectorField"))
   {
     m_vectorField = jsonValue.GetString("vectorField");
-
     m_vectorFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

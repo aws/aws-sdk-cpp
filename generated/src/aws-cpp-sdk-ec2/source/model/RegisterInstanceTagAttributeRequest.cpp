@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest() : 
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false),
-    m_instanceTagKeysHasBeenSet(false)
-{
-}
-
 RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest(const XmlNode& xmlNode)
-  : RegisterInstanceTagAttributeRequest()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,20 @@ RegisterInstanceTagAttributeRequest& RegisterInstanceTagAttributeRequest::operat
     {
       m_includeAllTagsOfInstance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeAllTagsOfInstanceNode.GetText()).c_str()).c_str());
       m_includeAllTagsOfInstanceHasBeenSet = true;
+       m_includeAllTagsOfInstanceHasBeenSet = true;
     }
     XmlNode instanceTagKeysNode = resultNode.FirstChild("InstanceTagKey");
     if(!instanceTagKeysNode.IsNull())
     {
       XmlNode instanceTagKeysMember = instanceTagKeysNode.FirstChild("item");
+      m_instanceTagKeysHasBeenSet = !instanceTagKeysMember.IsNull();
       while(!instanceTagKeysMember.IsNull())
       {
         m_instanceTagKeys.push_back(instanceTagKeysMember.GetText());
         instanceTagKeysMember = instanceTagKeysMember.NextNode("item");
       }
 
-      m_instanceTagKeysHasBeenSet = true;
+       m_instanceTagKeysHasBeenSet = true;
     }
   }
 

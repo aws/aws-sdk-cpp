@@ -28,7 +28,7 @@ namespace Model
   class DescribeInstanceEventNotificationAttributesResponse
   {
   public:
-    AWS_EC2_API DescribeInstanceEventNotificationAttributesResponse();
+    AWS_EC2_API DescribeInstanceEventNotificationAttributesResponse() = default;
     AWS_EC2_API DescribeInstanceEventNotificationAttributesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeInstanceEventNotificationAttributesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the registered tag keys.</p>
      */
-    inline const InstanceTagNotificationAttribute& GetInstanceTagAttribute() const{ return m_instanceTagAttribute; }
-    inline void SetInstanceTagAttribute(const InstanceTagNotificationAttribute& value) { m_instanceTagAttribute = value; }
-    inline void SetInstanceTagAttribute(InstanceTagNotificationAttribute&& value) { m_instanceTagAttribute = std::move(value); }
-    inline DescribeInstanceEventNotificationAttributesResponse& WithInstanceTagAttribute(const InstanceTagNotificationAttribute& value) { SetInstanceTagAttribute(value); return *this;}
-    inline DescribeInstanceEventNotificationAttributesResponse& WithInstanceTagAttribute(InstanceTagNotificationAttribute&& value) { SetInstanceTagAttribute(std::move(value)); return *this;}
+    inline const InstanceTagNotificationAttribute& GetInstanceTagAttribute() const { return m_instanceTagAttribute; }
+    template<typename InstanceTagAttributeT = InstanceTagNotificationAttribute>
+    void SetInstanceTagAttribute(InstanceTagAttributeT&& value) { m_instanceTagAttributeHasBeenSet = true; m_instanceTagAttribute = std::forward<InstanceTagAttributeT>(value); }
+    template<typename InstanceTagAttributeT = InstanceTagNotificationAttribute>
+    DescribeInstanceEventNotificationAttributesResponse& WithInstanceTagAttribute(InstanceTagAttributeT&& value) { SetInstanceTagAttribute(std::forward<InstanceTagAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeInstanceEventNotificationAttributesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeInstanceEventNotificationAttributesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeInstanceEventNotificationAttributesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     InstanceTagNotificationAttribute m_instanceTagAttribute;
+    bool m_instanceTagAttributeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

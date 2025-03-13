@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRouteAnalysisRequest::GetRouteAnalysisRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_routeAnalysisIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRouteAnalysisRequest::SerializePayload() const
 {
   return {};

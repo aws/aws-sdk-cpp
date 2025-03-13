@@ -35,7 +35,7 @@ namespace Model
   class EbsInfo
   {
   public:
-    AWS_EC2_API EbsInfo();
+    AWS_EC2_API EbsInfo() = default;
     AWS_EC2_API EbsInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EbsInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,61 +50,55 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const EbsOptimizedSupport& GetEbsOptimizedSupport() const{ return m_ebsOptimizedSupport; }
+    inline EbsOptimizedSupport GetEbsOptimizedSupport() const { return m_ebsOptimizedSupport; }
     inline bool EbsOptimizedSupportHasBeenSet() const { return m_ebsOptimizedSupportHasBeenSet; }
-    inline void SetEbsOptimizedSupport(const EbsOptimizedSupport& value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = value; }
-    inline void SetEbsOptimizedSupport(EbsOptimizedSupport&& value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = std::move(value); }
-    inline EbsInfo& WithEbsOptimizedSupport(const EbsOptimizedSupport& value) { SetEbsOptimizedSupport(value); return *this;}
-    inline EbsInfo& WithEbsOptimizedSupport(EbsOptimizedSupport&& value) { SetEbsOptimizedSupport(std::move(value)); return *this;}
+    inline void SetEbsOptimizedSupport(EbsOptimizedSupport value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = value; }
+    inline EbsInfo& WithEbsOptimizedSupport(EbsOptimizedSupport value) { SetEbsOptimizedSupport(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether Amazon EBS encryption is supported.</p>
      */
-    inline const EbsEncryptionSupport& GetEncryptionSupport() const{ return m_encryptionSupport; }
+    inline EbsEncryptionSupport GetEncryptionSupport() const { return m_encryptionSupport; }
     inline bool EncryptionSupportHasBeenSet() const { return m_encryptionSupportHasBeenSet; }
-    inline void SetEncryptionSupport(const EbsEncryptionSupport& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = value; }
-    inline void SetEncryptionSupport(EbsEncryptionSupport&& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = std::move(value); }
-    inline EbsInfo& WithEncryptionSupport(const EbsEncryptionSupport& value) { SetEncryptionSupport(value); return *this;}
-    inline EbsInfo& WithEncryptionSupport(EbsEncryptionSupport&& value) { SetEncryptionSupport(std::move(value)); return *this;}
+    inline void SetEncryptionSupport(EbsEncryptionSupport value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = value; }
+    inline EbsInfo& WithEncryptionSupport(EbsEncryptionSupport value) { SetEncryptionSupport(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the optimized EBS performance for the instance type.</p>
      */
-    inline const EbsOptimizedInfo& GetEbsOptimizedInfo() const{ return m_ebsOptimizedInfo; }
+    inline const EbsOptimizedInfo& GetEbsOptimizedInfo() const { return m_ebsOptimizedInfo; }
     inline bool EbsOptimizedInfoHasBeenSet() const { return m_ebsOptimizedInfoHasBeenSet; }
-    inline void SetEbsOptimizedInfo(const EbsOptimizedInfo& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = value; }
-    inline void SetEbsOptimizedInfo(EbsOptimizedInfo&& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = std::move(value); }
-    inline EbsInfo& WithEbsOptimizedInfo(const EbsOptimizedInfo& value) { SetEbsOptimizedInfo(value); return *this;}
-    inline EbsInfo& WithEbsOptimizedInfo(EbsOptimizedInfo&& value) { SetEbsOptimizedInfo(std::move(value)); return *this;}
+    template<typename EbsOptimizedInfoT = EbsOptimizedInfo>
+    void SetEbsOptimizedInfo(EbsOptimizedInfoT&& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = std::forward<EbsOptimizedInfoT>(value); }
+    template<typename EbsOptimizedInfoT = EbsOptimizedInfo>
+    EbsInfo& WithEbsOptimizedInfo(EbsOptimizedInfoT&& value) { SetEbsOptimizedInfo(std::forward<EbsOptimizedInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
-    inline const EbsNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
+    inline EbsNvmeSupport GetNvmeSupport() const { return m_nvmeSupport; }
     inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
-    inline void SetNvmeSupport(const EbsNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
-    inline void SetNvmeSupport(EbsNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
-    inline EbsInfo& WithNvmeSupport(const EbsNvmeSupport& value) { SetNvmeSupport(value); return *this;}
-    inline EbsInfo& WithNvmeSupport(EbsNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
+    inline void SetNvmeSupport(EbsNvmeSupport value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
+    inline EbsInfo& WithNvmeSupport(EbsNvmeSupport value) { SetNvmeSupport(value); return *this;}
     ///@}
   private:
 
-    EbsOptimizedSupport m_ebsOptimizedSupport;
+    EbsOptimizedSupport m_ebsOptimizedSupport{EbsOptimizedSupport::NOT_SET};
     bool m_ebsOptimizedSupportHasBeenSet = false;
 
-    EbsEncryptionSupport m_encryptionSupport;
+    EbsEncryptionSupport m_encryptionSupport{EbsEncryptionSupport::NOT_SET};
     bool m_encryptionSupportHasBeenSet = false;
 
     EbsOptimizedInfo m_ebsOptimizedInfo;
     bool m_ebsOptimizedInfoHasBeenSet = false;
 
-    EbsNvmeSupport m_nvmeSupport;
+    EbsNvmeSupport m_nvmeSupport{EbsNvmeSupport::NOT_SET};
     bool m_nvmeSupportHasBeenSet = false;
   };
 

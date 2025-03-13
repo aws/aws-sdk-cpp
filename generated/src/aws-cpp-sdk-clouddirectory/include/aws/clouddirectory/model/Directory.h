@@ -34,7 +34,7 @@ namespace Model
   class Directory
   {
   public:
-    AWS_CLOUDDIRECTORY_API Directory();
+    AWS_CLOUDDIRECTORY_API Directory() = default;
     AWS_CLOUDDIRECTORY_API Directory(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Directory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the directory.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Directory& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Directory& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Directory& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Directory& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the directory. For
      * more information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline Directory& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline Directory& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline Directory& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    Directory& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,24 +70,22 @@ namespace Model
      * <p>The state of the directory. Can be either <code>Enabled</code>,
      * <code>Disabled</code>, or <code>Deleted</code>.</p>
      */
-    inline const DirectoryState& GetState() const{ return m_state; }
+    inline DirectoryState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const DirectoryState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(DirectoryState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Directory& WithState(const DirectoryState& value) { SetState(value); return *this;}
-    inline Directory& WithState(DirectoryState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(DirectoryState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Directory& WithState(DirectoryState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the directory was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline Directory& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline Directory& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    Directory& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,10 +95,10 @@ namespace Model
     Aws::String m_directoryArn;
     bool m_directoryArnHasBeenSet = false;
 
-    DirectoryState m_state;
+    DirectoryState m_state{DirectoryState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
   };
 

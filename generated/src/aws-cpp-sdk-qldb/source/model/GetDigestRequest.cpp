@@ -12,11 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDigestRequest::GetDigestRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetDigestRequest::SerializePayload() const
 {
   return {};

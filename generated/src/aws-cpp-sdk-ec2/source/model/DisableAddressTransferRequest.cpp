@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableAddressTransferRequest::DisableAddressTransferRequest() : 
-    m_allocationIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisableAddressTransferRequest::SerializePayload() const
 {
   Aws::StringStream ss;

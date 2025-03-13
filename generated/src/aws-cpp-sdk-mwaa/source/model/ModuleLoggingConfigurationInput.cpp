@@ -18,16 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-ModuleLoggingConfigurationInput::ModuleLoggingConfigurationInput() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logLevel(LoggingLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 ModuleLoggingConfigurationInput::ModuleLoggingConfigurationInput(JsonView jsonValue)
-  : ModuleLoggingConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ModuleLoggingConfigurationInput& ModuleLoggingConfigurationInput::operator =(Jso
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LoggingLevelMapper::GetLoggingLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

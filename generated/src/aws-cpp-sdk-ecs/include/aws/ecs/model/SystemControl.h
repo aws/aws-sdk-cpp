@@ -57,7 +57,7 @@ namespace Model
   class SystemControl
   {
   public:
-    AWS_ECS_API SystemControl();
+    AWS_ECS_API SystemControl() = default;
     AWS_ECS_API SystemControl(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API SystemControl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,14 +67,12 @@ namespace Model
     /**
      * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline SystemControl& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline SystemControl& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline SystemControl& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    SystemControl& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * <code>Sysctls</code> that start with <code>"net.*"</code> </p> <p>All of these
      * values are supported by Fargate.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline SystemControl& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline SystemControl& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline SystemControl& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    SystemControl& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,32 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-ImportTask::ImportTask() : 
-    m_importTaskIdHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_importUrlHasBeenSet(false),
-    m_status(ImportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_importRequestTimeHasBeenSet(false),
-    m_importCompletionTimeHasBeenSet(false),
-    m_importDeletedTimeHasBeenSet(false),
-    m_fileClassification(FileClassification::NOT_SET),
-    m_fileClassificationHasBeenSet(false),
-    m_serverImportSuccess(0),
-    m_serverImportSuccessHasBeenSet(false),
-    m_serverImportFailure(0),
-    m_serverImportFailureHasBeenSet(false),
-    m_applicationImportSuccess(0),
-    m_applicationImportSuccessHasBeenSet(false),
-    m_applicationImportFailure(0),
-    m_applicationImportFailureHasBeenSet(false),
-    m_errorsAndFailedEntriesZipHasBeenSet(false)
-{
-}
-
 ImportTask::ImportTask(JsonView jsonValue)
-  : ImportTask()
 {
   *this = jsonValue;
 }
@@ -53,101 +28,73 @@ ImportTask& ImportTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("importTaskId"))
   {
     m_importTaskId = jsonValue.GetString("importTaskId");
-
     m_importTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
     m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importUrl"))
   {
     m_importUrl = jsonValue.GetString("importUrl");
-
     m_importUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importRequestTime"))
   {
     m_importRequestTime = jsonValue.GetDouble("importRequestTime");
-
     m_importRequestTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importCompletionTime"))
   {
     m_importCompletionTime = jsonValue.GetDouble("importCompletionTime");
-
     m_importCompletionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importDeletedTime"))
   {
     m_importDeletedTime = jsonValue.GetDouble("importDeletedTime");
-
     m_importDeletedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileClassification"))
   {
     m_fileClassification = FileClassificationMapper::GetFileClassificationForName(jsonValue.GetString("fileClassification"));
-
     m_fileClassificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverImportSuccess"))
   {
     m_serverImportSuccess = jsonValue.GetInteger("serverImportSuccess");
-
     m_serverImportSuccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverImportFailure"))
   {
     m_serverImportFailure = jsonValue.GetInteger("serverImportFailure");
-
     m_serverImportFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationImportSuccess"))
   {
     m_applicationImportSuccess = jsonValue.GetInteger("applicationImportSuccess");
-
     m_applicationImportSuccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationImportFailure"))
   {
     m_applicationImportFailure = jsonValue.GetInteger("applicationImportFailure");
-
     m_applicationImportFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorsAndFailedEntriesZip"))
   {
     m_errorsAndFailedEntriesZip = jsonValue.GetString("errorsAndFailedEntriesZip");
-
     m_errorsAndFailedEntriesZipHasBeenSet = true;
   }
-
   return *this;
 }
 

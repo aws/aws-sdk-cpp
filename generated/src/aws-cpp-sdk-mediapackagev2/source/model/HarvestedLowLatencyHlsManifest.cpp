@@ -18,13 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-HarvestedLowLatencyHlsManifest::HarvestedLowLatencyHlsManifest() : 
-    m_manifestNameHasBeenSet(false)
-{
-}
-
 HarvestedLowLatencyHlsManifest::HarvestedLowLatencyHlsManifest(JsonView jsonValue)
-  : HarvestedLowLatencyHlsManifest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HarvestedLowLatencyHlsManifest& HarvestedLowLatencyHlsManifest::operator =(JsonV
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   return *this;
 }
 

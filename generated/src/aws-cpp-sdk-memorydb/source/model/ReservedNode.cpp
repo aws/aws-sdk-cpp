@@ -18,26 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ReservedNode::ReservedNode() : 
-    m_reservationIdHasBeenSet(false),
-    m_reservedNodesOfferingIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 ReservedNode::ReservedNode(JsonView jsonValue)
-  : ReservedNode()
 {
   *this = jsonValue;
 }
@@ -47,66 +28,48 @@ ReservedNode& ReservedNode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReservationId"))
   {
     m_reservationId = jsonValue.GetString("ReservationId");
-
     m_reservationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedNodesOfferingId"))
   {
     m_reservedNodesOfferingId = jsonValue.GetString("ReservedNodesOfferingId");
-
     m_reservedNodesOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedPrice"))
   {
     m_fixedPrice = jsonValue.GetDouble("FixedPrice");
-
     m_fixedPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeCount"))
   {
     m_nodeCount = jsonValue.GetInteger("NodeCount");
-
     m_nodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfferingType"))
   {
     m_offeringType = jsonValue.GetString("OfferingType");
-
     m_offeringTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringCharges"))
   {
     Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
@@ -116,14 +79,11 @@ ReservedNode& ReservedNode::operator =(JsonView jsonValue)
     }
     m_recurringChargesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

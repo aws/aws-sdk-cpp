@@ -23,7 +23,7 @@ namespace Model
   class RegisterDomainRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API RegisterDomainRequest();
+    AWS_SWF_API RegisterDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
      * <i>not</i> be the literal string <code>arn</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RegisterDomainRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RegisterDomainRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RegisterDomainRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RegisterDomainRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A text description of the domain.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RegisterDomainRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RegisterDomainRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RegisterDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RegisterDomainRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const{ return m_workflowExecutionRetentionPeriodInDays; }
+    inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const { return m_workflowExecutionRetentionPeriodInDays; }
     inline bool WorkflowExecutionRetentionPeriodInDaysHasBeenSet() const { return m_workflowExecutionRetentionPeriodInDaysHasBeenSet; }
-    inline void SetWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
-    inline void SetWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = std::move(value); }
-    inline void SetWorkflowExecutionRetentionPeriodInDays(const char* value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays.assign(value); }
-    inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
-    inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { SetWorkflowExecutionRetentionPeriodInDays(std::move(value)); return *this;}
-    inline RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
+    template<typename WorkflowExecutionRetentionPeriodInDaysT = Aws::String>
+    void SetWorkflowExecutionRetentionPeriodInDays(WorkflowExecutionRetentionPeriodInDaysT&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = std::forward<WorkflowExecutionRetentionPeriodInDaysT>(value); }
+    template<typename WorkflowExecutionRetentionPeriodInDaysT = Aws::String>
+    RegisterDomainRequest& WithWorkflowExecutionRetentionPeriodInDays(WorkflowExecutionRetentionPeriodInDaysT&& value) { SetWorkflowExecutionRetentionPeriodInDays(std::forward<WorkflowExecutionRetentionPeriodInDaysT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,14 @@ namespace Model
      * unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + -
      * @</code>.</p>
      */
-    inline const Aws::Vector<ResourceTag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<ResourceTag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<ResourceTag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<ResourceTag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RegisterDomainRequest& WithTags(const Aws::Vector<ResourceTag>& value) { SetTags(value); return *this;}
-    inline RegisterDomainRequest& WithTags(Aws::Vector<ResourceTag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RegisterDomainRequest& AddTags(const ResourceTag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RegisterDomainRequest& AddTags(ResourceTag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<ResourceTag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<ResourceTag>>
+    RegisterDomainRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = ResourceTag>
+    RegisterDomainRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

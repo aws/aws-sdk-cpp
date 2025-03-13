@@ -33,7 +33,7 @@ namespace Model
   class AlarmSummary
   {
   public:
-    AWS_IOTEVENTSDATA_API AlarmSummary();
+    AWS_IOTEVENTSDATA_API AlarmSummary() = default;
     AWS_IOTEVENTSDATA_API AlarmSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API AlarmSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
+    inline const Aws::String& GetAlarmModelName() const { return m_alarmModelName; }
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-    inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-    inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-    inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-    inline AlarmSummary& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-    inline AlarmSummary& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-    inline AlarmSummary& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    template<typename AlarmModelNameT = Aws::String>
+    void SetAlarmModelName(AlarmModelNameT&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::forward<AlarmModelNameT>(value); }
+    template<typename AlarmModelNameT = Aws::String>
+    AlarmSummary& WithAlarmModelName(AlarmModelNameT&& value) { SetAlarmModelName(std::forward<AlarmModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelVersion() const{ return m_alarmModelVersion; }
+    inline const Aws::String& GetAlarmModelVersion() const { return m_alarmModelVersion; }
     inline bool AlarmModelVersionHasBeenSet() const { return m_alarmModelVersionHasBeenSet; }
-    inline void SetAlarmModelVersion(const Aws::String& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = value; }
-    inline void SetAlarmModelVersion(Aws::String&& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = std::move(value); }
-    inline void SetAlarmModelVersion(const char* value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion.assign(value); }
-    inline AlarmSummary& WithAlarmModelVersion(const Aws::String& value) { SetAlarmModelVersion(value); return *this;}
-    inline AlarmSummary& WithAlarmModelVersion(Aws::String&& value) { SetAlarmModelVersion(std::move(value)); return *this;}
-    inline AlarmSummary& WithAlarmModelVersion(const char* value) { SetAlarmModelVersion(value); return *this;}
+    template<typename AlarmModelVersionT = Aws::String>
+    void SetAlarmModelVersion(AlarmModelVersionT&& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = std::forward<AlarmModelVersionT>(value); }
+    template<typename AlarmModelVersionT = Aws::String>
+    AlarmSummary& WithAlarmModelVersion(AlarmModelVersionT&& value) { SetAlarmModelVersion(std::forward<AlarmModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * with the <a
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
      */
-    inline const Aws::String& GetKeyValue() const{ return m_keyValue; }
+    inline const Aws::String& GetKeyValue() const { return m_keyValue; }
     inline bool KeyValueHasBeenSet() const { return m_keyValueHasBeenSet; }
-    inline void SetKeyValue(const Aws::String& value) { m_keyValueHasBeenSet = true; m_keyValue = value; }
-    inline void SetKeyValue(Aws::String&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::move(value); }
-    inline void SetKeyValue(const char* value) { m_keyValueHasBeenSet = true; m_keyValue.assign(value); }
-    inline AlarmSummary& WithKeyValue(const Aws::String& value) { SetKeyValue(value); return *this;}
-    inline AlarmSummary& WithKeyValue(Aws::String&& value) { SetKeyValue(std::move(value)); return *this;}
-    inline AlarmSummary& WithKeyValue(const char* value) { SetKeyValue(value); return *this;}
+    template<typename KeyValueT = Aws::String>
+    void SetKeyValue(KeyValueT&& value) { m_keyValueHasBeenSet = true; m_keyValue = std::forward<KeyValueT>(value); }
+    template<typename KeyValueT = Aws::String>
+    AlarmSummary& WithKeyValue(KeyValueT&& value) { SetKeyValue(std::forward<KeyValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,36 +97,34 @@ namespace Model
      * change the alarm to the <code>NORMAL</code> state, you must acknowledge the
      * alarm.</p> </li> </ul>
      */
-    inline const AlarmStateName& GetStateName() const{ return m_stateName; }
+    inline AlarmStateName GetStateName() const { return m_stateName; }
     inline bool StateNameHasBeenSet() const { return m_stateNameHasBeenSet; }
-    inline void SetStateName(const AlarmStateName& value) { m_stateNameHasBeenSet = true; m_stateName = value; }
-    inline void SetStateName(AlarmStateName&& value) { m_stateNameHasBeenSet = true; m_stateName = std::move(value); }
-    inline AlarmSummary& WithStateName(const AlarmStateName& value) { SetStateName(value); return *this;}
-    inline AlarmSummary& WithStateName(AlarmStateName&& value) { SetStateName(std::move(value)); return *this;}
+    inline void SetStateName(AlarmStateName value) { m_stateNameHasBeenSet = true; m_stateName = value; }
+    inline AlarmSummary& WithStateName(AlarmStateName value) { SetStateName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the alarm was created, in the Unix epoch format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline AlarmSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline AlarmSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    AlarmSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the alarm was last updated, in the Unix epoch format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline AlarmSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline AlarmSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    AlarmSummary& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -145,13 +137,13 @@ namespace Model
     Aws::String m_keyValue;
     bool m_keyValueHasBeenSet = false;
 
-    AlarmStateName m_stateName;
+    AlarmStateName m_stateName{AlarmStateName::NOT_SET};
     bool m_stateNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
   };
 

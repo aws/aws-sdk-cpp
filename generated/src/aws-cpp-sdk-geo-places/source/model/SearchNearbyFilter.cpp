@@ -18,20 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-SearchNearbyFilter::SearchNearbyFilter() : 
-    m_boundingBoxHasBeenSet(false),
-    m_includeCountriesHasBeenSet(false),
-    m_includeCategoriesHasBeenSet(false),
-    m_excludeCategoriesHasBeenSet(false),
-    m_includeBusinessChainsHasBeenSet(false),
-    m_excludeBusinessChainsHasBeenSet(false),
-    m_includeFoodTypesHasBeenSet(false),
-    m_excludeFoodTypesHasBeenSet(false)
-{
-}
-
 SearchNearbyFilter::SearchNearbyFilter(JsonView jsonValue)
-  : SearchNearbyFilter()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeCountries"))
   {
     Aws::Utils::Array<JsonView> includeCountriesJsonList = jsonValue.GetArray("IncludeCountries");
@@ -57,7 +43,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_includeCountriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeCategories"))
   {
     Aws::Utils::Array<JsonView> includeCategoriesJsonList = jsonValue.GetArray("IncludeCategories");
@@ -67,7 +52,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_includeCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeCategories"))
   {
     Aws::Utils::Array<JsonView> excludeCategoriesJsonList = jsonValue.GetArray("ExcludeCategories");
@@ -77,7 +61,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_excludeCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeBusinessChains"))
   {
     Aws::Utils::Array<JsonView> includeBusinessChainsJsonList = jsonValue.GetArray("IncludeBusinessChains");
@@ -87,7 +70,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_includeBusinessChainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeBusinessChains"))
   {
     Aws::Utils::Array<JsonView> excludeBusinessChainsJsonList = jsonValue.GetArray("ExcludeBusinessChains");
@@ -97,7 +79,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_excludeBusinessChainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeFoodTypes"))
   {
     Aws::Utils::Array<JsonView> includeFoodTypesJsonList = jsonValue.GetArray("IncludeFoodTypes");
@@ -107,7 +88,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_includeFoodTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeFoodTypes"))
   {
     Aws::Utils::Array<JsonView> excludeFoodTypesJsonList = jsonValue.GetArray("ExcludeFoodTypes");
@@ -117,7 +97,6 @@ SearchNearbyFilter& SearchNearbyFilter::operator =(JsonView jsonValue)
     }
     m_excludeFoodTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

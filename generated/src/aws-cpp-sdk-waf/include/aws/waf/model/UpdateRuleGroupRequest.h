@@ -23,7 +23,7 @@ namespace Model
   class UpdateRuleGroupRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API UpdateRuleGroupRequest();
+    AWS_WAF_API UpdateRuleGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
      * <a>ListRuleGroups</a>.</p>
      */
-    inline const Aws::String& GetRuleGroupId() const{ return m_ruleGroupId; }
+    inline const Aws::String& GetRuleGroupId() const { return m_ruleGroupId; }
     inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
-    inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
-    inline void SetRuleGroupId(Aws::String&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::move(value); }
-    inline void SetRuleGroupId(const char* value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId.assign(value); }
-    inline UpdateRuleGroupRequest& WithRuleGroupId(const Aws::String& value) { SetRuleGroupId(value); return *this;}
-    inline UpdateRuleGroupRequest& WithRuleGroupId(Aws::String&& value) { SetRuleGroupId(std::move(value)); return *this;}
-    inline UpdateRuleGroupRequest& WithRuleGroupId(const char* value) { SetRuleGroupId(value); return *this;}
+    template<typename RuleGroupIdT = Aws::String>
+    void SetRuleGroupId(RuleGroupIdT&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::forward<RuleGroupIdT>(value); }
+    template<typename RuleGroupIdT = Aws::String>
+    UpdateRuleGroupRequest& WithRuleGroupId(RuleGroupIdT&& value) { SetRuleGroupId(std::forward<RuleGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,28 +61,26 @@ namespace Model
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
      */
-    inline const Aws::Vector<RuleGroupUpdate>& GetUpdates() const{ return m_updates; }
+    inline const Aws::Vector<RuleGroupUpdate>& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const Aws::Vector<RuleGroupUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(Aws::Vector<RuleGroupUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline UpdateRuleGroupRequest& WithUpdates(const Aws::Vector<RuleGroupUpdate>& value) { SetUpdates(value); return *this;}
-    inline UpdateRuleGroupRequest& WithUpdates(Aws::Vector<RuleGroupUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
-    inline UpdateRuleGroupRequest& AddUpdates(const RuleGroupUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
-    inline UpdateRuleGroupRequest& AddUpdates(RuleGroupUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
+    template<typename UpdatesT = Aws::Vector<RuleGroupUpdate>>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = Aws::Vector<RuleGroupUpdate>>
+    UpdateRuleGroupRequest& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
+    template<typename UpdatesT = RuleGroupUpdate>
+    UpdateRuleGroupRequest& AddUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates.emplace_back(std::forward<UpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline UpdateRuleGroupRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline UpdateRuleGroupRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline UpdateRuleGroupRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    UpdateRuleGroupRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
   private:
 

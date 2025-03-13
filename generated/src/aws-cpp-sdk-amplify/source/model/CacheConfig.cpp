@@ -18,14 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-CacheConfig::CacheConfig() : 
-    m_type(CacheConfigType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CacheConfig::CacheConfig(JsonView jsonValue)
-  : CacheConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CacheConfig& CacheConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = CacheConfigTypeMapper::GetCacheConfigTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

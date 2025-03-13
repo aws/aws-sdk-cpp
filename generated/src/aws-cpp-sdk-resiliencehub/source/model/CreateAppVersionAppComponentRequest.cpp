@@ -12,17 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppVersionAppComponentRequest::CreateAppVersionAppComponentRequest() : 
-    m_additionalInfoHasBeenSet(false),
-    m_appArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppVersionAppComponentRequest::SerializePayload() const
 {
   JsonValue payload;

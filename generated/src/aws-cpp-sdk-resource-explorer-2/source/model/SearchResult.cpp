@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchResult::SearchResult()
-{
-}
-
 SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetObject("Count");
-
+    m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -48,20 +42,20 @@ SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
     }
+    m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewArn"))
   {
     m_viewArn = jsonValue.GetString("ViewArn");
-
+    m_viewArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

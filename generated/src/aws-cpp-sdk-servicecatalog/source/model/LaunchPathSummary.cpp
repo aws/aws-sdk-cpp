@@ -18,16 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-LaunchPathSummary::LaunchPathSummary() : 
-    m_idHasBeenSet(false),
-    m_constraintSummariesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 LaunchPathSummary::LaunchPathSummary(JsonView jsonValue)
-  : LaunchPathSummary()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ LaunchPathSummary& LaunchPathSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConstraintSummaries"))
   {
     Aws::Utils::Array<JsonView> constraintSummariesJsonList = jsonValue.GetArray("ConstraintSummaries");
@@ -50,7 +39,6 @@ LaunchPathSummary& LaunchPathSummary::operator =(JsonView jsonValue)
     }
     m_constraintSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -60,14 +48,11 @@ LaunchPathSummary& LaunchPathSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpgradeElasticsearchDomainResult::UpgradeElasticsearchDomainResult() : 
-    m_performCheckOnly(false)
-{
-}
-
 UpgradeElasticsearchDomainResult::UpgradeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpgradeElasticsearchDomainResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpgradeElasticsearchDomainResult& UpgradeElasticsearchDomainResult::operator =(c
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
+    m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetVersion"))
   {
     m_targetVersion = jsonValue.GetString("TargetVersion");
-
+    m_targetVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PerformCheckOnly"))
   {
     m_performCheckOnly = jsonValue.GetBool("PerformCheckOnly");
-
+    m_performCheckOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeProgressDetails"))
   {
     m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
-
+    m_changeProgressDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

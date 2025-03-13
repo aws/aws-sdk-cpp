@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-Database::Database() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Database::Database(JsonView jsonValue)
-  : Database()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Database& Database::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -56,7 +44,6 @@ Database& Database::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaImageAttribute::FpgaImageAttribute() : 
-    m_fpgaImageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_loadPermissionsHasBeenSet(false),
-    m_productCodesHasBeenSet(false)
-{
-}
-
 FpgaImageAttribute::FpgaImageAttribute(const XmlNode& xmlNode)
-  : FpgaImageAttribute()
 {
   *this = xmlNode;
 }
@@ -46,42 +36,47 @@ FpgaImageAttribute& FpgaImageAttribute::operator =(const XmlNode& xmlNode)
     {
       m_fpgaImageId = Aws::Utils::Xml::DecodeEscapedXmlText(fpgaImageIdNode.GetText());
       m_fpgaImageIdHasBeenSet = true;
+       m_fpgaImageIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode loadPermissionsNode = resultNode.FirstChild("loadPermissions");
     if(!loadPermissionsNode.IsNull())
     {
       XmlNode loadPermissionsMember = loadPermissionsNode.FirstChild("item");
+      m_loadPermissionsHasBeenSet = !loadPermissionsMember.IsNull();
       while(!loadPermissionsMember.IsNull())
       {
         m_loadPermissions.push_back(loadPermissionsMember);
         loadPermissionsMember = loadPermissionsMember.NextNode("item");
       }
 
-      m_loadPermissionsHasBeenSet = true;
+       m_loadPermissionsHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
         productCodesMember = productCodesMember.NextNode("item");
       }
 
-      m_productCodesHasBeenSet = true;
+       m_productCodesHasBeenSet = true;
     }
   }
 

@@ -15,19 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeEndpointWithResponseStreamRequest::InvokeEndpointWithResponseStreamRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_acceptHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_targetVariantHasBeenSet(false),
-    m_targetContainerHostnameHasBeenSet(false),
-    m_inferenceIdHasBeenSet(false),
-    m_inferenceComponentNameHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection InvokeEndpointWithResponseStreamRequest::GetRequestSpecificHeaders() const

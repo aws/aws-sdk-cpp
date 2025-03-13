@@ -18,20 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ContentBlock::ContentBlock() : 
-    m_textHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_toolUseHasBeenSet(false),
-    m_toolResultHasBeenSet(false),
-    m_guardContentHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false)
-{
-}
-
 ContentBlock::ContentBlock(JsonView jsonValue)
-  : ContentBlock()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("video"))
   {
     m_video = jsonValue.GetObject("video");
-
     m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolUse"))
   {
     m_toolUse = jsonValue.GetObject("toolUse");
-
     m_toolUseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolResult"))
   {
     m_toolResult = jsonValue.GetObject("toolResult");
-
     m_toolResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardContent"))
   {
     m_guardContent = jsonValue.GetObject("guardContent");
-
     m_guardContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasoningContent"))
   {
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
-
     m_reasoningContentHasBeenSet = true;
   }
-
   return *this;
 }
 

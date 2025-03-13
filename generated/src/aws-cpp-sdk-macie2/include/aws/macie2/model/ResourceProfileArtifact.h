@@ -35,7 +35,7 @@ namespace Model
   class ResourceProfileArtifact
   {
   public:
-    AWS_MACIE2_API ResourceProfileArtifact();
+    AWS_MACIE2_API ResourceProfileArtifact() = default;
     AWS_MACIE2_API ResourceProfileArtifact(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ResourceProfileArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the object.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ResourceProfileArtifact& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ResourceProfileArtifact& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ResourceProfileArtifact& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ResourceProfileArtifact& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,21 +62,19 @@ namespace Model
      * format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object. For
      * example, the object is a malformed file.</p></li></ul>
      */
-    inline const Aws::String& GetClassificationResultStatus() const{ return m_classificationResultStatus; }
+    inline const Aws::String& GetClassificationResultStatus() const { return m_classificationResultStatus; }
     inline bool ClassificationResultStatusHasBeenSet() const { return m_classificationResultStatusHasBeenSet; }
-    inline void SetClassificationResultStatus(const Aws::String& value) { m_classificationResultStatusHasBeenSet = true; m_classificationResultStatus = value; }
-    inline void SetClassificationResultStatus(Aws::String&& value) { m_classificationResultStatusHasBeenSet = true; m_classificationResultStatus = std::move(value); }
-    inline void SetClassificationResultStatus(const char* value) { m_classificationResultStatusHasBeenSet = true; m_classificationResultStatus.assign(value); }
-    inline ResourceProfileArtifact& WithClassificationResultStatus(const Aws::String& value) { SetClassificationResultStatus(value); return *this;}
-    inline ResourceProfileArtifact& WithClassificationResultStatus(Aws::String&& value) { SetClassificationResultStatus(std::move(value)); return *this;}
-    inline ResourceProfileArtifact& WithClassificationResultStatus(const char* value) { SetClassificationResultStatus(value); return *this;}
+    template<typename ClassificationResultStatusT = Aws::String>
+    void SetClassificationResultStatus(ClassificationResultStatusT&& value) { m_classificationResultStatusHasBeenSet = true; m_classificationResultStatus = std::forward<ClassificationResultStatusT>(value); }
+    template<typename ClassificationResultStatusT = Aws::String>
+    ResourceProfileArtifact& WithClassificationResultStatus(ClassificationResultStatusT&& value) { SetClassificationResultStatus(std::forward<ClassificationResultStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
      */
-    inline bool GetSensitive() const{ return m_sensitive; }
+    inline bool GetSensitive() const { return m_sensitive; }
     inline bool SensitiveHasBeenSet() const { return m_sensitiveHasBeenSet; }
     inline void SetSensitive(bool value) { m_sensitiveHasBeenSet = true; m_sensitive = value; }
     inline ResourceProfileArtifact& WithSensitive(bool value) { SetSensitive(value); return *this;}
@@ -91,7 +87,7 @@ namespace Model
     Aws::String m_classificationResultStatus;
     bool m_classificationResultStatusHasBeenSet = false;
 
-    bool m_sensitive;
+    bool m_sensitive{false};
     bool m_sensitiveHasBeenSet = false;
   };
 

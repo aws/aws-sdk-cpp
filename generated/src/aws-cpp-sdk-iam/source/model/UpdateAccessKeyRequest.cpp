@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateAccessKeyRequest::UpdateAccessKeyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccessKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

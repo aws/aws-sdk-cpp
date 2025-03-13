@@ -32,7 +32,7 @@ namespace Model
   class AdapterVersionDatasetConfig
   {
   public:
-    AWS_TEXTRACT_API AdapterVersionDatasetConfig();
+    AWS_TEXTRACT_API AdapterVersionDatasetConfig() = default;
     AWS_TEXTRACT_API AdapterVersionDatasetConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API AdapterVersionDatasetConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const S3Object& GetManifestS3Object() const{ return m_manifestS3Object; }
+    inline const S3Object& GetManifestS3Object() const { return m_manifestS3Object; }
     inline bool ManifestS3ObjectHasBeenSet() const { return m_manifestS3ObjectHasBeenSet; }
-    inline void SetManifestS3Object(const S3Object& value) { m_manifestS3ObjectHasBeenSet = true; m_manifestS3Object = value; }
-    inline void SetManifestS3Object(S3Object&& value) { m_manifestS3ObjectHasBeenSet = true; m_manifestS3Object = std::move(value); }
-    inline AdapterVersionDatasetConfig& WithManifestS3Object(const S3Object& value) { SetManifestS3Object(value); return *this;}
-    inline AdapterVersionDatasetConfig& WithManifestS3Object(S3Object&& value) { SetManifestS3Object(std::move(value)); return *this;}
+    template<typename ManifestS3ObjectT = S3Object>
+    void SetManifestS3Object(ManifestS3ObjectT&& value) { m_manifestS3ObjectHasBeenSet = true; m_manifestS3Object = std::forward<ManifestS3ObjectT>(value); }
+    template<typename ManifestS3ObjectT = S3Object>
+    AdapterVersionDatasetConfig& WithManifestS3Object(ManifestS3ObjectT&& value) { SetManifestS3Object(std::forward<ManifestS3ObjectT>(value)); return *this;}
     ///@}
   private:
 

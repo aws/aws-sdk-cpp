@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchAssociatedTranscriptsResult::SearchAssociatedTranscriptsResult() : 
-    m_nextIndex(0),
-    m_totalResults(0)
-{
-}
-
 SearchAssociatedTranscriptsResult::SearchAssociatedTranscriptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchAssociatedTranscriptsResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ SearchAssociatedTranscriptsResult& SearchAssociatedTranscriptsResult::operator =
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
+    m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
+    m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botRecommendationId"))
   {
     m_botRecommendationId = jsonValue.GetString("botRecommendationId");
-
+    m_botRecommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextIndex"))
   {
     m_nextIndex = jsonValue.GetInteger("nextIndex");
-
+    m_nextIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedTranscripts"))
   {
     Aws::Utils::Array<JsonView> associatedTranscriptsJsonList = jsonValue.GetArray("associatedTranscripts");
@@ -69,20 +57,20 @@ SearchAssociatedTranscriptsResult& SearchAssociatedTranscriptsResult::operator =
     {
       m_associatedTranscripts.push_back(associatedTranscriptsJsonList[associatedTranscriptsIndex].AsObject());
     }
+    m_associatedTranscriptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResults"))
   {
     m_totalResults = jsonValue.GetInteger("totalResults");
-
+    m_totalResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

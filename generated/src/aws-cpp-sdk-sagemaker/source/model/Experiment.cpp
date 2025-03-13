@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Experiment::Experiment() : 
-    m_experimentNameHasBeenSet(false),
-    m_experimentArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Experiment::Experiment(JsonView jsonValue)
-  : Experiment()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ Experiment& Experiment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExperimentName"))
   {
     m_experimentName = jsonValue.GetString("ExperimentName");
-
     m_experimentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExperimentArn"))
   {
     m_experimentArn = jsonValue.GetString("ExperimentArn");
-
     m_experimentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -112,7 +79,6 @@ Experiment& Experiment::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

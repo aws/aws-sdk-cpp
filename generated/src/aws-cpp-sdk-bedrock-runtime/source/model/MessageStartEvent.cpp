@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-MessageStartEvent::MessageStartEvent() : 
-    m_role(ConversationRole::NOT_SET),
-    m_roleHasBeenSet(false)
-{
-}
-
 MessageStartEvent::MessageStartEvent(JsonView jsonValue)
-  : MessageStartEvent()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MessageStartEvent& MessageStartEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("role"))
   {
     m_role = ConversationRoleMapper::GetConversationRoleForName(jsonValue.GetString("role"));
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

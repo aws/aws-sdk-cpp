@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-StringListAttributeBoostingConfiguration::StringListAttributeBoostingConfiguration() : 
-    m_boostingLevel(DocumentAttributeBoostingLevel::NOT_SET),
-    m_boostingLevelHasBeenSet(false)
-{
-}
-
 StringListAttributeBoostingConfiguration::StringListAttributeBoostingConfiguration(JsonView jsonValue)
-  : StringListAttributeBoostingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StringListAttributeBoostingConfiguration& StringListAttributeBoostingConfigurati
   if(jsonValue.ValueExists("boostingLevel"))
   {
     m_boostingLevel = DocumentAttributeBoostingLevelMapper::GetDocumentAttributeBoostingLevelForName(jsonValue.GetString("boostingLevel"));
-
     m_boostingLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

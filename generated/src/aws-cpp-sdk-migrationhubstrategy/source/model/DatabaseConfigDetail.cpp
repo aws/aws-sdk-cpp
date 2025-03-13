@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-DatabaseConfigDetail::DatabaseConfigDetail() : 
-    m_secretNameHasBeenSet(false)
-{
-}
-
 DatabaseConfigDetail::DatabaseConfigDetail(JsonView jsonValue)
-  : DatabaseConfigDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatabaseConfigDetail& DatabaseConfigDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("secretName"))
   {
     m_secretName = jsonValue.GetString("secretName");
-
     m_secretNameHasBeenSet = true;
   }
-
   return *this;
 }
 

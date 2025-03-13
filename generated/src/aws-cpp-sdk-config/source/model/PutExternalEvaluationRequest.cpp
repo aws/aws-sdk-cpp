@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutExternalEvaluationRequest::PutExternalEvaluationRequest() : 
-    m_configRuleNameHasBeenSet(false),
-    m_externalEvaluationHasBeenSet(false)
-{
-}
-
 Aws::String PutExternalEvaluationRequest::SerializePayload() const
 {
   JsonValue payload;

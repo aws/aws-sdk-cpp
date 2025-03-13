@@ -33,7 +33,7 @@ namespace Model
   class CoreNetworkPolicyException
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkPolicyException();
+    AWS_NETWORKMANAGER_API CoreNetworkPolicyException() = default;
     AWS_NETWORKMANAGER_API CoreNetworkPolicyException(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkPolicyException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline CoreNetworkPolicyException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CoreNetworkPolicyException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CoreNetworkPolicyException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CoreNetworkPolicyException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes a core network policy exception.</p>
      */
-    inline const Aws::Vector<CoreNetworkPolicyError>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<CoreNetworkPolicyError>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<CoreNetworkPolicyError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<CoreNetworkPolicyError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline CoreNetworkPolicyException& WithErrors(const Aws::Vector<CoreNetworkPolicyError>& value) { SetErrors(value); return *this;}
-    inline CoreNetworkPolicyException& WithErrors(Aws::Vector<CoreNetworkPolicyError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline CoreNetworkPolicyException& AddErrors(const CoreNetworkPolicyError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline CoreNetworkPolicyException& AddErrors(CoreNetworkPolicyError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+    template<typename ErrorsT = Aws::Vector<CoreNetworkPolicyError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<CoreNetworkPolicyError>>
+    CoreNetworkPolicyException& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = CoreNetworkPolicyError>
+    CoreNetworkPolicyException& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 

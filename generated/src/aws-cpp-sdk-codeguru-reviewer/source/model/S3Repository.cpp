@@ -18,14 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-S3Repository::S3Repository() : 
-    m_nameHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 S3Repository::S3Repository(JsonView jsonValue)
-  : S3Repository()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Repository& S3Repository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

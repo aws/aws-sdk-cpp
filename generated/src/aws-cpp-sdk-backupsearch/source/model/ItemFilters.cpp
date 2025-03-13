@@ -18,14 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-ItemFilters::ItemFilters() : 
-    m_s3ItemFiltersHasBeenSet(false),
-    m_eBSItemFiltersHasBeenSet(false)
-{
-}
-
 ItemFilters::ItemFilters(JsonView jsonValue)
-  : ItemFilters()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ItemFilters& ItemFilters::operator =(JsonView jsonValue)
     }
     m_s3ItemFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EBSItemFilters"))
   {
     Aws::Utils::Array<JsonView> eBSItemFiltersJsonList = jsonValue.GetArray("EBSItemFilters");
@@ -51,7 +43,6 @@ ItemFilters& ItemFilters::operator =(JsonView jsonValue)
     }
     m_eBSItemFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

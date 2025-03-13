@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpnConnectionVgwTelemetryDetails::AwsEc2VpnConnectionVgwTelemetryDetails() : 
-    m_acceptedRouteCount(0),
-    m_acceptedRouteCountHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_lastStatusChangeHasBeenSet(false),
-    m_outsideIpAddressHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 AwsEc2VpnConnectionVgwTelemetryDetails::AwsEc2VpnConnectionVgwTelemetryDetails(JsonView jsonValue)
-  : AwsEc2VpnConnectionVgwTelemetryDetails()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ AwsEc2VpnConnectionVgwTelemetryDetails& AwsEc2VpnConnectionVgwTelemetryDetails::
   if(jsonValue.ValueExists("AcceptedRouteCount"))
   {
     m_acceptedRouteCount = jsonValue.GetInteger("AcceptedRouteCount");
-
     m_acceptedRouteCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStatusChange"))
   {
     m_lastStatusChange = jsonValue.GetString("LastStatusChange");
-
     m_lastStatusChangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutsideIpAddress"))
   {
     m_outsideIpAddress = jsonValue.GetString("OutsideIpAddress");
-
     m_outsideIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

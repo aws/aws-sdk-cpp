@@ -22,7 +22,7 @@ namespace Model
   class BatchUpdateMemberEc2DeepInspectionStatusRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API BatchUpdateMemberEc2DeepInspectionStatusRequest();
+    AWS_INSPECTOR2_API BatchUpdateMemberEc2DeepInspectionStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p>The unique identifiers for the Amazon Web Services accounts to change Amazon
      * Inspector deep inspection status for.</p>
      */
-    inline const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<MemberAccountEc2DeepInspectionStatus>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline BatchUpdateMemberEc2DeepInspectionStatusRequest& WithAccountIds(const Aws::Vector<MemberAccountEc2DeepInspectionStatus>& value) { SetAccountIds(value); return *this;}
-    inline BatchUpdateMemberEc2DeepInspectionStatusRequest& WithAccountIds(Aws::Vector<MemberAccountEc2DeepInspectionStatus>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline BatchUpdateMemberEc2DeepInspectionStatusRequest& AddAccountIds(const MemberAccountEc2DeepInspectionStatus& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline BatchUpdateMemberEc2DeepInspectionStatusRequest& AddAccountIds(MemberAccountEc2DeepInspectionStatus&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
+    template<typename AccountIdsT = Aws::Vector<MemberAccountEc2DeepInspectionStatus>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<MemberAccountEc2DeepInspectionStatus>>
+    BatchUpdateMemberEc2DeepInspectionStatusRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = MemberAccountEc2DeepInspectionStatus>
+    BatchUpdateMemberEc2DeepInspectionStatusRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
   private:
 

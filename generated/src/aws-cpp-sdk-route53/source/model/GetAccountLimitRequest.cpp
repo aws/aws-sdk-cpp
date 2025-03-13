@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetAccountLimitRequest::GetAccountLimitRequest() : 
-    m_type(AccountLimitType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
 
 Aws::String GetAccountLimitRequest::SerializePayload() const
 {

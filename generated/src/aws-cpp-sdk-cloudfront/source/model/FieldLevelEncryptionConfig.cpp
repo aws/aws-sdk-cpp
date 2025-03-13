@@ -20,16 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FieldLevelEncryptionConfig::FieldLevelEncryptionConfig() : 
-    m_callerReferenceHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_queryArgProfileConfigHasBeenSet(false),
-    m_contentTypeProfileConfigHasBeenSet(false)
-{
-}
-
 FieldLevelEncryptionConfig::FieldLevelEncryptionConfig(const XmlNode& xmlNode)
-  : FieldLevelEncryptionConfig()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ FieldLevelEncryptionConfig& FieldLevelEncryptionConfig::operator =(const XmlNode
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode queryArgProfileConfigNode = resultNode.FirstChild("QueryArgProfileConfig");
     if(!queryArgProfileConfigNode.IsNull())
     {
       m_queryArgProfileConfig = queryArgProfileConfigNode;
       m_queryArgProfileConfigHasBeenSet = true;
+       m_queryArgProfileConfigHasBeenSet = true;
     }
     XmlNode contentTypeProfileConfigNode = resultNode.FirstChild("ContentTypeProfileConfig");
     if(!contentTypeProfileConfigNode.IsNull())
     {
       m_contentTypeProfileConfig = contentTypeProfileConfigNode;
       m_contentTypeProfileConfigHasBeenSet = true;
+       m_contentTypeProfileConfigHasBeenSet = true;
     }
   }
 

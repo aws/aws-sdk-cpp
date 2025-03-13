@@ -32,7 +32,7 @@ namespace Model
   class KafkaClusterDescription
   {
   public:
-    AWS_KAFKACONNECT_API KafkaClusterDescription();
+    AWS_KAFKACONNECT_API KafkaClusterDescription() = default;
     AWS_KAFKACONNECT_API KafkaClusterDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API KafkaClusterDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The Apache Kafka cluster to which the connector is connected.</p>
      */
-    inline const ApacheKafkaClusterDescription& GetApacheKafkaCluster() const{ return m_apacheKafkaCluster; }
+    inline const ApacheKafkaClusterDescription& GetApacheKafkaCluster() const { return m_apacheKafkaCluster; }
     inline bool ApacheKafkaClusterHasBeenSet() const { return m_apacheKafkaClusterHasBeenSet; }
-    inline void SetApacheKafkaCluster(const ApacheKafkaClusterDescription& value) { m_apacheKafkaClusterHasBeenSet = true; m_apacheKafkaCluster = value; }
-    inline void SetApacheKafkaCluster(ApacheKafkaClusterDescription&& value) { m_apacheKafkaClusterHasBeenSet = true; m_apacheKafkaCluster = std::move(value); }
-    inline KafkaClusterDescription& WithApacheKafkaCluster(const ApacheKafkaClusterDescription& value) { SetApacheKafkaCluster(value); return *this;}
-    inline KafkaClusterDescription& WithApacheKafkaCluster(ApacheKafkaClusterDescription&& value) { SetApacheKafkaCluster(std::move(value)); return *this;}
+    template<typename ApacheKafkaClusterT = ApacheKafkaClusterDescription>
+    void SetApacheKafkaCluster(ApacheKafkaClusterT&& value) { m_apacheKafkaClusterHasBeenSet = true; m_apacheKafkaCluster = std::forward<ApacheKafkaClusterT>(value); }
+    template<typename ApacheKafkaClusterT = ApacheKafkaClusterDescription>
+    KafkaClusterDescription& WithApacheKafkaCluster(ApacheKafkaClusterT&& value) { SetApacheKafkaCluster(std::forward<ApacheKafkaClusterT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectInvitationRequest::RejectInvitationRequest() : 
-    m_graphArnHasBeenSet(false)
-{
-}
-
 Aws::String RejectInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

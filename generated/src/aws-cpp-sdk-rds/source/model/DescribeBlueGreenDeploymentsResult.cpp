@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBlueGreenDeploymentsResult::DescribeBlueGreenDeploymentsResult()
-{
-}
-
 DescribeBlueGreenDeploymentsResult::DescribeBlueGreenDeploymentsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeBlueGreenDeploymentsResult& DescribeBlueGreenDeploymentsResult::operator
     if(!blueGreenDeploymentsNode.IsNull())
     {
       XmlNode blueGreenDeploymentsMember = blueGreenDeploymentsNode.FirstChild("member");
+      m_blueGreenDeploymentsHasBeenSet = !blueGreenDeploymentsMember.IsNull();
       while(!blueGreenDeploymentsMember.IsNull())
       {
         m_blueGreenDeployments.push_back(blueGreenDeploymentsMember);
@@ -53,12 +50,14 @@ DescribeBlueGreenDeploymentsResult& DescribeBlueGreenDeploymentsResult::operator
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeBlueGreenDeploymentsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

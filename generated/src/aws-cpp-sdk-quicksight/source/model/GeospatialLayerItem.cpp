@@ -18,23 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialLayerItem::GeospatialLayerItem() : 
-    m_layerIdHasBeenSet(false),
-    m_layerType(GeospatialLayerType::NOT_SET),
-    m_layerTypeHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_layerDefinitionHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_joinDefinitionHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 GeospatialLayerItem::GeospatialLayerItem(JsonView jsonValue)
-  : GeospatialLayerItem()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ GeospatialLayerItem& GeospatialLayerItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LayerId"))
   {
     m_layerId = jsonValue.GetString("LayerId");
-
     m_layerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerType"))
   {
     m_layerType = GeospatialLayerTypeMapper::GetGeospatialLayerTypeForName(jsonValue.GetString("LayerType"));
-
     m_layerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerDefinition"))
   {
     m_layerDefinition = jsonValue.GetObject("LayerDefinition");
-
     m_layerDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinDefinition"))
   {
     m_joinDefinition = jsonValue.GetObject("JoinDefinition");
-
     m_joinDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -106,7 +74,6 @@ GeospatialLayerItem& GeospatialLayerItem::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

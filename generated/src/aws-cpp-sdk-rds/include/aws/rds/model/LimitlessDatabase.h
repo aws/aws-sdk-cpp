@@ -31,7 +31,7 @@ namespace Model
   class LimitlessDatabase
   {
   public:
-    AWS_RDS_API LimitlessDatabase();
+    AWS_RDS_API LimitlessDatabase() = default;
     AWS_RDS_API LimitlessDatabase(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API LimitlessDatabase& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The status of Aurora Limitless Database.</p>
      */
-    inline const LimitlessDatabaseStatus& GetStatus() const{ return m_status; }
+    inline LimitlessDatabaseStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LimitlessDatabaseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LimitlessDatabaseStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LimitlessDatabase& WithStatus(const LimitlessDatabaseStatus& value) { SetStatus(value); return *this;}
-    inline LimitlessDatabase& WithStatus(LimitlessDatabaseStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LimitlessDatabaseStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LimitlessDatabase& WithStatus(LimitlessDatabaseStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,17 +54,17 @@ namespace Model
      * <p>The minimum required capacity for Aurora Limitless Database in Aurora
      * capacity units (ACUs).</p>
      */
-    inline double GetMinRequiredACU() const{ return m_minRequiredACU; }
+    inline double GetMinRequiredACU() const { return m_minRequiredACU; }
     inline bool MinRequiredACUHasBeenSet() const { return m_minRequiredACUHasBeenSet; }
     inline void SetMinRequiredACU(double value) { m_minRequiredACUHasBeenSet = true; m_minRequiredACU = value; }
     inline LimitlessDatabase& WithMinRequiredACU(double value) { SetMinRequiredACU(value); return *this;}
     ///@}
   private:
 
-    LimitlessDatabaseStatus m_status;
+    LimitlessDatabaseStatus m_status{LimitlessDatabaseStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    double m_minRequiredACU;
+    double m_minRequiredACU{0.0};
     bool m_minRequiredACUHasBeenSet = false;
   };
 

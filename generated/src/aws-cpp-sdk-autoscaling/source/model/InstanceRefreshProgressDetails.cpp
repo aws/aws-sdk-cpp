@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceRefreshProgressDetails::InstanceRefreshProgressDetails() : 
-    m_livePoolProgressHasBeenSet(false),
-    m_warmPoolProgressHasBeenSet(false)
-{
-}
-
 InstanceRefreshProgressDetails::InstanceRefreshProgressDetails(const XmlNode& xmlNode)
-  : InstanceRefreshProgressDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InstanceRefreshProgressDetails& InstanceRefreshProgressDetails::operator =(const
     {
       m_livePoolProgress = livePoolProgressNode;
       m_livePoolProgressHasBeenSet = true;
+       m_livePoolProgressHasBeenSet = true;
     }
     XmlNode warmPoolProgressNode = resultNode.FirstChild("WarmPoolProgress");
     if(!warmPoolProgressNode.IsNull())
     {
       m_warmPoolProgress = warmPoolProgressNode;
       m_warmPoolProgressHasBeenSet = true;
+       m_warmPoolProgressHasBeenSet = true;
     }
   }
 

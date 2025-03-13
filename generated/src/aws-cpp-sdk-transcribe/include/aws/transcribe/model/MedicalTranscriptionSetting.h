@@ -34,7 +34,7 @@ namespace Model
   class MedicalTranscriptionSetting
   {
   public:
-    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionSetting();
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionSetting() = default;
     AWS_TRANSCRIBESERVICE_API MedicalTranscriptionSetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API MedicalTranscriptionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
-    inline bool GetShowSpeakerLabels() const{ return m_showSpeakerLabels; }
+    inline bool GetShowSpeakerLabels() const { return m_showSpeakerLabels; }
     inline bool ShowSpeakerLabelsHasBeenSet() const { return m_showSpeakerLabelsHasBeenSet; }
     inline void SetShowSpeakerLabels(bool value) { m_showSpeakerLabelsHasBeenSet = true; m_showSpeakerLabels = value; }
     inline MedicalTranscriptionSetting& WithShowSpeakerLabels(bool value) { SetShowSpeakerLabels(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * the <code>MaxSpeakerLabels</code> field, you must set the
      * <code>ShowSpeakerLabels</code> field to true.</p>
      */
-    inline int GetMaxSpeakerLabels() const{ return m_maxSpeakerLabels; }
+    inline int GetMaxSpeakerLabels() const { return m_maxSpeakerLabels; }
     inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
     inline void SetMaxSpeakerLabels(int value) { m_maxSpeakerLabelsHasBeenSet = true; m_maxSpeakerLabels = value; }
     inline MedicalTranscriptionSetting& WithMaxSpeakerLabels(int value) { SetMaxSpeakerLabels(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
-    inline bool GetChannelIdentification() const{ return m_channelIdentification; }
+    inline bool GetChannelIdentification() const { return m_channelIdentification; }
     inline bool ChannelIdentificationHasBeenSet() const { return m_channelIdentificationHasBeenSet; }
     inline void SetChannelIdentification(bool value) { m_channelIdentificationHasBeenSet = true; m_channelIdentification = value; }
     inline MedicalTranscriptionSetting& WithChannelIdentification(bool value) { SetChannelIdentification(value); return *this;}
@@ -98,7 +98,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
      * transcriptions</a>.</p>
      */
-    inline bool GetShowAlternatives() const{ return m_showAlternatives; }
+    inline bool GetShowAlternatives() const { return m_showAlternatives; }
     inline bool ShowAlternativesHasBeenSet() const { return m_showAlternativesHasBeenSet; }
     inline void SetShowAlternatives(bool value) { m_showAlternativesHasBeenSet = true; m_showAlternatives = value; }
     inline MedicalTranscriptionSetting& WithShowAlternatives(bool value) { SetShowAlternatives(value); return *this;}
@@ -116,7 +116,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
      * transcriptions</a>.</p>
      */
-    inline int GetMaxAlternatives() const{ return m_maxAlternatives; }
+    inline int GetMaxAlternatives() const { return m_maxAlternatives; }
     inline bool MaxAlternativesHasBeenSet() const { return m_maxAlternativesHasBeenSet; }
     inline void SetMaxAlternatives(int value) { m_maxAlternativesHasBeenSet = true; m_maxAlternatives = value; }
     inline MedicalTranscriptionSetting& WithMaxAlternatives(int value) { SetMaxAlternatives(value); return *this;}
@@ -132,30 +132,28 @@ namespace Model
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline MedicalTranscriptionSetting& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline MedicalTranscriptionSetting& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline MedicalTranscriptionSetting& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    MedicalTranscriptionSetting& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_showSpeakerLabels;
+    bool m_showSpeakerLabels{false};
     bool m_showSpeakerLabelsHasBeenSet = false;
 
-    int m_maxSpeakerLabels;
+    int m_maxSpeakerLabels{0};
     bool m_maxSpeakerLabelsHasBeenSet = false;
 
-    bool m_channelIdentification;
+    bool m_channelIdentification{false};
     bool m_channelIdentificationHasBeenSet = false;
 
-    bool m_showAlternatives;
+    bool m_showAlternatives{false};
     bool m_showAlternativesHasBeenSet = false;
 
-    int m_maxAlternatives;
+    int m_maxAlternatives{0};
     bool m_maxAlternativesHasBeenSet = false;
 
     Aws::String m_vocabularyName;

@@ -28,7 +28,7 @@ namespace Model
   class UpdateResolverDnssecConfigResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateResolverDnssecConfigResult();
+    AWS_ROUTE53RESOLVER_API UpdateResolverDnssecConfigResult() = default;
     AWS_ROUTE53RESOLVER_API UpdateResolverDnssecConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API UpdateResolverDnssecConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A complex type that contains settings for the specified DNSSEC
      * configuration.</p>
      */
-    inline const ResolverDnssecConfig& GetResolverDNSSECConfig() const{ return m_resolverDNSSECConfig; }
-    inline void SetResolverDNSSECConfig(const ResolverDnssecConfig& value) { m_resolverDNSSECConfig = value; }
-    inline void SetResolverDNSSECConfig(ResolverDnssecConfig&& value) { m_resolverDNSSECConfig = std::move(value); }
-    inline UpdateResolverDnssecConfigResult& WithResolverDNSSECConfig(const ResolverDnssecConfig& value) { SetResolverDNSSECConfig(value); return *this;}
-    inline UpdateResolverDnssecConfigResult& WithResolverDNSSECConfig(ResolverDnssecConfig&& value) { SetResolverDNSSECConfig(std::move(value)); return *this;}
+    inline const ResolverDnssecConfig& GetResolverDNSSECConfig() const { return m_resolverDNSSECConfig; }
+    template<typename ResolverDNSSECConfigT = ResolverDnssecConfig>
+    void SetResolverDNSSECConfig(ResolverDNSSECConfigT&& value) { m_resolverDNSSECConfigHasBeenSet = true; m_resolverDNSSECConfig = std::forward<ResolverDNSSECConfigT>(value); }
+    template<typename ResolverDNSSECConfigT = ResolverDnssecConfig>
+    UpdateResolverDnssecConfigResult& WithResolverDNSSECConfig(ResolverDNSSECConfigT&& value) { SetResolverDNSSECConfig(std::forward<ResolverDNSSECConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateResolverDnssecConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateResolverDnssecConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateResolverDnssecConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateResolverDnssecConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResolverDnssecConfig m_resolverDNSSECConfig;
+    bool m_resolverDNSSECConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Panorama
 namespace Model
 {
 
-DeviceJobConfig::DeviceJobConfig() : 
-    m_oTAJobConfigHasBeenSet(false)
-{
-}
-
 DeviceJobConfig::DeviceJobConfig(JsonView jsonValue)
-  : DeviceJobConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeviceJobConfig& DeviceJobConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OTAJobConfig"))
   {
     m_oTAJobConfig = jsonValue.GetObject("OTAJobConfig");
-
     m_oTAJobConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

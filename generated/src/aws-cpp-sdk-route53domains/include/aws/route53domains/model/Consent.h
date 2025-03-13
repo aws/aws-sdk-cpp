@@ -32,7 +32,7 @@ namespace Model
   class Consent
   {
   public:
-    AWS_ROUTE53DOMAINS_API Consent();
+    AWS_ROUTE53DOMAINS_API Consent() = default;
     AWS_ROUTE53DOMAINS_API Consent(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Consent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p> Maximum amount the customer agreed to accept. </p>
      */
-    inline double GetMaxPrice() const{ return m_maxPrice; }
+    inline double GetMaxPrice() const { return m_maxPrice; }
     inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
     inline void SetMaxPrice(double value) { m_maxPriceHasBeenSet = true; m_maxPrice = value; }
     inline Consent& WithMaxPrice(double value) { SetMaxPrice(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p> Currency for the <code>MaxPrice</code>. </p>
      */
-    inline const Aws::String& GetCurrency() const{ return m_currency; }
+    inline const Aws::String& GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Aws::String& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Aws::String&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline void SetCurrency(const char* value) { m_currencyHasBeenSet = true; m_currency.assign(value); }
-    inline Consent& WithCurrency(const Aws::String& value) { SetCurrency(value); return *this;}
-    inline Consent& WithCurrency(Aws::String&& value) { SetCurrency(std::move(value)); return *this;}
-    inline Consent& WithCurrency(const char* value) { SetCurrency(value); return *this;}
+    template<typename CurrencyT = Aws::String>
+    void SetCurrency(CurrencyT&& value) { m_currencyHasBeenSet = true; m_currency = std::forward<CurrencyT>(value); }
+    template<typename CurrencyT = Aws::String>
+    Consent& WithCurrency(CurrencyT&& value) { SetCurrency(std::forward<CurrencyT>(value)); return *this;}
     ///@}
   private:
 
-    double m_maxPrice;
+    double m_maxPrice{0.0};
     bool m_maxPriceHasBeenSet = false;
 
     Aws::String m_currency;

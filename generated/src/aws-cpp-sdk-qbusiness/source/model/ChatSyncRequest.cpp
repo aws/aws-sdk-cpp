@@ -15,25 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ChatSyncRequest::ChatSyncRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_userMessageHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_actionExecutionHasBeenSet(false),
-    m_authChallengeResponseHasBeenSet(false),
-    m_conversationIdHasBeenSet(false),
-    m_parentMessageIdHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_chatMode(ChatMode::NOT_SET),
-    m_chatModeHasBeenSet(false),
-    m_chatModeConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String ChatSyncRequest::SerializePayload() const
 {
   JsonValue payload;

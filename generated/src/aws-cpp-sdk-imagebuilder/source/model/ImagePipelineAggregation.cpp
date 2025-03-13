@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImagePipelineAggregation::ImagePipelineAggregation() : 
-    m_imagePipelineArnHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 ImagePipelineAggregation::ImagePipelineAggregation(JsonView jsonValue)
-  : ImagePipelineAggregation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImagePipelineAggregation& ImagePipelineAggregation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("imagePipelineArn"))
   {
     m_imagePipelineArn = jsonValue.GetString("imagePipelineArn");
-
     m_imagePipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

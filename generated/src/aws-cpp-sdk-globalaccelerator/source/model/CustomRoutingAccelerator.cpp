@@ -18,24 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CustomRoutingAccelerator::CustomRoutingAccelerator() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ipSetsHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_status(CustomRoutingAcceleratorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 CustomRoutingAccelerator::CustomRoutingAccelerator(JsonView jsonValue)
-  : CustomRoutingAccelerator()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ CustomRoutingAccelerator& CustomRoutingAccelerator::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AcceleratorArn"))
   {
     m_acceleratorArn = jsonValue.GetString("AcceleratorArn");
-
     m_acceleratorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpSets"))
   {
     Aws::Utils::Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
@@ -79,35 +54,26 @@ CustomRoutingAccelerator& CustomRoutingAccelerator::operator =(JsonView jsonValu
     }
     m_ipSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CustomRoutingAcceleratorStatusMapper::GetCustomRoutingAcceleratorStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-QueueConfigurationDeprecated::QueueConfigurationDeprecated() : 
-    m_idHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_queueHasBeenSet(false)
-{
-}
-
 QueueConfigurationDeprecated::QueueConfigurationDeprecated(const XmlNode& xmlNode)
-  : QueueConfigurationDeprecated()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ QueueConfigurationDeprecated& QueueConfigurationDeprecated::operator =(const Xml
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
       XmlNode eventMember = eventsNode;
+      m_eventsHasBeenSet = !eventMember.IsNull();
       while(!eventMember.IsNull())
       {
         m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
         eventMember = eventMember.NextNode("Event");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode queueNode = resultNode.FirstChild("Queue");
     if(!queueNode.IsNull())
     {
       m_queue = Aws::Utils::Xml::DecodeEscapedXmlText(queueNode.GetText());
       m_queueHasBeenSet = true;
+       m_queueHasBeenSet = true;
     }
   }
 

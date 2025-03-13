@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePlaybackKeyPairRequest::DeletePlaybackKeyPairRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlaybackKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

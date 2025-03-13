@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-StoreImageTaskResponse::StoreImageTaskResponse() : 
-    m_amiIdHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_s3objectKeyHasBeenSet(false),
-    m_progressPercentage(0),
-    m_progressPercentageHasBeenSet(false),
-    m_storeTaskStateHasBeenSet(false),
-    m_storeTaskFailureReasonHasBeenSet(false)
-{
-}
-
 StoreImageTaskResponse::StoreImageTaskResponse(const XmlNode& xmlNode)
-  : StoreImageTaskResponse()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ StoreImageTaskResponse& StoreImageTaskResponse::operator =(const XmlNode& xmlNod
     {
       m_amiId = Aws::Utils::Xml::DecodeEscapedXmlText(amiIdNode.GetText());
       m_amiIdHasBeenSet = true;
+       m_amiIdHasBeenSet = true;
     }
     XmlNode taskStartTimeNode = resultNode.FirstChild("taskStartTime");
     if(!taskStartTimeNode.IsNull())
     {
       m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_taskStartTimeHasBeenSet = true;
+       m_taskStartTimeHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("bucket");
     if(!bucketNode.IsNull())
     {
       m_bucket = Aws::Utils::Xml::DecodeEscapedXmlText(bucketNode.GetText());
       m_bucketHasBeenSet = true;
+       m_bucketHasBeenSet = true;
     }
     XmlNode s3objectKeyNode = resultNode.FirstChild("s3objectKey");
     if(!s3objectKeyNode.IsNull())
     {
       m_s3objectKey = Aws::Utils::Xml::DecodeEscapedXmlText(s3objectKeyNode.GetText());
       m_s3objectKeyHasBeenSet = true;
+       m_s3objectKeyHasBeenSet = true;
     }
     XmlNode progressPercentageNode = resultNode.FirstChild("progressPercentage");
     if(!progressPercentageNode.IsNull())
     {
       m_progressPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(progressPercentageNode.GetText()).c_str()).c_str());
       m_progressPercentageHasBeenSet = true;
+       m_progressPercentageHasBeenSet = true;
     }
     XmlNode storeTaskStateNode = resultNode.FirstChild("storeTaskState");
     if(!storeTaskStateNode.IsNull())
     {
       m_storeTaskState = Aws::Utils::Xml::DecodeEscapedXmlText(storeTaskStateNode.GetText());
       m_storeTaskStateHasBeenSet = true;
+       m_storeTaskStateHasBeenSet = true;
     }
     XmlNode storeTaskFailureReasonNode = resultNode.FirstChild("storeTaskFailureReason");
     if(!storeTaskFailureReasonNode.IsNull())
     {
       m_storeTaskFailureReason = Aws::Utils::Xml::DecodeEscapedXmlText(storeTaskFailureReasonNode.GetText());
       m_storeTaskFailureReasonHasBeenSet = true;
+       m_storeTaskFailureReasonHasBeenSet = true;
     }
   }
 

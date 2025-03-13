@@ -33,7 +33,7 @@ namespace Model
   class SendDataIntegrationEventResult
   {
   public:
-    AWS_SUPPLYCHAIN_API SendDataIntegrationEventResult();
+    AWS_SUPPLYCHAIN_API SendDataIntegrationEventResult() = default;
     AWS_SUPPLYCHAIN_API SendDataIntegrationEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPLYCHAIN_API SendDataIntegrationEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The unique event identifier.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
-    inline void SetEventId(const Aws::String& value) { m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventId.assign(value); }
-    inline SendDataIntegrationEventResult& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline SendDataIntegrationEventResult& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline SendDataIntegrationEventResult& WithEventId(const char* value) { SetEventId(value); return *this;}
+    inline const Aws::String& GetEventId() const { return m_eventId; }
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    SendDataIntegrationEventResult& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendDataIntegrationEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendDataIntegrationEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendDataIntegrationEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendDataIntegrationEventResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventId;
+    bool m_eventIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class DescribeIdentityIdFormatResponse
   {
   public:
-    AWS_EC2_API DescribeIdentityIdFormatResponse();
+    AWS_EC2_API DescribeIdentityIdFormatResponse() = default;
     AWS_EC2_API DescribeIdentityIdFormatResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeIdentityIdFormatResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the ID format for the resources.</p>
      */
-    inline const Aws::Vector<IdFormat>& GetStatuses() const{ return m_statuses; }
-    inline void SetStatuses(const Aws::Vector<IdFormat>& value) { m_statuses = value; }
-    inline void SetStatuses(Aws::Vector<IdFormat>&& value) { m_statuses = std::move(value); }
-    inline DescribeIdentityIdFormatResponse& WithStatuses(const Aws::Vector<IdFormat>& value) { SetStatuses(value); return *this;}
-    inline DescribeIdentityIdFormatResponse& WithStatuses(Aws::Vector<IdFormat>&& value) { SetStatuses(std::move(value)); return *this;}
-    inline DescribeIdentityIdFormatResponse& AddStatuses(const IdFormat& value) { m_statuses.push_back(value); return *this; }
-    inline DescribeIdentityIdFormatResponse& AddStatuses(IdFormat&& value) { m_statuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdFormat>& GetStatuses() const { return m_statuses; }
+    template<typename StatusesT = Aws::Vector<IdFormat>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<IdFormat>>
+    DescribeIdentityIdFormatResponse& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    template<typename StatusesT = IdFormat>
+    DescribeIdentityIdFormatResponse& AddStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses.emplace_back(std::forward<StatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeIdentityIdFormatResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeIdentityIdFormatResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeIdentityIdFormatResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IdFormat> m_statuses;
+    bool m_statusesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

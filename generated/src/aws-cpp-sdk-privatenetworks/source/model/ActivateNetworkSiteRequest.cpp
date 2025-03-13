@@ -12,14 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivateNetworkSiteRequest::ActivateNetworkSiteRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_commitmentConfigurationHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false)
-{
-}
-
 Aws::String ActivateNetworkSiteRequest::SerializePayload() const
 {
   JsonValue payload;

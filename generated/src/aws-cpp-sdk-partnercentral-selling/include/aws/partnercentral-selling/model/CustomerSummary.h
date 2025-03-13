@@ -32,7 +32,7 @@ namespace Model
   class CustomerSummary
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API CustomerSummary();
+    AWS_PARTNERCENTRALSELLING_API CustomerSummary() = default;
     AWS_PARTNERCENTRALSELLING_API CustomerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API CustomerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An object that contains a customer's account details.</p>
      */
-    inline const AccountSummary& GetAccount() const{ return m_account; }
+    inline const AccountSummary& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const AccountSummary& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(AccountSummary&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline CustomerSummary& WithAccount(const AccountSummary& value) { SetAccount(value); return *this;}
-    inline CustomerSummary& WithAccount(AccountSummary&& value) { SetAccount(std::move(value)); return *this;}
+    template<typename AccountT = AccountSummary>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = AccountSummary>
+    CustomerSummary& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutPipelineDefinitionResult::PutPipelineDefinitionResult() : 
-    m_errored(false)
-{
-}
-
 PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutPipelineDefinitionResult()
 {
   *this = result;
 }
@@ -38,8 +32,8 @@ PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const Aws::
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
     }
+    m_validationErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationWarnings"))
   {
     Aws::Utils::Array<JsonView> validationWarningsJsonList = jsonValue.GetArray("validationWarnings");
@@ -47,20 +41,20 @@ PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const Aws::
     {
       m_validationWarnings.push_back(validationWarningsJsonList[validationWarningsIndex].AsObject());
     }
+    m_validationWarningsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errored"))
   {
     m_errored = jsonValue.GetBool("errored");
-
+    m_erroredHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

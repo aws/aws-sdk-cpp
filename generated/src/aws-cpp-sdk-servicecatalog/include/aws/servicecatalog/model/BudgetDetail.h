@@ -31,7 +31,7 @@ namespace Model
   class BudgetDetail
   {
   public:
-    AWS_SERVICECATALOG_API BudgetDetail();
+    AWS_SERVICECATALOG_API BudgetDetail() = default;
     AWS_SERVICECATALOG_API BudgetDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API BudgetDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Name of the associated budget.</p>
      */
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-    inline BudgetDetail& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline BudgetDetail& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline BudgetDetail& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    BudgetDetail& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
   private:
 

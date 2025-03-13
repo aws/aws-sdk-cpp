@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-PendingMaintenance::PendingMaintenance() : 
-    m_engineVersionHasBeenSet(false),
-    m_scheduleHasBeenSet(false)
-{
-}
-
 PendingMaintenance::PendingMaintenance(JsonView jsonValue)
-  : PendingMaintenance()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PendingMaintenance& PendingMaintenance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetObject("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

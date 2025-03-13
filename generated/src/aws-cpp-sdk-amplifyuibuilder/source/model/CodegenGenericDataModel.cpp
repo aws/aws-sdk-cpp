@@ -18,16 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenGenericDataModel::CodegenGenericDataModel() : 
-    m_fieldsHasBeenSet(false),
-    m_isJoinTable(false),
-    m_isJoinTableHasBeenSet(false),
-    m_primaryKeysHasBeenSet(false)
-{
-}
-
 CodegenGenericDataModel::CodegenGenericDataModel(JsonView jsonValue)
-  : CodegenGenericDataModel()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ CodegenGenericDataModel& CodegenGenericDataModel::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isJoinTable"))
   {
     m_isJoinTable = jsonValue.GetBool("isJoinTable");
-
     m_isJoinTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("primaryKeys"))
   {
     Aws::Utils::Array<JsonView> primaryKeysJsonList = jsonValue.GetArray("primaryKeys");
@@ -60,7 +48,6 @@ CodegenGenericDataModel& CodegenGenericDataModel::operator =(JsonView jsonValue)
     }
     m_primaryKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

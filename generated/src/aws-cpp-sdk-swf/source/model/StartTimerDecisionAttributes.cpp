@@ -18,15 +18,7 @@ namespace SWF
 namespace Model
 {
 
-StartTimerDecisionAttributes::StartTimerDecisionAttributes() : 
-    m_timerIdHasBeenSet(false),
-    m_controlHasBeenSet(false),
-    m_startToFireTimeoutHasBeenSet(false)
-{
-}
-
 StartTimerDecisionAttributes::StartTimerDecisionAttributes(JsonView jsonValue)
-  : StartTimerDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StartTimerDecisionAttributes& StartTimerDecisionAttributes::operator =(JsonView 
   if(jsonValue.ValueExists("timerId"))
   {
     m_timerId = jsonValue.GetString("timerId");
-
     m_timerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startToFireTimeout"))
   {
     m_startToFireTimeout = jsonValue.GetString("startToFireTimeout");
-
     m_startToFireTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

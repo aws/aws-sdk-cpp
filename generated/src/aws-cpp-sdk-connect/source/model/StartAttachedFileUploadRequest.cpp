@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-StartAttachedFileUploadRequest::StartAttachedFileUploadRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_instanceIdHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_fileSizeInBytes(0),
-    m_fileSizeInBytesHasBeenSet(false),
-    m_urlExpiryInSeconds(0),
-    m_urlExpiryInSecondsHasBeenSet(false),
-    m_fileUseCaseType(FileUseCaseType::NOT_SET),
-    m_fileUseCaseTypeHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartAttachedFileUploadRequest::SerializePayload() const
 {
   JsonValue payload;

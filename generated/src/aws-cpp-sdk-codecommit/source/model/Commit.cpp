@@ -18,19 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-Commit::Commit() : 
-    m_commitIdHasBeenSet(false),
-    m_treeIdHasBeenSet(false),
-    m_parentsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_committerHasBeenSet(false),
-    m_additionalDataHasBeenSet(false)
-{
-}
-
 Commit::Commit(JsonView jsonValue)
-  : Commit()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ Commit& Commit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
     m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("treeId"))
   {
     m_treeId = jsonValue.GetString("treeId");
-
     m_treeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parents"))
   {
     Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("parents");
@@ -60,35 +44,26 @@ Commit& Commit::operator =(JsonView jsonValue)
     }
     m_parentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("author"))
   {
     m_author = jsonValue.GetObject("author");
-
     m_authorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("committer"))
   {
     m_committer = jsonValue.GetObject("committer");
-
     m_committerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalData"))
   {
     m_additionalData = jsonValue.GetString("additionalData");
-
     m_additionalDataHasBeenSet = true;
   }
-
   return *this;
 }
 

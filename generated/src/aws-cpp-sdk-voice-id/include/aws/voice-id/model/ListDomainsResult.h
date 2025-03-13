@@ -29,7 +29,7 @@ namespace Model
   class ListDomainsResult
   {
   public:
-    AWS_VOICEID_API ListDomainsResult();
+    AWS_VOICEID_API ListDomainsResult() = default;
     AWS_VOICEID_API ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list containing details about each domain in the Amazon Web Services
      * account.</p>
      */
-    inline const Aws::Vector<DomainSummary>& GetDomainSummaries() const{ return m_domainSummaries; }
-    inline void SetDomainSummaries(const Aws::Vector<DomainSummary>& value) { m_domainSummaries = value; }
-    inline void SetDomainSummaries(Aws::Vector<DomainSummary>&& value) { m_domainSummaries = std::move(value); }
-    inline ListDomainsResult& WithDomainSummaries(const Aws::Vector<DomainSummary>& value) { SetDomainSummaries(value); return *this;}
-    inline ListDomainsResult& WithDomainSummaries(Aws::Vector<DomainSummary>&& value) { SetDomainSummaries(std::move(value)); return *this;}
-    inline ListDomainsResult& AddDomainSummaries(const DomainSummary& value) { m_domainSummaries.push_back(value); return *this; }
-    inline ListDomainsResult& AddDomainSummaries(DomainSummary&& value) { m_domainSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DomainSummary>& GetDomainSummaries() const { return m_domainSummaries; }
+    template<typename DomainSummariesT = Aws::Vector<DomainSummary>>
+    void SetDomainSummaries(DomainSummariesT&& value) { m_domainSummariesHasBeenSet = true; m_domainSummaries = std::forward<DomainSummariesT>(value); }
+    template<typename DomainSummariesT = Aws::Vector<DomainSummary>>
+    ListDomainsResult& WithDomainSummaries(DomainSummariesT&& value) { SetDomainSummaries(std::forward<DomainSummariesT>(value)); return *this;}
+    template<typename DomainSummariesT = DomainSummary>
+    ListDomainsResult& AddDomainSummaries(DomainSummariesT&& value) { m_domainSummariesHasBeenSet = true; m_domainSummaries.emplace_back(std::forward<DomainSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * the call again using the returned token to retrieve the next page. Keep all
      * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDomainsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDomainsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDomainsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDomainsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDomainsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDomainsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDomainsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDomainsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DomainSummary> m_domainSummaries;
+    bool m_domainSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

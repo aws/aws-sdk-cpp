@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSolutionMetricsRequest::GetSolutionMetricsRequest() : 
-    m_solutionVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetSolutionMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

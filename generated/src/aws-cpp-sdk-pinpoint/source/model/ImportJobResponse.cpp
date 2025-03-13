@@ -18,31 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ImportJobResponse::ImportJobResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_completedPieces(0),
-    m_completedPiecesHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_failedPieces(0),
-    m_failedPiecesHasBeenSet(false),
-    m_failuresHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_totalFailures(0),
-    m_totalFailuresHasBeenSet(false),
-    m_totalPieces(0),
-    m_totalPiecesHasBeenSet(false),
-    m_totalProcessed(0),
-    m_totalProcessedHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ImportJobResponse::ImportJobResponse(JsonView jsonValue)
-  : ImportJobResponse()
 {
   *this = jsonValue;
 }
@@ -52,45 +28,33 @@ ImportJobResponse& ImportJobResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedPieces"))
   {
     m_completedPieces = jsonValue.GetInteger("CompletedPieces");
-
     m_completedPiecesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetString("CompletionDate");
-
     m_completionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definition"))
   {
     m_definition = jsonValue.GetObject("Definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedPieces"))
   {
     m_failedPieces = jsonValue.GetInteger("FailedPieces");
-
     m_failedPiecesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failures"))
   {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
@@ -100,49 +64,36 @@ ImportJobResponse& ImportJobResponse::operator =(JsonView jsonValue)
     }
     m_failuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalFailures"))
   {
     m_totalFailures = jsonValue.GetInteger("TotalFailures");
-
     m_totalFailuresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalPieces"))
   {
     m_totalPieces = jsonValue.GetInteger("TotalPieces");
-
     m_totalPiecesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalProcessed"))
   {
     m_totalProcessed = jsonValue.GetInteger("TotalProcessed");
-
     m_totalProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

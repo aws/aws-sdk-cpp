@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-ResourceDefinitionVersion::ResourceDefinitionVersion() : 
-    m_resourcesHasBeenSet(false)
-{
-}
-
 ResourceDefinitionVersion::ResourceDefinitionVersion(JsonView jsonValue)
-  : ResourceDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ResourceDefinitionVersion& ResourceDefinitionVersion::operator =(JsonView jsonVa
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

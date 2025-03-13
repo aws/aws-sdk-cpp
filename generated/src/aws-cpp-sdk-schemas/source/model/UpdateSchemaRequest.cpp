@@ -12,18 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSchemaRequest::UpdateSchemaRequest() : 
-    m_clientTokenId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenIdHasBeenSet(true),
-    m_contentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

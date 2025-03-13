@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeneratedAnswerResult::GeneratedAnswerResult() : 
-    m_questionTextHasBeenSet(false),
-    m_answerStatus(GeneratedAnswerStatus::NOT_SET),
-    m_answerStatusHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_topicNameHasBeenSet(false),
-    m_restatementHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_answerIdHasBeenSet(false),
-    m_questionUrlHasBeenSet(false)
-{
-}
-
 GeneratedAnswerResult::GeneratedAnswerResult(JsonView jsonValue)
-  : GeneratedAnswerResult()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ GeneratedAnswerResult& GeneratedAnswerResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionText"))
   {
     m_questionText = jsonValue.GetString("QuestionText");
-
     m_questionTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnswerStatus"))
   {
     m_answerStatus = GeneratedAnswerStatusMapper::GetGeneratedAnswerStatusForName(jsonValue.GetString("AnswerStatus"));
-
     m_answerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicId"))
   {
     m_topicId = jsonValue.GetString("TopicId");
-
     m_topicIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Restatement"))
   {
     m_restatement = jsonValue.GetString("Restatement");
-
     m_restatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnswerId"))
   {
     m_answerId = jsonValue.GetString("AnswerId");
-
     m_answerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionUrl"))
   {
     m_questionUrl = jsonValue.GetString("QuestionUrl");
-
     m_questionUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

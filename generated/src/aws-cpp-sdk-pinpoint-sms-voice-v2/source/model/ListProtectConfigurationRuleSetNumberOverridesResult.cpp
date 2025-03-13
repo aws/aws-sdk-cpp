@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListProtectConfigurationRuleSetNumberOverridesResult::ListProtectConfigurationRuleSetNumberOverridesResult()
-{
-}
-
 ListProtectConfigurationRuleSetNumberOverridesResult::ListProtectConfigurationRuleSetNumberOverridesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListProtectConfigurationRuleSetNumberOverridesResult& ListProtectConfigurationRu
   if(jsonValue.ValueExists("ProtectConfigurationArn"))
   {
     m_protectConfigurationArn = jsonValue.GetString("ProtectConfigurationArn");
-
+    m_protectConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectConfigurationId"))
   {
     m_protectConfigurationId = jsonValue.GetString("ProtectConfigurationId");
-
+    m_protectConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleSetNumberOverrides"))
   {
     Aws::Utils::Array<JsonView> ruleSetNumberOverridesJsonList = jsonValue.GetArray("RuleSetNumberOverrides");
@@ -48,20 +42,20 @@ ListProtectConfigurationRuleSetNumberOverridesResult& ListProtectConfigurationRu
     {
       m_ruleSetNumberOverrides.push_back(ruleSetNumberOverridesJsonList[ruleSetNumberOverridesIndex].AsObject());
     }
+    m_ruleSetNumberOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

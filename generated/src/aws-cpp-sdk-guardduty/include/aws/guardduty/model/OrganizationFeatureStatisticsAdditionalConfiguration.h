@@ -32,7 +32,7 @@ namespace Model
   class OrganizationFeatureStatisticsAdditionalConfiguration
   {
   public:
-    AWS_GUARDDUTY_API OrganizationFeatureStatisticsAdditionalConfiguration();
+    AWS_GUARDDUTY_API OrganizationFeatureStatisticsAdditionalConfiguration() = default;
     AWS_GUARDDUTY_API OrganizationFeatureStatisticsAdditionalConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationFeatureStatisticsAdditionalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>Name of the additional configuration within a feature.</p>
      */
-    inline const OrgFeatureAdditionalConfiguration& GetName() const{ return m_name; }
+    inline OrgFeatureAdditionalConfiguration GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OrgFeatureAdditionalConfiguration& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OrgFeatureAdditionalConfiguration&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline OrganizationFeatureStatisticsAdditionalConfiguration& WithName(const OrgFeatureAdditionalConfiguration& value) { SetName(value); return *this;}
-    inline OrganizationFeatureStatisticsAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OrgFeatureAdditionalConfiguration value) { m_nameHasBeenSet = true; m_name = value; }
+    inline OrganizationFeatureStatisticsAdditionalConfiguration& WithName(OrgFeatureAdditionalConfiguration value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Total number of accounts that have enabled the additional configuration.</p>
      */
-    inline int GetEnabledAccountsCount() const{ return m_enabledAccountsCount; }
+    inline int GetEnabledAccountsCount() const { return m_enabledAccountsCount; }
     inline bool EnabledAccountsCountHasBeenSet() const { return m_enabledAccountsCountHasBeenSet; }
     inline void SetEnabledAccountsCount(int value) { m_enabledAccountsCountHasBeenSet = true; m_enabledAccountsCount = value; }
     inline OrganizationFeatureStatisticsAdditionalConfiguration& WithEnabledAccountsCount(int value) { SetEnabledAccountsCount(value); return *this;}
     ///@}
   private:
 
-    OrgFeatureAdditionalConfiguration m_name;
+    OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    int m_enabledAccountsCount;
+    int m_enabledAccountsCount{0};
     bool m_enabledAccountsCountHasBeenSet = false;
   };
 

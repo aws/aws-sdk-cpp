@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataQualityAppSpecification::DataQualityAppSpecification() : 
-    m_imageUriHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerArgumentsHasBeenSet(false),
-    m_recordPreprocessorSourceUriHasBeenSet(false),
-    m_postAnalyticsProcessorSourceUriHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 DataQualityAppSpecification::DataQualityAppSpecification(JsonView jsonValue)
-  : DataQualityAppSpecification()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ DataQualityAppSpecification& DataQualityAppSpecification::operator =(JsonView js
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerEntrypoint"))
   {
     Aws::Utils::Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
@@ -52,7 +39,6 @@ DataQualityAppSpecification& DataQualityAppSpecification::operator =(JsonView js
     }
     m_containerEntrypointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerArguments"))
   {
     Aws::Utils::Array<JsonView> containerArgumentsJsonList = jsonValue.GetArray("ContainerArguments");
@@ -62,21 +48,16 @@ DataQualityAppSpecification& DataQualityAppSpecification::operator =(JsonView js
     }
     m_containerArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordPreprocessorSourceUri"))
   {
     m_recordPreprocessorSourceUri = jsonValue.GetString("RecordPreprocessorSourceUri");
-
     m_recordPreprocessorSourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostAnalyticsProcessorSourceUri"))
   {
     m_postAnalyticsProcessorSourceUri = jsonValue.GetString("PostAnalyticsProcessorSourceUri");
-
     m_postAnalyticsProcessorSourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -86,7 +67,6 @@ DataQualityAppSpecification& DataQualityAppSpecification::operator =(JsonView js
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

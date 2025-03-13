@@ -18,18 +18,7 @@ namespace Health
 namespace Model
 {
 
-EntityFilter::EntityFilter() : 
-    m_eventArnsHasBeenSet(false),
-    m_entityArnsHasBeenSet(false),
-    m_entityValuesHasBeenSet(false),
-    m_lastUpdatedTimesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_statusCodesHasBeenSet(false)
-{
-}
-
 EntityFilter::EntityFilter(JsonView jsonValue)
-  : EntityFilter()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_eventArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityArns"))
   {
     Aws::Utils::Array<JsonView> entityArnsJsonList = jsonValue.GetArray("entityArns");
@@ -55,7 +43,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_entityArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityValues"))
   {
     Aws::Utils::Array<JsonView> entityValuesJsonList = jsonValue.GetArray("entityValues");
@@ -65,7 +52,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_entityValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTimes"))
   {
     Aws::Utils::Array<JsonView> lastUpdatedTimesJsonList = jsonValue.GetArray("lastUpdatedTimes");
@@ -75,7 +61,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_lastUpdatedTimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -91,7 +76,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCodes"))
   {
     Aws::Utils::Array<JsonView> statusCodesJsonList = jsonValue.GetArray("statusCodes");
@@ -101,7 +85,6 @@ EntityFilter& EntityFilter::operator =(JsonView jsonValue)
     }
     m_statusCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

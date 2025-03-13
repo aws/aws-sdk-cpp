@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfigurationInput() : 
-    m_keyARNHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false)
-{
-}
-
 DeliveryStreamEncryptionConfigurationInput::DeliveryStreamEncryptionConfigurationInput(JsonView jsonValue)
-  : DeliveryStreamEncryptionConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeliveryStreamEncryptionConfigurationInput& DeliveryStreamEncryptionConfiguratio
   if(jsonValue.ValueExists("KeyARN"))
   {
     m_keyARN = jsonValue.GetString("KeyARN");
-
     m_keyARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyType"))
   {
     m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
-
     m_keyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

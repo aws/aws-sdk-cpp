@@ -32,7 +32,7 @@ namespace Model
   class ListingRevision
   {
   public:
-    AWS_DATAZONE_API ListingRevision();
+    AWS_DATAZONE_API ListingRevision() = default;
     AWS_DATAZONE_API ListingRevision(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ListingRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>An identifier of a revision of an asset published in a Amazon DataZone
      * catalog.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ListingRevision& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ListingRevision& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ListingRevision& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ListingRevision& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The details of a revision of an asset published in a Amazon DataZone
      * catalog.</p>
      */
-    inline const Aws::String& GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
-    inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
-    inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
-    inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
-    inline ListingRevision& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
-    inline ListingRevision& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
-    inline ListingRevision& WithRevision(const char* value) { SetRevision(value); return *this;}
+    template<typename RevisionT = Aws::String>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = Aws::String>
+    ListingRevision& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
   private:
 

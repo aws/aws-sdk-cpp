@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGrantResult::CreateGrantResult()
-{
-}
-
 CreateGrantResult::CreateGrantResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateGrantResult& CreateGrantResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("GrantToken"))
   {
     m_grantToken = jsonValue.GetString("GrantToken");
-
+    m_grantTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantId"))
   {
     m_grantId = jsonValue.GetString("GrantId");
-
+    m_grantIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

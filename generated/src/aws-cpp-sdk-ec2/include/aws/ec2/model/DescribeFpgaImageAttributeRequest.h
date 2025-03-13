@@ -22,7 +22,7 @@ namespace Model
   class DescribeFpgaImageAttributeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeFpgaImageAttributeRequest();
+    AWS_EC2_API DescribeFpgaImageAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeFpgaImageAttributeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -54,36 +54,32 @@ namespace Model
     /**
      * <p>The ID of the AFI.</p>
      */
-    inline const Aws::String& GetFpgaImageId() const{ return m_fpgaImageId; }
+    inline const Aws::String& GetFpgaImageId() const { return m_fpgaImageId; }
     inline bool FpgaImageIdHasBeenSet() const { return m_fpgaImageIdHasBeenSet; }
-    inline void SetFpgaImageId(const Aws::String& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = value; }
-    inline void SetFpgaImageId(Aws::String&& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = std::move(value); }
-    inline void SetFpgaImageId(const char* value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId.assign(value); }
-    inline DescribeFpgaImageAttributeRequest& WithFpgaImageId(const Aws::String& value) { SetFpgaImageId(value); return *this;}
-    inline DescribeFpgaImageAttributeRequest& WithFpgaImageId(Aws::String&& value) { SetFpgaImageId(std::move(value)); return *this;}
-    inline DescribeFpgaImageAttributeRequest& WithFpgaImageId(const char* value) { SetFpgaImageId(value); return *this;}
+    template<typename FpgaImageIdT = Aws::String>
+    void SetFpgaImageId(FpgaImageIdT&& value) { m_fpgaImageIdHasBeenSet = true; m_fpgaImageId = std::forward<FpgaImageIdT>(value); }
+    template<typename FpgaImageIdT = Aws::String>
+    DescribeFpgaImageAttributeRequest& WithFpgaImageId(FpgaImageIdT&& value) { SetFpgaImageId(std::forward<FpgaImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AFI attribute.</p>
      */
-    inline const FpgaImageAttributeName& GetAttribute() const{ return m_attribute; }
+    inline FpgaImageAttributeName GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const FpgaImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(FpgaImageAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline DescribeFpgaImageAttributeRequest& WithAttribute(const FpgaImageAttributeName& value) { SetAttribute(value); return *this;}
-    inline DescribeFpgaImageAttributeRequest& WithAttribute(FpgaImageAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(FpgaImageAttributeName value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline DescribeFpgaImageAttributeRequest& WithAttribute(FpgaImageAttributeName value) { SetAttribute(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_fpgaImageId;
     bool m_fpgaImageIdHasBeenSet = false;
 
-    FpgaImageAttributeName m_attribute;
+    FpgaImageAttributeName m_attribute{FpgaImageAttributeName::NOT_SET};
     bool m_attributeHasBeenSet = false;
   };
 

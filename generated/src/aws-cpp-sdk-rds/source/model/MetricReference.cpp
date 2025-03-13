@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-MetricReference::MetricReference() : 
-    m_nameHasBeenSet(false),
-    m_referenceDetailsHasBeenSet(false)
-{
-}
-
 MetricReference::MetricReference(const XmlNode& xmlNode)
-  : MetricReference()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ MetricReference& MetricReference::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode referenceDetailsNode = resultNode.FirstChild("ReferenceDetails");
     if(!referenceDetailsNode.IsNull())
     {
       m_referenceDetails = referenceDetailsNode;
       m_referenceDetailsHasBeenSet = true;
+       m_referenceDetailsHasBeenSet = true;
     }
   }
 

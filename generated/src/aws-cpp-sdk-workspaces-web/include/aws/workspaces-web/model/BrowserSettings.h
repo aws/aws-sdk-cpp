@@ -36,7 +36,7 @@ namespace Model
   class BrowserSettings
   {
   public:
-    AWS_WORKSPACESWEB_API BrowserSettings();
+    AWS_WORKSPACESWEB_API BrowserSettings() = default;
     AWS_WORKSPACESWEB_API BrowserSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API BrowserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,34 +46,30 @@ namespace Model
     /**
      * <p>The additional encryption context of the browser settings.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const{ return m_additionalEncryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalEncryptionContext() const { return m_additionalEncryptionContext; }
     inline bool AdditionalEncryptionContextHasBeenSet() const { return m_additionalEncryptionContextHasBeenSet; }
-    inline void SetAdditionalEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = value; }
-    inline void SetAdditionalEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::move(value); }
-    inline BrowserSettings& WithAdditionalEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalEncryptionContext(value); return *this;}
-    inline BrowserSettings& WithAdditionalEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalEncryptionContext(std::move(value)); return *this;}
-    inline BrowserSettings& AddAdditionalEncryptionContext(const Aws::String& key, const Aws::String& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, value); return *this; }
-    inline BrowserSettings& AddAdditionalEncryptionContext(Aws::String&& key, const Aws::String& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline BrowserSettings& AddAdditionalEncryptionContext(const Aws::String& key, Aws::String&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline BrowserSettings& AddAdditionalEncryptionContext(Aws::String&& key, Aws::String&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline BrowserSettings& AddAdditionalEncryptionContext(const char* key, Aws::String&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
-    inline BrowserSettings& AddAdditionalEncryptionContext(Aws::String&& key, const char* value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
-    inline BrowserSettings& AddAdditionalEncryptionContext(const char* key, const char* value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(key, value); return *this; }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext = std::forward<AdditionalEncryptionContextT>(value); }
+    template<typename AdditionalEncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    BrowserSettings& WithAdditionalEncryptionContext(AdditionalEncryptionContextT&& value) { SetAdditionalEncryptionContext(std::forward<AdditionalEncryptionContextT>(value)); return *this;}
+    template<typename AdditionalEncryptionContextKeyT = Aws::String, typename AdditionalEncryptionContextValueT = Aws::String>
+    BrowserSettings& AddAdditionalEncryptionContext(AdditionalEncryptionContextKeyT&& key, AdditionalEncryptionContextValueT&& value) {
+      m_additionalEncryptionContextHasBeenSet = true; m_additionalEncryptionContext.emplace(std::forward<AdditionalEncryptionContextKeyT>(key), std::forward<AdditionalEncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A list of web portal ARNs that this browser settings is associated with.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociatedPortalArns() const{ return m_associatedPortalArns; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedPortalArns() const { return m_associatedPortalArns; }
     inline bool AssociatedPortalArnsHasBeenSet() const { return m_associatedPortalArnsHasBeenSet; }
-    inline void SetAssociatedPortalArns(const Aws::Vector<Aws::String>& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns = value; }
-    inline void SetAssociatedPortalArns(Aws::Vector<Aws::String>&& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns = std::move(value); }
-    inline BrowserSettings& WithAssociatedPortalArns(const Aws::Vector<Aws::String>& value) { SetAssociatedPortalArns(value); return *this;}
-    inline BrowserSettings& WithAssociatedPortalArns(Aws::Vector<Aws::String>&& value) { SetAssociatedPortalArns(std::move(value)); return *this;}
-    inline BrowserSettings& AddAssociatedPortalArns(const Aws::String& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.push_back(value); return *this; }
-    inline BrowserSettings& AddAssociatedPortalArns(Aws::String&& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.push_back(std::move(value)); return *this; }
-    inline BrowserSettings& AddAssociatedPortalArns(const char* value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.push_back(value); return *this; }
+    template<typename AssociatedPortalArnsT = Aws::Vector<Aws::String>>
+    void SetAssociatedPortalArns(AssociatedPortalArnsT&& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns = std::forward<AssociatedPortalArnsT>(value); }
+    template<typename AssociatedPortalArnsT = Aws::Vector<Aws::String>>
+    BrowserSettings& WithAssociatedPortalArns(AssociatedPortalArnsT&& value) { SetAssociatedPortalArns(std::forward<AssociatedPortalArnsT>(value)); return *this;}
+    template<typename AssociatedPortalArnsT = Aws::String>
+    BrowserSettings& AddAssociatedPortalArns(AssociatedPortalArnsT&& value) { m_associatedPortalArnsHasBeenSet = true; m_associatedPortalArns.emplace_back(std::forward<AssociatedPortalArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,28 +77,24 @@ namespace Model
      * <p>A JSON string containing Chrome Enterprise policies that will be applied to
      * all streaming sessions.</p>
      */
-    inline const Aws::String& GetBrowserPolicy() const{ return m_browserPolicy; }
+    inline const Aws::String& GetBrowserPolicy() const { return m_browserPolicy; }
     inline bool BrowserPolicyHasBeenSet() const { return m_browserPolicyHasBeenSet; }
-    inline void SetBrowserPolicy(const Aws::String& value) { m_browserPolicyHasBeenSet = true; m_browserPolicy = value; }
-    inline void SetBrowserPolicy(Aws::String&& value) { m_browserPolicyHasBeenSet = true; m_browserPolicy = std::move(value); }
-    inline void SetBrowserPolicy(const char* value) { m_browserPolicyHasBeenSet = true; m_browserPolicy.assign(value); }
-    inline BrowserSettings& WithBrowserPolicy(const Aws::String& value) { SetBrowserPolicy(value); return *this;}
-    inline BrowserSettings& WithBrowserPolicy(Aws::String&& value) { SetBrowserPolicy(std::move(value)); return *this;}
-    inline BrowserSettings& WithBrowserPolicy(const char* value) { SetBrowserPolicy(value); return *this;}
+    template<typename BrowserPolicyT = Aws::String>
+    void SetBrowserPolicy(BrowserPolicyT&& value) { m_browserPolicyHasBeenSet = true; m_browserPolicy = std::forward<BrowserPolicyT>(value); }
+    template<typename BrowserPolicyT = Aws::String>
+    BrowserSettings& WithBrowserPolicy(BrowserPolicyT&& value) { SetBrowserPolicy(std::forward<BrowserPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the browser settings.</p>
      */
-    inline const Aws::String& GetBrowserSettingsArn() const{ return m_browserSettingsArn; }
+    inline const Aws::String& GetBrowserSettingsArn() const { return m_browserSettingsArn; }
     inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
-    inline void SetBrowserSettingsArn(const Aws::String& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = value; }
-    inline void SetBrowserSettingsArn(Aws::String&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::move(value); }
-    inline void SetBrowserSettingsArn(const char* value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn.assign(value); }
-    inline BrowserSettings& WithBrowserSettingsArn(const Aws::String& value) { SetBrowserSettingsArn(value); return *this;}
-    inline BrowserSettings& WithBrowserSettingsArn(Aws::String&& value) { SetBrowserSettingsArn(std::move(value)); return *this;}
-    inline BrowserSettings& WithBrowserSettingsArn(const char* value) { SetBrowserSettingsArn(value); return *this;}
+    template<typename BrowserSettingsArnT = Aws::String>
+    void SetBrowserSettingsArn(BrowserSettingsArnT&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::forward<BrowserSettingsArnT>(value); }
+    template<typename BrowserSettingsArnT = Aws::String>
+    BrowserSettings& WithBrowserSettingsArn(BrowserSettingsArnT&& value) { SetBrowserSettingsArn(std::forward<BrowserSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +102,12 @@ namespace Model
      * <p>The customer managed key used to encrypt sensitive information in the browser
      * settings.</p>
      */
-    inline const Aws::String& GetCustomerManagedKey() const{ return m_customerManagedKey; }
+    inline const Aws::String& GetCustomerManagedKey() const { return m_customerManagedKey; }
     inline bool CustomerManagedKeyHasBeenSet() const { return m_customerManagedKeyHasBeenSet; }
-    inline void SetCustomerManagedKey(const Aws::String& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = value; }
-    inline void SetCustomerManagedKey(Aws::String&& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = std::move(value); }
-    inline void SetCustomerManagedKey(const char* value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey.assign(value); }
-    inline BrowserSettings& WithCustomerManagedKey(const Aws::String& value) { SetCustomerManagedKey(value); return *this;}
-    inline BrowserSettings& WithCustomerManagedKey(Aws::String&& value) { SetCustomerManagedKey(std::move(value)); return *this;}
-    inline BrowserSettings& WithCustomerManagedKey(const char* value) { SetCustomerManagedKey(value); return *this;}
+    template<typename CustomerManagedKeyT = Aws::String>
+    void SetCustomerManagedKey(CustomerManagedKeyT&& value) { m_customerManagedKeyHasBeenSet = true; m_customerManagedKey = std::forward<CustomerManagedKeyT>(value); }
+    template<typename CustomerManagedKeyT = Aws::String>
+    BrowserSettings& WithCustomerManagedKey(CustomerManagedKeyT&& value) { SetCustomerManagedKey(std::forward<CustomerManagedKeyT>(value)); return *this;}
     ///@}
   private:
 

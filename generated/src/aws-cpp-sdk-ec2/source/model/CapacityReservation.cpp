@@ -20,50 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservation::CapacityReservation() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_capacityReservationArnHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_totalInstanceCount(0),
-    m_totalInstanceCountHasBeenSet(false),
-    m_availableInstanceCount(0),
-    m_availableInstanceCountHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_ephemeralStorage(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_state(CapacityReservationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_endDateType(EndDateType::NOT_SET),
-    m_endDateTypeHasBeenSet(false),
-    m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false),
-    m_capacityAllocationsHasBeenSet(false),
-    m_reservationType(CapacityReservationType::NOT_SET),
-    m_reservationTypeHasBeenSet(false),
-    m_unusedReservationBillingOwnerIdHasBeenSet(false),
-    m_commitmentInfoHasBeenSet(false),
-    m_deliveryPreference(CapacityReservationDeliveryPreference::NOT_SET),
-    m_deliveryPreferenceHasBeenSet(false)
-{
-}
-
 CapacityReservation::CapacityReservation(const XmlNode& xmlNode)
-  : CapacityReservation()
 {
   *this = xmlNode;
 }
@@ -79,174 +36,201 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
     {
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
+       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode capacityReservationArnNode = resultNode.FirstChild("capacityReservationArn");
     if(!capacityReservationArnNode.IsNull())
     {
       m_capacityReservationArn = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationArnNode.GetText());
       m_capacityReservationArnHasBeenSet = true;
+       m_capacityReservationArnHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode instancePlatformNode = resultNode.FirstChild("instancePlatform");
     if(!instancePlatformNode.IsNull())
     {
-      m_instancePlatform = CapacityReservationInstancePlatformMapper::GetCapacityReservationInstancePlatformForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePlatformNode.GetText()).c_str()).c_str());
+      m_instancePlatform = CapacityReservationInstancePlatformMapper::GetCapacityReservationInstancePlatformForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePlatformNode.GetText()).c_str()));
       m_instancePlatformHasBeenSet = true;
+       m_instancePlatformHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
+       m_tenancyHasBeenSet = true;
     }
     XmlNode totalInstanceCountNode = resultNode.FirstChild("totalInstanceCount");
     if(!totalInstanceCountNode.IsNull())
     {
       m_totalInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalInstanceCountNode.GetText()).c_str()).c_str());
       m_totalInstanceCountHasBeenSet = true;
+       m_totalInstanceCountHasBeenSet = true;
     }
     XmlNode availableInstanceCountNode = resultNode.FirstChild("availableInstanceCount");
     if(!availableInstanceCountNode.IsNull())
     {
       m_availableInstanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(availableInstanceCountNode.GetText()).c_str()).c_str());
       m_availableInstanceCountHasBeenSet = true;
+       m_availableInstanceCountHasBeenSet = true;
     }
     XmlNode ebsOptimizedNode = resultNode.FirstChild("ebsOptimized");
     if(!ebsOptimizedNode.IsNull())
     {
       m_ebsOptimized = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsOptimizedNode.GetText()).c_str()).c_str());
       m_ebsOptimizedHasBeenSet = true;
+       m_ebsOptimizedHasBeenSet = true;
     }
     XmlNode ephemeralStorageNode = resultNode.FirstChild("ephemeralStorage");
     if(!ephemeralStorageNode.IsNull())
     {
       m_ephemeralStorage = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ephemeralStorageNode.GetText()).c_str()).c_str());
       m_ephemeralStorageHasBeenSet = true;
+       m_ephemeralStorageHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode startDateNode = resultNode.FirstChild("startDate");
     if(!startDateNode.IsNull())
     {
       m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
+       m_startDateHasBeenSet = true;
     }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
     if(!endDateNode.IsNull())
     {
       m_endDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endDateHasBeenSet = true;
+       m_endDateHasBeenSet = true;
     }
     XmlNode endDateTypeNode = resultNode.FirstChild("endDateType");
     if(!endDateTypeNode.IsNull())
     {
-      m_endDateType = EndDateTypeMapper::GetEndDateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateTypeNode.GetText()).c_str()).c_str());
+      m_endDateType = EndDateTypeMapper::GetEndDateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateTypeNode.GetText()).c_str()));
       m_endDateTypeHasBeenSet = true;
+       m_endDateTypeHasBeenSet = true;
     }
     XmlNode instanceMatchCriteriaNode = resultNode.FirstChild("instanceMatchCriteria");
     if(!instanceMatchCriteriaNode.IsNull())
     {
-      m_instanceMatchCriteria = InstanceMatchCriteriaMapper::GetInstanceMatchCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMatchCriteriaNode.GetText()).c_str()).c_str());
+      m_instanceMatchCriteria = InstanceMatchCriteriaMapper::GetInstanceMatchCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMatchCriteriaNode.GetText()).c_str()));
       m_instanceMatchCriteriaHasBeenSet = true;
+       m_instanceMatchCriteriaHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
     if(!outpostArnNode.IsNull())
     {
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
+       m_outpostArnHasBeenSet = true;
     }
     XmlNode capacityReservationFleetIdNode = resultNode.FirstChild("capacityReservationFleetId");
     if(!capacityReservationFleetIdNode.IsNull())
     {
       m_capacityReservationFleetId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationFleetIdNode.GetText());
       m_capacityReservationFleetIdHasBeenSet = true;
+       m_capacityReservationFleetIdHasBeenSet = true;
     }
     XmlNode placementGroupArnNode = resultNode.FirstChild("placementGroupArn");
     if(!placementGroupArnNode.IsNull())
     {
       m_placementGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(placementGroupArnNode.GetText());
       m_placementGroupArnHasBeenSet = true;
+       m_placementGroupArnHasBeenSet = true;
     }
     XmlNode capacityAllocationsNode = resultNode.FirstChild("capacityAllocationSet");
     if(!capacityAllocationsNode.IsNull())
     {
       XmlNode capacityAllocationsMember = capacityAllocationsNode.FirstChild("item");
+      m_capacityAllocationsHasBeenSet = !capacityAllocationsMember.IsNull();
       while(!capacityAllocationsMember.IsNull())
       {
         m_capacityAllocations.push_back(capacityAllocationsMember);
         capacityAllocationsMember = capacityAllocationsMember.NextNode("item");
       }
 
-      m_capacityAllocationsHasBeenSet = true;
+       m_capacityAllocationsHasBeenSet = true;
     }
     XmlNode reservationTypeNode = resultNode.FirstChild("reservationType");
     if(!reservationTypeNode.IsNull())
     {
-      m_reservationType = CapacityReservationTypeMapper::GetCapacityReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()).c_str());
+      m_reservationType = CapacityReservationTypeMapper::GetCapacityReservationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(reservationTypeNode.GetText()).c_str()));
       m_reservationTypeHasBeenSet = true;
+       m_reservationTypeHasBeenSet = true;
     }
     XmlNode unusedReservationBillingOwnerIdNode = resultNode.FirstChild("unusedReservationBillingOwnerId");
     if(!unusedReservationBillingOwnerIdNode.IsNull())
     {
       m_unusedReservationBillingOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(unusedReservationBillingOwnerIdNode.GetText());
       m_unusedReservationBillingOwnerIdHasBeenSet = true;
+       m_unusedReservationBillingOwnerIdHasBeenSet = true;
     }
     XmlNode commitmentInfoNode = resultNode.FirstChild("commitmentInfo");
     if(!commitmentInfoNode.IsNull())
     {
       m_commitmentInfo = commitmentInfoNode;
       m_commitmentInfoHasBeenSet = true;
+       m_commitmentInfoHasBeenSet = true;
     }
     XmlNode deliveryPreferenceNode = resultNode.FirstChild("deliveryPreference");
     if(!deliveryPreferenceNode.IsNull())
     {
-      m_deliveryPreference = CapacityReservationDeliveryPreferenceMapper::GetCapacityReservationDeliveryPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryPreferenceNode.GetText()).c_str()).c_str());
+      m_deliveryPreference = CapacityReservationDeliveryPreferenceMapper::GetCapacityReservationDeliveryPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryPreferenceNode.GetText()).c_str()));
       m_deliveryPreferenceHasBeenSet = true;
+       m_deliveryPreferenceHasBeenSet = true;
     }
   }
 

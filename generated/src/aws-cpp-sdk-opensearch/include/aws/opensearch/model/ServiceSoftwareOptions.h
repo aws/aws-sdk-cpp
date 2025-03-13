@@ -36,7 +36,7 @@ namespace Model
   class ServiceSoftwareOptions
   {
   public:
-    AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions();
+    AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions() = default;
     AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The current service software version present on the domain.</p>
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline ServiceSoftwareOptions& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline ServiceSoftwareOptions& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline ServiceSoftwareOptions& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    ServiceSoftwareOptions& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new service software version, if one is available.</p>
      */
-    inline const Aws::String& GetNewVersion() const{ return m_newVersion; }
+    inline const Aws::String& GetNewVersion() const { return m_newVersion; }
     inline bool NewVersionHasBeenSet() const { return m_newVersionHasBeenSet; }
-    inline void SetNewVersion(const Aws::String& value) { m_newVersionHasBeenSet = true; m_newVersion = value; }
-    inline void SetNewVersion(Aws::String&& value) { m_newVersionHasBeenSet = true; m_newVersion = std::move(value); }
-    inline void SetNewVersion(const char* value) { m_newVersionHasBeenSet = true; m_newVersion.assign(value); }
-    inline ServiceSoftwareOptions& WithNewVersion(const Aws::String& value) { SetNewVersion(value); return *this;}
-    inline ServiceSoftwareOptions& WithNewVersion(Aws::String&& value) { SetNewVersion(std::move(value)); return *this;}
-    inline ServiceSoftwareOptions& WithNewVersion(const char* value) { SetNewVersion(value); return *this;}
+    template<typename NewVersionT = Aws::String>
+    void SetNewVersion(NewVersionT&& value) { m_newVersionHasBeenSet = true; m_newVersion = std::forward<NewVersionT>(value); }
+    template<typename NewVersionT = Aws::String>
+    ServiceSoftwareOptions& WithNewVersion(NewVersionT&& value) { SetNewVersion(std::forward<NewVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * <p>True if you're able to update your service software version. False if you
      * can't update your service software version.</p>
      */
-    inline bool GetUpdateAvailable() const{ return m_updateAvailable; }
+    inline bool GetUpdateAvailable() const { return m_updateAvailable; }
     inline bool UpdateAvailableHasBeenSet() const { return m_updateAvailableHasBeenSet; }
     inline void SetUpdateAvailable(bool value) { m_updateAvailableHasBeenSet = true; m_updateAvailable = value; }
     inline ServiceSoftwareOptions& WithUpdateAvailable(bool value) { SetUpdateAvailable(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
      * <p> True if you're able to cancel your service software version update. False if
      * you can't cancel your service software update.</p>
      */
-    inline bool GetCancellable() const{ return m_cancellable; }
+    inline bool GetCancellable() const { return m_cancellable; }
     inline bool CancellableHasBeenSet() const { return m_cancellableHasBeenSet; }
     inline void SetCancellable(bool value) { m_cancellableHasBeenSet = true; m_cancellable = value; }
     inline ServiceSoftwareOptions& WithCancellable(bool value) { SetCancellable(value); return *this;}
@@ -96,26 +92,22 @@ namespace Model
     /**
      * <p>The status of your service software update.</p>
      */
-    inline const DeploymentStatus& GetUpdateStatus() const{ return m_updateStatus; }
+    inline DeploymentStatus GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const DeploymentStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(DeploymentStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline ServiceSoftwareOptions& WithUpdateStatus(const DeploymentStatus& value) { SetUpdateStatus(value); return *this;}
-    inline ServiceSoftwareOptions& WithUpdateStatus(DeploymentStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(DeploymentStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline ServiceSoftwareOptions& WithUpdateStatus(DeploymentStatus value) { SetUpdateStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the service software update status.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ServiceSoftwareOptions& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ServiceSoftwareOptions& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ServiceSoftwareOptions& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ServiceSoftwareOptions& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +116,12 @@ namespace Model
      * software update. After this date, we automatically update your service
      * software.</p>
      */
-    inline const Aws::Utils::DateTime& GetAutomatedUpdateDate() const{ return m_automatedUpdateDate; }
+    inline const Aws::Utils::DateTime& GetAutomatedUpdateDate() const { return m_automatedUpdateDate; }
     inline bool AutomatedUpdateDateHasBeenSet() const { return m_automatedUpdateDateHasBeenSet; }
-    inline void SetAutomatedUpdateDate(const Aws::Utils::DateTime& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = value; }
-    inline void SetAutomatedUpdateDate(Aws::Utils::DateTime&& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = std::move(value); }
-    inline ServiceSoftwareOptions& WithAutomatedUpdateDate(const Aws::Utils::DateTime& value) { SetAutomatedUpdateDate(value); return *this;}
-    inline ServiceSoftwareOptions& WithAutomatedUpdateDate(Aws::Utils::DateTime&& value) { SetAutomatedUpdateDate(std::move(value)); return *this;}
+    template<typename AutomatedUpdateDateT = Aws::Utils::DateTime>
+    void SetAutomatedUpdateDate(AutomatedUpdateDateT&& value) { m_automatedUpdateDateHasBeenSet = true; m_automatedUpdateDate = std::forward<AutomatedUpdateDateT>(value); }
+    template<typename AutomatedUpdateDateT = Aws::Utils::DateTime>
+    ServiceSoftwareOptions& WithAutomatedUpdateDate(AutomatedUpdateDateT&& value) { SetAutomatedUpdateDate(std::forward<AutomatedUpdateDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +129,7 @@ namespace Model
      * <p>True if a service software is never automatically updated. False if a service
      * software is automatically updated after the automated update date.</p>
      */
-    inline bool GetOptionalDeployment() const{ return m_optionalDeployment; }
+    inline bool GetOptionalDeployment() const { return m_optionalDeployment; }
     inline bool OptionalDeploymentHasBeenSet() const { return m_optionalDeploymentHasBeenSet; }
     inline void SetOptionalDeployment(bool value) { m_optionalDeploymentHasBeenSet = true; m_optionalDeployment = value; }
     inline ServiceSoftwareOptions& WithOptionalDeployment(bool value) { SetOptionalDeployment(value); return *this;}
@@ -150,22 +142,22 @@ namespace Model
     Aws::String m_newVersion;
     bool m_newVersionHasBeenSet = false;
 
-    bool m_updateAvailable;
+    bool m_updateAvailable{false};
     bool m_updateAvailableHasBeenSet = false;
 
-    bool m_cancellable;
+    bool m_cancellable{false};
     bool m_cancellableHasBeenSet = false;
 
-    DeploymentStatus m_updateStatus;
+    DeploymentStatus m_updateStatus{DeploymentStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_automatedUpdateDate;
+    Aws::Utils::DateTime m_automatedUpdateDate{};
     bool m_automatedUpdateDateHasBeenSet = false;
 
-    bool m_optionalDeployment;
+    bool m_optionalDeployment{false};
     bool m_optionalDeploymentHasBeenSet = false;
   };
 

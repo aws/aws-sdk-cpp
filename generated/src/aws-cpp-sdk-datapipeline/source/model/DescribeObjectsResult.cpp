@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeObjectsResult::DescribeObjectsResult() : 
-    m_hasMoreResults(false)
-{
-}
-
 DescribeObjectsResult::DescribeObjectsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeObjectsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ DescribeObjectsResult& DescribeObjectsResult::operator =(const Aws::AmazonWebSer
     {
       m_pipelineObjects.push_back(pipelineObjectsJsonList[pipelineObjectsIndex].AsObject());
     }
+    m_pipelineObjectsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("marker"))
   {
     m_marker = jsonValue.GetString("marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasMoreResults"))
   {
     m_hasMoreResults = jsonValue.GetBool("hasMoreResults");
-
+    m_hasMoreResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

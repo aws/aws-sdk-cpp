@@ -40,7 +40,7 @@ namespace Model
   class ManagedRuleSetVersion
   {
   public:
-    AWS_WAFV2_API ManagedRuleSetVersion();
+    AWS_WAFV2_API ManagedRuleSetVersion() = default;
     AWS_WAFV2_API ManagedRuleSetVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ManagedRuleSetVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the vendor rule group that's used to define
      * the published version of your managed rule group. </p>
      */
-    inline const Aws::String& GetAssociatedRuleGroupArn() const{ return m_associatedRuleGroupArn; }
+    inline const Aws::String& GetAssociatedRuleGroupArn() const { return m_associatedRuleGroupArn; }
     inline bool AssociatedRuleGroupArnHasBeenSet() const { return m_associatedRuleGroupArnHasBeenSet; }
-    inline void SetAssociatedRuleGroupArn(const Aws::String& value) { m_associatedRuleGroupArnHasBeenSet = true; m_associatedRuleGroupArn = value; }
-    inline void SetAssociatedRuleGroupArn(Aws::String&& value) { m_associatedRuleGroupArnHasBeenSet = true; m_associatedRuleGroupArn = std::move(value); }
-    inline void SetAssociatedRuleGroupArn(const char* value) { m_associatedRuleGroupArnHasBeenSet = true; m_associatedRuleGroupArn.assign(value); }
-    inline ManagedRuleSetVersion& WithAssociatedRuleGroupArn(const Aws::String& value) { SetAssociatedRuleGroupArn(value); return *this;}
-    inline ManagedRuleSetVersion& WithAssociatedRuleGroupArn(Aws::String&& value) { SetAssociatedRuleGroupArn(std::move(value)); return *this;}
-    inline ManagedRuleSetVersion& WithAssociatedRuleGroupArn(const char* value) { SetAssociatedRuleGroupArn(value); return *this;}
+    template<typename AssociatedRuleGroupArnT = Aws::String>
+    void SetAssociatedRuleGroupArn(AssociatedRuleGroupArnT&& value) { m_associatedRuleGroupArnHasBeenSet = true; m_associatedRuleGroupArn = std::forward<AssociatedRuleGroupArnT>(value); }
+    template<typename AssociatedRuleGroupArnT = Aws::String>
+    ManagedRuleSetVersion& WithAssociatedRuleGroupArn(AssociatedRuleGroupArnT&& value) { SetAssociatedRuleGroupArn(std::forward<AssociatedRuleGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
      * web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline long long GetCapacity() const{ return m_capacity; }
+    inline long long GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(long long value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline ManagedRuleSetVersion& WithCapacity(long long value) { SetCapacity(value); return *this;}
@@ -85,7 +83,7 @@ namespace Model
      * <p>The amount of time you expect this version of your managed rule group to
      * last, in days. </p>
      */
-    inline int GetForecastedLifetime() const{ return m_forecastedLifetime; }
+    inline int GetForecastedLifetime() const { return m_forecastedLifetime; }
     inline bool ForecastedLifetimeHasBeenSet() const { return m_forecastedLifetimeHasBeenSet; }
     inline void SetForecastedLifetime(int value) { m_forecastedLifetimeHasBeenSet = true; m_forecastedLifetime = value; }
     inline ManagedRuleSetVersion& WithForecastedLifetime(int value) { SetForecastedLifetime(value); return *this;}
@@ -97,12 +95,12 @@ namespace Model
      * Coordinated Universal Time (UTC) format. UTC format includes the special
      * designator, Z. For example, "2016-09-27T14:50Z". </p>
      */
-    inline const Aws::Utils::DateTime& GetPublishTimestamp() const{ return m_publishTimestamp; }
+    inline const Aws::Utils::DateTime& GetPublishTimestamp() const { return m_publishTimestamp; }
     inline bool PublishTimestampHasBeenSet() const { return m_publishTimestampHasBeenSet; }
-    inline void SetPublishTimestamp(const Aws::Utils::DateTime& value) { m_publishTimestampHasBeenSet = true; m_publishTimestamp = value; }
-    inline void SetPublishTimestamp(Aws::Utils::DateTime&& value) { m_publishTimestampHasBeenSet = true; m_publishTimestamp = std::move(value); }
-    inline ManagedRuleSetVersion& WithPublishTimestamp(const Aws::Utils::DateTime& value) { SetPublishTimestamp(value); return *this;}
-    inline ManagedRuleSetVersion& WithPublishTimestamp(Aws::Utils::DateTime&& value) { SetPublishTimestamp(std::move(value)); return *this;}
+    template<typename PublishTimestampT = Aws::Utils::DateTime>
+    void SetPublishTimestamp(PublishTimestampT&& value) { m_publishTimestampHasBeenSet = true; m_publishTimestamp = std::forward<PublishTimestampT>(value); }
+    template<typename PublishTimestampT = Aws::Utils::DateTime>
+    ManagedRuleSetVersion& WithPublishTimestamp(PublishTimestampT&& value) { SetPublishTimestamp(std::forward<PublishTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +109,12 @@ namespace Model
      * Universal Time (UTC) format. UTC format includes the special designator, Z. For
      * example, "2016-09-27T14:50Z". </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const{ return m_lastUpdateTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTimestamp() const { return m_lastUpdateTimestamp; }
     inline bool LastUpdateTimestampHasBeenSet() const { return m_lastUpdateTimestampHasBeenSet; }
-    inline void SetLastUpdateTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = value; }
-    inline void SetLastUpdateTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::move(value); }
-    inline ManagedRuleSetVersion& WithLastUpdateTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdateTimestamp(value); return *this;}
-    inline ManagedRuleSetVersion& WithLastUpdateTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdateTimestamp(std::move(value)); return *this;}
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    void SetLastUpdateTimestamp(LastUpdateTimestampT&& value) { m_lastUpdateTimestampHasBeenSet = true; m_lastUpdateTimestamp = std::forward<LastUpdateTimestampT>(value); }
+    template<typename LastUpdateTimestampT = Aws::Utils::DateTime>
+    ManagedRuleSetVersion& WithLastUpdateTimestamp(LastUpdateTimestampT&& value) { SetLastUpdateTimestamp(std::forward<LastUpdateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,31 +123,31 @@ namespace Model
      * Universal Time (UTC) format. UTC format includes the special designator, Z. For
      * example, "2016-09-27T14:50Z". </p>
      */
-    inline const Aws::Utils::DateTime& GetExpiryTimestamp() const{ return m_expiryTimestamp; }
+    inline const Aws::Utils::DateTime& GetExpiryTimestamp() const { return m_expiryTimestamp; }
     inline bool ExpiryTimestampHasBeenSet() const { return m_expiryTimestampHasBeenSet; }
-    inline void SetExpiryTimestamp(const Aws::Utils::DateTime& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = value; }
-    inline void SetExpiryTimestamp(Aws::Utils::DateTime&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::move(value); }
-    inline ManagedRuleSetVersion& WithExpiryTimestamp(const Aws::Utils::DateTime& value) { SetExpiryTimestamp(value); return *this;}
-    inline ManagedRuleSetVersion& WithExpiryTimestamp(Aws::Utils::DateTime&& value) { SetExpiryTimestamp(std::move(value)); return *this;}
+    template<typename ExpiryTimestampT = Aws::Utils::DateTime>
+    void SetExpiryTimestamp(ExpiryTimestampT&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::forward<ExpiryTimestampT>(value); }
+    template<typename ExpiryTimestampT = Aws::Utils::DateTime>
+    ManagedRuleSetVersion& WithExpiryTimestamp(ExpiryTimestampT&& value) { SetExpiryTimestamp(std::forward<ExpiryTimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_associatedRuleGroupArn;
     bool m_associatedRuleGroupArnHasBeenSet = false;
 
-    long long m_capacity;
+    long long m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
-    int m_forecastedLifetime;
+    int m_forecastedLifetime{0};
     bool m_forecastedLifetimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_publishTimestamp;
+    Aws::Utils::DateTime m_publishTimestamp{};
     bool m_publishTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTimestamp;
+    Aws::Utils::DateTime m_lastUpdateTimestamp{};
     bool m_lastUpdateTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiryTimestamp;
+    Aws::Utils::DateTime m_expiryTimestamp{};
     bool m_expiryTimestampHasBeenSet = false;
   };
 

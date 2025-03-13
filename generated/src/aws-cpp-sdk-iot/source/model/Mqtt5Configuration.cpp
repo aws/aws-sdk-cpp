@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Mqtt5Configuration::Mqtt5Configuration() : 
-    m_propagatingAttributesHasBeenSet(false)
-{
-}
-
 Mqtt5Configuration::Mqtt5Configuration(JsonView jsonValue)
-  : Mqtt5Configuration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Mqtt5Configuration& Mqtt5Configuration::operator =(JsonView jsonValue)
     }
     m_propagatingAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

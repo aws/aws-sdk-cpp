@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceIpv6AddressRequest::InstanceIpv6AddressRequest() : 
-    m_ipv6AddressHasBeenSet(false)
-{
-}
-
 InstanceIpv6AddressRequest::InstanceIpv6AddressRequest(const XmlNode& xmlNode)
-  : InstanceIpv6AddressRequest()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InstanceIpv6AddressRequest& InstanceIpv6AddressRequest::operator =(const XmlNode
     {
       m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
+       m_ipv6AddressHasBeenSet = true;
     }
   }
 

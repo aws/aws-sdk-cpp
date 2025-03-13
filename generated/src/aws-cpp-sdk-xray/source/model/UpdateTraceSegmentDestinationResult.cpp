@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTraceSegmentDestinationResult::UpdateTraceSegmentDestinationResult() : 
-    m_destination(TraceSegmentDestination::NOT_SET),
-    m_status(TraceSegmentDestinationStatus::NOT_SET)
-{
-}
-
 UpdateTraceSegmentDestinationResult::UpdateTraceSegmentDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateTraceSegmentDestinationResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ UpdateTraceSegmentDestinationResult& UpdateTraceSegmentDestinationResult::operat
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = TraceSegmentDestinationMapper::GetTraceSegmentDestinationForName(jsonValue.GetString("Destination"));
-
+    m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TraceSegmentDestinationStatusMapper::GetTraceSegmentDestinationStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

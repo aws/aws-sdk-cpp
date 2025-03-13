@@ -18,18 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DetectionFilter::DetectionFilter() : 
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_minBoundingBoxHeight(0.0),
-    m_minBoundingBoxHeightHasBeenSet(false),
-    m_minBoundingBoxWidth(0.0),
-    m_minBoundingBoxWidthHasBeenSet(false)
-{
-}
-
 DetectionFilter::DetectionFilter(JsonView jsonValue)
-  : DetectionFilter()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DetectionFilter& DetectionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinConfidence"))
   {
     m_minConfidence = jsonValue.GetDouble("MinConfidence");
-
     m_minConfidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinBoundingBoxHeight"))
   {
     m_minBoundingBoxHeight = jsonValue.GetDouble("MinBoundingBoxHeight");
-
     m_minBoundingBoxHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinBoundingBoxWidth"))
   {
     m_minBoundingBoxWidth = jsonValue.GetDouble("MinBoundingBoxWidth");
-
     m_minBoundingBoxWidthHasBeenSet = true;
   }
-
   return *this;
 }
 

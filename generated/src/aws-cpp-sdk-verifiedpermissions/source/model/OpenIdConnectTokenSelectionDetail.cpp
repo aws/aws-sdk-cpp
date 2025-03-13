@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-OpenIdConnectTokenSelectionDetail::OpenIdConnectTokenSelectionDetail() : 
-    m_accessTokenOnlyHasBeenSet(false),
-    m_identityTokenOnlyHasBeenSet(false)
-{
-}
-
 OpenIdConnectTokenSelectionDetail::OpenIdConnectTokenSelectionDetail(JsonView jsonValue)
-  : OpenIdConnectTokenSelectionDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenIdConnectTokenSelectionDetail& OpenIdConnectTokenSelectionDetail::operator =
   if(jsonValue.ValueExists("accessTokenOnly"))
   {
     m_accessTokenOnly = jsonValue.GetObject("accessTokenOnly");
-
     m_accessTokenOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityTokenOnly"))
   {
     m_identityTokenOnly = jsonValue.GetObject("identityTokenOnly");
-
     m_identityTokenOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

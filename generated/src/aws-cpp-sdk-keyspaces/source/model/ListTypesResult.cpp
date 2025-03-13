@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTypesResult::ListTypesResult()
-{
-}
-
 ListTypesResult::ListTypesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTypesResult& ListTypesResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
@@ -42,14 +37,15 @@ ListTypesResult& ListTypesResult::operator =(const Aws::AmazonWebServiceResult<J
     {
       m_types.push_back(typesJsonList[typesIndex].AsString());
     }
+    m_typesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

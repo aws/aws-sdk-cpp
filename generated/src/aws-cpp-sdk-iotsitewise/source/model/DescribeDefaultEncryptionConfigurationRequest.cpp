@@ -12,10 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDefaultEncryptionConfigurationRequest::DescribeDefaultEncryptionConfigurationRequest()
-{
-}
-
 Aws::String DescribeDefaultEncryptionConfigurationRequest::SerializePayload() const
 {
   return {};

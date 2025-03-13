@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstancePrivateIpAddress::InstancePrivateIpAddress() : 
-    m_associationHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 InstancePrivateIpAddress::InstancePrivateIpAddress(const XmlNode& xmlNode)
-  : InstancePrivateIpAddress()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ InstancePrivateIpAddress& InstancePrivateIpAddress::operator =(const XmlNode& xm
     {
       m_association = associationNode;
       m_associationHasBeenSet = true;
+       m_associationHasBeenSet = true;
     }
     XmlNode primaryNode = resultNode.FirstChild("primary");
     if(!primaryNode.IsNull())
     {
       m_primary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(primaryNode.GetText()).c_str()).c_str());
       m_primaryHasBeenSet = true;
+       m_primaryHasBeenSet = true;
     }
     XmlNode privateDnsNameNode = resultNode.FirstChild("privateDnsName");
     if(!privateDnsNameNode.IsNull())
     {
       m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
+       m_privateDnsNameHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
   }
 

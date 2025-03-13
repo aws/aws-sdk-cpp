@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansCoverageData::SavingsPlansCoverageData() : 
-    m_spendCoveredBySavingsPlansHasBeenSet(false),
-    m_onDemandCostHasBeenSet(false),
-    m_totalCostHasBeenSet(false),
-    m_coveragePercentageHasBeenSet(false)
-{
-}
-
 SavingsPlansCoverageData::SavingsPlansCoverageData(JsonView jsonValue)
-  : SavingsPlansCoverageData()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SavingsPlansCoverageData& SavingsPlansCoverageData::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("SpendCoveredBySavingsPlans"))
   {
     m_spendCoveredBySavingsPlans = jsonValue.GetString("SpendCoveredBySavingsPlans");
-
     m_spendCoveredBySavingsPlansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandCost"))
   {
     m_onDemandCost = jsonValue.GetString("OnDemandCost");
-
     m_onDemandCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCost"))
   {
     m_totalCost = jsonValue.GetString("TotalCost");
-
     m_totalCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoveragePercentage"))
   {
     m_coveragePercentage = jsonValue.GetString("CoveragePercentage");
-
     m_coveragePercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

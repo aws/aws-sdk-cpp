@@ -32,7 +32,7 @@ namespace Model
   class CodeRepository
   {
   public:
-    AWS_SAGEMAKER_API CodeRepository();
+    AWS_SAGEMAKER_API CodeRepository() = default;
     AWS_SAGEMAKER_API CodeRepository(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CodeRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The URL of the Git repository.</p>
      */
-    inline const Aws::String& GetRepositoryUrl() const{ return m_repositoryUrl; }
+    inline const Aws::String& GetRepositoryUrl() const { return m_repositoryUrl; }
     inline bool RepositoryUrlHasBeenSet() const { return m_repositoryUrlHasBeenSet; }
-    inline void SetRepositoryUrl(const Aws::String& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = value; }
-    inline void SetRepositoryUrl(Aws::String&& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = std::move(value); }
-    inline void SetRepositoryUrl(const char* value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl.assign(value); }
-    inline CodeRepository& WithRepositoryUrl(const Aws::String& value) { SetRepositoryUrl(value); return *this;}
-    inline CodeRepository& WithRepositoryUrl(Aws::String&& value) { SetRepositoryUrl(std::move(value)); return *this;}
-    inline CodeRepository& WithRepositoryUrl(const char* value) { SetRepositoryUrl(value); return *this;}
+    template<typename RepositoryUrlT = Aws::String>
+    void SetRepositoryUrl(RepositoryUrlT&& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = std::forward<RepositoryUrlT>(value); }
+    template<typename RepositoryUrlT = Aws::String>
+    CodeRepository& WithRepositoryUrl(RepositoryUrlT&& value) { SetRepositoryUrl(std::forward<RepositoryUrlT>(value)); return *this;}
     ///@}
   private:
 

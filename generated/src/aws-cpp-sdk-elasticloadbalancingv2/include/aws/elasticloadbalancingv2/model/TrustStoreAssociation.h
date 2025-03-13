@@ -32,7 +32,7 @@ namespace Model
   class TrustStoreAssociation
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API TrustStoreAssociation();
+    AWS_ELASTICLOADBALANCINGV2_API TrustStoreAssociation() = default;
     AWS_ELASTICLOADBALANCINGV2_API TrustStoreAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API TrustStoreAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline TrustStoreAssociation& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline TrustStoreAssociation& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline TrustStoreAssociation& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    TrustStoreAssociation& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

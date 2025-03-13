@@ -39,7 +39,7 @@ namespace Model
   class Bucket
   {
   public:
-    AWS_LIGHTSAIL_API Bucket();
+    AWS_LIGHTSAIL_API Bucket() = default;
     AWS_LIGHTSAIL_API Bucket(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,40 +49,36 @@ namespace Model
     /**
      * <p>The Lightsail resource type of the bucket.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline Bucket& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline Bucket& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline Bucket& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    Bucket& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that describes the access rules of the bucket.</p>
      */
-    inline const AccessRules& GetAccessRules() const{ return m_accessRules; }
+    inline const AccessRules& GetAccessRules() const { return m_accessRules; }
     inline bool AccessRulesHasBeenSet() const { return m_accessRulesHasBeenSet; }
-    inline void SetAccessRules(const AccessRules& value) { m_accessRulesHasBeenSet = true; m_accessRules = value; }
-    inline void SetAccessRules(AccessRules&& value) { m_accessRulesHasBeenSet = true; m_accessRules = std::move(value); }
-    inline Bucket& WithAccessRules(const AccessRules& value) { SetAccessRules(value); return *this;}
-    inline Bucket& WithAccessRules(AccessRules&& value) { SetAccessRules(std::move(value)); return *this;}
+    template<typename AccessRulesT = AccessRules>
+    void SetAccessRules(AccessRulesT&& value) { m_accessRulesHasBeenSet = true; m_accessRules = std::forward<AccessRulesT>(value); }
+    template<typename AccessRulesT = AccessRules>
+    Bucket& WithAccessRules(AccessRulesT&& value) { SetAccessRules(std::forward<AccessRulesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the bucket.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Bucket& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Bucket& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Bucket& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Bucket& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,40 +89,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change the bundle of a bucket.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline Bucket& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline Bucket& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline Bucket& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    Bucket& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the distribution was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Bucket& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Bucket& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Bucket& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL of the bucket.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline Bucket& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline Bucket& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline Bucket& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Bucket& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,26 +126,24 @@ namespace Model
      * <p>An object that describes the location of the bucket, such as the Amazon Web
      * Services Region and Availability Zone.</p>
      */
-    inline const ResourceLocation& GetLocation() const{ return m_location; }
+    inline const ResourceLocation& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline Bucket& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
-    inline Bucket& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = ResourceLocation>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = ResourceLocation>
+    Bucket& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bucket.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Bucket& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Bucket& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Bucket& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Bucket& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +152,12 @@ namespace Model
      * when you have questions about a Lightsail bucket. This code enables our support
      * team to look up your Lightsail information more easily.</p>
      */
-    inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+    inline const Aws::String& GetSupportCode() const { return m_supportCode; }
     inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
-    inline void SetSupportCode(const Aws::String& value) { m_supportCodeHasBeenSet = true; m_supportCode = value; }
-    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::move(value); }
-    inline void SetSupportCode(const char* value) { m_supportCodeHasBeenSet = true; m_supportCode.assign(value); }
-    inline Bucket& WithSupportCode(const Aws::String& value) { SetSupportCode(value); return *this;}
-    inline Bucket& WithSupportCode(Aws::String&& value) { SetSupportCode(std::move(value)); return *this;}
-    inline Bucket& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
+    template<typename SupportCodeT = Aws::String>
+    void SetSupportCode(SupportCodeT&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::forward<SupportCodeT>(value); }
+    template<typename SupportCodeT = Aws::String>
+    Bucket& WithSupportCode(SupportCodeT&& value) { SetSupportCode(std::forward<SupportCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +166,14 @@ namespace Model
      * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags
      * in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Bucket& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Bucket& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Bucket& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Bucket& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Bucket& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Bucket& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -197,14 +185,12 @@ namespace Model
      * versions are retained.</p> </li> <li> <p> <code>NeverEnabled</code> - Object
      * versioning has never been enabled.</p> </li> </ul>
      */
-    inline const Aws::String& GetObjectVersioning() const{ return m_objectVersioning; }
+    inline const Aws::String& GetObjectVersioning() const { return m_objectVersioning; }
     inline bool ObjectVersioningHasBeenSet() const { return m_objectVersioningHasBeenSet; }
-    inline void SetObjectVersioning(const Aws::String& value) { m_objectVersioningHasBeenSet = true; m_objectVersioning = value; }
-    inline void SetObjectVersioning(Aws::String&& value) { m_objectVersioningHasBeenSet = true; m_objectVersioning = std::move(value); }
-    inline void SetObjectVersioning(const char* value) { m_objectVersioningHasBeenSet = true; m_objectVersioning.assign(value); }
-    inline Bucket& WithObjectVersioning(const Aws::String& value) { SetObjectVersioning(value); return *this;}
-    inline Bucket& WithObjectVersioning(Aws::String&& value) { SetObjectVersioning(std::move(value)); return *this;}
-    inline Bucket& WithObjectVersioning(const char* value) { SetObjectVersioning(value); return *this;}
+    template<typename ObjectVersioningT = Aws::String>
+    void SetObjectVersioning(ObjectVersioningT&& value) { m_objectVersioningHasBeenSet = true; m_objectVersioning = std::forward<ObjectVersioningT>(value); }
+    template<typename ObjectVersioningT = Aws::String>
+    Bucket& WithObjectVersioning(ObjectVersioningT&& value) { SetObjectVersioning(std::forward<ObjectVersioningT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,7 +201,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a>
      * action to change a bucket's bundle.</p>
      */
-    inline bool GetAbleToUpdateBundle() const{ return m_ableToUpdateBundle; }
+    inline bool GetAbleToUpdateBundle() const { return m_ableToUpdateBundle; }
     inline bool AbleToUpdateBundleHasBeenSet() const { return m_ableToUpdateBundleHasBeenSet; }
     inline void SetAbleToUpdateBundle(bool value) { m_ableToUpdateBundleHasBeenSet = true; m_ableToUpdateBundle = value; }
     inline Bucket& WithAbleToUpdateBundle(bool value) { SetAbleToUpdateBundle(value); return *this;}
@@ -226,15 +212,14 @@ namespace Model
      * <p>An array of strings that specify the Amazon Web Services account IDs that
      * have read-only access to the bucket.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const{ return m_readonlyAccessAccounts; }
+    inline const Aws::Vector<Aws::String>& GetReadonlyAccessAccounts() const { return m_readonlyAccessAccounts; }
     inline bool ReadonlyAccessAccountsHasBeenSet() const { return m_readonlyAccessAccountsHasBeenSet; }
-    inline void SetReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = value; }
-    inline void SetReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::move(value); }
-    inline Bucket& WithReadonlyAccessAccounts(const Aws::Vector<Aws::String>& value) { SetReadonlyAccessAccounts(value); return *this;}
-    inline Bucket& WithReadonlyAccessAccounts(Aws::Vector<Aws::String>&& value) { SetReadonlyAccessAccounts(std::move(value)); return *this;}
-    inline Bucket& AddReadonlyAccessAccounts(const Aws::String& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
-    inline Bucket& AddReadonlyAccessAccounts(Aws::String&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(std::move(value)); return *this; }
-    inline Bucket& AddReadonlyAccessAccounts(const char* value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.push_back(value); return *this; }
+    template<typename ReadonlyAccessAccountsT = Aws::Vector<Aws::String>>
+    void SetReadonlyAccessAccounts(ReadonlyAccessAccountsT&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts = std::forward<ReadonlyAccessAccountsT>(value); }
+    template<typename ReadonlyAccessAccountsT = Aws::Vector<Aws::String>>
+    Bucket& WithReadonlyAccessAccounts(ReadonlyAccessAccountsT&& value) { SetReadonlyAccessAccounts(std::forward<ReadonlyAccessAccountsT>(value)); return *this;}
+    template<typename ReadonlyAccessAccountsT = Aws::String>
+    Bucket& AddReadonlyAccessAccounts(ReadonlyAccessAccountsT&& value) { m_readonlyAccessAccountsHasBeenSet = true; m_readonlyAccessAccounts.emplace_back(std::forward<ReadonlyAccessAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -244,38 +229,38 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a>
      * action to update the instances that have access to a bucket.</p>
      */
-    inline const Aws::Vector<ResourceReceivingAccess>& GetResourcesReceivingAccess() const{ return m_resourcesReceivingAccess; }
+    inline const Aws::Vector<ResourceReceivingAccess>& GetResourcesReceivingAccess() const { return m_resourcesReceivingAccess; }
     inline bool ResourcesReceivingAccessHasBeenSet() const { return m_resourcesReceivingAccessHasBeenSet; }
-    inline void SetResourcesReceivingAccess(const Aws::Vector<ResourceReceivingAccess>& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess = value; }
-    inline void SetResourcesReceivingAccess(Aws::Vector<ResourceReceivingAccess>&& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess = std::move(value); }
-    inline Bucket& WithResourcesReceivingAccess(const Aws::Vector<ResourceReceivingAccess>& value) { SetResourcesReceivingAccess(value); return *this;}
-    inline Bucket& WithResourcesReceivingAccess(Aws::Vector<ResourceReceivingAccess>&& value) { SetResourcesReceivingAccess(std::move(value)); return *this;}
-    inline Bucket& AddResourcesReceivingAccess(const ResourceReceivingAccess& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess.push_back(value); return *this; }
-    inline Bucket& AddResourcesReceivingAccess(ResourceReceivingAccess&& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess.push_back(std::move(value)); return *this; }
+    template<typename ResourcesReceivingAccessT = Aws::Vector<ResourceReceivingAccess>>
+    void SetResourcesReceivingAccess(ResourcesReceivingAccessT&& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess = std::forward<ResourcesReceivingAccessT>(value); }
+    template<typename ResourcesReceivingAccessT = Aws::Vector<ResourceReceivingAccess>>
+    Bucket& WithResourcesReceivingAccess(ResourcesReceivingAccessT&& value) { SetResourcesReceivingAccess(std::forward<ResourcesReceivingAccessT>(value)); return *this;}
+    template<typename ResourcesReceivingAccessT = ResourceReceivingAccess>
+    Bucket& AddResourcesReceivingAccess(ResourcesReceivingAccessT&& value) { m_resourcesReceivingAccessHasBeenSet = true; m_resourcesReceivingAccess.emplace_back(std::forward<ResourcesReceivingAccessT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An object that describes the state of the bucket.</p>
      */
-    inline const BucketState& GetState() const{ return m_state; }
+    inline const BucketState& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const BucketState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(BucketState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Bucket& WithState(const BucketState& value) { SetState(value); return *this;}
-    inline Bucket& WithState(BucketState&& value) { SetState(std::move(value)); return *this;}
+    template<typename StateT = BucketState>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = BucketState>
+    Bucket& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that describes the access log configuration for the bucket.</p>
      */
-    inline const BucketAccessLogConfig& GetAccessLogConfig() const{ return m_accessLogConfig; }
+    inline const BucketAccessLogConfig& GetAccessLogConfig() const { return m_accessLogConfig; }
     inline bool AccessLogConfigHasBeenSet() const { return m_accessLogConfigHasBeenSet; }
-    inline void SetAccessLogConfig(const BucketAccessLogConfig& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = value; }
-    inline void SetAccessLogConfig(BucketAccessLogConfig&& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = std::move(value); }
-    inline Bucket& WithAccessLogConfig(const BucketAccessLogConfig& value) { SetAccessLogConfig(value); return *this;}
-    inline Bucket& WithAccessLogConfig(BucketAccessLogConfig&& value) { SetAccessLogConfig(std::move(value)); return *this;}
+    template<typename AccessLogConfigT = BucketAccessLogConfig>
+    void SetAccessLogConfig(AccessLogConfigT&& value) { m_accessLogConfigHasBeenSet = true; m_accessLogConfig = std::forward<AccessLogConfigT>(value); }
+    template<typename AccessLogConfigT = BucketAccessLogConfig>
+    Bucket& WithAccessLogConfig(AccessLogConfigT&& value) { SetAccessLogConfig(std::forward<AccessLogConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -291,7 +276,7 @@ namespace Model
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_url;
@@ -312,7 +297,7 @@ namespace Model
     Aws::String m_objectVersioning;
     bool m_objectVersioningHasBeenSet = false;
 
-    bool m_ableToUpdateBundle;
+    bool m_ableToUpdateBundle{false};
     bool m_ableToUpdateBundleHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readonlyAccessAccounts;

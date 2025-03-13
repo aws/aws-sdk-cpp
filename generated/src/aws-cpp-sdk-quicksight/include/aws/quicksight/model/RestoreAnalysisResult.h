@@ -28,7 +28,7 @@ namespace Model
   class RestoreAnalysisResult
   {
   public:
-    AWS_QUICKSIGHT_API RestoreAnalysisResult();
+    AWS_QUICKSIGHT_API RestoreAnalysisResult() = default;
     AWS_QUICKSIGHT_API RestoreAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API RestoreAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline RestoreAnalysisResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
@@ -46,63 +46,61 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the analysis that you're restoring.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline RestoreAnalysisResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RestoreAnalysisResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RestoreAnalysisResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RestoreAnalysisResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the analysis that you're restoring. </p>
      */
-    inline const Aws::String& GetAnalysisId() const{ return m_analysisId; }
-    inline void SetAnalysisId(const Aws::String& value) { m_analysisId = value; }
-    inline void SetAnalysisId(Aws::String&& value) { m_analysisId = std::move(value); }
-    inline void SetAnalysisId(const char* value) { m_analysisId.assign(value); }
-    inline RestoreAnalysisResult& WithAnalysisId(const Aws::String& value) { SetAnalysisId(value); return *this;}
-    inline RestoreAnalysisResult& WithAnalysisId(Aws::String&& value) { SetAnalysisId(std::move(value)); return *this;}
-    inline RestoreAnalysisResult& WithAnalysisId(const char* value) { SetAnalysisId(value); return *this;}
+    inline const Aws::String& GetAnalysisId() const { return m_analysisId; }
+    template<typename AnalysisIdT = Aws::String>
+    void SetAnalysisId(AnalysisIdT&& value) { m_analysisIdHasBeenSet = true; m_analysisId = std::forward<AnalysisIdT>(value); }
+    template<typename AnalysisIdT = Aws::String>
+    RestoreAnalysisResult& WithAnalysisId(AnalysisIdT&& value) { SetAnalysisId(std::forward<AnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RestoreAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RestoreAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RestoreAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RestoreAnalysisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of folder arns thatthe analysis failed to be restored to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRestorationFailedFolderArns() const{ return m_restorationFailedFolderArns; }
-    inline void SetRestorationFailedFolderArns(const Aws::Vector<Aws::String>& value) { m_restorationFailedFolderArns = value; }
-    inline void SetRestorationFailedFolderArns(Aws::Vector<Aws::String>&& value) { m_restorationFailedFolderArns = std::move(value); }
-    inline RestoreAnalysisResult& WithRestorationFailedFolderArns(const Aws::Vector<Aws::String>& value) { SetRestorationFailedFolderArns(value); return *this;}
-    inline RestoreAnalysisResult& WithRestorationFailedFolderArns(Aws::Vector<Aws::String>&& value) { SetRestorationFailedFolderArns(std::move(value)); return *this;}
-    inline RestoreAnalysisResult& AddRestorationFailedFolderArns(const Aws::String& value) { m_restorationFailedFolderArns.push_back(value); return *this; }
-    inline RestoreAnalysisResult& AddRestorationFailedFolderArns(Aws::String&& value) { m_restorationFailedFolderArns.push_back(std::move(value)); return *this; }
-    inline RestoreAnalysisResult& AddRestorationFailedFolderArns(const char* value) { m_restorationFailedFolderArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetRestorationFailedFolderArns() const { return m_restorationFailedFolderArns; }
+    template<typename RestorationFailedFolderArnsT = Aws::Vector<Aws::String>>
+    void SetRestorationFailedFolderArns(RestorationFailedFolderArnsT&& value) { m_restorationFailedFolderArnsHasBeenSet = true; m_restorationFailedFolderArns = std::forward<RestorationFailedFolderArnsT>(value); }
+    template<typename RestorationFailedFolderArnsT = Aws::Vector<Aws::String>>
+    RestoreAnalysisResult& WithRestorationFailedFolderArns(RestorationFailedFolderArnsT&& value) { SetRestorationFailedFolderArns(std::forward<RestorationFailedFolderArnsT>(value)); return *this;}
+    template<typename RestorationFailedFolderArnsT = Aws::String>
+    RestoreAnalysisResult& AddRestorationFailedFolderArns(RestorationFailedFolderArnsT&& value) { m_restorationFailedFolderArnsHasBeenSet = true; m_restorationFailedFolderArns.emplace_back(std::forward<RestorationFailedFolderArnsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_analysisId;
+    bool m_analysisIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_restorationFailedFolderArns;
+    bool m_restorationFailedFolderArnsHasBeenSet = false;
   };
 
 } // namespace Model

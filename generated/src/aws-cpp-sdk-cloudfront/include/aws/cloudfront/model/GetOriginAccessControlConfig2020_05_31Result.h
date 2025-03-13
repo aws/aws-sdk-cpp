@@ -28,7 +28,7 @@ namespace Model
   class GetOriginAccessControlConfig2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API GetOriginAccessControlConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetOriginAccessControlConfig2020_05_31Result() = default;
     AWS_CLOUDFRONT_API GetOriginAccessControlConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API GetOriginAccessControlConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>Contains an origin access control configuration.</p>
      */
-    inline const OriginAccessControlConfig& GetOriginAccessControlConfig() const{ return m_originAccessControlConfig; }
-    inline void SetOriginAccessControlConfig(const OriginAccessControlConfig& value) { m_originAccessControlConfig = value; }
-    inline void SetOriginAccessControlConfig(OriginAccessControlConfig&& value) { m_originAccessControlConfig = std::move(value); }
-    inline GetOriginAccessControlConfig2020_05_31Result& WithOriginAccessControlConfig(const OriginAccessControlConfig& value) { SetOriginAccessControlConfig(value); return *this;}
-    inline GetOriginAccessControlConfig2020_05_31Result& WithOriginAccessControlConfig(OriginAccessControlConfig&& value) { SetOriginAccessControlConfig(std::move(value)); return *this;}
+    inline const OriginAccessControlConfig& GetOriginAccessControlConfig() const { return m_originAccessControlConfig; }
+    template<typename OriginAccessControlConfigT = OriginAccessControlConfig>
+    void SetOriginAccessControlConfig(OriginAccessControlConfigT&& value) { m_originAccessControlConfigHasBeenSet = true; m_originAccessControlConfig = std::forward<OriginAccessControlConfigT>(value); }
+    template<typename OriginAccessControlConfigT = OriginAccessControlConfig>
+    GetOriginAccessControlConfig2020_05_31Result& WithOriginAccessControlConfig(OriginAccessControlConfigT&& value) { SetOriginAccessControlConfig(std::forward<OriginAccessControlConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -49,32 +49,31 @@ namespace Model
      * <p>The version identifier for the current version of the origin access
      * control.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline GetOriginAccessControlConfig2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline GetOriginAccessControlConfig2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline GetOriginAccessControlConfig2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    GetOriginAccessControlConfig2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOriginAccessControlConfig2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOriginAccessControlConfig2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOriginAccessControlConfig2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOriginAccessControlConfig2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OriginAccessControlConfig m_originAccessControlConfig;
+    bool m_originAccessControlConfigHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

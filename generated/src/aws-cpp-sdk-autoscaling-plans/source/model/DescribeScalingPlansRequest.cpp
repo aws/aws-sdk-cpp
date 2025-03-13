@@ -12,17 +12,6 @@ using namespace Aws::AutoScalingPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeScalingPlansRequest::DescribeScalingPlansRequest() : 
-    m_scalingPlanNamesHasBeenSet(false),
-    m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false),
-    m_applicationSourcesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeScalingPlansRequest::SerializePayload() const
 {
   JsonValue payload;

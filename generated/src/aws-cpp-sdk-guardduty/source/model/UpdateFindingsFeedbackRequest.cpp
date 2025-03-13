@@ -12,15 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFindingsFeedbackRequest::UpdateFindingsFeedbackRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_findingIdsHasBeenSet(false),
-    m_feedback(Feedback::NOT_SET),
-    m_feedbackHasBeenSet(false),
-    m_commentsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFindingsFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

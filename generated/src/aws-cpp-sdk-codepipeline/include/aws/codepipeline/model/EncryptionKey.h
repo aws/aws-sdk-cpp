@@ -34,7 +34,7 @@ namespace Model
   class EncryptionKey
   {
   public:
-    AWS_CODEPIPELINE_API EncryptionKey();
+    AWS_CODEPIPELINE_API EncryptionKey() = default;
     AWS_CODEPIPELINE_API EncryptionKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API EncryptionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * so specifying the key ID will use the key from the other account (AccountB).</p>
      * 
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline EncryptionKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline EncryptionKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline EncryptionKey& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    EncryptionKey& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,17 @@ namespace Model
      * <p>The type of encryption key, such as an Amazon Web Services KMS key. When
      * creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
-    inline const EncryptionKeyType& GetType() const{ return m_type; }
+    inline EncryptionKeyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EncryptionKeyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EncryptionKeyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EncryptionKey& WithType(const EncryptionKeyType& value) { SetType(value); return *this;}
-    inline EncryptionKey& WithType(EncryptionKeyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EncryptionKeyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EncryptionKey& WithType(EncryptionKeyType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    EncryptionKeyType m_type;
+    EncryptionKeyType m_type{EncryptionKeyType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class QAResult
   {
   public:
-    AWS_QUICKSIGHT_API QAResult();
+    AWS_QUICKSIGHT_API QAResult() = default;
     AWS_QUICKSIGHT_API QAResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API QAResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,38 @@ namespace Model
     /**
      * <p>The type of QA result.</p>
      */
-    inline const QAResultType& GetResultType() const{ return m_resultType; }
+    inline QAResultType GetResultType() const { return m_resultType; }
     inline bool ResultTypeHasBeenSet() const { return m_resultTypeHasBeenSet; }
-    inline void SetResultType(const QAResultType& value) { m_resultTypeHasBeenSet = true; m_resultType = value; }
-    inline void SetResultType(QAResultType&& value) { m_resultTypeHasBeenSet = true; m_resultType = std::move(value); }
-    inline QAResult& WithResultType(const QAResultType& value) { SetResultType(value); return *this;}
-    inline QAResult& WithResultType(QAResultType&& value) { SetResultType(std::move(value)); return *this;}
+    inline void SetResultType(QAResultType value) { m_resultTypeHasBeenSet = true; m_resultType = value; }
+    inline QAResult& WithResultType(QAResultType value) { SetResultType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The representation of a dashboard visual result.</p>
      */
-    inline const DashboardVisualResult& GetDashboardVisual() const{ return m_dashboardVisual; }
+    inline const DashboardVisualResult& GetDashboardVisual() const { return m_dashboardVisual; }
     inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
-    inline void SetDashboardVisual(const DashboardVisualResult& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
-    inline void SetDashboardVisual(DashboardVisualResult&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
-    inline QAResult& WithDashboardVisual(const DashboardVisualResult& value) { SetDashboardVisual(value); return *this;}
-    inline QAResult& WithDashboardVisual(DashboardVisualResult&& value) { SetDashboardVisual(std::move(value)); return *this;}
+    template<typename DashboardVisualT = DashboardVisualResult>
+    void SetDashboardVisual(DashboardVisualT&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::forward<DashboardVisualT>(value); }
+    template<typename DashboardVisualT = DashboardVisualResult>
+    QAResult& WithDashboardVisual(DashboardVisualT&& value) { SetDashboardVisual(std::forward<DashboardVisualT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The representation of a generated answer result.</p>
      */
-    inline const GeneratedAnswerResult& GetGeneratedAnswer() const{ return m_generatedAnswer; }
+    inline const GeneratedAnswerResult& GetGeneratedAnswer() const { return m_generatedAnswer; }
     inline bool GeneratedAnswerHasBeenSet() const { return m_generatedAnswerHasBeenSet; }
-    inline void SetGeneratedAnswer(const GeneratedAnswerResult& value) { m_generatedAnswerHasBeenSet = true; m_generatedAnswer = value; }
-    inline void SetGeneratedAnswer(GeneratedAnswerResult&& value) { m_generatedAnswerHasBeenSet = true; m_generatedAnswer = std::move(value); }
-    inline QAResult& WithGeneratedAnswer(const GeneratedAnswerResult& value) { SetGeneratedAnswer(value); return *this;}
-    inline QAResult& WithGeneratedAnswer(GeneratedAnswerResult&& value) { SetGeneratedAnswer(std::move(value)); return *this;}
+    template<typename GeneratedAnswerT = GeneratedAnswerResult>
+    void SetGeneratedAnswer(GeneratedAnswerT&& value) { m_generatedAnswerHasBeenSet = true; m_generatedAnswer = std::forward<GeneratedAnswerT>(value); }
+    template<typename GeneratedAnswerT = GeneratedAnswerResult>
+    QAResult& WithGeneratedAnswer(GeneratedAnswerT&& value) { SetGeneratedAnswer(std::forward<GeneratedAnswerT>(value)); return *this;}
     ///@}
   private:
 
-    QAResultType m_resultType;
+    QAResultType m_resultType{QAResultType::NOT_SET};
     bool m_resultTypeHasBeenSet = false;
 
     DashboardVisualResult m_dashboardVisual;

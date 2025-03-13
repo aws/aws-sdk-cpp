@@ -18,19 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BillEstimateSummary::BillEstimateSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(BillEstimateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_billIntervalHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_expiresAtHasBeenSet(false)
-{
-}
-
 BillEstimateSummary::BillEstimateSummary(JsonView jsonValue)
-  : BillEstimateSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BillEstimateSummary& BillEstimateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BillEstimateStatusMapper::GetBillEstimateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billInterval"))
   {
     m_billInterval = jsonValue.GetObject("billInterval");
-
     m_billIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   return *this;
 }
 

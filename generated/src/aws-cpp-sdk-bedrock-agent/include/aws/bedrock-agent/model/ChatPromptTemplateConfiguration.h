@@ -38,7 +38,7 @@ namespace Model
   class ChatPromptTemplateConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API ChatPromptTemplateConfiguration();
+    AWS_BEDROCKAGENT_API ChatPromptTemplateConfiguration() = default;
     AWS_BEDROCKAGENT_API ChatPromptTemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ChatPromptTemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,28 @@ namespace Model
     /**
      * <p>An array of the variables in the prompt template.</p>
      */
-    inline const Aws::Vector<PromptInputVariable>& GetInputVariables() const{ return m_inputVariables; }
+    inline const Aws::Vector<PromptInputVariable>& GetInputVariables() const { return m_inputVariables; }
     inline bool InputVariablesHasBeenSet() const { return m_inputVariablesHasBeenSet; }
-    inline void SetInputVariables(const Aws::Vector<PromptInputVariable>& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = value; }
-    inline void SetInputVariables(Aws::Vector<PromptInputVariable>&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = std::move(value); }
-    inline ChatPromptTemplateConfiguration& WithInputVariables(const Aws::Vector<PromptInputVariable>& value) { SetInputVariables(value); return *this;}
-    inline ChatPromptTemplateConfiguration& WithInputVariables(Aws::Vector<PromptInputVariable>&& value) { SetInputVariables(std::move(value)); return *this;}
-    inline ChatPromptTemplateConfiguration& AddInputVariables(const PromptInputVariable& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.push_back(value); return *this; }
-    inline ChatPromptTemplateConfiguration& AddInputVariables(PromptInputVariable&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.push_back(std::move(value)); return *this; }
+    template<typename InputVariablesT = Aws::Vector<PromptInputVariable>>
+    void SetInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables = std::forward<InputVariablesT>(value); }
+    template<typename InputVariablesT = Aws::Vector<PromptInputVariable>>
+    ChatPromptTemplateConfiguration& WithInputVariables(InputVariablesT&& value) { SetInputVariables(std::forward<InputVariablesT>(value)); return *this;}
+    template<typename InputVariablesT = PromptInputVariable>
+    ChatPromptTemplateConfiguration& AddInputVariables(InputVariablesT&& value) { m_inputVariablesHasBeenSet = true; m_inputVariables.emplace_back(std::forward<InputVariablesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Contains messages in the chat for the prompt.</p>
      */
-    inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
+    inline const Aws::Vector<Message>& GetMessages() const { return m_messages; }
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-    inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-    inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-    inline ChatPromptTemplateConfiguration& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
-    inline ChatPromptTemplateConfiguration& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
-    inline ChatPromptTemplateConfiguration& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-    inline ChatPromptTemplateConfiguration& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    template<typename MessagesT = Aws::Vector<Message>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<Message>>
+    ChatPromptTemplateConfiguration& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = Message>
+    ChatPromptTemplateConfiguration& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,14 +77,14 @@ namespace Model
      * <p>Contains system prompts to provide context to the model or to describe how it
      * should behave.</p>
      */
-    inline const Aws::Vector<SystemContentBlock>& GetSystem() const{ return m_system; }
+    inline const Aws::Vector<SystemContentBlock>& GetSystem() const { return m_system; }
     inline bool SystemHasBeenSet() const { return m_systemHasBeenSet; }
-    inline void SetSystem(const Aws::Vector<SystemContentBlock>& value) { m_systemHasBeenSet = true; m_system = value; }
-    inline void SetSystem(Aws::Vector<SystemContentBlock>&& value) { m_systemHasBeenSet = true; m_system = std::move(value); }
-    inline ChatPromptTemplateConfiguration& WithSystem(const Aws::Vector<SystemContentBlock>& value) { SetSystem(value); return *this;}
-    inline ChatPromptTemplateConfiguration& WithSystem(Aws::Vector<SystemContentBlock>&& value) { SetSystem(std::move(value)); return *this;}
-    inline ChatPromptTemplateConfiguration& AddSystem(const SystemContentBlock& value) { m_systemHasBeenSet = true; m_system.push_back(value); return *this; }
-    inline ChatPromptTemplateConfiguration& AddSystem(SystemContentBlock&& value) { m_systemHasBeenSet = true; m_system.push_back(std::move(value)); return *this; }
+    template<typename SystemT = Aws::Vector<SystemContentBlock>>
+    void SetSystem(SystemT&& value) { m_systemHasBeenSet = true; m_system = std::forward<SystemT>(value); }
+    template<typename SystemT = Aws::Vector<SystemContentBlock>>
+    ChatPromptTemplateConfiguration& WithSystem(SystemT&& value) { SetSystem(std::forward<SystemT>(value)); return *this;}
+    template<typename SystemT = SystemContentBlock>
+    ChatPromptTemplateConfiguration& AddSystem(SystemT&& value) { m_systemHasBeenSet = true; m_system.emplace_back(std::forward<SystemT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,12 +92,12 @@ namespace Model
      * <p>Configuration information for the tools that the model can use when
      * generating a response.</p>
      */
-    inline const ToolConfiguration& GetToolConfiguration() const{ return m_toolConfiguration; }
+    inline const ToolConfiguration& GetToolConfiguration() const { return m_toolConfiguration; }
     inline bool ToolConfigurationHasBeenSet() const { return m_toolConfigurationHasBeenSet; }
-    inline void SetToolConfiguration(const ToolConfiguration& value) { m_toolConfigurationHasBeenSet = true; m_toolConfiguration = value; }
-    inline void SetToolConfiguration(ToolConfiguration&& value) { m_toolConfigurationHasBeenSet = true; m_toolConfiguration = std::move(value); }
-    inline ChatPromptTemplateConfiguration& WithToolConfiguration(const ToolConfiguration& value) { SetToolConfiguration(value); return *this;}
-    inline ChatPromptTemplateConfiguration& WithToolConfiguration(ToolConfiguration&& value) { SetToolConfiguration(std::move(value)); return *this;}
+    template<typename ToolConfigurationT = ToolConfiguration>
+    void SetToolConfiguration(ToolConfigurationT&& value) { m_toolConfigurationHasBeenSet = true; m_toolConfiguration = std::forward<ToolConfigurationT>(value); }
+    template<typename ToolConfigurationT = ToolConfiguration>
+    ChatPromptTemplateConfiguration& WithToolConfiguration(ToolConfigurationT&& value) { SetToolConfiguration(std::forward<ToolConfigurationT>(value)); return *this;}
     ///@}
   private:
 

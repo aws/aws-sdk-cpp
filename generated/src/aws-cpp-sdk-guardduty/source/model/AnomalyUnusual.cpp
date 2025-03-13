@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AnomalyUnusual::AnomalyUnusual() : 
-    m_behaviorHasBeenSet(false)
-{
-}
-
 AnomalyUnusual::AnomalyUnusual(JsonView jsonValue)
-  : AnomalyUnusual()
 {
   *this = jsonValue;
 }
@@ -46,7 +40,6 @@ AnomalyUnusual& AnomalyUnusual::operator =(JsonView jsonValue)
     }
     m_behaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,18 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFilterRequest::UpdateFilterRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_filterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_action(FilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_findingCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFilterRequest::SerializePayload() const
 {
   JsonValue payload;

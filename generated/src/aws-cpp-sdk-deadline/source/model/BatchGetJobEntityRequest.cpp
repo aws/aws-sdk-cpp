@@ -12,14 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetJobEntityRequest::BatchGetJobEntityRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_identifiersHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetJobEntityRequest::SerializePayload() const
 {
   JsonValue payload;

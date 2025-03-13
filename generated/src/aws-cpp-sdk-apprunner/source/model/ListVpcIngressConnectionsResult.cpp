@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVpcIngressConnectionsResult::ListVpcIngressConnectionsResult()
-{
-}
-
 ListVpcIngressConnectionsResult::ListVpcIngressConnectionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListVpcIngressConnectionsResult& ListVpcIngressConnectionsResult::operator =(con
     {
       m_vpcIngressConnectionSummaryList.push_back(vpcIngressConnectionSummaryListJsonList[vpcIngressConnectionSummaryListIndex].AsObject());
     }
+    m_vpcIngressConnectionSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

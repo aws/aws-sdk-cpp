@@ -18,18 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-LogSettingsRequest::LogSettingsRequest() : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_destination(Destination::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 LogSettingsRequest::LogSettingsRequest(JsonView jsonValue)
-  : LogSettingsRequest()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ LogSettingsRequest& LogSettingsRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logType"))
   {
     m_logType = LogTypeMapper::GetLogTypeForName(jsonValue.GetString("logType"));
-
     m_logTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = DestinationMapper::GetDestinationForName(jsonValue.GetString("destination"));
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProvisioningTemplateRequest::DescribeProvisioningTemplateRequest() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProvisioningTemplateRequest::SerializePayload() const
 {
   return {};

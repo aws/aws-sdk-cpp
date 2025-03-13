@@ -31,7 +31,7 @@ namespace Model
   class IndexFacesResult
   {
   public:
-    AWS_REKOGNITION_API IndexFacesResult();
+    AWS_REKOGNITION_API IndexFacesResult() = default;
     AWS_REKOGNITION_API IndexFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API IndexFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
      * </p>
      */
-    inline const Aws::Vector<FaceRecord>& GetFaceRecords() const{ return m_faceRecords; }
-    inline void SetFaceRecords(const Aws::Vector<FaceRecord>& value) { m_faceRecords = value; }
-    inline void SetFaceRecords(Aws::Vector<FaceRecord>&& value) { m_faceRecords = std::move(value); }
-    inline IndexFacesResult& WithFaceRecords(const Aws::Vector<FaceRecord>& value) { SetFaceRecords(value); return *this;}
-    inline IndexFacesResult& WithFaceRecords(Aws::Vector<FaceRecord>&& value) { SetFaceRecords(std::move(value)); return *this;}
-    inline IndexFacesResult& AddFaceRecords(const FaceRecord& value) { m_faceRecords.push_back(value); return *this; }
-    inline IndexFacesResult& AddFaceRecords(FaceRecord&& value) { m_faceRecords.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FaceRecord>& GetFaceRecords() const { return m_faceRecords; }
+    template<typename FaceRecordsT = Aws::Vector<FaceRecord>>
+    void SetFaceRecords(FaceRecordsT&& value) { m_faceRecordsHasBeenSet = true; m_faceRecords = std::forward<FaceRecordsT>(value); }
+    template<typename FaceRecordsT = Aws::Vector<FaceRecord>>
+    IndexFacesResult& WithFaceRecords(FaceRecordsT&& value) { SetFaceRecords(std::forward<FaceRecordsT>(value)); return *this;}
+    template<typename FaceRecordsT = FaceRecord>
+    IndexFacesResult& AddFaceRecords(FaceRecordsT&& value) { m_faceRecordsHasBeenSet = true; m_faceRecords.emplace_back(std::forward<FaceRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,11 +73,9 @@ namespace Model
      * <code>FaceRecords</code> array. You can get the version of the face detection
      * model by calling <a>DescribeCollection</a>. </p>
      */
-    inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
-    inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
-    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
-    inline IndexFacesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
-    inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
+    inline OrientationCorrection GetOrientationCorrection() const { return m_orientationCorrection; }
+    inline void SetOrientationCorrection(OrientationCorrection value) { m_orientationCorrectionHasBeenSet = true; m_orientationCorrection = value; }
+    inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection value) { SetOrientationCorrection(value); return *this;}
     ///@}
 
     ///@{
@@ -85,13 +83,11 @@ namespace Model
      * <p>The version number of the face detection model that's associated with the
      * input collection (<code>CollectionId</code>).</p>
      */
-    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
-    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
-    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
-    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
-    inline IndexFacesResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
-    inline IndexFacesResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
-    inline IndexFacesResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+    inline const Aws::String& GetFaceModelVersion() const { return m_faceModelVersion; }
+    template<typename FaceModelVersionT = Aws::String>
+    void SetFaceModelVersion(FaceModelVersionT&& value) { m_faceModelVersionHasBeenSet = true; m_faceModelVersion = std::forward<FaceModelVersionT>(value); }
+    template<typename FaceModelVersionT = Aws::String>
+    IndexFacesResult& WithFaceModelVersion(FaceModelVersionT&& value) { SetFaceModelVersion(std::forward<FaceModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,36 +98,39 @@ namespace Model
      * quality filter, you specify the <code>QualityFilter</code> request
      * parameter.</p>
      */
-    inline const Aws::Vector<UnindexedFace>& GetUnindexedFaces() const{ return m_unindexedFaces; }
-    inline void SetUnindexedFaces(const Aws::Vector<UnindexedFace>& value) { m_unindexedFaces = value; }
-    inline void SetUnindexedFaces(Aws::Vector<UnindexedFace>&& value) { m_unindexedFaces = std::move(value); }
-    inline IndexFacesResult& WithUnindexedFaces(const Aws::Vector<UnindexedFace>& value) { SetUnindexedFaces(value); return *this;}
-    inline IndexFacesResult& WithUnindexedFaces(Aws::Vector<UnindexedFace>&& value) { SetUnindexedFaces(std::move(value)); return *this;}
-    inline IndexFacesResult& AddUnindexedFaces(const UnindexedFace& value) { m_unindexedFaces.push_back(value); return *this; }
-    inline IndexFacesResult& AddUnindexedFaces(UnindexedFace&& value) { m_unindexedFaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnindexedFace>& GetUnindexedFaces() const { return m_unindexedFaces; }
+    template<typename UnindexedFacesT = Aws::Vector<UnindexedFace>>
+    void SetUnindexedFaces(UnindexedFacesT&& value) { m_unindexedFacesHasBeenSet = true; m_unindexedFaces = std::forward<UnindexedFacesT>(value); }
+    template<typename UnindexedFacesT = Aws::Vector<UnindexedFace>>
+    IndexFacesResult& WithUnindexedFaces(UnindexedFacesT&& value) { SetUnindexedFaces(std::forward<UnindexedFacesT>(value)); return *this;}
+    template<typename UnindexedFacesT = UnindexedFace>
+    IndexFacesResult& AddUnindexedFaces(UnindexedFacesT&& value) { m_unindexedFacesHasBeenSet = true; m_unindexedFaces.emplace_back(std::forward<UnindexedFacesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline IndexFacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline IndexFacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline IndexFacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    IndexFacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FaceRecord> m_faceRecords;
+    bool m_faceRecordsHasBeenSet = false;
 
-    OrientationCorrection m_orientationCorrection;
+    OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
+    bool m_orientationCorrectionHasBeenSet = false;
 
     Aws::String m_faceModelVersion;
+    bool m_faceModelVersionHasBeenSet = false;
 
     Aws::Vector<UnindexedFace> m_unindexedFaces;
+    bool m_unindexedFacesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

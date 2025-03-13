@@ -12,11 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssessmentRunRequest::DeleteAssessmentRunRequest() : 
-    m_assessmentRunArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssessmentRunRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -13,14 +13,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetUICustomizationRequest::SetUICustomizationRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_cSSHasBeenSet(false),
-    m_imageFileHasBeenSet(false)
-{
-}
-
 Aws::String SetUICustomizationRequest::SerializePayload() const
 {
   JsonValue payload;

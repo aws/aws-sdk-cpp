@@ -18,14 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-BatchGetViewError::BatchGetViewError() : 
-    m_errorMessageHasBeenSet(false),
-    m_viewArnHasBeenSet(false)
-{
-}
-
 BatchGetViewError::BatchGetViewError(JsonView jsonValue)
-  : BatchGetViewError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchGetViewError& BatchGetViewError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewArn"))
   {
     m_viewArn = jsonValue.GetString("ViewArn");
-
     m_viewArnHasBeenSet = true;
   }
-
   return *this;
 }
 

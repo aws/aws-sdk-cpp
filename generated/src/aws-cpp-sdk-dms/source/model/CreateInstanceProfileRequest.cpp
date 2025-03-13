@@ -12,20 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstanceProfileRequest::CreateInstanceProfileRequest() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subnetGroupIdentifierHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

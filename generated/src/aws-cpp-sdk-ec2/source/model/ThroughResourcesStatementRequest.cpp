@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ThroughResourcesStatementRequest::ThroughResourcesStatementRequest() : 
-    m_resourceStatementHasBeenSet(false)
-{
-}
-
 ThroughResourcesStatementRequest::ThroughResourcesStatementRequest(const XmlNode& xmlNode)
-  : ThroughResourcesStatementRequest()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ThroughResourcesStatementRequest& ThroughResourcesStatementRequest::operator =(c
     {
       m_resourceStatement = resourceStatementNode;
       m_resourceStatementHasBeenSet = true;
+       m_resourceStatementHasBeenSet = true;
     }
   }
 

@@ -12,21 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIncidentRecordRequest::UpdateIncidentRecordRequest() : 
-    m_arnHasBeenSet(false),
-    m_chatChannelHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_notificationTargetsHasBeenSet(false),
-    m_status(IncidentRecordStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIncidentRecordRequest::SerializePayload() const
 {
   JsonValue payload;

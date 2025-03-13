@@ -18,20 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-NotificationSetting::NotificationSetting() : 
-    m_channel(NotificationChannel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_event(NotificationEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_threshold(0),
-    m_thresholdHasBeenSet(false)
-{
-}
-
 NotificationSetting::NotificationSetting(JsonView jsonValue)
-  : NotificationSetting()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ NotificationSetting& NotificationSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("event"))
   {
     m_event = NotificationEventMapper::GetNotificationEventForName(jsonValue.GetString("event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = jsonValue.GetInteger("threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-RuleAction::RuleAction() : 
-    m_fixedResponseHasBeenSet(false),
-    m_forwardHasBeenSet(false)
-{
-}
-
 RuleAction::RuleAction(JsonView jsonValue)
-  : RuleAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fixedResponse"))
   {
     m_fixedResponse = jsonValue.GetObject("fixedResponse");
-
     m_fixedResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forward"))
   {
     m_forward = jsonValue.GetObject("forward");
-
     m_forwardHasBeenSet = true;
   }
-
   return *this;
 }
 

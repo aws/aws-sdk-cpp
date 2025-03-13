@@ -33,7 +33,7 @@ namespace Model
   class AddonPodIdentityConfiguration
   {
   public:
-    AWS_EKS_API AddonPodIdentityConfiguration();
+    AWS_EKS_API AddonPodIdentityConfiguration() = default;
     AWS_EKS_API AddonPodIdentityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API AddonPodIdentityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The Kubernetes Service Account name used by the addon.</p>
      */
-    inline const Aws::String& GetServiceAccount() const{ return m_serviceAccount; }
+    inline const Aws::String& GetServiceAccount() const { return m_serviceAccount; }
     inline bool ServiceAccountHasBeenSet() const { return m_serviceAccountHasBeenSet; }
-    inline void SetServiceAccount(const Aws::String& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = value; }
-    inline void SetServiceAccount(Aws::String&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::move(value); }
-    inline void SetServiceAccount(const char* value) { m_serviceAccountHasBeenSet = true; m_serviceAccount.assign(value); }
-    inline AddonPodIdentityConfiguration& WithServiceAccount(const Aws::String& value) { SetServiceAccount(value); return *this;}
-    inline AddonPodIdentityConfiguration& WithServiceAccount(Aws::String&& value) { SetServiceAccount(std::move(value)); return *this;}
-    inline AddonPodIdentityConfiguration& WithServiceAccount(const char* value) { SetServiceAccount(value); return *this;}
+    template<typename ServiceAccountT = Aws::String>
+    void SetServiceAccount(ServiceAccountT&& value) { m_serviceAccountHasBeenSet = true; m_serviceAccount = std::forward<ServiceAccountT>(value); }
+    template<typename ServiceAccountT = Aws::String>
+    AddonPodIdentityConfiguration& WithServiceAccount(ServiceAccountT&& value) { SetServiceAccount(std::forward<ServiceAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A suggested IAM Policy for the addon.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRecommendedManagedPolicies() const{ return m_recommendedManagedPolicies; }
+    inline const Aws::Vector<Aws::String>& GetRecommendedManagedPolicies() const { return m_recommendedManagedPolicies; }
     inline bool RecommendedManagedPoliciesHasBeenSet() const { return m_recommendedManagedPoliciesHasBeenSet; }
-    inline void SetRecommendedManagedPolicies(const Aws::Vector<Aws::String>& value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies = value; }
-    inline void SetRecommendedManagedPolicies(Aws::Vector<Aws::String>&& value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies = std::move(value); }
-    inline AddonPodIdentityConfiguration& WithRecommendedManagedPolicies(const Aws::Vector<Aws::String>& value) { SetRecommendedManagedPolicies(value); return *this;}
-    inline AddonPodIdentityConfiguration& WithRecommendedManagedPolicies(Aws::Vector<Aws::String>&& value) { SetRecommendedManagedPolicies(std::move(value)); return *this;}
-    inline AddonPodIdentityConfiguration& AddRecommendedManagedPolicies(const Aws::String& value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies.push_back(value); return *this; }
-    inline AddonPodIdentityConfiguration& AddRecommendedManagedPolicies(Aws::String&& value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies.push_back(std::move(value)); return *this; }
-    inline AddonPodIdentityConfiguration& AddRecommendedManagedPolicies(const char* value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies.push_back(value); return *this; }
+    template<typename RecommendedManagedPoliciesT = Aws::Vector<Aws::String>>
+    void SetRecommendedManagedPolicies(RecommendedManagedPoliciesT&& value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies = std::forward<RecommendedManagedPoliciesT>(value); }
+    template<typename RecommendedManagedPoliciesT = Aws::Vector<Aws::String>>
+    AddonPodIdentityConfiguration& WithRecommendedManagedPolicies(RecommendedManagedPoliciesT&& value) { SetRecommendedManagedPolicies(std::forward<RecommendedManagedPoliciesT>(value)); return *this;}
+    template<typename RecommendedManagedPoliciesT = Aws::String>
+    AddonPodIdentityConfiguration& AddRecommendedManagedPolicies(RecommendedManagedPoliciesT&& value) { m_recommendedManagedPoliciesHasBeenSet = true; m_recommendedManagedPolicies.emplace_back(std::forward<RecommendedManagedPoliciesT>(value)); return *this; }
     ///@}
   private:
 

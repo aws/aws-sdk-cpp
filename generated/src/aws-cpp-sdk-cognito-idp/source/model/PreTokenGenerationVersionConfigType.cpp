@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType() : 
-    m_lambdaVersion(PreTokenGenerationLambdaVersionType::NOT_SET),
-    m_lambdaVersionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
-{
-}
-
 PreTokenGenerationVersionConfigType::PreTokenGenerationVersionConfigType(JsonView jsonValue)
-  : PreTokenGenerationVersionConfigType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PreTokenGenerationVersionConfigType& PreTokenGenerationVersionConfigType::operat
   if(jsonValue.ValueExists("LambdaVersion"))
   {
     m_lambdaVersion = PreTokenGenerationLambdaVersionTypeMapper::GetPreTokenGenerationLambdaVersionTypeForName(jsonValue.GetString("LambdaVersion"));
-
     m_lambdaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

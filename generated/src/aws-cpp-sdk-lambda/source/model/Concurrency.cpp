@@ -19,15 +19,7 @@ namespace Lambda
 namespace Model
 {
 
-Concurrency::Concurrency() : 
-    m_reservedConcurrentExecutions(0),
-    m_reservedConcurrentExecutionsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Concurrency::Concurrency(JsonView jsonValue)
-  : Concurrency()
 {
   *this = jsonValue;
 }
@@ -37,10 +29,8 @@ Concurrency& Concurrency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReservedConcurrentExecutions"))
   {
     m_reservedConcurrentExecutions = jsonValue.GetInteger("ReservedConcurrentExecutions");
-
     m_reservedConcurrentExecutionsHasBeenSet = true;
   }
-
   return *this;
 }
 

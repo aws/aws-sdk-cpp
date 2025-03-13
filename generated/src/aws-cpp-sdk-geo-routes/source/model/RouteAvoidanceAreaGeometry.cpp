@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteAvoidanceAreaGeometry::RouteAvoidanceAreaGeometry() : 
-    m_corridorHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_polygonHasBeenSet(false),
-    m_polylineCorridorHasBeenSet(false),
-    m_polylinePolygonHasBeenSet(false)
-{
-}
-
 RouteAvoidanceAreaGeometry::RouteAvoidanceAreaGeometry(JsonView jsonValue)
-  : RouteAvoidanceAreaGeometry()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RouteAvoidanceAreaGeometry& RouteAvoidanceAreaGeometry::operator =(JsonView json
   if(jsonValue.ValueExists("Corridor"))
   {
     m_corridor = jsonValue.GetObject("Corridor");
-
     m_corridorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundingBox"))
   {
     Aws::Utils::Array<JsonView> boundingBoxJsonList = jsonValue.GetArray("BoundingBox");
@@ -51,7 +39,6 @@ RouteAvoidanceAreaGeometry& RouteAvoidanceAreaGeometry::operator =(JsonView json
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Polygon"))
   {
     Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
@@ -75,14 +62,11 @@ RouteAvoidanceAreaGeometry& RouteAvoidanceAreaGeometry::operator =(JsonView json
     }
     m_polygonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolylineCorridor"))
   {
     m_polylineCorridor = jsonValue.GetObject("PolylineCorridor");
-
     m_polylineCorridorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolylinePolygon"))
   {
     Aws::Utils::Array<JsonView> polylinePolygonJsonList = jsonValue.GetArray("PolylinePolygon");
@@ -92,7 +76,6 @@ RouteAvoidanceAreaGeometry& RouteAvoidanceAreaGeometry::operator =(JsonView json
     }
     m_polylinePolygonHasBeenSet = true;
   }
-
   return *this;
 }
 

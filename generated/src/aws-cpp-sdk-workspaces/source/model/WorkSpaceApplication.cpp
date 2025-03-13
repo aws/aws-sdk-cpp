@@ -18,23 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkSpaceApplication::WorkSpaceApplication() : 
-    m_applicationIdHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_licenseType(WorkSpaceApplicationLicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_state(WorkSpaceApplicationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_supportedComputeTypeNamesHasBeenSet(false),
-    m_supportedOperatingSystemNamesHasBeenSet(false)
-{
-}
-
 WorkSpaceApplication::WorkSpaceApplication(JsonView jsonValue)
-  : WorkSpaceApplication()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ WorkSpaceApplication& WorkSpaceApplication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetDouble("Created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseType"))
   {
     m_licenseType = WorkSpaceApplicationLicenseTypeMapper::GetWorkSpaceApplicationLicenseTypeForName(jsonValue.GetString("LicenseType"));
-
     m_licenseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = WorkSpaceApplicationStateMapper::GetWorkSpaceApplicationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedComputeTypeNames"))
   {
     Aws::Utils::Array<JsonView> supportedComputeTypeNamesJsonList = jsonValue.GetArray("SupportedComputeTypeNames");
@@ -99,7 +69,6 @@ WorkSpaceApplication& WorkSpaceApplication::operator =(JsonView jsonValue)
     }
     m_supportedComputeTypeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedOperatingSystemNames"))
   {
     Aws::Utils::Array<JsonView> supportedOperatingSystemNamesJsonList = jsonValue.GetArray("SupportedOperatingSystemNames");
@@ -109,7 +78,6 @@ WorkSpaceApplication& WorkSpaceApplication::operator =(JsonView jsonValue)
     }
     m_supportedOperatingSystemNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

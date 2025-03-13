@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes() : 
-    m_formsHasBeenSet(false),
-    m_latestTimeSeriesDataPointFormsHasBeenSet(false)
-{
-}
-
 AssetListingItemAdditionalAttributes::AssetListingItemAdditionalAttributes(JsonView jsonValue)
-  : AssetListingItemAdditionalAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AssetListingItemAdditionalAttributes& AssetListingItemAdditionalAttributes::oper
   if(jsonValue.ValueExists("forms"))
   {
     m_forms = jsonValue.GetString("forms");
-
     m_formsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestTimeSeriesDataPointForms"))
   {
     Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsJsonList = jsonValue.GetArray("latestTimeSeriesDataPointForms");
@@ -48,7 +39,6 @@ AssetListingItemAdditionalAttributes& AssetListingItemAdditionalAttributes::oper
     }
     m_latestTimeSeriesDataPointFormsHasBeenSet = true;
   }
-
   return *this;
 }
 

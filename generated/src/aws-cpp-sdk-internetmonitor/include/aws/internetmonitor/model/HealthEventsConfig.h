@@ -49,7 +49,7 @@ namespace Model
   class HealthEventsConfig
   {
   public:
-    AWS_INTERNETMONITOR_API HealthEventsConfig();
+    AWS_INTERNETMONITOR_API HealthEventsConfig() = default;
     AWS_INTERNETMONITOR_API HealthEventsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API HealthEventsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>The health event threshold percentage set for availability scores.</p>
      */
-    inline double GetAvailabilityScoreThreshold() const{ return m_availabilityScoreThreshold; }
+    inline double GetAvailabilityScoreThreshold() const { return m_availabilityScoreThreshold; }
     inline bool AvailabilityScoreThresholdHasBeenSet() const { return m_availabilityScoreThresholdHasBeenSet; }
     inline void SetAvailabilityScoreThreshold(double value) { m_availabilityScoreThresholdHasBeenSet = true; m_availabilityScoreThreshold = value; }
     inline HealthEventsConfig& WithAvailabilityScoreThreshold(double value) { SetAvailabilityScoreThreshold(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>The health event threshold percentage set for performance scores.</p>
      */
-    inline double GetPerformanceScoreThreshold() const{ return m_performanceScoreThreshold; }
+    inline double GetPerformanceScoreThreshold() const { return m_performanceScoreThreshold; }
     inline bool PerformanceScoreThresholdHasBeenSet() const { return m_performanceScoreThresholdHasBeenSet; }
     inline void SetPerformanceScoreThreshold(double value) { m_performanceScoreThresholdHasBeenSet = true; m_performanceScoreThreshold = value; }
     inline HealthEventsConfig& WithPerformanceScoreThreshold(double value) { SetPerformanceScoreThreshold(value); return *this;}
@@ -80,12 +80,12 @@ namespace Model
      * <p>The configuration that determines the threshold and other conditions for when
      * Internet Monitor creates a health event for a local availability issue.</p>
      */
-    inline const LocalHealthEventsConfig& GetAvailabilityLocalHealthEventsConfig() const{ return m_availabilityLocalHealthEventsConfig; }
+    inline const LocalHealthEventsConfig& GetAvailabilityLocalHealthEventsConfig() const { return m_availabilityLocalHealthEventsConfig; }
     inline bool AvailabilityLocalHealthEventsConfigHasBeenSet() const { return m_availabilityLocalHealthEventsConfigHasBeenSet; }
-    inline void SetAvailabilityLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { m_availabilityLocalHealthEventsConfigHasBeenSet = true; m_availabilityLocalHealthEventsConfig = value; }
-    inline void SetAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { m_availabilityLocalHealthEventsConfigHasBeenSet = true; m_availabilityLocalHealthEventsConfig = std::move(value); }
-    inline HealthEventsConfig& WithAvailabilityLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { SetAvailabilityLocalHealthEventsConfig(value); return *this;}
-    inline HealthEventsConfig& WithAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { SetAvailabilityLocalHealthEventsConfig(std::move(value)); return *this;}
+    template<typename AvailabilityLocalHealthEventsConfigT = LocalHealthEventsConfig>
+    void SetAvailabilityLocalHealthEventsConfig(AvailabilityLocalHealthEventsConfigT&& value) { m_availabilityLocalHealthEventsConfigHasBeenSet = true; m_availabilityLocalHealthEventsConfig = std::forward<AvailabilityLocalHealthEventsConfigT>(value); }
+    template<typename AvailabilityLocalHealthEventsConfigT = LocalHealthEventsConfig>
+    HealthEventsConfig& WithAvailabilityLocalHealthEventsConfig(AvailabilityLocalHealthEventsConfigT&& value) { SetAvailabilityLocalHealthEventsConfig(std::forward<AvailabilityLocalHealthEventsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,19 +93,19 @@ namespace Model
      * <p>The configuration that determines the threshold and other conditions for when
      * Internet Monitor creates a health event for a local performance issue.</p>
      */
-    inline const LocalHealthEventsConfig& GetPerformanceLocalHealthEventsConfig() const{ return m_performanceLocalHealthEventsConfig; }
+    inline const LocalHealthEventsConfig& GetPerformanceLocalHealthEventsConfig() const { return m_performanceLocalHealthEventsConfig; }
     inline bool PerformanceLocalHealthEventsConfigHasBeenSet() const { return m_performanceLocalHealthEventsConfigHasBeenSet; }
-    inline void SetPerformanceLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { m_performanceLocalHealthEventsConfigHasBeenSet = true; m_performanceLocalHealthEventsConfig = value; }
-    inline void SetPerformanceLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { m_performanceLocalHealthEventsConfigHasBeenSet = true; m_performanceLocalHealthEventsConfig = std::move(value); }
-    inline HealthEventsConfig& WithPerformanceLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { SetPerformanceLocalHealthEventsConfig(value); return *this;}
-    inline HealthEventsConfig& WithPerformanceLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { SetPerformanceLocalHealthEventsConfig(std::move(value)); return *this;}
+    template<typename PerformanceLocalHealthEventsConfigT = LocalHealthEventsConfig>
+    void SetPerformanceLocalHealthEventsConfig(PerformanceLocalHealthEventsConfigT&& value) { m_performanceLocalHealthEventsConfigHasBeenSet = true; m_performanceLocalHealthEventsConfig = std::forward<PerformanceLocalHealthEventsConfigT>(value); }
+    template<typename PerformanceLocalHealthEventsConfigT = LocalHealthEventsConfig>
+    HealthEventsConfig& WithPerformanceLocalHealthEventsConfig(PerformanceLocalHealthEventsConfigT&& value) { SetPerformanceLocalHealthEventsConfig(std::forward<PerformanceLocalHealthEventsConfigT>(value)); return *this;}
     ///@}
   private:
 
-    double m_availabilityScoreThreshold;
+    double m_availabilityScoreThreshold{0.0};
     bool m_availabilityScoreThresholdHasBeenSet = false;
 
-    double m_performanceScoreThreshold;
+    double m_performanceScoreThreshold{0.0};
     bool m_performanceScoreThresholdHasBeenSet = false;
 
     LocalHealthEventsConfig m_availabilityLocalHealthEventsConfig;

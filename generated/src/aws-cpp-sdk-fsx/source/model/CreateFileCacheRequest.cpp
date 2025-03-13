@@ -12,25 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFileCacheRequest::CreateFileCacheRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_fileCacheType(FileCacheType::NOT_SET),
-    m_fileCacheTypeHasBeenSet(false),
-    m_fileCacheTypeVersionHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_copyTagsToDataRepositoryAssociations(false),
-    m_copyTagsToDataRepositoryAssociationsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_dataRepositoryAssociationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFileCacheRequest::SerializePayload() const
 {
   JsonValue payload;

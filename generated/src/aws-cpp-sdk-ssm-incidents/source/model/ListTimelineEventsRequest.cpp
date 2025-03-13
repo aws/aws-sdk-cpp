@@ -12,19 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTimelineEventsRequest::ListTimelineEventsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_incidentRecordArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(TimelineEventSort::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListTimelineEventsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,20 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Behavior::Behavior() : 
-    m_nameHasBeenSet(false),
-    m_metricHasBeenSet(false),
-    m_metricDimensionHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_suppressAlerts(false),
-    m_suppressAlertsHasBeenSet(false),
-    m_exportMetric(false),
-    m_exportMetricHasBeenSet(false)
-{
-}
-
 Behavior::Behavior(JsonView jsonValue)
-  : Behavior()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Behavior& Behavior::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metric"))
   {
     m_metric = jsonValue.GetString("metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricDimension"))
   {
     m_metricDimension = jsonValue.GetObject("metricDimension");
-
     m_metricDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("criteria"))
   {
     m_criteria = jsonValue.GetObject("criteria");
-
     m_criteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressAlerts"))
   {
     m_suppressAlerts = jsonValue.GetBool("suppressAlerts");
-
     m_suppressAlertsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportMetric"))
   {
     m_exportMetric = jsonValue.GetBool("exportMetric");
-
     m_exportMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

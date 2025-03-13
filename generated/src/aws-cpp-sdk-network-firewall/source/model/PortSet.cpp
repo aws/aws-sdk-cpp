@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-PortSet::PortSet() : 
-    m_definitionHasBeenSet(false)
-{
-}
-
 PortSet::PortSet(JsonView jsonValue)
-  : PortSet()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PortSet& PortSet::operator =(JsonView jsonValue)
     }
     m_definitionHasBeenSet = true;
   }
-
   return *this;
 }
 

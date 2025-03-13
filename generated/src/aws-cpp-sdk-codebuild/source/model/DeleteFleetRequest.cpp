@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFleetRequest::DeleteFleetRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetRequest::SerializePayload() const
 {
   JsonValue payload;

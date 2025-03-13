@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RuleOption::RuleOption() : 
-    m_keywordHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 RuleOption::RuleOption(const XmlNode& xmlNode)
-  : RuleOption()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ RuleOption& RuleOption::operator =(const XmlNode& xmlNode)
     {
       m_keyword = Aws::Utils::Xml::DecodeEscapedXmlText(keywordNode.GetText());
       m_keywordHasBeenSet = true;
+       m_keywordHasBeenSet = true;
     }
     XmlNode settingsNode = resultNode.FirstChild("settingSet");
     if(!settingsNode.IsNull())
     {
       XmlNode settingsMember = settingsNode.FirstChild("item");
+      m_settingsHasBeenSet = !settingsMember.IsNull();
       while(!settingsMember.IsNull())
       {
         m_settings.push_back(settingsMember.GetText());
         settingsMember = settingsMember.NextNode("item");
       }
 
-      m_settingsHasBeenSet = true;
+       m_settingsHasBeenSet = true;
     }
   }
 

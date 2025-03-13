@@ -18,13 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-NotificationDestinationConfig::NotificationDestinationConfig() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 NotificationDestinationConfig::NotificationDestinationConfig(JsonView jsonValue)
-  : NotificationDestinationConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NotificationDestinationConfig& NotificationDestinationConfig::operator =(JsonVie
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

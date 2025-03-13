@@ -19,15 +19,7 @@ namespace LocationService
 namespace Model
 {
 
-GeofenceGeometry::GeofenceGeometry() : 
-    m_polygonHasBeenSet(false),
-    m_circleHasBeenSet(false),
-    m_geobufHasBeenSet(false)
-{
-}
-
 GeofenceGeometry::GeofenceGeometry(JsonView jsonValue)
-  : GeofenceGeometry()
 {
   *this = jsonValue;
 }
@@ -57,20 +49,16 @@ GeofenceGeometry& GeofenceGeometry::operator =(JsonView jsonValue)
     }
     m_polygonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Circle"))
   {
     m_circle = jsonValue.GetObject("Circle");
-
     m_circleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geobuf"))
   {
     m_geobuf = HashingUtils::Base64Decode(jsonValue.GetString("Geobuf"));
     m_geobufHasBeenSet = true;
   }
-
   return *this;
 }
 

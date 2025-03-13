@@ -31,7 +31,7 @@ namespace Model
   class DiskMap
   {
   public:
-    AWS_LIGHTSAIL_API DiskMap();
+    AWS_LIGHTSAIL_API DiskMap() = default;
     AWS_LIGHTSAIL_API DiskMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API DiskMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * <p>The original disk path exposed to the instance (for example,
      * <code>/dev/sdh</code>).</p>
      */
-    inline const Aws::String& GetOriginalDiskPath() const{ return m_originalDiskPath; }
+    inline const Aws::String& GetOriginalDiskPath() const { return m_originalDiskPath; }
     inline bool OriginalDiskPathHasBeenSet() const { return m_originalDiskPathHasBeenSet; }
-    inline void SetOriginalDiskPath(const Aws::String& value) { m_originalDiskPathHasBeenSet = true; m_originalDiskPath = value; }
-    inline void SetOriginalDiskPath(Aws::String&& value) { m_originalDiskPathHasBeenSet = true; m_originalDiskPath = std::move(value); }
-    inline void SetOriginalDiskPath(const char* value) { m_originalDiskPathHasBeenSet = true; m_originalDiskPath.assign(value); }
-    inline DiskMap& WithOriginalDiskPath(const Aws::String& value) { SetOriginalDiskPath(value); return *this;}
-    inline DiskMap& WithOriginalDiskPath(Aws::String&& value) { SetOriginalDiskPath(std::move(value)); return *this;}
-    inline DiskMap& WithOriginalDiskPath(const char* value) { SetOriginalDiskPath(value); return *this;}
+    template<typename OriginalDiskPathT = Aws::String>
+    void SetOriginalDiskPath(OriginalDiskPathT&& value) { m_originalDiskPathHasBeenSet = true; m_originalDiskPath = std::forward<OriginalDiskPathT>(value); }
+    template<typename OriginalDiskPathT = Aws::String>
+    DiskMap& WithOriginalDiskPath(OriginalDiskPathT&& value) { SetOriginalDiskPath(std::forward<OriginalDiskPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new disk name (<code>my-new-disk</code>).</p>
      */
-    inline const Aws::String& GetNewDiskName() const{ return m_newDiskName; }
+    inline const Aws::String& GetNewDiskName() const { return m_newDiskName; }
     inline bool NewDiskNameHasBeenSet() const { return m_newDiskNameHasBeenSet; }
-    inline void SetNewDiskName(const Aws::String& value) { m_newDiskNameHasBeenSet = true; m_newDiskName = value; }
-    inline void SetNewDiskName(Aws::String&& value) { m_newDiskNameHasBeenSet = true; m_newDiskName = std::move(value); }
-    inline void SetNewDiskName(const char* value) { m_newDiskNameHasBeenSet = true; m_newDiskName.assign(value); }
-    inline DiskMap& WithNewDiskName(const Aws::String& value) { SetNewDiskName(value); return *this;}
-    inline DiskMap& WithNewDiskName(Aws::String&& value) { SetNewDiskName(std::move(value)); return *this;}
-    inline DiskMap& WithNewDiskName(const char* value) { SetNewDiskName(value); return *this;}
+    template<typename NewDiskNameT = Aws::String>
+    void SetNewDiskName(NewDiskNameT&& value) { m_newDiskNameHasBeenSet = true; m_newDiskName = std::forward<NewDiskNameT>(value); }
+    template<typename NewDiskNameT = Aws::String>
+    DiskMap& WithNewDiskName(NewDiskNameT&& value) { SetNewDiskName(std::forward<NewDiskNameT>(value)); return *this;}
     ///@}
   private:
 

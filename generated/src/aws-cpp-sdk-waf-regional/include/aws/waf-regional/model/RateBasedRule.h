@@ -52,7 +52,7 @@ namespace Model
   class RateBasedRule
   {
   public:
-    AWS_WAFREGIONAL_API RateBasedRule();
+    AWS_WAFREGIONAL_API RateBasedRule() = default;
     AWS_WAFREGIONAL_API RateBasedRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API RateBasedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -68,14 +68,12 @@ namespace Model
      * <a>UpdateWebACL</a>), or delete a <code>RateBasedRule</code> from AWS WAF (see
      * <a>DeleteRateBasedRule</a>).</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline RateBasedRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline RateBasedRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline RateBasedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    RateBasedRule& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * <p>A friendly name or description for a <code>RateBasedRule</code>. You can't
      * change the name of a <code>RateBasedRule</code> after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RateBasedRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RateBasedRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RateBasedRule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RateBasedRule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +98,12 @@ namespace Model
      * "Default_Action." You can't change the name of the metric after you create the
      * <code>RateBasedRule</code>.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline RateBasedRule& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline RateBasedRule& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline RateBasedRule& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    RateBasedRule& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +113,14 @@ namespace Model
      * <a>SqlInjectionMatchSet</a> object that you want to include in a
      * <code>RateBasedRule</code>.</p>
      */
-    inline const Aws::Vector<Predicate>& GetMatchPredicates() const{ return m_matchPredicates; }
+    inline const Aws::Vector<Predicate>& GetMatchPredicates() const { return m_matchPredicates; }
     inline bool MatchPredicatesHasBeenSet() const { return m_matchPredicatesHasBeenSet; }
-    inline void SetMatchPredicates(const Aws::Vector<Predicate>& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates = value; }
-    inline void SetMatchPredicates(Aws::Vector<Predicate>&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates = std::move(value); }
-    inline RateBasedRule& WithMatchPredicates(const Aws::Vector<Predicate>& value) { SetMatchPredicates(value); return *this;}
-    inline RateBasedRule& WithMatchPredicates(Aws::Vector<Predicate>&& value) { SetMatchPredicates(std::move(value)); return *this;}
-    inline RateBasedRule& AddMatchPredicates(const Predicate& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.push_back(value); return *this; }
-    inline RateBasedRule& AddMatchPredicates(Predicate&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.push_back(std::move(value)); return *this; }
+    template<typename MatchPredicatesT = Aws::Vector<Predicate>>
+    void SetMatchPredicates(MatchPredicatesT&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates = std::forward<MatchPredicatesT>(value); }
+    template<typename MatchPredicatesT = Aws::Vector<Predicate>>
+    RateBasedRule& WithMatchPredicates(MatchPredicatesT&& value) { SetMatchPredicates(std::forward<MatchPredicatesT>(value)); return *this;}
+    template<typename MatchPredicatesT = Predicate>
+    RateBasedRule& AddMatchPredicates(MatchPredicatesT&& value) { m_matchPredicatesHasBeenSet = true; m_matchPredicates.emplace_back(std::forward<MatchPredicatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,12 +131,10 @@ namespace Model
      * arriving from the same IP address are subject to the <code>RateLimit</code> that
      * is specified in the <code>RateBasedRule</code>.</p>
      */
-    inline const RateKey& GetRateKey() const{ return m_rateKey; }
+    inline RateKey GetRateKey() const { return m_rateKey; }
     inline bool RateKeyHasBeenSet() const { return m_rateKeyHasBeenSet; }
-    inline void SetRateKey(const RateKey& value) { m_rateKeyHasBeenSet = true; m_rateKey = value; }
-    inline void SetRateKey(RateKey&& value) { m_rateKeyHasBeenSet = true; m_rateKey = std::move(value); }
-    inline RateBasedRule& WithRateKey(const RateKey& value) { SetRateKey(value); return *this;}
-    inline RateBasedRule& WithRateKey(RateKey&& value) { SetRateKey(std::move(value)); return *this;}
+    inline void SetRateKey(RateKey value) { m_rateKeyHasBeenSet = true; m_rateKey = value; }
+    inline RateBasedRule& WithRateKey(RateKey value) { SetRateKey(value); return *this;}
     ///@}
 
     ///@{
@@ -153,7 +145,7 @@ namespace Model
      * specified in the rule are also met, AWS WAF triggers the action that is
      * specified for this rule.</p>
      */
-    inline long long GetRateLimit() const{ return m_rateLimit; }
+    inline long long GetRateLimit() const { return m_rateLimit; }
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
     inline void SetRateLimit(long long value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
     inline RateBasedRule& WithRateLimit(long long value) { SetRateLimit(value); return *this;}
@@ -172,10 +164,10 @@ namespace Model
     Aws::Vector<Predicate> m_matchPredicates;
     bool m_matchPredicatesHasBeenSet = false;
 
-    RateKey m_rateKey;
+    RateKey m_rateKey{RateKey::NOT_SET};
     bool m_rateKeyHasBeenSet = false;
 
-    long long m_rateLimit;
+    long long m_rateLimit{0};
     bool m_rateLimitHasBeenSet = false;
   };
 

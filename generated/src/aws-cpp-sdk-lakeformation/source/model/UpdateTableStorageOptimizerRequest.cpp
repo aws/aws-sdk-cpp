@@ -12,14 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableStorageOptimizerRequest::UpdateTableStorageOptimizerRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_storageOptimizerConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableStorageOptimizerRequest::SerializePayload() const
 {
   JsonValue payload;

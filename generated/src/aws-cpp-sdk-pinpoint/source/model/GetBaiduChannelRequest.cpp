@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBaiduChannelRequest::GetBaiduChannelRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBaiduChannelRequest::SerializePayload() const
 {
   return {};

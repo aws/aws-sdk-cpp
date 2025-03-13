@@ -24,7 +24,7 @@ namespace Model
   class DescribeMaintenanceWindowsForTargetRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DescribeMaintenanceWindowsForTargetRequest();
+    AWS_SSM_API DescribeMaintenanceWindowsForTargetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The managed node ID or key-value pair to retrieve information about.</p>
      */
-    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+    inline const Aws::Vector<Target>& GetTargets() const { return m_targets; }
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-    inline DescribeMaintenanceWindowsForTargetRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
-    inline DescribeMaintenanceWindowsForTargetRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowsForTargetRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-    inline DescribeMaintenanceWindowsForTargetRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+    template<typename TargetsT = Aws::Vector<Target>>
+    void SetTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets = std::forward<TargetsT>(value); }
+    template<typename TargetsT = Aws::Vector<Target>>
+    DescribeMaintenanceWindowsForTargetRequest& WithTargets(TargetsT&& value) { SetTargets(std::forward<TargetsT>(value)); return *this;}
+    template<typename TargetsT = Target>
+    DescribeMaintenanceWindowsForTargetRequest& AddTargets(TargetsT&& value) { m_targetsHasBeenSet = true; m_targets.emplace_back(std::forward<TargetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,12 +56,10 @@ namespace Model
      * <p>The type of resource you want to retrieve information about. For example,
      * <code>INSTANCE</code>.</p>
      */
-    inline const MaintenanceWindowResourceType& GetResourceType() const{ return m_resourceType; }
+    inline MaintenanceWindowResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const MaintenanceWindowResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(MaintenanceWindowResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline DescribeMaintenanceWindowsForTargetRequest& WithResourceType(const MaintenanceWindowResourceType& value) { SetResourceType(value); return *this;}
-    inline DescribeMaintenanceWindowsForTargetRequest& WithResourceType(MaintenanceWindowResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(MaintenanceWindowResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline DescribeMaintenanceWindowsForTargetRequest& WithResourceType(MaintenanceWindowResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +68,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeMaintenanceWindowsForTargetRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,24 +79,22 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeMaintenanceWindowsForTargetRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeMaintenanceWindowsForTargetRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeMaintenanceWindowsForTargetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeMaintenanceWindowsForTargetRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet = false;
 
-    MaintenanceWindowResourceType m_resourceType;
+    MaintenanceWindowResourceType m_resourceType{MaintenanceWindowResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

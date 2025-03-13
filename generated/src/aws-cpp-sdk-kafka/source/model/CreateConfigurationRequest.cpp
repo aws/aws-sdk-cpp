@@ -13,14 +13,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfigurationRequest::CreateConfigurationRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_kafkaVersionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

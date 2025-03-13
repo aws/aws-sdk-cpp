@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeFilters::TypeFilters() : 
-    m_category(Category::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_typeNamePrefixHasBeenSet(false)
-{
-}
-
 TypeFilters::TypeFilters(const XmlNode& xmlNode)
-  : TypeFilters()
 {
   *this = xmlNode;
 }
@@ -43,20 +34,23 @@ TypeFilters& TypeFilters::operator =(const XmlNode& xmlNode)
     XmlNode categoryNode = resultNode.FirstChild("Category");
     if(!categoryNode.IsNull())
     {
-      m_category = CategoryMapper::GetCategoryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText()).c_str()).c_str());
+      m_category = CategoryMapper::GetCategoryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText()).c_str()));
       m_categoryHasBeenSet = true;
+       m_categoryHasBeenSet = true;
     }
     XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");
     if(!publisherIdNode.IsNull())
     {
       m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
       m_publisherIdHasBeenSet = true;
+       m_publisherIdHasBeenSet = true;
     }
     XmlNode typeNamePrefixNode = resultNode.FirstChild("TypeNamePrefix");
     if(!typeNamePrefixNode.IsNull())
     {
       m_typeNamePrefix = Aws::Utils::Xml::DecodeEscapedXmlText(typeNamePrefixNode.GetText());
       m_typeNamePrefixHasBeenSet = true;
+       m_typeNamePrefixHasBeenSet = true;
     }
   }
 

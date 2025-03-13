@@ -33,7 +33,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_PRICING_API Filter();
+    AWS_PRICING_API Filter() = default;
     AWS_PRICING_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRICING_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRICING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products that
      * match both the given filter field and the given value.</p>
      */
-    inline const FilterType& GetType() const{ return m_type; }
+    inline FilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Filter& WithType(const FilterType& value) { SetType(value); return *this;}
-    inline Filter& WithType(FilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Filter& WithType(FilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * code and the <code>volumeType</code> attribute name to get the prices for only
      * Amazon EC2 volumes.</p>
      */
-    inline const Aws::String& GetField() const{ return m_field; }
+    inline const Aws::String& GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-    inline Filter& WithField(const Aws::String& value) { SetField(value); return *this;}
-    inline Filter& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-    inline Filter& WithField(const char* value) { SetField(value); return *this;}
+    template<typename FieldT = Aws::String>
+    void SetField(FieldT&& value) { m_fieldHasBeenSet = true; m_field = std::forward<FieldT>(value); }
+    template<typename FieldT = Aws::String>
+    Filter& WithField(FieldT&& value) { SetField(std::forward<FieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,18 +78,16 @@ namespace Model
      * attribute value that you want the returned products to match, such as a
      * <code>Provisioned IOPS</code> volume.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Filter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Filter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Filter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Filter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterType m_type;
+    FilterType m_type{FilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_field;

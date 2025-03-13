@@ -12,11 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteViewRequest::DeleteViewRequest() : 
-    m_viewArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteViewRequest::SerializePayload() const
 {
   JsonValue payload;

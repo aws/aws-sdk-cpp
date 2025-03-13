@@ -18,19 +18,7 @@ namespace kendra
 namespace Model
 {
 
-RetrieveResultItem::RetrieveResultItem() : 
-    m_idHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_documentURIHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false)
-{
-}
-
 RetrieveResultItem::RetrieveResultItem(JsonView jsonValue)
-  : RetrieveResultItem()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ RetrieveResultItem& RetrieveResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentId"))
   {
     m_documentId = jsonValue.GetString("DocumentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentTitle"))
   {
     m_documentTitle = jsonValue.GetString("DocumentTitle");
-
     m_documentTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentURI"))
   {
     m_documentURI = jsonValue.GetString("DocumentURI");
-
     m_documentURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentAttributes"))
   {
     Aws::Utils::Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("DocumentAttributes");
@@ -81,14 +59,11 @@ RetrieveResultItem& RetrieveResultItem::operator =(JsonView jsonValue)
     }
     m_documentAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScoreAttributes"))
   {
     m_scoreAttributes = jsonValue.GetObject("ScoreAttributes");
-
     m_scoreAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -39,7 +39,7 @@ namespace Model
   class ClipFragmentSelector
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API ClipFragmentSelector();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API ClipFragmentSelector() = default;
     AWS_KINESISVIDEOARCHIVEDMEDIA_API ClipFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API ClipFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,26 @@ namespace Model
     /**
      * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
-    inline const ClipFragmentSelectorType& GetFragmentSelectorType() const{ return m_fragmentSelectorType; }
+    inline ClipFragmentSelectorType GetFragmentSelectorType() const { return m_fragmentSelectorType; }
     inline bool FragmentSelectorTypeHasBeenSet() const { return m_fragmentSelectorTypeHasBeenSet; }
-    inline void SetFragmentSelectorType(const ClipFragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
-    inline void SetFragmentSelectorType(ClipFragmentSelectorType&& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = std::move(value); }
-    inline ClipFragmentSelector& WithFragmentSelectorType(const ClipFragmentSelectorType& value) { SetFragmentSelectorType(value); return *this;}
-    inline ClipFragmentSelector& WithFragmentSelectorType(ClipFragmentSelectorType&& value) { SetFragmentSelectorType(std::move(value)); return *this;}
+    inline void SetFragmentSelectorType(ClipFragmentSelectorType value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
+    inline ClipFragmentSelector& WithFragmentSelectorType(ClipFragmentSelectorType value) { SetFragmentSelectorType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The range of timestamps to return.</p>
      */
-    inline const ClipTimestampRange& GetTimestampRange() const{ return m_timestampRange; }
+    inline const ClipTimestampRange& GetTimestampRange() const { return m_timestampRange; }
     inline bool TimestampRangeHasBeenSet() const { return m_timestampRangeHasBeenSet; }
-    inline void SetTimestampRange(const ClipTimestampRange& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = value; }
-    inline void SetTimestampRange(ClipTimestampRange&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::move(value); }
-    inline ClipFragmentSelector& WithTimestampRange(const ClipTimestampRange& value) { SetTimestampRange(value); return *this;}
-    inline ClipFragmentSelector& WithTimestampRange(ClipTimestampRange&& value) { SetTimestampRange(std::move(value)); return *this;}
+    template<typename TimestampRangeT = ClipTimestampRange>
+    void SetTimestampRange(TimestampRangeT&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::forward<TimestampRangeT>(value); }
+    template<typename TimestampRangeT = ClipTimestampRange>
+    ClipFragmentSelector& WithTimestampRange(TimestampRangeT&& value) { SetTimestampRange(std::forward<TimestampRangeT>(value)); return *this;}
     ///@}
   private:
 
-    ClipFragmentSelectorType m_fragmentSelectorType;
+    ClipFragmentSelectorType m_fragmentSelectorType{ClipFragmentSelectorType::NOT_SET};
     bool m_fragmentSelectorTypeHasBeenSet = false;
 
     ClipTimestampRange m_timestampRange;

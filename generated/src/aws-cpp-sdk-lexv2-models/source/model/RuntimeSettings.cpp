@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-RuntimeSettings::RuntimeSettings() : 
-    m_slotResolutionImprovementHasBeenSet(false)
-{
-}
-
 RuntimeSettings::RuntimeSettings(JsonView jsonValue)
-  : RuntimeSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuntimeSettings& RuntimeSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("slotResolutionImprovement"))
   {
     m_slotResolutionImprovement = jsonValue.GetObject("slotResolutionImprovement");
-
     m_slotResolutionImprovementHasBeenSet = true;
   }
-
   return *this;
 }
 

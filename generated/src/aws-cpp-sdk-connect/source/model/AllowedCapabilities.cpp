@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AllowedCapabilities::AllowedCapabilities() : 
-    m_customerHasBeenSet(false),
-    m_agentHasBeenSet(false)
-{
-}
-
 AllowedCapabilities::AllowedCapabilities(JsonView jsonValue)
-  : AllowedCapabilities()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AllowedCapabilities& AllowedCapabilities::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Customer"))
   {
     m_customer = jsonValue.GetObject("Customer");
-
     m_customerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Agent"))
   {
     m_agent = jsonValue.GetObject("Agent");
-
     m_agentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDeviceRequest::DescribeDeviceRequest() : 
-    m_deviceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDeviceRequest::SerializePayload() const
 {
   return {};

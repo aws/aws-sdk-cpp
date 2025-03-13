@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Logo::Logo() : 
-    m_altTextHasBeenSet(false),
-    m_logoSetHasBeenSet(false)
-{
-}
-
 Logo::Logo(JsonView jsonValue)
-  : Logo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Logo& Logo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AltText"))
   {
     m_altText = jsonValue.GetString("AltText");
-
     m_altTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogoSet"))
   {
     m_logoSet = jsonValue.GetObject("LogoSet");
-
     m_logoSetHasBeenSet = true;
   }
-
   return *this;
 }
 

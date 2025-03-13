@@ -24,7 +24,7 @@ namespace Model
   class CreateClassifierRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API CreateClassifierRequest();
+    AWS_GLUE_API CreateClassifierRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,48 +41,48 @@ namespace Model
     /**
      * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
-    inline const CreateGrokClassifierRequest& GetGrokClassifier() const{ return m_grokClassifier; }
+    inline const CreateGrokClassifierRequest& GetGrokClassifier() const { return m_grokClassifier; }
     inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
-    inline void SetGrokClassifier(const CreateGrokClassifierRequest& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
-    inline void SetGrokClassifier(CreateGrokClassifierRequest&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::move(value); }
-    inline CreateClassifierRequest& WithGrokClassifier(const CreateGrokClassifierRequest& value) { SetGrokClassifier(value); return *this;}
-    inline CreateClassifierRequest& WithGrokClassifier(CreateGrokClassifierRequest&& value) { SetGrokClassifier(std::move(value)); return *this;}
+    template<typename GrokClassifierT = CreateGrokClassifierRequest>
+    void SetGrokClassifier(GrokClassifierT&& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = std::forward<GrokClassifierT>(value); }
+    template<typename GrokClassifierT = CreateGrokClassifierRequest>
+    CreateClassifierRequest& WithGrokClassifier(GrokClassifierT&& value) { SetGrokClassifier(std::forward<GrokClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
      */
-    inline const CreateXMLClassifierRequest& GetXMLClassifier() const{ return m_xMLClassifier; }
+    inline const CreateXMLClassifierRequest& GetXMLClassifier() const { return m_xMLClassifier; }
     inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
-    inline void SetXMLClassifier(const CreateXMLClassifierRequest& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = value; }
-    inline void SetXMLClassifier(CreateXMLClassifierRequest&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::move(value); }
-    inline CreateClassifierRequest& WithXMLClassifier(const CreateXMLClassifierRequest& value) { SetXMLClassifier(value); return *this;}
-    inline CreateClassifierRequest& WithXMLClassifier(CreateXMLClassifierRequest&& value) { SetXMLClassifier(std::move(value)); return *this;}
+    template<typename XMLClassifierT = CreateXMLClassifierRequest>
+    void SetXMLClassifier(XMLClassifierT&& value) { m_xMLClassifierHasBeenSet = true; m_xMLClassifier = std::forward<XMLClassifierT>(value); }
+    template<typename XMLClassifierT = CreateXMLClassifierRequest>
+    CreateClassifierRequest& WithXMLClassifier(XMLClassifierT&& value) { SetXMLClassifier(std::forward<XMLClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
      */
-    inline const CreateJsonClassifierRequest& GetJsonClassifier() const{ return m_jsonClassifier; }
+    inline const CreateJsonClassifierRequest& GetJsonClassifier() const { return m_jsonClassifier; }
     inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
-    inline void SetJsonClassifier(const CreateJsonClassifierRequest& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
-    inline void SetJsonClassifier(CreateJsonClassifierRequest&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
-    inline CreateClassifierRequest& WithJsonClassifier(const CreateJsonClassifierRequest& value) { SetJsonClassifier(value); return *this;}
-    inline CreateClassifierRequest& WithJsonClassifier(CreateJsonClassifierRequest&& value) { SetJsonClassifier(std::move(value)); return *this;}
+    template<typename JsonClassifierT = CreateJsonClassifierRequest>
+    void SetJsonClassifier(JsonClassifierT&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::forward<JsonClassifierT>(value); }
+    template<typename JsonClassifierT = CreateJsonClassifierRequest>
+    CreateClassifierRequest& WithJsonClassifier(JsonClassifierT&& value) { SetJsonClassifier(std::forward<JsonClassifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
      */
-    inline const CreateCsvClassifierRequest& GetCsvClassifier() const{ return m_csvClassifier; }
+    inline const CreateCsvClassifierRequest& GetCsvClassifier() const { return m_csvClassifier; }
     inline bool CsvClassifierHasBeenSet() const { return m_csvClassifierHasBeenSet; }
-    inline void SetCsvClassifier(const CreateCsvClassifierRequest& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = value; }
-    inline void SetCsvClassifier(CreateCsvClassifierRequest&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::move(value); }
-    inline CreateClassifierRequest& WithCsvClassifier(const CreateCsvClassifierRequest& value) { SetCsvClassifier(value); return *this;}
-    inline CreateClassifierRequest& WithCsvClassifier(CreateCsvClassifierRequest&& value) { SetCsvClassifier(std::move(value)); return *this;}
+    template<typename CsvClassifierT = CreateCsvClassifierRequest>
+    void SetCsvClassifier(CsvClassifierT&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::forward<CsvClassifierT>(value); }
+    template<typename CsvClassifierT = CreateCsvClassifierRequest>
+    CreateClassifierRequest& WithCsvClassifier(CsvClassifierT&& value) { SetCsvClassifier(std::forward<CsvClassifierT>(value)); return *this;}
     ///@}
   private:
 

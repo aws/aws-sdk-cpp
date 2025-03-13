@@ -34,7 +34,7 @@ namespace Model
   class ResourceSet
   {
   public:
-    AWS_FMS_API ResourceSet();
+    AWS_FMS_API ResourceSet() = default;
     AWS_FMS_API ResourceSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API ResourceSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * responses to create and list commands. You provide it to operations like update
      * and delete.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ResourceSet& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ResourceSet& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ResourceSet& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ResourceSet& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,24 @@ namespace Model
      * <p>The descriptive name of the resource set. You can't change the name of a
      * resource set after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResourceSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResourceSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResourceSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResourceSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the resource set.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ResourceSet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ResourceSet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ResourceSet& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ResourceSet& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +96,12 @@ namespace Model
      * set again to get a current copy of it with a new token. Reapply your changes as
      * needed, then try the operation again using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
     inline bool UpdateTokenHasBeenSet() const { return m_updateTokenHasBeenSet; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateTokenHasBeenSet = true; m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateTokenHasBeenSet = true; m_updateToken.assign(value); }
-    inline ResourceSet& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline ResourceSet& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline ResourceSet& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    ResourceSet& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,27 +110,26 @@ namespace Model
      * Depending on your setting for max results and the number of resource sets, a
      * single call might not return the full list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypeList() const{ return m_resourceTypeList; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypeList() const { return m_resourceTypeList; }
     inline bool ResourceTypeListHasBeenSet() const { return m_resourceTypeListHasBeenSet; }
-    inline void SetResourceTypeList(const Aws::Vector<Aws::String>& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = value; }
-    inline void SetResourceTypeList(Aws::Vector<Aws::String>&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = std::move(value); }
-    inline ResourceSet& WithResourceTypeList(const Aws::Vector<Aws::String>& value) { SetResourceTypeList(value); return *this;}
-    inline ResourceSet& WithResourceTypeList(Aws::Vector<Aws::String>&& value) { SetResourceTypeList(std::move(value)); return *this;}
-    inline ResourceSet& AddResourceTypeList(const Aws::String& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
-    inline ResourceSet& AddResourceTypeList(Aws::String&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(std::move(value)); return *this; }
-    inline ResourceSet& AddResourceTypeList(const char* value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
+    template<typename ResourceTypeListT = Aws::Vector<Aws::String>>
+    void SetResourceTypeList(ResourceTypeListT&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = std::forward<ResourceTypeListT>(value); }
+    template<typename ResourceTypeListT = Aws::Vector<Aws::String>>
+    ResourceSet& WithResourceTypeList(ResourceTypeListT&& value) { SetResourceTypeList(std::forward<ResourceTypeListT>(value)); return *this;}
+    template<typename ResourceTypeListT = Aws::String>
+    ResourceSet& AddResourceTypeList(ResourceTypeListT&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.emplace_back(std::forward<ResourceTypeListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The last time that the resource set was changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline ResourceSet& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline ResourceSet& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    ResourceSet& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +141,10 @@ namespace Model
      * resource set. Existing protections stay in place. Any new resource that come
      * into scope of the resource set won't be protected.</p> </li> </ul>
      */
-    inline const ResourceSetStatus& GetResourceSetStatus() const{ return m_resourceSetStatus; }
+    inline ResourceSetStatus GetResourceSetStatus() const { return m_resourceSetStatus; }
     inline bool ResourceSetStatusHasBeenSet() const { return m_resourceSetStatusHasBeenSet; }
-    inline void SetResourceSetStatus(const ResourceSetStatus& value) { m_resourceSetStatusHasBeenSet = true; m_resourceSetStatus = value; }
-    inline void SetResourceSetStatus(ResourceSetStatus&& value) { m_resourceSetStatusHasBeenSet = true; m_resourceSetStatus = std::move(value); }
-    inline ResourceSet& WithResourceSetStatus(const ResourceSetStatus& value) { SetResourceSetStatus(value); return *this;}
-    inline ResourceSet& WithResourceSetStatus(ResourceSetStatus&& value) { SetResourceSetStatus(std::move(value)); return *this;}
+    inline void SetResourceSetStatus(ResourceSetStatus value) { m_resourceSetStatusHasBeenSet = true; m_resourceSetStatus = value; }
+    inline ResourceSet& WithResourceSetStatus(ResourceSetStatus value) { SetResourceSetStatus(value); return *this;}
     ///@}
   private:
 
@@ -174,10 +163,10 @@ namespace Model
     Aws::Vector<Aws::String> m_resourceTypeList;
     bool m_resourceTypeListHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
 
-    ResourceSetStatus m_resourceSetStatus;
+    ResourceSetStatus m_resourceSetStatus{ResourceSetStatus::NOT_SET};
     bool m_resourceSetStatusHasBeenSet = false;
   };
 

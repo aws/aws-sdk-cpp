@@ -29,7 +29,7 @@ namespace Model
   class DescribeClientPropertiesResult
   {
   public:
-    AWS_WORKSPACES_API DescribeClientPropertiesResult();
+    AWS_WORKSPACES_API DescribeClientPropertiesResult() = default;
     AWS_WORKSPACES_API DescribeClientPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeClientPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Information about the specified Amazon WorkSpaces clients.</p>
      */
-    inline const Aws::Vector<ClientPropertiesResult>& GetClientPropertiesList() const{ return m_clientPropertiesList; }
-    inline void SetClientPropertiesList(const Aws::Vector<ClientPropertiesResult>& value) { m_clientPropertiesList = value; }
-    inline void SetClientPropertiesList(Aws::Vector<ClientPropertiesResult>&& value) { m_clientPropertiesList = std::move(value); }
-    inline DescribeClientPropertiesResult& WithClientPropertiesList(const Aws::Vector<ClientPropertiesResult>& value) { SetClientPropertiesList(value); return *this;}
-    inline DescribeClientPropertiesResult& WithClientPropertiesList(Aws::Vector<ClientPropertiesResult>&& value) { SetClientPropertiesList(std::move(value)); return *this;}
-    inline DescribeClientPropertiesResult& AddClientPropertiesList(const ClientPropertiesResult& value) { m_clientPropertiesList.push_back(value); return *this; }
-    inline DescribeClientPropertiesResult& AddClientPropertiesList(ClientPropertiesResult&& value) { m_clientPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClientPropertiesResult>& GetClientPropertiesList() const { return m_clientPropertiesList; }
+    template<typename ClientPropertiesListT = Aws::Vector<ClientPropertiesResult>>
+    void SetClientPropertiesList(ClientPropertiesListT&& value) { m_clientPropertiesListHasBeenSet = true; m_clientPropertiesList = std::forward<ClientPropertiesListT>(value); }
+    template<typename ClientPropertiesListT = Aws::Vector<ClientPropertiesResult>>
+    DescribeClientPropertiesResult& WithClientPropertiesList(ClientPropertiesListT&& value) { SetClientPropertiesList(std::forward<ClientPropertiesListT>(value)); return *this;}
+    template<typename ClientPropertiesListT = ClientPropertiesResult>
+    DescribeClientPropertiesResult& AddClientPropertiesList(ClientPropertiesListT&& value) { m_clientPropertiesListHasBeenSet = true; m_clientPropertiesList.emplace_back(std::forward<ClientPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeClientPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeClientPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeClientPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeClientPropertiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ClientPropertiesResult> m_clientPropertiesList;
+    bool m_clientPropertiesListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

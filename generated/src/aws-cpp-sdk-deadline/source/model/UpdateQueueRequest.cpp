@@ -13,25 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQueueRequest::UpdateQueueRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultBudgetAction(DefaultQueueBudgetAction::NOT_SET),
-    m_defaultBudgetActionHasBeenSet(false),
-    m_jobAttachmentSettingsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_jobRunAsUserHasBeenSet(false),
-    m_requiredFileSystemLocationNamesToAddHasBeenSet(false),
-    m_requiredFileSystemLocationNamesToRemoveHasBeenSet(false),
-    m_allowedStorageProfileIdsToAddHasBeenSet(false),
-    m_allowedStorageProfileIdsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQueueRequest::SerializePayload() const
 {
   JsonValue payload;

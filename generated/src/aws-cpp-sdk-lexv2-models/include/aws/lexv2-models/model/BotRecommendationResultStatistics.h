@@ -33,7 +33,7 @@ namespace Model
   class BotRecommendationResultStatistics
   {
   public:
-    AWS_LEXMODELSV2_API BotRecommendationResultStatistics();
+    AWS_LEXMODELSV2_API BotRecommendationResultStatistics() = default;
     AWS_LEXMODELSV2_API BotRecommendationResultStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BotRecommendationResultStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Statistical information about about the intents associated with the bot
      * recommendation results.</p>
      */
-    inline const IntentStatistics& GetIntents() const{ return m_intents; }
+    inline const IntentStatistics& GetIntents() const { return m_intents; }
     inline bool IntentsHasBeenSet() const { return m_intentsHasBeenSet; }
-    inline void SetIntents(const IntentStatistics& value) { m_intentsHasBeenSet = true; m_intents = value; }
-    inline void SetIntents(IntentStatistics&& value) { m_intentsHasBeenSet = true; m_intents = std::move(value); }
-    inline BotRecommendationResultStatistics& WithIntents(const IntentStatistics& value) { SetIntents(value); return *this;}
-    inline BotRecommendationResultStatistics& WithIntents(IntentStatistics&& value) { SetIntents(std::move(value)); return *this;}
+    template<typename IntentsT = IntentStatistics>
+    void SetIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents = std::forward<IntentsT>(value); }
+    template<typename IntentsT = IntentStatistics>
+    BotRecommendationResultStatistics& WithIntents(IntentsT&& value) { SetIntents(std::forward<IntentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Statistical information about the slot types associated with the bot
      * recommendation results.</p>
      */
-    inline const SlotTypeStatistics& GetSlotTypes() const{ return m_slotTypes; }
+    inline const SlotTypeStatistics& GetSlotTypes() const { return m_slotTypes; }
     inline bool SlotTypesHasBeenSet() const { return m_slotTypesHasBeenSet; }
-    inline void SetSlotTypes(const SlotTypeStatistics& value) { m_slotTypesHasBeenSet = true; m_slotTypes = value; }
-    inline void SetSlotTypes(SlotTypeStatistics&& value) { m_slotTypesHasBeenSet = true; m_slotTypes = std::move(value); }
-    inline BotRecommendationResultStatistics& WithSlotTypes(const SlotTypeStatistics& value) { SetSlotTypes(value); return *this;}
-    inline BotRecommendationResultStatistics& WithSlotTypes(SlotTypeStatistics&& value) { SetSlotTypes(std::move(value)); return *this;}
+    template<typename SlotTypesT = SlotTypeStatistics>
+    void SetSlotTypes(SlotTypesT&& value) { m_slotTypesHasBeenSet = true; m_slotTypes = std::forward<SlotTypesT>(value); }
+    template<typename SlotTypesT = SlotTypeStatistics>
+    BotRecommendationResultStatistics& WithSlotTypes(SlotTypesT&& value) { SetSlotTypes(std::forward<SlotTypesT>(value)); return *this;}
     ///@}
   private:
 

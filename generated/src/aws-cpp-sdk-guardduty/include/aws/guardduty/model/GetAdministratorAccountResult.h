@@ -28,7 +28,7 @@ namespace Model
   class GetAdministratorAccountResult
   {
   public:
-    AWS_GUARDDUTY_API GetAdministratorAccountResult();
+    AWS_GUARDDUTY_API GetAdministratorAccountResult() = default;
     AWS_GUARDDUTY_API GetAdministratorAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API GetAdministratorAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The administrator account details.</p>
      */
-    inline const Administrator& GetAdministrator() const{ return m_administrator; }
-    inline void SetAdministrator(const Administrator& value) { m_administrator = value; }
-    inline void SetAdministrator(Administrator&& value) { m_administrator = std::move(value); }
-    inline GetAdministratorAccountResult& WithAdministrator(const Administrator& value) { SetAdministrator(value); return *this;}
-    inline GetAdministratorAccountResult& WithAdministrator(Administrator&& value) { SetAdministrator(std::move(value)); return *this;}
+    inline const Administrator& GetAdministrator() const { return m_administrator; }
+    template<typename AdministratorT = Administrator>
+    void SetAdministrator(AdministratorT&& value) { m_administratorHasBeenSet = true; m_administrator = std::forward<AdministratorT>(value); }
+    template<typename AdministratorT = Administrator>
+    GetAdministratorAccountResult& WithAdministrator(AdministratorT&& value) { SetAdministrator(std::forward<AdministratorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAdministratorAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAdministratorAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAdministratorAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAdministratorAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Administrator m_administrator;
+    bool m_administratorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

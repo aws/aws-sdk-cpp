@@ -18,13 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ImportOptions::ImportOptions() : 
-    m_neptuneHasBeenSet(false)
-{
-}
-
 ImportOptions::ImportOptions(JsonView jsonValue)
-  : ImportOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImportOptions& ImportOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("neptune"))
   {
     m_neptune = jsonValue.GetObject("neptune");
-
     m_neptuneHasBeenSet = true;
   }
-
   return *this;
 }
 

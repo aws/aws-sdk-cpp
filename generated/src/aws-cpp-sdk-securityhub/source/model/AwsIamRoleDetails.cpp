@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamRoleDetails::AwsIamRoleDetails() : 
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_instanceProfileListHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_rolePolicyListHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false),
-    m_pathHasBeenSet(false)
-{
-}
-
 AwsIamRoleDetails::AwsIamRoleDetails(JsonView jsonValue)
-  : AwsIamRoleDetails()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssumeRolePolicyDocument"))
   {
     m_assumeRolePolicyDocument = jsonValue.GetString("AssumeRolePolicyDocument");
-
     m_assumeRolePolicyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachedManagedPolicies"))
   {
     Aws::Utils::Array<JsonView> attachedManagedPoliciesJsonList = jsonValue.GetArray("AttachedManagedPolicies");
@@ -57,14 +39,11 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
     }
     m_attachedManagedPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileList"))
   {
     Aws::Utils::Array<JsonView> instanceProfileListJsonList = jsonValue.GetArray("InstanceProfileList");
@@ -74,28 +53,21 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
     }
     m_instanceProfileListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsBoundary"))
   {
     m_permissionsBoundary = jsonValue.GetObject("PermissionsBoundary");
-
     m_permissionsBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleId"))
   {
     m_roleId = jsonValue.GetString("RoleId");
-
     m_roleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleName"))
   {
     m_roleName = jsonValue.GetString("RoleName");
-
     m_roleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RolePolicyList"))
   {
     Aws::Utils::Array<JsonView> rolePolicyListJsonList = jsonValue.GetArray("RolePolicyList");
@@ -105,21 +77,16 @@ AwsIamRoleDetails& AwsIamRoleDetails::operator =(JsonView jsonValue)
     }
     m_rolePolicyListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSessionDuration"))
   {
     m_maxSessionDuration = jsonValue.GetInteger("MaxSessionDuration");
-
     m_maxSessionDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

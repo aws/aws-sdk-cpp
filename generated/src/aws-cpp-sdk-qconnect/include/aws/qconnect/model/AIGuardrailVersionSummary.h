@@ -31,7 +31,7 @@ namespace Model
   class AIGuardrailVersionSummary
   {
   public:
-    AWS_QCONNECT_API AIGuardrailVersionSummary();
+    AWS_QCONNECT_API AIGuardrailVersionSummary() = default;
     AWS_QCONNECT_API AIGuardrailVersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIGuardrailVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>The data for the summary of the AI Guardrail version.</p>
      */
-    inline const AIGuardrailSummary& GetAiGuardrailSummary() const{ return m_aiGuardrailSummary; }
+    inline const AIGuardrailSummary& GetAiGuardrailSummary() const { return m_aiGuardrailSummary; }
     inline bool AiGuardrailSummaryHasBeenSet() const { return m_aiGuardrailSummaryHasBeenSet; }
-    inline void SetAiGuardrailSummary(const AIGuardrailSummary& value) { m_aiGuardrailSummaryHasBeenSet = true; m_aiGuardrailSummary = value; }
-    inline void SetAiGuardrailSummary(AIGuardrailSummary&& value) { m_aiGuardrailSummaryHasBeenSet = true; m_aiGuardrailSummary = std::move(value); }
-    inline AIGuardrailVersionSummary& WithAiGuardrailSummary(const AIGuardrailSummary& value) { SetAiGuardrailSummary(value); return *this;}
-    inline AIGuardrailVersionSummary& WithAiGuardrailSummary(AIGuardrailSummary&& value) { SetAiGuardrailSummary(std::move(value)); return *this;}
+    template<typename AiGuardrailSummaryT = AIGuardrailSummary>
+    void SetAiGuardrailSummary(AiGuardrailSummaryT&& value) { m_aiGuardrailSummaryHasBeenSet = true; m_aiGuardrailSummary = std::forward<AiGuardrailSummaryT>(value); }
+    template<typename AiGuardrailSummaryT = AIGuardrailSummary>
+    AIGuardrailVersionSummary& WithAiGuardrailSummary(AiGuardrailSummaryT&& value) { SetAiGuardrailSummary(std::forward<AiGuardrailSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number for this AI Guardrail version.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline AIGuardrailVersionSummary& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     AIGuardrailSummary m_aiGuardrailSummary;
     bool m_aiGuardrailSummaryHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-IsraelAdditionalInfo::IsraelAdditionalInfo() : 
-    m_customerType(IsraelCustomerType::NOT_SET),
-    m_customerTypeHasBeenSet(false),
-    m_dealerType(IsraelDealerType::NOT_SET),
-    m_dealerTypeHasBeenSet(false)
-{
-}
-
 IsraelAdditionalInfo::IsraelAdditionalInfo(JsonView jsonValue)
-  : IsraelAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IsraelAdditionalInfo& IsraelAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerType"))
   {
     m_customerType = IsraelCustomerTypeMapper::GetIsraelCustomerTypeForName(jsonValue.GetString("customerType"));
-
     m_customerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dealerType"))
   {
     m_dealerType = IsraelDealerTypeMapper::GetIsraelDealerTypeForName(jsonValue.GetString("dealerType"));
-
     m_dealerTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

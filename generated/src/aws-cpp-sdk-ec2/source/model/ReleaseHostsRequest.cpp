@@ -10,11 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReleaseHostsRequest::ReleaseHostsRequest() : 
-    m_hostIdsHasBeenSet(false)
-{
-}
-
 Aws::String ReleaseHostsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,25 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ReportGenerator::ReportGenerator() : 
-    m_reportGeneratorNameHasBeenSet(false),
-    m_reportTypeHasBeenSet(false),
-    m_reportContextHasBeenSet(false),
-    m_reportFrequencyHasBeenSet(false),
-    m_licenseManagerReportGeneratorArnHasBeenSet(false),
-    m_lastRunStatusHasBeenSet(false),
-    m_lastRunFailureReasonHasBeenSet(false),
-    m_lastReportGenerationTimeHasBeenSet(false),
-    m_reportCreatorAccountHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ReportGenerator::ReportGenerator(JsonView jsonValue)
-  : ReportGenerator()
 {
   *this = jsonValue;
 }
@@ -46,10 +28,8 @@ ReportGenerator& ReportGenerator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportGeneratorName"))
   {
     m_reportGeneratorName = jsonValue.GetString("ReportGeneratorName");
-
     m_reportGeneratorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportType"))
   {
     Aws::Utils::Array<JsonView> reportTypeJsonList = jsonValue.GetArray("ReportType");
@@ -59,77 +39,56 @@ ReportGenerator& ReportGenerator::operator =(JsonView jsonValue)
     }
     m_reportTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportContext"))
   {
     m_reportContext = jsonValue.GetObject("ReportContext");
-
     m_reportContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportFrequency"))
   {
     m_reportFrequency = jsonValue.GetObject("ReportFrequency");
-
     m_reportFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseManagerReportGeneratorArn"))
   {
     m_licenseManagerReportGeneratorArn = jsonValue.GetString("LicenseManagerReportGeneratorArn");
-
     m_licenseManagerReportGeneratorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRunStatus"))
   {
     m_lastRunStatus = jsonValue.GetString("LastRunStatus");
-
     m_lastRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRunFailureReason"))
   {
     m_lastRunFailureReason = jsonValue.GetString("LastRunFailureReason");
-
     m_lastRunFailureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastReportGenerationTime"))
   {
     m_lastReportGenerationTime = jsonValue.GetString("LastReportGenerationTime");
-
     m_lastReportGenerationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportCreatorAccount"))
   {
     m_reportCreatorAccount = jsonValue.GetString("ReportCreatorAccount");
-
     m_reportCreatorAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Location"))
   {
     m_s3Location = jsonValue.GetObject("S3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -139,7 +98,6 @@ ReportGenerator& ReportGenerator::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

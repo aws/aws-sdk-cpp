@@ -32,7 +32,7 @@ namespace Model
   class BridgeOutput
   {
   public:
-    AWS_MEDIACONNECT_API BridgeOutput();
+    AWS_MEDIACONNECT_API BridgeOutput() = default;
     AWS_MEDIACONNECT_API BridgeOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API BridgeOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const BridgeFlowOutput& GetFlowOutput() const{ return m_flowOutput; }
+    inline const BridgeFlowOutput& GetFlowOutput() const { return m_flowOutput; }
     inline bool FlowOutputHasBeenSet() const { return m_flowOutputHasBeenSet; }
-    inline void SetFlowOutput(const BridgeFlowOutput& value) { m_flowOutputHasBeenSet = true; m_flowOutput = value; }
-    inline void SetFlowOutput(BridgeFlowOutput&& value) { m_flowOutputHasBeenSet = true; m_flowOutput = std::move(value); }
-    inline BridgeOutput& WithFlowOutput(const BridgeFlowOutput& value) { SetFlowOutput(value); return *this;}
-    inline BridgeOutput& WithFlowOutput(BridgeFlowOutput&& value) { SetFlowOutput(std::move(value)); return *this;}
+    template<typename FlowOutputT = BridgeFlowOutput>
+    void SetFlowOutput(FlowOutputT&& value) { m_flowOutputHasBeenSet = true; m_flowOutput = std::forward<FlowOutputT>(value); }
+    template<typename FlowOutputT = BridgeFlowOutput>
+    BridgeOutput& WithFlowOutput(FlowOutputT&& value) { SetFlowOutput(std::forward<FlowOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BridgeNetworkOutput& GetNetworkOutput() const{ return m_networkOutput; }
+    inline const BridgeNetworkOutput& GetNetworkOutput() const { return m_networkOutput; }
     inline bool NetworkOutputHasBeenSet() const { return m_networkOutputHasBeenSet; }
-    inline void SetNetworkOutput(const BridgeNetworkOutput& value) { m_networkOutputHasBeenSet = true; m_networkOutput = value; }
-    inline void SetNetworkOutput(BridgeNetworkOutput&& value) { m_networkOutputHasBeenSet = true; m_networkOutput = std::move(value); }
-    inline BridgeOutput& WithNetworkOutput(const BridgeNetworkOutput& value) { SetNetworkOutput(value); return *this;}
-    inline BridgeOutput& WithNetworkOutput(BridgeNetworkOutput&& value) { SetNetworkOutput(std::move(value)); return *this;}
+    template<typename NetworkOutputT = BridgeNetworkOutput>
+    void SetNetworkOutput(NetworkOutputT&& value) { m_networkOutputHasBeenSet = true; m_networkOutput = std::forward<NetworkOutputT>(value); }
+    template<typename NetworkOutputT = BridgeNetworkOutput>
+    BridgeOutput& WithNetworkOutput(NetworkOutputT&& value) { SetNetworkOutput(std::forward<NetworkOutputT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialCircleSymbolStyle::GeospatialCircleSymbolStyle() : 
-    m_fillColorHasBeenSet(false),
-    m_strokeColorHasBeenSet(false),
-    m_strokeWidthHasBeenSet(false),
-    m_circleRadiusHasBeenSet(false)
-{
-}
-
 GeospatialCircleSymbolStyle::GeospatialCircleSymbolStyle(JsonView jsonValue)
-  : GeospatialCircleSymbolStyle()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ GeospatialCircleSymbolStyle& GeospatialCircleSymbolStyle::operator =(JsonView js
   if(jsonValue.ValueExists("FillColor"))
   {
     m_fillColor = jsonValue.GetObject("FillColor");
-
     m_fillColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrokeColor"))
   {
     m_strokeColor = jsonValue.GetObject("StrokeColor");
-
     m_strokeColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StrokeWidth"))
   {
     m_strokeWidth = jsonValue.GetObject("StrokeWidth");
-
     m_strokeWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CircleRadius"))
   {
     m_circleRadius = jsonValue.GetObject("CircleRadius");
-
     m_circleRadiusHasBeenSet = true;
   }
-
   return *this;
 }
 

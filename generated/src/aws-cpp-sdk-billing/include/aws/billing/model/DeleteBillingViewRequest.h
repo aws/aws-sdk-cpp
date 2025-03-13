@@ -21,7 +21,7 @@ namespace Model
   class DeleteBillingViewRequest : public BillingRequest
   {
   public:
-    AWS_BILLING_API DeleteBillingViewRequest();
+    AWS_BILLING_API DeleteBillingViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) that can be used to uniquely identify the
      * billing view. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DeleteBillingViewRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeleteBillingViewRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeleteBillingViewRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeleteBillingViewRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

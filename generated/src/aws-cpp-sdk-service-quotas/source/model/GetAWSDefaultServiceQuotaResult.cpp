@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAWSDefaultServiceQuotaResult::GetAWSDefaultServiceQuotaResult()
-{
-}
-
 GetAWSDefaultServiceQuotaResult::GetAWSDefaultServiceQuotaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAWSDefaultServiceQuotaResult& GetAWSDefaultServiceQuotaResult::operator =(con
   if(jsonValue.ValueExists("Quota"))
   {
     m_quota = jsonValue.GetObject("Quota");
-
+    m_quotaHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPolicyVersionsRequest::ListPolicyVersionsRequest() : 
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String ListPolicyVersionsRequest::SerializePayload() const
 {
   return {};

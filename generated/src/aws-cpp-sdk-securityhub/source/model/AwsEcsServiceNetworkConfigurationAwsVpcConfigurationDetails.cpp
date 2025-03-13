@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails() : 
-    m_assignPublicIpHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails(JsonView jsonValue)
-  : AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& AwsEcsServiceNetwor
   if(jsonValue.ValueExists("AssignPublicIp"))
   {
     m_assignPublicIp = jsonValue.GetString("AssignPublicIp");
-
     m_assignPublicIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -49,7 +39,6 @@ AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& AwsEcsServiceNetwor
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -59,7 +48,6 @@ AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails& AwsEcsServiceNetwor
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

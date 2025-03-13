@@ -27,7 +27,7 @@ namespace Model
   class ListApplicationsRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API ListApplicationsRequest();
+    AWS_OPENSEARCHSERVICE_API ListApplicationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,18 @@ namespace Model
      * <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and
      * <code>DELETED</code>.</p>
      */
-    inline const Aws::Vector<ApplicationStatus>& GetStatuses() const{ return m_statuses; }
+    inline const Aws::Vector<ApplicationStatus>& GetStatuses() const { return m_statuses; }
     inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-    inline void SetStatuses(const Aws::Vector<ApplicationStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
-    inline void SetStatuses(Aws::Vector<ApplicationStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
-    inline ListApplicationsRequest& WithStatuses(const Aws::Vector<ApplicationStatus>& value) { SetStatuses(value); return *this;}
-    inline ListApplicationsRequest& WithStatuses(Aws::Vector<ApplicationStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-    inline ListApplicationsRequest& AddStatuses(const ApplicationStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
-    inline ListApplicationsRequest& AddStatuses(ApplicationStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
+    template<typename StatusesT = Aws::Vector<ApplicationStatus>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<ApplicationStatus>>
+    ListApplicationsRequest& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    inline ListApplicationsRequest& AddStatuses(ApplicationStatus value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListApplicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +81,7 @@ namespace Model
     Aws::Vector<ApplicationStatus> m_statuses;
     bool m_statusesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

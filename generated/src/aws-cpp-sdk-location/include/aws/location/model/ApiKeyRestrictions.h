@@ -33,7 +33,7 @@ namespace Model
   class ApiKeyRestrictions
   {
   public:
-    AWS_LOCATIONSERVICE_API ApiKeyRestrictions();
+    AWS_LOCATIONSERVICE_API ApiKeyRestrictions() = default;
     AWS_LOCATIONSERVICE_API ApiKeyRestrictions(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ApiKeyRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,15 +62,14 @@ namespace Model
      * not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code> - you
      * must list each of the Place actions separately.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetAllowActions() const{ return m_allowActions; }
+    inline const Aws::Vector<Aws::String>& GetAllowActions() const { return m_allowActions; }
     inline bool AllowActionsHasBeenSet() const { return m_allowActionsHasBeenSet; }
-    inline void SetAllowActions(const Aws::Vector<Aws::String>& value) { m_allowActionsHasBeenSet = true; m_allowActions = value; }
-    inline void SetAllowActions(Aws::Vector<Aws::String>&& value) { m_allowActionsHasBeenSet = true; m_allowActions = std::move(value); }
-    inline ApiKeyRestrictions& WithAllowActions(const Aws::Vector<Aws::String>& value) { SetAllowActions(value); return *this;}
-    inline ApiKeyRestrictions& WithAllowActions(Aws::Vector<Aws::String>&& value) { SetAllowActions(std::move(value)); return *this;}
-    inline ApiKeyRestrictions& AddAllowActions(const Aws::String& value) { m_allowActionsHasBeenSet = true; m_allowActions.push_back(value); return *this; }
-    inline ApiKeyRestrictions& AddAllowActions(Aws::String&& value) { m_allowActionsHasBeenSet = true; m_allowActions.push_back(std::move(value)); return *this; }
-    inline ApiKeyRestrictions& AddAllowActions(const char* value) { m_allowActionsHasBeenSet = true; m_allowActions.push_back(value); return *this; }
+    template<typename AllowActionsT = Aws::Vector<Aws::String>>
+    void SetAllowActions(AllowActionsT&& value) { m_allowActionsHasBeenSet = true; m_allowActions = std::forward<AllowActionsT>(value); }
+    template<typename AllowActionsT = Aws::Vector<Aws::String>>
+    ApiKeyRestrictions& WithAllowActions(AllowActionsT&& value) { SetAllowActions(std::forward<AllowActionsT>(value)); return *this;}
+    template<typename AllowActionsT = Aws::String>
+    ApiKeyRestrictions& AddAllowActions(AllowActionsT&& value) { m_allowActionsHasBeenSet = true; m_allowActions.emplace_back(std::forward<AllowActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,15 +89,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowResources() const{ return m_allowResources; }
+    inline const Aws::Vector<Aws::String>& GetAllowResources() const { return m_allowResources; }
     inline bool AllowResourcesHasBeenSet() const { return m_allowResourcesHasBeenSet; }
-    inline void SetAllowResources(const Aws::Vector<Aws::String>& value) { m_allowResourcesHasBeenSet = true; m_allowResources = value; }
-    inline void SetAllowResources(Aws::Vector<Aws::String>&& value) { m_allowResourcesHasBeenSet = true; m_allowResources = std::move(value); }
-    inline ApiKeyRestrictions& WithAllowResources(const Aws::Vector<Aws::String>& value) { SetAllowResources(value); return *this;}
-    inline ApiKeyRestrictions& WithAllowResources(Aws::Vector<Aws::String>&& value) { SetAllowResources(std::move(value)); return *this;}
-    inline ApiKeyRestrictions& AddAllowResources(const Aws::String& value) { m_allowResourcesHasBeenSet = true; m_allowResources.push_back(value); return *this; }
-    inline ApiKeyRestrictions& AddAllowResources(Aws::String&& value) { m_allowResourcesHasBeenSet = true; m_allowResources.push_back(std::move(value)); return *this; }
-    inline ApiKeyRestrictions& AddAllowResources(const char* value) { m_allowResourcesHasBeenSet = true; m_allowResources.push_back(value); return *this; }
+    template<typename AllowResourcesT = Aws::Vector<Aws::String>>
+    void SetAllowResources(AllowResourcesT&& value) { m_allowResourcesHasBeenSet = true; m_allowResources = std::forward<AllowResourcesT>(value); }
+    template<typename AllowResourcesT = Aws::Vector<Aws::String>>
+    ApiKeyRestrictions& WithAllowResources(AllowResourcesT&& value) { SetAllowResources(std::forward<AllowResourcesT>(value)); return *this;}
+    template<typename AllowResourcesT = Aws::String>
+    ApiKeyRestrictions& AddAllowResources(AllowResourcesT&& value) { m_allowResourcesHasBeenSet = true; m_allowResources.emplace_back(std::forward<AllowResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,15 +113,14 @@ namespace Model
      * hexadecimal digits).</p> </li> <li> <p>No spaces allowed. For example,
      * <code>https://example.com</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowReferers() const{ return m_allowReferers; }
+    inline const Aws::Vector<Aws::String>& GetAllowReferers() const { return m_allowReferers; }
     inline bool AllowReferersHasBeenSet() const { return m_allowReferersHasBeenSet; }
-    inline void SetAllowReferers(const Aws::Vector<Aws::String>& value) { m_allowReferersHasBeenSet = true; m_allowReferers = value; }
-    inline void SetAllowReferers(Aws::Vector<Aws::String>&& value) { m_allowReferersHasBeenSet = true; m_allowReferers = std::move(value); }
-    inline ApiKeyRestrictions& WithAllowReferers(const Aws::Vector<Aws::String>& value) { SetAllowReferers(value); return *this;}
-    inline ApiKeyRestrictions& WithAllowReferers(Aws::Vector<Aws::String>&& value) { SetAllowReferers(std::move(value)); return *this;}
-    inline ApiKeyRestrictions& AddAllowReferers(const Aws::String& value) { m_allowReferersHasBeenSet = true; m_allowReferers.push_back(value); return *this; }
-    inline ApiKeyRestrictions& AddAllowReferers(Aws::String&& value) { m_allowReferersHasBeenSet = true; m_allowReferers.push_back(std::move(value)); return *this; }
-    inline ApiKeyRestrictions& AddAllowReferers(const char* value) { m_allowReferersHasBeenSet = true; m_allowReferers.push_back(value); return *this; }
+    template<typename AllowReferersT = Aws::Vector<Aws::String>>
+    void SetAllowReferers(AllowReferersT&& value) { m_allowReferersHasBeenSet = true; m_allowReferers = std::forward<AllowReferersT>(value); }
+    template<typename AllowReferersT = Aws::Vector<Aws::String>>
+    ApiKeyRestrictions& WithAllowReferers(AllowReferersT&& value) { SetAllowReferers(std::forward<AllowReferersT>(value)); return *this;}
+    template<typename AllowReferersT = Aws::String>
+    ApiKeyRestrictions& AddAllowReferers(AllowReferersT&& value) { m_allowReferersHasBeenSet = true; m_allowReferers.emplace_back(std::forward<AllowReferersT>(value)); return *this; }
     ///@}
   private:
 

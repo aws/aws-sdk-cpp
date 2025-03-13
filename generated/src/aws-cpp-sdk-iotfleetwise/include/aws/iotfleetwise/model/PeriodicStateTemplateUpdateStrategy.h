@@ -32,7 +32,7 @@ namespace Model
   class PeriodicStateTemplateUpdateStrategy
   {
   public:
-    AWS_IOTFLEETWISE_API PeriodicStateTemplateUpdateStrategy();
+    AWS_IOTFLEETWISE_API PeriodicStateTemplateUpdateStrategy() = default;
     AWS_IOTFLEETWISE_API PeriodicStateTemplateUpdateStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API PeriodicStateTemplateUpdateStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const TimePeriod& GetStateTemplateUpdateRate() const{ return m_stateTemplateUpdateRate; }
+    inline const TimePeriod& GetStateTemplateUpdateRate() const { return m_stateTemplateUpdateRate; }
     inline bool StateTemplateUpdateRateHasBeenSet() const { return m_stateTemplateUpdateRateHasBeenSet; }
-    inline void SetStateTemplateUpdateRate(const TimePeriod& value) { m_stateTemplateUpdateRateHasBeenSet = true; m_stateTemplateUpdateRate = value; }
-    inline void SetStateTemplateUpdateRate(TimePeriod&& value) { m_stateTemplateUpdateRateHasBeenSet = true; m_stateTemplateUpdateRate = std::move(value); }
-    inline PeriodicStateTemplateUpdateStrategy& WithStateTemplateUpdateRate(const TimePeriod& value) { SetStateTemplateUpdateRate(value); return *this;}
-    inline PeriodicStateTemplateUpdateStrategy& WithStateTemplateUpdateRate(TimePeriod&& value) { SetStateTemplateUpdateRate(std::move(value)); return *this;}
+    template<typename StateTemplateUpdateRateT = TimePeriod>
+    void SetStateTemplateUpdateRate(StateTemplateUpdateRateT&& value) { m_stateTemplateUpdateRateHasBeenSet = true; m_stateTemplateUpdateRate = std::forward<StateTemplateUpdateRateT>(value); }
+    template<typename StateTemplateUpdateRateT = TimePeriod>
+    PeriodicStateTemplateUpdateStrategy& WithStateTemplateUpdateRate(StateTemplateUpdateRateT&& value) { SetStateTemplateUpdateRate(std::forward<StateTemplateUpdateRateT>(value)); return *this;}
     ///@}
   private:
 

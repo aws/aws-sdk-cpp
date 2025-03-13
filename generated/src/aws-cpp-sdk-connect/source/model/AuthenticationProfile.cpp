@@ -18,27 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AuthenticationProfile::AuthenticationProfile() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_allowedIpsHasBeenSet(false),
-    m_blockedIpsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false),
-    m_periodicSessionDuration(0),
-    m_periodicSessionDurationHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false)
-{
-}
-
 AuthenticationProfile::AuthenticationProfile(JsonView jsonValue)
-  : AuthenticationProfile()
 {
   *this = jsonValue;
 }
@@ -48,31 +28,23 @@ AuthenticationProfile& AuthenticationProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedIps"))
   {
     Aws::Utils::Array<JsonView> allowedIpsJsonList = jsonValue.GetArray("AllowedIps");
@@ -82,7 +54,6 @@ AuthenticationProfile& AuthenticationProfile::operator =(JsonView jsonValue)
     }
     m_allowedIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockedIps"))
   {
     Aws::Utils::Array<JsonView> blockedIpsJsonList = jsonValue.GetArray("BlockedIps");
@@ -92,49 +63,36 @@ AuthenticationProfile& AuthenticationProfile::operator =(JsonView jsonValue)
     }
     m_blockedIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefault"))
   {
     m_isDefault = jsonValue.GetBool("IsDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodicSessionDuration"))
   {
     m_periodicSessionDuration = jsonValue.GetInteger("PeriodicSessionDuration");
-
     m_periodicSessionDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSessionDuration"))
   {
     m_maxSessionDuration = jsonValue.GetInteger("MaxSessionDuration");
-
     m_maxSessionDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

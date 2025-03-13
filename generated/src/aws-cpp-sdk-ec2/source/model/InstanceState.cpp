@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceState::InstanceState() : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_name(InstanceStateName::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 InstanceState::InstanceState(const XmlNode& xmlNode)
-  : InstanceState()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ InstanceState& InstanceState::operator =(const XmlNode& xmlNode)
     {
       m_code = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
-      m_name = InstanceStateNameMapper::GetInstanceStateNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = InstanceStateNameMapper::GetInstanceStateNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class AwsMskClusterClusterInfoClientAuthenticationSaslDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslDetails();
+    AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslDetails() = default;
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoClientAuthenticationSaslDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p> Provides details for SASL client authentication using IAM. </p>
      */
-    inline const AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails& GetIam() const{ return m_iam; }
+    inline const AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails& GetIam() const { return m_iam; }
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-    inline void SetIam(const AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails& value) { m_iamHasBeenSet = true; m_iam = value; }
-    inline void SetIam(AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-    inline AwsMskClusterClusterInfoClientAuthenticationSaslDetails& WithIam(const AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails& value) { SetIam(value); return *this;}
-    inline AwsMskClusterClusterInfoClientAuthenticationSaslDetails& WithIam(AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails&& value) { SetIam(std::move(value)); return *this;}
+    template<typename IamT = AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails>
+    void SetIam(IamT&& value) { m_iamHasBeenSet = true; m_iam = std::forward<IamT>(value); }
+    template<typename IamT = AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails>
+    AwsMskClusterClusterInfoClientAuthenticationSaslDetails& WithIam(IamT&& value) { SetIam(std::forward<IamT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Details for SASL client authentication using SCRAM.</p>
      */
-    inline const AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails& GetScram() const{ return m_scram; }
+    inline const AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails& GetScram() const { return m_scram; }
     inline bool ScramHasBeenSet() const { return m_scramHasBeenSet; }
-    inline void SetScram(const AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails& value) { m_scramHasBeenSet = true; m_scram = value; }
-    inline void SetScram(AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails&& value) { m_scramHasBeenSet = true; m_scram = std::move(value); }
-    inline AwsMskClusterClusterInfoClientAuthenticationSaslDetails& WithScram(const AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails& value) { SetScram(value); return *this;}
-    inline AwsMskClusterClusterInfoClientAuthenticationSaslDetails& WithScram(AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails&& value) { SetScram(std::move(value)); return *this;}
+    template<typename ScramT = AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails>
+    void SetScram(ScramT&& value) { m_scramHasBeenSet = true; m_scram = std::forward<ScramT>(value); }
+    template<typename ScramT = AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails>
+    AwsMskClusterClusterInfoClientAuthenticationSaslDetails& WithScram(ScramT&& value) { SetScram(std::forward<ScramT>(value)); return *this;}
     ///@}
   private:
 

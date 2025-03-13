@@ -18,17 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-TargetFailure::TargetFailure() : 
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 TargetFailure::TargetFailure(JsonView jsonValue)
-  : TargetFailure()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TargetFailure& TargetFailure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = jsonValue.GetString("failureCode");
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

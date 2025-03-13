@@ -22,7 +22,7 @@ namespace Model
   class ListIndicatorsRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API ListIndicatorsRequest();
+    AWS_DETECTIVE_API ListIndicatorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the behavior graph.</p>
      */
-    inline const Aws::String& GetGraphArn() const{ return m_graphArn; }
+    inline const Aws::String& GetGraphArn() const { return m_graphArn; }
     inline bool GraphArnHasBeenSet() const { return m_graphArnHasBeenSet; }
-    inline void SetGraphArn(const Aws::String& value) { m_graphArnHasBeenSet = true; m_graphArn = value; }
-    inline void SetGraphArn(Aws::String&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::move(value); }
-    inline void SetGraphArn(const char* value) { m_graphArnHasBeenSet = true; m_graphArn.assign(value); }
-    inline ListIndicatorsRequest& WithGraphArn(const Aws::String& value) { SetGraphArn(value); return *this;}
-    inline ListIndicatorsRequest& WithGraphArn(Aws::String&& value) { SetGraphArn(std::move(value)); return *this;}
-    inline ListIndicatorsRequest& WithGraphArn(const char* value) { SetGraphArn(value); return *this;}
+    template<typename GraphArnT = Aws::String>
+    void SetGraphArn(GraphArnT&& value) { m_graphArnHasBeenSet = true; m_graphArn = std::forward<GraphArnT>(value); }
+    template<typename GraphArnT = Aws::String>
+    ListIndicatorsRequest& WithGraphArn(GraphArnT&& value) { SetGraphArn(std::forward<GraphArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The investigation ID of the investigation report.</p>
      */
-    inline const Aws::String& GetInvestigationId() const{ return m_investigationId; }
+    inline const Aws::String& GetInvestigationId() const { return m_investigationId; }
     inline bool InvestigationIdHasBeenSet() const { return m_investigationIdHasBeenSet; }
-    inline void SetInvestigationId(const Aws::String& value) { m_investigationIdHasBeenSet = true; m_investigationId = value; }
-    inline void SetInvestigationId(Aws::String&& value) { m_investigationIdHasBeenSet = true; m_investigationId = std::move(value); }
-    inline void SetInvestigationId(const char* value) { m_investigationIdHasBeenSet = true; m_investigationId.assign(value); }
-    inline ListIndicatorsRequest& WithInvestigationId(const Aws::String& value) { SetInvestigationId(value); return *this;}
-    inline ListIndicatorsRequest& WithInvestigationId(Aws::String&& value) { SetInvestigationId(std::move(value)); return *this;}
-    inline ListIndicatorsRequest& WithInvestigationId(const char* value) { SetInvestigationId(value); return *this;}
+    template<typename InvestigationIdT = Aws::String>
+    void SetInvestigationId(InvestigationIdT&& value) { m_investigationIdHasBeenSet = true; m_investigationId = std::forward<InvestigationIdT>(value); }
+    template<typename InvestigationIdT = Aws::String>
+    ListIndicatorsRequest& WithInvestigationId(InvestigationIdT&& value) { SetInvestigationId(std::forward<InvestigationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/detective/latest/userguide/detective-investigation-about.html">Detective
      * investigations</a>.</p>
      */
-    inline const IndicatorType& GetIndicatorType() const{ return m_indicatorType; }
+    inline IndicatorType GetIndicatorType() const { return m_indicatorType; }
     inline bool IndicatorTypeHasBeenSet() const { return m_indicatorTypeHasBeenSet; }
-    inline void SetIndicatorType(const IndicatorType& value) { m_indicatorTypeHasBeenSet = true; m_indicatorType = value; }
-    inline void SetIndicatorType(IndicatorType&& value) { m_indicatorTypeHasBeenSet = true; m_indicatorType = std::move(value); }
-    inline ListIndicatorsRequest& WithIndicatorType(const IndicatorType& value) { SetIndicatorType(value); return *this;}
-    inline ListIndicatorsRequest& WithIndicatorType(IndicatorType&& value) { SetIndicatorType(std::move(value)); return *this;}
+    inline void SetIndicatorType(IndicatorType value) { m_indicatorTypeHasBeenSet = true; m_indicatorType = value; }
+    inline ListIndicatorsRequest& WithIndicatorType(IndicatorType value) { SetIndicatorType(value); return *this;}
     ///@}
 
     ///@{
@@ -84,21 +78,19 @@ namespace Model
      * pagination token expires after 24 hours. Using an expired pagination token will
      * return a Validation Exception error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListIndicatorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIndicatorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIndicatorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIndicatorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists the maximum number of indicators in a page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListIndicatorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -111,13 +103,13 @@ namespace Model
     Aws::String m_investigationId;
     bool m_investigationIdHasBeenSet = false;
 
-    IndicatorType m_indicatorType;
+    IndicatorType m_indicatorType{IndicatorType::NOT_SET};
     bool m_indicatorTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

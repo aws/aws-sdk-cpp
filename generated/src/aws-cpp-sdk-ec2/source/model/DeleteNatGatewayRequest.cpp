@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteNatGatewayRequest::DeleteNatGatewayRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNatGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(const XmlNode& xmlNode)
-  : Dimension()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Dimension& Dimension::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

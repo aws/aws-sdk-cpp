@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSagemakerServicecatalogPortfolioStatusResult::GetSagemakerServicecatalogPortfolioStatusResult() : 
-    m_status(SagemakerServicecatalogStatus::NOT_SET)
-{
-}
-
 GetSagemakerServicecatalogPortfolioStatusResult::GetSagemakerServicecatalogPortfolioStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSagemakerServicecatalogPortfolioStatusResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetSagemakerServicecatalogPortfolioStatusResult& GetSagemakerServicecatalogPortf
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SagemakerServicecatalogStatusMapper::GetSagemakerServicecatalogStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteCustomPluginResult::DeleteCustomPluginResult() : 
-    m_customPluginState(CustomPluginState::NOT_SET)
-{
-}
-
 DeleteCustomPluginResult::DeleteCustomPluginResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteCustomPluginResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteCustomPluginResult& DeleteCustomPluginResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("customPluginArn"))
   {
     m_customPluginArn = jsonValue.GetString("customPluginArn");
-
+    m_customPluginArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customPluginState"))
   {
     m_customPluginState = CustomPluginStateMapper::GetCustomPluginStateForName(jsonValue.GetString("customPluginState"));
-
+    m_customPluginStateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

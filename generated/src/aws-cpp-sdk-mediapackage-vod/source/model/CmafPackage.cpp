@@ -18,18 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-CmafPackage::CmafPackage() : 
-    m_encryptionHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_includeEncoderConfigurationInSegments(false),
-    m_includeEncoderConfigurationInSegmentsHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false)
-{
-}
-
 CmafPackage::CmafPackage(JsonView jsonValue)
-  : CmafPackage()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ CmafPackage& CmafPackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsManifests"))
   {
     Aws::Utils::Array<JsonView> hlsManifestsJsonList = jsonValue.GetArray("hlsManifests");
@@ -52,21 +39,16 @@ CmafPackage& CmafPackage::operator =(JsonView jsonValue)
     }
     m_hlsManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeEncoderConfigurationInSegments"))
   {
     m_includeEncoderConfigurationInSegments = jsonValue.GetBool("includeEncoderConfigurationInSegments");
-
     m_includeEncoderConfigurationInSegmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

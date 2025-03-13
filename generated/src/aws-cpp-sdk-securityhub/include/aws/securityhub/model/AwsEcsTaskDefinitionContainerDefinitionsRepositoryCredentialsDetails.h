@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of the secret that contains the private repository credentials.</p>
      */
-    inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
+    inline const Aws::String& GetCredentialsParameter() const { return m_credentialsParameter; }
     inline bool CredentialsParameterHasBeenSet() const { return m_credentialsParameterHasBeenSet; }
-    inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
-    inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
-    inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
+    template<typename CredentialsParameterT = Aws::String>
+    void SetCredentialsParameter(CredentialsParameterT&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::forward<CredentialsParameterT>(value); }
+    template<typename CredentialsParameterT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails& WithCredentialsParameter(CredentialsParameterT&& value) { SetCredentialsParameter(std::forward<CredentialsParameterT>(value)); return *this;}
     ///@}
   private:
 

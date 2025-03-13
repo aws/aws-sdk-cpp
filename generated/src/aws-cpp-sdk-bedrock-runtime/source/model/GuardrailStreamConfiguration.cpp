@@ -18,18 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailStreamConfiguration::GuardrailStreamConfiguration() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false),
-    m_trace(GuardrailTrace::NOT_SET),
-    m_traceHasBeenSet(false),
-    m_streamProcessingMode(GuardrailStreamProcessingMode::NOT_SET),
-    m_streamProcessingModeHasBeenSet(false)
-{
-}
-
 GuardrailStreamConfiguration::GuardrailStreamConfiguration(JsonView jsonValue)
-  : GuardrailStreamConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ GuardrailStreamConfiguration& GuardrailStreamConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("guardrailIdentifier"))
   {
     m_guardrailIdentifier = jsonValue.GetString("guardrailIdentifier");
-
     m_guardrailIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailVersion"))
   {
     m_guardrailVersion = jsonValue.GetString("guardrailVersion");
-
     m_guardrailVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = GuardrailTraceMapper::GetGuardrailTraceForName(jsonValue.GetString("trace"));
-
     m_traceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamProcessingMode"))
   {
     m_streamProcessingMode = GuardrailStreamProcessingModeMapper::GetGuardrailStreamProcessingModeForName(jsonValue.GetString("streamProcessingMode"));
-
     m_streamProcessingModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcBlockPublicAccessExclusionsResponse::DescribeVpcBlockPublicAccessExclusionsResponse()
-{
-}
-
 DescribeVpcBlockPublicAccessExclusionsResponse::DescribeVpcBlockPublicAccessExclusionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVpcBlockPublicAccessExclusionsResponse& DescribeVpcBlockPublicAccessExcl
     if(!vpcBlockPublicAccessExclusionsNode.IsNull())
     {
       XmlNode vpcBlockPublicAccessExclusionsMember = vpcBlockPublicAccessExclusionsNode.FirstChild("item");
+      m_vpcBlockPublicAccessExclusionsHasBeenSet = !vpcBlockPublicAccessExclusionsMember.IsNull();
       while(!vpcBlockPublicAccessExclusionsMember.IsNull())
       {
         m_vpcBlockPublicAccessExclusions.push_back(vpcBlockPublicAccessExclusionsMember);
@@ -53,6 +50,7 @@ DescribeVpcBlockPublicAccessExclusionsResponse& DescribeVpcBlockPublicAccessExcl
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeVpcBlockPublicAccessExclusionsResponse& DescribeVpcBlockPublicAccessExcl
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcBlockPublicAccessExclusionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

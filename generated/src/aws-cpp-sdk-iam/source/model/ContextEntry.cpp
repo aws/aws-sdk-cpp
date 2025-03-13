@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ContextEntry::ContextEntry() : 
-    m_contextKeyNameHasBeenSet(false),
-    m_contextKeyValuesHasBeenSet(false),
-    m_contextKeyType(ContextKeyTypeEnum::NOT_SET),
-    m_contextKeyTypeHasBeenSet(false)
-{
-}
-
 ContextEntry::ContextEntry(const XmlNode& xmlNode)
-  : ContextEntry()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,27 @@ ContextEntry& ContextEntry::operator =(const XmlNode& xmlNode)
     {
       m_contextKeyName = Aws::Utils::Xml::DecodeEscapedXmlText(contextKeyNameNode.GetText());
       m_contextKeyNameHasBeenSet = true;
+       m_contextKeyNameHasBeenSet = true;
     }
     XmlNode contextKeyValuesNode = resultNode.FirstChild("ContextKeyValues");
     if(!contextKeyValuesNode.IsNull())
     {
       XmlNode contextKeyValuesMember = contextKeyValuesNode.FirstChild("member");
+      m_contextKeyValuesHasBeenSet = !contextKeyValuesMember.IsNull();
       while(!contextKeyValuesMember.IsNull())
       {
         m_contextKeyValues.push_back(contextKeyValuesMember.GetText());
         contextKeyValuesMember = contextKeyValuesMember.NextNode("member");
       }
 
-      m_contextKeyValuesHasBeenSet = true;
+       m_contextKeyValuesHasBeenSet = true;
     }
     XmlNode contextKeyTypeNode = resultNode.FirstChild("ContextKeyType");
     if(!contextKeyTypeNode.IsNull())
     {
-      m_contextKeyType = ContextKeyTypeEnumMapper::GetContextKeyTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(contextKeyTypeNode.GetText()).c_str()).c_str());
+      m_contextKeyType = ContextKeyTypeEnumMapper::GetContextKeyTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(contextKeyTypeNode.GetText()).c_str()));
       m_contextKeyTypeHasBeenSet = true;
+       m_contextKeyTypeHasBeenSet = true;
     }
   }
 

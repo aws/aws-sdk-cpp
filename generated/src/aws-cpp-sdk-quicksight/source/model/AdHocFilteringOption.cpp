@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AdHocFilteringOption::AdHocFilteringOption() : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
-{
-}
-
 AdHocFilteringOption::AdHocFilteringOption(JsonView jsonValue)
-  : AdHocFilteringOption()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdHocFilteringOption& AdHocFilteringOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvailabilityStatus"))
   {
     m_availabilityStatus = DashboardBehaviorMapper::GetDashboardBehaviorForName(jsonValue.GetString("AvailabilityStatus"));
-
     m_availabilityStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

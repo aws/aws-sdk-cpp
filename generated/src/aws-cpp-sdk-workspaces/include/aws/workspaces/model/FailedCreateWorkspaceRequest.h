@@ -32,7 +32,7 @@ namespace Model
   class FailedCreateWorkspaceRequest
   {
   public:
-    AWS_WORKSPACES_API FailedCreateWorkspaceRequest();
+    AWS_WORKSPACES_API FailedCreateWorkspaceRequest() = default;
     AWS_WORKSPACES_API FailedCreateWorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API FailedCreateWorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>Information about the WorkSpace.</p>
      */
-    inline const WorkspaceRequest& GetWorkspaceRequest() const{ return m_workspaceRequest; }
+    inline const WorkspaceRequest& GetWorkspaceRequest() const { return m_workspaceRequest; }
     inline bool WorkspaceRequestHasBeenSet() const { return m_workspaceRequestHasBeenSet; }
-    inline void SetWorkspaceRequest(const WorkspaceRequest& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = value; }
-    inline void SetWorkspaceRequest(WorkspaceRequest&& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = std::move(value); }
-    inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(const WorkspaceRequest& value) { SetWorkspaceRequest(value); return *this;}
-    inline FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequest&& value) { SetWorkspaceRequest(std::move(value)); return *this;}
+    template<typename WorkspaceRequestT = WorkspaceRequest>
+    void SetWorkspaceRequest(WorkspaceRequestT&& value) { m_workspaceRequestHasBeenSet = true; m_workspaceRequest = std::forward<WorkspaceRequestT>(value); }
+    template<typename WorkspaceRequestT = WorkspaceRequest>
+    FailedCreateWorkspaceRequest& WithWorkspaceRequest(WorkspaceRequestT&& value) { SetWorkspaceRequest(std::forward<WorkspaceRequestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline FailedCreateWorkspaceRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline FailedCreateWorkspaceRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline FailedCreateWorkspaceRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    FailedCreateWorkspaceRequest& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <p>The text of the error message that is returned if the WorkSpace cannot be
      * created.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline FailedCreateWorkspaceRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline FailedCreateWorkspaceRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline FailedCreateWorkspaceRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    FailedCreateWorkspaceRequest& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

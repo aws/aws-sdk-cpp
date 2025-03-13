@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotSortBy::SlotSortBy() : 
-    m_attribute(SlotSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 SlotSortBy::SlotSortBy(JsonView jsonValue)
-  : SlotSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SlotSortBy& SlotSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = SlotSortAttributeMapper::GetSlotSortAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

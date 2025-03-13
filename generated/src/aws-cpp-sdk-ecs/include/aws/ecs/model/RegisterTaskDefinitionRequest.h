@@ -34,7 +34,7 @@ namespace Model
   class RegisterTaskDefinitionRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API RegisterTaskDefinitionRequest();
+    AWS_ECS_API RegisterTaskDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * used as a name for your task definition. Up to 255 letters (uppercase and
      * lowercase), numbers, underscores, and hyphens are allowed.</p>
      */
-    inline const Aws::String& GetFamily() const{ return m_family; }
+    inline const Aws::String& GetFamily() const { return m_family; }
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
-    inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
-    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
-    inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
-    inline RegisterTaskDefinitionRequest& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
+    template<typename FamilyT = Aws::String>
+    void SetFamily(FamilyT&& value) { m_familyHasBeenSet = true; m_family = std::forward<FamilyT>(value); }
+    template<typename FamilyT = Aws::String>
+    RegisterTaskDefinitionRequest& WithFamily(FamilyT&& value) { SetFamily(std::forward<FamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
+    inline const Aws::String& GetTaskRoleArn() const { return m_taskRoleArn; }
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
-    inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
-    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
-    inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
-    inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+    template<typename TaskRoleArnT = Aws::String>
+    void SetTaskRoleArn(TaskRoleArnT&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::forward<TaskRoleArnT>(value); }
+    template<typename TaskRoleArnT = Aws::String>
+    RegisterTaskDefinitionRequest& WithTaskRoleArn(TaskRoleArnT&& value) { SetTaskRoleArn(std::forward<TaskRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    RegisterTaskDefinitionRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +128,10 @@ namespace Model
      * multiple instantiations of the same task on a single container instance when
      * port mappings are used.</p>
      */
-    inline const NetworkMode& GetNetworkMode() const{ return m_networkMode; }
+    inline NetworkMode GetNetworkMode() const { return m_networkMode; }
     inline bool NetworkModeHasBeenSet() const { return m_networkModeHasBeenSet; }
-    inline void SetNetworkMode(const NetworkMode& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
-    inline void SetNetworkMode(NetworkMode&& value) { m_networkModeHasBeenSet = true; m_networkMode = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithNetworkMode(const NetworkMode& value) { SetNetworkMode(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithNetworkMode(NetworkMode&& value) { SetNetworkMode(std::move(value)); return *this;}
+    inline void SetNetworkMode(NetworkMode value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+    inline RegisterTaskDefinitionRequest& WithNetworkMode(NetworkMode value) { SetNetworkMode(value); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +139,14 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task.</p>
      */
-    inline const Aws::Vector<ContainerDefinition>& GetContainerDefinitions() const{ return m_containerDefinitions; }
+    inline const Aws::Vector<ContainerDefinition>& GetContainerDefinitions() const { return m_containerDefinitions; }
     inline bool ContainerDefinitionsHasBeenSet() const { return m_containerDefinitionsHasBeenSet; }
-    inline void SetContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = value; }
-    inline void SetContainerDefinitions(Aws::Vector<ContainerDefinition>&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithContainerDefinitions(const Aws::Vector<ContainerDefinition>& value) { SetContainerDefinitions(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithContainerDefinitions(Aws::Vector<ContainerDefinition>&& value) { SetContainerDefinitions(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& AddContainerDefinitions(const ContainerDefinition& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(value); return *this; }
-    inline RegisterTaskDefinitionRequest& AddContainerDefinitions(ContainerDefinition&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ContainerDefinitionsT = Aws::Vector<ContainerDefinition>>
+    void SetContainerDefinitions(ContainerDefinitionsT&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions = std::forward<ContainerDefinitionsT>(value); }
+    template<typename ContainerDefinitionsT = Aws::Vector<ContainerDefinition>>
+    RegisterTaskDefinitionRequest& WithContainerDefinitions(ContainerDefinitionsT&& value) { SetContainerDefinitions(std::forward<ContainerDefinitionsT>(value)); return *this;}
+    template<typename ContainerDefinitionsT = ContainerDefinition>
+    RegisterTaskDefinitionRequest& AddContainerDefinitions(ContainerDefinitionsT&& value) { m_containerDefinitionsHasBeenSet = true; m_containerDefinitions.emplace_back(std::forward<ContainerDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,14 +154,14 @@ namespace Model
      * <p>A list of volume definitions in JSON format that containers in your task
      * might use.</p>
      */
-    inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+    inline const Aws::Vector<Volume>& GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
-    inline RegisterTaskDefinitionRequest& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    void SetVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes = std::forward<VolumesT>(value); }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    RegisterTaskDefinitionRequest& WithVolumes(VolumesT&& value) { SetVolumes(std::forward<VolumesT>(value)); return *this;}
+    template<typename VolumesT = Volume>
+    RegisterTaskDefinitionRequest& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -178,14 +170,14 @@ namespace Model
      * a maximum of 10 constraints for each task. This limit includes constraints in
      * the task definition and those specified at runtime.</p>
      */
-    inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+    inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const { return m_placementConstraints; }
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
-    inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
-    inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
-    inline RegisterTaskDefinitionRequest& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
+    template<typename PlacementConstraintsT = Aws::Vector<TaskDefinitionPlacementConstraint>>
+    void SetPlacementConstraints(PlacementConstraintsT&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::forward<PlacementConstraintsT>(value); }
+    template<typename PlacementConstraintsT = Aws::Vector<TaskDefinitionPlacementConstraint>>
+    RegisterTaskDefinitionRequest& WithPlacementConstraints(PlacementConstraintsT&& value) { SetPlacementConstraints(std::forward<PlacementConstraintsT>(value)); return *this;}
+    template<typename PlacementConstraintsT = TaskDefinitionPlacementConstraint>
+    RegisterTaskDefinitionRequest& AddPlacementConstraints(PlacementConstraintsT&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.emplace_back(std::forward<PlacementConstraintsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -195,14 +187,13 @@ namespace Model
      * compatibilities specified. If no value is specified, the parameter is omitted
      * from the response.</p>
      */
-    inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
+    inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const { return m_requiresCompatibilities; }
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
-    inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
-    inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
-    inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
+    template<typename RequiresCompatibilitiesT = Aws::Vector<Compatibility>>
+    void SetRequiresCompatibilities(RequiresCompatibilitiesT&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::forward<RequiresCompatibilitiesT>(value); }
+    template<typename RequiresCompatibilitiesT = Aws::Vector<Compatibility>>
+    RegisterTaskDefinitionRequest& WithRequiresCompatibilities(RequiresCompatibilitiesT&& value) { SetRequiresCompatibilities(std::forward<RequiresCompatibilitiesT>(value)); return *this;}
+    inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -236,14 +227,12 @@ namespace Model
      * <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This
      * option requires Linux platform <code>1.4.0</code> or later.</p> </li> </ul>
      */
-    inline const Aws::String& GetCpu() const{ return m_cpu; }
+    inline const Aws::String& GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-    inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
-    inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
-    inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
-    inline RegisterTaskDefinitionRequest& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& WithCpu(const char* value) { SetCpu(value); return *this;}
+    template<typename CpuT = Aws::String>
+    void SetCpu(CpuT&& value) { m_cpuHasBeenSet = true; m_cpu = std::forward<CpuT>(value); }
+    template<typename CpuT = Aws::String>
+    RegisterTaskDefinitionRequest& WithCpu(CpuT&& value) { SetCpu(std::forward<CpuT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -274,14 +263,12 @@ namespace Model
      * vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or
      * later.</p> </li> </ul>
      */
-    inline const Aws::String& GetMemory() const{ return m_memory; }
+    inline const Aws::String& GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-    inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
-    inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
-    inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
-    inline RegisterTaskDefinitionRequest& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& WithMemory(const char* value) { SetMemory(value); return *this;}
+    template<typename MemoryT = Aws::String>
+    void SetMemory(MemoryT&& value) { m_memoryHasBeenSet = true; m_memory = std::forward<MemoryT>(value); }
+    template<typename MemoryT = Aws::String>
+    RegisterTaskDefinitionRequest& WithMemory(MemoryT&& value) { SetMemory(std::forward<MemoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -303,14 +290,14 @@ namespace Model
      * edit or delete tag keys or values with this prefix. Tags with this prefix do not
      * count against your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RegisterTaskDefinitionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RegisterTaskDefinitionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RegisterTaskDefinitionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -332,12 +319,10 @@ namespace Model
      * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
      * on Fargate.</p> 
      */
-    inline const PidMode& GetPidMode() const{ return m_pidMode; }
+    inline PidMode GetPidMode() const { return m_pidMode; }
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
-    inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
-    inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
+    inline void SetPidMode(PidMode value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
+    inline RegisterTaskDefinitionRequest& WithPidMode(PidMode value) { SetPidMode(value); return *this;}
     ///@}
 
     ///@{
@@ -366,12 +351,10 @@ namespace Model
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
      * tasks run on Fargate.</p> 
      */
-    inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
+    inline IpcMode GetIpcMode() const { return m_ipcMode; }
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
-    inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
-    inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
+    inline void SetIpcMode(IpcMode value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
+    inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode value) { SetIpcMode(value); return *this;}
     ///@}
 
     ///@{
@@ -388,26 +371,26 @@ namespace Model
      * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
-    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+    inline const ProxyConfiguration& GetProxyConfiguration() const { return m_proxyConfiguration; }
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
-    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
-    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+    template<typename ProxyConfigurationT = ProxyConfiguration>
+    void SetProxyConfiguration(ProxyConfigurationT&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::forward<ProxyConfigurationT>(value); }
+    template<typename ProxyConfigurationT = ProxyConfiguration>
+    RegisterTaskDefinitionRequest& WithProxyConfiguration(ProxyConfigurationT&& value) { SetProxyConfiguration(std::forward<ProxyConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
      */
-    inline const Aws::Vector<InferenceAccelerator>& GetInferenceAccelerators() const{ return m_inferenceAccelerators; }
+    inline const Aws::Vector<InferenceAccelerator>& GetInferenceAccelerators() const { return m_inferenceAccelerators; }
     inline bool InferenceAcceleratorsHasBeenSet() const { return m_inferenceAcceleratorsHasBeenSet; }
-    inline void SetInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = value; }
-    inline void SetInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { SetInferenceAccelerators(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { SetInferenceAccelerators(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionRequest& AddInferenceAccelerators(const InferenceAccelerator& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(value); return *this; }
-    inline RegisterTaskDefinitionRequest& AddInferenceAccelerators(InferenceAccelerator&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(std::move(value)); return *this; }
+    template<typename InferenceAcceleratorsT = Aws::Vector<InferenceAccelerator>>
+    void SetInferenceAccelerators(InferenceAcceleratorsT&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = std::forward<InferenceAcceleratorsT>(value); }
+    template<typename InferenceAcceleratorsT = Aws::Vector<InferenceAccelerator>>
+    RegisterTaskDefinitionRequest& WithInferenceAccelerators(InferenceAcceleratorsT&& value) { SetInferenceAccelerators(std::forward<InferenceAcceleratorsT>(value)); return *this;}
+    template<typename InferenceAcceleratorsT = InferenceAccelerator>
+    RegisterTaskDefinitionRequest& AddInferenceAccelerators(InferenceAcceleratorsT&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.emplace_back(std::forward<InferenceAcceleratorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -422,12 +405,12 @@ namespace Model
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
-    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+    inline const EphemeralStorage& GetEphemeralStorage() const { return m_ephemeralStorage; }
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
-    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
-    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+    template<typename EphemeralStorageT = EphemeralStorage>
+    void SetEphemeralStorage(EphemeralStorageT&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::forward<EphemeralStorageT>(value); }
+    template<typename EphemeralStorageT = EphemeralStorage>
+    RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorageT&& value) { SetEphemeralStorage(std::forward<EphemeralStorageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -435,12 +418,12 @@ namespace Model
      * <p>The operating system that your tasks definitions run on. A platform family is
      * specified only for tasks using the Fargate launch type. </p>
      */
-    inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
+    inline const RuntimePlatform& GetRuntimePlatform() const { return m_runtimePlatform; }
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
-    inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
-    inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
-    inline RegisterTaskDefinitionRequest& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
-    inline RegisterTaskDefinitionRequest& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+    template<typename RuntimePlatformT = RuntimePlatform>
+    void SetRuntimePlatform(RuntimePlatformT&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::forward<RuntimePlatformT>(value); }
+    template<typename RuntimePlatformT = RuntimePlatform>
+    RegisterTaskDefinitionRequest& WithRuntimePlatform(RuntimePlatformT&& value) { SetRuntimePlatform(std::forward<RuntimePlatformT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -449,7 +432,7 @@ namespace Model
      * fault injection requests to be accepted from the task's containers. The default
      * value is <code>false</code>.</p>
      */
-    inline bool GetEnableFaultInjection() const{ return m_enableFaultInjection; }
+    inline bool GetEnableFaultInjection() const { return m_enableFaultInjection; }
     inline bool EnableFaultInjectionHasBeenSet() const { return m_enableFaultInjectionHasBeenSet; }
     inline void SetEnableFaultInjection(bool value) { m_enableFaultInjectionHasBeenSet = true; m_enableFaultInjection = value; }
     inline RegisterTaskDefinitionRequest& WithEnableFaultInjection(bool value) { SetEnableFaultInjection(value); return *this;}
@@ -465,7 +448,7 @@ namespace Model
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
 
-    NetworkMode m_networkMode;
+    NetworkMode m_networkMode{NetworkMode::NOT_SET};
     bool m_networkModeHasBeenSet = false;
 
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
@@ -489,10 +472,10 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    PidMode m_pidMode;
+    PidMode m_pidMode{PidMode::NOT_SET};
     bool m_pidModeHasBeenSet = false;
 
-    IpcMode m_ipcMode;
+    IpcMode m_ipcMode{IpcMode::NOT_SET};
     bool m_ipcModeHasBeenSet = false;
 
     ProxyConfiguration m_proxyConfiguration;
@@ -507,7 +490,7 @@ namespace Model
     RuntimePlatform m_runtimePlatform;
     bool m_runtimePlatformHasBeenSet = false;
 
-    bool m_enableFaultInjection;
+    bool m_enableFaultInjection{false};
     bool m_enableFaultInjectionHasBeenSet = false;
   };
 

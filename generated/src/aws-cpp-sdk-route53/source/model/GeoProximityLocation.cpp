@@ -20,17 +20,7 @@ namespace Route53
 namespace Model
 {
 
-GeoProximityLocation::GeoProximityLocation() : 
-    m_aWSRegionHasBeenSet(false),
-    m_localZoneGroupHasBeenSet(false),
-    m_coordinatesHasBeenSet(false),
-    m_bias(0),
-    m_biasHasBeenSet(false)
-{
-}
-
 GeoProximityLocation::GeoProximityLocation(const XmlNode& xmlNode)
-  : GeoProximityLocation()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ GeoProximityLocation& GeoProximityLocation::operator =(const XmlNode& xmlNode)
     {
       m_aWSRegion = Aws::Utils::Xml::DecodeEscapedXmlText(aWSRegionNode.GetText());
       m_aWSRegionHasBeenSet = true;
+       m_aWSRegionHasBeenSet = true;
     }
     XmlNode localZoneGroupNode = resultNode.FirstChild("LocalZoneGroup");
     if(!localZoneGroupNode.IsNull())
     {
       m_localZoneGroup = Aws::Utils::Xml::DecodeEscapedXmlText(localZoneGroupNode.GetText());
       m_localZoneGroupHasBeenSet = true;
+       m_localZoneGroupHasBeenSet = true;
     }
     XmlNode coordinatesNode = resultNode.FirstChild("Coordinates");
     if(!coordinatesNode.IsNull())
     {
       m_coordinates = coordinatesNode;
       m_coordinatesHasBeenSet = true;
+       m_coordinatesHasBeenSet = true;
     }
     XmlNode biasNode = resultNode.FirstChild("Bias");
     if(!biasNode.IsNull())
     {
       m_bias = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(biasNode.GetText()).c_str()).c_str());
       m_biasHasBeenSet = true;
+       m_biasHasBeenSet = true;
     }
   }
 

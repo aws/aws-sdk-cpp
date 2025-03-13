@@ -30,7 +30,7 @@ namespace Model
   class MapRunItemCounts
   {
   public:
-    AWS_SFN_API MapRunItemCounts();
+    AWS_SFN_API MapRunItemCounts() = default;
     AWS_SFN_API MapRunItemCounts(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API MapRunItemCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The total number of items to process in child workflow executions that
      * haven't started running yet.</p>
      */
-    inline long long GetPending() const{ return m_pending; }
+    inline long long GetPending() const { return m_pending; }
     inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
     inline void SetPending(long long value) { m_pendingHasBeenSet = true; m_pending = value; }
     inline MapRunItemCounts& WithPending(long long value) { SetPending(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * <p>The total number of items being processed in child workflow executions that
      * are currently in-progress.</p>
      */
-    inline long long GetRunning() const{ return m_running; }
+    inline long long GetRunning() const { return m_running; }
     inline bool RunningHasBeenSet() const { return m_runningHasBeenSet; }
     inline void SetRunning(long long value) { m_runningHasBeenSet = true; m_running = value; }
     inline MapRunItemCounts& WithRunning(long long value) { SetRunning(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * <p>The total number of items processed in child workflow executions that have
      * completed successfully.</p>
      */
-    inline long long GetSucceeded() const{ return m_succeeded; }
+    inline long long GetSucceeded() const { return m_succeeded; }
     inline bool SucceededHasBeenSet() const { return m_succeededHasBeenSet; }
     inline void SetSucceeded(long long value) { m_succeededHasBeenSet = true; m_succeeded = value; }
     inline MapRunItemCounts& WithSucceeded(long long value) { SetSucceeded(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
      * <p>The total number of items processed in child workflow executions that have
      * failed.</p>
      */
-    inline long long GetFailed() const{ return m_failed; }
+    inline long long GetFailed() const { return m_failed; }
     inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
     inline void SetFailed(long long value) { m_failedHasBeenSet = true; m_failed = value; }
     inline MapRunItemCounts& WithFailed(long long value) { SetFailed(value); return *this;}
@@ -85,7 +85,7 @@ namespace Model
      * <p>The total number of items processed in child workflow executions that have
      * timed out.</p>
      */
-    inline long long GetTimedOut() const{ return m_timedOut; }
+    inline long long GetTimedOut() const { return m_timedOut; }
     inline bool TimedOutHasBeenSet() const { return m_timedOutHasBeenSet; }
     inline void SetTimedOut(long long value) { m_timedOutHasBeenSet = true; m_timedOut = value; }
     inline MapRunItemCounts& WithTimedOut(long long value) { SetTimedOut(value); return *this;}
@@ -96,7 +96,7 @@ namespace Model
      * <p>The total number of items processed in child workflow executions that were
      * either stopped by the user or by Step Functions, because the Map Run failed.</p>
      */
-    inline long long GetAborted() const{ return m_aborted; }
+    inline long long GetAborted() const { return m_aborted; }
     inline bool AbortedHasBeenSet() const { return m_abortedHasBeenSet; }
     inline void SetAborted(long long value) { m_abortedHasBeenSet = true; m_aborted = value; }
     inline MapRunItemCounts& WithAborted(long long value) { SetAborted(value); return *this;}
@@ -107,7 +107,7 @@ namespace Model
      * <p>The total number of items processed in all the child workflow executions
      * started by a Map Run.</p>
      */
-    inline long long GetTotal() const{ return m_total; }
+    inline long long GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
     inline void SetTotal(long long value) { m_totalHasBeenSet = true; m_total = value; }
     inline MapRunItemCounts& WithTotal(long long value) { SetTotal(value); return *this;}
@@ -120,7 +120,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a>
      * in the <i>Step Functions Developer Guide</i>.</p>
      */
-    inline long long GetResultsWritten() const{ return m_resultsWritten; }
+    inline long long GetResultsWritten() const { return m_resultsWritten; }
     inline bool ResultsWrittenHasBeenSet() const { return m_resultsWrittenHasBeenSet; }
     inline void SetResultsWritten(long long value) { m_resultsWrittenHasBeenSet = true; m_resultsWritten = value; }
     inline MapRunItemCounts& WithResultsWritten(long long value) { SetResultsWritten(value); return *this;}
@@ -135,7 +135,7 @@ namespace Model
      * <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code>
      * of <code>NOT_REDRIVABLE</code>.</p>
      */
-    inline long long GetFailuresNotRedrivable() const{ return m_failuresNotRedrivable; }
+    inline long long GetFailuresNotRedrivable() const { return m_failuresNotRedrivable; }
     inline bool FailuresNotRedrivableHasBeenSet() const { return m_failuresNotRedrivableHasBeenSet; }
     inline void SetFailuresNotRedrivable(long long value) { m_failuresNotRedrivableHasBeenSet = true; m_failuresNotRedrivable = value; }
     inline MapRunItemCounts& WithFailuresNotRedrivable(long long value) { SetFailuresNotRedrivable(value); return *this;}
@@ -146,41 +146,41 @@ namespace Model
      * <p>The number of unsuccessful items in child workflow executions currently
      * waiting to be redriven.</p>
      */
-    inline long long GetPendingRedrive() const{ return m_pendingRedrive; }
+    inline long long GetPendingRedrive() const { return m_pendingRedrive; }
     inline bool PendingRedriveHasBeenSet() const { return m_pendingRedriveHasBeenSet; }
     inline void SetPendingRedrive(long long value) { m_pendingRedriveHasBeenSet = true; m_pendingRedrive = value; }
     inline MapRunItemCounts& WithPendingRedrive(long long value) { SetPendingRedrive(value); return *this;}
     ///@}
   private:
 
-    long long m_pending;
+    long long m_pending{0};
     bool m_pendingHasBeenSet = false;
 
-    long long m_running;
+    long long m_running{0};
     bool m_runningHasBeenSet = false;
 
-    long long m_succeeded;
+    long long m_succeeded{0};
     bool m_succeededHasBeenSet = false;
 
-    long long m_failed;
+    long long m_failed{0};
     bool m_failedHasBeenSet = false;
 
-    long long m_timedOut;
+    long long m_timedOut{0};
     bool m_timedOutHasBeenSet = false;
 
-    long long m_aborted;
+    long long m_aborted{0};
     bool m_abortedHasBeenSet = false;
 
-    long long m_total;
+    long long m_total{0};
     bool m_totalHasBeenSet = false;
 
-    long long m_resultsWritten;
+    long long m_resultsWritten{0};
     bool m_resultsWrittenHasBeenSet = false;
 
-    long long m_failuresNotRedrivable;
+    long long m_failuresNotRedrivable{0};
     bool m_failuresNotRedrivableHasBeenSet = false;
 
-    long long m_pendingRedrive;
+    long long m_pendingRedrive{0};
     bool m_pendingRedriveHasBeenSet = false;
   };
 

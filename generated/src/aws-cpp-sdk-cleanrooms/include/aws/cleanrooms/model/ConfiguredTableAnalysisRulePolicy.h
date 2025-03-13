@@ -32,7 +32,7 @@ namespace Model
   class ConfiguredTableAnalysisRulePolicy
   {
   public:
-    AWS_CLEANROOMS_API ConfiguredTableAnalysisRulePolicy();
+    AWS_CLEANROOMS_API ConfiguredTableAnalysisRulePolicy() = default;
     AWS_CLEANROOMS_API ConfiguredTableAnalysisRulePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConfiguredTableAnalysisRulePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Controls on the query specifications that can be run on a configured
      * table.</p>
      */
-    inline const ConfiguredTableAnalysisRulePolicyV1& GetV1() const{ return m_v1; }
+    inline const ConfiguredTableAnalysisRulePolicyV1& GetV1() const { return m_v1; }
     inline bool V1HasBeenSet() const { return m_v1HasBeenSet; }
-    inline void SetV1(const ConfiguredTableAnalysisRulePolicyV1& value) { m_v1HasBeenSet = true; m_v1 = value; }
-    inline void SetV1(ConfiguredTableAnalysisRulePolicyV1&& value) { m_v1HasBeenSet = true; m_v1 = std::move(value); }
-    inline ConfiguredTableAnalysisRulePolicy& WithV1(const ConfiguredTableAnalysisRulePolicyV1& value) { SetV1(value); return *this;}
-    inline ConfiguredTableAnalysisRulePolicy& WithV1(ConfiguredTableAnalysisRulePolicyV1&& value) { SetV1(std::move(value)); return *this;}
+    template<typename V1T = ConfiguredTableAnalysisRulePolicyV1>
+    void SetV1(V1T&& value) { m_v1HasBeenSet = true; m_v1 = std::forward<V1T>(value); }
+    template<typename V1T = ConfiguredTableAnalysisRulePolicyV1>
+    ConfiguredTableAnalysisRulePolicy& WithV1(V1T&& value) { SetV1(std::forward<V1T>(value)); return *this;}
     ///@}
   private:
 

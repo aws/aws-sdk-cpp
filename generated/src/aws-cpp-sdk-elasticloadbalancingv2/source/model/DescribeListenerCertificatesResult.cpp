@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeListenerCertificatesResult::DescribeListenerCertificatesResult()
-{
-}
-
 DescribeListenerCertificatesResult::DescribeListenerCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeListenerCertificatesResult& DescribeListenerCertificatesResult::operator
     if(!certificatesNode.IsNull())
     {
       XmlNode certificatesMember = certificatesNode.FirstChild("member");
+      m_certificatesHasBeenSet = !certificatesMember.IsNull();
       while(!certificatesMember.IsNull())
       {
         m_certificates.push_back(certificatesMember);
@@ -53,12 +50,14 @@ DescribeListenerCertificatesResult& DescribeListenerCertificatesResult::operator
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
+      m_nextMarkerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DescribeListenerCertificatesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

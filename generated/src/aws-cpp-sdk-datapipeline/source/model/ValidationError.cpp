@@ -18,14 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-ValidationError::ValidationError() : 
-    m_idHasBeenSet(false),
-    m_errorsHasBeenSet(false)
-{
-}
-
 ValidationError::ValidationError(JsonView jsonValue)
-  : ValidationError()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ValidationError& ValidationError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -48,7 +39,6 @@ ValidationError& ValidationError::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

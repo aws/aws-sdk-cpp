@@ -32,7 +32,7 @@ namespace Model
   class IdleSummary
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API IdleSummary();
+    AWS_COMPUTEOPTIMIZER_API IdleSummary() = default;
     AWS_COMPUTEOPTIMIZER_API IdleSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API IdleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The name of the finding group for the idle resources.</p>
      */
-    inline const IdleFinding& GetName() const{ return m_name; }
+    inline IdleFinding GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const IdleFinding& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(IdleFinding&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline IdleSummary& WithName(const IdleFinding& value) { SetName(value); return *this;}
-    inline IdleSummary& WithName(IdleFinding&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(IdleFinding value) { m_nameHasBeenSet = true; m_name = value; }
+    inline IdleSummary& WithName(IdleFinding value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The count of idle resources in the finding group.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline IdleSummary& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    IdleFinding m_name;
+    IdleFinding m_name{IdleFinding::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

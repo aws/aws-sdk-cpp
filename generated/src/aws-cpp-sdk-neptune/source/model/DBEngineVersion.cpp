@@ -20,28 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBEngineVersion::DBEngineVersion() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_dBEngineDescriptionHasBeenSet(false),
-    m_dBEngineVersionDescriptionHasBeenSet(false),
-    m_defaultCharacterSetHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false),
-    m_supportedTimezonesHasBeenSet(false),
-    m_exportableLogTypesHasBeenSet(false),
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
-    m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
-{
-}
-
 DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode)
-  : DBEngineVersion()
 {
   *this = xmlNode;
 }
@@ -57,102 +36,115 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode dBParameterGroupFamilyNode = resultNode.FirstChild("DBParameterGroupFamily");
     if(!dBParameterGroupFamilyNode.IsNull())
     {
       m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
+       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode dBEngineDescriptionNode = resultNode.FirstChild("DBEngineDescription");
     if(!dBEngineDescriptionNode.IsNull())
     {
       m_dBEngineDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineDescriptionNode.GetText());
       m_dBEngineDescriptionHasBeenSet = true;
+       m_dBEngineDescriptionHasBeenSet = true;
     }
     XmlNode dBEngineVersionDescriptionNode = resultNode.FirstChild("DBEngineVersionDescription");
     if(!dBEngineVersionDescriptionNode.IsNull())
     {
       m_dBEngineVersionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionDescriptionNode.GetText());
       m_dBEngineVersionDescriptionHasBeenSet = true;
+       m_dBEngineVersionDescriptionHasBeenSet = true;
     }
     XmlNode defaultCharacterSetNode = resultNode.FirstChild("DefaultCharacterSet");
     if(!defaultCharacterSetNode.IsNull())
     {
       m_defaultCharacterSet = defaultCharacterSetNode;
       m_defaultCharacterSetHasBeenSet = true;
+       m_defaultCharacterSetHasBeenSet = true;
     }
     XmlNode supportedCharacterSetsNode = resultNode.FirstChild("SupportedCharacterSets");
     if(!supportedCharacterSetsNode.IsNull())
     {
       XmlNode supportedCharacterSetsMember = supportedCharacterSetsNode.FirstChild("CharacterSet");
+      m_supportedCharacterSetsHasBeenSet = !supportedCharacterSetsMember.IsNull();
       while(!supportedCharacterSetsMember.IsNull())
       {
         m_supportedCharacterSets.push_back(supportedCharacterSetsMember);
         supportedCharacterSetsMember = supportedCharacterSetsMember.NextNode("CharacterSet");
       }
 
-      m_supportedCharacterSetsHasBeenSet = true;
+       m_supportedCharacterSetsHasBeenSet = true;
     }
     XmlNode validUpgradeTargetNode = resultNode.FirstChild("ValidUpgradeTarget");
     if(!validUpgradeTargetNode.IsNull())
     {
       XmlNode validUpgradeTargetMember = validUpgradeTargetNode.FirstChild("UpgradeTarget");
+      m_validUpgradeTargetHasBeenSet = !validUpgradeTargetMember.IsNull();
       while(!validUpgradeTargetMember.IsNull())
       {
         m_validUpgradeTarget.push_back(validUpgradeTargetMember);
         validUpgradeTargetMember = validUpgradeTargetMember.NextNode("UpgradeTarget");
       }
 
-      m_validUpgradeTargetHasBeenSet = true;
+       m_validUpgradeTargetHasBeenSet = true;
     }
     XmlNode supportedTimezonesNode = resultNode.FirstChild("SupportedTimezones");
     if(!supportedTimezonesNode.IsNull())
     {
       XmlNode supportedTimezonesMember = supportedTimezonesNode.FirstChild("Timezone");
+      m_supportedTimezonesHasBeenSet = !supportedTimezonesMember.IsNull();
       while(!supportedTimezonesMember.IsNull())
       {
         m_supportedTimezones.push_back(supportedTimezonesMember);
         supportedTimezonesMember = supportedTimezonesMember.NextNode("Timezone");
       }
 
-      m_supportedTimezonesHasBeenSet = true;
+       m_supportedTimezonesHasBeenSet = true;
     }
     XmlNode exportableLogTypesNode = resultNode.FirstChild("ExportableLogTypes");
     if(!exportableLogTypesNode.IsNull())
     {
       XmlNode exportableLogTypesMember = exportableLogTypesNode.FirstChild("member");
+      m_exportableLogTypesHasBeenSet = !exportableLogTypesMember.IsNull();
       while(!exportableLogTypesMember.IsNull())
       {
         m_exportableLogTypes.push_back(exportableLogTypesMember.GetText());
         exportableLogTypesMember = exportableLogTypesMember.NextNode("member");
       }
 
-      m_exportableLogTypesHasBeenSet = true;
+       m_exportableLogTypesHasBeenSet = true;
     }
     XmlNode supportsLogExportsToCloudwatchLogsNode = resultNode.FirstChild("SupportsLogExportsToCloudwatchLogs");
     if(!supportsLogExportsToCloudwatchLogsNode.IsNull())
     {
       m_supportsLogExportsToCloudwatchLogs = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLogExportsToCloudwatchLogsNode.GetText()).c_str()).c_str());
       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
+       m_supportsLogExportsToCloudwatchLogsHasBeenSet = true;
     }
     XmlNode supportsReadReplicaNode = resultNode.FirstChild("SupportsReadReplica");
     if(!supportsReadReplicaNode.IsNull())
     {
       m_supportsReadReplica = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsReadReplicaNode.GetText()).c_str()).c_str());
       m_supportsReadReplicaHasBeenSet = true;
+       m_supportsReadReplicaHasBeenSet = true;
     }
     XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
     if(!supportsGlobalDatabasesNode.IsNull())
     {
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
+       m_supportsGlobalDatabasesHasBeenSet = true;
     }
   }
 

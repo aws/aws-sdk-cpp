@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterDateTimePickerControl::FilterDateTimePickerControl() : 
-    m_filterControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false),
-    m_type(SheetControlDateTimePickerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_commitMode(CommitMode::NOT_SET),
-    m_commitModeHasBeenSet(false)
-{
-}
-
 FilterDateTimePickerControl::FilterDateTimePickerControl(JsonView jsonValue)
-  : FilterDateTimePickerControl()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ FilterDateTimePickerControl& FilterDateTimePickerControl::operator =(JsonView js
   if(jsonValue.ValueExists("FilterControlId"))
   {
     m_filterControlId = jsonValue.GetString("FilterControlId");
-
     m_filterControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFilterId"))
   {
     m_sourceFilterId = jsonValue.GetString("SourceFilterId");
-
     m_sourceFilterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SheetControlDateTimePickerTypeMapper::GetSheetControlDateTimePickerTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitMode"))
   {
     m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
-
     m_commitModeHasBeenSet = true;
   }
-
   return *this;
 }
 

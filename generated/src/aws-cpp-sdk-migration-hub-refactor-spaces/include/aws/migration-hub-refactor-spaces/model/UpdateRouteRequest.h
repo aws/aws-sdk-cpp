@@ -22,7 +22,7 @@ namespace Model
   class UpdateRouteRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API UpdateRouteRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UpdateRouteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,58 +38,50 @@ namespace Model
      * <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
      * after the route is updated. </p>
      */
-    inline const RouteActivationState& GetActivationState() const{ return m_activationState; }
+    inline RouteActivationState GetActivationState() const { return m_activationState; }
     inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
-    inline void SetActivationState(const RouteActivationState& value) { m_activationStateHasBeenSet = true; m_activationState = value; }
-    inline void SetActivationState(RouteActivationState&& value) { m_activationStateHasBeenSet = true; m_activationState = std::move(value); }
-    inline UpdateRouteRequest& WithActivationState(const RouteActivationState& value) { SetActivationState(value); return *this;}
-    inline UpdateRouteRequest& WithActivationState(RouteActivationState&& value) { SetActivationState(std::move(value)); return *this;}
+    inline void SetActivationState(RouteActivationState value) { m_activationStateHasBeenSet = true; m_activationState = value; }
+    inline UpdateRouteRequest& WithActivationState(RouteActivationState value) { SetActivationState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the application within which the route is being updated. </p>
      */
-    inline const Aws::String& GetApplicationIdentifier() const{ return m_applicationIdentifier; }
+    inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-    inline void SetApplicationIdentifier(const Aws::String& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = value; }
-    inline void SetApplicationIdentifier(Aws::String&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::move(value); }
-    inline void SetApplicationIdentifier(const char* value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier.assign(value); }
-    inline UpdateRouteRequest& WithApplicationIdentifier(const Aws::String& value) { SetApplicationIdentifier(value); return *this;}
-    inline UpdateRouteRequest& WithApplicationIdentifier(Aws::String&& value) { SetApplicationIdentifier(std::move(value)); return *this;}
-    inline UpdateRouteRequest& WithApplicationIdentifier(const char* value) { SetApplicationIdentifier(value); return *this;}
+    template<typename ApplicationIdentifierT = Aws::String>
+    void SetApplicationIdentifier(ApplicationIdentifierT&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value); }
+    template<typename ApplicationIdentifierT = Aws::String>
+    UpdateRouteRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) { SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the environment in which the route is being updated. </p>
      */
-    inline const Aws::String& GetEnvironmentIdentifier() const{ return m_environmentIdentifier; }
+    inline const Aws::String& GetEnvironmentIdentifier() const { return m_environmentIdentifier; }
     inline bool EnvironmentIdentifierHasBeenSet() const { return m_environmentIdentifierHasBeenSet; }
-    inline void SetEnvironmentIdentifier(const Aws::String& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = value; }
-    inline void SetEnvironmentIdentifier(Aws::String&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::move(value); }
-    inline void SetEnvironmentIdentifier(const char* value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier.assign(value); }
-    inline UpdateRouteRequest& WithEnvironmentIdentifier(const Aws::String& value) { SetEnvironmentIdentifier(value); return *this;}
-    inline UpdateRouteRequest& WithEnvironmentIdentifier(Aws::String&& value) { SetEnvironmentIdentifier(std::move(value)); return *this;}
-    inline UpdateRouteRequest& WithEnvironmentIdentifier(const char* value) { SetEnvironmentIdentifier(value); return *this;}
+    template<typename EnvironmentIdentifierT = Aws::String>
+    void SetEnvironmentIdentifier(EnvironmentIdentifierT&& value) { m_environmentIdentifierHasBeenSet = true; m_environmentIdentifier = std::forward<EnvironmentIdentifierT>(value); }
+    template<typename EnvironmentIdentifierT = Aws::String>
+    UpdateRouteRequest& WithEnvironmentIdentifier(EnvironmentIdentifierT&& value) { SetEnvironmentIdentifier(std::forward<EnvironmentIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique identifier of the route to update. </p>
      */
-    inline const Aws::String& GetRouteIdentifier() const{ return m_routeIdentifier; }
+    inline const Aws::String& GetRouteIdentifier() const { return m_routeIdentifier; }
     inline bool RouteIdentifierHasBeenSet() const { return m_routeIdentifierHasBeenSet; }
-    inline void SetRouteIdentifier(const Aws::String& value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier = value; }
-    inline void SetRouteIdentifier(Aws::String&& value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier = std::move(value); }
-    inline void SetRouteIdentifier(const char* value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier.assign(value); }
-    inline UpdateRouteRequest& WithRouteIdentifier(const Aws::String& value) { SetRouteIdentifier(value); return *this;}
-    inline UpdateRouteRequest& WithRouteIdentifier(Aws::String&& value) { SetRouteIdentifier(std::move(value)); return *this;}
-    inline UpdateRouteRequest& WithRouteIdentifier(const char* value) { SetRouteIdentifier(value); return *this;}
+    template<typename RouteIdentifierT = Aws::String>
+    void SetRouteIdentifier(RouteIdentifierT&& value) { m_routeIdentifierHasBeenSet = true; m_routeIdentifier = std::forward<RouteIdentifierT>(value); }
+    template<typename RouteIdentifierT = Aws::String>
+    UpdateRouteRequest& WithRouteIdentifier(RouteIdentifierT&& value) { SetRouteIdentifier(std::forward<RouteIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    RouteActivationState m_activationState;
+    RouteActivationState m_activationState{RouteActivationState::NOT_SET};
     bool m_activationStateHasBeenSet = false;
 
     Aws::String m_applicationIdentifier;

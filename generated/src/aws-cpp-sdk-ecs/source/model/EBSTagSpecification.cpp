@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-EBSTagSpecification::EBSTagSpecification() : 
-    m_resourceType(EBSResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
-{
-}
-
 EBSTagSpecification::EBSTagSpecification(JsonView jsonValue)
-  : EBSTagSpecification()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ EBSTagSpecification& EBSTagSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = EBSResourceTypeMapper::GetEBSResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -51,14 +39,11 @@ EBSTagSpecification& EBSTagSpecification::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propagateTags"))
   {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("propagateTags"));
-
     m_propagateTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

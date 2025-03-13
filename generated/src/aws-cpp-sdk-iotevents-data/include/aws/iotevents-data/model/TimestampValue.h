@@ -29,7 +29,7 @@ namespace Model
   class TimestampValue
   {
   public:
-    AWS_IOTEVENTSDATA_API TimestampValue();
+    AWS_IOTEVENTSDATA_API TimestampValue() = default;
     AWS_IOTEVENTSDATA_API TimestampValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API TimestampValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The value of the timestamp, in the Unix epoch format.</p>
      */
-    inline long long GetTimeInMillis() const{ return m_timeInMillis; }
+    inline long long GetTimeInMillis() const { return m_timeInMillis; }
     inline bool TimeInMillisHasBeenSet() const { return m_timeInMillisHasBeenSet; }
     inline void SetTimeInMillis(long long value) { m_timeInMillisHasBeenSet = true; m_timeInMillis = value; }
     inline TimestampValue& WithTimeInMillis(long long value) { SetTimeInMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_timeInMillis;
+    long long m_timeInMillis{0};
     bool m_timeInMillisHasBeenSet = false;
   };
 

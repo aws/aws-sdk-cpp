@@ -27,7 +27,7 @@ namespace Model
   class GetRepositoryEndpointRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API GetRepositoryEndpointRequest();
+    AWS_CODEARTIFACT_API GetRepositoryEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The name of the domain that contains the repository. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline GetRepositoryEndpointRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline GetRepositoryEndpointRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline GetRepositoryEndpointRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    GetRepositoryEndpointRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain that contains the repository. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline GetRepositoryEndpointRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline GetRepositoryEndpointRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline GetRepositoryEndpointRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    GetRepositoryEndpointRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the repository. </p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline GetRepositoryEndpointRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline GetRepositoryEndpointRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline GetRepositoryEndpointRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    GetRepositoryEndpointRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,24 +82,20 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format. </p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
+    inline PackageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline GetRepositoryEndpointRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline GetRepositoryEndpointRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetRepositoryEndpointRequest& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that specifies the type of endpoint.</p>
      */
-    inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
+    inline EndpointType GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline GetRepositoryEndpointRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
-    inline GetRepositoryEndpointRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline void SetEndpointType(EndpointType value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline GetRepositoryEndpointRequest& WithEndpointType(EndpointType value) { SetEndpointType(value); return *this;}
     ///@}
   private:
 
@@ -118,10 +108,10 @@ namespace Model
     Aws::String m_repository;
     bool m_repositoryHasBeenSet = false;
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    EndpointType m_endpointType;
+    EndpointType m_endpointType{EndpointType::NOT_SET};
     bool m_endpointTypeHasBeenSet = false;
   };
 

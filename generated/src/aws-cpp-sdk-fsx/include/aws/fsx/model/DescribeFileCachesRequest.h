@@ -22,7 +22,7 @@ namespace Model
   class DescribeFileCachesRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API DescribeFileCachesRequest();
+    AWS_FSX_API DescribeFileCachesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,20 +39,19 @@ namespace Model
     /**
      * <p>IDs of the caches whose descriptions you want to retrieve (String).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFileCacheIds() const{ return m_fileCacheIds; }
+    inline const Aws::Vector<Aws::String>& GetFileCacheIds() const { return m_fileCacheIds; }
     inline bool FileCacheIdsHasBeenSet() const { return m_fileCacheIdsHasBeenSet; }
-    inline void SetFileCacheIds(const Aws::Vector<Aws::String>& value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds = value; }
-    inline void SetFileCacheIds(Aws::Vector<Aws::String>&& value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds = std::move(value); }
-    inline DescribeFileCachesRequest& WithFileCacheIds(const Aws::Vector<Aws::String>& value) { SetFileCacheIds(value); return *this;}
-    inline DescribeFileCachesRequest& WithFileCacheIds(Aws::Vector<Aws::String>&& value) { SetFileCacheIds(std::move(value)); return *this;}
-    inline DescribeFileCachesRequest& AddFileCacheIds(const Aws::String& value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds.push_back(value); return *this; }
-    inline DescribeFileCachesRequest& AddFileCacheIds(Aws::String&& value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds.push_back(std::move(value)); return *this; }
-    inline DescribeFileCachesRequest& AddFileCacheIds(const char* value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds.push_back(value); return *this; }
+    template<typename FileCacheIdsT = Aws::Vector<Aws::String>>
+    void SetFileCacheIds(FileCacheIdsT&& value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds = std::forward<FileCacheIdsT>(value); }
+    template<typename FileCacheIdsT = Aws::Vector<Aws::String>>
+    DescribeFileCachesRequest& WithFileCacheIds(FileCacheIdsT&& value) { SetFileCacheIds(std::forward<FileCacheIdsT>(value)); return *this;}
+    template<typename FileCacheIdsT = Aws::String>
+    DescribeFileCachesRequest& AddFileCacheIds(FileCacheIdsT&& value) { m_fileCacheIdsHasBeenSet = true; m_fileCacheIds.emplace_back(std::forward<FileCacheIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeFileCachesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -60,21 +59,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeFileCachesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFileCachesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFileCachesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFileCachesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_fileCacheIds;
     bool m_fileCacheIdsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetDataProtectionPolicyRequest::GetDataProtectionPolicyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDataProtectionPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

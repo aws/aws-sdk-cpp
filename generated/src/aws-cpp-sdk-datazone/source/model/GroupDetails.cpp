@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GroupDetails::GroupDetails() : 
-    m_groupIdHasBeenSet(false)
-{
-}
-
 GroupDetails::GroupDetails(JsonView jsonValue)
-  : GroupDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GroupDetails& GroupDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groupId"))
   {
     m_groupId = jsonValue.GetString("groupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

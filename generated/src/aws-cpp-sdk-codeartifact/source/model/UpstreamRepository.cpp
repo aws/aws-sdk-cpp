@@ -18,13 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-UpstreamRepository::UpstreamRepository() : 
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 UpstreamRepository::UpstreamRepository(JsonView jsonValue)
-  : UpstreamRepository()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpstreamRepository& UpstreamRepository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

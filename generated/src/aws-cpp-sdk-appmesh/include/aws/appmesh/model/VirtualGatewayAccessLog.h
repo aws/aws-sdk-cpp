@@ -32,7 +32,7 @@ namespace Model
   class VirtualGatewayAccessLog
   {
   public:
-    AWS_APPMESH_API VirtualGatewayAccessLog();
+    AWS_APPMESH_API VirtualGatewayAccessLog() = default;
     AWS_APPMESH_API VirtualGatewayAccessLog(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayAccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The file object to send virtual gateway access logs to.</p>
      */
-    inline const VirtualGatewayFileAccessLog& GetFile() const{ return m_file; }
+    inline const VirtualGatewayFileAccessLog& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const VirtualGatewayFileAccessLog& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(VirtualGatewayFileAccessLog&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline VirtualGatewayAccessLog& WithFile(const VirtualGatewayFileAccessLog& value) { SetFile(value); return *this;}
-    inline VirtualGatewayAccessLog& WithFile(VirtualGatewayFileAccessLog&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = VirtualGatewayFileAccessLog>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = VirtualGatewayFileAccessLog>
+    VirtualGatewayAccessLog& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateSpotMarketOptions::LaunchTemplateSpotMarketOptions() : 
-    m_maxPriceHasBeenSet(false),
-    m_spotInstanceType(SpotInstanceType::NOT_SET),
-    m_spotInstanceTypeHasBeenSet(false),
-    m_blockDurationMinutes(0),
-    m_blockDurationMinutesHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_instanceInterruptionBehavior(InstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false)
-{
-}
-
 LaunchTemplateSpotMarketOptions::LaunchTemplateSpotMarketOptions(const XmlNode& xmlNode)
-  : LaunchTemplateSpotMarketOptions()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ LaunchTemplateSpotMarketOptions& LaunchTemplateSpotMarketOptions::operator =(con
     {
       m_maxPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxPriceNode.GetText());
       m_maxPriceHasBeenSet = true;
+       m_maxPriceHasBeenSet = true;
     }
     XmlNode spotInstanceTypeNode = resultNode.FirstChild("spotInstanceType");
     if(!spotInstanceTypeNode.IsNull())
     {
-      m_spotInstanceType = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceTypeNode.GetText()).c_str()).c_str());
+      m_spotInstanceType = SpotInstanceTypeMapper::GetSpotInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceTypeNode.GetText()).c_str()));
       m_spotInstanceTypeHasBeenSet = true;
+       m_spotInstanceTypeHasBeenSet = true;
     }
     XmlNode blockDurationMinutesNode = resultNode.FirstChild("blockDurationMinutes");
     if(!blockDurationMinutesNode.IsNull())
     {
       m_blockDurationMinutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(blockDurationMinutesNode.GetText()).c_str()).c_str());
       m_blockDurationMinutesHasBeenSet = true;
+       m_blockDurationMinutesHasBeenSet = true;
     }
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
       m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
+       m_validUntilHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
     {
-      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()).c_str());
+      m_instanceInterruptionBehavior = InstanceInterruptionBehaviorMapper::GetInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()));
       m_instanceInterruptionBehaviorHasBeenSet = true;
+       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
   }
 

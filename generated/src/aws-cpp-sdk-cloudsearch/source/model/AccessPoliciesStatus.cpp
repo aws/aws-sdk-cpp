@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-AccessPoliciesStatus::AccessPoliciesStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AccessPoliciesStatus::AccessPoliciesStatus(const XmlNode& xmlNode)
-  : AccessPoliciesStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AccessPoliciesStatus& AccessPoliciesStatus::operator =(const XmlNode& xmlNode)
     {
       m_options = Aws::Utils::Xml::DecodeEscapedXmlText(optionsNode.GetText());
       m_optionsHasBeenSet = true;
+       m_optionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

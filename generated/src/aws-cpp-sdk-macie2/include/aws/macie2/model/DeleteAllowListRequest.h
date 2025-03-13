@@ -25,7 +25,7 @@ namespace Model
   class DeleteAllowListRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API DeleteAllowListRequest();
+    AWS_MACIE2_API DeleteAllowListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique identifier for the Amazon Macie resource that the request applies
      * to.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteAllowListRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteAllowListRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteAllowListRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteAllowListRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * delete the list, set this value to true. To delete the list only if no active
      * jobs are configured to use it, set this value to false.</p>
      */
-    inline const Aws::String& GetIgnoreJobChecks() const{ return m_ignoreJobChecks; }
+    inline const Aws::String& GetIgnoreJobChecks() const { return m_ignoreJobChecks; }
     inline bool IgnoreJobChecksHasBeenSet() const { return m_ignoreJobChecksHasBeenSet; }
-    inline void SetIgnoreJobChecks(const Aws::String& value) { m_ignoreJobChecksHasBeenSet = true; m_ignoreJobChecks = value; }
-    inline void SetIgnoreJobChecks(Aws::String&& value) { m_ignoreJobChecksHasBeenSet = true; m_ignoreJobChecks = std::move(value); }
-    inline void SetIgnoreJobChecks(const char* value) { m_ignoreJobChecksHasBeenSet = true; m_ignoreJobChecks.assign(value); }
-    inline DeleteAllowListRequest& WithIgnoreJobChecks(const Aws::String& value) { SetIgnoreJobChecks(value); return *this;}
-    inline DeleteAllowListRequest& WithIgnoreJobChecks(Aws::String&& value) { SetIgnoreJobChecks(std::move(value)); return *this;}
-    inline DeleteAllowListRequest& WithIgnoreJobChecks(const char* value) { SetIgnoreJobChecks(value); return *this;}
+    template<typename IgnoreJobChecksT = Aws::String>
+    void SetIgnoreJobChecks(IgnoreJobChecksT&& value) { m_ignoreJobChecksHasBeenSet = true; m_ignoreJobChecks = std::forward<IgnoreJobChecksT>(value); }
+    template<typename IgnoreJobChecksT = Aws::String>
+    DeleteAllowListRequest& WithIgnoreJobChecks(IgnoreJobChecksT&& value) { SetIgnoreJobChecks(std::forward<IgnoreJobChecksT>(value)); return *this;}
     ///@}
   private:
 

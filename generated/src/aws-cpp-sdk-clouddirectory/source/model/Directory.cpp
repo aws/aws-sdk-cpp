@@ -18,17 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-Directory::Directory() : 
-    m_nameHasBeenSet(false),
-    m_directoryArnHasBeenSet(false),
-    m_state(DirectoryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
-{
-}
-
 Directory::Directory(JsonView jsonValue)
-  : Directory()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Directory& Directory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryArn"))
   {
     m_directoryArn = jsonValue.GetString("DirectoryArn");
-
     m_directoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = DirectoryStateMapper::GetDirectoryStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

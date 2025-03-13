@@ -12,11 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelMessageMoveTaskRequest::CancelMessageMoveTaskRequest() : 
-    m_taskHandleHasBeenSet(false)
-{
-}
-
 Aws::String CancelMessageMoveTaskRequest::SerializePayload() const
 {
   JsonValue payload;

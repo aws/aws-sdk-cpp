@@ -34,7 +34,7 @@ namespace Model
   class ReplicationDetails
   {
   public:
-    AWS_MACIE2_API ReplicationDetails();
+    AWS_MACIE2_API ReplicationDetails() = default;
     AWS_MACIE2_API ReplicationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ReplicationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>Specifies whether the bucket is configured to replicate one or more objects
      * to any destination.</p>
      */
-    inline bool GetReplicated() const{ return m_replicated; }
+    inline bool GetReplicated() const { return m_replicated; }
     inline bool ReplicatedHasBeenSet() const { return m_replicatedHasBeenSet; }
     inline void SetReplicated(bool value) { m_replicatedHasBeenSet = true; m_replicated = value; }
     inline ReplicationDetails& WithReplicated(bool value) { SetReplicated(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
      * accounts that are centrally managed as a group of related accounts through
      * Organizations or by Macie invitation.</p>
      */
-    inline bool GetReplicatedExternally() const{ return m_replicatedExternally; }
+    inline bool GetReplicatedExternally() const { return m_replicatedExternally; }
     inline bool ReplicatedExternallyHasBeenSet() const { return m_replicatedExternallyHasBeenSet; }
     inline void SetReplicatedExternally(bool value) { m_replicatedExternallyHasBeenSet = true; m_replicatedExternally = value; }
     inline ReplicationDetails& WithReplicatedExternally(bool value) { SetReplicatedExternally(value); return *this;}
@@ -71,22 +71,21 @@ namespace Model
      * account that owns a bucket that the bucket is configured to replicate one or
      * more objects to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReplicationAccounts() const{ return m_replicationAccounts; }
+    inline const Aws::Vector<Aws::String>& GetReplicationAccounts() const { return m_replicationAccounts; }
     inline bool ReplicationAccountsHasBeenSet() const { return m_replicationAccountsHasBeenSet; }
-    inline void SetReplicationAccounts(const Aws::Vector<Aws::String>& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = value; }
-    inline void SetReplicationAccounts(Aws::Vector<Aws::String>&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = std::move(value); }
-    inline ReplicationDetails& WithReplicationAccounts(const Aws::Vector<Aws::String>& value) { SetReplicationAccounts(value); return *this;}
-    inline ReplicationDetails& WithReplicationAccounts(Aws::Vector<Aws::String>&& value) { SetReplicationAccounts(std::move(value)); return *this;}
-    inline ReplicationDetails& AddReplicationAccounts(const Aws::String& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(value); return *this; }
-    inline ReplicationDetails& AddReplicationAccounts(Aws::String&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(std::move(value)); return *this; }
-    inline ReplicationDetails& AddReplicationAccounts(const char* value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(value); return *this; }
+    template<typename ReplicationAccountsT = Aws::Vector<Aws::String>>
+    void SetReplicationAccounts(ReplicationAccountsT&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = std::forward<ReplicationAccountsT>(value); }
+    template<typename ReplicationAccountsT = Aws::Vector<Aws::String>>
+    ReplicationDetails& WithReplicationAccounts(ReplicationAccountsT&& value) { SetReplicationAccounts(std::forward<ReplicationAccountsT>(value)); return *this;}
+    template<typename ReplicationAccountsT = Aws::String>
+    ReplicationDetails& AddReplicationAccounts(ReplicationAccountsT&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.emplace_back(std::forward<ReplicationAccountsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_replicated;
+    bool m_replicated{false};
     bool m_replicatedHasBeenSet = false;
 
-    bool m_replicatedExternally;
+    bool m_replicatedExternally{false};
     bool m_replicatedExternallyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_replicationAccounts;

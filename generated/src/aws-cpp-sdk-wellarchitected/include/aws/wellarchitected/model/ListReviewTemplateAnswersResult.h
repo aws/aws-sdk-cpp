@@ -29,7 +29,7 @@ namespace Model
   class ListReviewTemplateAnswersResult
   {
   public:
-    AWS_WELLARCHITECTED_API ListReviewTemplateAnswersResult();
+    AWS_WELLARCHITECTED_API ListReviewTemplateAnswersResult() = default;
     AWS_WELLARCHITECTED_API ListReviewTemplateAnswersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API ListReviewTemplateAnswersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,68 @@ namespace Model
     /**
      * <p>The ARN of the review template.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-    inline ListReviewTemplateAnswersResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline ListReviewTemplateAnswersResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline ListReviewTemplateAnswersResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    ListReviewTemplateAnswersResult& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAlias.assign(value); }
-    inline ListReviewTemplateAnswersResult& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline ListReviewTemplateAnswersResult& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline ListReviewTemplateAnswersResult& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    ListReviewTemplateAnswersResult& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of answer summaries of a lens review in a review template.</p>
      */
-    inline const Aws::Vector<ReviewTemplateAnswerSummary>& GetAnswerSummaries() const{ return m_answerSummaries; }
-    inline void SetAnswerSummaries(const Aws::Vector<ReviewTemplateAnswerSummary>& value) { m_answerSummaries = value; }
-    inline void SetAnswerSummaries(Aws::Vector<ReviewTemplateAnswerSummary>&& value) { m_answerSummaries = std::move(value); }
-    inline ListReviewTemplateAnswersResult& WithAnswerSummaries(const Aws::Vector<ReviewTemplateAnswerSummary>& value) { SetAnswerSummaries(value); return *this;}
-    inline ListReviewTemplateAnswersResult& WithAnswerSummaries(Aws::Vector<ReviewTemplateAnswerSummary>&& value) { SetAnswerSummaries(std::move(value)); return *this;}
-    inline ListReviewTemplateAnswersResult& AddAnswerSummaries(const ReviewTemplateAnswerSummary& value) { m_answerSummaries.push_back(value); return *this; }
-    inline ListReviewTemplateAnswersResult& AddAnswerSummaries(ReviewTemplateAnswerSummary&& value) { m_answerSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReviewTemplateAnswerSummary>& GetAnswerSummaries() const { return m_answerSummaries; }
+    template<typename AnswerSummariesT = Aws::Vector<ReviewTemplateAnswerSummary>>
+    void SetAnswerSummaries(AnswerSummariesT&& value) { m_answerSummariesHasBeenSet = true; m_answerSummaries = std::forward<AnswerSummariesT>(value); }
+    template<typename AnswerSummariesT = Aws::Vector<ReviewTemplateAnswerSummary>>
+    ListReviewTemplateAnswersResult& WithAnswerSummaries(AnswerSummariesT&& value) { SetAnswerSummaries(std::forward<AnswerSummariesT>(value)); return *this;}
+    template<typename AnswerSummariesT = ReviewTemplateAnswerSummary>
+    ListReviewTemplateAnswersResult& AddAnswerSummaries(AnswerSummariesT&& value) { m_answerSummariesHasBeenSet = true; m_answerSummaries.emplace_back(std::forward<AnswerSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReviewTemplateAnswersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReviewTemplateAnswersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReviewTemplateAnswersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReviewTemplateAnswersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReviewTemplateAnswersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReviewTemplateAnswersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReviewTemplateAnswersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReviewTemplateAnswersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet = false;
 
     Aws::String m_lensAlias;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::Vector<ReviewTemplateAnswerSummary> m_answerSummaries;
+    bool m_answerSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

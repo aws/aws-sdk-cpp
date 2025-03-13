@@ -32,7 +32,7 @@ namespace Model
   class Function
   {
   public:
-    AWS_GREENGRASS_API Function();
+    AWS_GREENGRASS_API Function() = default;
     AWS_GREENGRASS_API Function(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Function& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * The ARN of the Lambda function.
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline Function& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline Function& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline Function& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    Function& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The configuration of the Lambda function.
      */
-    inline const FunctionConfiguration& GetFunctionConfiguration() const{ return m_functionConfiguration; }
+    inline const FunctionConfiguration& GetFunctionConfiguration() const { return m_functionConfiguration; }
     inline bool FunctionConfigurationHasBeenSet() const { return m_functionConfigurationHasBeenSet; }
-    inline void SetFunctionConfiguration(const FunctionConfiguration& value) { m_functionConfigurationHasBeenSet = true; m_functionConfiguration = value; }
-    inline void SetFunctionConfiguration(FunctionConfiguration&& value) { m_functionConfigurationHasBeenSet = true; m_functionConfiguration = std::move(value); }
-    inline Function& WithFunctionConfiguration(const FunctionConfiguration& value) { SetFunctionConfiguration(value); return *this;}
-    inline Function& WithFunctionConfiguration(FunctionConfiguration&& value) { SetFunctionConfiguration(std::move(value)); return *this;}
+    template<typename FunctionConfigurationT = FunctionConfiguration>
+    void SetFunctionConfiguration(FunctionConfigurationT&& value) { m_functionConfigurationHasBeenSet = true; m_functionConfiguration = std::forward<FunctionConfigurationT>(value); }
+    template<typename FunctionConfigurationT = FunctionConfiguration>
+    Function& WithFunctionConfiguration(FunctionConfigurationT&& value) { SetFunctionConfiguration(std::forward<FunctionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * the function definition version. Max length is 128 characters with pattern
      * ''[a-zA-Z0-9:_-]+''.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Function& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Function& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Function& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Function& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

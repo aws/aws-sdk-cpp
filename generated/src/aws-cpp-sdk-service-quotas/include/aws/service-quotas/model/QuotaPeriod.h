@@ -31,7 +31,7 @@ namespace Model
   class QuotaPeriod
   {
   public:
-    AWS_SERVICEQUOTAS_API QuotaPeriod();
+    AWS_SERVICEQUOTAS_API QuotaPeriod() = default;
     AWS_SERVICEQUOTAS_API QuotaPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEQUOTAS_API QuotaPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The value associated with the reported <code>PeriodUnit</code>.</p>
      */
-    inline int GetPeriodValue() const{ return m_periodValue; }
+    inline int GetPeriodValue() const { return m_periodValue; }
     inline bool PeriodValueHasBeenSet() const { return m_periodValueHasBeenSet; }
     inline void SetPeriodValue(int value) { m_periodValueHasBeenSet = true; m_periodValue = value; }
     inline QuotaPeriod& WithPeriodValue(int value) { SetPeriodValue(value); return *this;}
@@ -51,19 +51,17 @@ namespace Model
     /**
      * <p>The time unit.</p>
      */
-    inline const PeriodUnit& GetPeriodUnit() const{ return m_periodUnit; }
+    inline PeriodUnit GetPeriodUnit() const { return m_periodUnit; }
     inline bool PeriodUnitHasBeenSet() const { return m_periodUnitHasBeenSet; }
-    inline void SetPeriodUnit(const PeriodUnit& value) { m_periodUnitHasBeenSet = true; m_periodUnit = value; }
-    inline void SetPeriodUnit(PeriodUnit&& value) { m_periodUnitHasBeenSet = true; m_periodUnit = std::move(value); }
-    inline QuotaPeriod& WithPeriodUnit(const PeriodUnit& value) { SetPeriodUnit(value); return *this;}
-    inline QuotaPeriod& WithPeriodUnit(PeriodUnit&& value) { SetPeriodUnit(std::move(value)); return *this;}
+    inline void SetPeriodUnit(PeriodUnit value) { m_periodUnitHasBeenSet = true; m_periodUnit = value; }
+    inline QuotaPeriod& WithPeriodUnit(PeriodUnit value) { SetPeriodUnit(value); return *this;}
     ///@}
   private:
 
-    int m_periodValue;
+    int m_periodValue{0};
     bool m_periodValueHasBeenSet = false;
 
-    PeriodUnit m_periodUnit;
+    PeriodUnit m_periodUnit{PeriodUnit::NOT_SET};
     bool m_periodUnitHasBeenSet = false;
   };
 

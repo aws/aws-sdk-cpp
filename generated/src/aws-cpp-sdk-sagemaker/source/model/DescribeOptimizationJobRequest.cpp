@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOptimizationJobRequest::DescribeOptimizationJobRequest() : 
-    m_optimizationJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOptimizationJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class DatastorePartition
   {
   public:
-    AWS_IOTANALYTICS_API DatastorePartition();
+    AWS_IOTANALYTICS_API DatastorePartition() = default;
     AWS_IOTANALYTICS_API DatastorePartition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatastorePartition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p> A partition dimension defined by an <code>attributeName</code>. </p>
      */
-    inline const Partition& GetAttributePartition() const{ return m_attributePartition; }
+    inline const Partition& GetAttributePartition() const { return m_attributePartition; }
     inline bool AttributePartitionHasBeenSet() const { return m_attributePartitionHasBeenSet; }
-    inline void SetAttributePartition(const Partition& value) { m_attributePartitionHasBeenSet = true; m_attributePartition = value; }
-    inline void SetAttributePartition(Partition&& value) { m_attributePartitionHasBeenSet = true; m_attributePartition = std::move(value); }
-    inline DatastorePartition& WithAttributePartition(const Partition& value) { SetAttributePartition(value); return *this;}
-    inline DatastorePartition& WithAttributePartition(Partition&& value) { SetAttributePartition(std::move(value)); return *this;}
+    template<typename AttributePartitionT = Partition>
+    void SetAttributePartition(AttributePartitionT&& value) { m_attributePartitionHasBeenSet = true; m_attributePartition = std::forward<AttributePartitionT>(value); }
+    template<typename AttributePartitionT = Partition>
+    DatastorePartition& WithAttributePartition(AttributePartitionT&& value) { SetAttributePartition(std::forward<AttributePartitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A partition dimension defined by a timestamp attribute. </p>
      */
-    inline const TimestampPartition& GetTimestampPartition() const{ return m_timestampPartition; }
+    inline const TimestampPartition& GetTimestampPartition() const { return m_timestampPartition; }
     inline bool TimestampPartitionHasBeenSet() const { return m_timestampPartitionHasBeenSet; }
-    inline void SetTimestampPartition(const TimestampPartition& value) { m_timestampPartitionHasBeenSet = true; m_timestampPartition = value; }
-    inline void SetTimestampPartition(TimestampPartition&& value) { m_timestampPartitionHasBeenSet = true; m_timestampPartition = std::move(value); }
-    inline DatastorePartition& WithTimestampPartition(const TimestampPartition& value) { SetTimestampPartition(value); return *this;}
-    inline DatastorePartition& WithTimestampPartition(TimestampPartition&& value) { SetTimestampPartition(std::move(value)); return *this;}
+    template<typename TimestampPartitionT = TimestampPartition>
+    void SetTimestampPartition(TimestampPartitionT&& value) { m_timestampPartitionHasBeenSet = true; m_timestampPartition = std::forward<TimestampPartitionT>(value); }
+    template<typename TimestampPartitionT = TimestampPartition>
+    DatastorePartition& WithTimestampPartition(TimestampPartitionT&& value) { SetTimestampPartition(std::forward<TimestampPartitionT>(value)); return *this;}
     ///@}
   private:
 

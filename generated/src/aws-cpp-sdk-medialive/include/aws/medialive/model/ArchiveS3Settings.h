@@ -31,7 +31,7 @@ namespace Model
   class ArchiveS3Settings
   {
   public:
-    AWS_MEDIALIVE_API ArchiveS3Settings();
+    AWS_MEDIALIVE_API ArchiveS3Settings() = default;
     AWS_MEDIALIVE_API ArchiveS3Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ArchiveS3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * Specify the canned ACL to apply to each S3 request. Defaults to none.
      */
-    inline const S3CannedAcl& GetCannedAcl() const{ return m_cannedAcl; }
+    inline S3CannedAcl GetCannedAcl() const { return m_cannedAcl; }
     inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
-    inline void SetCannedAcl(const S3CannedAcl& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
-    inline void SetCannedAcl(S3CannedAcl&& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = std::move(value); }
-    inline ArchiveS3Settings& WithCannedAcl(const S3CannedAcl& value) { SetCannedAcl(value); return *this;}
-    inline ArchiveS3Settings& WithCannedAcl(S3CannedAcl&& value) { SetCannedAcl(std::move(value)); return *this;}
+    inline void SetCannedAcl(S3CannedAcl value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
+    inline ArchiveS3Settings& WithCannedAcl(S3CannedAcl value) { SetCannedAcl(value); return *this;}
     ///@}
   private:
 
-    S3CannedAcl m_cannedAcl;
+    S3CannedAcl m_cannedAcl{S3CannedAcl::NOT_SET};
     bool m_cannedAclHasBeenSet = false;
   };
 

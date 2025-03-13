@@ -12,12 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendTaskSuccessRequest::SendTaskSuccessRequest() : 
-    m_taskTokenHasBeenSet(false),
-    m_outputHasBeenSet(false)
-{
-}
-
 Aws::String SendTaskSuccessRequest::SerializePayload() const
 {
   JsonValue payload;

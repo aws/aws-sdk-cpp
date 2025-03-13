@@ -31,7 +31,7 @@ namespace Model
   class ErrorReportConfiguration
   {
   public:
-    AWS_TIMESTREAMQUERY_API ErrorReportConfiguration();
+    AWS_TIMESTREAMQUERY_API ErrorReportConfiguration() = default;
     AWS_TIMESTREAMQUERY_API ErrorReportConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ErrorReportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The S3 configuration for the error reports.</p>
      */
-    inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline ErrorReportConfiguration& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
-    inline ErrorReportConfiguration& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3Configuration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3Configuration>
+    ErrorReportConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

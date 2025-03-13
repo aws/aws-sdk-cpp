@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotVersionSummary::BotVersionSummary() : 
-    m_botNameHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botStatus(BotStatus::NOT_SET),
-    m_botStatusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false)
-{
-}
-
 BotVersionSummary::BotVersionSummary(JsonView jsonValue)
-  : BotVersionSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ BotVersionSummary& BotVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botName"))
   {
     m_botName = jsonValue.GetString("botName");
-
     m_botNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botStatus"))
   {
     m_botStatus = BotStatusMapper::GetBotStatusForName(jsonValue.GetString("botStatus"));
-
     m_botStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

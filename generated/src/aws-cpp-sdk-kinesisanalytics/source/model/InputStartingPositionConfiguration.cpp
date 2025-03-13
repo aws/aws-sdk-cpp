@@ -18,14 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-InputStartingPositionConfiguration::InputStartingPositionConfiguration() : 
-    m_inputStartingPosition(InputStartingPosition::NOT_SET),
-    m_inputStartingPositionHasBeenSet(false)
-{
-}
-
 InputStartingPositionConfiguration::InputStartingPositionConfiguration(JsonView jsonValue)
-  : InputStartingPositionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InputStartingPositionConfiguration& InputStartingPositionConfiguration::operator
   if(jsonValue.ValueExists("InputStartingPosition"))
   {
     m_inputStartingPosition = InputStartingPositionMapper::GetInputStartingPositionForName(jsonValue.GetString("InputStartingPosition"));
-
     m_inputStartingPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

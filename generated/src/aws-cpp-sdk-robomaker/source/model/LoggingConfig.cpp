@@ -18,10 +18,6 @@ namespace RoboMaker
 namespace Model
 {
 
-LoggingConfig::LoggingConfig()
-{
-}
-
 LoggingConfig::LoggingConfig(JsonView jsonValue)
 {
   *this = jsonValue;

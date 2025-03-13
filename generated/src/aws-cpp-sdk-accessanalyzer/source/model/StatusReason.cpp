@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-StatusReason::StatusReason() : 
-    m_code(ReasonCode::NOT_SET),
-    m_codeHasBeenSet(false)
-{
-}
-
 StatusReason::StatusReason(JsonView jsonValue)
-  : StatusReason()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StatusReason& StatusReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = ReasonCodeMapper::GetReasonCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

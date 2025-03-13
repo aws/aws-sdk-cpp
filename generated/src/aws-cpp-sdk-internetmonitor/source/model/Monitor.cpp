@@ -18,18 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-Monitor::Monitor() : 
-    m_monitorNameHasBeenSet(false),
-    m_monitorArnHasBeenSet(false),
-    m_status(MonitorConfigState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_processingStatus(MonitorProcessingStatusCode::NOT_SET),
-    m_processingStatusHasBeenSet(false)
-{
-}
-
 Monitor::Monitor(JsonView jsonValue)
-  : Monitor()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Monitor& Monitor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MonitorName"))
   {
     m_monitorName = jsonValue.GetString("MonitorName");
-
     m_monitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorArn"))
   {
     m_monitorArn = jsonValue.GetString("MonitorArn");
-
     m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MonitorConfigStateMapper::GetMonitorConfigStateForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingStatus"))
   {
     m_processingStatus = MonitorProcessingStatusCodeMapper::GetMonitorProcessingStatusCodeForName(jsonValue.GetString("ProcessingStatus"));
-
     m_processingStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

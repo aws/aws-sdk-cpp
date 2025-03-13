@@ -23,7 +23,7 @@ namespace Model
   class CreateTableOptimizerRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API CreateTableOptimizerRequest();
+    AWS_GLUE_API CreateTableOptimizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,54 +40,46 @@ namespace Model
     /**
      * <p>The Catalog ID of the table.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline CreateTableOptimizerRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline CreateTableOptimizerRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline CreateTableOptimizerRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    CreateTableOptimizerRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database in the catalog in which the table resides.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline CreateTableOptimizerRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline CreateTableOptimizerRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline CreateTableOptimizerRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    CreateTableOptimizerRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline CreateTableOptimizerRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline CreateTableOptimizerRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline CreateTableOptimizerRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    CreateTableOptimizerRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of table optimizer.</p>
      */
-    inline const TableOptimizerType& GetType() const{ return m_type; }
+    inline TableOptimizerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TableOptimizerType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TableOptimizerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateTableOptimizerRequest& WithType(const TableOptimizerType& value) { SetType(value); return *this;}
-    inline CreateTableOptimizerRequest& WithType(TableOptimizerType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TableOptimizerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateTableOptimizerRequest& WithType(TableOptimizerType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +87,12 @@ namespace Model
      * <p>A <code>TableOptimizerConfiguration</code> object representing the
      * configuration of a table optimizer.</p>
      */
-    inline const TableOptimizerConfiguration& GetTableOptimizerConfiguration() const{ return m_tableOptimizerConfiguration; }
+    inline const TableOptimizerConfiguration& GetTableOptimizerConfiguration() const { return m_tableOptimizerConfiguration; }
     inline bool TableOptimizerConfigurationHasBeenSet() const { return m_tableOptimizerConfigurationHasBeenSet; }
-    inline void SetTableOptimizerConfiguration(const TableOptimizerConfiguration& value) { m_tableOptimizerConfigurationHasBeenSet = true; m_tableOptimizerConfiguration = value; }
-    inline void SetTableOptimizerConfiguration(TableOptimizerConfiguration&& value) { m_tableOptimizerConfigurationHasBeenSet = true; m_tableOptimizerConfiguration = std::move(value); }
-    inline CreateTableOptimizerRequest& WithTableOptimizerConfiguration(const TableOptimizerConfiguration& value) { SetTableOptimizerConfiguration(value); return *this;}
-    inline CreateTableOptimizerRequest& WithTableOptimizerConfiguration(TableOptimizerConfiguration&& value) { SetTableOptimizerConfiguration(std::move(value)); return *this;}
+    template<typename TableOptimizerConfigurationT = TableOptimizerConfiguration>
+    void SetTableOptimizerConfiguration(TableOptimizerConfigurationT&& value) { m_tableOptimizerConfigurationHasBeenSet = true; m_tableOptimizerConfiguration = std::forward<TableOptimizerConfigurationT>(value); }
+    template<typename TableOptimizerConfigurationT = TableOptimizerConfiguration>
+    CreateTableOptimizerRequest& WithTableOptimizerConfiguration(TableOptimizerConfigurationT&& value) { SetTableOptimizerConfiguration(std::forward<TableOptimizerConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +105,7 @@ namespace Model
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;
 
-    TableOptimizerType m_type;
+    TableOptimizerType m_type{TableOptimizerType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     TableOptimizerConfiguration m_tableOptimizerConfiguration;

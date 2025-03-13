@@ -33,7 +33,7 @@ namespace Model
   class LambdaLinuxProcessParams
   {
   public:
-    AWS_GREENGRASSV2_API LambdaLinuxProcessParams();
+    AWS_GREENGRASSV2_API LambdaLinuxProcessParams() = default;
     AWS_GREENGRASSV2_API LambdaLinuxProcessParams(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API LambdaLinuxProcessParams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,26 @@ namespace Model
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */
-    inline const LambdaIsolationMode& GetIsolationMode() const{ return m_isolationMode; }
+    inline LambdaIsolationMode GetIsolationMode() const { return m_isolationMode; }
     inline bool IsolationModeHasBeenSet() const { return m_isolationModeHasBeenSet; }
-    inline void SetIsolationMode(const LambdaIsolationMode& value) { m_isolationModeHasBeenSet = true; m_isolationMode = value; }
-    inline void SetIsolationMode(LambdaIsolationMode&& value) { m_isolationModeHasBeenSet = true; m_isolationMode = std::move(value); }
-    inline LambdaLinuxProcessParams& WithIsolationMode(const LambdaIsolationMode& value) { SetIsolationMode(value); return *this;}
-    inline LambdaLinuxProcessParams& WithIsolationMode(LambdaIsolationMode&& value) { SetIsolationMode(std::move(value)); return *this;}
+    inline void SetIsolationMode(LambdaIsolationMode value) { m_isolationModeHasBeenSet = true; m_isolationMode = value; }
+    inline LambdaLinuxProcessParams& WithIsolationMode(LambdaIsolationMode value) { SetIsolationMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters for the container in which the Lambda function runs.</p>
      */
-    inline const LambdaContainerParams& GetContainerParams() const{ return m_containerParams; }
+    inline const LambdaContainerParams& GetContainerParams() const { return m_containerParams; }
     inline bool ContainerParamsHasBeenSet() const { return m_containerParamsHasBeenSet; }
-    inline void SetContainerParams(const LambdaContainerParams& value) { m_containerParamsHasBeenSet = true; m_containerParams = value; }
-    inline void SetContainerParams(LambdaContainerParams&& value) { m_containerParamsHasBeenSet = true; m_containerParams = std::move(value); }
-    inline LambdaLinuxProcessParams& WithContainerParams(const LambdaContainerParams& value) { SetContainerParams(value); return *this;}
-    inline LambdaLinuxProcessParams& WithContainerParams(LambdaContainerParams&& value) { SetContainerParams(std::move(value)); return *this;}
+    template<typename ContainerParamsT = LambdaContainerParams>
+    void SetContainerParams(ContainerParamsT&& value) { m_containerParamsHasBeenSet = true; m_containerParams = std::forward<ContainerParamsT>(value); }
+    template<typename ContainerParamsT = LambdaContainerParams>
+    LambdaLinuxProcessParams& WithContainerParams(ContainerParamsT&& value) { SetContainerParams(std::forward<ContainerParamsT>(value)); return *this;}
     ///@}
   private:
 
-    LambdaIsolationMode m_isolationMode;
+    LambdaIsolationMode m_isolationMode{LambdaIsolationMode::NOT_SET};
     bool m_isolationModeHasBeenSet = false;
 
     LambdaContainerParams m_containerParams;

@@ -36,7 +36,7 @@ namespace Model
   class NotificationEventSummary
   {
   public:
-    AWS_NOTIFICATIONS_API NotificationEventSummary();
+    AWS_NOTIFICATIONS_API NotificationEventSummary() = default;
     AWS_NOTIFICATIONS_API NotificationEventSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API NotificationEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,36 +46,34 @@ namespace Model
     /**
      * <p>The schema version of the Notification Event.</p>
      */
-    inline const SchemaVersion& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline SchemaVersion GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const SchemaVersion& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(SchemaVersion&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline NotificationEventSummary& WithSchemaVersion(const SchemaVersion& value) { SetSchemaVersion(value); return *this;}
-    inline NotificationEventSummary& WithSchemaVersion(SchemaVersion&& value) { SetSchemaVersion(std::move(value)); return *this;}
+    inline void SetSchemaVersion(SchemaVersion value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
+    inline NotificationEventSummary& WithSchemaVersion(SchemaVersion value) { SetSchemaVersion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source event metadata.</p>
      */
-    inline const SourceEventMetadataSummary& GetSourceEventMetadata() const{ return m_sourceEventMetadata; }
+    inline const SourceEventMetadataSummary& GetSourceEventMetadata() const { return m_sourceEventMetadata; }
     inline bool SourceEventMetadataHasBeenSet() const { return m_sourceEventMetadataHasBeenSet; }
-    inline void SetSourceEventMetadata(const SourceEventMetadataSummary& value) { m_sourceEventMetadataHasBeenSet = true; m_sourceEventMetadata = value; }
-    inline void SetSourceEventMetadata(SourceEventMetadataSummary&& value) { m_sourceEventMetadataHasBeenSet = true; m_sourceEventMetadata = std::move(value); }
-    inline NotificationEventSummary& WithSourceEventMetadata(const SourceEventMetadataSummary& value) { SetSourceEventMetadata(value); return *this;}
-    inline NotificationEventSummary& WithSourceEventMetadata(SourceEventMetadataSummary&& value) { SetSourceEventMetadata(std::move(value)); return *this;}
+    template<typename SourceEventMetadataT = SourceEventMetadataSummary>
+    void SetSourceEventMetadata(SourceEventMetadataT&& value) { m_sourceEventMetadataHasBeenSet = true; m_sourceEventMetadata = std::forward<SourceEventMetadataT>(value); }
+    template<typename SourceEventMetadataT = SourceEventMetadataSummary>
+    NotificationEventSummary& WithSourceEventMetadata(SourceEventMetadataT&& value) { SetSourceEventMetadata(std::forward<SourceEventMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message components of a notification event.</p>
      */
-    inline const MessageComponentsSummary& GetMessageComponents() const{ return m_messageComponents; }
+    inline const MessageComponentsSummary& GetMessageComponents() const { return m_messageComponents; }
     inline bool MessageComponentsHasBeenSet() const { return m_messageComponentsHasBeenSet; }
-    inline void SetMessageComponents(const MessageComponentsSummary& value) { m_messageComponentsHasBeenSet = true; m_messageComponents = value; }
-    inline void SetMessageComponents(MessageComponentsSummary&& value) { m_messageComponentsHasBeenSet = true; m_messageComponents = std::move(value); }
-    inline NotificationEventSummary& WithMessageComponents(const MessageComponentsSummary& value) { SetMessageComponents(value); return *this;}
-    inline NotificationEventSummary& WithMessageComponents(MessageComponentsSummary&& value) { SetMessageComponents(std::move(value)); return *this;}
+    template<typename MessageComponentsT = MessageComponentsSummary>
+    void SetMessageComponents(MessageComponentsT&& value) { m_messageComponentsHasBeenSet = true; m_messageComponents = std::forward<MessageComponentsT>(value); }
+    template<typename MessageComponentsT = MessageComponentsSummary>
+    NotificationEventSummary& WithMessageComponents(MessageComponentsT&& value) { SetMessageComponents(std::forward<MessageComponentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,10 @@ namespace Model
      * <ul> <li> <p>Some <code>EventRules</code> are <code>ACTIVE</code> and some are
      * <code>INACTIVE</code>.</p> </li> </ul> </li> </ul> </li> </ul>
      */
-    inline const EventStatus& GetEventStatus() const{ return m_eventStatus; }
+    inline EventStatus GetEventStatus() const { return m_eventStatus; }
     inline bool EventStatusHasBeenSet() const { return m_eventStatusHasBeenSet; }
-    inline void SetEventStatus(const EventStatus& value) { m_eventStatusHasBeenSet = true; m_eventStatus = value; }
-    inline void SetEventStatus(EventStatus&& value) { m_eventStatusHasBeenSet = true; m_eventStatus = std::move(value); }
-    inline NotificationEventSummary& WithEventStatus(const EventStatus& value) { SetEventStatus(value); return *this;}
-    inline NotificationEventSummary& WithEventStatus(EventStatus&& value) { SetEventStatus(std::move(value)); return *this;}
+    inline void SetEventStatus(EventStatus value) { m_eventStatusHasBeenSet = true; m_eventStatus = value; }
+    inline NotificationEventSummary& WithEventStatus(EventStatus value) { SetEventStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -110,16 +106,14 @@ namespace Model
      * recommendations, service announcements, or reminders.</p> </li> </ul> </li>
      * </ul> </li> </ul>
      */
-    inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+    inline NotificationType GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline NotificationEventSummary& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-    inline NotificationEventSummary& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    inline void SetNotificationType(NotificationType value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline NotificationEventSummary& WithNotificationType(NotificationType value) { SetNotificationType(value); return *this;}
     ///@}
   private:
 
-    SchemaVersion m_schemaVersion;
+    SchemaVersion m_schemaVersion{SchemaVersion::NOT_SET};
     bool m_schemaVersionHasBeenSet = false;
 
     SourceEventMetadataSummary m_sourceEventMetadata;
@@ -128,10 +122,10 @@ namespace Model
     MessageComponentsSummary m_messageComponents;
     bool m_messageComponentsHasBeenSet = false;
 
-    EventStatus m_eventStatus;
+    EventStatus m_eventStatus{EventStatus::NOT_SET};
     bool m_eventStatusHasBeenSet = false;
 
-    NotificationType m_notificationType;
+    NotificationType m_notificationType{NotificationType::NOT_SET};
     bool m_notificationTypeHasBeenSet = false;
   };
 

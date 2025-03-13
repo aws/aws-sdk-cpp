@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMLInputChannelDataRequest::DeleteMLInputChannelDataRequest() : 
-    m_mlInputChannelArnHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMLInputChannelDataRequest::SerializePayload() const
 {
   return {};

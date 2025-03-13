@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFirewallRuleGroupRequest::DeleteFirewallRuleGroupRequest() : 
-    m_firewallRuleGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFirewallRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRegionSettingsRequest::UpdateRegionSettingsRequest() : 
-    m_resourceTypeOptInPreferenceHasBeenSet(false),
-    m_resourceTypeManagementPreferenceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRegionSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

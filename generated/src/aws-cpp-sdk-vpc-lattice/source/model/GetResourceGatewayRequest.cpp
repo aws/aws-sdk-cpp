@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceGatewayRequest::GetResourceGatewayRequest() : 
-    m_resourceGatewayIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceGatewayRequest::SerializePayload() const
 {
   return {};

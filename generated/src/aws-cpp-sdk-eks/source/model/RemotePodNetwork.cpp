@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-RemotePodNetwork::RemotePodNetwork() : 
-    m_cidrsHasBeenSet(false)
-{
-}
-
 RemotePodNetwork::RemotePodNetwork(JsonView jsonValue)
-  : RemotePodNetwork()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RemotePodNetwork& RemotePodNetwork::operator =(JsonView jsonValue)
     }
     m_cidrsHasBeenSet = true;
   }
-
   return *this;
 }
 

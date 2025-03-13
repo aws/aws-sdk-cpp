@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StatusCodes::StatusCodes() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 StatusCodes::StatusCodes(const XmlNode& xmlNode)
-  : StatusCodes()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,20 @@ StatusCodes& StatusCodes::operator =(const XmlNode& xmlNode)
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
       m_quantityHasBeenSet = true;
+       m_quantityHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("StatusCode");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(itemsMember.GetText().c_str()).c_str()));
         itemsMember = itemsMember.NextNode("StatusCode");
       }
 
-      m_itemsHasBeenSet = true;
+       m_itemsHasBeenSet = true;
     }
   }
 

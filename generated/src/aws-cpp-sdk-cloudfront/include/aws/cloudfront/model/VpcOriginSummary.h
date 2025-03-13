@@ -31,7 +31,7 @@ namespace Model
   class VpcOriginSummary
   {
   public:
-    AWS_CLOUDFRONT_API VpcOriginSummary();
+    AWS_CLOUDFRONT_API VpcOriginSummary() = default;
     AWS_CLOUDFRONT_API VpcOriginSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API VpcOriginSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,94 +42,84 @@ namespace Model
     /**
      * <p>The VPC origin summary ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline VpcOriginSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline VpcOriginSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline VpcOriginSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    VpcOriginSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin summary name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline VpcOriginSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline VpcOriginSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline VpcOriginSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    VpcOriginSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin summary status.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline VpcOriginSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline VpcOriginSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline VpcOriginSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    VpcOriginSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin summary created time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline VpcOriginSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline VpcOriginSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    VpcOriginSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin summary last modified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline VpcOriginSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline VpcOriginSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    VpcOriginSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin summary ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline VpcOriginSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline VpcOriginSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline VpcOriginSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    VpcOriginSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin summary origin endpoint ARN.</p>
      */
-    inline const Aws::String& GetOriginEndpointArn() const{ return m_originEndpointArn; }
+    inline const Aws::String& GetOriginEndpointArn() const { return m_originEndpointArn; }
     inline bool OriginEndpointArnHasBeenSet() const { return m_originEndpointArnHasBeenSet; }
-    inline void SetOriginEndpointArn(const Aws::String& value) { m_originEndpointArnHasBeenSet = true; m_originEndpointArn = value; }
-    inline void SetOriginEndpointArn(Aws::String&& value) { m_originEndpointArnHasBeenSet = true; m_originEndpointArn = std::move(value); }
-    inline void SetOriginEndpointArn(const char* value) { m_originEndpointArnHasBeenSet = true; m_originEndpointArn.assign(value); }
-    inline VpcOriginSummary& WithOriginEndpointArn(const Aws::String& value) { SetOriginEndpointArn(value); return *this;}
-    inline VpcOriginSummary& WithOriginEndpointArn(Aws::String&& value) { SetOriginEndpointArn(std::move(value)); return *this;}
-    inline VpcOriginSummary& WithOriginEndpointArn(const char* value) { SetOriginEndpointArn(value); return *this;}
+    template<typename OriginEndpointArnT = Aws::String>
+    void SetOriginEndpointArn(OriginEndpointArnT&& value) { m_originEndpointArnHasBeenSet = true; m_originEndpointArn = std::forward<OriginEndpointArnT>(value); }
+    template<typename OriginEndpointArnT = Aws::String>
+    VpcOriginSummary& WithOriginEndpointArn(OriginEndpointArnT&& value) { SetOriginEndpointArn(std::forward<OriginEndpointArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -142,10 +132,10 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_arn;

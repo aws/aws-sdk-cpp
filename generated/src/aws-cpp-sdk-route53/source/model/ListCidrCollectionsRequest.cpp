@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCidrCollectionsRequest::ListCidrCollectionsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResultsHasBeenSet(false)
-{
-}
 
 Aws::String ListCidrCollectionsRequest::SerializePayload() const
 {

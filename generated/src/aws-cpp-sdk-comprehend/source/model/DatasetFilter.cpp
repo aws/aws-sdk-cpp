@@ -18,18 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetFilter::DatasetFilter() : 
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false)
-{
-}
-
 DatasetFilter::DatasetFilter(JsonView jsonValue)
-  : DatasetFilter()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DatasetFilter& DatasetFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetType"))
   {
     m_datasetType = DatasetTypeMapper::GetDatasetTypeForName(jsonValue.GetString("DatasetType"));
-
     m_datasetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimeAfter"))
   {
     m_creationTimeAfter = jsonValue.GetDouble("CreationTimeAfter");
-
     m_creationTimeAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimeBefore"))
   {
     m_creationTimeBefore = jsonValue.GetDouble("CreationTimeBefore");
-
     m_creationTimeBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

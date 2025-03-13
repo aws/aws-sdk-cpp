@@ -24,7 +24,7 @@ namespace Model
   class UpdateVolumeRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API UpdateVolumeRequest();
+    AWS_FSX_API UpdateVolumeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateVolumeRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateVolumeRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateVolumeRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateVolumeRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,24 @@ namespace Model
      * <p>The ID of the volume that you want to update, in the format
      * <code>fsvol-0123456789abcdef0</code>.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline UpdateVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline UpdateVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline UpdateVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    UpdateVolumeRequest& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the ONTAP volume that you are updating.</p>
      */
-    inline const UpdateOntapVolumeConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
+    inline const UpdateOntapVolumeConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
     inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
-    inline void SetOntapConfiguration(const UpdateOntapVolumeConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
-    inline void SetOntapConfiguration(UpdateOntapVolumeConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
-    inline UpdateVolumeRequest& WithOntapConfiguration(const UpdateOntapVolumeConfiguration& value) { SetOntapConfiguration(value); return *this;}
-    inline UpdateVolumeRequest& WithOntapConfiguration(UpdateOntapVolumeConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
+    template<typename OntapConfigurationT = UpdateOntapVolumeConfiguration>
+    void SetOntapConfiguration(OntapConfigurationT&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::forward<OntapConfigurationT>(value); }
+    template<typename OntapConfigurationT = UpdateOntapVolumeConfiguration>
+    UpdateVolumeRequest& WithOntapConfiguration(OntapConfigurationT&& value) { SetOntapConfiguration(std::forward<OntapConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,26 +79,24 @@ namespace Model
      * children. The name of the volume is part of the mount string for the OpenZFS
      * volume. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateVolumeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateVolumeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateVolumeRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateVolumeRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the OpenZFS volume that you are updating.</p>
      */
-    inline const UpdateOpenZFSVolumeConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+    inline const UpdateOpenZFSVolumeConfiguration& GetOpenZFSConfiguration() const { return m_openZFSConfiguration; }
     inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
-    inline void SetOpenZFSConfiguration(const UpdateOpenZFSVolumeConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
-    inline void SetOpenZFSConfiguration(UpdateOpenZFSVolumeConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
-    inline UpdateVolumeRequest& WithOpenZFSConfiguration(const UpdateOpenZFSVolumeConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
-    inline UpdateVolumeRequest& WithOpenZFSConfiguration(UpdateOpenZFSVolumeConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
+    template<typename OpenZFSConfigurationT = UpdateOpenZFSVolumeConfiguration>
+    void SetOpenZFSConfiguration(OpenZFSConfigurationT&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::forward<OpenZFSConfigurationT>(value); }
+    template<typename OpenZFSConfigurationT = UpdateOpenZFSVolumeConfiguration>
+    UpdateVolumeRequest& WithOpenZFSConfiguration(OpenZFSConfigurationT&& value) { SetOpenZFSConfiguration(std::forward<OpenZFSConfigurationT>(value)); return *this;}
     ///@}
   private:
 

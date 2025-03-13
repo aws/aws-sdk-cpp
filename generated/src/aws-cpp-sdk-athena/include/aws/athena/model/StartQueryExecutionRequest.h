@@ -26,7 +26,7 @@ namespace Model
   class StartQueryExecutionRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API StartQueryExecutionRequest();
+    AWS_ATHENA_API StartQueryExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The SQL query statements to be executed.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline StartQueryExecutionRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline StartQueryExecutionRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline StartQueryExecutionRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    StartQueryExecutionRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +66,24 @@ namespace Model
      * Web Services SDK or the Amazon Web Services CLI, you must provide this token or
      * the action will fail.</p> 
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartQueryExecutionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartQueryExecutionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartQueryExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartQueryExecutionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database within which the query executes.</p>
      */
-    inline const QueryExecutionContext& GetQueryExecutionContext() const{ return m_queryExecutionContext; }
+    inline const QueryExecutionContext& GetQueryExecutionContext() const { return m_queryExecutionContext; }
     inline bool QueryExecutionContextHasBeenSet() const { return m_queryExecutionContextHasBeenSet; }
-    inline void SetQueryExecutionContext(const QueryExecutionContext& value) { m_queryExecutionContextHasBeenSet = true; m_queryExecutionContext = value; }
-    inline void SetQueryExecutionContext(QueryExecutionContext&& value) { m_queryExecutionContextHasBeenSet = true; m_queryExecutionContext = std::move(value); }
-    inline StartQueryExecutionRequest& WithQueryExecutionContext(const QueryExecutionContext& value) { SetQueryExecutionContext(value); return *this;}
-    inline StartQueryExecutionRequest& WithQueryExecutionContext(QueryExecutionContext&& value) { SetQueryExecutionContext(std::move(value)); return *this;}
+    template<typename QueryExecutionContextT = QueryExecutionContext>
+    void SetQueryExecutionContext(QueryExecutionContextT&& value) { m_queryExecutionContextHasBeenSet = true; m_queryExecutionContext = std::forward<QueryExecutionContextT>(value); }
+    template<typename QueryExecutionContextT = QueryExecutionContext>
+    StartQueryExecutionRequest& WithQueryExecutionContext(QueryExecutionContextT&& value) { SetQueryExecutionContext(std::forward<QueryExecutionContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,26 +95,24 @@ namespace Model
      * the WorkGroupConfiguration. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
-    inline const ResultConfiguration& GetResultConfiguration() const{ return m_resultConfiguration; }
+    inline const ResultConfiguration& GetResultConfiguration() const { return m_resultConfiguration; }
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
-    inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
-    inline void SetResultConfiguration(ResultConfiguration&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
-    inline StartQueryExecutionRequest& WithResultConfiguration(const ResultConfiguration& value) { SetResultConfiguration(value); return *this;}
-    inline StartQueryExecutionRequest& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
+    template<typename ResultConfigurationT = ResultConfiguration>
+    void SetResultConfiguration(ResultConfigurationT&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::forward<ResultConfigurationT>(value); }
+    template<typename ResultConfigurationT = ResultConfiguration>
+    StartQueryExecutionRequest& WithResultConfiguration(ResultConfigurationT&& value) { SetResultConfiguration(std::forward<ResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the workgroup in which the query is being started.</p>
      */
-    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+    inline const Aws::String& GetWorkGroup() const { return m_workGroup; }
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-    inline StartQueryExecutionRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-    inline StartQueryExecutionRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-    inline StartQueryExecutionRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    template<typename WorkGroupT = Aws::String>
+    void SetWorkGroup(WorkGroupT&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::forward<WorkGroupT>(value); }
+    template<typename WorkGroupT = Aws::String>
+    StartQueryExecutionRequest& WithWorkGroup(WorkGroupT&& value) { SetWorkGroup(std::forward<WorkGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,27 +121,26 @@ namespace Model
      * sequentially to the parameters in the query in the order in which the parameters
      * occur.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExecutionParameters() const{ return m_executionParameters; }
+    inline const Aws::Vector<Aws::String>& GetExecutionParameters() const { return m_executionParameters; }
     inline bool ExecutionParametersHasBeenSet() const { return m_executionParametersHasBeenSet; }
-    inline void SetExecutionParameters(const Aws::Vector<Aws::String>& value) { m_executionParametersHasBeenSet = true; m_executionParameters = value; }
-    inline void SetExecutionParameters(Aws::Vector<Aws::String>&& value) { m_executionParametersHasBeenSet = true; m_executionParameters = std::move(value); }
-    inline StartQueryExecutionRequest& WithExecutionParameters(const Aws::Vector<Aws::String>& value) { SetExecutionParameters(value); return *this;}
-    inline StartQueryExecutionRequest& WithExecutionParameters(Aws::Vector<Aws::String>&& value) { SetExecutionParameters(std::move(value)); return *this;}
-    inline StartQueryExecutionRequest& AddExecutionParameters(const Aws::String& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
-    inline StartQueryExecutionRequest& AddExecutionParameters(Aws::String&& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(std::move(value)); return *this; }
-    inline StartQueryExecutionRequest& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
+    template<typename ExecutionParametersT = Aws::Vector<Aws::String>>
+    void SetExecutionParameters(ExecutionParametersT&& value) { m_executionParametersHasBeenSet = true; m_executionParameters = std::forward<ExecutionParametersT>(value); }
+    template<typename ExecutionParametersT = Aws::Vector<Aws::String>>
+    StartQueryExecutionRequest& WithExecutionParameters(ExecutionParametersT&& value) { SetExecutionParameters(std::forward<ExecutionParametersT>(value)); return *this;}
+    template<typename ExecutionParametersT = Aws::String>
+    StartQueryExecutionRequest& AddExecutionParameters(ExecutionParametersT&& value) { m_executionParametersHasBeenSet = true; m_executionParameters.emplace_back(std::forward<ExecutionParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the query result reuse behavior for the query.</p>
      */
-    inline const ResultReuseConfiguration& GetResultReuseConfiguration() const{ return m_resultReuseConfiguration; }
+    inline const ResultReuseConfiguration& GetResultReuseConfiguration() const { return m_resultReuseConfiguration; }
     inline bool ResultReuseConfigurationHasBeenSet() const { return m_resultReuseConfigurationHasBeenSet; }
-    inline void SetResultReuseConfiguration(const ResultReuseConfiguration& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = value; }
-    inline void SetResultReuseConfiguration(ResultReuseConfiguration&& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = std::move(value); }
-    inline StartQueryExecutionRequest& WithResultReuseConfiguration(const ResultReuseConfiguration& value) { SetResultReuseConfiguration(value); return *this;}
-    inline StartQueryExecutionRequest& WithResultReuseConfiguration(ResultReuseConfiguration&& value) { SetResultReuseConfiguration(std::move(value)); return *this;}
+    template<typename ResultReuseConfigurationT = ResultReuseConfiguration>
+    void SetResultReuseConfiguration(ResultReuseConfigurationT&& value) { m_resultReuseConfigurationHasBeenSet = true; m_resultReuseConfiguration = std::forward<ResultReuseConfigurationT>(value); }
+    template<typename ResultReuseConfigurationT = ResultReuseConfiguration>
+    StartQueryExecutionRequest& WithResultReuseConfiguration(ResultReuseConfigurationT&& value) { SetResultReuseConfiguration(std::forward<ResultReuseConfigurationT>(value)); return *this;}
     ///@}
   private:
 

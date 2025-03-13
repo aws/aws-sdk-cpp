@@ -18,13 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-StartSessionRequest::StartSessionRequest() : 
-    m_ledgerNameHasBeenSet(false)
-{
-}
-
 StartSessionRequest::StartSessionRequest(JsonView jsonValue)
-  : StartSessionRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StartSessionRequest& StartSessionRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LedgerName"))
   {
     m_ledgerName = jsonValue.GetString("LedgerName");
-
     m_ledgerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

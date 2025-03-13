@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-Urls::Urls() : 
-    m_seedUrlConfigurationHasBeenSet(false),
-    m_siteMapsConfigurationHasBeenSet(false)
-{
-}
-
 Urls::Urls(JsonView jsonValue)
-  : Urls()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Urls& Urls::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SeedUrlConfiguration"))
   {
     m_seedUrlConfiguration = jsonValue.GetObject("SeedUrlConfiguration");
-
     m_seedUrlConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SiteMapsConfiguration"))
   {
     m_siteMapsConfiguration = jsonValue.GetObject("SiteMapsConfiguration");
-
     m_siteMapsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

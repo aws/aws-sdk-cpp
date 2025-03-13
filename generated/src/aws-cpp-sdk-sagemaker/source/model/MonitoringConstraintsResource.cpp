@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringConstraintsResource::MonitoringConstraintsResource() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 MonitoringConstraintsResource::MonitoringConstraintsResource(JsonView jsonValue)
-  : MonitoringConstraintsResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitoringConstraintsResource& MonitoringConstraintsResource::operator =(JsonVie
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

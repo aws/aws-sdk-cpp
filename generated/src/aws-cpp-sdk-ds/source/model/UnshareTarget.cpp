@@ -18,15 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-UnshareTarget::UnshareTarget() : 
-    m_idHasBeenSet(false),
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 UnshareTarget::UnshareTarget(JsonView jsonValue)
-  : UnshareTarget()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UnshareTarget& UnshareTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

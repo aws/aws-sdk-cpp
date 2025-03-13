@@ -18,21 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3Bucket::S3Bucket() : 
-    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
-    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_defaultServerSideEncryptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_publicAccessHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 S3Bucket::S3Bucket(JsonView jsonValue)
-  : S3Bucket()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ S3Bucket& S3Bucket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowsUnencryptedObjectUploads"))
   {
     m_allowsUnencryptedObjectUploads = AllowsUnencryptedObjectUploadsMapper::GetAllowsUnencryptedObjectUploadsForName(jsonValue.GetString("allowsUnencryptedObjectUploads"));
-
     m_allowsUnencryptedObjectUploadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultServerSideEncryption"))
   {
     m_defaultServerSideEncryption = jsonValue.GetObject("defaultServerSideEncryption");
-
     m_defaultServerSideEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetObject("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicAccess"))
   {
     m_publicAccess = jsonValue.GetObject("publicAccess");
-
     m_publicAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -97,7 +69,6 @@ S3Bucket& S3Bucket::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

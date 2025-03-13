@@ -29,7 +29,7 @@ namespace Model
   class ListOrganizationRecommendationsResult
   {
   public:
-    AWS_TRUSTEDADVISOR_API ListOrganizationRecommendationsResult();
+    AWS_TRUSTEDADVISOR_API ListOrganizationRecommendationsResult() = default;
     AWS_TRUSTEDADVISOR_API ListOrganizationRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRUSTEDADVISOR_API ListOrganizationRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOrganizationRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOrganizationRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOrganizationRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOrganizationRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of Recommendations</p>
      */
-    inline const Aws::Vector<OrganizationRecommendationSummary>& GetOrganizationRecommendationSummaries() const{ return m_organizationRecommendationSummaries; }
-    inline void SetOrganizationRecommendationSummaries(const Aws::Vector<OrganizationRecommendationSummary>& value) { m_organizationRecommendationSummaries = value; }
-    inline void SetOrganizationRecommendationSummaries(Aws::Vector<OrganizationRecommendationSummary>&& value) { m_organizationRecommendationSummaries = std::move(value); }
-    inline ListOrganizationRecommendationsResult& WithOrganizationRecommendationSummaries(const Aws::Vector<OrganizationRecommendationSummary>& value) { SetOrganizationRecommendationSummaries(value); return *this;}
-    inline ListOrganizationRecommendationsResult& WithOrganizationRecommendationSummaries(Aws::Vector<OrganizationRecommendationSummary>&& value) { SetOrganizationRecommendationSummaries(std::move(value)); return *this;}
-    inline ListOrganizationRecommendationsResult& AddOrganizationRecommendationSummaries(const OrganizationRecommendationSummary& value) { m_organizationRecommendationSummaries.push_back(value); return *this; }
-    inline ListOrganizationRecommendationsResult& AddOrganizationRecommendationSummaries(OrganizationRecommendationSummary&& value) { m_organizationRecommendationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationRecommendationSummary>& GetOrganizationRecommendationSummaries() const { return m_organizationRecommendationSummaries; }
+    template<typename OrganizationRecommendationSummariesT = Aws::Vector<OrganizationRecommendationSummary>>
+    void SetOrganizationRecommendationSummaries(OrganizationRecommendationSummariesT&& value) { m_organizationRecommendationSummariesHasBeenSet = true; m_organizationRecommendationSummaries = std::forward<OrganizationRecommendationSummariesT>(value); }
+    template<typename OrganizationRecommendationSummariesT = Aws::Vector<OrganizationRecommendationSummary>>
+    ListOrganizationRecommendationsResult& WithOrganizationRecommendationSummaries(OrganizationRecommendationSummariesT&& value) { SetOrganizationRecommendationSummaries(std::forward<OrganizationRecommendationSummariesT>(value)); return *this;}
+    template<typename OrganizationRecommendationSummariesT = OrganizationRecommendationSummary>
+    ListOrganizationRecommendationsResult& AddOrganizationRecommendationSummaries(OrganizationRecommendationSummariesT&& value) { m_organizationRecommendationSummariesHasBeenSet = true; m_organizationRecommendationSummaries.emplace_back(std::forward<OrganizationRecommendationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOrganizationRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOrganizationRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOrganizationRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOrganizationRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<OrganizationRecommendationSummary> m_organizationRecommendationSummaries;
+    bool m_organizationRecommendationSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

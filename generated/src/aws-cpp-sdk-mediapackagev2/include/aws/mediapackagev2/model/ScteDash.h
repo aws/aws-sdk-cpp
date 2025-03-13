@@ -31,7 +31,7 @@ namespace Model
   class ScteDash
   {
   public:
-    AWS_MEDIAPACKAGEV2_API ScteDash();
+    AWS_MEDIAPACKAGEV2_API ScteDash() = default;
     AWS_MEDIAPACKAGEV2_API ScteDash(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API ScteDash& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * <p> <code>XML</code> - The SCTE marker is expressed fully in XML.</p> </li>
      * </ul>
      */
-    inline const AdMarkerDash& GetAdMarkerDash() const{ return m_adMarkerDash; }
+    inline AdMarkerDash GetAdMarkerDash() const { return m_adMarkerDash; }
     inline bool AdMarkerDashHasBeenSet() const { return m_adMarkerDashHasBeenSet; }
-    inline void SetAdMarkerDash(const AdMarkerDash& value) { m_adMarkerDashHasBeenSet = true; m_adMarkerDash = value; }
-    inline void SetAdMarkerDash(AdMarkerDash&& value) { m_adMarkerDashHasBeenSet = true; m_adMarkerDash = std::move(value); }
-    inline ScteDash& WithAdMarkerDash(const AdMarkerDash& value) { SetAdMarkerDash(value); return *this;}
-    inline ScteDash& WithAdMarkerDash(AdMarkerDash&& value) { SetAdMarkerDash(std::move(value)); return *this;}
+    inline void SetAdMarkerDash(AdMarkerDash value) { m_adMarkerDashHasBeenSet = true; m_adMarkerDash = value; }
+    inline ScteDash& WithAdMarkerDash(AdMarkerDash value) { SetAdMarkerDash(value); return *this;}
     ///@}
   private:
 
-    AdMarkerDash m_adMarkerDash;
+    AdMarkerDash m_adMarkerDash{AdMarkerDash::NOT_SET};
     bool m_adMarkerDashHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class InstantiateMetadata
   {
   public:
-    AWS_TNB_API InstantiateMetadata();
+    AWS_TNB_API InstantiateMetadata() = default;
     AWS_TNB_API InstantiateMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API InstantiateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The configurable properties used during instantiation.</p>
      */
-    inline Aws::Utils::DocumentView GetAdditionalParamsForNs() const{ return m_additionalParamsForNs; }
+    inline Aws::Utils::DocumentView GetAdditionalParamsForNs() const { return m_additionalParamsForNs; }
     inline bool AdditionalParamsForNsHasBeenSet() const { return m_additionalParamsForNsHasBeenSet; }
-    inline void SetAdditionalParamsForNs(const Aws::Utils::Document& value) { m_additionalParamsForNsHasBeenSet = true; m_additionalParamsForNs = value; }
-    inline void SetAdditionalParamsForNs(Aws::Utils::Document&& value) { m_additionalParamsForNsHasBeenSet = true; m_additionalParamsForNs = std::move(value); }
-    inline InstantiateMetadata& WithAdditionalParamsForNs(const Aws::Utils::Document& value) { SetAdditionalParamsForNs(value); return *this;}
-    inline InstantiateMetadata& WithAdditionalParamsForNs(Aws::Utils::Document&& value) { SetAdditionalParamsForNs(std::move(value)); return *this;}
+    template<typename AdditionalParamsForNsT = Aws::Utils::Document>
+    void SetAdditionalParamsForNs(AdditionalParamsForNsT&& value) { m_additionalParamsForNsHasBeenSet = true; m_additionalParamsForNs = std::forward<AdditionalParamsForNsT>(value); }
+    template<typename AdditionalParamsForNsT = Aws::Utils::Document>
+    InstantiateMetadata& WithAdditionalParamsForNs(AdditionalParamsForNsT&& value) { SetAdditionalParamsForNs(std::forward<AdditionalParamsForNsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * <p>The network service descriptor used for instantiating the network
      * instance.</p>
      */
-    inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
+    inline const Aws::String& GetNsdInfoId() const { return m_nsdInfoId; }
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-    inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-    inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-    inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-    inline InstantiateMetadata& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-    inline InstantiateMetadata& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-    inline InstantiateMetadata& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
+    template<typename NsdInfoIdT = Aws::String>
+    void SetNsdInfoId(NsdInfoIdT&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::forward<NsdInfoIdT>(value); }
+    template<typename NsdInfoIdT = Aws::String>
+    InstantiateMetadata& WithNsdInfoId(NsdInfoIdT&& value) { SetNsdInfoId(std::forward<NsdInfoIdT>(value)); return *this;}
     ///@}
   private:
 

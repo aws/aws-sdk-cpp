@@ -18,16 +18,7 @@ namespace DLM
 namespace Model
 {
 
-InvalidRequestException::InvalidRequestException() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_requiredParametersHasBeenSet(false),
-    m_mutuallyExclusiveParametersHasBeenSet(false)
-{
-}
-
 InvalidRequestException::InvalidRequestException(JsonView jsonValue)
-  : InvalidRequestException()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiredParameters"))
   {
     Aws::Utils::Array<JsonView> requiredParametersJsonList = jsonValue.GetArray("RequiredParameters");
@@ -57,7 +44,6 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
     }
     m_requiredParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MutuallyExclusiveParameters"))
   {
     Aws::Utils::Array<JsonView> mutuallyExclusiveParametersJsonList = jsonValue.GetArray("MutuallyExclusiveParameters");
@@ -67,7 +53,6 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
     }
     m_mutuallyExclusiveParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

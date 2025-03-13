@@ -18,18 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ObjectTypes::ObjectTypes() : 
-    m_source(ObjectTypeEnum::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_destination(ObjectTypeEnum::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_base(ObjectTypeEnum::NOT_SET),
-    m_baseHasBeenSet(false)
-{
-}
-
 ObjectTypes::ObjectTypes(JsonView jsonValue)
-  : ObjectTypes()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ObjectTypes& ObjectTypes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = ObjectTypeEnumMapper::GetObjectTypeEnumForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = ObjectTypeEnumMapper::GetObjectTypeEnumForName(jsonValue.GetString("destination"));
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("base"))
   {
     m_base = ObjectTypeEnumMapper::GetObjectTypeEnumForName(jsonValue.GetString("base"));
-
     m_baseHasBeenSet = true;
   }
-
   return *this;
 }
 

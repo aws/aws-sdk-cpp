@@ -34,7 +34,7 @@ namespace Model
   class JobWatermark
   {
   public:
-    AWS_ELASTICTRANSCODER_API JobWatermark();
+    AWS_ELASTICTRANSCODER_API JobWatermark() = default;
     AWS_ELASTICTRANSCODER_API JobWatermark(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API JobWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * specified by Preset for the current output. In that preset, the value of
      * Watermarks Id tells Elastic Transcoder which settings to use.</p>
      */
-    inline const Aws::String& GetPresetWatermarkId() const{ return m_presetWatermarkId; }
+    inline const Aws::String& GetPresetWatermarkId() const { return m_presetWatermarkId; }
     inline bool PresetWatermarkIdHasBeenSet() const { return m_presetWatermarkIdHasBeenSet; }
-    inline void SetPresetWatermarkId(const Aws::String& value) { m_presetWatermarkIdHasBeenSet = true; m_presetWatermarkId = value; }
-    inline void SetPresetWatermarkId(Aws::String&& value) { m_presetWatermarkIdHasBeenSet = true; m_presetWatermarkId = std::move(value); }
-    inline void SetPresetWatermarkId(const char* value) { m_presetWatermarkIdHasBeenSet = true; m_presetWatermarkId.assign(value); }
-    inline JobWatermark& WithPresetWatermarkId(const Aws::String& value) { SetPresetWatermarkId(value); return *this;}
-    inline JobWatermark& WithPresetWatermarkId(Aws::String&& value) { SetPresetWatermarkId(std::move(value)); return *this;}
-    inline JobWatermark& WithPresetWatermarkId(const char* value) { SetPresetWatermarkId(value); return *this;}
+    template<typename PresetWatermarkIdT = Aws::String>
+    void SetPresetWatermarkId(PresetWatermarkIdT&& value) { m_presetWatermarkIdHasBeenSet = true; m_presetWatermarkId = std::forward<PresetWatermarkIdT>(value); }
+    template<typename PresetWatermarkIdT = Aws::String>
+    JobWatermark& WithPresetWatermarkId(PresetWatermarkIdT&& value) { SetPresetWatermarkId(std::forward<PresetWatermarkIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * in the key. If the file isn't in the specified bucket, Elastic Transcoder
      * returns an error. </p>
      */
-    inline const Aws::String& GetInputKey() const{ return m_inputKey; }
+    inline const Aws::String& GetInputKey() const { return m_inputKey; }
     inline bool InputKeyHasBeenSet() const { return m_inputKeyHasBeenSet; }
-    inline void SetInputKey(const Aws::String& value) { m_inputKeyHasBeenSet = true; m_inputKey = value; }
-    inline void SetInputKey(Aws::String&& value) { m_inputKeyHasBeenSet = true; m_inputKey = std::move(value); }
-    inline void SetInputKey(const char* value) { m_inputKeyHasBeenSet = true; m_inputKey.assign(value); }
-    inline JobWatermark& WithInputKey(const Aws::String& value) { SetInputKey(value); return *this;}
-    inline JobWatermark& WithInputKey(Aws::String&& value) { SetInputKey(std::move(value)); return *this;}
-    inline JobWatermark& WithInputKey(const char* value) { SetInputKey(value); return *this;}
+    template<typename InputKeyT = Aws::String>
+    void SetInputKey(InputKeyT&& value) { m_inputKeyHasBeenSet = true; m_inputKey = std::forward<InputKeyT>(value); }
+    template<typename InputKeyT = Aws::String>
+    JobWatermark& WithInputKey(InputKeyT&& value) { SetInputKey(std::forward<InputKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,12 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your watermarks.</p>
      */
-    inline const Encryption& GetEncryption() const{ return m_encryption; }
+    inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline JobWatermark& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
-    inline JobWatermark& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = Encryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = Encryption>
+    JobWatermark& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
   private:
 

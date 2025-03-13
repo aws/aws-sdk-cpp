@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailWordPolicyConfig::GuardrailWordPolicyConfig() : 
-    m_wordsConfigHasBeenSet(false),
-    m_managedWordListsConfigHasBeenSet(false)
-{
-}
-
 GuardrailWordPolicyConfig::GuardrailWordPolicyConfig(JsonView jsonValue)
-  : GuardrailWordPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GuardrailWordPolicyConfig& GuardrailWordPolicyConfig::operator =(JsonView jsonVa
     }
     m_wordsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedWordListsConfig"))
   {
     Aws::Utils::Array<JsonView> managedWordListsConfigJsonList = jsonValue.GetArray("managedWordListsConfig");
@@ -51,7 +43,6 @@ GuardrailWordPolicyConfig& GuardrailWordPolicyConfig::operator =(JsonView jsonVa
     }
     m_managedWordListsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

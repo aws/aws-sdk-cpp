@@ -34,7 +34,7 @@ namespace Model
   class WebExperience
   {
   public:
-    AWS_QBUSINESS_API WebExperience();
+    AWS_QBUSINESS_API WebExperience() = default;
     AWS_QBUSINESS_API WebExperience(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API WebExperience& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier of your Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
+    inline const Aws::String& GetWebExperienceId() const { return m_webExperienceId; }
     inline bool WebExperienceIdHasBeenSet() const { return m_webExperienceIdHasBeenSet; }
-    inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = value; }
-    inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::move(value); }
-    inline void SetWebExperienceId(const char* value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId.assign(value); }
-    inline WebExperience& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
-    inline WebExperience& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
-    inline WebExperience& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
+    template<typename WebExperienceIdT = Aws::String>
+    void SetWebExperienceId(WebExperienceIdT&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::forward<WebExperienceIdT>(value); }
+    template<typename WebExperienceIdT = Aws::String>
+    WebExperience& WithWebExperienceId(WebExperienceIdT&& value) { SetWebExperienceId(std::forward<WebExperienceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The Unix timestamp when the Amazon Q Business application was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline WebExperience& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline WebExperience& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    WebExperience& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>The Unix timestamp when your Amazon Q Business web experience was
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline WebExperience& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline WebExperience& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    WebExperience& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,42 +83,38 @@ namespace Model
      * <p>The endpoint URLs for your Amazon Q Business web experience. The URLs are
      * unique and fully hosted by Amazon Web Services.</p>
      */
-    inline const Aws::String& GetDefaultEndpoint() const{ return m_defaultEndpoint; }
+    inline const Aws::String& GetDefaultEndpoint() const { return m_defaultEndpoint; }
     inline bool DefaultEndpointHasBeenSet() const { return m_defaultEndpointHasBeenSet; }
-    inline void SetDefaultEndpoint(const Aws::String& value) { m_defaultEndpointHasBeenSet = true; m_defaultEndpoint = value; }
-    inline void SetDefaultEndpoint(Aws::String&& value) { m_defaultEndpointHasBeenSet = true; m_defaultEndpoint = std::move(value); }
-    inline void SetDefaultEndpoint(const char* value) { m_defaultEndpointHasBeenSet = true; m_defaultEndpoint.assign(value); }
-    inline WebExperience& WithDefaultEndpoint(const Aws::String& value) { SetDefaultEndpoint(value); return *this;}
-    inline WebExperience& WithDefaultEndpoint(Aws::String&& value) { SetDefaultEndpoint(std::move(value)); return *this;}
-    inline WebExperience& WithDefaultEndpoint(const char* value) { SetDefaultEndpoint(value); return *this;}
+    template<typename DefaultEndpointT = Aws::String>
+    void SetDefaultEndpoint(DefaultEndpointT&& value) { m_defaultEndpointHasBeenSet = true; m_defaultEndpoint = std::forward<DefaultEndpointT>(value); }
+    template<typename DefaultEndpointT = Aws::String>
+    WebExperience& WithDefaultEndpoint(DefaultEndpointT&& value) { SetDefaultEndpoint(std::forward<DefaultEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of your Amazon Q Business web experience.</p>
      */
-    inline const WebExperienceStatus& GetStatus() const{ return m_status; }
+    inline WebExperienceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WebExperienceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WebExperienceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WebExperience& WithStatus(const WebExperienceStatus& value) { SetStatus(value); return *this;}
-    inline WebExperience& WithStatus(WebExperienceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WebExperienceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline WebExperience& WithStatus(WebExperienceStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_webExperienceId;
     bool m_webExperienceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_defaultEndpoint;
     bool m_defaultEndpointHasBeenSet = false;
 
-    WebExperienceStatus m_status;
+    WebExperienceStatus m_status{WebExperienceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

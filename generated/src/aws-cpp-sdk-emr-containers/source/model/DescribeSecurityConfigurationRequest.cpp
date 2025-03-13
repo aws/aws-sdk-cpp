@@ -12,11 +12,6 @@ using namespace Aws::EMRContainers::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSecurityConfigurationRequest::DescribeSecurityConfigurationRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSecurityConfigurationRequest::SerializePayload() const
 {
   return {};

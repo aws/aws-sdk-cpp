@@ -34,7 +34,7 @@ namespace Model
   class InferenceDeviceInfo
   {
   public:
-    AWS_EC2_API InferenceDeviceInfo();
+    AWS_EC2_API InferenceDeviceInfo() = default;
     AWS_EC2_API InferenceDeviceInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InferenceDeviceInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The number of Inference accelerators for the instance type.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline InferenceDeviceInfo& WithCount(int value) { SetCount(value); return *this;}
@@ -56,44 +56,40 @@ namespace Model
     /**
      * <p>The name of the Inference accelerator.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline InferenceDeviceInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline InferenceDeviceInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline InferenceDeviceInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    InferenceDeviceInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The manufacturer of the Inference accelerator.</p>
      */
-    inline const Aws::String& GetManufacturer() const{ return m_manufacturer; }
+    inline const Aws::String& GetManufacturer() const { return m_manufacturer; }
     inline bool ManufacturerHasBeenSet() const { return m_manufacturerHasBeenSet; }
-    inline void SetManufacturer(const Aws::String& value) { m_manufacturerHasBeenSet = true; m_manufacturer = value; }
-    inline void SetManufacturer(Aws::String&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::move(value); }
-    inline void SetManufacturer(const char* value) { m_manufacturerHasBeenSet = true; m_manufacturer.assign(value); }
-    inline InferenceDeviceInfo& WithManufacturer(const Aws::String& value) { SetManufacturer(value); return *this;}
-    inline InferenceDeviceInfo& WithManufacturer(Aws::String&& value) { SetManufacturer(std::move(value)); return *this;}
-    inline InferenceDeviceInfo& WithManufacturer(const char* value) { SetManufacturer(value); return *this;}
+    template<typename ManufacturerT = Aws::String>
+    void SetManufacturer(ManufacturerT&& value) { m_manufacturerHasBeenSet = true; m_manufacturer = std::forward<ManufacturerT>(value); }
+    template<typename ManufacturerT = Aws::String>
+    InferenceDeviceInfo& WithManufacturer(ManufacturerT&& value) { SetManufacturer(std::forward<ManufacturerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the memory available to the inference accelerator.</p>
      */
-    inline const InferenceDeviceMemoryInfo& GetMemoryInfo() const{ return m_memoryInfo; }
+    inline const InferenceDeviceMemoryInfo& GetMemoryInfo() const { return m_memoryInfo; }
     inline bool MemoryInfoHasBeenSet() const { return m_memoryInfoHasBeenSet; }
-    inline void SetMemoryInfo(const InferenceDeviceMemoryInfo& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = value; }
-    inline void SetMemoryInfo(InferenceDeviceMemoryInfo&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::move(value); }
-    inline InferenceDeviceInfo& WithMemoryInfo(const InferenceDeviceMemoryInfo& value) { SetMemoryInfo(value); return *this;}
-    inline InferenceDeviceInfo& WithMemoryInfo(InferenceDeviceMemoryInfo&& value) { SetMemoryInfo(std::move(value)); return *this;}
+    template<typename MemoryInfoT = InferenceDeviceMemoryInfo>
+    void SetMemoryInfo(MemoryInfoT&& value) { m_memoryInfoHasBeenSet = true; m_memoryInfo = std::forward<MemoryInfoT>(value); }
+    template<typename MemoryInfoT = InferenceDeviceMemoryInfo>
+    InferenceDeviceInfo& WithMemoryInfo(MemoryInfoT&& value) { SetMemoryInfo(std::forward<MemoryInfoT>(value)); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
     Aws::String m_name;

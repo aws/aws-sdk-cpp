@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDevicesRequest::ListDevicesRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_paginationTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace drs
 namespace Model
 {
 
-JobLogEventData::JobLogEventData() : 
-    m_conversionPropertiesHasBeenSet(false),
-    m_conversionServerIDHasBeenSet(false),
-    m_eventResourceDataHasBeenSet(false),
-    m_rawErrorHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_targetInstanceIDHasBeenSet(false)
-{
-}
-
 JobLogEventData::JobLogEventData(JsonView jsonValue)
-  : JobLogEventData()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ JobLogEventData& JobLogEventData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversionProperties"))
   {
     m_conversionProperties = jsonValue.GetObject("conversionProperties");
-
     m_conversionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversionServerID"))
   {
     m_conversionServerID = jsonValue.GetString("conversionServerID");
-
     m_conversionServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventResourceData"))
   {
     m_eventResourceData = jsonValue.GetObject("eventResourceData");
-
     m_eventResourceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawError"))
   {
     m_rawError = jsonValue.GetString("rawError");
-
     m_rawErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetInstanceID"))
   {
     m_targetInstanceID = jsonValue.GetString("targetInstanceID");
-
     m_targetInstanceIDHasBeenSet = true;
   }
-
   return *this;
 }
 

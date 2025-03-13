@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VisualInteractionOptions::VisualInteractionOptions() : 
-    m_visualMenuOptionHasBeenSet(false),
-    m_contextMenuOptionHasBeenSet(false)
-{
-}
-
 VisualInteractionOptions::VisualInteractionOptions(JsonView jsonValue)
-  : VisualInteractionOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VisualInteractionOptions& VisualInteractionOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("VisualMenuOption"))
   {
     m_visualMenuOption = jsonValue.GetObject("VisualMenuOption");
-
     m_visualMenuOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContextMenuOption"))
   {
     m_contextMenuOption = jsonValue.GetObject("ContextMenuOption");
-
     m_contextMenuOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

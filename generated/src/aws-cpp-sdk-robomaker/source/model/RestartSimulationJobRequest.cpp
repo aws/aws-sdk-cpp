@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestartSimulationJobRequest::RestartSimulationJobRequest() : 
-    m_jobHasBeenSet(false)
-{
-}
-
 Aws::String RestartSimulationJobRequest::SerializePayload() const
 {
   JsonValue payload;

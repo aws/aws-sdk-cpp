@@ -29,7 +29,7 @@ namespace Model
   class DescribeDirectConnectGatewayAssociationProposalsResult
   {
   public:
-    AWS_DIRECTCONNECT_API DescribeDirectConnectGatewayAssociationProposalsResult();
+    AWS_DIRECTCONNECT_API DescribeDirectConnectGatewayAssociationProposalsResult() = default;
     AWS_DIRECTCONNECT_API DescribeDirectConnectGatewayAssociationProposalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API DescribeDirectConnectGatewayAssociationProposalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Describes the Direct Connect gateway association proposals.</p>
      */
-    inline const Aws::Vector<DirectConnectGatewayAssociationProposal>& GetDirectConnectGatewayAssociationProposals() const{ return m_directConnectGatewayAssociationProposals; }
-    inline void SetDirectConnectGatewayAssociationProposals(const Aws::Vector<DirectConnectGatewayAssociationProposal>& value) { m_directConnectGatewayAssociationProposals = value; }
-    inline void SetDirectConnectGatewayAssociationProposals(Aws::Vector<DirectConnectGatewayAssociationProposal>&& value) { m_directConnectGatewayAssociationProposals = std::move(value); }
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithDirectConnectGatewayAssociationProposals(const Aws::Vector<DirectConnectGatewayAssociationProposal>& value) { SetDirectConnectGatewayAssociationProposals(value); return *this;}
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithDirectConnectGatewayAssociationProposals(Aws::Vector<DirectConnectGatewayAssociationProposal>&& value) { SetDirectConnectGatewayAssociationProposals(std::move(value)); return *this;}
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& AddDirectConnectGatewayAssociationProposals(const DirectConnectGatewayAssociationProposal& value) { m_directConnectGatewayAssociationProposals.push_back(value); return *this; }
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& AddDirectConnectGatewayAssociationProposals(DirectConnectGatewayAssociationProposal&& value) { m_directConnectGatewayAssociationProposals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DirectConnectGatewayAssociationProposal>& GetDirectConnectGatewayAssociationProposals() const { return m_directConnectGatewayAssociationProposals; }
+    template<typename DirectConnectGatewayAssociationProposalsT = Aws::Vector<DirectConnectGatewayAssociationProposal>>
+    void SetDirectConnectGatewayAssociationProposals(DirectConnectGatewayAssociationProposalsT&& value) { m_directConnectGatewayAssociationProposalsHasBeenSet = true; m_directConnectGatewayAssociationProposals = std::forward<DirectConnectGatewayAssociationProposalsT>(value); }
+    template<typename DirectConnectGatewayAssociationProposalsT = Aws::Vector<DirectConnectGatewayAssociationProposal>>
+    DescribeDirectConnectGatewayAssociationProposalsResult& WithDirectConnectGatewayAssociationProposals(DirectConnectGatewayAssociationProposalsT&& value) { SetDirectConnectGatewayAssociationProposals(std::forward<DirectConnectGatewayAssociationProposalsT>(value)); return *this;}
+    template<typename DirectConnectGatewayAssociationProposalsT = DirectConnectGatewayAssociationProposal>
+    DescribeDirectConnectGatewayAssociationProposalsResult& AddDirectConnectGatewayAssociationProposals(DirectConnectGatewayAssociationProposalsT&& value) { m_directConnectGatewayAssociationProposalsHasBeenSet = true; m_directConnectGatewayAssociationProposals.emplace_back(std::forward<DirectConnectGatewayAssociationProposalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeDirectConnectGatewayAssociationProposalsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDirectConnectGatewayAssociationProposalsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDirectConnectGatewayAssociationProposalsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DirectConnectGatewayAssociationProposal> m_directConnectGatewayAssociationProposals;
+    bool m_directConnectGatewayAssociationProposalsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAttachmentResult::GetAttachmentResult() : 
-    m_attachmentSizeInBytes(0)
-{
-}
-
 GetAttachmentResult::GetAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAttachmentResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetAttachmentResult& GetAttachmentResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
+    m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UrlExpiry"))
   {
     m_urlExpiry = jsonValue.GetString("UrlExpiry");
-
+    m_urlExpiryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentSizeInBytes"))
   {
     m_attachmentSizeInBytes = jsonValue.GetInt64("AttachmentSizeInBytes");
-
+    m_attachmentSizeInBytesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

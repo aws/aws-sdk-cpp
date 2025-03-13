@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIntegrationAssociationsRequest::ListIntegrationAssociationsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_integrationType(IntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_integrationArnHasBeenSet(false)
-{
-}
-
 Aws::String ListIntegrationAssociationsRequest::SerializePayload() const
 {
   return {};

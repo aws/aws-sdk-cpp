@@ -29,7 +29,7 @@ namespace Model
   class BatchGetDevEndpointsResult
   {
   public:
-    AWS_GLUE_API BatchGetDevEndpointsResult();
+    AWS_GLUE_API BatchGetDevEndpointsResult() = default;
     AWS_GLUE_API BatchGetDevEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API BatchGetDevEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>A list of <code>DevEndpoint</code> definitions.</p>
      */
-    inline const Aws::Vector<DevEndpoint>& GetDevEndpoints() const{ return m_devEndpoints; }
-    inline void SetDevEndpoints(const Aws::Vector<DevEndpoint>& value) { m_devEndpoints = value; }
-    inline void SetDevEndpoints(Aws::Vector<DevEndpoint>&& value) { m_devEndpoints = std::move(value); }
-    inline BatchGetDevEndpointsResult& WithDevEndpoints(const Aws::Vector<DevEndpoint>& value) { SetDevEndpoints(value); return *this;}
-    inline BatchGetDevEndpointsResult& WithDevEndpoints(Aws::Vector<DevEndpoint>&& value) { SetDevEndpoints(std::move(value)); return *this;}
-    inline BatchGetDevEndpointsResult& AddDevEndpoints(const DevEndpoint& value) { m_devEndpoints.push_back(value); return *this; }
-    inline BatchGetDevEndpointsResult& AddDevEndpoints(DevEndpoint&& value) { m_devEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DevEndpoint>& GetDevEndpoints() const { return m_devEndpoints; }
+    template<typename DevEndpointsT = Aws::Vector<DevEndpoint>>
+    void SetDevEndpoints(DevEndpointsT&& value) { m_devEndpointsHasBeenSet = true; m_devEndpoints = std::forward<DevEndpointsT>(value); }
+    template<typename DevEndpointsT = Aws::Vector<DevEndpoint>>
+    BatchGetDevEndpointsResult& WithDevEndpoints(DevEndpointsT&& value) { SetDevEndpoints(std::forward<DevEndpointsT>(value)); return *this;}
+    template<typename DevEndpointsT = DevEndpoint>
+    BatchGetDevEndpointsResult& AddDevEndpoints(DevEndpointsT&& value) { m_devEndpointsHasBeenSet = true; m_devEndpoints.emplace_back(std::forward<DevEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>DevEndpoints</code> not found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDevEndpointsNotFound() const{ return m_devEndpointsNotFound; }
-    inline void SetDevEndpointsNotFound(const Aws::Vector<Aws::String>& value) { m_devEndpointsNotFound = value; }
-    inline void SetDevEndpointsNotFound(Aws::Vector<Aws::String>&& value) { m_devEndpointsNotFound = std::move(value); }
-    inline BatchGetDevEndpointsResult& WithDevEndpointsNotFound(const Aws::Vector<Aws::String>& value) { SetDevEndpointsNotFound(value); return *this;}
-    inline BatchGetDevEndpointsResult& WithDevEndpointsNotFound(Aws::Vector<Aws::String>&& value) { SetDevEndpointsNotFound(std::move(value)); return *this;}
-    inline BatchGetDevEndpointsResult& AddDevEndpointsNotFound(const Aws::String& value) { m_devEndpointsNotFound.push_back(value); return *this; }
-    inline BatchGetDevEndpointsResult& AddDevEndpointsNotFound(Aws::String&& value) { m_devEndpointsNotFound.push_back(std::move(value)); return *this; }
-    inline BatchGetDevEndpointsResult& AddDevEndpointsNotFound(const char* value) { m_devEndpointsNotFound.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDevEndpointsNotFound() const { return m_devEndpointsNotFound; }
+    template<typename DevEndpointsNotFoundT = Aws::Vector<Aws::String>>
+    void SetDevEndpointsNotFound(DevEndpointsNotFoundT&& value) { m_devEndpointsNotFoundHasBeenSet = true; m_devEndpointsNotFound = std::forward<DevEndpointsNotFoundT>(value); }
+    template<typename DevEndpointsNotFoundT = Aws::Vector<Aws::String>>
+    BatchGetDevEndpointsResult& WithDevEndpointsNotFound(DevEndpointsNotFoundT&& value) { SetDevEndpointsNotFound(std::forward<DevEndpointsNotFoundT>(value)); return *this;}
+    template<typename DevEndpointsNotFoundT = Aws::String>
+    BatchGetDevEndpointsResult& AddDevEndpointsNotFound(DevEndpointsNotFoundT&& value) { m_devEndpointsNotFoundHasBeenSet = true; m_devEndpointsNotFound.emplace_back(std::forward<DevEndpointsNotFoundT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetDevEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetDevEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetDevEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetDevEndpointsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DevEndpoint> m_devEndpoints;
+    bool m_devEndpointsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_devEndpointsNotFound;
+    bool m_devEndpointsNotFoundHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

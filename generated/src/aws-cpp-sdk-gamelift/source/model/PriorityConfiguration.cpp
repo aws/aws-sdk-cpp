@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-PriorityConfiguration::PriorityConfiguration() : 
-    m_priorityOrderHasBeenSet(false),
-    m_locationOrderHasBeenSet(false)
-{
-}
-
 PriorityConfiguration::PriorityConfiguration(JsonView jsonValue)
-  : PriorityConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ PriorityConfiguration& PriorityConfiguration::operator =(JsonView jsonValue)
     }
     m_priorityOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationOrder"))
   {
     Aws::Utils::Array<JsonView> locationOrderJsonList = jsonValue.GetArray("LocationOrder");
@@ -51,7 +43,6 @@ PriorityConfiguration& PriorityConfiguration::operator =(JsonView jsonValue)
     }
     m_locationOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

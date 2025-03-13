@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SupportedOperation::SupportedOperation() : 
-    m_operationNameHasBeenSet(false)
-{
-}
-
 SupportedOperation::SupportedOperation(const XmlNode& xmlNode)
-  : SupportedOperation()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ SupportedOperation& SupportedOperation::operator =(const XmlNode& xmlNode)
     {
       m_operationName = Aws::Utils::Xml::DecodeEscapedXmlText(operationNameNode.GetText());
       m_operationNameHasBeenSet = true;
+       m_operationNameHasBeenSet = true;
     }
   }
 

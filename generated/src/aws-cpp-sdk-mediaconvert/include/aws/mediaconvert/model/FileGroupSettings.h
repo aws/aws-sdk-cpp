@@ -34,7 +34,7 @@ namespace Model
   class FileGroupSettings
   {
   public:
-    AWS_MEDIACONVERT_API FileGroupSettings();
+    AWS_MEDIACONVERT_API FileGroupSettings() = default;
     AWS_MEDIACONVERT_API FileGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API FileGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * in the URI, the service will use the filename of the input file. If your job has
      * multiple inputs, the service uses the filename of the first input file.
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline FileGroupSettings& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline FileGroupSettings& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline FileGroupSettings& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    FileGroupSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * Settings associated with the destination. Will vary based on the type of
      * destination
      */
-    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+    inline const DestinationSettings& GetDestinationSettings() const { return m_destinationSettings; }
     inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
-    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
-    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
-    inline FileGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
-    inline FileGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+    template<typename DestinationSettingsT = DestinationSettings>
+    void SetDestinationSettings(DestinationSettingsT&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::forward<DestinationSettingsT>(value); }
+    template<typename DestinationSettingsT = DestinationSettings>
+    FileGroupSettings& WithDestinationSettings(DestinationSettingsT&& value) { SetDestinationSettings(std::forward<DestinationSettingsT>(value)); return *this;}
     ///@}
   private:
 

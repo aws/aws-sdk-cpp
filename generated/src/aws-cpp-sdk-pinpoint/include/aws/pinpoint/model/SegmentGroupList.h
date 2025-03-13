@@ -34,7 +34,7 @@ namespace Model
   class SegmentGroupList
   {
   public:
-    AWS_PINPOINT_API SegmentGroupList();
+    AWS_PINPOINT_API SegmentGroupList() = default;
     AWS_PINPOINT_API SegmentGroupList(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SegmentGroupList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>An array that defines the set of segment criteria to evaluate when handling
      * segment groups for the segment.</p>
      */
-    inline const Aws::Vector<SegmentGroup>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<SegmentGroup>& GetGroups() const { return m_groups; }
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-    inline void SetGroups(const Aws::Vector<SegmentGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-    inline void SetGroups(Aws::Vector<SegmentGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-    inline SegmentGroupList& WithGroups(const Aws::Vector<SegmentGroup>& value) { SetGroups(value); return *this;}
-    inline SegmentGroupList& WithGroups(Aws::Vector<SegmentGroup>&& value) { SetGroups(std::move(value)); return *this;}
-    inline SegmentGroupList& AddGroups(const SegmentGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-    inline SegmentGroupList& AddGroups(SegmentGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    template<typename GroupsT = Aws::Vector<SegmentGroup>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<SegmentGroup>>
+    SegmentGroupList& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = SegmentGroup>
+    SegmentGroupList& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,19 +61,17 @@ namespace Model
      * if the segment includes three segment groups, whether the resulting segment
      * includes endpoints that match all, any, or none of the segment groups.</p>
      */
-    inline const Include& GetInclude() const{ return m_include; }
+    inline Include GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Include& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Include&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline SegmentGroupList& WithInclude(const Include& value) { SetInclude(value); return *this;}
-    inline SegmentGroupList& WithInclude(Include&& value) { SetInclude(std::move(value)); return *this;}
+    inline void SetInclude(Include value) { m_includeHasBeenSet = true; m_include = value; }
+    inline SegmentGroupList& WithInclude(Include value) { SetInclude(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<SegmentGroup> m_groups;
     bool m_groupsHasBeenSet = false;
 
-    Include m_include;
+    Include m_include{Include::NOT_SET};
     bool m_includeHasBeenSet = false;
   };
 

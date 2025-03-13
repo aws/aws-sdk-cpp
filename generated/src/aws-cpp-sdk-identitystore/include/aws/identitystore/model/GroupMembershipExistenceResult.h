@@ -33,7 +33,7 @@ namespace Model
   class GroupMembershipExistenceResult
   {
   public:
-    AWS_IDENTITYSTORE_API GroupMembershipExistenceResult();
+    AWS_IDENTITYSTORE_API GroupMembershipExistenceResult() = default;
     AWS_IDENTITYSTORE_API GroupMembershipExistenceResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API GroupMembershipExistenceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The identifier for a group in the identity store.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline GroupMembershipExistenceResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline GroupMembershipExistenceResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline GroupMembershipExistenceResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    GroupMembershipExistenceResult& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,19 @@ namespace Model
      * <code>UserID</code> field to the specific identifier for a user indicates that
      * the user is a member of the group.</p>
      */
-    inline const MemberId& GetMemberId() const{ return m_memberId; }
+    inline const MemberId& GetMemberId() const { return m_memberId; }
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
-    inline void SetMemberId(const MemberId& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
-    inline void SetMemberId(MemberId&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
-    inline GroupMembershipExistenceResult& WithMemberId(const MemberId& value) { SetMemberId(value); return *this;}
-    inline GroupMembershipExistenceResult& WithMemberId(MemberId&& value) { SetMemberId(std::move(value)); return *this;}
+    template<typename MemberIdT = MemberId>
+    void SetMemberId(MemberIdT&& value) { m_memberIdHasBeenSet = true; m_memberId = std::forward<MemberIdT>(value); }
+    template<typename MemberIdT = MemberId>
+    GroupMembershipExistenceResult& WithMemberId(MemberIdT&& value) { SetMemberId(std::forward<MemberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether a membership relation exists or not.</p>
      */
-    inline bool GetMembershipExists() const{ return m_membershipExists; }
+    inline bool GetMembershipExists() const { return m_membershipExists; }
     inline bool MembershipExistsHasBeenSet() const { return m_membershipExistsHasBeenSet; }
     inline void SetMembershipExists(bool value) { m_membershipExistsHasBeenSet = true; m_membershipExists = value; }
     inline GroupMembershipExistenceResult& WithMembershipExists(bool value) { SetMembershipExists(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
     MemberId m_memberId;
     bool m_memberIdHasBeenSet = false;
 
-    bool m_membershipExists;
+    bool m_membershipExists{false};
     bool m_membershipExistsHasBeenSet = false;
   };
 

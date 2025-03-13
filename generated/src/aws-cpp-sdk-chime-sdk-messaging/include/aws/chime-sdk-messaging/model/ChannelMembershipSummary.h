@@ -32,7 +32,7 @@ namespace Model
   class ChannelMembershipSummary
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ChannelMembershipSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelMembershipSummary() = default;
     AWS_CHIMESDKMESSAGING_API ChannelMembershipSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API ChannelMembershipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A member's summary data.</p>
      */
-    inline const Identity& GetMember() const{ return m_member; }
+    inline const Identity& GetMember() const { return m_member; }
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-    inline void SetMember(const Identity& value) { m_memberHasBeenSet = true; m_member = value; }
-    inline void SetMember(Identity&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-    inline ChannelMembershipSummary& WithMember(const Identity& value) { SetMember(value); return *this;}
-    inline ChannelMembershipSummary& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
+    template<typename MemberT = Identity>
+    void SetMember(MemberT&& value) { m_memberHasBeenSet = true; m_member = std::forward<MemberT>(value); }
+    template<typename MemberT = Identity>
+    ChannelMembershipSummary& WithMember(MemberT&& value) { SetMember(std::forward<MemberT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-RecommendationDisruptionCompliance::RecommendationDisruptionCompliance() : 
-    m_expectedComplianceStatus(ComplianceStatus::NOT_SET),
-    m_expectedComplianceStatusHasBeenSet(false),
-    m_expectedRpoDescriptionHasBeenSet(false),
-    m_expectedRpoInSecs(0),
-    m_expectedRpoInSecsHasBeenSet(false),
-    m_expectedRtoDescriptionHasBeenSet(false),
-    m_expectedRtoInSecs(0),
-    m_expectedRtoInSecsHasBeenSet(false)
-{
-}
-
 RecommendationDisruptionCompliance::RecommendationDisruptionCompliance(JsonView jsonValue)
-  : RecommendationDisruptionCompliance()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ RecommendationDisruptionCompliance& RecommendationDisruptionCompliance::operator
   if(jsonValue.ValueExists("expectedComplianceStatus"))
   {
     m_expectedComplianceStatus = ComplianceStatusMapper::GetComplianceStatusForName(jsonValue.GetString("expectedComplianceStatus"));
-
     m_expectedComplianceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expectedRpoDescription"))
   {
     m_expectedRpoDescription = jsonValue.GetString("expectedRpoDescription");
-
     m_expectedRpoDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expectedRpoInSecs"))
   {
     m_expectedRpoInSecs = jsonValue.GetInteger("expectedRpoInSecs");
-
     m_expectedRpoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expectedRtoDescription"))
   {
     m_expectedRtoDescription = jsonValue.GetString("expectedRtoDescription");
-
     m_expectedRtoDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expectedRtoInSecs"))
   {
     m_expectedRtoInSecs = jsonValue.GetInteger("expectedRtoInSecs");
-
     m_expectedRtoInSecsHasBeenSet = true;
   }
-
   return *this;
 }
 

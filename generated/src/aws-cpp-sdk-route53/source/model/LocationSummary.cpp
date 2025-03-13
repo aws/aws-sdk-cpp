@@ -20,13 +20,7 @@ namespace Route53
 namespace Model
 {
 
-LocationSummary::LocationSummary() : 
-    m_locationNameHasBeenSet(false)
-{
-}
-
 LocationSummary::LocationSummary(const XmlNode& xmlNode)
-  : LocationSummary()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ LocationSummary& LocationSummary::operator =(const XmlNode& xmlNode)
     {
       m_locationName = Aws::Utils::Xml::DecodeEscapedXmlText(locationNameNode.GetText());
       m_locationNameHasBeenSet = true;
+       m_locationNameHasBeenSet = true;
     }
   }
 

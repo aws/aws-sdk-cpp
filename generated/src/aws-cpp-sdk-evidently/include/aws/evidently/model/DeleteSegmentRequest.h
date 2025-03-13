@@ -21,7 +21,7 @@ namespace Model
   class DeleteSegmentRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API DeleteSegmentRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API DeleteSegmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>Specifies the segment to delete.</p>
      */
-    inline const Aws::String& GetSegment() const{ return m_segment; }
+    inline const Aws::String& GetSegment() const { return m_segment; }
     inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
-    inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
-    inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
-    inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
-    inline DeleteSegmentRequest& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
-    inline DeleteSegmentRequest& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
-    inline DeleteSegmentRequest& WithSegment(const char* value) { SetSegment(value); return *this;}
+    template<typename SegmentT = Aws::String>
+    void SetSegment(SegmentT&& value) { m_segmentHasBeenSet = true; m_segment = std::forward<SegmentT>(value); }
+    template<typename SegmentT = Aws::String>
+    DeleteSegmentRequest& WithSegment(SegmentT&& value) { SetSegment(std::forward<SegmentT>(value)); return *this;}
     ///@}
   private:
 

@@ -26,7 +26,7 @@ namespace Model
   class ListPromptRoutersRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API ListPromptRoutersRequest();
+    AWS_BEDROCK_API ListPromptRoutersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum number of prompt routers to return in one page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPromptRoutersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -54,36 +54,32 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPromptRoutersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPromptRoutersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPromptRoutersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPromptRoutersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the prompt routers, such as whether it's default or custom.</p>
      */
-    inline const PromptRouterType& GetType() const{ return m_type; }
+    inline PromptRouterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PromptRouterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PromptRouterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListPromptRoutersRequest& WithType(const PromptRouterType& value) { SetType(value); return *this;}
-    inline ListPromptRoutersRequest& WithType(PromptRouterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PromptRouterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListPromptRoutersRequest& WithType(PromptRouterType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    PromptRouterType m_type;
+    PromptRouterType m_type{PromptRouterType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

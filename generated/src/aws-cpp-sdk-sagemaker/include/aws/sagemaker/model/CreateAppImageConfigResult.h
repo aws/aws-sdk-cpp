@@ -27,7 +27,7 @@ namespace Model
   class CreateAppImageConfigResult
   {
   public:
-    AWS_SAGEMAKER_API CreateAppImageConfigResult();
+    AWS_SAGEMAKER_API CreateAppImageConfigResult() = default;
     AWS_SAGEMAKER_API CreateAppImageConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateAppImageConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the AppImageConfig.</p>
      */
-    inline const Aws::String& GetAppImageConfigArn() const{ return m_appImageConfigArn; }
-    inline void SetAppImageConfigArn(const Aws::String& value) { m_appImageConfigArn = value; }
-    inline void SetAppImageConfigArn(Aws::String&& value) { m_appImageConfigArn = std::move(value); }
-    inline void SetAppImageConfigArn(const char* value) { m_appImageConfigArn.assign(value); }
-    inline CreateAppImageConfigResult& WithAppImageConfigArn(const Aws::String& value) { SetAppImageConfigArn(value); return *this;}
-    inline CreateAppImageConfigResult& WithAppImageConfigArn(Aws::String&& value) { SetAppImageConfigArn(std::move(value)); return *this;}
-    inline CreateAppImageConfigResult& WithAppImageConfigArn(const char* value) { SetAppImageConfigArn(value); return *this;}
+    inline const Aws::String& GetAppImageConfigArn() const { return m_appImageConfigArn; }
+    template<typename AppImageConfigArnT = Aws::String>
+    void SetAppImageConfigArn(AppImageConfigArnT&& value) { m_appImageConfigArnHasBeenSet = true; m_appImageConfigArn = std::forward<AppImageConfigArnT>(value); }
+    template<typename AppImageConfigArnT = Aws::String>
+    CreateAppImageConfigResult& WithAppImageConfigArn(AppImageConfigArnT&& value) { SetAppImageConfigArn(std::forward<AppImageConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAppImageConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAppImageConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAppImageConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAppImageConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appImageConfigArn;
+    bool m_appImageConfigArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

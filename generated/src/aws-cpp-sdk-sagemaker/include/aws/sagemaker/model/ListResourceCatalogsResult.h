@@ -29,7 +29,7 @@ namespace Model
   class ListResourceCatalogsResult
   {
   public:
-    AWS_SAGEMAKER_API ListResourceCatalogsResult();
+    AWS_SAGEMAKER_API ListResourceCatalogsResult() = default;
     AWS_SAGEMAKER_API ListResourceCatalogsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListResourceCatalogsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> A list of the requested <code>ResourceCatalog</code>s. </p>
      */
-    inline const Aws::Vector<ResourceCatalog>& GetResourceCatalogs() const{ return m_resourceCatalogs; }
-    inline void SetResourceCatalogs(const Aws::Vector<ResourceCatalog>& value) { m_resourceCatalogs = value; }
-    inline void SetResourceCatalogs(Aws::Vector<ResourceCatalog>&& value) { m_resourceCatalogs = std::move(value); }
-    inline ListResourceCatalogsResult& WithResourceCatalogs(const Aws::Vector<ResourceCatalog>& value) { SetResourceCatalogs(value); return *this;}
-    inline ListResourceCatalogsResult& WithResourceCatalogs(Aws::Vector<ResourceCatalog>&& value) { SetResourceCatalogs(std::move(value)); return *this;}
-    inline ListResourceCatalogsResult& AddResourceCatalogs(const ResourceCatalog& value) { m_resourceCatalogs.push_back(value); return *this; }
-    inline ListResourceCatalogsResult& AddResourceCatalogs(ResourceCatalog&& value) { m_resourceCatalogs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceCatalog>& GetResourceCatalogs() const { return m_resourceCatalogs; }
+    template<typename ResourceCatalogsT = Aws::Vector<ResourceCatalog>>
+    void SetResourceCatalogs(ResourceCatalogsT&& value) { m_resourceCatalogsHasBeenSet = true; m_resourceCatalogs = std::forward<ResourceCatalogsT>(value); }
+    template<typename ResourceCatalogsT = Aws::Vector<ResourceCatalog>>
+    ListResourceCatalogsResult& WithResourceCatalogs(ResourceCatalogsT&& value) { SetResourceCatalogs(std::forward<ResourceCatalogsT>(value)); return *this;}
+    template<typename ResourceCatalogsT = ResourceCatalog>
+    ListResourceCatalogsResult& AddResourceCatalogs(ResourceCatalogsT&& value) { m_resourceCatalogsHasBeenSet = true; m_resourceCatalogs.emplace_back(std::forward<ResourceCatalogsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p> A token to resume pagination of <code>ListResourceCatalogs</code> results.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourceCatalogsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceCatalogsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceCatalogsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceCatalogsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourceCatalogsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourceCatalogsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourceCatalogsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourceCatalogsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceCatalog> m_resourceCatalogs;
+    bool m_resourceCatalogsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

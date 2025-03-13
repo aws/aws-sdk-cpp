@@ -37,7 +37,7 @@ namespace Model
   class DateTimeParameterDeclaration
   {
   public:
-    AWS_QUICKSIGHT_API DateTimeParameterDeclaration();
+    AWS_QUICKSIGHT_API DateTimeParameterDeclaration() = default;
     AWS_QUICKSIGHT_API DateTimeParameterDeclaration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DateTimeParameterDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the parameter that is being declared.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DateTimeParameterDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DateTimeParameterDeclaration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DateTimeParameterDeclaration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DateTimeParameterDeclaration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * <p>The default values of a parameter. If the parameter is a single-value
      * parameter, a maximum of one default value can be provided.</p>
      */
-    inline const DateTimeDefaultValues& GetDefaultValues() const{ return m_defaultValues; }
+    inline const DateTimeDefaultValues& GetDefaultValues() const { return m_defaultValues; }
     inline bool DefaultValuesHasBeenSet() const { return m_defaultValuesHasBeenSet; }
-    inline void SetDefaultValues(const DateTimeDefaultValues& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = value; }
-    inline void SetDefaultValues(DateTimeDefaultValues&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::move(value); }
-    inline DateTimeParameterDeclaration& WithDefaultValues(const DateTimeDefaultValues& value) { SetDefaultValues(value); return *this;}
-    inline DateTimeParameterDeclaration& WithDefaultValues(DateTimeDefaultValues&& value) { SetDefaultValues(std::move(value)); return *this;}
+    template<typename DefaultValuesT = DateTimeDefaultValues>
+    void SetDefaultValues(DefaultValuesT&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::forward<DefaultValuesT>(value); }
+    template<typename DefaultValuesT = DateTimeDefaultValues>
+    DateTimeParameterDeclaration& WithDefaultValues(DefaultValuesT&& value) { SetDefaultValues(std::forward<DefaultValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * <p>The level of time precision that is used to aggregate <code>DateTime</code>
      * values.</p>
      */
-    inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
+    inline TimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-    inline DateTimeParameterDeclaration& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-    inline DateTimeParameterDeclaration& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    inline void SetTimeGranularity(TimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
+    inline DateTimeParameterDeclaration& WithTimeGranularity(TimeGranularity value) { SetTimeGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -88,24 +84,24 @@ namespace Model
      * <p>The configuration that defines the default value of a <code>DateTime</code>
      * parameter when a value has not been set.</p>
      */
-    inline const DateTimeValueWhenUnsetConfiguration& GetValueWhenUnset() const{ return m_valueWhenUnset; }
+    inline const DateTimeValueWhenUnsetConfiguration& GetValueWhenUnset() const { return m_valueWhenUnset; }
     inline bool ValueWhenUnsetHasBeenSet() const { return m_valueWhenUnsetHasBeenSet; }
-    inline void SetValueWhenUnset(const DateTimeValueWhenUnsetConfiguration& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = value; }
-    inline void SetValueWhenUnset(DateTimeValueWhenUnsetConfiguration&& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = std::move(value); }
-    inline DateTimeParameterDeclaration& WithValueWhenUnset(const DateTimeValueWhenUnsetConfiguration& value) { SetValueWhenUnset(value); return *this;}
-    inline DateTimeParameterDeclaration& WithValueWhenUnset(DateTimeValueWhenUnsetConfiguration&& value) { SetValueWhenUnset(std::move(value)); return *this;}
+    template<typename ValueWhenUnsetT = DateTimeValueWhenUnsetConfiguration>
+    void SetValueWhenUnset(ValueWhenUnsetT&& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = std::forward<ValueWhenUnsetT>(value); }
+    template<typename ValueWhenUnsetT = DateTimeValueWhenUnsetConfiguration>
+    DateTimeParameterDeclaration& WithValueWhenUnset(ValueWhenUnsetT&& value) { SetValueWhenUnset(std::forward<ValueWhenUnsetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const{ return m_mappedDataSetParameters; }
+    inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const { return m_mappedDataSetParameters; }
     inline bool MappedDataSetParametersHasBeenSet() const { return m_mappedDataSetParametersHasBeenSet; }
-    inline void SetMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = value; }
-    inline void SetMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::move(value); }
-    inline DateTimeParameterDeclaration& WithMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { SetMappedDataSetParameters(value); return *this;}
-    inline DateTimeParameterDeclaration& WithMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { SetMappedDataSetParameters(std::move(value)); return *this;}
-    inline DateTimeParameterDeclaration& AddMappedDataSetParameters(const MappedDataSetParameter& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(value); return *this; }
-    inline DateTimeParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParameter&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(std::move(value)); return *this; }
+    template<typename MappedDataSetParametersT = Aws::Vector<MappedDataSetParameter>>
+    void SetMappedDataSetParameters(MappedDataSetParametersT&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::forward<MappedDataSetParametersT>(value); }
+    template<typename MappedDataSetParametersT = Aws::Vector<MappedDataSetParameter>>
+    DateTimeParameterDeclaration& WithMappedDataSetParameters(MappedDataSetParametersT&& value) { SetMappedDataSetParameters(std::forward<MappedDataSetParametersT>(value)); return *this;}
+    template<typename MappedDataSetParametersT = MappedDataSetParameter>
+    DateTimeParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParametersT&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.emplace_back(std::forward<MappedDataSetParametersT>(value)); return *this; }
     ///@}
   private:
 
@@ -115,7 +111,7 @@ namespace Model
     DateTimeDefaultValues m_defaultValues;
     bool m_defaultValuesHasBeenSet = false;
 
-    TimeGranularity m_timeGranularity;
+    TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
     bool m_timeGranularityHasBeenSet = false;
 
     DateTimeValueWhenUnsetConfiguration m_valueWhenUnset;

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIConditionalFormattingOption::KPIConditionalFormattingOption() : 
-    m_primaryValueHasBeenSet(false),
-    m_progressBarHasBeenSet(false),
-    m_actualValueHasBeenSet(false),
-    m_comparisonValueHasBeenSet(false)
-{
-}
-
 KPIConditionalFormattingOption::KPIConditionalFormattingOption(JsonView jsonValue)
-  : KPIConditionalFormattingOption()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ KPIConditionalFormattingOption& KPIConditionalFormattingOption::operator =(JsonV
   if(jsonValue.ValueExists("PrimaryValue"))
   {
     m_primaryValue = jsonValue.GetObject("PrimaryValue");
-
     m_primaryValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressBar"))
   {
     m_progressBar = jsonValue.GetObject("ProgressBar");
-
     m_progressBarHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualValue"))
   {
     m_actualValue = jsonValue.GetObject("ActualValue");
-
     m_actualValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonValue"))
   {
     m_comparisonValue = jsonValue.GetObject("ComparisonValue");
-
     m_comparisonValueHasBeenSet = true;
   }
-
   return *this;
 }
 

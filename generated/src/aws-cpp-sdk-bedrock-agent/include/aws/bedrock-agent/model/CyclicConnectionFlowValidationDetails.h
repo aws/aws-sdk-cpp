@@ -32,7 +32,7 @@ namespace Model
   class CyclicConnectionFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API CyclicConnectionFlowValidationDetails();
+    AWS_BEDROCKAGENT_API CyclicConnectionFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API CyclicConnectionFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CyclicConnectionFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the connection that causes the cycle in the flow.</p>
      */
-    inline const Aws::String& GetConnection() const{ return m_connection; }
+    inline const Aws::String& GetConnection() const { return m_connection; }
     inline bool ConnectionHasBeenSet() const { return m_connectionHasBeenSet; }
-    inline void SetConnection(const Aws::String& value) { m_connectionHasBeenSet = true; m_connection = value; }
-    inline void SetConnection(Aws::String&& value) { m_connectionHasBeenSet = true; m_connection = std::move(value); }
-    inline void SetConnection(const char* value) { m_connectionHasBeenSet = true; m_connection.assign(value); }
-    inline CyclicConnectionFlowValidationDetails& WithConnection(const Aws::String& value) { SetConnection(value); return *this;}
-    inline CyclicConnectionFlowValidationDetails& WithConnection(Aws::String&& value) { SetConnection(std::move(value)); return *this;}
-    inline CyclicConnectionFlowValidationDetails& WithConnection(const char* value) { SetConnection(value); return *this;}
+    template<typename ConnectionT = Aws::String>
+    void SetConnection(ConnectionT&& value) { m_connectionHasBeenSet = true; m_connection = std::forward<ConnectionT>(value); }
+    template<typename ConnectionT = Aws::String>
+    CyclicConnectionFlowValidationDetails& WithConnection(ConnectionT&& value) { SetConnection(std::forward<ConnectionT>(value)); return *this;}
     ///@}
   private:
 

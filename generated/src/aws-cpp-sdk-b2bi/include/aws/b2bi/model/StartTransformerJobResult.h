@@ -27,7 +27,7 @@ namespace Model
   class StartTransformerJobResult
   {
   public:
-    AWS_B2BI_API StartTransformerJobResult();
+    AWS_B2BI_API StartTransformerJobResult() = default;
     AWS_B2BI_API StartTransformerJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_B2BI_API StartTransformerJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Returns the unique, system-generated identifier for a transformer run.</p>
      */
-    inline const Aws::String& GetTransformerJobId() const{ return m_transformerJobId; }
-    inline void SetTransformerJobId(const Aws::String& value) { m_transformerJobId = value; }
-    inline void SetTransformerJobId(Aws::String&& value) { m_transformerJobId = std::move(value); }
-    inline void SetTransformerJobId(const char* value) { m_transformerJobId.assign(value); }
-    inline StartTransformerJobResult& WithTransformerJobId(const Aws::String& value) { SetTransformerJobId(value); return *this;}
-    inline StartTransformerJobResult& WithTransformerJobId(Aws::String&& value) { SetTransformerJobId(std::move(value)); return *this;}
-    inline StartTransformerJobResult& WithTransformerJobId(const char* value) { SetTransformerJobId(value); return *this;}
+    inline const Aws::String& GetTransformerJobId() const { return m_transformerJobId; }
+    template<typename TransformerJobIdT = Aws::String>
+    void SetTransformerJobId(TransformerJobIdT&& value) { m_transformerJobIdHasBeenSet = true; m_transformerJobId = std::forward<TransformerJobIdT>(value); }
+    template<typename TransformerJobIdT = Aws::String>
+    StartTransformerJobResult& WithTransformerJobId(TransformerJobIdT&& value) { SetTransformerJobId(std::forward<TransformerJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartTransformerJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartTransformerJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartTransformerJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartTransformerJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transformerJobId;
+    bool m_transformerJobIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

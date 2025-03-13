@@ -25,7 +25,7 @@ namespace Model
   class DeleteKeyRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API DeleteKeyRequest();
+    AWS_LOCATIONSERVICE_API DeleteKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the API key to delete.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline DeleteKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline DeleteKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline DeleteKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    DeleteKeyRequest& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * irreversible. Only use ForceDelete if you are certain the key is no longer in
      * use.</p> 
      */
-    inline bool GetForceDelete() const{ return m_forceDelete; }
+    inline bool GetForceDelete() const { return m_forceDelete; }
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
     inline DeleteKeyRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;
 
-    bool m_forceDelete;
+    bool m_forceDelete{false};
     bool m_forceDeleteHasBeenSet = false;
   };
 

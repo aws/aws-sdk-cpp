@@ -18,18 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-Type::Type() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_format(TypeDefinitionFormat::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 Type::Type(JsonView jsonValue)
-  : Type()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Type& Type::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetString("definition");
-
     m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = TypeDefinitionFormatMapper::GetTypeDefinitionFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProfileRequest::DescribeProfileRequest() : 
-    m_profileIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProfileRequest::SerializePayload() const
 {
   JsonValue payload;

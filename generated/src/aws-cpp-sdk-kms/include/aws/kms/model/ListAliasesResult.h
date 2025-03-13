@@ -29,7 +29,7 @@ namespace Model
   class ListAliasesResult
   {
   public:
-    AWS_KMS_API ListAliasesResult();
+    AWS_KMS_API ListAliasesResult() = default;
     AWS_KMS_API ListAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API ListAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of aliases.</p>
      */
-    inline const Aws::Vector<AliasListEntry>& GetAliases() const{ return m_aliases; }
-    inline void SetAliases(const Aws::Vector<AliasListEntry>& value) { m_aliases = value; }
-    inline void SetAliases(Aws::Vector<AliasListEntry>&& value) { m_aliases = std::move(value); }
-    inline ListAliasesResult& WithAliases(const Aws::Vector<AliasListEntry>& value) { SetAliases(value); return *this;}
-    inline ListAliasesResult& WithAliases(Aws::Vector<AliasListEntry>&& value) { SetAliases(std::move(value)); return *this;}
-    inline ListAliasesResult& AddAliases(const AliasListEntry& value) { m_aliases.push_back(value); return *this; }
-    inline ListAliasesResult& AddAliases(AliasListEntry&& value) { m_aliases.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AliasListEntry>& GetAliases() const { return m_aliases; }
+    template<typename AliasesT = Aws::Vector<AliasListEntry>>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aws::Vector<AliasListEntry>>
+    ListAliasesResult& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
+    template<typename AliasesT = AliasListEntry>
+    ListAliasesResult& AddAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases.emplace_back(std::forward<AliasesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,13 +52,11 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListAliasesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListAliasesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListAliasesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListAliasesResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,30 +66,32 @@ namespace Model
      * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline bool GetTruncated() const{ return m_truncated; }
-    inline void SetTruncated(bool value) { m_truncated = value; }
+    inline bool GetTruncated() const { return m_truncated; }
+    inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
     inline ListAliasesResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AliasListEntry> m_aliases;
+    bool m_aliasesHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
-    bool m_truncated;
+    bool m_truncated{false};
+    bool m_truncatedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

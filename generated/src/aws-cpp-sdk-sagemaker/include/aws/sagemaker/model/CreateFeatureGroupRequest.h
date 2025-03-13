@@ -27,7 +27,7 @@ namespace Model
   class CreateFeatureGroupRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateFeatureGroupRequest();
+    AWS_SAGEMAKER_API CreateFeatureGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <p>Can only include alphanumeric characters, underscores, and hyphens. Spaces
      * are not allowed.</p> </li> </ul>
      */
-    inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
+    inline const Aws::String& GetFeatureGroupName() const { return m_featureGroupName; }
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-    inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-    inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-    inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-    inline CreateFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-    inline CreateFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    template<typename FeatureGroupNameT = Aws::String>
+    void SetFeatureGroupName(FeatureGroupNameT&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::forward<FeatureGroupNameT>(value); }
+    template<typename FeatureGroupNameT = Aws::String>
+    CreateFeatureGroupRequest& WithFeatureGroupName(FeatureGroupNameT&& value) { SetFeatureGroupName(std::forward<FeatureGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p>
      * </li> </ul>
      */
-    inline const Aws::String& GetRecordIdentifierFeatureName() const{ return m_recordIdentifierFeatureName; }
+    inline const Aws::String& GetRecordIdentifierFeatureName() const { return m_recordIdentifierFeatureName; }
     inline bool RecordIdentifierFeatureNameHasBeenSet() const { return m_recordIdentifierFeatureNameHasBeenSet; }
-    inline void SetRecordIdentifierFeatureName(const Aws::String& value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName = value; }
-    inline void SetRecordIdentifierFeatureName(Aws::String&& value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName = std::move(value); }
-    inline void SetRecordIdentifierFeatureName(const char* value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName.assign(value); }
-    inline CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(const Aws::String& value) { SetRecordIdentifierFeatureName(value); return *this;}
-    inline CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(Aws::String&& value) { SetRecordIdentifierFeatureName(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(const char* value) { SetRecordIdentifierFeatureName(value); return *this;}
+    template<typename RecordIdentifierFeatureNameT = Aws::String>
+    void SetRecordIdentifierFeatureName(RecordIdentifierFeatureNameT&& value) { m_recordIdentifierFeatureNameHasBeenSet = true; m_recordIdentifierFeatureName = std::forward<RecordIdentifierFeatureNameT>(value); }
+    template<typename RecordIdentifierFeatureNameT = Aws::String>
+    CreateFeatureGroupRequest& WithRecordIdentifierFeatureName(RecordIdentifierFeatureNameT&& value) { SetRecordIdentifierFeatureName(std::forward<RecordIdentifierFeatureNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +96,12 @@ namespace Model
      * second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are
      * constants.</p> </li> </ul>
      */
-    inline const Aws::String& GetEventTimeFeatureName() const{ return m_eventTimeFeatureName; }
+    inline const Aws::String& GetEventTimeFeatureName() const { return m_eventTimeFeatureName; }
     inline bool EventTimeFeatureNameHasBeenSet() const { return m_eventTimeFeatureNameHasBeenSet; }
-    inline void SetEventTimeFeatureName(const Aws::String& value) { m_eventTimeFeatureNameHasBeenSet = true; m_eventTimeFeatureName = value; }
-    inline void SetEventTimeFeatureName(Aws::String&& value) { m_eventTimeFeatureNameHasBeenSet = true; m_eventTimeFeatureName = std::move(value); }
-    inline void SetEventTimeFeatureName(const char* value) { m_eventTimeFeatureNameHasBeenSet = true; m_eventTimeFeatureName.assign(value); }
-    inline CreateFeatureGroupRequest& WithEventTimeFeatureName(const Aws::String& value) { SetEventTimeFeatureName(value); return *this;}
-    inline CreateFeatureGroupRequest& WithEventTimeFeatureName(Aws::String&& value) { SetEventTimeFeatureName(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& WithEventTimeFeatureName(const char* value) { SetEventTimeFeatureName(value); return *this;}
+    template<typename EventTimeFeatureNameT = Aws::String>
+    void SetEventTimeFeatureName(EventTimeFeatureNameT&& value) { m_eventTimeFeatureNameHasBeenSet = true; m_eventTimeFeatureName = std::forward<EventTimeFeatureNameT>(value); }
+    template<typename EventTimeFeatureNameT = Aws::String>
+    CreateFeatureGroupRequest& WithEventTimeFeatureName(EventTimeFeatureNameT&& value) { SetEventTimeFeatureName(std::forward<EventTimeFeatureNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +114,14 @@ namespace Model
      * <code>api_invocation_time</code> </p> <p>You can create up to 2,500
      * <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::Vector<FeatureDefinition>& GetFeatureDefinitions() const{ return m_featureDefinitions; }
+    inline const Aws::Vector<FeatureDefinition>& GetFeatureDefinitions() const { return m_featureDefinitions; }
     inline bool FeatureDefinitionsHasBeenSet() const { return m_featureDefinitionsHasBeenSet; }
-    inline void SetFeatureDefinitions(const Aws::Vector<FeatureDefinition>& value) { m_featureDefinitionsHasBeenSet = true; m_featureDefinitions = value; }
-    inline void SetFeatureDefinitions(Aws::Vector<FeatureDefinition>&& value) { m_featureDefinitionsHasBeenSet = true; m_featureDefinitions = std::move(value); }
-    inline CreateFeatureGroupRequest& WithFeatureDefinitions(const Aws::Vector<FeatureDefinition>& value) { SetFeatureDefinitions(value); return *this;}
-    inline CreateFeatureGroupRequest& WithFeatureDefinitions(Aws::Vector<FeatureDefinition>&& value) { SetFeatureDefinitions(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& AddFeatureDefinitions(const FeatureDefinition& value) { m_featureDefinitionsHasBeenSet = true; m_featureDefinitions.push_back(value); return *this; }
-    inline CreateFeatureGroupRequest& AddFeatureDefinitions(FeatureDefinition&& value) { m_featureDefinitionsHasBeenSet = true; m_featureDefinitions.push_back(std::move(value)); return *this; }
+    template<typename FeatureDefinitionsT = Aws::Vector<FeatureDefinition>>
+    void SetFeatureDefinitions(FeatureDefinitionsT&& value) { m_featureDefinitionsHasBeenSet = true; m_featureDefinitions = std::forward<FeatureDefinitionsT>(value); }
+    template<typename FeatureDefinitionsT = Aws::Vector<FeatureDefinition>>
+    CreateFeatureGroupRequest& WithFeatureDefinitions(FeatureDefinitionsT&& value) { SetFeatureDefinitions(std::forward<FeatureDefinitionsT>(value)); return *this;}
+    template<typename FeatureDefinitionsT = FeatureDefinition>
+    CreateFeatureGroupRequest& AddFeatureDefinitions(FeatureDefinitionsT&& value) { m_featureDefinitionsHasBeenSet = true; m_featureDefinitions.emplace_back(std::forward<FeatureDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,12 +132,12 @@ namespace Model
      * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
      * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
-    inline const OnlineStoreConfig& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
+    inline const OnlineStoreConfig& GetOnlineStoreConfig() const { return m_onlineStoreConfig; }
     inline bool OnlineStoreConfigHasBeenSet() const { return m_onlineStoreConfigHasBeenSet; }
-    inline void SetOnlineStoreConfig(const OnlineStoreConfig& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = value; }
-    inline void SetOnlineStoreConfig(OnlineStoreConfig&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::move(value); }
-    inline CreateFeatureGroupRequest& WithOnlineStoreConfig(const OnlineStoreConfig& value) { SetOnlineStoreConfig(value); return *this;}
-    inline CreateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfig&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
+    template<typename OnlineStoreConfigT = OnlineStoreConfig>
+    void SetOnlineStoreConfig(OnlineStoreConfigT&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::forward<OnlineStoreConfigT>(value); }
+    template<typename OnlineStoreConfigT = OnlineStoreConfig>
+    CreateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfigT&& value) { SetOnlineStoreConfig(std::forward<OnlineStoreConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,22 +157,22 @@ namespace Model
      * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
-    inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
+    inline const OfflineStoreConfig& GetOfflineStoreConfig() const { return m_offlineStoreConfig; }
     inline bool OfflineStoreConfigHasBeenSet() const { return m_offlineStoreConfigHasBeenSet; }
-    inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = value; }
-    inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = std::move(value); }
-    inline CreateFeatureGroupRequest& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
-    inline CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
+    template<typename OfflineStoreConfigT = OfflineStoreConfig>
+    void SetOfflineStoreConfig(OfflineStoreConfigT&& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = std::forward<OfflineStoreConfigT>(value); }
+    template<typename OfflineStoreConfigT = OfflineStoreConfig>
+    CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfigT&& value) { SetOfflineStoreConfig(std::forward<OfflineStoreConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ThroughputConfig& GetThroughputConfig() const{ return m_throughputConfig; }
+    inline const ThroughputConfig& GetThroughputConfig() const { return m_throughputConfig; }
     inline bool ThroughputConfigHasBeenSet() const { return m_throughputConfigHasBeenSet; }
-    inline void SetThroughputConfig(const ThroughputConfig& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = value; }
-    inline void SetThroughputConfig(ThroughputConfig&& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = std::move(value); }
-    inline CreateFeatureGroupRequest& WithThroughputConfig(const ThroughputConfig& value) { SetThroughputConfig(value); return *this;}
-    inline CreateFeatureGroupRequest& WithThroughputConfig(ThroughputConfig&& value) { SetThroughputConfig(std::move(value)); return *this;}
+    template<typename ThroughputConfigT = ThroughputConfig>
+    void SetThroughputConfig(ThroughputConfigT&& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = std::forward<ThroughputConfigT>(value); }
+    template<typename ThroughputConfigT = ThroughputConfig>
+    CreateFeatureGroupRequest& WithThroughputConfig(ThroughputConfigT&& value) { SetThroughputConfig(std::forward<ThroughputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,28 +181,24 @@ namespace Model
      * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
      * provided.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateFeatureGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateFeatureGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateFeatureGroupRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A free-form description of a <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFeatureGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFeatureGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFeatureGroupRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,14 +206,14 @@ namespace Model
      * <p>Tags used to identify <code>Features</code> in each
      * <code>FeatureGroup</code>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFeatureGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFeatureGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFeatureGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFeatureGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFeatureGroupRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFeatureGroupRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

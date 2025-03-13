@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult() : 
-    m_volumeSizeInBytes(0)
-{
-}
-
 CreateStorediSCSIVolumeResult::CreateStorediSCSIVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateStorediSCSIVolumeResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ CreateStorediSCSIVolumeResult& CreateStorediSCSIVolumeResult::operator =(const A
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
+    m_volumeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInBytes"))
   {
     m_volumeSizeInBytes = jsonValue.GetInt64("VolumeSizeInBytes");
-
+    m_volumeSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetARN"))
   {
     m_targetARN = jsonValue.GetString("TargetARN");
-
+    m_targetARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

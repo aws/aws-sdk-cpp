@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RefreshConfiguration::RefreshConfiguration() : 
-    m_incrementalRefreshHasBeenSet(false)
-{
-}
-
 RefreshConfiguration::RefreshConfiguration(JsonView jsonValue)
-  : RefreshConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RefreshConfiguration& RefreshConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IncrementalRefresh"))
   {
     m_incrementalRefresh = jsonValue.GetObject("IncrementalRefresh");
-
     m_incrementalRefreshHasBeenSet = true;
   }
-
   return *this;
 }
 

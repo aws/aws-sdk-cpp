@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ResumeClusterRequest::ResumeClusterRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ResumeClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

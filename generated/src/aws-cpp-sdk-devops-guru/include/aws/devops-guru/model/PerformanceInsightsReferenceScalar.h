@@ -31,7 +31,7 @@ namespace Model
   class PerformanceInsightsReferenceScalar
   {
   public:
-    AWS_DEVOPSGURU_API PerformanceInsightsReferenceScalar();
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceScalar() = default;
     AWS_DEVOPSGURU_API PerformanceInsightsReferenceScalar(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API PerformanceInsightsReferenceScalar& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>The reference value.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline PerformanceInsightsReferenceScalar& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

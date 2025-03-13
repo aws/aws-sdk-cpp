@@ -22,7 +22,7 @@ namespace Model
   class SetUnhealthyNodeReplacementRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API SetUnhealthyNodeReplacementRequest();
+    AWS_EMR_API SetUnhealthyNodeReplacementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * unhealthy node replacement. You can get these identifiers by running the
      * <a>RunJobFlow</a> or the <a>DescribeJobFlows</a> operations.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
+    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const { return m_jobFlowIds; }
     inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
-    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
-    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
-    inline SetUnhealthyNodeReplacementRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
-    inline SetUnhealthyNodeReplacementRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
-    inline SetUnhealthyNodeReplacementRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
-    inline SetUnhealthyNodeReplacementRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
-    inline SetUnhealthyNodeReplacementRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    void SetJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::forward<JobFlowIdsT>(value); }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    SetUnhealthyNodeReplacementRequest& WithJobFlowIds(JobFlowIdsT&& value) { SetJobFlowIds(std::forward<JobFlowIdsT>(value)); return *this;}
+    template<typename JobFlowIdsT = Aws::String>
+    SetUnhealthyNodeReplacementRequest& AddJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.emplace_back(std::forward<JobFlowIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,7 +56,7 @@ namespace Model
      * <p>Indicates whether to turn on or turn off graceful unhealthy node
      * replacement.</p>
      */
-    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+    inline bool GetUnhealthyNodeReplacement() const { return m_unhealthyNodeReplacement; }
     inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
     inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
     inline SetUnhealthyNodeReplacementRequest& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
@@ -67,7 +66,7 @@ namespace Model
     Aws::Vector<Aws::String> m_jobFlowIds;
     bool m_jobFlowIdsHasBeenSet = false;
 
-    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacement{false};
     bool m_unhealthyNodeReplacementHasBeenSet = false;
   };
 

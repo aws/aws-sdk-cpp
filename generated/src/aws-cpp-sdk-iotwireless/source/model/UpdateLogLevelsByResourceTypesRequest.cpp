@@ -12,15 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLogLevelsByResourceTypesRequest::UpdateLogLevelsByResourceTypesRequest() : 
-    m_defaultLogLevel(LogLevel::NOT_SET),
-    m_defaultLogLevelHasBeenSet(false),
-    m_fuotaTaskLogOptionsHasBeenSet(false),
-    m_wirelessDeviceLogOptionsHasBeenSet(false),
-    m_wirelessGatewayLogOptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLogLevelsByResourceTypesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-OrganizationStatus::OrganizationStatus() : 
-    m_organizationIdHasBeenSet(false),
-    m_organizationAwsServiceAccessStatusHasBeenSet(false),
-    m_sLRDeploymentStatusHasBeenSet(false),
-    m_accountStatusListHasBeenSet(false)
-{
-}
-
 OrganizationStatus::OrganizationStatus(JsonView jsonValue)
-  : OrganizationStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ OrganizationStatus& OrganizationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OrganizationId"))
   {
     m_organizationId = jsonValue.GetString("OrganizationId");
-
     m_organizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationAwsServiceAccessStatus"))
   {
     m_organizationAwsServiceAccessStatus = jsonValue.GetString("OrganizationAwsServiceAccessStatus");
-
     m_organizationAwsServiceAccessStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SLRDeploymentStatus"))
   {
     m_sLRDeploymentStatus = jsonValue.GetString("SLRDeploymentStatus");
-
     m_sLRDeploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountStatusList"))
   {
     Aws::Utils::Array<JsonView> accountStatusListJsonList = jsonValue.GetArray("AccountStatusList");
@@ -64,7 +49,6 @@ OrganizationStatus& OrganizationStatus::operator =(JsonView jsonValue)
     }
     m_accountStatusListHasBeenSet = true;
   }
-
   return *this;
 }
 

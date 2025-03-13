@@ -12,18 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateMacEmvPinChangeRequest::GenerateMacEmvPinChangeRequest() : 
-    m_newPinPekIdentifierHasBeenSet(false),
-    m_newEncryptedPinBlockHasBeenSet(false),
-    m_pinBlockFormat(PinBlockFormatForEmvPinChange::NOT_SET),
-    m_pinBlockFormatHasBeenSet(false),
-    m_secureMessagingIntegrityKeyIdentifierHasBeenSet(false),
-    m_secureMessagingConfidentialityKeyIdentifierHasBeenSet(false),
-    m_messageDataHasBeenSet(false),
-    m_derivationMethodAttributesHasBeenSet(false)
-{
-}
-
 Aws::String GenerateMacEmvPinChangeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -36,7 +36,7 @@ namespace Model
   class PluginVisualConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API PluginVisualConfiguration();
+    AWS_QUICKSIGHT_API PluginVisualConfiguration() = default;
     AWS_QUICKSIGHT_API PluginVisualConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PluginVisualConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,38 +46,38 @@ namespace Model
     /**
      * <p>The field wells configuration of the plugin visual.</p>
      */
-    inline const Aws::Vector<PluginVisualFieldWell>& GetFieldWells() const{ return m_fieldWells; }
+    inline const Aws::Vector<PluginVisualFieldWell>& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const Aws::Vector<PluginVisualFieldWell>& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(Aws::Vector<PluginVisualFieldWell>&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline PluginVisualConfiguration& WithFieldWells(const Aws::Vector<PluginVisualFieldWell>& value) { SetFieldWells(value); return *this;}
-    inline PluginVisualConfiguration& WithFieldWells(Aws::Vector<PluginVisualFieldWell>&& value) { SetFieldWells(std::move(value)); return *this;}
-    inline PluginVisualConfiguration& AddFieldWells(const PluginVisualFieldWell& value) { m_fieldWellsHasBeenSet = true; m_fieldWells.push_back(value); return *this; }
-    inline PluginVisualConfiguration& AddFieldWells(PluginVisualFieldWell&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells.push_back(std::move(value)); return *this; }
+    template<typename FieldWellsT = Aws::Vector<PluginVisualFieldWell>>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = Aws::Vector<PluginVisualFieldWell>>
+    PluginVisualConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
+    template<typename FieldWellsT = PluginVisualFieldWell>
+    PluginVisualConfiguration& AddFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells.emplace_back(std::forward<FieldWellsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The persisted properties of the plugin visual.</p>
      */
-    inline const PluginVisualOptions& GetVisualOptions() const{ return m_visualOptions; }
+    inline const PluginVisualOptions& GetVisualOptions() const { return m_visualOptions; }
     inline bool VisualOptionsHasBeenSet() const { return m_visualOptionsHasBeenSet; }
-    inline void SetVisualOptions(const PluginVisualOptions& value) { m_visualOptionsHasBeenSet = true; m_visualOptions = value; }
-    inline void SetVisualOptions(PluginVisualOptions&& value) { m_visualOptionsHasBeenSet = true; m_visualOptions = std::move(value); }
-    inline PluginVisualConfiguration& WithVisualOptions(const PluginVisualOptions& value) { SetVisualOptions(value); return *this;}
-    inline PluginVisualConfiguration& WithVisualOptions(PluginVisualOptions&& value) { SetVisualOptions(std::move(value)); return *this;}
+    template<typename VisualOptionsT = PluginVisualOptions>
+    void SetVisualOptions(VisualOptionsT&& value) { m_visualOptionsHasBeenSet = true; m_visualOptions = std::forward<VisualOptionsT>(value); }
+    template<typename VisualOptionsT = PluginVisualOptions>
+    PluginVisualConfiguration& WithVisualOptions(VisualOptionsT&& value) { SetVisualOptions(std::forward<VisualOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of the plugin visual.</p>
      */
-    inline const PluginVisualSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const PluginVisualSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const PluginVisualSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(PluginVisualSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline PluginVisualConfiguration& WithSortConfiguration(const PluginVisualSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline PluginVisualConfiguration& WithSortConfiguration(PluginVisualSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = PluginVisualSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = PluginVisualSortConfiguration>
+    PluginVisualConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
   private:
 

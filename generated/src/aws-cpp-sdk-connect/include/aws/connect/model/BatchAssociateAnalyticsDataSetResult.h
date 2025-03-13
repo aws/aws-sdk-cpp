@@ -30,7 +30,7 @@ namespace Model
   class BatchAssociateAnalyticsDataSetResult
   {
   public:
-    AWS_CONNECT_API BatchAssociateAnalyticsDataSetResult();
+    AWS_CONNECT_API BatchAssociateAnalyticsDataSetResult() = default;
     AWS_CONNECT_API BatchAssociateAnalyticsDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API BatchAssociateAnalyticsDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * <code>DataSetId</code>, <code>TargetAccountId</code>,
      * <code>ResourceShareId</code>, <code>ResourceShareArn</code>. </p>
      */
-    inline const Aws::Vector<AnalyticsDataAssociationResult>& GetCreated() const{ return m_created; }
-    inline void SetCreated(const Aws::Vector<AnalyticsDataAssociationResult>& value) { m_created = value; }
-    inline void SetCreated(Aws::Vector<AnalyticsDataAssociationResult>&& value) { m_created = std::move(value); }
-    inline BatchAssociateAnalyticsDataSetResult& WithCreated(const Aws::Vector<AnalyticsDataAssociationResult>& value) { SetCreated(value); return *this;}
-    inline BatchAssociateAnalyticsDataSetResult& WithCreated(Aws::Vector<AnalyticsDataAssociationResult>&& value) { SetCreated(std::move(value)); return *this;}
-    inline BatchAssociateAnalyticsDataSetResult& AddCreated(const AnalyticsDataAssociationResult& value) { m_created.push_back(value); return *this; }
-    inline BatchAssociateAnalyticsDataSetResult& AddCreated(AnalyticsDataAssociationResult&& value) { m_created.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnalyticsDataAssociationResult>& GetCreated() const { return m_created; }
+    template<typename CreatedT = Aws::Vector<AnalyticsDataAssociationResult>>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Vector<AnalyticsDataAssociationResult>>
+    BatchAssociateAnalyticsDataSetResult& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
+    template<typename CreatedT = AnalyticsDataAssociationResult>
+    BatchAssociateAnalyticsDataSetResult& AddCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created.emplace_back(std::forward<CreatedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,33 @@ namespace Model
      * <p>A list of errors for datasets that aren't successfully associated with the
      * target account.</p>
      */
-    inline const Aws::Vector<ErrorResult>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ErrorResult>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ErrorResult>&& value) { m_errors = std::move(value); }
-    inline BatchAssociateAnalyticsDataSetResult& WithErrors(const Aws::Vector<ErrorResult>& value) { SetErrors(value); return *this;}
-    inline BatchAssociateAnalyticsDataSetResult& WithErrors(Aws::Vector<ErrorResult>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchAssociateAnalyticsDataSetResult& AddErrors(const ErrorResult& value) { m_errors.push_back(value); return *this; }
-    inline BatchAssociateAnalyticsDataSetResult& AddErrors(ErrorResult&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ErrorResult>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ErrorResult>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ErrorResult>>
+    BatchAssociateAnalyticsDataSetResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ErrorResult>
+    BatchAssociateAnalyticsDataSetResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchAssociateAnalyticsDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchAssociateAnalyticsDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchAssociateAnalyticsDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchAssociateAnalyticsDataSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnalyticsDataAssociationResult> m_created;
+    bool m_createdHasBeenSet = false;
 
     Aws::Vector<ErrorResult> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

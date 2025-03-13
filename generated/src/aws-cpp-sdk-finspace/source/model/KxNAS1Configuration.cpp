@@ -18,16 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxNAS1Configuration::KxNAS1Configuration() : 
-    m_type(KxNAS1Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 KxNAS1Configuration::KxNAS1Configuration(JsonView jsonValue)
-  : KxNAS1Configuration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ KxNAS1Configuration& KxNAS1Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = KxNAS1TypeMapper::GetKxNAS1TypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInteger("size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

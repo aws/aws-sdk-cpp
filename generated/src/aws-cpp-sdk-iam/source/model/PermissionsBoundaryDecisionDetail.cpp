@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PermissionsBoundaryDecisionDetail::PermissionsBoundaryDecisionDetail() : 
-    m_allowedByPermissionsBoundary(false),
-    m_allowedByPermissionsBoundaryHasBeenSet(false)
-{
-}
-
 PermissionsBoundaryDecisionDetail::PermissionsBoundaryDecisionDetail(const XmlNode& xmlNode)
-  : PermissionsBoundaryDecisionDetail()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ PermissionsBoundaryDecisionDetail& PermissionsBoundaryDecisionDetail::operator =
     {
       m_allowedByPermissionsBoundary = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowedByPermissionsBoundaryNode.GetText()).c_str()).c_str());
       m_allowedByPermissionsBoundaryHasBeenSet = true;
+       m_allowedByPermissionsBoundaryHasBeenSet = true;
     }
   }
 

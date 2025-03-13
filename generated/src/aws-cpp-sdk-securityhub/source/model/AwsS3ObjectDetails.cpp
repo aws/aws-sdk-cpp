@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3ObjectDetails::AwsS3ObjectDetails() : 
-    m_lastModifiedHasBeenSet(false),
-    m_eTagHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_serverSideEncryptionHasBeenSet(false),
-    m_sSEKMSKeyIdHasBeenSet(false)
-{
-}
-
 AwsS3ObjectDetails::AwsS3ObjectDetails(JsonView jsonValue)
-  : AwsS3ObjectDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AwsS3ObjectDetails& AwsS3ObjectDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ETag"))
   {
     m_eTag = jsonValue.GetString("ETag");
-
     m_eTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerSideEncryption"))
   {
     m_serverSideEncryption = jsonValue.GetString("ServerSideEncryption");
-
     m_serverSideEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SSEKMSKeyId"))
   {
     m_sSEKMSKeyId = jsonValue.GetString("SSEKMSKeyId");
-
     m_sSEKMSKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

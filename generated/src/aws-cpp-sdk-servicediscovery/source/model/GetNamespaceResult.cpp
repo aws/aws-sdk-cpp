@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNamespaceResult::GetNamespaceResult()
-{
-}
-
 GetNamespaceResult::GetNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetNamespaceResult& GetNamespaceResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetObject("Namespace");
-
+    m_namespaceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

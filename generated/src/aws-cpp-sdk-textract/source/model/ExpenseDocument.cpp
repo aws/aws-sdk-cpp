@@ -18,17 +18,7 @@ namespace Textract
 namespace Model
 {
 
-ExpenseDocument::ExpenseDocument() : 
-    m_expenseIndex(0),
-    m_expenseIndexHasBeenSet(false),
-    m_summaryFieldsHasBeenSet(false),
-    m_lineItemGroupsHasBeenSet(false),
-    m_blocksHasBeenSet(false)
-{
-}
-
 ExpenseDocument::ExpenseDocument(JsonView jsonValue)
-  : ExpenseDocument()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExpenseIndex"))
   {
     m_expenseIndex = jsonValue.GetInteger("ExpenseIndex");
-
     m_expenseIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SummaryFields"))
   {
     Aws::Utils::Array<JsonView> summaryFieldsJsonList = jsonValue.GetArray("SummaryFields");
@@ -51,7 +39,6 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
     }
     m_summaryFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineItemGroups"))
   {
     Aws::Utils::Array<JsonView> lineItemGroupsJsonList = jsonValue.GetArray("LineItemGroups");
@@ -61,7 +48,6 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
     }
     m_lineItemGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocks"))
   {
     Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
@@ -71,7 +57,6 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
     }
     m_blocksHasBeenSet = true;
   }
-
   return *this;
 }
 

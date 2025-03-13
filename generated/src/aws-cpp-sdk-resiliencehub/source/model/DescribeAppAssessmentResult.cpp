@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAppAssessmentResult::DescribeAppAssessmentResult()
-{
-}
-
 DescribeAppAssessmentResult::DescribeAppAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeAppAssessmentResult& DescribeAppAssessmentResult::operator =(const Aws::
   if(jsonValue.ValueExists("assessment"))
   {
     m_assessment = jsonValue.GetObject("assessment");
-
+    m_assessmentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

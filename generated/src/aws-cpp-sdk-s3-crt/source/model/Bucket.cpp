@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Bucket::Bucket() : 
-    m_nameHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false)
-{
-}
-
 Bucket::Bucket(const XmlNode& xmlNode)
-  : Bucket()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ Bucket& Bucket::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
+       m_creationDateHasBeenSet = true;
     }
     XmlNode bucketRegionNode = resultNode.FirstChild("BucketRegion");
     if(!bucketRegionNode.IsNull())
     {
       m_bucketRegion = Aws::Utils::Xml::DecodeEscapedXmlText(bucketRegionNode.GetText());
       m_bucketRegionHasBeenSet = true;
+       m_bucketRegionHasBeenSet = true;
     }
   }
 

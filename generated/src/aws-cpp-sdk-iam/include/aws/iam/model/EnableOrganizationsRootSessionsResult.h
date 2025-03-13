@@ -30,7 +30,7 @@ namespace Model
   class EnableOrganizationsRootSessionsResult
   {
   public:
-    AWS_IAM_API EnableOrganizationsRootSessionsResult();
+    AWS_IAM_API EnableOrganizationsRootSessionsResult() = default;
     AWS_IAM_API EnableOrganizationsRootSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API EnableOrganizationsRootSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,43 +39,43 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of an organization.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationId.assign(value); }
-    inline EnableOrganizationsRootSessionsResult& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline EnableOrganizationsRootSessionsResult& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline EnableOrganizationsRootSessionsResult& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    EnableOrganizationsRootSessionsResult& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The features you have enabled for centralized root access.</p>
      */
-    inline const Aws::Vector<FeatureType>& GetEnabledFeatures() const{ return m_enabledFeatures; }
-    inline void SetEnabledFeatures(const Aws::Vector<FeatureType>& value) { m_enabledFeatures = value; }
-    inline void SetEnabledFeatures(Aws::Vector<FeatureType>&& value) { m_enabledFeatures = std::move(value); }
-    inline EnableOrganizationsRootSessionsResult& WithEnabledFeatures(const Aws::Vector<FeatureType>& value) { SetEnabledFeatures(value); return *this;}
-    inline EnableOrganizationsRootSessionsResult& WithEnabledFeatures(Aws::Vector<FeatureType>&& value) { SetEnabledFeatures(std::move(value)); return *this;}
-    inline EnableOrganizationsRootSessionsResult& AddEnabledFeatures(const FeatureType& value) { m_enabledFeatures.push_back(value); return *this; }
-    inline EnableOrganizationsRootSessionsResult& AddEnabledFeatures(FeatureType&& value) { m_enabledFeatures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FeatureType>& GetEnabledFeatures() const { return m_enabledFeatures; }
+    template<typename EnabledFeaturesT = Aws::Vector<FeatureType>>
+    void SetEnabledFeatures(EnabledFeaturesT&& value) { m_enabledFeaturesHasBeenSet = true; m_enabledFeatures = std::forward<EnabledFeaturesT>(value); }
+    template<typename EnabledFeaturesT = Aws::Vector<FeatureType>>
+    EnableOrganizationsRootSessionsResult& WithEnabledFeatures(EnabledFeaturesT&& value) { SetEnabledFeatures(std::forward<EnabledFeaturesT>(value)); return *this;}
+    inline EnableOrganizationsRootSessionsResult& AddEnabledFeatures(FeatureType value) { m_enabledFeaturesHasBeenSet = true; m_enabledFeatures.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline EnableOrganizationsRootSessionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline EnableOrganizationsRootSessionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    EnableOrganizationsRootSessionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_organizationId;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::Vector<FeatureType> m_enabledFeatures;
+    bool m_enabledFeaturesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

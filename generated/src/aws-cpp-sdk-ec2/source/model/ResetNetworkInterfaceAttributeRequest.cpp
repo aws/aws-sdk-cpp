@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ResetNetworkInterfaceAttributeRequest::ResetNetworkInterfaceAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_sourceDestCheckHasBeenSet(false)
-{
-}
-
 Aws::String ResetNetworkInterfaceAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

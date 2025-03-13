@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteLocalGatewayRouteTableRequest::DeleteLocalGatewayRouteTableRequest() : 
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLocalGatewayRouteTableRequest::SerializePayload() const
 {
   Aws::StringStream ss;

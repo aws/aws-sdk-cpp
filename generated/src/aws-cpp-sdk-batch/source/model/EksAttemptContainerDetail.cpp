@@ -18,17 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksAttemptContainerDetail::EksAttemptContainerDetail() : 
-    m_nameHasBeenSet(false),
-    m_containerIDHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 EksAttemptContainerDetail::EksAttemptContainerDetail(JsonView jsonValue)
-  : EksAttemptContainerDetail()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EksAttemptContainerDetail& EksAttemptContainerDetail::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerID"))
   {
     m_containerID = jsonValue.GetString("containerID");
-
     m_containerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
-
     m_exitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

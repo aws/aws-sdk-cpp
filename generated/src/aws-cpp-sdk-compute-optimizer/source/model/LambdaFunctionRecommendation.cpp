@@ -18,31 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LambdaFunctionRecommendation::LambdaFunctionRecommendation() : 
-    m_functionArnHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentMemorySize(0),
-    m_currentMemorySizeHasBeenSet(false),
-    m_numberOfInvocations(0),
-    m_numberOfInvocationsHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookbackPeriodInDays(0.0),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_finding(LambdaFunctionRecommendationFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_memorySizeRecommendationOptionsHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue)
-  : LambdaFunctionRecommendation()
 {
   *this = jsonValue;
 }
@@ -52,38 +28,28 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
   if(jsonValue.ValueExists("functionArn"))
   {
     m_functionArn = jsonValue.GetString("functionArn");
-
     m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionVersion"))
   {
     m_functionVersion = jsonValue.GetString("functionVersion");
-
     m_functionVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentMemorySize"))
   {
     m_currentMemorySize = jsonValue.GetInteger("currentMemorySize");
-
     m_currentMemorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfInvocations"))
   {
     m_numberOfInvocations = jsonValue.GetInt64("numberOfInvocations");
-
     m_numberOfInvocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
@@ -93,28 +59,21 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     }
     m_utilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookbackPeriodInDays"))
   {
     m_lookbackPeriodInDays = jsonValue.GetDouble("lookbackPeriodInDays");
-
     m_lookbackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finding"))
   {
     m_finding = LambdaFunctionRecommendationFindingMapper::GetLambdaFunctionRecommendationFindingForName(jsonValue.GetString("finding"));
-
     m_findingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
@@ -124,7 +83,6 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     }
     m_findingReasonCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memorySizeRecommendationOptions"))
   {
     Aws::Utils::Array<JsonView> memorySizeRecommendationOptionsJsonList = jsonValue.GetArray("memorySizeRecommendationOptions");
@@ -134,21 +92,16 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     }
     m_memorySizeRecommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentPerformanceRisk"))
   {
     m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
-
     m_currentPerformanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
   {
     m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
     m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -158,7 +111,6 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

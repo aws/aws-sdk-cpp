@@ -33,7 +33,7 @@ namespace Model
   class FulfillmentStartResponseSpecification
   {
   public:
-    AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification();
+    AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification() = default;
     AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API FulfillmentStartResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * start message is played. If the Lambda function returns before the delay is
      * over, the start message isn't played.</p>
      */
-    inline int GetDelayInSeconds() const{ return m_delayInSeconds; }
+    inline int GetDelayInSeconds() const { return m_delayInSeconds; }
     inline bool DelayInSecondsHasBeenSet() const { return m_delayInSecondsHasBeenSet; }
     inline void SetDelayInSeconds(int value) { m_delayInSecondsHasBeenSet = true; m_delayInSeconds = value; }
     inline FulfillmentStartResponseSpecification& WithDelayInSeconds(int value) { SetDelayInSeconds(value); return *this;}
@@ -56,14 +56,14 @@ namespace Model
      * <p>1 - 5 message groups that contain start messages. Amazon Lex chooses one of
      * the messages to play to the user.</p>
      */
-    inline const Aws::Vector<MessageGroup>& GetMessageGroups() const{ return m_messageGroups; }
+    inline const Aws::Vector<MessageGroup>& GetMessageGroups() const { return m_messageGroups; }
     inline bool MessageGroupsHasBeenSet() const { return m_messageGroupsHasBeenSet; }
-    inline void SetMessageGroups(const Aws::Vector<MessageGroup>& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = value; }
-    inline void SetMessageGroups(Aws::Vector<MessageGroup>&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = std::move(value); }
-    inline FulfillmentStartResponseSpecification& WithMessageGroups(const Aws::Vector<MessageGroup>& value) { SetMessageGroups(value); return *this;}
-    inline FulfillmentStartResponseSpecification& WithMessageGroups(Aws::Vector<MessageGroup>&& value) { SetMessageGroups(std::move(value)); return *this;}
-    inline FulfillmentStartResponseSpecification& AddMessageGroups(const MessageGroup& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.push_back(value); return *this; }
-    inline FulfillmentStartResponseSpecification& AddMessageGroups(MessageGroup&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.push_back(std::move(value)); return *this; }
+    template<typename MessageGroupsT = Aws::Vector<MessageGroup>>
+    void SetMessageGroups(MessageGroupsT&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = std::forward<MessageGroupsT>(value); }
+    template<typename MessageGroupsT = Aws::Vector<MessageGroup>>
+    FulfillmentStartResponseSpecification& WithMessageGroups(MessageGroupsT&& value) { SetMessageGroups(std::forward<MessageGroupsT>(value)); return *this;}
+    template<typename MessageGroupsT = MessageGroup>
+    FulfillmentStartResponseSpecification& AddMessageGroups(MessageGroupsT&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.emplace_back(std::forward<MessageGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,20 +71,20 @@ namespace Model
      * <p>Determines whether the user can interrupt the start message while it is
      * playing.</p>
      */
-    inline bool GetAllowInterrupt() const{ return m_allowInterrupt; }
+    inline bool GetAllowInterrupt() const { return m_allowInterrupt; }
     inline bool AllowInterruptHasBeenSet() const { return m_allowInterruptHasBeenSet; }
     inline void SetAllowInterrupt(bool value) { m_allowInterruptHasBeenSet = true; m_allowInterrupt = value; }
     inline FulfillmentStartResponseSpecification& WithAllowInterrupt(bool value) { SetAllowInterrupt(value); return *this;}
     ///@}
   private:
 
-    int m_delayInSeconds;
+    int m_delayInSeconds{0};
     bool m_delayInSecondsHasBeenSet = false;
 
     Aws::Vector<MessageGroup> m_messageGroups;
     bool m_messageGroupsHasBeenSet = false;
 
-    bool m_allowInterrupt;
+    bool m_allowInterrupt{false};
     bool m_allowInterruptHasBeenSet = false;
   };
 

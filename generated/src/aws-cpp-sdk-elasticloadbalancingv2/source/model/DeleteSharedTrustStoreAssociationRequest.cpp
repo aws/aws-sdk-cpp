@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DeleteSharedTrustStoreAssociationRequest::DeleteSharedTrustStoreAssociationRequest() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSharedTrustStoreAssociationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

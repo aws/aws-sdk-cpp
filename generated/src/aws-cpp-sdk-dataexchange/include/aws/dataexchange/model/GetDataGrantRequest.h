@@ -21,7 +21,7 @@ namespace Model
   class GetDataGrantRequest : public DataExchangeRequest
   {
   public:
-    AWS_DATAEXCHANGE_API GetDataGrantRequest();
+    AWS_DATAEXCHANGE_API GetDataGrantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the data grant.</p>
      */
-    inline const Aws::String& GetDataGrantId() const{ return m_dataGrantId; }
+    inline const Aws::String& GetDataGrantId() const { return m_dataGrantId; }
     inline bool DataGrantIdHasBeenSet() const { return m_dataGrantIdHasBeenSet; }
-    inline void SetDataGrantId(const Aws::String& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = value; }
-    inline void SetDataGrantId(Aws::String&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::move(value); }
-    inline void SetDataGrantId(const char* value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId.assign(value); }
-    inline GetDataGrantRequest& WithDataGrantId(const Aws::String& value) { SetDataGrantId(value); return *this;}
-    inline GetDataGrantRequest& WithDataGrantId(Aws::String&& value) { SetDataGrantId(std::move(value)); return *this;}
-    inline GetDataGrantRequest& WithDataGrantId(const char* value) { SetDataGrantId(value); return *this;}
+    template<typename DataGrantIdT = Aws::String>
+    void SetDataGrantId(DataGrantIdT&& value) { m_dataGrantIdHasBeenSet = true; m_dataGrantId = std::forward<DataGrantIdT>(value); }
+    template<typename DataGrantIdT = Aws::String>
+    GetDataGrantRequest& WithDataGrantId(DataGrantIdT&& value) { SetDataGrantId(std::forward<DataGrantIdT>(value)); return *this;}
     ///@}
   private:
 

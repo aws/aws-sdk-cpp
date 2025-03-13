@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase2IntegrityAlgorithmsRequestListValue::Phase2IntegrityAlgorithmsRequestListValue(const XmlNode& xmlNode)
-  : Phase2IntegrityAlgorithmsRequestListValue()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Phase2IntegrityAlgorithmsRequestListValue& Phase2IntegrityAlgorithmsRequestListV
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

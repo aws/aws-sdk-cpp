@@ -13,25 +13,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkflowRequest::CreateWorkflowRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engine(WorkflowEngine::NOT_SET),
-    m_engineHasBeenSet(false),
-    m_definitionZipHasBeenSet(false),
-    m_definitionUriHasBeenSet(false),
-    m_mainHasBeenSet(false),
-    m_parameterTemplateHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_accelerators(Accelerators::NOT_SET),
-    m_acceleratorsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

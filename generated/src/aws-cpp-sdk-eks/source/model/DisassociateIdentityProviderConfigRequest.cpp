@@ -12,14 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateIdentityProviderConfigRequest::DisassociateIdentityProviderConfigRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_identityProviderConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String DisassociateIdentityProviderConfigRequest::SerializePayload() const
 {
   JsonValue payload;

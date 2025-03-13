@@ -32,7 +32,7 @@ namespace Model
   class ServerSideEncryptionConfiguration
   {
   public:
-    AWS_S3CRT_API ServerSideEncryptionConfiguration();
+    AWS_S3CRT_API ServerSideEncryptionConfiguration() = default;
     AWS_S3CRT_API ServerSideEncryptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API ServerSideEncryptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,14 @@ namespace Model
      * <p>Container for information about a particular server-side encryption
      * configuration rule.</p>
      */
-    inline const Aws::Vector<ServerSideEncryptionRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<ServerSideEncryptionRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<ServerSideEncryptionRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<ServerSideEncryptionRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline ServerSideEncryptionConfiguration& WithRules(const Aws::Vector<ServerSideEncryptionRule>& value) { SetRules(value); return *this;}
-    inline ServerSideEncryptionConfiguration& WithRules(Aws::Vector<ServerSideEncryptionRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline ServerSideEncryptionConfiguration& AddRules(const ServerSideEncryptionRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline ServerSideEncryptionConfiguration& AddRules(ServerSideEncryptionRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<ServerSideEncryptionRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<ServerSideEncryptionRule>>
+    ServerSideEncryptionConfiguration& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = ServerSideEncryptionRule>
+    ServerSideEncryptionConfiguration& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

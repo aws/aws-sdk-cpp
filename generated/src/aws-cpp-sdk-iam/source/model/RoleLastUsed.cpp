@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-RoleLastUsed::RoleLastUsed() : 
-    m_lastUsedDateHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 RoleLastUsed::RoleLastUsed(const XmlNode& xmlNode)
-  : RoleLastUsed()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ RoleLastUsed& RoleLastUsed::operator =(const XmlNode& xmlNode)
     {
       m_lastUsedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUsedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUsedDateHasBeenSet = true;
+       m_lastUsedDateHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
   }
 

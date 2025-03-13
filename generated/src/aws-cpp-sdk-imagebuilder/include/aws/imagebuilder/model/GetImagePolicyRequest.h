@@ -25,7 +25,7 @@ namespace Model
   class GetImagePolicyRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API GetImagePolicyRequest();
+    AWS_IMAGEBUILDER_API GetImagePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
      * retrieve.</p>
      */
-    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
+    inline const Aws::String& GetImageArn() const { return m_imageArn; }
     inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
-    inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
-    inline void SetImageArn(Aws::String&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::move(value); }
-    inline void SetImageArn(const char* value) { m_imageArnHasBeenSet = true; m_imageArn.assign(value); }
-    inline GetImagePolicyRequest& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
-    inline GetImagePolicyRequest& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
-    inline GetImagePolicyRequest& WithImageArn(const char* value) { SetImageArn(value); return *this;}
+    template<typename ImageArnT = Aws::String>
+    void SetImageArn(ImageArnT&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::forward<ImageArnT>(value); }
+    template<typename ImageArnT = Aws::String>
+    GetImagePolicyRequest& WithImageArn(ImageArnT&& value) { SetImageArn(std::forward<ImageArnT>(value)); return *this;}
     ///@}
   private:
 

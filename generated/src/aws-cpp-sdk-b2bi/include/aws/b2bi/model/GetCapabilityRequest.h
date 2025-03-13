@@ -21,7 +21,7 @@ namespace Model
   class GetCapabilityRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API GetCapabilityRequest();
+    AWS_B2BI_API GetCapabilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Specifies a system-assigned unique identifier for the capability.</p>
      */
-    inline const Aws::String& GetCapabilityId() const{ return m_capabilityId; }
+    inline const Aws::String& GetCapabilityId() const { return m_capabilityId; }
     inline bool CapabilityIdHasBeenSet() const { return m_capabilityIdHasBeenSet; }
-    inline void SetCapabilityId(const Aws::String& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = value; }
-    inline void SetCapabilityId(Aws::String&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::move(value); }
-    inline void SetCapabilityId(const char* value) { m_capabilityIdHasBeenSet = true; m_capabilityId.assign(value); }
-    inline GetCapabilityRequest& WithCapabilityId(const Aws::String& value) { SetCapabilityId(value); return *this;}
-    inline GetCapabilityRequest& WithCapabilityId(Aws::String&& value) { SetCapabilityId(std::move(value)); return *this;}
-    inline GetCapabilityRequest& WithCapabilityId(const char* value) { SetCapabilityId(value); return *this;}
+    template<typename CapabilityIdT = Aws::String>
+    void SetCapabilityId(CapabilityIdT&& value) { m_capabilityIdHasBeenSet = true; m_capabilityId = std::forward<CapabilityIdT>(value); }
+    template<typename CapabilityIdT = Aws::String>
+    GetCapabilityRequest& WithCapabilityId(CapabilityIdT&& value) { SetCapabilityId(std::forward<CapabilityIdT>(value)); return *this;}
     ///@}
   private:
 

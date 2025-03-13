@@ -29,7 +29,7 @@ namespace Model
   class UpdateRecoveryPointLifecycleResult
   {
   public:
-    AWS_BACKUP_API UpdateRecoveryPointLifecycleResult();
+    AWS_BACKUP_API UpdateRecoveryPointLifecycleResult() = default;
     AWS_BACKUP_API UpdateRecoveryPointLifecycleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API UpdateRecoveryPointLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>An ARN that uniquely identifies a backup vault; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
-    inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
-    inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
-    inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArn = std::move(value); }
-    inline void SetBackupVaultArn(const char* value) { m_backupVaultArn.assign(value); }
-    inline UpdateRecoveryPointLifecycleResult& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    UpdateRecoveryPointLifecycleResult& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArn.assign(value); }
-    inline UpdateRecoveryPointLifecycleResult& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    UpdateRecoveryPointLifecycleResult& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,11 +73,11 @@ namespace Model
      * availability by resource</a> table. Backup ignores this expression for other
      * resource types.</p>
      */
-    inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
-    inline void SetLifecycle(const Lifecycle& value) { m_lifecycle = value; }
-    inline void SetLifecycle(Lifecycle&& value) { m_lifecycle = std::move(value); }
-    inline UpdateRecoveryPointLifecycleResult& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline const Lifecycle& GetLifecycle() const { return m_lifecycle; }
+    template<typename LifecycleT = Lifecycle>
+    void SetLifecycle(LifecycleT&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::forward<LifecycleT>(value); }
+    template<typename LifecycleT = Lifecycle>
+    UpdateRecoveryPointLifecycleResult& WithLifecycle(LifecycleT&& value) { SetLifecycle(std::forward<LifecycleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,34 +85,37 @@ namespace Model
      * <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code>
      * and <code>MoveToColdStorageAt</code> timestamps.</p>
      */
-    inline const CalculatedLifecycle& GetCalculatedLifecycle() const{ return m_calculatedLifecycle; }
-    inline void SetCalculatedLifecycle(const CalculatedLifecycle& value) { m_calculatedLifecycle = value; }
-    inline void SetCalculatedLifecycle(CalculatedLifecycle&& value) { m_calculatedLifecycle = std::move(value); }
-    inline UpdateRecoveryPointLifecycleResult& WithCalculatedLifecycle(const CalculatedLifecycle& value) { SetCalculatedLifecycle(value); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithCalculatedLifecycle(CalculatedLifecycle&& value) { SetCalculatedLifecycle(std::move(value)); return *this;}
+    inline const CalculatedLifecycle& GetCalculatedLifecycle() const { return m_calculatedLifecycle; }
+    template<typename CalculatedLifecycleT = CalculatedLifecycle>
+    void SetCalculatedLifecycle(CalculatedLifecycleT&& value) { m_calculatedLifecycleHasBeenSet = true; m_calculatedLifecycle = std::forward<CalculatedLifecycleT>(value); }
+    template<typename CalculatedLifecycleT = CalculatedLifecycle>
+    UpdateRecoveryPointLifecycleResult& WithCalculatedLifecycle(CalculatedLifecycleT&& value) { SetCalculatedLifecycle(std::forward<CalculatedLifecycleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRecoveryPointLifecycleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRecoveryPointLifecycleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRecoveryPointLifecycleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backupVaultArn;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Lifecycle m_lifecycle;
+    bool m_lifecycleHasBeenSet = false;
 
     CalculatedLifecycle m_calculatedLifecycle;
+    bool m_calculatedLifecycleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

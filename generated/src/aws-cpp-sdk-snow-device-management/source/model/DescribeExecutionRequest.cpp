@@ -12,12 +12,6 @@ using namespace Aws::SnowDeviceManagement::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeExecutionRequest::DescribeExecutionRequest() : 
-    m_managedDeviceIdHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExecutionRequest::SerializePayload() const
 {
   return {};

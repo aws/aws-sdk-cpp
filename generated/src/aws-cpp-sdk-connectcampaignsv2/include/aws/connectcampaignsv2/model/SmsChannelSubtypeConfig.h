@@ -32,7 +32,7 @@ namespace Model
   class SmsChannelSubtypeConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeConfig();
+    AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
 
     ///@{
     
-    inline double GetCapacity() const{ return m_capacity; }
+    inline double GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(double value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline SmsChannelSubtypeConfig& WithCapacity(double value) { SetCapacity(value); return *this;}
@@ -48,26 +48,26 @@ namespace Model
 
     ///@{
     
-    inline const SmsOutboundMode& GetOutboundMode() const{ return m_outboundMode; }
+    inline const SmsOutboundMode& GetOutboundMode() const { return m_outboundMode; }
     inline bool OutboundModeHasBeenSet() const { return m_outboundModeHasBeenSet; }
-    inline void SetOutboundMode(const SmsOutboundMode& value) { m_outboundModeHasBeenSet = true; m_outboundMode = value; }
-    inline void SetOutboundMode(SmsOutboundMode&& value) { m_outboundModeHasBeenSet = true; m_outboundMode = std::move(value); }
-    inline SmsChannelSubtypeConfig& WithOutboundMode(const SmsOutboundMode& value) { SetOutboundMode(value); return *this;}
-    inline SmsChannelSubtypeConfig& WithOutboundMode(SmsOutboundMode&& value) { SetOutboundMode(std::move(value)); return *this;}
+    template<typename OutboundModeT = SmsOutboundMode>
+    void SetOutboundMode(OutboundModeT&& value) { m_outboundModeHasBeenSet = true; m_outboundMode = std::forward<OutboundModeT>(value); }
+    template<typename OutboundModeT = SmsOutboundMode>
+    SmsChannelSubtypeConfig& WithOutboundMode(OutboundModeT&& value) { SetOutboundMode(std::forward<OutboundModeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SmsOutboundConfig& GetDefaultOutboundConfig() const{ return m_defaultOutboundConfig; }
+    inline const SmsOutboundConfig& GetDefaultOutboundConfig() const { return m_defaultOutboundConfig; }
     inline bool DefaultOutboundConfigHasBeenSet() const { return m_defaultOutboundConfigHasBeenSet; }
-    inline void SetDefaultOutboundConfig(const SmsOutboundConfig& value) { m_defaultOutboundConfigHasBeenSet = true; m_defaultOutboundConfig = value; }
-    inline void SetDefaultOutboundConfig(SmsOutboundConfig&& value) { m_defaultOutboundConfigHasBeenSet = true; m_defaultOutboundConfig = std::move(value); }
-    inline SmsChannelSubtypeConfig& WithDefaultOutboundConfig(const SmsOutboundConfig& value) { SetDefaultOutboundConfig(value); return *this;}
-    inline SmsChannelSubtypeConfig& WithDefaultOutboundConfig(SmsOutboundConfig&& value) { SetDefaultOutboundConfig(std::move(value)); return *this;}
+    template<typename DefaultOutboundConfigT = SmsOutboundConfig>
+    void SetDefaultOutboundConfig(DefaultOutboundConfigT&& value) { m_defaultOutboundConfigHasBeenSet = true; m_defaultOutboundConfig = std::forward<DefaultOutboundConfigT>(value); }
+    template<typename DefaultOutboundConfigT = SmsOutboundConfig>
+    SmsChannelSubtypeConfig& WithDefaultOutboundConfig(DefaultOutboundConfigT&& value) { SetDefaultOutboundConfig(std::forward<DefaultOutboundConfigT>(value)); return *this;}
     ///@}
   private:
 
-    double m_capacity;
+    double m_capacity{0.0};
     bool m_capacityHasBeenSet = false;
 
     SmsOutboundMode m_outboundMode;

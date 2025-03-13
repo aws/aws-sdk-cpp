@@ -30,7 +30,7 @@ namespace Model
   class DescribeVpcEndpointsResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DescribeVpcEndpointsResult();
+    AWS_OPENSEARCHSERVICE_API DescribeVpcEndpointsResult() = default;
     AWS_OPENSEARCHSERVICE_API DescribeVpcEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API DescribeVpcEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Information about each requested VPC endpoint.</p>
      */
-    inline const Aws::Vector<VpcEndpoint>& GetVpcEndpoints() const{ return m_vpcEndpoints; }
-    inline void SetVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { m_vpcEndpoints = value; }
-    inline void SetVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { m_vpcEndpoints = std::move(value); }
-    inline DescribeVpcEndpointsResult& WithVpcEndpoints(const Aws::Vector<VpcEndpoint>& value) { SetVpcEndpoints(value); return *this;}
-    inline DescribeVpcEndpointsResult& WithVpcEndpoints(Aws::Vector<VpcEndpoint>&& value) { SetVpcEndpoints(std::move(value)); return *this;}
-    inline DescribeVpcEndpointsResult& AddVpcEndpoints(const VpcEndpoint& value) { m_vpcEndpoints.push_back(value); return *this; }
-    inline DescribeVpcEndpointsResult& AddVpcEndpoints(VpcEndpoint&& value) { m_vpcEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcEndpoint>& GetVpcEndpoints() const { return m_vpcEndpoints; }
+    template<typename VpcEndpointsT = Aws::Vector<VpcEndpoint>>
+    void SetVpcEndpoints(VpcEndpointsT&& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints = std::forward<VpcEndpointsT>(value); }
+    template<typename VpcEndpointsT = Aws::Vector<VpcEndpoint>>
+    DescribeVpcEndpointsResult& WithVpcEndpoints(VpcEndpointsT&& value) { SetVpcEndpoints(std::forward<VpcEndpointsT>(value)); return *this;}
+    template<typename VpcEndpointsT = VpcEndpoint>
+    DescribeVpcEndpointsResult& AddVpcEndpoints(VpcEndpointsT&& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints.emplace_back(std::forward<VpcEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any errors associated with the request.</p>
      */
-    inline const Aws::Vector<VpcEndpointError>& GetVpcEndpointErrors() const{ return m_vpcEndpointErrors; }
-    inline void SetVpcEndpointErrors(const Aws::Vector<VpcEndpointError>& value) { m_vpcEndpointErrors = value; }
-    inline void SetVpcEndpointErrors(Aws::Vector<VpcEndpointError>&& value) { m_vpcEndpointErrors = std::move(value); }
-    inline DescribeVpcEndpointsResult& WithVpcEndpointErrors(const Aws::Vector<VpcEndpointError>& value) { SetVpcEndpointErrors(value); return *this;}
-    inline DescribeVpcEndpointsResult& WithVpcEndpointErrors(Aws::Vector<VpcEndpointError>&& value) { SetVpcEndpointErrors(std::move(value)); return *this;}
-    inline DescribeVpcEndpointsResult& AddVpcEndpointErrors(const VpcEndpointError& value) { m_vpcEndpointErrors.push_back(value); return *this; }
-    inline DescribeVpcEndpointsResult& AddVpcEndpointErrors(VpcEndpointError&& value) { m_vpcEndpointErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcEndpointError>& GetVpcEndpointErrors() const { return m_vpcEndpointErrors; }
+    template<typename VpcEndpointErrorsT = Aws::Vector<VpcEndpointError>>
+    void SetVpcEndpointErrors(VpcEndpointErrorsT&& value) { m_vpcEndpointErrorsHasBeenSet = true; m_vpcEndpointErrors = std::forward<VpcEndpointErrorsT>(value); }
+    template<typename VpcEndpointErrorsT = Aws::Vector<VpcEndpointError>>
+    DescribeVpcEndpointsResult& WithVpcEndpointErrors(VpcEndpointErrorsT&& value) { SetVpcEndpointErrors(std::forward<VpcEndpointErrorsT>(value)); return *this;}
+    template<typename VpcEndpointErrorsT = VpcEndpointError>
+    DescribeVpcEndpointsResult& AddVpcEndpointErrors(VpcEndpointErrorsT&& value) { m_vpcEndpointErrorsHasBeenSet = true; m_vpcEndpointErrors.emplace_back(std::forward<VpcEndpointErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVpcEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVpcEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVpcEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVpcEndpointsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VpcEndpoint> m_vpcEndpoints;
+    bool m_vpcEndpointsHasBeenSet = false;
 
     Aws::Vector<VpcEndpointError> m_vpcEndpointErrors;
+    bool m_vpcEndpointErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

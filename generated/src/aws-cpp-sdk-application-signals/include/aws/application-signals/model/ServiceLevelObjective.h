@@ -45,7 +45,7 @@ namespace Model
   class ServiceLevelObjective
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ServiceLevelObjective();
+    AWS_APPLICATIONSIGNALS_API ServiceLevelObjective() = default;
     AWS_APPLICATIONSIGNALS_API ServiceLevelObjective(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ServiceLevelObjective& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,42 +55,36 @@ namespace Model
     /**
      * <p>The ARN of this SLO.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ServiceLevelObjective& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ServiceLevelObjective& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ServiceLevelObjective& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ServiceLevelObjective& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of this SLO.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ServiceLevelObjective& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ServiceLevelObjective& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ServiceLevelObjective& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceLevelObjective& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description that you created for this SLO.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ServiceLevelObjective& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ServiceLevelObjective& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ServiceLevelObjective& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ServiceLevelObjective& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,12 @@ namespace Model
      * API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
      * <code>2019-07-01T23:59:59</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline ServiceLevelObjective& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline ServiceLevelObjective& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    ServiceLevelObjective& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,12 @@ namespace Model
      * Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
      * <code>2019-07-01T23:59:59</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline ServiceLevelObjective& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline ServiceLevelObjective& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    ServiceLevelObjective& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +120,12 @@ namespace Model
      * <p>A structure containing information about the performance metric that this SLO
      * monitors, if this is a period-based SLO.</p>
      */
-    inline const ServiceLevelIndicator& GetSli() const{ return m_sli; }
+    inline const ServiceLevelIndicator& GetSli() const { return m_sli; }
     inline bool SliHasBeenSet() const { return m_sliHasBeenSet; }
-    inline void SetSli(const ServiceLevelIndicator& value) { m_sliHasBeenSet = true; m_sli = value; }
-    inline void SetSli(ServiceLevelIndicator&& value) { m_sliHasBeenSet = true; m_sli = std::move(value); }
-    inline ServiceLevelObjective& WithSli(const ServiceLevelIndicator& value) { SetSli(value); return *this;}
-    inline ServiceLevelObjective& WithSli(ServiceLevelIndicator&& value) { SetSli(std::move(value)); return *this;}
+    template<typename SliT = ServiceLevelIndicator>
+    void SetSli(SliT&& value) { m_sliHasBeenSet = true; m_sli = std::forward<SliT>(value); }
+    template<typename SliT = ServiceLevelIndicator>
+    ServiceLevelObjective& WithSli(SliT&& value) { SetSli(std::forward<SliT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,34 +133,32 @@ namespace Model
      * <p>A structure containing information about the performance metric that this SLO
      * monitors, if this is a request-based SLO.</p>
      */
-    inline const RequestBasedServiceLevelIndicator& GetRequestBasedSli() const{ return m_requestBasedSli; }
+    inline const RequestBasedServiceLevelIndicator& GetRequestBasedSli() const { return m_requestBasedSli; }
     inline bool RequestBasedSliHasBeenSet() const { return m_requestBasedSliHasBeenSet; }
-    inline void SetRequestBasedSli(const RequestBasedServiceLevelIndicator& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = value; }
-    inline void SetRequestBasedSli(RequestBasedServiceLevelIndicator&& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = std::move(value); }
-    inline ServiceLevelObjective& WithRequestBasedSli(const RequestBasedServiceLevelIndicator& value) { SetRequestBasedSli(value); return *this;}
-    inline ServiceLevelObjective& WithRequestBasedSli(RequestBasedServiceLevelIndicator&& value) { SetRequestBasedSli(std::move(value)); return *this;}
+    template<typename RequestBasedSliT = RequestBasedServiceLevelIndicator>
+    void SetRequestBasedSli(RequestBasedSliT&& value) { m_requestBasedSliHasBeenSet = true; m_requestBasedSli = std::forward<RequestBasedSliT>(value); }
+    template<typename RequestBasedSliT = RequestBasedServiceLevelIndicator>
+    ServiceLevelObjective& WithRequestBasedSli(RequestBasedSliT&& value) { SetRequestBasedSli(std::forward<RequestBasedSliT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
      */
-    inline const EvaluationType& GetEvaluationType() const{ return m_evaluationType; }
+    inline EvaluationType GetEvaluationType() const { return m_evaluationType; }
     inline bool EvaluationTypeHasBeenSet() const { return m_evaluationTypeHasBeenSet; }
-    inline void SetEvaluationType(const EvaluationType& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
-    inline void SetEvaluationType(EvaluationType&& value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = std::move(value); }
-    inline ServiceLevelObjective& WithEvaluationType(const EvaluationType& value) { SetEvaluationType(value); return *this;}
-    inline ServiceLevelObjective& WithEvaluationType(EvaluationType&& value) { SetEvaluationType(std::move(value)); return *this;}
+    inline void SetEvaluationType(EvaluationType value) { m_evaluationTypeHasBeenSet = true; m_evaluationType = value; }
+    inline ServiceLevelObjective& WithEvaluationType(EvaluationType value) { SetEvaluationType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Goal& GetGoal() const{ return m_goal; }
+    inline const Goal& GetGoal() const { return m_goal; }
     inline bool GoalHasBeenSet() const { return m_goalHasBeenSet; }
-    inline void SetGoal(const Goal& value) { m_goalHasBeenSet = true; m_goal = value; }
-    inline void SetGoal(Goal&& value) { m_goalHasBeenSet = true; m_goal = std::move(value); }
-    inline ServiceLevelObjective& WithGoal(const Goal& value) { SetGoal(value); return *this;}
-    inline ServiceLevelObjective& WithGoal(Goal&& value) { SetGoal(std::move(value)); return *this;}
+    template<typename GoalT = Goal>
+    void SetGoal(GoalT&& value) { m_goalHasBeenSet = true; m_goal = std::forward<GoalT>(value); }
+    template<typename GoalT = Goal>
+    ServiceLevelObjective& WithGoal(GoalT&& value) { SetGoal(std::forward<GoalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +168,14 @@ namespace Model
      * service is consuming the error budget, relative to the attainment goal of the
      * SLO.</p>
      */
-    inline const Aws::Vector<BurnRateConfiguration>& GetBurnRateConfigurations() const{ return m_burnRateConfigurations; }
+    inline const Aws::Vector<BurnRateConfiguration>& GetBurnRateConfigurations() const { return m_burnRateConfigurations; }
     inline bool BurnRateConfigurationsHasBeenSet() const { return m_burnRateConfigurationsHasBeenSet; }
-    inline void SetBurnRateConfigurations(const Aws::Vector<BurnRateConfiguration>& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = value; }
-    inline void SetBurnRateConfigurations(Aws::Vector<BurnRateConfiguration>&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = std::move(value); }
-    inline ServiceLevelObjective& WithBurnRateConfigurations(const Aws::Vector<BurnRateConfiguration>& value) { SetBurnRateConfigurations(value); return *this;}
-    inline ServiceLevelObjective& WithBurnRateConfigurations(Aws::Vector<BurnRateConfiguration>&& value) { SetBurnRateConfigurations(std::move(value)); return *this;}
-    inline ServiceLevelObjective& AddBurnRateConfigurations(const BurnRateConfiguration& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.push_back(value); return *this; }
-    inline ServiceLevelObjective& AddBurnRateConfigurations(BurnRateConfiguration&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.push_back(std::move(value)); return *this; }
+    template<typename BurnRateConfigurationsT = Aws::Vector<BurnRateConfiguration>>
+    void SetBurnRateConfigurations(BurnRateConfigurationsT&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = std::forward<BurnRateConfigurationsT>(value); }
+    template<typename BurnRateConfigurationsT = Aws::Vector<BurnRateConfiguration>>
+    ServiceLevelObjective& WithBurnRateConfigurations(BurnRateConfigurationsT&& value) { SetBurnRateConfigurations(std::forward<BurnRateConfigurationsT>(value)); return *this;}
+    template<typename BurnRateConfigurationsT = BurnRateConfiguration>
+    ServiceLevelObjective& AddBurnRateConfigurations(BurnRateConfigurationsT&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.emplace_back(std::forward<BurnRateConfigurationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -196,10 +188,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     ServiceLevelIndicator m_sli;
@@ -208,7 +200,7 @@ namespace Model
     RequestBasedServiceLevelIndicator m_requestBasedSli;
     bool m_requestBasedSliHasBeenSet = false;
 
-    EvaluationType m_evaluationType;
+    EvaluationType m_evaluationType{EvaluationType::NOT_SET};
     bool m_evaluationTypeHasBeenSet = false;
 
     Goal m_goal;

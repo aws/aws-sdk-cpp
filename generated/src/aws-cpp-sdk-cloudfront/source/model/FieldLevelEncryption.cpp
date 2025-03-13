@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FieldLevelEncryption::FieldLevelEncryption() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_fieldLevelEncryptionConfigHasBeenSet(false)
-{
-}
-
 FieldLevelEncryption::FieldLevelEncryption(const XmlNode& xmlNode)
-  : FieldLevelEncryption()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ FieldLevelEncryption& FieldLevelEncryption::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode fieldLevelEncryptionConfigNode = resultNode.FirstChild("FieldLevelEncryptionConfig");
     if(!fieldLevelEncryptionConfigNode.IsNull())
     {
       m_fieldLevelEncryptionConfig = fieldLevelEncryptionConfigNode;
       m_fieldLevelEncryptionConfigHasBeenSet = true;
+       m_fieldLevelEncryptionConfigHasBeenSet = true;
     }
   }
 

@@ -18,13 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-OnPremisesTagSet::OnPremisesTagSet() : 
-    m_onPremisesTagSetListHasBeenSet(false)
-{
-}
-
 OnPremisesTagSet::OnPremisesTagSet(JsonView jsonValue)
-  : OnPremisesTagSet()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ OnPremisesTagSet& OnPremisesTagSet::operator =(JsonView jsonValue)
     }
     m_onPremisesTagSetListHasBeenSet = true;
   }
-
   return *this;
 }
 

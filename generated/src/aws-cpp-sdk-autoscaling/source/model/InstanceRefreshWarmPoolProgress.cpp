@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress() : 
-    m_percentageComplete(0),
-    m_percentageCompleteHasBeenSet(false),
-    m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false)
-{
-}
-
 InstanceRefreshWarmPoolProgress::InstanceRefreshWarmPoolProgress(const XmlNode& xmlNode)
-  : InstanceRefreshWarmPoolProgress()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ InstanceRefreshWarmPoolProgress& InstanceRefreshWarmPoolProgress::operator =(con
     {
       m_percentageComplete = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompleteNode.GetText()).c_str()).c_str());
       m_percentageCompleteHasBeenSet = true;
+       m_percentageCompleteHasBeenSet = true;
     }
     XmlNode instancesToUpdateNode = resultNode.FirstChild("InstancesToUpdate");
     if(!instancesToUpdateNode.IsNull())
     {
       m_instancesToUpdate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancesToUpdateNode.GetText()).c_str()).c_str());
       m_instancesToUpdateHasBeenSet = true;
+       m_instancesToUpdateHasBeenSet = true;
     }
   }
 

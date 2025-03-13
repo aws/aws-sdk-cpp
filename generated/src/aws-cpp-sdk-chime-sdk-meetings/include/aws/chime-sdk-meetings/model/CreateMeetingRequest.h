@@ -26,7 +26,7 @@ namespace Model
   class CreateMeetingRequest : public ChimeSDKMeetingsRequest
   {
   public:
-    AWS_CHIMESDKMEETINGS_API CreateMeetingRequest();
+    AWS_CHIMESDKMEETINGS_API CreateMeetingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The unique identifier for the client request. Use a different token for
      * different meetings.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateMeetingRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateMeetingRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateMeetingRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateMeetingRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,28 +63,24 @@ namespace Model
      * <p>Available values in Amazon Web Services GovCloud (US) Regions:
      * <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
      */
-    inline const Aws::String& GetMediaRegion() const{ return m_mediaRegion; }
+    inline const Aws::String& GetMediaRegion() const { return m_mediaRegion; }
     inline bool MediaRegionHasBeenSet() const { return m_mediaRegionHasBeenSet; }
-    inline void SetMediaRegion(const Aws::String& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = value; }
-    inline void SetMediaRegion(Aws::String&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::move(value); }
-    inline void SetMediaRegion(const char* value) { m_mediaRegionHasBeenSet = true; m_mediaRegion.assign(value); }
-    inline CreateMeetingRequest& WithMediaRegion(const Aws::String& value) { SetMediaRegion(value); return *this;}
-    inline CreateMeetingRequest& WithMediaRegion(Aws::String&& value) { SetMediaRegion(std::move(value)); return *this;}
-    inline CreateMeetingRequest& WithMediaRegion(const char* value) { SetMediaRegion(value); return *this;}
+    template<typename MediaRegionT = Aws::String>
+    void SetMediaRegion(MediaRegionT&& value) { m_mediaRegionHasBeenSet = true; m_mediaRegion = std::forward<MediaRegionT>(value); }
+    template<typename MediaRegionT = Aws::String>
+    CreateMeetingRequest& WithMediaRegion(MediaRegionT&& value) { SetMediaRegion(std::forward<MediaRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetMeetingHostId() const{ return m_meetingHostId; }
+    inline const Aws::String& GetMeetingHostId() const { return m_meetingHostId; }
     inline bool MeetingHostIdHasBeenSet() const { return m_meetingHostIdHasBeenSet; }
-    inline void SetMeetingHostId(const Aws::String& value) { m_meetingHostIdHasBeenSet = true; m_meetingHostId = value; }
-    inline void SetMeetingHostId(Aws::String&& value) { m_meetingHostIdHasBeenSet = true; m_meetingHostId = std::move(value); }
-    inline void SetMeetingHostId(const char* value) { m_meetingHostIdHasBeenSet = true; m_meetingHostId.assign(value); }
-    inline CreateMeetingRequest& WithMeetingHostId(const Aws::String& value) { SetMeetingHostId(value); return *this;}
-    inline CreateMeetingRequest& WithMeetingHostId(Aws::String&& value) { SetMeetingHostId(std::move(value)); return *this;}
-    inline CreateMeetingRequest& WithMeetingHostId(const char* value) { SetMeetingHostId(value); return *this;}
+    template<typename MeetingHostIdT = Aws::String>
+    void SetMeetingHostId(MeetingHostIdT&& value) { m_meetingHostIdHasBeenSet = true; m_meetingHostId = std::forward<MeetingHostIdT>(value); }
+    template<typename MeetingHostIdT = Aws::String>
+    CreateMeetingRequest& WithMeetingHostId(MeetingHostIdT&& value) { SetMeetingHostId(std::forward<MeetingHostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * begin with <code>aws:</code> are reserved. You can't configure a value that uses
      * this prefix. Case insensitive.</p>
      */
-    inline const Aws::String& GetExternalMeetingId() const{ return m_externalMeetingId; }
+    inline const Aws::String& GetExternalMeetingId() const { return m_externalMeetingId; }
     inline bool ExternalMeetingIdHasBeenSet() const { return m_externalMeetingIdHasBeenSet; }
-    inline void SetExternalMeetingId(const Aws::String& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = value; }
-    inline void SetExternalMeetingId(Aws::String&& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = std::move(value); }
-    inline void SetExternalMeetingId(const char* value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId.assign(value); }
-    inline CreateMeetingRequest& WithExternalMeetingId(const Aws::String& value) { SetExternalMeetingId(value); return *this;}
-    inline CreateMeetingRequest& WithExternalMeetingId(Aws::String&& value) { SetExternalMeetingId(std::move(value)); return *this;}
-    inline CreateMeetingRequest& WithExternalMeetingId(const char* value) { SetExternalMeetingId(value); return *this;}
+    template<typename ExternalMeetingIdT = Aws::String>
+    void SetExternalMeetingId(ExternalMeetingIdT&& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = std::forward<ExternalMeetingIdT>(value); }
+    template<typename ExternalMeetingIdT = Aws::String>
+    CreateMeetingRequest& WithExternalMeetingId(ExternalMeetingIdT&& value) { SetExternalMeetingId(std::forward<ExternalMeetingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +103,12 @@ namespace Model
      * <p>The configuration for resource targets to receive notifications when meeting
      * and attendee events occur.</p>
      */
-    inline const NotificationsConfiguration& GetNotificationsConfiguration() const{ return m_notificationsConfiguration; }
+    inline const NotificationsConfiguration& GetNotificationsConfiguration() const { return m_notificationsConfiguration; }
     inline bool NotificationsConfigurationHasBeenSet() const { return m_notificationsConfigurationHasBeenSet; }
-    inline void SetNotificationsConfiguration(const NotificationsConfiguration& value) { m_notificationsConfigurationHasBeenSet = true; m_notificationsConfiguration = value; }
-    inline void SetNotificationsConfiguration(NotificationsConfiguration&& value) { m_notificationsConfigurationHasBeenSet = true; m_notificationsConfiguration = std::move(value); }
-    inline CreateMeetingRequest& WithNotificationsConfiguration(const NotificationsConfiguration& value) { SetNotificationsConfiguration(value); return *this;}
-    inline CreateMeetingRequest& WithNotificationsConfiguration(NotificationsConfiguration&& value) { SetNotificationsConfiguration(std::move(value)); return *this;}
+    template<typename NotificationsConfigurationT = NotificationsConfiguration>
+    void SetNotificationsConfiguration(NotificationsConfigurationT&& value) { m_notificationsConfigurationHasBeenSet = true; m_notificationsConfiguration = std::forward<NotificationsConfigurationT>(value); }
+    template<typename NotificationsConfigurationT = NotificationsConfiguration>
+    CreateMeetingRequest& WithNotificationsConfiguration(NotificationsConfigurationT&& value) { SetNotificationsConfiguration(std::forward<NotificationsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +116,12 @@ namespace Model
      * <p>Lists the audio and video features enabled for a meeting, such as echo
      * reduction.</p>
      */
-    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const{ return m_meetingFeatures; }
+    inline const MeetingFeaturesConfiguration& GetMeetingFeatures() const { return m_meetingFeatures; }
     inline bool MeetingFeaturesHasBeenSet() const { return m_meetingFeaturesHasBeenSet; }
-    inline void SetMeetingFeatures(const MeetingFeaturesConfiguration& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = value; }
-    inline void SetMeetingFeatures(MeetingFeaturesConfiguration&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::move(value); }
-    inline CreateMeetingRequest& WithMeetingFeatures(const MeetingFeaturesConfiguration& value) { SetMeetingFeatures(value); return *this;}
-    inline CreateMeetingRequest& WithMeetingFeatures(MeetingFeaturesConfiguration&& value) { SetMeetingFeatures(std::move(value)); return *this;}
+    template<typename MeetingFeaturesT = MeetingFeaturesConfiguration>
+    void SetMeetingFeatures(MeetingFeaturesT&& value) { m_meetingFeaturesHasBeenSet = true; m_meetingFeatures = std::forward<MeetingFeaturesT>(value); }
+    template<typename MeetingFeaturesT = MeetingFeaturesConfiguration>
+    CreateMeetingRequest& WithMeetingFeatures(MeetingFeaturesT&& value) { SetMeetingFeatures(std::forward<MeetingFeaturesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +129,12 @@ namespace Model
      * <p>When specified, replicates the media from the primary meeting to the new
      * meeting.</p>
      */
-    inline const Aws::String& GetPrimaryMeetingId() const{ return m_primaryMeetingId; }
+    inline const Aws::String& GetPrimaryMeetingId() const { return m_primaryMeetingId; }
     inline bool PrimaryMeetingIdHasBeenSet() const { return m_primaryMeetingIdHasBeenSet; }
-    inline void SetPrimaryMeetingId(const Aws::String& value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId = value; }
-    inline void SetPrimaryMeetingId(Aws::String&& value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId = std::move(value); }
-    inline void SetPrimaryMeetingId(const char* value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId.assign(value); }
-    inline CreateMeetingRequest& WithPrimaryMeetingId(const Aws::String& value) { SetPrimaryMeetingId(value); return *this;}
-    inline CreateMeetingRequest& WithPrimaryMeetingId(Aws::String&& value) { SetPrimaryMeetingId(std::move(value)); return *this;}
-    inline CreateMeetingRequest& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
+    template<typename PrimaryMeetingIdT = Aws::String>
+    void SetPrimaryMeetingId(PrimaryMeetingIdT&& value) { m_primaryMeetingIdHasBeenSet = true; m_primaryMeetingId = std::forward<PrimaryMeetingIdT>(value); }
+    template<typename PrimaryMeetingIdT = Aws::String>
+    CreateMeetingRequest& WithPrimaryMeetingId(PrimaryMeetingIdT&& value) { SetPrimaryMeetingId(std::forward<PrimaryMeetingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,15 +142,14 @@ namespace Model
      * <p>A consistent and opaque identifier, created and maintained by the builder to
      * represent a segment of their users.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTenantIds() const{ return m_tenantIds; }
+    inline const Aws::Vector<Aws::String>& GetTenantIds() const { return m_tenantIds; }
     inline bool TenantIdsHasBeenSet() const { return m_tenantIdsHasBeenSet; }
-    inline void SetTenantIds(const Aws::Vector<Aws::String>& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = value; }
-    inline void SetTenantIds(Aws::Vector<Aws::String>&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::move(value); }
-    inline CreateMeetingRequest& WithTenantIds(const Aws::Vector<Aws::String>& value) { SetTenantIds(value); return *this;}
-    inline CreateMeetingRequest& WithTenantIds(Aws::Vector<Aws::String>&& value) { SetTenantIds(std::move(value)); return *this;}
-    inline CreateMeetingRequest& AddTenantIds(const Aws::String& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
-    inline CreateMeetingRequest& AddTenantIds(Aws::String&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(std::move(value)); return *this; }
-    inline CreateMeetingRequest& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+    template<typename TenantIdsT = Aws::Vector<Aws::String>>
+    void SetTenantIds(TenantIdsT&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::forward<TenantIdsT>(value); }
+    template<typename TenantIdsT = Aws::Vector<Aws::String>>
+    CreateMeetingRequest& WithTenantIds(TenantIdsT&& value) { SetTenantIds(std::forward<TenantIdsT>(value)); return *this;}
+    template<typename TenantIdsT = Aws::String>
+    CreateMeetingRequest& AddTenantIds(TenantIdsT&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.emplace_back(std::forward<TenantIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -196,14 +185,14 @@ namespace Model
      * If the expected minimum permissions don't work, check the documentation for that
      * service's tagging APIs for more information.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMeetingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateMeetingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMeetingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateMeetingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateMeetingRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateMeetingRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

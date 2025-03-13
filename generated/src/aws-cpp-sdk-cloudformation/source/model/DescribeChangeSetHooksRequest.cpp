@@ -10,14 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeChangeSetHooksRequest::DescribeChangeSetHooksRequest() : 
-    m_changeSetNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChangeSetHooksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

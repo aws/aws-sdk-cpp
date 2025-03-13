@@ -18,38 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-App::App() : 
-    m_appArnHasBeenSet(false),
-    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
-    m_assessmentScheduleHasBeenSet(false),
-    m_awsApplicationArnHasBeenSet(false),
-    m_complianceStatus(AppComplianceStatusType::NOT_SET),
-    m_complianceStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_driftStatus(AppDriftStatusType::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_eventSubscriptionsHasBeenSet(false),
-    m_lastAppComplianceEvaluationTimeHasBeenSet(false),
-    m_lastDriftEvaluationTimeHasBeenSet(false),
-    m_lastResiliencyScoreEvaluationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_permissionModelHasBeenSet(false),
-    m_policyArnHasBeenSet(false),
-    m_resiliencyScore(0.0),
-    m_resiliencyScoreHasBeenSet(false),
-    m_rpoInSecs(0),
-    m_rpoInSecsHasBeenSet(false),
-    m_rtoInSecs(0),
-    m_rtoInSecsHasBeenSet(false),
-    m_status(AppStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 App::App(JsonView jsonValue)
-  : App()
 {
   *this = jsonValue;
 }
@@ -59,52 +28,38 @@ App& App::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
     m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentSchedule"))
   {
     m_assessmentSchedule = AppAssessmentScheduleTypeMapper::GetAppAssessmentScheduleTypeForName(jsonValue.GetString("assessmentSchedule"));
-
     m_assessmentScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsApplicationArn"))
   {
     m_awsApplicationArn = jsonValue.GetString("awsApplicationArn");
-
     m_awsApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("complianceStatus"))
   {
     m_complianceStatus = AppComplianceStatusTypeMapper::GetAppComplianceStatusTypeForName(jsonValue.GetString("complianceStatus"));
-
     m_complianceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("driftStatus"))
   {
     m_driftStatus = AppDriftStatusTypeMapper::GetAppDriftStatusTypeForName(jsonValue.GetString("driftStatus"));
-
     m_driftStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventSubscriptions"))
   {
     Aws::Utils::Array<JsonView> eventSubscriptionsJsonList = jsonValue.GetArray("eventSubscriptions");
@@ -114,77 +69,56 @@ App& App::operator =(JsonView jsonValue)
     }
     m_eventSubscriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAppComplianceEvaluationTime"))
   {
     m_lastAppComplianceEvaluationTime = jsonValue.GetDouble("lastAppComplianceEvaluationTime");
-
     m_lastAppComplianceEvaluationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastDriftEvaluationTime"))
   {
     m_lastDriftEvaluationTime = jsonValue.GetDouble("lastDriftEvaluationTime");
-
     m_lastDriftEvaluationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastResiliencyScoreEvaluationTime"))
   {
     m_lastResiliencyScoreEvaluationTime = jsonValue.GetDouble("lastResiliencyScoreEvaluationTime");
-
     m_lastResiliencyScoreEvaluationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissionModel"))
   {
     m_permissionModel = jsonValue.GetObject("permissionModel");
-
     m_permissionModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyArn"))
   {
     m_policyArn = jsonValue.GetString("policyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resiliencyScore"))
   {
     m_resiliencyScore = jsonValue.GetDouble("resiliencyScore");
-
     m_resiliencyScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rpoInSecs"))
   {
     m_rpoInSecs = jsonValue.GetInteger("rpoInSecs");
-
     m_rpoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rtoInSecs"))
   {
     m_rtoInSecs = jsonValue.GetInteger("rtoInSecs");
-
     m_rtoInSecsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AppStatusTypeMapper::GetAppStatusTypeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -194,7 +128,6 @@ App& App::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

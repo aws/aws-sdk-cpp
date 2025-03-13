@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterAccountRequest::RegisterAccountRequest() : 
-    m_kmsKeyHasBeenSet(false),
-    m_delegatedAdminAccountHasBeenSet(false)
-{
-}
-
 Aws::String RegisterAccountRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-LustreLogCreateConfiguration::LustreLogCreateConfiguration() : 
-    m_level(LustreAccessAuditLogLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 LustreLogCreateConfiguration::LustreLogCreateConfiguration(JsonView jsonValue)
-  : LustreLogCreateConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LustreLogCreateConfiguration& LustreLogCreateConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("Level"))
   {
     m_level = LustreAccessAuditLogLevelMapper::GetLustreAccessAuditLogLevelForName(jsonValue.GetString("Level"));
-
     m_levelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   return *this;
 }
 

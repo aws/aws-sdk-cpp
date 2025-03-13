@@ -35,7 +35,7 @@ namespace Model
   class ExportRevisionsToS3RequestDetails
   {
   public:
-    AWS_DATAEXCHANGE_API ExportRevisionsToS3RequestDetails();
+    AWS_DATAEXCHANGE_API ExportRevisionsToS3RequestDetails() = default;
     AWS_DATAEXCHANGE_API ExportRevisionsToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API ExportRevisionsToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,38 @@ namespace Model
     /**
      * <p>The unique identifier for the data set associated with this export job.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-    inline ExportRevisionsToS3RequestDetails& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline ExportRevisionsToS3RequestDetails& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline ExportRevisionsToS3RequestDetails& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    ExportRevisionsToS3RequestDetails& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Encryption configuration for the export job.</p>
      */
-    inline const ExportServerSideEncryption& GetEncryption() const{ return m_encryption; }
+    inline const ExportServerSideEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const ExportServerSideEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(ExportServerSideEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline ExportRevisionsToS3RequestDetails& WithEncryption(const ExportServerSideEncryption& value) { SetEncryption(value); return *this;}
-    inline ExportRevisionsToS3RequestDetails& WithEncryption(ExportServerSideEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = ExportServerSideEncryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = ExportServerSideEncryption>
+    ExportRevisionsToS3RequestDetails& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination for the revision.</p>
      */
-    inline const Aws::Vector<RevisionDestinationEntry>& GetRevisionDestinations() const{ return m_revisionDestinations; }
+    inline const Aws::Vector<RevisionDestinationEntry>& GetRevisionDestinations() const { return m_revisionDestinations; }
     inline bool RevisionDestinationsHasBeenSet() const { return m_revisionDestinationsHasBeenSet; }
-    inline void SetRevisionDestinations(const Aws::Vector<RevisionDestinationEntry>& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations = value; }
-    inline void SetRevisionDestinations(Aws::Vector<RevisionDestinationEntry>&& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations = std::move(value); }
-    inline ExportRevisionsToS3RequestDetails& WithRevisionDestinations(const Aws::Vector<RevisionDestinationEntry>& value) { SetRevisionDestinations(value); return *this;}
-    inline ExportRevisionsToS3RequestDetails& WithRevisionDestinations(Aws::Vector<RevisionDestinationEntry>&& value) { SetRevisionDestinations(std::move(value)); return *this;}
-    inline ExportRevisionsToS3RequestDetails& AddRevisionDestinations(const RevisionDestinationEntry& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations.push_back(value); return *this; }
-    inline ExportRevisionsToS3RequestDetails& AddRevisionDestinations(RevisionDestinationEntry&& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations.push_back(std::move(value)); return *this; }
+    template<typename RevisionDestinationsT = Aws::Vector<RevisionDestinationEntry>>
+    void SetRevisionDestinations(RevisionDestinationsT&& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations = std::forward<RevisionDestinationsT>(value); }
+    template<typename RevisionDestinationsT = Aws::Vector<RevisionDestinationEntry>>
+    ExportRevisionsToS3RequestDetails& WithRevisionDestinations(RevisionDestinationsT&& value) { SetRevisionDestinations(std::forward<RevisionDestinationsT>(value)); return *this;}
+    template<typename RevisionDestinationsT = RevisionDestinationEntry>
+    ExportRevisionsToS3RequestDetails& AddRevisionDestinations(RevisionDestinationsT&& value) { m_revisionDestinationsHasBeenSet = true; m_revisionDestinations.emplace_back(std::forward<RevisionDestinationsT>(value)); return *this; }
     ///@}
   private:
 

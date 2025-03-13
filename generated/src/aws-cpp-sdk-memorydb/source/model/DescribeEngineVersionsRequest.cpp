@@ -12,18 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEngineVersionsRequest::DescribeEngineVersionsRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_defaultOnly(false),
-    m_defaultOnlyHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEngineVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

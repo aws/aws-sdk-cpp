@@ -12,14 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateRandomRequest::GenerateRandomRequest() : 
-    m_numberOfBytes(0),
-    m_numberOfBytesHasBeenSet(false),
-    m_customKeyStoreIdHasBeenSet(false),
-    m_recipientHasBeenSet(false)
-{
-}
-
 Aws::String GenerateRandomRequest::SerializePayload() const
 {
   JsonValue payload;

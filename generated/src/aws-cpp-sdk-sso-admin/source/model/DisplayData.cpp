@@ -18,15 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-DisplayData::DisplayData() : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_iconUrlHasBeenSet(false)
-{
-}
-
 DisplayData::DisplayData(JsonView jsonValue)
-  : DisplayData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DisplayData& DisplayData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IconUrl"))
   {
     m_iconUrl = jsonValue.GetString("IconUrl");
-
     m_iconUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

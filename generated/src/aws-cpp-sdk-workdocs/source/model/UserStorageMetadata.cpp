@@ -18,15 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-UserStorageMetadata::UserStorageMetadata() : 
-    m_storageUtilizedInBytes(0),
-    m_storageUtilizedInBytesHasBeenSet(false),
-    m_storageRuleHasBeenSet(false)
-{
-}
-
 UserStorageMetadata::UserStorageMetadata(JsonView jsonValue)
-  : UserStorageMetadata()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UserStorageMetadata& UserStorageMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StorageUtilizedInBytes"))
   {
     m_storageUtilizedInBytes = jsonValue.GetInt64("StorageUtilizedInBytes");
-
     m_storageUtilizedInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageRule"))
   {
     m_storageRule = jsonValue.GetObject("StorageRule");
-
     m_storageRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

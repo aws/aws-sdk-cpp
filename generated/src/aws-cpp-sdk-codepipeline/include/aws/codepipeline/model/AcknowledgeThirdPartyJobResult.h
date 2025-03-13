@@ -34,7 +34,7 @@ namespace Model
   class AcknowledgeThirdPartyJobResult
   {
   public:
-    AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult();
+    AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult() = default;
     AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The status information for the third party job, if any.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const JobStatus& value) { m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_status = std::move(value); }
-    inline AcknowledgeThirdPartyJobResult& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline AcknowledgeThirdPartyJobResult& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline JobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AcknowledgeThirdPartyJobResult& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AcknowledgeThirdPartyJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AcknowledgeThirdPartyJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AcknowledgeThirdPartyJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AcknowledgeThirdPartyJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

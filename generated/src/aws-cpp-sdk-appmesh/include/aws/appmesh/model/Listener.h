@@ -37,7 +37,7 @@ namespace Model
   class Listener
   {
   public:
-    AWS_APPMESH_API Listener();
+    AWS_APPMESH_API Listener() = default;
     AWS_APPMESH_API Listener(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Listener& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,60 +47,60 @@ namespace Model
     /**
      * <p>The connection pool information for the listener.</p>
      */
-    inline const VirtualNodeConnectionPool& GetConnectionPool() const{ return m_connectionPool; }
+    inline const VirtualNodeConnectionPool& GetConnectionPool() const { return m_connectionPool; }
     inline bool ConnectionPoolHasBeenSet() const { return m_connectionPoolHasBeenSet; }
-    inline void SetConnectionPool(const VirtualNodeConnectionPool& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = value; }
-    inline void SetConnectionPool(VirtualNodeConnectionPool&& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = std::move(value); }
-    inline Listener& WithConnectionPool(const VirtualNodeConnectionPool& value) { SetConnectionPool(value); return *this;}
-    inline Listener& WithConnectionPool(VirtualNodeConnectionPool&& value) { SetConnectionPool(std::move(value)); return *this;}
+    template<typename ConnectionPoolT = VirtualNodeConnectionPool>
+    void SetConnectionPool(ConnectionPoolT&& value) { m_connectionPoolHasBeenSet = true; m_connectionPool = std::forward<ConnectionPoolT>(value); }
+    template<typename ConnectionPoolT = VirtualNodeConnectionPool>
+    Listener& WithConnectionPool(ConnectionPoolT&& value) { SetConnectionPool(std::forward<ConnectionPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The health check information for the listener.</p>
      */
-    inline const HealthCheckPolicy& GetHealthCheck() const{ return m_healthCheck; }
+    inline const HealthCheckPolicy& GetHealthCheck() const { return m_healthCheck; }
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    inline void SetHealthCheck(const HealthCheckPolicy& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-    inline void SetHealthCheck(HealthCheckPolicy&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-    inline Listener& WithHealthCheck(const HealthCheckPolicy& value) { SetHealthCheck(value); return *this;}
-    inline Listener& WithHealthCheck(HealthCheckPolicy&& value) { SetHealthCheck(std::move(value)); return *this;}
+    template<typename HealthCheckT = HealthCheckPolicy>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = HealthCheckPolicy>
+    Listener& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outlier detection information for the listener.</p>
      */
-    inline const OutlierDetection& GetOutlierDetection() const{ return m_outlierDetection; }
+    inline const OutlierDetection& GetOutlierDetection() const { return m_outlierDetection; }
     inline bool OutlierDetectionHasBeenSet() const { return m_outlierDetectionHasBeenSet; }
-    inline void SetOutlierDetection(const OutlierDetection& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = value; }
-    inline void SetOutlierDetection(OutlierDetection&& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = std::move(value); }
-    inline Listener& WithOutlierDetection(const OutlierDetection& value) { SetOutlierDetection(value); return *this;}
-    inline Listener& WithOutlierDetection(OutlierDetection&& value) { SetOutlierDetection(std::move(value)); return *this;}
+    template<typename OutlierDetectionT = OutlierDetection>
+    void SetOutlierDetection(OutlierDetectionT&& value) { m_outlierDetectionHasBeenSet = true; m_outlierDetection = std::forward<OutlierDetectionT>(value); }
+    template<typename OutlierDetectionT = OutlierDetection>
+    Listener& WithOutlierDetection(OutlierDetectionT&& value) { SetOutlierDetection(std::forward<OutlierDetectionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port mapping information for the listener.</p>
      */
-    inline const PortMapping& GetPortMapping() const{ return m_portMapping; }
+    inline const PortMapping& GetPortMapping() const { return m_portMapping; }
     inline bool PortMappingHasBeenSet() const { return m_portMappingHasBeenSet; }
-    inline void SetPortMapping(const PortMapping& value) { m_portMappingHasBeenSet = true; m_portMapping = value; }
-    inline void SetPortMapping(PortMapping&& value) { m_portMappingHasBeenSet = true; m_portMapping = std::move(value); }
-    inline Listener& WithPortMapping(const PortMapping& value) { SetPortMapping(value); return *this;}
-    inline Listener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
+    template<typename PortMappingT = PortMapping>
+    void SetPortMapping(PortMappingT&& value) { m_portMappingHasBeenSet = true; m_portMapping = std::forward<PortMappingT>(value); }
+    template<typename PortMappingT = PortMapping>
+    Listener& WithPortMapping(PortMappingT&& value) { SetPortMapping(std::forward<PortMappingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents timeouts for different protocols.</p>
      */
-    inline const ListenerTimeout& GetTimeout() const{ return m_timeout; }
+    inline const ListenerTimeout& GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
-    inline void SetTimeout(const ListenerTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
-    inline void SetTimeout(ListenerTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
-    inline Listener& WithTimeout(const ListenerTimeout& value) { SetTimeout(value); return *this;}
-    inline Listener& WithTimeout(ListenerTimeout&& value) { SetTimeout(std::move(value)); return *this;}
+    template<typename TimeoutT = ListenerTimeout>
+    void SetTimeout(TimeoutT&& value) { m_timeoutHasBeenSet = true; m_timeout = std::forward<TimeoutT>(value); }
+    template<typename TimeoutT = ListenerTimeout>
+    Listener& WithTimeout(TimeoutT&& value) { SetTimeout(std::forward<TimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +108,12 @@ namespace Model
      * <p>A reference to an object that represents the Transport Layer Security (TLS)
      * properties for a listener.</p>
      */
-    inline const ListenerTls& GetTls() const{ return m_tls; }
+    inline const ListenerTls& GetTls() const { return m_tls; }
     inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
-    inline void SetTls(const ListenerTls& value) { m_tlsHasBeenSet = true; m_tls = value; }
-    inline void SetTls(ListenerTls&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
-    inline Listener& WithTls(const ListenerTls& value) { SetTls(value); return *this;}
-    inline Listener& WithTls(ListenerTls&& value) { SetTls(std::move(value)); return *this;}
+    template<typename TlsT = ListenerTls>
+    void SetTls(TlsT&& value) { m_tlsHasBeenSet = true; m_tls = std::forward<TlsT>(value); }
+    template<typename TlsT = ListenerTls>
+    Listener& WithTls(TlsT&& value) { SetTls(std::forward<TlsT>(value)); return *this;}
     ///@}
   private:
 

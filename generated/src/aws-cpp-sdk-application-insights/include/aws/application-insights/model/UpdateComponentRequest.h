@@ -22,7 +22,7 @@ namespace Model
   class UpdateComponentRequest : public ApplicationInsightsRequest
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API UpdateComponentRequest();
+    AWS_APPLICATIONINSIGHTS_API UpdateComponentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,57 +39,50 @@ namespace Model
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-    inline UpdateComponentRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline UpdateComponentRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    UpdateComponentRequest& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline UpdateComponentRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline UpdateComponentRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    UpdateComponentRequest& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name of the component.</p>
      */
-    inline const Aws::String& GetNewComponentName() const{ return m_newComponentName; }
+    inline const Aws::String& GetNewComponentName() const { return m_newComponentName; }
     inline bool NewComponentNameHasBeenSet() const { return m_newComponentNameHasBeenSet; }
-    inline void SetNewComponentName(const Aws::String& value) { m_newComponentNameHasBeenSet = true; m_newComponentName = value; }
-    inline void SetNewComponentName(Aws::String&& value) { m_newComponentNameHasBeenSet = true; m_newComponentName = std::move(value); }
-    inline void SetNewComponentName(const char* value) { m_newComponentNameHasBeenSet = true; m_newComponentName.assign(value); }
-    inline UpdateComponentRequest& WithNewComponentName(const Aws::String& value) { SetNewComponentName(value); return *this;}
-    inline UpdateComponentRequest& WithNewComponentName(Aws::String&& value) { SetNewComponentName(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithNewComponentName(const char* value) { SetNewComponentName(value); return *this;}
+    template<typename NewComponentNameT = Aws::String>
+    void SetNewComponentName(NewComponentNameT&& value) { m_newComponentNameHasBeenSet = true; m_newComponentName = std::forward<NewComponentNameT>(value); }
+    template<typename NewComponentNameT = Aws::String>
+    UpdateComponentRequest& WithNewComponentName(NewComponentNameT&& value) { SetNewComponentName(std::forward<NewComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of resource ARNs that belong to the component.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceList() const{ return m_resourceList; }
+    inline const Aws::Vector<Aws::String>& GetResourceList() const { return m_resourceList; }
     inline bool ResourceListHasBeenSet() const { return m_resourceListHasBeenSet; }
-    inline void SetResourceList(const Aws::Vector<Aws::String>& value) { m_resourceListHasBeenSet = true; m_resourceList = value; }
-    inline void SetResourceList(Aws::Vector<Aws::String>&& value) { m_resourceListHasBeenSet = true; m_resourceList = std::move(value); }
-    inline UpdateComponentRequest& WithResourceList(const Aws::Vector<Aws::String>& value) { SetResourceList(value); return *this;}
-    inline UpdateComponentRequest& WithResourceList(Aws::Vector<Aws::String>&& value) { SetResourceList(std::move(value)); return *this;}
-    inline UpdateComponentRequest& AddResourceList(const Aws::String& value) { m_resourceListHasBeenSet = true; m_resourceList.push_back(value); return *this; }
-    inline UpdateComponentRequest& AddResourceList(Aws::String&& value) { m_resourceListHasBeenSet = true; m_resourceList.push_back(std::move(value)); return *this; }
-    inline UpdateComponentRequest& AddResourceList(const char* value) { m_resourceListHasBeenSet = true; m_resourceList.push_back(value); return *this; }
+    template<typename ResourceListT = Aws::Vector<Aws::String>>
+    void SetResourceList(ResourceListT&& value) { m_resourceListHasBeenSet = true; m_resourceList = std::forward<ResourceListT>(value); }
+    template<typename ResourceListT = Aws::Vector<Aws::String>>
+    UpdateComponentRequest& WithResourceList(ResourceListT&& value) { SetResourceList(std::forward<ResourceListT>(value)); return *this;}
+    template<typename ResourceListT = Aws::String>
+    UpdateComponentRequest& AddResourceList(ResourceListT&& value) { m_resourceListHasBeenSet = true; m_resourceList.emplace_back(std::forward<ResourceListT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventFilter::EventFilter() : 
-    m_dimensionsHasBeenSet(false),
-    m_filterType(FilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false)
-{
-}
-
 EventFilter::EventFilter(JsonView jsonValue)
-  : EventFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EventFilter& EventFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dimensions"))
   {
     m_dimensions = jsonValue.GetObject("Dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterType"))
   {
     m_filterType = FilterTypeMapper::GetFilterTypeForName(jsonValue.GetString("FilterType"));
-
     m_filterTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

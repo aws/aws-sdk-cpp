@@ -62,7 +62,7 @@ namespace Model
   class GuardrailContentFilter
   {
   public:
-    AWS_BEDROCK_API GuardrailContentFilter();
+    AWS_BEDROCK_API GuardrailContentFilter() = default;
     AWS_BEDROCK_API GuardrailContentFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailContentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -72,12 +72,10 @@ namespace Model
     /**
      * <p>The harmful category that the content filter is applied to.</p>
      */
-    inline const GuardrailContentFilterType& GetType() const{ return m_type; }
+    inline GuardrailContentFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GuardrailContentFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GuardrailContentFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GuardrailContentFilter& WithType(const GuardrailContentFilterType& value) { SetType(value); return *this;}
-    inline GuardrailContentFilter& WithType(GuardrailContentFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GuardrailContentFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailContentFilter& WithType(GuardrailContentFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,10 @@ namespace Model
      * filter strength, the likelihood of filtering harmful content increases and the
      * probability of seeing harmful content in your application reduces.</p>
      */
-    inline const GuardrailFilterStrength& GetInputStrength() const{ return m_inputStrength; }
+    inline GuardrailFilterStrength GetInputStrength() const { return m_inputStrength; }
     inline bool InputStrengthHasBeenSet() const { return m_inputStrengthHasBeenSet; }
-    inline void SetInputStrength(const GuardrailFilterStrength& value) { m_inputStrengthHasBeenSet = true; m_inputStrength = value; }
-    inline void SetInputStrength(GuardrailFilterStrength&& value) { m_inputStrengthHasBeenSet = true; m_inputStrength = std::move(value); }
-    inline GuardrailContentFilter& WithInputStrength(const GuardrailFilterStrength& value) { SetInputStrength(value); return *this;}
-    inline GuardrailContentFilter& WithInputStrength(GuardrailFilterStrength&& value) { SetInputStrength(std::move(value)); return *this;}
+    inline void SetInputStrength(GuardrailFilterStrength value) { m_inputStrengthHasBeenSet = true; m_inputStrength = value; }
+    inline GuardrailContentFilter& WithInputStrength(GuardrailFilterStrength value) { SetInputStrength(value); return *this;}
     ///@}
 
     ///@{
@@ -101,50 +97,46 @@ namespace Model
      * increases and the probability of seeing harmful content in your application
      * reduces.</p>
      */
-    inline const GuardrailFilterStrength& GetOutputStrength() const{ return m_outputStrength; }
+    inline GuardrailFilterStrength GetOutputStrength() const { return m_outputStrength; }
     inline bool OutputStrengthHasBeenSet() const { return m_outputStrengthHasBeenSet; }
-    inline void SetOutputStrength(const GuardrailFilterStrength& value) { m_outputStrengthHasBeenSet = true; m_outputStrength = value; }
-    inline void SetOutputStrength(GuardrailFilterStrength&& value) { m_outputStrengthHasBeenSet = true; m_outputStrength = std::move(value); }
-    inline GuardrailContentFilter& WithOutputStrength(const GuardrailFilterStrength& value) { SetOutputStrength(value); return *this;}
-    inline GuardrailContentFilter& WithOutputStrength(GuardrailFilterStrength&& value) { SetOutputStrength(std::move(value)); return *this;}
+    inline void SetOutputStrength(GuardrailFilterStrength value) { m_outputStrengthHasBeenSet = true; m_outputStrength = value; }
+    inline GuardrailContentFilter& WithOutputStrength(GuardrailFilterStrength value) { SetOutputStrength(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input modalities selected for the guardrail content filter.</p>
      */
-    inline const Aws::Vector<GuardrailModality>& GetInputModalities() const{ return m_inputModalities; }
+    inline const Aws::Vector<GuardrailModality>& GetInputModalities() const { return m_inputModalities; }
     inline bool InputModalitiesHasBeenSet() const { return m_inputModalitiesHasBeenSet; }
-    inline void SetInputModalities(const Aws::Vector<GuardrailModality>& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = value; }
-    inline void SetInputModalities(Aws::Vector<GuardrailModality>&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::move(value); }
-    inline GuardrailContentFilter& WithInputModalities(const Aws::Vector<GuardrailModality>& value) { SetInputModalities(value); return *this;}
-    inline GuardrailContentFilter& WithInputModalities(Aws::Vector<GuardrailModality>&& value) { SetInputModalities(std::move(value)); return *this;}
-    inline GuardrailContentFilter& AddInputModalities(const GuardrailModality& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
-    inline GuardrailContentFilter& AddInputModalities(GuardrailModality&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(std::move(value)); return *this; }
+    template<typename InputModalitiesT = Aws::Vector<GuardrailModality>>
+    void SetInputModalities(InputModalitiesT&& value) { m_inputModalitiesHasBeenSet = true; m_inputModalities = std::forward<InputModalitiesT>(value); }
+    template<typename InputModalitiesT = Aws::Vector<GuardrailModality>>
+    GuardrailContentFilter& WithInputModalities(InputModalitiesT&& value) { SetInputModalities(std::forward<InputModalitiesT>(value)); return *this;}
+    inline GuardrailContentFilter& AddInputModalities(GuardrailModality value) { m_inputModalitiesHasBeenSet = true; m_inputModalities.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The output modalities selected for the guardrail content filter.</p>
      */
-    inline const Aws::Vector<GuardrailModality>& GetOutputModalities() const{ return m_outputModalities; }
+    inline const Aws::Vector<GuardrailModality>& GetOutputModalities() const { return m_outputModalities; }
     inline bool OutputModalitiesHasBeenSet() const { return m_outputModalitiesHasBeenSet; }
-    inline void SetOutputModalities(const Aws::Vector<GuardrailModality>& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = value; }
-    inline void SetOutputModalities(Aws::Vector<GuardrailModality>&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::move(value); }
-    inline GuardrailContentFilter& WithOutputModalities(const Aws::Vector<GuardrailModality>& value) { SetOutputModalities(value); return *this;}
-    inline GuardrailContentFilter& WithOutputModalities(Aws::Vector<GuardrailModality>&& value) { SetOutputModalities(std::move(value)); return *this;}
-    inline GuardrailContentFilter& AddOutputModalities(const GuardrailModality& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
-    inline GuardrailContentFilter& AddOutputModalities(GuardrailModality&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(std::move(value)); return *this; }
+    template<typename OutputModalitiesT = Aws::Vector<GuardrailModality>>
+    void SetOutputModalities(OutputModalitiesT&& value) { m_outputModalitiesHasBeenSet = true; m_outputModalities = std::forward<OutputModalitiesT>(value); }
+    template<typename OutputModalitiesT = Aws::Vector<GuardrailModality>>
+    GuardrailContentFilter& WithOutputModalities(OutputModalitiesT&& value) { SetOutputModalities(std::forward<OutputModalitiesT>(value)); return *this;}
+    inline GuardrailContentFilter& AddOutputModalities(GuardrailModality value) { m_outputModalitiesHasBeenSet = true; m_outputModalities.push_back(value); return *this; }
     ///@}
   private:
 
-    GuardrailContentFilterType m_type;
+    GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    GuardrailFilterStrength m_inputStrength;
+    GuardrailFilterStrength m_inputStrength{GuardrailFilterStrength::NOT_SET};
     bool m_inputStrengthHasBeenSet = false;
 
-    GuardrailFilterStrength m_outputStrength;
+    GuardrailFilterStrength m_outputStrength{GuardrailFilterStrength::NOT_SET};
     bool m_outputStrengthHasBeenSet = false;
 
     Aws::Vector<GuardrailModality> m_inputModalities;

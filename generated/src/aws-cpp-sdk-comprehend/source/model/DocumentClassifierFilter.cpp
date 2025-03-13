@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassifierFilter::DocumentClassifierFilter() : 
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_documentClassifierNameHasBeenSet(false),
-    m_submitTimeBeforeHasBeenSet(false),
-    m_submitTimeAfterHasBeenSet(false)
-{
-}
-
 DocumentClassifierFilter::DocumentClassifierFilter(JsonView jsonValue)
-  : DocumentClassifierFilter()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DocumentClassifierFilter& DocumentClassifierFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentClassifierName"))
   {
     m_documentClassifierName = jsonValue.GetString("DocumentClassifierName");
-
     m_documentClassifierNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTimeBefore"))
   {
     m_submitTimeBefore = jsonValue.GetDouble("SubmitTimeBefore");
-
     m_submitTimeBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTimeAfter"))
   {
     m_submitTimeAfter = jsonValue.GetDouble("SubmitTimeAfter");
-
     m_submitTimeAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

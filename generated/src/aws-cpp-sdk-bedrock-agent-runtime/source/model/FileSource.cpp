@@ -18,16 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FileSource::FileSource() : 
-    m_byteContentHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_sourceType(FileSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 FileSource::FileSource(JsonView jsonValue)
-  : FileSource()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FileSource& FileSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("byteContent"))
   {
     m_byteContent = jsonValue.GetObject("byteContent");
-
     m_byteContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = FileSourceTypeMapper::GetFileSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

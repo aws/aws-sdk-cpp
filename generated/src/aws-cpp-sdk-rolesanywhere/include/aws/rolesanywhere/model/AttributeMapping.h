@@ -34,7 +34,7 @@ namespace Model
   class AttributeMapping
   {
   public:
-    AWS_ROLESANYWHERE_API AttributeMapping();
+    AWS_ROLESANYWHERE_API AttributeMapping() = default;
     AWS_ROLESANYWHERE_API AttributeMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API AttributeMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,28 @@ namespace Model
     /**
      * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
      */
-    inline const CertificateField& GetCertificateField() const{ return m_certificateField; }
+    inline CertificateField GetCertificateField() const { return m_certificateField; }
     inline bool CertificateFieldHasBeenSet() const { return m_certificateFieldHasBeenSet; }
-    inline void SetCertificateField(const CertificateField& value) { m_certificateFieldHasBeenSet = true; m_certificateField = value; }
-    inline void SetCertificateField(CertificateField&& value) { m_certificateFieldHasBeenSet = true; m_certificateField = std::move(value); }
-    inline AttributeMapping& WithCertificateField(const CertificateField& value) { SetCertificateField(value); return *this;}
-    inline AttributeMapping& WithCertificateField(CertificateField&& value) { SetCertificateField(std::move(value)); return *this;}
+    inline void SetCertificateField(CertificateField value) { m_certificateFieldHasBeenSet = true; m_certificateField = value; }
+    inline AttributeMapping& WithCertificateField(CertificateField value) { SetCertificateField(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of mapping entries for every supported specifier or sub-field.</p>
      */
-    inline const Aws::Vector<MappingRule>& GetMappingRules() const{ return m_mappingRules; }
+    inline const Aws::Vector<MappingRule>& GetMappingRules() const { return m_mappingRules; }
     inline bool MappingRulesHasBeenSet() const { return m_mappingRulesHasBeenSet; }
-    inline void SetMappingRules(const Aws::Vector<MappingRule>& value) { m_mappingRulesHasBeenSet = true; m_mappingRules = value; }
-    inline void SetMappingRules(Aws::Vector<MappingRule>&& value) { m_mappingRulesHasBeenSet = true; m_mappingRules = std::move(value); }
-    inline AttributeMapping& WithMappingRules(const Aws::Vector<MappingRule>& value) { SetMappingRules(value); return *this;}
-    inline AttributeMapping& WithMappingRules(Aws::Vector<MappingRule>&& value) { SetMappingRules(std::move(value)); return *this;}
-    inline AttributeMapping& AddMappingRules(const MappingRule& value) { m_mappingRulesHasBeenSet = true; m_mappingRules.push_back(value); return *this; }
-    inline AttributeMapping& AddMappingRules(MappingRule&& value) { m_mappingRulesHasBeenSet = true; m_mappingRules.push_back(std::move(value)); return *this; }
+    template<typename MappingRulesT = Aws::Vector<MappingRule>>
+    void SetMappingRules(MappingRulesT&& value) { m_mappingRulesHasBeenSet = true; m_mappingRules = std::forward<MappingRulesT>(value); }
+    template<typename MappingRulesT = Aws::Vector<MappingRule>>
+    AttributeMapping& WithMappingRules(MappingRulesT&& value) { SetMappingRules(std::forward<MappingRulesT>(value)); return *this;}
+    template<typename MappingRulesT = MappingRule>
+    AttributeMapping& AddMappingRules(MappingRulesT&& value) { m_mappingRulesHasBeenSet = true; m_mappingRules.emplace_back(std::forward<MappingRulesT>(value)); return *this; }
     ///@}
   private:
 
-    CertificateField m_certificateField;
+    CertificateField m_certificateField{CertificateField::NOT_SET};
     bool m_certificateFieldHasBeenSet = false;
 
     Aws::Vector<MappingRule> m_mappingRules;

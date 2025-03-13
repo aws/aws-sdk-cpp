@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResponsePlanRequest::GetResponsePlanRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetResponsePlanRequest::SerializePayload() const
 {
   return {};

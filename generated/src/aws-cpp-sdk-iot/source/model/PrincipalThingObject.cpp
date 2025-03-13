@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PrincipalThingObject::PrincipalThingObject() : 
-    m_thingNameHasBeenSet(false),
-    m_thingPrincipalType(ThingPrincipalType::NOT_SET),
-    m_thingPrincipalTypeHasBeenSet(false)
-{
-}
-
 PrincipalThingObject::PrincipalThingObject(JsonView jsonValue)
-  : PrincipalThingObject()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PrincipalThingObject& PrincipalThingObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingPrincipalType"))
   {
     m_thingPrincipalType = ThingPrincipalTypeMapper::GetThingPrincipalTypeForName(jsonValue.GetString("thingPrincipalType"));
-
     m_thingPrincipalTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class AssessmentRunFilter
   {
   public:
-    AWS_INSPECTOR_API AssessmentRunFilter();
+    AWS_INSPECTOR_API AssessmentRunFilter() = default;
     AWS_INSPECTOR_API AssessmentRunFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AssessmentRunFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * wildcard that is specified for this data type property must match the value of
      * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data type.</p>
      */
-    inline const Aws::String& GetNamePattern() const{ return m_namePattern; }
+    inline const Aws::String& GetNamePattern() const { return m_namePattern; }
     inline bool NamePatternHasBeenSet() const { return m_namePatternHasBeenSet; }
-    inline void SetNamePattern(const Aws::String& value) { m_namePatternHasBeenSet = true; m_namePattern = value; }
-    inline void SetNamePattern(Aws::String&& value) { m_namePatternHasBeenSet = true; m_namePattern = std::move(value); }
-    inline void SetNamePattern(const char* value) { m_namePatternHasBeenSet = true; m_namePattern.assign(value); }
-    inline AssessmentRunFilter& WithNamePattern(const Aws::String& value) { SetNamePattern(value); return *this;}
-    inline AssessmentRunFilter& WithNamePattern(Aws::String&& value) { SetNamePattern(std::move(value)); return *this;}
-    inline AssessmentRunFilter& WithNamePattern(const char* value) { SetNamePattern(value); return *this;}
+    template<typename NamePatternT = Aws::String>
+    void SetNamePattern(NamePatternT&& value) { m_namePatternHasBeenSet = true; m_namePattern = std::forward<NamePatternT>(value); }
+    template<typename NamePatternT = Aws::String>
+    AssessmentRunFilter& WithNamePattern(NamePatternT&& value) { SetNamePattern(std::forward<NamePatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,13 @@ namespace Model
      * type property must be the exact match of the value of the
      * <b>assessmentRunState</b> property of the <a>AssessmentRun</a> data type.</p>
      */
-    inline const Aws::Vector<AssessmentRunState>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<AssessmentRunState>& GetStates() const { return m_states; }
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
-    inline void SetStates(const Aws::Vector<AssessmentRunState>& value) { m_statesHasBeenSet = true; m_states = value; }
-    inline void SetStates(Aws::Vector<AssessmentRunState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
-    inline AssessmentRunFilter& WithStates(const Aws::Vector<AssessmentRunState>& value) { SetStates(value); return *this;}
-    inline AssessmentRunFilter& WithStates(Aws::Vector<AssessmentRunState>&& value) { SetStates(std::move(value)); return *this;}
-    inline AssessmentRunFilter& AddStates(const AssessmentRunState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
-    inline AssessmentRunFilter& AddStates(AssessmentRunState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    template<typename StatesT = Aws::Vector<AssessmentRunState>>
+    void SetStates(StatesT&& value) { m_statesHasBeenSet = true; m_states = std::forward<StatesT>(value); }
+    template<typename StatesT = Aws::Vector<AssessmentRunState>>
+    AssessmentRunFilter& WithStates(StatesT&& value) { SetStates(std::forward<StatesT>(value)); return *this;}
+    inline AssessmentRunFilter& AddStates(AssessmentRunState value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -81,12 +78,12 @@ namespace Model
      * maximum values of the <b>durationInSeconds</b> property of the
      * <a>AssessmentRun</a> data type.</p>
      */
-    inline const DurationRange& GetDurationRange() const{ return m_durationRange; }
+    inline const DurationRange& GetDurationRange() const { return m_durationRange; }
     inline bool DurationRangeHasBeenSet() const { return m_durationRangeHasBeenSet; }
-    inline void SetDurationRange(const DurationRange& value) { m_durationRangeHasBeenSet = true; m_durationRange = value; }
-    inline void SetDurationRange(DurationRange&& value) { m_durationRangeHasBeenSet = true; m_durationRange = std::move(value); }
-    inline AssessmentRunFilter& WithDurationRange(const DurationRange& value) { SetDurationRange(value); return *this;}
-    inline AssessmentRunFilter& WithDurationRange(DurationRange&& value) { SetDurationRange(std::move(value)); return *this;}
+    template<typename DurationRangeT = DurationRange>
+    void SetDurationRange(DurationRangeT&& value) { m_durationRangeHasBeenSet = true; m_durationRange = std::forward<DurationRangeT>(value); }
+    template<typename DurationRangeT = DurationRange>
+    AssessmentRunFilter& WithDurationRange(DurationRangeT&& value) { SetDurationRange(std::forward<DurationRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,15 +92,14 @@ namespace Model
      * type property must be contained in the list of values of the
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const { return m_rulesPackageArns; }
     inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
-    inline void SetRulesPackageArns(const Aws::Vector<Aws::String>& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = value; }
-    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::move(value); }
-    inline AssessmentRunFilter& WithRulesPackageArns(const Aws::Vector<Aws::String>& value) { SetRulesPackageArns(value); return *this;}
-    inline AssessmentRunFilter& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
-    inline AssessmentRunFilter& AddRulesPackageArns(const Aws::String& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
-    inline AssessmentRunFilter& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(std::move(value)); return *this; }
-    inline AssessmentRunFilter& AddRulesPackageArns(const char* value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.push_back(value); return *this; }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    void SetRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::forward<RulesPackageArnsT>(value); }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    AssessmentRunFilter& WithRulesPackageArns(RulesPackageArnsT&& value) { SetRulesPackageArns(std::forward<RulesPackageArnsT>(value)); return *this;}
+    template<typename RulesPackageArnsT = Aws::String>
+    AssessmentRunFilter& AddRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.emplace_back(std::forward<RulesPackageArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,12 +109,12 @@ namespace Model
      * maximum values of the <b>startTime</b> property of the <a>AssessmentRun</a> data
      * type.</p>
      */
-    inline const TimestampRange& GetStartTimeRange() const{ return m_startTimeRange; }
+    inline const TimestampRange& GetStartTimeRange() const { return m_startTimeRange; }
     inline bool StartTimeRangeHasBeenSet() const { return m_startTimeRangeHasBeenSet; }
-    inline void SetStartTimeRange(const TimestampRange& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = value; }
-    inline void SetStartTimeRange(TimestampRange&& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = std::move(value); }
-    inline AssessmentRunFilter& WithStartTimeRange(const TimestampRange& value) { SetStartTimeRange(value); return *this;}
-    inline AssessmentRunFilter& WithStartTimeRange(TimestampRange&& value) { SetStartTimeRange(std::move(value)); return *this;}
+    template<typename StartTimeRangeT = TimestampRange>
+    void SetStartTimeRange(StartTimeRangeT&& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = std::forward<StartTimeRangeT>(value); }
+    template<typename StartTimeRangeT = TimestampRange>
+    AssessmentRunFilter& WithStartTimeRange(StartTimeRangeT&& value) { SetStartTimeRange(std::forward<StartTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +124,12 @@ namespace Model
      * maximum values of the <b>completedAt</b> property of the <a>AssessmentRun</a>
      * data type.</p>
      */
-    inline const TimestampRange& GetCompletionTimeRange() const{ return m_completionTimeRange; }
+    inline const TimestampRange& GetCompletionTimeRange() const { return m_completionTimeRange; }
     inline bool CompletionTimeRangeHasBeenSet() const { return m_completionTimeRangeHasBeenSet; }
-    inline void SetCompletionTimeRange(const TimestampRange& value) { m_completionTimeRangeHasBeenSet = true; m_completionTimeRange = value; }
-    inline void SetCompletionTimeRange(TimestampRange&& value) { m_completionTimeRangeHasBeenSet = true; m_completionTimeRange = std::move(value); }
-    inline AssessmentRunFilter& WithCompletionTimeRange(const TimestampRange& value) { SetCompletionTimeRange(value); return *this;}
-    inline AssessmentRunFilter& WithCompletionTimeRange(TimestampRange&& value) { SetCompletionTimeRange(std::move(value)); return *this;}
+    template<typename CompletionTimeRangeT = TimestampRange>
+    void SetCompletionTimeRange(CompletionTimeRangeT&& value) { m_completionTimeRangeHasBeenSet = true; m_completionTimeRange = std::forward<CompletionTimeRangeT>(value); }
+    template<typename CompletionTimeRangeT = TimestampRange>
+    AssessmentRunFilter& WithCompletionTimeRange(CompletionTimeRangeT&& value) { SetCompletionTimeRange(std::forward<CompletionTimeRangeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +138,12 @@ namespace Model
      * type property must match the <b>stateChangedAt</b> property of the
      * <a>AssessmentRun</a> data type.</p>
      */
-    inline const TimestampRange& GetStateChangeTimeRange() const{ return m_stateChangeTimeRange; }
+    inline const TimestampRange& GetStateChangeTimeRange() const { return m_stateChangeTimeRange; }
     inline bool StateChangeTimeRangeHasBeenSet() const { return m_stateChangeTimeRangeHasBeenSet; }
-    inline void SetStateChangeTimeRange(const TimestampRange& value) { m_stateChangeTimeRangeHasBeenSet = true; m_stateChangeTimeRange = value; }
-    inline void SetStateChangeTimeRange(TimestampRange&& value) { m_stateChangeTimeRangeHasBeenSet = true; m_stateChangeTimeRange = std::move(value); }
-    inline AssessmentRunFilter& WithStateChangeTimeRange(const TimestampRange& value) { SetStateChangeTimeRange(value); return *this;}
-    inline AssessmentRunFilter& WithStateChangeTimeRange(TimestampRange&& value) { SetStateChangeTimeRange(std::move(value)); return *this;}
+    template<typename StateChangeTimeRangeT = TimestampRange>
+    void SetStateChangeTimeRange(StateChangeTimeRangeT&& value) { m_stateChangeTimeRangeHasBeenSet = true; m_stateChangeTimeRange = std::forward<StateChangeTimeRangeT>(value); }
+    template<typename StateChangeTimeRangeT = TimestampRange>
+    AssessmentRunFilter& WithStateChangeTimeRange(StateChangeTimeRangeT&& value) { SetStateChangeTimeRange(std::forward<StateChangeTimeRangeT>(value)); return *this;}
     ///@}
   private:
 

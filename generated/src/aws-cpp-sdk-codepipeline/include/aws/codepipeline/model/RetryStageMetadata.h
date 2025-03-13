@@ -32,7 +32,7 @@ namespace Model
   class RetryStageMetadata
   {
   public:
-    AWS_CODEPIPELINE_API RetryStageMetadata();
+    AWS_CODEPIPELINE_API RetryStageMetadata() = default;
     AWS_CODEPIPELINE_API RetryStageMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API RetryStageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of attempts for a specific stage with automatic retry on stage
      * failure. One attempt is allowed for automatic stage retry on failure.</p>
      */
-    inline int GetAutoStageRetryAttempt() const{ return m_autoStageRetryAttempt; }
+    inline int GetAutoStageRetryAttempt() const { return m_autoStageRetryAttempt; }
     inline bool AutoStageRetryAttemptHasBeenSet() const { return m_autoStageRetryAttemptHasBeenSet; }
     inline void SetAutoStageRetryAttempt(int value) { m_autoStageRetryAttemptHasBeenSet = true; m_autoStageRetryAttempt = value; }
     inline RetryStageMetadata& WithAutoStageRetryAttempt(int value) { SetAutoStageRetryAttempt(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>The number of attempts for a specific stage where manual retries have been
      * made upon stage failure.</p>
      */
-    inline int GetManualStageRetryAttempt() const{ return m_manualStageRetryAttempt; }
+    inline int GetManualStageRetryAttempt() const { return m_manualStageRetryAttempt; }
     inline bool ManualStageRetryAttemptHasBeenSet() const { return m_manualStageRetryAttemptHasBeenSet; }
     inline void SetManualStageRetryAttempt(int value) { m_manualStageRetryAttemptHasBeenSet = true; m_manualStageRetryAttempt = value; }
     inline RetryStageMetadata& WithManualStageRetryAttempt(int value) { SetManualStageRetryAttempt(value); return *this;}
@@ -65,22 +65,20 @@ namespace Model
      * <p>The latest trigger for a specific stage where manual or automatic retries
      * have been made upon stage failure.</p>
      */
-    inline const RetryTrigger& GetLatestRetryTrigger() const{ return m_latestRetryTrigger; }
+    inline RetryTrigger GetLatestRetryTrigger() const { return m_latestRetryTrigger; }
     inline bool LatestRetryTriggerHasBeenSet() const { return m_latestRetryTriggerHasBeenSet; }
-    inline void SetLatestRetryTrigger(const RetryTrigger& value) { m_latestRetryTriggerHasBeenSet = true; m_latestRetryTrigger = value; }
-    inline void SetLatestRetryTrigger(RetryTrigger&& value) { m_latestRetryTriggerHasBeenSet = true; m_latestRetryTrigger = std::move(value); }
-    inline RetryStageMetadata& WithLatestRetryTrigger(const RetryTrigger& value) { SetLatestRetryTrigger(value); return *this;}
-    inline RetryStageMetadata& WithLatestRetryTrigger(RetryTrigger&& value) { SetLatestRetryTrigger(std::move(value)); return *this;}
+    inline void SetLatestRetryTrigger(RetryTrigger value) { m_latestRetryTriggerHasBeenSet = true; m_latestRetryTrigger = value; }
+    inline RetryStageMetadata& WithLatestRetryTrigger(RetryTrigger value) { SetLatestRetryTrigger(value); return *this;}
     ///@}
   private:
 
-    int m_autoStageRetryAttempt;
+    int m_autoStageRetryAttempt{0};
     bool m_autoStageRetryAttemptHasBeenSet = false;
 
-    int m_manualStageRetryAttempt;
+    int m_manualStageRetryAttempt{0};
     bool m_manualStageRetryAttemptHasBeenSet = false;
 
-    RetryTrigger m_latestRetryTrigger;
+    RetryTrigger m_latestRetryTrigger{RetryTrigger::NOT_SET};
     bool m_latestRetryTriggerHasBeenSet = false;
   };
 

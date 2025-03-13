@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDistributionConfigurationResult::GetDistributionConfigurationResult()
-{
-}
-
 GetDistributionConfigurationResult::GetDistributionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ GetDistributionConfigurationResult& GetDistributionConfigurationResult::operator
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("distributionConfiguration"))
   {
     m_distributionConfiguration = jsonValue.GetObject("distributionConfiguration");
-
+    m_distributionConfigurationHasBeenSet = true;
   }
-
 
 
   return *this;

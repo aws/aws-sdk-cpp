@@ -27,7 +27,7 @@ namespace Model
   class DeleteExportResult
   {
   public:
-    AWS_BCMDATAEXPORTS_API DeleteExportResult();
+    AWS_BCMDATAEXPORTS_API DeleteExportResult() = default;
     AWS_BCMDATAEXPORTS_API DeleteExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMDATAEXPORTS_API DeleteExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for this export.</p>
      */
-    inline const Aws::String& GetExportArn() const{ return m_exportArn; }
-    inline void SetExportArn(const Aws::String& value) { m_exportArn = value; }
-    inline void SetExportArn(Aws::String&& value) { m_exportArn = std::move(value); }
-    inline void SetExportArn(const char* value) { m_exportArn.assign(value); }
-    inline DeleteExportResult& WithExportArn(const Aws::String& value) { SetExportArn(value); return *this;}
-    inline DeleteExportResult& WithExportArn(Aws::String&& value) { SetExportArn(std::move(value)); return *this;}
-    inline DeleteExportResult& WithExportArn(const char* value) { SetExportArn(value); return *this;}
+    inline const Aws::String& GetExportArn() const { return m_exportArn; }
+    template<typename ExportArnT = Aws::String>
+    void SetExportArn(ExportArnT&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::forward<ExportArnT>(value); }
+    template<typename ExportArnT = Aws::String>
+    DeleteExportResult& WithExportArn(ExportArnT&& value) { SetExportArn(std::forward<ExportArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_exportArn;
+    bool m_exportArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

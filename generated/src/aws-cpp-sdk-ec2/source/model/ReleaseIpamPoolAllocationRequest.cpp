@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReleaseIpamPoolAllocationRequest::ReleaseIpamPoolAllocationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_ipamPoolAllocationIdHasBeenSet(false)
-{
-}
-
 Aws::String ReleaseIpamPoolAllocationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

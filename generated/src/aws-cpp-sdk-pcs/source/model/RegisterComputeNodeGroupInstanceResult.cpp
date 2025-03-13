@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterComputeNodeGroupInstanceResult::RegisterComputeNodeGroupInstanceResult()
-{
-}
-
 RegisterComputeNodeGroupInstanceResult::RegisterComputeNodeGroupInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ RegisterComputeNodeGroupInstanceResult& RegisterComputeNodeGroupInstanceResult::
   if(jsonValue.ValueExists("nodeID"))
   {
     m_nodeID = jsonValue.GetString("nodeID");
-
+    m_nodeIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharedSecret"))
   {
     m_sharedSecret = jsonValue.GetString("sharedSecret");
-
+    m_sharedSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -48,14 +42,15 @@ RegisterComputeNodeGroupInstanceResult& RegisterComputeNodeGroupInstanceResult::
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
     }
+    m_endpointsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

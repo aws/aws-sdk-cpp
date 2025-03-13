@@ -18,17 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-UnsuccessfulFaceAssociation::UnsuccessfulFaceAssociation() : 
-    m_faceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_reasonsHasBeenSet(false)
-{
-}
-
 UnsuccessfulFaceAssociation::UnsuccessfulFaceAssociation(JsonView jsonValue)
-  : UnsuccessfulFaceAssociation()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ UnsuccessfulFaceAssociation& UnsuccessfulFaceAssociation::operator =(JsonView js
   if(jsonValue.ValueExists("FaceId"))
   {
     m_faceId = jsonValue.GetString("FaceId");
-
     m_faceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reasons"))
   {
     Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
@@ -65,7 +49,6 @@ UnsuccessfulFaceAssociation& UnsuccessfulFaceAssociation::operator =(JsonView js
     }
     m_reasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class PresignedUrlConfig
   {
   public:
-    AWS_IOT_API PresignedUrlConfig();
+    AWS_IOT_API PresignedUrlConfig() = default;
     AWS_IOT_API PresignedUrlConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API PresignedUrlConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * confused deputy prevention</a> in the <i>Amazon Web Services IoT Core developer
      * guide</i>.</p> 
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline PresignedUrlConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline PresignedUrlConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline PresignedUrlConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    PresignedUrlConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * the default value is 3600 seconds. Pre-signed URLs are generated when Jobs
      * receives an MQTT request for the job document.</p>
      */
-    inline long long GetExpiresInSec() const{ return m_expiresInSec; }
+    inline long long GetExpiresInSec() const { return m_expiresInSec; }
     inline bool ExpiresInSecHasBeenSet() const { return m_expiresInSecHasBeenSet; }
     inline void SetExpiresInSec(long long value) { m_expiresInSecHasBeenSet = true; m_expiresInSec = value; }
     inline PresignedUrlConfig& WithExpiresInSec(long long value) { SetExpiresInSec(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    long long m_expiresInSec;
+    long long m_expiresInSec{0};
     bool m_expiresInSecHasBeenSet = false;
   };
 

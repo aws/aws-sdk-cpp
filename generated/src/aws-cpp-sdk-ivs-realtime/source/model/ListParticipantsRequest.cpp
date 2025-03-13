@@ -12,22 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListParticipantsRequest::ListParticipantsRequest() : 
-    m_stageArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_filterByUserIdHasBeenSet(false),
-    m_filterByPublished(false),
-    m_filterByPublishedHasBeenSet(false),
-    m_filterByState(ParticipantState::NOT_SET),
-    m_filterByStateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filterByRecordingState(ParticipantRecordingFilterByRecordingState::NOT_SET),
-    m_filterByRecordingStateHasBeenSet(false)
-{
-}
-
 Aws::String ListParticipantsRequest::SerializePayload() const
 {
   JsonValue payload;

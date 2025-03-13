@@ -12,13 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFaceLivenessSessionRequest::CreateFaceLivenessSessionRequest() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateFaceLivenessSessionRequest::SerializePayload() const
 {
   JsonValue payload;

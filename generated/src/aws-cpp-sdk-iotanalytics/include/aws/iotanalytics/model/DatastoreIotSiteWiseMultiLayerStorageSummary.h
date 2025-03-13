@@ -32,7 +32,7 @@ namespace Model
   class DatastoreIotSiteWiseMultiLayerStorageSummary
   {
   public:
-    AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary();
+    AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary() = default;
     AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatastoreIotSiteWiseMultiLayerStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you
      * manage.</p>
      */
-    inline const IotSiteWiseCustomerManagedDatastoreS3StorageSummary& GetCustomerManagedS3Storage() const{ return m_customerManagedS3Storage; }
+    inline const IotSiteWiseCustomerManagedDatastoreS3StorageSummary& GetCustomerManagedS3Storage() const { return m_customerManagedS3Storage; }
     inline bool CustomerManagedS3StorageHasBeenSet() const { return m_customerManagedS3StorageHasBeenSet; }
-    inline void SetCustomerManagedS3Storage(const IotSiteWiseCustomerManagedDatastoreS3StorageSummary& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = value; }
-    inline void SetCustomerManagedS3Storage(IotSiteWiseCustomerManagedDatastoreS3StorageSummary&& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = std::move(value); }
-    inline DatastoreIotSiteWiseMultiLayerStorageSummary& WithCustomerManagedS3Storage(const IotSiteWiseCustomerManagedDatastoreS3StorageSummary& value) { SetCustomerManagedS3Storage(value); return *this;}
-    inline DatastoreIotSiteWiseMultiLayerStorageSummary& WithCustomerManagedS3Storage(IotSiteWiseCustomerManagedDatastoreS3StorageSummary&& value) { SetCustomerManagedS3Storage(std::move(value)); return *this;}
+    template<typename CustomerManagedS3StorageT = IotSiteWiseCustomerManagedDatastoreS3StorageSummary>
+    void SetCustomerManagedS3Storage(CustomerManagedS3StorageT&& value) { m_customerManagedS3StorageHasBeenSet = true; m_customerManagedS3Storage = std::forward<CustomerManagedS3StorageT>(value); }
+    template<typename CustomerManagedS3StorageT = IotSiteWiseCustomerManagedDatastoreS3StorageSummary>
+    DatastoreIotSiteWiseMultiLayerStorageSummary& WithCustomerManagedS3Storage(CustomerManagedS3StorageT&& value) { SetCustomerManagedS3Storage(std::forward<CustomerManagedS3StorageT>(value)); return *this;}
     ///@}
   private:
 

@@ -46,7 +46,7 @@ namespace Model
   class DkimAttributes
   {
   public:
-    AWS_SESV2_API DkimAttributes();
+    AWS_SESV2_API DkimAttributes() = default;
     AWS_SESV2_API DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,7 +58,7 @@ namespace Model
      * identity are signed using DKIM. If the value is <code>false</code>, then the
      * messages that you send from the identity aren't DKIM-signed.</p>
      */
-    inline bool GetSigningEnabled() const{ return m_signingEnabled; }
+    inline bool GetSigningEnabled() const { return m_signingEnabled; }
     inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
     inline void SetSigningEnabled(bool value) { m_signingEnabledHasBeenSet = true; m_signingEnabled = value; }
     inline DkimAttributes& WithSigningEnabled(bool value) { SetSigningEnabled(value); return *this;}
@@ -79,12 +79,10 @@ namespace Model
      * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated
      * for the domain.</p> </li> </ul>
      */
-    inline const DkimStatus& GetStatus() const{ return m_status; }
+    inline DkimStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DkimStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DkimStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DkimAttributes& WithStatus(const DkimStatus& value) { SetStatus(value); return *this;}
-    inline DkimAttributes& WithStatus(DkimStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DkimStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DkimAttributes& WithStatus(DkimStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -101,15 +99,14 @@ namespace Model
      * you use, Amazon SES searches for the appropriate records in the DNS
      * configuration of the domain for up to 72 hours.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTokens() const{ return m_tokens; }
+    inline const Aws::Vector<Aws::String>& GetTokens() const { return m_tokens; }
     inline bool TokensHasBeenSet() const { return m_tokensHasBeenSet; }
-    inline void SetTokens(const Aws::Vector<Aws::String>& value) { m_tokensHasBeenSet = true; m_tokens = value; }
-    inline void SetTokens(Aws::Vector<Aws::String>&& value) { m_tokensHasBeenSet = true; m_tokens = std::move(value); }
-    inline DkimAttributes& WithTokens(const Aws::Vector<Aws::String>& value) { SetTokens(value); return *this;}
-    inline DkimAttributes& WithTokens(Aws::Vector<Aws::String>&& value) { SetTokens(std::move(value)); return *this;}
-    inline DkimAttributes& AddTokens(const Aws::String& value) { m_tokensHasBeenSet = true; m_tokens.push_back(value); return *this; }
-    inline DkimAttributes& AddTokens(Aws::String&& value) { m_tokensHasBeenSet = true; m_tokens.push_back(std::move(value)); return *this; }
-    inline DkimAttributes& AddTokens(const char* value) { m_tokensHasBeenSet = true; m_tokens.push_back(value); return *this; }
+    template<typename TokensT = Aws::Vector<Aws::String>>
+    void SetTokens(TokensT&& value) { m_tokensHasBeenSet = true; m_tokens = std::forward<TokensT>(value); }
+    template<typename TokensT = Aws::Vector<Aws::String>>
+    DkimAttributes& WithTokens(TokensT&& value) { SetTokens(std::forward<TokensT>(value)); return *this;}
+    template<typename TokensT = Aws::String>
+    DkimAttributes& AddTokens(TokensT&& value) { m_tokensHasBeenSet = true; m_tokens.emplace_back(std::forward<TokensT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -187,12 +184,10 @@ namespace Model
      * identity by replicating signing attributes from a parent identity in US West
      * (Oregon) region using Deterministic Easy-DKIM (DEED). </p> </li> </ul>
      */
-    inline const DkimSigningAttributesOrigin& GetSigningAttributesOrigin() const{ return m_signingAttributesOrigin; }
+    inline DkimSigningAttributesOrigin GetSigningAttributesOrigin() const { return m_signingAttributesOrigin; }
     inline bool SigningAttributesOriginHasBeenSet() const { return m_signingAttributesOriginHasBeenSet; }
-    inline void SetSigningAttributesOrigin(const DkimSigningAttributesOrigin& value) { m_signingAttributesOriginHasBeenSet = true; m_signingAttributesOrigin = value; }
-    inline void SetSigningAttributesOrigin(DkimSigningAttributesOrigin&& value) { m_signingAttributesOriginHasBeenSet = true; m_signingAttributesOrigin = std::move(value); }
-    inline DkimAttributes& WithSigningAttributesOrigin(const DkimSigningAttributesOrigin& value) { SetSigningAttributesOrigin(value); return *this;}
-    inline DkimAttributes& WithSigningAttributesOrigin(DkimSigningAttributesOrigin&& value) { SetSigningAttributesOrigin(std::move(value)); return *this;}
+    inline void SetSigningAttributesOrigin(DkimSigningAttributesOrigin value) { m_signingAttributesOriginHasBeenSet = true; m_signingAttributesOrigin = value; }
+    inline DkimAttributes& WithSigningAttributesOrigin(DkimSigningAttributesOrigin value) { SetSigningAttributesOrigin(value); return *this;}
     ///@}
 
     ///@{
@@ -200,58 +195,54 @@ namespace Model
      * <p>[Easy DKIM] The key length of the future DKIM key pair to be generated. This
      * can be changed at most once per day.</p>
      */
-    inline const DkimSigningKeyLength& GetNextSigningKeyLength() const{ return m_nextSigningKeyLength; }
+    inline DkimSigningKeyLength GetNextSigningKeyLength() const { return m_nextSigningKeyLength; }
     inline bool NextSigningKeyLengthHasBeenSet() const { return m_nextSigningKeyLengthHasBeenSet; }
-    inline void SetNextSigningKeyLength(const DkimSigningKeyLength& value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = value; }
-    inline void SetNextSigningKeyLength(DkimSigningKeyLength&& value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = std::move(value); }
-    inline DkimAttributes& WithNextSigningKeyLength(const DkimSigningKeyLength& value) { SetNextSigningKeyLength(value); return *this;}
-    inline DkimAttributes& WithNextSigningKeyLength(DkimSigningKeyLength&& value) { SetNextSigningKeyLength(std::move(value)); return *this;}
+    inline void SetNextSigningKeyLength(DkimSigningKeyLength value) { m_nextSigningKeyLengthHasBeenSet = true; m_nextSigningKeyLength = value; }
+    inline DkimAttributes& WithNextSigningKeyLength(DkimSigningKeyLength value) { SetNextSigningKeyLength(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>[Easy DKIM] The key length of the DKIM key pair in use.</p>
      */
-    inline const DkimSigningKeyLength& GetCurrentSigningKeyLength() const{ return m_currentSigningKeyLength; }
+    inline DkimSigningKeyLength GetCurrentSigningKeyLength() const { return m_currentSigningKeyLength; }
     inline bool CurrentSigningKeyLengthHasBeenSet() const { return m_currentSigningKeyLengthHasBeenSet; }
-    inline void SetCurrentSigningKeyLength(const DkimSigningKeyLength& value) { m_currentSigningKeyLengthHasBeenSet = true; m_currentSigningKeyLength = value; }
-    inline void SetCurrentSigningKeyLength(DkimSigningKeyLength&& value) { m_currentSigningKeyLengthHasBeenSet = true; m_currentSigningKeyLength = std::move(value); }
-    inline DkimAttributes& WithCurrentSigningKeyLength(const DkimSigningKeyLength& value) { SetCurrentSigningKeyLength(value); return *this;}
-    inline DkimAttributes& WithCurrentSigningKeyLength(DkimSigningKeyLength&& value) { SetCurrentSigningKeyLength(std::move(value)); return *this;}
+    inline void SetCurrentSigningKeyLength(DkimSigningKeyLength value) { m_currentSigningKeyLengthHasBeenSet = true; m_currentSigningKeyLength = value; }
+    inline DkimAttributes& WithCurrentSigningKeyLength(DkimSigningKeyLength value) { SetCurrentSigningKeyLength(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>[Easy DKIM] The last time a key pair was generated for this identity.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastKeyGenerationTimestamp() const{ return m_lastKeyGenerationTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastKeyGenerationTimestamp() const { return m_lastKeyGenerationTimestamp; }
     inline bool LastKeyGenerationTimestampHasBeenSet() const { return m_lastKeyGenerationTimestampHasBeenSet; }
-    inline void SetLastKeyGenerationTimestamp(const Aws::Utils::DateTime& value) { m_lastKeyGenerationTimestampHasBeenSet = true; m_lastKeyGenerationTimestamp = value; }
-    inline void SetLastKeyGenerationTimestamp(Aws::Utils::DateTime&& value) { m_lastKeyGenerationTimestampHasBeenSet = true; m_lastKeyGenerationTimestamp = std::move(value); }
-    inline DkimAttributes& WithLastKeyGenerationTimestamp(const Aws::Utils::DateTime& value) { SetLastKeyGenerationTimestamp(value); return *this;}
-    inline DkimAttributes& WithLastKeyGenerationTimestamp(Aws::Utils::DateTime&& value) { SetLastKeyGenerationTimestamp(std::move(value)); return *this;}
+    template<typename LastKeyGenerationTimestampT = Aws::Utils::DateTime>
+    void SetLastKeyGenerationTimestamp(LastKeyGenerationTimestampT&& value) { m_lastKeyGenerationTimestampHasBeenSet = true; m_lastKeyGenerationTimestamp = std::forward<LastKeyGenerationTimestampT>(value); }
+    template<typename LastKeyGenerationTimestampT = Aws::Utils::DateTime>
+    DkimAttributes& WithLastKeyGenerationTimestamp(LastKeyGenerationTimestampT&& value) { SetLastKeyGenerationTimestamp(std::forward<LastKeyGenerationTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_signingEnabled;
+    bool m_signingEnabled{false};
     bool m_signingEnabledHasBeenSet = false;
 
-    DkimStatus m_status;
+    DkimStatus m_status{DkimStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tokens;
     bool m_tokensHasBeenSet = false;
 
-    DkimSigningAttributesOrigin m_signingAttributesOrigin;
+    DkimSigningAttributesOrigin m_signingAttributesOrigin{DkimSigningAttributesOrigin::NOT_SET};
     bool m_signingAttributesOriginHasBeenSet = false;
 
-    DkimSigningKeyLength m_nextSigningKeyLength;
+    DkimSigningKeyLength m_nextSigningKeyLength{DkimSigningKeyLength::NOT_SET};
     bool m_nextSigningKeyLengthHasBeenSet = false;
 
-    DkimSigningKeyLength m_currentSigningKeyLength;
+    DkimSigningKeyLength m_currentSigningKeyLength{DkimSigningKeyLength::NOT_SET};
     bool m_currentSigningKeyLengthHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastKeyGenerationTimestamp;
+    Aws::Utils::DateTime m_lastKeyGenerationTimestamp{};
     bool m_lastKeyGenerationTimestampHasBeenSet = false;
   };
 

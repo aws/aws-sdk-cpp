@@ -18,25 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-InstanceDetails::InstanceDetails() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageDescriptionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InstanceDetails::InstanceDetails(JsonView jsonValue)
-  : InstanceDetails()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamInstanceProfile"))
   {
     m_iamInstanceProfile = jsonValue.GetObject("iamInstanceProfile");
-
     m_iamInstanceProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDescription"))
   {
     m_imageDescription = jsonValue.GetString("imageDescription");
-
     m_imageDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetString("imageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceState"))
   {
     m_instanceState = jsonValue.GetString("instanceState");
-
     m_instanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outpostArn"))
   {
     m_outpostArn = jsonValue.GetString("outpostArn");
-
     m_outpostArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTime"))
   {
     m_launchTime = jsonValue.GetString("launchTime");
-
     m_launchTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -115,14 +79,11 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCodes"))
   {
     Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
@@ -132,7 +93,6 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
     }
     m_productCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -142,7 +102,6 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-CreateEnvironmentProfilePolicyGrantDetail::CreateEnvironmentProfilePolicyGrantDetail() : 
-    m_domainUnitIdHasBeenSet(false)
-{
-}
-
 CreateEnvironmentProfilePolicyGrantDetail::CreateEnvironmentProfilePolicyGrantDetail(JsonView jsonValue)
-  : CreateEnvironmentProfilePolicyGrantDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CreateEnvironmentProfilePolicyGrantDetail& CreateEnvironmentProfilePolicyGrantDe
   if(jsonValue.ValueExists("domainUnitId"))
   {
     m_domainUnitId = jsonValue.GetString("domainUnitId");
-
     m_domainUnitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

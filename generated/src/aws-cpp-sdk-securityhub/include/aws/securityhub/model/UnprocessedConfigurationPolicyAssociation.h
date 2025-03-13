@@ -35,7 +35,7 @@ namespace Model
   class UnprocessedConfigurationPolicyAssociation
   {
   public:
-    AWS_SECURITYHUB_API UnprocessedConfigurationPolicyAssociation();
+    AWS_SECURITYHUB_API UnprocessedConfigurationPolicyAssociation() = default;
     AWS_SECURITYHUB_API UnprocessedConfigurationPolicyAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API UnprocessedConfigurationPolicyAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <code>BatchGetConfigurationPolicyAssociations</code> request but couldn’t be
      * processed due to an error. </p>
      */
-    inline const ConfigurationPolicyAssociation& GetConfigurationPolicyAssociationIdentifiers() const{ return m_configurationPolicyAssociationIdentifiers; }
+    inline const ConfigurationPolicyAssociation& GetConfigurationPolicyAssociationIdentifiers() const { return m_configurationPolicyAssociationIdentifiers; }
     inline bool ConfigurationPolicyAssociationIdentifiersHasBeenSet() const { return m_configurationPolicyAssociationIdentifiersHasBeenSet; }
-    inline void SetConfigurationPolicyAssociationIdentifiers(const ConfigurationPolicyAssociation& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = value; }
-    inline void SetConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociation&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = std::move(value); }
-    inline UnprocessedConfigurationPolicyAssociation& WithConfigurationPolicyAssociationIdentifiers(const ConfigurationPolicyAssociation& value) { SetConfigurationPolicyAssociationIdentifiers(value); return *this;}
-    inline UnprocessedConfigurationPolicyAssociation& WithConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociation&& value) { SetConfigurationPolicyAssociationIdentifiers(std::move(value)); return *this;}
+    template<typename ConfigurationPolicyAssociationIdentifiersT = ConfigurationPolicyAssociation>
+    void SetConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociationIdentifiersT&& value) { m_configurationPolicyAssociationIdentifiersHasBeenSet = true; m_configurationPolicyAssociationIdentifiers = std::forward<ConfigurationPolicyAssociationIdentifiersT>(value); }
+    template<typename ConfigurationPolicyAssociationIdentifiersT = ConfigurationPolicyAssociation>
+    UnprocessedConfigurationPolicyAssociation& WithConfigurationPolicyAssociationIdentifiers(ConfigurationPolicyAssociationIdentifiersT&& value) { SetConfigurationPolicyAssociationIdentifiers(std::forward<ConfigurationPolicyAssociationIdentifiersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * <p> An HTTP status code that identifies why the configuration policy association
      * failed. </p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline UnprocessedConfigurationPolicyAssociation& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline UnprocessedConfigurationPolicyAssociation& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline UnprocessedConfigurationPolicyAssociation& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    UnprocessedConfigurationPolicyAssociation& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p> A string that identifies why the configuration policy association failed.
      * </p>
      */
-    inline const Aws::String& GetErrorReason() const{ return m_errorReason; }
+    inline const Aws::String& GetErrorReason() const { return m_errorReason; }
     inline bool ErrorReasonHasBeenSet() const { return m_errorReasonHasBeenSet; }
-    inline void SetErrorReason(const Aws::String& value) { m_errorReasonHasBeenSet = true; m_errorReason = value; }
-    inline void SetErrorReason(Aws::String&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::move(value); }
-    inline void SetErrorReason(const char* value) { m_errorReasonHasBeenSet = true; m_errorReason.assign(value); }
-    inline UnprocessedConfigurationPolicyAssociation& WithErrorReason(const Aws::String& value) { SetErrorReason(value); return *this;}
-    inline UnprocessedConfigurationPolicyAssociation& WithErrorReason(Aws::String&& value) { SetErrorReason(std::move(value)); return *this;}
-    inline UnprocessedConfigurationPolicyAssociation& WithErrorReason(const char* value) { SetErrorReason(value); return *this;}
+    template<typename ErrorReasonT = Aws::String>
+    void SetErrorReason(ErrorReasonT&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::forward<ErrorReasonT>(value); }
+    template<typename ErrorReasonT = Aws::String>
+    UnprocessedConfigurationPolicyAssociation& WithErrorReason(ErrorReasonT&& value) { SetErrorReason(std::forward<ErrorReasonT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace AugmentedAIRuntime
 namespace Model
 {
 
-HumanLoopOutput::HumanLoopOutput() : 
-    m_outputS3UriHasBeenSet(false)
-{
-}
-
 HumanLoopOutput::HumanLoopOutput(JsonView jsonValue)
-  : HumanLoopOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HumanLoopOutput& HumanLoopOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutputS3Uri"))
   {
     m_outputS3Uri = jsonValue.GetString("OutputS3Uri");
-
     m_outputS3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

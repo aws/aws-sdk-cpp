@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AnalyticsConfigurationType::AnalyticsConfigurationType() : 
-    m_applicationIdHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
-    m_userDataShared(false),
-    m_userDataSharedHasBeenSet(false)
-{
-}
-
 AnalyticsConfigurationType::AnalyticsConfigurationType(JsonView jsonValue)
-  : AnalyticsConfigurationType()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AnalyticsConfigurationType& AnalyticsConfigurationType::operator =(JsonView json
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
-
     m_externalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserDataShared"))
   {
     m_userDataShared = jsonValue.GetBool("UserDataShared");
-
     m_userDataSharedHasBeenSet = true;
   }
-
   return *this;
 }
 

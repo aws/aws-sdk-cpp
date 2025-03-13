@@ -34,7 +34,7 @@ namespace Model
   class AutomaticInputFailoverSettings
   {
   public:
-    AWS_MEDIALIVE_API AutomaticInputFailoverSettings();
+    AWS_MEDIALIVE_API AutomaticInputFailoverSettings() = default;
     AWS_MEDIALIVE_API AutomaticInputFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AutomaticInputFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED,
      * because after this time, MediaLive will switch back to the primary input.
      */
-    inline int GetErrorClearTimeMsec() const{ return m_errorClearTimeMsec; }
+    inline int GetErrorClearTimeMsec() const { return m_errorClearTimeMsec; }
     inline bool ErrorClearTimeMsecHasBeenSet() const { return m_errorClearTimeMsecHasBeenSet; }
     inline void SetErrorClearTimeMsec(int value) { m_errorClearTimeMsecHasBeenSet = true; m_errorClearTimeMsec = value; }
     inline AutomaticInputFailoverSettings& WithErrorClearTimeMsec(int value) { SetErrorClearTimeMsec(value); return *this;}
@@ -59,14 +59,14 @@ namespace Model
      * A list of failover conditions. If any of these conditions occur, MediaLive will
      * perform a failover to the other input.
      */
-    inline const Aws::Vector<FailoverCondition>& GetFailoverConditions() const{ return m_failoverConditions; }
+    inline const Aws::Vector<FailoverCondition>& GetFailoverConditions() const { return m_failoverConditions; }
     inline bool FailoverConditionsHasBeenSet() const { return m_failoverConditionsHasBeenSet; }
-    inline void SetFailoverConditions(const Aws::Vector<FailoverCondition>& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions = value; }
-    inline void SetFailoverConditions(Aws::Vector<FailoverCondition>&& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions = std::move(value); }
-    inline AutomaticInputFailoverSettings& WithFailoverConditions(const Aws::Vector<FailoverCondition>& value) { SetFailoverConditions(value); return *this;}
-    inline AutomaticInputFailoverSettings& WithFailoverConditions(Aws::Vector<FailoverCondition>&& value) { SetFailoverConditions(std::move(value)); return *this;}
-    inline AutomaticInputFailoverSettings& AddFailoverConditions(const FailoverCondition& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions.push_back(value); return *this; }
-    inline AutomaticInputFailoverSettings& AddFailoverConditions(FailoverCondition&& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions.push_back(std::move(value)); return *this; }
+    template<typename FailoverConditionsT = Aws::Vector<FailoverCondition>>
+    void SetFailoverConditions(FailoverConditionsT&& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions = std::forward<FailoverConditionsT>(value); }
+    template<typename FailoverConditionsT = Aws::Vector<FailoverCondition>>
+    AutomaticInputFailoverSettings& WithFailoverConditions(FailoverConditionsT&& value) { SetFailoverConditions(std::forward<FailoverConditionsT>(value)); return *this;}
+    template<typename FailoverConditionsT = FailoverCondition>
+    AutomaticInputFailoverSettings& AddFailoverConditions(FailoverConditionsT&& value) { m_failoverConditionsHasBeenSet = true; m_failoverConditions.emplace_back(std::forward<FailoverConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,36 +74,32 @@ namespace Model
      * Input preference when deciding which input to make active when a previously
      * failed input has recovered.
      */
-    inline const InputPreference& GetInputPreference() const{ return m_inputPreference; }
+    inline InputPreference GetInputPreference() const { return m_inputPreference; }
     inline bool InputPreferenceHasBeenSet() const { return m_inputPreferenceHasBeenSet; }
-    inline void SetInputPreference(const InputPreference& value) { m_inputPreferenceHasBeenSet = true; m_inputPreference = value; }
-    inline void SetInputPreference(InputPreference&& value) { m_inputPreferenceHasBeenSet = true; m_inputPreference = std::move(value); }
-    inline AutomaticInputFailoverSettings& WithInputPreference(const InputPreference& value) { SetInputPreference(value); return *this;}
-    inline AutomaticInputFailoverSettings& WithInputPreference(InputPreference&& value) { SetInputPreference(std::move(value)); return *this;}
+    inline void SetInputPreference(InputPreference value) { m_inputPreferenceHasBeenSet = true; m_inputPreference = value; }
+    inline AutomaticInputFailoverSettings& WithInputPreference(InputPreference value) { SetInputPreference(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The input ID of the secondary input in the automatic input failover pair.
      */
-    inline const Aws::String& GetSecondaryInputId() const{ return m_secondaryInputId; }
+    inline const Aws::String& GetSecondaryInputId() const { return m_secondaryInputId; }
     inline bool SecondaryInputIdHasBeenSet() const { return m_secondaryInputIdHasBeenSet; }
-    inline void SetSecondaryInputId(const Aws::String& value) { m_secondaryInputIdHasBeenSet = true; m_secondaryInputId = value; }
-    inline void SetSecondaryInputId(Aws::String&& value) { m_secondaryInputIdHasBeenSet = true; m_secondaryInputId = std::move(value); }
-    inline void SetSecondaryInputId(const char* value) { m_secondaryInputIdHasBeenSet = true; m_secondaryInputId.assign(value); }
-    inline AutomaticInputFailoverSettings& WithSecondaryInputId(const Aws::String& value) { SetSecondaryInputId(value); return *this;}
-    inline AutomaticInputFailoverSettings& WithSecondaryInputId(Aws::String&& value) { SetSecondaryInputId(std::move(value)); return *this;}
-    inline AutomaticInputFailoverSettings& WithSecondaryInputId(const char* value) { SetSecondaryInputId(value); return *this;}
+    template<typename SecondaryInputIdT = Aws::String>
+    void SetSecondaryInputId(SecondaryInputIdT&& value) { m_secondaryInputIdHasBeenSet = true; m_secondaryInputId = std::forward<SecondaryInputIdT>(value); }
+    template<typename SecondaryInputIdT = Aws::String>
+    AutomaticInputFailoverSettings& WithSecondaryInputId(SecondaryInputIdT&& value) { SetSecondaryInputId(std::forward<SecondaryInputIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_errorClearTimeMsec;
+    int m_errorClearTimeMsec{0};
     bool m_errorClearTimeMsecHasBeenSet = false;
 
     Aws::Vector<FailoverCondition> m_failoverConditions;
     bool m_failoverConditionsHasBeenSet = false;
 
-    InputPreference m_inputPreference;
+    InputPreference m_inputPreference{InputPreference::NOT_SET};
     bool m_inputPreferenceHasBeenSet = false;
 
     Aws::String m_secondaryInputId;

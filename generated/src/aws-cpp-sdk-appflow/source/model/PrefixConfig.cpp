@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-PrefixConfig::PrefixConfig() : 
-    m_prefixType(PrefixType::NOT_SET),
-    m_prefixTypeHasBeenSet(false),
-    m_prefixFormat(PrefixFormat::NOT_SET),
-    m_prefixFormatHasBeenSet(false),
-    m_pathPrefixHierarchyHasBeenSet(false)
-{
-}
-
 PrefixConfig::PrefixConfig(JsonView jsonValue)
-  : PrefixConfig()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ PrefixConfig& PrefixConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("prefixType"))
   {
     m_prefixType = PrefixTypeMapper::GetPrefixTypeForName(jsonValue.GetString("prefixType"));
-
     m_prefixTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefixFormat"))
   {
     m_prefixFormat = PrefixFormatMapper::GetPrefixFormatForName(jsonValue.GetString("prefixFormat"));
-
     m_prefixFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pathPrefixHierarchy"))
   {
     Aws::Utils::Array<JsonView> pathPrefixHierarchyJsonList = jsonValue.GetArray("pathPrefixHierarchy");
@@ -58,7 +44,6 @@ PrefixConfig& PrefixConfig::operator =(JsonView jsonValue)
     }
     m_pathPrefixHierarchyHasBeenSet = true;
   }
-
   return *this;
 }
 

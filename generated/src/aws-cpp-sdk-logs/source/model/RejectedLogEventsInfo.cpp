@@ -18,18 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-RejectedLogEventsInfo::RejectedLogEventsInfo() : 
-    m_tooNewLogEventStartIndex(0),
-    m_tooNewLogEventStartIndexHasBeenSet(false),
-    m_tooOldLogEventEndIndex(0),
-    m_tooOldLogEventEndIndexHasBeenSet(false),
-    m_expiredLogEventEndIndex(0),
-    m_expiredLogEventEndIndexHasBeenSet(false)
-{
-}
-
 RejectedLogEventsInfo::RejectedLogEventsInfo(JsonView jsonValue)
-  : RejectedLogEventsInfo()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RejectedLogEventsInfo& RejectedLogEventsInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tooNewLogEventStartIndex"))
   {
     m_tooNewLogEventStartIndex = jsonValue.GetInteger("tooNewLogEventStartIndex");
-
     m_tooNewLogEventStartIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tooOldLogEventEndIndex"))
   {
     m_tooOldLogEventEndIndex = jsonValue.GetInteger("tooOldLogEventEndIndex");
-
     m_tooOldLogEventEndIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiredLogEventEndIndex"))
   {
     m_expiredLogEventEndIndex = jsonValue.GetInteger("expiredLogEventEndIndex");
-
     m_expiredLogEventEndIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

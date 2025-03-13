@@ -29,7 +29,7 @@ namespace Model
   class DescribeJobQueuesResult
   {
   public:
-    AWS_BATCH_API DescribeJobQueuesResult();
+    AWS_BATCH_API DescribeJobQueuesResult() = default;
     AWS_BATCH_API DescribeJobQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BATCH_API DescribeJobQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of job queues.</p>
      */
-    inline const Aws::Vector<JobQueueDetail>& GetJobQueues() const{ return m_jobQueues; }
-    inline void SetJobQueues(const Aws::Vector<JobQueueDetail>& value) { m_jobQueues = value; }
-    inline void SetJobQueues(Aws::Vector<JobQueueDetail>&& value) { m_jobQueues = std::move(value); }
-    inline DescribeJobQueuesResult& WithJobQueues(const Aws::Vector<JobQueueDetail>& value) { SetJobQueues(value); return *this;}
-    inline DescribeJobQueuesResult& WithJobQueues(Aws::Vector<JobQueueDetail>&& value) { SetJobQueues(std::move(value)); return *this;}
-    inline DescribeJobQueuesResult& AddJobQueues(const JobQueueDetail& value) { m_jobQueues.push_back(value); return *this; }
-    inline DescribeJobQueuesResult& AddJobQueues(JobQueueDetail&& value) { m_jobQueues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JobQueueDetail>& GetJobQueues() const { return m_jobQueues; }
+    template<typename JobQueuesT = Aws::Vector<JobQueueDetail>>
+    void SetJobQueues(JobQueuesT&& value) { m_jobQueuesHasBeenSet = true; m_jobQueues = std::forward<JobQueuesT>(value); }
+    template<typename JobQueuesT = Aws::Vector<JobQueueDetail>>
+    DescribeJobQueuesResult& WithJobQueues(JobQueuesT&& value) { SetJobQueues(std::forward<JobQueuesT>(value)); return *this;}
+    template<typename JobQueuesT = JobQueueDetail>
+    DescribeJobQueuesResult& AddJobQueues(JobQueuesT&& value) { m_jobQueuesHasBeenSet = true; m_jobQueues.emplace_back(std::forward<JobQueuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeJobQueuesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeJobQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeJobQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeJobQueuesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeJobQueuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeJobQueuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeJobQueuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeJobQueuesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<JobQueueDetail> m_jobQueues;
+    bool m_jobQueuesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

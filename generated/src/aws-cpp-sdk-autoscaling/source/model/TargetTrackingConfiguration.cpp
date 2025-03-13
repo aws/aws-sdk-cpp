@@ -20,18 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TargetTrackingConfiguration::TargetTrackingConfiguration() : 
-    m_predefinedMetricSpecificationHasBeenSet(false),
-    m_customizedMetricSpecificationHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false)
-{
-}
-
 TargetTrackingConfiguration::TargetTrackingConfiguration(const XmlNode& xmlNode)
-  : TargetTrackingConfiguration()
 {
   *this = xmlNode;
 }
@@ -47,24 +36,28 @@ TargetTrackingConfiguration& TargetTrackingConfiguration::operator =(const XmlNo
     {
       m_predefinedMetricSpecification = predefinedMetricSpecificationNode;
       m_predefinedMetricSpecificationHasBeenSet = true;
+       m_predefinedMetricSpecificationHasBeenSet = true;
     }
     XmlNode customizedMetricSpecificationNode = resultNode.FirstChild("CustomizedMetricSpecification");
     if(!customizedMetricSpecificationNode.IsNull())
     {
       m_customizedMetricSpecification = customizedMetricSpecificationNode;
       m_customizedMetricSpecificationHasBeenSet = true;
+       m_customizedMetricSpecificationHasBeenSet = true;
     }
     XmlNode targetValueNode = resultNode.FirstChild("TargetValue");
     if(!targetValueNode.IsNull())
     {
       m_targetValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetValueNode.GetText()).c_str()).c_str());
       m_targetValueHasBeenSet = true;
+       m_targetValueHasBeenSet = true;
     }
     XmlNode disableScaleInNode = resultNode.FirstChild("DisableScaleIn");
     if(!disableScaleInNode.IsNull())
     {
       m_disableScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableScaleInNode.GetText()).c_str()).c_str());
       m_disableScaleInHasBeenSet = true;
+       m_disableScaleInHasBeenSet = true;
     }
   }
 

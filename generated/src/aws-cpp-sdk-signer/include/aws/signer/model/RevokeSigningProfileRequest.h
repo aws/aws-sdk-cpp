@@ -22,7 +22,7 @@ namespace Model
   class RevokeSigningProfileRequest : public SignerRequest
   {
   public:
-    AWS_SIGNER_API RevokeSigningProfileRequest();
+    AWS_SIGNER_API RevokeSigningProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
     /**
      * <p>The name of the signing profile to be revoked.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline RevokeSigningProfileRequest& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline RevokeSigningProfileRequest& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline RevokeSigningProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    RevokeSigningProfileRequest& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the signing profile to be revoked.</p>
      */
-    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
+    inline const Aws::String& GetProfileVersion() const { return m_profileVersion; }
     inline bool ProfileVersionHasBeenSet() const { return m_profileVersionHasBeenSet; }
-    inline void SetProfileVersion(const Aws::String& value) { m_profileVersionHasBeenSet = true; m_profileVersion = value; }
-    inline void SetProfileVersion(Aws::String&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::move(value); }
-    inline void SetProfileVersion(const char* value) { m_profileVersionHasBeenSet = true; m_profileVersion.assign(value); }
-    inline RevokeSigningProfileRequest& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
-    inline RevokeSigningProfileRequest& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
-    inline RevokeSigningProfileRequest& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+    template<typename ProfileVersionT = Aws::String>
+    void SetProfileVersion(ProfileVersionT&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::forward<ProfileVersionT>(value); }
+    template<typename ProfileVersionT = Aws::String>
+    RevokeSigningProfileRequest& WithProfileVersion(ProfileVersionT&& value) { SetProfileVersion(std::forward<ProfileVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for revoking a signing profile.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline RevokeSigningProfileRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline RevokeSigningProfileRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline RevokeSigningProfileRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    RevokeSigningProfileRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +75,12 @@ namespace Model
      * Signatures generated using the signing profile after this timestamp are not
      * trusted.</p>
      */
-    inline const Aws::Utils::DateTime& GetEffectiveTime() const{ return m_effectiveTime; }
+    inline const Aws::Utils::DateTime& GetEffectiveTime() const { return m_effectiveTime; }
     inline bool EffectiveTimeHasBeenSet() const { return m_effectiveTimeHasBeenSet; }
-    inline void SetEffectiveTime(const Aws::Utils::DateTime& value) { m_effectiveTimeHasBeenSet = true; m_effectiveTime = value; }
-    inline void SetEffectiveTime(Aws::Utils::DateTime&& value) { m_effectiveTimeHasBeenSet = true; m_effectiveTime = std::move(value); }
-    inline RevokeSigningProfileRequest& WithEffectiveTime(const Aws::Utils::DateTime& value) { SetEffectiveTime(value); return *this;}
-    inline RevokeSigningProfileRequest& WithEffectiveTime(Aws::Utils::DateTime&& value) { SetEffectiveTime(std::move(value)); return *this;}
+    template<typename EffectiveTimeT = Aws::Utils::DateTime>
+    void SetEffectiveTime(EffectiveTimeT&& value) { m_effectiveTimeHasBeenSet = true; m_effectiveTime = std::forward<EffectiveTimeT>(value); }
+    template<typename EffectiveTimeT = Aws::Utils::DateTime>
+    RevokeSigningProfileRequest& WithEffectiveTime(EffectiveTimeT&& value) { SetEffectiveTime(std::forward<EffectiveTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_effectiveTime;
+    Aws::Utils::DateTime m_effectiveTime{};
     bool m_effectiveTimeHasBeenSet = false;
   };
 

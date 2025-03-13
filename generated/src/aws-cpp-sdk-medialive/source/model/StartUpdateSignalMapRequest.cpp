@@ -12,18 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartUpdateSignalMapRequest::StartUpdateSignalMapRequest() : 
-    m_cloudWatchAlarmTemplateGroupIdentifiersHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_discoveryEntryPointArnHasBeenSet(false),
-    m_eventBridgeRuleTemplateGroupIdentifiersHasBeenSet(false),
-    m_forceRediscovery(false),
-    m_forceRediscoveryHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StartUpdateSignalMapRequest::SerializePayload() const
 {
   JsonValue payload;

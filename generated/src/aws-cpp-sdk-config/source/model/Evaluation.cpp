@@ -18,18 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-Evaluation::Evaluation() : 
-    m_complianceResourceTypeHasBeenSet(false),
-    m_complianceResourceIdHasBeenSet(false),
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_annotationHasBeenSet(false),
-    m_orderingTimestampHasBeenSet(false)
-{
-}
-
 Evaluation::Evaluation(JsonView jsonValue)
-  : Evaluation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComplianceResourceType"))
   {
     m_complianceResourceType = jsonValue.GetString("ComplianceResourceType");
-
     m_complianceResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceResourceId"))
   {
     m_complianceResourceId = jsonValue.GetString("ComplianceResourceId");
-
     m_complianceResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Annotation"))
   {
     m_annotation = jsonValue.GetString("Annotation");
-
     m_annotationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderingTimestamp"))
   {
     m_orderingTimestamp = jsonValue.GetDouble("OrderingTimestamp");
-
     m_orderingTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

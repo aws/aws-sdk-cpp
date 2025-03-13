@@ -21,7 +21,7 @@ namespace Model
   class GetAsyncInvokeRequest : public BedrockRuntimeRequest
   {
   public:
-    AWS_BEDROCKRUNTIME_API GetAsyncInvokeRequest();
+    AWS_BEDROCKRUNTIME_API GetAsyncInvokeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The invocation's ARN.</p>
      */
-    inline const Aws::String& GetInvocationArn() const{ return m_invocationArn; }
+    inline const Aws::String& GetInvocationArn() const { return m_invocationArn; }
     inline bool InvocationArnHasBeenSet() const { return m_invocationArnHasBeenSet; }
-    inline void SetInvocationArn(const Aws::String& value) { m_invocationArnHasBeenSet = true; m_invocationArn = value; }
-    inline void SetInvocationArn(Aws::String&& value) { m_invocationArnHasBeenSet = true; m_invocationArn = std::move(value); }
-    inline void SetInvocationArn(const char* value) { m_invocationArnHasBeenSet = true; m_invocationArn.assign(value); }
-    inline GetAsyncInvokeRequest& WithInvocationArn(const Aws::String& value) { SetInvocationArn(value); return *this;}
-    inline GetAsyncInvokeRequest& WithInvocationArn(Aws::String&& value) { SetInvocationArn(std::move(value)); return *this;}
-    inline GetAsyncInvokeRequest& WithInvocationArn(const char* value) { SetInvocationArn(value); return *this;}
+    template<typename InvocationArnT = Aws::String>
+    void SetInvocationArn(InvocationArnT&& value) { m_invocationArnHasBeenSet = true; m_invocationArn = std::forward<InvocationArnT>(value); }
+    template<typename InvocationArnT = Aws::String>
+    GetAsyncInvokeRequest& WithInvocationArn(InvocationArnT&& value) { SetInvocationArn(std::forward<InvocationArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class TestSetTurnResult
   {
   public:
-    AWS_LEXMODELSV2_API TestSetTurnResult();
+    AWS_LEXMODELSV2_API TestSetTurnResult() = default;
     AWS_LEXMODELSV2_API TestSetTurnResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetTurnResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Contains information about the agent messages in the turn.</p>
      */
-    inline const AgentTurnResult& GetAgent() const{ return m_agent; }
+    inline const AgentTurnResult& GetAgent() const { return m_agent; }
     inline bool AgentHasBeenSet() const { return m_agentHasBeenSet; }
-    inline void SetAgent(const AgentTurnResult& value) { m_agentHasBeenSet = true; m_agent = value; }
-    inline void SetAgent(AgentTurnResult&& value) { m_agentHasBeenSet = true; m_agent = std::move(value); }
-    inline TestSetTurnResult& WithAgent(const AgentTurnResult& value) { SetAgent(value); return *this;}
-    inline TestSetTurnResult& WithAgent(AgentTurnResult&& value) { SetAgent(std::move(value)); return *this;}
+    template<typename AgentT = AgentTurnResult>
+    void SetAgent(AgentT&& value) { m_agentHasBeenSet = true; m_agent = std::forward<AgentT>(value); }
+    template<typename AgentT = AgentTurnResult>
+    TestSetTurnResult& WithAgent(AgentT&& value) { SetAgent(std::forward<AgentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the user messages in the turn.</p>
      */
-    inline const UserTurnResult& GetUser() const{ return m_user; }
+    inline const UserTurnResult& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const UserTurnResult& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(UserTurnResult&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline TestSetTurnResult& WithUser(const UserTurnResult& value) { SetUser(value); return *this;}
-    inline TestSetTurnResult& WithUser(UserTurnResult&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = UserTurnResult>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = UserTurnResult>
+    TestSetTurnResult& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,16 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEndpointRequest::UpdateEndpointRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigHasBeenSet(false),
-    m_replicationConfigHasBeenSet(false),
-    m_eventBusesHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

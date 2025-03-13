@@ -30,7 +30,7 @@ namespace Model
   class GetArchitectureRecommendationsResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API GetArchitectureRecommendationsResult();
+    AWS_ROUTE53RECOVERYREADINESS_API GetArchitectureRecommendationsResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API GetArchitectureRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API GetArchitectureRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,58 +40,58 @@ namespace Model
      * <p>The time that a recovery group was last assessed for recommendations, in UTC
      * ISO-8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAuditTimestamp() const{ return m_lastAuditTimestamp; }
-    inline void SetLastAuditTimestamp(const Aws::Utils::DateTime& value) { m_lastAuditTimestamp = value; }
-    inline void SetLastAuditTimestamp(Aws::Utils::DateTime&& value) { m_lastAuditTimestamp = std::move(value); }
-    inline GetArchitectureRecommendationsResult& WithLastAuditTimestamp(const Aws::Utils::DateTime& value) { SetLastAuditTimestamp(value); return *this;}
-    inline GetArchitectureRecommendationsResult& WithLastAuditTimestamp(Aws::Utils::DateTime&& value) { SetLastAuditTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastAuditTimestamp() const { return m_lastAuditTimestamp; }
+    template<typename LastAuditTimestampT = Aws::Utils::DateTime>
+    void SetLastAuditTimestamp(LastAuditTimestampT&& value) { m_lastAuditTimestampHasBeenSet = true; m_lastAuditTimestamp = std::forward<LastAuditTimestampT>(value); }
+    template<typename LastAuditTimestampT = Aws::Utils::DateTime>
+    GetArchitectureRecommendationsResult& WithLastAuditTimestamp(LastAuditTimestampT&& value) { SetLastAuditTimestamp(std::forward<LastAuditTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token that identifies which batch of results you want to see.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetArchitectureRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetArchitectureRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetArchitectureRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetArchitectureRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the recommendations for the customer's application.</p>
      */
-    inline const Aws::Vector<Recommendation>& GetRecommendations() const{ return m_recommendations; }
-    inline void SetRecommendations(const Aws::Vector<Recommendation>& value) { m_recommendations = value; }
-    inline void SetRecommendations(Aws::Vector<Recommendation>&& value) { m_recommendations = std::move(value); }
-    inline GetArchitectureRecommendationsResult& WithRecommendations(const Aws::Vector<Recommendation>& value) { SetRecommendations(value); return *this;}
-    inline GetArchitectureRecommendationsResult& WithRecommendations(Aws::Vector<Recommendation>&& value) { SetRecommendations(std::move(value)); return *this;}
-    inline GetArchitectureRecommendationsResult& AddRecommendations(const Recommendation& value) { m_recommendations.push_back(value); return *this; }
-    inline GetArchitectureRecommendationsResult& AddRecommendations(Recommendation&& value) { m_recommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Recommendation>& GetRecommendations() const { return m_recommendations; }
+    template<typename RecommendationsT = Aws::Vector<Recommendation>>
+    void SetRecommendations(RecommendationsT&& value) { m_recommendationsHasBeenSet = true; m_recommendations = std::forward<RecommendationsT>(value); }
+    template<typename RecommendationsT = Aws::Vector<Recommendation>>
+    GetArchitectureRecommendationsResult& WithRecommendations(RecommendationsT&& value) { SetRecommendations(std::forward<RecommendationsT>(value)); return *this;}
+    template<typename RecommendationsT = Recommendation>
+    GetArchitectureRecommendationsResult& AddRecommendations(RecommendationsT&& value) { m_recommendationsHasBeenSet = true; m_recommendations.emplace_back(std::forward<RecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetArchitectureRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetArchitectureRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetArchitectureRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetArchitectureRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastAuditTimestamp;
+    Aws::Utils::DateTime m_lastAuditTimestamp{};
+    bool m_lastAuditTimestampHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Recommendation> m_recommendations;
+    bool m_recommendationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

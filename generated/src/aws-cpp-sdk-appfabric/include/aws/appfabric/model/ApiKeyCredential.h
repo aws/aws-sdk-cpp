@@ -31,7 +31,7 @@ namespace Model
   class ApiKeyCredential
   {
   public:
-    AWS_APPFABRIC_API ApiKeyCredential();
+    AWS_APPFABRIC_API ApiKeyCredential() = default;
     AWS_APPFABRIC_API ApiKeyCredential(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API ApiKeyCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>An API key for an application.</p>
      */
-    inline const Aws::String& GetApiKey() const{ return m_apiKey; }
+    inline const Aws::String& GetApiKey() const { return m_apiKey; }
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-    inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-    inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-    inline ApiKeyCredential& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-    inline ApiKeyCredential& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-    inline ApiKeyCredential& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    template<typename ApiKeyT = Aws::String>
+    void SetApiKey(ApiKeyT&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::forward<ApiKeyT>(value); }
+    template<typename ApiKeyT = Aws::String>
+    ApiKeyCredential& WithApiKey(ApiKeyT&& value) { SetApiKey(std::forward<ApiKeyT>(value)); return *this;}
     ///@}
   private:
 

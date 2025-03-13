@@ -33,7 +33,7 @@ namespace Model
   class MetricSource
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API MetricSource();
+    AWS_COMPUTEOPTIMIZER_API MetricSource() = default;
     AWS_COMPUTEOPTIMIZER_API MetricSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API MetricSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p> The name of the metric source provider. </p>
      */
-    inline const MetricSourceProvider& GetProvider() const{ return m_provider; }
+    inline MetricSourceProvider GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const MetricSourceProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(MetricSourceProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline MetricSource& WithProvider(const MetricSourceProvider& value) { SetProvider(value); return *this;}
-    inline MetricSource& WithProvider(MetricSourceProvider&& value) { SetProvider(std::move(value)); return *this;}
+    inline void SetProvider(MetricSourceProvider value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline MetricSource& WithProvider(MetricSourceProvider value) { SetProvider(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the metric source provider. </p>
      */
-    inline const Aws::String& GetProviderArn() const{ return m_providerArn; }
+    inline const Aws::String& GetProviderArn() const { return m_providerArn; }
     inline bool ProviderArnHasBeenSet() const { return m_providerArnHasBeenSet; }
-    inline void SetProviderArn(const Aws::String& value) { m_providerArnHasBeenSet = true; m_providerArn = value; }
-    inline void SetProviderArn(Aws::String&& value) { m_providerArnHasBeenSet = true; m_providerArn = std::move(value); }
-    inline void SetProviderArn(const char* value) { m_providerArnHasBeenSet = true; m_providerArn.assign(value); }
-    inline MetricSource& WithProviderArn(const Aws::String& value) { SetProviderArn(value); return *this;}
-    inline MetricSource& WithProviderArn(Aws::String&& value) { SetProviderArn(std::move(value)); return *this;}
-    inline MetricSource& WithProviderArn(const char* value) { SetProviderArn(value); return *this;}
+    template<typename ProviderArnT = Aws::String>
+    void SetProviderArn(ProviderArnT&& value) { m_providerArnHasBeenSet = true; m_providerArn = std::forward<ProviderArnT>(value); }
+    template<typename ProviderArnT = Aws::String>
+    MetricSource& WithProviderArn(ProviderArnT&& value) { SetProviderArn(std::forward<ProviderArnT>(value)); return *this;}
     ///@}
   private:
 
-    MetricSourceProvider m_provider;
+    MetricSourceProvider m_provider{MetricSourceProvider::NOT_SET};
     bool m_providerHasBeenSet = false;
 
     Aws::String m_providerArn;

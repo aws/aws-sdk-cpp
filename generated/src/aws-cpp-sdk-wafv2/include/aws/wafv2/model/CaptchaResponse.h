@@ -32,7 +32,7 @@ namespace Model
   class CaptchaResponse
   {
   public:
-    AWS_WAFV2_API CaptchaResponse();
+    AWS_WAFV2_API CaptchaResponse() = default;
     AWS_WAFV2_API CaptchaResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API CaptchaResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * token in the web request. If the token is missing, invalid, or expired, this
      * code is <code>405 Method Not Allowed</code>.</p>
      */
-    inline int GetResponseCode() const{ return m_responseCode; }
+    inline int GetResponseCode() const { return m_responseCode; }
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
     inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
     inline CaptchaResponse& WithResponseCode(int value) { SetResponseCode(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
      * <p>The time that the <code>CAPTCHA</code> was last solved for the supplied
      * token. </p>
      */
-    inline long long GetSolveTimestamp() const{ return m_solveTimestamp; }
+    inline long long GetSolveTimestamp() const { return m_solveTimestamp; }
     inline bool SolveTimestampHasBeenSet() const { return m_solveTimestampHasBeenSet; }
     inline void SetSolveTimestamp(long long value) { m_solveTimestampHasBeenSet = true; m_solveTimestamp = value; }
     inline CaptchaResponse& WithSolveTimestamp(long long value) { SetSolveTimestamp(value); return *this;}
@@ -65,22 +65,20 @@ namespace Model
     /**
      * <p>The reason for failure, populated when the evaluation of the token fails.</p>
      */
-    inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
+    inline FailureReason GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline CaptchaResponse& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
-    inline CaptchaResponse& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
+    inline void SetFailureReason(FailureReason value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+    inline CaptchaResponse& WithFailureReason(FailureReason value) { SetFailureReason(value); return *this;}
     ///@}
   private:
 
-    int m_responseCode;
+    int m_responseCode{0};
     bool m_responseCodeHasBeenSet = false;
 
-    long long m_solveTimestamp;
+    long long m_solveTimestamp{0};
     bool m_solveTimestampHasBeenSet = false;
 
-    FailureReason m_failureReason;
+    FailureReason m_failureReason{FailureReason::NOT_SET};
     bool m_failureReasonHasBeenSet = false;
   };
 

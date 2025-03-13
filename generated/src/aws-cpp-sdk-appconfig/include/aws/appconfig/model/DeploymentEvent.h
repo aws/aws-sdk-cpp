@@ -36,7 +36,7 @@ namespace Model
   class DeploymentEvent
   {
   public:
-    AWS_APPCONFIG_API DeploymentEvent();
+    AWS_APPCONFIG_API DeploymentEvent() = default;
     AWS_APPCONFIG_API DeploymentEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API DeploymentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * or completion of a deployment; a percentage update; the start or stop of a bake
      * period; and the start or completion of a rollback.</p>
      */
-    inline const DeploymentEventType& GetEventType() const{ return m_eventType; }
+    inline DeploymentEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const DeploymentEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(DeploymentEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline DeploymentEvent& WithEventType(const DeploymentEventType& value) { SetEventType(value); return *this;}
-    inline DeploymentEvent& WithEventType(DeploymentEventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(DeploymentEventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline DeploymentEvent& WithEventType(DeploymentEventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * <p>The entity that triggered the deployment event. Events can be triggered by a
      * user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
      */
-    inline const TriggeredBy& GetTriggeredBy() const{ return m_triggeredBy; }
+    inline TriggeredBy GetTriggeredBy() const { return m_triggeredBy; }
     inline bool TriggeredByHasBeenSet() const { return m_triggeredByHasBeenSet; }
-    inline void SetTriggeredBy(const TriggeredBy& value) { m_triggeredByHasBeenSet = true; m_triggeredBy = value; }
-    inline void SetTriggeredBy(TriggeredBy&& value) { m_triggeredByHasBeenSet = true; m_triggeredBy = std::move(value); }
-    inline DeploymentEvent& WithTriggeredBy(const TriggeredBy& value) { SetTriggeredBy(value); return *this;}
-    inline DeploymentEvent& WithTriggeredBy(TriggeredBy&& value) { SetTriggeredBy(std::move(value)); return *this;}
+    inline void SetTriggeredBy(TriggeredBy value) { m_triggeredByHasBeenSet = true; m_triggeredBy = value; }
+    inline DeploymentEvent& WithTriggeredBy(TriggeredBy value) { SetTriggeredBy(value); return *this;}
     ///@}
 
     ///@{
@@ -78,47 +74,45 @@ namespace Model
      * recommendation to attempt a new deployment (in the case of an internal
      * error).</p> </li> </ul>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DeploymentEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DeploymentEvent& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DeploymentEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DeploymentEvent& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of extensions that were invoked as part of the deployment.</p>
      */
-    inline const Aws::Vector<ActionInvocation>& GetActionInvocations() const{ return m_actionInvocations; }
+    inline const Aws::Vector<ActionInvocation>& GetActionInvocations() const { return m_actionInvocations; }
     inline bool ActionInvocationsHasBeenSet() const { return m_actionInvocationsHasBeenSet; }
-    inline void SetActionInvocations(const Aws::Vector<ActionInvocation>& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations = value; }
-    inline void SetActionInvocations(Aws::Vector<ActionInvocation>&& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations = std::move(value); }
-    inline DeploymentEvent& WithActionInvocations(const Aws::Vector<ActionInvocation>& value) { SetActionInvocations(value); return *this;}
-    inline DeploymentEvent& WithActionInvocations(Aws::Vector<ActionInvocation>&& value) { SetActionInvocations(std::move(value)); return *this;}
-    inline DeploymentEvent& AddActionInvocations(const ActionInvocation& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations.push_back(value); return *this; }
-    inline DeploymentEvent& AddActionInvocations(ActionInvocation&& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations.push_back(std::move(value)); return *this; }
+    template<typename ActionInvocationsT = Aws::Vector<ActionInvocation>>
+    void SetActionInvocations(ActionInvocationsT&& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations = std::forward<ActionInvocationsT>(value); }
+    template<typename ActionInvocationsT = Aws::Vector<ActionInvocation>>
+    DeploymentEvent& WithActionInvocations(ActionInvocationsT&& value) { SetActionInvocations(std::forward<ActionInvocationsT>(value)); return *this;}
+    template<typename ActionInvocationsT = ActionInvocation>
+    DeploymentEvent& AddActionInvocations(ActionInvocationsT&& value) { m_actionInvocationsHasBeenSet = true; m_actionInvocations.emplace_back(std::forward<ActionInvocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date and time the event occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetOccurredAt() const{ return m_occurredAt; }
+    inline const Aws::Utils::DateTime& GetOccurredAt() const { return m_occurredAt; }
     inline bool OccurredAtHasBeenSet() const { return m_occurredAtHasBeenSet; }
-    inline void SetOccurredAt(const Aws::Utils::DateTime& value) { m_occurredAtHasBeenSet = true; m_occurredAt = value; }
-    inline void SetOccurredAt(Aws::Utils::DateTime&& value) { m_occurredAtHasBeenSet = true; m_occurredAt = std::move(value); }
-    inline DeploymentEvent& WithOccurredAt(const Aws::Utils::DateTime& value) { SetOccurredAt(value); return *this;}
-    inline DeploymentEvent& WithOccurredAt(Aws::Utils::DateTime&& value) { SetOccurredAt(std::move(value)); return *this;}
+    template<typename OccurredAtT = Aws::Utils::DateTime>
+    void SetOccurredAt(OccurredAtT&& value) { m_occurredAtHasBeenSet = true; m_occurredAt = std::forward<OccurredAtT>(value); }
+    template<typename OccurredAtT = Aws::Utils::DateTime>
+    DeploymentEvent& WithOccurredAt(OccurredAtT&& value) { SetOccurredAt(std::forward<OccurredAtT>(value)); return *this;}
     ///@}
   private:
 
-    DeploymentEventType m_eventType;
+    DeploymentEventType m_eventType{DeploymentEventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    TriggeredBy m_triggeredBy;
+    TriggeredBy m_triggeredBy{TriggeredBy::NOT_SET};
     bool m_triggeredByHasBeenSet = false;
 
     Aws::String m_description;
@@ -127,7 +121,7 @@ namespace Model
     Aws::Vector<ActionInvocation> m_actionInvocations;
     bool m_actionInvocationsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_occurredAt;
+    Aws::Utils::DateTime m_occurredAt{};
     bool m_occurredAtHasBeenSet = false;
   };
 

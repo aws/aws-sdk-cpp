@@ -12,13 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNotificationConfigurationRequest::UpdateNotificationConfigurationRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNotificationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

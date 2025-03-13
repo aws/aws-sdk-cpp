@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDomainDeliverabilityCampaignResult::GetDomainDeliverabilityCampaignResult()
-{
-}
-
 GetDomainDeliverabilityCampaignResult::GetDomainDeliverabilityCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetDomainDeliverabilityCampaignResult& GetDomainDeliverabilityCampaignResult::op
   if(jsonValue.ValueExists("DomainDeliverabilityCampaign"))
   {
     m_domainDeliverabilityCampaign = jsonValue.GetObject("DomainDeliverabilityCampaign");
-
+    m_domainDeliverabilityCampaignHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

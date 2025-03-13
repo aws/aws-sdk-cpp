@@ -34,7 +34,7 @@ namespace Model
   class ClarifyInferenceConfig
   {
   public:
-    AWS_SAGEMAKER_API ClarifyInferenceConfig();
+    AWS_SAGEMAKER_API ClarifyInferenceConfig() = default;
     AWS_SAGEMAKER_API ClarifyInferenceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClarifyInferenceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
      * from request data <code>'{"myfeatures":[1,2,3]}'</code>.</p>
      */
-    inline const Aws::String& GetFeaturesAttribute() const{ return m_featuresAttribute; }
+    inline const Aws::String& GetFeaturesAttribute() const { return m_featuresAttribute; }
     inline bool FeaturesAttributeHasBeenSet() const { return m_featuresAttributeHasBeenSet; }
-    inline void SetFeaturesAttribute(const Aws::String& value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute = value; }
-    inline void SetFeaturesAttribute(Aws::String&& value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute = std::move(value); }
-    inline void SetFeaturesAttribute(const char* value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute.assign(value); }
-    inline ClarifyInferenceConfig& WithFeaturesAttribute(const Aws::String& value) { SetFeaturesAttribute(value); return *this;}
-    inline ClarifyInferenceConfig& WithFeaturesAttribute(Aws::String&& value) { SetFeaturesAttribute(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& WithFeaturesAttribute(const char* value) { SetFeaturesAttribute(value); return *this;}
+    template<typename FeaturesAttributeT = Aws::String>
+    void SetFeaturesAttribute(FeaturesAttributeT&& value) { m_featuresAttributeHasBeenSet = true; m_featuresAttribute = std::forward<FeaturesAttributeT>(value); }
+    template<typename FeaturesAttributeT = Aws::String>
+    ClarifyInferenceConfig& WithFeaturesAttribute(FeaturesAttributeT&& value) { SetFeaturesAttribute(std::forward<FeaturesAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * <code>'{"myfeatures":[1,2,3]}'</code>. Required only when the model container
      * input is in JSON Lines format.</p>
      */
-    inline const Aws::String& GetContentTemplate() const{ return m_contentTemplate; }
+    inline const Aws::String& GetContentTemplate() const { return m_contentTemplate; }
     inline bool ContentTemplateHasBeenSet() const { return m_contentTemplateHasBeenSet; }
-    inline void SetContentTemplate(const Aws::String& value) { m_contentTemplateHasBeenSet = true; m_contentTemplate = value; }
-    inline void SetContentTemplate(Aws::String&& value) { m_contentTemplateHasBeenSet = true; m_contentTemplate = std::move(value); }
-    inline void SetContentTemplate(const char* value) { m_contentTemplateHasBeenSet = true; m_contentTemplate.assign(value); }
-    inline ClarifyInferenceConfig& WithContentTemplate(const Aws::String& value) { SetContentTemplate(value); return *this;}
-    inline ClarifyInferenceConfig& WithContentTemplate(Aws::String&& value) { SetContentTemplate(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& WithContentTemplate(const char* value) { SetContentTemplate(value); return *this;}
+    template<typename ContentTemplateT = Aws::String>
+    void SetContentTemplate(ContentTemplateT&& value) { m_contentTemplateHasBeenSet = true; m_contentTemplate = std::forward<ContentTemplateT>(value); }
+    template<typename ContentTemplateT = Aws::String>
+    ClarifyInferenceConfig& WithContentTemplate(ContentTemplateT&& value) { SetContentTemplate(std::forward<ContentTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * provided, the explainer will tune the record count per request according to the
      * model container's capacity at runtime.</p>
      */
-    inline int GetMaxRecordCount() const{ return m_maxRecordCount; }
+    inline int GetMaxRecordCount() const { return m_maxRecordCount; }
     inline bool MaxRecordCountHasBeenSet() const { return m_maxRecordCountHasBeenSet; }
     inline void SetMaxRecordCount(int value) { m_maxRecordCountHasBeenSet = true; m_maxRecordCount = value; }
     inline ClarifyInferenceConfig& WithMaxRecordCount(int value) { SetMaxRecordCount(value); return *this;}
@@ -101,7 +97,7 @@ namespace Model
      * <p>The maximum payload size (MB) allowed of a request from the explainer to the
      * model container. Defaults to <code>6</code> MB.</p>
      */
-    inline int GetMaxPayloadInMB() const{ return m_maxPayloadInMB; }
+    inline int GetMaxPayloadInMB() const { return m_maxPayloadInMB; }
     inline bool MaxPayloadInMBHasBeenSet() const { return m_maxPayloadInMBHasBeenSet; }
     inline void SetMaxPayloadInMB(int value) { m_maxPayloadInMBHasBeenSet = true; m_maxPayloadInMB = value; }
     inline ClarifyInferenceConfig& WithMaxPayloadInMB(int value) { SetMaxPayloadInMB(value); return *this;}
@@ -122,7 +118,7 @@ namespace Model
      * <code>ProbabilityIndex</code> to <code>1</code> to select the probability values
      * <code>[0.1,0.6,0.3]</code>.</p>
      */
-    inline int GetProbabilityIndex() const{ return m_probabilityIndex; }
+    inline int GetProbabilityIndex() const { return m_probabilityIndex; }
     inline bool ProbabilityIndexHasBeenSet() const { return m_probabilityIndexHasBeenSet; }
     inline void SetProbabilityIndex(int value) { m_probabilityIndexHasBeenSet = true; m_probabilityIndex = value; }
     inline ClarifyInferenceConfig& WithProbabilityIndex(int value) { SetProbabilityIndex(value); return *this;}
@@ -137,7 +133,7 @@ namespace Model
      * <code>LabelIndex</code> to <code>0</code> to select the label headers
      * <code>['cat','dog','fish']</code>.</p>
      */
-    inline int GetLabelIndex() const{ return m_labelIndex; }
+    inline int GetLabelIndex() const { return m_labelIndex; }
     inline bool LabelIndexHasBeenSet() const { return m_labelIndexHasBeenSet; }
     inline void SetLabelIndex(int value) { m_labelIndexHasBeenSet = true; m_labelIndex = value; }
     inline ClarifyInferenceConfig& WithLabelIndex(int value) { SetLabelIndex(value); return *this;}
@@ -151,14 +147,12 @@ namespace Model
      * <code>'{"predicted_label":1,"probability":0.6}'</code>, then set
      * <code>ProbabilityAttribute</code> to <code>'probability'</code>.</p>
      */
-    inline const Aws::String& GetProbabilityAttribute() const{ return m_probabilityAttribute; }
+    inline const Aws::String& GetProbabilityAttribute() const { return m_probabilityAttribute; }
     inline bool ProbabilityAttributeHasBeenSet() const { return m_probabilityAttributeHasBeenSet; }
-    inline void SetProbabilityAttribute(const Aws::String& value) { m_probabilityAttributeHasBeenSet = true; m_probabilityAttribute = value; }
-    inline void SetProbabilityAttribute(Aws::String&& value) { m_probabilityAttributeHasBeenSet = true; m_probabilityAttribute = std::move(value); }
-    inline void SetProbabilityAttribute(const char* value) { m_probabilityAttributeHasBeenSet = true; m_probabilityAttribute.assign(value); }
-    inline ClarifyInferenceConfig& WithProbabilityAttribute(const Aws::String& value) { SetProbabilityAttribute(value); return *this;}
-    inline ClarifyInferenceConfig& WithProbabilityAttribute(Aws::String&& value) { SetProbabilityAttribute(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& WithProbabilityAttribute(const char* value) { SetProbabilityAttribute(value); return *this;}
+    template<typename ProbabilityAttributeT = Aws::String>
+    void SetProbabilityAttribute(ProbabilityAttributeT&& value) { m_probabilityAttributeHasBeenSet = true; m_probabilityAttribute = std::forward<ProbabilityAttributeT>(value); }
+    template<typename ProbabilityAttributeT = Aws::String>
+    ClarifyInferenceConfig& WithProbabilityAttribute(ProbabilityAttributeT&& value) { SetProbabilityAttribute(std::forward<ProbabilityAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,14 +164,12 @@ namespace Model
      * set <code>LabelAttribute</code> to <code>'labels'</code> to extract the list of
      * label headers <code>["cat","dog","fish"]</code> </p>
      */
-    inline const Aws::String& GetLabelAttribute() const{ return m_labelAttribute; }
+    inline const Aws::String& GetLabelAttribute() const { return m_labelAttribute; }
     inline bool LabelAttributeHasBeenSet() const { return m_labelAttributeHasBeenSet; }
-    inline void SetLabelAttribute(const Aws::String& value) { m_labelAttributeHasBeenSet = true; m_labelAttribute = value; }
-    inline void SetLabelAttribute(Aws::String&& value) { m_labelAttributeHasBeenSet = true; m_labelAttribute = std::move(value); }
-    inline void SetLabelAttribute(const char* value) { m_labelAttributeHasBeenSet = true; m_labelAttribute.assign(value); }
-    inline ClarifyInferenceConfig& WithLabelAttribute(const Aws::String& value) { SetLabelAttribute(value); return *this;}
-    inline ClarifyInferenceConfig& WithLabelAttribute(Aws::String&& value) { SetLabelAttribute(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& WithLabelAttribute(const char* value) { SetLabelAttribute(value); return *this;}
+    template<typename LabelAttributeT = Aws::String>
+    void SetLabelAttribute(LabelAttributeT&& value) { m_labelAttributeHasBeenSet = true; m_labelAttribute = std::forward<LabelAttributeT>(value); }
+    template<typename LabelAttributeT = Aws::String>
+    ClarifyInferenceConfig& WithLabelAttribute(LabelAttributeT&& value) { SetLabelAttribute(std::forward<LabelAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,15 +183,14 @@ namespace Model
      * information. If there are no label headers in the model container output,
      * provide them manually using this parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabelHeaders() const{ return m_labelHeaders; }
+    inline const Aws::Vector<Aws::String>& GetLabelHeaders() const { return m_labelHeaders; }
     inline bool LabelHeadersHasBeenSet() const { return m_labelHeadersHasBeenSet; }
-    inline void SetLabelHeaders(const Aws::Vector<Aws::String>& value) { m_labelHeadersHasBeenSet = true; m_labelHeaders = value; }
-    inline void SetLabelHeaders(Aws::Vector<Aws::String>&& value) { m_labelHeadersHasBeenSet = true; m_labelHeaders = std::move(value); }
-    inline ClarifyInferenceConfig& WithLabelHeaders(const Aws::Vector<Aws::String>& value) { SetLabelHeaders(value); return *this;}
-    inline ClarifyInferenceConfig& WithLabelHeaders(Aws::Vector<Aws::String>&& value) { SetLabelHeaders(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& AddLabelHeaders(const Aws::String& value) { m_labelHeadersHasBeenSet = true; m_labelHeaders.push_back(value); return *this; }
-    inline ClarifyInferenceConfig& AddLabelHeaders(Aws::String&& value) { m_labelHeadersHasBeenSet = true; m_labelHeaders.push_back(std::move(value)); return *this; }
-    inline ClarifyInferenceConfig& AddLabelHeaders(const char* value) { m_labelHeadersHasBeenSet = true; m_labelHeaders.push_back(value); return *this; }
+    template<typename LabelHeadersT = Aws::Vector<Aws::String>>
+    void SetLabelHeaders(LabelHeadersT&& value) { m_labelHeadersHasBeenSet = true; m_labelHeaders = std::forward<LabelHeadersT>(value); }
+    template<typename LabelHeadersT = Aws::Vector<Aws::String>>
+    ClarifyInferenceConfig& WithLabelHeaders(LabelHeadersT&& value) { SetLabelHeaders(std::forward<LabelHeadersT>(value)); return *this;}
+    template<typename LabelHeadersT = Aws::String>
+    ClarifyInferenceConfig& AddLabelHeaders(LabelHeadersT&& value) { m_labelHeadersHasBeenSet = true; m_labelHeaders.emplace_back(std::forward<LabelHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -211,15 +202,14 @@ namespace Model
      * section under <b>Invoke the endpoint</b> in the Developer Guide for more
      * information.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFeatureHeaders() const{ return m_featureHeaders; }
+    inline const Aws::Vector<Aws::String>& GetFeatureHeaders() const { return m_featureHeaders; }
     inline bool FeatureHeadersHasBeenSet() const { return m_featureHeadersHasBeenSet; }
-    inline void SetFeatureHeaders(const Aws::Vector<Aws::String>& value) { m_featureHeadersHasBeenSet = true; m_featureHeaders = value; }
-    inline void SetFeatureHeaders(Aws::Vector<Aws::String>&& value) { m_featureHeadersHasBeenSet = true; m_featureHeaders = std::move(value); }
-    inline ClarifyInferenceConfig& WithFeatureHeaders(const Aws::Vector<Aws::String>& value) { SetFeatureHeaders(value); return *this;}
-    inline ClarifyInferenceConfig& WithFeatureHeaders(Aws::Vector<Aws::String>&& value) { SetFeatureHeaders(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& AddFeatureHeaders(const Aws::String& value) { m_featureHeadersHasBeenSet = true; m_featureHeaders.push_back(value); return *this; }
-    inline ClarifyInferenceConfig& AddFeatureHeaders(Aws::String&& value) { m_featureHeadersHasBeenSet = true; m_featureHeaders.push_back(std::move(value)); return *this; }
-    inline ClarifyInferenceConfig& AddFeatureHeaders(const char* value) { m_featureHeadersHasBeenSet = true; m_featureHeaders.push_back(value); return *this; }
+    template<typename FeatureHeadersT = Aws::Vector<Aws::String>>
+    void SetFeatureHeaders(FeatureHeadersT&& value) { m_featureHeadersHasBeenSet = true; m_featureHeaders = std::forward<FeatureHeadersT>(value); }
+    template<typename FeatureHeadersT = Aws::Vector<Aws::String>>
+    ClarifyInferenceConfig& WithFeatureHeaders(FeatureHeadersT&& value) { SetFeatureHeaders(std::forward<FeatureHeadersT>(value)); return *this;}
+    template<typename FeatureHeadersT = Aws::String>
+    ClarifyInferenceConfig& AddFeatureHeaders(FeatureHeadersT&& value) { m_featureHeadersHasBeenSet = true; m_featureHeaders.emplace_back(std::forward<FeatureHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -234,14 +224,13 @@ namespace Model
      * section under <b>Invoke the endpoint</b> in the Developer Guide for more
      * information.</p>
      */
-    inline const Aws::Vector<ClarifyFeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
+    inline const Aws::Vector<ClarifyFeatureType>& GetFeatureTypes() const { return m_featureTypes; }
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
-    inline void SetFeatureTypes(const Aws::Vector<ClarifyFeatureType>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
-    inline void SetFeatureTypes(Aws::Vector<ClarifyFeatureType>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
-    inline ClarifyInferenceConfig& WithFeatureTypes(const Aws::Vector<ClarifyFeatureType>& value) { SetFeatureTypes(value); return *this;}
-    inline ClarifyInferenceConfig& WithFeatureTypes(Aws::Vector<ClarifyFeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
-    inline ClarifyInferenceConfig& AddFeatureTypes(const ClarifyFeatureType& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
-    inline ClarifyInferenceConfig& AddFeatureTypes(ClarifyFeatureType&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
+    template<typename FeatureTypesT = Aws::Vector<ClarifyFeatureType>>
+    void SetFeatureTypes(FeatureTypesT&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::forward<FeatureTypesT>(value); }
+    template<typename FeatureTypesT = Aws::Vector<ClarifyFeatureType>>
+    ClarifyInferenceConfig& WithFeatureTypes(FeatureTypesT&& value) { SetFeatureTypes(std::forward<FeatureTypesT>(value)); return *this;}
+    inline ClarifyInferenceConfig& AddFeatureTypes(ClarifyFeatureType value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
     ///@}
   private:
 
@@ -251,16 +240,16 @@ namespace Model
     Aws::String m_contentTemplate;
     bool m_contentTemplateHasBeenSet = false;
 
-    int m_maxRecordCount;
+    int m_maxRecordCount{0};
     bool m_maxRecordCountHasBeenSet = false;
 
-    int m_maxPayloadInMB;
+    int m_maxPayloadInMB{0};
     bool m_maxPayloadInMBHasBeenSet = false;
 
-    int m_probabilityIndex;
+    int m_probabilityIndex{0};
     bool m_probabilityIndexHasBeenSet = false;
 
-    int m_labelIndex;
+    int m_labelIndex{0};
     bool m_labelIndexHasBeenSet = false;
 
     Aws::String m_probabilityAttribute;

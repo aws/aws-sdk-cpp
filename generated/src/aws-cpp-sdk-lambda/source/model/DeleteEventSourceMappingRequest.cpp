@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventSourceMappingRequest::DeleteEventSourceMappingRequest() : 
-    m_uUIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventSourceMappingRequest::SerializePayload() const
 {
   return {};

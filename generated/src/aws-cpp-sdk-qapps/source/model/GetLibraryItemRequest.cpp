@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLibraryItemRequest::GetLibraryItemRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_libraryItemIdHasBeenSet(false),
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLibraryItemRequest::SerializePayload() const
 {
   return {};

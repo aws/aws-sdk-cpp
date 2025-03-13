@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDownloadUrlForLayerResult::GetDownloadUrlForLayerResult()
-{
-}
-
 GetDownloadUrlForLayerResult::GetDownloadUrlForLayerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetDownloadUrlForLayerResult& GetDownloadUrlForLayerResult::operator =(const Aws
   if(jsonValue.ValueExists("downloadUrl"))
   {
     m_downloadUrl = jsonValue.GetString("downloadUrl");
-
+    m_downloadUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerDigest"))
   {
     m_layerDigest = jsonValue.GetString("layerDigest");
-
+    m_layerDigestHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

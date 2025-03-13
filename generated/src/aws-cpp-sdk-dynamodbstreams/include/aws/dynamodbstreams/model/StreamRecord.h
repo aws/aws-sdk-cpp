@@ -36,7 +36,7 @@ namespace Model
   class StreamRecord
   {
   public:
-    AWS_DYNAMODBSTREAMS_API StreamRecord();
+    AWS_DYNAMODBSTREAMS_API StreamRecord() = default;
     AWS_DYNAMODBSTREAMS_API StreamRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API StreamRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,87 +48,79 @@ namespace Model
      * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
      * down to the closest second.</p>
      */
-    inline const Aws::Utils::DateTime& GetApproximateCreationDateTime() const{ return m_approximateCreationDateTime; }
+    inline const Aws::Utils::DateTime& GetApproximateCreationDateTime() const { return m_approximateCreationDateTime; }
     inline bool ApproximateCreationDateTimeHasBeenSet() const { return m_approximateCreationDateTimeHasBeenSet; }
-    inline void SetApproximateCreationDateTime(const Aws::Utils::DateTime& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = value; }
-    inline void SetApproximateCreationDateTime(Aws::Utils::DateTime&& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = std::move(value); }
-    inline StreamRecord& WithApproximateCreationDateTime(const Aws::Utils::DateTime& value) { SetApproximateCreationDateTime(value); return *this;}
-    inline StreamRecord& WithApproximateCreationDateTime(Aws::Utils::DateTime&& value) { SetApproximateCreationDateTime(std::move(value)); return *this;}
+    template<typename ApproximateCreationDateTimeT = Aws::Utils::DateTime>
+    void SetApproximateCreationDateTime(ApproximateCreationDateTimeT&& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = std::forward<ApproximateCreationDateTimeT>(value); }
+    template<typename ApproximateCreationDateTimeT = Aws::Utils::DateTime>
+    StreamRecord& WithApproximateCreationDateTime(ApproximateCreationDateTimeT&& value) { SetApproximateCreationDateTime(std::forward<ApproximateCreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The primary key attribute(s) for the DynamoDB item that was modified.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetKeys() const{ return m_keys; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetKeys() const { return m_keys; }
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-    inline void SetKeys(const Aws::Map<Aws::String, AttributeValue>& value) { m_keysHasBeenSet = true; m_keys = value; }
-    inline void SetKeys(Aws::Map<Aws::String, AttributeValue>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-    inline StreamRecord& WithKeys(const Aws::Map<Aws::String, AttributeValue>& value) { SetKeys(value); return *this;}
-    inline StreamRecord& WithKeys(Aws::Map<Aws::String, AttributeValue>&& value) { SetKeys(std::move(value)); return *this;}
-    inline StreamRecord& AddKeys(const Aws::String& key, const AttributeValue& value) { m_keysHasBeenSet = true; m_keys.emplace(key, value); return *this; }
-    inline StreamRecord& AddKeys(Aws::String&& key, const AttributeValue& value) { m_keysHasBeenSet = true; m_keys.emplace(std::move(key), value); return *this; }
-    inline StreamRecord& AddKeys(const Aws::String& key, AttributeValue&& value) { m_keysHasBeenSet = true; m_keys.emplace(key, std::move(value)); return *this; }
-    inline StreamRecord& AddKeys(Aws::String&& key, AttributeValue&& value) { m_keysHasBeenSet = true; m_keys.emplace(std::move(key), std::move(value)); return *this; }
-    inline StreamRecord& AddKeys(const char* key, AttributeValue&& value) { m_keysHasBeenSet = true; m_keys.emplace(key, std::move(value)); return *this; }
-    inline StreamRecord& AddKeys(const char* key, const AttributeValue& value) { m_keysHasBeenSet = true; m_keys.emplace(key, value); return *this; }
+    template<typename KeysT = Aws::Map<Aws::String, AttributeValue>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Map<Aws::String, AttributeValue>>
+    StreamRecord& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysKeyT = Aws::String, typename KeysValueT = AttributeValue>
+    StreamRecord& AddKeys(KeysKeyT&& key, KeysValueT&& value) {
+      m_keysHasBeenSet = true; m_keys.emplace(std::forward<KeysKeyT>(key), std::forward<KeysValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The item in the DynamoDB table as it appeared after it was modified.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetNewImage() const{ return m_newImage; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetNewImage() const { return m_newImage; }
     inline bool NewImageHasBeenSet() const { return m_newImageHasBeenSet; }
-    inline void SetNewImage(const Aws::Map<Aws::String, AttributeValue>& value) { m_newImageHasBeenSet = true; m_newImage = value; }
-    inline void SetNewImage(Aws::Map<Aws::String, AttributeValue>&& value) { m_newImageHasBeenSet = true; m_newImage = std::move(value); }
-    inline StreamRecord& WithNewImage(const Aws::Map<Aws::String, AttributeValue>& value) { SetNewImage(value); return *this;}
-    inline StreamRecord& WithNewImage(Aws::Map<Aws::String, AttributeValue>&& value) { SetNewImage(std::move(value)); return *this;}
-    inline StreamRecord& AddNewImage(const Aws::String& key, const AttributeValue& value) { m_newImageHasBeenSet = true; m_newImage.emplace(key, value); return *this; }
-    inline StreamRecord& AddNewImage(Aws::String&& key, const AttributeValue& value) { m_newImageHasBeenSet = true; m_newImage.emplace(std::move(key), value); return *this; }
-    inline StreamRecord& AddNewImage(const Aws::String& key, AttributeValue&& value) { m_newImageHasBeenSet = true; m_newImage.emplace(key, std::move(value)); return *this; }
-    inline StreamRecord& AddNewImage(Aws::String&& key, AttributeValue&& value) { m_newImageHasBeenSet = true; m_newImage.emplace(std::move(key), std::move(value)); return *this; }
-    inline StreamRecord& AddNewImage(const char* key, AttributeValue&& value) { m_newImageHasBeenSet = true; m_newImage.emplace(key, std::move(value)); return *this; }
-    inline StreamRecord& AddNewImage(const char* key, const AttributeValue& value) { m_newImageHasBeenSet = true; m_newImage.emplace(key, value); return *this; }
+    template<typename NewImageT = Aws::Map<Aws::String, AttributeValue>>
+    void SetNewImage(NewImageT&& value) { m_newImageHasBeenSet = true; m_newImage = std::forward<NewImageT>(value); }
+    template<typename NewImageT = Aws::Map<Aws::String, AttributeValue>>
+    StreamRecord& WithNewImage(NewImageT&& value) { SetNewImage(std::forward<NewImageT>(value)); return *this;}
+    template<typename NewImageKeyT = Aws::String, typename NewImageValueT = AttributeValue>
+    StreamRecord& AddNewImage(NewImageKeyT&& key, NewImageValueT&& value) {
+      m_newImageHasBeenSet = true; m_newImage.emplace(std::forward<NewImageKeyT>(key), std::forward<NewImageValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The item in the DynamoDB table as it appeared before it was modified.</p>
      */
-    inline const Aws::Map<Aws::String, AttributeValue>& GetOldImage() const{ return m_oldImage; }
+    inline const Aws::Map<Aws::String, AttributeValue>& GetOldImage() const { return m_oldImage; }
     inline bool OldImageHasBeenSet() const { return m_oldImageHasBeenSet; }
-    inline void SetOldImage(const Aws::Map<Aws::String, AttributeValue>& value) { m_oldImageHasBeenSet = true; m_oldImage = value; }
-    inline void SetOldImage(Aws::Map<Aws::String, AttributeValue>&& value) { m_oldImageHasBeenSet = true; m_oldImage = std::move(value); }
-    inline StreamRecord& WithOldImage(const Aws::Map<Aws::String, AttributeValue>& value) { SetOldImage(value); return *this;}
-    inline StreamRecord& WithOldImage(Aws::Map<Aws::String, AttributeValue>&& value) { SetOldImage(std::move(value)); return *this;}
-    inline StreamRecord& AddOldImage(const Aws::String& key, const AttributeValue& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(key, value); return *this; }
-    inline StreamRecord& AddOldImage(Aws::String&& key, const AttributeValue& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(std::move(key), value); return *this; }
-    inline StreamRecord& AddOldImage(const Aws::String& key, AttributeValue&& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(key, std::move(value)); return *this; }
-    inline StreamRecord& AddOldImage(Aws::String&& key, AttributeValue&& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(std::move(key), std::move(value)); return *this; }
-    inline StreamRecord& AddOldImage(const char* key, AttributeValue&& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(key, std::move(value)); return *this; }
-    inline StreamRecord& AddOldImage(const char* key, const AttributeValue& value) { m_oldImageHasBeenSet = true; m_oldImage.emplace(key, value); return *this; }
+    template<typename OldImageT = Aws::Map<Aws::String, AttributeValue>>
+    void SetOldImage(OldImageT&& value) { m_oldImageHasBeenSet = true; m_oldImage = std::forward<OldImageT>(value); }
+    template<typename OldImageT = Aws::Map<Aws::String, AttributeValue>>
+    StreamRecord& WithOldImage(OldImageT&& value) { SetOldImage(std::forward<OldImageT>(value)); return *this;}
+    template<typename OldImageKeyT = Aws::String, typename OldImageValueT = AttributeValue>
+    StreamRecord& AddOldImage(OldImageKeyT&& key, OldImageValueT&& value) {
+      m_oldImageHasBeenSet = true; m_oldImage.emplace(std::forward<OldImageKeyT>(key), std::forward<OldImageValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The sequence number of the stream record.</p>
      */
-    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+    inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
     inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::move(value); }
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber.assign(value); }
-    inline StreamRecord& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-    inline StreamRecord& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-    inline StreamRecord& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    template<typename SequenceNumberT = Aws::String>
+    void SetSequenceNumber(SequenceNumberT&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::forward<SequenceNumberT>(value); }
+    template<typename SequenceNumberT = Aws::String>
+    StreamRecord& WithSequenceNumber(SequenceNumberT&& value) { SetSequenceNumber(std::forward<SequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the stream record, in bytes.</p>
      */
-    inline long long GetSizeBytes() const{ return m_sizeBytes; }
+    inline long long GetSizeBytes() const { return m_sizeBytes; }
     inline bool SizeBytesHasBeenSet() const { return m_sizeBytesHasBeenSet; }
     inline void SetSizeBytes(long long value) { m_sizeBytesHasBeenSet = true; m_sizeBytes = value; }
     inline StreamRecord& WithSizeBytes(long long value) { SetSizeBytes(value); return *this;}
@@ -144,16 +136,14 @@ namespace Model
      * modified.</p> </li> <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and
      * the old item images of the item.</p> </li> </ul>
      */
-    inline const StreamViewType& GetStreamViewType() const{ return m_streamViewType; }
+    inline StreamViewType GetStreamViewType() const { return m_streamViewType; }
     inline bool StreamViewTypeHasBeenSet() const { return m_streamViewTypeHasBeenSet; }
-    inline void SetStreamViewType(const StreamViewType& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
-    inline void SetStreamViewType(StreamViewType&& value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = std::move(value); }
-    inline StreamRecord& WithStreamViewType(const StreamViewType& value) { SetStreamViewType(value); return *this;}
-    inline StreamRecord& WithStreamViewType(StreamViewType&& value) { SetStreamViewType(std::move(value)); return *this;}
+    inline void SetStreamViewType(StreamViewType value) { m_streamViewTypeHasBeenSet = true; m_streamViewType = value; }
+    inline StreamRecord& WithStreamViewType(StreamViewType value) { SetStreamViewType(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_approximateCreationDateTime;
+    Aws::Utils::DateTime m_approximateCreationDateTime{};
     bool m_approximateCreationDateTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_keys;
@@ -168,10 +158,10 @@ namespace Model
     Aws::String m_sequenceNumber;
     bool m_sequenceNumberHasBeenSet = false;
 
-    long long m_sizeBytes;
+    long long m_sizeBytes{0};
     bool m_sizeBytesHasBeenSet = false;
 
-    StreamViewType m_streamViewType;
+    StreamViewType m_streamViewType{StreamViewType::NOT_SET};
     bool m_streamViewTypeHasBeenSet = false;
   };
 

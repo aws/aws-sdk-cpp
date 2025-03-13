@@ -10,10 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListVerifiedEmailAddressesRequest::ListVerifiedEmailAddressesRequest()
-{
-}
-
 Aws::String ListVerifiedEmailAddressesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

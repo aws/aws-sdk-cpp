@@ -32,7 +32,7 @@ namespace Model
   class InternetMeasurementsLogDelivery
   {
   public:
-    AWS_INTERNETMONITOR_API InternetMeasurementsLogDelivery();
+    AWS_INTERNETMONITOR_API InternetMeasurementsLogDelivery() = default;
     AWS_INTERNETMONITOR_API InternetMeasurementsLogDelivery(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API InternetMeasurementsLogDelivery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <code>DISABLED</code>, depending on whether you choose to deliver internet
      * measurements to S3 logs.</p>
      */
-    inline const S3Config& GetS3Config() const{ return m_s3Config; }
+    inline const S3Config& GetS3Config() const { return m_s3Config; }
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
-    inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
-    inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
-    inline InternetMeasurementsLogDelivery& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
-    inline InternetMeasurementsLogDelivery& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
+    template<typename S3ConfigT = S3Config>
+    void SetS3Config(S3ConfigT&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::forward<S3ConfigT>(value); }
+    template<typename S3ConfigT = S3Config>
+    InternetMeasurementsLogDelivery& WithS3Config(S3ConfigT&& value) { SetS3Config(std::forward<S3ConfigT>(value)); return *this;}
     ///@}
   private:
 

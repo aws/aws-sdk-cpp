@@ -18,17 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-PipelineContext::PipelineContext() : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineExecutionIdHasBeenSet(false)
-{
-}
-
 PipelineContext::PipelineContext(JsonView jsonValue)
-  : PipelineContext()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ PipelineContext& PipelineContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineName"))
   {
     m_pipelineName = jsonValue.GetString("pipelineName");
-
     m_pipelineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetObject("stage");
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineArn"))
   {
     m_pipelineArn = jsonValue.GetString("pipelineArn");
-
     m_pipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
     m_pipelineExecutionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

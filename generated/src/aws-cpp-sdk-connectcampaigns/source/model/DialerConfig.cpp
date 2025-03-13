@@ -18,15 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-DialerConfig::DialerConfig() : 
-    m_progressiveDialerConfigHasBeenSet(false),
-    m_predictiveDialerConfigHasBeenSet(false),
-    m_agentlessDialerConfigHasBeenSet(false)
-{
-}
-
 DialerConfig::DialerConfig(JsonView jsonValue)
-  : DialerConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DialerConfig& DialerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("progressiveDialerConfig"))
   {
     m_progressiveDialerConfig = jsonValue.GetObject("progressiveDialerConfig");
-
     m_progressiveDialerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictiveDialerConfig"))
   {
     m_predictiveDialerConfig = jsonValue.GetObject("predictiveDialerConfig");
-
     m_predictiveDialerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentlessDialerConfig"))
   {
     m_agentlessDialerConfig = jsonValue.GetObject("agentlessDialerConfig");
-
     m_agentlessDialerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

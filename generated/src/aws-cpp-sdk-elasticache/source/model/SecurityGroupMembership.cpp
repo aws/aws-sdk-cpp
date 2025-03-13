@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-SecurityGroupMembership::SecurityGroupMembership() : 
-    m_securityGroupIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 SecurityGroupMembership::SecurityGroupMembership(const XmlNode& xmlNode)
-  : SecurityGroupMembership()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SecurityGroupMembership& SecurityGroupMembership::operator =(const XmlNode& xmlN
     {
       m_securityGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupIdNode.GetText());
       m_securityGroupIdHasBeenSet = true;
+       m_securityGroupIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

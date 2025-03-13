@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-OwnerUserPropertiesOutput::OwnerUserPropertiesOutput() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 OwnerUserPropertiesOutput::OwnerUserPropertiesOutput(JsonView jsonValue)
-  : OwnerUserPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OwnerUserPropertiesOutput& OwnerUserPropertiesOutput::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

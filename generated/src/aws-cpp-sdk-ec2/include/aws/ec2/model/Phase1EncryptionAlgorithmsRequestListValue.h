@@ -32,7 +32,7 @@ namespace Model
   class Phase1EncryptionAlgorithmsRequestListValue
   {
   public:
-    AWS_EC2_API Phase1EncryptionAlgorithmsRequestListValue();
+    AWS_EC2_API Phase1EncryptionAlgorithmsRequestListValue() = default;
     AWS_EC2_API Phase1EncryptionAlgorithmsRequestListValue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Phase1EncryptionAlgorithmsRequestListValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The value for the encryption algorithm.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Phase1EncryptionAlgorithmsRequestListValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Phase1EncryptionAlgorithmsRequestListValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Phase1EncryptionAlgorithmsRequestListValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Phase1EncryptionAlgorithmsRequestListValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class GetEnabledStandardsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API GetEnabledStandardsRequest();
+    AWS_SECURITYHUB_API GetEnabledStandardsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p>The list of the standards subscription ARNs for the standards to
      * retrieve.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStandardsSubscriptionArns() const{ return m_standardsSubscriptionArns; }
+    inline const Aws::Vector<Aws::String>& GetStandardsSubscriptionArns() const { return m_standardsSubscriptionArns; }
     inline bool StandardsSubscriptionArnsHasBeenSet() const { return m_standardsSubscriptionArnsHasBeenSet; }
-    inline void SetStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = value; }
-    inline void SetStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = std::move(value); }
-    inline GetEnabledStandardsRequest& WithStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { SetStandardsSubscriptionArns(value); return *this;}
-    inline GetEnabledStandardsRequest& WithStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { SetStandardsSubscriptionArns(std::move(value)); return *this;}
-    inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(const Aws::String& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
-    inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(Aws::String&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(std::move(value)); return *this; }
-    inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(const char* value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
+    template<typename StandardsSubscriptionArnsT = Aws::Vector<Aws::String>>
+    void SetStandardsSubscriptionArns(StandardsSubscriptionArnsT&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = std::forward<StandardsSubscriptionArnsT>(value); }
+    template<typename StandardsSubscriptionArnsT = Aws::Vector<Aws::String>>
+    GetEnabledStandardsRequest& WithStandardsSubscriptionArns(StandardsSubscriptionArnsT&& value) { SetStandardsSubscriptionArns(std::forward<StandardsSubscriptionArnsT>(value)); return *this;}
+    template<typename StandardsSubscriptionArnsT = Aws::String>
+    GetEnabledStandardsRequest& AddStandardsSubscriptionArns(StandardsSubscriptionArnsT&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.emplace_back(std::forward<StandardsSubscriptionArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,21 +56,19 @@ namespace Model
      * listing data, set the value of this parameter to the value returned from the
      * previous response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetEnabledStandardsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetEnabledStandardsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetEnabledStandardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetEnabledStandardsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetEnabledStandardsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

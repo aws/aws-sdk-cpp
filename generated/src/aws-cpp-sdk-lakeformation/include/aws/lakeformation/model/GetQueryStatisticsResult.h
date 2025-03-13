@@ -30,7 +30,7 @@ namespace Model
   class GetQueryStatisticsResult
   {
   public:
-    AWS_LAKEFORMATION_API GetQueryStatisticsResult();
+    AWS_LAKEFORMATION_API GetQueryStatisticsResult() = default;
     AWS_LAKEFORMATION_API GetQueryStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API GetQueryStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,11 @@ namespace Model
      * <p>An <code>ExecutionStatistics</code> structure containing execution
      * statistics.</p>
      */
-    inline const ExecutionStatistics& GetExecutionStatistics() const{ return m_executionStatistics; }
-    inline void SetExecutionStatistics(const ExecutionStatistics& value) { m_executionStatistics = value; }
-    inline void SetExecutionStatistics(ExecutionStatistics&& value) { m_executionStatistics = std::move(value); }
-    inline GetQueryStatisticsResult& WithExecutionStatistics(const ExecutionStatistics& value) { SetExecutionStatistics(value); return *this;}
-    inline GetQueryStatisticsResult& WithExecutionStatistics(ExecutionStatistics&& value) { SetExecutionStatistics(std::move(value)); return *this;}
+    inline const ExecutionStatistics& GetExecutionStatistics() const { return m_executionStatistics; }
+    template<typename ExecutionStatisticsT = ExecutionStatistics>
+    void SetExecutionStatistics(ExecutionStatisticsT&& value) { m_executionStatisticsHasBeenSet = true; m_executionStatistics = std::forward<ExecutionStatisticsT>(value); }
+    template<typename ExecutionStatisticsT = ExecutionStatistics>
+    GetQueryStatisticsResult& WithExecutionStatistics(ExecutionStatisticsT&& value) { SetExecutionStatistics(std::forward<ExecutionStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,43 +52,45 @@ namespace Model
      * <p>A <code>PlanningStatistics</code> structure containing query planning
      * statistics.</p>
      */
-    inline const PlanningStatistics& GetPlanningStatistics() const{ return m_planningStatistics; }
-    inline void SetPlanningStatistics(const PlanningStatistics& value) { m_planningStatistics = value; }
-    inline void SetPlanningStatistics(PlanningStatistics&& value) { m_planningStatistics = std::move(value); }
-    inline GetQueryStatisticsResult& WithPlanningStatistics(const PlanningStatistics& value) { SetPlanningStatistics(value); return *this;}
-    inline GetQueryStatisticsResult& WithPlanningStatistics(PlanningStatistics&& value) { SetPlanningStatistics(std::move(value)); return *this;}
+    inline const PlanningStatistics& GetPlanningStatistics() const { return m_planningStatistics; }
+    template<typename PlanningStatisticsT = PlanningStatistics>
+    void SetPlanningStatistics(PlanningStatisticsT&& value) { m_planningStatisticsHasBeenSet = true; m_planningStatistics = std::forward<PlanningStatisticsT>(value); }
+    template<typename PlanningStatisticsT = PlanningStatistics>
+    GetQueryStatisticsResult& WithPlanningStatistics(PlanningStatisticsT&& value) { SetPlanningStatistics(std::forward<PlanningStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the query was submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetQuerySubmissionTime() const{ return m_querySubmissionTime; }
-    inline void SetQuerySubmissionTime(const Aws::Utils::DateTime& value) { m_querySubmissionTime = value; }
-    inline void SetQuerySubmissionTime(Aws::Utils::DateTime&& value) { m_querySubmissionTime = std::move(value); }
-    inline GetQueryStatisticsResult& WithQuerySubmissionTime(const Aws::Utils::DateTime& value) { SetQuerySubmissionTime(value); return *this;}
-    inline GetQueryStatisticsResult& WithQuerySubmissionTime(Aws::Utils::DateTime&& value) { SetQuerySubmissionTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetQuerySubmissionTime() const { return m_querySubmissionTime; }
+    template<typename QuerySubmissionTimeT = Aws::Utils::DateTime>
+    void SetQuerySubmissionTime(QuerySubmissionTimeT&& value) { m_querySubmissionTimeHasBeenSet = true; m_querySubmissionTime = std::forward<QuerySubmissionTimeT>(value); }
+    template<typename QuerySubmissionTimeT = Aws::Utils::DateTime>
+    GetQueryStatisticsResult& WithQuerySubmissionTime(QuerySubmissionTimeT&& value) { SetQuerySubmissionTime(std::forward<QuerySubmissionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetQueryStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetQueryStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetQueryStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetQueryStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExecutionStatistics m_executionStatistics;
+    bool m_executionStatisticsHasBeenSet = false;
 
     PlanningStatistics m_planningStatistics;
+    bool m_planningStatisticsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_querySubmissionTime;
+    Aws::Utils::DateTime m_querySubmissionTime{};
+    bool m_querySubmissionTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

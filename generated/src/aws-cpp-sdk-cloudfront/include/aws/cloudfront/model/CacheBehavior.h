@@ -60,7 +60,7 @@ namespace Model
   class CacheBehavior
   {
   public:
-    AWS_CLOUDFRONT_API CacheBehavior();
+    AWS_CLOUDFRONT_API CacheBehavior() = default;
     AWS_CLOUDFRONT_API CacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -83,14 +83,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path
      * Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetPathPattern() const{ return m_pathPattern; }
+    inline const Aws::String& GetPathPattern() const { return m_pathPattern; }
     inline bool PathPatternHasBeenSet() const { return m_pathPatternHasBeenSet; }
-    inline void SetPathPattern(const Aws::String& value) { m_pathPatternHasBeenSet = true; m_pathPattern = value; }
-    inline void SetPathPattern(Aws::String&& value) { m_pathPatternHasBeenSet = true; m_pathPattern = std::move(value); }
-    inline void SetPathPattern(const char* value) { m_pathPatternHasBeenSet = true; m_pathPattern.assign(value); }
-    inline CacheBehavior& WithPathPattern(const Aws::String& value) { SetPathPattern(value); return *this;}
-    inline CacheBehavior& WithPathPattern(Aws::String&& value) { SetPathPattern(std::move(value)); return *this;}
-    inline CacheBehavior& WithPathPattern(const char* value) { SetPathPattern(value); return *this;}
+    template<typename PathPatternT = Aws::String>
+    void SetPathPattern(PathPatternT&& value) { m_pathPatternHasBeenSet = true; m_pathPattern = std::forward<PathPatternT>(value); }
+    template<typename PathPatternT = Aws::String>
+    CacheBehavior& WithPathPattern(PathPatternT&& value) { SetPathPattern(std::forward<PathPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +96,12 @@ namespace Model
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when they match this cache behavior.</p>
      */
-    inline const Aws::String& GetTargetOriginId() const{ return m_targetOriginId; }
+    inline const Aws::String& GetTargetOriginId() const { return m_targetOriginId; }
     inline bool TargetOriginIdHasBeenSet() const { return m_targetOriginIdHasBeenSet; }
-    inline void SetTargetOriginId(const Aws::String& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = value; }
-    inline void SetTargetOriginId(Aws::String&& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = std::move(value); }
-    inline void SetTargetOriginId(const char* value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId.assign(value); }
-    inline CacheBehavior& WithTargetOriginId(const Aws::String& value) { SetTargetOriginId(value); return *this;}
-    inline CacheBehavior& WithTargetOriginId(Aws::String&& value) { SetTargetOriginId(std::move(value)); return *this;}
-    inline CacheBehavior& WithTargetOriginId(const char* value) { SetTargetOriginId(value); return *this;}
+    template<typename TargetOriginIdT = Aws::String>
+    void SetTargetOriginId(TargetOriginIdT&& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = std::forward<TargetOriginIdT>(value); }
+    template<typename TargetOriginIdT = Aws::String>
+    CacheBehavior& WithTargetOriginId(TargetOriginIdT&& value) { SetTargetOriginId(std::forward<TargetOriginIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +118,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const TrustedSigners& GetTrustedSigners() const{ return m_trustedSigners; }
+    inline const TrustedSigners& GetTrustedSigners() const { return m_trustedSigners; }
     inline bool TrustedSignersHasBeenSet() const { return m_trustedSignersHasBeenSet; }
-    inline void SetTrustedSigners(const TrustedSigners& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = value; }
-    inline void SetTrustedSigners(TrustedSigners&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::move(value); }
-    inline CacheBehavior& WithTrustedSigners(const TrustedSigners& value) { SetTrustedSigners(value); return *this;}
-    inline CacheBehavior& WithTrustedSigners(TrustedSigners&& value) { SetTrustedSigners(std::move(value)); return *this;}
+    template<typename TrustedSignersT = TrustedSigners>
+    void SetTrustedSigners(TrustedSignersT&& value) { m_trustedSignersHasBeenSet = true; m_trustedSigners = std::forward<TrustedSignersT>(value); }
+    template<typename TrustedSignersT = TrustedSigners>
+    CacheBehavior& WithTrustedSigners(TrustedSignersT&& value) { SetTrustedSigners(std::forward<TrustedSignersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +138,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const TrustedKeyGroups& GetTrustedKeyGroups() const{ return m_trustedKeyGroups; }
+    inline const TrustedKeyGroups& GetTrustedKeyGroups() const { return m_trustedKeyGroups; }
     inline bool TrustedKeyGroupsHasBeenSet() const { return m_trustedKeyGroupsHasBeenSet; }
-    inline void SetTrustedKeyGroups(const TrustedKeyGroups& value) { m_trustedKeyGroupsHasBeenSet = true; m_trustedKeyGroups = value; }
-    inline void SetTrustedKeyGroups(TrustedKeyGroups&& value) { m_trustedKeyGroupsHasBeenSet = true; m_trustedKeyGroups = std::move(value); }
-    inline CacheBehavior& WithTrustedKeyGroups(const TrustedKeyGroups& value) { SetTrustedKeyGroups(value); return *this;}
-    inline CacheBehavior& WithTrustedKeyGroups(TrustedKeyGroups&& value) { SetTrustedKeyGroups(std::move(value)); return *this;}
+    template<typename TrustedKeyGroupsT = TrustedKeyGroups>
+    void SetTrustedKeyGroups(TrustedKeyGroupsT&& value) { m_trustedKeyGroupsHasBeenSet = true; m_trustedKeyGroups = std::forward<TrustedKeyGroupsT>(value); }
+    template<typename TrustedKeyGroupsT = TrustedKeyGroups>
+    CacheBehavior& WithTrustedKeyGroups(TrustedKeyGroupsT&& value) { SetTrustedKeyGroups(std::forward<TrustedKeyGroupsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,22 +171,20 @@ namespace Model
      * Cache Expiration</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      * 
      */
-    inline const ViewerProtocolPolicy& GetViewerProtocolPolicy() const{ return m_viewerProtocolPolicy; }
+    inline ViewerProtocolPolicy GetViewerProtocolPolicy() const { return m_viewerProtocolPolicy; }
     inline bool ViewerProtocolPolicyHasBeenSet() const { return m_viewerProtocolPolicyHasBeenSet; }
-    inline void SetViewerProtocolPolicy(const ViewerProtocolPolicy& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
-    inline void SetViewerProtocolPolicy(ViewerProtocolPolicy&& value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = std::move(value); }
-    inline CacheBehavior& WithViewerProtocolPolicy(const ViewerProtocolPolicy& value) { SetViewerProtocolPolicy(value); return *this;}
-    inline CacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy&& value) { SetViewerProtocolPolicy(std::move(value)); return *this;}
+    inline void SetViewerProtocolPolicy(ViewerProtocolPolicy value) { m_viewerProtocolPolicyHasBeenSet = true; m_viewerProtocolPolicy = value; }
+    inline CacheBehavior& WithViewerProtocolPolicy(ViewerProtocolPolicy value) { SetViewerProtocolPolicy(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const AllowedMethods& GetAllowedMethods() const{ return m_allowedMethods; }
+    inline const AllowedMethods& GetAllowedMethods() const { return m_allowedMethods; }
     inline bool AllowedMethodsHasBeenSet() const { return m_allowedMethodsHasBeenSet; }
-    inline void SetAllowedMethods(const AllowedMethods& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = value; }
-    inline void SetAllowedMethods(AllowedMethods&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::move(value); }
-    inline CacheBehavior& WithAllowedMethods(const AllowedMethods& value) { SetAllowedMethods(value); return *this;}
-    inline CacheBehavior& WithAllowedMethods(AllowedMethods&& value) { SetAllowedMethods(std::move(value)); return *this;}
+    template<typename AllowedMethodsT = AllowedMethods>
+    void SetAllowedMethods(AllowedMethodsT&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::forward<AllowedMethodsT>(value); }
+    template<typename AllowedMethodsT = AllowedMethods>
+    CacheBehavior& WithAllowedMethods(AllowedMethodsT&& value) { SetAllowedMethods(std::forward<AllowedMethodsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,7 +196,7 @@ namespace Model
      * distribute other content using this cache behavior if the content matches the
      * value of <code>PathPattern</code>.</p>
      */
-    inline bool GetSmoothStreaming() const{ return m_smoothStreaming; }
+    inline bool GetSmoothStreaming() const { return m_smoothStreaming; }
     inline bool SmoothStreamingHasBeenSet() const { return m_smoothStreamingHasBeenSet; }
     inline void SetSmoothStreaming(bool value) { m_smoothStreamingHasBeenSet = true; m_smoothStreaming = value; }
     inline CacheBehavior& WithSmoothStreaming(bool value) { SetSmoothStreaming(value); return *this;}
@@ -216,7 +210,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
      * Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline bool GetCompress() const{ return m_compress; }
+    inline bool GetCompress() const { return m_compress; }
     inline bool CompressHasBeenSet() const { return m_compressHasBeenSet; }
     inline void SetCompress(bool value) { m_compressHasBeenSet = true; m_compress = value; }
     inline CacheBehavior& WithCompress(bool value) { SetCompress(value); return *this;}
@@ -227,12 +221,12 @@ namespace Model
      * <p>A complex type that contains zero or more Lambda@Edge function associations
      * for a cache behavior.</p>
      */
-    inline const LambdaFunctionAssociations& GetLambdaFunctionAssociations() const{ return m_lambdaFunctionAssociations; }
+    inline const LambdaFunctionAssociations& GetLambdaFunctionAssociations() const { return m_lambdaFunctionAssociations; }
     inline bool LambdaFunctionAssociationsHasBeenSet() const { return m_lambdaFunctionAssociationsHasBeenSet; }
-    inline void SetLambdaFunctionAssociations(const LambdaFunctionAssociations& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = value; }
-    inline void SetLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = std::move(value); }
-    inline CacheBehavior& WithLambdaFunctionAssociations(const LambdaFunctionAssociations& value) { SetLambdaFunctionAssociations(value); return *this;}
-    inline CacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { SetLambdaFunctionAssociations(std::move(value)); return *this;}
+    template<typename LambdaFunctionAssociationsT = LambdaFunctionAssociations>
+    void SetLambdaFunctionAssociations(LambdaFunctionAssociationsT&& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = std::forward<LambdaFunctionAssociationsT>(value); }
+    template<typename LambdaFunctionAssociationsT = LambdaFunctionAssociations>
+    CacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociationsT&& value) { SetLambdaFunctionAssociations(std::forward<LambdaFunctionAssociationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,12 +235,12 @@ namespace Model
      * CloudFront functions must be published to the <code>LIVE</code> stage to
      * associate them with a cache behavior.</p>
      */
-    inline const FunctionAssociations& GetFunctionAssociations() const{ return m_functionAssociations; }
+    inline const FunctionAssociations& GetFunctionAssociations() const { return m_functionAssociations; }
     inline bool FunctionAssociationsHasBeenSet() const { return m_functionAssociationsHasBeenSet; }
-    inline void SetFunctionAssociations(const FunctionAssociations& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = value; }
-    inline void SetFunctionAssociations(FunctionAssociations&& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = std::move(value); }
-    inline CacheBehavior& WithFunctionAssociations(const FunctionAssociations& value) { SetFunctionAssociations(value); return *this;}
-    inline CacheBehavior& WithFunctionAssociations(FunctionAssociations&& value) { SetFunctionAssociations(std::move(value)); return *this;}
+    template<typename FunctionAssociationsT = FunctionAssociations>
+    void SetFunctionAssociations(FunctionAssociationsT&& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = std::forward<FunctionAssociationsT>(value); }
+    template<typename FunctionAssociationsT = FunctionAssociations>
+    CacheBehavior& WithFunctionAssociations(FunctionAssociationsT&& value) { SetFunctionAssociations(std::forward<FunctionAssociationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,14 +249,12 @@ namespace Model
      * that you want CloudFront to use for encrypting specific fields of data for this
      * cache behavior.</p>
      */
-    inline const Aws::String& GetFieldLevelEncryptionId() const{ return m_fieldLevelEncryptionId; }
+    inline const Aws::String& GetFieldLevelEncryptionId() const { return m_fieldLevelEncryptionId; }
     inline bool FieldLevelEncryptionIdHasBeenSet() const { return m_fieldLevelEncryptionIdHasBeenSet; }
-    inline void SetFieldLevelEncryptionId(const Aws::String& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = value; }
-    inline void SetFieldLevelEncryptionId(Aws::String&& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = std::move(value); }
-    inline void SetFieldLevelEncryptionId(const char* value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId.assign(value); }
-    inline CacheBehavior& WithFieldLevelEncryptionId(const Aws::String& value) { SetFieldLevelEncryptionId(value); return *this;}
-    inline CacheBehavior& WithFieldLevelEncryptionId(Aws::String&& value) { SetFieldLevelEncryptionId(std::move(value)); return *this;}
-    inline CacheBehavior& WithFieldLevelEncryptionId(const char* value) { SetFieldLevelEncryptionId(value); return *this;}
+    template<typename FieldLevelEncryptionIdT = Aws::String>
+    void SetFieldLevelEncryptionId(FieldLevelEncryptionIdT&& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = std::forward<FieldLevelEncryptionIdT>(value); }
+    template<typename FieldLevelEncryptionIdT = Aws::String>
+    CacheBehavior& WithFieldLevelEncryptionId(FieldLevelEncryptionIdT&& value) { SetFieldLevelEncryptionId(std::forward<FieldLevelEncryptionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -272,14 +264,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
      * logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetRealtimeLogConfigArn() const{ return m_realtimeLogConfigArn; }
+    inline const Aws::String& GetRealtimeLogConfigArn() const { return m_realtimeLogConfigArn; }
     inline bool RealtimeLogConfigArnHasBeenSet() const { return m_realtimeLogConfigArnHasBeenSet; }
-    inline void SetRealtimeLogConfigArn(const Aws::String& value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn = value; }
-    inline void SetRealtimeLogConfigArn(Aws::String&& value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn = std::move(value); }
-    inline void SetRealtimeLogConfigArn(const char* value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn.assign(value); }
-    inline CacheBehavior& WithRealtimeLogConfigArn(const Aws::String& value) { SetRealtimeLogConfigArn(value); return *this;}
-    inline CacheBehavior& WithRealtimeLogConfigArn(Aws::String&& value) { SetRealtimeLogConfigArn(std::move(value)); return *this;}
-    inline CacheBehavior& WithRealtimeLogConfigArn(const char* value) { SetRealtimeLogConfigArn(value); return *this;}
+    template<typename RealtimeLogConfigArnT = Aws::String>
+    void SetRealtimeLogConfigArn(RealtimeLogConfigArnT&& value) { m_realtimeLogConfigArnHasBeenSet = true; m_realtimeLogConfigArn = std::forward<RealtimeLogConfigArnT>(value); }
+    template<typename RealtimeLogConfigArnT = Aws::String>
+    CacheBehavior& WithRealtimeLogConfigArn(RealtimeLogConfigArnT&& value) { SetRealtimeLogConfigArn(std::forward<RealtimeLogConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -294,14 +284,12 @@ namespace Model
      * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
      * you use a <code>CachePolicyId</code>.</p>
      */
-    inline const Aws::String& GetCachePolicyId() const{ return m_cachePolicyId; }
+    inline const Aws::String& GetCachePolicyId() const { return m_cachePolicyId; }
     inline bool CachePolicyIdHasBeenSet() const { return m_cachePolicyIdHasBeenSet; }
-    inline void SetCachePolicyId(const Aws::String& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = value; }
-    inline void SetCachePolicyId(Aws::String&& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = std::move(value); }
-    inline void SetCachePolicyId(const char* value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId.assign(value); }
-    inline CacheBehavior& WithCachePolicyId(const Aws::String& value) { SetCachePolicyId(value); return *this;}
-    inline CacheBehavior& WithCachePolicyId(Aws::String&& value) { SetCachePolicyId(std::move(value)); return *this;}
-    inline CacheBehavior& WithCachePolicyId(const char* value) { SetCachePolicyId(value); return *this;}
+    template<typename CachePolicyIdT = Aws::String>
+    void SetCachePolicyId(CachePolicyIdT&& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = std::forward<CachePolicyIdT>(value); }
+    template<typename CachePolicyIdT = Aws::String>
+    CacheBehavior& WithCachePolicyId(CachePolicyIdT&& value) { SetCachePolicyId(std::forward<CachePolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -314,40 +302,36 @@ namespace Model
      * the managed origin request policies</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginRequestPolicyId() const{ return m_originRequestPolicyId; }
+    inline const Aws::String& GetOriginRequestPolicyId() const { return m_originRequestPolicyId; }
     inline bool OriginRequestPolicyIdHasBeenSet() const { return m_originRequestPolicyIdHasBeenSet; }
-    inline void SetOriginRequestPolicyId(const Aws::String& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = value; }
-    inline void SetOriginRequestPolicyId(Aws::String&& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = std::move(value); }
-    inline void SetOriginRequestPolicyId(const char* value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId.assign(value); }
-    inline CacheBehavior& WithOriginRequestPolicyId(const Aws::String& value) { SetOriginRequestPolicyId(value); return *this;}
-    inline CacheBehavior& WithOriginRequestPolicyId(Aws::String&& value) { SetOriginRequestPolicyId(std::move(value)); return *this;}
-    inline CacheBehavior& WithOriginRequestPolicyId(const char* value) { SetOriginRequestPolicyId(value); return *this;}
+    template<typename OriginRequestPolicyIdT = Aws::String>
+    void SetOriginRequestPolicyId(OriginRequestPolicyIdT&& value) { m_originRequestPolicyIdHasBeenSet = true; m_originRequestPolicyId = std::forward<OriginRequestPolicyIdT>(value); }
+    template<typename OriginRequestPolicyIdT = Aws::String>
+    CacheBehavior& WithOriginRequestPolicyId(OriginRequestPolicyIdT&& value) { SetOriginRequestPolicyId(std::forward<OriginRequestPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a response headers policy.</p>
      */
-    inline const Aws::String& GetResponseHeadersPolicyId() const{ return m_responseHeadersPolicyId; }
+    inline const Aws::String& GetResponseHeadersPolicyId() const { return m_responseHeadersPolicyId; }
     inline bool ResponseHeadersPolicyIdHasBeenSet() const { return m_responseHeadersPolicyIdHasBeenSet; }
-    inline void SetResponseHeadersPolicyId(const Aws::String& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = value; }
-    inline void SetResponseHeadersPolicyId(Aws::String&& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = std::move(value); }
-    inline void SetResponseHeadersPolicyId(const char* value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId.assign(value); }
-    inline CacheBehavior& WithResponseHeadersPolicyId(const Aws::String& value) { SetResponseHeadersPolicyId(value); return *this;}
-    inline CacheBehavior& WithResponseHeadersPolicyId(Aws::String&& value) { SetResponseHeadersPolicyId(std::move(value)); return *this;}
-    inline CacheBehavior& WithResponseHeadersPolicyId(const char* value) { SetResponseHeadersPolicyId(value); return *this;}
+    template<typename ResponseHeadersPolicyIdT = Aws::String>
+    void SetResponseHeadersPolicyId(ResponseHeadersPolicyIdT&& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = std::forward<ResponseHeadersPolicyIdT>(value); }
+    template<typename ResponseHeadersPolicyIdT = Aws::String>
+    CacheBehavior& WithResponseHeadersPolicyId(ResponseHeadersPolicyIdT&& value) { SetResponseHeadersPolicyId(std::forward<ResponseHeadersPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The gRPC configuration for your cache behavior.</p>
      */
-    inline const GrpcConfig& GetGrpcConfig() const{ return m_grpcConfig; }
+    inline const GrpcConfig& GetGrpcConfig() const { return m_grpcConfig; }
     inline bool GrpcConfigHasBeenSet() const { return m_grpcConfigHasBeenSet; }
-    inline void SetGrpcConfig(const GrpcConfig& value) { m_grpcConfigHasBeenSet = true; m_grpcConfig = value; }
-    inline void SetGrpcConfig(GrpcConfig&& value) { m_grpcConfigHasBeenSet = true; m_grpcConfig = std::move(value); }
-    inline CacheBehavior& WithGrpcConfig(const GrpcConfig& value) { SetGrpcConfig(value); return *this;}
-    inline CacheBehavior& WithGrpcConfig(GrpcConfig&& value) { SetGrpcConfig(std::move(value)); return *this;}
+    template<typename GrpcConfigT = GrpcConfig>
+    void SetGrpcConfig(GrpcConfigT&& value) { m_grpcConfigHasBeenSet = true; m_grpcConfig = std::forward<GrpcConfigT>(value); }
+    template<typename GrpcConfigT = GrpcConfig>
+    CacheBehavior& WithGrpcConfig(GrpcConfigT&& value) { SetGrpcConfig(std::forward<GrpcConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -363,16 +347,16 @@ namespace Model
     TrustedKeyGroups m_trustedKeyGroups;
     bool m_trustedKeyGroupsHasBeenSet = false;
 
-    ViewerProtocolPolicy m_viewerProtocolPolicy;
+    ViewerProtocolPolicy m_viewerProtocolPolicy{ViewerProtocolPolicy::NOT_SET};
     bool m_viewerProtocolPolicyHasBeenSet = false;
 
     AllowedMethods m_allowedMethods;
     bool m_allowedMethodsHasBeenSet = false;
 
-    bool m_smoothStreaming;
+    bool m_smoothStreaming{false};
     bool m_smoothStreamingHasBeenSet = false;
 
-    bool m_compress;
+    bool m_compress{false};
     bool m_compressHasBeenSet = false;
 
     LambdaFunctionAssociations m_lambdaFunctionAssociations;

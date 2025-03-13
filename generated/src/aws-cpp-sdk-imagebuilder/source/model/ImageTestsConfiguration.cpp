@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImageTestsConfiguration::ImageTestsConfiguration() : 
-    m_imageTestsEnabled(false),
-    m_imageTestsEnabledHasBeenSet(false),
-    m_timeoutMinutes(0),
-    m_timeoutMinutesHasBeenSet(false)
-{
-}
-
 ImageTestsConfiguration::ImageTestsConfiguration(JsonView jsonValue)
-  : ImageTestsConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ImageTestsConfiguration& ImageTestsConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageTestsEnabled"))
   {
     m_imageTestsEnabled = jsonValue.GetBool("imageTestsEnabled");
-
     m_imageTestsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutMinutes"))
   {
     m_timeoutMinutes = jsonValue.GetInteger("timeoutMinutes");
-
     m_timeoutMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

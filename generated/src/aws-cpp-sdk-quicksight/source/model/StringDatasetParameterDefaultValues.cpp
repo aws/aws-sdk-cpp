@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-StringDatasetParameterDefaultValues::StringDatasetParameterDefaultValues() : 
-    m_staticValuesHasBeenSet(false)
-{
-}
-
 StringDatasetParameterDefaultValues::StringDatasetParameterDefaultValues(JsonView jsonValue)
-  : StringDatasetParameterDefaultValues()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ StringDatasetParameterDefaultValues& StringDatasetParameterDefaultValues::operat
     }
     m_staticValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

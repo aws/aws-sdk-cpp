@@ -12,14 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutApplicationAuthenticationMethodRequest::PutApplicationAuthenticationMethodRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_authenticationMethodHasBeenSet(false),
-    m_authenticationMethodType(AuthenticationMethodType::NOT_SET),
-    m_authenticationMethodTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutApplicationAuthenticationMethodRequest::SerializePayload() const
 {
   JsonValue payload;

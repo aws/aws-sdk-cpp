@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentReport::ExperimentReport() : 
-    m_stateHasBeenSet(false),
-    m_s3ReportsHasBeenSet(false)
-{
-}
-
 ExperimentReport::ExperimentReport(JsonView jsonValue)
-  : ExperimentReport()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExperimentReport& ExperimentReport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Reports"))
   {
     Aws::Utils::Array<JsonView> s3ReportsJsonList = jsonValue.GetArray("s3Reports");
@@ -48,7 +39,6 @@ ExperimentReport& ExperimentReport::operator =(JsonView jsonValue)
     }
     m_s3ReportsHasBeenSet = true;
   }
-
   return *this;
 }
 

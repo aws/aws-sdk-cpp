@@ -35,7 +35,7 @@ namespace Model
   class IpAddressResponse
   {
   public:
-    AWS_ROUTE53RESOLVER_API IpAddressResponse();
+    AWS_ROUTE53RESOLVER_API IpAddressResponse() = default;
     AWS_ROUTE53RESOLVER_API IpAddressResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API IpAddressResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,68 +45,58 @@ namespace Model
     /**
      * <p>The ID of one IP address.</p>
      */
-    inline const Aws::String& GetIpId() const{ return m_ipId; }
+    inline const Aws::String& GetIpId() const { return m_ipId; }
     inline bool IpIdHasBeenSet() const { return m_ipIdHasBeenSet; }
-    inline void SetIpId(const Aws::String& value) { m_ipIdHasBeenSet = true; m_ipId = value; }
-    inline void SetIpId(Aws::String&& value) { m_ipIdHasBeenSet = true; m_ipId = std::move(value); }
-    inline void SetIpId(const char* value) { m_ipIdHasBeenSet = true; m_ipId.assign(value); }
-    inline IpAddressResponse& WithIpId(const Aws::String& value) { SetIpId(value); return *this;}
-    inline IpAddressResponse& WithIpId(Aws::String&& value) { SetIpId(std::move(value)); return *this;}
-    inline IpAddressResponse& WithIpId(const char* value) { SetIpId(value); return *this;}
+    template<typename IpIdT = Aws::String>
+    void SetIpId(IpIdT&& value) { m_ipIdHasBeenSet = true; m_ipId = std::forward<IpIdT>(value); }
+    template<typename IpIdT = Aws::String>
+    IpAddressResponse& WithIpId(IpIdT&& value) { SetIpId(std::forward<IpIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of one subnet.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline IpAddressResponse& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline IpAddressResponse& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline IpAddressResponse& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    IpAddressResponse& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One IPv4 address that the Resolver endpoint uses for DNS queries.</p>
      */
-    inline const Aws::String& GetIp() const{ return m_ip; }
+    inline const Aws::String& GetIp() const { return m_ip; }
     inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
-    inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
-    inline void SetIp(Aws::String&& value) { m_ipHasBeenSet = true; m_ip = std::move(value); }
-    inline void SetIp(const char* value) { m_ipHasBeenSet = true; m_ip.assign(value); }
-    inline IpAddressResponse& WithIp(const Aws::String& value) { SetIp(value); return *this;}
-    inline IpAddressResponse& WithIp(Aws::String&& value) { SetIp(std::move(value)); return *this;}
-    inline IpAddressResponse& WithIp(const char* value) { SetIp(value); return *this;}
+    template<typename IpT = Aws::String>
+    void SetIp(IpT&& value) { m_ipHasBeenSet = true; m_ip = std::forward<IpT>(value); }
+    template<typename IpT = Aws::String>
+    IpAddressResponse& WithIp(IpT&& value) { SetIp(std::forward<IpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> One IPv6 address that the Resolver endpoint uses for DNS queries. </p>
      */
-    inline const Aws::String& GetIpv6() const{ return m_ipv6; }
+    inline const Aws::String& GetIpv6() const { return m_ipv6; }
     inline bool Ipv6HasBeenSet() const { return m_ipv6HasBeenSet; }
-    inline void SetIpv6(const Aws::String& value) { m_ipv6HasBeenSet = true; m_ipv6 = value; }
-    inline void SetIpv6(Aws::String&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::move(value); }
-    inline void SetIpv6(const char* value) { m_ipv6HasBeenSet = true; m_ipv6.assign(value); }
-    inline IpAddressResponse& WithIpv6(const Aws::String& value) { SetIpv6(value); return *this;}
-    inline IpAddressResponse& WithIpv6(Aws::String&& value) { SetIpv6(std::move(value)); return *this;}
-    inline IpAddressResponse& WithIpv6(const char* value) { SetIpv6(value); return *this;}
+    template<typename Ipv6T = Aws::String>
+    void SetIpv6(Ipv6T&& value) { m_ipv6HasBeenSet = true; m_ipv6 = std::forward<Ipv6T>(value); }
+    template<typename Ipv6T = Aws::String>
+    IpAddressResponse& WithIpv6(Ipv6T&& value) { SetIpv6(std::forward<Ipv6T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A status code that gives the current status of the request.</p>
      */
-    inline const IpAddressStatus& GetStatus() const{ return m_status; }
+    inline IpAddressStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const IpAddressStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(IpAddressStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline IpAddressResponse& WithStatus(const IpAddressStatus& value) { SetStatus(value); return *this;}
-    inline IpAddressResponse& WithStatus(IpAddressStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(IpAddressStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline IpAddressResponse& WithStatus(IpAddressStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +104,12 @@ namespace Model
      * <p>A message that provides additional information about the status of the
      * request.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline IpAddressResponse& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline IpAddressResponse& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline IpAddressResponse& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    IpAddressResponse& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +117,12 @@ namespace Model
      * <p>The date and time that the IP address was created, in Unix time format and
      * Coordinated Universal Time (UTC).</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline IpAddressResponse& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline IpAddressResponse& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline IpAddressResponse& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    IpAddressResponse& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,14 +130,12 @@ namespace Model
      * <p>The date and time that the IP address was last modified, in Unix time format
      * and Coordinated Universal Time (UTC).</p>
      */
-    inline const Aws::String& GetModificationTime() const{ return m_modificationTime; }
+    inline const Aws::String& GetModificationTime() const { return m_modificationTime; }
     inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
-    inline void SetModificationTime(const Aws::String& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = value; }
-    inline void SetModificationTime(Aws::String&& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = std::move(value); }
-    inline void SetModificationTime(const char* value) { m_modificationTimeHasBeenSet = true; m_modificationTime.assign(value); }
-    inline IpAddressResponse& WithModificationTime(const Aws::String& value) { SetModificationTime(value); return *this;}
-    inline IpAddressResponse& WithModificationTime(Aws::String&& value) { SetModificationTime(std::move(value)); return *this;}
-    inline IpAddressResponse& WithModificationTime(const char* value) { SetModificationTime(value); return *this;}
+    template<typename ModificationTimeT = Aws::String>
+    void SetModificationTime(ModificationTimeT&& value) { m_modificationTimeHasBeenSet = true; m_modificationTime = std::forward<ModificationTimeT>(value); }
+    template<typename ModificationTimeT = Aws::String>
+    IpAddressResponse& WithModificationTime(ModificationTimeT&& value) { SetModificationTime(std::forward<ModificationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -167,7 +151,7 @@ namespace Model
     Aws::String m_ipv6;
     bool m_ipv6HasBeenSet = false;
 
-    IpAddressStatus m_status;
+    IpAddressStatus m_status{IpAddressStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

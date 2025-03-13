@@ -33,7 +33,7 @@ namespace Model
   class LogSubscription
   {
   public:
-    AWS_DIRECTORYSERVICE_API LogSubscription();
+    AWS_DIRECTORYSERVICE_API LogSubscription() = default;
     AWS_DIRECTORYSERVICE_API LogSubscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API LogSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
      * <p>Identifier (ID) of the directory that you want to associate with the log
      * subscription.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline LogSubscription& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline LogSubscription& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline LogSubscription& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    LogSubscription& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline LogSubscription& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline LogSubscription& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline LogSubscription& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    LogSubscription& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the log subscription was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubscriptionCreatedDateTime() const{ return m_subscriptionCreatedDateTime; }
+    inline const Aws::Utils::DateTime& GetSubscriptionCreatedDateTime() const { return m_subscriptionCreatedDateTime; }
     inline bool SubscriptionCreatedDateTimeHasBeenSet() const { return m_subscriptionCreatedDateTimeHasBeenSet; }
-    inline void SetSubscriptionCreatedDateTime(const Aws::Utils::DateTime& value) { m_subscriptionCreatedDateTimeHasBeenSet = true; m_subscriptionCreatedDateTime = value; }
-    inline void SetSubscriptionCreatedDateTime(Aws::Utils::DateTime&& value) { m_subscriptionCreatedDateTimeHasBeenSet = true; m_subscriptionCreatedDateTime = std::move(value); }
-    inline LogSubscription& WithSubscriptionCreatedDateTime(const Aws::Utils::DateTime& value) { SetSubscriptionCreatedDateTime(value); return *this;}
-    inline LogSubscription& WithSubscriptionCreatedDateTime(Aws::Utils::DateTime&& value) { SetSubscriptionCreatedDateTime(std::move(value)); return *this;}
+    template<typename SubscriptionCreatedDateTimeT = Aws::Utils::DateTime>
+    void SetSubscriptionCreatedDateTime(SubscriptionCreatedDateTimeT&& value) { m_subscriptionCreatedDateTimeHasBeenSet = true; m_subscriptionCreatedDateTime = std::forward<SubscriptionCreatedDateTimeT>(value); }
+    template<typename SubscriptionCreatedDateTimeT = Aws::Utils::DateTime>
+    LogSubscription& WithSubscriptionCreatedDateTime(SubscriptionCreatedDateTimeT&& value) { SetSubscriptionCreatedDateTime(std::forward<SubscriptionCreatedDateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -87,7 +83,7 @@ namespace Model
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_subscriptionCreatedDateTime;
+    Aws::Utils::DateTime m_subscriptionCreatedDateTime{};
     bool m_subscriptionCreatedDateTimeHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNamespaceResult::GetNamespaceResult()
-{
-}
-
 GetNamespaceResult::GetNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,32 +32,30 @@ GetNamespaceResult& GetNamespaceResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_namespace.push_back(namespaceJsonList[namespaceIndex].AsString());
     }
+    m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
-
+    m_ownerAccountIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

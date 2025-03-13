@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeContainerFleetResult::DescribeContainerFleetResult()
-{
-}
-
 DescribeContainerFleetResult::DescribeContainerFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeContainerFleetResult& DescribeContainerFleetResult::operator =(const Aws
   if(jsonValue.ValueExists("ContainerFleet"))
   {
     m_containerFleet = jsonValue.GetObject("ContainerFleet");
-
+    m_containerFleetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

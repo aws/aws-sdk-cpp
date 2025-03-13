@@ -12,16 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartReplayRequest::StartReplayRequest() : 
-    m_replayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_eventStartTimeHasBeenSet(false),
-    m_eventEndTimeHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 Aws::String StartReplayRequest::SerializePayload() const
 {
   JsonValue payload;

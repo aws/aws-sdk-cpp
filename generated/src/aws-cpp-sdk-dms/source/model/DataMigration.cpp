@@ -18,30 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DataMigration::DataMigration() : 
-    m_dataMigrationNameHasBeenSet(false),
-    m_dataMigrationArnHasBeenSet(false),
-    m_dataMigrationCreateTimeHasBeenSet(false),
-    m_dataMigrationStartTimeHasBeenSet(false),
-    m_dataMigrationEndTimeHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_migrationProjectArnHasBeenSet(false),
-    m_dataMigrationType(MigrationTypeValue::NOT_SET),
-    m_dataMigrationTypeHasBeenSet(false),
-    m_dataMigrationSettingsHasBeenSet(false),
-    m_sourceDataSettingsHasBeenSet(false),
-    m_targetDataSettingsHasBeenSet(false),
-    m_dataMigrationStatisticsHasBeenSet(false),
-    m_dataMigrationStatusHasBeenSet(false),
-    m_publicIpAddressesHasBeenSet(false),
-    m_dataMigrationCidrBlocksHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_stopReasonHasBeenSet(false)
-{
-}
-
 DataMigration::DataMigration(JsonView jsonValue)
-  : DataMigration()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataMigrationName"))
   {
     m_dataMigrationName = jsonValue.GetString("DataMigrationName");
-
     m_dataMigrationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationArn"))
   {
     m_dataMigrationArn = jsonValue.GetString("DataMigrationArn");
-
     m_dataMigrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationCreateTime"))
   {
     m_dataMigrationCreateTime = jsonValue.GetString("DataMigrationCreateTime");
-
     m_dataMigrationCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationStartTime"))
   {
     m_dataMigrationStartTime = jsonValue.GetString("DataMigrationStartTime");
-
     m_dataMigrationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationEndTime"))
   {
     m_dataMigrationEndTime = jsonValue.GetString("DataMigrationEndTime");
-
     m_dataMigrationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
-
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationProjectArn"))
   {
     m_migrationProjectArn = jsonValue.GetString("MigrationProjectArn");
-
     m_migrationProjectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationType"))
   {
     m_dataMigrationType = MigrationTypeValueMapper::GetMigrationTypeValueForName(jsonValue.GetString("DataMigrationType"));
-
     m_dataMigrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationSettings"))
   {
     m_dataMigrationSettings = jsonValue.GetObject("DataMigrationSettings");
-
     m_dataMigrationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDataSettings"))
   {
     Aws::Utils::Array<JsonView> sourceDataSettingsJsonList = jsonValue.GetArray("SourceDataSettings");
@@ -120,7 +79,6 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
     }
     m_sourceDataSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDataSettings"))
   {
     Aws::Utils::Array<JsonView> targetDataSettingsJsonList = jsonValue.GetArray("TargetDataSettings");
@@ -130,21 +88,16 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
     }
     m_targetDataSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationStatistics"))
   {
     m_dataMigrationStatistics = jsonValue.GetObject("DataMigrationStatistics");
-
     m_dataMigrationStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationStatus"))
   {
     m_dataMigrationStatus = jsonValue.GetString("DataMigrationStatus");
-
     m_dataMigrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIpAddresses"))
   {
     Aws::Utils::Array<JsonView> publicIpAddressesJsonList = jsonValue.GetArray("PublicIpAddresses");
@@ -154,7 +107,6 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
     }
     m_publicIpAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataMigrationCidrBlocks"))
   {
     Aws::Utils::Array<JsonView> dataMigrationCidrBlocksJsonList = jsonValue.GetArray("DataMigrationCidrBlocks");
@@ -164,21 +116,16 @@ DataMigration& DataMigration::operator =(JsonView jsonValue)
     }
     m_dataMigrationCidrBlocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailureMessage"))
   {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
-
     m_lastFailureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopReason"))
   {
     m_stopReason = jsonValue.GetString("StopReason");
-
     m_stopReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

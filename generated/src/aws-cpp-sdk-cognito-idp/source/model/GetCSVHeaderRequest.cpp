@@ -12,11 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCSVHeaderRequest::GetCSVHeaderRequest() : 
-    m_userPoolIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCSVHeaderRequest::SerializePayload() const
 {
   JsonValue payload;

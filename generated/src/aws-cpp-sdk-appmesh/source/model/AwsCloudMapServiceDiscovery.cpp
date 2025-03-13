@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery() : 
-    m_attributesHasBeenSet(false),
-    m_ipPreference(IpPreference::NOT_SET),
-    m_ipPreferenceHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 AwsCloudMapServiceDiscovery::AwsCloudMapServiceDiscovery(JsonView jsonValue)
-  : AwsCloudMapServiceDiscovery()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ AwsCloudMapServiceDiscovery& AwsCloudMapServiceDiscovery::operator =(JsonView js
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipPreference"))
   {
     m_ipPreference = IpPreferenceMapper::GetIpPreferenceForName(jsonValue.GetString("ipPreference"));
-
     m_ipPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
-
     m_namespaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

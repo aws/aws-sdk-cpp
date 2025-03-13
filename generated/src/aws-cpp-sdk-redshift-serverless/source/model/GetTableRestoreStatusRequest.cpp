@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableRestoreStatusRequest::GetTableRestoreStatusRequest() : 
-    m_tableRestoreRequestIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTableRestoreStatusRequest::SerializePayload() const
 {
   JsonValue payload;

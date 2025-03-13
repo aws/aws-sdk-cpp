@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTapesResult::CreateTapesResult()
-{
-}
-
 CreateTapesResult::CreateTapesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ CreateTapesResult& CreateTapesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tapeARNs.push_back(tapeARNsJsonList[tapeARNsIndex].AsString());
     }
+    m_tapeARNsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

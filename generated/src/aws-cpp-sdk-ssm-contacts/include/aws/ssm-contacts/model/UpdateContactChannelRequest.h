@@ -22,7 +22,7 @@ namespace Model
   class UpdateContactChannelRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API UpdateContactChannelRequest();
+    AWS_SSMCONTACTS_API UpdateContactChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the contact channel you want to update.</p>
      */
-    inline const Aws::String& GetContactChannelId() const{ return m_contactChannelId; }
+    inline const Aws::String& GetContactChannelId() const { return m_contactChannelId; }
     inline bool ContactChannelIdHasBeenSet() const { return m_contactChannelIdHasBeenSet; }
-    inline void SetContactChannelId(const Aws::String& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = value; }
-    inline void SetContactChannelId(Aws::String&& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = std::move(value); }
-    inline void SetContactChannelId(const char* value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId.assign(value); }
-    inline UpdateContactChannelRequest& WithContactChannelId(const Aws::String& value) { SetContactChannelId(value); return *this;}
-    inline UpdateContactChannelRequest& WithContactChannelId(Aws::String&& value) { SetContactChannelId(std::move(value)); return *this;}
-    inline UpdateContactChannelRequest& WithContactChannelId(const char* value) { SetContactChannelId(value); return *this;}
+    template<typename ContactChannelIdT = Aws::String>
+    void SetContactChannelId(ContactChannelIdT&& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = std::forward<ContactChannelIdT>(value); }
+    template<typename ContactChannelIdT = Aws::String>
+    UpdateContactChannelRequest& WithContactChannelId(ContactChannelIdT&& value) { SetContactChannelId(std::forward<ContactChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the contact channel.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateContactChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateContactChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateContactChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateContactChannelRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,12 @@ namespace Model
      * <p>The details that Incident Manager uses when trying to engage the contact
      * channel.</p>
      */
-    inline const ContactChannelAddress& GetDeliveryAddress() const{ return m_deliveryAddress; }
+    inline const ContactChannelAddress& GetDeliveryAddress() const { return m_deliveryAddress; }
     inline bool DeliveryAddressHasBeenSet() const { return m_deliveryAddressHasBeenSet; }
-    inline void SetDeliveryAddress(const ContactChannelAddress& value) { m_deliveryAddressHasBeenSet = true; m_deliveryAddress = value; }
-    inline void SetDeliveryAddress(ContactChannelAddress&& value) { m_deliveryAddressHasBeenSet = true; m_deliveryAddress = std::move(value); }
-    inline UpdateContactChannelRequest& WithDeliveryAddress(const ContactChannelAddress& value) { SetDeliveryAddress(value); return *this;}
-    inline UpdateContactChannelRequest& WithDeliveryAddress(ContactChannelAddress&& value) { SetDeliveryAddress(std::move(value)); return *this;}
+    template<typename DeliveryAddressT = ContactChannelAddress>
+    void SetDeliveryAddress(DeliveryAddressT&& value) { m_deliveryAddressHasBeenSet = true; m_deliveryAddress = std::forward<DeliveryAddressT>(value); }
+    template<typename DeliveryAddressT = ContactChannelAddress>
+    UpdateContactChannelRequest& WithDeliveryAddress(DeliveryAddressT&& value) { SetDeliveryAddress(std::forward<DeliveryAddressT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianOptions::RoutePedestrianOptions() : 
-    m_speed(0.0),
-    m_speedHasBeenSet(false)
-{
-}
-
 RoutePedestrianOptions::RoutePedestrianOptions(JsonView jsonValue)
-  : RoutePedestrianOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RoutePedestrianOptions& RoutePedestrianOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Speed"))
   {
     m_speed = jsonValue.GetDouble("Speed");
-
     m_speedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class S3ConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API S3ConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API S3ConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API S3ConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API S3ConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ARN of an Amazon S3 bucket that's the destination for threat protection
      * log export.</p>
      */
-    inline const Aws::String& GetBucketArn() const{ return m_bucketArn; }
+    inline const Aws::String& GetBucketArn() const { return m_bucketArn; }
     inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
-    inline void SetBucketArn(const Aws::String& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
-    inline void SetBucketArn(Aws::String&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::move(value); }
-    inline void SetBucketArn(const char* value) { m_bucketArnHasBeenSet = true; m_bucketArn.assign(value); }
-    inline S3ConfigurationType& WithBucketArn(const Aws::String& value) { SetBucketArn(value); return *this;}
-    inline S3ConfigurationType& WithBucketArn(Aws::String&& value) { SetBucketArn(std::move(value)); return *this;}
-    inline S3ConfigurationType& WithBucketArn(const char* value) { SetBucketArn(value); return *this;}
+    template<typename BucketArnT = Aws::String>
+    void SetBucketArn(BucketArnT&& value) { m_bucketArnHasBeenSet = true; m_bucketArn = std::forward<BucketArnT>(value); }
+    template<typename BucketArnT = Aws::String>
+    S3ConfigurationType& WithBucketArn(BucketArnT&& value) { SetBucketArn(std::forward<BucketArnT>(value)); return *this;}
     ///@}
   private:
 

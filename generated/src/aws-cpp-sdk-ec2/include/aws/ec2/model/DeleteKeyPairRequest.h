@@ -21,7 +21,7 @@ namespace Model
   class DeleteKeyPairRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteKeyPairRequest();
+    AWS_EC2_API DeleteKeyPairRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline DeleteKeyPairRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline DeleteKeyPairRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline DeleteKeyPairRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    DeleteKeyPairRequest& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the key pair.</p>
      */
-    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
+    inline const Aws::String& GetKeyPairId() const { return m_keyPairId; }
     inline bool KeyPairIdHasBeenSet() const { return m_keyPairIdHasBeenSet; }
-    inline void SetKeyPairId(const Aws::String& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = value; }
-    inline void SetKeyPairId(Aws::String&& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = std::move(value); }
-    inline void SetKeyPairId(const char* value) { m_keyPairIdHasBeenSet = true; m_keyPairId.assign(value); }
-    inline DeleteKeyPairRequest& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
-    inline DeleteKeyPairRequest& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
-    inline DeleteKeyPairRequest& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
+    template<typename KeyPairIdT = Aws::String>
+    void SetKeyPairId(KeyPairIdT&& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = std::forward<KeyPairIdT>(value); }
+    template<typename KeyPairIdT = Aws::String>
+    DeleteKeyPairRequest& WithKeyPairId(KeyPairIdT&& value) { SetKeyPairId(std::forward<KeyPairIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteKeyPairRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_keyPairId;
     bool m_keyPairIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBSecurityGroupMembership::DBSecurityGroupMembership() : 
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DBSecurityGroupMembership::DBSecurityGroupMembership(const XmlNode& xmlNode)
-  : DBSecurityGroupMembership()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DBSecurityGroupMembership& DBSecurityGroupMembership::operator =(const XmlNode& 
     {
       m_dBSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBSecurityGroupNameNode.GetText());
       m_dBSecurityGroupNameHasBeenSet = true;
+       m_dBSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

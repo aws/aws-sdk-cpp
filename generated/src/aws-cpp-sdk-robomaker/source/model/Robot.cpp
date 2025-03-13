@@ -18,23 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-Robot::Robot() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_fleetArnHasBeenSet(false),
-    m_status(RobotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_greenGrassGroupIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_lastDeploymentJobHasBeenSet(false),
-    m_lastDeploymentTimeHasBeenSet(false)
-{
-}
-
 Robot::Robot(JsonView jsonValue)
-  : Robot()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ Robot& Robot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetArn"))
   {
     m_fleetArn = jsonValue.GetString("fleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RobotStatusMapper::GetRobotStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greenGrassGroupId"))
   {
     m_greenGrassGroupId = jsonValue.GetString("greenGrassGroupId");
-
     m_greenGrassGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("architecture"));
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastDeploymentJob"))
   {
     m_lastDeploymentJob = jsonValue.GetString("lastDeploymentJob");
-
     m_lastDeploymentJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastDeploymentTime"))
   {
     m_lastDeploymentTime = jsonValue.GetDouble("lastDeploymentTime");
-
     m_lastDeploymentTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-SessionSummary::SessionSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_sessionArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionStatus(SessionStatus::NOT_SET),
-    m_sessionStatusHasBeenSet(false)
-{
-}
-
 SessionSummary::SessionSummary(JsonView jsonValue)
-  : SessionSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
-
     m_sessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionStatus"))
   {
     m_sessionStatus = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("sessionStatus"));
-
     m_sessionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

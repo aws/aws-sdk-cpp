@@ -20,18 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-AnomalyDetector::AnomalyDetector() : 
-    m_configurationHasBeenSet(false),
-    m_stateValue(AnomalyDetectorStateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_metricCharacteristicsHasBeenSet(false),
-    m_singleMetricAnomalyDetectorHasBeenSet(false),
-    m_metricMathAnomalyDetectorHasBeenSet(false)
-{
-}
-
 AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode)
-  : AnomalyDetector()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ AnomalyDetector& AnomalyDetector::operator =(const XmlNode& xmlNode)
     {
       m_configuration = configurationNode;
       m_configurationHasBeenSet = true;
+       m_configurationHasBeenSet = true;
     }
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
     if(!stateValueNode.IsNull())
     {
-      m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
+      m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
       m_stateValueHasBeenSet = true;
+       m_stateValueHasBeenSet = true;
     }
     XmlNode metricCharacteristicsNode = resultNode.FirstChild("MetricCharacteristics");
     if(!metricCharacteristicsNode.IsNull())
     {
       m_metricCharacteristics = metricCharacteristicsNode;
       m_metricCharacteristicsHasBeenSet = true;
+       m_metricCharacteristicsHasBeenSet = true;
     }
     XmlNode singleMetricAnomalyDetectorNode = resultNode.FirstChild("SingleMetricAnomalyDetector");
     if(!singleMetricAnomalyDetectorNode.IsNull())
     {
       m_singleMetricAnomalyDetector = singleMetricAnomalyDetectorNode;
       m_singleMetricAnomalyDetectorHasBeenSet = true;
+       m_singleMetricAnomalyDetectorHasBeenSet = true;
     }
     XmlNode metricMathAnomalyDetectorNode = resultNode.FirstChild("MetricMathAnomalyDetector");
     if(!metricMathAnomalyDetectorNode.IsNull())
     {
       m_metricMathAnomalyDetector = metricMathAnomalyDetectorNode;
       m_metricMathAnomalyDetectorHasBeenSet = true;
+       m_metricMathAnomalyDetectorHasBeenSet = true;
     }
   }
 

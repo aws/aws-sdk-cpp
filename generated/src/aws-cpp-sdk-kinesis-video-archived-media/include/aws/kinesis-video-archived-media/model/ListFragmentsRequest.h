@@ -22,7 +22,7 @@ namespace Model
   class ListFragmentsRequest : public KinesisVideoArchivedMediaRequest
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsRequest();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The name of the stream from which to retrieve a fragment list. Specify either
      * this parameter or the <code>StreamARN</code> parameter.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline ListFragmentsRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline ListFragmentsRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline ListFragmentsRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    ListFragmentsRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * fragment list. Specify either this parameter or the <code>StreamName</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline ListFragmentsRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline ListFragmentsRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline ListFragmentsRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    ListFragmentsRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use
      * to resume pagination.</p>
      */
-    inline long long GetMaxResults() const{ return m_maxResults; }
+    inline long long GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(long long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFragmentsRequest& WithMaxResults(long long value) { SetMaxResults(value); return *this;}
@@ -82,14 +78,12 @@ namespace Model
      * <p>A token to specify where to start paginating. This is the
      * <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFragmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFragmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFragmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFragmentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +92,12 @@ namespace Model
      * to return.</p>  <p>This is only required when the <code>NextToken</code>
      * isn't passed in the API.</p> 
      */
-    inline const FragmentSelector& GetFragmentSelector() const{ return m_fragmentSelector; }
+    inline const FragmentSelector& GetFragmentSelector() const { return m_fragmentSelector; }
     inline bool FragmentSelectorHasBeenSet() const { return m_fragmentSelectorHasBeenSet; }
-    inline void SetFragmentSelector(const FragmentSelector& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = value; }
-    inline void SetFragmentSelector(FragmentSelector&& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = std::move(value); }
-    inline ListFragmentsRequest& WithFragmentSelector(const FragmentSelector& value) { SetFragmentSelector(value); return *this;}
-    inline ListFragmentsRequest& WithFragmentSelector(FragmentSelector&& value) { SetFragmentSelector(std::move(value)); return *this;}
+    template<typename FragmentSelectorT = FragmentSelector>
+    void SetFragmentSelector(FragmentSelectorT&& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = std::forward<FragmentSelectorT>(value); }
+    template<typename FragmentSelectorT = FragmentSelector>
+    ListFragmentsRequest& WithFragmentSelector(FragmentSelectorT&& value) { SetFragmentSelector(std::forward<FragmentSelectorT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +107,7 @@ namespace Model
     Aws::String m_streamARN;
     bool m_streamARNHasBeenSet = false;
 
-    long long m_maxResults;
+    long long m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

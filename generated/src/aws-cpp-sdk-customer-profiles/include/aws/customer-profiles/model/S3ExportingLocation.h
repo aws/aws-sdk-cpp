@@ -32,7 +32,7 @@ namespace Model
   class S3ExportingLocation
   {
   public:
-    AWS_CUSTOMERPROFILES_API S3ExportingLocation();
+    AWS_CUSTOMERPROFILES_API S3ExportingLocation() = default;
     AWS_CUSTOMERPROFILES_API S3ExportingLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API S3ExportingLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the S3 bucket name where Identity Resolution Jobs write result
      * files.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline S3ExportingLocation& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline S3ExportingLocation& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline S3ExportingLocation& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    S3ExportingLocation& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The S3 key name of the location where Identity Resolution Jobs write result
      * files.</p>
      */
-    inline const Aws::String& GetS3KeyName() const{ return m_s3KeyName; }
+    inline const Aws::String& GetS3KeyName() const { return m_s3KeyName; }
     inline bool S3KeyNameHasBeenSet() const { return m_s3KeyNameHasBeenSet; }
-    inline void SetS3KeyName(const Aws::String& value) { m_s3KeyNameHasBeenSet = true; m_s3KeyName = value; }
-    inline void SetS3KeyName(Aws::String&& value) { m_s3KeyNameHasBeenSet = true; m_s3KeyName = std::move(value); }
-    inline void SetS3KeyName(const char* value) { m_s3KeyNameHasBeenSet = true; m_s3KeyName.assign(value); }
-    inline S3ExportingLocation& WithS3KeyName(const Aws::String& value) { SetS3KeyName(value); return *this;}
-    inline S3ExportingLocation& WithS3KeyName(Aws::String&& value) { SetS3KeyName(std::move(value)); return *this;}
-    inline S3ExportingLocation& WithS3KeyName(const char* value) { SetS3KeyName(value); return *this;}
+    template<typename S3KeyNameT = Aws::String>
+    void SetS3KeyName(S3KeyNameT&& value) { m_s3KeyNameHasBeenSet = true; m_s3KeyName = std::forward<S3KeyNameT>(value); }
+    template<typename S3KeyNameT = Aws::String>
+    S3ExportingLocation& WithS3KeyName(S3KeyNameT&& value) { SetS3KeyName(std::forward<S3KeyNameT>(value)); return *this;}
     ///@}
   private:
 

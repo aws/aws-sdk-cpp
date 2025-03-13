@@ -21,7 +21,7 @@ namespace Model
   class StopGameSessionPlacementRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API StopGameSessionPlacementRequest();
+    AWS_GAMELIFT_API StopGameSessionPlacementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A unique identifier for a game session placement to stop.</p>
      */
-    inline const Aws::String& GetPlacementId() const{ return m_placementId; }
+    inline const Aws::String& GetPlacementId() const { return m_placementId; }
     inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
-    inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
-    inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
-    inline void SetPlacementId(const char* value) { m_placementIdHasBeenSet = true; m_placementId.assign(value); }
-    inline StopGameSessionPlacementRequest& WithPlacementId(const Aws::String& value) { SetPlacementId(value); return *this;}
-    inline StopGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
-    inline StopGameSessionPlacementRequest& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
+    template<typename PlacementIdT = Aws::String>
+    void SetPlacementId(PlacementIdT&& value) { m_placementIdHasBeenSet = true; m_placementId = std::forward<PlacementIdT>(value); }
+    template<typename PlacementIdT = Aws::String>
+    StopGameSessionPlacementRequest& WithPlacementId(PlacementIdT&& value) { SetPlacementId(std::forward<PlacementIdT>(value)); return *this;}
     ///@}
   private:
 

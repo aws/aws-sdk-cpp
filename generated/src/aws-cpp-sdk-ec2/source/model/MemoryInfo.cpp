@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MemoryInfo::MemoryInfo() : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
-{
-}
-
 MemoryInfo::MemoryInfo(const XmlNode& xmlNode)
-  : MemoryInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ MemoryInfo& MemoryInfo::operator =(const XmlNode& xmlNode)
     {
       m_sizeInMiB = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInMiBNode.GetText()).c_str()).c_str());
       m_sizeInMiBHasBeenSet = true;
+       m_sizeInMiBHasBeenSet = true;
     }
   }
 

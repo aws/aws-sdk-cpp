@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchGetAssetPropertyValueSkippedEntry::BatchGetAssetPropertyValueSkippedEntry() : 
-    m_entryIdHasBeenSet(false),
-    m_completionStatus(BatchEntryCompletionStatus::NOT_SET),
-    m_completionStatusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
-{
-}
-
 BatchGetAssetPropertyValueSkippedEntry::BatchGetAssetPropertyValueSkippedEntry(JsonView jsonValue)
-  : BatchGetAssetPropertyValueSkippedEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchGetAssetPropertyValueSkippedEntry& BatchGetAssetPropertyValueSkippedEntry::
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionStatus"))
   {
     m_completionStatus = BatchEntryCompletionStatusMapper::GetBatchEntryCompletionStatusForName(jsonValue.GetString("completionStatus"));
-
     m_completionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

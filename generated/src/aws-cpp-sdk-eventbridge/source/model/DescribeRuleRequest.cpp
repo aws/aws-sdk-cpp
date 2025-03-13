@@ -12,12 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRuleRequest::DescribeRuleRequest() : 
-    m_nameHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRuleRequest::SerializePayload() const
 {
   JsonValue payload;

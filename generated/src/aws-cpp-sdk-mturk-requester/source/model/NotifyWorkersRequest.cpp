@@ -12,13 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NotifyWorkersRequest::NotifyWorkersRequest() : 
-    m_subjectHasBeenSet(false),
-    m_messageTextHasBeenSet(false),
-    m_workerIdsHasBeenSet(false)
-{
-}
-
 Aws::String NotifyWorkersRequest::SerializePayload() const
 {
   JsonValue payload;

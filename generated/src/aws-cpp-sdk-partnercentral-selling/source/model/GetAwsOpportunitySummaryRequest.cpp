@@ -12,12 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAwsOpportunitySummaryRequest::GetAwsOpportunitySummaryRequest() : 
-    m_catalogHasBeenSet(false),
-    m_relatedOpportunityIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAwsOpportunitySummaryRequest::SerializePayload() const
 {
   JsonValue payload;

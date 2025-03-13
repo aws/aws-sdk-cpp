@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IamInstanceProfileAssociation::IamInstanceProfileAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_state(IamInstanceProfileAssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 IamInstanceProfileAssociation::IamInstanceProfileAssociation(const XmlNode& xmlNode)
-  : IamInstanceProfileAssociation()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ IamInstanceProfileAssociation& IamInstanceProfileAssociation::operator =(const X
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
+       m_associationIdHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode iamInstanceProfileNode = resultNode.FirstChild("iamInstanceProfile");
     if(!iamInstanceProfileNode.IsNull())
     {
       m_iamInstanceProfile = iamInstanceProfileNode;
       m_iamInstanceProfileHasBeenSet = true;
+       m_iamInstanceProfileHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IamInstanceProfileAssociationStateMapper::GetIamInstanceProfileAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IamInstanceProfileAssociationStateMapper::GetIamInstanceProfileAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
   }
 

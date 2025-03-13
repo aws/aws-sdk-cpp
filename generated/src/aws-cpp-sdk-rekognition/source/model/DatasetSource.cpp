@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DatasetSource::DatasetSource() : 
-    m_groundTruthManifestHasBeenSet(false),
-    m_datasetArnHasBeenSet(false)
-{
-}
-
 DatasetSource::DatasetSource(JsonView jsonValue)
-  : DatasetSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatasetSource& DatasetSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroundTruthManifest"))
   {
     m_groundTruthManifest = jsonValue.GetObject("GroundTruthManifest");
-
     m_groundTruthManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

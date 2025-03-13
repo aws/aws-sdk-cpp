@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-Body::Body() : 
-    m_textHasBeenSet(false),
-    m_htmlHasBeenSet(false)
-{
-}
-
 Body::Body(JsonView jsonValue)
-  : Body()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Body& Body::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetObject("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Html"))
   {
     m_html = jsonValue.GetObject("Html");
-
     m_htmlHasBeenSet = true;
   }
-
   return *this;
 }
 

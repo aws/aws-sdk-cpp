@@ -18,13 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationOriginOptions::WaypointOptimizationOriginOptions() : 
-    m_idHasBeenSet(false)
-{
-}
-
 WaypointOptimizationOriginOptions::WaypointOptimizationOriginOptions(JsonView jsonValue)
-  : WaypointOptimizationOriginOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WaypointOptimizationOriginOptions& WaypointOptimizationOriginOptions::operator =
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

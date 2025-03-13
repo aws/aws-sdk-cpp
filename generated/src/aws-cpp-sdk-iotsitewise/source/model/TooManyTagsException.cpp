@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-TooManyTagsException::TooManyTagsException() : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 TooManyTagsException::TooManyTagsException(JsonView jsonValue)
-  : TooManyTagsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyTagsException& TooManyTagsException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

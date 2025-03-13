@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMapGlyphsRequest::GetMapGlyphsRequest() : 
-    m_mapNameHasBeenSet(false),
-    m_fontStackHasBeenSet(false),
-    m_fontUnicodeRangeHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GetMapGlyphsRequest::SerializePayload() const
 {
   return {};

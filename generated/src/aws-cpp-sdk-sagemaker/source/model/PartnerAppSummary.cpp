@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PartnerAppSummary::PartnerAppSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(PartnerAppType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(PartnerAppStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 PartnerAppSummary::PartnerAppSummary(JsonView jsonValue)
-  : PartnerAppSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ PartnerAppSummary& PartnerAppSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PartnerAppTypeMapper::GetPartnerAppTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PartnerAppStatusMapper::GetPartnerAppStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

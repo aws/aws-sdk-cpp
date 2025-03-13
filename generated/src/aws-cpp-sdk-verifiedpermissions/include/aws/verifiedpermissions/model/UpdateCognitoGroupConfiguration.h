@@ -32,7 +32,7 @@ namespace Model
   class UpdateCognitoGroupConfiguration
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdateCognitoGroupConfiguration();
+    AWS_VERIFIEDPERMISSIONS_API UpdateCognitoGroupConfiguration() = default;
     AWS_VERIFIEDPERMISSIONS_API UpdateCognitoGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API UpdateCognitoGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the schema entity type that's mapped to the user pool group.
      * Defaults to <code>AWS::CognitoGroup</code>.</p>
      */
-    inline const Aws::String& GetGroupEntityType() const{ return m_groupEntityType; }
+    inline const Aws::String& GetGroupEntityType() const { return m_groupEntityType; }
     inline bool GroupEntityTypeHasBeenSet() const { return m_groupEntityTypeHasBeenSet; }
-    inline void SetGroupEntityType(const Aws::String& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = value; }
-    inline void SetGroupEntityType(Aws::String&& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = std::move(value); }
-    inline void SetGroupEntityType(const char* value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType.assign(value); }
-    inline UpdateCognitoGroupConfiguration& WithGroupEntityType(const Aws::String& value) { SetGroupEntityType(value); return *this;}
-    inline UpdateCognitoGroupConfiguration& WithGroupEntityType(Aws::String&& value) { SetGroupEntityType(std::move(value)); return *this;}
-    inline UpdateCognitoGroupConfiguration& WithGroupEntityType(const char* value) { SetGroupEntityType(value); return *this;}
+    template<typename GroupEntityTypeT = Aws::String>
+    void SetGroupEntityType(GroupEntityTypeT&& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = std::forward<GroupEntityTypeT>(value); }
+    template<typename GroupEntityTypeT = Aws::String>
+    UpdateCognitoGroupConfiguration& WithGroupEntityType(GroupEntityTypeT&& value) { SetGroupEntityType(std::forward<GroupEntityTypeT>(value)); return *this;}
     ///@}
   private:
 

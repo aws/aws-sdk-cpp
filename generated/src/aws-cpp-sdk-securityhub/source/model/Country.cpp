@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Country::Country() : 
-    m_countryCodeHasBeenSet(false),
-    m_countryNameHasBeenSet(false)
-{
-}
-
 Country::Country(JsonView jsonValue)
-  : Country()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Country& Country::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = jsonValue.GetString("CountryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryName"))
   {
     m_countryName = jsonValue.GetString("CountryName");
-
     m_countryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

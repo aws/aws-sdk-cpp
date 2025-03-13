@@ -21,7 +21,7 @@ namespace Model
   class DeleteObservabilityConfigurationRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API DeleteObservabilityConfigurationRequest();
+    AWS_APPRUNNER_API DeleteObservabilityConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't
      * specified, the latest active revision is deleted.</p>
      */
-    inline const Aws::String& GetObservabilityConfigurationArn() const{ return m_observabilityConfigurationArn; }
+    inline const Aws::String& GetObservabilityConfigurationArn() const { return m_observabilityConfigurationArn; }
     inline bool ObservabilityConfigurationArnHasBeenSet() const { return m_observabilityConfigurationArnHasBeenSet; }
-    inline void SetObservabilityConfigurationArn(const Aws::String& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = value; }
-    inline void SetObservabilityConfigurationArn(Aws::String&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::move(value); }
-    inline void SetObservabilityConfigurationArn(const char* value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn.assign(value); }
-    inline DeleteObservabilityConfigurationRequest& WithObservabilityConfigurationArn(const Aws::String& value) { SetObservabilityConfigurationArn(value); return *this;}
-    inline DeleteObservabilityConfigurationRequest& WithObservabilityConfigurationArn(Aws::String&& value) { SetObservabilityConfigurationArn(std::move(value)); return *this;}
-    inline DeleteObservabilityConfigurationRequest& WithObservabilityConfigurationArn(const char* value) { SetObservabilityConfigurationArn(value); return *this;}
+    template<typename ObservabilityConfigurationArnT = Aws::String>
+    void SetObservabilityConfigurationArn(ObservabilityConfigurationArnT&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::forward<ObservabilityConfigurationArnT>(value); }
+    template<typename ObservabilityConfigurationArnT = Aws::String>
+    DeleteObservabilityConfigurationRequest& WithObservabilityConfigurationArn(ObservabilityConfigurationArnT&& value) { SetObservabilityConfigurationArn(std::forward<ObservabilityConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

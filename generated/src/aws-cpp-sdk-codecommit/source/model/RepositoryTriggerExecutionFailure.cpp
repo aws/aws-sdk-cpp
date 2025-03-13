@@ -18,14 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure() : 
-    m_triggerHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
-{
-}
-
 RepositoryTriggerExecutionFailure::RepositoryTriggerExecutionFailure(JsonView jsonValue)
-  : RepositoryTriggerExecutionFailure()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RepositoryTriggerExecutionFailure& RepositoryTriggerExecutionFailure::operator =
   if(jsonValue.ValueExists("trigger"))
   {
     m_trigger = jsonValue.GetString("trigger");
-
     m_triggerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

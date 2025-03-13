@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesThinClient::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSoftwareSetRequest::GetSoftwareSetRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetSoftwareSetRequest::SerializePayload() const
 {
   return {};

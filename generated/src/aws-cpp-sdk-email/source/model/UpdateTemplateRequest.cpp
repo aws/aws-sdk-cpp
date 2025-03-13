@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-UpdateTemplateRequest::UpdateTemplateRequest() : 
-    m_templateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

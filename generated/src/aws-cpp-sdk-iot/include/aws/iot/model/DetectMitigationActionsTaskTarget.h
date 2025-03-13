@@ -32,7 +32,7 @@ namespace Model
   class DetectMitigationActionsTaskTarget
   {
   public:
-    AWS_IOT_API DetectMitigationActionsTaskTarget();
+    AWS_IOT_API DetectMitigationActionsTaskTarget() = default;
     AWS_IOT_API DetectMitigationActionsTaskTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API DetectMitigationActionsTaskTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,43 +42,38 @@ namespace Model
     /**
      * <p> The unique identifiers of the violations. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetViolationIds() const{ return m_violationIds; }
+    inline const Aws::Vector<Aws::String>& GetViolationIds() const { return m_violationIds; }
     inline bool ViolationIdsHasBeenSet() const { return m_violationIdsHasBeenSet; }
-    inline void SetViolationIds(const Aws::Vector<Aws::String>& value) { m_violationIdsHasBeenSet = true; m_violationIds = value; }
-    inline void SetViolationIds(Aws::Vector<Aws::String>&& value) { m_violationIdsHasBeenSet = true; m_violationIds = std::move(value); }
-    inline DetectMitigationActionsTaskTarget& WithViolationIds(const Aws::Vector<Aws::String>& value) { SetViolationIds(value); return *this;}
-    inline DetectMitigationActionsTaskTarget& WithViolationIds(Aws::Vector<Aws::String>&& value) { SetViolationIds(std::move(value)); return *this;}
-    inline DetectMitigationActionsTaskTarget& AddViolationIds(const Aws::String& value) { m_violationIdsHasBeenSet = true; m_violationIds.push_back(value); return *this; }
-    inline DetectMitigationActionsTaskTarget& AddViolationIds(Aws::String&& value) { m_violationIdsHasBeenSet = true; m_violationIds.push_back(std::move(value)); return *this; }
-    inline DetectMitigationActionsTaskTarget& AddViolationIds(const char* value) { m_violationIdsHasBeenSet = true; m_violationIds.push_back(value); return *this; }
+    template<typename ViolationIdsT = Aws::Vector<Aws::String>>
+    void SetViolationIds(ViolationIdsT&& value) { m_violationIdsHasBeenSet = true; m_violationIds = std::forward<ViolationIdsT>(value); }
+    template<typename ViolationIdsT = Aws::Vector<Aws::String>>
+    DetectMitigationActionsTaskTarget& WithViolationIds(ViolationIdsT&& value) { SetViolationIds(std::forward<ViolationIdsT>(value)); return *this;}
+    template<typename ViolationIdsT = Aws::String>
+    DetectMitigationActionsTaskTarget& AddViolationIds(ViolationIdsT&& value) { m_violationIdsHasBeenSet = true; m_violationIds.emplace_back(std::forward<ViolationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The name of the security profile. </p>
      */
-    inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
+    inline const Aws::String& GetSecurityProfileName() const { return m_securityProfileName; }
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-    inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-    inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-    inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-    inline DetectMitigationActionsTaskTarget& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-    inline DetectMitigationActionsTaskTarget& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-    inline DetectMitigationActionsTaskTarget& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    template<typename SecurityProfileNameT = Aws::String>
+    void SetSecurityProfileName(SecurityProfileNameT&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::forward<SecurityProfileNameT>(value); }
+    template<typename SecurityProfileNameT = Aws::String>
+    DetectMitigationActionsTaskTarget& WithSecurityProfileName(SecurityProfileNameT&& value) { SetSecurityProfileName(std::forward<SecurityProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the behavior. </p>
      */
-    inline const Aws::String& GetBehaviorName() const{ return m_behaviorName; }
+    inline const Aws::String& GetBehaviorName() const { return m_behaviorName; }
     inline bool BehaviorNameHasBeenSet() const { return m_behaviorNameHasBeenSet; }
-    inline void SetBehaviorName(const Aws::String& value) { m_behaviorNameHasBeenSet = true; m_behaviorName = value; }
-    inline void SetBehaviorName(Aws::String&& value) { m_behaviorNameHasBeenSet = true; m_behaviorName = std::move(value); }
-    inline void SetBehaviorName(const char* value) { m_behaviorNameHasBeenSet = true; m_behaviorName.assign(value); }
-    inline DetectMitigationActionsTaskTarget& WithBehaviorName(const Aws::String& value) { SetBehaviorName(value); return *this;}
-    inline DetectMitigationActionsTaskTarget& WithBehaviorName(Aws::String&& value) { SetBehaviorName(std::move(value)); return *this;}
-    inline DetectMitigationActionsTaskTarget& WithBehaviorName(const char* value) { SetBehaviorName(value); return *this;}
+    template<typename BehaviorNameT = Aws::String>
+    void SetBehaviorName(BehaviorNameT&& value) { m_behaviorNameHasBeenSet = true; m_behaviorName = std::forward<BehaviorNameT>(value); }
+    template<typename BehaviorNameT = Aws::String>
+    DetectMitigationActionsTaskTarget& WithBehaviorName(BehaviorNameT&& value) { SetBehaviorName(std::forward<BehaviorNameT>(value)); return *this;}
     ///@}
   private:
 

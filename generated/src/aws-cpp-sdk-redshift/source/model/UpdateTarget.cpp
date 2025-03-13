@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-UpdateTarget::UpdateTarget() : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false),
-    m_supportedOperationsHasBeenSet(false)
-{
-}
-
 UpdateTarget::UpdateTarget(const XmlNode& xmlNode)
-  : UpdateTarget()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ UpdateTarget& UpdateTarget::operator =(const XmlNode& xmlNode)
     {
       m_maintenanceTrackName = Aws::Utils::Xml::DecodeEscapedXmlText(maintenanceTrackNameNode.GetText());
       m_maintenanceTrackNameHasBeenSet = true;
+       m_maintenanceTrackNameHasBeenSet = true;
     }
     XmlNode databaseVersionNode = resultNode.FirstChild("DatabaseVersion");
     if(!databaseVersionNode.IsNull())
     {
       m_databaseVersion = Aws::Utils::Xml::DecodeEscapedXmlText(databaseVersionNode.GetText());
       m_databaseVersionHasBeenSet = true;
+       m_databaseVersionHasBeenSet = true;
     }
     XmlNode supportedOperationsNode = resultNode.FirstChild("SupportedOperations");
     if(!supportedOperationsNode.IsNull())
     {
       XmlNode supportedOperationsMember = supportedOperationsNode.FirstChild("SupportedOperation");
+      m_supportedOperationsHasBeenSet = !supportedOperationsMember.IsNull();
       while(!supportedOperationsMember.IsNull())
       {
         m_supportedOperations.push_back(supportedOperationsMember);
         supportedOperationsMember = supportedOperationsMember.NextNode("SupportedOperation");
       }
 
-      m_supportedOperationsHasBeenSet = true;
+       m_supportedOperationsHasBeenSet = true;
     }
   }
 

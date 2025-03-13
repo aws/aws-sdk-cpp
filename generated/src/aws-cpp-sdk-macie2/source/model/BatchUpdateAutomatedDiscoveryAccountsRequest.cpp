@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateAutomatedDiscoveryAccountsRequest::BatchUpdateAutomatedDiscoveryAccountsRequest() : 
-    m_accountsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateAutomatedDiscoveryAccountsRequest::SerializePayload() const
 {
   JsonValue payload;

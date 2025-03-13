@@ -30,50 +30,51 @@ namespace Model
   class AnalyzeExpenseResult
   {
   public:
-    AWS_TEXTRACT_API AnalyzeExpenseResult();
+    AWS_TEXTRACT_API AnalyzeExpenseResult() = default;
     AWS_TEXTRACT_API AnalyzeExpenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TEXTRACT_API AnalyzeExpenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const DocumentMetadata& GetDocumentMetadata() const{ return m_documentMetadata; }
-    inline void SetDocumentMetadata(const DocumentMetadata& value) { m_documentMetadata = value; }
-    inline void SetDocumentMetadata(DocumentMetadata&& value) { m_documentMetadata = std::move(value); }
-    inline AnalyzeExpenseResult& WithDocumentMetadata(const DocumentMetadata& value) { SetDocumentMetadata(value); return *this;}
-    inline AnalyzeExpenseResult& WithDocumentMetadata(DocumentMetadata&& value) { SetDocumentMetadata(std::move(value)); return *this;}
+    inline const DocumentMetadata& GetDocumentMetadata() const { return m_documentMetadata; }
+    template<typename DocumentMetadataT = DocumentMetadata>
+    void SetDocumentMetadata(DocumentMetadataT&& value) { m_documentMetadataHasBeenSet = true; m_documentMetadata = std::forward<DocumentMetadataT>(value); }
+    template<typename DocumentMetadataT = DocumentMetadata>
+    AnalyzeExpenseResult& WithDocumentMetadata(DocumentMetadataT&& value) { SetDocumentMetadata(std::forward<DocumentMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expenses detected by Amazon Textract.</p>
      */
-    inline const Aws::Vector<ExpenseDocument>& GetExpenseDocuments() const{ return m_expenseDocuments; }
-    inline void SetExpenseDocuments(const Aws::Vector<ExpenseDocument>& value) { m_expenseDocuments = value; }
-    inline void SetExpenseDocuments(Aws::Vector<ExpenseDocument>&& value) { m_expenseDocuments = std::move(value); }
-    inline AnalyzeExpenseResult& WithExpenseDocuments(const Aws::Vector<ExpenseDocument>& value) { SetExpenseDocuments(value); return *this;}
-    inline AnalyzeExpenseResult& WithExpenseDocuments(Aws::Vector<ExpenseDocument>&& value) { SetExpenseDocuments(std::move(value)); return *this;}
-    inline AnalyzeExpenseResult& AddExpenseDocuments(const ExpenseDocument& value) { m_expenseDocuments.push_back(value); return *this; }
-    inline AnalyzeExpenseResult& AddExpenseDocuments(ExpenseDocument&& value) { m_expenseDocuments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExpenseDocument>& GetExpenseDocuments() const { return m_expenseDocuments; }
+    template<typename ExpenseDocumentsT = Aws::Vector<ExpenseDocument>>
+    void SetExpenseDocuments(ExpenseDocumentsT&& value) { m_expenseDocumentsHasBeenSet = true; m_expenseDocuments = std::forward<ExpenseDocumentsT>(value); }
+    template<typename ExpenseDocumentsT = Aws::Vector<ExpenseDocument>>
+    AnalyzeExpenseResult& WithExpenseDocuments(ExpenseDocumentsT&& value) { SetExpenseDocuments(std::forward<ExpenseDocumentsT>(value)); return *this;}
+    template<typename ExpenseDocumentsT = ExpenseDocument>
+    AnalyzeExpenseResult& AddExpenseDocuments(ExpenseDocumentsT&& value) { m_expenseDocumentsHasBeenSet = true; m_expenseDocuments.emplace_back(std::forward<ExpenseDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AnalyzeExpenseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AnalyzeExpenseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AnalyzeExpenseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AnalyzeExpenseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DocumentMetadata m_documentMetadata;
+    bool m_documentMetadataHasBeenSet = false;
 
     Aws::Vector<ExpenseDocument> m_expenseDocuments;
+    bool m_expenseDocumentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

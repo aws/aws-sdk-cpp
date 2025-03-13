@@ -18,15 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-DatetimeOptions::DatetimeOptions() : 
-    m_formatHasBeenSet(false),
-    m_timezoneOffsetHasBeenSet(false),
-    m_localeCodeHasBeenSet(false)
-{
-}
-
 DatetimeOptions::DatetimeOptions(JsonView jsonValue)
-  : DatetimeOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DatetimeOptions& DatetimeOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimezoneOffset"))
   {
     m_timezoneOffset = jsonValue.GetString("TimezoneOffset");
-
     m_timezoneOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocaleCode"))
   {
     m_localeCode = jsonValue.GetString("LocaleCode");
-
     m_localeCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl() : 
-    m_idHasBeenSet(false)
-{
-}
-
 CreateAssessmentFrameworkControl::CreateAssessmentFrameworkControl(JsonView jsonValue)
-  : CreateAssessmentFrameworkControl()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CreateAssessmentFrameworkControl& CreateAssessmentFrameworkControl::operator =(J
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

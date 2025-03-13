@@ -28,7 +28,7 @@ namespace Model
   class GetWirelessGatewayStatisticsResult
   {
   public:
-    AWS_IOTWIRELESS_API GetWirelessGatewayStatisticsResult();
+    AWS_IOTWIRELESS_API GetWirelessGatewayStatisticsResult() = default;
     AWS_IOTWIRELESS_API GetWirelessGatewayStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API GetWirelessGatewayStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ID of the wireless gateway.</p>
      */
-    inline const Aws::String& GetWirelessGatewayId() const{ return m_wirelessGatewayId; }
-    inline void SetWirelessGatewayId(const Aws::String& value) { m_wirelessGatewayId = value; }
-    inline void SetWirelessGatewayId(Aws::String&& value) { m_wirelessGatewayId = std::move(value); }
-    inline void SetWirelessGatewayId(const char* value) { m_wirelessGatewayId.assign(value); }
-    inline GetWirelessGatewayStatisticsResult& WithWirelessGatewayId(const Aws::String& value) { SetWirelessGatewayId(value); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithWirelessGatewayId(Aws::String&& value) { SetWirelessGatewayId(std::move(value)); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithWirelessGatewayId(const char* value) { SetWirelessGatewayId(value); return *this;}
+    inline const Aws::String& GetWirelessGatewayId() const { return m_wirelessGatewayId; }
+    template<typename WirelessGatewayIdT = Aws::String>
+    void SetWirelessGatewayId(WirelessGatewayIdT&& value) { m_wirelessGatewayIdHasBeenSet = true; m_wirelessGatewayId = std::forward<WirelessGatewayIdT>(value); }
+    template<typename WirelessGatewayIdT = Aws::String>
+    GetWirelessGatewayStatisticsResult& WithWirelessGatewayId(WirelessGatewayIdT&& value) { SetWirelessGatewayId(std::forward<WirelessGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,45 +49,43 @@ namespace Model
      * <p>The date and time when the most recent uplink was received.</p> 
      * <p>This value is only valid for 3 months.</p> 
      */
-    inline const Aws::String& GetLastUplinkReceivedAt() const{ return m_lastUplinkReceivedAt; }
-    inline void SetLastUplinkReceivedAt(const Aws::String& value) { m_lastUplinkReceivedAt = value; }
-    inline void SetLastUplinkReceivedAt(Aws::String&& value) { m_lastUplinkReceivedAt = std::move(value); }
-    inline void SetLastUplinkReceivedAt(const char* value) { m_lastUplinkReceivedAt.assign(value); }
-    inline GetWirelessGatewayStatisticsResult& WithLastUplinkReceivedAt(const Aws::String& value) { SetLastUplinkReceivedAt(value); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithLastUplinkReceivedAt(Aws::String&& value) { SetLastUplinkReceivedAt(std::move(value)); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithLastUplinkReceivedAt(const char* value) { SetLastUplinkReceivedAt(value); return *this;}
+    inline const Aws::String& GetLastUplinkReceivedAt() const { return m_lastUplinkReceivedAt; }
+    template<typename LastUplinkReceivedAtT = Aws::String>
+    void SetLastUplinkReceivedAt(LastUplinkReceivedAtT&& value) { m_lastUplinkReceivedAtHasBeenSet = true; m_lastUplinkReceivedAt = std::forward<LastUplinkReceivedAtT>(value); }
+    template<typename LastUplinkReceivedAtT = Aws::String>
+    GetWirelessGatewayStatisticsResult& WithLastUplinkReceivedAt(LastUplinkReceivedAtT&& value) { SetLastUplinkReceivedAt(std::forward<LastUplinkReceivedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connection status of the wireless gateway.</p>
      */
-    inline const ConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
-    inline void SetConnectionStatus(const ConnectionStatus& value) { m_connectionStatus = value; }
-    inline void SetConnectionStatus(ConnectionStatus&& value) { m_connectionStatus = std::move(value); }
-    inline GetWirelessGatewayStatisticsResult& WithConnectionStatus(const ConnectionStatus& value) { SetConnectionStatus(value); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithConnectionStatus(ConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+    inline ConnectionStatus GetConnectionStatus() const { return m_connectionStatus; }
+    inline void SetConnectionStatus(ConnectionStatus value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = value; }
+    inline GetWirelessGatewayStatisticsResult& WithConnectionStatus(ConnectionStatus value) { SetConnectionStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWirelessGatewayStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWirelessGatewayStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWirelessGatewayStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_wirelessGatewayId;
+    bool m_wirelessGatewayIdHasBeenSet = false;
 
     Aws::String m_lastUplinkReceivedAt;
+    bool m_lastUplinkReceivedAtHasBeenSet = false;
 
-    ConnectionStatus m_connectionStatus;
+    ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class ProtectConfigurationInformation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationInformation();
+    AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationInformation() = default;
     AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationArn() const{ return m_protectConfigurationArn; }
+    inline const Aws::String& GetProtectConfigurationArn() const { return m_protectConfigurationArn; }
     inline bool ProtectConfigurationArnHasBeenSet() const { return m_protectConfigurationArnHasBeenSet; }
-    inline void SetProtectConfigurationArn(const Aws::String& value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn = value; }
-    inline void SetProtectConfigurationArn(Aws::String&& value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn = std::move(value); }
-    inline void SetProtectConfigurationArn(const char* value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn.assign(value); }
-    inline ProtectConfigurationInformation& WithProtectConfigurationArn(const Aws::String& value) { SetProtectConfigurationArn(value); return *this;}
-    inline ProtectConfigurationInformation& WithProtectConfigurationArn(Aws::String&& value) { SetProtectConfigurationArn(std::move(value)); return *this;}
-    inline ProtectConfigurationInformation& WithProtectConfigurationArn(const char* value) { SetProtectConfigurationArn(value); return *this;}
+    template<typename ProtectConfigurationArnT = Aws::String>
+    void SetProtectConfigurationArn(ProtectConfigurationArnT&& value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn = std::forward<ProtectConfigurationArnT>(value); }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    ProtectConfigurationInformation& WithProtectConfigurationArn(ProtectConfigurationArnT&& value) { SetProtectConfigurationArn(std::forward<ProtectConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
+    inline const Aws::String& GetProtectConfigurationId() const { return m_protectConfigurationId; }
     inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
-    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
-    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
-    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
-    inline ProtectConfigurationInformation& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-    inline ProtectConfigurationInformation& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-    inline ProtectConfigurationInformation& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    template<typename ProtectConfigurationIdT = Aws::String>
+    void SetProtectConfigurationId(ProtectConfigurationIdT&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::forward<ProtectConfigurationIdT>(value); }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    ProtectConfigurationInformation& WithProtectConfigurationId(ProtectConfigurationIdT&& value) { SetProtectConfigurationId(std::forward<ProtectConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>The time when the protect configuration was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline ProtectConfigurationInformation& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline ProtectConfigurationInformation& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    ProtectConfigurationInformation& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +81,7 @@ namespace Model
      * <p>This is true if the protect configuration is set as your account default
      * protect configuration.</p>
      */
-    inline bool GetAccountDefault() const{ return m_accountDefault; }
+    inline bool GetAccountDefault() const { return m_accountDefault; }
     inline bool AccountDefaultHasBeenSet() const { return m_accountDefaultHasBeenSet; }
     inline void SetAccountDefault(bool value) { m_accountDefaultHasBeenSet = true; m_accountDefault = value; }
     inline ProtectConfigurationInformation& WithAccountDefault(bool value) { SetAccountDefault(value); return *this;}
@@ -96,7 +92,7 @@ namespace Model
      * <p>The status of deletion protection for the protect configuration. When set to
      * true deletion protection is enabled. By default this is set to false. </p>
      */
-    inline bool GetDeletionProtectionEnabled() const{ return m_deletionProtectionEnabled; }
+    inline bool GetDeletionProtectionEnabled() const { return m_deletionProtectionEnabled; }
     inline bool DeletionProtectionEnabledHasBeenSet() const { return m_deletionProtectionEnabledHasBeenSet; }
     inline void SetDeletionProtectionEnabled(bool value) { m_deletionProtectionEnabledHasBeenSet = true; m_deletionProtectionEnabled = value; }
     inline ProtectConfigurationInformation& WithDeletionProtectionEnabled(bool value) { SetDeletionProtectionEnabled(value); return *this;}
@@ -109,13 +105,13 @@ namespace Model
     Aws::String m_protectConfigurationId;
     bool m_protectConfigurationIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    bool m_accountDefault;
+    bool m_accountDefault{false};
     bool m_accountDefaultHasBeenSet = false;
 
-    bool m_deletionProtectionEnabled;
+    bool m_deletionProtectionEnabled{false};
     bool m_deletionProtectionEnabledHasBeenSet = false;
   };
 

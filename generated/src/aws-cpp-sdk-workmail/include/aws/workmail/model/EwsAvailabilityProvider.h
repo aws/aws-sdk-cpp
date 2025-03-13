@@ -32,7 +32,7 @@ namespace Model
   class EwsAvailabilityProvider
   {
   public:
-    AWS_WORKMAIL_API EwsAvailabilityProvider();
+    AWS_WORKMAIL_API EwsAvailabilityProvider() = default;
     AWS_WORKMAIL_API EwsAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API EwsAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The endpoint of the remote EWS server.</p>
      */
-    inline const Aws::String& GetEwsEndpoint() const{ return m_ewsEndpoint; }
+    inline const Aws::String& GetEwsEndpoint() const { return m_ewsEndpoint; }
     inline bool EwsEndpointHasBeenSet() const { return m_ewsEndpointHasBeenSet; }
-    inline void SetEwsEndpoint(const Aws::String& value) { m_ewsEndpointHasBeenSet = true; m_ewsEndpoint = value; }
-    inline void SetEwsEndpoint(Aws::String&& value) { m_ewsEndpointHasBeenSet = true; m_ewsEndpoint = std::move(value); }
-    inline void SetEwsEndpoint(const char* value) { m_ewsEndpointHasBeenSet = true; m_ewsEndpoint.assign(value); }
-    inline EwsAvailabilityProvider& WithEwsEndpoint(const Aws::String& value) { SetEwsEndpoint(value); return *this;}
-    inline EwsAvailabilityProvider& WithEwsEndpoint(Aws::String&& value) { SetEwsEndpoint(std::move(value)); return *this;}
-    inline EwsAvailabilityProvider& WithEwsEndpoint(const char* value) { SetEwsEndpoint(value); return *this;}
+    template<typename EwsEndpointT = Aws::String>
+    void SetEwsEndpoint(EwsEndpointT&& value) { m_ewsEndpointHasBeenSet = true; m_ewsEndpoint = std::forward<EwsEndpointT>(value); }
+    template<typename EwsEndpointT = Aws::String>
+    EwsAvailabilityProvider& WithEwsEndpoint(EwsEndpointT&& value) { SetEwsEndpoint(std::forward<EwsEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The username used to authenticate the remote EWS server.</p>
      */
-    inline const Aws::String& GetEwsUsername() const{ return m_ewsUsername; }
+    inline const Aws::String& GetEwsUsername() const { return m_ewsUsername; }
     inline bool EwsUsernameHasBeenSet() const { return m_ewsUsernameHasBeenSet; }
-    inline void SetEwsUsername(const Aws::String& value) { m_ewsUsernameHasBeenSet = true; m_ewsUsername = value; }
-    inline void SetEwsUsername(Aws::String&& value) { m_ewsUsernameHasBeenSet = true; m_ewsUsername = std::move(value); }
-    inline void SetEwsUsername(const char* value) { m_ewsUsernameHasBeenSet = true; m_ewsUsername.assign(value); }
-    inline EwsAvailabilityProvider& WithEwsUsername(const Aws::String& value) { SetEwsUsername(value); return *this;}
-    inline EwsAvailabilityProvider& WithEwsUsername(Aws::String&& value) { SetEwsUsername(std::move(value)); return *this;}
-    inline EwsAvailabilityProvider& WithEwsUsername(const char* value) { SetEwsUsername(value); return *this;}
+    template<typename EwsUsernameT = Aws::String>
+    void SetEwsUsername(EwsUsernameT&& value) { m_ewsUsernameHasBeenSet = true; m_ewsUsername = std::forward<EwsUsernameT>(value); }
+    template<typename EwsUsernameT = Aws::String>
+    EwsAvailabilityProvider& WithEwsUsername(EwsUsernameT&& value) { SetEwsUsername(std::forward<EwsUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password used to authenticate the remote EWS server.</p>
      */
-    inline const Aws::String& GetEwsPassword() const{ return m_ewsPassword; }
+    inline const Aws::String& GetEwsPassword() const { return m_ewsPassword; }
     inline bool EwsPasswordHasBeenSet() const { return m_ewsPasswordHasBeenSet; }
-    inline void SetEwsPassword(const Aws::String& value) { m_ewsPasswordHasBeenSet = true; m_ewsPassword = value; }
-    inline void SetEwsPassword(Aws::String&& value) { m_ewsPasswordHasBeenSet = true; m_ewsPassword = std::move(value); }
-    inline void SetEwsPassword(const char* value) { m_ewsPasswordHasBeenSet = true; m_ewsPassword.assign(value); }
-    inline EwsAvailabilityProvider& WithEwsPassword(const Aws::String& value) { SetEwsPassword(value); return *this;}
-    inline EwsAvailabilityProvider& WithEwsPassword(Aws::String&& value) { SetEwsPassword(std::move(value)); return *this;}
-    inline EwsAvailabilityProvider& WithEwsPassword(const char* value) { SetEwsPassword(value); return *this;}
+    template<typename EwsPasswordT = Aws::String>
+    void SetEwsPassword(EwsPasswordT&& value) { m_ewsPasswordHasBeenSet = true; m_ewsPassword = std::forward<EwsPasswordT>(value); }
+    template<typename EwsPasswordT = Aws::String>
+    EwsAvailabilityProvider& WithEwsPassword(EwsPasswordT&& value) { SetEwsPassword(std::forward<EwsPasswordT>(value)); return *this;}
     ///@}
   private:
 

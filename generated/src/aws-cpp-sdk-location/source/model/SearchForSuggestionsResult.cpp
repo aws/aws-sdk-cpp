@@ -18,16 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-SearchForSuggestionsResult::SearchForSuggestionsResult() : 
-    m_textHasBeenSet(false),
-    m_placeIdHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_supplementalCategoriesHasBeenSet(false)
-{
-}
-
 SearchForSuggestionsResult::SearchForSuggestionsResult(JsonView jsonValue)
-  : SearchForSuggestionsResult()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView json
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceId"))
   {
     m_placeId = jsonValue.GetString("PlaceId");
-
     m_placeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -57,7 +44,6 @@ SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView json
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupplementalCategories"))
   {
     Aws::Utils::Array<JsonView> supplementalCategoriesJsonList = jsonValue.GetArray("SupplementalCategories");
@@ -67,7 +53,6 @@ SearchForSuggestionsResult& SearchForSuggestionsResult::operator =(JsonView json
     }
     m_supplementalCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

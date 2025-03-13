@@ -38,7 +38,7 @@ namespace Model
   class NetworkAclCommonPolicy
   {
   public:
-    AWS_FMS_API NetworkAclCommonPolicy();
+    AWS_FMS_API NetworkAclCommonPolicy() = default;
     AWS_FMS_API NetworkAclCommonPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API NetworkAclCommonPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
     /**
      * <p>The definition of the first and last rules for the network ACL policy. </p>
      */
-    inline const NetworkAclEntrySet& GetNetworkAclEntrySet() const{ return m_networkAclEntrySet; }
+    inline const NetworkAclEntrySet& GetNetworkAclEntrySet() const { return m_networkAclEntrySet; }
     inline bool NetworkAclEntrySetHasBeenSet() const { return m_networkAclEntrySetHasBeenSet; }
-    inline void SetNetworkAclEntrySet(const NetworkAclEntrySet& value) { m_networkAclEntrySetHasBeenSet = true; m_networkAclEntrySet = value; }
-    inline void SetNetworkAclEntrySet(NetworkAclEntrySet&& value) { m_networkAclEntrySetHasBeenSet = true; m_networkAclEntrySet = std::move(value); }
-    inline NetworkAclCommonPolicy& WithNetworkAclEntrySet(const NetworkAclEntrySet& value) { SetNetworkAclEntrySet(value); return *this;}
-    inline NetworkAclCommonPolicy& WithNetworkAclEntrySet(NetworkAclEntrySet&& value) { SetNetworkAclEntrySet(std::move(value)); return *this;}
+    template<typename NetworkAclEntrySetT = NetworkAclEntrySet>
+    void SetNetworkAclEntrySet(NetworkAclEntrySetT&& value) { m_networkAclEntrySetHasBeenSet = true; m_networkAclEntrySet = std::forward<NetworkAclEntrySetT>(value); }
+    template<typename NetworkAclEntrySetT = NetworkAclEntrySet>
+    NetworkAclCommonPolicy& WithNetworkAclEntrySet(NetworkAclEntrySetT&& value) { SetNetworkAclEntrySet(std::forward<NetworkAclEntrySetT>(value)); return *this;}
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class CertificateConfiguration
   {
   public:
-    AWS_GAMELIFT_API CertificateConfiguration();
+    AWS_GAMELIFT_API CertificateConfiguration() = default;
     AWS_GAMELIFT_API CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * TLS/SSL certificate for this fleet.</p> </li> <li> <p> <b>DISABLED</b> -
      * (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li> </ul>
      */
-    inline const CertificateType& GetCertificateType() const{ return m_certificateType; }
+    inline CertificateType GetCertificateType() const { return m_certificateType; }
     inline bool CertificateTypeHasBeenSet() const { return m_certificateTypeHasBeenSet; }
-    inline void SetCertificateType(const CertificateType& value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
-    inline void SetCertificateType(CertificateType&& value) { m_certificateTypeHasBeenSet = true; m_certificateType = std::move(value); }
-    inline CertificateConfiguration& WithCertificateType(const CertificateType& value) { SetCertificateType(value); return *this;}
-    inline CertificateConfiguration& WithCertificateType(CertificateType&& value) { SetCertificateType(std::move(value)); return *this;}
+    inline void SetCertificateType(CertificateType value) { m_certificateTypeHasBeenSet = true; m_certificateType = value; }
+    inline CertificateConfiguration& WithCertificateType(CertificateType value) { SetCertificateType(value); return *this;}
     ///@}
   private:
 
-    CertificateType m_certificateType;
+    CertificateType m_certificateType{CertificateType::NOT_SET};
     bool m_certificateTypeHasBeenSet = false;
   };
 

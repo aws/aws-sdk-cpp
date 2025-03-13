@@ -34,7 +34,7 @@ namespace Model
   class DeploymentConfiguration
   {
   public:
-    AWS_ECS_API DeploymentConfiguration();
+    AWS_ECS_API DeploymentConfiguration() = default;
     AWS_ECS_API DeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API DeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
      * update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
      */
-    inline const DeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const{ return m_deploymentCircuitBreaker; }
+    inline const DeploymentCircuitBreaker& GetDeploymentCircuitBreaker() const { return m_deploymentCircuitBreaker; }
     inline bool DeploymentCircuitBreakerHasBeenSet() const { return m_deploymentCircuitBreakerHasBeenSet; }
-    inline void SetDeploymentCircuitBreaker(const DeploymentCircuitBreaker& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = value; }
-    inline void SetDeploymentCircuitBreaker(DeploymentCircuitBreaker&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::move(value); }
-    inline DeploymentConfiguration& WithDeploymentCircuitBreaker(const DeploymentCircuitBreaker& value) { SetDeploymentCircuitBreaker(value); return *this;}
-    inline DeploymentConfiguration& WithDeploymentCircuitBreaker(DeploymentCircuitBreaker&& value) { SetDeploymentCircuitBreaker(std::move(value)); return *this;}
+    template<typename DeploymentCircuitBreakerT = DeploymentCircuitBreaker>
+    void SetDeploymentCircuitBreaker(DeploymentCircuitBreakerT&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::forward<DeploymentCircuitBreakerT>(value); }
+    template<typename DeploymentCircuitBreakerT = DeploymentCircuitBreaker>
+    DeploymentConfiguration& WithDeploymentCircuitBreaker(DeploymentCircuitBreakerT&& value) { SetDeploymentCircuitBreaker(std::forward<DeploymentCircuitBreakerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +95,7 @@ namespace Model
      * percent value is not used. The value is still returned when describing your
      * service.</p>
      */
-    inline int GetMaximumPercent() const{ return m_maximumPercent; }
+    inline int GetMaximumPercent() const { return m_maximumPercent; }
     inline bool MaximumPercentHasBeenSet() const { return m_maximumPercentHasBeenSet; }
     inline void SetMaximumPercent(int value) { m_maximumPercentHasBeenSet = true; m_maximumPercent = value; }
     inline DeploymentConfiguration& WithMaximumPercent(int value) { SetMaximumPercent(value); return *this;}
@@ -161,7 +161,7 @@ namespace Model
      * minimum healthy percent value is not used, although it is returned when
      * describing your service.</p>
      */
-    inline int GetMinimumHealthyPercent() const{ return m_minimumHealthyPercent; }
+    inline int GetMinimumHealthyPercent() const { return m_minimumHealthyPercent; }
     inline bool MinimumHealthyPercentHasBeenSet() const { return m_minimumHealthyPercentHasBeenSet; }
     inline void SetMinimumHealthyPercent(int value) { m_minimumHealthyPercentHasBeenSet = true; m_minimumHealthyPercent = value; }
     inline DeploymentConfiguration& WithMinimumHealthyPercent(int value) { SetMinimumHealthyPercent(value); return *this;}
@@ -171,22 +171,22 @@ namespace Model
     /**
      * <p>Information about the CloudWatch alarms.</p>
      */
-    inline const DeploymentAlarms& GetAlarms() const{ return m_alarms; }
+    inline const DeploymentAlarms& GetAlarms() const { return m_alarms; }
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
-    inline void SetAlarms(const DeploymentAlarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
-    inline void SetAlarms(DeploymentAlarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
-    inline DeploymentConfiguration& WithAlarms(const DeploymentAlarms& value) { SetAlarms(value); return *this;}
-    inline DeploymentConfiguration& WithAlarms(DeploymentAlarms&& value) { SetAlarms(std::move(value)); return *this;}
+    template<typename AlarmsT = DeploymentAlarms>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = DeploymentAlarms>
+    DeploymentConfiguration& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
     ///@}
   private:
 
     DeploymentCircuitBreaker m_deploymentCircuitBreaker;
     bool m_deploymentCircuitBreakerHasBeenSet = false;
 
-    int m_maximumPercent;
+    int m_maximumPercent{0};
     bool m_maximumPercentHasBeenSet = false;
 
-    int m_minimumHealthyPercent;
+    int m_minimumHealthyPercent{0};
     bool m_minimumHealthyPercentHasBeenSet = false;
 
     DeploymentAlarms m_alarms;

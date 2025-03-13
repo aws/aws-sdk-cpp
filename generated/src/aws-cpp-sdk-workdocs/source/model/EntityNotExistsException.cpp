@@ -18,14 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-EntityNotExistsException::EntityNotExistsException() : 
-    m_messageHasBeenSet(false),
-    m_entityIdsHasBeenSet(false)
-{
-}
-
 EntityNotExistsException::EntityNotExistsException(JsonView jsonValue)
-  : EntityNotExistsException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EntityNotExistsException& EntityNotExistsException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityIds"))
   {
     Aws::Utils::Array<JsonView> entityIdsJsonList = jsonValue.GetArray("EntityIds");
@@ -48,7 +39,6 @@ EntityNotExistsException& EntityNotExistsException::operator =(JsonView jsonValu
     }
     m_entityIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

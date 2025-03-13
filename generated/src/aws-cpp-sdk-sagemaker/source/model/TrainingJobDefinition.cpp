@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrainingJobDefinition::TrainingJobDefinition() : 
-    m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
-{
-}
-
 TrainingJobDefinition::TrainingJobDefinition(JsonView jsonValue)
-  : TrainingJobDefinition()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ TrainingJobDefinition& TrainingJobDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrainingInputMode"))
   {
     m_trainingInputMode = TrainingInputModeMapper::GetTrainingInputModeForName(jsonValue.GetString("TrainingInputMode"));
-
     m_trainingInputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> hyperParametersJsonMap = jsonValue.GetObject("HyperParameters").GetAllObjects();
@@ -53,7 +39,6 @@ TrainingJobDefinition& TrainingJobDefinition::operator =(JsonView jsonValue)
     }
     m_hyperParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
@@ -63,28 +48,21 @@ TrainingJobDefinition& TrainingJobDefinition::operator =(JsonView jsonValue)
     }
     m_inputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceConfig"))
   {
     m_resourceConfig = jsonValue.GetObject("ResourceConfig");
-
     m_resourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
-
     m_stoppingConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

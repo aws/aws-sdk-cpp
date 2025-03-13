@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVerifiedAccessEndpointsResponse::DescribeVerifiedAccessEndpointsResponse()
-{
-}
-
 DescribeVerifiedAccessEndpointsResponse::DescribeVerifiedAccessEndpointsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse
     if(!verifiedAccessEndpointsNode.IsNull())
     {
       XmlNode verifiedAccessEndpointsMember = verifiedAccessEndpointsNode.FirstChild("item");
+      m_verifiedAccessEndpointsHasBeenSet = !verifiedAccessEndpointsMember.IsNull();
       while(!verifiedAccessEndpointsMember.IsNull())
       {
         m_verifiedAccessEndpoints.push_back(verifiedAccessEndpointsMember);
@@ -53,6 +50,7 @@ DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeVerifiedAccessEndpointsResponse& DescribeVerifiedAccessEndpointsResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVerifiedAccessEndpointsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

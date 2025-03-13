@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-DnsRuleGroupLimitExceededViolation::DnsRuleGroupLimitExceededViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_violationTargetDescriptionHasBeenSet(false),
-    m_numberOfRuleGroupsAlreadyAssociated(0),
-    m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet(false)
-{
-}
-
 DnsRuleGroupLimitExceededViolation::DnsRuleGroupLimitExceededViolation(JsonView jsonValue)
-  : DnsRuleGroupLimitExceededViolation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DnsRuleGroupLimitExceededViolation& DnsRuleGroupLimitExceededViolation::operator
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolationTargetDescription"))
   {
     m_violationTargetDescription = jsonValue.GetString("ViolationTargetDescription");
-
     m_violationTargetDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfRuleGroupsAlreadyAssociated"))
   {
     m_numberOfRuleGroupsAlreadyAssociated = jsonValue.GetInteger("NumberOfRuleGroupsAlreadyAssociated");
-
     m_numberOfRuleGroupsAlreadyAssociatedHasBeenSet = true;
   }
-
   return *this;
 }
 

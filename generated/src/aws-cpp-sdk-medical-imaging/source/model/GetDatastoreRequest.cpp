@@ -12,11 +12,6 @@ using namespace Aws::MedicalImaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDatastoreRequest::GetDatastoreRequest() : 
-    m_datastoreIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDatastoreRequest::SerializePayload() const
 {
   return {};

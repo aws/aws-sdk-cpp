@@ -18,14 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-Vpc::Vpc() : 
-    m_securityGroupsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 Vpc::Vpc(JsonView jsonValue)
-  : Vpc()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ Vpc& Vpc::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
@@ -51,7 +43,6 @@ Vpc& Vpc::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

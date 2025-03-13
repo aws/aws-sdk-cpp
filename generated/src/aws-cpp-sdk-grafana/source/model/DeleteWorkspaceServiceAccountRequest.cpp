@@ -12,12 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkspaceServiceAccountRequest::DeleteWorkspaceServiceAccountRequest() : 
-    m_serviceAccountIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkspaceServiceAccountRequest::SerializePayload() const
 {
   return {};

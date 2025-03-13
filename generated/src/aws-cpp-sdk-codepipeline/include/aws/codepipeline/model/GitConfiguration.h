@@ -38,7 +38,7 @@ namespace Model
   class GitConfiguration
   {
   public:
-    AWS_CODEPIPELINE_API GitConfiguration();
+    AWS_CODEPIPELINE_API GitConfiguration() = default;
     AWS_CODEPIPELINE_API GitConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API GitConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * upon the specified change only.</p>  <p>You can only specify one trigger
      * configuration per source action.</p> 
      */
-    inline const Aws::String& GetSourceActionName() const{ return m_sourceActionName; }
+    inline const Aws::String& GetSourceActionName() const { return m_sourceActionName; }
     inline bool SourceActionNameHasBeenSet() const { return m_sourceActionNameHasBeenSet; }
-    inline void SetSourceActionName(const Aws::String& value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName = value; }
-    inline void SetSourceActionName(Aws::String&& value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName = std::move(value); }
-    inline void SetSourceActionName(const char* value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName.assign(value); }
-    inline GitConfiguration& WithSourceActionName(const Aws::String& value) { SetSourceActionName(value); return *this;}
-    inline GitConfiguration& WithSourceActionName(Aws::String&& value) { SetSourceActionName(std::move(value)); return *this;}
-    inline GitConfiguration& WithSourceActionName(const char* value) { SetSourceActionName(value); return *this;}
+    template<typename SourceActionNameT = Aws::String>
+    void SetSourceActionName(SourceActionNameT&& value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName = std::forward<SourceActionNameT>(value); }
+    template<typename SourceActionNameT = Aws::String>
+    GitConfiguration& WithSourceActionName(SourceActionNameT&& value) { SetSourceActionName(std::forward<SourceActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,14 @@ namespace Model
      * <p>The field where the repository event that will start the pipeline, such as
      * pushing Git tags, is specified with details.</p>
      */
-    inline const Aws::Vector<GitPushFilter>& GetPush() const{ return m_push; }
+    inline const Aws::Vector<GitPushFilter>& GetPush() const { return m_push; }
     inline bool PushHasBeenSet() const { return m_pushHasBeenSet; }
-    inline void SetPush(const Aws::Vector<GitPushFilter>& value) { m_pushHasBeenSet = true; m_push = value; }
-    inline void SetPush(Aws::Vector<GitPushFilter>&& value) { m_pushHasBeenSet = true; m_push = std::move(value); }
-    inline GitConfiguration& WithPush(const Aws::Vector<GitPushFilter>& value) { SetPush(value); return *this;}
-    inline GitConfiguration& WithPush(Aws::Vector<GitPushFilter>&& value) { SetPush(std::move(value)); return *this;}
-    inline GitConfiguration& AddPush(const GitPushFilter& value) { m_pushHasBeenSet = true; m_push.push_back(value); return *this; }
-    inline GitConfiguration& AddPush(GitPushFilter&& value) { m_pushHasBeenSet = true; m_push.push_back(std::move(value)); return *this; }
+    template<typename PushT = Aws::Vector<GitPushFilter>>
+    void SetPush(PushT&& value) { m_pushHasBeenSet = true; m_push = std::forward<PushT>(value); }
+    template<typename PushT = Aws::Vector<GitPushFilter>>
+    GitConfiguration& WithPush(PushT&& value) { SetPush(std::forward<PushT>(value)); return *this;}
+    template<typename PushT = GitPushFilter>
+    GitConfiguration& AddPush(PushT&& value) { m_pushHasBeenSet = true; m_push.emplace_back(std::forward<PushT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,14 +79,14 @@ namespace Model
      * <p>The field where the repository event that will start the pipeline is
      * specified as pull requests.</p>
      */
-    inline const Aws::Vector<GitPullRequestFilter>& GetPullRequest() const{ return m_pullRequest; }
+    inline const Aws::Vector<GitPullRequestFilter>& GetPullRequest() const { return m_pullRequest; }
     inline bool PullRequestHasBeenSet() const { return m_pullRequestHasBeenSet; }
-    inline void SetPullRequest(const Aws::Vector<GitPullRequestFilter>& value) { m_pullRequestHasBeenSet = true; m_pullRequest = value; }
-    inline void SetPullRequest(Aws::Vector<GitPullRequestFilter>&& value) { m_pullRequestHasBeenSet = true; m_pullRequest = std::move(value); }
-    inline GitConfiguration& WithPullRequest(const Aws::Vector<GitPullRequestFilter>& value) { SetPullRequest(value); return *this;}
-    inline GitConfiguration& WithPullRequest(Aws::Vector<GitPullRequestFilter>&& value) { SetPullRequest(std::move(value)); return *this;}
-    inline GitConfiguration& AddPullRequest(const GitPullRequestFilter& value) { m_pullRequestHasBeenSet = true; m_pullRequest.push_back(value); return *this; }
-    inline GitConfiguration& AddPullRequest(GitPullRequestFilter&& value) { m_pullRequestHasBeenSet = true; m_pullRequest.push_back(std::move(value)); return *this; }
+    template<typename PullRequestT = Aws::Vector<GitPullRequestFilter>>
+    void SetPullRequest(PullRequestT&& value) { m_pullRequestHasBeenSet = true; m_pullRequest = std::forward<PullRequestT>(value); }
+    template<typename PullRequestT = Aws::Vector<GitPullRequestFilter>>
+    GitConfiguration& WithPullRequest(PullRequestT&& value) { SetPullRequest(std::forward<PullRequestT>(value)); return *this;}
+    template<typename PullRequestT = GitPullRequestFilter>
+    GitConfiguration& AddPullRequest(PullRequestT&& value) { m_pullRequestHasBeenSet = true; m_pullRequest.emplace_back(std::forward<PullRequestT>(value)); return *this; }
     ///@}
   private:
 

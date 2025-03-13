@@ -29,7 +29,7 @@ namespace Model
   class DescribeCodeRepositoryResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeCodeRepositoryResult();
+    AWS_SAGEMAKER_API DescribeCodeRepositoryResult() = default;
     AWS_SAGEMAKER_API DescribeCodeRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeCodeRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,48 +38,44 @@ namespace Model
     /**
      * <p>The name of the Git repository.</p>
      */
-    inline const Aws::String& GetCodeRepositoryName() const{ return m_codeRepositoryName; }
-    inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryName = value; }
-    inline void SetCodeRepositoryName(Aws::String&& value) { m_codeRepositoryName = std::move(value); }
-    inline void SetCodeRepositoryName(const char* value) { m_codeRepositoryName.assign(value); }
-    inline DescribeCodeRepositoryResult& WithCodeRepositoryName(const Aws::String& value) { SetCodeRepositoryName(value); return *this;}
-    inline DescribeCodeRepositoryResult& WithCodeRepositoryName(Aws::String&& value) { SetCodeRepositoryName(std::move(value)); return *this;}
-    inline DescribeCodeRepositoryResult& WithCodeRepositoryName(const char* value) { SetCodeRepositoryName(value); return *this;}
+    inline const Aws::String& GetCodeRepositoryName() const { return m_codeRepositoryName; }
+    template<typename CodeRepositoryNameT = Aws::String>
+    void SetCodeRepositoryName(CodeRepositoryNameT&& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = std::forward<CodeRepositoryNameT>(value); }
+    template<typename CodeRepositoryNameT = Aws::String>
+    DescribeCodeRepositoryResult& WithCodeRepositoryName(CodeRepositoryNameT&& value) { SetCodeRepositoryName(std::forward<CodeRepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Git repository.</p>
      */
-    inline const Aws::String& GetCodeRepositoryArn() const{ return m_codeRepositoryArn; }
-    inline void SetCodeRepositoryArn(const Aws::String& value) { m_codeRepositoryArn = value; }
-    inline void SetCodeRepositoryArn(Aws::String&& value) { m_codeRepositoryArn = std::move(value); }
-    inline void SetCodeRepositoryArn(const char* value) { m_codeRepositoryArn.assign(value); }
-    inline DescribeCodeRepositoryResult& WithCodeRepositoryArn(const Aws::String& value) { SetCodeRepositoryArn(value); return *this;}
-    inline DescribeCodeRepositoryResult& WithCodeRepositoryArn(Aws::String&& value) { SetCodeRepositoryArn(std::move(value)); return *this;}
-    inline DescribeCodeRepositoryResult& WithCodeRepositoryArn(const char* value) { SetCodeRepositoryArn(value); return *this;}
+    inline const Aws::String& GetCodeRepositoryArn() const { return m_codeRepositoryArn; }
+    template<typename CodeRepositoryArnT = Aws::String>
+    void SetCodeRepositoryArn(CodeRepositoryArnT&& value) { m_codeRepositoryArnHasBeenSet = true; m_codeRepositoryArn = std::forward<CodeRepositoryArnT>(value); }
+    template<typename CodeRepositoryArnT = Aws::String>
+    DescribeCodeRepositoryResult& WithCodeRepositoryArn(CodeRepositoryArnT&& value) { SetCodeRepositoryArn(std::forward<CodeRepositoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the repository was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeCodeRepositoryResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeCodeRepositoryResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeCodeRepositoryResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the repository was last changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeCodeRepositoryResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeCodeRepositoryResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeCodeRepositoryResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,36 +85,40 @@ namespace Model
      * the Amazon Web Services Secrets Manager secret that contains the credentials
      * used to access the repository.</p>
      */
-    inline const GitConfig& GetGitConfig() const{ return m_gitConfig; }
-    inline void SetGitConfig(const GitConfig& value) { m_gitConfig = value; }
-    inline void SetGitConfig(GitConfig&& value) { m_gitConfig = std::move(value); }
-    inline DescribeCodeRepositoryResult& WithGitConfig(const GitConfig& value) { SetGitConfig(value); return *this;}
-    inline DescribeCodeRepositoryResult& WithGitConfig(GitConfig&& value) { SetGitConfig(std::move(value)); return *this;}
+    inline const GitConfig& GetGitConfig() const { return m_gitConfig; }
+    template<typename GitConfigT = GitConfig>
+    void SetGitConfig(GitConfigT&& value) { m_gitConfigHasBeenSet = true; m_gitConfig = std::forward<GitConfigT>(value); }
+    template<typename GitConfigT = GitConfig>
+    DescribeCodeRepositoryResult& WithGitConfig(GitConfigT&& value) { SetGitConfig(std::forward<GitConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCodeRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCodeRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCodeRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCodeRepositoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_codeRepositoryName;
+    bool m_codeRepositoryNameHasBeenSet = false;
 
     Aws::String m_codeRepositoryArn;
+    bool m_codeRepositoryArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     GitConfig m_gitConfig;
+    bool m_gitConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

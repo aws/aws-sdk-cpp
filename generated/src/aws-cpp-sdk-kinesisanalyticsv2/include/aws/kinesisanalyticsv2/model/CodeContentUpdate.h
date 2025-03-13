@@ -34,7 +34,7 @@ namespace Model
   class CodeContentUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API CodeContentUpdate();
+    AWS_KINESISANALYTICSV2_API CodeContentUpdate() = default;
     AWS_KINESISANALYTICSV2_API CodeContentUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API CodeContentUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,43 @@ namespace Model
     /**
      * <p>Describes an update to the text code for an application.</p>
      */
-    inline const Aws::String& GetTextContentUpdate() const{ return m_textContentUpdate; }
+    inline const Aws::String& GetTextContentUpdate() const { return m_textContentUpdate; }
     inline bool TextContentUpdateHasBeenSet() const { return m_textContentUpdateHasBeenSet; }
-    inline void SetTextContentUpdate(const Aws::String& value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate = value; }
-    inline void SetTextContentUpdate(Aws::String&& value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate = std::move(value); }
-    inline void SetTextContentUpdate(const char* value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate.assign(value); }
-    inline CodeContentUpdate& WithTextContentUpdate(const Aws::String& value) { SetTextContentUpdate(value); return *this;}
-    inline CodeContentUpdate& WithTextContentUpdate(Aws::String&& value) { SetTextContentUpdate(std::move(value)); return *this;}
-    inline CodeContentUpdate& WithTextContentUpdate(const char* value) { SetTextContentUpdate(value); return *this;}
+    template<typename TextContentUpdateT = Aws::String>
+    void SetTextContentUpdate(TextContentUpdateT&& value) { m_textContentUpdateHasBeenSet = true; m_textContentUpdate = std::forward<TextContentUpdateT>(value); }
+    template<typename TextContentUpdateT = Aws::String>
+    CodeContentUpdate& WithTextContentUpdate(TextContentUpdateT&& value) { SetTextContentUpdate(std::forward<TextContentUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update to the zipped code for an application.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetZipFileContentUpdate() const{ return m_zipFileContentUpdate; }
+    inline const Aws::Utils::ByteBuffer& GetZipFileContentUpdate() const { return m_zipFileContentUpdate; }
     inline bool ZipFileContentUpdateHasBeenSet() const { return m_zipFileContentUpdateHasBeenSet; }
-    inline void SetZipFileContentUpdate(const Aws::Utils::ByteBuffer& value) { m_zipFileContentUpdateHasBeenSet = true; m_zipFileContentUpdate = value; }
-    inline void SetZipFileContentUpdate(Aws::Utils::ByteBuffer&& value) { m_zipFileContentUpdateHasBeenSet = true; m_zipFileContentUpdate = std::move(value); }
-    inline CodeContentUpdate& WithZipFileContentUpdate(const Aws::Utils::ByteBuffer& value) { SetZipFileContentUpdate(value); return *this;}
-    inline CodeContentUpdate& WithZipFileContentUpdate(Aws::Utils::ByteBuffer&& value) { SetZipFileContentUpdate(std::move(value)); return *this;}
+    template<typename ZipFileContentUpdateT = Aws::Utils::ByteBuffer>
+    void SetZipFileContentUpdate(ZipFileContentUpdateT&& value) { m_zipFileContentUpdateHasBeenSet = true; m_zipFileContentUpdate = std::forward<ZipFileContentUpdateT>(value); }
+    template<typename ZipFileContentUpdateT = Aws::Utils::ByteBuffer>
+    CodeContentUpdate& WithZipFileContentUpdate(ZipFileContentUpdateT&& value) { SetZipFileContentUpdate(std::forward<ZipFileContentUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes an update to the location of code for an application.</p>
      */
-    inline const S3ContentLocationUpdate& GetS3ContentLocationUpdate() const{ return m_s3ContentLocationUpdate; }
+    inline const S3ContentLocationUpdate& GetS3ContentLocationUpdate() const { return m_s3ContentLocationUpdate; }
     inline bool S3ContentLocationUpdateHasBeenSet() const { return m_s3ContentLocationUpdateHasBeenSet; }
-    inline void SetS3ContentLocationUpdate(const S3ContentLocationUpdate& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = value; }
-    inline void SetS3ContentLocationUpdate(S3ContentLocationUpdate&& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = std::move(value); }
-    inline CodeContentUpdate& WithS3ContentLocationUpdate(const S3ContentLocationUpdate& value) { SetS3ContentLocationUpdate(value); return *this;}
-    inline CodeContentUpdate& WithS3ContentLocationUpdate(S3ContentLocationUpdate&& value) { SetS3ContentLocationUpdate(std::move(value)); return *this;}
+    template<typename S3ContentLocationUpdateT = S3ContentLocationUpdate>
+    void SetS3ContentLocationUpdate(S3ContentLocationUpdateT&& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = std::forward<S3ContentLocationUpdateT>(value); }
+    template<typename S3ContentLocationUpdateT = S3ContentLocationUpdate>
+    CodeContentUpdate& WithS3ContentLocationUpdate(S3ContentLocationUpdateT&& value) { SetS3ContentLocationUpdate(std::forward<S3ContentLocationUpdateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_textContentUpdate;
     bool m_textContentUpdateHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_zipFileContentUpdate;
+    Aws::Utils::ByteBuffer m_zipFileContentUpdate{};
     bool m_zipFileContentUpdateHasBeenSet = false;
 
     S3ContentLocationUpdate m_s3ContentLocationUpdate;

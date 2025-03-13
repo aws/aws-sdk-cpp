@@ -32,7 +32,7 @@ namespace Model
   class EnhancedMetrics
   {
   public:
-    AWS_KINESIS_API EnhancedMetrics();
+    AWS_KINESIS_API EnhancedMetrics() = default;
     AWS_KINESIS_API EnhancedMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API EnhancedMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,13 @@ namespace Model
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<MetricsName>& GetShardLevelMetrics() const{ return m_shardLevelMetrics; }
+    inline const Aws::Vector<MetricsName>& GetShardLevelMetrics() const { return m_shardLevelMetrics; }
     inline bool ShardLevelMetricsHasBeenSet() const { return m_shardLevelMetricsHasBeenSet; }
-    inline void SetShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = value; }
-    inline void SetShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = std::move(value); }
-    inline EnhancedMetrics& WithShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetShardLevelMetrics(value); return *this;}
-    inline EnhancedMetrics& WithShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetShardLevelMetrics(std::move(value)); return *this;}
-    inline EnhancedMetrics& AddShardLevelMetrics(const MetricsName& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(value); return *this; }
-    inline EnhancedMetrics& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
+    template<typename ShardLevelMetricsT = Aws::Vector<MetricsName>>
+    void SetShardLevelMetrics(ShardLevelMetricsT&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = std::forward<ShardLevelMetricsT>(value); }
+    template<typename ShardLevelMetricsT = Aws::Vector<MetricsName>>
+    EnhancedMetrics& WithShardLevelMetrics(ShardLevelMetricsT&& value) { SetShardLevelMetrics(std::forward<ShardLevelMetricsT>(value)); return *this;}
+    inline EnhancedMetrics& AddShardLevelMetrics(MetricsName value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(value); return *this; }
     ///@}
   private:
 

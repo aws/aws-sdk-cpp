@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClientData::ClientData() : 
-    m_commentHasBeenSet(false),
-    m_uploadEndHasBeenSet(false),
-    m_uploadSize(0.0),
-    m_uploadSizeHasBeenSet(false),
-    m_uploadStartHasBeenSet(false)
-{
-}
-
 ClientData::ClientData(const XmlNode& xmlNode)
-  : ClientData()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ ClientData& ClientData::operator =(const XmlNode& xmlNode)
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode uploadEndNode = resultNode.FirstChild("UploadEnd");
     if(!uploadEndNode.IsNull())
     {
       m_uploadEnd = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadEndNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_uploadEndHasBeenSet = true;
+       m_uploadEndHasBeenSet = true;
     }
     XmlNode uploadSizeNode = resultNode.FirstChild("UploadSize");
     if(!uploadSizeNode.IsNull())
     {
       m_uploadSize = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadSizeNode.GetText()).c_str()).c_str());
       m_uploadSizeHasBeenSet = true;
+       m_uploadSizeHasBeenSet = true;
     }
     XmlNode uploadStartNode = resultNode.FirstChild("UploadStart");
     if(!uploadStartNode.IsNull())
     {
       m_uploadStart = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(uploadStartNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_uploadStartHasBeenSet = true;
+       m_uploadStartHasBeenSet = true;
     }
   }
 

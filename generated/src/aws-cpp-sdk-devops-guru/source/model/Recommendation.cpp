@@ -18,19 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_descriptionHasBeenSet(false),
-    m_linkHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_relatedEventsHasBeenSet(false),
-    m_relatedAnomaliesHasBeenSet(false),
-    m_categoryHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Link"))
   {
     m_link = jsonValue.GetString("Link");
-
     m_linkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedEvents"))
   {
     Aws::Utils::Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("RelatedEvents");
@@ -74,7 +54,6 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     }
     m_relatedEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedAnomalies"))
   {
     Aws::Utils::Array<JsonView> relatedAnomaliesJsonList = jsonValue.GetArray("RelatedAnomalies");
@@ -84,14 +63,11 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     }
     m_relatedAnomaliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   return *this;
 }
 

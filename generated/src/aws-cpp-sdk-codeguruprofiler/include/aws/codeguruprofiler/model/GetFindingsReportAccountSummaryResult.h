@@ -35,7 +35,7 @@ namespace Model
   class GetFindingsReportAccountSummaryResult
   {
   public:
-    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult();
+    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult() = default;
     AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -49,13 +49,11 @@ namespace Model
      * results. This value is <code>null</code> when there are no more results to
      * return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetFindingsReportAccountSummaryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetFindingsReportAccountSummaryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetFindingsReportAccountSummaryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetFindingsReportAccountSummaryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,32 +63,33 @@ namespace Model
      * <code>FindingsReportSummary</code> </a> objects taht contain summaries of
      * analysis results for all profiling groups in your AWS account.</p>
      */
-    inline const Aws::Vector<FindingsReportSummary>& GetReportSummaries() const{ return m_reportSummaries; }
-    inline void SetReportSummaries(const Aws::Vector<FindingsReportSummary>& value) { m_reportSummaries = value; }
-    inline void SetReportSummaries(Aws::Vector<FindingsReportSummary>&& value) { m_reportSummaries = std::move(value); }
-    inline GetFindingsReportAccountSummaryResult& WithReportSummaries(const Aws::Vector<FindingsReportSummary>& value) { SetReportSummaries(value); return *this;}
-    inline GetFindingsReportAccountSummaryResult& WithReportSummaries(Aws::Vector<FindingsReportSummary>&& value) { SetReportSummaries(std::move(value)); return *this;}
-    inline GetFindingsReportAccountSummaryResult& AddReportSummaries(const FindingsReportSummary& value) { m_reportSummaries.push_back(value); return *this; }
-    inline GetFindingsReportAccountSummaryResult& AddReportSummaries(FindingsReportSummary&& value) { m_reportSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FindingsReportSummary>& GetReportSummaries() const { return m_reportSummaries; }
+    template<typename ReportSummariesT = Aws::Vector<FindingsReportSummary>>
+    void SetReportSummaries(ReportSummariesT&& value) { m_reportSummariesHasBeenSet = true; m_reportSummaries = std::forward<ReportSummariesT>(value); }
+    template<typename ReportSummariesT = Aws::Vector<FindingsReportSummary>>
+    GetFindingsReportAccountSummaryResult& WithReportSummaries(ReportSummariesT&& value) { SetReportSummaries(std::forward<ReportSummariesT>(value)); return *this;}
+    template<typename ReportSummariesT = FindingsReportSummary>
+    GetFindingsReportAccountSummaryResult& AddReportSummaries(ReportSummariesT&& value) { m_reportSummariesHasBeenSet = true; m_reportSummaries.emplace_back(std::forward<ReportSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFindingsReportAccountSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFindingsReportAccountSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFindingsReportAccountSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFindingsReportAccountSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<FindingsReportSummary> m_reportSummaries;
+    bool m_reportSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

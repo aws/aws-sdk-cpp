@@ -34,7 +34,7 @@ namespace Model
   class WorkloadDiscoveryConfig
   {
   public:
-    AWS_WELLARCHITECTED_API WorkloadDiscoveryConfig();
+    AWS_WELLARCHITECTED_API WorkloadDiscoveryConfig() = default;
     AWS_WELLARCHITECTED_API WorkloadDiscoveryConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API WorkloadDiscoveryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>Discovery integration status in respect to Trusted Advisor for the
      * workload.</p>
      */
-    inline const TrustedAdvisorIntegrationStatus& GetTrustedAdvisorIntegrationStatus() const{ return m_trustedAdvisorIntegrationStatus; }
+    inline TrustedAdvisorIntegrationStatus GetTrustedAdvisorIntegrationStatus() const { return m_trustedAdvisorIntegrationStatus; }
     inline bool TrustedAdvisorIntegrationStatusHasBeenSet() const { return m_trustedAdvisorIntegrationStatusHasBeenSet; }
-    inline void SetTrustedAdvisorIntegrationStatus(const TrustedAdvisorIntegrationStatus& value) { m_trustedAdvisorIntegrationStatusHasBeenSet = true; m_trustedAdvisorIntegrationStatus = value; }
-    inline void SetTrustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus&& value) { m_trustedAdvisorIntegrationStatusHasBeenSet = true; m_trustedAdvisorIntegrationStatus = std::move(value); }
-    inline WorkloadDiscoveryConfig& WithTrustedAdvisorIntegrationStatus(const TrustedAdvisorIntegrationStatus& value) { SetTrustedAdvisorIntegrationStatus(value); return *this;}
-    inline WorkloadDiscoveryConfig& WithTrustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus&& value) { SetTrustedAdvisorIntegrationStatus(std::move(value)); return *this;}
+    inline void SetTrustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus value) { m_trustedAdvisorIntegrationStatusHasBeenSet = true; m_trustedAdvisorIntegrationStatus = value; }
+    inline WorkloadDiscoveryConfig& WithTrustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus value) { SetTrustedAdvisorIntegrationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,17 @@ namespace Model
      * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
      * both.</p>
      */
-    inline const Aws::Vector<DefinitionType>& GetWorkloadResourceDefinition() const{ return m_workloadResourceDefinition; }
+    inline const Aws::Vector<DefinitionType>& GetWorkloadResourceDefinition() const { return m_workloadResourceDefinition; }
     inline bool WorkloadResourceDefinitionHasBeenSet() const { return m_workloadResourceDefinitionHasBeenSet; }
-    inline void SetWorkloadResourceDefinition(const Aws::Vector<DefinitionType>& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition = value; }
-    inline void SetWorkloadResourceDefinition(Aws::Vector<DefinitionType>&& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition = std::move(value); }
-    inline WorkloadDiscoveryConfig& WithWorkloadResourceDefinition(const Aws::Vector<DefinitionType>& value) { SetWorkloadResourceDefinition(value); return *this;}
-    inline WorkloadDiscoveryConfig& WithWorkloadResourceDefinition(Aws::Vector<DefinitionType>&& value) { SetWorkloadResourceDefinition(std::move(value)); return *this;}
-    inline WorkloadDiscoveryConfig& AddWorkloadResourceDefinition(const DefinitionType& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition.push_back(value); return *this; }
-    inline WorkloadDiscoveryConfig& AddWorkloadResourceDefinition(DefinitionType&& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition.push_back(std::move(value)); return *this; }
+    template<typename WorkloadResourceDefinitionT = Aws::Vector<DefinitionType>>
+    void SetWorkloadResourceDefinition(WorkloadResourceDefinitionT&& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition = std::forward<WorkloadResourceDefinitionT>(value); }
+    template<typename WorkloadResourceDefinitionT = Aws::Vector<DefinitionType>>
+    WorkloadDiscoveryConfig& WithWorkloadResourceDefinition(WorkloadResourceDefinitionT&& value) { SetWorkloadResourceDefinition(std::forward<WorkloadResourceDefinitionT>(value)); return *this;}
+    inline WorkloadDiscoveryConfig& AddWorkloadResourceDefinition(DefinitionType value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition.push_back(value); return *this; }
     ///@}
   private:
 
-    TrustedAdvisorIntegrationStatus m_trustedAdvisorIntegrationStatus;
+    TrustedAdvisorIntegrationStatus m_trustedAdvisorIntegrationStatus{TrustedAdvisorIntegrationStatus::NOT_SET};
     bool m_trustedAdvisorIntegrationStatusHasBeenSet = false;
 
     Aws::Vector<DefinitionType> m_workloadResourceDefinition;

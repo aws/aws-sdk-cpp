@@ -33,7 +33,7 @@ namespace Model
   class M2NonManagedApplicationAction
   {
   public:
-    AWS_APPTEST_API M2NonManagedApplicationAction();
+    AWS_APPTEST_API M2NonManagedApplicationAction() = default;
     AWS_APPTEST_API M2NonManagedApplicationAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API M2NonManagedApplicationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The resource of the AWS Mainframe Modernization non-managed application
      * action.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline M2NonManagedApplicationAction& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline M2NonManagedApplicationAction& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline M2NonManagedApplicationAction& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    M2NonManagedApplicationAction& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,17 @@ namespace Model
      * <p>The action type of the AWS Mainframe Modernization non-managed application
      * action.</p>
      */
-    inline const M2NonManagedActionType& GetActionType() const{ return m_actionType; }
+    inline M2NonManagedActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const M2NonManagedActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(M2NonManagedActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline M2NonManagedApplicationAction& WithActionType(const M2NonManagedActionType& value) { SetActionType(value); return *this;}
-    inline M2NonManagedApplicationAction& WithActionType(M2NonManagedActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(M2NonManagedActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline M2NonManagedApplicationAction& WithActionType(M2NonManagedActionType value) { SetActionType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    M2NonManagedActionType m_actionType;
+    M2NonManagedActionType m_actionType{M2NonManagedActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
   };
 

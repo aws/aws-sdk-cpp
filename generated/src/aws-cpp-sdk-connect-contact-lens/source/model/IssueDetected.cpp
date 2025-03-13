@@ -18,13 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-IssueDetected::IssueDetected() : 
-    m_characterOffsetsHasBeenSet(false)
-{
-}
-
 IssueDetected::IssueDetected(JsonView jsonValue)
-  : IssueDetected()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IssueDetected& IssueDetected::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CharacterOffsets"))
   {
     m_characterOffsets = jsonValue.GetObject("CharacterOffsets");
-
     m_characterOffsetsHasBeenSet = true;
   }
-
   return *this;
 }
 

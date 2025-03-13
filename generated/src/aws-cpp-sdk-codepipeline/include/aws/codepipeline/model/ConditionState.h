@@ -33,7 +33,7 @@ namespace Model
   class ConditionState
   {
   public:
-    AWS_CODEPIPELINE_API ConditionState();
+    AWS_CODEPIPELINE_API ConditionState() = default;
     AWS_CODEPIPELINE_API ConditionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ConditionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,26 @@ namespace Model
     /**
      * <p>The state of the latest run of the rule.</p>
      */
-    inline const ConditionExecution& GetLatestExecution() const{ return m_latestExecution; }
+    inline const ConditionExecution& GetLatestExecution() const { return m_latestExecution; }
     inline bool LatestExecutionHasBeenSet() const { return m_latestExecutionHasBeenSet; }
-    inline void SetLatestExecution(const ConditionExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
-    inline void SetLatestExecution(ConditionExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::move(value); }
-    inline ConditionState& WithLatestExecution(const ConditionExecution& value) { SetLatestExecution(value); return *this;}
-    inline ConditionState& WithLatestExecution(ConditionExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
+    template<typename LatestExecutionT = ConditionExecution>
+    void SetLatestExecution(LatestExecutionT&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::forward<LatestExecutionT>(value); }
+    template<typename LatestExecutionT = ConditionExecution>
+    ConditionState& WithLatestExecution(LatestExecutionT&& value) { SetLatestExecution(std::forward<LatestExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the rules for the condition.</p>
      */
-    inline const Aws::Vector<RuleState>& GetRuleStates() const{ return m_ruleStates; }
+    inline const Aws::Vector<RuleState>& GetRuleStates() const { return m_ruleStates; }
     inline bool RuleStatesHasBeenSet() const { return m_ruleStatesHasBeenSet; }
-    inline void SetRuleStates(const Aws::Vector<RuleState>& value) { m_ruleStatesHasBeenSet = true; m_ruleStates = value; }
-    inline void SetRuleStates(Aws::Vector<RuleState>&& value) { m_ruleStatesHasBeenSet = true; m_ruleStates = std::move(value); }
-    inline ConditionState& WithRuleStates(const Aws::Vector<RuleState>& value) { SetRuleStates(value); return *this;}
-    inline ConditionState& WithRuleStates(Aws::Vector<RuleState>&& value) { SetRuleStates(std::move(value)); return *this;}
-    inline ConditionState& AddRuleStates(const RuleState& value) { m_ruleStatesHasBeenSet = true; m_ruleStates.push_back(value); return *this; }
-    inline ConditionState& AddRuleStates(RuleState&& value) { m_ruleStatesHasBeenSet = true; m_ruleStates.push_back(std::move(value)); return *this; }
+    template<typename RuleStatesT = Aws::Vector<RuleState>>
+    void SetRuleStates(RuleStatesT&& value) { m_ruleStatesHasBeenSet = true; m_ruleStates = std::forward<RuleStatesT>(value); }
+    template<typename RuleStatesT = Aws::Vector<RuleState>>
+    ConditionState& WithRuleStates(RuleStatesT&& value) { SetRuleStates(std::forward<RuleStatesT>(value)); return *this;}
+    template<typename RuleStatesT = RuleState>
+    ConditionState& AddRuleStates(RuleStatesT&& value) { m_ruleStatesHasBeenSet = true; m_ruleStates.emplace_back(std::forward<RuleStatesT>(value)); return *this; }
     ///@}
   private:
 

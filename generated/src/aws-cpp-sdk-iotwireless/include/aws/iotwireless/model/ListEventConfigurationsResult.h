@@ -29,7 +29,7 @@ namespace Model
   class ListEventConfigurationsResult
   {
   public:
-    AWS_IOTWIRELESS_API ListEventConfigurationsResult();
+    AWS_IOTWIRELESS_API ListEventConfigurationsResult() = default;
     AWS_IOTWIRELESS_API ListEventConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API ListEventConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEventConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Event configurations of all events for a single resource.</p>
      */
-    inline const Aws::Vector<EventConfigurationItem>& GetEventConfigurationsList() const{ return m_eventConfigurationsList; }
-    inline void SetEventConfigurationsList(const Aws::Vector<EventConfigurationItem>& value) { m_eventConfigurationsList = value; }
-    inline void SetEventConfigurationsList(Aws::Vector<EventConfigurationItem>&& value) { m_eventConfigurationsList = std::move(value); }
-    inline ListEventConfigurationsResult& WithEventConfigurationsList(const Aws::Vector<EventConfigurationItem>& value) { SetEventConfigurationsList(value); return *this;}
-    inline ListEventConfigurationsResult& WithEventConfigurationsList(Aws::Vector<EventConfigurationItem>&& value) { SetEventConfigurationsList(std::move(value)); return *this;}
-    inline ListEventConfigurationsResult& AddEventConfigurationsList(const EventConfigurationItem& value) { m_eventConfigurationsList.push_back(value); return *this; }
-    inline ListEventConfigurationsResult& AddEventConfigurationsList(EventConfigurationItem&& value) { m_eventConfigurationsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventConfigurationItem>& GetEventConfigurationsList() const { return m_eventConfigurationsList; }
+    template<typename EventConfigurationsListT = Aws::Vector<EventConfigurationItem>>
+    void SetEventConfigurationsList(EventConfigurationsListT&& value) { m_eventConfigurationsListHasBeenSet = true; m_eventConfigurationsList = std::forward<EventConfigurationsListT>(value); }
+    template<typename EventConfigurationsListT = Aws::Vector<EventConfigurationItem>>
+    ListEventConfigurationsResult& WithEventConfigurationsList(EventConfigurationsListT&& value) { SetEventConfigurationsList(std::forward<EventConfigurationsListT>(value)); return *this;}
+    template<typename EventConfigurationsListT = EventConfigurationItem>
+    ListEventConfigurationsResult& AddEventConfigurationsList(EventConfigurationsListT&& value) { m_eventConfigurationsListHasBeenSet = true; m_eventConfigurationsList.emplace_back(std::forward<EventConfigurationsListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEventConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEventConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEventConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEventConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<EventConfigurationItem> m_eventConfigurationsList;
+    bool m_eventConfigurationsListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

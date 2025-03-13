@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListHealthEventsRequest::ListHealthEventsRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_eventStatus(HealthEventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false),
-    m_linkedAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String ListHealthEventsRequest::SerializePayload() const
 {
   return {};

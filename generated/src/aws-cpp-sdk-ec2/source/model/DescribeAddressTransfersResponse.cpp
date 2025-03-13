@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAddressTransfersResponse::DescribeAddressTransfersResponse()
-{
-}
-
 DescribeAddressTransfersResponse::DescribeAddressTransfersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeAddressTransfersResponse& DescribeAddressTransfersResponse::operator =(c
     if(!addressTransfersNode.IsNull())
     {
       XmlNode addressTransfersMember = addressTransfersNode.FirstChild("item");
+      m_addressTransfersHasBeenSet = !addressTransfersMember.IsNull();
       while(!addressTransfersMember.IsNull())
       {
         m_addressTransfers.push_back(addressTransfersMember);
@@ -53,6 +50,7 @@ DescribeAddressTransfersResponse& DescribeAddressTransfersResponse::operator =(c
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeAddressTransfersResponse& DescribeAddressTransfersResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAddressTransfersResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

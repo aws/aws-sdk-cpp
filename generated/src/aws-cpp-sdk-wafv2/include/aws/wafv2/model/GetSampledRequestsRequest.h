@@ -23,7 +23,7 @@ namespace Model
   class GetSampledRequestsRequest : public WAFV2Request
   {
   public:
-    AWS_WAFV2_API GetSampledRequestsRequest();
+    AWS_WAFV2_API GetSampledRequestsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want
      * a sample of requests.</p>
      */
-    inline const Aws::String& GetWebAclArn() const{ return m_webAclArn; }
+    inline const Aws::String& GetWebAclArn() const { return m_webAclArn; }
     inline bool WebAclArnHasBeenSet() const { return m_webAclArnHasBeenSet; }
-    inline void SetWebAclArn(const Aws::String& value) { m_webAclArnHasBeenSet = true; m_webAclArn = value; }
-    inline void SetWebAclArn(Aws::String&& value) { m_webAclArnHasBeenSet = true; m_webAclArn = std::move(value); }
-    inline void SetWebAclArn(const char* value) { m_webAclArnHasBeenSet = true; m_webAclArn.assign(value); }
-    inline GetSampledRequestsRequest& WithWebAclArn(const Aws::String& value) { SetWebAclArn(value); return *this;}
-    inline GetSampledRequestsRequest& WithWebAclArn(Aws::String&& value) { SetWebAclArn(std::move(value)); return *this;}
-    inline GetSampledRequestsRequest& WithWebAclArn(const char* value) { SetWebAclArn(value); return *this;}
+    template<typename WebAclArnT = Aws::String>
+    void SetWebAclArn(WebAclArnT&& value) { m_webAclArnHasBeenSet = true; m_webAclArn = std::forward<WebAclArnT>(value); }
+    template<typename WebAclArnT = Aws::String>
+    GetSampledRequestsRequest& WithWebAclArn(WebAclArnT&& value) { SetWebAclArn(std::forward<WebAclArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code>
      * dimension for which you want a sample of requests.</p>
      */
-    inline const Aws::String& GetRuleMetricName() const{ return m_ruleMetricName; }
+    inline const Aws::String& GetRuleMetricName() const { return m_ruleMetricName; }
     inline bool RuleMetricNameHasBeenSet() const { return m_ruleMetricNameHasBeenSet; }
-    inline void SetRuleMetricName(const Aws::String& value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName = value; }
-    inline void SetRuleMetricName(Aws::String&& value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName = std::move(value); }
-    inline void SetRuleMetricName(const char* value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName.assign(value); }
-    inline GetSampledRequestsRequest& WithRuleMetricName(const Aws::String& value) { SetRuleMetricName(value); return *this;}
-    inline GetSampledRequestsRequest& WithRuleMetricName(Aws::String&& value) { SetRuleMetricName(std::move(value)); return *this;}
-    inline GetSampledRequestsRequest& WithRuleMetricName(const char* value) { SetRuleMetricName(value); return *this;}
+    template<typename RuleMetricNameT = Aws::String>
+    void SetRuleMetricName(RuleMetricNameT&& value) { m_ruleMetricNameHasBeenSet = true; m_ruleMetricName = std::forward<RuleMetricNameT>(value); }
+    template<typename RuleMetricNameT = Aws::String>
+    GetSampledRequestsRequest& WithRuleMetricName(RuleMetricNameT&& value) { SetRuleMetricName(std::forward<RuleMetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
-    inline const Scope& GetScope() const{ return m_scope; }
+    inline Scope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline GetSampledRequestsRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
-    inline GetSampledRequestsRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(Scope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline GetSampledRequestsRequest& WithScope(Scope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,12 @@ namespace Model
      * three hours. If you specify a start time that's earlier than three hours ago,
      * WAF sets it to three hours ago.</p>
      */
-    inline const TimeWindow& GetTimeWindow() const{ return m_timeWindow; }
+    inline const TimeWindow& GetTimeWindow() const { return m_timeWindow; }
     inline bool TimeWindowHasBeenSet() const { return m_timeWindowHasBeenSet; }
-    inline void SetTimeWindow(const TimeWindow& value) { m_timeWindowHasBeenSet = true; m_timeWindow = value; }
-    inline void SetTimeWindow(TimeWindow&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::move(value); }
-    inline GetSampledRequestsRequest& WithTimeWindow(const TimeWindow& value) { SetTimeWindow(value); return *this;}
-    inline GetSampledRequestsRequest& WithTimeWindow(TimeWindow&& value) { SetTimeWindow(std::move(value)); return *this;}
+    template<typename TimeWindowT = TimeWindow>
+    void SetTimeWindow(TimeWindowT&& value) { m_timeWindowHasBeenSet = true; m_timeWindow = std::forward<TimeWindowT>(value); }
+    template<typename TimeWindowT = TimeWindow>
+    GetSampledRequestsRequest& WithTimeWindow(TimeWindowT&& value) { SetTimeWindow(std::forward<TimeWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,7 +103,7 @@ namespace Model
      * <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about
      * all of them. </p>
      */
-    inline long long GetMaxItems() const{ return m_maxItems; }
+    inline long long GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(long long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline GetSampledRequestsRequest& WithMaxItems(long long value) { SetMaxItems(value); return *this;}
@@ -122,13 +116,13 @@ namespace Model
     Aws::String m_ruleMetricName;
     bool m_ruleMetricNameHasBeenSet = false;
 
-    Scope m_scope;
+    Scope m_scope{Scope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     TimeWindow m_timeWindow;
     bool m_timeWindowHasBeenSet = false;
 
-    long long m_maxItems;
+    long long m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

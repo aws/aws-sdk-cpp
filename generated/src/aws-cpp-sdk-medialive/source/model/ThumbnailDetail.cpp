@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ThumbnailDetail::ThumbnailDetail() : 
-    m_pipelineIdHasBeenSet(false),
-    m_thumbnailsHasBeenSet(false)
-{
-}
-
 ThumbnailDetail::ThumbnailDetail(JsonView jsonValue)
-  : ThumbnailDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ThumbnailDetail& ThumbnailDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineId"))
   {
     m_pipelineId = jsonValue.GetString("pipelineId");
-
     m_pipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnails"))
   {
     Aws::Utils::Array<JsonView> thumbnailsJsonList = jsonValue.GetArray("thumbnails");
@@ -48,7 +39,6 @@ ThumbnailDetail& ThumbnailDetail::operator =(JsonView jsonValue)
     }
     m_thumbnailsHasBeenSet = true;
   }
-
   return *this;
 }
 

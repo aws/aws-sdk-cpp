@@ -24,7 +24,7 @@ namespace Model
   class GetAwsNetworkPerformanceDataRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetAwsNetworkPerformanceDataRequest();
+    AWS_EC2_API GetAwsNetworkPerformanceDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of network performance data queries.</p>
      */
-    inline const Aws::Vector<DataQuery>& GetDataQueries() const{ return m_dataQueries; }
+    inline const Aws::Vector<DataQuery>& GetDataQueries() const { return m_dataQueries; }
     inline bool DataQueriesHasBeenSet() const { return m_dataQueriesHasBeenSet; }
-    inline void SetDataQueries(const Aws::Vector<DataQuery>& value) { m_dataQueriesHasBeenSet = true; m_dataQueries = value; }
-    inline void SetDataQueries(Aws::Vector<DataQuery>&& value) { m_dataQueriesHasBeenSet = true; m_dataQueries = std::move(value); }
-    inline GetAwsNetworkPerformanceDataRequest& WithDataQueries(const Aws::Vector<DataQuery>& value) { SetDataQueries(value); return *this;}
-    inline GetAwsNetworkPerformanceDataRequest& WithDataQueries(Aws::Vector<DataQuery>&& value) { SetDataQueries(std::move(value)); return *this;}
-    inline GetAwsNetworkPerformanceDataRequest& AddDataQueries(const DataQuery& value) { m_dataQueriesHasBeenSet = true; m_dataQueries.push_back(value); return *this; }
-    inline GetAwsNetworkPerformanceDataRequest& AddDataQueries(DataQuery&& value) { m_dataQueriesHasBeenSet = true; m_dataQueries.push_back(std::move(value)); return *this; }
+    template<typename DataQueriesT = Aws::Vector<DataQuery>>
+    void SetDataQueries(DataQueriesT&& value) { m_dataQueriesHasBeenSet = true; m_dataQueries = std::forward<DataQueriesT>(value); }
+    template<typename DataQueriesT = Aws::Vector<DataQuery>>
+    GetAwsNetworkPerformanceDataRequest& WithDataQueries(DataQueriesT&& value) { SetDataQueries(std::forward<DataQueriesT>(value)); return *this;}
+    template<typename DataQueriesT = DataQuery>
+    GetAwsNetworkPerformanceDataRequest& AddDataQueries(DataQueriesT&& value) { m_dataQueriesHasBeenSet = true; m_dataQueries.emplace_back(std::forward<DataQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example,
      * <code>2022-06-10T12:00:00.000Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetAwsNetworkPerformanceDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetAwsNetworkPerformanceDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetAwsNetworkPerformanceDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example,
      * <code>2022-06-12T12:00:00.000Z</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetAwsNetworkPerformanceDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetAwsNetworkPerformanceDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetAwsNetworkPerformanceDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +87,7 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAwsNetworkPerformanceDataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -97,14 +97,12 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetAwsNetworkPerformanceDataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAwsNetworkPerformanceDataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAwsNetworkPerformanceDataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAwsNetworkPerformanceDataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,7 +112,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetAwsNetworkPerformanceDataRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -124,19 +122,19 @@ namespace Model
     Aws::Vector<DataQuery> m_dataQueries;
     bool m_dataQueriesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

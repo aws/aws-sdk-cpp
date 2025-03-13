@@ -12,13 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeliveryStreamRequest::DeleteDeliveryStreamRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_allowForceDelete(false),
-    m_allowForceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeliveryStreamRequest::SerializePayload() const
 {
   JsonValue payload;

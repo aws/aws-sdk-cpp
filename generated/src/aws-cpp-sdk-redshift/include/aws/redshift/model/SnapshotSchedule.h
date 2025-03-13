@@ -38,7 +38,7 @@ namespace Model
   class SnapshotSchedule
   {
   public:
-    AWS_REDSHIFT_API SnapshotSchedule();
+    AWS_REDSHIFT_API SnapshotSchedule() = default;
     AWS_REDSHIFT_API SnapshotSchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API SnapshotSchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,78 +50,73 @@ namespace Model
     /**
      * <p>A list of ScheduleDefinitions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetScheduleDefinitions() const{ return m_scheduleDefinitions; }
+    inline const Aws::Vector<Aws::String>& GetScheduleDefinitions() const { return m_scheduleDefinitions; }
     inline bool ScheduleDefinitionsHasBeenSet() const { return m_scheduleDefinitionsHasBeenSet; }
-    inline void SetScheduleDefinitions(const Aws::Vector<Aws::String>& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = value; }
-    inline void SetScheduleDefinitions(Aws::Vector<Aws::String>&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = std::move(value); }
-    inline SnapshotSchedule& WithScheduleDefinitions(const Aws::Vector<Aws::String>& value) { SetScheduleDefinitions(value); return *this;}
-    inline SnapshotSchedule& WithScheduleDefinitions(Aws::Vector<Aws::String>&& value) { SetScheduleDefinitions(std::move(value)); return *this;}
-    inline SnapshotSchedule& AddScheduleDefinitions(const Aws::String& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(value); return *this; }
-    inline SnapshotSchedule& AddScheduleDefinitions(Aws::String&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(std::move(value)); return *this; }
-    inline SnapshotSchedule& AddScheduleDefinitions(const char* value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(value); return *this; }
+    template<typename ScheduleDefinitionsT = Aws::Vector<Aws::String>>
+    void SetScheduleDefinitions(ScheduleDefinitionsT&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = std::forward<ScheduleDefinitionsT>(value); }
+    template<typename ScheduleDefinitionsT = Aws::Vector<Aws::String>>
+    SnapshotSchedule& WithScheduleDefinitions(ScheduleDefinitionsT&& value) { SetScheduleDefinitions(std::forward<ScheduleDefinitionsT>(value)); return *this;}
+    template<typename ScheduleDefinitionsT = Aws::String>
+    SnapshotSchedule& AddScheduleDefinitions(ScheduleDefinitionsT&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.emplace_back(std::forward<ScheduleDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the schedule.</p>
      */
-    inline const Aws::String& GetScheduleIdentifier() const{ return m_scheduleIdentifier; }
+    inline const Aws::String& GetScheduleIdentifier() const { return m_scheduleIdentifier; }
     inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
-    inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
-    inline void SetScheduleIdentifier(Aws::String&& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = std::move(value); }
-    inline void SetScheduleIdentifier(const char* value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier.assign(value); }
-    inline SnapshotSchedule& WithScheduleIdentifier(const Aws::String& value) { SetScheduleIdentifier(value); return *this;}
-    inline SnapshotSchedule& WithScheduleIdentifier(Aws::String&& value) { SetScheduleIdentifier(std::move(value)); return *this;}
-    inline SnapshotSchedule& WithScheduleIdentifier(const char* value) { SetScheduleIdentifier(value); return *this;}
+    template<typename ScheduleIdentifierT = Aws::String>
+    void SetScheduleIdentifier(ScheduleIdentifierT&& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = std::forward<ScheduleIdentifierT>(value); }
+    template<typename ScheduleIdentifierT = Aws::String>
+    SnapshotSchedule& WithScheduleIdentifier(ScheduleIdentifierT&& value) { SetScheduleIdentifier(std::forward<ScheduleIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the schedule.</p>
      */
-    inline const Aws::String& GetScheduleDescription() const{ return m_scheduleDescription; }
+    inline const Aws::String& GetScheduleDescription() const { return m_scheduleDescription; }
     inline bool ScheduleDescriptionHasBeenSet() const { return m_scheduleDescriptionHasBeenSet; }
-    inline void SetScheduleDescription(const Aws::String& value) { m_scheduleDescriptionHasBeenSet = true; m_scheduleDescription = value; }
-    inline void SetScheduleDescription(Aws::String&& value) { m_scheduleDescriptionHasBeenSet = true; m_scheduleDescription = std::move(value); }
-    inline void SetScheduleDescription(const char* value) { m_scheduleDescriptionHasBeenSet = true; m_scheduleDescription.assign(value); }
-    inline SnapshotSchedule& WithScheduleDescription(const Aws::String& value) { SetScheduleDescription(value); return *this;}
-    inline SnapshotSchedule& WithScheduleDescription(Aws::String&& value) { SetScheduleDescription(std::move(value)); return *this;}
-    inline SnapshotSchedule& WithScheduleDescription(const char* value) { SetScheduleDescription(value); return *this;}
+    template<typename ScheduleDescriptionT = Aws::String>
+    void SetScheduleDescription(ScheduleDescriptionT&& value) { m_scheduleDescriptionHasBeenSet = true; m_scheduleDescription = std::forward<ScheduleDescriptionT>(value); }
+    template<typename ScheduleDescriptionT = Aws::String>
+    SnapshotSchedule& WithScheduleDescription(ScheduleDescriptionT&& value) { SetScheduleDescription(std::forward<ScheduleDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional set of tags describing the schedule.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline SnapshotSchedule& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline SnapshotSchedule& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline SnapshotSchedule& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline SnapshotSchedule& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    SnapshotSchedule& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    SnapshotSchedule& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetNextInvocations() const{ return m_nextInvocations; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetNextInvocations() const { return m_nextInvocations; }
     inline bool NextInvocationsHasBeenSet() const { return m_nextInvocationsHasBeenSet; }
-    inline void SetNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = value; }
-    inline void SetNextInvocations(Aws::Vector<Aws::Utils::DateTime>&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = std::move(value); }
-    inline SnapshotSchedule& WithNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { SetNextInvocations(value); return *this;}
-    inline SnapshotSchedule& WithNextInvocations(Aws::Vector<Aws::Utils::DateTime>&& value) { SetNextInvocations(std::move(value)); return *this;}
-    inline SnapshotSchedule& AddNextInvocations(const Aws::Utils::DateTime& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.push_back(value); return *this; }
-    inline SnapshotSchedule& AddNextInvocations(Aws::Utils::DateTime&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.push_back(std::move(value)); return *this; }
+    template<typename NextInvocationsT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetNextInvocations(NextInvocationsT&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = std::forward<NextInvocationsT>(value); }
+    template<typename NextInvocationsT = Aws::Vector<Aws::Utils::DateTime>>
+    SnapshotSchedule& WithNextInvocations(NextInvocationsT&& value) { SetNextInvocations(std::forward<NextInvocationsT>(value)); return *this;}
+    template<typename NextInvocationsT = Aws::Utils::DateTime>
+    SnapshotSchedule& AddNextInvocations(NextInvocationsT&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.emplace_back(std::forward<NextInvocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The number of clusters associated with the schedule.</p>
      */
-    inline int GetAssociatedClusterCount() const{ return m_associatedClusterCount; }
+    inline int GetAssociatedClusterCount() const { return m_associatedClusterCount; }
     inline bool AssociatedClusterCountHasBeenSet() const { return m_associatedClusterCountHasBeenSet; }
     inline void SetAssociatedClusterCount(int value) { m_associatedClusterCountHasBeenSet = true; m_associatedClusterCount = value; }
     inline SnapshotSchedule& WithAssociatedClusterCount(int value) { SetAssociatedClusterCount(value); return *this;}
@@ -132,23 +127,23 @@ namespace Model
      * <p>A list of clusters associated with the schedule. A maximum of 100 clusters is
      * returned.</p>
      */
-    inline const Aws::Vector<ClusterAssociatedToSchedule>& GetAssociatedClusters() const{ return m_associatedClusters; }
+    inline const Aws::Vector<ClusterAssociatedToSchedule>& GetAssociatedClusters() const { return m_associatedClusters; }
     inline bool AssociatedClustersHasBeenSet() const { return m_associatedClustersHasBeenSet; }
-    inline void SetAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = value; }
-    inline void SetAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = std::move(value); }
-    inline SnapshotSchedule& WithAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { SetAssociatedClusters(value); return *this;}
-    inline SnapshotSchedule& WithAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { SetAssociatedClusters(std::move(value)); return *this;}
-    inline SnapshotSchedule& AddAssociatedClusters(const ClusterAssociatedToSchedule& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(value); return *this; }
-    inline SnapshotSchedule& AddAssociatedClusters(ClusterAssociatedToSchedule&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(std::move(value)); return *this; }
+    template<typename AssociatedClustersT = Aws::Vector<ClusterAssociatedToSchedule>>
+    void SetAssociatedClusters(AssociatedClustersT&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = std::forward<AssociatedClustersT>(value); }
+    template<typename AssociatedClustersT = Aws::Vector<ClusterAssociatedToSchedule>>
+    SnapshotSchedule& WithAssociatedClusters(AssociatedClustersT&& value) { SetAssociatedClusters(std::forward<AssociatedClustersT>(value)); return *this;}
+    template<typename AssociatedClustersT = ClusterAssociatedToSchedule>
+    SnapshotSchedule& AddAssociatedClusters(AssociatedClustersT&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.emplace_back(std::forward<AssociatedClustersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline SnapshotSchedule& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline SnapshotSchedule& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    SnapshotSchedule& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
@@ -167,13 +162,14 @@ namespace Model
     Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
     bool m_nextInvocationsHasBeenSet = false;
 
-    int m_associatedClusterCount;
+    int m_associatedClusterCount{0};
     bool m_associatedClusterCountHasBeenSet = false;
 
     Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
     bool m_associatedClustersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = true;
   };
 
 } // namespace Model

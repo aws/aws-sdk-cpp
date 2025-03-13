@@ -12,10 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDirectoryLimitsRequest::GetDirectoryLimitsRequest()
-{
-}
-
 Aws::String GetDirectoryLimitsRequest::SerializePayload() const
 {
   return "{}";

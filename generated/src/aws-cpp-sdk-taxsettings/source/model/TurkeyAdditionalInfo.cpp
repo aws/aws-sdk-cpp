@@ -18,17 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TurkeyAdditionalInfo::TurkeyAdditionalInfo() : 
-    m_industries(Industries::NOT_SET),
-    m_industriesHasBeenSet(false),
-    m_kepEmailIdHasBeenSet(false),
-    m_secondaryTaxIdHasBeenSet(false),
-    m_taxOfficeHasBeenSet(false)
-{
-}
-
 TurkeyAdditionalInfo::TurkeyAdditionalInfo(JsonView jsonValue)
-  : TurkeyAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TurkeyAdditionalInfo& TurkeyAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("industries"))
   {
     m_industries = IndustriesMapper::GetIndustriesForName(jsonValue.GetString("industries"));
-
     m_industriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kepEmailId"))
   {
     m_kepEmailId = jsonValue.GetString("kepEmailId");
-
     m_kepEmailIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondaryTaxId"))
   {
     m_secondaryTaxId = jsonValue.GetString("secondaryTaxId");
-
     m_secondaryTaxIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxOffice"))
   {
     m_taxOffice = jsonValue.GetString("taxOffice");
-
     m_taxOfficeHasBeenSet = true;
   }
-
   return *this;
 }
 

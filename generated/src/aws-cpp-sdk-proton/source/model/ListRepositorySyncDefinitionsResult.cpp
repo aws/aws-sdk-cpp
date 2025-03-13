@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRepositorySyncDefinitionsResult::ListRepositorySyncDefinitionsResult()
-{
-}
-
 ListRepositorySyncDefinitionsResult::ListRepositorySyncDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRepositorySyncDefinitionsResult& ListRepositorySyncDefinitionsResult::operat
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("syncDefinitions"))
   {
     Aws::Utils::Array<JsonView> syncDefinitionsJsonList = jsonValue.GetArray("syncDefinitions");
@@ -42,14 +37,15 @@ ListRepositorySyncDefinitionsResult& ListRepositorySyncDefinitionsResult::operat
     {
       m_syncDefinitions.push_back(syncDefinitionsJsonList[syncDefinitionsIndex].AsObject());
     }
+    m_syncDefinitionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetAssociatedIpv6PoolCidrsRequest::GetAssociatedIpv6PoolCidrsRequest() : 
-    m_poolIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetAssociatedIpv6PoolCidrsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -33,7 +33,7 @@ namespace Model
   class IntentClassificationTestResults
   {
   public:
-    AWS_LEXMODELSV2_API IntentClassificationTestResults();
+    AWS_LEXMODELSV2_API IntentClassificationTestResults() = default;
     AWS_LEXMODELSV2_API IntentClassificationTestResults(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API IntentClassificationTestResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of the results for the intent classification test.</p>
      */
-    inline const Aws::Vector<IntentClassificationTestResultItem>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<IntentClassificationTestResultItem>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<IntentClassificationTestResultItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<IntentClassificationTestResultItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline IntentClassificationTestResults& WithItems(const Aws::Vector<IntentClassificationTestResultItem>& value) { SetItems(value); return *this;}
-    inline IntentClassificationTestResults& WithItems(Aws::Vector<IntentClassificationTestResultItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline IntentClassificationTestResults& AddItems(const IntentClassificationTestResultItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline IntentClassificationTestResults& AddItems(IntentClassificationTestResultItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<IntentClassificationTestResultItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<IntentClassificationTestResultItem>>
+    IntentClassificationTestResults& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = IntentClassificationTestResultItem>
+    IntentClassificationTestResults& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

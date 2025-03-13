@@ -34,7 +34,7 @@ namespace Model
   class DatabaseList
   {
   public:
-    AWS_FIREHOSE_API DatabaseList();
+    AWS_FIREHOSE_API DatabaseList() = default;
     AWS_FIREHOSE_API DatabaseList(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DatabaseList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * Firehose to read from. </p> <p>Amazon Data Firehose is in preview release and is
      * subject to change.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclude() const{ return m_include; }
+    inline const Aws::Vector<Aws::String>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Vector<Aws::String>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Vector<Aws::String>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline DatabaseList& WithInclude(const Aws::Vector<Aws::String>& value) { SetInclude(value); return *this;}
-    inline DatabaseList& WithInclude(Aws::Vector<Aws::String>&& value) { SetInclude(std::move(value)); return *this;}
-    inline DatabaseList& AddInclude(const Aws::String& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
-    inline DatabaseList& AddInclude(Aws::String&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
-    inline DatabaseList& AddInclude(const char* value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
+    template<typename IncludeT = Aws::Vector<Aws::String>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Vector<Aws::String>>
+    DatabaseList& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    template<typename IncludeT = Aws::String>
+    DatabaseList& AddInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include.emplace_back(std::forward<IncludeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,15 +62,14 @@ namespace Model
      * Firehose to read from. </p> <p>Amazon Data Firehose is in preview release and is
      * subject to change.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclude() const{ return m_exclude; }
+    inline const Aws::Vector<Aws::String>& GetExclude() const { return m_exclude; }
     inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }
-    inline void SetExclude(const Aws::Vector<Aws::String>& value) { m_excludeHasBeenSet = true; m_exclude = value; }
-    inline void SetExclude(Aws::Vector<Aws::String>&& value) { m_excludeHasBeenSet = true; m_exclude = std::move(value); }
-    inline DatabaseList& WithExclude(const Aws::Vector<Aws::String>& value) { SetExclude(value); return *this;}
-    inline DatabaseList& WithExclude(Aws::Vector<Aws::String>&& value) { SetExclude(std::move(value)); return *this;}
-    inline DatabaseList& AddExclude(const Aws::String& value) { m_excludeHasBeenSet = true; m_exclude.push_back(value); return *this; }
-    inline DatabaseList& AddExclude(Aws::String&& value) { m_excludeHasBeenSet = true; m_exclude.push_back(std::move(value)); return *this; }
-    inline DatabaseList& AddExclude(const char* value) { m_excludeHasBeenSet = true; m_exclude.push_back(value); return *this; }
+    template<typename ExcludeT = Aws::Vector<Aws::String>>
+    void SetExclude(ExcludeT&& value) { m_excludeHasBeenSet = true; m_exclude = std::forward<ExcludeT>(value); }
+    template<typename ExcludeT = Aws::Vector<Aws::String>>
+    DatabaseList& WithExclude(ExcludeT&& value) { SetExclude(std::forward<ExcludeT>(value)); return *this;}
+    template<typename ExcludeT = Aws::String>
+    DatabaseList& AddExclude(ExcludeT&& value) { m_excludeHasBeenSet = true; m_exclude.emplace_back(std::forward<ExcludeT>(value)); return *this; }
     ///@}
   private:
 

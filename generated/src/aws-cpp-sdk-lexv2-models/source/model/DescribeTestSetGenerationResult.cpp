@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTestSetGenerationResult::DescribeTestSetGenerationResult() : 
-    m_testSetGenerationStatus(TestSetGenerationStatus::NOT_SET)
-{
-}
-
 DescribeTestSetGenerationResult::DescribeTestSetGenerationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeTestSetGenerationResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DescribeTestSetGenerationResult& DescribeTestSetGenerationResult::operator =(con
   if(jsonValue.ValueExists("testSetGenerationId"))
   {
     m_testSetGenerationId = jsonValue.GetString("testSetGenerationId");
-
+    m_testSetGenerationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetGenerationStatus"))
   {
     m_testSetGenerationStatus = TestSetGenerationStatusMapper::GetTestSetGenerationStatusForName(jsonValue.GetString("testSetGenerationStatus"));
-
+    m_testSetGenerationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
@@ -50,62 +42,55 @@ DescribeTestSetGenerationResult& DescribeTestSetGenerationResult::operator =(con
     {
       m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
     }
+    m_failureReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetId"))
   {
     m_testSetId = jsonValue.GetString("testSetId");
-
+    m_testSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetName"))
   {
     m_testSetName = jsonValue.GetString("testSetName");
-
+    m_testSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageLocation"))
   {
     m_storageLocation = jsonValue.GetObject("storageLocation");
-
+    m_storageLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generationDataSource"))
   {
     m_generationDataSource = jsonValue.GetObject("generationDataSource");
-
+    m_generationDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
+    m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

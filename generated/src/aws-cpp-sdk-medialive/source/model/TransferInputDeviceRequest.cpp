@@ -12,14 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TransferInputDeviceRequest::TransferInputDeviceRequest() : 
-    m_inputDeviceIdHasBeenSet(false),
-    m_targetCustomerIdHasBeenSet(false),
-    m_targetRegionHasBeenSet(false),
-    m_transferMessageHasBeenSet(false)
-{
-}
-
 Aws::String TransferInputDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

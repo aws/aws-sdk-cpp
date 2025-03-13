@@ -18,19 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_interfaceIdHasBeenSet(false),
-    m_type(NetworkInterfaceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_canInterfaceHasBeenSet(false),
-    m_obdInterfaceHasBeenSet(false),
-    m_vehicleMiddlewareHasBeenSet(false),
-    m_customDecodingInterfaceHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interfaceId"))
   {
     m_interfaceId = jsonValue.GetString("interfaceId");
-
     m_interfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NetworkInterfaceTypeMapper::GetNetworkInterfaceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canInterface"))
   {
     m_canInterface = jsonValue.GetObject("canInterface");
-
     m_canInterfaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("obdInterface"))
   {
     m_obdInterface = jsonValue.GetObject("obdInterface");
-
     m_obdInterfaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vehicleMiddleware"))
   {
     m_vehicleMiddleware = jsonValue.GetObject("vehicleMiddleware");
-
     m_vehicleMiddlewareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDecodingInterface"))
   {
     m_customDecodingInterface = jsonValue.GetObject("customDecodingInterface");
-
     m_customDecodingInterfaceHasBeenSet = true;
   }
-
   return *this;
 }
 

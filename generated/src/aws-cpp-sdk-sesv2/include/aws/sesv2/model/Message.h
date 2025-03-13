@@ -35,7 +35,7 @@ namespace Model
   class Message
   {
   public:
-    AWS_SESV2_API Message();
+    AWS_SESV2_API Message() = default;
     AWS_SESV2_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * using encoded-word syntax, as described in <a
      * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
      */
-    inline const Content& GetSubject() const{ return m_subject; }
+    inline const Content& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Content& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Content&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline Message& WithSubject(const Content& value) { SetSubject(value); return *this;}
-    inline Message& WithSubject(Content&& value) { SetSubject(std::move(value)); return *this;}
+    template<typename SubjectT = Content>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Content>
+    Message& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,26 +61,26 @@ namespace Model
      * <p>The body of the message. You can specify an HTML version of the message, a
      * text-only version of the message, or both.</p>
      */
-    inline const Body& GetBody() const{ return m_body; }
+    inline const Body& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline Message& WithBody(const Body& value) { SetBody(value); return *this;}
-    inline Message& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
+    template<typename BodyT = Body>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Body>
+    Message& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of message headers that will be added to the email message.</p>
      */
-    inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
+    inline const Aws::Vector<MessageHeader>& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline Message& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
-    inline Message& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
-    inline Message& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
-    inline Message& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+    template<typename HeadersT = Aws::Vector<MessageHeader>>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Aws::Vector<MessageHeader>>
+    Message& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
+    template<typename HeadersT = MessageHeader>
+    Message& AddHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers.emplace_back(std::forward<HeadersT>(value)); return *this; }
     ///@}
   private:
 

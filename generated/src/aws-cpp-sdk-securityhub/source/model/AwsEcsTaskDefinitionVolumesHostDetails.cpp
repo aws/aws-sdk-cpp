@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionVolumesHostDetails::AwsEcsTaskDefinitionVolumesHostDetails() : 
-    m_sourcePathHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionVolumesHostDetails::AwsEcsTaskDefinitionVolumesHostDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionVolumesHostDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEcsTaskDefinitionVolumesHostDetails& AwsEcsTaskDefinitionVolumesHostDetails::
   if(jsonValue.ValueExists("SourcePath"))
   {
     m_sourcePath = jsonValue.GetString("SourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   return *this;
 }
 

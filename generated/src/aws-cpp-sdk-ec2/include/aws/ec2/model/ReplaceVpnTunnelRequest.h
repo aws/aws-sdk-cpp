@@ -21,7 +21,7 @@ namespace Model
   class ReplaceVpnTunnelRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ReplaceVpnTunnelRequest();
+    AWS_EC2_API ReplaceVpnTunnelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,35 +40,31 @@ namespace Model
     /**
      * <p>The ID of the Site-to-Site VPN connection. </p>
      */
-    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+    inline const Aws::String& GetVpnConnectionId() const { return m_vpnConnectionId; }
     inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
-    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
-    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
-    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
-    inline ReplaceVpnTunnelRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
-    inline ReplaceVpnTunnelRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
-    inline ReplaceVpnTunnelRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
+    template<typename VpnConnectionIdT = Aws::String>
+    void SetVpnConnectionId(VpnConnectionIdT&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::forward<VpnConnectionIdT>(value); }
+    template<typename VpnConnectionIdT = Aws::String>
+    ReplaceVpnTunnelRequest& WithVpnConnectionId(VpnConnectionIdT&& value) { SetVpnConnectionId(std::forward<VpnConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The external IP address of the VPN tunnel.</p>
      */
-    inline const Aws::String& GetVpnTunnelOutsideIpAddress() const{ return m_vpnTunnelOutsideIpAddress; }
+    inline const Aws::String& GetVpnTunnelOutsideIpAddress() const { return m_vpnTunnelOutsideIpAddress; }
     inline bool VpnTunnelOutsideIpAddressHasBeenSet() const { return m_vpnTunnelOutsideIpAddressHasBeenSet; }
-    inline void SetVpnTunnelOutsideIpAddress(const Aws::String& value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress = value; }
-    inline void SetVpnTunnelOutsideIpAddress(Aws::String&& value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress = std::move(value); }
-    inline void SetVpnTunnelOutsideIpAddress(const char* value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress.assign(value); }
-    inline ReplaceVpnTunnelRequest& WithVpnTunnelOutsideIpAddress(const Aws::String& value) { SetVpnTunnelOutsideIpAddress(value); return *this;}
-    inline ReplaceVpnTunnelRequest& WithVpnTunnelOutsideIpAddress(Aws::String&& value) { SetVpnTunnelOutsideIpAddress(std::move(value)); return *this;}
-    inline ReplaceVpnTunnelRequest& WithVpnTunnelOutsideIpAddress(const char* value) { SetVpnTunnelOutsideIpAddress(value); return *this;}
+    template<typename VpnTunnelOutsideIpAddressT = Aws::String>
+    void SetVpnTunnelOutsideIpAddress(VpnTunnelOutsideIpAddressT&& value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress = std::forward<VpnTunnelOutsideIpAddressT>(value); }
+    template<typename VpnTunnelOutsideIpAddressT = Aws::String>
+    ReplaceVpnTunnelRequest& WithVpnTunnelOutsideIpAddress(VpnTunnelOutsideIpAddressT&& value) { SetVpnTunnelOutsideIpAddress(std::forward<VpnTunnelOutsideIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Trigger pending tunnel endpoint maintenance.</p>
      */
-    inline bool GetApplyPendingMaintenance() const{ return m_applyPendingMaintenance; }
+    inline bool GetApplyPendingMaintenance() const { return m_applyPendingMaintenance; }
     inline bool ApplyPendingMaintenanceHasBeenSet() const { return m_applyPendingMaintenanceHasBeenSet; }
     inline void SetApplyPendingMaintenance(bool value) { m_applyPendingMaintenanceHasBeenSet = true; m_applyPendingMaintenance = value; }
     inline ReplaceVpnTunnelRequest& WithApplyPendingMaintenance(bool value) { SetApplyPendingMaintenance(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ReplaceVpnTunnelRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -94,10 +90,10 @@ namespace Model
     Aws::String m_vpnTunnelOutsideIpAddress;
     bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
 
-    bool m_applyPendingMaintenance;
+    bool m_applyPendingMaintenance{false};
     bool m_applyPendingMaintenanceHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

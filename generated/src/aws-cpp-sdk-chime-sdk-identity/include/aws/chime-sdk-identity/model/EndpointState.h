@@ -45,7 +45,7 @@ namespace Model
   class EndpointState
   {
   public:
-    AWS_CHIMESDKIDENTITY_API EndpointState();
+    AWS_CHIMESDKIDENTITY_API EndpointState() = default;
     AWS_CHIMESDKIDENTITY_API EndpointState(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API EndpointState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,31 +56,27 @@ namespace Model
      * <p>Enum that indicates the Status of an
      * <code>AppInstanceUserEndpoint</code>.</p>
      */
-    inline const EndpointStatus& GetStatus() const{ return m_status; }
+    inline EndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline EndpointState& WithStatus(const EndpointStatus& value) { SetStatus(value); return *this;}
-    inline EndpointState& WithStatus(EndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline EndpointState& WithStatus(EndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the <code>EndpointStatus</code>.</p>
      */
-    inline const EndpointStatusReason& GetStatusReason() const{ return m_statusReason; }
+    inline EndpointStatusReason GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const EndpointStatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(EndpointStatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline EndpointState& WithStatusReason(const EndpointStatusReason& value) { SetStatusReason(value); return *this;}
-    inline EndpointState& WithStatusReason(EndpointStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline void SetStatusReason(EndpointStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline EndpointState& WithStatusReason(EndpointStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
   private:
 
-    EndpointStatus m_status;
+    EndpointStatus m_status{EndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    EndpointStatusReason m_statusReason;
+    EndpointStatusReason m_statusReason{EndpointStatusReason::NOT_SET};
     bool m_statusReasonHasBeenSet = false;
   };
 

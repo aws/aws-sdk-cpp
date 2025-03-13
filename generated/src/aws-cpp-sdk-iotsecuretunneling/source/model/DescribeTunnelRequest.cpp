@@ -12,11 +12,6 @@ using namespace Aws::IoTSecureTunneling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTunnelRequest::DescribeTunnelRequest() : 
-    m_tunnelIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTunnelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class DescribeCustomRoutingListenerResult
   {
   public:
-    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult();
+    AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult() = default;
     AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLOBALACCELERATOR_API DescribeCustomRoutingListenerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of a listener for a custom routing accelerator.</p>
      */
-    inline const CustomRoutingListener& GetListener() const{ return m_listener; }
-    inline void SetListener(const CustomRoutingListener& value) { m_listener = value; }
-    inline void SetListener(CustomRoutingListener&& value) { m_listener = std::move(value); }
-    inline DescribeCustomRoutingListenerResult& WithListener(const CustomRoutingListener& value) { SetListener(value); return *this;}
-    inline DescribeCustomRoutingListenerResult& WithListener(CustomRoutingListener&& value) { SetListener(std::move(value)); return *this;}
+    inline const CustomRoutingListener& GetListener() const { return m_listener; }
+    template<typename ListenerT = CustomRoutingListener>
+    void SetListener(ListenerT&& value) { m_listenerHasBeenSet = true; m_listener = std::forward<ListenerT>(value); }
+    template<typename ListenerT = CustomRoutingListener>
+    DescribeCustomRoutingListenerResult& WithListener(ListenerT&& value) { SetListener(std::forward<ListenerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCustomRoutingListenerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCustomRoutingListenerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCustomRoutingListenerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCustomRoutingListenerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CustomRoutingListener m_listener;
+    bool m_listenerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

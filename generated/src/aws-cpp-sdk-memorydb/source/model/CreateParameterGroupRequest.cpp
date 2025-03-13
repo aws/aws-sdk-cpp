@@ -12,14 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateParameterGroupRequest::CreateParameterGroupRequest() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateParameterGroupRequest::SerializePayload() const
 {
   JsonValue payload;

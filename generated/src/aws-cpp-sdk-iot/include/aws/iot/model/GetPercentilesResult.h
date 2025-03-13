@@ -29,7 +29,7 @@ namespace Model
   class GetPercentilesResult
   {
   public:
-    AWS_IOT_API GetPercentilesResult();
+    AWS_IOT_API GetPercentilesResult() = default;
     AWS_IOT_API GetPercentilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetPercentilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The percentile values of the aggregated fields.</p>
      */
-    inline const Aws::Vector<PercentPair>& GetPercentiles() const{ return m_percentiles; }
-    inline void SetPercentiles(const Aws::Vector<PercentPair>& value) { m_percentiles = value; }
-    inline void SetPercentiles(Aws::Vector<PercentPair>&& value) { m_percentiles = std::move(value); }
-    inline GetPercentilesResult& WithPercentiles(const Aws::Vector<PercentPair>& value) { SetPercentiles(value); return *this;}
-    inline GetPercentilesResult& WithPercentiles(Aws::Vector<PercentPair>&& value) { SetPercentiles(std::move(value)); return *this;}
-    inline GetPercentilesResult& AddPercentiles(const PercentPair& value) { m_percentiles.push_back(value); return *this; }
-    inline GetPercentilesResult& AddPercentiles(PercentPair&& value) { m_percentiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PercentPair>& GetPercentiles() const { return m_percentiles; }
+    template<typename PercentilesT = Aws::Vector<PercentPair>>
+    void SetPercentiles(PercentilesT&& value) { m_percentilesHasBeenSet = true; m_percentiles = std::forward<PercentilesT>(value); }
+    template<typename PercentilesT = Aws::Vector<PercentPair>>
+    GetPercentilesResult& WithPercentiles(PercentilesT&& value) { SetPercentiles(std::forward<PercentilesT>(value)); return *this;}
+    template<typename PercentilesT = PercentPair>
+    GetPercentilesResult& AddPercentiles(PercentilesT&& value) { m_percentilesHasBeenSet = true; m_percentiles.emplace_back(std::forward<PercentilesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPercentilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPercentilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPercentilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPercentilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PercentPair> m_percentiles;
+    bool m_percentilesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContainerLogRequest::GetContainerLogRequest() : 
-    m_serviceNameHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetContainerLogRequest::SerializePayload() const
 {
   JsonValue payload;

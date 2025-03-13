@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMetricAttributionRequest::DescribeMetricAttributionRequest() : 
-    m_metricAttributionArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMetricAttributionRequest::SerializePayload() const
 {
   JsonValue payload;

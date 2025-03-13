@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-TimestreamConfig::TimestreamConfig() : 
-    m_timestreamTableArnHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false)
-{
-}
-
 TimestreamConfig::TimestreamConfig(JsonView jsonValue)
-  : TimestreamConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestreamConfig& TimestreamConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timestreamTableArn"))
   {
     m_timestreamTableArn = jsonValue.GetString("timestreamTableArn");
-
     m_timestreamTableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

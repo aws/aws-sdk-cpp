@@ -19,19 +19,7 @@ namespace SecretsManager
 namespace Model
 {
 
-SecretValueEntry::SecretValueEntry() : 
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_secretBinaryHasBeenSet(false),
-    m_secretStringHasBeenSet(false),
-    m_versionStagesHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
-{
-}
-
 SecretValueEntry::SecretValueEntry(JsonView jsonValue)
-  : SecretValueEntry()
 {
   *this = jsonValue;
 }
@@ -41,37 +29,28 @@ SecretValueEntry& SecretValueEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretBinary"))
   {
     m_secretBinary = HashingUtils::Base64Decode(jsonValue.GetString("SecretBinary"));
     m_secretBinaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretString"))
   {
     m_secretString = jsonValue.GetString("SecretString");
-
     m_secretStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionStages"))
   {
     Aws::Utils::Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
@@ -81,14 +60,11 @@ SecretValueEntry& SecretValueEntry::operator =(JsonView jsonValue)
     }
     m_versionStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   return *this;
 }
 

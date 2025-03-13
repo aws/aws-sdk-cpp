@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVirtualServicesRequest::ListVirtualServicesRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListVirtualServicesRequest::SerializePayload() const
 {
   return {};

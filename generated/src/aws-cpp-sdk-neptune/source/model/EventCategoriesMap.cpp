@@ -20,14 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-EventCategoriesMap::EventCategoriesMap() : 
-    m_sourceTypeHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false)
-{
-}
-
 EventCategoriesMap::EventCategoriesMap(const XmlNode& xmlNode)
-  : EventCategoriesMap()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ EventCategoriesMap& EventCategoriesMap::operator =(const XmlNode& xmlNode)
     {
       m_sourceType = Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText());
       m_sourceTypeHasBeenSet = true;
+       m_sourceTypeHasBeenSet = true;
     }
     XmlNode eventCategoriesNode = resultNode.FirstChild("EventCategories");
     if(!eventCategoriesNode.IsNull())
     {
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      m_eventCategoriesHasBeenSet = !eventCategoriesMember.IsNull();
       while(!eventCategoriesMember.IsNull())
       {
         m_eventCategories.push_back(eventCategoriesMember.GetText());
         eventCategoriesMember = eventCategoriesMember.NextNode("EventCategory");
       }
 
-      m_eventCategoriesHasBeenSet = true;
+       m_eventCategoriesHasBeenSet = true;
     }
   }
 

@@ -18,17 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ArrayPropertiesDetail::ArrayPropertiesDetail() : 
-    m_statusSummaryHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_index(0),
-    m_indexHasBeenSet(false)
-{
-}
-
 ArrayPropertiesDetail::ArrayPropertiesDetail(JsonView jsonValue)
-  : ArrayPropertiesDetail()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ ArrayPropertiesDetail& ArrayPropertiesDetail::operator =(JsonView jsonValue)
     }
     m_statusSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = jsonValue.GetInteger("size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetInteger("index");
-
     m_indexHasBeenSet = true;
   }
-
   return *this;
 }
 

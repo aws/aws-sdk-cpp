@@ -12,13 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PredictRequest::PredictRequest() : 
-    m_mLModelIdHasBeenSet(false),
-    m_recordHasBeenSet(false),
-    m_predictEndpointHasBeenSet(false)
-{
-}
-
 Aws::String PredictRequest::SerializePayload() const
 {
   JsonValue payload;

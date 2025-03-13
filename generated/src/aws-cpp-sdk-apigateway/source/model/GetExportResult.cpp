@@ -16,33 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetExportResult::GetExportResult()
-{
-}
-
-GetExportResult::GetExportResult(GetExportResult&& toMove) : 
-    m_contentType(std::move(toMove.m_contentType)),
-    m_contentDisposition(std::move(toMove.m_contentDisposition)),
-    m_body(std::move(toMove.m_body)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetExportResult& GetExportResult::operator=(GetExportResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_contentType = std::move(toMove.m_contentType);
-   m_contentDisposition = std::move(toMove.m_contentDisposition);
-   m_body = std::move(toMove.m_body);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetExportResult::GetExportResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -51,24 +24,28 @@ GetExportResult::GetExportResult(Aws::AmazonWebServiceResult<ResponseStream>&& r
 GetExportResult& GetExportResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_body = result.TakeOwnershipOfPayload();
+  m_bodyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& contentDispositionIter = headers.find("content-disposition");
   if(contentDispositionIter != headers.end())
   {
     m_contentDisposition = contentDispositionIter->second;
+    m_contentDispositionHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

@@ -18,20 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-DiscovererSummary::DiscovererSummary() : 
-    m_discovererArnHasBeenSet(false),
-    m_discovererIdHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_state(DiscovererState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_crossAccount(false),
-    m_crossAccountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DiscovererSummary::DiscovererSummary(JsonView jsonValue)
-  : DiscovererSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DiscovererSummary& DiscovererSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DiscovererArn"))
   {
     m_discovererArn = jsonValue.GetString("DiscovererArn");
-
     m_discovererArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiscovererId"))
   {
     m_discovererId = jsonValue.GetString("DiscovererId");
-
     m_discovererIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = DiscovererStateMapper::GetDiscovererStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossAccount"))
   {
     m_crossAccount = jsonValue.GetBool("CrossAccount");
-
     m_crossAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -82,7 +59,6 @@ DiscovererSummary& DiscovererSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

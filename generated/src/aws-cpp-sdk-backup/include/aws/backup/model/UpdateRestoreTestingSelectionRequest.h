@@ -22,7 +22,7 @@ namespace Model
   class UpdateRestoreTestingSelectionRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API UpdateRestoreTestingSelectionRequest();
+    AWS_BACKUP_API UpdateRestoreTestingSelectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The restore testing plan name is required to update the indicated testing
      * plan.</p>
      */
-    inline const Aws::String& GetRestoreTestingPlanName() const{ return m_restoreTestingPlanName; }
+    inline const Aws::String& GetRestoreTestingPlanName() const { return m_restoreTestingPlanName; }
     inline bool RestoreTestingPlanNameHasBeenSet() const { return m_restoreTestingPlanNameHasBeenSet; }
-    inline void SetRestoreTestingPlanName(const Aws::String& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = value; }
-    inline void SetRestoreTestingPlanName(Aws::String&& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = std::move(value); }
-    inline void SetRestoreTestingPlanName(const char* value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName.assign(value); }
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingPlanName(const Aws::String& value) { SetRestoreTestingPlanName(value); return *this;}
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingPlanName(Aws::String&& value) { SetRestoreTestingPlanName(std::move(value)); return *this;}
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingPlanName(const char* value) { SetRestoreTestingPlanName(value); return *this;}
+    template<typename RestoreTestingPlanNameT = Aws::String>
+    void SetRestoreTestingPlanName(RestoreTestingPlanNameT&& value) { m_restoreTestingPlanNameHasBeenSet = true; m_restoreTestingPlanName = std::forward<RestoreTestingPlanNameT>(value); }
+    template<typename RestoreTestingPlanNameT = Aws::String>
+    UpdateRestoreTestingSelectionRequest& WithRestoreTestingPlanName(RestoreTestingPlanNameT&& value) { SetRestoreTestingPlanName(std::forward<RestoreTestingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <code>ProtectedResourceArns</code>, requesting an update with the parameter
      * <code>ProtectedResourceConditions</code> will be unsuccessful.</p>
      */
-    inline const RestoreTestingSelectionForUpdate& GetRestoreTestingSelection() const{ return m_restoreTestingSelection; }
+    inline const RestoreTestingSelectionForUpdate& GetRestoreTestingSelection() const { return m_restoreTestingSelection; }
     inline bool RestoreTestingSelectionHasBeenSet() const { return m_restoreTestingSelectionHasBeenSet; }
-    inline void SetRestoreTestingSelection(const RestoreTestingSelectionForUpdate& value) { m_restoreTestingSelectionHasBeenSet = true; m_restoreTestingSelection = value; }
-    inline void SetRestoreTestingSelection(RestoreTestingSelectionForUpdate&& value) { m_restoreTestingSelectionHasBeenSet = true; m_restoreTestingSelection = std::move(value); }
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelection(const RestoreTestingSelectionForUpdate& value) { SetRestoreTestingSelection(value); return *this;}
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelection(RestoreTestingSelectionForUpdate&& value) { SetRestoreTestingSelection(std::move(value)); return *this;}
+    template<typename RestoreTestingSelectionT = RestoreTestingSelectionForUpdate>
+    void SetRestoreTestingSelection(RestoreTestingSelectionT&& value) { m_restoreTestingSelectionHasBeenSet = true; m_restoreTestingSelection = std::forward<RestoreTestingSelectionT>(value); }
+    template<typename RestoreTestingSelectionT = RestoreTestingSelectionForUpdate>
+    UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelection(RestoreTestingSelectionT&& value) { SetRestoreTestingSelection(std::forward<RestoreTestingSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p>The required restore testing selection name of the restore testing selection
      * you wish to update.</p>
      */
-    inline const Aws::String& GetRestoreTestingSelectionName() const{ return m_restoreTestingSelectionName; }
+    inline const Aws::String& GetRestoreTestingSelectionName() const { return m_restoreTestingSelectionName; }
     inline bool RestoreTestingSelectionNameHasBeenSet() const { return m_restoreTestingSelectionNameHasBeenSet; }
-    inline void SetRestoreTestingSelectionName(const Aws::String& value) { m_restoreTestingSelectionNameHasBeenSet = true; m_restoreTestingSelectionName = value; }
-    inline void SetRestoreTestingSelectionName(Aws::String&& value) { m_restoreTestingSelectionNameHasBeenSet = true; m_restoreTestingSelectionName = std::move(value); }
-    inline void SetRestoreTestingSelectionName(const char* value) { m_restoreTestingSelectionNameHasBeenSet = true; m_restoreTestingSelectionName.assign(value); }
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelectionName(const Aws::String& value) { SetRestoreTestingSelectionName(value); return *this;}
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelectionName(Aws::String&& value) { SetRestoreTestingSelectionName(std::move(value)); return *this;}
-    inline UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelectionName(const char* value) { SetRestoreTestingSelectionName(value); return *this;}
+    template<typename RestoreTestingSelectionNameT = Aws::String>
+    void SetRestoreTestingSelectionName(RestoreTestingSelectionNameT&& value) { m_restoreTestingSelectionNameHasBeenSet = true; m_restoreTestingSelectionName = std::forward<RestoreTestingSelectionNameT>(value); }
+    template<typename RestoreTestingSelectionNameT = Aws::String>
+    UpdateRestoreTestingSelectionRequest& WithRestoreTestingSelectionName(RestoreTestingSelectionNameT&& value) { SetRestoreTestingSelectionName(std::forward<RestoreTestingSelectionNameT>(value)); return *this;}
     ///@}
   private:
 

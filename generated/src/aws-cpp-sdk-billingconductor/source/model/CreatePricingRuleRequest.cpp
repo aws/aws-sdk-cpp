@@ -13,26 +13,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePricingRuleRequest::CreatePricingRuleRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scope(PricingRuleScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_type(PricingRuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_modifierPercentage(0.0),
-    m_modifierPercentageHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_billingEntityHasBeenSet(false),
-    m_tieringHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_operationHasBeenSet(false)
-{
-}
-
 Aws::String CreatePricingRuleRequest::SerializePayload() const
 {
   JsonValue payload;

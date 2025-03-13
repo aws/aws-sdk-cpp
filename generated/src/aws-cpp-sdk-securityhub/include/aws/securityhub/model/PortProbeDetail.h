@@ -36,7 +36,7 @@ namespace Model
   class PortProbeDetail
   {
   public:
-    AWS_SECURITYHUB_API PortProbeDetail();
+    AWS_SECURITYHUB_API PortProbeDetail() = default;
     AWS_SECURITYHUB_API PortProbeDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API PortProbeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>Provides information about the port that was scanned.</p>
      */
-    inline const ActionLocalPortDetails& GetLocalPortDetails() const{ return m_localPortDetails; }
+    inline const ActionLocalPortDetails& GetLocalPortDetails() const { return m_localPortDetails; }
     inline bool LocalPortDetailsHasBeenSet() const { return m_localPortDetailsHasBeenSet; }
-    inline void SetLocalPortDetails(const ActionLocalPortDetails& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = value; }
-    inline void SetLocalPortDetails(ActionLocalPortDetails&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::move(value); }
-    inline PortProbeDetail& WithLocalPortDetails(const ActionLocalPortDetails& value) { SetLocalPortDetails(value); return *this;}
-    inline PortProbeDetail& WithLocalPortDetails(ActionLocalPortDetails&& value) { SetLocalPortDetails(std::move(value)); return *this;}
+    template<typename LocalPortDetailsT = ActionLocalPortDetails>
+    void SetLocalPortDetails(LocalPortDetailsT&& value) { m_localPortDetailsHasBeenSet = true; m_localPortDetails = std::forward<LocalPortDetailsT>(value); }
+    template<typename LocalPortDetailsT = ActionLocalPortDetails>
+    PortProbeDetail& WithLocalPortDetails(LocalPortDetailsT&& value) { SetLocalPortDetails(std::forward<LocalPortDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,24 +59,24 @@ namespace Model
      * <p>Provides information about the IP address where the scanned port is
      * located.</p>
      */
-    inline const ActionLocalIpDetails& GetLocalIpDetails() const{ return m_localIpDetails; }
+    inline const ActionLocalIpDetails& GetLocalIpDetails() const { return m_localIpDetails; }
     inline bool LocalIpDetailsHasBeenSet() const { return m_localIpDetailsHasBeenSet; }
-    inline void SetLocalIpDetails(const ActionLocalIpDetails& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = value; }
-    inline void SetLocalIpDetails(ActionLocalIpDetails&& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = std::move(value); }
-    inline PortProbeDetail& WithLocalIpDetails(const ActionLocalIpDetails& value) { SetLocalIpDetails(value); return *this;}
-    inline PortProbeDetail& WithLocalIpDetails(ActionLocalIpDetails&& value) { SetLocalIpDetails(std::move(value)); return *this;}
+    template<typename LocalIpDetailsT = ActionLocalIpDetails>
+    void SetLocalIpDetails(LocalIpDetailsT&& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = std::forward<LocalIpDetailsT>(value); }
+    template<typename LocalIpDetailsT = ActionLocalIpDetails>
+    PortProbeDetail& WithLocalIpDetails(LocalIpDetailsT&& value) { SetLocalIpDetails(std::forward<LocalIpDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information about the remote IP address that performed the scan.</p>
      */
-    inline const ActionRemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
+    inline const ActionRemoteIpDetails& GetRemoteIpDetails() const { return m_remoteIpDetails; }
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
-    inline void SetRemoteIpDetails(const ActionRemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
-    inline void SetRemoteIpDetails(ActionRemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
-    inline PortProbeDetail& WithRemoteIpDetails(const ActionRemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
-    inline PortProbeDetail& WithRemoteIpDetails(ActionRemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
+    template<typename RemoteIpDetailsT = ActionRemoteIpDetails>
+    void SetRemoteIpDetails(RemoteIpDetailsT&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::forward<RemoteIpDetailsT>(value); }
+    template<typename RemoteIpDetailsT = ActionRemoteIpDetails>
+    PortProbeDetail& WithRemoteIpDetails(RemoteIpDetailsT&& value) { SetRemoteIpDetails(std::forward<RemoteIpDetailsT>(value)); return *this;}
     ///@}
   private:
 

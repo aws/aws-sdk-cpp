@@ -20,15 +20,7 @@ namespace SES
 namespace Model
 {
 
-MessageDsn::MessageDsn() : 
-    m_reportingMtaHasBeenSet(false),
-    m_arrivalDateHasBeenSet(false),
-    m_extensionFieldsHasBeenSet(false)
-{
-}
-
 MessageDsn::MessageDsn(const XmlNode& xmlNode)
-  : MessageDsn()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ MessageDsn& MessageDsn::operator =(const XmlNode& xmlNode)
     {
       m_reportingMta = Aws::Utils::Xml::DecodeEscapedXmlText(reportingMtaNode.GetText());
       m_reportingMtaHasBeenSet = true;
+       m_reportingMtaHasBeenSet = true;
     }
     XmlNode arrivalDateNode = resultNode.FirstChild("ArrivalDate");
     if(!arrivalDateNode.IsNull())
     {
       m_arrivalDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(arrivalDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_arrivalDateHasBeenSet = true;
+       m_arrivalDateHasBeenSet = true;
     }
     XmlNode extensionFieldsNode = resultNode.FirstChild("ExtensionFields");
     if(!extensionFieldsNode.IsNull())
     {
       XmlNode extensionFieldsMember = extensionFieldsNode.FirstChild("member");
+      m_extensionFieldsHasBeenSet = !extensionFieldsMember.IsNull();
       while(!extensionFieldsMember.IsNull())
       {
         m_extensionFields.push_back(extensionFieldsMember);
         extensionFieldsMember = extensionFieldsMember.NextNode("member");
       }
 
-      m_extensionFieldsHasBeenSet = true;
+       m_extensionFieldsHasBeenSet = true;
     }
   }
 

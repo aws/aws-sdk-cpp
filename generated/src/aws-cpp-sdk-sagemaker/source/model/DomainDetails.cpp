@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DomainDetails::DomainDetails() : 
-    m_domainArnHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_status(DomainStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 DomainDetails::DomainDetails(JsonView jsonValue)
-  : DomainDetails()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ DomainDetails& DomainDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainArn"))
   {
     m_domainArn = jsonValue.GetString("DomainArn");
-
     m_domainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainId"))
   {
     m_domainId = jsonValue.GetString("DomainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

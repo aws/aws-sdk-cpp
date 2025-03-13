@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateSubnetCidrReservationRequest::CreateSubnetCidrReservationRequest() : 
-    m_subnetIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_reservationType(SubnetCidrReservationType::NOT_SET),
-    m_reservationTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubnetCidrReservationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

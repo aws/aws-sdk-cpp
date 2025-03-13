@@ -21,7 +21,7 @@ namespace Model
   class CreateSecurityConfigurationRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API CreateSecurityConfigurationRequest();
+    AWS_EMR_API CreateSecurityConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the security configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSecurityConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSecurityConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSecurityConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSecurityConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR
      * Management Guide</i>.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
-    inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline CreateSecurityConfigurationRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    CreateSecurityConfigurationRequest& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
   private:
 

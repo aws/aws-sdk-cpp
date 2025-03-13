@@ -33,7 +33,7 @@ namespace Model
   class EncryptionConfigurationForRepositoryCreationTemplate
   {
   public:
-    AWS_ECR_API EncryptionConfigurationForRepositoryCreationTemplate();
+    AWS_ECR_API EncryptionConfigurationForRepositoryCreationTemplate() = default;
     AWS_ECR_API EncryptionConfigurationForRepositoryCreationTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API EncryptionConfigurationForRepositoryCreationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer
      * Guide</i>.</p>
      */
-    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+    inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
     inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
-    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
-    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
-    inline EncryptionConfigurationForRepositoryCreationTemplate& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline EncryptionConfigurationForRepositoryCreationTemplate& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline void SetEncryptionType(EncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline EncryptionConfigurationForRepositoryCreationTemplate& WithEncryptionType(EncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,18 +72,16 @@ namespace Model
      * exist in the same Region as the repository. If no key is specified, the default
      * Amazon Web Services managed KMS key for Amazon ECR will be used.</p>
      */
-    inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
+    inline const Aws::String& GetKmsKey() const { return m_kmsKey; }
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
-    inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
-    inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
-    inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
-    inline EncryptionConfigurationForRepositoryCreationTemplate& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
-    inline EncryptionConfigurationForRepositoryCreationTemplate& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
-    inline EncryptionConfigurationForRepositoryCreationTemplate& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
+    template<typename KmsKeyT = Aws::String>
+    void SetKmsKey(KmsKeyT&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::forward<KmsKeyT>(value); }
+    template<typename KmsKeyT = Aws::String>
+    EncryptionConfigurationForRepositoryCreationTemplate& WithKmsKey(KmsKeyT&& value) { SetKmsKey(std::forward<KmsKeyT>(value)); return *this;}
     ///@}
   private:
 
-    EncryptionType m_encryptionType;
+    EncryptionType m_encryptionType{EncryptionType::NOT_SET};
     bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_kmsKey;

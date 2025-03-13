@@ -33,7 +33,7 @@ namespace Model
   class FindingAggregator
   {
   public:
-    AWS_SECURITYHUB_API FindingAggregator();
+    AWS_SECURITYHUB_API FindingAggregator() = default;
     AWS_SECURITYHUB_API FindingAggregator(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API FindingAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The ARN of the finding aggregator. You use the finding aggregator ARN to
      * retrieve details for, update, and delete the finding aggregator.</p>
      */
-    inline const Aws::String& GetFindingAggregatorArn() const{ return m_findingAggregatorArn; }
+    inline const Aws::String& GetFindingAggregatorArn() const { return m_findingAggregatorArn; }
     inline bool FindingAggregatorArnHasBeenSet() const { return m_findingAggregatorArnHasBeenSet; }
-    inline void SetFindingAggregatorArn(const Aws::String& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = value; }
-    inline void SetFindingAggregatorArn(Aws::String&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::move(value); }
-    inline void SetFindingAggregatorArn(const char* value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn.assign(value); }
-    inline FindingAggregator& WithFindingAggregatorArn(const Aws::String& value) { SetFindingAggregatorArn(value); return *this;}
-    inline FindingAggregator& WithFindingAggregatorArn(Aws::String&& value) { SetFindingAggregatorArn(std::move(value)); return *this;}
-    inline FindingAggregator& WithFindingAggregatorArn(const char* value) { SetFindingAggregatorArn(value); return *this;}
+    template<typename FindingAggregatorArnT = Aws::String>
+    void SetFindingAggregatorArn(FindingAggregatorArnT&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::forward<FindingAggregatorArnT>(value); }
+    template<typename FindingAggregatorArnT = Aws::String>
+    FindingAggregator& WithFindingAggregatorArn(FindingAggregatorArnT&& value) { SetFindingAggregatorArn(std::forward<FindingAggregatorArnT>(value)); return *this;}
     ///@}
   private:
 

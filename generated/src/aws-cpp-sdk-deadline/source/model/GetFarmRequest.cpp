@@ -12,11 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFarmRequest::GetFarmRequest() : 
-    m_farmIdHasBeenSet(false)
-{
-}
-
 Aws::String GetFarmRequest::SerializePayload() const
 {
   return {};

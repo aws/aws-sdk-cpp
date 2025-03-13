@@ -28,7 +28,7 @@ namespace Model
   class SetIdentityFeedbackForwardingEnabledRequest : public SESRequest
   {
   public:
-    AWS_SES_API SetIdentityFeedbackForwardingEnabledRequest();
+    AWS_SES_API SetIdentityFeedbackForwardingEnabledRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <p>The identity for which to set bounce and complaint notification forwarding.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    SetIdentityFeedbackForwardingEnabledRequest& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * <code>false</code> when Amazon SNS topics are set for both <code>Bounce</code>
      * and <code>Complaint</code> notification types.</p>
      */
-    inline bool GetForwardingEnabled() const{ return m_forwardingEnabled; }
+    inline bool GetForwardingEnabled() const { return m_forwardingEnabled; }
     inline bool ForwardingEnabledHasBeenSet() const { return m_forwardingEnabledHasBeenSet; }
     inline void SetForwardingEnabled(bool value) { m_forwardingEnabledHasBeenSet = true; m_forwardingEnabled = value; }
     inline SetIdentityFeedbackForwardingEnabledRequest& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
     Aws::String m_identity;
     bool m_identityHasBeenSet = false;
 
-    bool m_forwardingEnabled;
+    bool m_forwardingEnabled{false};
     bool m_forwardingEnabledHasBeenSet = false;
   };
 

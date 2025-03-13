@@ -12,15 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDiscovererRequest::CreateDiscovererRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_crossAccount(false),
-    m_crossAccountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDiscovererRequest::SerializePayload() const
 {
   JsonValue payload;

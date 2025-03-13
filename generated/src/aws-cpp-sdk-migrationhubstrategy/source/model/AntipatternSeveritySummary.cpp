@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AntipatternSeveritySummary::AntipatternSeveritySummary() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_severity(Severity::NOT_SET),
-    m_severityHasBeenSet(false)
-{
-}
-
 AntipatternSeveritySummary::AntipatternSeveritySummary(JsonView jsonValue)
-  : AntipatternSeveritySummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AntipatternSeveritySummary& AntipatternSeveritySummary::operator =(JsonView json
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severity"))
   {
     m_severity = SeverityMapper::GetSeverityForName(jsonValue.GetString("severity"));
-
     m_severityHasBeenSet = true;
   }
-
   return *this;
 }
 

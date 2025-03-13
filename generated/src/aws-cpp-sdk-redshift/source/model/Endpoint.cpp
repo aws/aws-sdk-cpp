@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_addressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcEndpointsHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(const XmlNode& xmlNode)
-  : Endpoint()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,27 @@ Endpoint& Endpoint::operator =(const XmlNode& xmlNode)
     {
       m_address = Aws::Utils::Xml::DecodeEscapedXmlText(addressNode.GetText());
       m_addressHasBeenSet = true;
+       m_addressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode vpcEndpointsNode = resultNode.FirstChild("VpcEndpoints");
     if(!vpcEndpointsNode.IsNull())
     {
       XmlNode vpcEndpointsMember = vpcEndpointsNode.FirstChild("VpcEndpoint");
+      m_vpcEndpointsHasBeenSet = !vpcEndpointsMember.IsNull();
       while(!vpcEndpointsMember.IsNull())
       {
         m_vpcEndpoints.push_back(vpcEndpointsMember);
         vpcEndpointsMember = vpcEndpointsMember.NextNode("VpcEndpoint");
       }
 
-      m_vpcEndpointsHasBeenSet = true;
+       m_vpcEndpointsHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-DynamoDBv2Action::DynamoDBv2Action() : 
-    m_tableNameHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue)
-  : DynamoDBv2Action()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DynamoDBv2Action& DynamoDBv2Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
     m_payloadHasBeenSet = true;
   }
-
   return *this;
 }
 

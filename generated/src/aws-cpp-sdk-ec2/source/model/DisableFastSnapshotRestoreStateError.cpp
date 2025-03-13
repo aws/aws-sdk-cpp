@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DisableFastSnapshotRestoreStateError::DisableFastSnapshotRestoreStateError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DisableFastSnapshotRestoreStateError::DisableFastSnapshotRestoreStateError(const XmlNode& xmlNode)
-  : DisableFastSnapshotRestoreStateError()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DisableFastSnapshotRestoreStateError& DisableFastSnapshotRestoreStateError::oper
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

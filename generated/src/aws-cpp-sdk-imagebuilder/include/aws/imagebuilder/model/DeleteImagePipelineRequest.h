@@ -25,7 +25,7 @@ namespace Model
   class DeleteImagePipelineRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API DeleteImagePipelineRequest();
+    AWS_IMAGEBUILDER_API DeleteImagePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
      */
-    inline const Aws::String& GetImagePipelineArn() const{ return m_imagePipelineArn; }
+    inline const Aws::String& GetImagePipelineArn() const { return m_imagePipelineArn; }
     inline bool ImagePipelineArnHasBeenSet() const { return m_imagePipelineArnHasBeenSet; }
-    inline void SetImagePipelineArn(const Aws::String& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = value; }
-    inline void SetImagePipelineArn(Aws::String&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::move(value); }
-    inline void SetImagePipelineArn(const char* value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn.assign(value); }
-    inline DeleteImagePipelineRequest& WithImagePipelineArn(const Aws::String& value) { SetImagePipelineArn(value); return *this;}
-    inline DeleteImagePipelineRequest& WithImagePipelineArn(Aws::String&& value) { SetImagePipelineArn(std::move(value)); return *this;}
-    inline DeleteImagePipelineRequest& WithImagePipelineArn(const char* value) { SetImagePipelineArn(value); return *this;}
+    template<typename ImagePipelineArnT = Aws::String>
+    void SetImagePipelineArn(ImagePipelineArnT&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::forward<ImagePipelineArnT>(value); }
+    template<typename ImagePipelineArnT = Aws::String>
+    DeleteImagePipelineRequest& WithImagePipelineArn(ImagePipelineArnT&& value) { SetImagePipelineArn(std::forward<ImagePipelineArnT>(value)); return *this;}
     ///@}
   private:
 

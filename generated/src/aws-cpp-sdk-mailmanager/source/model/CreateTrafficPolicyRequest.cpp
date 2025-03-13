@@ -12,19 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrafficPolicyRequest::CreateTrafficPolicyRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_defaultAction(AcceptAction::NOT_SET),
-    m_defaultActionHasBeenSet(false),
-    m_maxMessageSizeBytes(0),
-    m_maxMessageSizeBytesHasBeenSet(false),
-    m_policyStatementsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_trafficPolicyNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrafficPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

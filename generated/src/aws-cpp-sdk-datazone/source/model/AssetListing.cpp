@@ -18,20 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetListing::AssetListing() : 
-    m_assetIdHasBeenSet(false),
-    m_assetRevisionHasBeenSet(false),
-    m_assetTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_formsHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_latestTimeSeriesDataPointFormsHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false)
-{
-}
-
 AssetListing::AssetListing(JsonView jsonValue)
-  : AssetListing()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AssetListing& AssetListing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetRevision"))
   {
     m_assetRevision = jsonValue.GetString("assetRevision");
-
     m_assetRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetType"))
   {
     m_assetType = jsonValue.GetString("assetType");
-
     m_assetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forms"))
   {
     m_forms = jsonValue.GetString("forms");
-
     m_formsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -82,7 +59,6 @@ AssetListing& AssetListing::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestTimeSeriesDataPointForms"))
   {
     Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsJsonList = jsonValue.GetArray("latestTimeSeriesDataPointForms");
@@ -92,14 +68,11 @@ AssetListing& AssetListing::operator =(JsonView jsonValue)
     }
     m_latestTimeSeriesDataPointFormsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
     m_owningProjectIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class LinkConfiguration
   {
   public:
-    AWS_OAM_API LinkConfiguration();
+    AWS_OAM_API LinkConfiguration() = default;
     AWS_OAM_API LinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API LinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Use this structure to filter which log groups are to send log events from the
      * source account to the monitoring account.</p>
      */
-    inline const LogGroupConfiguration& GetLogGroupConfiguration() const{ return m_logGroupConfiguration; }
+    inline const LogGroupConfiguration& GetLogGroupConfiguration() const { return m_logGroupConfiguration; }
     inline bool LogGroupConfigurationHasBeenSet() const { return m_logGroupConfigurationHasBeenSet; }
-    inline void SetLogGroupConfiguration(const LogGroupConfiguration& value) { m_logGroupConfigurationHasBeenSet = true; m_logGroupConfiguration = value; }
-    inline void SetLogGroupConfiguration(LogGroupConfiguration&& value) { m_logGroupConfigurationHasBeenSet = true; m_logGroupConfiguration = std::move(value); }
-    inline LinkConfiguration& WithLogGroupConfiguration(const LogGroupConfiguration& value) { SetLogGroupConfiguration(value); return *this;}
-    inline LinkConfiguration& WithLogGroupConfiguration(LogGroupConfiguration&& value) { SetLogGroupConfiguration(std::move(value)); return *this;}
+    template<typename LogGroupConfigurationT = LogGroupConfiguration>
+    void SetLogGroupConfiguration(LogGroupConfigurationT&& value) { m_logGroupConfigurationHasBeenSet = true; m_logGroupConfiguration = std::forward<LogGroupConfigurationT>(value); }
+    template<typename LogGroupConfigurationT = LogGroupConfiguration>
+    LinkConfiguration& WithLogGroupConfiguration(LogGroupConfigurationT&& value) { SetLogGroupConfiguration(std::forward<LogGroupConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>Use this structure to filter which metric namespaces are to be shared from
      * the source account to the monitoring account.</p>
      */
-    inline const MetricConfiguration& GetMetricConfiguration() const{ return m_metricConfiguration; }
+    inline const MetricConfiguration& GetMetricConfiguration() const { return m_metricConfiguration; }
     inline bool MetricConfigurationHasBeenSet() const { return m_metricConfigurationHasBeenSet; }
-    inline void SetMetricConfiguration(const MetricConfiguration& value) { m_metricConfigurationHasBeenSet = true; m_metricConfiguration = value; }
-    inline void SetMetricConfiguration(MetricConfiguration&& value) { m_metricConfigurationHasBeenSet = true; m_metricConfiguration = std::move(value); }
-    inline LinkConfiguration& WithMetricConfiguration(const MetricConfiguration& value) { SetMetricConfiguration(value); return *this;}
-    inline LinkConfiguration& WithMetricConfiguration(MetricConfiguration&& value) { SetMetricConfiguration(std::move(value)); return *this;}
+    template<typename MetricConfigurationT = MetricConfiguration>
+    void SetMetricConfiguration(MetricConfigurationT&& value) { m_metricConfigurationHasBeenSet = true; m_metricConfiguration = std::forward<MetricConfigurationT>(value); }
+    template<typename MetricConfigurationT = MetricConfiguration>
+    LinkConfiguration& WithMetricConfiguration(MetricConfigurationT&& value) { SetMetricConfiguration(std::forward<MetricConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class Volume
   {
   public:
-    AWS_OPSWORKS_API Volume();
+    AWS_OPSWORKS_API Volume() = default;
     AWS_OPSWORKS_API Volume(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,70 +41,60 @@ namespace Model
     /**
      * <p>The volume ID.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline Volume& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline Volume& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline Volume& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    Volume& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 volume ID.</p>
      */
-    inline const Aws::String& GetEc2VolumeId() const{ return m_ec2VolumeId; }
+    inline const Aws::String& GetEc2VolumeId() const { return m_ec2VolumeId; }
     inline bool Ec2VolumeIdHasBeenSet() const { return m_ec2VolumeIdHasBeenSet; }
-    inline void SetEc2VolumeId(const Aws::String& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = value; }
-    inline void SetEc2VolumeId(Aws::String&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = std::move(value); }
-    inline void SetEc2VolumeId(const char* value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId.assign(value); }
-    inline Volume& WithEc2VolumeId(const Aws::String& value) { SetEc2VolumeId(value); return *this;}
-    inline Volume& WithEc2VolumeId(Aws::String&& value) { SetEc2VolumeId(std::move(value)); return *this;}
-    inline Volume& WithEc2VolumeId(const char* value) { SetEc2VolumeId(value); return *this;}
+    template<typename Ec2VolumeIdT = Aws::String>
+    void SetEc2VolumeId(Ec2VolumeIdT&& value) { m_ec2VolumeIdHasBeenSet = true; m_ec2VolumeId = std::forward<Ec2VolumeIdT>(value); }
+    template<typename Ec2VolumeIdT = Aws::String>
+    Volume& WithEc2VolumeId(Ec2VolumeIdT&& value) { SetEc2VolumeId(std::forward<Ec2VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The volume name. Volume names are a maximum of 128 characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Volume& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Volume& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The RAID array ID.</p>
      */
-    inline const Aws::String& GetRaidArrayId() const{ return m_raidArrayId; }
+    inline const Aws::String& GetRaidArrayId() const { return m_raidArrayId; }
     inline bool RaidArrayIdHasBeenSet() const { return m_raidArrayIdHasBeenSet; }
-    inline void SetRaidArrayId(const Aws::String& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = value; }
-    inline void SetRaidArrayId(Aws::String&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = std::move(value); }
-    inline void SetRaidArrayId(const char* value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId.assign(value); }
-    inline Volume& WithRaidArrayId(const Aws::String& value) { SetRaidArrayId(value); return *this;}
-    inline Volume& WithRaidArrayId(Aws::String&& value) { SetRaidArrayId(std::move(value)); return *this;}
-    inline Volume& WithRaidArrayId(const char* value) { SetRaidArrayId(value); return *this;}
+    template<typename RaidArrayIdT = Aws::String>
+    void SetRaidArrayId(RaidArrayIdT&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = std::forward<RaidArrayIdT>(value); }
+    template<typename RaidArrayIdT = Aws::String>
+    Volume& WithRaidArrayId(RaidArrayIdT&& value) { SetRaidArrayId(std::forward<RaidArrayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline Volume& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline Volume& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline Volume& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    Volume& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,21 +102,19 @@ namespace Model
      * <p>The value returned by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Volume& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Volume& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Volume& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Volume& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The volume size.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline Volume& WithSize(int value) { SetSize(value); return *this;}
@@ -136,28 +124,24 @@ namespace Model
     /**
      * <p>The device name.</p>
      */
-    inline const Aws::String& GetDevice() const{ return m_device; }
+    inline const Aws::String& GetDevice() const { return m_device; }
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-    inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-    inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
-    inline Volume& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-    inline Volume& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-    inline Volume& WithDevice(const char* value) { SetDevice(value); return *this;}
+    template<typename DeviceT = Aws::String>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Aws::String>
+    Volume& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The volume mount point. For example, "/mnt/disk1".</p>
      */
-    inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+    inline const Aws::String& GetMountPoint() const { return m_mountPoint; }
     inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
-    inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
-    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::move(value); }
-    inline void SetMountPoint(const char* value) { m_mountPointHasBeenSet = true; m_mountPoint.assign(value); }
-    inline Volume& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
-    inline Volume& WithMountPoint(Aws::String&& value) { SetMountPoint(std::move(value)); return *this;}
-    inline Volume& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
+    template<typename MountPointT = Aws::String>
+    void SetMountPoint(MountPointT&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::forward<MountPointT>(value); }
+    template<typename MountPointT = Aws::String>
+    Volume& WithMountPoint(MountPointT&& value) { SetMountPoint(std::forward<MountPointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,14 +151,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Volume& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Volume& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Volume& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Volume& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,14 +165,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline Volume& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline Volume& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline Volume& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    Volume& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,21 +188,19 @@ namespace Model
      * 16384 GiB.</p> </li> <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must
      * have a minimum size of 125 GiB and a maximum size of 16384 GiB.</p> </li> </ul>
      */
-    inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+    inline const Aws::String& GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
-    inline Volume& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
-    inline Volume& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
-    inline Volume& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
+    template<typename VolumeTypeT = Aws::String>
+    void SetVolumeType(VolumeTypeT&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::forward<VolumeTypeT>(value); }
+    template<typename VolumeTypeT = Aws::String>
+    Volume& WithVolumeType(VolumeTypeT&& value) { SetVolumeType(std::forward<VolumeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline Volume& WithIops(int value) { SetIops(value); return *this;}
@@ -235,7 +213,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a>.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline Volume& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -260,7 +238,7 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
 
     Aws::String m_device;
@@ -278,10 +256,10 @@ namespace Model
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
   };
 

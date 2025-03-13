@@ -41,7 +41,7 @@ namespace Model
   class ContainerImage
   {
   public:
-    AWS_ECS_API ContainerImage();
+    AWS_ECS_API ContainerImage() = default;
     AWS_ECS_API ContainerImage(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ContainerImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,42 +51,36 @@ namespace Model
     /**
      * <p>The name of the container.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline ContainerImage& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ContainerImage& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ContainerImage& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ContainerImage& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container image digest.</p>
      */
-    inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
+    inline const Aws::String& GetImageDigest() const { return m_imageDigest; }
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
-    inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
-    inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
-    inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
-    inline ContainerImage& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
-    inline ContainerImage& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
-    inline ContainerImage& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+    template<typename ImageDigestT = Aws::String>
+    void SetImageDigest(ImageDigestT&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::forward<ImageDigestT>(value); }
+    template<typename ImageDigestT = Aws::String>
+    ContainerImage& WithImageDigest(ImageDigestT&& value) { SetImageDigest(std::forward<ImageDigestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container image. </p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline ContainerImage& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline ContainerImage& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline ContainerImage& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    ContainerImage& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
   private:
 

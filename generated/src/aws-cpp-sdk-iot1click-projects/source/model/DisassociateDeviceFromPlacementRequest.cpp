@@ -12,13 +12,6 @@ using namespace Aws::IoT1ClickProjects::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateDeviceFromPlacementRequest::DisassociateDeviceFromPlacementRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_placementNameHasBeenSet(false),
-    m_deviceTemplateNameHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateDeviceFromPlacementRequest::SerializePayload() const
 {
   return {};

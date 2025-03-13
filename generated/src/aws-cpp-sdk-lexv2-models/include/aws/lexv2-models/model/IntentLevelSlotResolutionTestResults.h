@@ -33,7 +33,7 @@ namespace Model
   class IntentLevelSlotResolutionTestResults
   {
   public:
-    AWS_LEXMODELSV2_API IntentLevelSlotResolutionTestResults();
+    AWS_LEXMODELSV2_API IntentLevelSlotResolutionTestResults() = default;
     AWS_LEXMODELSV2_API IntentLevelSlotResolutionTestResults(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API IntentLevelSlotResolutionTestResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Indicates the items for the slot level resolution for the intents.</p>
      */
-    inline const Aws::Vector<IntentLevelSlotResolutionTestResultItem>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<IntentLevelSlotResolutionTestResultItem>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<IntentLevelSlotResolutionTestResultItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<IntentLevelSlotResolutionTestResultItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline IntentLevelSlotResolutionTestResults& WithItems(const Aws::Vector<IntentLevelSlotResolutionTestResultItem>& value) { SetItems(value); return *this;}
-    inline IntentLevelSlotResolutionTestResults& WithItems(Aws::Vector<IntentLevelSlotResolutionTestResultItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline IntentLevelSlotResolutionTestResults& AddItems(const IntentLevelSlotResolutionTestResultItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline IntentLevelSlotResolutionTestResults& AddItems(IntentLevelSlotResolutionTestResultItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<IntentLevelSlotResolutionTestResultItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<IntentLevelSlotResolutionTestResultItem>>
+    IntentLevelSlotResolutionTestResults& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = IntentLevelSlotResolutionTestResultItem>
+    IntentLevelSlotResolutionTestResults& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

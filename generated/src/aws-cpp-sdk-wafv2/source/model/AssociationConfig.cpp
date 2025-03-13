@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-AssociationConfig::AssociationConfig() : 
-    m_requestBodyHasBeenSet(false)
-{
-}
-
 AssociationConfig::AssociationConfig(JsonView jsonValue)
-  : AssociationConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AssociationConfig& AssociationConfig::operator =(JsonView jsonValue)
     }
     m_requestBodyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class ActivateTypeRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ActivateTypeRequest();
+    AWS_CLOUDFORMATION_API ActivateTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
      * <code>PublisherId</code>.</p>
      */
-    inline const ThirdPartyType& GetType() const{ return m_type; }
+    inline ThirdPartyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ThirdPartyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ThirdPartyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ActivateTypeRequest& WithType(const ThirdPartyType& value) { SetType(value); return *this;}
-    inline ActivateTypeRequest& WithType(ThirdPartyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ThirdPartyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ActivateTypeRequest& WithType(ThirdPartyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
-    inline const Aws::String& GetPublicTypeArn() const{ return m_publicTypeArn; }
+    inline const Aws::String& GetPublicTypeArn() const { return m_publicTypeArn; }
     inline bool PublicTypeArnHasBeenSet() const { return m_publicTypeArnHasBeenSet; }
-    inline void SetPublicTypeArn(const Aws::String& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = value; }
-    inline void SetPublicTypeArn(Aws::String&& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = std::move(value); }
-    inline void SetPublicTypeArn(const char* value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn.assign(value); }
-    inline ActivateTypeRequest& WithPublicTypeArn(const Aws::String& value) { SetPublicTypeArn(value); return *this;}
-    inline ActivateTypeRequest& WithPublicTypeArn(Aws::String&& value) { SetPublicTypeArn(std::move(value)); return *this;}
-    inline ActivateTypeRequest& WithPublicTypeArn(const char* value) { SetPublicTypeArn(value); return *this;}
+    template<typename PublicTypeArnT = Aws::String>
+    void SetPublicTypeArn(PublicTypeArnT&& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = std::forward<PublicTypeArnT>(value); }
+    template<typename PublicTypeArnT = Aws::String>
+    ActivateTypeRequest& WithPublicTypeArn(PublicTypeArnT&& value) { SetPublicTypeArn(std::forward<PublicTypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
      * <code>PublisherId</code>.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
-    inline ActivateTypeRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline ActivateTypeRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline ActivateTypeRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    ActivateTypeRequest& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and
      * <code>PublisherId</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline ActivateTypeRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ActivateTypeRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ActivateTypeRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ActivateTypeRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +103,12 @@ namespace Model
      * Region. You can activate the same public resource multiple times in the same
      * account and Region, using different type name aliases.</p>
      */
-    inline const Aws::String& GetTypeNameAlias() const{ return m_typeNameAlias; }
+    inline const Aws::String& GetTypeNameAlias() const { return m_typeNameAlias; }
     inline bool TypeNameAliasHasBeenSet() const { return m_typeNameAliasHasBeenSet; }
-    inline void SetTypeNameAlias(const Aws::String& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = value; }
-    inline void SetTypeNameAlias(Aws::String&& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = std::move(value); }
-    inline void SetTypeNameAlias(const char* value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias.assign(value); }
-    inline ActivateTypeRequest& WithTypeNameAlias(const Aws::String& value) { SetTypeNameAlias(value); return *this;}
-    inline ActivateTypeRequest& WithTypeNameAlias(Aws::String&& value) { SetTypeNameAlias(std::move(value)); return *this;}
-    inline ActivateTypeRequest& WithTypeNameAlias(const char* value) { SetTypeNameAlias(value); return *this;}
+    template<typename TypeNameAliasT = Aws::String>
+    void SetTypeNameAlias(TypeNameAliasT&& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = std::forward<TypeNameAliasT>(value); }
+    template<typename TypeNameAliasT = Aws::String>
+    ActivateTypeRequest& WithTypeNameAlias(TypeNameAliasT&& value) { SetTypeNameAlias(std::forward<TypeNameAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,7 +118,7 @@ namespace Model
      * versions released by the publisher must be manually updated.</p> <p>The default
      * is <code>true</code>.</p>
      */
-    inline bool GetAutoUpdate() const{ return m_autoUpdate; }
+    inline bool GetAutoUpdate() const { return m_autoUpdate; }
     inline bool AutoUpdateHasBeenSet() const { return m_autoUpdateHasBeenSet; }
     inline void SetAutoUpdate(bool value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
     inline ActivateTypeRequest& WithAutoUpdate(bool value) { SetAutoUpdate(value); return *this;}
@@ -138,26 +128,24 @@ namespace Model
     /**
      * <p>Contains logging configuration information for an extension.</p>
      */
-    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+    inline const LoggingConfig& GetLoggingConfig() const { return m_loggingConfig; }
     inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
-    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
-    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
-    inline ActivateTypeRequest& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
-    inline ActivateTypeRequest& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
+    template<typename LoggingConfigT = LoggingConfig>
+    void SetLoggingConfig(LoggingConfigT&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::forward<LoggingConfigT>(value); }
+    template<typename LoggingConfigT = LoggingConfig>
+    ActivateTypeRequest& WithLoggingConfig(LoggingConfigT&& value) { SetLoggingConfig(std::forward<LoggingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the IAM execution role to use to activate the extension.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline ActivateTypeRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline ActivateTypeRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline ActivateTypeRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    ActivateTypeRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,12 +157,10 @@ namespace Model
      * </li> <li> <p> <code>MINOR</code>: CloudFormation updates the extension to the
      * newest minor version, if one is available.</p> </li> </ul>
      */
-    inline const VersionBump& GetVersionBump() const{ return m_versionBump; }
+    inline VersionBump GetVersionBump() const { return m_versionBump; }
     inline bool VersionBumpHasBeenSet() const { return m_versionBumpHasBeenSet; }
-    inline void SetVersionBump(const VersionBump& value) { m_versionBumpHasBeenSet = true; m_versionBump = value; }
-    inline void SetVersionBump(VersionBump&& value) { m_versionBumpHasBeenSet = true; m_versionBump = std::move(value); }
-    inline ActivateTypeRequest& WithVersionBump(const VersionBump& value) { SetVersionBump(value); return *this;}
-    inline ActivateTypeRequest& WithVersionBump(VersionBump&& value) { SetVersionBump(std::move(value)); return *this;}
+    inline void SetVersionBump(VersionBump value) { m_versionBumpHasBeenSet = true; m_versionBump = value; }
+    inline ActivateTypeRequest& WithVersionBump(VersionBump value) { SetVersionBump(value); return *this;}
     ///@}
 
     ///@{
@@ -185,14 +171,14 @@ namespace Model
      * selected.</p> <p>You can specify <code>MajorVersion</code> or
      * <code>VersionBump</code>, but not both.</p>
      */
-    inline long long GetMajorVersion() const{ return m_majorVersion; }
+    inline long long GetMajorVersion() const { return m_majorVersion; }
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
     inline void SetMajorVersion(long long value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
     inline ActivateTypeRequest& WithMajorVersion(long long value) { SetMajorVersion(value); return *this;}
     ///@}
   private:
 
-    ThirdPartyType m_type;
+    ThirdPartyType m_type{ThirdPartyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_publicTypeArn;
@@ -207,7 +193,7 @@ namespace Model
     Aws::String m_typeNameAlias;
     bool m_typeNameAliasHasBeenSet = false;
 
-    bool m_autoUpdate;
+    bool m_autoUpdate{false};
     bool m_autoUpdateHasBeenSet = false;
 
     LoggingConfig m_loggingConfig;
@@ -216,10 +202,10 @@ namespace Model
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;
 
-    VersionBump m_versionBump;
+    VersionBump m_versionBump{VersionBump::NOT_SET};
     bool m_versionBumpHasBeenSet = false;
 
-    long long m_majorVersion;
+    long long m_majorVersion{0};
     bool m_majorVersionHasBeenSet = false;
   };
 

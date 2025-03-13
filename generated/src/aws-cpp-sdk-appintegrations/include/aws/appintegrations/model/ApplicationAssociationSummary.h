@@ -32,7 +32,7 @@ namespace Model
   class ApplicationAssociationSummary
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API ApplicationAssociationSummary();
+    AWS_APPINTEGRATIONSSERVICE_API ApplicationAssociationSummary() = default;
     AWS_APPINTEGRATIONSSERVICE_API ApplicationAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API ApplicationAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Application Association.</p>
      */
-    inline const Aws::String& GetApplicationAssociationArn() const{ return m_applicationAssociationArn; }
+    inline const Aws::String& GetApplicationAssociationArn() const { return m_applicationAssociationArn; }
     inline bool ApplicationAssociationArnHasBeenSet() const { return m_applicationAssociationArnHasBeenSet; }
-    inline void SetApplicationAssociationArn(const Aws::String& value) { m_applicationAssociationArnHasBeenSet = true; m_applicationAssociationArn = value; }
-    inline void SetApplicationAssociationArn(Aws::String&& value) { m_applicationAssociationArnHasBeenSet = true; m_applicationAssociationArn = std::move(value); }
-    inline void SetApplicationAssociationArn(const char* value) { m_applicationAssociationArnHasBeenSet = true; m_applicationAssociationArn.assign(value); }
-    inline ApplicationAssociationSummary& WithApplicationAssociationArn(const Aws::String& value) { SetApplicationAssociationArn(value); return *this;}
-    inline ApplicationAssociationSummary& WithApplicationAssociationArn(Aws::String&& value) { SetApplicationAssociationArn(std::move(value)); return *this;}
-    inline ApplicationAssociationSummary& WithApplicationAssociationArn(const char* value) { SetApplicationAssociationArn(value); return *this;}
+    template<typename ApplicationAssociationArnT = Aws::String>
+    void SetApplicationAssociationArn(ApplicationAssociationArnT&& value) { m_applicationAssociationArnHasBeenSet = true; m_applicationAssociationArn = std::forward<ApplicationAssociationArnT>(value); }
+    template<typename ApplicationAssociationArnT = Aws::String>
+    ApplicationAssociationSummary& WithApplicationAssociationArn(ApplicationAssociationArnT&& value) { SetApplicationAssociationArn(std::forward<ApplicationAssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Application.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline ApplicationAssociationSummary& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline ApplicationAssociationSummary& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline ApplicationAssociationSummary& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    ApplicationAssociationSummary& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>The identifier for the client that is associated with the Application
      * Association.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline ApplicationAssociationSummary& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline ApplicationAssociationSummary& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline ApplicationAssociationSummary& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    ApplicationAssociationSummary& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
   private:
 

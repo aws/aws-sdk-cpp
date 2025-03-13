@@ -20,20 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackRefactorSummary::StackRefactorSummary() : 
-    m_stackRefactorIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_executionStatus(StackRefactorExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_executionStatusReasonHasBeenSet(false),
-    m_status(StackRefactorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 StackRefactorSummary::StackRefactorSummary(const XmlNode& xmlNode)
-  : StackRefactorSummary()
 {
   *this = xmlNode;
 }
@@ -49,36 +36,42 @@ StackRefactorSummary& StackRefactorSummary::operator =(const XmlNode& xmlNode)
     {
       m_stackRefactorId = Aws::Utils::Xml::DecodeEscapedXmlText(stackRefactorIdNode.GetText());
       m_stackRefactorIdHasBeenSet = true;
+       m_stackRefactorIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode executionStatusNode = resultNode.FirstChild("ExecutionStatus");
     if(!executionStatusNode.IsNull())
     {
-      m_executionStatus = StackRefactorExecutionStatusMapper::GetStackRefactorExecutionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusNode.GetText()).c_str()).c_str());
+      m_executionStatus = StackRefactorExecutionStatusMapper::GetStackRefactorExecutionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusNode.GetText()).c_str()));
       m_executionStatusHasBeenSet = true;
+       m_executionStatusHasBeenSet = true;
     }
     XmlNode executionStatusReasonNode = resultNode.FirstChild("ExecutionStatusReason");
     if(!executionStatusReasonNode.IsNull())
     {
       m_executionStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(executionStatusReasonNode.GetText());
       m_executionStatusReasonHasBeenSet = true;
+       m_executionStatusReasonHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackRefactorStatusMapper::GetStackRefactorStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackRefactorStatusMapper::GetStackRefactorStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-S3LogsConfigurationResult::S3LogsConfigurationResult() : 
-    m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 S3LogsConfigurationResult::S3LogsConfigurationResult(JsonView jsonValue)
-  : S3LogsConfigurationResult()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ S3LogsConfigurationResult& S3LogsConfigurationResult::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSourceStatusMapper::GetDataSourceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

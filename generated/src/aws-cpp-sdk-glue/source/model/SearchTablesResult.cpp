@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchTablesResult::SearchTablesResult()
-{
-}
-
 SearchTablesResult::SearchTablesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ SearchTablesResult& SearchTablesResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableList"))
   {
     Aws::Utils::Array<JsonView> tableListJsonList = jsonValue.GetArray("TableList");
@@ -42,14 +37,15 @@ SearchTablesResult& SearchTablesResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_tableList.push_back(tableListJsonList[tableListIndex].AsObject());
     }
+    m_tableListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

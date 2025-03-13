@@ -32,7 +32,7 @@ namespace Model
   class QueryFilter
   {
   public:
-    AWS_IOTANALYTICS_API QueryFilter();
+    AWS_IOTANALYTICS_API QueryFilter() = default;
     AWS_IOTANALYTICS_API QueryFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API QueryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Used to limit data to that which has arrived since the last execution of the
      * action.</p>
      */
-    inline const DeltaTime& GetDeltaTime() const{ return m_deltaTime; }
+    inline const DeltaTime& GetDeltaTime() const { return m_deltaTime; }
     inline bool DeltaTimeHasBeenSet() const { return m_deltaTimeHasBeenSet; }
-    inline void SetDeltaTime(const DeltaTime& value) { m_deltaTimeHasBeenSet = true; m_deltaTime = value; }
-    inline void SetDeltaTime(DeltaTime&& value) { m_deltaTimeHasBeenSet = true; m_deltaTime = std::move(value); }
-    inline QueryFilter& WithDeltaTime(const DeltaTime& value) { SetDeltaTime(value); return *this;}
-    inline QueryFilter& WithDeltaTime(DeltaTime&& value) { SetDeltaTime(std::move(value)); return *this;}
+    template<typename DeltaTimeT = DeltaTime>
+    void SetDeltaTime(DeltaTimeT&& value) { m_deltaTimeHasBeenSet = true; m_deltaTime = std::forward<DeltaTimeT>(value); }
+    template<typename DeltaTimeT = DeltaTime>
+    QueryFilter& WithDeltaTime(DeltaTimeT&& value) { SetDeltaTime(std::forward<DeltaTimeT>(value)); return *this;}
     ///@}
   private:
 

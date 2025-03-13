@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResourcesSummaryResult::GetResourcesSummaryResult()
-{
-}
-
 GetResourcesSummaryResult::GetResourcesSummaryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetResourcesSummaryResult& GetResourcesSummaryResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("counts"))
   {
     m_counts = jsonValue.GetObject("counts");
-
+    m_countsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class ReplacementEmailContent
   {
   public:
-    AWS_SESV2_API ReplacementEmailContent();
+    AWS_SESV2_API ReplacementEmailContent() = default;
     AWS_SESV2_API ReplacementEmailContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API ReplacementEmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The <code>ReplacementTemplate</code> associated with
      * <code>ReplacementEmailContent</code>.</p>
      */
-    inline const ReplacementTemplate& GetReplacementTemplate() const{ return m_replacementTemplate; }
+    inline const ReplacementTemplate& GetReplacementTemplate() const { return m_replacementTemplate; }
     inline bool ReplacementTemplateHasBeenSet() const { return m_replacementTemplateHasBeenSet; }
-    inline void SetReplacementTemplate(const ReplacementTemplate& value) { m_replacementTemplateHasBeenSet = true; m_replacementTemplate = value; }
-    inline void SetReplacementTemplate(ReplacementTemplate&& value) { m_replacementTemplateHasBeenSet = true; m_replacementTemplate = std::move(value); }
-    inline ReplacementEmailContent& WithReplacementTemplate(const ReplacementTemplate& value) { SetReplacementTemplate(value); return *this;}
-    inline ReplacementEmailContent& WithReplacementTemplate(ReplacementTemplate&& value) { SetReplacementTemplate(std::move(value)); return *this;}
+    template<typename ReplacementTemplateT = ReplacementTemplate>
+    void SetReplacementTemplate(ReplacementTemplateT&& value) { m_replacementTemplateHasBeenSet = true; m_replacementTemplate = std::forward<ReplacementTemplateT>(value); }
+    template<typename ReplacementTemplateT = ReplacementTemplate>
+    ReplacementEmailContent& WithReplacementTemplate(ReplacementTemplateT&& value) { SetReplacementTemplate(std::forward<ReplacementTemplateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,27 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun() : 
-    m_replicationTaskAssessmentRunArnHasBeenSet(false),
-    m_replicationTaskArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_replicationTaskAssessmentRunCreationDateHasBeenSet(false),
-    m_assessmentProgressHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_resultLocationBucketHasBeenSet(false),
-    m_resultLocationFolderHasBeenSet(false),
-    m_resultEncryptionModeHasBeenSet(false),
-    m_resultKmsKeyArnHasBeenSet(false),
-    m_assessmentRunNameHasBeenSet(false),
-    m_isLatestTaskAssessmentRun(false),
-    m_isLatestTaskAssessmentRunHasBeenSet(false),
-    m_resultStatisticHasBeenSet(false)
-{
-}
-
 ReplicationTaskAssessmentRun::ReplicationTaskAssessmentRun(JsonView jsonValue)
-  : ReplicationTaskAssessmentRun()
 {
   *this = jsonValue;
 }
@@ -48,101 +28,73 @@ ReplicationTaskAssessmentRun& ReplicationTaskAssessmentRun::operator =(JsonView 
   if(jsonValue.ValueExists("ReplicationTaskAssessmentRunArn"))
   {
     m_replicationTaskAssessmentRunArn = jsonValue.GetString("ReplicationTaskAssessmentRunArn");
-
     m_replicationTaskAssessmentRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
-
     m_replicationTaskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskAssessmentRunCreationDate"))
   {
     m_replicationTaskAssessmentRunCreationDate = jsonValue.GetDouble("ReplicationTaskAssessmentRunCreationDate");
-
     m_replicationTaskAssessmentRunCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssessmentProgress"))
   {
     m_assessmentProgress = jsonValue.GetObject("AssessmentProgress");
-
     m_assessmentProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailureMessage"))
   {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
-
     m_lastFailureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
-
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultLocationBucket"))
   {
     m_resultLocationBucket = jsonValue.GetString("ResultLocationBucket");
-
     m_resultLocationBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultLocationFolder"))
   {
     m_resultLocationFolder = jsonValue.GetString("ResultLocationFolder");
-
     m_resultLocationFolderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultEncryptionMode"))
   {
     m_resultEncryptionMode = jsonValue.GetString("ResultEncryptionMode");
-
     m_resultEncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultKmsKeyArn"))
   {
     m_resultKmsKeyArn = jsonValue.GetString("ResultKmsKeyArn");
-
     m_resultKmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssessmentRunName"))
   {
     m_assessmentRunName = jsonValue.GetString("AssessmentRunName");
-
     m_assessmentRunNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsLatestTaskAssessmentRun"))
   {
     m_isLatestTaskAssessmentRun = jsonValue.GetBool("IsLatestTaskAssessmentRun");
-
     m_isLatestTaskAssessmentRunHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultStatistic"))
   {
     m_resultStatistic = jsonValue.GetObject("ResultStatistic");
-
     m_resultStatisticHasBeenSet = true;
   }
-
   return *this;
 }
 

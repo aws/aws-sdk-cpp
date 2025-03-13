@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-RecurringCharge::RecurringCharge() : 
-    m_recurringChargeAmount(0.0),
-    m_recurringChargeAmountHasBeenSet(false),
-    m_recurringChargeFrequencyHasBeenSet(false)
-{
-}
-
 RecurringCharge::RecurringCharge(const XmlNode& xmlNode)
-  : RecurringCharge()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ RecurringCharge& RecurringCharge::operator =(const XmlNode& xmlNode)
     {
       m_recurringChargeAmount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recurringChargeAmountNode.GetText()).c_str()).c_str());
       m_recurringChargeAmountHasBeenSet = true;
+       m_recurringChargeAmountHasBeenSet = true;
     }
     XmlNode recurringChargeFrequencyNode = resultNode.FirstChild("RecurringChargeFrequency");
     if(!recurringChargeFrequencyNode.IsNull())
     {
       m_recurringChargeFrequency = Aws::Utils::Xml::DecodeEscapedXmlText(recurringChargeFrequencyNode.GetText());
       m_recurringChargeFrequencyHasBeenSet = true;
+       m_recurringChargeFrequencyHasBeenSet = true;
     }
   }
 

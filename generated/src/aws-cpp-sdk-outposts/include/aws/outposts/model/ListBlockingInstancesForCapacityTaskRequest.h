@@ -25,7 +25,7 @@ namespace Model
   class ListBlockingInstancesForCapacityTaskRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API ListBlockingInstancesForCapacityTaskRequest();
+    AWS_OUTPOSTS_API ListBlockingInstancesForCapacityTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The ID or ARN of the Outpost associated with the specified capacity task.</p>
      */
-    inline const Aws::String& GetOutpostIdentifier() const{ return m_outpostIdentifier; }
+    inline const Aws::String& GetOutpostIdentifier() const { return m_outpostIdentifier; }
     inline bool OutpostIdentifierHasBeenSet() const { return m_outpostIdentifierHasBeenSet; }
-    inline void SetOutpostIdentifier(const Aws::String& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = value; }
-    inline void SetOutpostIdentifier(Aws::String&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::move(value); }
-    inline void SetOutpostIdentifier(const char* value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier.assign(value); }
-    inline ListBlockingInstancesForCapacityTaskRequest& WithOutpostIdentifier(const Aws::String& value) { SetOutpostIdentifier(value); return *this;}
-    inline ListBlockingInstancesForCapacityTaskRequest& WithOutpostIdentifier(Aws::String&& value) { SetOutpostIdentifier(std::move(value)); return *this;}
-    inline ListBlockingInstancesForCapacityTaskRequest& WithOutpostIdentifier(const char* value) { SetOutpostIdentifier(value); return *this;}
+    template<typename OutpostIdentifierT = Aws::String>
+    void SetOutpostIdentifier(OutpostIdentifierT&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::forward<OutpostIdentifierT>(value); }
+    template<typename OutpostIdentifierT = Aws::String>
+    ListBlockingInstancesForCapacityTaskRequest& WithOutpostIdentifier(OutpostIdentifierT&& value) { SetOutpostIdentifier(std::forward<OutpostIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the capacity task.</p>
      */
-    inline const Aws::String& GetCapacityTaskId() const{ return m_capacityTaskId; }
+    inline const Aws::String& GetCapacityTaskId() const { return m_capacityTaskId; }
     inline bool CapacityTaskIdHasBeenSet() const { return m_capacityTaskIdHasBeenSet; }
-    inline void SetCapacityTaskId(const Aws::String& value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId = value; }
-    inline void SetCapacityTaskId(Aws::String&& value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId = std::move(value); }
-    inline void SetCapacityTaskId(const char* value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId.assign(value); }
-    inline ListBlockingInstancesForCapacityTaskRequest& WithCapacityTaskId(const Aws::String& value) { SetCapacityTaskId(value); return *this;}
-    inline ListBlockingInstancesForCapacityTaskRequest& WithCapacityTaskId(Aws::String&& value) { SetCapacityTaskId(std::move(value)); return *this;}
-    inline ListBlockingInstancesForCapacityTaskRequest& WithCapacityTaskId(const char* value) { SetCapacityTaskId(value); return *this;}
+    template<typename CapacityTaskIdT = Aws::String>
+    void SetCapacityTaskId(CapacityTaskIdT&& value) { m_capacityTaskIdHasBeenSet = true; m_capacityTaskId = std::forward<CapacityTaskIdT>(value); }
+    template<typename CapacityTaskIdT = Aws::String>
+    ListBlockingInstancesForCapacityTaskRequest& WithCapacityTaskId(CapacityTaskIdT&& value) { SetCapacityTaskId(std::forward<CapacityTaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBlockingInstancesForCapacityTaskRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -76,14 +72,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBlockingInstancesForCapacityTaskRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBlockingInstancesForCapacityTaskRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBlockingInstancesForCapacityTaskRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBlockingInstancesForCapacityTaskRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -93,7 +87,7 @@ namespace Model
     Aws::String m_capacityTaskId;
     bool m_capacityTaskIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

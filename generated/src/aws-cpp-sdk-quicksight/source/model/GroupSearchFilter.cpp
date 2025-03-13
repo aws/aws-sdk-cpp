@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GroupSearchFilter::GroupSearchFilter() : 
-    m_operator(GroupFilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_name(GroupFilterAttribute::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 GroupSearchFilter::GroupSearchFilter(JsonView jsonValue)
-  : GroupSearchFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ GroupSearchFilter& GroupSearchFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = GroupFilterOperatorMapper::GetGroupFilterOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = GroupFilterAttributeMapper::GetGroupFilterAttributeForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-ZonalCapacityReservationState::ZonalCapacityReservationState() : 
-    m_stateHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_effectiveCapacityUnits(0.0),
-    m_effectiveCapacityUnitsHasBeenSet(false)
-{
-}
-
 ZonalCapacityReservationState::ZonalCapacityReservationState(const XmlNode& xmlNode)
-  : ZonalCapacityReservationState()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ZonalCapacityReservationState& ZonalCapacityReservationState::operator =(const X
     {
       m_state = stateNode;
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("AvailabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode effectiveCapacityUnitsNode = resultNode.FirstChild("EffectiveCapacityUnits");
     if(!effectiveCapacityUnitsNode.IsNull())
     {
       m_effectiveCapacityUnits = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(effectiveCapacityUnitsNode.GetText()).c_str()).c_str());
       m_effectiveCapacityUnitsHasBeenSet = true;
+       m_effectiveCapacityUnitsHasBeenSet = true;
     }
   }
 

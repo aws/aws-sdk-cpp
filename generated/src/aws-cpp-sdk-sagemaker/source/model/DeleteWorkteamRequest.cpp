@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkteamRequest::DeleteWorkteamRequest() : 
-    m_workteamNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkteamRequest::SerializePayload() const
 {
   JsonValue payload;

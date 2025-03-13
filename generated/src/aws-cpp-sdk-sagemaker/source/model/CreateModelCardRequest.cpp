@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelCardRequest::CreateModelCardRequest() : 
-    m_modelCardNameHasBeenSet(false),
-    m_securityConfigHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelCardRequest::SerializePayload() const
 {
   JsonValue payload;

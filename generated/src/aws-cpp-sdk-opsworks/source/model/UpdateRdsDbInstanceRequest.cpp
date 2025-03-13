@@ -12,13 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRdsDbInstanceRequest::UpdateRdsDbInstanceRequest() : 
-    m_rdsDbInstanceArnHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_dbPasswordHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRdsDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

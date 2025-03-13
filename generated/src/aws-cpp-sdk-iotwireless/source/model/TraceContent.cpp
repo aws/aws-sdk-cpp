@@ -18,18 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-TraceContent::TraceContent() : 
-    m_wirelessDeviceFrameInfo(WirelessDeviceFrameInfo::NOT_SET),
-    m_wirelessDeviceFrameInfoHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_multicastFrameInfo(MulticastFrameInfo::NOT_SET),
-    m_multicastFrameInfoHasBeenSet(false)
-{
-}
-
 TraceContent::TraceContent(JsonView jsonValue)
-  : TraceContent()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TraceContent& TraceContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WirelessDeviceFrameInfo"))
   {
     m_wirelessDeviceFrameInfo = WirelessDeviceFrameInfoMapper::GetWirelessDeviceFrameInfoForName(jsonValue.GetString("WirelessDeviceFrameInfo"));
-
     m_wirelessDeviceFrameInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MulticastFrameInfo"))
   {
     m_multicastFrameInfo = MulticastFrameInfoMapper::GetMulticastFrameInfoForName(jsonValue.GetString("MulticastFrameInfo"));
-
     m_multicastFrameInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

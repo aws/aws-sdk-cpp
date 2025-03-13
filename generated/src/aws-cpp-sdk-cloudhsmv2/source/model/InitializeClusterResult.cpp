@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitializeClusterResult::InitializeClusterResult() : 
-    m_state(ClusterState::NOT_SET)
-{
-}
-
 InitializeClusterResult::InitializeClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : InitializeClusterResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ InitializeClusterResult& InitializeClusterResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("State"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateMessage"))
   {
     m_stateMessage = jsonValue.GetString("StateMessage");
-
+    m_stateMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -35,7 +35,7 @@ namespace Model
   class WhatsAppSetupFinalization
   {
   public:
-    AWS_SOCIALMESSAGING_API WhatsAppSetupFinalization();
+    AWS_SOCIALMESSAGING_API WhatsAppSetupFinalization() = default;
     AWS_SOCIALMESSAGING_API WhatsAppSetupFinalization(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API WhatsAppSetupFinalization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <code>WhatsAppSignupCallback</code> and used by
      * <code>WhatsAppSetupFinalization</code>.</p>
      */
-    inline const Aws::String& GetAssociateInProgressToken() const{ return m_associateInProgressToken; }
+    inline const Aws::String& GetAssociateInProgressToken() const { return m_associateInProgressToken; }
     inline bool AssociateInProgressTokenHasBeenSet() const { return m_associateInProgressTokenHasBeenSet; }
-    inline void SetAssociateInProgressToken(const Aws::String& value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken = value; }
-    inline void SetAssociateInProgressToken(Aws::String&& value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken = std::move(value); }
-    inline void SetAssociateInProgressToken(const char* value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken.assign(value); }
-    inline WhatsAppSetupFinalization& WithAssociateInProgressToken(const Aws::String& value) { SetAssociateInProgressToken(value); return *this;}
-    inline WhatsAppSetupFinalization& WithAssociateInProgressToken(Aws::String&& value) { SetAssociateInProgressToken(std::move(value)); return *this;}
-    inline WhatsAppSetupFinalization& WithAssociateInProgressToken(const char* value) { SetAssociateInProgressToken(value); return *this;}
+    template<typename AssociateInProgressTokenT = Aws::String>
+    void SetAssociateInProgressToken(AssociateInProgressTokenT&& value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken = std::forward<AssociateInProgressTokenT>(value); }
+    template<typename AssociateInProgressTokenT = Aws::String>
+    WhatsAppSetupFinalization& WithAssociateInProgressToken(AssociateInProgressTokenT&& value) { SetAssociateInProgressToken(std::forward<AssociateInProgressTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * <p>An array of WabaPhoneNumberSetupFinalization objects containing the details
      * of each phone number associated with the WhatsApp Business Account.</p>
      */
-    inline const Aws::Vector<WabaPhoneNumberSetupFinalization>& GetPhoneNumbers() const{ return m_phoneNumbers; }
+    inline const Aws::Vector<WabaPhoneNumberSetupFinalization>& GetPhoneNumbers() const { return m_phoneNumbers; }
     inline bool PhoneNumbersHasBeenSet() const { return m_phoneNumbersHasBeenSet; }
-    inline void SetPhoneNumbers(const Aws::Vector<WabaPhoneNumberSetupFinalization>& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers = value; }
-    inline void SetPhoneNumbers(Aws::Vector<WabaPhoneNumberSetupFinalization>&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers = std::move(value); }
-    inline WhatsAppSetupFinalization& WithPhoneNumbers(const Aws::Vector<WabaPhoneNumberSetupFinalization>& value) { SetPhoneNumbers(value); return *this;}
-    inline WhatsAppSetupFinalization& WithPhoneNumbers(Aws::Vector<WabaPhoneNumberSetupFinalization>&& value) { SetPhoneNumbers(std::move(value)); return *this;}
-    inline WhatsAppSetupFinalization& AddPhoneNumbers(const WabaPhoneNumberSetupFinalization& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers.push_back(value); return *this; }
-    inline WhatsAppSetupFinalization& AddPhoneNumbers(WabaPhoneNumberSetupFinalization&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers.push_back(std::move(value)); return *this; }
+    template<typename PhoneNumbersT = Aws::Vector<WabaPhoneNumberSetupFinalization>>
+    void SetPhoneNumbers(PhoneNumbersT&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers = std::forward<PhoneNumbersT>(value); }
+    template<typename PhoneNumbersT = Aws::Vector<WabaPhoneNumberSetupFinalization>>
+    WhatsAppSetupFinalization& WithPhoneNumbers(PhoneNumbersT&& value) { SetPhoneNumbers(std::forward<PhoneNumbersT>(value)); return *this;}
+    template<typename PhoneNumbersT = WabaPhoneNumberSetupFinalization>
+    WhatsAppSetupFinalization& AddPhoneNumbers(PhoneNumbersT&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers.emplace_back(std::forward<PhoneNumbersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * <p>Used to add a new phone number to an existing WhatsApp Business Account. This
      * field can't be used when the <code>waba</code> field is present.</p>
      */
-    inline const Aws::String& GetPhoneNumberParent() const{ return m_phoneNumberParent; }
+    inline const Aws::String& GetPhoneNumberParent() const { return m_phoneNumberParent; }
     inline bool PhoneNumberParentHasBeenSet() const { return m_phoneNumberParentHasBeenSet; }
-    inline void SetPhoneNumberParent(const Aws::String& value) { m_phoneNumberParentHasBeenSet = true; m_phoneNumberParent = value; }
-    inline void SetPhoneNumberParent(Aws::String&& value) { m_phoneNumberParentHasBeenSet = true; m_phoneNumberParent = std::move(value); }
-    inline void SetPhoneNumberParent(const char* value) { m_phoneNumberParentHasBeenSet = true; m_phoneNumberParent.assign(value); }
-    inline WhatsAppSetupFinalization& WithPhoneNumberParent(const Aws::String& value) { SetPhoneNumberParent(value); return *this;}
-    inline WhatsAppSetupFinalization& WithPhoneNumberParent(Aws::String&& value) { SetPhoneNumberParent(std::move(value)); return *this;}
-    inline WhatsAppSetupFinalization& WithPhoneNumberParent(const char* value) { SetPhoneNumberParent(value); return *this;}
+    template<typename PhoneNumberParentT = Aws::String>
+    void SetPhoneNumberParent(PhoneNumberParentT&& value) { m_phoneNumberParentHasBeenSet = true; m_phoneNumberParent = std::forward<PhoneNumberParentT>(value); }
+    template<typename PhoneNumberParentT = Aws::String>
+    WhatsAppSetupFinalization& WithPhoneNumberParent(PhoneNumberParentT&& value) { SetPhoneNumberParent(std::forward<PhoneNumberParentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +89,12 @@ namespace Model
      * field can't be used when the <code>phoneNumberParent</code> field is
      * present.</p>
      */
-    inline const WabaSetupFinalization& GetWaba() const{ return m_waba; }
+    inline const WabaSetupFinalization& GetWaba() const { return m_waba; }
     inline bool WabaHasBeenSet() const { return m_wabaHasBeenSet; }
-    inline void SetWaba(const WabaSetupFinalization& value) { m_wabaHasBeenSet = true; m_waba = value; }
-    inline void SetWaba(WabaSetupFinalization&& value) { m_wabaHasBeenSet = true; m_waba = std::move(value); }
-    inline WhatsAppSetupFinalization& WithWaba(const WabaSetupFinalization& value) { SetWaba(value); return *this;}
-    inline WhatsAppSetupFinalization& WithWaba(WabaSetupFinalization&& value) { SetWaba(std::move(value)); return *this;}
+    template<typename WabaT = WabaSetupFinalization>
+    void SetWaba(WabaT&& value) { m_wabaHasBeenSet = true; m_waba = std::forward<WabaT>(value); }
+    template<typename WabaT = WabaSetupFinalization>
+    WhatsAppSetupFinalization& WithWaba(WabaT&& value) { SetWaba(std::forward<WabaT>(value)); return *this;}
     ///@}
   private:
 

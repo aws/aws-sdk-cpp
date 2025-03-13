@@ -38,7 +38,7 @@ namespace Model
   class Service
   {
   public:
-    AWS_XRAY_API Service();
+    AWS_XRAY_API Service() = default;
     AWS_XRAY_API Service(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
     /**
      * <p>Identifier for the service. Unique within the service map.</p>
      */
-    inline int GetReferenceId() const{ return m_referenceId; }
+    inline int GetReferenceId() const { return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
     inline void SetReferenceId(int value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
     inline Service& WithReferenceId(int value) { SetReferenceId(value); return *this;}
@@ -58,36 +58,33 @@ namespace Model
     /**
      * <p>The canonical name of the service.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Service& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Service& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Service& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Service& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of names for the service, including the canonical name.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline Service& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-    inline Service& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-    inline Service& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline Service& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-    inline Service& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    Service& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = Aws::String>
+    Service& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates that the service was the first service to process a request.</p>
      */
-    inline bool GetRoot() const{ return m_root; }
+    inline bool GetRoot() const { return m_root; }
     inline bool RootHasBeenSet() const { return m_rootHasBeenSet; }
     inline void SetRoot(bool value) { m_rootHasBeenSet = true; m_root = value; }
     inline Service& WithRoot(bool value) { SetRoot(value); return *this;}
@@ -97,14 +94,12 @@ namespace Model
     /**
      * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Service& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Service& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Service& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Service& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,110 +115,106 @@ namespace Model
      * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Service& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Service& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Service& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Service& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service's state.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline Service& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline Service& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline Service& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    Service& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the first segment that the service generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline Service& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline Service& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    Service& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time of the last segment that the service generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline Service& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline Service& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    Service& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Connections to downstream services.</p>
      */
-    inline const Aws::Vector<Edge>& GetEdges() const{ return m_edges; }
+    inline const Aws::Vector<Edge>& GetEdges() const { return m_edges; }
     inline bool EdgesHasBeenSet() const { return m_edgesHasBeenSet; }
-    inline void SetEdges(const Aws::Vector<Edge>& value) { m_edgesHasBeenSet = true; m_edges = value; }
-    inline void SetEdges(Aws::Vector<Edge>&& value) { m_edgesHasBeenSet = true; m_edges = std::move(value); }
-    inline Service& WithEdges(const Aws::Vector<Edge>& value) { SetEdges(value); return *this;}
-    inline Service& WithEdges(Aws::Vector<Edge>&& value) { SetEdges(std::move(value)); return *this;}
-    inline Service& AddEdges(const Edge& value) { m_edgesHasBeenSet = true; m_edges.push_back(value); return *this; }
-    inline Service& AddEdges(Edge&& value) { m_edgesHasBeenSet = true; m_edges.push_back(std::move(value)); return *this; }
+    template<typename EdgesT = Aws::Vector<Edge>>
+    void SetEdges(EdgesT&& value) { m_edgesHasBeenSet = true; m_edges = std::forward<EdgesT>(value); }
+    template<typename EdgesT = Aws::Vector<Edge>>
+    Service& WithEdges(EdgesT&& value) { SetEdges(std::forward<EdgesT>(value)); return *this;}
+    template<typename EdgesT = Edge>
+    Service& AddEdges(EdgesT&& value) { m_edgesHasBeenSet = true; m_edges.emplace_back(std::forward<EdgesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Aggregated statistics for the service.</p>
      */
-    inline const ServiceStatistics& GetSummaryStatistics() const{ return m_summaryStatistics; }
+    inline const ServiceStatistics& GetSummaryStatistics() const { return m_summaryStatistics; }
     inline bool SummaryStatisticsHasBeenSet() const { return m_summaryStatisticsHasBeenSet; }
-    inline void SetSummaryStatistics(const ServiceStatistics& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = value; }
-    inline void SetSummaryStatistics(ServiceStatistics&& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = std::move(value); }
-    inline Service& WithSummaryStatistics(const ServiceStatistics& value) { SetSummaryStatistics(value); return *this;}
-    inline Service& WithSummaryStatistics(ServiceStatistics&& value) { SetSummaryStatistics(std::move(value)); return *this;}
+    template<typename SummaryStatisticsT = ServiceStatistics>
+    void SetSummaryStatistics(SummaryStatisticsT&& value) { m_summaryStatisticsHasBeenSet = true; m_summaryStatistics = std::forward<SummaryStatisticsT>(value); }
+    template<typename SummaryStatisticsT = ServiceStatistics>
+    Service& WithSummaryStatistics(SummaryStatisticsT&& value) { SetSummaryStatistics(std::forward<SummaryStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A histogram that maps the spread of service durations.</p>
      */
-    inline const Aws::Vector<HistogramEntry>& GetDurationHistogram() const{ return m_durationHistogram; }
+    inline const Aws::Vector<HistogramEntry>& GetDurationHistogram() const { return m_durationHistogram; }
     inline bool DurationHistogramHasBeenSet() const { return m_durationHistogramHasBeenSet; }
-    inline void SetDurationHistogram(const Aws::Vector<HistogramEntry>& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = value; }
-    inline void SetDurationHistogram(Aws::Vector<HistogramEntry>&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = std::move(value); }
-    inline Service& WithDurationHistogram(const Aws::Vector<HistogramEntry>& value) { SetDurationHistogram(value); return *this;}
-    inline Service& WithDurationHistogram(Aws::Vector<HistogramEntry>&& value) { SetDurationHistogram(std::move(value)); return *this;}
-    inline Service& AddDurationHistogram(const HistogramEntry& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(value); return *this; }
-    inline Service& AddDurationHistogram(HistogramEntry&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.push_back(std::move(value)); return *this; }
+    template<typename DurationHistogramT = Aws::Vector<HistogramEntry>>
+    void SetDurationHistogram(DurationHistogramT&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram = std::forward<DurationHistogramT>(value); }
+    template<typename DurationHistogramT = Aws::Vector<HistogramEntry>>
+    Service& WithDurationHistogram(DurationHistogramT&& value) { SetDurationHistogram(std::forward<DurationHistogramT>(value)); return *this;}
+    template<typename DurationHistogramT = HistogramEntry>
+    Service& AddDurationHistogram(DurationHistogramT&& value) { m_durationHistogramHasBeenSet = true; m_durationHistogram.emplace_back(std::forward<DurationHistogramT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A histogram that maps the spread of service response times.</p>
      */
-    inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const{ return m_responseTimeHistogram; }
+    inline const Aws::Vector<HistogramEntry>& GetResponseTimeHistogram() const { return m_responseTimeHistogram; }
     inline bool ResponseTimeHistogramHasBeenSet() const { return m_responseTimeHistogramHasBeenSet; }
-    inline void SetResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = value; }
-    inline void SetResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = std::move(value); }
-    inline Service& WithResponseTimeHistogram(const Aws::Vector<HistogramEntry>& value) { SetResponseTimeHistogram(value); return *this;}
-    inline Service& WithResponseTimeHistogram(Aws::Vector<HistogramEntry>&& value) { SetResponseTimeHistogram(std::move(value)); return *this;}
-    inline Service& AddResponseTimeHistogram(const HistogramEntry& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(value); return *this; }
-    inline Service& AddResponseTimeHistogram(HistogramEntry&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.push_back(std::move(value)); return *this; }
+    template<typename ResponseTimeHistogramT = Aws::Vector<HistogramEntry>>
+    void SetResponseTimeHistogram(ResponseTimeHistogramT&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram = std::forward<ResponseTimeHistogramT>(value); }
+    template<typename ResponseTimeHistogramT = Aws::Vector<HistogramEntry>>
+    Service& WithResponseTimeHistogram(ResponseTimeHistogramT&& value) { SetResponseTimeHistogram(std::forward<ResponseTimeHistogramT>(value)); return *this;}
+    template<typename ResponseTimeHistogramT = HistogramEntry>
+    Service& AddResponseTimeHistogram(ResponseTimeHistogramT&& value) { m_responseTimeHistogramHasBeenSet = true; m_responseTimeHistogram.emplace_back(std::forward<ResponseTimeHistogramT>(value)); return *this; }
     ///@}
   private:
 
-    int m_referenceId;
+    int m_referenceId{0};
     bool m_referenceIdHasBeenSet = false;
 
     Aws::String m_name;
@@ -232,7 +223,7 @@ namespace Model
     Aws::Vector<Aws::String> m_names;
     bool m_namesHasBeenSet = false;
 
-    bool m_root;
+    bool m_root{false};
     bool m_rootHasBeenSet = false;
 
     Aws::String m_accountId;
@@ -244,10 +235,10 @@ namespace Model
     Aws::String m_state;
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::Vector<Edge> m_edges;

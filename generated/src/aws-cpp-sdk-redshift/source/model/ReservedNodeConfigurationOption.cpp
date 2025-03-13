@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReservedNodeConfigurationOption::ReservedNodeConfigurationOption() : 
-    m_sourceReservedNodeHasBeenSet(false),
-    m_targetReservedNodeCount(0),
-    m_targetReservedNodeCountHasBeenSet(false),
-    m_targetReservedNodeOfferingHasBeenSet(false)
-{
-}
-
 ReservedNodeConfigurationOption::ReservedNodeConfigurationOption(const XmlNode& xmlNode)
-  : ReservedNodeConfigurationOption()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ ReservedNodeConfigurationOption& ReservedNodeConfigurationOption::operator =(con
     {
       m_sourceReservedNode = sourceReservedNodeNode;
       m_sourceReservedNodeHasBeenSet = true;
+       m_sourceReservedNodeHasBeenSet = true;
     }
     XmlNode targetReservedNodeCountNode = resultNode.FirstChild("TargetReservedNodeCount");
     if(!targetReservedNodeCountNode.IsNull())
     {
       m_targetReservedNodeCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetReservedNodeCountNode.GetText()).c_str()).c_str());
       m_targetReservedNodeCountHasBeenSet = true;
+       m_targetReservedNodeCountHasBeenSet = true;
     }
     XmlNode targetReservedNodeOfferingNode = resultNode.FirstChild("TargetReservedNodeOffering");
     if(!targetReservedNodeOfferingNode.IsNull())
     {
       m_targetReservedNodeOffering = targetReservedNodeOfferingNode;
       m_targetReservedNodeOfferingHasBeenSet = true;
+       m_targetReservedNodeOfferingHasBeenSet = true;
     }
   }
 

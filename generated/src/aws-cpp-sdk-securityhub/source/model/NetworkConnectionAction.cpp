@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-NetworkConnectionAction::NetworkConnectionAction() : 
-    m_connectionDirectionHasBeenSet(false),
-    m_remoteIpDetailsHasBeenSet(false),
-    m_remotePortDetailsHasBeenSet(false),
-    m_localPortDetailsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_blocked(false),
-    m_blockedHasBeenSet(false)
-{
-}
-
 NetworkConnectionAction::NetworkConnectionAction(JsonView jsonValue)
-  : NetworkConnectionAction()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ NetworkConnectionAction& NetworkConnectionAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionDirection"))
   {
     m_connectionDirection = jsonValue.GetString("ConnectionDirection");
-
     m_connectionDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteIpDetails"))
   {
     m_remoteIpDetails = jsonValue.GetObject("RemoteIpDetails");
-
     m_remoteIpDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemotePortDetails"))
   {
     m_remotePortDetails = jsonValue.GetObject("RemotePortDetails");
-
     m_remotePortDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalPortDetails"))
   {
     m_localPortDetails = jsonValue.GetObject("LocalPortDetails");
-
     m_localPortDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocked"))
   {
     m_blocked = jsonValue.GetBool("Blocked");
-
     m_blockedHasBeenSet = true;
   }
-
   return *this;
 }
 

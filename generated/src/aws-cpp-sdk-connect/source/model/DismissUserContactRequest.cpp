@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DismissUserContactRequest::DismissUserContactRequest() : 
-    m_userIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Aws::String DismissUserContactRequest::SerializePayload() const
 {
   JsonValue payload;

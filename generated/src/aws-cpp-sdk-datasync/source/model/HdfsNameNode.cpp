@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-HdfsNameNode::HdfsNameNode() : 
-    m_hostnameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 HdfsNameNode::HdfsNameNode(JsonView jsonValue)
-  : HdfsNameNode()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HdfsNameNode& HdfsNameNode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

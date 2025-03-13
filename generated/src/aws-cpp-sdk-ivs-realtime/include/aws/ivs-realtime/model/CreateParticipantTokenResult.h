@@ -28,7 +28,7 @@ namespace Model
   class CreateParticipantTokenResult
   {
   public:
-    AWS_IVSREALTIME_API CreateParticipantTokenResult();
+    AWS_IVSREALTIME_API CreateParticipantTokenResult() = default;
     AWS_IVSREALTIME_API CreateParticipantTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API CreateParticipantTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The participant token that was created.</p>
      */
-    inline const ParticipantToken& GetParticipantToken() const{ return m_participantToken; }
-    inline void SetParticipantToken(const ParticipantToken& value) { m_participantToken = value; }
-    inline void SetParticipantToken(ParticipantToken&& value) { m_participantToken = std::move(value); }
-    inline CreateParticipantTokenResult& WithParticipantToken(const ParticipantToken& value) { SetParticipantToken(value); return *this;}
-    inline CreateParticipantTokenResult& WithParticipantToken(ParticipantToken&& value) { SetParticipantToken(std::move(value)); return *this;}
+    inline const ParticipantToken& GetParticipantToken() const { return m_participantToken; }
+    template<typename ParticipantTokenT = ParticipantToken>
+    void SetParticipantToken(ParticipantTokenT&& value) { m_participantTokenHasBeenSet = true; m_participantToken = std::forward<ParticipantTokenT>(value); }
+    template<typename ParticipantTokenT = ParticipantToken>
+    CreateParticipantTokenResult& WithParticipantToken(ParticipantTokenT&& value) { SetParticipantToken(std::forward<ParticipantTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateParticipantTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateParticipantTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateParticipantTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateParticipantTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ParticipantToken m_participantToken;
+    bool m_participantTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

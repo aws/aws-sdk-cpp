@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPreferencesResult::GetPreferencesResult() : 
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
-    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET)
-{
-}
-
 GetPreferencesResult::GetPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPreferencesResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ GetPreferencesResult& GetPreferencesResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = SavingsEstimationModeMapper::GetSavingsEstimationModeForName(jsonValue.GetString("savingsEstimationMode"));
-
+    m_savingsEstimationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberAccountDiscountVisibility"))
   {
     m_memberAccountDiscountVisibility = MemberAccountDiscountVisibilityMapper::GetMemberAccountDiscountVisibilityForName(jsonValue.GetString("memberAccountDiscountVisibility"));
-
+    m_memberAccountDiscountVisibilityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

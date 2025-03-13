@@ -21,7 +21,7 @@ namespace Model
   class UpdateCommentRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API UpdateCommentRequest();
+    AWS_CODECOMMIT_API UpdateCommentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The system-generated ID of the comment you want to update. To get this ID,
      * use <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
      */
-    inline const Aws::String& GetCommentId() const{ return m_commentId; }
+    inline const Aws::String& GetCommentId() const { return m_commentId; }
     inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
-    inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
-    inline void SetCommentId(Aws::String&& value) { m_commentIdHasBeenSet = true; m_commentId = std::move(value); }
-    inline void SetCommentId(const char* value) { m_commentIdHasBeenSet = true; m_commentId.assign(value); }
-    inline UpdateCommentRequest& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-    inline UpdateCommentRequest& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-    inline UpdateCommentRequest& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+    template<typename CommentIdT = Aws::String>
+    void SetCommentId(CommentIdT&& value) { m_commentIdHasBeenSet = true; m_commentId = std::forward<CommentIdT>(value); }
+    template<typename CommentIdT = Aws::String>
+    UpdateCommentRequest& WithCommentId(CommentIdT&& value) { SetCommentId(std::forward<CommentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated content to replace the existing content of the comment.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline UpdateCommentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline UpdateCommentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline UpdateCommentRequest& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    UpdateCommentRequest& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

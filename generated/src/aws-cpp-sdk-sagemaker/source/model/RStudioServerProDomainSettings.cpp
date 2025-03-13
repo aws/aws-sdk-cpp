@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RStudioServerProDomainSettings::RStudioServerProDomainSettings() : 
-    m_domainExecutionRoleArnHasBeenSet(false),
-    m_rStudioConnectUrlHasBeenSet(false),
-    m_rStudioPackageManagerUrlHasBeenSet(false),
-    m_defaultResourceSpecHasBeenSet(false)
-{
-}
-
 RStudioServerProDomainSettings::RStudioServerProDomainSettings(JsonView jsonValue)
-  : RStudioServerProDomainSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RStudioServerProDomainSettings& RStudioServerProDomainSettings::operator =(JsonV
   if(jsonValue.ValueExists("DomainExecutionRoleArn"))
   {
     m_domainExecutionRoleArn = jsonValue.GetString("DomainExecutionRoleArn");
-
     m_domainExecutionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RStudioConnectUrl"))
   {
     m_rStudioConnectUrl = jsonValue.GetString("RStudioConnectUrl");
-
     m_rStudioConnectUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RStudioPackageManagerUrl"))
   {
     m_rStudioPackageManagerUrl = jsonValue.GetString("RStudioPackageManagerUrl");
-
     m_rStudioPackageManagerUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultResourceSpec"))
   {
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
-
     m_defaultResourceSpecHasBeenSet = true;
   }
-
   return *this;
 }
 

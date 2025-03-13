@@ -18,20 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-SchemaVersionListItem::SchemaVersionListItem() : 
-    m_schemaIdHasBeenSet(false),
-    m_type(SchemaVersionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_visibility(SchemaVersionVisibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 SchemaVersionListItem::SchemaVersionListItem(JsonView jsonValue)
-  : SchemaVersionListItem()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ SchemaVersionListItem& SchemaVersionListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaId"))
   {
     m_schemaId = jsonValue.GetString("SchemaId");
-
     m_schemaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SchemaVersionTypeMapper::GetSchemaVersionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SemanticVersion"))
   {
     m_semanticVersion = jsonValue.GetString("SemanticVersion");
-
     m_semanticVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = SchemaVersionVisibilityMapper::GetSchemaVersionVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

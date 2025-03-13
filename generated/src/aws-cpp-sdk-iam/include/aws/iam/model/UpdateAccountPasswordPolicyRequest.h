@@ -19,7 +19,7 @@ namespace Model
   class UpdateAccountPasswordPolicyRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateAccountPasswordPolicyRequest();
+    AWS_IAM_API UpdateAccountPasswordPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
      * you do not specify a value for this parameter, then the operation uses the
      * default value of <code>6</code>.</p>
      */
-    inline int GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
+    inline int GetMinimumPasswordLength() const { return m_minimumPasswordLength; }
     inline bool MinimumPasswordLengthHasBeenSet() const { return m_minimumPasswordLengthHasBeenSet; }
     inline void SetMinimumPasswordLength(int value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
     inline UpdateAccountPasswordPolicyRequest& WithMinimumPasswordLength(int value) { SetMinimumPasswordLength(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * operation uses the default value of <code>false</code>. The result is that
      * passwords do not require at least one symbol character.</p>
      */
-    inline bool GetRequireSymbols() const{ return m_requireSymbols; }
+    inline bool GetRequireSymbols() const { return m_requireSymbols; }
     inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }
     inline void SetRequireSymbols(bool value) { m_requireSymbolsHasBeenSet = true; m_requireSymbols = value; }
     inline UpdateAccountPasswordPolicyRequest& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * then the operation uses the default value of <code>false</code>. The result is
      * that passwords do not require at least one numeric character.</p>
      */
-    inline bool GetRequireNumbers() const{ return m_requireNumbers; }
+    inline bool GetRequireNumbers() const { return m_requireNumbers; }
     inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
     inline UpdateAccountPasswordPolicyRequest& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
      * <code>false</code>. The result is that passwords do not require at least one
      * uppercase character.</p>
      */
-    inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
+    inline bool GetRequireUppercaseCharacters() const { return m_requireUppercaseCharacters; }
     inline bool RequireUppercaseCharactersHasBeenSet() const { return m_requireUppercaseCharactersHasBeenSet; }
     inline void SetRequireUppercaseCharacters(bool value) { m_requireUppercaseCharactersHasBeenSet = true; m_requireUppercaseCharacters = value; }
     inline UpdateAccountPasswordPolicyRequest& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
      * <code>false</code>. The result is that passwords do not require at least one
      * lowercase character.</p>
      */
-    inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
+    inline bool GetRequireLowercaseCharacters() const { return m_requireLowercaseCharacters; }
     inline bool RequireLowercaseCharactersHasBeenSet() const { return m_requireLowercaseCharactersHasBeenSet; }
     inline void SetRequireLowercaseCharacters(bool value) { m_requireLowercaseCharactersHasBeenSet = true; m_requireLowercaseCharacters = value; }
     inline UpdateAccountPasswordPolicyRequest& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
@@ -111,7 +111,7 @@ namespace Model
      * default value of <code>false</code>. The result is that IAM users in the account
      * do not automatically have permissions to change their own password.</p>
      */
-    inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
+    inline bool GetAllowUsersToChangePassword() const { return m_allowUsersToChangePassword; }
     inline bool AllowUsersToChangePasswordHasBeenSet() const { return m_allowUsersToChangePasswordHasBeenSet; }
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
     inline UpdateAccountPasswordPolicyRequest& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
@@ -123,7 +123,7 @@ namespace Model
      * specify a value for this parameter, then the operation uses the default value of
      * <code>0</code>. The result is that IAM user passwords never expire.</p>
      */
-    inline int GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+    inline int GetMaxPasswordAge() const { return m_maxPasswordAge; }
     inline bool MaxPasswordAgeHasBeenSet() const { return m_maxPasswordAgeHasBeenSet; }
     inline void SetMaxPasswordAge(int value) { m_maxPasswordAgeHasBeenSet = true; m_maxPasswordAge = value; }
     inline UpdateAccountPasswordPolicyRequest& WithMaxPasswordAge(int value) { SetMaxPasswordAge(value); return *this;}
@@ -136,7 +136,7 @@ namespace Model
      * operation uses the default value of <code>0</code>. The result is that IAM users
      * are not prevented from reusing previous passwords.</p>
      */
-    inline int GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
+    inline int GetPasswordReusePrevention() const { return m_passwordReusePrevention; }
     inline bool PasswordReusePreventionHasBeenSet() const { return m_passwordReusePreventionHasBeenSet; }
     inline void SetPasswordReusePrevention(int value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
     inline UpdateAccountPasswordPolicyRequest& WithPasswordReusePrevention(int value) { SetPasswordReusePrevention(value); return *this;}
@@ -159,38 +159,38 @@ namespace Model
      * <code>iam:ChangePassword</code> permission and active access keys can reset
      * their own expired console password using the CLI or API.</p> 
      */
-    inline bool GetHardExpiry() const{ return m_hardExpiry; }
+    inline bool GetHardExpiry() const { return m_hardExpiry; }
     inline bool HardExpiryHasBeenSet() const { return m_hardExpiryHasBeenSet; }
     inline void SetHardExpiry(bool value) { m_hardExpiryHasBeenSet = true; m_hardExpiry = value; }
     inline UpdateAccountPasswordPolicyRequest& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
     ///@}
   private:
 
-    int m_minimumPasswordLength;
+    int m_minimumPasswordLength{0};
     bool m_minimumPasswordLengthHasBeenSet = false;
 
-    bool m_requireSymbols;
+    bool m_requireSymbols{false};
     bool m_requireSymbolsHasBeenSet = false;
 
-    bool m_requireNumbers;
+    bool m_requireNumbers{false};
     bool m_requireNumbersHasBeenSet = false;
 
-    bool m_requireUppercaseCharacters;
+    bool m_requireUppercaseCharacters{false};
     bool m_requireUppercaseCharactersHasBeenSet = false;
 
-    bool m_requireLowercaseCharacters;
+    bool m_requireLowercaseCharacters{false};
     bool m_requireLowercaseCharactersHasBeenSet = false;
 
-    bool m_allowUsersToChangePassword;
+    bool m_allowUsersToChangePassword{false};
     bool m_allowUsersToChangePasswordHasBeenSet = false;
 
-    int m_maxPasswordAge;
+    int m_maxPasswordAge{0};
     bool m_maxPasswordAgeHasBeenSet = false;
 
-    int m_passwordReusePrevention;
+    int m_passwordReusePrevention{0};
     bool m_passwordReusePreventionHasBeenSet = false;
 
-    bool m_hardExpiry;
+    bool m_hardExpiry{false};
     bool m_hardExpiryHasBeenSet = false;
   };
 

@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-Template::Template() : 
-    m_templateNameHasBeenSet(false),
-    m_subjectPartHasBeenSet(false),
-    m_textPartHasBeenSet(false),
-    m_htmlPartHasBeenSet(false)
-{
-}
-
 Template::Template(const XmlNode& xmlNode)
-  : Template()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ Template& Template::operator =(const XmlNode& xmlNode)
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
     XmlNode subjectPartNode = resultNode.FirstChild("SubjectPart");
     if(!subjectPartNode.IsNull())
     {
       m_subjectPart = Aws::Utils::Xml::DecodeEscapedXmlText(subjectPartNode.GetText());
       m_subjectPartHasBeenSet = true;
+       m_subjectPartHasBeenSet = true;
     }
     XmlNode textPartNode = resultNode.FirstChild("TextPart");
     if(!textPartNode.IsNull())
     {
       m_textPart = Aws::Utils::Xml::DecodeEscapedXmlText(textPartNode.GetText());
       m_textPartHasBeenSet = true;
+       m_textPartHasBeenSet = true;
     }
     XmlNode htmlPartNode = resultNode.FirstChild("HtmlPart");
     if(!htmlPartNode.IsNull())
     {
       m_htmlPart = Aws::Utils::Xml::DecodeEscapedXmlText(htmlPartNode.GetText());
       m_htmlPartHasBeenSet = true;
+       m_htmlPartHasBeenSet = true;
     }
   }
 

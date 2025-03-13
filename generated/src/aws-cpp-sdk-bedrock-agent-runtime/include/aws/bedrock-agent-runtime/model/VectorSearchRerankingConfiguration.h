@@ -33,7 +33,7 @@ namespace Model
   class VectorSearchRerankingConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API VectorSearchRerankingConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API VectorSearchRerankingConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API VectorSearchRerankingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API VectorSearchRerankingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>Contains configurations for an Amazon Bedrock reranker model.</p>
      */
-    inline const VectorSearchBedrockRerankingConfiguration& GetBedrockRerankingConfiguration() const{ return m_bedrockRerankingConfiguration; }
+    inline const VectorSearchBedrockRerankingConfiguration& GetBedrockRerankingConfiguration() const { return m_bedrockRerankingConfiguration; }
     inline bool BedrockRerankingConfigurationHasBeenSet() const { return m_bedrockRerankingConfigurationHasBeenSet; }
-    inline void SetBedrockRerankingConfiguration(const VectorSearchBedrockRerankingConfiguration& value) { m_bedrockRerankingConfigurationHasBeenSet = true; m_bedrockRerankingConfiguration = value; }
-    inline void SetBedrockRerankingConfiguration(VectorSearchBedrockRerankingConfiguration&& value) { m_bedrockRerankingConfigurationHasBeenSet = true; m_bedrockRerankingConfiguration = std::move(value); }
-    inline VectorSearchRerankingConfiguration& WithBedrockRerankingConfiguration(const VectorSearchBedrockRerankingConfiguration& value) { SetBedrockRerankingConfiguration(value); return *this;}
-    inline VectorSearchRerankingConfiguration& WithBedrockRerankingConfiguration(VectorSearchBedrockRerankingConfiguration&& value) { SetBedrockRerankingConfiguration(std::move(value)); return *this;}
+    template<typename BedrockRerankingConfigurationT = VectorSearchBedrockRerankingConfiguration>
+    void SetBedrockRerankingConfiguration(BedrockRerankingConfigurationT&& value) { m_bedrockRerankingConfigurationHasBeenSet = true; m_bedrockRerankingConfiguration = std::forward<BedrockRerankingConfigurationT>(value); }
+    template<typename BedrockRerankingConfigurationT = VectorSearchBedrockRerankingConfiguration>
+    VectorSearchRerankingConfiguration& WithBedrockRerankingConfiguration(BedrockRerankingConfigurationT&& value) { SetBedrockRerankingConfiguration(std::forward<BedrockRerankingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of reranker model.</p>
      */
-    inline const VectorSearchRerankingConfigurationType& GetType() const{ return m_type; }
+    inline VectorSearchRerankingConfigurationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const VectorSearchRerankingConfigurationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(VectorSearchRerankingConfigurationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline VectorSearchRerankingConfiguration& WithType(const VectorSearchRerankingConfigurationType& value) { SetType(value); return *this;}
-    inline VectorSearchRerankingConfiguration& WithType(VectorSearchRerankingConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(VectorSearchRerankingConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline VectorSearchRerankingConfiguration& WithType(VectorSearchRerankingConfigurationType value) { SetType(value); return *this;}
     ///@}
   private:
 
     VectorSearchBedrockRerankingConfiguration m_bedrockRerankingConfiguration;
     bool m_bedrockRerankingConfigurationHasBeenSet = false;
 
-    VectorSearchRerankingConfigurationType m_type;
+    VectorSearchRerankingConfigurationType m_type{VectorSearchRerankingConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResource2020_05_31Result::ListTagsForResource2020_05_31Result()
-{
-}
-
 ListTagsForResource2020_05_31Result::ListTagsForResource2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListTagsForResource2020_05_31Result& ListTagsForResource2020_05_31Result::operat
   if(!resultNode.IsNull())
   {
     m_tags = resultNode;
+    m_tagsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListTagsForResource2020_05_31Result& ListTagsForResource2020_05_31Result::operat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

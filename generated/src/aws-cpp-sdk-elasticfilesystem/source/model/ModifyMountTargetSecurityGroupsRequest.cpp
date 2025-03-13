@@ -12,12 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyMountTargetSecurityGroupsRequest::ModifyMountTargetSecurityGroupsRequest() : 
-    m_mountTargetIdHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyMountTargetSecurityGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

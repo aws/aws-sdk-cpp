@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-MatchingResource::MatchingResource() : 
-    m_matchingBucketHasBeenSet(false)
-{
-}
-
 MatchingResource::MatchingResource(JsonView jsonValue)
-  : MatchingResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MatchingResource& MatchingResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("matchingBucket"))
   {
     m_matchingBucket = jsonValue.GetObject("matchingBucket");
-
     m_matchingBucketHasBeenSet = true;
   }
-
   return *this;
 }
 

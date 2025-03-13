@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSSLPoliciesResult::DescribeSSLPoliciesResult()
-{
-}
-
 DescribeSSLPoliciesResult::DescribeSSLPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeSSLPoliciesResult& DescribeSSLPoliciesResult::operator =(const Aws::Amaz
     if(!sslPoliciesNode.IsNull())
     {
       XmlNode sslPoliciesMember = sslPoliciesNode.FirstChild("member");
+      m_sslPoliciesHasBeenSet = !sslPoliciesMember.IsNull();
       while(!sslPoliciesMember.IsNull())
       {
         m_sslPolicies.push_back(sslPoliciesMember);
@@ -53,12 +50,14 @@ DescribeSSLPoliciesResult& DescribeSSLPoliciesResult::operator =(const Aws::Amaz
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
+      m_nextMarkerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::DescribeSSLPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

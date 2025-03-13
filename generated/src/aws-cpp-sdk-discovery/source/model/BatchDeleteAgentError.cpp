@@ -18,16 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-BatchDeleteAgentError::BatchDeleteAgentError() : 
-    m_agentIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(DeleteAgentErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 BatchDeleteAgentError::BatchDeleteAgentError(JsonView jsonValue)
-  : BatchDeleteAgentError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchDeleteAgentError& BatchDeleteAgentError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = DeleteAgentErrorCodeMapper::GetDeleteAgentErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

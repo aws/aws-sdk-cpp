@@ -12,11 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDomainRequest::DeleteDomainRequest() : 
-    m_domainIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainRequest::SerializePayload() const
 {
   JsonValue payload;

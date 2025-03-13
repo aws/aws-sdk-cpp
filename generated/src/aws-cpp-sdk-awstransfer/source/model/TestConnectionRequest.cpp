@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestConnectionRequest::TestConnectionRequest() : 
-    m_connectorIdHasBeenSet(false)
-{
-}
-
 Aws::String TestConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

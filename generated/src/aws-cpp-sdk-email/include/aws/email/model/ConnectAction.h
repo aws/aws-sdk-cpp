@@ -36,7 +36,7 @@ namespace Model
   class ConnectAction
   {
   public:
-    AWS_SES_API ConnectAction();
+    AWS_SES_API ConnectAction() = default;
     AWS_SES_API ConnectAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API ConnectAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,14 +52,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Amazon
      * Connect Administrator Guide</a> </p>
      */
-    inline const Aws::String& GetInstanceARN() const{ return m_instanceARN; }
+    inline const Aws::String& GetInstanceARN() const { return m_instanceARN; }
     inline bool InstanceARNHasBeenSet() const { return m_instanceARNHasBeenSet; }
-    inline void SetInstanceARN(const Aws::String& value) { m_instanceARNHasBeenSet = true; m_instanceARN = value; }
-    inline void SetInstanceARN(Aws::String&& value) { m_instanceARNHasBeenSet = true; m_instanceARN = std::move(value); }
-    inline void SetInstanceARN(const char* value) { m_instanceARNHasBeenSet = true; m_instanceARN.assign(value); }
-    inline ConnectAction& WithInstanceARN(const Aws::String& value) { SetInstanceARN(value); return *this;}
-    inline ConnectAction& WithInstanceARN(Aws::String&& value) { SetInstanceARN(std::move(value)); return *this;}
-    inline ConnectAction& WithInstanceARN(const char* value) { SetInstanceARN(value); return *this;}
+    template<typename InstanceARNT = Aws::String>
+    void SetInstanceARN(InstanceARNT&& value) { m_instanceARNHasBeenSet = true; m_instanceARN = std::forward<InstanceARNT>(value); }
+    template<typename InstanceARNT = Aws::String>
+    ConnectAction& WithInstanceARN(InstanceARNT&& value) { SetInstanceARN(std::forward<InstanceARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * role should have permission to invoke <code>connect:StartEmailContact</code> for
      * the given Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetIAMRoleARN() const{ return m_iAMRoleARN; }
+    inline const Aws::String& GetIAMRoleARN() const { return m_iAMRoleARN; }
     inline bool IAMRoleARNHasBeenSet() const { return m_iAMRoleARNHasBeenSet; }
-    inline void SetIAMRoleARN(const Aws::String& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = value; }
-    inline void SetIAMRoleARN(Aws::String&& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = std::move(value); }
-    inline void SetIAMRoleARN(const char* value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN.assign(value); }
-    inline ConnectAction& WithIAMRoleARN(const Aws::String& value) { SetIAMRoleARN(value); return *this;}
-    inline ConnectAction& WithIAMRoleARN(Aws::String&& value) { SetIAMRoleARN(std::move(value)); return *this;}
-    inline ConnectAction& WithIAMRoleARN(const char* value) { SetIAMRoleARN(value); return *this;}
+    template<typename IAMRoleARNT = Aws::String>
+    void SetIAMRoleARN(IAMRoleARNT&& value) { m_iAMRoleARNHasBeenSet = true; m_iAMRoleARN = std::forward<IAMRoleARNT>(value); }
+    template<typename IAMRoleARNT = Aws::String>
+    ConnectAction& WithIAMRoleARN(IAMRoleARNT&& value) { SetIAMRoleARN(std::forward<IAMRoleARNT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-WorkflowMetrics::WorkflowMetrics() : 
-    m_appflowIntegrationHasBeenSet(false)
-{
-}
-
 WorkflowMetrics::WorkflowMetrics(JsonView jsonValue)
-  : WorkflowMetrics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorkflowMetrics& WorkflowMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppflowIntegration"))
   {
     m_appflowIntegration = jsonValue.GetObject("AppflowIntegration");
-
     m_appflowIntegrationHasBeenSet = true;
   }
-
   return *this;
 }
 

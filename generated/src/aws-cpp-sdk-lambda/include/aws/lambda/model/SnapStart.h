@@ -35,7 +35,7 @@ namespace Model
   class SnapStart
   {
   public:
-    AWS_LAMBDA_API SnapStart();
+    AWS_LAMBDA_API SnapStart() = default;
     AWS_LAMBDA_API SnapStart(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API SnapStart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized
      * execution environment when you publish a function version.</p>
      */
-    inline const SnapStartApplyOn& GetApplyOn() const{ return m_applyOn; }
+    inline SnapStartApplyOn GetApplyOn() const { return m_applyOn; }
     inline bool ApplyOnHasBeenSet() const { return m_applyOnHasBeenSet; }
-    inline void SetApplyOn(const SnapStartApplyOn& value) { m_applyOnHasBeenSet = true; m_applyOn = value; }
-    inline void SetApplyOn(SnapStartApplyOn&& value) { m_applyOnHasBeenSet = true; m_applyOn = std::move(value); }
-    inline SnapStart& WithApplyOn(const SnapStartApplyOn& value) { SetApplyOn(value); return *this;}
-    inline SnapStart& WithApplyOn(SnapStartApplyOn&& value) { SetApplyOn(std::move(value)); return *this;}
+    inline void SetApplyOn(SnapStartApplyOn value) { m_applyOnHasBeenSet = true; m_applyOn = value; }
+    inline SnapStart& WithApplyOn(SnapStartApplyOn value) { SetApplyOn(value); return *this;}
     ///@}
   private:
 
-    SnapStartApplyOn m_applyOn;
+    SnapStartApplyOn m_applyOn{SnapStartApplyOn::NOT_SET};
     bool m_applyOnHasBeenSet = false;
   };
 

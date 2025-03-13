@@ -12,13 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMemberSessionRequest::UpdateMemberSessionRequest() : 
-    m_idHasBeenSet(false),
-    m_status(MacieStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMemberSessionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateCostCategoryDefinitionResult::UpdateCostCategoryDefinitionResult()
-{
-}
-
 UpdateCostCategoryDefinitionResult::UpdateCostCategoryDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateCostCategoryDefinitionResult& UpdateCostCategoryDefinitionResult::operator
   if(jsonValue.ValueExists("CostCategoryArn"))
   {
     m_costCategoryArn = jsonValue.GetString("CostCategoryArn");
-
+    m_costCategoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EffectiveStart"))
   {
     m_effectiveStart = jsonValue.GetString("EffectiveStart");
-
+    m_effectiveStartHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

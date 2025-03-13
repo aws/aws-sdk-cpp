@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-InputDecryptionSettings::InputDecryptionSettings() : 
-    m_decryptionMode(DecryptionMode::NOT_SET),
-    m_decryptionModeHasBeenSet(false),
-    m_encryptedDecryptionKeyHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false),
-    m_kmsKeyRegionHasBeenSet(false)
-{
-}
-
 InputDecryptionSettings::InputDecryptionSettings(JsonView jsonValue)
-  : InputDecryptionSettings()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ InputDecryptionSettings& InputDecryptionSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("decryptionMode"))
   {
     m_decryptionMode = DecryptionModeMapper::GetDecryptionModeForName(jsonValue.GetString("decryptionMode"));
-
     m_decryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptedDecryptionKey"))
   {
     m_encryptedDecryptionKey = jsonValue.GetString("encryptedDecryptionKey");
-
     m_encryptedDecryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initializationVector"))
   {
     m_initializationVector = jsonValue.GetString("initializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyRegion"))
   {
     m_kmsKeyRegion = jsonValue.GetString("kmsKeyRegion");
-
     m_kmsKeyRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

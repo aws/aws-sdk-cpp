@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ContainerMountPoint::ContainerMountPoint() : 
-    m_instancePathHasBeenSet(false),
-    m_containerPathHasBeenSet(false),
-    m_accessLevel(ContainerMountPointAccessLevel::NOT_SET),
-    m_accessLevelHasBeenSet(false)
-{
-}
-
 ContainerMountPoint::ContainerMountPoint(JsonView jsonValue)
-  : ContainerMountPoint()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ContainerMountPoint& ContainerMountPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstancePath"))
   {
     m_instancePath = jsonValue.GetString("InstancePath");
-
     m_instancePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerPath"))
   {
     m_containerPath = jsonValue.GetString("ContainerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessLevel"))
   {
     m_accessLevel = ContainerMountPointAccessLevelMapper::GetContainerMountPointAccessLevelForName(jsonValue.GetString("AccessLevel"));
-
     m_accessLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,24 +27,23 @@ namespace Model
   class AssociateDeviceWithPlacementResult
   {
   public:
-    AWS_IOT1CLICKPROJECTS_API AssociateDeviceWithPlacementResult();
+    AWS_IOT1CLICKPROJECTS_API AssociateDeviceWithPlacementResult() = default;
     AWS_IOT1CLICKPROJECTS_API AssociateDeviceWithPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT1CLICKPROJECTS_API AssociateDeviceWithPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateDeviceWithPlacementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateDeviceWithPlacementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateDeviceWithPlacementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateDeviceWithPlacementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

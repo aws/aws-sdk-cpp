@@ -12,15 +12,6 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkflowRequest::UpdateWorkflowRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_stepTargetsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

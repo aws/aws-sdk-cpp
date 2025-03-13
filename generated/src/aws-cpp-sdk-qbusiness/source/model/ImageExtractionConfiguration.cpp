@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ImageExtractionConfiguration::ImageExtractionConfiguration() : 
-    m_imageExtractionStatus(ImageExtractionStatus::NOT_SET),
-    m_imageExtractionStatusHasBeenSet(false)
-{
-}
-
 ImageExtractionConfiguration::ImageExtractionConfiguration(JsonView jsonValue)
-  : ImageExtractionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImageExtractionConfiguration& ImageExtractionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("imageExtractionStatus"))
   {
     m_imageExtractionStatus = ImageExtractionStatusMapper::GetImageExtractionStatusForName(jsonValue.GetString("imageExtractionStatus"));
-
     m_imageExtractionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

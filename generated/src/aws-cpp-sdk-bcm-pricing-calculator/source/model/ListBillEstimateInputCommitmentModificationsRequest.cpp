@@ -12,14 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBillEstimateInputCommitmentModificationsRequest::ListBillEstimateInputCommitmentModificationsRequest() : 
-    m_billEstimateIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListBillEstimateInputCommitmentModificationsRequest::SerializePayload() const
 {
   JsonValue payload;

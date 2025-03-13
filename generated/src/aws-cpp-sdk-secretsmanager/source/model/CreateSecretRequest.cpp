@@ -13,21 +13,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSecretRequest::CreateSecretRequest() : 
-    m_nameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_secretBinaryHasBeenSet(false),
-    m_secretStringHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_addReplicaRegionsHasBeenSet(false),
-    m_forceOverwriteReplicaSecret(false),
-    m_forceOverwriteReplicaSecretHasBeenSet(false)
-{
-}
-
 Aws::String CreateSecretRequest::SerializePayload() const
 {
   JsonValue payload;

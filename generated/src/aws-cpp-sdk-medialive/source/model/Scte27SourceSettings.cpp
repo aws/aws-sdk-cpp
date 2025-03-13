@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte27SourceSettings::Scte27SourceSettings() : 
-    m_ocrLanguage(Scte27OcrLanguage::NOT_SET),
-    m_ocrLanguageHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false)
-{
-}
-
 Scte27SourceSettings::Scte27SourceSettings(JsonView jsonValue)
-  : Scte27SourceSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Scte27SourceSettings& Scte27SourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ocrLanguage"))
   {
     m_ocrLanguage = Scte27OcrLanguageMapper::GetScte27OcrLanguageForName(jsonValue.GetString("ocrLanguage"));
-
     m_ocrLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
-
     m_pidHasBeenSet = true;
   }
-
   return *this;
 }
 

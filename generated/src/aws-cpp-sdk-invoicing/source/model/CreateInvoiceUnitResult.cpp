@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInvoiceUnitResult::CreateInvoiceUnitResult()
-{
-}
-
 CreateInvoiceUnitResult::CreateInvoiceUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateInvoiceUnitResult& CreateInvoiceUnitResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("InvoiceUnitArn"))
   {
     m_invoiceUnitArn = jsonValue.GetString("InvoiceUnitArn");
-
+    m_invoiceUnitArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

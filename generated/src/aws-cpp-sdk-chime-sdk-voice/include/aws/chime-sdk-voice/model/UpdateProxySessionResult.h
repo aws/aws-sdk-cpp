@@ -28,7 +28,7 @@ namespace Model
   class UpdateProxySessionResult
   {
   public:
-    AWS_CHIMESDKVOICE_API UpdateProxySessionResult();
+    AWS_CHIMESDKVOICE_API UpdateProxySessionResult() = default;
     AWS_CHIMESDKVOICE_API UpdateProxySessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API UpdateProxySessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated proxy session details.</p>
      */
-    inline const ProxySession& GetProxySession() const{ return m_proxySession; }
-    inline void SetProxySession(const ProxySession& value) { m_proxySession = value; }
-    inline void SetProxySession(ProxySession&& value) { m_proxySession = std::move(value); }
-    inline UpdateProxySessionResult& WithProxySession(const ProxySession& value) { SetProxySession(value); return *this;}
-    inline UpdateProxySessionResult& WithProxySession(ProxySession&& value) { SetProxySession(std::move(value)); return *this;}
+    inline const ProxySession& GetProxySession() const { return m_proxySession; }
+    template<typename ProxySessionT = ProxySession>
+    void SetProxySession(ProxySessionT&& value) { m_proxySessionHasBeenSet = true; m_proxySession = std::forward<ProxySessionT>(value); }
+    template<typename ProxySessionT = ProxySession>
+    UpdateProxySessionResult& WithProxySession(ProxySessionT&& value) { SetProxySession(std::forward<ProxySessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProxySessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProxySessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProxySessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProxySessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProxySession m_proxySession;
+    bool m_proxySessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

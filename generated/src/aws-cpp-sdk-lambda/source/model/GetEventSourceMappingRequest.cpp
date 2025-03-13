@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventSourceMappingRequest::GetEventSourceMappingRequest() : 
-    m_uUIDHasBeenSet(false)
-{
-}
-
 Aws::String GetEventSourceMappingRequest::SerializePayload() const
 {
   return {};

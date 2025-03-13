@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-Suggester::Suggester() : 
-    m_suggesterNameHasBeenSet(false),
-    m_documentSuggesterOptionsHasBeenSet(false)
-{
-}
-
 Suggester::Suggester(const XmlNode& xmlNode)
-  : Suggester()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Suggester& Suggester::operator =(const XmlNode& xmlNode)
     {
       m_suggesterName = Aws::Utils::Xml::DecodeEscapedXmlText(suggesterNameNode.GetText());
       m_suggesterNameHasBeenSet = true;
+       m_suggesterNameHasBeenSet = true;
     }
     XmlNode documentSuggesterOptionsNode = resultNode.FirstChild("DocumentSuggesterOptions");
     if(!documentSuggesterOptionsNode.IsNull())
     {
       m_documentSuggesterOptions = documentSuggesterOptionsNode;
       m_documentSuggesterOptionsHasBeenSet = true;
+       m_documentSuggesterOptionsHasBeenSet = true;
     }
   }
 

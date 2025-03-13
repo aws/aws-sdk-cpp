@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSsmPatch::AwsSsmPatch() : 
-    m_complianceSummaryHasBeenSet(false)
-{
-}
-
 AwsSsmPatch::AwsSsmPatch(JsonView jsonValue)
-  : AwsSsmPatch()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsSsmPatch& AwsSsmPatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComplianceSummary"))
   {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");
-
     m_complianceSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

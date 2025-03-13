@@ -34,7 +34,7 @@ namespace Model
   class LandingZoneOperationDetail
   {
   public:
-    AWS_CONTROLTOWER_API LandingZoneOperationDetail();
+    AWS_CONTROLTOWER_API LandingZoneOperationDetail() = default;
     AWS_CONTROLTOWER_API LandingZoneOperationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API LandingZoneOperationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The landing zone operation end time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline LandingZoneOperationDetail& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline LandingZoneOperationDetail& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    LandingZoneOperationDetail& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>operationIdentifier</code> of the landing zone operation.</p>
      */
-    inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
+    inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
     inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
-    inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = value; }
-    inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::move(value); }
-    inline void SetOperationIdentifier(const char* value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier.assign(value); }
-    inline LandingZoneOperationDetail& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
-    inline LandingZoneOperationDetail& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
-    inline LandingZoneOperationDetail& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
+    template<typename OperationIdentifierT = Aws::String>
+    void SetOperationIdentifier(OperationIdentifierT&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::forward<OperationIdentifierT>(value); }
+    template<typename OperationIdentifierT = Aws::String>
+    LandingZoneOperationDetail& WithOperationIdentifier(OperationIdentifierT&& value) { SetOperationIdentifier(std::forward<OperationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,24 +73,22 @@ namespace Model
      * operation. </p> </li> <li> <p> <code>RESET</code>: The
      * <code>ResetLandingZone</code> operation. </p> </li> </ul>
      */
-    inline const LandingZoneOperationType& GetOperationType() const{ return m_operationType; }
+    inline LandingZoneOperationType GetOperationType() const { return m_operationType; }
     inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
-    inline void SetOperationType(const LandingZoneOperationType& value) { m_operationTypeHasBeenSet = true; m_operationType = value; }
-    inline void SetOperationType(LandingZoneOperationType&& value) { m_operationTypeHasBeenSet = true; m_operationType = std::move(value); }
-    inline LandingZoneOperationDetail& WithOperationType(const LandingZoneOperationType& value) { SetOperationType(value); return *this;}
-    inline LandingZoneOperationDetail& WithOperationType(LandingZoneOperationType&& value) { SetOperationType(std::move(value)); return *this;}
+    inline void SetOperationType(LandingZoneOperationType value) { m_operationTypeHasBeenSet = true; m_operationType = value; }
+    inline LandingZoneOperationDetail& WithOperationType(LandingZoneOperationType value) { SetOperationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The landing zone operation start time.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline LandingZoneOperationDetail& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline LandingZoneOperationDetail& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    LandingZoneOperationDetail& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,10 @@ namespace Model
      * zone operation is in progress. </p> </li> <li> <p> <code>FAILED</code>: The
      * landing zone operation failed. </p> </li> </ul>
      */
-    inline const LandingZoneOperationStatus& GetStatus() const{ return m_status; }
+    inline LandingZoneOperationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LandingZoneOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LandingZoneOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LandingZoneOperationDetail& WithStatus(const LandingZoneOperationStatus& value) { SetStatus(value); return *this;}
-    inline LandingZoneOperationDetail& WithStatus(LandingZoneOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LandingZoneOperationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LandingZoneOperationDetail& WithStatus(LandingZoneOperationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -115,30 +109,28 @@ namespace Model
      * <p>If the operation result is FAILED, this string contains a message explaining
      * why the operation failed.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline LandingZoneOperationDetail& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline LandingZoneOperationDetail& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline LandingZoneOperationDetail& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    LandingZoneOperationDetail& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_operationIdentifier;
     bool m_operationIdentifierHasBeenSet = false;
 
-    LandingZoneOperationType m_operationType;
+    LandingZoneOperationType m_operationType{LandingZoneOperationType::NOT_SET};
     bool m_operationTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    LandingZoneOperationStatus m_status;
+    LandingZoneOperationStatus m_status{LandingZoneOperationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

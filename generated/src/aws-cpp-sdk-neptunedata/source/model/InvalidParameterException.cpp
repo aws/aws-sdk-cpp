@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-InvalidParameterException::InvalidParameterException() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 InvalidParameterException::InvalidParameterException(JsonView jsonValue)
-  : InvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InvalidParameterException& InvalidParameterException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

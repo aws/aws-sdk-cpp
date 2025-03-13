@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PipelineSummary::PipelineSummary() : 
-    m_pipelineArnHasBeenSet(false),
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineDisplayNameHasBeenSet(false),
-    m_pipelineDescriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastExecutionTimeHasBeenSet(false)
-{
-}
-
 PipelineSummary::PipelineSummary(JsonView jsonValue)
-  : PipelineSummary()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ PipelineSummary& PipelineSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PipelineArn"))
   {
     m_pipelineArn = jsonValue.GetString("PipelineArn");
-
     m_pipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineName"))
   {
     m_pipelineName = jsonValue.GetString("PipelineName");
-
     m_pipelineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineDisplayName"))
   {
     m_pipelineDisplayName = jsonValue.GetString("PipelineDisplayName");
-
     m_pipelineDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineDescription"))
   {
     m_pipelineDescription = jsonValue.GetString("PipelineDescription");
-
     m_pipelineDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionTime"))
   {
     m_lastExecutionTime = jsonValue.GetDouble("LastExecutionTime");
-
     m_lastExecutionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

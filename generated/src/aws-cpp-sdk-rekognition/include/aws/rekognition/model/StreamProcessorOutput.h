@@ -35,7 +35,7 @@ namespace Model
   class StreamProcessorOutput
   {
   public:
-    AWS_REKOGNITION_API StreamProcessorOutput();
+    AWS_REKOGNITION_API StreamProcessorOutput() = default;
     AWS_REKOGNITION_API StreamProcessorOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StreamProcessorOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The Amazon Kinesis Data Streams stream to which the Amazon Rekognition stream
      * processor streams the analysis results.</p>
      */
-    inline const KinesisDataStream& GetKinesisDataStream() const{ return m_kinesisDataStream; }
+    inline const KinesisDataStream& GetKinesisDataStream() const { return m_kinesisDataStream; }
     inline bool KinesisDataStreamHasBeenSet() const { return m_kinesisDataStreamHasBeenSet; }
-    inline void SetKinesisDataStream(const KinesisDataStream& value) { m_kinesisDataStreamHasBeenSet = true; m_kinesisDataStream = value; }
-    inline void SetKinesisDataStream(KinesisDataStream&& value) { m_kinesisDataStreamHasBeenSet = true; m_kinesisDataStream = std::move(value); }
-    inline StreamProcessorOutput& WithKinesisDataStream(const KinesisDataStream& value) { SetKinesisDataStream(value); return *this;}
-    inline StreamProcessorOutput& WithKinesisDataStream(KinesisDataStream&& value) { SetKinesisDataStream(std::move(value)); return *this;}
+    template<typename KinesisDataStreamT = KinesisDataStream>
+    void SetKinesisDataStream(KinesisDataStreamT&& value) { m_kinesisDataStreamHasBeenSet = true; m_kinesisDataStream = std::forward<KinesisDataStreamT>(value); }
+    template<typename KinesisDataStreamT = KinesisDataStream>
+    StreamProcessorOutput& WithKinesisDataStream(KinesisDataStreamT&& value) { SetKinesisDataStream(std::forward<KinesisDataStreamT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p> The Amazon S3 bucket location to which Amazon Rekognition publishes the
      * detailed inference results of a video analysis operation. </p>
      */
-    inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline StreamProcessorOutput& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-    inline StreamProcessorOutput& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3Destination>
+    StreamProcessorOutput& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

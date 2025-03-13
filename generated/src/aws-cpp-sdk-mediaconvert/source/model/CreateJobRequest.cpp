@@ -12,29 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateJobRequest::CreateJobRequest() : 
-    m_accelerationSettingsHasBeenSet(false),
-    m_billingTagsSource(BillingTagsSource::NOT_SET),
-    m_billingTagsSourceHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_hopDestinationsHasBeenSet(false),
-    m_jobEngineVersionHasBeenSet(false),
-    m_jobTemplateHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_simulateReservedQueue(SimulateReservedQueue::NOT_SET),
-    m_simulateReservedQueueHasBeenSet(false),
-    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
-    m_statusUpdateIntervalHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userMetadataHasBeenSet(false)
-{
-}
-
 Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;

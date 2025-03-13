@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestConversionResult::TestConversionResult()
-{
-}
-
 TestConversionResult::TestConversionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ TestConversionResult& TestConversionResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("convertedFileContent"))
   {
     m_convertedFileContent = jsonValue.GetString("convertedFileContent");
-
+    m_convertedFileContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationMessages"))
   {
     Aws::Utils::Array<JsonView> validationMessagesJsonList = jsonValue.GetArray("validationMessages");
@@ -42,14 +37,15 @@ TestConversionResult& TestConversionResult::operator =(const Aws::AmazonWebServi
     {
       m_validationMessages.push_back(validationMessagesJsonList[validationMessagesIndex].AsString());
     }
+    m_validationMessagesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

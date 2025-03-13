@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AttachThingPrincipalRequest::AttachThingPrincipalRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_thingPrincipalType(ThingPrincipalType::NOT_SET),
-    m_thingPrincipalTypeHasBeenSet(false)
-{
-}
-
 Aws::String AttachThingPrincipalRequest::SerializePayload() const
 {
   return {};

@@ -12,14 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResetEncryptionKeyRequest::ResetEncryptionKeyRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
-{
-}
-
 Aws::String ResetEncryptionKeyRequest::SerializePayload() const
 {
   JsonValue payload;

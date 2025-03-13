@@ -24,7 +24,7 @@ namespace Model
   class UpdateApplicationRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API UpdateApplicationRequest();
+    AWS_OPENSEARCHSERVICE_API UpdateApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,40 @@ namespace Model
     /**
      * <p>Unique identifier of the OpenSearch Application to be updated.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateApplicationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateApplicationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateApplicationRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Data sources to be associated with the OpenSearch Application.</p>
      */
-    inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+    inline const Aws::Vector<DataSource>& GetDataSources() const { return m_dataSources; }
     inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
-    inline void SetDataSources(const Aws::Vector<DataSource>& value) { m_dataSourcesHasBeenSet = true; m_dataSources = value; }
-    inline void SetDataSources(Aws::Vector<DataSource>&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::move(value); }
-    inline UpdateApplicationRequest& WithDataSources(const Aws::Vector<DataSource>& value) { SetDataSources(value); return *this;}
-    inline UpdateApplicationRequest& WithDataSources(Aws::Vector<DataSource>&& value) { SetDataSources(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& AddDataSources(const DataSource& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(value); return *this; }
-    inline UpdateApplicationRequest& AddDataSources(DataSource&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.push_back(std::move(value)); return *this; }
+    template<typename DataSourcesT = Aws::Vector<DataSource>>
+    void SetDataSources(DataSourcesT&& value) { m_dataSourcesHasBeenSet = true; m_dataSources = std::forward<DataSourcesT>(value); }
+    template<typename DataSourcesT = Aws::Vector<DataSource>>
+    UpdateApplicationRequest& WithDataSources(DataSourcesT&& value) { SetDataSources(std::forward<DataSourcesT>(value)); return *this;}
+    template<typename DataSourcesT = DataSource>
+    UpdateApplicationRequest& AddDataSources(DataSourcesT&& value) { m_dataSourcesHasBeenSet = true; m_dataSources.emplace_back(std::forward<DataSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Configurations to be changed for the OpenSearch Application.</p>
      */
-    inline const Aws::Vector<AppConfig>& GetAppConfigs() const{ return m_appConfigs; }
+    inline const Aws::Vector<AppConfig>& GetAppConfigs() const { return m_appConfigs; }
     inline bool AppConfigsHasBeenSet() const { return m_appConfigsHasBeenSet; }
-    inline void SetAppConfigs(const Aws::Vector<AppConfig>& value) { m_appConfigsHasBeenSet = true; m_appConfigs = value; }
-    inline void SetAppConfigs(Aws::Vector<AppConfig>&& value) { m_appConfigsHasBeenSet = true; m_appConfigs = std::move(value); }
-    inline UpdateApplicationRequest& WithAppConfigs(const Aws::Vector<AppConfig>& value) { SetAppConfigs(value); return *this;}
-    inline UpdateApplicationRequest& WithAppConfigs(Aws::Vector<AppConfig>&& value) { SetAppConfigs(std::move(value)); return *this;}
-    inline UpdateApplicationRequest& AddAppConfigs(const AppConfig& value) { m_appConfigsHasBeenSet = true; m_appConfigs.push_back(value); return *this; }
-    inline UpdateApplicationRequest& AddAppConfigs(AppConfig&& value) { m_appConfigsHasBeenSet = true; m_appConfigs.push_back(std::move(value)); return *this; }
+    template<typename AppConfigsT = Aws::Vector<AppConfig>>
+    void SetAppConfigs(AppConfigsT&& value) { m_appConfigsHasBeenSet = true; m_appConfigs = std::forward<AppConfigsT>(value); }
+    template<typename AppConfigsT = Aws::Vector<AppConfig>>
+    UpdateApplicationRequest& WithAppConfigs(AppConfigsT&& value) { SetAppConfigs(std::forward<AppConfigsT>(value)); return *this;}
+    template<typename AppConfigsT = AppConfig>
+    UpdateApplicationRequest& AddAppConfigs(AppConfigsT&& value) { m_appConfigsHasBeenSet = true; m_appConfigs.emplace_back(std::forward<AppConfigsT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ResultReuseConfiguration
   {
   public:
-    AWS_ATHENA_API ResultReuseConfiguration();
+    AWS_ATHENA_API ResultReuseConfiguration() = default;
     AWS_ATHENA_API ResultReuseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API ResultReuseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Specifies whether previous query results are reused, and if so, their maximum
      * age.</p>
      */
-    inline const ResultReuseByAgeConfiguration& GetResultReuseByAgeConfiguration() const{ return m_resultReuseByAgeConfiguration; }
+    inline const ResultReuseByAgeConfiguration& GetResultReuseByAgeConfiguration() const { return m_resultReuseByAgeConfiguration; }
     inline bool ResultReuseByAgeConfigurationHasBeenSet() const { return m_resultReuseByAgeConfigurationHasBeenSet; }
-    inline void SetResultReuseByAgeConfiguration(const ResultReuseByAgeConfiguration& value) { m_resultReuseByAgeConfigurationHasBeenSet = true; m_resultReuseByAgeConfiguration = value; }
-    inline void SetResultReuseByAgeConfiguration(ResultReuseByAgeConfiguration&& value) { m_resultReuseByAgeConfigurationHasBeenSet = true; m_resultReuseByAgeConfiguration = std::move(value); }
-    inline ResultReuseConfiguration& WithResultReuseByAgeConfiguration(const ResultReuseByAgeConfiguration& value) { SetResultReuseByAgeConfiguration(value); return *this;}
-    inline ResultReuseConfiguration& WithResultReuseByAgeConfiguration(ResultReuseByAgeConfiguration&& value) { SetResultReuseByAgeConfiguration(std::move(value)); return *this;}
+    template<typename ResultReuseByAgeConfigurationT = ResultReuseByAgeConfiguration>
+    void SetResultReuseByAgeConfiguration(ResultReuseByAgeConfigurationT&& value) { m_resultReuseByAgeConfigurationHasBeenSet = true; m_resultReuseByAgeConfiguration = std::forward<ResultReuseByAgeConfigurationT>(value); }
+    template<typename ResultReuseByAgeConfigurationT = ResultReuseByAgeConfiguration>
+    ResultReuseConfiguration& WithResultReuseByAgeConfiguration(ResultReuseByAgeConfigurationT&& value) { SetResultReuseByAgeConfiguration(std::forward<ResultReuseByAgeConfigurationT>(value)); return *this;}
     ///@}
   private:
 

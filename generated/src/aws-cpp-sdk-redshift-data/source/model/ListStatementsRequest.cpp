@@ -12,21 +12,6 @@ using namespace Aws::RedshiftDataAPIService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStatementsRequest::ListStatementsRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_roleLevel(false),
-    m_roleLevelHasBeenSet(false),
-    m_statementNameHasBeenSet(false),
-    m_status(StatusString::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ListStatementsRequest::SerializePayload() const
 {
   JsonValue payload;

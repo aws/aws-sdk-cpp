@@ -32,7 +32,7 @@ namespace Model
   class InTransitEncryptionConfiguration
   {
   public:
-    AWS_EMRCONTAINERS_API InTransitEncryptionConfiguration();
+    AWS_EMRCONTAINERS_API InTransitEncryptionConfiguration() = default;
     AWS_EMRCONTAINERS_API InTransitEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API InTransitEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>TLS certificate-related configuration input for the security
      * configuration.</p>
      */
-    inline const TLSCertificateConfiguration& GetTlsCertificateConfiguration() const{ return m_tlsCertificateConfiguration; }
+    inline const TLSCertificateConfiguration& GetTlsCertificateConfiguration() const { return m_tlsCertificateConfiguration; }
     inline bool TlsCertificateConfigurationHasBeenSet() const { return m_tlsCertificateConfigurationHasBeenSet; }
-    inline void SetTlsCertificateConfiguration(const TLSCertificateConfiguration& value) { m_tlsCertificateConfigurationHasBeenSet = true; m_tlsCertificateConfiguration = value; }
-    inline void SetTlsCertificateConfiguration(TLSCertificateConfiguration&& value) { m_tlsCertificateConfigurationHasBeenSet = true; m_tlsCertificateConfiguration = std::move(value); }
-    inline InTransitEncryptionConfiguration& WithTlsCertificateConfiguration(const TLSCertificateConfiguration& value) { SetTlsCertificateConfiguration(value); return *this;}
-    inline InTransitEncryptionConfiguration& WithTlsCertificateConfiguration(TLSCertificateConfiguration&& value) { SetTlsCertificateConfiguration(std::move(value)); return *this;}
+    template<typename TlsCertificateConfigurationT = TLSCertificateConfiguration>
+    void SetTlsCertificateConfiguration(TlsCertificateConfigurationT&& value) { m_tlsCertificateConfigurationHasBeenSet = true; m_tlsCertificateConfiguration = std::forward<TlsCertificateConfigurationT>(value); }
+    template<typename TlsCertificateConfigurationT = TLSCertificateConfiguration>
+    InTransitEncryptionConfiguration& WithTlsCertificateConfiguration(TlsCertificateConfigurationT&& value) { SetTlsCertificateConfiguration(std::forward<TlsCertificateConfigurationT>(value)); return *this;}
     ///@}
   private:
 

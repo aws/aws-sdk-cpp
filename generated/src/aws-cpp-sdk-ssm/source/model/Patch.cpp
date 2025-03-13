@@ -18,36 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Patch::Patch() : 
-    m_idHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contentUrlHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_productFamilyHasBeenSet(false),
-    m_productHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_msrcSeverityHasBeenSet(false),
-    m_kbNumberHasBeenSet(false),
-    m_msrcNumberHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_advisoryIdsHasBeenSet(false),
-    m_bugzillaIdsHasBeenSet(false),
-    m_cVEIdsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_epoch(0),
-    m_epochHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_archHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_repositoryHasBeenSet(false)
-{
-}
-
 Patch::Patch(JsonView jsonValue)
-  : Patch()
 {
   *this = jsonValue;
 }
@@ -57,94 +28,68 @@ Patch& Patch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseDate"))
   {
     m_releaseDate = jsonValue.GetDouble("ReleaseDate");
-
     m_releaseDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentUrl"))
   {
     m_contentUrl = jsonValue.GetString("ContentUrl");
-
     m_contentUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vendor"))
   {
     m_vendor = jsonValue.GetString("Vendor");
-
     m_vendorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductFamily"))
   {
     m_productFamily = jsonValue.GetString("ProductFamily");
-
     m_productFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Product"))
   {
     m_product = jsonValue.GetString("Product");
-
     m_productHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Classification"))
   {
     m_classification = jsonValue.GetString("Classification");
-
     m_classificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MsrcSeverity"))
   {
     m_msrcSeverity = jsonValue.GetString("MsrcSeverity");
-
     m_msrcSeverityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KbNumber"))
   {
     m_kbNumber = jsonValue.GetString("KbNumber");
-
     m_kbNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MsrcNumber"))
   {
     m_msrcNumber = jsonValue.GetString("MsrcNumber");
-
     m_msrcNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvisoryIds"))
   {
     Aws::Utils::Array<JsonView> advisoryIdsJsonList = jsonValue.GetArray("AdvisoryIds");
@@ -154,7 +99,6 @@ Patch& Patch::operator =(JsonView jsonValue)
     }
     m_advisoryIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BugzillaIds"))
   {
     Aws::Utils::Array<JsonView> bugzillaIdsJsonList = jsonValue.GetArray("BugzillaIds");
@@ -164,7 +108,6 @@ Patch& Patch::operator =(JsonView jsonValue)
     }
     m_bugzillaIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CVEIds"))
   {
     Aws::Utils::Array<JsonView> cVEIdsJsonList = jsonValue.GetArray("CVEIds");
@@ -174,56 +117,41 @@ Patch& Patch::operator =(JsonView jsonValue)
     }
     m_cVEIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Epoch"))
   {
     m_epoch = jsonValue.GetInteger("Epoch");
-
     m_epochHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Release"))
   {
     m_release = jsonValue.GetString("Release");
-
     m_releaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arch"))
   {
     m_arch = jsonValue.GetString("Arch");
-
     m_archHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = jsonValue.GetString("Severity");
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Repository"))
   {
     m_repository = jsonValue.GetString("Repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   return *this;
 }
 

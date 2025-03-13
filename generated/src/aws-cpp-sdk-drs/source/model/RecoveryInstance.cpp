@@ -18,31 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstance::RecoveryInstance() : 
-    m_agentVersionHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_dataReplicationInfoHasBeenSet(false),
-    m_ec2InstanceIDHasBeenSet(false),
-    m_ec2InstanceState(EC2InstanceState::NOT_SET),
-    m_ec2InstanceStateHasBeenSet(false),
-    m_failbackHasBeenSet(false),
-    m_isDrill(false),
-    m_isDrillHasBeenSet(false),
-    m_jobIDHasBeenSet(false),
-    m_originAvailabilityZoneHasBeenSet(false),
-    m_originEnvironment(OriginEnvironment::NOT_SET),
-    m_originEnvironmentHasBeenSet(false),
-    m_pointInTimeSnapshotDateTimeHasBeenSet(false),
-    m_recoveryInstanceIDHasBeenSet(false),
-    m_recoveryInstancePropertiesHasBeenSet(false),
-    m_sourceOutpostArnHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 RecoveryInstance::RecoveryInstance(JsonView jsonValue)
-  : RecoveryInstance()
 {
   *this = jsonValue;
 }
@@ -52,108 +28,78 @@ RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataReplicationInfo"))
   {
     m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
-
     m_dataReplicationInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceID"))
   {
     m_ec2InstanceID = jsonValue.GetString("ec2InstanceID");
-
     m_ec2InstanceIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceState"))
   {
     m_ec2InstanceState = EC2InstanceStateMapper::GetEC2InstanceStateForName(jsonValue.GetString("ec2InstanceState"));
-
     m_ec2InstanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failback"))
   {
     m_failback = jsonValue.GetObject("failback");
-
     m_failbackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDrill"))
   {
     m_isDrill = jsonValue.GetBool("isDrill");
-
     m_isDrillHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobID"))
   {
     m_jobID = jsonValue.GetString("jobID");
-
     m_jobIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originAvailabilityZone"))
   {
     m_originAvailabilityZone = jsonValue.GetString("originAvailabilityZone");
-
     m_originAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originEnvironment"))
   {
     m_originEnvironment = OriginEnvironmentMapper::GetOriginEnvironmentForName(jsonValue.GetString("originEnvironment"));
-
     m_originEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pointInTimeSnapshotDateTime"))
   {
     m_pointInTimeSnapshotDateTime = jsonValue.GetString("pointInTimeSnapshotDateTime");
-
     m_pointInTimeSnapshotDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryInstanceID"))
   {
     m_recoveryInstanceID = jsonValue.GetString("recoveryInstanceID");
-
     m_recoveryInstanceIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryInstanceProperties"))
   {
     m_recoveryInstanceProperties = jsonValue.GetObject("recoveryInstanceProperties");
-
     m_recoveryInstancePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceOutpostArn"))
   {
     m_sourceOutpostArn = jsonValue.GetString("sourceOutpostArn");
-
     m_sourceOutpostArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -163,7 +109,6 @@ RecoveryInstance& RecoveryInstance::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

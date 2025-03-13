@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetRoleRequest::GetRoleRequest() : 
-    m_roleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetRoleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteDocumentVersionRequest::DeleteDocumentVersionRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_deletePriorVersions(false),
-    m_deletePriorVersionsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDocumentVersionRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SearchResourcesBucketCriteria::SearchResourcesBucketCriteria() : 
-    m_excludesHasBeenSet(false),
-    m_includesHasBeenSet(false)
-{
-}
-
 SearchResourcesBucketCriteria::SearchResourcesBucketCriteria(JsonView jsonValue)
-  : SearchResourcesBucketCriteria()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SearchResourcesBucketCriteria& SearchResourcesBucketCriteria::operator =(JsonVie
   if(jsonValue.ValueExists("excludes"))
   {
     m_excludes = jsonValue.GetObject("excludes");
-
     m_excludesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includes"))
   {
     m_includes = jsonValue.GetObject("includes");
-
     m_includesHasBeenSet = true;
   }
-
   return *this;
 }
 

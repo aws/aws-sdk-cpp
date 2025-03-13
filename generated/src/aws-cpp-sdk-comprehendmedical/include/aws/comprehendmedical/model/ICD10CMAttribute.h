@@ -40,7 +40,7 @@ namespace Model
   class ICD10CMAttribute
   {
   public:
-    AWS_COMPREHENDMEDICAL_API ICD10CMAttribute();
+    AWS_COMPREHENDMEDICAL_API ICD10CMAttribute() = default;
     AWS_COMPREHENDMEDICAL_API ICD10CMAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API ICD10CMAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * <p>The type of attribute. InferICD10CM detects entities of the type
      * <code>DX_NAME</code>. </p>
      */
-    inline const ICD10CMAttributeType& GetType() const{ return m_type; }
+    inline ICD10CMAttributeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ICD10CMAttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ICD10CMAttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ICD10CMAttribute& WithType(const ICD10CMAttributeType& value) { SetType(value); return *this;}
-    inline ICD10CMAttribute& WithType(ICD10CMAttributeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ICD10CMAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ICD10CMAttribute& WithType(ICD10CMAttributeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend Medical has that the segment
      * of text is correctly recognized as an attribute.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline ICD10CMAttribute& WithScore(double value) { SetScore(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend Medical has that this
      * attribute is correctly related to this entity.</p>
      */
-    inline double GetRelationshipScore() const{ return m_relationshipScore; }
+    inline double GetRelationshipScore() const { return m_relationshipScore; }
     inline bool RelationshipScoreHasBeenSet() const { return m_relationshipScoreHasBeenSet; }
     inline void SetRelationshipScore(double value) { m_relationshipScoreHasBeenSet = true; m_relationshipScore = value; }
     inline ICD10CMAttribute& WithRelationshipScore(double value) { SetRelationshipScore(value); return *this;}
@@ -86,7 +84,7 @@ namespace Model
      * <p>The numeric identifier for this attribute. This is a monotonically increasing
      * id unique within this response rather than a global unique identifier.</p>
      */
-    inline int GetId() const{ return m_id; }
+    inline int GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
     inline void SetId(int value) { m_idHasBeenSet = true; m_id = value; }
     inline ICD10CMAttribute& WithId(int value) { SetId(value); return *this;}
@@ -97,7 +95,7 @@ namespace Model
      * <p>The 0-based character offset in the input text that shows where the attribute
      * begins. The offset returns the UTF-8 code point in the string.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline ICD10CMAttribute& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -108,7 +106,7 @@ namespace Model
      * <p>The 0-based character offset in the input text that shows where the attribute
      * ends. The offset returns the UTF-8 code point in the string.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline ICD10CMAttribute& WithEndOffset(int value) { SetEndOffset(value); return *this;}
@@ -118,14 +116,12 @@ namespace Model
     /**
      * <p>The segment of input text which contains the detected attribute.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline ICD10CMAttribute& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline ICD10CMAttribute& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline ICD10CMAttribute& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    ICD10CMAttribute& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +130,14 @@ namespace Model
      * InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>,
      * <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
      */
-    inline const Aws::Vector<ICD10CMTrait>& GetTraits() const{ return m_traits; }
+    inline const Aws::Vector<ICD10CMTrait>& GetTraits() const { return m_traits; }
     inline bool TraitsHasBeenSet() const { return m_traitsHasBeenSet; }
-    inline void SetTraits(const Aws::Vector<ICD10CMTrait>& value) { m_traitsHasBeenSet = true; m_traits = value; }
-    inline void SetTraits(Aws::Vector<ICD10CMTrait>&& value) { m_traitsHasBeenSet = true; m_traits = std::move(value); }
-    inline ICD10CMAttribute& WithTraits(const Aws::Vector<ICD10CMTrait>& value) { SetTraits(value); return *this;}
-    inline ICD10CMAttribute& WithTraits(Aws::Vector<ICD10CMTrait>&& value) { SetTraits(std::move(value)); return *this;}
-    inline ICD10CMAttribute& AddTraits(const ICD10CMTrait& value) { m_traitsHasBeenSet = true; m_traits.push_back(value); return *this; }
-    inline ICD10CMAttribute& AddTraits(ICD10CMTrait&& value) { m_traitsHasBeenSet = true; m_traits.push_back(std::move(value)); return *this; }
+    template<typename TraitsT = Aws::Vector<ICD10CMTrait>>
+    void SetTraits(TraitsT&& value) { m_traitsHasBeenSet = true; m_traits = std::forward<TraitsT>(value); }
+    template<typename TraitsT = Aws::Vector<ICD10CMTrait>>
+    ICD10CMAttribute& WithTraits(TraitsT&& value) { SetTraits(std::forward<TraitsT>(value)); return *this;}
+    template<typename TraitsT = ICD10CMTrait>
+    ICD10CMAttribute& AddTraits(TraitsT&& value) { m_traitsHasBeenSet = true; m_traits.emplace_back(std::forward<TraitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -149,12 +145,10 @@ namespace Model
      * <p>The category of attribute. Can be either of <code>DX_NAME</code> or
      * <code>TIME_EXPRESSION</code>.</p>
      */
-    inline const ICD10CMEntityType& GetCategory() const{ return m_category; }
+    inline ICD10CMEntityType GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const ICD10CMEntityType& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(ICD10CMEntityType&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline ICD10CMAttribute& WithCategory(const ICD10CMEntityType& value) { SetCategory(value); return *this;}
-    inline ICD10CMAttribute& WithCategory(ICD10CMEntityType&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(ICD10CMEntityType value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline ICD10CMAttribute& WithCategory(ICD10CMEntityType value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -163,31 +157,29 @@ namespace Model
      * relationship can be either of <code>OVERLAP</code> or
      * <code>SYSTEM_ORGAN_SITE</code>.</p>
      */
-    inline const ICD10CMRelationshipType& GetRelationshipType() const{ return m_relationshipType; }
+    inline ICD10CMRelationshipType GetRelationshipType() const { return m_relationshipType; }
     inline bool RelationshipTypeHasBeenSet() const { return m_relationshipTypeHasBeenSet; }
-    inline void SetRelationshipType(const ICD10CMRelationshipType& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
-    inline void SetRelationshipType(ICD10CMRelationshipType&& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = std::move(value); }
-    inline ICD10CMAttribute& WithRelationshipType(const ICD10CMRelationshipType& value) { SetRelationshipType(value); return *this;}
-    inline ICD10CMAttribute& WithRelationshipType(ICD10CMRelationshipType&& value) { SetRelationshipType(std::move(value)); return *this;}
+    inline void SetRelationshipType(ICD10CMRelationshipType value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
+    inline ICD10CMAttribute& WithRelationshipType(ICD10CMRelationshipType value) { SetRelationshipType(value); return *this;}
     ///@}
   private:
 
-    ICD10CMAttributeType m_type;
+    ICD10CMAttributeType m_type{ICD10CMAttributeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
 
-    double m_relationshipScore;
+    double m_relationshipScore{0.0};
     bool m_relationshipScoreHasBeenSet = false;
 
-    int m_id;
+    int m_id{0};
     bool m_idHasBeenSet = false;
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
 
     Aws::String m_text;
@@ -196,10 +188,10 @@ namespace Model
     Aws::Vector<ICD10CMTrait> m_traits;
     bool m_traitsHasBeenSet = false;
 
-    ICD10CMEntityType m_category;
+    ICD10CMEntityType m_category{ICD10CMEntityType::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
-    ICD10CMRelationshipType m_relationshipType;
+    ICD10CMRelationshipType m_relationshipType{ICD10CMRelationshipType::NOT_SET};
     bool m_relationshipTypeHasBeenSet = false;
   };
 

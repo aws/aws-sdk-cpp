@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Metric::Metric() : 
-    m_nameHasBeenSet(false),
-    m_referencesHasBeenSet(false),
-    m_statisticsDetailsHasBeenSet(false),
-    m_metricQueryHasBeenSet(false)
-{
-}
-
 Metric::Metric(const XmlNode& xmlNode)
-  : Metric()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ Metric& Metric::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode referencesNode = resultNode.FirstChild("References");
     if(!referencesNode.IsNull())
     {
       XmlNode referencesMember = referencesNode.FirstChild("member");
+      m_referencesHasBeenSet = !referencesMember.IsNull();
       while(!referencesMember.IsNull())
       {
         m_references.push_back(referencesMember);
         referencesMember = referencesMember.NextNode("member");
       }
 
-      m_referencesHasBeenSet = true;
+       m_referencesHasBeenSet = true;
     }
     XmlNode statisticsDetailsNode = resultNode.FirstChild("StatisticsDetails");
     if(!statisticsDetailsNode.IsNull())
     {
       m_statisticsDetails = Aws::Utils::Xml::DecodeEscapedXmlText(statisticsDetailsNode.GetText());
       m_statisticsDetailsHasBeenSet = true;
+       m_statisticsDetailsHasBeenSet = true;
     }
     XmlNode metricQueryNode = resultNode.FirstChild("MetricQuery");
     if(!metricQueryNode.IsNull())
     {
       m_metricQuery = metricQueryNode;
       m_metricQueryHasBeenSet = true;
+       m_metricQueryHasBeenSet = true;
     }
   }
 

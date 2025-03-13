@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-PredictorEvent::PredictorEvent() : 
-    m_detailHasBeenSet(false),
-    m_datetimeHasBeenSet(false)
-{
-}
-
 PredictorEvent::PredictorEvent(JsonView jsonValue)
-  : PredictorEvent()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PredictorEvent& PredictorEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Detail"))
   {
     m_detail = jsonValue.GetString("Detail");
-
     m_detailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Datetime"))
   {
     m_datetime = jsonValue.GetDouble("Datetime");
-
     m_datetimeHasBeenSet = true;
   }
-
   return *this;
 }
 

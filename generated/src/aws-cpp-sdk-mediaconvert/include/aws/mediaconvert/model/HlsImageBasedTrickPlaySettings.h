@@ -32,7 +32,7 @@ namespace Model
   class HlsImageBasedTrickPlaySettings
   {
   public:
-    AWS_MEDIACONVERT_API HlsImageBasedTrickPlaySettings();
+    AWS_MEDIACONVERT_API HlsImageBasedTrickPlaySettings() = default;
     AWS_MEDIACONVERT_API HlsImageBasedTrickPlaySettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API HlsImageBasedTrickPlaySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert
      * generates thumbnails according to the interval you specify in thumbnailInterval.
      */
-    inline const HlsIntervalCadence& GetIntervalCadence() const{ return m_intervalCadence; }
+    inline HlsIntervalCadence GetIntervalCadence() const { return m_intervalCadence; }
     inline bool IntervalCadenceHasBeenSet() const { return m_intervalCadenceHasBeenSet; }
-    inline void SetIntervalCadence(const HlsIntervalCadence& value) { m_intervalCadenceHasBeenSet = true; m_intervalCadence = value; }
-    inline void SetIntervalCadence(HlsIntervalCadence&& value) { m_intervalCadenceHasBeenSet = true; m_intervalCadence = std::move(value); }
-    inline HlsImageBasedTrickPlaySettings& WithIntervalCadence(const HlsIntervalCadence& value) { SetIntervalCadence(value); return *this;}
-    inline HlsImageBasedTrickPlaySettings& WithIntervalCadence(HlsIntervalCadence&& value) { SetIntervalCadence(std::move(value)); return *this;}
+    inline void SetIntervalCadence(HlsIntervalCadence value) { m_intervalCadenceHasBeenSet = true; m_intervalCadence = value; }
+    inline HlsImageBasedTrickPlaySettings& WithIntervalCadence(HlsIntervalCadence value) { SetIntervalCadence(value); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * lead to a total tile height greater than 4096, then the job will be rejected.
      * Must be divisible by 2.
      */
-    inline int GetThumbnailHeight() const{ return m_thumbnailHeight; }
+    inline int GetThumbnailHeight() const { return m_thumbnailHeight; }
     inline bool ThumbnailHeightHasBeenSet() const { return m_thumbnailHeightHasBeenSet; }
     inline void SetThumbnailHeight(int value) { m_thumbnailHeightHasBeenSet = true; m_thumbnailHeight = value; }
     inline HlsImageBasedTrickPlaySettings& WithThumbnailHeight(int value) { SetThumbnailHeight(value); return *this;}
@@ -74,7 +72,7 @@ namespace Model
      * example, if the output frame rate is 29.97 frames per second and you enter 5,
      * MediaConvert uses a 150 frame interval to generate thumbnails.
      */
-    inline double GetThumbnailInterval() const{ return m_thumbnailInterval; }
+    inline double GetThumbnailInterval() const { return m_thumbnailInterval; }
     inline bool ThumbnailIntervalHasBeenSet() const { return m_thumbnailIntervalHasBeenSet; }
     inline void SetThumbnailInterval(double value) { m_thumbnailIntervalHasBeenSet = true; m_thumbnailInterval = value; }
     inline HlsImageBasedTrickPlaySettings& WithThumbnailInterval(double value) { SetThumbnailInterval(value); return *this;}
@@ -85,7 +83,7 @@ namespace Model
      * Width of each thumbnail within each tile image, in pixels. Default is 312. Must
      * be divisible by 8.
      */
-    inline int GetThumbnailWidth() const{ return m_thumbnailWidth; }
+    inline int GetThumbnailWidth() const { return m_thumbnailWidth; }
     inline bool ThumbnailWidthHasBeenSet() const { return m_thumbnailWidthHasBeenSet; }
     inline void SetThumbnailWidth(int value) { m_thumbnailWidthHasBeenSet = true; m_thumbnailWidth = value; }
     inline HlsImageBasedTrickPlaySettings& WithThumbnailWidth(int value) { SetThumbnailWidth(value); return *this;}
@@ -96,7 +94,7 @@ namespace Model
      * Number of thumbnails in each column of a tile image. Set a value between 2 and
      * 2048. Must be divisible by 2.
      */
-    inline int GetTileHeight() const{ return m_tileHeight; }
+    inline int GetTileHeight() const { return m_tileHeight; }
     inline bool TileHeightHasBeenSet() const { return m_tileHeightHasBeenSet; }
     inline void SetTileHeight(int value) { m_tileHeightHasBeenSet = true; m_tileHeight = value; }
     inline HlsImageBasedTrickPlaySettings& WithTileHeight(int value) { SetTileHeight(value); return *this;}
@@ -106,29 +104,29 @@ namespace Model
     /**
      * Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
      */
-    inline int GetTileWidth() const{ return m_tileWidth; }
+    inline int GetTileWidth() const { return m_tileWidth; }
     inline bool TileWidthHasBeenSet() const { return m_tileWidthHasBeenSet; }
     inline void SetTileWidth(int value) { m_tileWidthHasBeenSet = true; m_tileWidth = value; }
     inline HlsImageBasedTrickPlaySettings& WithTileWidth(int value) { SetTileWidth(value); return *this;}
     ///@}
   private:
 
-    HlsIntervalCadence m_intervalCadence;
+    HlsIntervalCadence m_intervalCadence{HlsIntervalCadence::NOT_SET};
     bool m_intervalCadenceHasBeenSet = false;
 
-    int m_thumbnailHeight;
+    int m_thumbnailHeight{0};
     bool m_thumbnailHeightHasBeenSet = false;
 
-    double m_thumbnailInterval;
+    double m_thumbnailInterval{0.0};
     bool m_thumbnailIntervalHasBeenSet = false;
 
-    int m_thumbnailWidth;
+    int m_thumbnailWidth{0};
     bool m_thumbnailWidthHasBeenSet = false;
 
-    int m_tileHeight;
+    int m_tileHeight{0};
     bool m_tileHeightHasBeenSet = false;
 
-    int m_tileWidth;
+    int m_tileWidth{0};
     bool m_tileWidthHasBeenSet = false;
   };
 

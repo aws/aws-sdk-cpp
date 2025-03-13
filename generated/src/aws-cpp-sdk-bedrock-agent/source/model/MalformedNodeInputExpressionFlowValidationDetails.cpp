@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MalformedNodeInputExpressionFlowValidationDetails::MalformedNodeInputExpressionFlowValidationDetails() : 
-    m_causeHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_nodeHasBeenSet(false)
-{
-}
-
 MalformedNodeInputExpressionFlowValidationDetails::MalformedNodeInputExpressionFlowValidationDetails(JsonView jsonValue)
-  : MalformedNodeInputExpressionFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MalformedNodeInputExpressionFlowValidationDetails& MalformedNodeInputExpressionF
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
-
     m_nodeHasBeenSet = true;
   }
-
   return *this;
 }
 

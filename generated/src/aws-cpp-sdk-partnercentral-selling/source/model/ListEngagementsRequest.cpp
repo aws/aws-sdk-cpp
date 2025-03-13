@@ -12,18 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEngagementsRequest::ListEngagementsRequest() : 
-    m_catalogHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_engagementIdentifierHasBeenSet(false),
-    m_excludeCreatedByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String ListEngagementsRequest::SerializePayload() const
 {
   JsonValue payload;

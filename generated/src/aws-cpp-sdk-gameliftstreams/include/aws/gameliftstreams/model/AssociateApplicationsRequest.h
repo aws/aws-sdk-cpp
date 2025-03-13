@@ -22,7 +22,7 @@ namespace Model
   class AssociateApplicationsRequest : public GameLiftStreamsRequest
   {
   public:
-    AWS_GAMELIFTSTREAMS_API AssociateApplicationsRequest();
+    AWS_GAMELIFTSTREAMS_API AssociateApplicationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>
      * or ID-<code>9ZY8X7Wv6</code>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationIdentifiers() const{ return m_applicationIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetApplicationIdentifiers() const { return m_applicationIdentifiers; }
     inline bool ApplicationIdentifiersHasBeenSet() const { return m_applicationIdentifiersHasBeenSet; }
-    inline void SetApplicationIdentifiers(const Aws::Vector<Aws::String>& value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers = value; }
-    inline void SetApplicationIdentifiers(Aws::Vector<Aws::String>&& value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers = std::move(value); }
-    inline AssociateApplicationsRequest& WithApplicationIdentifiers(const Aws::Vector<Aws::String>& value) { SetApplicationIdentifiers(value); return *this;}
-    inline AssociateApplicationsRequest& WithApplicationIdentifiers(Aws::Vector<Aws::String>&& value) { SetApplicationIdentifiers(std::move(value)); return *this;}
-    inline AssociateApplicationsRequest& AddApplicationIdentifiers(const Aws::String& value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers.push_back(value); return *this; }
-    inline AssociateApplicationsRequest& AddApplicationIdentifiers(Aws::String&& value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers.push_back(std::move(value)); return *this; }
-    inline AssociateApplicationsRequest& AddApplicationIdentifiers(const char* value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers.push_back(value); return *this; }
+    template<typename ApplicationIdentifiersT = Aws::Vector<Aws::String>>
+    void SetApplicationIdentifiers(ApplicationIdentifiersT&& value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers = std::forward<ApplicationIdentifiersT>(value); }
+    template<typename ApplicationIdentifiersT = Aws::Vector<Aws::String>>
+    AssociateApplicationsRequest& WithApplicationIdentifiers(ApplicationIdentifiersT&& value) { SetApplicationIdentifiers(std::forward<ApplicationIdentifiersT>(value)); return *this;}
+    template<typename ApplicationIdentifiersT = Aws::String>
+    AssociateApplicationsRequest& AddApplicationIdentifiers(ApplicationIdentifiersT&& value) { m_applicationIdentifiersHasBeenSet = true; m_applicationIdentifiers.emplace_back(std::forward<ApplicationIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,14 +62,12 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
      * or ID-<code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline AssociateApplicationsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline AssociateApplicationsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline AssociateApplicationsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    AssociateApplicationsRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 

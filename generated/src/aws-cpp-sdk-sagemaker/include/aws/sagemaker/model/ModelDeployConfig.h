@@ -32,7 +32,7 @@ namespace Model
   class ModelDeployConfig
   {
   public:
-    AWS_SAGEMAKER_API ModelDeployConfig();
+    AWS_SAGEMAKER_API ModelDeployConfig() = default;
     AWS_SAGEMAKER_API ModelDeployConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelDeployConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      * <code>EndpointName</code>; otherwise a 400 error is thrown.</p> 
      */
-    inline bool GetAutoGenerateEndpointName() const{ return m_autoGenerateEndpointName; }
+    inline bool GetAutoGenerateEndpointName() const { return m_autoGenerateEndpointName; }
     inline bool AutoGenerateEndpointNameHasBeenSet() const { return m_autoGenerateEndpointNameHasBeenSet; }
     inline void SetAutoGenerateEndpointName(bool value) { m_autoGenerateEndpointNameHasBeenSet = true; m_autoGenerateEndpointName = value; }
     inline ModelDeployConfig& WithAutoGenerateEndpointName(bool value) { SetAutoGenerateEndpointName(value); return *this;}
@@ -60,18 +60,16 @@ namespace Model
      * <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400
      * error is thrown.</p> 
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline ModelDeployConfig& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline ModelDeployConfig& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline ModelDeployConfig& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    ModelDeployConfig& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_autoGenerateEndpointName;
+    bool m_autoGenerateEndpointName{false};
     bool m_autoGenerateEndpointNameHasBeenSet = false;
 
     Aws::String m_endpointName;

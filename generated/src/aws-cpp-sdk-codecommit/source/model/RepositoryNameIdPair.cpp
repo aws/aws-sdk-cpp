@@ -18,14 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-RepositoryNameIdPair::RepositoryNameIdPair() : 
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryIdHasBeenSet(false)
-{
-}
-
 RepositoryNameIdPair::RepositoryNameIdPair(JsonView jsonValue)
-  : RepositoryNameIdPair()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RepositoryNameIdPair& RepositoryNameIdPair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryId"))
   {
     m_repositoryId = jsonValue.GetString("repositoryId");
-
     m_repositoryIdHasBeenSet = true;
   }
-
   return *this;
 }
 

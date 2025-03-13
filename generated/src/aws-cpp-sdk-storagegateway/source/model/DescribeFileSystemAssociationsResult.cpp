@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFileSystemAssociationsResult::DescribeFileSystemAssociationsResult()
-{
-}
-
 DescribeFileSystemAssociationsResult::DescribeFileSystemAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeFileSystemAssociationsResult& DescribeFileSystemAssociationsResult::oper
     {
       m_fileSystemAssociationInfoList.push_back(fileSystemAssociationInfoListJsonList[fileSystemAssociationInfoListIndex].AsObject());
     }
+    m_fileSystemAssociationInfoListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

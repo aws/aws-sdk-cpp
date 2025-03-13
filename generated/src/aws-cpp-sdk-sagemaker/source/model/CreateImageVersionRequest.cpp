@@ -12,26 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImageVersionRequest::CreateImageVersionRequest() : 
-    m_baseImageHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_imageNameHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_vendorGuidance(VendorGuidance::NOT_SET),
-    m_vendorGuidanceHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_mLFrameworkHasBeenSet(false),
-    m_programmingLangHasBeenSet(false),
-    m_processor(Processor::NOT_SET),
-    m_processorHasBeenSet(false),
-    m_horovod(false),
-    m_horovodHasBeenSet(false),
-    m_releaseNotesHasBeenSet(false)
-{
-}
-
 Aws::String CreateImageVersionRequest::SerializePayload() const
 {
   JsonValue payload;

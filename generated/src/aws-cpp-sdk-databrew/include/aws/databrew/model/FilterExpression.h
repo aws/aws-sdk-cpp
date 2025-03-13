@@ -36,7 +36,7 @@ namespace Model
   class FilterExpression
   {
   public:
-    AWS_GLUEDATABREW_API FilterExpression();
+    AWS_GLUEDATABREW_API FilterExpression() = default;
     AWS_GLUEDATABREW_API FilterExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API FilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or
      * ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline FilterExpression& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline FilterExpression& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline FilterExpression& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    FilterExpression& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,16 @@ namespace Model
      * <p>The map of substitution variable names to their values used in this filter
      * expression.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetValuesMap() const{ return m_valuesMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetValuesMap() const { return m_valuesMap; }
     inline bool ValuesMapHasBeenSet() const { return m_valuesMapHasBeenSet; }
-    inline void SetValuesMap(const Aws::Map<Aws::String, Aws::String>& value) { m_valuesMapHasBeenSet = true; m_valuesMap = value; }
-    inline void SetValuesMap(Aws::Map<Aws::String, Aws::String>&& value) { m_valuesMapHasBeenSet = true; m_valuesMap = std::move(value); }
-    inline FilterExpression& WithValuesMap(const Aws::Map<Aws::String, Aws::String>& value) { SetValuesMap(value); return *this;}
-    inline FilterExpression& WithValuesMap(Aws::Map<Aws::String, Aws::String>&& value) { SetValuesMap(std::move(value)); return *this;}
-    inline FilterExpression& AddValuesMap(const Aws::String& key, const Aws::String& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, value); return *this; }
-    inline FilterExpression& AddValuesMap(Aws::String&& key, const Aws::String& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::move(key), value); return *this; }
-    inline FilterExpression& AddValuesMap(const Aws::String& key, Aws::String&& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, std::move(value)); return *this; }
-    inline FilterExpression& AddValuesMap(Aws::String&& key, Aws::String&& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline FilterExpression& AddValuesMap(const char* key, Aws::String&& value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, std::move(value)); return *this; }
-    inline FilterExpression& AddValuesMap(Aws::String&& key, const char* value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::move(key), value); return *this; }
-    inline FilterExpression& AddValuesMap(const char* key, const char* value) { m_valuesMapHasBeenSet = true; m_valuesMap.emplace(key, value); return *this; }
+    template<typename ValuesMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetValuesMap(ValuesMapT&& value) { m_valuesMapHasBeenSet = true; m_valuesMap = std::forward<ValuesMapT>(value); }
+    template<typename ValuesMapT = Aws::Map<Aws::String, Aws::String>>
+    FilterExpression& WithValuesMap(ValuesMapT&& value) { SetValuesMap(std::forward<ValuesMapT>(value)); return *this;}
+    template<typename ValuesMapKeyT = Aws::String, typename ValuesMapValueT = Aws::String>
+    FilterExpression& AddValuesMap(ValuesMapKeyT&& key, ValuesMapValueT&& value) {
+      m_valuesMapHasBeenSet = true; m_valuesMap.emplace(std::forward<ValuesMapKeyT>(key), std::forward<ValuesMapValueT>(value)); return *this;
+    }
     ///@}
   private:
 

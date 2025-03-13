@@ -12,16 +12,6 @@ using namespace Aws::SagemakerEdgeManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendHeartbeatRequest::SendHeartbeatRequest() : 
-    m_agentMetricsHasBeenSet(false),
-    m_modelsHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_deploymentResultHasBeenSet(false)
-{
-}
-
 Aws::String SendHeartbeatRequest::SerializePayload() const
 {
   JsonValue payload;

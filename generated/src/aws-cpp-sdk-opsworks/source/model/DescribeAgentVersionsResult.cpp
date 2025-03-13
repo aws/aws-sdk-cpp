@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAgentVersionsResult::DescribeAgentVersionsResult()
-{
-}
-
 DescribeAgentVersionsResult::DescribeAgentVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeAgentVersionsResult& DescribeAgentVersionsResult::operator =(const Aws::
     {
       m_agentVersions.push_back(agentVersionsJsonList[agentVersionsIndex].AsObject());
     }
+    m_agentVersionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcrContainerImageDetails::AwsEcrContainerImageDetails() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_imagePublishedAtHasBeenSet(false)
-{
-}
-
 AwsEcrContainerImageDetails::AwsEcrContainerImageDetails(JsonView jsonValue)
-  : AwsEcrContainerImageDetails()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
   if(jsonValue.ValueExists("RegistryId"))
   {
     m_registryId = jsonValue.GetString("RegistryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryName"))
   {
     m_repositoryName = jsonValue.GetString("RepositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Architecture"))
   {
     m_architecture = jsonValue.GetString("Architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageDigest"))
   {
     m_imageDigest = jsonValue.GetString("ImageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageTags"))
   {
     Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("ImageTags");
@@ -73,14 +54,11 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
     }
     m_imageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImagePublishedAt"))
   {
     m_imagePublishedAt = jsonValue.GetString("ImagePublishedAt");
-
     m_imagePublishedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

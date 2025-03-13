@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-GeoMatchSet::GeoMatchSet() : 
-    m_geoMatchSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_geoMatchConstraintsHasBeenSet(false)
-{
-}
-
 GeoMatchSet::GeoMatchSet(JsonView jsonValue)
-  : GeoMatchSet()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeoMatchSet& GeoMatchSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GeoMatchSetId"))
   {
     m_geoMatchSetId = jsonValue.GetString("GeoMatchSetId");
-
     m_geoMatchSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeoMatchConstraints"))
   {
     Aws::Utils::Array<JsonView> geoMatchConstraintsJsonList = jsonValue.GetArray("GeoMatchConstraints");
@@ -56,7 +44,6 @@ GeoMatchSet& GeoMatchSet::operator =(JsonView jsonValue)
     }
     m_geoMatchConstraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

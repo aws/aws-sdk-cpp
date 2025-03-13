@@ -18,16 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-FunctionRunAsConfig::FunctionRunAsConfig() : 
-    m_gid(0),
-    m_gidHasBeenSet(false),
-    m_uid(0),
-    m_uidHasBeenSet(false)
-{
-}
-
 FunctionRunAsConfig::FunctionRunAsConfig(JsonView jsonValue)
-  : FunctionRunAsConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FunctionRunAsConfig& FunctionRunAsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Gid"))
   {
     m_gid = jsonValue.GetInteger("Gid");
-
     m_gidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Uid"))
   {
     m_uid = jsonValue.GetInteger("Uid");
-
     m_uidHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ResaleAuthorizationAvailabilityEndDateFilter::ResaleAuthorizationAvailabilityEndDateFilter() : 
-    m_dateRangeHasBeenSet(false),
-    m_valueListHasBeenSet(false)
-{
-}
-
 ResaleAuthorizationAvailabilityEndDateFilter::ResaleAuthorizationAvailabilityEndDateFilter(JsonView jsonValue)
-  : ResaleAuthorizationAvailabilityEndDateFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResaleAuthorizationAvailabilityEndDateFilter& ResaleAuthorizationAvailabilityEnd
   if(jsonValue.ValueExists("DateRange"))
   {
     m_dateRange = jsonValue.GetObject("DateRange");
-
     m_dateRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueList"))
   {
     Aws::Utils::Array<JsonView> valueListJsonList = jsonValue.GetArray("ValueList");
@@ -48,7 +39,6 @@ ResaleAuthorizationAvailabilityEndDateFilter& ResaleAuthorizationAvailabilityEnd
     }
     m_valueListHasBeenSet = true;
   }
-
   return *this;
 }
 

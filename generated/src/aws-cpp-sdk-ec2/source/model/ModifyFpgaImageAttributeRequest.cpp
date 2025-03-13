@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyFpgaImageAttributeRequest::ModifyFpgaImageAttributeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_fpgaImageIdHasBeenSet(false),
-    m_attribute(FpgaImageAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_operationType(OperationType::NOT_SET),
-    m_operationTypeHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_loadPermissionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String ModifyFpgaImageAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

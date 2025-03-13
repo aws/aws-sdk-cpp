@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCustomMetricRequest::UpdateCustomMetricRequest() : 
-    m_metricNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCustomMetricRequest::SerializePayload() const
 {
   JsonValue payload;

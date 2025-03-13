@@ -18,20 +18,7 @@ namespace ServerlessApplicationRepository
 namespace Model
 {
 
-ApplicationSummary::ApplicationSummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_homePageUrlHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_spdxLicenseIdHasBeenSet(false)
-{
-}
-
 ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-  : ApplicationSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("author"))
   {
     m_author = jsonValue.GetString("author");
-
     m_authorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("homePageUrl"))
   {
     m_homePageUrl = jsonValue.GetString("homePageUrl");
-
     m_homePageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
@@ -82,21 +59,16 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spdxLicenseId"))
   {
     m_spdxLicenseId = jsonValue.GetString("spdxLicenseId");
-
     m_spdxLicenseIdHasBeenSet = true;
   }
-
   return *this;
 }
 

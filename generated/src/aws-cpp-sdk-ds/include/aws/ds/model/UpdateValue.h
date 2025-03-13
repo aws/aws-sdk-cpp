@@ -32,7 +32,7 @@ namespace Model
   class UpdateValue
   {
   public:
-    AWS_DIRECTORYSERVICE_API UpdateValue();
+    AWS_DIRECTORYSERVICE_API UpdateValue() = default;
     AWS_DIRECTORYSERVICE_API UpdateValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API UpdateValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p> The OS update related settings. </p>
      */
-    inline const OSUpdateSettings& GetOSUpdateSettings() const{ return m_oSUpdateSettings; }
+    inline const OSUpdateSettings& GetOSUpdateSettings() const { return m_oSUpdateSettings; }
     inline bool OSUpdateSettingsHasBeenSet() const { return m_oSUpdateSettingsHasBeenSet; }
-    inline void SetOSUpdateSettings(const OSUpdateSettings& value) { m_oSUpdateSettingsHasBeenSet = true; m_oSUpdateSettings = value; }
-    inline void SetOSUpdateSettings(OSUpdateSettings&& value) { m_oSUpdateSettingsHasBeenSet = true; m_oSUpdateSettings = std::move(value); }
-    inline UpdateValue& WithOSUpdateSettings(const OSUpdateSettings& value) { SetOSUpdateSettings(value); return *this;}
-    inline UpdateValue& WithOSUpdateSettings(OSUpdateSettings&& value) { SetOSUpdateSettings(std::move(value)); return *this;}
+    template<typename OSUpdateSettingsT = OSUpdateSettings>
+    void SetOSUpdateSettings(OSUpdateSettingsT&& value) { m_oSUpdateSettingsHasBeenSet = true; m_oSUpdateSettings = std::forward<OSUpdateSettingsT>(value); }
+    template<typename OSUpdateSettingsT = OSUpdateSettings>
+    UpdateValue& WithOSUpdateSettings(OSUpdateSettingsT&& value) { SetOSUpdateSettings(std::forward<OSUpdateSettingsT>(value)); return *this;}
     ///@}
   private:
 

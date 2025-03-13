@@ -18,14 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableMaintenanceSettings::TableMaintenanceSettings() : 
-    m_icebergCompactionHasBeenSet(false),
-    m_icebergSnapshotManagementHasBeenSet(false)
-{
-}
-
 TableMaintenanceSettings::TableMaintenanceSettings(JsonView jsonValue)
-  : TableMaintenanceSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableMaintenanceSettings& TableMaintenanceSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("icebergCompaction"))
   {
     m_icebergCompaction = jsonValue.GetObject("icebergCompaction");
-
     m_icebergCompactionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("icebergSnapshotManagement"))
   {
     m_icebergSnapshotManagement = jsonValue.GetObject("icebergSnapshotManagement");
-
     m_icebergSnapshotManagementHasBeenSet = true;
   }
-
   return *this;
 }
 

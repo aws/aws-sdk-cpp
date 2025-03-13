@@ -12,15 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContainerGroupDefinitionsRequest::ListContainerGroupDefinitionsRequest() : 
-    m_containerGroupType(ContainerGroupType::NOT_SET),
-    m_containerGroupTypeHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListContainerGroupDefinitionsRequest::SerializePayload() const
 {
   JsonValue payload;

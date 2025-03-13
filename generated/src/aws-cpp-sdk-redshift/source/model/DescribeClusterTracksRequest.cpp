@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeClusterTracksRequest::DescribeClusterTracksRequest() : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterTracksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

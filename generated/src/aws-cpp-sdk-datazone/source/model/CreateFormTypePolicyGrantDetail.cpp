@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-CreateFormTypePolicyGrantDetail::CreateFormTypePolicyGrantDetail() : 
-    m_includeChildDomainUnits(false),
-    m_includeChildDomainUnitsHasBeenSet(false)
-{
-}
-
 CreateFormTypePolicyGrantDetail::CreateFormTypePolicyGrantDetail(JsonView jsonValue)
-  : CreateFormTypePolicyGrantDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CreateFormTypePolicyGrantDetail& CreateFormTypePolicyGrantDetail::operator =(Jso
   if(jsonValue.ValueExists("includeChildDomainUnits"))
   {
     m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
-
     m_includeChildDomainUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

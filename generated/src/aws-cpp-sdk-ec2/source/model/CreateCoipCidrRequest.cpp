@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateCoipCidrRequest::CreateCoipCidrRequest() : 
-    m_cidrHasBeenSet(false),
-    m_coipPoolIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateCoipCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

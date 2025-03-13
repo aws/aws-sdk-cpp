@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDistributionConfigurationsResult::ListDistributionConfigurationsResult()
-{
-}
-
 ListDistributionConfigurationsResult::ListDistributionConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListDistributionConfigurationsResult& ListDistributionConfigurationsResult::oper
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("distributionConfigurationSummaryList"))
   {
     Aws::Utils::Array<JsonView> distributionConfigurationSummaryListJsonList = jsonValue.GetArray("distributionConfigurationSummaryList");
@@ -41,14 +36,13 @@ ListDistributionConfigurationsResult& ListDistributionConfigurationsResult::oper
     {
       m_distributionConfigurationSummaryList.push_back(distributionConfigurationSummaryListJsonList[distributionConfigurationSummaryListIndex].AsObject());
     }
+    m_distributionConfigurationSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

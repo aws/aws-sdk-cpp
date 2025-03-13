@@ -38,7 +38,7 @@ namespace Model
   class InlineAgentTracePart
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InlineAgentTracePart();
+    AWS_BEDROCKAGENTRUNTIME_API InlineAgentTracePart() = default;
     AWS_BEDROCKAGENTRUNTIME_API InlineAgentTracePart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InlineAgentTracePart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The unique identifier of the session with the agent.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline InlineAgentTracePart& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline InlineAgentTracePart& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline InlineAgentTracePart& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InlineAgentTracePart& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace
      * enablement</a>. </p>
      */
-    inline const Trace& GetTrace() const{ return m_trace; }
+    inline const Trace& GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const Trace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(Trace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline InlineAgentTracePart& WithTrace(const Trace& value) { SetTrace(value); return *this;}
-    inline InlineAgentTracePart& WithTrace(Trace&& value) { SetTrace(std::move(value)); return *this;}
+    template<typename TraceT = Trace>
+    void SetTrace(TraceT&& value) { m_traceHasBeenSet = true; m_trace = std::forward<TraceT>(value); }
+    template<typename TraceT = Trace>
+    InlineAgentTracePart& WithTrace(TraceT&& value) { SetTrace(std::forward<TraceT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-S3ItemFilter::S3ItemFilter() : 
-    m_objectKeysHasBeenSet(false),
-    m_sizesHasBeenSet(false),
-    m_creationTimesHasBeenSet(false),
-    m_versionIdsHasBeenSet(false),
-    m_eTagsHasBeenSet(false)
-{
-}
-
 S3ItemFilter::S3ItemFilter(JsonView jsonValue)
-  : S3ItemFilter()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ S3ItemFilter& S3ItemFilter::operator =(JsonView jsonValue)
     }
     m_objectKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sizes"))
   {
     Aws::Utils::Array<JsonView> sizesJsonList = jsonValue.GetArray("Sizes");
@@ -54,7 +43,6 @@ S3ItemFilter& S3ItemFilter::operator =(JsonView jsonValue)
     }
     m_sizesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimes"))
   {
     Aws::Utils::Array<JsonView> creationTimesJsonList = jsonValue.GetArray("CreationTimes");
@@ -64,7 +52,6 @@ S3ItemFilter& S3ItemFilter::operator =(JsonView jsonValue)
     }
     m_creationTimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionIds"))
   {
     Aws::Utils::Array<JsonView> versionIdsJsonList = jsonValue.GetArray("VersionIds");
@@ -74,7 +61,6 @@ S3ItemFilter& S3ItemFilter::operator =(JsonView jsonValue)
     }
     m_versionIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ETags"))
   {
     Aws::Utils::Array<JsonView> eTagsJsonList = jsonValue.GetArray("ETags");
@@ -84,7 +70,6 @@ S3ItemFilter& S3ItemFilter::operator =(JsonView jsonValue)
     }
     m_eTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

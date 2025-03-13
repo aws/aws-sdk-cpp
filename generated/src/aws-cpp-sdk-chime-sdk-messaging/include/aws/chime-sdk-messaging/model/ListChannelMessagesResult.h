@@ -29,7 +29,7 @@ namespace Model
   class ListChannelMessagesResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ListChannelMessagesResult();
+    AWS_CHIMESDKMESSAGING_API ListChannelMessagesResult() = default;
     AWS_CHIMESDKMESSAGING_API ListChannelMessagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API ListChannelMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The ARN of the channel containing the requested messages.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-    inline ListChannelMessagesResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline ListChannelMessagesResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline ListChannelMessagesResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    ListChannelMessagesResult& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,62 +50,61 @@ namespace Model
      * <p>The token passed by previous API calls until all requested messages are
      * returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListChannelMessagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListChannelMessagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListChannelMessagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListChannelMessagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information about, and content of, each requested message.</p>
      */
-    inline const Aws::Vector<ChannelMessageSummary>& GetChannelMessages() const{ return m_channelMessages; }
-    inline void SetChannelMessages(const Aws::Vector<ChannelMessageSummary>& value) { m_channelMessages = value; }
-    inline void SetChannelMessages(Aws::Vector<ChannelMessageSummary>&& value) { m_channelMessages = std::move(value); }
-    inline ListChannelMessagesResult& WithChannelMessages(const Aws::Vector<ChannelMessageSummary>& value) { SetChannelMessages(value); return *this;}
-    inline ListChannelMessagesResult& WithChannelMessages(Aws::Vector<ChannelMessageSummary>&& value) { SetChannelMessages(std::move(value)); return *this;}
-    inline ListChannelMessagesResult& AddChannelMessages(const ChannelMessageSummary& value) { m_channelMessages.push_back(value); return *this; }
-    inline ListChannelMessagesResult& AddChannelMessages(ChannelMessageSummary&& value) { m_channelMessages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ChannelMessageSummary>& GetChannelMessages() const { return m_channelMessages; }
+    template<typename ChannelMessagesT = Aws::Vector<ChannelMessageSummary>>
+    void SetChannelMessages(ChannelMessagesT&& value) { m_channelMessagesHasBeenSet = true; m_channelMessages = std::forward<ChannelMessagesT>(value); }
+    template<typename ChannelMessagesT = Aws::Vector<ChannelMessageSummary>>
+    ListChannelMessagesResult& WithChannelMessages(ChannelMessagesT&& value) { SetChannelMessages(std::forward<ChannelMessagesT>(value)); return *this;}
+    template<typename ChannelMessagesT = ChannelMessageSummary>
+    ListChannelMessagesResult& AddChannelMessages(ChannelMessagesT&& value) { m_channelMessagesHasBeenSet = true; m_channelMessages.emplace_back(std::forward<ChannelMessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the SubChannel in the response.</p>
      */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelId = value; }
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelId = std::move(value); }
-    inline void SetSubChannelId(const char* value) { m_subChannelId.assign(value); }
-    inline ListChannelMessagesResult& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-    inline ListChannelMessagesResult& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-    inline ListChannelMessagesResult& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+    inline const Aws::String& GetSubChannelId() const { return m_subChannelId; }
+    template<typename SubChannelIdT = Aws::String>
+    void SetSubChannelId(SubChannelIdT&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::forward<SubChannelIdT>(value); }
+    template<typename SubChannelIdT = Aws::String>
+    ListChannelMessagesResult& WithSubChannelId(SubChannelIdT&& value) { SetSubChannelId(std::forward<SubChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListChannelMessagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListChannelMessagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListChannelMessagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListChannelMessagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelArn;
+    bool m_channelArnHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ChannelMessageSummary> m_channelMessages;
+    bool m_channelMessagesHasBeenSet = false;
 
     Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

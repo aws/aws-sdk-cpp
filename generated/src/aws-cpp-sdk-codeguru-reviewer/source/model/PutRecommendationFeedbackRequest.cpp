@@ -12,13 +12,6 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRecommendationFeedbackRequest::PutRecommendationFeedbackRequest() : 
-    m_codeReviewArnHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_reactionsHasBeenSet(false)
-{
-}
-
 Aws::String PutRecommendationFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

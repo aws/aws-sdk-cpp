@@ -33,7 +33,7 @@ namespace Model
   class FindingDetailsError
   {
   public:
-    AWS_INSPECTOR2_API FindingDetailsError();
+    AWS_INSPECTOR2_API FindingDetailsError() = default;
     AWS_INSPECTOR2_API FindingDetailsError(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API FindingDetailsError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,38 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const FindingDetailsErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline FindingDetailsErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const FindingDetailsErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(FindingDetailsErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline FindingDetailsError& WithErrorCode(const FindingDetailsErrorCode& value) { SetErrorCode(value); return *this;}
-    inline FindingDetailsError& WithErrorCode(FindingDetailsErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(FindingDetailsErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline FindingDetailsError& WithErrorCode(FindingDetailsErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline FindingDetailsError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline FindingDetailsError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline FindingDetailsError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    FindingDetailsError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The finding ARN that returned an error.</p>
      */
-    inline const Aws::String& GetFindingArn() const{ return m_findingArn; }
+    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
     inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-    inline void SetFindingArn(const Aws::String& value) { m_findingArnHasBeenSet = true; m_findingArn = value; }
-    inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::move(value); }
-    inline void SetFindingArn(const char* value) { m_findingArnHasBeenSet = true; m_findingArn.assign(value); }
-    inline FindingDetailsError& WithFindingArn(const Aws::String& value) { SetFindingArn(value); return *this;}
-    inline FindingDetailsError& WithFindingArn(Aws::String&& value) { SetFindingArn(std::move(value)); return *this;}
-    inline FindingDetailsError& WithFindingArn(const char* value) { SetFindingArn(value); return *this;}
+    template<typename FindingArnT = Aws::String>
+    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
+    template<typename FindingArnT = Aws::String>
+    FindingDetailsError& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
     ///@}
   private:
 
-    FindingDetailsErrorCode m_errorCode;
+    FindingDetailsErrorCode m_errorCode{FindingDetailsErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

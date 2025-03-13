@@ -32,7 +32,7 @@ namespace Model
   class QueryInputData
   {
   public:
-    AWS_QCONNECT_API QueryInputData();
+    AWS_QCONNECT_API QueryInputData() = default;
     AWS_QCONNECT_API QueryInputData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API QueryInputData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Input information for the intent.</p>
      */
-    inline const IntentInputData& GetIntentInputData() const{ return m_intentInputData; }
+    inline const IntentInputData& GetIntentInputData() const { return m_intentInputData; }
     inline bool IntentInputDataHasBeenSet() const { return m_intentInputDataHasBeenSet; }
-    inline void SetIntentInputData(const IntentInputData& value) { m_intentInputDataHasBeenSet = true; m_intentInputData = value; }
-    inline void SetIntentInputData(IntentInputData&& value) { m_intentInputDataHasBeenSet = true; m_intentInputData = std::move(value); }
-    inline QueryInputData& WithIntentInputData(const IntentInputData& value) { SetIntentInputData(value); return *this;}
-    inline QueryInputData& WithIntentInputData(IntentInputData&& value) { SetIntentInputData(std::move(value)); return *this;}
+    template<typename IntentInputDataT = IntentInputData>
+    void SetIntentInputData(IntentInputDataT&& value) { m_intentInputDataHasBeenSet = true; m_intentInputData = std::forward<IntentInputDataT>(value); }
+    template<typename IntentInputDataT = IntentInputData>
+    QueryInputData& WithIntentInputData(IntentInputDataT&& value) { SetIntentInputData(std::forward<IntentInputDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input information for the query.</p>
      */
-    inline const QueryTextInputData& GetQueryTextInputData() const{ return m_queryTextInputData; }
+    inline const QueryTextInputData& GetQueryTextInputData() const { return m_queryTextInputData; }
     inline bool QueryTextInputDataHasBeenSet() const { return m_queryTextInputDataHasBeenSet; }
-    inline void SetQueryTextInputData(const QueryTextInputData& value) { m_queryTextInputDataHasBeenSet = true; m_queryTextInputData = value; }
-    inline void SetQueryTextInputData(QueryTextInputData&& value) { m_queryTextInputDataHasBeenSet = true; m_queryTextInputData = std::move(value); }
-    inline QueryInputData& WithQueryTextInputData(const QueryTextInputData& value) { SetQueryTextInputData(value); return *this;}
-    inline QueryInputData& WithQueryTextInputData(QueryTextInputData&& value) { SetQueryTextInputData(std::move(value)); return *this;}
+    template<typename QueryTextInputDataT = QueryTextInputData>
+    void SetQueryTextInputData(QueryTextInputDataT&& value) { m_queryTextInputDataHasBeenSet = true; m_queryTextInputData = std::forward<QueryTextInputDataT>(value); }
+    template<typename QueryTextInputDataT = QueryTextInputData>
+    QueryInputData& WithQueryTextInputData(QueryTextInputDataT&& value) { SetQueryTextInputData(std::forward<QueryTextInputDataT>(value)); return *this;}
     ///@}
   private:
 

@@ -22,7 +22,7 @@ namespace Model
   class DeleteNamedQueryRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API DeleteNamedQueryRequest();
+    AWS_ATHENA_API DeleteNamedQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The unique ID of the query to delete.</p>
      */
-    inline const Aws::String& GetNamedQueryId() const{ return m_namedQueryId; }
+    inline const Aws::String& GetNamedQueryId() const { return m_namedQueryId; }
     inline bool NamedQueryIdHasBeenSet() const { return m_namedQueryIdHasBeenSet; }
-    inline void SetNamedQueryId(const Aws::String& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = value; }
-    inline void SetNamedQueryId(Aws::String&& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = std::move(value); }
-    inline void SetNamedQueryId(const char* value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId.assign(value); }
-    inline DeleteNamedQueryRequest& WithNamedQueryId(const Aws::String& value) { SetNamedQueryId(value); return *this;}
-    inline DeleteNamedQueryRequest& WithNamedQueryId(Aws::String&& value) { SetNamedQueryId(std::move(value)); return *this;}
-    inline DeleteNamedQueryRequest& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
+    template<typename NamedQueryIdT = Aws::String>
+    void SetNamedQueryId(NamedQueryIdT&& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = std::forward<NamedQueryIdT>(value); }
+    template<typename NamedQueryIdT = Aws::String>
+    DeleteNamedQueryRequest& WithNamedQueryId(NamedQueryIdT&& value) { SetNamedQueryId(std::forward<NamedQueryIdT>(value)); return *this;}
     ///@}
   private:
 

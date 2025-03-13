@@ -33,7 +33,7 @@ namespace Model
   class ExperimentReport
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ExperimentReport();
+    AWS_CLOUDWATCHEVIDENTLY_API ExperimentReport() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ExperimentReport(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API ExperimentReport& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,54 +43,46 @@ namespace Model
     /**
      * <p>The content of the report.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline ExperimentReport& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline ExperimentReport& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline ExperimentReport& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    ExperimentReport& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric that is analyzed in this experiment report.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline ExperimentReport& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline ExperimentReport& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline ExperimentReport& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    ExperimentReport& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of analysis used for this report.</p>
      */
-    inline const ExperimentReportName& GetReportName() const{ return m_reportName; }
+    inline ExperimentReportName GetReportName() const { return m_reportName; }
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-    inline void SetReportName(const ExperimentReportName& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-    inline void SetReportName(ExperimentReportName&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-    inline ExperimentReport& WithReportName(const ExperimentReportName& value) { SetReportName(value); return *this;}
-    inline ExperimentReport& WithReportName(ExperimentReportName&& value) { SetReportName(std::move(value)); return *this;}
+    inline void SetReportName(ExperimentReportName value) { m_reportNameHasBeenSet = true; m_reportName = value; }
+    inline ExperimentReport& WithReportName(ExperimentReportName value) { SetReportName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the variation that this report pertains to.</p>
      */
-    inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
+    inline const Aws::String& GetTreatmentName() const { return m_treatmentName; }
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
-    inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
-    inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
-    inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
-    inline ExperimentReport& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
-    inline ExperimentReport& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
-    inline ExperimentReport& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
+    template<typename TreatmentNameT = Aws::String>
+    void SetTreatmentName(TreatmentNameT&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::forward<TreatmentNameT>(value); }
+    template<typename TreatmentNameT = Aws::String>
+    ExperimentReport& WithTreatmentName(TreatmentNameT&& value) { SetTreatmentName(std::forward<TreatmentNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -100,7 +92,7 @@ namespace Model
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
 
-    ExperimentReportName m_reportName;
+    ExperimentReportName m_reportName{ExperimentReportName::NOT_SET};
     bool m_reportNameHasBeenSet = false;
 
     Aws::String m_treatmentName;

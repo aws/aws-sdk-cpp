@@ -12,14 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGameSessionQueuesRequest::DescribeGameSessionQueuesRequest() : 
-    m_namesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGameSessionQueuesRequest::SerializePayload() const
 {
   JsonValue payload;

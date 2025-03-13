@@ -29,7 +29,7 @@ namespace Model
   class GetDistributionsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetDistributionsResult();
+    AWS_LIGHTSAIL_API GetDistributionsResult() = default;
     AWS_LIGHTSAIL_API GetDistributionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetDistributionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of objects that describe your distributions.</p>
      */
-    inline const Aws::Vector<LightsailDistribution>& GetDistributions() const{ return m_distributions; }
-    inline void SetDistributions(const Aws::Vector<LightsailDistribution>& value) { m_distributions = value; }
-    inline void SetDistributions(Aws::Vector<LightsailDistribution>&& value) { m_distributions = std::move(value); }
-    inline GetDistributionsResult& WithDistributions(const Aws::Vector<LightsailDistribution>& value) { SetDistributions(value); return *this;}
-    inline GetDistributionsResult& WithDistributions(Aws::Vector<LightsailDistribution>&& value) { SetDistributions(std::move(value)); return *this;}
-    inline GetDistributionsResult& AddDistributions(const LightsailDistribution& value) { m_distributions.push_back(value); return *this; }
-    inline GetDistributionsResult& AddDistributions(LightsailDistribution&& value) { m_distributions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LightsailDistribution>& GetDistributions() const { return m_distributions; }
+    template<typename DistributionsT = Aws::Vector<LightsailDistribution>>
+    void SetDistributions(DistributionsT&& value) { m_distributionsHasBeenSet = true; m_distributions = std::forward<DistributionsT>(value); }
+    template<typename DistributionsT = Aws::Vector<LightsailDistribution>>
+    GetDistributionsResult& WithDistributions(DistributionsT&& value) { SetDistributions(std::forward<DistributionsT>(value)); return *this;}
+    template<typename DistributionsT = LightsailDistribution>
+    GetDistributionsResult& AddDistributions(DistributionsT&& value) { m_distributionsHasBeenSet = true; m_distributions.emplace_back(std::forward<DistributionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * <code>GetDistributions</code> request and specify the next page token using the
      * <code>pageToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetDistributionsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetDistributionsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetDistributionsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetDistributionsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDistributionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDistributionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDistributionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDistributionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LightsailDistribution> m_distributions;
+    bool m_distributionsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,18 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MetricDataQuery::MetricDataQuery() : 
-    m_idHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_metricStatHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_returnData(false),
-    m_returnDataHasBeenSet(false)
-{
-}
-
 MetricDataQuery::MetricDataQuery(const XmlNode& xmlNode)
-  : MetricDataQuery()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ MetricDataQuery& MetricDataQuery::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode expressionNode = resultNode.FirstChild("Expression");
     if(!expressionNode.IsNull())
     {
       m_expression = Aws::Utils::Xml::DecodeEscapedXmlText(expressionNode.GetText());
       m_expressionHasBeenSet = true;
+       m_expressionHasBeenSet = true;
     }
     XmlNode metricStatNode = resultNode.FirstChild("MetricStat");
     if(!metricStatNode.IsNull())
     {
       m_metricStat = metricStatNode;
       m_metricStatHasBeenSet = true;
+       m_metricStatHasBeenSet = true;
     }
     XmlNode labelNode = resultNode.FirstChild("Label");
     if(!labelNode.IsNull())
     {
       m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
       m_labelHasBeenSet = true;
+       m_labelHasBeenSet = true;
     }
     XmlNode returnDataNode = resultNode.FirstChild("ReturnData");
     if(!returnDataNode.IsNull())
     {
       m_returnData = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnDataNode.GetText()).c_str()).c_str());
       m_returnDataHasBeenSet = true;
+       m_returnDataHasBeenSet = true;
     }
   }
 

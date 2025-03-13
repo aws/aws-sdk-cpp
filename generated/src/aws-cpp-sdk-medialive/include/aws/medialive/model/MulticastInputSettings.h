@@ -31,7 +31,7 @@ namespace Model
   class MulticastInputSettings
   {
   public:
-    AWS_MEDIALIVE_API MulticastInputSettings();
+    AWS_MEDIALIVE_API MulticastInputSettings() = default;
     AWS_MEDIALIVE_API MulticastInputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MulticastInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * Optionally, a source ip address to filter by for Source-specific Multicast (SSM)
      */
-    inline const Aws::String& GetSourceIpAddress() const{ return m_sourceIpAddress; }
+    inline const Aws::String& GetSourceIpAddress() const { return m_sourceIpAddress; }
     inline bool SourceIpAddressHasBeenSet() const { return m_sourceIpAddressHasBeenSet; }
-    inline void SetSourceIpAddress(const Aws::String& value) { m_sourceIpAddressHasBeenSet = true; m_sourceIpAddress = value; }
-    inline void SetSourceIpAddress(Aws::String&& value) { m_sourceIpAddressHasBeenSet = true; m_sourceIpAddress = std::move(value); }
-    inline void SetSourceIpAddress(const char* value) { m_sourceIpAddressHasBeenSet = true; m_sourceIpAddress.assign(value); }
-    inline MulticastInputSettings& WithSourceIpAddress(const Aws::String& value) { SetSourceIpAddress(value); return *this;}
-    inline MulticastInputSettings& WithSourceIpAddress(Aws::String&& value) { SetSourceIpAddress(std::move(value)); return *this;}
-    inline MulticastInputSettings& WithSourceIpAddress(const char* value) { SetSourceIpAddress(value); return *this;}
+    template<typename SourceIpAddressT = Aws::String>
+    void SetSourceIpAddress(SourceIpAddressT&& value) { m_sourceIpAddressHasBeenSet = true; m_sourceIpAddress = std::forward<SourceIpAddressT>(value); }
+    template<typename SourceIpAddressT = Aws::String>
+    MulticastInputSettings& WithSourceIpAddress(SourceIpAddressT&& value) { SetSourceIpAddress(std::forward<SourceIpAddressT>(value)); return *this;}
     ///@}
   private:
 

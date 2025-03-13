@@ -20,15 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-ManagedRule::ManagedRule() : 
-    m_templateNameHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ManagedRule::ManagedRule(const XmlNode& xmlNode)
-  : ManagedRule()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ ManagedRule& ManagedRule::operator =(const XmlNode& xmlNode)
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
     XmlNode resourceARNNode = resultNode.FirstChild("ResourceARN");
     if(!resourceARNNode.IsNull())
     {
       m_resourceARN = Aws::Utils::Xml::DecodeEscapedXmlText(resourceARNNode.GetText());
       m_resourceARNHasBeenSet = true;
+       m_resourceARNHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType() : 
-    m_notifyConfigurationHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(JsonView jsonValue)
-  : AccountTakeoverRiskConfigurationType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountTakeoverRiskConfigurationType& AccountTakeoverRiskConfigurationType::oper
   if(jsonValue.ValueExists("NotifyConfiguration"))
   {
     m_notifyConfiguration = jsonValue.GetObject("NotifyConfiguration");
-
     m_notifyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     m_actions = jsonValue.GetObject("Actions");
-
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

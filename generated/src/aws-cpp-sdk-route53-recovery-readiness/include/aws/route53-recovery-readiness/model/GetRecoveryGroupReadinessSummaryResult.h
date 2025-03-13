@@ -30,7 +30,7 @@ namespace Model
   class GetRecoveryGroupReadinessSummaryResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupReadinessSummaryResult();
+    AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupReadinessSummaryResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupReadinessSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupReadinessSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,58 +39,56 @@ namespace Model
     /**
      * <p>The token that identifies which batch of results you want to see.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetRecoveryGroupReadinessSummaryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetRecoveryGroupReadinessSummaryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The readiness status at a recovery group level.</p>
      */
-    inline const Readiness& GetReadiness() const{ return m_readiness; }
-    inline void SetReadiness(const Readiness& value) { m_readiness = value; }
-    inline void SetReadiness(Readiness&& value) { m_readiness = std::move(value); }
-    inline GetRecoveryGroupReadinessSummaryResult& WithReadiness(const Readiness& value) { SetReadiness(value); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& WithReadiness(Readiness&& value) { SetReadiness(std::move(value)); return *this;}
+    inline Readiness GetReadiness() const { return m_readiness; }
+    inline void SetReadiness(Readiness value) { m_readinessHasBeenSet = true; m_readiness = value; }
+    inline GetRecoveryGroupReadinessSummaryResult& WithReadiness(Readiness value) { SetReadiness(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Summaries of the readiness checks for the recovery group.</p>
      */
-    inline const Aws::Vector<ReadinessCheckSummary>& GetReadinessChecks() const{ return m_readinessChecks; }
-    inline void SetReadinessChecks(const Aws::Vector<ReadinessCheckSummary>& value) { m_readinessChecks = value; }
-    inline void SetReadinessChecks(Aws::Vector<ReadinessCheckSummary>&& value) { m_readinessChecks = std::move(value); }
-    inline GetRecoveryGroupReadinessSummaryResult& WithReadinessChecks(const Aws::Vector<ReadinessCheckSummary>& value) { SetReadinessChecks(value); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& WithReadinessChecks(Aws::Vector<ReadinessCheckSummary>&& value) { SetReadinessChecks(std::move(value)); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& AddReadinessChecks(const ReadinessCheckSummary& value) { m_readinessChecks.push_back(value); return *this; }
-    inline GetRecoveryGroupReadinessSummaryResult& AddReadinessChecks(ReadinessCheckSummary&& value) { m_readinessChecks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReadinessCheckSummary>& GetReadinessChecks() const { return m_readinessChecks; }
+    template<typename ReadinessChecksT = Aws::Vector<ReadinessCheckSummary>>
+    void SetReadinessChecks(ReadinessChecksT&& value) { m_readinessChecksHasBeenSet = true; m_readinessChecks = std::forward<ReadinessChecksT>(value); }
+    template<typename ReadinessChecksT = Aws::Vector<ReadinessCheckSummary>>
+    GetRecoveryGroupReadinessSummaryResult& WithReadinessChecks(ReadinessChecksT&& value) { SetReadinessChecks(std::forward<ReadinessChecksT>(value)); return *this;}
+    template<typename ReadinessChecksT = ReadinessCheckSummary>
+    GetRecoveryGroupReadinessSummaryResult& AddReadinessChecks(ReadinessChecksT&& value) { m_readinessChecksHasBeenSet = true; m_readinessChecks.emplace_back(std::forward<ReadinessChecksT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRecoveryGroupReadinessSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRecoveryGroupReadinessSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRecoveryGroupReadinessSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    Readiness m_readiness;
+    Readiness m_readiness{Readiness::NOT_SET};
+    bool m_readinessHasBeenSet = false;
 
     Aws::Vector<ReadinessCheckSummary> m_readinessChecks;
+    bool m_readinessChecksHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

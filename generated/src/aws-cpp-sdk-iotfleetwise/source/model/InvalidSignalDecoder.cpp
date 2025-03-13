@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-InvalidSignalDecoder::InvalidSignalDecoder() : 
-    m_nameHasBeenSet(false),
-    m_reason(SignalDecoderFailureReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_hintHasBeenSet(false)
-{
-}
-
 InvalidSignalDecoder::InvalidSignalDecoder(JsonView jsonValue)
-  : InvalidSignalDecoder()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InvalidSignalDecoder& InvalidSignalDecoder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = SignalDecoderFailureReasonMapper::GetSignalDecoderFailureReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hint"))
   {
     m_hint = jsonValue.GetString("hint");
-
     m_hintHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class StackSetOperationStatusDetails
   {
   public:
-    AWS_CLOUDFORMATION_API StackSetOperationStatusDetails();
+    AWS_CLOUDFORMATION_API StackSetOperationStatusDetails() = default;
     AWS_CLOUDFORMATION_API StackSetOperationStatusDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackSetOperationStatusDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The number of stack instances for which the StackSet operation failed.</p>
      */
-    inline int GetFailedStackInstancesCount() const{ return m_failedStackInstancesCount; }
+    inline int GetFailedStackInstancesCount() const { return m_failedStackInstancesCount; }
     inline bool FailedStackInstancesCountHasBeenSet() const { return m_failedStackInstancesCountHasBeenSet; }
     inline void SetFailedStackInstancesCount(int value) { m_failedStackInstancesCountHasBeenSet = true; m_failedStackInstancesCount = value; }
     inline StackSetOperationStatusDetails& WithFailedStackInstancesCount(int value) { SetFailedStackInstancesCount(value); return *this;}
     ///@}
   private:
 
-    int m_failedStackInstancesCount;
+    int m_failedStackInstancesCount{0};
     bool m_failedStackInstancesCountHasBeenSet = false;
   };
 

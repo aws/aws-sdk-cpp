@@ -27,7 +27,7 @@ namespace Model
   class ResendContactReachabilityEmailResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult();
+    AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult() = default;
     AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API ResendContactReachabilityEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The domain name for which you requested a confirmation email.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
-    inline ResendContactReachabilityEmailResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline ResendContactReachabilityEmailResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline ResendContactReachabilityEmailResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    ResendContactReachabilityEmailResult& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +48,11 @@ namespace Model
      * <p>The email address for the registrant contact at the time that we sent the
      * verification email.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddress.assign(value); }
-    inline ResendContactReachabilityEmailResult& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline ResendContactReachabilityEmailResult& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline ResendContactReachabilityEmailResult& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    ResendContactReachabilityEmailResult& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,30 +61,32 @@ namespace Model
      * already been verified, and <code>false</code> otherwise. If the email address
      * has already been verified, we don't send another confirmation email.</p>
      */
-    inline bool GetIsAlreadyVerified() const{ return m_isAlreadyVerified; }
-    inline void SetIsAlreadyVerified(bool value) { m_isAlreadyVerified = value; }
+    inline bool GetIsAlreadyVerified() const { return m_isAlreadyVerified; }
+    inline void SetIsAlreadyVerified(bool value) { m_isAlreadyVerifiedHasBeenSet = true; m_isAlreadyVerified = value; }
     inline ResendContactReachabilityEmailResult& WithIsAlreadyVerified(bool value) { SetIsAlreadyVerified(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ResendContactReachabilityEmailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResendContactReachabilityEmailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResendContactReachabilityEmailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResendContactReachabilityEmailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_emailAddress;
+    bool m_emailAddressHasBeenSet = false;
 
-    bool m_isAlreadyVerified;
+    bool m_isAlreadyVerified{false};
+    bool m_isAlreadyVerifiedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

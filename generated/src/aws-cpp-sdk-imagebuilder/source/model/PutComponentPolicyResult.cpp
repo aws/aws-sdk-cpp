@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutComponentPolicyResult::PutComponentPolicyResult()
-{
-}
-
 PutComponentPolicyResult::PutComponentPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ PutComponentPolicyResult& PutComponentPolicyResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentArn"))
   {
     m_componentArn = jsonValue.GetString("componentArn");
-
+    m_componentArnHasBeenSet = true;
   }
-
 
 
   return *this;

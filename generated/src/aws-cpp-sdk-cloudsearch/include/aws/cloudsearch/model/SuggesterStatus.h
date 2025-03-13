@@ -33,7 +33,7 @@ namespace Model
   class SuggesterStatus
   {
   public:
-    AWS_CLOUDSEARCH_API SuggesterStatus();
+    AWS_CLOUDSEARCH_API SuggesterStatus() = default;
     AWS_CLOUDSEARCH_API SuggesterStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API SuggesterStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,22 +43,22 @@ namespace Model
 
     ///@{
     
-    inline const Suggester& GetOptions() const{ return m_options; }
+    inline const Suggester& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Suggester& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Suggester&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline SuggesterStatus& WithOptions(const Suggester& value) { SetOptions(value); return *this;}
-    inline SuggesterStatus& WithOptions(Suggester&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = Suggester>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Suggester>
+    SuggesterStatus& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SuggesterStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline SuggesterStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    SuggesterStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

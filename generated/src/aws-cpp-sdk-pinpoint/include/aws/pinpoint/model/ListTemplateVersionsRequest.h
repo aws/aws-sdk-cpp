@@ -25,7 +25,7 @@ namespace Model
   class ListTemplateVersionsRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API ListTemplateVersionsRequest();
+    AWS_PINPOINT_API ListTemplateVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * response. This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTemplateVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTemplateVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTemplateVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTemplateVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
-    inline const Aws::String& GetPageSize() const{ return m_pageSize; }
+    inline const Aws::String& GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-    inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-    inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
-    inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
-    inline ListTemplateVersionsRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
-    inline ListTemplateVersionsRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
-    inline ListTemplateVersionsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
+    template<typename PageSizeT = Aws::String>
+    void SetPageSize(PageSizeT&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::forward<PageSizeT>(value); }
+    template<typename PageSizeT = Aws::String>
+    ListTemplateVersionsRequest& WithPageSize(PageSizeT&& value) { SetPageSize(std::forward<PageSizeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * characters can be alphanumeric characters, underscores (_), or hyphens (-).
      * Template names are case sensitive.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline ListTemplateVersionsRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline ListTemplateVersionsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline ListTemplateVersionsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    ListTemplateVersionsRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +86,12 @@ namespace Model
      * <p>The type of channel that the message template is designed for. Valid values
      * are: EMAIL, PUSH, SMS, and VOICE.</p>
      */
-    inline const Aws::String& GetTemplateType() const{ return m_templateType; }
+    inline const Aws::String& GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const Aws::String& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(Aws::String&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline void SetTemplateType(const char* value) { m_templateTypeHasBeenSet = true; m_templateType.assign(value); }
-    inline ListTemplateVersionsRequest& WithTemplateType(const Aws::String& value) { SetTemplateType(value); return *this;}
-    inline ListTemplateVersionsRequest& WithTemplateType(Aws::String&& value) { SetTemplateType(std::move(value)); return *this;}
-    inline ListTemplateVersionsRequest& WithTemplateType(const char* value) { SetTemplateType(value); return *this;}
+    template<typename TemplateTypeT = Aws::String>
+    void SetTemplateType(TemplateTypeT&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::forward<TemplateTypeT>(value); }
+    template<typename TemplateTypeT = Aws::String>
+    ListTemplateVersionsRequest& WithTemplateType(TemplateTypeT&& value) { SetTemplateType(std::forward<TemplateTypeT>(value)); return *this;}
     ///@}
   private:
 

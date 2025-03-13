@@ -18,23 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CaptionDestinationSettings::CaptionDestinationSettings() : 
-    m_burninDestinationSettingsHasBeenSet(false),
-    m_destinationType(CaptionDestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_dvbSubDestinationSettingsHasBeenSet(false),
-    m_embeddedDestinationSettingsHasBeenSet(false),
-    m_imscDestinationSettingsHasBeenSet(false),
-    m_sccDestinationSettingsHasBeenSet(false),
-    m_srtDestinationSettingsHasBeenSet(false),
-    m_teletextDestinationSettingsHasBeenSet(false),
-    m_ttmlDestinationSettingsHasBeenSet(false),
-    m_webvttDestinationSettingsHasBeenSet(false)
-{
-}
-
 CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue)
-  : CaptionDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView json
   if(jsonValue.ValueExists("burninDestinationSettings"))
   {
     m_burninDestinationSettings = jsonValue.GetObject("burninDestinationSettings");
-
     m_burninDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationType"))
   {
     m_destinationType = CaptionDestinationTypeMapper::GetCaptionDestinationTypeForName(jsonValue.GetString("destinationType"));
-
     m_destinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dvbSubDestinationSettings"))
   {
     m_dvbSubDestinationSettings = jsonValue.GetObject("dvbSubDestinationSettings");
-
     m_dvbSubDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("embeddedDestinationSettings"))
   {
     m_embeddedDestinationSettings = jsonValue.GetObject("embeddedDestinationSettings");
-
     m_embeddedDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imscDestinationSettings"))
   {
     m_imscDestinationSettings = jsonValue.GetObject("imscDestinationSettings");
-
     m_imscDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sccDestinationSettings"))
   {
     m_sccDestinationSettings = jsonValue.GetObject("sccDestinationSettings");
-
     m_sccDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srtDestinationSettings"))
   {
     m_srtDestinationSettings = jsonValue.GetObject("srtDestinationSettings");
-
     m_srtDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("teletextDestinationSettings"))
   {
     m_teletextDestinationSettings = jsonValue.GetObject("teletextDestinationSettings");
-
     m_teletextDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ttmlDestinationSettings"))
   {
     m_ttmlDestinationSettings = jsonValue.GetObject("ttmlDestinationSettings");
-
     m_ttmlDestinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webvttDestinationSettings"))
   {
     m_webvttDestinationSettings = jsonValue.GetObject("webvttDestinationSettings");
-
     m_webvttDestinationSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

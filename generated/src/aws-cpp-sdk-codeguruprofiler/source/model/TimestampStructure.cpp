@@ -18,13 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-TimestampStructure::TimestampStructure() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 TimestampStructure::TimestampStructure(JsonView jsonValue)
-  : TimestampStructure()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TimestampStructure& TimestampStructure::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

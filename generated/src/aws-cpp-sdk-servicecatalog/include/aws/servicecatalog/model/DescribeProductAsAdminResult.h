@@ -33,7 +33,7 @@ namespace Model
   class DescribeProductAsAdminResult
   {
   public:
-    AWS_SERVICECATALOG_API DescribeProductAsAdminResult();
+    AWS_SERVICECATALOG_API DescribeProductAsAdminResult() = default;
     AWS_SERVICECATALOG_API DescribeProductAsAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API DescribeProductAsAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,11 @@ namespace Model
     /**
      * <p>Information about the product view.</p>
      */
-    inline const ProductViewDetail& GetProductViewDetail() const{ return m_productViewDetail; }
-    inline void SetProductViewDetail(const ProductViewDetail& value) { m_productViewDetail = value; }
-    inline void SetProductViewDetail(ProductViewDetail&& value) { m_productViewDetail = std::move(value); }
-    inline DescribeProductAsAdminResult& WithProductViewDetail(const ProductViewDetail& value) { SetProductViewDetail(value); return *this;}
-    inline DescribeProductAsAdminResult& WithProductViewDetail(ProductViewDetail&& value) { SetProductViewDetail(std::move(value)); return *this;}
+    inline const ProductViewDetail& GetProductViewDetail() const { return m_productViewDetail; }
+    template<typename ProductViewDetailT = ProductViewDetail>
+    void SetProductViewDetail(ProductViewDetailT&& value) { m_productViewDetailHasBeenSet = true; m_productViewDetail = std::forward<ProductViewDetailT>(value); }
+    template<typename ProductViewDetailT = ProductViewDetail>
+    DescribeProductAsAdminResult& WithProductViewDetail(ProductViewDetailT&& value) { SetProductViewDetail(std::forward<ProductViewDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,77 +54,81 @@ namespace Model
      * <p>Information about the provisioning artifacts (also known as versions) for the
      * specified product.</p>
      */
-    inline const Aws::Vector<ProvisioningArtifactSummary>& GetProvisioningArtifactSummaries() const{ return m_provisioningArtifactSummaries; }
-    inline void SetProvisioningArtifactSummaries(const Aws::Vector<ProvisioningArtifactSummary>& value) { m_provisioningArtifactSummaries = value; }
-    inline void SetProvisioningArtifactSummaries(Aws::Vector<ProvisioningArtifactSummary>&& value) { m_provisioningArtifactSummaries = std::move(value); }
-    inline DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(const Aws::Vector<ProvisioningArtifactSummary>& value) { SetProvisioningArtifactSummaries(value); return *this;}
-    inline DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(Aws::Vector<ProvisioningArtifactSummary>&& value) { SetProvisioningArtifactSummaries(std::move(value)); return *this;}
-    inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(const ProvisioningArtifactSummary& value) { m_provisioningArtifactSummaries.push_back(value); return *this; }
-    inline DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(ProvisioningArtifactSummary&& value) { m_provisioningArtifactSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProvisioningArtifactSummary>& GetProvisioningArtifactSummaries() const { return m_provisioningArtifactSummaries; }
+    template<typename ProvisioningArtifactSummariesT = Aws::Vector<ProvisioningArtifactSummary>>
+    void SetProvisioningArtifactSummaries(ProvisioningArtifactSummariesT&& value) { m_provisioningArtifactSummariesHasBeenSet = true; m_provisioningArtifactSummaries = std::forward<ProvisioningArtifactSummariesT>(value); }
+    template<typename ProvisioningArtifactSummariesT = Aws::Vector<ProvisioningArtifactSummary>>
+    DescribeProductAsAdminResult& WithProvisioningArtifactSummaries(ProvisioningArtifactSummariesT&& value) { SetProvisioningArtifactSummaries(std::forward<ProvisioningArtifactSummariesT>(value)); return *this;}
+    template<typename ProvisioningArtifactSummariesT = ProvisioningArtifactSummary>
+    DescribeProductAsAdminResult& AddProvisioningArtifactSummaries(ProvisioningArtifactSummariesT&& value) { m_provisioningArtifactSummariesHasBeenSet = true; m_provisioningArtifactSummaries.emplace_back(std::forward<ProvisioningArtifactSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the tags associated with the product.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline DescribeProductAsAdminResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribeProductAsAdminResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeProductAsAdminResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline DescribeProductAsAdminResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribeProductAsAdminResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribeProductAsAdminResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the TagOptions associated with the product.</p>
      */
-    inline const Aws::Vector<TagOptionDetail>& GetTagOptions() const{ return m_tagOptions; }
-    inline void SetTagOptions(const Aws::Vector<TagOptionDetail>& value) { m_tagOptions = value; }
-    inline void SetTagOptions(Aws::Vector<TagOptionDetail>&& value) { m_tagOptions = std::move(value); }
-    inline DescribeProductAsAdminResult& WithTagOptions(const Aws::Vector<TagOptionDetail>& value) { SetTagOptions(value); return *this;}
-    inline DescribeProductAsAdminResult& WithTagOptions(Aws::Vector<TagOptionDetail>&& value) { SetTagOptions(std::move(value)); return *this;}
-    inline DescribeProductAsAdminResult& AddTagOptions(const TagOptionDetail& value) { m_tagOptions.push_back(value); return *this; }
-    inline DescribeProductAsAdminResult& AddTagOptions(TagOptionDetail&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TagOptionDetail>& GetTagOptions() const { return m_tagOptions; }
+    template<typename TagOptionsT = Aws::Vector<TagOptionDetail>>
+    void SetTagOptions(TagOptionsT&& value) { m_tagOptionsHasBeenSet = true; m_tagOptions = std::forward<TagOptionsT>(value); }
+    template<typename TagOptionsT = Aws::Vector<TagOptionDetail>>
+    DescribeProductAsAdminResult& WithTagOptions(TagOptionsT&& value) { SetTagOptions(std::forward<TagOptionsT>(value)); return *this;}
+    template<typename TagOptionsT = TagOptionDetail>
+    DescribeProductAsAdminResult& AddTagOptions(TagOptionsT&& value) { m_tagOptionsHasBeenSet = true; m_tagOptions.emplace_back(std::forward<TagOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the associated budgets.</p>
      */
-    inline const Aws::Vector<BudgetDetail>& GetBudgets() const{ return m_budgets; }
-    inline void SetBudgets(const Aws::Vector<BudgetDetail>& value) { m_budgets = value; }
-    inline void SetBudgets(Aws::Vector<BudgetDetail>&& value) { m_budgets = std::move(value); }
-    inline DescribeProductAsAdminResult& WithBudgets(const Aws::Vector<BudgetDetail>& value) { SetBudgets(value); return *this;}
-    inline DescribeProductAsAdminResult& WithBudgets(Aws::Vector<BudgetDetail>&& value) { SetBudgets(std::move(value)); return *this;}
-    inline DescribeProductAsAdminResult& AddBudgets(const BudgetDetail& value) { m_budgets.push_back(value); return *this; }
-    inline DescribeProductAsAdminResult& AddBudgets(BudgetDetail&& value) { m_budgets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BudgetDetail>& GetBudgets() const { return m_budgets; }
+    template<typename BudgetsT = Aws::Vector<BudgetDetail>>
+    void SetBudgets(BudgetsT&& value) { m_budgetsHasBeenSet = true; m_budgets = std::forward<BudgetsT>(value); }
+    template<typename BudgetsT = Aws::Vector<BudgetDetail>>
+    DescribeProductAsAdminResult& WithBudgets(BudgetsT&& value) { SetBudgets(std::forward<BudgetsT>(value)); return *this;}
+    template<typename BudgetsT = BudgetDetail>
+    DescribeProductAsAdminResult& AddBudgets(BudgetsT&& value) { m_budgetsHasBeenSet = true; m_budgets.emplace_back(std::forward<BudgetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProductAsAdminResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProductAsAdminResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProductAsAdminResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProductAsAdminResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProductViewDetail m_productViewDetail;
+    bool m_productViewDetailHasBeenSet = false;
 
     Aws::Vector<ProvisioningArtifactSummary> m_provisioningArtifactSummaries;
+    bool m_provisioningArtifactSummariesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<TagOptionDetail> m_tagOptions;
+    bool m_tagOptionsHasBeenSet = false;
 
     Aws::Vector<BudgetDetail> m_budgets;
+    bool m_budgetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

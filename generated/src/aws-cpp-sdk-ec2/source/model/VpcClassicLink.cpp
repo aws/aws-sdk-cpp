@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcClassicLink::VpcClassicLink() : 
-    m_classicLinkEnabled(false),
-    m_classicLinkEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 VpcClassicLink::VpcClassicLink(const XmlNode& xmlNode)
-  : VpcClassicLink()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,27 @@ VpcClassicLink& VpcClassicLink::operator =(const XmlNode& xmlNode)
     {
       m_classicLinkEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(classicLinkEnabledNode.GetText()).c_str()).c_str());
       m_classicLinkEnabledHasBeenSet = true;
+       m_classicLinkEnabledHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
   }
 

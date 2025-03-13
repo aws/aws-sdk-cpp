@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Classifier::Classifier() : 
-    m_grokClassifierHasBeenSet(false),
-    m_xMLClassifierHasBeenSet(false),
-    m_jsonClassifierHasBeenSet(false),
-    m_csvClassifierHasBeenSet(false)
-{
-}
-
 Classifier::Classifier(JsonView jsonValue)
-  : Classifier()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Classifier& Classifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GrokClassifier"))
   {
     m_grokClassifier = jsonValue.GetObject("GrokClassifier");
-
     m_grokClassifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XMLClassifier"))
   {
     m_xMLClassifier = jsonValue.GetObject("XMLClassifier");
-
     m_xMLClassifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JsonClassifier"))
   {
     m_jsonClassifier = jsonValue.GetObject("JsonClassifier");
-
     m_jsonClassifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CsvClassifier"))
   {
     m_csvClassifier = jsonValue.GetObject("CsvClassifier");
-
     m_csvClassifierHasBeenSet = true;
   }
-
   return *this;
 }
 

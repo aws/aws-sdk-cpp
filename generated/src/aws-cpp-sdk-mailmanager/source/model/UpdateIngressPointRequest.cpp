@@ -12,17 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIngressPointRequest::UpdateIngressPointRequest() : 
-    m_ingressPointConfigurationHasBeenSet(false),
-    m_ingressPointIdHasBeenSet(false),
-    m_ingressPointNameHasBeenSet(false),
-    m_ruleSetIdHasBeenSet(false),
-    m_statusToUpdate(IngressPointStatusToUpdate::NOT_SET),
-    m_statusToUpdateHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIngressPointRequest::SerializePayload() const
 {
   JsonValue payload;

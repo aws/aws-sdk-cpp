@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRoutingProfileRequest::DeleteRoutingProfileRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRoutingProfileRequest::SerializePayload() const
 {
   return {};

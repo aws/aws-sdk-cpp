@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-MetricSource::MetricSource() : 
-    m_provider(MetricSourceProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_providerArnHasBeenSet(false)
-{
-}
-
 MetricSource::MetricSource(JsonView jsonValue)
-  : MetricSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricSource& MetricSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("provider"))
   {
     m_provider = MetricSourceProviderMapper::GetMetricSourceProviderForName(jsonValue.GetString("provider"));
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerArn"))
   {
     m_providerArn = jsonValue.GetString("providerArn");
-
     m_providerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

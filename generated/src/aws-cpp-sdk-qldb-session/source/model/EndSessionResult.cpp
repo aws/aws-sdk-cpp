@@ -18,13 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-EndSessionResult::EndSessionResult() : 
-    m_timingInformationHasBeenSet(false)
-{
-}
-
 EndSessionResult::EndSessionResult(JsonView jsonValue)
-  : EndSessionResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EndSessionResult& EndSessionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimingInformation"))
   {
     m_timingInformation = jsonValue.GetObject("TimingInformation");
-
     m_timingInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

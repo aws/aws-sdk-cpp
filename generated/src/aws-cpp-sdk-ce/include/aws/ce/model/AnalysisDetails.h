@@ -31,7 +31,7 @@ namespace Model
   class AnalysisDetails
   {
   public:
-    AWS_COSTEXPLORER_API AnalysisDetails();
+    AWS_COSTEXPLORER_API AnalysisDetails() = default;
     AWS_COSTEXPLORER_API AnalysisDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API AnalysisDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Details about the Savings Plans purchase analysis.</p>
      */
-    inline const SavingsPlansPurchaseAnalysisDetails& GetSavingsPlansPurchaseAnalysisDetails() const{ return m_savingsPlansPurchaseAnalysisDetails; }
+    inline const SavingsPlansPurchaseAnalysisDetails& GetSavingsPlansPurchaseAnalysisDetails() const { return m_savingsPlansPurchaseAnalysisDetails; }
     inline bool SavingsPlansPurchaseAnalysisDetailsHasBeenSet() const { return m_savingsPlansPurchaseAnalysisDetailsHasBeenSet; }
-    inline void SetSavingsPlansPurchaseAnalysisDetails(const SavingsPlansPurchaseAnalysisDetails& value) { m_savingsPlansPurchaseAnalysisDetailsHasBeenSet = true; m_savingsPlansPurchaseAnalysisDetails = value; }
-    inline void SetSavingsPlansPurchaseAnalysisDetails(SavingsPlansPurchaseAnalysisDetails&& value) { m_savingsPlansPurchaseAnalysisDetailsHasBeenSet = true; m_savingsPlansPurchaseAnalysisDetails = std::move(value); }
-    inline AnalysisDetails& WithSavingsPlansPurchaseAnalysisDetails(const SavingsPlansPurchaseAnalysisDetails& value) { SetSavingsPlansPurchaseAnalysisDetails(value); return *this;}
-    inline AnalysisDetails& WithSavingsPlansPurchaseAnalysisDetails(SavingsPlansPurchaseAnalysisDetails&& value) { SetSavingsPlansPurchaseAnalysisDetails(std::move(value)); return *this;}
+    template<typename SavingsPlansPurchaseAnalysisDetailsT = SavingsPlansPurchaseAnalysisDetails>
+    void SetSavingsPlansPurchaseAnalysisDetails(SavingsPlansPurchaseAnalysisDetailsT&& value) { m_savingsPlansPurchaseAnalysisDetailsHasBeenSet = true; m_savingsPlansPurchaseAnalysisDetails = std::forward<SavingsPlansPurchaseAnalysisDetailsT>(value); }
+    template<typename SavingsPlansPurchaseAnalysisDetailsT = SavingsPlansPurchaseAnalysisDetails>
+    AnalysisDetails& WithSavingsPlansPurchaseAnalysisDetails(SavingsPlansPurchaseAnalysisDetailsT&& value) { SetSavingsPlansPurchaseAnalysisDetails(std::forward<SavingsPlansPurchaseAnalysisDetailsT>(value)); return *this;}
     ///@}
   private:
 

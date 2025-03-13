@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQAppSessionDataResult::ListQAppSessionDataResult()
-{
-}
-
 ListQAppSessionDataResult::ListQAppSessionDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListQAppSessionDataResult& ListQAppSessionDataResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
-
+    m_sessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionData"))
   {
     Aws::Utils::Array<JsonView> sessionDataJsonList = jsonValue.GetArray("sessionData");
@@ -48,20 +42,20 @@ ListQAppSessionDataResult& ListQAppSessionDataResult::operator =(const Aws::Amaz
     {
       m_sessionData.push_back(sessionDataJsonList[sessionDataIndex].AsObject());
     }
+    m_sessionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

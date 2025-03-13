@@ -10,25 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateNetworkInsightsPathRequest::CreateNetworkInsightsPathRequest() : 
-    m_sourceIpHasBeenSet(false),
-    m_destinationIpHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_filterAtSourceHasBeenSet(false),
-    m_filterAtDestinationHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkInsightsPathRequest::SerializePayload() const
 {
   Aws::StringStream ss;

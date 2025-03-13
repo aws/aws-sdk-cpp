@@ -26,7 +26,7 @@ namespace Model
   class GetCurrentMetricDataRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API GetCurrentMetricDataRequest();
+    AWS_CONNECT_API GetCurrentMetricDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline GetCurrentMetricDataRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetCurrentMetricDataRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetCurrentMetricDataRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetCurrentMetricDataRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * by <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
      * only supported on the resources that are passed in the filter.</p>
      */
-    inline const Filters& GetFilters() const{ return m_filters; }
+    inline const Filters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline GetCurrentMetricDataRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
-    inline GetCurrentMetricDataRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = Filters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Filters>
+    GetCurrentMetricDataRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +89,13 @@ namespace Model
      * <p>When using the <code>RoutingStepExpression</code> filter, group by
      * <code>ROUTING_STEP_EXPRESSION</code> is required.</p> </li> </ul>
      */
-    inline const Aws::Vector<Grouping>& GetGroupings() const{ return m_groupings; }
+    inline const Aws::Vector<Grouping>& GetGroupings() const { return m_groupings; }
     inline bool GroupingsHasBeenSet() const { return m_groupingsHasBeenSet; }
-    inline void SetGroupings(const Aws::Vector<Grouping>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
-    inline void SetGroupings(Aws::Vector<Grouping>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
-    inline GetCurrentMetricDataRequest& WithGroupings(const Aws::Vector<Grouping>& value) { SetGroupings(value); return *this;}
-    inline GetCurrentMetricDataRequest& WithGroupings(Aws::Vector<Grouping>&& value) { SetGroupings(std::move(value)); return *this;}
-    inline GetCurrentMetricDataRequest& AddGroupings(const Grouping& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
-    inline GetCurrentMetricDataRequest& AddGroupings(Grouping&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
+    template<typename GroupingsT = Aws::Vector<Grouping>>
+    void SetGroupings(GroupingsT&& value) { m_groupingsHasBeenSet = true; m_groupings = std::forward<GroupingsT>(value); }
+    template<typename GroupingsT = Aws::Vector<Grouping>>
+    GetCurrentMetricDataRequest& WithGroupings(GroupingsT&& value) { SetGroupings(std::forward<GroupingsT>(value)); return *this;}
+    inline GetCurrentMetricDataRequest& AddGroupings(Grouping value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -158,14 +155,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time">Availability</a>
      * </p> </dd> </dl>
      */
-    inline const Aws::Vector<CurrentMetric>& GetCurrentMetrics() const{ return m_currentMetrics; }
+    inline const Aws::Vector<CurrentMetric>& GetCurrentMetrics() const { return m_currentMetrics; }
     inline bool CurrentMetricsHasBeenSet() const { return m_currentMetricsHasBeenSet; }
-    inline void SetCurrentMetrics(const Aws::Vector<CurrentMetric>& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics = value; }
-    inline void SetCurrentMetrics(Aws::Vector<CurrentMetric>&& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics = std::move(value); }
-    inline GetCurrentMetricDataRequest& WithCurrentMetrics(const Aws::Vector<CurrentMetric>& value) { SetCurrentMetrics(value); return *this;}
-    inline GetCurrentMetricDataRequest& WithCurrentMetrics(Aws::Vector<CurrentMetric>&& value) { SetCurrentMetrics(std::move(value)); return *this;}
-    inline GetCurrentMetricDataRequest& AddCurrentMetrics(const CurrentMetric& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics.push_back(value); return *this; }
-    inline GetCurrentMetricDataRequest& AddCurrentMetrics(CurrentMetric&& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics.push_back(std::move(value)); return *this; }
+    template<typename CurrentMetricsT = Aws::Vector<CurrentMetric>>
+    void SetCurrentMetrics(CurrentMetricsT&& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics = std::forward<CurrentMetricsT>(value); }
+    template<typename CurrentMetricsT = Aws::Vector<CurrentMetric>>
+    GetCurrentMetricDataRequest& WithCurrentMetrics(CurrentMetricsT&& value) { SetCurrentMetrics(std::forward<CurrentMetricsT>(value)); return *this;}
+    template<typename CurrentMetricsT = CurrentMetric>
+    GetCurrentMetricDataRequest& AddCurrentMetrics(CurrentMetricsT&& value) { m_currentMetricsHasBeenSet = true; m_currentMetrics.emplace_back(std::forward<CurrentMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,21 +173,19 @@ namespace Model
      * that use the token must use the same request parameters as the request that
      * generated the token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetCurrentMetricDataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetCurrentMetricDataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetCurrentMetricDataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetCurrentMetricDataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetCurrentMetricDataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -205,14 +200,14 @@ namespace Model
      * <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not
      * supported.</p> </li> </ul>
      */
-    inline const Aws::Vector<CurrentMetricSortCriteria>& GetSortCriteria() const{ return m_sortCriteria; }
+    inline const Aws::Vector<CurrentMetricSortCriteria>& GetSortCriteria() const { return m_sortCriteria; }
     inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
-    inline void SetSortCriteria(const Aws::Vector<CurrentMetricSortCriteria>& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
-    inline void SetSortCriteria(Aws::Vector<CurrentMetricSortCriteria>&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
-    inline GetCurrentMetricDataRequest& WithSortCriteria(const Aws::Vector<CurrentMetricSortCriteria>& value) { SetSortCriteria(value); return *this;}
-    inline GetCurrentMetricDataRequest& WithSortCriteria(Aws::Vector<CurrentMetricSortCriteria>&& value) { SetSortCriteria(std::move(value)); return *this;}
-    inline GetCurrentMetricDataRequest& AddSortCriteria(const CurrentMetricSortCriteria& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(value); return *this; }
-    inline GetCurrentMetricDataRequest& AddSortCriteria(CurrentMetricSortCriteria&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(std::move(value)); return *this; }
+    template<typename SortCriteriaT = Aws::Vector<CurrentMetricSortCriteria>>
+    void SetSortCriteria(SortCriteriaT&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::forward<SortCriteriaT>(value); }
+    template<typename SortCriteriaT = Aws::Vector<CurrentMetricSortCriteria>>
+    GetCurrentMetricDataRequest& WithSortCriteria(SortCriteriaT&& value) { SetSortCriteria(std::forward<SortCriteriaT>(value)); return *this;}
+    template<typename SortCriteriaT = CurrentMetricSortCriteria>
+    GetCurrentMetricDataRequest& AddSortCriteria(SortCriteriaT&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.emplace_back(std::forward<SortCriteriaT>(value)); return *this; }
     ///@}
   private:
 
@@ -231,7 +226,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<CurrentMetricSortCriteria> m_sortCriteria;

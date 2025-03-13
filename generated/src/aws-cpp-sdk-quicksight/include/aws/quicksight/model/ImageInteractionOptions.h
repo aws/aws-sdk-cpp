@@ -32,7 +32,7 @@ namespace Model
   class ImageInteractionOptions
   {
   public:
-    AWS_QUICKSIGHT_API ImageInteractionOptions();
+    AWS_QUICKSIGHT_API ImageInteractionOptions() = default;
     AWS_QUICKSIGHT_API ImageInteractionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ImageInteractionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The menu options for the image.</p>
      */
-    inline const ImageMenuOption& GetImageMenuOption() const{ return m_imageMenuOption; }
+    inline const ImageMenuOption& GetImageMenuOption() const { return m_imageMenuOption; }
     inline bool ImageMenuOptionHasBeenSet() const { return m_imageMenuOptionHasBeenSet; }
-    inline void SetImageMenuOption(const ImageMenuOption& value) { m_imageMenuOptionHasBeenSet = true; m_imageMenuOption = value; }
-    inline void SetImageMenuOption(ImageMenuOption&& value) { m_imageMenuOptionHasBeenSet = true; m_imageMenuOption = std::move(value); }
-    inline ImageInteractionOptions& WithImageMenuOption(const ImageMenuOption& value) { SetImageMenuOption(value); return *this;}
-    inline ImageInteractionOptions& WithImageMenuOption(ImageMenuOption&& value) { SetImageMenuOption(std::move(value)); return *this;}
+    template<typename ImageMenuOptionT = ImageMenuOption>
+    void SetImageMenuOption(ImageMenuOptionT&& value) { m_imageMenuOptionHasBeenSet = true; m_imageMenuOption = std::forward<ImageMenuOptionT>(value); }
+    template<typename ImageMenuOptionT = ImageMenuOption>
+    ImageInteractionOptions& WithImageMenuOption(ImageMenuOptionT&& value) { SetImageMenuOption(std::forward<ImageMenuOptionT>(value)); return *this;}
     ///@}
   private:
 

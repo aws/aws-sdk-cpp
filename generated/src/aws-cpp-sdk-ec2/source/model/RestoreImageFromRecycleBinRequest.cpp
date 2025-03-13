@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RestoreImageFromRecycleBinRequest::RestoreImageFromRecycleBinRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String RestoreImageFromRecycleBinRequest::SerializePayload() const
 {
   Aws::StringStream ss;

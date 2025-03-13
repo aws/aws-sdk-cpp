@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-CompositionDetails::CompositionDetails() : 
-    m_compositionRelationshipHasBeenSet(false)
-{
-}
-
 CompositionDetails::CompositionDetails(JsonView jsonValue)
-  : CompositionDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CompositionDetails& CompositionDetails::operator =(JsonView jsonValue)
     }
     m_compositionRelationshipHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateClusterResult::CreateClusterResult()
-{
-}
-
 CreateClusterResult::CreateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
+    m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobListEntries"))
   {
     Aws::Utils::Array<JsonView> jobListEntriesJsonList = jsonValue.GetArray("JobListEntries");
@@ -42,14 +37,15 @@ CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebService
     {
       m_jobListEntries.push_back(jobListEntriesJsonList[jobListEntriesIndex].AsObject());
     }
+    m_jobListEntriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class ListBotReplicasRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListBotReplicasRequest();
+    AWS_LEXMODELSV2_API ListBotReplicasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The request for the unique bot IDs in the list of replicated bots.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline ListBotReplicasRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListBotReplicasRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListBotReplicasRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListBotReplicasRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-BouncedRecipientInfo::BouncedRecipientInfo() : 
-    m_recipientHasBeenSet(false),
-    m_recipientArnHasBeenSet(false),
-    m_bounceType(BounceType::NOT_SET),
-    m_bounceTypeHasBeenSet(false),
-    m_recipientDsnFieldsHasBeenSet(false)
-{
-}
-
 BouncedRecipientInfo::BouncedRecipientInfo(const XmlNode& xmlNode)
-  : BouncedRecipientInfo()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ BouncedRecipientInfo& BouncedRecipientInfo::operator =(const XmlNode& xmlNode)
     {
       m_recipient = Aws::Utils::Xml::DecodeEscapedXmlText(recipientNode.GetText());
       m_recipientHasBeenSet = true;
+       m_recipientHasBeenSet = true;
     }
     XmlNode recipientArnNode = resultNode.FirstChild("RecipientArn");
     if(!recipientArnNode.IsNull())
     {
       m_recipientArn = Aws::Utils::Xml::DecodeEscapedXmlText(recipientArnNode.GetText());
       m_recipientArnHasBeenSet = true;
+       m_recipientArnHasBeenSet = true;
     }
     XmlNode bounceTypeNode = resultNode.FirstChild("BounceType");
     if(!bounceTypeNode.IsNull())
     {
-      m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bounceTypeNode.GetText()).c_str()).c_str());
+      m_bounceType = BounceTypeMapper::GetBounceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bounceTypeNode.GetText()).c_str()));
       m_bounceTypeHasBeenSet = true;
+       m_bounceTypeHasBeenSet = true;
     }
     XmlNode recipientDsnFieldsNode = resultNode.FirstChild("RecipientDsnFields");
     if(!recipientDsnFieldsNode.IsNull())
     {
       m_recipientDsnFields = recipientDsnFieldsNode;
       m_recipientDsnFieldsHasBeenSet = true;
+       m_recipientDsnFieldsHasBeenSet = true;
     }
   }
 

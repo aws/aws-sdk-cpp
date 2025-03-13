@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AssistantIntegrationConfiguration::AssistantIntegrationConfiguration() : 
-    m_topicIntegrationArnHasBeenSet(false)
-{
-}
-
 AssistantIntegrationConfiguration::AssistantIntegrationConfiguration(JsonView jsonValue)
-  : AssistantIntegrationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssistantIntegrationConfiguration& AssistantIntegrationConfiguration::operator =
   if(jsonValue.ValueExists("topicIntegrationArn"))
   {
     m_topicIntegrationArn = jsonValue.GetString("topicIntegrationArn");
-
     m_topicIntegrationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

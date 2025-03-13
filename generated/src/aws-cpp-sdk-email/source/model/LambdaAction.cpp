@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-LambdaAction::LambdaAction() : 
-    m_topicArnHasBeenSet(false),
-    m_functionArnHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
-{
-}
-
 LambdaAction::LambdaAction(const XmlNode& xmlNode)
-  : LambdaAction()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ LambdaAction& LambdaAction::operator =(const XmlNode& xmlNode)
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
     XmlNode functionArnNode = resultNode.FirstChild("FunctionArn");
     if(!functionArnNode.IsNull())
     {
       m_functionArn = Aws::Utils::Xml::DecodeEscapedXmlText(functionArnNode.GetText());
       m_functionArnHasBeenSet = true;
+       m_functionArnHasBeenSet = true;
     }
     XmlNode invocationTypeNode = resultNode.FirstChild("InvocationType");
     if(!invocationTypeNode.IsNull())
     {
-      m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationTypeNode.GetText()).c_str()).c_str());
+      m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationTypeNode.GetText()).c_str()));
       m_invocationTypeHasBeenSet = true;
+       m_invocationTypeHasBeenSet = true;
     }
   }
 

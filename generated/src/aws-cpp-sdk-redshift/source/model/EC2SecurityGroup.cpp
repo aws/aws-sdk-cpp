@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EC2SecurityGroup::EC2SecurityGroup() : 
-    m_statusHasBeenSet(false),
-    m_eC2SecurityGroupNameHasBeenSet(false),
-    m_eC2SecurityGroupOwnerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EC2SecurityGroup::EC2SecurityGroup(const XmlNode& xmlNode)
-  : EC2SecurityGroup()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ EC2SecurityGroup& EC2SecurityGroup::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupNameNode = resultNode.FirstChild("EC2SecurityGroupName");
     if(!eC2SecurityGroupNameNode.IsNull())
     {
       m_eC2SecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(eC2SecurityGroupNameNode.GetText());
       m_eC2SecurityGroupNameHasBeenSet = true;
+       m_eC2SecurityGroupNameHasBeenSet = true;
     }
     XmlNode eC2SecurityGroupOwnerIdNode = resultNode.FirstChild("EC2SecurityGroupOwnerId");
     if(!eC2SecurityGroupOwnerIdNode.IsNull())
     {
       m_eC2SecurityGroupOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(eC2SecurityGroupOwnerIdNode.GetText());
       m_eC2SecurityGroupOwnerIdHasBeenSet = true;
+       m_eC2SecurityGroupOwnerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

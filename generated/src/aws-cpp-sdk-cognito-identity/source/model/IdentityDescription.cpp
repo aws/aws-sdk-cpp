@@ -19,17 +19,7 @@ namespace CognitoIdentity
 namespace Model
 {
 
-IdentityDescription::IdentityDescription() : 
-    m_identityIdHasBeenSet(false),
-    m_loginsHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 IdentityDescription::IdentityDescription(JsonView jsonValue)
-  : IdentityDescription()
 {
   *this = jsonValue;
 }
@@ -39,10 +29,8 @@ IdentityDescription& IdentityDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
     m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Logins"))
   {
     Aws::Utils::Array<JsonView> loginsJsonList = jsonValue.GetArray("Logins");
@@ -52,21 +40,16 @@ IdentityDescription& IdentityDescription::operator =(JsonView jsonValue)
     }
     m_loginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

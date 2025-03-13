@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-CertificateDetails::CertificateDetails() : 
-    m_cAIdentifierHasBeenSet(false),
-    m_validTillHasBeenSet(false)
-{
-}
-
 CertificateDetails::CertificateDetails(const XmlNode& xmlNode)
-  : CertificateDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CertificateDetails& CertificateDetails::operator =(const XmlNode& xmlNode)
     {
       m_cAIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(cAIdentifierNode.GetText());
       m_cAIdentifierHasBeenSet = true;
+       m_cAIdentifierHasBeenSet = true;
     }
     XmlNode validTillNode = resultNode.FirstChild("ValidTill");
     if(!validTillNode.IsNull())
     {
       m_validTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validTillNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validTillHasBeenSet = true;
+       m_validTillHasBeenSet = true;
     }
   }
 

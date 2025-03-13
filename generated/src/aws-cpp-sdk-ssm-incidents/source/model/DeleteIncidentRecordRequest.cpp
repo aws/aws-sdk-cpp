@@ -12,11 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIncidentRecordRequest::DeleteIncidentRecordRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIncidentRecordRequest::SerializePayload() const
 {
   JsonValue payload;

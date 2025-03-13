@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MultiModelConfig::MultiModelConfig() : 
-    m_modelCacheSetting(ModelCacheSetting::NOT_SET),
-    m_modelCacheSettingHasBeenSet(false)
-{
-}
-
 MultiModelConfig::MultiModelConfig(JsonView jsonValue)
-  : MultiModelConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MultiModelConfig& MultiModelConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelCacheSetting"))
   {
     m_modelCacheSetting = ModelCacheSettingMapper::GetModelCacheSettingForName(jsonValue.GetString("ModelCacheSetting"));
-
     m_modelCacheSettingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ForecastResult
   {
   public:
-    AWS_COSTEXPLORER_API ForecastResult();
+    AWS_COSTEXPLORER_API ForecastResult() = default;
     AWS_COSTEXPLORER_API ForecastResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API ForecastResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,54 +42,48 @@ namespace Model
     /**
      * <p>The period of time that the forecast covers.</p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline ForecastResult& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline ForecastResult& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    ForecastResult& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mean value of the forecast.</p>
      */
-    inline const Aws::String& GetMeanValue() const{ return m_meanValue; }
+    inline const Aws::String& GetMeanValue() const { return m_meanValue; }
     inline bool MeanValueHasBeenSet() const { return m_meanValueHasBeenSet; }
-    inline void SetMeanValue(const Aws::String& value) { m_meanValueHasBeenSet = true; m_meanValue = value; }
-    inline void SetMeanValue(Aws::String&& value) { m_meanValueHasBeenSet = true; m_meanValue = std::move(value); }
-    inline void SetMeanValue(const char* value) { m_meanValueHasBeenSet = true; m_meanValue.assign(value); }
-    inline ForecastResult& WithMeanValue(const Aws::String& value) { SetMeanValue(value); return *this;}
-    inline ForecastResult& WithMeanValue(Aws::String&& value) { SetMeanValue(std::move(value)); return *this;}
-    inline ForecastResult& WithMeanValue(const char* value) { SetMeanValue(value); return *this;}
+    template<typename MeanValueT = Aws::String>
+    void SetMeanValue(MeanValueT&& value) { m_meanValueHasBeenSet = true; m_meanValue = std::forward<MeanValueT>(value); }
+    template<typename MeanValueT = Aws::String>
+    ForecastResult& WithMeanValue(MeanValueT&& value) { SetMeanValue(std::forward<MeanValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lower limit for the prediction interval. </p>
      */
-    inline const Aws::String& GetPredictionIntervalLowerBound() const{ return m_predictionIntervalLowerBound; }
+    inline const Aws::String& GetPredictionIntervalLowerBound() const { return m_predictionIntervalLowerBound; }
     inline bool PredictionIntervalLowerBoundHasBeenSet() const { return m_predictionIntervalLowerBoundHasBeenSet; }
-    inline void SetPredictionIntervalLowerBound(const Aws::String& value) { m_predictionIntervalLowerBoundHasBeenSet = true; m_predictionIntervalLowerBound = value; }
-    inline void SetPredictionIntervalLowerBound(Aws::String&& value) { m_predictionIntervalLowerBoundHasBeenSet = true; m_predictionIntervalLowerBound = std::move(value); }
-    inline void SetPredictionIntervalLowerBound(const char* value) { m_predictionIntervalLowerBoundHasBeenSet = true; m_predictionIntervalLowerBound.assign(value); }
-    inline ForecastResult& WithPredictionIntervalLowerBound(const Aws::String& value) { SetPredictionIntervalLowerBound(value); return *this;}
-    inline ForecastResult& WithPredictionIntervalLowerBound(Aws::String&& value) { SetPredictionIntervalLowerBound(std::move(value)); return *this;}
-    inline ForecastResult& WithPredictionIntervalLowerBound(const char* value) { SetPredictionIntervalLowerBound(value); return *this;}
+    template<typename PredictionIntervalLowerBoundT = Aws::String>
+    void SetPredictionIntervalLowerBound(PredictionIntervalLowerBoundT&& value) { m_predictionIntervalLowerBoundHasBeenSet = true; m_predictionIntervalLowerBound = std::forward<PredictionIntervalLowerBoundT>(value); }
+    template<typename PredictionIntervalLowerBoundT = Aws::String>
+    ForecastResult& WithPredictionIntervalLowerBound(PredictionIntervalLowerBoundT&& value) { SetPredictionIntervalLowerBound(std::forward<PredictionIntervalLowerBoundT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The upper limit for the prediction interval. </p>
      */
-    inline const Aws::String& GetPredictionIntervalUpperBound() const{ return m_predictionIntervalUpperBound; }
+    inline const Aws::String& GetPredictionIntervalUpperBound() const { return m_predictionIntervalUpperBound; }
     inline bool PredictionIntervalUpperBoundHasBeenSet() const { return m_predictionIntervalUpperBoundHasBeenSet; }
-    inline void SetPredictionIntervalUpperBound(const Aws::String& value) { m_predictionIntervalUpperBoundHasBeenSet = true; m_predictionIntervalUpperBound = value; }
-    inline void SetPredictionIntervalUpperBound(Aws::String&& value) { m_predictionIntervalUpperBoundHasBeenSet = true; m_predictionIntervalUpperBound = std::move(value); }
-    inline void SetPredictionIntervalUpperBound(const char* value) { m_predictionIntervalUpperBoundHasBeenSet = true; m_predictionIntervalUpperBound.assign(value); }
-    inline ForecastResult& WithPredictionIntervalUpperBound(const Aws::String& value) { SetPredictionIntervalUpperBound(value); return *this;}
-    inline ForecastResult& WithPredictionIntervalUpperBound(Aws::String&& value) { SetPredictionIntervalUpperBound(std::move(value)); return *this;}
-    inline ForecastResult& WithPredictionIntervalUpperBound(const char* value) { SetPredictionIntervalUpperBound(value); return *this;}
+    template<typename PredictionIntervalUpperBoundT = Aws::String>
+    void SetPredictionIntervalUpperBound(PredictionIntervalUpperBoundT&& value) { m_predictionIntervalUpperBoundHasBeenSet = true; m_predictionIntervalUpperBound = std::forward<PredictionIntervalUpperBoundT>(value); }
+    template<typename PredictionIntervalUpperBoundT = Aws::String>
+    ForecastResult& WithPredictionIntervalUpperBound(PredictionIntervalUpperBoundT&& value) { SetPredictionIntervalUpperBound(std::forward<PredictionIntervalUpperBoundT>(value)); return *this;}
     ///@}
   private:
 

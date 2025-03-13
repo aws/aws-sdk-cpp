@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostAllocationTagStatusEntry::CostAllocationTagStatusEntry() : 
-    m_tagKeyHasBeenSet(false),
-    m_status(CostAllocationTagStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 CostAllocationTagStatusEntry::CostAllocationTagStatusEntry(JsonView jsonValue)
-  : CostAllocationTagStatusEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CostAllocationTagStatusEntry& CostAllocationTagStatusEntry::operator =(JsonView 
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CostAllocationTagStatusMapper::GetCostAllocationTagStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

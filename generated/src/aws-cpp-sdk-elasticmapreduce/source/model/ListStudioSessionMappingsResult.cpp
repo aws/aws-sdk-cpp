@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStudioSessionMappingsResult::ListStudioSessionMappingsResult()
-{
-}
-
 ListStudioSessionMappingsResult::ListStudioSessionMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListStudioSessionMappingsResult& ListStudioSessionMappingsResult::operator =(con
     {
       m_sessionMappings.push_back(sessionMappingsJsonList[sessionMappingsIndex].AsObject());
     }
+    m_sessionMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

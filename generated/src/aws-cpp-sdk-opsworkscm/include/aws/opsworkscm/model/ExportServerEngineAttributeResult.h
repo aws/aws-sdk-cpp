@@ -28,7 +28,7 @@ namespace Model
   class ExportServerEngineAttributeResult
   {
   public:
-    AWS_OPSWORKSCM_API ExportServerEngineAttributeResult();
+    AWS_OPSWORKSCM_API ExportServerEngineAttributeResult() = default;
     AWS_OPSWORKSCM_API ExportServerEngineAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKSCM_API ExportServerEngineAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The requested engine attribute pair with attribute name and value.</p>
      */
-    inline const EngineAttribute& GetEngineAttribute() const{ return m_engineAttribute; }
-    inline void SetEngineAttribute(const EngineAttribute& value) { m_engineAttribute = value; }
-    inline void SetEngineAttribute(EngineAttribute&& value) { m_engineAttribute = std::move(value); }
-    inline ExportServerEngineAttributeResult& WithEngineAttribute(const EngineAttribute& value) { SetEngineAttribute(value); return *this;}
-    inline ExportServerEngineAttributeResult& WithEngineAttribute(EngineAttribute&& value) { SetEngineAttribute(std::move(value)); return *this;}
+    inline const EngineAttribute& GetEngineAttribute() const { return m_engineAttribute; }
+    template<typename EngineAttributeT = EngineAttribute>
+    void SetEngineAttribute(EngineAttributeT&& value) { m_engineAttributeHasBeenSet = true; m_engineAttribute = std::forward<EngineAttributeT>(value); }
+    template<typename EngineAttributeT = EngineAttribute>
+    ExportServerEngineAttributeResult& WithEngineAttribute(EngineAttributeT&& value) { SetEngineAttribute(std::forward<EngineAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The server name used in the request.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
-    inline void SetServerName(const Aws::String& value) { m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverName.assign(value); }
-    inline ExportServerEngineAttributeResult& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline ExportServerEngineAttributeResult& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline ExportServerEngineAttributeResult& WithServerName(const char* value) { SetServerName(value); return *this;}
+    inline const Aws::String& GetServerName() const { return m_serverName; }
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    ExportServerEngineAttributeResult& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExportServerEngineAttributeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExportServerEngineAttributeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExportServerEngineAttributeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExportServerEngineAttributeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EngineAttribute m_engineAttribute;
+    bool m_engineAttributeHasBeenSet = false;
 
     Aws::String m_serverName;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

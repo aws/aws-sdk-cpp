@@ -35,7 +35,7 @@ namespace Model
   class S3DestinationDescription
   {
   public:
-    AWS_FIREHOSE_API S3DestinationDescription();
+    AWS_FIREHOSE_API S3DestinationDescription() = default;
     AWS_FIREHOSE_API S3DestinationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API S3DestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline S3DestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline S3DestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline S3DestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    S3DestinationDescription& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
+    inline const Aws::String& GetBucketARN() const { return m_bucketARN; }
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
-    inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
-    inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
-    inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
-    inline S3DestinationDescription& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
-    inline S3DestinationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
-    inline S3DestinationDescription& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
+    template<typename BucketARNT = Aws::String>
+    void SetBucketARN(BucketARNT&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::forward<BucketARNT>(value); }
+    template<typename BucketARNT = Aws::String>
+    S3DestinationDescription& WithBucketARN(BucketARNT&& value) { SetBucketARN(std::forward<BucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline S3DestinationDescription& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline S3DestinationDescription& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline S3DestinationDescription& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    S3DestinationDescription& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +93,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
-    inline const Aws::String& GetErrorOutputPrefix() const{ return m_errorOutputPrefix; }
+    inline const Aws::String& GetErrorOutputPrefix() const { return m_errorOutputPrefix; }
     inline bool ErrorOutputPrefixHasBeenSet() const { return m_errorOutputPrefixHasBeenSet; }
-    inline void SetErrorOutputPrefix(const Aws::String& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = value; }
-    inline void SetErrorOutputPrefix(Aws::String&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::move(value); }
-    inline void SetErrorOutputPrefix(const char* value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix.assign(value); }
-    inline S3DestinationDescription& WithErrorOutputPrefix(const Aws::String& value) { SetErrorOutputPrefix(value); return *this;}
-    inline S3DestinationDescription& WithErrorOutputPrefix(Aws::String&& value) { SetErrorOutputPrefix(std::move(value)); return *this;}
-    inline S3DestinationDescription& WithErrorOutputPrefix(const char* value) { SetErrorOutputPrefix(value); return *this;}
+    template<typename ErrorOutputPrefixT = Aws::String>
+    void SetErrorOutputPrefix(ErrorOutputPrefixT&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::forward<ErrorOutputPrefixT>(value); }
+    template<typename ErrorOutputPrefixT = Aws::String>
+    S3DestinationDescription& WithErrorOutputPrefix(ErrorOutputPrefixT&& value) { SetErrorOutputPrefix(std::forward<ErrorOutputPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +106,12 @@ namespace Model
      * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
      * object default values are used.</p>
      */
-    inline const BufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline const BufferingHints& GetBufferingHints() const { return m_bufferingHints; }
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
-    inline void SetBufferingHints(const BufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
-    inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
-    inline S3DestinationDescription& WithBufferingHints(const BufferingHints& value) { SetBufferingHints(value); return *this;}
-    inline S3DestinationDescription& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    template<typename BufferingHintsT = BufferingHints>
+    void SetBufferingHints(BufferingHintsT&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::forward<BufferingHintsT>(value); }
+    template<typename BufferingHintsT = BufferingHints>
+    S3DestinationDescription& WithBufferingHints(BufferingHintsT&& value) { SetBufferingHints(std::forward<BufferingHintsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +119,10 @@ namespace Model
      * <p>The compression format. If no value is specified, the default is
      * <code>UNCOMPRESSED</code>.</p>
      */
-    inline const CompressionFormat& GetCompressionFormat() const{ return m_compressionFormat; }
+    inline CompressionFormat GetCompressionFormat() const { return m_compressionFormat; }
     inline bool CompressionFormatHasBeenSet() const { return m_compressionFormatHasBeenSet; }
-    inline void SetCompressionFormat(const CompressionFormat& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
-    inline void SetCompressionFormat(CompressionFormat&& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = std::move(value); }
-    inline S3DestinationDescription& WithCompressionFormat(const CompressionFormat& value) { SetCompressionFormat(value); return *this;}
-    inline S3DestinationDescription& WithCompressionFormat(CompressionFormat&& value) { SetCompressionFormat(std::move(value)); return *this;}
+    inline void SetCompressionFormat(CompressionFormat value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
+    inline S3DestinationDescription& WithCompressionFormat(CompressionFormat value) { SetCompressionFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -140,24 +130,24 @@ namespace Model
      * <p>The encryption configuration. If no value is specified, the default is no
      * encryption.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline S3DestinationDescription& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline S3DestinationDescription& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    S3DestinationDescription& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
      */
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline S3DestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline S3DestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    S3DestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -176,7 +166,7 @@ namespace Model
     BufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet = false;
 
-    CompressionFormat m_compressionFormat;
+    CompressionFormat m_compressionFormat{CompressionFormat::NOT_SET};
     bool m_compressionFormatHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;

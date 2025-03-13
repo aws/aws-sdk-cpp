@@ -18,18 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FreeTrialInfo::FreeTrialInfo() : 
-    m_endHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_status(FreeTrialStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(FreeTrialType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FreeTrialInfo::FreeTrialInfo(JsonView jsonValue)
-  : FreeTrialInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FreeTrialInfo& FreeTrialInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("end"))
   {
     m_end = jsonValue.GetDouble("end");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetDouble("start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FreeTrialStatusMapper::GetFreeTrialStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FreeTrialTypeMapper::GetFreeTrialTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

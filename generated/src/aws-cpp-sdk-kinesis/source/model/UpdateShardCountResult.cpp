@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateShardCountResult::UpdateShardCountResult() : 
-    m_currentShardCount(0),
-    m_targetShardCount(0)
-{
-}
-
 UpdateShardCountResult::UpdateShardCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateShardCountResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ UpdateShardCountResult& UpdateShardCountResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
+    m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentShardCount"))
   {
     m_currentShardCount = jsonValue.GetInteger("CurrentShardCount");
-
+    m_currentShardCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetShardCount"))
   {
     m_targetShardCount = jsonValue.GetInteger("TargetShardCount");
-
+    m_targetShardCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
+    m_streamARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

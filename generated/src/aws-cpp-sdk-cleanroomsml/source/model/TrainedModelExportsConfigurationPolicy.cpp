@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-TrainedModelExportsConfigurationPolicy::TrainedModelExportsConfigurationPolicy() : 
-    m_maxSizeHasBeenSet(false),
-    m_filesToExportHasBeenSet(false)
-{
-}
-
 TrainedModelExportsConfigurationPolicy::TrainedModelExportsConfigurationPolicy(JsonView jsonValue)
-  : TrainedModelExportsConfigurationPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TrainedModelExportsConfigurationPolicy& TrainedModelExportsConfigurationPolicy::
   if(jsonValue.ValueExists("maxSize"))
   {
     m_maxSize = jsonValue.GetObject("maxSize");
-
     m_maxSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filesToExport"))
   {
     Aws::Utils::Array<JsonView> filesToExportJsonList = jsonValue.GetArray("filesToExport");
@@ -48,7 +39,6 @@ TrainedModelExportsConfigurationPolicy& TrainedModelExportsConfigurationPolicy::
     }
     m_filesToExportHasBeenSet = true;
   }
-
   return *this;
 }
 

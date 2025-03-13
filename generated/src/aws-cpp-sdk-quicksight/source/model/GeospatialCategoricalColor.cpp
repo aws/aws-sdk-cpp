@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialCategoricalColor::GeospatialCategoricalColor() : 
-    m_categoryDataColorsHasBeenSet(false),
-    m_nullDataVisibility(Visibility::NOT_SET),
-    m_nullDataVisibilityHasBeenSet(false),
-    m_nullDataSettingsHasBeenSet(false),
-    m_defaultOpacity(0.0),
-    m_defaultOpacityHasBeenSet(false)
-{
-}
-
 GeospatialCategoricalColor::GeospatialCategoricalColor(JsonView jsonValue)
-  : GeospatialCategoricalColor()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ GeospatialCategoricalColor& GeospatialCategoricalColor::operator =(JsonView json
     }
     m_categoryDataColorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullDataVisibility"))
   {
     m_nullDataVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("NullDataVisibility"));
-
     m_nullDataVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullDataSettings"))
   {
     m_nullDataSettings = jsonValue.GetObject("NullDataSettings");
-
     m_nullDataSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultOpacity"))
   {
     m_defaultOpacity = jsonValue.GetDouble("DefaultOpacity");
-
     m_defaultOpacityHasBeenSet = true;
   }
-
   return *this;
 }
 

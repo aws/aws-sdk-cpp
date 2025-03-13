@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointTarget::VerifiedAccessEndpointTarget() : 
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_verifiedAccessEndpointTargetIpAddressHasBeenSet(false),
-    m_verifiedAccessEndpointTargetDnsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointTarget::VerifiedAccessEndpointTarget(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointTarget()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ VerifiedAccessEndpointTarget& VerifiedAccessEndpointTarget::operator =(const Xml
     {
       m_verifiedAccessEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessEndpointIdNode.GetText());
       m_verifiedAccessEndpointIdHasBeenSet = true;
+       m_verifiedAccessEndpointIdHasBeenSet = true;
     }
     XmlNode verifiedAccessEndpointTargetIpAddressNode = resultNode.FirstChild("verifiedAccessEndpointTargetIpAddress");
     if(!verifiedAccessEndpointTargetIpAddressNode.IsNull())
     {
       m_verifiedAccessEndpointTargetIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessEndpointTargetIpAddressNode.GetText());
       m_verifiedAccessEndpointTargetIpAddressHasBeenSet = true;
+       m_verifiedAccessEndpointTargetIpAddressHasBeenSet = true;
     }
     XmlNode verifiedAccessEndpointTargetDnsNode = resultNode.FirstChild("verifiedAccessEndpointTargetDns");
     if(!verifiedAccessEndpointTargetDnsNode.IsNull())
     {
       m_verifiedAccessEndpointTargetDns = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessEndpointTargetDnsNode.GetText());
       m_verifiedAccessEndpointTargetDnsHasBeenSet = true;
+       m_verifiedAccessEndpointTargetDnsHasBeenSet = true;
     }
   }
 

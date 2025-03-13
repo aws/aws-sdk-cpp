@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopContactStreamingRequest::StopContactStreamingRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_streamingIdHasBeenSet(false)
-{
-}
-
 Aws::String StopContactStreamingRequest::SerializePayload() const
 {
   JsonValue payload;

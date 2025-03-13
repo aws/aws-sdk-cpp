@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SnowflakeVpcConfiguration::SnowflakeVpcConfiguration() : 
-    m_privateLinkVpceIdHasBeenSet(false)
-{
-}
-
 SnowflakeVpcConfiguration::SnowflakeVpcConfiguration(JsonView jsonValue)
-  : SnowflakeVpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnowflakeVpcConfiguration& SnowflakeVpcConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("PrivateLinkVpceId"))
   {
     m_privateLinkVpceId = jsonValue.GetString("PrivateLinkVpceId");
-
     m_privateLinkVpceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

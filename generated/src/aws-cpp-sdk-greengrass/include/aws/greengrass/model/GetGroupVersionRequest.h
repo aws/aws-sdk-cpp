@@ -21,7 +21,7 @@ namespace Model
   class GetGroupVersionRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API GetGroupVersionRequest();
+    AWS_GREENGRASS_API GetGroupVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of the Greengrass group.
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline GetGroupVersionRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline GetGroupVersionRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline GetGroupVersionRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    GetGroupVersionRequest& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * associated with a group, the value also maps to the ''LatestVersion'' property
      * of the corresponding ''GroupInformation'' object.
      */
-    inline const Aws::String& GetGroupVersionId() const{ return m_groupVersionId; }
+    inline const Aws::String& GetGroupVersionId() const { return m_groupVersionId; }
     inline bool GroupVersionIdHasBeenSet() const { return m_groupVersionIdHasBeenSet; }
-    inline void SetGroupVersionId(const Aws::String& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = value; }
-    inline void SetGroupVersionId(Aws::String&& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = std::move(value); }
-    inline void SetGroupVersionId(const char* value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId.assign(value); }
-    inline GetGroupVersionRequest& WithGroupVersionId(const Aws::String& value) { SetGroupVersionId(value); return *this;}
-    inline GetGroupVersionRequest& WithGroupVersionId(Aws::String&& value) { SetGroupVersionId(std::move(value)); return *this;}
-    inline GetGroupVersionRequest& WithGroupVersionId(const char* value) { SetGroupVersionId(value); return *this;}
+    template<typename GroupVersionIdT = Aws::String>
+    void SetGroupVersionId(GroupVersionIdT&& value) { m_groupVersionIdHasBeenSet = true; m_groupVersionId = std::forward<GroupVersionIdT>(value); }
+    template<typename GroupVersionIdT = Aws::String>
+    GetGroupVersionRequest& WithGroupVersionId(GroupVersionIdT&& value) { SetGroupVersionId(std::forward<GroupVersionIdT>(value)); return *this;}
     ///@}
   private:
 

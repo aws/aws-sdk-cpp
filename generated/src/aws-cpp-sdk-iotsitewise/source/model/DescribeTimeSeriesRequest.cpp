@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeTimeSeriesRequest::DescribeTimeSeriesRequest() : 
-    m_aliasHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTimeSeriesRequest::SerializePayload() const
 {
   return {};

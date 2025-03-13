@@ -28,7 +28,7 @@ namespace Model
   class GetMonitoringSubscription2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API GetMonitoringSubscription2020_05_31Result();
+    AWS_CLOUDFRONT_API GetMonitoringSubscription2020_05_31Result() = default;
     AWS_CLOUDFRONT_API GetMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API GetMonitoringSubscription2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * additional CloudWatch metrics are enabled for a given CloudFront
      * distribution.</p>
      */
-    inline const MonitoringSubscription& GetMonitoringSubscription() const{ return m_monitoringSubscription; }
-    inline void SetMonitoringSubscription(const MonitoringSubscription& value) { m_monitoringSubscription = value; }
-    inline void SetMonitoringSubscription(MonitoringSubscription&& value) { m_monitoringSubscription = std::move(value); }
-    inline GetMonitoringSubscription2020_05_31Result& WithMonitoringSubscription(const MonitoringSubscription& value) { SetMonitoringSubscription(value); return *this;}
-    inline GetMonitoringSubscription2020_05_31Result& WithMonitoringSubscription(MonitoringSubscription&& value) { SetMonitoringSubscription(std::move(value)); return *this;}
+    inline const MonitoringSubscription& GetMonitoringSubscription() const { return m_monitoringSubscription; }
+    template<typename MonitoringSubscriptionT = MonitoringSubscription>
+    void SetMonitoringSubscription(MonitoringSubscriptionT&& value) { m_monitoringSubscriptionHasBeenSet = true; m_monitoringSubscription = std::forward<MonitoringSubscriptionT>(value); }
+    template<typename MonitoringSubscriptionT = MonitoringSubscription>
+    GetMonitoringSubscription2020_05_31Result& WithMonitoringSubscription(MonitoringSubscriptionT&& value) { SetMonitoringSubscription(std::forward<MonitoringSubscriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMonitoringSubscription2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMonitoringSubscription2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMonitoringSubscription2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMonitoringSubscription2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MonitoringSubscription m_monitoringSubscription;
+    bool m_monitoringSubscriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

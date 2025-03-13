@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ConditionStepMetadata::ConditionStepMetadata() : 
-    m_outcome(ConditionOutcome::NOT_SET),
-    m_outcomeHasBeenSet(false)
-{
-}
-
 ConditionStepMetadata::ConditionStepMetadata(JsonView jsonValue)
-  : ConditionStepMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ConditionStepMetadata& ConditionStepMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Outcome"))
   {
     m_outcome = ConditionOutcomeMapper::GetConditionOutcomeForName(jsonValue.GetString("Outcome"));
-
     m_outcomeHasBeenSet = true;
   }
-
   return *this;
 }
 

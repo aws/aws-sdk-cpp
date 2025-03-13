@@ -20,21 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-IntArrayOptions::IntArrayOptions() : 
-    m_defaultValue(0),
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldsHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false)
-{
-}
-
 IntArrayOptions::IntArrayOptions(const XmlNode& xmlNode)
-  : IntArrayOptions()
 {
   *this = xmlNode;
 }
@@ -50,30 +36,35 @@ IntArrayOptions& IntArrayOptions::operator =(const XmlNode& xmlNode)
     {
       m_defaultValue = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText()).c_str()).c_str());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldsNode = resultNode.FirstChild("SourceFields");
     if(!sourceFieldsNode.IsNull())
     {
       m_sourceFields = Aws::Utils::Xml::DecodeEscapedXmlText(sourceFieldsNode.GetText());
       m_sourceFieldsHasBeenSet = true;
+       m_sourceFieldsHasBeenSet = true;
     }
     XmlNode facetEnabledNode = resultNode.FirstChild("FacetEnabled");
     if(!facetEnabledNode.IsNull())
     {
       m_facetEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(facetEnabledNode.GetText()).c_str()).c_str());
       m_facetEnabledHasBeenSet = true;
+       m_facetEnabledHasBeenSet = true;
     }
     XmlNode searchEnabledNode = resultNode.FirstChild("SearchEnabled");
     if(!searchEnabledNode.IsNull())
     {
       m_searchEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(searchEnabledNode.GetText()).c_str()).c_str());
       m_searchEnabledHasBeenSet = true;
+       m_searchEnabledHasBeenSet = true;
     }
     XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
     if(!returnEnabledNode.IsNull())
     {
       m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnEnabledNode.GetText()).c_str()).c_str());
       m_returnEnabledHasBeenSet = true;
+       m_returnEnabledHasBeenSet = true;
     }
   }
 

@@ -23,7 +23,7 @@ namespace Model
   class UpdateParallelDataRequest : public TranslateRequest
   {
   public:
-    AWS_TRANSLATE_API UpdateParallelDataRequest();
+    AWS_TRANSLATE_API UpdateParallelDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,36 @@ namespace Model
     /**
      * <p>The name of the parallel data resource being updated.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateParallelDataRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateParallelDataRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateParallelDataRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateParallelDataRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom description for the parallel data resource in Amazon Translate.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateParallelDataRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateParallelDataRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateParallelDataRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateParallelDataRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the format and S3 location of the parallel data input file.</p>
      */
-    inline const ParallelDataConfig& GetParallelDataConfig() const{ return m_parallelDataConfig; }
+    inline const ParallelDataConfig& GetParallelDataConfig() const { return m_parallelDataConfig; }
     inline bool ParallelDataConfigHasBeenSet() const { return m_parallelDataConfigHasBeenSet; }
-    inline void SetParallelDataConfig(const ParallelDataConfig& value) { m_parallelDataConfigHasBeenSet = true; m_parallelDataConfig = value; }
-    inline void SetParallelDataConfig(ParallelDataConfig&& value) { m_parallelDataConfigHasBeenSet = true; m_parallelDataConfig = std::move(value); }
-    inline UpdateParallelDataRequest& WithParallelDataConfig(const ParallelDataConfig& value) { SetParallelDataConfig(value); return *this;}
-    inline UpdateParallelDataRequest& WithParallelDataConfig(ParallelDataConfig&& value) { SetParallelDataConfig(std::move(value)); return *this;}
+    template<typename ParallelDataConfigT = ParallelDataConfig>
+    void SetParallelDataConfig(ParallelDataConfigT&& value) { m_parallelDataConfigHasBeenSet = true; m_parallelDataConfig = std::forward<ParallelDataConfigT>(value); }
+    template<typename ParallelDataConfigT = ParallelDataConfig>
+    UpdateParallelDataRequest& WithParallelDataConfig(ParallelDataConfigT&& value) { SetParallelDataConfig(std::forward<ParallelDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <p>A unique identifier for the request. This token is automatically generated
      * when you use Amazon Translate through an AWS SDK.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateParallelDataRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateParallelDataRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateParallelDataRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateParallelDataRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

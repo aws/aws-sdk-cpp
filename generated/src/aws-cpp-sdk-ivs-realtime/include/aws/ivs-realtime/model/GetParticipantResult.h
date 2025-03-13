@@ -28,7 +28,7 @@ namespace Model
   class GetParticipantResult
   {
   public:
-    AWS_IVSREALTIME_API GetParticipantResult();
+    AWS_IVSREALTIME_API GetParticipantResult() = default;
     AWS_IVSREALTIME_API GetParticipantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API GetParticipantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The participant that is returned.</p>
      */
-    inline const Participant& GetParticipant() const{ return m_participant; }
-    inline void SetParticipant(const Participant& value) { m_participant = value; }
-    inline void SetParticipant(Participant&& value) { m_participant = std::move(value); }
-    inline GetParticipantResult& WithParticipant(const Participant& value) { SetParticipant(value); return *this;}
-    inline GetParticipantResult& WithParticipant(Participant&& value) { SetParticipant(std::move(value)); return *this;}
+    inline const Participant& GetParticipant() const { return m_participant; }
+    template<typename ParticipantT = Participant>
+    void SetParticipant(ParticipantT&& value) { m_participantHasBeenSet = true; m_participant = std::forward<ParticipantT>(value); }
+    template<typename ParticipantT = Participant>
+    GetParticipantResult& WithParticipant(ParticipantT&& value) { SetParticipant(std::forward<ParticipantT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetParticipantResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetParticipantResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetParticipantResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetParticipantResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Participant m_participant;
+    bool m_participantHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class PublicDnsNamespacePropertiesChange
   {
   public:
-    AWS_SERVICEDISCOVERY_API PublicDnsNamespacePropertiesChange();
+    AWS_SERVICEDISCOVERY_API PublicDnsNamespacePropertiesChange() = default;
     AWS_SERVICEDISCOVERY_API PublicDnsNamespacePropertiesChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API PublicDnsNamespacePropertiesChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
      */
-    inline const PublicDnsPropertiesMutableChange& GetDnsProperties() const{ return m_dnsProperties; }
+    inline const PublicDnsPropertiesMutableChange& GetDnsProperties() const { return m_dnsProperties; }
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-    inline void SetDnsProperties(const PublicDnsPropertiesMutableChange& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
-    inline void SetDnsProperties(PublicDnsPropertiesMutableChange&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
-    inline PublicDnsNamespacePropertiesChange& WithDnsProperties(const PublicDnsPropertiesMutableChange& value) { SetDnsProperties(value); return *this;}
-    inline PublicDnsNamespacePropertiesChange& WithDnsProperties(PublicDnsPropertiesMutableChange&& value) { SetDnsProperties(std::move(value)); return *this;}
+    template<typename DnsPropertiesT = PublicDnsPropertiesMutableChange>
+    void SetDnsProperties(DnsPropertiesT&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::forward<DnsPropertiesT>(value); }
+    template<typename DnsPropertiesT = PublicDnsPropertiesMutableChange>
+    PublicDnsNamespacePropertiesChange& WithDnsProperties(DnsPropertiesT&& value) { SetDnsProperties(std::forward<DnsPropertiesT>(value)); return *this;}
     ///@}
   private:
 

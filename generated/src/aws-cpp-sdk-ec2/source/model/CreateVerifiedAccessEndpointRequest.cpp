@@ -10,31 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVerifiedAccessEndpointRequest::CreateVerifiedAccessEndpointRequest() : 
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_endpointType(VerifiedAccessEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_attachmentType(VerifiedAccessEndpointAttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_domainCertificateArnHasBeenSet(false),
-    m_applicationDomainHasBeenSet(false),
-    m_endpointDomainPrefixHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_loadBalancerOptionsHasBeenSet(false),
-    m_networkInterfaceOptionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false),
-    m_rdsOptionsHasBeenSet(false),
-    m_cidrOptionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVerifiedAccessEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

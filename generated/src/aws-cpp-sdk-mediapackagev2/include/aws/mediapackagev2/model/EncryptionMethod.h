@@ -32,7 +32,7 @@ namespace Model
   class EncryptionMethod
   {
   public:
-    AWS_MEDIAPACKAGEV2_API EncryptionMethod();
+    AWS_MEDIAPACKAGEV2_API EncryptionMethod() = default;
     AWS_MEDIAPACKAGEV2_API EncryptionMethod(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API EncryptionMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The encryption method to use.</p>
      */
-    inline const TsEncryptionMethod& GetTsEncryptionMethod() const{ return m_tsEncryptionMethod; }
+    inline TsEncryptionMethod GetTsEncryptionMethod() const { return m_tsEncryptionMethod; }
     inline bool TsEncryptionMethodHasBeenSet() const { return m_tsEncryptionMethodHasBeenSet; }
-    inline void SetTsEncryptionMethod(const TsEncryptionMethod& value) { m_tsEncryptionMethodHasBeenSet = true; m_tsEncryptionMethod = value; }
-    inline void SetTsEncryptionMethod(TsEncryptionMethod&& value) { m_tsEncryptionMethodHasBeenSet = true; m_tsEncryptionMethod = std::move(value); }
-    inline EncryptionMethod& WithTsEncryptionMethod(const TsEncryptionMethod& value) { SetTsEncryptionMethod(value); return *this;}
-    inline EncryptionMethod& WithTsEncryptionMethod(TsEncryptionMethod&& value) { SetTsEncryptionMethod(std::move(value)); return *this;}
+    inline void SetTsEncryptionMethod(TsEncryptionMethod value) { m_tsEncryptionMethodHasBeenSet = true; m_tsEncryptionMethod = value; }
+    inline EncryptionMethod& WithTsEncryptionMethod(TsEncryptionMethod value) { SetTsEncryptionMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The encryption method to use.</p>
      */
-    inline const CmafEncryptionMethod& GetCmafEncryptionMethod() const{ return m_cmafEncryptionMethod; }
+    inline CmafEncryptionMethod GetCmafEncryptionMethod() const { return m_cmafEncryptionMethod; }
     inline bool CmafEncryptionMethodHasBeenSet() const { return m_cmafEncryptionMethodHasBeenSet; }
-    inline void SetCmafEncryptionMethod(const CmafEncryptionMethod& value) { m_cmafEncryptionMethodHasBeenSet = true; m_cmafEncryptionMethod = value; }
-    inline void SetCmafEncryptionMethod(CmafEncryptionMethod&& value) { m_cmafEncryptionMethodHasBeenSet = true; m_cmafEncryptionMethod = std::move(value); }
-    inline EncryptionMethod& WithCmafEncryptionMethod(const CmafEncryptionMethod& value) { SetCmafEncryptionMethod(value); return *this;}
-    inline EncryptionMethod& WithCmafEncryptionMethod(CmafEncryptionMethod&& value) { SetCmafEncryptionMethod(std::move(value)); return *this;}
+    inline void SetCmafEncryptionMethod(CmafEncryptionMethod value) { m_cmafEncryptionMethodHasBeenSet = true; m_cmafEncryptionMethod = value; }
+    inline EncryptionMethod& WithCmafEncryptionMethod(CmafEncryptionMethod value) { SetCmafEncryptionMethod(value); return *this;}
     ///@}
   private:
 
-    TsEncryptionMethod m_tsEncryptionMethod;
+    TsEncryptionMethod m_tsEncryptionMethod{TsEncryptionMethod::NOT_SET};
     bool m_tsEncryptionMethodHasBeenSet = false;
 
-    CmafEncryptionMethod m_cmafEncryptionMethod;
+    CmafEncryptionMethod m_cmafEncryptionMethod{CmafEncryptionMethod::NOT_SET};
     bool m_cmafEncryptionMethodHasBeenSet = false;
   };
 

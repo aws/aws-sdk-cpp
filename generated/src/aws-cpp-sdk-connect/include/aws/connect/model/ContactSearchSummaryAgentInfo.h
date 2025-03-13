@@ -33,7 +33,7 @@ namespace Model
   class ContactSearchSummaryAgentInfo
   {
   public:
-    AWS_CONNECT_API ContactSearchSummaryAgentInfo();
+    AWS_CONNECT_API ContactSearchSummaryAgentInfo() = default;
     AWS_CONNECT_API ContactSearchSummaryAgentInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactSearchSummaryAgentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,31 @@ namespace Model
     /**
      * <p>The identifier of the agent who accepted the contact.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ContactSearchSummaryAgentInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ContactSearchSummaryAgentInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ContactSearchSummaryAgentInfo& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ContactSearchSummaryAgentInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the contact was connected to the agent.</p>
      */
-    inline const Aws::Utils::DateTime& GetConnectedToAgentTimestamp() const{ return m_connectedToAgentTimestamp; }
+    inline const Aws::Utils::DateTime& GetConnectedToAgentTimestamp() const { return m_connectedToAgentTimestamp; }
     inline bool ConnectedToAgentTimestampHasBeenSet() const { return m_connectedToAgentTimestampHasBeenSet; }
-    inline void SetConnectedToAgentTimestamp(const Aws::Utils::DateTime& value) { m_connectedToAgentTimestampHasBeenSet = true; m_connectedToAgentTimestamp = value; }
-    inline void SetConnectedToAgentTimestamp(Aws::Utils::DateTime&& value) { m_connectedToAgentTimestampHasBeenSet = true; m_connectedToAgentTimestamp = std::move(value); }
-    inline ContactSearchSummaryAgentInfo& WithConnectedToAgentTimestamp(const Aws::Utils::DateTime& value) { SetConnectedToAgentTimestamp(value); return *this;}
-    inline ContactSearchSummaryAgentInfo& WithConnectedToAgentTimestamp(Aws::Utils::DateTime&& value) { SetConnectedToAgentTimestamp(std::move(value)); return *this;}
+    template<typename ConnectedToAgentTimestampT = Aws::Utils::DateTime>
+    void SetConnectedToAgentTimestamp(ConnectedToAgentTimestampT&& value) { m_connectedToAgentTimestampHasBeenSet = true; m_connectedToAgentTimestamp = std::forward<ConnectedToAgentTimestampT>(value); }
+    template<typename ConnectedToAgentTimestampT = Aws::Utils::DateTime>
+    ContactSearchSummaryAgentInfo& WithConnectedToAgentTimestamp(ConnectedToAgentTimestampT&& value) { SetConnectedToAgentTimestamp(std::forward<ConnectedToAgentTimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_connectedToAgentTimestamp;
+    Aws::Utils::DateTime m_connectedToAgentTimestamp{};
     bool m_connectedToAgentTimestampHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClassificationScopeRequest::UpdateClassificationScopeRequest() : 
-    m_idHasBeenSet(false),
-    m_s3HasBeenSet(false)
-{
-}
-
 Aws::String UpdateClassificationScopeRequest::SerializePayload() const
 {
   JsonValue payload;

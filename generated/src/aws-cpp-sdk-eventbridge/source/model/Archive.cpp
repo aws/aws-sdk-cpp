@@ -18,24 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-Archive::Archive() : 
-    m_archiveNameHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_state(ArchiveState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false),
-    m_sizeBytes(0),
-    m_sizeBytesHasBeenSet(false),
-    m_eventCount(0),
-    m_eventCountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 Archive::Archive(JsonView jsonValue)
-  : Archive()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ Archive& Archive::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArchiveName"))
   {
     m_archiveName = jsonValue.GetString("ArchiveName");
-
     m_archiveNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSourceArn"))
   {
     m_eventSourceArn = jsonValue.GetString("EventSourceArn");
-
     m_eventSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ArchiveStateMapper::GetArchiveStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionDays"))
   {
     m_retentionDays = jsonValue.GetInteger("RetentionDays");
-
     m_retentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeBytes"))
   {
     m_sizeBytes = jsonValue.GetInt64("SizeBytes");
-
     m_sizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventCount"))
   {
     m_eventCount = jsonValue.GetInt64("EventCount");
-
     m_eventCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

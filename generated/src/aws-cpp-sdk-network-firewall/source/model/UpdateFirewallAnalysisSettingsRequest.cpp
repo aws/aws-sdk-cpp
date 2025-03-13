@@ -12,14 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFirewallAnalysisSettingsRequest::UpdateFirewallAnalysisSettingsRequest() : 
-    m_enabledAnalysisTypesHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_updateTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFirewallAnalysisSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

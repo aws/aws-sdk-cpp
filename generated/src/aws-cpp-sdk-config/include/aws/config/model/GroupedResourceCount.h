@@ -32,7 +32,7 @@ namespace Model
   class GroupedResourceCount
   {
   public:
-    AWS_CONFIGSERVICE_API GroupedResourceCount();
+    AWS_CONFIGSERVICE_API GroupedResourceCount() = default;
     AWS_CONFIGSERVICE_API GroupedResourceCount(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API GroupedResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
      * example, region1, region2 if the region was chosen as
      * <code>GroupByKey</code>.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline GroupedResourceCount& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline GroupedResourceCount& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline GroupedResourceCount& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    GroupedResourceCount& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of resources in the group.</p>
      */
-    inline long long GetResourceCount() const{ return m_resourceCount; }
+    inline long long GetResourceCount() const { return m_resourceCount; }
     inline bool ResourceCountHasBeenSet() const { return m_resourceCountHasBeenSet; }
     inline void SetResourceCount(long long value) { m_resourceCountHasBeenSet = true; m_resourceCount = value; }
     inline GroupedResourceCount& WithResourceCount(long long value) { SetResourceCount(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
 
-    long long m_resourceCount;
+    long long m_resourceCount{0};
     bool m_resourceCountHasBeenSet = false;
   };
 

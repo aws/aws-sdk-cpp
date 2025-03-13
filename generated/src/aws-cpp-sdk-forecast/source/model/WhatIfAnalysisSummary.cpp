@@ -18,19 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-WhatIfAnalysisSummary::WhatIfAnalysisSummary() : 
-    m_whatIfAnalysisArnHasBeenSet(false),
-    m_whatIfAnalysisNameHasBeenSet(false),
-    m_forecastArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 WhatIfAnalysisSummary::WhatIfAnalysisSummary(JsonView jsonValue)
-  : WhatIfAnalysisSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ WhatIfAnalysisSummary& WhatIfAnalysisSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WhatIfAnalysisArn"))
   {
     m_whatIfAnalysisArn = jsonValue.GetString("WhatIfAnalysisArn");
-
     m_whatIfAnalysisArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WhatIfAnalysisName"))
   {
     m_whatIfAnalysisName = jsonValue.GetString("WhatIfAnalysisName");
-
     m_whatIfAnalysisNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastArn"))
   {
     m_forecastArn = jsonValue.GetString("ForecastArn");
-
     m_forecastArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

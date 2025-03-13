@@ -20,21 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackInstanceResourceDriftsSummary::StackInstanceResourceDriftsSummary() : 
-    m_stackIdHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdContextHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_propertyDifferencesHasBeenSet(false),
-    m_stackResourceDriftStatus(StackResourceDriftStatus::NOT_SET),
-    m_stackResourceDriftStatusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 StackInstanceResourceDriftsSummary::StackInstanceResourceDriftsSummary(const XmlNode& xmlNode)
-  : StackInstanceResourceDriftsSummary()
 {
   *this = xmlNode;
 }
@@ -50,60 +36,68 @@ StackInstanceResourceDriftsSummary& StackInstanceResourceDriftsSummary::operator
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
+       m_stackIdHasBeenSet = true;
     }
     XmlNode logicalResourceIdNode = resultNode.FirstChild("LogicalResourceId");
     if(!logicalResourceIdNode.IsNull())
     {
       m_logicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(logicalResourceIdNode.GetText());
       m_logicalResourceIdHasBeenSet = true;
+       m_logicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdNode = resultNode.FirstChild("PhysicalResourceId");
     if(!physicalResourceIdNode.IsNull())
     {
       m_physicalResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(physicalResourceIdNode.GetText());
       m_physicalResourceIdHasBeenSet = true;
+       m_physicalResourceIdHasBeenSet = true;
     }
     XmlNode physicalResourceIdContextNode = resultNode.FirstChild("PhysicalResourceIdContext");
     if(!physicalResourceIdContextNode.IsNull())
     {
       XmlNode physicalResourceIdContextMember = physicalResourceIdContextNode.FirstChild("member");
+      m_physicalResourceIdContextHasBeenSet = !physicalResourceIdContextMember.IsNull();
       while(!physicalResourceIdContextMember.IsNull())
       {
         m_physicalResourceIdContext.push_back(physicalResourceIdContextMember);
         physicalResourceIdContextMember = physicalResourceIdContextMember.NextNode("member");
       }
 
-      m_physicalResourceIdContextHasBeenSet = true;
+       m_physicalResourceIdContextHasBeenSet = true;
     }
     XmlNode resourceTypeNode = resultNode.FirstChild("ResourceType");
     if(!resourceTypeNode.IsNull())
     {
       m_resourceType = Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText());
       m_resourceTypeHasBeenSet = true;
+       m_resourceTypeHasBeenSet = true;
     }
     XmlNode propertyDifferencesNode = resultNode.FirstChild("PropertyDifferences");
     if(!propertyDifferencesNode.IsNull())
     {
       XmlNode propertyDifferencesMember = propertyDifferencesNode.FirstChild("member");
+      m_propertyDifferencesHasBeenSet = !propertyDifferencesMember.IsNull();
       while(!propertyDifferencesMember.IsNull())
       {
         m_propertyDifferences.push_back(propertyDifferencesMember);
         propertyDifferencesMember = propertyDifferencesMember.NextNode("member");
       }
 
-      m_propertyDifferencesHasBeenSet = true;
+       m_propertyDifferencesHasBeenSet = true;
     }
     XmlNode stackResourceDriftStatusNode = resultNode.FirstChild("StackResourceDriftStatus");
     if(!stackResourceDriftStatusNode.IsNull())
     {
-      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()).c_str());
+      m_stackResourceDriftStatus = StackResourceDriftStatusMapper::GetStackResourceDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackResourceDriftStatusNode.GetText()).c_str()));
       m_stackResourceDriftStatusHasBeenSet = true;
+       m_stackResourceDriftStatusHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
   }
 

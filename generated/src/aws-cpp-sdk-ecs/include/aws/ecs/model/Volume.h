@@ -45,7 +45,7 @@ namespace Model
   class Volume
   {
   public:
-    AWS_ECS_API Volume();
+    AWS_ECS_API Volume() = default;
     AWS_ECS_API Volume(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * object in the container definition.</p> <p>When a volume is using the
      * <code>efsVolumeConfiguration</code>, the name is required.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Volume& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Volume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Volume& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Volume& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,12 @@ namespace Model
      * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
-    inline const HostVolumeProperties& GetHost() const{ return m_host; }
+    inline const HostVolumeProperties& GetHost() const { return m_host; }
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-    inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
-    inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-    inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
-    inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(std::move(value)); return *this;}
+    template<typename HostT = HostVolumeProperties>
+    void SetHost(HostT&& value) { m_hostHasBeenSet = true; m_host = std::forward<HostT>(value); }
+    template<typename HostT = HostVolumeProperties>
+    Volume& WithHost(HostT&& value) { SetHost(std::forward<HostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +100,12 @@ namespace Model
      * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
      * volumes aren't supported by tasks run on Fargate.</p> 
      */
-    inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
+    inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const { return m_dockerVolumeConfiguration; }
     inline bool DockerVolumeConfigurationHasBeenSet() const { return m_dockerVolumeConfigurationHasBeenSet; }
-    inline void SetDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
-    inline void SetDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
-    inline Volume& WithDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { SetDockerVolumeConfiguration(value); return *this;}
-    inline Volume& WithDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
+    template<typename DockerVolumeConfigurationT = DockerVolumeConfiguration>
+    void SetDockerVolumeConfiguration(DockerVolumeConfigurationT&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::forward<DockerVolumeConfigurationT>(value); }
+    template<typename DockerVolumeConfigurationT = DockerVolumeConfiguration>
+    Volume& WithDockerVolumeConfiguration(DockerVolumeConfigurationT&& value) { SetDockerVolumeConfiguration(std::forward<DockerVolumeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +113,12 @@ namespace Model
      * <p>This parameter is specified when you use an Amazon Elastic File System file
      * system for task storage.</p>
      */
-    inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
+    inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const { return m_efsVolumeConfiguration; }
     inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
-    inline void SetEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
-    inline void SetEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
-    inline Volume& WithEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { SetEfsVolumeConfiguration(value); return *this;}
-    inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
+    template<typename EfsVolumeConfigurationT = EFSVolumeConfiguration>
+    void SetEfsVolumeConfiguration(EfsVolumeConfigurationT&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::forward<EfsVolumeConfigurationT>(value); }
+    template<typename EfsVolumeConfigurationT = EFSVolumeConfiguration>
+    Volume& WithEfsVolumeConfiguration(EfsVolumeConfigurationT&& value) { SetEfsVolumeConfiguration(std::forward<EfsVolumeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +126,12 @@ namespace Model
      * <p>This parameter is specified when you use Amazon FSx for Windows File Server
      * file system for task storage.</p>
      */
-    inline const FSxWindowsFileServerVolumeConfiguration& GetFsxWindowsFileServerVolumeConfiguration() const{ return m_fsxWindowsFileServerVolumeConfiguration; }
+    inline const FSxWindowsFileServerVolumeConfiguration& GetFsxWindowsFileServerVolumeConfiguration() const { return m_fsxWindowsFileServerVolumeConfiguration; }
     inline bool FsxWindowsFileServerVolumeConfigurationHasBeenSet() const { return m_fsxWindowsFileServerVolumeConfigurationHasBeenSet; }
-    inline void SetFsxWindowsFileServerVolumeConfiguration(const FSxWindowsFileServerVolumeConfiguration& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = value; }
-    inline void SetFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = std::move(value); }
-    inline Volume& WithFsxWindowsFileServerVolumeConfiguration(const FSxWindowsFileServerVolumeConfiguration& value) { SetFsxWindowsFileServerVolumeConfiguration(value); return *this;}
-    inline Volume& WithFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { SetFsxWindowsFileServerVolumeConfiguration(std::move(value)); return *this;}
+    template<typename FsxWindowsFileServerVolumeConfigurationT = FSxWindowsFileServerVolumeConfiguration>
+    void SetFsxWindowsFileServerVolumeConfiguration(FsxWindowsFileServerVolumeConfigurationT&& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = std::forward<FsxWindowsFileServerVolumeConfigurationT>(value); }
+    template<typename FsxWindowsFileServerVolumeConfigurationT = FSxWindowsFileServerVolumeConfiguration>
+    Volume& WithFsxWindowsFileServerVolumeConfiguration(FsxWindowsFileServerVolumeConfigurationT&& value) { SetFsxWindowsFileServerVolumeConfiguration(std::forward<FsxWindowsFileServerVolumeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,7 +145,7 @@ namespace Model
      * <code>CreateService</code>, <code>UpdateService</code>, <code>RunTask</code> or
      * <code>StartTask</code> APIs.</p>
      */
-    inline bool GetConfiguredAtLaunch() const{ return m_configuredAtLaunch; }
+    inline bool GetConfiguredAtLaunch() const { return m_configuredAtLaunch; }
     inline bool ConfiguredAtLaunchHasBeenSet() const { return m_configuredAtLaunchHasBeenSet; }
     inline void SetConfiguredAtLaunch(bool value) { m_configuredAtLaunchHasBeenSet = true; m_configuredAtLaunch = value; }
     inline Volume& WithConfiguredAtLaunch(bool value) { SetConfiguredAtLaunch(value); return *this;}
@@ -169,7 +167,7 @@ namespace Model
     FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
     bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
 
-    bool m_configuredAtLaunch;
+    bool m_configuredAtLaunch{false};
     bool m_configuredAtLaunchHasBeenSet = false;
   };
 

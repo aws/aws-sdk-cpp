@@ -18,19 +18,7 @@ namespace CognitoSync
 namespace Model
 {
 
-IdentityUsage::IdentityUsage() : 
-    m_identityIdHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_datasetCount(0),
-    m_datasetCountHasBeenSet(false),
-    m_dataStorage(0),
-    m_dataStorageHasBeenSet(false)
-{
-}
-
 IdentityUsage::IdentityUsage(JsonView jsonValue)
-  : IdentityUsage()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ IdentityUsage& IdentityUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
     m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityPoolId"))
   {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
-
     m_identityPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetCount"))
   {
     m_datasetCount = jsonValue.GetInteger("DatasetCount");
-
     m_datasetCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataStorage"))
   {
     m_dataStorage = jsonValue.GetInt64("DataStorage");
-
     m_dataStorageHasBeenSet = true;
   }
-
   return *this;
 }
 

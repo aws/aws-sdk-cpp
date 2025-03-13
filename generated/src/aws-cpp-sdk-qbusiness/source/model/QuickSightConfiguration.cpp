@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-QuickSightConfiguration::QuickSightConfiguration() : 
-    m_clientNamespaceHasBeenSet(false)
-{
-}
-
 QuickSightConfiguration::QuickSightConfiguration(JsonView jsonValue)
-  : QuickSightConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QuickSightConfiguration& QuickSightConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientNamespace"))
   {
     m_clientNamespace = jsonValue.GetString("clientNamespace");
-
     m_clientNamespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteUsageLimitRequest::DeleteUsageLimitRequest() : 
-    m_usageLimitIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUsageLimitRequest::SerializePayload() const
 {
   Aws::StringStream ss;

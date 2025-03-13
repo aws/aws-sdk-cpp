@@ -13,17 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAttachmentUploadRequest::StartAttachmentUploadRequest() : 
-    m_contentTypeHasBeenSet(false),
-    m_attachmentSizeInBytes(0),
-    m_attachmentSizeInBytesHasBeenSet(false),
-    m_attachmentNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_connectionTokenHasBeenSet(false)
-{
-}
-
 Aws::String StartAttachmentUploadRequest::SerializePayload() const
 {
   JsonValue payload;

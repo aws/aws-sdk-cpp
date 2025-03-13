@@ -12,14 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableMetadataRequest::GetTableMetadataRequest() : 
-    m_catalogNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String GetTableMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

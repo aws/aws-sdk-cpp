@@ -32,7 +32,7 @@ namespace Model
   class CloudFormationAction
   {
   public:
-    AWS_APPTEST_API CloudFormationAction();
+    AWS_APPTEST_API CloudFormationAction() = default;
     AWS_APPTEST_API CloudFormationAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CloudFormationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The resource of the CloudFormation action.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline CloudFormationAction& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline CloudFormationAction& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline CloudFormationAction& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    CloudFormationAction& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action type of the CloudFormation action.</p>
      */
-    inline const CloudFormationActionType& GetActionType() const{ return m_actionType; }
+    inline CloudFormationActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const CloudFormationActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(CloudFormationActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline CloudFormationAction& WithActionType(const CloudFormationActionType& value) { SetActionType(value); return *this;}
-    inline CloudFormationAction& WithActionType(CloudFormationActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(CloudFormationActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline CloudFormationAction& WithActionType(CloudFormationActionType value) { SetActionType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    CloudFormationActionType m_actionType;
+    CloudFormationActionType m_actionType{CloudFormationActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
   };
 

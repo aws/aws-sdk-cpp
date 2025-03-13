@@ -10,10 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListReceiptFiltersRequest::ListReceiptFiltersRequest()
-{
-}
-
 Aws::String ListReceiptFiltersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

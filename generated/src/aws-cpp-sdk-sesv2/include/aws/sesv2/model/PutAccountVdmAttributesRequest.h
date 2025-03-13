@@ -24,7 +24,7 @@ namespace Model
   class PutAccountVdmAttributesRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API PutAccountVdmAttributesRequest();
+    AWS_SESV2_API PutAccountVdmAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
     /**
      * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
      */
-    inline const VdmAttributes& GetVdmAttributes() const{ return m_vdmAttributes; }
+    inline const VdmAttributes& GetVdmAttributes() const { return m_vdmAttributes; }
     inline bool VdmAttributesHasBeenSet() const { return m_vdmAttributesHasBeenSet; }
-    inline void SetVdmAttributes(const VdmAttributes& value) { m_vdmAttributesHasBeenSet = true; m_vdmAttributes = value; }
-    inline void SetVdmAttributes(VdmAttributes&& value) { m_vdmAttributesHasBeenSet = true; m_vdmAttributes = std::move(value); }
-    inline PutAccountVdmAttributesRequest& WithVdmAttributes(const VdmAttributes& value) { SetVdmAttributes(value); return *this;}
-    inline PutAccountVdmAttributesRequest& WithVdmAttributes(VdmAttributes&& value) { SetVdmAttributes(std::move(value)); return *this;}
+    template<typename VdmAttributesT = VdmAttributes>
+    void SetVdmAttributes(VdmAttributesT&& value) { m_vdmAttributesHasBeenSet = true; m_vdmAttributes = std::forward<VdmAttributesT>(value); }
+    template<typename VdmAttributesT = VdmAttributes>
+    PutAccountVdmAttributesRequest& WithVdmAttributes(VdmAttributesT&& value) { SetVdmAttributes(std::forward<VdmAttributesT>(value)); return *this;}
     ///@}
   private:
 

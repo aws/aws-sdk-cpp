@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AttributeSummary::AttributeSummary() : 
-    m_attributeNameHasBeenSet(false),
-    m_mostFrequentValueHasBeenSet(false),
-    m_numberOfMatchedAccounts(0),
-    m_numberOfMatchedAccountsHasBeenSet(false),
-    m_numberOfUnmatchedAccounts(0),
-    m_numberOfUnmatchedAccountsHasBeenSet(false),
-    m_regionalSummariesHasBeenSet(false)
-{
-}
-
 AttributeSummary::AttributeSummary(const XmlNode& xmlNode)
-  : AttributeSummary()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,41 @@ AttributeSummary& AttributeSummary::operator =(const XmlNode& xmlNode)
     {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
+       m_attributeNameHasBeenSet = true;
     }
     XmlNode mostFrequentValueNode = resultNode.FirstChild("mostFrequentValue");
     if(!mostFrequentValueNode.IsNull())
     {
       m_mostFrequentValue = Aws::Utils::Xml::DecodeEscapedXmlText(mostFrequentValueNode.GetText());
       m_mostFrequentValueHasBeenSet = true;
+       m_mostFrequentValueHasBeenSet = true;
     }
     XmlNode numberOfMatchedAccountsNode = resultNode.FirstChild("numberOfMatchedAccounts");
     if(!numberOfMatchedAccountsNode.IsNull())
     {
       m_numberOfMatchedAccounts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfMatchedAccountsNode.GetText()).c_str()).c_str());
       m_numberOfMatchedAccountsHasBeenSet = true;
+       m_numberOfMatchedAccountsHasBeenSet = true;
     }
     XmlNode numberOfUnmatchedAccountsNode = resultNode.FirstChild("numberOfUnmatchedAccounts");
     if(!numberOfUnmatchedAccountsNode.IsNull())
     {
       m_numberOfUnmatchedAccounts = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfUnmatchedAccountsNode.GetText()).c_str()).c_str());
       m_numberOfUnmatchedAccountsHasBeenSet = true;
+       m_numberOfUnmatchedAccountsHasBeenSet = true;
     }
     XmlNode regionalSummariesNode = resultNode.FirstChild("regionalSummarySet");
     if(!regionalSummariesNode.IsNull())
     {
       XmlNode regionalSummariesMember = regionalSummariesNode.FirstChild("item");
+      m_regionalSummariesHasBeenSet = !regionalSummariesMember.IsNull();
       while(!regionalSummariesMember.IsNull())
       {
         m_regionalSummaries.push_back(regionalSummariesMember);
         regionalSummariesMember = regionalSummariesMember.NextNode("item");
       }
 
-      m_regionalSummariesHasBeenSet = true;
+       m_regionalSummariesHasBeenSet = true;
     }
   }
 

@@ -20,32 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBRecommendation::DBRecommendation() : 
-    m_recommendationIdHasBeenSet(false),
-    m_typeIdHasBeenSet(false),
-    m_severityHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_detectionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_recommendedActionsHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_typeDetectionHasBeenSet(false),
-    m_typeRecommendationHasBeenSet(false),
-    m_impactHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_linksHasBeenSet(false),
-    m_issueDetailsHasBeenSet(false)
-{
-}
-
 DBRecommendation::DBRecommendation(const XmlNode& xmlNode)
-  : DBRecommendation()
 {
   *this = xmlNode;
 }
@@ -61,132 +36,152 @@ DBRecommendation& DBRecommendation::operator =(const XmlNode& xmlNode)
     {
       m_recommendationId = Aws::Utils::Xml::DecodeEscapedXmlText(recommendationIdNode.GetText());
       m_recommendationIdHasBeenSet = true;
+       m_recommendationIdHasBeenSet = true;
     }
     XmlNode typeIdNode = resultNode.FirstChild("TypeId");
     if(!typeIdNode.IsNull())
     {
       m_typeId = Aws::Utils::Xml::DecodeEscapedXmlText(typeIdNode.GetText());
       m_typeIdHasBeenSet = true;
+       m_typeIdHasBeenSet = true;
     }
     XmlNode severityNode = resultNode.FirstChild("Severity");
     if(!severityNode.IsNull())
     {
       m_severity = Aws::Utils::Xml::DecodeEscapedXmlText(severityNode.GetText());
       m_severityHasBeenSet = true;
+       m_severityHasBeenSet = true;
     }
     XmlNode resourceArnNode = resultNode.FirstChild("ResourceArn");
     if(!resourceArnNode.IsNull())
     {
       m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
       m_resourceArnHasBeenSet = true;
+       m_resourceArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
       m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
+       m_createdTimeHasBeenSet = true;
     }
     XmlNode updatedTimeNode = resultNode.FirstChild("UpdatedTime");
     if(!updatedTimeNode.IsNull())
     {
       m_updatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedTimeHasBeenSet = true;
+       m_updatedTimeHasBeenSet = true;
     }
     XmlNode detectionNode = resultNode.FirstChild("Detection");
     if(!detectionNode.IsNull())
     {
       m_detection = Aws::Utils::Xml::DecodeEscapedXmlText(detectionNode.GetText());
       m_detectionHasBeenSet = true;
+       m_detectionHasBeenSet = true;
     }
     XmlNode recommendationNode = resultNode.FirstChild("Recommendation");
     if(!recommendationNode.IsNull())
     {
       m_recommendation = Aws::Utils::Xml::DecodeEscapedXmlText(recommendationNode.GetText());
       m_recommendationHasBeenSet = true;
+       m_recommendationHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");
     if(!reasonNode.IsNull())
     {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
+       m_reasonHasBeenSet = true;
     }
     XmlNode recommendedActionsNode = resultNode.FirstChild("RecommendedActions");
     if(!recommendedActionsNode.IsNull())
     {
       XmlNode recommendedActionsMember = recommendedActionsNode.FirstChild("member");
+      m_recommendedActionsHasBeenSet = !recommendedActionsMember.IsNull();
       while(!recommendedActionsMember.IsNull())
       {
         m_recommendedActions.push_back(recommendedActionsMember);
         recommendedActionsMember = recommendedActionsMember.NextNode("member");
       }
 
-      m_recommendedActionsHasBeenSet = true;
+       m_recommendedActionsHasBeenSet = true;
     }
     XmlNode categoryNode = resultNode.FirstChild("Category");
     if(!categoryNode.IsNull())
     {
       m_category = Aws::Utils::Xml::DecodeEscapedXmlText(categoryNode.GetText());
       m_categoryHasBeenSet = true;
+       m_categoryHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("Source");
     if(!sourceNode.IsNull())
     {
       m_source = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText());
       m_sourceHasBeenSet = true;
+       m_sourceHasBeenSet = true;
     }
     XmlNode typeDetectionNode = resultNode.FirstChild("TypeDetection");
     if(!typeDetectionNode.IsNull())
     {
       m_typeDetection = Aws::Utils::Xml::DecodeEscapedXmlText(typeDetectionNode.GetText());
       m_typeDetectionHasBeenSet = true;
+       m_typeDetectionHasBeenSet = true;
     }
     XmlNode typeRecommendationNode = resultNode.FirstChild("TypeRecommendation");
     if(!typeRecommendationNode.IsNull())
     {
       m_typeRecommendation = Aws::Utils::Xml::DecodeEscapedXmlText(typeRecommendationNode.GetText());
       m_typeRecommendationHasBeenSet = true;
+       m_typeRecommendationHasBeenSet = true;
     }
     XmlNode impactNode = resultNode.FirstChild("Impact");
     if(!impactNode.IsNull())
     {
       m_impact = Aws::Utils::Xml::DecodeEscapedXmlText(impactNode.GetText());
       m_impactHasBeenSet = true;
+       m_impactHasBeenSet = true;
     }
     XmlNode additionalInfoNode = resultNode.FirstChild("AdditionalInfo");
     if(!additionalInfoNode.IsNull())
     {
       m_additionalInfo = Aws::Utils::Xml::DecodeEscapedXmlText(additionalInfoNode.GetText());
       m_additionalInfoHasBeenSet = true;
+       m_additionalInfoHasBeenSet = true;
     }
     XmlNode linksNode = resultNode.FirstChild("Links");
     if(!linksNode.IsNull())
     {
       XmlNode linksMember = linksNode.FirstChild("member");
+      m_linksHasBeenSet = !linksMember.IsNull();
       while(!linksMember.IsNull())
       {
         m_links.push_back(linksMember);
         linksMember = linksMember.NextNode("member");
       }
 
-      m_linksHasBeenSet = true;
+       m_linksHasBeenSet = true;
     }
     XmlNode issueDetailsNode = resultNode.FirstChild("IssueDetails");
     if(!issueDetailsNode.IsNull())
     {
       m_issueDetails = issueDetailsNode;
       m_issueDetailsHasBeenSet = true;
+       m_issueDetailsHasBeenSet = true;
     }
   }
 

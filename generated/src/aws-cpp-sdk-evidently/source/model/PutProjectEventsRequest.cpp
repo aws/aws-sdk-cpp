@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutProjectEventsRequest::PutProjectEventsRequest() : 
-    m_eventsHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 Aws::String PutProjectEventsRequest::SerializePayload() const
 {
   JsonValue payload;

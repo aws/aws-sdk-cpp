@@ -12,16 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSavingsPlansPurchaseRecommendationGenerationRequest::ListSavingsPlansPurchaseRecommendationGenerationRequest() : 
-    m_generationStatus(GenerationStatus::NOT_SET),
-    m_generationStatusHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSavingsPlansPurchaseRecommendationGenerationRequest::SerializePayload() const
 {
   JsonValue payload;

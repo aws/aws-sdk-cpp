@@ -27,7 +27,7 @@ namespace Model
   class StartOutboundChatContactResult
   {
   public:
-    AWS_CONNECT_API StartOutboundChatContactResult();
+    AWS_CONNECT_API StartOutboundChatContactResult() = default;
     AWS_CONNECT_API StartOutboundChatContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API StartOutboundChatContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
-    inline void SetContactId(const Aws::String& value) { m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactId.assign(value); }
-    inline StartOutboundChatContactResult& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline StartOutboundChatContactResult& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline StartOutboundChatContactResult& WithContactId(const char* value) { SetContactId(value); return *this;}
+    inline const Aws::String& GetContactId() const { return m_contactId; }
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    StartOutboundChatContactResult& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartOutboundChatContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartOutboundChatContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartOutboundChatContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartOutboundChatContactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contactId;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

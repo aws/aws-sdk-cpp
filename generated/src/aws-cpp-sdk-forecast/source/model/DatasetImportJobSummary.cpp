@@ -18,21 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-DatasetImportJobSummary::DatasetImportJobSummary() : 
-    m_datasetImportJobArnHasBeenSet(false),
-    m_datasetImportJobNameHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false),
-    m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false)
-{
-}
-
 DatasetImportJobSummary::DatasetImportJobSummary(JsonView jsonValue)
-  : DatasetImportJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ DatasetImportJobSummary& DatasetImportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatasetImportJobArn"))
   {
     m_datasetImportJobArn = jsonValue.GetString("DatasetImportJobArn");
-
     m_datasetImportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetImportJobName"))
   {
     m_datasetImportJobName = jsonValue.GetString("DatasetImportJobName");
-
     m_datasetImportJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportMode"))
   {
     m_importMode = ImportModeMapper::GetImportModeForName(jsonValue.GetString("ImportMode"));
-
     m_importModeHasBeenSet = true;
   }
-
   return *this;
 }
 

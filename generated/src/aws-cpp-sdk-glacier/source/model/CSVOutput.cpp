@@ -18,18 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-CSVOutput::CSVOutput() : 
-    m_quoteFields(QuoteFields::NOT_SET),
-    m_quoteFieldsHasBeenSet(false),
-    m_quoteEscapeCharacterHasBeenSet(false),
-    m_recordDelimiterHasBeenSet(false),
-    m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
-{
-}
-
 CSVOutput::CSVOutput(JsonView jsonValue)
-  : CSVOutput()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ CSVOutput& CSVOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuoteFields"))
   {
     m_quoteFields = QuoteFieldsMapper::GetQuoteFieldsForName(jsonValue.GetString("QuoteFields"));
-
     m_quoteFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteEscapeCharacter"))
   {
     m_quoteEscapeCharacter = jsonValue.GetString("QuoteEscapeCharacter");
-
     m_quoteEscapeCharacterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordDelimiter"))
   {
     m_recordDelimiter = jsonValue.GetString("RecordDelimiter");
-
     m_recordDelimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldDelimiter"))
   {
     m_fieldDelimiter = jsonValue.GetString("FieldDelimiter");
-
     m_fieldDelimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteCharacter"))
   {
     m_quoteCharacter = jsonValue.GetString("QuoteCharacter");
-
     m_quoteCharacterHasBeenSet = true;
   }
-
   return *this;
 }
 

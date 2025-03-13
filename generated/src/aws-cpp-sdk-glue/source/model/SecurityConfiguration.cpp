@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SecurityConfiguration::SecurityConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 SecurityConfiguration::SecurityConfiguration(JsonView jsonValue)
-  : SecurityConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SecurityConfiguration& SecurityConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimeStamp"))
   {
     m_createdTimeStamp = jsonValue.GetDouble("CreatedTimeStamp");
-
     m_createdTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

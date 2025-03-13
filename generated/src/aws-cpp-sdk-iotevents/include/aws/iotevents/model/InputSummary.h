@@ -33,7 +33,7 @@ namespace Model
   class InputSummary
   {
   public:
-    AWS_IOTEVENTS_API InputSummary();
+    AWS_IOTEVENTS_API InputSummary() = default;
     AWS_IOTEVENTS_API InputSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API InputSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,78 +43,70 @@ namespace Model
     /**
      * <p>The name of the input.</p>
      */
-    inline const Aws::String& GetInputName() const{ return m_inputName; }
+    inline const Aws::String& GetInputName() const { return m_inputName; }
     inline bool InputNameHasBeenSet() const { return m_inputNameHasBeenSet; }
-    inline void SetInputName(const Aws::String& value) { m_inputNameHasBeenSet = true; m_inputName = value; }
-    inline void SetInputName(Aws::String&& value) { m_inputNameHasBeenSet = true; m_inputName = std::move(value); }
-    inline void SetInputName(const char* value) { m_inputNameHasBeenSet = true; m_inputName.assign(value); }
-    inline InputSummary& WithInputName(const Aws::String& value) { SetInputName(value); return *this;}
-    inline InputSummary& WithInputName(Aws::String&& value) { SetInputName(std::move(value)); return *this;}
-    inline InputSummary& WithInputName(const char* value) { SetInputName(value); return *this;}
+    template<typename InputNameT = Aws::String>
+    void SetInputName(InputNameT&& value) { m_inputNameHasBeenSet = true; m_inputName = std::forward<InputNameT>(value); }
+    template<typename InputNameT = Aws::String>
+    InputSummary& WithInputName(InputNameT&& value) { SetInputName(std::forward<InputNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the input.</p>
      */
-    inline const Aws::String& GetInputDescription() const{ return m_inputDescription; }
+    inline const Aws::String& GetInputDescription() const { return m_inputDescription; }
     inline bool InputDescriptionHasBeenSet() const { return m_inputDescriptionHasBeenSet; }
-    inline void SetInputDescription(const Aws::String& value) { m_inputDescriptionHasBeenSet = true; m_inputDescription = value; }
-    inline void SetInputDescription(Aws::String&& value) { m_inputDescriptionHasBeenSet = true; m_inputDescription = std::move(value); }
-    inline void SetInputDescription(const char* value) { m_inputDescriptionHasBeenSet = true; m_inputDescription.assign(value); }
-    inline InputSummary& WithInputDescription(const Aws::String& value) { SetInputDescription(value); return *this;}
-    inline InputSummary& WithInputDescription(Aws::String&& value) { SetInputDescription(std::move(value)); return *this;}
-    inline InputSummary& WithInputDescription(const char* value) { SetInputDescription(value); return *this;}
+    template<typename InputDescriptionT = Aws::String>
+    void SetInputDescription(InputDescriptionT&& value) { m_inputDescriptionHasBeenSet = true; m_inputDescription = std::forward<InputDescriptionT>(value); }
+    template<typename InputDescriptionT = Aws::String>
+    InputSummary& WithInputDescription(InputDescriptionT&& value) { SetInputDescription(std::forward<InputDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the input.</p>
      */
-    inline const Aws::String& GetInputArn() const{ return m_inputArn; }
+    inline const Aws::String& GetInputArn() const { return m_inputArn; }
     inline bool InputArnHasBeenSet() const { return m_inputArnHasBeenSet; }
-    inline void SetInputArn(const Aws::String& value) { m_inputArnHasBeenSet = true; m_inputArn = value; }
-    inline void SetInputArn(Aws::String&& value) { m_inputArnHasBeenSet = true; m_inputArn = std::move(value); }
-    inline void SetInputArn(const char* value) { m_inputArnHasBeenSet = true; m_inputArn.assign(value); }
-    inline InputSummary& WithInputArn(const Aws::String& value) { SetInputArn(value); return *this;}
-    inline InputSummary& WithInputArn(Aws::String&& value) { SetInputArn(std::move(value)); return *this;}
-    inline InputSummary& WithInputArn(const char* value) { SetInputArn(value); return *this;}
+    template<typename InputArnT = Aws::String>
+    void SetInputArn(InputArnT&& value) { m_inputArnHasBeenSet = true; m_inputArn = std::forward<InputArnT>(value); }
+    template<typename InputArnT = Aws::String>
+    InputSummary& WithInputArn(InputArnT&& value) { SetInputArn(std::forward<InputArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the input was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline InputSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline InputSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    InputSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the input was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline InputSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline InputSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    InputSummary& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the input.</p>
      */
-    inline const InputStatus& GetStatus() const{ return m_status; }
+    inline InputStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InputStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InputStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline InputSummary& WithStatus(const InputStatus& value) { SetStatus(value); return *this;}
-    inline InputSummary& WithStatus(InputStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(InputStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline InputSummary& WithStatus(InputStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -127,13 +119,13 @@ namespace Model
     Aws::String m_inputArn;
     bool m_inputArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
 
-    InputStatus m_status;
+    InputStatus m_status{InputStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

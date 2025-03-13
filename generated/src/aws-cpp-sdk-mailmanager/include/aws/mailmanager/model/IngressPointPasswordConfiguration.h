@@ -33,7 +33,7 @@ namespace Model
   class IngressPointPasswordConfiguration
   {
   public:
-    AWS_MAILMANAGER_API IngressPointPasswordConfiguration();
+    AWS_MAILMANAGER_API IngressPointPasswordConfiguration() = default;
     AWS_MAILMANAGER_API IngressPointPasswordConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API IngressPointPasswordConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,40 @@ namespace Model
     /**
      * <p>The previous password expiry timestamp of the ingress endpoint resource.</p>
      */
-    inline const Aws::Utils::DateTime& GetPreviousSmtpPasswordExpiryTimestamp() const{ return m_previousSmtpPasswordExpiryTimestamp; }
+    inline const Aws::Utils::DateTime& GetPreviousSmtpPasswordExpiryTimestamp() const { return m_previousSmtpPasswordExpiryTimestamp; }
     inline bool PreviousSmtpPasswordExpiryTimestampHasBeenSet() const { return m_previousSmtpPasswordExpiryTimestampHasBeenSet; }
-    inline void SetPreviousSmtpPasswordExpiryTimestamp(const Aws::Utils::DateTime& value) { m_previousSmtpPasswordExpiryTimestampHasBeenSet = true; m_previousSmtpPasswordExpiryTimestamp = value; }
-    inline void SetPreviousSmtpPasswordExpiryTimestamp(Aws::Utils::DateTime&& value) { m_previousSmtpPasswordExpiryTimestampHasBeenSet = true; m_previousSmtpPasswordExpiryTimestamp = std::move(value); }
-    inline IngressPointPasswordConfiguration& WithPreviousSmtpPasswordExpiryTimestamp(const Aws::Utils::DateTime& value) { SetPreviousSmtpPasswordExpiryTimestamp(value); return *this;}
-    inline IngressPointPasswordConfiguration& WithPreviousSmtpPasswordExpiryTimestamp(Aws::Utils::DateTime&& value) { SetPreviousSmtpPasswordExpiryTimestamp(std::move(value)); return *this;}
+    template<typename PreviousSmtpPasswordExpiryTimestampT = Aws::Utils::DateTime>
+    void SetPreviousSmtpPasswordExpiryTimestamp(PreviousSmtpPasswordExpiryTimestampT&& value) { m_previousSmtpPasswordExpiryTimestampHasBeenSet = true; m_previousSmtpPasswordExpiryTimestamp = std::forward<PreviousSmtpPasswordExpiryTimestampT>(value); }
+    template<typename PreviousSmtpPasswordExpiryTimestampT = Aws::Utils::DateTime>
+    IngressPointPasswordConfiguration& WithPreviousSmtpPasswordExpiryTimestamp(PreviousSmtpPasswordExpiryTimestampT&& value) { SetPreviousSmtpPasswordExpiryTimestamp(std::forward<PreviousSmtpPasswordExpiryTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The previous password version of the ingress endpoint resource.</p>
      */
-    inline const Aws::String& GetPreviousSmtpPasswordVersion() const{ return m_previousSmtpPasswordVersion; }
+    inline const Aws::String& GetPreviousSmtpPasswordVersion() const { return m_previousSmtpPasswordVersion; }
     inline bool PreviousSmtpPasswordVersionHasBeenSet() const { return m_previousSmtpPasswordVersionHasBeenSet; }
-    inline void SetPreviousSmtpPasswordVersion(const Aws::String& value) { m_previousSmtpPasswordVersionHasBeenSet = true; m_previousSmtpPasswordVersion = value; }
-    inline void SetPreviousSmtpPasswordVersion(Aws::String&& value) { m_previousSmtpPasswordVersionHasBeenSet = true; m_previousSmtpPasswordVersion = std::move(value); }
-    inline void SetPreviousSmtpPasswordVersion(const char* value) { m_previousSmtpPasswordVersionHasBeenSet = true; m_previousSmtpPasswordVersion.assign(value); }
-    inline IngressPointPasswordConfiguration& WithPreviousSmtpPasswordVersion(const Aws::String& value) { SetPreviousSmtpPasswordVersion(value); return *this;}
-    inline IngressPointPasswordConfiguration& WithPreviousSmtpPasswordVersion(Aws::String&& value) { SetPreviousSmtpPasswordVersion(std::move(value)); return *this;}
-    inline IngressPointPasswordConfiguration& WithPreviousSmtpPasswordVersion(const char* value) { SetPreviousSmtpPasswordVersion(value); return *this;}
+    template<typename PreviousSmtpPasswordVersionT = Aws::String>
+    void SetPreviousSmtpPasswordVersion(PreviousSmtpPasswordVersionT&& value) { m_previousSmtpPasswordVersionHasBeenSet = true; m_previousSmtpPasswordVersion = std::forward<PreviousSmtpPasswordVersionT>(value); }
+    template<typename PreviousSmtpPasswordVersionT = Aws::String>
+    IngressPointPasswordConfiguration& WithPreviousSmtpPasswordVersion(PreviousSmtpPasswordVersionT&& value) { SetPreviousSmtpPasswordVersion(std::forward<PreviousSmtpPasswordVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current password expiry timestamp of the ingress endpoint resource.</p>
      */
-    inline const Aws::String& GetSmtpPasswordVersion() const{ return m_smtpPasswordVersion; }
+    inline const Aws::String& GetSmtpPasswordVersion() const { return m_smtpPasswordVersion; }
     inline bool SmtpPasswordVersionHasBeenSet() const { return m_smtpPasswordVersionHasBeenSet; }
-    inline void SetSmtpPasswordVersion(const Aws::String& value) { m_smtpPasswordVersionHasBeenSet = true; m_smtpPasswordVersion = value; }
-    inline void SetSmtpPasswordVersion(Aws::String&& value) { m_smtpPasswordVersionHasBeenSet = true; m_smtpPasswordVersion = std::move(value); }
-    inline void SetSmtpPasswordVersion(const char* value) { m_smtpPasswordVersionHasBeenSet = true; m_smtpPasswordVersion.assign(value); }
-    inline IngressPointPasswordConfiguration& WithSmtpPasswordVersion(const Aws::String& value) { SetSmtpPasswordVersion(value); return *this;}
-    inline IngressPointPasswordConfiguration& WithSmtpPasswordVersion(Aws::String&& value) { SetSmtpPasswordVersion(std::move(value)); return *this;}
-    inline IngressPointPasswordConfiguration& WithSmtpPasswordVersion(const char* value) { SetSmtpPasswordVersion(value); return *this;}
+    template<typename SmtpPasswordVersionT = Aws::String>
+    void SetSmtpPasswordVersion(SmtpPasswordVersionT&& value) { m_smtpPasswordVersionHasBeenSet = true; m_smtpPasswordVersion = std::forward<SmtpPasswordVersionT>(value); }
+    template<typename SmtpPasswordVersionT = Aws::String>
+    IngressPointPasswordConfiguration& WithSmtpPasswordVersion(SmtpPasswordVersionT&& value) { SetSmtpPasswordVersion(std::forward<SmtpPasswordVersionT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_previousSmtpPasswordExpiryTimestamp;
+    Aws::Utils::DateTime m_previousSmtpPasswordExpiryTimestamp{};
     bool m_previousSmtpPasswordExpiryTimestampHasBeenSet = false;
 
     Aws::String m_previousSmtpPasswordVersion;

@@ -18,22 +18,7 @@ namespace DirectoryServiceData
 namespace Model
 {
 
-User::User() : 
-    m_distinguishedNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_otherAttributesHasBeenSet(false),
-    m_sAMAccountNameHasBeenSet(false),
-    m_sIDHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_userPrincipalNameHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DistinguishedName"))
   {
     m_distinguishedName = jsonValue.GetString("DistinguishedName");
-
     m_distinguishedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GivenName"))
   {
     m_givenName = jsonValue.GetString("GivenName");
-
     m_givenNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OtherAttributes"))
   {
     Aws::Map<Aws::String, JsonView> otherAttributesJsonMap = jsonValue.GetObject("OtherAttributes").GetAllObjects();
@@ -77,35 +54,26 @@ User& User::operator =(JsonView jsonValue)
     }
     m_otherAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SAMAccountName"))
   {
     m_sAMAccountName = jsonValue.GetString("SAMAccountName");
-
     m_sAMAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SID"))
   {
     m_sID = jsonValue.GetString("SID");
-
     m_sIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Surname"))
   {
     m_surname = jsonValue.GetString("Surname");
-
     m_surnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPrincipalName"))
   {
     m_userPrincipalName = jsonValue.GetString("UserPrincipalName");
-
     m_userPrincipalNameHasBeenSet = true;
   }
-
   return *this;
 }
 

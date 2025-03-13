@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BodySectionRepeatConfiguration::BodySectionRepeatConfiguration() : 
-    m_dimensionConfigurationsHasBeenSet(false),
-    m_pageBreakConfigurationHasBeenSet(false),
-    m_nonRepeatingVisualsHasBeenSet(false)
-{
-}
-
 BodySectionRepeatConfiguration::BodySectionRepeatConfiguration(JsonView jsonValue)
-  : BodySectionRepeatConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ BodySectionRepeatConfiguration& BodySectionRepeatConfiguration::operator =(JsonV
     }
     m_dimensionConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageBreakConfiguration"))
   {
     m_pageBreakConfiguration = jsonValue.GetObject("PageBreakConfiguration");
-
     m_pageBreakConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonRepeatingVisuals"))
   {
     Aws::Utils::Array<JsonView> nonRepeatingVisualsJsonList = jsonValue.GetArray("NonRepeatingVisuals");
@@ -59,7 +48,6 @@ BodySectionRepeatConfiguration& BodySectionRepeatConfiguration::operator =(JsonV
     }
     m_nonRepeatingVisualsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyOptionGroupRequest::ModifyOptionGroupRequest() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_optionsToIncludeHasBeenSet(false),
-    m_optionsToRemoveHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String ModifyOptionGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

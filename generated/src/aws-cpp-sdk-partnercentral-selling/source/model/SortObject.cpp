@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-SortObject::SortObject() : 
-    m_sortBy(SortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 SortObject::SortObject(JsonView jsonValue)
-  : SortObject()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SortObject& SortObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = SortByMapper::GetSortByForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("SortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Backup
 namespace Model
 {
 
-AdvancedBackupSetting::AdvancedBackupSetting() : 
-    m_resourceTypeHasBeenSet(false),
-    m_backupOptionsHasBeenSet(false)
-{
-}
-
 AdvancedBackupSetting::AdvancedBackupSetting(JsonView jsonValue)
-  : AdvancedBackupSetting()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdvancedBackupSetting& AdvancedBackupSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupOptions"))
   {
     Aws::Map<Aws::String, JsonView> backupOptionsJsonMap = jsonValue.GetObject("BackupOptions").GetAllObjects();
@@ -48,7 +39,6 @@ AdvancedBackupSetting& AdvancedBackupSetting::operator =(JsonView jsonValue)
     }
     m_backupOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

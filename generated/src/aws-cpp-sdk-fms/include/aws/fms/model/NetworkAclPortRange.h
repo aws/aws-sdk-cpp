@@ -30,7 +30,7 @@ namespace Model
   class NetworkAclPortRange
   {
   public:
-    AWS_FMS_API NetworkAclPortRange();
+    AWS_FMS_API NetworkAclPortRange() = default;
     AWS_FMS_API NetworkAclPortRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API NetworkAclPortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The beginning port number of the range. </p>
      */
-    inline int GetFrom() const{ return m_from; }
+    inline int GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
     inline void SetFrom(int value) { m_fromHasBeenSet = true; m_from = value; }
     inline NetworkAclPortRange& WithFrom(int value) { SetFrom(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The ending port number of the range. </p>
      */
-    inline int GetTo() const{ return m_to; }
+    inline int GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
     inline void SetTo(int value) { m_toHasBeenSet = true; m_to = value; }
     inline NetworkAclPortRange& WithTo(int value) { SetTo(value); return *this;}
     ///@}
   private:
 
-    int m_from;
+    int m_from{0};
     bool m_fromHasBeenSet = false;
 
-    int m_to;
+    int m_to{0};
     bool m_toHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class AwsBackupBackupPlanAdvancedBackupSettingsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsBackupBackupPlanAdvancedBackupSettingsDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupPlanAdvancedBackupSettingsDetails() = default;
     AWS_SECURITYHUB_API AwsBackupBackupPlanAdvancedBackupSettingsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsBackupBackupPlanAdvancedBackupSettingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,19 +48,16 @@ namespace Model
      * <li> <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The
      * <code>WindowsVSS</code> option is not enabled by default.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const{ return m_backupOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetBackupOptions() const { return m_backupOptions; }
     inline bool BackupOptionsHasBeenSet() const { return m_backupOptionsHasBeenSet; }
-    inline void SetBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = value; }
-    inline void SetBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::move(value); }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithBackupOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetBackupOptions(value); return *this;}
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithBackupOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetBackupOptions(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(const Aws::String& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(Aws::String&& key, const Aws::String& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(const Aws::String& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(Aws::String&& key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(const char* key, Aws::String&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, std::move(value)); return *this; }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(Aws::String&& key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::move(key), value); return *this; }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(const char* key, const char* value) { m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(key, value); return *this; }
+    template<typename BackupOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetBackupOptions(BackupOptionsT&& value) { m_backupOptionsHasBeenSet = true; m_backupOptions = std::forward<BackupOptionsT>(value); }
+    template<typename BackupOptionsT = Aws::Map<Aws::String, Aws::String>>
+    AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithBackupOptions(BackupOptionsT&& value) { SetBackupOptions(std::forward<BackupOptionsT>(value)); return *this;}
+    template<typename BackupOptionsKeyT = Aws::String, typename BackupOptionsValueT = Aws::String>
+    AwsBackupBackupPlanAdvancedBackupSettingsDetails& AddBackupOptions(BackupOptionsKeyT&& key, BackupOptionsValueT&& value) {
+      m_backupOptionsHasBeenSet = true; m_backupOptions.emplace(std::forward<BackupOptionsKeyT>(key), std::forward<BackupOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -68,14 +65,12 @@ namespace Model
      * <p>The name of a resource type. The only supported resource type is Amazon EC2
      * instances with Windows VSS.</p> <p>The only valid value is <code>EC2</code>.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    AwsBackupBackupPlanAdvancedBackupSettingsDetails& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
   private:
 

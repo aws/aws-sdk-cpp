@@ -12,12 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCaseRuleRequest::BatchGetCaseRuleRequest() : 
-    m_caseRulesHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCaseRuleRequest::SerializePayload() const
 {
   JsonValue payload;

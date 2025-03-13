@@ -23,7 +23,7 @@ namespace Model
   class InvokeRestApiRequest : public MWAARequest
   {
   public:
-    AWS_MWAA_API InvokeRestApiRequest();
+    AWS_MWAA_API InvokeRestApiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the Amazon MWAA environment. For example,
      * <code>MyMWAAEnvironment</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline InvokeRestApiRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline InvokeRestApiRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline InvokeRestApiRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    InvokeRestApiRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * href="https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html">Apache
      * Airflow API</a> </p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline InvokeRestApiRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline InvokeRestApiRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline InvokeRestApiRequest& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    InvokeRestApiRequest& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,10 @@ namespace Model
      * <p>The HTTP method used for making Airflow REST API calls. For example,
      * <code>POST</code>. </p>
      */
-    inline const RestApiMethod& GetMethod() const{ return m_method; }
+    inline RestApiMethod GetMethod() const { return m_method; }
     inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
-    inline void SetMethod(const RestApiMethod& value) { m_methodHasBeenSet = true; m_method = value; }
-    inline void SetMethod(RestApiMethod&& value) { m_methodHasBeenSet = true; m_method = std::move(value); }
-    inline InvokeRestApiRequest& WithMethod(const RestApiMethod& value) { SetMethod(value); return *this;}
-    inline InvokeRestApiRequest& WithMethod(RestApiMethod&& value) { SetMethod(std::move(value)); return *this;}
+    inline void SetMethod(RestApiMethod value) { m_methodHasBeenSet = true; m_method = value; }
+    inline InvokeRestApiRequest& WithMethod(RestApiMethod value) { SetMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +78,12 @@ namespace Model
      * <p>Query parameters to be included in the Apache Airflow REST API call, provided
      * as a JSON object. </p>
      */
-    inline Aws::Utils::DocumentView GetQueryParameters() const{ return m_queryParameters; }
+    inline Aws::Utils::DocumentView GetQueryParameters() const { return m_queryParameters; }
     inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
-    inline void SetQueryParameters(const Aws::Utils::Document& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
-    inline void SetQueryParameters(Aws::Utils::Document&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
-    inline InvokeRestApiRequest& WithQueryParameters(const Aws::Utils::Document& value) { SetQueryParameters(value); return *this;}
-    inline InvokeRestApiRequest& WithQueryParameters(Aws::Utils::Document&& value) { SetQueryParameters(std::move(value)); return *this;}
+    template<typename QueryParametersT = Aws::Utils::Document>
+    void SetQueryParameters(QueryParametersT&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::forward<QueryParametersT>(value); }
+    template<typename QueryParametersT = Aws::Utils::Document>
+    InvokeRestApiRequest& WithQueryParameters(QueryParametersT&& value) { SetQueryParameters(std::forward<QueryParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +91,12 @@ namespace Model
      * <p>The request body for the Apache Airflow REST API call, provided as a JSON
      * object.</p>
      */
-    inline Aws::Utils::DocumentView GetMemberBody() const{ return m_body; }
+    inline Aws::Utils::DocumentView GetMemberBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::Utils::Document& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::Utils::Document&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline InvokeRestApiRequest& WithBody(const Aws::Utils::Document& value) { SetBody(value); return *this;}
-    inline InvokeRestApiRequest& WithBody(Aws::Utils::Document&& value) { SetBody(std::move(value)); return *this;}
+    template<typename BodyT = Aws::Utils::Document>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::Utils::Document>
+    InvokeRestApiRequest& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +106,7 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    RestApiMethod m_method;
+    RestApiMethod m_method{RestApiMethod::NOT_SET};
     bool m_methodHasBeenSet = false;
 
     Aws::Utils::Document m_queryParameters;

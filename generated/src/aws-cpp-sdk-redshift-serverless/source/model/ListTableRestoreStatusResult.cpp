@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTableRestoreStatusResult::ListTableRestoreStatusResult()
-{
-}
-
 ListTableRestoreStatusResult::ListTableRestoreStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTableRestoreStatusResult& ListTableRestoreStatusResult::operator =(const Aws
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableRestoreStatuses"))
   {
     Aws::Utils::Array<JsonView> tableRestoreStatusesJsonList = jsonValue.GetArray("tableRestoreStatuses");
@@ -42,14 +37,15 @@ ListTableRestoreStatusResult& ListTableRestoreStatusResult::operator =(const Aws
     {
       m_tableRestoreStatuses.push_back(tableRestoreStatusesJsonList[tableRestoreStatusesIndex].AsObject());
     }
+    m_tableRestoreStatusesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

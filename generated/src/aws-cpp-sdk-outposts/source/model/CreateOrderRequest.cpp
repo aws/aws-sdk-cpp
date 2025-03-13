@@ -12,16 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOrderRequest::CreateOrderRequest() : 
-    m_outpostIdentifierHasBeenSet(false),
-    m_lineItemsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_paymentTerm(PaymentTerm::NOT_SET),
-    m_paymentTermHasBeenSet(false)
-{
-}
-
 Aws::String CreateOrderRequest::SerializePayload() const
 {
   JsonValue payload;

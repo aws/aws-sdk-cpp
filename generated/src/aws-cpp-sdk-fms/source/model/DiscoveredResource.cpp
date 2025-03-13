@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-DiscoveredResource::DiscoveredResource() : 
-    m_uRIHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 DiscoveredResource::DiscoveredResource(JsonView jsonValue)
-  : DiscoveredResource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DiscoveredResource& DiscoveredResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("URI"))
   {
     m_uRI = jsonValue.GetString("URI");
-
     m_uRIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-MagneticStoreRejectedDataLocation::MagneticStoreRejectedDataLocation() : 
-    m_s3ConfigurationHasBeenSet(false)
-{
-}
-
 MagneticStoreRejectedDataLocation::MagneticStoreRejectedDataLocation(JsonView jsonValue)
-  : MagneticStoreRejectedDataLocation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MagneticStoreRejectedDataLocation& MagneticStoreRejectedDataLocation::operator =
   if(jsonValue.ValueExists("S3Configuration"))
   {
     m_s3Configuration = jsonValue.GetObject("S3Configuration");
-
     m_s3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

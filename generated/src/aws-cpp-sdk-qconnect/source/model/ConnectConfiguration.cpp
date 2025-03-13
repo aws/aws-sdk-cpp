@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ConnectConfiguration::ConnectConfiguration() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 ConnectConfiguration::ConnectConfiguration(JsonView jsonValue)
-  : ConnectConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConnectConfiguration& ConnectConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

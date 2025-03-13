@@ -10,12 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-AttachLoadBalancersRequest::AttachLoadBalancersRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_loadBalancerNamesHasBeenSet(false)
-{
-}
-
 Aws::String AttachLoadBalancersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

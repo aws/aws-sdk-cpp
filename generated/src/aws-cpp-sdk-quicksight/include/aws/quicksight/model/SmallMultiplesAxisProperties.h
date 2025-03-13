@@ -33,7 +33,7 @@ namespace Model
   class SmallMultiplesAxisProperties
   {
   public:
-    AWS_QUICKSIGHT_API SmallMultiplesAxisProperties();
+    AWS_QUICKSIGHT_API SmallMultiplesAxisProperties() = default;
     AWS_QUICKSIGHT_API SmallMultiplesAxisProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SmallMultiplesAxisProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Determines whether scale of the axes are shared or independent. The default
      * value is <code>SHARED</code>.</p>
      */
-    inline const SmallMultiplesAxisScale& GetScale() const{ return m_scale; }
+    inline SmallMultiplesAxisScale GetScale() const { return m_scale; }
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
-    inline void SetScale(const SmallMultiplesAxisScale& value) { m_scaleHasBeenSet = true; m_scale = value; }
-    inline void SetScale(SmallMultiplesAxisScale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
-    inline SmallMultiplesAxisProperties& WithScale(const SmallMultiplesAxisScale& value) { SetScale(value); return *this;}
-    inline SmallMultiplesAxisProperties& WithScale(SmallMultiplesAxisScale&& value) { SetScale(std::move(value)); return *this;}
+    inline void SetScale(SmallMultiplesAxisScale value) { m_scaleHasBeenSet = true; m_scale = value; }
+    inline SmallMultiplesAxisProperties& WithScale(SmallMultiplesAxisScale value) { SetScale(value); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <code>OUTSIDE</code> of the panels. Axes with <code>INDEPENDENT</code> scale are
      * rendered <code>INSIDE</code> the panels.</p>
      */
-    inline const SmallMultiplesAxisPlacement& GetPlacement() const{ return m_placement; }
+    inline SmallMultiplesAxisPlacement GetPlacement() const { return m_placement; }
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-    inline void SetPlacement(const SmallMultiplesAxisPlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
-    inline void SetPlacement(SmallMultiplesAxisPlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-    inline SmallMultiplesAxisProperties& WithPlacement(const SmallMultiplesAxisPlacement& value) { SetPlacement(value); return *this;}
-    inline SmallMultiplesAxisProperties& WithPlacement(SmallMultiplesAxisPlacement&& value) { SetPlacement(std::move(value)); return *this;}
+    inline void SetPlacement(SmallMultiplesAxisPlacement value) { m_placementHasBeenSet = true; m_placement = value; }
+    inline SmallMultiplesAxisProperties& WithPlacement(SmallMultiplesAxisPlacement value) { SetPlacement(value); return *this;}
     ///@}
   private:
 
-    SmallMultiplesAxisScale m_scale;
+    SmallMultiplesAxisScale m_scale{SmallMultiplesAxisScale::NOT_SET};
     bool m_scaleHasBeenSet = false;
 
-    SmallMultiplesAxisPlacement m_placement;
+    SmallMultiplesAxisPlacement m_placement{SmallMultiplesAxisPlacement::NOT_SET};
     bool m_placementHasBeenSet = false;
   };
 

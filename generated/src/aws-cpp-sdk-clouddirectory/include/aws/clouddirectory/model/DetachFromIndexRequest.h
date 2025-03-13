@@ -22,7 +22,7 @@ namespace Model
   class DetachFromIndexRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API DetachFromIndexRequest();
+    AWS_CLOUDDIRECTORY_API DetachFromIndexRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,38 +40,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the directory the index and object exist
      * in.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline DetachFromIndexRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline DetachFromIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline DetachFromIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    DetachFromIndexRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A reference to the index object.</p>
      */
-    inline const ObjectReference& GetIndexReference() const{ return m_indexReference; }
+    inline const ObjectReference& GetIndexReference() const { return m_indexReference; }
     inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
-    inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
-    inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::move(value); }
-    inline DetachFromIndexRequest& WithIndexReference(const ObjectReference& value) { SetIndexReference(value); return *this;}
-    inline DetachFromIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+    template<typename IndexReferenceT = ObjectReference>
+    void SetIndexReference(IndexReferenceT&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::forward<IndexReferenceT>(value); }
+    template<typename IndexReferenceT = ObjectReference>
+    DetachFromIndexRequest& WithIndexReference(IndexReferenceT&& value) { SetIndexReference(std::forward<IndexReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A reference to the object being detached from the index.</p>
      */
-    inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
+    inline const ObjectReference& GetTargetReference() const { return m_targetReference; }
     inline bool TargetReferenceHasBeenSet() const { return m_targetReferenceHasBeenSet; }
-    inline void SetTargetReference(const ObjectReference& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
-    inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
-    inline DetachFromIndexRequest& WithTargetReference(const ObjectReference& value) { SetTargetReference(value); return *this;}
-    inline DetachFromIndexRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
+    template<typename TargetReferenceT = ObjectReference>
+    void SetTargetReference(TargetReferenceT&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::forward<TargetReferenceT>(value); }
+    template<typename TargetReferenceT = ObjectReference>
+    DetachFromIndexRequest& WithTargetReference(TargetReferenceT&& value) { SetTargetReference(std::forward<TargetReferenceT>(value)); return *this;}
     ///@}
   private:
 

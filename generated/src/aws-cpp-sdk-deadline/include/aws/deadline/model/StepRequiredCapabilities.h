@@ -33,7 +33,7 @@ namespace Model
   class StepRequiredCapabilities
   {
   public:
-    AWS_DEADLINE_API StepRequiredCapabilities();
+    AWS_DEADLINE_API StepRequiredCapabilities() = default;
     AWS_DEADLINE_API StepRequiredCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API StepRequiredCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The capability attributes that the step requires.</p>
      */
-    inline const Aws::Vector<StepAttributeCapability>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<StepAttributeCapability>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<StepAttributeCapability>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<StepAttributeCapability>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline StepRequiredCapabilities& WithAttributes(const Aws::Vector<StepAttributeCapability>& value) { SetAttributes(value); return *this;}
-    inline StepRequiredCapabilities& WithAttributes(Aws::Vector<StepAttributeCapability>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline StepRequiredCapabilities& AddAttributes(const StepAttributeCapability& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline StepRequiredCapabilities& AddAttributes(StepAttributeCapability&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<StepAttributeCapability>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<StepAttributeCapability>>
+    StepRequiredCapabilities& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = StepAttributeCapability>
+    StepRequiredCapabilities& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The capability amounts that the step requires.</p>
      */
-    inline const Aws::Vector<StepAmountCapability>& GetAmounts() const{ return m_amounts; }
+    inline const Aws::Vector<StepAmountCapability>& GetAmounts() const { return m_amounts; }
     inline bool AmountsHasBeenSet() const { return m_amountsHasBeenSet; }
-    inline void SetAmounts(const Aws::Vector<StepAmountCapability>& value) { m_amountsHasBeenSet = true; m_amounts = value; }
-    inline void SetAmounts(Aws::Vector<StepAmountCapability>&& value) { m_amountsHasBeenSet = true; m_amounts = std::move(value); }
-    inline StepRequiredCapabilities& WithAmounts(const Aws::Vector<StepAmountCapability>& value) { SetAmounts(value); return *this;}
-    inline StepRequiredCapabilities& WithAmounts(Aws::Vector<StepAmountCapability>&& value) { SetAmounts(std::move(value)); return *this;}
-    inline StepRequiredCapabilities& AddAmounts(const StepAmountCapability& value) { m_amountsHasBeenSet = true; m_amounts.push_back(value); return *this; }
-    inline StepRequiredCapabilities& AddAmounts(StepAmountCapability&& value) { m_amountsHasBeenSet = true; m_amounts.push_back(std::move(value)); return *this; }
+    template<typename AmountsT = Aws::Vector<StepAmountCapability>>
+    void SetAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts = std::forward<AmountsT>(value); }
+    template<typename AmountsT = Aws::Vector<StepAmountCapability>>
+    StepRequiredCapabilities& WithAmounts(AmountsT&& value) { SetAmounts(std::forward<AmountsT>(value)); return *this;}
+    template<typename AmountsT = StepAmountCapability>
+    StepRequiredCapabilities& AddAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts.emplace_back(std::forward<AmountsT>(value)); return *this; }
     ///@}
   private:
 

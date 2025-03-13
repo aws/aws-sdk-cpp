@@ -32,7 +32,7 @@ namespace Model
   class CustomLogSourceProvider
   {
   public:
-    AWS_SECURITYLAKE_API CustomLogSourceProvider();
+    AWS_SECURITYLAKE_API CustomLogSourceProvider() = default;
     AWS_SECURITYLAKE_API CustomLogSourceProvider(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API CustomLogSourceProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline CustomLogSourceProvider& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline CustomLogSourceProvider& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline CustomLogSourceProvider& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    CustomLogSourceProvider& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * The IAM role name must start with the text 'Security Lake'. The IAM role must
      * trust the <code>logProviderAccountId</code> to assume the role.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CustomLogSourceProvider& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CustomLogSourceProvider& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CustomLogSourceProvider& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CustomLogSourceProvider& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

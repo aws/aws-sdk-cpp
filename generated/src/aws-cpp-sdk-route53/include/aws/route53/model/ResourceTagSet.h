@@ -34,7 +34,7 @@ namespace Model
   class ResourceTagSet
   {
   public:
-    AWS_ROUTE53_API ResourceTagSet();
+    AWS_ROUTE53_API ResourceTagSet() = default;
     AWS_ROUTE53_API ResourceTagSet(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API ResourceTagSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,44 +47,40 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
-    inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
+    inline TagResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ResourceTagSet& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
-    inline ResourceTagSet& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(TagResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ResourceTagSet& WithResourceType(TagResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the specified resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline ResourceTagSet& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline ResourceTagSet& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline ResourceTagSet& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    ResourceTagSet& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the specified resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ResourceTagSet& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ResourceTagSet& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ResourceTagSet& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ResourceTagSet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ResourceTagSet& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ResourceTagSet& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    TagResourceType m_resourceType;
+    TagResourceType m_resourceType{TagResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;

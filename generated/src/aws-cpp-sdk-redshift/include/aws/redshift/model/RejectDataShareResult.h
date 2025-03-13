@@ -31,7 +31,7 @@ namespace Model
   class RejectDataShareResult
   {
   public:
-    AWS_REDSHIFT_API RejectDataShareResult();
+    AWS_REDSHIFT_API RejectDataShareResult() = default;
     AWS_REDSHIFT_API RejectDataShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API RejectDataShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,26 +41,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
      * use.</p>
      */
-    inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
-    inline void SetDataShareArn(const Aws::String& value) { m_dataShareArn = value; }
-    inline void SetDataShareArn(Aws::String&& value) { m_dataShareArn = std::move(value); }
-    inline void SetDataShareArn(const char* value) { m_dataShareArn.assign(value); }
-    inline RejectDataShareResult& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-    inline RejectDataShareResult& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-    inline RejectDataShareResult& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    inline const Aws::String& GetDataShareArn() const { return m_dataShareArn; }
+    template<typename DataShareArnT = Aws::String>
+    void SetDataShareArn(DataShareArnT&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::forward<DataShareArnT>(value); }
+    template<typename DataShareArnT = Aws::String>
+    RejectDataShareResult& WithDataShareArn(DataShareArnT&& value) { SetDataShareArn(std::forward<DataShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
-    inline const Aws::String& GetProducerArn() const{ return m_producerArn; }
-    inline void SetProducerArn(const Aws::String& value) { m_producerArn = value; }
-    inline void SetProducerArn(Aws::String&& value) { m_producerArn = std::move(value); }
-    inline void SetProducerArn(const char* value) { m_producerArn.assign(value); }
-    inline RejectDataShareResult& WithProducerArn(const Aws::String& value) { SetProducerArn(value); return *this;}
-    inline RejectDataShareResult& WithProducerArn(Aws::String&& value) { SetProducerArn(std::move(value)); return *this;}
-    inline RejectDataShareResult& WithProducerArn(const char* value) { SetProducerArn(value); return *this;}
+    inline const Aws::String& GetProducerArn() const { return m_producerArn; }
+    template<typename ProducerArnT = Aws::String>
+    void SetProducerArn(ProducerArnT&& value) { m_producerArnHasBeenSet = true; m_producerArn = std::forward<ProducerArnT>(value); }
+    template<typename ProducerArnT = Aws::String>
+    RejectDataShareResult& WithProducerArn(ProducerArnT&& value) { SetProducerArn(std::forward<ProducerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,8 +64,8 @@ namespace Model
      * <p>A value that specifies whether the datashare can be shared to a publicly
      * accessible cluster.</p>
      */
-    inline bool GetAllowPubliclyAccessibleConsumers() const{ return m_allowPubliclyAccessibleConsumers; }
-    inline void SetAllowPubliclyAccessibleConsumers(bool value) { m_allowPubliclyAccessibleConsumers = value; }
+    inline bool GetAllowPubliclyAccessibleConsumers() const { return m_allowPubliclyAccessibleConsumers; }
+    inline void SetAllowPubliclyAccessibleConsumers(bool value) { m_allowPubliclyAccessibleConsumersHasBeenSet = true; m_allowPubliclyAccessibleConsumers = value; }
     inline RejectDataShareResult& WithAllowPubliclyAccessibleConsumers(bool value) { SetAllowPubliclyAccessibleConsumers(value); return *this;}
     ///@}
 
@@ -78,62 +74,65 @@ namespace Model
      * <p>A value that specifies when the datashare has an association between producer
      * and data consumers.</p>
      */
-    inline const Aws::Vector<DataShareAssociation>& GetDataShareAssociations() const{ return m_dataShareAssociations; }
-    inline void SetDataShareAssociations(const Aws::Vector<DataShareAssociation>& value) { m_dataShareAssociations = value; }
-    inline void SetDataShareAssociations(Aws::Vector<DataShareAssociation>&& value) { m_dataShareAssociations = std::move(value); }
-    inline RejectDataShareResult& WithDataShareAssociations(const Aws::Vector<DataShareAssociation>& value) { SetDataShareAssociations(value); return *this;}
-    inline RejectDataShareResult& WithDataShareAssociations(Aws::Vector<DataShareAssociation>&& value) { SetDataShareAssociations(std::move(value)); return *this;}
-    inline RejectDataShareResult& AddDataShareAssociations(const DataShareAssociation& value) { m_dataShareAssociations.push_back(value); return *this; }
-    inline RejectDataShareResult& AddDataShareAssociations(DataShareAssociation&& value) { m_dataShareAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataShareAssociation>& GetDataShareAssociations() const { return m_dataShareAssociations; }
+    template<typename DataShareAssociationsT = Aws::Vector<DataShareAssociation>>
+    void SetDataShareAssociations(DataShareAssociationsT&& value) { m_dataShareAssociationsHasBeenSet = true; m_dataShareAssociations = std::forward<DataShareAssociationsT>(value); }
+    template<typename DataShareAssociationsT = Aws::Vector<DataShareAssociation>>
+    RejectDataShareResult& WithDataShareAssociations(DataShareAssociationsT&& value) { SetDataShareAssociations(std::forward<DataShareAssociationsT>(value)); return *this;}
+    template<typename DataShareAssociationsT = DataShareAssociation>
+    RejectDataShareResult& AddDataShareAssociations(DataShareAssociationsT&& value) { m_dataShareAssociationsHasBeenSet = true; m_dataShareAssociations.emplace_back(std::forward<DataShareAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of a datashare to show its managing entity.</p>
      */
-    inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
-    inline void SetManagedBy(const Aws::String& value) { m_managedBy = value; }
-    inline void SetManagedBy(Aws::String&& value) { m_managedBy = std::move(value); }
-    inline void SetManagedBy(const char* value) { m_managedBy.assign(value); }
-    inline RejectDataShareResult& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
-    inline RejectDataShareResult& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
-    inline RejectDataShareResult& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
+    inline const Aws::String& GetManagedBy() const { return m_managedBy; }
+    template<typename ManagedByT = Aws::String>
+    void SetManagedBy(ManagedByT&& value) { m_managedByHasBeenSet = true; m_managedBy = std::forward<ManagedByT>(value); }
+    template<typename ManagedByT = Aws::String>
+    RejectDataShareResult& WithManagedBy(ManagedByT&& value) { SetManagedBy(std::forward<ManagedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of the datashare created by RegisterNamespace.</p>
      */
-    inline const DataShareType& GetDataShareType() const{ return m_dataShareType; }
-    inline void SetDataShareType(const DataShareType& value) { m_dataShareType = value; }
-    inline void SetDataShareType(DataShareType&& value) { m_dataShareType = std::move(value); }
-    inline RejectDataShareResult& WithDataShareType(const DataShareType& value) { SetDataShareType(value); return *this;}
-    inline RejectDataShareResult& WithDataShareType(DataShareType&& value) { SetDataShareType(std::move(value)); return *this;}
+    inline DataShareType GetDataShareType() const { return m_dataShareType; }
+    inline void SetDataShareType(DataShareType value) { m_dataShareTypeHasBeenSet = true; m_dataShareType = value; }
+    inline RejectDataShareResult& WithDataShareType(DataShareType value) { SetDataShareType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RejectDataShareResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RejectDataShareResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RejectDataShareResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataShareArn;
+    bool m_dataShareArnHasBeenSet = false;
 
     Aws::String m_producerArn;
+    bool m_producerArnHasBeenSet = false;
 
-    bool m_allowPubliclyAccessibleConsumers;
+    bool m_allowPubliclyAccessibleConsumers{false};
+    bool m_allowPubliclyAccessibleConsumersHasBeenSet = false;
 
     Aws::Vector<DataShareAssociation> m_dataShareAssociations;
+    bool m_dataShareAssociationsHasBeenSet = false;
 
     Aws::String m_managedBy;
+    bool m_managedByHasBeenSet = false;
 
-    DataShareType m_dataShareType;
+    DataShareType m_dataShareType{DataShareType::NOT_SET};
+    bool m_dataShareTypeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

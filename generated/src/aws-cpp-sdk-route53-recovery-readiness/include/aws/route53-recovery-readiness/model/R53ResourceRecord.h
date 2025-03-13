@@ -32,7 +32,7 @@ namespace Model
   class R53ResourceRecord
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord();
+    AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord() = default;
     AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API R53ResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The DNS target domain name.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline R53ResourceRecord& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline R53ResourceRecord& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline R53ResourceRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    R53ResourceRecord& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Route 53 Resource Record Set ID.</p>
      */
-    inline const Aws::String& GetRecordSetId() const{ return m_recordSetId; }
+    inline const Aws::String& GetRecordSetId() const { return m_recordSetId; }
     inline bool RecordSetIdHasBeenSet() const { return m_recordSetIdHasBeenSet; }
-    inline void SetRecordSetId(const Aws::String& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = value; }
-    inline void SetRecordSetId(Aws::String&& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = std::move(value); }
-    inline void SetRecordSetId(const char* value) { m_recordSetIdHasBeenSet = true; m_recordSetId.assign(value); }
-    inline R53ResourceRecord& WithRecordSetId(const Aws::String& value) { SetRecordSetId(value); return *this;}
-    inline R53ResourceRecord& WithRecordSetId(Aws::String&& value) { SetRecordSetId(std::move(value)); return *this;}
-    inline R53ResourceRecord& WithRecordSetId(const char* value) { SetRecordSetId(value); return *this;}
+    template<typename RecordSetIdT = Aws::String>
+    void SetRecordSetId(RecordSetIdT&& value) { m_recordSetIdHasBeenSet = true; m_recordSetId = std::forward<RecordSetIdT>(value); }
+    template<typename RecordSetIdT = Aws::String>
+    R53ResourceRecord& WithRecordSetId(RecordSetIdT&& value) { SetRecordSetId(std::forward<RecordSetIdT>(value)); return *this;}
     ///@}
   private:
 

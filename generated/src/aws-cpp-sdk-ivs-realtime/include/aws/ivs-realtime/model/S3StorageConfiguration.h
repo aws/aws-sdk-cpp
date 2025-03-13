@@ -32,7 +32,7 @@ namespace Model
   class S3StorageConfiguration
   {
   public:
-    AWS_IVSREALTIME_API S3StorageConfiguration();
+    AWS_IVSREALTIME_API S3StorageConfiguration() = default;
     AWS_IVSREALTIME_API S3StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API S3StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * StorageConfiguration and S3 bucket must be in the same region as the
      * Composition.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3StorageConfiguration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3StorageConfiguration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3StorageConfiguration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3StorageConfiguration& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
   private:
 

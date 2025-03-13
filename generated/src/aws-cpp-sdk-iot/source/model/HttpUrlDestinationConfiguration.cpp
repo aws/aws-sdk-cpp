@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-HttpUrlDestinationConfiguration::HttpUrlDestinationConfiguration() : 
-    m_confirmationUrlHasBeenSet(false)
-{
-}
-
 HttpUrlDestinationConfiguration::HttpUrlDestinationConfiguration(JsonView jsonValue)
-  : HttpUrlDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HttpUrlDestinationConfiguration& HttpUrlDestinationConfiguration::operator =(Jso
   if(jsonValue.ValueExists("confirmationUrl"))
   {
     m_confirmationUrl = jsonValue.GetString("confirmationUrl");
-
     m_confirmationUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

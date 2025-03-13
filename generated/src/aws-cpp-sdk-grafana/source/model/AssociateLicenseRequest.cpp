@@ -13,14 +13,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateLicenseRequest::AssociateLicenseRequest() : 
-    m_grafanaTokenHasBeenSet(false),
-    m_licenseType(LicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateLicenseRequest::SerializePayload() const
 {
   return {};

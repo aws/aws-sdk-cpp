@@ -31,7 +31,7 @@ namespace Model
   class AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails() = default;
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The configuration for the filter.</p>
      */
-    inline const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& GetPredicate() const{ return m_predicate; }
+    inline const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& GetPredicate() const { return m_predicate; }
     inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
-    inline void SetPredicate(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& value) { m_predicateHasBeenSet = true; m_predicate = value; }
-    inline void SetPredicate(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails&& value) { m_predicateHasBeenSet = true; m_predicate = std::move(value); }
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& WithPredicate(const AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& value) { SetPredicate(value); return *this;}
-    inline AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& WithPredicate(AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails&& value) { SetPredicate(std::move(value)); return *this;}
+    template<typename PredicateT = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>
+    void SetPredicate(PredicateT&& value) { m_predicateHasBeenSet = true; m_predicate = std::forward<PredicateT>(value); }
+    template<typename PredicateT = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails>
+    AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails& WithPredicate(PredicateT&& value) { SetPredicate(std::forward<PredicateT>(value)); return *this;}
     ///@}
   private:
 

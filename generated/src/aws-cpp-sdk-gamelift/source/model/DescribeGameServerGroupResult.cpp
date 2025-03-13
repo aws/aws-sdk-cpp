@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGameServerGroupResult::DescribeGameServerGroupResult()
-{
-}
-
 DescribeGameServerGroupResult::DescribeGameServerGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeGameServerGroupResult& DescribeGameServerGroupResult::operator =(const A
   if(jsonValue.ValueExists("GameServerGroup"))
   {
     m_gameServerGroup = jsonValue.GetObject("GameServerGroup");
-
+    m_gameServerGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

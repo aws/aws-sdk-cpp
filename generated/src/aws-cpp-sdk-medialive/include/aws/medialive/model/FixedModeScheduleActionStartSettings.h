@@ -31,7 +31,7 @@ namespace Model
   class FixedModeScheduleActionStartSettings
   {
   public:
-    AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings();
+    AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings() = default;
     AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FixedModeScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * (for example, mm might be 01) except for the two constants "T" for time and "Z"
      * for "UTC format".
      */
-    inline const Aws::String& GetTime() const{ return m_time; }
+    inline const Aws::String& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-    inline FixedModeScheduleActionStartSettings& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-    inline FixedModeScheduleActionStartSettings& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-    inline FixedModeScheduleActionStartSettings& WithTime(const char* value) { SetTime(value); return *this;}
+    template<typename TimeT = Aws::String>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::String>
+    FixedModeScheduleActionStartSettings& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
   private:
 

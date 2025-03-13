@@ -26,7 +26,7 @@ namespace Model
   class SearchListingsRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API SearchListingsRequest();
+    AWS_DATAZONE_API SearchListingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,40 +41,37 @@ namespace Model
     /**
      * <p>Specifies additional attributes for the search.</p>
      */
-    inline const Aws::Vector<SearchOutputAdditionalAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
+    inline const Aws::Vector<SearchOutputAdditionalAttribute>& GetAdditionalAttributes() const { return m_additionalAttributes; }
     inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
-    inline void SetAdditionalAttributes(const Aws::Vector<SearchOutputAdditionalAttribute>& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
-    inline void SetAdditionalAttributes(Aws::Vector<SearchOutputAdditionalAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
-    inline SearchListingsRequest& WithAdditionalAttributes(const Aws::Vector<SearchOutputAdditionalAttribute>& value) { SetAdditionalAttributes(value); return *this;}
-    inline SearchListingsRequest& WithAdditionalAttributes(Aws::Vector<SearchOutputAdditionalAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
-    inline SearchListingsRequest& AddAdditionalAttributes(const SearchOutputAdditionalAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
-    inline SearchListingsRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
+    template<typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
+    void SetAdditionalAttributes(AdditionalAttributesT&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::forward<AdditionalAttributesT>(value); }
+    template<typename AdditionalAttributesT = Aws::Vector<SearchOutputAdditionalAttribute>>
+    SearchListingsRequest& WithAdditionalAttributes(AdditionalAttributesT&& value) { SetAdditionalAttributes(std::forward<AdditionalAttributesT>(value)); return *this;}
+    inline SearchListingsRequest& AddAdditionalAttributes(SearchOutputAdditionalAttribute value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the domain in which to search listings.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline SearchListingsRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline SearchListingsRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline SearchListingsRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    SearchListingsRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the filters for the search of listings.</p>
      */
-    inline const FilterClause& GetFilters() const{ return m_filters; }
+    inline const FilterClause& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const FilterClause& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(FilterClause&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline SearchListingsRequest& WithFilters(const FilterClause& value) { SetFilters(value); return *this;}
-    inline SearchListingsRequest& WithFilters(FilterClause&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = FilterClause>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = FilterClause>
+    SearchListingsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +82,7 @@ namespace Model
      * <code>NextToken</code> value that you can use in a subsequent call to
      * <code>SearchListings</code> to list the next set of results. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchListingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,54 +97,50 @@ namespace Model
      * <code>NextToken</code> value in a subsequent call to <code>SearchListings</code>
      * to list the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchListingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchListingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchListingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchListingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the search.</p>
      */
-    inline const Aws::Vector<SearchInItem>& GetSearchIn() const{ return m_searchIn; }
+    inline const Aws::Vector<SearchInItem>& GetSearchIn() const { return m_searchIn; }
     inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
-    inline void SetSearchIn(const Aws::Vector<SearchInItem>& value) { m_searchInHasBeenSet = true; m_searchIn = value; }
-    inline void SetSearchIn(Aws::Vector<SearchInItem>&& value) { m_searchInHasBeenSet = true; m_searchIn = std::move(value); }
-    inline SearchListingsRequest& WithSearchIn(const Aws::Vector<SearchInItem>& value) { SetSearchIn(value); return *this;}
-    inline SearchListingsRequest& WithSearchIn(Aws::Vector<SearchInItem>&& value) { SetSearchIn(std::move(value)); return *this;}
-    inline SearchListingsRequest& AddSearchIn(const SearchInItem& value) { m_searchInHasBeenSet = true; m_searchIn.push_back(value); return *this; }
-    inline SearchListingsRequest& AddSearchIn(SearchInItem&& value) { m_searchInHasBeenSet = true; m_searchIn.push_back(std::move(value)); return *this; }
+    template<typename SearchInT = Aws::Vector<SearchInItem>>
+    void SetSearchIn(SearchInT&& value) { m_searchInHasBeenSet = true; m_searchIn = std::forward<SearchInT>(value); }
+    template<typename SearchInT = Aws::Vector<SearchInItem>>
+    SearchListingsRequest& WithSearchIn(SearchInT&& value) { SetSearchIn(std::forward<SearchInT>(value)); return *this;}
+    template<typename SearchInT = SearchInItem>
+    SearchListingsRequest& AddSearchIn(SearchInT&& value) { m_searchInHasBeenSet = true; m_searchIn.emplace_back(std::forward<SearchInT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the text for which to search.</p>
      */
-    inline const Aws::String& GetSearchText() const{ return m_searchText; }
+    inline const Aws::String& GetSearchText() const { return m_searchText; }
     inline bool SearchTextHasBeenSet() const { return m_searchTextHasBeenSet; }
-    inline void SetSearchText(const Aws::String& value) { m_searchTextHasBeenSet = true; m_searchText = value; }
-    inline void SetSearchText(Aws::String&& value) { m_searchTextHasBeenSet = true; m_searchText = std::move(value); }
-    inline void SetSearchText(const char* value) { m_searchTextHasBeenSet = true; m_searchText.assign(value); }
-    inline SearchListingsRequest& WithSearchText(const Aws::String& value) { SetSearchText(value); return *this;}
-    inline SearchListingsRequest& WithSearchText(Aws::String&& value) { SetSearchText(std::move(value)); return *this;}
-    inline SearchListingsRequest& WithSearchText(const char* value) { SetSearchText(value); return *this;}
+    template<typename SearchTextT = Aws::String>
+    void SetSearchText(SearchTextT&& value) { m_searchTextHasBeenSet = true; m_searchText = std::forward<SearchTextT>(value); }
+    template<typename SearchTextT = Aws::String>
+    SearchListingsRequest& WithSearchText(SearchTextT&& value) { SetSearchText(std::forward<SearchTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the way for sorting the search results.</p>
      */
-    inline const SearchSort& GetSort() const{ return m_sort; }
+    inline const SearchSort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const SearchSort& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(SearchSort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline SearchListingsRequest& WithSort(const SearchSort& value) { SetSort(value); return *this;}
-    inline SearchListingsRequest& WithSort(SearchSort&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = SearchSort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = SearchSort>
+    SearchListingsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
   private:
 
@@ -160,7 +153,7 @@ namespace Model
     FilterClause m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

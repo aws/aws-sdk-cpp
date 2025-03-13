@@ -24,7 +24,7 @@ namespace Model
   class CreateSavingsPlanRequest : public SavingsPlansRequest
   {
   public:
-    AWS_SAVINGSPLANS_API CreateSavingsPlanRequest();
+    AWS_SAVINGSPLANS_API CreateSavingsPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline const Aws::String& GetSavingsPlanOfferingId() const{ return m_savingsPlanOfferingId; }
+    inline const Aws::String& GetSavingsPlanOfferingId() const { return m_savingsPlanOfferingId; }
     inline bool SavingsPlanOfferingIdHasBeenSet() const { return m_savingsPlanOfferingIdHasBeenSet; }
-    inline void SetSavingsPlanOfferingId(const Aws::String& value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId = value; }
-    inline void SetSavingsPlanOfferingId(Aws::String&& value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId = std::move(value); }
-    inline void SetSavingsPlanOfferingId(const char* value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId.assign(value); }
-    inline CreateSavingsPlanRequest& WithSavingsPlanOfferingId(const Aws::String& value) { SetSavingsPlanOfferingId(value); return *this;}
-    inline CreateSavingsPlanRequest& WithSavingsPlanOfferingId(Aws::String&& value) { SetSavingsPlanOfferingId(std::move(value)); return *this;}
-    inline CreateSavingsPlanRequest& WithSavingsPlanOfferingId(const char* value) { SetSavingsPlanOfferingId(value); return *this;}
+    template<typename SavingsPlanOfferingIdT = Aws::String>
+    void SetSavingsPlanOfferingId(SavingsPlanOfferingIdT&& value) { m_savingsPlanOfferingIdHasBeenSet = true; m_savingsPlanOfferingId = std::forward<SavingsPlanOfferingIdT>(value); }
+    template<typename SavingsPlanOfferingIdT = Aws::String>
+    CreateSavingsPlanRequest& WithSavingsPlanOfferingId(SavingsPlanOfferingIdT&& value) { SetSavingsPlanOfferingId(std::forward<SavingsPlanOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
-    inline const Aws::String& GetCommitment() const{ return m_commitment; }
+    inline const Aws::String& GetCommitment() const { return m_commitment; }
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
-    inline void SetCommitment(const Aws::String& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
-    inline void SetCommitment(Aws::String&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
-    inline void SetCommitment(const char* value) { m_commitmentHasBeenSet = true; m_commitment.assign(value); }
-    inline CreateSavingsPlanRequest& WithCommitment(const Aws::String& value) { SetCommitment(value); return *this;}
-    inline CreateSavingsPlanRequest& WithCommitment(Aws::String&& value) { SetCommitment(std::move(value)); return *this;}
-    inline CreateSavingsPlanRequest& WithCommitment(const char* value) { SetCommitment(value); return *this;}
+    template<typename CommitmentT = Aws::String>
+    void SetCommitment(CommitmentT&& value) { m_commitmentHasBeenSet = true; m_commitment = std::forward<CommitmentT>(value); }
+    template<typename CommitmentT = Aws::String>
+    CreateSavingsPlanRequest& WithCommitment(CommitmentT&& value) { SetCommitment(std::forward<CommitmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
-    inline const Aws::String& GetUpfrontPaymentAmount() const{ return m_upfrontPaymentAmount; }
+    inline const Aws::String& GetUpfrontPaymentAmount() const { return m_upfrontPaymentAmount; }
     inline bool UpfrontPaymentAmountHasBeenSet() const { return m_upfrontPaymentAmountHasBeenSet; }
-    inline void SetUpfrontPaymentAmount(const Aws::String& value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount = value; }
-    inline void SetUpfrontPaymentAmount(Aws::String&& value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount = std::move(value); }
-    inline void SetUpfrontPaymentAmount(const char* value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount.assign(value); }
-    inline CreateSavingsPlanRequest& WithUpfrontPaymentAmount(const Aws::String& value) { SetUpfrontPaymentAmount(value); return *this;}
-    inline CreateSavingsPlanRequest& WithUpfrontPaymentAmount(Aws::String&& value) { SetUpfrontPaymentAmount(std::move(value)); return *this;}
-    inline CreateSavingsPlanRequest& WithUpfrontPaymentAmount(const char* value) { SetUpfrontPaymentAmount(value); return *this;}
+    template<typename UpfrontPaymentAmountT = Aws::String>
+    void SetUpfrontPaymentAmount(UpfrontPaymentAmountT&& value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount = std::forward<UpfrontPaymentAmountT>(value); }
+    template<typename UpfrontPaymentAmountT = Aws::String>
+    CreateSavingsPlanRequest& WithUpfrontPaymentAmount(UpfrontPaymentAmountT&& value) { SetUpfrontPaymentAmount(std::forward<UpfrontPaymentAmountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +80,12 @@ namespace Model
      * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
-    inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
+    inline const Aws::Utils::DateTime& GetPurchaseTime() const { return m_purchaseTime; }
     inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
-    inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
-    inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
-    inline CreateSavingsPlanRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
-    inline CreateSavingsPlanRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
+    template<typename PurchaseTimeT = Aws::Utils::DateTime>
+    void SetPurchaseTime(PurchaseTimeT&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::forward<PurchaseTimeT>(value); }
+    template<typename PurchaseTimeT = Aws::Utils::DateTime>
+    CreateSavingsPlanRequest& WithPurchaseTime(PurchaseTimeT&& value) { SetPurchaseTime(std::forward<PurchaseTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,33 +93,28 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateSavingsPlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateSavingsPlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateSavingsPlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateSavingsPlanRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSavingsPlanRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSavingsPlanRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSavingsPlanRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateSavingsPlanRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSavingsPlanRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSavingsPlanRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSavingsPlanRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSavingsPlanRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSavingsPlanRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSavingsPlanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSavingsPlanRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -138,7 +127,7 @@ namespace Model
     Aws::String m_upfrontPaymentAmount;
     bool m_upfrontPaymentAmountHasBeenSet = false;
 
-    Aws::Utils::DateTime m_purchaseTime;
+    Aws::Utils::DateTime m_purchaseTime{};
     bool m_purchaseTimeHasBeenSet = false;
 
     Aws::String m_clientToken;

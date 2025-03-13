@@ -21,7 +21,7 @@ namespace Model
   class PutBackupVaultLockConfigurationRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API PutBackupVaultLockConfigurationRequest();
+    AWS_BACKUP_API PutBackupVaultLockConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Backup Vault Lock configuration that specifies the name of the backup
      * vault it protects.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline PutBackupVaultLockConfigurationRequest& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline PutBackupVaultLockConfigurationRequest& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline PutBackupVaultLockConfigurationRequest& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    PutBackupVaultLockConfigurationRequest& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * Recovery points already saved in the vault prior to Vault Lock are not
      * affected.</p>
      */
-    inline long long GetMinRetentionDays() const{ return m_minRetentionDays; }
+    inline long long GetMinRetentionDays() const { return m_minRetentionDays; }
     inline bool MinRetentionDaysHasBeenSet() const { return m_minRetentionDaysHasBeenSet; }
     inline void SetMinRetentionDays(long long value) { m_minRetentionDaysHasBeenSet = true; m_minRetentionDays = value; }
     inline PutBackupVaultLockConfigurationRequest& WithMinRetentionDays(long long value) { SetMinRetentionDays(value); return *this;}
@@ -87,7 +85,7 @@ namespace Model
      * period you can specify is 36500 days (approximately 100 years). Recovery points
      * already saved in the vault prior to Vault Lock are not affected.</p>
      */
-    inline long long GetMaxRetentionDays() const{ return m_maxRetentionDays; }
+    inline long long GetMaxRetentionDays() const { return m_maxRetentionDays; }
     inline bool MaxRetentionDaysHasBeenSet() const { return m_maxRetentionDaysHasBeenSet; }
     inline void SetMaxRetentionDays(long long value) { m_maxRetentionDaysHasBeenSet = true; m_maxRetentionDays = value; }
     inline PutBackupVaultLockConfigurationRequest& WithMaxRetentionDays(long long value) { SetMaxRetentionDays(value); return *this;}
@@ -109,7 +107,7 @@ namespace Model
      * the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>
      * at any time.</p>
      */
-    inline long long GetChangeableForDays() const{ return m_changeableForDays; }
+    inline long long GetChangeableForDays() const { return m_changeableForDays; }
     inline bool ChangeableForDaysHasBeenSet() const { return m_changeableForDaysHasBeenSet; }
     inline void SetChangeableForDays(long long value) { m_changeableForDaysHasBeenSet = true; m_changeableForDays = value; }
     inline PutBackupVaultLockConfigurationRequest& WithChangeableForDays(long long value) { SetChangeableForDays(value); return *this;}
@@ -119,13 +117,13 @@ namespace Model
     Aws::String m_backupVaultName;
     bool m_backupVaultNameHasBeenSet = false;
 
-    long long m_minRetentionDays;
+    long long m_minRetentionDays{0};
     bool m_minRetentionDaysHasBeenSet = false;
 
-    long long m_maxRetentionDays;
+    long long m_maxRetentionDays{0};
     bool m_maxRetentionDaysHasBeenSet = false;
 
-    long long m_changeableForDays;
+    long long m_changeableForDays{0};
     bool m_changeableForDaysHasBeenSet = false;
   };
 

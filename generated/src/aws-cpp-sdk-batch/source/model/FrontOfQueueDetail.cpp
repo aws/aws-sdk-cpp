@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-FrontOfQueueDetail::FrontOfQueueDetail() : 
-    m_jobsHasBeenSet(false),
-    m_lastUpdatedAt(0),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 FrontOfQueueDetail::FrontOfQueueDetail(JsonView jsonValue)
-  : FrontOfQueueDetail()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ FrontOfQueueDetail& FrontOfQueueDetail::operator =(JsonView jsonValue)
     }
     m_jobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetInt64("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

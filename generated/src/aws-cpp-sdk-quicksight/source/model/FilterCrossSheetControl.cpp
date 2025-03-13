@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilterCrossSheetControl::FilterCrossSheetControl() : 
-    m_filterControlIdHasBeenSet(false),
-    m_sourceFilterIdHasBeenSet(false),
-    m_cascadingControlConfigurationHasBeenSet(false)
-{
-}
-
 FilterCrossSheetControl::FilterCrossSheetControl(JsonView jsonValue)
-  : FilterCrossSheetControl()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FilterCrossSheetControl& FilterCrossSheetControl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterControlId"))
   {
     m_filterControlId = jsonValue.GetString("FilterControlId");
-
     m_filterControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFilterId"))
   {
     m_sourceFilterId = jsonValue.GetString("SourceFilterId");
-
     m_sourceFilterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CascadingControlConfiguration"))
   {
     m_cascadingControlConfiguration = jsonValue.GetObject("CascadingControlConfiguration");
-
     m_cascadingControlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

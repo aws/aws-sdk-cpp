@@ -38,7 +38,7 @@ namespace Model
   class OpenIdConnectTokenSelectionDetail
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API OpenIdConnectTokenSelectionDetail();
+    AWS_VERIFIEDPERMISSIONS_API OpenIdConnectTokenSelectionDetail() = default;
     AWS_VERIFIEDPERMISSIONS_API OpenIdConnectTokenSelectionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API OpenIdConnectTokenSelectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * audience claims, for example <code>https://auth.example.com</code>, and the
      * claim that you want to map to the principal, for example <code>sub</code>.</p>
      */
-    inline const OpenIdConnectAccessTokenConfigurationDetail& GetAccessTokenOnly() const{ return m_accessTokenOnly; }
+    inline const OpenIdConnectAccessTokenConfigurationDetail& GetAccessTokenOnly() const { return m_accessTokenOnly; }
     inline bool AccessTokenOnlyHasBeenSet() const { return m_accessTokenOnlyHasBeenSet; }
-    inline void SetAccessTokenOnly(const OpenIdConnectAccessTokenConfigurationDetail& value) { m_accessTokenOnlyHasBeenSet = true; m_accessTokenOnly = value; }
-    inline void SetAccessTokenOnly(OpenIdConnectAccessTokenConfigurationDetail&& value) { m_accessTokenOnlyHasBeenSet = true; m_accessTokenOnly = std::move(value); }
-    inline OpenIdConnectTokenSelectionDetail& WithAccessTokenOnly(const OpenIdConnectAccessTokenConfigurationDetail& value) { SetAccessTokenOnly(value); return *this;}
-    inline OpenIdConnectTokenSelectionDetail& WithAccessTokenOnly(OpenIdConnectAccessTokenConfigurationDetail&& value) { SetAccessTokenOnly(std::move(value)); return *this;}
+    template<typename AccessTokenOnlyT = OpenIdConnectAccessTokenConfigurationDetail>
+    void SetAccessTokenOnly(AccessTokenOnlyT&& value) { m_accessTokenOnlyHasBeenSet = true; m_accessTokenOnly = std::forward<AccessTokenOnlyT>(value); }
+    template<typename AccessTokenOnlyT = OpenIdConnectAccessTokenConfigurationDetail>
+    OpenIdConnectTokenSelectionDetail& WithAccessTokenOnly(AccessTokenOnlyT&& value) { SetAccessTokenOnly(std::forward<AccessTokenOnlyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * client ID claims, for example <code>1example23456789</code>, and the claim that
      * you want to map to the principal, for example <code>sub</code>.</p>
      */
-    inline const OpenIdConnectIdentityTokenConfigurationDetail& GetIdentityTokenOnly() const{ return m_identityTokenOnly; }
+    inline const OpenIdConnectIdentityTokenConfigurationDetail& GetIdentityTokenOnly() const { return m_identityTokenOnly; }
     inline bool IdentityTokenOnlyHasBeenSet() const { return m_identityTokenOnlyHasBeenSet; }
-    inline void SetIdentityTokenOnly(const OpenIdConnectIdentityTokenConfigurationDetail& value) { m_identityTokenOnlyHasBeenSet = true; m_identityTokenOnly = value; }
-    inline void SetIdentityTokenOnly(OpenIdConnectIdentityTokenConfigurationDetail&& value) { m_identityTokenOnlyHasBeenSet = true; m_identityTokenOnly = std::move(value); }
-    inline OpenIdConnectTokenSelectionDetail& WithIdentityTokenOnly(const OpenIdConnectIdentityTokenConfigurationDetail& value) { SetIdentityTokenOnly(value); return *this;}
-    inline OpenIdConnectTokenSelectionDetail& WithIdentityTokenOnly(OpenIdConnectIdentityTokenConfigurationDetail&& value) { SetIdentityTokenOnly(std::move(value)); return *this;}
+    template<typename IdentityTokenOnlyT = OpenIdConnectIdentityTokenConfigurationDetail>
+    void SetIdentityTokenOnly(IdentityTokenOnlyT&& value) { m_identityTokenOnlyHasBeenSet = true; m_identityTokenOnly = std::forward<IdentityTokenOnlyT>(value); }
+    template<typename IdentityTokenOnlyT = OpenIdConnectIdentityTokenConfigurationDetail>
+    OpenIdConnectTokenSelectionDetail& WithIdentityTokenOnly(IdentityTokenOnlyT&& value) { SetIdentityTokenOnly(std::forward<IdentityTokenOnlyT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TileStyle::TileStyle() : 
-    m_borderHasBeenSet(false)
-{
-}
-
 TileStyle::TileStyle(JsonView jsonValue)
-  : TileStyle()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TileStyle& TileStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Border"))
   {
     m_border = jsonValue.GetObject("Border");
-
     m_borderHasBeenSet = true;
   }
-
   return *this;
 }
 

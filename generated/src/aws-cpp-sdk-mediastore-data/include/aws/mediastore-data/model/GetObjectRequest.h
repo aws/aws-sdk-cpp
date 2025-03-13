@@ -21,7 +21,7 @@ namespace Model
   class GetObjectRequest : public MediaStoreDataRequest
   {
   public:
-    AWS_MEDIASTOREDATA_API GetObjectRequest();
+    AWS_MEDIASTOREDATA_API GetObjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -56,14 +56,12 @@ namespace Model
      * Elemental MediaStore, or it can have the same name. The file name can include or
      * omit an extension. </p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline GetObjectRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline GetObjectRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline GetObjectRequest& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    GetObjectRequest& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * AWS Elemental MediaStore ignores this header for partially uploaded objects that
      * have streaming upload availability.</p>
      */
-    inline const Aws::String& GetRange() const{ return m_range; }
+    inline const Aws::String& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
-    inline GetObjectRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
-    inline GetObjectRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
-    inline GetObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
+    template<typename RangeT = Aws::String>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = Aws::String>
+    GetObjectRequest& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
   private:
 

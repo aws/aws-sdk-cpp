@@ -20,31 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CacheBehavior::CacheBehavior() : 
-    m_pathPatternHasBeenSet(false),
-    m_targetOriginIdHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_trustedKeyGroupsHasBeenSet(false),
-    m_viewerProtocolPolicy(ViewerProtocolPolicy::NOT_SET),
-    m_viewerProtocolPolicyHasBeenSet(false),
-    m_allowedMethodsHasBeenSet(false),
-    m_smoothStreaming(false),
-    m_smoothStreamingHasBeenSet(false),
-    m_compress(false),
-    m_compressHasBeenSet(false),
-    m_lambdaFunctionAssociationsHasBeenSet(false),
-    m_functionAssociationsHasBeenSet(false),
-    m_fieldLevelEncryptionIdHasBeenSet(false),
-    m_realtimeLogConfigArnHasBeenSet(false),
-    m_cachePolicyIdHasBeenSet(false),
-    m_originRequestPolicyIdHasBeenSet(false),
-    m_responseHeadersPolicyIdHasBeenSet(false),
-    m_grpcConfigHasBeenSet(false)
-{
-}
-
 CacheBehavior::CacheBehavior(const XmlNode& xmlNode)
-  : CacheBehavior()
 {
   *this = xmlNode;
 }
@@ -60,96 +36,112 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_pathPattern = Aws::Utils::Xml::DecodeEscapedXmlText(pathPatternNode.GetText());
       m_pathPatternHasBeenSet = true;
+       m_pathPatternHasBeenSet = true;
     }
     XmlNode targetOriginIdNode = resultNode.FirstChild("TargetOriginId");
     if(!targetOriginIdNode.IsNull())
     {
       m_targetOriginId = Aws::Utils::Xml::DecodeEscapedXmlText(targetOriginIdNode.GetText());
       m_targetOriginIdHasBeenSet = true;
+       m_targetOriginIdHasBeenSet = true;
     }
     XmlNode trustedSignersNode = resultNode.FirstChild("TrustedSigners");
     if(!trustedSignersNode.IsNull())
     {
       m_trustedSigners = trustedSignersNode;
       m_trustedSignersHasBeenSet = true;
+       m_trustedSignersHasBeenSet = true;
     }
     XmlNode trustedKeyGroupsNode = resultNode.FirstChild("TrustedKeyGroups");
     if(!trustedKeyGroupsNode.IsNull())
     {
       m_trustedKeyGroups = trustedKeyGroupsNode;
       m_trustedKeyGroupsHasBeenSet = true;
+       m_trustedKeyGroupsHasBeenSet = true;
     }
     XmlNode viewerProtocolPolicyNode = resultNode.FirstChild("ViewerProtocolPolicy");
     if(!viewerProtocolPolicyNode.IsNull())
     {
-      m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(viewerProtocolPolicyNode.GetText()).c_str()).c_str());
+      m_viewerProtocolPolicy = ViewerProtocolPolicyMapper::GetViewerProtocolPolicyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(viewerProtocolPolicyNode.GetText()).c_str()));
       m_viewerProtocolPolicyHasBeenSet = true;
+       m_viewerProtocolPolicyHasBeenSet = true;
     }
     XmlNode allowedMethodsNode = resultNode.FirstChild("AllowedMethods");
     if(!allowedMethodsNode.IsNull())
     {
       m_allowedMethods = allowedMethodsNode;
       m_allowedMethodsHasBeenSet = true;
+       m_allowedMethodsHasBeenSet = true;
     }
     XmlNode smoothStreamingNode = resultNode.FirstChild("SmoothStreaming");
     if(!smoothStreamingNode.IsNull())
     {
       m_smoothStreaming = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(smoothStreamingNode.GetText()).c_str()).c_str());
       m_smoothStreamingHasBeenSet = true;
+       m_smoothStreamingHasBeenSet = true;
     }
     XmlNode compressNode = resultNode.FirstChild("Compress");
     if(!compressNode.IsNull())
     {
       m_compress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(compressNode.GetText()).c_str()).c_str());
       m_compressHasBeenSet = true;
+       m_compressHasBeenSet = true;
     }
     XmlNode lambdaFunctionAssociationsNode = resultNode.FirstChild("LambdaFunctionAssociations");
     if(!lambdaFunctionAssociationsNode.IsNull())
     {
       m_lambdaFunctionAssociations = lambdaFunctionAssociationsNode;
       m_lambdaFunctionAssociationsHasBeenSet = true;
+       m_lambdaFunctionAssociationsHasBeenSet = true;
     }
     XmlNode functionAssociationsNode = resultNode.FirstChild("FunctionAssociations");
     if(!functionAssociationsNode.IsNull())
     {
       m_functionAssociations = functionAssociationsNode;
       m_functionAssociationsHasBeenSet = true;
+       m_functionAssociationsHasBeenSet = true;
     }
     XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
     if(!fieldLevelEncryptionIdNode.IsNull())
     {
       m_fieldLevelEncryptionId = Aws::Utils::Xml::DecodeEscapedXmlText(fieldLevelEncryptionIdNode.GetText());
       m_fieldLevelEncryptionIdHasBeenSet = true;
+       m_fieldLevelEncryptionIdHasBeenSet = true;
     }
     XmlNode realtimeLogConfigArnNode = resultNode.FirstChild("RealtimeLogConfigArn");
     if(!realtimeLogConfigArnNode.IsNull())
     {
       m_realtimeLogConfigArn = Aws::Utils::Xml::DecodeEscapedXmlText(realtimeLogConfigArnNode.GetText());
       m_realtimeLogConfigArnHasBeenSet = true;
+       m_realtimeLogConfigArnHasBeenSet = true;
     }
     XmlNode cachePolicyIdNode = resultNode.FirstChild("CachePolicyId");
     if(!cachePolicyIdNode.IsNull())
     {
       m_cachePolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(cachePolicyIdNode.GetText());
       m_cachePolicyIdHasBeenSet = true;
+       m_cachePolicyIdHasBeenSet = true;
     }
     XmlNode originRequestPolicyIdNode = resultNode.FirstChild("OriginRequestPolicyId");
     if(!originRequestPolicyIdNode.IsNull())
     {
       m_originRequestPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(originRequestPolicyIdNode.GetText());
       m_originRequestPolicyIdHasBeenSet = true;
+       m_originRequestPolicyIdHasBeenSet = true;
     }
     XmlNode responseHeadersPolicyIdNode = resultNode.FirstChild("ResponseHeadersPolicyId");
     if(!responseHeadersPolicyIdNode.IsNull())
     {
       m_responseHeadersPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(responseHeadersPolicyIdNode.GetText());
       m_responseHeadersPolicyIdHasBeenSet = true;
+       m_responseHeadersPolicyIdHasBeenSet = true;
     }
     XmlNode grpcConfigNode = resultNode.FirstChild("GrpcConfig");
     if(!grpcConfigNode.IsNull())
     {
       m_grpcConfig = grpcConfigNode;
       m_grpcConfigHasBeenSet = true;
+       m_grpcConfigHasBeenSet = true;
     }
   }
 

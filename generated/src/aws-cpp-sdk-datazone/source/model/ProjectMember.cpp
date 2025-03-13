@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ProjectMember::ProjectMember() : 
-    m_designation(UserDesignation::NOT_SET),
-    m_designationHasBeenSet(false),
-    m_memberDetailsHasBeenSet(false)
-{
-}
-
 ProjectMember::ProjectMember(JsonView jsonValue)
-  : ProjectMember()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProjectMember& ProjectMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("designation"))
   {
     m_designation = UserDesignationMapper::GetUserDesignationForName(jsonValue.GetString("designation"));
-
     m_designationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memberDetails"))
   {
     m_memberDetails = jsonValue.GetObject("memberDetails");
-
     m_memberDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

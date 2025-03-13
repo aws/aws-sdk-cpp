@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-Rule::Rule() : 
-    m_type(RuleType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -49,7 +39,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

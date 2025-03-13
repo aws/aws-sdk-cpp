@@ -13,16 +13,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDeploymentRequest::StopDeploymentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_deploymentNumber(0),
-    m_deploymentNumberHasBeenSet(false),
-    m_allowRevert(false),
-    m_allowRevertHasBeenSet(false)
-{
-}
-
 Aws::String StopDeploymentRequest::SerializePayload() const
 {
   return {};

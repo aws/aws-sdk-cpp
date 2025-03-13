@@ -49,7 +49,7 @@ namespace Model
   class DocumentAttributeBoostingConfiguration
   {
   public:
-    AWS_QBUSINESS_API DocumentAttributeBoostingConfiguration();
+    AWS_QBUSINESS_API DocumentAttributeBoostingConfiguration() = default;
     AWS_QBUSINESS_API DocumentAttributeBoostingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API DocumentAttributeBoostingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,12 +60,12 @@ namespace Model
      * <p>Provides information on boosting <code>NUMBER</code> type document
      * attributes.</p>
      */
-    inline const NumberAttributeBoostingConfiguration& GetNumberConfiguration() const{ return m_numberConfiguration; }
+    inline const NumberAttributeBoostingConfiguration& GetNumberConfiguration() const { return m_numberConfiguration; }
     inline bool NumberConfigurationHasBeenSet() const { return m_numberConfigurationHasBeenSet; }
-    inline void SetNumberConfiguration(const NumberAttributeBoostingConfiguration& value) { m_numberConfigurationHasBeenSet = true; m_numberConfiguration = value; }
-    inline void SetNumberConfiguration(NumberAttributeBoostingConfiguration&& value) { m_numberConfigurationHasBeenSet = true; m_numberConfiguration = std::move(value); }
-    inline DocumentAttributeBoostingConfiguration& WithNumberConfiguration(const NumberAttributeBoostingConfiguration& value) { SetNumberConfiguration(value); return *this;}
-    inline DocumentAttributeBoostingConfiguration& WithNumberConfiguration(NumberAttributeBoostingConfiguration&& value) { SetNumberConfiguration(std::move(value)); return *this;}
+    template<typename NumberConfigurationT = NumberAttributeBoostingConfiguration>
+    void SetNumberConfiguration(NumberConfigurationT&& value) { m_numberConfigurationHasBeenSet = true; m_numberConfiguration = std::forward<NumberConfigurationT>(value); }
+    template<typename NumberConfigurationT = NumberAttributeBoostingConfiguration>
+    DocumentAttributeBoostingConfiguration& WithNumberConfiguration(NumberConfigurationT&& value) { SetNumberConfiguration(std::forward<NumberConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>Provides information on boosting <code>STRING</code> type document
      * attributes.</p>
      */
-    inline const StringAttributeBoostingConfiguration& GetStringConfiguration() const{ return m_stringConfiguration; }
+    inline const StringAttributeBoostingConfiguration& GetStringConfiguration() const { return m_stringConfiguration; }
     inline bool StringConfigurationHasBeenSet() const { return m_stringConfigurationHasBeenSet; }
-    inline void SetStringConfiguration(const StringAttributeBoostingConfiguration& value) { m_stringConfigurationHasBeenSet = true; m_stringConfiguration = value; }
-    inline void SetStringConfiguration(StringAttributeBoostingConfiguration&& value) { m_stringConfigurationHasBeenSet = true; m_stringConfiguration = std::move(value); }
-    inline DocumentAttributeBoostingConfiguration& WithStringConfiguration(const StringAttributeBoostingConfiguration& value) { SetStringConfiguration(value); return *this;}
-    inline DocumentAttributeBoostingConfiguration& WithStringConfiguration(StringAttributeBoostingConfiguration&& value) { SetStringConfiguration(std::move(value)); return *this;}
+    template<typename StringConfigurationT = StringAttributeBoostingConfiguration>
+    void SetStringConfiguration(StringConfigurationT&& value) { m_stringConfigurationHasBeenSet = true; m_stringConfiguration = std::forward<StringConfigurationT>(value); }
+    template<typename StringConfigurationT = StringAttributeBoostingConfiguration>
+    DocumentAttributeBoostingConfiguration& WithStringConfiguration(StringConfigurationT&& value) { SetStringConfiguration(std::forward<StringConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * <p>Provides information on boosting <code>DATE</code> type document
      * attributes.</p>
      */
-    inline const DateAttributeBoostingConfiguration& GetDateConfiguration() const{ return m_dateConfiguration; }
+    inline const DateAttributeBoostingConfiguration& GetDateConfiguration() const { return m_dateConfiguration; }
     inline bool DateConfigurationHasBeenSet() const { return m_dateConfigurationHasBeenSet; }
-    inline void SetDateConfiguration(const DateAttributeBoostingConfiguration& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = value; }
-    inline void SetDateConfiguration(DateAttributeBoostingConfiguration&& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = std::move(value); }
-    inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(const DateAttributeBoostingConfiguration& value) { SetDateConfiguration(value); return *this;}
-    inline DocumentAttributeBoostingConfiguration& WithDateConfiguration(DateAttributeBoostingConfiguration&& value) { SetDateConfiguration(std::move(value)); return *this;}
+    template<typename DateConfigurationT = DateAttributeBoostingConfiguration>
+    void SetDateConfiguration(DateConfigurationT&& value) { m_dateConfigurationHasBeenSet = true; m_dateConfiguration = std::forward<DateConfigurationT>(value); }
+    template<typename DateConfigurationT = DateAttributeBoostingConfiguration>
+    DocumentAttributeBoostingConfiguration& WithDateConfiguration(DateConfigurationT&& value) { SetDateConfiguration(std::forward<DateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +99,12 @@ namespace Model
      * <p>Provides information on boosting <code>STRING_LIST</code> type document
      * attributes.</p>
      */
-    inline const StringListAttributeBoostingConfiguration& GetStringListConfiguration() const{ return m_stringListConfiguration; }
+    inline const StringListAttributeBoostingConfiguration& GetStringListConfiguration() const { return m_stringListConfiguration; }
     inline bool StringListConfigurationHasBeenSet() const { return m_stringListConfigurationHasBeenSet; }
-    inline void SetStringListConfiguration(const StringListAttributeBoostingConfiguration& value) { m_stringListConfigurationHasBeenSet = true; m_stringListConfiguration = value; }
-    inline void SetStringListConfiguration(StringListAttributeBoostingConfiguration&& value) { m_stringListConfigurationHasBeenSet = true; m_stringListConfiguration = std::move(value); }
-    inline DocumentAttributeBoostingConfiguration& WithStringListConfiguration(const StringListAttributeBoostingConfiguration& value) { SetStringListConfiguration(value); return *this;}
-    inline DocumentAttributeBoostingConfiguration& WithStringListConfiguration(StringListAttributeBoostingConfiguration&& value) { SetStringListConfiguration(std::move(value)); return *this;}
+    template<typename StringListConfigurationT = StringListAttributeBoostingConfiguration>
+    void SetStringListConfiguration(StringListConfigurationT&& value) { m_stringListConfigurationHasBeenSet = true; m_stringListConfiguration = std::forward<StringListConfigurationT>(value); }
+    template<typename StringListConfigurationT = StringListAttributeBoostingConfiguration>
+    DocumentAttributeBoostingConfiguration& WithStringListConfiguration(StringListConfigurationT&& value) { SetStringListConfiguration(std::forward<StringListConfigurationT>(value)); return *this;}
     ///@}
   private:
 

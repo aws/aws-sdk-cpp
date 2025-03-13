@@ -21,7 +21,7 @@ namespace Model
   class UpdateServiceSettingsRequest : public SSMQuickSetupRequest
   {
   public:
-    AWS_SSMQUICKSETUP_API UpdateServiceSettingsRequest();
+    AWS_SSMQUICKSETUP_API UpdateServiceSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The IAM role used to enable Explorer.</p>
      */
-    inline const Aws::String& GetExplorerEnablingRoleArn() const{ return m_explorerEnablingRoleArn; }
+    inline const Aws::String& GetExplorerEnablingRoleArn() const { return m_explorerEnablingRoleArn; }
     inline bool ExplorerEnablingRoleArnHasBeenSet() const { return m_explorerEnablingRoleArnHasBeenSet; }
-    inline void SetExplorerEnablingRoleArn(const Aws::String& value) { m_explorerEnablingRoleArnHasBeenSet = true; m_explorerEnablingRoleArn = value; }
-    inline void SetExplorerEnablingRoleArn(Aws::String&& value) { m_explorerEnablingRoleArnHasBeenSet = true; m_explorerEnablingRoleArn = std::move(value); }
-    inline void SetExplorerEnablingRoleArn(const char* value) { m_explorerEnablingRoleArnHasBeenSet = true; m_explorerEnablingRoleArn.assign(value); }
-    inline UpdateServiceSettingsRequest& WithExplorerEnablingRoleArn(const Aws::String& value) { SetExplorerEnablingRoleArn(value); return *this;}
-    inline UpdateServiceSettingsRequest& WithExplorerEnablingRoleArn(Aws::String&& value) { SetExplorerEnablingRoleArn(std::move(value)); return *this;}
-    inline UpdateServiceSettingsRequest& WithExplorerEnablingRoleArn(const char* value) { SetExplorerEnablingRoleArn(value); return *this;}
+    template<typename ExplorerEnablingRoleArnT = Aws::String>
+    void SetExplorerEnablingRoleArn(ExplorerEnablingRoleArnT&& value) { m_explorerEnablingRoleArnHasBeenSet = true; m_explorerEnablingRoleArn = std::forward<ExplorerEnablingRoleArnT>(value); }
+    template<typename ExplorerEnablingRoleArnT = Aws::String>
+    UpdateServiceSettingsRequest& WithExplorerEnablingRoleArn(ExplorerEnablingRoleArnT&& value) { SetExplorerEnablingRoleArn(std::forward<ExplorerEnablingRoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixList::PrefixList() : 
-    m_cidrsHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false)
-{
-}
-
 PrefixList::PrefixList(const XmlNode& xmlNode)
-  : PrefixList()
 {
   *this = xmlNode;
 }
@@ -43,25 +35,28 @@ PrefixList& PrefixList::operator =(const XmlNode& xmlNode)
     if(!cidrsNode.IsNull())
     {
       XmlNode cidrsMember = cidrsNode.FirstChild("item");
+      m_cidrsHasBeenSet = !cidrsMember.IsNull();
       while(!cidrsMember.IsNull())
       {
         m_cidrs.push_back(cidrsMember.GetText());
         cidrsMember = cidrsMember.NextNode("item");
       }
 
-      m_cidrsHasBeenSet = true;
+       m_cidrsHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode prefixListNameNode = resultNode.FirstChild("prefixListName");
     if(!prefixListNameNode.IsNull())
     {
       m_prefixListName = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListNameNode.GetText());
       m_prefixListNameHasBeenSet = true;
+       m_prefixListNameHasBeenSet = true;
     }
   }
 

@@ -12,11 +12,6 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNotificationRuleRequest::DescribeNotificationRuleRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNotificationRuleRequest::SerializePayload() const
 {
   JsonValue payload;

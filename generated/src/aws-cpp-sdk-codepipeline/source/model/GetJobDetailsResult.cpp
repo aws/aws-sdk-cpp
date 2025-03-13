@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJobDetailsResult::GetJobDetailsResult()
-{
-}
-
 GetJobDetailsResult::GetJobDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetJobDetailsResult& GetJobDetailsResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("jobDetails"))
   {
     m_jobDetails = jsonValue.GetObject("jobDetails");
-
+    m_jobDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

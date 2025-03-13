@@ -18,15 +18,7 @@ namespace GameLiftStreams
 namespace Model
 {
 
-RuntimeEnvironment::RuntimeEnvironment() : 
-    m_type(RuntimeEnvironmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 RuntimeEnvironment::RuntimeEnvironment(JsonView jsonValue)
-  : RuntimeEnvironment()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RuntimeEnvironment& RuntimeEnvironment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RuntimeEnvironmentTypeMapper::GetRuntimeEnvironmentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

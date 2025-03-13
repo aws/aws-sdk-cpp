@@ -30,7 +30,7 @@ namespace Model
   class JobDetails
   {
   public:
-    AWS_TRANSLATE_API JobDetails();
+    AWS_TRANSLATE_API JobDetails() = default;
     AWS_TRANSLATE_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The number of documents successfully processed during a translation job.</p>
      */
-    inline int GetTranslatedDocumentsCount() const{ return m_translatedDocumentsCount; }
+    inline int GetTranslatedDocumentsCount() const { return m_translatedDocumentsCount; }
     inline bool TranslatedDocumentsCountHasBeenSet() const { return m_translatedDocumentsCountHasBeenSet; }
     inline void SetTranslatedDocumentsCount(int value) { m_translatedDocumentsCountHasBeenSet = true; m_translatedDocumentsCount = value; }
     inline JobDetails& WithTranslatedDocumentsCount(int value) { SetTranslatedDocumentsCount(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
      * <p>The number of documents that could not be processed during a translation
      * job.</p>
      */
-    inline int GetDocumentsWithErrorsCount() const{ return m_documentsWithErrorsCount; }
+    inline int GetDocumentsWithErrorsCount() const { return m_documentsWithErrorsCount; }
     inline bool DocumentsWithErrorsCountHasBeenSet() const { return m_documentsWithErrorsCountHasBeenSet; }
     inline void SetDocumentsWithErrorsCount(int value) { m_documentsWithErrorsCountHasBeenSet = true; m_documentsWithErrorsCount = value; }
     inline JobDetails& WithDocumentsWithErrorsCount(int value) { SetDocumentsWithErrorsCount(value); return *this;}
@@ -61,20 +61,20 @@ namespace Model
     /**
      * <p>The number of documents used as input in a translation job.</p>
      */
-    inline int GetInputDocumentsCount() const{ return m_inputDocumentsCount; }
+    inline int GetInputDocumentsCount() const { return m_inputDocumentsCount; }
     inline bool InputDocumentsCountHasBeenSet() const { return m_inputDocumentsCountHasBeenSet; }
     inline void SetInputDocumentsCount(int value) { m_inputDocumentsCountHasBeenSet = true; m_inputDocumentsCount = value; }
     inline JobDetails& WithInputDocumentsCount(int value) { SetInputDocumentsCount(value); return *this;}
     ///@}
   private:
 
-    int m_translatedDocumentsCount;
+    int m_translatedDocumentsCount{0};
     bool m_translatedDocumentsCountHasBeenSet = false;
 
-    int m_documentsWithErrorsCount;
+    int m_documentsWithErrorsCount{0};
     bool m_documentsWithErrorsCountHasBeenSet = false;
 
-    int m_inputDocumentsCount;
+    int m_inputDocumentsCount{0};
     bool m_inputDocumentsCountHasBeenSet = false;
   };
 

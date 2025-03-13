@@ -12,18 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfirmForgotPasswordRequest::ConfirmForgotPasswordRequest() : 
-    m_clientIdHasBeenSet(false),
-    m_secretHashHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_confirmationCodeHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_analyticsMetadataHasBeenSet(false),
-    m_userContextDataHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String ConfirmForgotPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

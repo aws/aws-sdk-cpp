@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-Range::Range() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Range::Range(const XmlNode& xmlNode)
-  : Range()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Range& Range::operator =(const XmlNode& xmlNode)
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
       m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
+       m_endTimeHasBeenSet = true;
     }
   }
 

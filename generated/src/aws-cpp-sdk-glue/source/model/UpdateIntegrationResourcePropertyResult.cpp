@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateIntegrationResourcePropertyResult::UpdateIntegrationResourcePropertyResult()
-{
-}
-
 UpdateIntegrationResourcePropertyResult::UpdateIntegrationResourcePropertyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateIntegrationResourcePropertyResult& UpdateIntegrationResourcePropertyResult
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceProcessingProperties"))
   {
     m_sourceProcessingProperties = jsonValue.GetObject("SourceProcessingProperties");
-
+    m_sourceProcessingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetProcessingProperties"))
   {
     m_targetProcessingProperties = jsonValue.GetObject("TargetProcessingProperties");
-
+    m_targetProcessingPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

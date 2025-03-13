@@ -41,7 +41,7 @@ namespace Model
   class ServiceConnectClientAlias
   {
   public:
-    AWS_ECS_API ServiceConnectClientAlias();
+    AWS_ECS_API ServiceConnectClientAlias() = default;
     AWS_ECS_API ServiceConnectClientAlias(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceConnectClientAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,7 +56,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline ServiceConnectClientAlias& WithPort(int value) { SetPort(value); return *this;}
@@ -80,18 +80,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline ServiceConnectClientAlias& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline ServiceConnectClientAlias& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline ServiceConnectClientAlias& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    ServiceConnectClientAlias& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_dnsName;

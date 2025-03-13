@@ -25,7 +25,7 @@ namespace Model
   class ImportResourcesToDraftAppVersionRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionRequest();
+    AWS_RESILIENCEHUB_API ImportResourcesToDraftAppVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline ImportResourcesToDraftAppVersionRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ImportResourcesToDraftAppVersionRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,14 @@ namespace Model
      * <p>The input sources of the Amazon Elastic Kubernetes Service resources you need
      * to import.</p>
      */
-    inline const Aws::Vector<EksSource>& GetEksSources() const{ return m_eksSources; }
+    inline const Aws::Vector<EksSource>& GetEksSources() const { return m_eksSources; }
     inline bool EksSourcesHasBeenSet() const { return m_eksSourcesHasBeenSet; }
-    inline void SetEksSources(const Aws::Vector<EksSource>& value) { m_eksSourcesHasBeenSet = true; m_eksSources = value; }
-    inline void SetEksSources(Aws::Vector<EksSource>&& value) { m_eksSourcesHasBeenSet = true; m_eksSources = std::move(value); }
-    inline ImportResourcesToDraftAppVersionRequest& WithEksSources(const Aws::Vector<EksSource>& value) { SetEksSources(value); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& WithEksSources(Aws::Vector<EksSource>&& value) { SetEksSources(std::move(value)); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& AddEksSources(const EksSource& value) { m_eksSourcesHasBeenSet = true; m_eksSources.push_back(value); return *this; }
-    inline ImportResourcesToDraftAppVersionRequest& AddEksSources(EksSource&& value) { m_eksSourcesHasBeenSet = true; m_eksSources.push_back(std::move(value)); return *this; }
+    template<typename EksSourcesT = Aws::Vector<EksSource>>
+    void SetEksSources(EksSourcesT&& value) { m_eksSourcesHasBeenSet = true; m_eksSources = std::forward<EksSourcesT>(value); }
+    template<typename EksSourcesT = Aws::Vector<EksSource>>
+    ImportResourcesToDraftAppVersionRequest& WithEksSources(EksSourcesT&& value) { SetEksSources(std::forward<EksSourcesT>(value)); return *this;}
+    template<typename EksSourcesT = EksSource>
+    ImportResourcesToDraftAppVersionRequest& AddEksSources(EksSourcesT&& value) { m_eksSourcesHasBeenSet = true; m_eksSources.emplace_back(std::forward<EksSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,41 +74,38 @@ namespace Model
      * <p>The import strategy you would like to set to import resources into Resilience
      * Hub application.</p>
      */
-    inline const ResourceImportStrategyType& GetImportStrategy() const{ return m_importStrategy; }
+    inline ResourceImportStrategyType GetImportStrategy() const { return m_importStrategy; }
     inline bool ImportStrategyHasBeenSet() const { return m_importStrategyHasBeenSet; }
-    inline void SetImportStrategy(const ResourceImportStrategyType& value) { m_importStrategyHasBeenSet = true; m_importStrategy = value; }
-    inline void SetImportStrategy(ResourceImportStrategyType&& value) { m_importStrategyHasBeenSet = true; m_importStrategy = std::move(value); }
-    inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(const ResourceImportStrategyType& value) { SetImportStrategy(value); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(ResourceImportStrategyType&& value) { SetImportStrategy(std::move(value)); return *this;}
+    inline void SetImportStrategy(ResourceImportStrategyType value) { m_importStrategyHasBeenSet = true; m_importStrategy = value; }
+    inline ImportResourcesToDraftAppVersionRequest& WithImportStrategy(ResourceImportStrategyType value) { SetImportStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) for the resources.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceArns() const{ return m_sourceArns; }
+    inline const Aws::Vector<Aws::String>& GetSourceArns() const { return m_sourceArns; }
     inline bool SourceArnsHasBeenSet() const { return m_sourceArnsHasBeenSet; }
-    inline void SetSourceArns(const Aws::Vector<Aws::String>& value) { m_sourceArnsHasBeenSet = true; m_sourceArns = value; }
-    inline void SetSourceArns(Aws::Vector<Aws::String>&& value) { m_sourceArnsHasBeenSet = true; m_sourceArns = std::move(value); }
-    inline ImportResourcesToDraftAppVersionRequest& WithSourceArns(const Aws::Vector<Aws::String>& value) { SetSourceArns(value); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& WithSourceArns(Aws::Vector<Aws::String>&& value) { SetSourceArns(std::move(value)); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(const Aws::String& value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(value); return *this; }
-    inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(Aws::String&& value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(std::move(value)); return *this; }
-    inline ImportResourcesToDraftAppVersionRequest& AddSourceArns(const char* value) { m_sourceArnsHasBeenSet = true; m_sourceArns.push_back(value); return *this; }
+    template<typename SourceArnsT = Aws::Vector<Aws::String>>
+    void SetSourceArns(SourceArnsT&& value) { m_sourceArnsHasBeenSet = true; m_sourceArns = std::forward<SourceArnsT>(value); }
+    template<typename SourceArnsT = Aws::Vector<Aws::String>>
+    ImportResourcesToDraftAppVersionRequest& WithSourceArns(SourceArnsT&& value) { SetSourceArns(std::forward<SourceArnsT>(value)); return *this;}
+    template<typename SourceArnsT = Aws::String>
+    ImportResourcesToDraftAppVersionRequest& AddSourceArns(SourceArnsT&& value) { m_sourceArnsHasBeenSet = true; m_sourceArns.emplace_back(std::forward<SourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> A list of terraform file s3 URLs you need to import. </p>
      */
-    inline const Aws::Vector<TerraformSource>& GetTerraformSources() const{ return m_terraformSources; }
+    inline const Aws::Vector<TerraformSource>& GetTerraformSources() const { return m_terraformSources; }
     inline bool TerraformSourcesHasBeenSet() const { return m_terraformSourcesHasBeenSet; }
-    inline void SetTerraformSources(const Aws::Vector<TerraformSource>& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources = value; }
-    inline void SetTerraformSources(Aws::Vector<TerraformSource>&& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources = std::move(value); }
-    inline ImportResourcesToDraftAppVersionRequest& WithTerraformSources(const Aws::Vector<TerraformSource>& value) { SetTerraformSources(value); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& WithTerraformSources(Aws::Vector<TerraformSource>&& value) { SetTerraformSources(std::move(value)); return *this;}
-    inline ImportResourcesToDraftAppVersionRequest& AddTerraformSources(const TerraformSource& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources.push_back(value); return *this; }
-    inline ImportResourcesToDraftAppVersionRequest& AddTerraformSources(TerraformSource&& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources.push_back(std::move(value)); return *this; }
+    template<typename TerraformSourcesT = Aws::Vector<TerraformSource>>
+    void SetTerraformSources(TerraformSourcesT&& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources = std::forward<TerraformSourcesT>(value); }
+    template<typename TerraformSourcesT = Aws::Vector<TerraformSource>>
+    ImportResourcesToDraftAppVersionRequest& WithTerraformSources(TerraformSourcesT&& value) { SetTerraformSources(std::forward<TerraformSourcesT>(value)); return *this;}
+    template<typename TerraformSourcesT = TerraformSource>
+    ImportResourcesToDraftAppVersionRequest& AddTerraformSources(TerraformSourcesT&& value) { m_terraformSourcesHasBeenSet = true; m_terraformSources.emplace_back(std::forward<TerraformSourcesT>(value)); return *this; }
     ///@}
   private:
 
@@ -120,7 +115,7 @@ namespace Model
     Aws::Vector<EksSource> m_eksSources;
     bool m_eksSourcesHasBeenSet = false;
 
-    ResourceImportStrategyType m_importStrategy;
+    ResourceImportStrategyType m_importStrategy{ResourceImportStrategyType::NOT_SET};
     bool m_importStrategyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceArns;

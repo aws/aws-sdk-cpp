@@ -21,7 +21,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public ResourceGroupsRequest
   {
   public:
-    AWS_RESOURCEGROUPS_API UpdateAccountSettingsRequest();
+    AWS_RESOURCEGROUPS_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,16 +39,14 @@ namespace Model
      * lifecycle events</a> on or off.</p> <p>You can't turn on group lifecycle events
      * if your resource groups quota is greater than 2,000. </p>
      */
-    inline const GroupLifecycleEventsDesiredStatus& GetGroupLifecycleEventsDesiredStatus() const{ return m_groupLifecycleEventsDesiredStatus; }
+    inline GroupLifecycleEventsDesiredStatus GetGroupLifecycleEventsDesiredStatus() const { return m_groupLifecycleEventsDesiredStatus; }
     inline bool GroupLifecycleEventsDesiredStatusHasBeenSet() const { return m_groupLifecycleEventsDesiredStatusHasBeenSet; }
-    inline void SetGroupLifecycleEventsDesiredStatus(const GroupLifecycleEventsDesiredStatus& value) { m_groupLifecycleEventsDesiredStatusHasBeenSet = true; m_groupLifecycleEventsDesiredStatus = value; }
-    inline void SetGroupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus&& value) { m_groupLifecycleEventsDesiredStatusHasBeenSet = true; m_groupLifecycleEventsDesiredStatus = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithGroupLifecycleEventsDesiredStatus(const GroupLifecycleEventsDesiredStatus& value) { SetGroupLifecycleEventsDesiredStatus(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithGroupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus&& value) { SetGroupLifecycleEventsDesiredStatus(std::move(value)); return *this;}
+    inline void SetGroupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus value) { m_groupLifecycleEventsDesiredStatusHasBeenSet = true; m_groupLifecycleEventsDesiredStatus = value; }
+    inline UpdateAccountSettingsRequest& WithGroupLifecycleEventsDesiredStatus(GroupLifecycleEventsDesiredStatus value) { SetGroupLifecycleEventsDesiredStatus(value); return *this;}
     ///@}
   private:
 
-    GroupLifecycleEventsDesiredStatus m_groupLifecycleEventsDesiredStatus;
+    GroupLifecycleEventsDesiredStatus m_groupLifecycleEventsDesiredStatus{GroupLifecycleEventsDesiredStatus::NOT_SET};
     bool m_groupLifecycleEventsDesiredStatusHasBeenSet = false;
   };
 

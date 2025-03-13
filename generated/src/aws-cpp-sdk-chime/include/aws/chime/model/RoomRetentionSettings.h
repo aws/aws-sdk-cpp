@@ -30,7 +30,7 @@ namespace Model
   class RoomRetentionSettings
   {
   public:
-    AWS_CHIME_API RoomRetentionSettings();
+    AWS_CHIME_API RoomRetentionSettings() = default;
     AWS_CHIME_API RoomRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API RoomRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of days for which to retain chat-room messages.</p>
      */
-    inline int GetRetentionDays() const{ return m_retentionDays; }
+    inline int GetRetentionDays() const { return m_retentionDays; }
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
     inline RoomRetentionSettings& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
     ///@}
   private:
 
-    int m_retentionDays;
+    int m_retentionDays{0};
     bool m_retentionDaysHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class ComponentMatchScores
   {
   public:
-    AWS_GEOPLACES_API ComponentMatchScores();
+    AWS_GEOPLACES_API ComponentMatchScores() = default;
     AWS_GEOPLACES_API ComponentMatchScores(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API ComponentMatchScores& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Indicates the starting and ending index of the title in the text query that
      * match the found title. </p>
      */
-    inline double GetTitle() const{ return m_title; }
+    inline double GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
     inline void SetTitle(double value) { m_titleHasBeenSet = true; m_title = value; }
     inline ComponentMatchScores& WithTitle(double value) { SetTitle(value); return *this;}
@@ -54,16 +54,16 @@ namespace Model
     /**
      * <p>The place's address.</p>
      */
-    inline const AddressComponentMatchScores& GetAddress() const{ return m_address; }
+    inline const AddressComponentMatchScores& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const AddressComponentMatchScores& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(AddressComponentMatchScores&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline ComponentMatchScores& WithAddress(const AddressComponentMatchScores& value) { SetAddress(value); return *this;}
-    inline ComponentMatchScores& WithAddress(AddressComponentMatchScores&& value) { SetAddress(std::move(value)); return *this;}
+    template<typename AddressT = AddressComponentMatchScores>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = AddressComponentMatchScores>
+    ComponentMatchScores& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
   private:
 
-    double m_title;
+    double m_title{0.0};
     bool m_titleHasBeenSet = false;
 
     AddressComponentMatchScores m_address;

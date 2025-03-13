@@ -29,7 +29,7 @@ namespace Model
   class ListTestGridSessionsResult
   {
   public:
-    AWS_DEVICEFARM_API ListTestGridSessionsResult();
+    AWS_DEVICEFARM_API ListTestGridSessionsResult() = default;
     AWS_DEVICEFARM_API ListTestGridSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API ListTestGridSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The sessions that match the criteria in a <a>ListTestGridSessionsRequest</a>.
      * </p>
      */
-    inline const Aws::Vector<TestGridSession>& GetTestGridSessions() const{ return m_testGridSessions; }
-    inline void SetTestGridSessions(const Aws::Vector<TestGridSession>& value) { m_testGridSessions = value; }
-    inline void SetTestGridSessions(Aws::Vector<TestGridSession>&& value) { m_testGridSessions = std::move(value); }
-    inline ListTestGridSessionsResult& WithTestGridSessions(const Aws::Vector<TestGridSession>& value) { SetTestGridSessions(value); return *this;}
-    inline ListTestGridSessionsResult& WithTestGridSessions(Aws::Vector<TestGridSession>&& value) { SetTestGridSessions(std::move(value)); return *this;}
-    inline ListTestGridSessionsResult& AddTestGridSessions(const TestGridSession& value) { m_testGridSessions.push_back(value); return *this; }
-    inline ListTestGridSessionsResult& AddTestGridSessions(TestGridSession&& value) { m_testGridSessions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TestGridSession>& GetTestGridSessions() const { return m_testGridSessions; }
+    template<typename TestGridSessionsT = Aws::Vector<TestGridSession>>
+    void SetTestGridSessions(TestGridSessionsT&& value) { m_testGridSessionsHasBeenSet = true; m_testGridSessions = std::forward<TestGridSessionsT>(value); }
+    template<typename TestGridSessionsT = Aws::Vector<TestGridSession>>
+    ListTestGridSessionsResult& WithTestGridSessions(TestGridSessionsT&& value) { SetTestGridSessions(std::forward<TestGridSessionsT>(value)); return *this;}
+    template<typename TestGridSessionsT = TestGridSession>
+    ListTestGridSessionsResult& AddTestGridSessions(TestGridSessionsT&& value) { m_testGridSessionsHasBeenSet = true; m_testGridSessions.emplace_back(std::forward<TestGridSessionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTestGridSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTestGridSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTestGridSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTestGridSessionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTestGridSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTestGridSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTestGridSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTestGridSessionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TestGridSession> m_testGridSessions;
+    bool m_testGridSessionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-IPSetReference::IPSetReference() : 
-    m_referenceArnHasBeenSet(false)
-{
-}
-
 IPSetReference::IPSetReference(JsonView jsonValue)
-  : IPSetReference()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IPSetReference& IPSetReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReferenceArn"))
   {
     m_referenceArn = jsonValue.GetString("ReferenceArn");
-
     m_referenceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

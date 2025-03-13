@@ -24,7 +24,7 @@ namespace Model
   class CreateAppMonitorRequest : public CloudWatchRUMRequest
   {
   public:
-    AWS_CLOUDWATCHRUM_API CreateAppMonitorRequest();
+    AWS_CLOUDWATCHRUM_API CreateAppMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,12 @@ namespace Model
      * this argument, the sample rate used for RUM is set to 10% of the user
      * sessions.</p>
      */
-    inline const AppMonitorConfiguration& GetAppMonitorConfiguration() const{ return m_appMonitorConfiguration; }
+    inline const AppMonitorConfiguration& GetAppMonitorConfiguration() const { return m_appMonitorConfiguration; }
     inline bool AppMonitorConfigurationHasBeenSet() const { return m_appMonitorConfigurationHasBeenSet; }
-    inline void SetAppMonitorConfiguration(const AppMonitorConfiguration& value) { m_appMonitorConfigurationHasBeenSet = true; m_appMonitorConfiguration = value; }
-    inline void SetAppMonitorConfiguration(AppMonitorConfiguration&& value) { m_appMonitorConfigurationHasBeenSet = true; m_appMonitorConfiguration = std::move(value); }
-    inline CreateAppMonitorRequest& WithAppMonitorConfiguration(const AppMonitorConfiguration& value) { SetAppMonitorConfiguration(value); return *this;}
-    inline CreateAppMonitorRequest& WithAppMonitorConfiguration(AppMonitorConfiguration&& value) { SetAppMonitorConfiguration(std::move(value)); return *this;}
+    template<typename AppMonitorConfigurationT = AppMonitorConfiguration>
+    void SetAppMonitorConfiguration(AppMonitorConfigurationT&& value) { m_appMonitorConfigurationHasBeenSet = true; m_appMonitorConfiguration = std::forward<AppMonitorConfigurationT>(value); }
+    template<typename AppMonitorConfigurationT = AppMonitorConfiguration>
+    CreateAppMonitorRequest& WithAppMonitorConfiguration(AppMonitorConfigurationT&& value) { SetAppMonitorConfiguration(std::forward<AppMonitorConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
      * custom events</a>.</p>
      */
-    inline const CustomEvents& GetCustomEvents() const{ return m_customEvents; }
+    inline const CustomEvents& GetCustomEvents() const { return m_customEvents; }
     inline bool CustomEventsHasBeenSet() const { return m_customEventsHasBeenSet; }
-    inline void SetCustomEvents(const CustomEvents& value) { m_customEventsHasBeenSet = true; m_customEvents = value; }
-    inline void SetCustomEvents(CustomEvents&& value) { m_customEventsHasBeenSet = true; m_customEvents = std::move(value); }
-    inline CreateAppMonitorRequest& WithCustomEvents(const CustomEvents& value) { SetCustomEvents(value); return *this;}
-    inline CreateAppMonitorRequest& WithCustomEvents(CustomEvents&& value) { SetCustomEvents(std::move(value)); return *this;}
+    template<typename CustomEventsT = CustomEvents>
+    void SetCustomEvents(CustomEventsT&& value) { m_customEventsHasBeenSet = true; m_customEvents = std::forward<CustomEventsT>(value); }
+    template<typename CustomEventsT = CustomEvents>
+    CreateAppMonitorRequest& WithCustomEvents(CustomEventsT&& value) { SetCustomEvents(std::forward<CustomEventsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +80,7 @@ namespace Model
      * more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p> <p>If
      * you omit this parameter, the default is <code>false</code>.</p>
      */
-    inline bool GetCwLogEnabled() const{ return m_cwLogEnabled; }
+    inline bool GetCwLogEnabled() const { return m_cwLogEnabled; }
     inline bool CwLogEnabledHasBeenSet() const { return m_cwLogEnabledHasBeenSet; }
     inline void SetCwLogEnabled(bool value) { m_cwLogEnabledHasBeenSet = true; m_cwLogEnabled = value; }
     inline CreateAppMonitorRequest& WithCwLogEnabled(bool value) { SetCwLogEnabled(value); return *this;}
@@ -91,28 +91,24 @@ namespace Model
      * <p>The top-level internet domain name for which your application has
      * administrative authority.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CreateAppMonitorRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CreateAppMonitorRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CreateAppMonitorRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CreateAppMonitorRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the app monitor.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAppMonitorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAppMonitorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAppMonitorRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAppMonitorRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,19 +123,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAppMonitorRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAppMonitorRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAppMonitorRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAppMonitorRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAppMonitorRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAppMonitorRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAppMonitorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAppMonitorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAppMonitorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAppMonitorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAppMonitorRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -149,7 +142,7 @@ namespace Model
     CustomEvents m_customEvents;
     bool m_customEventsHasBeenSet = false;
 
-    bool m_cwLogEnabled;
+    bool m_cwLogEnabled{false};
     bool m_cwLogEnabledHasBeenSet = false;
 
     Aws::String m_domain;

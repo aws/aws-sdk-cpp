@@ -18,13 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-CampaignFilters::CampaignFilters() : 
-    m_instanceIdFilterHasBeenSet(false)
-{
-}
-
 CampaignFilters::CampaignFilters(JsonView jsonValue)
-  : CampaignFilters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CampaignFilters& CampaignFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceIdFilter"))
   {
     m_instanceIdFilter = jsonValue.GetObject("instanceIdFilter");
-
     m_instanceIdFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

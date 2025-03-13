@@ -34,7 +34,7 @@ namespace Model
   class AnalysisRule
   {
   public:
-    AWS_ACCESSANALYZER_API AnalysisRule();
+    AWS_ACCESSANALYZER_API AnalysisRule() = default;
     AWS_ACCESSANALYZER_API AnalysisRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API AnalysisRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>A list of rules for the analyzer containing criteria to exclude from
      * analysis. Entities that meet the rule criteria will not generate findings.</p>
      */
-    inline const Aws::Vector<AnalysisRuleCriteria>& GetExclusions() const{ return m_exclusions; }
+    inline const Aws::Vector<AnalysisRuleCriteria>& GetExclusions() const { return m_exclusions; }
     inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
-    inline void SetExclusions(const Aws::Vector<AnalysisRuleCriteria>& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
-    inline void SetExclusions(Aws::Vector<AnalysisRuleCriteria>&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
-    inline AnalysisRule& WithExclusions(const Aws::Vector<AnalysisRuleCriteria>& value) { SetExclusions(value); return *this;}
-    inline AnalysisRule& WithExclusions(Aws::Vector<AnalysisRuleCriteria>&& value) { SetExclusions(std::move(value)); return *this;}
-    inline AnalysisRule& AddExclusions(const AnalysisRuleCriteria& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
-    inline AnalysisRule& AddExclusions(AnalysisRuleCriteria&& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(std::move(value)); return *this; }
+    template<typename ExclusionsT = Aws::Vector<AnalysisRuleCriteria>>
+    void SetExclusions(ExclusionsT&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::forward<ExclusionsT>(value); }
+    template<typename ExclusionsT = Aws::Vector<AnalysisRuleCriteria>>
+    AnalysisRule& WithExclusions(ExclusionsT&& value) { SetExclusions(std::forward<ExclusionsT>(value)); return *this;}
+    template<typename ExclusionsT = AnalysisRuleCriteria>
+    AnalysisRule& AddExclusions(ExclusionsT&& value) { m_exclusionsHasBeenSet = true; m_exclusions.emplace_back(std::forward<ExclusionsT>(value)); return *this; }
     ///@}
   private:
 

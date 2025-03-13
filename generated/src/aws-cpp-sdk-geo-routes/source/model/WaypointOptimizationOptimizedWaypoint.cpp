@@ -18,18 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationOptimizedWaypoint::WaypointOptimizationOptimizedWaypoint() : 
-    m_arrivalTimeHasBeenSet(false),
-    m_clusterIndex(0),
-    m_clusterIndexHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_positionHasBeenSet(false)
-{
-}
-
 WaypointOptimizationOptimizedWaypoint::WaypointOptimizationOptimizedWaypoint(JsonView jsonValue)
-  : WaypointOptimizationOptimizedWaypoint()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ WaypointOptimizationOptimizedWaypoint& WaypointOptimizationOptimizedWaypoint::op
   if(jsonValue.ValueExists("ArrivalTime"))
   {
     m_arrivalTime = jsonValue.GetString("ArrivalTime");
-
     m_arrivalTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterIndex"))
   {
     m_clusterIndex = jsonValue.GetInteger("ClusterIndex");
-
     m_clusterIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DepartureTime"))
   {
     m_departureTime = jsonValue.GetString("DepartureTime");
-
     m_departureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -73,7 +54,6 @@ WaypointOptimizationOptimizedWaypoint& WaypointOptimizationOptimizedWaypoint::op
     }
     m_positionHasBeenSet = true;
   }
-
   return *this;
 }
 

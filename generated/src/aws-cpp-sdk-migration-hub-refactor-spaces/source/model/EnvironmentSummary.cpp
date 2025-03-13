@@ -18,26 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-EnvironmentSummary::EnvironmentSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkFabricType(NetworkFabricType::NOT_SET),
-    m_networkFabricTypeHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_state(EnvironmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false)
-{
-}
-
 EnvironmentSummary::EnvironmentSummary(JsonView jsonValue)
-  : EnvironmentSummary()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentId"))
   {
     m_environmentId = jsonValue.GetString("EnvironmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFabricType"))
   {
     m_networkFabricType = NetworkFabricTypeMapper::GetNetworkFabricTypeForName(jsonValue.GetString("NetworkFabricType"));
-
     m_networkFabricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EnvironmentStateMapper::GetEnvironmentStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -123,14 +84,11 @@ EnvironmentSummary& EnvironmentSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayId"))
   {
     m_transitGatewayId = jsonValue.GetString("TransitGatewayId");
-
     m_transitGatewayIdHasBeenSet = true;
   }
-
   return *this;
 }
 

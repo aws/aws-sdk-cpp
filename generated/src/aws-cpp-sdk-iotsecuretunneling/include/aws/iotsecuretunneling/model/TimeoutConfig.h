@@ -29,7 +29,7 @@ namespace Model
   class TimeoutConfig
   {
   public:
-    AWS_IOTSECURETUNNELING_API TimeoutConfig();
+    AWS_IOTSECURETUNNELING_API TimeoutConfig() = default;
     AWS_IOTSECURETUNNELING_API TimeoutConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSECURETUNNELING_API TimeoutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are
      * from 1 minute to 12 hours (720 minutes) </p>
      */
-    inline int GetMaxLifetimeTimeoutMinutes() const{ return m_maxLifetimeTimeoutMinutes; }
+    inline int GetMaxLifetimeTimeoutMinutes() const { return m_maxLifetimeTimeoutMinutes; }
     inline bool MaxLifetimeTimeoutMinutesHasBeenSet() const { return m_maxLifetimeTimeoutMinutesHasBeenSet; }
     inline void SetMaxLifetimeTimeoutMinutes(int value) { m_maxLifetimeTimeoutMinutesHasBeenSet = true; m_maxLifetimeTimeoutMinutes = value; }
     inline TimeoutConfig& WithMaxLifetimeTimeoutMinutes(int value) { SetMaxLifetimeTimeoutMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_maxLifetimeTimeoutMinutes;
+    int m_maxLifetimeTimeoutMinutes{0};
     bool m_maxLifetimeTimeoutMinutesHasBeenSet = false;
   };
 

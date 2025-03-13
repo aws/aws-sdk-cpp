@@ -21,7 +21,7 @@ namespace Model
   class AttachDiskRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API AttachDiskRequest();
+    AWS_LIGHTSAIL_API AttachDiskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
-    inline const Aws::String& GetDiskName() const{ return m_diskName; }
+    inline const Aws::String& GetDiskName() const { return m_diskName; }
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
-    inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
-    inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
-    inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
-    inline AttachDiskRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
-    inline AttachDiskRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
-    inline AttachDiskRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
+    template<typename DiskNameT = Aws::String>
+    void SetDiskName(DiskNameT&& value) { m_diskNameHasBeenSet = true; m_diskName = std::forward<DiskNameT>(value); }
+    template<typename DiskNameT = Aws::String>
+    AttachDiskRequest& WithDiskName(DiskNameT&& value) { SetDiskName(std::forward<DiskNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,28 +51,24 @@ namespace Model
      * <p>The name of the Lightsail instance where you want to utilize the storage
      * disk.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline AttachDiskRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline AttachDiskRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline AttachDiskRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    AttachDiskRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
      */
-    inline const Aws::String& GetDiskPath() const{ return m_diskPath; }
+    inline const Aws::String& GetDiskPath() const { return m_diskPath; }
     inline bool DiskPathHasBeenSet() const { return m_diskPathHasBeenSet; }
-    inline void SetDiskPath(const Aws::String& value) { m_diskPathHasBeenSet = true; m_diskPath = value; }
-    inline void SetDiskPath(Aws::String&& value) { m_diskPathHasBeenSet = true; m_diskPath = std::move(value); }
-    inline void SetDiskPath(const char* value) { m_diskPathHasBeenSet = true; m_diskPath.assign(value); }
-    inline AttachDiskRequest& WithDiskPath(const Aws::String& value) { SetDiskPath(value); return *this;}
-    inline AttachDiskRequest& WithDiskPath(Aws::String&& value) { SetDiskPath(std::move(value)); return *this;}
-    inline AttachDiskRequest& WithDiskPath(const char* value) { SetDiskPath(value); return *this;}
+    template<typename DiskPathT = Aws::String>
+    void SetDiskPath(DiskPathT&& value) { m_diskPathHasBeenSet = true; m_diskPath = std::forward<DiskPathT>(value); }
+    template<typename DiskPathT = Aws::String>
+    AttachDiskRequest& WithDiskPath(DiskPathT&& value) { SetDiskPath(std::forward<DiskPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +77,7 @@ namespace Model
      * to a virtual computer. The default value is <code>False</code>.</p> 
      * <p>This value only applies to Lightsail for Research resources.</p> 
      */
-    inline bool GetAutoMounting() const{ return m_autoMounting; }
+    inline bool GetAutoMounting() const { return m_autoMounting; }
     inline bool AutoMountingHasBeenSet() const { return m_autoMountingHasBeenSet; }
     inline void SetAutoMounting(bool value) { m_autoMountingHasBeenSet = true; m_autoMounting = value; }
     inline AttachDiskRequest& WithAutoMounting(bool value) { SetAutoMounting(value); return *this;}
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_diskPath;
     bool m_diskPathHasBeenSet = false;
 
-    bool m_autoMounting;
+    bool m_autoMounting{false};
     bool m_autoMountingHasBeenSet = false;
   };
 

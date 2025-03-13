@@ -36,7 +36,7 @@ namespace Model
   class StorageMinimumTimeToLive
   {
   public:
-    AWS_IOTFLEETWISE_API StorageMinimumTimeToLive();
+    AWS_IOTFLEETWISE_API StorageMinimumTimeToLive() = default;
     AWS_IOTFLEETWISE_API StorageMinimumTimeToLive(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API StorageMinimumTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,27 @@ namespace Model
     /**
      * <p>The time increment type.</p>
      */
-    inline const StorageMinimumTimeToLiveUnit& GetUnit() const{ return m_unit; }
+    inline StorageMinimumTimeToLiveUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const StorageMinimumTimeToLiveUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(StorageMinimumTimeToLiveUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline StorageMinimumTimeToLive& WithUnit(const StorageMinimumTimeToLiveUnit& value) { SetUnit(value); return *this;}
-    inline StorageMinimumTimeToLive& WithUnit(StorageMinimumTimeToLiveUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(StorageMinimumTimeToLiveUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline StorageMinimumTimeToLive& WithUnit(StorageMinimumTimeToLiveUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum amount of time to store the data.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline StorageMinimumTimeToLive& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    StorageMinimumTimeToLiveUnit m_unit;
+    StorageMinimumTimeToLiveUnit m_unit{StorageMinimumTimeToLiveUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

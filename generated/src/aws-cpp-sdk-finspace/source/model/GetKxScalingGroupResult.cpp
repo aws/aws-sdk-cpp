@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetKxScalingGroupResult::GetKxScalingGroupResult() : 
-    m_status(KxScalingGroupStatus::NOT_SET)
-{
-}
-
 GetKxScalingGroupResult::GetKxScalingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetKxScalingGroupResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetKxScalingGroupResult& GetKxScalingGroupResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("scalingGroupName"))
   {
     m_scalingGroupName = jsonValue.GetString("scalingGroupName");
-
+    m_scalingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingGroupArn"))
   {
     m_scalingGroupArn = jsonValue.GetString("scalingGroupArn");
-
+    m_scalingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostType"))
   {
     m_hostType = jsonValue.GetString("hostType");
-
+    m_hostTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusters"))
   {
     Aws::Utils::Array<JsonView> clustersJsonList = jsonValue.GetArray("clusters");
@@ -56,44 +47,40 @@ GetKxScalingGroupResult& GetKxScalingGroupResult::operator =(const Aws::AmazonWe
     {
       m_clusters.push_back(clustersJsonList[clustersIndex].AsString());
     }
+    m_clustersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("availabilityZoneId");
-
+    m_availabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = KxScalingGroupStatusMapper::GetKxScalingGroupStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
+    m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
+    m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

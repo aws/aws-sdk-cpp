@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-RdsDbSnapshotAttributeValue::RdsDbSnapshotAttributeValue() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 RdsDbSnapshotAttributeValue::RdsDbSnapshotAttributeValue(JsonView jsonValue)
-  : RdsDbSnapshotAttributeValue()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RdsDbSnapshotAttributeValue& RdsDbSnapshotAttributeValue::operator =(JsonView js
     }
     m_accountIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

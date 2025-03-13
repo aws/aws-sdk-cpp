@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-TrendmicroConnectorProfileProperties::TrendmicroConnectorProfileProperties()
-{
-}
-
 TrendmicroConnectorProfileProperties::TrendmicroConnectorProfileProperties(JsonView jsonValue)
 {
   *this = jsonValue;

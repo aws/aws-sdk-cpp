@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-TaskOverride::TaskOverride() : 
-    m_containerOverridesHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_inferenceAcceleratorOverridesHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_ephemeralStorageHasBeenSet(false)
-{
-}
-
 TaskOverride::TaskOverride(JsonView jsonValue)
-  : TaskOverride()
 {
   *this = jsonValue;
 }
@@ -46,14 +34,11 @@ TaskOverride& TaskOverride::operator =(JsonView jsonValue)
     }
     m_containerOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetString("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceAcceleratorOverrides"))
   {
     Aws::Utils::Array<JsonView> inferenceAcceleratorOverridesJsonList = jsonValue.GetArray("inferenceAcceleratorOverrides");
@@ -63,35 +48,26 @@ TaskOverride& TaskOverride::operator =(JsonView jsonValue)
     }
     m_inferenceAcceleratorOverridesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("executionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetString("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskRoleArn"))
   {
     m_taskRoleArn = jsonValue.GetString("taskRoleArn");
-
     m_taskRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ephemeralStorage"))
   {
     m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
-
     m_ephemeralStorageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ScheduleRunResult
   {
   public:
-    AWS_DEVICEFARM_API ScheduleRunResult();
+    AWS_DEVICEFARM_API ScheduleRunResult() = default;
     AWS_DEVICEFARM_API ScheduleRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API ScheduleRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Information about the scheduled run.</p>
      */
-    inline const Run& GetRun() const{ return m_run; }
-    inline void SetRun(const Run& value) { m_run = value; }
-    inline void SetRun(Run&& value) { m_run = std::move(value); }
-    inline ScheduleRunResult& WithRun(const Run& value) { SetRun(value); return *this;}
-    inline ScheduleRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
+    inline const Run& GetRun() const { return m_run; }
+    template<typename RunT = Run>
+    void SetRun(RunT&& value) { m_runHasBeenSet = true; m_run = std::forward<RunT>(value); }
+    template<typename RunT = Run>
+    ScheduleRunResult& WithRun(RunT&& value) { SetRun(std::forward<RunT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ScheduleRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ScheduleRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ScheduleRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ScheduleRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Run m_run;
+    bool m_runHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

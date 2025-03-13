@@ -12,13 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccountSettingRequest::DeleteAccountSettingRequest() : 
-    m_name(SettingName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccountSettingRequest::SerializePayload() const
 {
   JsonValue payload;

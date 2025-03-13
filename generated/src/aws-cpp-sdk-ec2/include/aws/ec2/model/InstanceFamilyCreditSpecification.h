@@ -33,7 +33,7 @@ namespace Model
   class InstanceFamilyCreditSpecification
   {
   public:
-    AWS_EC2_API InstanceFamilyCreditSpecification();
+    AWS_EC2_API InstanceFamilyCreditSpecification() = default;
     AWS_EC2_API InstanceFamilyCreditSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceFamilyCreditSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The instance family.</p>
      */
-    inline const UnlimitedSupportedInstanceFamily& GetInstanceFamily() const{ return m_instanceFamily; }
+    inline UnlimitedSupportedInstanceFamily GetInstanceFamily() const { return m_instanceFamily; }
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-    inline void SetInstanceFamily(const UnlimitedSupportedInstanceFamily& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-    inline void SetInstanceFamily(UnlimitedSupportedInstanceFamily&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-    inline InstanceFamilyCreditSpecification& WithInstanceFamily(const UnlimitedSupportedInstanceFamily& value) { SetInstanceFamily(value); return *this;}
-    inline InstanceFamilyCreditSpecification& WithInstanceFamily(UnlimitedSupportedInstanceFamily&& value) { SetInstanceFamily(std::move(value)); return *this;}
+    inline void SetInstanceFamily(UnlimitedSupportedInstanceFamily value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+    inline InstanceFamilyCreditSpecification& WithInstanceFamily(UnlimitedSupportedInstanceFamily value) { SetInstanceFamily(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <p>The default credit option for CPU usage of the instance family. Valid values
      * are <code>standard</code> and <code>unlimited</code>.</p>
      */
-    inline const Aws::String& GetCpuCredits() const{ return m_cpuCredits; }
+    inline const Aws::String& GetCpuCredits() const { return m_cpuCredits; }
     inline bool CpuCreditsHasBeenSet() const { return m_cpuCreditsHasBeenSet; }
-    inline void SetCpuCredits(const Aws::String& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = value; }
-    inline void SetCpuCredits(Aws::String&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::move(value); }
-    inline void SetCpuCredits(const char* value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits.assign(value); }
-    inline InstanceFamilyCreditSpecification& WithCpuCredits(const Aws::String& value) { SetCpuCredits(value); return *this;}
-    inline InstanceFamilyCreditSpecification& WithCpuCredits(Aws::String&& value) { SetCpuCredits(std::move(value)); return *this;}
-    inline InstanceFamilyCreditSpecification& WithCpuCredits(const char* value) { SetCpuCredits(value); return *this;}
+    template<typename CpuCreditsT = Aws::String>
+    void SetCpuCredits(CpuCreditsT&& value) { m_cpuCreditsHasBeenSet = true; m_cpuCredits = std::forward<CpuCreditsT>(value); }
+    template<typename CpuCreditsT = Aws::String>
+    InstanceFamilyCreditSpecification& WithCpuCredits(CpuCreditsT&& value) { SetCpuCredits(std::forward<CpuCreditsT>(value)); return *this;}
     ///@}
   private:
 
-    UnlimitedSupportedInstanceFamily m_instanceFamily;
+    UnlimitedSupportedInstanceFamily m_instanceFamily{UnlimitedSupportedInstanceFamily::NOT_SET};
     bool m_instanceFamilyHasBeenSet = false;
 
     Aws::String m_cpuCredits;

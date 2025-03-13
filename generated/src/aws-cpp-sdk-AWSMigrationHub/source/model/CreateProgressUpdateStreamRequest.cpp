@@ -12,13 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProgressUpdateStreamRequest::CreateProgressUpdateStreamRequest() : 
-    m_progressUpdateStreamNameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateProgressUpdateStreamRequest::SerializePayload() const
 {
   JsonValue payload;

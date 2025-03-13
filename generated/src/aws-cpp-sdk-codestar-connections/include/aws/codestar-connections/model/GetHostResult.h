@@ -29,7 +29,7 @@ namespace Model
   class GetHostResult
   {
   public:
-    AWS_CODESTARCONNECTIONS_API GetHostResult();
+    AWS_CODESTARCONNECTIONS_API GetHostResult() = default;
     AWS_CODESTARCONNECTIONS_API GetHostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODESTARCONNECTIONS_API GetHostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The name of the requested host.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetHostResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetHostResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetHostResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetHostResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the requested host.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline GetHostResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline GetHostResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline GetHostResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    GetHostResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,60 +61,60 @@ namespace Model
      * <p>The provider type of the requested host, such as GitHub Enterprise
      * Server.</p>
      */
-    inline const ProviderType& GetProviderType() const{ return m_providerType; }
-    inline void SetProviderType(const ProviderType& value) { m_providerType = value; }
-    inline void SetProviderType(ProviderType&& value) { m_providerType = std::move(value); }
-    inline GetHostResult& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
-    inline GetHostResult& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline ProviderType GetProviderType() const { return m_providerType; }
+    inline void SetProviderType(ProviderType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline GetHostResult& WithProviderType(ProviderType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint of the infrastructure represented by the requested host.</p>
      */
-    inline const Aws::String& GetProviderEndpoint() const{ return m_providerEndpoint; }
-    inline void SetProviderEndpoint(const Aws::String& value) { m_providerEndpoint = value; }
-    inline void SetProviderEndpoint(Aws::String&& value) { m_providerEndpoint = std::move(value); }
-    inline void SetProviderEndpoint(const char* value) { m_providerEndpoint.assign(value); }
-    inline GetHostResult& WithProviderEndpoint(const Aws::String& value) { SetProviderEndpoint(value); return *this;}
-    inline GetHostResult& WithProviderEndpoint(Aws::String&& value) { SetProviderEndpoint(std::move(value)); return *this;}
-    inline GetHostResult& WithProviderEndpoint(const char* value) { SetProviderEndpoint(value); return *this;}
+    inline const Aws::String& GetProviderEndpoint() const { return m_providerEndpoint; }
+    template<typename ProviderEndpointT = Aws::String>
+    void SetProviderEndpoint(ProviderEndpointT&& value) { m_providerEndpointHasBeenSet = true; m_providerEndpoint = std::forward<ProviderEndpointT>(value); }
+    template<typename ProviderEndpointT = Aws::String>
+    GetHostResult& WithProviderEndpoint(ProviderEndpointT&& value) { SetProviderEndpoint(std::forward<ProviderEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC configuration of the requested host.</p>
      */
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfiguration = std::move(value); }
-    inline GetHostResult& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline GetHostResult& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    GetHostResult& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHostResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHostResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHostResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHostResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    ProviderType m_providerType;
+    ProviderType m_providerType{ProviderType::NOT_SET};
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::String m_providerEndpoint;
+    bool m_providerEndpointHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,17 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-TimecodeBurninSettings::TimecodeBurninSettings() : 
-    m_fontSize(TimecodeBurninFontSize::NOT_SET),
-    m_fontSizeHasBeenSet(false),
-    m_position(TimecodeBurninPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 TimecodeBurninSettings::TimecodeBurninSettings(JsonView jsonValue)
-  : TimecodeBurninSettings()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TimecodeBurninSettings& TimecodeBurninSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fontSize"))
   {
     m_fontSize = TimecodeBurninFontSizeMapper::GetTimecodeBurninFontSizeForName(jsonValue.GetString("fontSize"));
-
     m_fontSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = TimecodeBurninPositionMapper::GetTimecodeBurninPositionForName(jsonValue.GetString("position"));
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ConfiguredAudienceModelOutputConfig
   {
   public:
-    AWS_CLEANROOMSML_API ConfiguredAudienceModelOutputConfig();
+    AWS_CLEANROOMSML_API ConfiguredAudienceModelOutputConfig() = default;
     AWS_CLEANROOMSML_API ConfiguredAudienceModelOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API ConfiguredAudienceModelOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,24 @@ namespace Model
 
     ///@{
     
-    inline const AudienceDestination& GetDestination() const{ return m_destination; }
+    inline const AudienceDestination& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const AudienceDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(AudienceDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline ConfiguredAudienceModelOutputConfig& WithDestination(const AudienceDestination& value) { SetDestination(value); return *this;}
-    inline ConfiguredAudienceModelOutputConfig& WithDestination(AudienceDestination&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = AudienceDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = AudienceDestination>
+    ConfiguredAudienceModelOutputConfig& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM role that can write the Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ConfiguredAudienceModelOutputConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ConfiguredAudienceModelOutputConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ConfiguredAudienceModelOutputConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ConfiguredAudienceModelOutputConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

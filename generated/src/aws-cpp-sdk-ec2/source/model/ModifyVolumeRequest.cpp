@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVolumeRequest::ModifyVolumeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_multiAttachEnabled(false),
-    m_multiAttachEnabledHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

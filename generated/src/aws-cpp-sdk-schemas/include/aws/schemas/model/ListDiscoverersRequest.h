@@ -25,7 +25,7 @@ namespace Model
   class ListDiscoverersRequest : public SchemasRequest
   {
   public:
-    AWS_SCHEMAS_API ListDiscoverersRequest();
+    AWS_SCHEMAS_API ListDiscoverersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,19 +43,17 @@ namespace Model
      * <p>Specifying this limits the results to only those discoverer IDs that start
      * with the specified prefix.</p>
      */
-    inline const Aws::String& GetDiscovererIdPrefix() const{ return m_discovererIdPrefix; }
+    inline const Aws::String& GetDiscovererIdPrefix() const { return m_discovererIdPrefix; }
     inline bool DiscovererIdPrefixHasBeenSet() const { return m_discovererIdPrefixHasBeenSet; }
-    inline void SetDiscovererIdPrefix(const Aws::String& value) { m_discovererIdPrefixHasBeenSet = true; m_discovererIdPrefix = value; }
-    inline void SetDiscovererIdPrefix(Aws::String&& value) { m_discovererIdPrefixHasBeenSet = true; m_discovererIdPrefix = std::move(value); }
-    inline void SetDiscovererIdPrefix(const char* value) { m_discovererIdPrefixHasBeenSet = true; m_discovererIdPrefix.assign(value); }
-    inline ListDiscoverersRequest& WithDiscovererIdPrefix(const Aws::String& value) { SetDiscovererIdPrefix(value); return *this;}
-    inline ListDiscoverersRequest& WithDiscovererIdPrefix(Aws::String&& value) { SetDiscovererIdPrefix(std::move(value)); return *this;}
-    inline ListDiscoverersRequest& WithDiscovererIdPrefix(const char* value) { SetDiscovererIdPrefix(value); return *this;}
+    template<typename DiscovererIdPrefixT = Aws::String>
+    void SetDiscovererIdPrefix(DiscovererIdPrefixT&& value) { m_discovererIdPrefixHasBeenSet = true; m_discovererIdPrefix = std::forward<DiscovererIdPrefixT>(value); }
+    template<typename DiscovererIdPrefixT = Aws::String>
+    ListDiscoverersRequest& WithDiscovererIdPrefix(DiscovererIdPrefixT&& value) { SetDiscovererIdPrefix(std::forward<DiscovererIdPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListDiscoverersRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
      * first page, leave NextToken empty. The token will expire in 24 hours, and cannot
      * be shared with other accounts.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDiscoverersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDiscoverersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDiscoverersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDiscoverersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,21 +78,19 @@ namespace Model
      * <p>Specifying this limits the results to only those ARNs that start with the
      * specified prefix.</p>
      */
-    inline const Aws::String& GetSourceArnPrefix() const{ return m_sourceArnPrefix; }
+    inline const Aws::String& GetSourceArnPrefix() const { return m_sourceArnPrefix; }
     inline bool SourceArnPrefixHasBeenSet() const { return m_sourceArnPrefixHasBeenSet; }
-    inline void SetSourceArnPrefix(const Aws::String& value) { m_sourceArnPrefixHasBeenSet = true; m_sourceArnPrefix = value; }
-    inline void SetSourceArnPrefix(Aws::String&& value) { m_sourceArnPrefixHasBeenSet = true; m_sourceArnPrefix = std::move(value); }
-    inline void SetSourceArnPrefix(const char* value) { m_sourceArnPrefixHasBeenSet = true; m_sourceArnPrefix.assign(value); }
-    inline ListDiscoverersRequest& WithSourceArnPrefix(const Aws::String& value) { SetSourceArnPrefix(value); return *this;}
-    inline ListDiscoverersRequest& WithSourceArnPrefix(Aws::String&& value) { SetSourceArnPrefix(std::move(value)); return *this;}
-    inline ListDiscoverersRequest& WithSourceArnPrefix(const char* value) { SetSourceArnPrefix(value); return *this;}
+    template<typename SourceArnPrefixT = Aws::String>
+    void SetSourceArnPrefix(SourceArnPrefixT&& value) { m_sourceArnPrefixHasBeenSet = true; m_sourceArnPrefix = std::forward<SourceArnPrefixT>(value); }
+    template<typename SourceArnPrefixT = Aws::String>
+    ListDiscoverersRequest& WithSourceArnPrefix(SourceArnPrefixT&& value) { SetSourceArnPrefix(std::forward<SourceArnPrefixT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_discovererIdPrefix;
     bool m_discovererIdPrefixHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

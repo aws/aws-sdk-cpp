@@ -34,7 +34,7 @@ namespace Model
   class SessionMappingDetail
   {
   public:
-    AWS_EMR_API SessionMappingDetail();
+    AWS_EMR_API SessionMappingDetail() = default;
     AWS_EMR_API SessionMappingDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API SessionMappingDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ID of the Amazon EMR Studio.</p>
      */
-    inline const Aws::String& GetStudioId() const{ return m_studioId; }
+    inline const Aws::String& GetStudioId() const { return m_studioId; }
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
-    inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
-    inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
-    inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
-    inline SessionMappingDetail& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
-    inline SessionMappingDetail& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
-    inline SessionMappingDetail& WithStudioId(const char* value) { SetStudioId(value); return *this;}
+    template<typename StudioIdT = Aws::String>
+    void SetStudioId(StudioIdT&& value) { m_studioIdHasBeenSet = true; m_studioId = std::forward<StudioIdT>(value); }
+    template<typename StudioIdT = Aws::String>
+    SessionMappingDetail& WithStudioId(StudioIdT&& value) { SetStudioId(std::forward<StudioIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The globally unique identifier (GUID) of the user or group.</p>
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-    inline SessionMappingDetail& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline SessionMappingDetail& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline SessionMappingDetail& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    SessionMappingDetail& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
      * in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
      */
-    inline const Aws::String& GetIdentityName() const{ return m_identityName; }
+    inline const Aws::String& GetIdentityName() const { return m_identityName; }
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
-    inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
-    inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
-    inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
-    inline SessionMappingDetail& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
-    inline SessionMappingDetail& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
-    inline SessionMappingDetail& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}
+    template<typename IdentityNameT = Aws::String>
+    void SetIdentityName(IdentityNameT&& value) { m_identityNameHasBeenSet = true; m_identityName = std::forward<IdentityNameT>(value); }
+    template<typename IdentityNameT = Aws::String>
+    SessionMappingDetail& WithIdentityName(IdentityNameT&& value) { SetIdentityName(std::forward<IdentityNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,10 @@ namespace Model
      * <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a
      * group.</p>
      */
-    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline IdentityType GetIdentityType() const { return m_identityType; }
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
-    inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
-    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
-    inline SessionMappingDetail& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
-    inline SessionMappingDetail& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    inline void SetIdentityType(IdentityType value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline SessionMappingDetail& WithIdentityType(IdentityType value) { SetIdentityType(value); return *this;}
     ///@}
 
     ///@{
@@ -104,38 +96,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the session policy associated with the user
      * or group.</p>
      */
-    inline const Aws::String& GetSessionPolicyArn() const{ return m_sessionPolicyArn; }
+    inline const Aws::String& GetSessionPolicyArn() const { return m_sessionPolicyArn; }
     inline bool SessionPolicyArnHasBeenSet() const { return m_sessionPolicyArnHasBeenSet; }
-    inline void SetSessionPolicyArn(const Aws::String& value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn = value; }
-    inline void SetSessionPolicyArn(Aws::String&& value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn = std::move(value); }
-    inline void SetSessionPolicyArn(const char* value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn.assign(value); }
-    inline SessionMappingDetail& WithSessionPolicyArn(const Aws::String& value) { SetSessionPolicyArn(value); return *this;}
-    inline SessionMappingDetail& WithSessionPolicyArn(Aws::String&& value) { SetSessionPolicyArn(std::move(value)); return *this;}
-    inline SessionMappingDetail& WithSessionPolicyArn(const char* value) { SetSessionPolicyArn(value); return *this;}
+    template<typename SessionPolicyArnT = Aws::String>
+    void SetSessionPolicyArn(SessionPolicyArnT&& value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn = std::forward<SessionPolicyArnT>(value); }
+    template<typename SessionPolicyArnT = Aws::String>
+    SessionMappingDetail& WithSessionPolicyArn(SessionPolicyArnT&& value) { SetSessionPolicyArn(std::forward<SessionPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the session mapping was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline SessionMappingDetail& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline SessionMappingDetail& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    SessionMappingDetail& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the session mapping was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline SessionMappingDetail& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline SessionMappingDetail& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    SessionMappingDetail& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -148,16 +138,16 @@ namespace Model
     Aws::String m_identityName;
     bool m_identityNameHasBeenSet = false;
 
-    IdentityType m_identityType;
+    IdentityType m_identityType{IdentityType::NOT_SET};
     bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_sessionPolicyArn;
     bool m_sessionPolicyArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

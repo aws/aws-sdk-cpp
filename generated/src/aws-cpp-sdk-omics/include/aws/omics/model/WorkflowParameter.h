@@ -31,7 +31,7 @@ namespace Model
   class WorkflowParameter
   {
   public:
-    AWS_OMICS_API WorkflowParameter();
+    AWS_OMICS_API WorkflowParameter() = default;
     AWS_OMICS_API WorkflowParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API WorkflowParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The parameter's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WorkflowParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WorkflowParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WorkflowParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WorkflowParameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the parameter is optional.</p>
      */
-    inline bool GetOptional() const{ return m_optional; }
+    inline bool GetOptional() const { return m_optional; }
     inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
     inline void SetOptional(bool value) { m_optionalHasBeenSet = true; m_optional = value; }
     inline WorkflowParameter& WithOptional(bool value) { SetOptional(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_optional;
+    bool m_optional{false};
     bool m_optionalHasBeenSet = false;
   };
 

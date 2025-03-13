@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LocalGatewayVirtualInterface::LocalGatewayVirtualInterface() : 
-    m_localGatewayVirtualInterfaceIdHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_localAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_localBgpAsn(0),
-    m_localBgpAsnHasBeenSet(false),
-    m_peerBgpAsn(0),
-    m_peerBgpAsnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LocalGatewayVirtualInterface::LocalGatewayVirtualInterface(const XmlNode& xmlNode)
-  : LocalGatewayVirtualInterface()
 {
   *this = xmlNode;
 }
@@ -53,60 +36,69 @@ LocalGatewayVirtualInterface& LocalGatewayVirtualInterface::operator =(const Xml
     {
       m_localGatewayVirtualInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayVirtualInterfaceIdNode.GetText());
       m_localGatewayVirtualInterfaceIdHasBeenSet = true;
+       m_localGatewayVirtualInterfaceIdHasBeenSet = true;
     }
     XmlNode localGatewayIdNode = resultNode.FirstChild("localGatewayId");
     if(!localGatewayIdNode.IsNull())
     {
       m_localGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayIdNode.GetText());
       m_localGatewayIdHasBeenSet = true;
+       m_localGatewayIdHasBeenSet = true;
     }
     XmlNode vlanNode = resultNode.FirstChild("vlan");
     if(!vlanNode.IsNull())
     {
       m_vlan = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vlanNode.GetText()).c_str()).c_str());
       m_vlanHasBeenSet = true;
+       m_vlanHasBeenSet = true;
     }
     XmlNode localAddressNode = resultNode.FirstChild("localAddress");
     if(!localAddressNode.IsNull())
     {
       m_localAddress = Aws::Utils::Xml::DecodeEscapedXmlText(localAddressNode.GetText());
       m_localAddressHasBeenSet = true;
+       m_localAddressHasBeenSet = true;
     }
     XmlNode peerAddressNode = resultNode.FirstChild("peerAddress");
     if(!peerAddressNode.IsNull())
     {
       m_peerAddress = Aws::Utils::Xml::DecodeEscapedXmlText(peerAddressNode.GetText());
       m_peerAddressHasBeenSet = true;
+       m_peerAddressHasBeenSet = true;
     }
     XmlNode localBgpAsnNode = resultNode.FirstChild("localBgpAsn");
     if(!localBgpAsnNode.IsNull())
     {
       m_localBgpAsn = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localBgpAsnNode.GetText()).c_str()).c_str());
       m_localBgpAsnHasBeenSet = true;
+       m_localBgpAsnHasBeenSet = true;
     }
     XmlNode peerBgpAsnNode = resultNode.FirstChild("peerBgpAsn");
     if(!peerBgpAsnNode.IsNull())
     {
       m_peerBgpAsn = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerBgpAsnNode.GetText()).c_str()).c_str());
       m_peerBgpAsnHasBeenSet = true;
+       m_peerBgpAsnHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

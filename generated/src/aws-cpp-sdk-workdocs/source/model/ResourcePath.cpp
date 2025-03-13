@@ -18,13 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-ResourcePath::ResourcePath() : 
-    m_componentsHasBeenSet(false)
-{
-}
-
 ResourcePath::ResourcePath(JsonView jsonValue)
-  : ResourcePath()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ResourcePath& ResourcePath::operator =(JsonView jsonValue)
     }
     m_componentsHasBeenSet = true;
   }
-
   return *this;
 }
 

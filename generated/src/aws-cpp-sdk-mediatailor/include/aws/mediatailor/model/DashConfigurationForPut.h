@@ -32,7 +32,7 @@ namespace Model
   class DashConfigurationForPut
   {
   public:
-    AWS_MEDIATAILOR_API DashConfigurationForPut();
+    AWS_MEDIATAILOR_API DashConfigurationForPut() = default;
     AWS_MEDIATAILOR_API DashConfigurationForPut(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API DashConfigurationForPut& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
      * inclusion of the tag and is the default value.</p>
      */
-    inline const Aws::String& GetMpdLocation() const{ return m_mpdLocation; }
+    inline const Aws::String& GetMpdLocation() const { return m_mpdLocation; }
     inline bool MpdLocationHasBeenSet() const { return m_mpdLocationHasBeenSet; }
-    inline void SetMpdLocation(const Aws::String& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = value; }
-    inline void SetMpdLocation(Aws::String&& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = std::move(value); }
-    inline void SetMpdLocation(const char* value) { m_mpdLocationHasBeenSet = true; m_mpdLocation.assign(value); }
-    inline DashConfigurationForPut& WithMpdLocation(const Aws::String& value) { SetMpdLocation(value); return *this;}
-    inline DashConfigurationForPut& WithMpdLocation(Aws::String&& value) { SetMpdLocation(std::move(value)); return *this;}
-    inline DashConfigurationForPut& WithMpdLocation(const char* value) { SetMpdLocation(value); return *this;}
+    template<typename MpdLocationT = Aws::String>
+    void SetMpdLocation(MpdLocationT&& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = std::forward<MpdLocationT>(value); }
+    template<typename MpdLocationT = Aws::String>
+    DashConfigurationForPut& WithMpdLocation(MpdLocationT&& value) { SetMpdLocation(std::forward<MpdLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,19 +66,17 @@ namespace Model
      * For multi-period manifests, omit this setting or set it to
      * <code>MULTI_PERIOD</code>.</p>
      */
-    inline const OriginManifestType& GetOriginManifestType() const{ return m_originManifestType; }
+    inline OriginManifestType GetOriginManifestType() const { return m_originManifestType; }
     inline bool OriginManifestTypeHasBeenSet() const { return m_originManifestTypeHasBeenSet; }
-    inline void SetOriginManifestType(const OriginManifestType& value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = value; }
-    inline void SetOriginManifestType(OriginManifestType&& value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = std::move(value); }
-    inline DashConfigurationForPut& WithOriginManifestType(const OriginManifestType& value) { SetOriginManifestType(value); return *this;}
-    inline DashConfigurationForPut& WithOriginManifestType(OriginManifestType&& value) { SetOriginManifestType(std::move(value)); return *this;}
+    inline void SetOriginManifestType(OriginManifestType value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = value; }
+    inline DashConfigurationForPut& WithOriginManifestType(OriginManifestType value) { SetOriginManifestType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_mpdLocation;
     bool m_mpdLocationHasBeenSet = false;
 
-    OriginManifestType m_originManifestType;
+    OriginManifestType m_originManifestType{OriginManifestType::NOT_SET};
     bool m_originManifestTypeHasBeenSet = false;
   };
 

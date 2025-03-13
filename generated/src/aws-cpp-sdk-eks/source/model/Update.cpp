@@ -18,20 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Update::Update() : 
-    m_idHasBeenSet(false),
-    m_status(UpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(UpdateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_paramsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorsHasBeenSet(false)
-{
-}
-
 Update::Update(JsonView jsonValue)
-  : Update()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ Update& Update::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = UpdateTypeMapper::GetUpdateTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("params"))
   {
     Aws::Utils::Array<JsonView> paramsJsonList = jsonValue.GetArray("params");
@@ -68,14 +49,11 @@ Update& Update::operator =(JsonView jsonValue)
     }
     m_paramsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -85,7 +63,6 @@ Update& Update::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,18 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMatchingWorkflowRequest::CreateMatchingWorkflowRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_incrementalRunConfigHasBeenSet(false),
-    m_inputSourceConfigHasBeenSet(false),
-    m_outputSourceConfigHasBeenSet(false),
-    m_resolutionTechniquesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workflowNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateMatchingWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

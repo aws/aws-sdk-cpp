@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryStateResult::GetQueryStateResult() : 
-    m_state(QueryStateString::NOT_SET)
-{
-}
-
 GetQueryStateResult::GetQueryStateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQueryStateResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetQueryStateResult& GetQueryStateResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
+    m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = QueryStateStringMapper::GetQueryStateStringForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

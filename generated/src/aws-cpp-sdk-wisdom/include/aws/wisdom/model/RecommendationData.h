@@ -34,7 +34,7 @@ namespace Model
   class RecommendationData
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API RecommendationData();
+    AWS_CONNECTWISDOMSERVICE_API RecommendationData() = default;
     AWS_CONNECTWISDOMSERVICE_API RecommendationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API RecommendationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,41 @@ namespace Model
     /**
      * <p>The recommended document.</p>
      */
-    inline const Document& GetDocument() const{ return m_document; }
+    inline const Document& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline RecommendationData& WithDocument(const Document& value) { SetDocument(value); return *this;}
-    inline RecommendationData& WithDocument(Document&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = Document>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Document>
+    RecommendationData& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the recommendation.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline RecommendationData& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline RecommendationData& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline RecommendationData& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    RecommendationData& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relevance level of the recommendation.</p>
      */
-    inline const RelevanceLevel& GetRelevanceLevel() const{ return m_relevanceLevel; }
+    inline RelevanceLevel GetRelevanceLevel() const { return m_relevanceLevel; }
     inline bool RelevanceLevelHasBeenSet() const { return m_relevanceLevelHasBeenSet; }
-    inline void SetRelevanceLevel(const RelevanceLevel& value) { m_relevanceLevelHasBeenSet = true; m_relevanceLevel = value; }
-    inline void SetRelevanceLevel(RelevanceLevel&& value) { m_relevanceLevelHasBeenSet = true; m_relevanceLevel = std::move(value); }
-    inline RecommendationData& WithRelevanceLevel(const RelevanceLevel& value) { SetRelevanceLevel(value); return *this;}
-    inline RecommendationData& WithRelevanceLevel(RelevanceLevel&& value) { SetRelevanceLevel(std::move(value)); return *this;}
+    inline void SetRelevanceLevel(RelevanceLevel value) { m_relevanceLevelHasBeenSet = true; m_relevanceLevel = value; }
+    inline RecommendationData& WithRelevanceLevel(RelevanceLevel value) { SetRelevanceLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relevance score of the recommendation.</p>
      */
-    inline double GetRelevanceScore() const{ return m_relevanceScore; }
+    inline double GetRelevanceScore() const { return m_relevanceScore; }
     inline bool RelevanceScoreHasBeenSet() const { return m_relevanceScoreHasBeenSet; }
     inline void SetRelevanceScore(double value) { m_relevanceScoreHasBeenSet = true; m_relevanceScore = value; }
     inline RecommendationData& WithRelevanceScore(double value) { SetRelevanceScore(value); return *this;}
@@ -92,12 +88,10 @@ namespace Model
     /**
      * <p>The type of recommendation.</p>
      */
-    inline const RecommendationType& GetType() const{ return m_type; }
+    inline RecommendationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RecommendationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RecommendationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RecommendationData& WithType(const RecommendationType& value) { SetType(value); return *this;}
-    inline RecommendationData& WithType(RecommendationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RecommendationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RecommendationData& WithType(RecommendationType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -107,13 +101,13 @@ namespace Model
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
 
-    RelevanceLevel m_relevanceLevel;
+    RelevanceLevel m_relevanceLevel{RelevanceLevel::NOT_SET};
     bool m_relevanceLevelHasBeenSet = false;
 
-    double m_relevanceScore;
+    double m_relevanceScore{0.0};
     bool m_relevanceScoreHasBeenSet = false;
 
-    RecommendationType m_type;
+    RecommendationType m_type{RecommendationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

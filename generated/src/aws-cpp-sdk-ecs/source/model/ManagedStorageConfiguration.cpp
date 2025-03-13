@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ManagedStorageConfiguration::ManagedStorageConfiguration() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_fargateEphemeralStorageKmsKeyIdHasBeenSet(false)
-{
-}
-
 ManagedStorageConfiguration::ManagedStorageConfiguration(JsonView jsonValue)
-  : ManagedStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ManagedStorageConfiguration& ManagedStorageConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fargateEphemeralStorageKmsKeyId"))
   {
     m_fargateEphemeralStorageKmsKeyId = jsonValue.GetString("fargateEphemeralStorageKmsKeyId");
-
     m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

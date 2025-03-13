@@ -18,34 +18,7 @@ namespace CloudHSMV2
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_backupPolicy(BackupPolicy::NOT_SET),
-    m_backupPolicyHasBeenSet(false),
-    m_backupRetentionPolicyHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_createTimestampHasBeenSet(false),
-    m_hsmsHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false),
-    m_hsmTypeRollbackExpirationHasBeenSet(false),
-    m_preCoPasswordHasBeenSet(false),
-    m_securityGroupHasBeenSet(false),
-    m_sourceBackupIdHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_subnetMappingHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_mode(ClusterMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -55,31 +28,23 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupPolicy"))
   {
     m_backupPolicy = BackupPolicyMapper::GetBackupPolicyForName(jsonValue.GetString("BackupPolicy"));
-
     m_backupPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupRetentionPolicy"))
   {
     m_backupRetentionPolicy = jsonValue.GetObject("BackupRetentionPolicy");
-
     m_backupRetentionPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTimestamp"))
   {
     m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-
     m_createTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hsms"))
   {
     Aws::Utils::Array<JsonView> hsmsJsonList = jsonValue.GetArray("Hsms");
@@ -89,56 +54,41 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_hsmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsmType"))
   {
     m_hsmType = jsonValue.GetString("HsmType");
-
     m_hsmTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HsmTypeRollbackExpiration"))
   {
     m_hsmTypeRollbackExpiration = jsonValue.GetDouble("HsmTypeRollbackExpiration");
-
     m_hsmTypeRollbackExpirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreCoPassword"))
   {
     m_preCoPassword = jsonValue.GetString("PreCoPassword");
-
     m_preCoPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroup"))
   {
     m_securityGroup = jsonValue.GetString("SecurityGroup");
-
     m_securityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceBackupId"))
   {
     m_sourceBackupId = jsonValue.GetString("SourceBackupId");
-
     m_sourceBackupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateMessage"))
   {
     m_stateMessage = jsonValue.GetString("StateMessage");
-
     m_stateMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetMapping"))
   {
     Aws::Map<Aws::String, JsonView> subnetMappingJsonMap = jsonValue.GetObject("SubnetMapping").GetAllObjects();
@@ -148,28 +98,21 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_subnetMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkType"))
   {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
-
     m_networkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Certificates"))
   {
     m_certificates = jsonValue.GetObject("Certificates");
-
     m_certificatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagList"))
   {
     Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
@@ -179,14 +122,11 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_tagListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = ClusterModeMapper::GetClusterModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

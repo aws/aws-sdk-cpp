@@ -12,12 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSellingSystemSettingsRequest::PutSellingSystemSettingsRequest() : 
-    m_catalogHasBeenSet(false),
-    m_resourceSnapshotJobRoleIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String PutSellingSystemSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

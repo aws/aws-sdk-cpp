@@ -33,7 +33,7 @@ namespace Model
   class PushSync
   {
   public:
-    AWS_COGNITOSYNC_API PushSync();
+    AWS_COGNITOSYNC_API PushSync() = default;
     AWS_COGNITOSYNC_API PushSync(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOSYNC_API PushSync& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationArns() const{ return m_applicationArns; }
+    inline const Aws::Vector<Aws::String>& GetApplicationArns() const { return m_applicationArns; }
     inline bool ApplicationArnsHasBeenSet() const { return m_applicationArnsHasBeenSet; }
-    inline void SetApplicationArns(const Aws::Vector<Aws::String>& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = value; }
-    inline void SetApplicationArns(Aws::Vector<Aws::String>&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = std::move(value); }
-    inline PushSync& WithApplicationArns(const Aws::Vector<Aws::String>& value) { SetApplicationArns(value); return *this;}
-    inline PushSync& WithApplicationArns(Aws::Vector<Aws::String>&& value) { SetApplicationArns(std::move(value)); return *this;}
-    inline PushSync& AddApplicationArns(const Aws::String& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
-    inline PushSync& AddApplicationArns(Aws::String&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(std::move(value)); return *this; }
-    inline PushSync& AddApplicationArns(const char* value) { m_applicationArnsHasBeenSet = true; m_applicationArns.push_back(value); return *this; }
+    template<typename ApplicationArnsT = Aws::Vector<Aws::String>>
+    void SetApplicationArns(ApplicationArnsT&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = std::forward<ApplicationArnsT>(value); }
+    template<typename ApplicationArnsT = Aws::Vector<Aws::String>>
+    PushSync& WithApplicationArns(ApplicationArnsT&& value) { SetApplicationArns(std::forward<ApplicationArnsT>(value)); return *this;}
+    template<typename ApplicationArnsT = Aws::String>
+    PushSync& AddApplicationArns(ApplicationArnsT&& value) { m_applicationArnsHasBeenSet = true; m_applicationArns.emplace_back(std::forward<ApplicationArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +58,12 @@ namespace Model
      * <p>A role configured to allow Cognito to call SNS on behalf of the
      * developer.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline PushSync& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline PushSync& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline PushSync& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    PushSync& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

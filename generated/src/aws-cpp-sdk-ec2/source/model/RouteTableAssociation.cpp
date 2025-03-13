@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RouteTableAssociation::RouteTableAssociation() : 
-    m_main(false),
-    m_mainHasBeenSet(false),
-    m_routeTableAssociationIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_gatewayIdHasBeenSet(false),
-    m_associationStateHasBeenSet(false)
-{
-}
-
 RouteTableAssociation::RouteTableAssociation(const XmlNode& xmlNode)
-  : RouteTableAssociation()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
     {
       m_main = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mainNode.GetText()).c_str()).c_str());
       m_mainHasBeenSet = true;
+       m_mainHasBeenSet = true;
     }
     XmlNode routeTableAssociationIdNode = resultNode.FirstChild("routeTableAssociationId");
     if(!routeTableAssociationIdNode.IsNull())
     {
       m_routeTableAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableAssociationIdNode.GetText());
       m_routeTableAssociationIdHasBeenSet = true;
+       m_routeTableAssociationIdHasBeenSet = true;
     }
     XmlNode routeTableIdNode = resultNode.FirstChild("routeTableId");
     if(!routeTableIdNode.IsNull())
     {
       m_routeTableId = Aws::Utils::Xml::DecodeEscapedXmlText(routeTableIdNode.GetText());
       m_routeTableIdHasBeenSet = true;
+       m_routeTableIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode gatewayIdNode = resultNode.FirstChild("gatewayId");
     if(!gatewayIdNode.IsNull())
     {
       m_gatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayIdNode.GetText());
       m_gatewayIdHasBeenSet = true;
+       m_gatewayIdHasBeenSet = true;
     }
     XmlNode associationStateNode = resultNode.FirstChild("associationState");
     if(!associationStateNode.IsNull())
     {
       m_associationState = associationStateNode;
       m_associationStateHasBeenSet = true;
+       m_associationStateHasBeenSet = true;
     }
   }
 

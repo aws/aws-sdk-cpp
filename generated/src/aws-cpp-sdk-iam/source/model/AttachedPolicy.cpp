@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-AttachedPolicy::AttachedPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 AttachedPolicy::AttachedPolicy(const XmlNode& xmlNode)
-  : AttachedPolicy()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AttachedPolicy& AttachedPolicy::operator =(const XmlNode& xmlNode)
     {
       m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
+       m_policyNameHasBeenSet = true;
     }
     XmlNode policyArnNode = resultNode.FirstChild("PolicyArn");
     if(!policyArnNode.IsNull())
     {
       m_policyArn = Aws::Utils::Xml::DecodeEscapedXmlText(policyArnNode.GetText());
       m_policyArnHasBeenSet = true;
+       m_policyArnHasBeenSet = true;
     }
   }
 

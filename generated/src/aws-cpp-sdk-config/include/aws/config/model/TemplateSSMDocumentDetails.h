@@ -38,7 +38,7 @@ namespace Model
   class TemplateSSMDocumentDetails
   {
   public:
-    AWS_CONFIGSERVICE_API TemplateSSMDocumentDetails();
+    AWS_CONFIGSERVICE_API TemplateSSMDocumentDetails() = default;
     AWS_CONFIGSERVICE_API TemplateSSMDocumentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API TemplateSSMDocumentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * conformance pack. If you use the document name, Config checks only your account
      * and Amazon Web Services Region for the SSM document.</p>
      */
-    inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+    inline const Aws::String& GetDocumentName() const { return m_documentName; }
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
-    inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
-    inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
-    inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
-    inline TemplateSSMDocumentDetails& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
-    inline TemplateSSMDocumentDetails& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
-    inline TemplateSSMDocumentDetails& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+    template<typename DocumentNameT = Aws::String>
+    void SetDocumentName(DocumentNameT&& value) { m_documentNameHasBeenSet = true; m_documentName = std::forward<DocumentNameT>(value); }
+    template<typename DocumentNameT = Aws::String>
+    TemplateSSMDocumentDetails& WithDocumentName(DocumentNameT&& value) { SetDocumentName(std::forward<DocumentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * default, Config uses the latest version.</p>  <p>This field is
      * optional.</p> 
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline TemplateSSMDocumentDetails& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline TemplateSSMDocumentDetails& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline TemplateSSMDocumentDetails& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    TemplateSSMDocumentDetails& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
   private:
 

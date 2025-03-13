@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig() : 
-    m_commentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_corsConfigHasBeenSet(false),
-    m_securityHeadersConfigHasBeenSet(false),
-    m_serverTimingHeadersConfigHasBeenSet(false),
-    m_customHeadersConfigHasBeenSet(false),
-    m_removeHeadersConfigHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyConfig::ResponseHeadersPolicyConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyConfig()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,49 @@ ResponseHeadersPolicyConfig& ResponseHeadersPolicyConfig::operator =(const XmlNo
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode corsConfigNode = resultNode.FirstChild("CorsConfig");
     if(!corsConfigNode.IsNull())
     {
       m_corsConfig = corsConfigNode;
       m_corsConfigHasBeenSet = true;
+       m_corsConfigHasBeenSet = true;
     }
     XmlNode securityHeadersConfigNode = resultNode.FirstChild("SecurityHeadersConfig");
     if(!securityHeadersConfigNode.IsNull())
     {
       m_securityHeadersConfig = securityHeadersConfigNode;
       m_securityHeadersConfigHasBeenSet = true;
+       m_securityHeadersConfigHasBeenSet = true;
     }
     XmlNode serverTimingHeadersConfigNode = resultNode.FirstChild("ServerTimingHeadersConfig");
     if(!serverTimingHeadersConfigNode.IsNull())
     {
       m_serverTimingHeadersConfig = serverTimingHeadersConfigNode;
       m_serverTimingHeadersConfigHasBeenSet = true;
+       m_serverTimingHeadersConfigHasBeenSet = true;
     }
     XmlNode customHeadersConfigNode = resultNode.FirstChild("CustomHeadersConfig");
     if(!customHeadersConfigNode.IsNull())
     {
       m_customHeadersConfig = customHeadersConfigNode;
       m_customHeadersConfigHasBeenSet = true;
+       m_customHeadersConfigHasBeenSet = true;
     }
     XmlNode removeHeadersConfigNode = resultNode.FirstChild("RemoveHeadersConfig");
     if(!removeHeadersConfigNode.IsNull())
     {
       m_removeHeadersConfig = removeHeadersConfigNode;
       m_removeHeadersConfigHasBeenSet = true;
+       m_removeHeadersConfigHasBeenSet = true;
     }
   }
 

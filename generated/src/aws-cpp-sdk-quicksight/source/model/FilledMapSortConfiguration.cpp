@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilledMapSortConfiguration::FilledMapSortConfiguration() : 
-    m_categorySortHasBeenSet(false)
-{
-}
-
 FilledMapSortConfiguration::FilledMapSortConfiguration(JsonView jsonValue)
-  : FilledMapSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FilledMapSortConfiguration& FilledMapSortConfiguration::operator =(JsonView json
     }
     m_categorySortHasBeenSet = true;
   }
-
   return *this;
 }
 

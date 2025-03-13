@@ -35,7 +35,7 @@ namespace Model
   class ZookeeperNodeInfo
   {
   public:
-    AWS_KAFKA_API ZookeeperNodeInfo();
+    AWS_KAFKA_API ZookeeperNodeInfo() = default;
     AWS_KAFKA_API ZookeeperNodeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ZookeeperNodeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
       
      *   
      */
-    inline const Aws::String& GetAttachedENIId() const{ return m_attachedENIId; }
+    inline const Aws::String& GetAttachedENIId() const { return m_attachedENIId; }
     inline bool AttachedENIIdHasBeenSet() const { return m_attachedENIIdHasBeenSet; }
-    inline void SetAttachedENIId(const Aws::String& value) { m_attachedENIIdHasBeenSet = true; m_attachedENIId = value; }
-    inline void SetAttachedENIId(Aws::String&& value) { m_attachedENIIdHasBeenSet = true; m_attachedENIId = std::move(value); }
-    inline void SetAttachedENIId(const char* value) { m_attachedENIIdHasBeenSet = true; m_attachedENIId.assign(value); }
-    inline ZookeeperNodeInfo& WithAttachedENIId(const Aws::String& value) { SetAttachedENIId(value); return *this;}
-    inline ZookeeperNodeInfo& WithAttachedENIId(Aws::String&& value) { SetAttachedENIId(std::move(value)); return *this;}
-    inline ZookeeperNodeInfo& WithAttachedENIId(const char* value) { SetAttachedENIId(value); return *this;}
+    template<typename AttachedENIIdT = Aws::String>
+    void SetAttachedENIId(AttachedENIIdT&& value) { m_attachedENIIdHasBeenSet = true; m_attachedENIId = std::forward<AttachedENIIdT>(value); }
+    template<typename AttachedENIIdT = Aws::String>
+    ZookeeperNodeInfo& WithAttachedENIId(AttachedENIIdT&& value) { SetAttachedENIId(std::forward<AttachedENIIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
   
      *       
      */
-    inline const Aws::String& GetClientVpcIpAddress() const{ return m_clientVpcIpAddress; }
+    inline const Aws::String& GetClientVpcIpAddress() const { return m_clientVpcIpAddress; }
     inline bool ClientVpcIpAddressHasBeenSet() const { return m_clientVpcIpAddressHasBeenSet; }
-    inline void SetClientVpcIpAddress(const Aws::String& value) { m_clientVpcIpAddressHasBeenSet = true; m_clientVpcIpAddress = value; }
-    inline void SetClientVpcIpAddress(Aws::String&& value) { m_clientVpcIpAddressHasBeenSet = true; m_clientVpcIpAddress = std::move(value); }
-    inline void SetClientVpcIpAddress(const char* value) { m_clientVpcIpAddressHasBeenSet = true; m_clientVpcIpAddress.assign(value); }
-    inline ZookeeperNodeInfo& WithClientVpcIpAddress(const Aws::String& value) { SetClientVpcIpAddress(value); return *this;}
-    inline ZookeeperNodeInfo& WithClientVpcIpAddress(Aws::String&& value) { SetClientVpcIpAddress(std::move(value)); return *this;}
-    inline ZookeeperNodeInfo& WithClientVpcIpAddress(const char* value) { SetClientVpcIpAddress(value); return *this;}
+    template<typename ClientVpcIpAddressT = Aws::String>
+    void SetClientVpcIpAddress(ClientVpcIpAddressT&& value) { m_clientVpcIpAddressHasBeenSet = true; m_clientVpcIpAddress = std::forward<ClientVpcIpAddressT>(value); }
+    template<typename ClientVpcIpAddressT = Aws::String>
+    ZookeeperNodeInfo& WithClientVpcIpAddress(ClientVpcIpAddressT&& value) { SetClientVpcIpAddress(std::forward<ClientVpcIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,15 +77,14 @@ namespace Model
             <p>Endpoints for accessing the ZooKeeper.</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<Aws::String>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline ZookeeperNodeInfo& WithEndpoints(const Aws::Vector<Aws::String>& value) { SetEndpoints(value); return *this;}
-    inline ZookeeperNodeInfo& WithEndpoints(Aws::Vector<Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline ZookeeperNodeInfo& AddEndpoints(const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline ZookeeperNodeInfo& AddEndpoints(Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
-    inline ZookeeperNodeInfo& AddEndpoints(const char* value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
+    template<typename EndpointsT = Aws::Vector<Aws::String>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<Aws::String>>
+    ZookeeperNodeInfo& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = Aws::String>
+    ZookeeperNodeInfo& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,7 +93,7 @@ namespace Model
             <p>The role-specific ID for Zookeeper.</p>
          
      */
-    inline double GetZookeeperId() const{ return m_zookeeperId; }
+    inline double GetZookeeperId() const { return m_zookeeperId; }
     inline bool ZookeeperIdHasBeenSet() const { return m_zookeeperIdHasBeenSet; }
     inline void SetZookeeperId(double value) { m_zookeeperIdHasBeenSet = true; m_zookeeperId = value; }
     inline ZookeeperNodeInfo& WithZookeeperId(double value) { SetZookeeperId(value); return *this;}
@@ -110,14 +105,12 @@ namespace Model
             <p>The version of Zookeeper.</p>
          
      */
-    inline const Aws::String& GetZookeeperVersion() const{ return m_zookeeperVersion; }
+    inline const Aws::String& GetZookeeperVersion() const { return m_zookeeperVersion; }
     inline bool ZookeeperVersionHasBeenSet() const { return m_zookeeperVersionHasBeenSet; }
-    inline void SetZookeeperVersion(const Aws::String& value) { m_zookeeperVersionHasBeenSet = true; m_zookeeperVersion = value; }
-    inline void SetZookeeperVersion(Aws::String&& value) { m_zookeeperVersionHasBeenSet = true; m_zookeeperVersion = std::move(value); }
-    inline void SetZookeeperVersion(const char* value) { m_zookeeperVersionHasBeenSet = true; m_zookeeperVersion.assign(value); }
-    inline ZookeeperNodeInfo& WithZookeeperVersion(const Aws::String& value) { SetZookeeperVersion(value); return *this;}
-    inline ZookeeperNodeInfo& WithZookeeperVersion(Aws::String&& value) { SetZookeeperVersion(std::move(value)); return *this;}
-    inline ZookeeperNodeInfo& WithZookeeperVersion(const char* value) { SetZookeeperVersion(value); return *this;}
+    template<typename ZookeeperVersionT = Aws::String>
+    void SetZookeeperVersion(ZookeeperVersionT&& value) { m_zookeeperVersionHasBeenSet = true; m_zookeeperVersion = std::forward<ZookeeperVersionT>(value); }
+    template<typename ZookeeperVersionT = Aws::String>
+    ZookeeperNodeInfo& WithZookeeperVersion(ZookeeperVersionT&& value) { SetZookeeperVersion(std::forward<ZookeeperVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -130,7 +123,7 @@ namespace Model
     Aws::Vector<Aws::String> m_endpoints;
     bool m_endpointsHasBeenSet = false;
 
-    double m_zookeeperId;
+    double m_zookeeperId{0.0};
     bool m_zookeeperIdHasBeenSet = false;
 
     Aws::String m_zookeeperVersion;

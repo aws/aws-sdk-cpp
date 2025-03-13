@@ -34,7 +34,7 @@ namespace Model
   class SelfManagedActiveDirectoryAttributes
   {
   public:
-    AWS_FSX_API SelfManagedActiveDirectoryAttributes();
+    AWS_FSX_API SelfManagedActiveDirectoryAttributes() = default;
     AWS_FSX_API SelfManagedActiveDirectoryAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API SelfManagedActiveDirectoryAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The fully qualified domain name of the self-managed AD directory.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline SelfManagedActiveDirectoryAttributes& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    SelfManagedActiveDirectoryAttributes& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * self-managed AD directory to which the Windows File Server or ONTAP storage
      * virtual machine (SVM) instance is joined.</p>
      */
-    inline const Aws::String& GetOrganizationalUnitDistinguishedName() const{ return m_organizationalUnitDistinguishedName; }
+    inline const Aws::String& GetOrganizationalUnitDistinguishedName() const { return m_organizationalUnitDistinguishedName; }
     inline bool OrganizationalUnitDistinguishedNameHasBeenSet() const { return m_organizationalUnitDistinguishedNameHasBeenSet; }
-    inline void SetOrganizationalUnitDistinguishedName(const Aws::String& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = value; }
-    inline void SetOrganizationalUnitDistinguishedName(Aws::String&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::move(value); }
-    inline void SetOrganizationalUnitDistinguishedName(const char* value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName.assign(value); }
-    inline SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(const Aws::String& value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(Aws::String&& value) { SetOrganizationalUnitDistinguishedName(std::move(value)); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(const char* value) { SetOrganizationalUnitDistinguishedName(value); return *this;}
+    template<typename OrganizationalUnitDistinguishedNameT = Aws::String>
+    void SetOrganizationalUnitDistinguishedName(OrganizationalUnitDistinguishedNameT&& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = std::forward<OrganizationalUnitDistinguishedNameT>(value); }
+    template<typename OrganizationalUnitDistinguishedNameT = Aws::String>
+    SelfManagedActiveDirectoryAttributes& WithOrganizationalUnitDistinguishedName(OrganizationalUnitDistinguishedNameT&& value) { SetOrganizationalUnitDistinguishedName(std::forward<OrganizationalUnitDistinguishedNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The name of the domain group whose members have administrative privileges for
      * the FSx file system.</p>
      */
-    inline const Aws::String& GetFileSystemAdministratorsGroup() const{ return m_fileSystemAdministratorsGroup; }
+    inline const Aws::String& GetFileSystemAdministratorsGroup() const { return m_fileSystemAdministratorsGroup; }
     inline bool FileSystemAdministratorsGroupHasBeenSet() const { return m_fileSystemAdministratorsGroupHasBeenSet; }
-    inline void SetFileSystemAdministratorsGroup(const Aws::String& value) { m_fileSystemAdministratorsGroupHasBeenSet = true; m_fileSystemAdministratorsGroup = value; }
-    inline void SetFileSystemAdministratorsGroup(Aws::String&& value) { m_fileSystemAdministratorsGroupHasBeenSet = true; m_fileSystemAdministratorsGroup = std::move(value); }
-    inline void SetFileSystemAdministratorsGroup(const char* value) { m_fileSystemAdministratorsGroupHasBeenSet = true; m_fileSystemAdministratorsGroup.assign(value); }
-    inline SelfManagedActiveDirectoryAttributes& WithFileSystemAdministratorsGroup(const Aws::String& value) { SetFileSystemAdministratorsGroup(value); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithFileSystemAdministratorsGroup(Aws::String&& value) { SetFileSystemAdministratorsGroup(std::move(value)); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithFileSystemAdministratorsGroup(const char* value) { SetFileSystemAdministratorsGroup(value); return *this;}
+    template<typename FileSystemAdministratorsGroupT = Aws::String>
+    void SetFileSystemAdministratorsGroup(FileSystemAdministratorsGroupT&& value) { m_fileSystemAdministratorsGroupHasBeenSet = true; m_fileSystemAdministratorsGroup = std::forward<FileSystemAdministratorsGroupT>(value); }
+    template<typename FileSystemAdministratorsGroupT = Aws::String>
+    SelfManagedActiveDirectoryAttributes& WithFileSystemAdministratorsGroup(FileSystemAdministratorsGroupT&& value) { SetFileSystemAdministratorsGroup(std::forward<FileSystemAdministratorsGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <p>The user name for the service account on your self-managed AD domain that FSx
      * uses to join to your AD domain.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline SelfManagedActiveDirectoryAttributes& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    SelfManagedActiveDirectoryAttributes& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,15 +97,14 @@ namespace Model
      * <p>A list of up to three IP addresses of DNS servers or domain controllers in
      * the self-managed AD directory.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
+    inline const Aws::Vector<Aws::String>& GetDnsIps() const { return m_dnsIps; }
     inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
-    inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
-    inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
-    inline SelfManagedActiveDirectoryAttributes& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
-    inline SelfManagedActiveDirectoryAttributes& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
-    inline SelfManagedActiveDirectoryAttributes& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
-    inline SelfManagedActiveDirectoryAttributes& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
+    template<typename DnsIpsT = Aws::Vector<Aws::String>>
+    void SetDnsIps(DnsIpsT&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::forward<DnsIpsT>(value); }
+    template<typename DnsIpsT = Aws::Vector<Aws::String>>
+    SelfManagedActiveDirectoryAttributes& WithDnsIps(DnsIpsT&& value) { SetDnsIps(std::forward<DnsIpsT>(value)); return *this;}
+    template<typename DnsIpsT = Aws::String>
+    SelfManagedActiveDirectoryAttributes& AddDnsIps(DnsIpsT&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.emplace_back(std::forward<DnsIpsT>(value)); return *this; }
     ///@}
   private:
 

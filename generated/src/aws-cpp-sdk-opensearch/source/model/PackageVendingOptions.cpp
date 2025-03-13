@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PackageVendingOptions::PackageVendingOptions() : 
-    m_vendingEnabled(false),
-    m_vendingEnabledHasBeenSet(false)
-{
-}
-
 PackageVendingOptions::PackageVendingOptions(JsonView jsonValue)
-  : PackageVendingOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PackageVendingOptions& PackageVendingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VendingEnabled"))
   {
     m_vendingEnabled = jsonValue.GetBool("VendingEnabled");
-
     m_vendingEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

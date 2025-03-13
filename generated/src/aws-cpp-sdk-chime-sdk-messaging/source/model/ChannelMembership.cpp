@@ -18,20 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelMembership::ChannelMembership() : 
-    m_invitedByHasBeenSet(false),
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_memberHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 ChannelMembership::ChannelMembership(JsonView jsonValue)
-  : ChannelMembership()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ChannelMembership& ChannelMembership::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvitedBy"))
   {
     m_invitedBy = jsonValue.GetObject("InvitedBy");
-
     m_invitedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChannelMembershipTypeMapper::GetChannelMembershipTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Member"))
   {
     m_member = jsonValue.GetObject("Member");
-
     m_memberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubChannelId"))
   {
     m_subChannelId = jsonValue.GetString("SubChannelId");
-
     m_subChannelIdHasBeenSet = true;
   }
-
   return *this;
 }
 

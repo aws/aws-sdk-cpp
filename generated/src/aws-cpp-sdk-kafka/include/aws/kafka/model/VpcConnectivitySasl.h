@@ -35,7 +35,7 @@ namespace Model
   class VpcConnectivitySasl
   {
   public:
-    AWS_KAFKA_API VpcConnectivitySasl();
+    AWS_KAFKA_API VpcConnectivitySasl() = default;
     AWS_KAFKA_API VpcConnectivitySasl(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API VpcConnectivitySasl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * connectivity.</p>
          
      */
-    inline const VpcConnectivityScram& GetScram() const{ return m_scram; }
+    inline const VpcConnectivityScram& GetScram() const { return m_scram; }
     inline bool ScramHasBeenSet() const { return m_scramHasBeenSet; }
-    inline void SetScram(const VpcConnectivityScram& value) { m_scramHasBeenSet = true; m_scram = value; }
-    inline void SetScram(VpcConnectivityScram&& value) { m_scramHasBeenSet = true; m_scram = std::move(value); }
-    inline VpcConnectivitySasl& WithScram(const VpcConnectivityScram& value) { SetScram(value); return *this;}
-    inline VpcConnectivitySasl& WithScram(VpcConnectivityScram&& value) { SetScram(std::move(value)); return *this;}
+    template<typename ScramT = VpcConnectivityScram>
+    void SetScram(ScramT&& value) { m_scramHasBeenSet = true; m_scram = std::forward<ScramT>(value); }
+    template<typename ScramT = VpcConnectivityScram>
+    VpcConnectivitySasl& WithScram(ScramT&& value) { SetScram(std::forward<ScramT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * connectivity.</p>
          
      */
-    inline const VpcConnectivityIam& GetIam() const{ return m_iam; }
+    inline const VpcConnectivityIam& GetIam() const { return m_iam; }
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-    inline void SetIam(const VpcConnectivityIam& value) { m_iamHasBeenSet = true; m_iam = value; }
-    inline void SetIam(VpcConnectivityIam&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-    inline VpcConnectivitySasl& WithIam(const VpcConnectivityIam& value) { SetIam(value); return *this;}
-    inline VpcConnectivitySasl& WithIam(VpcConnectivityIam&& value) { SetIam(std::move(value)); return *this;}
+    template<typename IamT = VpcConnectivityIam>
+    void SetIam(IamT&& value) { m_iamHasBeenSet = true; m_iam = std::forward<IamT>(value); }
+    template<typename IamT = VpcConnectivityIam>
+    VpcConnectivitySasl& WithIam(IamT&& value) { SetIam(std::forward<IamT>(value)); return *this;}
     ///@}
   private:
 

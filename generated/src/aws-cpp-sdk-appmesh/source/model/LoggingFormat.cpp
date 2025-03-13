@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-LoggingFormat::LoggingFormat() : 
-    m_jsonHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 LoggingFormat::LoggingFormat(JsonView jsonValue)
-  : LoggingFormat()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ LoggingFormat& LoggingFormat::operator =(JsonView jsonValue)
     }
     m_jsonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

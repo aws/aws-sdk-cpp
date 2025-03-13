@@ -10,25 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeClusterSnapshotsRequest::DescribeClusterSnapshotsRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false),
-    m_clusterExists(false),
-    m_clusterExistsHasBeenSet(false),
-    m_sortingEntitiesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

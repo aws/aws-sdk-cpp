@@ -18,17 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-ContextDataType::ContextDataType() : 
-    m_ipAddressHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serverPathHasBeenSet(false),
-    m_httpHeadersHasBeenSet(false),
-    m_encodedDataHasBeenSet(false)
-{
-}
-
 ContextDataType::ContextDataType(JsonView jsonValue)
-  : ContextDataType()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ContextDataType& ContextDataType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerPath"))
   {
     m_serverPath = jsonValue.GetString("ServerPath");
-
     m_serverPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpHeaders"))
   {
     Aws::Utils::Array<JsonView> httpHeadersJsonList = jsonValue.GetArray("HttpHeaders");
@@ -65,14 +49,11 @@ ContextDataType& ContextDataType::operator =(JsonView jsonValue)
     }
     m_httpHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncodedData"))
   {
     m_encodedData = jsonValue.GetString("EncodedData");
-
     m_encodedDataHasBeenSet = true;
   }
-
   return *this;
 }
 

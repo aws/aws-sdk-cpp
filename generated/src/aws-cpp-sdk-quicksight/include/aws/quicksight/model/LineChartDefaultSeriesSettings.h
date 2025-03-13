@@ -34,7 +34,7 @@ namespace Model
   class LineChartDefaultSeriesSettings
   {
   public:
-    AWS_QUICKSIGHT_API LineChartDefaultSeriesSettings();
+    AWS_QUICKSIGHT_API LineChartDefaultSeriesSettings() = default;
     AWS_QUICKSIGHT_API LineChartDefaultSeriesSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LineChartDefaultSeriesSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,38 @@ namespace Model
     /**
      * <p>The axis to which you are binding all line series to.</p>
      */
-    inline const AxisBinding& GetAxisBinding() const{ return m_axisBinding; }
+    inline AxisBinding GetAxisBinding() const { return m_axisBinding; }
     inline bool AxisBindingHasBeenSet() const { return m_axisBindingHasBeenSet; }
-    inline void SetAxisBinding(const AxisBinding& value) { m_axisBindingHasBeenSet = true; m_axisBinding = value; }
-    inline void SetAxisBinding(AxisBinding&& value) { m_axisBindingHasBeenSet = true; m_axisBinding = std::move(value); }
-    inline LineChartDefaultSeriesSettings& WithAxisBinding(const AxisBinding& value) { SetAxisBinding(value); return *this;}
-    inline LineChartDefaultSeriesSettings& WithAxisBinding(AxisBinding&& value) { SetAxisBinding(std::move(value)); return *this;}
+    inline void SetAxisBinding(AxisBinding value) { m_axisBindingHasBeenSet = true; m_axisBinding = value; }
+    inline LineChartDefaultSeriesSettings& WithAxisBinding(AxisBinding value) { SetAxisBinding(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Line styles options for all line series in the visual.</p>
      */
-    inline const LineChartLineStyleSettings& GetLineStyleSettings() const{ return m_lineStyleSettings; }
+    inline const LineChartLineStyleSettings& GetLineStyleSettings() const { return m_lineStyleSettings; }
     inline bool LineStyleSettingsHasBeenSet() const { return m_lineStyleSettingsHasBeenSet; }
-    inline void SetLineStyleSettings(const LineChartLineStyleSettings& value) { m_lineStyleSettingsHasBeenSet = true; m_lineStyleSettings = value; }
-    inline void SetLineStyleSettings(LineChartLineStyleSettings&& value) { m_lineStyleSettingsHasBeenSet = true; m_lineStyleSettings = std::move(value); }
-    inline LineChartDefaultSeriesSettings& WithLineStyleSettings(const LineChartLineStyleSettings& value) { SetLineStyleSettings(value); return *this;}
-    inline LineChartDefaultSeriesSettings& WithLineStyleSettings(LineChartLineStyleSettings&& value) { SetLineStyleSettings(std::move(value)); return *this;}
+    template<typename LineStyleSettingsT = LineChartLineStyleSettings>
+    void SetLineStyleSettings(LineStyleSettingsT&& value) { m_lineStyleSettingsHasBeenSet = true; m_lineStyleSettings = std::forward<LineStyleSettingsT>(value); }
+    template<typename LineStyleSettingsT = LineChartLineStyleSettings>
+    LineChartDefaultSeriesSettings& WithLineStyleSettings(LineStyleSettingsT&& value) { SetLineStyleSettings(std::forward<LineStyleSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Marker styles options for all line series in the visual.</p>
      */
-    inline const LineChartMarkerStyleSettings& GetMarkerStyleSettings() const{ return m_markerStyleSettings; }
+    inline const LineChartMarkerStyleSettings& GetMarkerStyleSettings() const { return m_markerStyleSettings; }
     inline bool MarkerStyleSettingsHasBeenSet() const { return m_markerStyleSettingsHasBeenSet; }
-    inline void SetMarkerStyleSettings(const LineChartMarkerStyleSettings& value) { m_markerStyleSettingsHasBeenSet = true; m_markerStyleSettings = value; }
-    inline void SetMarkerStyleSettings(LineChartMarkerStyleSettings&& value) { m_markerStyleSettingsHasBeenSet = true; m_markerStyleSettings = std::move(value); }
-    inline LineChartDefaultSeriesSettings& WithMarkerStyleSettings(const LineChartMarkerStyleSettings& value) { SetMarkerStyleSettings(value); return *this;}
-    inline LineChartDefaultSeriesSettings& WithMarkerStyleSettings(LineChartMarkerStyleSettings&& value) { SetMarkerStyleSettings(std::move(value)); return *this;}
+    template<typename MarkerStyleSettingsT = LineChartMarkerStyleSettings>
+    void SetMarkerStyleSettings(MarkerStyleSettingsT&& value) { m_markerStyleSettingsHasBeenSet = true; m_markerStyleSettings = std::forward<MarkerStyleSettingsT>(value); }
+    template<typename MarkerStyleSettingsT = LineChartMarkerStyleSettings>
+    LineChartDefaultSeriesSettings& WithMarkerStyleSettings(MarkerStyleSettingsT&& value) { SetMarkerStyleSettings(std::forward<MarkerStyleSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    AxisBinding m_axisBinding;
+    AxisBinding m_axisBinding{AxisBinding::NOT_SET};
     bool m_axisBindingHasBeenSet = false;
 
     LineChartLineStyleSettings m_lineStyleSettings;

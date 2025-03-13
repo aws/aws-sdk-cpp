@@ -12,12 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMeetingTranscriptionRequest::StartMeetingTranscriptionRequest() : 
-    m_meetingIdHasBeenSet(false),
-    m_transcriptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String StartMeetingTranscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

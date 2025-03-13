@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamPermissionsBoundary::AwsIamPermissionsBoundary() : 
-    m_permissionsBoundaryArnHasBeenSet(false),
-    m_permissionsBoundaryTypeHasBeenSet(false)
-{
-}
-
 AwsIamPermissionsBoundary::AwsIamPermissionsBoundary(JsonView jsonValue)
-  : AwsIamPermissionsBoundary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsIamPermissionsBoundary& AwsIamPermissionsBoundary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("PermissionsBoundaryArn"))
   {
     m_permissionsBoundaryArn = jsonValue.GetString("PermissionsBoundaryArn");
-
     m_permissionsBoundaryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsBoundaryType"))
   {
     m_permissionsBoundaryType = jsonValue.GetString("PermissionsBoundaryType");
-
     m_permissionsBoundaryTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

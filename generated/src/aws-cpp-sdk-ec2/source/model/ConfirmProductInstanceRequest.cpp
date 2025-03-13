@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ConfirmProductInstanceRequest::ConfirmProductInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ConfirmProductInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

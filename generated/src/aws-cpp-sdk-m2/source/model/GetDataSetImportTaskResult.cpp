@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataSetImportTaskResult::GetDataSetImportTaskResult() : 
-    m_status(DataSetTaskLifecycle::NOT_SET)
-{
-}
-
 GetDataSetImportTaskResult::GetDataSetImportTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataSetImportTaskResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetDataSetImportTaskResult& GetDataSetImportTaskResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataSetTaskLifecycleMapper::GetDataSetTaskLifecycleForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetObject("summary");
-
+    m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
+    m_taskIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AcceptGroupingRecommendationEntry::AcceptGroupingRecommendationEntry() : 
-    m_groupingRecommendationIdHasBeenSet(false)
-{
-}
-
 AcceptGroupingRecommendationEntry::AcceptGroupingRecommendationEntry(JsonView jsonValue)
-  : AcceptGroupingRecommendationEntry()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AcceptGroupingRecommendationEntry& AcceptGroupingRecommendationEntry::operator =
   if(jsonValue.ValueExists("groupingRecommendationId"))
   {
     m_groupingRecommendationId = jsonValue.GetString("groupingRecommendationId");
-
     m_groupingRecommendationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

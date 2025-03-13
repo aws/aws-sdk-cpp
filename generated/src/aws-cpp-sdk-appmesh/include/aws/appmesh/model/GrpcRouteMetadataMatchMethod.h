@@ -33,7 +33,7 @@ namespace Model
   class GrpcRouteMetadataMatchMethod
   {
   public:
-    AWS_APPMESH_API GrpcRouteMetadataMatchMethod();
+    AWS_APPMESH_API GrpcRouteMetadataMatchMethod() = default;
     AWS_APPMESH_API GrpcRouteMetadataMatchMethod(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API GrpcRouteMetadataMatchMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,68 +43,60 @@ namespace Model
     /**
      * <p>The value sent by the client must match the specified value exactly.</p>
      */
-    inline const Aws::String& GetExact() const{ return m_exact; }
+    inline const Aws::String& GetExact() const { return m_exact; }
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-    inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-    inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-    inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-    inline GrpcRouteMetadataMatchMethod& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithExact(const char* value) { SetExact(value); return *this;}
+    template<typename ExactT = Aws::String>
+    void SetExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact = std::forward<ExactT>(value); }
+    template<typename ExactT = Aws::String>
+    GrpcRouteMetadataMatchMethod& WithExact(ExactT&& value) { SetExact(std::forward<ExactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value sent by the client must begin with the specified characters.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline GrpcRouteMetadataMatchMethod& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    GrpcRouteMetadataMatchMethod& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represents the range of values to match on.</p>
      */
-    inline const MatchRange& GetRange() const{ return m_range; }
+    inline const MatchRange& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const MatchRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(MatchRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline GrpcRouteMetadataMatchMethod& WithRange(const MatchRange& value) { SetRange(value); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithRange(MatchRange&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = MatchRange>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = MatchRange>
+    GrpcRouteMetadataMatchMethod& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value sent by the client must include the specified characters.</p>
      */
-    inline const Aws::String& GetRegex() const{ return m_regex; }
+    inline const Aws::String& GetRegex() const { return m_regex; }
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-    inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-    inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-    inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-    inline GrpcRouteMetadataMatchMethod& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithRegex(const char* value) { SetRegex(value); return *this;}
+    template<typename RegexT = Aws::String>
+    void SetRegex(RegexT&& value) { m_regexHasBeenSet = true; m_regex = std::forward<RegexT>(value); }
+    template<typename RegexT = Aws::String>
+    GrpcRouteMetadataMatchMethod& WithRegex(RegexT&& value) { SetRegex(std::forward<RegexT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value sent by the client must end with the specified characters.</p>
      */
-    inline const Aws::String& GetSuffix() const{ return m_suffix; }
+    inline const Aws::String& GetSuffix() const { return m_suffix; }
     inline bool SuffixHasBeenSet() const { return m_suffixHasBeenSet; }
-    inline void SetSuffix(const Aws::String& value) { m_suffixHasBeenSet = true; m_suffix = value; }
-    inline void SetSuffix(Aws::String&& value) { m_suffixHasBeenSet = true; m_suffix = std::move(value); }
-    inline void SetSuffix(const char* value) { m_suffixHasBeenSet = true; m_suffix.assign(value); }
-    inline GrpcRouteMetadataMatchMethod& WithSuffix(const Aws::String& value) { SetSuffix(value); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithSuffix(Aws::String&& value) { SetSuffix(std::move(value)); return *this;}
-    inline GrpcRouteMetadataMatchMethod& WithSuffix(const char* value) { SetSuffix(value); return *this;}
+    template<typename SuffixT = Aws::String>
+    void SetSuffix(SuffixT&& value) { m_suffixHasBeenSet = true; m_suffix = std::forward<SuffixT>(value); }
+    template<typename SuffixT = Aws::String>
+    GrpcRouteMetadataMatchMethod& WithSuffix(SuffixT&& value) { SetSuffix(std::forward<SuffixT>(value)); return *this;}
     ///@}
   private:
 

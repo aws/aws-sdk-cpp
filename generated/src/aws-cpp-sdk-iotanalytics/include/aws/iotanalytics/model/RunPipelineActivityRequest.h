@@ -23,7 +23,7 @@ namespace Model
   class RunPipelineActivityRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API RunPipelineActivityRequest();
+    AWS_IOTANALYTICS_API RunPipelineActivityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,26 +42,26 @@ namespace Model
      * Lambda activity is specified, only short-running Lambda functions (those with a
      * timeout of less than 30 seconds or less) can be used.</p>
      */
-    inline const PipelineActivity& GetPipelineActivity() const{ return m_pipelineActivity; }
+    inline const PipelineActivity& GetPipelineActivity() const { return m_pipelineActivity; }
     inline bool PipelineActivityHasBeenSet() const { return m_pipelineActivityHasBeenSet; }
-    inline void SetPipelineActivity(const PipelineActivity& value) { m_pipelineActivityHasBeenSet = true; m_pipelineActivity = value; }
-    inline void SetPipelineActivity(PipelineActivity&& value) { m_pipelineActivityHasBeenSet = true; m_pipelineActivity = std::move(value); }
-    inline RunPipelineActivityRequest& WithPipelineActivity(const PipelineActivity& value) { SetPipelineActivity(value); return *this;}
-    inline RunPipelineActivityRequest& WithPipelineActivity(PipelineActivity&& value) { SetPipelineActivity(std::move(value)); return *this;}
+    template<typename PipelineActivityT = PipelineActivity>
+    void SetPipelineActivity(PipelineActivityT&& value) { m_pipelineActivityHasBeenSet = true; m_pipelineActivity = std::forward<PipelineActivityT>(value); }
+    template<typename PipelineActivityT = PipelineActivity>
+    RunPipelineActivityRequest& WithPipelineActivity(PipelineActivityT&& value) { SetPipelineActivity(std::forward<PipelineActivityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sample message payloads on which the pipeline activity is run.</p>
      */
-    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const{ return m_payloads; }
+    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetPayloads() const { return m_payloads; }
     inline bool PayloadsHasBeenSet() const { return m_payloadsHasBeenSet; }
-    inline void SetPayloads(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_payloadsHasBeenSet = true; m_payloads = value; }
-    inline void SetPayloads(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_payloadsHasBeenSet = true; m_payloads = std::move(value); }
-    inline RunPipelineActivityRequest& WithPayloads(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { SetPayloads(value); return *this;}
-    inline RunPipelineActivityRequest& WithPayloads(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetPayloads(std::move(value)); return *this;}
-    inline RunPipelineActivityRequest& AddPayloads(const Aws::Utils::ByteBuffer& value) { m_payloadsHasBeenSet = true; m_payloads.push_back(value); return *this; }
-    inline RunPipelineActivityRequest& AddPayloads(Aws::Utils::ByteBuffer&& value) { m_payloadsHasBeenSet = true; m_payloads.push_back(std::move(value)); return *this; }
+    template<typename PayloadsT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    void SetPayloads(PayloadsT&& value) { m_payloadsHasBeenSet = true; m_payloads = std::forward<PayloadsT>(value); }
+    template<typename PayloadsT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    RunPipelineActivityRequest& WithPayloads(PayloadsT&& value) { SetPayloads(std::forward<PayloadsT>(value)); return *this;}
+    template<typename PayloadsT = Aws::Utils::ByteBuffer>
+    RunPipelineActivityRequest& AddPayloads(PayloadsT&& value) { m_payloadsHasBeenSet = true; m_payloads.emplace_back(std::forward<PayloadsT>(value)); return *this; }
     ///@}
   private:
 

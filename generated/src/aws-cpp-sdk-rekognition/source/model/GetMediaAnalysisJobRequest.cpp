@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMediaAnalysisJobRequest::GetMediaAnalysisJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMediaAnalysisJobRequest::SerializePayload() const
 {
   JsonValue payload;

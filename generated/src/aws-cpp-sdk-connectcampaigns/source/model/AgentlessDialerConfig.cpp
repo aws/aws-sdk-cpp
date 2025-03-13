@@ -18,14 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-AgentlessDialerConfig::AgentlessDialerConfig() : 
-    m_dialingCapacity(0.0),
-    m_dialingCapacityHasBeenSet(false)
-{
-}
-
 AgentlessDialerConfig::AgentlessDialerConfig(JsonView jsonValue)
-  : AgentlessDialerConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AgentlessDialerConfig& AgentlessDialerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dialingCapacity"))
   {
     m_dialingCapacity = jsonValue.GetDouble("dialingCapacity");
-
     m_dialingCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

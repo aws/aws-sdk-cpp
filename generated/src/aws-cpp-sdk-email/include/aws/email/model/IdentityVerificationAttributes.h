@@ -33,7 +33,7 @@ namespace Model
   class IdentityVerificationAttributes
   {
   public:
-    AWS_SES_API IdentityVerificationAttributes();
+    AWS_SES_API IdentityVerificationAttributes() = default;
     AWS_SES_API IdentityVerificationAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API IdentityVerificationAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,10 @@ namespace Model
      * <p>The verification status of the identity: "Pending", "Success", "Failed", or
      * "TemporaryFailure".</p>
      */
-    inline const VerificationStatus& GetVerificationStatus() const{ return m_verificationStatus; }
+    inline VerificationStatus GetVerificationStatus() const { return m_verificationStatus; }
     inline bool VerificationStatusHasBeenSet() const { return m_verificationStatusHasBeenSet; }
-    inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
-    inline void SetVerificationStatus(VerificationStatus&& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = std::move(value); }
-    inline IdentityVerificationAttributes& WithVerificationStatus(const VerificationStatus& value) { SetVerificationStatus(value); return *this;}
-    inline IdentityVerificationAttributes& WithVerificationStatus(VerificationStatus&& value) { SetVerificationStatus(std::move(value)); return *this;}
+    inline void SetVerificationStatus(VerificationStatus value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
+    inline IdentityVerificationAttributes& WithVerificationStatus(VerificationStatus value) { SetVerificationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>The verification token for a domain identity. Null for email address
      * identities.</p>
      */
-    inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
+    inline const Aws::String& GetVerificationToken() const { return m_verificationToken; }
     inline bool VerificationTokenHasBeenSet() const { return m_verificationTokenHasBeenSet; }
-    inline void SetVerificationToken(const Aws::String& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = value; }
-    inline void SetVerificationToken(Aws::String&& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = std::move(value); }
-    inline void SetVerificationToken(const char* value) { m_verificationTokenHasBeenSet = true; m_verificationToken.assign(value); }
-    inline IdentityVerificationAttributes& WithVerificationToken(const Aws::String& value) { SetVerificationToken(value); return *this;}
-    inline IdentityVerificationAttributes& WithVerificationToken(Aws::String&& value) { SetVerificationToken(std::move(value)); return *this;}
-    inline IdentityVerificationAttributes& WithVerificationToken(const char* value) { SetVerificationToken(value); return *this;}
+    template<typename VerificationTokenT = Aws::String>
+    void SetVerificationToken(VerificationTokenT&& value) { m_verificationTokenHasBeenSet = true; m_verificationToken = std::forward<VerificationTokenT>(value); }
+    template<typename VerificationTokenT = Aws::String>
+    IdentityVerificationAttributes& WithVerificationToken(VerificationTokenT&& value) { SetVerificationToken(std::forward<VerificationTokenT>(value)); return *this;}
     ///@}
   private:
 
-    VerificationStatus m_verificationStatus;
+    VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
     bool m_verificationStatusHasBeenSet = false;
 
     Aws::String m_verificationToken;

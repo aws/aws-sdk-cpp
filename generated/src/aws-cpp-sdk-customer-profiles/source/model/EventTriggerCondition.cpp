@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-EventTriggerCondition::EventTriggerCondition() : 
-    m_eventTriggerDimensionsHasBeenSet(false),
-    m_logicalOperator(EventTriggerLogicalOperator::NOT_SET),
-    m_logicalOperatorHasBeenSet(false)
-{
-}
-
 EventTriggerCondition::EventTriggerCondition(JsonView jsonValue)
-  : EventTriggerCondition()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ EventTriggerCondition& EventTriggerCondition::operator =(JsonView jsonValue)
     }
     m_eventTriggerDimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogicalOperator"))
   {
     m_logicalOperator = EventTriggerLogicalOperatorMapper::GetEventTriggerLogicalOperatorForName(jsonValue.GetString("LogicalOperator"));
-
     m_logicalOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

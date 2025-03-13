@@ -18,17 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-IntegrationSummary::IntegrationSummary() : 
-    m_integrationNameHasBeenSet(false),
-    m_integrationType(IntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false),
-    m_integrationStatus(IntegrationStatus::NOT_SET),
-    m_integrationStatusHasBeenSet(false)
-{
-}
-
 IntegrationSummary::IntegrationSummary(JsonView jsonValue)
-  : IntegrationSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IntegrationSummary& IntegrationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("integrationName"))
   {
     m_integrationName = jsonValue.GetString("integrationName");
-
     m_integrationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationType"))
   {
     m_integrationType = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("integrationType"));
-
     m_integrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationStatus"))
   {
     m_integrationStatus = IntegrationStatusMapper::GetIntegrationStatusForName(jsonValue.GetString("integrationStatus"));
-
     m_integrationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetDocumentationPartRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetDocumentationPartRequest();
+    AWS_APIGATEWAY_API GetDocumentationPartRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetDocumentationPartRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetDocumentationPartRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetDocumentationPartRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetDocumentationPartRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetDocumentationPartId() const{ return m_documentationPartId; }
+    inline const Aws::String& GetDocumentationPartId() const { return m_documentationPartId; }
     inline bool DocumentationPartIdHasBeenSet() const { return m_documentationPartIdHasBeenSet; }
-    inline void SetDocumentationPartId(const Aws::String& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = value; }
-    inline void SetDocumentationPartId(Aws::String&& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = std::move(value); }
-    inline void SetDocumentationPartId(const char* value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId.assign(value); }
-    inline GetDocumentationPartRequest& WithDocumentationPartId(const Aws::String& value) { SetDocumentationPartId(value); return *this;}
-    inline GetDocumentationPartRequest& WithDocumentationPartId(Aws::String&& value) { SetDocumentationPartId(std::move(value)); return *this;}
-    inline GetDocumentationPartRequest& WithDocumentationPartId(const char* value) { SetDocumentationPartId(value); return *this;}
+    template<typename DocumentationPartIdT = Aws::String>
+    void SetDocumentationPartId(DocumentationPartIdT&& value) { m_documentationPartIdHasBeenSet = true; m_documentationPartId = std::forward<DocumentationPartIdT>(value); }
+    template<typename DocumentationPartIdT = Aws::String>
+    GetDocumentationPartRequest& WithDocumentationPartId(DocumentationPartIdT&& value) { SetDocumentationPartId(std::forward<DocumentationPartIdT>(value)); return *this;}
     ///@}
   private:
 

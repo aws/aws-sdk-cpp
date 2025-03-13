@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-S3DataSourceConfiguration::S3DataSourceConfiguration() : 
-    m_bucketArnHasBeenSet(false),
-    m_bucketOwnerAccountIdHasBeenSet(false),
-    m_inclusionPrefixesHasBeenSet(false)
-{
-}
-
 S3DataSourceConfiguration::S3DataSourceConfiguration(JsonView jsonValue)
-  : S3DataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("bucketArn"))
   {
     m_bucketArn = jsonValue.GetString("bucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketOwnerAccountId"))
   {
     m_bucketOwnerAccountId = jsonValue.GetString("bucketOwnerAccountId");
-
     m_bucketOwnerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inclusionPrefixes"))
   {
     Aws::Utils::Array<JsonView> inclusionPrefixesJsonList = jsonValue.GetArray("inclusionPrefixes");
@@ -56,7 +44,6 @@ S3DataSourceConfiguration& S3DataSourceConfiguration::operator =(JsonView jsonVa
     }
     m_inclusionPrefixesHasBeenSet = true;
   }
-
   return *this;
 }
 

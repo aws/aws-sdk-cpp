@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DeferredMaintenanceWindow::DeferredMaintenanceWindow() : 
-    m_deferMaintenanceIdentifierHasBeenSet(false),
-    m_deferMaintenanceStartTimeHasBeenSet(false),
-    m_deferMaintenanceEndTimeHasBeenSet(false)
-{
-}
-
 DeferredMaintenanceWindow::DeferredMaintenanceWindow(const XmlNode& xmlNode)
-  : DeferredMaintenanceWindow()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ DeferredMaintenanceWindow& DeferredMaintenanceWindow::operator =(const XmlNode& 
     {
       m_deferMaintenanceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceIdentifierNode.GetText());
       m_deferMaintenanceIdentifierHasBeenSet = true;
+       m_deferMaintenanceIdentifierHasBeenSet = true;
     }
     XmlNode deferMaintenanceStartTimeNode = resultNode.FirstChild("DeferMaintenanceStartTime");
     if(!deferMaintenanceStartTimeNode.IsNull())
     {
       m_deferMaintenanceStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deferMaintenanceStartTimeHasBeenSet = true;
+       m_deferMaintenanceStartTimeHasBeenSet = true;
     }
     XmlNode deferMaintenanceEndTimeNode = resultNode.FirstChild("DeferMaintenanceEndTime");
     if(!deferMaintenanceEndTimeNode.IsNull())
     {
       m_deferMaintenanceEndTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deferMaintenanceEndTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deferMaintenanceEndTimeHasBeenSet = true;
+       m_deferMaintenanceEndTimeHasBeenSet = true;
     }
   }
 

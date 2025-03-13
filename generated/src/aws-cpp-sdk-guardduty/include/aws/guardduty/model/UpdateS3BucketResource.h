@@ -33,7 +33,7 @@ namespace Model
   class UpdateS3BucketResource
   {
   public:
-    AWS_GUARDDUTY_API UpdateS3BucketResource();
+    AWS_GUARDDUTY_API UpdateS3BucketResource() = default;
     AWS_GUARDDUTY_API UpdateS3BucketResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API UpdateS3BucketResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>Information about the specified object prefixes. The S3 object will be
      * scanned only if it belongs to any of the specified object prefixes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const{ return m_objectPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const { return m_objectPrefixes; }
     inline bool ObjectPrefixesHasBeenSet() const { return m_objectPrefixesHasBeenSet; }
-    inline void SetObjectPrefixes(const Aws::Vector<Aws::String>& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = value; }
-    inline void SetObjectPrefixes(Aws::Vector<Aws::String>&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::move(value); }
-    inline UpdateS3BucketResource& WithObjectPrefixes(const Aws::Vector<Aws::String>& value) { SetObjectPrefixes(value); return *this;}
-    inline UpdateS3BucketResource& WithObjectPrefixes(Aws::Vector<Aws::String>&& value) { SetObjectPrefixes(std::move(value)); return *this;}
-    inline UpdateS3BucketResource& AddObjectPrefixes(const Aws::String& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
-    inline UpdateS3BucketResource& AddObjectPrefixes(Aws::String&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(std::move(value)); return *this; }
-    inline UpdateS3BucketResource& AddObjectPrefixes(const char* value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
+    template<typename ObjectPrefixesT = Aws::Vector<Aws::String>>
+    void SetObjectPrefixes(ObjectPrefixesT&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::forward<ObjectPrefixesT>(value); }
+    template<typename ObjectPrefixesT = Aws::Vector<Aws::String>>
+    UpdateS3BucketResource& WithObjectPrefixes(ObjectPrefixesT&& value) { SetObjectPrefixes(std::forward<ObjectPrefixesT>(value)); return *this;}
+    template<typename ObjectPrefixesT = Aws::String>
+    UpdateS3BucketResource& AddObjectPrefixes(ObjectPrefixesT&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.emplace_back(std::forward<ObjectPrefixesT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,15 +12,6 @@ using namespace Aws::Invoicing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInvoiceUnitsRequest::ListInvoiceUnitsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_asOfHasBeenSet(false)
-{
-}
-
 Aws::String ListInvoiceUnitsRequest::SerializePayload() const
 {
   JsonValue payload;

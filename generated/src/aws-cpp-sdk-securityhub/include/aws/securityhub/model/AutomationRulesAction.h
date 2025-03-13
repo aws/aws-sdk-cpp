@@ -33,7 +33,7 @@ namespace Model
   class AutomationRulesAction
   {
   public:
-    AWS_SECURITYHUB_API AutomationRulesAction();
+    AWS_SECURITYHUB_API AutomationRulesAction() = default;
     AWS_SECURITYHUB_API AutomationRulesAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AutomationRulesAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p> Specifies the type of action that Security Hub takes when a finding matches
      * the defined criteria of a rule. </p>
      */
-    inline const AutomationRulesActionType& GetType() const{ return m_type; }
+    inline AutomationRulesActionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AutomationRulesActionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AutomationRulesActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AutomationRulesAction& WithType(const AutomationRulesActionType& value) { SetType(value); return *this;}
-    inline AutomationRulesAction& WithType(AutomationRulesActionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AutomationRulesActionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AutomationRulesAction& WithType(AutomationRulesActionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <p> Specifies that the automation rule action is an update to a finding field.
      * </p>
      */
-    inline const AutomationRulesFindingFieldsUpdate& GetFindingFieldsUpdate() const{ return m_findingFieldsUpdate; }
+    inline const AutomationRulesFindingFieldsUpdate& GetFindingFieldsUpdate() const { return m_findingFieldsUpdate; }
     inline bool FindingFieldsUpdateHasBeenSet() const { return m_findingFieldsUpdateHasBeenSet; }
-    inline void SetFindingFieldsUpdate(const AutomationRulesFindingFieldsUpdate& value) { m_findingFieldsUpdateHasBeenSet = true; m_findingFieldsUpdate = value; }
-    inline void SetFindingFieldsUpdate(AutomationRulesFindingFieldsUpdate&& value) { m_findingFieldsUpdateHasBeenSet = true; m_findingFieldsUpdate = std::move(value); }
-    inline AutomationRulesAction& WithFindingFieldsUpdate(const AutomationRulesFindingFieldsUpdate& value) { SetFindingFieldsUpdate(value); return *this;}
-    inline AutomationRulesAction& WithFindingFieldsUpdate(AutomationRulesFindingFieldsUpdate&& value) { SetFindingFieldsUpdate(std::move(value)); return *this;}
+    template<typename FindingFieldsUpdateT = AutomationRulesFindingFieldsUpdate>
+    void SetFindingFieldsUpdate(FindingFieldsUpdateT&& value) { m_findingFieldsUpdateHasBeenSet = true; m_findingFieldsUpdate = std::forward<FindingFieldsUpdateT>(value); }
+    template<typename FindingFieldsUpdateT = AutomationRulesFindingFieldsUpdate>
+    AutomationRulesAction& WithFindingFieldsUpdate(FindingFieldsUpdateT&& value) { SetFindingFieldsUpdate(std::forward<FindingFieldsUpdateT>(value)); return *this;}
     ///@}
   private:
 
-    AutomationRulesActionType m_type;
+    AutomationRulesActionType m_type{AutomationRulesActionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     AutomationRulesFindingFieldsUpdate m_findingFieldsUpdate;

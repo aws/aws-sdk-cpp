@@ -36,7 +36,7 @@ namespace Model
   class JobInput
   {
   public:
-    AWS_ELASTICTRANSCODER_API JobInput();
+    AWS_ELASTICTRANSCODER_API JobInput() = default;
     AWS_ELASTICTRANSCODER_API JobInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API JobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * If the file isn't in the specified bucket, Elastic Transcoder returns an
      * error.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline JobInput& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline JobInput& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline JobInput& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    JobInput& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder disables automatic detection of the frame
      * rate.</p>
      */
-    inline const Aws::String& GetFrameRate() const{ return m_frameRate; }
+    inline const Aws::String& GetFrameRate() const { return m_frameRate; }
     inline bool FrameRateHasBeenSet() const { return m_frameRateHasBeenSet; }
-    inline void SetFrameRate(const Aws::String& value) { m_frameRateHasBeenSet = true; m_frameRate = value; }
-    inline void SetFrameRate(Aws::String&& value) { m_frameRateHasBeenSet = true; m_frameRate = std::move(value); }
-    inline void SetFrameRate(const char* value) { m_frameRateHasBeenSet = true; m_frameRate.assign(value); }
-    inline JobInput& WithFrameRate(const Aws::String& value) { SetFrameRate(value); return *this;}
-    inline JobInput& WithFrameRate(Aws::String&& value) { SetFrameRate(std::move(value)); return *this;}
-    inline JobInput& WithFrameRate(const char* value) { SetFrameRate(value); return *this;}
+    template<typename FrameRateT = Aws::String>
+    void SetFrameRate(FrameRateT&& value) { m_frameRateHasBeenSet = true; m_frameRate = std::forward<FrameRateT>(value); }
+    template<typename FrameRateT = Aws::String>
+    JobInput& WithFrameRate(FrameRateT&& value) { SetFrameRate(std::forward<FrameRateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * <p>This value must be <code>auto</code>, which causes Elastic Transcoder to
      * automatically detect the resolution of the input file.</p>
      */
-    inline const Aws::String& GetResolution() const{ return m_resolution; }
+    inline const Aws::String& GetResolution() const { return m_resolution; }
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-    inline void SetResolution(const Aws::String& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-    inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-    inline void SetResolution(const char* value) { m_resolutionHasBeenSet = true; m_resolution.assign(value); }
-    inline JobInput& WithResolution(const Aws::String& value) { SetResolution(value); return *this;}
-    inline JobInput& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
-    inline JobInput& WithResolution(const char* value) { SetResolution(value); return *this;}
+    template<typename ResolutionT = Aws::String>
+    void SetResolution(ResolutionT&& value) { m_resolutionHasBeenSet = true; m_resolution = std::forward<ResolutionT>(value); }
+    template<typename ResolutionT = Aws::String>
+    JobInput& WithResolution(ResolutionT&& value) { SetResolution(std::forward<ResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +102,12 @@ namespace Model
      * <code>auto</code>, Elastic Transcoder disables automatic detection of the aspect
      * ratio. </p>
      */
-    inline const Aws::String& GetAspectRatio() const{ return m_aspectRatio; }
+    inline const Aws::String& GetAspectRatio() const { return m_aspectRatio; }
     inline bool AspectRatioHasBeenSet() const { return m_aspectRatioHasBeenSet; }
-    inline void SetAspectRatio(const Aws::String& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = value; }
-    inline void SetAspectRatio(Aws::String&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::move(value); }
-    inline void SetAspectRatio(const char* value) { m_aspectRatioHasBeenSet = true; m_aspectRatio.assign(value); }
-    inline JobInput& WithAspectRatio(const Aws::String& value) { SetAspectRatio(value); return *this;}
-    inline JobInput& WithAspectRatio(Aws::String&& value) { SetAspectRatio(std::move(value)); return *this;}
-    inline JobInput& WithAspectRatio(const char* value) { SetAspectRatio(value); return *this;}
+    template<typename AspectRatioT = Aws::String>
+    void SetAspectRatio(AspectRatioT&& value) { m_aspectRatioHasBeenSet = true; m_aspectRatio = std::forward<AspectRatioT>(value); }
+    template<typename AspectRatioT = Aws::String>
+    JobInput& WithAspectRatio(AspectRatioT&& value) { SetAspectRatio(std::forward<AspectRatioT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +119,12 @@ namespace Model
      * </p> <p>If you specify a value other than <code>auto</code>, Elastic Transcoder
      * disables automatic detection of interlacing.</p>
      */
-    inline const Aws::String& GetInterlaced() const{ return m_interlaced; }
+    inline const Aws::String& GetInterlaced() const { return m_interlaced; }
     inline bool InterlacedHasBeenSet() const { return m_interlacedHasBeenSet; }
-    inline void SetInterlaced(const Aws::String& value) { m_interlacedHasBeenSet = true; m_interlaced = value; }
-    inline void SetInterlaced(Aws::String&& value) { m_interlacedHasBeenSet = true; m_interlaced = std::move(value); }
-    inline void SetInterlaced(const char* value) { m_interlacedHasBeenSet = true; m_interlaced.assign(value); }
-    inline JobInput& WithInterlaced(const Aws::String& value) { SetInterlaced(value); return *this;}
-    inline JobInput& WithInterlaced(Aws::String&& value) { SetInterlaced(std::move(value)); return *this;}
-    inline JobInput& WithInterlaced(const char* value) { SetInterlaced(value); return *this;}
+    template<typename InterlacedT = Aws::String>
+    void SetInterlaced(InterlacedT&& value) { m_interlacedHasBeenSet = true; m_interlaced = std::forward<InterlacedT>(value); }
+    template<typename InterlacedT = Aws::String>
+    JobInput& WithInterlaced(InterlacedT&& value) { SetInterlaced(std::forward<InterlacedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,14 +139,12 @@ namespace Model
      * <code>mxf</code>, <code>ogg</code>, <code>vob</code>, <code>wav</code>,
      * <code>webm</code> </p>
      */
-    inline const Aws::String& GetContainer() const{ return m_container; }
+    inline const Aws::String& GetContainer() const { return m_container; }
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
-    inline void SetContainer(const Aws::String& value) { m_containerHasBeenSet = true; m_container = value; }
-    inline void SetContainer(Aws::String&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
-    inline void SetContainer(const char* value) { m_containerHasBeenSet = true; m_container.assign(value); }
-    inline JobInput& WithContainer(const Aws::String& value) { SetContainer(value); return *this;}
-    inline JobInput& WithContainer(Aws::String&& value) { SetContainer(std::move(value)); return *this;}
-    inline JobInput& WithContainer(const char* value) { SetContainer(value); return *this;}
+    template<typename ContainerT = Aws::String>
+    void SetContainer(ContainerT&& value) { m_containerHasBeenSet = true; m_container = std::forward<ContainerT>(value); }
+    template<typename ContainerT = Aws::String>
+    JobInput& WithContainer(ContainerT&& value) { SetContainer(std::forward<ContainerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +153,12 @@ namespace Model
      * files. If your input file is encrypted, you must specify the mode that Elastic
      * Transcoder uses to decrypt your file.</p>
      */
-    inline const Encryption& GetEncryption() const{ return m_encryption; }
+    inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline JobInput& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
-    inline JobInput& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = Encryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = Encryption>
+    JobInput& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +166,12 @@ namespace Model
      * <p>Settings for clipping an input. Each input can have different clip
      * settings.</p>
      */
-    inline const TimeSpan& GetTimeSpan() const{ return m_timeSpan; }
+    inline const TimeSpan& GetTimeSpan() const { return m_timeSpan; }
     inline bool TimeSpanHasBeenSet() const { return m_timeSpanHasBeenSet; }
-    inline void SetTimeSpan(const TimeSpan& value) { m_timeSpanHasBeenSet = true; m_timeSpan = value; }
-    inline void SetTimeSpan(TimeSpan&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = std::move(value); }
-    inline JobInput& WithTimeSpan(const TimeSpan& value) { SetTimeSpan(value); return *this;}
-    inline JobInput& WithTimeSpan(TimeSpan&& value) { SetTimeSpan(std::move(value)); return *this;}
+    template<typename TimeSpanT = TimeSpan>
+    void SetTimeSpan(TimeSpanT&& value) { m_timeSpanHasBeenSet = true; m_timeSpan = std::forward<TimeSpanT>(value); }
+    template<typename TimeSpanT = TimeSpan>
+    JobInput& WithTimeSpan(TimeSpanT&& value) { SetTimeSpan(std::forward<TimeSpanT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -220,24 +208,24 @@ namespace Model
      * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
      * pages.</p>
      */
-    inline const InputCaptions& GetInputCaptions() const{ return m_inputCaptions; }
+    inline const InputCaptions& GetInputCaptions() const { return m_inputCaptions; }
     inline bool InputCaptionsHasBeenSet() const { return m_inputCaptionsHasBeenSet; }
-    inline void SetInputCaptions(const InputCaptions& value) { m_inputCaptionsHasBeenSet = true; m_inputCaptions = value; }
-    inline void SetInputCaptions(InputCaptions&& value) { m_inputCaptionsHasBeenSet = true; m_inputCaptions = std::move(value); }
-    inline JobInput& WithInputCaptions(const InputCaptions& value) { SetInputCaptions(value); return *this;}
-    inline JobInput& WithInputCaptions(InputCaptions&& value) { SetInputCaptions(std::move(value)); return *this;}
+    template<typename InputCaptionsT = InputCaptions>
+    void SetInputCaptions(InputCaptionsT&& value) { m_inputCaptionsHasBeenSet = true; m_inputCaptions = std::forward<InputCaptionsT>(value); }
+    template<typename InputCaptionsT = InputCaptions>
+    JobInput& WithInputCaptions(InputCaptionsT&& value) { SetInputCaptions(std::forward<InputCaptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detected properties of the input file.</p>
      */
-    inline const DetectedProperties& GetDetectedProperties() const{ return m_detectedProperties; }
+    inline const DetectedProperties& GetDetectedProperties() const { return m_detectedProperties; }
     inline bool DetectedPropertiesHasBeenSet() const { return m_detectedPropertiesHasBeenSet; }
-    inline void SetDetectedProperties(const DetectedProperties& value) { m_detectedPropertiesHasBeenSet = true; m_detectedProperties = value; }
-    inline void SetDetectedProperties(DetectedProperties&& value) { m_detectedPropertiesHasBeenSet = true; m_detectedProperties = std::move(value); }
-    inline JobInput& WithDetectedProperties(const DetectedProperties& value) { SetDetectedProperties(value); return *this;}
-    inline JobInput& WithDetectedProperties(DetectedProperties&& value) { SetDetectedProperties(std::move(value)); return *this;}
+    template<typename DetectedPropertiesT = DetectedProperties>
+    void SetDetectedProperties(DetectedPropertiesT&& value) { m_detectedPropertiesHasBeenSet = true; m_detectedProperties = std::forward<DetectedPropertiesT>(value); }
+    template<typename DetectedPropertiesT = DetectedProperties>
+    JobInput& WithDetectedProperties(DetectedPropertiesT&& value) { SetDetectedProperties(std::forward<DetectedPropertiesT>(value)); return *this;}
     ///@}
   private:
 

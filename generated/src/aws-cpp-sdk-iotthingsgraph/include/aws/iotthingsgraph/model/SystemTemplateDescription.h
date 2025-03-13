@@ -33,7 +33,7 @@ namespace Model
   class SystemTemplateDescription
   {
   public:
-    AWS_IOTTHINGSGRAPH_API SystemTemplateDescription();
+    AWS_IOTTHINGSGRAPH_API SystemTemplateDescription() = default;
     AWS_IOTTHINGSGRAPH_API SystemTemplateDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API SystemTemplateDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>An object that contains summary information about a system.</p>
      */
-    inline const SystemTemplateSummary& GetSummary() const{ return m_summary; }
+    inline const SystemTemplateSummary& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const SystemTemplateSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(SystemTemplateSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline SystemTemplateDescription& WithSummary(const SystemTemplateSummary& value) { SetSummary(value); return *this;}
-    inline SystemTemplateDescription& WithSummary(SystemTemplateSummary&& value) { SetSummary(std::move(value)); return *this;}
+    template<typename SummaryT = SystemTemplateSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = SystemTemplateSummary>
+    SystemTemplateDescription& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition document of a system.</p>
      */
-    inline const DefinitionDocument& GetDefinition() const{ return m_definition; }
+    inline const DefinitionDocument& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const DefinitionDocument& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(DefinitionDocument&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline SystemTemplateDescription& WithDefinition(const DefinitionDocument& value) { SetDefinition(value); return *this;}
-    inline SystemTemplateDescription& WithDefinition(DefinitionDocument&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = DefinitionDocument>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = DefinitionDocument>
+    SystemTemplateDescription& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +68,7 @@ namespace Model
      * <p>The namespace version against which the system was validated. Use this value
      * in your system instance.</p>
      */
-    inline long long GetValidatedNamespaceVersion() const{ return m_validatedNamespaceVersion; }
+    inline long long GetValidatedNamespaceVersion() const { return m_validatedNamespaceVersion; }
     inline bool ValidatedNamespaceVersionHasBeenSet() const { return m_validatedNamespaceVersionHasBeenSet; }
     inline void SetValidatedNamespaceVersion(long long value) { m_validatedNamespaceVersionHasBeenSet = true; m_validatedNamespaceVersion = value; }
     inline SystemTemplateDescription& WithValidatedNamespaceVersion(long long value) { SetValidatedNamespaceVersion(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
     DefinitionDocument m_definition;
     bool m_definitionHasBeenSet = false;
 
-    long long m_validatedNamespaceVersion;
+    long long m_validatedNamespaceVersion{0};
     bool m_validatedNamespaceVersionHasBeenSet = false;
   };
 

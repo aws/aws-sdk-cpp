@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableRowConditionalFormatting::TableRowConditionalFormatting() : 
-    m_backgroundColorHasBeenSet(false),
-    m_textColorHasBeenSet(false)
-{
-}
-
 TableRowConditionalFormatting::TableRowConditionalFormatting(JsonView jsonValue)
-  : TableRowConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableRowConditionalFormatting& TableRowConditionalFormatting::operator =(JsonVie
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetObject("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextColor"))
   {
     m_textColor = jsonValue.GetObject("TextColor");
-
     m_textColorHasBeenSet = true;
   }
-
   return *this;
 }
 

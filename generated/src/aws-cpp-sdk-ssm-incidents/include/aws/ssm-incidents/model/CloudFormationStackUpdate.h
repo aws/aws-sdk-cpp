@@ -34,7 +34,7 @@ namespace Model
   class CloudFormationStackUpdate
   {
   public:
-    AWS_SSMINCIDENTS_API CloudFormationStackUpdate();
+    AWS_SSMINCIDENTS_API CloudFormationStackUpdate() = default;
     AWS_SSMINCIDENTS_API CloudFormationStackUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API CloudFormationStackUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The timestamp for when the CloudFormation stack creation or update ended. Not
      * reported for deployments that are still in progress.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline CloudFormationStackUpdate& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline CloudFormationStackUpdate& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    CloudFormationStackUpdate& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,36 +58,34 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CloudFormation stack involved in the
      * update.</p>
      */
-    inline const Aws::String& GetStackArn() const{ return m_stackArn; }
+    inline const Aws::String& GetStackArn() const { return m_stackArn; }
     inline bool StackArnHasBeenSet() const { return m_stackArnHasBeenSet; }
-    inline void SetStackArn(const Aws::String& value) { m_stackArnHasBeenSet = true; m_stackArn = value; }
-    inline void SetStackArn(Aws::String&& value) { m_stackArnHasBeenSet = true; m_stackArn = std::move(value); }
-    inline void SetStackArn(const char* value) { m_stackArnHasBeenSet = true; m_stackArn.assign(value); }
-    inline CloudFormationStackUpdate& WithStackArn(const Aws::String& value) { SetStackArn(value); return *this;}
-    inline CloudFormationStackUpdate& WithStackArn(Aws::String&& value) { SetStackArn(std::move(value)); return *this;}
-    inline CloudFormationStackUpdate& WithStackArn(const char* value) { SetStackArn(value); return *this;}
+    template<typename StackArnT = Aws::String>
+    void SetStackArn(StackArnT&& value) { m_stackArnHasBeenSet = true; m_stackArn = std::forward<StackArnT>(value); }
+    template<typename StackArnT = Aws::String>
+    CloudFormationStackUpdate& WithStackArn(StackArnT&& value) { SetStackArn(std::forward<StackArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for when the CloudFormation stack creation or update began.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CloudFormationStackUpdate& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CloudFormationStackUpdate& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CloudFormationStackUpdate& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_stackArn;
     bool m_stackArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RuleTarget::RuleTarget() : 
-    m_domainUnitTargetHasBeenSet(false)
-{
-}
-
 RuleTarget::RuleTarget(JsonView jsonValue)
-  : RuleTarget()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuleTarget& RuleTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainUnitTarget"))
   {
     m_domainUnitTarget = jsonValue.GetObject("domainUnitTarget");
-
     m_domainUnitTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

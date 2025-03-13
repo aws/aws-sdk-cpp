@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AppImageConfigDetails::AppImageConfigDetails() : 
-    m_appImageConfigArnHasBeenSet(false),
-    m_appImageConfigNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_kernelGatewayImageConfigHasBeenSet(false),
-    m_jupyterLabAppImageConfigHasBeenSet(false),
-    m_codeEditorAppImageConfigHasBeenSet(false)
-{
-}
-
 AppImageConfigDetails::AppImageConfigDetails(JsonView jsonValue)
-  : AppImageConfigDetails()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ AppImageConfigDetails& AppImageConfigDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppImageConfigArn"))
   {
     m_appImageConfigArn = jsonValue.GetString("AppImageConfigArn");
-
     m_appImageConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppImageConfigName"))
   {
     m_appImageConfigName = jsonValue.GetString("AppImageConfigName");
-
     m_appImageConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KernelGatewayImageConfig"))
   {
     m_kernelGatewayImageConfig = jsonValue.GetObject("KernelGatewayImageConfig");
-
     m_kernelGatewayImageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JupyterLabAppImageConfig"))
   {
     m_jupyterLabAppImageConfig = jsonValue.GetObject("JupyterLabAppImageConfig");
-
     m_jupyterLabAppImageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodeEditorAppImageConfig"))
   {
     m_codeEditorAppImageConfig = jsonValue.GetObject("CodeEditorAppImageConfig");
-
     m_codeEditorAppImageConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

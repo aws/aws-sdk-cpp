@@ -37,7 +37,7 @@ namespace Model
   class Answer
   {
   public:
-    AWS_WELLARCHITECTED_API Answer();
+    AWS_WELLARCHITECTED_API Answer() = default;
     AWS_WELLARCHITECTED_API Answer(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Answer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,74 +45,62 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+    inline const Aws::String& GetQuestionId() const { return m_questionId; }
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-    inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-    inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-    inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-    inline Answer& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-    inline Answer& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-    inline Answer& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    template<typename QuestionIdT = Aws::String>
+    void SetQuestionId(QuestionIdT&& value) { m_questionIdHasBeenSet = true; m_questionId = std::forward<QuestionIdT>(value); }
+    template<typename QuestionIdT = Aws::String>
+    Answer& WithQuestionId(QuestionIdT&& value) { SetQuestionId(std::forward<QuestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPillarId() const{ return m_pillarId; }
+    inline const Aws::String& GetPillarId() const { return m_pillarId; }
     inline bool PillarIdHasBeenSet() const { return m_pillarIdHasBeenSet; }
-    inline void SetPillarId(const Aws::String& value) { m_pillarIdHasBeenSet = true; m_pillarId = value; }
-    inline void SetPillarId(Aws::String&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::move(value); }
-    inline void SetPillarId(const char* value) { m_pillarIdHasBeenSet = true; m_pillarId.assign(value); }
-    inline Answer& WithPillarId(const Aws::String& value) { SetPillarId(value); return *this;}
-    inline Answer& WithPillarId(Aws::String&& value) { SetPillarId(std::move(value)); return *this;}
-    inline Answer& WithPillarId(const char* value) { SetPillarId(value); return *this;}
+    template<typename PillarIdT = Aws::String>
+    void SetPillarId(PillarIdT&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::forward<PillarIdT>(value); }
+    template<typename PillarIdT = Aws::String>
+    Answer& WithPillarId(PillarIdT&& value) { SetPillarId(std::forward<PillarIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetQuestionTitle() const{ return m_questionTitle; }
+    inline const Aws::String& GetQuestionTitle() const { return m_questionTitle; }
     inline bool QuestionTitleHasBeenSet() const { return m_questionTitleHasBeenSet; }
-    inline void SetQuestionTitle(const Aws::String& value) { m_questionTitleHasBeenSet = true; m_questionTitle = value; }
-    inline void SetQuestionTitle(Aws::String&& value) { m_questionTitleHasBeenSet = true; m_questionTitle = std::move(value); }
-    inline void SetQuestionTitle(const char* value) { m_questionTitleHasBeenSet = true; m_questionTitle.assign(value); }
-    inline Answer& WithQuestionTitle(const Aws::String& value) { SetQuestionTitle(value); return *this;}
-    inline Answer& WithQuestionTitle(Aws::String&& value) { SetQuestionTitle(std::move(value)); return *this;}
-    inline Answer& WithQuestionTitle(const char* value) { SetQuestionTitle(value); return *this;}
+    template<typename QuestionTitleT = Aws::String>
+    void SetQuestionTitle(QuestionTitleT&& value) { m_questionTitleHasBeenSet = true; m_questionTitle = std::forward<QuestionTitleT>(value); }
+    template<typename QuestionTitleT = Aws::String>
+    Answer& WithQuestionTitle(QuestionTitleT&& value) { SetQuestionTitle(std::forward<QuestionTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetQuestionDescription() const{ return m_questionDescription; }
+    inline const Aws::String& GetQuestionDescription() const { return m_questionDescription; }
     inline bool QuestionDescriptionHasBeenSet() const { return m_questionDescriptionHasBeenSet; }
-    inline void SetQuestionDescription(const Aws::String& value) { m_questionDescriptionHasBeenSet = true; m_questionDescription = value; }
-    inline void SetQuestionDescription(Aws::String&& value) { m_questionDescriptionHasBeenSet = true; m_questionDescription = std::move(value); }
-    inline void SetQuestionDescription(const char* value) { m_questionDescriptionHasBeenSet = true; m_questionDescription.assign(value); }
-    inline Answer& WithQuestionDescription(const Aws::String& value) { SetQuestionDescription(value); return *this;}
-    inline Answer& WithQuestionDescription(Aws::String&& value) { SetQuestionDescription(std::move(value)); return *this;}
-    inline Answer& WithQuestionDescription(const char* value) { SetQuestionDescription(value); return *this;}
+    template<typename QuestionDescriptionT = Aws::String>
+    void SetQuestionDescription(QuestionDescriptionT&& value) { m_questionDescriptionHasBeenSet = true; m_questionDescription = std::forward<QuestionDescriptionT>(value); }
+    template<typename QuestionDescriptionT = Aws::String>
+    Answer& WithQuestionDescription(QuestionDescriptionT&& value) { SetQuestionDescription(std::forward<QuestionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetImprovementPlanUrl() const{ return m_improvementPlanUrl; }
+    inline const Aws::String& GetImprovementPlanUrl() const { return m_improvementPlanUrl; }
     inline bool ImprovementPlanUrlHasBeenSet() const { return m_improvementPlanUrlHasBeenSet; }
-    inline void SetImprovementPlanUrl(const Aws::String& value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl = value; }
-    inline void SetImprovementPlanUrl(Aws::String&& value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl = std::move(value); }
-    inline void SetImprovementPlanUrl(const char* value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl.assign(value); }
-    inline Answer& WithImprovementPlanUrl(const Aws::String& value) { SetImprovementPlanUrl(value); return *this;}
-    inline Answer& WithImprovementPlanUrl(Aws::String&& value) { SetImprovementPlanUrl(std::move(value)); return *this;}
-    inline Answer& WithImprovementPlanUrl(const char* value) { SetImprovementPlanUrl(value); return *this;}
+    template<typename ImprovementPlanUrlT = Aws::String>
+    void SetImprovementPlanUrl(ImprovementPlanUrlT&& value) { m_improvementPlanUrlHasBeenSet = true; m_improvementPlanUrl = std::forward<ImprovementPlanUrlT>(value); }
+    template<typename ImprovementPlanUrlT = Aws::String>
+    Answer& WithImprovementPlanUrl(ImprovementPlanUrlT&& value) { SetImprovementPlanUrl(std::forward<ImprovementPlanUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetHelpfulResourceUrl() const{ return m_helpfulResourceUrl; }
+    inline const Aws::String& GetHelpfulResourceUrl() const { return m_helpfulResourceUrl; }
     inline bool HelpfulResourceUrlHasBeenSet() const { return m_helpfulResourceUrlHasBeenSet; }
-    inline void SetHelpfulResourceUrl(const Aws::String& value) { m_helpfulResourceUrlHasBeenSet = true; m_helpfulResourceUrl = value; }
-    inline void SetHelpfulResourceUrl(Aws::String&& value) { m_helpfulResourceUrlHasBeenSet = true; m_helpfulResourceUrl = std::move(value); }
-    inline void SetHelpfulResourceUrl(const char* value) { m_helpfulResourceUrlHasBeenSet = true; m_helpfulResourceUrl.assign(value); }
-    inline Answer& WithHelpfulResourceUrl(const Aws::String& value) { SetHelpfulResourceUrl(value); return *this;}
-    inline Answer& WithHelpfulResourceUrl(Aws::String&& value) { SetHelpfulResourceUrl(std::move(value)); return *this;}
-    inline Answer& WithHelpfulResourceUrl(const char* value) { SetHelpfulResourceUrl(value); return *this;}
+    template<typename HelpfulResourceUrlT = Aws::String>
+    void SetHelpfulResourceUrl(HelpfulResourceUrlT&& value) { m_helpfulResourceUrlHasBeenSet = true; m_helpfulResourceUrl = std::forward<HelpfulResourceUrlT>(value); }
+    template<typename HelpfulResourceUrlT = Aws::String>
+    Answer& WithHelpfulResourceUrl(HelpfulResourceUrlT&& value) { SetHelpfulResourceUrl(std::forward<HelpfulResourceUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,58 +108,55 @@ namespace Model
      * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
      * field does not apply to Amazon Web Services official lenses.</p>
      */
-    inline const Aws::String& GetHelpfulResourceDisplayText() const{ return m_helpfulResourceDisplayText; }
+    inline const Aws::String& GetHelpfulResourceDisplayText() const { return m_helpfulResourceDisplayText; }
     inline bool HelpfulResourceDisplayTextHasBeenSet() const { return m_helpfulResourceDisplayTextHasBeenSet; }
-    inline void SetHelpfulResourceDisplayText(const Aws::String& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = value; }
-    inline void SetHelpfulResourceDisplayText(Aws::String&& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = std::move(value); }
-    inline void SetHelpfulResourceDisplayText(const char* value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText.assign(value); }
-    inline Answer& WithHelpfulResourceDisplayText(const Aws::String& value) { SetHelpfulResourceDisplayText(value); return *this;}
-    inline Answer& WithHelpfulResourceDisplayText(Aws::String&& value) { SetHelpfulResourceDisplayText(std::move(value)); return *this;}
-    inline Answer& WithHelpfulResourceDisplayText(const char* value) { SetHelpfulResourceDisplayText(value); return *this;}
+    template<typename HelpfulResourceDisplayTextT = Aws::String>
+    void SetHelpfulResourceDisplayText(HelpfulResourceDisplayTextT&& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = std::forward<HelpfulResourceDisplayTextT>(value); }
+    template<typename HelpfulResourceDisplayTextT = Aws::String>
+    Answer& WithHelpfulResourceDisplayText(HelpfulResourceDisplayTextT&& value) { SetHelpfulResourceDisplayText(std::forward<HelpfulResourceDisplayTextT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Choice>& GetChoices() const{ return m_choices; }
+    inline const Aws::Vector<Choice>& GetChoices() const { return m_choices; }
     inline bool ChoicesHasBeenSet() const { return m_choicesHasBeenSet; }
-    inline void SetChoices(const Aws::Vector<Choice>& value) { m_choicesHasBeenSet = true; m_choices = value; }
-    inline void SetChoices(Aws::Vector<Choice>&& value) { m_choicesHasBeenSet = true; m_choices = std::move(value); }
-    inline Answer& WithChoices(const Aws::Vector<Choice>& value) { SetChoices(value); return *this;}
-    inline Answer& WithChoices(Aws::Vector<Choice>&& value) { SetChoices(std::move(value)); return *this;}
-    inline Answer& AddChoices(const Choice& value) { m_choicesHasBeenSet = true; m_choices.push_back(value); return *this; }
-    inline Answer& AddChoices(Choice&& value) { m_choicesHasBeenSet = true; m_choices.push_back(std::move(value)); return *this; }
+    template<typename ChoicesT = Aws::Vector<Choice>>
+    void SetChoices(ChoicesT&& value) { m_choicesHasBeenSet = true; m_choices = std::forward<ChoicesT>(value); }
+    template<typename ChoicesT = Aws::Vector<Choice>>
+    Answer& WithChoices(ChoicesT&& value) { SetChoices(std::forward<ChoicesT>(value)); return *this;}
+    template<typename ChoicesT = Choice>
+    Answer& AddChoices(ChoicesT&& value) { m_choicesHasBeenSet = true; m_choices.emplace_back(std::forward<ChoicesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetSelectedChoices() const{ return m_selectedChoices; }
+    inline const Aws::Vector<Aws::String>& GetSelectedChoices() const { return m_selectedChoices; }
     inline bool SelectedChoicesHasBeenSet() const { return m_selectedChoicesHasBeenSet; }
-    inline void SetSelectedChoices(const Aws::Vector<Aws::String>& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices = value; }
-    inline void SetSelectedChoices(Aws::Vector<Aws::String>&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices = std::move(value); }
-    inline Answer& WithSelectedChoices(const Aws::Vector<Aws::String>& value) { SetSelectedChoices(value); return *this;}
-    inline Answer& WithSelectedChoices(Aws::Vector<Aws::String>&& value) { SetSelectedChoices(std::move(value)); return *this;}
-    inline Answer& AddSelectedChoices(const Aws::String& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
-    inline Answer& AddSelectedChoices(Aws::String&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(std::move(value)); return *this; }
-    inline Answer& AddSelectedChoices(const char* value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
+    template<typename SelectedChoicesT = Aws::Vector<Aws::String>>
+    void SetSelectedChoices(SelectedChoicesT&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices = std::forward<SelectedChoicesT>(value); }
+    template<typename SelectedChoicesT = Aws::Vector<Aws::String>>
+    Answer& WithSelectedChoices(SelectedChoicesT&& value) { SetSelectedChoices(std::forward<SelectedChoicesT>(value)); return *this;}
+    template<typename SelectedChoicesT = Aws::String>
+    Answer& AddSelectedChoices(SelectedChoicesT&& value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.emplace_back(std::forward<SelectedChoicesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of selected choices to a question in your workload.</p>
      */
-    inline const Aws::Vector<ChoiceAnswer>& GetChoiceAnswers() const{ return m_choiceAnswers; }
+    inline const Aws::Vector<ChoiceAnswer>& GetChoiceAnswers() const { return m_choiceAnswers; }
     inline bool ChoiceAnswersHasBeenSet() const { return m_choiceAnswersHasBeenSet; }
-    inline void SetChoiceAnswers(const Aws::Vector<ChoiceAnswer>& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers = value; }
-    inline void SetChoiceAnswers(Aws::Vector<ChoiceAnswer>&& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers = std::move(value); }
-    inline Answer& WithChoiceAnswers(const Aws::Vector<ChoiceAnswer>& value) { SetChoiceAnswers(value); return *this;}
-    inline Answer& WithChoiceAnswers(Aws::Vector<ChoiceAnswer>&& value) { SetChoiceAnswers(std::move(value)); return *this;}
-    inline Answer& AddChoiceAnswers(const ChoiceAnswer& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers.push_back(value); return *this; }
-    inline Answer& AddChoiceAnswers(ChoiceAnswer&& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers.push_back(std::move(value)); return *this; }
+    template<typename ChoiceAnswersT = Aws::Vector<ChoiceAnswer>>
+    void SetChoiceAnswers(ChoiceAnswersT&& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers = std::forward<ChoiceAnswersT>(value); }
+    template<typename ChoiceAnswersT = Aws::Vector<ChoiceAnswer>>
+    Answer& WithChoiceAnswers(ChoiceAnswersT&& value) { SetChoiceAnswers(std::forward<ChoiceAnswersT>(value)); return *this;}
+    template<typename ChoiceAnswersT = ChoiceAnswer>
+    Answer& AddChoiceAnswers(ChoiceAnswersT&& value) { m_choiceAnswersHasBeenSet = true; m_choiceAnswers.emplace_back(std::forward<ChoiceAnswersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline bool GetIsApplicable() const{ return m_isApplicable; }
+    inline bool GetIsApplicable() const { return m_isApplicable; }
     inline bool IsApplicableHasBeenSet() const { return m_isApplicableHasBeenSet; }
     inline void SetIsApplicable(bool value) { m_isApplicableHasBeenSet = true; m_isApplicable = value; }
     inline Answer& WithIsApplicable(bool value) { SetIsApplicable(value); return *this;}
@@ -179,48 +164,42 @@ namespace Model
 
     ///@{
     
-    inline const Risk& GetRisk() const{ return m_risk; }
+    inline Risk GetRisk() const { return m_risk; }
     inline bool RiskHasBeenSet() const { return m_riskHasBeenSet; }
-    inline void SetRisk(const Risk& value) { m_riskHasBeenSet = true; m_risk = value; }
-    inline void SetRisk(Risk&& value) { m_riskHasBeenSet = true; m_risk = std::move(value); }
-    inline Answer& WithRisk(const Risk& value) { SetRisk(value); return *this;}
-    inline Answer& WithRisk(Risk&& value) { SetRisk(std::move(value)); return *this;}
+    inline void SetRisk(Risk value) { m_riskHasBeenSet = true; m_risk = value; }
+    inline Answer& WithRisk(Risk value) { SetRisk(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline Answer& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline Answer& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline Answer& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    Answer& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason why the question is not applicable to your workload.</p>
      */
-    inline const AnswerReason& GetReason() const{ return m_reason; }
+    inline AnswerReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const AnswerReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(AnswerReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline Answer& WithReason(const AnswerReason& value) { SetReason(value); return *this;}
-    inline Answer& WithReason(AnswerReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(AnswerReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline Answer& WithReason(AnswerReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration of the Jira integration.</p>
      */
-    inline const JiraConfiguration& GetJiraConfiguration() const{ return m_jiraConfiguration; }
+    inline const JiraConfiguration& GetJiraConfiguration() const { return m_jiraConfiguration; }
     inline bool JiraConfigurationHasBeenSet() const { return m_jiraConfigurationHasBeenSet; }
-    inline void SetJiraConfiguration(const JiraConfiguration& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = value; }
-    inline void SetJiraConfiguration(JiraConfiguration&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::move(value); }
-    inline Answer& WithJiraConfiguration(const JiraConfiguration& value) { SetJiraConfiguration(value); return *this;}
-    inline Answer& WithJiraConfiguration(JiraConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
+    template<typename JiraConfigurationT = JiraConfiguration>
+    void SetJiraConfiguration(JiraConfigurationT&& value) { m_jiraConfigurationHasBeenSet = true; m_jiraConfiguration = std::forward<JiraConfigurationT>(value); }
+    template<typename JiraConfigurationT = JiraConfiguration>
+    Answer& WithJiraConfiguration(JiraConfigurationT&& value) { SetJiraConfiguration(std::forward<JiraConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -254,16 +233,16 @@ namespace Model
     Aws::Vector<ChoiceAnswer> m_choiceAnswers;
     bool m_choiceAnswersHasBeenSet = false;
 
-    bool m_isApplicable;
+    bool m_isApplicable{false};
     bool m_isApplicableHasBeenSet = false;
 
-    Risk m_risk;
+    Risk m_risk{Risk::NOT_SET};
     bool m_riskHasBeenSet = false;
 
     Aws::String m_notes;
     bool m_notesHasBeenSet = false;
 
-    AnswerReason m_reason;
+    AnswerReason m_reason{AnswerReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
     JiraConfiguration m_jiraConfiguration;

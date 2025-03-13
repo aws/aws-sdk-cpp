@@ -33,7 +33,7 @@ namespace Model
   class Field
   {
   public:
-    AWS_RESILIENCEHUB_API Field();
+    AWS_RESILIENCEHUB_API Field() = default;
     AWS_RESILIENCEHUB_API Field(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Field& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,26 @@ namespace Model
      * Sum, Average, and so on) to be performed on a particular field or set of
      * data.</p>
      */
-    inline const FieldAggregationType& GetAggregation() const{ return m_aggregation; }
+    inline FieldAggregationType GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const FieldAggregationType& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(FieldAggregationType&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline Field& WithAggregation(const FieldAggregationType& value) { SetAggregation(value); return *this;}
-    inline Field& WithAggregation(FieldAggregationType&& value) { SetAggregation(std::move(value)); return *this;}
+    inline void SetAggregation(FieldAggregationType value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
+    inline Field& WithAggregation(FieldAggregationType value) { SetAggregation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the field.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Field& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Field& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Field& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Field& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    FieldAggregationType m_aggregation;
+    FieldAggregationType m_aggregation{FieldAggregationType::NOT_SET};
     bool m_aggregationHasBeenSet = false;
 
     Aws::String m_name;

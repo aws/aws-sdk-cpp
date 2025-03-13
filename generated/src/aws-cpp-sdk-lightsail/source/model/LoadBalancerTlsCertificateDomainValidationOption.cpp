@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption() : 
-    m_domainNameHasBeenSet(false),
-    m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false)
-{
-}
-
 LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(JsonView jsonValue)
-  : LoadBalancerTlsCertificateDomainValidationOption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LoadBalancerTlsCertificateDomainValidationOption& LoadBalancerTlsCertificateDoma
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationStatus"))
   {
     m_validationStatus = LoadBalancerTlsCertificateDomainStatusMapper::GetLoadBalancerTlsCertificateDomainStatusForName(jsonValue.GetString("validationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListAlarmRecommendationsResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListAlarmRecommendationsResult();
+    AWS_RESILIENCEHUB_API ListAlarmRecommendationsResult() = default;
     AWS_RESILIENCEHUB_API ListAlarmRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListAlarmRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * information about whether a recommendation has already been implemented or not,
      * prerequisites, and more.</p>
      */
-    inline const Aws::Vector<AlarmRecommendation>& GetAlarmRecommendations() const{ return m_alarmRecommendations; }
-    inline void SetAlarmRecommendations(const Aws::Vector<AlarmRecommendation>& value) { m_alarmRecommendations = value; }
-    inline void SetAlarmRecommendations(Aws::Vector<AlarmRecommendation>&& value) { m_alarmRecommendations = std::move(value); }
-    inline ListAlarmRecommendationsResult& WithAlarmRecommendations(const Aws::Vector<AlarmRecommendation>& value) { SetAlarmRecommendations(value); return *this;}
-    inline ListAlarmRecommendationsResult& WithAlarmRecommendations(Aws::Vector<AlarmRecommendation>&& value) { SetAlarmRecommendations(std::move(value)); return *this;}
-    inline ListAlarmRecommendationsResult& AddAlarmRecommendations(const AlarmRecommendation& value) { m_alarmRecommendations.push_back(value); return *this; }
-    inline ListAlarmRecommendationsResult& AddAlarmRecommendations(AlarmRecommendation&& value) { m_alarmRecommendations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AlarmRecommendation>& GetAlarmRecommendations() const { return m_alarmRecommendations; }
+    template<typename AlarmRecommendationsT = Aws::Vector<AlarmRecommendation>>
+    void SetAlarmRecommendations(AlarmRecommendationsT&& value) { m_alarmRecommendationsHasBeenSet = true; m_alarmRecommendations = std::forward<AlarmRecommendationsT>(value); }
+    template<typename AlarmRecommendationsT = Aws::Vector<AlarmRecommendation>>
+    ListAlarmRecommendationsResult& WithAlarmRecommendations(AlarmRecommendationsT&& value) { SetAlarmRecommendations(std::forward<AlarmRecommendationsT>(value)); return *this;}
+    template<typename AlarmRecommendationsT = AlarmRecommendation>
+    ListAlarmRecommendationsResult& AddAlarmRecommendations(AlarmRecommendationsT&& value) { m_alarmRecommendationsHasBeenSet = true; m_alarmRecommendations.emplace_back(std::forward<AlarmRecommendationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAlarmRecommendationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAlarmRecommendationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAlarmRecommendationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAlarmRecommendationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAlarmRecommendationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAlarmRecommendationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAlarmRecommendationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAlarmRecommendationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AlarmRecommendation> m_alarmRecommendations;
+    bool m_alarmRecommendationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

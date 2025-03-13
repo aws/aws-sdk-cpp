@@ -31,7 +31,7 @@ namespace Model
   class CustomDBEngineVersionAMI
   {
   public:
-    AWS_RDS_API CustomDBEngineVersionAMI();
+    AWS_RDS_API CustomDBEngineVersionAMI() = default;
     AWS_RDS_API CustomDBEngineVersionAMI(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API CustomDBEngineVersionAMI& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>A value that indicates the ID of the AMI.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline CustomDBEngineVersionAMI& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline CustomDBEngineVersionAMI& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline CustomDBEngineVersionAMI& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    CustomDBEngineVersionAMI& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A value that indicates the status of a custom engine version (CEV).</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline CustomDBEngineVersionAMI& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline CustomDBEngineVersionAMI& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline CustomDBEngineVersionAMI& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    CustomDBEngineVersionAMI& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

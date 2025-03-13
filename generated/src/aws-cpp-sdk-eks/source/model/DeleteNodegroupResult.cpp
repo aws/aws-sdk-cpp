@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteNodegroupResult::DeleteNodegroupResult()
-{
-}
-
 DeleteNodegroupResult::DeleteNodegroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteNodegroupResult& DeleteNodegroupResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("nodegroup"))
   {
     m_nodegroup = jsonValue.GetObject("nodegroup");
-
+    m_nodegroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

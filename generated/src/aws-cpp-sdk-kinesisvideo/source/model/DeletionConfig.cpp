@@ -18,17 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-DeletionConfig::DeletionConfig() : 
-    m_edgeRetentionInHours(0),
-    m_edgeRetentionInHoursHasBeenSet(false),
-    m_localSizeConfigHasBeenSet(false),
-    m_deleteAfterUpload(false),
-    m_deleteAfterUploadHasBeenSet(false)
-{
-}
-
 DeletionConfig::DeletionConfig(JsonView jsonValue)
-  : DeletionConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DeletionConfig& DeletionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EdgeRetentionInHours"))
   {
     m_edgeRetentionInHours = jsonValue.GetInteger("EdgeRetentionInHours");
-
     m_edgeRetentionInHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalSizeConfig"))
   {
     m_localSizeConfig = jsonValue.GetObject("LocalSizeConfig");
-
     m_localSizeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteAfterUpload"))
   {
     m_deleteAfterUpload = jsonValue.GetBool("DeleteAfterUpload");
-
     m_deleteAfterUploadHasBeenSet = true;
   }
-
   return *this;
 }
 

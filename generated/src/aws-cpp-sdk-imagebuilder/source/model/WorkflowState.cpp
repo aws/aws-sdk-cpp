@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-WorkflowState::WorkflowState() : 
-    m_status(WorkflowStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 WorkflowState::WorkflowState(JsonView jsonValue)
-  : WorkflowState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WorkflowState& WorkflowState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkflowStatusMapper::GetWorkflowStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

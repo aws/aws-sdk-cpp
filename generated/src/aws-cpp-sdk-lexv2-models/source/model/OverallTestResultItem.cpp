@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-OverallTestResultItem::OverallTestResultItem() : 
-    m_multiTurnConversation(false),
-    m_multiTurnConversationHasBeenSet(false),
-    m_totalResultCount(0),
-    m_totalResultCountHasBeenSet(false),
-    m_speechTranscriptionResultCountsHasBeenSet(false),
-    m_endToEndResultCountsHasBeenSet(false)
-{
-}
-
 OverallTestResultItem::OverallTestResultItem(JsonView jsonValue)
-  : OverallTestResultItem()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ OverallTestResultItem& OverallTestResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("multiTurnConversation"))
   {
     m_multiTurnConversation = jsonValue.GetBool("multiTurnConversation");
-
     m_multiTurnConversationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResultCount"))
   {
     m_totalResultCount = jsonValue.GetInteger("totalResultCount");
-
     m_totalResultCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechTranscriptionResultCounts"))
   {
     Aws::Map<Aws::String, JsonView> speechTranscriptionResultCountsJsonMap = jsonValue.GetObject("speechTranscriptionResultCounts").GetAllObjects();
@@ -59,7 +44,6 @@ OverallTestResultItem& OverallTestResultItem::operator =(JsonView jsonValue)
     }
     m_speechTranscriptionResultCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endToEndResultCounts"))
   {
     Aws::Map<Aws::String, JsonView> endToEndResultCountsJsonMap = jsonValue.GetObject("endToEndResultCounts").GetAllObjects();
@@ -69,7 +53,6 @@ OverallTestResultItem& OverallTestResultItem::operator =(JsonView jsonValue)
     }
     m_endToEndResultCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

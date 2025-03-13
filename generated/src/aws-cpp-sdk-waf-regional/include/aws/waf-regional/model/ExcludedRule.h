@@ -42,7 +42,7 @@ namespace Model
   class ExcludedRule
   {
   public:
-    AWS_WAFREGIONAL_API ExcludedRule();
+    AWS_WAFREGIONAL_API ExcludedRule() = default;
     AWS_WAFREGIONAL_API ExcludedRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API ExcludedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The unique identifier for the rule to exclude from the rule group.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline ExcludedRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline ExcludedRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline ExcludedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    ExcludedRule& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
   private:
 

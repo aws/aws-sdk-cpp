@@ -33,7 +33,7 @@ namespace Model
   class CreateAttendeeRequestItem
   {
   public:
-    AWS_CHIMESDKMEETINGS_API CreateAttendeeRequestItem();
+    AWS_CHIMESDKMEETINGS_API CreateAttendeeRequestItem() = default;
     AWS_CHIMESDKMEETINGS_API CreateAttendeeRequestItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API CreateAttendeeRequestItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,24 @@ namespace Model
      * begin with <code>aws:</code> are reserved. You can't configure a value that uses
      * this prefix. Case insensitive.</p>
      */
-    inline const Aws::String& GetExternalUserId() const{ return m_externalUserId; }
+    inline const Aws::String& GetExternalUserId() const { return m_externalUserId; }
     inline bool ExternalUserIdHasBeenSet() const { return m_externalUserIdHasBeenSet; }
-    inline void SetExternalUserId(const Aws::String& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = value; }
-    inline void SetExternalUserId(Aws::String&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::move(value); }
-    inline void SetExternalUserId(const char* value) { m_externalUserIdHasBeenSet = true; m_externalUserId.assign(value); }
-    inline CreateAttendeeRequestItem& WithExternalUserId(const Aws::String& value) { SetExternalUserId(value); return *this;}
-    inline CreateAttendeeRequestItem& WithExternalUserId(Aws::String&& value) { SetExternalUserId(std::move(value)); return *this;}
-    inline CreateAttendeeRequestItem& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
+    template<typename ExternalUserIdT = Aws::String>
+    void SetExternalUserId(ExternalUserIdT&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::forward<ExternalUserIdT>(value); }
+    template<typename ExternalUserIdT = Aws::String>
+    CreateAttendeeRequestItem& WithExternalUserId(ExternalUserIdT&& value) { SetExternalUserId(std::forward<ExternalUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of one or more capabilities.</p>
      */
-    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const AttendeeCapabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline CreateAttendeeRequestItem& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
-    inline CreateAttendeeRequestItem& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = AttendeeCapabilities>
+    CreateAttendeeRequestItem& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
   private:
 

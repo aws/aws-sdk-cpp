@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Spacing::Spacing() : 
-    m_topHasBeenSet(false),
-    m_bottomHasBeenSet(false),
-    m_leftHasBeenSet(false),
-    m_rightHasBeenSet(false)
-{
-}
-
 Spacing::Spacing(JsonView jsonValue)
-  : Spacing()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Spacing& Spacing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Top"))
   {
     m_top = jsonValue.GetString("Top");
-
     m_topHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bottom"))
   {
     m_bottom = jsonValue.GetString("Bottom");
-
     m_bottomHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Left"))
   {
     m_left = jsonValue.GetString("Left");
-
     m_leftHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Right"))
   {
     m_right = jsonValue.GetString("Right");
-
     m_rightHasBeenSet = true;
   }
-
   return *this;
 }
 

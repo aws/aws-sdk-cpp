@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ListingSummary::ListingSummary() : 
-    m_glossaryTermsHasBeenSet(false),
-    m_listingIdHasBeenSet(false),
-    m_listingRevisionHasBeenSet(false)
-{
-}
-
 ListingSummary::ListingSummary(JsonView jsonValue)
-  : ListingSummary()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ListingSummary& ListingSummary::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingId"))
   {
     m_listingId = jsonValue.GetString("listingId");
-
     m_listingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingRevision"))
   {
     m_listingRevision = jsonValue.GetString("listingRevision");
-
     m_listingRevisionHasBeenSet = true;
   }
-
   return *this;
 }
 

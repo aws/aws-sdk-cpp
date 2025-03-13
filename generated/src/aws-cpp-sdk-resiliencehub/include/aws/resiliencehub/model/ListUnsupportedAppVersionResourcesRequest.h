@@ -21,7 +21,7 @@ namespace Model
   class ListUnsupportedAppVersionResourcesRequest : public ResilienceHubRequest
   {
   public:
-    AWS_RESILIENCEHUB_API ListUnsupportedAppVersionResourcesRequest();
+    AWS_RESILIENCEHUB_API ListUnsupportedAppVersionResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline ListUnsupportedAppVersionResourcesRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ListUnsupportedAppVersionResourcesRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the application.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
     inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersionHasBeenSet = true; m_appVersion.assign(value); }
-    inline ListUnsupportedAppVersionResourcesRequest& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    ListUnsupportedAppVersionResourcesRequest& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * than the specified <code>MaxResults</code> value, a token is included in the
      * response so that the remaining results can be retrieved.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListUnsupportedAppVersionResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,28 +78,24 @@ namespace Model
     /**
      * <p>Null, or the token from a previous call to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListUnsupportedAppVersionResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUnsupportedAppVersionResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a specific resolution.</p>
      */
-    inline const Aws::String& GetResolutionId() const{ return m_resolutionId; }
+    inline const Aws::String& GetResolutionId() const { return m_resolutionId; }
     inline bool ResolutionIdHasBeenSet() const { return m_resolutionIdHasBeenSet; }
-    inline void SetResolutionId(const Aws::String& value) { m_resolutionIdHasBeenSet = true; m_resolutionId = value; }
-    inline void SetResolutionId(Aws::String&& value) { m_resolutionIdHasBeenSet = true; m_resolutionId = std::move(value); }
-    inline void SetResolutionId(const char* value) { m_resolutionIdHasBeenSet = true; m_resolutionId.assign(value); }
-    inline ListUnsupportedAppVersionResourcesRequest& WithResolutionId(const Aws::String& value) { SetResolutionId(value); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithResolutionId(Aws::String&& value) { SetResolutionId(std::move(value)); return *this;}
-    inline ListUnsupportedAppVersionResourcesRequest& WithResolutionId(const char* value) { SetResolutionId(value); return *this;}
+    template<typename ResolutionIdT = Aws::String>
+    void SetResolutionId(ResolutionIdT&& value) { m_resolutionIdHasBeenSet = true; m_resolutionId = std::forward<ResolutionIdT>(value); }
+    template<typename ResolutionIdT = Aws::String>
+    ListUnsupportedAppVersionResourcesRequest& WithResolutionId(ResolutionIdT&& value) { SetResolutionId(std::forward<ResolutionIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +105,7 @@ namespace Model
     Aws::String m_appVersion;
     bool m_appVersionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -18,19 +18,7 @@ namespace Backup
 namespace Model
 {
 
-Framework::Framework() : 
-    m_frameworkNameHasBeenSet(false),
-    m_frameworkArnHasBeenSet(false),
-    m_frameworkDescriptionHasBeenSet(false),
-    m_numberOfControls(0),
-    m_numberOfControlsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false)
-{
-}
-
 Framework::Framework(JsonView jsonValue)
-  : Framework()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Framework& Framework::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FrameworkName"))
   {
     m_frameworkName = jsonValue.GetString("FrameworkName");
-
     m_frameworkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkArn"))
   {
     m_frameworkArn = jsonValue.GetString("FrameworkArn");
-
     m_frameworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkDescription"))
   {
     m_frameworkDescription = jsonValue.GetString("FrameworkDescription");
-
     m_frameworkDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfControls"))
   {
     m_numberOfControls = jsonValue.GetInteger("NumberOfControls");
-
     m_numberOfControlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

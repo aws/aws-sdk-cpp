@@ -30,7 +30,7 @@ namespace Model
   class CreateStageResult
   {
   public:
-    AWS_IVSREALTIME_API CreateStageResult();
+    AWS_IVSREALTIME_API CreateStageResult() = default;
     AWS_IVSREALTIME_API CreateStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API CreateStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p>The stage that was created.</p>
      */
-    inline const Stage& GetStage() const{ return m_stage; }
-    inline void SetStage(const Stage& value) { m_stage = value; }
-    inline void SetStage(Stage&& value) { m_stage = std::move(value); }
-    inline CreateStageResult& WithStage(const Stage& value) { SetStage(value); return *this;}
-    inline CreateStageResult& WithStage(Stage&& value) { SetStage(std::move(value)); return *this;}
+    inline const Stage& GetStage() const { return m_stage; }
+    template<typename StageT = Stage>
+    void SetStage(StageT&& value) { m_stageHasBeenSet = true; m_stage = std::forward<StageT>(value); }
+    template<typename StageT = Stage>
+    CreateStageResult& WithStage(StageT&& value) { SetStage(std::forward<StageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +51,33 @@ namespace Model
      * <p>Participant tokens attached to the stage. These correspond to the
      * <code>participants</code> in the request.</p>
      */
-    inline const Aws::Vector<ParticipantToken>& GetParticipantTokens() const{ return m_participantTokens; }
-    inline void SetParticipantTokens(const Aws::Vector<ParticipantToken>& value) { m_participantTokens = value; }
-    inline void SetParticipantTokens(Aws::Vector<ParticipantToken>&& value) { m_participantTokens = std::move(value); }
-    inline CreateStageResult& WithParticipantTokens(const Aws::Vector<ParticipantToken>& value) { SetParticipantTokens(value); return *this;}
-    inline CreateStageResult& WithParticipantTokens(Aws::Vector<ParticipantToken>&& value) { SetParticipantTokens(std::move(value)); return *this;}
-    inline CreateStageResult& AddParticipantTokens(const ParticipantToken& value) { m_participantTokens.push_back(value); return *this; }
-    inline CreateStageResult& AddParticipantTokens(ParticipantToken&& value) { m_participantTokens.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ParticipantToken>& GetParticipantTokens() const { return m_participantTokens; }
+    template<typename ParticipantTokensT = Aws::Vector<ParticipantToken>>
+    void SetParticipantTokens(ParticipantTokensT&& value) { m_participantTokensHasBeenSet = true; m_participantTokens = std::forward<ParticipantTokensT>(value); }
+    template<typename ParticipantTokensT = Aws::Vector<ParticipantToken>>
+    CreateStageResult& WithParticipantTokens(ParticipantTokensT&& value) { SetParticipantTokens(std::forward<ParticipantTokensT>(value)); return *this;}
+    template<typename ParticipantTokensT = ParticipantToken>
+    CreateStageResult& AddParticipantTokens(ParticipantTokensT&& value) { m_participantTokensHasBeenSet = true; m_participantTokens.emplace_back(std::forward<ParticipantTokensT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Stage m_stage;
+    bool m_stageHasBeenSet = false;
 
     Aws::Vector<ParticipantToken> m_participantTokens;
+    bool m_participantTokensHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

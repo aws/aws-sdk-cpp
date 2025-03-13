@@ -28,35 +28,35 @@ namespace Model
   class GetApplicationDateRangeKpiResult
   {
   public:
-    AWS_PINPOINT_API GetApplicationDateRangeKpiResult();
+    AWS_PINPOINT_API GetApplicationDateRangeKpiResult() = default;
     AWS_PINPOINT_API GetApplicationDateRangeKpiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetApplicationDateRangeKpiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ApplicationDateRangeKpiResponse& GetApplicationDateRangeKpiResponse() const{ return m_applicationDateRangeKpiResponse; }
-    inline void SetApplicationDateRangeKpiResponse(const ApplicationDateRangeKpiResponse& value) { m_applicationDateRangeKpiResponse = value; }
-    inline void SetApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponse&& value) { m_applicationDateRangeKpiResponse = std::move(value); }
-    inline GetApplicationDateRangeKpiResult& WithApplicationDateRangeKpiResponse(const ApplicationDateRangeKpiResponse& value) { SetApplicationDateRangeKpiResponse(value); return *this;}
-    inline GetApplicationDateRangeKpiResult& WithApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponse&& value) { SetApplicationDateRangeKpiResponse(std::move(value)); return *this;}
+    inline const ApplicationDateRangeKpiResponse& GetApplicationDateRangeKpiResponse() const { return m_applicationDateRangeKpiResponse; }
+    template<typename ApplicationDateRangeKpiResponseT = ApplicationDateRangeKpiResponse>
+    void SetApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponseT&& value) { m_applicationDateRangeKpiResponseHasBeenSet = true; m_applicationDateRangeKpiResponse = std::forward<ApplicationDateRangeKpiResponseT>(value); }
+    template<typename ApplicationDateRangeKpiResponseT = ApplicationDateRangeKpiResponse>
+    GetApplicationDateRangeKpiResult& WithApplicationDateRangeKpiResponse(ApplicationDateRangeKpiResponseT&& value) { SetApplicationDateRangeKpiResponse(std::forward<ApplicationDateRangeKpiResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationDateRangeKpiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationDateRangeKpiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationDateRangeKpiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationDateRangeKpiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationDateRangeKpiResponse m_applicationDateRangeKpiResponse;
+    bool m_applicationDateRangeKpiResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

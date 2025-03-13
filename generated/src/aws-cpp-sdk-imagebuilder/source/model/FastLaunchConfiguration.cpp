@@ -18,19 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-FastLaunchConfiguration::FastLaunchConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_snapshotConfigurationHasBeenSet(false),
-    m_maxParallelLaunches(0),
-    m_maxParallelLaunchesHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 FastLaunchConfiguration::FastLaunchConfiguration(JsonView jsonValue)
-  : FastLaunchConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ FastLaunchConfiguration& FastLaunchConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotConfiguration"))
   {
     m_snapshotConfiguration = jsonValue.GetObject("snapshotConfiguration");
-
     m_snapshotConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxParallelLaunches"))
   {
     m_maxParallelLaunches = jsonValue.GetInteger("maxParallelLaunches");
-
     m_maxParallelLaunchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTemplate"))
   {
     m_launchTemplate = jsonValue.GetObject("launchTemplate");
-
     m_launchTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

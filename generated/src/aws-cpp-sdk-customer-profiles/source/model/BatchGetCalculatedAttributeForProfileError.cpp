@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-BatchGetCalculatedAttributeForProfileError::BatchGetCalculatedAttributeForProfileError() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
-{
-}
-
 BatchGetCalculatedAttributeForProfileError::BatchGetCalculatedAttributeForProfileError(JsonView jsonValue)
-  : BatchGetCalculatedAttributeForProfileError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchGetCalculatedAttributeForProfileError& BatchGetCalculatedAttributeForProfil
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

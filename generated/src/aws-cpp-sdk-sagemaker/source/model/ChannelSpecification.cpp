@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ChannelSpecification::ChannelSpecification() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isRequired(false),
-    m_isRequiredHasBeenSet(false),
-    m_supportedContentTypesHasBeenSet(false),
-    m_supportedCompressionTypesHasBeenSet(false),
-    m_supportedInputModesHasBeenSet(false)
-{
-}
-
 ChannelSpecification::ChannelSpecification(JsonView jsonValue)
-  : ChannelSpecification()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRequired"))
   {
     m_isRequired = jsonValue.GetBool("IsRequired");
-
     m_isRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedContentTypes"))
   {
     Aws::Utils::Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
@@ -67,7 +49,6 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
     }
     m_supportedContentTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedCompressionTypes"))
   {
     Aws::Utils::Array<JsonView> supportedCompressionTypesJsonList = jsonValue.GetArray("SupportedCompressionTypes");
@@ -77,7 +58,6 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
     }
     m_supportedCompressionTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedInputModes"))
   {
     Aws::Utils::Array<JsonView> supportedInputModesJsonList = jsonValue.GetArray("SupportedInputModes");
@@ -87,7 +67,6 @@ ChannelSpecification& ChannelSpecification::operator =(JsonView jsonValue)
     }
     m_supportedInputModesHasBeenSet = true;
   }
-
   return *this;
 }
 

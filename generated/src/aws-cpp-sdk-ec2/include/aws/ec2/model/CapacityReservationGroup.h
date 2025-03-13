@@ -32,7 +32,7 @@ namespace Model
   class CapacityReservationGroup
   {
   public:
-    AWS_EC2_API CapacityReservationGroup();
+    AWS_EC2_API CapacityReservationGroup() = default;
     AWS_EC2_API CapacityReservationGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityReservationGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ARN of the resource group.</p>
      */
-    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+    inline const Aws::String& GetGroupArn() const { return m_groupArn; }
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
-    inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
-    inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
-    inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
-    inline CapacityReservationGroup& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-    inline CapacityReservationGroup& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-    inline CapacityReservationGroup& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+    template<typename GroupArnT = Aws::String>
+    void SetGroupArn(GroupArnT&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::forward<GroupArnT>(value); }
+    template<typename GroupArnT = Aws::String>
+    CapacityReservationGroup& WithGroupArn(GroupArnT&& value) { SetGroupArn(std::forward<GroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that owns the resource group.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline CapacityReservationGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline CapacityReservationGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline CapacityReservationGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    CapacityReservationGroup& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
   private:
 

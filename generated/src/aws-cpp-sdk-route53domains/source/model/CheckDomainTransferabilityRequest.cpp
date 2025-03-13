@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckDomainTransferabilityRequest::CheckDomainTransferabilityRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_authCodeHasBeenSet(false)
-{
-}
-
 Aws::String CheckDomainTransferabilityRequest::SerializePayload() const
 {
   JsonValue payload;

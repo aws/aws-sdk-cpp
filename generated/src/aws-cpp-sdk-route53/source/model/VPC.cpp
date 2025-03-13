@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-VPC::VPC() : 
-    m_vPCRegion(VPCRegion::NOT_SET),
-    m_vPCRegionHasBeenSet(false),
-    m_vPCIdHasBeenSet(false)
-{
-}
-
 VPC::VPC(const XmlNode& xmlNode)
-  : VPC()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ VPC& VPC::operator =(const XmlNode& xmlNode)
     XmlNode vPCRegionNode = resultNode.FirstChild("VPCRegion");
     if(!vPCRegionNode.IsNull())
     {
-      m_vPCRegion = VPCRegionMapper::GetVPCRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vPCRegionNode.GetText()).c_str()).c_str());
+      m_vPCRegion = VPCRegionMapper::GetVPCRegionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vPCRegionNode.GetText()).c_str()));
       m_vPCRegionHasBeenSet = true;
+       m_vPCRegionHasBeenSet = true;
     }
     XmlNode vPCIdNode = resultNode.FirstChild("VPCId");
     if(!vPCIdNode.IsNull())
     {
       m_vPCId = Aws::Utils::Xml::DecodeEscapedXmlText(vPCIdNode.GetText());
       m_vPCIdHasBeenSet = true;
+       m_vPCIdHasBeenSet = true;
     }
   }
 

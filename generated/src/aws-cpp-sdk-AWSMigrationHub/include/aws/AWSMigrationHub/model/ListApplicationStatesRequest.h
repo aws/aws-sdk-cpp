@@ -22,7 +22,7 @@ namespace Model
   class ListApplicationStatesRequest : public MigrationHubRequest
   {
   public:
-    AWS_MIGRATIONHUB_API ListApplicationStatesRequest();
+    AWS_MIGRATIONHUB_API ListApplicationStatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p>The configurationIds from the Application Discovery Service that uniquely
      * identifies your applications.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationIds() const{ return m_applicationIds; }
+    inline const Aws::Vector<Aws::String>& GetApplicationIds() const { return m_applicationIds; }
     inline bool ApplicationIdsHasBeenSet() const { return m_applicationIdsHasBeenSet; }
-    inline void SetApplicationIds(const Aws::Vector<Aws::String>& value) { m_applicationIdsHasBeenSet = true; m_applicationIds = value; }
-    inline void SetApplicationIds(Aws::Vector<Aws::String>&& value) { m_applicationIdsHasBeenSet = true; m_applicationIds = std::move(value); }
-    inline ListApplicationStatesRequest& WithApplicationIds(const Aws::Vector<Aws::String>& value) { SetApplicationIds(value); return *this;}
-    inline ListApplicationStatesRequest& WithApplicationIds(Aws::Vector<Aws::String>&& value) { SetApplicationIds(std::move(value)); return *this;}
-    inline ListApplicationStatesRequest& AddApplicationIds(const Aws::String& value) { m_applicationIdsHasBeenSet = true; m_applicationIds.push_back(value); return *this; }
-    inline ListApplicationStatesRequest& AddApplicationIds(Aws::String&& value) { m_applicationIdsHasBeenSet = true; m_applicationIds.push_back(std::move(value)); return *this; }
-    inline ListApplicationStatesRequest& AddApplicationIds(const char* value) { m_applicationIdsHasBeenSet = true; m_applicationIds.push_back(value); return *this; }
+    template<typename ApplicationIdsT = Aws::Vector<Aws::String>>
+    void SetApplicationIds(ApplicationIdsT&& value) { m_applicationIdsHasBeenSet = true; m_applicationIds = std::forward<ApplicationIdsT>(value); }
+    template<typename ApplicationIdsT = Aws::Vector<Aws::String>>
+    ListApplicationStatesRequest& WithApplicationIds(ApplicationIdsT&& value) { SetApplicationIds(std::forward<ApplicationIdsT>(value)); return *this;}
+    template<typename ApplicationIdsT = Aws::String>
+    ListApplicationStatesRequest& AddApplicationIds(ApplicationIdsT&& value) { m_applicationIdsHasBeenSet = true; m_applicationIds.emplace_back(std::forward<ApplicationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,21 +56,19 @@ namespace Model
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>NextToken</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListApplicationStatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationStatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationStatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationStatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results to be returned per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListApplicationStatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

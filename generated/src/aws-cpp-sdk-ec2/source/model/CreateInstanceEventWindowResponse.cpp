@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInstanceEventWindowResponse::CreateInstanceEventWindowResponse()
-{
-}
-
 CreateInstanceEventWindowResponse::CreateInstanceEventWindowResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateInstanceEventWindowResponse& CreateInstanceEventWindowResponse::operator =
     if(!instanceEventWindowNode.IsNull())
     {
       m_instanceEventWindow = instanceEventWindowNode;
+      m_instanceEventWindowHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateInstanceEventWindowResponse& CreateInstanceEventWindowResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateInstanceEventWindowResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -33,7 +33,7 @@ namespace Model
   class LabelingJobInputConfig
   {
   public:
-    AWS_SAGEMAKER_API LabelingJobInputConfig();
+    AWS_SAGEMAKER_API LabelingJobInputConfig() = default;
     AWS_SAGEMAKER_API LabelingJobInputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API LabelingJobInputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The location of the input data.</p>
      */
-    inline const LabelingJobDataSource& GetDataSource() const{ return m_dataSource; }
+    inline const LabelingJobDataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const LabelingJobDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(LabelingJobDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline LabelingJobInputConfig& WithDataSource(const LabelingJobDataSource& value) { SetDataSource(value); return *this;}
-    inline LabelingJobInputConfig& WithDataSource(LabelingJobDataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = LabelingJobDataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = LabelingJobDataSource>
+    LabelingJobInputConfig& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Attributes of the data specified by the customer.</p>
      */
-    inline const LabelingJobDataAttributes& GetDataAttributes() const{ return m_dataAttributes; }
+    inline const LabelingJobDataAttributes& GetDataAttributes() const { return m_dataAttributes; }
     inline bool DataAttributesHasBeenSet() const { return m_dataAttributesHasBeenSet; }
-    inline void SetDataAttributes(const LabelingJobDataAttributes& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = value; }
-    inline void SetDataAttributes(LabelingJobDataAttributes&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::move(value); }
-    inline LabelingJobInputConfig& WithDataAttributes(const LabelingJobDataAttributes& value) { SetDataAttributes(value); return *this;}
-    inline LabelingJobInputConfig& WithDataAttributes(LabelingJobDataAttributes&& value) { SetDataAttributes(std::move(value)); return *this;}
+    template<typename DataAttributesT = LabelingJobDataAttributes>
+    void SetDataAttributes(DataAttributesT&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::forward<DataAttributesT>(value); }
+    template<typename DataAttributesT = LabelingJobDataAttributes>
+    LabelingJobInputConfig& WithDataAttributes(DataAttributesT&& value) { SetDataAttributes(std::forward<DataAttributesT>(value)); return *this;}
     ///@}
   private:
 

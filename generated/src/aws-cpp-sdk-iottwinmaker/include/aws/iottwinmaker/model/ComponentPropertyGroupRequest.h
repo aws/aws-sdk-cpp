@@ -34,7 +34,7 @@ namespace Model
   class ComponentPropertyGroupRequest
   {
   public:
-    AWS_IOTTWINMAKER_API ComponentPropertyGroupRequest();
+    AWS_IOTTWINMAKER_API ComponentPropertyGroupRequest() = default;
     AWS_IOTTWINMAKER_API ComponentPropertyGroupRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API ComponentPropertyGroupRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,49 +44,44 @@ namespace Model
     /**
      * <p>The group type.</p>
      */
-    inline const GroupType& GetGroupType() const{ return m_groupType; }
+    inline GroupType GetGroupType() const { return m_groupType; }
     inline bool GroupTypeHasBeenSet() const { return m_groupTypeHasBeenSet; }
-    inline void SetGroupType(const GroupType& value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
-    inline void SetGroupType(GroupType&& value) { m_groupTypeHasBeenSet = true; m_groupType = std::move(value); }
-    inline ComponentPropertyGroupRequest& WithGroupType(const GroupType& value) { SetGroupType(value); return *this;}
-    inline ComponentPropertyGroupRequest& WithGroupType(GroupType&& value) { SetGroupType(std::move(value)); return *this;}
+    inline void SetGroupType(GroupType value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
+    inline ComponentPropertyGroupRequest& WithGroupType(GroupType value) { SetGroupType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPropertyNames() const{ return m_propertyNames; }
+    inline const Aws::Vector<Aws::String>& GetPropertyNames() const { return m_propertyNames; }
     inline bool PropertyNamesHasBeenSet() const { return m_propertyNamesHasBeenSet; }
-    inline void SetPropertyNames(const Aws::Vector<Aws::String>& value) { m_propertyNamesHasBeenSet = true; m_propertyNames = value; }
-    inline void SetPropertyNames(Aws::Vector<Aws::String>&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames = std::move(value); }
-    inline ComponentPropertyGroupRequest& WithPropertyNames(const Aws::Vector<Aws::String>& value) { SetPropertyNames(value); return *this;}
-    inline ComponentPropertyGroupRequest& WithPropertyNames(Aws::Vector<Aws::String>&& value) { SetPropertyNames(std::move(value)); return *this;}
-    inline ComponentPropertyGroupRequest& AddPropertyNames(const Aws::String& value) { m_propertyNamesHasBeenSet = true; m_propertyNames.push_back(value); return *this; }
-    inline ComponentPropertyGroupRequest& AddPropertyNames(Aws::String&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames.push_back(std::move(value)); return *this; }
-    inline ComponentPropertyGroupRequest& AddPropertyNames(const char* value) { m_propertyNamesHasBeenSet = true; m_propertyNames.push_back(value); return *this; }
+    template<typename PropertyNamesT = Aws::Vector<Aws::String>>
+    void SetPropertyNames(PropertyNamesT&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames = std::forward<PropertyNamesT>(value); }
+    template<typename PropertyNamesT = Aws::Vector<Aws::String>>
+    ComponentPropertyGroupRequest& WithPropertyNames(PropertyNamesT&& value) { SetPropertyNames(std::forward<PropertyNamesT>(value)); return *this;}
+    template<typename PropertyNamesT = Aws::String>
+    ComponentPropertyGroupRequest& AddPropertyNames(PropertyNamesT&& value) { m_propertyNamesHasBeenSet = true; m_propertyNames.emplace_back(std::forward<PropertyNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The update type.</p>
      */
-    inline const PropertyGroupUpdateType& GetUpdateType() const{ return m_updateType; }
+    inline PropertyGroupUpdateType GetUpdateType() const { return m_updateType; }
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-    inline void SetUpdateType(const PropertyGroupUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-    inline void SetUpdateType(PropertyGroupUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-    inline ComponentPropertyGroupRequest& WithUpdateType(const PropertyGroupUpdateType& value) { SetUpdateType(value); return *this;}
-    inline ComponentPropertyGroupRequest& WithUpdateType(PropertyGroupUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+    inline void SetUpdateType(PropertyGroupUpdateType value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline ComponentPropertyGroupRequest& WithUpdateType(PropertyGroupUpdateType value) { SetUpdateType(value); return *this;}
     ///@}
   private:
 
-    GroupType m_groupType;
+    GroupType m_groupType{GroupType::NOT_SET};
     bool m_groupTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_propertyNames;
     bool m_propertyNamesHasBeenSet = false;
 
-    PropertyGroupUpdateType m_updateType;
+    PropertyGroupUpdateType m_updateType{PropertyGroupUpdateType::NOT_SET};
     bool m_updateTypeHasBeenSet = false;
   };
 

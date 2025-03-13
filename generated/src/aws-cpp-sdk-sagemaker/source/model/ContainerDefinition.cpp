@@ -18,24 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ContainerDefinition::ContainerDefinition() : 
-    m_containerHostnameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imageConfigHasBeenSet(false),
-    m_mode(ContainerMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_modelDataUrlHasBeenSet(false),
-    m_modelDataSourceHasBeenSet(false),
-    m_additionalModelDataSourcesHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_modelPackageNameHasBeenSet(false),
-    m_inferenceSpecificationNameHasBeenSet(false),
-    m_multiModelConfigHasBeenSet(false)
-{
-}
-
 ContainerDefinition::ContainerDefinition(JsonView jsonValue)
-  : ContainerDefinition()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContainerHostname"))
   {
     m_containerHostname = jsonValue.GetString("ContainerHostname");
-
     m_containerHostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Image"))
   {
     m_image = jsonValue.GetString("Image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageConfig"))
   {
     m_imageConfig = jsonValue.GetObject("ImageConfig");
-
     m_imageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = ContainerModeMapper::GetContainerModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelDataUrl"))
   {
     m_modelDataUrl = jsonValue.GetString("ModelDataUrl");
-
     m_modelDataUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelDataSource"))
   {
     m_modelDataSource = jsonValue.GetObject("ModelDataSource");
-
     m_modelDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalModelDataSources"))
   {
     Aws::Utils::Array<JsonView> additionalModelDataSourcesJsonList = jsonValue.GetArray("AdditionalModelDataSources");
@@ -93,7 +64,6 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     }
     m_additionalModelDataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -103,28 +73,21 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelPackageName"))
   {
     m_modelPackageName = jsonValue.GetString("ModelPackageName");
-
     m_modelPackageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceSpecificationName"))
   {
     m_inferenceSpecificationName = jsonValue.GetString("InferenceSpecificationName");
-
     m_inferenceSpecificationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiModelConfig"))
   {
     m_multiModelConfig = jsonValue.GetObject("MultiModelConfig");
-
     m_multiModelConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

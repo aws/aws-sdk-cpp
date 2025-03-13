@@ -12,16 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelPlacementGroupRequest::CreateChannelPlacementGroupRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nodesHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelPlacementGroupRequest::SerializePayload() const
 {
   JsonValue payload;

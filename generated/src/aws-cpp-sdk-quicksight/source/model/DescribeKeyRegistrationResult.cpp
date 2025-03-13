@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeKeyRegistrationResult::DescribeKeyRegistrationResult() : 
-    m_status(0)
-{
-}
-
 DescribeKeyRegistrationResult::DescribeKeyRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeKeyRegistrationResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ DescribeKeyRegistrationResult& DescribeKeyRegistrationResult::operator =(const A
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
+    m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyRegistration"))
   {
     Aws::Utils::Array<JsonView> keyRegistrationJsonList = jsonValue.GetArray("KeyRegistration");
@@ -44,20 +37,20 @@ DescribeKeyRegistrationResult& DescribeKeyRegistrationResult::operator =(const A
     {
       m_keyRegistration.push_back(keyRegistrationJsonList[keyRegistrationIndex].AsObject());
     }
+    m_keyRegistrationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetInteger("Status");
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

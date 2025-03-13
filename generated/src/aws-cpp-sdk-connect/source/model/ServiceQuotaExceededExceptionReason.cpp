@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ServiceQuotaExceededExceptionReason::ServiceQuotaExceededExceptionReason() : 
-    m_attachedFileServiceQuotaExceededExceptionReason(AttachedFileServiceQuotaExceededExceptionReason::NOT_SET),
-    m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededExceptionReason::ServiceQuotaExceededExceptionReason(JsonView jsonValue)
-  : ServiceQuotaExceededExceptionReason()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ServiceQuotaExceededExceptionReason& ServiceQuotaExceededExceptionReason::operat
   if(jsonValue.ValueExists("AttachedFileServiceQuotaExceededExceptionReason"))
   {
     m_attachedFileServiceQuotaExceededExceptionReason = AttachedFileServiceQuotaExceededExceptionReasonMapper::GetAttachedFileServiceQuotaExceededExceptionReasonForName(jsonValue.GetString("AttachedFileServiceQuotaExceededExceptionReason"));
-
     m_attachedFileServiceQuotaExceededExceptionReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -13,19 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGroupVersionRequest::CreateGroupVersionRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_connectorDefinitionVersionArnHasBeenSet(false),
-    m_coreDefinitionVersionArnHasBeenSet(false),
-    m_deviceDefinitionVersionArnHasBeenSet(false),
-    m_functionDefinitionVersionArnHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_loggerDefinitionVersionArnHasBeenSet(false),
-    m_resourceDefinitionVersionArnHasBeenSet(false),
-    m_subscriptionDefinitionVersionArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupVersionRequest::SerializePayload() const
 {
   JsonValue payload;

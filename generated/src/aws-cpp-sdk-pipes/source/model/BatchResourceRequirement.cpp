@@ -18,15 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-BatchResourceRequirement::BatchResourceRequirement() : 
-    m_type(BatchResourceRequirementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 BatchResourceRequirement::BatchResourceRequirement(JsonView jsonValue)
-  : BatchResourceRequirement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchResourceRequirement& BatchResourceRequirement::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BatchResourceRequirementTypeMapper::GetBatchResourceRequirementTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

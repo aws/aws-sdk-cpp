@@ -22,7 +22,7 @@ namespace Model
   class CreateNamespaceRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API CreateNamespaceRequest();
+    AWS_S3TABLES_API CreateNamespaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,29 +38,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the table bucket to create the namespace
      * in.</p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline CreateNamespaceRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline CreateNamespaceRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline CreateNamespaceRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    CreateNamespaceRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the namespace.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNamespace() const{ return m_namespace; }
+    inline const Aws::Vector<Aws::String>& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::Vector<Aws::String>& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::Vector<Aws::String>&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline CreateNamespaceRequest& WithNamespace(const Aws::Vector<Aws::String>& value) { SetNamespace(value); return *this;}
-    inline CreateNamespaceRequest& WithNamespace(Aws::Vector<Aws::String>&& value) { SetNamespace(std::move(value)); return *this;}
-    inline CreateNamespaceRequest& AddNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace.push_back(value); return *this; }
-    inline CreateNamespaceRequest& AddNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace.push_back(std::move(value)); return *this; }
-    inline CreateNamespaceRequest& AddNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.push_back(value); return *this; }
+    template<typename NamespaceT = Aws::Vector<Aws::String>>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::Vector<Aws::String>>
+    CreateNamespaceRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
+    template<typename NamespaceT = Aws::String>
+    CreateNamespaceRequest& AddNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace.emplace_back(std::forward<NamespaceT>(value)); return *this; }
     ///@}
   private:
 

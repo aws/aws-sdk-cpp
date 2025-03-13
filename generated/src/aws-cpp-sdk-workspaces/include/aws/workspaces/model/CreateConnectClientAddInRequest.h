@@ -21,7 +21,7 @@ namespace Model
   class CreateConnectClientAddInRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API CreateConnectClientAddInRequest();
+    AWS_WORKSPACES_API CreateConnectClientAddInRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The directory identifier for which to configure the client add-in.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline CreateConnectClientAddInRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline CreateConnectClientAddInRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline CreateConnectClientAddInRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    CreateConnectClientAddInRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the client add-in.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateConnectClientAddInRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateConnectClientAddInRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateConnectClientAddInRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateConnectClientAddInRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint URL of the Amazon Connect client add-in.</p>
      */
-    inline const Aws::String& GetURL() const{ return m_uRL; }
+    inline const Aws::String& GetURL() const { return m_uRL; }
     inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
-    inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
-    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
-    inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
-    inline CreateConnectClientAddInRequest& WithURL(const Aws::String& value) { SetURL(value); return *this;}
-    inline CreateConnectClientAddInRequest& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
-    inline CreateConnectClientAddInRequest& WithURL(const char* value) { SetURL(value); return *this;}
+    template<typename URLT = Aws::String>
+    void SetURL(URLT&& value) { m_uRLHasBeenSet = true; m_uRL = std::forward<URLT>(value); }
+    template<typename URLT = Aws::String>
+    CreateConnectClientAddInRequest& WithURL(URLT&& value) { SetURL(std::forward<URLT>(value)); return *this;}
     ///@}
   private:
 

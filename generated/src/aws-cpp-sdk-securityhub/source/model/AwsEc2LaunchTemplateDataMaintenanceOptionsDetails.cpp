@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataMaintenanceOptionsDetails::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails() : 
-    m_autoRecoveryHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataMaintenanceOptionsDetails::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataMaintenanceOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2LaunchTemplateDataMaintenanceOptionsDetails& AwsEc2LaunchTemplateDataMaint
   if(jsonValue.ValueExists("AutoRecovery"))
   {
     m_autoRecovery = jsonValue.GetString("AutoRecovery");
-
     m_autoRecoveryHasBeenSet = true;
   }
-
   return *this;
 }
 

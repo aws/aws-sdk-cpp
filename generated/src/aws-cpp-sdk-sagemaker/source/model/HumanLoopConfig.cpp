@@ -18,24 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HumanLoopConfig::HumanLoopConfig() : 
-    m_workteamArnHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false),
-    m_taskTitleHasBeenSet(false),
-    m_taskDescriptionHasBeenSet(false),
-    m_taskCount(0),
-    m_taskCountHasBeenSet(false),
-    m_taskAvailabilityLifetimeInSeconds(0),
-    m_taskAvailabilityLifetimeInSecondsHasBeenSet(false),
-    m_taskTimeLimitInSeconds(0),
-    m_taskTimeLimitInSecondsHasBeenSet(false),
-    m_taskKeywordsHasBeenSet(false),
-    m_publicWorkforceTaskPriceHasBeenSet(false)
-{
-}
-
 HumanLoopConfig::HumanLoopConfig(JsonView jsonValue)
-  : HumanLoopConfig()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ HumanLoopConfig& HumanLoopConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkteamArn"))
   {
     m_workteamArn = jsonValue.GetString("WorkteamArn");
-
     m_workteamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanTaskUiArn"))
   {
     m_humanTaskUiArn = jsonValue.GetString("HumanTaskUiArn");
-
     m_humanTaskUiArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskTitle"))
   {
     m_taskTitle = jsonValue.GetString("TaskTitle");
-
     m_taskTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskDescription"))
   {
     m_taskDescription = jsonValue.GetString("TaskDescription");
-
     m_taskDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskCount"))
   {
     m_taskCount = jsonValue.GetInteger("TaskCount");
-
     m_taskCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskAvailabilityLifetimeInSeconds"))
   {
     m_taskAvailabilityLifetimeInSeconds = jsonValue.GetInteger("TaskAvailabilityLifetimeInSeconds");
-
     m_taskAvailabilityLifetimeInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskTimeLimitInSeconds"))
   {
     m_taskTimeLimitInSeconds = jsonValue.GetInteger("TaskTimeLimitInSeconds");
-
     m_taskTimeLimitInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskKeywords"))
   {
     Aws::Utils::Array<JsonView> taskKeywordsJsonList = jsonValue.GetArray("TaskKeywords");
@@ -100,14 +69,11 @@ HumanLoopConfig& HumanLoopConfig::operator =(JsonView jsonValue)
     }
     m_taskKeywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicWorkforceTaskPrice"))
   {
     m_publicWorkforceTaskPrice = jsonValue.GetObject("PublicWorkforceTaskPrice");
-
     m_publicWorkforceTaskPriceHasBeenSet = true;
   }
-
   return *this;
 }
 

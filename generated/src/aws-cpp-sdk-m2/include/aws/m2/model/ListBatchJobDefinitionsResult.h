@@ -29,7 +29,7 @@ namespace Model
   class ListBatchJobDefinitionsResult
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API ListBatchJobDefinitionsResult();
+    AWS_MAINFRAMEMODERNIZATION_API ListBatchJobDefinitionsResult() = default;
     AWS_MAINFRAMEMODERNIZATION_API ListBatchJobDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAINFRAMEMODERNIZATION_API ListBatchJobDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of batch job definitions.</p>
      */
-    inline const Aws::Vector<BatchJobDefinition>& GetBatchJobDefinitions() const{ return m_batchJobDefinitions; }
-    inline void SetBatchJobDefinitions(const Aws::Vector<BatchJobDefinition>& value) { m_batchJobDefinitions = value; }
-    inline void SetBatchJobDefinitions(Aws::Vector<BatchJobDefinition>&& value) { m_batchJobDefinitions = std::move(value); }
-    inline ListBatchJobDefinitionsResult& WithBatchJobDefinitions(const Aws::Vector<BatchJobDefinition>& value) { SetBatchJobDefinitions(value); return *this;}
-    inline ListBatchJobDefinitionsResult& WithBatchJobDefinitions(Aws::Vector<BatchJobDefinition>&& value) { SetBatchJobDefinitions(std::move(value)); return *this;}
-    inline ListBatchJobDefinitionsResult& AddBatchJobDefinitions(const BatchJobDefinition& value) { m_batchJobDefinitions.push_back(value); return *this; }
-    inline ListBatchJobDefinitionsResult& AddBatchJobDefinitions(BatchJobDefinition&& value) { m_batchJobDefinitions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchJobDefinition>& GetBatchJobDefinitions() const { return m_batchJobDefinitions; }
+    template<typename BatchJobDefinitionsT = Aws::Vector<BatchJobDefinition>>
+    void SetBatchJobDefinitions(BatchJobDefinitionsT&& value) { m_batchJobDefinitionsHasBeenSet = true; m_batchJobDefinitions = std::forward<BatchJobDefinitionsT>(value); }
+    template<typename BatchJobDefinitionsT = Aws::Vector<BatchJobDefinition>>
+    ListBatchJobDefinitionsResult& WithBatchJobDefinitions(BatchJobDefinitionsT&& value) { SetBatchJobDefinitions(std::forward<BatchJobDefinitionsT>(value)); return *this;}
+    template<typename BatchJobDefinitionsT = BatchJobDefinition>
+    ListBatchJobDefinitionsResult& AddBatchJobDefinitions(BatchJobDefinitionsT&& value) { m_batchJobDefinitionsHasBeenSet = true; m_batchJobDefinitions.emplace_back(std::forward<BatchJobDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more items to return, this contains a token that is passed to a
      * subsequent call to this operation to retrieve the next set of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBatchJobDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBatchJobDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBatchJobDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBatchJobDefinitionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBatchJobDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBatchJobDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBatchJobDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBatchJobDefinitionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchJobDefinition> m_batchJobDefinitions;
+    bool m_batchJobDefinitionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

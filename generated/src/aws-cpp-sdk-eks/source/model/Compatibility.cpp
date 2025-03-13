@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Compatibility::Compatibility() : 
-    m_clusterVersionHasBeenSet(false),
-    m_platformVersionsHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false)
-{
-}
-
 Compatibility::Compatibility(JsonView jsonValue)
-  : Compatibility()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Compatibility& Compatibility::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterVersion"))
   {
     m_clusterVersion = jsonValue.GetString("clusterVersion");
-
     m_clusterVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformVersions"))
   {
     Aws::Utils::Array<JsonView> platformVersionsJsonList = jsonValue.GetArray("platformVersions");
@@ -50,14 +39,11 @@ Compatibility& Compatibility::operator =(JsonView jsonValue)
     }
     m_platformVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultVersion"))
   {
     m_defaultVersion = jsonValue.GetBool("defaultVersion");
-
     m_defaultVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

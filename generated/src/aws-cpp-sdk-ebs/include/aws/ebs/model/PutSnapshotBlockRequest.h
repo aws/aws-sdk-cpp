@@ -23,7 +23,7 @@ namespace Model
   class PutSnapshotBlockRequest : public StreamingEBSRequest
   {
   public:
-    AWS_EBS_API PutSnapshotBlockRequest();
+    AWS_EBS_API PutSnapshotBlockRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
      * 
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline PutSnapshotBlockRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline PutSnapshotBlockRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline PutSnapshotBlockRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    PutSnapshotBlockRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * size (logical offset of data/<code>524288</code>). The logical offset of the
      * data must be <code>512</code> KiB aligned.</p>
      */
-    inline int GetBlockIndex() const{ return m_blockIndex; }
+    inline int GetBlockIndex() const { return m_blockIndex; }
     inline bool BlockIndexHasBeenSet() const { return m_blockIndexHasBeenSet; }
     inline void SetBlockIndex(int value) { m_blockIndexHasBeenSet = true; m_blockIndex = value; }
     inline PutSnapshotBlockRequest& WithBlockIndex(int value) { SetBlockIndex(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * supported size is <code>524288</code> bytes.</p> <p>Valid values:
      * <code>524288</code> </p>
      */
-    inline int GetDataLength() const{ return m_dataLength; }
+    inline int GetDataLength() const { return m_dataLength; }
     inline bool DataLengthHasBeenSet() const { return m_dataLengthHasBeenSet; }
     inline void SetDataLength(int value) { m_dataLengthHasBeenSet = true; m_dataLength = value; }
     inline PutSnapshotBlockRequest& WithDataLength(int value) { SetDataLength(value); return *this;}
@@ -85,7 +83,7 @@ namespace Model
     /**
      * <p>The progress of the write process, as a percentage.</p>
      */
-    inline int GetProgress() const{ return m_progress; }
+    inline int GetProgress() const { return m_progress; }
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
     inline void SetProgress(int value) { m_progressHasBeenSet = true; m_progress = value; }
     inline PutSnapshotBlockRequest& WithProgress(int value) { SetProgress(value); return *this;}
@@ -96,14 +94,12 @@ namespace Model
      * <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
      * supported.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline PutSnapshotBlockRequest& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline PutSnapshotBlockRequest& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline PutSnapshotBlockRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    PutSnapshotBlockRequest& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,32 +107,30 @@ namespace Model
      * <p>The algorithm used to generate the checksum. Currently, the only supported
      * algorithm is <code>SHA256</code>.</p>
      */
-    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
-    inline PutSnapshotBlockRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
-    inline PutSnapshotBlockRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+    inline PutSnapshotBlockRequest& WithChecksumAlgorithm(ChecksumAlgorithm value) { SetChecksumAlgorithm(value); return *this;}
     ///@}
   private:
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_blockIndex;
+    int m_blockIndex{0};
     bool m_blockIndexHasBeenSet = false;
 
 
-    int m_dataLength;
+    int m_dataLength{0};
     bool m_dataLengthHasBeenSet = false;
 
-    int m_progress;
+    int m_progress{0};
     bool m_progressHasBeenSet = false;
 
     Aws::String m_checksum;
     bool m_checksumHasBeenSet = false;
 
-    ChecksumAlgorithm m_checksumAlgorithm;
+    ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
     bool m_checksumAlgorithmHasBeenSet = false;
   };
 

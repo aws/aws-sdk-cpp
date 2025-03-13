@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2SecurityGroupPrefixListId::AwsEc2SecurityGroupPrefixListId() : 
-    m_prefixListIdHasBeenSet(false)
-{
-}
-
 AwsEc2SecurityGroupPrefixListId::AwsEc2SecurityGroupPrefixListId(JsonView jsonValue)
-  : AwsEc2SecurityGroupPrefixListId()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2SecurityGroupPrefixListId& AwsEc2SecurityGroupPrefixListId::operator =(Jso
   if(jsonValue.ValueExists("PrefixListId"))
   {
     m_prefixListId = jsonValue.GetString("PrefixListId");
-
     m_prefixListIdHasBeenSet = true;
   }
-
   return *this;
 }
 

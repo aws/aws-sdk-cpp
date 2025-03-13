@@ -18,14 +18,7 @@ namespace Billing
 namespace Model
 {
 
-Expression::Expression() : 
-    m_dimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Expression::Expression(JsonView jsonValue)
-  : Expression()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Expression& Expression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dimensions"))
   {
     m_dimensions = jsonValue.GetObject("dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     m_tags = jsonValue.GetObject("tags");
-
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

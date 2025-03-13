@@ -33,7 +33,7 @@ namespace Model
   class FilePart
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FilePart();
+    AWS_BEDROCKAGENTRUNTIME_API FilePart() = default;
     AWS_BEDROCKAGENTRUNTIME_API FilePart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FilePart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Files containing intermediate response for the user.</p>
      */
-    inline const Aws::Vector<OutputFile>& GetFiles() const{ return m_files; }
+    inline const Aws::Vector<OutputFile>& GetFiles() const { return m_files; }
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-    inline void SetFiles(const Aws::Vector<OutputFile>& value) { m_filesHasBeenSet = true; m_files = value; }
-    inline void SetFiles(Aws::Vector<OutputFile>&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
-    inline FilePart& WithFiles(const Aws::Vector<OutputFile>& value) { SetFiles(value); return *this;}
-    inline FilePart& WithFiles(Aws::Vector<OutputFile>&& value) { SetFiles(std::move(value)); return *this;}
-    inline FilePart& AddFiles(const OutputFile& value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
-    inline FilePart& AddFiles(OutputFile&& value) { m_filesHasBeenSet = true; m_files.push_back(std::move(value)); return *this; }
+    template<typename FilesT = Aws::Vector<OutputFile>>
+    void SetFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files = std::forward<FilesT>(value); }
+    template<typename FilesT = Aws::Vector<OutputFile>>
+    FilePart& WithFiles(FilesT&& value) { SetFiles(std::forward<FilesT>(value)); return *this;}
+    template<typename FilesT = OutputFile>
+    FilePart& AddFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files.emplace_back(std::forward<FilesT>(value)); return *this; }
     ///@}
   private:
 

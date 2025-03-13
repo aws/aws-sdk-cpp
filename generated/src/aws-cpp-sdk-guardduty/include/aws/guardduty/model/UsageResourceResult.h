@@ -33,7 +33,7 @@ namespace Model
   class UsageResourceResult
   {
   public:
-    AWS_GUARDDUTY_API UsageResourceResult();
+    AWS_GUARDDUTY_API UsageResourceResult() = default;
     AWS_GUARDDUTY_API UsageResourceResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API UsageResourceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Web Services resource that generated usage.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline UsageResourceResult& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline UsageResourceResult& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline UsageResourceResult& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    UsageResourceResult& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the sum total of usage for the specified resource type.</p>
      */
-    inline const Total& GetTotal() const{ return m_total; }
+    inline const Total& GetTotal() const { return m_total; }
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-    inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-    inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-    inline UsageResourceResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-    inline UsageResourceResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
+    template<typename TotalT = Total>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = Total>
+    UsageResourceResult& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
   private:
 

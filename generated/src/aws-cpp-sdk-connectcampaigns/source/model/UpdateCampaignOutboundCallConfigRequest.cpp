@@ -12,14 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignOutboundCallConfigRequest::UpdateCampaignOutboundCallConfigRequest() : 
-    m_idHasBeenSet(false),
-    m_connectContactFlowIdHasBeenSet(false),
-    m_connectSourcePhoneNumberHasBeenSet(false),
-    m_answerMachineDetectionConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignOutboundCallConfigRequest::SerializePayload() const
 {
   JsonValue payload;

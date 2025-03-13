@@ -18,19 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AppComponentCompliance::AppComponentCompliance() : 
-    m_appComponentNameHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_costHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resiliencyScoreHasBeenSet(false),
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AppComponentCompliance::AppComponentCompliance(JsonView jsonValue)
-  : AppComponentCompliance()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ AppComponentCompliance& AppComponentCompliance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
-
     m_appComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compliance"))
   {
     Aws::Map<Aws::String, JsonView> complianceJsonMap = jsonValue.GetObject("compliance").GetAllObjects();
@@ -53,35 +39,26 @@ AppComponentCompliance& AppComponentCompliance::operator =(JsonView jsonValue)
     }
     m_complianceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cost"))
   {
     m_cost = jsonValue.GetObject("cost");
-
     m_costHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resiliencyScore"))
   {
     m_resiliencyScore = jsonValue.GetObject("resiliencyScore");
-
     m_resiliencyScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ComplianceStatusMapper::GetComplianceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

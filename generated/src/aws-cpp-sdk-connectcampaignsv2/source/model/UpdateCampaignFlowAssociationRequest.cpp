@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignFlowAssociationRequest::UpdateCampaignFlowAssociationRequest() : 
-    m_idHasBeenSet(false),
-    m_connectCampaignFlowArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignFlowAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

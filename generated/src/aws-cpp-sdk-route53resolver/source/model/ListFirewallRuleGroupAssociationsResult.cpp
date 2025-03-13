@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFirewallRuleGroupAssociationsResult::ListFirewallRuleGroupAssociationsResult()
-{
-}
-
 ListFirewallRuleGroupAssociationsResult::ListFirewallRuleGroupAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListFirewallRuleGroupAssociationsResult& ListFirewallRuleGroupAssociationsResult
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallRuleGroupAssociations"))
   {
     Aws::Utils::Array<JsonView> firewallRuleGroupAssociationsJsonList = jsonValue.GetArray("FirewallRuleGroupAssociations");
@@ -42,14 +37,15 @@ ListFirewallRuleGroupAssociationsResult& ListFirewallRuleGroupAssociationsResult
     {
       m_firewallRuleGroupAssociations.push_back(firewallRuleGroupAssociationsJsonList[firewallRuleGroupAssociationsIndex].AsObject());
     }
+    m_firewallRuleGroupAssociationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -30,7 +30,7 @@ namespace Model
   class IcebergRetentionMetrics
   {
   public:
-    AWS_GLUE_API IcebergRetentionMetrics();
+    AWS_GLUE_API IcebergRetentionMetrics() = default;
     AWS_GLUE_API IcebergRetentionMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API IcebergRetentionMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The number of data files deleted by the retention job run.</p>
      */
-    inline long long GetNumberOfDataFilesDeleted() const{ return m_numberOfDataFilesDeleted; }
+    inline long long GetNumberOfDataFilesDeleted() const { return m_numberOfDataFilesDeleted; }
     inline bool NumberOfDataFilesDeletedHasBeenSet() const { return m_numberOfDataFilesDeletedHasBeenSet; }
     inline void SetNumberOfDataFilesDeleted(long long value) { m_numberOfDataFilesDeletedHasBeenSet = true; m_numberOfDataFilesDeleted = value; }
     inline IcebergRetentionMetrics& WithNumberOfDataFilesDeleted(long long value) { SetNumberOfDataFilesDeleted(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The number of manifest files deleted by the retention job run.</p>
      */
-    inline long long GetNumberOfManifestFilesDeleted() const{ return m_numberOfManifestFilesDeleted; }
+    inline long long GetNumberOfManifestFilesDeleted() const { return m_numberOfManifestFilesDeleted; }
     inline bool NumberOfManifestFilesDeletedHasBeenSet() const { return m_numberOfManifestFilesDeletedHasBeenSet; }
     inline void SetNumberOfManifestFilesDeleted(long long value) { m_numberOfManifestFilesDeletedHasBeenSet = true; m_numberOfManifestFilesDeleted = value; }
     inline IcebergRetentionMetrics& WithNumberOfManifestFilesDeleted(long long value) { SetNumberOfManifestFilesDeleted(value); return *this;}
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>The number of manifest lists deleted by the retention job run.</p>
      */
-    inline long long GetNumberOfManifestListsDeleted() const{ return m_numberOfManifestListsDeleted; }
+    inline long long GetNumberOfManifestListsDeleted() const { return m_numberOfManifestListsDeleted; }
     inline bool NumberOfManifestListsDeletedHasBeenSet() const { return m_numberOfManifestListsDeletedHasBeenSet; }
     inline void SetNumberOfManifestListsDeleted(long long value) { m_numberOfManifestListsDeletedHasBeenSet = true; m_numberOfManifestListsDeleted = value; }
     inline IcebergRetentionMetrics& WithNumberOfManifestListsDeleted(long long value) { SetNumberOfManifestListsDeleted(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>The number of DPU hours consumed by the job.</p>
      */
-    inline int GetNumberOfDpus() const{ return m_numberOfDpus; }
+    inline int GetNumberOfDpus() const { return m_numberOfDpus; }
     inline bool NumberOfDpusHasBeenSet() const { return m_numberOfDpusHasBeenSet; }
     inline void SetNumberOfDpus(int value) { m_numberOfDpusHasBeenSet = true; m_numberOfDpus = value; }
     inline IcebergRetentionMetrics& WithNumberOfDpus(int value) { SetNumberOfDpus(value); return *this;}
@@ -80,26 +80,26 @@ namespace Model
     /**
      * <p>The duration of the job in hours.</p>
      */
-    inline double GetJobDurationInHour() const{ return m_jobDurationInHour; }
+    inline double GetJobDurationInHour() const { return m_jobDurationInHour; }
     inline bool JobDurationInHourHasBeenSet() const { return m_jobDurationInHourHasBeenSet; }
     inline void SetJobDurationInHour(double value) { m_jobDurationInHourHasBeenSet = true; m_jobDurationInHour = value; }
     inline IcebergRetentionMetrics& WithJobDurationInHour(double value) { SetJobDurationInHour(value); return *this;}
     ///@}
   private:
 
-    long long m_numberOfDataFilesDeleted;
+    long long m_numberOfDataFilesDeleted{0};
     bool m_numberOfDataFilesDeletedHasBeenSet = false;
 
-    long long m_numberOfManifestFilesDeleted;
+    long long m_numberOfManifestFilesDeleted{0};
     bool m_numberOfManifestFilesDeletedHasBeenSet = false;
 
-    long long m_numberOfManifestListsDeleted;
+    long long m_numberOfManifestListsDeleted{0};
     bool m_numberOfManifestListsDeletedHasBeenSet = false;
 
-    int m_numberOfDpus;
+    int m_numberOfDpus{0};
     bool m_numberOfDpusHasBeenSet = false;
 
-    double m_jobDurationInHour;
+    double m_jobDurationInHour{0.0};
     bool m_jobDurationInHourHasBeenSet = false;
   };
 

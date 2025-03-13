@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ModuleInfo::ModuleInfo() : 
-    m_typeHierarchyHasBeenSet(false),
-    m_logicalIdHierarchyHasBeenSet(false)
-{
-}
-
 ModuleInfo::ModuleInfo(const XmlNode& xmlNode)
-  : ModuleInfo()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ModuleInfo& ModuleInfo::operator =(const XmlNode& xmlNode)
     {
       m_typeHierarchy = Aws::Utils::Xml::DecodeEscapedXmlText(typeHierarchyNode.GetText());
       m_typeHierarchyHasBeenSet = true;
+       m_typeHierarchyHasBeenSet = true;
     }
     XmlNode logicalIdHierarchyNode = resultNode.FirstChild("LogicalIdHierarchy");
     if(!logicalIdHierarchyNode.IsNull())
     {
       m_logicalIdHierarchy = Aws::Utils::Xml::DecodeEscapedXmlText(logicalIdHierarchyNode.GetText());
       m_logicalIdHierarchyHasBeenSet = true;
+       m_logicalIdHierarchyHasBeenSet = true;
     }
   }
 

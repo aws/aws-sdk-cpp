@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericRangeFilterValue::NumericRangeFilterValue() : 
-    m_staticValue(0.0),
-    m_staticValueHasBeenSet(false),
-    m_parameterHasBeenSet(false)
-{
-}
-
 NumericRangeFilterValue::NumericRangeFilterValue(JsonView jsonValue)
-  : NumericRangeFilterValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NumericRangeFilterValue& NumericRangeFilterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StaticValue"))
   {
     m_staticValue = jsonValue.GetDouble("StaticValue");
-
     m_staticValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameter"))
   {
     m_parameter = jsonValue.GetString("Parameter");
-
     m_parameterHasBeenSet = true;
   }
-
   return *this;
 }
 

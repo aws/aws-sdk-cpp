@@ -19,23 +19,7 @@ namespace IoTJobsDataPlane
 namespace Model
 {
 
-CommandParameterValue::CommandParameterValue() : 
-    m_sHasBeenSet(false),
-    m_b(false),
-    m_bHasBeenSet(false),
-    m_i(0),
-    m_iHasBeenSet(false),
-    m_l(0),
-    m_lHasBeenSet(false),
-    m_d(0.0),
-    m_dHasBeenSet(false),
-    m_bINHasBeenSet(false),
-    m_uLHasBeenSet(false)
-{
-}
-
 CommandParameterValue::CommandParameterValue(JsonView jsonValue)
-  : CommandParameterValue()
 {
   *this = jsonValue;
 }
@@ -45,51 +29,38 @@ CommandParameterValue& CommandParameterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S"))
   {
     m_s = jsonValue.GetString("S");
-
     m_sHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("B"))
   {
     m_b = jsonValue.GetBool("B");
-
     m_bHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("I"))
   {
     m_i = jsonValue.GetInteger("I");
-
     m_iHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("L"))
   {
     m_l = jsonValue.GetInt64("L");
-
     m_lHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("D"))
   {
     m_d = jsonValue.GetDouble("D");
-
     m_dHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BIN"))
   {
     m_bIN = HashingUtils::Base64Decode(jsonValue.GetString("BIN"));
     m_bINHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UL"))
   {
     m_uL = jsonValue.GetString("UL");
-
     m_uLHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,24 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableGlobalSecondaryIndex::AwsDynamoDbTableGlobalSecondaryIndex() : 
-    m_backfilling(false),
-    m_backfillingHasBeenSet(false),
-    m_indexArnHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_indexSizeBytes(0),
-    m_indexSizeBytesHasBeenSet(false),
-    m_indexStatusHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_projectionHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableGlobalSecondaryIndex::AwsDynamoDbTableGlobalSecondaryIndex(JsonView jsonValue)
-  : AwsDynamoDbTableGlobalSecondaryIndex()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ AwsDynamoDbTableGlobalSecondaryIndex& AwsDynamoDbTableGlobalSecondaryIndex::oper
   if(jsonValue.ValueExists("Backfilling"))
   {
     m_backfilling = jsonValue.GetBool("Backfilling");
-
     m_backfillingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexArn"))
   {
     m_indexArn = jsonValue.GetString("IndexArn");
-
     m_indexArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexSizeBytes"))
   {
     m_indexSizeBytes = jsonValue.GetInt64("IndexSizeBytes");
-
     m_indexSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = jsonValue.GetString("IndexStatus");
-
     m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInteger("ItemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -93,21 +64,16 @@ AwsDynamoDbTableGlobalSecondaryIndex& AwsDynamoDbTableGlobalSecondaryIndex::oper
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Projection"))
   {
     m_projection = jsonValue.GetObject("Projection");
-
     m_projectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   return *this;
 }
 

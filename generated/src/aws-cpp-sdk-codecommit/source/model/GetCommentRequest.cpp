@@ -12,11 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCommentRequest::GetCommentRequest() : 
-    m_commentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCommentRequest::SerializePayload() const
 {
   JsonValue payload;

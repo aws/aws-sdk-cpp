@@ -12,12 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAssetPropertyRequest::DescribeAssetPropertyRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAssetPropertyRequest::SerializePayload() const
 {
   return {};

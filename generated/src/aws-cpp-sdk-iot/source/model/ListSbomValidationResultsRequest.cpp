@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSbomValidationResultsRequest::ListSbomValidationResultsRequest() : 
-    m_packageNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_validationResult(SbomValidationResult::NOT_SET),
-    m_validationResultHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSbomValidationResultsRequest::SerializePayload() const
 {
   return {};

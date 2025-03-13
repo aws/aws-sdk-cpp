@@ -32,7 +32,7 @@ namespace Model
   class SpainAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API SpainAdditionalInfo();
+    AWS_TAXSETTINGS_API SpainAdditionalInfo() = default;
     AWS_TAXSETTINGS_API SpainAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API SpainAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The registration type in Spain.</p>
      */
-    inline const RegistrationType& GetRegistrationType() const{ return m_registrationType; }
+    inline RegistrationType GetRegistrationType() const { return m_registrationType; }
     inline bool RegistrationTypeHasBeenSet() const { return m_registrationTypeHasBeenSet; }
-    inline void SetRegistrationType(const RegistrationType& value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
-    inline void SetRegistrationType(RegistrationType&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::move(value); }
-    inline SpainAdditionalInfo& WithRegistrationType(const RegistrationType& value) { SetRegistrationType(value); return *this;}
-    inline SpainAdditionalInfo& WithRegistrationType(RegistrationType&& value) { SetRegistrationType(std::move(value)); return *this;}
+    inline void SetRegistrationType(RegistrationType value) { m_registrationTypeHasBeenSet = true; m_registrationType = value; }
+    inline SpainAdditionalInfo& WithRegistrationType(RegistrationType value) { SetRegistrationType(value); return *this;}
     ///@}
   private:
 
-    RegistrationType m_registrationType;
+    RegistrationType m_registrationType{RegistrationType::NOT_SET};
     bool m_registrationTypeHasBeenSet = false;
   };
 

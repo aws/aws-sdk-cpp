@@ -18,20 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-Address::Address() : 
-    m_addressLine1HasBeenSet(false),
-    m_addressLine2HasBeenSet(false),
-    m_addressLine3HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_districtOrCountyHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addressLine1"))
   {
     m_addressLine1 = jsonValue.GetString("addressLine1");
-
     m_addressLine1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressLine2"))
   {
     m_addressLine2 = jsonValue.GetString("addressLine2");
-
     m_addressLine2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addressLine3"))
   {
     m_addressLine3 = jsonValue.GetString("addressLine3");
-
     m_addressLine3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("city"))
   {
     m_city = jsonValue.GetString("city");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("countryCode"))
   {
     m_countryCode = jsonValue.GetString("countryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("districtOrCounty"))
   {
     m_districtOrCounty = jsonValue.GetString("districtOrCounty");
-
     m_districtOrCountyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("postalCode"))
   {
     m_postalCode = jsonValue.GetString("postalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateOrRegion"))
   {
     m_stateOrRegion = jsonValue.GetString("stateOrRegion");
-
     m_stateOrRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

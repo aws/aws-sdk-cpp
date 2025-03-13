@@ -18,19 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-SsmAutomation::SsmAutomation() : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_dynamicParametersHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_targetAccount(SsmTargetAccount::NOT_SET),
-    m_targetAccountHasBeenSet(false)
-{
-}
-
 SsmAutomation::SsmAutomation(JsonView jsonValue)
-  : SsmAutomation()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ SsmAutomation& SsmAutomation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("documentName"))
   {
     m_documentName = jsonValue.GetString("documentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentVersion"))
   {
     m_documentVersion = jsonValue.GetString("documentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamicParameters"))
   {
     Aws::Map<Aws::String, JsonView> dynamicParametersJsonMap = jsonValue.GetObject("dynamicParameters").GetAllObjects();
@@ -60,7 +44,6 @@ SsmAutomation& SsmAutomation::operator =(JsonView jsonValue)
     }
     m_dynamicParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -77,21 +60,16 @@ SsmAutomation& SsmAutomation::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccount"))
   {
     m_targetAccount = SsmTargetAccountMapper::GetSsmTargetAccountForName(jsonValue.GetString("targetAccount"));
-
     m_targetAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

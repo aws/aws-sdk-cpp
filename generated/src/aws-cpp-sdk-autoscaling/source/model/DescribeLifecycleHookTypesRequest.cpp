@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeLifecycleHookTypesRequest::DescribeLifecycleHookTypesRequest()
-{
-}
-
 Aws::String DescribeLifecycleHookTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

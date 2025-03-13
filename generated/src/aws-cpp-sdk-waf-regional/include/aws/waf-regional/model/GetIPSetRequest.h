@@ -21,7 +21,7 @@ namespace Model
   class GetIPSetRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API GetIPSetRequest();
+    AWS_WAFREGIONAL_API GetIPSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
-    inline const Aws::String& GetIPSetId() const{ return m_iPSetId; }
+    inline const Aws::String& GetIPSetId() const { return m_iPSetId; }
     inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
-    inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
-    inline void SetIPSetId(Aws::String&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::move(value); }
-    inline void SetIPSetId(const char* value) { m_iPSetIdHasBeenSet = true; m_iPSetId.assign(value); }
-    inline GetIPSetRequest& WithIPSetId(const Aws::String& value) { SetIPSetId(value); return *this;}
-    inline GetIPSetRequest& WithIPSetId(Aws::String&& value) { SetIPSetId(std::move(value)); return *this;}
-    inline GetIPSetRequest& WithIPSetId(const char* value) { SetIPSetId(value); return *this;}
+    template<typename IPSetIdT = Aws::String>
+    void SetIPSetId(IPSetIdT&& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = std::forward<IPSetIdT>(value); }
+    template<typename IPSetIdT = Aws::String>
+    GetIPSetRequest& WithIPSetId(IPSetIdT&& value) { SetIPSetId(std::forward<IPSetIdT>(value)); return *this;}
     ///@}
   private:
 

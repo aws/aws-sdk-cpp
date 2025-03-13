@@ -34,7 +34,7 @@ namespace Model
   class BuiltinSlotTypeMetadata
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata();
+    AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata() = default;
     AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,25 @@ namespace Model
      * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot
      * Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
      */
-    inline const Aws::String& GetSignature() const{ return m_signature; }
+    inline const Aws::String& GetSignature() const { return m_signature; }
     inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
-    inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
-    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
-    inline void SetSignature(const char* value) { m_signatureHasBeenSet = true; m_signature.assign(value); }
-    inline BuiltinSlotTypeMetadata& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
-    inline BuiltinSlotTypeMetadata& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
-    inline BuiltinSlotTypeMetadata& WithSignature(const char* value) { SetSignature(value); return *this;}
+    template<typename SignatureT = Aws::String>
+    void SetSignature(SignatureT&& value) { m_signatureHasBeenSet = true; m_signature = std::forward<SignatureT>(value); }
+    template<typename SignatureT = Aws::String>
+    BuiltinSlotTypeMetadata& WithSignature(SignatureT&& value) { SetSignature(std::forward<SignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of target locales for the slot. </p>
      */
-    inline const Aws::Vector<Locale>& GetSupportedLocales() const{ return m_supportedLocales; }
+    inline const Aws::Vector<Locale>& GetSupportedLocales() const { return m_supportedLocales; }
     inline bool SupportedLocalesHasBeenSet() const { return m_supportedLocalesHasBeenSet; }
-    inline void SetSupportedLocales(const Aws::Vector<Locale>& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales = value; }
-    inline void SetSupportedLocales(Aws::Vector<Locale>&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales = std::move(value); }
-    inline BuiltinSlotTypeMetadata& WithSupportedLocales(const Aws::Vector<Locale>& value) { SetSupportedLocales(value); return *this;}
-    inline BuiltinSlotTypeMetadata& WithSupportedLocales(Aws::Vector<Locale>&& value) { SetSupportedLocales(std::move(value)); return *this;}
-    inline BuiltinSlotTypeMetadata& AddSupportedLocales(const Locale& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(value); return *this; }
-    inline BuiltinSlotTypeMetadata& AddSupportedLocales(Locale&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(std::move(value)); return *this; }
+    template<typename SupportedLocalesT = Aws::Vector<Locale>>
+    void SetSupportedLocales(SupportedLocalesT&& value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales = std::forward<SupportedLocalesT>(value); }
+    template<typename SupportedLocalesT = Aws::Vector<Locale>>
+    BuiltinSlotTypeMetadata& WithSupportedLocales(SupportedLocalesT&& value) { SetSupportedLocales(std::forward<SupportedLocalesT>(value)); return *this;}
+    inline BuiltinSlotTypeMetadata& AddSupportedLocales(Locale value) { m_supportedLocalesHasBeenSet = true; m_supportedLocales.push_back(value); return *this; }
     ///@}
   private:
 

@@ -12,10 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeServiceIntegrationRequest::DescribeServiceIntegrationRequest()
-{
-}
-
 Aws::String DescribeServiceIntegrationRequest::SerializePayload() const
 {
   return {};

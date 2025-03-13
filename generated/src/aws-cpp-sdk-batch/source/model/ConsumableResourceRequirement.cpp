@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ConsumableResourceRequirement::ConsumableResourceRequirement() : 
-    m_consumableResourceHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
-{
-}
-
 ConsumableResourceRequirement::ConsumableResourceRequirement(JsonView jsonValue)
-  : ConsumableResourceRequirement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConsumableResourceRequirement& ConsumableResourceRequirement::operator =(JsonVie
   if(jsonValue.ValueExists("consumableResource"))
   {
     m_consumableResource = jsonValue.GetString("consumableResource");
-
     m_consumableResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantity"))
   {
     m_quantity = jsonValue.GetInt64("quantity");
-
     m_quantityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVocabularyFilterRequest::DeleteVocabularyFilterRequest() : 
-    m_vocabularyFilterNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVocabularyFilterRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUseCaseRequest::DeleteUseCaseRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_integrationAssociationIdHasBeenSet(false),
-    m_useCaseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUseCaseRequest::SerializePayload() const
 {
   return {};

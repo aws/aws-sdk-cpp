@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVerifiedAccessEndpointCidrOptions::CreateVerifiedAccessEndpointCidrOptions() : 
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 CreateVerifiedAccessEndpointCidrOptions::CreateVerifiedAccessEndpointCidrOptions(const XmlNode& xmlNode)
-  : CreateVerifiedAccessEndpointCidrOptions()
 {
   *this = xmlNode;
 }
@@ -44,38 +34,42 @@ CreateVerifiedAccessEndpointCidrOptions& CreateVerifiedAccessEndpointCidrOptions
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode subnetIdsNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
     XmlNode cidrNode = resultNode.FirstChild("Cidr");
     if(!cidrNode.IsNull())
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode portRangesNode = resultNode.FirstChild("PortRange");
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);
         portRangesMember = portRangesMember.NextNode("item");
       }
 
-      m_portRangesHasBeenSet = true;
+       m_portRangesHasBeenSet = true;
     }
   }
 

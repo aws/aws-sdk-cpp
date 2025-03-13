@@ -18,32 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceRevision::ServiceRevision() : 
-    m_serviceRevisionArnHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_capacityProviderStrategyHasBeenSet(false),
-    m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_platformFamilyHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_serviceRegistriesHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_containerImagesHasBeenSet(false),
-    m_guardDutyEnabled(false),
-    m_guardDutyEnabledHasBeenSet(false),
-    m_serviceConnectConfigurationHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false),
-    m_fargateEphemeralStorageHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_vpcLatticeConfigurationsHasBeenSet(false)
-{
-}
-
 ServiceRevision::ServiceRevision(JsonView jsonValue)
-  : ServiceRevision()
 {
   *this = jsonValue;
 }
@@ -53,31 +28,23 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceRevisionArn"))
   {
     m_serviceRevisionArn = jsonValue.GetString("serviceRevisionArn");
-
     m_serviceRevisionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceArn"))
   {
     m_serviceArn = jsonValue.GetString("serviceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskDefinition"))
   {
     m_taskDefinition = jsonValue.GetString("taskDefinition");
-
     m_taskDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacityProviderStrategy"))
   {
     Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
@@ -87,28 +54,21 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_capacityProviderStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchType"))
   {
     m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
-
     m_launchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformVersion"))
   {
     m_platformVersion = jsonValue.GetString("platformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformFamily"))
   {
     m_platformFamily = jsonValue.GetString("platformFamily");
-
     m_platformFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loadBalancers"))
   {
     Aws::Utils::Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
@@ -118,7 +78,6 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_loadBalancersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRegistries"))
   {
     Aws::Utils::Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
@@ -128,14 +87,11 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_serviceRegistriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("networkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerImages"))
   {
     Aws::Utils::Array<JsonView> containerImagesJsonList = jsonValue.GetArray("containerImages");
@@ -145,21 +101,16 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_containerImagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardDutyEnabled"))
   {
     m_guardDutyEnabled = jsonValue.GetBool("guardDutyEnabled");
-
     m_guardDutyEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceConnectConfiguration"))
   {
     m_serviceConnectConfiguration = jsonValue.GetObject("serviceConnectConfiguration");
-
     m_serviceConnectConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeConfigurations"))
   {
     Aws::Utils::Array<JsonView> volumeConfigurationsJsonList = jsonValue.GetArray("volumeConfigurations");
@@ -169,21 +120,16 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_volumeConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fargateEphemeralStorage"))
   {
     m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
-
     m_fargateEphemeralStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLatticeConfigurations"))
   {
     Aws::Utils::Array<JsonView> vpcLatticeConfigurationsJsonList = jsonValue.GetArray("vpcLatticeConfigurations");
@@ -193,7 +139,6 @@ ServiceRevision& ServiceRevision::operator =(JsonView jsonValue)
     }
     m_vpcLatticeConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

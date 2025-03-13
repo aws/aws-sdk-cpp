@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeScalingProcessTypesResult::DescribeScalingProcessTypesResult()
-{
-}
-
 DescribeScalingProcessTypesResult::DescribeScalingProcessTypesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =
     if(!processesNode.IsNull())
     {
       XmlNode processesMember = processesNode.FirstChild("member");
+      m_processesHasBeenSet = !processesMember.IsNull();
       while(!processesMember.IsNull())
       {
         m_processes.push_back(processesMember);
@@ -54,6 +51,7 @@ DescribeScalingProcessTypesResult& DescribeScalingProcessTypesResult::operator =
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeScalingProcessTypesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

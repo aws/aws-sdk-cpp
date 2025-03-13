@@ -34,7 +34,7 @@ namespace Model
   class ModelPackageValidationSpecification
   {
   public:
-    AWS_SAGEMAKER_API ModelPackageValidationSpecification();
+    AWS_SAGEMAKER_API ModelPackageValidationSpecification() = default;
     AWS_SAGEMAKER_API ModelPackageValidationSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelPackageValidationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The IAM roles to be used for the validation of the model package.</p>
      */
-    inline const Aws::String& GetValidationRole() const{ return m_validationRole; }
+    inline const Aws::String& GetValidationRole() const { return m_validationRole; }
     inline bool ValidationRoleHasBeenSet() const { return m_validationRoleHasBeenSet; }
-    inline void SetValidationRole(const Aws::String& value) { m_validationRoleHasBeenSet = true; m_validationRole = value; }
-    inline void SetValidationRole(Aws::String&& value) { m_validationRoleHasBeenSet = true; m_validationRole = std::move(value); }
-    inline void SetValidationRole(const char* value) { m_validationRoleHasBeenSet = true; m_validationRole.assign(value); }
-    inline ModelPackageValidationSpecification& WithValidationRole(const Aws::String& value) { SetValidationRole(value); return *this;}
-    inline ModelPackageValidationSpecification& WithValidationRole(Aws::String&& value) { SetValidationRole(std::move(value)); return *this;}
-    inline ModelPackageValidationSpecification& WithValidationRole(const char* value) { SetValidationRole(value); return *this;}
+    template<typename ValidationRoleT = Aws::String>
+    void SetValidationRole(ValidationRoleT&& value) { m_validationRoleHasBeenSet = true; m_validationRole = std::forward<ValidationRoleT>(value); }
+    template<typename ValidationRoleT = Aws::String>
+    ModelPackageValidationSpecification& WithValidationRole(ValidationRoleT&& value) { SetValidationRole(std::forward<ValidationRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * specifies a batch transform job that SageMaker runs to validate your model
      * package.</p>
      */
-    inline const Aws::Vector<ModelPackageValidationProfile>& GetValidationProfiles() const{ return m_validationProfiles; }
+    inline const Aws::Vector<ModelPackageValidationProfile>& GetValidationProfiles() const { return m_validationProfiles; }
     inline bool ValidationProfilesHasBeenSet() const { return m_validationProfilesHasBeenSet; }
-    inline void SetValidationProfiles(const Aws::Vector<ModelPackageValidationProfile>& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = value; }
-    inline void SetValidationProfiles(Aws::Vector<ModelPackageValidationProfile>&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = std::move(value); }
-    inline ModelPackageValidationSpecification& WithValidationProfiles(const Aws::Vector<ModelPackageValidationProfile>& value) { SetValidationProfiles(value); return *this;}
-    inline ModelPackageValidationSpecification& WithValidationProfiles(Aws::Vector<ModelPackageValidationProfile>&& value) { SetValidationProfiles(std::move(value)); return *this;}
-    inline ModelPackageValidationSpecification& AddValidationProfiles(const ModelPackageValidationProfile& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.push_back(value); return *this; }
-    inline ModelPackageValidationSpecification& AddValidationProfiles(ModelPackageValidationProfile&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.push_back(std::move(value)); return *this; }
+    template<typename ValidationProfilesT = Aws::Vector<ModelPackageValidationProfile>>
+    void SetValidationProfiles(ValidationProfilesT&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles = std::forward<ValidationProfilesT>(value); }
+    template<typename ValidationProfilesT = Aws::Vector<ModelPackageValidationProfile>>
+    ModelPackageValidationSpecification& WithValidationProfiles(ValidationProfilesT&& value) { SetValidationProfiles(std::forward<ValidationProfilesT>(value)); return *this;}
+    template<typename ValidationProfilesT = ModelPackageValidationProfile>
+    ModelPackageValidationSpecification& AddValidationProfiles(ValidationProfilesT&& value) { m_validationProfilesHasBeenSet = true; m_validationProfiles.emplace_back(std::forward<ValidationProfilesT>(value)); return *this; }
     ///@}
   private:
 

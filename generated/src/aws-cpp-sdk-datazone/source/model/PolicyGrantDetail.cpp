@@ -18,25 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-PolicyGrantDetail::PolicyGrantDetail() : 
-    m_addToProjectMemberPoolHasBeenSet(false),
-    m_createAssetTypeHasBeenSet(false),
-    m_createDomainUnitHasBeenSet(false),
-    m_createEnvironmentHasBeenSet(false),
-    m_createEnvironmentFromBlueprintHasBeenSet(false),
-    m_createEnvironmentProfileHasBeenSet(false),
-    m_createFormTypeHasBeenSet(false),
-    m_createGlossaryHasBeenSet(false),
-    m_createProjectHasBeenSet(false),
-    m_createProjectFromProjectProfileHasBeenSet(false),
-    m_delegateCreateEnvironmentProfileHasBeenSet(false),
-    m_overrideDomainUnitOwnersHasBeenSet(false),
-    m_overrideProjectOwnersHasBeenSet(false)
-{
-}
-
 PolicyGrantDetail::PolicyGrantDetail(JsonView jsonValue)
-  : PolicyGrantDetail()
 {
   *this = jsonValue;
 }
@@ -46,94 +28,68 @@ PolicyGrantDetail& PolicyGrantDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addToProjectMemberPool"))
   {
     m_addToProjectMemberPool = jsonValue.GetObject("addToProjectMemberPool");
-
     m_addToProjectMemberPoolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createAssetType"))
   {
     m_createAssetType = jsonValue.GetObject("createAssetType");
-
     m_createAssetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createDomainUnit"))
   {
     m_createDomainUnit = jsonValue.GetObject("createDomainUnit");
-
     m_createDomainUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createEnvironment"))
   {
     m_createEnvironment = jsonValue.GetObject("createEnvironment");
-
     m_createEnvironmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createEnvironmentFromBlueprint"))
   {
     m_createEnvironmentFromBlueprint = jsonValue.GetObject("createEnvironmentFromBlueprint");
-
     m_createEnvironmentFromBlueprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createEnvironmentProfile"))
   {
     m_createEnvironmentProfile = jsonValue.GetObject("createEnvironmentProfile");
-
     m_createEnvironmentProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createFormType"))
   {
     m_createFormType = jsonValue.GetObject("createFormType");
-
     m_createFormTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createGlossary"))
   {
     m_createGlossary = jsonValue.GetObject("createGlossary");
-
     m_createGlossaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createProject"))
   {
     m_createProject = jsonValue.GetObject("createProject");
-
     m_createProjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createProjectFromProjectProfile"))
   {
     m_createProjectFromProjectProfile = jsonValue.GetObject("createProjectFromProjectProfile");
-
     m_createProjectFromProjectProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("delegateCreateEnvironmentProfile"))
   {
     m_delegateCreateEnvironmentProfile = jsonValue.GetObject("delegateCreateEnvironmentProfile");
-
     m_delegateCreateEnvironmentProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideDomainUnitOwners"))
   {
     m_overrideDomainUnitOwners = jsonValue.GetObject("overrideDomainUnitOwners");
-
     m_overrideDomainUnitOwnersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrideProjectOwners"))
   {
     m_overrideProjectOwners = jsonValue.GetObject("overrideProjectOwners");
-
     m_overrideProjectOwnersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAssetModelCompositeModelResult::UpdateAssetModelCompositeModelResult()
-{
-}
-
 UpdateAssetModelCompositeModelResult::UpdateAssetModelCompositeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ UpdateAssetModelCompositeModelResult& UpdateAssetModelCompositeModelResult::oper
     {
       m_assetModelCompositeModelPath.push_back(assetModelCompositeModelPathJsonList[assetModelCompositeModelPathIndex].AsObject());
     }
+    m_assetModelCompositeModelPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelStatus"))
   {
     m_assetModelStatus = jsonValue.GetObject("assetModelStatus");
-
+    m_assetModelStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

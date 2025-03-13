@@ -28,7 +28,7 @@ namespace Model
   class PutTaxRegistrationResult
   {
   public:
-    AWS_TAXSETTINGS_API PutTaxRegistrationResult();
+    AWS_TAXSETTINGS_API PutTaxRegistrationResult() = default;
     AWS_TAXSETTINGS_API PutTaxRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API PutTaxRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,26 @@ namespace Model
      * validation occurring on the TRN, the status can be <code>Verified</code>,
      * <code>Pending</code> or <code>Rejected</code>. </p>
      */
-    inline const TaxRegistrationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TaxRegistrationStatus& value) { m_status = value; }
-    inline void SetStatus(TaxRegistrationStatus&& value) { m_status = std::move(value); }
-    inline PutTaxRegistrationResult& WithStatus(const TaxRegistrationStatus& value) { SetStatus(value); return *this;}
-    inline PutTaxRegistrationResult& WithStatus(TaxRegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TaxRegistrationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TaxRegistrationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PutTaxRegistrationResult& WithStatus(TaxRegistrationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutTaxRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutTaxRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutTaxRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutTaxRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    TaxRegistrationStatus m_status;
+    TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

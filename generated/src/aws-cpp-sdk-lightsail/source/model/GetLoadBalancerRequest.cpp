@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLoadBalancerRequest::GetLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false)
-{
-}
-
 Aws::String GetLoadBalancerRequest::SerializePayload() const
 {
   JsonValue payload;

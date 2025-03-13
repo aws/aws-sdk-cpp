@@ -18,18 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-CodeErrorLocation::CodeErrorLocation() : 
-    m_line(0),
-    m_lineHasBeenSet(false),
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_span(0),
-    m_spanHasBeenSet(false)
-{
-}
-
 CodeErrorLocation::CodeErrorLocation(JsonView jsonValue)
-  : CodeErrorLocation()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ CodeErrorLocation& CodeErrorLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("line"))
   {
     m_line = jsonValue.GetInteger("line");
-
     m_lineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("column"))
   {
     m_column = jsonValue.GetInteger("column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("span"))
   {
     m_span = jsonValue.GetInteger("span");
-
     m_spanHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class BucketPermissionConfiguration
   {
   public:
-    AWS_MACIE2_API BucketPermissionConfiguration();
+    AWS_MACIE2_API BucketPermissionConfiguration() = default;
     AWS_MACIE2_API BucketPermissionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketPermissionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The account-level permissions settings that apply to the bucket.</p>
      */
-    inline const AccountLevelPermissions& GetAccountLevelPermissions() const{ return m_accountLevelPermissions; }
+    inline const AccountLevelPermissions& GetAccountLevelPermissions() const { return m_accountLevelPermissions; }
     inline bool AccountLevelPermissionsHasBeenSet() const { return m_accountLevelPermissionsHasBeenSet; }
-    inline void SetAccountLevelPermissions(const AccountLevelPermissions& value) { m_accountLevelPermissionsHasBeenSet = true; m_accountLevelPermissions = value; }
-    inline void SetAccountLevelPermissions(AccountLevelPermissions&& value) { m_accountLevelPermissionsHasBeenSet = true; m_accountLevelPermissions = std::move(value); }
-    inline BucketPermissionConfiguration& WithAccountLevelPermissions(const AccountLevelPermissions& value) { SetAccountLevelPermissions(value); return *this;}
-    inline BucketPermissionConfiguration& WithAccountLevelPermissions(AccountLevelPermissions&& value) { SetAccountLevelPermissions(std::move(value)); return *this;}
+    template<typename AccountLevelPermissionsT = AccountLevelPermissions>
+    void SetAccountLevelPermissions(AccountLevelPermissionsT&& value) { m_accountLevelPermissionsHasBeenSet = true; m_accountLevelPermissions = std::forward<AccountLevelPermissionsT>(value); }
+    template<typename AccountLevelPermissionsT = AccountLevelPermissions>
+    BucketPermissionConfiguration& WithAccountLevelPermissions(AccountLevelPermissionsT&& value) { SetAccountLevelPermissions(std::forward<AccountLevelPermissionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The bucket-level permissions settings for the bucket.</p>
      */
-    inline const BucketLevelPermissions& GetBucketLevelPermissions() const{ return m_bucketLevelPermissions; }
+    inline const BucketLevelPermissions& GetBucketLevelPermissions() const { return m_bucketLevelPermissions; }
     inline bool BucketLevelPermissionsHasBeenSet() const { return m_bucketLevelPermissionsHasBeenSet; }
-    inline void SetBucketLevelPermissions(const BucketLevelPermissions& value) { m_bucketLevelPermissionsHasBeenSet = true; m_bucketLevelPermissions = value; }
-    inline void SetBucketLevelPermissions(BucketLevelPermissions&& value) { m_bucketLevelPermissionsHasBeenSet = true; m_bucketLevelPermissions = std::move(value); }
-    inline BucketPermissionConfiguration& WithBucketLevelPermissions(const BucketLevelPermissions& value) { SetBucketLevelPermissions(value); return *this;}
-    inline BucketPermissionConfiguration& WithBucketLevelPermissions(BucketLevelPermissions&& value) { SetBucketLevelPermissions(std::move(value)); return *this;}
+    template<typename BucketLevelPermissionsT = BucketLevelPermissions>
+    void SetBucketLevelPermissions(BucketLevelPermissionsT&& value) { m_bucketLevelPermissionsHasBeenSet = true; m_bucketLevelPermissions = std::forward<BucketLevelPermissionsT>(value); }
+    template<typename BucketLevelPermissionsT = BucketLevelPermissions>
+    BucketPermissionConfiguration& WithBucketLevelPermissions(BucketLevelPermissionsT&& value) { SetBucketLevelPermissions(std::forward<BucketLevelPermissionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -49,7 +49,7 @@ namespace Model
   class MaintenanceWindowStepFunctionsParameters
   {
   public:
-    AWS_SSM_API MaintenanceWindowStepFunctionsParameters();
+    AWS_SSM_API MaintenanceWindowStepFunctionsParameters() = default;
     AWS_SSM_API MaintenanceWindowStepFunctionsParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API MaintenanceWindowStepFunctionsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,28 +59,24 @@ namespace Model
     /**
      * <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline MaintenanceWindowStepFunctionsParameters& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline MaintenanceWindowStepFunctionsParameters& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline MaintenanceWindowStepFunctionsParameters& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    MaintenanceWindowStepFunctionsParameters& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MaintenanceWindowStepFunctionsParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MaintenanceWindowStepFunctionsParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MaintenanceWindowStepFunctionsParameters& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MaintenanceWindowStepFunctionsParameters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

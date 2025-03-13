@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DoubleColumnStatisticsData::DoubleColumnStatisticsData() : 
-    m_minimumValue(0.0),
-    m_minimumValueHasBeenSet(false),
-    m_maximumValue(0.0),
-    m_maximumValueHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false),
-    m_numberOfDistinctValues(0),
-    m_numberOfDistinctValuesHasBeenSet(false)
-{
-}
-
 DoubleColumnStatisticsData::DoubleColumnStatisticsData(JsonView jsonValue)
-  : DoubleColumnStatisticsData()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DoubleColumnStatisticsData& DoubleColumnStatisticsData::operator =(JsonView json
   if(jsonValue.ValueExists("MinimumValue"))
   {
     m_minimumValue = jsonValue.GetDouble("MinimumValue");
-
     m_minimumValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumValue"))
   {
     m_maximumValue = jsonValue.GetDouble("MaximumValue");
-
     m_maximumValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNulls"))
   {
     m_numberOfNulls = jsonValue.GetInt64("NumberOfNulls");
-
     m_numberOfNullsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDistinctValues"))
   {
     m_numberOfDistinctValues = jsonValue.GetInt64("NumberOfDistinctValues");
-
     m_numberOfDistinctValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

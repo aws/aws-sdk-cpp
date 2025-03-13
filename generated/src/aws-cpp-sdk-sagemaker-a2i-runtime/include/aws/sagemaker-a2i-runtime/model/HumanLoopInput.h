@@ -32,7 +32,7 @@ namespace Model
   class HumanLoopInput
   {
   public:
-    AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput();
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput() = default;
     AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUGMENTEDAIRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Serialized input from the human loop. The input must be a string
      * representation of a file in JSON format.</p>
      */
-    inline const Aws::String& GetInputContent() const{ return m_inputContent; }
+    inline const Aws::String& GetInputContent() const { return m_inputContent; }
     inline bool InputContentHasBeenSet() const { return m_inputContentHasBeenSet; }
-    inline void SetInputContent(const Aws::String& value) { m_inputContentHasBeenSet = true; m_inputContent = value; }
-    inline void SetInputContent(Aws::String&& value) { m_inputContentHasBeenSet = true; m_inputContent = std::move(value); }
-    inline void SetInputContent(const char* value) { m_inputContentHasBeenSet = true; m_inputContent.assign(value); }
-    inline HumanLoopInput& WithInputContent(const Aws::String& value) { SetInputContent(value); return *this;}
-    inline HumanLoopInput& WithInputContent(Aws::String&& value) { SetInputContent(std::move(value)); return *this;}
-    inline HumanLoopInput& WithInputContent(const char* value) { SetInputContent(value); return *this;}
+    template<typename InputContentT = Aws::String>
+    void SetInputContent(InputContentT&& value) { m_inputContentHasBeenSet = true; m_inputContent = std::forward<InputContentT>(value); }
+    template<typename InputContentT = Aws::String>
+    HumanLoopInput& WithInputContent(InputContentT&& value) { SetInputContent(std::forward<InputContentT>(value)); return *this;}
     ///@}
   private:
 

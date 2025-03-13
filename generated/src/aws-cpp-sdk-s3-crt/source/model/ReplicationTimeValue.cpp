@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ReplicationTimeValue::ReplicationTimeValue() : 
-    m_minutes(0),
-    m_minutesHasBeenSet(false)
-{
-}
-
 ReplicationTimeValue::ReplicationTimeValue(const XmlNode& xmlNode)
-  : ReplicationTimeValue()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ReplicationTimeValue& ReplicationTimeValue::operator =(const XmlNode& xmlNode)
     {
       m_minutes = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minutesNode.GetText()).c_str()).c_str());
       m_minutesHasBeenSet = true;
+       m_minutesHasBeenSet = true;
     }
   }
 

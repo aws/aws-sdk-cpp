@@ -35,7 +35,7 @@ namespace Model
   class ClusterNodeSummary
   {
   public:
-    AWS_SAGEMAKER_API ClusterNodeSummary();
+    AWS_SAGEMAKER_API ClusterNodeSummary() = default;
     AWS_SAGEMAKER_API ClusterNodeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClusterNodeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,64 +45,58 @@ namespace Model
     /**
      * <p>The name of the instance group in which the instance is.</p>
      */
-    inline const Aws::String& GetInstanceGroupName() const{ return m_instanceGroupName; }
+    inline const Aws::String& GetInstanceGroupName() const { return m_instanceGroupName; }
     inline bool InstanceGroupNameHasBeenSet() const { return m_instanceGroupNameHasBeenSet; }
-    inline void SetInstanceGroupName(const Aws::String& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = value; }
-    inline void SetInstanceGroupName(Aws::String&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::move(value); }
-    inline void SetInstanceGroupName(const char* value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName.assign(value); }
-    inline ClusterNodeSummary& WithInstanceGroupName(const Aws::String& value) { SetInstanceGroupName(value); return *this;}
-    inline ClusterNodeSummary& WithInstanceGroupName(Aws::String&& value) { SetInstanceGroupName(std::move(value)); return *this;}
-    inline ClusterNodeSummary& WithInstanceGroupName(const char* value) { SetInstanceGroupName(value); return *this;}
+    template<typename InstanceGroupNameT = Aws::String>
+    void SetInstanceGroupName(InstanceGroupNameT&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::forward<InstanceGroupNameT>(value); }
+    template<typename InstanceGroupNameT = Aws::String>
+    ClusterNodeSummary& WithInstanceGroupName(InstanceGroupNameT&& value) { SetInstanceGroupName(std::forward<InstanceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ClusterNodeSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ClusterNodeSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ClusterNodeSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ClusterNodeSummary& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the instance.</p>
      */
-    inline const ClusterInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ClusterInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ClusterInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ClusterInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ClusterNodeSummary& WithInstanceType(const ClusterInstanceType& value) { SetInstanceType(value); return *this;}
-    inline ClusterNodeSummary& WithInstanceType(ClusterInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ClusterInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ClusterNodeSummary& WithInstanceType(ClusterInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the instance is launched.</p>
      */
-    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
+    inline const Aws::Utils::DateTime& GetLaunchTime() const { return m_launchTime; }
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
-    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
-    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
-    inline ClusterNodeSummary& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
-    inline ClusterNodeSummary& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    void SetLaunchTime(LaunchTimeT&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::forward<LaunchTimeT>(value); }
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    ClusterNodeSummary& WithLaunchTime(LaunchTimeT&& value) { SetLaunchTime(std::forward<LaunchTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the instance.</p>
      */
-    inline const ClusterInstanceStatusDetails& GetInstanceStatus() const{ return m_instanceStatus; }
+    inline const ClusterInstanceStatusDetails& GetInstanceStatus() const { return m_instanceStatus; }
     inline bool InstanceStatusHasBeenSet() const { return m_instanceStatusHasBeenSet; }
-    inline void SetInstanceStatus(const ClusterInstanceStatusDetails& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = value; }
-    inline void SetInstanceStatus(ClusterInstanceStatusDetails&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::move(value); }
-    inline ClusterNodeSummary& WithInstanceStatus(const ClusterInstanceStatusDetails& value) { SetInstanceStatus(value); return *this;}
-    inline ClusterNodeSummary& WithInstanceStatus(ClusterInstanceStatusDetails&& value) { SetInstanceStatus(std::move(value)); return *this;}
+    template<typename InstanceStatusT = ClusterInstanceStatusDetails>
+    void SetInstanceStatus(InstanceStatusT&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::forward<InstanceStatusT>(value); }
+    template<typename InstanceStatusT = ClusterInstanceStatusDetails>
+    ClusterNodeSummary& WithInstanceStatus(InstanceStatusT&& value) { SetInstanceStatus(std::forward<InstanceStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,10 +106,10 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    ClusterInstanceType m_instanceType;
+    ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_launchTime;
+    Aws::Utils::DateTime m_launchTime{};
     bool m_launchTimeHasBeenSet = false;
 
     ClusterInstanceStatusDetails m_instanceStatus;

@@ -28,7 +28,7 @@ namespace Model
   class GetEnvironmentTemplateResult
   {
   public:
-    AWS_PROTON_API GetEnvironmentTemplateResult();
+    AWS_PROTON_API GetEnvironmentTemplateResult() = default;
     AWS_PROTON_API GetEnvironmentTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API GetEnvironmentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the requested environment template.</p>
      */
-    inline const EnvironmentTemplate& GetEnvironmentTemplate() const{ return m_environmentTemplate; }
-    inline void SetEnvironmentTemplate(const EnvironmentTemplate& value) { m_environmentTemplate = value; }
-    inline void SetEnvironmentTemplate(EnvironmentTemplate&& value) { m_environmentTemplate = std::move(value); }
-    inline GetEnvironmentTemplateResult& WithEnvironmentTemplate(const EnvironmentTemplate& value) { SetEnvironmentTemplate(value); return *this;}
-    inline GetEnvironmentTemplateResult& WithEnvironmentTemplate(EnvironmentTemplate&& value) { SetEnvironmentTemplate(std::move(value)); return *this;}
+    inline const EnvironmentTemplate& GetEnvironmentTemplate() const { return m_environmentTemplate; }
+    template<typename EnvironmentTemplateT = EnvironmentTemplate>
+    void SetEnvironmentTemplate(EnvironmentTemplateT&& value) { m_environmentTemplateHasBeenSet = true; m_environmentTemplate = std::forward<EnvironmentTemplateT>(value); }
+    template<typename EnvironmentTemplateT = EnvironmentTemplate>
+    GetEnvironmentTemplateResult& WithEnvironmentTemplate(EnvironmentTemplateT&& value) { SetEnvironmentTemplate(std::forward<EnvironmentTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEnvironmentTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEnvironmentTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEnvironmentTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEnvironmentTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EnvironmentTemplate m_environmentTemplate;
+    bool m_environmentTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

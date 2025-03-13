@@ -29,7 +29,7 @@ namespace Model
   class ListHoursOfOperationsResult
   {
   public:
-    AWS_CONNECT_API ListHoursOfOperationsResult();
+    AWS_CONNECT_API ListHoursOfOperationsResult() = default;
     AWS_CONNECT_API ListHoursOfOperationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListHoursOfOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the hours of operation.</p>
      */
-    inline const Aws::Vector<HoursOfOperationSummary>& GetHoursOfOperationSummaryList() const{ return m_hoursOfOperationSummaryList; }
-    inline void SetHoursOfOperationSummaryList(const Aws::Vector<HoursOfOperationSummary>& value) { m_hoursOfOperationSummaryList = value; }
-    inline void SetHoursOfOperationSummaryList(Aws::Vector<HoursOfOperationSummary>&& value) { m_hoursOfOperationSummaryList = std::move(value); }
-    inline ListHoursOfOperationsResult& WithHoursOfOperationSummaryList(const Aws::Vector<HoursOfOperationSummary>& value) { SetHoursOfOperationSummaryList(value); return *this;}
-    inline ListHoursOfOperationsResult& WithHoursOfOperationSummaryList(Aws::Vector<HoursOfOperationSummary>&& value) { SetHoursOfOperationSummaryList(std::move(value)); return *this;}
-    inline ListHoursOfOperationsResult& AddHoursOfOperationSummaryList(const HoursOfOperationSummary& value) { m_hoursOfOperationSummaryList.push_back(value); return *this; }
-    inline ListHoursOfOperationsResult& AddHoursOfOperationSummaryList(HoursOfOperationSummary&& value) { m_hoursOfOperationSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HoursOfOperationSummary>& GetHoursOfOperationSummaryList() const { return m_hoursOfOperationSummaryList; }
+    template<typename HoursOfOperationSummaryListT = Aws::Vector<HoursOfOperationSummary>>
+    void SetHoursOfOperationSummaryList(HoursOfOperationSummaryListT&& value) { m_hoursOfOperationSummaryListHasBeenSet = true; m_hoursOfOperationSummaryList = std::forward<HoursOfOperationSummaryListT>(value); }
+    template<typename HoursOfOperationSummaryListT = Aws::Vector<HoursOfOperationSummary>>
+    ListHoursOfOperationsResult& WithHoursOfOperationSummaryList(HoursOfOperationSummaryListT&& value) { SetHoursOfOperationSummaryList(std::forward<HoursOfOperationSummaryListT>(value)); return *this;}
+    template<typename HoursOfOperationSummaryListT = HoursOfOperationSummary>
+    ListHoursOfOperationsResult& AddHoursOfOperationSummaryList(HoursOfOperationSummaryListT&& value) { m_hoursOfOperationSummaryListHasBeenSet = true; m_hoursOfOperationSummaryList.emplace_back(std::forward<HoursOfOperationSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListHoursOfOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHoursOfOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHoursOfOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHoursOfOperationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHoursOfOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHoursOfOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHoursOfOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHoursOfOperationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HoursOfOperationSummary> m_hoursOfOperationSummaryList;
+    bool m_hoursOfOperationSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

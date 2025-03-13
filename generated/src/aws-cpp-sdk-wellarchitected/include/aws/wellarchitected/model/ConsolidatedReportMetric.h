@@ -38,7 +38,7 @@ namespace Model
   class ConsolidatedReportMetric
   {
   public:
-    AWS_WELLARCHITECTED_API ConsolidatedReportMetric();
+    AWS_WELLARCHITECTED_API ConsolidatedReportMetric() = default;
     AWS_WELLARCHITECTED_API ConsolidatedReportMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API ConsolidatedReportMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,98 +49,91 @@ namespace Model
      * <p>The metric type of a metric in the consolidated report. Currently only
      * WORKLOAD metric types are supported.</p>
      */
-    inline const MetricType& GetMetricType() const{ return m_metricType; }
+    inline MetricType GetMetricType() const { return m_metricType; }
     inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }
-    inline void SetMetricType(const MetricType& value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
-    inline void SetMetricType(MetricType&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::move(value); }
-    inline ConsolidatedReportMetric& WithMetricType(const MetricType& value) { SetMetricType(value); return *this;}
-    inline ConsolidatedReportMetric& WithMetricType(MetricType&& value) { SetMetricType(std::move(value)); return *this;}
+    inline void SetMetricType(MetricType value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
+    inline ConsolidatedReportMetric& WithMetricType(MetricType value) { SetMetricType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetRiskCounts() const{ return m_riskCounts; }
+    inline const Aws::Map<Risk, int>& GetRiskCounts() const { return m_riskCounts; }
     inline bool RiskCountsHasBeenSet() const { return m_riskCountsHasBeenSet; }
-    inline void SetRiskCounts(const Aws::Map<Risk, int>& value) { m_riskCountsHasBeenSet = true; m_riskCounts = value; }
-    inline void SetRiskCounts(Aws::Map<Risk, int>&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::move(value); }
-    inline ConsolidatedReportMetric& WithRiskCounts(const Aws::Map<Risk, int>& value) { SetRiskCounts(value); return *this;}
-    inline ConsolidatedReportMetric& WithRiskCounts(Aws::Map<Risk, int>&& value) { SetRiskCounts(std::move(value)); return *this;}
-    inline ConsolidatedReportMetric& AddRiskCounts(const Risk& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this; }
-    inline ConsolidatedReportMetric& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    void SetRiskCounts(RiskCountsT&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::forward<RiskCountsT>(value); }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    ConsolidatedReportMetric& WithRiskCounts(RiskCountsT&& value) { SetRiskCounts(std::forward<RiskCountsT>(value)); return *this;}
+    inline ConsolidatedReportMetric& AddRiskCounts(Risk key, int value) {
+      m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline ConsolidatedReportMetric& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline ConsolidatedReportMetric& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline ConsolidatedReportMetric& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    ConsolidatedReportMetric& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
+    inline const Aws::String& GetWorkloadName() const { return m_workloadName; }
     inline bool WorkloadNameHasBeenSet() const { return m_workloadNameHasBeenSet; }
-    inline void SetWorkloadName(const Aws::String& value) { m_workloadNameHasBeenSet = true; m_workloadName = value; }
-    inline void SetWorkloadName(Aws::String&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::move(value); }
-    inline void SetWorkloadName(const char* value) { m_workloadNameHasBeenSet = true; m_workloadName.assign(value); }
-    inline ConsolidatedReportMetric& WithWorkloadName(const Aws::String& value) { SetWorkloadName(value); return *this;}
-    inline ConsolidatedReportMetric& WithWorkloadName(Aws::String&& value) { SetWorkloadName(std::move(value)); return *this;}
-    inline ConsolidatedReportMetric& WithWorkloadName(const char* value) { SetWorkloadName(value); return *this;}
+    template<typename WorkloadNameT = Aws::String>
+    void SetWorkloadName(WorkloadNameT&& value) { m_workloadNameHasBeenSet = true; m_workloadName = std::forward<WorkloadNameT>(value); }
+    template<typename WorkloadNameT = Aws::String>
+    ConsolidatedReportMetric& WithWorkloadName(WorkloadNameT&& value) { SetWorkloadName(std::forward<WorkloadNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWorkloadArn() const{ return m_workloadArn; }
+    inline const Aws::String& GetWorkloadArn() const { return m_workloadArn; }
     inline bool WorkloadArnHasBeenSet() const { return m_workloadArnHasBeenSet; }
-    inline void SetWorkloadArn(const Aws::String& value) { m_workloadArnHasBeenSet = true; m_workloadArn = value; }
-    inline void SetWorkloadArn(Aws::String&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::move(value); }
-    inline void SetWorkloadArn(const char* value) { m_workloadArnHasBeenSet = true; m_workloadArn.assign(value); }
-    inline ConsolidatedReportMetric& WithWorkloadArn(const Aws::String& value) { SetWorkloadArn(value); return *this;}
-    inline ConsolidatedReportMetric& WithWorkloadArn(Aws::String&& value) { SetWorkloadArn(std::move(value)); return *this;}
-    inline ConsolidatedReportMetric& WithWorkloadArn(const char* value) { SetWorkloadArn(value); return *this;}
+    template<typename WorkloadArnT = Aws::String>
+    void SetWorkloadArn(WorkloadArnT&& value) { m_workloadArnHasBeenSet = true; m_workloadArn = std::forward<WorkloadArnT>(value); }
+    template<typename WorkloadArnT = Aws::String>
+    ConsolidatedReportMetric& WithWorkloadArn(WorkloadArnT&& value) { SetWorkloadArn(std::forward<WorkloadArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline ConsolidatedReportMetric& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline ConsolidatedReportMetric& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ConsolidatedReportMetric& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metrics for the lenses in the workload.</p>
      */
-    inline const Aws::Vector<LensMetric>& GetLenses() const{ return m_lenses; }
+    inline const Aws::Vector<LensMetric>& GetLenses() const { return m_lenses; }
     inline bool LensesHasBeenSet() const { return m_lensesHasBeenSet; }
-    inline void SetLenses(const Aws::Vector<LensMetric>& value) { m_lensesHasBeenSet = true; m_lenses = value; }
-    inline void SetLenses(Aws::Vector<LensMetric>&& value) { m_lensesHasBeenSet = true; m_lenses = std::move(value); }
-    inline ConsolidatedReportMetric& WithLenses(const Aws::Vector<LensMetric>& value) { SetLenses(value); return *this;}
-    inline ConsolidatedReportMetric& WithLenses(Aws::Vector<LensMetric>&& value) { SetLenses(std::move(value)); return *this;}
-    inline ConsolidatedReportMetric& AddLenses(const LensMetric& value) { m_lensesHasBeenSet = true; m_lenses.push_back(value); return *this; }
-    inline ConsolidatedReportMetric& AddLenses(LensMetric&& value) { m_lensesHasBeenSet = true; m_lenses.push_back(std::move(value)); return *this; }
+    template<typename LensesT = Aws::Vector<LensMetric>>
+    void SetLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses = std::forward<LensesT>(value); }
+    template<typename LensesT = Aws::Vector<LensMetric>>
+    ConsolidatedReportMetric& WithLenses(LensesT&& value) { SetLenses(std::forward<LensesT>(value)); return *this;}
+    template<typename LensesT = LensMetric>
+    ConsolidatedReportMetric& AddLenses(LensesT&& value) { m_lensesHasBeenSet = true; m_lenses.emplace_back(std::forward<LensesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total number of lenses applied to the workload.</p>
      */
-    inline int GetLensesAppliedCount() const{ return m_lensesAppliedCount; }
+    inline int GetLensesAppliedCount() const { return m_lensesAppliedCount; }
     inline bool LensesAppliedCountHasBeenSet() const { return m_lensesAppliedCountHasBeenSet; }
     inline void SetLensesAppliedCount(int value) { m_lensesAppliedCountHasBeenSet = true; m_lensesAppliedCount = value; }
     inline ConsolidatedReportMetric& WithLensesAppliedCount(int value) { SetLensesAppliedCount(value); return *this;}
     ///@}
   private:
 
-    MetricType m_metricType;
+    MetricType m_metricType{MetricType::NOT_SET};
     bool m_metricTypeHasBeenSet = false;
 
     Aws::Map<Risk, int> m_riskCounts;
@@ -155,13 +148,13 @@ namespace Model
     Aws::String m_workloadArn;
     bool m_workloadArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<LensMetric> m_lenses;
     bool m_lensesHasBeenSet = false;
 
-    int m_lensesAppliedCount;
+    int m_lensesAppliedCount{0};
     bool m_lensesAppliedCountHasBeenSet = false;
   };
 

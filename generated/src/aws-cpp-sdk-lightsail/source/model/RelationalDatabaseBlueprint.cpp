@@ -18,20 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-RelationalDatabaseBlueprint::RelationalDatabaseBlueprint() : 
-    m_blueprintIdHasBeenSet(false),
-    m_engine(RelationalDatabaseEngine::NOT_SET),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_engineDescriptionHasBeenSet(false),
-    m_engineVersionDescriptionHasBeenSet(false),
-    m_isEngineDefault(false),
-    m_isEngineDefaultHasBeenSet(false)
-{
-}
-
 RelationalDatabaseBlueprint::RelationalDatabaseBlueprint(JsonView jsonValue)
-  : RelationalDatabaseBlueprint()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ RelationalDatabaseBlueprint& RelationalDatabaseBlueprint::operator =(JsonView js
   if(jsonValue.ValueExists("blueprintId"))
   {
     m_blueprintId = jsonValue.GetString("blueprintId");
-
     m_blueprintIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = RelationalDatabaseEngineMapper::GetRelationalDatabaseEngineForName(jsonValue.GetString("engine"));
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineDescription"))
   {
     m_engineDescription = jsonValue.GetString("engineDescription");
-
     m_engineDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersionDescription"))
   {
     m_engineVersionDescription = jsonValue.GetString("engineVersionDescription");
-
     m_engineVersionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isEngineDefault"))
   {
     m_isEngineDefault = jsonValue.GetBool("isEngineDefault");
-
     m_isEngineDefaultHasBeenSet = true;
   }
-
   return *this;
 }
 

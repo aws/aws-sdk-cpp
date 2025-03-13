@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelMetadataSearchExpression::ModelMetadataSearchExpression() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 ModelMetadataSearchExpression::ModelMetadataSearchExpression(JsonView jsonValue)
-  : ModelMetadataSearchExpression()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ModelMetadataSearchExpression& ModelMetadataSearchExpression::operator =(JsonVie
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

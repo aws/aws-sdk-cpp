@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteFerryAfterTravelStep::RouteFerryAfterTravelStep() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_instructionHasBeenSet(false),
-    m_type(RouteFerryAfterTravelStepType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RouteFerryAfterTravelStep::RouteFerryAfterTravelStep(JsonView jsonValue)
-  : RouteFerryAfterTravelStep()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RouteFerryAfterTravelStep& RouteFerryAfterTravelStep::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Instruction"))
   {
     m_instruction = jsonValue.GetString("Instruction");
-
     m_instructionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RouteFerryAfterTravelStepTypeMapper::GetRouteFerryAfterTravelStepTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

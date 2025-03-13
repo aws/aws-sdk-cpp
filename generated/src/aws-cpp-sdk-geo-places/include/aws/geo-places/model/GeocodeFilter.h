@@ -35,7 +35,7 @@ namespace Model
   class GeocodeFilter
   {
   public:
-    AWS_GEOPLACES_API GeocodeFilter();
+    AWS_GEOPLACES_API GeocodeFilter() = default;
     AWS_GEOPLACES_API GeocodeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API GeocodeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,27 @@ namespace Model
      * <p> A list of countries that all results must be in. Countries are represented
      * by either their alpha-2 or alpha-3 character codes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIncludeCountries() const{ return m_includeCountries; }
+    inline const Aws::Vector<Aws::String>& GetIncludeCountries() const { return m_includeCountries; }
     inline bool IncludeCountriesHasBeenSet() const { return m_includeCountriesHasBeenSet; }
-    inline void SetIncludeCountries(const Aws::Vector<Aws::String>& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = value; }
-    inline void SetIncludeCountries(Aws::Vector<Aws::String>&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = std::move(value); }
-    inline GeocodeFilter& WithIncludeCountries(const Aws::Vector<Aws::String>& value) { SetIncludeCountries(value); return *this;}
-    inline GeocodeFilter& WithIncludeCountries(Aws::Vector<Aws::String>&& value) { SetIncludeCountries(std::move(value)); return *this;}
-    inline GeocodeFilter& AddIncludeCountries(const Aws::String& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(value); return *this; }
-    inline GeocodeFilter& AddIncludeCountries(Aws::String&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(std::move(value)); return *this; }
-    inline GeocodeFilter& AddIncludeCountries(const char* value) { m_includeCountriesHasBeenSet = true; m_includeCountries.push_back(value); return *this; }
+    template<typename IncludeCountriesT = Aws::Vector<Aws::String>>
+    void SetIncludeCountries(IncludeCountriesT&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries = std::forward<IncludeCountriesT>(value); }
+    template<typename IncludeCountriesT = Aws::Vector<Aws::String>>
+    GeocodeFilter& WithIncludeCountries(IncludeCountriesT&& value) { SetIncludeCountries(std::forward<IncludeCountriesT>(value)); return *this;}
+    template<typename IncludeCountriesT = Aws::String>
+    GeocodeFilter& AddIncludeCountries(IncludeCountriesT&& value) { m_includeCountriesHasBeenSet = true; m_includeCountries.emplace_back(std::forward<IncludeCountriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The included place types.</p>
      */
-    inline const Aws::Vector<GeocodeFilterPlaceType>& GetIncludePlaceTypes() const{ return m_includePlaceTypes; }
+    inline const Aws::Vector<GeocodeFilterPlaceType>& GetIncludePlaceTypes() const { return m_includePlaceTypes; }
     inline bool IncludePlaceTypesHasBeenSet() const { return m_includePlaceTypesHasBeenSet; }
-    inline void SetIncludePlaceTypes(const Aws::Vector<GeocodeFilterPlaceType>& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes = value; }
-    inline void SetIncludePlaceTypes(Aws::Vector<GeocodeFilterPlaceType>&& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes = std::move(value); }
-    inline GeocodeFilter& WithIncludePlaceTypes(const Aws::Vector<GeocodeFilterPlaceType>& value) { SetIncludePlaceTypes(value); return *this;}
-    inline GeocodeFilter& WithIncludePlaceTypes(Aws::Vector<GeocodeFilterPlaceType>&& value) { SetIncludePlaceTypes(std::move(value)); return *this;}
-    inline GeocodeFilter& AddIncludePlaceTypes(const GeocodeFilterPlaceType& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes.push_back(value); return *this; }
-    inline GeocodeFilter& AddIncludePlaceTypes(GeocodeFilterPlaceType&& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes.push_back(std::move(value)); return *this; }
+    template<typename IncludePlaceTypesT = Aws::Vector<GeocodeFilterPlaceType>>
+    void SetIncludePlaceTypes(IncludePlaceTypesT&& value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes = std::forward<IncludePlaceTypesT>(value); }
+    template<typename IncludePlaceTypesT = Aws::Vector<GeocodeFilterPlaceType>>
+    GeocodeFilter& WithIncludePlaceTypes(IncludePlaceTypesT&& value) { SetIncludePlaceTypes(std::forward<IncludePlaceTypesT>(value)); return *this;}
+    inline GeocodeFilter& AddIncludePlaceTypes(GeocodeFilterPlaceType value) { m_includePlaceTypesHasBeenSet = true; m_includePlaceTypes.push_back(value); return *this; }
     ///@}
   private:
 

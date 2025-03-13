@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayBackendDefaults::VirtualGatewayBackendDefaults() : 
-    m_clientPolicyHasBeenSet(false)
-{
-}
-
 VirtualGatewayBackendDefaults::VirtualGatewayBackendDefaults(JsonView jsonValue)
-  : VirtualGatewayBackendDefaults()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualGatewayBackendDefaults& VirtualGatewayBackendDefaults::operator =(JsonVie
   if(jsonValue.ValueExists("clientPolicy"))
   {
     m_clientPolicy = jsonValue.GetObject("clientPolicy");
-
     m_clientPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

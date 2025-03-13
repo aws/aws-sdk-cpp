@@ -12,17 +12,6 @@ using namespace Aws::CostOptimizationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRecommendationsRequest::ListRecommendationsRequest() : 
-    m_filterHasBeenSet(false),
-    m_orderByHasBeenSet(false),
-    m_includeAllRecommendations(false),
-    m_includeAllRecommendationsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

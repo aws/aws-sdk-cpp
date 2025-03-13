@@ -37,7 +37,7 @@ namespace Model
   class RecordingConfiguration
   {
   public:
-    AWS_IVS_API RecordingConfiguration();
+    AWS_IVS_API RecordingConfiguration() = default;
     AWS_IVS_API RecordingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API RecordingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>Recording-configuration ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RecordingConfiguration& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RecordingConfiguration& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RecordingConfiguration& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RecordingConfiguration& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * <p>A complex type that contains information about where recorded video will be
      * stored.</p>
      */
-    inline const DestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
+    inline const DestinationConfiguration& GetDestinationConfiguration() const { return m_destinationConfiguration; }
     inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
-    inline void SetDestinationConfiguration(const DestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
-    inline void SetDestinationConfiguration(DestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
-    inline RecordingConfiguration& WithDestinationConfiguration(const DestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
-    inline RecordingConfiguration& WithDestinationConfiguration(DestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
+    template<typename DestinationConfigurationT = DestinationConfiguration>
+    void SetDestinationConfiguration(DestinationConfigurationT&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::forward<DestinationConfigurationT>(value); }
+    template<typename DestinationConfigurationT = DestinationConfiguration>
+    RecordingConfiguration& WithDestinationConfiguration(DestinationConfigurationT&& value) { SetDestinationConfiguration(std::forward<DestinationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Recording-configuration name. The value does not need to be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RecordingConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RecordingConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RecordingConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RecordingConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * the multiple streams will be considered a single broadcast and merged together.
      * Default: 0.</p>
      */
-    inline int GetRecordingReconnectWindowSeconds() const{ return m_recordingReconnectWindowSeconds; }
+    inline int GetRecordingReconnectWindowSeconds() const { return m_recordingReconnectWindowSeconds; }
     inline bool RecordingReconnectWindowSecondsHasBeenSet() const { return m_recordingReconnectWindowSecondsHasBeenSet; }
     inline void SetRecordingReconnectWindowSeconds(int value) { m_recordingReconnectWindowSecondsHasBeenSet = true; m_recordingReconnectWindowSeconds = value; }
     inline RecordingConfiguration& WithRecordingReconnectWindowSeconds(int value) { SetRecordingReconnectWindowSeconds(value); return *this;}
@@ -100,12 +96,12 @@ namespace Model
     /**
      * <p>Object that describes which renditions should be recorded for a stream.</p>
      */
-    inline const RenditionConfiguration& GetRenditionConfiguration() const{ return m_renditionConfiguration; }
+    inline const RenditionConfiguration& GetRenditionConfiguration() const { return m_renditionConfiguration; }
     inline bool RenditionConfigurationHasBeenSet() const { return m_renditionConfigurationHasBeenSet; }
-    inline void SetRenditionConfiguration(const RenditionConfiguration& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = value; }
-    inline void SetRenditionConfiguration(RenditionConfiguration&& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = std::move(value); }
-    inline RecordingConfiguration& WithRenditionConfiguration(const RenditionConfiguration& value) { SetRenditionConfiguration(value); return *this;}
-    inline RecordingConfiguration& WithRenditionConfiguration(RenditionConfiguration&& value) { SetRenditionConfiguration(std::move(value)); return *this;}
+    template<typename RenditionConfigurationT = RenditionConfiguration>
+    void SetRenditionConfiguration(RenditionConfigurationT&& value) { m_renditionConfigurationHasBeenSet = true; m_renditionConfiguration = std::forward<RenditionConfigurationT>(value); }
+    template<typename RenditionConfigurationT = RenditionConfiguration>
+    RecordingConfiguration& WithRenditionConfiguration(RenditionConfigurationT&& value) { SetRenditionConfiguration(std::forward<RenditionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +110,10 @@ namespace Model
      * <code>ACTIVE</code>, the configuration is ready for recording a channel
      * stream.</p>
      */
-    inline const RecordingConfigurationState& GetState() const{ return m_state; }
+    inline RecordingConfigurationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const RecordingConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(RecordingConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline RecordingConfiguration& WithState(const RecordingConfigurationState& value) { SetState(value); return *this;}
-    inline RecordingConfiguration& WithState(RecordingConfigurationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(RecordingConfigurationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline RecordingConfiguration& WithState(RecordingConfigurationState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -132,19 +126,16 @@ namespace Model
      * naming limits and requirements"; Amazon IVS has no service-specific constraints
      * beyond what is documented there.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RecordingConfiguration& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline RecordingConfiguration& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline RecordingConfiguration& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline RecordingConfiguration& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline RecordingConfiguration& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline RecordingConfiguration& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline RecordingConfiguration& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline RecordingConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline RecordingConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    RecordingConfiguration& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    RecordingConfiguration& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -153,12 +144,12 @@ namespace Model
      * for a live session and modify the interval at which thumbnails are generated for
      * the live session.</p>
      */
-    inline const ThumbnailConfiguration& GetThumbnailConfiguration() const{ return m_thumbnailConfiguration; }
+    inline const ThumbnailConfiguration& GetThumbnailConfiguration() const { return m_thumbnailConfiguration; }
     inline bool ThumbnailConfigurationHasBeenSet() const { return m_thumbnailConfigurationHasBeenSet; }
-    inline void SetThumbnailConfiguration(const ThumbnailConfiguration& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = value; }
-    inline void SetThumbnailConfiguration(ThumbnailConfiguration&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::move(value); }
-    inline RecordingConfiguration& WithThumbnailConfiguration(const ThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
-    inline RecordingConfiguration& WithThumbnailConfiguration(ThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
+    template<typename ThumbnailConfigurationT = ThumbnailConfiguration>
+    void SetThumbnailConfiguration(ThumbnailConfigurationT&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::forward<ThumbnailConfigurationT>(value); }
+    template<typename ThumbnailConfigurationT = ThumbnailConfiguration>
+    RecordingConfiguration& WithThumbnailConfiguration(ThumbnailConfigurationT&& value) { SetThumbnailConfiguration(std::forward<ThumbnailConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -171,13 +162,13 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_recordingReconnectWindowSeconds;
+    int m_recordingReconnectWindowSeconds{0};
     bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
     RenditionConfiguration m_renditionConfiguration;
     bool m_renditionConfigurationHasBeenSet = false;
 
-    RecordingConfigurationState m_state;
+    RecordingConfigurationState m_state{RecordingConfigurationState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

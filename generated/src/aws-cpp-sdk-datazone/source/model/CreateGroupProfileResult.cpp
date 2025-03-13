@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGroupProfileResult::CreateGroupProfileResult() : 
-    m_status(GroupProfileStatus::NOT_SET)
-{
-}
-
 CreateGroupProfileResult::CreateGroupProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateGroupProfileResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ CreateGroupProfileResult& CreateGroupProfileResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
+    m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = GroupProfileStatusMapper::GetGroupProfileStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

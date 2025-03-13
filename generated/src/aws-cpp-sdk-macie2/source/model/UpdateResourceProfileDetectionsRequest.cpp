@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateResourceProfileDetectionsRequest::UpdateResourceProfileDetectionsRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_suppressDataIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceProfileDetectionsRequest::SerializePayload() const
 {
   JsonValue payload;

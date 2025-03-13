@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-CustomPayload::CustomPayload() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 CustomPayload::CustomPayload(JsonView jsonValue)
-  : CustomPayload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomPayload& CustomPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class SingularConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API SingularConnectorProfileProperties();
+    AWS_APPFLOW_API SingularConnectorProfileProperties() = default;
     AWS_APPFLOW_API SingularConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SingularConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

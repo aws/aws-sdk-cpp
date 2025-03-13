@@ -18,13 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-SecretsManagerCredentialsProvider::SecretsManagerCredentialsProvider() : 
-    m_secretIdHasBeenSet(false)
-{
-}
-
 SecretsManagerCredentialsProvider::SecretsManagerCredentialsProvider(JsonView jsonValue)
-  : SecretsManagerCredentialsProvider()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SecretsManagerCredentialsProvider& SecretsManagerCredentialsProvider::operator =
   if(jsonValue.ValueExists("SecretId"))
   {
     m_secretId = jsonValue.GetString("SecretId");
-
     m_secretIdHasBeenSet = true;
   }
-
   return *this;
 }
 

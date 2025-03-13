@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration() : 
-    m_dashboardHasBeenSet(false),
-    m_dashboardVisualHasBeenSet(false),
-    m_qSearchBarHasBeenSet(false),
-    m_generativeQnAHasBeenSet(false)
-{
-}
-
 AnonymousUserEmbeddingExperienceConfiguration::AnonymousUserEmbeddingExperienceConfiguration(JsonView jsonValue)
-  : AnonymousUserEmbeddingExperienceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AnonymousUserEmbeddingExperienceConfiguration& AnonymousUserEmbeddingExperienceC
   if(jsonValue.ValueExists("Dashboard"))
   {
     m_dashboard = jsonValue.GetObject("Dashboard");
-
     m_dashboardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardVisual"))
   {
     m_dashboardVisual = jsonValue.GetObject("DashboardVisual");
-
     m_dashboardVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QSearchBar"))
   {
     m_qSearchBar = jsonValue.GetObject("QSearchBar");
-
     m_qSearchBarHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerativeQnA"))
   {
     m_generativeQnA = jsonValue.GetObject("GenerativeQnA");
-
     m_generativeQnAHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class DeleteProtectConfigurationRuleSetNumberOverrideResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DeleteProtectConfigurationRuleSetNumberOverrideResult();
+    AWS_PINPOINTSMSVOICEV2_API DeleteProtectConfigurationRuleSetNumberOverrideResult() = default;
     AWS_PINPOINTSMSVOICEV2_API DeleteProtectConfigurationRuleSetNumberOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API DeleteProtectConfigurationRuleSetNumberOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,39 +38,33 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationArn() const{ return m_protectConfigurationArn; }
-    inline void SetProtectConfigurationArn(const Aws::String& value) { m_protectConfigurationArn = value; }
-    inline void SetProtectConfigurationArn(Aws::String&& value) { m_protectConfigurationArn = std::move(value); }
-    inline void SetProtectConfigurationArn(const char* value) { m_protectConfigurationArn.assign(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationArn(const Aws::String& value) { SetProtectConfigurationArn(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationArn(Aws::String&& value) { SetProtectConfigurationArn(std::move(value)); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationArn(const char* value) { SetProtectConfigurationArn(value); return *this;}
+    inline const Aws::String& GetProtectConfigurationArn() const { return m_protectConfigurationArn; }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    void SetProtectConfigurationArn(ProtectConfigurationArnT&& value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn = std::forward<ProtectConfigurationArnT>(value); }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationArn(ProtectConfigurationArnT&& value) { SetProtectConfigurationArn(std::forward<ProtectConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
-    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationId = value; }
-    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationId = std::move(value); }
-    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationId.assign(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    inline const Aws::String& GetProtectConfigurationId() const { return m_protectConfigurationId; }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    void SetProtectConfigurationId(ProtectConfigurationIdT&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::forward<ProtectConfigurationIdT>(value); }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithProtectConfigurationId(ProtectConfigurationIdT&& value) { SetProtectConfigurationId(std::forward<ProtectConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination phone number in E.164 format.</p>
      */
-    inline const Aws::String& GetDestinationPhoneNumber() const{ return m_destinationPhoneNumber; }
-    inline void SetDestinationPhoneNumber(const Aws::String& value) { m_destinationPhoneNumber = value; }
-    inline void SetDestinationPhoneNumber(Aws::String&& value) { m_destinationPhoneNumber = std::move(value); }
-    inline void SetDestinationPhoneNumber(const char* value) { m_destinationPhoneNumber.assign(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithDestinationPhoneNumber(const Aws::String& value) { SetDestinationPhoneNumber(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithDestinationPhoneNumber(Aws::String&& value) { SetDestinationPhoneNumber(std::move(value)); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithDestinationPhoneNumber(const char* value) { SetDestinationPhoneNumber(value); return *this;}
+    inline const Aws::String& GetDestinationPhoneNumber() const { return m_destinationPhoneNumber; }
+    template<typename DestinationPhoneNumberT = Aws::String>
+    void SetDestinationPhoneNumber(DestinationPhoneNumberT&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::forward<DestinationPhoneNumberT>(value); }
+    template<typename DestinationPhoneNumberT = Aws::String>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithDestinationPhoneNumber(DestinationPhoneNumberT&& value) { SetDestinationPhoneNumber(std::forward<DestinationPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,22 +72,20 @@ namespace Model
      * <p>The time when the rule was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action associated with the rule.</p>
      */
-    inline const ProtectConfigurationRuleOverrideAction& GetAction() const{ return m_action; }
-    inline void SetAction(const ProtectConfigurationRuleOverrideAction& value) { m_action = value; }
-    inline void SetAction(ProtectConfigurationRuleOverrideAction&& value) { m_action = std::move(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithAction(const ProtectConfigurationRuleOverrideAction& value) { SetAction(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithAction(ProtectConfigurationRuleOverrideAction&& value) { SetAction(std::move(value)); return *this;}
+    inline ProtectConfigurationRuleOverrideAction GetAction() const { return m_action; }
+    inline void SetAction(ProtectConfigurationRuleOverrideAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithAction(ProtectConfigurationRuleOverrideAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -101,13 +93,11 @@ namespace Model
      * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
      * region.</p>
      */
-    inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
-    inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCode = value; }
-    inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCode = std::move(value); }
-    inline void SetIsoCountryCode(const char* value) { m_isoCountryCode.assign(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
+    inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
+    template<typename IsoCountryCodeT = Aws::String>
+    void SetIsoCountryCode(IsoCountryCodeT&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::forward<IsoCountryCodeT>(value); }
+    template<typename IsoCountryCodeT = Aws::String>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithIsoCountryCode(IsoCountryCodeT&& value) { SetIsoCountryCode(std::forward<IsoCountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,40 +105,46 @@ namespace Model
      * <p>The time when the resource-based policy was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationTimestamp() const{ return m_expirationTimestamp; }
-    inline void SetExpirationTimestamp(const Aws::Utils::DateTime& value) { m_expirationTimestamp = value; }
-    inline void SetExpirationTimestamp(Aws::Utils::DateTime&& value) { m_expirationTimestamp = std::move(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithExpirationTimestamp(const Aws::Utils::DateTime& value) { SetExpirationTimestamp(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpirationTimestamp() const { return m_expirationTimestamp; }
+    template<typename ExpirationTimestampT = Aws::Utils::DateTime>
+    void SetExpirationTimestamp(ExpirationTimestampT&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = std::forward<ExpirationTimestampT>(value); }
+    template<typename ExpirationTimestampT = Aws::Utils::DateTime>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithExpirationTimestamp(ExpirationTimestampT&& value) { SetExpirationTimestamp(std::forward<ExpirationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteProtectConfigurationRuleSetNumberOverrideResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteProtectConfigurationRuleSetNumberOverrideResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_protectConfigurationArn;
+    bool m_protectConfigurationArnHasBeenSet = false;
 
     Aws::String m_protectConfigurationId;
+    bool m_protectConfigurationIdHasBeenSet = false;
 
     Aws::String m_destinationPhoneNumber;
+    bool m_destinationPhoneNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    ProtectConfigurationRuleOverrideAction m_action;
+    ProtectConfigurationRuleOverrideAction m_action{ProtectConfigurationRuleOverrideAction::NOT_SET};
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
+    bool m_isoCountryCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTimestamp;
+    Aws::Utils::DateTime m_expirationTimestamp{};
+    bool m_expirationTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

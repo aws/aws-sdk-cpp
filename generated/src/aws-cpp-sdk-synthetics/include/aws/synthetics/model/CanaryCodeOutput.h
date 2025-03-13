@@ -32,7 +32,7 @@ namespace Model
   class CanaryCodeOutput
   {
   public:
-    AWS_SYNTHETICS_API CanaryCodeOutput();
+    AWS_SYNTHETICS_API CanaryCodeOutput() = default;
     AWS_SYNTHETICS_API CanaryCodeOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryCodeOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The ARN of the Lambda layer where Synthetics stores the canary script
      * code.</p>
      */
-    inline const Aws::String& GetSourceLocationArn() const{ return m_sourceLocationArn; }
+    inline const Aws::String& GetSourceLocationArn() const { return m_sourceLocationArn; }
     inline bool SourceLocationArnHasBeenSet() const { return m_sourceLocationArnHasBeenSet; }
-    inline void SetSourceLocationArn(const Aws::String& value) { m_sourceLocationArnHasBeenSet = true; m_sourceLocationArn = value; }
-    inline void SetSourceLocationArn(Aws::String&& value) { m_sourceLocationArnHasBeenSet = true; m_sourceLocationArn = std::move(value); }
-    inline void SetSourceLocationArn(const char* value) { m_sourceLocationArnHasBeenSet = true; m_sourceLocationArn.assign(value); }
-    inline CanaryCodeOutput& WithSourceLocationArn(const Aws::String& value) { SetSourceLocationArn(value); return *this;}
-    inline CanaryCodeOutput& WithSourceLocationArn(Aws::String&& value) { SetSourceLocationArn(std::move(value)); return *this;}
-    inline CanaryCodeOutput& WithSourceLocationArn(const char* value) { SetSourceLocationArn(value); return *this;}
+    template<typename SourceLocationArnT = Aws::String>
+    void SetSourceLocationArn(SourceLocationArnT&& value) { m_sourceLocationArnHasBeenSet = true; m_sourceLocationArn = std::forward<SourceLocationArnT>(value); }
+    template<typename SourceLocationArnT = Aws::String>
+    CanaryCodeOutput& WithSourceLocationArn(SourceLocationArnT&& value) { SetSourceLocationArn(std::forward<SourceLocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entry point to use for the source code when running the canary.</p>
      */
-    inline const Aws::String& GetHandler() const{ return m_handler; }
+    inline const Aws::String& GetHandler() const { return m_handler; }
     inline bool HandlerHasBeenSet() const { return m_handlerHasBeenSet; }
-    inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
-    inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = std::move(value); }
-    inline void SetHandler(const char* value) { m_handlerHasBeenSet = true; m_handler.assign(value); }
-    inline CanaryCodeOutput& WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
-    inline CanaryCodeOutput& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
-    inline CanaryCodeOutput& WithHandler(const char* value) { SetHandler(value); return *this;}
+    template<typename HandlerT = Aws::String>
+    void SetHandler(HandlerT&& value) { m_handlerHasBeenSet = true; m_handler = std::forward<HandlerT>(value); }
+    template<typename HandlerT = Aws::String>
+    CanaryCodeOutput& WithHandler(HandlerT&& value) { SetHandler(std::forward<HandlerT>(value)); return *this;}
     ///@}
   private:
 

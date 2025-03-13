@@ -18,17 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserPoolDescriptionType::UserPoolDescriptionType() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_lambdaConfigHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 UserPoolDescriptionType::UserPoolDescriptionType(JsonView jsonValue)
-  : UserPoolDescriptionType()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ UserPoolDescriptionType& UserPoolDescriptionType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaConfig"))
   {
     m_lambdaConfig = jsonValue.GetObject("LambdaConfig");
-
     m_lambdaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

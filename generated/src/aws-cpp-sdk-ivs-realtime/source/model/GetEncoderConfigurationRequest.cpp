@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEncoderConfigurationRequest::GetEncoderConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetEncoderConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

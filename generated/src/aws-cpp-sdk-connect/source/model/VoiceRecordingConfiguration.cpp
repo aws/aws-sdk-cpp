@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-VoiceRecordingConfiguration::VoiceRecordingConfiguration() : 
-    m_voiceRecordingTrack(VoiceRecordingTrack::NOT_SET),
-    m_voiceRecordingTrackHasBeenSet(false),
-    m_ivrRecordingTrack(IvrRecordingTrack::NOT_SET),
-    m_ivrRecordingTrackHasBeenSet(false)
-{
-}
-
 VoiceRecordingConfiguration::VoiceRecordingConfiguration(JsonView jsonValue)
-  : VoiceRecordingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VoiceRecordingConfiguration& VoiceRecordingConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("VoiceRecordingTrack"))
   {
     m_voiceRecordingTrack = VoiceRecordingTrackMapper::GetVoiceRecordingTrackForName(jsonValue.GetString("VoiceRecordingTrack"));
-
     m_voiceRecordingTrackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IvrRecordingTrack"))
   {
     m_ivrRecordingTrack = IvrRecordingTrackMapper::GetIvrRecordingTrackForName(jsonValue.GetString("IvrRecordingTrack"));
-
     m_ivrRecordingTrackHasBeenSet = true;
   }
-
   return *this;
 }
 

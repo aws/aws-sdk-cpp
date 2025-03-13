@@ -18,18 +18,7 @@ namespace QApps
 namespace Model
 {
 
-TextInputCardInput::TextInputCardInput() : 
-    m_titleHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_type(CardType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_placeholderHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 TextInputCardInput::TextInputCardInput(JsonView jsonValue)
-  : TextInputCardInput()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ TextInputCardInput& TextInputCardInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CardTypeMapper::GetCardTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placeholder"))
   {
     m_placeholder = jsonValue.GetString("placeholder");
-
     m_placeholderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

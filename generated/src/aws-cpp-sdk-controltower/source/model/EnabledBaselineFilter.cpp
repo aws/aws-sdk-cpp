@@ -18,15 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-EnabledBaselineFilter::EnabledBaselineFilter() : 
-    m_baselineIdentifiersHasBeenSet(false),
-    m_parentIdentifiersHasBeenSet(false),
-    m_targetIdentifiersHasBeenSet(false)
-{
-}
-
 EnabledBaselineFilter::EnabledBaselineFilter(JsonView jsonValue)
-  : EnabledBaselineFilter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator =(JsonView jsonValue)
     }
     m_baselineIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentIdentifiers"))
   {
     Aws::Utils::Array<JsonView> parentIdentifiersJsonList = jsonValue.GetArray("parentIdentifiers");
@@ -52,7 +43,6 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator =(JsonView jsonValue)
     }
     m_parentIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetIdentifiers"))
   {
     Aws::Utils::Array<JsonView> targetIdentifiersJsonList = jsonValue.GetArray("targetIdentifiers");
@@ -62,7 +52,6 @@ EnabledBaselineFilter& EnabledBaselineFilter::operator =(JsonView jsonValue)
     }
     m_targetIdentifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

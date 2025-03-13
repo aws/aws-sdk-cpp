@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIdentityProviderRequest::DeleteIdentityProviderRequest() : 
-    m_identityProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIdentityProviderRequest::SerializePayload() const
 {
   return {};

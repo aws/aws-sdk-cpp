@@ -12,16 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClustersRequest::DescribeClustersRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_showShardDetails(false),
-    m_showShardDetailsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClustersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput() : 
-    m_metadataHasBeenSet(false),
-    m_parsedResponseHasBeenSet(false),
-    m_rawResponseHasBeenSet(false),
-    m_reasoningContentHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput(JsonView jsonValue)
-  : PostProcessingModelInvocationOutput()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ PostProcessingModelInvocationOutput& PostProcessingModelInvocationOutput::operat
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsedResponse"))
   {
     m_parsedResponse = jsonValue.GetObject("parsedResponse");
-
     m_parsedResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawResponse"))
   {
     m_rawResponse = jsonValue.GetObject("rawResponse");
-
     m_rawResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasoningContent"))
   {
     m_reasoningContent = jsonValue.GetObject("reasoningContent");
-
     m_reasoningContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

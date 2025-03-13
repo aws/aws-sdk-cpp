@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterAssociatedToSchedule::ClusterAssociatedToSchedule() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_scheduleAssociationState(ScheduleState::NOT_SET),
-    m_scheduleAssociationStateHasBeenSet(false)
-{
-}
-
 ClusterAssociatedToSchedule::ClusterAssociatedToSchedule(const XmlNode& xmlNode)
-  : ClusterAssociatedToSchedule()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ ClusterAssociatedToSchedule& ClusterAssociatedToSchedule::operator =(const XmlNo
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
+       m_clusterIdentifierHasBeenSet = true;
     }
     XmlNode scheduleAssociationStateNode = resultNode.FirstChild("ScheduleAssociationState");
     if(!scheduleAssociationStateNode.IsNull())
     {
-      m_scheduleAssociationState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scheduleAssociationStateNode.GetText()).c_str()).c_str());
+      m_scheduleAssociationState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scheduleAssociationStateNode.GetText()).c_str()));
       m_scheduleAssociationStateHasBeenSet = true;
+       m_scheduleAssociationStateHasBeenSet = true;
     }
   }
 

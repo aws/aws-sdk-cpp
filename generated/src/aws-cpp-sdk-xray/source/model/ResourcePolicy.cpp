@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_policyRevisionIdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-  : ResourcePolicy()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyDocument"))
   {
     m_policyDocument = jsonValue.GetString("PolicyDocument");
-
     m_policyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyRevisionId"))
   {
     m_policyRevisionId = jsonValue.GetString("PolicyRevisionId");
-
     m_policyRevisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

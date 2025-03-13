@@ -21,7 +21,7 @@ namespace Model
   class StopApplicationRequest : public MainframeModernizationRequest
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API StopApplicationRequest();
+    AWS_MAINFRAMEMODERNIZATION_API StopApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the application you want to stop.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline StopApplicationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline StopApplicationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline StopApplicationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    StopApplicationRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * process finishes to apply another action on the application. The default value
      * is false.</p>
      */
-    inline bool GetForceStop() const{ return m_forceStop; }
+    inline bool GetForceStop() const { return m_forceStop; }
     inline bool ForceStopHasBeenSet() const { return m_forceStopHasBeenSet; }
     inline void SetForceStop(bool value) { m_forceStopHasBeenSet = true; m_forceStop = value; }
     inline StopApplicationRequest& WithForceStop(bool value) { SetForceStop(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    bool m_forceStop;
+    bool m_forceStop{false};
     bool m_forceStopHasBeenSet = false;
   };
 

@@ -18,34 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-APNSMessage::APNSMessage() : 
-    m_aPNSPushTypeHasBeenSet(false),
-    m_action(Action::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_badge(0),
-    m_badgeHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_collapseIdHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_mediaUrlHasBeenSet(false),
-    m_preferredAuthenticationMethodHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_silentPush(false),
-    m_silentPushHasBeenSet(false),
-    m_soundHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_threadIdHasBeenSet(false),
-    m_timeToLive(0),
-    m_timeToLiveHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 APNSMessage::APNSMessage(JsonView jsonValue)
-  : APNSMessage()
 {
   *this = jsonValue;
 }
@@ -55,45 +28,33 @@ APNSMessage& APNSMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("APNSPushType"))
   {
     m_aPNSPushType = jsonValue.GetString("APNSPushType");
-
     m_aPNSPushTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ActionMapper::GetActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Badge"))
   {
     m_badge = jsonValue.GetInteger("Badge");
-
     m_badgeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollapseId"))
   {
     m_collapseId = jsonValue.GetString("CollapseId");
-
     m_collapseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -103,49 +64,36 @@ APNSMessage& APNSMessage::operator =(JsonView jsonValue)
     }
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaUrl"))
   {
     m_mediaUrl = jsonValue.GetString("MediaUrl");
-
     m_mediaUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredAuthenticationMethod"))
   {
     m_preferredAuthenticationMethod = jsonValue.GetString("PreferredAuthenticationMethod");
-
     m_preferredAuthenticationMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetString("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawContent"))
   {
     m_rawContent = jsonValue.GetString("RawContent");
-
     m_rawContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SilentPush"))
   {
     m_silentPush = jsonValue.GetBool("SilentPush");
-
     m_silentPushHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sound"))
   {
     m_sound = jsonValue.GetString("Sound");
-
     m_soundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -162,35 +110,26 @@ APNSMessage& APNSMessage::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadId"))
   {
     m_threadId = jsonValue.GetString("ThreadId");
-
     m_threadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeToLive"))
   {
     m_timeToLive = jsonValue.GetInteger("TimeToLive");
-
     m_timeToLiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

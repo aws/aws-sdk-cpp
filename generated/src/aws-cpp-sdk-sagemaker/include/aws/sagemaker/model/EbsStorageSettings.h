@@ -30,7 +30,7 @@ namespace Model
   class EbsStorageSettings
   {
   public:
-    AWS_SAGEMAKER_API EbsStorageSettings();
+    AWS_SAGEMAKER_API EbsStorageSettings() = default;
     AWS_SAGEMAKER_API EbsStorageSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EbsStorageSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The size of an EBS storage volume for a space.</p>
      */
-    inline int GetEbsVolumeSizeInGb() const{ return m_ebsVolumeSizeInGb; }
+    inline int GetEbsVolumeSizeInGb() const { return m_ebsVolumeSizeInGb; }
     inline bool EbsVolumeSizeInGbHasBeenSet() const { return m_ebsVolumeSizeInGbHasBeenSet; }
     inline void SetEbsVolumeSizeInGb(int value) { m_ebsVolumeSizeInGbHasBeenSet = true; m_ebsVolumeSizeInGb = value; }
     inline EbsStorageSettings& WithEbsVolumeSizeInGb(int value) { SetEbsVolumeSizeInGb(value); return *this;}
     ///@}
   private:
 
-    int m_ebsVolumeSizeInGb;
+    int m_ebsVolumeSizeInGb{0};
     bool m_ebsVolumeSizeInGbHasBeenSet = false;
   };
 

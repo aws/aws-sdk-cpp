@@ -18,16 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ResiliencyScore::ResiliencyScore() : 
-    m_componentScoreHasBeenSet(false),
-    m_disruptionScoreHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 ResiliencyScore::ResiliencyScore(JsonView jsonValue)
-  : ResiliencyScore()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ResiliencyScore& ResiliencyScore::operator =(JsonView jsonValue)
     }
     m_componentScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disruptionScore"))
   {
     Aws::Map<Aws::String, JsonView> disruptionScoreJsonMap = jsonValue.GetObject("disruptionScore").GetAllObjects();
@@ -53,14 +43,11 @@ ResiliencyScore& ResiliencyScore::operator =(JsonView jsonValue)
     }
     m_disruptionScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

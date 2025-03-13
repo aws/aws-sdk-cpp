@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DifferentialPrivacyColumn::DifferentialPrivacyColumn() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 DifferentialPrivacyColumn::DifferentialPrivacyColumn(JsonView jsonValue)
-  : DifferentialPrivacyColumn()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DifferentialPrivacyColumn& DifferentialPrivacyColumn::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

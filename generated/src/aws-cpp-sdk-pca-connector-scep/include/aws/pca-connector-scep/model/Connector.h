@@ -42,7 +42,7 @@ namespace Model
   class Connector
   {
   public:
-    AWS_PCACONNECTORSCEP_API Connector();
+    AWS_PCACONNECTORSCEP_API Connector() = default;
     AWS_PCACONNECTORSCEP_API Connector(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORSCEP_API Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORSCEP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the connector.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Connector& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Connector& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Connector& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Connector& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate authority associated with
      * the connector.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline Connector& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline Connector& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline Connector& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    Connector& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector type.</p>
      */
-    inline const ConnectorType& GetType() const{ return m_type; }
+    inline ConnectorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ConnectorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ConnectorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Connector& WithType(const ConnectorType& value) { SetType(value); return *this;}
-    inline Connector& WithType(ConnectorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ConnectorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Connector& WithType(ConnectorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,12 @@ namespace Model
      * <code>MobileDeviceManagement</code>, then the connector is for general-purpose
      * use and this object is empty.</p>
      */
-    inline const MobileDeviceManagement& GetMobileDeviceManagement() const{ return m_mobileDeviceManagement; }
+    inline const MobileDeviceManagement& GetMobileDeviceManagement() const { return m_mobileDeviceManagement; }
     inline bool MobileDeviceManagementHasBeenSet() const { return m_mobileDeviceManagementHasBeenSet; }
-    inline void SetMobileDeviceManagement(const MobileDeviceManagement& value) { m_mobileDeviceManagementHasBeenSet = true; m_mobileDeviceManagement = value; }
-    inline void SetMobileDeviceManagement(MobileDeviceManagement&& value) { m_mobileDeviceManagementHasBeenSet = true; m_mobileDeviceManagement = std::move(value); }
-    inline Connector& WithMobileDeviceManagement(const MobileDeviceManagement& value) { SetMobileDeviceManagement(value); return *this;}
-    inline Connector& WithMobileDeviceManagement(MobileDeviceManagement&& value) { SetMobileDeviceManagement(std::move(value)); return *this;}
+    template<typename MobileDeviceManagementT = MobileDeviceManagement>
+    void SetMobileDeviceManagement(MobileDeviceManagementT&& value) { m_mobileDeviceManagementHasBeenSet = true; m_mobileDeviceManagement = std::forward<MobileDeviceManagementT>(value); }
+    template<typename MobileDeviceManagementT = MobileDeviceManagement>
+    Connector& WithMobileDeviceManagement(MobileDeviceManagementT&& value) { SetMobileDeviceManagement(std::forward<MobileDeviceManagementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,24 +106,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep-intune.html">Using
      * Connector for SCEP for Microsoft Intune</a>.</p>
      */
-    inline const OpenIdConfiguration& GetOpenIdConfiguration() const{ return m_openIdConfiguration; }
+    inline const OpenIdConfiguration& GetOpenIdConfiguration() const { return m_openIdConfiguration; }
     inline bool OpenIdConfigurationHasBeenSet() const { return m_openIdConfigurationHasBeenSet; }
-    inline void SetOpenIdConfiguration(const OpenIdConfiguration& value) { m_openIdConfigurationHasBeenSet = true; m_openIdConfiguration = value; }
-    inline void SetOpenIdConfiguration(OpenIdConfiguration&& value) { m_openIdConfigurationHasBeenSet = true; m_openIdConfiguration = std::move(value); }
-    inline Connector& WithOpenIdConfiguration(const OpenIdConfiguration& value) { SetOpenIdConfiguration(value); return *this;}
-    inline Connector& WithOpenIdConfiguration(OpenIdConfiguration&& value) { SetOpenIdConfiguration(std::move(value)); return *this;}
+    template<typename OpenIdConfigurationT = OpenIdConfiguration>
+    void SetOpenIdConfiguration(OpenIdConfigurationT&& value) { m_openIdConfigurationHasBeenSet = true; m_openIdConfiguration = std::forward<OpenIdConfigurationT>(value); }
+    template<typename OpenIdConfigurationT = OpenIdConfiguration>
+    Connector& WithOpenIdConfiguration(OpenIdConfigurationT&& value) { SetOpenIdConfiguration(std::forward<OpenIdConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector's status.</p>
      */
-    inline const ConnectorStatus& GetStatus() const{ return m_status; }
+    inline ConnectorStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConnectorStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConnectorStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Connector& WithStatus(const ConnectorStatus& value) { SetStatus(value); return *this;}
-    inline Connector& WithStatus(ConnectorStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConnectorStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Connector& WithStatus(ConnectorStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -137,50 +129,46 @@ namespace Model
      * <p>Information about why connector creation failed, if status is
      * <code>FAILED</code>.</p>
      */
-    inline const ConnectorStatusReason& GetStatusReason() const{ return m_statusReason; }
+    inline ConnectorStatusReason GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const ConnectorStatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(ConnectorStatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline Connector& WithStatusReason(const ConnectorStatusReason& value) { SetStatusReason(value); return *this;}
-    inline Connector& WithStatusReason(ConnectorStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline void SetStatusReason(ConnectorStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline Connector& WithStatusReason(ConnectorStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connector's HTTPS public SCEP URL.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline Connector& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline Connector& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline Connector& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    Connector& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the connector was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline Connector& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline Connector& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    Connector& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the connector was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline Connector& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline Connector& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    Connector& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -190,7 +178,7 @@ namespace Model
     Aws::String m_certificateAuthorityArn;
     bool m_certificateAuthorityArnHasBeenSet = false;
 
-    ConnectorType m_type;
+    ConnectorType m_type{ConnectorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     MobileDeviceManagement m_mobileDeviceManagement;
@@ -199,19 +187,19 @@ namespace Model
     OpenIdConfiguration m_openIdConfiguration;
     bool m_openIdConfigurationHasBeenSet = false;
 
-    ConnectorStatus m_status;
+    ConnectorStatus m_status{ConnectorStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ConnectorStatusReason m_statusReason;
+    ConnectorStatusReason m_statusReason{ConnectorStatusReason::NOT_SET};
     bool m_statusReasonHasBeenSet = false;
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

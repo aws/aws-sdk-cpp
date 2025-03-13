@@ -12,14 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelRequest::CreateChannelRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_channelStorageHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListVoiceProfilesResult
   {
   public:
-    AWS_CHIMESDKVOICE_API ListVoiceProfilesResult();
+    AWS_CHIMESDKVOICE_API ListVoiceProfilesResult() = default;
     AWS_CHIMESDKVOICE_API ListVoiceProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API ListVoiceProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of voice profiles.</p>
      */
-    inline const Aws::Vector<VoiceProfileSummary>& GetVoiceProfiles() const{ return m_voiceProfiles; }
-    inline void SetVoiceProfiles(const Aws::Vector<VoiceProfileSummary>& value) { m_voiceProfiles = value; }
-    inline void SetVoiceProfiles(Aws::Vector<VoiceProfileSummary>&& value) { m_voiceProfiles = std::move(value); }
-    inline ListVoiceProfilesResult& WithVoiceProfiles(const Aws::Vector<VoiceProfileSummary>& value) { SetVoiceProfiles(value); return *this;}
-    inline ListVoiceProfilesResult& WithVoiceProfiles(Aws::Vector<VoiceProfileSummary>&& value) { SetVoiceProfiles(std::move(value)); return *this;}
-    inline ListVoiceProfilesResult& AddVoiceProfiles(const VoiceProfileSummary& value) { m_voiceProfiles.push_back(value); return *this; }
-    inline ListVoiceProfilesResult& AddVoiceProfiles(VoiceProfileSummary&& value) { m_voiceProfiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VoiceProfileSummary>& GetVoiceProfiles() const { return m_voiceProfiles; }
+    template<typename VoiceProfilesT = Aws::Vector<VoiceProfileSummary>>
+    void SetVoiceProfiles(VoiceProfilesT&& value) { m_voiceProfilesHasBeenSet = true; m_voiceProfiles = std::forward<VoiceProfilesT>(value); }
+    template<typename VoiceProfilesT = Aws::Vector<VoiceProfileSummary>>
+    ListVoiceProfilesResult& WithVoiceProfiles(VoiceProfilesT&& value) { SetVoiceProfiles(std::forward<VoiceProfilesT>(value)); return *this;}
+    template<typename VoiceProfilesT = VoiceProfileSummary>
+    ListVoiceProfilesResult& AddVoiceProfiles(VoiceProfilesT&& value) { m_voiceProfilesHasBeenSet = true; m_voiceProfiles.emplace_back(std::forward<VoiceProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token used to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListVoiceProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVoiceProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVoiceProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVoiceProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVoiceProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVoiceProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVoiceProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVoiceProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VoiceProfileSummary> m_voiceProfiles;
+    bool m_voiceProfilesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

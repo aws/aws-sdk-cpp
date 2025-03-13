@@ -34,7 +34,7 @@ namespace Model
   class SymmetricEncryptionAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API SymmetricEncryptionAttributes();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API SymmetricEncryptionAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SymmetricEncryptionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SymmetricEncryptionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The block cipher method to use for encryption.</p>
      */
-    inline const EncryptionMode& GetMode() const{ return m_mode; }
+    inline EncryptionMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const EncryptionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(EncryptionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline SymmetricEncryptionAttributes& WithMode(const EncryptionMode& value) { SetMode(value); return *this;}
-    inline SymmetricEncryptionAttributes& WithMode(EncryptionMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(EncryptionMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline SymmetricEncryptionAttributes& WithMode(EncryptionMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -57,36 +55,32 @@ namespace Model
      * <p>An input used to provide the intial state. If no value is provided, Amazon
      * Web Services Payment Cryptography defaults it to zero.</p>
      */
-    inline const Aws::String& GetInitializationVector() const{ return m_initializationVector; }
+    inline const Aws::String& GetInitializationVector() const { return m_initializationVector; }
     inline bool InitializationVectorHasBeenSet() const { return m_initializationVectorHasBeenSet; }
-    inline void SetInitializationVector(const Aws::String& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
-    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
-    inline void SetInitializationVector(const char* value) { m_initializationVectorHasBeenSet = true; m_initializationVector.assign(value); }
-    inline SymmetricEncryptionAttributes& WithInitializationVector(const Aws::String& value) { SetInitializationVector(value); return *this;}
-    inline SymmetricEncryptionAttributes& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
-    inline SymmetricEncryptionAttributes& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
+    template<typename InitializationVectorT = Aws::String>
+    void SetInitializationVector(InitializationVectorT&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::forward<InitializationVectorT>(value); }
+    template<typename InitializationVectorT = Aws::String>
+    SymmetricEncryptionAttributes& WithInitializationVector(InitializationVectorT&& value) { SetInitializationVector(std::forward<InitializationVectorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The padding to be included with the data.</p>
      */
-    inline const PaddingType& GetPaddingType() const{ return m_paddingType; }
+    inline PaddingType GetPaddingType() const { return m_paddingType; }
     inline bool PaddingTypeHasBeenSet() const { return m_paddingTypeHasBeenSet; }
-    inline void SetPaddingType(const PaddingType& value) { m_paddingTypeHasBeenSet = true; m_paddingType = value; }
-    inline void SetPaddingType(PaddingType&& value) { m_paddingTypeHasBeenSet = true; m_paddingType = std::move(value); }
-    inline SymmetricEncryptionAttributes& WithPaddingType(const PaddingType& value) { SetPaddingType(value); return *this;}
-    inline SymmetricEncryptionAttributes& WithPaddingType(PaddingType&& value) { SetPaddingType(std::move(value)); return *this;}
+    inline void SetPaddingType(PaddingType value) { m_paddingTypeHasBeenSet = true; m_paddingType = value; }
+    inline SymmetricEncryptionAttributes& WithPaddingType(PaddingType value) { SetPaddingType(value); return *this;}
     ///@}
   private:
 
-    EncryptionMode m_mode;
+    EncryptionMode m_mode{EncryptionMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     Aws::String m_initializationVector;
     bool m_initializationVectorHasBeenSet = false;
 
-    PaddingType m_paddingType;
+    PaddingType m_paddingType{PaddingType::NOT_SET};
     bool m_paddingTypeHasBeenSet = false;
   };
 

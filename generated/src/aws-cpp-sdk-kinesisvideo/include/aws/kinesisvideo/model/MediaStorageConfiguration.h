@@ -38,7 +38,7 @@ namespace Model
   class MediaStorageConfiguration
   {
   public:
-    AWS_KINESISVIDEO_API MediaStorageConfiguration();
+    AWS_KINESISVIDEO_API MediaStorageConfiguration() = default;
     AWS_KINESISVIDEO_API MediaStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API MediaStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,33 +48,29 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline MediaStorageConfiguration& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline MediaStorageConfiguration& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline MediaStorageConfiguration& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    MediaStorageConfiguration& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the media storage configuration.</p>
      */
-    inline const MediaStorageConfigurationStatus& GetStatus() const{ return m_status; }
+    inline MediaStorageConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MediaStorageConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MediaStorageConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MediaStorageConfiguration& WithStatus(const MediaStorageConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline MediaStorageConfiguration& WithStatus(MediaStorageConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MediaStorageConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MediaStorageConfiguration& WithStatus(MediaStorageConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_streamARN;
     bool m_streamARNHasBeenSet = false;
 
-    MediaStorageConfigurationStatus m_status;
+    MediaStorageConfigurationStatus m_status{MediaStorageConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

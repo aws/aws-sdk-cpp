@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAggregateResourceConfigRequest::GetAggregateResourceConfigRequest() : 
-    m_configurationAggregatorNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetAggregateResourceConfigRequest::SerializePayload() const
 {
   JsonValue payload;

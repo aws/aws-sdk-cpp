@@ -12,11 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAssetRequest::DeleteAssetRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssetRequest::SerializePayload() const
 {
   return {};

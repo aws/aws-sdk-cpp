@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssociationForServiceQuotaTemplateResult::GetAssociationForServiceQuotaTemplateResult() : 
-    m_serviceQuotaTemplateAssociationStatus(ServiceQuotaTemplateAssociationStatus::NOT_SET)
-{
-}
-
 GetAssociationForServiceQuotaTemplateResult::GetAssociationForServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAssociationForServiceQuotaTemplateResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetAssociationForServiceQuotaTemplateResult& GetAssociationForServiceQuotaTempla
   if(jsonValue.ValueExists("ServiceQuotaTemplateAssociationStatus"))
   {
     m_serviceQuotaTemplateAssociationStatus = ServiceQuotaTemplateAssociationStatusMapper::GetServiceQuotaTemplateAssociationStatusForName(jsonValue.GetString("ServiceQuotaTemplateAssociationStatus"));
-
+    m_serviceQuotaTemplateAssociationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

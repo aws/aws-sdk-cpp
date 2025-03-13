@@ -18,22 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ReactiveInsightSummary::ReactiveInsightSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_severity(InsightSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_serviceCollectionHasBeenSet(false),
-    m_associatedResourceArnsHasBeenSet(false)
-{
-}
-
 ReactiveInsightSummary::ReactiveInsightSummary(JsonView jsonValue)
-  : ReactiveInsightSummary()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ ReactiveInsightSummary& ReactiveInsightSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = InsightSeverityMapper::GetInsightSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InsightStatusMapper::GetInsightStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightTimeRange"))
   {
     m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
-
     m_insightTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
     m_resourceCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCollection"))
   {
     m_serviceCollection = jsonValue.GetObject("ServiceCollection");
-
     m_serviceCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedResourceArns"))
   {
     Aws::Utils::Array<JsonView> associatedResourceArnsJsonList = jsonValue.GetArray("AssociatedResourceArns");
@@ -98,7 +69,6 @@ ReactiveInsightSummary& ReactiveInsightSummary::operator =(JsonView jsonValue)
     }
     m_associatedResourceArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

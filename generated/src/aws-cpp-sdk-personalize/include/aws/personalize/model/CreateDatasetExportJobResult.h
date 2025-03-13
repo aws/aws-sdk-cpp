@@ -27,7 +27,7 @@ namespace Model
   class CreateDatasetExportJobResult
   {
   public:
-    AWS_PERSONALIZE_API CreateDatasetExportJobResult();
+    AWS_PERSONALIZE_API CreateDatasetExportJobResult() = default;
     AWS_PERSONALIZE_API CreateDatasetExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API CreateDatasetExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
      */
-    inline const Aws::String& GetDatasetExportJobArn() const{ return m_datasetExportJobArn; }
-    inline void SetDatasetExportJobArn(const Aws::String& value) { m_datasetExportJobArn = value; }
-    inline void SetDatasetExportJobArn(Aws::String&& value) { m_datasetExportJobArn = std::move(value); }
-    inline void SetDatasetExportJobArn(const char* value) { m_datasetExportJobArn.assign(value); }
-    inline CreateDatasetExportJobResult& WithDatasetExportJobArn(const Aws::String& value) { SetDatasetExportJobArn(value); return *this;}
-    inline CreateDatasetExportJobResult& WithDatasetExportJobArn(Aws::String&& value) { SetDatasetExportJobArn(std::move(value)); return *this;}
-    inline CreateDatasetExportJobResult& WithDatasetExportJobArn(const char* value) { SetDatasetExportJobArn(value); return *this;}
+    inline const Aws::String& GetDatasetExportJobArn() const { return m_datasetExportJobArn; }
+    template<typename DatasetExportJobArnT = Aws::String>
+    void SetDatasetExportJobArn(DatasetExportJobArnT&& value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn = std::forward<DatasetExportJobArnT>(value); }
+    template<typename DatasetExportJobArnT = Aws::String>
+    CreateDatasetExportJobResult& WithDatasetExportJobArn(DatasetExportJobArnT&& value) { SetDatasetExportJobArn(std::forward<DatasetExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDatasetExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDatasetExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDatasetExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDatasetExportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datasetExportJobArn;
+    bool m_datasetExportJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnonymousUserDashboardEmbeddingConfiguration::AnonymousUserDashboardEmbeddingConfiguration() : 
-    m_initialDashboardIdHasBeenSet(false),
-    m_enabledFeaturesHasBeenSet(false),
-    m_disabledFeaturesHasBeenSet(false),
-    m_featureConfigurationsHasBeenSet(false)
-{
-}
-
 AnonymousUserDashboardEmbeddingConfiguration::AnonymousUserDashboardEmbeddingConfiguration(JsonView jsonValue)
-  : AnonymousUserDashboardEmbeddingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ AnonymousUserDashboardEmbeddingConfiguration& AnonymousUserDashboardEmbeddingCon
   if(jsonValue.ValueExists("InitialDashboardId"))
   {
     m_initialDashboardId = jsonValue.GetString("InitialDashboardId");
-
     m_initialDashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledFeatures"))
   {
     Aws::Utils::Array<JsonView> enabledFeaturesJsonList = jsonValue.GetArray("EnabledFeatures");
@@ -50,7 +39,6 @@ AnonymousUserDashboardEmbeddingConfiguration& AnonymousUserDashboardEmbeddingCon
     }
     m_enabledFeaturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledFeatures"))
   {
     Aws::Utils::Array<JsonView> disabledFeaturesJsonList = jsonValue.GetArray("DisabledFeatures");
@@ -60,14 +48,11 @@ AnonymousUserDashboardEmbeddingConfiguration& AnonymousUserDashboardEmbeddingCon
     }
     m_disabledFeaturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureConfigurations"))
   {
     m_featureConfigurations = jsonValue.GetObject("FeatureConfigurations");
-
     m_featureConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

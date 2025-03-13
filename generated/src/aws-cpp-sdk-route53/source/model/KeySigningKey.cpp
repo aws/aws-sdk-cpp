@@ -20,32 +20,7 @@ namespace Route53
 namespace Model
 {
 
-KeySigningKey::KeySigningKey() : 
-    m_nameHasBeenSet(false),
-    m_kmsArnHasBeenSet(false),
-    m_flag(0),
-    m_flagHasBeenSet(false),
-    m_signingAlgorithmMnemonicHasBeenSet(false),
-    m_signingAlgorithmType(0),
-    m_signingAlgorithmTypeHasBeenSet(false),
-    m_digestAlgorithmMnemonicHasBeenSet(false),
-    m_digestAlgorithmType(0),
-    m_digestAlgorithmTypeHasBeenSet(false),
-    m_keyTag(0),
-    m_keyTagHasBeenSet(false),
-    m_digestValueHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_dSRecordHasBeenSet(false),
-    m_dNSKEYRecordHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 KeySigningKey::KeySigningKey(const XmlNode& xmlNode)
-  : KeySigningKey()
 {
   *this = xmlNode;
 }
@@ -61,96 +36,112 @@ KeySigningKey& KeySigningKey::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode kmsArnNode = resultNode.FirstChild("KmsArn");
     if(!kmsArnNode.IsNull())
     {
       m_kmsArn = Aws::Utils::Xml::DecodeEscapedXmlText(kmsArnNode.GetText());
       m_kmsArnHasBeenSet = true;
+       m_kmsArnHasBeenSet = true;
     }
     XmlNode flagNode = resultNode.FirstChild("Flag");
     if(!flagNode.IsNull())
     {
       m_flag = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(flagNode.GetText()).c_str()).c_str());
       m_flagHasBeenSet = true;
+       m_flagHasBeenSet = true;
     }
     XmlNode signingAlgorithmMnemonicNode = resultNode.FirstChild("SigningAlgorithmMnemonic");
     if(!signingAlgorithmMnemonicNode.IsNull())
     {
       m_signingAlgorithmMnemonic = Aws::Utils::Xml::DecodeEscapedXmlText(signingAlgorithmMnemonicNode.GetText());
       m_signingAlgorithmMnemonicHasBeenSet = true;
+       m_signingAlgorithmMnemonicHasBeenSet = true;
     }
     XmlNode signingAlgorithmTypeNode = resultNode.FirstChild("SigningAlgorithmType");
     if(!signingAlgorithmTypeNode.IsNull())
     {
       m_signingAlgorithmType = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(signingAlgorithmTypeNode.GetText()).c_str()).c_str());
       m_signingAlgorithmTypeHasBeenSet = true;
+       m_signingAlgorithmTypeHasBeenSet = true;
     }
     XmlNode digestAlgorithmMnemonicNode = resultNode.FirstChild("DigestAlgorithmMnemonic");
     if(!digestAlgorithmMnemonicNode.IsNull())
     {
       m_digestAlgorithmMnemonic = Aws::Utils::Xml::DecodeEscapedXmlText(digestAlgorithmMnemonicNode.GetText());
       m_digestAlgorithmMnemonicHasBeenSet = true;
+       m_digestAlgorithmMnemonicHasBeenSet = true;
     }
     XmlNode digestAlgorithmTypeNode = resultNode.FirstChild("DigestAlgorithmType");
     if(!digestAlgorithmTypeNode.IsNull())
     {
       m_digestAlgorithmType = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(digestAlgorithmTypeNode.GetText()).c_str()).c_str());
       m_digestAlgorithmTypeHasBeenSet = true;
+       m_digestAlgorithmTypeHasBeenSet = true;
     }
     XmlNode keyTagNode = resultNode.FirstChild("KeyTag");
     if(!keyTagNode.IsNull())
     {
       m_keyTag = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(keyTagNode.GetText()).c_str()).c_str());
       m_keyTagHasBeenSet = true;
+       m_keyTagHasBeenSet = true;
     }
     XmlNode digestValueNode = resultNode.FirstChild("DigestValue");
     if(!digestValueNode.IsNull())
     {
       m_digestValue = Aws::Utils::Xml::DecodeEscapedXmlText(digestValueNode.GetText());
       m_digestValueHasBeenSet = true;
+       m_digestValueHasBeenSet = true;
     }
     XmlNode publicKeyNode = resultNode.FirstChild("PublicKey");
     if(!publicKeyNode.IsNull())
     {
       m_publicKey = Aws::Utils::Xml::DecodeEscapedXmlText(publicKeyNode.GetText());
       m_publicKeyHasBeenSet = true;
+       m_publicKeyHasBeenSet = true;
     }
     XmlNode dSRecordNode = resultNode.FirstChild("DSRecord");
     if(!dSRecordNode.IsNull())
     {
       m_dSRecord = Aws::Utils::Xml::DecodeEscapedXmlText(dSRecordNode.GetText());
       m_dSRecordHasBeenSet = true;
+       m_dSRecordHasBeenSet = true;
     }
     XmlNode dNSKEYRecordNode = resultNode.FirstChild("DNSKEYRecord");
     if(!dNSKEYRecordNode.IsNull())
     {
       m_dNSKEYRecord = Aws::Utils::Xml::DecodeEscapedXmlText(dNSKEYRecordNode.GetText());
       m_dNSKEYRecordHasBeenSet = true;
+       m_dNSKEYRecordHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
     {
       m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
+       m_createdDateHasBeenSet = true;
     }
     XmlNode lastModifiedDateNode = resultNode.FirstChild("LastModifiedDate");
     if(!lastModifiedDateNode.IsNull())
     {
       m_lastModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedDateHasBeenSet = true;
+       m_lastModifiedDateHasBeenSet = true;
     }
   }
 

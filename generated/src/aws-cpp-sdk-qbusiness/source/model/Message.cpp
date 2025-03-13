@@ -18,21 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Message::Message() : 
-    m_messageIdHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_type(MessageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_sourceAttributionHasBeenSet(false),
-    m_actionReviewHasBeenSet(false),
-    m_actionExecutionHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("time"))
   {
     m_time = jsonValue.GetDouble("time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachments"))
   {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
@@ -76,7 +54,6 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_attachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceAttribution"))
   {
     Aws::Utils::Array<JsonView> sourceAttributionJsonList = jsonValue.GetArray("sourceAttribution");
@@ -86,21 +63,16 @@ Message& Message::operator =(JsonView jsonValue)
     }
     m_sourceAttributionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionReview"))
   {
     m_actionReview = jsonValue.GetObject("actionReview");
-
     m_actionReviewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionExecution"))
   {
     m_actionExecution = jsonValue.GetObject("actionExecution");
-
     m_actionExecutionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-AccessDetail::AccessDetail() : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceNamespaceHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_entityPathHasBeenSet(false),
-    m_lastAuthenticatedTimeHasBeenSet(false),
-    m_totalAuthenticatedEntities(0),
-    m_totalAuthenticatedEntitiesHasBeenSet(false)
-{
-}
-
 AccessDetail::AccessDetail(const XmlNode& xmlNode)
-  : AccessDetail()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ AccessDetail& AccessDetail::operator =(const XmlNode& xmlNode)
     {
       m_serviceName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNameNode.GetText());
       m_serviceNameHasBeenSet = true;
+       m_serviceNameHasBeenSet = true;
     }
     XmlNode serviceNamespaceNode = resultNode.FirstChild("ServiceNamespace");
     if(!serviceNamespaceNode.IsNull())
     {
       m_serviceNamespace = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNamespaceNode.GetText());
       m_serviceNamespaceHasBeenSet = true;
+       m_serviceNamespaceHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode entityPathNode = resultNode.FirstChild("EntityPath");
     if(!entityPathNode.IsNull())
     {
       m_entityPath = Aws::Utils::Xml::DecodeEscapedXmlText(entityPathNode.GetText());
       m_entityPathHasBeenSet = true;
+       m_entityPathHasBeenSet = true;
     }
     XmlNode lastAuthenticatedTimeNode = resultNode.FirstChild("LastAuthenticatedTime");
     if(!lastAuthenticatedTimeNode.IsNull())
     {
       m_lastAuthenticatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAuthenticatedTimeHasBeenSet = true;
+       m_lastAuthenticatedTimeHasBeenSet = true;
     }
     XmlNode totalAuthenticatedEntitiesNode = resultNode.FirstChild("TotalAuthenticatedEntities");
     if(!totalAuthenticatedEntitiesNode.IsNull())
     {
       m_totalAuthenticatedEntities = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAuthenticatedEntitiesNode.GetText()).c_str()).c_str());
       m_totalAuthenticatedEntitiesHasBeenSet = true;
+       m_totalAuthenticatedEntitiesHasBeenSet = true;
     }
   }
 

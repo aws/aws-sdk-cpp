@@ -29,7 +29,7 @@ namespace Model
   class ListRequestedServiceQuotaChangeHistoryByQuotaResult
   {
   public:
-    AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryByQuotaResult();
+    AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryByQuotaResult() = default;
     AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryByQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryByQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,45 +42,44 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the quota increase requests.</p>
      */
-    inline const Aws::Vector<RequestedServiceQuotaChange>& GetRequestedQuotas() const{ return m_requestedQuotas; }
-    inline void SetRequestedQuotas(const Aws::Vector<RequestedServiceQuotaChange>& value) { m_requestedQuotas = value; }
-    inline void SetRequestedQuotas(Aws::Vector<RequestedServiceQuotaChange>&& value) { m_requestedQuotas = std::move(value); }
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestedQuotas(const Aws::Vector<RequestedServiceQuotaChange>& value) { SetRequestedQuotas(value); return *this;}
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestedQuotas(Aws::Vector<RequestedServiceQuotaChange>&& value) { SetRequestedQuotas(std::move(value)); return *this;}
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& AddRequestedQuotas(const RequestedServiceQuotaChange& value) { m_requestedQuotas.push_back(value); return *this; }
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& AddRequestedQuotas(RequestedServiceQuotaChange&& value) { m_requestedQuotas.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RequestedServiceQuotaChange>& GetRequestedQuotas() const { return m_requestedQuotas; }
+    template<typename RequestedQuotasT = Aws::Vector<RequestedServiceQuotaChange>>
+    void SetRequestedQuotas(RequestedQuotasT&& value) { m_requestedQuotasHasBeenSet = true; m_requestedQuotas = std::forward<RequestedQuotasT>(value); }
+    template<typename RequestedQuotasT = Aws::Vector<RequestedServiceQuotaChange>>
+    ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestedQuotas(RequestedQuotasT&& value) { SetRequestedQuotas(std::forward<RequestedQuotasT>(value)); return *this;}
+    template<typename RequestedQuotasT = RequestedServiceQuotaChange>
+    ListRequestedServiceQuotaChangeHistoryByQuotaResult& AddRequestedQuotas(RequestedQuotasT&& value) { m_requestedQuotasHasBeenSet = true; m_requestedQuotas.emplace_back(std::forward<RequestedQuotasT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRequestedServiceQuotaChangeHistoryByQuotaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RequestedServiceQuotaChange> m_requestedQuotas;
+    bool m_requestedQuotasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

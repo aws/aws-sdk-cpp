@@ -18,13 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-WorkerSetting::WorkerSetting() : 
-    m_capacityHasBeenSet(false)
-{
-}
-
 WorkerSetting::WorkerSetting(JsonView jsonValue)
-  : WorkerSetting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WorkerSetting& WorkerSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("capacity"))
   {
     m_capacity = jsonValue.GetObject("capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   return *this;
 }
 

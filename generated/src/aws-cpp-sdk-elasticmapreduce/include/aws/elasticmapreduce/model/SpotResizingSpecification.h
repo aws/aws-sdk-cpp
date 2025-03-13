@@ -32,7 +32,7 @@ namespace Model
   class SpotResizingSpecification
   {
   public:
-    AWS_EMR_API SpotResizingSpecification();
+    AWS_EMR_API SpotResizingSpecification() = default;
     AWS_EMR_API SpotResizingSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API SpotResizingSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
      * Reclamation.</p>
      */
-    inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
+    inline int GetTimeoutDurationMinutes() const { return m_timeoutDurationMinutes; }
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
     inline SpotResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
@@ -62,19 +62,17 @@ namespace Model
      * <code>price-capacity-optimized</code>. If you run Amazon EMR releases 6.8.0 or
      * lower, the default is <code>capacity-optimized</code>.</p>
      */
-    inline const SpotProvisioningAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
+    inline SpotProvisioningAllocationStrategy GetAllocationStrategy() const { return m_allocationStrategy; }
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-    inline void SetAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-    inline SpotResizingSpecification& WithAllocationStrategy(const SpotProvisioningAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-    inline SpotResizingSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    inline void SetAllocationStrategy(SpotProvisioningAllocationStrategy value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
+    inline SpotResizingSpecification& WithAllocationStrategy(SpotProvisioningAllocationStrategy value) { SetAllocationStrategy(value); return *this;}
     ///@}
   private:
 
-    int m_timeoutDurationMinutes;
+    int m_timeoutDurationMinutes{0};
     bool m_timeoutDurationMinutesHasBeenSet = false;
 
-    SpotProvisioningAllocationStrategy m_allocationStrategy;
+    SpotProvisioningAllocationStrategy m_allocationStrategy{SpotProvisioningAllocationStrategy::NOT_SET};
     bool m_allocationStrategyHasBeenSet = false;
   };
 

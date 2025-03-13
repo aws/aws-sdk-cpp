@@ -33,7 +33,7 @@ namespace Model
   class HttpQueryParameter
   {
   public:
-    AWS_APPMESH_API HttpQueryParameter();
+    AWS_APPMESH_API HttpQueryParameter() = default;
     AWS_APPMESH_API HttpQueryParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API HttpQueryParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The query parameter to match on.</p>
      */
-    inline const QueryParameterMatch& GetMatch() const{ return m_match; }
+    inline const QueryParameterMatch& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const QueryParameterMatch& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(QueryParameterMatch&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline HttpQueryParameter& WithMatch(const QueryParameterMatch& value) { SetMatch(value); return *this;}
-    inline HttpQueryParameter& WithMatch(QueryParameterMatch&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = QueryParameterMatch>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = QueryParameterMatch>
+    HttpQueryParameter& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the query parameter that will be matched on.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline HttpQueryParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline HttpQueryParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline HttpQueryParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HttpQueryParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

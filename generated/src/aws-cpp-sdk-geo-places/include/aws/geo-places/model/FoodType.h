@@ -32,7 +32,7 @@ namespace Model
   class FoodType
   {
   public:
-    AWS_GEOPLACES_API FoodType();
+    AWS_GEOPLACES_API FoodType() = default;
     AWS_GEOPLACES_API FoodType(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API FoodType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Localized name of the food type.</p>
      */
-    inline const Aws::String& GetLocalizedName() const{ return m_localizedName; }
+    inline const Aws::String& GetLocalizedName() const { return m_localizedName; }
     inline bool LocalizedNameHasBeenSet() const { return m_localizedNameHasBeenSet; }
-    inline void SetLocalizedName(const Aws::String& value) { m_localizedNameHasBeenSet = true; m_localizedName = value; }
-    inline void SetLocalizedName(Aws::String&& value) { m_localizedNameHasBeenSet = true; m_localizedName = std::move(value); }
-    inline void SetLocalizedName(const char* value) { m_localizedNameHasBeenSet = true; m_localizedName.assign(value); }
-    inline FoodType& WithLocalizedName(const Aws::String& value) { SetLocalizedName(value); return *this;}
-    inline FoodType& WithLocalizedName(Aws::String&& value) { SetLocalizedName(std::move(value)); return *this;}
-    inline FoodType& WithLocalizedName(const char* value) { SetLocalizedName(value); return *this;}
+    template<typename LocalizedNameT = Aws::String>
+    void SetLocalizedName(LocalizedNameT&& value) { m_localizedNameHasBeenSet = true; m_localizedName = std::forward<LocalizedNameT>(value); }
+    template<typename LocalizedNameT = Aws::String>
+    FoodType& WithLocalizedName(LocalizedNameT&& value) { SetLocalizedName(std::forward<LocalizedNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Food Type Id.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FoodType& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FoodType& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FoodType& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FoodType& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * place. For example, if a location serves fast food, but also dessert, he primary
      * would likely be fast food.</p>
      */
-    inline bool GetPrimary() const{ return m_primary; }
+    inline bool GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
     inline FoodType& WithPrimary(bool value) { SetPrimary(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    bool m_primary;
+    bool m_primary{false};
     bool m_primaryHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseReservedNodeOfferingResult::PurchaseReservedNodeOfferingResult()
-{
-}
-
 PurchaseReservedNodeOfferingResult::PurchaseReservedNodeOfferingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ PurchaseReservedNodeOfferingResult& PurchaseReservedNodeOfferingResult::operator
     if(!reservedNodeNode.IsNull())
     {
       m_reservedNode = reservedNodeNode;
+      m_reservedNodeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::PurchaseReservedNodeOfferingResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

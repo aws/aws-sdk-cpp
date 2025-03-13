@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateJobExecutionResult::UpdateJobExecutionResult()
-{
-}
-
 UpdateJobExecutionResult::UpdateJobExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateJobExecutionResult& UpdateJobExecutionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("executionState"))
   {
     m_executionState = jsonValue.GetObject("executionState");
-
+    m_executionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobDocument"))
   {
     m_jobDocument = jsonValue.GetString("jobDocument");
-
+    m_jobDocumentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

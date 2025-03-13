@@ -31,7 +31,7 @@ namespace Model
   class BrandElementStyle
   {
   public:
-    AWS_QUICKSIGHT_API BrandElementStyle();
+    AWS_QUICKSIGHT_API BrandElementStyle() = default;
     AWS_QUICKSIGHT_API BrandElementStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BrandElementStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The navigation bar style.</p>
      */
-    inline const NavbarStyle& GetNavbarStyle() const{ return m_navbarStyle; }
+    inline const NavbarStyle& GetNavbarStyle() const { return m_navbarStyle; }
     inline bool NavbarStyleHasBeenSet() const { return m_navbarStyleHasBeenSet; }
-    inline void SetNavbarStyle(const NavbarStyle& value) { m_navbarStyleHasBeenSet = true; m_navbarStyle = value; }
-    inline void SetNavbarStyle(NavbarStyle&& value) { m_navbarStyleHasBeenSet = true; m_navbarStyle = std::move(value); }
-    inline BrandElementStyle& WithNavbarStyle(const NavbarStyle& value) { SetNavbarStyle(value); return *this;}
-    inline BrandElementStyle& WithNavbarStyle(NavbarStyle&& value) { SetNavbarStyle(std::move(value)); return *this;}
+    template<typename NavbarStyleT = NavbarStyle>
+    void SetNavbarStyle(NavbarStyleT&& value) { m_navbarStyleHasBeenSet = true; m_navbarStyle = std::forward<NavbarStyleT>(value); }
+    template<typename NavbarStyleT = NavbarStyle>
+    BrandElementStyle& WithNavbarStyle(NavbarStyleT&& value) { SetNavbarStyle(std::forward<NavbarStyleT>(value)); return *this;}
     ///@}
   private:
 

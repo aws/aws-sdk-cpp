@@ -33,7 +33,7 @@ namespace Model
   class DesiredWeightAndCapacity
   {
   public:
-    AWS_SAGEMAKER_API DesiredWeightAndCapacity();
+    AWS_SAGEMAKER_API DesiredWeightAndCapacity() = default;
     AWS_SAGEMAKER_API DesiredWeightAndCapacity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DesiredWeightAndCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The name of the variant to update.</p>
      */
-    inline const Aws::String& GetVariantName() const{ return m_variantName; }
+    inline const Aws::String& GetVariantName() const { return m_variantName; }
     inline bool VariantNameHasBeenSet() const { return m_variantNameHasBeenSet; }
-    inline void SetVariantName(const Aws::String& value) { m_variantNameHasBeenSet = true; m_variantName = value; }
-    inline void SetVariantName(Aws::String&& value) { m_variantNameHasBeenSet = true; m_variantName = std::move(value); }
-    inline void SetVariantName(const char* value) { m_variantNameHasBeenSet = true; m_variantName.assign(value); }
-    inline DesiredWeightAndCapacity& WithVariantName(const Aws::String& value) { SetVariantName(value); return *this;}
-    inline DesiredWeightAndCapacity& WithVariantName(Aws::String&& value) { SetVariantName(std::move(value)); return *this;}
-    inline DesiredWeightAndCapacity& WithVariantName(const char* value) { SetVariantName(value); return *this;}
+    template<typename VariantNameT = Aws::String>
+    void SetVariantName(VariantNameT&& value) { m_variantNameHasBeenSet = true; m_variantName = std::forward<VariantNameT>(value); }
+    template<typename VariantNameT = Aws::String>
+    DesiredWeightAndCapacity& WithVariantName(VariantNameT&& value) { SetVariantName(std::forward<VariantNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The variant's weight.</p>
      */
-    inline double GetDesiredWeight() const{ return m_desiredWeight; }
+    inline double GetDesiredWeight() const { return m_desiredWeight; }
     inline bool DesiredWeightHasBeenSet() const { return m_desiredWeightHasBeenSet; }
     inline void SetDesiredWeight(double value) { m_desiredWeightHasBeenSet = true; m_desiredWeight = value; }
     inline DesiredWeightAndCapacity& WithDesiredWeight(double value) { SetDesiredWeight(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     /**
      * <p>The variant's capacity.</p>
      */
-    inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
+    inline int GetDesiredInstanceCount() const { return m_desiredInstanceCount; }
     inline bool DesiredInstanceCountHasBeenSet() const { return m_desiredInstanceCountHasBeenSet; }
     inline void SetDesiredInstanceCount(int value) { m_desiredInstanceCountHasBeenSet = true; m_desiredInstanceCount = value; }
     inline DesiredWeightAndCapacity& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
@@ -78,22 +76,22 @@ namespace Model
      * <p>Specifies the serverless update concurrency configuration for an endpoint
      * variant.</p>
      */
-    inline const ProductionVariantServerlessUpdateConfig& GetServerlessUpdateConfig() const{ return m_serverlessUpdateConfig; }
+    inline const ProductionVariantServerlessUpdateConfig& GetServerlessUpdateConfig() const { return m_serverlessUpdateConfig; }
     inline bool ServerlessUpdateConfigHasBeenSet() const { return m_serverlessUpdateConfigHasBeenSet; }
-    inline void SetServerlessUpdateConfig(const ProductionVariantServerlessUpdateConfig& value) { m_serverlessUpdateConfigHasBeenSet = true; m_serverlessUpdateConfig = value; }
-    inline void SetServerlessUpdateConfig(ProductionVariantServerlessUpdateConfig&& value) { m_serverlessUpdateConfigHasBeenSet = true; m_serverlessUpdateConfig = std::move(value); }
-    inline DesiredWeightAndCapacity& WithServerlessUpdateConfig(const ProductionVariantServerlessUpdateConfig& value) { SetServerlessUpdateConfig(value); return *this;}
-    inline DesiredWeightAndCapacity& WithServerlessUpdateConfig(ProductionVariantServerlessUpdateConfig&& value) { SetServerlessUpdateConfig(std::move(value)); return *this;}
+    template<typename ServerlessUpdateConfigT = ProductionVariantServerlessUpdateConfig>
+    void SetServerlessUpdateConfig(ServerlessUpdateConfigT&& value) { m_serverlessUpdateConfigHasBeenSet = true; m_serverlessUpdateConfig = std::forward<ServerlessUpdateConfigT>(value); }
+    template<typename ServerlessUpdateConfigT = ProductionVariantServerlessUpdateConfig>
+    DesiredWeightAndCapacity& WithServerlessUpdateConfig(ServerlessUpdateConfigT&& value) { SetServerlessUpdateConfig(std::forward<ServerlessUpdateConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_variantName;
     bool m_variantNameHasBeenSet = false;
 
-    double m_desiredWeight;
+    double m_desiredWeight{0.0};
     bool m_desiredWeightHasBeenSet = false;
 
-    int m_desiredInstanceCount;
+    int m_desiredInstanceCount{0};
     bool m_desiredInstanceCountHasBeenSet = false;
 
     ProductionVariantServerlessUpdateConfig m_serverlessUpdateConfig;

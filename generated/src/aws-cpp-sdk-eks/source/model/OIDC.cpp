@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-OIDC::OIDC() : 
-    m_issuerHasBeenSet(false)
-{
-}
-
 OIDC::OIDC(JsonView jsonValue)
-  : OIDC()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OIDC& OIDC::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   return *this;
 }
 

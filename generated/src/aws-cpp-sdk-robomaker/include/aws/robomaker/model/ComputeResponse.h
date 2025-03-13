@@ -31,7 +31,7 @@ namespace Model
   class ComputeResponse
   {
   public:
-    AWS_ROBOMAKER_API ComputeResponse();
+    AWS_ROBOMAKER_API ComputeResponse() = default;
     AWS_ROBOMAKER_API ComputeResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API ComputeResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * and 2GB of memory. You are only billed for the SU utilization you consume up to
      * the maximum value provided. The default is 15. </p>
      */
-    inline int GetSimulationUnitLimit() const{ return m_simulationUnitLimit; }
+    inline int GetSimulationUnitLimit() const { return m_simulationUnitLimit; }
     inline bool SimulationUnitLimitHasBeenSet() const { return m_simulationUnitLimitHasBeenSet; }
     inline void SetSimulationUnitLimit(int value) { m_simulationUnitLimitHasBeenSet = true; m_simulationUnitLimit = value; }
     inline ComputeResponse& WithSimulationUnitLimit(int value) { SetSimulationUnitLimit(value); return *this;}
@@ -54,12 +54,10 @@ namespace Model
     /**
      * <p>Compute type response information for the simulation job.</p>
      */
-    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+    inline ComputeType GetComputeType() const { return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
-    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
-    inline ComputeResponse& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
-    inline ComputeResponse& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    inline void SetComputeType(ComputeType value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline ComputeResponse& WithComputeType(ComputeType value) { SetComputeType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,20 +65,20 @@ namespace Model
      * <p>Compute GPU unit limit for the simulation job. It is the same as the number
      * of GPUs allocated to the SimulationJob.</p>
      */
-    inline int GetGpuUnitLimit() const{ return m_gpuUnitLimit; }
+    inline int GetGpuUnitLimit() const { return m_gpuUnitLimit; }
     inline bool GpuUnitLimitHasBeenSet() const { return m_gpuUnitLimitHasBeenSet; }
     inline void SetGpuUnitLimit(int value) { m_gpuUnitLimitHasBeenSet = true; m_gpuUnitLimit = value; }
     inline ComputeResponse& WithGpuUnitLimit(int value) { SetGpuUnitLimit(value); return *this;}
     ///@}
   private:
 
-    int m_simulationUnitLimit;
+    int m_simulationUnitLimit{0};
     bool m_simulationUnitLimitHasBeenSet = false;
 
-    ComputeType m_computeType;
+    ComputeType m_computeType{ComputeType::NOT_SET};
     bool m_computeTypeHasBeenSet = false;
 
-    int m_gpuUnitLimit;
+    int m_gpuUnitLimit{0};
     bool m_gpuUnitLimitHasBeenSet = false;
   };
 

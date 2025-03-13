@@ -18,27 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrialComponentMetricSummary::TrialComponentMetricSummary() : 
-    m_metricNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_timeStampHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_last(0.0),
-    m_lastHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_avg(0.0),
-    m_avgHasBeenSet(false),
-    m_stdDev(0.0),
-    m_stdDevHasBeenSet(false)
-{
-}
-
 TrialComponentMetricSummary::TrialComponentMetricSummary(JsonView jsonValue)
-  : TrialComponentMetricSummary()
 {
   *this = jsonValue;
 }
@@ -48,66 +28,48 @@ TrialComponentMetricSummary& TrialComponentMetricSummary::operator =(JsonView js
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeStamp"))
   {
     m_timeStamp = jsonValue.GetDouble("TimeStamp");
-
     m_timeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetDouble("Max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetDouble("Min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Last"))
   {
     m_last = jsonValue.GetDouble("Last");
-
     m_lastHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Avg"))
   {
     m_avg = jsonValue.GetDouble("Avg");
-
     m_avgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StdDev"))
   {
     m_stdDev = jsonValue.GetDouble("StdDev");
-
     m_stdDevHasBeenSet = true;
   }
-
   return *this;
 }
 

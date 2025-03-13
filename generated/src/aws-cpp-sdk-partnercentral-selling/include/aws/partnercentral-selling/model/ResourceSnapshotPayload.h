@@ -33,7 +33,7 @@ namespace Model
   class ResourceSnapshotPayload
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ResourceSnapshotPayload();
+    AWS_PARTNERCENTRALSELLING_API ResourceSnapshotPayload() = default;
     AWS_PARTNERCENTRALSELLING_API ResourceSnapshotPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API ResourceSnapshotPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p> An object that contains an <code>opportunity</code>'s subset of fields. </p>
      */
-    inline const OpportunitySummaryView& GetOpportunitySummary() const{ return m_opportunitySummary; }
+    inline const OpportunitySummaryView& GetOpportunitySummary() const { return m_opportunitySummary; }
     inline bool OpportunitySummaryHasBeenSet() const { return m_opportunitySummaryHasBeenSet; }
-    inline void SetOpportunitySummary(const OpportunitySummaryView& value) { m_opportunitySummaryHasBeenSet = true; m_opportunitySummary = value; }
-    inline void SetOpportunitySummary(OpportunitySummaryView&& value) { m_opportunitySummaryHasBeenSet = true; m_opportunitySummary = std::move(value); }
-    inline ResourceSnapshotPayload& WithOpportunitySummary(const OpportunitySummaryView& value) { SetOpportunitySummary(value); return *this;}
-    inline ResourceSnapshotPayload& WithOpportunitySummary(OpportunitySummaryView&& value) { SetOpportunitySummary(std::move(value)); return *this;}
+    template<typename OpportunitySummaryT = OpportunitySummaryView>
+    void SetOpportunitySummary(OpportunitySummaryT&& value) { m_opportunitySummaryHasBeenSet = true; m_opportunitySummary = std::forward<OpportunitySummaryT>(value); }
+    template<typename OpportunitySummaryT = OpportunitySummaryView>
+    ResourceSnapshotPayload& WithOpportunitySummary(OpportunitySummaryT&& value) { SetOpportunitySummary(std::forward<OpportunitySummaryT>(value)); return *this;}
     ///@}
   private:
 

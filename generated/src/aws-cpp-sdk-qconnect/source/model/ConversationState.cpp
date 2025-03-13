@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ConversationState::ConversationState() : 
-    m_reason(ConversationStatusReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_status(ConversationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ConversationState::ConversationState(JsonView jsonValue)
-  : ConversationState()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConversationState& ConversationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = ConversationStatusReasonMapper::GetConversationStatusReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConversationStatusMapper::GetConversationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

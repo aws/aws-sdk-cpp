@@ -12,12 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetSchemaAnalysisRuleRequest::BatchGetSchemaAnalysisRuleRequest() : 
-    m_collaborationIdentifierHasBeenSet(false),
-    m_schemaAnalysisRuleRequestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetSchemaAnalysisRuleRequest::SerializePayload() const
 {
   JsonValue payload;

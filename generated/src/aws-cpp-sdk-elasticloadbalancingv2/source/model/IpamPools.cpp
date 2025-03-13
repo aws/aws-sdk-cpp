@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-IpamPools::IpamPools() : 
-    m_ipv4IpamPoolIdHasBeenSet(false)
-{
-}
-
 IpamPools::IpamPools(const XmlNode& xmlNode)
-  : IpamPools()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ IpamPools& IpamPools::operator =(const XmlNode& xmlNode)
     {
       m_ipv4IpamPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(ipv4IpamPoolIdNode.GetText());
       m_ipv4IpamPoolIdHasBeenSet = true;
+       m_ipv4IpamPoolIdHasBeenSet = true;
     }
   }
 

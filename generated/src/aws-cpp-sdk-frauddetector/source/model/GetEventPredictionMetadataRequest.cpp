@@ -12,15 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventPredictionMetadataRequest::GetEventPredictionMetadataRequest() : 
-    m_eventIdHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_detectorVersionIdHasBeenSet(false),
-    m_predictionTimestampHasBeenSet(false)
-{
-}
-
 Aws::String GetEventPredictionMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

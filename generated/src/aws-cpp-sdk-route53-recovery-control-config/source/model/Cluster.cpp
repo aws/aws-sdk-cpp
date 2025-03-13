@@ -18,18 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterEndpointsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_ownerHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterEndpoints"))
   {
     Aws::Utils::Array<JsonView> clusterEndpointsJsonList = jsonValue.GetArray("ClusterEndpoints");
@@ -52,28 +39,21 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_clusterEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   return *this;
 }
 

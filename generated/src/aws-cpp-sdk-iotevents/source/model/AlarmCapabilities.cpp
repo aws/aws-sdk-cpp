@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-AlarmCapabilities::AlarmCapabilities() : 
-    m_initializationConfigurationHasBeenSet(false),
-    m_acknowledgeFlowHasBeenSet(false)
-{
-}
-
 AlarmCapabilities::AlarmCapabilities(JsonView jsonValue)
-  : AlarmCapabilities()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AlarmCapabilities& AlarmCapabilities::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("initializationConfiguration"))
   {
     m_initializationConfiguration = jsonValue.GetObject("initializationConfiguration");
-
     m_initializationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acknowledgeFlow"))
   {
     m_acknowledgeFlow = jsonValue.GetObject("acknowledgeFlow");
-
     m_acknowledgeFlowHasBeenSet = true;
   }
-
   return *this;
 }
 

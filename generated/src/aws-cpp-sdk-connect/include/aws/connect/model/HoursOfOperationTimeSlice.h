@@ -30,7 +30,7 @@ namespace Model
   class HoursOfOperationTimeSlice
   {
   public:
-    AWS_CONNECT_API HoursOfOperationTimeSlice();
+    AWS_CONNECT_API HoursOfOperationTimeSlice() = default;
     AWS_CONNECT_API HoursOfOperationTimeSlice(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HoursOfOperationTimeSlice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The hours.</p>
      */
-    inline int GetHours() const{ return m_hours; }
+    inline int GetHours() const { return m_hours; }
     inline bool HoursHasBeenSet() const { return m_hoursHasBeenSet; }
     inline void SetHours(int value) { m_hoursHasBeenSet = true; m_hours = value; }
     inline HoursOfOperationTimeSlice& WithHours(int value) { SetHours(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The minutes.</p>
      */
-    inline int GetMinutes() const{ return m_minutes; }
+    inline int GetMinutes() const { return m_minutes; }
     inline bool MinutesHasBeenSet() const { return m_minutesHasBeenSet; }
     inline void SetMinutes(int value) { m_minutesHasBeenSet = true; m_minutes = value; }
     inline HoursOfOperationTimeSlice& WithMinutes(int value) { SetMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_hours;
+    int m_hours{0};
     bool m_hoursHasBeenSet = false;
 
-    int m_minutes;
+    int m_minutes{0};
     bool m_minutesHasBeenSet = false;
   };
 

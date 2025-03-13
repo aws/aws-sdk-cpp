@@ -29,7 +29,7 @@ namespace Model
   class AllDomainUnitsGrantFilter
   {
   public:
-    AWS_DATAZONE_API AllDomainUnitsGrantFilter();
+    AWS_DATAZONE_API AllDomainUnitsGrantFilter() = default;
     AWS_DATAZONE_API AllDomainUnitsGrantFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AllDomainUnitsGrantFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;

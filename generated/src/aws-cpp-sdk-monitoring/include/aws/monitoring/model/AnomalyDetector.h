@@ -40,7 +40,7 @@ namespace Model
   class AnomalyDetector
   {
   public:
-    AWS_CLOUDWATCH_API AnomalyDetector();
+    AWS_CLOUDWATCH_API AnomalyDetector() = default;
     AWS_CLOUDWATCH_API AnomalyDetector(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API AnomalyDetector& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,24 +54,22 @@ namespace Model
      * to be trained, including time ranges to exclude from use for training the model,
      * and the time zone to use for the metric.</p>
      */
-    inline const AnomalyDetectorConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AnomalyDetectorConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AnomalyDetectorConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AnomalyDetectorConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline AnomalyDetector& WithConfiguration(const AnomalyDetectorConfiguration& value) { SetConfiguration(value); return *this;}
-    inline AnomalyDetector& WithConfiguration(AnomalyDetectorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AnomalyDetectorConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AnomalyDetectorConfiguration>
+    AnomalyDetector& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the anomaly detector's training.</p>
      */
-    inline const AnomalyDetectorStateValue& GetStateValue() const{ return m_stateValue; }
+    inline AnomalyDetectorStateValue GetStateValue() const { return m_stateValue; }
     inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
-    inline void SetStateValue(const AnomalyDetectorStateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
-    inline void SetStateValue(AnomalyDetectorStateValue&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
-    inline AnomalyDetector& WithStateValue(const AnomalyDetectorStateValue& value) { SetStateValue(value); return *this;}
-    inline AnomalyDetector& WithStateValue(AnomalyDetectorStateValue&& value) { SetStateValue(std::move(value)); return *this;}
+    inline void SetStateValue(AnomalyDetectorStateValue value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
+    inline AnomalyDetector& WithStateValue(AnomalyDetectorStateValue value) { SetStateValue(value); return *this;}
     ///@}
 
     ///@{
@@ -80,43 +78,43 @@ namespace Model
      * your metric to CloudWatch to help it build more accurate anomaly detection
      * models. Currently, it includes the <code>PeriodicSpikes</code> parameter.</p>
      */
-    inline const MetricCharacteristics& GetMetricCharacteristics() const{ return m_metricCharacteristics; }
+    inline const MetricCharacteristics& GetMetricCharacteristics() const { return m_metricCharacteristics; }
     inline bool MetricCharacteristicsHasBeenSet() const { return m_metricCharacteristicsHasBeenSet; }
-    inline void SetMetricCharacteristics(const MetricCharacteristics& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = value; }
-    inline void SetMetricCharacteristics(MetricCharacteristics&& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = std::move(value); }
-    inline AnomalyDetector& WithMetricCharacteristics(const MetricCharacteristics& value) { SetMetricCharacteristics(value); return *this;}
-    inline AnomalyDetector& WithMetricCharacteristics(MetricCharacteristics&& value) { SetMetricCharacteristics(std::move(value)); return *this;}
+    template<typename MetricCharacteristicsT = MetricCharacteristics>
+    void SetMetricCharacteristics(MetricCharacteristicsT&& value) { m_metricCharacteristicsHasBeenSet = true; m_metricCharacteristics = std::forward<MetricCharacteristicsT>(value); }
+    template<typename MetricCharacteristicsT = MetricCharacteristics>
+    AnomalyDetector& WithMetricCharacteristics(MetricCharacteristicsT&& value) { SetMetricCharacteristics(std::forward<MetricCharacteristicsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch metric and statistic for this anomaly detector.</p>
      */
-    inline const SingleMetricAnomalyDetector& GetSingleMetricAnomalyDetector() const{ return m_singleMetricAnomalyDetector; }
+    inline const SingleMetricAnomalyDetector& GetSingleMetricAnomalyDetector() const { return m_singleMetricAnomalyDetector; }
     inline bool SingleMetricAnomalyDetectorHasBeenSet() const { return m_singleMetricAnomalyDetectorHasBeenSet; }
-    inline void SetSingleMetricAnomalyDetector(const SingleMetricAnomalyDetector& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = value; }
-    inline void SetSingleMetricAnomalyDetector(SingleMetricAnomalyDetector&& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = std::move(value); }
-    inline AnomalyDetector& WithSingleMetricAnomalyDetector(const SingleMetricAnomalyDetector& value) { SetSingleMetricAnomalyDetector(value); return *this;}
-    inline AnomalyDetector& WithSingleMetricAnomalyDetector(SingleMetricAnomalyDetector&& value) { SetSingleMetricAnomalyDetector(std::move(value)); return *this;}
+    template<typename SingleMetricAnomalyDetectorT = SingleMetricAnomalyDetector>
+    void SetSingleMetricAnomalyDetector(SingleMetricAnomalyDetectorT&& value) { m_singleMetricAnomalyDetectorHasBeenSet = true; m_singleMetricAnomalyDetector = std::forward<SingleMetricAnomalyDetectorT>(value); }
+    template<typename SingleMetricAnomalyDetectorT = SingleMetricAnomalyDetector>
+    AnomalyDetector& WithSingleMetricAnomalyDetector(SingleMetricAnomalyDetectorT&& value) { SetSingleMetricAnomalyDetector(std::forward<SingleMetricAnomalyDetectorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch metric math expression for this anomaly detector.</p>
      */
-    inline const MetricMathAnomalyDetector& GetMetricMathAnomalyDetector() const{ return m_metricMathAnomalyDetector; }
+    inline const MetricMathAnomalyDetector& GetMetricMathAnomalyDetector() const { return m_metricMathAnomalyDetector; }
     inline bool MetricMathAnomalyDetectorHasBeenSet() const { return m_metricMathAnomalyDetectorHasBeenSet; }
-    inline void SetMetricMathAnomalyDetector(const MetricMathAnomalyDetector& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = value; }
-    inline void SetMetricMathAnomalyDetector(MetricMathAnomalyDetector&& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = std::move(value); }
-    inline AnomalyDetector& WithMetricMathAnomalyDetector(const MetricMathAnomalyDetector& value) { SetMetricMathAnomalyDetector(value); return *this;}
-    inline AnomalyDetector& WithMetricMathAnomalyDetector(MetricMathAnomalyDetector&& value) { SetMetricMathAnomalyDetector(std::move(value)); return *this;}
+    template<typename MetricMathAnomalyDetectorT = MetricMathAnomalyDetector>
+    void SetMetricMathAnomalyDetector(MetricMathAnomalyDetectorT&& value) { m_metricMathAnomalyDetectorHasBeenSet = true; m_metricMathAnomalyDetector = std::forward<MetricMathAnomalyDetectorT>(value); }
+    template<typename MetricMathAnomalyDetectorT = MetricMathAnomalyDetector>
+    AnomalyDetector& WithMetricMathAnomalyDetector(MetricMathAnomalyDetectorT&& value) { SetMetricMathAnomalyDetector(std::forward<MetricMathAnomalyDetectorT>(value)); return *this;}
     ///@}
   private:
 
     AnomalyDetectorConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    AnomalyDetectorStateValue m_stateValue;
+    AnomalyDetectorStateValue m_stateValue{AnomalyDetectorStateValue::NOT_SET};
     bool m_stateValueHasBeenSet = false;
 
     MetricCharacteristics m_metricCharacteristics;

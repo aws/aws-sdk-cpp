@@ -29,7 +29,7 @@ namespace Model
   class ListTagSyncTasksResult
   {
   public:
-    AWS_RESOURCEGROUPS_API ListTagSyncTasksResult();
+    AWS_RESOURCEGROUPS_API ListTagSyncTasksResult() = default;
     AWS_RESOURCEGROUPS_API ListTagSyncTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPS_API ListTagSyncTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of tag-sync tasks and information about each task. </p>
      */
-    inline const Aws::Vector<TagSyncTaskItem>& GetTagSyncTasks() const{ return m_tagSyncTasks; }
-    inline void SetTagSyncTasks(const Aws::Vector<TagSyncTaskItem>& value) { m_tagSyncTasks = value; }
-    inline void SetTagSyncTasks(Aws::Vector<TagSyncTaskItem>&& value) { m_tagSyncTasks = std::move(value); }
-    inline ListTagSyncTasksResult& WithTagSyncTasks(const Aws::Vector<TagSyncTaskItem>& value) { SetTagSyncTasks(value); return *this;}
-    inline ListTagSyncTasksResult& WithTagSyncTasks(Aws::Vector<TagSyncTaskItem>&& value) { SetTagSyncTasks(std::move(value)); return *this;}
-    inline ListTagSyncTasksResult& AddTagSyncTasks(const TagSyncTaskItem& value) { m_tagSyncTasks.push_back(value); return *this; }
-    inline ListTagSyncTasksResult& AddTagSyncTasks(TagSyncTaskItem&& value) { m_tagSyncTasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TagSyncTaskItem>& GetTagSyncTasks() const { return m_tagSyncTasks; }
+    template<typename TagSyncTasksT = Aws::Vector<TagSyncTaskItem>>
+    void SetTagSyncTasks(TagSyncTasksT&& value) { m_tagSyncTasksHasBeenSet = true; m_tagSyncTasks = std::forward<TagSyncTasksT>(value); }
+    template<typename TagSyncTasksT = Aws::Vector<TagSyncTaskItem>>
+    ListTagSyncTasksResult& WithTagSyncTasks(TagSyncTasksT&& value) { SetTagSyncTasks(std::forward<TagSyncTasksT>(value)); return *this;}
+    template<typename TagSyncTasksT = TagSyncTaskItem>
+    ListTagSyncTasksResult& AddTagSyncTasks(TagSyncTasksT&& value) { m_tagSyncTasksHasBeenSet = true; m_tagSyncTasks.emplace_back(std::forward<TagSyncTasksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTagSyncTasksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTagSyncTasksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTagSyncTasksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTagSyncTasksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTagSyncTasksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTagSyncTasksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTagSyncTasksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTagSyncTasksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TagSyncTaskItem> m_tagSyncTasks;
+    bool m_tagSyncTasksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

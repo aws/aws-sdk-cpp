@@ -34,33 +34,29 @@ namespace Model
   class UpgradeElasticsearchDomainResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API UpgradeElasticsearchDomainResult();
+    AWS_ELASTICSEARCHSERVICE_API UpgradeElasticsearchDomainResult() = default;
     AWS_ELASTICSEARCHSERVICE_API UpgradeElasticsearchDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API UpgradeElasticsearchDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
-    inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainName.assign(value); }
-    inline UpgradeElasticsearchDomainResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpgradeElasticsearchDomainResult& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
      */
-    inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
-    inline void SetTargetVersion(const Aws::String& value) { m_targetVersion = value; }
-    inline void SetTargetVersion(Aws::String&& value) { m_targetVersion = std::move(value); }
-    inline void SetTargetVersion(const char* value) { m_targetVersion.assign(value); }
-    inline UpgradeElasticsearchDomainResult& WithTargetVersion(const Aws::String& value) { SetTargetVersion(value); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithTargetVersion(Aws::String&& value) { SetTargetVersion(std::move(value)); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithTargetVersion(const char* value) { SetTargetVersion(value); return *this;}
+    inline const Aws::String& GetTargetVersion() const { return m_targetVersion; }
+    template<typename TargetVersionT = Aws::String>
+    void SetTargetVersion(TargetVersionT&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::forward<TargetVersionT>(value); }
+    template<typename TargetVersionT = Aws::String>
+    UpgradeElasticsearchDomainResult& WithTargetVersion(TargetVersionT&& value) { SetTargetVersion(std::forward<TargetVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,41 +64,44 @@ namespace Model
      * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
      * needs to be performed. This will not actually perform the Upgrade. </p>
      */
-    inline bool GetPerformCheckOnly() const{ return m_performCheckOnly; }
-    inline void SetPerformCheckOnly(bool value) { m_performCheckOnly = value; }
+    inline bool GetPerformCheckOnly() const { return m_performCheckOnly; }
+    inline void SetPerformCheckOnly(bool value) { m_performCheckOnlyHasBeenSet = true; m_performCheckOnly = value; }
     inline UpgradeElasticsearchDomainResult& WithPerformCheckOnly(bool value) { SetPerformCheckOnly(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ChangeProgressDetails& GetChangeProgressDetails() const{ return m_changeProgressDetails; }
-    inline void SetChangeProgressDetails(const ChangeProgressDetails& value) { m_changeProgressDetails = value; }
-    inline void SetChangeProgressDetails(ChangeProgressDetails&& value) { m_changeProgressDetails = std::move(value); }
-    inline UpgradeElasticsearchDomainResult& WithChangeProgressDetails(const ChangeProgressDetails& value) { SetChangeProgressDetails(value); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithChangeProgressDetails(ChangeProgressDetails&& value) { SetChangeProgressDetails(std::move(value)); return *this;}
+    inline const ChangeProgressDetails& GetChangeProgressDetails() const { return m_changeProgressDetails; }
+    template<typename ChangeProgressDetailsT = ChangeProgressDetails>
+    void SetChangeProgressDetails(ChangeProgressDetailsT&& value) { m_changeProgressDetailsHasBeenSet = true; m_changeProgressDetails = std::forward<ChangeProgressDetailsT>(value); }
+    template<typename ChangeProgressDetailsT = ChangeProgressDetails>
+    UpgradeElasticsearchDomainResult& WithChangeProgressDetails(ChangeProgressDetailsT&& value) { SetChangeProgressDetails(std::forward<ChangeProgressDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpgradeElasticsearchDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpgradeElasticsearchDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpgradeElasticsearchDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_targetVersion;
+    bool m_targetVersionHasBeenSet = false;
 
-    bool m_performCheckOnly;
+    bool m_performCheckOnly{false};
+    bool m_performCheckOnlyHasBeenSet = false;
 
     ChangeProgressDetails m_changeProgressDetails;
+    bool m_changeProgressDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

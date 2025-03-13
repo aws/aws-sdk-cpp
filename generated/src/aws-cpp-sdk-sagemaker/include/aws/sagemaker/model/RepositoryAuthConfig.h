@@ -37,7 +37,7 @@ namespace Model
   class RepositoryAuthConfig
   {
   public:
-    AWS_SAGEMAKER_API RepositoryAuthConfig();
+    AWS_SAGEMAKER_API RepositoryAuthConfig() = default;
     AWS_SAGEMAKER_API RepositoryAuthConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RepositoryAuthConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * a Lambda function with the console</a> in the <i>Amazon Web Services Lambda
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetRepositoryCredentialsProviderArn() const{ return m_repositoryCredentialsProviderArn; }
+    inline const Aws::String& GetRepositoryCredentialsProviderArn() const { return m_repositoryCredentialsProviderArn; }
     inline bool RepositoryCredentialsProviderArnHasBeenSet() const { return m_repositoryCredentialsProviderArnHasBeenSet; }
-    inline void SetRepositoryCredentialsProviderArn(const Aws::String& value) { m_repositoryCredentialsProviderArnHasBeenSet = true; m_repositoryCredentialsProviderArn = value; }
-    inline void SetRepositoryCredentialsProviderArn(Aws::String&& value) { m_repositoryCredentialsProviderArnHasBeenSet = true; m_repositoryCredentialsProviderArn = std::move(value); }
-    inline void SetRepositoryCredentialsProviderArn(const char* value) { m_repositoryCredentialsProviderArnHasBeenSet = true; m_repositoryCredentialsProviderArn.assign(value); }
-    inline RepositoryAuthConfig& WithRepositoryCredentialsProviderArn(const Aws::String& value) { SetRepositoryCredentialsProviderArn(value); return *this;}
-    inline RepositoryAuthConfig& WithRepositoryCredentialsProviderArn(Aws::String&& value) { SetRepositoryCredentialsProviderArn(std::move(value)); return *this;}
-    inline RepositoryAuthConfig& WithRepositoryCredentialsProviderArn(const char* value) { SetRepositoryCredentialsProviderArn(value); return *this;}
+    template<typename RepositoryCredentialsProviderArnT = Aws::String>
+    void SetRepositoryCredentialsProviderArn(RepositoryCredentialsProviderArnT&& value) { m_repositoryCredentialsProviderArnHasBeenSet = true; m_repositoryCredentialsProviderArn = std::forward<RepositoryCredentialsProviderArnT>(value); }
+    template<typename RepositoryCredentialsProviderArnT = Aws::String>
+    RepositoryAuthConfig& WithRepositoryCredentialsProviderArn(RepositoryCredentialsProviderArnT&& value) { SetRepositoryCredentialsProviderArn(std::forward<RepositoryCredentialsProviderArnT>(value)); return *this;}
     ///@}
   private:
 

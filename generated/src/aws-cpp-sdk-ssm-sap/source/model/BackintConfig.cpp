@@ -18,16 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-BackintConfig::BackintConfig() : 
-    m_backintMode(BackintMode::NOT_SET),
-    m_backintModeHasBeenSet(false),
-    m_ensureNoBackupInProcess(false),
-    m_ensureNoBackupInProcessHasBeenSet(false)
-{
-}
-
 BackintConfig::BackintConfig(JsonView jsonValue)
-  : BackintConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BackintConfig& BackintConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackintMode"))
   {
     m_backintMode = BackintModeMapper::GetBackintModeForName(jsonValue.GetString("BackintMode"));
-
     m_backintModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnsureNoBackupInProcess"))
   {
     m_ensureNoBackupInProcess = jsonValue.GetBool("EnsureNoBackupInProcess");
-
     m_ensureNoBackupInProcessHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ResourceCreationLimitPolicy::ResourceCreationLimitPolicy() : 
-    m_newGameSessionsPerCreator(0),
-    m_newGameSessionsPerCreatorHasBeenSet(false),
-    m_policyPeriodInMinutes(0),
-    m_policyPeriodInMinutesHasBeenSet(false)
-{
-}
-
 ResourceCreationLimitPolicy::ResourceCreationLimitPolicy(JsonView jsonValue)
-  : ResourceCreationLimitPolicy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResourceCreationLimitPolicy& ResourceCreationLimitPolicy::operator =(JsonView js
   if(jsonValue.ValueExists("NewGameSessionsPerCreator"))
   {
     m_newGameSessionsPerCreator = jsonValue.GetInteger("NewGameSessionsPerCreator");
-
     m_newGameSessionsPerCreatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyPeriodInMinutes"))
   {
     m_policyPeriodInMinutes = jsonValue.GetInteger("PolicyPeriodInMinutes");
-
     m_policyPeriodInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

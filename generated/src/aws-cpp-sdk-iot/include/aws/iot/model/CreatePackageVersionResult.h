@@ -29,7 +29,7 @@ namespace Model
   class CreatePackageVersionResult
   {
   public:
-    AWS_IOT_API CreatePackageVersionResult();
+    AWS_IOT_API CreatePackageVersionResult() = default;
     AWS_IOT_API CreatePackageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API CreatePackageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,52 +38,44 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the package.</p>
      */
-    inline const Aws::String& GetPackageVersionArn() const{ return m_packageVersionArn; }
-    inline void SetPackageVersionArn(const Aws::String& value) { m_packageVersionArn = value; }
-    inline void SetPackageVersionArn(Aws::String&& value) { m_packageVersionArn = std::move(value); }
-    inline void SetPackageVersionArn(const char* value) { m_packageVersionArn.assign(value); }
-    inline CreatePackageVersionResult& WithPackageVersionArn(const Aws::String& value) { SetPackageVersionArn(value); return *this;}
-    inline CreatePackageVersionResult& WithPackageVersionArn(Aws::String&& value) { SetPackageVersionArn(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& WithPackageVersionArn(const char* value) { SetPackageVersionArn(value); return *this;}
+    inline const Aws::String& GetPackageVersionArn() const { return m_packageVersionArn; }
+    template<typename PackageVersionArnT = Aws::String>
+    void SetPackageVersionArn(PackageVersionArnT&& value) { m_packageVersionArnHasBeenSet = true; m_packageVersionArn = std::forward<PackageVersionArnT>(value); }
+    template<typename PackageVersionArnT = Aws::String>
+    CreatePackageVersionResult& WithPackageVersionArn(PackageVersionArnT&& value) { SetPackageVersionArn(std::forward<PackageVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the associated software package.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
-    inline void SetPackageName(const Aws::String& value) { m_packageName = value; }
-    inline void SetPackageName(Aws::String&& value) { m_packageName = std::move(value); }
-    inline void SetPackageName(const char* value) { m_packageName.assign(value); }
-    inline CreatePackageVersionResult& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-    inline CreatePackageVersionResult& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    inline const Aws::String& GetPackageName() const { return m_packageName; }
+    template<typename PackageNameT = Aws::String>
+    void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
+    template<typename PackageNameT = Aws::String>
+    CreatePackageVersionResult& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the new package version.</p>
      */
-    inline const Aws::String& GetVersionName() const{ return m_versionName; }
-    inline void SetVersionName(const Aws::String& value) { m_versionName = value; }
-    inline void SetVersionName(Aws::String&& value) { m_versionName = std::move(value); }
-    inline void SetVersionName(const char* value) { m_versionName.assign(value); }
-    inline CreatePackageVersionResult& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-    inline CreatePackageVersionResult& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    inline const Aws::String& GetVersionName() const { return m_versionName; }
+    template<typename VersionNameT = Aws::String>
+    void SetVersionName(VersionNameT&& value) { m_versionNameHasBeenSet = true; m_versionName = std::forward<VersionNameT>(value); }
+    template<typename VersionNameT = Aws::String>
+    CreatePackageVersionResult& WithVersionName(VersionNameT&& value) { SetVersionName(std::forward<VersionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The package version description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreatePackageVersionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreatePackageVersionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreatePackageVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,18 +83,15 @@ namespace Model
      * <p>Metadata that were added to the package version that can be used to define a
      * package version’s configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
-    inline CreatePackageVersionResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline CreatePackageVersionResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
-    inline CreatePackageVersionResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreatePackageVersionResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreatePackageVersionResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePackageVersionResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
-    inline CreatePackageVersionResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
-    inline CreatePackageVersionResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    CreatePackageVersionResult& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    CreatePackageVersionResult& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -111,53 +100,55 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
      * version lifecycle</a>.</p>
      */
-    inline const PackageVersionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const PackageVersionStatus& value) { m_status = value; }
-    inline void SetStatus(PackageVersionStatus&& value) { m_status = std::move(value); }
-    inline CreatePackageVersionResult& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
-    inline CreatePackageVersionResult& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline PackageVersionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(PackageVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreatePackageVersionResult& WithStatus(PackageVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Error reason for a package version failure during creation or update.</p>
      */
-    inline const Aws::String& GetErrorReason() const{ return m_errorReason; }
-    inline void SetErrorReason(const Aws::String& value) { m_errorReason = value; }
-    inline void SetErrorReason(Aws::String&& value) { m_errorReason = std::move(value); }
-    inline void SetErrorReason(const char* value) { m_errorReason.assign(value); }
-    inline CreatePackageVersionResult& WithErrorReason(const Aws::String& value) { SetErrorReason(value); return *this;}
-    inline CreatePackageVersionResult& WithErrorReason(Aws::String&& value) { SetErrorReason(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& WithErrorReason(const char* value) { SetErrorReason(value); return *this;}
+    inline const Aws::String& GetErrorReason() const { return m_errorReason; }
+    template<typename ErrorReasonT = Aws::String>
+    void SetErrorReason(ErrorReasonT&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::forward<ErrorReasonT>(value); }
+    template<typename ErrorReasonT = Aws::String>
+    CreatePackageVersionResult& WithErrorReason(ErrorReasonT&& value) { SetErrorReason(std::forward<ErrorReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePackageVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePackageVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePackageVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePackageVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_packageVersionArn;
+    bool m_packageVersionArnHasBeenSet = false;
 
     Aws::String m_packageName;
+    bool m_packageNameHasBeenSet = false;
 
     Aws::String m_versionName;
+    bool m_versionNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
+    bool m_attributesHasBeenSet = false;
 
-    PackageVersionStatus m_status;
+    PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_errorReason;
+    bool m_errorReasonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

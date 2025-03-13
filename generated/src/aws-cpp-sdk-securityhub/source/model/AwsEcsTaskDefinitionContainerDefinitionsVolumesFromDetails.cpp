@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails() : 
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false),
-    m_sourceContainerHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails& AwsEcsTaskDefinition
   if(jsonValue.ValueExists("ReadOnly"))
   {
     m_readOnly = jsonValue.GetBool("ReadOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceContainer"))
   {
     m_sourceContainer = jsonValue.GetString("SourceContainer");
-
     m_sourceContainerHasBeenSet = true;
   }
-
   return *this;
 }
 

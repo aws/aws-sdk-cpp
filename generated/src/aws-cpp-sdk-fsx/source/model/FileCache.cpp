@@ -18,31 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileCache::FileCache() : 
-    m_ownerIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fileCacheIdHasBeenSet(false),
-    m_fileCacheType(FileCacheType::NOT_SET),
-    m_fileCacheTypeHasBeenSet(false),
-    m_fileCacheTypeVersionHasBeenSet(false),
-    m_lifecycle(FileCacheLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_networkInterfaceIdsHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_lustreConfigurationHasBeenSet(false),
-    m_dataRepositoryAssociationIdsHasBeenSet(false)
-{
-}
-
 FileCache::FileCache(JsonView jsonValue)
-  : FileCache()
 {
   *this = jsonValue;
 }
@@ -52,66 +28,48 @@ FileCache& FileCache::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileCacheId"))
   {
     m_fileCacheId = jsonValue.GetString("FileCacheId");
-
     m_fileCacheIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileCacheType"))
   {
     m_fileCacheType = FileCacheTypeMapper::GetFileCacheTypeForName(jsonValue.GetString("FileCacheType"));
-
     m_fileCacheTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileCacheTypeVersion"))
   {
     m_fileCacheTypeVersion = jsonValue.GetString("FileCacheTypeVersion");
-
     m_fileCacheTypeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = FileCacheLifecycleMapper::GetFileCacheLifecycleForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDetails"))
   {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
-
     m_failureDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageCapacity"))
   {
     m_storageCapacity = jsonValue.GetInteger("StorageCapacity");
-
     m_storageCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -121,7 +79,6 @@ FileCache& FileCache::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceIds"))
   {
     Aws::Utils::Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("NetworkInterfaceIds");
@@ -131,35 +88,26 @@ FileCache& FileCache::operator =(JsonView jsonValue)
     }
     m_networkInterfaceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DNSName"))
   {
     m_dNSName = jsonValue.GetString("DNSName");
-
     m_dNSNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LustreConfiguration"))
   {
     m_lustreConfiguration = jsonValue.GetObject("LustreConfiguration");
-
     m_lustreConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRepositoryAssociationIds"))
   {
     Aws::Utils::Array<JsonView> dataRepositoryAssociationIdsJsonList = jsonValue.GetArray("DataRepositoryAssociationIds");
@@ -169,7 +117,6 @@ FileCache& FileCache::operator =(JsonView jsonValue)
     }
     m_dataRepositoryAssociationIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

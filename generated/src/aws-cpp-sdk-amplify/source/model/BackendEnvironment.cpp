@@ -18,18 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-BackendEnvironment::BackendEnvironment() : 
-    m_backendEnvironmentArnHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_deploymentArtifactsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 BackendEnvironment::BackendEnvironment(JsonView jsonValue)
-  : BackendEnvironment()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ BackendEnvironment& BackendEnvironment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("backendEnvironmentArn"))
   {
     m_backendEnvironmentArn = jsonValue.GetString("backendEnvironmentArn");
-
     m_backendEnvironmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentName"))
   {
     m_environmentName = jsonValue.GetString("environmentName");
-
     m_environmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stackName"))
   {
     m_stackName = jsonValue.GetString("stackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentArtifacts"))
   {
     m_deploymentArtifacts = jsonValue.GetString("deploymentArtifacts");
-
     m_deploymentArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

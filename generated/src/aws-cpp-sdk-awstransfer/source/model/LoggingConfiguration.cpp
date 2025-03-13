@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-LoggingConfiguration::LoggingConfiguration() : 
-    m_loggingRoleHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LoggingRole"))
   {
     m_loggingRole = jsonValue.GetString("LoggingRole");
-
     m_loggingRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

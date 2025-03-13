@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetCommandExecutionRequest::GetCommandExecutionRequest() : 
-    m_executionIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_includeResult(false),
-    m_includeResultHasBeenSet(false)
-{
-}
-
 Aws::String GetCommandExecutionRequest::SerializePayload() const
 {
   return {};

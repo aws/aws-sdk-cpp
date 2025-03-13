@@ -30,7 +30,7 @@ namespace Model
   class StartEdgeConfigurationUpdateResult
   {
   public:
-    AWS_KINESISVIDEO_API StartEdgeConfigurationUpdateResult();
+    AWS_KINESISVIDEO_API StartEdgeConfigurationUpdateResult() = default;
     AWS_KINESISVIDEO_API StartEdgeConfigurationUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEO_API StartEdgeConfigurationUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,48 +39,44 @@ namespace Model
     /**
      * <p>The name of the stream from which the edge configuration was updated.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
-    inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamName.assign(value); }
-    inline StartEdgeConfigurationUpdateResult& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    StartEdgeConfigurationUpdateResult& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
-    inline StartEdgeConfigurationUpdateResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    StartEdgeConfigurationUpdateResult& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which a stream’s edge configuration was first created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline StartEdgeConfigurationUpdateResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    StartEdgeConfigurationUpdateResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which a stream’s edge configuration was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTime = std::move(value); }
-    inline StartEdgeConfigurationUpdateResult& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    StartEdgeConfigurationUpdateResult& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,24 +86,20 @@ namespace Model
      * <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge
      * configuration.</p>
      */
-    inline const SyncStatus& GetSyncStatus() const{ return m_syncStatus; }
-    inline void SetSyncStatus(const SyncStatus& value) { m_syncStatus = value; }
-    inline void SetSyncStatus(SyncStatus&& value) { m_syncStatus = std::move(value); }
-    inline StartEdgeConfigurationUpdateResult& WithSyncStatus(const SyncStatus& value) { SetSyncStatus(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithSyncStatus(SyncStatus&& value) { SetSyncStatus(std::move(value)); return *this;}
+    inline SyncStatus GetSyncStatus() const { return m_syncStatus; }
+    inline void SetSyncStatus(SyncStatus value) { m_syncStatusHasBeenSet = true; m_syncStatus = value; }
+    inline StartEdgeConfigurationUpdateResult& WithSyncStatus(SyncStatus value) { SetSyncStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the generated failure status.</p>
      */
-    inline const Aws::String& GetFailedStatusDetails() const{ return m_failedStatusDetails; }
-    inline void SetFailedStatusDetails(const Aws::String& value) { m_failedStatusDetails = value; }
-    inline void SetFailedStatusDetails(Aws::String&& value) { m_failedStatusDetails = std::move(value); }
-    inline void SetFailedStatusDetails(const char* value) { m_failedStatusDetails.assign(value); }
-    inline StartEdgeConfigurationUpdateResult& WithFailedStatusDetails(const Aws::String& value) { SetFailedStatusDetails(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithFailedStatusDetails(Aws::String&& value) { SetFailedStatusDetails(std::move(value)); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithFailedStatusDetails(const char* value) { SetFailedStatusDetails(value); return *this;}
+    inline const Aws::String& GetFailedStatusDetails() const { return m_failedStatusDetails; }
+    template<typename FailedStatusDetailsT = Aws::String>
+    void SetFailedStatusDetails(FailedStatusDetailsT&& value) { m_failedStatusDetailsHasBeenSet = true; m_failedStatusDetails = std::forward<FailedStatusDetailsT>(value); }
+    template<typename FailedStatusDetailsT = Aws::String>
+    StartEdgeConfigurationUpdateResult& WithFailedStatusDetails(FailedStatusDetailsT&& value) { SetFailedStatusDetails(std::forward<FailedStatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,40 +108,46 @@ namespace Model
      * with the Edge Agent IoT Greengrass component. The Edge Agent component will run
      * on an IoT Hub Device setup at your premise.</p>
      */
-    inline const EdgeConfig& GetEdgeConfig() const{ return m_edgeConfig; }
-    inline void SetEdgeConfig(const EdgeConfig& value) { m_edgeConfig = value; }
-    inline void SetEdgeConfig(EdgeConfig&& value) { m_edgeConfig = std::move(value); }
-    inline StartEdgeConfigurationUpdateResult& WithEdgeConfig(const EdgeConfig& value) { SetEdgeConfig(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithEdgeConfig(EdgeConfig&& value) { SetEdgeConfig(std::move(value)); return *this;}
+    inline const EdgeConfig& GetEdgeConfig() const { return m_edgeConfig; }
+    template<typename EdgeConfigT = EdgeConfig>
+    void SetEdgeConfig(EdgeConfigT&& value) { m_edgeConfigHasBeenSet = true; m_edgeConfig = std::forward<EdgeConfigT>(value); }
+    template<typename EdgeConfigT = EdgeConfig>
+    StartEdgeConfigurationUpdateResult& WithEdgeConfig(EdgeConfigT&& value) { SetEdgeConfig(std::forward<EdgeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartEdgeConfigurationUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartEdgeConfigurationUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartEdgeConfigurationUpdateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamName;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_streamARN;
+    bool m_streamARNHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
-    SyncStatus m_syncStatus;
+    SyncStatus m_syncStatus{SyncStatus::NOT_SET};
+    bool m_syncStatusHasBeenSet = false;
 
     Aws::String m_failedStatusDetails;
+    bool m_failedStatusDetailsHasBeenSet = false;
 
     EdgeConfig m_edgeConfig;
+    bool m_edgeConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

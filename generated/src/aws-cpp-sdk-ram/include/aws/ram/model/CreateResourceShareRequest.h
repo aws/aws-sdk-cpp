@@ -23,7 +23,7 @@ namespace Model
   class CreateResourceShareRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API CreateResourceShareRequest();
+    AWS_RAM_API CreateResourceShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Specifies the name of the resource share.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateResourceShareRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateResourceShareRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateResourceShareRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,15 +51,14 @@ namespace Model
      * <p>Specifies a list of one or more ARNs of the resources to associate with the
      * resource share.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
-    inline CreateResourceShareRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline CreateResourceShareRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
-    inline CreateResourceShareRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
-    inline CreateResourceShareRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    CreateResourceShareRequest& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    CreateResourceShareRequest& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,15 +81,14 @@ namespace Model
      * with IAM roles and users</a> in the <i>Resource Access Manager User
      * Guide</i>.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
+    inline const Aws::Vector<Aws::String>& GetPrincipals() const { return m_principals; }
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
-    inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
-    inline CreateResourceShareRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
-    inline CreateResourceShareRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
-    inline CreateResourceShareRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
-    inline CreateResourceShareRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<Aws::String>>
+    CreateResourceShareRequest& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = Aws::String>
+    CreateResourceShareRequest& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,14 +96,14 @@ namespace Model
      * <p>Specifies one or more tags to attach to the resource share itself. It doesn't
      * attach the tags to the resources associated with the resource share.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateResourceShareRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateResourceShareRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateResourceShareRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateResourceShareRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateResourceShareRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,7 +115,7 @@ namespace Model
      * a member of an Amazon Web Services Organization. The default value is
      * <code>true</code>.</p>
      */
-    inline bool GetAllowExternalPrincipals() const{ return m_allowExternalPrincipals; }
+    inline bool GetAllowExternalPrincipals() const { return m_allowExternalPrincipals; }
     inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
     inline CreateResourceShareRequest& WithAllowExternalPrincipals(bool value) { SetAllowExternalPrincipals(value); return *this;}
@@ -138,14 +134,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateResourceShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateResourceShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateResourceShareRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,15 +152,14 @@ namespace Model
      * associate only one permission with each resource type included in the resource
      * share.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPermissionArns() const{ return m_permissionArns; }
+    inline const Aws::Vector<Aws::String>& GetPermissionArns() const { return m_permissionArns; }
     inline bool PermissionArnsHasBeenSet() const { return m_permissionArnsHasBeenSet; }
-    inline void SetPermissionArns(const Aws::Vector<Aws::String>& value) { m_permissionArnsHasBeenSet = true; m_permissionArns = value; }
-    inline void SetPermissionArns(Aws::Vector<Aws::String>&& value) { m_permissionArnsHasBeenSet = true; m_permissionArns = std::move(value); }
-    inline CreateResourceShareRequest& WithPermissionArns(const Aws::Vector<Aws::String>& value) { SetPermissionArns(value); return *this;}
-    inline CreateResourceShareRequest& WithPermissionArns(Aws::Vector<Aws::String>&& value) { SetPermissionArns(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& AddPermissionArns(const Aws::String& value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(value); return *this; }
-    inline CreateResourceShareRequest& AddPermissionArns(Aws::String&& value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(std::move(value)); return *this; }
-    inline CreateResourceShareRequest& AddPermissionArns(const char* value) { m_permissionArnsHasBeenSet = true; m_permissionArns.push_back(value); return *this; }
+    template<typename PermissionArnsT = Aws::Vector<Aws::String>>
+    void SetPermissionArns(PermissionArnsT&& value) { m_permissionArnsHasBeenSet = true; m_permissionArns = std::forward<PermissionArnsT>(value); }
+    template<typename PermissionArnsT = Aws::Vector<Aws::String>>
+    CreateResourceShareRequest& WithPermissionArns(PermissionArnsT&& value) { SetPermissionArns(std::forward<PermissionArnsT>(value)); return *this;}
+    template<typename PermissionArnsT = Aws::String>
+    CreateResourceShareRequest& AddPermissionArns(PermissionArnsT&& value) { m_permissionArnsHasBeenSet = true; m_permissionArns.emplace_back(std::forward<PermissionArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -174,15 +167,14 @@ namespace Model
      * <p>Specifies from which source accounts the service principal has access to the
      * resources in this resource share.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<Aws::String>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<Aws::String>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<Aws::String>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline CreateResourceShareRequest& WithSources(const Aws::Vector<Aws::String>& value) { SetSources(value); return *this;}
-    inline CreateResourceShareRequest& WithSources(Aws::Vector<Aws::String>&& value) { SetSources(std::move(value)); return *this;}
-    inline CreateResourceShareRequest& AddSources(const Aws::String& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline CreateResourceShareRequest& AddSources(Aws::String&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
-    inline CreateResourceShareRequest& AddSources(const char* value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+    template<typename SourcesT = Aws::Vector<Aws::String>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<Aws::String>>
+    CreateResourceShareRequest& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = Aws::String>
+    CreateResourceShareRequest& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 
@@ -198,7 +190,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_allowExternalPrincipals;
+    bool m_allowExternalPrincipals{false};
     bool m_allowExternalPrincipalsHasBeenSet = false;
 
     Aws::String m_clientToken;

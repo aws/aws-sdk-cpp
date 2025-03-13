@@ -29,7 +29,7 @@ namespace Model
   class DocumentMetadata
   {
   public:
-    AWS_TEXTRACT_API DocumentMetadata();
+    AWS_TEXTRACT_API DocumentMetadata() = default;
     AWS_TEXTRACT_API DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The number of pages that are detected in the document.</p>
      */
-    inline int GetPages() const{ return m_pages; }
+    inline int GetPages() const { return m_pages; }
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
     inline void SetPages(int value) { m_pagesHasBeenSet = true; m_pages = value; }
     inline DocumentMetadata& WithPages(int value) { SetPages(value); return *this;}
     ///@}
   private:
 
-    int m_pages;
+    int m_pages{0};
     bool m_pagesHasBeenSet = false;
   };
 

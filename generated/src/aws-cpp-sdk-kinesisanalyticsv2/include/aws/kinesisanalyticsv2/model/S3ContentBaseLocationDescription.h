@@ -32,7 +32,7 @@ namespace Model
   class S3ContentBaseLocationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationDescription();
+    AWS_KINESISANALYTICSV2_API S3ContentBaseLocationDescription() = default;
     AWS_KINESISANALYTICSV2_API S3ContentBaseLocationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API S3ContentBaseLocationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
+    inline const Aws::String& GetBucketARN() const { return m_bucketARN; }
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
-    inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
-    inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
-    inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
-    inline S3ContentBaseLocationDescription& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
-    inline S3ContentBaseLocationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
-    inline S3ContentBaseLocationDescription& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
+    template<typename BucketARNT = Aws::String>
+    void SetBucketARN(BucketARNT&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::forward<BucketARNT>(value); }
+    template<typename BucketARNT = Aws::String>
+    S3ContentBaseLocationDescription& WithBucketARN(BucketARNT&& value) { SetBucketARN(std::forward<BucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The base path for the S3 bucket.</p>
      */
-    inline const Aws::String& GetBasePath() const{ return m_basePath; }
+    inline const Aws::String& GetBasePath() const { return m_basePath; }
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
-    inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
-    inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
-    inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
-    inline S3ContentBaseLocationDescription& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
-    inline S3ContentBaseLocationDescription& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
-    inline S3ContentBaseLocationDescription& WithBasePath(const char* value) { SetBasePath(value); return *this;}
+    template<typename BasePathT = Aws::String>
+    void SetBasePath(BasePathT&& value) { m_basePathHasBeenSet = true; m_basePath = std::forward<BasePathT>(value); }
+    template<typename BasePathT = Aws::String>
+    S3ContentBaseLocationDescription& WithBasePath(BasePathT&& value) { SetBasePath(std::forward<BasePathT>(value)); return *this;}
     ///@}
   private:
 

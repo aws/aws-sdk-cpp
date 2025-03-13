@@ -12,12 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRunsRequest::ListRunsRequest() : 
-    m_arnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRunsRequest::SerializePayload() const
 {
   JsonValue payload;

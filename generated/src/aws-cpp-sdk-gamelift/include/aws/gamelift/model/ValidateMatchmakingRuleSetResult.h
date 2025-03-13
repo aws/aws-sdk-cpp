@@ -27,7 +27,7 @@ namespace Model
   class ValidateMatchmakingRuleSetResult
   {
   public:
-    AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult();
+    AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult() = default;
     AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API ValidateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,26 @@ namespace Model
     /**
      * <p>A response indicating whether the rule set is valid.</p>
      */
-    inline bool GetValid() const{ return m_valid; }
-    inline void SetValid(bool value) { m_valid = value; }
+    inline bool GetValid() const { return m_valid; }
+    inline void SetValid(bool value) { m_validHasBeenSet = true; m_valid = value; }
     inline ValidateMatchmakingRuleSetResult& WithValid(bool value) { SetValid(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ValidateMatchmakingRuleSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ValidateMatchmakingRuleSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ValidateMatchmakingRuleSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ValidateMatchmakingRuleSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_valid;
+    bool m_valid{false};
+    bool m_validHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

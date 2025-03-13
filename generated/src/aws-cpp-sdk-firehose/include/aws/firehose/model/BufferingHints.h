@@ -34,7 +34,7 @@ namespace Model
   class BufferingHints
   {
   public:
-    AWS_FIREHOSE_API BufferingHints();
+    AWS_FIREHOSE_API BufferingHints() = default;
     AWS_FIREHOSE_API BufferingHints(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API BufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * the Firehose stream in 10 seconds. For example, if you typically ingest data at
      * 1 MiB/sec, the value should be 10 MiB or higher.</p>
      */
-    inline int GetSizeInMBs() const{ return m_sizeInMBs; }
+    inline int GetSizeInMBs() const { return m_sizeInMBs; }
     inline bool SizeInMBsHasBeenSet() const { return m_sizeInMBsHasBeenSet; }
     inline void SetSizeInMBs(int value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
     inline BufferingHints& WithSizeInMBs(int value) { SetSizeInMBs(value); return *this;}
@@ -63,17 +63,17 @@ namespace Model
      * optional but if you specify a value for it, you must also specify a value for
      * <code>SizeInMBs</code>, and vice versa.</p>
      */
-    inline int GetIntervalInSeconds() const{ return m_intervalInSeconds; }
+    inline int GetIntervalInSeconds() const { return m_intervalInSeconds; }
     inline bool IntervalInSecondsHasBeenSet() const { return m_intervalInSecondsHasBeenSet; }
     inline void SetIntervalInSeconds(int value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
     inline BufferingHints& WithIntervalInSeconds(int value) { SetIntervalInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInMBs;
+    int m_sizeInMBs{0};
     bool m_sizeInMBsHasBeenSet = false;
 
-    int m_intervalInSeconds;
+    int m_intervalInSeconds{0};
     bool m_intervalInSecondsHasBeenSet = false;
   };
 

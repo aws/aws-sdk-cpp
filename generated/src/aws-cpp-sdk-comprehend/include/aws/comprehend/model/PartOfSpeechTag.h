@@ -36,7 +36,7 @@ namespace Model
   class PartOfSpeechTag
   {
   public:
-    AWS_COMPREHEND_API PartOfSpeechTag();
+    AWS_COMPREHEND_API PartOfSpeechTag() = default;
     AWS_COMPREHEND_API PartOfSpeechTag(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API PartOfSpeechTag& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
     /**
      * <p>Identifies the part of speech that the token represents.</p>
      */
-    inline const PartOfSpeechTagType& GetTag() const{ return m_tag; }
+    inline PartOfSpeechTagType GetTag() const { return m_tag; }
     inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
-    inline void SetTag(const PartOfSpeechTagType& value) { m_tagHasBeenSet = true; m_tag = value; }
-    inline void SetTag(PartOfSpeechTagType&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
-    inline PartOfSpeechTag& WithTag(const PartOfSpeechTagType& value) { SetTag(value); return *this;}
-    inline PartOfSpeechTag& WithTag(PartOfSpeechTagType&& value) { SetTag(std::move(value)); return *this;}
+    inline void SetTag(PartOfSpeechTagType value) { m_tagHasBeenSet = true; m_tag = value; }
+    inline PartOfSpeechTag& WithTag(PartOfSpeechTagType value) { SetTag(value); return *this;}
     ///@}
 
     ///@{
@@ -59,17 +57,17 @@ namespace Model
      * <p>The confidence that Amazon Comprehend has that the part of speech was
      * correctly identified.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline PartOfSpeechTag& WithScore(double value) { SetScore(value); return *this;}
     ///@}
   private:
 
-    PartOfSpeechTagType m_tag;
+    PartOfSpeechTagType m_tag{PartOfSpeechTagType::NOT_SET};
     bool m_tagHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

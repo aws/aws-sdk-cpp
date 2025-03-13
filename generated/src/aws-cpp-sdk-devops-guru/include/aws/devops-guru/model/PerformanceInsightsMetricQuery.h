@@ -51,7 +51,7 @@ namespace Model
   class PerformanceInsightsMetricQuery
   {
   public:
-    AWS_DEVOPSGURU_API PerformanceInsightsMetricQuery();
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricQuery() = default;
     AWS_DEVOPSGURU_API PerformanceInsightsMetricQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API PerformanceInsightsMetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -73,14 +73,12 @@ namespace Model
      * values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
      * For most use cases, you can query <code>db.load.avg</code> only. </p>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline PerformanceInsightsMetricQuery& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline PerformanceInsightsMetricQuery& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline PerformanceInsightsMetricQuery& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    PerformanceInsightsMetricQuery& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * names of specific dimensions within that group. You can also request that
      * Performance Insights return a limited number of values for a dimension.</p>
      */
-    inline const PerformanceInsightsMetricDimensionGroup& GetGroupBy() const{ return m_groupBy; }
+    inline const PerformanceInsightsMetricDimensionGroup& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const PerformanceInsightsMetricDimensionGroup& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(PerformanceInsightsMetricDimensionGroup&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline PerformanceInsightsMetricQuery& WithGroupBy(const PerformanceInsightsMetricDimensionGroup& value) { SetGroupBy(value); return *this;}
-    inline PerformanceInsightsMetricQuery& WithGroupBy(PerformanceInsightsMetricDimensionGroup&& value) { SetGroupBy(std::move(value)); return *this;}
+    template<typename GroupByT = PerformanceInsightsMetricDimensionGroup>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = PerformanceInsightsMetricDimensionGroup>
+    PerformanceInsightsMetricQuery& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,19 +105,16 @@ namespace Model
      * <code>GroupBy</code> parameter.</p> </li> <li> <p>A single filter for any other
      * dimension in this dimension group.</p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const{ return m_filter; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Map<Aws::String, Aws::String>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Map<Aws::String, Aws::String>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline PerformanceInsightsMetricQuery& WithFilter(const Aws::Map<Aws::String, Aws::String>& value) { SetFilter(value); return *this;}
-    inline PerformanceInsightsMetricQuery& WithFilter(Aws::Map<Aws::String, Aws::String>&& value) { SetFilter(std::move(value)); return *this;}
-    inline PerformanceInsightsMetricQuery& AddFilter(const Aws::String& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
-    inline PerformanceInsightsMetricQuery& AddFilter(Aws::String&& key, const Aws::String& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline PerformanceInsightsMetricQuery& AddFilter(const Aws::String& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline PerformanceInsightsMetricQuery& AddFilter(Aws::String&& key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
-    inline PerformanceInsightsMetricQuery& AddFilter(const char* key, Aws::String&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
-    inline PerformanceInsightsMetricQuery& AddFilter(Aws::String&& key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
-    inline PerformanceInsightsMetricQuery& AddFilter(const char* key, const char* value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
+    template<typename FilterT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Map<Aws::String, Aws::String>>
+    PerformanceInsightsMetricQuery& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    template<typename FilterKeyT = Aws::String, typename FilterValueT = Aws::String>
+    PerformanceInsightsMetricQuery& AddFilter(FilterKeyT&& key, FilterValueT&& value) {
+      m_filterHasBeenSet = true; m_filter.emplace(std::forward<FilterKeyT>(key), std::forward<FilterValueT>(value)); return *this;
+    }
     ///@}
   private:
 

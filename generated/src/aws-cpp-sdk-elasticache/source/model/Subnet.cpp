@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetOutpostHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(const XmlNode& xmlNode)
-  : Subnet()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_subnetIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdentifierNode.GetText());
       m_subnetIdentifierHasBeenSet = true;
+       m_subnetIdentifierHasBeenSet = true;
     }
     XmlNode subnetAvailabilityZoneNode = resultNode.FirstChild("SubnetAvailabilityZone");
     if(!subnetAvailabilityZoneNode.IsNull())
     {
       m_subnetAvailabilityZone = subnetAvailabilityZoneNode;
       m_subnetAvailabilityZoneHasBeenSet = true;
+       m_subnetAvailabilityZoneHasBeenSet = true;
     }
     XmlNode subnetOutpostNode = resultNode.FirstChild("SubnetOutpost");
     if(!subnetOutpostNode.IsNull())
     {
       m_subnetOutpost = subnetOutpostNode;
       m_subnetOutpostHasBeenSet = true;
+       m_subnetOutpostHasBeenSet = true;
     }
     XmlNode supportedNetworkTypesNode = resultNode.FirstChild("SupportedNetworkTypes");
     if(!supportedNetworkTypesNode.IsNull())
     {
       XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
       while(!supportedNetworkTypesMember.IsNull())
       {
         m_supportedNetworkTypes.push_back(NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(supportedNetworkTypesMember.GetText().c_str())));
         supportedNetworkTypesMember = supportedNetworkTypesMember.NextNode("member");
       }
 
-      m_supportedNetworkTypesHasBeenSet = true;
+       m_supportedNetworkTypesHasBeenSet = true;
     }
   }
 

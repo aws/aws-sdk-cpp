@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PublicWorkforceTaskPrice::PublicWorkforceTaskPrice() : 
-    m_amountInUsdHasBeenSet(false)
-{
-}
-
 PublicWorkforceTaskPrice::PublicWorkforceTaskPrice(JsonView jsonValue)
-  : PublicWorkforceTaskPrice()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PublicWorkforceTaskPrice& PublicWorkforceTaskPrice::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AmountInUsd"))
   {
     m_amountInUsd = jsonValue.GetObject("AmountInUsd");
-
     m_amountInUsdHasBeenSet = true;
   }
-
   return *this;
 }
 

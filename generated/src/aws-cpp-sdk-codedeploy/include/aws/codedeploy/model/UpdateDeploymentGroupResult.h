@@ -35,7 +35,7 @@ namespace Model
   class UpdateDeploymentGroupResult
   {
   public:
-    AWS_CODEDEPLOY_API UpdateDeploymentGroupResult();
+    AWS_CODEDEPLOY_API UpdateDeploymentGroupResult() = default;
     AWS_CODEDEPLOY_API UpdateDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API UpdateDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,30 +48,30 @@ namespace Model
      * account. If the output contains data, CodeDeploy could not remove some Auto
      * Scaling lifecycle event hooks from the Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<AutoScalingGroup>& GetHooksNotCleanedUp() const{ return m_hooksNotCleanedUp; }
-    inline void SetHooksNotCleanedUp(const Aws::Vector<AutoScalingGroup>& value) { m_hooksNotCleanedUp = value; }
-    inline void SetHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { m_hooksNotCleanedUp = std::move(value); }
-    inline UpdateDeploymentGroupResult& WithHooksNotCleanedUp(const Aws::Vector<AutoScalingGroup>& value) { SetHooksNotCleanedUp(value); return *this;}
-    inline UpdateDeploymentGroupResult& WithHooksNotCleanedUp(Aws::Vector<AutoScalingGroup>&& value) { SetHooksNotCleanedUp(std::move(value)); return *this;}
-    inline UpdateDeploymentGroupResult& AddHooksNotCleanedUp(const AutoScalingGroup& value) { m_hooksNotCleanedUp.push_back(value); return *this; }
-    inline UpdateDeploymentGroupResult& AddHooksNotCleanedUp(AutoScalingGroup&& value) { m_hooksNotCleanedUp.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AutoScalingGroup>& GetHooksNotCleanedUp() const { return m_hooksNotCleanedUp; }
+    template<typename HooksNotCleanedUpT = Aws::Vector<AutoScalingGroup>>
+    void SetHooksNotCleanedUp(HooksNotCleanedUpT&& value) { m_hooksNotCleanedUpHasBeenSet = true; m_hooksNotCleanedUp = std::forward<HooksNotCleanedUpT>(value); }
+    template<typename HooksNotCleanedUpT = Aws::Vector<AutoScalingGroup>>
+    UpdateDeploymentGroupResult& WithHooksNotCleanedUp(HooksNotCleanedUpT&& value) { SetHooksNotCleanedUp(std::forward<HooksNotCleanedUpT>(value)); return *this;}
+    template<typename HooksNotCleanedUpT = AutoScalingGroup>
+    UpdateDeploymentGroupResult& AddHooksNotCleanedUp(HooksNotCleanedUpT&& value) { m_hooksNotCleanedUpHasBeenSet = true; m_hooksNotCleanedUp.emplace_back(std::forward<HooksNotCleanedUpT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDeploymentGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDeploymentGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDeploymentGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDeploymentGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AutoScalingGroup> m_hooksNotCleanedUp;
+    bool m_hooksNotCleanedUpHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,16 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NotifyResourceDeploymentStatusChangeRequest::NotifyResourceDeploymentStatusChangeRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_status(ResourceDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 Aws::String NotifyResourceDeploymentStatusChangeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ReplicationConfiguration::ReplicationConfiguration() : 
-    m_replicationStatusSummaryListHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false),
-    m_globalSignInEndpointHasBeenSet(false)
-{
-}
-
 ReplicationConfiguration::ReplicationConfiguration(JsonView jsonValue)
-  : ReplicationConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(JsonView jsonValu
     }
     m_replicationStatusSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceRegion"))
   {
     m_sourceRegion = jsonValue.GetString("SourceRegion");
-
     m_sourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalSignInEndpoint"))
   {
     m_globalSignInEndpoint = jsonValue.GetString("GlobalSignInEndpoint");
-
     m_globalSignInEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

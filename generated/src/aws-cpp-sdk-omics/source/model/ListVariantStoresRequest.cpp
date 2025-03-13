@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVariantStoresRequest::ListVariantStoresRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_idsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListVariantStoresRequest::SerializePayload() const
 {
   JsonValue payload;

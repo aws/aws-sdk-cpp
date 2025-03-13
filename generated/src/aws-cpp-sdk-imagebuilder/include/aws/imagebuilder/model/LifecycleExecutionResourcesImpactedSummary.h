@@ -30,7 +30,7 @@ namespace Model
   class LifecycleExecutionResourcesImpactedSummary
   {
   public:
-    AWS_IMAGEBUILDER_API LifecycleExecutionResourcesImpactedSummary();
+    AWS_IMAGEBUILDER_API LifecycleExecutionResourcesImpactedSummary() = default;
     AWS_IMAGEBUILDER_API LifecycleExecutionResourcesImpactedSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API LifecycleExecutionResourcesImpactedSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Indicates whether an image resource that was identified for a lifecycle
      * action has associated resources that are also impacted.</p>
      */
-    inline bool GetHasImpactedResources() const{ return m_hasImpactedResources; }
+    inline bool GetHasImpactedResources() const { return m_hasImpactedResources; }
     inline bool HasImpactedResourcesHasBeenSet() const { return m_hasImpactedResourcesHasBeenSet; }
     inline void SetHasImpactedResources(bool value) { m_hasImpactedResourcesHasBeenSet = true; m_hasImpactedResources = value; }
     inline LifecycleExecutionResourcesImpactedSummary& WithHasImpactedResources(bool value) { SetHasImpactedResources(value); return *this;}
     ///@}
   private:
 
-    bool m_hasImpactedResources;
+    bool m_hasImpactedResources{false};
     bool m_hasImpactedResourcesHasBeenSet = false;
   };
 

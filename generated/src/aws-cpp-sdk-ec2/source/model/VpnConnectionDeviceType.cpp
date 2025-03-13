@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpnConnectionDeviceType::VpnConnectionDeviceType() : 
-    m_vpnConnectionDeviceTypeIdHasBeenSet(false),
-    m_vendorHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_softwareHasBeenSet(false)
-{
-}
-
 VpnConnectionDeviceType::VpnConnectionDeviceType(const XmlNode& xmlNode)
-  : VpnConnectionDeviceType()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ VpnConnectionDeviceType& VpnConnectionDeviceType::operator =(const XmlNode& xmlN
     {
       m_vpnConnectionDeviceTypeId = Aws::Utils::Xml::DecodeEscapedXmlText(vpnConnectionDeviceTypeIdNode.GetText());
       m_vpnConnectionDeviceTypeIdHasBeenSet = true;
+       m_vpnConnectionDeviceTypeIdHasBeenSet = true;
     }
     XmlNode vendorNode = resultNode.FirstChild("vendor");
     if(!vendorNode.IsNull())
     {
       m_vendor = Aws::Utils::Xml::DecodeEscapedXmlText(vendorNode.GetText());
       m_vendorHasBeenSet = true;
+       m_vendorHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
       m_platform = Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText());
       m_platformHasBeenSet = true;
+       m_platformHasBeenSet = true;
     }
     XmlNode softwareNode = resultNode.FirstChild("software");
     if(!softwareNode.IsNull())
     {
       m_software = Aws::Utils::Xml::DecodeEscapedXmlText(softwareNode.GetText());
       m_softwareHasBeenSet = true;
+       m_softwareHasBeenSet = true;
     }
   }
 

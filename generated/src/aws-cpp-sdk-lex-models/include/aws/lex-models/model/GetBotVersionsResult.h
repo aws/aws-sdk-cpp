@@ -29,7 +29,7 @@ namespace Model
   class GetBotVersionsResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBotVersionsResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBotVersionsResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetBotVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetBotVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>BotMetadata</code> objects, one for each numbered version
      * of the bot plus one for the <code>$LATEST</code> version.</p>
      */
-    inline const Aws::Vector<BotMetadata>& GetBots() const{ return m_bots; }
-    inline void SetBots(const Aws::Vector<BotMetadata>& value) { m_bots = value; }
-    inline void SetBots(Aws::Vector<BotMetadata>&& value) { m_bots = std::move(value); }
-    inline GetBotVersionsResult& WithBots(const Aws::Vector<BotMetadata>& value) { SetBots(value); return *this;}
-    inline GetBotVersionsResult& WithBots(Aws::Vector<BotMetadata>&& value) { SetBots(std::move(value)); return *this;}
-    inline GetBotVersionsResult& AddBots(const BotMetadata& value) { m_bots.push_back(value); return *this; }
-    inline GetBotVersionsResult& AddBots(BotMetadata&& value) { m_bots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BotMetadata>& GetBots() const { return m_bots; }
+    template<typename BotsT = Aws::Vector<BotMetadata>>
+    void SetBots(BotsT&& value) { m_botsHasBeenSet = true; m_bots = std::forward<BotsT>(value); }
+    template<typename BotsT = Aws::Vector<BotMetadata>>
+    GetBotVersionsResult& WithBots(BotsT&& value) { SetBots(std::forward<BotsT>(value)); return *this;}
+    template<typename BotsT = BotMetadata>
+    GetBotVersionsResult& AddBots(BotsT&& value) { m_botsHasBeenSet = true; m_bots.emplace_back(std::forward<BotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * response. To fetch the next page of versions, specify the pagination token in
      * the next request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetBotVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetBotVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetBotVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetBotVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBotVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBotVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBotVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBotVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BotMetadata> m_bots;
+    bool m_botsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

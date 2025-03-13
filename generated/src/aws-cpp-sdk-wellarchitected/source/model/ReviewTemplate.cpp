@@ -18,24 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ReviewTemplate::ReviewTemplate() : 
-    m_descriptionHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_questionCountsHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateStatus(ReviewTemplateUpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_shareInvitationIdHasBeenSet(false)
-{
-}
-
 ReviewTemplate::ReviewTemplate(JsonView jsonValue)
-  : ReviewTemplate()
 {
   *this = jsonValue;
 }
@@ -45,10 +28,8 @@ ReviewTemplate& ReviewTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lenses"))
   {
     Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
@@ -58,14 +39,11 @@ ReviewTemplate& ReviewTemplate::operator =(JsonView jsonValue)
     }
     m_lensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionCounts"))
   {
     Aws::Map<Aws::String, JsonView> questionCountsJsonMap = jsonValue.GetObject("QuestionCounts").GetAllObjects();
@@ -75,35 +53,26 @@ ReviewTemplate& ReviewTemplate::operator =(JsonView jsonValue)
     }
     m_questionCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -113,21 +82,16 @@ ReviewTemplate& ReviewTemplate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = ReviewTemplateUpdateStatusMapper::GetReviewTemplateUpdateStatusForName(jsonValue.GetString("UpdateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareInvitationId"))
   {
     m_shareInvitationId = jsonValue.GetString("ShareInvitationId");
-
     m_shareInvitationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

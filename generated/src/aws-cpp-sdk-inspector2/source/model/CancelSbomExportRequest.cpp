@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelSbomExportRequest::CancelSbomExportRequest() : 
-    m_reportIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelSbomExportRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BlueprintRun::BlueprintRun() : 
-    m_blueprintNameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_workflowNameHasBeenSet(false),
-    m_state(BlueprintRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_rollbackErrorMessageHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 BlueprintRun::BlueprintRun(JsonView jsonValue)
-  : BlueprintRun()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ BlueprintRun& BlueprintRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlueprintName"))
   {
     m_blueprintName = jsonValue.GetString("BlueprintName");
-
     m_blueprintNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowName"))
   {
     m_workflowName = jsonValue.GetString("WorkflowName");
-
     m_workflowNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = BlueprintRunStateMapper::GetBlueprintRunStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollbackErrorMessage"))
   {
     m_rollbackErrorMessage = jsonValue.GetString("RollbackErrorMessage");
-
     m_rollbackErrorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     m_parameters = jsonValue.GetString("Parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

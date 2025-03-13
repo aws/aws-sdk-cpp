@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListVpcEndpointsRequest::ListVpcEndpointsRequest() : 
-    m_vpcEndpointFiltersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListVpcEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

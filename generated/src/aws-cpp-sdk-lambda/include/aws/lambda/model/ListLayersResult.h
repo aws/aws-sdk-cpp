@@ -29,7 +29,7 @@ namespace Model
   class ListLayersResult
   {
   public:
-    AWS_LAMBDA_API ListLayersResult();
+    AWS_LAMBDA_API ListLayersResult() = default;
     AWS_LAMBDA_API ListLayersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API ListLayersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A pagination token returned when the response doesn't contain all layers.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListLayersResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListLayersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListLayersResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListLayersResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of function layers.</p>
      */
-    inline const Aws::Vector<LayersListItem>& GetLayers() const{ return m_layers; }
-    inline void SetLayers(const Aws::Vector<LayersListItem>& value) { m_layers = value; }
-    inline void SetLayers(Aws::Vector<LayersListItem>&& value) { m_layers = std::move(value); }
-    inline ListLayersResult& WithLayers(const Aws::Vector<LayersListItem>& value) { SetLayers(value); return *this;}
-    inline ListLayersResult& WithLayers(Aws::Vector<LayersListItem>&& value) { SetLayers(std::move(value)); return *this;}
-    inline ListLayersResult& AddLayers(const LayersListItem& value) { m_layers.push_back(value); return *this; }
-    inline ListLayersResult& AddLayers(LayersListItem&& value) { m_layers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LayersListItem>& GetLayers() const { return m_layers; }
+    template<typename LayersT = Aws::Vector<LayersListItem>>
+    void SetLayers(LayersT&& value) { m_layersHasBeenSet = true; m_layers = std::forward<LayersT>(value); }
+    template<typename LayersT = Aws::Vector<LayersListItem>>
+    ListLayersResult& WithLayers(LayersT&& value) { SetLayers(std::forward<LayersT>(value)); return *this;}
+    template<typename LayersT = LayersListItem>
+    ListLayersResult& AddLayers(LayersT&& value) { m_layersHasBeenSet = true; m_layers.emplace_back(std::forward<LayersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLayersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLayersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLayersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLayersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<LayersListItem> m_layers;
+    bool m_layersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetV2LoggingOptionsRequest::GetV2LoggingOptionsRequest()
-{
-}
-
 Aws::String GetV2LoggingOptionsRequest::SerializePayload() const
 {
   return {};

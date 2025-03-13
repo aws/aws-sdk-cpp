@@ -34,7 +34,7 @@ namespace Model
   class VerificationMessageTemplateType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType();
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The template for SMS messages that Amazon Cognito sends to your users.</p>
      */
-    inline const Aws::String& GetSmsMessage() const{ return m_smsMessage; }
+    inline const Aws::String& GetSmsMessage() const { return m_smsMessage; }
     inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
-    inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
-    inline void SetSmsMessage(Aws::String&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::move(value); }
-    inline void SetSmsMessage(const char* value) { m_smsMessageHasBeenSet = true; m_smsMessage.assign(value); }
-    inline VerificationMessageTemplateType& WithSmsMessage(const Aws::String& value) { SetSmsMessage(value); return *this;}
-    inline VerificationMessageTemplateType& WithSmsMessage(Aws::String&& value) { SetSmsMessage(std::move(value)); return *this;}
-    inline VerificationMessageTemplateType& WithSmsMessage(const char* value) { SetSmsMessage(value); return *this;}
+    template<typename SmsMessageT = Aws::String>
+    void SetSmsMessage(SmsMessageT&& value) { m_smsMessageHasBeenSet = true; m_smsMessage = std::forward<SmsMessageT>(value); }
+    template<typename SmsMessageT = Aws::String>
+    VerificationMessageTemplateType& WithSmsMessage(SmsMessageT&& value) { SetSmsMessage(std::forward<SmsMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * is <code>DEVELOPER</code>, your user pool sends email messages with your own
      * Amazon SES configuration.</p>
      */
-    inline const Aws::String& GetEmailMessage() const{ return m_emailMessage; }
+    inline const Aws::String& GetEmailMessage() const { return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
-    inline void SetEmailMessage(const Aws::String& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
-    inline void SetEmailMessage(Aws::String&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
-    inline void SetEmailMessage(const char* value) { m_emailMessageHasBeenSet = true; m_emailMessage.assign(value); }
-    inline VerificationMessageTemplateType& WithEmailMessage(const Aws::String& value) { SetEmailMessage(value); return *this;}
-    inline VerificationMessageTemplateType& WithEmailMessage(Aws::String&& value) { SetEmailMessage(std::move(value)); return *this;}
-    inline VerificationMessageTemplateType& WithEmailMessage(const char* value) { SetEmailMessage(value); return *this;}
+    template<typename EmailMessageT = Aws::String>
+    void SetEmailMessage(EmailMessageT&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::forward<EmailMessageT>(value); }
+    template<typename EmailMessageT = Aws::String>
+    VerificationMessageTemplateType& WithEmailMessage(EmailMessageT&& value) { SetEmailMessage(std::forward<EmailMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * is <code>DEVELOPER</code>, your user pool sends email messages with your own
      * Amazon SES configuration.</p>
      */
-    inline const Aws::String& GetEmailSubject() const{ return m_emailSubject; }
+    inline const Aws::String& GetEmailSubject() const { return m_emailSubject; }
     inline bool EmailSubjectHasBeenSet() const { return m_emailSubjectHasBeenSet; }
-    inline void SetEmailSubject(const Aws::String& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = value; }
-    inline void SetEmailSubject(Aws::String&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::move(value); }
-    inline void SetEmailSubject(const char* value) { m_emailSubjectHasBeenSet = true; m_emailSubject.assign(value); }
-    inline VerificationMessageTemplateType& WithEmailSubject(const Aws::String& value) { SetEmailSubject(value); return *this;}
-    inline VerificationMessageTemplateType& WithEmailSubject(Aws::String&& value) { SetEmailSubject(std::move(value)); return *this;}
-    inline VerificationMessageTemplateType& WithEmailSubject(const char* value) { SetEmailSubject(value); return *this;}
+    template<typename EmailSubjectT = Aws::String>
+    void SetEmailSubject(EmailSubjectT&& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = std::forward<EmailSubjectT>(value); }
+    template<typename EmailSubjectT = Aws::String>
+    VerificationMessageTemplateType& WithEmailSubject(EmailSubjectT&& value) { SetEmailSubject(std::forward<EmailSubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * is <code>DEVELOPER</code>, your user pool sends email messages with your own
      * Amazon SES configuration.</p>
      */
-    inline const Aws::String& GetEmailMessageByLink() const{ return m_emailMessageByLink; }
+    inline const Aws::String& GetEmailMessageByLink() const { return m_emailMessageByLink; }
     inline bool EmailMessageByLinkHasBeenSet() const { return m_emailMessageByLinkHasBeenSet; }
-    inline void SetEmailMessageByLink(const Aws::String& value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink = value; }
-    inline void SetEmailMessageByLink(Aws::String&& value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink = std::move(value); }
-    inline void SetEmailMessageByLink(const char* value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink.assign(value); }
-    inline VerificationMessageTemplateType& WithEmailMessageByLink(const Aws::String& value) { SetEmailMessageByLink(value); return *this;}
-    inline VerificationMessageTemplateType& WithEmailMessageByLink(Aws::String&& value) { SetEmailMessageByLink(std::move(value)); return *this;}
-    inline VerificationMessageTemplateType& WithEmailMessageByLink(const char* value) { SetEmailMessageByLink(value); return *this;}
+    template<typename EmailMessageByLinkT = Aws::String>
+    void SetEmailMessageByLink(EmailMessageByLinkT&& value) { m_emailMessageByLinkHasBeenSet = true; m_emailMessageByLink = std::forward<EmailMessageByLinkT>(value); }
+    template<typename EmailMessageByLinkT = Aws::String>
+    VerificationMessageTemplateType& WithEmailMessageByLink(EmailMessageByLinkT&& value) { SetEmailMessageByLink(std::forward<EmailMessageByLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +117,12 @@ namespace Model
      * is <code>DEVELOPER</code>, your user pool sends email messages with your own
      * Amazon SES configuration.</p>
      */
-    inline const Aws::String& GetEmailSubjectByLink() const{ return m_emailSubjectByLink; }
+    inline const Aws::String& GetEmailSubjectByLink() const { return m_emailSubjectByLink; }
     inline bool EmailSubjectByLinkHasBeenSet() const { return m_emailSubjectByLinkHasBeenSet; }
-    inline void SetEmailSubjectByLink(const Aws::String& value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink = value; }
-    inline void SetEmailSubjectByLink(Aws::String&& value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink = std::move(value); }
-    inline void SetEmailSubjectByLink(const char* value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink.assign(value); }
-    inline VerificationMessageTemplateType& WithEmailSubjectByLink(const Aws::String& value) { SetEmailSubjectByLink(value); return *this;}
-    inline VerificationMessageTemplateType& WithEmailSubjectByLink(Aws::String&& value) { SetEmailSubjectByLink(std::move(value)); return *this;}
-    inline VerificationMessageTemplateType& WithEmailSubjectByLink(const char* value) { SetEmailSubjectByLink(value); return *this;}
+    template<typename EmailSubjectByLinkT = Aws::String>
+    void SetEmailSubjectByLink(EmailSubjectByLinkT&& value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink = std::forward<EmailSubjectByLinkT>(value); }
+    template<typename EmailSubjectByLinkT = Aws::String>
+    VerificationMessageTemplateType& WithEmailSubjectByLink(EmailSubjectByLinkT&& value) { SetEmailSubjectByLink(std::forward<EmailSubjectByLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +133,10 @@ namespace Model
      * customizable string. For code, your template body must contain a code
      * placeholder in the format <code>{####}</code>.</p>
      */
-    inline const DefaultEmailOptionType& GetDefaultEmailOption() const{ return m_defaultEmailOption; }
+    inline DefaultEmailOptionType GetDefaultEmailOption() const { return m_defaultEmailOption; }
     inline bool DefaultEmailOptionHasBeenSet() const { return m_defaultEmailOptionHasBeenSet; }
-    inline void SetDefaultEmailOption(const DefaultEmailOptionType& value) { m_defaultEmailOptionHasBeenSet = true; m_defaultEmailOption = value; }
-    inline void SetDefaultEmailOption(DefaultEmailOptionType&& value) { m_defaultEmailOptionHasBeenSet = true; m_defaultEmailOption = std::move(value); }
-    inline VerificationMessageTemplateType& WithDefaultEmailOption(const DefaultEmailOptionType& value) { SetDefaultEmailOption(value); return *this;}
-    inline VerificationMessageTemplateType& WithDefaultEmailOption(DefaultEmailOptionType&& value) { SetDefaultEmailOption(std::move(value)); return *this;}
+    inline void SetDefaultEmailOption(DefaultEmailOptionType value) { m_defaultEmailOptionHasBeenSet = true; m_defaultEmailOption = value; }
+    inline VerificationMessageTemplateType& WithDefaultEmailOption(DefaultEmailOptionType value) { SetDefaultEmailOption(value); return *this;}
     ///@}
   private:
 
@@ -167,7 +155,7 @@ namespace Model
     Aws::String m_emailSubjectByLink;
     bool m_emailSubjectByLinkHasBeenSet = false;
 
-    DefaultEmailOptionType m_defaultEmailOption;
+    DefaultEmailOptionType m_defaultEmailOption{DefaultEmailOptionType::NOT_SET};
     bool m_defaultEmailOptionHasBeenSet = false;
   };
 

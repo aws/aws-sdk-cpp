@@ -12,12 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVpcIngressConnectionRequest::UpdateVpcIngressConnectionRequest() : 
-    m_vpcIngressConnectionArnHasBeenSet(false),
-    m_ingressVpcConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVpcIngressConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

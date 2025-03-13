@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ResumeClusterMessage::ResumeClusterMessage() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 ResumeClusterMessage::ResumeClusterMessage(const XmlNode& xmlNode)
-  : ResumeClusterMessage()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ResumeClusterMessage& ResumeClusterMessage::operator =(const XmlNode& xmlNode)
     {
       m_clusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(clusterIdentifierNode.GetText());
       m_clusterIdentifierHasBeenSet = true;
+       m_clusterIdentifierHasBeenSet = true;
     }
   }
 

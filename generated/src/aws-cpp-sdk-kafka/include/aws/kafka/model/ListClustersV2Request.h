@@ -25,7 +25,7 @@ namespace Model
   class ListClustersV2Request : public KafkaRequest
   {
   public:
-    AWS_KAFKA_API ListClustersV2Request();
+    AWS_KAFKA_API ListClustersV2Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * prefix.</p>
          
      */
-    inline const Aws::String& GetClusterNameFilter() const{ return m_clusterNameFilter; }
+    inline const Aws::String& GetClusterNameFilter() const { return m_clusterNameFilter; }
     inline bool ClusterNameFilterHasBeenSet() const { return m_clusterNameFilterHasBeenSet; }
-    inline void SetClusterNameFilter(const Aws::String& value) { m_clusterNameFilterHasBeenSet = true; m_clusterNameFilter = value; }
-    inline void SetClusterNameFilter(Aws::String&& value) { m_clusterNameFilterHasBeenSet = true; m_clusterNameFilter = std::move(value); }
-    inline void SetClusterNameFilter(const char* value) { m_clusterNameFilterHasBeenSet = true; m_clusterNameFilter.assign(value); }
-    inline ListClustersV2Request& WithClusterNameFilter(const Aws::String& value) { SetClusterNameFilter(value); return *this;}
-    inline ListClustersV2Request& WithClusterNameFilter(Aws::String&& value) { SetClusterNameFilter(std::move(value)); return *this;}
-    inline ListClustersV2Request& WithClusterNameFilter(const char* value) { SetClusterNameFilter(value); return *this;}
+    template<typename ClusterNameFilterT = Aws::String>
+    void SetClusterNameFilter(ClusterNameFilterT&& value) { m_clusterNameFilterHasBeenSet = true; m_clusterNameFilter = std::forward<ClusterNameFilterT>(value); }
+    template<typename ClusterNameFilterT = Aws::String>
+    ListClustersV2Request& WithClusterNameFilter(ClusterNameFilterT&& value) { SetClusterNameFilter(std::forward<ClusterNameFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
             <p>Specify either PROVISIONED or SERVERLESS.</p>
          
      */
-    inline const Aws::String& GetClusterTypeFilter() const{ return m_clusterTypeFilter; }
+    inline const Aws::String& GetClusterTypeFilter() const { return m_clusterTypeFilter; }
     inline bool ClusterTypeFilterHasBeenSet() const { return m_clusterTypeFilterHasBeenSet; }
-    inline void SetClusterTypeFilter(const Aws::String& value) { m_clusterTypeFilterHasBeenSet = true; m_clusterTypeFilter = value; }
-    inline void SetClusterTypeFilter(Aws::String&& value) { m_clusterTypeFilterHasBeenSet = true; m_clusterTypeFilter = std::move(value); }
-    inline void SetClusterTypeFilter(const char* value) { m_clusterTypeFilterHasBeenSet = true; m_clusterTypeFilter.assign(value); }
-    inline ListClustersV2Request& WithClusterTypeFilter(const Aws::String& value) { SetClusterTypeFilter(value); return *this;}
-    inline ListClustersV2Request& WithClusterTypeFilter(Aws::String&& value) { SetClusterTypeFilter(std::move(value)); return *this;}
-    inline ListClustersV2Request& WithClusterTypeFilter(const char* value) { SetClusterTypeFilter(value); return *this;}
+    template<typename ClusterTypeFilterT = Aws::String>
+    void SetClusterTypeFilter(ClusterTypeFilterT&& value) { m_clusterTypeFilterHasBeenSet = true; m_clusterTypeFilter = std::forward<ClusterTypeFilterT>(value); }
+    template<typename ClusterTypeFilterT = Aws::String>
+    ListClustersV2Request& WithClusterTypeFilter(ClusterTypeFilterT&& value) { SetClusterTypeFilter(std::forward<ClusterTypeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
        
      *  
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListClustersV2Request& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -95,14 +91,12 @@ namespace Model
      * the next batch, provide this token in your next request.</p>
          
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListClustersV2Request& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClustersV2Request& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClustersV2Request& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClustersV2Request& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,7 +106,7 @@ namespace Model
     Aws::String m_clusterTypeFilter;
     bool m_clusterTypeFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

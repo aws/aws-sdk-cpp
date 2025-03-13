@@ -10,12 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-FailoverGlobalClusterRequest::FailoverGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_targetDbClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String FailoverGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

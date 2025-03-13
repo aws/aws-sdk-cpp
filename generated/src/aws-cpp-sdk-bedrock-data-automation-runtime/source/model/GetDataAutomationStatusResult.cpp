@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataAutomationStatusResult::GetDataAutomationStatusResult() : 
-    m_status(AutomationJobStatus::NOT_SET)
-{
-}
-
 GetDataAutomationStatusResult::GetDataAutomationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataAutomationStatusResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetDataAutomationStatusResult& GetDataAutomationStatusResult::operator =(const A
   if(jsonValue.ValueExists("status"))
   {
     m_status = AutomationJobStatusMapper::GetAutomationJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorType"))
   {
     m_errorType = jsonValue.GetString("errorType");
-
+    m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputConfiguration"))
   {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
-
+    m_outputConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

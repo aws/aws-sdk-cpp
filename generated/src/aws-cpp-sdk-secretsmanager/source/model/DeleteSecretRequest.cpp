@@ -12,15 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSecretRequest::DeleteSecretRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_recoveryWindowInDays(0),
-    m_recoveryWindowInDaysHasBeenSet(false),
-    m_forceDeleteWithoutRecovery(false),
-    m_forceDeleteWithoutRecoveryHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSecretRequest::SerializePayload() const
 {
   JsonValue payload;

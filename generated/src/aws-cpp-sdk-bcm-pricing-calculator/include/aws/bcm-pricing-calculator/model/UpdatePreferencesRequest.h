@@ -22,7 +22,7 @@ namespace Model
   class UpdatePreferencesRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API UpdatePreferencesRequest();
+    AWS_BCMPRICINGCALCULATOR_API UpdatePreferencesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,26 @@ namespace Model
     /**
      * <p> The updated preferred rate types for the management account. </p>
      */
-    inline const Aws::Vector<RateType>& GetManagementAccountRateTypeSelections() const{ return m_managementAccountRateTypeSelections; }
+    inline const Aws::Vector<RateType>& GetManagementAccountRateTypeSelections() const { return m_managementAccountRateTypeSelections; }
     inline bool ManagementAccountRateTypeSelectionsHasBeenSet() const { return m_managementAccountRateTypeSelectionsHasBeenSet; }
-    inline void SetManagementAccountRateTypeSelections(const Aws::Vector<RateType>& value) { m_managementAccountRateTypeSelectionsHasBeenSet = true; m_managementAccountRateTypeSelections = value; }
-    inline void SetManagementAccountRateTypeSelections(Aws::Vector<RateType>&& value) { m_managementAccountRateTypeSelectionsHasBeenSet = true; m_managementAccountRateTypeSelections = std::move(value); }
-    inline UpdatePreferencesRequest& WithManagementAccountRateTypeSelections(const Aws::Vector<RateType>& value) { SetManagementAccountRateTypeSelections(value); return *this;}
-    inline UpdatePreferencesRequest& WithManagementAccountRateTypeSelections(Aws::Vector<RateType>&& value) { SetManagementAccountRateTypeSelections(std::move(value)); return *this;}
-    inline UpdatePreferencesRequest& AddManagementAccountRateTypeSelections(const RateType& value) { m_managementAccountRateTypeSelectionsHasBeenSet = true; m_managementAccountRateTypeSelections.push_back(value); return *this; }
-    inline UpdatePreferencesRequest& AddManagementAccountRateTypeSelections(RateType&& value) { m_managementAccountRateTypeSelectionsHasBeenSet = true; m_managementAccountRateTypeSelections.push_back(std::move(value)); return *this; }
+    template<typename ManagementAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    void SetManagementAccountRateTypeSelections(ManagementAccountRateTypeSelectionsT&& value) { m_managementAccountRateTypeSelectionsHasBeenSet = true; m_managementAccountRateTypeSelections = std::forward<ManagementAccountRateTypeSelectionsT>(value); }
+    template<typename ManagementAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    UpdatePreferencesRequest& WithManagementAccountRateTypeSelections(ManagementAccountRateTypeSelectionsT&& value) { SetManagementAccountRateTypeSelections(std::forward<ManagementAccountRateTypeSelectionsT>(value)); return *this;}
+    inline UpdatePreferencesRequest& AddManagementAccountRateTypeSelections(RateType value) { m_managementAccountRateTypeSelectionsHasBeenSet = true; m_managementAccountRateTypeSelections.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The updated preferred rate types for member accounts. </p>
      */
-    inline const Aws::Vector<RateType>& GetMemberAccountRateTypeSelections() const{ return m_memberAccountRateTypeSelections; }
+    inline const Aws::Vector<RateType>& GetMemberAccountRateTypeSelections() const { return m_memberAccountRateTypeSelections; }
     inline bool MemberAccountRateTypeSelectionsHasBeenSet() const { return m_memberAccountRateTypeSelectionsHasBeenSet; }
-    inline void SetMemberAccountRateTypeSelections(const Aws::Vector<RateType>& value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections = value; }
-    inline void SetMemberAccountRateTypeSelections(Aws::Vector<RateType>&& value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections = std::move(value); }
-    inline UpdatePreferencesRequest& WithMemberAccountRateTypeSelections(const Aws::Vector<RateType>& value) { SetMemberAccountRateTypeSelections(value); return *this;}
-    inline UpdatePreferencesRequest& WithMemberAccountRateTypeSelections(Aws::Vector<RateType>&& value) { SetMemberAccountRateTypeSelections(std::move(value)); return *this;}
-    inline UpdatePreferencesRequest& AddMemberAccountRateTypeSelections(const RateType& value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections.push_back(value); return *this; }
-    inline UpdatePreferencesRequest& AddMemberAccountRateTypeSelections(RateType&& value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections.push_back(std::move(value)); return *this; }
+    template<typename MemberAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    void SetMemberAccountRateTypeSelections(MemberAccountRateTypeSelectionsT&& value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections = std::forward<MemberAccountRateTypeSelectionsT>(value); }
+    template<typename MemberAccountRateTypeSelectionsT = Aws::Vector<RateType>>
+    UpdatePreferencesRequest& WithMemberAccountRateTypeSelections(MemberAccountRateTypeSelectionsT&& value) { SetMemberAccountRateTypeSelections(std::forward<MemberAccountRateTypeSelectionsT>(value)); return *this;}
+    inline UpdatePreferencesRequest& AddMemberAccountRateTypeSelections(RateType value) { m_memberAccountRateTypeSelectionsHasBeenSet = true; m_memberAccountRateTypeSelections.push_back(value); return *this; }
     ///@}
   private:
 

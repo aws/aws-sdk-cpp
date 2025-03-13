@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-IntegrationPartition::IntegrationPartition() : 
-    m_fieldNameHasBeenSet(false),
-    m_functionSpecHasBeenSet(false)
-{
-}
-
 IntegrationPartition::IntegrationPartition(JsonView jsonValue)
-  : IntegrationPartition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IntegrationPartition& IntegrationPartition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionSpec"))
   {
     m_functionSpec = jsonValue.GetString("FunctionSpec");
-
     m_functionSpecHasBeenSet = true;
   }
-
   return *this;
 }
 

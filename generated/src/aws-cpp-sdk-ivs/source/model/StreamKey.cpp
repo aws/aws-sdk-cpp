@@ -18,16 +18,7 @@ namespace IVS
 namespace Model
 {
 
-StreamKey::StreamKey() : 
-    m_arnHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 StreamKey::StreamKey(JsonView jsonValue)
-  : StreamKey()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StreamKey& StreamKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelArn"))
   {
     m_channelArn = jsonValue.GetString("channelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -57,14 +44,11 @@ StreamKey& StreamKey::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

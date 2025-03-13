@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioTrackSelection::AudioTrackSelection() : 
-    m_tracksHasBeenSet(false),
-    m_dolbyEDecodeHasBeenSet(false)
-{
-}
-
 AudioTrackSelection::AudioTrackSelection(JsonView jsonValue)
-  : AudioTrackSelection()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AudioTrackSelection& AudioTrackSelection::operator =(JsonView jsonValue)
     }
     m_tracksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dolbyEDecode"))
   {
     m_dolbyEDecode = jsonValue.GetObject("dolbyEDecode");
-
     m_dolbyEDecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_storageTypeHasBeenSet(false),
-    m_storageConfigurationHasBeenSet(false),
-    m_estimatedMonthlyStorageCostHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StorageType"))
   {
     m_storageType = jsonValue.GetString("StorageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> storageConfigurationJsonMap = jsonValue.GetObject("StorageConfiguration").GetAllObjects();
@@ -49,14 +39,11 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
     }
     m_storageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlyStorageCost"))
   {
     m_estimatedMonthlyStorageCost = jsonValue.GetString("EstimatedMonthlyStorageCost");
-
     m_estimatedMonthlyStorageCostHasBeenSet = true;
   }
-
   return *this;
 }
 

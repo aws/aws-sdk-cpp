@@ -33,7 +33,7 @@ namespace Model
   class ServerCertificateSummary
   {
   public:
-    AWS_IOT_API ServerCertificateSummary();
+    AWS_IOT_API ServerCertificateSummary() = default;
     AWS_IOT_API ServerCertificateSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ServerCertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,41 @@ namespace Model
     /**
      * <p>The ARN of the server certificate.</p>
      */
-    inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
+    inline const Aws::String& GetServerCertificateArn() const { return m_serverCertificateArn; }
     inline bool ServerCertificateArnHasBeenSet() const { return m_serverCertificateArnHasBeenSet; }
-    inline void SetServerCertificateArn(const Aws::String& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = value; }
-    inline void SetServerCertificateArn(Aws::String&& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = std::move(value); }
-    inline void SetServerCertificateArn(const char* value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn.assign(value); }
-    inline ServerCertificateSummary& WithServerCertificateArn(const Aws::String& value) { SetServerCertificateArn(value); return *this;}
-    inline ServerCertificateSummary& WithServerCertificateArn(Aws::String&& value) { SetServerCertificateArn(std::move(value)); return *this;}
-    inline ServerCertificateSummary& WithServerCertificateArn(const char* value) { SetServerCertificateArn(value); return *this;}
+    template<typename ServerCertificateArnT = Aws::String>
+    void SetServerCertificateArn(ServerCertificateArnT&& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = std::forward<ServerCertificateArnT>(value); }
+    template<typename ServerCertificateArnT = Aws::String>
+    ServerCertificateSummary& WithServerCertificateArn(ServerCertificateArnT&& value) { SetServerCertificateArn(std::forward<ServerCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the server certificate.</p>
      */
-    inline const ServerCertificateStatus& GetServerCertificateStatus() const{ return m_serverCertificateStatus; }
+    inline ServerCertificateStatus GetServerCertificateStatus() const { return m_serverCertificateStatus; }
     inline bool ServerCertificateStatusHasBeenSet() const { return m_serverCertificateStatusHasBeenSet; }
-    inline void SetServerCertificateStatus(const ServerCertificateStatus& value) { m_serverCertificateStatusHasBeenSet = true; m_serverCertificateStatus = value; }
-    inline void SetServerCertificateStatus(ServerCertificateStatus&& value) { m_serverCertificateStatusHasBeenSet = true; m_serverCertificateStatus = std::move(value); }
-    inline ServerCertificateSummary& WithServerCertificateStatus(const ServerCertificateStatus& value) { SetServerCertificateStatus(value); return *this;}
-    inline ServerCertificateSummary& WithServerCertificateStatus(ServerCertificateStatus&& value) { SetServerCertificateStatus(std::move(value)); return *this;}
+    inline void SetServerCertificateStatus(ServerCertificateStatus value) { m_serverCertificateStatusHasBeenSet = true; m_serverCertificateStatus = value; }
+    inline ServerCertificateSummary& WithServerCertificateStatus(ServerCertificateStatus value) { SetServerCertificateStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details that explain the status of the server certificate.</p>
      */
-    inline const Aws::String& GetServerCertificateStatusDetail() const{ return m_serverCertificateStatusDetail; }
+    inline const Aws::String& GetServerCertificateStatusDetail() const { return m_serverCertificateStatusDetail; }
     inline bool ServerCertificateStatusDetailHasBeenSet() const { return m_serverCertificateStatusDetailHasBeenSet; }
-    inline void SetServerCertificateStatusDetail(const Aws::String& value) { m_serverCertificateStatusDetailHasBeenSet = true; m_serverCertificateStatusDetail = value; }
-    inline void SetServerCertificateStatusDetail(Aws::String&& value) { m_serverCertificateStatusDetailHasBeenSet = true; m_serverCertificateStatusDetail = std::move(value); }
-    inline void SetServerCertificateStatusDetail(const char* value) { m_serverCertificateStatusDetailHasBeenSet = true; m_serverCertificateStatusDetail.assign(value); }
-    inline ServerCertificateSummary& WithServerCertificateStatusDetail(const Aws::String& value) { SetServerCertificateStatusDetail(value); return *this;}
-    inline ServerCertificateSummary& WithServerCertificateStatusDetail(Aws::String&& value) { SetServerCertificateStatusDetail(std::move(value)); return *this;}
-    inline ServerCertificateSummary& WithServerCertificateStatusDetail(const char* value) { SetServerCertificateStatusDetail(value); return *this;}
+    template<typename ServerCertificateStatusDetailT = Aws::String>
+    void SetServerCertificateStatusDetail(ServerCertificateStatusDetailT&& value) { m_serverCertificateStatusDetailHasBeenSet = true; m_serverCertificateStatusDetail = std::forward<ServerCertificateStatusDetailT>(value); }
+    template<typename ServerCertificateStatusDetailT = Aws::String>
+    ServerCertificateSummary& WithServerCertificateStatusDetail(ServerCertificateStatusDetailT&& value) { SetServerCertificateStatusDetail(std::forward<ServerCertificateStatusDetailT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverCertificateArn;
     bool m_serverCertificateArnHasBeenSet = false;
 
-    ServerCertificateStatus m_serverCertificateStatus;
+    ServerCertificateStatus m_serverCertificateStatus{ServerCertificateStatus::NOT_SET};
     bool m_serverCertificateStatusHasBeenSet = false;
 
     Aws::String m_serverCertificateStatusDetail;

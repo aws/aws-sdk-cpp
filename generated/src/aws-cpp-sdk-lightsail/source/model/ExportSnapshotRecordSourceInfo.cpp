@@ -18,21 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ExportSnapshotRecordSourceInfo::ExportSnapshotRecordSourceInfo() : 
-    m_resourceType(ExportSnapshotRecordSourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_fromResourceNameHasBeenSet(false),
-    m_fromResourceArnHasBeenSet(false),
-    m_instanceSnapshotInfoHasBeenSet(false),
-    m_diskSnapshotInfoHasBeenSet(false)
-{
-}
-
 ExportSnapshotRecordSourceInfo::ExportSnapshotRecordSourceInfo(JsonView jsonValue)
-  : ExportSnapshotRecordSourceInfo()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ExportSnapshotRecordSourceInfo& ExportSnapshotRecordSourceInfo::operator =(JsonV
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ExportSnapshotRecordSourceTypeMapper::GetExportSnapshotRecordSourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromResourceName"))
   {
     m_fromResourceName = jsonValue.GetString("fromResourceName");
-
     m_fromResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromResourceArn"))
   {
     m_fromResourceArn = jsonValue.GetString("fromResourceArn");
-
     m_fromResourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceSnapshotInfo"))
   {
     m_instanceSnapshotInfo = jsonValue.GetObject("instanceSnapshotInfo");
-
     m_instanceSnapshotInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diskSnapshotInfo"))
   {
     m_diskSnapshotInfo = jsonValue.GetObject("diskSnapshotInfo");
-
     m_diskSnapshotInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

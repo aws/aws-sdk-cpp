@@ -18,14 +18,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
 
-CreateAttendeeRequestItem::CreateAttendeeRequestItem() : 
-    m_externalUserIdHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue)
-  : CreateAttendeeRequestItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CreateAttendeeRequestItem& CreateAttendeeRequestItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ExternalUserId"))
   {
     m_externalUserId = jsonValue.GetString("ExternalUserId");
-
     m_externalUserIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capabilities"))
   {
     m_capabilities = jsonValue.GetObject("Capabilities");
-
     m_capabilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

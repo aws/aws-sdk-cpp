@@ -25,7 +25,7 @@ namespace Model
   class AssociateExternalConnectionRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API AssociateExternalConnectionRequest();
+    AWS_CODEARTIFACT_API AssociateExternalConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the domain that contains the repository.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline AssociateExternalConnectionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline AssociateExternalConnectionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline AssociateExternalConnectionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    AssociateExternalConnectionRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline AssociateExternalConnectionRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline AssociateExternalConnectionRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline AssociateExternalConnectionRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    AssociateExternalConnectionRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the repository to which the external connection is added. </p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline AssociateExternalConnectionRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline AssociateExternalConnectionRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline AssociateExternalConnectionRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    AssociateExternalConnectionRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * for RubyGems.org. </p> </li> <li> <p> <code>public:crates-io</code> - for
      * Crates.io. </p> </li> </ul>
      */
-    inline const Aws::String& GetExternalConnection() const{ return m_externalConnection; }
+    inline const Aws::String& GetExternalConnection() const { return m_externalConnection; }
     inline bool ExternalConnectionHasBeenSet() const { return m_externalConnectionHasBeenSet; }
-    inline void SetExternalConnection(const Aws::String& value) { m_externalConnectionHasBeenSet = true; m_externalConnection = value; }
-    inline void SetExternalConnection(Aws::String&& value) { m_externalConnectionHasBeenSet = true; m_externalConnection = std::move(value); }
-    inline void SetExternalConnection(const char* value) { m_externalConnectionHasBeenSet = true; m_externalConnection.assign(value); }
-    inline AssociateExternalConnectionRequest& WithExternalConnection(const Aws::String& value) { SetExternalConnection(value); return *this;}
-    inline AssociateExternalConnectionRequest& WithExternalConnection(Aws::String&& value) { SetExternalConnection(std::move(value)); return *this;}
-    inline AssociateExternalConnectionRequest& WithExternalConnection(const char* value) { SetExternalConnection(value); return *this;}
+    template<typename ExternalConnectionT = Aws::String>
+    void SetExternalConnection(ExternalConnectionT&& value) { m_externalConnectionHasBeenSet = true; m_externalConnection = std::forward<ExternalConnectionT>(value); }
+    template<typename ExternalConnectionT = Aws::String>
+    AssociateExternalConnectionRequest& WithExternalConnection(ExternalConnectionT&& value) { SetExternalConnection(std::forward<ExternalConnectionT>(value)); return *this;}
     ///@}
   private:
 

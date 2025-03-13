@@ -35,7 +35,7 @@ namespace Model
   class DataAlreadyAcceptedException
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException();
+    AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException() = default;
     AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetExpectedSequenceToken() const{ return m_expectedSequenceToken; }
+    inline const Aws::String& GetExpectedSequenceToken() const { return m_expectedSequenceToken; }
     inline bool ExpectedSequenceTokenHasBeenSet() const { return m_expectedSequenceTokenHasBeenSet; }
-    inline void SetExpectedSequenceToken(const Aws::String& value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken = value; }
-    inline void SetExpectedSequenceToken(Aws::String&& value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken = std::move(value); }
-    inline void SetExpectedSequenceToken(const char* value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken.assign(value); }
-    inline DataAlreadyAcceptedException& WithExpectedSequenceToken(const Aws::String& value) { SetExpectedSequenceToken(value); return *this;}
-    inline DataAlreadyAcceptedException& WithExpectedSequenceToken(Aws::String&& value) { SetExpectedSequenceToken(std::move(value)); return *this;}
-    inline DataAlreadyAcceptedException& WithExpectedSequenceToken(const char* value) { SetExpectedSequenceToken(value); return *this;}
+    template<typename ExpectedSequenceTokenT = Aws::String>
+    void SetExpectedSequenceToken(ExpectedSequenceTokenT&& value) { m_expectedSequenceTokenHasBeenSet = true; m_expectedSequenceToken = std::forward<ExpectedSequenceTokenT>(value); }
+    template<typename ExpectedSequenceTokenT = Aws::String>
+    DataAlreadyAcceptedException& WithExpectedSequenceToken(ExpectedSequenceTokenT&& value) { SetExpectedSequenceToken(std::forward<ExpectedSequenceTokenT>(value)); return *this;}
     ///@}
   private:
 

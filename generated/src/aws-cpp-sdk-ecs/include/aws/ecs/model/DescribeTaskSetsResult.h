@@ -30,7 +30,7 @@ namespace Model
   class DescribeTaskSetsResult
   {
   public:
-    AWS_ECS_API DescribeTaskSetsResult();
+    AWS_ECS_API DescribeTaskSetsResult() = default;
     AWS_ECS_API DescribeTaskSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API DescribeTaskSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>The list of task sets described.</p>
      */
-    inline const Aws::Vector<TaskSet>& GetTaskSets() const{ return m_taskSets; }
-    inline void SetTaskSets(const Aws::Vector<TaskSet>& value) { m_taskSets = value; }
-    inline void SetTaskSets(Aws::Vector<TaskSet>&& value) { m_taskSets = std::move(value); }
-    inline DescribeTaskSetsResult& WithTaskSets(const Aws::Vector<TaskSet>& value) { SetTaskSets(value); return *this;}
-    inline DescribeTaskSetsResult& WithTaskSets(Aws::Vector<TaskSet>&& value) { SetTaskSets(std::move(value)); return *this;}
-    inline DescribeTaskSetsResult& AddTaskSets(const TaskSet& value) { m_taskSets.push_back(value); return *this; }
-    inline DescribeTaskSetsResult& AddTaskSets(TaskSet&& value) { m_taskSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TaskSet>& GetTaskSets() const { return m_taskSets; }
+    template<typename TaskSetsT = Aws::Vector<TaskSet>>
+    void SetTaskSets(TaskSetsT&& value) { m_taskSetsHasBeenSet = true; m_taskSets = std::forward<TaskSetsT>(value); }
+    template<typename TaskSetsT = Aws::Vector<TaskSet>>
+    DescribeTaskSetsResult& WithTaskSets(TaskSetsT&& value) { SetTaskSets(std::forward<TaskSetsT>(value)); return *this;}
+    template<typename TaskSetsT = TaskSet>
+    DescribeTaskSetsResult& AddTaskSets(TaskSetsT&& value) { m_taskSetsHasBeenSet = true; m_taskSets.emplace_back(std::forward<TaskSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-    inline DescribeTaskSetsResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-    inline DescribeTaskSetsResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline DescribeTaskSetsResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-    inline DescribeTaskSetsResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Failure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    DescribeTaskSetsResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = Failure>
+    DescribeTaskSetsResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTaskSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTaskSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTaskSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTaskSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TaskSet> m_taskSets;
+    bool m_taskSetsHasBeenSet = false;
 
     Aws::Vector<Failure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

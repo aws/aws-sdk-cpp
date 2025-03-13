@@ -12,14 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListConfigurationPolicyAssociationsRequest::ListConfigurationPolicyAssociationsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListConfigurationPolicyAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

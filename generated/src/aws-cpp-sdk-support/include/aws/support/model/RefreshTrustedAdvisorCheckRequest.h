@@ -24,7 +24,7 @@ namespace Model
   class RefreshTrustedAdvisorCheckRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API RefreshTrustedAdvisorCheckRequest();
+    AWS_SUPPORT_API RefreshTrustedAdvisorCheckRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p> 
      */
-    inline const Aws::String& GetCheckId() const{ return m_checkId; }
+    inline const Aws::String& GetCheckId() const { return m_checkId; }
     inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
-    inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
-    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = std::move(value); }
-    inline void SetCheckId(const char* value) { m_checkIdHasBeenSet = true; m_checkId.assign(value); }
-    inline RefreshTrustedAdvisorCheckRequest& WithCheckId(const Aws::String& value) { SetCheckId(value); return *this;}
-    inline RefreshTrustedAdvisorCheckRequest& WithCheckId(Aws::String&& value) { SetCheckId(std::move(value)); return *this;}
-    inline RefreshTrustedAdvisorCheckRequest& WithCheckId(const char* value) { SetCheckId(value); return *this;}
+    template<typename CheckIdT = Aws::String>
+    void SetCheckId(CheckIdT&& value) { m_checkIdHasBeenSet = true; m_checkId = std::forward<CheckIdT>(value); }
+    template<typename CheckIdT = Aws::String>
+    RefreshTrustedAdvisorCheckRequest& WithCheckId(CheckIdT&& value) { SetCheckId(std::forward<CheckIdT>(value)); return *this;}
     ///@}
   private:
 

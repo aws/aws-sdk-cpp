@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIndexingConfigurationResult::GetIndexingConfigurationResult()
-{
-}
-
 GetIndexingConfigurationResult::GetIndexingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetIndexingConfigurationResult& GetIndexingConfigurationResult::operator =(const
   if(jsonValue.ValueExists("thingIndexingConfiguration"))
   {
     m_thingIndexingConfiguration = jsonValue.GetObject("thingIndexingConfiguration");
-
+    m_thingIndexingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingGroupIndexingConfiguration"))
   {
     m_thingGroupIndexingConfiguration = jsonValue.GetObject("thingGroupIndexingConfiguration");
-
+    m_thingGroupIndexingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

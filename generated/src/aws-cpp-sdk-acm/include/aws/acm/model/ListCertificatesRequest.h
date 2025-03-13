@@ -26,7 +26,7 @@ namespace Model
   class ListCertificatesRequest : public ACMRequest
   {
   public:
-    AWS_ACM_API ListCertificatesRequest();
+    AWS_ACM_API ListCertificatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,13 @@ namespace Model
     /**
      * <p>Filter the certificate list by status value.</p>
      */
-    inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const{ return m_certificateStatuses; }
+    inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const { return m_certificateStatuses; }
     inline bool CertificateStatusesHasBeenSet() const { return m_certificateStatusesHasBeenSet; }
-    inline void SetCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
-    inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::move(value); }
-    inline ListCertificatesRequest& WithCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { SetCertificateStatuses(value); return *this;}
-    inline ListCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(std::move(value)); return *this;}
-    inline ListCertificatesRequest& AddCertificateStatuses(const CertificateStatus& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
-    inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(std::move(value)); return *this; }
+    template<typename CertificateStatusesT = Aws::Vector<CertificateStatus>>
+    void SetCertificateStatuses(CertificateStatusesT&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = std::forward<CertificateStatusesT>(value); }
+    template<typename CertificateStatusesT = Aws::Vector<CertificateStatus>>
+    ListCertificatesRequest& WithCertificateStatuses(CertificateStatusesT&& value) { SetCertificateStatuses(std::forward<CertificateStatusesT>(value)); return *this;}
+    inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -58,12 +57,12 @@ namespace Model
      * <p>Filter the certificate list. For more information, see the <a>Filters</a>
      * structure.</p>
      */
-    inline const Filters& GetIncludes() const{ return m_includes; }
+    inline const Filters& GetIncludes() const { return m_includes; }
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-    inline void SetIncludes(const Filters& value) { m_includesHasBeenSet = true; m_includes = value; }
-    inline void SetIncludes(Filters&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-    inline ListCertificatesRequest& WithIncludes(const Filters& value) { SetIncludes(value); return *this;}
-    inline ListCertificatesRequest& WithIncludes(Filters&& value) { SetIncludes(std::move(value)); return *this;}
+    template<typename IncludesT = Filters>
+    void SetIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes = std::forward<IncludesT>(value); }
+    template<typename IncludesT = Filters>
+    ListCertificatesRequest& WithIncludes(IncludesT&& value) { SetIncludes(std::forward<IncludesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +71,12 @@ namespace Model
      * request after you receive a response with truncated results. Set it to the value
      * of <code>NextToken</code> from the response you just received.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCertificatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCertificatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCertificatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCertificatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +87,7 @@ namespace Model
      * <code>NextToken</code> value in a subsequent request to retrieve additional
      * items.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListCertificatesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -101,12 +98,10 @@ namespace Model
      * <p>Specifies the field to sort results by. If you specify <code>SortBy</code>,
      * you must also specify <code>SortOrder</code>.</p>
      */
-    inline const SortBy& GetSortBy() const{ return m_sortBy; }
+    inline SortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListCertificatesRequest& WithSortBy(const SortBy& value) { SetSortBy(value); return *this;}
-    inline ListCertificatesRequest& WithSortBy(SortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListCertificatesRequest& WithSortBy(SortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +109,10 @@ namespace Model
      * <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>,
      * you must also specify <code>SortBy</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListCertificatesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListCertificatesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListCertificatesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
@@ -132,13 +125,13 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
-    SortBy m_sortBy;
+    SortBy m_sortBy{SortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

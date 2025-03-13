@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBSnapshotRequest::DeleteDBSnapshotRequest() : 
-    m_dBSnapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetBuildBatchesRequest::BatchGetBuildBatchesRequest() : 
-    m_idsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetBuildBatchesRequest::SerializePayload() const
 {
   JsonValue payload;

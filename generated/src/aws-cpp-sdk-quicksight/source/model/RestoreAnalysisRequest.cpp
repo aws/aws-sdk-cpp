@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RestoreAnalysisRequest::RestoreAnalysisRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_analysisIdHasBeenSet(false),
-    m_restoreToFolders(false),
-    m_restoreToFoldersHasBeenSet(false)
-{
-}
-
 Aws::String RestoreAnalysisRequest::SerializePayload() const
 {
   return {};

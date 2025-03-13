@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-VectorEnrichmentJobInputConfig::VectorEnrichmentJobInputConfig() : 
-    m_dataSourceConfigHasBeenSet(false),
-    m_documentType(VectorEnrichmentJobDocumentType::NOT_SET),
-    m_documentTypeHasBeenSet(false)
-{
-}
-
 VectorEnrichmentJobInputConfig::VectorEnrichmentJobInputConfig(JsonView jsonValue)
-  : VectorEnrichmentJobInputConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VectorEnrichmentJobInputConfig& VectorEnrichmentJobInputConfig::operator =(JsonV
   if(jsonValue.ValueExists("DataSourceConfig"))
   {
     m_dataSourceConfig = jsonValue.GetObject("DataSourceConfig");
-
     m_dataSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentType"))
   {
     m_documentType = VectorEnrichmentJobDocumentTypeMapper::GetVectorEnrichmentJobDocumentTypeForName(jsonValue.GetString("DocumentType"));
-
     m_documentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

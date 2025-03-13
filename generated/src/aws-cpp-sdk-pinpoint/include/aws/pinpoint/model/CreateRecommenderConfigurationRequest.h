@@ -21,7 +21,7 @@ namespace Model
   class CreateRecommenderConfigurationRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API CreateRecommenderConfigurationRequest();
+    AWS_PINPOINT_API CreateRecommenderConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const CreateRecommenderConfiguration& GetCreateRecommenderConfiguration() const{ return m_createRecommenderConfiguration; }
+    inline const CreateRecommenderConfiguration& GetCreateRecommenderConfiguration() const { return m_createRecommenderConfiguration; }
     inline bool CreateRecommenderConfigurationHasBeenSet() const { return m_createRecommenderConfigurationHasBeenSet; }
-    inline void SetCreateRecommenderConfiguration(const CreateRecommenderConfiguration& value) { m_createRecommenderConfigurationHasBeenSet = true; m_createRecommenderConfiguration = value; }
-    inline void SetCreateRecommenderConfiguration(CreateRecommenderConfiguration&& value) { m_createRecommenderConfigurationHasBeenSet = true; m_createRecommenderConfiguration = std::move(value); }
-    inline CreateRecommenderConfigurationRequest& WithCreateRecommenderConfiguration(const CreateRecommenderConfiguration& value) { SetCreateRecommenderConfiguration(value); return *this;}
-    inline CreateRecommenderConfigurationRequest& WithCreateRecommenderConfiguration(CreateRecommenderConfiguration&& value) { SetCreateRecommenderConfiguration(std::move(value)); return *this;}
+    template<typename CreateRecommenderConfigurationT = CreateRecommenderConfiguration>
+    void SetCreateRecommenderConfiguration(CreateRecommenderConfigurationT&& value) { m_createRecommenderConfigurationHasBeenSet = true; m_createRecommenderConfiguration = std::forward<CreateRecommenderConfigurationT>(value); }
+    template<typename CreateRecommenderConfigurationT = CreateRecommenderConfiguration>
+    CreateRecommenderConfigurationRequest& WithCreateRecommenderConfiguration(CreateRecommenderConfigurationT&& value) { SetCreateRecommenderConfiguration(std::forward<CreateRecommenderConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class DateTimeValueWhenUnsetConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration();
+    AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration() = default;
     AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,31 +46,29 @@ namespace Model
      * value.</p> </li> <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p>
      * </li> </ul>
      */
-    inline const ValueWhenUnsetOption& GetValueWhenUnsetOption() const{ return m_valueWhenUnsetOption; }
+    inline ValueWhenUnsetOption GetValueWhenUnsetOption() const { return m_valueWhenUnsetOption; }
     inline bool ValueWhenUnsetOptionHasBeenSet() const { return m_valueWhenUnsetOptionHasBeenSet; }
-    inline void SetValueWhenUnsetOption(const ValueWhenUnsetOption& value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = value; }
-    inline void SetValueWhenUnsetOption(ValueWhenUnsetOption&& value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = std::move(value); }
-    inline DateTimeValueWhenUnsetConfiguration& WithValueWhenUnsetOption(const ValueWhenUnsetOption& value) { SetValueWhenUnsetOption(value); return *this;}
-    inline DateTimeValueWhenUnsetConfiguration& WithValueWhenUnsetOption(ValueWhenUnsetOption&& value) { SetValueWhenUnsetOption(std::move(value)); return *this;}
+    inline void SetValueWhenUnsetOption(ValueWhenUnsetOption value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = value; }
+    inline DateTimeValueWhenUnsetConfiguration& WithValueWhenUnsetOption(ValueWhenUnsetOption value) { SetValueWhenUnsetOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom value that's used when the value of a parameter isn't set.</p>
      */
-    inline const Aws::Utils::DateTime& GetCustomValue() const{ return m_customValue; }
+    inline const Aws::Utils::DateTime& GetCustomValue() const { return m_customValue; }
     inline bool CustomValueHasBeenSet() const { return m_customValueHasBeenSet; }
-    inline void SetCustomValue(const Aws::Utils::DateTime& value) { m_customValueHasBeenSet = true; m_customValue = value; }
-    inline void SetCustomValue(Aws::Utils::DateTime&& value) { m_customValueHasBeenSet = true; m_customValue = std::move(value); }
-    inline DateTimeValueWhenUnsetConfiguration& WithCustomValue(const Aws::Utils::DateTime& value) { SetCustomValue(value); return *this;}
-    inline DateTimeValueWhenUnsetConfiguration& WithCustomValue(Aws::Utils::DateTime&& value) { SetCustomValue(std::move(value)); return *this;}
+    template<typename CustomValueT = Aws::Utils::DateTime>
+    void SetCustomValue(CustomValueT&& value) { m_customValueHasBeenSet = true; m_customValue = std::forward<CustomValueT>(value); }
+    template<typename CustomValueT = Aws::Utils::DateTime>
+    DateTimeValueWhenUnsetConfiguration& WithCustomValue(CustomValueT&& value) { SetCustomValue(std::forward<CustomValueT>(value)); return *this;}
     ///@}
   private:
 
-    ValueWhenUnsetOption m_valueWhenUnsetOption;
+    ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
     bool m_valueWhenUnsetOptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_customValue;
+    Aws::Utils::DateTime m_customValue{};
     bool m_customValueHasBeenSet = false;
   };
 

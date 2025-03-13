@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration() : 
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false)
-{
-}
-
 FileCacheLustreMetadataConfiguration::FileCacheLustreMetadataConfiguration(JsonView jsonValue)
-  : FileCacheLustreMetadataConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FileCacheLustreMetadataConfiguration& FileCacheLustreMetadataConfiguration::oper
   if(jsonValue.ValueExists("StorageCapacity"))
   {
     m_storageCapacity = jsonValue.GetInteger("StorageCapacity");
-
     m_storageCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

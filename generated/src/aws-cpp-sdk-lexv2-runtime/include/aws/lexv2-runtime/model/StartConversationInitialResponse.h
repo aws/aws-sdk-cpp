@@ -25,7 +25,7 @@ namespace Model
   class StartConversationInitialResponse
   {
   public:
-    AWS_LEXRUNTIMEV2_API StartConversationInitialResponse();
+    AWS_LEXRUNTIMEV2_API StartConversationInitialResponse() = default;
     AWS_LEXRUNTIMEV2_API StartConversationInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API StartConversationInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API StartConversationInitialResponse(const Http::HeaderValueCollection& responseHeaders);

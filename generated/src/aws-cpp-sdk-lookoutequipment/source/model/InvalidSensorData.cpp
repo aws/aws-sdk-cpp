@@ -18,16 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-InvalidSensorData::InvalidSensorData() : 
-    m_affectedSensorCount(0),
-    m_affectedSensorCountHasBeenSet(false),
-    m_totalNumberOfInvalidValues(0),
-    m_totalNumberOfInvalidValuesHasBeenSet(false)
-{
-}
-
 InvalidSensorData::InvalidSensorData(JsonView jsonValue)
-  : InvalidSensorData()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InvalidSensorData& InvalidSensorData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AffectedSensorCount"))
   {
     m_affectedSensorCount = jsonValue.GetInteger("AffectedSensorCount");
-
     m_affectedSensorCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalNumberOfInvalidValues"))
   {
     m_totalNumberOfInvalidValues = jsonValue.GetInteger("TotalNumberOfInvalidValues");
-
     m_totalNumberOfInvalidValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

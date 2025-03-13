@@ -33,7 +33,7 @@ namespace Model
   class RecommendationSource
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RecommendationSource();
+    AWS_COMPUTEOPTIMIZER_API RecommendationSource() = default;
     AWS_COMPUTEOPTIMIZER_API RecommendationSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RecommendationSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the recommendation source.</p>
      */
-    inline const Aws::String& GetRecommendationSourceArn() const{ return m_recommendationSourceArn; }
+    inline const Aws::String& GetRecommendationSourceArn() const { return m_recommendationSourceArn; }
     inline bool RecommendationSourceArnHasBeenSet() const { return m_recommendationSourceArnHasBeenSet; }
-    inline void SetRecommendationSourceArn(const Aws::String& value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn = value; }
-    inline void SetRecommendationSourceArn(Aws::String&& value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn = std::move(value); }
-    inline void SetRecommendationSourceArn(const char* value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn.assign(value); }
-    inline RecommendationSource& WithRecommendationSourceArn(const Aws::String& value) { SetRecommendationSourceArn(value); return *this;}
-    inline RecommendationSource& WithRecommendationSourceArn(Aws::String&& value) { SetRecommendationSourceArn(std::move(value)); return *this;}
-    inline RecommendationSource& WithRecommendationSourceArn(const char* value) { SetRecommendationSourceArn(value); return *this;}
+    template<typename RecommendationSourceArnT = Aws::String>
+    void SetRecommendationSourceArn(RecommendationSourceArnT&& value) { m_recommendationSourceArnHasBeenSet = true; m_recommendationSourceArn = std::forward<RecommendationSourceArnT>(value); }
+    template<typename RecommendationSourceArnT = Aws::String>
+    RecommendationSource& WithRecommendationSourceArn(RecommendationSourceArnT&& value) { SetRecommendationSourceArn(std::forward<RecommendationSourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type of the recommendation source.</p>
      */
-    inline const RecommendationSourceType& GetRecommendationSourceType() const{ return m_recommendationSourceType; }
+    inline RecommendationSourceType GetRecommendationSourceType() const { return m_recommendationSourceType; }
     inline bool RecommendationSourceTypeHasBeenSet() const { return m_recommendationSourceTypeHasBeenSet; }
-    inline void SetRecommendationSourceType(const RecommendationSourceType& value) { m_recommendationSourceTypeHasBeenSet = true; m_recommendationSourceType = value; }
-    inline void SetRecommendationSourceType(RecommendationSourceType&& value) { m_recommendationSourceTypeHasBeenSet = true; m_recommendationSourceType = std::move(value); }
-    inline RecommendationSource& WithRecommendationSourceType(const RecommendationSourceType& value) { SetRecommendationSourceType(value); return *this;}
-    inline RecommendationSource& WithRecommendationSourceType(RecommendationSourceType&& value) { SetRecommendationSourceType(std::move(value)); return *this;}
+    inline void SetRecommendationSourceType(RecommendationSourceType value) { m_recommendationSourceTypeHasBeenSet = true; m_recommendationSourceType = value; }
+    inline RecommendationSource& WithRecommendationSourceType(RecommendationSourceType value) { SetRecommendationSourceType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_recommendationSourceArn;
     bool m_recommendationSourceArnHasBeenSet = false;
 
-    RecommendationSourceType m_recommendationSourceType;
+    RecommendationSourceType m_recommendationSourceType{RecommendationSourceType::NOT_SET};
     bool m_recommendationSourceTypeHasBeenSet = false;
   };
 

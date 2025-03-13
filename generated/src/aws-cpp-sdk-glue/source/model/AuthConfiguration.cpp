@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AuthConfiguration::AuthConfiguration() : 
-    m_authenticationTypeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false),
-    m_basicAuthenticationPropertiesHasBeenSet(false),
-    m_customAuthenticationPropertiesHasBeenSet(false)
-{
-}
-
 AuthConfiguration::AuthConfiguration(JsonView jsonValue)
-  : AuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AuthConfiguration& AuthConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = jsonValue.GetObject("AuthenticationType");
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetObject("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuth2Properties"))
   {
     Aws::Map<Aws::String, JsonView> oAuth2PropertiesJsonMap = jsonValue.GetObject("OAuth2Properties").GetAllObjects();
@@ -58,7 +44,6 @@ AuthConfiguration& AuthConfiguration::operator =(JsonView jsonValue)
     }
     m_oAuth2PropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BasicAuthenticationProperties"))
   {
     Aws::Map<Aws::String, JsonView> basicAuthenticationPropertiesJsonMap = jsonValue.GetObject("BasicAuthenticationProperties").GetAllObjects();
@@ -68,7 +53,6 @@ AuthConfiguration& AuthConfiguration::operator =(JsonView jsonValue)
     }
     m_basicAuthenticationPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomAuthenticationProperties"))
   {
     Aws::Map<Aws::String, JsonView> customAuthenticationPropertiesJsonMap = jsonValue.GetObject("CustomAuthenticationProperties").GetAllObjects();
@@ -78,7 +62,6 @@ AuthConfiguration& AuthConfiguration::operator =(JsonView jsonValue)
     }
     m_customAuthenticationPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

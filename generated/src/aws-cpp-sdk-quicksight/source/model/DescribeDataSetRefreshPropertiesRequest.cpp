@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDataSetRefreshPropertiesRequest::DescribeDataSetRefreshPropertiesRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDataSetRefreshPropertiesRequest::SerializePayload() const
 {
   return {};

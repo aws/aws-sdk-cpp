@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AsnAssociation::AsnAssociation() : 
-    m_asnHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_state(AsnAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AsnAssociation::AsnAssociation(const XmlNode& xmlNode)
-  : AsnAssociation()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ AsnAssociation& AsnAssociation::operator =(const XmlNode& xmlNode)
     {
       m_asn = Aws::Utils::Xml::DecodeEscapedXmlText(asnNode.GetText());
       m_asnHasBeenSet = true;
+       m_asnHasBeenSet = true;
     }
     XmlNode cidrNode = resultNode.FirstChild("cidr");
     if(!cidrNode.IsNull())
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = AsnAssociationStateMapper::GetAsnAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = AsnAssociationStateMapper::GetAsnAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

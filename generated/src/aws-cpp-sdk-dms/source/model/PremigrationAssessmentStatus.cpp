@@ -18,24 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-PremigrationAssessmentStatus::PremigrationAssessmentStatus() : 
-    m_premigrationAssessmentRunArnHasBeenSet(false),
-    m_failOnAssessmentFailure(false),
-    m_failOnAssessmentFailureHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_premigrationAssessmentRunCreationDateHasBeenSet(false),
-    m_assessmentProgressHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false),
-    m_resultLocationBucketHasBeenSet(false),
-    m_resultLocationFolderHasBeenSet(false),
-    m_resultEncryptionModeHasBeenSet(false),
-    m_resultKmsKeyArnHasBeenSet(false),
-    m_resultStatisticHasBeenSet(false)
-{
-}
-
 PremigrationAssessmentStatus::PremigrationAssessmentStatus(JsonView jsonValue)
-  : PremigrationAssessmentStatus()
 {
   *this = jsonValue;
 }
@@ -45,80 +28,58 @@ PremigrationAssessmentStatus& PremigrationAssessmentStatus::operator =(JsonView 
   if(jsonValue.ValueExists("PremigrationAssessmentRunArn"))
   {
     m_premigrationAssessmentRunArn = jsonValue.GetString("PremigrationAssessmentRunArn");
-
     m_premigrationAssessmentRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailOnAssessmentFailure"))
   {
     m_failOnAssessmentFailure = jsonValue.GetBool("FailOnAssessmentFailure");
-
     m_failOnAssessmentFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PremigrationAssessmentRunCreationDate"))
   {
     m_premigrationAssessmentRunCreationDate = jsonValue.GetDouble("PremigrationAssessmentRunCreationDate");
-
     m_premigrationAssessmentRunCreationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssessmentProgress"))
   {
     m_assessmentProgress = jsonValue.GetObject("AssessmentProgress");
-
     m_assessmentProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailureMessage"))
   {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
-
     m_lastFailureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultLocationBucket"))
   {
     m_resultLocationBucket = jsonValue.GetString("ResultLocationBucket");
-
     m_resultLocationBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultLocationFolder"))
   {
     m_resultLocationFolder = jsonValue.GetString("ResultLocationFolder");
-
     m_resultLocationFolderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultEncryptionMode"))
   {
     m_resultEncryptionMode = jsonValue.GetString("ResultEncryptionMode");
-
     m_resultEncryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultKmsKeyArn"))
   {
     m_resultKmsKeyArn = jsonValue.GetString("ResultKmsKeyArn");
-
     m_resultKmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultStatistic"))
   {
     m_resultStatistic = jsonValue.GetObject("ResultStatistic");
-
     m_resultStatisticHasBeenSet = true;
   }
-
   return *this;
 }
 

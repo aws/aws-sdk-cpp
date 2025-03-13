@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFolderRequest::GetFolderRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_includeCustomMetadata(false),
-    m_includeCustomMetadataHasBeenSet(false)
-{
-}
-
 Aws::String GetFolderRequest::SerializePayload() const
 {
   return {};

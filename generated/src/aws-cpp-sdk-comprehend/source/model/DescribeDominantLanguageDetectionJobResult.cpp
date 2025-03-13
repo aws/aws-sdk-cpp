@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDominantLanguageDetectionJobResult::DescribeDominantLanguageDetectionJobResult()
-{
-}
-
 DescribeDominantLanguageDetectionJobResult::DescribeDominantLanguageDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeDominantLanguageDetectionJobResult& DescribeDominantLanguageDetectionJob
   if(jsonValue.ValueExists("DominantLanguageDetectionJobProperties"))
   {
     m_dominantLanguageDetectionJobProperties = jsonValue.GetObject("DominantLanguageDetectionJobProperties");
-
+    m_dominantLanguageDetectionJobPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -29,7 +29,7 @@ namespace Model
   class ListCreatedArtifactsResult
   {
   public:
-    AWS_MIGRATIONHUB_API ListCreatedArtifactsResult();
+    AWS_MIGRATIONHUB_API ListCreatedArtifactsResult() = default;
     AWS_MIGRATIONHUB_API ListCreatedArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUB_API ListCreatedArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>If there are more created artifacts than the max result, return the next
      * token to be passed to the next call as a bookmark of where to start from.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCreatedArtifactsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCreatedArtifactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCreatedArtifactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCreatedArtifactsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>List of created artifacts up to the maximum number of results specified in
      * the request.</p>
      */
-    inline const Aws::Vector<CreatedArtifact>& GetCreatedArtifactList() const{ return m_createdArtifactList; }
-    inline void SetCreatedArtifactList(const Aws::Vector<CreatedArtifact>& value) { m_createdArtifactList = value; }
-    inline void SetCreatedArtifactList(Aws::Vector<CreatedArtifact>&& value) { m_createdArtifactList = std::move(value); }
-    inline ListCreatedArtifactsResult& WithCreatedArtifactList(const Aws::Vector<CreatedArtifact>& value) { SetCreatedArtifactList(value); return *this;}
-    inline ListCreatedArtifactsResult& WithCreatedArtifactList(Aws::Vector<CreatedArtifact>&& value) { SetCreatedArtifactList(std::move(value)); return *this;}
-    inline ListCreatedArtifactsResult& AddCreatedArtifactList(const CreatedArtifact& value) { m_createdArtifactList.push_back(value); return *this; }
-    inline ListCreatedArtifactsResult& AddCreatedArtifactList(CreatedArtifact&& value) { m_createdArtifactList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreatedArtifact>& GetCreatedArtifactList() const { return m_createdArtifactList; }
+    template<typename CreatedArtifactListT = Aws::Vector<CreatedArtifact>>
+    void SetCreatedArtifactList(CreatedArtifactListT&& value) { m_createdArtifactListHasBeenSet = true; m_createdArtifactList = std::forward<CreatedArtifactListT>(value); }
+    template<typename CreatedArtifactListT = Aws::Vector<CreatedArtifact>>
+    ListCreatedArtifactsResult& WithCreatedArtifactList(CreatedArtifactListT&& value) { SetCreatedArtifactList(std::forward<CreatedArtifactListT>(value)); return *this;}
+    template<typename CreatedArtifactListT = CreatedArtifact>
+    ListCreatedArtifactsResult& AddCreatedArtifactList(CreatedArtifactListT&& value) { m_createdArtifactListHasBeenSet = true; m_createdArtifactList.emplace_back(std::forward<CreatedArtifactListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCreatedArtifactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCreatedArtifactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCreatedArtifactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCreatedArtifactsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CreatedArtifact> m_createdArtifactList;
+    bool m_createdArtifactListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

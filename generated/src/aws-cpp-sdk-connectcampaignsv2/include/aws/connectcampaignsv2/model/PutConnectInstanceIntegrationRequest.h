@@ -26,7 +26,7 @@ namespace Model
   class PutConnectInstanceIntegrationRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API PutConnectInstanceIntegrationRequest();
+    AWS_CONNECTCAMPAIGNSV2_API PutConnectInstanceIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,24 +39,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetConnectInstanceId() const{ return m_connectInstanceId; }
+    inline const Aws::String& GetConnectInstanceId() const { return m_connectInstanceId; }
     inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-    inline void SetConnectInstanceId(const Aws::String& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = value; }
-    inline void SetConnectInstanceId(Aws::String&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::move(value); }
-    inline void SetConnectInstanceId(const char* value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId.assign(value); }
-    inline PutConnectInstanceIntegrationRequest& WithConnectInstanceId(const Aws::String& value) { SetConnectInstanceId(value); return *this;}
-    inline PutConnectInstanceIntegrationRequest& WithConnectInstanceId(Aws::String&& value) { SetConnectInstanceId(std::move(value)); return *this;}
-    inline PutConnectInstanceIntegrationRequest& WithConnectInstanceId(const char* value) { SetConnectInstanceId(value); return *this;}
+    template<typename ConnectInstanceIdT = Aws::String>
+    void SetConnectInstanceId(ConnectInstanceIdT&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::forward<ConnectInstanceIdT>(value); }
+    template<typename ConnectInstanceIdT = Aws::String>
+    PutConnectInstanceIntegrationRequest& WithConnectInstanceId(ConnectInstanceIdT&& value) { SetConnectInstanceId(std::forward<ConnectInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IntegrationConfig& GetIntegrationConfig() const{ return m_integrationConfig; }
+    inline const IntegrationConfig& GetIntegrationConfig() const { return m_integrationConfig; }
     inline bool IntegrationConfigHasBeenSet() const { return m_integrationConfigHasBeenSet; }
-    inline void SetIntegrationConfig(const IntegrationConfig& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = value; }
-    inline void SetIntegrationConfig(IntegrationConfig&& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = std::move(value); }
-    inline PutConnectInstanceIntegrationRequest& WithIntegrationConfig(const IntegrationConfig& value) { SetIntegrationConfig(value); return *this;}
-    inline PutConnectInstanceIntegrationRequest& WithIntegrationConfig(IntegrationConfig&& value) { SetIntegrationConfig(std::move(value)); return *this;}
+    template<typename IntegrationConfigT = IntegrationConfig>
+    void SetIntegrationConfig(IntegrationConfigT&& value) { m_integrationConfigHasBeenSet = true; m_integrationConfig = std::forward<IntegrationConfigT>(value); }
+    template<typename IntegrationConfigT = IntegrationConfig>
+    PutConnectInstanceIntegrationRequest& WithIntegrationConfig(IntegrationConfigT&& value) { SetIntegrationConfig(std::forward<IntegrationConfigT>(value)); return *this;}
     ///@}
   private:
 

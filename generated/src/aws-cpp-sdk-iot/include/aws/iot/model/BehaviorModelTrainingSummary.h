@@ -33,7 +33,7 @@ namespace Model
   class BehaviorModelTrainingSummary
   {
   public:
-    AWS_IOT_API BehaviorModelTrainingSummary();
+    AWS_IOT_API BehaviorModelTrainingSummary() = default;
     AWS_IOT_API BehaviorModelTrainingSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API BehaviorModelTrainingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,59 +43,53 @@ namespace Model
     /**
      * <p> The name of the security profile. </p>
      */
-    inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
+    inline const Aws::String& GetSecurityProfileName() const { return m_securityProfileName; }
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-    inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-    inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-    inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-    inline BehaviorModelTrainingSummary& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-    inline BehaviorModelTrainingSummary& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-    inline BehaviorModelTrainingSummary& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    template<typename SecurityProfileNameT = Aws::String>
+    void SetSecurityProfileName(SecurityProfileNameT&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::forward<SecurityProfileNameT>(value); }
+    template<typename SecurityProfileNameT = Aws::String>
+    BehaviorModelTrainingSummary& WithSecurityProfileName(SecurityProfileNameT&& value) { SetSecurityProfileName(std::forward<SecurityProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the behavior. </p>
      */
-    inline const Aws::String& GetBehaviorName() const{ return m_behaviorName; }
+    inline const Aws::String& GetBehaviorName() const { return m_behaviorName; }
     inline bool BehaviorNameHasBeenSet() const { return m_behaviorNameHasBeenSet; }
-    inline void SetBehaviorName(const Aws::String& value) { m_behaviorNameHasBeenSet = true; m_behaviorName = value; }
-    inline void SetBehaviorName(Aws::String&& value) { m_behaviorNameHasBeenSet = true; m_behaviorName = std::move(value); }
-    inline void SetBehaviorName(const char* value) { m_behaviorNameHasBeenSet = true; m_behaviorName.assign(value); }
-    inline BehaviorModelTrainingSummary& WithBehaviorName(const Aws::String& value) { SetBehaviorName(value); return *this;}
-    inline BehaviorModelTrainingSummary& WithBehaviorName(Aws::String&& value) { SetBehaviorName(std::move(value)); return *this;}
-    inline BehaviorModelTrainingSummary& WithBehaviorName(const char* value) { SetBehaviorName(value); return *this;}
+    template<typename BehaviorNameT = Aws::String>
+    void SetBehaviorName(BehaviorNameT&& value) { m_behaviorNameHasBeenSet = true; m_behaviorName = std::forward<BehaviorNameT>(value); }
+    template<typename BehaviorNameT = Aws::String>
+    BehaviorModelTrainingSummary& WithBehaviorName(BehaviorNameT&& value) { SetBehaviorName(std::forward<BehaviorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The date a training model started collecting data. </p>
      */
-    inline const Aws::Utils::DateTime& GetTrainingDataCollectionStartDate() const{ return m_trainingDataCollectionStartDate; }
+    inline const Aws::Utils::DateTime& GetTrainingDataCollectionStartDate() const { return m_trainingDataCollectionStartDate; }
     inline bool TrainingDataCollectionStartDateHasBeenSet() const { return m_trainingDataCollectionStartDateHasBeenSet; }
-    inline void SetTrainingDataCollectionStartDate(const Aws::Utils::DateTime& value) { m_trainingDataCollectionStartDateHasBeenSet = true; m_trainingDataCollectionStartDate = value; }
-    inline void SetTrainingDataCollectionStartDate(Aws::Utils::DateTime&& value) { m_trainingDataCollectionStartDateHasBeenSet = true; m_trainingDataCollectionStartDate = std::move(value); }
-    inline BehaviorModelTrainingSummary& WithTrainingDataCollectionStartDate(const Aws::Utils::DateTime& value) { SetTrainingDataCollectionStartDate(value); return *this;}
-    inline BehaviorModelTrainingSummary& WithTrainingDataCollectionStartDate(Aws::Utils::DateTime&& value) { SetTrainingDataCollectionStartDate(std::move(value)); return *this;}
+    template<typename TrainingDataCollectionStartDateT = Aws::Utils::DateTime>
+    void SetTrainingDataCollectionStartDate(TrainingDataCollectionStartDateT&& value) { m_trainingDataCollectionStartDateHasBeenSet = true; m_trainingDataCollectionStartDate = std::forward<TrainingDataCollectionStartDateT>(value); }
+    template<typename TrainingDataCollectionStartDateT = Aws::Utils::DateTime>
+    BehaviorModelTrainingSummary& WithTrainingDataCollectionStartDate(TrainingDataCollectionStartDateT&& value) { SetTrainingDataCollectionStartDate(std::forward<TrainingDataCollectionStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of the behavior model. </p>
      */
-    inline const ModelStatus& GetModelStatus() const{ return m_modelStatus; }
+    inline ModelStatus GetModelStatus() const { return m_modelStatus; }
     inline bool ModelStatusHasBeenSet() const { return m_modelStatusHasBeenSet; }
-    inline void SetModelStatus(const ModelStatus& value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
-    inline void SetModelStatus(ModelStatus&& value) { m_modelStatusHasBeenSet = true; m_modelStatus = std::move(value); }
-    inline BehaviorModelTrainingSummary& WithModelStatus(const ModelStatus& value) { SetModelStatus(value); return *this;}
-    inline BehaviorModelTrainingSummary& WithModelStatus(ModelStatus&& value) { SetModelStatus(std::move(value)); return *this;}
+    inline void SetModelStatus(ModelStatus value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
+    inline BehaviorModelTrainingSummary& WithModelStatus(ModelStatus value) { SetModelStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The percentage of datapoints collected. </p>
      */
-    inline double GetDatapointsCollectionPercentage() const{ return m_datapointsCollectionPercentage; }
+    inline double GetDatapointsCollectionPercentage() const { return m_datapointsCollectionPercentage; }
     inline bool DatapointsCollectionPercentageHasBeenSet() const { return m_datapointsCollectionPercentageHasBeenSet; }
     inline void SetDatapointsCollectionPercentage(double value) { m_datapointsCollectionPercentageHasBeenSet = true; m_datapointsCollectionPercentage = value; }
     inline BehaviorModelTrainingSummary& WithDatapointsCollectionPercentage(double value) { SetDatapointsCollectionPercentage(value); return *this;}
@@ -105,12 +99,12 @@ namespace Model
     /**
      * <p> The date the model was last refreshed. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModelRefreshDate() const{ return m_lastModelRefreshDate; }
+    inline const Aws::Utils::DateTime& GetLastModelRefreshDate() const { return m_lastModelRefreshDate; }
     inline bool LastModelRefreshDateHasBeenSet() const { return m_lastModelRefreshDateHasBeenSet; }
-    inline void SetLastModelRefreshDate(const Aws::Utils::DateTime& value) { m_lastModelRefreshDateHasBeenSet = true; m_lastModelRefreshDate = value; }
-    inline void SetLastModelRefreshDate(Aws::Utils::DateTime&& value) { m_lastModelRefreshDateHasBeenSet = true; m_lastModelRefreshDate = std::move(value); }
-    inline BehaviorModelTrainingSummary& WithLastModelRefreshDate(const Aws::Utils::DateTime& value) { SetLastModelRefreshDate(value); return *this;}
-    inline BehaviorModelTrainingSummary& WithLastModelRefreshDate(Aws::Utils::DateTime&& value) { SetLastModelRefreshDate(std::move(value)); return *this;}
+    template<typename LastModelRefreshDateT = Aws::Utils::DateTime>
+    void SetLastModelRefreshDate(LastModelRefreshDateT&& value) { m_lastModelRefreshDateHasBeenSet = true; m_lastModelRefreshDate = std::forward<LastModelRefreshDateT>(value); }
+    template<typename LastModelRefreshDateT = Aws::Utils::DateTime>
+    BehaviorModelTrainingSummary& WithLastModelRefreshDate(LastModelRefreshDateT&& value) { SetLastModelRefreshDate(std::forward<LastModelRefreshDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,16 +114,16 @@ namespace Model
     Aws::String m_behaviorName;
     bool m_behaviorNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_trainingDataCollectionStartDate;
+    Aws::Utils::DateTime m_trainingDataCollectionStartDate{};
     bool m_trainingDataCollectionStartDateHasBeenSet = false;
 
-    ModelStatus m_modelStatus;
+    ModelStatus m_modelStatus{ModelStatus::NOT_SET};
     bool m_modelStatusHasBeenSet = false;
 
-    double m_datapointsCollectionPercentage;
+    double m_datapointsCollectionPercentage{0.0};
     bool m_datapointsCollectionPercentageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModelRefreshDate;
+    Aws::Utils::DateTime m_lastModelRefreshDate{};
     bool m_lastModelRefreshDateHasBeenSet = false;
   };
 

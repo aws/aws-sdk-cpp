@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelMetadataSummary::ModelMetadataSummary() : 
-    m_domainHasBeenSet(false),
-    m_frameworkHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false)
-{
-}
-
 ModelMetadataSummary::ModelMetadataSummary(JsonView jsonValue)
-  : ModelMetadataSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ModelMetadataSummary& ModelMetadataSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Framework"))
   {
     m_framework = jsonValue.GetString("Framework");
-
     m_frameworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Task"))
   {
     m_task = jsonValue.GetString("Task");
-
     m_taskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetString("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkVersion"))
   {
     m_frameworkVersion = jsonValue.GetString("FrameworkVersion");
-
     m_frameworkVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

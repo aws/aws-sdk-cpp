@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiGatewayV2RouteSettings::AwsApiGatewayV2RouteSettings() : 
-    m_detailedMetricsEnabled(false),
-    m_detailedMetricsEnabledHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_dataTraceEnabled(false),
-    m_dataTraceEnabledHasBeenSet(false),
-    m_throttlingBurstLimit(0),
-    m_throttlingBurstLimitHasBeenSet(false),
-    m_throttlingRateLimit(0.0),
-    m_throttlingRateLimitHasBeenSet(false)
-{
-}
-
 AwsApiGatewayV2RouteSettings::AwsApiGatewayV2RouteSettings(JsonView jsonValue)
-  : AwsApiGatewayV2RouteSettings()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ AwsApiGatewayV2RouteSettings& AwsApiGatewayV2RouteSettings::operator =(JsonView 
   if(jsonValue.ValueExists("DetailedMetricsEnabled"))
   {
     m_detailedMetricsEnabled = jsonValue.GetBool("DetailedMetricsEnabled");
-
     m_detailedMetricsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingLevel"))
   {
     m_loggingLevel = jsonValue.GetString("LoggingLevel");
-
     m_loggingLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTraceEnabled"))
   {
     m_dataTraceEnabled = jsonValue.GetBool("DataTraceEnabled");
-
     m_dataTraceEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThrottlingBurstLimit"))
   {
     m_throttlingBurstLimit = jsonValue.GetInteger("ThrottlingBurstLimit");
-
     m_throttlingBurstLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThrottlingRateLimit"))
   {
     m_throttlingRateLimit = jsonValue.GetDouble("ThrottlingRateLimit");
-
     m_throttlingRateLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

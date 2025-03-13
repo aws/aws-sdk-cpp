@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-ValidationExceptionField::ValidationExceptionField() : 
-    m_nameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
-  : ValidationExceptionField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

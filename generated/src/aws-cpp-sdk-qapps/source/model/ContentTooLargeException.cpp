@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-ContentTooLargeException::ContentTooLargeException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ContentTooLargeException::ContentTooLargeException(JsonView jsonValue)
-  : ContentTooLargeException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ContentTooLargeException& ContentTooLargeException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

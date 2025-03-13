@@ -27,7 +27,7 @@ namespace Model
   class GetMailboxDetailsResult
   {
   public:
-    AWS_WORKMAIL_API GetMailboxDetailsResult();
+    AWS_WORKMAIL_API GetMailboxDetailsResult() = default;
     AWS_WORKMAIL_API GetMailboxDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API GetMailboxDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,8 +36,8 @@ namespace Model
     /**
      * <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
      */
-    inline int GetMailboxQuota() const{ return m_mailboxQuota; }
-    inline void SetMailboxQuota(int value) { m_mailboxQuota = value; }
+    inline int GetMailboxQuota() const { return m_mailboxQuota; }
+    inline void SetMailboxQuota(int value) { m_mailboxQuotaHasBeenSet = true; m_mailboxQuota = value; }
     inline GetMailboxDetailsResult& WithMailboxQuota(int value) { SetMailboxQuota(value); return *this;}
     ///@}
 
@@ -45,28 +45,29 @@ namespace Model
     /**
      * <p>The current mailbox size, in MB, for the specified user.</p>
      */
-    inline double GetMailboxSize() const{ return m_mailboxSize; }
-    inline void SetMailboxSize(double value) { m_mailboxSize = value; }
+    inline double GetMailboxSize() const { return m_mailboxSize; }
+    inline void SetMailboxSize(double value) { m_mailboxSizeHasBeenSet = true; m_mailboxSize = value; }
     inline GetMailboxDetailsResult& WithMailboxSize(double value) { SetMailboxSize(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMailboxDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMailboxDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMailboxDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMailboxDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_mailboxQuota;
+    int m_mailboxQuota{0};
+    bool m_mailboxQuotaHasBeenSet = false;
 
-    double m_mailboxSize;
+    double m_mailboxSize{0.0};
+    bool m_mailboxSizeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

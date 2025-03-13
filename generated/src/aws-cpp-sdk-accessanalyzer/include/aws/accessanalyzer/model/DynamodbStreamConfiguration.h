@@ -42,7 +42,7 @@ namespace Model
   class DynamodbStreamConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API DynamodbStreamConfiguration();
+    AWS_ACCESSANALYZER_API DynamodbStreamConfiguration() = default;
     AWS_ACCESSANALYZER_API DynamodbStreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API DynamodbStreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <p>The proposed resource policy defining who can access or manage the DynamoDB
      * stream.</p>
      */
-    inline const Aws::String& GetStreamPolicy() const{ return m_streamPolicy; }
+    inline const Aws::String& GetStreamPolicy() const { return m_streamPolicy; }
     inline bool StreamPolicyHasBeenSet() const { return m_streamPolicyHasBeenSet; }
-    inline void SetStreamPolicy(const Aws::String& value) { m_streamPolicyHasBeenSet = true; m_streamPolicy = value; }
-    inline void SetStreamPolicy(Aws::String&& value) { m_streamPolicyHasBeenSet = true; m_streamPolicy = std::move(value); }
-    inline void SetStreamPolicy(const char* value) { m_streamPolicyHasBeenSet = true; m_streamPolicy.assign(value); }
-    inline DynamodbStreamConfiguration& WithStreamPolicy(const Aws::String& value) { SetStreamPolicy(value); return *this;}
-    inline DynamodbStreamConfiguration& WithStreamPolicy(Aws::String&& value) { SetStreamPolicy(std::move(value)); return *this;}
-    inline DynamodbStreamConfiguration& WithStreamPolicy(const char* value) { SetStreamPolicy(value); return *this;}
+    template<typename StreamPolicyT = Aws::String>
+    void SetStreamPolicy(StreamPolicyT&& value) { m_streamPolicyHasBeenSet = true; m_streamPolicy = std::forward<StreamPolicyT>(value); }
+    template<typename StreamPolicyT = Aws::String>
+    DynamodbStreamConfiguration& WithStreamPolicy(StreamPolicyT&& value) { SetStreamPolicy(std::forward<StreamPolicyT>(value)); return *this;}
     ///@}
   private:
 

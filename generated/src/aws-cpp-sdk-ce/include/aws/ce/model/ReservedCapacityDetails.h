@@ -32,7 +32,7 @@ namespace Model
   class ReservedCapacityDetails
   {
   public:
-    AWS_COSTEXPLORER_API ReservedCapacityDetails();
+    AWS_COSTEXPLORER_API ReservedCapacityDetails() = default;
     AWS_COSTEXPLORER_API ReservedCapacityDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API ReservedCapacityDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The DynamoDB reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const DynamoDBCapacityDetails& GetDynamoDBCapacityDetails() const{ return m_dynamoDBCapacityDetails; }
+    inline const DynamoDBCapacityDetails& GetDynamoDBCapacityDetails() const { return m_dynamoDBCapacityDetails; }
     inline bool DynamoDBCapacityDetailsHasBeenSet() const { return m_dynamoDBCapacityDetailsHasBeenSet; }
-    inline void SetDynamoDBCapacityDetails(const DynamoDBCapacityDetails& value) { m_dynamoDBCapacityDetailsHasBeenSet = true; m_dynamoDBCapacityDetails = value; }
-    inline void SetDynamoDBCapacityDetails(DynamoDBCapacityDetails&& value) { m_dynamoDBCapacityDetailsHasBeenSet = true; m_dynamoDBCapacityDetails = std::move(value); }
-    inline ReservedCapacityDetails& WithDynamoDBCapacityDetails(const DynamoDBCapacityDetails& value) { SetDynamoDBCapacityDetails(value); return *this;}
-    inline ReservedCapacityDetails& WithDynamoDBCapacityDetails(DynamoDBCapacityDetails&& value) { SetDynamoDBCapacityDetails(std::move(value)); return *this;}
+    template<typename DynamoDBCapacityDetailsT = DynamoDBCapacityDetails>
+    void SetDynamoDBCapacityDetails(DynamoDBCapacityDetailsT&& value) { m_dynamoDBCapacityDetailsHasBeenSet = true; m_dynamoDBCapacityDetails = std::forward<DynamoDBCapacityDetailsT>(value); }
+    template<typename DynamoDBCapacityDetailsT = DynamoDBCapacityDetails>
+    ReservedCapacityDetails& WithDynamoDBCapacityDetails(DynamoDBCapacityDetailsT&& value) { SetDynamoDBCapacityDetails(std::forward<DynamoDBCapacityDetailsT>(value)); return *this;}
     ///@}
   private:
 

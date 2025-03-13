@@ -12,23 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTaskRequest::CreateTaskRequest() : 
-    m_sourceLocationArnHasBeenSet(false),
-    m_destinationLocationArnHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_excludesHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_includesHasBeenSet(false),
-    m_manifestConfigHasBeenSet(false),
-    m_taskReportConfigHasBeenSet(false),
-    m_taskMode(TaskMode::NOT_SET),
-    m_taskModeHasBeenSet(false)
-{
-}
-
 Aws::String CreateTaskRequest::SerializePayload() const
 {
   JsonValue payload;

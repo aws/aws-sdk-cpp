@@ -37,7 +37,7 @@ namespace Model
   class ListWebhookItem
   {
   public:
-    AWS_CODEPIPELINE_API ListWebhookItem();
+    AWS_CODEPIPELINE_API ListWebhookItem() = default;
     AWS_CODEPIPELINE_API ListWebhookItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ListWebhookItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * <p>The detail returned for each webhook, such as the webhook authentication type
      * and filter rules.</p>
      */
-    inline const WebhookDefinition& GetDefinition() const{ return m_definition; }
+    inline const WebhookDefinition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const WebhookDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(WebhookDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline ListWebhookItem& WithDefinition(const WebhookDefinition& value) { SetDefinition(value); return *this;}
-    inline ListWebhookItem& WithDefinition(WebhookDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = WebhookDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = WebhookDefinition>
+    ListWebhookItem& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,42 +63,36 @@ namespace Model
      * satisfies the defined authentication and filtering conditions. Deleting and
      * re-creating a webhook makes the old URL invalid and generates a new one.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline ListWebhookItem& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline ListWebhookItem& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline ListWebhookItem& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    ListWebhookItem& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text of the error message about the webhook.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ListWebhookItem& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ListWebhookItem& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ListWebhookItem& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ListWebhookItem& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number code of the error.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline ListWebhookItem& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline ListWebhookItem& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline ListWebhookItem& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    ListWebhookItem& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,40 +100,38 @@ namespace Model
      * <p>The date and time a webhook was last successfully triggered, in timestamp
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastTriggered() const{ return m_lastTriggered; }
+    inline const Aws::Utils::DateTime& GetLastTriggered() const { return m_lastTriggered; }
     inline bool LastTriggeredHasBeenSet() const { return m_lastTriggeredHasBeenSet; }
-    inline void SetLastTriggered(const Aws::Utils::DateTime& value) { m_lastTriggeredHasBeenSet = true; m_lastTriggered = value; }
-    inline void SetLastTriggered(Aws::Utils::DateTime&& value) { m_lastTriggeredHasBeenSet = true; m_lastTriggered = std::move(value); }
-    inline ListWebhookItem& WithLastTriggered(const Aws::Utils::DateTime& value) { SetLastTriggered(value); return *this;}
-    inline ListWebhookItem& WithLastTriggered(Aws::Utils::DateTime&& value) { SetLastTriggered(std::move(value)); return *this;}
+    template<typename LastTriggeredT = Aws::Utils::DateTime>
+    void SetLastTriggered(LastTriggeredT&& value) { m_lastTriggeredHasBeenSet = true; m_lastTriggered = std::forward<LastTriggeredT>(value); }
+    template<typename LastTriggeredT = Aws::Utils::DateTime>
+    ListWebhookItem& WithLastTriggered(LastTriggeredT&& value) { SetLastTriggered(std::forward<LastTriggeredT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the webhook.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListWebhookItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListWebhookItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListWebhookItem& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListWebhookItem& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the tags applied to the webhook.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ListWebhookItem& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ListWebhookItem& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ListWebhookItem& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ListWebhookItem& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ListWebhookItem& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ListWebhookItem& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -155,7 +147,7 @@ namespace Model
     Aws::String m_errorCode;
     bool m_errorCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastTriggered;
+    Aws::Utils::DateTime m_lastTriggered{};
     bool m_lastTriggeredHasBeenSet = false;
 
     Aws::String m_arn;

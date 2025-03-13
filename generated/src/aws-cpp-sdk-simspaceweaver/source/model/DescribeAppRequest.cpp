@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAppRequest::DescribeAppRequest() : 
-    m_appHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAppRequest::SerializePayload() const
 {
   return {};

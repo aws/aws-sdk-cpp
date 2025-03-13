@@ -12,12 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableFederationRequest::EnableFederationRequest() : 
-    m_eventDataStoreHasBeenSet(false),
-    m_federationRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String EnableFederationRequest::SerializePayload() const
 {
   JsonValue payload;

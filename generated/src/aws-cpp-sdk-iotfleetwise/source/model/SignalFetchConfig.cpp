@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-SignalFetchConfig::SignalFetchConfig() : 
-    m_timeBasedHasBeenSet(false),
-    m_conditionBasedHasBeenSet(false)
-{
-}
-
 SignalFetchConfig::SignalFetchConfig(JsonView jsonValue)
-  : SignalFetchConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SignalFetchConfig& SignalFetchConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timeBased"))
   {
     m_timeBased = jsonValue.GetObject("timeBased");
-
     m_timeBasedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionBased"))
   {
     m_conditionBased = jsonValue.GetObject("conditionBased");
-
     m_conditionBasedHasBeenSet = true;
   }
-
   return *this;
 }
 

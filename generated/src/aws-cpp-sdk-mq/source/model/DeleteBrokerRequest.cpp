@@ -12,11 +12,6 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBrokerRequest::DeleteBrokerRequest() : 
-    m_brokerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBrokerRequest::SerializePayload() const
 {
   return {};

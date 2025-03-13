@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateLexBotRequest::AssociateLexBotRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_lexBotHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String AssociateLexBotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyVpcEndpointServicePayerResponsibilityResponse::ModifyVpcEndpointServicePayerResponsibilityResponse() : 
-    m_returnValue(false)
-{
-}
-
 ModifyVpcEndpointServicePayerResponsibilityResponse::ModifyVpcEndpointServicePayerResponsibilityResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ModifyVpcEndpointServicePayerResponsibilityResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ ModifyVpcEndpointServicePayerResponsibilityResponse& ModifyVpcEndpointServicePay
     if(!returnValueNode.IsNull())
     {
       m_returnValue = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnValueNode.GetText()).c_str()).c_str());
+      m_returnValueHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ ModifyVpcEndpointServicePayerResponsibilityResponse& ModifyVpcEndpointServicePay
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVpcEndpointServicePayerResponsibilityResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

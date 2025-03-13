@@ -18,50 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AutomationRulesFindingFilters::AutomationRulesFindingFilters() : 
-    m_productArnHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_generatorIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_firstObservedAtHasBeenSet(false),
-    m_lastObservedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_confidenceHasBeenSet(false),
-    m_criticalityHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceUrlHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_severityLabelHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourcePartitionHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_resourceDetailsOtherHasBeenSet(false),
-    m_complianceStatusHasBeenSet(false),
-    m_complianceSecurityControlIdHasBeenSet(false),
-    m_complianceAssociatedStandardsIdHasBeenSet(false),
-    m_verificationStateHasBeenSet(false),
-    m_workflowStatusHasBeenSet(false),
-    m_recordStateHasBeenSet(false),
-    m_relatedFindingsProductArnHasBeenSet(false),
-    m_relatedFindingsIdHasBeenSet(false),
-    m_noteTextHasBeenSet(false),
-    m_noteUpdatedAtHasBeenSet(false),
-    m_noteUpdatedByHasBeenSet(false),
-    m_userDefinedFieldsHasBeenSet(false),
-    m_resourceApplicationArnHasBeenSet(false),
-    m_resourceApplicationNameHasBeenSet(false),
-    m_awsAccountNameHasBeenSet(false)
-{
-}
-
 AutomationRulesFindingFilters::AutomationRulesFindingFilters(JsonView jsonValue)
-  : AutomationRulesFindingFilters()
 {
   *this = jsonValue;
 }
@@ -77,7 +34,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_productArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     Aws::Utils::Array<JsonView> awsAccountIdJsonList = jsonValue.GetArray("AwsAccountId");
@@ -87,7 +43,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     Aws::Utils::Array<JsonView> idJsonList = jsonValue.GetArray("Id");
@@ -97,7 +52,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratorId"))
   {
     Aws::Utils::Array<JsonView> generatorIdJsonList = jsonValue.GetArray("GeneratorId");
@@ -107,7 +61,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_generatorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     Aws::Utils::Array<JsonView> typeJsonList = jsonValue.GetArray("Type");
@@ -117,7 +70,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstObservedAt"))
   {
     Aws::Utils::Array<JsonView> firstObservedAtJsonList = jsonValue.GetArray("FirstObservedAt");
@@ -127,7 +79,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_firstObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastObservedAt"))
   {
     Aws::Utils::Array<JsonView> lastObservedAtJsonList = jsonValue.GetArray("LastObservedAt");
@@ -137,7 +88,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_lastObservedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     Aws::Utils::Array<JsonView> createdAtJsonList = jsonValue.GetArray("CreatedAt");
@@ -147,7 +97,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     Aws::Utils::Array<JsonView> updatedAtJsonList = jsonValue.GetArray("UpdatedAt");
@@ -157,7 +106,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     Aws::Utils::Array<JsonView> confidenceJsonList = jsonValue.GetArray("Confidence");
@@ -167,7 +115,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criticality"))
   {
     Aws::Utils::Array<JsonView> criticalityJsonList = jsonValue.GetArray("Criticality");
@@ -177,7 +124,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_criticalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     Aws::Utils::Array<JsonView> titleJsonList = jsonValue.GetArray("Title");
@@ -187,7 +133,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     Aws::Utils::Array<JsonView> descriptionJsonList = jsonValue.GetArray("Description");
@@ -197,7 +142,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceUrl"))
   {
     Aws::Utils::Array<JsonView> sourceUrlJsonList = jsonValue.GetArray("SourceUrl");
@@ -207,7 +151,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_sourceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductName"))
   {
     Aws::Utils::Array<JsonView> productNameJsonList = jsonValue.GetArray("ProductName");
@@ -217,7 +160,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompanyName"))
   {
     Aws::Utils::Array<JsonView> companyNameJsonList = jsonValue.GetArray("CompanyName");
@@ -227,7 +169,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeverityLabel"))
   {
     Aws::Utils::Array<JsonView> severityLabelJsonList = jsonValue.GetArray("SeverityLabel");
@@ -237,7 +178,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_severityLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     Aws::Utils::Array<JsonView> resourceTypeJsonList = jsonValue.GetArray("ResourceType");
@@ -247,7 +187,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     Aws::Utils::Array<JsonView> resourceIdJsonList = jsonValue.GetArray("ResourceId");
@@ -257,7 +196,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourcePartition"))
   {
     Aws::Utils::Array<JsonView> resourcePartitionJsonList = jsonValue.GetArray("ResourcePartition");
@@ -267,7 +205,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourcePartitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRegion"))
   {
     Aws::Utils::Array<JsonView> resourceRegionJsonList = jsonValue.GetArray("ResourceRegion");
@@ -277,7 +214,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTags"))
   {
     Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("ResourceTags");
@@ -287,7 +223,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDetailsOther"))
   {
     Aws::Utils::Array<JsonView> resourceDetailsOtherJsonList = jsonValue.GetArray("ResourceDetailsOther");
@@ -297,7 +232,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceDetailsOtherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceStatus"))
   {
     Aws::Utils::Array<JsonView> complianceStatusJsonList = jsonValue.GetArray("ComplianceStatus");
@@ -307,7 +241,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_complianceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceSecurityControlId"))
   {
     Aws::Utils::Array<JsonView> complianceSecurityControlIdJsonList = jsonValue.GetArray("ComplianceSecurityControlId");
@@ -317,7 +250,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_complianceSecurityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceAssociatedStandardsId"))
   {
     Aws::Utils::Array<JsonView> complianceAssociatedStandardsIdJsonList = jsonValue.GetArray("ComplianceAssociatedStandardsId");
@@ -327,7 +259,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_complianceAssociatedStandardsIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerificationState"))
   {
     Aws::Utils::Array<JsonView> verificationStateJsonList = jsonValue.GetArray("VerificationState");
@@ -337,7 +268,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_verificationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowStatus"))
   {
     Aws::Utils::Array<JsonView> workflowStatusJsonList = jsonValue.GetArray("WorkflowStatus");
@@ -347,7 +277,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_workflowStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordState"))
   {
     Aws::Utils::Array<JsonView> recordStateJsonList = jsonValue.GetArray("RecordState");
@@ -357,7 +286,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_recordStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindingsProductArn"))
   {
     Aws::Utils::Array<JsonView> relatedFindingsProductArnJsonList = jsonValue.GetArray("RelatedFindingsProductArn");
@@ -367,7 +295,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_relatedFindingsProductArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedFindingsId"))
   {
     Aws::Utils::Array<JsonView> relatedFindingsIdJsonList = jsonValue.GetArray("RelatedFindingsId");
@@ -377,7 +304,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_relatedFindingsIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoteText"))
   {
     Aws::Utils::Array<JsonView> noteTextJsonList = jsonValue.GetArray("NoteText");
@@ -387,7 +313,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_noteTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoteUpdatedAt"))
   {
     Aws::Utils::Array<JsonView> noteUpdatedAtJsonList = jsonValue.GetArray("NoteUpdatedAt");
@@ -397,7 +322,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_noteUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoteUpdatedBy"))
   {
     Aws::Utils::Array<JsonView> noteUpdatedByJsonList = jsonValue.GetArray("NoteUpdatedBy");
@@ -407,7 +331,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_noteUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserDefinedFields"))
   {
     Aws::Utils::Array<JsonView> userDefinedFieldsJsonList = jsonValue.GetArray("UserDefinedFields");
@@ -417,7 +340,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_userDefinedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceApplicationArn"))
   {
     Aws::Utils::Array<JsonView> resourceApplicationArnJsonList = jsonValue.GetArray("ResourceApplicationArn");
@@ -427,7 +349,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceApplicationName"))
   {
     Aws::Utils::Array<JsonView> resourceApplicationNameJsonList = jsonValue.GetArray("ResourceApplicationName");
@@ -437,7 +358,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_resourceApplicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsAccountName"))
   {
     Aws::Utils::Array<JsonView> awsAccountNameJsonList = jsonValue.GetArray("AwsAccountName");
@@ -447,7 +367,6 @@ AutomationRulesFindingFilters& AutomationRulesFindingFilters::operator =(JsonVie
     }
     m_awsAccountNameHasBeenSet = true;
   }
-
   return *this;
 }
 

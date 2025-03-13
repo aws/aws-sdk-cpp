@@ -12,25 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSimulationJobRequest::CreateSimulationJobRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_outputLocationHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false),
-    m_maxJobDurationInSeconds(0),
-    m_maxJobDurationInSecondsHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_failureBehavior(FailureBehavior::NOT_SET),
-    m_failureBehaviorHasBeenSet(false),
-    m_robotApplicationsHasBeenSet(false),
-    m_simulationApplicationsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_computeHasBeenSet(false)
-{
-}
-
 Aws::String CreateSimulationJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,38 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-SimulationJob::SimulationJob() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SimulationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastStartedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_failureBehavior(FailureBehavior::NOT_SET),
-    m_failureBehaviorHasBeenSet(false),
-    m_failureCode(SimulationJobErrorCode::NOT_SET),
-    m_failureCodeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_loggingConfigHasBeenSet(false),
-    m_maxJobDurationInSeconds(0),
-    m_maxJobDurationInSecondsHasBeenSet(false),
-    m_simulationTimeMillis(0),
-    m_simulationTimeMillisHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_robotApplicationsHasBeenSet(false),
-    m_simulationApplicationsHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false),
-    m_computeHasBeenSet(false)
-{
-}
-
 SimulationJob::SimulationJob(JsonView jsonValue)
-  : SimulationJob()
 {
   *this = jsonValue;
 }
@@ -59,101 +28,73 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SimulationJobStatusMapper::GetSimulationJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStartedAt"))
   {
     m_lastStartedAt = jsonValue.GetDouble("lastStartedAt");
-
     m_lastStartedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureBehavior"))
   {
     m_failureBehavior = FailureBehaviorMapper::GetFailureBehaviorForName(jsonValue.GetString("failureBehavior"));
-
     m_failureBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = SimulationJobErrorCodeMapper::GetSimulationJobErrorCodeForName(jsonValue.GetString("failureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
     m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLocation"))
   {
     m_outputLocation = jsonValue.GetObject("outputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loggingConfig"))
   {
     m_loggingConfig = jsonValue.GetObject("loggingConfig");
-
     m_loggingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxJobDurationInSeconds"))
   {
     m_maxJobDurationInSeconds = jsonValue.GetInt64("maxJobDurationInSeconds");
-
     m_maxJobDurationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("simulationTimeMillis"))
   {
     m_simulationTimeMillis = jsonValue.GetInt64("simulationTimeMillis");
-
     m_simulationTimeMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRole"))
   {
     m_iamRole = jsonValue.GetString("iamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("robotApplications"))
   {
     Aws::Utils::Array<JsonView> robotApplicationsJsonList = jsonValue.GetArray("robotApplications");
@@ -163,7 +104,6 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     }
     m_robotApplicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("simulationApplications"))
   {
     Aws::Utils::Array<JsonView> simulationApplicationsJsonList = jsonValue.GetArray("simulationApplications");
@@ -173,7 +113,6 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     }
     m_simulationApplicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSources"))
   {
     Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("dataSources");
@@ -183,7 +122,6 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     }
     m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -193,28 +131,21 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterface"))
   {
     m_networkInterface = jsonValue.GetObject("networkInterface");
-
     m_networkInterfaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compute"))
   {
     m_compute = jsonValue.GetObject("compute");
-
     m_computeHasBeenSet = true;
   }
-
   return *this;
 }
 

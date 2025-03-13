@@ -34,7 +34,7 @@ namespace Model
   class CoverageEc2InstanceDetails
   {
   public:
-    AWS_GUARDDUTY_API CoverageEc2InstanceDetails();
+    AWS_GUARDDUTY_API CoverageEc2InstanceDetails() = default;
     AWS_GUARDDUTY_API CoverageEc2InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CoverageEc2InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline CoverageEc2InstanceDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline CoverageEc2InstanceDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline CoverageEc2InstanceDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    CoverageEc2InstanceDetails& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type of the Amazon EC2 instance.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline CoverageEc2InstanceDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline CoverageEc2InstanceDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline CoverageEc2InstanceDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    CoverageEc2InstanceDetails& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,26 +69,24 @@ namespace Model
      * <p>The cluster ARN of the Amazon ECS cluster running on the Amazon EC2
      * instance.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline CoverageEc2InstanceDetails& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline CoverageEc2InstanceDetails& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline CoverageEc2InstanceDetails& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    CoverageEc2InstanceDetails& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the installed security agent.</p>
      */
-    inline const AgentDetails& GetAgentDetails() const{ return m_agentDetails; }
+    inline const AgentDetails& GetAgentDetails() const { return m_agentDetails; }
     inline bool AgentDetailsHasBeenSet() const { return m_agentDetailsHasBeenSet; }
-    inline void SetAgentDetails(const AgentDetails& value) { m_agentDetailsHasBeenSet = true; m_agentDetails = value; }
-    inline void SetAgentDetails(AgentDetails&& value) { m_agentDetailsHasBeenSet = true; m_agentDetails = std::move(value); }
-    inline CoverageEc2InstanceDetails& WithAgentDetails(const AgentDetails& value) { SetAgentDetails(value); return *this;}
-    inline CoverageEc2InstanceDetails& WithAgentDetails(AgentDetails&& value) { SetAgentDetails(std::move(value)); return *this;}
+    template<typename AgentDetailsT = AgentDetails>
+    void SetAgentDetails(AgentDetailsT&& value) { m_agentDetailsHasBeenSet = true; m_agentDetails = std::forward<AgentDetailsT>(value); }
+    template<typename AgentDetailsT = AgentDetails>
+    CoverageEc2InstanceDetails& WithAgentDetails(AgentDetailsT&& value) { SetAgentDetails(std::forward<AgentDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,10 @@ namespace Model
      * <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
      * EKS clusters.</p> 
      */
-    inline const ManagementType& GetManagementType() const{ return m_managementType; }
+    inline ManagementType GetManagementType() const { return m_managementType; }
     inline bool ManagementTypeHasBeenSet() const { return m_managementTypeHasBeenSet; }
-    inline void SetManagementType(const ManagementType& value) { m_managementTypeHasBeenSet = true; m_managementType = value; }
-    inline void SetManagementType(ManagementType&& value) { m_managementTypeHasBeenSet = true; m_managementType = std::move(value); }
-    inline CoverageEc2InstanceDetails& WithManagementType(const ManagementType& value) { SetManagementType(value); return *this;}
-    inline CoverageEc2InstanceDetails& WithManagementType(ManagementType&& value) { SetManagementType(std::move(value)); return *this;}
+    inline void SetManagementType(ManagementType value) { m_managementTypeHasBeenSet = true; m_managementType = value; }
+    inline CoverageEc2InstanceDetails& WithManagementType(ManagementType value) { SetManagementType(value); return *this;}
     ///@}
   private:
 
@@ -126,7 +118,7 @@ namespace Model
     AgentDetails m_agentDetails;
     bool m_agentDetailsHasBeenSet = false;
 
-    ManagementType m_managementType;
+    ManagementType m_managementType{ManagementType::NOT_SET};
     bool m_managementTypeHasBeenSet = false;
   };
 

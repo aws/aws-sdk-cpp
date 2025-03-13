@@ -18,14 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-Message::Message() : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetObject("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetObject("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   return *this;
 }
 

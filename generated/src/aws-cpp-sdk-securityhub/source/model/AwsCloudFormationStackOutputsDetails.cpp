@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFormationStackOutputsDetails::AwsCloudFormationStackOutputsDetails() : 
-    m_descriptionHasBeenSet(false),
-    m_outputKeyHasBeenSet(false),
-    m_outputValueHasBeenSet(false)
-{
-}
-
 AwsCloudFormationStackOutputsDetails::AwsCloudFormationStackOutputsDetails(JsonView jsonValue)
-  : AwsCloudFormationStackOutputsDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsCloudFormationStackOutputsDetails& AwsCloudFormationStackOutputsDetails::oper
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputKey"))
   {
     m_outputKey = jsonValue.GetString("OutputKey");
-
     m_outputKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputValue"))
   {
     m_outputValue = jsonValue.GetString("OutputValue");
-
     m_outputValueHasBeenSet = true;
   }
-
   return *this;
 }
 

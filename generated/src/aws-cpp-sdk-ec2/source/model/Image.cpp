@@ -20,61 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Image::Image() : 
-    m_platformDetailsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enaSupport(false),
-    m_enaSupportHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false),
-    m_imageOwnerAliasHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_rootDeviceType(DeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_tpmSupport(TpmSupportValues::NOT_SET),
-    m_tpmSupportHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false),
-    m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false),
-    m_sourceInstanceIdHasBeenSet(false),
-    m_deregistrationProtectionHasBeenSet(false),
-    m_lastLaunchedTimeHasBeenSet(false),
-    m_imageAllowed(false),
-    m_imageAllowedHasBeenSet(false),
-    m_sourceImageIdHasBeenSet(false),
-    m_sourceImageRegionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_imageType(ImageTypeValues::NOT_SET),
-    m_imageTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false)
-{
-}
-
 Image::Image(const XmlNode& xmlNode)
-  : Image()
 {
   *this = xmlNode;
 }
@@ -90,234 +36,270 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_platformDetails = Aws::Utils::Xml::DecodeEscapedXmlText(platformDetailsNode.GetText());
       m_platformDetailsHasBeenSet = true;
+       m_platformDetailsHasBeenSet = true;
     }
     XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
     if(!usageOperationNode.IsNull())
     {
       m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
       m_usageOperationHasBeenSet = true;
+       m_usageOperationHasBeenSet = true;
     }
     XmlNode blockDeviceMappingsNode = resultNode.FirstChild("blockDeviceMapping");
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
         blockDeviceMappingsMember = blockDeviceMappingsMember.NextNode("item");
       }
 
-      m_blockDeviceMappingsHasBeenSet = true;
+       m_blockDeviceMappingsHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
     if(!enaSupportNode.IsNull())
     {
       m_enaSupport = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()).c_str());
       m_enaSupportHasBeenSet = true;
+       m_enaSupportHasBeenSet = true;
     }
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
-      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()).c_str());
+      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()));
       m_hypervisorHasBeenSet = true;
+       m_hypervisorHasBeenSet = true;
     }
     XmlNode imageOwnerAliasNode = resultNode.FirstChild("imageOwnerAlias");
     if(!imageOwnerAliasNode.IsNull())
     {
       m_imageOwnerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(imageOwnerAliasNode.GetText());
       m_imageOwnerAliasHasBeenSet = true;
+       m_imageOwnerAliasHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
     if(!rootDeviceNameNode.IsNull())
     {
       m_rootDeviceName = Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceNameNode.GetText());
       m_rootDeviceNameHasBeenSet = true;
+       m_rootDeviceNameHasBeenSet = true;
     }
     XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
     if(!rootDeviceTypeNode.IsNull())
     {
-      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()).c_str());
+      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()));
       m_rootDeviceTypeHasBeenSet = true;
+       m_rootDeviceTypeHasBeenSet = true;
     }
     XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
     if(!sriovNetSupportNode.IsNull())
     {
       m_sriovNetSupport = Aws::Utils::Xml::DecodeEscapedXmlText(sriovNetSupportNode.GetText());
       m_sriovNetSupportHasBeenSet = true;
+       m_sriovNetSupportHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("stateReason");
     if(!stateReasonNode.IsNull())
     {
       m_stateReason = stateReasonNode;
       m_stateReasonHasBeenSet = true;
+       m_stateReasonHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode virtualizationTypeNode = resultNode.FirstChild("virtualizationType");
     if(!virtualizationTypeNode.IsNull())
     {
-      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()).c_str());
+      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()));
       m_virtualizationTypeHasBeenSet = true;
+       m_virtualizationTypeHasBeenSet = true;
     }
     XmlNode bootModeNode = resultNode.FirstChild("bootMode");
     if(!bootModeNode.IsNull())
     {
-      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()));
       m_bootModeHasBeenSet = true;
+       m_bootModeHasBeenSet = true;
     }
     XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
     if(!tpmSupportNode.IsNull())
     {
-      m_tpmSupport = TpmSupportValuesMapper::GetTpmSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText()).c_str()).c_str());
+      m_tpmSupport = TpmSupportValuesMapper::GetTpmSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText()).c_str()));
       m_tpmSupportHasBeenSet = true;
+       m_tpmSupportHasBeenSet = true;
     }
     XmlNode deprecationTimeNode = resultNode.FirstChild("deprecationTime");
     if(!deprecationTimeNode.IsNull())
     {
       m_deprecationTime = Aws::Utils::Xml::DecodeEscapedXmlText(deprecationTimeNode.GetText());
       m_deprecationTimeHasBeenSet = true;
+       m_deprecationTimeHasBeenSet = true;
     }
     XmlNode imdsSupportNode = resultNode.FirstChild("imdsSupport");
     if(!imdsSupportNode.IsNull())
     {
-      m_imdsSupport = ImdsSupportValuesMapper::GetImdsSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imdsSupportNode.GetText()).c_str()).c_str());
+      m_imdsSupport = ImdsSupportValuesMapper::GetImdsSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imdsSupportNode.GetText()).c_str()));
       m_imdsSupportHasBeenSet = true;
+       m_imdsSupportHasBeenSet = true;
     }
     XmlNode sourceInstanceIdNode = resultNode.FirstChild("sourceInstanceId");
     if(!sourceInstanceIdNode.IsNull())
     {
       m_sourceInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceInstanceIdNode.GetText());
       m_sourceInstanceIdHasBeenSet = true;
+       m_sourceInstanceIdHasBeenSet = true;
     }
     XmlNode deregistrationProtectionNode = resultNode.FirstChild("deregistrationProtection");
     if(!deregistrationProtectionNode.IsNull())
     {
       m_deregistrationProtection = Aws::Utils::Xml::DecodeEscapedXmlText(deregistrationProtectionNode.GetText());
       m_deregistrationProtectionHasBeenSet = true;
+       m_deregistrationProtectionHasBeenSet = true;
     }
     XmlNode lastLaunchedTimeNode = resultNode.FirstChild("lastLaunchedTime");
     if(!lastLaunchedTimeNode.IsNull())
     {
       m_lastLaunchedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastLaunchedTimeNode.GetText());
       m_lastLaunchedTimeHasBeenSet = true;
+       m_lastLaunchedTimeHasBeenSet = true;
     }
     XmlNode imageAllowedNode = resultNode.FirstChild("imageAllowed");
     if(!imageAllowedNode.IsNull())
     {
       m_imageAllowed = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageAllowedNode.GetText()).c_str()).c_str());
       m_imageAllowedHasBeenSet = true;
+       m_imageAllowedHasBeenSet = true;
     }
     XmlNode sourceImageIdNode = resultNode.FirstChild("sourceImageId");
     if(!sourceImageIdNode.IsNull())
     {
       m_sourceImageId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceImageIdNode.GetText());
       m_sourceImageIdHasBeenSet = true;
+       m_sourceImageIdHasBeenSet = true;
     }
     XmlNode sourceImageRegionNode = resultNode.FirstChild("sourceImageRegion");
     if(!sourceImageRegionNode.IsNull())
     {
       m_sourceImageRegion = Aws::Utils::Xml::DecodeEscapedXmlText(sourceImageRegionNode.GetText());
       m_sourceImageRegionHasBeenSet = true;
+       m_sourceImageRegionHasBeenSet = true;
     }
     XmlNode imageIdNode = resultNode.FirstChild("imageId");
     if(!imageIdNode.IsNull())
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode imageLocationNode = resultNode.FirstChild("imageLocation");
     if(!imageLocationNode.IsNull())
     {
       m_imageLocation = Aws::Utils::Xml::DecodeEscapedXmlText(imageLocationNode.GetText());
       m_imageLocationHasBeenSet = true;
+       m_imageLocationHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("imageState");
     if(!stateNode.IsNull())
     {
-      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("imageOwnerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode creationDateNode = resultNode.FirstChild("creationDate");
     if(!creationDateNode.IsNull())
     {
       m_creationDate = Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText());
       m_creationDateHasBeenSet = true;
+       m_creationDateHasBeenSet = true;
     }
     XmlNode publicNode = resultNode.FirstChild("isPublic");
     if(!publicNode.IsNull())
     {
       m_public = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publicNode.GetText()).c_str()).c_str());
       m_publicHasBeenSet = true;
+       m_publicHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
         productCodesMember = productCodesMember.NextNode("item");
       }
 
-      m_productCodesHasBeenSet = true;
+       m_productCodesHasBeenSet = true;
     }
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()));
       m_architectureHasBeenSet = true;
+       m_architectureHasBeenSet = true;
     }
     XmlNode imageTypeNode = resultNode.FirstChild("imageType");
     if(!imageTypeNode.IsNull())
     {
-      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageTypeNode.GetText()).c_str()).c_str());
+      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageTypeNode.GetText()).c_str()));
       m_imageTypeHasBeenSet = true;
+       m_imageTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
     if(!kernelIdNode.IsNull())
     {
       m_kernelId = Aws::Utils::Xml::DecodeEscapedXmlText(kernelIdNode.GetText());
       m_kernelIdHasBeenSet = true;
+       m_kernelIdHasBeenSet = true;
     }
     XmlNode ramdiskIdNode = resultNode.FirstChild("ramdiskId");
     if(!ramdiskIdNode.IsNull())
     {
       m_ramdiskId = Aws::Utils::Xml::DecodeEscapedXmlText(ramdiskIdNode.GetText());
       m_ramdiskIdHasBeenSet = true;
+       m_ramdiskIdHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
+       m_platformHasBeenSet = true;
     }
   }
 

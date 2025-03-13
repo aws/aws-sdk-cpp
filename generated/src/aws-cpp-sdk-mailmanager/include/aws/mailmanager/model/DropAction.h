@@ -31,7 +31,7 @@ namespace Model
   class DropAction
   {
   public:
-    AWS_MAILMANAGER_API DropAction();
+    AWS_MAILMANAGER_API DropAction() = default;
     AWS_MAILMANAGER_API DropAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API DropAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;

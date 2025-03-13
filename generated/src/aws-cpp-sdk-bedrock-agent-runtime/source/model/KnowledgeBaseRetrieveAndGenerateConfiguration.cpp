@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration() : 
-    m_generationConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_orchestrationConfigurationHasBeenSet(false),
-    m_retrievalConfigurationHasBeenSet(false)
-{
-}
-
 KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration(JsonView jsonValue)
-  : KnowledgeBaseRetrieveAndGenerateConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ KnowledgeBaseRetrieveAndGenerateConfiguration& KnowledgeBaseRetrieveAndGenerateC
   if(jsonValue.ValueExists("generationConfiguration"))
   {
     m_generationConfiguration = jsonValue.GetObject("generationConfiguration");
-
     m_generationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orchestrationConfiguration"))
   {
     m_orchestrationConfiguration = jsonValue.GetObject("orchestrationConfiguration");
-
     m_orchestrationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrievalConfiguration"))
   {
     m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
-
     m_retrievalConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class CreatePipelineRequest : public ElasticTranscoderRequest
   {
   public:
-    AWS_ELASTICTRANSCODER_API CreatePipelineRequest();
+    AWS_ELASTICTRANSCODER_API CreatePipelineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40
      * characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreatePipelineRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreatePipelineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreatePipelineRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreatePipelineRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon S3 bucket in which you saved the media files that you want to
      * transcode.</p>
      */
-    inline const Aws::String& GetInputBucket() const{ return m_inputBucket; }
+    inline const Aws::String& GetInputBucket() const { return m_inputBucket; }
     inline bool InputBucketHasBeenSet() const { return m_inputBucketHasBeenSet; }
-    inline void SetInputBucket(const Aws::String& value) { m_inputBucketHasBeenSet = true; m_inputBucket = value; }
-    inline void SetInputBucket(Aws::String&& value) { m_inputBucketHasBeenSet = true; m_inputBucket = std::move(value); }
-    inline void SetInputBucket(const char* value) { m_inputBucketHasBeenSet = true; m_inputBucket.assign(value); }
-    inline CreatePipelineRequest& WithInputBucket(const Aws::String& value) { SetInputBucket(value); return *this;}
-    inline CreatePipelineRequest& WithInputBucket(Aws::String&& value) { SetInputBucket(std::move(value)); return *this;}
-    inline CreatePipelineRequest& WithInputBucket(const char* value) { SetInputBucket(value); return *this;}
+    template<typename InputBucketT = Aws::String>
+    void SetInputBucket(InputBucketT&& value) { m_inputBucketHasBeenSet = true; m_inputBucket = std::forward<InputBucketT>(value); }
+    template<typename InputBucketT = Aws::String>
+    CreatePipelineRequest& WithInputBucket(InputBucketT&& value) { SetInputBucket(std::forward<InputBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for
      * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
      */
-    inline const Aws::String& GetOutputBucket() const{ return m_outputBucket; }
+    inline const Aws::String& GetOutputBucket() const { return m_outputBucket; }
     inline bool OutputBucketHasBeenSet() const { return m_outputBucketHasBeenSet; }
-    inline void SetOutputBucket(const Aws::String& value) { m_outputBucketHasBeenSet = true; m_outputBucket = value; }
-    inline void SetOutputBucket(Aws::String&& value) { m_outputBucketHasBeenSet = true; m_outputBucket = std::move(value); }
-    inline void SetOutputBucket(const char* value) { m_outputBucketHasBeenSet = true; m_outputBucket.assign(value); }
-    inline CreatePipelineRequest& WithOutputBucket(const Aws::String& value) { SetOutputBucket(value); return *this;}
-    inline CreatePipelineRequest& WithOutputBucket(Aws::String&& value) { SetOutputBucket(std::move(value)); return *this;}
-    inline CreatePipelineRequest& WithOutputBucket(const char* value) { SetOutputBucket(value); return *this;}
+    template<typename OutputBucketT = Aws::String>
+    void SetOutputBucket(OutputBucketT&& value) { m_outputBucketHasBeenSet = true; m_outputBucket = std::forward<OutputBucketT>(value); }
+    template<typename OutputBucketT = Aws::String>
+    CreatePipelineRequest& WithOutputBucket(OutputBucketT&& value) { SetOutputBucket(std::forward<OutputBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic
      * Transcoder to use to create the pipeline.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline CreatePipelineRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline CreatePipelineRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline CreatePipelineRequest& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    CreatePipelineRequest& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +116,12 @@ namespace Model
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
      * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
-    inline const Aws::String& GetAwsKmsKeyArn() const{ return m_awsKmsKeyArn; }
+    inline const Aws::String& GetAwsKmsKeyArn() const { return m_awsKmsKeyArn; }
     inline bool AwsKmsKeyArnHasBeenSet() const { return m_awsKmsKeyArnHasBeenSet; }
-    inline void SetAwsKmsKeyArn(const Aws::String& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = value; }
-    inline void SetAwsKmsKeyArn(Aws::String&& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = std::move(value); }
-    inline void SetAwsKmsKeyArn(const char* value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn.assign(value); }
-    inline CreatePipelineRequest& WithAwsKmsKeyArn(const Aws::String& value) { SetAwsKmsKeyArn(value); return *this;}
-    inline CreatePipelineRequest& WithAwsKmsKeyArn(Aws::String&& value) { SetAwsKmsKeyArn(std::move(value)); return *this;}
-    inline CreatePipelineRequest& WithAwsKmsKeyArn(const char* value) { SetAwsKmsKeyArn(value); return *this;}
+    template<typename AwsKmsKeyArnT = Aws::String>
+    void SetAwsKmsKeyArn(AwsKmsKeyArnT&& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = std::forward<AwsKmsKeyArnT>(value); }
+    template<typename AwsKmsKeyArnT = Aws::String>
+    CreatePipelineRequest& WithAwsKmsKeyArn(AwsKmsKeyArnT&& value) { SetAwsKmsKeyArn(std::forward<AwsKmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +145,12 @@ namespace Model
      * encounters an error condition while processing a job in this pipeline. This is
      * the ARN that Amazon SNS returned when you created the topic.</p> </li> </ul>
      */
-    inline const Notifications& GetNotifications() const{ return m_notifications; }
+    inline const Notifications& GetNotifications() const { return m_notifications; }
     inline bool NotificationsHasBeenSet() const { return m_notificationsHasBeenSet; }
-    inline void SetNotifications(const Notifications& value) { m_notificationsHasBeenSet = true; m_notifications = value; }
-    inline void SetNotifications(Notifications&& value) { m_notificationsHasBeenSet = true; m_notifications = std::move(value); }
-    inline CreatePipelineRequest& WithNotifications(const Notifications& value) { SetNotifications(value); return *this;}
-    inline CreatePipelineRequest& WithNotifications(Notifications&& value) { SetNotifications(std::move(value)); return *this;}
+    template<typename NotificationsT = Notifications>
+    void SetNotifications(NotificationsT&& value) { m_notificationsHasBeenSet = true; m_notifications = std::forward<NotificationsT>(value); }
+    template<typename NotificationsT = Notifications>
+    CreatePipelineRequest& WithNotifications(NotificationsT&& value) { SetNotifications(std::forward<NotificationsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,12 +205,12 @@ namespace Model
      * the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>
      * </ul>
      */
-    inline const PipelineOutputConfig& GetContentConfig() const{ return m_contentConfig; }
+    inline const PipelineOutputConfig& GetContentConfig() const { return m_contentConfig; }
     inline bool ContentConfigHasBeenSet() const { return m_contentConfigHasBeenSet; }
-    inline void SetContentConfig(const PipelineOutputConfig& value) { m_contentConfigHasBeenSet = true; m_contentConfig = value; }
-    inline void SetContentConfig(PipelineOutputConfig&& value) { m_contentConfigHasBeenSet = true; m_contentConfig = std::move(value); }
-    inline CreatePipelineRequest& WithContentConfig(const PipelineOutputConfig& value) { SetContentConfig(value); return *this;}
-    inline CreatePipelineRequest& WithContentConfig(PipelineOutputConfig&& value) { SetContentConfig(std::move(value)); return *this;}
+    template<typename ContentConfigT = PipelineOutputConfig>
+    void SetContentConfig(ContentConfigT&& value) { m_contentConfigHasBeenSet = true; m_contentConfig = std::forward<ContentConfigT>(value); }
+    template<typename ContentConfigT = PipelineOutputConfig>
+    CreatePipelineRequest& WithContentConfig(ContentConfigT&& value) { SetContentConfig(std::forward<ContentConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -269,12 +259,12 @@ namespace Model
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
      * the thumbnails that it stores in your Amazon S3 bucket.</p> </li> </ul>
      */
-    inline const PipelineOutputConfig& GetThumbnailConfig() const{ return m_thumbnailConfig; }
+    inline const PipelineOutputConfig& GetThumbnailConfig() const { return m_thumbnailConfig; }
     inline bool ThumbnailConfigHasBeenSet() const { return m_thumbnailConfigHasBeenSet; }
-    inline void SetThumbnailConfig(const PipelineOutputConfig& value) { m_thumbnailConfigHasBeenSet = true; m_thumbnailConfig = value; }
-    inline void SetThumbnailConfig(PipelineOutputConfig&& value) { m_thumbnailConfigHasBeenSet = true; m_thumbnailConfig = std::move(value); }
-    inline CreatePipelineRequest& WithThumbnailConfig(const PipelineOutputConfig& value) { SetThumbnailConfig(value); return *this;}
-    inline CreatePipelineRequest& WithThumbnailConfig(PipelineOutputConfig&& value) { SetThumbnailConfig(std::move(value)); return *this;}
+    template<typename ThumbnailConfigT = PipelineOutputConfig>
+    void SetThumbnailConfig(ThumbnailConfigT&& value) { m_thumbnailConfigHasBeenSet = true; m_thumbnailConfig = std::forward<ThumbnailConfigT>(value); }
+    template<typename ThumbnailConfigT = PipelineOutputConfig>
+    CreatePipelineRequest& WithThumbnailConfig(ThumbnailConfigT&& value) { SetThumbnailConfig(std::forward<ThumbnailConfigT>(value)); return *this;}
     ///@}
   private:
 

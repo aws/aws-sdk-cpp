@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-PassThroughSettings::PassThroughSettings()
-{
-}
-
 PassThroughSettings::PassThroughSettings(JsonView jsonValue)
 {
   *this = jsonValue;

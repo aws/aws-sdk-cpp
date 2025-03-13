@@ -29,7 +29,7 @@ namespace Model
   class ListVirtualClustersRequest : public EMRContainersRequest
   {
   public:
-    AWS_EMRCONTAINERS_API ListVirtualClustersRequest();
+    AWS_EMRCONTAINERS_API ListVirtualClustersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The container provider ID of the virtual cluster.</p>
      */
-    inline const Aws::String& GetContainerProviderId() const{ return m_containerProviderId; }
+    inline const Aws::String& GetContainerProviderId() const { return m_containerProviderId; }
     inline bool ContainerProviderIdHasBeenSet() const { return m_containerProviderIdHasBeenSet; }
-    inline void SetContainerProviderId(const Aws::String& value) { m_containerProviderIdHasBeenSet = true; m_containerProviderId = value; }
-    inline void SetContainerProviderId(Aws::String&& value) { m_containerProviderIdHasBeenSet = true; m_containerProviderId = std::move(value); }
-    inline void SetContainerProviderId(const char* value) { m_containerProviderIdHasBeenSet = true; m_containerProviderId.assign(value); }
-    inline ListVirtualClustersRequest& WithContainerProviderId(const Aws::String& value) { SetContainerProviderId(value); return *this;}
-    inline ListVirtualClustersRequest& WithContainerProviderId(Aws::String&& value) { SetContainerProviderId(std::move(value)); return *this;}
-    inline ListVirtualClustersRequest& WithContainerProviderId(const char* value) { SetContainerProviderId(value); return *this;}
+    template<typename ContainerProviderIdT = Aws::String>
+    void SetContainerProviderId(ContainerProviderIdT&& value) { m_containerProviderIdHasBeenSet = true; m_containerProviderId = std::forward<ContainerProviderIdT>(value); }
+    template<typename ContainerProviderIdT = Aws::String>
+    ListVirtualClustersRequest& WithContainerProviderId(ContainerProviderIdT&& value) { SetContainerProviderId(std::forward<ContainerProviderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,57 +59,54 @@ namespace Model
      * <p>The container provider type of the virtual cluster. Amazon EKS is the only
      * supported type as of now.</p>
      */
-    inline const ContainerProviderType& GetContainerProviderType() const{ return m_containerProviderType; }
+    inline ContainerProviderType GetContainerProviderType() const { return m_containerProviderType; }
     inline bool ContainerProviderTypeHasBeenSet() const { return m_containerProviderTypeHasBeenSet; }
-    inline void SetContainerProviderType(const ContainerProviderType& value) { m_containerProviderTypeHasBeenSet = true; m_containerProviderType = value; }
-    inline void SetContainerProviderType(ContainerProviderType&& value) { m_containerProviderTypeHasBeenSet = true; m_containerProviderType = std::move(value); }
-    inline ListVirtualClustersRequest& WithContainerProviderType(const ContainerProviderType& value) { SetContainerProviderType(value); return *this;}
-    inline ListVirtualClustersRequest& WithContainerProviderType(ContainerProviderType&& value) { SetContainerProviderType(std::move(value)); return *this;}
+    inline void SetContainerProviderType(ContainerProviderType value) { m_containerProviderTypeHasBeenSet = true; m_containerProviderType = value; }
+    inline ListVirtualClustersRequest& WithContainerProviderType(ContainerProviderType value) { SetContainerProviderType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time after which the virtual clusters are created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
+    inline const Aws::Utils::DateTime& GetCreatedAfter() const { return m_createdAfter; }
     inline bool CreatedAfterHasBeenSet() const { return m_createdAfterHasBeenSet; }
-    inline void SetCreatedAfter(const Aws::Utils::DateTime& value) { m_createdAfterHasBeenSet = true; m_createdAfter = value; }
-    inline void SetCreatedAfter(Aws::Utils::DateTime&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::move(value); }
-    inline ListVirtualClustersRequest& WithCreatedAfter(const Aws::Utils::DateTime& value) { SetCreatedAfter(value); return *this;}
-    inline ListVirtualClustersRequest& WithCreatedAfter(Aws::Utils::DateTime&& value) { SetCreatedAfter(std::move(value)); return *this;}
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    void SetCreatedAfter(CreatedAfterT&& value) { m_createdAfterHasBeenSet = true; m_createdAfter = std::forward<CreatedAfterT>(value); }
+    template<typename CreatedAfterT = Aws::Utils::DateTime>
+    ListVirtualClustersRequest& WithCreatedAfter(CreatedAfterT&& value) { SetCreatedAfter(std::forward<CreatedAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time before which the virtual clusters are created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
+    inline const Aws::Utils::DateTime& GetCreatedBefore() const { return m_createdBefore; }
     inline bool CreatedBeforeHasBeenSet() const { return m_createdBeforeHasBeenSet; }
-    inline void SetCreatedBefore(const Aws::Utils::DateTime& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = value; }
-    inline void SetCreatedBefore(Aws::Utils::DateTime&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::move(value); }
-    inline ListVirtualClustersRequest& WithCreatedBefore(const Aws::Utils::DateTime& value) { SetCreatedBefore(value); return *this;}
-    inline ListVirtualClustersRequest& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    void SetCreatedBefore(CreatedBeforeT&& value) { m_createdBeforeHasBeenSet = true; m_createdBefore = std::forward<CreatedBeforeT>(value); }
+    template<typename CreatedBeforeT = Aws::Utils::DateTime>
+    ListVirtualClustersRequest& WithCreatedBefore(CreatedBeforeT&& value) { SetCreatedBefore(std::forward<CreatedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The states of the requested virtual clusters.</p>
      */
-    inline const Aws::Vector<VirtualClusterState>& GetStates() const{ return m_states; }
+    inline const Aws::Vector<VirtualClusterState>& GetStates() const { return m_states; }
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
-    inline void SetStates(const Aws::Vector<VirtualClusterState>& value) { m_statesHasBeenSet = true; m_states = value; }
-    inline void SetStates(Aws::Vector<VirtualClusterState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
-    inline ListVirtualClustersRequest& WithStates(const Aws::Vector<VirtualClusterState>& value) { SetStates(value); return *this;}
-    inline ListVirtualClustersRequest& WithStates(Aws::Vector<VirtualClusterState>&& value) { SetStates(std::move(value)); return *this;}
-    inline ListVirtualClustersRequest& AddStates(const VirtualClusterState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
-    inline ListVirtualClustersRequest& AddStates(VirtualClusterState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    template<typename StatesT = Aws::Vector<VirtualClusterState>>
+    void SetStates(StatesT&& value) { m_statesHasBeenSet = true; m_states = std::forward<StatesT>(value); }
+    template<typename StatesT = Aws::Vector<VirtualClusterState>>
+    ListVirtualClustersRequest& WithStates(StatesT&& value) { SetStates(std::forward<StatesT>(value)); return *this;}
+    inline ListVirtualClustersRequest& AddStates(VirtualClusterState value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of virtual clusters that can be listed.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListVirtualClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -121,14 +116,12 @@ namespace Model
     /**
      * <p>The token for the next set of virtual clusters to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListVirtualClustersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVirtualClustersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVirtualClustersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVirtualClustersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +130,7 @@ namespace Model
      * virtual clusters that have the access entry integration enabled or disabled. If
      * not specified, the operation returns all applicable virtual clusters.</p>
      */
-    inline bool GetEksAccessEntryIntegrated() const{ return m_eksAccessEntryIntegrated; }
+    inline bool GetEksAccessEntryIntegrated() const { return m_eksAccessEntryIntegrated; }
     inline bool EksAccessEntryIntegratedHasBeenSet() const { return m_eksAccessEntryIntegratedHasBeenSet; }
     inline void SetEksAccessEntryIntegrated(bool value) { m_eksAccessEntryIntegratedHasBeenSet = true; m_eksAccessEntryIntegrated = value; }
     inline ListVirtualClustersRequest& WithEksAccessEntryIntegrated(bool value) { SetEksAccessEntryIntegrated(value); return *this;}
@@ -147,25 +140,25 @@ namespace Model
     Aws::String m_containerProviderId;
     bool m_containerProviderIdHasBeenSet = false;
 
-    ContainerProviderType m_containerProviderType;
+    ContainerProviderType m_containerProviderType{ContainerProviderType::NOT_SET};
     bool m_containerProviderTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAfter;
+    Aws::Utils::DateTime m_createdAfter{};
     bool m_createdAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdBefore;
+    Aws::Utils::DateTime m_createdBefore{};
     bool m_createdBeforeHasBeenSet = false;
 
     Aws::Vector<VirtualClusterState> m_states;
     bool m_statesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_eksAccessEntryIntegrated;
+    bool m_eksAccessEntryIntegrated{false};
     bool m_eksAccessEntryIntegratedHasBeenSet = false;
   };
 

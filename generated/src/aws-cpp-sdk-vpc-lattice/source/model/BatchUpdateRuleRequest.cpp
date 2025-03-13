@@ -12,13 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateRuleRequest::BatchUpdateRuleRequest() : 
-    m_listenerIdentifierHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_serviceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

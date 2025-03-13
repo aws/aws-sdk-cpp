@@ -18,26 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ConfluenceConfiguration::ConfluenceConfiguration() : 
-    m_serverUrlHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_version(ConfluenceVersion::NOT_SET),
-    m_versionHasBeenSet(false),
-    m_spaceConfigurationHasBeenSet(false),
-    m_pageConfigurationHasBeenSet(false),
-    m_blogConfigurationHasBeenSet(false),
-    m_attachmentConfigurationHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_authenticationType(ConfluenceAuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
-{
-}
-
 ConfluenceConfiguration::ConfluenceConfiguration(JsonView jsonValue)
-  : ConfluenceConfiguration()
 {
   *this = jsonValue;
 }
@@ -47,59 +28,43 @@ ConfluenceConfiguration& ConfluenceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServerUrl"))
   {
     m_serverUrl = jsonValue.GetString("ServerUrl");
-
     m_serverUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = ConfluenceVersionMapper::GetConfluenceVersionForName(jsonValue.GetString("Version"));
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceConfiguration"))
   {
     m_spaceConfiguration = jsonValue.GetObject("SpaceConfiguration");
-
     m_spaceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageConfiguration"))
   {
     m_pageConfiguration = jsonValue.GetObject("PageConfiguration");
-
     m_pageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlogConfiguration"))
   {
     m_blogConfiguration = jsonValue.GetObject("BlogConfiguration");
-
     m_blogConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentConfiguration"))
   {
     m_attachmentConfiguration = jsonValue.GetObject("AttachmentConfiguration");
-
     m_attachmentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -109,7 +74,6 @@ ConfluenceConfiguration& ConfluenceConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -119,21 +83,16 @@ ConfluenceConfiguration& ConfluenceConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProxyConfiguration"))
   {
     m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
-
     m_proxyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = ConfluenceAuthenticationTypeMapper::GetConfluenceAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

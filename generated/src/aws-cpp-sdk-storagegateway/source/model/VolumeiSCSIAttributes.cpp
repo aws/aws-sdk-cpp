@@ -18,20 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-VolumeiSCSIAttributes::VolumeiSCSIAttributes() : 
-    m_targetARNHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfacePort(0),
-    m_networkInterfacePortHasBeenSet(false),
-    m_lunNumber(0),
-    m_lunNumberHasBeenSet(false),
-    m_chapEnabled(false),
-    m_chapEnabledHasBeenSet(false)
-{
-}
-
 VolumeiSCSIAttributes::VolumeiSCSIAttributes(JsonView jsonValue)
-  : VolumeiSCSIAttributes()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ VolumeiSCSIAttributes& VolumeiSCSIAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetARN"))
   {
     m_targetARN = jsonValue.GetString("TargetARN");
-
     m_targetARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfacePort"))
   {
     m_networkInterfacePort = jsonValue.GetInteger("NetworkInterfacePort");
-
     m_networkInterfacePortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LunNumber"))
   {
     m_lunNumber = jsonValue.GetInteger("LunNumber");
-
     m_lunNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChapEnabled"))
   {
     m_chapEnabled = jsonValue.GetBool("ChapEnabled");
-
     m_chapEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

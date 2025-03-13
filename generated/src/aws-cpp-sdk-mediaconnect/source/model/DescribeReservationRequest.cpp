@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReservationRequest::DescribeReservationRequest() : 
-    m_reservationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservationRequest::SerializePayload() const
 {
   return {};

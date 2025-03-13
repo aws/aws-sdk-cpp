@@ -20,16 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-InsightRuleContributor::InsightRuleContributor() : 
-    m_keysHasBeenSet(false),
-    m_approximateAggregateValue(0.0),
-    m_approximateAggregateValueHasBeenSet(false),
-    m_datapointsHasBeenSet(false)
-{
-}
-
 InsightRuleContributor::InsightRuleContributor(const XmlNode& xmlNode)
-  : InsightRuleContributor()
 {
   *this = xmlNode;
 }
@@ -44,31 +35,34 @@ InsightRuleContributor& InsightRuleContributor::operator =(const XmlNode& xmlNod
     if(!keysNode.IsNull())
     {
       XmlNode keysMember = keysNode.FirstChild("member");
+      m_keysHasBeenSet = !keysMember.IsNull();
       while(!keysMember.IsNull())
       {
         m_keys.push_back(keysMember.GetText());
         keysMember = keysMember.NextNode("member");
       }
 
-      m_keysHasBeenSet = true;
+       m_keysHasBeenSet = true;
     }
     XmlNode approximateAggregateValueNode = resultNode.FirstChild("ApproximateAggregateValue");
     if(!approximateAggregateValueNode.IsNull())
     {
       m_approximateAggregateValue = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(approximateAggregateValueNode.GetText()).c_str()).c_str());
       m_approximateAggregateValueHasBeenSet = true;
+       m_approximateAggregateValueHasBeenSet = true;
     }
     XmlNode datapointsNode = resultNode.FirstChild("Datapoints");
     if(!datapointsNode.IsNull())
     {
       XmlNode datapointsMember = datapointsNode.FirstChild("member");
+      m_datapointsHasBeenSet = !datapointsMember.IsNull();
       while(!datapointsMember.IsNull())
       {
         m_datapoints.push_back(datapointsMember);
         datapointsMember = datapointsMember.NextNode("member");
       }
 
-      m_datapointsHasBeenSet = true;
+       m_datapointsHasBeenSet = true;
     }
   }
 

@@ -12,23 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLicenseConfigurationRequest::UpdateLicenseConfigurationRequest() : 
-    m_licenseConfigurationArnHasBeenSet(false),
-    m_licenseConfigurationStatus(LicenseConfigurationStatus::NOT_SET),
-    m_licenseConfigurationStatusHasBeenSet(false),
-    m_licenseRulesHasBeenSet(false),
-    m_licenseCount(0),
-    m_licenseCountHasBeenSet(false),
-    m_licenseCountHardLimit(false),
-    m_licenseCountHardLimitHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_productInformationListHasBeenSet(false),
-    m_disassociateWhenNotFound(false),
-    m_disassociateWhenNotFoundHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLicenseConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

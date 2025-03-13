@@ -18,28 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Provisioned::Provisioned() : 
-    m_brokerNodeGroupInfoHasBeenSet(false),
-    m_currentBrokerSoftwareInfoHasBeenSet(false),
-    m_clientAuthenticationHasBeenSet(false),
-    m_encryptionInfoHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false),
-    m_zookeeperConnectStringHasBeenSet(false),
-    m_zookeeperConnectStringTlsHasBeenSet(false),
-    m_storageMode(StorageMode::NOT_SET),
-    m_storageModeHasBeenSet(false),
-    m_customerActionStatus(CustomerActionStatus::NOT_SET),
-    m_customerActionStatusHasBeenSet(false)
-{
-}
-
 Provisioned::Provisioned(JsonView jsonValue)
-  : Provisioned()
 {
   *this = jsonValue;
 }
@@ -49,87 +28,63 @@ Provisioned& Provisioned::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("brokerNodeGroupInfo"))
   {
     m_brokerNodeGroupInfo = jsonValue.GetObject("brokerNodeGroupInfo");
-
     m_brokerNodeGroupInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentBrokerSoftwareInfo"))
   {
     m_currentBrokerSoftwareInfo = jsonValue.GetObject("currentBrokerSoftwareInfo");
-
     m_currentBrokerSoftwareInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientAuthentication"))
   {
     m_clientAuthentication = jsonValue.GetObject("clientAuthentication");
-
     m_clientAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionInfo"))
   {
     m_encryptionInfo = jsonValue.GetObject("encryptionInfo");
-
     m_encryptionInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedMonitoring"))
   {
     m_enhancedMonitoring = EnhancedMonitoringMapper::GetEnhancedMonitoringForName(jsonValue.GetString("enhancedMonitoring"));
-
     m_enhancedMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openMonitoring"))
   {
     m_openMonitoring = jsonValue.GetObject("openMonitoring");
-
     m_openMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loggingInfo"))
   {
     m_loggingInfo = jsonValue.GetObject("loggingInfo");
-
     m_loggingInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfBrokerNodes"))
   {
     m_numberOfBrokerNodes = jsonValue.GetInteger("numberOfBrokerNodes");
-
     m_numberOfBrokerNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperConnectString"))
   {
     m_zookeeperConnectString = jsonValue.GetString("zookeeperConnectString");
-
     m_zookeeperConnectStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zookeeperConnectStringTls"))
   {
     m_zookeeperConnectStringTls = jsonValue.GetString("zookeeperConnectStringTls");
-
     m_zookeeperConnectStringTlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageMode"))
   {
     m_storageMode = StorageModeMapper::GetStorageModeForName(jsonValue.GetString("storageMode"));
-
     m_storageModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerActionStatus"))
   {
     m_customerActionStatus = CustomerActionStatusMapper::GetCustomerActionStatusForName(jsonValue.GetString("customerActionStatus"));
-
     m_customerActionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

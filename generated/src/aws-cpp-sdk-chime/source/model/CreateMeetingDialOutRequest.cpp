@@ -12,14 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMeetingDialOutRequest::CreateMeetingDialOutRequest() : 
-    m_meetingIdHasBeenSet(false),
-    m_fromPhoneNumberHasBeenSet(false),
-    m_toPhoneNumberHasBeenSet(false),
-    m_joinTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateMeetingDialOutRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class RequestServiceQuotaIncreaseResult
   {
   public:
-    AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult();
+    AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult() = default;
     AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the quota increase request.</p>
      */
-    inline const RequestedServiceQuotaChange& GetRequestedQuota() const{ return m_requestedQuota; }
-    inline void SetRequestedQuota(const RequestedServiceQuotaChange& value) { m_requestedQuota = value; }
-    inline void SetRequestedQuota(RequestedServiceQuotaChange&& value) { m_requestedQuota = std::move(value); }
-    inline RequestServiceQuotaIncreaseResult& WithRequestedQuota(const RequestedServiceQuotaChange& value) { SetRequestedQuota(value); return *this;}
-    inline RequestServiceQuotaIncreaseResult& WithRequestedQuota(RequestedServiceQuotaChange&& value) { SetRequestedQuota(std::move(value)); return *this;}
+    inline const RequestedServiceQuotaChange& GetRequestedQuota() const { return m_requestedQuota; }
+    template<typename RequestedQuotaT = RequestedServiceQuotaChange>
+    void SetRequestedQuota(RequestedQuotaT&& value) { m_requestedQuotaHasBeenSet = true; m_requestedQuota = std::forward<RequestedQuotaT>(value); }
+    template<typename RequestedQuotaT = RequestedServiceQuotaChange>
+    RequestServiceQuotaIncreaseResult& WithRequestedQuota(RequestedQuotaT&& value) { SetRequestedQuota(std::forward<RequestedQuotaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RequestServiceQuotaIncreaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RequestServiceQuotaIncreaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RequestServiceQuotaIncreaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RequestServiceQuotaIncreaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RequestedServiceQuotaChange m_requestedQuota;
+    bool m_requestedQuotaHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

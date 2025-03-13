@@ -34,7 +34,7 @@ namespace Model
   class SignUpResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SignUpResult();
+    AWS_COGNITOIDENTITYPROVIDER_API SignUpResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SignUpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API SignUpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,8 +46,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre
      * sign-up Lambda trigger</a>.</p>
      */
-    inline bool GetUserConfirmed() const{ return m_userConfirmed; }
-    inline void SetUserConfirmed(bool value) { m_userConfirmed = value; }
+    inline bool GetUserConfirmed() const { return m_userConfirmed; }
+    inline void SetUserConfirmed(bool value) { m_userConfirmedHasBeenSet = true; m_userConfirmed = value; }
     inline SignUpResult& WithUserConfirmed(bool value) { SetUserConfirmed(value); return *this;}
     ///@}
 
@@ -58,11 +58,11 @@ namespace Model
      * number or email address that they entered. The <code>CodeDeliveryDetails</code>
      * object is information about the delivery destination for that link or code.</p>
      */
-    inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
-    inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
-    inline void SetCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetails = std::move(value); }
-    inline SignUpResult& WithCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { SetCodeDeliveryDetails(value); return *this;}
-    inline SignUpResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
+    inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const { return m_codeDeliveryDetails; }
+    template<typename CodeDeliveryDetailsT = CodeDeliveryDetailsType>
+    void SetCodeDeliveryDetails(CodeDeliveryDetailsT&& value) { m_codeDeliveryDetailsHasBeenSet = true; m_codeDeliveryDetails = std::forward<CodeDeliveryDetailsT>(value); }
+    template<typename CodeDeliveryDetailsT = CodeDeliveryDetailsType>
+    SignUpResult& WithCodeDeliveryDetails(CodeDeliveryDetailsT&& value) { SetCodeDeliveryDetails(std::forward<CodeDeliveryDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,13 +70,11 @@ namespace Model
      * <p>The unique identifier of the new user, for example
      * <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
      */
-    inline const Aws::String& GetUserSub() const{ return m_userSub; }
-    inline void SetUserSub(const Aws::String& value) { m_userSub = value; }
-    inline void SetUserSub(Aws::String&& value) { m_userSub = std::move(value); }
-    inline void SetUserSub(const char* value) { m_userSub.assign(value); }
-    inline SignUpResult& WithUserSub(const Aws::String& value) { SetUserSub(value); return *this;}
-    inline SignUpResult& WithUserSub(Aws::String&& value) { SetUserSub(std::move(value)); return *this;}
-    inline SignUpResult& WithUserSub(const char* value) { SetUserSub(value); return *this;}
+    inline const Aws::String& GetUserSub() const { return m_userSub; }
+    template<typename UserSubT = Aws::String>
+    void SetUserSub(UserSubT&& value) { m_userSubHasBeenSet = true; m_userSub = std::forward<UserSubT>(value); }
+    template<typename UserSubT = Aws::String>
+    SignUpResult& WithUserSub(UserSubT&& value) { SetUserSub(std::forward<UserSubT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,36 +83,37 @@ namespace Model
      * immediately sign in your user with the <code>USER_AUTH</code> flow after they
      * complete sign-up.</p>
      */
-    inline const Aws::String& GetSession() const{ return m_session; }
-    inline void SetSession(const Aws::String& value) { m_session = value; }
-    inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
-    inline void SetSession(const char* value) { m_session.assign(value); }
-    inline SignUpResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
-    inline SignUpResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
-    inline SignUpResult& WithSession(const char* value) { SetSession(value); return *this;}
+    inline const Aws::String& GetSession() const { return m_session; }
+    template<typename SessionT = Aws::String>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Aws::String>
+    SignUpResult& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SignUpResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SignUpResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SignUpResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SignUpResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_userConfirmed;
+    bool m_userConfirmed{false};
+    bool m_userConfirmedHasBeenSet = false;
 
     CodeDeliveryDetailsType m_codeDeliveryDetails;
+    bool m_codeDeliveryDetailsHasBeenSet = false;
 
     Aws::String m_userSub;
+    bool m_userSubHasBeenSet = false;
 
     Aws::String m_session;
+    bool m_sessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class IotSiteWiseSourceConfiguration
   {
   public:
-    AWS_IOTTWINMAKER_API IotSiteWiseSourceConfiguration();
+    AWS_IOTTWINMAKER_API IotSiteWiseSourceConfiguration() = default;
     AWS_IOTTWINMAKER_API IotSiteWiseSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API IotSiteWiseSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The AWS IoT SiteWise soucre configuration filters.</p>
      */
-    inline const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<IotSiteWiseSourceConfigurationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline IotSiteWiseSourceConfiguration& WithFilters(const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& value) { SetFilters(value); return *this;}
-    inline IotSiteWiseSourceConfiguration& WithFilters(Aws::Vector<IotSiteWiseSourceConfigurationFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline IotSiteWiseSourceConfiguration& AddFilters(const IotSiteWiseSourceConfigurationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline IotSiteWiseSourceConfiguration& AddFilters(IotSiteWiseSourceConfigurationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<IotSiteWiseSourceConfigurationFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<IotSiteWiseSourceConfigurationFilter>>
+    IotSiteWiseSourceConfiguration& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = IotSiteWiseSourceConfigurationFilter>
+    IotSiteWiseSourceConfiguration& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

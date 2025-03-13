@@ -19,14 +19,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InlineAgentPayloadPart::InlineAgentPayloadPart() : 
-    m_attributionHasBeenSet(false),
-    m_bytesHasBeenSet(false)
-{
-}
-
 InlineAgentPayloadPart::InlineAgentPayloadPart(JsonView jsonValue)
-  : InlineAgentPayloadPart()
 {
   *this = jsonValue;
 }
@@ -36,16 +29,13 @@ InlineAgentPayloadPart& InlineAgentPayloadPart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribution"))
   {
     m_attribution = jsonValue.GetObject("attribution");
-
     m_attributionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bytes"))
   {
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("bytes"));
     m_bytesHasBeenSet = true;
   }
-
   return *this;
 }
 

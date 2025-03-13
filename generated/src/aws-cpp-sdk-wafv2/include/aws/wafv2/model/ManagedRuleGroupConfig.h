@@ -48,7 +48,7 @@ namespace Model
   class ManagedRuleGroupConfig
   {
   public:
-    AWS_WAFV2_API ManagedRuleGroupConfig();
+    AWS_WAFV2_API ManagedRuleGroupConfig() = default;
     AWS_WAFV2_API ManagedRuleGroupConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ManagedRuleGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
      * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
      */
-    inline const AWSManagedRulesBotControlRuleSet& GetAWSManagedRulesBotControlRuleSet() const{ return m_aWSManagedRulesBotControlRuleSet; }
+    inline const AWSManagedRulesBotControlRuleSet& GetAWSManagedRulesBotControlRuleSet() const { return m_aWSManagedRulesBotControlRuleSet; }
     inline bool AWSManagedRulesBotControlRuleSetHasBeenSet() const { return m_aWSManagedRulesBotControlRuleSetHasBeenSet; }
-    inline void SetAWSManagedRulesBotControlRuleSet(const AWSManagedRulesBotControlRuleSet& value) { m_aWSManagedRulesBotControlRuleSetHasBeenSet = true; m_aWSManagedRulesBotControlRuleSet = value; }
-    inline void SetAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSet&& value) { m_aWSManagedRulesBotControlRuleSetHasBeenSet = true; m_aWSManagedRulesBotControlRuleSet = std::move(value); }
-    inline ManagedRuleGroupConfig& WithAWSManagedRulesBotControlRuleSet(const AWSManagedRulesBotControlRuleSet& value) { SetAWSManagedRulesBotControlRuleSet(value); return *this;}
-    inline ManagedRuleGroupConfig& WithAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSet&& value) { SetAWSManagedRulesBotControlRuleSet(std::move(value)); return *this;}
+    template<typename AWSManagedRulesBotControlRuleSetT = AWSManagedRulesBotControlRuleSet>
+    void SetAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSetT&& value) { m_aWSManagedRulesBotControlRuleSetHasBeenSet = true; m_aWSManagedRulesBotControlRuleSet = std::forward<AWSManagedRulesBotControlRuleSetT>(value); }
+    template<typename AWSManagedRulesBotControlRuleSetT = AWSManagedRulesBotControlRuleSet>
+    ManagedRuleGroupConfig& WithAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSetT&& value) { SetAWSManagedRulesBotControlRuleSet(std::forward<AWSManagedRulesBotControlRuleSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,12 @@ namespace Model
      * Fraud Control account takeover prevention (ATP)</a> in the <i>WAF Developer
      * Guide</i>.</p>
      */
-    inline const AWSManagedRulesATPRuleSet& GetAWSManagedRulesATPRuleSet() const{ return m_aWSManagedRulesATPRuleSet; }
+    inline const AWSManagedRulesATPRuleSet& GetAWSManagedRulesATPRuleSet() const { return m_aWSManagedRulesATPRuleSet; }
     inline bool AWSManagedRulesATPRuleSetHasBeenSet() const { return m_aWSManagedRulesATPRuleSetHasBeenSet; }
-    inline void SetAWSManagedRulesATPRuleSet(const AWSManagedRulesATPRuleSet& value) { m_aWSManagedRulesATPRuleSetHasBeenSet = true; m_aWSManagedRulesATPRuleSet = value; }
-    inline void SetAWSManagedRulesATPRuleSet(AWSManagedRulesATPRuleSet&& value) { m_aWSManagedRulesATPRuleSetHasBeenSet = true; m_aWSManagedRulesATPRuleSet = std::move(value); }
-    inline ManagedRuleGroupConfig& WithAWSManagedRulesATPRuleSet(const AWSManagedRulesATPRuleSet& value) { SetAWSManagedRulesATPRuleSet(value); return *this;}
-    inline ManagedRuleGroupConfig& WithAWSManagedRulesATPRuleSet(AWSManagedRulesATPRuleSet&& value) { SetAWSManagedRulesATPRuleSet(std::move(value)); return *this;}
+    template<typename AWSManagedRulesATPRuleSetT = AWSManagedRulesATPRuleSet>
+    void SetAWSManagedRulesATPRuleSet(AWSManagedRulesATPRuleSetT&& value) { m_aWSManagedRulesATPRuleSetHasBeenSet = true; m_aWSManagedRulesATPRuleSet = std::forward<AWSManagedRulesATPRuleSetT>(value); }
+    template<typename AWSManagedRulesATPRuleSetT = AWSManagedRulesATPRuleSet>
+    ManagedRuleGroupConfig& WithAWSManagedRulesATPRuleSet(AWSManagedRulesATPRuleSetT&& value) { SetAWSManagedRulesATPRuleSet(std::forward<AWSManagedRulesATPRuleSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +111,12 @@ namespace Model
      * Fraud Control account creation fraud prevention (ACFP)</a> in the <i>WAF
      * Developer Guide</i>.</p>
      */
-    inline const AWSManagedRulesACFPRuleSet& GetAWSManagedRulesACFPRuleSet() const{ return m_aWSManagedRulesACFPRuleSet; }
+    inline const AWSManagedRulesACFPRuleSet& GetAWSManagedRulesACFPRuleSet() const { return m_aWSManagedRulesACFPRuleSet; }
     inline bool AWSManagedRulesACFPRuleSetHasBeenSet() const { return m_aWSManagedRulesACFPRuleSetHasBeenSet; }
-    inline void SetAWSManagedRulesACFPRuleSet(const AWSManagedRulesACFPRuleSet& value) { m_aWSManagedRulesACFPRuleSetHasBeenSet = true; m_aWSManagedRulesACFPRuleSet = value; }
-    inline void SetAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSet&& value) { m_aWSManagedRulesACFPRuleSetHasBeenSet = true; m_aWSManagedRulesACFPRuleSet = std::move(value); }
-    inline ManagedRuleGroupConfig& WithAWSManagedRulesACFPRuleSet(const AWSManagedRulesACFPRuleSet& value) { SetAWSManagedRulesACFPRuleSet(value); return *this;}
-    inline ManagedRuleGroupConfig& WithAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSet&& value) { SetAWSManagedRulesACFPRuleSet(std::move(value)); return *this;}
+    template<typename AWSManagedRulesACFPRuleSetT = AWSManagedRulesACFPRuleSet>
+    void SetAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSetT&& value) { m_aWSManagedRulesACFPRuleSetHasBeenSet = true; m_aWSManagedRulesACFPRuleSet = std::forward<AWSManagedRulesACFPRuleSetT>(value); }
+    template<typename AWSManagedRulesACFPRuleSetT = AWSManagedRulesACFPRuleSet>
+    ManagedRuleGroupConfig& WithAWSManagedRulesACFPRuleSet(AWSManagedRulesACFPRuleSetT&& value) { SetAWSManagedRulesACFPRuleSet(std::forward<AWSManagedRulesACFPRuleSetT>(value)); return *this;}
     ///@}
   private:
 

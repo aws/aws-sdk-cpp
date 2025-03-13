@@ -18,13 +18,7 @@ namespace ForecastQueryService
 namespace Model
 {
 
-Forecast::Forecast() : 
-    m_predictionsHasBeenSet(false)
-{
-}
-
 Forecast::Forecast(JsonView jsonValue)
-  : Forecast()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ Forecast& Forecast::operator =(JsonView jsonValue)
     }
     m_predictionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class ListPackageVersionsResult
   {
   public:
-    AWS_CODEARTIFACT_API ListPackageVersionsResult();
+    AWS_CODEARTIFACT_API ListPackageVersionsResult() = default;
     AWS_CODEARTIFACT_API ListPackageVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API ListPackageVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,24 +43,20 @@ namespace Model
      * referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not
      * set, it's the most recently published package version. </p> </li> </ul>
      */
-    inline const Aws::String& GetDefaultDisplayVersion() const{ return m_defaultDisplayVersion; }
-    inline void SetDefaultDisplayVersion(const Aws::String& value) { m_defaultDisplayVersion = value; }
-    inline void SetDefaultDisplayVersion(Aws::String&& value) { m_defaultDisplayVersion = std::move(value); }
-    inline void SetDefaultDisplayVersion(const char* value) { m_defaultDisplayVersion.assign(value); }
-    inline ListPackageVersionsResult& WithDefaultDisplayVersion(const Aws::String& value) { SetDefaultDisplayVersion(value); return *this;}
-    inline ListPackageVersionsResult& WithDefaultDisplayVersion(Aws::String&& value) { SetDefaultDisplayVersion(std::move(value)); return *this;}
-    inline ListPackageVersionsResult& WithDefaultDisplayVersion(const char* value) { SetDefaultDisplayVersion(value); return *this;}
+    inline const Aws::String& GetDefaultDisplayVersion() const { return m_defaultDisplayVersion; }
+    template<typename DefaultDisplayVersionT = Aws::String>
+    void SetDefaultDisplayVersion(DefaultDisplayVersionT&& value) { m_defaultDisplayVersionHasBeenSet = true; m_defaultDisplayVersion = std::forward<DefaultDisplayVersionT>(value); }
+    template<typename DefaultDisplayVersionT = Aws::String>
+    ListPackageVersionsResult& WithDefaultDisplayVersion(DefaultDisplayVersionT&& value) { SetDefaultDisplayVersion(std::forward<DefaultDisplayVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A format of the package. </p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
-    inline void SetFormat(const PackageFormat& value) { m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
-    inline ListPackageVersionsResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline ListPackageVersionsResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline PackageFormat GetFormat() const { return m_format; }
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ListPackageVersionsResult& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +70,22 @@ namespace Model
      * Ruby, and Cargo package versions do not contain a corresponding component,
      * package versions of those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
-    inline void SetNamespace(const Aws::String& value) { m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespace.assign(value); }
-    inline ListPackageVersionsResult& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ListPackageVersionsResult& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ListPackageVersionsResult& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ListPackageVersionsResult& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the package. </p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
-    inline void SetPackage(const Aws::String& value) { m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_package.assign(value); }
-    inline ListPackageVersionsResult& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline ListPackageVersionsResult& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline ListPackageVersionsResult& WithPackage(const char* value) { SetPackage(value); return *this;}
+    inline const Aws::String& GetPackage() const { return m_package; }
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    ListPackageVersionsResult& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,13 +94,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
      * objects. </p>
      */
-    inline const Aws::Vector<PackageVersionSummary>& GetVersions() const{ return m_versions; }
-    inline void SetVersions(const Aws::Vector<PackageVersionSummary>& value) { m_versions = value; }
-    inline void SetVersions(Aws::Vector<PackageVersionSummary>&& value) { m_versions = std::move(value); }
-    inline ListPackageVersionsResult& WithVersions(const Aws::Vector<PackageVersionSummary>& value) { SetVersions(value); return *this;}
-    inline ListPackageVersionsResult& WithVersions(Aws::Vector<PackageVersionSummary>&& value) { SetVersions(std::move(value)); return *this;}
-    inline ListPackageVersionsResult& AddVersions(const PackageVersionSummary& value) { m_versions.push_back(value); return *this; }
-    inline ListPackageVersionsResult& AddVersions(PackageVersionSummary&& value) { m_versions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PackageVersionSummary>& GetVersions() const { return m_versions; }
+    template<typename VersionsT = Aws::Vector<PackageVersionSummary>>
+    void SetVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions = std::forward<VersionsT>(value); }
+    template<typename VersionsT = Aws::Vector<PackageVersionSummary>>
+    ListPackageVersionsResult& WithVersions(VersionsT&& value) { SetVersions(std::forward<VersionsT>(value)); return *this;}
+    template<typename VersionsT = PackageVersionSummary>
+    ListPackageVersionsResult& AddVersions(VersionsT&& value) { m_versionsHasBeenSet = true; m_versions.emplace_back(std::forward<VersionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -116,40 +108,43 @@ namespace Model
      * <p> If there are additional results, this is the token for the next set of
      * results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPackageVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPackageVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPackageVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPackageVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPackageVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPackageVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPackageVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPackageVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_defaultDisplayVersion;
+    bool m_defaultDisplayVersionHasBeenSet = false;
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;
+    bool m_namespaceHasBeenSet = false;
 
     Aws::String m_package;
+    bool m_packageHasBeenSet = false;
 
     Aws::Vector<PackageVersionSummary> m_versions;
+    bool m_versionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

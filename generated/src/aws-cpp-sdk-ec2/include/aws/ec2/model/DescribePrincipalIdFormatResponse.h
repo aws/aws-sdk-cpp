@@ -30,7 +30,7 @@ namespace Model
   class DescribePrincipalIdFormatResponse
   {
   public:
-    AWS_EC2_API DescribePrincipalIdFormatResponse();
+    AWS_EC2_API DescribePrincipalIdFormatResponse() = default;
     AWS_EC2_API DescribePrincipalIdFormatResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribePrincipalIdFormatResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the ID format settings for the ARN.</p>
      */
-    inline const Aws::Vector<PrincipalIdFormat>& GetPrincipals() const{ return m_principals; }
-    inline void SetPrincipals(const Aws::Vector<PrincipalIdFormat>& value) { m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<PrincipalIdFormat>&& value) { m_principals = std::move(value); }
-    inline DescribePrincipalIdFormatResponse& WithPrincipals(const Aws::Vector<PrincipalIdFormat>& value) { SetPrincipals(value); return *this;}
-    inline DescribePrincipalIdFormatResponse& WithPrincipals(Aws::Vector<PrincipalIdFormat>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline DescribePrincipalIdFormatResponse& AddPrincipals(const PrincipalIdFormat& value) { m_principals.push_back(value); return *this; }
-    inline DescribePrincipalIdFormatResponse& AddPrincipals(PrincipalIdFormat&& value) { m_principals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PrincipalIdFormat>& GetPrincipals() const { return m_principals; }
+    template<typename PrincipalsT = Aws::Vector<PrincipalIdFormat>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<PrincipalIdFormat>>
+    DescribePrincipalIdFormatResponse& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = PrincipalIdFormat>
+    DescribePrincipalIdFormatResponse& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribePrincipalIdFormatResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePrincipalIdFormatResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePrincipalIdFormatResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePrincipalIdFormatResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribePrincipalIdFormatResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribePrincipalIdFormatResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribePrincipalIdFormatResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PrincipalIdFormat> m_principals;
+    bool m_principalsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

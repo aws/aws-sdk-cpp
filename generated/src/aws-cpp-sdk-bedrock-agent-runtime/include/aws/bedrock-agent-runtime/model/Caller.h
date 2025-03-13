@@ -31,7 +31,7 @@ namespace Model
   class Caller
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Caller();
+    AWS_BEDROCKAGENTRUNTIME_API Caller() = default;
     AWS_BEDROCKAGENTRUNTIME_API Caller(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Caller& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The caller's agent alias ARN.</p>
      */
-    inline const Aws::String& GetAgentAliasArn() const{ return m_agentAliasArn; }
+    inline const Aws::String& GetAgentAliasArn() const { return m_agentAliasArn; }
     inline bool AgentAliasArnHasBeenSet() const { return m_agentAliasArnHasBeenSet; }
-    inline void SetAgentAliasArn(const Aws::String& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = value; }
-    inline void SetAgentAliasArn(Aws::String&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::move(value); }
-    inline void SetAgentAliasArn(const char* value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn.assign(value); }
-    inline Caller& WithAgentAliasArn(const Aws::String& value) { SetAgentAliasArn(value); return *this;}
-    inline Caller& WithAgentAliasArn(Aws::String&& value) { SetAgentAliasArn(std::move(value)); return *this;}
-    inline Caller& WithAgentAliasArn(const char* value) { SetAgentAliasArn(value); return *this;}
+    template<typename AgentAliasArnT = Aws::String>
+    void SetAgentAliasArn(AgentAliasArnT&& value) { m_agentAliasArnHasBeenSet = true; m_agentAliasArn = std::forward<AgentAliasArnT>(value); }
+    template<typename AgentAliasArnT = Aws::String>
+    Caller& WithAgentAliasArn(AgentAliasArnT&& value) { SetAgentAliasArn(std::forward<AgentAliasArnT>(value)); return *this;}
     ///@}
   private:
 

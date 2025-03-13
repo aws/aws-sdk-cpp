@@ -34,7 +34,7 @@ namespace Model
   class LensSummary
   {
   public:
-    AWS_WELLARCHITECTED_API LensSummary();
+    AWS_WELLARCHITECTED_API LensSummary() = default;
     AWS_WELLARCHITECTED_API LensSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API LensSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,120 +44,104 @@ namespace Model
     /**
      * <p>The ARN of the lens.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-    inline LensSummary& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline LensSummary& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline LensSummary& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    LensSummary& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline LensSummary& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline LensSummary& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline LensSummary& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    LensSummary& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensName() const{ return m_lensName; }
+    inline const Aws::String& GetLensName() const { return m_lensName; }
     inline bool LensNameHasBeenSet() const { return m_lensNameHasBeenSet; }
-    inline void SetLensName(const Aws::String& value) { m_lensNameHasBeenSet = true; m_lensName = value; }
-    inline void SetLensName(Aws::String&& value) { m_lensNameHasBeenSet = true; m_lensName = std::move(value); }
-    inline void SetLensName(const char* value) { m_lensNameHasBeenSet = true; m_lensName.assign(value); }
-    inline LensSummary& WithLensName(const Aws::String& value) { SetLensName(value); return *this;}
-    inline LensSummary& WithLensName(Aws::String&& value) { SetLensName(std::move(value)); return *this;}
-    inline LensSummary& WithLensName(const char* value) { SetLensName(value); return *this;}
+    template<typename LensNameT = Aws::String>
+    void SetLensName(LensNameT&& value) { m_lensNameHasBeenSet = true; m_lensName = std::forward<LensNameT>(value); }
+    template<typename LensNameT = Aws::String>
+    LensSummary& WithLensName(LensNameT&& value) { SetLensName(std::forward<LensNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the lens.</p>
      */
-    inline const LensType& GetLensType() const{ return m_lensType; }
+    inline LensType GetLensType() const { return m_lensType; }
     inline bool LensTypeHasBeenSet() const { return m_lensTypeHasBeenSet; }
-    inline void SetLensType(const LensType& value) { m_lensTypeHasBeenSet = true; m_lensType = value; }
-    inline void SetLensType(LensType&& value) { m_lensTypeHasBeenSet = true; m_lensType = std::move(value); }
-    inline LensSummary& WithLensType(const LensType& value) { SetLensType(value); return *this;}
-    inline LensSummary& WithLensType(LensType&& value) { SetLensType(std::move(value)); return *this;}
+    inline void SetLensType(LensType value) { m_lensTypeHasBeenSet = true; m_lensType = value; }
+    inline LensSummary& WithLensType(LensType value) { SetLensType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline LensSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline LensSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline LensSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    LensSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline LensSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline LensSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    LensSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline LensSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline LensSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    LensSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the lens.</p>
      */
-    inline const Aws::String& GetLensVersion() const{ return m_lensVersion; }
+    inline const Aws::String& GetLensVersion() const { return m_lensVersion; }
     inline bool LensVersionHasBeenSet() const { return m_lensVersionHasBeenSet; }
-    inline void SetLensVersion(const Aws::String& value) { m_lensVersionHasBeenSet = true; m_lensVersion = value; }
-    inline void SetLensVersion(Aws::String&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::move(value); }
-    inline void SetLensVersion(const char* value) { m_lensVersionHasBeenSet = true; m_lensVersion.assign(value); }
-    inline LensSummary& WithLensVersion(const Aws::String& value) { SetLensVersion(value); return *this;}
-    inline LensSummary& WithLensVersion(Aws::String&& value) { SetLensVersion(std::move(value)); return *this;}
-    inline LensSummary& WithLensVersion(const char* value) { SetLensVersion(value); return *this;}
+    template<typename LensVersionT = Aws::String>
+    void SetLensVersion(LensVersionT&& value) { m_lensVersionHasBeenSet = true; m_lensVersion = std::forward<LensVersionT>(value); }
+    template<typename LensVersionT = Aws::String>
+    LensSummary& WithLensVersion(LensVersionT&& value) { SetLensVersion(std::forward<LensVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline LensSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline LensSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline LensSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    LensSummary& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the lens.</p>
      */
-    inline const LensStatus& GetLensStatus() const{ return m_lensStatus; }
+    inline LensStatus GetLensStatus() const { return m_lensStatus; }
     inline bool LensStatusHasBeenSet() const { return m_lensStatusHasBeenSet; }
-    inline void SetLensStatus(const LensStatus& value) { m_lensStatusHasBeenSet = true; m_lensStatus = value; }
-    inline void SetLensStatus(LensStatus&& value) { m_lensStatusHasBeenSet = true; m_lensStatus = std::move(value); }
-    inline LensSummary& WithLensStatus(const LensStatus& value) { SetLensStatus(value); return *this;}
-    inline LensSummary& WithLensStatus(LensStatus&& value) { SetLensStatus(std::move(value)); return *this;}
+    inline void SetLensStatus(LensStatus value) { m_lensStatusHasBeenSet = true; m_lensStatus = value; }
+    inline LensSummary& WithLensStatus(LensStatus value) { SetLensStatus(value); return *this;}
     ///@}
   private:
 
@@ -170,16 +154,16 @@ namespace Model
     Aws::String m_lensName;
     bool m_lensNameHasBeenSet = false;
 
-    LensType m_lensType;
+    LensType m_lensType{LensType::NOT_SET};
     bool m_lensTypeHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_lensVersion;
@@ -188,7 +172,7 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
 
-    LensStatus m_lensStatus;
+    LensStatus m_lensStatus{LensStatus::NOT_SET};
     bool m_lensStatusHasBeenSet = false;
   };
 

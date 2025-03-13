@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-EventDetails::EventDetails() : 
-    m_bounceHasBeenSet(false),
-    m_complaintHasBeenSet(false)
-{
-}
-
 EventDetails::EventDetails(JsonView jsonValue)
-  : EventDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventDetails& EventDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bounce"))
   {
     m_bounce = jsonValue.GetObject("Bounce");
-
     m_bounceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Complaint"))
   {
     m_complaint = jsonValue.GetObject("Complaint");
-
     m_complaintHasBeenSet = true;
   }
-
   return *this;
 }
 

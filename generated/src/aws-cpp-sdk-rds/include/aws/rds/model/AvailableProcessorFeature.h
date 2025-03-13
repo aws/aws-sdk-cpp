@@ -35,7 +35,7 @@ namespace Model
   class AvailableProcessorFeature
   {
   public:
-    AWS_RDS_API AvailableProcessorFeature();
+    AWS_RDS_API AvailableProcessorFeature() = default;
     AWS_RDS_API AvailableProcessorFeature(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API AvailableProcessorFeature& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,42 +48,36 @@ namespace Model
      * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
      * <code>threadsPerCore</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AvailableProcessorFeature& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AvailableProcessorFeature& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AvailableProcessorFeature& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AvailableProcessorFeature& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value for the processor feature of the DB instance class.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline AvailableProcessorFeature& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline AvailableProcessorFeature& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline AvailableProcessorFeature& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    AvailableProcessorFeature& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The allowed values for the processor feature of the DB instance class.</p>
      */
-    inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::String& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline void SetAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.assign(value); }
-    inline AvailableProcessorFeature& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
-    inline AvailableProcessorFeature& WithAllowedValues(Aws::String&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline AvailableProcessorFeature& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::String>
+    AvailableProcessorFeature& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
     ///@}
   private:
 

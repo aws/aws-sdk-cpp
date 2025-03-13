@@ -12,11 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProfileRequest::DeleteProfileRequest() : 
-    m_profileIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProfileRequest::SerializePayload() const
 {
   JsonValue payload;

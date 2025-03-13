@@ -12,13 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelDomainConfigChangeRequest::CancelDomainConfigChangeRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CancelDomainConfigChangeRequest::SerializePayload() const
 {
   JsonValue payload;

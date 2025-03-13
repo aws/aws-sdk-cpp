@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MonitorDeployment::MonitorDeployment() : 
-    m_detailsUriHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_status(SignalMapMonitorDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 MonitorDeployment::MonitorDeployment(JsonView jsonValue)
-  : MonitorDeployment()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MonitorDeployment& MonitorDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detailsUri"))
   {
     m_detailsUri = jsonValue.GetString("detailsUri");
-
     m_detailsUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SignalMapMonitorDeploymentStatusMapper::GetSignalMapMonitorDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LambdaFunctionMemoryProjectedMetric::LambdaFunctionMemoryProjectedMetric() : 
-    m_name(LambdaFunctionMemoryMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(LambdaFunctionMemoryMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 LambdaFunctionMemoryProjectedMetric::LambdaFunctionMemoryProjectedMetric(JsonView jsonValue)
-  : LambdaFunctionMemoryProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ LambdaFunctionMemoryProjectedMetric& LambdaFunctionMemoryProjectedMetric::operat
   if(jsonValue.ValueExists("name"))
   {
     m_name = LambdaFunctionMemoryMetricNameMapper::GetLambdaFunctionMemoryMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = LambdaFunctionMemoryMetricStatisticMapper::GetLambdaFunctionMemoryMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

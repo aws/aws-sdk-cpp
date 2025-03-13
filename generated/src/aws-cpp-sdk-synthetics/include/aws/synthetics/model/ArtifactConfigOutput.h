@@ -33,7 +33,7 @@ namespace Model
   class ArtifactConfigOutput
   {
   public:
-    AWS_SYNTHETICS_API ArtifactConfigOutput();
+    AWS_SYNTHETICS_API ArtifactConfigOutput() = default;
     AWS_SYNTHETICS_API ArtifactConfigOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API ArtifactConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>A structure that contains the configuration of encryption settings for canary
      * artifacts that are stored in Amazon S3. </p>
      */
-    inline const S3EncryptionConfig& GetS3Encryption() const{ return m_s3Encryption; }
+    inline const S3EncryptionConfig& GetS3Encryption() const { return m_s3Encryption; }
     inline bool S3EncryptionHasBeenSet() const { return m_s3EncryptionHasBeenSet; }
-    inline void SetS3Encryption(const S3EncryptionConfig& value) { m_s3EncryptionHasBeenSet = true; m_s3Encryption = value; }
-    inline void SetS3Encryption(S3EncryptionConfig&& value) { m_s3EncryptionHasBeenSet = true; m_s3Encryption = std::move(value); }
-    inline ArtifactConfigOutput& WithS3Encryption(const S3EncryptionConfig& value) { SetS3Encryption(value); return *this;}
-    inline ArtifactConfigOutput& WithS3Encryption(S3EncryptionConfig&& value) { SetS3Encryption(std::move(value)); return *this;}
+    template<typename S3EncryptionT = S3EncryptionConfig>
+    void SetS3Encryption(S3EncryptionT&& value) { m_s3EncryptionHasBeenSet = true; m_s3Encryption = std::forward<S3EncryptionT>(value); }
+    template<typename S3EncryptionT = S3EncryptionConfig>
+    ArtifactConfigOutput& WithS3Encryption(S3EncryptionT&& value) { SetS3Encryption(std::forward<S3EncryptionT>(value)); return *this;}
     ///@}
   private:
 

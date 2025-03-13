@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCostAllocationTagBackfillRequest::StartCostAllocationTagBackfillRequest() : 
-    m_backfillFromHasBeenSet(false)
-{
-}
-
 Aws::String StartCostAllocationTagBackfillRequest::SerializePayload() const
 {
   JsonValue payload;

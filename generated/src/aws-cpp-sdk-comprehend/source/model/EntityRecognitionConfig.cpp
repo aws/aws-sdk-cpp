@@ -18,13 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognitionConfig::EntityRecognitionConfig() : 
-    m_entityTypesHasBeenSet(false)
-{
-}
-
 EntityRecognitionConfig::EntityRecognitionConfig(JsonView jsonValue)
-  : EntityRecognitionConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ EntityRecognitionConfig& EntityRecognitionConfig::operator =(JsonView jsonValue)
     }
     m_entityTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

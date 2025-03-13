@@ -18,16 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-VisaAmexDerivationOutputs::VisaAmexDerivationOutputs() : 
-    m_authorizationRequestKeyArnHasBeenSet(false),
-    m_authorizationRequestKeyCheckValueHasBeenSet(false),
-    m_currentPinPekArnHasBeenSet(false),
-    m_currentPinPekKeyCheckValueHasBeenSet(false)
-{
-}
-
 VisaAmexDerivationOutputs::VisaAmexDerivationOutputs(JsonView jsonValue)
-  : VisaAmexDerivationOutputs()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ VisaAmexDerivationOutputs& VisaAmexDerivationOutputs::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AuthorizationRequestKeyArn"))
   {
     m_authorizationRequestKeyArn = jsonValue.GetString("AuthorizationRequestKeyArn");
-
     m_authorizationRequestKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizationRequestKeyCheckValue"))
   {
     m_authorizationRequestKeyCheckValue = jsonValue.GetString("AuthorizationRequestKeyCheckValue");
-
     m_authorizationRequestKeyCheckValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentPinPekArn"))
   {
     m_currentPinPekArn = jsonValue.GetString("CurrentPinPekArn");
-
     m_currentPinPekArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentPinPekKeyCheckValue"))
   {
     m_currentPinPekKeyCheckValue = jsonValue.GetString("CurrentPinPekKeyCheckValue");
-
     m_currentPinPekKeyCheckValueHasBeenSet = true;
   }
-
   return *this;
 }
 

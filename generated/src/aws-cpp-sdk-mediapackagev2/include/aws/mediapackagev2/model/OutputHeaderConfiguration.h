@@ -30,7 +30,7 @@ namespace Model
   class OutputHeaderConfiguration
   {
   public:
-    AWS_MEDIAPACKAGEV2_API OutputHeaderConfiguration();
+    AWS_MEDIAPACKAGEV2_API OutputHeaderConfiguration() = default;
     AWS_MEDIAPACKAGEV2_API OutputHeaderConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API OutputHeaderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * CDN. This setting is valid only when <code>InputType</code> is
      * <code>CMAF</code>.</p>
      */
-    inline bool GetPublishMQCS() const{ return m_publishMQCS; }
+    inline bool GetPublishMQCS() const { return m_publishMQCS; }
     inline bool PublishMQCSHasBeenSet() const { return m_publishMQCSHasBeenSet; }
     inline void SetPublishMQCS(bool value) { m_publishMQCSHasBeenSet = true; m_publishMQCS = value; }
     inline OutputHeaderConfiguration& WithPublishMQCS(bool value) { SetPublishMQCS(value); return *this;}
     ///@}
   private:
 
-    bool m_publishMQCS;
+    bool m_publishMQCS{false};
     bool m_publishMQCSHasBeenSet = false;
   };
 

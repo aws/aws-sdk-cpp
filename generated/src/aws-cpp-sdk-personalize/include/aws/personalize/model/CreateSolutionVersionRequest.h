@@ -24,7 +24,7 @@ namespace Model
   class CreateSolutionVersionRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API CreateSolutionVersionRequest();
+    AWS_PERSONALIZE_API CreateSolutionVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the solution version.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSolutionVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSolutionVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSolutionVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSolutionVersionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the solution containing the training
      * configuration information.</p>
      */
-    inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
+    inline const Aws::String& GetSolutionArn() const { return m_solutionArn; }
     inline bool SolutionArnHasBeenSet() const { return m_solutionArnHasBeenSet; }
-    inline void SetSolutionArn(const Aws::String& value) { m_solutionArnHasBeenSet = true; m_solutionArn = value; }
-    inline void SetSolutionArn(Aws::String&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::move(value); }
-    inline void SetSolutionArn(const char* value) { m_solutionArnHasBeenSet = true; m_solutionArn.assign(value); }
-    inline CreateSolutionVersionRequest& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-    inline CreateSolutionVersionRequest& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-    inline CreateSolutionVersionRequest& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
+    template<typename SolutionArnT = Aws::String>
+    void SetSolutionArn(SolutionArnT&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::forward<SolutionArnT>(value); }
+    template<typename SolutionArnT = Aws::String>
+    CreateSolutionVersionRequest& WithSolutionArn(SolutionArnT&& value) { SetSolutionArn(std::forward<SolutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
      * recipe.</p>
      */
-    inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
+    inline TrainingMode GetTrainingMode() const { return m_trainingMode; }
     inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
-    inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
-    inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
-    inline CreateSolutionVersionRequest& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
-    inline CreateSolutionVersionRequest& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
+    inline void SetTrainingMode(TrainingMode value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
+    inline CreateSolutionVersionRequest& WithTrainingMode(TrainingMode value) { SetTrainingMode(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution version.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSolutionVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSolutionVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSolutionVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSolutionVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSolutionVersionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSolutionVersionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -120,7 +114,7 @@ namespace Model
     Aws::String m_solutionArn;
     bool m_solutionArnHasBeenSet = false;
 
-    TrainingMode m_trainingMode;
+    TrainingMode m_trainingMode{TrainingMode::NOT_SET};
     bool m_trainingModeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

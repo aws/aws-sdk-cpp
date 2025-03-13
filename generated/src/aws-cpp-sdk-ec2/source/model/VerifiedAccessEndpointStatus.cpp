@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointStatus::VerifiedAccessEndpointStatus() : 
-    m_code(VerifiedAccessEndpointStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointStatus::VerifiedAccessEndpointStatus(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointStatus()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ VerifiedAccessEndpointStatus& VerifiedAccessEndpointStatus::operator =(const Xml
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = VerifiedAccessEndpointStatusCodeMapper::GetVerifiedAccessEndpointStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = VerifiedAccessEndpointStatusCodeMapper::GetVerifiedAccessEndpointStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

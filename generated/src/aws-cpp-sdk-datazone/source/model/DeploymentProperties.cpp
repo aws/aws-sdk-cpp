@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DeploymentProperties::DeploymentProperties() : 
-    m_endTimeoutMinutes(0),
-    m_endTimeoutMinutesHasBeenSet(false),
-    m_startTimeoutMinutes(0),
-    m_startTimeoutMinutesHasBeenSet(false)
-{
-}
-
 DeploymentProperties::DeploymentProperties(JsonView jsonValue)
-  : DeploymentProperties()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DeploymentProperties& DeploymentProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTimeoutMinutes"))
   {
     m_endTimeoutMinutes = jsonValue.GetInteger("endTimeoutMinutes");
-
     m_endTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimeoutMinutes"))
   {
     m_startTimeoutMinutes = jsonValue.GetInteger("startTimeoutMinutes");
-
     m_startTimeoutMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

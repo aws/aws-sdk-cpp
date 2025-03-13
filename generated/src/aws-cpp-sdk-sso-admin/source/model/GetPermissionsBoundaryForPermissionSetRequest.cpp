@@ -12,12 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPermissionsBoundaryForPermissionSetRequest::GetPermissionsBoundaryForPermissionSetRequest() : 
-    m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false)
-{
-}
-
 Aws::String GetPermissionsBoundaryForPermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;

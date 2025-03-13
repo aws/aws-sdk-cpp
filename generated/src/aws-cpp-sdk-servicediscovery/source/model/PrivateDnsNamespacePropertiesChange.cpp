@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-PrivateDnsNamespacePropertiesChange::PrivateDnsNamespacePropertiesChange() : 
-    m_dnsPropertiesHasBeenSet(false)
-{
-}
-
 PrivateDnsNamespacePropertiesChange::PrivateDnsNamespacePropertiesChange(JsonView jsonValue)
-  : PrivateDnsNamespacePropertiesChange()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrivateDnsNamespacePropertiesChange& PrivateDnsNamespacePropertiesChange::operat
   if(jsonValue.ValueExists("DnsProperties"))
   {
     m_dnsProperties = jsonValue.GetObject("DnsProperties");
-
     m_dnsPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment() : 
-    m_amortizedRecurringCommitmentHasBeenSet(false),
-    m_amortizedUpfrontCommitmentHasBeenSet(false),
-    m_totalAmortizedCommitmentHasBeenSet(false)
-{
-}
-
 SavingsPlansAmortizedCommitment::SavingsPlansAmortizedCommitment(JsonView jsonValue)
-  : SavingsPlansAmortizedCommitment()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SavingsPlansAmortizedCommitment& SavingsPlansAmortizedCommitment::operator =(Jso
   if(jsonValue.ValueExists("AmortizedRecurringCommitment"))
   {
     m_amortizedRecurringCommitment = jsonValue.GetString("AmortizedRecurringCommitment");
-
     m_amortizedRecurringCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmortizedUpfrontCommitment"))
   {
     m_amortizedUpfrontCommitment = jsonValue.GetString("AmortizedUpfrontCommitment");
-
     m_amortizedUpfrontCommitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalAmortizedCommitment"))
   {
     m_totalAmortizedCommitment = jsonValue.GetString("TotalAmortizedCommitment");
-
     m_totalAmortizedCommitmentHasBeenSet = true;
   }
-
   return *this;
 }
 

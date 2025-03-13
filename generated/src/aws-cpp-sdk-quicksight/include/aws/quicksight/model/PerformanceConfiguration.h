@@ -33,7 +33,7 @@ namespace Model
   class PerformanceConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API PerformanceConfiguration();
+    AWS_QUICKSIGHT_API PerformanceConfiguration() = default;
     AWS_QUICKSIGHT_API PerformanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PerformanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A <code>UniqueKey</code> configuration.</p>
      */
-    inline const Aws::Vector<UniqueKey>& GetUniqueKeys() const{ return m_uniqueKeys; }
+    inline const Aws::Vector<UniqueKey>& GetUniqueKeys() const { return m_uniqueKeys; }
     inline bool UniqueKeysHasBeenSet() const { return m_uniqueKeysHasBeenSet; }
-    inline void SetUniqueKeys(const Aws::Vector<UniqueKey>& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys = value; }
-    inline void SetUniqueKeys(Aws::Vector<UniqueKey>&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys = std::move(value); }
-    inline PerformanceConfiguration& WithUniqueKeys(const Aws::Vector<UniqueKey>& value) { SetUniqueKeys(value); return *this;}
-    inline PerformanceConfiguration& WithUniqueKeys(Aws::Vector<UniqueKey>&& value) { SetUniqueKeys(std::move(value)); return *this;}
-    inline PerformanceConfiguration& AddUniqueKeys(const UniqueKey& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.push_back(value); return *this; }
-    inline PerformanceConfiguration& AddUniqueKeys(UniqueKey&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.push_back(std::move(value)); return *this; }
+    template<typename UniqueKeysT = Aws::Vector<UniqueKey>>
+    void SetUniqueKeys(UniqueKeysT&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys = std::forward<UniqueKeysT>(value); }
+    template<typename UniqueKeysT = Aws::Vector<UniqueKey>>
+    PerformanceConfiguration& WithUniqueKeys(UniqueKeysT&& value) { SetUniqueKeys(std::forward<UniqueKeysT>(value)); return *this;}
+    template<typename UniqueKeysT = UniqueKey>
+    PerformanceConfiguration& AddUniqueKeys(UniqueKeysT&& value) { m_uniqueKeysHasBeenSet = true; m_uniqueKeys.emplace_back(std::forward<UniqueKeysT>(value)); return *this; }
     ///@}
   private:
 

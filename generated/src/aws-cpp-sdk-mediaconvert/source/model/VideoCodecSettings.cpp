@@ -18,27 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoCodecSettings::VideoCodecSettings() : 
-    m_av1SettingsHasBeenSet(false),
-    m_avcIntraSettingsHasBeenSet(false),
-    m_codec(VideoCodec::NOT_SET),
-    m_codecHasBeenSet(false),
-    m_frameCaptureSettingsHasBeenSet(false),
-    m_gifSettingsHasBeenSet(false),
-    m_h264SettingsHasBeenSet(false),
-    m_h265SettingsHasBeenSet(false),
-    m_mpeg2SettingsHasBeenSet(false),
-    m_proresSettingsHasBeenSet(false),
-    m_uncompressedSettingsHasBeenSet(false),
-    m_vc3SettingsHasBeenSet(false),
-    m_vp8SettingsHasBeenSet(false),
-    m_vp9SettingsHasBeenSet(false),
-    m_xavcSettingsHasBeenSet(false)
-{
-}
-
 VideoCodecSettings::VideoCodecSettings(JsonView jsonValue)
-  : VideoCodecSettings()
 {
   *this = jsonValue;
 }
@@ -48,101 +28,73 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("av1Settings"))
   {
     m_av1Settings = jsonValue.GetObject("av1Settings");
-
     m_av1SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("avcIntraSettings"))
   {
     m_avcIntraSettings = jsonValue.GetObject("avcIntraSettings");
-
     m_avcIntraSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codec"))
   {
     m_codec = VideoCodecMapper::GetVideoCodecForName(jsonValue.GetString("codec"));
-
     m_codecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameCaptureSettings"))
   {
     m_frameCaptureSettings = jsonValue.GetObject("frameCaptureSettings");
-
     m_frameCaptureSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gifSettings"))
   {
     m_gifSettings = jsonValue.GetObject("gifSettings");
-
     m_gifSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("h264Settings"))
   {
     m_h264Settings = jsonValue.GetObject("h264Settings");
-
     m_h264SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("h265Settings"))
   {
     m_h265Settings = jsonValue.GetObject("h265Settings");
-
     m_h265SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpeg2Settings"))
   {
     m_mpeg2Settings = jsonValue.GetObject("mpeg2Settings");
-
     m_mpeg2SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("proresSettings"))
   {
     m_proresSettings = jsonValue.GetObject("proresSettings");
-
     m_proresSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uncompressedSettings"))
   {
     m_uncompressedSettings = jsonValue.GetObject("uncompressedSettings");
-
     m_uncompressedSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vc3Settings"))
   {
     m_vc3Settings = jsonValue.GetObject("vc3Settings");
-
     m_vc3SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vp8Settings"))
   {
     m_vp8Settings = jsonValue.GetObject("vp8Settings");
-
     m_vp8SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vp9Settings"))
   {
     m_vp9Settings = jsonValue.GetObject("vp9Settings");
-
     m_vp9SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("xavcSettings"))
   {
     m_xavcSettings = jsonValue.GetObject("xavcSettings");
-
     m_xavcSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

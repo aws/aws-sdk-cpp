@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PhoneNumberValidateRequest::PhoneNumberValidateRequest() : 
-    m_numberValidateRequestHasBeenSet(false)
-{
-}
-
 Aws::String PhoneNumberValidateRequest::SerializePayload() const
 {
   JsonValue payload;

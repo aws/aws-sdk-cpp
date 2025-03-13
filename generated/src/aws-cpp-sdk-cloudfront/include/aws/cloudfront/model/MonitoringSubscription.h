@@ -32,7 +32,7 @@ namespace Model
   class MonitoringSubscription
   {
   public:
-    AWS_CLOUDFRONT_API MonitoringSubscription();
+    AWS_CLOUDFRONT_API MonitoringSubscription() = default;
     AWS_CLOUDFRONT_API MonitoringSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API MonitoringSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>A subscription configuration for additional CloudWatch metrics.</p>
      */
-    inline const RealtimeMetricsSubscriptionConfig& GetRealtimeMetricsSubscriptionConfig() const{ return m_realtimeMetricsSubscriptionConfig; }
+    inline const RealtimeMetricsSubscriptionConfig& GetRealtimeMetricsSubscriptionConfig() const { return m_realtimeMetricsSubscriptionConfig; }
     inline bool RealtimeMetricsSubscriptionConfigHasBeenSet() const { return m_realtimeMetricsSubscriptionConfigHasBeenSet; }
-    inline void SetRealtimeMetricsSubscriptionConfig(const RealtimeMetricsSubscriptionConfig& value) { m_realtimeMetricsSubscriptionConfigHasBeenSet = true; m_realtimeMetricsSubscriptionConfig = value; }
-    inline void SetRealtimeMetricsSubscriptionConfig(RealtimeMetricsSubscriptionConfig&& value) { m_realtimeMetricsSubscriptionConfigHasBeenSet = true; m_realtimeMetricsSubscriptionConfig = std::move(value); }
-    inline MonitoringSubscription& WithRealtimeMetricsSubscriptionConfig(const RealtimeMetricsSubscriptionConfig& value) { SetRealtimeMetricsSubscriptionConfig(value); return *this;}
-    inline MonitoringSubscription& WithRealtimeMetricsSubscriptionConfig(RealtimeMetricsSubscriptionConfig&& value) { SetRealtimeMetricsSubscriptionConfig(std::move(value)); return *this;}
+    template<typename RealtimeMetricsSubscriptionConfigT = RealtimeMetricsSubscriptionConfig>
+    void SetRealtimeMetricsSubscriptionConfig(RealtimeMetricsSubscriptionConfigT&& value) { m_realtimeMetricsSubscriptionConfigHasBeenSet = true; m_realtimeMetricsSubscriptionConfig = std::forward<RealtimeMetricsSubscriptionConfigT>(value); }
+    template<typename RealtimeMetricsSubscriptionConfigT = RealtimeMetricsSubscriptionConfig>
+    MonitoringSubscription& WithRealtimeMetricsSubscriptionConfig(RealtimeMetricsSubscriptionConfigT&& value) { SetRealtimeMetricsSubscriptionConfig(std::forward<RealtimeMetricsSubscriptionConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class CommentContent
   {
   public:
-    AWS_CONNECTCASES_API CommentContent();
+    AWS_CONNECTCASES_API CommentContent() = default;
     AWS_CONNECTCASES_API CommentContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API CommentContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>Text in the body of a <code>Comment</code> on a case.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline CommentContent& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline CommentContent& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline CommentContent& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    CommentContent& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
      */
-    inline const CommentBodyTextType& GetContentType() const{ return m_contentType; }
+    inline CommentBodyTextType GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const CommentBodyTextType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(CommentBodyTextType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline CommentContent& WithContentType(const CommentBodyTextType& value) { SetContentType(value); return *this;}
-    inline CommentContent& WithContentType(CommentBodyTextType&& value) { SetContentType(std::move(value)); return *this;}
+    inline void SetContentType(CommentBodyTextType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline CommentContent& WithContentType(CommentBodyTextType value) { SetContentType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_body;
     bool m_bodyHasBeenSet = false;
 
-    CommentBodyTextType m_contentType;
+    CommentBodyTextType m_contentType{CommentBodyTextType::NOT_SET};
     bool m_contentTypeHasBeenSet = false;
   };
 

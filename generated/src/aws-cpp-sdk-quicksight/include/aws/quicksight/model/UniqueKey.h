@@ -33,7 +33,7 @@ namespace Model
   class UniqueKey
   {
   public:
-    AWS_QUICKSIGHT_API UniqueKey();
+    AWS_QUICKSIGHT_API UniqueKey() = default;
     AWS_QUICKSIGHT_API UniqueKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API UniqueKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>The name of the column that is referenced in the <code>UniqueKey</code>
      * configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumnNames() const{ return m_columnNames; }
+    inline const Aws::Vector<Aws::String>& GetColumnNames() const { return m_columnNames; }
     inline bool ColumnNamesHasBeenSet() const { return m_columnNamesHasBeenSet; }
-    inline void SetColumnNames(const Aws::Vector<Aws::String>& value) { m_columnNamesHasBeenSet = true; m_columnNames = value; }
-    inline void SetColumnNames(Aws::Vector<Aws::String>&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::move(value); }
-    inline UniqueKey& WithColumnNames(const Aws::Vector<Aws::String>& value) { SetColumnNames(value); return *this;}
-    inline UniqueKey& WithColumnNames(Aws::Vector<Aws::String>&& value) { SetColumnNames(std::move(value)); return *this;}
-    inline UniqueKey& AddColumnNames(const Aws::String& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
-    inline UniqueKey& AddColumnNames(Aws::String&& value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(std::move(value)); return *this; }
-    inline UniqueKey& AddColumnNames(const char* value) { m_columnNamesHasBeenSet = true; m_columnNames.push_back(value); return *this; }
+    template<typename ColumnNamesT = Aws::Vector<Aws::String>>
+    void SetColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames = std::forward<ColumnNamesT>(value); }
+    template<typename ColumnNamesT = Aws::Vector<Aws::String>>
+    UniqueKey& WithColumnNames(ColumnNamesT&& value) { SetColumnNames(std::forward<ColumnNamesT>(value)); return *this;}
+    template<typename ColumnNamesT = Aws::String>
+    UniqueKey& AddColumnNames(ColumnNamesT&& value) { m_columnNamesHasBeenSet = true; m_columnNames.emplace_back(std::forward<ColumnNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ImportDataSource::ImportDataSource() : 
-    m_s3UrlHasBeenSet(false),
-    m_dataFormat(DataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false)
-{
-}
-
 ImportDataSource::ImportDataSource(JsonView jsonValue)
-  : ImportDataSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImportDataSource& ImportDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Url"))
   {
     m_s3Url = jsonValue.GetString("S3Url");
-
     m_s3UrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = DataFormatMapper::GetDataFormatForName(jsonValue.GetString("DataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

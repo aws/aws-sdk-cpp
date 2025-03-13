@@ -34,7 +34,7 @@ namespace Model
   class VoiceMessageContent
   {
   public:
-    AWS_PINPOINTSMSVOICE_API VoiceMessageContent();
+    AWS_PINPOINTSMSVOICE_API VoiceMessageContent() = default;
     AWS_PINPOINTSMSVOICE_API VoiceMessageContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICE_API VoiceMessageContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,32 +42,32 @@ namespace Model
 
     ///@{
     
-    inline const CallInstructionsMessageType& GetCallInstructionsMessage() const{ return m_callInstructionsMessage; }
+    inline const CallInstructionsMessageType& GetCallInstructionsMessage() const { return m_callInstructionsMessage; }
     inline bool CallInstructionsMessageHasBeenSet() const { return m_callInstructionsMessageHasBeenSet; }
-    inline void SetCallInstructionsMessage(const CallInstructionsMessageType& value) { m_callInstructionsMessageHasBeenSet = true; m_callInstructionsMessage = value; }
-    inline void SetCallInstructionsMessage(CallInstructionsMessageType&& value) { m_callInstructionsMessageHasBeenSet = true; m_callInstructionsMessage = std::move(value); }
-    inline VoiceMessageContent& WithCallInstructionsMessage(const CallInstructionsMessageType& value) { SetCallInstructionsMessage(value); return *this;}
-    inline VoiceMessageContent& WithCallInstructionsMessage(CallInstructionsMessageType&& value) { SetCallInstructionsMessage(std::move(value)); return *this;}
+    template<typename CallInstructionsMessageT = CallInstructionsMessageType>
+    void SetCallInstructionsMessage(CallInstructionsMessageT&& value) { m_callInstructionsMessageHasBeenSet = true; m_callInstructionsMessage = std::forward<CallInstructionsMessageT>(value); }
+    template<typename CallInstructionsMessageT = CallInstructionsMessageType>
+    VoiceMessageContent& WithCallInstructionsMessage(CallInstructionsMessageT&& value) { SetCallInstructionsMessage(std::forward<CallInstructionsMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PlainTextMessageType& GetPlainTextMessage() const{ return m_plainTextMessage; }
+    inline const PlainTextMessageType& GetPlainTextMessage() const { return m_plainTextMessage; }
     inline bool PlainTextMessageHasBeenSet() const { return m_plainTextMessageHasBeenSet; }
-    inline void SetPlainTextMessage(const PlainTextMessageType& value) { m_plainTextMessageHasBeenSet = true; m_plainTextMessage = value; }
-    inline void SetPlainTextMessage(PlainTextMessageType&& value) { m_plainTextMessageHasBeenSet = true; m_plainTextMessage = std::move(value); }
-    inline VoiceMessageContent& WithPlainTextMessage(const PlainTextMessageType& value) { SetPlainTextMessage(value); return *this;}
-    inline VoiceMessageContent& WithPlainTextMessage(PlainTextMessageType&& value) { SetPlainTextMessage(std::move(value)); return *this;}
+    template<typename PlainTextMessageT = PlainTextMessageType>
+    void SetPlainTextMessage(PlainTextMessageT&& value) { m_plainTextMessageHasBeenSet = true; m_plainTextMessage = std::forward<PlainTextMessageT>(value); }
+    template<typename PlainTextMessageT = PlainTextMessageType>
+    VoiceMessageContent& WithPlainTextMessage(PlainTextMessageT&& value) { SetPlainTextMessage(std::forward<PlainTextMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SSMLMessageType& GetSSMLMessage() const{ return m_sSMLMessage; }
+    inline const SSMLMessageType& GetSSMLMessage() const { return m_sSMLMessage; }
     inline bool SSMLMessageHasBeenSet() const { return m_sSMLMessageHasBeenSet; }
-    inline void SetSSMLMessage(const SSMLMessageType& value) { m_sSMLMessageHasBeenSet = true; m_sSMLMessage = value; }
-    inline void SetSSMLMessage(SSMLMessageType&& value) { m_sSMLMessageHasBeenSet = true; m_sSMLMessage = std::move(value); }
-    inline VoiceMessageContent& WithSSMLMessage(const SSMLMessageType& value) { SetSSMLMessage(value); return *this;}
-    inline VoiceMessageContent& WithSSMLMessage(SSMLMessageType&& value) { SetSSMLMessage(std::move(value)); return *this;}
+    template<typename SSMLMessageT = SSMLMessageType>
+    void SetSSMLMessage(SSMLMessageT&& value) { m_sSMLMessageHasBeenSet = true; m_sSMLMessage = std::forward<SSMLMessageT>(value); }
+    template<typename SSMLMessageT = SSMLMessageType>
+    VoiceMessageContent& WithSSMLMessage(SSMLMessageT&& value) { SetSSMLMessage(std::forward<SSMLMessageT>(value)); return *this;}
     ///@}
   private:
 

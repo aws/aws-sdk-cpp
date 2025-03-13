@@ -29,7 +29,7 @@ namespace Model
   class GetSnapshotBlockPublicAccessStateResponse
   {
   public:
-    AWS_EC2_API GetSnapshotBlockPublicAccessStateResponse();
+    AWS_EC2_API GetSnapshotBlockPublicAccessStateResponse() = default;
     AWS_EC2_API GetSnapshotBlockPublicAccessStateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetSnapshotBlockPublicAccessStateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,11 +47,9 @@ namespace Model
      * </li> <li> <p> <code>unblocked</code> - Public sharing is not blocked. Users can
      * publicly share snapshots.</p> </li> </ul>
      */
-    inline const SnapshotBlockPublicAccessState& GetState() const{ return m_state; }
-    inline void SetState(const SnapshotBlockPublicAccessState& value) { m_state = value; }
-    inline void SetState(SnapshotBlockPublicAccessState&& value) { m_state = std::move(value); }
-    inline GetSnapshotBlockPublicAccessStateResponse& WithState(const SnapshotBlockPublicAccessState& value) { SetState(value); return *this;}
-    inline GetSnapshotBlockPublicAccessStateResponse& WithState(SnapshotBlockPublicAccessState&& value) { SetState(std::move(value)); return *this;}
+    inline SnapshotBlockPublicAccessState GetState() const { return m_state; }
+    inline void SetState(SnapshotBlockPublicAccessState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline GetSnapshotBlockPublicAccessStateResponse& WithState(SnapshotBlockPublicAccessState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -62,28 +60,29 @@ namespace Model
      * state is managed by a declarative policy and can't be modified by the
      * account.</p> </li> </ul>
      */
-    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
-    inline void SetManagedBy(const ManagedBy& value) { m_managedBy = value; }
-    inline void SetManagedBy(ManagedBy&& value) { m_managedBy = std::move(value); }
-    inline GetSnapshotBlockPublicAccessStateResponse& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
-    inline GetSnapshotBlockPublicAccessStateResponse& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    inline ManagedBy GetManagedBy() const { return m_managedBy; }
+    inline void SetManagedBy(ManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline GetSnapshotBlockPublicAccessStateResponse& WithManagedBy(ManagedBy value) { SetManagedBy(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetSnapshotBlockPublicAccessStateResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetSnapshotBlockPublicAccessStateResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetSnapshotBlockPublicAccessStateResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    SnapshotBlockPublicAccessState m_state;
+    SnapshotBlockPublicAccessState m_state{SnapshotBlockPublicAccessState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
-    ManagedBy m_managedBy;
+    ManagedBy m_managedBy{ManagedBy::NOT_SET};
+    bool m_managedByHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

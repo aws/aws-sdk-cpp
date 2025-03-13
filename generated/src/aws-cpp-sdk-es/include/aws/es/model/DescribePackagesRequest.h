@@ -27,7 +27,7 @@ namespace Model
   class DescribePackagesRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribePackagesRequest();
+    AWS_ELASTICSEARCHSERVICE_API DescribePackagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,21 @@ namespace Model
      * <p>Only returns packages that match the <code>DescribePackagesFilterList</code>
      * values.</p>
      */
-    inline const Aws::Vector<DescribePackagesFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<DescribePackagesFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<DescribePackagesFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<DescribePackagesFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribePackagesRequest& WithFilters(const Aws::Vector<DescribePackagesFilter>& value) { SetFilters(value); return *this;}
-    inline DescribePackagesRequest& WithFilters(Aws::Vector<DescribePackagesFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribePackagesRequest& AddFilters(const DescribePackagesFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribePackagesRequest& AddFilters(DescribePackagesFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<DescribePackagesFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<DescribePackagesFilter>>
+    DescribePackagesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = DescribePackagesFilter>
+    DescribePackagesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Limits results to a maximum number of packages.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribePackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,21 +68,19 @@ namespace Model
      * <p>Used for pagination. Only necessary if a previous API call includes a
      * non-null NextToken value. If provided, returns results for the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribePackagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribePackagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribePackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribePackagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DescribePackagesFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

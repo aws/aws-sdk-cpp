@@ -29,7 +29,7 @@ namespace Model
   class SearchAssociatedTranscriptsResult
   {
   public:
-    AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult();
+    AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult() = default;
     AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
      * <p>The unique identifier of the bot associated with the transcripts that you are
      * searching.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline SearchAssociatedTranscriptsResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    SearchAssociatedTranscriptsResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot containing the transcripts that you are searching.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline SearchAssociatedTranscriptsResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    SearchAssociatedTranscriptsResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,13 +64,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
      * languages</a> </p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline SearchAssociatedTranscriptsResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    SearchAssociatedTranscriptsResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,13 +76,11 @@ namespace Model
      * <p> The unique identifier of the bot recommendation associated with the
      * transcripts to search.</p>
      */
-    inline const Aws::String& GetBotRecommendationId() const{ return m_botRecommendationId; }
-    inline void SetBotRecommendationId(const Aws::String& value) { m_botRecommendationId = value; }
-    inline void SetBotRecommendationId(Aws::String&& value) { m_botRecommendationId = std::move(value); }
-    inline void SetBotRecommendationId(const char* value) { m_botRecommendationId.assign(value); }
-    inline SearchAssociatedTranscriptsResult& WithBotRecommendationId(const Aws::String& value) { SetBotRecommendationId(value); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithBotRecommendationId(Aws::String&& value) { SetBotRecommendationId(std::move(value)); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithBotRecommendationId(const char* value) { SetBotRecommendationId(value); return *this;}
+    inline const Aws::String& GetBotRecommendationId() const { return m_botRecommendationId; }
+    template<typename BotRecommendationIdT = Aws::String>
+    void SetBotRecommendationId(BotRecommendationIdT&& value) { m_botRecommendationIdHasBeenSet = true; m_botRecommendationId = std::forward<BotRecommendationIdT>(value); }
+    template<typename BotRecommendationIdT = Aws::String>
+    SearchAssociatedTranscriptsResult& WithBotRecommendationId(BotRecommendationIdT&& value) { SetBotRecommendationId(std::forward<BotRecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,8 +91,8 @@ namespace Model
      * SearchAssociatedTranscriptsRequest operation to get the next page of
      * results.</p>
      */
-    inline int GetNextIndex() const{ return m_nextIndex; }
-    inline void SetNextIndex(int value) { m_nextIndex = value; }
+    inline int GetNextIndex() const { return m_nextIndex; }
+    inline void SetNextIndex(int value) { m_nextIndexHasBeenSet = true; m_nextIndex = value; }
     inline SearchAssociatedTranscriptsResult& WithNextIndex(int value) { SetNextIndex(value); return *this;}
     ///@}
 
@@ -109,51 +101,57 @@ namespace Model
      * <p>The object that contains the associated transcript that meet the criteria you
      * specified.</p>
      */
-    inline const Aws::Vector<AssociatedTranscript>& GetAssociatedTranscripts() const{ return m_associatedTranscripts; }
-    inline void SetAssociatedTranscripts(const Aws::Vector<AssociatedTranscript>& value) { m_associatedTranscripts = value; }
-    inline void SetAssociatedTranscripts(Aws::Vector<AssociatedTranscript>&& value) { m_associatedTranscripts = std::move(value); }
-    inline SearchAssociatedTranscriptsResult& WithAssociatedTranscripts(const Aws::Vector<AssociatedTranscript>& value) { SetAssociatedTranscripts(value); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithAssociatedTranscripts(Aws::Vector<AssociatedTranscript>&& value) { SetAssociatedTranscripts(std::move(value)); return *this;}
-    inline SearchAssociatedTranscriptsResult& AddAssociatedTranscripts(const AssociatedTranscript& value) { m_associatedTranscripts.push_back(value); return *this; }
-    inline SearchAssociatedTranscriptsResult& AddAssociatedTranscripts(AssociatedTranscript&& value) { m_associatedTranscripts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociatedTranscript>& GetAssociatedTranscripts() const { return m_associatedTranscripts; }
+    template<typename AssociatedTranscriptsT = Aws::Vector<AssociatedTranscript>>
+    void SetAssociatedTranscripts(AssociatedTranscriptsT&& value) { m_associatedTranscriptsHasBeenSet = true; m_associatedTranscripts = std::forward<AssociatedTranscriptsT>(value); }
+    template<typename AssociatedTranscriptsT = Aws::Vector<AssociatedTranscript>>
+    SearchAssociatedTranscriptsResult& WithAssociatedTranscripts(AssociatedTranscriptsT&& value) { SetAssociatedTranscripts(std::forward<AssociatedTranscriptsT>(value)); return *this;}
+    template<typename AssociatedTranscriptsT = AssociatedTranscript>
+    SearchAssociatedTranscriptsResult& AddAssociatedTranscripts(AssociatedTranscriptsT&& value) { m_associatedTranscriptsHasBeenSet = true; m_associatedTranscripts.emplace_back(std::forward<AssociatedTranscriptsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total number of transcripts returned by the search.</p>
      */
-    inline int GetTotalResults() const{ return m_totalResults; }
-    inline void SetTotalResults(int value) { m_totalResults = value; }
+    inline int GetTotalResults() const { return m_totalResults; }
+    inline void SetTotalResults(int value) { m_totalResultsHasBeenSet = true; m_totalResults = value; }
     inline SearchAssociatedTranscriptsResult& WithTotalResults(int value) { SetTotalResults(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchAssociatedTranscriptsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchAssociatedTranscriptsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchAssociatedTranscriptsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_botRecommendationId;
+    bool m_botRecommendationIdHasBeenSet = false;
 
-    int m_nextIndex;
+    int m_nextIndex{0};
+    bool m_nextIndexHasBeenSet = false;
 
     Aws::Vector<AssociatedTranscript> m_associatedTranscripts;
+    bool m_associatedTranscriptsHasBeenSet = false;
 
-    int m_totalResults;
+    int m_totalResults{0};
+    bool m_totalResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

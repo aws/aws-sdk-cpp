@@ -10,21 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBProxyRequest::ModifyDBProxyRequest() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_newDBProxyNameHasBeenSet(false),
-    m_authHasBeenSet(false),
-    m_requireTLS(false),
-    m_requireTLSHasBeenSet(false),
-    m_idleClientTimeout(0),
-    m_idleClientTimeoutHasBeenSet(false),
-    m_debugLogging(false),
-    m_debugLoggingHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBProxyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

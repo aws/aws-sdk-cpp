@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SessionChainingConfig::SessionChainingConfig() : 
-    m_enableSessionTagChaining(false),
-    m_enableSessionTagChainingHasBeenSet(false)
-{
-}
-
 SessionChainingConfig::SessionChainingConfig(JsonView jsonValue)
-  : SessionChainingConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SessionChainingConfig& SessionChainingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnableSessionTagChaining"))
   {
     m_enableSessionTagChaining = jsonValue.GetBool("EnableSessionTagChaining");
-
     m_enableSessionTagChainingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-Isoline::Isoline() : 
-    m_connectionsHasBeenSet(false),
-    m_distanceThreshold(0),
-    m_distanceThresholdHasBeenSet(false),
-    m_geometriesHasBeenSet(false),
-    m_timeThreshold(0),
-    m_timeThresholdHasBeenSet(false)
-{
-}
-
 Isoline::Isoline(JsonView jsonValue)
-  : Isoline()
 {
   *this = jsonValue;
 }
@@ -45,14 +34,11 @@ Isoline& Isoline::operator =(JsonView jsonValue)
     }
     m_connectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DistanceThreshold"))
   {
     m_distanceThreshold = jsonValue.GetInt64("DistanceThreshold");
-
     m_distanceThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometries"))
   {
     Aws::Utils::Array<JsonView> geometriesJsonList = jsonValue.GetArray("Geometries");
@@ -62,14 +48,11 @@ Isoline& Isoline::operator =(JsonView jsonValue)
     }
     m_geometriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeThreshold"))
   {
     m_timeThreshold = jsonValue.GetInt64("TimeThreshold");
-
     m_timeThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

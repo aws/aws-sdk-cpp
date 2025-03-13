@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopImageBuilderResult::StopImageBuilderResult()
-{
-}
-
 StopImageBuilderResult::StopImageBuilderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StopImageBuilderResult& StopImageBuilderResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ImageBuilder"))
   {
     m_imageBuilder = jsonValue.GetObject("ImageBuilder");
-
+    m_imageBuilderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

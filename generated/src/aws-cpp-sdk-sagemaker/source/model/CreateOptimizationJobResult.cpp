@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOptimizationJobResult::CreateOptimizationJobResult()
-{
-}
-
 CreateOptimizationJobResult::CreateOptimizationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateOptimizationJobResult& CreateOptimizationJobResult::operator =(const Aws::
   if(jsonValue.ValueExists("OptimizationJobArn"))
   {
     m_optimizationJobArn = jsonValue.GetString("OptimizationJobArn");
-
+    m_optimizationJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

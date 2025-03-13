@@ -18,20 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageEksClusterDetails::CoverageEksClusterDetails() : 
-    m_clusterNameHasBeenSet(false),
-    m_coveredNodes(0),
-    m_coveredNodesHasBeenSet(false),
-    m_compatibleNodes(0),
-    m_compatibleNodesHasBeenSet(false),
-    m_addonDetailsHasBeenSet(false),
-    m_managementType(ManagementType::NOT_SET),
-    m_managementTypeHasBeenSet(false)
-{
-}
-
 CoverageEksClusterDetails::CoverageEksClusterDetails(JsonView jsonValue)
-  : CoverageEksClusterDetails()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ CoverageEksClusterDetails& CoverageEksClusterDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("coveredNodes"))
   {
     m_coveredNodes = jsonValue.GetInt64("coveredNodes");
-
     m_coveredNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compatibleNodes"))
   {
     m_compatibleNodes = jsonValue.GetInt64("compatibleNodes");
-
     m_compatibleNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("addonDetails"))
   {
     m_addonDetails = jsonValue.GetObject("addonDetails");
-
     m_addonDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managementType"))
   {
     m_managementType = ManagementTypeMapper::GetManagementTypeForName(jsonValue.GetString("managementType"));
-
     m_managementTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

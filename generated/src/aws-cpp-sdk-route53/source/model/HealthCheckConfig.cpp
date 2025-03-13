@@ -20,40 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HealthCheckConfig::HealthCheckConfig() : 
-    m_iPAddressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_type(HealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcePathHasBeenSet(false),
-    m_fullyQualifiedDomainNameHasBeenSet(false),
-    m_searchStringHasBeenSet(false),
-    m_requestInterval(0),
-    m_requestIntervalHasBeenSet(false),
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false),
-    m_measureLatency(false),
-    m_measureLatencyHasBeenSet(false),
-    m_inverted(false),
-    m_invertedHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_healthThreshold(0),
-    m_healthThresholdHasBeenSet(false),
-    m_childHealthChecksHasBeenSet(false),
-    m_enableSNI(false),
-    m_enableSNIHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_alarmIdentifierHasBeenSet(false),
-    m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
-    m_insufficientDataHealthStatusHasBeenSet(false),
-    m_routingControlArnHasBeenSet(false)
-{
-}
-
 HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode)
-  : HealthCheckConfig()
 {
   *this = xmlNode;
 }
@@ -69,120 +36,138 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     {
       m_iPAddress = Aws::Utils::Xml::DecodeEscapedXmlText(iPAddressNode.GetText());
       m_iPAddressHasBeenSet = true;
+       m_iPAddressHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = HealthCheckTypeMapper::GetHealthCheckTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = HealthCheckTypeMapper::GetHealthCheckTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode resourcePathNode = resultNode.FirstChild("ResourcePath");
     if(!resourcePathNode.IsNull())
     {
       m_resourcePath = Aws::Utils::Xml::DecodeEscapedXmlText(resourcePathNode.GetText());
       m_resourcePathHasBeenSet = true;
+       m_resourcePathHasBeenSet = true;
     }
     XmlNode fullyQualifiedDomainNameNode = resultNode.FirstChild("FullyQualifiedDomainName");
     if(!fullyQualifiedDomainNameNode.IsNull())
     {
       m_fullyQualifiedDomainName = Aws::Utils::Xml::DecodeEscapedXmlText(fullyQualifiedDomainNameNode.GetText());
       m_fullyQualifiedDomainNameHasBeenSet = true;
+       m_fullyQualifiedDomainNameHasBeenSet = true;
     }
     XmlNode searchStringNode = resultNode.FirstChild("SearchString");
     if(!searchStringNode.IsNull())
     {
       m_searchString = Aws::Utils::Xml::DecodeEscapedXmlText(searchStringNode.GetText());
       m_searchStringHasBeenSet = true;
+       m_searchStringHasBeenSet = true;
     }
     XmlNode requestIntervalNode = resultNode.FirstChild("RequestInterval");
     if(!requestIntervalNode.IsNull())
     {
       m_requestInterval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestIntervalNode.GetText()).c_str()).c_str());
       m_requestIntervalHasBeenSet = true;
+       m_requestIntervalHasBeenSet = true;
     }
     XmlNode failureThresholdNode = resultNode.FirstChild("FailureThreshold");
     if(!failureThresholdNode.IsNull())
     {
       m_failureThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureThresholdNode.GetText()).c_str()).c_str());
       m_failureThresholdHasBeenSet = true;
+       m_failureThresholdHasBeenSet = true;
     }
     XmlNode measureLatencyNode = resultNode.FirstChild("MeasureLatency");
     if(!measureLatencyNode.IsNull())
     {
       m_measureLatency = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(measureLatencyNode.GetText()).c_str()).c_str());
       m_measureLatencyHasBeenSet = true;
+       m_measureLatencyHasBeenSet = true;
     }
     XmlNode invertedNode = resultNode.FirstChild("Inverted");
     if(!invertedNode.IsNull())
     {
       m_inverted = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invertedNode.GetText()).c_str()).c_str());
       m_invertedHasBeenSet = true;
+       m_invertedHasBeenSet = true;
     }
     XmlNode disabledNode = resultNode.FirstChild("Disabled");
     if(!disabledNode.IsNull())
     {
       m_disabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disabledNode.GetText()).c_str()).c_str());
       m_disabledHasBeenSet = true;
+       m_disabledHasBeenSet = true;
     }
     XmlNode healthThresholdNode = resultNode.FirstChild("HealthThreshold");
     if(!healthThresholdNode.IsNull())
     {
       m_healthThreshold = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthThresholdNode.GetText()).c_str()).c_str());
       m_healthThresholdHasBeenSet = true;
+       m_healthThresholdHasBeenSet = true;
     }
     XmlNode childHealthChecksNode = resultNode.FirstChild("ChildHealthChecks");
     if(!childHealthChecksNode.IsNull())
     {
       XmlNode childHealthChecksMember = childHealthChecksNode.FirstChild("ChildHealthCheck");
+      m_childHealthChecksHasBeenSet = !childHealthChecksMember.IsNull();
       while(!childHealthChecksMember.IsNull())
       {
         m_childHealthChecks.push_back(childHealthChecksMember.GetText());
         childHealthChecksMember = childHealthChecksMember.NextNode("ChildHealthCheck");
       }
 
-      m_childHealthChecksHasBeenSet = true;
+       m_childHealthChecksHasBeenSet = true;
     }
     XmlNode enableSNINode = resultNode.FirstChild("EnableSNI");
     if(!enableSNINode.IsNull())
     {
       m_enableSNI = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableSNINode.GetText()).c_str()).c_str());
       m_enableSNIHasBeenSet = true;
+       m_enableSNIHasBeenSet = true;
     }
     XmlNode regionsNode = resultNode.FirstChild("Regions");
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(regionsMember.GetText().c_str())));
         regionsMember = regionsMember.NextNode("Region");
       }
 
-      m_regionsHasBeenSet = true;
+       m_regionsHasBeenSet = true;
     }
     XmlNode alarmIdentifierNode = resultNode.FirstChild("AlarmIdentifier");
     if(!alarmIdentifierNode.IsNull())
     {
       m_alarmIdentifier = alarmIdentifierNode;
       m_alarmIdentifierHasBeenSet = true;
+       m_alarmIdentifierHasBeenSet = true;
     }
     XmlNode insufficientDataHealthStatusNode = resultNode.FirstChild("InsufficientDataHealthStatus");
     if(!insufficientDataHealthStatusNode.IsNull())
     {
-      m_insufficientDataHealthStatus = InsufficientDataHealthStatusMapper::GetInsufficientDataHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(insufficientDataHealthStatusNode.GetText()).c_str()).c_str());
+      m_insufficientDataHealthStatus = InsufficientDataHealthStatusMapper::GetInsufficientDataHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(insufficientDataHealthStatusNode.GetText()).c_str()));
       m_insufficientDataHealthStatusHasBeenSet = true;
+       m_insufficientDataHealthStatusHasBeenSet = true;
     }
     XmlNode routingControlArnNode = resultNode.FirstChild("RoutingControlArn");
     if(!routingControlArnNode.IsNull())
     {
       m_routingControlArn = Aws::Utils::Xml::DecodeEscapedXmlText(routingControlArnNode.GetText());
       m_routingControlArnHasBeenSet = true;
+       m_routingControlArnHasBeenSet = true;
     }
   }
 

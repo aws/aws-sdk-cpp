@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DoubleRange::DoubleRange() : 
-    m_from(0.0),
-    m_fromHasBeenSet(false),
-    m_to(0.0),
-    m_toHasBeenSet(false)
-{
-}
-
 DoubleRange::DoubleRange(const XmlNode& xmlNode)
-  : DoubleRange()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ DoubleRange& DoubleRange::operator =(const XmlNode& xmlNode)
     {
       m_from = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromNode.GetText()).c_str()).c_str());
       m_fromHasBeenSet = true;
+       m_fromHasBeenSet = true;
     }
     XmlNode toNode = resultNode.FirstChild("To");
     if(!toNode.IsNull())
     {
       m_to = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toNode.GetText()).c_str()).c_str());
       m_toHasBeenSet = true;
+       m_toHasBeenSet = true;
     }
   }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMultiRegionEndpointResult::CreateMultiRegionEndpointResult() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 CreateMultiRegionEndpointResult::CreateMultiRegionEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateMultiRegionEndpointResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateMultiRegionEndpointResult& CreateMultiRegionEndpointResult::operator =(con
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
+    m_endpointIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

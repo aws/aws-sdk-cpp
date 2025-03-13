@@ -20,19 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZone::HostedZone() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_configHasBeenSet(false),
-    m_resourceRecordSetCount(0),
-    m_resourceRecordSetCountHasBeenSet(false),
-    m_linkedServiceHasBeenSet(false)
-{
-}
-
 HostedZone::HostedZone(const XmlNode& xmlNode)
-  : HostedZone()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ HostedZone& HostedZone::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode configNode = resultNode.FirstChild("Config");
     if(!configNode.IsNull())
     {
       m_config = configNode;
       m_configHasBeenSet = true;
+       m_configHasBeenSet = true;
     }
     XmlNode resourceRecordSetCountNode = resultNode.FirstChild("ResourceRecordSetCount");
     if(!resourceRecordSetCountNode.IsNull())
     {
       m_resourceRecordSetCount = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceRecordSetCountNode.GetText()).c_str()).c_str());
       m_resourceRecordSetCountHasBeenSet = true;
+       m_resourceRecordSetCountHasBeenSet = true;
     }
     XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");
     if(!linkedServiceNode.IsNull())
     {
       m_linkedService = linkedServiceNode;
       m_linkedServiceHasBeenSet = true;
+       m_linkedServiceHasBeenSet = true;
     }
   }
 

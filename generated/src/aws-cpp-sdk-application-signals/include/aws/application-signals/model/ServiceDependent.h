@@ -38,7 +38,7 @@ namespace Model
   class ServiceDependent
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ServiceDependent();
+    AWS_APPLICATIONSIGNALS_API ServiceDependent() = default;
     AWS_APPLICATIONSIGNALS_API ServiceDependent(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ServiceDependent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>If the invoked entity is an operation on an entity, the name of that
      * dependent operation is displayed here.</p>
      */
-    inline const Aws::String& GetOperationName() const{ return m_operationName; }
+    inline const Aws::String& GetOperationName() const { return m_operationName; }
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-    inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-    inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-    inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-    inline ServiceDependent& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-    inline ServiceDependent& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-    inline ServiceDependent& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    template<typename OperationNameT = Aws::String>
+    void SetOperationName(OperationNameT&& value) { m_operationNameHasBeenSet = true; m_operationName = std::forward<OperationNameT>(value); }
+    template<typename OperationNameT = Aws::String>
+    ServiceDependent& WithOperationName(OperationNameT&& value) { SetOperationName(std::forward<OperationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +73,16 @@ namespace Model
      * specifies the location where this object is hosted, or what it belongs to.</p>
      * </li> </ul>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDependentKeyAttributes() const{ return m_dependentKeyAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDependentKeyAttributes() const { return m_dependentKeyAttributes; }
     inline bool DependentKeyAttributesHasBeenSet() const { return m_dependentKeyAttributesHasBeenSet; }
-    inline void SetDependentKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes = value; }
-    inline void SetDependentKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes = std::move(value); }
-    inline ServiceDependent& WithDependentKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetDependentKeyAttributes(value); return *this;}
-    inline ServiceDependent& WithDependentKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetDependentKeyAttributes(std::move(value)); return *this;}
-    inline ServiceDependent& AddDependentKeyAttributes(const Aws::String& key, const Aws::String& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, value); return *this; }
-    inline ServiceDependent& AddDependentKeyAttributes(Aws::String&& key, const Aws::String& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::move(key), value); return *this; }
-    inline ServiceDependent& AddDependentKeyAttributes(const Aws::String& key, Aws::String&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, std::move(value)); return *this; }
-    inline ServiceDependent& AddDependentKeyAttributes(Aws::String&& key, Aws::String&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline ServiceDependent& AddDependentKeyAttributes(const char* key, Aws::String&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, std::move(value)); return *this; }
-    inline ServiceDependent& AddDependentKeyAttributes(Aws::String&& key, const char* value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::move(key), value); return *this; }
-    inline ServiceDependent& AddDependentKeyAttributes(const char* key, const char* value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(key, value); return *this; }
+    template<typename DependentKeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetDependentKeyAttributes(DependentKeyAttributesT&& value) { m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes = std::forward<DependentKeyAttributesT>(value); }
+    template<typename DependentKeyAttributesT = Aws::Map<Aws::String, Aws::String>>
+    ServiceDependent& WithDependentKeyAttributes(DependentKeyAttributesT&& value) { SetDependentKeyAttributes(std::forward<DependentKeyAttributesT>(value)); return *this;}
+    template<typename DependentKeyAttributesKeyT = Aws::String, typename DependentKeyAttributesValueT = Aws::String>
+    ServiceDependent& AddDependentKeyAttributes(DependentKeyAttributesKeyT&& key, DependentKeyAttributesValueT&& value) {
+      m_dependentKeyAttributesHasBeenSet = true; m_dependentKeyAttributes.emplace(std::forward<DependentKeyAttributesKeyT>(key), std::forward<DependentKeyAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -95,14 +90,12 @@ namespace Model
      * <p>If the dependent invoker was a service that invoked it from an operation, the
      * name of that dependent operation is displayed here.</p>
      */
-    inline const Aws::String& GetDependentOperationName() const{ return m_dependentOperationName; }
+    inline const Aws::String& GetDependentOperationName() const { return m_dependentOperationName; }
     inline bool DependentOperationNameHasBeenSet() const { return m_dependentOperationNameHasBeenSet; }
-    inline void SetDependentOperationName(const Aws::String& value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName = value; }
-    inline void SetDependentOperationName(Aws::String&& value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName = std::move(value); }
-    inline void SetDependentOperationName(const char* value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName.assign(value); }
-    inline ServiceDependent& WithDependentOperationName(const Aws::String& value) { SetDependentOperationName(value); return *this;}
-    inline ServiceDependent& WithDependentOperationName(Aws::String&& value) { SetDependentOperationName(std::move(value)); return *this;}
-    inline ServiceDependent& WithDependentOperationName(const char* value) { SetDependentOperationName(value); return *this;}
+    template<typename DependentOperationNameT = Aws::String>
+    void SetDependentOperationName(DependentOperationNameT&& value) { m_dependentOperationNameHasBeenSet = true; m_dependentOperationName = std::forward<DependentOperationNameT>(value); }
+    template<typename DependentOperationNameT = Aws::String>
+    ServiceDependent& WithDependentOperationName(DependentOperationNameT&& value) { SetDependentOperationName(std::forward<DependentOperationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +104,14 @@ namespace Model
      * associated with this service dependent that was discovered by Application
      * Signals.</p>
      */
-    inline const Aws::Vector<MetricReference>& GetMetricReferences() const{ return m_metricReferences; }
+    inline const Aws::Vector<MetricReference>& GetMetricReferences() const { return m_metricReferences; }
     inline bool MetricReferencesHasBeenSet() const { return m_metricReferencesHasBeenSet; }
-    inline void SetMetricReferences(const Aws::Vector<MetricReference>& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = value; }
-    inline void SetMetricReferences(Aws::Vector<MetricReference>&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::move(value); }
-    inline ServiceDependent& WithMetricReferences(const Aws::Vector<MetricReference>& value) { SetMetricReferences(value); return *this;}
-    inline ServiceDependent& WithMetricReferences(Aws::Vector<MetricReference>&& value) { SetMetricReferences(std::move(value)); return *this;}
-    inline ServiceDependent& AddMetricReferences(const MetricReference& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(value); return *this; }
-    inline ServiceDependent& AddMetricReferences(MetricReference&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(std::move(value)); return *this; }
+    template<typename MetricReferencesT = Aws::Vector<MetricReference>>
+    void SetMetricReferences(MetricReferencesT&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::forward<MetricReferencesT>(value); }
+    template<typename MetricReferencesT = Aws::Vector<MetricReference>>
+    ServiceDependent& WithMetricReferences(MetricReferencesT&& value) { SetMetricReferences(std::forward<MetricReferencesT>(value)); return *this;}
+    template<typename MetricReferencesT = MetricReference>
+    ServiceDependent& AddMetricReferences(MetricReferencesT&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.emplace_back(std::forward<MetricReferencesT>(value)); return *this; }
     ///@}
   private:
 

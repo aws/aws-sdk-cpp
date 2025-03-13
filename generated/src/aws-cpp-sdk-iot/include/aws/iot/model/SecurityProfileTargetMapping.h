@@ -33,7 +33,7 @@ namespace Model
   class SecurityProfileTargetMapping
   {
   public:
-    AWS_IOT_API SecurityProfileTargetMapping();
+    AWS_IOT_API SecurityProfileTargetMapping() = default;
     AWS_IOT_API SecurityProfileTargetMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API SecurityProfileTargetMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Information that identifies the security profile.</p>
      */
-    inline const SecurityProfileIdentifier& GetSecurityProfileIdentifier() const{ return m_securityProfileIdentifier; }
+    inline const SecurityProfileIdentifier& GetSecurityProfileIdentifier() const { return m_securityProfileIdentifier; }
     inline bool SecurityProfileIdentifierHasBeenSet() const { return m_securityProfileIdentifierHasBeenSet; }
-    inline void SetSecurityProfileIdentifier(const SecurityProfileIdentifier& value) { m_securityProfileIdentifierHasBeenSet = true; m_securityProfileIdentifier = value; }
-    inline void SetSecurityProfileIdentifier(SecurityProfileIdentifier&& value) { m_securityProfileIdentifierHasBeenSet = true; m_securityProfileIdentifier = std::move(value); }
-    inline SecurityProfileTargetMapping& WithSecurityProfileIdentifier(const SecurityProfileIdentifier& value) { SetSecurityProfileIdentifier(value); return *this;}
-    inline SecurityProfileTargetMapping& WithSecurityProfileIdentifier(SecurityProfileIdentifier&& value) { SetSecurityProfileIdentifier(std::move(value)); return *this;}
+    template<typename SecurityProfileIdentifierT = SecurityProfileIdentifier>
+    void SetSecurityProfileIdentifier(SecurityProfileIdentifierT&& value) { m_securityProfileIdentifierHasBeenSet = true; m_securityProfileIdentifier = std::forward<SecurityProfileIdentifierT>(value); }
+    template<typename SecurityProfileIdentifierT = SecurityProfileIdentifier>
+    SecurityProfileTargetMapping& WithSecurityProfileIdentifier(SecurityProfileIdentifierT&& value) { SetSecurityProfileIdentifier(std::forward<SecurityProfileIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>Information about the target (thing group) associated with the security
      * profile.</p>
      */
-    inline const SecurityProfileTarget& GetTarget() const{ return m_target; }
+    inline const SecurityProfileTarget& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const SecurityProfileTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(SecurityProfileTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline SecurityProfileTargetMapping& WithTarget(const SecurityProfileTarget& value) { SetTarget(value); return *this;}
-    inline SecurityProfileTargetMapping& WithTarget(SecurityProfileTarget&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = SecurityProfileTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = SecurityProfileTarget>
+    SecurityProfileTargetMapping& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

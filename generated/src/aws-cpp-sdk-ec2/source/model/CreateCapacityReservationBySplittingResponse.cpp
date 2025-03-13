@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCapacityReservationBySplittingResponse::CreateCapacityReservationBySplittingResponse() : 
-    m_instanceCount(0)
-{
-}
-
 CreateCapacityReservationBySplittingResponse::CreateCapacityReservationBySplittingResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : CreateCapacityReservationBySplittingResponse()
 {
   *this = result;
 }
@@ -44,16 +38,19 @@ CreateCapacityReservationBySplittingResponse& CreateCapacityReservationBySplitti
     if(!sourceCapacityReservationNode.IsNull())
     {
       m_sourceCapacityReservation = sourceCapacityReservationNode;
+      m_sourceCapacityReservationHasBeenSet = true;
     }
     XmlNode destinationCapacityReservationNode = resultNode.FirstChild("destinationCapacityReservation");
     if(!destinationCapacityReservationNode.IsNull())
     {
       m_destinationCapacityReservation = destinationCapacityReservationNode;
+      m_destinationCapacityReservationHasBeenSet = true;
     }
     XmlNode instanceCountNode = resultNode.FirstChild("instanceCount");
     if(!instanceCountNode.IsNull())
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
+      m_instanceCountHasBeenSet = true;
     }
   }
 
@@ -62,6 +59,7 @@ CreateCapacityReservationBySplittingResponse& CreateCapacityReservationBySplitti
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateCapacityReservationBySplittingResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

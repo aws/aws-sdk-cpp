@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceTemplateVersionRequest::DeleteServiceTemplateVersionRequest() : 
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceTemplateVersionRequest::SerializePayload() const
 {
   JsonValue payload;

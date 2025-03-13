@@ -18,16 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-InventoryData::InventoryData() : 
-    m_numberOfDatabases(0),
-    m_numberOfDatabasesHasBeenSet(false),
-    m_numberOfSchemas(0),
-    m_numberOfSchemasHasBeenSet(false)
-{
-}
-
 InventoryData::InventoryData(JsonView jsonValue)
-  : InventoryData()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InventoryData& InventoryData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfDatabases"))
   {
     m_numberOfDatabases = jsonValue.GetInteger("NumberOfDatabases");
-
     m_numberOfDatabasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfSchemas"))
   {
     m_numberOfSchemas = jsonValue.GetInteger("NumberOfSchemas");
-
     m_numberOfSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

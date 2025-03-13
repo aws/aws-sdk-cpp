@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventConfigurationsRequest::UpdateEventConfigurationsRequest() : 
-    m_eventConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchGetObjectInformation::BatchGetObjectInformation() : 
-    m_objectReferenceHasBeenSet(false)
-{
-}
-
 BatchGetObjectInformation::BatchGetObjectInformation(JsonView jsonValue)
-  : BatchGetObjectInformation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchGetObjectInformation& BatchGetObjectInformation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ObjectReference"))
   {
     m_objectReference = jsonValue.GetObject("ObjectReference");
-
     m_objectReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

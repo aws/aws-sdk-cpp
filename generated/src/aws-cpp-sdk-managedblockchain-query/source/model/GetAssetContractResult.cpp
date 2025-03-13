@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssetContractResult::GetAssetContractResult() : 
-    m_tokenStandard(QueryTokenStandard::NOT_SET)
-{
-}
-
 GetAssetContractResult::GetAssetContractResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAssetContractResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetAssetContractResult& GetAssetContractResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("contractIdentifier"))
   {
     m_contractIdentifier = jsonValue.GetObject("contractIdentifier");
-
+    m_contractIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenStandard"))
   {
     m_tokenStandard = QueryTokenStandardMapper::GetQueryTokenStandardForName(jsonValue.GetString("tokenStandard"));
-
+    m_tokenStandardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deployerAddress"))
   {
     m_deployerAddress = jsonValue.GetString("deployerAddress");
-
+    m_deployerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
+    m_metadataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

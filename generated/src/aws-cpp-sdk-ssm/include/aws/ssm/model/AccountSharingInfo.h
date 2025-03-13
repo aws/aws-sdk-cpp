@@ -33,7 +33,7 @@ namespace Model
   class AccountSharingInfo
   {
   public:
-    AWS_SSM_API AccountSharingInfo();
+    AWS_SSM_API AccountSharingInfo() = default;
     AWS_SSM_API AccountSharingInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API AccountSharingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID where the current document is shared.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountSharingInfo& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountSharingInfo& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountSharingInfo& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountSharingInfo& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the current document shared with the account.</p>
      */
-    inline const Aws::String& GetSharedDocumentVersion() const{ return m_sharedDocumentVersion; }
+    inline const Aws::String& GetSharedDocumentVersion() const { return m_sharedDocumentVersion; }
     inline bool SharedDocumentVersionHasBeenSet() const { return m_sharedDocumentVersionHasBeenSet; }
-    inline void SetSharedDocumentVersion(const Aws::String& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = value; }
-    inline void SetSharedDocumentVersion(Aws::String&& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = std::move(value); }
-    inline void SetSharedDocumentVersion(const char* value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion.assign(value); }
-    inline AccountSharingInfo& WithSharedDocumentVersion(const Aws::String& value) { SetSharedDocumentVersion(value); return *this;}
-    inline AccountSharingInfo& WithSharedDocumentVersion(Aws::String&& value) { SetSharedDocumentVersion(std::move(value)); return *this;}
-    inline AccountSharingInfo& WithSharedDocumentVersion(const char* value) { SetSharedDocumentVersion(value); return *this;}
+    template<typename SharedDocumentVersionT = Aws::String>
+    void SetSharedDocumentVersion(SharedDocumentVersionT&& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = std::forward<SharedDocumentVersionT>(value); }
+    template<typename SharedDocumentVersionT = Aws::String>
+    AccountSharingInfo& WithSharedDocumentVersion(SharedDocumentVersionT&& value) { SetSharedDocumentVersion(std::forward<SharedDocumentVersionT>(value)); return *this;}
     ///@}
   private:
 

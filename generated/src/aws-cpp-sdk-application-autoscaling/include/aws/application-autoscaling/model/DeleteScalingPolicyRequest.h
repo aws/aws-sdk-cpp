@@ -23,7 +23,7 @@ namespace Model
   class DeleteScalingPolicyRequest : public ApplicationAutoScalingRequest
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API DeleteScalingPolicyRequest();
+    AWS_APPLICATIONAUTOSCALING_API DeleteScalingPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the scaling policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline DeleteScalingPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline DeleteScalingPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline DeleteScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    DeleteScalingPolicyRequest& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,10 @@ namespace Model
      * For a resource provided by your own application or service, use
      * <code>custom-resource</code> instead.</p>
      */
-    inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline ServiceNamespace GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline DeleteScalingPolicyRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
-    inline DeleteScalingPolicyRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
+    inline void SetServiceNamespace(ServiceNamespace value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
+    inline DeleteScalingPolicyRequest& WithServiceNamespace(ServiceNamespace value) { SetServiceNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +122,12 @@ namespace Model
      * unique identifier is the pool ID. Example:
      * <code>workspacespool/wspool-123456</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline DeleteScalingPolicyRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline DeleteScalingPolicyRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline DeleteScalingPolicyRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    DeleteScalingPolicyRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,25 +181,23 @@ namespace Model
      * <p> <code>workspaces:workspacespool:DesiredUserSessions</code> - The number of
      * user sessions for the WorkSpaces in the pool.</p> </li> </ul>
      */
-    inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
+    inline ScalableDimension GetScalableDimension() const { return m_scalableDimension; }
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
-    inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
-    inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
-    inline DeleteScalingPolicyRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
-    inline DeleteScalingPolicyRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
+    inline void SetScalableDimension(ScalableDimension value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
+    inline DeleteScalingPolicyRequest& WithScalableDimension(ScalableDimension value) { SetScalableDimension(value); return *this;}
     ///@}
   private:
 
     Aws::String m_policyName;
     bool m_policyNameHasBeenSet = false;
 
-    ServiceNamespace m_serviceNamespace;
+    ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
     bool m_serviceNamespaceHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ScalableDimension m_scalableDimension;
+    ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
     bool m_scalableDimensionHasBeenSet = false;
   };
 

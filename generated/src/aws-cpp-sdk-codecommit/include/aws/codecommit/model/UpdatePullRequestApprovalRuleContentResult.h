@@ -28,7 +28,7 @@ namespace Model
   class UpdatePullRequestApprovalRuleContentResult
   {
   public:
-    AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentResult();
+    AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentResult() = default;
     AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API UpdatePullRequestApprovalRuleContentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the updated approval rule.</p>
      */
-    inline const ApprovalRule& GetApprovalRule() const{ return m_approvalRule; }
-    inline void SetApprovalRule(const ApprovalRule& value) { m_approvalRule = value; }
-    inline void SetApprovalRule(ApprovalRule&& value) { m_approvalRule = std::move(value); }
-    inline UpdatePullRequestApprovalRuleContentResult& WithApprovalRule(const ApprovalRule& value) { SetApprovalRule(value); return *this;}
-    inline UpdatePullRequestApprovalRuleContentResult& WithApprovalRule(ApprovalRule&& value) { SetApprovalRule(std::move(value)); return *this;}
+    inline const ApprovalRule& GetApprovalRule() const { return m_approvalRule; }
+    template<typename ApprovalRuleT = ApprovalRule>
+    void SetApprovalRule(ApprovalRuleT&& value) { m_approvalRuleHasBeenSet = true; m_approvalRule = std::forward<ApprovalRuleT>(value); }
+    template<typename ApprovalRuleT = ApprovalRule>
+    UpdatePullRequestApprovalRuleContentResult& WithApprovalRule(ApprovalRuleT&& value) { SetApprovalRule(std::forward<ApprovalRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdatePullRequestApprovalRuleContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdatePullRequestApprovalRuleContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdatePullRequestApprovalRuleContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdatePullRequestApprovalRuleContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApprovalRule m_approvalRule;
+    bool m_approvalRuleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

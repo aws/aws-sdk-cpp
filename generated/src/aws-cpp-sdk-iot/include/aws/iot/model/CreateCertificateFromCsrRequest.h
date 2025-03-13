@@ -29,7 +29,7 @@ namespace Model
   class CreateCertificateFromCsrRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API CreateCertificateFromCsrRequest();
+    AWS_IOT_API CreateCertificateFromCsrRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,21 +46,19 @@ namespace Model
     /**
      * <p>The certificate signing request (CSR).</p>
      */
-    inline const Aws::String& GetCertificateSigningRequest() const{ return m_certificateSigningRequest; }
+    inline const Aws::String& GetCertificateSigningRequest() const { return m_certificateSigningRequest; }
     inline bool CertificateSigningRequestHasBeenSet() const { return m_certificateSigningRequestHasBeenSet; }
-    inline void SetCertificateSigningRequest(const Aws::String& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = value; }
-    inline void SetCertificateSigningRequest(Aws::String&& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = std::move(value); }
-    inline void SetCertificateSigningRequest(const char* value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest.assign(value); }
-    inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(const Aws::String& value) { SetCertificateSigningRequest(value); return *this;}
-    inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(Aws::String&& value) { SetCertificateSigningRequest(std::move(value)); return *this;}
-    inline CreateCertificateFromCsrRequest& WithCertificateSigningRequest(const char* value) { SetCertificateSigningRequest(value); return *this;}
+    template<typename CertificateSigningRequestT = Aws::String>
+    void SetCertificateSigningRequest(CertificateSigningRequestT&& value) { m_certificateSigningRequestHasBeenSet = true; m_certificateSigningRequest = std::forward<CertificateSigningRequestT>(value); }
+    template<typename CertificateSigningRequestT = Aws::String>
+    CreateCertificateFromCsrRequest& WithCertificateSigningRequest(CertificateSigningRequestT&& value) { SetCertificateSigningRequest(std::forward<CertificateSigningRequestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the certificate is active.</p>
      */
-    inline bool GetSetAsActive() const{ return m_setAsActive; }
+    inline bool GetSetAsActive() const { return m_setAsActive; }
     inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
     inline CreateCertificateFromCsrRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_certificateSigningRequest;
     bool m_certificateSigningRequestHasBeenSet = false;
 
-    bool m_setAsActive;
+    bool m_setAsActive{false};
     bool m_setAsActiveHasBeenSet = false;
   };
 

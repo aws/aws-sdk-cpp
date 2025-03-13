@@ -18,15 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-ApplicationAssociationSummary::ApplicationAssociationSummary() : 
-    m_applicationAssociationArnHasBeenSet(false),
-    m_applicationArnHasBeenSet(false),
-    m_clientIdHasBeenSet(false)
-{
-}
-
 ApplicationAssociationSummary::ApplicationAssociationSummary(JsonView jsonValue)
-  : ApplicationAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ApplicationAssociationSummary& ApplicationAssociationSummary::operator =(JsonVie
   if(jsonValue.ValueExists("ApplicationAssociationArn"))
   {
     m_applicationAssociationArn = jsonValue.GetString("ApplicationAssociationArn");
-
     m_applicationAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   return *this;
 }
 

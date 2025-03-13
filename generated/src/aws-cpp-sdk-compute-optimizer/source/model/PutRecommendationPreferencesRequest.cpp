@@ -12,24 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRecommendationPreferencesRequest::PutRecommendationPreferencesRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_inferredWorkloadTypes(InferredWorkloadTypesPreference::NOT_SET),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_externalMetricsPreferenceHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_utilizationPreferencesHasBeenSet(false),
-    m_preferredResourcesHasBeenSet(false),
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
-    m_savingsEstimationModeHasBeenSet(false)
-{
-}
-
 Aws::String PutRecommendationPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

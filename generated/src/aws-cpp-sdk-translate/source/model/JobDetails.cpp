@@ -18,18 +18,7 @@ namespace Translate
 namespace Model
 {
 
-JobDetails::JobDetails() : 
-    m_translatedDocumentsCount(0),
-    m_translatedDocumentsCountHasBeenSet(false),
-    m_documentsWithErrorsCount(0),
-    m_documentsWithErrorsCountHasBeenSet(false),
-    m_inputDocumentsCount(0),
-    m_inputDocumentsCountHasBeenSet(false)
-{
-}
-
 JobDetails::JobDetails(JsonView jsonValue)
-  : JobDetails()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ JobDetails& JobDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TranslatedDocumentsCount"))
   {
     m_translatedDocumentsCount = jsonValue.GetInteger("TranslatedDocumentsCount");
-
     m_translatedDocumentsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentsWithErrorsCount"))
   {
     m_documentsWithErrorsCount = jsonValue.GetInteger("DocumentsWithErrorsCount");
-
     m_documentsWithErrorsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDocumentsCount"))
   {
     m_inputDocumentsCount = jsonValue.GetInteger("InputDocumentsCount");
-
     m_inputDocumentsCountHasBeenSet = true;
   }
-
   return *this;
 }
 

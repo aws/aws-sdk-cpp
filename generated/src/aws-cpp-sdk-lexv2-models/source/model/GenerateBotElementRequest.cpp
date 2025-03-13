@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateBotElementRequest::GenerateBotElementRequest() : 
-    m_intentIdHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false)
-{
-}
-
 Aws::String GenerateBotElementRequest::SerializePayload() const
 {
   JsonValue payload;

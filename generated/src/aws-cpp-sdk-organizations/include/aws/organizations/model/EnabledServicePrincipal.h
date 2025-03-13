@@ -34,7 +34,7 @@ namespace Model
   class EnabledServicePrincipal
   {
   public:
-    AWS_ORGANIZATIONS_API EnabledServicePrincipal();
+    AWS_ORGANIZATIONS_API EnabledServicePrincipal() = default;
     AWS_ORGANIZATIONS_API EnabledServicePrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API EnabledServicePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the service principal. This is typically in the form of a URL,
      * such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
      */
-    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-    inline EnabledServicePrincipal& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-    inline EnabledServicePrincipal& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-    inline EnabledServicePrincipal& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    template<typename ServicePrincipalT = Aws::String>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = Aws::String>
+    EnabledServicePrincipal& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,19 @@ namespace Model
      * <p>The date that the service principal was enabled for integration with
      * Organizations.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateEnabled() const{ return m_dateEnabled; }
+    inline const Aws::Utils::DateTime& GetDateEnabled() const { return m_dateEnabled; }
     inline bool DateEnabledHasBeenSet() const { return m_dateEnabledHasBeenSet; }
-    inline void SetDateEnabled(const Aws::Utils::DateTime& value) { m_dateEnabledHasBeenSet = true; m_dateEnabled = value; }
-    inline void SetDateEnabled(Aws::Utils::DateTime&& value) { m_dateEnabledHasBeenSet = true; m_dateEnabled = std::move(value); }
-    inline EnabledServicePrincipal& WithDateEnabled(const Aws::Utils::DateTime& value) { SetDateEnabled(value); return *this;}
-    inline EnabledServicePrincipal& WithDateEnabled(Aws::Utils::DateTime&& value) { SetDateEnabled(std::move(value)); return *this;}
+    template<typename DateEnabledT = Aws::Utils::DateTime>
+    void SetDateEnabled(DateEnabledT&& value) { m_dateEnabledHasBeenSet = true; m_dateEnabled = std::forward<DateEnabledT>(value); }
+    template<typename DateEnabledT = Aws::Utils::DateTime>
+    EnabledServicePrincipal& WithDateEnabled(DateEnabledT&& value) { SetDateEnabled(std::forward<DateEnabledT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_servicePrincipal;
     bool m_servicePrincipalHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateEnabled;
+    Aws::Utils::DateTime m_dateEnabled{};
     bool m_dateEnabledHasBeenSet = false;
   };
 

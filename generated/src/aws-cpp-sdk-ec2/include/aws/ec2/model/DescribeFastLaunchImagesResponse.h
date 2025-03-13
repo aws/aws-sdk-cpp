@@ -30,7 +30,7 @@ namespace Model
   class DescribeFastLaunchImagesResponse
   {
   public:
-    AWS_EC2_API DescribeFastLaunchImagesResponse();
+    AWS_EC2_API DescribeFastLaunchImagesResponse() = default;
     AWS_EC2_API DescribeFastLaunchImagesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeFastLaunchImagesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>A collection of details about the fast-launch enabled Windows images that
      * meet the requested criteria.</p>
      */
-    inline const Aws::Vector<DescribeFastLaunchImagesSuccessItem>& GetFastLaunchImages() const{ return m_fastLaunchImages; }
-    inline void SetFastLaunchImages(const Aws::Vector<DescribeFastLaunchImagesSuccessItem>& value) { m_fastLaunchImages = value; }
-    inline void SetFastLaunchImages(Aws::Vector<DescribeFastLaunchImagesSuccessItem>&& value) { m_fastLaunchImages = std::move(value); }
-    inline DescribeFastLaunchImagesResponse& WithFastLaunchImages(const Aws::Vector<DescribeFastLaunchImagesSuccessItem>& value) { SetFastLaunchImages(value); return *this;}
-    inline DescribeFastLaunchImagesResponse& WithFastLaunchImages(Aws::Vector<DescribeFastLaunchImagesSuccessItem>&& value) { SetFastLaunchImages(std::move(value)); return *this;}
-    inline DescribeFastLaunchImagesResponse& AddFastLaunchImages(const DescribeFastLaunchImagesSuccessItem& value) { m_fastLaunchImages.push_back(value); return *this; }
-    inline DescribeFastLaunchImagesResponse& AddFastLaunchImages(DescribeFastLaunchImagesSuccessItem&& value) { m_fastLaunchImages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DescribeFastLaunchImagesSuccessItem>& GetFastLaunchImages() const { return m_fastLaunchImages; }
+    template<typename FastLaunchImagesT = Aws::Vector<DescribeFastLaunchImagesSuccessItem>>
+    void SetFastLaunchImages(FastLaunchImagesT&& value) { m_fastLaunchImagesHasBeenSet = true; m_fastLaunchImages = std::forward<FastLaunchImagesT>(value); }
+    template<typename FastLaunchImagesT = Aws::Vector<DescribeFastLaunchImagesSuccessItem>>
+    DescribeFastLaunchImagesResponse& WithFastLaunchImages(FastLaunchImagesT&& value) { SetFastLaunchImages(std::forward<FastLaunchImagesT>(value)); return *this;}
+    template<typename FastLaunchImagesT = DescribeFastLaunchImagesSuccessItem>
+    DescribeFastLaunchImagesResponse& AddFastLaunchImages(FastLaunchImagesT&& value) { m_fastLaunchImagesHasBeenSet = true; m_fastLaunchImages.emplace_back(std::forward<FastLaunchImagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +54,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeFastLaunchImagesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFastLaunchImagesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFastLaunchImagesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFastLaunchImagesResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeFastLaunchImagesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeFastLaunchImagesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeFastLaunchImagesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DescribeFastLaunchImagesSuccessItem> m_fastLaunchImages;
+    bool m_fastLaunchImagesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

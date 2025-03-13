@@ -31,7 +31,7 @@ namespace Model
   class JobCommand
   {
   public:
-    AWS_GLUE_API JobCommand();
+    AWS_GLUE_API JobCommand() = default;
     AWS_GLUE_API JobCommand(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API JobCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <code>gluestreaming</code>. For a Ray job, this must be
      * <code>glueray</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline JobCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline JobCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline JobCommand& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    JobCommand& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
      * runs a job.</p>
      */
-    inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
+    inline const Aws::String& GetScriptLocation() const { return m_scriptLocation; }
     inline bool ScriptLocationHasBeenSet() const { return m_scriptLocationHasBeenSet; }
-    inline void SetScriptLocation(const Aws::String& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = value; }
-    inline void SetScriptLocation(Aws::String&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::move(value); }
-    inline void SetScriptLocation(const char* value) { m_scriptLocationHasBeenSet = true; m_scriptLocation.assign(value); }
-    inline JobCommand& WithScriptLocation(const Aws::String& value) { SetScriptLocation(value); return *this;}
-    inline JobCommand& WithScriptLocation(Aws::String&& value) { SetScriptLocation(std::move(value)); return *this;}
-    inline JobCommand& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
+    template<typename ScriptLocationT = Aws::String>
+    void SetScriptLocation(ScriptLocationT&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::forward<ScriptLocationT>(value); }
+    template<typename ScriptLocationT = Aws::String>
+    JobCommand& WithScriptLocation(ScriptLocationT&& value) { SetScriptLocation(std::forward<ScriptLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The Python version being used to run a Python shell job. Allowed values are 2
      * or 3.</p>
      */
-    inline const Aws::String& GetPythonVersion() const{ return m_pythonVersion; }
+    inline const Aws::String& GetPythonVersion() const { return m_pythonVersion; }
     inline bool PythonVersionHasBeenSet() const { return m_pythonVersionHasBeenSet; }
-    inline void SetPythonVersion(const Aws::String& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = value; }
-    inline void SetPythonVersion(Aws::String&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::move(value); }
-    inline void SetPythonVersion(const char* value) { m_pythonVersionHasBeenSet = true; m_pythonVersion.assign(value); }
-    inline JobCommand& WithPythonVersion(const Aws::String& value) { SetPythonVersion(value); return *this;}
-    inline JobCommand& WithPythonVersion(Aws::String&& value) { SetPythonVersion(std::move(value)); return *this;}
-    inline JobCommand& WithPythonVersion(const char* value) { SetPythonVersion(value); return *this;}
+    template<typename PythonVersionT = Aws::String>
+    void SetPythonVersion(PythonVersionT&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::forward<PythonVersionT>(value); }
+    template<typename PythonVersionT = Aws::String>
+    JobCommand& WithPythonVersion(PythonVersionT&& value) { SetPythonVersion(std::forward<PythonVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
      * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
-    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+    inline const Aws::String& GetRuntime() const { return m_runtime; }
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
-    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
-    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
-    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
-    inline JobCommand& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
-    inline JobCommand& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
-    inline JobCommand& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+    template<typename RuntimeT = Aws::String>
+    void SetRuntime(RuntimeT&& value) { m_runtimeHasBeenSet = true; m_runtime = std::forward<RuntimeT>(value); }
+    template<typename RuntimeT = Aws::String>
+    JobCommand& WithRuntime(RuntimeT&& value) { SetRuntime(std::forward<RuntimeT>(value)); return *this;}
     ///@}
   private:
 

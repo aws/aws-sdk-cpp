@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateComputeEnvironmentResult::UpdateComputeEnvironmentResult()
-{
-}
-
 UpdateComputeEnvironmentResult::UpdateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateComputeEnvironmentResult& UpdateComputeEnvironmentResult::operator =(const
   if(jsonValue.ValueExists("computeEnvironmentName"))
   {
     m_computeEnvironmentName = jsonValue.GetString("computeEnvironmentName");
-
+    m_computeEnvironmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeEnvironmentArn"))
   {
     m_computeEnvironmentArn = jsonValue.GetString("computeEnvironmentArn");
-
+    m_computeEnvironmentArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_EMRCONTAINERS_API EncryptionConfiguration();
+    AWS_EMRCONTAINERS_API EncryptionConfiguration() = default;
     AWS_EMRCONTAINERS_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>In-transit encryption-related input for the security configuration.</p>
      */
-    inline const InTransitEncryptionConfiguration& GetInTransitEncryptionConfiguration() const{ return m_inTransitEncryptionConfiguration; }
+    inline const InTransitEncryptionConfiguration& GetInTransitEncryptionConfiguration() const { return m_inTransitEncryptionConfiguration; }
     inline bool InTransitEncryptionConfigurationHasBeenSet() const { return m_inTransitEncryptionConfigurationHasBeenSet; }
-    inline void SetInTransitEncryptionConfiguration(const InTransitEncryptionConfiguration& value) { m_inTransitEncryptionConfigurationHasBeenSet = true; m_inTransitEncryptionConfiguration = value; }
-    inline void SetInTransitEncryptionConfiguration(InTransitEncryptionConfiguration&& value) { m_inTransitEncryptionConfigurationHasBeenSet = true; m_inTransitEncryptionConfiguration = std::move(value); }
-    inline EncryptionConfiguration& WithInTransitEncryptionConfiguration(const InTransitEncryptionConfiguration& value) { SetInTransitEncryptionConfiguration(value); return *this;}
-    inline EncryptionConfiguration& WithInTransitEncryptionConfiguration(InTransitEncryptionConfiguration&& value) { SetInTransitEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename InTransitEncryptionConfigurationT = InTransitEncryptionConfiguration>
+    void SetInTransitEncryptionConfiguration(InTransitEncryptionConfigurationT&& value) { m_inTransitEncryptionConfigurationHasBeenSet = true; m_inTransitEncryptionConfiguration = std::forward<InTransitEncryptionConfigurationT>(value); }
+    template<typename InTransitEncryptionConfigurationT = InTransitEncryptionConfiguration>
+    EncryptionConfiguration& WithInTransitEncryptionConfiguration(InTransitEncryptionConfigurationT&& value) { SetInTransitEncryptionConfiguration(std::forward<InTransitEncryptionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePredictorBacktestExportJobRequest::DescribePredictorBacktestExportJobRequest() : 
-    m_predictorBacktestExportJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribePredictorBacktestExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

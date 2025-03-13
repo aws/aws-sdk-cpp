@@ -21,7 +21,7 @@ namespace Model
   class DescribeReportJobRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API DescribeReportJobRequest();
+    AWS_BACKUP_API DescribeReportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot
      * be edited.</p>
      */
-    inline const Aws::String& GetReportJobId() const{ return m_reportJobId; }
+    inline const Aws::String& GetReportJobId() const { return m_reportJobId; }
     inline bool ReportJobIdHasBeenSet() const { return m_reportJobIdHasBeenSet; }
-    inline void SetReportJobId(const Aws::String& value) { m_reportJobIdHasBeenSet = true; m_reportJobId = value; }
-    inline void SetReportJobId(Aws::String&& value) { m_reportJobIdHasBeenSet = true; m_reportJobId = std::move(value); }
-    inline void SetReportJobId(const char* value) { m_reportJobIdHasBeenSet = true; m_reportJobId.assign(value); }
-    inline DescribeReportJobRequest& WithReportJobId(const Aws::String& value) { SetReportJobId(value); return *this;}
-    inline DescribeReportJobRequest& WithReportJobId(Aws::String&& value) { SetReportJobId(std::move(value)); return *this;}
-    inline DescribeReportJobRequest& WithReportJobId(const char* value) { SetReportJobId(value); return *this;}
+    template<typename ReportJobIdT = Aws::String>
+    void SetReportJobId(ReportJobIdT&& value) { m_reportJobIdHasBeenSet = true; m_reportJobId = std::forward<ReportJobIdT>(value); }
+    template<typename ReportJobIdT = Aws::String>
+    DescribeReportJobRequest& WithReportJobId(ReportJobIdT&& value) { SetReportJobId(std::forward<ReportJobIdT>(value)); return *this;}
     ///@}
   private:
 

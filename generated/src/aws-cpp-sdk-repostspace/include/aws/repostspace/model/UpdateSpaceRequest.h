@@ -22,7 +22,7 @@ namespace Model
   class UpdateSpaceRequest : public RepostspaceRequest
   {
   public:
-    AWS_REPOSTSPACE_API UpdateSpaceRequest();
+    AWS_REPOSTSPACE_API UpdateSpaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>A description for the private re:Post. This is used only to help you identify
      * this private re:Post.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateSpaceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateSpaceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateSpaceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSpaceRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,40 +51,34 @@ namespace Model
      * <p>The IAM role that grants permissions to the private re:Post to convert
      * unanswered questions into AWS support tickets.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateSpaceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateSpaceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateSpaceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateSpaceRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of this private re:Post.</p>
      */
-    inline const Aws::String& GetSpaceId() const{ return m_spaceId; }
+    inline const Aws::String& GetSpaceId() const { return m_spaceId; }
     inline bool SpaceIdHasBeenSet() const { return m_spaceIdHasBeenSet; }
-    inline void SetSpaceId(const Aws::String& value) { m_spaceIdHasBeenSet = true; m_spaceId = value; }
-    inline void SetSpaceId(Aws::String&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::move(value); }
-    inline void SetSpaceId(const char* value) { m_spaceIdHasBeenSet = true; m_spaceId.assign(value); }
-    inline UpdateSpaceRequest& WithSpaceId(const Aws::String& value) { SetSpaceId(value); return *this;}
-    inline UpdateSpaceRequest& WithSpaceId(Aws::String&& value) { SetSpaceId(std::move(value)); return *this;}
-    inline UpdateSpaceRequest& WithSpaceId(const char* value) { SetSpaceId(value); return *this;}
+    template<typename SpaceIdT = Aws::String>
+    void SetSpaceId(SpaceIdT&& value) { m_spaceIdHasBeenSet = true; m_spaceId = std::forward<SpaceIdT>(value); }
+    template<typename SpaceIdT = Aws::String>
+    UpdateSpaceRequest& WithSpaceId(SpaceIdT&& value) { SetSpaceId(std::forward<SpaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pricing tier of this private re:Post.</p>
      */
-    inline const TierLevel& GetTier() const{ return m_tier; }
+    inline TierLevel GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const TierLevel& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(TierLevel&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline UpdateSpaceRequest& WithTier(const TierLevel& value) { SetTier(value); return *this;}
-    inline UpdateSpaceRequest& WithTier(TierLevel&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(TierLevel value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline UpdateSpaceRequest& WithTier(TierLevel value) { SetTier(value); return *this;}
     ///@}
   private:
 
@@ -99,7 +91,7 @@ namespace Model
     Aws::String m_spaceId;
     bool m_spaceIdHasBeenSet = false;
 
-    TierLevel m_tier;
+    TierLevel m_tier{TierLevel::NOT_SET};
     bool m_tierHasBeenSet = false;
   };
 

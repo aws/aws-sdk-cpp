@@ -28,7 +28,7 @@ namespace Model
   class PutVoiceConnectorExternalSystemsConfigurationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API PutVoiceConnectorExternalSystemsConfigurationResult();
+    AWS_CHIMESDKVOICE_API PutVoiceConnectorExternalSystemsConfigurationResult() = default;
     AWS_CHIMESDKVOICE_API PutVoiceConnectorExternalSystemsConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API PutVoiceConnectorExternalSystemsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains information about an external systems configuration
      * for a Voice Connector.</p>
      */
-    inline const ExternalSystemsConfiguration& GetExternalSystemsConfiguration() const{ return m_externalSystemsConfiguration; }
-    inline void SetExternalSystemsConfiguration(const ExternalSystemsConfiguration& value) { m_externalSystemsConfiguration = value; }
-    inline void SetExternalSystemsConfiguration(ExternalSystemsConfiguration&& value) { m_externalSystemsConfiguration = std::move(value); }
-    inline PutVoiceConnectorExternalSystemsConfigurationResult& WithExternalSystemsConfiguration(const ExternalSystemsConfiguration& value) { SetExternalSystemsConfiguration(value); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationResult& WithExternalSystemsConfiguration(ExternalSystemsConfiguration&& value) { SetExternalSystemsConfiguration(std::move(value)); return *this;}
+    inline const ExternalSystemsConfiguration& GetExternalSystemsConfiguration() const { return m_externalSystemsConfiguration; }
+    template<typename ExternalSystemsConfigurationT = ExternalSystemsConfiguration>
+    void SetExternalSystemsConfiguration(ExternalSystemsConfigurationT&& value) { m_externalSystemsConfigurationHasBeenSet = true; m_externalSystemsConfiguration = std::forward<ExternalSystemsConfigurationT>(value); }
+    template<typename ExternalSystemsConfigurationT = ExternalSystemsConfiguration>
+    PutVoiceConnectorExternalSystemsConfigurationResult& WithExternalSystemsConfiguration(ExternalSystemsConfigurationT&& value) { SetExternalSystemsConfiguration(std::forward<ExternalSystemsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutVoiceConnectorExternalSystemsConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutVoiceConnectorExternalSystemsConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutVoiceConnectorExternalSystemsConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExternalSystemsConfiguration m_externalSystemsConfiguration;
+    bool m_externalSystemsConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

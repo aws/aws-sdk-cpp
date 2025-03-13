@@ -36,7 +36,7 @@ namespace Model
   class WorkspaceProperties
   {
   public:
-    AWS_WORKSPACES_API WorkspaceProperties();
+    AWS_WORKSPACES_API WorkspaceProperties() = default;
     AWS_WORKSPACES_API WorkspaceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkspaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * href="http://aws.amazon.com/workspaces-family/workspaces/faqs/#:~:text=Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%20on%20WorkSpaces%20Personal%3F">
      * Can I switch between hourly and monthly billing?</a> </p>
      */
-    inline const RunningMode& GetRunningMode() const{ return m_runningMode; }
+    inline RunningMode GetRunningMode() const { return m_runningMode; }
     inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
-    inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
-    inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
-    inline WorkspaceProperties& WithRunningMode(const RunningMode& value) { SetRunningMode(value); return *this;}
-    inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
+    inline void SetRunningMode(RunningMode value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
+    inline WorkspaceProperties& WithRunningMode(RunningMode value) { SetRunningMode(value); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
      * Configured in 60-minute intervals.</p>
      */
-    inline int GetRunningModeAutoStopTimeoutInMinutes() const{ return m_runningModeAutoStopTimeoutInMinutes; }
+    inline int GetRunningModeAutoStopTimeoutInMinutes() const { return m_runningModeAutoStopTimeoutInMinutes; }
     inline bool RunningModeAutoStopTimeoutInMinutesHasBeenSet() const { return m_runningModeAutoStopTimeoutInMinutesHasBeenSet; }
     inline void SetRunningModeAutoStopTimeoutInMinutes(int value) { m_runningModeAutoStopTimeoutInMinutesHasBeenSet = true; m_runningModeAutoStopTimeoutInMinutes = value; }
     inline WorkspaceProperties& WithRunningModeAutoStopTimeoutInMinutes(int value) { SetRunningModeAutoStopTimeoutInMinutes(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
      * a WorkSpace</a>.</p>
      */
-    inline int GetRootVolumeSizeGib() const{ return m_rootVolumeSizeGib; }
+    inline int GetRootVolumeSizeGib() const { return m_rootVolumeSizeGib; }
     inline bool RootVolumeSizeGibHasBeenSet() const { return m_rootVolumeSizeGibHasBeenSet; }
     inline void SetRootVolumeSizeGib(int value) { m_rootVolumeSizeGibHasBeenSet = true; m_rootVolumeSizeGib = value; }
     inline WorkspaceProperties& WithRootVolumeSizeGib(int value) { SetRootVolumeSizeGib(value); return *this;}
@@ -95,7 +93,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
      * a WorkSpace</a>.</p>
      */
-    inline int GetUserVolumeSizeGib() const{ return m_userVolumeSizeGib; }
+    inline int GetUserVolumeSizeGib() const { return m_userVolumeSizeGib; }
     inline bool UserVolumeSizeGibHasBeenSet() const { return m_userVolumeSizeGibHasBeenSet; }
     inline void SetUserVolumeSizeGib(int value) { m_userVolumeSizeGibHasBeenSet = true; m_userVolumeSizeGib = value; }
     inline WorkspaceProperties& WithUserVolumeSizeGib(int value) { SetUserVolumeSizeGib(value); return *this;}
@@ -107,12 +105,10 @@ namespace Model
      * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
      * WorkSpaces Bundles</a>.</p>
      */
-    inline const Compute& GetComputeTypeName() const{ return m_computeTypeName; }
+    inline Compute GetComputeTypeName() const { return m_computeTypeName; }
     inline bool ComputeTypeNameHasBeenSet() const { return m_computeTypeNameHasBeenSet; }
-    inline void SetComputeTypeName(const Compute& value) { m_computeTypeNameHasBeenSet = true; m_computeTypeName = value; }
-    inline void SetComputeTypeName(Compute&& value) { m_computeTypeNameHasBeenSet = true; m_computeTypeName = std::move(value); }
-    inline WorkspaceProperties& WithComputeTypeName(const Compute& value) { SetComputeTypeName(value); return *this;}
-    inline WorkspaceProperties& WithComputeTypeName(Compute&& value) { SetComputeTypeName(std::move(value)); return *this;}
+    inline void SetComputeTypeName(Compute value) { m_computeTypeNameHasBeenSet = true; m_computeTypeName = value; }
+    inline WorkspaceProperties& WithComputeTypeName(Compute value) { SetComputeTypeName(value); return *this;}
     ///@}
 
     ///@{
@@ -127,60 +123,57 @@ namespace Model
      * (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> </ul>
      * 
      */
-    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline WorkspaceProperties& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
-    inline WorkspaceProperties& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline WorkspaceProperties& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline WorkspaceProperties& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    WorkspaceProperties& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline WorkspaceProperties& AddProtocols(Protocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the operating system.</p>
      */
-    inline const OperatingSystemName& GetOperatingSystemName() const{ return m_operatingSystemName; }
+    inline OperatingSystemName GetOperatingSystemName() const { return m_operatingSystemName; }
     inline bool OperatingSystemNameHasBeenSet() const { return m_operatingSystemNameHasBeenSet; }
-    inline void SetOperatingSystemName(const OperatingSystemName& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
-    inline void SetOperatingSystemName(OperatingSystemName&& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = std::move(value); }
-    inline WorkspaceProperties& WithOperatingSystemName(const OperatingSystemName& value) { SetOperatingSystemName(value); return *this;}
-    inline WorkspaceProperties& WithOperatingSystemName(OperatingSystemName&& value) { SetOperatingSystemName(std::move(value)); return *this;}
+    inline void SetOperatingSystemName(OperatingSystemName value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
+    inline WorkspaceProperties& WithOperatingSystemName(OperatingSystemName value) { SetOperatingSystemName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the Global Accelerator properties.</p>
      */
-    inline const GlobalAcceleratorForWorkSpace& GetGlobalAccelerator() const{ return m_globalAccelerator; }
+    inline const GlobalAcceleratorForWorkSpace& GetGlobalAccelerator() const { return m_globalAccelerator; }
     inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
-    inline void SetGlobalAccelerator(const GlobalAcceleratorForWorkSpace& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = value; }
-    inline void SetGlobalAccelerator(GlobalAcceleratorForWorkSpace&& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = std::move(value); }
-    inline WorkspaceProperties& WithGlobalAccelerator(const GlobalAcceleratorForWorkSpace& value) { SetGlobalAccelerator(value); return *this;}
-    inline WorkspaceProperties& WithGlobalAccelerator(GlobalAcceleratorForWorkSpace&& value) { SetGlobalAccelerator(std::move(value)); return *this;}
+    template<typename GlobalAcceleratorT = GlobalAcceleratorForWorkSpace>
+    void SetGlobalAccelerator(GlobalAcceleratorT&& value) { m_globalAcceleratorHasBeenSet = true; m_globalAccelerator = std::forward<GlobalAcceleratorT>(value); }
+    template<typename GlobalAcceleratorT = GlobalAcceleratorForWorkSpace>
+    WorkspaceProperties& WithGlobalAccelerator(GlobalAcceleratorT&& value) { SetGlobalAccelerator(std::forward<GlobalAcceleratorT>(value)); return *this;}
     ///@}
   private:
 
-    RunningMode m_runningMode;
+    RunningMode m_runningMode{RunningMode::NOT_SET};
     bool m_runningModeHasBeenSet = false;
 
-    int m_runningModeAutoStopTimeoutInMinutes;
+    int m_runningModeAutoStopTimeoutInMinutes{0};
     bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet = false;
 
-    int m_rootVolumeSizeGib;
+    int m_rootVolumeSizeGib{0};
     bool m_rootVolumeSizeGibHasBeenSet = false;
 
-    int m_userVolumeSizeGib;
+    int m_userVolumeSizeGib{0};
     bool m_userVolumeSizeGibHasBeenSet = false;
 
-    Compute m_computeTypeName;
+    Compute m_computeTypeName{Compute::NOT_SET};
     bool m_computeTypeNameHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
     bool m_protocolsHasBeenSet = false;
 
-    OperatingSystemName m_operatingSystemName;
+    OperatingSystemName m_operatingSystemName{OperatingSystemName::NOT_SET};
     bool m_operatingSystemNameHasBeenSet = false;
 
     GlobalAcceleratorForWorkSpace m_globalAccelerator;

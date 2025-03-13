@@ -34,7 +34,7 @@ namespace Model
   class ActivityTaskScheduledEventAttributes
   {
   public:
-    AWS_SWF_API ActivityTaskScheduledEventAttributes();
+    AWS_SWF_API ActivityTaskScheduledEventAttributes() = default;
     AWS_SWF_API ActivityTaskScheduledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ActivityTaskScheduledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The type of the activity task.</p>
      */
-    inline const ActivityType& GetActivityType() const{ return m_activityType; }
+    inline const ActivityType& GetActivityType() const { return m_activityType; }
     inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
-    inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
-    inline void SetActivityType(ActivityType&& value) { m_activityTypeHasBeenSet = true; m_activityType = std::move(value); }
-    inline ActivityTaskScheduledEventAttributes& WithActivityType(const ActivityType& value) { SetActivityType(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
+    template<typename ActivityTypeT = ActivityType>
+    void SetActivityType(ActivityTypeT&& value) { m_activityTypeHasBeenSet = true; m_activityType = std::forward<ActivityTypeT>(value); }
+    template<typename ActivityTypeT = ActivityType>
+    ActivityTaskScheduledEventAttributes& WithActivityType(ActivityTypeT&& value) { SetActivityType(std::forward<ActivityTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the activity task.</p>
      */
-    inline const Aws::String& GetActivityId() const{ return m_activityId; }
+    inline const Aws::String& GetActivityId() const { return m_activityId; }
     inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
-    inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
-    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
-    inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
+    template<typename ActivityIdT = Aws::String>
+    void SetActivityId(ActivityIdT&& value) { m_activityIdHasBeenSet = true; m_activityId = std::forward<ActivityIdT>(value); }
+    template<typename ActivityIdT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithActivityId(ActivityIdT&& value) { SetActivityId(std::forward<ActivityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input provided to the activity task.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * <p>Data attached to the event that can be used by the decider in subsequent
      * workflow tasks. This data isn't sent to the activity.</p>
      */
-    inline const Aws::String& GetControl() const{ return m_control; }
+    inline const Aws::String& GetControl() const { return m_control; }
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-    inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-    inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+    template<typename ControlT = Aws::String>
+    void SetControl(ControlT&& value) { m_controlHasBeenSet = true; m_control = std::forward<ControlT>(value); }
+    template<typename ControlT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithControl(ControlT&& value) { SetControl(std::forward<ControlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,28 +94,24 @@ namespace Model
      * <p>The maximum amount of time the activity task can wait to be assigned to a
      * worker.</p>
      */
-    inline const Aws::String& GetScheduleToStartTimeout() const{ return m_scheduleToStartTimeout; }
+    inline const Aws::String& GetScheduleToStartTimeout() const { return m_scheduleToStartTimeout; }
     inline bool ScheduleToStartTimeoutHasBeenSet() const { return m_scheduleToStartTimeoutHasBeenSet; }
-    inline void SetScheduleToStartTimeout(const Aws::String& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = value; }
-    inline void SetScheduleToStartTimeout(Aws::String&& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = std::move(value); }
-    inline void SetScheduleToStartTimeout(const char* value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithScheduleToStartTimeout(const Aws::String& value) { SetScheduleToStartTimeout(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithScheduleToStartTimeout(Aws::String&& value) { SetScheduleToStartTimeout(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithScheduleToStartTimeout(const char* value) { SetScheduleToStartTimeout(value); return *this;}
+    template<typename ScheduleToStartTimeoutT = Aws::String>
+    void SetScheduleToStartTimeout(ScheduleToStartTimeoutT&& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = std::forward<ScheduleToStartTimeoutT>(value); }
+    template<typename ScheduleToStartTimeoutT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithScheduleToStartTimeout(ScheduleToStartTimeoutT&& value) { SetScheduleToStartTimeout(std::forward<ScheduleToStartTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum amount of time for this activity task.</p>
      */
-    inline const Aws::String& GetScheduleToCloseTimeout() const{ return m_scheduleToCloseTimeout; }
+    inline const Aws::String& GetScheduleToCloseTimeout() const { return m_scheduleToCloseTimeout; }
     inline bool ScheduleToCloseTimeoutHasBeenSet() const { return m_scheduleToCloseTimeoutHasBeenSet; }
-    inline void SetScheduleToCloseTimeout(const Aws::String& value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout = value; }
-    inline void SetScheduleToCloseTimeout(Aws::String&& value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout = std::move(value); }
-    inline void SetScheduleToCloseTimeout(const char* value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithScheduleToCloseTimeout(const Aws::String& value) { SetScheduleToCloseTimeout(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithScheduleToCloseTimeout(Aws::String&& value) { SetScheduleToCloseTimeout(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithScheduleToCloseTimeout(const char* value) { SetScheduleToCloseTimeout(value); return *this;}
+    template<typename ScheduleToCloseTimeoutT = Aws::String>
+    void SetScheduleToCloseTimeout(ScheduleToCloseTimeoutT&& value) { m_scheduleToCloseTimeoutHasBeenSet = true; m_scheduleToCloseTimeout = std::forward<ScheduleToCloseTimeoutT>(value); }
+    template<typename ScheduleToCloseTimeoutT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithScheduleToCloseTimeout(ScheduleToCloseTimeoutT&& value) { SetScheduleToCloseTimeout(std::forward<ScheduleToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,26 +119,24 @@ namespace Model
      * <p>The maximum amount of time a worker may take to process the activity
      * task.</p>
      */
-    inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+    inline const Aws::String& GetStartToCloseTimeout() const { return m_startToCloseTimeout; }
     inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
-    inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
-    inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::move(value); }
-    inline void SetStartToCloseTimeout(const char* value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithStartToCloseTimeout(const Aws::String& value) { SetStartToCloseTimeout(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
+    template<typename StartToCloseTimeoutT = Aws::String>
+    void SetStartToCloseTimeout(StartToCloseTimeoutT&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::forward<StartToCloseTimeoutT>(value); }
+    template<typename StartToCloseTimeoutT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithStartToCloseTimeout(StartToCloseTimeoutT&& value) { SetStartToCloseTimeout(std::forward<StartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The task list in which the activity task has been scheduled.</p>
      */
-    inline const TaskList& GetTaskList() const{ return m_taskList; }
+    inline const TaskList& GetTaskList() const { return m_taskList; }
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
-    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
-    inline ActivityTaskScheduledEventAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+    template<typename TaskListT = TaskList>
+    void SetTaskList(TaskListT&& value) { m_taskListHasBeenSet = true; m_taskList = std::forward<TaskListT>(value); }
+    template<typename TaskListT = TaskList>
+    ActivityTaskScheduledEventAttributes& WithTaskList(TaskListT&& value) { SetTaskList(std::forward<TaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +150,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+    inline const Aws::String& GetTaskPriority() const { return m_taskPriority; }
     inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
-    inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
-    inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
-    inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
+    template<typename TaskPriorityT = Aws::String>
+    void SetTaskPriority(TaskPriorityT&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::forward<TaskPriorityT>(value); }
+    template<typename TaskPriorityT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithTaskPriority(TaskPriorityT&& value) { SetTaskPriority(std::forward<TaskPriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,7 +165,7 @@ namespace Model
      * can be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline ActivityTaskScheduledEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
@@ -193,14 +179,12 @@ namespace Model
      * subsequently attempts to record a heartbeat or return a result, it is
      * ignored.</p>
      */
-    inline const Aws::String& GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
+    inline const Aws::String& GetHeartbeatTimeout() const { return m_heartbeatTimeout; }
     inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
-    inline void SetHeartbeatTimeout(const Aws::String& value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
-    inline void SetHeartbeatTimeout(Aws::String&& value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = std::move(value); }
-    inline void SetHeartbeatTimeout(const char* value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout.assign(value); }
-    inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(const Aws::String& value) { SetHeartbeatTimeout(value); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(Aws::String&& value) { SetHeartbeatTimeout(std::move(value)); return *this;}
-    inline ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(const char* value) { SetHeartbeatTimeout(value); return *this;}
+    template<typename HeartbeatTimeoutT = Aws::String>
+    void SetHeartbeatTimeout(HeartbeatTimeoutT&& value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = std::forward<HeartbeatTimeoutT>(value); }
+    template<typename HeartbeatTimeoutT = Aws::String>
+    ActivityTaskScheduledEventAttributes& WithHeartbeatTimeout(HeartbeatTimeoutT&& value) { SetHeartbeatTimeout(std::forward<HeartbeatTimeoutT>(value)); return *this;}
     ///@}
   private:
 
@@ -231,7 +215,7 @@ namespace Model
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_heartbeatTimeout;

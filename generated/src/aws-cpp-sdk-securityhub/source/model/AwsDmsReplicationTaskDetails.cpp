@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDmsReplicationTaskDetails::AwsDmsReplicationTaskDetails() : 
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false),
-    m_migrationTypeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_replicationTaskIdentifierHasBeenSet(false),
-    m_replicationTaskSettingsHasBeenSet(false),
-    m_sourceEndpointArnHasBeenSet(false),
-    m_tableMappingsHasBeenSet(false),
-    m_targetEndpointArnHasBeenSet(false),
-    m_taskDataHasBeenSet(false)
-{
-}
-
 AwsDmsReplicationTaskDetails::AwsDmsReplicationTaskDetails(JsonView jsonValue)
-  : AwsDmsReplicationTaskDetails()
 {
   *this = jsonValue;
 }
@@ -46,94 +28,68 @@ AwsDmsReplicationTaskDetails& AwsDmsReplicationTaskDetails::operator =(JsonView 
   if(jsonValue.ValueExists("CdcStartPosition"))
   {
     m_cdcStartPosition = jsonValue.GetString("CdcStartPosition");
-
     m_cdcStartPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdcStartTime"))
   {
     m_cdcStartTime = jsonValue.GetString("CdcStartTime");
-
     m_cdcStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdcStopPosition"))
   {
     m_cdcStopPosition = jsonValue.GetString("CdcStopPosition");
-
     m_cdcStopPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationType"))
   {
     m_migrationType = jsonValue.GetString("MigrationType");
-
     m_migrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceArn"))
   {
     m_replicationInstanceArn = jsonValue.GetString("ReplicationInstanceArn");
-
     m_replicationInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskIdentifier"))
   {
     m_replicationTaskIdentifier = jsonValue.GetString("ReplicationTaskIdentifier");
-
     m_replicationTaskIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationTaskSettings"))
   {
     m_replicationTaskSettings = jsonValue.GetString("ReplicationTaskSettings");
-
     m_replicationTaskSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceEndpointArn"))
   {
     m_sourceEndpointArn = jsonValue.GetString("SourceEndpointArn");
-
     m_sourceEndpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableMappings"))
   {
     m_tableMappings = jsonValue.GetString("TableMappings");
-
     m_tableMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetEndpointArn"))
   {
     m_targetEndpointArn = jsonValue.GetString("TargetEndpointArn");
-
     m_targetEndpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskData"))
   {
     m_taskData = jsonValue.GetString("TaskData");
-
     m_taskDataHasBeenSet = true;
   }
-
   return *this;
 }
 

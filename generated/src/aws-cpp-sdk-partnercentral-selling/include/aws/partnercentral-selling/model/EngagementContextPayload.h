@@ -33,7 +33,7 @@ namespace Model
   class EngagementContextPayload
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API EngagementContextPayload();
+    AWS_PARTNERCENTRALSELLING_API EngagementContextPayload() = default;
     AWS_PARTNERCENTRALSELLING_API EngagementContextPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API EngagementContextPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * is "CustomerProject". This field is present only when the Type in
      * EngagementContextDetails is set to "CustomerProject". </p>
      */
-    inline const CustomerProjectsContext& GetCustomerProject() const{ return m_customerProject; }
+    inline const CustomerProjectsContext& GetCustomerProject() const { return m_customerProject; }
     inline bool CustomerProjectHasBeenSet() const { return m_customerProjectHasBeenSet; }
-    inline void SetCustomerProject(const CustomerProjectsContext& value) { m_customerProjectHasBeenSet = true; m_customerProject = value; }
-    inline void SetCustomerProject(CustomerProjectsContext&& value) { m_customerProjectHasBeenSet = true; m_customerProject = std::move(value); }
-    inline EngagementContextPayload& WithCustomerProject(const CustomerProjectsContext& value) { SetCustomerProject(value); return *this;}
-    inline EngagementContextPayload& WithCustomerProject(CustomerProjectsContext&& value) { SetCustomerProject(std::move(value)); return *this;}
+    template<typename CustomerProjectT = CustomerProjectsContext>
+    void SetCustomerProject(CustomerProjectT&& value) { m_customerProjectHasBeenSet = true; m_customerProject = std::forward<CustomerProjectT>(value); }
+    template<typename CustomerProjectT = CustomerProjectsContext>
+    EngagementContextPayload& WithCustomerProject(CustomerProjectT&& value) { SetCustomerProject(std::forward<CustomerProjectT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class RebootReplicationInstanceRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API RebootReplicationInstanceRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API RebootReplicationInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
-    inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
+    inline const Aws::String& GetReplicationInstanceArn() const { return m_replicationInstanceArn; }
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
-    inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
-    inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
-    inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
-    inline RebootReplicationInstanceRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
-    inline RebootReplicationInstanceRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
-    inline RebootReplicationInstanceRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
+    template<typename ReplicationInstanceArnT = Aws::String>
+    void SetReplicationInstanceArn(ReplicationInstanceArnT&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::forward<ReplicationInstanceArnT>(value); }
+    template<typename ReplicationInstanceArnT = Aws::String>
+    RebootReplicationInstanceRequest& WithReplicationInstanceArn(ReplicationInstanceArnT&& value) { SetReplicationInstanceArn(std::forward<ReplicationInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * specify <code>true</code>. ( <code>--force-planned-failover</code> and
      * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
      */
-    inline bool GetForceFailover() const{ return m_forceFailover; }
+    inline bool GetForceFailover() const { return m_forceFailover; }
     inline bool ForceFailoverHasBeenSet() const { return m_forceFailoverHasBeenSet; }
     inline void SetForceFailover(bool value) { m_forceFailoverHasBeenSet = true; m_forceFailover = value; }
     inline RebootReplicationInstanceRequest& WithForceFailover(bool value) { SetForceFailover(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and
      * <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
      */
-    inline bool GetForcePlannedFailover() const{ return m_forcePlannedFailover; }
+    inline bool GetForcePlannedFailover() const { return m_forcePlannedFailover; }
     inline bool ForcePlannedFailoverHasBeenSet() const { return m_forcePlannedFailoverHasBeenSet; }
     inline void SetForcePlannedFailover(bool value) { m_forcePlannedFailoverHasBeenSet = true; m_forcePlannedFailover = value; }
     inline RebootReplicationInstanceRequest& WithForcePlannedFailover(bool value) { SetForcePlannedFailover(value); return *this;}
@@ -79,10 +77,10 @@ namespace Model
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet = false;
 
-    bool m_forceFailover;
+    bool m_forceFailover{false};
     bool m_forceFailoverHasBeenSet = false;
 
-    bool m_forcePlannedFailover;
+    bool m_forcePlannedFailover{false};
     bool m_forcePlannedFailoverHasBeenSet = false;
   };
 

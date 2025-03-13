@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAcceleratorRequest::DescribeAcceleratorRequest() : 
-    m_acceleratorArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAcceleratorRequest::SerializePayload() const
 {
   JsonValue payload;

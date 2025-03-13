@@ -18,13 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-AggregationDetail::AggregationDetail() : 
-    m_summarizationDimensionsHasBeenSet(false)
-{
-}
-
 AggregationDetail::AggregationDetail(JsonView jsonValue)
-  : AggregationDetail()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AggregationDetail& AggregationDetail::operator =(JsonView jsonValue)
     }
     m_summarizationDimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

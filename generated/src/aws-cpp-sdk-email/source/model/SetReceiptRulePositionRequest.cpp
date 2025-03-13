@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-SetReceiptRulePositionRequest::SetReceiptRulePositionRequest() : 
-    m_ruleSetNameHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_afterHasBeenSet(false)
-{
-}
-
 Aws::String SetReceiptRulePositionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

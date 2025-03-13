@@ -28,7 +28,7 @@ namespace Model
   class DescribeOrganizationConfigurationResult
   {
   public:
-    AWS_INSPECTOR2_API DescribeOrganizationConfigurationResult();
+    AWS_INSPECTOR2_API DescribeOrganizationConfigurationResult() = default;
     AWS_INSPECTOR2_API DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
      * <p>The scan types are automatically enabled for new members of your
      * organization.</p>
      */
-    inline const AutoEnable& GetAutoEnable() const{ return m_autoEnable; }
-    inline void SetAutoEnable(const AutoEnable& value) { m_autoEnable = value; }
-    inline void SetAutoEnable(AutoEnable&& value) { m_autoEnable = std::move(value); }
-    inline DescribeOrganizationConfigurationResult& WithAutoEnable(const AutoEnable& value) { SetAutoEnable(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithAutoEnable(AutoEnable&& value) { SetAutoEnable(std::move(value)); return *this;}
+    inline const AutoEnable& GetAutoEnable() const { return m_autoEnable; }
+    template<typename AutoEnableT = AutoEnable>
+    void SetAutoEnable(AutoEnableT&& value) { m_autoEnableHasBeenSet = true; m_autoEnable = std::forward<AutoEnableT>(value); }
+    template<typename AutoEnableT = AutoEnable>
+    DescribeOrganizationConfigurationResult& WithAutoEnable(AutoEnableT&& value) { SetAutoEnable(std::forward<AutoEnableT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,28 +50,29 @@ namespace Model
      * <p>Represents whether your organization has reached the maximum Amazon Web
      * Services account limit for Amazon Inspector.</p>
      */
-    inline bool GetMaxAccountLimitReached() const{ return m_maxAccountLimitReached; }
-    inline void SetMaxAccountLimitReached(bool value) { m_maxAccountLimitReached = value; }
+    inline bool GetMaxAccountLimitReached() const { return m_maxAccountLimitReached; }
+    inline void SetMaxAccountLimitReached(bool value) { m_maxAccountLimitReachedHasBeenSet = true; m_maxAccountLimitReached = value; }
     inline DescribeOrganizationConfigurationResult& WithMaxAccountLimitReached(bool value) { SetMaxAccountLimitReached(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOrganizationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOrganizationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOrganizationConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AutoEnable m_autoEnable;
+    bool m_autoEnableHasBeenSet = false;
 
-    bool m_maxAccountLimitReached;
+    bool m_maxAccountLimitReached{false};
+    bool m_maxAccountLimitReachedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

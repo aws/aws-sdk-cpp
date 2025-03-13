@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobDataSourceOverrideParameters::AssetBundleImportJobDataSourceOverrideParameters() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_dataSourceParametersHasBeenSet(false),
-    m_vpcConnectionPropertiesHasBeenSet(false),
-    m_sslPropertiesHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobDataSourceOverrideParameters::AssetBundleImportJobDataSourceOverrideParameters(JsonView jsonValue)
-  : AssetBundleImportJobDataSourceOverrideParameters()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AssetBundleImportJobDataSourceOverrideParameters& AssetBundleImportJobDataSource
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceParameters"))
   {
     m_dataSourceParameters = jsonValue.GetObject("DataSourceParameters");
-
     m_dataSourceParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConnectionProperties"))
   {
     m_vpcConnectionProperties = jsonValue.GetObject("VpcConnectionProperties");
-
     m_vpcConnectionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslProperties"))
   {
     m_sslProperties = jsonValue.GetObject("SslProperties");
-
     m_sslPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

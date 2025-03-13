@@ -32,7 +32,7 @@ namespace Model
   class MessageStopEvent
   {
   public:
-    AWS_BEDROCKRUNTIME_API MessageStopEvent();
+    AWS_BEDROCKRUNTIME_API MessageStopEvent() = default;
     AWS_BEDROCKRUNTIME_API MessageStopEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API MessageStopEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The reason why the model stopped generating output.</p>
      */
-    inline const StopReason& GetStopReason() const{ return m_stopReason; }
+    inline StopReason GetStopReason() const { return m_stopReason; }
     inline bool StopReasonHasBeenSet() const { return m_stopReasonHasBeenSet; }
-    inline void SetStopReason(const StopReason& value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
-    inline void SetStopReason(StopReason&& value) { m_stopReasonHasBeenSet = true; m_stopReason = std::move(value); }
-    inline MessageStopEvent& WithStopReason(const StopReason& value) { SetStopReason(value); return *this;}
-    inline MessageStopEvent& WithStopReason(StopReason&& value) { SetStopReason(std::move(value)); return *this;}
+    inline void SetStopReason(StopReason value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
+    inline MessageStopEvent& WithStopReason(StopReason value) { SetStopReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The additional model response fields.</p>
      */
-    inline Aws::Utils::DocumentView GetAdditionalModelResponseFields() const{ return m_additionalModelResponseFields; }
+    inline Aws::Utils::DocumentView GetAdditionalModelResponseFields() const { return m_additionalModelResponseFields; }
     inline bool AdditionalModelResponseFieldsHasBeenSet() const { return m_additionalModelResponseFieldsHasBeenSet; }
-    inline void SetAdditionalModelResponseFields(const Aws::Utils::Document& value) { m_additionalModelResponseFieldsHasBeenSet = true; m_additionalModelResponseFields = value; }
-    inline void SetAdditionalModelResponseFields(Aws::Utils::Document&& value) { m_additionalModelResponseFieldsHasBeenSet = true; m_additionalModelResponseFields = std::move(value); }
-    inline MessageStopEvent& WithAdditionalModelResponseFields(const Aws::Utils::Document& value) { SetAdditionalModelResponseFields(value); return *this;}
-    inline MessageStopEvent& WithAdditionalModelResponseFields(Aws::Utils::Document&& value) { SetAdditionalModelResponseFields(std::move(value)); return *this;}
+    template<typename AdditionalModelResponseFieldsT = Aws::Utils::Document>
+    void SetAdditionalModelResponseFields(AdditionalModelResponseFieldsT&& value) { m_additionalModelResponseFieldsHasBeenSet = true; m_additionalModelResponseFields = std::forward<AdditionalModelResponseFieldsT>(value); }
+    template<typename AdditionalModelResponseFieldsT = Aws::Utils::Document>
+    MessageStopEvent& WithAdditionalModelResponseFields(AdditionalModelResponseFieldsT&& value) { SetAdditionalModelResponseFields(std::forward<AdditionalModelResponseFieldsT>(value)); return *this;}
     ///@}
   private:
 
-    StopReason m_stopReason;
+    StopReason m_stopReason{StopReason::NOT_SET};
     bool m_stopReasonHasBeenSet = false;
 
     Aws::Utils::Document m_additionalModelResponseFields;

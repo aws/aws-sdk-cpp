@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringAlertHistorySummary::MonitoringAlertHistorySummary() : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringAlertNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_alertStatus(MonitoringAlertStatus::NOT_SET),
-    m_alertStatusHasBeenSet(false)
-{
-}
-
 MonitoringAlertHistorySummary::MonitoringAlertHistorySummary(JsonView jsonValue)
-  : MonitoringAlertHistorySummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MonitoringAlertHistorySummary& MonitoringAlertHistorySummary::operator =(JsonVie
   if(jsonValue.ValueExists("MonitoringScheduleName"))
   {
     m_monitoringScheduleName = jsonValue.GetString("MonitoringScheduleName");
-
     m_monitoringScheduleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringAlertName"))
   {
     m_monitoringAlertName = jsonValue.GetString("MonitoringAlertName");
-
     m_monitoringAlertNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlertStatus"))
   {
     m_alertStatus = MonitoringAlertStatusMapper::GetMonitoringAlertStatusForName(jsonValue.GetString("AlertStatus"));
-
     m_alertStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-InstanceDefinition::InstanceDefinition() : 
-    m_instanceType(GameServerGroupInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false)
-{
-}
-
 InstanceDefinition::InstanceDefinition(JsonView jsonValue)
-  : InstanceDefinition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InstanceDefinition& InstanceDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = GameServerGroupInstanceTypeMapper::GetGameServerGroupInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeightedCapacity"))
   {
     m_weightedCapacity = jsonValue.GetString("WeightedCapacity");
-
     m_weightedCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

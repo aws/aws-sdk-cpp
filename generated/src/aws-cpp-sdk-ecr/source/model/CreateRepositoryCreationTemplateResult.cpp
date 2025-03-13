@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRepositoryCreationTemplateResult::CreateRepositoryCreationTemplateResult()
-{
-}
-
 CreateRepositoryCreationTemplateResult::CreateRepositoryCreationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateRepositoryCreationTemplateResult& CreateRepositoryCreationTemplateResult::
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryCreationTemplate"))
   {
     m_repositoryCreationTemplate = jsonValue.GetObject("repositoryCreationTemplate");
-
+    m_repositoryCreationTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

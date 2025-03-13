@@ -12,15 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProvisioningArtifactsForServiceActionRequest::ListProvisioningArtifactsForServiceActionRequest() : 
-    m_serviceActionIdHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_acceptLanguageHasBeenSet(false)
-{
-}
-
 Aws::String ListProvisioningArtifactsForServiceActionRequest::SerializePayload() const
 {
   JsonValue payload;

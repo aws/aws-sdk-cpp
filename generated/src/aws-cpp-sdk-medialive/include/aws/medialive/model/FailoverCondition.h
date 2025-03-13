@@ -32,7 +32,7 @@ namespace Model
   class FailoverCondition
   {
   public:
-    AWS_MEDIALIVE_API FailoverCondition();
+    AWS_MEDIALIVE_API FailoverCondition() = default;
     AWS_MEDIALIVE_API FailoverCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FailoverCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * Failover condition type-specific settings.
      */
-    inline const FailoverConditionSettings& GetFailoverConditionSettings() const{ return m_failoverConditionSettings; }
+    inline const FailoverConditionSettings& GetFailoverConditionSettings() const { return m_failoverConditionSettings; }
     inline bool FailoverConditionSettingsHasBeenSet() const { return m_failoverConditionSettingsHasBeenSet; }
-    inline void SetFailoverConditionSettings(const FailoverConditionSettings& value) { m_failoverConditionSettingsHasBeenSet = true; m_failoverConditionSettings = value; }
-    inline void SetFailoverConditionSettings(FailoverConditionSettings&& value) { m_failoverConditionSettingsHasBeenSet = true; m_failoverConditionSettings = std::move(value); }
-    inline FailoverCondition& WithFailoverConditionSettings(const FailoverConditionSettings& value) { SetFailoverConditionSettings(value); return *this;}
-    inline FailoverCondition& WithFailoverConditionSettings(FailoverConditionSettings&& value) { SetFailoverConditionSettings(std::move(value)); return *this;}
+    template<typename FailoverConditionSettingsT = FailoverConditionSettings>
+    void SetFailoverConditionSettings(FailoverConditionSettingsT&& value) { m_failoverConditionSettingsHasBeenSet = true; m_failoverConditionSettings = std::forward<FailoverConditionSettingsT>(value); }
+    template<typename FailoverConditionSettingsT = FailoverConditionSettings>
+    FailoverCondition& WithFailoverConditionSettings(FailoverConditionSettingsT&& value) { SetFailoverConditionSettings(std::forward<FailoverConditionSettingsT>(value)); return *this;}
     ///@}
   private:
 

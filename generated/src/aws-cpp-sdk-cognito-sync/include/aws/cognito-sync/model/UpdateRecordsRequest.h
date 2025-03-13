@@ -27,7 +27,7 @@ namespace Model
   class UpdateRecordsRequest : public CognitoSyncRequest
   {
   public:
-    AWS_COGNITOSYNC_API UpdateRecordsRequest();
+    AWS_COGNITOSYNC_API UpdateRecordsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-    inline UpdateRecordsRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline UpdateRecordsRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    UpdateRecordsRequest& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-    inline UpdateRecordsRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline UpdateRecordsRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    UpdateRecordsRequest& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,42 +71,38 @@ namespace Model
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
      * (underscore), '-' (dash), and '.' (dot).
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline UpdateRecordsRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline UpdateRecordsRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    UpdateRecordsRequest& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline UpdateRecordsRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline UpdateRecordsRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    UpdateRecordsRequest& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of patch operations.
      */
-    inline const Aws::Vector<RecordPatch>& GetRecordPatches() const{ return m_recordPatches; }
+    inline const Aws::Vector<RecordPatch>& GetRecordPatches() const { return m_recordPatches; }
     inline bool RecordPatchesHasBeenSet() const { return m_recordPatchesHasBeenSet; }
-    inline void SetRecordPatches(const Aws::Vector<RecordPatch>& value) { m_recordPatchesHasBeenSet = true; m_recordPatches = value; }
-    inline void SetRecordPatches(Aws::Vector<RecordPatch>&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches = std::move(value); }
-    inline UpdateRecordsRequest& WithRecordPatches(const Aws::Vector<RecordPatch>& value) { SetRecordPatches(value); return *this;}
-    inline UpdateRecordsRequest& WithRecordPatches(Aws::Vector<RecordPatch>&& value) { SetRecordPatches(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& AddRecordPatches(const RecordPatch& value) { m_recordPatchesHasBeenSet = true; m_recordPatches.push_back(value); return *this; }
-    inline UpdateRecordsRequest& AddRecordPatches(RecordPatch&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches.push_back(std::move(value)); return *this; }
+    template<typename RecordPatchesT = Aws::Vector<RecordPatch>>
+    void SetRecordPatches(RecordPatchesT&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches = std::forward<RecordPatchesT>(value); }
+    template<typename RecordPatchesT = Aws::Vector<RecordPatch>>
+    UpdateRecordsRequest& WithRecordPatches(RecordPatchesT&& value) { SetRecordPatches(std::forward<RecordPatchesT>(value)); return *this;}
+    template<typename RecordPatchesT = RecordPatch>
+    UpdateRecordsRequest& AddRecordPatches(RecordPatchesT&& value) { m_recordPatchesHasBeenSet = true; m_recordPatches.emplace_back(std::forward<RecordPatchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * The SyncSessionToken returned by a previous call to ListRecords for this dataset
      * and identity.
      */
-    inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
+    inline const Aws::String& GetSyncSessionToken() const { return m_syncSessionToken; }
     inline bool SyncSessionTokenHasBeenSet() const { return m_syncSessionTokenHasBeenSet; }
-    inline void SetSyncSessionToken(const Aws::String& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = value; }
-    inline void SetSyncSessionToken(Aws::String&& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = std::move(value); }
-    inline void SetSyncSessionToken(const char* value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken.assign(value); }
-    inline UpdateRecordsRequest& WithSyncSessionToken(const Aws::String& value) { SetSyncSessionToken(value); return *this;}
-    inline UpdateRecordsRequest& WithSyncSessionToken(Aws::String&& value) { SetSyncSessionToken(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& WithSyncSessionToken(const char* value) { SetSyncSessionToken(value); return *this;}
+    template<typename SyncSessionTokenT = Aws::String>
+    void SetSyncSessionToken(SyncSessionTokenT&& value) { m_syncSessionTokenHasBeenSet = true; m_syncSessionToken = std::forward<SyncSessionTokenT>(value); }
+    template<typename SyncSessionTokenT = Aws::String>
+    UpdateRecordsRequest& WithSyncSessionToken(SyncSessionTokenT&& value) { SetSyncSessionToken(std::forward<SyncSessionTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +123,12 @@ namespace Model
      * Intended to supply a device ID that will populate the lastModifiedBy field
      * referenced in other methods. The ClientContext field is not yet implemented.
      */
-    inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+    inline const Aws::String& GetClientContext() const { return m_clientContext; }
     inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
-    inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
-    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
-    inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
-    inline UpdateRecordsRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
-    inline UpdateRecordsRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
-    inline UpdateRecordsRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
+    template<typename ClientContextT = Aws::String>
+    void SetClientContext(ClientContextT&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::forward<ClientContextT>(value); }
+    template<typename ClientContextT = Aws::String>
+    UpdateRecordsRequest& WithClientContext(ClientContextT&& value) { SetClientContext(std::forward<ClientContextT>(value)); return *this;}
     ///@}
   private:
 

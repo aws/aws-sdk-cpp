@@ -29,7 +29,7 @@ namespace Model
   class ListRegistrationAssociationsResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API ListRegistrationAssociationsResult();
+    AWS_PINPOINTSMSVOICEV2_API ListRegistrationAssociationsResult() = default;
     AWS_PINPOINTSMSVOICEV2_API ListRegistrationAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API ListRegistrationAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationArn() const{ return m_registrationArn; }
-    inline void SetRegistrationArn(const Aws::String& value) { m_registrationArn = value; }
-    inline void SetRegistrationArn(Aws::String&& value) { m_registrationArn = std::move(value); }
-    inline void SetRegistrationArn(const char* value) { m_registrationArn.assign(value); }
-    inline ListRegistrationAssociationsResult& WithRegistrationArn(const Aws::String& value) { SetRegistrationArn(value); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationArn(Aws::String&& value) { SetRegistrationArn(std::move(value)); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationArn(const char* value) { SetRegistrationArn(value); return *this;}
+    inline const Aws::String& GetRegistrationArn() const { return m_registrationArn; }
+    template<typename RegistrationArnT = Aws::String>
+    void SetRegistrationArn(RegistrationArnT&& value) { m_registrationArnHasBeenSet = true; m_registrationArn = std::forward<RegistrationArnT>(value); }
+    template<typename RegistrationArnT = Aws::String>
+    ListRegistrationAssociationsResult& WithRegistrationArn(RegistrationArnT&& value) { SetRegistrationArn(std::forward<RegistrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the registration.</p>
      */
-    inline const Aws::String& GetRegistrationId() const{ return m_registrationId; }
-    inline void SetRegistrationId(const Aws::String& value) { m_registrationId = value; }
-    inline void SetRegistrationId(Aws::String&& value) { m_registrationId = std::move(value); }
-    inline void SetRegistrationId(const char* value) { m_registrationId.assign(value); }
-    inline ListRegistrationAssociationsResult& WithRegistrationId(const Aws::String& value) { SetRegistrationId(value); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationId(Aws::String&& value) { SetRegistrationId(std::move(value)); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationId(const char* value) { SetRegistrationId(value); return *this;}
+    inline const Aws::String& GetRegistrationId() const { return m_registrationId; }
+    template<typename RegistrationIdT = Aws::String>
+    void SetRegistrationId(RegistrationIdT&& value) { m_registrationIdHasBeenSet = true; m_registrationId = std::forward<RegistrationIdT>(value); }
+    template<typename RegistrationIdT = Aws::String>
+    ListRegistrationAssociationsResult& WithRegistrationId(RegistrationIdT&& value) { SetRegistrationId(std::forward<RegistrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,26 +61,24 @@ namespace Model
      * <p>The type of registration form. The list of <b>RegistrationTypes</b> can be
      * found using the <a>DescribeRegistrationTypeDefinitions</a> action.</p>
      */
-    inline const Aws::String& GetRegistrationType() const{ return m_registrationType; }
-    inline void SetRegistrationType(const Aws::String& value) { m_registrationType = value; }
-    inline void SetRegistrationType(Aws::String&& value) { m_registrationType = std::move(value); }
-    inline void SetRegistrationType(const char* value) { m_registrationType.assign(value); }
-    inline ListRegistrationAssociationsResult& WithRegistrationType(const Aws::String& value) { SetRegistrationType(value); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationType(Aws::String&& value) { SetRegistrationType(std::move(value)); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationType(const char* value) { SetRegistrationType(value); return *this;}
+    inline const Aws::String& GetRegistrationType() const { return m_registrationType; }
+    template<typename RegistrationTypeT = Aws::String>
+    void SetRegistrationType(RegistrationTypeT&& value) { m_registrationTypeHasBeenSet = true; m_registrationType = std::forward<RegistrationTypeT>(value); }
+    template<typename RegistrationTypeT = Aws::String>
+    ListRegistrationAssociationsResult& WithRegistrationType(RegistrationTypeT&& value) { SetRegistrationType(std::forward<RegistrationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of RegistrationAssociationMetadata objects.</p>
      */
-    inline const Aws::Vector<RegistrationAssociationMetadata>& GetRegistrationAssociations() const{ return m_registrationAssociations; }
-    inline void SetRegistrationAssociations(const Aws::Vector<RegistrationAssociationMetadata>& value) { m_registrationAssociations = value; }
-    inline void SetRegistrationAssociations(Aws::Vector<RegistrationAssociationMetadata>&& value) { m_registrationAssociations = std::move(value); }
-    inline ListRegistrationAssociationsResult& WithRegistrationAssociations(const Aws::Vector<RegistrationAssociationMetadata>& value) { SetRegistrationAssociations(value); return *this;}
-    inline ListRegistrationAssociationsResult& WithRegistrationAssociations(Aws::Vector<RegistrationAssociationMetadata>&& value) { SetRegistrationAssociations(std::move(value)); return *this;}
-    inline ListRegistrationAssociationsResult& AddRegistrationAssociations(const RegistrationAssociationMetadata& value) { m_registrationAssociations.push_back(value); return *this; }
-    inline ListRegistrationAssociationsResult& AddRegistrationAssociations(RegistrationAssociationMetadata&& value) { m_registrationAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RegistrationAssociationMetadata>& GetRegistrationAssociations() const { return m_registrationAssociations; }
+    template<typename RegistrationAssociationsT = Aws::Vector<RegistrationAssociationMetadata>>
+    void SetRegistrationAssociations(RegistrationAssociationsT&& value) { m_registrationAssociationsHasBeenSet = true; m_registrationAssociations = std::forward<RegistrationAssociationsT>(value); }
+    template<typename RegistrationAssociationsT = Aws::Vector<RegistrationAssociationMetadata>>
+    ListRegistrationAssociationsResult& WithRegistrationAssociations(RegistrationAssociationsT&& value) { SetRegistrationAssociations(std::forward<RegistrationAssociationsT>(value)); return *this;}
+    template<typename RegistrationAssociationsT = RegistrationAssociationMetadata>
+    ListRegistrationAssociationsResult& AddRegistrationAssociations(RegistrationAssociationsT&& value) { m_registrationAssociationsHasBeenSet = true; m_registrationAssociations.emplace_back(std::forward<RegistrationAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -92,38 +86,40 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRegistrationAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRegistrationAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRegistrationAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRegistrationAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRegistrationAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRegistrationAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRegistrationAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRegistrationAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registrationArn;
+    bool m_registrationArnHasBeenSet = false;
 
     Aws::String m_registrationId;
+    bool m_registrationIdHasBeenSet = false;
 
     Aws::String m_registrationType;
+    bool m_registrationTypeHasBeenSet = false;
 
     Aws::Vector<RegistrationAssociationMetadata> m_registrationAssociations;
+    bool m_registrationAssociationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

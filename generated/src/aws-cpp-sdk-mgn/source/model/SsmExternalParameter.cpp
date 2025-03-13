@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-SsmExternalParameter::SsmExternalParameter() : 
-    m_dynamicPathHasBeenSet(false)
-{
-}
-
 SsmExternalParameter::SsmExternalParameter(JsonView jsonValue)
-  : SsmExternalParameter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SsmExternalParameter& SsmExternalParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dynamicPath"))
   {
     m_dynamicPath = jsonValue.GetString("dynamicPath");
-
     m_dynamicPathHasBeenSet = true;
   }
-
   return *this;
 }
 

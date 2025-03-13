@@ -29,7 +29,7 @@ namespace Model
   class ExecutionProperty
   {
   public:
-    AWS_GLUE_API ExecutionProperty();
+    AWS_GLUE_API ExecutionProperty() = default;
     AWS_GLUE_API ExecutionProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ExecutionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * An error is returned when this threshold is reached. The maximum value you can
      * specify is controlled by a service limit.</p>
      */
-    inline int GetMaxConcurrentRuns() const{ return m_maxConcurrentRuns; }
+    inline int GetMaxConcurrentRuns() const { return m_maxConcurrentRuns; }
     inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
     inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
     inline ExecutionProperty& WithMaxConcurrentRuns(int value) { SetMaxConcurrentRuns(value); return *this;}
     ///@}
   private:
 
-    int m_maxConcurrentRuns;
+    int m_maxConcurrentRuns{0};
     bool m_maxConcurrentRunsHasBeenSet = false;
   };
 

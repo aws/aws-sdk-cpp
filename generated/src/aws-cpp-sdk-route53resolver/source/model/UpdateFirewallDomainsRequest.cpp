@@ -12,14 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFirewallDomainsRequest::UpdateFirewallDomainsRequest() : 
-    m_firewallDomainListIdHasBeenSet(false),
-    m_operation(FirewallDomainUpdateOperation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_domainsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFirewallDomainsRequest::SerializePayload() const
 {
   JsonValue payload;

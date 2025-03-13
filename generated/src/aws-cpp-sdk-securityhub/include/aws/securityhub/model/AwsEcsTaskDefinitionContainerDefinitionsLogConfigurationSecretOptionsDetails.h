@@ -31,7 +31,7 @@ namespace Model
   class AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the secret.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * ARN of the Secrets Manager secret or the full ARN of the parameter in the
      * Systems Manager Parameter Store.</p>
      */
-    inline const Aws::String& GetValueFrom() const{ return m_valueFrom; }
+    inline const Aws::String& GetValueFrom() const { return m_valueFrom; }
     inline bool ValueFromHasBeenSet() const { return m_valueFromHasBeenSet; }
-    inline void SetValueFrom(const Aws::String& value) { m_valueFromHasBeenSet = true; m_valueFrom = value; }
-    inline void SetValueFrom(Aws::String&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::move(value); }
-    inline void SetValueFrom(const char* value) { m_valueFromHasBeenSet = true; m_valueFrom.assign(value); }
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithValueFrom(const Aws::String& value) { SetValueFrom(value); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithValueFrom(Aws::String&& value) { SetValueFrom(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithValueFrom(const char* value) { SetValueFrom(value); return *this;}
+    template<typename ValueFromT = Aws::String>
+    void SetValueFrom(ValueFromT&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::forward<ValueFromT>(value); }
+    template<typename ValueFromT = Aws::String>
+    AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails& WithValueFrom(ValueFromT&& value) { SetValueFrom(std::forward<ValueFromT>(value)); return *this;}
     ///@}
   private:
 

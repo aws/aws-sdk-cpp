@@ -19,37 +19,18 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Datum::Datum() : 
-    m_scalarValueHasBeenSet(false),
-    m_arrayValueHasBeenSet(false),
-    m_rowValueHasBeenSet(false),
-    m_nullValue(false),
-    m_nullValueHasBeenSet(false)
-{
-}
-
 Datum::Datum(JsonView jsonValue)
-  : Datum()
 {
   *this = jsonValue;
 }
-
-const Row& Datum::GetRowValue() const{ return *m_rowValue; }
-bool Datum::RowValueHasBeenSet() const { return m_rowValueHasBeenSet; }
-void Datum::SetRowValue(const Row& value) { m_rowValueHasBeenSet = true; m_rowValue = Aws::MakeShared<Row>("Datum", value); }
-void Datum::SetRowValue(Row&& value) { m_rowValueHasBeenSet = true; m_rowValue = Aws::MakeShared<Row>("Datum", std::move(value)); }
-Datum& Datum::WithRowValue(const Row& value) { SetRowValue(value); return *this;}
-Datum& Datum::WithRowValue(Row&& value) { SetRowValue(std::move(value)); return *this;}
 
 Datum& Datum::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scalarValue"))
   {
     m_scalarValue = jsonValue.GetString("scalarValue");
-
     m_scalarValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arrayValue"))
   {
     Aws::Utils::Array<JsonView> arrayValueJsonList = jsonValue.GetArray("arrayValue");
@@ -59,21 +40,16 @@ Datum& Datum::operator =(JsonView jsonValue)
     }
     m_arrayValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rowValue"))
   {
     m_rowValue = Aws::MakeShared<Row>("Datum", jsonValue.GetObject("rowValue"));
-
     m_rowValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nullValue"))
   {
     m_nullValue = jsonValue.GetBool("nullValue");
-
     m_nullValueHasBeenSet = true;
   }
-
   return *this;
 }
 

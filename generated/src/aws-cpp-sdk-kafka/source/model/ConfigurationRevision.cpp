@@ -18,16 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ConfigurationRevision::ConfigurationRevision() : 
-    m_creationTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
-{
-}
-
 ConfigurationRevision::ConfigurationRevision(JsonView jsonValue)
-  : ConfigurationRevision()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConfigurationRevision& ConfigurationRevision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInt64("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

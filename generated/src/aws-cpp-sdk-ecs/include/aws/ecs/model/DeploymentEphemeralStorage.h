@@ -32,7 +32,7 @@ namespace Model
   class DeploymentEphemeralStorage
   {
   public:
-    AWS_ECS_API DeploymentEphemeralStorage();
+    AWS_ECS_API DeploymentEphemeralStorage() = default;
     AWS_ECS_API DeploymentEphemeralStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API DeploymentEphemeralStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
      * deployment.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline DeploymentEphemeralStorage& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline DeploymentEphemeralStorage& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline DeploymentEphemeralStorage& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    DeploymentEphemeralStorage& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

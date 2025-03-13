@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotOptionsRequest::SpotOptionsRequest() : 
-    m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_maintenanceStrategiesHasBeenSet(false),
-    m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
-    m_instanceInterruptionBehaviorHasBeenSet(false),
-    m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false),
-    m_singleInstanceType(false),
-    m_singleInstanceTypeHasBeenSet(false),
-    m_singleAvailabilityZone(false),
-    m_singleAvailabilityZoneHasBeenSet(false),
-    m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false),
-    m_maxTotalPriceHasBeenSet(false)
-{
-}
-
 SpotOptionsRequest::SpotOptionsRequest(const XmlNode& xmlNode)
-  : SpotOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -53,50 +34,58 @@ SpotOptionsRequest& SpotOptionsRequest::operator =(const XmlNode& xmlNode)
     XmlNode allocationStrategyNode = resultNode.FirstChild("AllocationStrategy");
     if(!allocationStrategyNode.IsNull())
     {
-      m_allocationStrategy = SpotAllocationStrategyMapper::GetSpotAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
+      m_allocationStrategy = SpotAllocationStrategyMapper::GetSpotAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()));
       m_allocationStrategyHasBeenSet = true;
+       m_allocationStrategyHasBeenSet = true;
     }
     XmlNode maintenanceStrategiesNode = resultNode.FirstChild("MaintenanceStrategies");
     if(!maintenanceStrategiesNode.IsNull())
     {
       m_maintenanceStrategies = maintenanceStrategiesNode;
       m_maintenanceStrategiesHasBeenSet = true;
+       m_maintenanceStrategiesHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("InstanceInterruptionBehavior");
     if(!instanceInterruptionBehaviorNode.IsNull())
     {
-      m_instanceInterruptionBehavior = SpotInstanceInterruptionBehaviorMapper::GetSpotInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()).c_str());
+      m_instanceInterruptionBehavior = SpotInstanceInterruptionBehaviorMapper::GetSpotInstanceInterruptionBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceInterruptionBehaviorNode.GetText()).c_str()));
       m_instanceInterruptionBehaviorHasBeenSet = true;
+       m_instanceInterruptionBehaviorHasBeenSet = true;
     }
     XmlNode instancePoolsToUseCountNode = resultNode.FirstChild("InstancePoolsToUseCount");
     if(!instancePoolsToUseCountNode.IsNull())
     {
       m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePoolsToUseCountNode.GetText()).c_str()).c_str());
       m_instancePoolsToUseCountHasBeenSet = true;
+       m_instancePoolsToUseCountHasBeenSet = true;
     }
     XmlNode singleInstanceTypeNode = resultNode.FirstChild("SingleInstanceType");
     if(!singleInstanceTypeNode.IsNull())
     {
       m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleInstanceTypeNode.GetText()).c_str()).c_str());
       m_singleInstanceTypeHasBeenSet = true;
+       m_singleInstanceTypeHasBeenSet = true;
     }
     XmlNode singleAvailabilityZoneNode = resultNode.FirstChild("SingleAvailabilityZone");
     if(!singleAvailabilityZoneNode.IsNull())
     {
       m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(singleAvailabilityZoneNode.GetText()).c_str()).c_str());
       m_singleAvailabilityZoneHasBeenSet = true;
+       m_singleAvailabilityZoneHasBeenSet = true;
     }
     XmlNode minTargetCapacityNode = resultNode.FirstChild("MinTargetCapacity");
     if(!minTargetCapacityNode.IsNull())
     {
       m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minTargetCapacityNode.GetText()).c_str()).c_str());
       m_minTargetCapacityHasBeenSet = true;
+       m_minTargetCapacityHasBeenSet = true;
     }
     XmlNode maxTotalPriceNode = resultNode.FirstChild("MaxTotalPrice");
     if(!maxTotalPriceNode.IsNull())
     {
       m_maxTotalPrice = Aws::Utils::Xml::DecodeEscapedXmlText(maxTotalPriceNode.GetText());
       m_maxTotalPriceHasBeenSet = true;
+       m_maxTotalPriceHasBeenSet = true;
     }
   }
 

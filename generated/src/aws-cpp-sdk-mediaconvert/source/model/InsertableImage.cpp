@@ -18,32 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-InsertableImage::InsertableImage() : 
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fadeIn(0),
-    m_fadeInHasBeenSet(false),
-    m_fadeOut(0),
-    m_fadeOutHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_imageInserterInputHasBeenSet(false),
-    m_imageX(0),
-    m_imageXHasBeenSet(false),
-    m_imageY(0),
-    m_imageYHasBeenSet(false),
-    m_layer(0),
-    m_layerHasBeenSet(false),
-    m_opacity(0),
-    m_opacityHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
-{
-}
-
 InsertableImage::InsertableImage(JsonView jsonValue)
-  : InsertableImage()
 {
   *this = jsonValue;
 }
@@ -53,80 +28,58 @@ InsertableImage& InsertableImage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInteger("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fadeIn"))
   {
     m_fadeIn = jsonValue.GetInteger("fadeIn");
-
     m_fadeInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fadeOut"))
   {
     m_fadeOut = jsonValue.GetInteger("fadeOut");
-
     m_fadeOutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("height"))
   {
     m_height = jsonValue.GetInteger("height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageInserterInput"))
   {
     m_imageInserterInput = jsonValue.GetString("imageInserterInput");
-
     m_imageInserterInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageX"))
   {
     m_imageX = jsonValue.GetInteger("imageX");
-
     m_imageXHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageY"))
   {
     m_imageY = jsonValue.GetInteger("imageY");
-
     m_imageYHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layer"))
   {
     m_layer = jsonValue.GetInteger("layer");
-
     m_layerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("opacity"))
   {
     m_opacity = jsonValue.GetInteger("opacity");
-
     m_opacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("width"))
   {
     m_width = jsonValue.GetInteger("width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

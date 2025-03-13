@@ -18,14 +18,7 @@ namespace Shield
 namespace Model
 {
 
-SummarizedAttackVector::SummarizedAttackVector() : 
-    m_vectorTypeHasBeenSet(false),
-    m_vectorCountersHasBeenSet(false)
-{
-}
-
 SummarizedAttackVector::SummarizedAttackVector(JsonView jsonValue)
-  : SummarizedAttackVector()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SummarizedAttackVector& SummarizedAttackVector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VectorType"))
   {
     m_vectorType = jsonValue.GetString("VectorType");
-
     m_vectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VectorCounters"))
   {
     Aws::Utils::Array<JsonView> vectorCountersJsonList = jsonValue.GetArray("VectorCounters");
@@ -48,7 +39,6 @@ SummarizedAttackVector& SummarizedAttackVector::operator =(JsonView jsonValue)
     }
     m_vectorCountersHasBeenSet = true;
   }
-
   return *this;
 }
 

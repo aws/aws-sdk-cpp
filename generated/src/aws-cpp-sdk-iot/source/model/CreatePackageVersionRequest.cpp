@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreatePackageVersionRequest::CreatePackageVersionRequest() : 
-    m_packageNameHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_artifactHasBeenSet(false),
-    m_recipeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreatePackageVersionRequest::SerializePayload() const
 {
   JsonValue payload;

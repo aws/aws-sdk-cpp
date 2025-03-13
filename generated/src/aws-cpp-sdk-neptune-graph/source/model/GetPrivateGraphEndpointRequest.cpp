@@ -12,12 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPrivateGraphEndpointRequest::GetPrivateGraphEndpointRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPrivateGraphEndpointRequest::SerializePayload() const
 {
   return {};

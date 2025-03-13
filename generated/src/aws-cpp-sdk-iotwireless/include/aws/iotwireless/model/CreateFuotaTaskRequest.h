@@ -25,7 +25,7 @@ namespace Model
   class CreateFuotaTaskRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API CreateFuotaTaskRequest();
+    AWS_IOTWIRELESS_API CreateFuotaTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,89 +38,79 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateFuotaTaskRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateFuotaTaskRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFuotaTaskRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFuotaTaskRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFuotaTaskRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFuotaTaskRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateFuotaTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateFuotaTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateFuotaTaskRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LoRaWANFuotaTask& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANFuotaTask& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANFuotaTask& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANFuotaTask&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline CreateFuotaTaskRequest& WithLoRaWAN(const LoRaWANFuotaTask& value) { SetLoRaWAN(value); return *this;}
-    inline CreateFuotaTaskRequest& WithLoRaWAN(LoRaWANFuotaTask&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANFuotaTask>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANFuotaTask>
+    CreateFuotaTaskRequest& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFirmwareUpdateImage() const{ return m_firmwareUpdateImage; }
+    inline const Aws::String& GetFirmwareUpdateImage() const { return m_firmwareUpdateImage; }
     inline bool FirmwareUpdateImageHasBeenSet() const { return m_firmwareUpdateImageHasBeenSet; }
-    inline void SetFirmwareUpdateImage(const Aws::String& value) { m_firmwareUpdateImageHasBeenSet = true; m_firmwareUpdateImage = value; }
-    inline void SetFirmwareUpdateImage(Aws::String&& value) { m_firmwareUpdateImageHasBeenSet = true; m_firmwareUpdateImage = std::move(value); }
-    inline void SetFirmwareUpdateImage(const char* value) { m_firmwareUpdateImageHasBeenSet = true; m_firmwareUpdateImage.assign(value); }
-    inline CreateFuotaTaskRequest& WithFirmwareUpdateImage(const Aws::String& value) { SetFirmwareUpdateImage(value); return *this;}
-    inline CreateFuotaTaskRequest& WithFirmwareUpdateImage(Aws::String&& value) { SetFirmwareUpdateImage(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& WithFirmwareUpdateImage(const char* value) { SetFirmwareUpdateImage(value); return *this;}
+    template<typename FirmwareUpdateImageT = Aws::String>
+    void SetFirmwareUpdateImage(FirmwareUpdateImageT&& value) { m_firmwareUpdateImageHasBeenSet = true; m_firmwareUpdateImage = std::forward<FirmwareUpdateImageT>(value); }
+    template<typename FirmwareUpdateImageT = Aws::String>
+    CreateFuotaTaskRequest& WithFirmwareUpdateImage(FirmwareUpdateImageT&& value) { SetFirmwareUpdateImage(std::forward<FirmwareUpdateImageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFirmwareUpdateRole() const{ return m_firmwareUpdateRole; }
+    inline const Aws::String& GetFirmwareUpdateRole() const { return m_firmwareUpdateRole; }
     inline bool FirmwareUpdateRoleHasBeenSet() const { return m_firmwareUpdateRoleHasBeenSet; }
-    inline void SetFirmwareUpdateRole(const Aws::String& value) { m_firmwareUpdateRoleHasBeenSet = true; m_firmwareUpdateRole = value; }
-    inline void SetFirmwareUpdateRole(Aws::String&& value) { m_firmwareUpdateRoleHasBeenSet = true; m_firmwareUpdateRole = std::move(value); }
-    inline void SetFirmwareUpdateRole(const char* value) { m_firmwareUpdateRoleHasBeenSet = true; m_firmwareUpdateRole.assign(value); }
-    inline CreateFuotaTaskRequest& WithFirmwareUpdateRole(const Aws::String& value) { SetFirmwareUpdateRole(value); return *this;}
-    inline CreateFuotaTaskRequest& WithFirmwareUpdateRole(Aws::String&& value) { SetFirmwareUpdateRole(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& WithFirmwareUpdateRole(const char* value) { SetFirmwareUpdateRole(value); return *this;}
+    template<typename FirmwareUpdateRoleT = Aws::String>
+    void SetFirmwareUpdateRole(FirmwareUpdateRoleT&& value) { m_firmwareUpdateRoleHasBeenSet = true; m_firmwareUpdateRole = std::forward<FirmwareUpdateRoleT>(value); }
+    template<typename FirmwareUpdateRoleT = Aws::String>
+    CreateFuotaTaskRequest& WithFirmwareUpdateRole(FirmwareUpdateRoleT&& value) { SetFirmwareUpdateRole(std::forward<FirmwareUpdateRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFuotaTaskRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFuotaTaskRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFuotaTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFuotaTaskRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFuotaTaskRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline int GetRedundancyPercent() const{ return m_redundancyPercent; }
+    inline int GetRedundancyPercent() const { return m_redundancyPercent; }
     inline bool RedundancyPercentHasBeenSet() const { return m_redundancyPercentHasBeenSet; }
     inline void SetRedundancyPercent(int value) { m_redundancyPercentHasBeenSet = true; m_redundancyPercent = value; }
     inline CreateFuotaTaskRequest& WithRedundancyPercent(int value) { SetRedundancyPercent(value); return *this;}
@@ -128,7 +118,7 @@ namespace Model
 
     ///@{
     
-    inline int GetFragmentSizeBytes() const{ return m_fragmentSizeBytes; }
+    inline int GetFragmentSizeBytes() const { return m_fragmentSizeBytes; }
     inline bool FragmentSizeBytesHasBeenSet() const { return m_fragmentSizeBytesHasBeenSet; }
     inline void SetFragmentSizeBytes(int value) { m_fragmentSizeBytesHasBeenSet = true; m_fragmentSizeBytes = value; }
     inline CreateFuotaTaskRequest& WithFragmentSizeBytes(int value) { SetFragmentSizeBytes(value); return *this;}
@@ -136,7 +126,7 @@ namespace Model
 
     ///@{
     
-    inline int GetFragmentIntervalMS() const{ return m_fragmentIntervalMS; }
+    inline int GetFragmentIntervalMS() const { return m_fragmentIntervalMS; }
     inline bool FragmentIntervalMSHasBeenSet() const { return m_fragmentIntervalMSHasBeenSet; }
     inline void SetFragmentIntervalMS(int value) { m_fragmentIntervalMSHasBeenSet = true; m_fragmentIntervalMS = value; }
     inline CreateFuotaTaskRequest& WithFragmentIntervalMS(int value) { SetFragmentIntervalMS(value); return *this;}
@@ -144,14 +134,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDescriptor() const{ return m_descriptor; }
+    inline const Aws::String& GetDescriptor() const { return m_descriptor; }
     inline bool DescriptorHasBeenSet() const { return m_descriptorHasBeenSet; }
-    inline void SetDescriptor(const Aws::String& value) { m_descriptorHasBeenSet = true; m_descriptor = value; }
-    inline void SetDescriptor(Aws::String&& value) { m_descriptorHasBeenSet = true; m_descriptor = std::move(value); }
-    inline void SetDescriptor(const char* value) { m_descriptorHasBeenSet = true; m_descriptor.assign(value); }
-    inline CreateFuotaTaskRequest& WithDescriptor(const Aws::String& value) { SetDescriptor(value); return *this;}
-    inline CreateFuotaTaskRequest& WithDescriptor(Aws::String&& value) { SetDescriptor(std::move(value)); return *this;}
-    inline CreateFuotaTaskRequest& WithDescriptor(const char* value) { SetDescriptor(value); return *this;}
+    template<typename DescriptorT = Aws::String>
+    void SetDescriptor(DescriptorT&& value) { m_descriptorHasBeenSet = true; m_descriptor = std::forward<DescriptorT>(value); }
+    template<typename DescriptorT = Aws::String>
+    CreateFuotaTaskRequest& WithDescriptor(DescriptorT&& value) { SetDescriptor(std::forward<DescriptorT>(value)); return *this;}
     ///@}
   private:
 
@@ -176,13 +164,13 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_redundancyPercent;
+    int m_redundancyPercent{0};
     bool m_redundancyPercentHasBeenSet = false;
 
-    int m_fragmentSizeBytes;
+    int m_fragmentSizeBytes{0};
     bool m_fragmentSizeBytesHasBeenSet = false;
 
-    int m_fragmentIntervalMS;
+    int m_fragmentIntervalMS{0};
     bool m_fragmentIntervalMSHasBeenSet = false;
 
     Aws::String m_descriptor;

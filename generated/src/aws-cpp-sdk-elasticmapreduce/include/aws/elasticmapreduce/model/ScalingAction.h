@@ -33,7 +33,7 @@ namespace Model
   class ScalingAction
   {
   public:
-    AWS_EMR_API ScalingAction();
+    AWS_EMR_API ScalingAction() = default;
     AWS_EMR_API ScalingAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API ScalingAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Not available for instance groups. Instance groups use the market type
      * specified for the group.</p>
      */
-    inline const MarketType& GetMarket() const{ return m_market; }
+    inline MarketType GetMarket() const { return m_market; }
     inline bool MarketHasBeenSet() const { return m_marketHasBeenSet; }
-    inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
-    inline void SetMarket(MarketType&& value) { m_marketHasBeenSet = true; m_market = std::move(value); }
-    inline ScalingAction& WithMarket(const MarketType& value) { SetMarket(value); return *this;}
-    inline ScalingAction& WithMarket(MarketType&& value) { SetMarket(std::move(value)); return *this;}
+    inline void SetMarket(MarketType value) { m_marketHasBeenSet = true; m_market = value; }
+    inline ScalingAction& WithMarket(MarketType value) { SetMarket(value); return *this;}
     ///@}
 
     ///@{
@@ -57,16 +55,16 @@ namespace Model
      * <p>The type of adjustment the automatic scaling activity makes when triggered,
      * and the periodicity of the adjustment.</p>
      */
-    inline const SimpleScalingPolicyConfiguration& GetSimpleScalingPolicyConfiguration() const{ return m_simpleScalingPolicyConfiguration; }
+    inline const SimpleScalingPolicyConfiguration& GetSimpleScalingPolicyConfiguration() const { return m_simpleScalingPolicyConfiguration; }
     inline bool SimpleScalingPolicyConfigurationHasBeenSet() const { return m_simpleScalingPolicyConfigurationHasBeenSet; }
-    inline void SetSimpleScalingPolicyConfiguration(const SimpleScalingPolicyConfiguration& value) { m_simpleScalingPolicyConfigurationHasBeenSet = true; m_simpleScalingPolicyConfiguration = value; }
-    inline void SetSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { m_simpleScalingPolicyConfigurationHasBeenSet = true; m_simpleScalingPolicyConfiguration = std::move(value); }
-    inline ScalingAction& WithSimpleScalingPolicyConfiguration(const SimpleScalingPolicyConfiguration& value) { SetSimpleScalingPolicyConfiguration(value); return *this;}
-    inline ScalingAction& WithSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfiguration&& value) { SetSimpleScalingPolicyConfiguration(std::move(value)); return *this;}
+    template<typename SimpleScalingPolicyConfigurationT = SimpleScalingPolicyConfiguration>
+    void SetSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfigurationT&& value) { m_simpleScalingPolicyConfigurationHasBeenSet = true; m_simpleScalingPolicyConfiguration = std::forward<SimpleScalingPolicyConfigurationT>(value); }
+    template<typename SimpleScalingPolicyConfigurationT = SimpleScalingPolicyConfiguration>
+    ScalingAction& WithSimpleScalingPolicyConfiguration(SimpleScalingPolicyConfigurationT&& value) { SetSimpleScalingPolicyConfiguration(std::forward<SimpleScalingPolicyConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    MarketType m_market;
+    MarketType m_market{MarketType::NOT_SET};
     bool m_marketHasBeenSet = false;
 
     SimpleScalingPolicyConfiguration m_simpleScalingPolicyConfiguration;

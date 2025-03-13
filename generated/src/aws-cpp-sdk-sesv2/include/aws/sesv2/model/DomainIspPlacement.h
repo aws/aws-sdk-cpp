@@ -32,7 +32,7 @@ namespace Model
   class DomainIspPlacement
   {
   public:
-    AWS_SESV2_API DomainIspPlacement();
+    AWS_SESV2_API DomainIspPlacement() = default;
     AWS_SESV2_API DomainIspPlacement(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API DomainIspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the email provider that the inbox placement data applies to.</p>
      */
-    inline const Aws::String& GetIspName() const{ return m_ispName; }
+    inline const Aws::String& GetIspName() const { return m_ispName; }
     inline bool IspNameHasBeenSet() const { return m_ispNameHasBeenSet; }
-    inline void SetIspName(const Aws::String& value) { m_ispNameHasBeenSet = true; m_ispName = value; }
-    inline void SetIspName(Aws::String&& value) { m_ispNameHasBeenSet = true; m_ispName = std::move(value); }
-    inline void SetIspName(const char* value) { m_ispNameHasBeenSet = true; m_ispName.assign(value); }
-    inline DomainIspPlacement& WithIspName(const Aws::String& value) { SetIspName(value); return *this;}
-    inline DomainIspPlacement& WithIspName(Aws::String&& value) { SetIspName(std::move(value)); return *this;}
-    inline DomainIspPlacement& WithIspName(const char* value) { SetIspName(value); return *this;}
+    template<typename IspNameT = Aws::String>
+    void SetIspName(IspNameT&& value) { m_ispNameHasBeenSet = true; m_ispName = std::forward<IspNameT>(value); }
+    template<typename IspNameT = Aws::String>
+    DomainIspPlacement& WithIspName(IspNameT&& value) { SetIspName(std::forward<IspNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The total number of messages that were sent from the selected domain to the
      * specified email provider that arrived in recipients' inboxes.</p>
      */
-    inline long long GetInboxRawCount() const{ return m_inboxRawCount; }
+    inline long long GetInboxRawCount() const { return m_inboxRawCount; }
     inline bool InboxRawCountHasBeenSet() const { return m_inboxRawCountHasBeenSet; }
     inline void SetInboxRawCount(long long value) { m_inboxRawCountHasBeenSet = true; m_inboxRawCount = value; }
     inline DomainIspPlacement& WithInboxRawCount(long long value) { SetInboxRawCount(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * specified email provider that arrived in recipients' spam or junk mail
      * folders.</p>
      */
-    inline long long GetSpamRawCount() const{ return m_spamRawCount; }
+    inline long long GetSpamRawCount() const { return m_spamRawCount; }
     inline bool SpamRawCountHasBeenSet() const { return m_spamRawCountHasBeenSet; }
     inline void SetSpamRawCount(long long value) { m_spamRawCountHasBeenSet = true; m_spamRawCount = value; }
     inline DomainIspPlacement& WithSpamRawCount(long long value) { SetSpamRawCount(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
      * <p>The percentage of messages that were sent from the selected domain to the
      * specified email provider that arrived in recipients' inboxes.</p>
      */
-    inline double GetInboxPercentage() const{ return m_inboxPercentage; }
+    inline double GetInboxPercentage() const { return m_inboxPercentage; }
     inline bool InboxPercentageHasBeenSet() const { return m_inboxPercentageHasBeenSet; }
     inline void SetInboxPercentage(double value) { m_inboxPercentageHasBeenSet = true; m_inboxPercentage = value; }
     inline DomainIspPlacement& WithInboxPercentage(double value) { SetInboxPercentage(value); return *this;}
@@ -92,7 +90,7 @@ namespace Model
      * specified email provider that arrived in recipients' spam or junk mail
      * folders.</p>
      */
-    inline double GetSpamPercentage() const{ return m_spamPercentage; }
+    inline double GetSpamPercentage() const { return m_spamPercentage; }
     inline bool SpamPercentageHasBeenSet() const { return m_spamPercentageHasBeenSet; }
     inline void SetSpamPercentage(double value) { m_spamPercentageHasBeenSet = true; m_spamPercentage = value; }
     inline DomainIspPlacement& WithSpamPercentage(double value) { SetSpamPercentage(value); return *this;}
@@ -102,16 +100,16 @@ namespace Model
     Aws::String m_ispName;
     bool m_ispNameHasBeenSet = false;
 
-    long long m_inboxRawCount;
+    long long m_inboxRawCount{0};
     bool m_inboxRawCountHasBeenSet = false;
 
-    long long m_spamRawCount;
+    long long m_spamRawCount{0};
     bool m_spamRawCountHasBeenSet = false;
 
-    double m_inboxPercentage;
+    double m_inboxPercentage{0.0};
     bool m_inboxPercentageHasBeenSet = false;
 
-    double m_spamPercentage;
+    double m_spamPercentage{0.0};
     bool m_spamPercentageHasBeenSet = false;
   };
 

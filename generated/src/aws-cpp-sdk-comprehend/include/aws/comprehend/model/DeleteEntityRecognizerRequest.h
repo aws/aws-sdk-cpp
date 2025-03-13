@@ -21,7 +21,7 @@ namespace Model
   class DeleteEntityRecognizerRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API DeleteEntityRecognizerRequest();
+    AWS_COMPREHEND_API DeleteEntityRecognizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
      */
-    inline const Aws::String& GetEntityRecognizerArn() const{ return m_entityRecognizerArn; }
+    inline const Aws::String& GetEntityRecognizerArn() const { return m_entityRecognizerArn; }
     inline bool EntityRecognizerArnHasBeenSet() const { return m_entityRecognizerArnHasBeenSet; }
-    inline void SetEntityRecognizerArn(const Aws::String& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = value; }
-    inline void SetEntityRecognizerArn(Aws::String&& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = std::move(value); }
-    inline void SetEntityRecognizerArn(const char* value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn.assign(value); }
-    inline DeleteEntityRecognizerRequest& WithEntityRecognizerArn(const Aws::String& value) { SetEntityRecognizerArn(value); return *this;}
-    inline DeleteEntityRecognizerRequest& WithEntityRecognizerArn(Aws::String&& value) { SetEntityRecognizerArn(std::move(value)); return *this;}
-    inline DeleteEntityRecognizerRequest& WithEntityRecognizerArn(const char* value) { SetEntityRecognizerArn(value); return *this;}
+    template<typename EntityRecognizerArnT = Aws::String>
+    void SetEntityRecognizerArn(EntityRecognizerArnT&& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = std::forward<EntityRecognizerArnT>(value); }
+    template<typename EntityRecognizerArnT = Aws::String>
+    DeleteEntityRecognizerRequest& WithEntityRecognizerArn(EntityRecognizerArnT&& value) { SetEntityRecognizerArn(std::forward<EntityRecognizerArnT>(value)); return *this;}
     ///@}
   private:
 

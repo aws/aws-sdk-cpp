@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBRecommendationsResult::DescribeDBRecommendationsResult()
-{
-}
-
 DescribeDBRecommendationsResult::DescribeDBRecommendationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator =(con
     if(!dBRecommendationsNode.IsNull())
     {
       XmlNode dBRecommendationsMember = dBRecommendationsNode.FirstChild("member");
+      m_dBRecommendationsHasBeenSet = !dBRecommendationsMember.IsNull();
       while(!dBRecommendationsMember.IsNull())
       {
         m_dBRecommendations.push_back(dBRecommendationsMember);
@@ -53,12 +50,14 @@ DescribeDBRecommendationsResult& DescribeDBRecommendationsResult::operator =(con
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBRecommendationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

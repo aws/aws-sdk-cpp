@@ -29,7 +29,7 @@ namespace Model
   class ListLakeFormationOptInsResult
   {
   public:
-    AWS_LAKEFORMATION_API ListLakeFormationOptInsResult();
+    AWS_LAKEFORMATION_API ListLakeFormationOptInsResult() = default;
     AWS_LAKEFORMATION_API ListLakeFormationOptInsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API ListLakeFormationOptInsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of principal-resource pairs that have Lake Formation permissins
      * enforced.</p>
      */
-    inline const Aws::Vector<LakeFormationOptInsInfo>& GetLakeFormationOptInsInfoList() const{ return m_lakeFormationOptInsInfoList; }
-    inline void SetLakeFormationOptInsInfoList(const Aws::Vector<LakeFormationOptInsInfo>& value) { m_lakeFormationOptInsInfoList = value; }
-    inline void SetLakeFormationOptInsInfoList(Aws::Vector<LakeFormationOptInsInfo>&& value) { m_lakeFormationOptInsInfoList = std::move(value); }
-    inline ListLakeFormationOptInsResult& WithLakeFormationOptInsInfoList(const Aws::Vector<LakeFormationOptInsInfo>& value) { SetLakeFormationOptInsInfoList(value); return *this;}
-    inline ListLakeFormationOptInsResult& WithLakeFormationOptInsInfoList(Aws::Vector<LakeFormationOptInsInfo>&& value) { SetLakeFormationOptInsInfoList(std::move(value)); return *this;}
-    inline ListLakeFormationOptInsResult& AddLakeFormationOptInsInfoList(const LakeFormationOptInsInfo& value) { m_lakeFormationOptInsInfoList.push_back(value); return *this; }
-    inline ListLakeFormationOptInsResult& AddLakeFormationOptInsInfoList(LakeFormationOptInsInfo&& value) { m_lakeFormationOptInsInfoList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LakeFormationOptInsInfo>& GetLakeFormationOptInsInfoList() const { return m_lakeFormationOptInsInfoList; }
+    template<typename LakeFormationOptInsInfoListT = Aws::Vector<LakeFormationOptInsInfo>>
+    void SetLakeFormationOptInsInfoList(LakeFormationOptInsInfoListT&& value) { m_lakeFormationOptInsInfoListHasBeenSet = true; m_lakeFormationOptInsInfoList = std::forward<LakeFormationOptInsInfoListT>(value); }
+    template<typename LakeFormationOptInsInfoListT = Aws::Vector<LakeFormationOptInsInfo>>
+    ListLakeFormationOptInsResult& WithLakeFormationOptInsInfoList(LakeFormationOptInsInfoListT&& value) { SetLakeFormationOptInsInfoList(std::forward<LakeFormationOptInsInfoListT>(value)); return *this;}
+    template<typename LakeFormationOptInsInfoListT = LakeFormationOptInsInfo>
+    ListLakeFormationOptInsResult& AddLakeFormationOptInsInfoList(LakeFormationOptInsInfoListT&& value) { m_lakeFormationOptInsInfoListHasBeenSet = true; m_lakeFormationOptInsInfoList.emplace_back(std::forward<LakeFormationOptInsInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>A continuation token, if this is not the first call to retrieve this
      * list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLakeFormationOptInsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLakeFormationOptInsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLakeFormationOptInsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLakeFormationOptInsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLakeFormationOptInsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLakeFormationOptInsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLakeFormationOptInsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLakeFormationOptInsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LakeFormationOptInsInfo> m_lakeFormationOptInsInfoList;
+    bool m_lakeFormationOptInsInfoListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

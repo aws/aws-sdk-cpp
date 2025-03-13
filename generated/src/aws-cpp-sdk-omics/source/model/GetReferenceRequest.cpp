@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetReferenceRequest::GetReferenceRequest() : 
-    m_idHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_file(ReferenceFile::NOT_SET),
-    m_fileHasBeenSet(false)
-{
-}
-
 Aws::String GetReferenceRequest::SerializePayload() const
 {
   return {};

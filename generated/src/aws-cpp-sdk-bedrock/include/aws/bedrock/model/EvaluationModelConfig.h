@@ -32,7 +32,7 @@ namespace Model
   class EvaluationModelConfig
   {
   public:
-    AWS_BEDROCK_API EvaluationModelConfig();
+    AWS_BEDROCK_API EvaluationModelConfig() = default;
     AWS_BEDROCK_API EvaluationModelConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluationModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Defines the Amazon Bedrock model or inference profile and inference
      * parameters you want used.</p>
      */
-    inline const EvaluationBedrockModel& GetBedrockModel() const{ return m_bedrockModel; }
+    inline const EvaluationBedrockModel& GetBedrockModel() const { return m_bedrockModel; }
     inline bool BedrockModelHasBeenSet() const { return m_bedrockModelHasBeenSet; }
-    inline void SetBedrockModel(const EvaluationBedrockModel& value) { m_bedrockModelHasBeenSet = true; m_bedrockModel = value; }
-    inline void SetBedrockModel(EvaluationBedrockModel&& value) { m_bedrockModelHasBeenSet = true; m_bedrockModel = std::move(value); }
-    inline EvaluationModelConfig& WithBedrockModel(const EvaluationBedrockModel& value) { SetBedrockModel(value); return *this;}
-    inline EvaluationModelConfig& WithBedrockModel(EvaluationBedrockModel&& value) { SetBedrockModel(std::move(value)); return *this;}
+    template<typename BedrockModelT = EvaluationBedrockModel>
+    void SetBedrockModel(BedrockModelT&& value) { m_bedrockModelHasBeenSet = true; m_bedrockModel = std::forward<BedrockModelT>(value); }
+    template<typename BedrockModelT = EvaluationBedrockModel>
+    EvaluationModelConfig& WithBedrockModel(BedrockModelT&& value) { SetBedrockModel(std::forward<BedrockModelT>(value)); return *this;}
     ///@}
   private:
 

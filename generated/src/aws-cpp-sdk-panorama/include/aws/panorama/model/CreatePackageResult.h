@@ -28,7 +28,7 @@ namespace Model
   class CreatePackageResult
   {
   public:
-    AWS_PANORAMA_API CreatePackageResult();
+    AWS_PANORAMA_API CreatePackageResult() = default;
     AWS_PANORAMA_API CreatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PANORAMA_API CreatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,56 @@ namespace Model
     /**
      * <p>The package's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreatePackageResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreatePackageResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreatePackageResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreatePackageResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The package's ID.</p>
      */
-    inline const Aws::String& GetPackageId() const{ return m_packageId; }
-    inline void SetPackageId(const Aws::String& value) { m_packageId = value; }
-    inline void SetPackageId(Aws::String&& value) { m_packageId = std::move(value); }
-    inline void SetPackageId(const char* value) { m_packageId.assign(value); }
-    inline CreatePackageResult& WithPackageId(const Aws::String& value) { SetPackageId(value); return *this;}
-    inline CreatePackageResult& WithPackageId(Aws::String&& value) { SetPackageId(std::move(value)); return *this;}
-    inline CreatePackageResult& WithPackageId(const char* value) { SetPackageId(value); return *this;}
+    inline const Aws::String& GetPackageId() const { return m_packageId; }
+    template<typename PackageIdT = Aws::String>
+    void SetPackageId(PackageIdT&& value) { m_packageIdHasBeenSet = true; m_packageId = std::forward<PackageIdT>(value); }
+    template<typename PackageIdT = Aws::String>
+    CreatePackageResult& WithPackageId(PackageIdT&& value) { SetPackageId(std::forward<PackageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The package's storage location.</p>
      */
-    inline const StorageLocation& GetStorageLocation() const{ return m_storageLocation; }
-    inline void SetStorageLocation(const StorageLocation& value) { m_storageLocation = value; }
-    inline void SetStorageLocation(StorageLocation&& value) { m_storageLocation = std::move(value); }
-    inline CreatePackageResult& WithStorageLocation(const StorageLocation& value) { SetStorageLocation(value); return *this;}
-    inline CreatePackageResult& WithStorageLocation(StorageLocation&& value) { SetStorageLocation(std::move(value)); return *this;}
+    inline const StorageLocation& GetStorageLocation() const { return m_storageLocation; }
+    template<typename StorageLocationT = StorageLocation>
+    void SetStorageLocation(StorageLocationT&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::forward<StorageLocationT>(value); }
+    template<typename StorageLocationT = StorageLocation>
+    CreatePackageResult& WithStorageLocation(StorageLocationT&& value) { SetStorageLocation(std::forward<StorageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePackageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_packageId;
+    bool m_packageIdHasBeenSet = false;
 
     StorageLocation m_storageLocation;
+    bool m_storageLocationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

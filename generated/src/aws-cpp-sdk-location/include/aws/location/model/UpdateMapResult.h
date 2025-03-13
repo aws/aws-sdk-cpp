@@ -28,7 +28,7 @@ namespace Model
   class UpdateMapResult
   {
   public:
-    AWS_LOCATIONSERVICE_API UpdateMapResult();
+    AWS_LOCATIONSERVICE_API UpdateMapResult() = default;
     AWS_LOCATIONSERVICE_API UpdateMapResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API UpdateMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The name of the updated map resource.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
-    inline void SetMapName(const Aws::String& value) { m_mapName = value; }
-    inline void SetMapName(Aws::String&& value) { m_mapName = std::move(value); }
-    inline void SetMapName(const char* value) { m_mapName.assign(value); }
-    inline UpdateMapResult& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-    inline UpdateMapResult& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-    inline UpdateMapResult& WithMapName(const char* value) { SetMapName(value); return *this;}
+    inline const Aws::String& GetMapName() const { return m_mapName; }
+    template<typename MapNameT = Aws::String>
+    void SetMapName(MapNameT&& value) { m_mapNameHasBeenSet = true; m_mapName = std::forward<MapNameT>(value); }
+    template<typename MapNameT = Aws::String>
+    UpdateMapResult& WithMapName(MapNameT&& value) { SetMapName(std::forward<MapNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,11 @@ namespace Model
      * resource across AWS.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetMapArn() const{ return m_mapArn; }
-    inline void SetMapArn(const Aws::String& value) { m_mapArn = value; }
-    inline void SetMapArn(Aws::String&& value) { m_mapArn = std::move(value); }
-    inline void SetMapArn(const char* value) { m_mapArn.assign(value); }
-    inline UpdateMapResult& WithMapArn(const Aws::String& value) { SetMapArn(value); return *this;}
-    inline UpdateMapResult& WithMapArn(Aws::String&& value) { SetMapArn(std::move(value)); return *this;}
-    inline UpdateMapResult& WithMapArn(const char* value) { SetMapArn(value); return *this;}
+    inline const Aws::String& GetMapArn() const { return m_mapArn; }
+    template<typename MapArnT = Aws::String>
+    void SetMapArn(MapArnT&& value) { m_mapArnHasBeenSet = true; m_mapArn = std::forward<MapArnT>(value); }
+    template<typename MapArnT = Aws::String>
+    UpdateMapResult& WithMapArn(MapArnT&& value) { SetMapArn(std::forward<MapArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,32 +63,34 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline UpdateMapResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline UpdateMapResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    UpdateMapResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMapResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMapResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMapResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMapResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_mapName;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::String m_mapArn;
+    bool m_mapArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

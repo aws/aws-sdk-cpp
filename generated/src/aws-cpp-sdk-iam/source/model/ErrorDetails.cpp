@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(const XmlNode& xmlNode)
-  : ErrorDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ErrorDetails& ErrorDetails::operator =(const XmlNode& xmlNode)
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
   }
 

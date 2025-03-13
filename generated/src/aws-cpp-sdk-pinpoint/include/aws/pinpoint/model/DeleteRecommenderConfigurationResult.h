@@ -28,35 +28,35 @@ namespace Model
   class DeleteRecommenderConfigurationResult
   {
   public:
-    AWS_PINPOINT_API DeleteRecommenderConfigurationResult();
+    AWS_PINPOINT_API DeleteRecommenderConfigurationResult() = default;
     AWS_PINPOINT_API DeleteRecommenderConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API DeleteRecommenderConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const RecommenderConfigurationResponse& GetRecommenderConfigurationResponse() const{ return m_recommenderConfigurationResponse; }
-    inline void SetRecommenderConfigurationResponse(const RecommenderConfigurationResponse& value) { m_recommenderConfigurationResponse = value; }
-    inline void SetRecommenderConfigurationResponse(RecommenderConfigurationResponse&& value) { m_recommenderConfigurationResponse = std::move(value); }
-    inline DeleteRecommenderConfigurationResult& WithRecommenderConfigurationResponse(const RecommenderConfigurationResponse& value) { SetRecommenderConfigurationResponse(value); return *this;}
-    inline DeleteRecommenderConfigurationResult& WithRecommenderConfigurationResponse(RecommenderConfigurationResponse&& value) { SetRecommenderConfigurationResponse(std::move(value)); return *this;}
+    inline const RecommenderConfigurationResponse& GetRecommenderConfigurationResponse() const { return m_recommenderConfigurationResponse; }
+    template<typename RecommenderConfigurationResponseT = RecommenderConfigurationResponse>
+    void SetRecommenderConfigurationResponse(RecommenderConfigurationResponseT&& value) { m_recommenderConfigurationResponseHasBeenSet = true; m_recommenderConfigurationResponse = std::forward<RecommenderConfigurationResponseT>(value); }
+    template<typename RecommenderConfigurationResponseT = RecommenderConfigurationResponse>
+    DeleteRecommenderConfigurationResult& WithRecommenderConfigurationResponse(RecommenderConfigurationResponseT&& value) { SetRecommenderConfigurationResponse(std::forward<RecommenderConfigurationResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteRecommenderConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteRecommenderConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteRecommenderConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteRecommenderConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RecommenderConfigurationResponse m_recommenderConfigurationResponse;
+    bool m_recommenderConfigurationResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

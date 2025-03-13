@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreatePolicyVersionRequest::CreatePolicyVersionRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_setAsDefault(false),
-    m_setAsDefaultHasBeenSet(false)
-{
-}
-
 Aws::String CreatePolicyVersionRequest::SerializePayload() const
 {
   JsonValue payload;

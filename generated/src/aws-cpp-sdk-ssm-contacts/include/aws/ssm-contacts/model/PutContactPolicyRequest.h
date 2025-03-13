@@ -21,7 +21,7 @@ namespace Model
   class PutContactPolicyRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API PutContactPolicyRequest();
+    AWS_SSMCONTACTS_API PutContactPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
      */
-    inline const Aws::String& GetContactArn() const{ return m_contactArn; }
+    inline const Aws::String& GetContactArn() const { return m_contactArn; }
     inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
-    inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
-    inline void SetContactArn(Aws::String&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::move(value); }
-    inline void SetContactArn(const char* value) { m_contactArnHasBeenSet = true; m_contactArn.assign(value); }
-    inline PutContactPolicyRequest& WithContactArn(const Aws::String& value) { SetContactArn(value); return *this;}
-    inline PutContactPolicyRequest& WithContactArn(Aws::String&& value) { SetContactArn(std::move(value)); return *this;}
-    inline PutContactPolicyRequest& WithContactArn(const char* value) { SetContactArn(value); return *this;}
+    template<typename ContactArnT = Aws::String>
+    void SetContactArn(ContactArnT&& value) { m_contactArnHasBeenSet = true; m_contactArn = std::forward<ContactArnT>(value); }
+    template<typename ContactArnT = Aws::String>
+    PutContactPolicyRequest& WithContactArn(ContactArnT&& value) { SetContactArn(std::forward<ContactArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of the resource policy.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline PutContactPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline PutContactPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline PutContactPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    PutContactPolicyRequest& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

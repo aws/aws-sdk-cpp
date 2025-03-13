@@ -30,7 +30,7 @@ namespace Model
   class HyperParameterTuningJobConsumedResources
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources();
+    AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources() = default;
     AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningJobConsumedResources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The wall clock runtime in seconds used by your hyperparameter tuning job.</p>
      */
-    inline int GetRuntimeInSeconds() const{ return m_runtimeInSeconds; }
+    inline int GetRuntimeInSeconds() const { return m_runtimeInSeconds; }
     inline bool RuntimeInSecondsHasBeenSet() const { return m_runtimeInSecondsHasBeenSet; }
     inline void SetRuntimeInSeconds(int value) { m_runtimeInSecondsHasBeenSet = true; m_runtimeInSeconds = value; }
     inline HyperParameterTuningJobConsumedResources& WithRuntimeInSeconds(int value) { SetRuntimeInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_runtimeInSeconds;
+    int m_runtimeInSeconds{0};
     bool m_runtimeInSecondsHasBeenSet = false;
   };
 

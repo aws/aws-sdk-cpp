@@ -20,22 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-RestoreRequest::RestoreRequest() : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_glacierJobParametersHasBeenSet(false),
-    m_type(RestoreRequestType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
-{
-}
-
 RestoreRequest::RestoreRequest(const XmlNode& xmlNode)
-  : RestoreRequest()
 {
   *this = xmlNode;
 }
@@ -51,42 +36,49 @@ RestoreRequest& RestoreRequest::operator =(const XmlNode& xmlNode)
     {
       m_days = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(daysNode.GetText()).c_str()).c_str());
       m_daysHasBeenSet = true;
+       m_daysHasBeenSet = true;
     }
     XmlNode glacierJobParametersNode = resultNode.FirstChild("GlacierJobParameters");
     if(!glacierJobParametersNode.IsNull())
     {
       m_glacierJobParameters = glacierJobParametersNode;
       m_glacierJobParametersHasBeenSet = true;
+       m_glacierJobParametersHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RestoreRequestTypeMapper::GetRestoreRequestTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RestoreRequestTypeMapper::GetRestoreRequestTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode tierNode = resultNode.FirstChild("Tier");
     if(!tierNode.IsNull())
     {
-      m_tier = TierMapper::GetTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()).c_str());
+      m_tier = TierMapper::GetTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tierNode.GetText()).c_str()));
       m_tierHasBeenSet = true;
+       m_tierHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode selectParametersNode = resultNode.FirstChild("SelectParameters");
     if(!selectParametersNode.IsNull())
     {
       m_selectParameters = selectParametersNode;
       m_selectParametersHasBeenSet = true;
+       m_selectParametersHasBeenSet = true;
     }
     XmlNode outputLocationNode = resultNode.FirstChild("OutputLocation");
     if(!outputLocationNode.IsNull())
     {
       m_outputLocation = outputLocationNode;
       m_outputLocationHasBeenSet = true;
+       m_outputLocationHasBeenSet = true;
     }
   }
 

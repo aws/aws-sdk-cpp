@@ -33,7 +33,7 @@ namespace Model
   class AgentAlreadyRunningAssessment
   {
   public:
-    AWS_INSPECTOR_API AgentAlreadyRunningAssessment();
+    AWS_INSPECTOR_API AgentAlreadyRunningAssessment() = default;
     AWS_INSPECTOR_API AgentAlreadyRunningAssessment(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AgentAlreadyRunningAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>ID of the agent that is running on an EC2 instance that is already
      * participating in another started assessment run.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline AgentAlreadyRunningAssessment& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline AgentAlreadyRunningAssessment& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline AgentAlreadyRunningAssessment& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    AgentAlreadyRunningAssessment& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the assessment run that has already been started.</p>
      */
-    inline const Aws::String& GetAssessmentRunArn() const{ return m_assessmentRunArn; }
+    inline const Aws::String& GetAssessmentRunArn() const { return m_assessmentRunArn; }
     inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
-    inline void SetAssessmentRunArn(const Aws::String& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = value; }
-    inline void SetAssessmentRunArn(Aws::String&& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = std::move(value); }
-    inline void SetAssessmentRunArn(const char* value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn.assign(value); }
-    inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(const Aws::String& value) { SetAssessmentRunArn(value); return *this;}
-    inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(Aws::String&& value) { SetAssessmentRunArn(std::move(value)); return *this;}
-    inline AgentAlreadyRunningAssessment& WithAssessmentRunArn(const char* value) { SetAssessmentRunArn(value); return *this;}
+    template<typename AssessmentRunArnT = Aws::String>
+    void SetAssessmentRunArn(AssessmentRunArnT&& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = std::forward<AssessmentRunArnT>(value); }
+    template<typename AssessmentRunArnT = Aws::String>
+    AgentAlreadyRunningAssessment& WithAssessmentRunArn(AssessmentRunArnT&& value) { SetAssessmentRunArn(std::forward<AssessmentRunArnT>(value)); return *this;}
     ///@}
   private:
 

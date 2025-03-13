@@ -18,15 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ImageInserter::ImageInserter() : 
-    m_insertableImagesHasBeenSet(false),
-    m_sdrReferenceWhiteLevel(0),
-    m_sdrReferenceWhiteLevelHasBeenSet(false)
-{
-}
-
 ImageInserter::ImageInserter(JsonView jsonValue)
-  : ImageInserter()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ImageInserter& ImageInserter::operator =(JsonView jsonValue)
     }
     m_insertableImagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sdrReferenceWhiteLevel"))
   {
     m_sdrReferenceWhiteLevel = jsonValue.GetInteger("sdrReferenceWhiteLevel");
-
     m_sdrReferenceWhiteLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

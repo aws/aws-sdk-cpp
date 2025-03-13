@@ -27,7 +27,7 @@ namespace Model
   class CreateProjectResult
   {
   public:
-    AWS_IOTSITEWISE_API CreateProjectResult();
+    AWS_IOTSITEWISE_API CreateProjectResult() = default;
     AWS_IOTSITEWISE_API CreateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API CreateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The ID of the project.</p>
      */
-    inline const Aws::String& GetProjectId() const{ return m_projectId; }
-    inline void SetProjectId(const Aws::String& value) { m_projectId = value; }
-    inline void SetProjectId(Aws::String&& value) { m_projectId = std::move(value); }
-    inline void SetProjectId(const char* value) { m_projectId.assign(value); }
-    inline CreateProjectResult& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-    inline CreateProjectResult& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-    inline CreateProjectResult& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    inline const Aws::String& GetProjectId() const { return m_projectId; }
+    template<typename ProjectIdT = Aws::String>
+    void SetProjectId(ProjectIdT&& value) { m_projectIdHasBeenSet = true; m_projectId = std::forward<ProjectIdT>(value); }
+    template<typename ProjectIdT = Aws::String>
+    CreateProjectResult& WithProjectId(ProjectIdT&& value) { SetProjectId(std::forward<ProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,31 @@ namespace Model
      * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:project/${ProjectId}</code>
      * </p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
-    inline CreateProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline CreateProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline CreateProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    CreateProjectResult& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectId;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_projectArn;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

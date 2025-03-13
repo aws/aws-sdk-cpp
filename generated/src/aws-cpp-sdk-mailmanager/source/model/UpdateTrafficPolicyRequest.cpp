@@ -12,17 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTrafficPolicyRequest::UpdateTrafficPolicyRequest() : 
-    m_defaultAction(AcceptAction::NOT_SET),
-    m_defaultActionHasBeenSet(false),
-    m_maxMessageSizeBytes(0),
-    m_maxMessageSizeBytesHasBeenSet(false),
-    m_policyStatementsHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTrafficPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

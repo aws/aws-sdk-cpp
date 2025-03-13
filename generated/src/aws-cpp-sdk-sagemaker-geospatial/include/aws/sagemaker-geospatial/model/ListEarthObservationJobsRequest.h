@@ -23,7 +23,7 @@ namespace Model
   class ListEarthObservationJobsRequest : public SageMakerGeospatialRequest
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobsRequest();
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p>The total number of items to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEarthObservationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -49,28 +49,24 @@ namespace Model
      * <p>If the previous response was truncated, you receive this token. Use it in
      * your next request to receive the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEarthObservationJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEarthObservationJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEarthObservationJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEarthObservationJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter by which to sort the results.</p>
      */
-    inline const Aws::String& GetSortBy() const{ return m_sortBy; }
+    inline const Aws::String& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const Aws::String& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(Aws::String&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline void SetSortBy(const char* value) { m_sortByHasBeenSet = true; m_sortBy.assign(value); }
-    inline ListEarthObservationJobsRequest& WithSortBy(const Aws::String& value) { SetSortBy(value); return *this;}
-    inline ListEarthObservationJobsRequest& WithSortBy(Aws::String&& value) { SetSortBy(std::move(value)); return *this;}
-    inline ListEarthObservationJobsRequest& WithSortBy(const char* value) { SetSortBy(value); return *this;}
+    template<typename SortByT = Aws::String>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = Aws::String>
+    ListEarthObservationJobsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,28 +74,24 @@ namespace Model
      * <p>An optional value that specifies whether you want the results sorted in
      * <code>Ascending</code> or <code>Descending</code> order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListEarthObservationJobsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListEarthObservationJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListEarthObservationJobsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter that retrieves only jobs with a specific status.</p>
      */
-    inline const EarthObservationJobStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline EarthObservationJobStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const EarthObservationJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(EarthObservationJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListEarthObservationJobsRequest& WithStatusEquals(const EarthObservationJobStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListEarthObservationJobsRequest& WithStatusEquals(EarthObservationJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(EarthObservationJobStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListEarthObservationJobsRequest& WithStatusEquals(EarthObservationJobStatus value) { SetStatusEquals(value); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -108,10 +100,10 @@ namespace Model
     Aws::String m_sortBy;
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    EarthObservationJobStatus m_statusEquals;
+    EarthObservationJobStatus m_statusEquals{EarthObservationJobStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
   };
 

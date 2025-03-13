@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SubscribedWorkteam::SubscribedWorkteam() : 
-    m_workteamArnHasBeenSet(false),
-    m_marketplaceTitleHasBeenSet(false),
-    m_sellerNameHasBeenSet(false),
-    m_marketplaceDescriptionHasBeenSet(false),
-    m_listingIdHasBeenSet(false)
-{
-}
-
 SubscribedWorkteam::SubscribedWorkteam(JsonView jsonValue)
-  : SubscribedWorkteam()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SubscribedWorkteam& SubscribedWorkteam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkteamArn"))
   {
     m_workteamArn = jsonValue.GetString("WorkteamArn");
-
     m_workteamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarketplaceTitle"))
   {
     m_marketplaceTitle = jsonValue.GetString("MarketplaceTitle");
-
     m_marketplaceTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SellerName"))
   {
     m_sellerName = jsonValue.GetString("SellerName");
-
     m_sellerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarketplaceDescription"))
   {
     m_marketplaceDescription = jsonValue.GetString("MarketplaceDescription");
-
     m_marketplaceDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListingId"))
   {
     m_listingId = jsonValue.GetString("ListingId");
-
     m_listingIdHasBeenSet = true;
   }
-
   return *this;
 }
 

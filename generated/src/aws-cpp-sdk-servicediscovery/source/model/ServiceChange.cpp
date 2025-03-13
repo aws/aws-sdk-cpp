@@ -18,15 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-ServiceChange::ServiceChange() : 
-    m_descriptionHasBeenSet(false),
-    m_dnsConfigHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
-{
-}
-
 ServiceChange::ServiceChange(JsonView jsonValue)
-  : ServiceChange()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServiceChange& ServiceChange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsConfig"))
   {
     m_dnsConfig = jsonValue.GetObject("DnsConfig");
-
     m_dnsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckConfig"))
   {
     m_healthCheckConfig = jsonValue.GetObject("HealthCheckConfig");
-
     m_healthCheckConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptInferenceConfiguration::PromptInferenceConfiguration() : 
-    m_textHasBeenSet(false)
-{
-}
-
 PromptInferenceConfiguration::PromptInferenceConfiguration(JsonView jsonValue)
-  : PromptInferenceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptInferenceConfiguration& PromptInferenceConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetObject("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API UpdateAccountSettingsRequest();
+    AWS_CHIME_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline UpdateAccountSettingsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline UpdateAccountSettingsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    UpdateAccountSettingsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Chime account settings to update.</p>
      */
-    inline const AccountSettings& GetAccountSettings() const{ return m_accountSettings; }
+    inline const AccountSettings& GetAccountSettings() const { return m_accountSettings; }
     inline bool AccountSettingsHasBeenSet() const { return m_accountSettingsHasBeenSet; }
-    inline void SetAccountSettings(const AccountSettings& value) { m_accountSettingsHasBeenSet = true; m_accountSettings = value; }
-    inline void SetAccountSettings(AccountSettings&& value) { m_accountSettingsHasBeenSet = true; m_accountSettings = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithAccountSettings(const AccountSettings& value) { SetAccountSettings(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithAccountSettings(AccountSettings&& value) { SetAccountSettings(std::move(value)); return *this;}
+    template<typename AccountSettingsT = AccountSettings>
+    void SetAccountSettings(AccountSettingsT&& value) { m_accountSettingsHasBeenSet = true; m_accountSettings = std::forward<AccountSettingsT>(value); }
+    template<typename AccountSettingsT = AccountSettings>
+    UpdateAccountSettingsRequest& WithAccountSettings(AccountSettingsT&& value) { SetAccountSettings(std::forward<AccountSettingsT>(value)); return *this;}
     ///@}
   private:
 

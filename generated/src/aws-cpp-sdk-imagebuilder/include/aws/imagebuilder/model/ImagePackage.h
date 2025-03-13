@@ -32,7 +32,7 @@ namespace Model
   class ImagePackage
   {
   public:
-    AWS_IMAGEBUILDER_API ImagePackage();
+    AWS_IMAGEBUILDER_API ImagePackage() = default;
     AWS_IMAGEBUILDER_API ImagePackage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ImagePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the package that's reported to the operating system package
      * manager.</p>
      */
-    inline const Aws::String& GetPackageName() const{ return m_packageName; }
+    inline const Aws::String& GetPackageName() const { return m_packageName; }
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
-    inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
-    inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
-    inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
-    inline ImagePackage& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
-    inline ImagePackage& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
-    inline ImagePackage& WithPackageName(const char* value) { SetPackageName(value); return *this;}
+    template<typename PackageNameT = Aws::String>
+    void SetPackageName(PackageNameT&& value) { m_packageNameHasBeenSet = true; m_packageName = std::forward<PackageNameT>(value); }
+    template<typename PackageNameT = Aws::String>
+    ImagePackage& WithPackageName(PackageNameT&& value) { SetPackageName(std::forward<PackageNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The version of the package that's reported to the operating system package
      * manager.</p>
      */
-    inline const Aws::String& GetPackageVersion() const{ return m_packageVersion; }
+    inline const Aws::String& GetPackageVersion() const { return m_packageVersion; }
     inline bool PackageVersionHasBeenSet() const { return m_packageVersionHasBeenSet; }
-    inline void SetPackageVersion(const Aws::String& value) { m_packageVersionHasBeenSet = true; m_packageVersion = value; }
-    inline void SetPackageVersion(Aws::String&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::move(value); }
-    inline void SetPackageVersion(const char* value) { m_packageVersionHasBeenSet = true; m_packageVersion.assign(value); }
-    inline ImagePackage& WithPackageVersion(const Aws::String& value) { SetPackageVersion(value); return *this;}
-    inline ImagePackage& WithPackageVersion(Aws::String&& value) { SetPackageVersion(std::move(value)); return *this;}
-    inline ImagePackage& WithPackageVersion(const char* value) { SetPackageVersion(value); return *this;}
+    template<typename PackageVersionT = Aws::String>
+    void SetPackageVersion(PackageVersionT&& value) { m_packageVersionHasBeenSet = true; m_packageVersion = std::forward<PackageVersionT>(value); }
+    template<typename PackageVersionT = Aws::String>
+    ImagePackage& WithPackageVersion(PackageVersionT&& value) { SetPackageVersion(std::forward<PackageVersionT>(value)); return *this;}
     ///@}
   private:
 

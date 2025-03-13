@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AssistantCapabilityConfiguration::AssistantCapabilityConfiguration() : 
-    m_type(AssistantCapabilityType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AssistantCapabilityConfiguration::AssistantCapabilityConfiguration(JsonView jsonValue)
-  : AssistantCapabilityConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AssistantCapabilityConfiguration& AssistantCapabilityConfiguration::operator =(J
   if(jsonValue.ValueExists("type"))
   {
     m_type = AssistantCapabilityTypeMapper::GetAssistantCapabilityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

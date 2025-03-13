@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutOrganizationConformancePackResult::PutOrganizationConformancePackResult()
-{
-}
-
 PutOrganizationConformancePackResult::PutOrganizationConformancePackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutOrganizationConformancePackResult& PutOrganizationConformancePackResult::oper
   if(jsonValue.ValueExists("OrganizationConformancePackArn"))
   {
     m_organizationConformancePackArn = jsonValue.GetString("OrganizationConformancePackArn");
-
+    m_organizationConformancePackArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

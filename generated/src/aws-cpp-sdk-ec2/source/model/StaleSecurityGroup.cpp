@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-StaleSecurityGroup::StaleSecurityGroup() : 
-    m_descriptionHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_staleIpPermissionsHasBeenSet(false),
-    m_staleIpPermissionsEgressHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 StaleSecurityGroup::StaleSecurityGroup(const XmlNode& xmlNode)
-  : StaleSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -47,48 +36,54 @@ StaleSecurityGroup& StaleSecurityGroup::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode staleIpPermissionsNode = resultNode.FirstChild("staleIpPermissions");
     if(!staleIpPermissionsNode.IsNull())
     {
       XmlNode staleIpPermissionsMember = staleIpPermissionsNode.FirstChild("item");
+      m_staleIpPermissionsHasBeenSet = !staleIpPermissionsMember.IsNull();
       while(!staleIpPermissionsMember.IsNull())
       {
         m_staleIpPermissions.push_back(staleIpPermissionsMember);
         staleIpPermissionsMember = staleIpPermissionsMember.NextNode("item");
       }
 
-      m_staleIpPermissionsHasBeenSet = true;
+       m_staleIpPermissionsHasBeenSet = true;
     }
     XmlNode staleIpPermissionsEgressNode = resultNode.FirstChild("staleIpPermissionsEgress");
     if(!staleIpPermissionsEgressNode.IsNull())
     {
       XmlNode staleIpPermissionsEgressMember = staleIpPermissionsEgressNode.FirstChild("item");
+      m_staleIpPermissionsEgressHasBeenSet = !staleIpPermissionsEgressMember.IsNull();
       while(!staleIpPermissionsEgressMember.IsNull())
       {
         m_staleIpPermissionsEgress.push_back(staleIpPermissionsEgressMember);
         staleIpPermissionsEgressMember = staleIpPermissionsEgressMember.NextNode("item");
       }
 
-      m_staleIpPermissionsEgressHasBeenSet = true;
+       m_staleIpPermissionsEgressHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
   }
 

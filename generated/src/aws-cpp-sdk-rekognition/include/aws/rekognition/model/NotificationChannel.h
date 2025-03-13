@@ -40,7 +40,7 @@ namespace Model
   class NotificationChannel
   {
   public:
-    AWS_REKOGNITION_API NotificationChannel();
+    AWS_REKOGNITION_API NotificationChannel() = default;
     AWS_REKOGNITION_API NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
-    inline const Aws::String& GetSNSTopicArn() const{ return m_sNSTopicArn; }
+    inline const Aws::String& GetSNSTopicArn() const { return m_sNSTopicArn; }
     inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
-    inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
-    inline void SetSNSTopicArn(Aws::String&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::move(value); }
-    inline void SetSNSTopicArn(const char* value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn.assign(value); }
-    inline NotificationChannel& WithSNSTopicArn(const Aws::String& value) { SetSNSTopicArn(value); return *this;}
-    inline NotificationChannel& WithSNSTopicArn(Aws::String&& value) { SetSNSTopicArn(std::move(value)); return *this;}
-    inline NotificationChannel& WithSNSTopicArn(const char* value) { SetSNSTopicArn(value); return *this;}
+    template<typename SNSTopicArnT = Aws::String>
+    void SetSNSTopicArn(SNSTopicArnT&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::forward<SNSTopicArnT>(value); }
+    template<typename SNSTopicArnT = Aws::String>
+    NotificationChannel& WithSNSTopicArn(SNSTopicArnT&& value) { SetSNSTopicArn(std::forward<SNSTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions
      * to the Amazon SNS topic. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline NotificationChannel& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline NotificationChannel& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline NotificationChannel& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    NotificationChannel& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

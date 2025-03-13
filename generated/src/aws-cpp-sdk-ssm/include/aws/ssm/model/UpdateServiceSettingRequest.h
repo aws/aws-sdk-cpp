@@ -25,7 +25,7 @@ namespace Model
   class UpdateServiceSettingRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API UpdateServiceSettingRequest();
+    AWS_SSM_API UpdateServiceSettingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,14 +59,12 @@ namespace Model
      * allowing individuals to configure or modify the Default Host Management
      * Configuration.</p> 
      */
-    inline const Aws::String& GetSettingId() const{ return m_settingId; }
+    inline const Aws::String& GetSettingId() const { return m_settingId; }
     inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
-    inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
-    inline void SetSettingId(Aws::String&& value) { m_settingIdHasBeenSet = true; m_settingId = std::move(value); }
-    inline void SetSettingId(const char* value) { m_settingIdHasBeenSet = true; m_settingId.assign(value); }
-    inline UpdateServiceSettingRequest& WithSettingId(const Aws::String& value) { SetSettingId(value); return *this;}
-    inline UpdateServiceSettingRequest& WithSettingId(Aws::String&& value) { SetSettingId(std::move(value)); return *this;}
-    inline UpdateServiceSettingRequest& WithSettingId(const char* value) { SetSettingId(value); return *this;}
+    template<typename SettingIdT = Aws::String>
+    void SetSettingId(SettingIdT&& value) { m_settingIdHasBeenSet = true; m_settingId = std::forward<SettingIdT>(value); }
+    template<typename SettingIdT = Aws::String>
+    UpdateServiceSettingRequest& WithSettingId(SettingIdT&& value) { SetSettingId(std::forward<SettingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +91,12 @@ namespace Model
      * <code>/ssm/parameter-store/high-throughput-enabled</code>, enter
      * <code>true</code> or <code>false</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetSettingValue() const{ return m_settingValue; }
+    inline const Aws::String& GetSettingValue() const { return m_settingValue; }
     inline bool SettingValueHasBeenSet() const { return m_settingValueHasBeenSet; }
-    inline void SetSettingValue(const Aws::String& value) { m_settingValueHasBeenSet = true; m_settingValue = value; }
-    inline void SetSettingValue(Aws::String&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::move(value); }
-    inline void SetSettingValue(const char* value) { m_settingValueHasBeenSet = true; m_settingValue.assign(value); }
-    inline UpdateServiceSettingRequest& WithSettingValue(const Aws::String& value) { SetSettingValue(value); return *this;}
-    inline UpdateServiceSettingRequest& WithSettingValue(Aws::String&& value) { SetSettingValue(std::move(value)); return *this;}
-    inline UpdateServiceSettingRequest& WithSettingValue(const char* value) { SetSettingValue(value); return *this;}
+    template<typename SettingValueT = Aws::String>
+    void SetSettingValue(SettingValueT&& value) { m_settingValueHasBeenSet = true; m_settingValue = std::forward<SettingValueT>(value); }
+    template<typename SettingValueT = Aws::String>
+    UpdateServiceSettingRequest& WithSettingValue(SettingValueT&& value) { SetSettingValue(std::forward<SettingValueT>(value)); return *this;}
     ///@}
   private:
 

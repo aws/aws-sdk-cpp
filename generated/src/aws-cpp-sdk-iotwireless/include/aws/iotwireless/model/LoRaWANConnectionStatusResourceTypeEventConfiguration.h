@@ -32,7 +32,7 @@ namespace Model
   class LoRaWANConnectionStatusResourceTypeEventConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANConnectionStatusResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API LoRaWANConnectionStatusResourceTypeEventConfiguration() = default;
     AWS_IOTWIRELESS_API LoRaWANConnectionStatusResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANConnectionStatusResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Denotes whether the wireless gateway connection status event topic is enabled
      * or disabled.</p>
      */
-    inline const EventNotificationTopicStatus& GetWirelessGatewayEventTopic() const{ return m_wirelessGatewayEventTopic; }
+    inline EventNotificationTopicStatus GetWirelessGatewayEventTopic() const { return m_wirelessGatewayEventTopic; }
     inline bool WirelessGatewayEventTopicHasBeenSet() const { return m_wirelessGatewayEventTopicHasBeenSet; }
-    inline void SetWirelessGatewayEventTopic(const EventNotificationTopicStatus& value) { m_wirelessGatewayEventTopicHasBeenSet = true; m_wirelessGatewayEventTopic = value; }
-    inline void SetWirelessGatewayEventTopic(EventNotificationTopicStatus&& value) { m_wirelessGatewayEventTopicHasBeenSet = true; m_wirelessGatewayEventTopic = std::move(value); }
-    inline LoRaWANConnectionStatusResourceTypeEventConfiguration& WithWirelessGatewayEventTopic(const EventNotificationTopicStatus& value) { SetWirelessGatewayEventTopic(value); return *this;}
-    inline LoRaWANConnectionStatusResourceTypeEventConfiguration& WithWirelessGatewayEventTopic(EventNotificationTopicStatus&& value) { SetWirelessGatewayEventTopic(std::move(value)); return *this;}
+    inline void SetWirelessGatewayEventTopic(EventNotificationTopicStatus value) { m_wirelessGatewayEventTopicHasBeenSet = true; m_wirelessGatewayEventTopic = value; }
+    inline LoRaWANConnectionStatusResourceTypeEventConfiguration& WithWirelessGatewayEventTopic(EventNotificationTopicStatus value) { SetWirelessGatewayEventTopic(value); return *this;}
     ///@}
   private:
 
-    EventNotificationTopicStatus m_wirelessGatewayEventTopic;
+    EventNotificationTopicStatus m_wirelessGatewayEventTopic{EventNotificationTopicStatus::NOT_SET};
     bool m_wirelessGatewayEventTopicHasBeenSet = false;
   };
 

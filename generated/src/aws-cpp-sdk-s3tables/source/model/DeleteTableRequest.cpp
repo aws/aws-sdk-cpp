@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteTableRequest::DeleteTableRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTableRequest::SerializePayload() const
 {
   return {};

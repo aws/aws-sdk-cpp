@@ -18,13 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-Message::Message() : 
-    m_messageTextHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("messageText"))
   {
     m_messageText = jsonValue.GetString("messageText");
-
     m_messageTextHasBeenSet = true;
   }
-
   return *this;
 }
 

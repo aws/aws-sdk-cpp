@@ -12,12 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGrantPermissionsRequest::BatchGrantPermissionsRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGrantPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSServiceProjectedMetric::ECSServiceProjectedMetric() : 
-    m_name(ECSServiceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_upperBoundValuesHasBeenSet(false),
-    m_lowerBoundValuesHasBeenSet(false)
-{
-}
-
 ECSServiceProjectedMetric::ECSServiceProjectedMetric(JsonView jsonValue)
-  : ECSServiceProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ECSServiceProjectedMetric& ECSServiceProjectedMetric::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = ECSServiceMetricNameMapper::GetECSServiceMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
@@ -51,7 +39,6 @@ ECSServiceProjectedMetric& ECSServiceProjectedMetric::operator =(JsonView jsonVa
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upperBoundValues"))
   {
     Aws::Utils::Array<JsonView> upperBoundValuesJsonList = jsonValue.GetArray("upperBoundValues");
@@ -61,7 +48,6 @@ ECSServiceProjectedMetric& ECSServiceProjectedMetric::operator =(JsonView jsonVa
     }
     m_upperBoundValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lowerBoundValues"))
   {
     Aws::Utils::Array<JsonView> lowerBoundValuesJsonList = jsonValue.GetArray("lowerBoundValues");
@@ -71,7 +57,6 @@ ECSServiceProjectedMetric& ECSServiceProjectedMetric::operator =(JsonView jsonVa
     }
     m_lowerBoundValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-UpdateBackendAuthResourceConfig::UpdateBackendAuthResourceConfig() : 
-    m_authResources(AuthResources::NOT_SET),
-    m_authResourcesHasBeenSet(false),
-    m_identityPoolConfigsHasBeenSet(false),
-    m_service(Service::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_userPoolConfigsHasBeenSet(false)
-{
-}
-
 UpdateBackendAuthResourceConfig::UpdateBackendAuthResourceConfig(JsonView jsonValue)
-  : UpdateBackendAuthResourceConfig()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ UpdateBackendAuthResourceConfig& UpdateBackendAuthResourceConfig::operator =(Jso
   if(jsonValue.ValueExists("authResources"))
   {
     m_authResources = AuthResourcesMapper::GetAuthResourcesForName(jsonValue.GetString("authResources"));
-
     m_authResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityPoolConfigs"))
   {
     m_identityPoolConfigs = jsonValue.GetObject("identityPoolConfigs");
-
     m_identityPoolConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = ServiceMapper::GetServiceForName(jsonValue.GetString("service"));
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userPoolConfigs"))
   {
     m_userPoolConfigs = jsonValue.GetObject("userPoolConfigs");
-
     m_userPoolConfigsHasBeenSet = true;
   }
-
   return *this;
 }
 

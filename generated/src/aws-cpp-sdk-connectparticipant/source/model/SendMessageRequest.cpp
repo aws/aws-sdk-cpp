@@ -13,15 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendMessageRequest::SendMessageRequest() : 
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_connectionTokenHasBeenSet(false)
-{
-}
-
 Aws::String SendMessageRequest::SerializePayload() const
 {
   JsonValue payload;

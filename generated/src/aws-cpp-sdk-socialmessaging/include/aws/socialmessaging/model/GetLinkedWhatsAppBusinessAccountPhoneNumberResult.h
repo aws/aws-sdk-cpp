@@ -28,18 +28,18 @@ namespace Model
   class GetLinkedWhatsAppBusinessAccountPhoneNumberResult
   {
   public:
-    AWS_SOCIALMESSAGING_API GetLinkedWhatsAppBusinessAccountPhoneNumberResult();
+    AWS_SOCIALMESSAGING_API GetLinkedWhatsAppBusinessAccountPhoneNumberResult() = default;
     AWS_SOCIALMESSAGING_API GetLinkedWhatsAppBusinessAccountPhoneNumberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SOCIALMESSAGING_API GetLinkedWhatsAppBusinessAccountPhoneNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const WhatsAppPhoneNumberDetail& GetPhoneNumber() const{ return m_phoneNumber; }
-    inline void SetPhoneNumber(const WhatsAppPhoneNumberDetail& value) { m_phoneNumber = value; }
-    inline void SetPhoneNumber(WhatsAppPhoneNumberDetail&& value) { m_phoneNumber = std::move(value); }
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithPhoneNumber(const WhatsAppPhoneNumberDetail& value) { SetPhoneNumber(value); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithPhoneNumber(WhatsAppPhoneNumberDetail&& value) { SetPhoneNumber(std::move(value)); return *this;}
+    inline const WhatsAppPhoneNumberDetail& GetPhoneNumber() const { return m_phoneNumber; }
+    template<typename PhoneNumberT = WhatsAppPhoneNumberDetail>
+    void SetPhoneNumber(PhoneNumberT&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::forward<PhoneNumberT>(value); }
+    template<typename PhoneNumberT = WhatsAppPhoneNumberDetail>
+    GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithPhoneNumber(PhoneNumberT&& value) { SetPhoneNumber(std::forward<PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -47,32 +47,31 @@ namespace Model
      * <p>The WABA identifier linked to the phone number, formatted as
      * <code>waba-01234567890123456789012345678901</code>.</p>
      */
-    inline const Aws::String& GetLinkedWhatsAppBusinessAccountId() const{ return m_linkedWhatsAppBusinessAccountId; }
-    inline void SetLinkedWhatsAppBusinessAccountId(const Aws::String& value) { m_linkedWhatsAppBusinessAccountId = value; }
-    inline void SetLinkedWhatsAppBusinessAccountId(Aws::String&& value) { m_linkedWhatsAppBusinessAccountId = std::move(value); }
-    inline void SetLinkedWhatsAppBusinessAccountId(const char* value) { m_linkedWhatsAppBusinessAccountId.assign(value); }
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithLinkedWhatsAppBusinessAccountId(const Aws::String& value) { SetLinkedWhatsAppBusinessAccountId(value); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithLinkedWhatsAppBusinessAccountId(Aws::String&& value) { SetLinkedWhatsAppBusinessAccountId(std::move(value)); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithLinkedWhatsAppBusinessAccountId(const char* value) { SetLinkedWhatsAppBusinessAccountId(value); return *this;}
+    inline const Aws::String& GetLinkedWhatsAppBusinessAccountId() const { return m_linkedWhatsAppBusinessAccountId; }
+    template<typename LinkedWhatsAppBusinessAccountIdT = Aws::String>
+    void SetLinkedWhatsAppBusinessAccountId(LinkedWhatsAppBusinessAccountIdT&& value) { m_linkedWhatsAppBusinessAccountIdHasBeenSet = true; m_linkedWhatsAppBusinessAccountId = std::forward<LinkedWhatsAppBusinessAccountIdT>(value); }
+    template<typename LinkedWhatsAppBusinessAccountIdT = Aws::String>
+    GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithLinkedWhatsAppBusinessAccountId(LinkedWhatsAppBusinessAccountIdT&& value) { SetLinkedWhatsAppBusinessAccountId(std::forward<LinkedWhatsAppBusinessAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetLinkedWhatsAppBusinessAccountPhoneNumberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WhatsAppPhoneNumberDetail m_phoneNumber;
+    bool m_phoneNumberHasBeenSet = false;
 
     Aws::String m_linkedWhatsAppBusinessAccountId;
+    bool m_linkedWhatsAppBusinessAccountIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

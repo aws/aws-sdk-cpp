@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-RegionalConfiguration::RegionalConfiguration() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupRegionHasBeenSet(false),
-    m_reshardingConfigurationHasBeenSet(false)
-{
-}
-
 RegionalConfiguration::RegionalConfiguration(const XmlNode& xmlNode)
-  : RegionalConfiguration()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ RegionalConfiguration& RegionalConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode replicationGroupRegionNode = resultNode.FirstChild("ReplicationGroupRegion");
     if(!replicationGroupRegionNode.IsNull())
     {
       m_replicationGroupRegion = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupRegionNode.GetText());
       m_replicationGroupRegionHasBeenSet = true;
+       m_replicationGroupRegionHasBeenSet = true;
     }
     XmlNode reshardingConfigurationNode = resultNode.FirstChild("ReshardingConfiguration");
     if(!reshardingConfigurationNode.IsNull())
     {
       XmlNode reshardingConfigurationMember = reshardingConfigurationNode.FirstChild("ReshardingConfiguration");
+      m_reshardingConfigurationHasBeenSet = !reshardingConfigurationMember.IsNull();
       while(!reshardingConfigurationMember.IsNull())
       {
         m_reshardingConfiguration.push_back(reshardingConfigurationMember);
         reshardingConfigurationMember = reshardingConfigurationMember.NextNode("ReshardingConfiguration");
       }
 
-      m_reshardingConfigurationHasBeenSet = true;
+       m_reshardingConfigurationHasBeenSet = true;
     }
   }
 

@@ -21,7 +21,7 @@ namespace Model
   class StartDirectoryListingRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API StartDirectoryListingRequest();
+    AWS_TRANSFER_API StartDirectoryListingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier for the connector.</p>
      */
-    inline const Aws::String& GetConnectorId() const{ return m_connectorId; }
+    inline const Aws::String& GetConnectorId() const { return m_connectorId; }
     inline bool ConnectorIdHasBeenSet() const { return m_connectorIdHasBeenSet; }
-    inline void SetConnectorId(const Aws::String& value) { m_connectorIdHasBeenSet = true; m_connectorId = value; }
-    inline void SetConnectorId(Aws::String&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::move(value); }
-    inline void SetConnectorId(const char* value) { m_connectorIdHasBeenSet = true; m_connectorId.assign(value); }
-    inline StartDirectoryListingRequest& WithConnectorId(const Aws::String& value) { SetConnectorId(value); return *this;}
-    inline StartDirectoryListingRequest& WithConnectorId(Aws::String&& value) { SetConnectorId(std::move(value)); return *this;}
-    inline StartDirectoryListingRequest& WithConnectorId(const char* value) { SetConnectorId(value); return *this;}
+    template<typename ConnectorIdT = Aws::String>
+    void SetConnectorId(ConnectorIdT&& value) { m_connectorIdHasBeenSet = true; m_connectorId = std::forward<ConnectorIdT>(value); }
+    template<typename ConnectorIdT = Aws::String>
+    StartDirectoryListingRequest& WithConnectorId(ConnectorIdT&& value) { SetConnectorId(std::forward<ConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>Specifies the directory on the remote SFTP server for which you want to list
      * its contents.</p>
      */
-    inline const Aws::String& GetRemoteDirectoryPath() const{ return m_remoteDirectoryPath; }
+    inline const Aws::String& GetRemoteDirectoryPath() const { return m_remoteDirectoryPath; }
     inline bool RemoteDirectoryPathHasBeenSet() const { return m_remoteDirectoryPathHasBeenSet; }
-    inline void SetRemoteDirectoryPath(const Aws::String& value) { m_remoteDirectoryPathHasBeenSet = true; m_remoteDirectoryPath = value; }
-    inline void SetRemoteDirectoryPath(Aws::String&& value) { m_remoteDirectoryPathHasBeenSet = true; m_remoteDirectoryPath = std::move(value); }
-    inline void SetRemoteDirectoryPath(const char* value) { m_remoteDirectoryPathHasBeenSet = true; m_remoteDirectoryPath.assign(value); }
-    inline StartDirectoryListingRequest& WithRemoteDirectoryPath(const Aws::String& value) { SetRemoteDirectoryPath(value); return *this;}
-    inline StartDirectoryListingRequest& WithRemoteDirectoryPath(Aws::String&& value) { SetRemoteDirectoryPath(std::move(value)); return *this;}
-    inline StartDirectoryListingRequest& WithRemoteDirectoryPath(const char* value) { SetRemoteDirectoryPath(value); return *this;}
+    template<typename RemoteDirectoryPathT = Aws::String>
+    void SetRemoteDirectoryPath(RemoteDirectoryPathT&& value) { m_remoteDirectoryPathHasBeenSet = true; m_remoteDirectoryPath = std::forward<RemoteDirectoryPathT>(value); }
+    template<typename RemoteDirectoryPathT = Aws::String>
+    StartDirectoryListingRequest& WithRemoteDirectoryPath(RemoteDirectoryPathT&& value) { SetRemoteDirectoryPath(std::forward<RemoteDirectoryPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +64,7 @@ namespace Model
      * <p>An optional parameter where you can specify the maximum number of
      * file/directory names to retrieve. The default value is 1,000.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline StartDirectoryListingRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -79,14 +75,12 @@ namespace Model
      * <p>Specifies the path (bucket and prefix) in Amazon S3 storage to store the
      * results of the directory listing.</p>
      */
-    inline const Aws::String& GetOutputDirectoryPath() const{ return m_outputDirectoryPath; }
+    inline const Aws::String& GetOutputDirectoryPath() const { return m_outputDirectoryPath; }
     inline bool OutputDirectoryPathHasBeenSet() const { return m_outputDirectoryPathHasBeenSet; }
-    inline void SetOutputDirectoryPath(const Aws::String& value) { m_outputDirectoryPathHasBeenSet = true; m_outputDirectoryPath = value; }
-    inline void SetOutputDirectoryPath(Aws::String&& value) { m_outputDirectoryPathHasBeenSet = true; m_outputDirectoryPath = std::move(value); }
-    inline void SetOutputDirectoryPath(const char* value) { m_outputDirectoryPathHasBeenSet = true; m_outputDirectoryPath.assign(value); }
-    inline StartDirectoryListingRequest& WithOutputDirectoryPath(const Aws::String& value) { SetOutputDirectoryPath(value); return *this;}
-    inline StartDirectoryListingRequest& WithOutputDirectoryPath(Aws::String&& value) { SetOutputDirectoryPath(std::move(value)); return *this;}
-    inline StartDirectoryListingRequest& WithOutputDirectoryPath(const char* value) { SetOutputDirectoryPath(value); return *this;}
+    template<typename OutputDirectoryPathT = Aws::String>
+    void SetOutputDirectoryPath(OutputDirectoryPathT&& value) { m_outputDirectoryPathHasBeenSet = true; m_outputDirectoryPath = std::forward<OutputDirectoryPathT>(value); }
+    template<typename OutputDirectoryPathT = Aws::String>
+    StartDirectoryListingRequest& WithOutputDirectoryPath(OutputDirectoryPathT&& value) { SetOutputDirectoryPath(std::forward<OutputDirectoryPathT>(value)); return *this;}
     ///@}
   private:
 
@@ -96,7 +90,7 @@ namespace Model
     Aws::String m_remoteDirectoryPath;
     bool m_remoteDirectoryPathHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_outputDirectoryPath;

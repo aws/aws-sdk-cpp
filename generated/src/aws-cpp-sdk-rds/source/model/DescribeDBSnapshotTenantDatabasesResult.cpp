@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBSnapshotTenantDatabasesResult::DescribeDBSnapshotTenantDatabasesResult()
-{
-}
-
 DescribeDBSnapshotTenantDatabasesResult::DescribeDBSnapshotTenantDatabasesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeDBSnapshotTenantDatabasesResult& DescribeDBSnapshotTenantDatabasesResult
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBSnapshotTenantDatabasesNode = resultNode.FirstChild("DBSnapshotTenantDatabases");
     if(!dBSnapshotTenantDatabasesNode.IsNull())
     {
       XmlNode dBSnapshotTenantDatabasesMember = dBSnapshotTenantDatabasesNode.FirstChild("DBSnapshotTenantDatabase");
+      m_dBSnapshotTenantDatabasesHasBeenSet = !dBSnapshotTenantDatabasesMember.IsNull();
       while(!dBSnapshotTenantDatabasesMember.IsNull())
       {
         m_dBSnapshotTenantDatabases.push_back(dBSnapshotTenantDatabasesMember);
@@ -59,6 +57,7 @@ DescribeDBSnapshotTenantDatabasesResult& DescribeDBSnapshotTenantDatabasesResult
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBSnapshotTenantDatabasesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

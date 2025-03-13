@@ -18,16 +18,7 @@ namespace Backup
 namespace Model
 {
 
-Condition::Condition() : 
-    m_conditionType(ConditionType::NOT_SET),
-    m_conditionTypeHasBeenSet(false),
-    m_conditionKeyHasBeenSet(false),
-    m_conditionValueHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConditionType"))
   {
     m_conditionType = ConditionTypeMapper::GetConditionTypeForName(jsonValue.GetString("ConditionType"));
-
     m_conditionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionKey"))
   {
     m_conditionKey = jsonValue.GetString("ConditionKey");
-
     m_conditionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionValue"))
   {
     m_conditionValue = jsonValue.GetString("ConditionValue");
-
     m_conditionValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-MetricsAndOperator::MetricsAndOperator() : 
-    m_prefixHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false)
-{
-}
-
 MetricsAndOperator::MetricsAndOperator(const XmlNode& xmlNode)
-  : MetricsAndOperator()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ MetricsAndOperator& MetricsAndOperator::operator =(const XmlNode& xmlNode)
     {
       m_prefix = Aws::Utils::Xml::DecodeEscapedXmlText(prefixNode.GetText());
       m_prefixHasBeenSet = true;
+       m_prefixHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tag");
     if(!tagsNode.IsNull())
     {
       XmlNode tagMember = tagsNode;
+      m_tagsHasBeenSet = !tagMember.IsNull();
       while(!tagMember.IsNull())
       {
         m_tags.push_back(tagMember);
         tagMember = tagMember.NextNode("Tag");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode accessPointArnNode = resultNode.FirstChild("AccessPointArn");
     if(!accessPointArnNode.IsNull())
     {
       m_accessPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessPointArnNode.GetText());
       m_accessPointArnHasBeenSet = true;
+       m_accessPointArnHasBeenSet = true;
     }
   }
 

@@ -12,18 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSecurityConfigRequest::CreateSecurityConfigRequest() : 
-    m_type(SecurityConfigType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_samlOptionsHasBeenSet(false),
-    m_iamIdentityCenterOptionsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateSecurityConfigRequest::SerializePayload() const
 {
   JsonValue payload;

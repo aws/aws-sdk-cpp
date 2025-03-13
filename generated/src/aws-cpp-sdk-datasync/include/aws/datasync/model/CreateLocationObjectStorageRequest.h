@@ -28,7 +28,7 @@ namespace Model
   class CreateLocationObjectStorageRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API CreateLocationObjectStorageRequest();
+    AWS_DATASYNC_API CreateLocationObjectStorageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>Specifies the domain name or IP version 4 (IPv4) address of the object
      * storage server that your DataSync agent connects to.</p>
      */
-    inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
+    inline const Aws::String& GetServerHostname() const { return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
-    inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
-    inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
-    inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
-    inline CreateLocationObjectStorageRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    template<typename ServerHostnameT = Aws::String>
+    void SetServerHostname(ServerHostnameT&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::forward<ServerHostnameT>(value); }
+    template<typename ServerHostnameT = Aws::String>
+    CreateLocationObjectStorageRequest& WithServerHostname(ServerHostnameT&& value) { SetServerHostname(std::forward<ServerHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>Specifies the port that your object storage server accepts inbound network
      * traffic on (for example, port 443).</p>
      */
-    inline int GetServerPort() const{ return m_serverPort; }
+    inline int GetServerPort() const { return m_serverPort; }
     inline bool ServerPortHasBeenSet() const { return m_serverPortHasBeenSet; }
     inline void SetServerPort(int value) { m_serverPortHasBeenSet = true; m_serverPort = value; }
     inline CreateLocationObjectStorageRequest& WithServerPort(int value) { SetServerPort(value); return *this;}
@@ -72,12 +70,10 @@ namespace Model
      * <p>Specifies the protocol that your object storage server uses to
      * communicate.</p>
      */
-    inline const ObjectStorageServerProtocol& GetServerProtocol() const{ return m_serverProtocol; }
+    inline ObjectStorageServerProtocol GetServerProtocol() const { return m_serverProtocol; }
     inline bool ServerProtocolHasBeenSet() const { return m_serverProtocolHasBeenSet; }
-    inline void SetServerProtocol(const ObjectStorageServerProtocol& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = value; }
-    inline void SetServerProtocol(ObjectStorageServerProtocol&& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = std::move(value); }
-    inline CreateLocationObjectStorageRequest& WithServerProtocol(const ObjectStorageServerProtocol& value) { SetServerProtocol(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithServerProtocol(ObjectStorageServerProtocol&& value) { SetServerProtocol(std::move(value)); return *this;}
+    inline void SetServerProtocol(ObjectStorageServerProtocol value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = value; }
+    inline CreateLocationObjectStorageRequest& WithServerProtocol(ObjectStorageServerProtocol value) { SetServerProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +82,24 @@ namespace Model
      * source location, DataSync only copies objects with this prefix. If this is a
      * destination location, DataSync writes all objects with this prefix. </p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline CreateLocationObjectStorageRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    CreateLocationObjectStorageRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the name of the object storage bucket involved in the transfer.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline CreateLocationObjectStorageRequest& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    CreateLocationObjectStorageRequest& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * <p>Specifies the access key (for example, a user name) if credentials are
      * required to authenticate with the object storage server.</p>
      */
-    inline const Aws::String& GetAccessKey() const{ return m_accessKey; }
+    inline const Aws::String& GetAccessKey() const { return m_accessKey; }
     inline bool AccessKeyHasBeenSet() const { return m_accessKeyHasBeenSet; }
-    inline void SetAccessKey(const Aws::String& value) { m_accessKeyHasBeenSet = true; m_accessKey = value; }
-    inline void SetAccessKey(Aws::String&& value) { m_accessKeyHasBeenSet = true; m_accessKey = std::move(value); }
-    inline void SetAccessKey(const char* value) { m_accessKeyHasBeenSet = true; m_accessKey.assign(value); }
-    inline CreateLocationObjectStorageRequest& WithAccessKey(const Aws::String& value) { SetAccessKey(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithAccessKey(Aws::String&& value) { SetAccessKey(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& WithAccessKey(const char* value) { SetAccessKey(value); return *this;}
+    template<typename AccessKeyT = Aws::String>
+    void SetAccessKey(AccessKeyT&& value) { m_accessKeyHasBeenSet = true; m_accessKey = std::forward<AccessKeyT>(value); }
+    template<typename AccessKeyT = Aws::String>
+    CreateLocationObjectStorageRequest& WithAccessKey(AccessKeyT&& value) { SetAccessKey(std::forward<AccessKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +120,12 @@ namespace Model
      * <p>Specifies the secret key (for example, a password) if credentials are
      * required to authenticate with the object storage server.</p>
      */
-    inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
+    inline const Aws::String& GetSecretKey() const { return m_secretKey; }
     inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
-    inline void SetSecretKey(const Aws::String& value) { m_secretKeyHasBeenSet = true; m_secretKey = value; }
-    inline void SetSecretKey(Aws::String&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::move(value); }
-    inline void SetSecretKey(const char* value) { m_secretKeyHasBeenSet = true; m_secretKey.assign(value); }
-    inline CreateLocationObjectStorageRequest& WithSecretKey(const Aws::String& value) { SetSecretKey(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithSecretKey(Aws::String&& value) { SetSecretKey(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& WithSecretKey(const char* value) { SetSecretKey(value); return *this;}
+    template<typename SecretKeyT = Aws::String>
+    void SetSecretKey(SecretKeyT&& value) { m_secretKeyHasBeenSet = true; m_secretKey = std::forward<SecretKeyT>(value); }
+    template<typename SecretKeyT = Aws::String>
+    CreateLocationObjectStorageRequest& WithSecretKey(SecretKeyT&& value) { SetSecretKey(std::forward<SecretKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,15 +133,14 @@ namespace Model
      * <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can
      * connect with your object storage system.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
+    inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
-    inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
-    inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
-    inline CreateLocationObjectStorageRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
-    inline CreateLocationObjectStorageRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
-    inline CreateLocationObjectStorageRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    void SetAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::forward<AgentArnsT>(value); }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    CreateLocationObjectStorageRequest& WithAgentArns(AgentArnsT&& value) { SetAgentArns(std::forward<AgentArnsT>(value)); return *this;}
+    template<typename AgentArnsT = Aws::String>
+    CreateLocationObjectStorageRequest& AddAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns.emplace_back(std::forward<AgentArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,14 +149,14 @@ namespace Model
      * the resource. Tags can help you manage, filter, and search for your resources.
      * We recommend creating a name tag for your location.</p>
      */
-    inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagListEntry>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLocationObjectStorageRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLocationObjectStorageRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLocationObjectStorageRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    CreateLocationObjectStorageRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagListEntry>
+    CreateLocationObjectStorageRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -191,22 +178,22 @@ namespace Model
      * use this parameter, configure <code>ServerProtocol</code> to
      * <code>HTTPS</code>.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
+    inline const Aws::Utils::ByteBuffer& GetServerCertificate() const { return m_serverCertificate; }
     inline bool ServerCertificateHasBeenSet() const { return m_serverCertificateHasBeenSet; }
-    inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = value; }
-    inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::move(value); }
-    inline CreateLocationObjectStorageRequest& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
-    inline CreateLocationObjectStorageRequest& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
+    template<typename ServerCertificateT = Aws::Utils::ByteBuffer>
+    void SetServerCertificate(ServerCertificateT&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::forward<ServerCertificateT>(value); }
+    template<typename ServerCertificateT = Aws::Utils::ByteBuffer>
+    CreateLocationObjectStorageRequest& WithServerCertificate(ServerCertificateT&& value) { SetServerCertificate(std::forward<ServerCertificateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverHostname;
     bool m_serverHostnameHasBeenSet = false;
 
-    int m_serverPort;
+    int m_serverPort{0};
     bool m_serverPortHasBeenSet = false;
 
-    ObjectStorageServerProtocol m_serverProtocol;
+    ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
     bool m_serverProtocolHasBeenSet = false;
 
     Aws::String m_subdirectory;
@@ -227,7 +214,7 @@ namespace Model
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_serverCertificate;
+    Aws::Utils::ByteBuffer m_serverCertificate{};
     bool m_serverCertificateHasBeenSet = false;
   };
 

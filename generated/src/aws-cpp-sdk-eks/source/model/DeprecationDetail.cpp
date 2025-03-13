@@ -18,17 +18,7 @@ namespace EKS
 namespace Model
 {
 
-DeprecationDetail::DeprecationDetail() : 
-    m_usageHasBeenSet(false),
-    m_replacedWithHasBeenSet(false),
-    m_stopServingVersionHasBeenSet(false),
-    m_startServingReplacementVersionHasBeenSet(false),
-    m_clientStatsHasBeenSet(false)
-{
-}
-
 DeprecationDetail::DeprecationDetail(JsonView jsonValue)
-  : DeprecationDetail()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DeprecationDetail& DeprecationDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("usage"))
   {
     m_usage = jsonValue.GetString("usage");
-
     m_usageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replacedWith"))
   {
     m_replacedWith = jsonValue.GetString("replacedWith");
-
     m_replacedWithHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopServingVersion"))
   {
     m_stopServingVersion = jsonValue.GetString("stopServingVersion");
-
     m_stopServingVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startServingReplacementVersion"))
   {
     m_startServingReplacementVersion = jsonValue.GetString("startServingReplacementVersion");
-
     m_startServingReplacementVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientStats"))
   {
     Aws::Utils::Array<JsonView> clientStatsJsonList = jsonValue.GetArray("clientStats");
@@ -72,7 +54,6 @@ DeprecationDetail& DeprecationDetail::operator =(JsonView jsonValue)
     }
     m_clientStatsHasBeenSet = true;
   }
-
   return *this;
 }
 

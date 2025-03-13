@@ -10,13 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateDBSecurityGroupRequest::CreateDBSecurityGroupRequest() : 
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_dBSecurityGroupDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

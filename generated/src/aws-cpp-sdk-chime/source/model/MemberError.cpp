@@ -18,16 +18,7 @@ namespace Chime
 namespace Model
 {
 
-MemberError::MemberError() : 
-    m_memberIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 MemberError::MemberError(JsonView jsonValue)
-  : MemberError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MemberError& MemberError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MemberId"))
   {
     m_memberId = jsonValue.GetString("MemberId");
-
     m_memberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

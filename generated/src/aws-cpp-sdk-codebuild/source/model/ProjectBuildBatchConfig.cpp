@@ -18,20 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectBuildBatchConfig::ProjectBuildBatchConfig() : 
-    m_serviceRoleHasBeenSet(false),
-    m_combineArtifacts(false),
-    m_combineArtifactsHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_timeoutInMins(0),
-    m_timeoutInMinsHasBeenSet(false),
-    m_batchReportMode(BatchReportModeType::NOT_SET),
-    m_batchReportModeHasBeenSet(false)
-{
-}
-
 ProjectBuildBatchConfig::ProjectBuildBatchConfig(JsonView jsonValue)
-  : ProjectBuildBatchConfig()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ProjectBuildBatchConfig& ProjectBuildBatchConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serviceRole"))
   {
     m_serviceRole = jsonValue.GetString("serviceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("combineArtifacts"))
   {
     m_combineArtifacts = jsonValue.GetBool("combineArtifacts");
-
     m_combineArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restrictions"))
   {
     m_restrictions = jsonValue.GetObject("restrictions");
-
     m_restrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInMins"))
   {
     m_timeoutInMins = jsonValue.GetInteger("timeoutInMins");
-
     m_timeoutInMinsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchReportMode"))
   {
     m_batchReportMode = BatchReportModeTypeMapper::GetBatchReportModeTypeForName(jsonValue.GetString("batchReportMode"));
-
     m_batchReportModeHasBeenSet = true;
   }
-
   return *this;
 }
 

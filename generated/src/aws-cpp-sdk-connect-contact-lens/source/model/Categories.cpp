@@ -18,14 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-Categories::Categories() : 
-    m_matchedCategoriesHasBeenSet(false),
-    m_matchedDetailsHasBeenSet(false)
-{
-}
-
 Categories::Categories(JsonView jsonValue)
-  : Categories()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ Categories& Categories::operator =(JsonView jsonValue)
     }
     m_matchedCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchedDetails"))
   {
     Aws::Map<Aws::String, JsonView> matchedDetailsJsonMap = jsonValue.GetObject("MatchedDetails").GetAllObjects();
@@ -51,7 +43,6 @@ Categories& Categories::operator =(JsonView jsonValue)
     }
     m_matchedDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

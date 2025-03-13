@@ -34,7 +34,7 @@ namespace Model
   class SamplingRuleRecord
   {
   public:
-    AWS_XRAY_API SamplingRuleRecord();
+    AWS_XRAY_API SamplingRuleRecord() = default;
     AWS_XRAY_API SamplingRuleRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API SamplingRuleRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,46 +44,46 @@ namespace Model
     /**
      * <p>The sampling rule.</p>
      */
-    inline const SamplingRule& GetSamplingRule() const{ return m_samplingRule; }
+    inline const SamplingRule& GetSamplingRule() const { return m_samplingRule; }
     inline bool SamplingRuleHasBeenSet() const { return m_samplingRuleHasBeenSet; }
-    inline void SetSamplingRule(const SamplingRule& value) { m_samplingRuleHasBeenSet = true; m_samplingRule = value; }
-    inline void SetSamplingRule(SamplingRule&& value) { m_samplingRuleHasBeenSet = true; m_samplingRule = std::move(value); }
-    inline SamplingRuleRecord& WithSamplingRule(const SamplingRule& value) { SetSamplingRule(value); return *this;}
-    inline SamplingRuleRecord& WithSamplingRule(SamplingRule&& value) { SetSamplingRule(std::move(value)); return *this;}
+    template<typename SamplingRuleT = SamplingRule>
+    void SetSamplingRule(SamplingRuleT&& value) { m_samplingRuleHasBeenSet = true; m_samplingRule = std::forward<SamplingRuleT>(value); }
+    template<typename SamplingRuleT = SamplingRule>
+    SamplingRuleRecord& WithSamplingRule(SamplingRuleT&& value) { SetSamplingRule(std::forward<SamplingRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the rule was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline SamplingRuleRecord& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline SamplingRuleRecord& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    SamplingRuleRecord& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the rule was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-    inline SamplingRuleRecord& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline SamplingRuleRecord& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    SamplingRuleRecord& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
   private:
 
     SamplingRule m_samplingRule;
     bool m_samplingRuleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
     bool m_modifiedAtHasBeenSet = false;
   };
 

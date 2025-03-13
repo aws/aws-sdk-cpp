@@ -32,7 +32,7 @@ namespace Model
   class ExchangeCodeForTokenRequestBody
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody();
+    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody() = default;
     AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The access code to send in the request.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ExchangeCodeForTokenRequestBody& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ExchangeCodeForTokenRequestBody& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ExchangeCodeForTokenRequestBody& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ExchangeCodeForTokenRequestBody& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the application that will receive the access code.</p>
      */
-    inline const Aws::String& GetRedirectUri() const{ return m_redirectUri; }
+    inline const Aws::String& GetRedirectUri() const { return m_redirectUri; }
     inline bool RedirectUriHasBeenSet() const { return m_redirectUriHasBeenSet; }
-    inline void SetRedirectUri(const Aws::String& value) { m_redirectUriHasBeenSet = true; m_redirectUri = value; }
-    inline void SetRedirectUri(Aws::String&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::move(value); }
-    inline void SetRedirectUri(const char* value) { m_redirectUriHasBeenSet = true; m_redirectUri.assign(value); }
-    inline ExchangeCodeForTokenRequestBody& WithRedirectUri(const Aws::String& value) { SetRedirectUri(value); return *this;}
-    inline ExchangeCodeForTokenRequestBody& WithRedirectUri(Aws::String&& value) { SetRedirectUri(std::move(value)); return *this;}
-    inline ExchangeCodeForTokenRequestBody& WithRedirectUri(const char* value) { SetRedirectUri(value); return *this;}
+    template<typename RedirectUriT = Aws::String>
+    void SetRedirectUri(RedirectUriT&& value) { m_redirectUriHasBeenSet = true; m_redirectUri = std::forward<RedirectUriT>(value); }
+    template<typename RedirectUriT = Aws::String>
+    ExchangeCodeForTokenRequestBody& WithRedirectUri(RedirectUriT&& value) { SetRedirectUri(std::forward<RedirectUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the client to request the token from.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline ExchangeCodeForTokenRequestBody& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline ExchangeCodeForTokenRequestBody& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline ExchangeCodeForTokenRequestBody& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    ExchangeCodeForTokenRequestBody& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
   private:
 

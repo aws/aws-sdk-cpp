@@ -21,7 +21,7 @@ namespace Model
   class GenerateOrganizationsAccessReportRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API GenerateOrganizationsAccessReportRequest();
+    AWS_IAM_API GenerateOrganizationsAccessReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <code>o-a1b2c3d4e5</code>. Your entity path is
      * <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
      */
-    inline const Aws::String& GetEntityPath() const{ return m_entityPath; }
+    inline const Aws::String& GetEntityPath() const { return m_entityPath; }
     inline bool EntityPathHasBeenSet() const { return m_entityPathHasBeenSet; }
-    inline void SetEntityPath(const Aws::String& value) { m_entityPathHasBeenSet = true; m_entityPath = value; }
-    inline void SetEntityPath(Aws::String&& value) { m_entityPathHasBeenSet = true; m_entityPath = std::move(value); }
-    inline void SetEntityPath(const char* value) { m_entityPathHasBeenSet = true; m_entityPath.assign(value); }
-    inline GenerateOrganizationsAccessReportRequest& WithEntityPath(const Aws::String& value) { SetEntityPath(value); return *this;}
-    inline GenerateOrganizationsAccessReportRequest& WithEntityPath(Aws::String&& value) { SetEntityPath(std::move(value)); return *this;}
-    inline GenerateOrganizationsAccessReportRequest& WithEntityPath(const char* value) { SetEntityPath(value); return *this;}
+    template<typename EntityPathT = Aws::String>
+    void SetEntityPath(EntityPathT&& value) { m_entityPathHasBeenSet = true; m_entityPath = std::forward<EntityPathT>(value); }
+    template<typename EntityPathT = Aws::String>
+    GenerateOrganizationsAccessReportRequest& WithEntityPath(EntityPathT&& value) { SetEntityPath(std::forward<EntityPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * an account principal that is limited by the SCP attempted to access an Amazon
      * Web Services service.</p>
      */
-    inline const Aws::String& GetOrganizationsPolicyId() const{ return m_organizationsPolicyId; }
+    inline const Aws::String& GetOrganizationsPolicyId() const { return m_organizationsPolicyId; }
     inline bool OrganizationsPolicyIdHasBeenSet() const { return m_organizationsPolicyIdHasBeenSet; }
-    inline void SetOrganizationsPolicyId(const Aws::String& value) { m_organizationsPolicyIdHasBeenSet = true; m_organizationsPolicyId = value; }
-    inline void SetOrganizationsPolicyId(Aws::String&& value) { m_organizationsPolicyIdHasBeenSet = true; m_organizationsPolicyId = std::move(value); }
-    inline void SetOrganizationsPolicyId(const char* value) { m_organizationsPolicyIdHasBeenSet = true; m_organizationsPolicyId.assign(value); }
-    inline GenerateOrganizationsAccessReportRequest& WithOrganizationsPolicyId(const Aws::String& value) { SetOrganizationsPolicyId(value); return *this;}
-    inline GenerateOrganizationsAccessReportRequest& WithOrganizationsPolicyId(Aws::String&& value) { SetOrganizationsPolicyId(std::move(value)); return *this;}
-    inline GenerateOrganizationsAccessReportRequest& WithOrganizationsPolicyId(const char* value) { SetOrganizationsPolicyId(value); return *this;}
+    template<typename OrganizationsPolicyIdT = Aws::String>
+    void SetOrganizationsPolicyId(OrganizationsPolicyIdT&& value) { m_organizationsPolicyIdHasBeenSet = true; m_organizationsPolicyId = std::forward<OrganizationsPolicyIdT>(value); }
+    template<typename OrganizationsPolicyIdT = Aws::String>
+    GenerateOrganizationsAccessReportRequest& WithOrganizationsPolicyId(OrganizationsPolicyIdT&& value) { SetOrganizationsPolicyId(std::forward<OrganizationsPolicyIdT>(value)); return *this;}
     ///@}
   private:
 

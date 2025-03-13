@@ -12,16 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFiltersRequest::ListFiltersRequest() : 
-    m_action(FilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_arnsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListFiltersRequest::SerializePayload() const
 {
   JsonValue payload;

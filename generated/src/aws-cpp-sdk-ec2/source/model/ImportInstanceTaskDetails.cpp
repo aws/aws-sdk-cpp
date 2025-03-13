@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportInstanceTaskDetails::ImportInstanceTaskDetails() : 
-    m_descriptionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_volumesHasBeenSet(false)
-{
-}
-
 ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode)
-  : ImportInstanceTaskDetails()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,34 @@ ImportInstanceTaskDetails& ImportInstanceTaskDetails::operator =(const XmlNode& 
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
+       m_platformHasBeenSet = true;
     }
     XmlNode volumesNode = resultNode.FirstChild("volumes");
     if(!volumesNode.IsNull())
     {
       XmlNode volumesMember = volumesNode.FirstChild("item");
+      m_volumesHasBeenSet = !volumesMember.IsNull();
       while(!volumesMember.IsNull())
       {
         m_volumes.push_back(volumesMember);
         volumesMember = volumesMember.NextNode("item");
       }
 
-      m_volumesHasBeenSet = true;
+       m_volumesHasBeenSet = true;
     }
   }
 

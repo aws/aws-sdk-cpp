@@ -33,7 +33,7 @@ namespace Model
   class AssetBundleImportJobVPCConnectionOverrideParameters
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideParameters();
+    AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideParameters() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobVPCConnectionOverrideParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The ID of the VPC Connection to apply overrides to.</p>
      */
-    inline const Aws::String& GetVPCConnectionId() const{ return m_vPCConnectionId; }
+    inline const Aws::String& GetVPCConnectionId() const { return m_vPCConnectionId; }
     inline bool VPCConnectionIdHasBeenSet() const { return m_vPCConnectionIdHasBeenSet; }
-    inline void SetVPCConnectionId(const Aws::String& value) { m_vPCConnectionIdHasBeenSet = true; m_vPCConnectionId = value; }
-    inline void SetVPCConnectionId(Aws::String&& value) { m_vPCConnectionIdHasBeenSet = true; m_vPCConnectionId = std::move(value); }
-    inline void SetVPCConnectionId(const char* value) { m_vPCConnectionIdHasBeenSet = true; m_vPCConnectionId.assign(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithVPCConnectionId(const Aws::String& value) { SetVPCConnectionId(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithVPCConnectionId(Aws::String&& value) { SetVPCConnectionId(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithVPCConnectionId(const char* value) { SetVPCConnectionId(value); return *this;}
+    template<typename VPCConnectionIdT = Aws::String>
+    void SetVPCConnectionId(VPCConnectionIdT&& value) { m_vPCConnectionIdHasBeenSet = true; m_vPCConnectionId = std::forward<VPCConnectionIdT>(value); }
+    template<typename VPCConnectionIdT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideParameters& WithVPCConnectionId(VPCConnectionIdT&& value) { SetVPCConnectionId(std::forward<VPCConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new name for the VPC connection.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideParameters& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,15 +69,14 @@ namespace Model
      * is required if you are importing the VPC connection from another Amazon Web
      * Services account or Region.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobVPCConnectionOverrideParameters& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,44 +85,40 @@ namespace Model
      * is required if you are importing the VPC connection from another Amazon Web
      * Services account or Region.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobVPCConnectionOverrideParameters& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDnsResolvers() const{ return m_dnsResolvers; }
+    inline const Aws::Vector<Aws::String>& GetDnsResolvers() const { return m_dnsResolvers; }
     inline bool DnsResolversHasBeenSet() const { return m_dnsResolversHasBeenSet; }
-    inline void SetDnsResolvers(const Aws::Vector<Aws::String>& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers = value; }
-    inline void SetDnsResolvers(Aws::Vector<Aws::String>&& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers = std::move(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithDnsResolvers(const Aws::Vector<Aws::String>& value) { SetDnsResolvers(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithDnsResolvers(Aws::Vector<Aws::String>&& value) { SetDnsResolvers(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(const Aws::String& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.push_back(value); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(Aws::String&& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(const char* value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.push_back(value); return *this; }
+    template<typename DnsResolversT = Aws::Vector<Aws::String>>
+    void SetDnsResolvers(DnsResolversT&& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers = std::forward<DnsResolversT>(value); }
+    template<typename DnsResolversT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobVPCConnectionOverrideParameters& WithDnsResolvers(DnsResolversT&& value) { SetDnsResolvers(std::forward<DnsResolversT>(value)); return *this;}
+    template<typename DnsResolversT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(DnsResolversT&& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.emplace_back(std::forward<DnsResolversT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An optional override of the role ARN to be used by the VPC connection.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AssetBundleImportJobVPCConnectionOverrideParameters& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AssetBundleImportJobVPCConnectionOverrideParameters& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class CommitmentInformation
   {
   public:
-    AWS_PRIVATENETWORKS_API CommitmentInformation();
+    AWS_PRIVATENETWORKS_API CommitmentInformation() = default;
     AWS_PRIVATENETWORKS_API CommitmentInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API CommitmentInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The duration and renewal status of the commitment period for the radio
      * unit.</p>
      */
-    inline const CommitmentConfiguration& GetCommitmentConfiguration() const{ return m_commitmentConfiguration; }
+    inline const CommitmentConfiguration& GetCommitmentConfiguration() const { return m_commitmentConfiguration; }
     inline bool CommitmentConfigurationHasBeenSet() const { return m_commitmentConfigurationHasBeenSet; }
-    inline void SetCommitmentConfiguration(const CommitmentConfiguration& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = value; }
-    inline void SetCommitmentConfiguration(CommitmentConfiguration&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::move(value); }
-    inline CommitmentInformation& WithCommitmentConfiguration(const CommitmentConfiguration& value) { SetCommitmentConfiguration(value); return *this;}
-    inline CommitmentInformation& WithCommitmentConfiguration(CommitmentConfiguration&& value) { SetCommitmentConfiguration(std::move(value)); return *this;}
+    template<typename CommitmentConfigurationT = CommitmentConfiguration>
+    void SetCommitmentConfiguration(CommitmentConfigurationT&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::forward<CommitmentConfigurationT>(value); }
+    template<typename CommitmentConfigurationT = CommitmentConfiguration>
+    CommitmentInformation& WithCommitmentConfiguration(CommitmentConfigurationT&& value) { SetCommitmentConfiguration(std::forward<CommitmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,34 +59,34 @@ namespace Model
      * renew the commitment before the expiration date, you will be billed at the
      * 60-day-commitment rate.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresOn() const{ return m_expiresOn; }
+    inline const Aws::Utils::DateTime& GetExpiresOn() const { return m_expiresOn; }
     inline bool ExpiresOnHasBeenSet() const { return m_expiresOnHasBeenSet; }
-    inline void SetExpiresOn(const Aws::Utils::DateTime& value) { m_expiresOnHasBeenSet = true; m_expiresOn = value; }
-    inline void SetExpiresOn(Aws::Utils::DateTime&& value) { m_expiresOnHasBeenSet = true; m_expiresOn = std::move(value); }
-    inline CommitmentInformation& WithExpiresOn(const Aws::Utils::DateTime& value) { SetExpiresOn(value); return *this;}
-    inline CommitmentInformation& WithExpiresOn(Aws::Utils::DateTime&& value) { SetExpiresOn(std::move(value)); return *this;}
+    template<typename ExpiresOnT = Aws::Utils::DateTime>
+    void SetExpiresOn(ExpiresOnT&& value) { m_expiresOnHasBeenSet = true; m_expiresOn = std::forward<ExpiresOnT>(value); }
+    template<typename ExpiresOnT = Aws::Utils::DateTime>
+    CommitmentInformation& WithExpiresOn(ExpiresOnT&& value) { SetExpiresOn(std::forward<ExpiresOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the commitment period started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartAt() const{ return m_startAt; }
+    inline const Aws::Utils::DateTime& GetStartAt() const { return m_startAt; }
     inline bool StartAtHasBeenSet() const { return m_startAtHasBeenSet; }
-    inline void SetStartAt(const Aws::Utils::DateTime& value) { m_startAtHasBeenSet = true; m_startAt = value; }
-    inline void SetStartAt(Aws::Utils::DateTime&& value) { m_startAtHasBeenSet = true; m_startAt = std::move(value); }
-    inline CommitmentInformation& WithStartAt(const Aws::Utils::DateTime& value) { SetStartAt(value); return *this;}
-    inline CommitmentInformation& WithStartAt(Aws::Utils::DateTime&& value) { SetStartAt(std::move(value)); return *this;}
+    template<typename StartAtT = Aws::Utils::DateTime>
+    void SetStartAt(StartAtT&& value) { m_startAtHasBeenSet = true; m_startAt = std::forward<StartAtT>(value); }
+    template<typename StartAtT = Aws::Utils::DateTime>
+    CommitmentInformation& WithStartAt(StartAtT&& value) { SetStartAt(std::forward<StartAtT>(value)); return *this;}
     ///@}
   private:
 
     CommitmentConfiguration m_commitmentConfiguration;
     bool m_commitmentConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresOn;
+    Aws::Utils::DateTime m_expiresOn{};
     bool m_expiresOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startAt;
+    Aws::Utils::DateTime m_startAt{};
     bool m_startAtHasBeenSet = false;
   };
 

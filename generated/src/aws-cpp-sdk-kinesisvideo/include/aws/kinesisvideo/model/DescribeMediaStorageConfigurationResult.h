@@ -28,7 +28,7 @@ namespace Model
   class DescribeMediaStorageConfigurationResult
   {
   public:
-    AWS_KINESISVIDEO_API DescribeMediaStorageConfigurationResult();
+    AWS_KINESISVIDEO_API DescribeMediaStorageConfigurationResult() = default;
     AWS_KINESISVIDEO_API DescribeMediaStorageConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEO_API DescribeMediaStorageConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that encapsulates, or contains, the media storage configuration
      * properties.</p>
      */
-    inline const MediaStorageConfiguration& GetMediaStorageConfiguration() const{ return m_mediaStorageConfiguration; }
-    inline void SetMediaStorageConfiguration(const MediaStorageConfiguration& value) { m_mediaStorageConfiguration = value; }
-    inline void SetMediaStorageConfiguration(MediaStorageConfiguration&& value) { m_mediaStorageConfiguration = std::move(value); }
-    inline DescribeMediaStorageConfigurationResult& WithMediaStorageConfiguration(const MediaStorageConfiguration& value) { SetMediaStorageConfiguration(value); return *this;}
-    inline DescribeMediaStorageConfigurationResult& WithMediaStorageConfiguration(MediaStorageConfiguration&& value) { SetMediaStorageConfiguration(std::move(value)); return *this;}
+    inline const MediaStorageConfiguration& GetMediaStorageConfiguration() const { return m_mediaStorageConfiguration; }
+    template<typename MediaStorageConfigurationT = MediaStorageConfiguration>
+    void SetMediaStorageConfiguration(MediaStorageConfigurationT&& value) { m_mediaStorageConfigurationHasBeenSet = true; m_mediaStorageConfiguration = std::forward<MediaStorageConfigurationT>(value); }
+    template<typename MediaStorageConfigurationT = MediaStorageConfiguration>
+    DescribeMediaStorageConfigurationResult& WithMediaStorageConfiguration(MediaStorageConfigurationT&& value) { SetMediaStorageConfiguration(std::forward<MediaStorageConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMediaStorageConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMediaStorageConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMediaStorageConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMediaStorageConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MediaStorageConfiguration m_mediaStorageConfiguration;
+    bool m_mediaStorageConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

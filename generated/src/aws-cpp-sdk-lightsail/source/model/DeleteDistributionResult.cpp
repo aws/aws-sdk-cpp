@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDistributionResult::DeleteDistributionResult()
-{
-}
-
 DeleteDistributionResult::DeleteDistributionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteDistributionResult& DeleteDistributionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetObject("operation");
-
+    m_operationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

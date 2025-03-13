@@ -18,22 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DescribeClusterSummary::DescribeClusterSummary() : 
-    m_arnHasBeenSet(false),
-    m_channelIdsHasBeenSet(false),
-    m_clusterType(ClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkSettingsHasBeenSet(false),
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DescribeClusterSummary::DescribeClusterSummary(JsonView jsonValue)
-  : DescribeClusterSummary()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ DescribeClusterSummary& DescribeClusterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelIds"))
   {
     Aws::Utils::Array<JsonView> channelIdsJsonList = jsonValue.GetArray("channelIds");
@@ -56,49 +39,36 @@ DescribeClusterSummary& DescribeClusterSummary::operator =(JsonView jsonValue)
     }
     m_channelIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterType"))
   {
     m_clusterType = ClusterTypeMapper::GetClusterTypeForName(jsonValue.GetString("clusterType"));
-
     m_clusterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceRoleArn"))
   {
     m_instanceRoleArn = jsonValue.GetString("instanceRoleArn");
-
     m_instanceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkSettings"))
   {
     m_networkSettings = jsonValue.GetObject("networkSettings");
-
     m_networkSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

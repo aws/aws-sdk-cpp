@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-UsersAndGroups::UsersAndGroups() : 
-    m_userIdsHasBeenSet(false),
-    m_userGroupsHasBeenSet(false)
-{
-}
-
 UsersAndGroups::UsersAndGroups(JsonView jsonValue)
-  : UsersAndGroups()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ UsersAndGroups& UsersAndGroups::operator =(JsonView jsonValue)
     }
     m_userIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userGroups"))
   {
     Aws::Utils::Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");
@@ -51,7 +43,6 @@ UsersAndGroups& UsersAndGroups::operator =(JsonView jsonValue)
     }
     m_userGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

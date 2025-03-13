@@ -31,7 +31,7 @@ namespace Model
   class StartImportResult
   {
   public:
-    AWS_CLOUDTRAIL_API StartImportResult();
+    AWS_CLOUDTRAIL_API StartImportResult() = default;
     AWS_CLOUDTRAIL_API StartImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API StartImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,38 +40,35 @@ namespace Model
     /**
      * <p> The ID of the import. </p>
      */
-    inline const Aws::String& GetImportId() const{ return m_importId; }
-    inline void SetImportId(const Aws::String& value) { m_importId = value; }
-    inline void SetImportId(Aws::String&& value) { m_importId = std::move(value); }
-    inline void SetImportId(const char* value) { m_importId.assign(value); }
-    inline StartImportResult& WithImportId(const Aws::String& value) { SetImportId(value); return *this;}
-    inline StartImportResult& WithImportId(Aws::String&& value) { SetImportId(std::move(value)); return *this;}
-    inline StartImportResult& WithImportId(const char* value) { SetImportId(value); return *this;}
+    inline const Aws::String& GetImportId() const { return m_importId; }
+    template<typename ImportIdT = Aws::String>
+    void SetImportId(ImportIdT&& value) { m_importIdHasBeenSet = true; m_importId = std::forward<ImportIdT>(value); }
+    template<typename ImportIdT = Aws::String>
+    StartImportResult& WithImportId(ImportIdT&& value) { SetImportId(std::forward<ImportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the destination event data store. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
-    inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinations = std::move(value); }
-    inline StartImportResult& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
-    inline StartImportResult& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline StartImportResult& AddDestinations(const Aws::String& value) { m_destinations.push_back(value); return *this; }
-    inline StartImportResult& AddDestinations(Aws::String&& value) { m_destinations.push_back(std::move(value)); return *this; }
-    inline StartImportResult& AddDestinations(const char* value) { m_destinations.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDestinations() const { return m_destinations; }
+    template<typename DestinationsT = Aws::Vector<Aws::String>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<Aws::String>>
+    StartImportResult& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = Aws::String>
+    StartImportResult& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The source S3 bucket for the import. </p>
      */
-    inline const ImportSource& GetImportSource() const{ return m_importSource; }
-    inline void SetImportSource(const ImportSource& value) { m_importSource = value; }
-    inline void SetImportSource(ImportSource&& value) { m_importSource = std::move(value); }
-    inline StartImportResult& WithImportSource(const ImportSource& value) { SetImportSource(value); return *this;}
-    inline StartImportResult& WithImportSource(ImportSource&& value) { SetImportSource(std::move(value)); return *this;}
+    inline const ImportSource& GetImportSource() const { return m_importSource; }
+    template<typename ImportSourceT = ImportSource>
+    void SetImportSource(ImportSourceT&& value) { m_importSourceHasBeenSet = true; m_importSource = std::forward<ImportSourceT>(value); }
+    template<typename ImportSourceT = ImportSource>
+    StartImportResult& WithImportSource(ImportSourceT&& value) { SetImportSource(std::forward<ImportSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,11 +77,11 @@ namespace Model
      * request, and limit imported trail events to only those events logged within a
      * specified time period. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartEventTime() const{ return m_startEventTime; }
-    inline void SetStartEventTime(const Aws::Utils::DateTime& value) { m_startEventTime = value; }
-    inline void SetStartEventTime(Aws::Utils::DateTime&& value) { m_startEventTime = std::move(value); }
-    inline StartImportResult& WithStartEventTime(const Aws::Utils::DateTime& value) { SetStartEventTime(value); return *this;}
-    inline StartImportResult& WithStartEventTime(Aws::Utils::DateTime&& value) { SetStartEventTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartEventTime() const { return m_startEventTime; }
+    template<typename StartEventTimeT = Aws::Utils::DateTime>
+    void SetStartEventTime(StartEventTimeT&& value) { m_startEventTimeHasBeenSet = true; m_startEventTime = std::forward<StartEventTimeT>(value); }
+    template<typename StartEventTimeT = Aws::Utils::DateTime>
+    StartImportResult& WithStartEventTime(StartEventTimeT&& value) { SetStartEventTime(std::forward<StartEventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,11 +90,11 @@ namespace Model
      * request, and limit imported trail events to only those events logged within a
      * specified time period. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndEventTime() const{ return m_endEventTime; }
-    inline void SetEndEventTime(const Aws::Utils::DateTime& value) { m_endEventTime = value; }
-    inline void SetEndEventTime(Aws::Utils::DateTime&& value) { m_endEventTime = std::move(value); }
-    inline StartImportResult& WithEndEventTime(const Aws::Utils::DateTime& value) { SetEndEventTime(value); return *this;}
-    inline StartImportResult& WithEndEventTime(Aws::Utils::DateTime&& value) { SetEndEventTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndEventTime() const { return m_endEventTime; }
+    template<typename EndEventTimeT = Aws::Utils::DateTime>
+    void SetEndEventTime(EndEventTimeT&& value) { m_endEventTimeHasBeenSet = true; m_endEventTime = std::forward<EndEventTimeT>(value); }
+    template<typename EndEventTimeT = Aws::Utils::DateTime>
+    StartImportResult& WithEndEventTime(EndEventTimeT&& value) { SetEndEventTime(std::forward<EndEventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,64 +103,69 @@ namespace Model
      * import finishes with a status of <code>COMPLETED</code> if there were no
      * failures, or <code>FAILED</code> if there were failures. </p>
      */
-    inline const ImportStatus& GetImportStatus() const{ return m_importStatus; }
-    inline void SetImportStatus(const ImportStatus& value) { m_importStatus = value; }
-    inline void SetImportStatus(ImportStatus&& value) { m_importStatus = std::move(value); }
-    inline StartImportResult& WithImportStatus(const ImportStatus& value) { SetImportStatus(value); return *this;}
-    inline StartImportResult& WithImportStatus(ImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
+    inline ImportStatus GetImportStatus() const { return m_importStatus; }
+    inline void SetImportStatus(ImportStatus value) { m_importStatusHasBeenSet = true; m_importStatus = value; }
+    inline StartImportResult& WithImportStatus(ImportStatus value) { SetImportStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp for the import's creation. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline StartImportResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline StartImportResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    StartImportResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp of the import's last update, if applicable. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestamp = std::move(value); }
-    inline StartImportResult& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline StartImportResult& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    StartImportResult& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartImportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartImportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartImportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartImportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_importId;
+    bool m_importIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_destinations;
+    bool m_destinationsHasBeenSet = false;
 
     ImportSource m_importSource;
+    bool m_importSourceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startEventTime;
+    Aws::Utils::DateTime m_startEventTime{};
+    bool m_startEventTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endEventTime;
+    Aws::Utils::DateTime m_endEventTime{};
+    bool m_endEventTimeHasBeenSet = false;
 
-    ImportStatus m_importStatus;
+    ImportStatus m_importStatus{ImportStatus::NOT_SET};
+    bool m_importStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
+    bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

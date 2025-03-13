@@ -34,7 +34,7 @@ namespace Model
   class BodySectionDynamicCategoryDimensionConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API BodySectionDynamicCategoryDimensionConfiguration();
+    AWS_QUICKSIGHT_API BodySectionDynamicCategoryDimensionConfiguration() = default;
     AWS_QUICKSIGHT_API BodySectionDynamicCategoryDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BodySectionDynamicCategoryDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,19 @@ namespace Model
 
     ///@{
     
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline BodySectionDynamicCategoryDimensionConfiguration& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline BodySectionDynamicCategoryDimensionConfiguration& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    BodySectionDynamicCategoryDimensionConfiguration& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of values to use from the column for repetition.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline BodySectionDynamicCategoryDimensionConfiguration& WithLimit(int value) { SetLimit(value); return *this;}
@@ -64,21 +64,21 @@ namespace Model
     /**
      * <p>Sort criteria on the column values that you use for repetition. </p>
      */
-    inline const Aws::Vector<ColumnSort>& GetSortByMetrics() const{ return m_sortByMetrics; }
+    inline const Aws::Vector<ColumnSort>& GetSortByMetrics() const { return m_sortByMetrics; }
     inline bool SortByMetricsHasBeenSet() const { return m_sortByMetricsHasBeenSet; }
-    inline void SetSortByMetrics(const Aws::Vector<ColumnSort>& value) { m_sortByMetricsHasBeenSet = true; m_sortByMetrics = value; }
-    inline void SetSortByMetrics(Aws::Vector<ColumnSort>&& value) { m_sortByMetricsHasBeenSet = true; m_sortByMetrics = std::move(value); }
-    inline BodySectionDynamicCategoryDimensionConfiguration& WithSortByMetrics(const Aws::Vector<ColumnSort>& value) { SetSortByMetrics(value); return *this;}
-    inline BodySectionDynamicCategoryDimensionConfiguration& WithSortByMetrics(Aws::Vector<ColumnSort>&& value) { SetSortByMetrics(std::move(value)); return *this;}
-    inline BodySectionDynamicCategoryDimensionConfiguration& AddSortByMetrics(const ColumnSort& value) { m_sortByMetricsHasBeenSet = true; m_sortByMetrics.push_back(value); return *this; }
-    inline BodySectionDynamicCategoryDimensionConfiguration& AddSortByMetrics(ColumnSort&& value) { m_sortByMetricsHasBeenSet = true; m_sortByMetrics.push_back(std::move(value)); return *this; }
+    template<typename SortByMetricsT = Aws::Vector<ColumnSort>>
+    void SetSortByMetrics(SortByMetricsT&& value) { m_sortByMetricsHasBeenSet = true; m_sortByMetrics = std::forward<SortByMetricsT>(value); }
+    template<typename SortByMetricsT = Aws::Vector<ColumnSort>>
+    BodySectionDynamicCategoryDimensionConfiguration& WithSortByMetrics(SortByMetricsT&& value) { SetSortByMetrics(std::forward<SortByMetricsT>(value)); return *this;}
+    template<typename SortByMetricsT = ColumnSort>
+    BodySectionDynamicCategoryDimensionConfiguration& AddSortByMetrics(SortByMetricsT&& value) { m_sortByMetricsHasBeenSet = true; m_sortByMetrics.emplace_back(std::forward<SortByMetricsT>(value)); return *this; }
     ///@}
   private:
 
     ColumnIdentifier m_column;
     bool m_columnHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::Vector<ColumnSort> m_sortByMetrics;

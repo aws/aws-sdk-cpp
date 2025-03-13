@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings() : 
-    m_inputAttachmentNameReferenceHasBeenSet(false),
-    m_inputClippingSettingsHasBeenSet(false),
-    m_urlPathHasBeenSet(false)
-{
-}
-
 InputSwitchScheduleActionSettings::InputSwitchScheduleActionSettings(JsonView jsonValue)
-  : InputSwitchScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InputSwitchScheduleActionSettings& InputSwitchScheduleActionSettings::operator =
   if(jsonValue.ValueExists("inputAttachmentNameReference"))
   {
     m_inputAttachmentNameReference = jsonValue.GetString("inputAttachmentNameReference");
-
     m_inputAttachmentNameReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputClippingSettings"))
   {
     m_inputClippingSettings = jsonValue.GetObject("inputClippingSettings");
-
     m_inputClippingSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("urlPath"))
   {
     Aws::Utils::Array<JsonView> urlPathJsonList = jsonValue.GetArray("urlPath");
@@ -56,7 +44,6 @@ InputSwitchScheduleActionSettings& InputSwitchScheduleActionSettings::operator =
     }
     m_urlPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetActivityTaskRequest::GetActivityTaskRequest() : 
-    m_activityArnHasBeenSet(false),
-    m_workerNameHasBeenSet(false)
-{
-}
-
 Aws::String GetActivityTaskRequest::SerializePayload() const
 {
   JsonValue payload;

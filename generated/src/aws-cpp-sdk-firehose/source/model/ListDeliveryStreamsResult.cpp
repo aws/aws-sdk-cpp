@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDeliveryStreamsResult::ListDeliveryStreamsResult() : 
-    m_hasMoreDeliveryStreams(false)
-{
-}
-
 ListDeliveryStreamsResult::ListDeliveryStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListDeliveryStreamsResult()
 {
   *this = result;
 }
@@ -38,20 +32,20 @@ ListDeliveryStreamsResult& ListDeliveryStreamsResult::operator =(const Aws::Amaz
     {
       m_deliveryStreamNames.push_back(deliveryStreamNamesJsonList[deliveryStreamNamesIndex].AsString());
     }
+    m_deliveryStreamNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasMoreDeliveryStreams"))
   {
     m_hasMoreDeliveryStreams = jsonValue.GetBool("HasMoreDeliveryStreams");
-
+    m_hasMoreDeliveryStreamsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

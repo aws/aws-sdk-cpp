@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-DataPartitionUploadOptions::DataPartitionUploadOptions() : 
-    m_expressionHasBeenSet(false),
-    m_conditionLanguageVersion(0),
-    m_conditionLanguageVersionHasBeenSet(false)
-{
-}
-
 DataPartitionUploadOptions::DataPartitionUploadOptions(JsonView jsonValue)
-  : DataPartitionUploadOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataPartitionUploadOptions& DataPartitionUploadOptions::operator =(JsonView json
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionLanguageVersion"))
   {
     m_conditionLanguageVersion = jsonValue.GetInteger("conditionLanguageVersion");
-
     m_conditionLanguageVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

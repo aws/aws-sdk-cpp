@@ -33,7 +33,7 @@ namespace Model
   class QueryRefinement
   {
   public:
-    AWS_GEOPLACES_API QueryRefinement();
+    AWS_GEOPLACES_API QueryRefinement() = default;
     AWS_GEOPLACES_API QueryRefinement(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API QueryRefinement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>The term that will be suggested to the user.</p>
      */
-    inline const Aws::String& GetRefinedTerm() const{ return m_refinedTerm; }
+    inline const Aws::String& GetRefinedTerm() const { return m_refinedTerm; }
     inline bool RefinedTermHasBeenSet() const { return m_refinedTermHasBeenSet; }
-    inline void SetRefinedTerm(const Aws::String& value) { m_refinedTermHasBeenSet = true; m_refinedTerm = value; }
-    inline void SetRefinedTerm(Aws::String&& value) { m_refinedTermHasBeenSet = true; m_refinedTerm = std::move(value); }
-    inline void SetRefinedTerm(const char* value) { m_refinedTermHasBeenSet = true; m_refinedTerm.assign(value); }
-    inline QueryRefinement& WithRefinedTerm(const Aws::String& value) { SetRefinedTerm(value); return *this;}
-    inline QueryRefinement& WithRefinedTerm(Aws::String&& value) { SetRefinedTerm(std::move(value)); return *this;}
-    inline QueryRefinement& WithRefinedTerm(const char* value) { SetRefinedTerm(value); return *this;}
+    template<typename RefinedTermT = Aws::String>
+    void SetRefinedTerm(RefinedTermT&& value) { m_refinedTermHasBeenSet = true; m_refinedTerm = std::forward<RefinedTermT>(value); }
+    template<typename RefinedTermT = Aws::String>
+    QueryRefinement& WithRefinedTerm(RefinedTermT&& value) { SetRefinedTerm(std::forward<RefinedTermT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sub-string of the original query that is replaced by this query term.</p>
      */
-    inline const Aws::String& GetOriginalTerm() const{ return m_originalTerm; }
+    inline const Aws::String& GetOriginalTerm() const { return m_originalTerm; }
     inline bool OriginalTermHasBeenSet() const { return m_originalTermHasBeenSet; }
-    inline void SetOriginalTerm(const Aws::String& value) { m_originalTermHasBeenSet = true; m_originalTerm = value; }
-    inline void SetOriginalTerm(Aws::String&& value) { m_originalTermHasBeenSet = true; m_originalTerm = std::move(value); }
-    inline void SetOriginalTerm(const char* value) { m_originalTermHasBeenSet = true; m_originalTerm.assign(value); }
-    inline QueryRefinement& WithOriginalTerm(const Aws::String& value) { SetOriginalTerm(value); return *this;}
-    inline QueryRefinement& WithOriginalTerm(Aws::String&& value) { SetOriginalTerm(std::move(value)); return *this;}
-    inline QueryRefinement& WithOriginalTerm(const char* value) { SetOriginalTerm(value); return *this;}
+    template<typename OriginalTermT = Aws::String>
+    void SetOriginalTerm(OriginalTermT&& value) { m_originalTermHasBeenSet = true; m_originalTerm = std::forward<OriginalTermT>(value); }
+    template<typename OriginalTermT = Aws::String>
+    QueryRefinement& WithOriginalTerm(OriginalTermT&& value) { SetOriginalTerm(std::forward<OriginalTermT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start index of the parsed component.</p>
      */
-    inline int GetStartIndex() const{ return m_startIndex; }
+    inline int GetStartIndex() const { return m_startIndex; }
     inline bool StartIndexHasBeenSet() const { return m_startIndexHasBeenSet; }
     inline void SetStartIndex(int value) { m_startIndexHasBeenSet = true; m_startIndex = value; }
     inline QueryRefinement& WithStartIndex(int value) { SetStartIndex(value); return *this;}
@@ -81,7 +77,7 @@ namespace Model
     /**
      * <p>End index of the parsed query.</p>
      */
-    inline int GetEndIndex() const{ return m_endIndex; }
+    inline int GetEndIndex() const { return m_endIndex; }
     inline bool EndIndexHasBeenSet() const { return m_endIndexHasBeenSet; }
     inline void SetEndIndex(int value) { m_endIndexHasBeenSet = true; m_endIndex = value; }
     inline QueryRefinement& WithEndIndex(int value) { SetEndIndex(value); return *this;}
@@ -94,10 +90,10 @@ namespace Model
     Aws::String m_originalTerm;
     bool m_originalTermHasBeenSet = false;
 
-    int m_startIndex;
+    int m_startIndex{0};
     bool m_startIndexHasBeenSet = false;
 
-    int m_endIndex;
+    int m_endIndex{0};
     bool m_endIndexHasBeenSet = false;
   };
 

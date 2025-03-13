@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ActiveInstance::ActiveInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_spotInstanceRequestIdHasBeenSet(false),
-    m_instanceHealth(InstanceHealthStatus::NOT_SET),
-    m_instanceHealthHasBeenSet(false)
-{
-}
-
 ActiveInstance::ActiveInstance(const XmlNode& xmlNode)
-  : ActiveInstance()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ ActiveInstance& ActiveInstance::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode spotInstanceRequestIdNode = resultNode.FirstChild("spotInstanceRequestId");
     if(!spotInstanceRequestIdNode.IsNull())
     {
       m_spotInstanceRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(spotInstanceRequestIdNode.GetText());
       m_spotInstanceRequestIdHasBeenSet = true;
+       m_spotInstanceRequestIdHasBeenSet = true;
     }
     XmlNode instanceHealthNode = resultNode.FirstChild("instanceHealth");
     if(!instanceHealthNode.IsNull())
     {
-      m_instanceHealth = InstanceHealthStatusMapper::GetInstanceHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceHealthNode.GetText()).c_str()).c_str());
+      m_instanceHealth = InstanceHealthStatusMapper::GetInstanceHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceHealthNode.GetText()).c_str()));
       m_instanceHealthHasBeenSet = true;
+       m_instanceHealthHasBeenSet = true;
     }
   }
 

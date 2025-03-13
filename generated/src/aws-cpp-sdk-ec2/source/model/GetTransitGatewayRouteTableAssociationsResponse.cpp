@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTransitGatewayRouteTableAssociationsResponse::GetTransitGatewayRouteTableAssociationsResponse()
-{
-}
-
 GetTransitGatewayRouteTableAssociationsResponse::GetTransitGatewayRouteTableAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetTransitGatewayRouteTableAssociationsResponse& GetTransitGatewayRouteTableAsso
     if(!associationsNode.IsNull())
     {
       XmlNode associationsMember = associationsNode.FirstChild("item");
+      m_associationsHasBeenSet = !associationsMember.IsNull();
       while(!associationsMember.IsNull())
       {
         m_associations.push_back(associationsMember);
@@ -53,6 +50,7 @@ GetTransitGatewayRouteTableAssociationsResponse& GetTransitGatewayRouteTableAsso
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ GetTransitGatewayRouteTableAssociationsResponse& GetTransitGatewayRouteTableAsso
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetTransitGatewayRouteTableAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

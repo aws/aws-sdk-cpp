@@ -33,7 +33,7 @@ namespace Model
   class EventSourcesConfig
   {
   public:
-    AWS_DEVOPSGURU_API EventSourcesConfig();
+    AWS_DEVOPSGURU_API EventSourcesConfig() = default;
     AWS_DEVOPSGURU_API EventSourcesConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API EventSourcesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Information about whether DevOps Guru is configured to consume
      * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
-    inline const AmazonCodeGuruProfilerIntegration& GetAmazonCodeGuruProfiler() const{ return m_amazonCodeGuruProfiler; }
+    inline const AmazonCodeGuruProfilerIntegration& GetAmazonCodeGuruProfiler() const { return m_amazonCodeGuruProfiler; }
     inline bool AmazonCodeGuruProfilerHasBeenSet() const { return m_amazonCodeGuruProfilerHasBeenSet; }
-    inline void SetAmazonCodeGuruProfiler(const AmazonCodeGuruProfilerIntegration& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = value; }
-    inline void SetAmazonCodeGuruProfiler(AmazonCodeGuruProfilerIntegration&& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = std::move(value); }
-    inline EventSourcesConfig& WithAmazonCodeGuruProfiler(const AmazonCodeGuruProfilerIntegration& value) { SetAmazonCodeGuruProfiler(value); return *this;}
-    inline EventSourcesConfig& WithAmazonCodeGuruProfiler(AmazonCodeGuruProfilerIntegration&& value) { SetAmazonCodeGuruProfiler(std::move(value)); return *this;}
+    template<typename AmazonCodeGuruProfilerT = AmazonCodeGuruProfilerIntegration>
+    void SetAmazonCodeGuruProfiler(AmazonCodeGuruProfilerT&& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = std::forward<AmazonCodeGuruProfilerT>(value); }
+    template<typename AmazonCodeGuruProfilerT = AmazonCodeGuruProfilerIntegration>
+    EventSourcesConfig& WithAmazonCodeGuruProfiler(AmazonCodeGuruProfilerT&& value) { SetAmazonCodeGuruProfiler(std::forward<AmazonCodeGuruProfilerT>(value)); return *this;}
     ///@}
   private:
 

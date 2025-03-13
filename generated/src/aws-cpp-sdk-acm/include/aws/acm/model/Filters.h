@@ -35,7 +35,7 @@ namespace Model
   class Filters
   {
   public:
-    AWS_ACM_API Filters();
+    AWS_ACM_API Filters() = default;
     AWS_ACM_API Filters(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
      */
-    inline const Aws::Vector<ExtendedKeyUsageName>& GetExtendedKeyUsage() const{ return m_extendedKeyUsage; }
+    inline const Aws::Vector<ExtendedKeyUsageName>& GetExtendedKeyUsage() const { return m_extendedKeyUsage; }
     inline bool ExtendedKeyUsageHasBeenSet() const { return m_extendedKeyUsageHasBeenSet; }
-    inline void SetExtendedKeyUsage(const Aws::Vector<ExtendedKeyUsageName>& value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage = value; }
-    inline void SetExtendedKeyUsage(Aws::Vector<ExtendedKeyUsageName>&& value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage = std::move(value); }
-    inline Filters& WithExtendedKeyUsage(const Aws::Vector<ExtendedKeyUsageName>& value) { SetExtendedKeyUsage(value); return *this;}
-    inline Filters& WithExtendedKeyUsage(Aws::Vector<ExtendedKeyUsageName>&& value) { SetExtendedKeyUsage(std::move(value)); return *this;}
-    inline Filters& AddExtendedKeyUsage(const ExtendedKeyUsageName& value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage.push_back(value); return *this; }
-    inline Filters& AddExtendedKeyUsage(ExtendedKeyUsageName&& value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage.push_back(std::move(value)); return *this; }
+    template<typename ExtendedKeyUsageT = Aws::Vector<ExtendedKeyUsageName>>
+    void SetExtendedKeyUsage(ExtendedKeyUsageT&& value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage = std::forward<ExtendedKeyUsageT>(value); }
+    template<typename ExtendedKeyUsageT = Aws::Vector<ExtendedKeyUsageName>>
+    Filters& WithExtendedKeyUsage(ExtendedKeyUsageT&& value) { SetExtendedKeyUsage(std::forward<ExtendedKeyUsageT>(value)); return *this;}
+    inline Filters& AddExtendedKeyUsage(ExtendedKeyUsageName value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specify one or more <a>KeyUsage</a> extension values.</p>
      */
-    inline const Aws::Vector<KeyUsageName>& GetKeyUsage() const{ return m_keyUsage; }
+    inline const Aws::Vector<KeyUsageName>& GetKeyUsage() const { return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
-    inline void SetKeyUsage(const Aws::Vector<KeyUsageName>& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
-    inline void SetKeyUsage(Aws::Vector<KeyUsageName>&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
-    inline Filters& WithKeyUsage(const Aws::Vector<KeyUsageName>& value) { SetKeyUsage(value); return *this;}
-    inline Filters& WithKeyUsage(Aws::Vector<KeyUsageName>&& value) { SetKeyUsage(std::move(value)); return *this;}
-    inline Filters& AddKeyUsage(const KeyUsageName& value) { m_keyUsageHasBeenSet = true; m_keyUsage.push_back(value); return *this; }
-    inline Filters& AddKeyUsage(KeyUsageName&& value) { m_keyUsageHasBeenSet = true; m_keyUsage.push_back(std::move(value)); return *this; }
+    template<typename KeyUsageT = Aws::Vector<KeyUsageName>>
+    void SetKeyUsage(KeyUsageT&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::forward<KeyUsageT>(value); }
+    template<typename KeyUsageT = Aws::Vector<KeyUsageName>>
+    Filters& WithKeyUsage(KeyUsageT&& value) { SetKeyUsage(std::forward<KeyUsageT>(value)); return *this;}
+    inline Filters& AddKeyUsage(KeyUsageName value) { m_keyUsageHasBeenSet = true; m_keyUsage.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +77,13 @@ namespace Model
      * ["RSA_2048","RSA_4096"]</code> returns both <code>RSA_2048</code> and
      * <code>RSA_4096</code> certificates.</p>
      */
-    inline const Aws::Vector<KeyAlgorithm>& GetKeyTypes() const{ return m_keyTypes; }
+    inline const Aws::Vector<KeyAlgorithm>& GetKeyTypes() const { return m_keyTypes; }
     inline bool KeyTypesHasBeenSet() const { return m_keyTypesHasBeenSet; }
-    inline void SetKeyTypes(const Aws::Vector<KeyAlgorithm>& value) { m_keyTypesHasBeenSet = true; m_keyTypes = value; }
-    inline void SetKeyTypes(Aws::Vector<KeyAlgorithm>&& value) { m_keyTypesHasBeenSet = true; m_keyTypes = std::move(value); }
-    inline Filters& WithKeyTypes(const Aws::Vector<KeyAlgorithm>& value) { SetKeyTypes(value); return *this;}
-    inline Filters& WithKeyTypes(Aws::Vector<KeyAlgorithm>&& value) { SetKeyTypes(std::move(value)); return *this;}
-    inline Filters& AddKeyTypes(const KeyAlgorithm& value) { m_keyTypesHasBeenSet = true; m_keyTypes.push_back(value); return *this; }
-    inline Filters& AddKeyTypes(KeyAlgorithm&& value) { m_keyTypesHasBeenSet = true; m_keyTypes.push_back(std::move(value)); return *this; }
+    template<typename KeyTypesT = Aws::Vector<KeyAlgorithm>>
+    void SetKeyTypes(KeyTypesT&& value) { m_keyTypesHasBeenSet = true; m_keyTypes = std::forward<KeyTypesT>(value); }
+    template<typename KeyTypesT = Aws::Vector<KeyAlgorithm>>
+    Filters& WithKeyTypes(KeyTypesT&& value) { SetKeyTypes(std::forward<KeyTypesT>(value)); return *this;}
+    inline Filters& AddKeyTypes(KeyAlgorithm value) { m_keyTypesHasBeenSet = true; m_keyTypes.push_back(value); return *this; }
     ///@}
   private:
 

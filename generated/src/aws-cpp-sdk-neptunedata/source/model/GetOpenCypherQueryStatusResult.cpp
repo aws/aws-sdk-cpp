@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOpenCypherQueryStatusResult::GetOpenCypherQueryStatusResult()
-{
-}
-
 GetOpenCypherQueryStatusResult::GetOpenCypherQueryStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetOpenCypherQueryStatusResult& GetOpenCypherQueryStatusResult::operator =(const
   if(jsonValue.ValueExists("queryId"))
   {
     m_queryId = jsonValue.GetString("queryId");
-
+    m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryString"))
   {
     m_queryString = jsonValue.GetString("queryString");
-
+    m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryEvalStats"))
   {
     m_queryEvalStats = jsonValue.GetObject("queryEvalStats");
-
+    m_queryEvalStatsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

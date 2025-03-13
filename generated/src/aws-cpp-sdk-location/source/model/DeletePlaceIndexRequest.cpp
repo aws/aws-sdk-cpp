@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePlaceIndexRequest::DeletePlaceIndexRequest() : 
-    m_indexNameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePlaceIndexRequest::SerializePayload() const
 {
   return {};

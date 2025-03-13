@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetCalculatedAttributeForProfileResult::BatchGetCalculatedAttributeForProfileResult()
-{
-}
-
 BatchGetCalculatedAttributeForProfileResult::BatchGetCalculatedAttributeForProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetCalculatedAttributeForProfileResult& BatchGetCalculatedAttributeForProfi
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedAttributeValues"))
   {
     Aws::Utils::Array<JsonView> calculatedAttributeValuesJsonList = jsonValue.GetArray("CalculatedAttributeValues");
@@ -45,20 +41,20 @@ BatchGetCalculatedAttributeForProfileResult& BatchGetCalculatedAttributeForProfi
     {
       m_calculatedAttributeValues.push_back(calculatedAttributeValuesJsonList[calculatedAttributeValuesIndex].AsObject());
     }
+    m_calculatedAttributeValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionOverrides"))
   {
     m_conditionOverrides = jsonValue.GetObject("ConditionOverrides");
-
+    m_conditionOverridesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

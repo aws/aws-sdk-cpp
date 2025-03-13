@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafv2CustomHttpHeader::AwsWafv2CustomHttpHeader() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AwsWafv2CustomHttpHeader::AwsWafv2CustomHttpHeader(JsonView jsonValue)
-  : AwsWafv2CustomHttpHeader()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsWafv2CustomHttpHeader& AwsWafv2CustomHttpHeader::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

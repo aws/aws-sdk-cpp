@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRecordingConfigurationResult::CreateRecordingConfigurationResult()
-{
-}
-
 CreateRecordingConfigurationResult::CreateRecordingConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateRecordingConfigurationResult& CreateRecordingConfigurationResult::operator
   if(jsonValue.ValueExists("recordingConfiguration"))
   {
     m_recordingConfiguration = jsonValue.GetObject("recordingConfiguration");
-
+    m_recordingConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

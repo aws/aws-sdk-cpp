@@ -12,17 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterRequest::UpdateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_notificationTopicArnHasBeenSet(false),
-    m_notificationTopicStatusHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

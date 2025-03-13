@@ -18,14 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-VpcSecurityGroupMembership::VpcSecurityGroupMembership() : 
-    m_statusHasBeenSet(false),
-    m_vpcSecurityGroupIdHasBeenSet(false)
-{
-}
-
 VpcSecurityGroupMembership::VpcSecurityGroupMembership(JsonView jsonValue)
-  : VpcSecurityGroupMembership()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VpcSecurityGroupMembership& VpcSecurityGroupMembership::operator =(JsonView json
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcSecurityGroupId"))
   {
     m_vpcSecurityGroupId = jsonValue.GetString("vpcSecurityGroupId");
-
     m_vpcSecurityGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

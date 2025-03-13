@@ -12,10 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInvitationsCountRequest::GetInvitationsCountRequest()
-{
-}
-
 Aws::String GetInvitationsCountRequest::SerializePayload() const
 {
   return {};

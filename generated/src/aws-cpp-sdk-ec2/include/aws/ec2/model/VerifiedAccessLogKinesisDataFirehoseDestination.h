@@ -32,7 +32,7 @@ namespace Model
   class VerifiedAccessLogKinesisDataFirehoseDestination
   {
   public:
-    AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestination();
+    AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestination() = default;
     AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VerifiedAccessLogKinesisDataFirehoseDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Indicates whether logging is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VerifiedAccessLogKinesisDataFirehoseDestination& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,30 +54,28 @@ namespace Model
     /**
      * <p>The delivery status.</p>
      */
-    inline const VerifiedAccessLogDeliveryStatus& GetDeliveryStatus() const{ return m_deliveryStatus; }
+    inline const VerifiedAccessLogDeliveryStatus& GetDeliveryStatus() const { return m_deliveryStatus; }
     inline bool DeliveryStatusHasBeenSet() const { return m_deliveryStatusHasBeenSet; }
-    inline void SetDeliveryStatus(const VerifiedAccessLogDeliveryStatus& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = value; }
-    inline void SetDeliveryStatus(VerifiedAccessLogDeliveryStatus&& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = std::move(value); }
-    inline VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStatus(const VerifiedAccessLogDeliveryStatus& value) { SetDeliveryStatus(value); return *this;}
-    inline VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStatus(VerifiedAccessLogDeliveryStatus&& value) { SetDeliveryStatus(std::move(value)); return *this;}
+    template<typename DeliveryStatusT = VerifiedAccessLogDeliveryStatus>
+    void SetDeliveryStatus(DeliveryStatusT&& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = std::forward<DeliveryStatusT>(value); }
+    template<typename DeliveryStatusT = VerifiedAccessLogDeliveryStatus>
+    VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStatus(DeliveryStatusT&& value) { SetDeliveryStatus(std::forward<DeliveryStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the delivery stream.</p>
      */
-    inline const Aws::String& GetDeliveryStream() const{ return m_deliveryStream; }
+    inline const Aws::String& GetDeliveryStream() const { return m_deliveryStream; }
     inline bool DeliveryStreamHasBeenSet() const { return m_deliveryStreamHasBeenSet; }
-    inline void SetDeliveryStream(const Aws::String& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = value; }
-    inline void SetDeliveryStream(Aws::String&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::move(value); }
-    inline void SetDeliveryStream(const char* value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream.assign(value); }
-    inline VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStream(const Aws::String& value) { SetDeliveryStream(value); return *this;}
-    inline VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStream(Aws::String&& value) { SetDeliveryStream(std::move(value)); return *this;}
-    inline VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStream(const char* value) { SetDeliveryStream(value); return *this;}
+    template<typename DeliveryStreamT = Aws::String>
+    void SetDeliveryStream(DeliveryStreamT&& value) { m_deliveryStreamHasBeenSet = true; m_deliveryStream = std::forward<DeliveryStreamT>(value); }
+    template<typename DeliveryStreamT = Aws::String>
+    VerifiedAccessLogKinesisDataFirehoseDestination& WithDeliveryStream(DeliveryStreamT&& value) { SetDeliveryStream(std::forward<DeliveryStreamT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     VerifiedAccessLogDeliveryStatus m_deliveryStatus;

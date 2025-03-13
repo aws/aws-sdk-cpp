@@ -18,18 +18,7 @@ namespace SWF
 namespace Model
 {
 
-LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes() : 
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_timeoutType(LambdaFunctionTimeoutType::NOT_SET),
-    m_timeoutTypeHasBeenSet(false)
-{
-}
-
 LambdaFunctionTimedOutEventAttributes::LambdaFunctionTimedOutEventAttributes(JsonView jsonValue)
-  : LambdaFunctionTimedOutEventAttributes()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ LambdaFunctionTimedOutEventAttributes& LambdaFunctionTimedOutEventAttributes::op
   if(jsonValue.ValueExists("scheduledEventId"))
   {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
-
     m_scheduledEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutType"))
   {
     m_timeoutType = LambdaFunctionTimeoutTypeMapper::GetLambdaFunctionTimeoutTypeForName(jsonValue.GetString("timeoutType"));
-
     m_timeoutTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

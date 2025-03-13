@@ -18,15 +18,7 @@ namespace SWF
 namespace Model
 {
 
-RequestCancelExternalWorkflowExecutionDecisionAttributes::RequestCancelExternalWorkflowExecutionDecisionAttributes() : 
-    m_workflowIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_controlHasBeenSet(false)
-{
-}
-
 RequestCancelExternalWorkflowExecutionDecisionAttributes::RequestCancelExternalWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-  : RequestCancelExternalWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RequestCancelExternalWorkflowExecutionDecisionAttributes& RequestCancelExternalW
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");
-
     m_runIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = jsonValue.GetString("control");
-
     m_controlHasBeenSet = true;
   }
-
   return *this;
 }
 

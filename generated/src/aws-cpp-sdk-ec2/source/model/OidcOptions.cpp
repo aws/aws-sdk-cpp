@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-OidcOptions::OidcOptions() : 
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_scopeHasBeenSet(false)
-{
-}
-
 OidcOptions::OidcOptions(const XmlNode& xmlNode)
-  : OidcOptions()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,49 @@ OidcOptions& OidcOptions::operator =(const XmlNode& xmlNode)
     {
       m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
       m_issuerHasBeenSet = true;
+       m_issuerHasBeenSet = true;
     }
     XmlNode authorizationEndpointNode = resultNode.FirstChild("authorizationEndpoint");
     if(!authorizationEndpointNode.IsNull())
     {
       m_authorizationEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(authorizationEndpointNode.GetText());
       m_authorizationEndpointHasBeenSet = true;
+       m_authorizationEndpointHasBeenSet = true;
     }
     XmlNode tokenEndpointNode = resultNode.FirstChild("tokenEndpoint");
     if(!tokenEndpointNode.IsNull())
     {
       m_tokenEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(tokenEndpointNode.GetText());
       m_tokenEndpointHasBeenSet = true;
+       m_tokenEndpointHasBeenSet = true;
     }
     XmlNode userInfoEndpointNode = resultNode.FirstChild("userInfoEndpoint");
     if(!userInfoEndpointNode.IsNull())
     {
       m_userInfoEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(userInfoEndpointNode.GetText());
       m_userInfoEndpointHasBeenSet = true;
+       m_userInfoEndpointHasBeenSet = true;
     }
     XmlNode clientIdNode = resultNode.FirstChild("clientId");
     if(!clientIdNode.IsNull())
     {
       m_clientId = Aws::Utils::Xml::DecodeEscapedXmlText(clientIdNode.GetText());
       m_clientIdHasBeenSet = true;
+       m_clientIdHasBeenSet = true;
     }
     XmlNode clientSecretNode = resultNode.FirstChild("clientSecret");
     if(!clientSecretNode.IsNull())
     {
       m_clientSecret = Aws::Utils::Xml::DecodeEscapedXmlText(clientSecretNode.GetText());
       m_clientSecretHasBeenSet = true;
+       m_clientSecretHasBeenSet = true;
     }
     XmlNode scopeNode = resultNode.FirstChild("scope");
     if(!scopeNode.IsNull())
     {
       m_scope = Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText());
       m_scopeHasBeenSet = true;
+       m_scopeHasBeenSet = true;
     }
   }
 

@@ -18,15 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-DependentService::DependentService() : 
-    m_serviceName(ServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_serviceVersionHasBeenSet(false)
-{
-}
-
 DependentService::DependentService(JsonView jsonValue)
-  : DependentService()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DependentService& DependentService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = ServiceNameMapper::GetServiceNameForName(jsonValue.GetString("ServiceName"));
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceVersion"))
   {
     m_serviceVersion = jsonValue.GetObject("ServiceVersion");
-
     m_serviceVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

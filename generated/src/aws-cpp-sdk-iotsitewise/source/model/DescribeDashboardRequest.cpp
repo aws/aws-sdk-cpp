@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDashboardRequest::DescribeDashboardRequest() : 
-    m_dashboardIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDashboardRequest::SerializePayload() const
 {
   return {};

@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetParameterRequest::GetParameterRequest() : 
-    m_nameHasBeenSet(false),
-    m_withDecryption(false),
-    m_withDecryptionHasBeenSet(false)
-{
-}
-
 Aws::String GetParameterRequest::SerializePayload() const
 {
   JsonValue payload;

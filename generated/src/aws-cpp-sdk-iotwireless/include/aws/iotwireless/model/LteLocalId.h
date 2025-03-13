@@ -30,7 +30,7 @@ namespace Model
   class LteLocalId
   {
   public:
-    AWS_IOTWIRELESS_API LteLocalId();
+    AWS_IOTWIRELESS_API LteLocalId() = default;
     AWS_IOTWIRELESS_API LteLocalId(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LteLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Physical cell ID.</p>
      */
-    inline int GetPci() const{ return m_pci; }
+    inline int GetPci() const { return m_pci; }
     inline bool PciHasBeenSet() const { return m_pciHasBeenSet; }
     inline void SetPci(int value) { m_pciHasBeenSet = true; m_pci = value; }
     inline LteLocalId& WithPci(int value) { SetPci(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
      * <p>Evolved universal terrestrial radio access (E-UTRA) absolute radio frequency
      * channel number (FCN).</p>
      */
-    inline int GetEarfcn() const{ return m_earfcn; }
+    inline int GetEarfcn() const { return m_earfcn; }
     inline bool EarfcnHasBeenSet() const { return m_earfcnHasBeenSet; }
     inline void SetEarfcn(int value) { m_earfcnHasBeenSet = true; m_earfcn = value; }
     inline LteLocalId& WithEarfcn(int value) { SetEarfcn(value); return *this;}
     ///@}
   private:
 
-    int m_pci;
+    int m_pci{0};
     bool m_pciHasBeenSet = false;
 
-    int m_earfcn;
+    int m_earfcn{0};
     bool m_earfcnHasBeenSet = false;
   };
 

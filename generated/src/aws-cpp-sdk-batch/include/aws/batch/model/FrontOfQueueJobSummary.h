@@ -32,7 +32,7 @@ namespace Model
   class FrontOfQueueJobSummary
   {
   public:
-    AWS_BATCH_API FrontOfQueueJobSummary();
+    AWS_BATCH_API FrontOfQueueJobSummary() = default;
     AWS_BATCH_API FrontOfQueueJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API FrontOfQueueJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN for a job in a named job queue.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-    inline FrontOfQueueJobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline FrontOfQueueJobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline FrontOfQueueJobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    FrontOfQueueJobSummary& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The Unix timestamp (in milliseconds) for when the job transitioned to its
      * current position in the job queue.</p>
      */
-    inline long long GetEarliestTimeAtPosition() const{ return m_earliestTimeAtPosition; }
+    inline long long GetEarliestTimeAtPosition() const { return m_earliestTimeAtPosition; }
     inline bool EarliestTimeAtPositionHasBeenSet() const { return m_earliestTimeAtPositionHasBeenSet; }
     inline void SetEarliestTimeAtPosition(long long value) { m_earliestTimeAtPositionHasBeenSet = true; m_earliestTimeAtPosition = value; }
     inline FrontOfQueueJobSummary& WithEarliestTimeAtPosition(long long value) { SetEarliestTimeAtPosition(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_jobArn;
     bool m_jobArnHasBeenSet = false;
 
-    long long m_earliestTimeAtPosition;
+    long long m_earliestTimeAtPosition{0};
     bool m_earliestTimeAtPositionHasBeenSet = false;
   };
 

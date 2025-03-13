@@ -29,7 +29,7 @@ namespace Model
   class ListClientVpcConnectionsResult
   {
   public:
-    AWS_KAFKA_API ListClientVpcConnectionsResult();
+    AWS_KAFKA_API ListClientVpcConnectionsResult() = default;
     AWS_KAFKA_API ListClientVpcConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API ListClientVpcConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
             <p>List of client VPC connections.</p>
          
      */
-    inline const Aws::Vector<ClientVpcConnection>& GetClientVpcConnections() const{ return m_clientVpcConnections; }
-    inline void SetClientVpcConnections(const Aws::Vector<ClientVpcConnection>& value) { m_clientVpcConnections = value; }
-    inline void SetClientVpcConnections(Aws::Vector<ClientVpcConnection>&& value) { m_clientVpcConnections = std::move(value); }
-    inline ListClientVpcConnectionsResult& WithClientVpcConnections(const Aws::Vector<ClientVpcConnection>& value) { SetClientVpcConnections(value); return *this;}
-    inline ListClientVpcConnectionsResult& WithClientVpcConnections(Aws::Vector<ClientVpcConnection>&& value) { SetClientVpcConnections(std::move(value)); return *this;}
-    inline ListClientVpcConnectionsResult& AddClientVpcConnections(const ClientVpcConnection& value) { m_clientVpcConnections.push_back(value); return *this; }
-    inline ListClientVpcConnectionsResult& AddClientVpcConnections(ClientVpcConnection&& value) { m_clientVpcConnections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClientVpcConnection>& GetClientVpcConnections() const { return m_clientVpcConnections; }
+    template<typename ClientVpcConnectionsT = Aws::Vector<ClientVpcConnection>>
+    void SetClientVpcConnections(ClientVpcConnectionsT&& value) { m_clientVpcConnectionsHasBeenSet = true; m_clientVpcConnections = std::forward<ClientVpcConnectionsT>(value); }
+    template<typename ClientVpcConnectionsT = Aws::Vector<ClientVpcConnection>>
+    ListClientVpcConnectionsResult& WithClientVpcConnections(ClientVpcConnectionsT&& value) { SetClientVpcConnections(std::forward<ClientVpcConnectionsT>(value)); return *this;}
+    template<typename ClientVpcConnectionsT = ClientVpcConnection>
+    ListClientVpcConnectionsResult& AddClientVpcConnections(ClientVpcConnectionsT&& value) { m_clientVpcConnectionsHasBeenSet = true; m_clientVpcConnections.emplace_back(std::forward<ClientVpcConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * this token in your next request.</p>
          
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListClientVpcConnectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClientVpcConnectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClientVpcConnectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClientVpcConnectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListClientVpcConnectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListClientVpcConnectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListClientVpcConnectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListClientVpcConnectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ClientVpcConnection> m_clientVpcConnections;
+    bool m_clientVpcConnectionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

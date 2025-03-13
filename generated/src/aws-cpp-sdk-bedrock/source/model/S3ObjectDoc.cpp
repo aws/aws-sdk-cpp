@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-S3ObjectDoc::S3ObjectDoc() : 
-    m_uriHasBeenSet(false)
-{
-}
-
 S3ObjectDoc::S3ObjectDoc(JsonView jsonValue)
-  : S3ObjectDoc()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ObjectDoc& S3ObjectDoc::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

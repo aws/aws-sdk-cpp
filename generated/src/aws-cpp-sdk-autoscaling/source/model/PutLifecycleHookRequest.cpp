@@ -10,19 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-PutLifecycleHookRequest::PutLifecycleHookRequest() : 
-    m_lifecycleHookNameHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_lifecycleTransitionHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_notificationTargetARNHasBeenSet(false),
-    m_notificationMetadataHasBeenSet(false),
-    m_heartbeatTimeout(0),
-    m_heartbeatTimeoutHasBeenSet(false),
-    m_defaultResultHasBeenSet(false)
-{
-}
-
 Aws::String PutLifecycleHookRequest::SerializePayload() const
 {
   Aws::StringStream ss;

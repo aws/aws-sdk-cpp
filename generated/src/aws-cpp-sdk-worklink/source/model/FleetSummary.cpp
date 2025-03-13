@@ -18,21 +18,7 @@ namespace WorkLink
 namespace Model
 {
 
-FleetSummary::FleetSummary() : 
-    m_fleetArnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_companyCodeHasBeenSet(false),
-    m_fleetStatus(FleetStatus::NOT_SET),
-    m_fleetStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 FleetSummary::FleetSummary(JsonView jsonValue)
-  : FleetSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ FleetSummary& FleetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FleetArn"))
   {
     m_fleetArn = jsonValue.GetString("FleetArn");
-
     m_fleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetName"))
   {
     m_fleetName = jsonValue.GetString("FleetName");
-
     m_fleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompanyCode"))
   {
     m_companyCode = jsonValue.GetString("CompanyCode");
-
     m_companyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetStatus"))
   {
     m_fleetStatus = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("FleetStatus"));
-
     m_fleetStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -97,7 +69,6 @@ FleetSummary& FleetSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

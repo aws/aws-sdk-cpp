@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeclineHandshakeRequest::DeclineHandshakeRequest() : 
-    m_handshakeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeclineHandshakeRequest::SerializePayload() const
 {
   JsonValue payload;

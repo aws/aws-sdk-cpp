@@ -18,19 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-CommonControlSummary::CommonControlSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_objectiveHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 CommonControlSummary::CommonControlSummary(JsonView jsonValue)
-  : CommonControlSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ CommonControlSummary& CommonControlSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetObject("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Objective"))
   {
     m_objective = jsonValue.GetObject("Objective");
-
     m_objectiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

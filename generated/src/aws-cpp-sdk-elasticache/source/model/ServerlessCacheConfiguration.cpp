@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServerlessCacheConfiguration::ServerlessCacheConfiguration() : 
-    m_serverlessCacheNameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false)
-{
-}
-
 ServerlessCacheConfiguration::ServerlessCacheConfiguration(const XmlNode& xmlNode)
-  : ServerlessCacheConfiguration()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ServerlessCacheConfiguration& ServerlessCacheConfiguration::operator =(const Xml
     {
       m_serverlessCacheName = Aws::Utils::Xml::DecodeEscapedXmlText(serverlessCacheNameNode.GetText());
       m_serverlessCacheNameHasBeenSet = true;
+       m_serverlessCacheNameHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
     if(!majorEngineVersionNode.IsNull())
     {
       m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
       m_majorEngineVersionHasBeenSet = true;
+       m_majorEngineVersionHasBeenSet = true;
     }
   }
 

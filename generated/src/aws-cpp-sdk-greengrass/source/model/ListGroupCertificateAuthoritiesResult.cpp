@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListGroupCertificateAuthoritiesResult::ListGroupCertificateAuthoritiesResult()
-{
-}
-
 ListGroupCertificateAuthoritiesResult::ListGroupCertificateAuthoritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListGroupCertificateAuthoritiesResult& ListGroupCertificateAuthoritiesResult::op
     {
       m_groupCertificateAuthorities.push_back(groupCertificateAuthoritiesJsonList[groupCertificateAuthoritiesIndex].AsObject());
     }
+    m_groupCertificateAuthoritiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

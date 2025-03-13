@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEventsEndpointEventBusesDetails::AwsEventsEndpointEventBusesDetails() : 
-    m_eventBusArnHasBeenSet(false)
-{
-}
-
 AwsEventsEndpointEventBusesDetails::AwsEventsEndpointEventBusesDetails(JsonView jsonValue)
-  : AwsEventsEndpointEventBusesDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEventsEndpointEventBusesDetails& AwsEventsEndpointEventBusesDetails::operator
   if(jsonValue.ValueExists("EventBusArn"))
   {
     m_eventBusArn = jsonValue.GetString("EventBusArn");
-
     m_eventBusArnHasBeenSet = true;
   }
-
   return *this;
 }
 

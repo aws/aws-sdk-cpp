@@ -10,16 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeGlobalReplicationGroupsRequest::DescribeGlobalReplicationGroupsRequest() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_showMemberInfo(false),
-    m_showMemberInfoHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGlobalReplicationGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

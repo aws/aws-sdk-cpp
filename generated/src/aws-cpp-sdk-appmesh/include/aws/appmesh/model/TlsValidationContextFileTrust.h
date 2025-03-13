@@ -32,7 +32,7 @@ namespace Model
   class TlsValidationContextFileTrust
   {
   public:
-    AWS_APPMESH_API TlsValidationContextFileTrust();
+    AWS_APPMESH_API TlsValidationContextFileTrust() = default;
     AWS_APPMESH_API TlsValidationContextFileTrust(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API TlsValidationContextFileTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The certificate trust chain for a certificate stored on the file system of
      * the virtual node that the proxy is running on.</p>
      */
-    inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
+    inline const Aws::String& GetCertificateChain() const { return m_certificateChain; }
     inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
-    inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
-    inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
-    inline void SetCertificateChain(const char* value) { m_certificateChainHasBeenSet = true; m_certificateChain.assign(value); }
-    inline TlsValidationContextFileTrust& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
-    inline TlsValidationContextFileTrust& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
-    inline TlsValidationContextFileTrust& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
+    template<typename CertificateChainT = Aws::String>
+    void SetCertificateChain(CertificateChainT&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::forward<CertificateChainT>(value); }
+    template<typename CertificateChainT = Aws::String>
+    TlsValidationContextFileTrust& WithCertificateChain(CertificateChainT&& value) { SetCertificateChain(std::forward<CertificateChainT>(value)); return *this;}
     ///@}
   private:
 

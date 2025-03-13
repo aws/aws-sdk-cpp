@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException(const XmlNode& xmlNode)
-  : InvalidCloudWatchDestinationException()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InvalidCloudWatchDestinationException& InvalidCloudWatchDestinationException::op
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
     XmlNode eventDestinationNameNode = resultNode.FirstChild("EventDestinationName");
     if(!eventDestinationNameNode.IsNull())
     {
       m_eventDestinationName = Aws::Utils::Xml::DecodeEscapedXmlText(eventDestinationNameNode.GetText());
       m_eventDestinationNameHasBeenSet = true;
+       m_eventDestinationNameHasBeenSet = true;
     }
   }
 

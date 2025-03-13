@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetFleetsResult::BatchGetFleetsResult()
-{
-}
-
 BatchGetFleetsResult::BatchGetFleetsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetFleetsResult& BatchGetFleetsResult::operator =(const Aws::AmazonWebServi
     {
       m_fleets.push_back(fleetsJsonList[fleetsIndex].AsObject());
     }
+    m_fleetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetsNotFound"))
   {
     Aws::Utils::Array<JsonView> fleetsNotFoundJsonList = jsonValue.GetArray("fleetsNotFound");
@@ -45,14 +41,15 @@ BatchGetFleetsResult& BatchGetFleetsResult::operator =(const Aws::AmazonWebServi
     {
       m_fleetsNotFound.push_back(fleetsNotFoundJsonList[fleetsNotFoundIndex].AsString());
     }
+    m_fleetsNotFoundHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSecurityProfileRequest::DescribeSecurityProfileRequest() : 
-    m_securityProfileNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSecurityProfileRequest::SerializePayload() const
 {
   return {};

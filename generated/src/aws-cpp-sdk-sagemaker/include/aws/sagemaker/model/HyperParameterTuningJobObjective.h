@@ -38,7 +38,7 @@ namespace Model
   class HyperParameterTuningJobObjective
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTuningJobObjective();
+    AWS_SAGEMAKER_API HyperParameterTuningJobObjective() = default;
     AWS_SAGEMAKER_API HyperParameterTuningJobObjective(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTuningJobObjective& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,30 +48,26 @@ namespace Model
     /**
      * <p>Whether to minimize or maximize the objective metric.</p>
      */
-    inline const HyperParameterTuningJobObjectiveType& GetType() const{ return m_type; }
+    inline HyperParameterTuningJobObjectiveType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const HyperParameterTuningJobObjectiveType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(HyperParameterTuningJobObjectiveType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline HyperParameterTuningJobObjective& WithType(const HyperParameterTuningJobObjectiveType& value) { SetType(value); return *this;}
-    inline HyperParameterTuningJobObjective& WithType(HyperParameterTuningJobObjectiveType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(HyperParameterTuningJobObjectiveType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline HyperParameterTuningJobObjective& WithType(HyperParameterTuningJobObjectiveType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric to use for the objective metric.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline HyperParameterTuningJobObjective& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline HyperParameterTuningJobObjective& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline HyperParameterTuningJobObjective& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    HyperParameterTuningJobObjective& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
   private:
 
-    HyperParameterTuningJobObjectiveType m_type;
+    HyperParameterTuningJobObjectiveType m_type{HyperParameterTuningJobObjectiveType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_metricName;

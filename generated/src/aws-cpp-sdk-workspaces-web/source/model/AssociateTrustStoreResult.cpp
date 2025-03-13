@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateTrustStoreResult::AssociateTrustStoreResult()
-{
-}
-
 AssociateTrustStoreResult::AssociateTrustStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AssociateTrustStoreResult& AssociateTrustStoreResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("portalArn"))
   {
     m_portalArn = jsonValue.GetString("portalArn");
-
+    m_portalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trustStoreArn"))
   {
     m_trustStoreArn = jsonValue.GetString("trustStoreArn");
-
+    m_trustStoreArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

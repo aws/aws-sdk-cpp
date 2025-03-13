@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-SourceApiAssociationConfig::SourceApiAssociationConfig() : 
-    m_mergeType(MergeType::NOT_SET),
-    m_mergeTypeHasBeenSet(false)
-{
-}
-
 SourceApiAssociationConfig::SourceApiAssociationConfig(JsonView jsonValue)
-  : SourceApiAssociationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SourceApiAssociationConfig& SourceApiAssociationConfig::operator =(JsonView json
   if(jsonValue.ValueExists("mergeType"))
   {
     m_mergeType = MergeTypeMapper::GetMergeTypeForName(jsonValue.GetString("mergeType"));
-
     m_mergeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

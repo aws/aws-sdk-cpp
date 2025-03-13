@@ -10,13 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeEnvironmentHealthRequest::DescribeEnvironmentHealthRequest() : 
-    m_environmentNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const
 {
   Aws::StringStream ss;

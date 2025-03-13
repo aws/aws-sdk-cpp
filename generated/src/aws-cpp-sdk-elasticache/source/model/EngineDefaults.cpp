@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-EngineDefaults::EngineDefaults() : 
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_cacheNodeTypeSpecificParametersHasBeenSet(false)
-{
-}
-
 EngineDefaults::EngineDefaults(const XmlNode& xmlNode)
-  : EngineDefaults()
 {
   *this = xmlNode;
 }
@@ -45,36 +36,40 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
     {
       m_cacheParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(cacheParameterGroupFamilyNode.GetText());
       m_cacheParameterGroupFamilyHasBeenSet = true;
+       m_cacheParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
+       m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("Parameter");
       }
 
-      m_parametersHasBeenSet = true;
+       m_parametersHasBeenSet = true;
     }
     XmlNode cacheNodeTypeSpecificParametersNode = resultNode.FirstChild("CacheNodeTypeSpecificParameters");
     if(!cacheNodeTypeSpecificParametersNode.IsNull())
     {
       XmlNode cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersNode.FirstChild("CacheNodeTypeSpecificParameter");
+      m_cacheNodeTypeSpecificParametersHasBeenSet = !cacheNodeTypeSpecificParametersMember.IsNull();
       while(!cacheNodeTypeSpecificParametersMember.IsNull())
       {
         m_cacheNodeTypeSpecificParameters.push_back(cacheNodeTypeSpecificParametersMember);
         cacheNodeTypeSpecificParametersMember = cacheNodeTypeSpecificParametersMember.NextNode("CacheNodeTypeSpecificParameter");
       }
 
-      m_cacheNodeTypeSpecificParametersHasBeenSet = true;
+       m_cacheNodeTypeSpecificParametersHasBeenSet = true;
     }
   }
 

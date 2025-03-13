@@ -12,11 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTestSetRequest::DeleteTestSetRequest() : 
-    m_testSetIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTestSetRequest::SerializePayload() const
 {
   return {};

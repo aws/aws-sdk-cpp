@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AvailabilityZoneMessage::AvailabilityZoneMessage() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 AvailabilityZoneMessage::AvailabilityZoneMessage(const XmlNode& xmlNode)
-  : AvailabilityZoneMessage()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AvailabilityZoneMessage& AvailabilityZoneMessage::operator =(const XmlNode& xmlN
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

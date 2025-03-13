@@ -21,7 +21,7 @@ namespace Model
   class DeleteReplicationJobRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API DeleteReplicationJobRequest();
+    AWS_SMS_API DeleteReplicationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the replication job.</p>
      */
-    inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
+    inline const Aws::String& GetReplicationJobId() const { return m_replicationJobId; }
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
-    inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
-    inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
-    inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
-    inline DeleteReplicationJobRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
-    inline DeleteReplicationJobRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
-    inline DeleteReplicationJobRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+    template<typename ReplicationJobIdT = Aws::String>
+    void SetReplicationJobId(ReplicationJobIdT&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::forward<ReplicationJobIdT>(value); }
+    template<typename ReplicationJobIdT = Aws::String>
+    DeleteReplicationJobRequest& WithReplicationJobId(ReplicationJobIdT&& value) { SetReplicationJobId(std::forward<ReplicationJobIdT>(value)); return *this;}
     ///@}
   private:
 

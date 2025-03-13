@@ -10,12 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-VerifySMSSandboxPhoneNumberRequest::VerifySMSSandboxPhoneNumberRequest() : 
-    m_phoneNumberHasBeenSet(false),
-    m_oneTimePasswordHasBeenSet(false)
-{
-}
-
 Aws::String VerifySMSSandboxPhoneNumberRequest::SerializePayload() const
 {
   Aws::StringStream ss;

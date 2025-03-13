@@ -12,11 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInsightRequest::DeleteInsightRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInsightRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailTraceAssessment::GuardrailTraceAssessment() : 
-    m_modelOutputHasBeenSet(false),
-    m_inputAssessmentHasBeenSet(false),
-    m_outputAssessmentsHasBeenSet(false)
-{
-}
-
 GuardrailTraceAssessment::GuardrailTraceAssessment(JsonView jsonValue)
-  : GuardrailTraceAssessment()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ GuardrailTraceAssessment& GuardrailTraceAssessment::operator =(JsonView jsonValu
     }
     m_modelOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputAssessment"))
   {
     Aws::Map<Aws::String, JsonView> inputAssessmentJsonMap = jsonValue.GetObject("inputAssessment").GetAllObjects();
@@ -52,7 +43,6 @@ GuardrailTraceAssessment& GuardrailTraceAssessment::operator =(JsonView jsonValu
     }
     m_inputAssessmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputAssessments"))
   {
     Aws::Map<Aws::String, JsonView> outputAssessmentsJsonMap = jsonValue.GetObject("outputAssessments").GetAllObjects();
@@ -69,7 +59,6 @@ GuardrailTraceAssessment& GuardrailTraceAssessment::operator =(JsonView jsonValu
     }
     m_outputAssessmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

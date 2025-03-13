@@ -34,7 +34,7 @@ namespace Model
   class IncidentRecordSummary
   {
   public:
-    AWS_SSMINCIDENTS_API IncidentRecordSummary();
+    AWS_SSMINCIDENTS_API IncidentRecordSummary() = default;
     AWS_SSMINCIDENTS_API IncidentRecordSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API IncidentRecordSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,31 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the incident.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline IncidentRecordSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline IncidentRecordSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline IncidentRecordSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    IncidentRecordSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for when the incident was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline IncidentRecordSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline IncidentRecordSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    IncidentRecordSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the impact to customers and applications.</p>
      */
-    inline int GetImpact() const{ return m_impact; }
+    inline int GetImpact() const { return m_impact; }
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
     inline void SetImpact(int value) { m_impactHasBeenSet = true; m_impact = value; }
     inline IncidentRecordSummary& WithImpact(int value) { SetImpact(value); return *this;}
@@ -80,36 +78,34 @@ namespace Model
     /**
      * <p>What caused Incident Manager to create the incident.</p>
      */
-    inline const IncidentRecordSource& GetIncidentRecordSource() const{ return m_incidentRecordSource; }
+    inline const IncidentRecordSource& GetIncidentRecordSource() const { return m_incidentRecordSource; }
     inline bool IncidentRecordSourceHasBeenSet() const { return m_incidentRecordSourceHasBeenSet; }
-    inline void SetIncidentRecordSource(const IncidentRecordSource& value) { m_incidentRecordSourceHasBeenSet = true; m_incidentRecordSource = value; }
-    inline void SetIncidentRecordSource(IncidentRecordSource&& value) { m_incidentRecordSourceHasBeenSet = true; m_incidentRecordSource = std::move(value); }
-    inline IncidentRecordSummary& WithIncidentRecordSource(const IncidentRecordSource& value) { SetIncidentRecordSource(value); return *this;}
-    inline IncidentRecordSummary& WithIncidentRecordSource(IncidentRecordSource&& value) { SetIncidentRecordSource(std::move(value)); return *this;}
+    template<typename IncidentRecordSourceT = IncidentRecordSource>
+    void SetIncidentRecordSource(IncidentRecordSourceT&& value) { m_incidentRecordSourceHasBeenSet = true; m_incidentRecordSource = std::forward<IncidentRecordSourceT>(value); }
+    template<typename IncidentRecordSourceT = IncidentRecordSource>
+    IncidentRecordSummary& WithIncidentRecordSource(IncidentRecordSourceT&& value) { SetIncidentRecordSource(std::forward<IncidentRecordSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for when the incident was resolved.</p>
      */
-    inline const Aws::Utils::DateTime& GetResolvedTime() const{ return m_resolvedTime; }
+    inline const Aws::Utils::DateTime& GetResolvedTime() const { return m_resolvedTime; }
     inline bool ResolvedTimeHasBeenSet() const { return m_resolvedTimeHasBeenSet; }
-    inline void SetResolvedTime(const Aws::Utils::DateTime& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = value; }
-    inline void SetResolvedTime(Aws::Utils::DateTime&& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = std::move(value); }
-    inline IncidentRecordSummary& WithResolvedTime(const Aws::Utils::DateTime& value) { SetResolvedTime(value); return *this;}
-    inline IncidentRecordSummary& WithResolvedTime(Aws::Utils::DateTime&& value) { SetResolvedTime(std::move(value)); return *this;}
+    template<typename ResolvedTimeT = Aws::Utils::DateTime>
+    void SetResolvedTime(ResolvedTimeT&& value) { m_resolvedTimeHasBeenSet = true; m_resolvedTime = std::forward<ResolvedTimeT>(value); }
+    template<typename ResolvedTimeT = Aws::Utils::DateTime>
+    IncidentRecordSummary& WithResolvedTime(ResolvedTimeT&& value) { SetResolvedTime(std::forward<ResolvedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the incident.</p>
      */
-    inline const IncidentRecordStatus& GetStatus() const{ return m_status; }
+    inline IncidentRecordStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const IncidentRecordStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(IncidentRecordStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline IncidentRecordSummary& WithStatus(const IncidentRecordStatus& value) { SetStatus(value); return *this;}
-    inline IncidentRecordSummary& WithStatus(IncidentRecordStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(IncidentRecordStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline IncidentRecordSummary& WithStatus(IncidentRecordStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -117,33 +113,31 @@ namespace Model
      * <p>The title of the incident. This value is either provided by the response plan
      * or overwritten on creation.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline IncidentRecordSummary& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline IncidentRecordSummary& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline IncidentRecordSummary& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    IncidentRecordSummary& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    int m_impact;
+    int m_impact{0};
     bool m_impactHasBeenSet = false;
 
     IncidentRecordSource m_incidentRecordSource;
     bool m_incidentRecordSourceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_resolvedTime;
+    Aws::Utils::DateTime m_resolvedTime{};
     bool m_resolvedTimeHasBeenSet = false;
 
-    IncidentRecordStatus m_status;
+    IncidentRecordStatus m_status{IncidentRecordStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_title;

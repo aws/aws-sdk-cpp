@@ -12,23 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateJobRequest::UpdateJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_onDeviceServiceConfigurationHasBeenSet(false),
-    m_addressIdHasBeenSet(false),
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
-    m_snowballCapacityPreferenceHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false),
-    m_pickupDetailsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobRequest::SerializePayload() const
 {
   JsonValue payload;

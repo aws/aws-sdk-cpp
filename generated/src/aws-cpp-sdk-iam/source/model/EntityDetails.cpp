@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-EntityDetails::EntityDetails() : 
-    m_entityInfoHasBeenSet(false),
-    m_lastAuthenticatedHasBeenSet(false)
-{
-}
-
 EntityDetails::EntityDetails(const XmlNode& xmlNode)
-  : EntityDetails()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ EntityDetails& EntityDetails::operator =(const XmlNode& xmlNode)
     {
       m_entityInfo = entityInfoNode;
       m_entityInfoHasBeenSet = true;
+       m_entityInfoHasBeenSet = true;
     }
     XmlNode lastAuthenticatedNode = resultNode.FirstChild("LastAuthenticated");
     if(!lastAuthenticatedNode.IsNull())
     {
       m_lastAuthenticated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastAuthenticatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastAuthenticatedHasBeenSet = true;
+       m_lastAuthenticatedHasBeenSet = true;
     }
   }
 

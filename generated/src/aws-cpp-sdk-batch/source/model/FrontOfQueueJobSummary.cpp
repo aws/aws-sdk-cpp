@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-FrontOfQueueJobSummary::FrontOfQueueJobSummary() : 
-    m_jobArnHasBeenSet(false),
-    m_earliestTimeAtPosition(0),
-    m_earliestTimeAtPositionHasBeenSet(false)
-{
-}
-
 FrontOfQueueJobSummary::FrontOfQueueJobSummary(JsonView jsonValue)
-  : FrontOfQueueJobSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FrontOfQueueJobSummary& FrontOfQueueJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("earliestTimeAtPosition"))
   {
     m_earliestTimeAtPosition = jsonValue.GetInt64("earliestTimeAtPosition");
-
     m_earliestTimeAtPositionHasBeenSet = true;
   }
-
   return *this;
 }
 

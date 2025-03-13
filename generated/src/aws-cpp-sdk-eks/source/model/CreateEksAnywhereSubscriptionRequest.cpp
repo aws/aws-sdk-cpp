@@ -12,21 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEksAnywhereSubscriptionRequest::CreateEksAnywhereSubscriptionRequest() : 
-    m_nameHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_licenseQuantity(0),
-    m_licenseQuantityHasBeenSet(false),
-    m_licenseType(EksAnywhereSubscriptionLicenseType::NOT_SET),
-    m_licenseTypeHasBeenSet(false),
-    m_autoRenew(false),
-    m_autoRenewHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEksAnywhereSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,21 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingProfileQueueConfigSummary::RoutingProfileQueueConfigSummary() : 
-    m_queueIdHasBeenSet(false),
-    m_queueArnHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_delay(0),
-    m_delayHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false)
-{
-}
-
 RoutingProfileQueueConfigSummary::RoutingProfileQueueConfigSummary(JsonView jsonValue)
-  : RoutingProfileQueueConfigSummary()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ RoutingProfileQueueConfigSummary& RoutingProfileQueueConfigSummary::operator =(J
   if(jsonValue.ValueExists("QueueId"))
   {
     m_queueId = jsonValue.GetString("QueueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueArn"))
   {
     m_queueArn = jsonValue.GetString("QueueArn");
-
     m_queueArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueName"))
   {
     m_queueName = jsonValue.GetString("QueueName");
-
     m_queueNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delay"))
   {
     m_delay = jsonValue.GetInteger("Delay");
-
     m_delayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channel"))
   {
     m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
-
     m_channelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateRoomMembershipRequest::BatchCreateRoomMembershipRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_roomIdHasBeenSet(false),
-    m_membershipItemListHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateRoomMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

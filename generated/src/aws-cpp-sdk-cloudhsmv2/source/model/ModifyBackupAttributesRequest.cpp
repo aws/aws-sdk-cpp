@@ -12,13 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyBackupAttributesRequest::ModifyBackupAttributesRequest() : 
-    m_backupIdHasBeenSet(false),
-    m_neverExpires(false),
-    m_neverExpiresHasBeenSet(false)
-{
-}
-
 Aws::String ModifyBackupAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

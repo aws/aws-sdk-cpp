@@ -29,7 +29,7 @@ namespace Model
   class ValidateSecurityProfileBehaviorsResult
   {
   public:
-    AWS_IOT_API ValidateSecurityProfileBehaviorsResult();
+    AWS_IOT_API ValidateSecurityProfileBehaviorsResult() = default;
     AWS_IOT_API ValidateSecurityProfileBehaviorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ValidateSecurityProfileBehaviorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
     /**
      * <p>True if the behaviors were valid.</p>
      */
-    inline bool GetValid() const{ return m_valid; }
-    inline void SetValid(bool value) { m_valid = value; }
+    inline bool GetValid() const { return m_valid; }
+    inline void SetValid(bool value) { m_validHasBeenSet = true; m_valid = value; }
     inline ValidateSecurityProfileBehaviorsResult& WithValid(bool value) { SetValid(value); return *this;}
     ///@}
 
@@ -47,32 +47,33 @@ namespace Model
     /**
      * <p>The list of any errors found in the behaviors.</p>
      */
-    inline const Aws::Vector<ValidationError>& GetValidationErrors() const{ return m_validationErrors; }
-    inline void SetValidationErrors(const Aws::Vector<ValidationError>& value) { m_validationErrors = value; }
-    inline void SetValidationErrors(Aws::Vector<ValidationError>&& value) { m_validationErrors = std::move(value); }
-    inline ValidateSecurityProfileBehaviorsResult& WithValidationErrors(const Aws::Vector<ValidationError>& value) { SetValidationErrors(value); return *this;}
-    inline ValidateSecurityProfileBehaviorsResult& WithValidationErrors(Aws::Vector<ValidationError>&& value) { SetValidationErrors(std::move(value)); return *this;}
-    inline ValidateSecurityProfileBehaviorsResult& AddValidationErrors(const ValidationError& value) { m_validationErrors.push_back(value); return *this; }
-    inline ValidateSecurityProfileBehaviorsResult& AddValidationErrors(ValidationError&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidationError>& GetValidationErrors() const { return m_validationErrors; }
+    template<typename ValidationErrorsT = Aws::Vector<ValidationError>>
+    void SetValidationErrors(ValidationErrorsT&& value) { m_validationErrorsHasBeenSet = true; m_validationErrors = std::forward<ValidationErrorsT>(value); }
+    template<typename ValidationErrorsT = Aws::Vector<ValidationError>>
+    ValidateSecurityProfileBehaviorsResult& WithValidationErrors(ValidationErrorsT&& value) { SetValidationErrors(std::forward<ValidationErrorsT>(value)); return *this;}
+    template<typename ValidationErrorsT = ValidationError>
+    ValidateSecurityProfileBehaviorsResult& AddValidationErrors(ValidationErrorsT&& value) { m_validationErrorsHasBeenSet = true; m_validationErrors.emplace_back(std::forward<ValidationErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ValidateSecurityProfileBehaviorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ValidateSecurityProfileBehaviorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ValidateSecurityProfileBehaviorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ValidateSecurityProfileBehaviorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_valid;
+    bool m_valid{false};
+    bool m_validHasBeenSet = false;
 
     Aws::Vector<ValidationError> m_validationErrors;
+    bool m_validationErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

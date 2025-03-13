@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSDatabaseRecommendedOptionProjectedMetric::RDSDatabaseRecommendedOptionProjectedMetric() : 
-    m_recommendedDBInstanceClassHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_projectedMetricsHasBeenSet(false)
-{
-}
-
 RDSDatabaseRecommendedOptionProjectedMetric::RDSDatabaseRecommendedOptionProjectedMetric(JsonView jsonValue)
-  : RDSDatabaseRecommendedOptionProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RDSDatabaseRecommendedOptionProjectedMetric& RDSDatabaseRecommendedOptionProject
   if(jsonValue.ValueExists("recommendedDBInstanceClass"))
   {
     m_recommendedDBInstanceClass = jsonValue.GetString("recommendedDBInstanceClass");
-
     m_recommendedDBInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectedMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
@@ -57,7 +44,6 @@ RDSDatabaseRecommendedOptionProjectedMetric& RDSDatabaseRecommendedOptionProject
     }
     m_projectedMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SearchTypesResultItem::SearchTypesResultItem() : 
-    m_assetTypeItemHasBeenSet(false),
-    m_formTypeItemHasBeenSet(false),
-    m_lineageNodeTypeItemHasBeenSet(false)
-{
-}
-
 SearchTypesResultItem::SearchTypesResultItem(JsonView jsonValue)
-  : SearchTypesResultItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SearchTypesResultItem& SearchTypesResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetTypeItem"))
   {
     m_assetTypeItem = jsonValue.GetObject("assetTypeItem");
-
     m_assetTypeItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("formTypeItem"))
   {
     m_formTypeItem = jsonValue.GetObject("formTypeItem");
-
     m_formTypeItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineageNodeTypeItem"))
   {
     m_lineageNodeTypeItem = jsonValue.GetObject("lineageNodeTypeItem");
-
     m_lineageNodeTypeItemHasBeenSet = true;
   }
-
   return *this;
 }
 

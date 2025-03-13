@@ -32,7 +32,7 @@ namespace Model
   class ImageGenerationDestinationConfig
   {
   public:
-    AWS_KINESISVIDEO_API ImageGenerationDestinationConfig();
+    AWS_KINESISVIDEO_API ImageGenerationDestinationConfig() = default;
     AWS_KINESISVIDEO_API ImageGenerationDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API ImageGenerationDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Uniform Resource Identifier (URI) that identifies where the images will
      * be delivered.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline ImageGenerationDestinationConfig& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline ImageGenerationDestinationConfig& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline ImageGenerationDestinationConfig& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    ImageGenerationDestinationConfig& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * delivered. This <code>DestinationRegion</code> must match the Region where the
      * stream is located.</p>
      */
-    inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
+    inline const Aws::String& GetDestinationRegion() const { return m_destinationRegion; }
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
-    inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
-    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
-    inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
-    inline ImageGenerationDestinationConfig& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
-    inline ImageGenerationDestinationConfig& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
-    inline ImageGenerationDestinationConfig& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
+    template<typename DestinationRegionT = Aws::String>
+    void SetDestinationRegion(DestinationRegionT&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::forward<DestinationRegionT>(value); }
+    template<typename DestinationRegionT = Aws::String>
+    ImageGenerationDestinationConfig& WithDestinationRegion(DestinationRegionT&& value) { SetDestinationRegion(std::forward<DestinationRegionT>(value)); return *this;}
     ///@}
   private:
 

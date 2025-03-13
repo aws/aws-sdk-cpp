@@ -18,10 +18,6 @@ namespace Inspector2
 namespace Model
 {
 
-OneTimeSchedule::OneTimeSchedule()
-{
-}
-
 OneTimeSchedule::OneTimeSchedule(JsonView jsonValue)
 {
   *this = jsonValue;

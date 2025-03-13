@@ -40,7 +40,7 @@ namespace Model
   class UpdateOpenIdConnectIdentityTokenConfiguration
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectIdentityTokenConfiguration();
+    AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectIdentityTokenConfiguration() = default;
     AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectIdentityTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectIdentityTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>The claim that determines the principal in OIDC access tokens. For example,
      * <code>sub</code>.</p>
      */
-    inline const Aws::String& GetPrincipalIdClaim() const{ return m_principalIdClaim; }
+    inline const Aws::String& GetPrincipalIdClaim() const { return m_principalIdClaim; }
     inline bool PrincipalIdClaimHasBeenSet() const { return m_principalIdClaimHasBeenSet; }
-    inline void SetPrincipalIdClaim(const Aws::String& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = value; }
-    inline void SetPrincipalIdClaim(Aws::String&& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = std::move(value); }
-    inline void SetPrincipalIdClaim(const char* value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim.assign(value); }
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(const Aws::String& value) { SetPrincipalIdClaim(value); return *this;}
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(Aws::String&& value) { SetPrincipalIdClaim(std::move(value)); return *this;}
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(const char* value) { SetPrincipalIdClaim(value); return *this;}
+    template<typename PrincipalIdClaimT = Aws::String>
+    void SetPrincipalIdClaim(PrincipalIdClaimT&& value) { m_principalIdClaimHasBeenSet = true; m_principalIdClaim = std::forward<PrincipalIdClaimT>(value); }
+    template<typename PrincipalIdClaimT = Aws::String>
+    UpdateOpenIdConnectIdentityTokenConfiguration& WithPrincipalIdClaim(PrincipalIdClaimT&& value) { SetPrincipalIdClaim(std::forward<PrincipalIdClaimT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * your policy store from an OIDC identity provider. For example,
      * <code>1example23456789, 2example10111213</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClientIds() const{ return m_clientIds; }
+    inline const Aws::Vector<Aws::String>& GetClientIds() const { return m_clientIds; }
     inline bool ClientIdsHasBeenSet() const { return m_clientIdsHasBeenSet; }
-    inline void SetClientIds(const Aws::Vector<Aws::String>& value) { m_clientIdsHasBeenSet = true; m_clientIds = value; }
-    inline void SetClientIds(Aws::Vector<Aws::String>&& value) { m_clientIdsHasBeenSet = true; m_clientIds = std::move(value); }
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& WithClientIds(const Aws::Vector<Aws::String>& value) { SetClientIds(value); return *this;}
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& WithClientIds(Aws::Vector<Aws::String>&& value) { SetClientIds(std::move(value)); return *this;}
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& AddClientIds(const Aws::String& value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& AddClientIds(Aws::String&& value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(std::move(value)); return *this; }
-    inline UpdateOpenIdConnectIdentityTokenConfiguration& AddClientIds(const char* value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
+    template<typename ClientIdsT = Aws::Vector<Aws::String>>
+    void SetClientIds(ClientIdsT&& value) { m_clientIdsHasBeenSet = true; m_clientIds = std::forward<ClientIdsT>(value); }
+    template<typename ClientIdsT = Aws::Vector<Aws::String>>
+    UpdateOpenIdConnectIdentityTokenConfiguration& WithClientIds(ClientIdsT&& value) { SetClientIds(std::forward<ClientIdsT>(value)); return *this;}
+    template<typename ClientIdsT = Aws::String>
+    UpdateOpenIdConnectIdentityTokenConfiguration& AddClientIds(ClientIdsT&& value) { m_clientIdsHasBeenSet = true; m_clientIds.emplace_back(std::forward<ClientIdsT>(value)); return *this; }
     ///@}
   private:
 

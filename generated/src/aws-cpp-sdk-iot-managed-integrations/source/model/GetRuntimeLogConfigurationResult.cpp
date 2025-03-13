@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRuntimeLogConfigurationResult::GetRuntimeLogConfigurationResult()
-{
-}
-
 GetRuntimeLogConfigurationResult::GetRuntimeLogConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetRuntimeLogConfigurationResult& GetRuntimeLogConfigurationResult::operator =(c
   if(jsonValue.ValueExists("ManagedThingId"))
   {
     m_managedThingId = jsonValue.GetString("ManagedThingId");
-
+    m_managedThingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeLogConfigurations"))
   {
     m_runtimeLogConfigurations = jsonValue.GetObject("RuntimeLogConfigurations");
-
+    m_runtimeLogConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

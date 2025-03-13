@@ -30,7 +30,7 @@ namespace Model
   class DescribeCapacityBlockExtensionHistoryResponse
   {
   public:
-    AWS_EC2_API DescribeCapacityBlockExtensionHistoryResponse();
+    AWS_EC2_API DescribeCapacityBlockExtensionHistoryResponse() = default;
     AWS_EC2_API DescribeCapacityBlockExtensionHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeCapacityBlockExtensionHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * only the Capacity Block extensions in the Amazon Web Services Region that you're
      * currently using.</p>
      */
-    inline const Aws::Vector<CapacityBlockExtension>& GetCapacityBlockExtensions() const{ return m_capacityBlockExtensions; }
-    inline void SetCapacityBlockExtensions(const Aws::Vector<CapacityBlockExtension>& value) { m_capacityBlockExtensions = value; }
-    inline void SetCapacityBlockExtensions(Aws::Vector<CapacityBlockExtension>&& value) { m_capacityBlockExtensions = std::move(value); }
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithCapacityBlockExtensions(const Aws::Vector<CapacityBlockExtension>& value) { SetCapacityBlockExtensions(value); return *this;}
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithCapacityBlockExtensions(Aws::Vector<CapacityBlockExtension>&& value) { SetCapacityBlockExtensions(std::move(value)); return *this;}
-    inline DescribeCapacityBlockExtensionHistoryResponse& AddCapacityBlockExtensions(const CapacityBlockExtension& value) { m_capacityBlockExtensions.push_back(value); return *this; }
-    inline DescribeCapacityBlockExtensionHistoryResponse& AddCapacityBlockExtensions(CapacityBlockExtension&& value) { m_capacityBlockExtensions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapacityBlockExtension>& GetCapacityBlockExtensions() const { return m_capacityBlockExtensions; }
+    template<typename CapacityBlockExtensionsT = Aws::Vector<CapacityBlockExtension>>
+    void SetCapacityBlockExtensions(CapacityBlockExtensionsT&& value) { m_capacityBlockExtensionsHasBeenSet = true; m_capacityBlockExtensions = std::forward<CapacityBlockExtensionsT>(value); }
+    template<typename CapacityBlockExtensionsT = Aws::Vector<CapacityBlockExtension>>
+    DescribeCapacityBlockExtensionHistoryResponse& WithCapacityBlockExtensions(CapacityBlockExtensionsT&& value) { SetCapacityBlockExtensions(std::forward<CapacityBlockExtensionsT>(value)); return *this;}
+    template<typename CapacityBlockExtensionsT = CapacityBlockExtension>
+    DescribeCapacityBlockExtensionHistoryResponse& AddCapacityBlockExtensions(CapacityBlockExtensionsT&& value) { m_capacityBlockExtensionsHasBeenSet = true; m_capacityBlockExtensions.emplace_back(std::forward<CapacityBlockExtensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCapacityBlockExtensionHistoryResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCapacityBlockExtensionHistoryResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCapacityBlockExtensionHistoryResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CapacityBlockExtension> m_capacityBlockExtensions;
+    bool m_capacityBlockExtensionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

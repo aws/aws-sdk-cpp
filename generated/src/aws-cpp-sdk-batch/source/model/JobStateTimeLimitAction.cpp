@@ -18,19 +18,7 @@ namespace Batch
 namespace Model
 {
 
-JobStateTimeLimitAction::JobStateTimeLimitAction() : 
-    m_reasonHasBeenSet(false),
-    m_state(JobStateTimeLimitActionsState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_maxTimeSeconds(0),
-    m_maxTimeSecondsHasBeenSet(false),
-    m_action(JobStateTimeLimitActionsAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 JobStateTimeLimitAction::JobStateTimeLimitAction(JsonView jsonValue)
-  : JobStateTimeLimitAction()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ JobStateTimeLimitAction& JobStateTimeLimitAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = JobStateTimeLimitActionsStateMapper::GetJobStateTimeLimitActionsStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxTimeSeconds"))
   {
     m_maxTimeSeconds = jsonValue.GetInteger("maxTimeSeconds");
-
     m_maxTimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = JobStateTimeLimitActionsActionMapper::GetJobStateTimeLimitActionsActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

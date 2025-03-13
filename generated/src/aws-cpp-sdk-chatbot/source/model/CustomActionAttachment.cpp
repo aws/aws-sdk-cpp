@@ -18,16 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-CustomActionAttachment::CustomActionAttachment() : 
-    m_notificationTypeHasBeenSet(false),
-    m_buttonTextHasBeenSet(false),
-    m_criteriaHasBeenSet(false),
-    m_variablesHasBeenSet(false)
-{
-}
-
 CustomActionAttachment::CustomActionAttachment(JsonView jsonValue)
-  : CustomActionAttachment()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CustomActionAttachment& CustomActionAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotificationType"))
   {
     m_notificationType = jsonValue.GetString("NotificationType");
-
     m_notificationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ButtonText"))
   {
     m_buttonText = jsonValue.GetString("ButtonText");
-
     m_buttonTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criteria"))
   {
     Aws::Utils::Array<JsonView> criteriaJsonList = jsonValue.GetArray("Criteria");
@@ -57,7 +44,6 @@ CustomActionAttachment& CustomActionAttachment::operator =(JsonView jsonValue)
     }
     m_criteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Variables"))
   {
     Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
@@ -67,7 +53,6 @@ CustomActionAttachment& CustomActionAttachment::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   return *this;
 }
 

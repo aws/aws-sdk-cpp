@@ -18,27 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-VideoParameters::VideoParameters() : 
-    m_codecHasBeenSet(false),
-    m_codecOptionsHasBeenSet(false),
-    m_keyframesMaxDistHasBeenSet(false),
-    m_fixedGOPHasBeenSet(false),
-    m_bitRateHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_maxFrameRateHasBeenSet(false),
-    m_resolutionHasBeenSet(false),
-    m_aspectRatioHasBeenSet(false),
-    m_maxWidthHasBeenSet(false),
-    m_maxHeightHasBeenSet(false),
-    m_displayAspectRatioHasBeenSet(false),
-    m_sizingPolicyHasBeenSet(false),
-    m_paddingPolicyHasBeenSet(false),
-    m_watermarksHasBeenSet(false)
-{
-}
-
 VideoParameters::VideoParameters(JsonView jsonValue)
-  : VideoParameters()
 {
   *this = jsonValue;
 }
@@ -48,10 +28,8 @@ VideoParameters& VideoParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Codec"))
   {
     m_codec = jsonValue.GetString("Codec");
-
     m_codecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CodecOptions"))
   {
     Aws::Map<Aws::String, JsonView> codecOptionsJsonMap = jsonValue.GetObject("CodecOptions").GetAllObjects();
@@ -61,91 +39,66 @@ VideoParameters& VideoParameters::operator =(JsonView jsonValue)
     }
     m_codecOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyframesMaxDist"))
   {
     m_keyframesMaxDist = jsonValue.GetString("KeyframesMaxDist");
-
     m_keyframesMaxDistHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedGOP"))
   {
     m_fixedGOP = jsonValue.GetString("FixedGOP");
-
     m_fixedGOPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BitRate"))
   {
     m_bitRate = jsonValue.GetString("BitRate");
-
     m_bitRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameRate"))
   {
     m_frameRate = jsonValue.GetString("FrameRate");
-
     m_frameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxFrameRate"))
   {
     m_maxFrameRate = jsonValue.GetString("MaxFrameRate");
-
     m_maxFrameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resolution"))
   {
     m_resolution = jsonValue.GetString("Resolution");
-
     m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AspectRatio"))
   {
     m_aspectRatio = jsonValue.GetString("AspectRatio");
-
     m_aspectRatioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxWidth"))
   {
     m_maxWidth = jsonValue.GetString("MaxWidth");
-
     m_maxWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxHeight"))
   {
     m_maxHeight = jsonValue.GetString("MaxHeight");
-
     m_maxHeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayAspectRatio"))
   {
     m_displayAspectRatio = jsonValue.GetString("DisplayAspectRatio");
-
     m_displayAspectRatioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizingPolicy"))
   {
     m_sizingPolicy = jsonValue.GetString("SizingPolicy");
-
     m_sizingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaddingPolicy"))
   {
     m_paddingPolicy = jsonValue.GetString("PaddingPolicy");
-
     m_paddingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Watermarks"))
   {
     Aws::Utils::Array<JsonView> watermarksJsonList = jsonValue.GetArray("Watermarks");
@@ -155,7 +108,6 @@ VideoParameters& VideoParameters::operator =(JsonView jsonValue)
     }
     m_watermarksHasBeenSet = true;
   }
-
   return *this;
 }
 

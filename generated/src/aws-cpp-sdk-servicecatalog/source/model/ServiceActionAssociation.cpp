@@ -18,15 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ServiceActionAssociation::ServiceActionAssociation() : 
-    m_serviceActionIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false)
-{
-}
-
 ServiceActionAssociation::ServiceActionAssociation(JsonView jsonValue)
-  : ServiceActionAssociation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServiceActionAssociation& ServiceActionAssociation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ServiceActionId"))
   {
     m_serviceActionId = jsonValue.GetString("ServiceActionId");
-
     m_serviceActionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
-
     m_provisioningArtifactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

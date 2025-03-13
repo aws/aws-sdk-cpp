@@ -33,7 +33,7 @@ namespace Model
   class DataStorage
   {
   public:
-    AWS_CLOUDWATCHRUM_API DataStorage();
+    AWS_CLOUDWATCHRUM_API DataStorage() = default;
     AWS_CLOUDWATCHRUM_API DataStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API DataStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * stores copies of the data that RUM collects in CloudWatch Logs. If it does, this
      * structure also contains the name of the log group.</p>
      */
-    inline const CwLog& GetCwLog() const{ return m_cwLog; }
+    inline const CwLog& GetCwLog() const { return m_cwLog; }
     inline bool CwLogHasBeenSet() const { return m_cwLogHasBeenSet; }
-    inline void SetCwLog(const CwLog& value) { m_cwLogHasBeenSet = true; m_cwLog = value; }
-    inline void SetCwLog(CwLog&& value) { m_cwLogHasBeenSet = true; m_cwLog = std::move(value); }
-    inline DataStorage& WithCwLog(const CwLog& value) { SetCwLog(value); return *this;}
-    inline DataStorage& WithCwLog(CwLog&& value) { SetCwLog(std::move(value)); return *this;}
+    template<typename CwLogT = CwLog>
+    void SetCwLog(CwLogT&& value) { m_cwLogHasBeenSet = true; m_cwLog = std::forward<CwLogT>(value); }
+    template<typename CwLogT = CwLog>
+    DataStorage& WithCwLog(CwLogT&& value) { SetCwLog(std::forward<CwLogT>(value)); return *this;}
     ///@}
   private:
 

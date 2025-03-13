@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InferICD10CMRequest::InferICD10CMRequest() : 
-    m_textHasBeenSet(false)
-{
-}
-
 Aws::String InferICD10CMRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,31 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RoutingProfile::RoutingProfile() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_routingProfileArnHasBeenSet(false),
-    m_routingProfileIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_mediaConcurrenciesHasBeenSet(false),
-    m_defaultOutboundQueueIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_numberOfAssociatedQueues(0),
-    m_numberOfAssociatedQueuesHasBeenSet(false),
-    m_numberOfAssociatedUsers(0),
-    m_numberOfAssociatedUsersHasBeenSet(false),
-    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
-    m_agentAvailabilityTimerHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedRegionHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_associatedQueueIdsHasBeenSet(false)
-{
-}
-
 RoutingProfile::RoutingProfile(JsonView jsonValue)
-  : RoutingProfile()
 {
   *this = jsonValue;
 }
@@ -52,38 +28,28 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingProfileArn"))
   {
     m_routingProfileArn = jsonValue.GetString("RoutingProfileArn");
-
     m_routingProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingProfileId"))
   {
     m_routingProfileId = jsonValue.GetString("RoutingProfileId");
-
     m_routingProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaConcurrencies"))
   {
     Aws::Utils::Array<JsonView> mediaConcurrenciesJsonList = jsonValue.GetArray("MediaConcurrencies");
@@ -93,14 +59,11 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     }
     m_mediaConcurrenciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultOutboundQueueId"))
   {
     m_defaultOutboundQueueId = jsonValue.GetString("DefaultOutboundQueueId");
-
     m_defaultOutboundQueueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -110,49 +73,36 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssociatedQueues"))
   {
     m_numberOfAssociatedQueues = jsonValue.GetInt64("NumberOfAssociatedQueues");
-
     m_numberOfAssociatedQueuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssociatedUsers"))
   {
     m_numberOfAssociatedUsers = jsonValue.GetInt64("NumberOfAssociatedUsers");
-
     m_numberOfAssociatedUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentAvailabilityTimer"))
   {
     m_agentAvailabilityTimer = AgentAvailabilityTimerMapper::GetAgentAvailabilityTimerForName(jsonValue.GetString("AgentAvailabilityTimer"));
-
     m_agentAvailabilityTimerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedRegion"))
   {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
-
     m_lastModifiedRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefault"))
   {
     m_isDefault = jsonValue.GetBool("IsDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedQueueIds"))
   {
     Aws::Utils::Array<JsonView> associatedQueueIdsJsonList = jsonValue.GetArray("AssociatedQueueIds");
@@ -162,7 +112,6 @@ RoutingProfile& RoutingProfile::operator =(JsonView jsonValue)
     }
     m_associatedQueueIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

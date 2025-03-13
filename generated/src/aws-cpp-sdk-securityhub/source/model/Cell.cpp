@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Cell::Cell() : 
-    m_column(0),
-    m_columnHasBeenSet(false),
-    m_row(0),
-    m_rowHasBeenSet(false),
-    m_columnNameHasBeenSet(false),
-    m_cellReferenceHasBeenSet(false)
-{
-}
-
 Cell::Cell(JsonView jsonValue)
-  : Cell()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Cell& Cell::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetInt64("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Row"))
   {
     m_row = jsonValue.GetInt64("Row");
-
     m_rowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CellReference"))
   {
     m_cellReference = jsonValue.GetString("CellReference");
-
     m_cellReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

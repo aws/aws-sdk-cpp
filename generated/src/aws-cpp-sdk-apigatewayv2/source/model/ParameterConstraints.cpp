@@ -18,14 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-ParameterConstraints::ParameterConstraints() : 
-    m_required(false),
-    m_requiredHasBeenSet(false)
-{
-}
-
 ParameterConstraints::ParameterConstraints(JsonView jsonValue)
-  : ParameterConstraints()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ParameterConstraints& ParameterConstraints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetBool("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

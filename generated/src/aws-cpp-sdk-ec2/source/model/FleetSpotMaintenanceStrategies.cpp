@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetSpotMaintenanceStrategies::FleetSpotMaintenanceStrategies() : 
-    m_capacityRebalanceHasBeenSet(false)
-{
-}
-
 FleetSpotMaintenanceStrategies::FleetSpotMaintenanceStrategies(const XmlNode& xmlNode)
-  : FleetSpotMaintenanceStrategies()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ FleetSpotMaintenanceStrategies& FleetSpotMaintenanceStrategies::operator =(const
     {
       m_capacityRebalance = capacityRebalanceNode;
       m_capacityRebalanceHasBeenSet = true;
+       m_capacityRebalanceHasBeenSet = true;
     }
   }
 

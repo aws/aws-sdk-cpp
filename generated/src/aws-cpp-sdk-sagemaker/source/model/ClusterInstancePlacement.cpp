@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterInstancePlacement::ClusterInstancePlacement() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
-{
-}
-
 ClusterInstancePlacement::ClusterInstancePlacement(JsonView jsonValue)
-  : ClusterInstancePlacement()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClusterInstancePlacement& ClusterInstancePlacement::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
-
     m_availabilityZoneIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListEventPredictionsResult
   {
   public:
-    AWS_FRAUDDETECTOR_API ListEventPredictionsResult();
+    AWS_FRAUDDETECTOR_API ListEventPredictionsResult() = default;
     AWS_FRAUDDETECTOR_API ListEventPredictionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API ListEventPredictionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> The summary of the past predictions. </p>
      */
-    inline const Aws::Vector<EventPredictionSummary>& GetEventPredictionSummaries() const{ return m_eventPredictionSummaries; }
-    inline void SetEventPredictionSummaries(const Aws::Vector<EventPredictionSummary>& value) { m_eventPredictionSummaries = value; }
-    inline void SetEventPredictionSummaries(Aws::Vector<EventPredictionSummary>&& value) { m_eventPredictionSummaries = std::move(value); }
-    inline ListEventPredictionsResult& WithEventPredictionSummaries(const Aws::Vector<EventPredictionSummary>& value) { SetEventPredictionSummaries(value); return *this;}
-    inline ListEventPredictionsResult& WithEventPredictionSummaries(Aws::Vector<EventPredictionSummary>&& value) { SetEventPredictionSummaries(std::move(value)); return *this;}
-    inline ListEventPredictionsResult& AddEventPredictionSummaries(const EventPredictionSummary& value) { m_eventPredictionSummaries.push_back(value); return *this; }
-    inline ListEventPredictionsResult& AddEventPredictionSummaries(EventPredictionSummary&& value) { m_eventPredictionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventPredictionSummary>& GetEventPredictionSummaries() const { return m_eventPredictionSummaries; }
+    template<typename EventPredictionSummariesT = Aws::Vector<EventPredictionSummary>>
+    void SetEventPredictionSummaries(EventPredictionSummariesT&& value) { m_eventPredictionSummariesHasBeenSet = true; m_eventPredictionSummaries = std::forward<EventPredictionSummariesT>(value); }
+    template<typename EventPredictionSummariesT = Aws::Vector<EventPredictionSummary>>
+    ListEventPredictionsResult& WithEventPredictionSummaries(EventPredictionSummariesT&& value) { SetEventPredictionSummaries(std::forward<EventPredictionSummariesT>(value)); return *this;}
+    template<typename EventPredictionSummariesT = EventPredictionSummary>
+    ListEventPredictionsResult& AddEventPredictionSummaries(EventPredictionSummariesT&& value) { m_eventPredictionSummariesHasBeenSet = true; m_eventPredictionSummaries.emplace_back(std::forward<EventPredictionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * call again to retrieve the next page. Keep all other arguments unchanged. Each
      * pagination token expires after 24 hours. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEventPredictionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventPredictionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventPredictionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventPredictionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEventPredictionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEventPredictionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEventPredictionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEventPredictionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventPredictionSummary> m_eventPredictionSummaries;
+    bool m_eventPredictionSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

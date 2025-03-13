@@ -31,7 +31,7 @@ namespace Model
   class IngestedEventsDetail
   {
   public:
-    AWS_FRAUDDETECTOR_API IngestedEventsDetail();
+    AWS_FRAUDDETECTOR_API IngestedEventsDetail() = default;
     AWS_FRAUDDETECTOR_API IngestedEventsDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API IngestedEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The start and stop time of the ingested events.</p>
      */
-    inline const IngestedEventsTimeWindow& GetIngestedEventsTimeWindow() const{ return m_ingestedEventsTimeWindow; }
+    inline const IngestedEventsTimeWindow& GetIngestedEventsTimeWindow() const { return m_ingestedEventsTimeWindow; }
     inline bool IngestedEventsTimeWindowHasBeenSet() const { return m_ingestedEventsTimeWindowHasBeenSet; }
-    inline void SetIngestedEventsTimeWindow(const IngestedEventsTimeWindow& value) { m_ingestedEventsTimeWindowHasBeenSet = true; m_ingestedEventsTimeWindow = value; }
-    inline void SetIngestedEventsTimeWindow(IngestedEventsTimeWindow&& value) { m_ingestedEventsTimeWindowHasBeenSet = true; m_ingestedEventsTimeWindow = std::move(value); }
-    inline IngestedEventsDetail& WithIngestedEventsTimeWindow(const IngestedEventsTimeWindow& value) { SetIngestedEventsTimeWindow(value); return *this;}
-    inline IngestedEventsDetail& WithIngestedEventsTimeWindow(IngestedEventsTimeWindow&& value) { SetIngestedEventsTimeWindow(std::move(value)); return *this;}
+    template<typename IngestedEventsTimeWindowT = IngestedEventsTimeWindow>
+    void SetIngestedEventsTimeWindow(IngestedEventsTimeWindowT&& value) { m_ingestedEventsTimeWindowHasBeenSet = true; m_ingestedEventsTimeWindow = std::forward<IngestedEventsTimeWindowT>(value); }
+    template<typename IngestedEventsTimeWindowT = IngestedEventsTimeWindow>
+    IngestedEventsDetail& WithIngestedEventsTimeWindow(IngestedEventsTimeWindowT&& value) { SetIngestedEventsTimeWindow(std::forward<IngestedEventsTimeWindowT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class GetDataQualityMetricsResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API GetDataQualityMetricsResult();
+    AWS_LOOKOUTMETRICS_API GetDataQualityMetricsResult() = default;
     AWS_LOOKOUTMETRICS_API GetDataQualityMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API GetDataQualityMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>A list of the data quality metrics for the <code>AnomalyDetectorArn</code>
      * that you requested.</p>
      */
-    inline const Aws::Vector<AnomalyDetectorDataQualityMetric>& GetAnomalyDetectorDataQualityMetricList() const{ return m_anomalyDetectorDataQualityMetricList; }
-    inline void SetAnomalyDetectorDataQualityMetricList(const Aws::Vector<AnomalyDetectorDataQualityMetric>& value) { m_anomalyDetectorDataQualityMetricList = value; }
-    inline void SetAnomalyDetectorDataQualityMetricList(Aws::Vector<AnomalyDetectorDataQualityMetric>&& value) { m_anomalyDetectorDataQualityMetricList = std::move(value); }
-    inline GetDataQualityMetricsResult& WithAnomalyDetectorDataQualityMetricList(const Aws::Vector<AnomalyDetectorDataQualityMetric>& value) { SetAnomalyDetectorDataQualityMetricList(value); return *this;}
-    inline GetDataQualityMetricsResult& WithAnomalyDetectorDataQualityMetricList(Aws::Vector<AnomalyDetectorDataQualityMetric>&& value) { SetAnomalyDetectorDataQualityMetricList(std::move(value)); return *this;}
-    inline GetDataQualityMetricsResult& AddAnomalyDetectorDataQualityMetricList(const AnomalyDetectorDataQualityMetric& value) { m_anomalyDetectorDataQualityMetricList.push_back(value); return *this; }
-    inline GetDataQualityMetricsResult& AddAnomalyDetectorDataQualityMetricList(AnomalyDetectorDataQualityMetric&& value) { m_anomalyDetectorDataQualityMetricList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AnomalyDetectorDataQualityMetric>& GetAnomalyDetectorDataQualityMetricList() const { return m_anomalyDetectorDataQualityMetricList; }
+    template<typename AnomalyDetectorDataQualityMetricListT = Aws::Vector<AnomalyDetectorDataQualityMetric>>
+    void SetAnomalyDetectorDataQualityMetricList(AnomalyDetectorDataQualityMetricListT&& value) { m_anomalyDetectorDataQualityMetricListHasBeenSet = true; m_anomalyDetectorDataQualityMetricList = std::forward<AnomalyDetectorDataQualityMetricListT>(value); }
+    template<typename AnomalyDetectorDataQualityMetricListT = Aws::Vector<AnomalyDetectorDataQualityMetric>>
+    GetDataQualityMetricsResult& WithAnomalyDetectorDataQualityMetricList(AnomalyDetectorDataQualityMetricListT&& value) { SetAnomalyDetectorDataQualityMetricList(std::forward<AnomalyDetectorDataQualityMetricListT>(value)); return *this;}
+    template<typename AnomalyDetectorDataQualityMetricListT = AnomalyDetectorDataQualityMetric>
+    GetDataQualityMetricsResult& AddAnomalyDetectorDataQualityMetricList(AnomalyDetectorDataQualityMetricListT&& value) { m_anomalyDetectorDataQualityMetricListHasBeenSet = true; m_anomalyDetectorDataQualityMetricList.emplace_back(std::forward<AnomalyDetectorDataQualityMetricListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataQualityMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataQualityMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataQualityMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataQualityMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AnomalyDetectorDataQualityMetric> m_anomalyDetectorDataQualityMetricList;
+    bool m_anomalyDetectorDataQualityMetricListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

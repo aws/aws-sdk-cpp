@@ -18,20 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-CapacityStatus::CapacityStatus() : 
-    m_availableUserSessions(0),
-    m_availableUserSessionsHasBeenSet(false),
-    m_desiredUserSessions(0),
-    m_desiredUserSessionsHasBeenSet(false),
-    m_actualUserSessions(0),
-    m_actualUserSessionsHasBeenSet(false),
-    m_activeUserSessions(0),
-    m_activeUserSessionsHasBeenSet(false)
-{
-}
-
 CapacityStatus::CapacityStatus(JsonView jsonValue)
-  : CapacityStatus()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ CapacityStatus& CapacityStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AvailableUserSessions"))
   {
     m_availableUserSessions = jsonValue.GetInteger("AvailableUserSessions");
-
     m_availableUserSessionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredUserSessions"))
   {
     m_desiredUserSessions = jsonValue.GetInteger("DesiredUserSessions");
-
     m_desiredUserSessionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActualUserSessions"))
   {
     m_actualUserSessions = jsonValue.GetInteger("ActualUserSessions");
-
     m_actualUserSessionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveUserSessions"))
   {
     m_activeUserSessions = jsonValue.GetInteger("ActiveUserSessions");
-
     m_activeUserSessionsHasBeenSet = true;
   }
-
   return *this;
 }
 

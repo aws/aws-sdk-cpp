@@ -12,14 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLicenseManagerReportGeneratorsRequest::ListLicenseManagerReportGeneratorsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLicenseManagerReportGeneratorsRequest::SerializePayload() const
 {
   JsonValue payload;

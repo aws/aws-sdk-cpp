@@ -23,7 +23,7 @@ namespace Model
   class PutWhatsAppBusinessAccountEventDestinationsRequest : public SocialMessagingRequest
   {
   public:
-    AWS_SOCIALMESSAGING_API PutWhatsAppBusinessAccountEventDestinationsRequest();
+    AWS_SOCIALMESSAGING_API PutWhatsAppBusinessAccountEventDestinationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/social-messaging/latest/APIReference/API_ListLinkedWhatsAppBusinessAccounts.html">ListLinkedWhatsAppBusinessAccounts</a>
      * to list all WABAs and their details.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PutWhatsAppBusinessAccountEventDestinationsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,14 @@ namespace Model
      * <p>An array of <code>WhatsAppBusinessAccountEventDestination</code> event
      * destinations.</p>
      */
-    inline const Aws::Vector<WhatsAppBusinessAccountEventDestination>& GetEventDestinations() const{ return m_eventDestinations; }
+    inline const Aws::Vector<WhatsAppBusinessAccountEventDestination>& GetEventDestinations() const { return m_eventDestinations; }
     inline bool EventDestinationsHasBeenSet() const { return m_eventDestinationsHasBeenSet; }
-    inline void SetEventDestinations(const Aws::Vector<WhatsAppBusinessAccountEventDestination>& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = value; }
-    inline void SetEventDestinations(Aws::Vector<WhatsAppBusinessAccountEventDestination>&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = std::move(value); }
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& WithEventDestinations(const Aws::Vector<WhatsAppBusinessAccountEventDestination>& value) { SetEventDestinations(value); return *this;}
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& WithEventDestinations(Aws::Vector<WhatsAppBusinessAccountEventDestination>&& value) { SetEventDestinations(std::move(value)); return *this;}
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& AddEventDestinations(const WhatsAppBusinessAccountEventDestination& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.push_back(value); return *this; }
-    inline PutWhatsAppBusinessAccountEventDestinationsRequest& AddEventDestinations(WhatsAppBusinessAccountEventDestination&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.push_back(std::move(value)); return *this; }
+    template<typename EventDestinationsT = Aws::Vector<WhatsAppBusinessAccountEventDestination>>
+    void SetEventDestinations(EventDestinationsT&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = std::forward<EventDestinationsT>(value); }
+    template<typename EventDestinationsT = Aws::Vector<WhatsAppBusinessAccountEventDestination>>
+    PutWhatsAppBusinessAccountEventDestinationsRequest& WithEventDestinations(EventDestinationsT&& value) { SetEventDestinations(std::forward<EventDestinationsT>(value)); return *this;}
+    template<typename EventDestinationsT = WhatsAppBusinessAccountEventDestination>
+    PutWhatsAppBusinessAccountEventDestinationsRequest& AddEventDestinations(EventDestinationsT&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.emplace_back(std::forward<EventDestinationsT>(value)); return *this; }
     ///@}
   private:
 

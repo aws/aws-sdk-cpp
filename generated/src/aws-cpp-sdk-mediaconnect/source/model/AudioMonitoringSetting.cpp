@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-AudioMonitoringSetting::AudioMonitoringSetting() : 
-    m_silentAudioHasBeenSet(false)
-{
-}
-
 AudioMonitoringSetting::AudioMonitoringSetting(JsonView jsonValue)
-  : AudioMonitoringSetting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AudioMonitoringSetting& AudioMonitoringSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("silentAudio"))
   {
     m_silentAudio = jsonValue.GetObject("silentAudio");
-
     m_silentAudioHasBeenSet = true;
   }
-
   return *this;
 }
 

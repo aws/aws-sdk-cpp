@@ -31,7 +31,7 @@ namespace Model
   class ApplicationVersionSummary
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationVersionSummary();
+    AWS_KINESISANALYTICSV2_API ApplicationVersionSummary() = default;
     AWS_KINESISANALYTICSV2_API ApplicationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The ID of the application version. Managed Service for Apache Flink updates
      * the <code>ApplicationVersionId</code> each time you update the application.</p>
      */
-    inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
+    inline long long GetApplicationVersionId() const { return m_applicationVersionId; }
     inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
     inline ApplicationVersionSummary& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
@@ -52,19 +52,17 @@ namespace Model
     /**
      * <p>The status of the application.</p>
      */
-    inline const ApplicationStatus& GetApplicationStatus() const{ return m_applicationStatus; }
+    inline ApplicationStatus GetApplicationStatus() const { return m_applicationStatus; }
     inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
-    inline void SetApplicationStatus(const ApplicationStatus& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
-    inline void SetApplicationStatus(ApplicationStatus&& value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = std::move(value); }
-    inline ApplicationVersionSummary& WithApplicationStatus(const ApplicationStatus& value) { SetApplicationStatus(value); return *this;}
-    inline ApplicationVersionSummary& WithApplicationStatus(ApplicationStatus&& value) { SetApplicationStatus(std::move(value)); return *this;}
+    inline void SetApplicationStatus(ApplicationStatus value) { m_applicationStatusHasBeenSet = true; m_applicationStatus = value; }
+    inline ApplicationVersionSummary& WithApplicationStatus(ApplicationStatus value) { SetApplicationStatus(value); return *this;}
     ///@}
   private:
 
-    long long m_applicationVersionId;
+    long long m_applicationVersionId{0};
     bool m_applicationVersionIdHasBeenSet = false;
 
-    ApplicationStatus m_applicationStatus;
+    ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
     bool m_applicationStatusHasBeenSet = false;
   };
 

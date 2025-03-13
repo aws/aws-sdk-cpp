@@ -34,7 +34,7 @@ namespace Model
   class Trace
   {
   public:
-    AWS_XRAY_API Trace();
+    AWS_XRAY_API Trace() = default;
     AWS_XRAY_API Trace(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Trace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The unique identifier for the request that generated the trace's segments and
      * subsegments.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Trace& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Trace& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Trace& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Trace& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The length of time in seconds between the start time of the root segment and
      * the end time of the last segment that completed.</p>
      */
-    inline double GetDuration() const{ return m_duration; }
+    inline double GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(double value) { m_durationHasBeenSet = true; m_duration = value; }
     inline Trace& WithDuration(double value) { SetDuration(value); return *this;}
@@ -74,7 +72,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web
      * Services X-Ray endpoints and quotas</a>.</p>
      */
-    inline bool GetLimitExceeded() const{ return m_limitExceeded; }
+    inline bool GetLimitExceeded() const { return m_limitExceeded; }
     inline bool LimitExceededHasBeenSet() const { return m_limitExceededHasBeenSet; }
     inline void SetLimitExceeded(bool value) { m_limitExceededHasBeenSet = true; m_limitExceeded = value; }
     inline Trace& WithLimitExceeded(bool value) { SetLimitExceeded(value); return *this;}
@@ -85,24 +83,24 @@ namespace Model
      * <p>Segment documents for the segments and subsegments that comprise the
      * trace.</p>
      */
-    inline const Aws::Vector<Segment>& GetSegments() const{ return m_segments; }
+    inline const Aws::Vector<Segment>& GetSegments() const { return m_segments; }
     inline bool SegmentsHasBeenSet() const { return m_segmentsHasBeenSet; }
-    inline void SetSegments(const Aws::Vector<Segment>& value) { m_segmentsHasBeenSet = true; m_segments = value; }
-    inline void SetSegments(Aws::Vector<Segment>&& value) { m_segmentsHasBeenSet = true; m_segments = std::move(value); }
-    inline Trace& WithSegments(const Aws::Vector<Segment>& value) { SetSegments(value); return *this;}
-    inline Trace& WithSegments(Aws::Vector<Segment>&& value) { SetSegments(std::move(value)); return *this;}
-    inline Trace& AddSegments(const Segment& value) { m_segmentsHasBeenSet = true; m_segments.push_back(value); return *this; }
-    inline Trace& AddSegments(Segment&& value) { m_segmentsHasBeenSet = true; m_segments.push_back(std::move(value)); return *this; }
+    template<typename SegmentsT = Aws::Vector<Segment>>
+    void SetSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments = std::forward<SegmentsT>(value); }
+    template<typename SegmentsT = Aws::Vector<Segment>>
+    Trace& WithSegments(SegmentsT&& value) { SetSegments(std::forward<SegmentsT>(value)); return *this;}
+    template<typename SegmentsT = Segment>
+    Trace& AddSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments.emplace_back(std::forward<SegmentsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    double m_duration;
+    double m_duration{0.0};
     bool m_durationHasBeenSet = false;
 
-    bool m_limitExceeded;
+    bool m_limitExceeded{false};
     bool m_limitExceededHasBeenSet = false;
 
     Aws::Vector<Segment> m_segments;

@@ -33,7 +33,7 @@ namespace Model
   class Proxy
   {
   public:
-    AWS_CHIMESDKVOICE_API Proxy();
+    AWS_CHIMESDKVOICE_API Proxy() = default;
     AWS_CHIMESDKVOICE_API Proxy(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The default number of minutes allowed for proxy sessions.</p>
      */
-    inline int GetDefaultSessionExpiryMinutes() const{ return m_defaultSessionExpiryMinutes; }
+    inline int GetDefaultSessionExpiryMinutes() const { return m_defaultSessionExpiryMinutes; }
     inline bool DefaultSessionExpiryMinutesHasBeenSet() const { return m_defaultSessionExpiryMinutesHasBeenSet; }
     inline void SetDefaultSessionExpiryMinutes(int value) { m_defaultSessionExpiryMinutesHasBeenSet = true; m_defaultSessionExpiryMinutes = value; }
     inline Proxy& WithDefaultSessionExpiryMinutes(int value) { SetDefaultSessionExpiryMinutes(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>When true, stops proxy sessions from being created on the specified Amazon
      * Chime SDK Voice Connector.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline Proxy& WithDisabled(bool value) { SetDisabled(value); return *this;}
@@ -64,36 +64,33 @@ namespace Model
     /**
      * <p>The phone number to route calls to after a proxy session expires.</p>
      */
-    inline const Aws::String& GetFallBackPhoneNumber() const{ return m_fallBackPhoneNumber; }
+    inline const Aws::String& GetFallBackPhoneNumber() const { return m_fallBackPhoneNumber; }
     inline bool FallBackPhoneNumberHasBeenSet() const { return m_fallBackPhoneNumberHasBeenSet; }
-    inline void SetFallBackPhoneNumber(const Aws::String& value) { m_fallBackPhoneNumberHasBeenSet = true; m_fallBackPhoneNumber = value; }
-    inline void SetFallBackPhoneNumber(Aws::String&& value) { m_fallBackPhoneNumberHasBeenSet = true; m_fallBackPhoneNumber = std::move(value); }
-    inline void SetFallBackPhoneNumber(const char* value) { m_fallBackPhoneNumberHasBeenSet = true; m_fallBackPhoneNumber.assign(value); }
-    inline Proxy& WithFallBackPhoneNumber(const Aws::String& value) { SetFallBackPhoneNumber(value); return *this;}
-    inline Proxy& WithFallBackPhoneNumber(Aws::String&& value) { SetFallBackPhoneNumber(std::move(value)); return *this;}
-    inline Proxy& WithFallBackPhoneNumber(const char* value) { SetFallBackPhoneNumber(value); return *this;}
+    template<typename FallBackPhoneNumberT = Aws::String>
+    void SetFallBackPhoneNumber(FallBackPhoneNumberT&& value) { m_fallBackPhoneNumberHasBeenSet = true; m_fallBackPhoneNumber = std::forward<FallBackPhoneNumberT>(value); }
+    template<typename FallBackPhoneNumberT = Aws::String>
+    Proxy& WithFallBackPhoneNumber(FallBackPhoneNumberT&& value) { SetFallBackPhoneNumber(std::forward<FallBackPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The countries for proxy phone numbers to be selected from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPhoneNumberCountries() const{ return m_phoneNumberCountries; }
+    inline const Aws::Vector<Aws::String>& GetPhoneNumberCountries() const { return m_phoneNumberCountries; }
     inline bool PhoneNumberCountriesHasBeenSet() const { return m_phoneNumberCountriesHasBeenSet; }
-    inline void SetPhoneNumberCountries(const Aws::Vector<Aws::String>& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries = value; }
-    inline void SetPhoneNumberCountries(Aws::Vector<Aws::String>&& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries = std::move(value); }
-    inline Proxy& WithPhoneNumberCountries(const Aws::Vector<Aws::String>& value) { SetPhoneNumberCountries(value); return *this;}
-    inline Proxy& WithPhoneNumberCountries(Aws::Vector<Aws::String>&& value) { SetPhoneNumberCountries(std::move(value)); return *this;}
-    inline Proxy& AddPhoneNumberCountries(const Aws::String& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries.push_back(value); return *this; }
-    inline Proxy& AddPhoneNumberCountries(Aws::String&& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries.push_back(std::move(value)); return *this; }
-    inline Proxy& AddPhoneNumberCountries(const char* value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries.push_back(value); return *this; }
+    template<typename PhoneNumberCountriesT = Aws::Vector<Aws::String>>
+    void SetPhoneNumberCountries(PhoneNumberCountriesT&& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries = std::forward<PhoneNumberCountriesT>(value); }
+    template<typename PhoneNumberCountriesT = Aws::Vector<Aws::String>>
+    Proxy& WithPhoneNumberCountries(PhoneNumberCountriesT&& value) { SetPhoneNumberCountries(std::forward<PhoneNumberCountriesT>(value)); return *this;}
+    template<typename PhoneNumberCountriesT = Aws::String>
+    Proxy& AddPhoneNumberCountries(PhoneNumberCountriesT&& value) { m_phoneNumberCountriesHasBeenSet = true; m_phoneNumberCountries.emplace_back(std::forward<PhoneNumberCountriesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_defaultSessionExpiryMinutes;
+    int m_defaultSessionExpiryMinutes{0};
     bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
 
     Aws::String m_fallBackPhoneNumber;

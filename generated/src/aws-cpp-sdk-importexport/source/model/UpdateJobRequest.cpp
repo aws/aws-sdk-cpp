@@ -10,17 +10,6 @@
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-UpdateJobRequest::UpdateJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_validateOnly(false),
-    m_validateOnlyHasBeenSet(false),
-    m_aPIVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobRequest::SerializePayload() const
 {
   Aws::StringStream ss;

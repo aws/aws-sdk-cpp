@@ -12,15 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTLSInspectionConfigurationRequest::CreateTLSInspectionConfigurationRequest() : 
-    m_tLSInspectionConfigurationNameHasBeenSet(false),
-    m_tLSInspectionConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateTLSInspectionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

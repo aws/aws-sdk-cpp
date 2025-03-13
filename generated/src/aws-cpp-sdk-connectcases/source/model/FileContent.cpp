@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FileContent::FileContent() : 
-    m_fileArnHasBeenSet(false)
-{
-}
-
 FileContent::FileContent(JsonView jsonValue)
-  : FileContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FileContent& FileContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileArn"))
   {
     m_fileArn = jsonValue.GetString("fileArn");
-
     m_fileArnHasBeenSet = true;
   }
-
   return *this;
 }
 

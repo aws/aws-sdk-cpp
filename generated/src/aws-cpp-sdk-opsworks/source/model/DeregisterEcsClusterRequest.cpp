@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterEcsClusterRequest::DeregisterEcsClusterRequest() : 
-    m_ecsClusterArnHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterEcsClusterRequest::SerializePayload() const
 {
   JsonValue payload;

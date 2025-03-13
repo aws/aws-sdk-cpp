@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicy::ResponseHeadersPolicy() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_responseHeadersPolicyConfigHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicy::ResponseHeadersPolicy(const XmlNode& xmlNode)
-  : ResponseHeadersPolicy()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ ResponseHeadersPolicy& ResponseHeadersPolicy::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
       m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
+       m_lastModifiedTimeHasBeenSet = true;
     }
     XmlNode responseHeadersPolicyConfigNode = resultNode.FirstChild("ResponseHeadersPolicyConfig");
     if(!responseHeadersPolicyConfigNode.IsNull())
     {
       m_responseHeadersPolicyConfig = responseHeadersPolicyConfigNode;
       m_responseHeadersPolicyConfigHasBeenSet = true;
+       m_responseHeadersPolicyConfigHasBeenSet = true;
     }
   }
 

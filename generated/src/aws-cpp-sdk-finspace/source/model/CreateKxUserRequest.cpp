@@ -12,16 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKxUserRequest::CreateKxUserRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateKxUserRequest::SerializePayload() const
 {
   JsonValue payload;

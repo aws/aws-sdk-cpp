@@ -32,7 +32,7 @@ namespace Model
   class WaypointOptimizationFailedConstraint
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationFailedConstraint();
+    AWS_GEOROUTES_API WaypointOptimizationFailedConstraint() = default;
     AWS_GEOROUTES_API WaypointOptimizationFailedConstraint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationFailedConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The failed constraint.</p>
      */
-    inline const WaypointOptimizationConstraint& GetConstraint() const{ return m_constraint; }
+    inline WaypointOptimizationConstraint GetConstraint() const { return m_constraint; }
     inline bool ConstraintHasBeenSet() const { return m_constraintHasBeenSet; }
-    inline void SetConstraint(const WaypointOptimizationConstraint& value) { m_constraintHasBeenSet = true; m_constraint = value; }
-    inline void SetConstraint(WaypointOptimizationConstraint&& value) { m_constraintHasBeenSet = true; m_constraint = std::move(value); }
-    inline WaypointOptimizationFailedConstraint& WithConstraint(const WaypointOptimizationConstraint& value) { SetConstraint(value); return *this;}
-    inline WaypointOptimizationFailedConstraint& WithConstraint(WaypointOptimizationConstraint&& value) { SetConstraint(std::move(value)); return *this;}
+    inline void SetConstraint(WaypointOptimizationConstraint value) { m_constraintHasBeenSet = true; m_constraint = value; }
+    inline WaypointOptimizationFailedConstraint& WithConstraint(WaypointOptimizationConstraint value) { SetConstraint(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reason for the failed constraint.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline WaypointOptimizationFailedConstraint& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline WaypointOptimizationFailedConstraint& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline WaypointOptimizationFailedConstraint& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    WaypointOptimizationFailedConstraint& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 
-    WaypointOptimizationConstraint m_constraint;
+    WaypointOptimizationConstraint m_constraint{WaypointOptimizationConstraint::NOT_SET};
     bool m_constraintHasBeenSet = false;
 
     Aws::String m_reason;

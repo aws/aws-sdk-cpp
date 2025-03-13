@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAddressListResult::GetAddressListResult()
-{
-}
-
 GetAddressListResult::GetAddressListResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ GetAddressListResult& GetAddressListResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("AddressListArn"))
   {
     m_addressListArn = jsonValue.GetString("AddressListArn");
-
+    m_addressListArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressListId"))
   {
     m_addressListId = jsonValue.GetString("AddressListId");
-
+    m_addressListIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressListName"))
   {
     m_addressListName = jsonValue.GetString("AddressListName");
-
+    m_addressListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

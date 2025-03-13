@@ -12,14 +12,6 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentMembershipRequest::CreateEnvironmentMembershipRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_userArnHasBeenSet(false),
-    m_permissions(MemberPermissions::NOT_SET),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

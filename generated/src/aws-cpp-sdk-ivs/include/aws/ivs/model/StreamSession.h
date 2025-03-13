@@ -40,7 +40,7 @@ namespace Model
   class StreamSession
   {
   public:
-    AWS_IVS_API StreamSession();
+    AWS_IVS_API StreamSession() = default;
     AWS_IVS_API StreamSession(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API StreamSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
     /**
      * <p>The properties of the channel at the time of going live.</p>
      */
-    inline const Channel& GetChannel() const{ return m_channel; }
+    inline const Channel& GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline StreamSession& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-    inline StreamSession& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    template<typename ChannelT = Channel>
+    void SetChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel = std::forward<ChannelT>(value); }
+    template<typename ChannelT = Channel>
+    StreamSession& WithChannel(ChannelT&& value) { SetChannel(std::forward<ChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +64,12 @@ namespace Model
      * that this is returned as a string</i>. For live streams, this is
      * <code>NULL</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline StreamSession& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline StreamSession& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    StreamSession& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +83,12 @@ namespace Model
      * <code>ingestConfiguration</code> contains data for only the first track (track0)
      * and <code>ingestConfigurations</code> contains data for all tracks.</p>
      */
-    inline const IngestConfiguration& GetIngestConfiguration() const{ return m_ingestConfiguration; }
+    inline const IngestConfiguration& GetIngestConfiguration() const { return m_ingestConfiguration; }
     inline bool IngestConfigurationHasBeenSet() const { return m_ingestConfigurationHasBeenSet; }
-    inline void SetIngestConfiguration(const IngestConfiguration& value) { m_ingestConfigurationHasBeenSet = true; m_ingestConfiguration = value; }
-    inline void SetIngestConfiguration(IngestConfiguration&& value) { m_ingestConfigurationHasBeenSet = true; m_ingestConfiguration = std::move(value); }
-    inline StreamSession& WithIngestConfiguration(const IngestConfiguration& value) { SetIngestConfiguration(value); return *this;}
-    inline StreamSession& WithIngestConfiguration(IngestConfiguration&& value) { SetIngestConfiguration(std::move(value)); return *this;}
+    template<typename IngestConfigurationT = IngestConfiguration>
+    void SetIngestConfiguration(IngestConfigurationT&& value) { m_ingestConfigurationHasBeenSet = true; m_ingestConfiguration = std::forward<IngestConfigurationT>(value); }
+    template<typename IngestConfigurationT = IngestConfiguration>
+    StreamSession& WithIngestConfiguration(IngestConfigurationT&& value) { SetIngestConfiguration(std::forward<IngestConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,24 +97,24 @@ namespace Model
      * <code>ingestConfigurations</code> contains data for all tracks; otherwise, it
      * contains data only for track0 (the sole track).</p>
      */
-    inline const IngestConfigurations& GetIngestConfigurations() const{ return m_ingestConfigurations; }
+    inline const IngestConfigurations& GetIngestConfigurations() const { return m_ingestConfigurations; }
     inline bool IngestConfigurationsHasBeenSet() const { return m_ingestConfigurationsHasBeenSet; }
-    inline void SetIngestConfigurations(const IngestConfigurations& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations = value; }
-    inline void SetIngestConfigurations(IngestConfigurations&& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations = std::move(value); }
-    inline StreamSession& WithIngestConfigurations(const IngestConfigurations& value) { SetIngestConfigurations(value); return *this;}
-    inline StreamSession& WithIngestConfigurations(IngestConfigurations&& value) { SetIngestConfigurations(std::move(value)); return *this;}
+    template<typename IngestConfigurationsT = IngestConfigurations>
+    void SetIngestConfigurations(IngestConfigurationsT&& value) { m_ingestConfigurationsHasBeenSet = true; m_ingestConfigurations = std::forward<IngestConfigurationsT>(value); }
+    template<typename IngestConfigurationsT = IngestConfigurations>
+    StreamSession& WithIngestConfigurations(IngestConfigurationsT&& value) { SetIngestConfigurations(std::forward<IngestConfigurationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of recording the live stream.</p>
      */
-    inline const RecordingConfiguration& GetRecordingConfiguration() const{ return m_recordingConfiguration; }
+    inline const RecordingConfiguration& GetRecordingConfiguration() const { return m_recordingConfiguration; }
     inline bool RecordingConfigurationHasBeenSet() const { return m_recordingConfigurationHasBeenSet; }
-    inline void SetRecordingConfiguration(const RecordingConfiguration& value) { m_recordingConfigurationHasBeenSet = true; m_recordingConfiguration = value; }
-    inline void SetRecordingConfiguration(RecordingConfiguration&& value) { m_recordingConfigurationHasBeenSet = true; m_recordingConfiguration = std::move(value); }
-    inline StreamSession& WithRecordingConfiguration(const RecordingConfiguration& value) { SetRecordingConfiguration(value); return *this;}
-    inline StreamSession& WithRecordingConfiguration(RecordingConfiguration&& value) { SetRecordingConfiguration(std::move(value)); return *this;}
+    template<typename RecordingConfigurationT = RecordingConfiguration>
+    void SetRecordingConfiguration(RecordingConfigurationT&& value) { m_recordingConfigurationHasBeenSet = true; m_recordingConfiguration = std::forward<RecordingConfigurationT>(value); }
+    template<typename RecordingConfigurationT = RecordingConfiguration>
+    StreamSession& WithRecordingConfiguration(RecordingConfigurationT&& value) { SetRecordingConfiguration(std::forward<RecordingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +122,12 @@ namespace Model
      * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
      * this is returned as a string</i>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline StreamSession& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline StreamSession& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    StreamSession& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +135,12 @@ namespace Model
      * <p>Unique identifier for a live or previously live stream in the specified
      * channel.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline StreamSession& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline StreamSession& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline StreamSession& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    StreamSession& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,21 +150,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using
      * Amazon EventBridge with Amazon IVS</a>.</p>
      */
-    inline const Aws::Vector<StreamEvent>& GetTruncatedEvents() const{ return m_truncatedEvents; }
+    inline const Aws::Vector<StreamEvent>& GetTruncatedEvents() const { return m_truncatedEvents; }
     inline bool TruncatedEventsHasBeenSet() const { return m_truncatedEventsHasBeenSet; }
-    inline void SetTruncatedEvents(const Aws::Vector<StreamEvent>& value) { m_truncatedEventsHasBeenSet = true; m_truncatedEvents = value; }
-    inline void SetTruncatedEvents(Aws::Vector<StreamEvent>&& value) { m_truncatedEventsHasBeenSet = true; m_truncatedEvents = std::move(value); }
-    inline StreamSession& WithTruncatedEvents(const Aws::Vector<StreamEvent>& value) { SetTruncatedEvents(value); return *this;}
-    inline StreamSession& WithTruncatedEvents(Aws::Vector<StreamEvent>&& value) { SetTruncatedEvents(std::move(value)); return *this;}
-    inline StreamSession& AddTruncatedEvents(const StreamEvent& value) { m_truncatedEventsHasBeenSet = true; m_truncatedEvents.push_back(value); return *this; }
-    inline StreamSession& AddTruncatedEvents(StreamEvent&& value) { m_truncatedEventsHasBeenSet = true; m_truncatedEvents.push_back(std::move(value)); return *this; }
+    template<typename TruncatedEventsT = Aws::Vector<StreamEvent>>
+    void SetTruncatedEvents(TruncatedEventsT&& value) { m_truncatedEventsHasBeenSet = true; m_truncatedEvents = std::forward<TruncatedEventsT>(value); }
+    template<typename TruncatedEventsT = Aws::Vector<StreamEvent>>
+    StreamSession& WithTruncatedEvents(TruncatedEventsT&& value) { SetTruncatedEvents(std::forward<TruncatedEventsT>(value)); return *this;}
+    template<typename TruncatedEventsT = StreamEvent>
+    StreamSession& AddTruncatedEvents(TruncatedEventsT&& value) { m_truncatedEventsHasBeenSet = true; m_truncatedEvents.emplace_back(std::forward<TruncatedEventsT>(value)); return *this; }
     ///@}
   private:
 
     Channel m_channel;
     bool m_channelHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     IngestConfiguration m_ingestConfiguration;
@@ -178,7 +176,7 @@ namespace Model
     RecordingConfiguration m_recordingConfiguration;
     bool m_recordingConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
     Aws::String m_streamId;

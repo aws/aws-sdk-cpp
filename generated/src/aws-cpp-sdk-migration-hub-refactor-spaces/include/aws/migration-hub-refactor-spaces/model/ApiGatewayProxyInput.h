@@ -33,7 +33,7 @@ namespace Model
   class ApiGatewayProxyInput
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxyInput();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxyInput() = default;
     AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxyInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxyInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * Refactor Spaces using an interface endpoint (Amazon Web Services
      * PrivateLink)</a>.</p>
      */
-    inline const ApiGatewayEndpointType& GetEndpointType() const{ return m_endpointType; }
+    inline ApiGatewayEndpointType GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const ApiGatewayEndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(ApiGatewayEndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline ApiGatewayProxyInput& WithEndpointType(const ApiGatewayEndpointType& value) { SetEndpointType(value); return *this;}
-    inline ApiGatewayProxyInput& WithEndpointType(ApiGatewayEndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline void SetEndpointType(ApiGatewayEndpointType value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline ApiGatewayProxyInput& WithEndpointType(ApiGatewayEndpointType value) { SetEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +65,16 @@ namespace Model
      * <p>The name of the API Gateway stage. The name defaults to <code>prod</code>.
      * </p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline ApiGatewayProxyInput& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline ApiGatewayProxyInput& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline ApiGatewayProxyInput& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    ApiGatewayProxyInput& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
   private:
 
-    ApiGatewayEndpointType m_endpointType;
+    ApiGatewayEndpointType m_endpointType{ApiGatewayEndpointType::NOT_SET};
     bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_stageName;

@@ -35,7 +35,7 @@ namespace Model
   class S3RecordingSinkRuntimeConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API S3RecordingSinkRuntimeConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API S3RecordingSinkRuntimeConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API S3RecordingSinkRuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API S3RecordingSinkRuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,29 @@ namespace Model
     /**
      * <p>The URI of the S3 bucket used as the sink.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline S3RecordingSinkRuntimeConfiguration& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline S3RecordingSinkRuntimeConfiguration& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline S3RecordingSinkRuntimeConfiguration& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    S3RecordingSinkRuntimeConfiguration& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file format for the media files sent to the Amazon S3 bucket.</p>
      */
-    inline const RecordingFileFormat& GetRecordingFileFormat() const{ return m_recordingFileFormat; }
+    inline RecordingFileFormat GetRecordingFileFormat() const { return m_recordingFileFormat; }
     inline bool RecordingFileFormatHasBeenSet() const { return m_recordingFileFormatHasBeenSet; }
-    inline void SetRecordingFileFormat(const RecordingFileFormat& value) { m_recordingFileFormatHasBeenSet = true; m_recordingFileFormat = value; }
-    inline void SetRecordingFileFormat(RecordingFileFormat&& value) { m_recordingFileFormatHasBeenSet = true; m_recordingFileFormat = std::move(value); }
-    inline S3RecordingSinkRuntimeConfiguration& WithRecordingFileFormat(const RecordingFileFormat& value) { SetRecordingFileFormat(value); return *this;}
-    inline S3RecordingSinkRuntimeConfiguration& WithRecordingFileFormat(RecordingFileFormat&& value) { SetRecordingFileFormat(std::move(value)); return *this;}
+    inline void SetRecordingFileFormat(RecordingFileFormat value) { m_recordingFileFormatHasBeenSet = true; m_recordingFileFormat = value; }
+    inline S3RecordingSinkRuntimeConfiguration& WithRecordingFileFormat(RecordingFileFormat value) { SetRecordingFileFormat(value); return *this;}
     ///@}
   private:
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
 
-    RecordingFileFormat m_recordingFileFormat;
+    RecordingFileFormat m_recordingFileFormat{RecordingFileFormat::NOT_SET};
     bool m_recordingFileFormatHasBeenSet = false;
   };
 

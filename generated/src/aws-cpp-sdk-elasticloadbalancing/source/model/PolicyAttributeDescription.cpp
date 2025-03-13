@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-PolicyAttributeDescription::PolicyAttributeDescription() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 PolicyAttributeDescription::PolicyAttributeDescription(const XmlNode& xmlNode)
-  : PolicyAttributeDescription()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ PolicyAttributeDescription& PolicyAttributeDescription::operator =(const XmlNode
     {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
+       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeValueNode = resultNode.FirstChild("AttributeValue");
     if(!attributeValueNode.IsNull())
     {
       m_attributeValue = Aws::Utils::Xml::DecodeEscapedXmlText(attributeValueNode.GetText());
       m_attributeValueHasBeenSet = true;
+       m_attributeValueHasBeenSet = true;
     }
   }
 

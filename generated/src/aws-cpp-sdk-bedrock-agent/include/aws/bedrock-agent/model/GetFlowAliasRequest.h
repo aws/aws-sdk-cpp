@@ -21,7 +21,7 @@ namespace Model
   class GetFlowAliasRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API GetFlowAliasRequest();
+    AWS_BEDROCKAGENT_API GetFlowAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the alias for which to retrieve information.</p>
      */
-    inline const Aws::String& GetAliasIdentifier() const{ return m_aliasIdentifier; }
+    inline const Aws::String& GetAliasIdentifier() const { return m_aliasIdentifier; }
     inline bool AliasIdentifierHasBeenSet() const { return m_aliasIdentifierHasBeenSet; }
-    inline void SetAliasIdentifier(const Aws::String& value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier = value; }
-    inline void SetAliasIdentifier(Aws::String&& value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier = std::move(value); }
-    inline void SetAliasIdentifier(const char* value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier.assign(value); }
-    inline GetFlowAliasRequest& WithAliasIdentifier(const Aws::String& value) { SetAliasIdentifier(value); return *this;}
-    inline GetFlowAliasRequest& WithAliasIdentifier(Aws::String&& value) { SetAliasIdentifier(std::move(value)); return *this;}
-    inline GetFlowAliasRequest& WithAliasIdentifier(const char* value) { SetAliasIdentifier(value); return *this;}
+    template<typename AliasIdentifierT = Aws::String>
+    void SetAliasIdentifier(AliasIdentifierT&& value) { m_aliasIdentifierHasBeenSet = true; m_aliasIdentifier = std::forward<AliasIdentifierT>(value); }
+    template<typename AliasIdentifierT = Aws::String>
+    GetFlowAliasRequest& WithAliasIdentifier(AliasIdentifierT&& value) { SetAliasIdentifier(std::forward<AliasIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the flow that the alias belongs to.</p>
      */
-    inline const Aws::String& GetFlowIdentifier() const{ return m_flowIdentifier; }
+    inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
     inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
-    inline void SetFlowIdentifier(const Aws::String& value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier = value; }
-    inline void SetFlowIdentifier(Aws::String&& value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier = std::move(value); }
-    inline void SetFlowIdentifier(const char* value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier.assign(value); }
-    inline GetFlowAliasRequest& WithFlowIdentifier(const Aws::String& value) { SetFlowIdentifier(value); return *this;}
-    inline GetFlowAliasRequest& WithFlowIdentifier(Aws::String&& value) { SetFlowIdentifier(std::move(value)); return *this;}
-    inline GetFlowAliasRequest& WithFlowIdentifier(const char* value) { SetFlowIdentifier(value); return *this;}
+    template<typename FlowIdentifierT = Aws::String>
+    void SetFlowIdentifier(FlowIdentifierT&& value) { m_flowIdentifierHasBeenSet = true; m_flowIdentifier = std::forward<FlowIdentifierT>(value); }
+    template<typename FlowIdentifierT = Aws::String>
+    GetFlowAliasRequest& WithFlowIdentifier(FlowIdentifierT&& value) { SetFlowIdentifier(std::forward<FlowIdentifierT>(value)); return *this;}
     ///@}
   private:
 

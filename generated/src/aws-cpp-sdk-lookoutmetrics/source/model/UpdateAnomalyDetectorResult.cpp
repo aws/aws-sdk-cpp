@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAnomalyDetectorResult::UpdateAnomalyDetectorResult()
-{
-}
-
 UpdateAnomalyDetectorResult::UpdateAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateAnomalyDetectorResult& UpdateAnomalyDetectorResult::operator =(const Aws::
   if(jsonValue.ValueExists("AnomalyDetectorArn"))
   {
     m_anomalyDetectorArn = jsonValue.GetString("AnomalyDetectorArn");
-
+    m_anomalyDetectorArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

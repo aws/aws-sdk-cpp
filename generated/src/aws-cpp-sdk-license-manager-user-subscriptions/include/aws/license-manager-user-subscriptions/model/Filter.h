@@ -34,7 +34,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Filter();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Filter() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The name of an attribute to use as a filter.</p>
      */
-    inline const Aws::String& GetAttribute() const{ return m_attribute; }
+    inline const Aws::String& GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
-    inline Filter& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
-    inline Filter& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
-    inline Filter& WithAttribute(const char* value) { SetAttribute(value); return *this;}
+    template<typename AttributeT = Aws::String>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Aws::String>
+    Filter& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of search (For example, eq, geq, leq)</p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline Filter& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline Filter& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline Filter& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    Filter& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Value of the filter.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Filter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Filter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Filter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Filter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

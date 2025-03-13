@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrincipalIdFormat::PrincipalIdFormat() : 
-    m_arnHasBeenSet(false),
-    m_statusesHasBeenSet(false)
-{
-}
-
 PrincipalIdFormat::PrincipalIdFormat(const XmlNode& xmlNode)
-  : PrincipalIdFormat()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ PrincipalIdFormat& PrincipalIdFormat::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode statusesNode = resultNode.FirstChild("statusSet");
     if(!statusesNode.IsNull())
     {
       XmlNode statusesMember = statusesNode.FirstChild("item");
+      m_statusesHasBeenSet = !statusesMember.IsNull();
       while(!statusesMember.IsNull())
       {
         m_statuses.push_back(statusesMember);
         statusesMember = statusesMember.NextNode("item");
       }
 
-      m_statusesHasBeenSet = true;
+       m_statusesHasBeenSet = true;
     }
   }
 

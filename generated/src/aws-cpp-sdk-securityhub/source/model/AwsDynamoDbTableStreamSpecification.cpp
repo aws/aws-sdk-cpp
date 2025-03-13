@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableStreamSpecification::AwsDynamoDbTableStreamSpecification() : 
-    m_streamEnabled(false),
-    m_streamEnabledHasBeenSet(false),
-    m_streamViewTypeHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableStreamSpecification::AwsDynamoDbTableStreamSpecification(JsonView jsonValue)
-  : AwsDynamoDbTableStreamSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsDynamoDbTableStreamSpecification& AwsDynamoDbTableStreamSpecification::operat
   if(jsonValue.ValueExists("StreamEnabled"))
   {
     m_streamEnabled = jsonValue.GetBool("StreamEnabled");
-
     m_streamEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamViewType"))
   {
     m_streamViewType = jsonValue.GetString("StreamViewType");
-
     m_streamViewTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

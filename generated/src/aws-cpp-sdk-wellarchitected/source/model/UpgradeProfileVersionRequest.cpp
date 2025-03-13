@@ -12,15 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpgradeProfileVersionRequest::UpgradeProfileVersionRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_milestoneNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpgradeProfileVersionRequest::SerializePayload() const
 {
   JsonValue payload;

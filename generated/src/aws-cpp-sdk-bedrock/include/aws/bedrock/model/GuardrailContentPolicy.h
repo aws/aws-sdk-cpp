@@ -35,7 +35,7 @@ namespace Model
   class GuardrailContentPolicy
   {
   public:
-    AWS_BEDROCK_API GuardrailContentPolicy();
+    AWS_BEDROCK_API GuardrailContentPolicy() = default;
     AWS_BEDROCK_API GuardrailContentPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailContentPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>Contains the type of the content filter and how strongly it should apply to
      * prompts and model responses.</p>
      */
-    inline const Aws::Vector<GuardrailContentFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<GuardrailContentFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<GuardrailContentFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<GuardrailContentFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline GuardrailContentPolicy& WithFilters(const Aws::Vector<GuardrailContentFilter>& value) { SetFilters(value); return *this;}
-    inline GuardrailContentPolicy& WithFilters(Aws::Vector<GuardrailContentFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline GuardrailContentPolicy& AddFilters(const GuardrailContentFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline GuardrailContentPolicy& AddFilters(GuardrailContentFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<GuardrailContentFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<GuardrailContentFilter>>
+    GuardrailContentPolicy& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = GuardrailContentFilter>
+    GuardrailContentPolicy& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

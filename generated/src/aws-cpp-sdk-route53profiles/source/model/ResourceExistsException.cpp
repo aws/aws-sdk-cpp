@@ -18,14 +18,7 @@ namespace Route53Profiles
 namespace Model
 {
 
-ResourceExistsException::ResourceExistsException() : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceExistsException::ResourceExistsException(JsonView jsonValue)
-  : ResourceExistsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceExistsException& ResourceExistsException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

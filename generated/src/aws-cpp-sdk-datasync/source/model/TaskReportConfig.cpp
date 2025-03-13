@@ -18,20 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-TaskReportConfig::TaskReportConfig() : 
-    m_destinationHasBeenSet(false),
-    m_outputType(ReportOutputType::NOT_SET),
-    m_outputTypeHasBeenSet(false),
-    m_reportLevel(ReportLevel::NOT_SET),
-    m_reportLevelHasBeenSet(false),
-    m_objectVersionIds(ObjectVersionIds::NOT_SET),
-    m_objectVersionIdsHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 TaskReportConfig::TaskReportConfig(JsonView jsonValue)
-  : TaskReportConfig()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ TaskReportConfig& TaskReportConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetObject("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputType"))
   {
     m_outputType = ReportOutputTypeMapper::GetReportOutputTypeForName(jsonValue.GetString("OutputType"));
-
     m_outputTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportLevel"))
   {
     m_reportLevel = ReportLevelMapper::GetReportLevelForName(jsonValue.GetString("ReportLevel"));
-
     m_reportLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectVersionIds"))
   {
     m_objectVersionIds = ObjectVersionIdsMapper::GetObjectVersionIdsForName(jsonValue.GetString("ObjectVersionIds"));
-
     m_objectVersionIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Overrides"))
   {
     m_overrides = jsonValue.GetObject("Overrides");
-
     m_overridesHasBeenSet = true;
   }
-
   return *this;
 }
 

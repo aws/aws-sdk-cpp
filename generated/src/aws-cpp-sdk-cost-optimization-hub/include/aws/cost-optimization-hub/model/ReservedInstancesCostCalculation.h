@@ -31,7 +31,7 @@ namespace Model
   class ReservedInstancesCostCalculation
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ReservedInstancesCostCalculation();
+    AWS_COSTOPTIMIZATIONHUB_API ReservedInstancesCostCalculation() = default;
     AWS_COSTOPTIMIZATIONHUB_API ReservedInstancesCostCalculation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ReservedInstancesCostCalculation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Pricing details of the purchase recommendation.</p>
      */
-    inline const ReservedInstancesPricing& GetPricing() const{ return m_pricing; }
+    inline const ReservedInstancesPricing& GetPricing() const { return m_pricing; }
     inline bool PricingHasBeenSet() const { return m_pricingHasBeenSet; }
-    inline void SetPricing(const ReservedInstancesPricing& value) { m_pricingHasBeenSet = true; m_pricing = value; }
-    inline void SetPricing(ReservedInstancesPricing&& value) { m_pricingHasBeenSet = true; m_pricing = std::move(value); }
-    inline ReservedInstancesCostCalculation& WithPricing(const ReservedInstancesPricing& value) { SetPricing(value); return *this;}
-    inline ReservedInstancesCostCalculation& WithPricing(ReservedInstancesPricing&& value) { SetPricing(std::move(value)); return *this;}
+    template<typename PricingT = ReservedInstancesPricing>
+    void SetPricing(PricingT&& value) { m_pricingHasBeenSet = true; m_pricing = std::forward<PricingT>(value); }
+    template<typename PricingT = ReservedInstancesPricing>
+    ReservedInstancesCostCalculation& WithPricing(PricingT&& value) { SetPricing(std::forward<PricingT>(value)); return *this;}
     ///@}
   private:
 

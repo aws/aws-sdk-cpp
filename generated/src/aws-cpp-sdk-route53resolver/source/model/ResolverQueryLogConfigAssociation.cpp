@@ -18,21 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResolverQueryLogConfigAssociation::ResolverQueryLogConfigAssociation() : 
-    m_idHasBeenSet(false),
-    m_resolverQueryLogConfigIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_status(ResolverQueryLogConfigAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_error(ResolverQueryLogConfigAssociationError::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ResolverQueryLogConfigAssociation::ResolverQueryLogConfigAssociation(JsonView jsonValue)
-  : ResolverQueryLogConfigAssociation()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ResolverQueryLogConfigAssociation& ResolverQueryLogConfigAssociation::operator =
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverQueryLogConfigId"))
   {
     m_resolverQueryLogConfigId = jsonValue.GetString("ResolverQueryLogConfigId");
-
     m_resolverQueryLogConfigIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResolverQueryLogConfigAssociationStatusMapper::GetResolverQueryLogConfigAssociationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = ResolverQueryLogConfigAssociationErrorMapper::GetResolverQueryLogConfigAssociationErrorForName(jsonValue.GetString("Error"));
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

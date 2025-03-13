@@ -32,7 +32,7 @@ namespace Model
   class DefaultTextFieldControlOptions
   {
   public:
-    AWS_QUICKSIGHT_API DefaultTextFieldControlOptions();
+    AWS_QUICKSIGHT_API DefaultTextFieldControlOptions() = default;
     AWS_QUICKSIGHT_API DefaultTextFieldControlOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultTextFieldControlOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The display options of a control.</p>
      */
-    inline const TextFieldControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const TextFieldControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const TextFieldControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(TextFieldControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline DefaultTextFieldControlOptions& WithDisplayOptions(const TextFieldControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline DefaultTextFieldControlOptions& WithDisplayOptions(TextFieldControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = TextFieldControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = TextFieldControlDisplayOptions>
+    DefaultTextFieldControlOptions& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
   private:
 

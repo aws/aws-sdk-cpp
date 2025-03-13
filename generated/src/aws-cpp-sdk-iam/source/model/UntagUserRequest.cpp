@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagUserRequest::UntagUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

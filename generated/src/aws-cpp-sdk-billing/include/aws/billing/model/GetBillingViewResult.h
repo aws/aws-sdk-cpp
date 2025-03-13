@@ -28,7 +28,7 @@ namespace Model
   class GetBillingViewResult
   {
   public:
-    AWS_BILLING_API GetBillingViewResult();
+    AWS_BILLING_API GetBillingViewResult() = default;
     AWS_BILLING_API GetBillingViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLING_API GetBillingViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The billing view element associated with the specified ARN. </p>
      */
-    inline const BillingViewElement& GetBillingView() const{ return m_billingView; }
-    inline void SetBillingView(const BillingViewElement& value) { m_billingView = value; }
-    inline void SetBillingView(BillingViewElement&& value) { m_billingView = std::move(value); }
-    inline GetBillingViewResult& WithBillingView(const BillingViewElement& value) { SetBillingView(value); return *this;}
-    inline GetBillingViewResult& WithBillingView(BillingViewElement&& value) { SetBillingView(std::move(value)); return *this;}
+    inline const BillingViewElement& GetBillingView() const { return m_billingView; }
+    template<typename BillingViewT = BillingViewElement>
+    void SetBillingView(BillingViewT&& value) { m_billingViewHasBeenSet = true; m_billingView = std::forward<BillingViewT>(value); }
+    template<typename BillingViewT = BillingViewElement>
+    GetBillingViewResult& WithBillingView(BillingViewT&& value) { SetBillingView(std::forward<BillingViewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBillingViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBillingViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBillingViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBillingViewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BillingViewElement m_billingView;
+    bool m_billingViewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

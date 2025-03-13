@@ -32,7 +32,7 @@ namespace Model
   class FlowConnectionConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API FlowConnectionConfiguration();
+    AWS_BEDROCKAGENT_API FlowConnectionConfiguration() = default;
     AWS_BEDROCKAGENT_API FlowConnectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowConnectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration of a connection originating from a Condition node.</p>
      */
-    inline const FlowConditionalConnectionConfiguration& GetConditional() const{ return m_conditional; }
+    inline const FlowConditionalConnectionConfiguration& GetConditional() const { return m_conditional; }
     inline bool ConditionalHasBeenSet() const { return m_conditionalHasBeenSet; }
-    inline void SetConditional(const FlowConditionalConnectionConfiguration& value) { m_conditionalHasBeenSet = true; m_conditional = value; }
-    inline void SetConditional(FlowConditionalConnectionConfiguration&& value) { m_conditionalHasBeenSet = true; m_conditional = std::move(value); }
-    inline FlowConnectionConfiguration& WithConditional(const FlowConditionalConnectionConfiguration& value) { SetConditional(value); return *this;}
-    inline FlowConnectionConfiguration& WithConditional(FlowConditionalConnectionConfiguration&& value) { SetConditional(std::move(value)); return *this;}
+    template<typename ConditionalT = FlowConditionalConnectionConfiguration>
+    void SetConditional(ConditionalT&& value) { m_conditionalHasBeenSet = true; m_conditional = std::forward<ConditionalT>(value); }
+    template<typename ConditionalT = FlowConditionalConnectionConfiguration>
+    FlowConnectionConfiguration& WithConditional(ConditionalT&& value) { SetConditional(std::forward<ConditionalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +55,12 @@ namespace Model
      * <p>The configuration of a connection originating from a node that isn't a
      * Condition node.</p>
      */
-    inline const FlowDataConnectionConfiguration& GetData() const{ return m_data; }
+    inline const FlowDataConnectionConfiguration& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const FlowDataConnectionConfiguration& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(FlowDataConnectionConfiguration&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline FlowConnectionConfiguration& WithData(const FlowDataConnectionConfiguration& value) { SetData(value); return *this;}
-    inline FlowConnectionConfiguration& WithData(FlowDataConnectionConfiguration&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = FlowDataConnectionConfiguration>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = FlowDataConnectionConfiguration>
+    FlowConnectionConfiguration& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 

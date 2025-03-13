@@ -29,7 +29,7 @@ namespace Model
   class BatchGetBuildsResult
   {
   public:
-    AWS_CODEBUILD_API BatchGetBuildsResult();
+    AWS_CODEBUILD_API BatchGetBuildsResult() = default;
     AWS_CODEBUILD_API BatchGetBuildsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API BatchGetBuildsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>Information about the requested builds.</p>
      */
-    inline const Aws::Vector<Build>& GetBuilds() const{ return m_builds; }
-    inline void SetBuilds(const Aws::Vector<Build>& value) { m_builds = value; }
-    inline void SetBuilds(Aws::Vector<Build>&& value) { m_builds = std::move(value); }
-    inline BatchGetBuildsResult& WithBuilds(const Aws::Vector<Build>& value) { SetBuilds(value); return *this;}
-    inline BatchGetBuildsResult& WithBuilds(Aws::Vector<Build>&& value) { SetBuilds(std::move(value)); return *this;}
-    inline BatchGetBuildsResult& AddBuilds(const Build& value) { m_builds.push_back(value); return *this; }
-    inline BatchGetBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Build>& GetBuilds() const { return m_builds; }
+    template<typename BuildsT = Aws::Vector<Build>>
+    void SetBuilds(BuildsT&& value) { m_buildsHasBeenSet = true; m_builds = std::forward<BuildsT>(value); }
+    template<typename BuildsT = Aws::Vector<Build>>
+    BatchGetBuildsResult& WithBuilds(BuildsT&& value) { SetBuilds(std::forward<BuildsT>(value)); return *this;}
+    template<typename BuildsT = Build>
+    BatchGetBuildsResult& AddBuilds(BuildsT&& value) { m_buildsHasBeenSet = true; m_builds.emplace_back(std::forward<BuildsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IDs of builds for which information could not be found.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBuildsNotFound() const{ return m_buildsNotFound; }
-    inline void SetBuildsNotFound(const Aws::Vector<Aws::String>& value) { m_buildsNotFound = value; }
-    inline void SetBuildsNotFound(Aws::Vector<Aws::String>&& value) { m_buildsNotFound = std::move(value); }
-    inline BatchGetBuildsResult& WithBuildsNotFound(const Aws::Vector<Aws::String>& value) { SetBuildsNotFound(value); return *this;}
-    inline BatchGetBuildsResult& WithBuildsNotFound(Aws::Vector<Aws::String>&& value) { SetBuildsNotFound(std::move(value)); return *this;}
-    inline BatchGetBuildsResult& AddBuildsNotFound(const Aws::String& value) { m_buildsNotFound.push_back(value); return *this; }
-    inline BatchGetBuildsResult& AddBuildsNotFound(Aws::String&& value) { m_buildsNotFound.push_back(std::move(value)); return *this; }
-    inline BatchGetBuildsResult& AddBuildsNotFound(const char* value) { m_buildsNotFound.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetBuildsNotFound() const { return m_buildsNotFound; }
+    template<typename BuildsNotFoundT = Aws::Vector<Aws::String>>
+    void SetBuildsNotFound(BuildsNotFoundT&& value) { m_buildsNotFoundHasBeenSet = true; m_buildsNotFound = std::forward<BuildsNotFoundT>(value); }
+    template<typename BuildsNotFoundT = Aws::Vector<Aws::String>>
+    BatchGetBuildsResult& WithBuildsNotFound(BuildsNotFoundT&& value) { SetBuildsNotFound(std::forward<BuildsNotFoundT>(value)); return *this;}
+    template<typename BuildsNotFoundT = Aws::String>
+    BatchGetBuildsResult& AddBuildsNotFound(BuildsNotFoundT&& value) { m_buildsNotFoundHasBeenSet = true; m_buildsNotFound.emplace_back(std::forward<BuildsNotFoundT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetBuildsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetBuildsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetBuildsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetBuildsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Build> m_builds;
+    bool m_buildsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_buildsNotFound;
+    bool m_buildsNotFoundHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

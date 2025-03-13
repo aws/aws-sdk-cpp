@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ConnectionPasswordEncryption::ConnectionPasswordEncryption() : 
-    m_returnConnectionPasswordEncrypted(false),
-    m_returnConnectionPasswordEncryptedHasBeenSet(false),
-    m_awsKmsKeyIdHasBeenSet(false)
-{
-}
-
 ConnectionPasswordEncryption::ConnectionPasswordEncryption(JsonView jsonValue)
-  : ConnectionPasswordEncryption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConnectionPasswordEncryption& ConnectionPasswordEncryption::operator =(JsonView 
   if(jsonValue.ValueExists("ReturnConnectionPasswordEncrypted"))
   {
     m_returnConnectionPasswordEncrypted = jsonValue.GetBool("ReturnConnectionPasswordEncrypted");
-
     m_returnConnectionPasswordEncryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsKmsKeyId"))
   {
     m_awsKmsKeyId = jsonValue.GetString("AwsKmsKeyId");
-
     m_awsKmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

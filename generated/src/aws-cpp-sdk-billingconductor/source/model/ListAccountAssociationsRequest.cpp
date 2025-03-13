@@ -12,13 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAccountAssociationsRequest::ListAccountAssociationsRequest() : 
-    m_billingPeriodHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

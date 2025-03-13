@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEdgeDeploymentPlanResult::CreateEdgeDeploymentPlanResult()
-{
-}
-
 CreateEdgeDeploymentPlanResult::CreateEdgeDeploymentPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateEdgeDeploymentPlanResult& CreateEdgeDeploymentPlanResult::operator =(const
   if(jsonValue.ValueExists("EdgeDeploymentPlanArn"))
   {
     m_edgeDeploymentPlanArn = jsonValue.GetString("EdgeDeploymentPlanArn");
-
+    m_edgeDeploymentPlanArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

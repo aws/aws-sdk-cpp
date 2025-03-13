@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LoadBalancerTargetGroupState::LoadBalancerTargetGroupState() : 
-    m_loadBalancerTargetGroupARNHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 LoadBalancerTargetGroupState::LoadBalancerTargetGroupState(const XmlNode& xmlNode)
-  : LoadBalancerTargetGroupState()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LoadBalancerTargetGroupState& LoadBalancerTargetGroupState::operator =(const Xml
     {
       m_loadBalancerTargetGroupARN = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerTargetGroupARNNode.GetText());
       m_loadBalancerTargetGroupARNHasBeenSet = true;
+       m_loadBalancerTargetGroupARNHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

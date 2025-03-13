@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsEntityItem::OpsEntityItem() : 
-    m_captureTimeHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 OpsEntityItem::OpsEntityItem(JsonView jsonValue)
-  : OpsEntityItem()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OpsEntityItem& OpsEntityItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CaptureTime"))
   {
     m_captureTime = jsonValue.GetString("CaptureTime");
-
     m_captureTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
@@ -54,7 +45,6 @@ OpsEntityItem& OpsEntityItem::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

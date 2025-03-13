@@ -12,14 +12,6 @@ using namespace Aws::KinesisAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddApplicationInputRequest::AddApplicationInputRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentApplicationVersionId(0),
-    m_currentApplicationVersionIdHasBeenSet(false),
-    m_inputHasBeenSet(false)
-{
-}
-
 Aws::String AddApplicationInputRequest::SerializePayload() const
 {
   JsonValue payload;

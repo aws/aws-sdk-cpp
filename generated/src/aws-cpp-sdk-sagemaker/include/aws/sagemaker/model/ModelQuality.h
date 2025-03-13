@@ -31,7 +31,7 @@ namespace Model
   class ModelQuality
   {
   public:
-    AWS_SAGEMAKER_API ModelQuality();
+    AWS_SAGEMAKER_API ModelQuality() = default;
     AWS_SAGEMAKER_API ModelQuality(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>Model quality statistics.</p>
      */
-    inline const MetricsSource& GetStatistics() const{ return m_statistics; }
+    inline const MetricsSource& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const MetricsSource& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(MetricsSource&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline ModelQuality& WithStatistics(const MetricsSource& value) { SetStatistics(value); return *this;}
-    inline ModelQuality& WithStatistics(MetricsSource&& value) { SetStatistics(std::move(value)); return *this;}
+    template<typename StatisticsT = MetricsSource>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = MetricsSource>
+    ModelQuality& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Model quality constraints.</p>
      */
-    inline const MetricsSource& GetConstraints() const{ return m_constraints; }
+    inline const MetricsSource& GetConstraints() const { return m_constraints; }
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-    inline void SetConstraints(const MetricsSource& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-    inline void SetConstraints(MetricsSource&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-    inline ModelQuality& WithConstraints(const MetricsSource& value) { SetConstraints(value); return *this;}
-    inline ModelQuality& WithConstraints(MetricsSource&& value) { SetConstraints(std::move(value)); return *this;}
+    template<typename ConstraintsT = MetricsSource>
+    void SetConstraints(ConstraintsT&& value) { m_constraintsHasBeenSet = true; m_constraints = std::forward<ConstraintsT>(value); }
+    template<typename ConstraintsT = MetricsSource>
+    ModelQuality& WithConstraints(ConstraintsT&& value) { SetConstraints(std::forward<ConstraintsT>(value)); return *this;}
     ///@}
   private:
 

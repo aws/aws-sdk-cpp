@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TimeRangeFilterValue::TimeRangeFilterValue() : 
-    m_staticValueHasBeenSet(false),
-    m_rollingDateHasBeenSet(false),
-    m_parameterHasBeenSet(false)
-{
-}
-
 TimeRangeFilterValue::TimeRangeFilterValue(JsonView jsonValue)
-  : TimeRangeFilterValue()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TimeRangeFilterValue& TimeRangeFilterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StaticValue"))
   {
     m_staticValue = jsonValue.GetDouble("StaticValue");
-
     m_staticValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RollingDate"))
   {
     m_rollingDate = jsonValue.GetObject("RollingDate");
-
     m_rollingDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameter"))
   {
     m_parameter = jsonValue.GetString("Parameter");
-
     m_parameterHasBeenSet = true;
   }
-
   return *this;
 }
 

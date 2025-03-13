@@ -21,7 +21,7 @@ namespace Model
   class PutRetentionPolicyRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API PutRetentionPolicyRequest();
+    AWS_CLOUDWATCHLOGS_API PutRetentionPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,19 +38,17 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline PutRetentionPolicyRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline PutRetentionPolicyRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline PutRetentionPolicyRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    PutRetentionPolicyRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetRetentionInDays() const{ return m_retentionInDays; }
+    inline int GetRetentionInDays() const { return m_retentionInDays; }
     inline bool RetentionInDaysHasBeenSet() const { return m_retentionInDaysHasBeenSet; }
     inline void SetRetentionInDays(int value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
     inline PutRetentionPolicyRequest& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
@@ -60,7 +58,7 @@ namespace Model
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    int m_retentionInDays;
+    int m_retentionInDays{0};
     bool m_retentionInDaysHasBeenSet = false;
   };
 

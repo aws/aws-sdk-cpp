@@ -25,7 +25,7 @@ namespace Model
   class DeliverConfigSnapshotRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API DeliverConfigSnapshotRequest();
+    AWS_CONFIGSERVICE_API DeliverConfigSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the delivery channel through which the snapshot is delivered.</p>
      */
-    inline const Aws::String& GetDeliveryChannelName() const{ return m_deliveryChannelName; }
+    inline const Aws::String& GetDeliveryChannelName() const { return m_deliveryChannelName; }
     inline bool DeliveryChannelNameHasBeenSet() const { return m_deliveryChannelNameHasBeenSet; }
-    inline void SetDeliveryChannelName(const Aws::String& value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName = value; }
-    inline void SetDeliveryChannelName(Aws::String&& value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName = std::move(value); }
-    inline void SetDeliveryChannelName(const char* value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName.assign(value); }
-    inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(const Aws::String& value) { SetDeliveryChannelName(value); return *this;}
-    inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(Aws::String&& value) { SetDeliveryChannelName(std::move(value)); return *this;}
-    inline DeliverConfigSnapshotRequest& WithDeliveryChannelName(const char* value) { SetDeliveryChannelName(value); return *this;}
+    template<typename DeliveryChannelNameT = Aws::String>
+    void SetDeliveryChannelName(DeliveryChannelNameT&& value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName = std::forward<DeliveryChannelNameT>(value); }
+    template<typename DeliveryChannelNameT = Aws::String>
+    DeliverConfigSnapshotRequest& WithDeliveryChannelName(DeliveryChannelNameT&& value) { SetDeliveryChannelName(std::forward<DeliveryChannelNameT>(value)); return *this;}
     ///@}
   private:
 

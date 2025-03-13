@@ -10,16 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetOrganizationsAccessReportRequest::GetOrganizationsAccessReportRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_sortKey(SortKeyType::NOT_SET),
-    m_sortKeyHasBeenSet(false)
-{
-}
-
 Aws::String GetOrganizationsAccessReportRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -35,7 +35,7 @@ namespace Model
   class CreateRemoteAccessSessionConfiguration
   {
   public:
-    AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration();
+    AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration() = default;
     AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API CreateRemoteAccessSessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,27 +45,24 @@ namespace Model
     /**
      * <p>The billing method for the remote access session.</p>
      */
-    inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
+    inline BillingMethod GetBillingMethod() const { return m_billingMethod; }
     inline bool BillingMethodHasBeenSet() const { return m_billingMethodHasBeenSet; }
-    inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
-    inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
-    inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(const BillingMethod& value) { SetBillingMethod(value); return *this;}
-    inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
+    inline void SetBillingMethod(BillingMethod value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
+    inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod value) { SetBillingMethod(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const{ return m_vpceConfigurationArns; }
+    inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const { return m_vpceConfigurationArns; }
     inline bool VpceConfigurationArnsHasBeenSet() const { return m_vpceConfigurationArnsHasBeenSet; }
-    inline void SetVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = value; }
-    inline void SetVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = std::move(value); }
-    inline CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { SetVpceConfigurationArns(value); return *this;}
-    inline CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { SetVpceConfigurationArns(std::move(value)); return *this;}
-    inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const Aws::String& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
-    inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(Aws::String&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(std::move(value)); return *this; }
-    inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const char* value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
+    template<typename VpceConfigurationArnsT = Aws::Vector<Aws::String>>
+    void SetVpceConfigurationArns(VpceConfigurationArnsT&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = std::forward<VpceConfigurationArnsT>(value); }
+    template<typename VpceConfigurationArnsT = Aws::Vector<Aws::String>>
+    CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(VpceConfigurationArnsT&& value) { SetVpceConfigurationArns(std::forward<VpceConfigurationArnsT>(value)); return *this;}
+    template<typename VpceConfigurationArnsT = Aws::String>
+    CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(VpceConfigurationArnsT&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.emplace_back(std::forward<VpceConfigurationArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,16 +70,16 @@ namespace Model
      * <p>The device proxy to be configured on the device for the remote access
      * session.</p>
      */
-    inline const DeviceProxy& GetDeviceProxy() const{ return m_deviceProxy; }
+    inline const DeviceProxy& GetDeviceProxy() const { return m_deviceProxy; }
     inline bool DeviceProxyHasBeenSet() const { return m_deviceProxyHasBeenSet; }
-    inline void SetDeviceProxy(const DeviceProxy& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = value; }
-    inline void SetDeviceProxy(DeviceProxy&& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = std::move(value); }
-    inline CreateRemoteAccessSessionConfiguration& WithDeviceProxy(const DeviceProxy& value) { SetDeviceProxy(value); return *this;}
-    inline CreateRemoteAccessSessionConfiguration& WithDeviceProxy(DeviceProxy&& value) { SetDeviceProxy(std::move(value)); return *this;}
+    template<typename DeviceProxyT = DeviceProxy>
+    void SetDeviceProxy(DeviceProxyT&& value) { m_deviceProxyHasBeenSet = true; m_deviceProxy = std::forward<DeviceProxyT>(value); }
+    template<typename DeviceProxyT = DeviceProxy>
+    CreateRemoteAccessSessionConfiguration& WithDeviceProxy(DeviceProxyT&& value) { SetDeviceProxy(std::forward<DeviceProxyT>(value)); return *this;}
     ///@}
   private:
 
-    BillingMethod m_billingMethod;
+    BillingMethod m_billingMethod{BillingMethod::NOT_SET};
     bool m_billingMethodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpceConfigurationArns;

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopEdgePackagingJobRequest::StopEdgePackagingJobRequest() : 
-    m_edgePackagingJobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopEdgePackagingJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -28,7 +28,7 @@ namespace Model
   class DeleteNatGatewayResponse
   {
   public:
-    AWS_EC2_API DeleteNatGatewayResponse();
+    AWS_EC2_API DeleteNatGatewayResponse() = default;
     AWS_EC2_API DeleteNatGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteNatGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayId = value; }
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayId = std::move(value); }
-    inline void SetNatGatewayId(const char* value) { m_natGatewayId.assign(value); }
-    inline DeleteNatGatewayResponse& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-    inline DeleteNatGatewayResponse& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-    inline DeleteNatGatewayResponse& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+    inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
+    template<typename NatGatewayIdT = Aws::String>
+    void SetNatGatewayId(NatGatewayIdT&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::forward<NatGatewayIdT>(value); }
+    template<typename NatGatewayIdT = Aws::String>
+    DeleteNatGatewayResponse& WithNatGatewayId(NatGatewayIdT&& value) { SetNatGatewayId(std::forward<NatGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteNatGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteNatGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteNatGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_natGatewayId;
+    bool m_natGatewayIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

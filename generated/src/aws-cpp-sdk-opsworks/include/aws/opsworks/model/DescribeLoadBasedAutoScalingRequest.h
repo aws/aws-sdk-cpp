@@ -22,7 +22,7 @@ namespace Model
   class DescribeLoadBasedAutoScalingRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingRequest();
+    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>An array of layer IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLayerIds() const{ return m_layerIds; }
+    inline const Aws::Vector<Aws::String>& GetLayerIds() const { return m_layerIds; }
     inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
-    inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
-    inline void SetLayerIds(Aws::Vector<Aws::String>&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::move(value); }
-    inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(const Aws::Vector<Aws::String>& value) { SetLayerIds(value); return *this;}
-    inline DescribeLoadBasedAutoScalingRequest& WithLayerIds(Aws::Vector<Aws::String>&& value) { SetLayerIds(std::move(value)); return *this;}
-    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const Aws::String& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
-    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(Aws::String&& value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(std::move(value)); return *this; }
-    inline DescribeLoadBasedAutoScalingRequest& AddLayerIds(const char* value) { m_layerIdsHasBeenSet = true; m_layerIds.push_back(value); return *this; }
+    template<typename LayerIdsT = Aws::Vector<Aws::String>>
+    void SetLayerIds(LayerIdsT&& value) { m_layerIdsHasBeenSet = true; m_layerIds = std::forward<LayerIdsT>(value); }
+    template<typename LayerIdsT = Aws::Vector<Aws::String>>
+    DescribeLoadBasedAutoScalingRequest& WithLayerIds(LayerIdsT&& value) { SetLayerIds(std::forward<LayerIdsT>(value)); return *this;}
+    template<typename LayerIdsT = Aws::String>
+    DescribeLoadBasedAutoScalingRequest& AddLayerIds(LayerIdsT&& value) { m_layerIdsHasBeenSet = true; m_layerIds.emplace_back(std::forward<LayerIdsT>(value)); return *this; }
     ///@}
   private:
 

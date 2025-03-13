@@ -35,7 +35,7 @@ namespace Model
   class DeploymentResult
   {
   public:
-    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult();
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult() = default;
     AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,54 +45,48 @@ namespace Model
     /**
      * <p>The name and unique ID of the deployment.</p>
      */
-    inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
+    inline const Aws::String& GetDeploymentName() const { return m_deploymentName; }
     inline bool DeploymentNameHasBeenSet() const { return m_deploymentNameHasBeenSet; }
-    inline void SetDeploymentName(const Aws::String& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = value; }
-    inline void SetDeploymentName(Aws::String&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::move(value); }
-    inline void SetDeploymentName(const char* value) { m_deploymentNameHasBeenSet = true; m_deploymentName.assign(value); }
-    inline DeploymentResult& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
-    inline DeploymentResult& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
-    inline DeploymentResult& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
+    template<typename DeploymentNameT = Aws::String>
+    void SetDeploymentName(DeploymentNameT&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::forward<DeploymentNameT>(value); }
+    template<typename DeploymentNameT = Aws::String>
+    DeploymentResult& WithDeploymentName(DeploymentNameT&& value) { SetDeploymentName(std::forward<DeploymentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the bucket error code.</p>
      */
-    inline const Aws::String& GetDeploymentStatus() const{ return m_deploymentStatus; }
+    inline const Aws::String& GetDeploymentStatus() const { return m_deploymentStatus; }
     inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
-    inline void SetDeploymentStatus(const Aws::String& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
-    inline void SetDeploymentStatus(Aws::String&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
-    inline void SetDeploymentStatus(const char* value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus.assign(value); }
-    inline DeploymentResult& WithDeploymentStatus(const Aws::String& value) { SetDeploymentStatus(value); return *this;}
-    inline DeploymentResult& WithDeploymentStatus(Aws::String&& value) { SetDeploymentStatus(std::move(value)); return *this;}
-    inline DeploymentResult& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}
+    template<typename DeploymentStatusT = Aws::String>
+    void SetDeploymentStatus(DeploymentStatusT&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::forward<DeploymentStatusT>(value); }
+    template<typename DeploymentStatusT = Aws::String>
+    DeploymentResult& WithDeploymentStatus(DeploymentStatusT&& value) { SetDeploymentStatus(std::forward<DeploymentStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the detailed error message.</p>
      */
-    inline const Aws::String& GetDeploymentStatusMessage() const{ return m_deploymentStatusMessage; }
+    inline const Aws::String& GetDeploymentStatusMessage() const { return m_deploymentStatusMessage; }
     inline bool DeploymentStatusMessageHasBeenSet() const { return m_deploymentStatusMessageHasBeenSet; }
-    inline void SetDeploymentStatusMessage(const Aws::String& value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage = value; }
-    inline void SetDeploymentStatusMessage(Aws::String&& value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage = std::move(value); }
-    inline void SetDeploymentStatusMessage(const char* value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage.assign(value); }
-    inline DeploymentResult& WithDeploymentStatusMessage(const Aws::String& value) { SetDeploymentStatusMessage(value); return *this;}
-    inline DeploymentResult& WithDeploymentStatusMessage(Aws::String&& value) { SetDeploymentStatusMessage(std::move(value)); return *this;}
-    inline DeploymentResult& WithDeploymentStatusMessage(const char* value) { SetDeploymentStatusMessage(value); return *this;}
+    template<typename DeploymentStatusMessageT = Aws::String>
+    void SetDeploymentStatusMessage(DeploymentStatusMessageT&& value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage = std::forward<DeploymentStatusMessageT>(value); }
+    template<typename DeploymentStatusMessageT = Aws::String>
+    DeploymentResult& WithDeploymentStatusMessage(DeploymentStatusMessageT&& value) { SetDeploymentStatusMessage(std::forward<DeploymentStatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the deployment was started on the agent.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeploymentStartTime() const{ return m_deploymentStartTime; }
+    inline const Aws::Utils::DateTime& GetDeploymentStartTime() const { return m_deploymentStartTime; }
     inline bool DeploymentStartTimeHasBeenSet() const { return m_deploymentStartTimeHasBeenSet; }
-    inline void SetDeploymentStartTime(const Aws::Utils::DateTime& value) { m_deploymentStartTimeHasBeenSet = true; m_deploymentStartTime = value; }
-    inline void SetDeploymentStartTime(Aws::Utils::DateTime&& value) { m_deploymentStartTimeHasBeenSet = true; m_deploymentStartTime = std::move(value); }
-    inline DeploymentResult& WithDeploymentStartTime(const Aws::Utils::DateTime& value) { SetDeploymentStartTime(value); return *this;}
-    inline DeploymentResult& WithDeploymentStartTime(Aws::Utils::DateTime&& value) { SetDeploymentStartTime(std::move(value)); return *this;}
+    template<typename DeploymentStartTimeT = Aws::Utils::DateTime>
+    void SetDeploymentStartTime(DeploymentStartTimeT&& value) { m_deploymentStartTimeHasBeenSet = true; m_deploymentStartTime = std::forward<DeploymentStartTimeT>(value); }
+    template<typename DeploymentStartTimeT = Aws::Utils::DateTime>
+    DeploymentResult& WithDeploymentStartTime(DeploymentStartTimeT&& value) { SetDeploymentStartTime(std::forward<DeploymentStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,26 +94,26 @@ namespace Model
      * <p>The timestamp of when the deployment was ended, and the agent got the
      * deployment results.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeploymentEndTime() const{ return m_deploymentEndTime; }
+    inline const Aws::Utils::DateTime& GetDeploymentEndTime() const { return m_deploymentEndTime; }
     inline bool DeploymentEndTimeHasBeenSet() const { return m_deploymentEndTimeHasBeenSet; }
-    inline void SetDeploymentEndTime(const Aws::Utils::DateTime& value) { m_deploymentEndTimeHasBeenSet = true; m_deploymentEndTime = value; }
-    inline void SetDeploymentEndTime(Aws::Utils::DateTime&& value) { m_deploymentEndTimeHasBeenSet = true; m_deploymentEndTime = std::move(value); }
-    inline DeploymentResult& WithDeploymentEndTime(const Aws::Utils::DateTime& value) { SetDeploymentEndTime(value); return *this;}
-    inline DeploymentResult& WithDeploymentEndTime(Aws::Utils::DateTime&& value) { SetDeploymentEndTime(std::move(value)); return *this;}
+    template<typename DeploymentEndTimeT = Aws::Utils::DateTime>
+    void SetDeploymentEndTime(DeploymentEndTimeT&& value) { m_deploymentEndTimeHasBeenSet = true; m_deploymentEndTime = std::forward<DeploymentEndTimeT>(value); }
+    template<typename DeploymentEndTimeT = Aws::Utils::DateTime>
+    DeploymentResult& WithDeploymentEndTime(DeploymentEndTimeT&& value) { SetDeploymentEndTime(std::forward<DeploymentEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a list of models deployed on the agent.</p>
      */
-    inline const Aws::Vector<DeploymentModel>& GetDeploymentModels() const{ return m_deploymentModels; }
+    inline const Aws::Vector<DeploymentModel>& GetDeploymentModels() const { return m_deploymentModels; }
     inline bool DeploymentModelsHasBeenSet() const { return m_deploymentModelsHasBeenSet; }
-    inline void SetDeploymentModels(const Aws::Vector<DeploymentModel>& value) { m_deploymentModelsHasBeenSet = true; m_deploymentModels = value; }
-    inline void SetDeploymentModels(Aws::Vector<DeploymentModel>&& value) { m_deploymentModelsHasBeenSet = true; m_deploymentModels = std::move(value); }
-    inline DeploymentResult& WithDeploymentModels(const Aws::Vector<DeploymentModel>& value) { SetDeploymentModels(value); return *this;}
-    inline DeploymentResult& WithDeploymentModels(Aws::Vector<DeploymentModel>&& value) { SetDeploymentModels(std::move(value)); return *this;}
-    inline DeploymentResult& AddDeploymentModels(const DeploymentModel& value) { m_deploymentModelsHasBeenSet = true; m_deploymentModels.push_back(value); return *this; }
-    inline DeploymentResult& AddDeploymentModels(DeploymentModel&& value) { m_deploymentModelsHasBeenSet = true; m_deploymentModels.push_back(std::move(value)); return *this; }
+    template<typename DeploymentModelsT = Aws::Vector<DeploymentModel>>
+    void SetDeploymentModels(DeploymentModelsT&& value) { m_deploymentModelsHasBeenSet = true; m_deploymentModels = std::forward<DeploymentModelsT>(value); }
+    template<typename DeploymentModelsT = Aws::Vector<DeploymentModel>>
+    DeploymentResult& WithDeploymentModels(DeploymentModelsT&& value) { SetDeploymentModels(std::forward<DeploymentModelsT>(value)); return *this;}
+    template<typename DeploymentModelsT = DeploymentModel>
+    DeploymentResult& AddDeploymentModels(DeploymentModelsT&& value) { m_deploymentModelsHasBeenSet = true; m_deploymentModels.emplace_back(std::forward<DeploymentModelsT>(value)); return *this; }
     ///@}
   private:
 
@@ -132,10 +126,10 @@ namespace Model
     Aws::String m_deploymentStatusMessage;
     bool m_deploymentStatusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deploymentStartTime;
+    Aws::Utils::DateTime m_deploymentStartTime{};
     bool m_deploymentStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deploymentEndTime;
+    Aws::Utils::DateTime m_deploymentEndTime{};
     bool m_deploymentEndTimeHasBeenSet = false;
 
     Aws::Vector<DeploymentModel> m_deploymentModels;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLaunchTemplateDataResponse::GetLaunchTemplateDataResponse()
-{
-}
-
 GetLaunchTemplateDataResponse::GetLaunchTemplateDataResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ GetLaunchTemplateDataResponse& GetLaunchTemplateDataResponse::operator =(const A
     if(!launchTemplateDataNode.IsNull())
     {
       m_launchTemplateData = launchTemplateDataNode;
+      m_launchTemplateDataHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ GetLaunchTemplateDataResponse& GetLaunchTemplateDataResponse::operator =(const A
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetLaunchTemplateDataResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

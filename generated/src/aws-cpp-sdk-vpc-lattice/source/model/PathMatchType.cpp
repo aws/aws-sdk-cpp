@@ -18,14 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-PathMatchType::PathMatchType() : 
-    m_exactHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 PathMatchType::PathMatchType(JsonView jsonValue)
-  : PathMatchType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PathMatchType& PathMatchType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exact"))
   {
     m_exact = jsonValue.GetString("exact");
-
     m_exactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

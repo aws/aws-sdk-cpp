@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Encryption::Encryption() : 
-    m_encryptionType(ServerSideEncryption::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_kMSContextHasBeenSet(false)
-{
-}
-
 Encryption::Encryption(const XmlNode& xmlNode)
-  : Encryption()
 {
   *this = xmlNode;
 }
@@ -43,20 +34,23 @@ Encryption& Encryption::operator =(const XmlNode& xmlNode)
     XmlNode encryptionTypeNode = resultNode.FirstChild("EncryptionType");
     if(!encryptionTypeNode.IsNull())
     {
-      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionTypeNode.GetText()).c_str()).c_str());
+      m_encryptionType = ServerSideEncryptionMapper::GetServerSideEncryptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionTypeNode.GetText()).c_str()));
       m_encryptionTypeHasBeenSet = true;
+       m_encryptionTypeHasBeenSet = true;
     }
     XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
     if(!kMSKeyIdNode.IsNull())
     {
       m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
       m_kMSKeyIdHasBeenSet = true;
+       m_kMSKeyIdHasBeenSet = true;
     }
     XmlNode kMSContextNode = resultNode.FirstChild("KMSContext");
     if(!kMSContextNode.IsNull())
     {
       m_kMSContext = Aws::Utils::Xml::DecodeEscapedXmlText(kMSContextNode.GetText());
       m_kMSContextHasBeenSet = true;
+       m_kMSContextHasBeenSet = true;
     }
   }
 

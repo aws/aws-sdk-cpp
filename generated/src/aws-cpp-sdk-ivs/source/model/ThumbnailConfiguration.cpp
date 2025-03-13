@@ -18,19 +18,7 @@ namespace IVS
 namespace Model
 {
 
-ThumbnailConfiguration::ThumbnailConfiguration() : 
-    m_recordingMode(RecordingMode::NOT_SET),
-    m_recordingModeHasBeenSet(false),
-    m_resolution(ThumbnailConfigurationResolution::NOT_SET),
-    m_resolutionHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_targetIntervalSeconds(0),
-    m_targetIntervalSecondsHasBeenSet(false)
-{
-}
-
 ThumbnailConfiguration::ThumbnailConfiguration(JsonView jsonValue)
-  : ThumbnailConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ ThumbnailConfiguration& ThumbnailConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("recordingMode"))
   {
     m_recordingMode = RecordingModeMapper::GetRecordingModeForName(jsonValue.GetString("recordingMode"));
-
     m_recordingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolution"))
   {
     m_resolution = ThumbnailConfigurationResolutionMapper::GetThumbnailConfigurationResolutionForName(jsonValue.GetString("resolution"));
-
     m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     Aws::Utils::Array<JsonView> storageJsonList = jsonValue.GetArray("storage");
@@ -60,14 +44,11 @@ ThumbnailConfiguration& ThumbnailConfiguration::operator =(JsonView jsonValue)
     }
     m_storageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetIntervalSeconds"))
   {
     m_targetIntervalSeconds = jsonValue.GetInt64("targetIntervalSeconds");
-
     m_targetIntervalSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -42,7 +42,7 @@ namespace Model
   class S3Bucket
   {
   public:
-    AWS_MACIE2_API S3Bucket();
+    AWS_MACIE2_API S3Bucket() = default;
     AWS_MACIE2_API S3Bucket(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,26 +63,22 @@ namespace Model
      * x-amz-server-side-encryption with a value of AES256 or aws:kms, and
      * x-amz-server-side-encryption-customer-algorithm with a value of AES256.</p>
      */
-    inline const AllowsUnencryptedObjectUploads& GetAllowsUnencryptedObjectUploads() const{ return m_allowsUnencryptedObjectUploads; }
+    inline AllowsUnencryptedObjectUploads GetAllowsUnencryptedObjectUploads() const { return m_allowsUnencryptedObjectUploads; }
     inline bool AllowsUnencryptedObjectUploadsHasBeenSet() const { return m_allowsUnencryptedObjectUploadsHasBeenSet; }
-    inline void SetAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
-    inline void SetAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = std::move(value); }
-    inline S3Bucket& WithAllowsUnencryptedObjectUploads(const AllowsUnencryptedObjectUploads& value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
-    inline S3Bucket& WithAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads&& value) { SetAllowsUnencryptedObjectUploads(std::move(value)); return *this;}
+    inline void SetAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads value) { m_allowsUnencryptedObjectUploadsHasBeenSet = true; m_allowsUnencryptedObjectUploads = value; }
+    inline S3Bucket& WithAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads value) { SetAllowsUnencryptedObjectUploads(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the bucket.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline S3Bucket& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline S3Bucket& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline S3Bucket& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    S3Bucket& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,38 +88,36 @@ namespace Model
      * policy were most recently made to the bucket, relative to when the finding was
      * created or last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline S3Bucket& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline S3Bucket& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    S3Bucket& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default server-side encryption settings for the bucket.</p>
      */
-    inline const ServerSideEncryption& GetDefaultServerSideEncryption() const{ return m_defaultServerSideEncryption; }
+    inline const ServerSideEncryption& GetDefaultServerSideEncryption() const { return m_defaultServerSideEncryption; }
     inline bool DefaultServerSideEncryptionHasBeenSet() const { return m_defaultServerSideEncryptionHasBeenSet; }
-    inline void SetDefaultServerSideEncryption(const ServerSideEncryption& value) { m_defaultServerSideEncryptionHasBeenSet = true; m_defaultServerSideEncryption = value; }
-    inline void SetDefaultServerSideEncryption(ServerSideEncryption&& value) { m_defaultServerSideEncryptionHasBeenSet = true; m_defaultServerSideEncryption = std::move(value); }
-    inline S3Bucket& WithDefaultServerSideEncryption(const ServerSideEncryption& value) { SetDefaultServerSideEncryption(value); return *this;}
-    inline S3Bucket& WithDefaultServerSideEncryption(ServerSideEncryption&& value) { SetDefaultServerSideEncryption(std::move(value)); return *this;}
+    template<typename DefaultServerSideEncryptionT = ServerSideEncryption>
+    void SetDefaultServerSideEncryption(DefaultServerSideEncryptionT&& value) { m_defaultServerSideEncryptionHasBeenSet = true; m_defaultServerSideEncryption = std::forward<DefaultServerSideEncryptionT>(value); }
+    template<typename DefaultServerSideEncryptionT = ServerSideEncryption>
+    S3Bucket& WithDefaultServerSideEncryption(DefaultServerSideEncryptionT&& value) { SetDefaultServerSideEncryption(std::forward<DefaultServerSideEncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bucket.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3Bucket& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3Bucket& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3Bucket& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3Bucket& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +125,12 @@ namespace Model
      * <p>The display name and canonical user ID for the Amazon Web Services account
      * that owns the bucket.</p>
      */
-    inline const S3BucketOwner& GetOwner() const{ return m_owner; }
+    inline const S3BucketOwner& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const S3BucketOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(S3BucketOwner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline S3Bucket& WithOwner(const S3BucketOwner& value) { SetOwner(value); return *this;}
-    inline S3Bucket& WithOwner(S3BucketOwner&& value) { SetOwner(std::move(value)); return *this;}
+    template<typename OwnerT = S3BucketOwner>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = S3BucketOwner>
+    S3Bucket& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,36 +138,36 @@ namespace Model
      * <p>The permissions settings that determine whether the bucket is publicly
      * accessible.</p>
      */
-    inline const BucketPublicAccess& GetPublicAccess() const{ return m_publicAccess; }
+    inline const BucketPublicAccess& GetPublicAccess() const { return m_publicAccess; }
     inline bool PublicAccessHasBeenSet() const { return m_publicAccessHasBeenSet; }
-    inline void SetPublicAccess(const BucketPublicAccess& value) { m_publicAccessHasBeenSet = true; m_publicAccess = value; }
-    inline void SetPublicAccess(BucketPublicAccess&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::move(value); }
-    inline S3Bucket& WithPublicAccess(const BucketPublicAccess& value) { SetPublicAccess(value); return *this;}
-    inline S3Bucket& WithPublicAccess(BucketPublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
+    template<typename PublicAccessT = BucketPublicAccess>
+    void SetPublicAccess(PublicAccessT&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::forward<PublicAccessT>(value); }
+    template<typename PublicAccessT = BucketPublicAccess>
+    S3Bucket& WithPublicAccess(PublicAccessT&& value) { SetPublicAccess(std::forward<PublicAccessT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags that are associated with the bucket.</p>
      */
-    inline const Aws::Vector<KeyValuePair>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<KeyValuePair>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<KeyValuePair>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<KeyValuePair>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline S3Bucket& WithTags(const Aws::Vector<KeyValuePair>& value) { SetTags(value); return *this;}
-    inline S3Bucket& WithTags(Aws::Vector<KeyValuePair>&& value) { SetTags(std::move(value)); return *this;}
-    inline S3Bucket& AddTags(const KeyValuePair& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline S3Bucket& AddTags(KeyValuePair&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<KeyValuePair>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<KeyValuePair>>
+    S3Bucket& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = KeyValuePair>
+    S3Bucket& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads;
+    AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads{AllowsUnencryptedObjectUploads::NOT_SET};
     bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     ServerSideEncryption m_defaultServerSideEncryption;

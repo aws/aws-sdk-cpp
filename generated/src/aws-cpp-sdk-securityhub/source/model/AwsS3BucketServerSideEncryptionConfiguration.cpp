@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketServerSideEncryptionConfiguration::AwsS3BucketServerSideEncryptionConfiguration() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 AwsS3BucketServerSideEncryptionConfiguration::AwsS3BucketServerSideEncryptionConfiguration(JsonView jsonValue)
-  : AwsS3BucketServerSideEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsS3BucketServerSideEncryptionConfiguration& AwsS3BucketServerSideEncryptionCon
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

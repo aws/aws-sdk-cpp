@@ -21,7 +21,7 @@ namespace Model
   class DeleteRelationalDatabaseRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteRelationalDatabaseRequest();
+    AWS_LIGHTSAIL_API DeleteRelationalDatabaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the database that you are deleting.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
+    inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-    inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-    inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-    inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-    inline DeleteRelationalDatabaseRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-    inline DeleteRelationalDatabaseRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-    inline DeleteRelationalDatabaseRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    template<typename RelationalDatabaseNameT = Aws::String>
+    void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value); }
+    template<typename RelationalDatabaseNameT = Aws::String>
+    DeleteRelationalDatabaseRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) { SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * snapshot name</code> parameter if the <code>skip final snapshot</code> parameter
      * is <code>false</code>.</p> <p>Default: <code>false</code> </p>
      */
-    inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
+    inline bool GetSkipFinalSnapshot() const { return m_skipFinalSnapshot; }
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
     inline DeleteRelationalDatabaseRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
@@ -73,21 +71,19 @@ namespace Model
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
      */
-    inline const Aws::String& GetFinalRelationalDatabaseSnapshotName() const{ return m_finalRelationalDatabaseSnapshotName; }
+    inline const Aws::String& GetFinalRelationalDatabaseSnapshotName() const { return m_finalRelationalDatabaseSnapshotName; }
     inline bool FinalRelationalDatabaseSnapshotNameHasBeenSet() const { return m_finalRelationalDatabaseSnapshotNameHasBeenSet; }
-    inline void SetFinalRelationalDatabaseSnapshotName(const Aws::String& value) { m_finalRelationalDatabaseSnapshotNameHasBeenSet = true; m_finalRelationalDatabaseSnapshotName = value; }
-    inline void SetFinalRelationalDatabaseSnapshotName(Aws::String&& value) { m_finalRelationalDatabaseSnapshotNameHasBeenSet = true; m_finalRelationalDatabaseSnapshotName = std::move(value); }
-    inline void SetFinalRelationalDatabaseSnapshotName(const char* value) { m_finalRelationalDatabaseSnapshotNameHasBeenSet = true; m_finalRelationalDatabaseSnapshotName.assign(value); }
-    inline DeleteRelationalDatabaseRequest& WithFinalRelationalDatabaseSnapshotName(const Aws::String& value) { SetFinalRelationalDatabaseSnapshotName(value); return *this;}
-    inline DeleteRelationalDatabaseRequest& WithFinalRelationalDatabaseSnapshotName(Aws::String&& value) { SetFinalRelationalDatabaseSnapshotName(std::move(value)); return *this;}
-    inline DeleteRelationalDatabaseRequest& WithFinalRelationalDatabaseSnapshotName(const char* value) { SetFinalRelationalDatabaseSnapshotName(value); return *this;}
+    template<typename FinalRelationalDatabaseSnapshotNameT = Aws::String>
+    void SetFinalRelationalDatabaseSnapshotName(FinalRelationalDatabaseSnapshotNameT&& value) { m_finalRelationalDatabaseSnapshotNameHasBeenSet = true; m_finalRelationalDatabaseSnapshotName = std::forward<FinalRelationalDatabaseSnapshotNameT>(value); }
+    template<typename FinalRelationalDatabaseSnapshotNameT = Aws::String>
+    DeleteRelationalDatabaseRequest& WithFinalRelationalDatabaseSnapshotName(FinalRelationalDatabaseSnapshotNameT&& value) { SetFinalRelationalDatabaseSnapshotName(std::forward<FinalRelationalDatabaseSnapshotNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_relationalDatabaseName;
     bool m_relationalDatabaseNameHasBeenSet = false;
 
-    bool m_skipFinalSnapshot;
+    bool m_skipFinalSnapshot{false};
     bool m_skipFinalSnapshotHasBeenSet = false;
 
     Aws::String m_finalRelationalDatabaseSnapshotName;

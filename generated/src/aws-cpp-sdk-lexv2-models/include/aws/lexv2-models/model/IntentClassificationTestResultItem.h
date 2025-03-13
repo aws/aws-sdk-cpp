@@ -33,7 +33,7 @@ namespace Model
   class IntentClassificationTestResultItem
   {
   public:
-    AWS_LEXMODELSV2_API IntentClassificationTestResultItem();
+    AWS_LEXMODELSV2_API IntentClassificationTestResultItem() = default;
     AWS_LEXMODELSV2_API IntentClassificationTestResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API IntentClassificationTestResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The name of the intent.</p>
      */
-    inline const Aws::String& GetIntentName() const{ return m_intentName; }
+    inline const Aws::String& GetIntentName() const { return m_intentName; }
     inline bool IntentNameHasBeenSet() const { return m_intentNameHasBeenSet; }
-    inline void SetIntentName(const Aws::String& value) { m_intentNameHasBeenSet = true; m_intentName = value; }
-    inline void SetIntentName(Aws::String&& value) { m_intentNameHasBeenSet = true; m_intentName = std::move(value); }
-    inline void SetIntentName(const char* value) { m_intentNameHasBeenSet = true; m_intentName.assign(value); }
-    inline IntentClassificationTestResultItem& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-    inline IntentClassificationTestResultItem& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-    inline IntentClassificationTestResultItem& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+    template<typename IntentNameT = Aws::String>
+    void SetIntentName(IntentNameT&& value) { m_intentNameHasBeenSet = true; m_intentName = std::forward<IntentNameT>(value); }
+    template<typename IntentNameT = Aws::String>
+    IntentClassificationTestResultItem& WithIntentName(IntentNameT&& value) { SetIntentName(std::forward<IntentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the conversation involves multiple turns or not.</p>
      */
-    inline bool GetMultiTurnConversation() const{ return m_multiTurnConversation; }
+    inline bool GetMultiTurnConversation() const { return m_multiTurnConversation; }
     inline bool MultiTurnConversationHasBeenSet() const { return m_multiTurnConversationHasBeenSet; }
     inline void SetMultiTurnConversation(bool value) { m_multiTurnConversationHasBeenSet = true; m_multiTurnConversation = value; }
     inline IntentClassificationTestResultItem& WithMultiTurnConversation(bool value) { SetMultiTurnConversation(value); return *this;}
@@ -67,19 +65,19 @@ namespace Model
     /**
      * <p>The result of the intent classification test.</p>
      */
-    inline const IntentClassificationTestResultItemCounts& GetResultCounts() const{ return m_resultCounts; }
+    inline const IntentClassificationTestResultItemCounts& GetResultCounts() const { return m_resultCounts; }
     inline bool ResultCountsHasBeenSet() const { return m_resultCountsHasBeenSet; }
-    inline void SetResultCounts(const IntentClassificationTestResultItemCounts& value) { m_resultCountsHasBeenSet = true; m_resultCounts = value; }
-    inline void SetResultCounts(IntentClassificationTestResultItemCounts&& value) { m_resultCountsHasBeenSet = true; m_resultCounts = std::move(value); }
-    inline IntentClassificationTestResultItem& WithResultCounts(const IntentClassificationTestResultItemCounts& value) { SetResultCounts(value); return *this;}
-    inline IntentClassificationTestResultItem& WithResultCounts(IntentClassificationTestResultItemCounts&& value) { SetResultCounts(std::move(value)); return *this;}
+    template<typename ResultCountsT = IntentClassificationTestResultItemCounts>
+    void SetResultCounts(ResultCountsT&& value) { m_resultCountsHasBeenSet = true; m_resultCounts = std::forward<ResultCountsT>(value); }
+    template<typename ResultCountsT = IntentClassificationTestResultItemCounts>
+    IntentClassificationTestResultItem& WithResultCounts(ResultCountsT&& value) { SetResultCounts(std::forward<ResultCountsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_intentName;
     bool m_intentNameHasBeenSet = false;
 
-    bool m_multiTurnConversation;
+    bool m_multiTurnConversation{false};
     bool m_multiTurnConversationHasBeenSet = false;
 
     IntentClassificationTestResultItemCounts m_resultCounts;

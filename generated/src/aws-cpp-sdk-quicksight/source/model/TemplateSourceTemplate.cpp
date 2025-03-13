@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TemplateSourceTemplate::TemplateSourceTemplate() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 TemplateSourceTemplate::TemplateSourceTemplate(JsonView jsonValue)
-  : TemplateSourceTemplate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TemplateSourceTemplate& TemplateSourceTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

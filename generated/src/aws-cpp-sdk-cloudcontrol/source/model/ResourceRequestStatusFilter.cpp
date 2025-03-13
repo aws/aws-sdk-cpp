@@ -18,14 +18,7 @@ namespace CloudControlApi
 namespace Model
 {
 
-ResourceRequestStatusFilter::ResourceRequestStatusFilter() : 
-    m_operationsHasBeenSet(false),
-    m_operationStatusesHasBeenSet(false)
-{
-}
-
 ResourceRequestStatusFilter::ResourceRequestStatusFilter(JsonView jsonValue)
-  : ResourceRequestStatusFilter()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ResourceRequestStatusFilter& ResourceRequestStatusFilter::operator =(JsonView js
     }
     m_operationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationStatuses"))
   {
     Aws::Utils::Array<JsonView> operationStatusesJsonList = jsonValue.GetArray("OperationStatuses");
@@ -51,7 +43,6 @@ ResourceRequestStatusFilter& ResourceRequestStatusFilter::operator =(JsonView js
     }
     m_operationStatusesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TransformSortCriteria::TransformSortCriteria() : 
-    m_column(TransformSortColumnType::NOT_SET),
-    m_columnHasBeenSet(false),
-    m_sortDirection(SortDirectionType::NOT_SET),
-    m_sortDirectionHasBeenSet(false)
-{
-}
-
 TransformSortCriteria::TransformSortCriteria(JsonView jsonValue)
-  : TransformSortCriteria()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TransformSortCriteria& TransformSortCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Column"))
   {
     m_column = TransformSortColumnTypeMapper::GetTransformSortColumnTypeForName(jsonValue.GetString("Column"));
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortDirection"))
   {
     m_sortDirection = SortDirectionTypeMapper::GetSortDirectionTypeForName(jsonValue.GetString("SortDirection"));
-
     m_sortDirectionHasBeenSet = true;
   }
-
   return *this;
 }
 

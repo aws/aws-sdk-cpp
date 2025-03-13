@@ -18,22 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-Algorithm::Algorithm() : 
-    m_nameHasBeenSet(false),
-    m_algorithmArnHasBeenSet(false),
-    m_algorithmImageHasBeenSet(false),
-    m_defaultHyperParametersHasBeenSet(false),
-    m_defaultHyperParameterRangesHasBeenSet(false),
-    m_defaultResourceConfigHasBeenSet(false),
-    m_trainingInputModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 Algorithm::Algorithm(JsonView jsonValue)
-  : Algorithm()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ Algorithm& Algorithm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("algorithmArn"))
   {
     m_algorithmArn = jsonValue.GetString("algorithmArn");
-
     m_algorithmArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("algorithmImage"))
   {
     m_algorithmImage = jsonValue.GetObject("algorithmImage");
-
     m_algorithmImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultHyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> defaultHyperParametersJsonMap = jsonValue.GetObject("defaultHyperParameters").GetAllObjects();
@@ -70,14 +49,11 @@ Algorithm& Algorithm::operator =(JsonView jsonValue)
     }
     m_defaultHyperParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultHyperParameterRanges"))
   {
     m_defaultHyperParameterRanges = jsonValue.GetObject("defaultHyperParameterRanges");
-
     m_defaultHyperParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultResourceConfig"))
   {
     Aws::Map<Aws::String, JsonView> defaultResourceConfigJsonMap = jsonValue.GetObject("defaultResourceConfig").GetAllObjects();
@@ -87,35 +63,26 @@ Algorithm& Algorithm::operator =(JsonView jsonValue)
     }
     m_defaultResourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trainingInputMode"))
   {
     m_trainingInputMode = jsonValue.GetString("trainingInputMode");
-
     m_trainingInputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

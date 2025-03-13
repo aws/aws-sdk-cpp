@@ -21,7 +21,7 @@ namespace Model
   class RejectDataShareRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API RejectDataShareRequest();
+    AWS_REDSHIFT_API RejectDataShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
      */
-    inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
+    inline const Aws::String& GetDataShareArn() const { return m_dataShareArn; }
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-    inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-    inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-    inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-    inline RejectDataShareRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-    inline RejectDataShareRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-    inline RejectDataShareRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    template<typename DataShareArnT = Aws::String>
+    void SetDataShareArn(DataShareArnT&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::forward<DataShareArnT>(value); }
+    template<typename DataShareArnT = Aws::String>
+    RejectDataShareRequest& WithDataShareArn(DataShareArnT&& value) { SetDataShareArn(std::forward<DataShareArnT>(value)); return *this;}
     ///@}
   private:
 

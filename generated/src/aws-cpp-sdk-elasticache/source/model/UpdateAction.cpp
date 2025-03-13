@@ -20,34 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-UpdateAction::UpdateAction() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateReleaseDateHasBeenSet(false),
-    m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
-    m_serviceUpdateSeverityHasBeenSet(false),
-    m_serviceUpdateStatus(ServiceUpdateStatus::NOT_SET),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateRecommendedApplyByDateHasBeenSet(false),
-    m_serviceUpdateType(ServiceUpdateType::NOT_SET),
-    m_serviceUpdateTypeHasBeenSet(false),
-    m_updateActionAvailableDateHasBeenSet(false),
-    m_updateActionStatus(UpdateActionStatus::NOT_SET),
-    m_updateActionStatusHasBeenSet(false),
-    m_nodesUpdatedHasBeenSet(false),
-    m_updateActionStatusModifiedDateHasBeenSet(false),
-    m_slaMet(SlaMet::NOT_SET),
-    m_slaMetHasBeenSet(false),
-    m_nodeGroupUpdateStatusHasBeenSet(false),
-    m_cacheNodeUpdateStatusHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false)
-{
-}
-
 UpdateAction::UpdateAction(const XmlNode& xmlNode)
-  : UpdateAction()
 {
   *this = xmlNode;
 }
@@ -63,114 +36,131 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     {
       m_replicationGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupIdNode.GetText());
       m_replicationGroupIdHasBeenSet = true;
+       m_replicationGroupIdHasBeenSet = true;
     }
     XmlNode cacheClusterIdNode = resultNode.FirstChild("CacheClusterId");
     if(!cacheClusterIdNode.IsNull())
     {
       m_cacheClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheClusterIdNode.GetText());
       m_cacheClusterIdHasBeenSet = true;
+       m_cacheClusterIdHasBeenSet = true;
     }
     XmlNode serviceUpdateNameNode = resultNode.FirstChild("ServiceUpdateName");
     if(!serviceUpdateNameNode.IsNull())
     {
       m_serviceUpdateName = Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateNameNode.GetText());
       m_serviceUpdateNameHasBeenSet = true;
+       m_serviceUpdateNameHasBeenSet = true;
     }
     XmlNode serviceUpdateReleaseDateNode = resultNode.FirstChild("ServiceUpdateReleaseDate");
     if(!serviceUpdateReleaseDateNode.IsNull())
     {
       m_serviceUpdateReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateReleaseDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateReleaseDateHasBeenSet = true;
+       m_serviceUpdateReleaseDateHasBeenSet = true;
     }
     XmlNode serviceUpdateSeverityNode = resultNode.FirstChild("ServiceUpdateSeverity");
     if(!serviceUpdateSeverityNode.IsNull())
     {
-      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()).c_str());
+      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()));
       m_serviceUpdateSeverityHasBeenSet = true;
+       m_serviceUpdateSeverityHasBeenSet = true;
     }
     XmlNode serviceUpdateStatusNode = resultNode.FirstChild("ServiceUpdateStatus");
     if(!serviceUpdateStatusNode.IsNull())
     {
-      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()).c_str());
+      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()));
       m_serviceUpdateStatusHasBeenSet = true;
+       m_serviceUpdateStatusHasBeenSet = true;
     }
     XmlNode serviceUpdateRecommendedApplyByDateNode = resultNode.FirstChild("ServiceUpdateRecommendedApplyByDate");
     if(!serviceUpdateRecommendedApplyByDateNode.IsNull())
     {
       m_serviceUpdateRecommendedApplyByDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateRecommendedApplyByDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_serviceUpdateRecommendedApplyByDateHasBeenSet = true;
+       m_serviceUpdateRecommendedApplyByDateHasBeenSet = true;
     }
     XmlNode serviceUpdateTypeNode = resultNode.FirstChild("ServiceUpdateType");
     if(!serviceUpdateTypeNode.IsNull())
     {
-      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()).c_str());
+      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()));
       m_serviceUpdateTypeHasBeenSet = true;
+       m_serviceUpdateTypeHasBeenSet = true;
     }
     XmlNode updateActionAvailableDateNode = resultNode.FirstChild("UpdateActionAvailableDate");
     if(!updateActionAvailableDateNode.IsNull())
     {
       m_updateActionAvailableDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionAvailableDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateActionAvailableDateHasBeenSet = true;
+       m_updateActionAvailableDateHasBeenSet = true;
     }
     XmlNode updateActionStatusNode = resultNode.FirstChild("UpdateActionStatus");
     if(!updateActionStatusNode.IsNull())
     {
-      m_updateActionStatus = UpdateActionStatusMapper::GetUpdateActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusNode.GetText()).c_str()).c_str());
+      m_updateActionStatus = UpdateActionStatusMapper::GetUpdateActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusNode.GetText()).c_str()));
       m_updateActionStatusHasBeenSet = true;
+       m_updateActionStatusHasBeenSet = true;
     }
     XmlNode nodesUpdatedNode = resultNode.FirstChild("NodesUpdated");
     if(!nodesUpdatedNode.IsNull())
     {
       m_nodesUpdated = Aws::Utils::Xml::DecodeEscapedXmlText(nodesUpdatedNode.GetText());
       m_nodesUpdatedHasBeenSet = true;
+       m_nodesUpdatedHasBeenSet = true;
     }
     XmlNode updateActionStatusModifiedDateNode = resultNode.FirstChild("UpdateActionStatusModifiedDate");
     if(!updateActionStatusModifiedDateNode.IsNull())
     {
       m_updateActionStatusModifiedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusModifiedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateActionStatusModifiedDateHasBeenSet = true;
+       m_updateActionStatusModifiedDateHasBeenSet = true;
     }
     XmlNode slaMetNode = resultNode.FirstChild("SlaMet");
     if(!slaMetNode.IsNull())
     {
-      m_slaMet = SlaMetMapper::GetSlaMetForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(slaMetNode.GetText()).c_str()).c_str());
+      m_slaMet = SlaMetMapper::GetSlaMetForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(slaMetNode.GetText()).c_str()));
       m_slaMetHasBeenSet = true;
+       m_slaMetHasBeenSet = true;
     }
     XmlNode nodeGroupUpdateStatusNode = resultNode.FirstChild("NodeGroupUpdateStatus");
     if(!nodeGroupUpdateStatusNode.IsNull())
     {
       XmlNode nodeGroupUpdateStatusMember = nodeGroupUpdateStatusNode.FirstChild("NodeGroupUpdateStatus");
+      m_nodeGroupUpdateStatusHasBeenSet = !nodeGroupUpdateStatusMember.IsNull();
       while(!nodeGroupUpdateStatusMember.IsNull())
       {
         m_nodeGroupUpdateStatus.push_back(nodeGroupUpdateStatusMember);
         nodeGroupUpdateStatusMember = nodeGroupUpdateStatusMember.NextNode("NodeGroupUpdateStatus");
       }
 
-      m_nodeGroupUpdateStatusHasBeenSet = true;
+       m_nodeGroupUpdateStatusHasBeenSet = true;
     }
     XmlNode cacheNodeUpdateStatusNode = resultNode.FirstChild("CacheNodeUpdateStatus");
     if(!cacheNodeUpdateStatusNode.IsNull())
     {
       XmlNode cacheNodeUpdateStatusMember = cacheNodeUpdateStatusNode.FirstChild("CacheNodeUpdateStatus");
+      m_cacheNodeUpdateStatusHasBeenSet = !cacheNodeUpdateStatusMember.IsNull();
       while(!cacheNodeUpdateStatusMember.IsNull())
       {
         m_cacheNodeUpdateStatus.push_back(cacheNodeUpdateStatusMember);
         cacheNodeUpdateStatusMember = cacheNodeUpdateStatusMember.NextNode("CacheNodeUpdateStatus");
       }
 
-      m_cacheNodeUpdateStatusHasBeenSet = true;
+       m_cacheNodeUpdateStatusHasBeenSet = true;
     }
     XmlNode estimatedUpdateTimeNode = resultNode.FirstChild("EstimatedUpdateTime");
     if(!estimatedUpdateTimeNode.IsNull())
     {
       m_estimatedUpdateTime = Aws::Utils::Xml::DecodeEscapedXmlText(estimatedUpdateTimeNode.GetText());
       m_estimatedUpdateTimeHasBeenSet = true;
+       m_estimatedUpdateTimeHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
   }
 

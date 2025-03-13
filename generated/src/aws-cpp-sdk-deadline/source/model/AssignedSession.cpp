@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AssignedSession::AssignedSession() : 
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_sessionActionsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
-{
-}
-
 AssignedSession::AssignedSession(JsonView jsonValue)
-  : AssignedSession()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AssignedSession& AssignedSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queueId"))
   {
     m_queueId = jsonValue.GetString("queueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionActions"))
   {
     Aws::Utils::Array<JsonView> sessionActionsJsonList = jsonValue.GetArray("sessionActions");
@@ -57,14 +44,11 @@ AssignedSession& AssignedSession::operator =(JsonView jsonValue)
     }
     m_sessionActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

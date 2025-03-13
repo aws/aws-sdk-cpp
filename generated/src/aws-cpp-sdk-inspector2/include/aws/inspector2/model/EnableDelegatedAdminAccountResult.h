@@ -27,7 +27,7 @@ namespace Model
   class EnableDelegatedAdminAccountResult
   {
   public:
-    AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult();
+    AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult() = default;
     AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API EnableDelegatedAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Web Services account ID of the successfully Amazon Inspector
      * delegated administrator.</p>
      */
-    inline const Aws::String& GetDelegatedAdminAccountId() const{ return m_delegatedAdminAccountId; }
-    inline void SetDelegatedAdminAccountId(const Aws::String& value) { m_delegatedAdminAccountId = value; }
-    inline void SetDelegatedAdminAccountId(Aws::String&& value) { m_delegatedAdminAccountId = std::move(value); }
-    inline void SetDelegatedAdminAccountId(const char* value) { m_delegatedAdminAccountId.assign(value); }
-    inline EnableDelegatedAdminAccountResult& WithDelegatedAdminAccountId(const Aws::String& value) { SetDelegatedAdminAccountId(value); return *this;}
-    inline EnableDelegatedAdminAccountResult& WithDelegatedAdminAccountId(Aws::String&& value) { SetDelegatedAdminAccountId(std::move(value)); return *this;}
-    inline EnableDelegatedAdminAccountResult& WithDelegatedAdminAccountId(const char* value) { SetDelegatedAdminAccountId(value); return *this;}
+    inline const Aws::String& GetDelegatedAdminAccountId() const { return m_delegatedAdminAccountId; }
+    template<typename DelegatedAdminAccountIdT = Aws::String>
+    void SetDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::forward<DelegatedAdminAccountIdT>(value); }
+    template<typename DelegatedAdminAccountIdT = Aws::String>
+    EnableDelegatedAdminAccountResult& WithDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { SetDelegatedAdminAccountId(std::forward<DelegatedAdminAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EnableDelegatedAdminAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EnableDelegatedAdminAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EnableDelegatedAdminAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EnableDelegatedAdminAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_delegatedAdminAccountId;
+    bool m_delegatedAdminAccountIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

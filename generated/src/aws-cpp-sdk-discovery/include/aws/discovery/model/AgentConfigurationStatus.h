@@ -33,7 +33,7 @@ namespace Model
   class AgentConfigurationStatus
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus();
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The agent ID.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline AgentConfigurationStatus& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline AgentConfigurationStatus& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline AgentConfigurationStatus& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    AgentConfigurationStatus& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * collection operation. The agent receives this command the next time it polls for
      * a new command. </p>
      */
-    inline bool GetOperationSucceeded() const{ return m_operationSucceeded; }
+    inline bool GetOperationSucceeded() const { return m_operationSucceeded; }
     inline bool OperationSucceededHasBeenSet() const { return m_operationSucceededHasBeenSet; }
     inline void SetOperationSucceeded(bool value) { m_operationSucceededHasBeenSet = true; m_operationSucceeded = value; }
     inline AgentConfigurationStatus& WithOperationSucceeded(bool value) { SetOperationSucceeded(value); return *this;}
@@ -70,21 +68,19 @@ namespace Model
     /**
      * <p>A description of the operation performed.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AgentConfigurationStatus& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AgentConfigurationStatus& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AgentConfigurationStatus& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AgentConfigurationStatus& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    bool m_operationSucceeded;
+    bool m_operationSucceeded{false};
     bool m_operationSucceededHasBeenSet = false;
 
     Aws::String m_description;

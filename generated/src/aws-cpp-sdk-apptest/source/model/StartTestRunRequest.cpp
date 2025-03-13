@@ -12,15 +12,6 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTestRunRequest::StartTestRunRequest() : 
-    m_testSuiteIdHasBeenSet(false),
-    m_testConfigurationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartTestRunRequest::SerializePayload() const
 {
   JsonValue payload;

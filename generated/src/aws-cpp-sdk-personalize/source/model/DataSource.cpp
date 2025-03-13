@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_dataLocationHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataLocation"))
   {
     m_dataLocation = jsonValue.GetString("dataLocation");
-
     m_dataLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

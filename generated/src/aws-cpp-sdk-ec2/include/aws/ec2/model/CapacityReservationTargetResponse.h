@@ -32,7 +32,7 @@ namespace Model
   class CapacityReservationTargetResponse
   {
   public:
-    AWS_EC2_API CapacityReservationTargetResponse();
+    AWS_EC2_API CapacityReservationTargetResponse() = default;
     AWS_EC2_API CapacityReservationTargetResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityReservationTargetResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ID of the targeted Capacity Reservation.</p>
      */
-    inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
+    inline const Aws::String& GetCapacityReservationId() const { return m_capacityReservationId; }
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
-    inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
-    inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
-    inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
-    inline CapacityReservationTargetResponse& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
-    inline CapacityReservationTargetResponse& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
-    inline CapacityReservationTargetResponse& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
+    template<typename CapacityReservationIdT = Aws::String>
+    void SetCapacityReservationId(CapacityReservationIdT&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::forward<CapacityReservationIdT>(value); }
+    template<typename CapacityReservationIdT = Aws::String>
+    CapacityReservationTargetResponse& WithCapacityReservationId(CapacityReservationIdT&& value) { SetCapacityReservationId(std::forward<CapacityReservationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the targeted Capacity Reservation group.</p>
      */
-    inline const Aws::String& GetCapacityReservationResourceGroupArn() const{ return m_capacityReservationResourceGroupArn; }
+    inline const Aws::String& GetCapacityReservationResourceGroupArn() const { return m_capacityReservationResourceGroupArn; }
     inline bool CapacityReservationResourceGroupArnHasBeenSet() const { return m_capacityReservationResourceGroupArnHasBeenSet; }
-    inline void SetCapacityReservationResourceGroupArn(const Aws::String& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = value; }
-    inline void SetCapacityReservationResourceGroupArn(Aws::String&& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = std::move(value); }
-    inline void SetCapacityReservationResourceGroupArn(const char* value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn.assign(value); }
-    inline CapacityReservationTargetResponse& WithCapacityReservationResourceGroupArn(const Aws::String& value) { SetCapacityReservationResourceGroupArn(value); return *this;}
-    inline CapacityReservationTargetResponse& WithCapacityReservationResourceGroupArn(Aws::String&& value) { SetCapacityReservationResourceGroupArn(std::move(value)); return *this;}
-    inline CapacityReservationTargetResponse& WithCapacityReservationResourceGroupArn(const char* value) { SetCapacityReservationResourceGroupArn(value); return *this;}
+    template<typename CapacityReservationResourceGroupArnT = Aws::String>
+    void SetCapacityReservationResourceGroupArn(CapacityReservationResourceGroupArnT&& value) { m_capacityReservationResourceGroupArnHasBeenSet = true; m_capacityReservationResourceGroupArn = std::forward<CapacityReservationResourceGroupArnT>(value); }
+    template<typename CapacityReservationResourceGroupArnT = Aws::String>
+    CapacityReservationTargetResponse& WithCapacityReservationResourceGroupArn(CapacityReservationResourceGroupArnT&& value) { SetCapacityReservationResourceGroupArn(std::forward<CapacityReservationResourceGroupArnT>(value)); return *this;}
     ///@}
   private:
 

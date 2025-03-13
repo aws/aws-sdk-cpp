@@ -29,7 +29,7 @@ namespace Model
   class ListOutpostsWithS3Result
   {
   public:
-    AWS_S3OUTPOSTS_API ListOutpostsWithS3Result();
+    AWS_S3OUTPOSTS_API ListOutpostsWithS3Result() = default;
     AWS_S3OUTPOSTS_API ListOutpostsWithS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3OUTPOSTS_API ListOutpostsWithS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * </li> <li> <p>outposts to which the the calling Amazon Web Services account has
      * access</p> </li> </ul>
      */
-    inline const Aws::Vector<Outpost>& GetOutposts() const{ return m_outposts; }
-    inline void SetOutposts(const Aws::Vector<Outpost>& value) { m_outposts = value; }
-    inline void SetOutposts(Aws::Vector<Outpost>&& value) { m_outposts = std::move(value); }
-    inline ListOutpostsWithS3Result& WithOutposts(const Aws::Vector<Outpost>& value) { SetOutposts(value); return *this;}
-    inline ListOutpostsWithS3Result& WithOutposts(Aws::Vector<Outpost>&& value) { SetOutposts(std::move(value)); return *this;}
-    inline ListOutpostsWithS3Result& AddOutposts(const Outpost& value) { m_outposts.push_back(value); return *this; }
-    inline ListOutpostsWithS3Result& AddOutposts(Outpost&& value) { m_outposts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Outpost>& GetOutposts() const { return m_outposts; }
+    template<typename OutpostsT = Aws::Vector<Outpost>>
+    void SetOutposts(OutpostsT&& value) { m_outpostsHasBeenSet = true; m_outposts = std::forward<OutpostsT>(value); }
+    template<typename OutpostsT = Aws::Vector<Outpost>>
+    ListOutpostsWithS3Result& WithOutposts(OutpostsT&& value) { SetOutposts(std::forward<OutpostsT>(value)); return *this;}
+    template<typename OutpostsT = Outpost>
+    ListOutpostsWithS3Result& AddOutposts(OutpostsT&& value) { m_outpostsHasBeenSet = true; m_outposts.emplace_back(std::forward<OutpostsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code>
      * again and receive additional results, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOutpostsWithS3Result& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOutpostsWithS3Result& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOutpostsWithS3Result& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOutpostsWithS3Result& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOutpostsWithS3Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOutpostsWithS3Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOutpostsWithS3Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOutpostsWithS3Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Outpost> m_outposts;
+    bool m_outpostsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUsageLimitsResult::DescribeUsageLimitsResult()
-{
-}
-
 DescribeUsageLimitsResult::DescribeUsageLimitsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeUsageLimitsResult& DescribeUsageLimitsResult::operator =(const Aws::Amaz
     if(!usageLimitsNode.IsNull())
     {
       XmlNode usageLimitsMember = usageLimitsNode.FirstChild("member");
+      m_usageLimitsHasBeenSet = !usageLimitsMember.IsNull();
       while(!usageLimitsMember.IsNull())
       {
         m_usageLimits.push_back(usageLimitsMember);
@@ -53,12 +50,14 @@ DescribeUsageLimitsResult& DescribeUsageLimitsResult::operator =(const Aws::Amaz
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeUsageLimitsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

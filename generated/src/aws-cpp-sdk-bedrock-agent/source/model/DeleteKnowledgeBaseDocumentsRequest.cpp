@@ -12,15 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKnowledgeBaseDocumentsRequest::DeleteKnowledgeBaseDocumentsRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataSourceIdHasBeenSet(false),
-    m_documentIdentifiersHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKnowledgeBaseDocumentsRequest::SerializePayload() const
 {
   JsonValue payload;

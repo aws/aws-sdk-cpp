@@ -33,7 +33,7 @@ namespace Model
   class DataProductVisibilityFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API DataProductVisibilityFilter();
+    AWS_MARKETPLACECATALOG_API DataProductVisibilityFilter() = default;
     AWS_MARKETPLACECATALOG_API DataProductVisibilityFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API DataProductVisibilityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,13 @@ namespace Model
     /**
      * <p>A string array of unique visibility values to be filtered on.</p>
      */
-    inline const Aws::Vector<DataProductVisibilityString>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<DataProductVisibilityString>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<DataProductVisibilityString>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<DataProductVisibilityString>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline DataProductVisibilityFilter& WithValueList(const Aws::Vector<DataProductVisibilityString>& value) { SetValueList(value); return *this;}
-    inline DataProductVisibilityFilter& WithValueList(Aws::Vector<DataProductVisibilityString>&& value) { SetValueList(std::move(value)); return *this;}
-    inline DataProductVisibilityFilter& AddValueList(const DataProductVisibilityString& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline DataProductVisibilityFilter& AddValueList(DataProductVisibilityString&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
+    template<typename ValueListT = Aws::Vector<DataProductVisibilityString>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<DataProductVisibilityString>>
+    DataProductVisibilityFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    inline DataProductVisibilityFilter& AddValueList(DataProductVisibilityString value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
     ///@}
   private:
 

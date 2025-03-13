@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-UnusedAction::UnusedAction() : 
-    m_actionHasBeenSet(false),
-    m_lastAccessedHasBeenSet(false)
-{
-}
-
 UnusedAction::UnusedAction(JsonView jsonValue)
-  : UnusedAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnusedAction& UnusedAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAccessed"))
   {
     m_lastAccessed = jsonValue.GetString("lastAccessed");
-
     m_lastAccessedHasBeenSet = true;
   }
-
   return *this;
 }
 

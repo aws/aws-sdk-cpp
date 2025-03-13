@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteNetworkInterfaceRequest::DeleteNetworkInterfaceRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkInterfaceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRegistrationCodeRequest::GetRegistrationCodeRequest()
-{
-}
-
 Aws::String GetRegistrationCodeRequest::SerializePayload() const
 {
   return {};

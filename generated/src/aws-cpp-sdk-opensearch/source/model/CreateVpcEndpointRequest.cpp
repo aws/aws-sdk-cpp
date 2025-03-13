@@ -12,13 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcEndpointRequest::CreateVpcEndpointRequest() : 
-    m_domainArnHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

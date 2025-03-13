@@ -36,7 +36,7 @@ namespace Model
   class HomeDirectoryMapEntry
   {
   public:
-    AWS_TRANSFER_API HomeDirectoryMapEntry();
+    AWS_TRANSFER_API HomeDirectoryMapEntry() = default;
     AWS_TRANSFER_API HomeDirectoryMapEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API HomeDirectoryMapEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>Represents an entry for <code>HomeDirectoryMappings</code>.</p>
      */
-    inline const Aws::String& GetEntry() const{ return m_entry; }
+    inline const Aws::String& GetEntry() const { return m_entry; }
     inline bool EntryHasBeenSet() const { return m_entryHasBeenSet; }
-    inline void SetEntry(const Aws::String& value) { m_entryHasBeenSet = true; m_entry = value; }
-    inline void SetEntry(Aws::String&& value) { m_entryHasBeenSet = true; m_entry = std::move(value); }
-    inline void SetEntry(const char* value) { m_entryHasBeenSet = true; m_entry.assign(value); }
-    inline HomeDirectoryMapEntry& WithEntry(const Aws::String& value) { SetEntry(value); return *this;}
-    inline HomeDirectoryMapEntry& WithEntry(Aws::String&& value) { SetEntry(std::move(value)); return *this;}
-    inline HomeDirectoryMapEntry& WithEntry(const char* value) { SetEntry(value); return *this;}
+    template<typename EntryT = Aws::String>
+    void SetEntry(EntryT&& value) { m_entryHasBeenSet = true; m_entry = std::forward<EntryT>(value); }
+    template<typename EntryT = Aws::String>
+    HomeDirectoryMapEntry& WithEntry(EntryT&& value) { SetEntry(std::forward<EntryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>Represents the map target that is used in a
      * <code>HomeDirectoryMapEntry</code>.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline HomeDirectoryMapEntry& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline HomeDirectoryMapEntry& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline HomeDirectoryMapEntry& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    HomeDirectoryMapEntry& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,10 @@ namespace Model
      * server. You would need to explicitly set <code>Type</code> to <code>FILE</code>
      * if you want a mapping to have a file target.</p> 
      */
-    inline const MapType& GetType() const{ return m_type; }
+    inline MapType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MapType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MapType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline HomeDirectoryMapEntry& WithType(const MapType& value) { SetType(value); return *this;}
-    inline HomeDirectoryMapEntry& WithType(MapType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MapType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline HomeDirectoryMapEntry& WithType(MapType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +89,7 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    MapType m_type;
+    MapType m_type{MapType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

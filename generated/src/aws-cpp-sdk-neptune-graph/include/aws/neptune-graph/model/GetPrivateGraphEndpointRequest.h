@@ -21,7 +21,7 @@ namespace Model
   class GetPrivateGraphEndpointRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API GetPrivateGraphEndpointRequest();
+    AWS_NEPTUNEGRAPH_API GetPrivateGraphEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The unique identifier of the Neptune Analytics graph.</p>
      */
-    inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
+    inline const Aws::String& GetGraphIdentifier() const { return m_graphIdentifier; }
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-    inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-    inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-    inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-    inline GetPrivateGraphEndpointRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-    inline GetPrivateGraphEndpointRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-    inline GetPrivateGraphEndpointRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    template<typename GraphIdentifierT = Aws::String>
+    void SetGraphIdentifier(GraphIdentifierT&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::forward<GraphIdentifierT>(value); }
+    template<typename GraphIdentifierT = Aws::String>
+    GetPrivateGraphEndpointRequest& WithGraphIdentifier(GraphIdentifierT&& value) { SetGraphIdentifier(std::forward<GraphIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC where the private endpoint is located.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline GetPrivateGraphEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline GetPrivateGraphEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline GetPrivateGraphEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    GetPrivateGraphEndpointRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class Qualifier
   {
   public:
-    AWS_ACMPCA_API Qualifier();
+    AWS_ACMPCA_API Qualifier() = default;
     AWS_ACMPCA_API Qualifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Qualifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>Contains a pointer to a certification practice statement (CPS) published by
      * the CA.</p>
      */
-    inline const Aws::String& GetCpsUri() const{ return m_cpsUri; }
+    inline const Aws::String& GetCpsUri() const { return m_cpsUri; }
     inline bool CpsUriHasBeenSet() const { return m_cpsUriHasBeenSet; }
-    inline void SetCpsUri(const Aws::String& value) { m_cpsUriHasBeenSet = true; m_cpsUri = value; }
-    inline void SetCpsUri(Aws::String&& value) { m_cpsUriHasBeenSet = true; m_cpsUri = std::move(value); }
-    inline void SetCpsUri(const char* value) { m_cpsUriHasBeenSet = true; m_cpsUri.assign(value); }
-    inline Qualifier& WithCpsUri(const Aws::String& value) { SetCpsUri(value); return *this;}
-    inline Qualifier& WithCpsUri(Aws::String&& value) { SetCpsUri(std::move(value)); return *this;}
-    inline Qualifier& WithCpsUri(const char* value) { SetCpsUri(value); return *this;}
+    template<typename CpsUriT = Aws::String>
+    void SetCpsUri(CpsUriT&& value) { m_cpsUriHasBeenSet = true; m_cpsUri = std::forward<CpsUriT>(value); }
+    template<typename CpsUriT = Aws::String>
+    Qualifier& WithCpsUri(CpsUriT&& value) { SetCpsUri(std::forward<CpsUriT>(value)); return *this;}
     ///@}
   private:
 

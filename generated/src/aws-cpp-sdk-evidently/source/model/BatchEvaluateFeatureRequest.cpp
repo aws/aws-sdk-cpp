@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchEvaluateFeatureRequest::BatchEvaluateFeatureRequest() : 
-    m_projectHasBeenSet(false),
-    m_requestsHasBeenSet(false)
-{
-}
-
 Aws::String BatchEvaluateFeatureRequest::SerializePayload() const
 {
   JsonValue payload;

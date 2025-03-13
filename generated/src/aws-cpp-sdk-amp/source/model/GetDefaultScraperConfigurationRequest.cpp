@@ -12,10 +12,6 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDefaultScraperConfigurationRequest::GetDefaultScraperConfigurationRequest()
-{
-}
-
 Aws::String GetDefaultScraperConfigurationRequest::SerializePayload() const
 {
   return {};

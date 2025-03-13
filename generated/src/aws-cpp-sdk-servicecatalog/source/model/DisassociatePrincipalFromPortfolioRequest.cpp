@@ -12,15 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociatePrincipalFromPortfolioRequest::DisassociatePrincipalFromPortfolioRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false),
-    m_principalARNHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 Aws::String DisassociatePrincipalFromPortfolioRequest::SerializePayload() const
 {
   JsonValue payload;

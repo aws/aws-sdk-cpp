@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGlobalNetworkRequest::CreateGlobalNetworkRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGlobalNetworkRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetVpcEndpointRequest::BatchGetVpcEndpointRequest() : 
-    m_idsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetVpcEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-TrackingOptions::TrackingOptions() : 
-    m_customRedirectDomainHasBeenSet(false)
-{
-}
-
 TrackingOptions::TrackingOptions(const XmlNode& xmlNode)
-  : TrackingOptions()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ TrackingOptions& TrackingOptions::operator =(const XmlNode& xmlNode)
     {
       m_customRedirectDomain = Aws::Utils::Xml::DecodeEscapedXmlText(customRedirectDomainNode.GetText());
       m_customRedirectDomainHasBeenSet = true;
+       m_customRedirectDomainHasBeenSet = true;
     }
   }
 

@@ -29,7 +29,7 @@ namespace Model
   class GetParameterHistoryResult
   {
   public:
-    AWS_SSM_API GetParameterHistoryResult();
+    AWS_SSM_API GetParameterHistoryResult() = default;
     AWS_SSM_API GetParameterHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetParameterHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of parameters returned by the request.</p>
      */
-    inline const Aws::Vector<ParameterHistory>& GetParameters() const{ return m_parameters; }
-    inline void SetParameters(const Aws::Vector<ParameterHistory>& value) { m_parameters = value; }
-    inline void SetParameters(Aws::Vector<ParameterHistory>&& value) { m_parameters = std::move(value); }
-    inline GetParameterHistoryResult& WithParameters(const Aws::Vector<ParameterHistory>& value) { SetParameters(value); return *this;}
-    inline GetParameterHistoryResult& WithParameters(Aws::Vector<ParameterHistory>&& value) { SetParameters(std::move(value)); return *this;}
-    inline GetParameterHistoryResult& AddParameters(const ParameterHistory& value) { m_parameters.push_back(value); return *this; }
-    inline GetParameterHistoryResult& AddParameters(ParameterHistory&& value) { m_parameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ParameterHistory>& GetParameters() const { return m_parameters; }
+    template<typename ParametersT = Aws::Vector<ParameterHistory>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<ParameterHistory>>
+    GetParameterHistoryResult& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = ParameterHistory>
+    GetParameterHistoryResult& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetParameterHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetParameterHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetParameterHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetParameterHistoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetParameterHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetParameterHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetParameterHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetParameterHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ParameterHistory> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubscriptionRequest::UpdateSubscriptionRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_type(SubscriptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

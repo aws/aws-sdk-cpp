@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeDefaultClusterParametersRequest::DescribeDefaultClusterParametersRequest() : 
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDefaultClusterParametersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -36,7 +36,7 @@ namespace Model
   class HlsManifestCreateOrUpdateParameters
   {
   public:
-    AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters();
+    AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters() = default;
     AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API HlsManifestCreateOrUpdateParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,34 +63,29 @@ that is greater
      * than 0.
 
      */
-    inline const AdMarkers& GetAdMarkers() const{ return m_adMarkers; }
+    inline AdMarkers GetAdMarkers() const { return m_adMarkers; }
     inline bool AdMarkersHasBeenSet() const { return m_adMarkersHasBeenSet; }
-    inline void SetAdMarkers(const AdMarkers& value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
-    inline void SetAdMarkers(AdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers = std::move(value); }
-    inline HlsManifestCreateOrUpdateParameters& WithAdMarkers(const AdMarkers& value) { SetAdMarkers(value); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithAdMarkers(AdMarkers&& value) { SetAdMarkers(std::move(value)); return *this;}
+    inline void SetAdMarkers(AdMarkers value) { m_adMarkersHasBeenSet = true; m_adMarkers = value; }
+    inline HlsManifestCreateOrUpdateParameters& WithAdMarkers(AdMarkers value) { SetAdMarkers(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<__AdTriggersElement>& GetAdTriggers() const{ return m_adTriggers; }
+    inline const Aws::Vector<__AdTriggersElement>& GetAdTriggers() const { return m_adTriggers; }
     inline bool AdTriggersHasBeenSet() const { return m_adTriggersHasBeenSet; }
-    inline void SetAdTriggers(const Aws::Vector<__AdTriggersElement>& value) { m_adTriggersHasBeenSet = true; m_adTriggers = value; }
-    inline void SetAdTriggers(Aws::Vector<__AdTriggersElement>&& value) { m_adTriggersHasBeenSet = true; m_adTriggers = std::move(value); }
-    inline HlsManifestCreateOrUpdateParameters& WithAdTriggers(const Aws::Vector<__AdTriggersElement>& value) { SetAdTriggers(value); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithAdTriggers(Aws::Vector<__AdTriggersElement>&& value) { SetAdTriggers(std::move(value)); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& AddAdTriggers(const __AdTriggersElement& value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(value); return *this; }
-    inline HlsManifestCreateOrUpdateParameters& AddAdTriggers(__AdTriggersElement&& value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(std::move(value)); return *this; }
+    template<typename AdTriggersT = Aws::Vector<__AdTriggersElement>>
+    void SetAdTriggers(AdTriggersT&& value) { m_adTriggersHasBeenSet = true; m_adTriggers = std::forward<AdTriggersT>(value); }
+    template<typename AdTriggersT = Aws::Vector<__AdTriggersElement>>
+    HlsManifestCreateOrUpdateParameters& WithAdTriggers(AdTriggersT&& value) { SetAdTriggers(std::forward<AdTriggersT>(value)); return *this;}
+    inline HlsManifestCreateOrUpdateParameters& AddAdTriggers(__AdTriggersElement value) { m_adTriggersHasBeenSet = true; m_adTriggers.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const AdsOnDeliveryRestrictions& GetAdsOnDeliveryRestrictions() const{ return m_adsOnDeliveryRestrictions; }
+    inline AdsOnDeliveryRestrictions GetAdsOnDeliveryRestrictions() const { return m_adsOnDeliveryRestrictions; }
     inline bool AdsOnDeliveryRestrictionsHasBeenSet() const { return m_adsOnDeliveryRestrictionsHasBeenSet; }
-    inline void SetAdsOnDeliveryRestrictions(const AdsOnDeliveryRestrictions& value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = value; }
-    inline void SetAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions&& value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = std::move(value); }
-    inline HlsManifestCreateOrUpdateParameters& WithAdsOnDeliveryRestrictions(const AdsOnDeliveryRestrictions& value) { SetAdsOnDeliveryRestrictions(value); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions&& value) { SetAdsOnDeliveryRestrictions(std::move(value)); return *this;}
+    inline void SetAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions value) { m_adsOnDeliveryRestrictionsHasBeenSet = true; m_adsOnDeliveryRestrictions = value; }
+    inline HlsManifestCreateOrUpdateParameters& WithAdsOnDeliveryRestrictions(AdsOnDeliveryRestrictions value) { SetAdsOnDeliveryRestrictions(value); return *this;}
     ///@}
 
     ///@{
@@ -98,21 +93,19 @@ that is greater
      * The ID of the manifest. The ID must be unique within the OriginEndpoint and it
      * cannot be changed after it is created.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline HlsManifestCreateOrUpdateParameters& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    HlsManifestCreateOrUpdateParameters& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * When enabled, an I-Frame only stream will be included in the output.
      */
-    inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
+    inline bool GetIncludeIframeOnlyStream() const { return m_includeIframeOnlyStream; }
     inline bool IncludeIframeOnlyStreamHasBeenSet() const { return m_includeIframeOnlyStreamHasBeenSet; }
     inline void SetIncludeIframeOnlyStream(bool value) { m_includeIframeOnlyStreamHasBeenSet = true; m_includeIframeOnlyStream = value; }
     inline HlsManifestCreateOrUpdateParameters& WithIncludeIframeOnlyStream(bool value) { SetIncludeIframeOnlyStream(value); return *this;}
@@ -123,14 +116,12 @@ that is greater
      * An optional short string appended to the end of the OriginEndpoint URL. If not
      * specified, defaults to the manifestName for the OriginEndpoint.
      */
-    inline const Aws::String& GetManifestName() const{ return m_manifestName; }
+    inline const Aws::String& GetManifestName() const { return m_manifestName; }
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
-    inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
-    inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
-    inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
-    inline HlsManifestCreateOrUpdateParameters& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    template<typename ManifestNameT = Aws::String>
+    void SetManifestName(ManifestNameT&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::forward<ManifestNameT>(value); }
+    template<typename ManifestNameT = Aws::String>
+    HlsManifestCreateOrUpdateParameters& WithManifestName(ManifestNameT&& value) { SetManifestName(std::forward<ManifestNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,19 +133,17 @@ entry will be included in the
      * media playlist.
 
      */
-    inline const PlaylistType& GetPlaylistType() const{ return m_playlistType; }
+    inline PlaylistType GetPlaylistType() const { return m_playlistType; }
     inline bool PlaylistTypeHasBeenSet() const { return m_playlistTypeHasBeenSet; }
-    inline void SetPlaylistType(const PlaylistType& value) { m_playlistTypeHasBeenSet = true; m_playlistType = value; }
-    inline void SetPlaylistType(PlaylistType&& value) { m_playlistTypeHasBeenSet = true; m_playlistType = std::move(value); }
-    inline HlsManifestCreateOrUpdateParameters& WithPlaylistType(const PlaylistType& value) { SetPlaylistType(value); return *this;}
-    inline HlsManifestCreateOrUpdateParameters& WithPlaylistType(PlaylistType&& value) { SetPlaylistType(std::move(value)); return *this;}
+    inline void SetPlaylistType(PlaylistType value) { m_playlistTypeHasBeenSet = true; m_playlistType = value; }
+    inline HlsManifestCreateOrUpdateParameters& WithPlaylistType(PlaylistType value) { SetPlaylistType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Time window (in seconds) contained in each parent manifest.
      */
-    inline int GetPlaylistWindowSeconds() const{ return m_playlistWindowSeconds; }
+    inline int GetPlaylistWindowSeconds() const { return m_playlistWindowSeconds; }
     inline bool PlaylistWindowSecondsHasBeenSet() const { return m_playlistWindowSecondsHasBeenSet; }
     inline void SetPlaylistWindowSeconds(int value) { m_playlistWindowSecondsHasBeenSet = true; m_playlistWindowSeconds = value; }
     inline HlsManifestCreateOrUpdateParameters& WithPlaylistWindowSeconds(int value) { SetPlaylistWindowSeconds(value); return *this;}
@@ -180,38 +169,38 @@ it will
      * be passed through to HLS output.
 
      */
-    inline int GetProgramDateTimeIntervalSeconds() const{ return m_programDateTimeIntervalSeconds; }
+    inline int GetProgramDateTimeIntervalSeconds() const { return m_programDateTimeIntervalSeconds; }
     inline bool ProgramDateTimeIntervalSecondsHasBeenSet() const { return m_programDateTimeIntervalSecondsHasBeenSet; }
     inline void SetProgramDateTimeIntervalSeconds(int value) { m_programDateTimeIntervalSecondsHasBeenSet = true; m_programDateTimeIntervalSeconds = value; }
     inline HlsManifestCreateOrUpdateParameters& WithProgramDateTimeIntervalSeconds(int value) { SetProgramDateTimeIntervalSeconds(value); return *this;}
     ///@}
   private:
 
-    AdMarkers m_adMarkers;
+    AdMarkers m_adMarkers{AdMarkers::NOT_SET};
     bool m_adMarkersHasBeenSet = false;
 
     Aws::Vector<__AdTriggersElement> m_adTriggers;
     bool m_adTriggersHasBeenSet = false;
 
-    AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions;
+    AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions{AdsOnDeliveryRestrictions::NOT_SET};
     bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    bool m_includeIframeOnlyStream;
+    bool m_includeIframeOnlyStream{false};
     bool m_includeIframeOnlyStreamHasBeenSet = false;
 
     Aws::String m_manifestName;
     bool m_manifestNameHasBeenSet = false;
 
-    PlaylistType m_playlistType;
+    PlaylistType m_playlistType{PlaylistType::NOT_SET};
     bool m_playlistTypeHasBeenSet = false;
 
-    int m_playlistWindowSeconds;
+    int m_playlistWindowSeconds{0};
     bool m_playlistWindowSecondsHasBeenSet = false;
 
-    int m_programDateTimeIntervalSeconds;
+    int m_programDateTimeIntervalSeconds{0};
     bool m_programDateTimeIntervalSecondsHasBeenSet = false;
   };
 

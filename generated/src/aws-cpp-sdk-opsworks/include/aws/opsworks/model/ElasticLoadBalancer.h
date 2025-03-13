@@ -32,7 +32,7 @@ namespace Model
   class ElasticLoadBalancer
   {
   public:
-    AWS_OPSWORKS_API ElasticLoadBalancer();
+    AWS_OPSWORKS_API ElasticLoadBalancer() = default;
     AWS_OPSWORKS_API ElasticLoadBalancer(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API ElasticLoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,114 +42,100 @@ namespace Model
     /**
      * <p>The Elastic Load Balancing instance name.</p>
      */
-    inline const Aws::String& GetElasticLoadBalancerName() const{ return m_elasticLoadBalancerName; }
+    inline const Aws::String& GetElasticLoadBalancerName() const { return m_elasticLoadBalancerName; }
     inline bool ElasticLoadBalancerNameHasBeenSet() const { return m_elasticLoadBalancerNameHasBeenSet; }
-    inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
-    inline void SetElasticLoadBalancerName(Aws::String&& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = std::move(value); }
-    inline void SetElasticLoadBalancerName(const char* value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName.assign(value); }
-    inline ElasticLoadBalancer& WithElasticLoadBalancerName(const Aws::String& value) { SetElasticLoadBalancerName(value); return *this;}
-    inline ElasticLoadBalancer& WithElasticLoadBalancerName(Aws::String&& value) { SetElasticLoadBalancerName(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& WithElasticLoadBalancerName(const char* value) { SetElasticLoadBalancerName(value); return *this;}
+    template<typename ElasticLoadBalancerNameT = Aws::String>
+    void SetElasticLoadBalancerName(ElasticLoadBalancerNameT&& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = std::forward<ElasticLoadBalancerNameT>(value); }
+    template<typename ElasticLoadBalancerNameT = Aws::String>
+    ElasticLoadBalancer& WithElasticLoadBalancerName(ElasticLoadBalancerNameT&& value) { SetElasticLoadBalancerName(std::forward<ElasticLoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline ElasticLoadBalancer& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline ElasticLoadBalancer& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    ElasticLoadBalancer& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance's public DNS name.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline ElasticLoadBalancer& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline ElasticLoadBalancer& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    ElasticLoadBalancer& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the stack with which the instance is associated.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline ElasticLoadBalancer& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline ElasticLoadBalancer& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    ElasticLoadBalancer& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the layer to which the instance is attached.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
-    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
-    inline ElasticLoadBalancer& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline ElasticLoadBalancer& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    ElasticLoadBalancer& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC ID.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline ElasticLoadBalancer& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline ElasticLoadBalancer& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    ElasticLoadBalancer& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of Availability Zones.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline ElasticLoadBalancer& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-    inline ElasticLoadBalancer& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline ElasticLoadBalancer& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-    inline ElasticLoadBalancer& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    ElasticLoadBalancer& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = Aws::String>
+    ElasticLoadBalancer& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of subnet IDs, if the stack is running in a VPC.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline ElasticLoadBalancer& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline ElasticLoadBalancer& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline ElasticLoadBalancer& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline ElasticLoadBalancer& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    ElasticLoadBalancer& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    ElasticLoadBalancer& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -157,15 +143,14 @@ namespace Model
      * <p>A list of the EC2 instances for which the Elastic Load Balancing instance is
      * managing traffic.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEc2InstanceIds() const{ return m_ec2InstanceIds; }
+    inline const Aws::Vector<Aws::String>& GetEc2InstanceIds() const { return m_ec2InstanceIds; }
     inline bool Ec2InstanceIdsHasBeenSet() const { return m_ec2InstanceIdsHasBeenSet; }
-    inline void SetEc2InstanceIds(const Aws::Vector<Aws::String>& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds = value; }
-    inline void SetEc2InstanceIds(Aws::Vector<Aws::String>&& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds = std::move(value); }
-    inline ElasticLoadBalancer& WithEc2InstanceIds(const Aws::Vector<Aws::String>& value) { SetEc2InstanceIds(value); return *this;}
-    inline ElasticLoadBalancer& WithEc2InstanceIds(Aws::Vector<Aws::String>&& value) { SetEc2InstanceIds(std::move(value)); return *this;}
-    inline ElasticLoadBalancer& AddEc2InstanceIds(const Aws::String& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(value); return *this; }
-    inline ElasticLoadBalancer& AddEc2InstanceIds(Aws::String&& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(std::move(value)); return *this; }
-    inline ElasticLoadBalancer& AddEc2InstanceIds(const char* value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.push_back(value); return *this; }
+    template<typename Ec2InstanceIdsT = Aws::Vector<Aws::String>>
+    void SetEc2InstanceIds(Ec2InstanceIdsT&& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds = std::forward<Ec2InstanceIdsT>(value); }
+    template<typename Ec2InstanceIdsT = Aws::Vector<Aws::String>>
+    ElasticLoadBalancer& WithEc2InstanceIds(Ec2InstanceIdsT&& value) { SetEc2InstanceIds(std::forward<Ec2InstanceIdsT>(value)); return *this;}
+    template<typename Ec2InstanceIdsT = Aws::String>
+    ElasticLoadBalancer& AddEc2InstanceIds(Ec2InstanceIdsT&& value) { m_ec2InstanceIdsHasBeenSet = true; m_ec2InstanceIds.emplace_back(std::forward<Ec2InstanceIdsT>(value)); return *this; }
     ///@}
   private:
 

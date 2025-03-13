@@ -29,7 +29,7 @@ namespace Model
   class GetConnectionResult
   {
   public:
-    AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult();
+    AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult() = default;
     AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,52 +38,54 @@ namespace Model
     /**
      * <p>The time in ISO 8601 format for when the connection was established.</p>
      */
-    inline const Aws::Utils::DateTime& GetConnectedAt() const{ return m_connectedAt; }
-    inline void SetConnectedAt(const Aws::Utils::DateTime& value) { m_connectedAt = value; }
-    inline void SetConnectedAt(Aws::Utils::DateTime&& value) { m_connectedAt = std::move(value); }
-    inline GetConnectionResult& WithConnectedAt(const Aws::Utils::DateTime& value) { SetConnectedAt(value); return *this;}
-    inline GetConnectionResult& WithConnectedAt(Aws::Utils::DateTime&& value) { SetConnectedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetConnectedAt() const { return m_connectedAt; }
+    template<typename ConnectedAtT = Aws::Utils::DateTime>
+    void SetConnectedAt(ConnectedAtT&& value) { m_connectedAtHasBeenSet = true; m_connectedAt = std::forward<ConnectedAtT>(value); }
+    template<typename ConnectedAtT = Aws::Utils::DateTime>
+    GetConnectionResult& WithConnectedAt(ConnectedAtT&& value) { SetConnectedAt(std::forward<ConnectedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Identity& GetIdentity() const{ return m_identity; }
-    inline void SetIdentity(const Identity& value) { m_identity = value; }
-    inline void SetIdentity(Identity&& value) { m_identity = std::move(value); }
-    inline GetConnectionResult& WithIdentity(const Identity& value) { SetIdentity(value); return *this;}
-    inline GetConnectionResult& WithIdentity(Identity&& value) { SetIdentity(std::move(value)); return *this;}
+    inline const Identity& GetIdentity() const { return m_identity; }
+    template<typename IdentityT = Identity>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Identity>
+    GetConnectionResult& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time in ISO 8601 format for when the connection was last active.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastActiveAt() const{ return m_lastActiveAt; }
-    inline void SetLastActiveAt(const Aws::Utils::DateTime& value) { m_lastActiveAt = value; }
-    inline void SetLastActiveAt(Aws::Utils::DateTime&& value) { m_lastActiveAt = std::move(value); }
-    inline GetConnectionResult& WithLastActiveAt(const Aws::Utils::DateTime& value) { SetLastActiveAt(value); return *this;}
-    inline GetConnectionResult& WithLastActiveAt(Aws::Utils::DateTime&& value) { SetLastActiveAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastActiveAt() const { return m_lastActiveAt; }
+    template<typename LastActiveAtT = Aws::Utils::DateTime>
+    void SetLastActiveAt(LastActiveAtT&& value) { m_lastActiveAtHasBeenSet = true; m_lastActiveAt = std::forward<LastActiveAtT>(value); }
+    template<typename LastActiveAtT = Aws::Utils::DateTime>
+    GetConnectionResult& WithLastActiveAt(LastActiveAtT&& value) { SetLastActiveAt(std::forward<LastActiveAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_connectedAt;
+    Aws::Utils::DateTime m_connectedAt{};
+    bool m_connectedAtHasBeenSet = false;
 
     Identity m_identity;
+    bool m_identityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastActiveAt;
+    Aws::Utils::DateTime m_lastActiveAt{};
+    bool m_lastActiveAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

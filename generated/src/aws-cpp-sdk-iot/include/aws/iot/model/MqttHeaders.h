@@ -35,7 +35,7 @@ namespace Model
   class MqttHeaders
   {
   public:
-    AWS_IOT_API MqttHeaders();
+    AWS_IOT_API MqttHeaders() = default;
     AWS_IOT_API MqttHeaders(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MqttHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution
      * templates</a>.</p>
      */
-    inline const Aws::String& GetPayloadFormatIndicator() const{ return m_payloadFormatIndicator; }
+    inline const Aws::String& GetPayloadFormatIndicator() const { return m_payloadFormatIndicator; }
     inline bool PayloadFormatIndicatorHasBeenSet() const { return m_payloadFormatIndicatorHasBeenSet; }
-    inline void SetPayloadFormatIndicator(const Aws::String& value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator = value; }
-    inline void SetPayloadFormatIndicator(Aws::String&& value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator = std::move(value); }
-    inline void SetPayloadFormatIndicator(const char* value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator.assign(value); }
-    inline MqttHeaders& WithPayloadFormatIndicator(const Aws::String& value) { SetPayloadFormatIndicator(value); return *this;}
-    inline MqttHeaders& WithPayloadFormatIndicator(Aws::String&& value) { SetPayloadFormatIndicator(std::move(value)); return *this;}
-    inline MqttHeaders& WithPayloadFormatIndicator(const char* value) { SetPayloadFormatIndicator(value); return *this;}
+    template<typename PayloadFormatIndicatorT = Aws::String>
+    void SetPayloadFormatIndicator(PayloadFormatIndicatorT&& value) { m_payloadFormatIndicatorHasBeenSet = true; m_payloadFormatIndicator = std::forward<PayloadFormatIndicatorT>(value); }
+    template<typename PayloadFormatIndicatorT = Aws::String>
+    MqttHeaders& WithPayloadFormatIndicator(PayloadFormatIndicatorT&& value) { SetPayloadFormatIndicator(std::forward<PayloadFormatIndicatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution
      * templates</a>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline MqttHeaders& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline MqttHeaders& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline MqttHeaders& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    MqttHeaders& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution
      * templates</a>.</p>
      */
-    inline const Aws::String& GetResponseTopic() const{ return m_responseTopic; }
+    inline const Aws::String& GetResponseTopic() const { return m_responseTopic; }
     inline bool ResponseTopicHasBeenSet() const { return m_responseTopicHasBeenSet; }
-    inline void SetResponseTopic(const Aws::String& value) { m_responseTopicHasBeenSet = true; m_responseTopic = value; }
-    inline void SetResponseTopic(Aws::String&& value) { m_responseTopicHasBeenSet = true; m_responseTopic = std::move(value); }
-    inline void SetResponseTopic(const char* value) { m_responseTopicHasBeenSet = true; m_responseTopic.assign(value); }
-    inline MqttHeaders& WithResponseTopic(const Aws::String& value) { SetResponseTopic(value); return *this;}
-    inline MqttHeaders& WithResponseTopic(Aws::String&& value) { SetResponseTopic(std::move(value)); return *this;}
-    inline MqttHeaders& WithResponseTopic(const char* value) { SetResponseTopic(value); return *this;}
+    template<typename ResponseTopicT = Aws::String>
+    void SetResponseTopic(ResponseTopicT&& value) { m_responseTopicHasBeenSet = true; m_responseTopic = std::forward<ResponseTopicT>(value); }
+    template<typename ResponseTopicT = Aws::String>
+    MqttHeaders& WithResponseTopic(ResponseTopicT&& value) { SetResponseTopic(std::forward<ResponseTopicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +107,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution
      * templates</a>.</p>
      */
-    inline const Aws::String& GetCorrelationData() const{ return m_correlationData; }
+    inline const Aws::String& GetCorrelationData() const { return m_correlationData; }
     inline bool CorrelationDataHasBeenSet() const { return m_correlationDataHasBeenSet; }
-    inline void SetCorrelationData(const Aws::String& value) { m_correlationDataHasBeenSet = true; m_correlationData = value; }
-    inline void SetCorrelationData(Aws::String&& value) { m_correlationDataHasBeenSet = true; m_correlationData = std::move(value); }
-    inline void SetCorrelationData(const char* value) { m_correlationDataHasBeenSet = true; m_correlationData.assign(value); }
-    inline MqttHeaders& WithCorrelationData(const Aws::String& value) { SetCorrelationData(value); return *this;}
-    inline MqttHeaders& WithCorrelationData(Aws::String&& value) { SetCorrelationData(std::move(value)); return *this;}
-    inline MqttHeaders& WithCorrelationData(const char* value) { SetCorrelationData(value); return *this;}
+    template<typename CorrelationDataT = Aws::String>
+    void SetCorrelationData(CorrelationDataT&& value) { m_correlationDataHasBeenSet = true; m_correlationData = std::forward<CorrelationDataT>(value); }
+    template<typename CorrelationDataT = Aws::String>
+    MqttHeaders& WithCorrelationData(CorrelationDataT&& value) { SetCorrelationData(std::forward<CorrelationDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,28 +128,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-substitution-templates.html">substitution
      * templates</a>.</p>
      */
-    inline const Aws::String& GetMessageExpiry() const{ return m_messageExpiry; }
+    inline const Aws::String& GetMessageExpiry() const { return m_messageExpiry; }
     inline bool MessageExpiryHasBeenSet() const { return m_messageExpiryHasBeenSet; }
-    inline void SetMessageExpiry(const Aws::String& value) { m_messageExpiryHasBeenSet = true; m_messageExpiry = value; }
-    inline void SetMessageExpiry(Aws::String&& value) { m_messageExpiryHasBeenSet = true; m_messageExpiry = std::move(value); }
-    inline void SetMessageExpiry(const char* value) { m_messageExpiryHasBeenSet = true; m_messageExpiry.assign(value); }
-    inline MqttHeaders& WithMessageExpiry(const Aws::String& value) { SetMessageExpiry(value); return *this;}
-    inline MqttHeaders& WithMessageExpiry(Aws::String&& value) { SetMessageExpiry(std::move(value)); return *this;}
-    inline MqttHeaders& WithMessageExpiry(const char* value) { SetMessageExpiry(value); return *this;}
+    template<typename MessageExpiryT = Aws::String>
+    void SetMessageExpiry(MessageExpiryT&& value) { m_messageExpiryHasBeenSet = true; m_messageExpiry = std::forward<MessageExpiryT>(value); }
+    template<typename MessageExpiryT = Aws::String>
+    MqttHeaders& WithMessageExpiry(MessageExpiryT&& value) { SetMessageExpiry(std::forward<MessageExpiryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of key-value pairs that you define in the MQTT5 header.</p>
      */
-    inline const Aws::Vector<UserProperty>& GetUserProperties() const{ return m_userProperties; }
+    inline const Aws::Vector<UserProperty>& GetUserProperties() const { return m_userProperties; }
     inline bool UserPropertiesHasBeenSet() const { return m_userPropertiesHasBeenSet; }
-    inline void SetUserProperties(const Aws::Vector<UserProperty>& value) { m_userPropertiesHasBeenSet = true; m_userProperties = value; }
-    inline void SetUserProperties(Aws::Vector<UserProperty>&& value) { m_userPropertiesHasBeenSet = true; m_userProperties = std::move(value); }
-    inline MqttHeaders& WithUserProperties(const Aws::Vector<UserProperty>& value) { SetUserProperties(value); return *this;}
-    inline MqttHeaders& WithUserProperties(Aws::Vector<UserProperty>&& value) { SetUserProperties(std::move(value)); return *this;}
-    inline MqttHeaders& AddUserProperties(const UserProperty& value) { m_userPropertiesHasBeenSet = true; m_userProperties.push_back(value); return *this; }
-    inline MqttHeaders& AddUserProperties(UserProperty&& value) { m_userPropertiesHasBeenSet = true; m_userProperties.push_back(std::move(value)); return *this; }
+    template<typename UserPropertiesT = Aws::Vector<UserProperty>>
+    void SetUserProperties(UserPropertiesT&& value) { m_userPropertiesHasBeenSet = true; m_userProperties = std::forward<UserPropertiesT>(value); }
+    template<typename UserPropertiesT = Aws::Vector<UserProperty>>
+    MqttHeaders& WithUserProperties(UserPropertiesT&& value) { SetUserProperties(std::forward<UserPropertiesT>(value)); return *this;}
+    template<typename UserPropertiesT = UserProperty>
+    MqttHeaders& AddUserProperties(UserPropertiesT&& value) { m_userPropertiesHasBeenSet = true; m_userProperties.emplace_back(std::forward<UserPropertiesT>(value)); return *this; }
     ///@}
   private:
 

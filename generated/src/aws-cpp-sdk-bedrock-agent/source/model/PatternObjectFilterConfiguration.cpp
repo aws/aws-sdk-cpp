@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PatternObjectFilterConfiguration::PatternObjectFilterConfiguration() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 PatternObjectFilterConfiguration::PatternObjectFilterConfiguration(JsonView jsonValue)
-  : PatternObjectFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PatternObjectFilterConfiguration& PatternObjectFilterConfiguration::operator =(J
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

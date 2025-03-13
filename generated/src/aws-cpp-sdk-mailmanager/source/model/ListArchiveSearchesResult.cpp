@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListArchiveSearchesResult::ListArchiveSearchesResult()
-{
-}
-
 ListArchiveSearchesResult::ListArchiveSearchesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListArchiveSearchesResult& ListArchiveSearchesResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Searches"))
   {
     Aws::Utils::Array<JsonView> searchesJsonList = jsonValue.GetArray("Searches");
@@ -42,14 +37,15 @@ ListArchiveSearchesResult& ListArchiveSearchesResult::operator =(const Aws::Amaz
     {
       m_searches.push_back(searchesJsonList[searchesIndex].AsObject());
     }
+    m_searchesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

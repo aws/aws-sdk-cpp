@@ -18,33 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TrialComponent::TrialComponent() : 
-    m_trialComponentNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_trialComponentArnHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_metadataPropertiesHasBeenSet(false),
-    m_sourceDetailHasBeenSet(false),
-    m_lineageGroupArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_parentsHasBeenSet(false),
-    m_runNameHasBeenSet(false)
-{
-}
-
 TrialComponent::TrialComponent(JsonView jsonValue)
-  : TrialComponent()
 {
   *this = jsonValue;
 }
@@ -54,80 +28,58 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TrialComponentName"))
   {
     m_trialComponentName = jsonValue.GetString("TrialComponentName");
-
     m_trialComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrialComponentArn"))
   {
     m_trialComponentArn = jsonValue.GetString("TrialComponentArn");
-
     m_trialComponentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -137,7 +89,6 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputArtifacts"))
   {
     Aws::Map<Aws::String, JsonView> inputArtifactsJsonMap = jsonValue.GetObject("InputArtifacts").GetAllObjects();
@@ -147,7 +98,6 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     }
     m_inputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputArtifacts"))
   {
     Aws::Map<Aws::String, JsonView> outputArtifactsJsonMap = jsonValue.GetObject("OutputArtifacts").GetAllObjects();
@@ -157,7 +107,6 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     }
     m_outputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     Aws::Utils::Array<JsonView> metricsJsonList = jsonValue.GetArray("Metrics");
@@ -167,28 +116,21 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     }
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataProperties"))
   {
     m_metadataProperties = jsonValue.GetObject("MetadataProperties");
-
     m_metadataPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDetail"))
   {
     m_sourceDetail = jsonValue.GetObject("SourceDetail");
-
     m_sourceDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineageGroupArn"))
   {
     m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
-
     m_lineageGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -198,7 +140,6 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parents"))
   {
     Aws::Utils::Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
@@ -208,14 +149,11 @@ TrialComponent& TrialComponent::operator =(JsonView jsonValue)
     }
     m_parentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunName"))
   {
     m_runName = jsonValue.GetString("RunName");
-
     m_runNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-MinimumLoadBalancerCapacity::MinimumLoadBalancerCapacity() : 
-    m_capacityUnits(0),
-    m_capacityUnitsHasBeenSet(false)
-{
-}
-
 MinimumLoadBalancerCapacity::MinimumLoadBalancerCapacity(const XmlNode& xmlNode)
-  : MinimumLoadBalancerCapacity()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ MinimumLoadBalancerCapacity& MinimumLoadBalancerCapacity::operator =(const XmlNo
     {
       m_capacityUnits = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityUnitsNode.GetText()).c_str()).c_str());
       m_capacityUnitsHasBeenSet = true;
+       m_capacityUnitsHasBeenSet = true;
     }
   }
 

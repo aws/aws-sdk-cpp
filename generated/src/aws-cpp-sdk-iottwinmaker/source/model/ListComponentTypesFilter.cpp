@@ -18,16 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ListComponentTypesFilter::ListComponentTypesFilter() : 
-    m_extendsFromHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_isAbstract(false),
-    m_isAbstractHasBeenSet(false)
-{
-}
-
 ListComponentTypesFilter::ListComponentTypesFilter(JsonView jsonValue)
-  : ListComponentTypesFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ListComponentTypesFilter& ListComponentTypesFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("extendsFrom"))
   {
     m_extendsFrom = jsonValue.GetString("extendsFrom");
-
     m_extendsFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isAbstract"))
   {
     m_isAbstract = jsonValue.GetBool("isAbstract");
-
     m_isAbstractHasBeenSet = true;
   }
-
   return *this;
 }
 

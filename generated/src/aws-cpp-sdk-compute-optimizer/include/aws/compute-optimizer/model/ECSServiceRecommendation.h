@@ -43,7 +43,7 @@ namespace Model
   class ECSServiceRecommendation
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendation();
+    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendation() = default;
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,40 +56,36 @@ namespace Model
      * <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
      * </p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline ECSServiceRecommendation& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline ECSServiceRecommendation& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline ECSServiceRecommendation& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    ECSServiceRecommendation& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ECSServiceRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ECSServiceRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ECSServiceRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ECSServiceRecommendation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The configuration of the current Amazon ECS service. </p>
      */
-    inline const ServiceConfiguration& GetCurrentServiceConfiguration() const{ return m_currentServiceConfiguration; }
+    inline const ServiceConfiguration& GetCurrentServiceConfiguration() const { return m_currentServiceConfiguration; }
     inline bool CurrentServiceConfigurationHasBeenSet() const { return m_currentServiceConfigurationHasBeenSet; }
-    inline void SetCurrentServiceConfiguration(const ServiceConfiguration& value) { m_currentServiceConfigurationHasBeenSet = true; m_currentServiceConfiguration = value; }
-    inline void SetCurrentServiceConfiguration(ServiceConfiguration&& value) { m_currentServiceConfigurationHasBeenSet = true; m_currentServiceConfiguration = std::move(value); }
-    inline ECSServiceRecommendation& WithCurrentServiceConfiguration(const ServiceConfiguration& value) { SetCurrentServiceConfiguration(value); return *this;}
-    inline ECSServiceRecommendation& WithCurrentServiceConfiguration(ServiceConfiguration&& value) { SetCurrentServiceConfiguration(std::move(value)); return *this;}
+    template<typename CurrentServiceConfigurationT = ServiceConfiguration>
+    void SetCurrentServiceConfiguration(CurrentServiceConfigurationT&& value) { m_currentServiceConfigurationHasBeenSet = true; m_currentServiceConfiguration = std::forward<CurrentServiceConfigurationT>(value); }
+    template<typename CurrentServiceConfigurationT = ServiceConfiguration>
+    ECSServiceRecommendation& WithCurrentServiceConfiguration(CurrentServiceConfigurationT&& value) { SetCurrentServiceConfiguration(std::forward<CurrentServiceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +93,14 @@ namespace Model
      * <p> An array of objects that describe the utilization metrics of the Amazon ECS
      * service. </p>
      */
-    inline const Aws::Vector<ECSServiceUtilizationMetric>& GetUtilizationMetrics() const{ return m_utilizationMetrics; }
+    inline const Aws::Vector<ECSServiceUtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
     inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
-    inline void SetUtilizationMetrics(const Aws::Vector<ECSServiceUtilizationMetric>& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = value; }
-    inline void SetUtilizationMetrics(Aws::Vector<ECSServiceUtilizationMetric>&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::move(value); }
-    inline ECSServiceRecommendation& WithUtilizationMetrics(const Aws::Vector<ECSServiceUtilizationMetric>& value) { SetUtilizationMetrics(value); return *this;}
-    inline ECSServiceRecommendation& WithUtilizationMetrics(Aws::Vector<ECSServiceUtilizationMetric>&& value) { SetUtilizationMetrics(std::move(value)); return *this;}
-    inline ECSServiceRecommendation& AddUtilizationMetrics(const ECSServiceUtilizationMetric& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(value); return *this; }
-    inline ECSServiceRecommendation& AddUtilizationMetrics(ECSServiceUtilizationMetric&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename UtilizationMetricsT = Aws::Vector<ECSServiceUtilizationMetric>>
+    void SetUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::forward<UtilizationMetricsT>(value); }
+    template<typename UtilizationMetricsT = Aws::Vector<ECSServiceUtilizationMetric>>
+    ECSServiceRecommendation& WithUtilizationMetrics(UtilizationMetricsT&& value) { SetUtilizationMetrics(std::forward<UtilizationMetricsT>(value)); return *this;}
+    template<typename UtilizationMetricsT = ECSServiceUtilizationMetric>
+    ECSServiceRecommendation& AddUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.emplace_back(std::forward<UtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -112,7 +108,7 @@ namespace Model
      * <p> The number of days the Amazon ECS service utilization metrics were analyzed.
      * </p>
      */
-    inline double GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
+    inline double GetLookbackPeriodInDays() const { return m_lookbackPeriodInDays; }
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
     inline void SetLookbackPeriodInDays(double value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
     inline ECSServiceRecommendation& WithLookbackPeriodInDays(double value) { SetLookbackPeriodInDays(value); return *this;}
@@ -123,12 +119,10 @@ namespace Model
      * <p> The launch type the Amazon ECS service is using. </p>  <p>Compute
      * Optimizer only supports the Fargate launch type.</p> 
      */
-    inline const ECSServiceLaunchType& GetLaunchType() const{ return m_launchType; }
+    inline ECSServiceLaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const ECSServiceLaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(ECSServiceLaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline ECSServiceRecommendation& WithLaunchType(const ECSServiceLaunchType& value) { SetLaunchType(value); return *this;}
-    inline ECSServiceRecommendation& WithLaunchType(ECSServiceLaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(ECSServiceLaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline ECSServiceRecommendation& WithLaunchType(ECSServiceLaunchType value) { SetLaunchType(value); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +130,12 @@ namespace Model
      * <p> The timestamp of when the Amazon ECS service recommendation was last
      * generated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
-    inline ECSServiceRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline ECSServiceRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    void SetLastRefreshTimestamp(LastRefreshTimestampT&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::forward<LastRefreshTimestampT>(value); }
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    ECSServiceRecommendation& WithLastRefreshTimestamp(LastRefreshTimestampT&& value) { SetLastRefreshTimestamp(std::forward<LastRefreshTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +152,10 @@ namespace Model
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
-    inline const ECSServiceRecommendationFinding& GetFinding() const{ return m_finding; }
+    inline ECSServiceRecommendationFinding GetFinding() const { return m_finding; }
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
-    inline void SetFinding(const ECSServiceRecommendationFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
-    inline void SetFinding(ECSServiceRecommendationFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
-    inline ECSServiceRecommendation& WithFinding(const ECSServiceRecommendationFinding& value) { SetFinding(value); return *this;}
-    inline ECSServiceRecommendation& WithFinding(ECSServiceRecommendationFinding&& value) { SetFinding(std::move(value)); return *this;}
+    inline void SetFinding(ECSServiceRecommendationFinding value) { m_findingHasBeenSet = true; m_finding = value; }
+    inline ECSServiceRecommendation& WithFinding(ECSServiceRecommendationFinding value) { SetFinding(value); return *this;}
     ///@}
 
     ///@{
@@ -186,14 +178,13 @@ namespace Model
      * workload. This is identified by analyzing the <code>MemoryUtilization</code>
      * metric of the current service during the look-back period.</p> </li> </ul>
      */
-    inline const Aws::Vector<ECSServiceRecommendationFindingReasonCode>& GetFindingReasonCodes() const{ return m_findingReasonCodes; }
+    inline const Aws::Vector<ECSServiceRecommendationFindingReasonCode>& GetFindingReasonCodes() const { return m_findingReasonCodes; }
     inline bool FindingReasonCodesHasBeenSet() const { return m_findingReasonCodesHasBeenSet; }
-    inline void SetFindingReasonCodes(const Aws::Vector<ECSServiceRecommendationFindingReasonCode>& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = value; }
-    inline void SetFindingReasonCodes(Aws::Vector<ECSServiceRecommendationFindingReasonCode>&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::move(value); }
-    inline ECSServiceRecommendation& WithFindingReasonCodes(const Aws::Vector<ECSServiceRecommendationFindingReasonCode>& value) { SetFindingReasonCodes(value); return *this;}
-    inline ECSServiceRecommendation& WithFindingReasonCodes(Aws::Vector<ECSServiceRecommendationFindingReasonCode>&& value) { SetFindingReasonCodes(std::move(value)); return *this;}
-    inline ECSServiceRecommendation& AddFindingReasonCodes(const ECSServiceRecommendationFindingReasonCode& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
-    inline ECSServiceRecommendation& AddFindingReasonCodes(ECSServiceRecommendationFindingReasonCode&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(std::move(value)); return *this; }
+    template<typename FindingReasonCodesT = Aws::Vector<ECSServiceRecommendationFindingReasonCode>>
+    void SetFindingReasonCodes(FindingReasonCodesT&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::forward<FindingReasonCodesT>(value); }
+    template<typename FindingReasonCodesT = Aws::Vector<ECSServiceRecommendationFindingReasonCode>>
+    ECSServiceRecommendation& WithFindingReasonCodes(FindingReasonCodesT&& value) { SetFindingReasonCodes(std::forward<FindingReasonCodesT>(value)); return *this;}
+    inline ECSServiceRecommendation& AddFindingReasonCodes(ECSServiceRecommendationFindingReasonCode value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -201,14 +192,14 @@ namespace Model
      * <p> An array of objects that describe the recommendation options for the Amazon
      * ECS service. </p>
      */
-    inline const Aws::Vector<ECSServiceRecommendationOption>& GetServiceRecommendationOptions() const{ return m_serviceRecommendationOptions; }
+    inline const Aws::Vector<ECSServiceRecommendationOption>& GetServiceRecommendationOptions() const { return m_serviceRecommendationOptions; }
     inline bool ServiceRecommendationOptionsHasBeenSet() const { return m_serviceRecommendationOptionsHasBeenSet; }
-    inline void SetServiceRecommendationOptions(const Aws::Vector<ECSServiceRecommendationOption>& value) { m_serviceRecommendationOptionsHasBeenSet = true; m_serviceRecommendationOptions = value; }
-    inline void SetServiceRecommendationOptions(Aws::Vector<ECSServiceRecommendationOption>&& value) { m_serviceRecommendationOptionsHasBeenSet = true; m_serviceRecommendationOptions = std::move(value); }
-    inline ECSServiceRecommendation& WithServiceRecommendationOptions(const Aws::Vector<ECSServiceRecommendationOption>& value) { SetServiceRecommendationOptions(value); return *this;}
-    inline ECSServiceRecommendation& WithServiceRecommendationOptions(Aws::Vector<ECSServiceRecommendationOption>&& value) { SetServiceRecommendationOptions(std::move(value)); return *this;}
-    inline ECSServiceRecommendation& AddServiceRecommendationOptions(const ECSServiceRecommendationOption& value) { m_serviceRecommendationOptionsHasBeenSet = true; m_serviceRecommendationOptions.push_back(value); return *this; }
-    inline ECSServiceRecommendation& AddServiceRecommendationOptions(ECSServiceRecommendationOption&& value) { m_serviceRecommendationOptionsHasBeenSet = true; m_serviceRecommendationOptions.push_back(std::move(value)); return *this; }
+    template<typename ServiceRecommendationOptionsT = Aws::Vector<ECSServiceRecommendationOption>>
+    void SetServiceRecommendationOptions(ServiceRecommendationOptionsT&& value) { m_serviceRecommendationOptionsHasBeenSet = true; m_serviceRecommendationOptions = std::forward<ServiceRecommendationOptionsT>(value); }
+    template<typename ServiceRecommendationOptionsT = Aws::Vector<ECSServiceRecommendationOption>>
+    ECSServiceRecommendation& WithServiceRecommendationOptions(ServiceRecommendationOptionsT&& value) { SetServiceRecommendationOptions(std::forward<ServiceRecommendationOptionsT>(value)); return *this;}
+    template<typename ServiceRecommendationOptionsT = ECSServiceRecommendationOption>
+    ECSServiceRecommendation& AddServiceRecommendationOptions(ServiceRecommendationOptionsT&& value) { m_serviceRecommendationOptionsHasBeenSet = true; m_serviceRecommendationOptions.emplace_back(std::forward<ServiceRecommendationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -217,12 +208,10 @@ namespace Model
      * of its workloads. The higher the risk, the more likely the current service can't
      * meet the performance requirements of its workload. </p>
      */
-    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+    inline CurrentPerformanceRisk GetCurrentPerformanceRisk() const { return m_currentPerformanceRisk; }
     inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
-    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
-    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
-    inline ECSServiceRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
-    inline ECSServiceRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+    inline ECSServiceRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk value) { SetCurrentPerformanceRisk(value); return *this;}
     ///@}
 
     ///@{
@@ -230,26 +219,26 @@ namespace Model
      * <p> Describes the effective recommendation preferences for Amazon ECS services.
      * </p>
      */
-    inline const ECSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+    inline const ECSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const { return m_effectiveRecommendationPreferences; }
     inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
-    inline void SetEffectiveRecommendationPreferences(const ECSEffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
-    inline void SetEffectiveRecommendationPreferences(ECSEffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
-    inline ECSServiceRecommendation& WithEffectiveRecommendationPreferences(const ECSEffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
-    inline ECSServiceRecommendation& WithEffectiveRecommendationPreferences(ECSEffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+    template<typename EffectiveRecommendationPreferencesT = ECSEffectiveRecommendationPreferences>
+    void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::forward<EffectiveRecommendationPreferencesT>(value); }
+    template<typename EffectiveRecommendationPreferencesT = ECSEffectiveRecommendationPreferences>
+    ECSServiceRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { SetEffectiveRecommendationPreferences(std::forward<EffectiveRecommendationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ECSServiceRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ECSServiceRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ECSServiceRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ECSServiceRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ECSServiceRecommendation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ECSServiceRecommendation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -265,16 +254,16 @@ namespace Model
     Aws::Vector<ECSServiceUtilizationMetric> m_utilizationMetrics;
     bool m_utilizationMetricsHasBeenSet = false;
 
-    double m_lookbackPeriodInDays;
+    double m_lookbackPeriodInDays{0.0};
     bool m_lookbackPeriodInDaysHasBeenSet = false;
 
-    ECSServiceLaunchType m_launchType;
+    ECSServiceLaunchType m_launchType{ECSServiceLaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
+    Aws::Utils::DateTime m_lastRefreshTimestamp{};
     bool m_lastRefreshTimestampHasBeenSet = false;
 
-    ECSServiceRecommendationFinding m_finding;
+    ECSServiceRecommendationFinding m_finding{ECSServiceRecommendationFinding::NOT_SET};
     bool m_findingHasBeenSet = false;
 
     Aws::Vector<ECSServiceRecommendationFindingReasonCode> m_findingReasonCodes;
@@ -283,7 +272,7 @@ namespace Model
     Aws::Vector<ECSServiceRecommendationOption> m_serviceRecommendationOptions;
     bool m_serviceRecommendationOptionsHasBeenSet = false;
 
-    CurrentPerformanceRisk m_currentPerformanceRisk;
+    CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
     bool m_currentPerformanceRiskHasBeenSet = false;
 
     ECSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;

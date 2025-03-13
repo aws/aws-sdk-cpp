@@ -39,7 +39,7 @@ namespace Model
   class SortingConfiguration
   {
   public:
-    AWS_KENDRA_API SortingConfiguration();
+    AWS_KENDRA_API SortingConfiguration() = default;
     AWS_KENDRA_API SortingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API SortingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * </li> <li> <p>_created_at</p> </li> <li> <p>_last_updated_at</p> </li> <li>
      * <p>_version</p> </li> <li> <p>_view_count</p> </li> </ul>
      */
-    inline const Aws::String& GetDocumentAttributeKey() const{ return m_documentAttributeKey; }
+    inline const Aws::String& GetDocumentAttributeKey() const { return m_documentAttributeKey; }
     inline bool DocumentAttributeKeyHasBeenSet() const { return m_documentAttributeKeyHasBeenSet; }
-    inline void SetDocumentAttributeKey(const Aws::String& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = value; }
-    inline void SetDocumentAttributeKey(Aws::String&& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = std::move(value); }
-    inline void SetDocumentAttributeKey(const char* value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey.assign(value); }
-    inline SortingConfiguration& WithDocumentAttributeKey(const Aws::String& value) { SetDocumentAttributeKey(value); return *this;}
-    inline SortingConfiguration& WithDocumentAttributeKey(Aws::String&& value) { SetDocumentAttributeKey(std::move(value)); return *this;}
-    inline SortingConfiguration& WithDocumentAttributeKey(const char* value) { SetDocumentAttributeKey(value); return *this;}
+    template<typename DocumentAttributeKeyT = Aws::String>
+    void SetDocumentAttributeKey(DocumentAttributeKeyT&& value) { m_documentAttributeKeyHasBeenSet = true; m_documentAttributeKey = std::forward<DocumentAttributeKeyT>(value); }
+    template<typename DocumentAttributeKeyT = Aws::String>
+    SortingConfiguration& WithDocumentAttributeKey(DocumentAttributeKeyT&& value) { SetDocumentAttributeKey(std::forward<DocumentAttributeKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,19 +67,17 @@ namespace Model
      * relevance assigned to the result by Amazon Kendra is used as the
      * tie-breaker.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SortingConfiguration& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline SortingConfiguration& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SortingConfiguration& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_documentAttributeKey;
     bool m_documentAttributeKeyHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

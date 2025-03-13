@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-AddRoleToInstanceProfileRequest::AddRoleToInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
-{
-}
-
 Aws::String AddRoleToInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

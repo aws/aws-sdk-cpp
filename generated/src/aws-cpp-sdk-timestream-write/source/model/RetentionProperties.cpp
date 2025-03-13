@@ -18,16 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-RetentionProperties::RetentionProperties() : 
-    m_memoryStoreRetentionPeriodInHours(0),
-    m_memoryStoreRetentionPeriodInHoursHasBeenSet(false),
-    m_magneticStoreRetentionPeriodInDays(0),
-    m_magneticStoreRetentionPeriodInDaysHasBeenSet(false)
-{
-}
-
 RetentionProperties::RetentionProperties(JsonView jsonValue)
-  : RetentionProperties()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetentionProperties& RetentionProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MemoryStoreRetentionPeriodInHours"))
   {
     m_memoryStoreRetentionPeriodInHours = jsonValue.GetInt64("MemoryStoreRetentionPeriodInHours");
-
     m_memoryStoreRetentionPeriodInHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MagneticStoreRetentionPeriodInDays"))
   {
     m_magneticStoreRetentionPeriodInDays = jsonValue.GetInt64("MagneticStoreRetentionPeriodInDays");
-
     m_magneticStoreRetentionPeriodInDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

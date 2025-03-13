@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-OfferReleaseDateFilter::OfferReleaseDateFilter() : 
-    m_dateRangeHasBeenSet(false)
-{
-}
-
 OfferReleaseDateFilter::OfferReleaseDateFilter(JsonView jsonValue)
-  : OfferReleaseDateFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OfferReleaseDateFilter& OfferReleaseDateFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DateRange"))
   {
     m_dateRange = jsonValue.GetObject("DateRange");
-
     m_dateRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

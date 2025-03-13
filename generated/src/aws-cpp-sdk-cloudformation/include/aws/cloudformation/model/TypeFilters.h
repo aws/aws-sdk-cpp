@@ -33,7 +33,7 @@ namespace Model
   class TypeFilters
   {
   public:
-    AWS_CLOUDFORMATION_API TypeFilters();
+    AWS_CLOUDFORMATION_API TypeFilters() = default;
     AWS_CLOUDFORMATION_API TypeFilters(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API TypeFilters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,12 +54,10 @@ namespace Model
      * <code>AWS_TYPES</code>: Extensions available for use from Amazon.</p> </li>
      * </ul>
      */
-    inline const Category& GetCategory() const{ return m_category; }
+    inline Category GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Category& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Category&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline TypeFilters& WithCategory(const Category& value) { SetCategory(value); return *this;}
-    inline TypeFilters& WithCategory(Category&& value) { SetCategory(std::move(value)); return *this;}
+    inline void SetCategory(Category value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline TypeFilters& WithCategory(Category value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
@@ -68,32 +66,28 @@ namespace Model
      * Amazon aren't assigned a publisher ID. Use the <code>AWS_TYPES</code> category
      * to specify a list of types published by Amazon.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
-    inline TypeFilters& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline TypeFilters& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline TypeFilters& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    TypeFilters& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A prefix to use as a filter for results.</p>
      */
-    inline const Aws::String& GetTypeNamePrefix() const{ return m_typeNamePrefix; }
+    inline const Aws::String& GetTypeNamePrefix() const { return m_typeNamePrefix; }
     inline bool TypeNamePrefixHasBeenSet() const { return m_typeNamePrefixHasBeenSet; }
-    inline void SetTypeNamePrefix(const Aws::String& value) { m_typeNamePrefixHasBeenSet = true; m_typeNamePrefix = value; }
-    inline void SetTypeNamePrefix(Aws::String&& value) { m_typeNamePrefixHasBeenSet = true; m_typeNamePrefix = std::move(value); }
-    inline void SetTypeNamePrefix(const char* value) { m_typeNamePrefixHasBeenSet = true; m_typeNamePrefix.assign(value); }
-    inline TypeFilters& WithTypeNamePrefix(const Aws::String& value) { SetTypeNamePrefix(value); return *this;}
-    inline TypeFilters& WithTypeNamePrefix(Aws::String&& value) { SetTypeNamePrefix(std::move(value)); return *this;}
-    inline TypeFilters& WithTypeNamePrefix(const char* value) { SetTypeNamePrefix(value); return *this;}
+    template<typename TypeNamePrefixT = Aws::String>
+    void SetTypeNamePrefix(TypeNamePrefixT&& value) { m_typeNamePrefixHasBeenSet = true; m_typeNamePrefix = std::forward<TypeNamePrefixT>(value); }
+    template<typename TypeNamePrefixT = Aws::String>
+    TypeFilters& WithTypeNamePrefix(TypeNamePrefixT&& value) { SetTypeNamePrefix(std::forward<TypeNamePrefixT>(value)); return *this;}
     ///@}
   private:
 
-    Category m_category;
+    Category m_category{Category::NOT_SET};
     bool m_categoryHasBeenSet = false;
 
     Aws::String m_publisherId;

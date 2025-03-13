@@ -28,7 +28,7 @@ namespace Model
   class ModifyMigrationProjectResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyMigrationProjectResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyMigrationProjectResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ModifyMigrationProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API ModifyMigrationProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The migration project that was modified.</p>
      */
-    inline const MigrationProject& GetMigrationProject() const{ return m_migrationProject; }
-    inline void SetMigrationProject(const MigrationProject& value) { m_migrationProject = value; }
-    inline void SetMigrationProject(MigrationProject&& value) { m_migrationProject = std::move(value); }
-    inline ModifyMigrationProjectResult& WithMigrationProject(const MigrationProject& value) { SetMigrationProject(value); return *this;}
-    inline ModifyMigrationProjectResult& WithMigrationProject(MigrationProject&& value) { SetMigrationProject(std::move(value)); return *this;}
+    inline const MigrationProject& GetMigrationProject() const { return m_migrationProject; }
+    template<typename MigrationProjectT = MigrationProject>
+    void SetMigrationProject(MigrationProjectT&& value) { m_migrationProjectHasBeenSet = true; m_migrationProject = std::forward<MigrationProjectT>(value); }
+    template<typename MigrationProjectT = MigrationProject>
+    ModifyMigrationProjectResult& WithMigrationProject(MigrationProjectT&& value) { SetMigrationProject(std::forward<MigrationProjectT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ModifyMigrationProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ModifyMigrationProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ModifyMigrationProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ModifyMigrationProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MigrationProject m_migrationProject;
+    bool m_migrationProjectHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   class AssociateProfilesRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API AssociateProfilesRequest();
+    AWS_WELLARCHITECTED_API AssociateProfilesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,29 +35,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline AssociateProfilesRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline AssociateProfilesRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline AssociateProfilesRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    AssociateProfilesRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of profile ARNs to associate with the workload.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProfileArns() const{ return m_profileArns; }
+    inline const Aws::Vector<Aws::String>& GetProfileArns() const { return m_profileArns; }
     inline bool ProfileArnsHasBeenSet() const { return m_profileArnsHasBeenSet; }
-    inline void SetProfileArns(const Aws::Vector<Aws::String>& value) { m_profileArnsHasBeenSet = true; m_profileArns = value; }
-    inline void SetProfileArns(Aws::Vector<Aws::String>&& value) { m_profileArnsHasBeenSet = true; m_profileArns = std::move(value); }
-    inline AssociateProfilesRequest& WithProfileArns(const Aws::Vector<Aws::String>& value) { SetProfileArns(value); return *this;}
-    inline AssociateProfilesRequest& WithProfileArns(Aws::Vector<Aws::String>&& value) { SetProfileArns(std::move(value)); return *this;}
-    inline AssociateProfilesRequest& AddProfileArns(const Aws::String& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
-    inline AssociateProfilesRequest& AddProfileArns(Aws::String&& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(std::move(value)); return *this; }
-    inline AssociateProfilesRequest& AddProfileArns(const char* value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
+    template<typename ProfileArnsT = Aws::Vector<Aws::String>>
+    void SetProfileArns(ProfileArnsT&& value) { m_profileArnsHasBeenSet = true; m_profileArns = std::forward<ProfileArnsT>(value); }
+    template<typename ProfileArnsT = Aws::Vector<Aws::String>>
+    AssociateProfilesRequest& WithProfileArns(ProfileArnsT&& value) { SetProfileArns(std::forward<ProfileArnsT>(value)); return *this;}
+    template<typename ProfileArnsT = Aws::String>
+    AssociateProfilesRequest& AddProfileArns(ProfileArnsT&& value) { m_profileArnsHasBeenSet = true; m_profileArns.emplace_back(std::forward<ProfileArnsT>(value)); return *this; }
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class DeleteAssetModelRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DeleteAssetModelRequest();
+    AWS_IOTSITEWISE_API DeleteAssetModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
+    inline const Aws::String& GetAssetModelId() const { return m_assetModelId; }
     inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
-    inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
-    inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
-    inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
-    inline DeleteAssetModelRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
-    inline DeleteAssetModelRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
-    inline DeleteAssetModelRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
+    template<typename AssetModelIdT = Aws::String>
+    void SetAssetModelId(AssetModelIdT&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::forward<AssetModelIdT>(value); }
+    template<typename AssetModelIdT = Aws::String>
+    DeleteAssetModelRequest& WithAssetModelId(AssetModelIdT&& value) { SetAssetModelId(std::forward<AssetModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteAssetModelRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteAssetModelRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteAssetModelRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteAssetModelRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/opt-locking-for-model.html">Optimistic
      * locking for asset model writes</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline DeleteAssetModelRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline DeleteAssetModelRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline DeleteAssetModelRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    DeleteAssetModelRequest& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * using <code>matchForVersionType</code> as <code>ACTIVE</code>) already exists
      * for the asset model.</p>
      */
-    inline const Aws::String& GetIfNoneMatch() const{ return m_ifNoneMatch; }
+    inline const Aws::String& GetIfNoneMatch() const { return m_ifNoneMatch; }
     inline bool IfNoneMatchHasBeenSet() const { return m_ifNoneMatchHasBeenSet; }
-    inline void SetIfNoneMatch(const Aws::String& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = value; }
-    inline void SetIfNoneMatch(Aws::String&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::move(value); }
-    inline void SetIfNoneMatch(const char* value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch.assign(value); }
-    inline DeleteAssetModelRequest& WithIfNoneMatch(const Aws::String& value) { SetIfNoneMatch(value); return *this;}
-    inline DeleteAssetModelRequest& WithIfNoneMatch(Aws::String&& value) { SetIfNoneMatch(std::move(value)); return *this;}
-    inline DeleteAssetModelRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
+    template<typename IfNoneMatchT = Aws::String>
+    void SetIfNoneMatch(IfNoneMatchT&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::forward<IfNoneMatchT>(value); }
+    template<typename IfNoneMatchT = Aws::String>
+    DeleteAssetModelRequest& WithIfNoneMatch(IfNoneMatchT&& value) { SetIfNoneMatch(std::forward<IfNoneMatchT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +110,10 @@ namespace Model
      * <code>If-None-Match</code> headers to determine the target ETag for the delete
      * operation.</p>
      */
-    inline const AssetModelVersionType& GetMatchForVersionType() const{ return m_matchForVersionType; }
+    inline AssetModelVersionType GetMatchForVersionType() const { return m_matchForVersionType; }
     inline bool MatchForVersionTypeHasBeenSet() const { return m_matchForVersionTypeHasBeenSet; }
-    inline void SetMatchForVersionType(const AssetModelVersionType& value) { m_matchForVersionTypeHasBeenSet = true; m_matchForVersionType = value; }
-    inline void SetMatchForVersionType(AssetModelVersionType&& value) { m_matchForVersionTypeHasBeenSet = true; m_matchForVersionType = std::move(value); }
-    inline DeleteAssetModelRequest& WithMatchForVersionType(const AssetModelVersionType& value) { SetMatchForVersionType(value); return *this;}
-    inline DeleteAssetModelRequest& WithMatchForVersionType(AssetModelVersionType&& value) { SetMatchForVersionType(std::move(value)); return *this;}
+    inline void SetMatchForVersionType(AssetModelVersionType value) { m_matchForVersionTypeHasBeenSet = true; m_matchForVersionType = value; }
+    inline DeleteAssetModelRequest& WithMatchForVersionType(AssetModelVersionType value) { SetMatchForVersionType(value); return *this;}
     ///@}
   private:
 
@@ -139,7 +129,7 @@ namespace Model
     Aws::String m_ifNoneMatch;
     bool m_ifNoneMatchHasBeenSet = false;
 
-    AssetModelVersionType m_matchForVersionType;
+    AssetModelVersionType m_matchForVersionType{AssetModelVersionType::NOT_SET};
     bool m_matchForVersionTypeHasBeenSet = false;
   };
 

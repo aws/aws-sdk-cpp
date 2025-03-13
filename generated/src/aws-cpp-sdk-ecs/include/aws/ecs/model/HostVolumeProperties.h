@@ -32,7 +32,7 @@ namespace Model
   class HostVolumeProperties
   {
   public:
-    AWS_ECS_API HostVolumeProperties();
+    AWS_ECS_API HostVolumeProperties() = default;
     AWS_ECS_API HostVolumeProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API HostVolumeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * the contents of the source path folder are exported.</p> <p>If you're using the
      * Fargate launch type, the <code>sourcePath</code> parameter is not supported.</p>
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline HostVolumeProperties& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline HostVolumeProperties& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline HostVolumeProperties& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    HostVolumeProperties& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
   private:
 

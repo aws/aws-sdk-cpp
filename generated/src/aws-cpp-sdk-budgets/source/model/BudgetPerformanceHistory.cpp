@@ -18,20 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-BudgetPerformanceHistory::BudgetPerformanceHistory() : 
-    m_budgetNameHasBeenSet(false),
-    m_budgetType(BudgetType::NOT_SET),
-    m_budgetTypeHasBeenSet(false),
-    m_costFiltersHasBeenSet(false),
-    m_costTypesHasBeenSet(false),
-    m_timeUnit(TimeUnit::NOT_SET),
-    m_timeUnitHasBeenSet(false),
-    m_budgetedAndActualAmountsListHasBeenSet(false)
-{
-}
-
 BudgetPerformanceHistory::BudgetPerformanceHistory(JsonView jsonValue)
-  : BudgetPerformanceHistory()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("BudgetName"))
   {
     m_budgetName = jsonValue.GetString("BudgetName");
-
     m_budgetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetType"))
   {
     m_budgetType = BudgetTypeMapper::GetBudgetTypeForName(jsonValue.GetString("BudgetType"));
-
     m_budgetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CostFilters"))
   {
     Aws::Map<Aws::String, JsonView> costFiltersJsonMap = jsonValue.GetObject("CostFilters").GetAllObjects();
@@ -68,21 +51,16 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator =(JsonView jsonValu
     }
     m_costFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CostTypes"))
   {
     m_costTypes = jsonValue.GetObject("CostTypes");
-
     m_costTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeUnit"))
   {
     m_timeUnit = TimeUnitMapper::GetTimeUnitForName(jsonValue.GetString("TimeUnit"));
-
     m_timeUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetedAndActualAmountsList"))
   {
     Aws::Utils::Array<JsonView> budgetedAndActualAmountsListJsonList = jsonValue.GetArray("BudgetedAndActualAmountsList");
@@ -92,7 +70,6 @@ BudgetPerformanceHistory& BudgetPerformanceHistory::operator =(JsonView jsonValu
     }
     m_budgetedAndActualAmountsListHasBeenSet = true;
   }
-
   return *this;
 }
 

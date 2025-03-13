@@ -18,14 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties() : 
-    m_groupCertificateAuthorityArnHasBeenSet(false),
-    m_groupCertificateAuthorityIdHasBeenSet(false)
-{
-}
-
 GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties(JsonView jsonValue)
-  : GroupCertificateAuthorityProperties()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GroupCertificateAuthorityProperties& GroupCertificateAuthorityProperties::operat
   if(jsonValue.ValueExists("GroupCertificateAuthorityArn"))
   {
     m_groupCertificateAuthorityArn = jsonValue.GetString("GroupCertificateAuthorityArn");
-
     m_groupCertificateAuthorityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupCertificateAuthorityId"))
   {
     m_groupCertificateAuthorityId = jsonValue.GetString("GroupCertificateAuthorityId");
-
     m_groupCertificateAuthorityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

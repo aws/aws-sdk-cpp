@@ -18,17 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-InstanceHardware::InstanceHardware() : 
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false)
-{
-}
-
 InstanceHardware::InstanceHardware(JsonView jsonValue)
-  : InstanceHardware()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ InstanceHardware& InstanceHardware::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cpuCount"))
   {
     m_cpuCount = jsonValue.GetInteger("cpuCount");
-
     m_cpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disks"))
   {
     Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
@@ -51,14 +39,11 @@ InstanceHardware& InstanceHardware::operator =(JsonView jsonValue)
     }
     m_disksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramSizeInGb"))
   {
     m_ramSizeInGb = jsonValue.GetDouble("ramSizeInGb");
-
     m_ramSizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

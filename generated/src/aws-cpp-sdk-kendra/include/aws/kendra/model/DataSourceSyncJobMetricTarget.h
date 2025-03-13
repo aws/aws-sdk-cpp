@@ -32,7 +32,7 @@ namespace Model
   class DataSourceSyncJobMetricTarget
   {
   public:
-    AWS_KENDRA_API DataSourceSyncJobMetricTarget();
+    AWS_KENDRA_API DataSourceSyncJobMetricTarget() = default;
     AWS_KENDRA_API DataSourceSyncJobMetricTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API DataSourceSyncJobMetricTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the data source that is running the sync job.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline DataSourceSyncJobMetricTarget& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline DataSourceSyncJobMetricTarget& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline DataSourceSyncJobMetricTarget& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    DataSourceSyncJobMetricTarget& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * metrics are generated and documents are indexed/deleted at the index level
      * without sync job metrics included.</p>
      */
-    inline const Aws::String& GetDataSourceSyncJobId() const{ return m_dataSourceSyncJobId; }
+    inline const Aws::String& GetDataSourceSyncJobId() const { return m_dataSourceSyncJobId; }
     inline bool DataSourceSyncJobIdHasBeenSet() const { return m_dataSourceSyncJobIdHasBeenSet; }
-    inline void SetDataSourceSyncJobId(const Aws::String& value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId = value; }
-    inline void SetDataSourceSyncJobId(Aws::String&& value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId = std::move(value); }
-    inline void SetDataSourceSyncJobId(const char* value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId.assign(value); }
-    inline DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(const Aws::String& value) { SetDataSourceSyncJobId(value); return *this;}
-    inline DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(Aws::String&& value) { SetDataSourceSyncJobId(std::move(value)); return *this;}
-    inline DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(const char* value) { SetDataSourceSyncJobId(value); return *this;}
+    template<typename DataSourceSyncJobIdT = Aws::String>
+    void SetDataSourceSyncJobId(DataSourceSyncJobIdT&& value) { m_dataSourceSyncJobIdHasBeenSet = true; m_dataSourceSyncJobId = std::forward<DataSourceSyncJobIdT>(value); }
+    template<typename DataSourceSyncJobIdT = Aws::String>
+    DataSourceSyncJobMetricTarget& WithDataSourceSyncJobId(DataSourceSyncJobIdT&& value) { SetDataSourceSyncJobId(std::forward<DataSourceSyncJobIdT>(value)); return *this;}
     ///@}
   private:
 

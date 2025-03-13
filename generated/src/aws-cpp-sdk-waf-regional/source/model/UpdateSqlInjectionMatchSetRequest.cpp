@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSqlInjectionMatchSetRequest::UpdateSqlInjectionMatchSetRequest() : 
-    m_sqlInjectionMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSqlInjectionMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

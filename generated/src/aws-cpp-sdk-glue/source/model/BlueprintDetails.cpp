@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BlueprintDetails::BlueprintDetails() : 
-    m_blueprintNameHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 BlueprintDetails::BlueprintDetails(JsonView jsonValue)
-  : BlueprintDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BlueprintDetails& BlueprintDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlueprintName"))
   {
     m_blueprintName = jsonValue.GetString("BlueprintName");
-
     m_blueprintNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   return *this;
 }
 

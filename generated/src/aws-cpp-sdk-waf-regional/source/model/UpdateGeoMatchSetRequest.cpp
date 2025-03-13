@@ -12,13 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGeoMatchSetRequest::UpdateGeoMatchSetRequest() : 
-    m_geoMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGeoMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

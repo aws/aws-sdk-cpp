@@ -18,18 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DetectedCsvFormatDescriptor::DetectedCsvFormatDescriptor() : 
-    m_fileCompressionHasBeenSet(false),
-    m_charsetHasBeenSet(false),
-    m_containsHeaderHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_headerListHasBeenSet(false),
-    m_quoteSymbolHasBeenSet(false)
-{
-}
-
 DetectedCsvFormatDescriptor::DetectedCsvFormatDescriptor(JsonView jsonValue)
-  : DetectedCsvFormatDescriptor()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ DetectedCsvFormatDescriptor& DetectedCsvFormatDescriptor::operator =(JsonView js
   if(jsonValue.ValueExists("FileCompression"))
   {
     m_fileCompression = jsonValue.GetObject("FileCompression");
-
     m_fileCompressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Charset"))
   {
     m_charset = jsonValue.GetObject("Charset");
-
     m_charsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainsHeader"))
   {
     m_containsHeader = jsonValue.GetObject("ContainsHeader");
-
     m_containsHeaderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetObject("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderList"))
   {
     m_headerList = jsonValue.GetObject("HeaderList");
-
     m_headerListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuoteSymbol"))
   {
     m_quoteSymbol = jsonValue.GetObject("QuoteSymbol");
-
     m_quoteSymbolHasBeenSet = true;
   }
-
   return *this;
 }
 

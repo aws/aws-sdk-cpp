@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RemoveAssistantAIAgentRequest::RemoveAssistantAIAgentRequest() : 
-    m_aiAgentType(AIAgentType::NOT_SET),
-    m_aiAgentTypeHasBeenSet(false),
-    m_assistantIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveAssistantAIAgentRequest::SerializePayload() const
 {
   return {};

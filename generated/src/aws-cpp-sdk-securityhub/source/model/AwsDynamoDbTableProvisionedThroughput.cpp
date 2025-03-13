@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableProvisionedThroughput::AwsDynamoDbTableProvisionedThroughput() : 
-    m_lastDecreaseDateTimeHasBeenSet(false),
-    m_lastIncreaseDateTimeHasBeenSet(false),
-    m_numberOfDecreasesToday(0),
-    m_numberOfDecreasesTodayHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableProvisionedThroughput::AwsDynamoDbTableProvisionedThroughput(JsonView jsonValue)
-  : AwsDynamoDbTableProvisionedThroughput()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AwsDynamoDbTableProvisionedThroughput& AwsDynamoDbTableProvisionedThroughput::op
   if(jsonValue.ValueExists("LastDecreaseDateTime"))
   {
     m_lastDecreaseDateTime = jsonValue.GetString("LastDecreaseDateTime");
-
     m_lastDecreaseDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastIncreaseDateTime"))
   {
     m_lastIncreaseDateTime = jsonValue.GetString("LastIncreaseDateTime");
-
     m_lastIncreaseDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfDecreasesToday"))
   {
     m_numberOfDecreasesToday = jsonValue.GetInteger("NumberOfDecreasesToday");
-
     m_numberOfDecreasesTodayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInteger("ReadCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteCapacityUnits"))
   {
     m_writeCapacityUnits = jsonValue.GetInteger("WriteCapacityUnits");
-
     m_writeCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

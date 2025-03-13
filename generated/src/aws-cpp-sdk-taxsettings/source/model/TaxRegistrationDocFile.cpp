@@ -19,14 +19,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxRegistrationDocFile::TaxRegistrationDocFile() : 
-    m_fileContentHasBeenSet(false),
-    m_fileNameHasBeenSet(false)
-{
-}
-
 TaxRegistrationDocFile::TaxRegistrationDocFile(JsonView jsonValue)
-  : TaxRegistrationDocFile()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ TaxRegistrationDocFile& TaxRegistrationDocFile::operator =(JsonView jsonValue)
     m_fileContent = HashingUtils::Base64Decode(jsonValue.GetString("fileContent"));
     m_fileContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   return *this;
 }
 

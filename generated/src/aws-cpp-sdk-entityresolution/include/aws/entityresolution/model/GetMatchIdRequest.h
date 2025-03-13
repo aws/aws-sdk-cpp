@@ -22,7 +22,7 @@ namespace Model
   class GetMatchIdRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API GetMatchIdRequest();
+    AWS_ENTITYRESOLUTION_API GetMatchIdRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
      * 1234567890, Entity Resolution will normalize this field in the output to
      * (123)-456-7890.</p>
      */
-    inline bool GetApplyNormalization() const{ return m_applyNormalization; }
+    inline bool GetApplyNormalization() const { return m_applyNormalization; }
     inline bool ApplyNormalizationHasBeenSet() const { return m_applyNormalizationHasBeenSet; }
     inline void SetApplyNormalization(bool value) { m_applyNormalizationHasBeenSet = true; m_applyNormalization = value; }
     inline GetMatchIdRequest& WithApplyNormalization(bool value) { SetApplyNormalization(value); return *this;}
@@ -51,37 +51,32 @@ namespace Model
     /**
      * <p>The record to fetch the Match ID for.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const{ return m_record; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRecord() const { return m_record; }
     inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
-    inline void SetRecord(const Aws::Map<Aws::String, Aws::String>& value) { m_recordHasBeenSet = true; m_record = value; }
-    inline void SetRecord(Aws::Map<Aws::String, Aws::String>&& value) { m_recordHasBeenSet = true; m_record = std::move(value); }
-    inline GetMatchIdRequest& WithRecord(const Aws::Map<Aws::String, Aws::String>& value) { SetRecord(value); return *this;}
-    inline GetMatchIdRequest& WithRecord(Aws::Map<Aws::String, Aws::String>&& value) { SetRecord(std::move(value)); return *this;}
-    inline GetMatchIdRequest& AddRecord(const Aws::String& key, const Aws::String& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
-    inline GetMatchIdRequest& AddRecord(Aws::String&& key, const Aws::String& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), value); return *this; }
-    inline GetMatchIdRequest& AddRecord(const Aws::String& key, Aws::String&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
-    inline GetMatchIdRequest& AddRecord(Aws::String&& key, Aws::String&& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetMatchIdRequest& AddRecord(const char* key, Aws::String&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
-    inline GetMatchIdRequest& AddRecord(Aws::String&& key, const char* value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), value); return *this; }
-    inline GetMatchIdRequest& AddRecord(const char* key, const char* value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
+    template<typename RecordT = Aws::Map<Aws::String, Aws::String>>
+    void SetRecord(RecordT&& value) { m_recordHasBeenSet = true; m_record = std::forward<RecordT>(value); }
+    template<typename RecordT = Aws::Map<Aws::String, Aws::String>>
+    GetMatchIdRequest& WithRecord(RecordT&& value) { SetRecord(std::forward<RecordT>(value)); return *this;}
+    template<typename RecordKeyT = Aws::String, typename RecordValueT = Aws::String>
+    GetMatchIdRequest& AddRecord(RecordKeyT&& key, RecordValueT&& value) {
+      m_recordHasBeenSet = true; m_record.emplace(std::forward<RecordKeyT>(key), std::forward<RecordValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The name of the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowName() const{ return m_workflowName; }
+    inline const Aws::String& GetWorkflowName() const { return m_workflowName; }
     inline bool WorkflowNameHasBeenSet() const { return m_workflowNameHasBeenSet; }
-    inline void SetWorkflowName(const Aws::String& value) { m_workflowNameHasBeenSet = true; m_workflowName = value; }
-    inline void SetWorkflowName(Aws::String&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::move(value); }
-    inline void SetWorkflowName(const char* value) { m_workflowNameHasBeenSet = true; m_workflowName.assign(value); }
-    inline GetMatchIdRequest& WithWorkflowName(const Aws::String& value) { SetWorkflowName(value); return *this;}
-    inline GetMatchIdRequest& WithWorkflowName(Aws::String&& value) { SetWorkflowName(std::move(value)); return *this;}
-    inline GetMatchIdRequest& WithWorkflowName(const char* value) { SetWorkflowName(value); return *this;}
+    template<typename WorkflowNameT = Aws::String>
+    void SetWorkflowName(WorkflowNameT&& value) { m_workflowNameHasBeenSet = true; m_workflowName = std::forward<WorkflowNameT>(value); }
+    template<typename WorkflowNameT = Aws::String>
+    GetMatchIdRequest& WithWorkflowName(WorkflowNameT&& value) { SetWorkflowName(std::forward<WorkflowNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_applyNormalization;
+    bool m_applyNormalization{false};
     bool m_applyNormalizationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_record;

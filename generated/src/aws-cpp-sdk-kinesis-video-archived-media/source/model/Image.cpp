@@ -18,16 +18,7 @@ namespace KinesisVideoArchivedMedia
 namespace Model
 {
 
-Image::Image() : 
-    m_timeStampHasBeenSet(false),
-    m_error(ImageError::NOT_SET),
-    m_errorHasBeenSet(false),
-    m_imageContentHasBeenSet(false)
-{
-}
-
 Image::Image(JsonView jsonValue)
-  : Image()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Image& Image::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeStamp"))
   {
     m_timeStamp = jsonValue.GetDouble("TimeStamp");
-
     m_timeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = ImageErrorMapper::GetImageErrorForName(jsonValue.GetString("Error"));
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageContent"))
   {
     m_imageContent = jsonValue.GetString("ImageContent");
-
     m_imageContentHasBeenSet = true;
   }
-
   return *this;
 }
 

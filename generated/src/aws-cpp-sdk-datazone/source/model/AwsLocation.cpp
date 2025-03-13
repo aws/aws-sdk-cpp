@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AwsLocation::AwsLocation() : 
-    m_accessRoleHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_iamConnectionIdHasBeenSet(false)
-{
-}
-
 AwsLocation::AwsLocation(JsonView jsonValue)
-  : AwsLocation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsLocation& AwsLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessRole"))
   {
     m_accessRole = jsonValue.GetString("accessRole");
-
     m_accessRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamConnectionId"))
   {
     m_iamConnectionId = jsonValue.GetString("iamConnectionId");
-
     m_iamConnectionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

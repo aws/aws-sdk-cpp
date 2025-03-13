@@ -28,7 +28,7 @@ namespace Model
   class CreatePublicIpv4PoolResponse
   {
   public:
-    AWS_EC2_API CreatePublicIpv4PoolResponse();
+    AWS_EC2_API CreatePublicIpv4PoolResponse() = default;
     AWS_EC2_API CreatePublicIpv4PoolResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreatePublicIpv4PoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID of the public IPv4 pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
-    inline void SetPoolId(const Aws::String& value) { m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolId.assign(value); }
-    inline CreatePublicIpv4PoolResponse& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline CreatePublicIpv4PoolResponse& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline CreatePublicIpv4PoolResponse& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    CreatePublicIpv4PoolResponse& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreatePublicIpv4PoolResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreatePublicIpv4PoolResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreatePublicIpv4PoolResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_poolId;
+    bool m_poolIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

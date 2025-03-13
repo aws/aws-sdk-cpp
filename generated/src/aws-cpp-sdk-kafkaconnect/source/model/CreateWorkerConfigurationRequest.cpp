@@ -12,14 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkerConfigurationRequest::CreateWorkerConfigurationRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_propertiesFileContentHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkerConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

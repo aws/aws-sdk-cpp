@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GaugeChartOptions::GaugeChartOptions() : 
-    m_primaryValueDisplayType(PrimaryValueDisplayType::NOT_SET),
-    m_primaryValueDisplayTypeHasBeenSet(false),
-    m_comparisonHasBeenSet(false),
-    m_arcAxisHasBeenSet(false),
-    m_arcHasBeenSet(false),
-    m_primaryValueFontConfigurationHasBeenSet(false)
-{
-}
-
 GaugeChartOptions::GaugeChartOptions(JsonView jsonValue)
-  : GaugeChartOptions()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ GaugeChartOptions& GaugeChartOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryValueDisplayType"))
   {
     m_primaryValueDisplayType = PrimaryValueDisplayTypeMapper::GetPrimaryValueDisplayTypeForName(jsonValue.GetString("PrimaryValueDisplayType"));
-
     m_primaryValueDisplayTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comparison"))
   {
     m_comparison = jsonValue.GetObject("Comparison");
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArcAxis"))
   {
     m_arcAxis = jsonValue.GetObject("ArcAxis");
-
     m_arcAxisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arc"))
   {
     m_arc = jsonValue.GetObject("Arc");
-
     m_arcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryValueFontConfiguration"))
   {
     m_primaryValueFontConfiguration = jsonValue.GetObject("PrimaryValueFontConfiguration");
-
     m_primaryValueFontConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

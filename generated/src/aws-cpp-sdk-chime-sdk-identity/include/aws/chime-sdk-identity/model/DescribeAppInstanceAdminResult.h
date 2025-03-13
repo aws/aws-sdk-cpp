@@ -28,7 +28,7 @@ namespace Model
   class DescribeAppInstanceAdminResult
   {
   public:
-    AWS_CHIMESDKIDENTITY_API DescribeAppInstanceAdminResult();
+    AWS_CHIMESDKIDENTITY_API DescribeAppInstanceAdminResult() = default;
     AWS_CHIMESDKIDENTITY_API DescribeAppInstanceAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKIDENTITY_API DescribeAppInstanceAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * <code>AppInstance</code>, and the created and last-updated timestamps. All
      * timestamps use epoch milliseconds.</p>
      */
-    inline const AppInstanceAdmin& GetAppInstanceAdmin() const{ return m_appInstanceAdmin; }
-    inline void SetAppInstanceAdmin(const AppInstanceAdmin& value) { m_appInstanceAdmin = value; }
-    inline void SetAppInstanceAdmin(AppInstanceAdmin&& value) { m_appInstanceAdmin = std::move(value); }
-    inline DescribeAppInstanceAdminResult& WithAppInstanceAdmin(const AppInstanceAdmin& value) { SetAppInstanceAdmin(value); return *this;}
-    inline DescribeAppInstanceAdminResult& WithAppInstanceAdmin(AppInstanceAdmin&& value) { SetAppInstanceAdmin(std::move(value)); return *this;}
+    inline const AppInstanceAdmin& GetAppInstanceAdmin() const { return m_appInstanceAdmin; }
+    template<typename AppInstanceAdminT = AppInstanceAdmin>
+    void SetAppInstanceAdmin(AppInstanceAdminT&& value) { m_appInstanceAdminHasBeenSet = true; m_appInstanceAdmin = std::forward<AppInstanceAdminT>(value); }
+    template<typename AppInstanceAdminT = AppInstanceAdmin>
+    DescribeAppInstanceAdminResult& WithAppInstanceAdmin(AppInstanceAdminT&& value) { SetAppInstanceAdmin(std::forward<AppInstanceAdminT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAppInstanceAdminResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAppInstanceAdminResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAppInstanceAdminResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAppInstanceAdminResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppInstanceAdmin m_appInstanceAdmin;
+    bool m_appInstanceAdminHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,10 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNotificationChannelRequest::GetNotificationChannelRequest()
-{
-}
-
 Aws::String GetNotificationChannelRequest::SerializePayload() const
 {
   return "{}";

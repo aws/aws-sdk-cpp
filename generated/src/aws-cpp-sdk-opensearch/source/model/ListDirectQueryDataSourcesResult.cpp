@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDirectQueryDataSourcesResult::ListDirectQueryDataSourcesResult()
-{
-}
-
 ListDirectQueryDataSourcesResult::ListDirectQueryDataSourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListDirectQueryDataSourcesResult& ListDirectQueryDataSourcesResult::operator =(c
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectQueryDataSources"))
   {
     Aws::Utils::Array<JsonView> directQueryDataSourcesJsonList = jsonValue.GetArray("DirectQueryDataSources");
@@ -42,14 +37,15 @@ ListDirectQueryDataSourcesResult& ListDirectQueryDataSourcesResult::operator =(c
     {
       m_directQueryDataSources.push_back(directQueryDataSourcesJsonList[directQueryDataSourcesIndex].AsObject());
     }
+    m_directQueryDataSourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

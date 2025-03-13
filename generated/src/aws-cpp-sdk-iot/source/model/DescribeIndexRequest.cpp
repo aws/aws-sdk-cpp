@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIndexRequest::DescribeIndexRequest() : 
-    m_indexNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIndexRequest::SerializePayload() const
 {
   return {};

@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-Entity::Entity() : 
-    m_keyAttributesHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Entity::Entity(const XmlNode& xmlNode)
-  : Entity()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ Entity& Entity::operator =(const XmlNode& xmlNode)
     if(!keyAttributesNode.IsNull())
     {
       XmlNode keyAttributesEntry = keyAttributesNode.FirstChild("entry");
+      m_keyAttributesHasBeenSet = !keyAttributesEntry.IsNull();
       while(!keyAttributesEntry.IsNull())
       {
         XmlNode keyNode = keyAttributesEntry.FirstChild("key");
@@ -52,13 +46,14 @@ Entity& Entity::operator =(const XmlNode& xmlNode)
         keyAttributesEntry = keyAttributesEntry.NextNode("entry");
       }
 
-      m_keyAttributesHasBeenSet = true;
+       m_keyAttributesHasBeenSet = true;
     }
     XmlNode attributesNode = resultNode.FirstChild("Attributes");
 
     if(!attributesNode.IsNull())
     {
       XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      m_attributesHasBeenSet = !attributesEntry.IsNull();
       while(!attributesEntry.IsNull())
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
@@ -68,7 +63,7 @@ Entity& Entity::operator =(const XmlNode& xmlNode)
         attributesEntry = attributesEntry.NextNode("entry");
       }
 
-      m_attributesHasBeenSet = true;
+       m_attributesHasBeenSet = true;
     }
   }
 

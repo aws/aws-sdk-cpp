@@ -12,12 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCellRequest::UpdateCellRequest() : 
-    m_cellNameHasBeenSet(false),
-    m_cellsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCellRequest::SerializePayload() const
 {
   JsonValue payload;

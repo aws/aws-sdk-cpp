@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkChangeEventValues::CoreNetworkChangeEventValues() : 
-    m_edgeLocationHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_cidrHasBeenSet(false)
-{
-}
-
 CoreNetworkChangeEventValues::CoreNetworkChangeEventValues(JsonView jsonValue)
-  : CoreNetworkChangeEventValues()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CoreNetworkChangeEventValues& CoreNetworkChangeEventValues::operator =(JsonView 
   if(jsonValue.ValueExists("EdgeLocation"))
   {
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
-
     m_edgeLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFunctionGroupName"))
   {
     m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
-
     m_networkFunctionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentId"))
   {
     m_attachmentId = jsonValue.GetString("AttachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cidr"))
   {
     m_cidr = jsonValue.GetString("Cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   return *this;
 }
 

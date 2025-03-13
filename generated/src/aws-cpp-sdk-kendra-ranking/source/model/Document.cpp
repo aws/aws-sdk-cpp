@@ -18,20 +18,7 @@ namespace KendraRanking
 namespace Model
 {
 
-Document::Document() : 
-    m_idHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_tokenizedTitleHasBeenSet(false),
-    m_tokenizedBodyHasBeenSet(false),
-    m_originalScore(0.0),
-    m_originalScoreHasBeenSet(false)
-{
-}
-
 Document::Document(JsonView jsonValue)
-  : Document()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Document& Document::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenizedTitle"))
   {
     Aws::Utils::Array<JsonView> tokenizedTitleJsonList = jsonValue.GetArray("TokenizedTitle");
@@ -75,7 +54,6 @@ Document& Document::operator =(JsonView jsonValue)
     }
     m_tokenizedTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenizedBody"))
   {
     Aws::Utils::Array<JsonView> tokenizedBodyJsonList = jsonValue.GetArray("TokenizedBody");
@@ -85,14 +63,11 @@ Document& Document::operator =(JsonView jsonValue)
     }
     m_tokenizedBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalScore"))
   {
     m_originalScore = jsonValue.GetDouble("OriginalScore");
-
     m_originalScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

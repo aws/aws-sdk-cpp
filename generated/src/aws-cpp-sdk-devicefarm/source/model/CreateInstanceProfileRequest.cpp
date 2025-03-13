@@ -12,17 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstanceProfileRequest::CreateInstanceProfileRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_packageCleanup(false),
-    m_packageCleanupHasBeenSet(false),
-    m_excludeAppPackagesFromCleanupHasBeenSet(false),
-    m_rebootAfterUse(false),
-    m_rebootAfterUseHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceProfileRequest::SerializePayload() const
 {
   JsonValue payload;

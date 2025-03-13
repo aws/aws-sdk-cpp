@@ -18,16 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ImportTaskSummaryWaves::ImportTaskSummaryWaves() : 
-    m_createdCount(0),
-    m_createdCountHasBeenSet(false),
-    m_modifiedCount(0),
-    m_modifiedCountHasBeenSet(false)
-{
-}
-
 ImportTaskSummaryWaves::ImportTaskSummaryWaves(JsonView jsonValue)
-  : ImportTaskSummaryWaves()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ImportTaskSummaryWaves& ImportTaskSummaryWaves::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdCount"))
   {
     m_createdCount = jsonValue.GetInt64("createdCount");
-
     m_createdCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedCount"))
   {
     m_modifiedCount = jsonValue.GetInt64("modifiedCount");
-
     m_modifiedCountHasBeenSet = true;
   }
-
   return *this;
 }
 

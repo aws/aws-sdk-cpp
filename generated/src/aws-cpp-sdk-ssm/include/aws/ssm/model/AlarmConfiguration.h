@@ -33,7 +33,7 @@ namespace Model
   class AlarmConfiguration
   {
   public:
-    AWS_SSM_API AlarmConfiguration();
+    AWS_SSM_API AlarmConfiguration() = default;
     AWS_SSM_API AlarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API AlarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * the automation or command continues to run, regardless of this value. Default is
      * <i>false</i>.</p>
      */
-    inline bool GetIgnorePollAlarmFailure() const{ return m_ignorePollAlarmFailure; }
+    inline bool GetIgnorePollAlarmFailure() const { return m_ignorePollAlarmFailure; }
     inline bool IgnorePollAlarmFailureHasBeenSet() const { return m_ignorePollAlarmFailureHasBeenSet; }
     inline void SetIgnorePollAlarmFailure(bool value) { m_ignorePollAlarmFailureHasBeenSet = true; m_ignorePollAlarmFailure = value; }
     inline AlarmConfiguration& WithIgnorePollAlarmFailure(bool value) { SetIgnorePollAlarmFailure(value); return *this;}
@@ -57,18 +57,18 @@ namespace Model
     /**
      * <p>The name of the CloudWatch alarm specified in the configuration.</p>
      */
-    inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
+    inline const Aws::Vector<Alarm>& GetAlarms() const { return m_alarms; }
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
-    inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
-    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
-    inline AlarmConfiguration& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
-    inline AlarmConfiguration& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
-    inline AlarmConfiguration& AddAlarms(const Alarm& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
-    inline AlarmConfiguration& AddAlarms(Alarm&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
+    template<typename AlarmsT = Aws::Vector<Alarm>>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = Aws::Vector<Alarm>>
+    AlarmConfiguration& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
+    template<typename AlarmsT = Alarm>
+    AlarmConfiguration& AddAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms.emplace_back(std::forward<AlarmsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_ignorePollAlarmFailure;
+    bool m_ignorePollAlarmFailure{false};
     bool m_ignorePollAlarmFailureHasBeenSet = false;
 
     Aws::Vector<Alarm> m_alarms;

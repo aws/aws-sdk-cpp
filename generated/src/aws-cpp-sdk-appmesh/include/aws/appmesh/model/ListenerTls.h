@@ -34,7 +34,7 @@ namespace Model
   class ListenerTls
   {
   public:
-    AWS_APPMESH_API ListenerTls();
+    AWS_APPMESH_API ListenerTls() = default;
     AWS_APPMESH_API ListenerTls(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API ListenerTls& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>A reference to an object that represents a listener's Transport Layer
      * Security (TLS) certificate.</p>
      */
-    inline const ListenerTlsCertificate& GetCertificate() const{ return m_certificate; }
+    inline const ListenerTlsCertificate& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const ListenerTlsCertificate& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(ListenerTlsCertificate&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline ListenerTls& WithCertificate(const ListenerTlsCertificate& value) { SetCertificate(value); return *this;}
-    inline ListenerTls& WithCertificate(ListenerTlsCertificate&& value) { SetCertificate(std::move(value)); return *this;}
+    template<typename CertificateT = ListenerTlsCertificate>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = ListenerTlsCertificate>
+    ListenerTls& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,10 @@ namespace Model
      * Listener accepts connections with or without TLS enabled.</p> </li> <li> <p>
      * <b/>DISABLED – Listener only accepts connections without TLS. </p> </li> </ul>
      */
-    inline const ListenerTlsMode& GetMode() const{ return m_mode; }
+    inline ListenerTlsMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ListenerTlsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ListenerTlsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline ListenerTls& WithMode(const ListenerTlsMode& value) { SetMode(value); return *this;}
-    inline ListenerTls& WithMode(ListenerTlsMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ListenerTlsMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline ListenerTls& WithMode(ListenerTlsMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -73,19 +71,19 @@ namespace Model
      * <p>A reference to an object that represents a listener's Transport Layer
      * Security (TLS) validation context.</p>
      */
-    inline const ListenerTlsValidationContext& GetValidation() const{ return m_validation; }
+    inline const ListenerTlsValidationContext& GetValidation() const { return m_validation; }
     inline bool ValidationHasBeenSet() const { return m_validationHasBeenSet; }
-    inline void SetValidation(const ListenerTlsValidationContext& value) { m_validationHasBeenSet = true; m_validation = value; }
-    inline void SetValidation(ListenerTlsValidationContext&& value) { m_validationHasBeenSet = true; m_validation = std::move(value); }
-    inline ListenerTls& WithValidation(const ListenerTlsValidationContext& value) { SetValidation(value); return *this;}
-    inline ListenerTls& WithValidation(ListenerTlsValidationContext&& value) { SetValidation(std::move(value)); return *this;}
+    template<typename ValidationT = ListenerTlsValidationContext>
+    void SetValidation(ValidationT&& value) { m_validationHasBeenSet = true; m_validation = std::forward<ValidationT>(value); }
+    template<typename ValidationT = ListenerTlsValidationContext>
+    ListenerTls& WithValidation(ValidationT&& value) { SetValidation(std::forward<ValidationT>(value)); return *this;}
     ///@}
   private:
 
     ListenerTlsCertificate m_certificate;
     bool m_certificateHasBeenSet = false;
 
-    ListenerTlsMode m_mode;
+    ListenerTlsMode m_mode{ListenerTlsMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     ListenerTlsValidationContext m_validation;

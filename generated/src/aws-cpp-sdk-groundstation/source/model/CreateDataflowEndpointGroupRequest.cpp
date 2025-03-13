@@ -12,16 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataflowEndpointGroupRequest::CreateDataflowEndpointGroupRequest() : 
-    m_contactPostPassDurationSeconds(0),
-    m_contactPostPassDurationSecondsHasBeenSet(false),
-    m_contactPrePassDurationSeconds(0),
-    m_contactPrePassDurationSecondsHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataflowEndpointGroupRequest::SerializePayload() const
 {
   JsonValue payload;

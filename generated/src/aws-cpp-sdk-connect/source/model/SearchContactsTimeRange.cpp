@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SearchContactsTimeRange::SearchContactsTimeRange() : 
-    m_type(SearchContactsTimeRangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 SearchContactsTimeRange::SearchContactsTimeRange(JsonView jsonValue)
-  : SearchContactsTimeRange()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SearchContactsTimeRange& SearchContactsTimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SearchContactsTimeRangeTypeMapper::GetSearchContactsTimeRangeTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

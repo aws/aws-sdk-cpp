@@ -12,14 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRouteCalculatorRequest::CreateRouteCalculatorRequest() : 
-    m_calculatorNameHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRouteCalculatorRequest::SerializePayload() const
 {
   JsonValue payload;

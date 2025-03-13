@@ -33,7 +33,7 @@ namespace Model
   class DnsRecord
   {
   public:
-    AWS_SERVICEDISCOVERY_API DnsRecord();
+    AWS_SERVICEDISCOVERY_API DnsRecord() = default;
     AWS_SERVICEDISCOVERY_API DnsRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API DnsRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -98,12 +98,10 @@ namespace Model
      * element in the documentation about <code>CreateService</code> for information
      * about how to specify the correct name format.</p> </li> </ul> </dd> </dl>
      */
-    inline const RecordType& GetType() const{ return m_type; }
+    inline RecordType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RecordType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RecordType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DnsRecord& WithType(const RecordType& value) { SetType(value); return *this;}
-    inline DnsRecord& WithType(RecordType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RecordType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DnsRecord& WithType(RecordType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -118,17 +116,17 @@ namespace Model
      * service; you can use a service to register instances that create either alias or
      * non-alias records.</p> 
      */
-    inline long long GetTTL() const{ return m_tTL; }
+    inline long long GetTTL() const { return m_tTL; }
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
     inline DnsRecord& WithTTL(long long value) { SetTTL(value); return *this;}
     ///@}
   private:
 
-    RecordType m_type;
+    RecordType m_type{RecordType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    long long m_tTL;
+    long long m_tTL{0};
     bool m_tTLHasBeenSet = false;
   };
 

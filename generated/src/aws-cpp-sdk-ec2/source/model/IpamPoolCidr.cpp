@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPoolCidr::IpamPoolCidr() : 
-    m_cidrHasBeenSet(false),
-    m_state(IpamPoolCidrState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_ipamPoolCidrIdHasBeenSet(false),
-    m_netmaskLength(0),
-    m_netmaskLengthHasBeenSet(false)
-{
-}
-
 IpamPoolCidr::IpamPoolCidr(const XmlNode& xmlNode)
-  : IpamPoolCidr()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ IpamPoolCidr& IpamPoolCidr::operator =(const XmlNode& xmlNode)
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamPoolCidrStateMapper::GetIpamPoolCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamPoolCidrStateMapper::GetIpamPoolCidrStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode failureReasonNode = resultNode.FirstChild("failureReason");
     if(!failureReasonNode.IsNull())
     {
       m_failureReason = failureReasonNode;
       m_failureReasonHasBeenSet = true;
+       m_failureReasonHasBeenSet = true;
     }
     XmlNode ipamPoolCidrIdNode = resultNode.FirstChild("ipamPoolCidrId");
     if(!ipamPoolCidrIdNode.IsNull())
     {
       m_ipamPoolCidrId = Aws::Utils::Xml::DecodeEscapedXmlText(ipamPoolCidrIdNode.GetText());
       m_ipamPoolCidrIdHasBeenSet = true;
+       m_ipamPoolCidrIdHasBeenSet = true;
     }
     XmlNode netmaskLengthNode = resultNode.FirstChild("netmaskLength");
     if(!netmaskLengthNode.IsNull())
     {
       m_netmaskLength = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(netmaskLengthNode.GetText()).c_str()).c_str());
       m_netmaskLengthHasBeenSet = true;
+       m_netmaskLengthHasBeenSet = true;
     }
   }
 

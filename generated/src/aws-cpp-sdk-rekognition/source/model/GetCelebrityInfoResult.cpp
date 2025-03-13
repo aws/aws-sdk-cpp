@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCelebrityInfoResult::GetCelebrityInfoResult()
-{
-}
-
 GetCelebrityInfoResult::GetCelebrityInfoResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const Aws::AmazonWebS
     {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());
     }
+    m_urlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KnownGender"))
   {
     m_knownGender = jsonValue.GetObject("KnownGender");
-
+    m_knownGenderHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

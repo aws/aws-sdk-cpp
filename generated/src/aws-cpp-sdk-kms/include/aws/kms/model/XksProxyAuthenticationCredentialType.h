@@ -35,7 +35,7 @@ namespace Model
   class XksProxyAuthenticationCredentialType
   {
   public:
-    AWS_KMS_API XksProxyAuthenticationCredentialType();
+    AWS_KMS_API XksProxyAuthenticationCredentialType() = default;
     AWS_KMS_API XksProxyAuthenticationCredentialType(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API XksProxyAuthenticationCredentialType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>A unique identifier for the raw secret access key.</p>
      */
-    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+    inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
-    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
-    inline XksProxyAuthenticationCredentialType& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-    inline XksProxyAuthenticationCredentialType& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-    inline XksProxyAuthenticationCredentialType& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    template<typename AccessKeyIdT = Aws::String>
+    void SetAccessKeyId(AccessKeyIdT&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::forward<AccessKeyIdT>(value); }
+    template<typename AccessKeyIdT = Aws::String>
+    XksProxyAuthenticationCredentialType& WithAccessKeyId(AccessKeyIdT&& value) { SetAccessKeyId(std::forward<AccessKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>A secret string of 43-64 characters. Valid characters are a-z, A-Z, 0-9, /,
      * +, and =.</p>
      */
-    inline const Aws::String& GetRawSecretAccessKey() const{ return m_rawSecretAccessKey; }
+    inline const Aws::String& GetRawSecretAccessKey() const { return m_rawSecretAccessKey; }
     inline bool RawSecretAccessKeyHasBeenSet() const { return m_rawSecretAccessKeyHasBeenSet; }
-    inline void SetRawSecretAccessKey(const Aws::String& value) { m_rawSecretAccessKeyHasBeenSet = true; m_rawSecretAccessKey = value; }
-    inline void SetRawSecretAccessKey(Aws::String&& value) { m_rawSecretAccessKeyHasBeenSet = true; m_rawSecretAccessKey = std::move(value); }
-    inline void SetRawSecretAccessKey(const char* value) { m_rawSecretAccessKeyHasBeenSet = true; m_rawSecretAccessKey.assign(value); }
-    inline XksProxyAuthenticationCredentialType& WithRawSecretAccessKey(const Aws::String& value) { SetRawSecretAccessKey(value); return *this;}
-    inline XksProxyAuthenticationCredentialType& WithRawSecretAccessKey(Aws::String&& value) { SetRawSecretAccessKey(std::move(value)); return *this;}
-    inline XksProxyAuthenticationCredentialType& WithRawSecretAccessKey(const char* value) { SetRawSecretAccessKey(value); return *this;}
+    template<typename RawSecretAccessKeyT = Aws::String>
+    void SetRawSecretAccessKey(RawSecretAccessKeyT&& value) { m_rawSecretAccessKeyHasBeenSet = true; m_rawSecretAccessKey = std::forward<RawSecretAccessKeyT>(value); }
+    template<typename RawSecretAccessKeyT = Aws::String>
+    XksProxyAuthenticationCredentialType& WithRawSecretAccessKey(RawSecretAccessKeyT&& value) { SetRawSecretAccessKey(std::forward<RawSecretAccessKeyT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignLimits::CampaignLimits() : 
-    m_daily(0),
-    m_dailyHasBeenSet(false),
-    m_maximumDuration(0),
-    m_maximumDurationHasBeenSet(false),
-    m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false),
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_session(0),
-    m_sessionHasBeenSet(false)
-{
-}
-
 CampaignLimits::CampaignLimits(JsonView jsonValue)
-  : CampaignLimits()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ CampaignLimits& CampaignLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Daily"))
   {
     m_daily = jsonValue.GetInteger("Daily");
-
     m_dailyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumDuration"))
   {
     m_maximumDuration = jsonValue.GetInteger("MaximumDuration");
-
     m_maximumDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessagesPerSecond"))
   {
     m_messagesPerSecond = jsonValue.GetInteger("MessagesPerSecond");
-
     m_messagesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetInteger("Total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetInteger("Session");
-
     m_sessionHasBeenSet = true;
   }
-
   return *this;
 }
 

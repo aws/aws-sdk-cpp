@@ -12,16 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGroupRequest::UpdateGroupRequest() : 
-    m_groupHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

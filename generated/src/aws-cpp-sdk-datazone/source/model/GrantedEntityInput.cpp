@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GrantedEntityInput::GrantedEntityInput() : 
-    m_listingHasBeenSet(false)
-{
-}
-
 GrantedEntityInput::GrantedEntityInput(JsonView jsonValue)
-  : GrantedEntityInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GrantedEntityInput& GrantedEntityInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("listing"))
   {
     m_listing = jsonValue.GetObject("listing");
-
     m_listingHasBeenSet = true;
   }
-
   return *this;
 }
 

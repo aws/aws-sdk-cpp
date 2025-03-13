@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineChartAggregatedFieldWells::LineChartAggregatedFieldWells() : 
-    m_categoryHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_colorsHasBeenSet(false),
-    m_smallMultiplesHasBeenSet(false)
-{
-}
-
 LineChartAggregatedFieldWells::LineChartAggregatedFieldWells(JsonView jsonValue)
-  : LineChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ LineChartAggregatedFieldWells& LineChartAggregatedFieldWells::operator =(JsonVie
     }
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -53,7 +43,6 @@ LineChartAggregatedFieldWells& LineChartAggregatedFieldWells::operator =(JsonVie
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Colors"))
   {
     Aws::Utils::Array<JsonView> colorsJsonList = jsonValue.GetArray("Colors");
@@ -63,7 +52,6 @@ LineChartAggregatedFieldWells& LineChartAggregatedFieldWells::operator =(JsonVie
     }
     m_colorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SmallMultiples"))
   {
     Aws::Utils::Array<JsonView> smallMultiplesJsonList = jsonValue.GetArray("SmallMultiples");
@@ -73,7 +61,6 @@ LineChartAggregatedFieldWells& LineChartAggregatedFieldWells::operator =(JsonVie
     }
     m_smallMultiplesHasBeenSet = true;
   }
-
   return *this;
 }
 

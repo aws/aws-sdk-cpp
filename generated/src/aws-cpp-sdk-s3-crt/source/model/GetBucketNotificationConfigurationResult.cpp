@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketNotificationConfigurationResult::GetBucketNotificationConfigurationResult()
-{
-}
-
 GetBucketNotificationConfigurationResult::GetBucketNotificationConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResu
     if(!topicConfigurationsNode.IsNull())
     {
       XmlNode topicConfigurationMember = topicConfigurationsNode;
+      m_topicConfigurationsHasBeenSet = !topicConfigurationMember.IsNull();
       while(!topicConfigurationMember.IsNull())
       {
         m_topicConfigurations.push_back(topicConfigurationMember);
@@ -47,6 +44,7 @@ GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResu
     if(!queueConfigurationsNode.IsNull())
     {
       XmlNode queueConfigurationMember = queueConfigurationsNode;
+      m_queueConfigurationsHasBeenSet = !queueConfigurationMember.IsNull();
       while(!queueConfigurationMember.IsNull())
       {
         m_queueConfigurations.push_back(queueConfigurationMember);
@@ -58,6 +56,7 @@ GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResu
     if(!lambdaFunctionConfigurationsNode.IsNull())
     {
       XmlNode cloudFunctionConfigurationMember = lambdaFunctionConfigurationsNode;
+      m_lambdaFunctionConfigurationsHasBeenSet = !cloudFunctionConfigurationMember.IsNull();
       while(!cloudFunctionConfigurationMember.IsNull())
       {
         m_lambdaFunctionConfigurations.push_back(cloudFunctionConfigurationMember);
@@ -69,6 +68,7 @@ GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResu
     if(!eventBridgeConfigurationNode.IsNull())
     {
       m_eventBridgeConfiguration = eventBridgeConfigurationNode;
+      m_eventBridgeConfigurationHasBeenSet = true;
     }
   }
 
@@ -77,6 +77,7 @@ GetBucketNotificationConfigurationResult& GetBucketNotificationConfigurationResu
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

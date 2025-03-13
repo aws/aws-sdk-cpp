@@ -26,7 +26,7 @@ namespace Model
   class ListEngagementInvitationsRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListEngagementInvitationsRequest();
+    AWS_PARTNERCENTRALSELLING_API ListEngagementInvitationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <code>AWS</code> for production invitations or <code>Sandbox</code> for testing
      * environments.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline ListEngagementInvitationsRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline ListEngagementInvitationsRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    ListEngagementInvitationsRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * to filter invitations where you are either the SENDER or the RECEIVER.
      * Invitations will automatically expire if not accepted within 15 days. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
+    inline const Aws::Vector<Aws::String>& GetEngagementIdentifier() const { return m_engagementIdentifier; }
     inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
-    inline void SetEngagementIdentifier(const Aws::Vector<Aws::String>& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = value; }
-    inline void SetEngagementIdentifier(Aws::Vector<Aws::String>&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::move(value); }
-    inline ListEngagementInvitationsRequest& WithEngagementIdentifier(const Aws::Vector<Aws::String>& value) { SetEngagementIdentifier(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithEngagementIdentifier(Aws::Vector<Aws::String>&& value) { SetEngagementIdentifier(std::move(value)); return *this;}
-    inline ListEngagementInvitationsRequest& AddEngagementIdentifier(const Aws::String& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.push_back(value); return *this; }
-    inline ListEngagementInvitationsRequest& AddEngagementIdentifier(Aws::String&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.push_back(std::move(value)); return *this; }
-    inline ListEngagementInvitationsRequest& AddEngagementIdentifier(const char* value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.push_back(value); return *this; }
+    template<typename EngagementIdentifierT = Aws::Vector<Aws::String>>
+    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
+    template<typename EngagementIdentifierT = Aws::Vector<Aws::String>>
+    ListEngagementInvitationsRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
+    template<typename EngagementIdentifierT = Aws::String>
+    ListEngagementInvitationsRequest& AddEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.emplace_back(std::forward<EngagementIdentifierT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,7 +77,7 @@ namespace Model
      * response. If more results are available, a pagination token will be
      * provided.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEngagementInvitationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -92,14 +89,12 @@ namespace Model
      * response to a previous request was truncated. Pass this token to continue
      * listing invitations from where the previous call left off.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEngagementInvitationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEngagementInvitationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEngagementInvitationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +102,10 @@ namespace Model
      * <p>Specifies the type of participant for which to list engagement invitations.
      * Identifies the role of the participant.</p>
      */
-    inline const ParticipantType& GetParticipantType() const{ return m_participantType; }
+    inline ParticipantType GetParticipantType() const { return m_participantType; }
     inline bool ParticipantTypeHasBeenSet() const { return m_participantTypeHasBeenSet; }
-    inline void SetParticipantType(const ParticipantType& value) { m_participantTypeHasBeenSet = true; m_participantType = value; }
-    inline void SetParticipantType(ParticipantType&& value) { m_participantTypeHasBeenSet = true; m_participantType = std::move(value); }
-    inline ListEngagementInvitationsRequest& WithParticipantType(const ParticipantType& value) { SetParticipantType(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithParticipantType(ParticipantType&& value) { SetParticipantType(std::move(value)); return *this;}
+    inline void SetParticipantType(ParticipantType value) { m_participantTypeHasBeenSet = true; m_participantType = value; }
+    inline ListEngagementInvitationsRequest& WithParticipantType(ParticipantType value) { SetParticipantType(value); return *this;}
     ///@}
 
     ///@{
@@ -121,29 +114,27 @@ namespace Model
      * listed. The attributes in this payload help decide on acceptance or rejection of
      * the invitation.</p>
      */
-    inline const Aws::Vector<EngagementInvitationPayloadType>& GetPayloadType() const{ return m_payloadType; }
+    inline const Aws::Vector<EngagementInvitationPayloadType>& GetPayloadType() const { return m_payloadType; }
     inline bool PayloadTypeHasBeenSet() const { return m_payloadTypeHasBeenSet; }
-    inline void SetPayloadType(const Aws::Vector<EngagementInvitationPayloadType>& value) { m_payloadTypeHasBeenSet = true; m_payloadType = value; }
-    inline void SetPayloadType(Aws::Vector<EngagementInvitationPayloadType>&& value) { m_payloadTypeHasBeenSet = true; m_payloadType = std::move(value); }
-    inline ListEngagementInvitationsRequest& WithPayloadType(const Aws::Vector<EngagementInvitationPayloadType>& value) { SetPayloadType(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithPayloadType(Aws::Vector<EngagementInvitationPayloadType>&& value) { SetPayloadType(std::move(value)); return *this;}
-    inline ListEngagementInvitationsRequest& AddPayloadType(const EngagementInvitationPayloadType& value) { m_payloadTypeHasBeenSet = true; m_payloadType.push_back(value); return *this; }
-    inline ListEngagementInvitationsRequest& AddPayloadType(EngagementInvitationPayloadType&& value) { m_payloadTypeHasBeenSet = true; m_payloadType.push_back(std::move(value)); return *this; }
+    template<typename PayloadTypeT = Aws::Vector<EngagementInvitationPayloadType>>
+    void SetPayloadType(PayloadTypeT&& value) { m_payloadTypeHasBeenSet = true; m_payloadType = std::forward<PayloadTypeT>(value); }
+    template<typename PayloadTypeT = Aws::Vector<EngagementInvitationPayloadType>>
+    ListEngagementInvitationsRequest& WithPayloadType(PayloadTypeT&& value) { SetPayloadType(std::forward<PayloadTypeT>(value)); return *this;}
+    inline ListEngagementInvitationsRequest& AddPayloadType(EngagementInvitationPayloadType value) { m_payloadTypeHasBeenSet = true; m_payloadType.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> List of sender AWS account IDs to filter the invitations. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSenderAwsAccountId() const{ return m_senderAwsAccountId; }
+    inline const Aws::Vector<Aws::String>& GetSenderAwsAccountId() const { return m_senderAwsAccountId; }
     inline bool SenderAwsAccountIdHasBeenSet() const { return m_senderAwsAccountIdHasBeenSet; }
-    inline void SetSenderAwsAccountId(const Aws::Vector<Aws::String>& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId = value; }
-    inline void SetSenderAwsAccountId(Aws::Vector<Aws::String>&& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId = std::move(value); }
-    inline ListEngagementInvitationsRequest& WithSenderAwsAccountId(const Aws::Vector<Aws::String>& value) { SetSenderAwsAccountId(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithSenderAwsAccountId(Aws::Vector<Aws::String>&& value) { SetSenderAwsAccountId(std::move(value)); return *this;}
-    inline ListEngagementInvitationsRequest& AddSenderAwsAccountId(const Aws::String& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.push_back(value); return *this; }
-    inline ListEngagementInvitationsRequest& AddSenderAwsAccountId(Aws::String&& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.push_back(std::move(value)); return *this; }
-    inline ListEngagementInvitationsRequest& AddSenderAwsAccountId(const char* value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.push_back(value); return *this; }
+    template<typename SenderAwsAccountIdT = Aws::Vector<Aws::String>>
+    void SetSenderAwsAccountId(SenderAwsAccountIdT&& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId = std::forward<SenderAwsAccountIdT>(value); }
+    template<typename SenderAwsAccountIdT = Aws::Vector<Aws::String>>
+    ListEngagementInvitationsRequest& WithSenderAwsAccountId(SenderAwsAccountIdT&& value) { SetSenderAwsAccountId(std::forward<SenderAwsAccountIdT>(value)); return *this;}
+    template<typename SenderAwsAccountIdT = Aws::String>
+    ListEngagementInvitationsRequest& AddSenderAwsAccountId(SenderAwsAccountIdT&& value) { m_senderAwsAccountIdHasBeenSet = true; m_senderAwsAccountId.emplace_back(std::forward<SenderAwsAccountIdT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -152,26 +143,25 @@ namespace Model
      * can be sorted by fields such as <code>InvitationDate</code> or
      * <code>Status</code> to help partners view results in their preferred order.</p>
      */
-    inline const OpportunityEngagementInvitationSort& GetSort() const{ return m_sort; }
+    inline const OpportunityEngagementInvitationSort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const OpportunityEngagementInvitationSort& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(OpportunityEngagementInvitationSort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListEngagementInvitationsRequest& WithSort(const OpportunityEngagementInvitationSort& value) { SetSort(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithSort(OpportunityEngagementInvitationSort&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = OpportunityEngagementInvitationSort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = OpportunityEngagementInvitationSort>
+    ListEngagementInvitationsRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Status values to filter the invitations. </p>
      */
-    inline const Aws::Vector<InvitationStatus>& GetStatus() const{ return m_status; }
+    inline const Aws::Vector<InvitationStatus>& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::Vector<InvitationStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::Vector<InvitationStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListEngagementInvitationsRequest& WithStatus(const Aws::Vector<InvitationStatus>& value) { SetStatus(value); return *this;}
-    inline ListEngagementInvitationsRequest& WithStatus(Aws::Vector<InvitationStatus>&& value) { SetStatus(std::move(value)); return *this;}
-    inline ListEngagementInvitationsRequest& AddStatus(const InvitationStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
-    inline ListEngagementInvitationsRequest& AddStatus(InvitationStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
+    template<typename StatusT = Aws::Vector<InvitationStatus>>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::Vector<InvitationStatus>>
+    ListEngagementInvitationsRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
+    inline ListEngagementInvitationsRequest& AddStatus(InvitationStatus value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
     ///@}
   private:
 
@@ -181,13 +171,13 @@ namespace Model
     Aws::Vector<Aws::String> m_engagementIdentifier;
     bool m_engagementIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    ParticipantType m_participantType;
+    ParticipantType m_participantType{ParticipantType::NOT_SET};
     bool m_participantTypeHasBeenSet = false;
 
     Aws::Vector<EngagementInvitationPayloadType> m_payloadType;

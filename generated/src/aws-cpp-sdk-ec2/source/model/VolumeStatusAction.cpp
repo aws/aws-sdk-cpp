@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusAction::VolumeStatusAction() : 
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_eventTypeHasBeenSet(false)
-{
-}
-
 VolumeStatusAction::VolumeStatusAction(const XmlNode& xmlNode)
-  : VolumeStatusAction()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ VolumeStatusAction& VolumeStatusAction::operator =(const XmlNode& xmlNode)
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode eventIdNode = resultNode.FirstChild("eventId");
     if(!eventIdNode.IsNull())
     {
       m_eventId = Aws::Utils::Xml::DecodeEscapedXmlText(eventIdNode.GetText());
       m_eventIdHasBeenSet = true;
+       m_eventIdHasBeenSet = true;
     }
     XmlNode eventTypeNode = resultNode.FirstChild("eventType");
     if(!eventTypeNode.IsNull())
     {
       m_eventType = Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText());
       m_eventTypeHasBeenSet = true;
+       m_eventTypeHasBeenSet = true;
     }
   }
 

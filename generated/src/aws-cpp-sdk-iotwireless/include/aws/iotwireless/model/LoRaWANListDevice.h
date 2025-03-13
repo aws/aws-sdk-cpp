@@ -31,7 +31,7 @@ namespace Model
   class LoRaWANListDevice
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANListDevice();
+    AWS_IOTWIRELESS_API LoRaWANListDevice() = default;
     AWS_IOTWIRELESS_API LoRaWANListDevice(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANListDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The DevEUI value.</p>
      */
-    inline const Aws::String& GetDevEui() const{ return m_devEui; }
+    inline const Aws::String& GetDevEui() const { return m_devEui; }
     inline bool DevEuiHasBeenSet() const { return m_devEuiHasBeenSet; }
-    inline void SetDevEui(const Aws::String& value) { m_devEuiHasBeenSet = true; m_devEui = value; }
-    inline void SetDevEui(Aws::String&& value) { m_devEuiHasBeenSet = true; m_devEui = std::move(value); }
-    inline void SetDevEui(const char* value) { m_devEuiHasBeenSet = true; m_devEui.assign(value); }
-    inline LoRaWANListDevice& WithDevEui(const Aws::String& value) { SetDevEui(value); return *this;}
-    inline LoRaWANListDevice& WithDevEui(Aws::String&& value) { SetDevEui(std::move(value)); return *this;}
-    inline LoRaWANListDevice& WithDevEui(const char* value) { SetDevEui(value); return *this;}
+    template<typename DevEuiT = Aws::String>
+    void SetDevEui(DevEuiT&& value) { m_devEuiHasBeenSet = true; m_devEui = std::forward<DevEuiT>(value); }
+    template<typename DevEuiT = Aws::String>
+    LoRaWANListDevice& WithDevEui(DevEuiT&& value) { SetDevEui(std::forward<DevEuiT>(value)); return *this;}
     ///@}
   private:
 

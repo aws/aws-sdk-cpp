@@ -30,7 +30,7 @@ namespace Model
   class GetDistributionMetricDataResult
   {
   public:
-    AWS_LIGHTSAIL_API GetDistributionMetricDataResult();
+    AWS_LIGHTSAIL_API GetDistributionMetricDataResult() = default;
     AWS_LIGHTSAIL_API GetDistributionMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetDistributionMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,42 @@ namespace Model
     /**
      * <p>The name of the metric returned.</p>
      */
-    inline const DistributionMetricName& GetMetricName() const{ return m_metricName; }
-    inline void SetMetricName(const DistributionMetricName& value) { m_metricName = value; }
-    inline void SetMetricName(DistributionMetricName&& value) { m_metricName = std::move(value); }
-    inline GetDistributionMetricDataResult& WithMetricName(const DistributionMetricName& value) { SetMetricName(value); return *this;}
-    inline GetDistributionMetricDataResult& WithMetricName(DistributionMetricName&& value) { SetMetricName(std::move(value)); return *this;}
+    inline DistributionMetricName GetMetricName() const { return m_metricName; }
+    inline void SetMetricName(DistributionMetricName value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline GetDistributionMetricDataResult& WithMetricName(DistributionMetricName value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of objects that describe the metric data returned.</p>
      */
-    inline const Aws::Vector<MetricDatapoint>& GetMetricData() const{ return m_metricData; }
-    inline void SetMetricData(const Aws::Vector<MetricDatapoint>& value) { m_metricData = value; }
-    inline void SetMetricData(Aws::Vector<MetricDatapoint>&& value) { m_metricData = std::move(value); }
-    inline GetDistributionMetricDataResult& WithMetricData(const Aws::Vector<MetricDatapoint>& value) { SetMetricData(value); return *this;}
-    inline GetDistributionMetricDataResult& WithMetricData(Aws::Vector<MetricDatapoint>&& value) { SetMetricData(std::move(value)); return *this;}
-    inline GetDistributionMetricDataResult& AddMetricData(const MetricDatapoint& value) { m_metricData.push_back(value); return *this; }
-    inline GetDistributionMetricDataResult& AddMetricData(MetricDatapoint&& value) { m_metricData.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricDatapoint>& GetMetricData() const { return m_metricData; }
+    template<typename MetricDataT = Aws::Vector<MetricDatapoint>>
+    void SetMetricData(MetricDataT&& value) { m_metricDataHasBeenSet = true; m_metricData = std::forward<MetricDataT>(value); }
+    template<typename MetricDataT = Aws::Vector<MetricDatapoint>>
+    GetDistributionMetricDataResult& WithMetricData(MetricDataT&& value) { SetMetricData(std::forward<MetricDataT>(value)); return *this;}
+    template<typename MetricDataT = MetricDatapoint>
+    GetDistributionMetricDataResult& AddMetricData(MetricDataT&& value) { m_metricDataHasBeenSet = true; m_metricData.emplace_back(std::forward<MetricDataT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDistributionMetricDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDistributionMetricDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDistributionMetricDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDistributionMetricDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DistributionMetricName m_metricName;
+    DistributionMetricName m_metricName{DistributionMetricName::NOT_SET};
+    bool m_metricNameHasBeenSet = false;
 
     Aws::Vector<MetricDatapoint> m_metricData;
+    bool m_metricDataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

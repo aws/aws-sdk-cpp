@@ -18,10 +18,6 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-DataStoreRenderConfig::DataStoreRenderConfig()
-{
-}
-
 DataStoreRenderConfig::DataStoreRenderConfig(JsonView jsonValue)
 {
   *this = jsonValue;

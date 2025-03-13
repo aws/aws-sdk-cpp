@@ -19,14 +19,7 @@ namespace OAM
 namespace Model
 {
 
-InvalidParameterException::InvalidParameterException() : 
-    m_amznErrorTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidParameterException::InvalidParameterException(JsonView jsonValue)
-  : InvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -36,10 +29,8 @@ InvalidParameterException& InvalidParameterException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

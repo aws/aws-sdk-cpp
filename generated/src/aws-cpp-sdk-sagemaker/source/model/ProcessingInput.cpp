@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingInput::ProcessingInput() : 
-    m_inputNameHasBeenSet(false),
-    m_appManaged(false),
-    m_appManagedHasBeenSet(false),
-    m_s3InputHasBeenSet(false),
-    m_datasetDefinitionHasBeenSet(false)
-{
-}
-
 ProcessingInput::ProcessingInput(JsonView jsonValue)
-  : ProcessingInput()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProcessingInput& ProcessingInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputName"))
   {
     m_inputName = jsonValue.GetString("InputName");
-
     m_inputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppManaged"))
   {
     m_appManaged = jsonValue.GetBool("AppManaged");
-
     m_appManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Input"))
   {
     m_s3Input = jsonValue.GetObject("S3Input");
-
     m_s3InputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetDefinition"))
   {
     m_datasetDefinition = jsonValue.GetObject("DatasetDefinition");
-
     m_datasetDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class VirtualNodeSpec
   {
   public:
-    AWS_APPMESH_API VirtualNodeSpec();
+    AWS_APPMESH_API VirtualNodeSpec() = default;
     AWS_APPMESH_API VirtualNodeSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualNodeSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
     /**
      * <p>A reference to an object that represents the defaults for backends.</p>
      */
-    inline const BackendDefaults& GetBackendDefaults() const{ return m_backendDefaults; }
+    inline const BackendDefaults& GetBackendDefaults() const { return m_backendDefaults; }
     inline bool BackendDefaultsHasBeenSet() const { return m_backendDefaultsHasBeenSet; }
-    inline void SetBackendDefaults(const BackendDefaults& value) { m_backendDefaultsHasBeenSet = true; m_backendDefaults = value; }
-    inline void SetBackendDefaults(BackendDefaults&& value) { m_backendDefaultsHasBeenSet = true; m_backendDefaults = std::move(value); }
-    inline VirtualNodeSpec& WithBackendDefaults(const BackendDefaults& value) { SetBackendDefaults(value); return *this;}
-    inline VirtualNodeSpec& WithBackendDefaults(BackendDefaults&& value) { SetBackendDefaults(std::move(value)); return *this;}
+    template<typename BackendDefaultsT = BackendDefaults>
+    void SetBackendDefaults(BackendDefaultsT&& value) { m_backendDefaultsHasBeenSet = true; m_backendDefaults = std::forward<BackendDefaultsT>(value); }
+    template<typename BackendDefaultsT = BackendDefaults>
+    VirtualNodeSpec& WithBackendDefaults(BackendDefaultsT&& value) { SetBackendDefaults(std::forward<BackendDefaultsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>The backends that the virtual node is expected to send outbound traffic
      * to.</p>
      */
-    inline const Aws::Vector<Backend>& GetBackends() const{ return m_backends; }
+    inline const Aws::Vector<Backend>& GetBackends() const { return m_backends; }
     inline bool BackendsHasBeenSet() const { return m_backendsHasBeenSet; }
-    inline void SetBackends(const Aws::Vector<Backend>& value) { m_backendsHasBeenSet = true; m_backends = value; }
-    inline void SetBackends(Aws::Vector<Backend>&& value) { m_backendsHasBeenSet = true; m_backends = std::move(value); }
-    inline VirtualNodeSpec& WithBackends(const Aws::Vector<Backend>& value) { SetBackends(value); return *this;}
-    inline VirtualNodeSpec& WithBackends(Aws::Vector<Backend>&& value) { SetBackends(std::move(value)); return *this;}
-    inline VirtualNodeSpec& AddBackends(const Backend& value) { m_backendsHasBeenSet = true; m_backends.push_back(value); return *this; }
-    inline VirtualNodeSpec& AddBackends(Backend&& value) { m_backendsHasBeenSet = true; m_backends.push_back(std::move(value)); return *this; }
+    template<typename BackendsT = Aws::Vector<Backend>>
+    void SetBackends(BackendsT&& value) { m_backendsHasBeenSet = true; m_backends = std::forward<BackendsT>(value); }
+    template<typename BackendsT = Aws::Vector<Backend>>
+    VirtualNodeSpec& WithBackends(BackendsT&& value) { SetBackends(std::forward<BackendsT>(value)); return *this;}
+    template<typename BackendsT = Backend>
+    VirtualNodeSpec& AddBackends(BackendsT&& value) { m_backendsHasBeenSet = true; m_backends.emplace_back(std::forward<BackendsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,26 +75,26 @@ namespace Model
      * <p>The listener that the virtual node is expected to receive inbound traffic
      * from. You can specify one listener.</p>
      */
-    inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
+    inline const Aws::Vector<Listener>& GetListeners() const { return m_listeners; }
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
-    inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
-    inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
-    inline VirtualNodeSpec& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
-    inline VirtualNodeSpec& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
-    inline VirtualNodeSpec& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
-    inline VirtualNodeSpec& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
+    template<typename ListenersT = Aws::Vector<Listener>>
+    void SetListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners = std::forward<ListenersT>(value); }
+    template<typename ListenersT = Aws::Vector<Listener>>
+    VirtualNodeSpec& WithListeners(ListenersT&& value) { SetListeners(std::forward<ListenersT>(value)); return *this;}
+    template<typename ListenersT = Listener>
+    VirtualNodeSpec& AddListeners(ListenersT&& value) { m_listenersHasBeenSet = true; m_listeners.emplace_back(std::forward<ListenersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The inbound and outbound access logging information for the virtual node.</p>
      */
-    inline const Logging& GetLogging() const{ return m_logging; }
+    inline const Logging& GetLogging() const { return m_logging; }
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
-    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
-    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
-    inline VirtualNodeSpec& WithLogging(const Logging& value) { SetLogging(value); return *this;}
-    inline VirtualNodeSpec& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+    template<typename LoggingT = Logging>
+    void SetLogging(LoggingT&& value) { m_loggingHasBeenSet = true; m_logging = std::forward<LoggingT>(value); }
+    template<typename LoggingT = Logging>
+    VirtualNodeSpec& WithLogging(LoggingT&& value) { SetLogging(std::forward<LoggingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +103,12 @@ namespace Model
      * does not expect ingress traffic, you can omit this parameter. If you specify a
      * <code>listener</code>, then you must specify service discovery information.</p>
      */
-    inline const ServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
+    inline const ServiceDiscovery& GetServiceDiscovery() const { return m_serviceDiscovery; }
     inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
-    inline void SetServiceDiscovery(const ServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
-    inline void SetServiceDiscovery(ServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
-    inline VirtualNodeSpec& WithServiceDiscovery(const ServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
-    inline VirtualNodeSpec& WithServiceDiscovery(ServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
+    template<typename ServiceDiscoveryT = ServiceDiscovery>
+    void SetServiceDiscovery(ServiceDiscoveryT&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::forward<ServiceDiscoveryT>(value); }
+    template<typename ServiceDiscoveryT = ServiceDiscovery>
+    VirtualNodeSpec& WithServiceDiscovery(ServiceDiscoveryT&& value) { SetServiceDiscovery(std::forward<ServiceDiscoveryT>(value)); return *this;}
     ///@}
   private:
 

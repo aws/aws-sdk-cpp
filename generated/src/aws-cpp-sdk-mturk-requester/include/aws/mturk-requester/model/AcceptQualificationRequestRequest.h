@@ -21,7 +21,7 @@ namespace Model
   class AcceptQualificationRequestRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API AcceptQualificationRequestRequest();
+    AWS_MTURK_API AcceptQualificationRequestRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ID of the Qualification request, as returned by the
      * <code>GetQualificationRequests</code> operation.</p>
      */
-    inline const Aws::String& GetQualificationRequestId() const{ return m_qualificationRequestId; }
+    inline const Aws::String& GetQualificationRequestId() const { return m_qualificationRequestId; }
     inline bool QualificationRequestIdHasBeenSet() const { return m_qualificationRequestIdHasBeenSet; }
-    inline void SetQualificationRequestId(const Aws::String& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = value; }
-    inline void SetQualificationRequestId(Aws::String&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = std::move(value); }
-    inline void SetQualificationRequestId(const char* value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId.assign(value); }
-    inline AcceptQualificationRequestRequest& WithQualificationRequestId(const Aws::String& value) { SetQualificationRequestId(value); return *this;}
-    inline AcceptQualificationRequestRequest& WithQualificationRequestId(Aws::String&& value) { SetQualificationRequestId(std::move(value)); return *this;}
-    inline AcceptQualificationRequestRequest& WithQualificationRequestId(const char* value) { SetQualificationRequestId(value); return *this;}
+    template<typename QualificationRequestIdT = Aws::String>
+    void SetQualificationRequestId(QualificationRequestIdT&& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = std::forward<QualificationRequestIdT>(value); }
+    template<typename QualificationRequestIdT = Aws::String>
+    AcceptQualificationRequestRequest& WithQualificationRequestId(QualificationRequestIdT&& value) { SetQualificationRequestId(std::forward<QualificationRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * presence or absence of the Qualification as the basis for a HIT requirement.
      * </p>
      */
-    inline int GetIntegerValue() const{ return m_integerValue; }
+    inline int GetIntegerValue() const { return m_integerValue; }
     inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
     inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
     inline AcceptQualificationRequestRequest& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_qualificationRequestId;
     bool m_qualificationRequestIdHasBeenSet = false;
 
-    int m_integerValue;
+    int m_integerValue{0};
     bool m_integerValueHasBeenSet = false;
   };
 

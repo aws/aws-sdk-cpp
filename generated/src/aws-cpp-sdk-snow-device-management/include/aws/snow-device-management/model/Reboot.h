@@ -29,7 +29,7 @@ namespace Model
   class Reboot
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API Reboot();
+    AWS_SNOWDEVICEMANAGEMENT_API Reboot() = default;
     AWS_SNOWDEVICEMANAGEMENT_API Reboot(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Reboot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;

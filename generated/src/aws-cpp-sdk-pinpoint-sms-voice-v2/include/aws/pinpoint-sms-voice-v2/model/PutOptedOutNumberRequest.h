@@ -21,7 +21,7 @@ namespace Model
   class PutOptedOutNumberRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API PutOptedOutNumberRequest();
+    AWS_PINPOINTSMSVOICEV2_API PutOptedOutNumberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      *  <p>If you are using a shared AWS End User Messaging SMS and Voice
      * resource then you must use the full Amazon Resource Name(ARN).</p> 
      */
-    inline const Aws::String& GetOptOutListName() const{ return m_optOutListName; }
+    inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
     inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
-    inline void SetOptOutListName(const Aws::String& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = value; }
-    inline void SetOptOutListName(Aws::String&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::move(value); }
-    inline void SetOptOutListName(const char* value) { m_optOutListNameHasBeenSet = true; m_optOutListName.assign(value); }
-    inline PutOptedOutNumberRequest& WithOptOutListName(const Aws::String& value) { SetOptOutListName(value); return *this;}
-    inline PutOptedOutNumberRequest& WithOptOutListName(Aws::String&& value) { SetOptOutListName(std::move(value)); return *this;}
-    inline PutOptedOutNumberRequest& WithOptOutListName(const char* value) { SetOptOutListName(value); return *this;}
+    template<typename OptOutListNameT = Aws::String>
+    void SetOptOutListName(OptOutListNameT&& value) { m_optOutListNameHasBeenSet = true; m_optOutListName = std::forward<OptOutListNameT>(value); }
+    template<typename OptOutListNameT = Aws::String>
+    PutOptedOutNumberRequest& WithOptOutListName(OptOutListNameT&& value) { SetOptOutListName(std::forward<OptOutListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phone number to add to the OptOutList in E.164 format.</p>
      */
-    inline const Aws::String& GetOptedOutNumber() const{ return m_optedOutNumber; }
+    inline const Aws::String& GetOptedOutNumber() const { return m_optedOutNumber; }
     inline bool OptedOutNumberHasBeenSet() const { return m_optedOutNumberHasBeenSet; }
-    inline void SetOptedOutNumber(const Aws::String& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = value; }
-    inline void SetOptedOutNumber(Aws::String&& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = std::move(value); }
-    inline void SetOptedOutNumber(const char* value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber.assign(value); }
-    inline PutOptedOutNumberRequest& WithOptedOutNumber(const Aws::String& value) { SetOptedOutNumber(value); return *this;}
-    inline PutOptedOutNumberRequest& WithOptedOutNumber(Aws::String&& value) { SetOptedOutNumber(std::move(value)); return *this;}
-    inline PutOptedOutNumberRequest& WithOptedOutNumber(const char* value) { SetOptedOutNumber(value); return *this;}
+    template<typename OptedOutNumberT = Aws::String>
+    void SetOptedOutNumber(OptedOutNumberT&& value) { m_optedOutNumberHasBeenSet = true; m_optedOutNumber = std::forward<OptedOutNumberT>(value); }
+    template<typename OptedOutNumberT = Aws::String>
+    PutOptedOutNumberRequest& WithOptedOutNumber(OptedOutNumberT&& value) { SetOptedOutNumber(std::forward<OptedOutNumberT>(value)); return *this;}
     ///@}
   private:
 

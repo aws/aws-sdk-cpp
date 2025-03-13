@@ -18,16 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-EcsCluster::EcsCluster() : 
-    m_ecsClusterArnHasBeenSet(false),
-    m_ecsClusterNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_registeredAtHasBeenSet(false)
-{
-}
-
 EcsCluster::EcsCluster(JsonView jsonValue)
-  : EcsCluster()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EcsCluster& EcsCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EcsClusterArn"))
   {
     m_ecsClusterArn = jsonValue.GetString("EcsClusterArn");
-
     m_ecsClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EcsClusterName"))
   {
     m_ecsClusterName = jsonValue.GetString("EcsClusterName");
-
     m_ecsClusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredAt"))
   {
     m_registeredAt = jsonValue.GetString("RegisteredAt");
-
     m_registeredAtHasBeenSet = true;
   }
-
   return *this;
 }
 

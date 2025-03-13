@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCustomEntityTypeResult::GetCustomEntityTypeResult()
-{
-}
-
 GetCustomEntityTypeResult::GetCustomEntityTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetCustomEntityTypeResult& GetCustomEntityTypeResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegexString"))
   {
     m_regexString = jsonValue.GetString("RegexString");
-
+    m_regexStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContextWords"))
   {
     Aws::Utils::Array<JsonView> contextWordsJsonList = jsonValue.GetArray("ContextWords");
@@ -48,14 +42,15 @@ GetCustomEntityTypeResult& GetCustomEntityTypeResult::operator =(const Aws::Amaz
     {
       m_contextWords.push_back(contextWordsJsonList[contextWordsIndex].AsString());
     }
+    m_contextWordsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

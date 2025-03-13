@@ -18,22 +18,7 @@ namespace QApps
 namespace Model
 {
 
-QQueryCard::QQueryCard() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_dependenciesHasBeenSet(false),
-    m_type(CardType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_promptHasBeenSet(false),
-    m_outputSource(CardOutputSource::NOT_SET),
-    m_outputSourceHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_memoryReferencesHasBeenSet(false)
-{
-}
-
 QQueryCard::QQueryCard(JsonView jsonValue)
-  : QQueryCard()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ QQueryCard& QQueryCard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependencies"))
   {
     Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
@@ -63,35 +44,26 @@ QQueryCard& QQueryCard::operator =(JsonView jsonValue)
     }
     m_dependenciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CardTypeMapper::GetCardTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prompt"))
   {
     m_prompt = jsonValue.GetString("prompt");
-
     m_promptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputSource"))
   {
     m_outputSource = CardOutputSourceMapper::GetCardOutputSourceForName(jsonValue.GetString("outputSource"));
-
     m_outputSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeFilter"))
   {
     m_attributeFilter = jsonValue.GetObject("attributeFilter");
-
     m_attributeFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryReferences"))
   {
     Aws::Utils::Array<JsonView> memoryReferencesJsonList = jsonValue.GetArray("memoryReferences");
@@ -101,7 +73,6 @@ QQueryCard& QQueryCard::operator =(JsonView jsonValue)
     }
     m_memoryReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

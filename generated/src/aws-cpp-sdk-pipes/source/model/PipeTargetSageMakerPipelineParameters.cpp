@@ -18,13 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetSageMakerPipelineParameters::PipeTargetSageMakerPipelineParameters() : 
-    m_pipelineParameterListHasBeenSet(false)
-{
-}
-
 PipeTargetSageMakerPipelineParameters::PipeTargetSageMakerPipelineParameters(JsonView jsonValue)
-  : PipeTargetSageMakerPipelineParameters()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PipeTargetSageMakerPipelineParameters& PipeTargetSageMakerPipelineParameters::op
     }
     m_pipelineParameterListHasBeenSet = true;
   }
-
   return *this;
 }
 

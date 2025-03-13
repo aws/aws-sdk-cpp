@@ -32,7 +32,7 @@ namespace Model
   class TextInputEvent
   {
   public:
-    AWS_QBUSINESS_API TextInputEvent();
+    AWS_QBUSINESS_API TextInputEvent() = default;
     AWS_QBUSINESS_API TextInputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API TextInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A user message in a text message input event.</p>
      */
-    inline const Aws::String& GetUserMessage() const{ return m_userMessage; }
+    inline const Aws::String& GetUserMessage() const { return m_userMessage; }
     inline bool UserMessageHasBeenSet() const { return m_userMessageHasBeenSet; }
-    inline void SetUserMessage(const Aws::String& value) { m_userMessageHasBeenSet = true; m_userMessage = value; }
-    inline void SetUserMessage(Aws::String&& value) { m_userMessageHasBeenSet = true; m_userMessage = std::move(value); }
-    inline void SetUserMessage(const char* value) { m_userMessageHasBeenSet = true; m_userMessage.assign(value); }
-    inline TextInputEvent& WithUserMessage(const Aws::String& value) { SetUserMessage(value); return *this;}
-    inline TextInputEvent& WithUserMessage(Aws::String&& value) { SetUserMessage(std::move(value)); return *this;}
-    inline TextInputEvent& WithUserMessage(const char* value) { SetUserMessage(value); return *this;}
+    template<typename UserMessageT = Aws::String>
+    void SetUserMessage(UserMessageT&& value) { m_userMessageHasBeenSet = true; m_userMessage = std::forward<UserMessageT>(value); }
+    template<typename UserMessageT = Aws::String>
+    TextInputEvent& WithUserMessage(UserMessageT&& value) { SetUserMessage(std::forward<UserMessageT>(value)); return *this;}
     ///@}
   private:
 

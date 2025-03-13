@@ -12,11 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteExtensionAssociationRequest::DeleteExtensionAssociationRequest() : 
-    m_extensionAssociationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteExtensionAssociationRequest::SerializePayload() const
 {
   return {};

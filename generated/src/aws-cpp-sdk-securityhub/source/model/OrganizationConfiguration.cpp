@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-OrganizationConfiguration::OrganizationConfiguration() : 
-    m_configurationType(OrganizationConfigurationConfigurationType::NOT_SET),
-    m_configurationTypeHasBeenSet(false),
-    m_status(OrganizationConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 OrganizationConfiguration::OrganizationConfiguration(JsonView jsonValue)
-  : OrganizationConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ OrganizationConfiguration& OrganizationConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ConfigurationType"))
   {
     m_configurationType = OrganizationConfigurationConfigurationTypeMapper::GetOrganizationConfigurationConfigurationTypeForName(jsonValue.GetString("ConfigurationType"));
-
     m_configurationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrganizationConfigurationStatusMapper::GetOrganizationConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

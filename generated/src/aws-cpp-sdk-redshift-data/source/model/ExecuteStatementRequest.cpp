@@ -12,27 +12,6 @@ using namespace Aws::RedshiftDataAPIService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteStatementRequest::ExecuteStatementRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_clusterIdentifierHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_dbUserHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_resultFormat(ResultFormatString::NOT_SET),
-    m_resultFormatHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionKeepAliveSeconds(0),
-    m_sessionKeepAliveSecondsHasBeenSet(false),
-    m_sqlHasBeenSet(false),
-    m_statementNameHasBeenSet(false),
-    m_withEvent(false),
-    m_withEventHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteStatementRequest::SerializePayload() const
 {
   JsonValue payload;

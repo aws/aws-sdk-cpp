@@ -27,7 +27,7 @@ namespace Model
   class UpdateAccessResult
   {
   public:
-    AWS_TRANSFER_API UpdateAccessResult();
+    AWS_TRANSFER_API UpdateAccessResult() = default;
     AWS_TRANSFER_API UpdateAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API UpdateAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The identifier of the server that the user is attached to.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
-    inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverId.assign(value); }
-    inline UpdateAccessResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline UpdateAccessResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline UpdateAccessResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    inline const Aws::String& GetServerId() const { return m_serverId; }
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    UpdateAccessResult& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * S3 or Amazon EFS resources over the enabled protocols using Amazon Web
      * ServicesTransfer Family.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
-    inline void SetExternalId(const Aws::String& value) { m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalId.assign(value); }
-    inline UpdateAccessResult& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline UpdateAccessResult& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline UpdateAccessResult& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    UpdateAccessResult& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAccessResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverId;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

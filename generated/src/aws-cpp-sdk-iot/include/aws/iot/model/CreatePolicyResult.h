@@ -32,7 +32,7 @@ namespace Model
   class CreatePolicyResult
   {
   public:
-    AWS_IOT_API CreatePolicyResult();
+    AWS_IOT_API CreatePolicyResult() = default;
     AWS_IOT_API CreatePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API CreatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,75 +41,70 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
-    inline CreatePolicyResult& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline CreatePolicyResult& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline CreatePolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    CreatePolicyResult& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy ARN.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
-    inline CreatePolicyResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline CreatePolicyResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline CreatePolicyResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    CreatePolicyResult& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON document that describes the policy.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
-    inline CreatePolicyResult& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline CreatePolicyResult& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline CreatePolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    CreatePolicyResult& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy version ID.</p>
      */
-    inline const Aws::String& GetPolicyVersionId() const{ return m_policyVersionId; }
-    inline void SetPolicyVersionId(const Aws::String& value) { m_policyVersionId = value; }
-    inline void SetPolicyVersionId(Aws::String&& value) { m_policyVersionId = std::move(value); }
-    inline void SetPolicyVersionId(const char* value) { m_policyVersionId.assign(value); }
-    inline CreatePolicyResult& WithPolicyVersionId(const Aws::String& value) { SetPolicyVersionId(value); return *this;}
-    inline CreatePolicyResult& WithPolicyVersionId(Aws::String&& value) { SetPolicyVersionId(std::move(value)); return *this;}
-    inline CreatePolicyResult& WithPolicyVersionId(const char* value) { SetPolicyVersionId(value); return *this;}
+    inline const Aws::String& GetPolicyVersionId() const { return m_policyVersionId; }
+    template<typename PolicyVersionIdT = Aws::String>
+    void SetPolicyVersionId(PolicyVersionIdT&& value) { m_policyVersionIdHasBeenSet = true; m_policyVersionId = std::forward<PolicyVersionIdT>(value); }
+    template<typename PolicyVersionIdT = Aws::String>
+    CreatePolicyResult& WithPolicyVersionId(PolicyVersionIdT&& value) { SetPolicyVersionId(std::forward<PolicyVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet = false;
 
     Aws::String m_policyVersionId;
+    bool m_policyVersionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

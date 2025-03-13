@@ -31,7 +31,7 @@ namespace Model
   class IntegrationConfig
   {
   public:
-    AWS_CUSTOMERPROFILES_API IntegrationConfig();
+    AWS_CUSTOMERPROFILES_API IntegrationConfig() = default;
     AWS_CUSTOMERPROFILES_API IntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API IntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.</p>
      */
-    inline const AppflowIntegration& GetAppflowIntegration() const{ return m_appflowIntegration; }
+    inline const AppflowIntegration& GetAppflowIntegration() const { return m_appflowIntegration; }
     inline bool AppflowIntegrationHasBeenSet() const { return m_appflowIntegrationHasBeenSet; }
-    inline void SetAppflowIntegration(const AppflowIntegration& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = value; }
-    inline void SetAppflowIntegration(AppflowIntegration&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::move(value); }
-    inline IntegrationConfig& WithAppflowIntegration(const AppflowIntegration& value) { SetAppflowIntegration(value); return *this;}
-    inline IntegrationConfig& WithAppflowIntegration(AppflowIntegration&& value) { SetAppflowIntegration(std::move(value)); return *this;}
+    template<typename AppflowIntegrationT = AppflowIntegration>
+    void SetAppflowIntegration(AppflowIntegrationT&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::forward<AppflowIntegrationT>(value); }
+    template<typename AppflowIntegrationT = AppflowIntegration>
+    IntegrationConfig& WithAppflowIntegration(AppflowIntegrationT&& value) { SetAppflowIntegration(std::forward<AppflowIntegrationT>(value)); return *this;}
     ///@}
   private:
 

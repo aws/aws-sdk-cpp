@@ -34,7 +34,7 @@ namespace Model
   class CountOpenWorkflowExecutionsResult
   {
   public:
-    AWS_SWF_API CountOpenWorkflowExecutionsResult();
+    AWS_SWF_API CountOpenWorkflowExecutionsResult() = default;
     AWS_SWF_API CountOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SWF_API CountOpenWorkflowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,8 +43,8 @@ namespace Model
     /**
      * <p>The number of workflow executions.</p>
      */
-    inline int GetCount() const{ return m_count; }
-    inline void SetCount(int value) { m_count = value; }
+    inline int GetCount() const { return m_count; }
+    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline CountOpenWorkflowExecutionsResult& WithCount(int value) { SetCount(value); return *this;}
     ///@}
 
@@ -53,28 +53,29 @@ namespace Model
      * <p>If set to true, indicates that the actual count was more than the maximum
      * supported by this API and the count returned is the truncated value.</p>
      */
-    inline bool GetTruncated() const{ return m_truncated; }
-    inline void SetTruncated(bool value) { m_truncated = value; }
+    inline bool GetTruncated() const { return m_truncated; }
+    inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
     inline CountOpenWorkflowExecutionsResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CountOpenWorkflowExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CountOpenWorkflowExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CountOpenWorkflowExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CountOpenWorkflowExecutionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
+    bool m_countHasBeenSet = false;
 
-    bool m_truncated;
+    bool m_truncated{false};
+    bool m_truncatedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

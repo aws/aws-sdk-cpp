@@ -18,14 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-FixedResponseAction::FixedResponseAction() : 
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false)
-{
-}
-
 FixedResponseAction::FixedResponseAction(JsonView jsonValue)
-  : FixedResponseAction()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FixedResponseAction& FixedResponseAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetInteger("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptModelInferenceConfiguration::PromptModelInferenceConfiguration() : 
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false),
-    m_stopSequencesHasBeenSet(false),
-    m_temperature(0.0),
-    m_temperatureHasBeenSet(false),
-    m_topP(0.0),
-    m_topPHasBeenSet(false)
-{
-}
-
 PromptModelInferenceConfiguration::PromptModelInferenceConfiguration(JsonView jsonValue)
-  : PromptModelInferenceConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ PromptModelInferenceConfiguration& PromptModelInferenceConfiguration::operator =
   if(jsonValue.ValueExists("maxTokens"))
   {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
-
     m_maxTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopSequences"))
   {
     Aws::Utils::Array<JsonView> stopSequencesJsonList = jsonValue.GetArray("stopSequences");
@@ -53,21 +39,16 @@ PromptModelInferenceConfiguration& PromptModelInferenceConfiguration::operator =
     }
     m_stopSequencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("temperature"))
   {
     m_temperature = jsonValue.GetDouble("temperature");
-
     m_temperatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topP"))
   {
     m_topP = jsonValue.GetDouble("topP");
-
     m_topPHasBeenSet = true;
   }
-
   return *this;
 }
 

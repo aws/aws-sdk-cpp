@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-PipelinePauseStateSettings::PipelinePauseStateSettings() : 
-    m_pipelineId(PipelineId::NOT_SET),
-    m_pipelineIdHasBeenSet(false)
-{
-}
-
 PipelinePauseStateSettings::PipelinePauseStateSettings(JsonView jsonValue)
-  : PipelinePauseStateSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PipelinePauseStateSettings& PipelinePauseStateSettings::operator =(JsonView json
   if(jsonValue.ValueExists("pipelineId"))
   {
     m_pipelineId = PipelineIdMapper::GetPipelineIdForName(jsonValue.GetString("pipelineId"));
-
     m_pipelineIdHasBeenSet = true;
   }
-
   return *this;
 }
 

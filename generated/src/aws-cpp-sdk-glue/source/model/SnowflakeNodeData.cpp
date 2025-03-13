@@ -18,35 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SnowflakeNodeData::SnowflakeNodeData() : 
-    m_sourceTypeHasBeenSet(false),
-    m_connectionHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tempDirHasBeenSet(false),
-    m_iamRoleHasBeenSet(false),
-    m_additionalOptionsHasBeenSet(false),
-    m_sampleQueryHasBeenSet(false),
-    m_preActionHasBeenSet(false),
-    m_postActionHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_upsert(false),
-    m_upsertHasBeenSet(false),
-    m_mergeActionHasBeenSet(false),
-    m_mergeWhenMatchedHasBeenSet(false),
-    m_mergeWhenNotMatchedHasBeenSet(false),
-    m_mergeClauseHasBeenSet(false),
-    m_stagingTableHasBeenSet(false),
-    m_selectedColumnsHasBeenSet(false),
-    m_autoPushdown(false),
-    m_autoPushdownHasBeenSet(false),
-    m_tableSchemaHasBeenSet(false)
-{
-}
-
 SnowflakeNodeData::SnowflakeNodeData(JsonView jsonValue)
-  : SnowflakeNodeData()
 {
   *this = jsonValue;
 }
@@ -56,52 +28,38 @@ SnowflakeNodeData& SnowflakeNodeData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Connection"))
   {
     m_connection = jsonValue.GetObject("Connection");
-
     m_connectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetString("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TempDir"))
   {
     m_tempDir = jsonValue.GetString("TempDir");
-
     m_tempDirHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRole"))
   {
     m_iamRole = jsonValue.GetObject("IamRole");
-
     m_iamRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOptions"))
   {
     Aws::Map<Aws::String, JsonView> additionalOptionsJsonMap = jsonValue.GetObject("AdditionalOptions").GetAllObjects();
@@ -111,77 +69,56 @@ SnowflakeNodeData& SnowflakeNodeData::operator =(JsonView jsonValue)
     }
     m_additionalOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleQuery"))
   {
     m_sampleQuery = jsonValue.GetString("SampleQuery");
-
     m_sampleQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreAction"))
   {
     m_preAction = jsonValue.GetString("PreAction");
-
     m_preActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostAction"))
   {
     m_postAction = jsonValue.GetString("PostAction");
-
     m_postActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Upsert"))
   {
     m_upsert = jsonValue.GetBool("Upsert");
-
     m_upsertHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeAction"))
   {
     m_mergeAction = jsonValue.GetString("MergeAction");
-
     m_mergeActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeWhenMatched"))
   {
     m_mergeWhenMatched = jsonValue.GetString("MergeWhenMatched");
-
     m_mergeWhenMatchedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeWhenNotMatched"))
   {
     m_mergeWhenNotMatched = jsonValue.GetString("MergeWhenNotMatched");
-
     m_mergeWhenNotMatchedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergeClause"))
   {
     m_mergeClause = jsonValue.GetString("MergeClause");
-
     m_mergeClauseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StagingTable"))
   {
     m_stagingTable = jsonValue.GetString("StagingTable");
-
     m_stagingTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedColumns"))
   {
     Aws::Utils::Array<JsonView> selectedColumnsJsonList = jsonValue.GetArray("SelectedColumns");
@@ -191,14 +128,11 @@ SnowflakeNodeData& SnowflakeNodeData::operator =(JsonView jsonValue)
     }
     m_selectedColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoPushdown"))
   {
     m_autoPushdown = jsonValue.GetBool("AutoPushdown");
-
     m_autoPushdownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableSchema"))
   {
     Aws::Utils::Array<JsonView> tableSchemaJsonList = jsonValue.GetArray("TableSchema");
@@ -208,7 +142,6 @@ SnowflakeNodeData& SnowflakeNodeData::operator =(JsonView jsonValue)
     }
     m_tableSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

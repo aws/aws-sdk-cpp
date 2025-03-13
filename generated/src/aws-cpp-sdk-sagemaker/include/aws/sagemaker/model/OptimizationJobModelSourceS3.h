@@ -33,7 +33,7 @@ namespace Model
   class OptimizationJobModelSourceS3
   {
   public:
-    AWS_SAGEMAKER_API OptimizationJobModelSourceS3();
+    AWS_SAGEMAKER_API OptimizationJobModelSourceS3() = default;
     AWS_SAGEMAKER_API OptimizationJobModelSourceS3(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OptimizationJobModelSourceS3& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>An Amazon S3 URI that locates a source model to optimize with an optimization
      * job.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline OptimizationJobModelSourceS3& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline OptimizationJobModelSourceS3& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline OptimizationJobModelSourceS3& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    OptimizationJobModelSourceS3& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The access configuration settings for the source ML model for an optimization
      * job, where you can accept the model end-user license agreement (EULA).</p>
      */
-    inline const OptimizationModelAccessConfig& GetModelAccessConfig() const{ return m_modelAccessConfig; }
+    inline const OptimizationModelAccessConfig& GetModelAccessConfig() const { return m_modelAccessConfig; }
     inline bool ModelAccessConfigHasBeenSet() const { return m_modelAccessConfigHasBeenSet; }
-    inline void SetModelAccessConfig(const OptimizationModelAccessConfig& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = value; }
-    inline void SetModelAccessConfig(OptimizationModelAccessConfig&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::move(value); }
-    inline OptimizationJobModelSourceS3& WithModelAccessConfig(const OptimizationModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
-    inline OptimizationJobModelSourceS3& WithModelAccessConfig(OptimizationModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
+    template<typename ModelAccessConfigT = OptimizationModelAccessConfig>
+    void SetModelAccessConfig(ModelAccessConfigT&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::forward<ModelAccessConfigT>(value); }
+    template<typename ModelAccessConfigT = OptimizationModelAccessConfig>
+    OptimizationJobModelSourceS3& WithModelAccessConfig(ModelAccessConfigT&& value) { SetModelAccessConfig(std::forward<ModelAccessConfigT>(value)); return *this;}
     ///@}
   private:
 

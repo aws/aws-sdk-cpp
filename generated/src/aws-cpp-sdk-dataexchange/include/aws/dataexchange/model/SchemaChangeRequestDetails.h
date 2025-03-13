@@ -34,7 +34,7 @@ namespace Model
   class SchemaChangeRequestDetails
   {
   public:
-    AWS_DATAEXCHANGE_API SchemaChangeRequestDetails();
+    AWS_DATAEXCHANGE_API SchemaChangeRequestDetails() = default;
     AWS_DATAEXCHANGE_API SchemaChangeRequestDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API SchemaChangeRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,33 @@ namespace Model
      * <p>List of schema changes happening in the scope of this notification. This can
      * have up to 100 entries.</p>
      */
-    inline const Aws::Vector<SchemaChangeDetails>& GetChanges() const{ return m_changes; }
+    inline const Aws::Vector<SchemaChangeDetails>& GetChanges() const { return m_changes; }
     inline bool ChangesHasBeenSet() const { return m_changesHasBeenSet; }
-    inline void SetChanges(const Aws::Vector<SchemaChangeDetails>& value) { m_changesHasBeenSet = true; m_changes = value; }
-    inline void SetChanges(Aws::Vector<SchemaChangeDetails>&& value) { m_changesHasBeenSet = true; m_changes = std::move(value); }
-    inline SchemaChangeRequestDetails& WithChanges(const Aws::Vector<SchemaChangeDetails>& value) { SetChanges(value); return *this;}
-    inline SchemaChangeRequestDetails& WithChanges(Aws::Vector<SchemaChangeDetails>&& value) { SetChanges(std::move(value)); return *this;}
-    inline SchemaChangeRequestDetails& AddChanges(const SchemaChangeDetails& value) { m_changesHasBeenSet = true; m_changes.push_back(value); return *this; }
-    inline SchemaChangeRequestDetails& AddChanges(SchemaChangeDetails&& value) { m_changesHasBeenSet = true; m_changes.push_back(std::move(value)); return *this; }
+    template<typename ChangesT = Aws::Vector<SchemaChangeDetails>>
+    void SetChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes = std::forward<ChangesT>(value); }
+    template<typename ChangesT = Aws::Vector<SchemaChangeDetails>>
+    SchemaChangeRequestDetails& WithChanges(ChangesT&& value) { SetChanges(std::forward<ChangesT>(value)); return *this;}
+    template<typename ChangesT = SchemaChangeDetails>
+    SchemaChangeRequestDetails& AddChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes.emplace_back(std::forward<ChangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A date in the future when the schema change is taking effect.</p>
      */
-    inline const Aws::Utils::DateTime& GetSchemaChangeAt() const{ return m_schemaChangeAt; }
+    inline const Aws::Utils::DateTime& GetSchemaChangeAt() const { return m_schemaChangeAt; }
     inline bool SchemaChangeAtHasBeenSet() const { return m_schemaChangeAtHasBeenSet; }
-    inline void SetSchemaChangeAt(const Aws::Utils::DateTime& value) { m_schemaChangeAtHasBeenSet = true; m_schemaChangeAt = value; }
-    inline void SetSchemaChangeAt(Aws::Utils::DateTime&& value) { m_schemaChangeAtHasBeenSet = true; m_schemaChangeAt = std::move(value); }
-    inline SchemaChangeRequestDetails& WithSchemaChangeAt(const Aws::Utils::DateTime& value) { SetSchemaChangeAt(value); return *this;}
-    inline SchemaChangeRequestDetails& WithSchemaChangeAt(Aws::Utils::DateTime&& value) { SetSchemaChangeAt(std::move(value)); return *this;}
+    template<typename SchemaChangeAtT = Aws::Utils::DateTime>
+    void SetSchemaChangeAt(SchemaChangeAtT&& value) { m_schemaChangeAtHasBeenSet = true; m_schemaChangeAt = std::forward<SchemaChangeAtT>(value); }
+    template<typename SchemaChangeAtT = Aws::Utils::DateTime>
+    SchemaChangeRequestDetails& WithSchemaChangeAt(SchemaChangeAtT&& value) { SetSchemaChangeAt(std::forward<SchemaChangeAtT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SchemaChangeDetails> m_changes;
     bool m_changesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_schemaChangeAt;
+    Aws::Utils::DateTime m_schemaChangeAt{};
     bool m_schemaChangeAtHasBeenSet = false;
   };
 

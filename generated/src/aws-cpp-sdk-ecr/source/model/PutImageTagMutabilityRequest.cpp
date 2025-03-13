@@ -12,14 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutImageTagMutabilityRequest::PutImageTagMutabilityRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false)
-{
-}
-
 Aws::String PutImageTagMutabilityRequest::SerializePayload() const
 {
   JsonValue payload;

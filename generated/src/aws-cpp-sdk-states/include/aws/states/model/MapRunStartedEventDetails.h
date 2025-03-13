@@ -32,7 +32,7 @@ namespace Model
   class MapRunStartedEventDetails
   {
   public:
-    AWS_SFN_API MapRunStartedEventDetails();
+    AWS_SFN_API MapRunStartedEventDetails() = default;
     AWS_SFN_API MapRunStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API MapRunStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
      */
-    inline const Aws::String& GetMapRunArn() const{ return m_mapRunArn; }
+    inline const Aws::String& GetMapRunArn() const { return m_mapRunArn; }
     inline bool MapRunArnHasBeenSet() const { return m_mapRunArnHasBeenSet; }
-    inline void SetMapRunArn(const Aws::String& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = value; }
-    inline void SetMapRunArn(Aws::String&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::move(value); }
-    inline void SetMapRunArn(const char* value) { m_mapRunArnHasBeenSet = true; m_mapRunArn.assign(value); }
-    inline MapRunStartedEventDetails& WithMapRunArn(const Aws::String& value) { SetMapRunArn(value); return *this;}
-    inline MapRunStartedEventDetails& WithMapRunArn(Aws::String&& value) { SetMapRunArn(std::move(value)); return *this;}
-    inline MapRunStartedEventDetails& WithMapRunArn(const char* value) { SetMapRunArn(value); return *this;}
+    template<typename MapRunArnT = Aws::String>
+    void SetMapRunArn(MapRunArnT&& value) { m_mapRunArnHasBeenSet = true; m_mapRunArn = std::forward<MapRunArnT>(value); }
+    template<typename MapRunArnT = Aws::String>
+    MapRunStartedEventDetails& WithMapRunArn(MapRunArnT&& value) { SetMapRunArn(std::forward<MapRunArnT>(value)); return *this;}
     ///@}
   private:
 

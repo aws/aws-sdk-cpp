@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVodSourceRequest::DescribeVodSourceRequest() : 
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVodSourceRequest::SerializePayload() const
 {
   return {};

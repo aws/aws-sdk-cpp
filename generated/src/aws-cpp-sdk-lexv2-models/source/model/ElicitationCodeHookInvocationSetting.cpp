@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ElicitationCodeHookInvocationSetting::ElicitationCodeHookInvocationSetting() : 
-    m_enableCodeHookInvocation(false),
-    m_enableCodeHookInvocationHasBeenSet(false),
-    m_invocationLabelHasBeenSet(false)
-{
-}
-
 ElicitationCodeHookInvocationSetting::ElicitationCodeHookInvocationSetting(JsonView jsonValue)
-  : ElicitationCodeHookInvocationSetting()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ElicitationCodeHookInvocationSetting& ElicitationCodeHookInvocationSetting::oper
   if(jsonValue.ValueExists("enableCodeHookInvocation"))
   {
     m_enableCodeHookInvocation = jsonValue.GetBool("enableCodeHookInvocation");
-
     m_enableCodeHookInvocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationLabel"))
   {
     m_invocationLabel = jsonValue.GetString("invocationLabel");
-
     m_invocationLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

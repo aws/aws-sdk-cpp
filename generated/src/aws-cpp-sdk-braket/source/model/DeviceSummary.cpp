@@ -18,19 +18,7 @@ namespace Braket
 namespace Model
 {
 
-DeviceSummary::DeviceSummary() : 
-    m_deviceArnHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_deviceStatus(DeviceStatus::NOT_SET),
-    m_deviceStatusHasBeenSet(false),
-    m_deviceType(DeviceType::NOT_SET),
-    m_deviceTypeHasBeenSet(false),
-    m_providerNameHasBeenSet(false)
-{
-}
-
 DeviceSummary::DeviceSummary(JsonView jsonValue)
-  : DeviceSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deviceArn"))
   {
     m_deviceArn = jsonValue.GetString("deviceArn");
-
     m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceName"))
   {
     m_deviceName = jsonValue.GetString("deviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceStatus"))
   {
     m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("deviceStatus"));
-
     m_deviceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceType"))
   {
     m_deviceType = DeviceTypeMapper::GetDeviceTypeForName(jsonValue.GetString("deviceType"));
-
     m_deviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
     m_providerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

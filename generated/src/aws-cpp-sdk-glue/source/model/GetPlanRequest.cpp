@@ -12,17 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPlanRequest::GetPlanRequest() : 
-    m_mappingHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_sinksHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_language(Language::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_additionalPlanOptionsMapHasBeenSet(false)
-{
-}
-
 Aws::String GetPlanRequest::SerializePayload() const
 {
   JsonValue payload;

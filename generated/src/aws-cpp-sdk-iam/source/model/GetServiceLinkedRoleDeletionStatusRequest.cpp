@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetServiceLinkedRoleDeletionStatusRequest::GetServiceLinkedRoleDeletionStatusRequest() : 
-    m_deletionTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceLinkedRoleDeletionStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-SrtCallerSourceRequest::SrtCallerSourceRequest() : 
-    m_decryptionHasBeenSet(false),
-    m_minimumLatency(0),
-    m_minimumLatencyHasBeenSet(false),
-    m_srtListenerAddressHasBeenSet(false),
-    m_srtListenerPortHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
-{
-}
-
 SrtCallerSourceRequest::SrtCallerSourceRequest(JsonView jsonValue)
-  : SrtCallerSourceRequest()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SrtCallerSourceRequest& SrtCallerSourceRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("decryption"))
   {
     m_decryption = jsonValue.GetObject("decryption");
-
     m_decryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumLatency"))
   {
     m_minimumLatency = jsonValue.GetInteger("minimumLatency");
-
     m_minimumLatencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srtListenerAddress"))
   {
     m_srtListenerAddress = jsonValue.GetString("srtListenerAddress");
-
     m_srtListenerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("srtListenerPort"))
   {
     m_srtListenerPort = jsonValue.GetString("srtListenerPort");
-
     m_srtListenerPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   return *this;
 }
 

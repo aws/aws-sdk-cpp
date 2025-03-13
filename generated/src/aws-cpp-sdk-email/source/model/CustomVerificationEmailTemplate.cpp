@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-CustomVerificationEmailTemplate::CustomVerificationEmailTemplate() : 
-    m_templateNameHasBeenSet(false),
-    m_fromEmailAddressHasBeenSet(false),
-    m_templateSubjectHasBeenSet(false),
-    m_successRedirectionURLHasBeenSet(false),
-    m_failureRedirectionURLHasBeenSet(false)
-{
-}
-
 CustomVerificationEmailTemplate::CustomVerificationEmailTemplate(const XmlNode& xmlNode)
-  : CustomVerificationEmailTemplate()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ CustomVerificationEmailTemplate& CustomVerificationEmailTemplate::operator =(con
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
     XmlNode fromEmailAddressNode = resultNode.FirstChild("FromEmailAddress");
     if(!fromEmailAddressNode.IsNull())
     {
       m_fromEmailAddress = Aws::Utils::Xml::DecodeEscapedXmlText(fromEmailAddressNode.GetText());
       m_fromEmailAddressHasBeenSet = true;
+       m_fromEmailAddressHasBeenSet = true;
     }
     XmlNode templateSubjectNode = resultNode.FirstChild("TemplateSubject");
     if(!templateSubjectNode.IsNull())
     {
       m_templateSubject = Aws::Utils::Xml::DecodeEscapedXmlText(templateSubjectNode.GetText());
       m_templateSubjectHasBeenSet = true;
+       m_templateSubjectHasBeenSet = true;
     }
     XmlNode successRedirectionURLNode = resultNode.FirstChild("SuccessRedirectionURL");
     if(!successRedirectionURLNode.IsNull())
     {
       m_successRedirectionURL = Aws::Utils::Xml::DecodeEscapedXmlText(successRedirectionURLNode.GetText());
       m_successRedirectionURLHasBeenSet = true;
+       m_successRedirectionURLHasBeenSet = true;
     }
     XmlNode failureRedirectionURLNode = resultNode.FirstChild("FailureRedirectionURL");
     if(!failureRedirectionURLNode.IsNull())
     {
       m_failureRedirectionURL = Aws::Utils::Xml::DecodeEscapedXmlText(failureRedirectionURLNode.GetText());
       m_failureRedirectionURLHasBeenSet = true;
+       m_failureRedirectionURLHasBeenSet = true;
     }
   }
 

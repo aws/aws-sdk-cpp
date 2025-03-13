@@ -26,7 +26,7 @@ namespace Model
   class ViewBillingRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API ViewBillingRequest();
+    AWS_ROUTE53DOMAINS_API ViewBillingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,12 @@ namespace Model
      * billing records. Specify the date and time in Unix time format and Coordinated
      * Universal time (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
+    inline const Aws::Utils::DateTime& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline ViewBillingRequest& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
-    inline ViewBillingRequest& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
+    template<typename StartT = Aws::Utils::DateTime>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::Utils::DateTime>
+    ViewBillingRequest& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * billing records. Specify the date and time in Unix time format and Coordinated
      * Universal time (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
+    inline const Aws::Utils::DateTime& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const Aws::Utils::DateTime& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(Aws::Utils::DateTime&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline ViewBillingRequest& WithEnd(const Aws::Utils::DateTime& value) { SetEnd(value); return *this;}
-    inline ViewBillingRequest& WithEnd(Aws::Utils::DateTime&& value) { SetEnd(std::move(value)); return *this;}
+    template<typename EndT = Aws::Utils::DateTime>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Aws::Utils::DateTime>
+    ViewBillingRequest& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,37 +79,35 @@ namespace Model
      * <p>Constraints: The marker must match the value of <code>NextPageMarker</code>
      * that was returned in the previous response.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ViewBillingRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ViewBillingRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ViewBillingRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ViewBillingRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of billing records to be returned.</p> <p>Default: 20</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ViewBillingRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_start;
+    Aws::Utils::DateTime m_start{};
     bool m_startHasBeenSet = false;
 
-    Aws::Utils::DateTime m_end;
+    Aws::Utils::DateTime m_end{};
     bool m_endHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

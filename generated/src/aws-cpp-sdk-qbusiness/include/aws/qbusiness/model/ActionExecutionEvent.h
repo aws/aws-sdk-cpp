@@ -34,7 +34,7 @@ namespace Model
   class ActionExecutionEvent
   {
   public:
-    AWS_QBUSINESS_API ActionExecutionEvent();
+    AWS_QBUSINESS_API ActionExecutionEvent() = default;
     AWS_QBUSINESS_API ActionExecutionEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ActionExecutionEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier of the plugin for which the action is being requested.</p>
      */
-    inline const Aws::String& GetPluginId() const{ return m_pluginId; }
+    inline const Aws::String& GetPluginId() const { return m_pluginId; }
     inline bool PluginIdHasBeenSet() const { return m_pluginIdHasBeenSet; }
-    inline void SetPluginId(const Aws::String& value) { m_pluginIdHasBeenSet = true; m_pluginId = value; }
-    inline void SetPluginId(Aws::String&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::move(value); }
-    inline void SetPluginId(const char* value) { m_pluginIdHasBeenSet = true; m_pluginId.assign(value); }
-    inline ActionExecutionEvent& WithPluginId(const Aws::String& value) { SetPluginId(value); return *this;}
-    inline ActionExecutionEvent& WithPluginId(Aws::String&& value) { SetPluginId(std::move(value)); return *this;}
-    inline ActionExecutionEvent& WithPluginId(const char* value) { SetPluginId(value); return *this;}
+    template<typename PluginIdT = Aws::String>
+    void SetPluginId(PluginIdT&& value) { m_pluginIdHasBeenSet = true; m_pluginId = std::forward<PluginIdT>(value); }
+    template<typename PluginIdT = Aws::String>
+    ActionExecutionEvent& WithPluginId(PluginIdT&& value) { SetPluginId(std::forward<PluginIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>A mapping of field names to the field values in input that an end user
      * provides to Amazon Q Business requests to perform their plugin action. </p>
      */
-    inline const Aws::Map<Aws::String, ActionExecutionPayloadField>& GetPayload() const{ return m_payload; }
+    inline const Aws::Map<Aws::String, ActionExecutionPayloadField>& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::Map<Aws::String, ActionExecutionPayloadField>& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::Map<Aws::String, ActionExecutionPayloadField>&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline ActionExecutionEvent& WithPayload(const Aws::Map<Aws::String, ActionExecutionPayloadField>& value) { SetPayload(value); return *this;}
-    inline ActionExecutionEvent& WithPayload(Aws::Map<Aws::String, ActionExecutionPayloadField>&& value) { SetPayload(std::move(value)); return *this;}
-    inline ActionExecutionEvent& AddPayload(const Aws::String& key, const ActionExecutionPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
-    inline ActionExecutionEvent& AddPayload(Aws::String&& key, const ActionExecutionPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), value); return *this; }
-    inline ActionExecutionEvent& AddPayload(const Aws::String& key, ActionExecutionPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
-    inline ActionExecutionEvent& AddPayload(Aws::String&& key, ActionExecutionPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(std::move(key), std::move(value)); return *this; }
-    inline ActionExecutionEvent& AddPayload(const char* key, ActionExecutionPayloadField&& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, std::move(value)); return *this; }
-    inline ActionExecutionEvent& AddPayload(const char* key, const ActionExecutionPayloadField& value) { m_payloadHasBeenSet = true; m_payload.emplace(key, value); return *this; }
+    template<typename PayloadT = Aws::Map<Aws::String, ActionExecutionPayloadField>>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Map<Aws::String, ActionExecutionPayloadField>>
+    ActionExecutionEvent& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
+    template<typename PayloadKeyT = Aws::String, typename PayloadValueT = ActionExecutionPayloadField>
+    ActionExecutionEvent& AddPayload(PayloadKeyT&& key, PayloadValueT&& value) {
+      m_payloadHasBeenSet = true; m_payload.emplace(std::forward<PayloadKeyT>(key), std::forward<PayloadValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <p>A string used to retain information about the hierarchical contexts within a
      * action execution event payload.</p>
      */
-    inline const Aws::String& GetPayloadFieldNameSeparator() const{ return m_payloadFieldNameSeparator; }
+    inline const Aws::String& GetPayloadFieldNameSeparator() const { return m_payloadFieldNameSeparator; }
     inline bool PayloadFieldNameSeparatorHasBeenSet() const { return m_payloadFieldNameSeparatorHasBeenSet; }
-    inline void SetPayloadFieldNameSeparator(const Aws::String& value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator = value; }
-    inline void SetPayloadFieldNameSeparator(Aws::String&& value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator = std::move(value); }
-    inline void SetPayloadFieldNameSeparator(const char* value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator.assign(value); }
-    inline ActionExecutionEvent& WithPayloadFieldNameSeparator(const Aws::String& value) { SetPayloadFieldNameSeparator(value); return *this;}
-    inline ActionExecutionEvent& WithPayloadFieldNameSeparator(Aws::String&& value) { SetPayloadFieldNameSeparator(std::move(value)); return *this;}
-    inline ActionExecutionEvent& WithPayloadFieldNameSeparator(const char* value) { SetPayloadFieldNameSeparator(value); return *this;}
+    template<typename PayloadFieldNameSeparatorT = Aws::String>
+    void SetPayloadFieldNameSeparator(PayloadFieldNameSeparatorT&& value) { m_payloadFieldNameSeparatorHasBeenSet = true; m_payloadFieldNameSeparator = std::forward<PayloadFieldNameSeparatorT>(value); }
+    template<typename PayloadFieldNameSeparatorT = Aws::String>
+    ActionExecutionEvent& WithPayloadFieldNameSeparator(PayloadFieldNameSeparatorT&& value) { SetPayloadFieldNameSeparator(std::forward<PayloadFieldNameSeparatorT>(value)); return *this;}
     ///@}
   private:
 

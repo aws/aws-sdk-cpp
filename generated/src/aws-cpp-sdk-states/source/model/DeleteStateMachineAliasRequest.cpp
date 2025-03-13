@@ -12,11 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStateMachineAliasRequest::DeleteStateMachineAliasRequest() : 
-    m_stateMachineAliasArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStateMachineAliasRequest::SerializePayload() const
 {
   JsonValue payload;

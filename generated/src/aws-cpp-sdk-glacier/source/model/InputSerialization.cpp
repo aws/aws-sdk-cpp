@@ -18,13 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-InputSerialization::InputSerialization() : 
-    m_csvHasBeenSet(false)
-{
-}
-
 InputSerialization::InputSerialization(JsonView jsonValue)
-  : InputSerialization()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputSerialization& InputSerialization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("csv"))
   {
     m_csv = jsonValue.GetObject("csv");
-
     m_csvHasBeenSet = true;
   }
-
   return *this;
 }
 

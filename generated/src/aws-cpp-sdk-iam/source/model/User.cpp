@@ -20,20 +20,7 @@ namespace IAM
 namespace Model
 {
 
-User::User() : 
-    m_pathHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_passwordLastUsedHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 User::User(const XmlNode& xmlNode)
-  : User()
 {
   *this = xmlNode;
 }
@@ -49,54 +36,62 @@ User& User::operator =(const XmlNode& xmlNode)
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode userNameNode = resultNode.FirstChild("UserName");
     if(!userNameNode.IsNull())
     {
       m_userName = Aws::Utils::Xml::DecodeEscapedXmlText(userNameNode.GetText());
       m_userNameHasBeenSet = true;
+       m_userNameHasBeenSet = true;
     }
     XmlNode userIdNode = resultNode.FirstChild("UserId");
     if(!userIdNode.IsNull())
     {
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
+       m_userIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode passwordLastUsedNode = resultNode.FirstChild("PasswordLastUsed");
     if(!passwordLastUsedNode.IsNull())
     {
       m_passwordLastUsed = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(passwordLastUsedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_passwordLastUsedHasBeenSet = true;
+       m_passwordLastUsedHasBeenSet = true;
     }
     XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
     if(!permissionsBoundaryNode.IsNull())
     {
       m_permissionsBoundary = permissionsBoundaryNode;
       m_permissionsBoundaryHasBeenSet = true;
+       m_permissionsBoundaryHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

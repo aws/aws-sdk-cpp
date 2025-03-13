@@ -31,7 +31,7 @@ namespace Model
   class AlternateSoftwareMetadata
   {
   public:
-    AWS_PANORAMA_API AlternateSoftwareMetadata();
+    AWS_PANORAMA_API AlternateSoftwareMetadata() = default;
     AWS_PANORAMA_API AlternateSoftwareMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API AlternateSoftwareMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The appliance software version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline AlternateSoftwareMetadata& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline AlternateSoftwareMetadata& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline AlternateSoftwareMetadata& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    AlternateSoftwareMetadata& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

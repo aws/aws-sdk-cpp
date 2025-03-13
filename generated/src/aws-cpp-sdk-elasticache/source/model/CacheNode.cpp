@@ -20,20 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheNode::CacheNode() : 
-    m_cacheNodeIdHasBeenSet(false),
-    m_cacheNodeStatusHasBeenSet(false),
-    m_cacheNodeCreateTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_parameterGroupStatusHasBeenSet(false),
-    m_sourceCacheNodeIdHasBeenSet(false),
-    m_customerAvailabilityZoneHasBeenSet(false),
-    m_customerOutpostArnHasBeenSet(false)
-{
-}
-
 CacheNode::CacheNode(const XmlNode& xmlNode)
-  : CacheNode()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,56 @@ CacheNode& CacheNode::operator =(const XmlNode& xmlNode)
     {
       m_cacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeIdNode.GetText());
       m_cacheNodeIdHasBeenSet = true;
+       m_cacheNodeIdHasBeenSet = true;
     }
     XmlNode cacheNodeStatusNode = resultNode.FirstChild("CacheNodeStatus");
     if(!cacheNodeStatusNode.IsNull())
     {
       m_cacheNodeStatus = Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeStatusNode.GetText());
       m_cacheNodeStatusHasBeenSet = true;
+       m_cacheNodeStatusHasBeenSet = true;
     }
     XmlNode cacheNodeCreateTimeNode = resultNode.FirstChild("CacheNodeCreateTime");
     if(!cacheNodeCreateTimeNode.IsNull())
     {
       m_cacheNodeCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(cacheNodeCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_cacheNodeCreateTimeHasBeenSet = true;
+       m_cacheNodeCreateTimeHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = endpointNode;
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode parameterGroupStatusNode = resultNode.FirstChild("ParameterGroupStatus");
     if(!parameterGroupStatusNode.IsNull())
     {
       m_parameterGroupStatus = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupStatusNode.GetText());
       m_parameterGroupStatusHasBeenSet = true;
+       m_parameterGroupStatusHasBeenSet = true;
     }
     XmlNode sourceCacheNodeIdNode = resultNode.FirstChild("SourceCacheNodeId");
     if(!sourceCacheNodeIdNode.IsNull())
     {
       m_sourceCacheNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceCacheNodeIdNode.GetText());
       m_sourceCacheNodeIdHasBeenSet = true;
+       m_sourceCacheNodeIdHasBeenSet = true;
     }
     XmlNode customerAvailabilityZoneNode = resultNode.FirstChild("CustomerAvailabilityZone");
     if(!customerAvailabilityZoneNode.IsNull())
     {
       m_customerAvailabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(customerAvailabilityZoneNode.GetText());
       m_customerAvailabilityZoneHasBeenSet = true;
+       m_customerAvailabilityZoneHasBeenSet = true;
     }
     XmlNode customerOutpostArnNode = resultNode.FirstChild("CustomerOutpostArn");
     if(!customerOutpostArnNode.IsNull())
     {
       m_customerOutpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(customerOutpostArnNode.GetText());
       m_customerOutpostArnHasBeenSet = true;
+       m_customerOutpostArnHasBeenSet = true;
     }
   }
 

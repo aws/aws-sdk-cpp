@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-TransportMediaInfo::TransportMediaInfo() : 
-    m_programsHasBeenSet(false)
-{
-}
-
 TransportMediaInfo::TransportMediaInfo(JsonView jsonValue)
-  : TransportMediaInfo()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TransportMediaInfo& TransportMediaInfo::operator =(JsonView jsonValue)
     }
     m_programsHasBeenSet = true;
   }
-
   return *this;
 }
 

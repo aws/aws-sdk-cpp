@@ -34,7 +34,7 @@ namespace Model
   class RealtimeContactAnalysisSegment
   {
   public:
-    AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment();
+    AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment() = default;
     AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>The analyzed transcript.</p>
      */
-    inline const Transcript& GetTranscript() const{ return m_transcript; }
+    inline const Transcript& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline RealtimeContactAnalysisSegment& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
-    inline RealtimeContactAnalysisSegment& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
+    template<typename TranscriptT = Transcript>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = Transcript>
+    RealtimeContactAnalysisSegment& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The matched category rules.</p>
      */
-    inline const Categories& GetCategories() const{ return m_categories; }
+    inline const Categories& GetCategories() const { return m_categories; }
     inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
-    inline void SetCategories(const Categories& value) { m_categoriesHasBeenSet = true; m_categories = value; }
-    inline void SetCategories(Categories&& value) { m_categoriesHasBeenSet = true; m_categories = std::move(value); }
-    inline RealtimeContactAnalysisSegment& WithCategories(const Categories& value) { SetCategories(value); return *this;}
-    inline RealtimeContactAnalysisSegment& WithCategories(Categories&& value) { SetCategories(std::move(value)); return *this;}
+    template<typename CategoriesT = Categories>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Categories>
+    RealtimeContactAnalysisSegment& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the post-contact summary.</p>
      */
-    inline const PostContactSummary& GetPostContactSummary() const{ return m_postContactSummary; }
+    inline const PostContactSummary& GetPostContactSummary() const { return m_postContactSummary; }
     inline bool PostContactSummaryHasBeenSet() const { return m_postContactSummaryHasBeenSet; }
-    inline void SetPostContactSummary(const PostContactSummary& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = value; }
-    inline void SetPostContactSummary(PostContactSummary&& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = std::move(value); }
-    inline RealtimeContactAnalysisSegment& WithPostContactSummary(const PostContactSummary& value) { SetPostContactSummary(value); return *this;}
-    inline RealtimeContactAnalysisSegment& WithPostContactSummary(PostContactSummary&& value) { SetPostContactSummary(std::move(value)); return *this;}
+    template<typename PostContactSummaryT = PostContactSummary>
+    void SetPostContactSummary(PostContactSummaryT&& value) { m_postContactSummaryHasBeenSet = true; m_postContactSummary = std::forward<PostContactSummaryT>(value); }
+    template<typename PostContactSummaryT = PostContactSummary>
+    RealtimeContactAnalysisSegment& WithPostContactSummary(PostContactSummaryT&& value) { SetPostContactSummary(std::forward<PostContactSummaryT>(value)); return *this;}
     ///@}
   private:
 

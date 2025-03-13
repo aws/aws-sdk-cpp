@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ToolInputSchema::ToolInputSchema() : 
-    m_jsonHasBeenSet(false)
-{
-}
-
 ToolInputSchema::ToolInputSchema(JsonView jsonValue)
-  : ToolInputSchema()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ToolInputSchema& ToolInputSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("json"))
   {
     m_json = jsonValue.GetObject("json");
-
     m_jsonHasBeenSet = true;
   }
-
   return *this;
 }
 

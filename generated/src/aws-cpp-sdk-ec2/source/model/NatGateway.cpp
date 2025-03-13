@@ -20,26 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NatGateway::NatGateway() : 
-    m_createTimeHasBeenSet(false),
-    m_deleteTimeHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_natGatewayAddressesHasBeenSet(false),
-    m_natGatewayIdHasBeenSet(false),
-    m_provisionedBandwidthHasBeenSet(false),
-    m_state(NatGatewayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_connectivityType(ConnectivityType::NOT_SET),
-    m_connectivityTypeHasBeenSet(false)
-{
-}
-
 NatGateway::NatGateway(const XmlNode& xmlNode)
-  : NatGateway()
 {
   *this = xmlNode;
 }
@@ -55,84 +36,96 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
     XmlNode deleteTimeNode = resultNode.FirstChild("deleteTime");
     if(!deleteTimeNode.IsNull())
     {
       m_deleteTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deleteTimeHasBeenSet = true;
+       m_deleteTimeHasBeenSet = true;
     }
     XmlNode failureCodeNode = resultNode.FirstChild("failureCode");
     if(!failureCodeNode.IsNull())
     {
       m_failureCode = Aws::Utils::Xml::DecodeEscapedXmlText(failureCodeNode.GetText());
       m_failureCodeHasBeenSet = true;
+       m_failureCodeHasBeenSet = true;
     }
     XmlNode failureMessageNode = resultNode.FirstChild("failureMessage");
     if(!failureMessageNode.IsNull())
     {
       m_failureMessage = Aws::Utils::Xml::DecodeEscapedXmlText(failureMessageNode.GetText());
       m_failureMessageHasBeenSet = true;
+       m_failureMessageHasBeenSet = true;
     }
     XmlNode natGatewayAddressesNode = resultNode.FirstChild("natGatewayAddressSet");
     if(!natGatewayAddressesNode.IsNull())
     {
       XmlNode natGatewayAddressesMember = natGatewayAddressesNode.FirstChild("item");
+      m_natGatewayAddressesHasBeenSet = !natGatewayAddressesMember.IsNull();
       while(!natGatewayAddressesMember.IsNull())
       {
         m_natGatewayAddresses.push_back(natGatewayAddressesMember);
         natGatewayAddressesMember = natGatewayAddressesMember.NextNode("item");
       }
 
-      m_natGatewayAddressesHasBeenSet = true;
+       m_natGatewayAddressesHasBeenSet = true;
     }
     XmlNode natGatewayIdNode = resultNode.FirstChild("natGatewayId");
     if(!natGatewayIdNode.IsNull())
     {
       m_natGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(natGatewayIdNode.GetText());
       m_natGatewayIdHasBeenSet = true;
+       m_natGatewayIdHasBeenSet = true;
     }
     XmlNode provisionedBandwidthNode = resultNode.FirstChild("provisionedBandwidth");
     if(!provisionedBandwidthNode.IsNull())
     {
       m_provisionedBandwidth = provisionedBandwidthNode;
       m_provisionedBandwidthHasBeenSet = true;
+       m_provisionedBandwidthHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = NatGatewayStateMapper::GetNatGatewayStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
     if(!vpcIdNode.IsNull())
     {
       m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
       m_vpcIdHasBeenSet = true;
+       m_vpcIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode connectivityTypeNode = resultNode.FirstChild("connectivityType");
     if(!connectivityTypeNode.IsNull())
     {
-      m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectivityTypeNode.GetText()).c_str()).c_str());
+      m_connectivityType = ConnectivityTypeMapper::GetConnectivityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectivityTypeNode.GetText()).c_str()));
       m_connectivityTypeHasBeenSet = true;
+       m_connectivityTypeHasBeenSet = true;
     }
   }
 

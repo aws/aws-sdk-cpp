@@ -32,7 +32,7 @@ namespace Model
   class WorkflowExecutionCompletedEventAttributes
   {
   public:
-    AWS_SWF_API WorkflowExecutionCompletedEventAttributes();
+    AWS_SWF_API WorkflowExecutionCompletedEventAttributes() = default;
     AWS_SWF_API WorkflowExecutionCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecutionCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>
      */
-    inline const Aws::String& GetResult() const{ return m_result; }
+    inline const Aws::String& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(Aws::String&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline void SetResult(const char* value) { m_resultHasBeenSet = true; m_result.assign(value); }
-    inline WorkflowExecutionCompletedEventAttributes& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-    inline WorkflowExecutionCompletedEventAttributes& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-    inline WorkflowExecutionCompletedEventAttributes& WithResult(const char* value) { SetResult(value); return *this;}
+    template<typename ResultT = Aws::String>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = Aws::String>
+    WorkflowExecutionCompletedEventAttributes& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline WorkflowExecutionCompletedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_result;
     bool m_resultHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData() : 
-    m_destinationPathHasBeenSet(false),
-    m_ownerSettingHasBeenSet(false),
-    m_sageMakerJobArnHasBeenSet(false)
-{
-}
-
 SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData(JsonView jsonValue)
-  : SageMakerMachineLearningModelResourceData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SageMakerMachineLearningModelResourceData& SageMakerMachineLearningModelResource
   if(jsonValue.ValueExists("DestinationPath"))
   {
     m_destinationPath = jsonValue.GetString("DestinationPath");
-
     m_destinationPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerSetting"))
   {
     m_ownerSetting = jsonValue.GetObject("OwnerSetting");
-
     m_ownerSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerJobArn"))
   {
     m_sageMakerJobArn = jsonValue.GetString("SageMakerJobArn");
-
     m_sageMakerJobArnHasBeenSet = true;
   }
-
   return *this;
 }
 

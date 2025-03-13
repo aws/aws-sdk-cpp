@@ -33,7 +33,7 @@ namespace Model
   class GetTestResult
   {
   public:
-    AWS_DEVICEFARM_API GetTestResult();
+    AWS_DEVICEFARM_API GetTestResult() = default;
     AWS_DEVICEFARM_API GetTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API GetTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>A test condition that is evaluated.</p>
      */
-    inline const Test& GetTest() const{ return m_test; }
-    inline void SetTest(const Test& value) { m_test = value; }
-    inline void SetTest(Test&& value) { m_test = std::move(value); }
-    inline GetTestResult& WithTest(const Test& value) { SetTest(value); return *this;}
-    inline GetTestResult& WithTest(Test&& value) { SetTest(std::move(value)); return *this;}
+    inline const Test& GetTest() const { return m_test; }
+    template<typename TestT = Test>
+    void SetTest(TestT&& value) { m_testHasBeenSet = true; m_test = std::forward<TestT>(value); }
+    template<typename TestT = Test>
+    GetTestResult& WithTest(TestT&& value) { SetTest(std::forward<TestT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Test m_test;
+    bool m_testHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

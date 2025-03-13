@@ -20,14 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBClusterOptionGroupStatus::DBClusterOptionGroupStatus() : 
-    m_dBClusterOptionGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DBClusterOptionGroupStatus::DBClusterOptionGroupStatus(const XmlNode& xmlNode)
-  : DBClusterOptionGroupStatus()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DBClusterOptionGroupStatus& DBClusterOptionGroupStatus::operator =(const XmlNode
     {
       m_dBClusterOptionGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterOptionGroupNameNode.GetText());
       m_dBClusterOptionGroupNameHasBeenSet = true;
+       m_dBClusterOptionGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

@@ -12,14 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeProfilesRequest::MergeProfilesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_mainProfileIdHasBeenSet(false),
-    m_profileIdsToBeMergedHasBeenSet(false),
-    m_fieldSourceProfileIdsHasBeenSet(false)
-{
-}
-
 Aws::String MergeProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PutItemInput::PutItemInput() : 
-    m_tableNameHasBeenSet(false)
-{
-}
-
 PutItemInput::PutItemInput(JsonView jsonValue)
-  : PutItemInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PutItemInput& PutItemInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   return *this;
 }
 

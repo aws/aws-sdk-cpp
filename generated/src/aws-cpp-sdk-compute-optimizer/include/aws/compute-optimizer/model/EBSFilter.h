@@ -40,7 +40,7 @@ namespace Model
   class EBSFilter
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API EBSFilter();
+    AWS_COMPUTEOPTIMIZER_API EBSFilter() = default;
     AWS_COMPUTEOPTIMIZER_API EBSFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API EBSFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,10 @@ namespace Model
      * your Amazon EBS volume recommendations with a tag key value of
      * <code>Owner</code> or without any tag keys assigned.</p>
      */
-    inline const EBSFilterName& GetName() const{ return m_name; }
+    inline EBSFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const EBSFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(EBSFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline EBSFilter& WithName(const EBSFilterName& value) { SetName(value); return *this;}
-    inline EBSFilter& WithName(EBSFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(EBSFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline EBSFilter& WithName(EBSFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -77,19 +75,18 @@ namespace Model
      * <p>The value of the filter.</p> <p>The valid values are <code>Optimized</code>,
      * or <code>NotOptimized</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline EBSFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline EBSFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline EBSFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline EBSFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline EBSFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    EBSFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    EBSFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    EBSFilterName m_name;
+    EBSFilterName m_name{EBSFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleImportJobAnalysisOverridePermissions
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleImportJobAnalysisOverridePermissions();
+    AWS_QUICKSIGHT_API AssetBundleImportJobAnalysisOverridePermissions() = default;
     AWS_QUICKSIGHT_API AssetBundleImportJobAnalysisOverridePermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleImportJobAnalysisOverridePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>A list of analysis IDs that you want to apply overrides to. You can use
      * <code>*</code> to override all analyses in this asset bundle.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAnalysisIds() const{ return m_analysisIds; }
+    inline const Aws::Vector<Aws::String>& GetAnalysisIds() const { return m_analysisIds; }
     inline bool AnalysisIdsHasBeenSet() const { return m_analysisIdsHasBeenSet; }
-    inline void SetAnalysisIds(const Aws::Vector<Aws::String>& value) { m_analysisIdsHasBeenSet = true; m_analysisIds = value; }
-    inline void SetAnalysisIds(Aws::Vector<Aws::String>&& value) { m_analysisIdsHasBeenSet = true; m_analysisIds = std::move(value); }
-    inline AssetBundleImportJobAnalysisOverridePermissions& WithAnalysisIds(const Aws::Vector<Aws::String>& value) { SetAnalysisIds(value); return *this;}
-    inline AssetBundleImportJobAnalysisOverridePermissions& WithAnalysisIds(Aws::Vector<Aws::String>&& value) { SetAnalysisIds(std::move(value)); return *this;}
-    inline AssetBundleImportJobAnalysisOverridePermissions& AddAnalysisIds(const Aws::String& value) { m_analysisIdsHasBeenSet = true; m_analysisIds.push_back(value); return *this; }
-    inline AssetBundleImportJobAnalysisOverridePermissions& AddAnalysisIds(Aws::String&& value) { m_analysisIdsHasBeenSet = true; m_analysisIds.push_back(std::move(value)); return *this; }
-    inline AssetBundleImportJobAnalysisOverridePermissions& AddAnalysisIds(const char* value) { m_analysisIdsHasBeenSet = true; m_analysisIds.push_back(value); return *this; }
+    template<typename AnalysisIdsT = Aws::Vector<Aws::String>>
+    void SetAnalysisIds(AnalysisIdsT&& value) { m_analysisIdsHasBeenSet = true; m_analysisIds = std::forward<AnalysisIdsT>(value); }
+    template<typename AnalysisIdsT = Aws::Vector<Aws::String>>
+    AssetBundleImportJobAnalysisOverridePermissions& WithAnalysisIds(AnalysisIdsT&& value) { SetAnalysisIds(std::forward<AnalysisIdsT>(value)); return *this;}
+    template<typename AnalysisIdsT = Aws::String>
+    AssetBundleImportJobAnalysisOverridePermissions& AddAnalysisIds(AnalysisIdsT&& value) { m_analysisIdsHasBeenSet = true; m_analysisIds.emplace_back(std::forward<AnalysisIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,12 +60,12 @@ namespace Model
      * <p>A list of permissions for the analyses that you want to apply overrides
      * to.</p>
      */
-    inline const AssetBundleResourcePermissions& GetPermissions() const{ return m_permissions; }
+    inline const AssetBundleResourcePermissions& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const AssetBundleResourcePermissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(AssetBundleResourcePermissions&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline AssetBundleImportJobAnalysisOverridePermissions& WithPermissions(const AssetBundleResourcePermissions& value) { SetPermissions(value); return *this;}
-    inline AssetBundleImportJobAnalysisOverridePermissions& WithPermissions(AssetBundleResourcePermissions&& value) { SetPermissions(std::move(value)); return *this;}
+    template<typename PermissionsT = AssetBundleResourcePermissions>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = AssetBundleResourcePermissions>
+    AssetBundleImportJobAnalysisOverridePermissions& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
     ///@}
   private:
 

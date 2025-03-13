@@ -18,22 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkChangeValues::CoreNetworkChangeValues() : 
-    m_segmentNameHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_destinationIdentifierHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_sharedSegmentsHasBeenSet(false),
-    m_serviceInsertionActionsHasBeenSet(false)
-{
-}
-
 CoreNetworkChangeValues::CoreNetworkChangeValues(JsonView jsonValue)
-  : CoreNetworkChangeValues()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFunctionGroupName"))
   {
     m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
-
     m_networkFunctionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocations"))
   {
     Aws::Utils::Array<JsonView> edgeLocationsJsonList = jsonValue.GetArray("EdgeLocations");
@@ -63,28 +44,21 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     }
     m_edgeLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Asn"))
   {
     m_asn = jsonValue.GetInt64("Asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cidr"))
   {
     m_cidr = jsonValue.GetString("Cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationIdentifier"))
   {
     m_destinationIdentifier = jsonValue.GetString("DestinationIdentifier");
-
     m_destinationIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsideCidrBlocks"))
   {
     Aws::Utils::Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
@@ -94,7 +68,6 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     }
     m_insideCidrBlocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SharedSegments"))
   {
     Aws::Utils::Array<JsonView> sharedSegmentsJsonList = jsonValue.GetArray("SharedSegments");
@@ -104,7 +77,6 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     }
     m_sharedSegmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceInsertionActions"))
   {
     Aws::Utils::Array<JsonView> serviceInsertionActionsJsonList = jsonValue.GetArray("ServiceInsertionActions");
@@ -114,7 +86,6 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     }
     m_serviceInsertionActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

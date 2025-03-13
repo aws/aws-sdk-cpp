@@ -12,17 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveDraftAppVersionResourceMappingsRequest::RemoveDraftAppVersionResourceMappingsRequest() : 
-    m_appArnHasBeenSet(false),
-    m_appRegistryAppNamesHasBeenSet(false),
-    m_eksSourceNamesHasBeenSet(false),
-    m_logicalStackNamesHasBeenSet(false),
-    m_resourceGroupNamesHasBeenSet(false),
-    m_resourceNamesHasBeenSet(false),
-    m_terraformSourceNamesHasBeenSet(false)
-{
-}
-
 Aws::String RemoveDraftAppVersionResourceMappingsRequest::SerializePayload() const
 {
   JsonValue payload;

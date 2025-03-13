@@ -18,19 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowExecution::MaintenanceWindowExecution() : 
-    m_windowIdHasBeenSet(false),
-    m_windowExecutionIdHasBeenSet(false),
-    m_status(MaintenanceWindowExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 MaintenanceWindowExecution::MaintenanceWindowExecution(JsonView jsonValue)
-  : MaintenanceWindowExecution()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ MaintenanceWindowExecution& MaintenanceWindowExecution::operator =(JsonView json
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
     m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowExecutionId"))
   {
     m_windowExecutionId = jsonValue.GetString("WindowExecutionId");
-
     m_windowExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MaintenanceWindowExecutionStatusMapper::GetMaintenanceWindowExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     m_statusDetails = jsonValue.GetString("StatusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

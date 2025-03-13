@@ -32,7 +32,7 @@ namespace Model
   class RealtimeLogConfig
   {
   public:
-    AWS_CLOUDFRONT_API RealtimeLogConfig();
+    AWS_CLOUDFRONT_API RealtimeLogConfig() = default;
     AWS_CLOUDFRONT_API RealtimeLogConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API RealtimeLogConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline RealtimeLogConfig& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline RealtimeLogConfig& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline RealtimeLogConfig& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    RealtimeLogConfig& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name of this real-time log configuration.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RealtimeLogConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RealtimeLogConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RealtimeLogConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RealtimeLogConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +70,7 @@ namespace Model
      * real-time log data. The sampling rate is an integer between 1 and 100,
      * inclusive.</p>
      */
-    inline long long GetSamplingRate() const{ return m_samplingRate; }
+    inline long long GetSamplingRate() const { return m_samplingRate; }
     inline bool SamplingRateHasBeenSet() const { return m_samplingRateHasBeenSet; }
     inline void SetSamplingRate(long long value) { m_samplingRateHasBeenSet = true; m_samplingRate = value; }
     inline RealtimeLogConfig& WithSamplingRate(long long value) { SetSamplingRate(value); return *this;}
@@ -85,14 +81,14 @@ namespace Model
      * <p>Contains information about the Amazon Kinesis data stream where you are
      * sending real-time log data for this real-time log configuration.</p>
      */
-    inline const Aws::Vector<EndPoint>& GetEndPoints() const{ return m_endPoints; }
+    inline const Aws::Vector<EndPoint>& GetEndPoints() const { return m_endPoints; }
     inline bool EndPointsHasBeenSet() const { return m_endPointsHasBeenSet; }
-    inline void SetEndPoints(const Aws::Vector<EndPoint>& value) { m_endPointsHasBeenSet = true; m_endPoints = value; }
-    inline void SetEndPoints(Aws::Vector<EndPoint>&& value) { m_endPointsHasBeenSet = true; m_endPoints = std::move(value); }
-    inline RealtimeLogConfig& WithEndPoints(const Aws::Vector<EndPoint>& value) { SetEndPoints(value); return *this;}
-    inline RealtimeLogConfig& WithEndPoints(Aws::Vector<EndPoint>&& value) { SetEndPoints(std::move(value)); return *this;}
-    inline RealtimeLogConfig& AddEndPoints(const EndPoint& value) { m_endPointsHasBeenSet = true; m_endPoints.push_back(value); return *this; }
-    inline RealtimeLogConfig& AddEndPoints(EndPoint&& value) { m_endPointsHasBeenSet = true; m_endPoints.push_back(std::move(value)); return *this; }
+    template<typename EndPointsT = Aws::Vector<EndPoint>>
+    void SetEndPoints(EndPointsT&& value) { m_endPointsHasBeenSet = true; m_endPoints = std::forward<EndPointsT>(value); }
+    template<typename EndPointsT = Aws::Vector<EndPoint>>
+    RealtimeLogConfig& WithEndPoints(EndPointsT&& value) { SetEndPoints(std::forward<EndPointsT>(value)); return *this;}
+    template<typename EndPointsT = EndPoint>
+    RealtimeLogConfig& AddEndPoints(EndPointsT&& value) { m_endPointsHasBeenSet = true; m_endPoints.emplace_back(std::forward<EndPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,15 +100,14 @@ namespace Model
      * log configuration fields</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<Aws::String>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<Aws::String>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<Aws::String>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline RealtimeLogConfig& WithFields(const Aws::Vector<Aws::String>& value) { SetFields(value); return *this;}
-    inline RealtimeLogConfig& WithFields(Aws::Vector<Aws::String>&& value) { SetFields(std::move(value)); return *this;}
-    inline RealtimeLogConfig& AddFields(const Aws::String& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline RealtimeLogConfig& AddFields(Aws::String&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-    inline RealtimeLogConfig& AddFields(const char* value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
+    template<typename FieldsT = Aws::Vector<Aws::String>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<Aws::String>>
+    RealtimeLogConfig& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = Aws::String>
+    RealtimeLogConfig& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
   private:
 
@@ -122,7 +117,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_samplingRate;
+    long long m_samplingRate{0};
     bool m_samplingRateHasBeenSet = false;
 
     Aws::Vector<EndPoint> m_endPoints;

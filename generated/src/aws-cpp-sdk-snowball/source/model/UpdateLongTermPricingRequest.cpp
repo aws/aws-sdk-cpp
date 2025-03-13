@@ -12,14 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLongTermPricingRequest::UpdateLongTermPricingRequest() : 
-    m_longTermPricingIdHasBeenSet(false),
-    m_replacementJobHasBeenSet(false),
-    m_isLongTermPricingAutoRenew(false),
-    m_isLongTermPricingAutoRenewHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLongTermPricingRequest::SerializePayload() const
 {
   JsonValue payload;

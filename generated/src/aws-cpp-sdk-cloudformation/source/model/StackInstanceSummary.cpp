@@ -20,25 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackInstanceSummary::StackInstanceSummary() : 
-    m_stackSetIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_status(StackInstanceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_stackInstanceStatusHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_driftStatus(StackDriftStatus::NOT_SET),
-    m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false),
-    m_lastOperationIdHasBeenSet(false)
-{
-}
-
 StackInstanceSummary::StackInstanceSummary(const XmlNode& xmlNode)
-  : StackInstanceSummary()
 {
   *this = xmlNode;
 }
@@ -54,66 +36,77 @@ StackInstanceSummary& StackInstanceSummary::operator =(const XmlNode& xmlNode)
     {
       m_stackSetId = Aws::Utils::Xml::DecodeEscapedXmlText(stackSetIdNode.GetText());
       m_stackSetIdHasBeenSet = true;
+       m_stackSetIdHasBeenSet = true;
     }
     XmlNode regionNode = resultNode.FirstChild("Region");
     if(!regionNode.IsNull())
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode accountNode = resultNode.FirstChild("Account");
     if(!accountNode.IsNull())
     {
       m_account = Aws::Utils::Xml::DecodeEscapedXmlText(accountNode.GetText());
       m_accountHasBeenSet = true;
+       m_accountHasBeenSet = true;
     }
     XmlNode stackIdNode = resultNode.FirstChild("StackId");
     if(!stackIdNode.IsNull())
     {
       m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
       m_stackIdHasBeenSet = true;
+       m_stackIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackInstanceStatusMapper::GetStackInstanceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackInstanceStatusMapper::GetStackInstanceStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
     XmlNode stackInstanceStatusNode = resultNode.FirstChild("StackInstanceStatus");
     if(!stackInstanceStatusNode.IsNull())
     {
       m_stackInstanceStatus = stackInstanceStatusNode;
       m_stackInstanceStatusHasBeenSet = true;
+       m_stackInstanceStatusHasBeenSet = true;
     }
     XmlNode organizationalUnitIdNode = resultNode.FirstChild("OrganizationalUnitId");
     if(!organizationalUnitIdNode.IsNull())
     {
       m_organizationalUnitId = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitIdNode.GetText());
       m_organizationalUnitIdHasBeenSet = true;
+       m_organizationalUnitIdHasBeenSet = true;
     }
     XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
     if(!driftStatusNode.IsNull())
     {
-      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()).c_str());
+      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()));
       m_driftStatusHasBeenSet = true;
+       m_driftStatusHasBeenSet = true;
     }
     XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");
     if(!lastDriftCheckTimestampNode.IsNull())
     {
       m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
+       m_lastDriftCheckTimestampHasBeenSet = true;
     }
     XmlNode lastOperationIdNode = resultNode.FirstChild("LastOperationId");
     if(!lastOperationIdNode.IsNull())
     {
       m_lastOperationId = Aws::Utils::Xml::DecodeEscapedXmlText(lastOperationIdNode.GetText());
       m_lastOperationIdHasBeenSet = true;
+       m_lastOperationIdHasBeenSet = true;
     }
   }
 

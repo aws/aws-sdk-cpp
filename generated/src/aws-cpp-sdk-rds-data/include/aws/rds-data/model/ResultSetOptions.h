@@ -33,7 +33,7 @@ namespace Model
   class ResultSetOptions
   {
   public:
-    AWS_RDSDATASERVICE_API ResultSetOptions();
+    AWS_RDSDATASERVICE_API ResultSetOptions() = default;
     AWS_RDSDATASERVICE_API ResultSetOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API ResultSetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * Double or Long can result in roundoff errors due to precision loss. We recommend
      * converting to String, especially when working with currency values.</p> 
      */
-    inline const DecimalReturnType& GetDecimalReturnType() const{ return m_decimalReturnType; }
+    inline DecimalReturnType GetDecimalReturnType() const { return m_decimalReturnType; }
     inline bool DecimalReturnTypeHasBeenSet() const { return m_decimalReturnTypeHasBeenSet; }
-    inline void SetDecimalReturnType(const DecimalReturnType& value) { m_decimalReturnTypeHasBeenSet = true; m_decimalReturnType = value; }
-    inline void SetDecimalReturnType(DecimalReturnType&& value) { m_decimalReturnTypeHasBeenSet = true; m_decimalReturnType = std::move(value); }
-    inline ResultSetOptions& WithDecimalReturnType(const DecimalReturnType& value) { SetDecimalReturnType(value); return *this;}
-    inline ResultSetOptions& WithDecimalReturnType(DecimalReturnType&& value) { SetDecimalReturnType(std::move(value)); return *this;}
+    inline void SetDecimalReturnType(DecimalReturnType value) { m_decimalReturnTypeHasBeenSet = true; m_decimalReturnType = value; }
+    inline ResultSetOptions& WithDecimalReturnType(DecimalReturnType value) { SetDecimalReturnType(value); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * <code>LONG</code>. Specify <code>STRING</code> if the length or precision of
      * numeric values might cause truncation or rounding errors. </p>
      */
-    inline const LongReturnType& GetLongReturnType() const{ return m_longReturnType; }
+    inline LongReturnType GetLongReturnType() const { return m_longReturnType; }
     inline bool LongReturnTypeHasBeenSet() const { return m_longReturnTypeHasBeenSet; }
-    inline void SetLongReturnType(const LongReturnType& value) { m_longReturnTypeHasBeenSet = true; m_longReturnType = value; }
-    inline void SetLongReturnType(LongReturnType&& value) { m_longReturnTypeHasBeenSet = true; m_longReturnType = std::move(value); }
-    inline ResultSetOptions& WithLongReturnType(const LongReturnType& value) { SetLongReturnType(value); return *this;}
-    inline ResultSetOptions& WithLongReturnType(LongReturnType&& value) { SetLongReturnType(std::move(value)); return *this;}
+    inline void SetLongReturnType(LongReturnType value) { m_longReturnTypeHasBeenSet = true; m_longReturnType = value; }
+    inline ResultSetOptions& WithLongReturnType(LongReturnType value) { SetLongReturnType(value); return *this;}
     ///@}
   private:
 
-    DecimalReturnType m_decimalReturnType;
+    DecimalReturnType m_decimalReturnType{DecimalReturnType::NOT_SET};
     bool m_decimalReturnTypeHasBeenSet = false;
 
-    LongReturnType m_longReturnType;
+    LongReturnType m_longReturnType{LongReturnType::NOT_SET};
     bool m_longReturnTypeHasBeenSet = false;
   };
 

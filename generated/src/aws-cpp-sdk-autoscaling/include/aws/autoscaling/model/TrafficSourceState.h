@@ -31,7 +31,7 @@ namespace Model
   class TrafficSourceState
   {
   public:
-    AWS_AUTOSCALING_API TrafficSourceState();
+    AWS_AUTOSCALING_API TrafficSourceState() = default;
     AWS_AUTOSCALING_API TrafficSourceState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API TrafficSourceState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -56,28 +56,24 @@ namespace Model
      * <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from
      * the load balancer or target group.</p> </li> </ul>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline TrafficSourceState& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline TrafficSourceState& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline TrafficSourceState& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    TrafficSourceState& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the traffic source.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline TrafficSourceState& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline TrafficSourceState& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline TrafficSourceState& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    TrafficSourceState& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * a VPC Lattice target group.</p> </li> </ul> <p>Required if the identifier is the
      * name of a Classic Load Balancer.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline TrafficSourceState& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline TrafficSourceState& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline TrafficSourceState& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    TrafficSourceState& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

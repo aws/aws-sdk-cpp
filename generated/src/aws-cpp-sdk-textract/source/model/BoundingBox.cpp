@@ -18,20 +18,7 @@ namespace Textract
 namespace Model
 {
 
-BoundingBox::BoundingBox() : 
-    m_width(0.0),
-    m_widthHasBeenSet(false),
-    m_height(0.0),
-    m_heightHasBeenSet(false),
-    m_left(0.0),
-    m_leftHasBeenSet(false),
-    m_top(0.0),
-    m_topHasBeenSet(false)
-{
-}
-
 BoundingBox::BoundingBox(JsonView jsonValue)
-  : BoundingBox()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ BoundingBox& BoundingBox::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetDouble("Width");
-
     m_widthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetDouble("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Left"))
   {
     m_left = jsonValue.GetDouble("Left");
-
     m_leftHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Top"))
   {
     m_top = jsonValue.GetDouble("Top");
-
     m_topHasBeenSet = true;
   }
-
   return *this;
 }
 

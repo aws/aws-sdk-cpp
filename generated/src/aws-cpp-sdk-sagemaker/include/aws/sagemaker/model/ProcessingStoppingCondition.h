@@ -31,7 +31,7 @@ namespace Model
   class ProcessingStoppingCondition
   {
   public:
-    AWS_SAGEMAKER_API ProcessingStoppingCondition();
+    AWS_SAGEMAKER_API ProcessingStoppingCondition() = default;
     AWS_SAGEMAKER_API ProcessingStoppingCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProcessingStoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p>Specifies the maximum runtime in seconds.</p>
      */
-    inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
+    inline int GetMaxRuntimeInSeconds() const { return m_maxRuntimeInSeconds; }
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
     inline ProcessingStoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maxRuntimeInSeconds;
+    int m_maxRuntimeInSeconds{0};
     bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 

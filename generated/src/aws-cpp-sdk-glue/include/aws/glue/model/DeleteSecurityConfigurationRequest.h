@@ -21,7 +21,7 @@ namespace Model
   class DeleteSecurityConfigurationRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API DeleteSecurityConfigurationRequest();
+    AWS_GLUE_API DeleteSecurityConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the security configuration to delete.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeleteSecurityConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteSecurityConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteSecurityConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteSecurityConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CidrRoutingConfig::CidrRoutingConfig() : 
-    m_collectionIdHasBeenSet(false),
-    m_locationNameHasBeenSet(false)
-{
-}
-
 CidrRoutingConfig::CidrRoutingConfig(const XmlNode& xmlNode)
-  : CidrRoutingConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CidrRoutingConfig& CidrRoutingConfig::operator =(const XmlNode& xmlNode)
     {
       m_collectionId = Aws::Utils::Xml::DecodeEscapedXmlText(collectionIdNode.GetText());
       m_collectionIdHasBeenSet = true;
+       m_collectionIdHasBeenSet = true;
     }
     XmlNode locationNameNode = resultNode.FirstChild("LocationName");
     if(!locationNameNode.IsNull())
     {
       m_locationName = Aws::Utils::Xml::DecodeEscapedXmlText(locationNameNode.GetText());
       m_locationNameHasBeenSet = true;
+       m_locationNameHasBeenSet = true;
     }
   }
 

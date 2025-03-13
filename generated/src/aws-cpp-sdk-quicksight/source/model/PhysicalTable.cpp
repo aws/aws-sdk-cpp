@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PhysicalTable::PhysicalTable() : 
-    m_relationalTableHasBeenSet(false),
-    m_customSqlHasBeenSet(false),
-    m_s3SourceHasBeenSet(false)
-{
-}
-
 PhysicalTable::PhysicalTable(JsonView jsonValue)
-  : PhysicalTable()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PhysicalTable& PhysicalTable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RelationalTable"))
   {
     m_relationalTable = jsonValue.GetObject("RelationalTable");
-
     m_relationalTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomSql"))
   {
     m_customSql = jsonValue.GetObject("CustomSql");
-
     m_customSqlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Source"))
   {
     m_s3Source = jsonValue.GetObject("S3Source");
-
     m_s3SourceHasBeenSet = true;
   }
-
   return *this;
 }
 

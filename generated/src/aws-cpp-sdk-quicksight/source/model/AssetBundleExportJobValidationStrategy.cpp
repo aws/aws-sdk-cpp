@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleExportJobValidationStrategy::AssetBundleExportJobValidationStrategy() : 
-    m_strictModeForAllResources(false),
-    m_strictModeForAllResourcesHasBeenSet(false)
-{
-}
-
 AssetBundleExportJobValidationStrategy::AssetBundleExportJobValidationStrategy(JsonView jsonValue)
-  : AssetBundleExportJobValidationStrategy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AssetBundleExportJobValidationStrategy& AssetBundleExportJobValidationStrategy::
   if(jsonValue.ValueExists("StrictModeForAllResources"))
   {
     m_strictModeForAllResources = jsonValue.GetBool("StrictModeForAllResources");
-
     m_strictModeForAllResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

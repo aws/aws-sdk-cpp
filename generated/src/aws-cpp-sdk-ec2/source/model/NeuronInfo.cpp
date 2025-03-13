@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NeuronInfo::NeuronInfo() : 
-    m_neuronDevicesHasBeenSet(false),
-    m_totalNeuronDeviceMemoryInMiB(0),
-    m_totalNeuronDeviceMemoryInMiBHasBeenSet(false)
-{
-}
-
 NeuronInfo::NeuronInfo(const XmlNode& xmlNode)
-  : NeuronInfo()
 {
   *this = xmlNode;
 }
@@ -43,19 +35,21 @@ NeuronInfo& NeuronInfo::operator =(const XmlNode& xmlNode)
     if(!neuronDevicesNode.IsNull())
     {
       XmlNode neuronDevicesMember = neuronDevicesNode.FirstChild("item");
+      m_neuronDevicesHasBeenSet = !neuronDevicesMember.IsNull();
       while(!neuronDevicesMember.IsNull())
       {
         m_neuronDevices.push_back(neuronDevicesMember);
         neuronDevicesMember = neuronDevicesMember.NextNode("item");
       }
 
-      m_neuronDevicesHasBeenSet = true;
+       m_neuronDevicesHasBeenSet = true;
     }
     XmlNode totalNeuronDeviceMemoryInMiBNode = resultNode.FirstChild("totalNeuronDeviceMemoryInMiB");
     if(!totalNeuronDeviceMemoryInMiBNode.IsNull())
     {
       m_totalNeuronDeviceMemoryInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalNeuronDeviceMemoryInMiBNode.GetText()).c_str()).c_str());
       m_totalNeuronDeviceMemoryInMiBHasBeenSet = true;
+       m_totalNeuronDeviceMemoryInMiBHasBeenSet = true;
     }
   }
 

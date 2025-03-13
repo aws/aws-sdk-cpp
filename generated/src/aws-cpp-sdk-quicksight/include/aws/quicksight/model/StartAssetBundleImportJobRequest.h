@@ -27,7 +27,7 @@ namespace Model
   class StartAssetBundleImportJobRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API StartAssetBundleImportJobRequest();
+    AWS_QUICKSIGHT_API StartAssetBundleImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account to import assets into. </p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline StartAssetBundleImportJobRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline StartAssetBundleImportJobRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    StartAssetBundleImportJobRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The ID of the job. This ID is unique while the job is running. After the job
      * is completed, you can reuse this ID for another job.</p>
      */
-    inline const Aws::String& GetAssetBundleImportJobId() const{ return m_assetBundleImportJobId; }
+    inline const Aws::String& GetAssetBundleImportJobId() const { return m_assetBundleImportJobId; }
     inline bool AssetBundleImportJobIdHasBeenSet() const { return m_assetBundleImportJobIdHasBeenSet; }
-    inline void SetAssetBundleImportJobId(const Aws::String& value) { m_assetBundleImportJobIdHasBeenSet = true; m_assetBundleImportJobId = value; }
-    inline void SetAssetBundleImportJobId(Aws::String&& value) { m_assetBundleImportJobIdHasBeenSet = true; m_assetBundleImportJobId = std::move(value); }
-    inline void SetAssetBundleImportJobId(const char* value) { m_assetBundleImportJobIdHasBeenSet = true; m_assetBundleImportJobId.assign(value); }
-    inline StartAssetBundleImportJobRequest& WithAssetBundleImportJobId(const Aws::String& value) { SetAssetBundleImportJobId(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithAssetBundleImportJobId(Aws::String&& value) { SetAssetBundleImportJobId(std::move(value)); return *this;}
-    inline StartAssetBundleImportJobRequest& WithAssetBundleImportJobId(const char* value) { SetAssetBundleImportJobId(value); return *this;}
+    template<typename AssetBundleImportJobIdT = Aws::String>
+    void SetAssetBundleImportJobId(AssetBundleImportJobIdT&& value) { m_assetBundleImportJobIdHasBeenSet = true; m_assetBundleImportJobId = std::forward<AssetBundleImportJobIdT>(value); }
+    template<typename AssetBundleImportJobIdT = Aws::String>
+    StartAssetBundleImportJobRequest& WithAssetBundleImportJobId(AssetBundleImportJobIdT&& value) { SetAssetBundleImportJobId(std::forward<AssetBundleImportJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>The source of the asset bundle zip file that contains the data that you want
      * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
-    inline const AssetBundleImportSource& GetAssetBundleImportSource() const{ return m_assetBundleImportSource; }
+    inline const AssetBundleImportSource& GetAssetBundleImportSource() const { return m_assetBundleImportSource; }
     inline bool AssetBundleImportSourceHasBeenSet() const { return m_assetBundleImportSourceHasBeenSet; }
-    inline void SetAssetBundleImportSource(const AssetBundleImportSource& value) { m_assetBundleImportSourceHasBeenSet = true; m_assetBundleImportSource = value; }
-    inline void SetAssetBundleImportSource(AssetBundleImportSource&& value) { m_assetBundleImportSourceHasBeenSet = true; m_assetBundleImportSource = std::move(value); }
-    inline StartAssetBundleImportJobRequest& WithAssetBundleImportSource(const AssetBundleImportSource& value) { SetAssetBundleImportSource(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithAssetBundleImportSource(AssetBundleImportSource&& value) { SetAssetBundleImportSource(std::move(value)); return *this;}
+    template<typename AssetBundleImportSourceT = AssetBundleImportSource>
+    void SetAssetBundleImportSource(AssetBundleImportSourceT&& value) { m_assetBundleImportSourceHasBeenSet = true; m_assetBundleImportSource = std::forward<AssetBundleImportSourceT>(value); }
+    template<typename AssetBundleImportSourceT = AssetBundleImportSource>
+    StartAssetBundleImportJobRequest& WithAssetBundleImportSource(AssetBundleImportSourceT&& value) { SetAssetBundleImportSource(std::forward<AssetBundleImportSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,12 @@ namespace Model
      * <p>Optional overrides that are applied to the resource configuration before
      * import.</p>
      */
-    inline const AssetBundleImportJobOverrideParameters& GetOverrideParameters() const{ return m_overrideParameters; }
+    inline const AssetBundleImportJobOverrideParameters& GetOverrideParameters() const { return m_overrideParameters; }
     inline bool OverrideParametersHasBeenSet() const { return m_overrideParametersHasBeenSet; }
-    inline void SetOverrideParameters(const AssetBundleImportJobOverrideParameters& value) { m_overrideParametersHasBeenSet = true; m_overrideParameters = value; }
-    inline void SetOverrideParameters(AssetBundleImportJobOverrideParameters&& value) { m_overrideParametersHasBeenSet = true; m_overrideParameters = std::move(value); }
-    inline StartAssetBundleImportJobRequest& WithOverrideParameters(const AssetBundleImportJobOverrideParameters& value) { SetOverrideParameters(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithOverrideParameters(AssetBundleImportJobOverrideParameters&& value) { SetOverrideParameters(std::move(value)); return *this;}
+    template<typename OverrideParametersT = AssetBundleImportJobOverrideParameters>
+    void SetOverrideParameters(OverrideParametersT&& value) { m_overrideParametersHasBeenSet = true; m_overrideParameters = std::forward<OverrideParametersT>(value); }
+    template<typename OverrideParametersT = AssetBundleImportJobOverrideParameters>
+    StartAssetBundleImportJobRequest& WithOverrideParameters(OverrideParametersT&& value) { SetOverrideParameters(std::forward<OverrideParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,10 @@ namespace Model
      * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
-    inline const AssetBundleImportFailureAction& GetFailureAction() const{ return m_failureAction; }
+    inline AssetBundleImportFailureAction GetFailureAction() const { return m_failureAction; }
     inline bool FailureActionHasBeenSet() const { return m_failureActionHasBeenSet; }
-    inline void SetFailureAction(const AssetBundleImportFailureAction& value) { m_failureActionHasBeenSet = true; m_failureAction = value; }
-    inline void SetFailureAction(AssetBundleImportFailureAction&& value) { m_failureActionHasBeenSet = true; m_failureAction = std::move(value); }
-    inline StartAssetBundleImportJobRequest& WithFailureAction(const AssetBundleImportFailureAction& value) { SetFailureAction(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithFailureAction(AssetBundleImportFailureAction&& value) { SetFailureAction(std::move(value)); return *this;}
+    inline void SetFailureAction(AssetBundleImportFailureAction value) { m_failureActionHasBeenSet = true; m_failureAction = value; }
+    inline StartAssetBundleImportJobRequest& WithFailureAction(AssetBundleImportFailureAction value) { SetFailureAction(value); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +109,12 @@ namespace Model
      * <p>Optional permission overrides that are applied to the resource configuration
      * before import.</p>
      */
-    inline const AssetBundleImportJobOverridePermissions& GetOverridePermissions() const{ return m_overridePermissions; }
+    inline const AssetBundleImportJobOverridePermissions& GetOverridePermissions() const { return m_overridePermissions; }
     inline bool OverridePermissionsHasBeenSet() const { return m_overridePermissionsHasBeenSet; }
-    inline void SetOverridePermissions(const AssetBundleImportJobOverridePermissions& value) { m_overridePermissionsHasBeenSet = true; m_overridePermissions = value; }
-    inline void SetOverridePermissions(AssetBundleImportJobOverridePermissions&& value) { m_overridePermissionsHasBeenSet = true; m_overridePermissions = std::move(value); }
-    inline StartAssetBundleImportJobRequest& WithOverridePermissions(const AssetBundleImportJobOverridePermissions& value) { SetOverridePermissions(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithOverridePermissions(AssetBundleImportJobOverridePermissions&& value) { SetOverridePermissions(std::move(value)); return *this;}
+    template<typename OverridePermissionsT = AssetBundleImportJobOverridePermissions>
+    void SetOverridePermissions(OverridePermissionsT&& value) { m_overridePermissionsHasBeenSet = true; m_overridePermissions = std::forward<OverridePermissionsT>(value); }
+    template<typename OverridePermissionsT = AssetBundleImportJobOverridePermissions>
+    StartAssetBundleImportJobRequest& WithOverridePermissions(OverridePermissionsT&& value) { SetOverridePermissions(std::forward<OverridePermissionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +122,12 @@ namespace Model
      * <p>Optional tag overrides that are applied to the resource configuration before
      * import.</p>
      */
-    inline const AssetBundleImportJobOverrideTags& GetOverrideTags() const{ return m_overrideTags; }
+    inline const AssetBundleImportJobOverrideTags& GetOverrideTags() const { return m_overrideTags; }
     inline bool OverrideTagsHasBeenSet() const { return m_overrideTagsHasBeenSet; }
-    inline void SetOverrideTags(const AssetBundleImportJobOverrideTags& value) { m_overrideTagsHasBeenSet = true; m_overrideTags = value; }
-    inline void SetOverrideTags(AssetBundleImportJobOverrideTags&& value) { m_overrideTagsHasBeenSet = true; m_overrideTags = std::move(value); }
-    inline StartAssetBundleImportJobRequest& WithOverrideTags(const AssetBundleImportJobOverrideTags& value) { SetOverrideTags(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithOverrideTags(AssetBundleImportJobOverrideTags&& value) { SetOverrideTags(std::move(value)); return *this;}
+    template<typename OverrideTagsT = AssetBundleImportJobOverrideTags>
+    void SetOverrideTags(OverrideTagsT&& value) { m_overrideTagsHasBeenSet = true; m_overrideTags = std::forward<OverrideTagsT>(value); }
+    template<typename OverrideTagsT = AssetBundleImportJobOverrideTags>
+    StartAssetBundleImportJobRequest& WithOverrideTags(OverrideTagsT&& value) { SetOverrideTags(std::forward<OverrideTagsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +135,12 @@ namespace Model
      * <p>An optional validation strategy override for all analyses and dashboards that
      * is applied to the resource configuration before import. </p>
      */
-    inline const AssetBundleImportJobOverrideValidationStrategy& GetOverrideValidationStrategy() const{ return m_overrideValidationStrategy; }
+    inline const AssetBundleImportJobOverrideValidationStrategy& GetOverrideValidationStrategy() const { return m_overrideValidationStrategy; }
     inline bool OverrideValidationStrategyHasBeenSet() const { return m_overrideValidationStrategyHasBeenSet; }
-    inline void SetOverrideValidationStrategy(const AssetBundleImportJobOverrideValidationStrategy& value) { m_overrideValidationStrategyHasBeenSet = true; m_overrideValidationStrategy = value; }
-    inline void SetOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy&& value) { m_overrideValidationStrategyHasBeenSet = true; m_overrideValidationStrategy = std::move(value); }
-    inline StartAssetBundleImportJobRequest& WithOverrideValidationStrategy(const AssetBundleImportJobOverrideValidationStrategy& value) { SetOverrideValidationStrategy(value); return *this;}
-    inline StartAssetBundleImportJobRequest& WithOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy&& value) { SetOverrideValidationStrategy(std::move(value)); return *this;}
+    template<typename OverrideValidationStrategyT = AssetBundleImportJobOverrideValidationStrategy>
+    void SetOverrideValidationStrategy(OverrideValidationStrategyT&& value) { m_overrideValidationStrategyHasBeenSet = true; m_overrideValidationStrategy = std::forward<OverrideValidationStrategyT>(value); }
+    template<typename OverrideValidationStrategyT = AssetBundleImportJobOverrideValidationStrategy>
+    StartAssetBundleImportJobRequest& WithOverrideValidationStrategy(OverrideValidationStrategyT&& value) { SetOverrideValidationStrategy(std::forward<OverrideValidationStrategyT>(value)); return *this;}
     ///@}
   private:
 
@@ -162,7 +156,7 @@ namespace Model
     AssetBundleImportJobOverrideParameters m_overrideParameters;
     bool m_overrideParametersHasBeenSet = false;
 
-    AssetBundleImportFailureAction m_failureAction;
+    AssetBundleImportFailureAction m_failureAction{AssetBundleImportFailureAction::NOT_SET};
     bool m_failureActionHasBeenSet = false;
 
     AssetBundleImportJobOverridePermissions m_overridePermissions;

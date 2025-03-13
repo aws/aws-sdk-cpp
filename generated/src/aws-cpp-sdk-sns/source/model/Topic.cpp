@@ -20,13 +20,7 @@ namespace SNS
 namespace Model
 {
 
-Topic::Topic() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 Topic::Topic(const XmlNode& xmlNode)
-  : Topic()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Topic& Topic::operator =(const XmlNode& xmlNode)
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
   }
 

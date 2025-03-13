@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-FilePaths::FilePaths() : 
-    m_filePathHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_hashHasBeenSet(false)
-{
-}
-
 FilePaths::FilePaths(JsonView jsonValue)
-  : FilePaths()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ FilePaths& FilePaths::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilePath"))
   {
     m_filePath = jsonValue.GetString("FilePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileName"))
   {
     m_fileName = jsonValue.GetString("FileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hash"))
   {
     m_hash = jsonValue.GetString("Hash");
-
     m_hashHasBeenSet = true;
   }
-
   return *this;
 }
 

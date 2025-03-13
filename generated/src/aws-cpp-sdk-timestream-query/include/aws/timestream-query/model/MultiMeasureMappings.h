@@ -35,7 +35,7 @@ namespace Model
   class MultiMeasureMappings
   {
   public:
-    AWS_TIMESTREAMQUERY_API MultiMeasureMappings();
+    AWS_TIMESTREAMQUERY_API MultiMeasureMappings() = default;
     AWS_TIMESTREAMQUERY_API MultiMeasureMappings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API MultiMeasureMappings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * required when measureNameColumn is not provided. If MeasureNameColumn is
      * provided, then value from that column will be used as multi-measure name.</p>
      */
-    inline const Aws::String& GetTargetMultiMeasureName() const{ return m_targetMultiMeasureName; }
+    inline const Aws::String& GetTargetMultiMeasureName() const { return m_targetMultiMeasureName; }
     inline bool TargetMultiMeasureNameHasBeenSet() const { return m_targetMultiMeasureNameHasBeenSet; }
-    inline void SetTargetMultiMeasureName(const Aws::String& value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName = value; }
-    inline void SetTargetMultiMeasureName(Aws::String&& value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName = std::move(value); }
-    inline void SetTargetMultiMeasureName(const char* value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName.assign(value); }
-    inline MultiMeasureMappings& WithTargetMultiMeasureName(const Aws::String& value) { SetTargetMultiMeasureName(value); return *this;}
-    inline MultiMeasureMappings& WithTargetMultiMeasureName(Aws::String&& value) { SetTargetMultiMeasureName(std::move(value)); return *this;}
-    inline MultiMeasureMappings& WithTargetMultiMeasureName(const char* value) { SetTargetMultiMeasureName(value); return *this;}
+    template<typename TargetMultiMeasureNameT = Aws::String>
+    void SetTargetMultiMeasureName(TargetMultiMeasureNameT&& value) { m_targetMultiMeasureNameHasBeenSet = true; m_targetMultiMeasureName = std::forward<TargetMultiMeasureNameT>(value); }
+    template<typename TargetMultiMeasureNameT = Aws::String>
+    MultiMeasureMappings& WithTargetMultiMeasureName(TargetMultiMeasureNameT&& value) { SetTargetMultiMeasureName(std::forward<TargetMultiMeasureNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * <p>Required. Attribute mappings to be used for mapping query results to ingest
      * data for multi-measure attributes.</p>
      */
-    inline const Aws::Vector<MultiMeasureAttributeMapping>& GetMultiMeasureAttributeMappings() const{ return m_multiMeasureAttributeMappings; }
+    inline const Aws::Vector<MultiMeasureAttributeMapping>& GetMultiMeasureAttributeMappings() const { return m_multiMeasureAttributeMappings; }
     inline bool MultiMeasureAttributeMappingsHasBeenSet() const { return m_multiMeasureAttributeMappingsHasBeenSet; }
-    inline void SetMultiMeasureAttributeMappings(const Aws::Vector<MultiMeasureAttributeMapping>& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings = value; }
-    inline void SetMultiMeasureAttributeMappings(Aws::Vector<MultiMeasureAttributeMapping>&& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings = std::move(value); }
-    inline MultiMeasureMappings& WithMultiMeasureAttributeMappings(const Aws::Vector<MultiMeasureAttributeMapping>& value) { SetMultiMeasureAttributeMappings(value); return *this;}
-    inline MultiMeasureMappings& WithMultiMeasureAttributeMappings(Aws::Vector<MultiMeasureAttributeMapping>&& value) { SetMultiMeasureAttributeMappings(std::move(value)); return *this;}
-    inline MultiMeasureMappings& AddMultiMeasureAttributeMappings(const MultiMeasureAttributeMapping& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings.push_back(value); return *this; }
-    inline MultiMeasureMappings& AddMultiMeasureAttributeMappings(MultiMeasureAttributeMapping&& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings.push_back(std::move(value)); return *this; }
+    template<typename MultiMeasureAttributeMappingsT = Aws::Vector<MultiMeasureAttributeMapping>>
+    void SetMultiMeasureAttributeMappings(MultiMeasureAttributeMappingsT&& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings = std::forward<MultiMeasureAttributeMappingsT>(value); }
+    template<typename MultiMeasureAttributeMappingsT = Aws::Vector<MultiMeasureAttributeMapping>>
+    MultiMeasureMappings& WithMultiMeasureAttributeMappings(MultiMeasureAttributeMappingsT&& value) { SetMultiMeasureAttributeMappings(std::forward<MultiMeasureAttributeMappingsT>(value)); return *this;}
+    template<typename MultiMeasureAttributeMappingsT = MultiMeasureAttributeMapping>
+    MultiMeasureMappings& AddMultiMeasureAttributeMappings(MultiMeasureAttributeMappingsT&& value) { m_multiMeasureAttributeMappingsHasBeenSet = true; m_multiMeasureAttributeMappings.emplace_back(std::forward<MultiMeasureAttributeMappingsT>(value)); return *this; }
     ///@}
   private:
 

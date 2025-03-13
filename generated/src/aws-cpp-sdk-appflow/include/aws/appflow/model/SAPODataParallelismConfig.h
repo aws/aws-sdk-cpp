@@ -32,7 +32,7 @@ namespace Model
   class SAPODataParallelismConfig
   {
   public:
-    AWS_APPFLOW_API SAPODataParallelismConfig();
+    AWS_APPFLOW_API SAPODataParallelismConfig() = default;
     AWS_APPFLOW_API SAPODataParallelismConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SAPODataParallelismConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>The maximum number of processes that Amazon AppFlow runs at the same time
      * when it retrieves your data from your SAP application.</p>
      */
-    inline int GetMaxParallelism() const{ return m_maxParallelism; }
+    inline int GetMaxParallelism() const { return m_maxParallelism; }
     inline bool MaxParallelismHasBeenSet() const { return m_maxParallelismHasBeenSet; }
     inline void SetMaxParallelism(int value) { m_maxParallelismHasBeenSet = true; m_maxParallelism = value; }
     inline SAPODataParallelismConfig& WithMaxParallelism(int value) { SetMaxParallelism(value); return *this;}
     ///@}
   private:
 
-    int m_maxParallelism;
+    int m_maxParallelism{0};
     bool m_maxParallelismHasBeenSet = false;
   };
 

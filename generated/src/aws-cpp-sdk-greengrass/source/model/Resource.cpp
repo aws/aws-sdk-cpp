@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-Resource::Resource() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_resourceDataContainerHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceDataContainer"))
   {
     m_resourceDataContainer = jsonValue.GetObject("ResourceDataContainer");
-
     m_resourceDataContainerHasBeenSet = true;
   }
-
   return *this;
 }
 

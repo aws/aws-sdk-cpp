@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-AribSourceSettings::AribSourceSettings()
-{
-}
-
 AribSourceSettings::AribSourceSettings(JsonView jsonValue)
 {
   *this = jsonValue;

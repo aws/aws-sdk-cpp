@@ -32,7 +32,7 @@ namespace Model
   class QueryInfo
   {
   public:
-    AWS_CONFIGSERVICE_API QueryInfo();
+    AWS_CONFIGSERVICE_API QueryInfo() = default;
     AWS_CONFIGSERVICE_API QueryInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API QueryInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>Returns a <code>FieldInfo</code> object.</p>
      */
-    inline const Aws::Vector<FieldInfo>& GetSelectFields() const{ return m_selectFields; }
+    inline const Aws::Vector<FieldInfo>& GetSelectFields() const { return m_selectFields; }
     inline bool SelectFieldsHasBeenSet() const { return m_selectFieldsHasBeenSet; }
-    inline void SetSelectFields(const Aws::Vector<FieldInfo>& value) { m_selectFieldsHasBeenSet = true; m_selectFields = value; }
-    inline void SetSelectFields(Aws::Vector<FieldInfo>&& value) { m_selectFieldsHasBeenSet = true; m_selectFields = std::move(value); }
-    inline QueryInfo& WithSelectFields(const Aws::Vector<FieldInfo>& value) { SetSelectFields(value); return *this;}
-    inline QueryInfo& WithSelectFields(Aws::Vector<FieldInfo>&& value) { SetSelectFields(std::move(value)); return *this;}
-    inline QueryInfo& AddSelectFields(const FieldInfo& value) { m_selectFieldsHasBeenSet = true; m_selectFields.push_back(value); return *this; }
-    inline QueryInfo& AddSelectFields(FieldInfo&& value) { m_selectFieldsHasBeenSet = true; m_selectFields.push_back(std::move(value)); return *this; }
+    template<typename SelectFieldsT = Aws::Vector<FieldInfo>>
+    void SetSelectFields(SelectFieldsT&& value) { m_selectFieldsHasBeenSet = true; m_selectFields = std::forward<SelectFieldsT>(value); }
+    template<typename SelectFieldsT = Aws::Vector<FieldInfo>>
+    QueryInfo& WithSelectFields(SelectFieldsT&& value) { SetSelectFields(std::forward<SelectFieldsT>(value)); return *this;}
+    template<typename SelectFieldsT = FieldInfo>
+    QueryInfo& AddSelectFields(SelectFieldsT&& value) { m_selectFieldsHasBeenSet = true; m_selectFields.emplace_back(std::forward<SelectFieldsT>(value)); return *this; }
     ///@}
   private:
 

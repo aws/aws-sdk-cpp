@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeDocumentVersionsRequest::DescribeDocumentVersionsRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_includeHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDocumentVersionsRequest::SerializePayload() const
 {
   return {};

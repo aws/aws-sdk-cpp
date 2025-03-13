@@ -37,7 +37,7 @@ namespace Model
   class DescribeCacheParametersResult
   {
   public:
-    AWS_ELASTICACHE_API DescribeCacheParametersResult();
+    AWS_ELASTICACHE_API DescribeCacheParametersResult() = default;
     AWS_ELASTICACHE_API DescribeCacheParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API DescribeCacheParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeCacheParametersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeCacheParametersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeCacheParametersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeCacheParametersResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <a>Parameter</a> instances.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
-    inline DescribeCacheParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline DescribeCacheParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline DescribeCacheParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
-    inline DescribeCacheParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    DescribeCacheParametersResult& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    DescribeCacheParametersResult& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,32 +71,36 @@ namespace Model
      * <p>A list of parameters specific to a particular cache node type. Each element
      * in the list contains detailed information about one parameter.</p>
      */
-    inline const Aws::Vector<CacheNodeTypeSpecificParameter>& GetCacheNodeTypeSpecificParameters() const{ return m_cacheNodeTypeSpecificParameters; }
-    inline void SetCacheNodeTypeSpecificParameters(const Aws::Vector<CacheNodeTypeSpecificParameter>& value) { m_cacheNodeTypeSpecificParameters = value; }
-    inline void SetCacheNodeTypeSpecificParameters(Aws::Vector<CacheNodeTypeSpecificParameter>&& value) { m_cacheNodeTypeSpecificParameters = std::move(value); }
-    inline DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(const Aws::Vector<CacheNodeTypeSpecificParameter>& value) { SetCacheNodeTypeSpecificParameters(value); return *this;}
-    inline DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(Aws::Vector<CacheNodeTypeSpecificParameter>&& value) { SetCacheNodeTypeSpecificParameters(std::move(value)); return *this;}
-    inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(const CacheNodeTypeSpecificParameter& value) { m_cacheNodeTypeSpecificParameters.push_back(value); return *this; }
-    inline DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter&& value) { m_cacheNodeTypeSpecificParameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CacheNodeTypeSpecificParameter>& GetCacheNodeTypeSpecificParameters() const { return m_cacheNodeTypeSpecificParameters; }
+    template<typename CacheNodeTypeSpecificParametersT = Aws::Vector<CacheNodeTypeSpecificParameter>>
+    void SetCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParametersT&& value) { m_cacheNodeTypeSpecificParametersHasBeenSet = true; m_cacheNodeTypeSpecificParameters = std::forward<CacheNodeTypeSpecificParametersT>(value); }
+    template<typename CacheNodeTypeSpecificParametersT = Aws::Vector<CacheNodeTypeSpecificParameter>>
+    DescribeCacheParametersResult& WithCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParametersT&& value) { SetCacheNodeTypeSpecificParameters(std::forward<CacheNodeTypeSpecificParametersT>(value)); return *this;}
+    template<typename CacheNodeTypeSpecificParametersT = CacheNodeTypeSpecificParameter>
+    DescribeCacheParametersResult& AddCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParametersT&& value) { m_cacheNodeTypeSpecificParametersHasBeenSet = true; m_cacheNodeTypeSpecificParameters.emplace_back(std::forward<CacheNodeTypeSpecificParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCacheParametersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCacheParametersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCacheParametersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<CacheNodeTypeSpecificParameter> m_cacheNodeTypeSpecificParameters;
+    bool m_cacheNodeTypeSpecificParametersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

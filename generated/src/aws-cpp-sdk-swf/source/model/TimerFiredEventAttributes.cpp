@@ -18,15 +18,7 @@ namespace SWF
 namespace Model
 {
 
-TimerFiredEventAttributes::TimerFiredEventAttributes() : 
-    m_timerIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false)
-{
-}
-
 TimerFiredEventAttributes::TimerFiredEventAttributes(JsonView jsonValue)
-  : TimerFiredEventAttributes()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TimerFiredEventAttributes& TimerFiredEventAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("timerId"))
   {
     m_timerId = jsonValue.GetString("timerId");
-
     m_timerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

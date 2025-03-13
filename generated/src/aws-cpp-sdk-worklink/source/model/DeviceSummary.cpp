@@ -18,15 +18,7 @@ namespace WorkLink
 namespace Model
 {
 
-DeviceSummary::DeviceSummary() : 
-    m_deviceIdHasBeenSet(false),
-    m_deviceStatus(DeviceStatus::NOT_SET),
-    m_deviceStatusHasBeenSet(false)
-{
-}
-
 DeviceSummary::DeviceSummary(JsonView jsonValue)
-  : DeviceSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceStatus"))
   {
     m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("DeviceStatus"));
-
     m_deviceStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

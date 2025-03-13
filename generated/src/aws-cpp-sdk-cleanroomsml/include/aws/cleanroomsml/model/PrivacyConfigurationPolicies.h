@@ -34,7 +34,7 @@ namespace Model
   class PrivacyConfigurationPolicies
   {
   public:
-    AWS_CLEANROOMSML_API PrivacyConfigurationPolicies();
+    AWS_CLEANROOMSML_API PrivacyConfigurationPolicies() = default;
     AWS_CLEANROOMSML_API PrivacyConfigurationPolicies(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API PrivacyConfigurationPolicies& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p>Specifies who will receive the trained models.</p>
      */
-    inline const TrainedModelsConfigurationPolicy& GetTrainedModels() const{ return m_trainedModels; }
+    inline const TrainedModelsConfigurationPolicy& GetTrainedModels() const { return m_trainedModels; }
     inline bool TrainedModelsHasBeenSet() const { return m_trainedModelsHasBeenSet; }
-    inline void SetTrainedModels(const TrainedModelsConfigurationPolicy& value) { m_trainedModelsHasBeenSet = true; m_trainedModels = value; }
-    inline void SetTrainedModels(TrainedModelsConfigurationPolicy&& value) { m_trainedModelsHasBeenSet = true; m_trainedModels = std::move(value); }
-    inline PrivacyConfigurationPolicies& WithTrainedModels(const TrainedModelsConfigurationPolicy& value) { SetTrainedModels(value); return *this;}
-    inline PrivacyConfigurationPolicies& WithTrainedModels(TrainedModelsConfigurationPolicy&& value) { SetTrainedModels(std::move(value)); return *this;}
+    template<typename TrainedModelsT = TrainedModelsConfigurationPolicy>
+    void SetTrainedModels(TrainedModelsT&& value) { m_trainedModelsHasBeenSet = true; m_trainedModels = std::forward<TrainedModelsT>(value); }
+    template<typename TrainedModelsT = TrainedModelsConfigurationPolicy>
+    PrivacyConfigurationPolicies& WithTrainedModels(TrainedModelsT&& value) { SetTrainedModels(std::forward<TrainedModelsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies who will receive the trained model export.</p>
      */
-    inline const TrainedModelExportsConfigurationPolicy& GetTrainedModelExports() const{ return m_trainedModelExports; }
+    inline const TrainedModelExportsConfigurationPolicy& GetTrainedModelExports() const { return m_trainedModelExports; }
     inline bool TrainedModelExportsHasBeenSet() const { return m_trainedModelExportsHasBeenSet; }
-    inline void SetTrainedModelExports(const TrainedModelExportsConfigurationPolicy& value) { m_trainedModelExportsHasBeenSet = true; m_trainedModelExports = value; }
-    inline void SetTrainedModelExports(TrainedModelExportsConfigurationPolicy&& value) { m_trainedModelExportsHasBeenSet = true; m_trainedModelExports = std::move(value); }
-    inline PrivacyConfigurationPolicies& WithTrainedModelExports(const TrainedModelExportsConfigurationPolicy& value) { SetTrainedModelExports(value); return *this;}
-    inline PrivacyConfigurationPolicies& WithTrainedModelExports(TrainedModelExportsConfigurationPolicy&& value) { SetTrainedModelExports(std::move(value)); return *this;}
+    template<typename TrainedModelExportsT = TrainedModelExportsConfigurationPolicy>
+    void SetTrainedModelExports(TrainedModelExportsT&& value) { m_trainedModelExportsHasBeenSet = true; m_trainedModelExports = std::forward<TrainedModelExportsT>(value); }
+    template<typename TrainedModelExportsT = TrainedModelExportsConfigurationPolicy>
+    PrivacyConfigurationPolicies& WithTrainedModelExports(TrainedModelExportsT&& value) { SetTrainedModelExports(std::forward<TrainedModelExportsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies who will receive the trained model inference jobs.</p>
      */
-    inline const TrainedModelInferenceJobsConfigurationPolicy& GetTrainedModelInferenceJobs() const{ return m_trainedModelInferenceJobs; }
+    inline const TrainedModelInferenceJobsConfigurationPolicy& GetTrainedModelInferenceJobs() const { return m_trainedModelInferenceJobs; }
     inline bool TrainedModelInferenceJobsHasBeenSet() const { return m_trainedModelInferenceJobsHasBeenSet; }
-    inline void SetTrainedModelInferenceJobs(const TrainedModelInferenceJobsConfigurationPolicy& value) { m_trainedModelInferenceJobsHasBeenSet = true; m_trainedModelInferenceJobs = value; }
-    inline void SetTrainedModelInferenceJobs(TrainedModelInferenceJobsConfigurationPolicy&& value) { m_trainedModelInferenceJobsHasBeenSet = true; m_trainedModelInferenceJobs = std::move(value); }
-    inline PrivacyConfigurationPolicies& WithTrainedModelInferenceJobs(const TrainedModelInferenceJobsConfigurationPolicy& value) { SetTrainedModelInferenceJobs(value); return *this;}
-    inline PrivacyConfigurationPolicies& WithTrainedModelInferenceJobs(TrainedModelInferenceJobsConfigurationPolicy&& value) { SetTrainedModelInferenceJobs(std::move(value)); return *this;}
+    template<typename TrainedModelInferenceJobsT = TrainedModelInferenceJobsConfigurationPolicy>
+    void SetTrainedModelInferenceJobs(TrainedModelInferenceJobsT&& value) { m_trainedModelInferenceJobsHasBeenSet = true; m_trainedModelInferenceJobs = std::forward<TrainedModelInferenceJobsT>(value); }
+    template<typename TrainedModelInferenceJobsT = TrainedModelInferenceJobsConfigurationPolicy>
+    PrivacyConfigurationPolicies& WithTrainedModelInferenceJobs(TrainedModelInferenceJobsT&& value) { SetTrainedModelInferenceJobs(std::forward<TrainedModelInferenceJobsT>(value)); return *this;}
     ///@}
   private:
 

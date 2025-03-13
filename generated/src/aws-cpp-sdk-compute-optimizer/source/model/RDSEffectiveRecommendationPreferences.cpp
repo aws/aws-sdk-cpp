@@ -18,18 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSEffectiveRecommendationPreferences::RDSEffectiveRecommendationPreferences() : 
-    m_cpuVendorArchitecturesHasBeenSet(false),
-    m_enhancedInfrastructureMetrics(EnhancedInfrastructureMetrics::NOT_SET),
-    m_enhancedInfrastructureMetricsHasBeenSet(false),
-    m_lookBackPeriod(LookBackPeriodPreference::NOT_SET),
-    m_lookBackPeriodHasBeenSet(false),
-    m_savingsEstimationModeHasBeenSet(false)
-{
-}
-
 RDSEffectiveRecommendationPreferences::RDSEffectiveRecommendationPreferences(JsonView jsonValue)
-  : RDSEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ RDSEffectiveRecommendationPreferences& RDSEffectiveRecommendationPreferences::op
     }
     m_cpuVendorArchitecturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enhancedInfrastructureMetrics"))
   {
     m_enhancedInfrastructureMetrics = EnhancedInfrastructureMetricsMapper::GetEnhancedInfrastructureMetricsForName(jsonValue.GetString("enhancedInfrastructureMetrics"));
-
     m_enhancedInfrastructureMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriod"))
   {
     m_lookBackPeriod = LookBackPeriodPreferenceMapper::GetLookBackPeriodPreferenceForName(jsonValue.GetString("lookBackPeriod"));
-
     m_lookBackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = jsonValue.GetObject("savingsEstimationMode");
-
     m_savingsEstimationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-UpdateApplicationVersionRequest::UpdateApplicationVersionRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationVersionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

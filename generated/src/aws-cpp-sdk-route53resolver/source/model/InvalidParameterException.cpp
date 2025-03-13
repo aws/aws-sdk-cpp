@@ -18,14 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-InvalidParameterException::InvalidParameterException() : 
-    m_messageHasBeenSet(false),
-    m_fieldNameHasBeenSet(false)
-{
-}
-
 InvalidParameterException::InvalidParameterException(JsonView jsonValue)
-  : InvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidParameterException& InvalidParameterException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

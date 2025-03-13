@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReceiptRuleSetMetadata::ReceiptRuleSetMetadata() : 
-    m_nameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 ReceiptRuleSetMetadata::ReceiptRuleSetMetadata(const XmlNode& xmlNode)
-  : ReceiptRuleSetMetadata()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ReceiptRuleSetMetadata& ReceiptRuleSetMetadata::operator =(const XmlNode& xmlNod
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode createdTimestampNode = resultNode.FirstChild("CreatedTimestamp");
     if(!createdTimestampNode.IsNull())
     {
       m_createdTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimestampHasBeenSet = true;
+       m_createdTimestampHasBeenSet = true;
     }
   }
 

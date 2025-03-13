@@ -31,7 +31,7 @@ namespace Model
   class ActionDefinition
   {
   public:
-    AWS_IOTSITEWISE_API ActionDefinition();
+    AWS_IOTSITEWISE_API ActionDefinition() = default;
     AWS_IOTSITEWISE_API ActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API ActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The ID of the action definition.</p>
      */
-    inline const Aws::String& GetActionDefinitionId() const{ return m_actionDefinitionId; }
+    inline const Aws::String& GetActionDefinitionId() const { return m_actionDefinitionId; }
     inline bool ActionDefinitionIdHasBeenSet() const { return m_actionDefinitionIdHasBeenSet; }
-    inline void SetActionDefinitionId(const Aws::String& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = value; }
-    inline void SetActionDefinitionId(Aws::String&& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = std::move(value); }
-    inline void SetActionDefinitionId(const char* value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId.assign(value); }
-    inline ActionDefinition& WithActionDefinitionId(const Aws::String& value) { SetActionDefinitionId(value); return *this;}
-    inline ActionDefinition& WithActionDefinitionId(Aws::String&& value) { SetActionDefinitionId(std::move(value)); return *this;}
-    inline ActionDefinition& WithActionDefinitionId(const char* value) { SetActionDefinitionId(value); return *this;}
+    template<typename ActionDefinitionIdT = Aws::String>
+    void SetActionDefinitionId(ActionDefinitionIdT&& value) { m_actionDefinitionIdHasBeenSet = true; m_actionDefinitionId = std::forward<ActionDefinitionIdT>(value); }
+    template<typename ActionDefinitionIdT = Aws::String>
+    ActionDefinition& WithActionDefinitionId(ActionDefinitionIdT&& value) { SetActionDefinitionId(std::forward<ActionDefinitionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the action definition.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline ActionDefinition& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline ActionDefinition& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline ActionDefinition& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    ActionDefinition& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the action definition.</p>
      */
-    inline const Aws::String& GetActionType() const{ return m_actionType; }
+    inline const Aws::String& GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
-    inline ActionDefinition& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
-    inline ActionDefinition& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
-    inline ActionDefinition& WithActionType(const char* value) { SetActionType(value); return *this;}
+    template<typename ActionTypeT = Aws::String>
+    void SetActionType(ActionTypeT&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::forward<ActionTypeT>(value); }
+    template<typename ActionTypeT = Aws::String>
+    ActionDefinition& WithActionType(ActionTypeT&& value) { SetActionType(std::forward<ActionTypeT>(value)); return *this;}
     ///@}
   private:
 

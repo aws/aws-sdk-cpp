@@ -38,7 +38,7 @@ namespace Model
   class BaselinePerformanceFactorsRequest
   {
   public:
-    AWS_AUTOSCALING_API BaselinePerformanceFactorsRequest();
+    AWS_AUTOSCALING_API BaselinePerformanceFactorsRequest() = default;
     AWS_AUTOSCALING_API BaselinePerformanceFactorsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API BaselinePerformanceFactorsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,12 @@ namespace Model
      * <p> The CPU performance to consider, using an instance family as the baseline
      * reference. </p>
      */
-    inline const CpuPerformanceFactorRequest& GetCpu() const{ return m_cpu; }
+    inline const CpuPerformanceFactorRequest& GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-    inline void SetCpu(const CpuPerformanceFactorRequest& value) { m_cpuHasBeenSet = true; m_cpu = value; }
-    inline void SetCpu(CpuPerformanceFactorRequest&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
-    inline BaselinePerformanceFactorsRequest& WithCpu(const CpuPerformanceFactorRequest& value) { SetCpu(value); return *this;}
-    inline BaselinePerformanceFactorsRequest& WithCpu(CpuPerformanceFactorRequest&& value) { SetCpu(std::move(value)); return *this;}
+    template<typename CpuT = CpuPerformanceFactorRequest>
+    void SetCpu(CpuT&& value) { m_cpuHasBeenSet = true; m_cpu = std::forward<CpuT>(value); }
+    template<typename CpuT = CpuPerformanceFactorRequest>
+    BaselinePerformanceFactorsRequest& WithCpu(CpuT&& value) { SetCpu(std::forward<CpuT>(value)); return *this;}
     ///@}
   private:
 

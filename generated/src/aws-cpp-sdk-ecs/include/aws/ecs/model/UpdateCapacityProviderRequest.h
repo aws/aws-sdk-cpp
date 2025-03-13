@@ -22,7 +22,7 @@ namespace Model
   class UpdateCapacityProviderRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API UpdateCapacityProviderRequest();
+    AWS_ECS_API UpdateCapacityProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the capacity provider to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateCapacityProviderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateCapacityProviderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateCapacityProviderRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateCapacityProviderRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>An object that represent the parameters to update for the Auto Scaling group
      * capacity provider.</p>
      */
-    inline const AutoScalingGroupProviderUpdate& GetAutoScalingGroupProvider() const{ return m_autoScalingGroupProvider; }
+    inline const AutoScalingGroupProviderUpdate& GetAutoScalingGroupProvider() const { return m_autoScalingGroupProvider; }
     inline bool AutoScalingGroupProviderHasBeenSet() const { return m_autoScalingGroupProviderHasBeenSet; }
-    inline void SetAutoScalingGroupProvider(const AutoScalingGroupProviderUpdate& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = value; }
-    inline void SetAutoScalingGroupProvider(AutoScalingGroupProviderUpdate&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::move(value); }
-    inline UpdateCapacityProviderRequest& WithAutoScalingGroupProvider(const AutoScalingGroupProviderUpdate& value) { SetAutoScalingGroupProvider(value); return *this;}
-    inline UpdateCapacityProviderRequest& WithAutoScalingGroupProvider(AutoScalingGroupProviderUpdate&& value) { SetAutoScalingGroupProvider(std::move(value)); return *this;}
+    template<typename AutoScalingGroupProviderT = AutoScalingGroupProviderUpdate>
+    void SetAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { m_autoScalingGroupProviderHasBeenSet = true; m_autoScalingGroupProvider = std::forward<AutoScalingGroupProviderT>(value); }
+    template<typename AutoScalingGroupProviderT = AutoScalingGroupProviderUpdate>
+    UpdateCapacityProviderRequest& WithAutoScalingGroupProvider(AutoScalingGroupProviderT&& value) { SetAutoScalingGroupProvider(std::forward<AutoScalingGroupProviderT>(value)); return *this;}
     ///@}
   private:
 

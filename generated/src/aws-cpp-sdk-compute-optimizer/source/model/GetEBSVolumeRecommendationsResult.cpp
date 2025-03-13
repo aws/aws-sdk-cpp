@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEBSVolumeRecommendationsResult::GetEBSVolumeRecommendationsResult()
-{
-}
-
 GetEBSVolumeRecommendationsResult::GetEBSVolumeRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetEBSVolumeRecommendationsResult& GetEBSVolumeRecommendationsResult::operator =
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeRecommendations"))
   {
     Aws::Utils::Array<JsonView> volumeRecommendationsJsonList = jsonValue.GetArray("volumeRecommendations");
@@ -42,8 +37,8 @@ GetEBSVolumeRecommendationsResult& GetEBSVolumeRecommendationsResult::operator =
     {
       m_volumeRecommendations.push_back(volumeRecommendationsJsonList[volumeRecommendationsIndex].AsObject());
     }
+    m_volumeRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,14 +46,15 @@ GetEBSVolumeRecommendationsResult& GetEBSVolumeRecommendationsResult::operator =
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

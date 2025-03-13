@@ -21,7 +21,7 @@ namespace Model
   class GetRetrievedTracesGraphRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API GetRetrievedTracesGraphRequest();
+    AWS_XRAY_API GetRetrievedTracesGraphRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> Retrieval token. </p>
      */
-    inline const Aws::String& GetRetrievalToken() const{ return m_retrievalToken; }
+    inline const Aws::String& GetRetrievalToken() const { return m_retrievalToken; }
     inline bool RetrievalTokenHasBeenSet() const { return m_retrievalTokenHasBeenSet; }
-    inline void SetRetrievalToken(const Aws::String& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = value; }
-    inline void SetRetrievalToken(Aws::String&& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = std::move(value); }
-    inline void SetRetrievalToken(const char* value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken.assign(value); }
-    inline GetRetrievedTracesGraphRequest& WithRetrievalToken(const Aws::String& value) { SetRetrievalToken(value); return *this;}
-    inline GetRetrievedTracesGraphRequest& WithRetrievalToken(Aws::String&& value) { SetRetrievalToken(std::move(value)); return *this;}
-    inline GetRetrievedTracesGraphRequest& WithRetrievalToken(const char* value) { SetRetrievalToken(value); return *this;}
+    template<typename RetrievalTokenT = Aws::String>
+    void SetRetrievalToken(RetrievalTokenT&& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = std::forward<RetrievalTokenT>(value); }
+    template<typename RetrievalTokenT = Aws::String>
+    GetRetrievedTracesGraphRequest& WithRetrievalToken(RetrievalTokenT&& value) { SetRetrievalToken(std::forward<RetrievalTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p> Specify the pagination token returned by a previous request to retrieve the
      * next page of indexes. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetRetrievedTracesGraphRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetRetrievedTracesGraphRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetRetrievedTracesGraphRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetRetrievedTracesGraphRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

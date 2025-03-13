@@ -21,7 +21,7 @@ namespace Model
   class DescribeTransformJobRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeTransformJobRequest();
+    AWS_SAGEMAKER_API DescribeTransformJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the transform job that you want to view details of.</p>
      */
-    inline const Aws::String& GetTransformJobName() const{ return m_transformJobName; }
+    inline const Aws::String& GetTransformJobName() const { return m_transformJobName; }
     inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
-    inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
-    inline void SetTransformJobName(Aws::String&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::move(value); }
-    inline void SetTransformJobName(const char* value) { m_transformJobNameHasBeenSet = true; m_transformJobName.assign(value); }
-    inline DescribeTransformJobRequest& WithTransformJobName(const Aws::String& value) { SetTransformJobName(value); return *this;}
-    inline DescribeTransformJobRequest& WithTransformJobName(Aws::String&& value) { SetTransformJobName(std::move(value)); return *this;}
-    inline DescribeTransformJobRequest& WithTransformJobName(const char* value) { SetTransformJobName(value); return *this;}
+    template<typename TransformJobNameT = Aws::String>
+    void SetTransformJobName(TransformJobNameT&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::forward<TransformJobNameT>(value); }
+    template<typename TransformJobNameT = Aws::String>
+    DescribeTransformJobRequest& WithTransformJobName(TransformJobNameT&& value) { SetTransformJobName(std::forward<TransformJobNameT>(value)); return *this;}
     ///@}
   private:
 

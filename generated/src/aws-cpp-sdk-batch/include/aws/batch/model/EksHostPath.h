@@ -35,7 +35,7 @@ namespace Model
   class EksHostPath
   {
   public:
-    AWS_BATCH_API EksHostPath();
+    AWS_BATCH_API EksHostPath() = default;
     AWS_BATCH_API EksHostPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksHostPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The path of the file or directory on the host to mount into containers on the
      * pod.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline EksHostPath& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline EksHostPath& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline EksHostPath& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    EksHostPath& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

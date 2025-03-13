@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() : 
-    m_volumeIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
-{
-}
-
 EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(const XmlNode& xmlNode)
-  : EbsInstanceBlockDeviceSpecification()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ EbsInstanceBlockDeviceSpecification& EbsInstanceBlockDeviceSpecification::operat
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+       m_volumeIdHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("deleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
   }
 

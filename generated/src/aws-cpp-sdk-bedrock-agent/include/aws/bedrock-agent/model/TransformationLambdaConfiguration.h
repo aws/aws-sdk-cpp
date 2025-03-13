@@ -31,7 +31,7 @@ namespace Model
   class TransformationLambdaConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API TransformationLambdaConfiguration();
+    AWS_BEDROCKAGENT_API TransformationLambdaConfiguration() = default;
     AWS_BEDROCKAGENT_API TransformationLambdaConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API TransformationLambdaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The function's ARN identifier.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline TransformationLambdaConfiguration& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline TransformationLambdaConfiguration& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline TransformationLambdaConfiguration& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    TransformationLambdaConfiguration& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
   private:
 

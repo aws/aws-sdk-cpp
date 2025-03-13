@@ -21,7 +21,7 @@ namespace Model
   class DescribeConsumableResourceRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API DescribeConsumableResourceRequest();
+    AWS_BATCH_API DescribeConsumableResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The name or ARN of the consumable resource whose description will be
      * returned.</p>
      */
-    inline const Aws::String& GetConsumableResource() const{ return m_consumableResource; }
+    inline const Aws::String& GetConsumableResource() const { return m_consumableResource; }
     inline bool ConsumableResourceHasBeenSet() const { return m_consumableResourceHasBeenSet; }
-    inline void SetConsumableResource(const Aws::String& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = value; }
-    inline void SetConsumableResource(Aws::String&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::move(value); }
-    inline void SetConsumableResource(const char* value) { m_consumableResourceHasBeenSet = true; m_consumableResource.assign(value); }
-    inline DescribeConsumableResourceRequest& WithConsumableResource(const Aws::String& value) { SetConsumableResource(value); return *this;}
-    inline DescribeConsumableResourceRequest& WithConsumableResource(Aws::String&& value) { SetConsumableResource(std::move(value)); return *this;}
-    inline DescribeConsumableResourceRequest& WithConsumableResource(const char* value) { SetConsumableResource(value); return *this;}
+    template<typename ConsumableResourceT = Aws::String>
+    void SetConsumableResource(ConsumableResourceT&& value) { m_consumableResourceHasBeenSet = true; m_consumableResource = std::forward<ConsumableResourceT>(value); }
+    template<typename ConsumableResourceT = Aws::String>
+    DescribeConsumableResourceRequest& WithConsumableResource(ConsumableResourceT&& value) { SetConsumableResource(std::forward<ConsumableResourceT>(value)); return *this;}
     ///@}
   private:
 

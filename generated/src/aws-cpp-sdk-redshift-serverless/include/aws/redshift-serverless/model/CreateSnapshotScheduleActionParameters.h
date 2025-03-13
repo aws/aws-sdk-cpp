@@ -38,7 +38,7 @@ namespace Model
   class CreateSnapshotScheduleActionParameters
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API CreateSnapshotScheduleActionParameters();
+    AWS_REDSHIFTSERVERLESS_API CreateSnapshotScheduleActionParameters() = default;
     AWS_REDSHIFTSERVERLESS_API CreateSnapshotScheduleActionParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API CreateSnapshotScheduleActionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,21 +49,19 @@ namespace Model
      * <p>The name of the namespace for which you want to configure a scheduled action
      * to create a snapshot.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline CreateSnapshotScheduleActionParameters& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline CreateSnapshotScheduleActionParameters& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline CreateSnapshotScheduleActionParameters& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    CreateSnapshotScheduleActionParameters& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention period of the snapshot created by the scheduled action.</p>
      */
-    inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline int GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
     inline CreateSnapshotScheduleActionParameters& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
@@ -75,14 +73,12 @@ namespace Model
      * scheduled action. The final name of the snapshot is the string prefix appended
      * by the date and time of when the snapshot was created.</p>
      */
-    inline const Aws::String& GetSnapshotNamePrefix() const{ return m_snapshotNamePrefix; }
+    inline const Aws::String& GetSnapshotNamePrefix() const { return m_snapshotNamePrefix; }
     inline bool SnapshotNamePrefixHasBeenSet() const { return m_snapshotNamePrefixHasBeenSet; }
-    inline void SetSnapshotNamePrefix(const Aws::String& value) { m_snapshotNamePrefixHasBeenSet = true; m_snapshotNamePrefix = value; }
-    inline void SetSnapshotNamePrefix(Aws::String&& value) { m_snapshotNamePrefixHasBeenSet = true; m_snapshotNamePrefix = std::move(value); }
-    inline void SetSnapshotNamePrefix(const char* value) { m_snapshotNamePrefixHasBeenSet = true; m_snapshotNamePrefix.assign(value); }
-    inline CreateSnapshotScheduleActionParameters& WithSnapshotNamePrefix(const Aws::String& value) { SetSnapshotNamePrefix(value); return *this;}
-    inline CreateSnapshotScheduleActionParameters& WithSnapshotNamePrefix(Aws::String&& value) { SetSnapshotNamePrefix(std::move(value)); return *this;}
-    inline CreateSnapshotScheduleActionParameters& WithSnapshotNamePrefix(const char* value) { SetSnapshotNamePrefix(value); return *this;}
+    template<typename SnapshotNamePrefixT = Aws::String>
+    void SetSnapshotNamePrefix(SnapshotNamePrefixT&& value) { m_snapshotNamePrefixHasBeenSet = true; m_snapshotNamePrefix = std::forward<SnapshotNamePrefixT>(value); }
+    template<typename SnapshotNamePrefixT = Aws::String>
+    CreateSnapshotScheduleActionParameters& WithSnapshotNamePrefix(SnapshotNamePrefixT&& value) { SetSnapshotNamePrefix(std::forward<SnapshotNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,21 +87,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
      * objects</a> to associate with the snapshot.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSnapshotScheduleActionParameters& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSnapshotScheduleActionParameters& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSnapshotScheduleActionParameters& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSnapshotScheduleActionParameters& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSnapshotScheduleActionParameters& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSnapshotScheduleActionParameters& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;
 
-    int m_retentionPeriod;
+    int m_retentionPeriod{0};
     bool m_retentionPeriodHasBeenSet = false;
 
     Aws::String m_snapshotNamePrefix;

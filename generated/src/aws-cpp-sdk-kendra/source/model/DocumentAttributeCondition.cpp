@@ -18,16 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DocumentAttributeCondition::DocumentAttributeCondition() : 
-    m_conditionDocumentAttributeKeyHasBeenSet(false),
-    m_operator(ConditionOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_conditionOnValueHasBeenSet(false)
-{
-}
-
 DocumentAttributeCondition::DocumentAttributeCondition(JsonView jsonValue)
-  : DocumentAttributeCondition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DocumentAttributeCondition& DocumentAttributeCondition::operator =(JsonView json
   if(jsonValue.ValueExists("ConditionDocumentAttributeKey"))
   {
     m_conditionDocumentAttributeKey = jsonValue.GetString("ConditionDocumentAttributeKey");
-
     m_conditionDocumentAttributeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = ConditionOperatorMapper::GetConditionOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionOnValue"))
   {
     m_conditionOnValue = jsonValue.GetObject("ConditionOnValue");
-
     m_conditionOnValueHasBeenSet = true;
   }
-
   return *this;
 }
 

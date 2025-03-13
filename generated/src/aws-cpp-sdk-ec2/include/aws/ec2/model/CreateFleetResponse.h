@@ -31,7 +31,7 @@ namespace Model
   class CreateFleetResponse
   {
   public:
-    AWS_EC2_API CreateFleetResponse();
+    AWS_EC2_API CreateFleetResponse() = default;
     AWS_EC2_API CreateFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>The ID of the EC2 Fleet.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-    inline CreateFleetResponse& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline CreateFleetResponse& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline CreateFleetResponse& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    CreateFleetResponse& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,13 @@ namespace Model
      * <p>Information about the instances that could not be launched by the fleet.
      * Supported only for fleets of type <code>instant</code>.</p>
      */
-    inline const Aws::Vector<CreateFleetError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<CreateFleetError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<CreateFleetError>&& value) { m_errors = std::move(value); }
-    inline CreateFleetResponse& WithErrors(const Aws::Vector<CreateFleetError>& value) { SetErrors(value); return *this;}
-    inline CreateFleetResponse& WithErrors(Aws::Vector<CreateFleetError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline CreateFleetResponse& AddErrors(const CreateFleetError& value) { m_errors.push_back(value); return *this; }
-    inline CreateFleetResponse& AddErrors(CreateFleetError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreateFleetError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<CreateFleetError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<CreateFleetError>>
+    CreateFleetResponse& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = CreateFleetError>
+    CreateFleetResponse& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,32 +66,36 @@ namespace Model
      * <p>Information about the instances that were launched by the fleet. Supported
      * only for fleets of type <code>instant</code>.</p>
      */
-    inline const Aws::Vector<CreateFleetInstance>& GetInstances() const{ return m_instances; }
-    inline void SetInstances(const Aws::Vector<CreateFleetInstance>& value) { m_instances = value; }
-    inline void SetInstances(Aws::Vector<CreateFleetInstance>&& value) { m_instances = std::move(value); }
-    inline CreateFleetResponse& WithInstances(const Aws::Vector<CreateFleetInstance>& value) { SetInstances(value); return *this;}
-    inline CreateFleetResponse& WithInstances(Aws::Vector<CreateFleetInstance>&& value) { SetInstances(std::move(value)); return *this;}
-    inline CreateFleetResponse& AddInstances(const CreateFleetInstance& value) { m_instances.push_back(value); return *this; }
-    inline CreateFleetResponse& AddInstances(CreateFleetInstance&& value) { m_instances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreateFleetInstance>& GetInstances() const { return m_instances; }
+    template<typename InstancesT = Aws::Vector<CreateFleetInstance>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<CreateFleetInstance>>
+    CreateFleetResponse& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = CreateFleetInstance>
+    CreateFleetResponse& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateFleetResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateFleetResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateFleetResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fleetId;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::Vector<CreateFleetError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<CreateFleetInstance> m_instances;
+    bool m_instancesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

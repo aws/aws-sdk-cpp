@@ -12,11 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRepositoryCreationTemplateRequest::DeleteRepositoryCreationTemplateRequest() : 
-    m_prefixHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRepositoryCreationTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

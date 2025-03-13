@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListStreamSessionsRequest::ListStreamSessionsRequest() : 
-    m_exportFilesStatus(ExportFilesStatus::NOT_SET),
-    m_exportFilesStatusHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_status(StreamSessionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamSessionsRequest::SerializePayload() const
 {
   return {};

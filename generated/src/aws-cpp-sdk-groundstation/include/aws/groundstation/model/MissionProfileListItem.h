@@ -31,7 +31,7 @@ namespace Model
   class MissionProfileListItem
   {
   public:
-    AWS_GROUNDSTATION_API MissionProfileListItem();
+    AWS_GROUNDSTATION_API MissionProfileListItem() = default;
     AWS_GROUNDSTATION_API MissionProfileListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API MissionProfileListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,56 +41,48 @@ namespace Model
     /**
      * <p>ARN of a mission profile.</p>
      */
-    inline const Aws::String& GetMissionProfileArn() const{ return m_missionProfileArn; }
+    inline const Aws::String& GetMissionProfileArn() const { return m_missionProfileArn; }
     inline bool MissionProfileArnHasBeenSet() const { return m_missionProfileArnHasBeenSet; }
-    inline void SetMissionProfileArn(const Aws::String& value) { m_missionProfileArnHasBeenSet = true; m_missionProfileArn = value; }
-    inline void SetMissionProfileArn(Aws::String&& value) { m_missionProfileArnHasBeenSet = true; m_missionProfileArn = std::move(value); }
-    inline void SetMissionProfileArn(const char* value) { m_missionProfileArnHasBeenSet = true; m_missionProfileArn.assign(value); }
-    inline MissionProfileListItem& WithMissionProfileArn(const Aws::String& value) { SetMissionProfileArn(value); return *this;}
-    inline MissionProfileListItem& WithMissionProfileArn(Aws::String&& value) { SetMissionProfileArn(std::move(value)); return *this;}
-    inline MissionProfileListItem& WithMissionProfileArn(const char* value) { SetMissionProfileArn(value); return *this;}
+    template<typename MissionProfileArnT = Aws::String>
+    void SetMissionProfileArn(MissionProfileArnT&& value) { m_missionProfileArnHasBeenSet = true; m_missionProfileArn = std::forward<MissionProfileArnT>(value); }
+    template<typename MissionProfileArnT = Aws::String>
+    MissionProfileListItem& WithMissionProfileArn(MissionProfileArnT&& value) { SetMissionProfileArn(std::forward<MissionProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>UUID of a mission profile.</p>
      */
-    inline const Aws::String& GetMissionProfileId() const{ return m_missionProfileId; }
+    inline const Aws::String& GetMissionProfileId() const { return m_missionProfileId; }
     inline bool MissionProfileIdHasBeenSet() const { return m_missionProfileIdHasBeenSet; }
-    inline void SetMissionProfileId(const Aws::String& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = value; }
-    inline void SetMissionProfileId(Aws::String&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::move(value); }
-    inline void SetMissionProfileId(const char* value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId.assign(value); }
-    inline MissionProfileListItem& WithMissionProfileId(const Aws::String& value) { SetMissionProfileId(value); return *this;}
-    inline MissionProfileListItem& WithMissionProfileId(Aws::String&& value) { SetMissionProfileId(std::move(value)); return *this;}
-    inline MissionProfileListItem& WithMissionProfileId(const char* value) { SetMissionProfileId(value); return *this;}
+    template<typename MissionProfileIdT = Aws::String>
+    void SetMissionProfileId(MissionProfileIdT&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::forward<MissionProfileIdT>(value); }
+    template<typename MissionProfileIdT = Aws::String>
+    MissionProfileListItem& WithMissionProfileId(MissionProfileIdT&& value) { SetMissionProfileId(std::forward<MissionProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of a mission profile.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MissionProfileListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MissionProfileListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MissionProfileListItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MissionProfileListItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Region of a mission profile.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline MissionProfileListItem& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline MissionProfileListItem& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline MissionProfileListItem& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    MissionProfileListItem& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

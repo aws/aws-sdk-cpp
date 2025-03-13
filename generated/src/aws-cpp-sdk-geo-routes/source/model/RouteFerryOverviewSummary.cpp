@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteFerryOverviewSummary::RouteFerryOverviewSummary() : 
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false)
-{
-}
-
 RouteFerryOverviewSummary::RouteFerryOverviewSummary(JsonView jsonValue)
-  : RouteFerryOverviewSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteFerryOverviewSummary& RouteFerryOverviewSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   return *this;
 }
 

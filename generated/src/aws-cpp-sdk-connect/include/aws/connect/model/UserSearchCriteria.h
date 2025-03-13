@@ -38,7 +38,7 @@ namespace Model
   class UserSearchCriteria
   {
   public:
-    AWS_CONNECT_API UserSearchCriteria();
+    AWS_CONNECT_API UserSearchCriteria() = default;
     AWS_CONNECT_API UserSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
-    inline const Aws::Vector<UserSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<UserSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<UserSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<UserSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline UserSearchCriteria& WithOrConditions(const Aws::Vector<UserSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline UserSearchCriteria& WithOrConditions(Aws::Vector<UserSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline UserSearchCriteria& AddOrConditions(const UserSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline UserSearchCriteria& AddOrConditions(UserSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<UserSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<UserSearchCriteria>>
+    UserSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = UserSearchCriteria>
+    UserSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,14 +64,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition. </p>
      */
-    inline const Aws::Vector<UserSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<UserSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<UserSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<UserSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline UserSearchCriteria& WithAndConditions(const Aws::Vector<UserSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline UserSearchCriteria& WithAndConditions(Aws::Vector<UserSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline UserSearchCriteria& AddAndConditions(const UserSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline UserSearchCriteria& AddAndConditions(UserSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<UserSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<UserSearchCriteria>>
+    UserSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = UserSearchCriteria>
+    UserSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +82,12 @@ namespace Model
      * <code>RoutingProfileId</code>, <code>SecurityProfileId</code>,
      * <code>ResourceId</code>.</p>
      */
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline UserSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline UserSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    UserSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +95,12 @@ namespace Model
      * <p>A leaf node condition which can be used to specify a List condition to search
      * users with attributes included in Lists like Proficiencies.</p>
      */
-    inline const ListCondition& GetListCondition() const{ return m_listCondition; }
+    inline const ListCondition& GetListCondition() const { return m_listCondition; }
     inline bool ListConditionHasBeenSet() const { return m_listConditionHasBeenSet; }
-    inline void SetListCondition(const ListCondition& value) { m_listConditionHasBeenSet = true; m_listCondition = value; }
-    inline void SetListCondition(ListCondition&& value) { m_listConditionHasBeenSet = true; m_listCondition = std::move(value); }
-    inline UserSearchCriteria& WithListCondition(const ListCondition& value) { SetListCondition(value); return *this;}
-    inline UserSearchCriteria& WithListCondition(ListCondition&& value) { SetListCondition(std::move(value)); return *this;}
+    template<typename ListConditionT = ListCondition>
+    void SetListCondition(ListConditionT&& value) { m_listConditionHasBeenSet = true; m_listCondition = std::forward<ListConditionT>(value); }
+    template<typename ListConditionT = ListCondition>
+    UserSearchCriteria& WithListCondition(ListConditionT&& value) { SetListCondition(std::forward<ListConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +108,12 @@ namespace Model
      * <p>A leaf node condition which can be used to specify a hierarchy group
      * condition.</p>
      */
-    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const{ return m_hierarchyGroupCondition; }
+    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
     inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
-    inline void SetHierarchyGroupCondition(const HierarchyGroupCondition& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = value; }
-    inline void SetHierarchyGroupCondition(HierarchyGroupCondition&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::move(value); }
-    inline UserSearchCriteria& WithHierarchyGroupCondition(const HierarchyGroupCondition& value) { SetHierarchyGroupCondition(value); return *this;}
-    inline UserSearchCriteria& WithHierarchyGroupCondition(HierarchyGroupCondition&& value) { SetHierarchyGroupCondition(std::move(value)); return *this;}
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value); }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    UserSearchCriteria& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) { SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value)); return *this;}
     ///@}
   private:
 

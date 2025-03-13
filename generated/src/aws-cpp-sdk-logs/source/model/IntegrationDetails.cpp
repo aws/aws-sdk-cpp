@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-IntegrationDetails::IntegrationDetails() : 
-    m_openSearchIntegrationDetailsHasBeenSet(false)
-{
-}
-
 IntegrationDetails::IntegrationDetails(JsonView jsonValue)
-  : IntegrationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IntegrationDetails& IntegrationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("openSearchIntegrationDetails"))
   {
     m_openSearchIntegrationDetails = jsonValue.GetObject("openSearchIntegrationDetails");
-
     m_openSearchIntegrationDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

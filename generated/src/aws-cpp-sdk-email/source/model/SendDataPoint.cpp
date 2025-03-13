@@ -20,21 +20,7 @@ namespace SES
 namespace Model
 {
 
-SendDataPoint::SendDataPoint() : 
-    m_timestampHasBeenSet(false),
-    m_deliveryAttempts(0),
-    m_deliveryAttemptsHasBeenSet(false),
-    m_bounces(0),
-    m_bouncesHasBeenSet(false),
-    m_complaints(0),
-    m_complaintsHasBeenSet(false),
-    m_rejects(0),
-    m_rejectsHasBeenSet(false)
-{
-}
-
 SendDataPoint::SendDataPoint(const XmlNode& xmlNode)
-  : SendDataPoint()
 {
   *this = xmlNode;
 }
@@ -50,30 +36,35 @@ SendDataPoint& SendDataPoint::operator =(const XmlNode& xmlNode)
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode deliveryAttemptsNode = resultNode.FirstChild("DeliveryAttempts");
     if(!deliveryAttemptsNode.IsNull())
     {
       m_deliveryAttempts = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deliveryAttemptsNode.GetText()).c_str()).c_str());
       m_deliveryAttemptsHasBeenSet = true;
+       m_deliveryAttemptsHasBeenSet = true;
     }
     XmlNode bouncesNode = resultNode.FirstChild("Bounces");
     if(!bouncesNode.IsNull())
     {
       m_bounces = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bouncesNode.GetText()).c_str()).c_str());
       m_bouncesHasBeenSet = true;
+       m_bouncesHasBeenSet = true;
     }
     XmlNode complaintsNode = resultNode.FirstChild("Complaints");
     if(!complaintsNode.IsNull())
     {
       m_complaints = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(complaintsNode.GetText()).c_str()).c_str());
       m_complaintsHasBeenSet = true;
+       m_complaintsHasBeenSet = true;
     }
     XmlNode rejectsNode = resultNode.FirstChild("Rejects");
     if(!rejectsNode.IsNull())
     {
       m_rejects = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rejectsNode.GetText()).c_str()).c_str());
       m_rejectsHasBeenSet = true;
+       m_rejectsHasBeenSet = true;
     }
   }
 

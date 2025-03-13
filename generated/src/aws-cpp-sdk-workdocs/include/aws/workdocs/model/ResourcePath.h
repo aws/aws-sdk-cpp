@@ -32,7 +32,7 @@ namespace Model
   class ResourcePath
   {
   public:
-    AWS_WORKDOCS_API ResourcePath();
+    AWS_WORKDOCS_API ResourcePath() = default;
     AWS_WORKDOCS_API ResourcePath(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API ResourcePath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The components of the resource path.</p>
      */
-    inline const Aws::Vector<ResourcePathComponent>& GetComponents() const{ return m_components; }
+    inline const Aws::Vector<ResourcePathComponent>& GetComponents() const { return m_components; }
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
-    inline void SetComponents(const Aws::Vector<ResourcePathComponent>& value) { m_componentsHasBeenSet = true; m_components = value; }
-    inline void SetComponents(Aws::Vector<ResourcePathComponent>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
-    inline ResourcePath& WithComponents(const Aws::Vector<ResourcePathComponent>& value) { SetComponents(value); return *this;}
-    inline ResourcePath& WithComponents(Aws::Vector<ResourcePathComponent>&& value) { SetComponents(std::move(value)); return *this;}
-    inline ResourcePath& AddComponents(const ResourcePathComponent& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
-    inline ResourcePath& AddComponents(ResourcePathComponent&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
+    template<typename ComponentsT = Aws::Vector<ResourcePathComponent>>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = Aws::Vector<ResourcePathComponent>>
+    ResourcePath& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
+    template<typename ComponentsT = ResourcePathComponent>
+    ResourcePath& AddComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components.emplace_back(std::forward<ComponentsT>(value)); return *this; }
     ///@}
   private:
 

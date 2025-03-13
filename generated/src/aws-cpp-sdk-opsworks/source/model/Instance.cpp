@@ -18,59 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Instance::Instance() : 
-    m_agentVersionHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_autoScalingType(AutoScalingType::NOT_SET),
-    m_autoScalingTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_ecsClusterArnHasBeenSet(false),
-    m_ecsContainerInstanceArnHasBeenSet(false),
-    m_elasticIpHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_infrastructureClassHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_lastServiceErrorIdHasBeenSet(false),
-    m_layerIdsHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_privateDnsHasBeenSet(false),
-    m_privateIpHasBeenSet(false),
-    m_publicDnsHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_registeredByHasBeenSet(false),
-    m_reportedAgentVersionHasBeenSet(false),
-    m_reportedOsHasBeenSet(false),
-    m_rootDeviceType(RootDeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_rootDeviceVolumeIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_sshHostDsaKeyFingerprintHasBeenSet(false),
-    m_sshHostRsaKeyFingerprintHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_tenancyHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -80,45 +28,33 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AgentVersion"))
   {
     m_agentVersion = jsonValue.GetString("AgentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmiId"))
   {
     m_amiId = jsonValue.GetString("AmiId");
-
     m_amiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Architecture"))
   {
     m_architecture = ArchitectureMapper::GetArchitectureForName(jsonValue.GetString("Architecture"));
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingType"))
   {
     m_autoScalingType = AutoScalingTypeMapper::GetAutoScalingTypeForName(jsonValue.GetString("AutoScalingType"));
-
     m_autoScalingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockDeviceMappings"))
   {
     Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("BlockDeviceMappings");
@@ -128,98 +64,71 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_blockDeviceMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EbsOptimized"))
   {
     m_ebsOptimized = jsonValue.GetBool("EbsOptimized");
-
     m_ebsOptimizedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2InstanceId"))
   {
     m_ec2InstanceId = jsonValue.GetString("Ec2InstanceId");
-
     m_ec2InstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EcsClusterArn"))
   {
     m_ecsClusterArn = jsonValue.GetString("EcsClusterArn");
-
     m_ecsClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EcsContainerInstanceArn"))
   {
     m_ecsContainerInstanceArn = jsonValue.GetString("EcsContainerInstanceArn");
-
     m_ecsContainerInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticIp"))
   {
     m_elasticIp = jsonValue.GetString("ElasticIp");
-
     m_elasticIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hostname"))
   {
     m_hostname = jsonValue.GetString("Hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InfrastructureClass"))
   {
     m_infrastructureClass = jsonValue.GetString("InfrastructureClass");
-
     m_infrastructureClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstallUpdatesOnBoot"))
   {
     m_installUpdatesOnBoot = jsonValue.GetBool("InstallUpdatesOnBoot");
-
     m_installUpdatesOnBootHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileArn"))
   {
     m_instanceProfileArn = jsonValue.GetString("InstanceProfileArn");
-
     m_instanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastServiceErrorId"))
   {
     m_lastServiceErrorId = jsonValue.GetString("LastServiceErrorId");
-
     m_lastServiceErrorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerIds"))
   {
     Aws::Utils::Array<JsonView> layerIdsJsonList = jsonValue.GetArray("LayerIds");
@@ -229,84 +138,61 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_layerIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Os"))
   {
     m_os = jsonValue.GetString("Os");
-
     m_osHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateDns"))
   {
     m_privateDns = jsonValue.GetString("PrivateDns");
-
     m_privateDnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateIp"))
   {
     m_privateIp = jsonValue.GetString("PrivateIp");
-
     m_privateIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicDns"))
   {
     m_publicDns = jsonValue.GetString("PublicDns");
-
     m_publicDnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIp"))
   {
     m_publicIp = jsonValue.GetString("PublicIp");
-
     m_publicIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredBy"))
   {
     m_registeredBy = jsonValue.GetString("RegisteredBy");
-
     m_registeredByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportedAgentVersion"))
   {
     m_reportedAgentVersion = jsonValue.GetString("ReportedAgentVersion");
-
     m_reportedAgentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportedOs"))
   {
     m_reportedOs = jsonValue.GetObject("ReportedOs");
-
     m_reportedOsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootDeviceType"))
   {
     m_rootDeviceType = RootDeviceTypeMapper::GetRootDeviceTypeForName(jsonValue.GetString("RootDeviceType"));
-
     m_rootDeviceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootDeviceVolumeId"))
   {
     m_rootDeviceVolumeId = jsonValue.GetString("RootDeviceVolumeId");
-
     m_rootDeviceVolumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -316,63 +202,46 @@ Instance& Instance::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshHostDsaKeyFingerprint"))
   {
     m_sshHostDsaKeyFingerprint = jsonValue.GetString("SshHostDsaKeyFingerprint");
-
     m_sshHostDsaKeyFingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshHostRsaKeyFingerprint"))
   {
     m_sshHostRsaKeyFingerprint = jsonValue.GetString("SshHostRsaKeyFingerprint");
-
     m_sshHostRsaKeyFingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshKeyName"))
   {
     m_sshKeyName = jsonValue.GetString("SshKeyName");
-
     m_sshKeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tenancy"))
   {
     m_tenancy = jsonValue.GetString("Tenancy");
-
     m_tenancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VirtualizationType"))
   {
     m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(jsonValue.GetString("VirtualizationType"));
-
     m_virtualizationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAssociatedResourceRequest::GetAssociatedResourceRequest() : 
-    m_applicationHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceTagStatusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetAssociatedResourceRequest::SerializePayload() const
 {
   return {};

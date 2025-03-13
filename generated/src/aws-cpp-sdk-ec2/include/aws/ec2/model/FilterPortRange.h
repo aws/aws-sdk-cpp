@@ -29,7 +29,7 @@ namespace Model
   class FilterPortRange
   {
   public:
-    AWS_EC2_API FilterPortRange();
+    AWS_EC2_API FilterPortRange() = default;
     AWS_EC2_API FilterPortRange(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FilterPortRange& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline FilterPortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The last port in the range.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline FilterPortRange& WithToPort(int value) { SetToPort(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetInDataProductListingItem::AssetInDataProductListingItem() : 
-    m_entityIdHasBeenSet(false),
-    m_entityRevisionHasBeenSet(false),
-    m_entityTypeHasBeenSet(false)
-{
-}
-
 AssetInDataProductListingItem::AssetInDataProductListingItem(JsonView jsonValue)
-  : AssetInDataProductListingItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AssetInDataProductListingItem& AssetInDataProductListingItem::operator =(JsonVie
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityRevision"))
   {
     m_entityRevision = jsonValue.GetString("entityRevision");
-
     m_entityRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityType"))
   {
     m_entityType = jsonValue.GetString("entityType");
-
     m_entityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

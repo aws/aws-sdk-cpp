@@ -32,7 +32,7 @@ namespace Model
   class WhatIfPointScenario
   {
   public:
-    AWS_QUICKSIGHT_API WhatIfPointScenario();
+    AWS_QUICKSIGHT_API WhatIfPointScenario() = default;
     AWS_QUICKSIGHT_API WhatIfPointScenario(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API WhatIfPointScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,29 @@ namespace Model
     /**
      * <p>The date that you need the forecast results for.</p>
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline WhatIfPointScenario& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline WhatIfPointScenario& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    WhatIfPointScenario& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target value that you want to meet for the provided date.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline WhatIfPointScenario& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

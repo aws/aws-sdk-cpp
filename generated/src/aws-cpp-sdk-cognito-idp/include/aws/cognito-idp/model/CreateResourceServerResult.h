@@ -28,7 +28,7 @@ namespace Model
   class CreateResourceServerResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CreateResourceServerResult();
+    AWS_COGNITOIDENTITYPROVIDER_API CreateResourceServerResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CreateResourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API CreateResourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the new resource server.</p>
      */
-    inline const ResourceServerType& GetResourceServer() const{ return m_resourceServer; }
-    inline void SetResourceServer(const ResourceServerType& value) { m_resourceServer = value; }
-    inline void SetResourceServer(ResourceServerType&& value) { m_resourceServer = std::move(value); }
-    inline CreateResourceServerResult& WithResourceServer(const ResourceServerType& value) { SetResourceServer(value); return *this;}
-    inline CreateResourceServerResult& WithResourceServer(ResourceServerType&& value) { SetResourceServer(std::move(value)); return *this;}
+    inline const ResourceServerType& GetResourceServer() const { return m_resourceServer; }
+    template<typename ResourceServerT = ResourceServerType>
+    void SetResourceServer(ResourceServerT&& value) { m_resourceServerHasBeenSet = true; m_resourceServer = std::forward<ResourceServerT>(value); }
+    template<typename ResourceServerT = ResourceServerType>
+    CreateResourceServerResult& WithResourceServer(ResourceServerT&& value) { SetResourceServer(std::forward<ResourceServerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceServerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResourceServerType m_resourceServer;
+    bool m_resourceServerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

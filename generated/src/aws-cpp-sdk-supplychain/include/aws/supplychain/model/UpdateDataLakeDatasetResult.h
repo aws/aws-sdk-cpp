@@ -34,7 +34,7 @@ namespace Model
   class UpdateDataLakeDatasetResult
   {
   public:
-    AWS_SUPPLYCHAIN_API UpdateDataLakeDatasetResult();
+    AWS_SUPPLYCHAIN_API UpdateDataLakeDatasetResult() = default;
     AWS_SUPPLYCHAIN_API UpdateDataLakeDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPLYCHAIN_API UpdateDataLakeDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The updated dataset details.</p>
      */
-    inline const DataLakeDataset& GetDataset() const{ return m_dataset; }
-    inline void SetDataset(const DataLakeDataset& value) { m_dataset = value; }
-    inline void SetDataset(DataLakeDataset&& value) { m_dataset = std::move(value); }
-    inline UpdateDataLakeDatasetResult& WithDataset(const DataLakeDataset& value) { SetDataset(value); return *this;}
-    inline UpdateDataLakeDatasetResult& WithDataset(DataLakeDataset&& value) { SetDataset(std::move(value)); return *this;}
+    inline const DataLakeDataset& GetDataset() const { return m_dataset; }
+    template<typename DatasetT = DataLakeDataset>
+    void SetDataset(DatasetT&& value) { m_datasetHasBeenSet = true; m_dataset = std::forward<DatasetT>(value); }
+    template<typename DatasetT = DataLakeDataset>
+    UpdateDataLakeDatasetResult& WithDataset(DatasetT&& value) { SetDataset(std::forward<DatasetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDataLakeDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDataLakeDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDataLakeDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDataLakeDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataLakeDataset m_dataset;
+    bool m_datasetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

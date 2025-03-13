@@ -33,7 +33,7 @@ namespace Model
   class KinesisFirehoseInputUpdate
   {
   public:
-    AWS_KINESISANALYTICS_API KinesisFirehoseInputUpdate();
+    AWS_KINESISANALYTICS_API KinesisFirehoseInputUpdate() = default;
     AWS_KINESISANALYTICS_API KinesisFirehoseInputUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API KinesisFirehoseInputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the input Amazon Kinesis Firehose delivery
      * stream to read.</p>
      */
-    inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
+    inline const Aws::String& GetResourceARNUpdate() const { return m_resourceARNUpdate; }
     inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
-    inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
-    inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
-    inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
-    inline KinesisFirehoseInputUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
-    inline KinesisFirehoseInputUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
-    inline KinesisFirehoseInputUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
+    template<typename ResourceARNUpdateT = Aws::String>
+    void SetResourceARNUpdate(ResourceARNUpdateT&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::forward<ResourceARNUpdateT>(value); }
+    template<typename ResourceARNUpdateT = Aws::String>
+    KinesisFirehoseInputUpdate& WithResourceARNUpdate(ResourceARNUpdateT&& value) { SetResourceARNUpdate(std::forward<ResourceARNUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * stream on your behalf. You need to grant the necessary permissions to this
      * role.</p>
      */
-    inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
+    inline const Aws::String& GetRoleARNUpdate() const { return m_roleARNUpdate; }
     inline bool RoleARNUpdateHasBeenSet() const { return m_roleARNUpdateHasBeenSet; }
-    inline void SetRoleARNUpdate(const Aws::String& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = value; }
-    inline void SetRoleARNUpdate(Aws::String&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::move(value); }
-    inline void SetRoleARNUpdate(const char* value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate.assign(value); }
-    inline KinesisFirehoseInputUpdate& WithRoleARNUpdate(const Aws::String& value) { SetRoleARNUpdate(value); return *this;}
-    inline KinesisFirehoseInputUpdate& WithRoleARNUpdate(Aws::String&& value) { SetRoleARNUpdate(std::move(value)); return *this;}
-    inline KinesisFirehoseInputUpdate& WithRoleARNUpdate(const char* value) { SetRoleARNUpdate(value); return *this;}
+    template<typename RoleARNUpdateT = Aws::String>
+    void SetRoleARNUpdate(RoleARNUpdateT&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::forward<RoleARNUpdateT>(value); }
+    template<typename RoleARNUpdateT = Aws::String>
+    KinesisFirehoseInputUpdate& WithRoleARNUpdate(RoleARNUpdateT&& value) { SetRoleARNUpdate(std::forward<RoleARNUpdateT>(value)); return *this;}
     ///@}
   private:
 

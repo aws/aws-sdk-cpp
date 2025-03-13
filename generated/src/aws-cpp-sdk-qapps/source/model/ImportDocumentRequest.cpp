@@ -13,18 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportDocumentRequest::ImportDocumentRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_cardIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_fileContentsBase64HasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_scope(DocumentScope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String ImportDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

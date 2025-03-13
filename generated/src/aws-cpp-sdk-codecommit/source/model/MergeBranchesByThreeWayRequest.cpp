@@ -12,24 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeBranchesByThreeWayRequest::MergeBranchesByThreeWayRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceCommitSpecifierHasBeenSet(false),
-    m_destinationCommitSpecifierHasBeenSet(false),
-    m_targetBranchHasBeenSet(false),
-    m_conflictDetailLevel(ConflictDetailLevelTypeEnum::NOT_SET),
-    m_conflictDetailLevelHasBeenSet(false),
-    m_conflictResolutionStrategy(ConflictResolutionStrategyTypeEnum::NOT_SET),
-    m_conflictResolutionStrategyHasBeenSet(false),
-    m_authorNameHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_keepEmptyFolders(false),
-    m_keepEmptyFoldersHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false)
-{
-}
-
 Aws::String MergeBranchesByThreeWayRequest::SerializePayload() const
 {
   JsonValue payload;

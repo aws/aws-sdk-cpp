@@ -28,35 +28,35 @@ namespace Model
   class GetApnsVoipSandboxChannelResult
   {
   public:
-    AWS_PINPOINT_API GetApnsVoipSandboxChannelResult();
+    AWS_PINPOINT_API GetApnsVoipSandboxChannelResult() = default;
     AWS_PINPOINT_API GetApnsVoipSandboxChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetApnsVoipSandboxChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const APNSVoipSandboxChannelResponse& GetAPNSVoipSandboxChannelResponse() const{ return m_aPNSVoipSandboxChannelResponse; }
-    inline void SetAPNSVoipSandboxChannelResponse(const APNSVoipSandboxChannelResponse& value) { m_aPNSVoipSandboxChannelResponse = value; }
-    inline void SetAPNSVoipSandboxChannelResponse(APNSVoipSandboxChannelResponse&& value) { m_aPNSVoipSandboxChannelResponse = std::move(value); }
-    inline GetApnsVoipSandboxChannelResult& WithAPNSVoipSandboxChannelResponse(const APNSVoipSandboxChannelResponse& value) { SetAPNSVoipSandboxChannelResponse(value); return *this;}
-    inline GetApnsVoipSandboxChannelResult& WithAPNSVoipSandboxChannelResponse(APNSVoipSandboxChannelResponse&& value) { SetAPNSVoipSandboxChannelResponse(std::move(value)); return *this;}
+    inline const APNSVoipSandboxChannelResponse& GetAPNSVoipSandboxChannelResponse() const { return m_aPNSVoipSandboxChannelResponse; }
+    template<typename APNSVoipSandboxChannelResponseT = APNSVoipSandboxChannelResponse>
+    void SetAPNSVoipSandboxChannelResponse(APNSVoipSandboxChannelResponseT&& value) { m_aPNSVoipSandboxChannelResponseHasBeenSet = true; m_aPNSVoipSandboxChannelResponse = std::forward<APNSVoipSandboxChannelResponseT>(value); }
+    template<typename APNSVoipSandboxChannelResponseT = APNSVoipSandboxChannelResponse>
+    GetApnsVoipSandboxChannelResult& WithAPNSVoipSandboxChannelResponse(APNSVoipSandboxChannelResponseT&& value) { SetAPNSVoipSandboxChannelResponse(std::forward<APNSVoipSandboxChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApnsVoipSandboxChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApnsVoipSandboxChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApnsVoipSandboxChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApnsVoipSandboxChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     APNSVoipSandboxChannelResponse m_aPNSVoipSandboxChannelResponse;
+    bool m_aPNSVoipSandboxChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

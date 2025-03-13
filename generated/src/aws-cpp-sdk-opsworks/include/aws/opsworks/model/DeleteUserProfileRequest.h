@@ -21,7 +21,7 @@ namespace Model
   class DeleteUserProfileRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DeleteUserProfileRequest();
+    AWS_OPSWORKS_API DeleteUserProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
-    inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+    inline const Aws::String& GetIamUserArn() const { return m_iamUserArn; }
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
-    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
-    inline DeleteUserProfileRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-    inline DeleteUserProfileRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-    inline DeleteUserProfileRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    template<typename IamUserArnT = Aws::String>
+    void SetIamUserArn(IamUserArnT&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::forward<IamUserArnT>(value); }
+    template<typename IamUserArnT = Aws::String>
+    DeleteUserProfileRequest& WithIamUserArn(IamUserArnT&& value) { SetIamUserArn(std::forward<IamUserArnT>(value)); return *this;}
     ///@}
   private:
 

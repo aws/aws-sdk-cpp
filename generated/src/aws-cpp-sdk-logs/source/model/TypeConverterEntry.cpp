@@ -18,15 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-TypeConverterEntry::TypeConverterEntry() : 
-    m_keyHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 TypeConverterEntry::TypeConverterEntry(JsonView jsonValue)
-  : TypeConverterEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TypeConverterEntry& TypeConverterEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

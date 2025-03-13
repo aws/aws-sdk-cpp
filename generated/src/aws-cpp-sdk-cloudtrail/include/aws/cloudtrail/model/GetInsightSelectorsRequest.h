@@ -21,7 +21,7 @@ namespace Model
   class GetInsightSelectorsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API GetInsightSelectorsRequest();
+    AWS_CLOUDTRAIL_API GetInsightSelectorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
      * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
-    inline const Aws::String& GetTrailName() const{ return m_trailName; }
+    inline const Aws::String& GetTrailName() const { return m_trailName; }
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
-    inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
-    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
-    inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
-    inline GetInsightSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
-    inline GetInsightSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
-    inline GetInsightSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
+    template<typename TrailNameT = Aws::String>
+    void SetTrailName(TrailNameT&& value) { m_trailNameHasBeenSet = true; m_trailName = std::forward<TrailNameT>(value); }
+    template<typename TrailNameT = Aws::String>
+    GetInsightSelectorsRequest& WithTrailName(TrailNameT&& value) { SetTrailName(std::forward<TrailNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * which you want to get Insights selectors. </p> <p>You cannot use this parameter
      * with the <code>TrailName</code> parameter.</p>
      */
-    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
+    inline const Aws::String& GetEventDataStore() const { return m_eventDataStore; }
     inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-    inline GetInsightSelectorsRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-    inline GetInsightSelectorsRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-    inline GetInsightSelectorsRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
+    template<typename EventDataStoreT = Aws::String>
+    void SetEventDataStore(EventDataStoreT&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::forward<EventDataStoreT>(value); }
+    template<typename EventDataStoreT = Aws::String>
+    GetInsightSelectorsRequest& WithEventDataStore(EventDataStoreT&& value) { SetEventDataStore(std::forward<EventDataStoreT>(value)); return *this;}
     ///@}
   private:
 

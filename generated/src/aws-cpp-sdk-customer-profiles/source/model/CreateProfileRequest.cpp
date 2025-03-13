@@ -12,36 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProfileRequest::CreateProfileRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_accountNumberHasBeenSet(false),
-    m_additionalInformationHasBeenSet(false),
-    m_partyType(PartyType::NOT_SET),
-    m_partyTypeHasBeenSet(false),
-    m_businessNameHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_middleNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_birthDateHasBeenSet(false),
-    m_gender(Gender::NOT_SET),
-    m_genderHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_mobilePhoneNumberHasBeenSet(false),
-    m_homePhoneNumberHasBeenSet(false),
-    m_businessPhoneNumberHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_personalEmailAddressHasBeenSet(false),
-    m_businessEmailAddressHasBeenSet(false),
-    m_addressHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_mailingAddressHasBeenSet(false),
-    m_billingAddressHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_partyTypeStringHasBeenSet(false),
-    m_genderStringHasBeenSet(false)
-{
-}
-
 Aws::String CreateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TrafficSourceState::TrafficSourceState() : 
-    m_stateHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 TrafficSourceState::TrafficSourceState(const XmlNode& xmlNode)
-  : TrafficSourceState()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ TrafficSourceState& TrafficSourceState::operator =(const XmlNode& xmlNode)
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode identifierNode = resultNode.FirstChild("Identifier");
     if(!identifierNode.IsNull())
     {
       m_identifier = Aws::Utils::Xml::DecodeEscapedXmlText(identifierNode.GetText());
       m_identifierHasBeenSet = true;
+       m_identifierHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
   }
 

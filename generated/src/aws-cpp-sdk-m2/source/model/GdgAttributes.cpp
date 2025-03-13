@@ -18,15 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-GdgAttributes::GdgAttributes() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_rollDispositionHasBeenSet(false)
-{
-}
-
 GdgAttributes::GdgAttributes(JsonView jsonValue)
-  : GdgAttributes()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GdgAttributes& GdgAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("limit"))
   {
     m_limit = jsonValue.GetInteger("limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollDisposition"))
   {
     m_rollDisposition = jsonValue.GetString("rollDisposition");
-
     m_rollDispositionHasBeenSet = true;
   }
-
   return *this;
 }
 

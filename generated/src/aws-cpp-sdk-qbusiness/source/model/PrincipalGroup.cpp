@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-PrincipalGroup::PrincipalGroup() : 
-    m_nameHasBeenSet(false),
-    m_access(ReadAccessType::NOT_SET),
-    m_accessHasBeenSet(false),
-    m_membershipType(MembershipType::NOT_SET),
-    m_membershipTypeHasBeenSet(false)
-{
-}
-
 PrincipalGroup::PrincipalGroup(JsonView jsonValue)
-  : PrincipalGroup()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PrincipalGroup& PrincipalGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("access"))
   {
     m_access = ReadAccessTypeMapper::GetReadAccessTypeForName(jsonValue.GetString("access"));
-
     m_accessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipType"))
   {
     m_membershipType = MembershipTypeMapper::GetMembershipTypeForName(jsonValue.GetString("membershipType"));
-
     m_membershipTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

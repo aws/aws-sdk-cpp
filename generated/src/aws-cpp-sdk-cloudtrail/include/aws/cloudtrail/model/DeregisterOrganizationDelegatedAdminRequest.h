@@ -26,7 +26,7 @@ namespace Model
   class DeregisterOrganizationDelegatedAdminRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API DeregisterOrganizationDelegatedAdminRequest();
+    AWS_CLOUDTRAIL_API DeregisterOrganizationDelegatedAdminRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>A delegated administrator account ID. This is a member account in an
      * organization that is currently designated as a delegated administrator.</p>
      */
-    inline const Aws::String& GetDelegatedAdminAccountId() const{ return m_delegatedAdminAccountId; }
+    inline const Aws::String& GetDelegatedAdminAccountId() const { return m_delegatedAdminAccountId; }
     inline bool DelegatedAdminAccountIdHasBeenSet() const { return m_delegatedAdminAccountIdHasBeenSet; }
-    inline void SetDelegatedAdminAccountId(const Aws::String& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = value; }
-    inline void SetDelegatedAdminAccountId(Aws::String&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::move(value); }
-    inline void SetDelegatedAdminAccountId(const char* value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId.assign(value); }
-    inline DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(const Aws::String& value) { SetDelegatedAdminAccountId(value); return *this;}
-    inline DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(Aws::String&& value) { SetDelegatedAdminAccountId(std::move(value)); return *this;}
-    inline DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(const char* value) { SetDelegatedAdminAccountId(value); return *this;}
+    template<typename DelegatedAdminAccountIdT = Aws::String>
+    void SetDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { m_delegatedAdminAccountIdHasBeenSet = true; m_delegatedAdminAccountId = std::forward<DelegatedAdminAccountIdT>(value); }
+    template<typename DelegatedAdminAccountIdT = Aws::String>
+    DeregisterOrganizationDelegatedAdminRequest& WithDelegatedAdminAccountId(DelegatedAdminAccountIdT&& value) { SetDelegatedAdminAccountId(std::forward<DelegatedAdminAccountIdT>(value)); return *this;}
     ///@}
   private:
 

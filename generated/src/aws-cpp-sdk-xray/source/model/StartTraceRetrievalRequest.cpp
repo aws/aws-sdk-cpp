@@ -12,13 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTraceRetrievalRequest::StartTraceRetrievalRequest() : 
-    m_traceIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String StartTraceRetrievalRequest::SerializePayload() const
 {
   JsonValue payload;

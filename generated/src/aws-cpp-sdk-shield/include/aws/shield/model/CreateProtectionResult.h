@@ -27,7 +27,7 @@ namespace Model
   class CreateProtectionResult
   {
   public:
-    AWS_SHIELD_API CreateProtectionResult();
+    AWS_SHIELD_API CreateProtectionResult() = default;
     AWS_SHIELD_API CreateProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SHIELD_API CreateProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
      * created.</p>
      */
-    inline const Aws::String& GetProtectionId() const{ return m_protectionId; }
-    inline void SetProtectionId(const Aws::String& value) { m_protectionId = value; }
-    inline void SetProtectionId(Aws::String&& value) { m_protectionId = std::move(value); }
-    inline void SetProtectionId(const char* value) { m_protectionId.assign(value); }
-    inline CreateProtectionResult& WithProtectionId(const Aws::String& value) { SetProtectionId(value); return *this;}
-    inline CreateProtectionResult& WithProtectionId(Aws::String&& value) { SetProtectionId(std::move(value)); return *this;}
-    inline CreateProtectionResult& WithProtectionId(const char* value) { SetProtectionId(value); return *this;}
+    inline const Aws::String& GetProtectionId() const { return m_protectionId; }
+    template<typename ProtectionIdT = Aws::String>
+    void SetProtectionId(ProtectionIdT&& value) { m_protectionIdHasBeenSet = true; m_protectionId = std::forward<ProtectionIdT>(value); }
+    template<typename ProtectionIdT = Aws::String>
+    CreateProtectionResult& WithProtectionId(ProtectionIdT&& value) { SetProtectionId(std::forward<ProtectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProtectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProtectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProtectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProtectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_protectionId;
+    bool m_protectionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

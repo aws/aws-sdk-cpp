@@ -12,14 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutFileSystemPolicyRequest::PutFileSystemPolicyRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_bypassPolicyLockoutSafetyCheck(false),
-    m_bypassPolicyLockoutSafetyCheckHasBeenSet(false)
-{
-}
-
 Aws::String PutFileSystemPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class PutExternalEvaluationRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutExternalEvaluationRequest();
+    AWS_CONFIGSERVICE_API PutExternalEvaluationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the Config rule.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline PutExternalEvaluationRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline PutExternalEvaluationRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline PutExternalEvaluationRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    PutExternalEvaluationRequest& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>An <code>ExternalEvaluation</code> object that provides details about
      * compliance.</p>
      */
-    inline const ExternalEvaluation& GetExternalEvaluation() const{ return m_externalEvaluation; }
+    inline const ExternalEvaluation& GetExternalEvaluation() const { return m_externalEvaluation; }
     inline bool ExternalEvaluationHasBeenSet() const { return m_externalEvaluationHasBeenSet; }
-    inline void SetExternalEvaluation(const ExternalEvaluation& value) { m_externalEvaluationHasBeenSet = true; m_externalEvaluation = value; }
-    inline void SetExternalEvaluation(ExternalEvaluation&& value) { m_externalEvaluationHasBeenSet = true; m_externalEvaluation = std::move(value); }
-    inline PutExternalEvaluationRequest& WithExternalEvaluation(const ExternalEvaluation& value) { SetExternalEvaluation(value); return *this;}
-    inline PutExternalEvaluationRequest& WithExternalEvaluation(ExternalEvaluation&& value) { SetExternalEvaluation(std::move(value)); return *this;}
+    template<typename ExternalEvaluationT = ExternalEvaluation>
+    void SetExternalEvaluation(ExternalEvaluationT&& value) { m_externalEvaluationHasBeenSet = true; m_externalEvaluation = std::forward<ExternalEvaluationT>(value); }
+    template<typename ExternalEvaluationT = ExternalEvaluation>
+    PutExternalEvaluationRequest& WithExternalEvaluation(ExternalEvaluationT&& value) { SetExternalEvaluation(std::forward<ExternalEvaluationT>(value)); return *this;}
     ///@}
   private:
 

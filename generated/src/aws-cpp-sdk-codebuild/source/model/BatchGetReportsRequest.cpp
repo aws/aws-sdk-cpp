@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetReportsRequest::BatchGetReportsRequest() : 
-    m_reportArnsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetReportsRequest::SerializePayload() const
 {
   JsonValue payload;

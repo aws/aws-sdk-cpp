@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ConditionalFormattingSolidColor::ConditionalFormattingSolidColor() : 
-    m_expressionHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 ConditionalFormattingSolidColor::ConditionalFormattingSolidColor(JsonView jsonValue)
-  : ConditionalFormattingSolidColor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConditionalFormattingSolidColor& ConditionalFormattingSolidColor::operator =(Jso
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

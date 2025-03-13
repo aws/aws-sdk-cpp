@@ -36,7 +36,7 @@ namespace Model
   class ServiceLastAccessed
   {
   public:
-    AWS_IAM_API ServiceLastAccessed();
+    AWS_IAM_API ServiceLastAccessed() = default;
     AWS_IAM_API ServiceLastAccessed(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API ServiceLastAccessed& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the service in which access was attempted.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline ServiceLastAccessed& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline ServiceLastAccessed& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline ServiceLastAccessed& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    ServiceLastAccessed& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAuthenticated() const{ return m_lastAuthenticated; }
+    inline const Aws::Utils::DateTime& GetLastAuthenticated() const { return m_lastAuthenticated; }
     inline bool LastAuthenticatedHasBeenSet() const { return m_lastAuthenticatedHasBeenSet; }
-    inline void SetLastAuthenticated(const Aws::Utils::DateTime& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = value; }
-    inline void SetLastAuthenticated(Aws::Utils::DateTime&& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = std::move(value); }
-    inline ServiceLastAccessed& WithLastAuthenticated(const Aws::Utils::DateTime& value) { SetLastAuthenticated(value); return *this;}
-    inline ServiceLastAccessed& WithLastAuthenticated(Aws::Utils::DateTime&& value) { SetLastAuthenticated(std::move(value)); return *this;}
+    template<typename LastAuthenticatedT = Aws::Utils::DateTime>
+    void SetLastAuthenticated(LastAuthenticatedT&& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = std::forward<LastAuthenticatedT>(value); }
+    template<typename LastAuthenticatedT = Aws::Utils::DateTime>
+    ServiceLastAccessed& WithLastAuthenticated(LastAuthenticatedT&& value) { SetLastAuthenticated(std::forward<LastAuthenticatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +88,12 @@ namespace Model
      * Web Services Service Namespaces</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetServiceNamespace() const{ return m_serviceNamespace; }
+    inline const Aws::String& GetServiceNamespace() const { return m_serviceNamespace; }
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
-    inline void SetServiceNamespace(const Aws::String& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
-    inline void SetServiceNamespace(Aws::String&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
-    inline void SetServiceNamespace(const char* value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace.assign(value); }
-    inline ServiceLastAccessed& WithServiceNamespace(const Aws::String& value) { SetServiceNamespace(value); return *this;}
-    inline ServiceLastAccessed& WithServiceNamespace(Aws::String&& value) { SetServiceNamespace(std::move(value)); return *this;}
-    inline ServiceLastAccessed& WithServiceNamespace(const char* value) { SetServiceNamespace(value); return *this;}
+    template<typename ServiceNamespaceT = Aws::String>
+    void SetServiceNamespace(ServiceNamespaceT&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::forward<ServiceNamespaceT>(value); }
+    template<typename ServiceNamespaceT = Aws::String>
+    ServiceLastAccessed& WithServiceNamespace(ServiceNamespaceT&& value) { SetServiceNamespace(std::forward<ServiceNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +105,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::String& GetLastAuthenticatedEntity() const{ return m_lastAuthenticatedEntity; }
+    inline const Aws::String& GetLastAuthenticatedEntity() const { return m_lastAuthenticatedEntity; }
     inline bool LastAuthenticatedEntityHasBeenSet() const { return m_lastAuthenticatedEntityHasBeenSet; }
-    inline void SetLastAuthenticatedEntity(const Aws::String& value) { m_lastAuthenticatedEntityHasBeenSet = true; m_lastAuthenticatedEntity = value; }
-    inline void SetLastAuthenticatedEntity(Aws::String&& value) { m_lastAuthenticatedEntityHasBeenSet = true; m_lastAuthenticatedEntity = std::move(value); }
-    inline void SetLastAuthenticatedEntity(const char* value) { m_lastAuthenticatedEntityHasBeenSet = true; m_lastAuthenticatedEntity.assign(value); }
-    inline ServiceLastAccessed& WithLastAuthenticatedEntity(const Aws::String& value) { SetLastAuthenticatedEntity(value); return *this;}
-    inline ServiceLastAccessed& WithLastAuthenticatedEntity(Aws::String&& value) { SetLastAuthenticatedEntity(std::move(value)); return *this;}
-    inline ServiceLastAccessed& WithLastAuthenticatedEntity(const char* value) { SetLastAuthenticatedEntity(value); return *this;}
+    template<typename LastAuthenticatedEntityT = Aws::String>
+    void SetLastAuthenticatedEntity(LastAuthenticatedEntityT&& value) { m_lastAuthenticatedEntityHasBeenSet = true; m_lastAuthenticatedEntity = std::forward<LastAuthenticatedEntityT>(value); }
+    template<typename LastAuthenticatedEntityT = Aws::String>
+    ServiceLastAccessed& WithLastAuthenticatedEntity(LastAuthenticatedEntityT&& value) { SetLastAuthenticatedEntity(std::forward<LastAuthenticatedEntityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +122,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::String& GetLastAuthenticatedRegion() const{ return m_lastAuthenticatedRegion; }
+    inline const Aws::String& GetLastAuthenticatedRegion() const { return m_lastAuthenticatedRegion; }
     inline bool LastAuthenticatedRegionHasBeenSet() const { return m_lastAuthenticatedRegionHasBeenSet; }
-    inline void SetLastAuthenticatedRegion(const Aws::String& value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion = value; }
-    inline void SetLastAuthenticatedRegion(Aws::String&& value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion = std::move(value); }
-    inline void SetLastAuthenticatedRegion(const char* value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion.assign(value); }
-    inline ServiceLastAccessed& WithLastAuthenticatedRegion(const Aws::String& value) { SetLastAuthenticatedRegion(value); return *this;}
-    inline ServiceLastAccessed& WithLastAuthenticatedRegion(Aws::String&& value) { SetLastAuthenticatedRegion(std::move(value)); return *this;}
-    inline ServiceLastAccessed& WithLastAuthenticatedRegion(const char* value) { SetLastAuthenticatedRegion(value); return *this;}
+    template<typename LastAuthenticatedRegionT = Aws::String>
+    void SetLastAuthenticatedRegion(LastAuthenticatedRegionT&& value) { m_lastAuthenticatedRegionHasBeenSet = true; m_lastAuthenticatedRegion = std::forward<LastAuthenticatedRegionT>(value); }
+    template<typename LastAuthenticatedRegionT = Aws::String>
+    ServiceLastAccessed& WithLastAuthenticatedRegion(LastAuthenticatedRegionT&& value) { SetLastAuthenticatedRegion(std::forward<LastAuthenticatedRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,7 +138,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline int GetTotalAuthenticatedEntities() const{ return m_totalAuthenticatedEntities; }
+    inline int GetTotalAuthenticatedEntities() const { return m_totalAuthenticatedEntities; }
     inline bool TotalAuthenticatedEntitiesHasBeenSet() const { return m_totalAuthenticatedEntitiesHasBeenSet; }
     inline void SetTotalAuthenticatedEntities(int value) { m_totalAuthenticatedEntitiesHasBeenSet = true; m_totalAuthenticatedEntities = value; }
     inline ServiceLastAccessed& WithTotalAuthenticatedEntities(int value) { SetTotalAuthenticatedEntities(value); return *this;}
@@ -162,21 +154,21 @@ namespace Model
      * level and not the action level. For more information, see the
      * <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
      */
-    inline const Aws::Vector<TrackedActionLastAccessed>& GetTrackedActionsLastAccessed() const{ return m_trackedActionsLastAccessed; }
+    inline const Aws::Vector<TrackedActionLastAccessed>& GetTrackedActionsLastAccessed() const { return m_trackedActionsLastAccessed; }
     inline bool TrackedActionsLastAccessedHasBeenSet() const { return m_trackedActionsLastAccessedHasBeenSet; }
-    inline void SetTrackedActionsLastAccessed(const Aws::Vector<TrackedActionLastAccessed>& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed = value; }
-    inline void SetTrackedActionsLastAccessed(Aws::Vector<TrackedActionLastAccessed>&& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed = std::move(value); }
-    inline ServiceLastAccessed& WithTrackedActionsLastAccessed(const Aws::Vector<TrackedActionLastAccessed>& value) { SetTrackedActionsLastAccessed(value); return *this;}
-    inline ServiceLastAccessed& WithTrackedActionsLastAccessed(Aws::Vector<TrackedActionLastAccessed>&& value) { SetTrackedActionsLastAccessed(std::move(value)); return *this;}
-    inline ServiceLastAccessed& AddTrackedActionsLastAccessed(const TrackedActionLastAccessed& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed.push_back(value); return *this; }
-    inline ServiceLastAccessed& AddTrackedActionsLastAccessed(TrackedActionLastAccessed&& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed.push_back(std::move(value)); return *this; }
+    template<typename TrackedActionsLastAccessedT = Aws::Vector<TrackedActionLastAccessed>>
+    void SetTrackedActionsLastAccessed(TrackedActionsLastAccessedT&& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed = std::forward<TrackedActionsLastAccessedT>(value); }
+    template<typename TrackedActionsLastAccessedT = Aws::Vector<TrackedActionLastAccessed>>
+    ServiceLastAccessed& WithTrackedActionsLastAccessed(TrackedActionsLastAccessedT&& value) { SetTrackedActionsLastAccessed(std::forward<TrackedActionsLastAccessedT>(value)); return *this;}
+    template<typename TrackedActionsLastAccessedT = TrackedActionLastAccessed>
+    ServiceLastAccessed& AddTrackedActionsLastAccessed(TrackedActionsLastAccessedT&& value) { m_trackedActionsLastAccessedHasBeenSet = true; m_trackedActionsLastAccessed.emplace_back(std::forward<TrackedActionsLastAccessedT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAuthenticated;
+    Aws::Utils::DateTime m_lastAuthenticated{};
     bool m_lastAuthenticatedHasBeenSet = false;
 
     Aws::String m_serviceNamespace;
@@ -188,7 +180,7 @@ namespace Model
     Aws::String m_lastAuthenticatedRegion;
     bool m_lastAuthenticatedRegionHasBeenSet = false;
 
-    int m_totalAuthenticatedEntities;
+    int m_totalAuthenticatedEntities{0};
     bool m_totalAuthenticatedEntitiesHasBeenSet = false;
 
     Aws::Vector<TrackedActionLastAccessed> m_trackedActionsLastAccessed;

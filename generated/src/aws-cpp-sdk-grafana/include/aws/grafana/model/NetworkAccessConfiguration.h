@@ -44,7 +44,7 @@ namespace Model
   class NetworkAccessConfiguration
   {
   public:
-    AWS_MANAGEDGRAFANA_API NetworkAccessConfiguration();
+    AWS_MANAGEDGRAFANA_API NetworkAccessConfiguration() = default;
     AWS_MANAGEDGRAFANA_API NetworkAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API NetworkAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,15 +63,14 @@ namespace Model
      * CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud
      * User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrefixListIds() const{ return m_prefixListIds; }
+    inline const Aws::Vector<Aws::String>& GetPrefixListIds() const { return m_prefixListIds; }
     inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
-    inline void SetPrefixListIds(const Aws::Vector<Aws::String>& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = value; }
-    inline void SetPrefixListIds(Aws::Vector<Aws::String>&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::move(value); }
-    inline NetworkAccessConfiguration& WithPrefixListIds(const Aws::Vector<Aws::String>& value) { SetPrefixListIds(value); return *this;}
-    inline NetworkAccessConfiguration& WithPrefixListIds(Aws::Vector<Aws::String>&& value) { SetPrefixListIds(std::move(value)); return *this;}
-    inline NetworkAccessConfiguration& AddPrefixListIds(const Aws::String& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
-    inline NetworkAccessConfiguration& AddPrefixListIds(Aws::String&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(std::move(value)); return *this; }
-    inline NetworkAccessConfiguration& AddPrefixListIds(const char* value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.push_back(value); return *this; }
+    template<typename PrefixListIdsT = Aws::Vector<Aws::String>>
+    void SetPrefixListIds(PrefixListIdsT&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds = std::forward<PrefixListIdsT>(value); }
+    template<typename PrefixListIdsT = Aws::Vector<Aws::String>>
+    NetworkAccessConfiguration& WithPrefixListIds(PrefixListIdsT&& value) { SetPrefixListIds(std::forward<PrefixListIdsT>(value)); return *this;}
+    template<typename PrefixListIdsT = Aws::String>
+    NetworkAccessConfiguration& AddPrefixListIds(PrefixListIdsT&& value) { m_prefixListIdsHasBeenSet = true; m_prefixListIds.emplace_back(std::forward<PrefixListIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,15 +89,14 @@ namespace Model
      * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other
      * VPC endpoints are ignored.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetVpceIds() const{ return m_vpceIds; }
+    inline const Aws::Vector<Aws::String>& GetVpceIds() const { return m_vpceIds; }
     inline bool VpceIdsHasBeenSet() const { return m_vpceIdsHasBeenSet; }
-    inline void SetVpceIds(const Aws::Vector<Aws::String>& value) { m_vpceIdsHasBeenSet = true; m_vpceIds = value; }
-    inline void SetVpceIds(Aws::Vector<Aws::String>&& value) { m_vpceIdsHasBeenSet = true; m_vpceIds = std::move(value); }
-    inline NetworkAccessConfiguration& WithVpceIds(const Aws::Vector<Aws::String>& value) { SetVpceIds(value); return *this;}
-    inline NetworkAccessConfiguration& WithVpceIds(Aws::Vector<Aws::String>&& value) { SetVpceIds(std::move(value)); return *this;}
-    inline NetworkAccessConfiguration& AddVpceIds(const Aws::String& value) { m_vpceIdsHasBeenSet = true; m_vpceIds.push_back(value); return *this; }
-    inline NetworkAccessConfiguration& AddVpceIds(Aws::String&& value) { m_vpceIdsHasBeenSet = true; m_vpceIds.push_back(std::move(value)); return *this; }
-    inline NetworkAccessConfiguration& AddVpceIds(const char* value) { m_vpceIdsHasBeenSet = true; m_vpceIds.push_back(value); return *this; }
+    template<typename VpceIdsT = Aws::Vector<Aws::String>>
+    void SetVpceIds(VpceIdsT&& value) { m_vpceIdsHasBeenSet = true; m_vpceIds = std::forward<VpceIdsT>(value); }
+    template<typename VpceIdsT = Aws::Vector<Aws::String>>
+    NetworkAccessConfiguration& WithVpceIds(VpceIdsT&& value) { SetVpceIds(std::forward<VpceIdsT>(value)); return *this;}
+    template<typename VpceIdsT = Aws::String>
+    NetworkAccessConfiguration& AddVpceIds(VpceIdsT&& value) { m_vpceIdsHasBeenSet = true; m_vpceIds.emplace_back(std::forward<VpceIdsT>(value)); return *this; }
     ///@}
   private:
 

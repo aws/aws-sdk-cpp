@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Measurement::Measurement() : 
-    m_processingConfigHasBeenSet(false)
-{
-}
-
 Measurement::Measurement(JsonView jsonValue)
-  : Measurement()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Measurement& Measurement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("processingConfig"))
   {
     m_processingConfig = jsonValue.GetObject("processingConfig");
-
     m_processingConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

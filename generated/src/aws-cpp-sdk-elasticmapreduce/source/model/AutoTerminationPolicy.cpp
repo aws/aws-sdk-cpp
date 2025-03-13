@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-AutoTerminationPolicy::AutoTerminationPolicy() : 
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
-{
-}
-
 AutoTerminationPolicy::AutoTerminationPolicy(JsonView jsonValue)
-  : AutoTerminationPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AutoTerminationPolicy& AutoTerminationPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IdleTimeout"))
   {
     m_idleTimeout = jsonValue.GetInt64("IdleTimeout");
-
     m_idleTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

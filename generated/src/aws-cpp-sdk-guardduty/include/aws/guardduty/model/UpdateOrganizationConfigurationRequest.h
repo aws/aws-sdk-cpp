@@ -24,7 +24,7 @@ namespace Model
   class UpdateOrganizationConfigurationRequest : public GuardDutyRequest
   {
   public:
-    AWS_GUARDDUTY_API UpdateOrganizationConfigurationRequest();
+    AWS_GUARDDUTY_API UpdateOrganizationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
      * API.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline UpdateOrganizationConfigurationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline UpdateOrganizationConfigurationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline UpdateOrganizationConfigurationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    UpdateOrganizationConfigurationRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of features that will be configured for the organization.</p>
      */
-    inline const Aws::Vector<OrganizationFeatureConfiguration>& GetFeatures() const{ return m_features; }
+    inline const Aws::Vector<OrganizationFeatureConfiguration>& GetFeatures() const { return m_features; }
     inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
-    inline void SetFeatures(const Aws::Vector<OrganizationFeatureConfiguration>& value) { m_featuresHasBeenSet = true; m_features = value; }
-    inline void SetFeatures(Aws::Vector<OrganizationFeatureConfiguration>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
-    inline UpdateOrganizationConfigurationRequest& WithFeatures(const Aws::Vector<OrganizationFeatureConfiguration>& value) { SetFeatures(value); return *this;}
-    inline UpdateOrganizationConfigurationRequest& WithFeatures(Aws::Vector<OrganizationFeatureConfiguration>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline UpdateOrganizationConfigurationRequest& AddFeatures(const OrganizationFeatureConfiguration& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
-    inline UpdateOrganizationConfigurationRequest& AddFeatures(OrganizationFeatureConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+    template<typename FeaturesT = Aws::Vector<OrganizationFeatureConfiguration>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<OrganizationFeatureConfiguration>>
+    UpdateOrganizationConfigurationRequest& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    template<typename FeaturesT = OrganizationFeatureConfiguration>
+    UpdateOrganizationConfigurationRequest& AddFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features.emplace_back(std::forward<FeaturesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,12 +88,10 @@ namespace Model
      * auto-enable settings, no new account will have the corresponding option as
      * enabled.</p> </li> </ul>
      */
-    inline const AutoEnableMembers& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
+    inline AutoEnableMembers GetAutoEnableOrganizationMembers() const { return m_autoEnableOrganizationMembers; }
     inline bool AutoEnableOrganizationMembersHasBeenSet() const { return m_autoEnableOrganizationMembersHasBeenSet; }
-    inline void SetAutoEnableOrganizationMembers(const AutoEnableMembers& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
-    inline void SetAutoEnableOrganizationMembers(AutoEnableMembers&& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = std::move(value); }
-    inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(const AutoEnableMembers& value) { SetAutoEnableOrganizationMembers(value); return *this;}
-    inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(AutoEnableMembers&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
+    inline void SetAutoEnableOrganizationMembers(AutoEnableMembers value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
+    inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(AutoEnableMembers value) { SetAutoEnableOrganizationMembers(value); return *this;}
     ///@}
   private:
 
@@ -105,7 +101,7 @@ namespace Model
     Aws::Vector<OrganizationFeatureConfiguration> m_features;
     bool m_featuresHasBeenSet = false;
 
-    AutoEnableMembers m_autoEnableOrganizationMembers;
+    AutoEnableMembers m_autoEnableOrganizationMembers{AutoEnableMembers::NOT_SET};
     bool m_autoEnableOrganizationMembersHasBeenSet = false;
   };
 

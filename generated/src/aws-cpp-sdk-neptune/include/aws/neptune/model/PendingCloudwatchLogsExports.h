@@ -37,7 +37,7 @@ namespace Model
   class PendingCloudwatchLogsExports
   {
   public:
-    AWS_NEPTUNE_API PendingCloudwatchLogsExports();
+    AWS_NEPTUNE_API PendingCloudwatchLogsExports() = default;
     AWS_NEPTUNE_API PendingCloudwatchLogsExports(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_NEPTUNE_API PendingCloudwatchLogsExports& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,15 +50,14 @@ namespace Model
      * <p>Log types that are in the process of being deactivated. After they are
      * deactivated, these log types aren't exported to CloudWatch Logs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogTypesToEnable() const{ return m_logTypesToEnable; }
+    inline const Aws::Vector<Aws::String>& GetLogTypesToEnable() const { return m_logTypesToEnable; }
     inline bool LogTypesToEnableHasBeenSet() const { return m_logTypesToEnableHasBeenSet; }
-    inline void SetLogTypesToEnable(const Aws::Vector<Aws::String>& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable = value; }
-    inline void SetLogTypesToEnable(Aws::Vector<Aws::String>&& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable = std::move(value); }
-    inline PendingCloudwatchLogsExports& WithLogTypesToEnable(const Aws::Vector<Aws::String>& value) { SetLogTypesToEnable(value); return *this;}
-    inline PendingCloudwatchLogsExports& WithLogTypesToEnable(Aws::Vector<Aws::String>&& value) { SetLogTypesToEnable(std::move(value)); return *this;}
-    inline PendingCloudwatchLogsExports& AddLogTypesToEnable(const Aws::String& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.push_back(value); return *this; }
-    inline PendingCloudwatchLogsExports& AddLogTypesToEnable(Aws::String&& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.push_back(std::move(value)); return *this; }
-    inline PendingCloudwatchLogsExports& AddLogTypesToEnable(const char* value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.push_back(value); return *this; }
+    template<typename LogTypesToEnableT = Aws::Vector<Aws::String>>
+    void SetLogTypesToEnable(LogTypesToEnableT&& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable = std::forward<LogTypesToEnableT>(value); }
+    template<typename LogTypesToEnableT = Aws::Vector<Aws::String>>
+    PendingCloudwatchLogsExports& WithLogTypesToEnable(LogTypesToEnableT&& value) { SetLogTypesToEnable(std::forward<LogTypesToEnableT>(value)); return *this;}
+    template<typename LogTypesToEnableT = Aws::String>
+    PendingCloudwatchLogsExports& AddLogTypesToEnable(LogTypesToEnableT&& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.emplace_back(std::forward<LogTypesToEnableT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,15 +65,14 @@ namespace Model
      * <p>Log types that are in the process of being enabled. After they are enabled,
      * these log types are exported to CloudWatch Logs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogTypesToDisable() const{ return m_logTypesToDisable; }
+    inline const Aws::Vector<Aws::String>& GetLogTypesToDisable() const { return m_logTypesToDisable; }
     inline bool LogTypesToDisableHasBeenSet() const { return m_logTypesToDisableHasBeenSet; }
-    inline void SetLogTypesToDisable(const Aws::Vector<Aws::String>& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable = value; }
-    inline void SetLogTypesToDisable(Aws::Vector<Aws::String>&& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable = std::move(value); }
-    inline PendingCloudwatchLogsExports& WithLogTypesToDisable(const Aws::Vector<Aws::String>& value) { SetLogTypesToDisable(value); return *this;}
-    inline PendingCloudwatchLogsExports& WithLogTypesToDisable(Aws::Vector<Aws::String>&& value) { SetLogTypesToDisable(std::move(value)); return *this;}
-    inline PendingCloudwatchLogsExports& AddLogTypesToDisable(const Aws::String& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.push_back(value); return *this; }
-    inline PendingCloudwatchLogsExports& AddLogTypesToDisable(Aws::String&& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.push_back(std::move(value)); return *this; }
-    inline PendingCloudwatchLogsExports& AddLogTypesToDisable(const char* value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.push_back(value); return *this; }
+    template<typename LogTypesToDisableT = Aws::Vector<Aws::String>>
+    void SetLogTypesToDisable(LogTypesToDisableT&& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable = std::forward<LogTypesToDisableT>(value); }
+    template<typename LogTypesToDisableT = Aws::Vector<Aws::String>>
+    PendingCloudwatchLogsExports& WithLogTypesToDisable(LogTypesToDisableT&& value) { SetLogTypesToDisable(std::forward<LogTypesToDisableT>(value)); return *this;}
+    template<typename LogTypesToDisableT = Aws::String>
+    PendingCloudwatchLogsExports& AddLogTypesToDisable(LogTypesToDisableT&& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.emplace_back(std::forward<LogTypesToDisableT>(value)); return *this; }
     ///@}
   private:
 

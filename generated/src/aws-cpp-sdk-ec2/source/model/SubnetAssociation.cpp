@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetAssociation::SubnetAssociation() : 
-    m_subnetIdHasBeenSet(false),
-    m_state(TransitGatewayMulitcastDomainAssociationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 SubnetAssociation::SubnetAssociation(const XmlNode& xmlNode)
-  : SubnetAssociation()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ SubnetAssociation& SubnetAssociation::operator =(const XmlNode& xmlNode)
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayMulitcastDomainAssociationStateMapper::GetTransitGatewayMulitcastDomainAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayMulitcastDomainAssociationStateMapper::GetTransitGatewayMulitcastDomainAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

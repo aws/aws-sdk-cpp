@@ -12,12 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateSolNetworkInstanceRequest::TerminateSolNetworkInstanceRequest() : 
-    m_nsInstanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TerminateSolNetworkInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

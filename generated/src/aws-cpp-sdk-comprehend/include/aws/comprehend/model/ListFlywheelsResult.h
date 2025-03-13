@@ -29,7 +29,7 @@ namespace Model
   class ListFlywheelsResult
   {
   public:
-    AWS_COMPREHEND_API ListFlywheelsResult();
+    AWS_COMPREHEND_API ListFlywheelsResult() = default;
     AWS_COMPREHEND_API ListFlywheelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API ListFlywheelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A list of flywheel properties retrieved by the service in response to the
      * request. </p>
      */
-    inline const Aws::Vector<FlywheelSummary>& GetFlywheelSummaryList() const{ return m_flywheelSummaryList; }
-    inline void SetFlywheelSummaryList(const Aws::Vector<FlywheelSummary>& value) { m_flywheelSummaryList = value; }
-    inline void SetFlywheelSummaryList(Aws::Vector<FlywheelSummary>&& value) { m_flywheelSummaryList = std::move(value); }
-    inline ListFlywheelsResult& WithFlywheelSummaryList(const Aws::Vector<FlywheelSummary>& value) { SetFlywheelSummaryList(value); return *this;}
-    inline ListFlywheelsResult& WithFlywheelSummaryList(Aws::Vector<FlywheelSummary>&& value) { SetFlywheelSummaryList(std::move(value)); return *this;}
-    inline ListFlywheelsResult& AddFlywheelSummaryList(const FlywheelSummary& value) { m_flywheelSummaryList.push_back(value); return *this; }
-    inline ListFlywheelsResult& AddFlywheelSummaryList(FlywheelSummary&& value) { m_flywheelSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FlywheelSummary>& GetFlywheelSummaryList() const { return m_flywheelSummaryList; }
+    template<typename FlywheelSummaryListT = Aws::Vector<FlywheelSummary>>
+    void SetFlywheelSummaryList(FlywheelSummaryListT&& value) { m_flywheelSummaryListHasBeenSet = true; m_flywheelSummaryList = std::forward<FlywheelSummaryListT>(value); }
+    template<typename FlywheelSummaryListT = Aws::Vector<FlywheelSummary>>
+    ListFlywheelsResult& WithFlywheelSummaryList(FlywheelSummaryListT&& value) { SetFlywheelSummaryList(std::forward<FlywheelSummaryListT>(value)); return *this;}
+    template<typename FlywheelSummaryListT = FlywheelSummary>
+    ListFlywheelsResult& AddFlywheelSummaryList(FlywheelSummaryListT&& value) { m_flywheelSummaryListHasBeenSet = true; m_flywheelSummaryList.emplace_back(std::forward<FlywheelSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFlywheelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFlywheelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFlywheelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFlywheelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFlywheelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFlywheelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFlywheelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFlywheelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FlywheelSummary> m_flywheelSummaryList;
+    bool m_flywheelSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

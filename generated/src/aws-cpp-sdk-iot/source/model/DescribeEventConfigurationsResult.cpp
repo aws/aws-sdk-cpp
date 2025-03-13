@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventConfigurationsResult::DescribeEventConfigurationsResult()
-{
-}
-
 DescribeEventConfigurationsResult::DescribeEventConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ DescribeEventConfigurationsResult& DescribeEventConfigurationsResult::operator =
     {
       m_eventConfigurations[EventTypeMapper::GetEventTypeForName(eventConfigurationsItem.first)] = eventConfigurationsItem.second.AsObject();
     }
+    m_eventConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
+    m_lastModifiedDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

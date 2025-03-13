@@ -18,18 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-QuotaSettings::QuotaSettings() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false),
-    m_period(QuotaPeriodType::NOT_SET),
-    m_periodHasBeenSet(false)
-{
-}
-
 QuotaSettings::QuotaSettings(JsonView jsonValue)
-  : QuotaSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ QuotaSettings& QuotaSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("limit"))
   {
     m_limit = jsonValue.GetInteger("limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetInteger("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("period"))
   {
     m_period = QuotaPeriodTypeMapper::GetQuotaPeriodTypeForName(jsonValue.GetString("period"));
-
     m_periodHasBeenSet = true;
   }
-
   return *this;
 }
 

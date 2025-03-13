@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SucceededTopicReviewedAnswer::SucceededTopicReviewedAnswer() : 
-    m_answerIdHasBeenSet(false)
-{
-}
-
 SucceededTopicReviewedAnswer::SucceededTopicReviewedAnswer(JsonView jsonValue)
-  : SucceededTopicReviewedAnswer()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SucceededTopicReviewedAnswer& SucceededTopicReviewedAnswer::operator =(JsonView 
   if(jsonValue.ValueExists("AnswerId"))
   {
     m_answerId = jsonValue.GetString("AnswerId");
-
     m_answerIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateSecurityGroupVpcResponse::DisassociateSecurityGroupVpcResponse() : 
-    m_state(SecurityGroupVpcAssociationState::NOT_SET)
-{
-}
-
 DisassociateSecurityGroupVpcResponse::DisassociateSecurityGroupVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisassociateSecurityGroupVpcResponse()
 {
   *this = result;
 }
@@ -43,7 +37,8 @@ DisassociateSecurityGroupVpcResponse& DisassociateSecurityGroupVpcResponse::oper
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SecurityGroupVpcAssociationStateMapper::GetSecurityGroupVpcAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SecurityGroupVpcAssociationStateMapper::GetSecurityGroupVpcAssociationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
+      m_stateHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ DisassociateSecurityGroupVpcResponse& DisassociateSecurityGroupVpcResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisassociateSecurityGroupVpcResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

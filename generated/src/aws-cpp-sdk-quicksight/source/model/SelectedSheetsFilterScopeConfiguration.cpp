@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration() : 
-    m_sheetVisualScopingConfigurationsHasBeenSet(false)
-{
-}
-
 SelectedSheetsFilterScopeConfiguration::SelectedSheetsFilterScopeConfiguration(JsonView jsonValue)
-  : SelectedSheetsFilterScopeConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SelectedSheetsFilterScopeConfiguration& SelectedSheetsFilterScopeConfiguration::
     }
     m_sheetVisualScopingConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

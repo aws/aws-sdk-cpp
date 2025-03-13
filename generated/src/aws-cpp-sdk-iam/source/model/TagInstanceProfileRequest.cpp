@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-TagInstanceProfileRequest::TagInstanceProfileRequest() : 
-    m_instanceProfileNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String TagInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

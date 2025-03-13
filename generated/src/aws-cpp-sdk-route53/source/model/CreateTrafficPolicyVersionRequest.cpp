@@ -14,12 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateTrafficPolicyVersionRequest::CreateTrafficPolicyVersionRequest() : 
-    m_idHasBeenSet(false),
-    m_documentHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
 
 Aws::String CreateTrafficPolicyVersionRequest::SerializePayload() const
 {

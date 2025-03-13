@@ -12,14 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorldTemplateRequest::UpdateWorldTemplateRequest() : 
-    m_templateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateLocationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorldTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

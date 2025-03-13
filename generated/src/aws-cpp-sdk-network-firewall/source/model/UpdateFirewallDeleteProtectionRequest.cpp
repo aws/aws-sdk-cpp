@@ -12,15 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFirewallDeleteProtectionRequest::UpdateFirewallDeleteProtectionRequest() : 
-    m_updateTokenHasBeenSet(false),
-    m_firewallArnHasBeenSet(false),
-    m_firewallNameHasBeenSet(false),
-    m_deleteProtection(false),
-    m_deleteProtectionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFirewallDeleteProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

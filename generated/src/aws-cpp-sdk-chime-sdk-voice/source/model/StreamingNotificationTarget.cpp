@@ -18,14 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-StreamingNotificationTarget::StreamingNotificationTarget() : 
-    m_notificationTarget(NotificationTarget::NOT_SET),
-    m_notificationTargetHasBeenSet(false)
-{
-}
-
 StreamingNotificationTarget::StreamingNotificationTarget(JsonView jsonValue)
-  : StreamingNotificationTarget()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StreamingNotificationTarget& StreamingNotificationTarget::operator =(JsonView js
   if(jsonValue.ValueExists("NotificationTarget"))
   {
     m_notificationTarget = NotificationTargetMapper::GetNotificationTargetForName(jsonValue.GetString("NotificationTarget"));
-
     m_notificationTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

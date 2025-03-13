@@ -18,13 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(JsonView jsonValue)
-  : Alarm()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Alarm& Alarm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

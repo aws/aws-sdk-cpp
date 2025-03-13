@@ -18,16 +18,7 @@ namespace Detective
 namespace Model
 {
 
-NewGeolocationDetail::NewGeolocationDetail() : 
-    m_locationHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_isNewForEntireAccount(false),
-    m_isNewForEntireAccountHasBeenSet(false)
-{
-}
-
 NewGeolocationDetail::NewGeolocationDetail(JsonView jsonValue)
-  : NewGeolocationDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NewGeolocationDetail& NewGeolocationDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNewForEntireAccount"))
   {
     m_isNewForEntireAccount = jsonValue.GetBool("IsNewForEntireAccount");
-
     m_isNewForEntireAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

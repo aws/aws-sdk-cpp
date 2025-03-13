@@ -25,7 +25,7 @@ namespace Model
   class DeletePermissionVersionRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API DeletePermissionVersionRequest();
+    AWS_RAM_API DeletePermissionVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * Resource Name (ARN)</a> of the permission with the version you want to
      * delete.</p>
      */
-    inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
+    inline const Aws::String& GetPermissionArn() const { return m_permissionArn; }
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
-    inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
-    inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
-    inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
-    inline DeletePermissionVersionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
-    inline DeletePermissionVersionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
-    inline DeletePermissionVersionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+    template<typename PermissionArnT = Aws::String>
+    void SetPermissionArn(PermissionArnT&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::forward<PermissionArnT>(value); }
+    template<typename PermissionArnT = Aws::String>
+    DeletePermissionVersionRequest& WithPermissionArn(PermissionArnT&& value) { SetPermissionArn(std::forward<PermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * <a>AssociateResourceSharePermission</a> to update your resource shares to use
      * the new default version.</p>
      */
-    inline int GetPermissionVersion() const{ return m_permissionVersion; }
+    inline int GetPermissionVersion() const { return m_permissionVersion; }
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
     inline DeletePermissionVersionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
@@ -86,21 +84,19 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeletePermissionVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeletePermissionVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeletePermissionVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeletePermissionVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_permissionArn;
     bool m_permissionArnHasBeenSet = false;
 
-    int m_permissionVersion;
+    int m_permissionVersion{0};
     bool m_permissionVersionHasBeenSet = false;
 
     Aws::String m_clientToken;

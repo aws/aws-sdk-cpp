@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-NotifyEmailType::NotifyEmailType() : 
-    m_subjectHasBeenSet(false),
-    m_htmlBodyHasBeenSet(false),
-    m_textBodyHasBeenSet(false)
-{
-}
-
 NotifyEmailType::NotifyEmailType(JsonView jsonValue)
-  : NotifyEmailType()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NotifyEmailType& NotifyEmailType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HtmlBody"))
   {
     m_htmlBody = jsonValue.GetString("HtmlBody");
-
     m_htmlBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextBody"))
   {
     m_textBody = jsonValue.GetString("TextBody");
-
     m_textBodyHasBeenSet = true;
   }
-
   return *this;
 }
 

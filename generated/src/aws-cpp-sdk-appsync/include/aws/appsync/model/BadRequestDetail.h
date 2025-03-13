@@ -34,7 +34,7 @@ namespace Model
   class BadRequestDetail
   {
   public:
-    AWS_APPSYNC_API BadRequestDetail();
+    AWS_APPSYNC_API BadRequestDetail() = default;
     AWS_APPSYNC_API BadRequestDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API BadRequestDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>Contains the list of errors in the request.</p>
      */
-    inline const Aws::Vector<CodeError>& GetCodeErrors() const{ return m_codeErrors; }
+    inline const Aws::Vector<CodeError>& GetCodeErrors() const { return m_codeErrors; }
     inline bool CodeErrorsHasBeenSet() const { return m_codeErrorsHasBeenSet; }
-    inline void SetCodeErrors(const Aws::Vector<CodeError>& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = value; }
-    inline void SetCodeErrors(Aws::Vector<CodeError>&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = std::move(value); }
-    inline BadRequestDetail& WithCodeErrors(const Aws::Vector<CodeError>& value) { SetCodeErrors(value); return *this;}
-    inline BadRequestDetail& WithCodeErrors(Aws::Vector<CodeError>&& value) { SetCodeErrors(std::move(value)); return *this;}
-    inline BadRequestDetail& AddCodeErrors(const CodeError& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(value); return *this; }
-    inline BadRequestDetail& AddCodeErrors(CodeError&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(std::move(value)); return *this; }
+    template<typename CodeErrorsT = Aws::Vector<CodeError>>
+    void SetCodeErrors(CodeErrorsT&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = std::forward<CodeErrorsT>(value); }
+    template<typename CodeErrorsT = Aws::Vector<CodeError>>
+    BadRequestDetail& WithCodeErrors(CodeErrorsT&& value) { SetCodeErrors(std::forward<CodeErrorsT>(value)); return *this;}
+    template<typename CodeErrorsT = CodeError>
+    BadRequestDetail& AddCodeErrors(CodeErrorsT&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.emplace_back(std::forward<CodeErrorsT>(value)); return *this; }
     ///@}
   private:
 

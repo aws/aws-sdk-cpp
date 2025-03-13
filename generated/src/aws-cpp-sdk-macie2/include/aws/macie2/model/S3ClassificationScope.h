@@ -32,7 +32,7 @@ namespace Model
   class S3ClassificationScope
   {
   public:
-    AWS_MACIE2_API S3ClassificationScope();
+    AWS_MACIE2_API S3ClassificationScope() = default;
     AWS_MACIE2_API S3ClassificationScope(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3ClassificationScope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The S3 buckets that are excluded.</p>
      */
-    inline const S3ClassificationScopeExclusion& GetExcludes() const{ return m_excludes; }
+    inline const S3ClassificationScopeExclusion& GetExcludes() const { return m_excludes; }
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-    inline void SetExcludes(const S3ClassificationScopeExclusion& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-    inline void SetExcludes(S3ClassificationScopeExclusion&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-    inline S3ClassificationScope& WithExcludes(const S3ClassificationScopeExclusion& value) { SetExcludes(value); return *this;}
-    inline S3ClassificationScope& WithExcludes(S3ClassificationScopeExclusion&& value) { SetExcludes(std::move(value)); return *this;}
+    template<typename ExcludesT = S3ClassificationScopeExclusion>
+    void SetExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes = std::forward<ExcludesT>(value); }
+    template<typename ExcludesT = S3ClassificationScopeExclusion>
+    S3ClassificationScope& WithExcludes(ExcludesT&& value) { SetExcludes(std::forward<ExcludesT>(value)); return *this;}
     ///@}
   private:
 

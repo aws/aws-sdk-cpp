@@ -33,7 +33,7 @@ namespace Model
   class ReplicationGroupStatus
   {
   public:
-    AWS_KEYSPACES_API ReplicationGroupStatus();
+    AWS_KEYSPACES_API ReplicationGroupStatus() = default;
     AWS_KEYSPACES_API ReplicationGroupStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API ReplicationGroupStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p> The name of the Region that was added to the keyspace. </p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline ReplicationGroupStatus& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline ReplicationGroupStatus& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline ReplicationGroupStatus& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    ReplicationGroupStatus& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of the keyspace. </p>
      */
-    inline const KeyspaceStatus& GetKeyspaceStatus() const{ return m_keyspaceStatus; }
+    inline KeyspaceStatus GetKeyspaceStatus() const { return m_keyspaceStatus; }
     inline bool KeyspaceStatusHasBeenSet() const { return m_keyspaceStatusHasBeenSet; }
-    inline void SetKeyspaceStatus(const KeyspaceStatus& value) { m_keyspaceStatusHasBeenSet = true; m_keyspaceStatus = value; }
-    inline void SetKeyspaceStatus(KeyspaceStatus&& value) { m_keyspaceStatusHasBeenSet = true; m_keyspaceStatus = std::move(value); }
-    inline ReplicationGroupStatus& WithKeyspaceStatus(const KeyspaceStatus& value) { SetKeyspaceStatus(value); return *this;}
-    inline ReplicationGroupStatus& WithKeyspaceStatus(KeyspaceStatus&& value) { SetKeyspaceStatus(std::move(value)); return *this;}
+    inline void SetKeyspaceStatus(KeyspaceStatus value) { m_keyspaceStatusHasBeenSet = true; m_keyspaceStatus = value; }
+    inline ReplicationGroupStatus& WithKeyspaceStatus(KeyspaceStatus value) { SetKeyspaceStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -71,21 +67,19 @@ namespace Model
      * expressed as a percentage of the newly replicated tables with status
      * <code>Active</code> compared to the total number of tables in the keyspace. </p>
      */
-    inline const Aws::String& GetTablesReplicationProgress() const{ return m_tablesReplicationProgress; }
+    inline const Aws::String& GetTablesReplicationProgress() const { return m_tablesReplicationProgress; }
     inline bool TablesReplicationProgressHasBeenSet() const { return m_tablesReplicationProgressHasBeenSet; }
-    inline void SetTablesReplicationProgress(const Aws::String& value) { m_tablesReplicationProgressHasBeenSet = true; m_tablesReplicationProgress = value; }
-    inline void SetTablesReplicationProgress(Aws::String&& value) { m_tablesReplicationProgressHasBeenSet = true; m_tablesReplicationProgress = std::move(value); }
-    inline void SetTablesReplicationProgress(const char* value) { m_tablesReplicationProgressHasBeenSet = true; m_tablesReplicationProgress.assign(value); }
-    inline ReplicationGroupStatus& WithTablesReplicationProgress(const Aws::String& value) { SetTablesReplicationProgress(value); return *this;}
-    inline ReplicationGroupStatus& WithTablesReplicationProgress(Aws::String&& value) { SetTablesReplicationProgress(std::move(value)); return *this;}
-    inline ReplicationGroupStatus& WithTablesReplicationProgress(const char* value) { SetTablesReplicationProgress(value); return *this;}
+    template<typename TablesReplicationProgressT = Aws::String>
+    void SetTablesReplicationProgress(TablesReplicationProgressT&& value) { m_tablesReplicationProgressHasBeenSet = true; m_tablesReplicationProgress = std::forward<TablesReplicationProgressT>(value); }
+    template<typename TablesReplicationProgressT = Aws::String>
+    ReplicationGroupStatus& WithTablesReplicationProgress(TablesReplicationProgressT&& value) { SetTablesReplicationProgress(std::forward<TablesReplicationProgressT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_region;
     bool m_regionHasBeenSet = false;
 
-    KeyspaceStatus m_keyspaceStatus;
+    KeyspaceStatus m_keyspaceStatus{KeyspaceStatus::NOT_SET};
     bool m_keyspaceStatusHasBeenSet = false;
 
     Aws::String m_tablesReplicationProgress;

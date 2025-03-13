@@ -42,7 +42,7 @@ namespace Model
   class CapacityReservationSpecification
   {
   public:
-    AWS_EC2_API CapacityReservationSpecification();
+    AWS_EC2_API CapacityReservationSpecification() = default;
     AWS_EC2_API CapacityReservationSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CapacityReservationSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -63,12 +63,10 @@ namespace Model
      * doesn't run in a Capacity Reservation even if one is available. The instance
      * runs as an On-Demand Instance.</p> </li> </ul>
      */
-    inline const CapacityReservationPreference& GetCapacityReservationPreference() const{ return m_capacityReservationPreference; }
+    inline CapacityReservationPreference GetCapacityReservationPreference() const { return m_capacityReservationPreference; }
     inline bool CapacityReservationPreferenceHasBeenSet() const { return m_capacityReservationPreferenceHasBeenSet; }
-    inline void SetCapacityReservationPreference(const CapacityReservationPreference& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
-    inline void SetCapacityReservationPreference(CapacityReservationPreference&& value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = std::move(value); }
-    inline CapacityReservationSpecification& WithCapacityReservationPreference(const CapacityReservationPreference& value) { SetCapacityReservationPreference(value); return *this;}
-    inline CapacityReservationSpecification& WithCapacityReservationPreference(CapacityReservationPreference&& value) { SetCapacityReservationPreference(std::move(value)); return *this;}
+    inline void SetCapacityReservationPreference(CapacityReservationPreference value) { m_capacityReservationPreferenceHasBeenSet = true; m_capacityReservationPreference = value; }
+    inline CapacityReservationSpecification& WithCapacityReservationPreference(CapacityReservationPreference value) { SetCapacityReservationPreference(value); return *this;}
     ///@}
 
     ///@{
@@ -76,16 +74,16 @@ namespace Model
      * <p>Information about the target Capacity Reservation or Capacity Reservation
      * group.</p>
      */
-    inline const CapacityReservationTarget& GetCapacityReservationTarget() const{ return m_capacityReservationTarget; }
+    inline const CapacityReservationTarget& GetCapacityReservationTarget() const { return m_capacityReservationTarget; }
     inline bool CapacityReservationTargetHasBeenSet() const { return m_capacityReservationTargetHasBeenSet; }
-    inline void SetCapacityReservationTarget(const CapacityReservationTarget& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = value; }
-    inline void SetCapacityReservationTarget(CapacityReservationTarget&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::move(value); }
-    inline CapacityReservationSpecification& WithCapacityReservationTarget(const CapacityReservationTarget& value) { SetCapacityReservationTarget(value); return *this;}
-    inline CapacityReservationSpecification& WithCapacityReservationTarget(CapacityReservationTarget&& value) { SetCapacityReservationTarget(std::move(value)); return *this;}
+    template<typename CapacityReservationTargetT = CapacityReservationTarget>
+    void SetCapacityReservationTarget(CapacityReservationTargetT&& value) { m_capacityReservationTargetHasBeenSet = true; m_capacityReservationTarget = std::forward<CapacityReservationTargetT>(value); }
+    template<typename CapacityReservationTargetT = CapacityReservationTarget>
+    CapacityReservationSpecification& WithCapacityReservationTarget(CapacityReservationTargetT&& value) { SetCapacityReservationTarget(std::forward<CapacityReservationTargetT>(value)); return *this;}
     ///@}
   private:
 
-    CapacityReservationPreference m_capacityReservationPreference;
+    CapacityReservationPreference m_capacityReservationPreference{CapacityReservationPreference::NOT_SET};
     bool m_capacityReservationPreferenceHasBeenSet = false;
 
     CapacityReservationTarget m_capacityReservationTarget;

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionVpcConfig::AwsLambdaFunctionVpcConfig() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionVpcConfig::AwsLambdaFunctionVpcConfig(JsonView jsonValue)
-  : AwsLambdaFunctionVpcConfig()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ AwsLambdaFunctionVpcConfig& AwsLambdaFunctionVpcConfig::operator =(JsonView json
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -52,14 +43,11 @@ AwsLambdaFunctionVpcConfig& AwsLambdaFunctionVpcConfig::operator =(JsonView json
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

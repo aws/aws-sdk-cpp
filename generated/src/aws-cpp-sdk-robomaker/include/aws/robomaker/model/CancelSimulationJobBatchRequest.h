@@ -21,7 +21,7 @@ namespace Model
   class CancelSimulationJobBatchRequest : public RoboMakerRequest
   {
   public:
-    AWS_ROBOMAKER_API CancelSimulationJobBatchRequest();
+    AWS_ROBOMAKER_API CancelSimulationJobBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The id of the batch to cancel.</p>
      */
-    inline const Aws::String& GetBatch() const{ return m_batch; }
+    inline const Aws::String& GetBatch() const { return m_batch; }
     inline bool BatchHasBeenSet() const { return m_batchHasBeenSet; }
-    inline void SetBatch(const Aws::String& value) { m_batchHasBeenSet = true; m_batch = value; }
-    inline void SetBatch(Aws::String&& value) { m_batchHasBeenSet = true; m_batch = std::move(value); }
-    inline void SetBatch(const char* value) { m_batchHasBeenSet = true; m_batch.assign(value); }
-    inline CancelSimulationJobBatchRequest& WithBatch(const Aws::String& value) { SetBatch(value); return *this;}
-    inline CancelSimulationJobBatchRequest& WithBatch(Aws::String&& value) { SetBatch(std::move(value)); return *this;}
-    inline CancelSimulationJobBatchRequest& WithBatch(const char* value) { SetBatch(value); return *this;}
+    template<typename BatchT = Aws::String>
+    void SetBatch(BatchT&& value) { m_batchHasBeenSet = true; m_batch = std::forward<BatchT>(value); }
+    template<typename BatchT = Aws::String>
+    CancelSimulationJobBatchRequest& WithBatch(BatchT&& value) { SetBatch(std::forward<BatchT>(value)); return *this;}
     ///@}
   private:
 

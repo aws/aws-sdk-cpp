@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-NumberSubmittedItemsExceeded::NumberSubmittedItemsExceeded() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 NumberSubmittedItemsExceeded::NumberSubmittedItemsExceeded(const XmlNode& xmlNode)
-  : NumberSubmittedItemsExceeded()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ NumberSubmittedItemsExceeded& NumberSubmittedItemsExceeded::operator =(const Xml
     {
       m_boxUsage = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(boxUsageNode.GetText()).c_str()).c_str());
       m_boxUsageHasBeenSet = true;
+       m_boxUsageHasBeenSet = true;
     }
   }
 

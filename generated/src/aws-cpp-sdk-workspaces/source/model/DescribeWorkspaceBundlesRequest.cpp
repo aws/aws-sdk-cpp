@@ -12,13 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspaceBundlesRequest::DescribeWorkspaceBundlesRequest() : 
-    m_bundleIdsHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspaceBundlesRequest::SerializePayload() const
 {
   JsonValue payload;

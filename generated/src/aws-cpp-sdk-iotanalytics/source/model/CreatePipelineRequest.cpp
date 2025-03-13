@@ -12,13 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePipelineRequest::CreatePipelineRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineActivitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

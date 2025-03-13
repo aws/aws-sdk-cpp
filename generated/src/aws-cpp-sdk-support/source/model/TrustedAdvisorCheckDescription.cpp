@@ -18,17 +18,7 @@ namespace Support
 namespace Model
 {
 
-TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 TrustedAdvisorCheckDescription::TrustedAdvisorCheckDescription(JsonView jsonValue)
-  : TrustedAdvisorCheckDescription()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TrustedAdvisorCheckDescription& TrustedAdvisorCheckDescription::operator =(JsonV
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = jsonValue.GetString("category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
@@ -72,7 +54,6 @@ TrustedAdvisorCheckDescription& TrustedAdvisorCheckDescription::operator =(JsonV
     }
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

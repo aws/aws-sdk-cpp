@@ -20,19 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-TextArrayOptions::TextArrayOptions() : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldsHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_highlightEnabled(false),
-    m_highlightEnabledHasBeenSet(false),
-    m_analysisSchemeHasBeenSet(false)
-{
-}
-
 TextArrayOptions::TextArrayOptions(const XmlNode& xmlNode)
-  : TextArrayOptions()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ TextArrayOptions& TextArrayOptions::operator =(const XmlNode& xmlNode)
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode sourceFieldsNode = resultNode.FirstChild("SourceFields");
     if(!sourceFieldsNode.IsNull())
     {
       m_sourceFields = Aws::Utils::Xml::DecodeEscapedXmlText(sourceFieldsNode.GetText());
       m_sourceFieldsHasBeenSet = true;
+       m_sourceFieldsHasBeenSet = true;
     }
     XmlNode returnEnabledNode = resultNode.FirstChild("ReturnEnabled");
     if(!returnEnabledNode.IsNull())
     {
       m_returnEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnEnabledNode.GetText()).c_str()).c_str());
       m_returnEnabledHasBeenSet = true;
+       m_returnEnabledHasBeenSet = true;
     }
     XmlNode highlightEnabledNode = resultNode.FirstChild("HighlightEnabled");
     if(!highlightEnabledNode.IsNull())
     {
       m_highlightEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(highlightEnabledNode.GetText()).c_str()).c_str());
       m_highlightEnabledHasBeenSet = true;
+       m_highlightEnabledHasBeenSet = true;
     }
     XmlNode analysisSchemeNode = resultNode.FirstChild("AnalysisScheme");
     if(!analysisSchemeNode.IsNull())
     {
       m_analysisScheme = Aws::Utils::Xml::DecodeEscapedXmlText(analysisSchemeNode.GetText());
       m_analysisSchemeHasBeenSet = true;
+       m_analysisSchemeHasBeenSet = true;
     }
   }
 

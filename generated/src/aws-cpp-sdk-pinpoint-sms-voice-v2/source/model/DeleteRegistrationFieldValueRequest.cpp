@@ -12,12 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRegistrationFieldValueRequest::DeleteRegistrationFieldValueRequest() : 
-    m_registrationIdHasBeenSet(false),
-    m_fieldPathHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRegistrationFieldValueRequest::SerializePayload() const
 {
   JsonValue payload;

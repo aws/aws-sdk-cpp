@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDirectoryDataAccessResult::DescribeDirectoryDataAccessResult() : 
-    m_dataAccessStatus(DataAccessStatus::NOT_SET)
-{
-}
-
 DescribeDirectoryDataAccessResult::DescribeDirectoryDataAccessResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDirectoryDataAccessResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DescribeDirectoryDataAccessResult& DescribeDirectoryDataAccessResult::operator =
   if(jsonValue.ValueExists("DataAccessStatus"))
   {
     m_dataAccessStatus = DataAccessStatusMapper::GetDataAccessStatusForName(jsonValue.GetString("DataAccessStatus"));
-
+    m_dataAccessStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

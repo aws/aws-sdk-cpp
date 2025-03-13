@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSlotTypeResult::UpdateSlotTypeResult()
-{
-}
-
 UpdateSlotTypeResult::UpdateSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ UpdateSlotTypeResult& UpdateSlotTypeResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("slotTypeId"))
   {
     m_slotTypeId = jsonValue.GetString("slotTypeId");
-
+    m_slotTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypeName"))
   {
     m_slotTypeName = jsonValue.GetString("slotTypeName");
-
+    m_slotTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypeValues"))
   {
     Aws::Utils::Array<JsonView> slotTypeValuesJsonList = jsonValue.GetArray("slotTypeValues");
@@ -54,68 +47,60 @@ UpdateSlotTypeResult& UpdateSlotTypeResult::operator =(const Aws::AmazonWebServi
     {
       m_slotTypeValues.push_back(slotTypeValuesJsonList[slotTypeValuesIndex].AsObject());
     }
+    m_slotTypeValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueSelectionSetting"))
   {
     m_valueSelectionSetting = jsonValue.GetObject("valueSelectionSetting");
-
+    m_valueSelectionSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentSlotTypeSignature"))
   {
     m_parentSlotTypeSignature = jsonValue.GetString("parentSlotTypeSignature");
-
+    m_parentSlotTypeSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
+    m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
+    m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
+    m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
+    m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalSourceSetting"))
   {
     m_externalSourceSetting = jsonValue.GetObject("externalSourceSetting");
-
+    m_externalSourceSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compositeSlotTypeSetting"))
   {
     m_compositeSlotTypeSetting = jsonValue.GetObject("compositeSlotTypeSetting");
-
+    m_compositeSlotTypeSettingHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

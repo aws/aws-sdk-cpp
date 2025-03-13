@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ConversationLogSettings::ConversationLogSettings() : 
-    m_textLogSettingsHasBeenSet(false),
-    m_audioLogSettingsHasBeenSet(false)
-{
-}
-
 ConversationLogSettings::ConversationLogSettings(JsonView jsonValue)
-  : ConversationLogSettings()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ConversationLogSettings& ConversationLogSettings::operator =(JsonView jsonValue)
     }
     m_textLogSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioLogSettings"))
   {
     Aws::Utils::Array<JsonView> audioLogSettingsJsonList = jsonValue.GetArray("audioLogSettings");
@@ -51,7 +43,6 @@ ConversationLogSettings& ConversationLogSettings::operator =(JsonView jsonValue)
     }
     m_audioLogSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

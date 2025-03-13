@@ -12,12 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAnomalySubscriptionRequest::CreateAnomalySubscriptionRequest() : 
-    m_anomalySubscriptionHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAnomalySubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

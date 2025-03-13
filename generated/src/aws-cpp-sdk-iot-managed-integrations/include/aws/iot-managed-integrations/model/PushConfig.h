@@ -33,7 +33,7 @@ namespace Model
   class PushConfig
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API PushConfig();
+    AWS_IOTMANAGEDINTEGRATIONS_API PushConfig() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API PushConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API PushConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>Structure representing one abort config.</p>
      */
-    inline const OtaTaskAbortConfig& GetAbortConfig() const{ return m_abortConfig; }
+    inline const OtaTaskAbortConfig& GetAbortConfig() const { return m_abortConfig; }
     inline bool AbortConfigHasBeenSet() const { return m_abortConfigHasBeenSet; }
-    inline void SetAbortConfig(const OtaTaskAbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
-    inline void SetAbortConfig(OtaTaskAbortConfig&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::move(value); }
-    inline PushConfig& WithAbortConfig(const OtaTaskAbortConfig& value) { SetAbortConfig(value); return *this;}
-    inline PushConfig& WithAbortConfig(OtaTaskAbortConfig&& value) { SetAbortConfig(std::move(value)); return *this;}
+    template<typename AbortConfigT = OtaTaskAbortConfig>
+    void SetAbortConfig(AbortConfigT&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::forward<AbortConfigT>(value); }
+    template<typename AbortConfigT = OtaTaskAbortConfig>
+    PushConfig& WithAbortConfig(AbortConfigT&& value) { SetAbortConfig(std::forward<AbortConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Structure representing one rollout config.</p>
      */
-    inline const OtaTaskExecutionRolloutConfig& GetRolloutConfig() const{ return m_rolloutConfig; }
+    inline const OtaTaskExecutionRolloutConfig& GetRolloutConfig() const { return m_rolloutConfig; }
     inline bool RolloutConfigHasBeenSet() const { return m_rolloutConfigHasBeenSet; }
-    inline void SetRolloutConfig(const OtaTaskExecutionRolloutConfig& value) { m_rolloutConfigHasBeenSet = true; m_rolloutConfig = value; }
-    inline void SetRolloutConfig(OtaTaskExecutionRolloutConfig&& value) { m_rolloutConfigHasBeenSet = true; m_rolloutConfig = std::move(value); }
-    inline PushConfig& WithRolloutConfig(const OtaTaskExecutionRolloutConfig& value) { SetRolloutConfig(value); return *this;}
-    inline PushConfig& WithRolloutConfig(OtaTaskExecutionRolloutConfig&& value) { SetRolloutConfig(std::move(value)); return *this;}
+    template<typename RolloutConfigT = OtaTaskExecutionRolloutConfig>
+    void SetRolloutConfig(RolloutConfigT&& value) { m_rolloutConfigHasBeenSet = true; m_rolloutConfig = std::forward<RolloutConfigT>(value); }
+    template<typename RolloutConfigT = OtaTaskExecutionRolloutConfig>
+    PushConfig& WithRolloutConfig(RolloutConfigT&& value) { SetRolloutConfig(std::forward<RolloutConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Structure representing one timeout config.</p>
      */
-    inline const OtaTaskTimeoutConfig& GetTimeoutConfig() const{ return m_timeoutConfig; }
+    inline const OtaTaskTimeoutConfig& GetTimeoutConfig() const { return m_timeoutConfig; }
     inline bool TimeoutConfigHasBeenSet() const { return m_timeoutConfigHasBeenSet; }
-    inline void SetTimeoutConfig(const OtaTaskTimeoutConfig& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = value; }
-    inline void SetTimeoutConfig(OtaTaskTimeoutConfig&& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = std::move(value); }
-    inline PushConfig& WithTimeoutConfig(const OtaTaskTimeoutConfig& value) { SetTimeoutConfig(value); return *this;}
-    inline PushConfig& WithTimeoutConfig(OtaTaskTimeoutConfig&& value) { SetTimeoutConfig(std::move(value)); return *this;}
+    template<typename TimeoutConfigT = OtaTaskTimeoutConfig>
+    void SetTimeoutConfig(TimeoutConfigT&& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = std::forward<TimeoutConfigT>(value); }
+    template<typename TimeoutConfigT = OtaTaskTimeoutConfig>
+    PushConfig& WithTimeoutConfig(TimeoutConfigT&& value) { SetTimeoutConfig(std::forward<TimeoutConfigT>(value)); return *this;}
     ///@}
   private:
 

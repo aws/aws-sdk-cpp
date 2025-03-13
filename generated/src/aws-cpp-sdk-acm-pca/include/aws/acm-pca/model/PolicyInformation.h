@@ -34,7 +34,7 @@ namespace Model
   class PolicyInformation
   {
   public:
-    AWS_ACMPCA_API PolicyInformation();
+    AWS_ACMPCA_API PolicyInformation() = default;
     AWS_ACMPCA_API PolicyInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API PolicyInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier
      * (OID)</a>.</p>
      */
-    inline const Aws::String& GetCertPolicyId() const{ return m_certPolicyId; }
+    inline const Aws::String& GetCertPolicyId() const { return m_certPolicyId; }
     inline bool CertPolicyIdHasBeenSet() const { return m_certPolicyIdHasBeenSet; }
-    inline void SetCertPolicyId(const Aws::String& value) { m_certPolicyIdHasBeenSet = true; m_certPolicyId = value; }
-    inline void SetCertPolicyId(Aws::String&& value) { m_certPolicyIdHasBeenSet = true; m_certPolicyId = std::move(value); }
-    inline void SetCertPolicyId(const char* value) { m_certPolicyIdHasBeenSet = true; m_certPolicyId.assign(value); }
-    inline PolicyInformation& WithCertPolicyId(const Aws::String& value) { SetCertPolicyId(value); return *this;}
-    inline PolicyInformation& WithCertPolicyId(Aws::String&& value) { SetCertPolicyId(std::move(value)); return *this;}
-    inline PolicyInformation& WithCertPolicyId(const char* value) { SetCertPolicyId(value); return *this;}
+    template<typename CertPolicyIdT = Aws::String>
+    void SetCertPolicyId(CertPolicyIdT&& value) { m_certPolicyIdHasBeenSet = true; m_certPolicyId = std::forward<CertPolicyIdT>(value); }
+    template<typename CertPolicyIdT = Aws::String>
+    PolicyInformation& WithCertPolicyId(CertPolicyIdT&& value) { SetCertPolicyId(std::forward<CertPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ namespace Model
      * Services Private CA supports the certification practice statement (CPS)
      * qualifier.</p>
      */
-    inline const Aws::Vector<PolicyQualifierInfo>& GetPolicyQualifiers() const{ return m_policyQualifiers; }
+    inline const Aws::Vector<PolicyQualifierInfo>& GetPolicyQualifiers() const { return m_policyQualifiers; }
     inline bool PolicyQualifiersHasBeenSet() const { return m_policyQualifiersHasBeenSet; }
-    inline void SetPolicyQualifiers(const Aws::Vector<PolicyQualifierInfo>& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers = value; }
-    inline void SetPolicyQualifiers(Aws::Vector<PolicyQualifierInfo>&& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers = std::move(value); }
-    inline PolicyInformation& WithPolicyQualifiers(const Aws::Vector<PolicyQualifierInfo>& value) { SetPolicyQualifiers(value); return *this;}
-    inline PolicyInformation& WithPolicyQualifiers(Aws::Vector<PolicyQualifierInfo>&& value) { SetPolicyQualifiers(std::move(value)); return *this;}
-    inline PolicyInformation& AddPolicyQualifiers(const PolicyQualifierInfo& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers.push_back(value); return *this; }
-    inline PolicyInformation& AddPolicyQualifiers(PolicyQualifierInfo&& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers.push_back(std::move(value)); return *this; }
+    template<typename PolicyQualifiersT = Aws::Vector<PolicyQualifierInfo>>
+    void SetPolicyQualifiers(PolicyQualifiersT&& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers = std::forward<PolicyQualifiersT>(value); }
+    template<typename PolicyQualifiersT = Aws::Vector<PolicyQualifierInfo>>
+    PolicyInformation& WithPolicyQualifiers(PolicyQualifiersT&& value) { SetPolicyQualifiers(std::forward<PolicyQualifiersT>(value)); return *this;}
+    template<typename PolicyQualifiersT = PolicyQualifierInfo>
+    PolicyInformation& AddPolicyQualifiers(PolicyQualifiersT&& value) { m_policyQualifiersHasBeenSet = true; m_policyQualifiers.emplace_back(std::forward<PolicyQualifiersT>(value)); return *this; }
     ///@}
   private:
 

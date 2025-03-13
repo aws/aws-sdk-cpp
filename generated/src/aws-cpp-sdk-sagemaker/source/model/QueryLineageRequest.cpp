@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-QueryLineageRequest::QueryLineageRequest() : 
-    m_startArnsHasBeenSet(false),
-    m_direction(Direction::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_includeEdges(false),
-    m_includeEdgesHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxDepth(0),
-    m_maxDepthHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String QueryLineageRequest::SerializePayload() const
 {
   JsonValue payload;

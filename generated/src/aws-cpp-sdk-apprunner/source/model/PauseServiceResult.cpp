@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PauseServiceResult::PauseServiceResult()
-{
-}
-
 PauseServiceResult::PauseServiceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ PauseServiceResult& PauseServiceResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetObject("Service");
-
+    m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");
-
+    m_operationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

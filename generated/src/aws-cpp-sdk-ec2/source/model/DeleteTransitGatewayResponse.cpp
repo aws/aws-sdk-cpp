@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteTransitGatewayResponse::DeleteTransitGatewayResponse()
-{
-}
-
 DeleteTransitGatewayResponse::DeleteTransitGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeleteTransitGatewayResponse& DeleteTransitGatewayResponse::operator =(const Aws
     if(!transitGatewayNode.IsNull())
     {
       m_transitGateway = transitGatewayNode;
+      m_transitGatewayHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeleteTransitGatewayResponse& DeleteTransitGatewayResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteTransitGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

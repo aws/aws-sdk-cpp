@@ -12,11 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopFlowRequest::StopFlowRequest() : 
-    m_flowNameHasBeenSet(false)
-{
-}
-
 Aws::String StopFlowRequest::SerializePayload() const
 {
   JsonValue payload;

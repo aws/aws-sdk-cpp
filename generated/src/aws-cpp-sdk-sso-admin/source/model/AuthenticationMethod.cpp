@@ -18,13 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-AuthenticationMethod::AuthenticationMethod() : 
-    m_iamHasBeenSet(false)
-{
-}
-
 AuthenticationMethod::AuthenticationMethod(JsonView jsonValue)
-  : AuthenticationMethod()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AuthenticationMethod& AuthenticationMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Iam"))
   {
     m_iam = jsonValue.GetObject("Iam");
-
     m_iamHasBeenSet = true;
   }
-
   return *this;
 }
 

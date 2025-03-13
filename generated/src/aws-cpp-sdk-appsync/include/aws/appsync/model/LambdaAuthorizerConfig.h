@@ -34,7 +34,7 @@ namespace Model
   class LambdaAuthorizerConfig
   {
   public:
-    AWS_APPSYNC_API LambdaAuthorizerConfig();
+    AWS_APPSYNC_API LambdaAuthorizerConfig() = default;
     AWS_APPSYNC_API LambdaAuthorizerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API LambdaAuthorizerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * maximum value is one hour (3600 seconds). The Lambda function can override this
      * by returning a <code>ttlOverride</code> key in its response.</p>
      */
-    inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
+    inline int GetAuthorizerResultTtlInSeconds() const { return m_authorizerResultTtlInSeconds; }
     inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
     inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
     inline LambdaAuthorizerConfig& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
@@ -67,14 +67,12 @@ namespace Model
      * "appsync" --principal appsync.amazonaws.com --action
      * lambda:InvokeFunction</code> </p>
      */
-    inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
+    inline const Aws::String& GetAuthorizerUri() const { return m_authorizerUri; }
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
-    inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
-    inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
-    inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
-    inline LambdaAuthorizerConfig& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
-    inline LambdaAuthorizerConfig& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
-    inline LambdaAuthorizerConfig& WithAuthorizerUri(const char* value) { SetAuthorizerUri(value); return *this;}
+    template<typename AuthorizerUriT = Aws::String>
+    void SetAuthorizerUri(AuthorizerUriT&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::forward<AuthorizerUriT>(value); }
+    template<typename AuthorizerUriT = Aws::String>
+    LambdaAuthorizerConfig& WithAuthorizerUri(AuthorizerUriT&& value) { SetAuthorizerUri(std::forward<AuthorizerUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,18 +80,16 @@ namespace Model
      * <p>A regular expression for validation of tokens before the Lambda function is
      * called.</p>
      */
-    inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
+    inline const Aws::String& GetIdentityValidationExpression() const { return m_identityValidationExpression; }
     inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
-    inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
-    inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
-    inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
-    inline LambdaAuthorizerConfig& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
-    inline LambdaAuthorizerConfig& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
-    inline LambdaAuthorizerConfig& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
+    template<typename IdentityValidationExpressionT = Aws::String>
+    void SetIdentityValidationExpression(IdentityValidationExpressionT&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::forward<IdentityValidationExpressionT>(value); }
+    template<typename IdentityValidationExpressionT = Aws::String>
+    LambdaAuthorizerConfig& WithIdentityValidationExpression(IdentityValidationExpressionT&& value) { SetIdentityValidationExpression(std::forward<IdentityValidationExpressionT>(value)); return *this;}
     ///@}
   private:
 
-    int m_authorizerResultTtlInSeconds;
+    int m_authorizerResultTtlInSeconds{0};
     bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
     Aws::String m_authorizerUri;

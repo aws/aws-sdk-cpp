@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSubscriberNotificationRequest::DeleteSubscriberNotificationRequest() : 
-    m_subscriberIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSubscriberNotificationRequest::SerializePayload() const
 {
   return {};

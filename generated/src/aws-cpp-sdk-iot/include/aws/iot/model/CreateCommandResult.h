@@ -27,7 +27,7 @@ namespace Model
   class CreateCommandResult
   {
   public:
-    AWS_IOT_API CreateCommandResult();
+    AWS_IOT_API CreateCommandResult() = default;
     AWS_IOT_API CreateCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API CreateCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The unique identifier for the command.</p>
      */
-    inline const Aws::String& GetCommandId() const{ return m_commandId; }
-    inline void SetCommandId(const Aws::String& value) { m_commandId = value; }
-    inline void SetCommandId(Aws::String&& value) { m_commandId = std::move(value); }
-    inline void SetCommandId(const char* value) { m_commandId.assign(value); }
-    inline CreateCommandResult& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
-    inline CreateCommandResult& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
-    inline CreateCommandResult& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+    inline const Aws::String& GetCommandId() const { return m_commandId; }
+    template<typename CommandIdT = Aws::String>
+    void SetCommandId(CommandIdT&& value) { m_commandIdHasBeenSet = true; m_commandId = std::forward<CommandIdT>(value); }
+    template<typename CommandIdT = Aws::String>
+    CreateCommandResult& WithCommandId(CommandIdT&& value) { SetCommandId(std::forward<CommandIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +49,31 @@ namespace Model
      * <code>arn:aws:iot:&lt;region&gt;:&lt;accountid&gt;:command/&lt;commandId&gt;</code>
      * </p>
      */
-    inline const Aws::String& GetCommandArn() const{ return m_commandArn; }
-    inline void SetCommandArn(const Aws::String& value) { m_commandArn = value; }
-    inline void SetCommandArn(Aws::String&& value) { m_commandArn = std::move(value); }
-    inline void SetCommandArn(const char* value) { m_commandArn.assign(value); }
-    inline CreateCommandResult& WithCommandArn(const Aws::String& value) { SetCommandArn(value); return *this;}
-    inline CreateCommandResult& WithCommandArn(Aws::String&& value) { SetCommandArn(std::move(value)); return *this;}
-    inline CreateCommandResult& WithCommandArn(const char* value) { SetCommandArn(value); return *this;}
+    inline const Aws::String& GetCommandArn() const { return m_commandArn; }
+    template<typename CommandArnT = Aws::String>
+    void SetCommandArn(CommandArnT&& value) { m_commandArnHasBeenSet = true; m_commandArn = std::forward<CommandArnT>(value); }
+    template<typename CommandArnT = Aws::String>
+    CreateCommandResult& WithCommandArn(CommandArnT&& value) { SetCommandArn(std::forward<CommandArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCommandResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCommandResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCommandResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCommandResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_commandId;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_commandArn;
+    bool m_commandArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

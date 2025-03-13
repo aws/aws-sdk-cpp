@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

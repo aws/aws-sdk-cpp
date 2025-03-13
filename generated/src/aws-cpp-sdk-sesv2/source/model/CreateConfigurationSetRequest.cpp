@@ -12,19 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfigurationSetRequest::CreateConfigurationSetRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_trackingOptionsHasBeenSet(false),
-    m_deliveryOptionsHasBeenSet(false),
-    m_reputationOptionsHasBeenSet(false),
-    m_sendingOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_suppressionOptionsHasBeenSet(false),
-    m_vdmOptionsHasBeenSet(false),
-    m_archivingOptionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfigurationSetRequest::SerializePayload() const
 {
   JsonValue payload;

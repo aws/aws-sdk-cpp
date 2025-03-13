@@ -28,7 +28,7 @@ namespace Model
   class ConvertRecoveryPointToSnapshotResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult();
+    AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult() = default;
     AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The snapshot converted from the recovery point.</p>
      */
-    inline const Snapshot& GetSnapshot() const{ return m_snapshot; }
-    inline void SetSnapshot(const Snapshot& value) { m_snapshot = value; }
-    inline void SetSnapshot(Snapshot&& value) { m_snapshot = std::move(value); }
-    inline ConvertRecoveryPointToSnapshotResult& WithSnapshot(const Snapshot& value) { SetSnapshot(value); return *this;}
-    inline ConvertRecoveryPointToSnapshotResult& WithSnapshot(Snapshot&& value) { SetSnapshot(std::move(value)); return *this;}
+    inline const Snapshot& GetSnapshot() const { return m_snapshot; }
+    template<typename SnapshotT = Snapshot>
+    void SetSnapshot(SnapshotT&& value) { m_snapshotHasBeenSet = true; m_snapshot = std::forward<SnapshotT>(value); }
+    template<typename SnapshotT = Snapshot>
+    ConvertRecoveryPointToSnapshotResult& WithSnapshot(SnapshotT&& value) { SetSnapshot(std::forward<SnapshotT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ConvertRecoveryPointToSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ConvertRecoveryPointToSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ConvertRecoveryPointToSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ConvertRecoveryPointToSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Snapshot m_snapshot;
+    bool m_snapshotHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,7 @@ namespace Model
   class GetRegistryCatalogDataRequest : public ECRPublicRequest
   {
   public:
-    AWS_ECRPUBLIC_API GetRegistryCatalogDataRequest();
+    AWS_ECRPUBLIC_API GetRegistryCatalogDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

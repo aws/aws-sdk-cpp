@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ParameterValue::ParameterValue() : 
-    m_integer(0),
-    m_integerHasBeenSet(false),
-    m_integerListHasBeenSet(false),
-    m_double(0.0),
-    m_doubleHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_stringListHasBeenSet(false),
-    m_boolean(false),
-    m_booleanHasBeenSet(false),
-    m_enumHasBeenSet(false),
-    m_enumListHasBeenSet(false)
-{
-}
-
 ParameterValue::ParameterValue(JsonView jsonValue)
-  : ParameterValue()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ ParameterValue& ParameterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Integer"))
   {
     m_integer = jsonValue.GetInteger("Integer");
-
     m_integerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerList"))
   {
     Aws::Utils::Array<JsonView> integerListJsonList = jsonValue.GetArray("IntegerList");
@@ -57,21 +39,16 @@ ParameterValue& ParameterValue::operator =(JsonView jsonValue)
     }
     m_integerListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Double"))
   {
     m_double = jsonValue.GetDouble("Double");
-
     m_doubleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("String"))
   {
     m_string = jsonValue.GetString("String");
-
     m_stringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringList"))
   {
     Aws::Utils::Array<JsonView> stringListJsonList = jsonValue.GetArray("StringList");
@@ -81,21 +58,16 @@ ParameterValue& ParameterValue::operator =(JsonView jsonValue)
     }
     m_stringListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Boolean"))
   {
     m_boolean = jsonValue.GetBool("Boolean");
-
     m_booleanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enum"))
   {
     m_enum = jsonValue.GetString("Enum");
-
     m_enumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnumList"))
   {
     Aws::Utils::Array<JsonView> enumListJsonList = jsonValue.GetArray("EnumList");
@@ -105,7 +77,6 @@ ParameterValue& ParameterValue::operator =(JsonView jsonValue)
     }
     m_enumListHasBeenSet = true;
   }
-
   return *this;
 }
 

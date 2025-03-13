@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEgressOnlyInternetGatewayResponse::CreateEgressOnlyInternetGatewayResponse()
-{
-}
-
 CreateEgressOnlyInternetGatewayResponse::CreateEgressOnlyInternetGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateEgressOnlyInternetGatewayResponse& CreateEgressOnlyInternetGatewayResponse
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
     XmlNode egressOnlyInternetGatewayNode = resultNode.FirstChild("egressOnlyInternetGateway");
     if(!egressOnlyInternetGatewayNode.IsNull())
     {
       m_egressOnlyInternetGateway = egressOnlyInternetGatewayNode;
+      m_egressOnlyInternetGatewayHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ CreateEgressOnlyInternetGatewayResponse& CreateEgressOnlyInternetGatewayResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateEgressOnlyInternetGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

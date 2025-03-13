@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeResourceResult::DescribeResourceResult()
-{
-}
-
 DescribeResourceResult::DescribeResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeResourceResult& DescribeResourceResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ResourceInfo"))
   {
     m_resourceInfo = jsonValue.GetObject("ResourceInfo");
-
+    m_resourceInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

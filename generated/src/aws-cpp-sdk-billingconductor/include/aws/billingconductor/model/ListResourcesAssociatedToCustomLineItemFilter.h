@@ -32,7 +32,7 @@ namespace Model
   class ListResourcesAssociatedToCustomLineItemFilter
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter();
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter() = default;
     AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> The type of relationship between the custom line item and the associated
      * resource. </p>
      */
-    inline const CustomLineItemRelationship& GetRelationship() const{ return m_relationship; }
+    inline CustomLineItemRelationship GetRelationship() const { return m_relationship; }
     inline bool RelationshipHasBeenSet() const { return m_relationshipHasBeenSet; }
-    inline void SetRelationship(const CustomLineItemRelationship& value) { m_relationshipHasBeenSet = true; m_relationship = value; }
-    inline void SetRelationship(CustomLineItemRelationship&& value) { m_relationshipHasBeenSet = true; m_relationship = std::move(value); }
-    inline ListResourcesAssociatedToCustomLineItemFilter& WithRelationship(const CustomLineItemRelationship& value) { SetRelationship(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemFilter& WithRelationship(CustomLineItemRelationship&& value) { SetRelationship(std::move(value)); return *this;}
+    inline void SetRelationship(CustomLineItemRelationship value) { m_relationshipHasBeenSet = true; m_relationship = value; }
+    inline ListResourcesAssociatedToCustomLineItemFilter& WithRelationship(CustomLineItemRelationship value) { SetRelationship(value); return *this;}
     ///@}
   private:
 
-    CustomLineItemRelationship m_relationship;
+    CustomLineItemRelationship m_relationship{CustomLineItemRelationship::NOT_SET};
     bool m_relationshipHasBeenSet = false;
   };
 

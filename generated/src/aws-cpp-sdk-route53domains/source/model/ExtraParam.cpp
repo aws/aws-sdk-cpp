@@ -18,15 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-ExtraParam::ExtraParam() : 
-    m_name(ExtraParamName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ExtraParam::ExtraParam(JsonView jsonValue)
-  : ExtraParam()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExtraParam& ExtraParam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ExtraParamNameMapper::GetExtraParamNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

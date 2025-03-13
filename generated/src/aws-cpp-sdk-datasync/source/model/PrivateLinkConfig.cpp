@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-PrivateLinkConfig::PrivateLinkConfig() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_privateLinkEndpointHasBeenSet(false),
-    m_subnetArnsHasBeenSet(false),
-    m_securityGroupArnsHasBeenSet(false)
-{
-}
-
 PrivateLinkConfig::PrivateLinkConfig(JsonView jsonValue)
-  : PrivateLinkConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PrivateLinkConfig& PrivateLinkConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateLinkEndpoint"))
   {
     m_privateLinkEndpoint = jsonValue.GetString("PrivateLinkEndpoint");
-
     m_privateLinkEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetArns"))
   {
     Aws::Utils::Array<JsonView> subnetArnsJsonList = jsonValue.GetArray("SubnetArns");
@@ -57,7 +44,6 @@ PrivateLinkConfig& PrivateLinkConfig::operator =(JsonView jsonValue)
     }
     m_subnetArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupArns"))
   {
     Aws::Utils::Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
@@ -67,7 +53,6 @@ PrivateLinkConfig& PrivateLinkConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class OptimizePromptRequest : public BedrockAgentRuntimeRequest
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OptimizePromptRequest();
+    AWS_BEDROCKAGENTRUNTIME_API OptimizePromptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -60,12 +60,12 @@ namespace Model
     /**
      * <p>Contains the prompt to optimize.</p>
      */
-    inline const InputPrompt& GetInput() const{ return m_input; }
+    inline const InputPrompt& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const InputPrompt& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(InputPrompt&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline OptimizePromptRequest& WithInput(const InputPrompt& value) { SetInput(value); return *this;}
-    inline OptimizePromptRequest& WithInput(InputPrompt&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = InputPrompt>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = InputPrompt>
+    OptimizePromptRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +73,12 @@ namespace Model
      * <p>The unique identifier of the model that you want to optimize the prompt
      * for.</p>
      */
-    inline const Aws::String& GetTargetModelId() const{ return m_targetModelId; }
+    inline const Aws::String& GetTargetModelId() const { return m_targetModelId; }
     inline bool TargetModelIdHasBeenSet() const { return m_targetModelIdHasBeenSet; }
-    inline void SetTargetModelId(const Aws::String& value) { m_targetModelIdHasBeenSet = true; m_targetModelId = value; }
-    inline void SetTargetModelId(Aws::String&& value) { m_targetModelIdHasBeenSet = true; m_targetModelId = std::move(value); }
-    inline void SetTargetModelId(const char* value) { m_targetModelIdHasBeenSet = true; m_targetModelId.assign(value); }
-    inline OptimizePromptRequest& WithTargetModelId(const Aws::String& value) { SetTargetModelId(value); return *this;}
-    inline OptimizePromptRequest& WithTargetModelId(Aws::String&& value) { SetTargetModelId(std::move(value)); return *this;}
-    inline OptimizePromptRequest& WithTargetModelId(const char* value) { SetTargetModelId(value); return *this;}
+    template<typename TargetModelIdT = Aws::String>
+    void SetTargetModelId(TargetModelIdT&& value) { m_targetModelIdHasBeenSet = true; m_targetModelId = std::forward<TargetModelIdT>(value); }
+    template<typename TargetModelIdT = Aws::String>
+    OptimizePromptRequest& WithTargetModelId(TargetModelIdT&& value) { SetTargetModelId(std::forward<TargetModelIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -90,7 +88,7 @@ namespace Model
     Aws::String m_targetModelId;
     bool m_targetModelIdHasBeenSet = false;
     OptimizePromptHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

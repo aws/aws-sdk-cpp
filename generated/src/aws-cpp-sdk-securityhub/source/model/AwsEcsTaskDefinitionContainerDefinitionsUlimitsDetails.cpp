@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails() : 
-    m_hardLimit(0),
-    m_hardLimitHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_softLimit(0),
-    m_softLimitHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails::AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& AwsEcsTaskDefinitionCont
   if(jsonValue.ValueExists("HardLimit"))
   {
     m_hardLimit = jsonValue.GetInteger("HardLimit");
-
     m_hardLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SoftLimit"))
   {
     m_softLimit = jsonValue.GetInteger("SoftLimit");
-
     m_softLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

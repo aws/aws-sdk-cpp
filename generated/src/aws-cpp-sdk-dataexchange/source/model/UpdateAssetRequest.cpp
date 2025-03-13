@@ -12,14 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAssetRequest::UpdateAssetRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAssetRequest::SerializePayload() const
 {
   JsonValue payload;

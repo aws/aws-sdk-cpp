@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetSAMLProviderRequest::GetSAMLProviderRequest() : 
-    m_sAMLProviderArnHasBeenSet(false)
-{
-}
-
 Aws::String GetSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

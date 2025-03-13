@@ -33,7 +33,7 @@ namespace Model
   class JobWorkerExecutorConfiguration
   {
   public:
-    AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration();
+    AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration() = default;
     AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p>The accounts in which the job worker is configured and might poll for jobs as
      * part of the action execution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPollingAccounts() const{ return m_pollingAccounts; }
+    inline const Aws::Vector<Aws::String>& GetPollingAccounts() const { return m_pollingAccounts; }
     inline bool PollingAccountsHasBeenSet() const { return m_pollingAccountsHasBeenSet; }
-    inline void SetPollingAccounts(const Aws::Vector<Aws::String>& value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts = value; }
-    inline void SetPollingAccounts(Aws::Vector<Aws::String>&& value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts = std::move(value); }
-    inline JobWorkerExecutorConfiguration& WithPollingAccounts(const Aws::Vector<Aws::String>& value) { SetPollingAccounts(value); return *this;}
-    inline JobWorkerExecutorConfiguration& WithPollingAccounts(Aws::Vector<Aws::String>&& value) { SetPollingAccounts(std::move(value)); return *this;}
-    inline JobWorkerExecutorConfiguration& AddPollingAccounts(const Aws::String& value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts.push_back(value); return *this; }
-    inline JobWorkerExecutorConfiguration& AddPollingAccounts(Aws::String&& value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts.push_back(std::move(value)); return *this; }
-    inline JobWorkerExecutorConfiguration& AddPollingAccounts(const char* value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts.push_back(value); return *this; }
+    template<typename PollingAccountsT = Aws::Vector<Aws::String>>
+    void SetPollingAccounts(PollingAccountsT&& value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts = std::forward<PollingAccountsT>(value); }
+    template<typename PollingAccountsT = Aws::Vector<Aws::String>>
+    JobWorkerExecutorConfiguration& WithPollingAccounts(PollingAccountsT&& value) { SetPollingAccounts(std::forward<PollingAccountsT>(value)); return *this;}
+    template<typename PollingAccountsT = Aws::String>
+    JobWorkerExecutorConfiguration& AddPollingAccounts(PollingAccountsT&& value) { m_pollingAccountsHasBeenSet = true; m_pollingAccounts.emplace_back(std::forward<PollingAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>The service Principals in which the job worker is configured and might poll
      * for jobs as part of the action execution.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPollingServicePrincipals() const{ return m_pollingServicePrincipals; }
+    inline const Aws::Vector<Aws::String>& GetPollingServicePrincipals() const { return m_pollingServicePrincipals; }
     inline bool PollingServicePrincipalsHasBeenSet() const { return m_pollingServicePrincipalsHasBeenSet; }
-    inline void SetPollingServicePrincipals(const Aws::Vector<Aws::String>& value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals = value; }
-    inline void SetPollingServicePrincipals(Aws::Vector<Aws::String>&& value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals = std::move(value); }
-    inline JobWorkerExecutorConfiguration& WithPollingServicePrincipals(const Aws::Vector<Aws::String>& value) { SetPollingServicePrincipals(value); return *this;}
-    inline JobWorkerExecutorConfiguration& WithPollingServicePrincipals(Aws::Vector<Aws::String>&& value) { SetPollingServicePrincipals(std::move(value)); return *this;}
-    inline JobWorkerExecutorConfiguration& AddPollingServicePrincipals(const Aws::String& value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals.push_back(value); return *this; }
-    inline JobWorkerExecutorConfiguration& AddPollingServicePrincipals(Aws::String&& value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals.push_back(std::move(value)); return *this; }
-    inline JobWorkerExecutorConfiguration& AddPollingServicePrincipals(const char* value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals.push_back(value); return *this; }
+    template<typename PollingServicePrincipalsT = Aws::Vector<Aws::String>>
+    void SetPollingServicePrincipals(PollingServicePrincipalsT&& value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals = std::forward<PollingServicePrincipalsT>(value); }
+    template<typename PollingServicePrincipalsT = Aws::Vector<Aws::String>>
+    JobWorkerExecutorConfiguration& WithPollingServicePrincipals(PollingServicePrincipalsT&& value) { SetPollingServicePrincipals(std::forward<PollingServicePrincipalsT>(value)); return *this;}
+    template<typename PollingServicePrincipalsT = Aws::String>
+    JobWorkerExecutorConfiguration& AddPollingServicePrincipals(PollingServicePrincipalsT&& value) { m_pollingServicePrincipalsHasBeenSet = true; m_pollingServicePrincipals.emplace_back(std::forward<PollingServicePrincipalsT>(value)); return *this; }
     ///@}
   private:
 

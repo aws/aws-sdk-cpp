@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AlarmStateInformation::AlarmStateInformation() : 
-    m_nameHasBeenSet(false),
-    m_state(ExternalAlarmState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AlarmStateInformation::AlarmStateInformation(JsonView jsonValue)
-  : AlarmStateInformation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AlarmStateInformation& AlarmStateInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ExternalAlarmStateMapper::GetExternalAlarmStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

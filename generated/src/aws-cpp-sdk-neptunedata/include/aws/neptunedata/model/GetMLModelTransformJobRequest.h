@@ -25,7 +25,7 @@ namespace Model
   class GetMLModelTransformJobRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API GetMLModelTransformJobRequest();
+    AWS_NEPTUNEDATA_API GetMLModelTransformJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the model-transform job to be reetrieved.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetMLModelTransformJobRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetMLModelTransformJobRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetMLModelTransformJobRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetMLModelTransformJobRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * S3 resources. This must be listed in your DB cluster parameter group or an error
      * will occur.</p>
      */
-    inline const Aws::String& GetNeptuneIamRoleArn() const{ return m_neptuneIamRoleArn; }
+    inline const Aws::String& GetNeptuneIamRoleArn() const { return m_neptuneIamRoleArn; }
     inline bool NeptuneIamRoleArnHasBeenSet() const { return m_neptuneIamRoleArnHasBeenSet; }
-    inline void SetNeptuneIamRoleArn(const Aws::String& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = value; }
-    inline void SetNeptuneIamRoleArn(Aws::String&& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = std::move(value); }
-    inline void SetNeptuneIamRoleArn(const char* value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn.assign(value); }
-    inline GetMLModelTransformJobRequest& WithNeptuneIamRoleArn(const Aws::String& value) { SetNeptuneIamRoleArn(value); return *this;}
-    inline GetMLModelTransformJobRequest& WithNeptuneIamRoleArn(Aws::String&& value) { SetNeptuneIamRoleArn(std::move(value)); return *this;}
-    inline GetMLModelTransformJobRequest& WithNeptuneIamRoleArn(const char* value) { SetNeptuneIamRoleArn(value); return *this;}
+    template<typename NeptuneIamRoleArnT = Aws::String>
+    void SetNeptuneIamRoleArn(NeptuneIamRoleArnT&& value) { m_neptuneIamRoleArnHasBeenSet = true; m_neptuneIamRoleArn = std::forward<NeptuneIamRoleArnT>(value); }
+    template<typename NeptuneIamRoleArnT = Aws::String>
+    GetMLModelTransformJobRequest& WithNeptuneIamRoleArn(NeptuneIamRoleArnT&& value) { SetNeptuneIamRoleArn(std::forward<NeptuneIamRoleArnT>(value)); return *this;}
     ///@}
   private:
 

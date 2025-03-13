@@ -28,7 +28,7 @@ namespace Model
   class DeleteEntityResult
   {
   public:
-    AWS_IOTTWINMAKER_API DeleteEntityResult();
+    AWS_IOTTWINMAKER_API DeleteEntityResult() = default;
     AWS_IOTTWINMAKER_API DeleteEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API DeleteEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The current state of the deleted entity.</p>
      */
-    inline const State& GetState() const{ return m_state; }
-    inline void SetState(const State& value) { m_state = value; }
-    inline void SetState(State&& value) { m_state = std::move(value); }
-    inline DeleteEntityResult& WithState(const State& value) { SetState(value); return *this;}
-    inline DeleteEntityResult& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline State GetState() const { return m_state; }
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DeleteEntityResult& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteEntityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteEntityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteEntityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteEntityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    State m_state;
+    State m_state{State::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDirectoryConfigsRequest::DescribeDirectoryConfigsRequest() : 
-    m_directoryNamesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDirectoryConfigsRequest::SerializePayload() const
 {
   JsonValue payload;

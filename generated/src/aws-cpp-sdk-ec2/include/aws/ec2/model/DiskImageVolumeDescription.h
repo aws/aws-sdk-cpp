@@ -31,7 +31,7 @@ namespace Model
   class DiskImageVolumeDescription
   {
   public:
-    AWS_EC2_API DiskImageVolumeDescription();
+    AWS_EC2_API DiskImageVolumeDescription() = default;
     AWS_EC2_API DiskImageVolumeDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DiskImageVolumeDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The volume identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DiskImageVolumeDescription& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DiskImageVolumeDescription& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DiskImageVolumeDescription& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DiskImageVolumeDescription& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline DiskImageVolumeDescription& WithSize(long long value) { SetSize(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

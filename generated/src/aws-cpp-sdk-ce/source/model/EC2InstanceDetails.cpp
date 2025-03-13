@@ -18,22 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-EC2InstanceDetails::EC2InstanceDetails() : 
-    m_familyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_tenancyHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
-{
-}
-
 EC2InstanceDetails::EC2InstanceDetails(JsonView jsonValue)
-  : EC2InstanceDetails()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ EC2InstanceDetails& EC2InstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tenancy"))
   {
     m_tenancy = jsonValue.GetString("Tenancy");
-
     m_tenancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentGeneration"))
   {
     m_currentGeneration = jsonValue.GetBool("CurrentGeneration");
-
     m_currentGenerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeFlexEligible"))
   {
     m_sizeFlexEligible = jsonValue.GetBool("SizeFlexEligible");
-
     m_sizeFlexEligibleHasBeenSet = true;
   }
-
   return *this;
 }
 

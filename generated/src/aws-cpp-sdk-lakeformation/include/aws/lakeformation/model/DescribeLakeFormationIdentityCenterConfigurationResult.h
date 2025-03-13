@@ -30,7 +30,7 @@ namespace Model
   class DescribeLakeFormationIdentityCenterConfigurationResult
   {
   public:
-    AWS_LAKEFORMATION_API DescribeLakeFormationIdentityCenterConfigurationResult();
+    AWS_LAKEFORMATION_API DescribeLakeFormationIdentityCenterConfigurationResult() = default;
     AWS_LAKEFORMATION_API DescribeLakeFormationIdentityCenterConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API DescribeLakeFormationIdentityCenterConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,26 +42,22 @@ namespace Model
      * table definitions, and other control information to manage your Lake Formation
      * environment.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogId.assign(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the connection.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArn.assign(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,24 +65,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lake Formation application integrated
      * with IAM Identity Center.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates if external filtering is enabled.</p>
      */
-    inline const ExternalFilteringConfiguration& GetExternalFiltering() const{ return m_externalFiltering; }
-    inline void SetExternalFiltering(const ExternalFilteringConfiguration& value) { m_externalFiltering = value; }
-    inline void SetExternalFiltering(ExternalFilteringConfiguration&& value) { m_externalFiltering = std::move(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithExternalFiltering(const ExternalFilteringConfiguration& value) { SetExternalFiltering(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithExternalFiltering(ExternalFilteringConfiguration&& value) { SetExternalFiltering(std::move(value)); return *this;}
+    inline const ExternalFilteringConfiguration& GetExternalFiltering() const { return m_externalFiltering; }
+    template<typename ExternalFilteringT = ExternalFilteringConfiguration>
+    void SetExternalFiltering(ExternalFilteringT&& value) { m_externalFilteringHasBeenSet = true; m_externalFiltering = std::forward<ExternalFilteringT>(value); }
+    template<typename ExternalFilteringT = ExternalFilteringConfiguration>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithExternalFiltering(ExternalFilteringT&& value) { SetExternalFiltering(std::forward<ExternalFilteringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,53 +93,56 @@ namespace Model
      * <code>ShareRecipients</code> value is null or the list is empty, no resource
      * share is created.</p>
      */
-    inline const Aws::Vector<DataLakePrincipal>& GetShareRecipients() const{ return m_shareRecipients; }
-    inline void SetShareRecipients(const Aws::Vector<DataLakePrincipal>& value) { m_shareRecipients = value; }
-    inline void SetShareRecipients(Aws::Vector<DataLakePrincipal>&& value) { m_shareRecipients = std::move(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithShareRecipients(const Aws::Vector<DataLakePrincipal>& value) { SetShareRecipients(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithShareRecipients(Aws::Vector<DataLakePrincipal>&& value) { SetShareRecipients(std::move(value)); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& AddShareRecipients(const DataLakePrincipal& value) { m_shareRecipients.push_back(value); return *this; }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& AddShareRecipients(DataLakePrincipal&& value) { m_shareRecipients.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataLakePrincipal>& GetShareRecipients() const { return m_shareRecipients; }
+    template<typename ShareRecipientsT = Aws::Vector<DataLakePrincipal>>
+    void SetShareRecipients(ShareRecipientsT&& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients = std::forward<ShareRecipientsT>(value); }
+    template<typename ShareRecipientsT = Aws::Vector<DataLakePrincipal>>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithShareRecipients(ShareRecipientsT&& value) { SetShareRecipients(std::forward<ShareRecipientsT>(value)); return *this;}
+    template<typename ShareRecipientsT = DataLakePrincipal>
+    DescribeLakeFormationIdentityCenterConfigurationResult& AddShareRecipients(ShareRecipientsT&& value) { m_shareRecipientsHasBeenSet = true; m_shareRecipients.emplace_back(std::forward<ShareRecipientsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the RAM share.</p>
      */
-    inline const Aws::String& GetResourceShare() const{ return m_resourceShare; }
-    inline void SetResourceShare(const Aws::String& value) { m_resourceShare = value; }
-    inline void SetResourceShare(Aws::String&& value) { m_resourceShare = std::move(value); }
-    inline void SetResourceShare(const char* value) { m_resourceShare.assign(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithResourceShare(const Aws::String& value) { SetResourceShare(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithResourceShare(Aws::String&& value) { SetResourceShare(std::move(value)); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithResourceShare(const char* value) { SetResourceShare(value); return *this;}
+    inline const Aws::String& GetResourceShare() const { return m_resourceShare; }
+    template<typename ResourceShareT = Aws::String>
+    void SetResourceShare(ResourceShareT&& value) { m_resourceShareHasBeenSet = true; m_resourceShare = std::forward<ResourceShareT>(value); }
+    template<typename ResourceShareT = Aws::String>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithResourceShare(ResourceShareT&& value) { SetResourceShare(std::forward<ResourceShareT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLakeFormationIdentityCenterConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLakeFormationIdentityCenterConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalogId;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet = false;
 
     Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet = false;
 
     ExternalFilteringConfiguration m_externalFiltering;
+    bool m_externalFilteringHasBeenSet = false;
 
     Aws::Vector<DataLakePrincipal> m_shareRecipients;
+    bool m_shareRecipientsHasBeenSet = false;
 
     Aws::String m_resourceShare;
+    bool m_resourceShareHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

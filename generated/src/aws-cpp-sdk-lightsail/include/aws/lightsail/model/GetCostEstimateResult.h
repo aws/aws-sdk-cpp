@@ -29,7 +29,7 @@ namespace Model
   class GetCostEstimateResult
   {
   public:
-    AWS_LIGHTSAIL_API GetCostEstimateResult();
+    AWS_LIGHTSAIL_API GetCostEstimateResult() = default;
     AWS_LIGHTSAIL_API GetCostEstimateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetCostEstimateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Returns the estimate's forecasted cost or usage.</p>
      */
-    inline const Aws::Vector<ResourceBudgetEstimate>& GetResourcesBudgetEstimate() const{ return m_resourcesBudgetEstimate; }
-    inline void SetResourcesBudgetEstimate(const Aws::Vector<ResourceBudgetEstimate>& value) { m_resourcesBudgetEstimate = value; }
-    inline void SetResourcesBudgetEstimate(Aws::Vector<ResourceBudgetEstimate>&& value) { m_resourcesBudgetEstimate = std::move(value); }
-    inline GetCostEstimateResult& WithResourcesBudgetEstimate(const Aws::Vector<ResourceBudgetEstimate>& value) { SetResourcesBudgetEstimate(value); return *this;}
-    inline GetCostEstimateResult& WithResourcesBudgetEstimate(Aws::Vector<ResourceBudgetEstimate>&& value) { SetResourcesBudgetEstimate(std::move(value)); return *this;}
-    inline GetCostEstimateResult& AddResourcesBudgetEstimate(const ResourceBudgetEstimate& value) { m_resourcesBudgetEstimate.push_back(value); return *this; }
-    inline GetCostEstimateResult& AddResourcesBudgetEstimate(ResourceBudgetEstimate&& value) { m_resourcesBudgetEstimate.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceBudgetEstimate>& GetResourcesBudgetEstimate() const { return m_resourcesBudgetEstimate; }
+    template<typename ResourcesBudgetEstimateT = Aws::Vector<ResourceBudgetEstimate>>
+    void SetResourcesBudgetEstimate(ResourcesBudgetEstimateT&& value) { m_resourcesBudgetEstimateHasBeenSet = true; m_resourcesBudgetEstimate = std::forward<ResourcesBudgetEstimateT>(value); }
+    template<typename ResourcesBudgetEstimateT = Aws::Vector<ResourceBudgetEstimate>>
+    GetCostEstimateResult& WithResourcesBudgetEstimate(ResourcesBudgetEstimateT&& value) { SetResourcesBudgetEstimate(std::forward<ResourcesBudgetEstimateT>(value)); return *this;}
+    template<typename ResourcesBudgetEstimateT = ResourceBudgetEstimate>
+    GetCostEstimateResult& AddResourcesBudgetEstimate(ResourcesBudgetEstimateT&& value) { m_resourcesBudgetEstimateHasBeenSet = true; m_resourcesBudgetEstimate.emplace_back(std::forward<ResourcesBudgetEstimateT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCostEstimateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCostEstimateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCostEstimateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCostEstimateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceBudgetEstimate> m_resourcesBudgetEstimate;
+    bool m_resourcesBudgetEstimateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMonitorsRequest::ListMonitorsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_monitorStatus(MonitorStatus::NOT_SET),
-    m_monitorStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListMonitorsRequest::SerializePayload() const
 {
   return {};

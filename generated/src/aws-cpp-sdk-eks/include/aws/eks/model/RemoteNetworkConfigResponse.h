@@ -35,7 +35,7 @@ namespace Model
   class RemoteNetworkConfigResponse
   {
   public:
-    AWS_EKS_API RemoteNetworkConfigResponse();
+    AWS_EKS_API RemoteNetworkConfigResponse() = default;
     AWS_EKS_API RemoteNetworkConfigResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API RemoteNetworkConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>The list of network CIDRs that can contain hybrid nodes.</p>
      */
-    inline const Aws::Vector<RemoteNodeNetwork>& GetRemoteNodeNetworks() const{ return m_remoteNodeNetworks; }
+    inline const Aws::Vector<RemoteNodeNetwork>& GetRemoteNodeNetworks() const { return m_remoteNodeNetworks; }
     inline bool RemoteNodeNetworksHasBeenSet() const { return m_remoteNodeNetworksHasBeenSet; }
-    inline void SetRemoteNodeNetworks(const Aws::Vector<RemoteNodeNetwork>& value) { m_remoteNodeNetworksHasBeenSet = true; m_remoteNodeNetworks = value; }
-    inline void SetRemoteNodeNetworks(Aws::Vector<RemoteNodeNetwork>&& value) { m_remoteNodeNetworksHasBeenSet = true; m_remoteNodeNetworks = std::move(value); }
-    inline RemoteNetworkConfigResponse& WithRemoteNodeNetworks(const Aws::Vector<RemoteNodeNetwork>& value) { SetRemoteNodeNetworks(value); return *this;}
-    inline RemoteNetworkConfigResponse& WithRemoteNodeNetworks(Aws::Vector<RemoteNodeNetwork>&& value) { SetRemoteNodeNetworks(std::move(value)); return *this;}
-    inline RemoteNetworkConfigResponse& AddRemoteNodeNetworks(const RemoteNodeNetwork& value) { m_remoteNodeNetworksHasBeenSet = true; m_remoteNodeNetworks.push_back(value); return *this; }
-    inline RemoteNetworkConfigResponse& AddRemoteNodeNetworks(RemoteNodeNetwork&& value) { m_remoteNodeNetworksHasBeenSet = true; m_remoteNodeNetworks.push_back(std::move(value)); return *this; }
+    template<typename RemoteNodeNetworksT = Aws::Vector<RemoteNodeNetwork>>
+    void SetRemoteNodeNetworks(RemoteNodeNetworksT&& value) { m_remoteNodeNetworksHasBeenSet = true; m_remoteNodeNetworks = std::forward<RemoteNodeNetworksT>(value); }
+    template<typename RemoteNodeNetworksT = Aws::Vector<RemoteNodeNetwork>>
+    RemoteNetworkConfigResponse& WithRemoteNodeNetworks(RemoteNodeNetworksT&& value) { SetRemoteNodeNetworks(std::forward<RemoteNodeNetworksT>(value)); return *this;}
+    template<typename RemoteNodeNetworksT = RemoteNodeNetwork>
+    RemoteNetworkConfigResponse& AddRemoteNodeNetworks(RemoteNodeNetworksT&& value) { m_remoteNodeNetworksHasBeenSet = true; m_remoteNodeNetworks.emplace_back(std::forward<RemoteNodeNetworksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>The list of network CIDRs that can contain pods that run Kubernetes webhooks
      * on hybrid nodes.</p>
      */
-    inline const Aws::Vector<RemotePodNetwork>& GetRemotePodNetworks() const{ return m_remotePodNetworks; }
+    inline const Aws::Vector<RemotePodNetwork>& GetRemotePodNetworks() const { return m_remotePodNetworks; }
     inline bool RemotePodNetworksHasBeenSet() const { return m_remotePodNetworksHasBeenSet; }
-    inline void SetRemotePodNetworks(const Aws::Vector<RemotePodNetwork>& value) { m_remotePodNetworksHasBeenSet = true; m_remotePodNetworks = value; }
-    inline void SetRemotePodNetworks(Aws::Vector<RemotePodNetwork>&& value) { m_remotePodNetworksHasBeenSet = true; m_remotePodNetworks = std::move(value); }
-    inline RemoteNetworkConfigResponse& WithRemotePodNetworks(const Aws::Vector<RemotePodNetwork>& value) { SetRemotePodNetworks(value); return *this;}
-    inline RemoteNetworkConfigResponse& WithRemotePodNetworks(Aws::Vector<RemotePodNetwork>&& value) { SetRemotePodNetworks(std::move(value)); return *this;}
-    inline RemoteNetworkConfigResponse& AddRemotePodNetworks(const RemotePodNetwork& value) { m_remotePodNetworksHasBeenSet = true; m_remotePodNetworks.push_back(value); return *this; }
-    inline RemoteNetworkConfigResponse& AddRemotePodNetworks(RemotePodNetwork&& value) { m_remotePodNetworksHasBeenSet = true; m_remotePodNetworks.push_back(std::move(value)); return *this; }
+    template<typename RemotePodNetworksT = Aws::Vector<RemotePodNetwork>>
+    void SetRemotePodNetworks(RemotePodNetworksT&& value) { m_remotePodNetworksHasBeenSet = true; m_remotePodNetworks = std::forward<RemotePodNetworksT>(value); }
+    template<typename RemotePodNetworksT = Aws::Vector<RemotePodNetwork>>
+    RemoteNetworkConfigResponse& WithRemotePodNetworks(RemotePodNetworksT&& value) { SetRemotePodNetworks(std::forward<RemotePodNetworksT>(value)); return *this;}
+    template<typename RemotePodNetworksT = RemotePodNetwork>
+    RemoteNetworkConfigResponse& AddRemotePodNetworks(RemotePodNetworksT&& value) { m_remotePodNetworksHasBeenSet = true; m_remotePodNetworks.emplace_back(std::forward<RemotePodNetworksT>(value)); return *this; }
     ///@}
   private:
 

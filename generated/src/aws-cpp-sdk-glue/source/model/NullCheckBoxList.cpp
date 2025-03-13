@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-NullCheckBoxList::NullCheckBoxList() : 
-    m_isEmpty(false),
-    m_isEmptyHasBeenSet(false),
-    m_isNullString(false),
-    m_isNullStringHasBeenSet(false),
-    m_isNegOne(false),
-    m_isNegOneHasBeenSet(false)
-{
-}
-
 NullCheckBoxList::NullCheckBoxList(JsonView jsonValue)
-  : NullCheckBoxList()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ NullCheckBoxList& NullCheckBoxList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsEmpty"))
   {
     m_isEmpty = jsonValue.GetBool("IsEmpty");
-
     m_isEmptyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNullString"))
   {
     m_isNullString = jsonValue.GetBool("IsNullString");
-
     m_isNullStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNegOne"))
   {
     m_isNegOne = jsonValue.GetBool("IsNegOne");
-
     m_isNegOneHasBeenSet = true;
   }
-
   return *this;
 }
 

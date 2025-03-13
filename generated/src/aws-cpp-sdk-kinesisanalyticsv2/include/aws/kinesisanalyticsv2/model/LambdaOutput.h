@@ -34,7 +34,7 @@ namespace Model
   class LambdaOutput
   {
   public:
-    AWS_KINESISANALYTICSV2_API LambdaOutput();
+    AWS_KINESISANALYTICSV2_API LambdaOutput() = default;
     AWS_KINESISANALYTICSV2_API LambdaOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API LambdaOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: Amazon Lambda</a> </p> 
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline LambdaOutput& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline LambdaOutput& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline LambdaOutput& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    LambdaOutput& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class FlinkApplicationConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration();
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration() = default;
     AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * href="https://nightlies.apache.org/flink/flink-docs-release-1.19/">Apache Flink
      * Documentation</a>. </p>
      */
-    inline const CheckpointConfiguration& GetCheckpointConfiguration() const{ return m_checkpointConfiguration; }
+    inline const CheckpointConfiguration& GetCheckpointConfiguration() const { return m_checkpointConfiguration; }
     inline bool CheckpointConfigurationHasBeenSet() const { return m_checkpointConfigurationHasBeenSet; }
-    inline void SetCheckpointConfiguration(const CheckpointConfiguration& value) { m_checkpointConfigurationHasBeenSet = true; m_checkpointConfiguration = value; }
-    inline void SetCheckpointConfiguration(CheckpointConfiguration&& value) { m_checkpointConfigurationHasBeenSet = true; m_checkpointConfiguration = std::move(value); }
-    inline FlinkApplicationConfiguration& WithCheckpointConfiguration(const CheckpointConfiguration& value) { SetCheckpointConfiguration(value); return *this;}
-    inline FlinkApplicationConfiguration& WithCheckpointConfiguration(CheckpointConfiguration&& value) { SetCheckpointConfiguration(std::move(value)); return *this;}
+    template<typename CheckpointConfigurationT = CheckpointConfiguration>
+    void SetCheckpointConfiguration(CheckpointConfigurationT&& value) { m_checkpointConfigurationHasBeenSet = true; m_checkpointConfiguration = std::forward<CheckpointConfigurationT>(value); }
+    template<typename CheckpointConfigurationT = CheckpointConfiguration>
+    FlinkApplicationConfiguration& WithCheckpointConfiguration(CheckpointConfigurationT&& value) { SetCheckpointConfiguration(std::forward<CheckpointConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>Describes configuration parameters for Amazon CloudWatch logging for an
      * application.</p>
      */
-    inline const MonitoringConfiguration& GetMonitoringConfiguration() const{ return m_monitoringConfiguration; }
+    inline const MonitoringConfiguration& GetMonitoringConfiguration() const { return m_monitoringConfiguration; }
     inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
-    inline void SetMonitoringConfiguration(const MonitoringConfiguration& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = value; }
-    inline void SetMonitoringConfiguration(MonitoringConfiguration&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::move(value); }
-    inline FlinkApplicationConfiguration& WithMonitoringConfiguration(const MonitoringConfiguration& value) { SetMonitoringConfiguration(value); return *this;}
-    inline FlinkApplicationConfiguration& WithMonitoringConfiguration(MonitoringConfiguration&& value) { SetMonitoringConfiguration(std::move(value)); return *this;}
+    template<typename MonitoringConfigurationT = MonitoringConfiguration>
+    void SetMonitoringConfiguration(MonitoringConfigurationT&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::forward<MonitoringConfigurationT>(value); }
+    template<typename MonitoringConfigurationT = MonitoringConfiguration>
+    FlinkApplicationConfiguration& WithMonitoringConfiguration(MonitoringConfigurationT&& value) { SetMonitoringConfiguration(std::forward<MonitoringConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>Describes parameters for how an application executes multiple tasks
      * simultaneously.</p>
      */
-    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const { return m_parallelismConfiguration; }
     inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
-    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
-    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
-    inline FlinkApplicationConfiguration& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
-    inline FlinkApplicationConfiguration& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+    template<typename ParallelismConfigurationT = ParallelismConfiguration>
+    void SetParallelismConfiguration(ParallelismConfigurationT&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::forward<ParallelismConfigurationT>(value); }
+    template<typename ParallelismConfigurationT = ParallelismConfiguration>
+    FlinkApplicationConfiguration& WithParallelismConfiguration(ParallelismConfigurationT&& value) { SetParallelismConfiguration(std::forward<ParallelismConfigurationT>(value)); return *this;}
     ///@}
   private:
 

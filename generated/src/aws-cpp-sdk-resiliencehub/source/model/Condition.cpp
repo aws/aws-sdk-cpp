@@ -18,16 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-Condition::Condition() : 
-    m_fieldHasBeenSet(false),
-    m_operator(ConditionOperatorType::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("field"))
   {
     m_field = jsonValue.GetString("field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = ConditionOperatorTypeMapper::GetConditionOperatorTypeForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

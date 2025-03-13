@@ -18,21 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataLakeAccessPropertiesOutput::DataLakeAccessPropertiesOutput() : 
-    m_dataLakeAccess(false),
-    m_dataLakeAccessHasBeenSet(false),
-    m_dataTransferRoleHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false),
-    m_managedWorkgroupNameHasBeenSet(false),
-    m_managedWorkgroupStatusHasBeenSet(false),
-    m_redshiftDatabaseNameHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_catalogTypeHasBeenSet(false)
-{
-}
-
 DataLakeAccessPropertiesOutput::DataLakeAccessPropertiesOutput(JsonView jsonValue)
-  : DataLakeAccessPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ DataLakeAccessPropertiesOutput& DataLakeAccessPropertiesOutput::operator =(JsonV
   if(jsonValue.ValueExists("DataLakeAccess"))
   {
     m_dataLakeAccess = jsonValue.GetBool("DataLakeAccess");
-
     m_dataLakeAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTransferRole"))
   {
     m_dataTransferRole = jsonValue.GetString("DataTransferRole");
-
     m_dataTransferRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKey"))
   {
     m_kmsKey = jsonValue.GetString("KmsKey");
-
     m_kmsKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedWorkgroupName"))
   {
     m_managedWorkgroupName = jsonValue.GetString("ManagedWorkgroupName");
-
     m_managedWorkgroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedWorkgroupStatus"))
   {
     m_managedWorkgroupStatus = jsonValue.GetString("ManagedWorkgroupStatus");
-
     m_managedWorkgroupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDatabaseName"))
   {
     m_redshiftDatabaseName = jsonValue.GetString("RedshiftDatabaseName");
-
     m_redshiftDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogType"))
   {
     m_catalogType = jsonValue.GetString("CatalogType");
-
     m_catalogTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

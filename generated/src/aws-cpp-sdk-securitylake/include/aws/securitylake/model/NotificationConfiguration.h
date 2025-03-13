@@ -34,7 +34,7 @@ namespace Model
   class NotificationConfiguration
   {
   public:
-    AWS_SECURITYLAKE_API NotificationConfiguration();
+    AWS_SECURITYLAKE_API NotificationConfiguration() = default;
     AWS_SECURITYLAKE_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The configurations used for HTTPS subscriber notification.</p>
      */
-    inline const HttpsNotificationConfiguration& GetHttpsNotificationConfiguration() const{ return m_httpsNotificationConfiguration; }
+    inline const HttpsNotificationConfiguration& GetHttpsNotificationConfiguration() const { return m_httpsNotificationConfiguration; }
     inline bool HttpsNotificationConfigurationHasBeenSet() const { return m_httpsNotificationConfigurationHasBeenSet; }
-    inline void SetHttpsNotificationConfiguration(const HttpsNotificationConfiguration& value) { m_httpsNotificationConfigurationHasBeenSet = true; m_httpsNotificationConfiguration = value; }
-    inline void SetHttpsNotificationConfiguration(HttpsNotificationConfiguration&& value) { m_httpsNotificationConfigurationHasBeenSet = true; m_httpsNotificationConfiguration = std::move(value); }
-    inline NotificationConfiguration& WithHttpsNotificationConfiguration(const HttpsNotificationConfiguration& value) { SetHttpsNotificationConfiguration(value); return *this;}
-    inline NotificationConfiguration& WithHttpsNotificationConfiguration(HttpsNotificationConfiguration&& value) { SetHttpsNotificationConfiguration(std::move(value)); return *this;}
+    template<typename HttpsNotificationConfigurationT = HttpsNotificationConfiguration>
+    void SetHttpsNotificationConfiguration(HttpsNotificationConfigurationT&& value) { m_httpsNotificationConfigurationHasBeenSet = true; m_httpsNotificationConfiguration = std::forward<HttpsNotificationConfigurationT>(value); }
+    template<typename HttpsNotificationConfigurationT = HttpsNotificationConfiguration>
+    NotificationConfiguration& WithHttpsNotificationConfiguration(HttpsNotificationConfigurationT&& value) { SetHttpsNotificationConfiguration(std::forward<HttpsNotificationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configurations for SQS subscriber notification.</p>
      */
-    inline const SqsNotificationConfiguration& GetSqsNotificationConfiguration() const{ return m_sqsNotificationConfiguration; }
+    inline const SqsNotificationConfiguration& GetSqsNotificationConfiguration() const { return m_sqsNotificationConfiguration; }
     inline bool SqsNotificationConfigurationHasBeenSet() const { return m_sqsNotificationConfigurationHasBeenSet; }
-    inline void SetSqsNotificationConfiguration(const SqsNotificationConfiguration& value) { m_sqsNotificationConfigurationHasBeenSet = true; m_sqsNotificationConfiguration = value; }
-    inline void SetSqsNotificationConfiguration(SqsNotificationConfiguration&& value) { m_sqsNotificationConfigurationHasBeenSet = true; m_sqsNotificationConfiguration = std::move(value); }
-    inline NotificationConfiguration& WithSqsNotificationConfiguration(const SqsNotificationConfiguration& value) { SetSqsNotificationConfiguration(value); return *this;}
-    inline NotificationConfiguration& WithSqsNotificationConfiguration(SqsNotificationConfiguration&& value) { SetSqsNotificationConfiguration(std::move(value)); return *this;}
+    template<typename SqsNotificationConfigurationT = SqsNotificationConfiguration>
+    void SetSqsNotificationConfiguration(SqsNotificationConfigurationT&& value) { m_sqsNotificationConfigurationHasBeenSet = true; m_sqsNotificationConfiguration = std::forward<SqsNotificationConfigurationT>(value); }
+    template<typename SqsNotificationConfigurationT = SqsNotificationConfiguration>
+    NotificationConfiguration& WithSqsNotificationConfiguration(SqsNotificationConfigurationT&& value) { SetSqsNotificationConfiguration(std::forward<SqsNotificationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

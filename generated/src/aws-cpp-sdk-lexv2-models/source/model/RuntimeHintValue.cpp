@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-RuntimeHintValue::RuntimeHintValue() : 
-    m_phraseHasBeenSet(false)
-{
-}
-
 RuntimeHintValue::RuntimeHintValue(JsonView jsonValue)
-  : RuntimeHintValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuntimeHintValue& RuntimeHintValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("phrase"))
   {
     m_phrase = jsonValue.GetString("phrase");
-
     m_phraseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace EMR
 namespace Model
 {
 
-SessionMappingDetail::SessionMappingDetail() : 
-    m_studioIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false),
-    m_identityNameHasBeenSet(false),
-    m_identityType(IdentityType::NOT_SET),
-    m_identityTypeHasBeenSet(false),
-    m_sessionPolicyArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 SessionMappingDetail::SessionMappingDetail(JsonView jsonValue)
-  : SessionMappingDetail()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SessionMappingDetail& SessionMappingDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StudioId"))
   {
     m_studioId = jsonValue.GetString("StudioId");
-
     m_studioIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
     m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityName"))
   {
     m_identityName = jsonValue.GetString("IdentityName");
-
     m_identityNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityType"))
   {
     m_identityType = IdentityTypeMapper::GetIdentityTypeForName(jsonValue.GetString("IdentityType"));
-
     m_identityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionPolicyArn"))
   {
     m_sessionPolicyArn = jsonValue.GetString("SessionPolicyArn");
-
     m_sessionPolicyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

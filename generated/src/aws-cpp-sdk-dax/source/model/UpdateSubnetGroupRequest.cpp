@@ -12,13 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSubnetGroupRequest::UpdateSubnetGroupRequest() : 
-    m_subnetGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSubnetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisSecurityGroupRule::AnalysisSecurityGroupRule() : 
-    m_cidrHasBeenSet(false),
-    m_directionHasBeenSet(false),
-    m_securityGroupIdHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_protocolHasBeenSet(false)
-{
-}
-
 AnalysisSecurityGroupRule::AnalysisSecurityGroupRule(const XmlNode& xmlNode)
-  : AnalysisSecurityGroupRule()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ AnalysisSecurityGroupRule& AnalysisSecurityGroupRule::operator =(const XmlNode& 
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode directionNode = resultNode.FirstChild("direction");
     if(!directionNode.IsNull())
     {
       m_direction = Aws::Utils::Xml::DecodeEscapedXmlText(directionNode.GetText());
       m_directionHasBeenSet = true;
+       m_directionHasBeenSet = true;
     }
     XmlNode securityGroupIdNode = resultNode.FirstChild("securityGroupId");
     if(!securityGroupIdNode.IsNull())
     {
       m_securityGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupIdNode.GetText());
       m_securityGroupIdHasBeenSet = true;
+       m_securityGroupIdHasBeenSet = true;
     }
     XmlNode portRangeNode = resultNode.FirstChild("portRange");
     if(!portRangeNode.IsNull())
     {
       m_portRange = portRangeNode;
       m_portRangeHasBeenSet = true;
+       m_portRangeHasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
   }
 

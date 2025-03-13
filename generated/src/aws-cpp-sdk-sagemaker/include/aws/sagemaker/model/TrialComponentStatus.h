@@ -32,7 +32,7 @@ namespace Model
   class TrialComponentStatus
   {
   public:
-    AWS_SAGEMAKER_API TrialComponentStatus();
+    AWS_SAGEMAKER_API TrialComponentStatus() = default;
     AWS_SAGEMAKER_API TrialComponentStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrialComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The status of the trial component.</p>
      */
-    inline const TrialComponentPrimaryStatus& GetPrimaryStatus() const{ return m_primaryStatus; }
+    inline TrialComponentPrimaryStatus GetPrimaryStatus() const { return m_primaryStatus; }
     inline bool PrimaryStatusHasBeenSet() const { return m_primaryStatusHasBeenSet; }
-    inline void SetPrimaryStatus(const TrialComponentPrimaryStatus& value) { m_primaryStatusHasBeenSet = true; m_primaryStatus = value; }
-    inline void SetPrimaryStatus(TrialComponentPrimaryStatus&& value) { m_primaryStatusHasBeenSet = true; m_primaryStatus = std::move(value); }
-    inline TrialComponentStatus& WithPrimaryStatus(const TrialComponentPrimaryStatus& value) { SetPrimaryStatus(value); return *this;}
-    inline TrialComponentStatus& WithPrimaryStatus(TrialComponentPrimaryStatus&& value) { SetPrimaryStatus(std::move(value)); return *this;}
+    inline void SetPrimaryStatus(TrialComponentPrimaryStatus value) { m_primaryStatusHasBeenSet = true; m_primaryStatus = value; }
+    inline TrialComponentStatus& WithPrimaryStatus(TrialComponentPrimaryStatus value) { SetPrimaryStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the component failed, a message describing why.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline TrialComponentStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline TrialComponentStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline TrialComponentStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    TrialComponentStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    TrialComponentPrimaryStatus m_primaryStatus;
+    TrialComponentPrimaryStatus m_primaryStatus{TrialComponentPrimaryStatus::NOT_SET};
     bool m_primaryStatusHasBeenSet = false;
 
     Aws::String m_message;

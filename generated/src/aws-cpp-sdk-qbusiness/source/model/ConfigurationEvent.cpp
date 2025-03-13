@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ConfigurationEvent::ConfigurationEvent() : 
-    m_chatMode(ChatMode::NOT_SET),
-    m_chatModeHasBeenSet(false),
-    m_chatModeConfigurationHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false)
-{
-}
-
 ConfigurationEvent::ConfigurationEvent(JsonView jsonValue)
-  : ConfigurationEvent()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConfigurationEvent& ConfigurationEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("chatMode"))
   {
     m_chatMode = ChatModeMapper::GetChatModeForName(jsonValue.GetString("chatMode"));
-
     m_chatModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("chatModeConfiguration"))
   {
     m_chatModeConfiguration = jsonValue.GetObject("chatModeConfiguration");
-
     m_chatModeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeFilter"))
   {
     m_attributeFilter = jsonValue.GetObject("attributeFilter");
-
     m_attributeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

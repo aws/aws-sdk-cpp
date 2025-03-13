@@ -31,7 +31,7 @@ namespace Model
   class GetPropertyValueResult
   {
   public:
-    AWS_IOTTWINMAKER_API GetPropertyValueResult();
+    AWS_IOTTWINMAKER_API GetPropertyValueResult() = default;
     AWS_IOTTWINMAKER_API GetPropertyValueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API GetPropertyValueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,64 +41,62 @@ namespace Model
      * <p>An object that maps strings to the properties and latest property values in
      * the response. Each string in the mapping must be unique to this object.</p>
      */
-    inline const Aws::Map<Aws::String, PropertyLatestValue>& GetPropertyValues() const{ return m_propertyValues; }
-    inline void SetPropertyValues(const Aws::Map<Aws::String, PropertyLatestValue>& value) { m_propertyValues = value; }
-    inline void SetPropertyValues(Aws::Map<Aws::String, PropertyLatestValue>&& value) { m_propertyValues = std::move(value); }
-    inline GetPropertyValueResult& WithPropertyValues(const Aws::Map<Aws::String, PropertyLatestValue>& value) { SetPropertyValues(value); return *this;}
-    inline GetPropertyValueResult& WithPropertyValues(Aws::Map<Aws::String, PropertyLatestValue>&& value) { SetPropertyValues(std::move(value)); return *this;}
-    inline GetPropertyValueResult& AddPropertyValues(const Aws::String& key, const PropertyLatestValue& value) { m_propertyValues.emplace(key, value); return *this; }
-    inline GetPropertyValueResult& AddPropertyValues(Aws::String&& key, const PropertyLatestValue& value) { m_propertyValues.emplace(std::move(key), value); return *this; }
-    inline GetPropertyValueResult& AddPropertyValues(const Aws::String& key, PropertyLatestValue&& value) { m_propertyValues.emplace(key, std::move(value)); return *this; }
-    inline GetPropertyValueResult& AddPropertyValues(Aws::String&& key, PropertyLatestValue&& value) { m_propertyValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetPropertyValueResult& AddPropertyValues(const char* key, PropertyLatestValue&& value) { m_propertyValues.emplace(key, std::move(value)); return *this; }
-    inline GetPropertyValueResult& AddPropertyValues(const char* key, const PropertyLatestValue& value) { m_propertyValues.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, PropertyLatestValue>& GetPropertyValues() const { return m_propertyValues; }
+    template<typename PropertyValuesT = Aws::Map<Aws::String, PropertyLatestValue>>
+    void SetPropertyValues(PropertyValuesT&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues = std::forward<PropertyValuesT>(value); }
+    template<typename PropertyValuesT = Aws::Map<Aws::String, PropertyLatestValue>>
+    GetPropertyValueResult& WithPropertyValues(PropertyValuesT&& value) { SetPropertyValues(std::forward<PropertyValuesT>(value)); return *this;}
+    template<typename PropertyValuesKeyT = Aws::String, typename PropertyValuesValueT = PropertyLatestValue>
+    GetPropertyValueResult& AddPropertyValues(PropertyValuesKeyT&& key, PropertyValuesValueT&& value) {
+      m_propertyValuesHasBeenSet = true; m_propertyValues.emplace(std::forward<PropertyValuesKeyT>(key), std::forward<PropertyValuesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The string that specifies the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetPropertyValueResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetPropertyValueResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetPropertyValueResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetPropertyValueResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A table of property values.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& GetTabularPropertyValues() const{ return m_tabularPropertyValues; }
-    inline void SetTabularPropertyValues(const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& value) { m_tabularPropertyValues = value; }
-    inline void SetTabularPropertyValues(Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>&& value) { m_tabularPropertyValues = std::move(value); }
-    inline GetPropertyValueResult& WithTabularPropertyValues(const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& value) { SetTabularPropertyValues(value); return *this;}
-    inline GetPropertyValueResult& WithTabularPropertyValues(Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>&& value) { SetTabularPropertyValues(std::move(value)); return *this;}
-    inline GetPropertyValueResult& AddTabularPropertyValues(const Aws::Vector<Aws::Map<Aws::String, DataValue>>& value) { m_tabularPropertyValues.push_back(value); return *this; }
-    inline GetPropertyValueResult& AddTabularPropertyValues(Aws::Vector<Aws::Map<Aws::String, DataValue>>&& value) { m_tabularPropertyValues.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>& GetTabularPropertyValues() const { return m_tabularPropertyValues; }
+    template<typename TabularPropertyValuesT = Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>>
+    void SetTabularPropertyValues(TabularPropertyValuesT&& value) { m_tabularPropertyValuesHasBeenSet = true; m_tabularPropertyValues = std::forward<TabularPropertyValuesT>(value); }
+    template<typename TabularPropertyValuesT = Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>>>
+    GetPropertyValueResult& WithTabularPropertyValues(TabularPropertyValuesT&& value) { SetTabularPropertyValues(std::forward<TabularPropertyValuesT>(value)); return *this;}
+    template<typename TabularPropertyValuesT = Aws::Vector<Aws::Map<Aws::String, DataValue>>>
+    GetPropertyValueResult& AddTabularPropertyValues(TabularPropertyValuesT&& value) { m_tabularPropertyValuesHasBeenSet = true; m_tabularPropertyValues.emplace_back(std::forward<TabularPropertyValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPropertyValueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPropertyValueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPropertyValueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPropertyValueResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, PropertyLatestValue> m_propertyValues;
+    bool m_propertyValuesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::Map<Aws::String, DataValue>>> m_tabularPropertyValues;
+    bool m_tabularPropertyValuesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

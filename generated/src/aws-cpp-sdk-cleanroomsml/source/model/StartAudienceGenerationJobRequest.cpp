@@ -12,18 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAudienceGenerationJobRequest::StartAudienceGenerationJobRequest() : 
-    m_nameHasBeenSet(false),
-    m_configuredAudienceModelArnHasBeenSet(false),
-    m_seedAudienceHasBeenSet(false),
-    m_includeSeedInOutput(false),
-    m_includeSeedInOutputHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartAudienceGenerationJobRequest::SerializePayload() const
 {
   JsonValue payload;

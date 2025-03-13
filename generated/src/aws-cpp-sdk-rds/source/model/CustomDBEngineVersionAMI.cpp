@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-CustomDBEngineVersionAMI::CustomDBEngineVersionAMI() : 
-    m_imageIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 CustomDBEngineVersionAMI::CustomDBEngineVersionAMI(const XmlNode& xmlNode)
-  : CustomDBEngineVersionAMI()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CustomDBEngineVersionAMI& CustomDBEngineVersionAMI::operator =(const XmlNode& xm
     {
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
+       m_imageIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

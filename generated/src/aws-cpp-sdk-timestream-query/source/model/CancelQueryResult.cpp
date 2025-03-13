@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelQueryResult::CancelQueryResult()
-{
-}
-
 CancelQueryResult::CancelQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CancelQueryResult& CancelQueryResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("CancellationMessage"))
   {
     m_cancellationMessage = jsonValue.GetString("CancellationMessage");
-
+    m_cancellationMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

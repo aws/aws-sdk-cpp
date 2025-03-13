@@ -18,21 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-StepScalingPolicyConfiguration::StepScalingPolicyConfiguration() : 
-    m_adjustmentType(AdjustmentType::NOT_SET),
-    m_adjustmentTypeHasBeenSet(false),
-    m_stepAdjustmentsHasBeenSet(false),
-    m_minAdjustmentMagnitude(0),
-    m_minAdjustmentMagnitudeHasBeenSet(false),
-    m_cooldown(0),
-    m_cooldownHasBeenSet(false),
-    m_metricAggregationType(MetricAggregationType::NOT_SET),
-    m_metricAggregationTypeHasBeenSet(false)
-{
-}
-
 StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(JsonView jsonValue)
-  : StepScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("AdjustmentType"))
   {
     m_adjustmentType = AdjustmentTypeMapper::GetAdjustmentTypeForName(jsonValue.GetString("AdjustmentType"));
-
     m_adjustmentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepAdjustments"))
   {
     Aws::Utils::Array<JsonView> stepAdjustmentsJsonList = jsonValue.GetArray("StepAdjustments");
@@ -55,28 +39,21 @@ StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(JsonV
     }
     m_stepAdjustmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinAdjustmentMagnitude"))
   {
     m_minAdjustmentMagnitude = jsonValue.GetInteger("MinAdjustmentMagnitude");
-
     m_minAdjustmentMagnitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cooldown"))
   {
     m_cooldown = jsonValue.GetInteger("Cooldown");
-
     m_cooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricAggregationType"))
   {
     m_metricAggregationType = MetricAggregationTypeMapper::GetMetricAggregationTypeForName(jsonValue.GetString("MetricAggregationType"));
-
     m_metricAggregationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

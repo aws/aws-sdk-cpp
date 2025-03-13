@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteInfrastructureConfigurationResult::DeleteInfrastructureConfigurationResult()
-{
-}
-
 DeleteInfrastructureConfigurationResult::DeleteInfrastructureConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ DeleteInfrastructureConfigurationResult& DeleteInfrastructureConfigurationResult
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("infrastructureConfigurationArn"))
   {
     m_infrastructureConfigurationArn = jsonValue.GetString("infrastructureConfigurationArn");
-
+    m_infrastructureConfigurationArnHasBeenSet = true;
   }
-
 
 
   return *this;

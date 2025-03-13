@@ -18,17 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-InvalidInputException::InvalidInputException() : 
-    m_messageHasBeenSet(false),
-    m_errorCode(InvalidInputErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_canRetry(false),
-    m_canRetryHasBeenSet(false)
-{
-}
-
 InvalidInputException::InvalidInputException(JsonView jsonValue)
-  : InvalidInputException()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ InvalidInputException& InvalidInputException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = InvalidInputErrorCodeMapper::GetInvalidInputErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canRetry"))
   {
     m_canRetry = jsonValue.GetBool("canRetry");
-
     m_canRetryHasBeenSet = true;
   }
-
   return *this;
 }
 

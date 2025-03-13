@@ -18,27 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-Address::Address() : 
-    m_labelHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_subRegionHasBeenSet(false),
-    m_localityHasBeenSet(false),
-    m_districtHasBeenSet(false),
-    m_subDistrictHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_blockHasBeenSet(false),
-    m_subBlockHasBeenSet(false),
-    m_intersectionHasBeenSet(false),
-    m_streetHasBeenSet(false),
-    m_streetComponentsHasBeenSet(false),
-    m_addressNumberHasBeenSet(false),
-    m_buildingHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetObject("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetObject("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubRegion"))
   {
     m_subRegion = jsonValue.GetObject("SubRegion");
-
     m_subRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locality"))
   {
     m_locality = jsonValue.GetString("Locality");
-
     m_localityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("District"))
   {
     m_district = jsonValue.GetString("District");
-
     m_districtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubDistrict"))
   {
     m_subDistrict = jsonValue.GetString("SubDistrict");
-
     m_subDistrictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Block"))
   {
     m_block = jsonValue.GetString("Block");
-
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubBlock"))
   {
     m_subBlock = jsonValue.GetString("SubBlock");
-
     m_subBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Intersection"))
   {
     Aws::Utils::Array<JsonView> intersectionJsonList = jsonValue.GetArray("Intersection");
@@ -124,14 +84,11 @@ Address& Address::operator =(JsonView jsonValue)
     }
     m_intersectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street"))
   {
     m_street = jsonValue.GetString("Street");
-
     m_streetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreetComponents"))
   {
     Aws::Utils::Array<JsonView> streetComponentsJsonList = jsonValue.GetArray("StreetComponents");
@@ -141,21 +98,16 @@ Address& Address::operator =(JsonView jsonValue)
     }
     m_streetComponentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumber"))
   {
     m_addressNumber = jsonValue.GetString("AddressNumber");
-
     m_addressNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Building"))
   {
     m_building = jsonValue.GetString("Building");
-
     m_buildingHasBeenSet = true;
   }
-
   return *this;
 }
 

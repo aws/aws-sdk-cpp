@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInsightsPath::NetworkInsightsPath() : 
-    m_networkInsightsPathIdHasBeenSet(false),
-    m_networkInsightsPathArnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_destinationArnHasBeenSet(false),
-    m_sourceIpHasBeenSet(false),
-    m_destinationIpHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_filterAtSourceHasBeenSet(false),
-    m_filterAtDestinationHasBeenSet(false)
-{
-}
-
 NetworkInsightsPath::NetworkInsightsPath(const XmlNode& xmlNode)
-  : NetworkInsightsPath()
 {
   *this = xmlNode;
 }
@@ -57,90 +36,104 @@ NetworkInsightsPath& NetworkInsightsPath::operator =(const XmlNode& xmlNode)
     {
       m_networkInsightsPathId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsPathIdNode.GetText());
       m_networkInsightsPathIdHasBeenSet = true;
+       m_networkInsightsPathIdHasBeenSet = true;
     }
     XmlNode networkInsightsPathArnNode = resultNode.FirstChild("networkInsightsPathArn");
     if(!networkInsightsPathArnNode.IsNull())
     {
       m_networkInsightsPathArn = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsPathArnNode.GetText());
       m_networkInsightsPathArnHasBeenSet = true;
+       m_networkInsightsPathArnHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("createdDate");
     if(!createdDateNode.IsNull())
     {
       m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
+       m_createdDateHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("source");
     if(!sourceNode.IsNull())
     {
       m_source = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText());
       m_sourceHasBeenSet = true;
+       m_sourceHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("destination");
     if(!destinationNode.IsNull())
     {
       m_destination = Aws::Utils::Xml::DecodeEscapedXmlText(destinationNode.GetText());
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
     XmlNode sourceArnNode = resultNode.FirstChild("sourceArn");
     if(!sourceArnNode.IsNull())
     {
       m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
       m_sourceArnHasBeenSet = true;
+       m_sourceArnHasBeenSet = true;
     }
     XmlNode destinationArnNode = resultNode.FirstChild("destinationArn");
     if(!destinationArnNode.IsNull())
     {
       m_destinationArn = Aws::Utils::Xml::DecodeEscapedXmlText(destinationArnNode.GetText());
       m_destinationArnHasBeenSet = true;
+       m_destinationArnHasBeenSet = true;
     }
     XmlNode sourceIpNode = resultNode.FirstChild("sourceIp");
     if(!sourceIpNode.IsNull())
     {
       m_sourceIp = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIpNode.GetText());
       m_sourceIpHasBeenSet = true;
+       m_sourceIpHasBeenSet = true;
     }
     XmlNode destinationIpNode = resultNode.FirstChild("destinationIp");
     if(!destinationIpNode.IsNull())
     {
       m_destinationIp = Aws::Utils::Xml::DecodeEscapedXmlText(destinationIpNode.GetText());
       m_destinationIpHasBeenSet = true;
+       m_destinationIpHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode destinationPortNode = resultNode.FirstChild("destinationPort");
     if(!destinationPortNode.IsNull())
     {
       m_destinationPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(destinationPortNode.GetText()).c_str()).c_str());
       m_destinationPortHasBeenSet = true;
+       m_destinationPortHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode filterAtSourceNode = resultNode.FirstChild("filterAtSource");
     if(!filterAtSourceNode.IsNull())
     {
       m_filterAtSource = filterAtSourceNode;
       m_filterAtSourceHasBeenSet = true;
+       m_filterAtSourceHasBeenSet = true;
     }
     XmlNode filterAtDestinationNode = resultNode.FirstChild("filterAtDestination");
     if(!filterAtDestinationNode.IsNull())
     {
       m_filterAtDestination = filterAtDestinationNode;
       m_filterAtDestinationHasBeenSet = true;
+       m_filterAtDestinationHasBeenSet = true;
     }
   }
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListElasticsearchInstanceTypesRequest::ListElasticsearchInstanceTypesRequest() : 
-    m_elasticsearchVersionHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListElasticsearchInstanceTypesRequest::SerializePayload() const
 {
   return {};

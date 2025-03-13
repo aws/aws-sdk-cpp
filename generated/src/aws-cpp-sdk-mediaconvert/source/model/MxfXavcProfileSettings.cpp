@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MxfXavcProfileSettings::MxfXavcProfileSettings() : 
-    m_durationMode(MxfXavcDurationMode::NOT_SET),
-    m_durationModeHasBeenSet(false),
-    m_maxAncDataSize(0),
-    m_maxAncDataSizeHasBeenSet(false)
-{
-}
-
 MxfXavcProfileSettings::MxfXavcProfileSettings(JsonView jsonValue)
-  : MxfXavcProfileSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MxfXavcProfileSettings& MxfXavcProfileSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("durationMode"))
   {
     m_durationMode = MxfXavcDurationModeMapper::GetMxfXavcDurationModeForName(jsonValue.GetString("durationMode"));
-
     m_durationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxAncDataSize"))
   {
     m_maxAncDataSize = jsonValue.GetInteger("maxAncDataSize");
-
     m_maxAncDataSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

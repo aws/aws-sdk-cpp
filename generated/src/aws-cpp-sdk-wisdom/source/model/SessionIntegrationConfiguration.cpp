@@ -18,13 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-SessionIntegrationConfiguration::SessionIntegrationConfiguration() : 
-    m_topicIntegrationArnHasBeenSet(false)
-{
-}
-
 SessionIntegrationConfiguration::SessionIntegrationConfiguration(JsonView jsonValue)
-  : SessionIntegrationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SessionIntegrationConfiguration& SessionIntegrationConfiguration::operator =(Jso
   if(jsonValue.ValueExists("topicIntegrationArn"))
   {
     m_topicIntegrationArn = jsonValue.GetString("topicIntegrationArn");
-
     m_topicIntegrationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

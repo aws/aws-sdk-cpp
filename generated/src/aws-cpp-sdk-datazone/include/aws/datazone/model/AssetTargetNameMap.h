@@ -31,7 +31,7 @@ namespace Model
   class AssetTargetNameMap
   {
   public:
-    AWS_DATAZONE_API AssetTargetNameMap();
+    AWS_DATAZONE_API AssetTargetNameMap() = default;
     AWS_DATAZONE_API AssetTargetNameMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AssetTargetNameMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The identifier of the inventory asset.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline AssetTargetNameMap& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline AssetTargetNameMap& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline AssetTargetNameMap& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    AssetTargetNameMap& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target name in the asset target name map.</p>
      */
-    inline const Aws::String& GetTargetName() const{ return m_targetName; }
+    inline const Aws::String& GetTargetName() const { return m_targetName; }
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-    inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-    inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-    inline AssetTargetNameMap& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-    inline AssetTargetNameMap& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-    inline AssetTargetNameMap& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+    template<typename TargetNameT = Aws::String>
+    void SetTargetName(TargetNameT&& value) { m_targetNameHasBeenSet = true; m_targetName = std::forward<TargetNameT>(value); }
+    template<typename TargetNameT = Aws::String>
+    AssetTargetNameMap& WithTargetName(TargetNameT&& value) { SetTargetName(std::forward<TargetNameT>(value)); return *this;}
     ///@}
   private:
 

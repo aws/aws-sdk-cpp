@@ -18,14 +18,7 @@ namespace PcaConnectorScep
 namespace Model
 {
 
-IntuneConfiguration::IntuneConfiguration() : 
-    m_azureApplicationIdHasBeenSet(false),
-    m_domainHasBeenSet(false)
-{
-}
-
 IntuneConfiguration::IntuneConfiguration(JsonView jsonValue)
-  : IntuneConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IntuneConfiguration& IntuneConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AzureApplicationId"))
   {
     m_azureApplicationId = jsonValue.GetString("AzureApplicationId");
-
     m_azureApplicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

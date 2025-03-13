@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSuiteDefinitionRequest::GetSuiteDefinitionRequest() : 
-    m_suiteDefinitionIdHasBeenSet(false),
-    m_suiteDefinitionVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetSuiteDefinitionRequest::SerializePayload() const
 {
   return {};

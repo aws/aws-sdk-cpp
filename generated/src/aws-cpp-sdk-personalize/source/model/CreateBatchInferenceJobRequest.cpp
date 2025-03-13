@@ -12,23 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBatchInferenceJobRequest::CreateBatchInferenceJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_numResults(0),
-    m_numResultsHasBeenSet(false),
-    m_jobInputHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_batchInferenceJobConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
-    m_batchInferenceJobModeHasBeenSet(false),
-    m_themeGenerationConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateBatchInferenceJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CuratedQuery::CuratedQuery() : 
-    m_naturalLanguageHasBeenSet(false),
-    m_sqlHasBeenSet(false)
-{
-}
-
 CuratedQuery::CuratedQuery(JsonView jsonValue)
-  : CuratedQuery()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CuratedQuery& CuratedQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("naturalLanguage"))
   {
     m_naturalLanguage = jsonValue.GetString("naturalLanguage");
-
     m_naturalLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sql"))
   {
     m_sql = jsonValue.GetString("sql");
-
     m_sqlHasBeenSet = true;
   }
-
   return *this;
 }
 

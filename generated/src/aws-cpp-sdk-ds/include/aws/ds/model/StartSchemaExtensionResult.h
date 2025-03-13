@@ -27,7 +27,7 @@ namespace Model
   class StartSchemaExtensionResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API StartSchemaExtensionResult();
+    AWS_DIRECTORYSERVICE_API StartSchemaExtensionResult() = default;
     AWS_DIRECTORYSERVICE_API StartSchemaExtensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API StartSchemaExtensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier of the schema extension that will be applied.</p>
      */
-    inline const Aws::String& GetSchemaExtensionId() const{ return m_schemaExtensionId; }
-    inline void SetSchemaExtensionId(const Aws::String& value) { m_schemaExtensionId = value; }
-    inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionId = std::move(value); }
-    inline void SetSchemaExtensionId(const char* value) { m_schemaExtensionId.assign(value); }
-    inline StartSchemaExtensionResult& WithSchemaExtensionId(const Aws::String& value) { SetSchemaExtensionId(value); return *this;}
-    inline StartSchemaExtensionResult& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(std::move(value)); return *this;}
-    inline StartSchemaExtensionResult& WithSchemaExtensionId(const char* value) { SetSchemaExtensionId(value); return *this;}
+    inline const Aws::String& GetSchemaExtensionId() const { return m_schemaExtensionId; }
+    template<typename SchemaExtensionIdT = Aws::String>
+    void SetSchemaExtensionId(SchemaExtensionIdT&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = std::forward<SchemaExtensionIdT>(value); }
+    template<typename SchemaExtensionIdT = Aws::String>
+    StartSchemaExtensionResult& WithSchemaExtensionId(SchemaExtensionIdT&& value) { SetSchemaExtensionId(std::forward<SchemaExtensionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSchemaExtensionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSchemaExtensionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSchemaExtensionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSchemaExtensionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_schemaExtensionId;
+    bool m_schemaExtensionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

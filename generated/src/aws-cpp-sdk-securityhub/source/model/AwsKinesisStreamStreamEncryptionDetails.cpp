@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsKinesisStreamStreamEncryptionDetails::AwsKinesisStreamStreamEncryptionDetails() : 
-    m_encryptionTypeHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
-{
-}
-
 AwsKinesisStreamStreamEncryptionDetails::AwsKinesisStreamStreamEncryptionDetails(JsonView jsonValue)
-  : AwsKinesisStreamStreamEncryptionDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsKinesisStreamStreamEncryptionDetails& AwsKinesisStreamStreamEncryptionDetails
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = jsonValue.GetString("EncryptionType");
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class UpdateKnowledgeBaseResult
   {
   public:
-    AWS_BEDROCKAGENT_API UpdateKnowledgeBaseResult();
+    AWS_BEDROCKAGENT_API UpdateKnowledgeBaseResult() = default;
     AWS_BEDROCKAGENT_API UpdateKnowledgeBaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API UpdateKnowledgeBaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains details about the knowledge base.</p>
      */
-    inline const KnowledgeBase& GetKnowledgeBase() const{ return m_knowledgeBase; }
-    inline void SetKnowledgeBase(const KnowledgeBase& value) { m_knowledgeBase = value; }
-    inline void SetKnowledgeBase(KnowledgeBase&& value) { m_knowledgeBase = std::move(value); }
-    inline UpdateKnowledgeBaseResult& WithKnowledgeBase(const KnowledgeBase& value) { SetKnowledgeBase(value); return *this;}
-    inline UpdateKnowledgeBaseResult& WithKnowledgeBase(KnowledgeBase&& value) { SetKnowledgeBase(std::move(value)); return *this;}
+    inline const KnowledgeBase& GetKnowledgeBase() const { return m_knowledgeBase; }
+    template<typename KnowledgeBaseT = KnowledgeBase>
+    void SetKnowledgeBase(KnowledgeBaseT&& value) { m_knowledgeBaseHasBeenSet = true; m_knowledgeBase = std::forward<KnowledgeBaseT>(value); }
+    template<typename KnowledgeBaseT = KnowledgeBase>
+    UpdateKnowledgeBaseResult& WithKnowledgeBase(KnowledgeBaseT&& value) { SetKnowledgeBase(std::forward<KnowledgeBaseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateKnowledgeBaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateKnowledgeBaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateKnowledgeBaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateKnowledgeBaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     KnowledgeBase m_knowledgeBase;
+    bool m_knowledgeBaseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

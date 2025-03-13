@@ -18,17 +18,7 @@ namespace SecretsManager
 namespace Model
 {
 
-SecretVersionsListEntry::SecretVersionsListEntry() : 
-    m_versionIdHasBeenSet(false),
-    m_versionStagesHasBeenSet(false),
-    m_lastAccessedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_kmsKeyIdsHasBeenSet(false)
-{
-}
-
 SecretVersionsListEntry::SecretVersionsListEntry(JsonView jsonValue)
-  : SecretVersionsListEntry()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionStages"))
   {
     Aws::Utils::Array<JsonView> versionStagesJsonList = jsonValue.GetArray("VersionStages");
@@ -51,21 +39,16 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
     }
     m_versionStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessedDate"))
   {
     m_lastAccessedDate = jsonValue.GetDouble("LastAccessedDate");
-
     m_lastAccessedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyIds"))
   {
     Aws::Utils::Array<JsonView> kmsKeyIdsJsonList = jsonValue.GetArray("KmsKeyIds");
@@ -75,7 +58,6 @@ SecretVersionsListEntry& SecretVersionsListEntry::operator =(JsonView jsonValue)
     }
     m_kmsKeyIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,29 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-BatchImport::BatchImport() : 
-    m_jobIdHasBeenSet(false),
-    m_status(AsyncJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_inputPathHasBeenSet(false),
-    m_outputPathHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_processedRecordsCount(0),
-    m_processedRecordsCountHasBeenSet(false),
-    m_failedRecordsCount(0),
-    m_failedRecordsCountHasBeenSet(false),
-    m_totalRecordsCount(0),
-    m_totalRecordsCountHasBeenSet(false)
-{
-}
-
 BatchImport::BatchImport(JsonView jsonValue)
-  : BatchImport()
 {
   *this = jsonValue;
 }
@@ -50,94 +28,68 @@ BatchImport& BatchImport::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AsyncJobStatusMapper::GetAsyncJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completionTime"))
   {
     m_completionTime = jsonValue.GetString("completionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputPath"))
   {
     m_inputPath = jsonValue.GetString("inputPath");
-
     m_inputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputPath"))
   {
     m_outputPath = jsonValue.GetString("outputPath");
-
     m_outputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
     m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("iamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("processedRecordsCount"))
   {
     m_processedRecordsCount = jsonValue.GetInteger("processedRecordsCount");
-
     m_processedRecordsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedRecordsCount"))
   {
     m_failedRecordsCount = jsonValue.GetInteger("failedRecordsCount");
-
     m_failedRecordsCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalRecordsCount"))
   {
     m_totalRecordsCount = jsonValue.GetInteger("totalRecordsCount");
-
     m_totalRecordsCountHasBeenSet = true;
   }
-
   return *this;
 }
 

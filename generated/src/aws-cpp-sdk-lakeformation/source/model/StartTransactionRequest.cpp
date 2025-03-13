@@ -12,12 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTransactionRequest::StartTransactionRequest() : 
-    m_transactionType(TransactionType::NOT_SET),
-    m_transactionTypeHasBeenSet(false)
-{
-}
-
 Aws::String StartTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

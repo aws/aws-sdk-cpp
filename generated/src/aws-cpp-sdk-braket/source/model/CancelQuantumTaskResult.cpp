@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelQuantumTaskResult::CancelQuantumTaskResult() : 
-    m_cancellationStatus(CancellationStatus::NOT_SET)
-{
-}
-
 CancelQuantumTaskResult::CancelQuantumTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelQuantumTaskResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CancelQuantumTaskResult& CancelQuantumTaskResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("cancellationStatus"))
   {
     m_cancellationStatus = CancellationStatusMapper::GetCancellationStatusForName(jsonValue.GetString("cancellationStatus"));
-
+    m_cancellationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantumTaskArn"))
   {
     m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
-
+    m_quantumTaskArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class GetJobDetailsResult
   {
   public:
-    AWS_CODEPIPELINE_API GetJobDetailsResult();
+    AWS_CODEPIPELINE_API GetJobDetailsResult() = default;
     AWS_CODEPIPELINE_API GetJobDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API GetJobDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,28 +45,28 @@ namespace Model
      * long-running job can call <code>GetJobDetails</code> again to obtain new
      * credentials.</p> 
      */
-    inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
-    inline void SetJobDetails(const JobDetails& value) { m_jobDetails = value; }
-    inline void SetJobDetails(JobDetails&& value) { m_jobDetails = std::move(value); }
-    inline GetJobDetailsResult& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
-    inline GetJobDetailsResult& WithJobDetails(JobDetails&& value) { SetJobDetails(std::move(value)); return *this;}
+    inline const JobDetails& GetJobDetails() const { return m_jobDetails; }
+    template<typename JobDetailsT = JobDetails>
+    void SetJobDetails(JobDetailsT&& value) { m_jobDetailsHasBeenSet = true; m_jobDetails = std::forward<JobDetailsT>(value); }
+    template<typename JobDetailsT = JobDetails>
+    GetJobDetailsResult& WithJobDetails(JobDetailsT&& value) { SetJobDetails(std::forward<JobDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJobDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJobDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJobDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJobDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JobDetails m_jobDetails;
+    bool m_jobDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

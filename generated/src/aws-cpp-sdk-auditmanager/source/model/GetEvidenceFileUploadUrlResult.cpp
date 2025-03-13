@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEvidenceFileUploadUrlResult::GetEvidenceFileUploadUrlResult()
-{
-}
-
 GetEvidenceFileUploadUrlResult::GetEvidenceFileUploadUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetEvidenceFileUploadUrlResult& GetEvidenceFileUploadUrlResult::operator =(const
   if(jsonValue.ValueExists("evidenceFileName"))
   {
     m_evidenceFileName = jsonValue.GetString("evidenceFileName");
-
+    m_evidenceFileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadUrl"))
   {
     m_uploadUrl = jsonValue.GetString("uploadUrl");
-
+    m_uploadUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

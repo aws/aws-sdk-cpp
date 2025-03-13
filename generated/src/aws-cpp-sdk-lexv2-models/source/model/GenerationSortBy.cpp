@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-GenerationSortBy::GenerationSortBy() : 
-    m_attribute(GenerationSortByAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 GenerationSortBy::GenerationSortBy(JsonView jsonValue)
-  : GenerationSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GenerationSortBy& GenerationSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = GenerationSortByAttributeMapper::GetGenerationSortByAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

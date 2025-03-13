@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RerankTextDocument::RerankTextDocument() : 
-    m_textHasBeenSet(false)
-{
-}
-
 RerankTextDocument::RerankTextDocument(JsonView jsonValue)
-  : RerankTextDocument()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RerankTextDocument& RerankTextDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

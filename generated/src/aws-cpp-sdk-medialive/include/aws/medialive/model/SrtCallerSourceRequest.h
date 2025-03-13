@@ -36,7 +36,7 @@ namespace Model
   class SrtCallerSourceRequest
   {
   public:
-    AWS_MEDIALIVE_API SrtCallerSourceRequest();
+    AWS_MEDIALIVE_API SrtCallerSourceRequest() = default;
     AWS_MEDIALIVE_API SrtCallerSourceRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SrtCallerSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
 
     ///@{
     
-    inline const SrtCallerDecryptionRequest& GetDecryption() const{ return m_decryption; }
+    inline const SrtCallerDecryptionRequest& GetDecryption() const { return m_decryption; }
     inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
-    inline void SetDecryption(const SrtCallerDecryptionRequest& value) { m_decryptionHasBeenSet = true; m_decryption = value; }
-    inline void SetDecryption(SrtCallerDecryptionRequest&& value) { m_decryptionHasBeenSet = true; m_decryption = std::move(value); }
-    inline SrtCallerSourceRequest& WithDecryption(const SrtCallerDecryptionRequest& value) { SetDecryption(value); return *this;}
-    inline SrtCallerSourceRequest& WithDecryption(SrtCallerDecryptionRequest&& value) { SetDecryption(std::move(value)); return *this;}
+    template<typename DecryptionT = SrtCallerDecryptionRequest>
+    void SetDecryption(DecryptionT&& value) { m_decryptionHasBeenSet = true; m_decryption = std::forward<DecryptionT>(value); }
+    template<typename DecryptionT = SrtCallerDecryptionRequest>
+    SrtCallerSourceRequest& WithDecryption(DecryptionT&& value) { SetDecryption(std::forward<DecryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +58,7 @@ namespace Model
      * recovery. Packet recovery is a key feature of SRT. Obtain this value from the
      * operator at the upstream system.
      */
-    inline int GetMinimumLatency() const{ return m_minimumLatency; }
+    inline int GetMinimumLatency() const { return m_minimumLatency; }
     inline bool MinimumLatencyHasBeenSet() const { return m_minimumLatencyHasBeenSet; }
     inline void SetMinimumLatency(int value) { m_minimumLatencyHasBeenSet = true; m_minimumLatency = value; }
     inline SrtCallerSourceRequest& WithMinimumLatency(int value) { SetMinimumLatency(value); return *this;}
@@ -69,14 +69,12 @@ namespace Model
      * The IP address at the upstream system (the listener) that MediaLive (the caller)
      * will connect to.
      */
-    inline const Aws::String& GetSrtListenerAddress() const{ return m_srtListenerAddress; }
+    inline const Aws::String& GetSrtListenerAddress() const { return m_srtListenerAddress; }
     inline bool SrtListenerAddressHasBeenSet() const { return m_srtListenerAddressHasBeenSet; }
-    inline void SetSrtListenerAddress(const Aws::String& value) { m_srtListenerAddressHasBeenSet = true; m_srtListenerAddress = value; }
-    inline void SetSrtListenerAddress(Aws::String&& value) { m_srtListenerAddressHasBeenSet = true; m_srtListenerAddress = std::move(value); }
-    inline void SetSrtListenerAddress(const char* value) { m_srtListenerAddressHasBeenSet = true; m_srtListenerAddress.assign(value); }
-    inline SrtCallerSourceRequest& WithSrtListenerAddress(const Aws::String& value) { SetSrtListenerAddress(value); return *this;}
-    inline SrtCallerSourceRequest& WithSrtListenerAddress(Aws::String&& value) { SetSrtListenerAddress(std::move(value)); return *this;}
-    inline SrtCallerSourceRequest& WithSrtListenerAddress(const char* value) { SetSrtListenerAddress(value); return *this;}
+    template<typename SrtListenerAddressT = Aws::String>
+    void SetSrtListenerAddress(SrtListenerAddressT&& value) { m_srtListenerAddressHasBeenSet = true; m_srtListenerAddress = std::forward<SrtListenerAddressT>(value); }
+    template<typename SrtListenerAddressT = Aws::String>
+    SrtCallerSourceRequest& WithSrtListenerAddress(SrtListenerAddressT&& value) { SetSrtListenerAddress(std::forward<SrtListenerAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +82,12 @@ namespace Model
      * The port at the upstream system (the listener) that MediaLive (the caller) will
      * connect to.
      */
-    inline const Aws::String& GetSrtListenerPort() const{ return m_srtListenerPort; }
+    inline const Aws::String& GetSrtListenerPort() const { return m_srtListenerPort; }
     inline bool SrtListenerPortHasBeenSet() const { return m_srtListenerPortHasBeenSet; }
-    inline void SetSrtListenerPort(const Aws::String& value) { m_srtListenerPortHasBeenSet = true; m_srtListenerPort = value; }
-    inline void SetSrtListenerPort(Aws::String&& value) { m_srtListenerPortHasBeenSet = true; m_srtListenerPort = std::move(value); }
-    inline void SetSrtListenerPort(const char* value) { m_srtListenerPortHasBeenSet = true; m_srtListenerPort.assign(value); }
-    inline SrtCallerSourceRequest& WithSrtListenerPort(const Aws::String& value) { SetSrtListenerPort(value); return *this;}
-    inline SrtCallerSourceRequest& WithSrtListenerPort(Aws::String&& value) { SetSrtListenerPort(std::move(value)); return *this;}
-    inline SrtCallerSourceRequest& WithSrtListenerPort(const char* value) { SetSrtListenerPort(value); return *this;}
+    template<typename SrtListenerPortT = Aws::String>
+    void SetSrtListenerPort(SrtListenerPortT&& value) { m_srtListenerPortHasBeenSet = true; m_srtListenerPort = std::forward<SrtListenerPortT>(value); }
+    template<typename SrtListenerPortT = Aws::String>
+    SrtCallerSourceRequest& WithSrtListenerPort(SrtListenerPortT&& value) { SetSrtListenerPort(std::forward<SrtListenerPortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,21 +96,19 @@ namespace Model
      * without it, the SRT handshake between MediaLive (the caller) and the upstream
      * system (the listener) might fail.
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline SrtCallerSourceRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline SrtCallerSourceRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline SrtCallerSourceRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    SrtCallerSourceRequest& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
   private:
 
     SrtCallerDecryptionRequest m_decryption;
     bool m_decryptionHasBeenSet = false;
 
-    int m_minimumLatency;
+    int m_minimumLatency{0};
     bool m_minimumLatencyHasBeenSet = false;
 
     Aws::String m_srtListenerAddress;

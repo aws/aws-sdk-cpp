@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMapResult::UpdateMapResult()
-{
-}
-
 UpdateMapResult::UpdateMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateMapResult& UpdateMapResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("MapName"))
   {
     m_mapName = jsonValue.GetString("MapName");
-
+    m_mapNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapArn"))
   {
     m_mapArn = jsonValue.GetString("MapArn");
-
+    m_mapArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

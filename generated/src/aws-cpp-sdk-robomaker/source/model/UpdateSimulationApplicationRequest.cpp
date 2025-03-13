@@ -12,17 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSimulationApplicationRequest::UpdateSimulationApplicationRequest() : 
-    m_applicationHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_simulationSoftwareSuiteHasBeenSet(false),
-    m_robotSoftwareSuiteHasBeenSet(false),
-    m_renderingEngineHasBeenSet(false),
-    m_currentRevisionIdHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSimulationApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

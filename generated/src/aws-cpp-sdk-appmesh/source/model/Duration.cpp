@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-Duration::Duration() : 
-    m_unit(DurationUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Duration::Duration(JsonView jsonValue)
-  : Duration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Duration& Duration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = DurationUnitMapper::GetDurationUnitForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInt64("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

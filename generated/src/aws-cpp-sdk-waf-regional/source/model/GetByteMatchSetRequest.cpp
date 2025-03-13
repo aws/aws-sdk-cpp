@@ -12,11 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetByteMatchSetRequest::GetByteMatchSetRequest() : 
-    m_byteMatchSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetByteMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

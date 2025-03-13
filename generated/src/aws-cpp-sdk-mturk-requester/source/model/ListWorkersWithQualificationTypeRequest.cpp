@@ -12,16 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWorkersWithQualificationTypeRequest::ListWorkersWithQualificationTypeRequest() : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_status(QualificationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkersWithQualificationTypeRequest::SerializePayload() const
 {
   JsonValue payload;

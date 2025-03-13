@@ -33,7 +33,7 @@ namespace Model
   class GpuInfo
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API GpuInfo();
+    AWS_COMPUTEOPTIMIZER_API GpuInfo() = default;
     AWS_COMPUTEOPTIMIZER_API GpuInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API GpuInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p> Describes the GPU accelerators for the instance type. </p>
      */
-    inline const Aws::Vector<Gpu>& GetGpus() const{ return m_gpus; }
+    inline const Aws::Vector<Gpu>& GetGpus() const { return m_gpus; }
     inline bool GpusHasBeenSet() const { return m_gpusHasBeenSet; }
-    inline void SetGpus(const Aws::Vector<Gpu>& value) { m_gpusHasBeenSet = true; m_gpus = value; }
-    inline void SetGpus(Aws::Vector<Gpu>&& value) { m_gpusHasBeenSet = true; m_gpus = std::move(value); }
-    inline GpuInfo& WithGpus(const Aws::Vector<Gpu>& value) { SetGpus(value); return *this;}
-    inline GpuInfo& WithGpus(Aws::Vector<Gpu>&& value) { SetGpus(std::move(value)); return *this;}
-    inline GpuInfo& AddGpus(const Gpu& value) { m_gpusHasBeenSet = true; m_gpus.push_back(value); return *this; }
-    inline GpuInfo& AddGpus(Gpu&& value) { m_gpusHasBeenSet = true; m_gpus.push_back(std::move(value)); return *this; }
+    template<typename GpusT = Aws::Vector<Gpu>>
+    void SetGpus(GpusT&& value) { m_gpusHasBeenSet = true; m_gpus = std::forward<GpusT>(value); }
+    template<typename GpusT = Aws::Vector<Gpu>>
+    GpuInfo& WithGpus(GpusT&& value) { SetGpus(std::forward<GpusT>(value)); return *this;}
+    template<typename GpusT = Gpu>
+    GpuInfo& AddGpus(GpusT&& value) { m_gpusHasBeenSet = true; m_gpus.emplace_back(std::forward<GpusT>(value)); return *this; }
     ///@}
   private:
 

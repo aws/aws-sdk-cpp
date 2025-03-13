@@ -33,7 +33,7 @@ namespace Model
   class SentimentConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API SentimentConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API SentimentConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API SentimentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API SentimentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the rule in the sentiment configuration.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline SentimentConfiguration& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline SentimentConfiguration& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline SentimentConfiguration& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    SentimentConfiguration& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
      * <code>NEUTRAL</code>.</p>
      */
-    inline const SentimentType& GetSentimentType() const{ return m_sentimentType; }
+    inline SentimentType GetSentimentType() const { return m_sentimentType; }
     inline bool SentimentTypeHasBeenSet() const { return m_sentimentTypeHasBeenSet; }
-    inline void SetSentimentType(const SentimentType& value) { m_sentimentTypeHasBeenSet = true; m_sentimentType = value; }
-    inline void SetSentimentType(SentimentType&& value) { m_sentimentTypeHasBeenSet = true; m_sentimentType = std::move(value); }
-    inline SentimentConfiguration& WithSentimentType(const SentimentType& value) { SetSentimentType(value); return *this;}
-    inline SentimentConfiguration& WithSentimentType(SentimentType&& value) { SetSentimentType(std::move(value)); return *this;}
+    inline void SetSentimentType(SentimentType value) { m_sentimentTypeHasBeenSet = true; m_sentimentType = value; }
+    inline SentimentConfiguration& WithSentimentType(SentimentType value) { SetSentimentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the analysis interval.</p>
      */
-    inline int GetTimePeriod() const{ return m_timePeriod; }
+    inline int GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
     inline void SetTimePeriod(int value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
     inline SentimentConfiguration& WithTimePeriod(int value) { SetTimePeriod(value); return *this;}
@@ -80,10 +76,10 @@ namespace Model
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet = false;
 
-    SentimentType m_sentimentType;
+    SentimentType m_sentimentType{SentimentType::NOT_SET};
     bool m_sentimentTypeHasBeenSet = false;
 
-    int m_timePeriod;
+    int m_timePeriod{0};
     bool m_timePeriodHasBeenSet = false;
   };
 

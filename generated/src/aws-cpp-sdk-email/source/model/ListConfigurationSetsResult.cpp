@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListConfigurationSetsResult::ListConfigurationSetsResult()
-{
-}
-
 ListConfigurationSetsResult::ListConfigurationSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListConfigurationSetsResult& ListConfigurationSetsResult::operator =(const Aws::
     if(!configurationSetsNode.IsNull())
     {
       XmlNode configurationSetsMember = configurationSetsNode.FirstChild("member");
+      m_configurationSetsHasBeenSet = !configurationSetsMember.IsNull();
       while(!configurationSetsMember.IsNull())
       {
         m_configurationSets.push_back(configurationSetsMember);
@@ -53,12 +50,14 @@ ListConfigurationSetsResult& ListConfigurationSetsResult::operator =(const Aws::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::ListConfigurationSetsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

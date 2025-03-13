@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FederatedResourceAlreadyExistsException::FederatedResourceAlreadyExistsException() : 
-    m_messageHasBeenSet(false),
-    m_associatedGlueResourceHasBeenSet(false)
-{
-}
-
 FederatedResourceAlreadyExistsException::FederatedResourceAlreadyExistsException(JsonView jsonValue)
-  : FederatedResourceAlreadyExistsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FederatedResourceAlreadyExistsException& FederatedResourceAlreadyExistsException
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedGlueResource"))
   {
     m_associatedGlueResource = jsonValue.GetString("AssociatedGlueResource");
-
     m_associatedGlueResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

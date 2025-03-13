@@ -32,7 +32,7 @@ namespace Model
   class SourceDetail
   {
   public:
-    AWS_IOTSITEWISE_API SourceDetail();
+    AWS_IOTSITEWISE_API SourceDetail() = default;
     AWS_IOTSITEWISE_API SourceDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API SourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains details about the Kendra dataset source.</p>
      */
-    inline const KendraSourceDetail& GetKendra() const{ return m_kendra; }
+    inline const KendraSourceDetail& GetKendra() const { return m_kendra; }
     inline bool KendraHasBeenSet() const { return m_kendraHasBeenSet; }
-    inline void SetKendra(const KendraSourceDetail& value) { m_kendraHasBeenSet = true; m_kendra = value; }
-    inline void SetKendra(KendraSourceDetail&& value) { m_kendraHasBeenSet = true; m_kendra = std::move(value); }
-    inline SourceDetail& WithKendra(const KendraSourceDetail& value) { SetKendra(value); return *this;}
-    inline SourceDetail& WithKendra(KendraSourceDetail&& value) { SetKendra(std::move(value)); return *this;}
+    template<typename KendraT = KendraSourceDetail>
+    void SetKendra(KendraT&& value) { m_kendraHasBeenSet = true; m_kendra = std::forward<KendraT>(value); }
+    template<typename KendraT = KendraSourceDetail>
+    SourceDetail& WithKendra(KendraT&& value) { SetKendra(std::forward<KendraT>(value)); return *this;}
     ///@}
   private:
 

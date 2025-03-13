@@ -32,7 +32,7 @@ namespace Model
   class VolumeMount
   {
   public:
-    AWS_SECURITYHUB_API VolumeMount();
+    AWS_SECURITYHUB_API VolumeMount() = default;
     AWS_SECURITYHUB_API VolumeMount(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API VolumeMount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the volume. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline VolumeMount& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline VolumeMount& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline VolumeMount& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    VolumeMount& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path in the container at which the volume should be mounted. </p>
      */
-    inline const Aws::String& GetMountPath() const{ return m_mountPath; }
+    inline const Aws::String& GetMountPath() const { return m_mountPath; }
     inline bool MountPathHasBeenSet() const { return m_mountPathHasBeenSet; }
-    inline void SetMountPath(const Aws::String& value) { m_mountPathHasBeenSet = true; m_mountPath = value; }
-    inline void SetMountPath(Aws::String&& value) { m_mountPathHasBeenSet = true; m_mountPath = std::move(value); }
-    inline void SetMountPath(const char* value) { m_mountPathHasBeenSet = true; m_mountPath.assign(value); }
-    inline VolumeMount& WithMountPath(const Aws::String& value) { SetMountPath(value); return *this;}
-    inline VolumeMount& WithMountPath(Aws::String&& value) { SetMountPath(std::move(value)); return *this;}
-    inline VolumeMount& WithMountPath(const char* value) { SetMountPath(value); return *this;}
+    template<typename MountPathT = Aws::String>
+    void SetMountPath(MountPathT&& value) { m_mountPathHasBeenSet = true; m_mountPath = std::forward<MountPathT>(value); }
+    template<typename MountPathT = Aws::String>
+    VolumeMount& WithMountPath(MountPathT&& value) { SetMountPath(std::forward<MountPathT>(value)); return *this;}
     ///@}
   private:
 

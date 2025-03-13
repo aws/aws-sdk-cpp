@@ -18,15 +18,7 @@ namespace drs
 namespace Model
 {
 
-StagingSourceServer::StagingSourceServer() : 
-    m_arnHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 StagingSourceServer::StagingSourceServer(JsonView jsonValue)
-  : StagingSourceServer()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StagingSourceServer& StagingSourceServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetString("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -56,7 +44,6 @@ StagingSourceServer& StagingSourceServer::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

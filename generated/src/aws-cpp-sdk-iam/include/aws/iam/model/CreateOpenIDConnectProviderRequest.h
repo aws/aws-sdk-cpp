@@ -23,7 +23,7 @@ namespace Model
   class CreateOpenIDConnectProviderRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API CreateOpenIDConnectProviderRequest();
+    AWS_IAM_API CreateOpenIDConnectProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * OpenID Connect provider in the Amazon Web Services account, you will get an
      * error.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline CreateOpenIDConnectProviderRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline CreateOpenIDConnectProviderRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline CreateOpenIDConnectProviderRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    CreateOpenIDConnectProviderRequest& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,15 +71,14 @@ namespace Model
      * for a client ID. The <code>CreateOpenIDConnectProviderRequest</code> operation
      * accepts client IDs up to 255 characters long.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClientIDList() const{ return m_clientIDList; }
+    inline const Aws::Vector<Aws::String>& GetClientIDList() const { return m_clientIDList; }
     inline bool ClientIDListHasBeenSet() const { return m_clientIDListHasBeenSet; }
-    inline void SetClientIDList(const Aws::Vector<Aws::String>& value) { m_clientIDListHasBeenSet = true; m_clientIDList = value; }
-    inline void SetClientIDList(Aws::Vector<Aws::String>&& value) { m_clientIDListHasBeenSet = true; m_clientIDList = std::move(value); }
-    inline CreateOpenIDConnectProviderRequest& WithClientIDList(const Aws::Vector<Aws::String>& value) { SetClientIDList(value); return *this;}
-    inline CreateOpenIDConnectProviderRequest& WithClientIDList(Aws::Vector<Aws::String>&& value) { SetClientIDList(std::move(value)); return *this;}
-    inline CreateOpenIDConnectProviderRequest& AddClientIDList(const Aws::String& value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(value); return *this; }
-    inline CreateOpenIDConnectProviderRequest& AddClientIDList(Aws::String&& value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(std::move(value)); return *this; }
-    inline CreateOpenIDConnectProviderRequest& AddClientIDList(const char* value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(value); return *this; }
+    template<typename ClientIDListT = Aws::Vector<Aws::String>>
+    void SetClientIDList(ClientIDListT&& value) { m_clientIDListHasBeenSet = true; m_clientIDList = std::forward<ClientIDListT>(value); }
+    template<typename ClientIDListT = Aws::Vector<Aws::String>>
+    CreateOpenIDConnectProviderRequest& WithClientIDList(ClientIDListT&& value) { SetClientIDList(std::forward<ClientIDListT>(value)); return *this;}
+    template<typename ClientIDListT = Aws::String>
+    CreateOpenIDConnectProviderRequest& AddClientIDList(ClientIDListT&& value) { m_clientIDListHasBeenSet = true; m_clientIDList.emplace_back(std::forward<ClientIDListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,15 +102,14 @@ namespace Model
      * the thumbprint for an OpenID Connect provider</a> in the <i>IAM user
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
+    inline const Aws::Vector<Aws::String>& GetThumbprintList() const { return m_thumbprintList; }
     inline bool ThumbprintListHasBeenSet() const { return m_thumbprintListHasBeenSet; }
-    inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
-    inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::move(value); }
-    inline CreateOpenIDConnectProviderRequest& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
-    inline CreateOpenIDConnectProviderRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(std::move(value)); return *this;}
-    inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
-    inline CreateOpenIDConnectProviderRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(std::move(value)); return *this; }
-    inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
+    template<typename ThumbprintListT = Aws::Vector<Aws::String>>
+    void SetThumbprintList(ThumbprintListT&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::forward<ThumbprintListT>(value); }
+    template<typename ThumbprintListT = Aws::Vector<Aws::String>>
+    CreateOpenIDConnectProviderRequest& WithThumbprintList(ThumbprintListT&& value) { SetThumbprintList(std::forward<ThumbprintListT>(value)); return *this;}
+    template<typename ThumbprintListT = Aws::String>
+    CreateOpenIDConnectProviderRequest& AddThumbprintList(ThumbprintListT&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.emplace_back(std::forward<ThumbprintListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,14 +122,14 @@ namespace Model
      * is invalid or if you exceed the allowed maximum number of tags, then the entire
      * request fails and the resource is not created.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateOpenIDConnectProviderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateOpenIDConnectProviderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateOpenIDConnectProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateOpenIDConnectProviderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateOpenIDConnectProviderRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateOpenIDConnectProviderRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

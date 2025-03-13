@@ -33,7 +33,7 @@ namespace Model
   class SignInOptions
   {
   public:
-    AWS_SSOADMIN_API SignInOptions();
+    AWS_SSOADMIN_API SignInOptions() = default;
     AWS_SSOADMIN_API SignInOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API SignInOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * required parameter if the <code>Origin</code> parameter is
      * <code>APPLICATION</code>.</p>
      */
-    inline const Aws::String& GetApplicationUrl() const{ return m_applicationUrl; }
+    inline const Aws::String& GetApplicationUrl() const { return m_applicationUrl; }
     inline bool ApplicationUrlHasBeenSet() const { return m_applicationUrlHasBeenSet; }
-    inline void SetApplicationUrl(const Aws::String& value) { m_applicationUrlHasBeenSet = true; m_applicationUrl = value; }
-    inline void SetApplicationUrl(Aws::String&& value) { m_applicationUrlHasBeenSet = true; m_applicationUrl = std::move(value); }
-    inline void SetApplicationUrl(const char* value) { m_applicationUrlHasBeenSet = true; m_applicationUrl.assign(value); }
-    inline SignInOptions& WithApplicationUrl(const Aws::String& value) { SetApplicationUrl(value); return *this;}
-    inline SignInOptions& WithApplicationUrl(Aws::String&& value) { SetApplicationUrl(std::move(value)); return *this;}
-    inline SignInOptions& WithApplicationUrl(const char* value) { SetApplicationUrl(value); return *this;}
+    template<typename ApplicationUrlT = Aws::String>
+    void SetApplicationUrl(ApplicationUrlT&& value) { m_applicationUrlHasBeenSet = true; m_applicationUrl = std::forward<ApplicationUrlT>(value); }
+    template<typename ApplicationUrlT = Aws::String>
+    SignInOptions& WithApplicationUrl(ApplicationUrlT&& value) { SetApplicationUrl(std::forward<ApplicationUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,17 @@ namespace Model
      * initiated authentication to sign the customer directly into a SAML-based
      * application.</p> </li> </ul>
      */
-    inline const SignInOrigin& GetOrigin() const{ return m_origin; }
+    inline SignInOrigin GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const SignInOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(SignInOrigin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline SignInOptions& WithOrigin(const SignInOrigin& value) { SetOrigin(value); return *this;}
-    inline SignInOptions& WithOrigin(SignInOrigin&& value) { SetOrigin(std::move(value)); return *this;}
+    inline void SetOrigin(SignInOrigin value) { m_originHasBeenSet = true; m_origin = value; }
+    inline SignInOptions& WithOrigin(SignInOrigin value) { SetOrigin(value); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationUrl;
     bool m_applicationUrlHasBeenSet = false;
 
-    SignInOrigin m_origin;
+    SignInOrigin m_origin{SignInOrigin::NOT_SET};
     bool m_originHasBeenSet = false;
   };
 

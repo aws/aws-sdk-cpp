@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowDataConnectionConfiguration::FlowDataConnectionConfiguration() : 
-    m_sourceOutputHasBeenSet(false),
-    m_targetInputHasBeenSet(false)
-{
-}
-
 FlowDataConnectionConfiguration::FlowDataConnectionConfiguration(JsonView jsonValue)
-  : FlowDataConnectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FlowDataConnectionConfiguration& FlowDataConnectionConfiguration::operator =(Jso
   if(jsonValue.ValueExists("sourceOutput"))
   {
     m_sourceOutput = jsonValue.GetString("sourceOutput");
-
     m_sourceOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetInput"))
   {
     m_targetInput = jsonValue.GetString("targetInput");
-
     m_targetInputHasBeenSet = true;
   }
-
   return *this;
 }
 

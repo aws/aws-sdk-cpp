@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ExternalMetricStatus::ExternalMetricStatus() : 
-    m_statusCode(ExternalMetricStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 ExternalMetricStatus::ExternalMetricStatus(JsonView jsonValue)
-  : ExternalMetricStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExternalMetricStatus& ExternalMetricStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = ExternalMetricStatusCodeMapper::GetExternalMetricStatusCodeForName(jsonValue.GetString("statusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

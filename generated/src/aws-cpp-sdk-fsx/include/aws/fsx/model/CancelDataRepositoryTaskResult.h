@@ -28,7 +28,7 @@ namespace Model
   class CancelDataRepositoryTaskResult
   {
   public:
-    AWS_FSX_API CancelDataRepositoryTaskResult();
+    AWS_FSX_API CancelDataRepositoryTaskResult() = default;
     AWS_FSX_API CancelDataRepositoryTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FSX_API CancelDataRepositoryTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,43 +47,40 @@ namespace Model
      * <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
      * </ul>
      */
-    inline const DataRepositoryTaskLifecycle& GetLifecycle() const{ return m_lifecycle; }
-    inline void SetLifecycle(const DataRepositoryTaskLifecycle& value) { m_lifecycle = value; }
-    inline void SetLifecycle(DataRepositoryTaskLifecycle&& value) { m_lifecycle = std::move(value); }
-    inline CancelDataRepositoryTaskResult& WithLifecycle(const DataRepositoryTaskLifecycle& value) { SetLifecycle(value); return *this;}
-    inline CancelDataRepositoryTaskResult& WithLifecycle(DataRepositoryTaskLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline DataRepositoryTaskLifecycle GetLifecycle() const { return m_lifecycle; }
+    inline void SetLifecycle(DataRepositoryTaskLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline CancelDataRepositoryTaskResult& WithLifecycle(DataRepositoryTaskLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the task being canceled.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-    inline CancelDataRepositoryTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline CancelDataRepositoryTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline CancelDataRepositoryTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    CancelDataRepositoryTaskResult& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelDataRepositoryTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelDataRepositoryTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelDataRepositoryTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelDataRepositoryTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    DataRepositoryTaskLifecycle m_lifecycle;
+    DataRepositoryTaskLifecycle m_lifecycle{DataRepositoryTaskLifecycle::NOT_SET};
+    bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_taskId;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

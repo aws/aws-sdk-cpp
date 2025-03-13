@@ -12,17 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBackupVaultLockConfigurationRequest::PutBackupVaultLockConfigurationRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_minRetentionDays(0),
-    m_minRetentionDaysHasBeenSet(false),
-    m_maxRetentionDays(0),
-    m_maxRetentionDaysHasBeenSet(false),
-    m_changeableForDays(0),
-    m_changeableForDaysHasBeenSet(false)
-{
-}
-
 Aws::String PutBackupVaultLockConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

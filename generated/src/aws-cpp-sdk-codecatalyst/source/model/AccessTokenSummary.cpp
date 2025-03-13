@@ -18,15 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-AccessTokenSummary::AccessTokenSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expiresTimeHasBeenSet(false)
-{
-}
-
 AccessTokenSummary::AccessTokenSummary(JsonView jsonValue)
-  : AccessTokenSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AccessTokenSummary& AccessTokenSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresTime"))
   {
     m_expiresTime = jsonValue.GetString("expiresTime");
-
     m_expiresTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

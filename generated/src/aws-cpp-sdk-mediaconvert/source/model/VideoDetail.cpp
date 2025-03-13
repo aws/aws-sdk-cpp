@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoDetail::VideoDetail() : 
-    m_heightInPx(0),
-    m_heightInPxHasBeenSet(false),
-    m_widthInPx(0),
-    m_widthInPxHasBeenSet(false)
-{
-}
-
 VideoDetail::VideoDetail(JsonView jsonValue)
-  : VideoDetail()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VideoDetail& VideoDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("heightInPx"))
   {
     m_heightInPx = jsonValue.GetInteger("heightInPx");
-
     m_heightInPxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("widthInPx"))
   {
     m_widthInPx = jsonValue.GetInteger("widthInPx");
-
     m_widthInPxHasBeenSet = true;
   }
-
   return *this;
 }
 

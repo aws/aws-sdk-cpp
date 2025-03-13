@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IKEVersionsListValue::IKEVersionsListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 IKEVersionsListValue::IKEVersionsListValue(const XmlNode& xmlNode)
-  : IKEVersionsListValue()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ IKEVersionsListValue& IKEVersionsListValue::operator =(const XmlNode& xmlNode)
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

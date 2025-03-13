@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAnomalySubscriptionRequest::DeleteAnomalySubscriptionRequest() : 
-    m_subscriptionArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAnomalySubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

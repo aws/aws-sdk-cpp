@@ -12,12 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePackageRequest::CreatePackageRequest() : 
-    m_packageNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePackageRequest::SerializePayload() const
 {
   JsonValue payload;

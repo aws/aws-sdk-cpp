@@ -32,7 +32,7 @@ namespace Model
   class CoreNetworkEdge
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkEdge();
+    AWS_NETWORKMANAGER_API CoreNetworkEdge() = default;
     AWS_NETWORKMANAGER_API CoreNetworkEdge(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkEdge& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The Region where a core network edge is located.</p>
      */
-    inline const Aws::String& GetEdgeLocation() const{ return m_edgeLocation; }
+    inline const Aws::String& GetEdgeLocation() const { return m_edgeLocation; }
     inline bool EdgeLocationHasBeenSet() const { return m_edgeLocationHasBeenSet; }
-    inline void SetEdgeLocation(const Aws::String& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = value; }
-    inline void SetEdgeLocation(Aws::String&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::move(value); }
-    inline void SetEdgeLocation(const char* value) { m_edgeLocationHasBeenSet = true; m_edgeLocation.assign(value); }
-    inline CoreNetworkEdge& WithEdgeLocation(const Aws::String& value) { SetEdgeLocation(value); return *this;}
-    inline CoreNetworkEdge& WithEdgeLocation(Aws::String&& value) { SetEdgeLocation(std::move(value)); return *this;}
-    inline CoreNetworkEdge& WithEdgeLocation(const char* value) { SetEdgeLocation(value); return *this;}
+    template<typename EdgeLocationT = Aws::String>
+    void SetEdgeLocation(EdgeLocationT&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::forward<EdgeLocationT>(value); }
+    template<typename EdgeLocationT = Aws::String>
+    CoreNetworkEdge& WithEdgeLocation(EdgeLocationT&& value) { SetEdgeLocation(std::forward<EdgeLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ASN of a core network edge.</p>
      */
-    inline long long GetAsn() const{ return m_asn; }
+    inline long long GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
     inline void SetAsn(long long value) { m_asnHasBeenSet = true; m_asn = value; }
     inline CoreNetworkEdge& WithAsn(long long value) { SetAsn(value); return *this;}
@@ -66,22 +64,21 @@ namespace Model
     /**
      * <p>The inside IP addresses used for core network edges.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInsideCidrBlocks() const{ return m_insideCidrBlocks; }
+    inline const Aws::Vector<Aws::String>& GetInsideCidrBlocks() const { return m_insideCidrBlocks; }
     inline bool InsideCidrBlocksHasBeenSet() const { return m_insideCidrBlocksHasBeenSet; }
-    inline void SetInsideCidrBlocks(const Aws::Vector<Aws::String>& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks = value; }
-    inline void SetInsideCidrBlocks(Aws::Vector<Aws::String>&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks = std::move(value); }
-    inline CoreNetworkEdge& WithInsideCidrBlocks(const Aws::Vector<Aws::String>& value) { SetInsideCidrBlocks(value); return *this;}
-    inline CoreNetworkEdge& WithInsideCidrBlocks(Aws::Vector<Aws::String>&& value) { SetInsideCidrBlocks(std::move(value)); return *this;}
-    inline CoreNetworkEdge& AddInsideCidrBlocks(const Aws::String& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.push_back(value); return *this; }
-    inline CoreNetworkEdge& AddInsideCidrBlocks(Aws::String&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.push_back(std::move(value)); return *this; }
-    inline CoreNetworkEdge& AddInsideCidrBlocks(const char* value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.push_back(value); return *this; }
+    template<typename InsideCidrBlocksT = Aws::Vector<Aws::String>>
+    void SetInsideCidrBlocks(InsideCidrBlocksT&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks = std::forward<InsideCidrBlocksT>(value); }
+    template<typename InsideCidrBlocksT = Aws::Vector<Aws::String>>
+    CoreNetworkEdge& WithInsideCidrBlocks(InsideCidrBlocksT&& value) { SetInsideCidrBlocks(std::forward<InsideCidrBlocksT>(value)); return *this;}
+    template<typename InsideCidrBlocksT = Aws::String>
+    CoreNetworkEdge& AddInsideCidrBlocks(InsideCidrBlocksT&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.emplace_back(std::forward<InsideCidrBlocksT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_edgeLocation;
     bool m_edgeLocationHasBeenSet = false;
 
-    long long m_asn;
+    long long m_asn{0};
     bool m_asnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_insideCidrBlocks;

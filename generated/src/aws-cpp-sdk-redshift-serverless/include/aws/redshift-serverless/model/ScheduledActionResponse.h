@@ -36,7 +36,7 @@ namespace Model
   class ScheduledActionResponse
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ScheduledActionResponse();
+    AWS_REDSHIFTSERVERLESS_API ScheduledActionResponse() = default;
     AWS_REDSHIFTSERVERLESS_API ScheduledActionResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API ScheduledActionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>The end time of </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ScheduledActionResponse& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ScheduledActionResponse& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ScheduledActionResponse& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +59,26 @@ namespace Model
      * <p>The end time in UTC when the schedule is no longer active. After this time,
      * the scheduled action does not trigger.</p>
      */
-    inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
+    inline const Aws::String& GetNamespaceName() const { return m_namespaceName; }
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-    inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-    inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-    inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-    inline ScheduledActionResponse& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-    inline ScheduledActionResponse& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-    inline ScheduledActionResponse& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    template<typename NamespaceNameT = Aws::String>
+    void SetNamespaceName(NamespaceNameT&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::forward<NamespaceNameT>(value); }
+    template<typename NamespaceNameT = Aws::String>
+    ScheduledActionResponse& WithNamespaceName(NamespaceNameT&& value) { SetNamespaceName(std::forward<NamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of timestamps of when the next scheduled actions will trigger.</p>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetNextInvocations() const{ return m_nextInvocations; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetNextInvocations() const { return m_nextInvocations; }
     inline bool NextInvocationsHasBeenSet() const { return m_nextInvocationsHasBeenSet; }
-    inline void SetNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = value; }
-    inline void SetNextInvocations(Aws::Vector<Aws::Utils::DateTime>&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = std::move(value); }
-    inline ScheduledActionResponse& WithNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { SetNextInvocations(value); return *this;}
-    inline ScheduledActionResponse& WithNextInvocations(Aws::Vector<Aws::Utils::DateTime>&& value) { SetNextInvocations(std::move(value)); return *this;}
-    inline ScheduledActionResponse& AddNextInvocations(const Aws::Utils::DateTime& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.push_back(value); return *this; }
-    inline ScheduledActionResponse& AddNextInvocations(Aws::Utils::DateTime&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.push_back(std::move(value)); return *this; }
+    template<typename NextInvocationsT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetNextInvocations(NextInvocationsT&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = std::forward<NextInvocationsT>(value); }
+    template<typename NextInvocationsT = Aws::Vector<Aws::Utils::DateTime>>
+    ScheduledActionResponse& WithNextInvocations(NextInvocationsT&& value) { SetNextInvocations(std::forward<NextInvocationsT>(value)); return *this;}
+    template<typename NextInvocationsT = Aws::Utils::DateTime>
+    ScheduledActionResponse& AddNextInvocations(NextInvocationsT&& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations.emplace_back(std::forward<NextInvocationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -95,14 +93,12 @@ namespace Model
      * Identity-Based Policies for Amazon Redshift</a> in the Amazon Redshift
      * Management Guide</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ScheduledActionResponse& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ScheduledActionResponse& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ScheduledActionResponse& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ScheduledActionResponse& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,54 +114,48 @@ namespace Model
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> </li>
      * </ul>
      */
-    inline const Schedule& GetSchedule() const{ return m_schedule; }
+    inline const Schedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline ScheduledActionResponse& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
-    inline ScheduledActionResponse& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = Schedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Schedule>
+    ScheduledActionResponse& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionDescription() const{ return m_scheduledActionDescription; }
+    inline const Aws::String& GetScheduledActionDescription() const { return m_scheduledActionDescription; }
     inline bool ScheduledActionDescriptionHasBeenSet() const { return m_scheduledActionDescriptionHasBeenSet; }
-    inline void SetScheduledActionDescription(const Aws::String& value) { m_scheduledActionDescriptionHasBeenSet = true; m_scheduledActionDescription = value; }
-    inline void SetScheduledActionDescription(Aws::String&& value) { m_scheduledActionDescriptionHasBeenSet = true; m_scheduledActionDescription = std::move(value); }
-    inline void SetScheduledActionDescription(const char* value) { m_scheduledActionDescriptionHasBeenSet = true; m_scheduledActionDescription.assign(value); }
-    inline ScheduledActionResponse& WithScheduledActionDescription(const Aws::String& value) { SetScheduledActionDescription(value); return *this;}
-    inline ScheduledActionResponse& WithScheduledActionDescription(Aws::String&& value) { SetScheduledActionDescription(std::move(value)); return *this;}
-    inline ScheduledActionResponse& WithScheduledActionDescription(const char* value) { SetScheduledActionDescription(value); return *this;}
+    template<typename ScheduledActionDescriptionT = Aws::String>
+    void SetScheduledActionDescription(ScheduledActionDescriptionT&& value) { m_scheduledActionDescriptionHasBeenSet = true; m_scheduledActionDescription = std::forward<ScheduledActionDescriptionT>(value); }
+    template<typename ScheduledActionDescriptionT = Aws::String>
+    ScheduledActionResponse& WithScheduledActionDescription(ScheduledActionDescriptionT&& value) { SetScheduledActionDescription(std::forward<ScheduledActionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+    inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-    inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-    inline ScheduledActionResponse& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-    inline ScheduledActionResponse& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-    inline ScheduledActionResponse& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
+    template<typename ScheduledActionNameT = Aws::String>
+    void SetScheduledActionName(ScheduledActionNameT&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::forward<ScheduledActionNameT>(value); }
+    template<typename ScheduledActionNameT = Aws::String>
+    ScheduledActionResponse& WithScheduledActionName(ScheduledActionNameT&& value) { SetScheduledActionName(std::forward<ScheduledActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The uuid of the scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionUuid() const{ return m_scheduledActionUuid; }
+    inline const Aws::String& GetScheduledActionUuid() const { return m_scheduledActionUuid; }
     inline bool ScheduledActionUuidHasBeenSet() const { return m_scheduledActionUuidHasBeenSet; }
-    inline void SetScheduledActionUuid(const Aws::String& value) { m_scheduledActionUuidHasBeenSet = true; m_scheduledActionUuid = value; }
-    inline void SetScheduledActionUuid(Aws::String&& value) { m_scheduledActionUuidHasBeenSet = true; m_scheduledActionUuid = std::move(value); }
-    inline void SetScheduledActionUuid(const char* value) { m_scheduledActionUuidHasBeenSet = true; m_scheduledActionUuid.assign(value); }
-    inline ScheduledActionResponse& WithScheduledActionUuid(const Aws::String& value) { SetScheduledActionUuid(value); return *this;}
-    inline ScheduledActionResponse& WithScheduledActionUuid(Aws::String&& value) { SetScheduledActionUuid(std::move(value)); return *this;}
-    inline ScheduledActionResponse& WithScheduledActionUuid(const char* value) { SetScheduledActionUuid(value); return *this;}
+    template<typename ScheduledActionUuidT = Aws::String>
+    void SetScheduledActionUuid(ScheduledActionUuidT&& value) { m_scheduledActionUuidHasBeenSet = true; m_scheduledActionUuid = std::forward<ScheduledActionUuidT>(value); }
+    template<typename ScheduledActionUuidT = Aws::String>
+    ScheduledActionResponse& WithScheduledActionUuid(ScheduledActionUuidT&& value) { SetScheduledActionUuid(std::forward<ScheduledActionUuidT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,38 +163,36 @@ namespace Model
      * <p>The start time in UTC when the schedule is active. Before this time, the
      * scheduled action does not trigger.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ScheduledActionResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ScheduledActionResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ScheduledActionResponse& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the scheduled action.</p>
      */
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ScheduledActionResponse& WithState(const State& value) { SetState(value); return *this;}
-    inline ScheduledActionResponse& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ScheduledActionResponse& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const TargetAction& GetTargetAction() const{ return m_targetAction; }
+    inline const TargetAction& GetTargetAction() const { return m_targetAction; }
     inline bool TargetActionHasBeenSet() const { return m_targetActionHasBeenSet; }
-    inline void SetTargetAction(const TargetAction& value) { m_targetActionHasBeenSet = true; m_targetAction = value; }
-    inline void SetTargetAction(TargetAction&& value) { m_targetActionHasBeenSet = true; m_targetAction = std::move(value); }
-    inline ScheduledActionResponse& WithTargetAction(const TargetAction& value) { SetTargetAction(value); return *this;}
-    inline ScheduledActionResponse& WithTargetAction(TargetAction&& value) { SetTargetAction(std::move(value)); return *this;}
+    template<typename TargetActionT = TargetAction>
+    void SetTargetAction(TargetActionT&& value) { m_targetActionHasBeenSet = true; m_targetAction = std::forward<TargetActionT>(value); }
+    template<typename TargetActionT = TargetAction>
+    ScheduledActionResponse& WithTargetAction(TargetActionT&& value) { SetTargetAction(std::forward<TargetActionT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_namespaceName;
@@ -228,10 +216,10 @@ namespace Model
     Aws::String m_scheduledActionUuid;
     bool m_scheduledActionUuidHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     TargetAction m_targetAction;

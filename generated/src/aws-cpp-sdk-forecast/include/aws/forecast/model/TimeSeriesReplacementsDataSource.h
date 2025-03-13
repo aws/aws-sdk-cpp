@@ -39,7 +39,7 @@ namespace Model
   class TimeSeriesReplacementsDataSource
   {
   public:
-    AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource();
+    AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource() = default;
     AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,50 +47,46 @@ namespace Model
 
     ///@{
     
-    inline const S3Config& GetS3Config() const{ return m_s3Config; }
+    inline const S3Config& GetS3Config() const { return m_s3Config; }
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
-    inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
-    inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
-    inline TimeSeriesReplacementsDataSource& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
-    inline TimeSeriesReplacementsDataSource& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
+    template<typename S3ConfigT = S3Config>
+    void SetS3Config(S3ConfigT&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::forward<S3ConfigT>(value); }
+    template<typename S3ConfigT = S3Config>
+    TimeSeriesReplacementsDataSource& WithS3Config(S3ConfigT&& value) { SetS3Config(std::forward<S3ConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Schema& GetSchema() const{ return m_schema; }
+    inline const Schema& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const Schema& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(Schema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline TimeSeriesReplacementsDataSource& WithSchema(const Schema& value) { SetSchema(value); return *this;}
-    inline TimeSeriesReplacementsDataSource& WithSchema(Schema&& value) { SetSchema(std::move(value)); return *this;}
+    template<typename SchemaT = Schema>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = Schema>
+    TimeSeriesReplacementsDataSource& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the replacement data, CSV or PARQUET.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline TimeSeriesReplacementsDataSource& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline TimeSeriesReplacementsDataSource& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline TimeSeriesReplacementsDataSource& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    TimeSeriesReplacementsDataSource& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp format of the replacement data.</p>
      */
-    inline const Aws::String& GetTimestampFormat() const{ return m_timestampFormat; }
+    inline const Aws::String& GetTimestampFormat() const { return m_timestampFormat; }
     inline bool TimestampFormatHasBeenSet() const { return m_timestampFormatHasBeenSet; }
-    inline void SetTimestampFormat(const Aws::String& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = value; }
-    inline void SetTimestampFormat(Aws::String&& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = std::move(value); }
-    inline void SetTimestampFormat(const char* value) { m_timestampFormatHasBeenSet = true; m_timestampFormat.assign(value); }
-    inline TimeSeriesReplacementsDataSource& WithTimestampFormat(const Aws::String& value) { SetTimestampFormat(value); return *this;}
-    inline TimeSeriesReplacementsDataSource& WithTimestampFormat(Aws::String&& value) { SetTimestampFormat(std::move(value)); return *this;}
-    inline TimeSeriesReplacementsDataSource& WithTimestampFormat(const char* value) { SetTimestampFormat(value); return *this;}
+    template<typename TimestampFormatT = Aws::String>
+    void SetTimestampFormat(TimestampFormatT&& value) { m_timestampFormatHasBeenSet = true; m_timestampFormat = std::forward<TimestampFormatT>(value); }
+    template<typename TimestampFormatT = Aws::String>
+    TimeSeriesReplacementsDataSource& WithTimestampFormat(TimestampFormatT&& value) { SetTimestampFormat(std::forward<TimestampFormatT>(value)); return *this;}
     ///@}
   private:
 

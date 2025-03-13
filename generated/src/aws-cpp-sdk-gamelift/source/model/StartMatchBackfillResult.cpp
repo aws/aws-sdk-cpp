@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMatchBackfillResult::StartMatchBackfillResult()
-{
-}
-
 StartMatchBackfillResult::StartMatchBackfillResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartMatchBackfillResult& StartMatchBackfillResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("MatchmakingTicket"))
   {
     m_matchmakingTicket = jsonValue.GetObject("MatchmakingTicket");
-
+    m_matchmakingTicketHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LoadBalancersConfig::LoadBalancersConfig() : 
-    m_classicLoadBalancersConfigHasBeenSet(false),
-    m_targetGroupsConfigHasBeenSet(false)
-{
-}
-
 LoadBalancersConfig::LoadBalancersConfig(const XmlNode& xmlNode)
-  : LoadBalancersConfig()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LoadBalancersConfig& LoadBalancersConfig::operator =(const XmlNode& xmlNode)
     {
       m_classicLoadBalancersConfig = classicLoadBalancersConfigNode;
       m_classicLoadBalancersConfigHasBeenSet = true;
+       m_classicLoadBalancersConfigHasBeenSet = true;
     }
     XmlNode targetGroupsConfigNode = resultNode.FirstChild("targetGroupsConfig");
     if(!targetGroupsConfigNode.IsNull())
     {
       m_targetGroupsConfig = targetGroupsConfigNode;
       m_targetGroupsConfigHasBeenSet = true;
+       m_targetGroupsConfigHasBeenSet = true;
     }
   }
 

@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-HostHeaderConditionConfig::HostHeaderConditionConfig() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 HostHeaderConditionConfig::HostHeaderConditionConfig(const XmlNode& xmlNode)
-  : HostHeaderConditionConfig()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ HostHeaderConditionConfig& HostHeaderConditionConfig::operator =(const XmlNode& 
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
   }
 

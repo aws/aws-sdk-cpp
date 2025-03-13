@@ -22,7 +22,7 @@ namespace Model
   class UpdateSubscriptionsToEventBridgeRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API UpdateSubscriptionsToEventBridgeRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API UpdateSubscriptionsToEventBridgeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,14 @@ namespace Model
      * set to false, this operation runs only when all your replication instances are
      * from DMS version 3.4.5 or higher. </p>
      */
-    inline bool GetForceMove() const{ return m_forceMove; }
+    inline bool GetForceMove() const { return m_forceMove; }
     inline bool ForceMoveHasBeenSet() const { return m_forceMoveHasBeenSet; }
     inline void SetForceMove(bool value) { m_forceMoveHasBeenSet = true; m_forceMove = value; }
     inline UpdateSubscriptionsToEventBridgeRequest& WithForceMove(bool value) { SetForceMove(value); return *this;}
     ///@}
   private:
 
-    bool m_forceMove;
+    bool m_forceMove{false};
     bool m_forceMoveHasBeenSet = false;
   };
 

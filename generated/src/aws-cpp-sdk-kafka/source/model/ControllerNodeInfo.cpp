@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ControllerNodeInfo::ControllerNodeInfo() : 
-    m_endpointsHasBeenSet(false)
-{
-}
-
 ControllerNodeInfo::ControllerNodeInfo(JsonView jsonValue)
-  : ControllerNodeInfo()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ControllerNodeInfo& ControllerNodeInfo::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

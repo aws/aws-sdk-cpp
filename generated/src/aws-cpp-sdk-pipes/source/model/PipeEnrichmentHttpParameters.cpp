@@ -18,15 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters() : 
-    m_pathParameterValuesHasBeenSet(false),
-    m_headerParametersHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
-{
-}
-
 PipeEnrichmentHttpParameters::PipeEnrichmentHttpParameters(JsonView jsonValue)
-  : PipeEnrichmentHttpParameters()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ PipeEnrichmentHttpParameters& PipeEnrichmentHttpParameters::operator =(JsonView 
     }
     m_pathParameterValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderParameters"))
   {
     Aws::Map<Aws::String, JsonView> headerParametersJsonMap = jsonValue.GetObject("HeaderParameters").GetAllObjects();
@@ -52,7 +43,6 @@ PipeEnrichmentHttpParameters& PipeEnrichmentHttpParameters::operator =(JsonView 
     }
     m_headerParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStringParameters"))
   {
     Aws::Map<Aws::String, JsonView> queryStringParametersJsonMap = jsonValue.GetObject("QueryStringParameters").GetAllObjects();
@@ -62,7 +52,6 @@ PipeEnrichmentHttpParameters& PipeEnrichmentHttpParameters::operator =(JsonView 
     }
     m_queryStringParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

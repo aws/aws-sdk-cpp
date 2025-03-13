@@ -22,7 +22,7 @@ namespace Model
   class DescribeIdentityProviderConfigRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API DescribeIdentityProviderConfigRequest();
+    AWS_EKS_API DescribeIdentityProviderConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline DescribeIdentityProviderConfigRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline DescribeIdentityProviderConfigRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline DescribeIdentityProviderConfigRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    DescribeIdentityProviderConfigRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object representing an identity provider configuration.</p>
      */
-    inline const IdentityProviderConfig& GetIdentityProviderConfig() const{ return m_identityProviderConfig; }
+    inline const IdentityProviderConfig& GetIdentityProviderConfig() const { return m_identityProviderConfig; }
     inline bool IdentityProviderConfigHasBeenSet() const { return m_identityProviderConfigHasBeenSet; }
-    inline void SetIdentityProviderConfig(const IdentityProviderConfig& value) { m_identityProviderConfigHasBeenSet = true; m_identityProviderConfig = value; }
-    inline void SetIdentityProviderConfig(IdentityProviderConfig&& value) { m_identityProviderConfigHasBeenSet = true; m_identityProviderConfig = std::move(value); }
-    inline DescribeIdentityProviderConfigRequest& WithIdentityProviderConfig(const IdentityProviderConfig& value) { SetIdentityProviderConfig(value); return *this;}
-    inline DescribeIdentityProviderConfigRequest& WithIdentityProviderConfig(IdentityProviderConfig&& value) { SetIdentityProviderConfig(std::move(value)); return *this;}
+    template<typename IdentityProviderConfigT = IdentityProviderConfig>
+    void SetIdentityProviderConfig(IdentityProviderConfigT&& value) { m_identityProviderConfigHasBeenSet = true; m_identityProviderConfig = std::forward<IdentityProviderConfigT>(value); }
+    template<typename IdentityProviderConfigT = IdentityProviderConfig>
+    DescribeIdentityProviderConfigRequest& WithIdentityProviderConfig(IdentityProviderConfigT&& value) { SetIdentityProviderConfig(std::forward<IdentityProviderConfigT>(value)); return *this;}
     ///@}
   private:
 

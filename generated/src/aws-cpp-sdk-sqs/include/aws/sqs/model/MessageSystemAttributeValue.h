@@ -37,7 +37,7 @@ namespace Model
   class MessageSystemAttributeValue
   {
   public:
-    AWS_SQS_API MessageSystemAttributeValue();
+    AWS_SQS_API MessageSystemAttributeValue() = default;
     AWS_SQS_API MessageSystemAttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SQS_API MessageSystemAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
      * Printable Characters</a>.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline MessageSystemAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline MessageSystemAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline MessageSystemAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    MessageSystemAttributeValue& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,41 +63,40 @@ namespace Model
      * <p>Binary type attributes can store any binary data, such as compressed data,
      * encrypted data, or images.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBinaryValue() const{ return m_binaryValue; }
+    inline const Aws::Utils::ByteBuffer& GetBinaryValue() const { return m_binaryValue; }
     inline bool BinaryValueHasBeenSet() const { return m_binaryValueHasBeenSet; }
-    inline void SetBinaryValue(const Aws::Utils::ByteBuffer& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
-    inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::move(value); }
-    inline MessageSystemAttributeValue& WithBinaryValue(const Aws::Utils::ByteBuffer& value) { SetBinaryValue(value); return *this;}
-    inline MessageSystemAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
+    template<typename BinaryValueT = Aws::Utils::ByteBuffer>
+    void SetBinaryValue(BinaryValueT&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::forward<BinaryValueT>(value); }
+    template<typename BinaryValueT = Aws::Utils::ByteBuffer>
+    MessageSystemAttributeValue& WithBinaryValue(BinaryValueT&& value) { SetBinaryValue(std::forward<BinaryValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringListValues() const{ return m_stringListValues; }
+    inline const Aws::Vector<Aws::String>& GetStringListValues() const { return m_stringListValues; }
     inline bool StringListValuesHasBeenSet() const { return m_stringListValuesHasBeenSet; }
-    inline void SetStringListValues(const Aws::Vector<Aws::String>& value) { m_stringListValuesHasBeenSet = true; m_stringListValues = value; }
-    inline void SetStringListValues(Aws::Vector<Aws::String>&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues = std::move(value); }
-    inline MessageSystemAttributeValue& WithStringListValues(const Aws::Vector<Aws::String>& value) { SetStringListValues(value); return *this;}
-    inline MessageSystemAttributeValue& WithStringListValues(Aws::Vector<Aws::String>&& value) { SetStringListValues(std::move(value)); return *this;}
-    inline MessageSystemAttributeValue& AddStringListValues(const Aws::String& value) { m_stringListValuesHasBeenSet = true; m_stringListValues.push_back(value); return *this; }
-    inline MessageSystemAttributeValue& AddStringListValues(Aws::String&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues.push_back(std::move(value)); return *this; }
-    inline MessageSystemAttributeValue& AddStringListValues(const char* value) { m_stringListValuesHasBeenSet = true; m_stringListValues.push_back(value); return *this; }
+    template<typename StringListValuesT = Aws::Vector<Aws::String>>
+    void SetStringListValues(StringListValuesT&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues = std::forward<StringListValuesT>(value); }
+    template<typename StringListValuesT = Aws::Vector<Aws::String>>
+    MessageSystemAttributeValue& WithStringListValues(StringListValuesT&& value) { SetStringListValues(std::forward<StringListValuesT>(value)); return *this;}
+    template<typename StringListValuesT = Aws::String>
+    MessageSystemAttributeValue& AddStringListValues(StringListValuesT&& value) { m_stringListValuesHasBeenSet = true; m_stringListValues.emplace_back(std::forward<StringListValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Not implemented. Reserved for future use.</p>
      */
-    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetBinaryListValues() const{ return m_binaryListValues; }
+    inline const Aws::Vector<Aws::Utils::ByteBuffer>& GetBinaryListValues() const { return m_binaryListValues; }
     inline bool BinaryListValuesHasBeenSet() const { return m_binaryListValuesHasBeenSet; }
-    inline void SetBinaryListValues(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues = value; }
-    inline void SetBinaryListValues(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues = std::move(value); }
-    inline MessageSystemAttributeValue& WithBinaryListValues(const Aws::Vector<Aws::Utils::ByteBuffer>& value) { SetBinaryListValues(value); return *this;}
-    inline MessageSystemAttributeValue& WithBinaryListValues(Aws::Vector<Aws::Utils::ByteBuffer>&& value) { SetBinaryListValues(std::move(value)); return *this;}
-    inline MessageSystemAttributeValue& AddBinaryListValues(const Aws::Utils::ByteBuffer& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues.push_back(value); return *this; }
-    inline MessageSystemAttributeValue& AddBinaryListValues(Aws::Utils::ByteBuffer&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues.push_back(std::move(value)); return *this; }
+    template<typename BinaryListValuesT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    void SetBinaryListValues(BinaryListValuesT&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues = std::forward<BinaryListValuesT>(value); }
+    template<typename BinaryListValuesT = Aws::Vector<Aws::Utils::ByteBuffer>>
+    MessageSystemAttributeValue& WithBinaryListValues(BinaryListValuesT&& value) { SetBinaryListValues(std::forward<BinaryListValuesT>(value)); return *this;}
+    template<typename BinaryListValuesT = Aws::Utils::ByteBuffer>
+    MessageSystemAttributeValue& AddBinaryListValues(BinaryListValuesT&& value) { m_binaryListValuesHasBeenSet = true; m_binaryListValues.emplace_back(std::forward<BinaryListValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -111,21 +108,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
      * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDataType() const{ return m_dataType; }
+    inline const Aws::String& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-    inline MessageSystemAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-    inline MessageSystemAttributeValue& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-    inline MessageSystemAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
+    template<typename DataTypeT = Aws::String>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::String>
+    MessageSystemAttributeValue& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_binaryValue;
+    Aws::Utils::ByteBuffer m_binaryValue{};
     bool m_binaryValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringListValues;

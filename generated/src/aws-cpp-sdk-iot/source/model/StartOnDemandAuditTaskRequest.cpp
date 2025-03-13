@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartOnDemandAuditTaskRequest::StartOnDemandAuditTaskRequest() : 
-    m_targetCheckNamesHasBeenSet(false)
-{
-}
-
 Aws::String StartOnDemandAuditTaskRequest::SerializePayload() const
 {
   JsonValue payload;

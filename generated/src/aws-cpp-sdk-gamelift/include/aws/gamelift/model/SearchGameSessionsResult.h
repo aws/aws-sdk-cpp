@@ -29,7 +29,7 @@ namespace Model
   class SearchGameSessionsResult
   {
   public:
-    AWS_GAMELIFT_API SearchGameSessionsResult();
+    AWS_GAMELIFT_API SearchGameSessionsResult() = default;
     AWS_GAMELIFT_API SearchGameSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API SearchGameSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A collection of objects containing game session properties for each session
      * that matches the request.</p>
      */
-    inline const Aws::Vector<GameSession>& GetGameSessions() const{ return m_gameSessions; }
-    inline void SetGameSessions(const Aws::Vector<GameSession>& value) { m_gameSessions = value; }
-    inline void SetGameSessions(Aws::Vector<GameSession>&& value) { m_gameSessions = std::move(value); }
-    inline SearchGameSessionsResult& WithGameSessions(const Aws::Vector<GameSession>& value) { SetGameSessions(value); return *this;}
-    inline SearchGameSessionsResult& WithGameSessions(Aws::Vector<GameSession>&& value) { SetGameSessions(std::move(value)); return *this;}
-    inline SearchGameSessionsResult& AddGameSessions(const GameSession& value) { m_gameSessions.push_back(value); return *this; }
-    inline SearchGameSessionsResult& AddGameSessions(GameSession&& value) { m_gameSessions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GameSession>& GetGameSessions() const { return m_gameSessions; }
+    template<typename GameSessionsT = Aws::Vector<GameSession>>
+    void SetGameSessions(GameSessionsT&& value) { m_gameSessionsHasBeenSet = true; m_gameSessions = std::forward<GameSessionsT>(value); }
+    template<typename GameSessionsT = Aws::Vector<GameSession>>
+    SearchGameSessionsResult& WithGameSessions(GameSessionsT&& value) { SetGameSessions(std::forward<GameSessionsT>(value)); return *this;}
+    template<typename GameSessionsT = GameSession>
+    SearchGameSessionsResult& AddGameSessions(GameSessionsT&& value) { m_gameSessionsHasBeenSet = true; m_gameSessions.emplace_back(std::forward<GameSessionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline SearchGameSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchGameSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchGameSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchGameSessionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchGameSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchGameSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchGameSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchGameSessionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GameSession> m_gameSessions;
+    bool m_gameSessionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

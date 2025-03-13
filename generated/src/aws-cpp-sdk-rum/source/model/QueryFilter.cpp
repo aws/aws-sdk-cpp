@@ -18,14 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-QueryFilter::QueryFilter() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 QueryFilter::QueryFilter(JsonView jsonValue)
-  : QueryFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ QueryFilter& QueryFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ QueryFilter& QueryFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

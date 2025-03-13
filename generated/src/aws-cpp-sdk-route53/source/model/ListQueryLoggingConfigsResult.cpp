@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQueryLoggingConfigsResult::ListQueryLoggingConfigsResult()
-{
-}
-
 ListQueryLoggingConfigsResult::ListQueryLoggingConfigsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ListQueryLoggingConfigsResult& ListQueryLoggingConfigsResult::operator =(const A
     if(!queryLoggingConfigsNode.IsNull())
     {
       XmlNode queryLoggingConfigsMember = queryLoggingConfigsNode.FirstChild("QueryLoggingConfig");
+      m_queryLoggingConfigsHasBeenSet = !queryLoggingConfigsMember.IsNull();
       while(!queryLoggingConfigsMember.IsNull())
       {
         m_queryLoggingConfigs.push_back(queryLoggingConfigsMember);
@@ -47,6 +44,7 @@ ListQueryLoggingConfigsResult& ListQueryLoggingConfigsResult::operator =(const A
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ ListQueryLoggingConfigsResult& ListQueryLoggingConfigsResult::operator =(const A
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,16 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-CloudFormationHealth::CloudFormationHealth() : 
-    m_stackNameHasBeenSet(false),
-    m_insightHasBeenSet(false),
-    m_analyzedResourceCount(0),
-    m_analyzedResourceCountHasBeenSet(false)
-{
-}
-
 CloudFormationHealth::CloudFormationHealth(JsonView jsonValue)
-  : CloudFormationHealth()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CloudFormationHealth& CloudFormationHealth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StackName"))
   {
     m_stackName = jsonValue.GetString("StackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Insight"))
   {
     m_insight = jsonValue.GetObject("Insight");
-
     m_insightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalyzedResourceCount"))
   {
     m_analyzedResourceCount = jsonValue.GetInt64("AnalyzedResourceCount");
-
     m_analyzedResourceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

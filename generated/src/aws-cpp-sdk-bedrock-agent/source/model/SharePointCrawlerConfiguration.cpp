@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SharePointCrawlerConfiguration::SharePointCrawlerConfiguration() : 
-    m_filterConfigurationHasBeenSet(false)
-{
-}
-
 SharePointCrawlerConfiguration::SharePointCrawlerConfiguration(JsonView jsonValue)
-  : SharePointCrawlerConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SharePointCrawlerConfiguration& SharePointCrawlerConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("filterConfiguration"))
   {
     m_filterConfiguration = jsonValue.GetObject("filterConfiguration");
-
     m_filterConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

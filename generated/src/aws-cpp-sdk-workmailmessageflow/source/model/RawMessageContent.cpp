@@ -18,13 +18,7 @@ namespace WorkMailMessageFlow
 namespace Model
 {
 
-RawMessageContent::RawMessageContent() : 
-    m_s3ReferenceHasBeenSet(false)
-{
-}
-
 RawMessageContent::RawMessageContent(JsonView jsonValue)
-  : RawMessageContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RawMessageContent& RawMessageContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Reference"))
   {
     m_s3Reference = jsonValue.GetObject("s3Reference");
-
     m_s3ReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

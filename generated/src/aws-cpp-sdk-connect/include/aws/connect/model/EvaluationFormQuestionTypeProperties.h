@@ -34,7 +34,7 @@ namespace Model
   class EvaluationFormQuestionTypeProperties
   {
   public:
-    AWS_CONNECT_API EvaluationFormQuestionTypeProperties();
+    AWS_CONNECT_API EvaluationFormQuestionTypeProperties() = default;
     AWS_CONNECT_API EvaluationFormQuestionTypeProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EvaluationFormQuestionTypeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The properties of the numeric question.</p>
      */
-    inline const EvaluationFormNumericQuestionProperties& GetNumeric() const{ return m_numeric; }
+    inline const EvaluationFormNumericQuestionProperties& GetNumeric() const { return m_numeric; }
     inline bool NumericHasBeenSet() const { return m_numericHasBeenSet; }
-    inline void SetNumeric(const EvaluationFormNumericQuestionProperties& value) { m_numericHasBeenSet = true; m_numeric = value; }
-    inline void SetNumeric(EvaluationFormNumericQuestionProperties&& value) { m_numericHasBeenSet = true; m_numeric = std::move(value); }
-    inline EvaluationFormQuestionTypeProperties& WithNumeric(const EvaluationFormNumericQuestionProperties& value) { SetNumeric(value); return *this;}
-    inline EvaluationFormQuestionTypeProperties& WithNumeric(EvaluationFormNumericQuestionProperties&& value) { SetNumeric(std::move(value)); return *this;}
+    template<typename NumericT = EvaluationFormNumericQuestionProperties>
+    void SetNumeric(NumericT&& value) { m_numericHasBeenSet = true; m_numeric = std::forward<NumericT>(value); }
+    template<typename NumericT = EvaluationFormNumericQuestionProperties>
+    EvaluationFormQuestionTypeProperties& WithNumeric(NumericT&& value) { SetNumeric(std::forward<NumericT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the numeric question.</p>
      */
-    inline const EvaluationFormSingleSelectQuestionProperties& GetSingleSelect() const{ return m_singleSelect; }
+    inline const EvaluationFormSingleSelectQuestionProperties& GetSingleSelect() const { return m_singleSelect; }
     inline bool SingleSelectHasBeenSet() const { return m_singleSelectHasBeenSet; }
-    inline void SetSingleSelect(const EvaluationFormSingleSelectQuestionProperties& value) { m_singleSelectHasBeenSet = true; m_singleSelect = value; }
-    inline void SetSingleSelect(EvaluationFormSingleSelectQuestionProperties&& value) { m_singleSelectHasBeenSet = true; m_singleSelect = std::move(value); }
-    inline EvaluationFormQuestionTypeProperties& WithSingleSelect(const EvaluationFormSingleSelectQuestionProperties& value) { SetSingleSelect(value); return *this;}
-    inline EvaluationFormQuestionTypeProperties& WithSingleSelect(EvaluationFormSingleSelectQuestionProperties&& value) { SetSingleSelect(std::move(value)); return *this;}
+    template<typename SingleSelectT = EvaluationFormSingleSelectQuestionProperties>
+    void SetSingleSelect(SingleSelectT&& value) { m_singleSelectHasBeenSet = true; m_singleSelect = std::forward<SingleSelectT>(value); }
+    template<typename SingleSelectT = EvaluationFormSingleSelectQuestionProperties>
+    EvaluationFormQuestionTypeProperties& WithSingleSelect(SingleSelectT&& value) { SetSingleSelect(std::forward<SingleSelectT>(value)); return *this;}
     ///@}
   private:
 

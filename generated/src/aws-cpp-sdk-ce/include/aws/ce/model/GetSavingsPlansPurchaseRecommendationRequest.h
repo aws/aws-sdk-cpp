@@ -27,7 +27,7 @@ namespace Model
   class GetSavingsPlansPurchaseRecommendationRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetSavingsPlansPurchaseRecommendationRequest();
+    AWS_COSTEXPLORER_API GetSavingsPlansPurchaseRecommendationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The Savings Plans recommendation type that's requested.</p>
      */
-    inline const SupportedSavingsPlansType& GetSavingsPlansType() const{ return m_savingsPlansType; }
+    inline SupportedSavingsPlansType GetSavingsPlansType() const { return m_savingsPlansType; }
     inline bool SavingsPlansTypeHasBeenSet() const { return m_savingsPlansTypeHasBeenSet; }
-    inline void SetSavingsPlansType(const SupportedSavingsPlansType& value) { m_savingsPlansTypeHasBeenSet = true; m_savingsPlansType = value; }
-    inline void SetSavingsPlansType(SupportedSavingsPlansType&& value) { m_savingsPlansTypeHasBeenSet = true; m_savingsPlansType = std::move(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithSavingsPlansType(const SupportedSavingsPlansType& value) { SetSavingsPlansType(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithSavingsPlansType(SupportedSavingsPlansType&& value) { SetSavingsPlansType(std::move(value)); return *this;}
+    inline void SetSavingsPlansType(SupportedSavingsPlansType value) { m_savingsPlansTypeHasBeenSet = true; m_savingsPlansType = value; }
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithSavingsPlansType(SupportedSavingsPlansType value) { SetSavingsPlansType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,24 +55,20 @@ namespace Model
      * <p>The savings plan recommendation term that's used to generate these
      * recommendations.</p>
      */
-    inline const TermInYears& GetTermInYears() const{ return m_termInYears; }
+    inline TermInYears GetTermInYears() const { return m_termInYears; }
     inline bool TermInYearsHasBeenSet() const { return m_termInYearsHasBeenSet; }
-    inline void SetTermInYears(const TermInYears& value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
-    inline void SetTermInYears(TermInYears&& value) { m_termInYearsHasBeenSet = true; m_termInYears = std::move(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(const TermInYears& value) { SetTermInYears(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(TermInYears&& value) { SetTermInYears(std::move(value)); return *this;}
+    inline void SetTermInYears(TermInYears value) { m_termInYearsHasBeenSet = true; m_termInYears = value; }
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithTermInYears(TermInYears value) { SetTermInYears(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment option that's used to generate these recommendations.</p>
      */
-    inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
+    inline PaymentOption GetPaymentOption() const { return m_paymentOption; }
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
+    inline void SetPaymentOption(PaymentOption value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithPaymentOption(PaymentOption value) { SetPaymentOption(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +78,10 @@ namespace Model
      * if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
      * recommendations are calculated for individual member accounts only.</p>
      */
-    inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
+    inline AccountScope GetAccountScope() const { return m_accountScope; }
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
-    inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
-    inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}
+    inline void SetAccountScope(AccountScope value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithAccountScope(AccountScope value) { SetAccountScope(value); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +90,12 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetSavingsPlansPurchaseRecommendationRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,7 +103,7 @@ namespace Model
      * <p>The number of recommendations that you want returned in a single response
      * object.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline GetSavingsPlansPurchaseRecommendationRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -123,12 +113,10 @@ namespace Model
     /**
      * <p>The lookback period that's used to generate the recommendation.</p>
      */
-    inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
+    inline LookbackPeriodInDays GetLookbackPeriodInDays() const { return m_lookbackPeriodInDays; }
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
-    inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
-    inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
+    inline void SetLookbackPeriodInDays(LookbackPeriodInDays value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithLookbackPeriodInDays(LookbackPeriodInDays value) { SetLookbackPeriodInDays(value); return *this;}
     ///@}
 
     ///@{
@@ -146,34 +134,34 @@ namespace Model
      * Recommendations for. <code>AND</code> and <code>OR</code> operators are not
      * supported.</p>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetSavingsPlansPurchaseRecommendationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetSavingsPlansPurchaseRecommendationRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 
-    SupportedSavingsPlansType m_savingsPlansType;
+    SupportedSavingsPlansType m_savingsPlansType{SupportedSavingsPlansType::NOT_SET};
     bool m_savingsPlansTypeHasBeenSet = false;
 
-    TermInYears m_termInYears;
+    TermInYears m_termInYears{TermInYears::NOT_SET};
     bool m_termInYearsHasBeenSet = false;
 
-    PaymentOption m_paymentOption;
+    PaymentOption m_paymentOption{PaymentOption::NOT_SET};
     bool m_paymentOptionHasBeenSet = false;
 
-    AccountScope m_accountScope;
+    AccountScope m_accountScope{AccountScope::NOT_SET};
     bool m_accountScopeHasBeenSet = false;
 
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
-    LookbackPeriodInDays m_lookbackPeriodInDays;
+    LookbackPeriodInDays m_lookbackPeriodInDays{LookbackPeriodInDays::NOT_SET};
     bool m_lookbackPeriodInDaysHasBeenSet = false;
 
     Expression m_filter;

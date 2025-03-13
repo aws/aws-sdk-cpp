@@ -36,7 +36,7 @@ namespace Model
   class OrchestrationConfiguration
   {
   public:
-    AWS_QBUSINESS_API OrchestrationConfiguration();
+    AWS_QBUSINESS_API OrchestrationConfiguration() = default;
     AWS_QBUSINESS_API OrchestrationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API OrchestrationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * <p> Status information about whether chat orchestration is activated or
      * deactivated for your Amazon Q Business application.</p>
      */
-    inline const OrchestrationControl& GetControl() const{ return m_control; }
+    inline OrchestrationControl GetControl() const { return m_control; }
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-    inline void SetControl(const OrchestrationControl& value) { m_controlHasBeenSet = true; m_control = value; }
-    inline void SetControl(OrchestrationControl&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-    inline OrchestrationConfiguration& WithControl(const OrchestrationControl& value) { SetControl(value); return *this;}
-    inline OrchestrationConfiguration& WithControl(OrchestrationControl&& value) { SetControl(std::move(value)); return *this;}
+    inline void SetControl(OrchestrationControl value) { m_controlHasBeenSet = true; m_control = value; }
+    inline OrchestrationConfiguration& WithControl(OrchestrationControl value) { SetControl(value); return *this;}
     ///@}
   private:
 
-    OrchestrationControl m_control;
+    OrchestrationControl m_control{OrchestrationControl::NOT_SET};
     bool m_controlHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIntegrationAssociationRequest::DeleteIntegrationAssociationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_integrationAssociationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntegrationAssociationRequest::SerializePayload() const
 {
   return {};

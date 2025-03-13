@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SectionBasedLayoutPaperCanvasSizeOptions::SectionBasedLayoutPaperCanvasSizeOptions() : 
-    m_paperSize(PaperSize::NOT_SET),
-    m_paperSizeHasBeenSet(false),
-    m_paperOrientation(PaperOrientation::NOT_SET),
-    m_paperOrientationHasBeenSet(false),
-    m_paperMarginHasBeenSet(false)
-{
-}
-
 SectionBasedLayoutPaperCanvasSizeOptions::SectionBasedLayoutPaperCanvasSizeOptions(JsonView jsonValue)
-  : SectionBasedLayoutPaperCanvasSizeOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SectionBasedLayoutPaperCanvasSizeOptions& SectionBasedLayoutPaperCanvasSizeOptio
   if(jsonValue.ValueExists("PaperSize"))
   {
     m_paperSize = PaperSizeMapper::GetPaperSizeForName(jsonValue.GetString("PaperSize"));
-
     m_paperSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaperOrientation"))
   {
     m_paperOrientation = PaperOrientationMapper::GetPaperOrientationForName(jsonValue.GetString("PaperOrientation"));
-
     m_paperOrientationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaperMargin"))
   {
     m_paperMargin = jsonValue.GetObject("PaperMargin");
-
     m_paperMarginHasBeenSet = true;
   }
-
   return *this;
 }
 

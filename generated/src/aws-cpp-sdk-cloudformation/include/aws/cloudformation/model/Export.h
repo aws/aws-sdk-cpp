@@ -32,7 +32,7 @@ namespace Model
   class Export
   {
   public:
-    AWS_CLOUDFORMATION_API Export();
+    AWS_CLOUDFORMATION_API Export() = default;
     AWS_CLOUDFORMATION_API Export(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API Export& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The stack that contains the exported output name and value.</p>
      */
-    inline const Aws::String& GetExportingStackId() const{ return m_exportingStackId; }
+    inline const Aws::String& GetExportingStackId() const { return m_exportingStackId; }
     inline bool ExportingStackIdHasBeenSet() const { return m_exportingStackIdHasBeenSet; }
-    inline void SetExportingStackId(const Aws::String& value) { m_exportingStackIdHasBeenSet = true; m_exportingStackId = value; }
-    inline void SetExportingStackId(Aws::String&& value) { m_exportingStackIdHasBeenSet = true; m_exportingStackId = std::move(value); }
-    inline void SetExportingStackId(const char* value) { m_exportingStackIdHasBeenSet = true; m_exportingStackId.assign(value); }
-    inline Export& WithExportingStackId(const Aws::String& value) { SetExportingStackId(value); return *this;}
-    inline Export& WithExportingStackId(Aws::String&& value) { SetExportingStackId(std::move(value)); return *this;}
-    inline Export& WithExportingStackId(const char* value) { SetExportingStackId(value); return *this;}
+    template<typename ExportingStackIdT = Aws::String>
+    void SetExportingStackId(ExportingStackIdT&& value) { m_exportingStackIdHasBeenSet = true; m_exportingStackId = std::forward<ExportingStackIdT>(value); }
+    template<typename ExportingStackIdT = Aws::String>
+    Export& WithExportingStackId(ExportingStackIdT&& value) { SetExportingStackId(std::forward<ExportingStackIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * stacks. The name is defined in the <code>Export</code> field in the associated
      * stack's <code>Outputs</code> section.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Export& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Export& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Export& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Export& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * is defined in the <code>Export</code> field in the associated stack's
      * <code>Outputs</code> section.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Export& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Export& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Export& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Export& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,17 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAggregateConfigRuleComplianceSummaryRequest::GetAggregateConfigRuleComplianceSummaryRequest() : 
-    m_configurationAggregatorNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_groupByKey(ConfigRuleComplianceSummaryGroupKey::NOT_SET),
-    m_groupByKeyHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetAggregateConfigRuleComplianceSummaryRequest::SerializePayload() const
 {
   JsonValue payload;

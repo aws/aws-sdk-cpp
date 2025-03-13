@@ -18,19 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepAmountCapability::StepAmountCapability() : 
-    m_nameHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 StepAmountCapability::StepAmountCapability(JsonView jsonValue)
-  : StepAmountCapability()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ StepAmountCapability& StepAmountCapability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetDouble("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetDouble("max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

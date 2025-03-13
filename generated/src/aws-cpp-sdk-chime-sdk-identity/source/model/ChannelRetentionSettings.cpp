@@ -18,14 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-ChannelRetentionSettings::ChannelRetentionSettings() : 
-    m_retentionDays(0),
-    m_retentionDaysHasBeenSet(false)
-{
-}
-
 ChannelRetentionSettings::ChannelRetentionSettings(JsonView jsonValue)
-  : ChannelRetentionSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ChannelRetentionSettings& ChannelRetentionSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("RetentionDays"))
   {
     m_retentionDays = jsonValue.GetInteger("RetentionDays");
-
     m_retentionDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

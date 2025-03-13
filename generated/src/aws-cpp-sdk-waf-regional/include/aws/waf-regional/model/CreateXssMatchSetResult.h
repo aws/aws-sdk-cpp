@@ -34,7 +34,7 @@ namespace Model
   class CreateXssMatchSetResult
   {
   public:
-    AWS_WAFREGIONAL_API CreateXssMatchSetResult();
+    AWS_WAFREGIONAL_API CreateXssMatchSetResult() = default;
     AWS_WAFREGIONAL_API CreateXssMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API CreateXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,11 +43,11 @@ namespace Model
     /**
      * <p>An <a>XssMatchSet</a>.</p>
      */
-    inline const XssMatchSet& GetXssMatchSet() const{ return m_xssMatchSet; }
-    inline void SetXssMatchSet(const XssMatchSet& value) { m_xssMatchSet = value; }
-    inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = std::move(value); }
-    inline CreateXssMatchSetResult& WithXssMatchSet(const XssMatchSet& value) { SetXssMatchSet(value); return *this;}
-    inline CreateXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
+    inline const XssMatchSet& GetXssMatchSet() const { return m_xssMatchSet; }
+    template<typename XssMatchSetT = XssMatchSet>
+    void SetXssMatchSet(XssMatchSetT&& value) { m_xssMatchSetHasBeenSet = true; m_xssMatchSet = std::forward<XssMatchSetT>(value); }
+    template<typename XssMatchSetT = XssMatchSet>
+    CreateXssMatchSetResult& WithXssMatchSet(XssMatchSetT&& value) { SetXssMatchSet(std::forward<XssMatchSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeToken.assign(value); }
-    inline CreateXssMatchSetResult& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline CreateXssMatchSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline CreateXssMatchSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    CreateXssMatchSetResult& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateXssMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateXssMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateXssMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateXssMatchSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     XssMatchSet m_xssMatchSet;
+    bool m_xssMatchSetHasBeenSet = false;
 
     Aws::String m_changeToken;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

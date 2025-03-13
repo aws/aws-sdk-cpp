@@ -31,7 +31,7 @@ namespace Model
   class DeviceInfo
   {
   public:
-    AWS_CONNECT_API DeviceInfo();
+    AWS_CONNECT_API DeviceInfo() = default;
     AWS_CONNECT_API DeviceInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API DeviceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>Name of the platform that the participant used for the call.</p>
      */
-    inline const Aws::String& GetPlatformName() const{ return m_platformName; }
+    inline const Aws::String& GetPlatformName() const { return m_platformName; }
     inline bool PlatformNameHasBeenSet() const { return m_platformNameHasBeenSet; }
-    inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
-    inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = std::move(value); }
-    inline void SetPlatformName(const char* value) { m_platformNameHasBeenSet = true; m_platformName.assign(value); }
-    inline DeviceInfo& WithPlatformName(const Aws::String& value) { SetPlatformName(value); return *this;}
-    inline DeviceInfo& WithPlatformName(Aws::String&& value) { SetPlatformName(std::move(value)); return *this;}
-    inline DeviceInfo& WithPlatformName(const char* value) { SetPlatformName(value); return *this;}
+    template<typename PlatformNameT = Aws::String>
+    void SetPlatformName(PlatformNameT&& value) { m_platformNameHasBeenSet = true; m_platformName = std::forward<PlatformNameT>(value); }
+    template<typename PlatformNameT = Aws::String>
+    DeviceInfo& WithPlatformName(PlatformNameT&& value) { SetPlatformName(std::forward<PlatformNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version of the platform that the participant used for the call.</p>
      */
-    inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+    inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-    inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
-    inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
-    inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
-    inline DeviceInfo& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
-    inline DeviceInfo& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
-    inline DeviceInfo& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
+    template<typename PlatformVersionT = Aws::String>
+    void SetPlatformVersion(PlatformVersionT&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::forward<PlatformVersionT>(value); }
+    template<typename PlatformVersionT = Aws::String>
+    DeviceInfo& WithPlatformVersion(PlatformVersionT&& value) { SetPlatformVersion(std::forward<PlatformVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Operating system that the participant used for the call.</p>
      */
-    inline const Aws::String& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const Aws::String& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(Aws::String&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline void SetOperatingSystem(const char* value) { m_operatingSystemHasBeenSet = true; m_operatingSystem.assign(value); }
-    inline DeviceInfo& WithOperatingSystem(const Aws::String& value) { SetOperatingSystem(value); return *this;}
-    inline DeviceInfo& WithOperatingSystem(Aws::String&& value) { SetOperatingSystem(std::move(value)); return *this;}
-    inline DeviceInfo& WithOperatingSystem(const char* value) { SetOperatingSystem(value); return *this;}
+    template<typename OperatingSystemT = Aws::String>
+    void SetOperatingSystem(OperatingSystemT&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::forward<OperatingSystemT>(value); }
+    template<typename OperatingSystemT = Aws::String>
+    DeviceInfo& WithOperatingSystem(OperatingSystemT&& value) { SetOperatingSystem(std::forward<OperatingSystemT>(value)); return *this;}
     ///@}
   private:
 

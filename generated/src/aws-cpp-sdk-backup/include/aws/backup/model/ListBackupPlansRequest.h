@@ -25,7 +25,7 @@ namespace Model
   class ListBackupPlansRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API ListBackupPlansRequest();
+    AWS_BACKUP_API ListBackupPlansRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,21 +45,19 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListBackupPlansRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBackupPlansRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBackupPlansRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBackupPlansRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to be returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListBackupPlansRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
      * <p>A Boolean value with a default value of <code>FALSE</code> that returns
      * deleted backup plans when set to <code>TRUE</code>.</p>
      */
-    inline bool GetIncludeDeleted() const{ return m_includeDeleted; }
+    inline bool GetIncludeDeleted() const { return m_includeDeleted; }
     inline bool IncludeDeletedHasBeenSet() const { return m_includeDeletedHasBeenSet; }
     inline void SetIncludeDeleted(bool value) { m_includeDeletedHasBeenSet = true; m_includeDeleted = value; }
     inline ListBackupPlansRequest& WithIncludeDeleted(bool value) { SetIncludeDeleted(value); return *this;}
@@ -80,10 +78,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_includeDeleted;
+    bool m_includeDeleted{false};
     bool m_includeDeletedHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace ARCZonalShift
 namespace Model
 {
 
-PracticeRunConfiguration::PracticeRunConfiguration() : 
-    m_blockedDatesHasBeenSet(false),
-    m_blockedWindowsHasBeenSet(false),
-    m_blockingAlarmsHasBeenSet(false),
-    m_outcomeAlarmsHasBeenSet(false)
-{
-}
-
 PracticeRunConfiguration::PracticeRunConfiguration(JsonView jsonValue)
-  : PracticeRunConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValu
     }
     m_blockedDatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockedWindows"))
   {
     Aws::Utils::Array<JsonView> blockedWindowsJsonList = jsonValue.GetArray("blockedWindows");
@@ -53,7 +43,6 @@ PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValu
     }
     m_blockedWindowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockingAlarms"))
   {
     Aws::Utils::Array<JsonView> blockingAlarmsJsonList = jsonValue.GetArray("blockingAlarms");
@@ -63,7 +52,6 @@ PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValu
     }
     m_blockingAlarmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outcomeAlarms"))
   {
     Aws::Utils::Array<JsonView> outcomeAlarmsJsonList = jsonValue.GetArray("outcomeAlarms");
@@ -73,7 +61,6 @@ PracticeRunConfiguration& PracticeRunConfiguration::operator =(JsonView jsonValu
     }
     m_outcomeAlarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

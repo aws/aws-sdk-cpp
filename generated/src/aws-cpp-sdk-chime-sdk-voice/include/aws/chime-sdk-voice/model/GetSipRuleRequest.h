@@ -21,7 +21,7 @@ namespace Model
   class GetSipRuleRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API GetSipRuleRequest();
+    AWS_CHIMESDKVOICE_API GetSipRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The SIP rule ID.</p>
      */
-    inline const Aws::String& GetSipRuleId() const{ return m_sipRuleId; }
+    inline const Aws::String& GetSipRuleId() const { return m_sipRuleId; }
     inline bool SipRuleIdHasBeenSet() const { return m_sipRuleIdHasBeenSet; }
-    inline void SetSipRuleId(const Aws::String& value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId = value; }
-    inline void SetSipRuleId(Aws::String&& value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId = std::move(value); }
-    inline void SetSipRuleId(const char* value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId.assign(value); }
-    inline GetSipRuleRequest& WithSipRuleId(const Aws::String& value) { SetSipRuleId(value); return *this;}
-    inline GetSipRuleRequest& WithSipRuleId(Aws::String&& value) { SetSipRuleId(std::move(value)); return *this;}
-    inline GetSipRuleRequest& WithSipRuleId(const char* value) { SetSipRuleId(value); return *this;}
+    template<typename SipRuleIdT = Aws::String>
+    void SetSipRuleId(SipRuleIdT&& value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId = std::forward<SipRuleIdT>(value); }
+    template<typename SipRuleIdT = Aws::String>
+    GetSipRuleRequest& WithSipRuleId(SipRuleIdT&& value) { SetSipRuleId(std::forward<SipRuleIdT>(value)); return *this;}
     ///@}
   private:
 

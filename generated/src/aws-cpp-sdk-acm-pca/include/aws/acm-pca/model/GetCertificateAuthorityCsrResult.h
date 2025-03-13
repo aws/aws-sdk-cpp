@@ -27,7 +27,7 @@ namespace Model
   class GetCertificateAuthorityCsrResult
   {
   public:
-    AWS_ACMPCA_API GetCertificateAuthorityCsrResult();
+    AWS_ACMPCA_API GetCertificateAuthorityCsrResult() = default;
     AWS_ACMPCA_API GetCertificateAuthorityCsrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACMPCA_API GetCertificateAuthorityCsrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA
      * certificate.</p>
      */
-    inline const Aws::String& GetCsr() const{ return m_csr; }
-    inline void SetCsr(const Aws::String& value) { m_csr = value; }
-    inline void SetCsr(Aws::String&& value) { m_csr = std::move(value); }
-    inline void SetCsr(const char* value) { m_csr.assign(value); }
-    inline GetCertificateAuthorityCsrResult& WithCsr(const Aws::String& value) { SetCsr(value); return *this;}
-    inline GetCertificateAuthorityCsrResult& WithCsr(Aws::String&& value) { SetCsr(std::move(value)); return *this;}
-    inline GetCertificateAuthorityCsrResult& WithCsr(const char* value) { SetCsr(value); return *this;}
+    inline const Aws::String& GetCsr() const { return m_csr; }
+    template<typename CsrT = Aws::String>
+    void SetCsr(CsrT&& value) { m_csrHasBeenSet = true; m_csr = std::forward<CsrT>(value); }
+    template<typename CsrT = Aws::String>
+    GetCertificateAuthorityCsrResult& WithCsr(CsrT&& value) { SetCsr(std::forward<CsrT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCertificateAuthorityCsrResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCertificateAuthorityCsrResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCertificateAuthorityCsrResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCertificateAuthorityCsrResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_csr;
+    bool m_csrHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

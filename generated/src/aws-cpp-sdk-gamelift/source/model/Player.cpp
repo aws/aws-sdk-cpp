@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-Player::Player() : 
-    m_playerIdHasBeenSet(false),
-    m_playerAttributesHasBeenSet(false),
-    m_teamHasBeenSet(false),
-    m_latencyInMsHasBeenSet(false)
-{
-}
-
 Player::Player(JsonView jsonValue)
-  : Player()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Player& Player::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlayerId"))
   {
     m_playerId = jsonValue.GetString("PlayerId");
-
     m_playerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlayerAttributes"))
   {
     Aws::Map<Aws::String, JsonView> playerAttributesJsonMap = jsonValue.GetObject("PlayerAttributes").GetAllObjects();
@@ -50,14 +39,11 @@ Player& Player::operator =(JsonView jsonValue)
     }
     m_playerAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Team"))
   {
     m_team = jsonValue.GetString("Team");
-
     m_teamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatencyInMs"))
   {
     Aws::Map<Aws::String, JsonView> latencyInMsJsonMap = jsonValue.GetObject("LatencyInMs").GetAllObjects();
@@ -67,7 +53,6 @@ Player& Player::operator =(JsonView jsonValue)
     }
     m_latencyInMsHasBeenSet = true;
   }
-
   return *this;
 }
 

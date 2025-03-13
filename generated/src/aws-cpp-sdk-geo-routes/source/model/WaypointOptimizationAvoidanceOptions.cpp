@@ -18,27 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationAvoidanceOptions::WaypointOptimizationAvoidanceOptions() : 
-    m_areasHasBeenSet(false),
-    m_carShuttleTrains(false),
-    m_carShuttleTrainsHasBeenSet(false),
-    m_controlledAccessHighways(false),
-    m_controlledAccessHighwaysHasBeenSet(false),
-    m_dirtRoads(false),
-    m_dirtRoadsHasBeenSet(false),
-    m_ferries(false),
-    m_ferriesHasBeenSet(false),
-    m_tollRoads(false),
-    m_tollRoadsHasBeenSet(false),
-    m_tunnels(false),
-    m_tunnelsHasBeenSet(false),
-    m_uTurns(false),
-    m_uTurnsHasBeenSet(false)
-{
-}
-
 WaypointOptimizationAvoidanceOptions::WaypointOptimizationAvoidanceOptions(JsonView jsonValue)
-  : WaypointOptimizationAvoidanceOptions()
 {
   *this = jsonValue;
 }
@@ -54,56 +34,41 @@ WaypointOptimizationAvoidanceOptions& WaypointOptimizationAvoidanceOptions::oper
     }
     m_areasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CarShuttleTrains"))
   {
     m_carShuttleTrains = jsonValue.GetBool("CarShuttleTrains");
-
     m_carShuttleTrainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ControlledAccessHighways"))
   {
     m_controlledAccessHighways = jsonValue.GetBool("ControlledAccessHighways");
-
     m_controlledAccessHighwaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirtRoads"))
   {
     m_dirtRoads = jsonValue.GetBool("DirtRoads");
-
     m_dirtRoadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ferries"))
   {
     m_ferries = jsonValue.GetBool("Ferries");
-
     m_ferriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TollRoads"))
   {
     m_tollRoads = jsonValue.GetBool("TollRoads");
-
     m_tollRoadsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tunnels"))
   {
     m_tunnels = jsonValue.GetBool("Tunnels");
-
     m_tunnelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UTurns"))
   {
     m_uTurns = jsonValue.GetBool("UTurns");
-
     m_uTurnsHasBeenSet = true;
   }
-
   return *this;
 }
 

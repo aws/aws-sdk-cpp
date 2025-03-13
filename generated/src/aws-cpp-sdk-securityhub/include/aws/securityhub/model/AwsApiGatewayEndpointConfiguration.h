@@ -33,7 +33,7 @@ namespace Model
   class AwsApiGatewayEndpointConfiguration
   {
   public:
-    AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration();
+    AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration() = default;
     AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsApiGatewayEndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * <code>REGIONAL</code>. For a private API, the endpoint type is
      * <code>PRIVATE</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline AwsApiGatewayEndpointConfiguration& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
-    inline AwsApiGatewayEndpointConfiguration& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
-    inline AwsApiGatewayEndpointConfiguration& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline AwsApiGatewayEndpointConfiguration& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
-    inline AwsApiGatewayEndpointConfiguration& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    AwsApiGatewayEndpointConfiguration& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    template<typename TypesT = Aws::String>
+    AwsApiGatewayEndpointConfiguration& AddTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types.emplace_back(std::forward<TypesT>(value)); return *this; }
     ///@}
   private:
 

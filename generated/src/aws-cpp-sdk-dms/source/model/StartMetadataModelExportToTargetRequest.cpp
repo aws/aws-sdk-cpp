@@ -12,14 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMetadataModelExportToTargetRequest::StartMetadataModelExportToTargetRequest() : 
-    m_migrationProjectIdentifierHasBeenSet(false),
-    m_selectionRulesHasBeenSet(false),
-    m_overwriteExtensionPack(false),
-    m_overwriteExtensionPackHasBeenSet(false)
-{
-}
-
 Aws::String StartMetadataModelExportToTargetRequest::SerializePayload() const
 {
   JsonValue payload;

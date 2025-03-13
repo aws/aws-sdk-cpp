@@ -29,7 +29,7 @@ namespace Model
   class DescribeWhatIfAnalysisResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeWhatIfAnalysisResult();
+    AWS_FORECASTSERVICE_API DescribeWhatIfAnalysisResult() = default;
     AWS_FORECASTSERVICE_API DescribeWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeWhatIfAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,39 +38,33 @@ namespace Model
     /**
      * <p>The name of the what-if analysis.</p>
      */
-    inline const Aws::String& GetWhatIfAnalysisName() const{ return m_whatIfAnalysisName; }
-    inline void SetWhatIfAnalysisName(const Aws::String& value) { m_whatIfAnalysisName = value; }
-    inline void SetWhatIfAnalysisName(Aws::String&& value) { m_whatIfAnalysisName = std::move(value); }
-    inline void SetWhatIfAnalysisName(const char* value) { m_whatIfAnalysisName.assign(value); }
-    inline DescribeWhatIfAnalysisResult& WithWhatIfAnalysisName(const Aws::String& value) { SetWhatIfAnalysisName(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithWhatIfAnalysisName(Aws::String&& value) { SetWhatIfAnalysisName(std::move(value)); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithWhatIfAnalysisName(const char* value) { SetWhatIfAnalysisName(value); return *this;}
+    inline const Aws::String& GetWhatIfAnalysisName() const { return m_whatIfAnalysisName; }
+    template<typename WhatIfAnalysisNameT = Aws::String>
+    void SetWhatIfAnalysisName(WhatIfAnalysisNameT&& value) { m_whatIfAnalysisNameHasBeenSet = true; m_whatIfAnalysisName = std::forward<WhatIfAnalysisNameT>(value); }
+    template<typename WhatIfAnalysisNameT = Aws::String>
+    DescribeWhatIfAnalysisResult& WithWhatIfAnalysisName(WhatIfAnalysisNameT&& value) { SetWhatIfAnalysisName(std::forward<WhatIfAnalysisNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
      */
-    inline const Aws::String& GetWhatIfAnalysisArn() const{ return m_whatIfAnalysisArn; }
-    inline void SetWhatIfAnalysisArn(const Aws::String& value) { m_whatIfAnalysisArn = value; }
-    inline void SetWhatIfAnalysisArn(Aws::String&& value) { m_whatIfAnalysisArn = std::move(value); }
-    inline void SetWhatIfAnalysisArn(const char* value) { m_whatIfAnalysisArn.assign(value); }
-    inline DescribeWhatIfAnalysisResult& WithWhatIfAnalysisArn(const Aws::String& value) { SetWhatIfAnalysisArn(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithWhatIfAnalysisArn(Aws::String&& value) { SetWhatIfAnalysisArn(std::move(value)); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithWhatIfAnalysisArn(const char* value) { SetWhatIfAnalysisArn(value); return *this;}
+    inline const Aws::String& GetWhatIfAnalysisArn() const { return m_whatIfAnalysisArn; }
+    template<typename WhatIfAnalysisArnT = Aws::String>
+    void SetWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = std::forward<WhatIfAnalysisArnT>(value); }
+    template<typename WhatIfAnalysisArnT = Aws::String>
+    DescribeWhatIfAnalysisResult& WithWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) { SetWhatIfAnalysisArn(std::forward<WhatIfAnalysisArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the what-if forecast.</p>
      */
-    inline const Aws::String& GetForecastArn() const{ return m_forecastArn; }
-    inline void SetForecastArn(const Aws::String& value) { m_forecastArn = value; }
-    inline void SetForecastArn(Aws::String&& value) { m_forecastArn = std::move(value); }
-    inline void SetForecastArn(const char* value) { m_forecastArn.assign(value); }
-    inline DescribeWhatIfAnalysisResult& WithForecastArn(const Aws::String& value) { SetForecastArn(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithForecastArn(Aws::String&& value) { SetForecastArn(std::move(value)); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithForecastArn(const char* value) { SetForecastArn(value); return *this;}
+    inline const Aws::String& GetForecastArn() const { return m_forecastArn; }
+    template<typename ForecastArnT = Aws::String>
+    void SetForecastArn(ForecastArnT&& value) { m_forecastArnHasBeenSet = true; m_forecastArn = std::forward<ForecastArnT>(value); }
+    template<typename ForecastArnT = Aws::String>
+    DescribeWhatIfAnalysisResult& WithForecastArn(ForecastArnT&& value) { SetForecastArn(std::forward<ForecastArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,8 +72,8 @@ namespace Model
      * <p>The approximate time remaining to complete the what-if analysis, in
      * minutes.</p>
      */
-    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
-    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+    inline long long GetEstimatedTimeRemainingInMinutes() const { return m_estimatedTimeRemainingInMinutes; }
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutesHasBeenSet = true; m_estimatedTimeRemainingInMinutes = value; }
     inline DescribeWhatIfAnalysisResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
     ///@}
 
@@ -94,37 +88,33 @@ namespace Model
      * the what-if analysis must be <code>ACTIVE</code> before you can access the
      * analysis.</p> 
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeWhatIfAnalysisResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeWhatIfAnalysisResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If an error occurred, an informational message about the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeWhatIfAnalysisResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeWhatIfAnalysisResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the what-if analysis was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeWhatIfAnalysisResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeWhatIfAnalysisResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,53 +127,61 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeWhatIfAnalysisResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeWhatIfAnalysisResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TimeSeriesSelector& GetTimeSeriesSelector() const{ return m_timeSeriesSelector; }
-    inline void SetTimeSeriesSelector(const TimeSeriesSelector& value) { m_timeSeriesSelector = value; }
-    inline void SetTimeSeriesSelector(TimeSeriesSelector&& value) { m_timeSeriesSelector = std::move(value); }
-    inline DescribeWhatIfAnalysisResult& WithTimeSeriesSelector(const TimeSeriesSelector& value) { SetTimeSeriesSelector(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithTimeSeriesSelector(TimeSeriesSelector&& value) { SetTimeSeriesSelector(std::move(value)); return *this;}
+    inline const TimeSeriesSelector& GetTimeSeriesSelector() const { return m_timeSeriesSelector; }
+    template<typename TimeSeriesSelectorT = TimeSeriesSelector>
+    void SetTimeSeriesSelector(TimeSeriesSelectorT&& value) { m_timeSeriesSelectorHasBeenSet = true; m_timeSeriesSelector = std::forward<TimeSeriesSelectorT>(value); }
+    template<typename TimeSeriesSelectorT = TimeSeriesSelector>
+    DescribeWhatIfAnalysisResult& WithTimeSeriesSelector(TimeSeriesSelectorT&& value) { SetTimeSeriesSelector(std::forward<TimeSeriesSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeWhatIfAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeWhatIfAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeWhatIfAnalysisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_whatIfAnalysisName;
+    bool m_whatIfAnalysisNameHasBeenSet = false;
 
     Aws::String m_whatIfAnalysisArn;
+    bool m_whatIfAnalysisArnHasBeenSet = false;
 
     Aws::String m_forecastArn;
+    bool m_forecastArnHasBeenSet = false;
 
-    long long m_estimatedTimeRemainingInMinutes;
+    long long m_estimatedTimeRemainingInMinutes{0};
+    bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     TimeSeriesSelector m_timeSeriesSelector;
+    bool m_timeSeriesSelectorHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

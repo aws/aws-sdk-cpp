@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-InputColumn::InputColumn() : 
-    m_nameHasBeenSet(false),
-    m_type(InputColumnDataType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_subType(ColumnDataSubType::NOT_SET),
-    m_subTypeHasBeenSet(false)
-{
-}
-
 InputColumn::InputColumn(JsonView jsonValue)
-  : InputColumn()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ InputColumn& InputColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = InputColumnDataTypeMapper::GetInputColumnDataTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubType"))
   {
     m_subType = ColumnDataSubTypeMapper::GetColumnDataSubTypeForName(jsonValue.GetString("SubType"));
-
     m_subTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteVirtualMFADeviceRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API DeleteVirtualMFADeviceRequest();
+    AWS_IAM_API DeleteVirtualMFADeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * with no spaces. You can also include any of the following characters:
      * =,.@:/-</p>
      */
-    inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
-    inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
-    inline DeleteVirtualMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-    inline DeleteVirtualMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-    inline DeleteVirtualMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    template<typename SerialNumberT = Aws::String>
+    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
+    template<typename SerialNumberT = Aws::String>
+    DeleteVirtualMFADeviceRequest& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
     ///@}
   private:
 

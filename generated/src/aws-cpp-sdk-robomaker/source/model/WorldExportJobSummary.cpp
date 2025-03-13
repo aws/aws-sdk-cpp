@@ -18,18 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-WorldExportJobSummary::WorldExportJobSummary() : 
-    m_arnHasBeenSet(false),
-    m_status(WorldExportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_worldsHasBeenSet(false),
-    m_outputLocationHasBeenSet(false)
-{
-}
-
 WorldExportJobSummary::WorldExportJobSummary(JsonView jsonValue)
-  : WorldExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ WorldExportJobSummary& WorldExportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorldExportJobStatusMapper::GetWorldExportJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("worlds"))
   {
     Aws::Utils::Array<JsonView> worldsJsonList = jsonValue.GetArray("worlds");
@@ -66,14 +49,11 @@ WorldExportJobSummary& WorldExportJobSummary::operator =(JsonView jsonValue)
     }
     m_worldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLocation"))
   {
     m_outputLocation = jsonValue.GetObject("outputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

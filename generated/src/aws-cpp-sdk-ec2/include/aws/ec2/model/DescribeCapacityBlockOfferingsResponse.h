@@ -30,7 +30,7 @@ namespace Model
   class DescribeCapacityBlockOfferingsResponse
   {
   public:
-    AWS_EC2_API DescribeCapacityBlockOfferingsResponse();
+    AWS_EC2_API DescribeCapacityBlockOfferingsResponse() = default;
     AWS_EC2_API DescribeCapacityBlockOfferingsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeCapacityBlockOfferingsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The recommended Capacity Block offering for the dates specified.</p>
      */
-    inline const Aws::Vector<CapacityBlockOffering>& GetCapacityBlockOfferings() const{ return m_capacityBlockOfferings; }
-    inline void SetCapacityBlockOfferings(const Aws::Vector<CapacityBlockOffering>& value) { m_capacityBlockOfferings = value; }
-    inline void SetCapacityBlockOfferings(Aws::Vector<CapacityBlockOffering>&& value) { m_capacityBlockOfferings = std::move(value); }
-    inline DescribeCapacityBlockOfferingsResponse& WithCapacityBlockOfferings(const Aws::Vector<CapacityBlockOffering>& value) { SetCapacityBlockOfferings(value); return *this;}
-    inline DescribeCapacityBlockOfferingsResponse& WithCapacityBlockOfferings(Aws::Vector<CapacityBlockOffering>&& value) { SetCapacityBlockOfferings(std::move(value)); return *this;}
-    inline DescribeCapacityBlockOfferingsResponse& AddCapacityBlockOfferings(const CapacityBlockOffering& value) { m_capacityBlockOfferings.push_back(value); return *this; }
-    inline DescribeCapacityBlockOfferingsResponse& AddCapacityBlockOfferings(CapacityBlockOffering&& value) { m_capacityBlockOfferings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapacityBlockOffering>& GetCapacityBlockOfferings() const { return m_capacityBlockOfferings; }
+    template<typename CapacityBlockOfferingsT = Aws::Vector<CapacityBlockOffering>>
+    void SetCapacityBlockOfferings(CapacityBlockOfferingsT&& value) { m_capacityBlockOfferingsHasBeenSet = true; m_capacityBlockOfferings = std::forward<CapacityBlockOfferingsT>(value); }
+    template<typename CapacityBlockOfferingsT = Aws::Vector<CapacityBlockOffering>>
+    DescribeCapacityBlockOfferingsResponse& WithCapacityBlockOfferings(CapacityBlockOfferingsT&& value) { SetCapacityBlockOfferings(std::forward<CapacityBlockOfferingsT>(value)); return *this;}
+    template<typename CapacityBlockOfferingsT = CapacityBlockOffering>
+    DescribeCapacityBlockOfferingsResponse& AddCapacityBlockOfferings(CapacityBlockOfferingsT&& value) { m_capacityBlockOfferingsHasBeenSet = true; m_capacityBlockOfferings.emplace_back(std::forward<CapacityBlockOfferingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeCapacityBlockOfferingsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCapacityBlockOfferingsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCapacityBlockOfferingsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCapacityBlockOfferingsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeCapacityBlockOfferingsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeCapacityBlockOfferingsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeCapacityBlockOfferingsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CapacityBlockOffering> m_capacityBlockOfferings;
+    bool m_capacityBlockOfferingsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

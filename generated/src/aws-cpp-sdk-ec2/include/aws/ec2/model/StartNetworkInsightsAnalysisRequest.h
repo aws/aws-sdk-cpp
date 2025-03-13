@@ -24,7 +24,7 @@ namespace Model
   class StartNetworkInsightsAnalysisRequest : public EC2Request
   {
   public:
-    AWS_EC2_API StartNetworkInsightsAnalysisRequest();
+    AWS_EC2_API StartNetworkInsightsAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The ID of the path.</p>
      */
-    inline const Aws::String& GetNetworkInsightsPathId() const{ return m_networkInsightsPathId; }
+    inline const Aws::String& GetNetworkInsightsPathId() const { return m_networkInsightsPathId; }
     inline bool NetworkInsightsPathIdHasBeenSet() const { return m_networkInsightsPathIdHasBeenSet; }
-    inline void SetNetworkInsightsPathId(const Aws::String& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = value; }
-    inline void SetNetworkInsightsPathId(Aws::String&& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = std::move(value); }
-    inline void SetNetworkInsightsPathId(const char* value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId.assign(value); }
-    inline StartNetworkInsightsAnalysisRequest& WithNetworkInsightsPathId(const Aws::String& value) { SetNetworkInsightsPathId(value); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithNetworkInsightsPathId(Aws::String&& value) { SetNetworkInsightsPathId(std::move(value)); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithNetworkInsightsPathId(const char* value) { SetNetworkInsightsPathId(value); return *this;}
+    template<typename NetworkInsightsPathIdT = Aws::String>
+    void SetNetworkInsightsPathId(NetworkInsightsPathIdT&& value) { m_networkInsightsPathIdHasBeenSet = true; m_networkInsightsPathId = std::forward<NetworkInsightsPathIdT>(value); }
+    template<typename NetworkInsightsPathIdT = Aws::String>
+    StartNetworkInsightsAnalysisRequest& WithNetworkInsightsPathId(NetworkInsightsPathIdT&& value) { SetNetworkInsightsPathId(std::forward<NetworkInsightsPathIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The member accounts that contain resources that the path can traverse.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const{ return m_additionalAccounts; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const { return m_additionalAccounts; }
     inline bool AdditionalAccountsHasBeenSet() const { return m_additionalAccountsHasBeenSet; }
-    inline void SetAdditionalAccounts(const Aws::Vector<Aws::String>& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = value; }
-    inline void SetAdditionalAccounts(Aws::Vector<Aws::String>&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::move(value); }
-    inline StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(const Aws::Vector<Aws::String>& value) { SetAdditionalAccounts(value); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(Aws::Vector<Aws::String>&& value) { SetAdditionalAccounts(std::move(value)); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(const Aws::String& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
-    inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(Aws::String&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(std::move(value)); return *this; }
-    inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(const char* value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
+    template<typename AdditionalAccountsT = Aws::Vector<Aws::String>>
+    void SetAdditionalAccounts(AdditionalAccountsT&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::forward<AdditionalAccountsT>(value); }
+    template<typename AdditionalAccountsT = Aws::Vector<Aws::String>>
+    StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(AdditionalAccountsT&& value) { SetAdditionalAccounts(std::forward<AdditionalAccountsT>(value)); return *this;}
+    template<typename AdditionalAccountsT = Aws::String>
+    StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(AdditionalAccountsT&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.emplace_back(std::forward<AdditionalAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +70,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the resources that the path must
      * traverse.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFilterInArns() const{ return m_filterInArns; }
+    inline const Aws::Vector<Aws::String>& GetFilterInArns() const { return m_filterInArns; }
     inline bool FilterInArnsHasBeenSet() const { return m_filterInArnsHasBeenSet; }
-    inline void SetFilterInArns(const Aws::Vector<Aws::String>& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = value; }
-    inline void SetFilterInArns(Aws::Vector<Aws::String>&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = std::move(value); }
-    inline StartNetworkInsightsAnalysisRequest& WithFilterInArns(const Aws::Vector<Aws::String>& value) { SetFilterInArns(value); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithFilterInArns(Aws::Vector<Aws::String>&& value) { SetFilterInArns(std::move(value)); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& AddFilterInArns(const Aws::String& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
-    inline StartNetworkInsightsAnalysisRequest& AddFilterInArns(Aws::String&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(std::move(value)); return *this; }
-    inline StartNetworkInsightsAnalysisRequest& AddFilterInArns(const char* value) { m_filterInArnsHasBeenSet = true; m_filterInArns.push_back(value); return *this; }
+    template<typename FilterInArnsT = Aws::Vector<Aws::String>>
+    void SetFilterInArns(FilterInArnsT&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns = std::forward<FilterInArnsT>(value); }
+    template<typename FilterInArnsT = Aws::Vector<Aws::String>>
+    StartNetworkInsightsAnalysisRequest& WithFilterInArns(FilterInArnsT&& value) { SetFilterInArns(std::forward<FilterInArnsT>(value)); return *this;}
+    template<typename FilterInArnsT = Aws::String>
+    StartNetworkInsightsAnalysisRequest& AddFilterInArns(FilterInArnsT&& value) { m_filterInArnsHasBeenSet = true; m_filterInArns.emplace_back(std::forward<FilterInArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline StartNetworkInsightsAnalysisRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -101,14 +97,14 @@ namespace Model
     /**
      * <p>The tags to apply.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline StartNetworkInsightsAnalysisRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline StartNetworkInsightsAnalysisRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    StartNetworkInsightsAnalysisRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    StartNetworkInsightsAnalysisRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,14 +114,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartNetworkInsightsAnalysisRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartNetworkInsightsAnalysisRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartNetworkInsightsAnalysisRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -138,7 +132,7 @@ namespace Model
     Aws::Vector<Aws::String> m_filterInArns;
     bool m_filterInArnsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;

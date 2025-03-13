@@ -36,7 +36,7 @@ namespace Model
   class ManagedLoginBrandingType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ManagedLoginBrandingType();
+    AWS_COGNITOIDENTITYPROVIDER_API ManagedLoginBrandingType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API ManagedLoginBrandingType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API ManagedLoginBrandingType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The ID of the managed login branding style.</p>
      */
-    inline const Aws::String& GetManagedLoginBrandingId() const{ return m_managedLoginBrandingId; }
+    inline const Aws::String& GetManagedLoginBrandingId() const { return m_managedLoginBrandingId; }
     inline bool ManagedLoginBrandingIdHasBeenSet() const { return m_managedLoginBrandingIdHasBeenSet; }
-    inline void SetManagedLoginBrandingId(const Aws::String& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = value; }
-    inline void SetManagedLoginBrandingId(Aws::String&& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = std::move(value); }
-    inline void SetManagedLoginBrandingId(const char* value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId.assign(value); }
-    inline ManagedLoginBrandingType& WithManagedLoginBrandingId(const Aws::String& value) { SetManagedLoginBrandingId(value); return *this;}
-    inline ManagedLoginBrandingType& WithManagedLoginBrandingId(Aws::String&& value) { SetManagedLoginBrandingId(std::move(value)); return *this;}
-    inline ManagedLoginBrandingType& WithManagedLoginBrandingId(const char* value) { SetManagedLoginBrandingId(value); return *this;}
+    template<typename ManagedLoginBrandingIdT = Aws::String>
+    void SetManagedLoginBrandingId(ManagedLoginBrandingIdT&& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = std::forward<ManagedLoginBrandingIdT>(value); }
+    template<typename ManagedLoginBrandingIdT = Aws::String>
+    ManagedLoginBrandingType& WithManagedLoginBrandingId(ManagedLoginBrandingIdT&& value) { SetManagedLoginBrandingId(std::forward<ManagedLoginBrandingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user pool where the branding style is assigned.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline ManagedLoginBrandingType& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline ManagedLoginBrandingType& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline ManagedLoginBrandingType& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    ManagedLoginBrandingType& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * this option, you must also omit values for <code>Settings</code> and
      * <code>Assets</code> in the request.</p>
      */
-    inline bool GetUseCognitoProvidedValues() const{ return m_useCognitoProvidedValues; }
+    inline bool GetUseCognitoProvidedValues() const { return m_useCognitoProvidedValues; }
     inline bool UseCognitoProvidedValuesHasBeenSet() const { return m_useCognitoProvidedValuesHasBeenSet; }
     inline void SetUseCognitoProvidedValues(bool value) { m_useCognitoProvidedValuesHasBeenSet = true; m_useCognitoProvidedValues = value; }
     inline ManagedLoginBrandingType& WithUseCognitoProvidedValues(bool value) { SetUseCognitoProvidedValues(value); return *this;}
@@ -89,12 +85,12 @@ namespace Model
      * <p>A JSON file, encoded as a <code>Document</code> type, with the the settings
      * that you want to apply to your style.</p>
      */
-    inline Aws::Utils::DocumentView GetSettings() const{ return m_settings; }
+    inline Aws::Utils::DocumentView GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Aws::Utils::Document& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Aws::Utils::Document&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline ManagedLoginBrandingType& WithSettings(const Aws::Utils::Document& value) { SetSettings(value); return *this;}
-    inline ManagedLoginBrandingType& WithSettings(Aws::Utils::Document&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = Aws::Utils::Document>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Aws::Utils::Document>
+    ManagedLoginBrandingType& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +99,14 @@ namespace Model
      * logos, and icons. Each object must also indicate whether it is for dark mode,
      * light mode, or browser-adaptive mode.</p>
      */
-    inline const Aws::Vector<AssetType>& GetAssets() const{ return m_assets; }
+    inline const Aws::Vector<AssetType>& GetAssets() const { return m_assets; }
     inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
-    inline void SetAssets(const Aws::Vector<AssetType>& value) { m_assetsHasBeenSet = true; m_assets = value; }
-    inline void SetAssets(Aws::Vector<AssetType>&& value) { m_assetsHasBeenSet = true; m_assets = std::move(value); }
-    inline ManagedLoginBrandingType& WithAssets(const Aws::Vector<AssetType>& value) { SetAssets(value); return *this;}
-    inline ManagedLoginBrandingType& WithAssets(Aws::Vector<AssetType>&& value) { SetAssets(std::move(value)); return *this;}
-    inline ManagedLoginBrandingType& AddAssets(const AssetType& value) { m_assetsHasBeenSet = true; m_assets.push_back(value); return *this; }
-    inline ManagedLoginBrandingType& AddAssets(AssetType&& value) { m_assetsHasBeenSet = true; m_assets.push_back(std::move(value)); return *this; }
+    template<typename AssetsT = Aws::Vector<AssetType>>
+    void SetAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets = std::forward<AssetsT>(value); }
+    template<typename AssetsT = Aws::Vector<AssetType>>
+    ManagedLoginBrandingType& WithAssets(AssetsT&& value) { SetAssets(std::forward<AssetsT>(value)); return *this;}
+    template<typename AssetsT = AssetType>
+    ManagedLoginBrandingType& AddAssets(AssetsT&& value) { m_assetsHasBeenSet = true; m_assets.emplace_back(std::forward<AssetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,12 +115,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline ManagedLoginBrandingType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline ManagedLoginBrandingType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    ManagedLoginBrandingType& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +129,12 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline ManagedLoginBrandingType& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline ManagedLoginBrandingType& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    ManagedLoginBrandingType& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -148,7 +144,7 @@ namespace Model
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet = false;
 
-    bool m_useCognitoProvidedValues;
+    bool m_useCognitoProvidedValues{false};
     bool m_useCognitoProvidedValuesHasBeenSet = false;
 
     Aws::Utils::Document m_settings;
@@ -157,10 +153,10 @@ namespace Model
     Aws::Vector<AssetType> m_assets;
     bool m_assetsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
   };
 

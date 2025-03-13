@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-NewUserAgentDetail::NewUserAgentDetail() : 
-    m_userAgentHasBeenSet(false),
-    m_isNewForEntireAccount(false),
-    m_isNewForEntireAccountHasBeenSet(false)
-{
-}
-
 NewUserAgentDetail::NewUserAgentDetail(JsonView jsonValue)
-  : NewUserAgentDetail()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NewUserAgentDetail& NewUserAgentDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserAgent"))
   {
     m_userAgent = jsonValue.GetString("UserAgent");
-
     m_userAgentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNewForEntireAccount"))
   {
     m_isNewForEntireAccount = jsonValue.GetBool("IsNewForEntireAccount");
-
     m_isNewForEntireAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

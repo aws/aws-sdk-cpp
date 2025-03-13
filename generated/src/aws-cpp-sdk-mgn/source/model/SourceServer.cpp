@@ -19,29 +19,7 @@ namespace mgn
 namespace Model
 {
 
-SourceServer::SourceServer() : 
-    m_applicationIDHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_connectorActionHasBeenSet(false),
-    m_dataReplicationInfoHasBeenSet(false),
-    m_fqdnForActionFrameworkHasBeenSet(false),
-    m_isArchived(false),
-    m_isArchivedHasBeenSet(false),
-    m_launchedInstanceHasBeenSet(false),
-    m_lifeCycleHasBeenSet(false),
-    m_replicationType(ReplicationType::NOT_SET),
-    m_replicationTypeHasBeenSet(false),
-    m_sourcePropertiesHasBeenSet(false),
-    m_sourceServerIDHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userProvidedIDHasBeenSet(false),
-    m_vcenterClientIDHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 SourceServer::SourceServer(JsonView jsonValue)
-  : SourceServer()
 {
   *this = jsonValue;
 }
@@ -51,80 +29,58 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationID"))
   {
     m_applicationID = jsonValue.GetString("applicationID");
-
     m_applicationIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorAction"))
   {
     m_connectorAction = jsonValue.GetObject("connectorAction");
-
     m_connectorActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataReplicationInfo"))
   {
     m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
-
     m_dataReplicationInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fqdnForActionFramework"))
   {
     m_fqdnForActionFramework = jsonValue.GetString("fqdnForActionFramework");
-
     m_fqdnForActionFrameworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isArchived"))
   {
     m_isArchived = jsonValue.GetBool("isArchived");
-
     m_isArchivedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchedInstance"))
   {
     m_launchedInstance = jsonValue.GetObject("launchedInstance");
-
     m_launchedInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifeCycle"))
   {
     m_lifeCycle = jsonValue.GetObject("lifeCycle");
-
     m_lifeCycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationType"))
   {
     m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
-
     m_replicationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");
-
     m_sourcePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");
-
     m_sourceServerIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -134,21 +90,16 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userProvidedID"))
   {
     m_userProvidedID = jsonValue.GetString("userProvidedID");
-
     m_userProvidedIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcenterClientID"))
   {
     m_vcenterClientID = jsonValue.GetString("vcenterClientID");
-
     m_vcenterClientIDHasBeenSet = true;
   }
-
   return *this;
 }
 

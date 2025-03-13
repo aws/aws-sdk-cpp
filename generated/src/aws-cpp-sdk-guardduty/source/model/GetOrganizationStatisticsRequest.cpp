@@ -12,10 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOrganizationStatisticsRequest::GetOrganizationStatisticsRequest()
-{
-}
-
 Aws::String GetOrganizationStatisticsRequest::SerializePayload() const
 {
   return {};

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDeviceDefinitionVersionsRequest::ListDeviceDefinitionVersionsRequest() : 
-    m_deviceDefinitionIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDeviceDefinitionVersionsRequest::SerializePayload() const
 {
   return {};

@@ -12,12 +12,6 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddNotificationChannelsRequest::AddNotificationChannelsRequest() : 
-    m_channelsHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String AddNotificationChannelsRequest::SerializePayload() const
 {
   JsonValue payload;

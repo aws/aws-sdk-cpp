@@ -12,13 +12,6 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateZonalAutoshiftConfigurationRequest::UpdateZonalAutoshiftConfigurationRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET),
-    m_zonalAutoshiftStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateZonalAutoshiftConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class GetInventorySchemaResult
   {
   public:
-    AWS_SSM_API GetInventorySchemaResult();
+    AWS_SSM_API GetInventorySchemaResult() = default;
     AWS_SSM_API GetInventorySchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetInventorySchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Inventory schemas returned by the request.</p>
      */
-    inline const Aws::Vector<InventoryItemSchema>& GetSchemas() const{ return m_schemas; }
-    inline void SetSchemas(const Aws::Vector<InventoryItemSchema>& value) { m_schemas = value; }
-    inline void SetSchemas(Aws::Vector<InventoryItemSchema>&& value) { m_schemas = std::move(value); }
-    inline GetInventorySchemaResult& WithSchemas(const Aws::Vector<InventoryItemSchema>& value) { SetSchemas(value); return *this;}
-    inline GetInventorySchemaResult& WithSchemas(Aws::Vector<InventoryItemSchema>&& value) { SetSchemas(std::move(value)); return *this;}
-    inline GetInventorySchemaResult& AddSchemas(const InventoryItemSchema& value) { m_schemas.push_back(value); return *this; }
-    inline GetInventorySchemaResult& AddSchemas(InventoryItemSchema&& value) { m_schemas.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InventoryItemSchema>& GetSchemas() const { return m_schemas; }
+    template<typename SchemasT = Aws::Vector<InventoryItemSchema>>
+    void SetSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas = std::forward<SchemasT>(value); }
+    template<typename SchemasT = Aws::Vector<InventoryItemSchema>>
+    GetInventorySchemaResult& WithSchemas(SchemasT&& value) { SetSchemas(std::forward<SchemasT>(value)); return *this;}
+    template<typename SchemasT = InventoryItemSchema>
+    GetInventorySchemaResult& AddSchemas(SchemasT&& value) { m_schemasHasBeenSet = true; m_schemas.emplace_back(std::forward<SchemasT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetInventorySchemaResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetInventorySchemaResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetInventorySchemaResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetInventorySchemaResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInventorySchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInventorySchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInventorySchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInventorySchemaResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InventoryItemSchema> m_schemas;
+    bool m_schemasHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

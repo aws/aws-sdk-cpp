@@ -23,7 +23,7 @@ namespace Model
   class CreateVirtualMFADeviceRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API CreateVirtualMFADeviceRequest();
+    AWS_IAM_API CreateVirtualMFADeviceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
      * and lowercased letters.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline CreateVirtualMFADeviceRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline CreateVirtualMFADeviceRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline CreateVirtualMFADeviceRequest& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    CreateVirtualMFADeviceRequest& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetVirtualMFADeviceName() const{ return m_virtualMFADeviceName; }
+    inline const Aws::String& GetVirtualMFADeviceName() const { return m_virtualMFADeviceName; }
     inline bool VirtualMFADeviceNameHasBeenSet() const { return m_virtualMFADeviceNameHasBeenSet; }
-    inline void SetVirtualMFADeviceName(const Aws::String& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = value; }
-    inline void SetVirtualMFADeviceName(Aws::String&& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = std::move(value); }
-    inline void SetVirtualMFADeviceName(const char* value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName.assign(value); }
-    inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const Aws::String& value) { SetVirtualMFADeviceName(value); return *this;}
-    inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(Aws::String&& value) { SetVirtualMFADeviceName(std::move(value)); return *this;}
-    inline CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(const char* value) { SetVirtualMFADeviceName(value); return *this;}
+    template<typename VirtualMFADeviceNameT = Aws::String>
+    void SetVirtualMFADeviceName(VirtualMFADeviceNameT&& value) { m_virtualMFADeviceNameHasBeenSet = true; m_virtualMFADeviceName = std::forward<VirtualMFADeviceNameT>(value); }
+    template<typename VirtualMFADeviceNameT = Aws::String>
+    CreateVirtualMFADeviceRequest& WithVirtualMFADeviceName(VirtualMFADeviceNameT&& value) { SetVirtualMFADeviceName(std::forward<VirtualMFADeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,14 @@ namespace Model
      * is invalid or if you exceed the allowed maximum number of tags, then the entire
      * request fails and the resource is not created.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateVirtualMFADeviceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateVirtualMFADeviceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateVirtualMFADeviceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateVirtualMFADeviceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateVirtualMFADeviceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateVirtualMFADeviceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

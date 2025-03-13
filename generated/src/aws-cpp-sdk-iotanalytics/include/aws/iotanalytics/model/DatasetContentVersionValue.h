@@ -32,7 +32,7 @@ namespace Model
   class DatasetContentVersionValue
   {
   public:
-    AWS_IOTANALYTICS_API DatasetContentVersionValue();
+    AWS_IOTANALYTICS_API DatasetContentVersionValue() = default;
     AWS_IOTANALYTICS_API DatasetContentVersionValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetContentVersionValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline DatasetContentVersionValue& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline DatasetContentVersionValue& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline DatasetContentVersionValue& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    DatasetContentVersionValue& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
   private:
 

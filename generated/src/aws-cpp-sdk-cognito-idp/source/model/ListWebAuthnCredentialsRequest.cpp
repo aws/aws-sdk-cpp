@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWebAuthnCredentialsRequest::ListWebAuthnCredentialsRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListWebAuthnCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,23 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-InstancePortState::InstancePortState() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_state(PortState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_ipv6CidrsHasBeenSet(false),
-    m_cidrListAliasesHasBeenSet(false)
-{
-}
-
 InstancePortState::InstancePortState(JsonView jsonValue)
-  : InstancePortState()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ InstancePortState& InstancePortState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fromPort"))
   {
     m_fromPort = jsonValue.GetInteger("fromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toPort"))
   {
     m_toPort = jsonValue.GetInteger("toPort");
-
     m_toPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = NetworkProtocolMapper::GetNetworkProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = PortStateMapper::GetPortStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrs"))
   {
     Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
@@ -78,7 +54,6 @@ InstancePortState& InstancePortState::operator =(JsonView jsonValue)
     }
     m_cidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Cidrs"))
   {
     Aws::Utils::Array<JsonView> ipv6CidrsJsonList = jsonValue.GetArray("ipv6Cidrs");
@@ -88,7 +63,6 @@ InstancePortState& InstancePortState::operator =(JsonView jsonValue)
     }
     m_ipv6CidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrListAliases"))
   {
     Aws::Utils::Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
@@ -98,7 +72,6 @@ InstancePortState& InstancePortState::operator =(JsonView jsonValue)
     }
     m_cidrListAliasesHasBeenSet = true;
   }
-
   return *this;
 }
 

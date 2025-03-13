@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DomainUnitTarget::DomainUnitTarget() : 
-    m_domainUnitIdHasBeenSet(false),
-    m_includeChildDomainUnits(false),
-    m_includeChildDomainUnitsHasBeenSet(false)
-{
-}
-
 DomainUnitTarget::DomainUnitTarget(JsonView jsonValue)
-  : DomainUnitTarget()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DomainUnitTarget& DomainUnitTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainUnitId"))
   {
     m_domainUnitId = jsonValue.GetString("domainUnitId");
-
     m_domainUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeChildDomainUnits"))
   {
     m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
-
     m_includeChildDomainUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

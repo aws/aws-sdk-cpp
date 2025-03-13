@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UnlabelParameterVersionResult::UnlabelParameterVersionResult()
-{
-}
-
 UnlabelParameterVersionResult::UnlabelParameterVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ UnlabelParameterVersionResult& UnlabelParameterVersionResult::operator =(const A
     {
       m_removedLabels.push_back(removedLabelsJsonList[removedLabelsIndex].AsString());
     }
+    m_removedLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidLabels"))
   {
     Aws::Utils::Array<JsonView> invalidLabelsJsonList = jsonValue.GetArray("InvalidLabels");
@@ -45,14 +41,15 @@ UnlabelParameterVersionResult& UnlabelParameterVersionResult::operator =(const A
     {
       m_invalidLabels.push_back(invalidLabelsJsonList[invalidLabelsIndex].AsString());
     }
+    m_invalidLabelsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

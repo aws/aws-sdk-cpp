@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-KinesisVideoStreamConfig::KinesisVideoStreamConfig() : 
-    m_prefixHasBeenSet(false),
-    m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
-{
-}
-
 KinesisVideoStreamConfig::KinesisVideoStreamConfig(JsonView jsonValue)
-  : KinesisVideoStreamConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ KinesisVideoStreamConfig& KinesisVideoStreamConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriodHours"))
   {
     m_retentionPeriodHours = jsonValue.GetInteger("RetentionPeriodHours");
-
     m_retentionPeriodHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfig"))
   {
     m_encryptionConfig = jsonValue.GetObject("EncryptionConfig");
-
     m_encryptionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

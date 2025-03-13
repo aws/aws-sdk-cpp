@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListWorkflowsRequest::ListWorkflowsRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sortByHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkflowsRequest::SerializePayload() const
 {
   JsonValue payload;

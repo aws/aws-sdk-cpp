@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListLayerVersionsRequest::ListLayerVersionsRequest() : 
-    m_compatibleRuntime(Runtime::NOT_SET),
-    m_compatibleRuntimeHasBeenSet(false),
-    m_layerNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_compatibleArchitecture(Architecture::NOT_SET),
-    m_compatibleArchitectureHasBeenSet(false)
-{
-}
-
 Aws::String ListLayerVersionsRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class ListConnectorsRequestFilters
   {
   public:
-    AWS_MGN_API ListConnectorsRequestFilters();
+    AWS_MGN_API ListConnectorsRequestFilters() = default;
     AWS_MGN_API ListConnectorsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ListConnectorsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>List Connectors Request Filters connector IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConnectorIDs() const{ return m_connectorIDs; }
+    inline const Aws::Vector<Aws::String>& GetConnectorIDs() const { return m_connectorIDs; }
     inline bool ConnectorIDsHasBeenSet() const { return m_connectorIDsHasBeenSet; }
-    inline void SetConnectorIDs(const Aws::Vector<Aws::String>& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs = value; }
-    inline void SetConnectorIDs(Aws::Vector<Aws::String>&& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs = std::move(value); }
-    inline ListConnectorsRequestFilters& WithConnectorIDs(const Aws::Vector<Aws::String>& value) { SetConnectorIDs(value); return *this;}
-    inline ListConnectorsRequestFilters& WithConnectorIDs(Aws::Vector<Aws::String>&& value) { SetConnectorIDs(std::move(value)); return *this;}
-    inline ListConnectorsRequestFilters& AddConnectorIDs(const Aws::String& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.push_back(value); return *this; }
-    inline ListConnectorsRequestFilters& AddConnectorIDs(Aws::String&& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.push_back(std::move(value)); return *this; }
-    inline ListConnectorsRequestFilters& AddConnectorIDs(const char* value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.push_back(value); return *this; }
+    template<typename ConnectorIDsT = Aws::Vector<Aws::String>>
+    void SetConnectorIDs(ConnectorIDsT&& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs = std::forward<ConnectorIDsT>(value); }
+    template<typename ConnectorIDsT = Aws::Vector<Aws::String>>
+    ListConnectorsRequestFilters& WithConnectorIDs(ConnectorIDsT&& value) { SetConnectorIDs(std::forward<ConnectorIDsT>(value)); return *this;}
+    template<typename ConnectorIDsT = Aws::String>
+    ListConnectorsRequestFilters& AddConnectorIDs(ConnectorIDsT&& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.emplace_back(std::forward<ConnectorIDsT>(value)); return *this; }
     ///@}
   private:
 

@@ -19,18 +19,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedAttributeValue::TypedAttributeValue() : 
-    m_stringValueHasBeenSet(false),
-    m_binaryValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_numberValueHasBeenSet(false),
-    m_datetimeValueHasBeenSet(false)
-{
-}
-
 TypedAttributeValue::TypedAttributeValue(JsonView jsonValue)
-  : TypedAttributeValue()
 {
   *this = jsonValue;
 }
@@ -40,37 +29,28 @@ TypedAttributeValue& TypedAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringValue"))
   {
     m_stringValue = jsonValue.GetString("StringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinaryValue"))
   {
     m_binaryValue = HashingUtils::Base64Decode(jsonValue.GetString("BinaryValue"));
     m_binaryValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BooleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("BooleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberValue"))
   {
     m_numberValue = jsonValue.GetString("NumberValue");
-
     m_numberValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatetimeValue"))
   {
     m_datetimeValue = jsonValue.GetDouble("DatetimeValue");
-
     m_datetimeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeUsageReportSubscriptionsRequest::DescribeUsageReportSubscriptionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUsageReportSubscriptionsRequest::SerializePayload() const
 {
   JsonValue payload;

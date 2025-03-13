@@ -32,7 +32,7 @@ namespace Model
   class OrphanFileDeletionConfiguration
   {
   public:
-    AWS_GLUE_API OrphanFileDeletionConfiguration();
+    AWS_GLUE_API OrphanFileDeletionConfiguration() = default;
     AWS_GLUE_API OrphanFileDeletionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API OrphanFileDeletionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The configuration for an Iceberg orphan file deletion optimizer.</p>
      */
-    inline const IcebergOrphanFileDeletionConfiguration& GetIcebergConfiguration() const{ return m_icebergConfiguration; }
+    inline const IcebergOrphanFileDeletionConfiguration& GetIcebergConfiguration() const { return m_icebergConfiguration; }
     inline bool IcebergConfigurationHasBeenSet() const { return m_icebergConfigurationHasBeenSet; }
-    inline void SetIcebergConfiguration(const IcebergOrphanFileDeletionConfiguration& value) { m_icebergConfigurationHasBeenSet = true; m_icebergConfiguration = value; }
-    inline void SetIcebergConfiguration(IcebergOrphanFileDeletionConfiguration&& value) { m_icebergConfigurationHasBeenSet = true; m_icebergConfiguration = std::move(value); }
-    inline OrphanFileDeletionConfiguration& WithIcebergConfiguration(const IcebergOrphanFileDeletionConfiguration& value) { SetIcebergConfiguration(value); return *this;}
-    inline OrphanFileDeletionConfiguration& WithIcebergConfiguration(IcebergOrphanFileDeletionConfiguration&& value) { SetIcebergConfiguration(std::move(value)); return *this;}
+    template<typename IcebergConfigurationT = IcebergOrphanFileDeletionConfiguration>
+    void SetIcebergConfiguration(IcebergConfigurationT&& value) { m_icebergConfigurationHasBeenSet = true; m_icebergConfiguration = std::forward<IcebergConfigurationT>(value); }
+    template<typename IcebergConfigurationT = IcebergOrphanFileDeletionConfiguration>
+    OrphanFileDeletionConfiguration& WithIcebergConfiguration(IcebergConfigurationT&& value) { SetIcebergConfiguration(std::forward<IcebergConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationBedrockModel::EvaluationBedrockModel() : 
-    m_modelIdentifierHasBeenSet(false),
-    m_inferenceParamsHasBeenSet(false),
-    m_performanceConfigHasBeenSet(false)
-{
-}
-
 EvaluationBedrockModel::EvaluationBedrockModel(JsonView jsonValue)
-  : EvaluationBedrockModel()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EvaluationBedrockModel& EvaluationBedrockModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelIdentifier"))
   {
     m_modelIdentifier = jsonValue.GetString("modelIdentifier");
-
     m_modelIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceParams"))
   {
     m_inferenceParams = jsonValue.GetString("inferenceParams");
-
     m_inferenceParamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
     m_performanceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

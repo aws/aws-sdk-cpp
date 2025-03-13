@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ToolSpecification::ToolSpecification() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_inputSchemaHasBeenSet(false)
-{
-}
-
 ToolSpecification::ToolSpecification(JsonView jsonValue)
-  : ToolSpecification()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ToolSpecification& ToolSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputSchema"))
   {
     m_inputSchema = jsonValue.GetObject("inputSchema");
-
     m_inputSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

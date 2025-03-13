@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheSecurityGroupMembership::CacheSecurityGroupMembership() : 
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 CacheSecurityGroupMembership::CacheSecurityGroupMembership(const XmlNode& xmlNode)
-  : CacheSecurityGroupMembership()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CacheSecurityGroupMembership& CacheSecurityGroupMembership::operator =(const Xml
     {
       m_cacheSecurityGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(cacheSecurityGroupNameNode.GetText());
       m_cacheSecurityGroupNameHasBeenSet = true;
+       m_cacheSecurityGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

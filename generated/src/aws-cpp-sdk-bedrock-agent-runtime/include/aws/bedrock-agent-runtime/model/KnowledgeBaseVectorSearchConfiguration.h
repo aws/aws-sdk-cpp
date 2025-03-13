@@ -44,7 +44,7 @@ namespace Model
   class KnowledgeBaseVectorSearchConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseVectorSearchConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseVectorSearchConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseVectorSearchConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseVectorSearchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,31 +57,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
      * configurations</a>.</p>
      */
-    inline const RetrievalFilter& GetFilter() const{ return m_filter; }
+    inline const RetrievalFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const RetrievalFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(RetrievalFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline KnowledgeBaseVectorSearchConfiguration& WithFilter(const RetrievalFilter& value) { SetFilter(value); return *this;}
-    inline KnowledgeBaseVectorSearchConfiguration& WithFilter(RetrievalFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = RetrievalFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = RetrievalFilter>
+    KnowledgeBaseVectorSearchConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings for implicit filtering.</p>
      */
-    inline const ImplicitFilterConfiguration& GetImplicitFilterConfiguration() const{ return m_implicitFilterConfiguration; }
+    inline const ImplicitFilterConfiguration& GetImplicitFilterConfiguration() const { return m_implicitFilterConfiguration; }
     inline bool ImplicitFilterConfigurationHasBeenSet() const { return m_implicitFilterConfigurationHasBeenSet; }
-    inline void SetImplicitFilterConfiguration(const ImplicitFilterConfiguration& value) { m_implicitFilterConfigurationHasBeenSet = true; m_implicitFilterConfiguration = value; }
-    inline void SetImplicitFilterConfiguration(ImplicitFilterConfiguration&& value) { m_implicitFilterConfigurationHasBeenSet = true; m_implicitFilterConfiguration = std::move(value); }
-    inline KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(const ImplicitFilterConfiguration& value) { SetImplicitFilterConfiguration(value); return *this;}
-    inline KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(ImplicitFilterConfiguration&& value) { SetImplicitFilterConfiguration(std::move(value)); return *this;}
+    template<typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
+    void SetImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) { m_implicitFilterConfigurationHasBeenSet = true; m_implicitFilterConfiguration = std::forward<ImplicitFilterConfigurationT>(value); }
+    template<typename ImplicitFilterConfigurationT = ImplicitFilterConfiguration>
+    KnowledgeBaseVectorSearchConfiguration& WithImplicitFilterConfiguration(ImplicitFilterConfigurationT&& value) { SetImplicitFilterConfiguration(std::forward<ImplicitFilterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of source chunks to retrieve.</p>
      */
-    inline int GetNumberOfResults() const{ return m_numberOfResults; }
+    inline int GetNumberOfResults() const { return m_numberOfResults; }
     inline bool NumberOfResultsHasBeenSet() const { return m_numberOfResultsHasBeenSet; }
     inline void SetNumberOfResults(int value) { m_numberOfResultsHasBeenSet = true; m_numberOfResults = value; }
     inline KnowledgeBaseVectorSearchConfiguration& WithNumberOfResults(int value) { SetNumberOfResults(value); return *this;}
@@ -99,12 +99,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test
      * a knowledge base</a>.</p>
      */
-    inline const SearchType& GetOverrideSearchType() const{ return m_overrideSearchType; }
+    inline SearchType GetOverrideSearchType() const { return m_overrideSearchType; }
     inline bool OverrideSearchTypeHasBeenSet() const { return m_overrideSearchTypeHasBeenSet; }
-    inline void SetOverrideSearchType(const SearchType& value) { m_overrideSearchTypeHasBeenSet = true; m_overrideSearchType = value; }
-    inline void SetOverrideSearchType(SearchType&& value) { m_overrideSearchTypeHasBeenSet = true; m_overrideSearchType = std::move(value); }
-    inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(const SearchType& value) { SetOverrideSearchType(value); return *this;}
-    inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(SearchType&& value) { SetOverrideSearchType(std::move(value)); return *this;}
+    inline void SetOverrideSearchType(SearchType value) { m_overrideSearchTypeHasBeenSet = true; m_overrideSearchType = value; }
+    inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(SearchType value) { SetOverrideSearchType(value); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +112,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html">Improve
      * the relevance of query responses with a reranker model</a>.</p>
      */
-    inline const VectorSearchRerankingConfiguration& GetRerankingConfiguration() const{ return m_rerankingConfiguration; }
+    inline const VectorSearchRerankingConfiguration& GetRerankingConfiguration() const { return m_rerankingConfiguration; }
     inline bool RerankingConfigurationHasBeenSet() const { return m_rerankingConfigurationHasBeenSet; }
-    inline void SetRerankingConfiguration(const VectorSearchRerankingConfiguration& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = value; }
-    inline void SetRerankingConfiguration(VectorSearchRerankingConfiguration&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::move(value); }
-    inline KnowledgeBaseVectorSearchConfiguration& WithRerankingConfiguration(const VectorSearchRerankingConfiguration& value) { SetRerankingConfiguration(value); return *this;}
-    inline KnowledgeBaseVectorSearchConfiguration& WithRerankingConfiguration(VectorSearchRerankingConfiguration&& value) { SetRerankingConfiguration(std::move(value)); return *this;}
+    template<typename RerankingConfigurationT = VectorSearchRerankingConfiguration>
+    void SetRerankingConfiguration(RerankingConfigurationT&& value) { m_rerankingConfigurationHasBeenSet = true; m_rerankingConfiguration = std::forward<RerankingConfigurationT>(value); }
+    template<typename RerankingConfigurationT = VectorSearchRerankingConfiguration>
+    KnowledgeBaseVectorSearchConfiguration& WithRerankingConfiguration(RerankingConfigurationT&& value) { SetRerankingConfiguration(std::forward<RerankingConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,10 +127,10 @@ namespace Model
     ImplicitFilterConfiguration m_implicitFilterConfiguration;
     bool m_implicitFilterConfigurationHasBeenSet = false;
 
-    int m_numberOfResults;
+    int m_numberOfResults{0};
     bool m_numberOfResultsHasBeenSet = false;
 
-    SearchType m_overrideSearchType;
+    SearchType m_overrideSearchType{SearchType::NOT_SET};
     bool m_overrideSearchTypeHasBeenSet = false;
 
     VectorSearchRerankingConfiguration m_rerankingConfiguration;

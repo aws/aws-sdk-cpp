@@ -29,7 +29,7 @@ namespace Model
   class ListPolicyTemplatesResult
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API ListPolicyTemplatesResult();
+    AWS_VERIFIEDPERMISSIONS_API ListPolicyTemplatesResult() = default;
     AWS_VERIFIEDPERMISSIONS_API ListPolicyTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VERIFIEDPERMISSIONS_API ListPolicyTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,44 @@ namespace Model
      * element comes back as <code>null</code>. This indicates that this is the last
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPolicyTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPolicyTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPolicyTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPolicyTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of the policy templates in the specified policy store.</p>
      */
-    inline const Aws::Vector<PolicyTemplateItem>& GetPolicyTemplates() const{ return m_policyTemplates; }
-    inline void SetPolicyTemplates(const Aws::Vector<PolicyTemplateItem>& value) { m_policyTemplates = value; }
-    inline void SetPolicyTemplates(Aws::Vector<PolicyTemplateItem>&& value) { m_policyTemplates = std::move(value); }
-    inline ListPolicyTemplatesResult& WithPolicyTemplates(const Aws::Vector<PolicyTemplateItem>& value) { SetPolicyTemplates(value); return *this;}
-    inline ListPolicyTemplatesResult& WithPolicyTemplates(Aws::Vector<PolicyTemplateItem>&& value) { SetPolicyTemplates(std::move(value)); return *this;}
-    inline ListPolicyTemplatesResult& AddPolicyTemplates(const PolicyTemplateItem& value) { m_policyTemplates.push_back(value); return *this; }
-    inline ListPolicyTemplatesResult& AddPolicyTemplates(PolicyTemplateItem&& value) { m_policyTemplates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PolicyTemplateItem>& GetPolicyTemplates() const { return m_policyTemplates; }
+    template<typename PolicyTemplatesT = Aws::Vector<PolicyTemplateItem>>
+    void SetPolicyTemplates(PolicyTemplatesT&& value) { m_policyTemplatesHasBeenSet = true; m_policyTemplates = std::forward<PolicyTemplatesT>(value); }
+    template<typename PolicyTemplatesT = Aws::Vector<PolicyTemplateItem>>
+    ListPolicyTemplatesResult& WithPolicyTemplates(PolicyTemplatesT&& value) { SetPolicyTemplates(std::forward<PolicyTemplatesT>(value)); return *this;}
+    template<typename PolicyTemplatesT = PolicyTemplateItem>
+    ListPolicyTemplatesResult& AddPolicyTemplates(PolicyTemplatesT&& value) { m_policyTemplatesHasBeenSet = true; m_policyTemplates.emplace_back(std::forward<PolicyTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPolicyTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPolicyTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPolicyTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPolicyTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<PolicyTemplateItem> m_policyTemplates;
+    bool m_policyTemplatesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

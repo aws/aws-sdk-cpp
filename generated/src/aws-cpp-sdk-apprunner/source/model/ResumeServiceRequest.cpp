@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResumeServiceRequest::ResumeServiceRequest() : 
-    m_serviceArnHasBeenSet(false)
-{
-}
-
 Aws::String ResumeServiceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class GetContentModerationRequestMetadata
   {
   public:
-    AWS_REKOGNITION_API GetContentModerationRequestMetadata();
+    AWS_REKOGNITION_API GetContentModerationRequestMetadata() = default;
     AWS_REKOGNITION_API GetContentModerationRequestMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API GetContentModerationRequestMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The sorting method chosen for a GetContentModeration request.</p>
      */
-    inline const ContentModerationSortBy& GetSortBy() const{ return m_sortBy; }
+    inline ContentModerationSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ContentModerationSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ContentModerationSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetContentModerationRequestMetadata& WithSortBy(const ContentModerationSortBy& value) { SetSortBy(value); return *this;}
-    inline GetContentModerationRequestMetadata& WithSortBy(ContentModerationSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ContentModerationSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline GetContentModerationRequestMetadata& WithSortBy(ContentModerationSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregation method chosen for a GetContentModeration request.</p>
      */
-    inline const ContentModerationAggregateBy& GetAggregateBy() const{ return m_aggregateBy; }
+    inline ContentModerationAggregateBy GetAggregateBy() const { return m_aggregateBy; }
     inline bool AggregateByHasBeenSet() const { return m_aggregateByHasBeenSet; }
-    inline void SetAggregateBy(const ContentModerationAggregateBy& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = value; }
-    inline void SetAggregateBy(ContentModerationAggregateBy&& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = std::move(value); }
-    inline GetContentModerationRequestMetadata& WithAggregateBy(const ContentModerationAggregateBy& value) { SetAggregateBy(value); return *this;}
-    inline GetContentModerationRequestMetadata& WithAggregateBy(ContentModerationAggregateBy&& value) { SetAggregateBy(std::move(value)); return *this;}
+    inline void SetAggregateBy(ContentModerationAggregateBy value) { m_aggregateByHasBeenSet = true; m_aggregateBy = value; }
+    inline GetContentModerationRequestMetadata& WithAggregateBy(ContentModerationAggregateBy value) { SetAggregateBy(value); return *this;}
     ///@}
   private:
 
-    ContentModerationSortBy m_sortBy;
+    ContentModerationSortBy m_sortBy{ContentModerationSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    ContentModerationAggregateBy m_aggregateBy;
+    ContentModerationAggregateBy m_aggregateBy{ContentModerationAggregateBy::NOT_SET};
     bool m_aggregateByHasBeenSet = false;
   };
 

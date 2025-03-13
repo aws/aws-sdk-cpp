@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-FederatedUser::FederatedUser() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
-{
-}
-
 FederatedUser::FederatedUser(JsonView jsonValue)
-  : FederatedUser()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ FederatedUser& FederatedUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionContext"))
   {
     m_sessionContext = jsonValue.GetObject("sessionContext");
-
     m_sessionContextHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-ScpActionDefinition::ScpActionDefinition() : 
-    m_policyIdHasBeenSet(false),
-    m_targetIdsHasBeenSet(false)
-{
-}
-
 ScpActionDefinition::ScpActionDefinition(JsonView jsonValue)
-  : ScpActionDefinition()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ScpActionDefinition& ScpActionDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyId"))
   {
     m_policyId = jsonValue.GetString("PolicyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetIds"))
   {
     Aws::Utils::Array<JsonView> targetIdsJsonList = jsonValue.GetArray("TargetIds");
@@ -48,7 +39,6 @@ ScpActionDefinition& ScpActionDefinition::operator =(JsonView jsonValue)
     }
     m_targetIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

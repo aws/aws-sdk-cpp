@@ -18,16 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AssetErrorDetails::AssetErrorDetails() : 
-    m_assetIdHasBeenSet(false),
-    m_code(AssetErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AssetErrorDetails::AssetErrorDetails(JsonView jsonValue)
-  : AssetErrorDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AssetErrorDetails& AssetErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = AssetErrorCodeMapper::GetAssetErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

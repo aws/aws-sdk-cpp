@@ -34,7 +34,7 @@ namespace Model
   class FlaggedIpAddressDetail
   {
   public:
-    AWS_DETECTIVE_API FlaggedIpAddressDetail();
+    AWS_DETECTIVE_API FlaggedIpAddressDetail() = default;
     AWS_DETECTIVE_API FlaggedIpAddressDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API FlaggedIpAddressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p>IP address of the suspicious entity.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline FlaggedIpAddressDetail& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline FlaggedIpAddressDetail& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline FlaggedIpAddressDetail& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    FlaggedIpAddressDetail& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details the reason the IP address was flagged as suspicious.</p>
      */
-    inline const Reason& GetReason() const{ return m_reason; }
+    inline Reason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Reason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Reason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline FlaggedIpAddressDetail& WithReason(const Reason& value) { SetReason(value); return *this;}
-    inline FlaggedIpAddressDetail& WithReason(Reason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(Reason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline FlaggedIpAddressDetail& WithReason(Reason value) { SetReason(value); return *this;}
     ///@}
   private:
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
 
-    Reason m_reason;
+    Reason m_reason{Reason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

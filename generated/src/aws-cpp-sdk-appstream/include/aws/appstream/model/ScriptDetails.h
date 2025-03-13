@@ -32,7 +32,7 @@ namespace Model
   class ScriptDetails
   {
   public:
-    AWS_APPSTREAM_API ScriptDetails();
+    AWS_APPSTREAM_API ScriptDetails() = default;
     AWS_APPSTREAM_API ScriptDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API ScriptDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,47 +42,43 @@ namespace Model
     /**
      * <p>The S3 object location for the script.</p>
      */
-    inline const S3Location& GetScriptS3Location() const{ return m_scriptS3Location; }
+    inline const S3Location& GetScriptS3Location() const { return m_scriptS3Location; }
     inline bool ScriptS3LocationHasBeenSet() const { return m_scriptS3LocationHasBeenSet; }
-    inline void SetScriptS3Location(const S3Location& value) { m_scriptS3LocationHasBeenSet = true; m_scriptS3Location = value; }
-    inline void SetScriptS3Location(S3Location&& value) { m_scriptS3LocationHasBeenSet = true; m_scriptS3Location = std::move(value); }
-    inline ScriptDetails& WithScriptS3Location(const S3Location& value) { SetScriptS3Location(value); return *this;}
-    inline ScriptDetails& WithScriptS3Location(S3Location&& value) { SetScriptS3Location(std::move(value)); return *this;}
+    template<typename ScriptS3LocationT = S3Location>
+    void SetScriptS3Location(ScriptS3LocationT&& value) { m_scriptS3LocationHasBeenSet = true; m_scriptS3Location = std::forward<ScriptS3LocationT>(value); }
+    template<typename ScriptS3LocationT = S3Location>
+    ScriptDetails& WithScriptS3Location(ScriptS3LocationT&& value) { SetScriptS3Location(std::forward<ScriptS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run path for the script.</p>
      */
-    inline const Aws::String& GetExecutablePath() const{ return m_executablePath; }
+    inline const Aws::String& GetExecutablePath() const { return m_executablePath; }
     inline bool ExecutablePathHasBeenSet() const { return m_executablePathHasBeenSet; }
-    inline void SetExecutablePath(const Aws::String& value) { m_executablePathHasBeenSet = true; m_executablePath = value; }
-    inline void SetExecutablePath(Aws::String&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::move(value); }
-    inline void SetExecutablePath(const char* value) { m_executablePathHasBeenSet = true; m_executablePath.assign(value); }
-    inline ScriptDetails& WithExecutablePath(const Aws::String& value) { SetExecutablePath(value); return *this;}
-    inline ScriptDetails& WithExecutablePath(Aws::String&& value) { SetExecutablePath(std::move(value)); return *this;}
-    inline ScriptDetails& WithExecutablePath(const char* value) { SetExecutablePath(value); return *this;}
+    template<typename ExecutablePathT = Aws::String>
+    void SetExecutablePath(ExecutablePathT&& value) { m_executablePathHasBeenSet = true; m_executablePath = std::forward<ExecutablePathT>(value); }
+    template<typename ExecutablePathT = Aws::String>
+    ScriptDetails& WithExecutablePath(ExecutablePathT&& value) { SetExecutablePath(std::forward<ExecutablePathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The runtime parameters passed to the run path for the script.</p>
      */
-    inline const Aws::String& GetExecutableParameters() const{ return m_executableParameters; }
+    inline const Aws::String& GetExecutableParameters() const { return m_executableParameters; }
     inline bool ExecutableParametersHasBeenSet() const { return m_executableParametersHasBeenSet; }
-    inline void SetExecutableParameters(const Aws::String& value) { m_executableParametersHasBeenSet = true; m_executableParameters = value; }
-    inline void SetExecutableParameters(Aws::String&& value) { m_executableParametersHasBeenSet = true; m_executableParameters = std::move(value); }
-    inline void SetExecutableParameters(const char* value) { m_executableParametersHasBeenSet = true; m_executableParameters.assign(value); }
-    inline ScriptDetails& WithExecutableParameters(const Aws::String& value) { SetExecutableParameters(value); return *this;}
-    inline ScriptDetails& WithExecutableParameters(Aws::String&& value) { SetExecutableParameters(std::move(value)); return *this;}
-    inline ScriptDetails& WithExecutableParameters(const char* value) { SetExecutableParameters(value); return *this;}
+    template<typename ExecutableParametersT = Aws::String>
+    void SetExecutableParameters(ExecutableParametersT&& value) { m_executableParametersHasBeenSet = true; m_executableParameters = std::forward<ExecutableParametersT>(value); }
+    template<typename ExecutableParametersT = Aws::String>
+    ScriptDetails& WithExecutableParameters(ExecutableParametersT&& value) { SetExecutableParameters(std::forward<ExecutableParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run timeout, in seconds, for the script.</p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline ScriptDetails& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
     Aws::String m_executableParameters;
     bool m_executableParametersHasBeenSet = false;
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
   };
 

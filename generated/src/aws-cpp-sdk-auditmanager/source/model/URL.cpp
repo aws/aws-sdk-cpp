@@ -18,14 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-URL::URL() : 
-    m_hyperlinkNameHasBeenSet(false),
-    m_linkHasBeenSet(false)
-{
-}
-
 URL::URL(JsonView jsonValue)
-  : URL()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ URL& URL::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hyperlinkName"))
   {
     m_hyperlinkName = jsonValue.GetString("hyperlinkName");
-
     m_hyperlinkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("link"))
   {
     m_link = jsonValue.GetString("link");
-
     m_linkHasBeenSet = true;
   }
-
   return *this;
 }
 

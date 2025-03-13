@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesId::ReservedInstancesId() : 
-    m_reservedInstancesIdHasBeenSet(false)
-{
-}
-
 ReservedInstancesId::ReservedInstancesId(const XmlNode& xmlNode)
-  : ReservedInstancesId()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ReservedInstancesId& ReservedInstancesId::operator =(const XmlNode& xmlNode)
     {
       m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
       m_reservedInstancesIdHasBeenSet = true;
+       m_reservedInstancesIdHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class ScopeConfiguration
   {
   public:
-    AWS_CODEBUILD_API ScopeConfiguration();
+    AWS_CODEBUILD_API ScopeConfiguration() = default;
     AWS_CODEBUILD_API ScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of either the group, enterprise, or organization that will send
      * webhook events to CodeBuild, depending on the type of webhook.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ScopeConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ScopeConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ScopeConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ScopeConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,22 @@ namespace Model
      * group. Note that this parameter is only required if your project's source type
      * is GITHUB_ENTERPRISE or GITLAB_SELF_MANAGED.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ScopeConfiguration& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ScopeConfiguration& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ScopeConfiguration& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ScopeConfiguration& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of scope for a GitHub or GitLab webhook.</p>
      */
-    inline const WebhookScopeType& GetScope() const{ return m_scope; }
+    inline WebhookScopeType GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const WebhookScopeType& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(WebhookScopeType&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline ScopeConfiguration& WithScope(const WebhookScopeType& value) { SetScope(value); return *this;}
-    inline ScopeConfiguration& WithScope(WebhookScopeType&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(WebhookScopeType value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline ScopeConfiguration& WithScope(WebhookScopeType value) { SetScope(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +83,7 @@ namespace Model
     Aws::String m_domain;
     bool m_domainHasBeenSet = false;
 
-    WebhookScopeType m_scope;
+    WebhookScopeType m_scope{WebhookScopeType::NOT_SET};
     bool m_scopeHasBeenSet = false;
   };
 

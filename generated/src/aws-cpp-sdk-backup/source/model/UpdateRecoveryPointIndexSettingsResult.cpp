@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRecoveryPointIndexSettingsResult::UpdateRecoveryPointIndexSettingsResult() : 
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_index(Index::NOT_SET)
-{
-}
-
 UpdateRecoveryPointIndexSettingsResult::UpdateRecoveryPointIndexSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateRecoveryPointIndexSettingsResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ UpdateRecoveryPointIndexSettingsResult& UpdateRecoveryPointIndexSettingsResult::
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
+    m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryPointArn"))
   {
     m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
-
+    m_recoveryPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexStatus"))
   {
     m_indexStatus = IndexStatusMapper::GetIndexStatusForName(jsonValue.GetString("IndexStatus"));
-
+    m_indexStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Index"))
   {
     m_index = IndexMapper::GetIndexForName(jsonValue.GetString("Index"));
-
+    m_indexHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

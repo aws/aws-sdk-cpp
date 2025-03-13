@@ -32,7 +32,7 @@ namespace Model
   class NotificationSummary
   {
   public:
-    AWS_WELLARCHITECTED_API NotificationSummary();
+    AWS_WELLARCHITECTED_API NotificationSummary() = default;
     AWS_WELLARCHITECTED_API NotificationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API NotificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The type of notification.</p>
      */
-    inline const NotificationType& GetType() const{ return m_type; }
+    inline NotificationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const NotificationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(NotificationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline NotificationSummary& WithType(const NotificationType& value) { SetType(value); return *this;}
-    inline NotificationSummary& WithType(NotificationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(NotificationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline NotificationSummary& WithType(NotificationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Summary of lens upgrade.</p>
      */
-    inline const LensUpgradeSummary& GetLensUpgradeSummary() const{ return m_lensUpgradeSummary; }
+    inline const LensUpgradeSummary& GetLensUpgradeSummary() const { return m_lensUpgradeSummary; }
     inline bool LensUpgradeSummaryHasBeenSet() const { return m_lensUpgradeSummaryHasBeenSet; }
-    inline void SetLensUpgradeSummary(const LensUpgradeSummary& value) { m_lensUpgradeSummaryHasBeenSet = true; m_lensUpgradeSummary = value; }
-    inline void SetLensUpgradeSummary(LensUpgradeSummary&& value) { m_lensUpgradeSummaryHasBeenSet = true; m_lensUpgradeSummary = std::move(value); }
-    inline NotificationSummary& WithLensUpgradeSummary(const LensUpgradeSummary& value) { SetLensUpgradeSummary(value); return *this;}
-    inline NotificationSummary& WithLensUpgradeSummary(LensUpgradeSummary&& value) { SetLensUpgradeSummary(std::move(value)); return *this;}
+    template<typename LensUpgradeSummaryT = LensUpgradeSummary>
+    void SetLensUpgradeSummary(LensUpgradeSummaryT&& value) { m_lensUpgradeSummaryHasBeenSet = true; m_lensUpgradeSummary = std::forward<LensUpgradeSummaryT>(value); }
+    template<typename LensUpgradeSummaryT = LensUpgradeSummary>
+    NotificationSummary& WithLensUpgradeSummary(LensUpgradeSummaryT&& value) { SetLensUpgradeSummary(std::forward<LensUpgradeSummaryT>(value)); return *this;}
     ///@}
   private:
 
-    NotificationType m_type;
+    NotificationType m_type{NotificationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     LensUpgradeSummary m_lensUpgradeSummary;

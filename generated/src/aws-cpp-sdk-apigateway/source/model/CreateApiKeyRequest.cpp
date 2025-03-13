@@ -12,20 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApiKeyRequest::CreateApiKeyRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_generateDistinctId(false),
-    m_generateDistinctIdHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_stageKeysHasBeenSet(false),
-    m_customerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateApiKeyRequest::SerializePayload() const
 {
   JsonValue payload;

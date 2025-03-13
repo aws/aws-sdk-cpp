@@ -18,13 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-HeartbeatEvent::HeartbeatEvent() : 
-    m_eventIdHasBeenSet(false)
-{
-}
-
 HeartbeatEvent::HeartbeatEvent(JsonView jsonValue)
-  : HeartbeatEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HeartbeatEvent& HeartbeatEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

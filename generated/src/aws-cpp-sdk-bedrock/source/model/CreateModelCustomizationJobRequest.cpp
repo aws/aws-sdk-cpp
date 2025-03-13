@@ -12,27 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelCustomizationJobRequest::CreateModelCustomizationJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_customModelNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_baseModelIdentifierHasBeenSet(false),
-    m_customizationType(CustomizationType::NOT_SET),
-    m_customizationTypeHasBeenSet(false),
-    m_customModelKmsKeyIdHasBeenSet(false),
-    m_jobTagsHasBeenSet(false),
-    m_customModelTagsHasBeenSet(false),
-    m_trainingDataConfigHasBeenSet(false),
-    m_validationDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_hyperParametersHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_customizationConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelCustomizationJobRequest::SerializePayload() const
 {
   JsonValue payload;

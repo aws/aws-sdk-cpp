@@ -12,20 +12,6 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterAppInstanceUserEndpointRequest::RegisterAppInstanceUserEndpointRequest() : 
-    m_appInstanceUserArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(AppInstanceUserEndpointType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_endpointAttributesHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_allowMessages(AllowMessages::NOT_SET),
-    m_allowMessagesHasBeenSet(false)
-{
-}
-
 Aws::String RegisterAppInstanceUserEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,14 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-AddPermissionRequest::AddPermissionRequest() : 
-    m_topicArnHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_aWSAccountIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false)
-{
-}
-
 Aws::String AddPermissionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

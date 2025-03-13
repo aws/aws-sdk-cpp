@@ -33,7 +33,7 @@ namespace Model
   class FileSystemLocation
   {
   public:
-    AWS_DEADLINE_API FileSystemLocation();
+    AWS_DEADLINE_API FileSystemLocation() = default;
     AWS_DEADLINE_API FileSystemLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API FileSystemLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The location name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FileSystemLocation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FileSystemLocation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FileSystemLocation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FileSystemLocation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file path.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline FileSystemLocation& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline FileSystemLocation& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline FileSystemLocation& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    FileSystemLocation& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of file.</p>
      */
-    inline const FileSystemLocationType& GetType() const{ return m_type; }
+    inline FileSystemLocationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FileSystemLocationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FileSystemLocationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FileSystemLocation& WithType(const FileSystemLocationType& value) { SetType(value); return *this;}
-    inline FileSystemLocation& WithType(FileSystemLocationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FileSystemLocationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FileSystemLocation& WithType(FileSystemLocationType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    FileSystemLocationType m_type;
+    FileSystemLocationType m_type{FileSystemLocationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

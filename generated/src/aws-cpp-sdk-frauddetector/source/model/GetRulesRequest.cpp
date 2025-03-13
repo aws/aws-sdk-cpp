@@ -12,16 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRulesRequest::GetRulesRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetRulesRequest::SerializePayload() const
 {
   JsonValue payload;

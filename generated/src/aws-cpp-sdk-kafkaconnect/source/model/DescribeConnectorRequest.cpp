@@ -12,11 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConnectorRequest::DescribeConnectorRequest() : 
-    m_connectorArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConnectorRequest::SerializePayload() const
 {
   return {};

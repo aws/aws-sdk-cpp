@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-PasswordData::PasswordData() : 
-    m_ciphertextHasBeenSet(false),
-    m_keyPairNameHasBeenSet(false)
-{
-}
-
 PasswordData::PasswordData(JsonView jsonValue)
-  : PasswordData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PasswordData& PasswordData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ciphertext"))
   {
     m_ciphertext = jsonValue.GetString("ciphertext");
-
     m_ciphertextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPairName"))
   {
     m_keyPairName = jsonValue.GetString("keyPairName");
-
     m_keyPairNameHasBeenSet = true;
   }
-
   return *this;
 }
 

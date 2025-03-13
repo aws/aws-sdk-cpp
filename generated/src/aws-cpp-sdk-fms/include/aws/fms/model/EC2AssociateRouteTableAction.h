@@ -33,7 +33,7 @@ namespace Model
   class EC2AssociateRouteTableAction
   {
   public:
-    AWS_FMS_API EC2AssociateRouteTableAction();
+    AWS_FMS_API EC2AssociateRouteTableAction() = default;
     AWS_FMS_API EC2AssociateRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EC2AssociateRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A description of the EC2 route table that is associated with the remediation
      * action.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline EC2AssociateRouteTableAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline EC2AssociateRouteTableAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline EC2AssociateRouteTableAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    EC2AssociateRouteTableAction& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The ID of the EC2 route table that is associated with the remediation
      * action.</p>
      */
-    inline const ActionTarget& GetRouteTableId() const{ return m_routeTableId; }
+    inline const ActionTarget& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const ActionTarget& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(ActionTarget&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline EC2AssociateRouteTableAction& WithRouteTableId(const ActionTarget& value) { SetRouteTableId(value); return *this;}
-    inline EC2AssociateRouteTableAction& WithRouteTableId(ActionTarget&& value) { SetRouteTableId(std::move(value)); return *this;}
+    template<typename RouteTableIdT = ActionTarget>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = ActionTarget>
+    EC2AssociateRouteTableAction& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>The ID of the subnet for the EC2 route table that is associated with the
      * remediation action.</p>
      */
-    inline const ActionTarget& GetSubnetId() const{ return m_subnetId; }
+    inline const ActionTarget& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const ActionTarget& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(ActionTarget&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline EC2AssociateRouteTableAction& WithSubnetId(const ActionTarget& value) { SetSubnetId(value); return *this;}
-    inline EC2AssociateRouteTableAction& WithSubnetId(ActionTarget&& value) { SetSubnetId(std::move(value)); return *this;}
+    template<typename SubnetIdT = ActionTarget>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = ActionTarget>
+    EC2AssociateRouteTableAction& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * <p>The ID of the gateway to be used with the EC2 route table that is associated
      * with the remediation action.</p>
      */
-    inline const ActionTarget& GetGatewayId() const{ return m_gatewayId; }
+    inline const ActionTarget& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const ActionTarget& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(ActionTarget&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline EC2AssociateRouteTableAction& WithGatewayId(const ActionTarget& value) { SetGatewayId(value); return *this;}
-    inline EC2AssociateRouteTableAction& WithGatewayId(ActionTarget&& value) { SetGatewayId(std::move(value)); return *this;}
+    template<typename GatewayIdT = ActionTarget>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = ActionTarget>
+    EC2AssociateRouteTableAction& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
   private:
 

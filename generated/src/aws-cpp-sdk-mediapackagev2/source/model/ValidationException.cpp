@@ -18,15 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_messageHasBeenSet(false),
-    m_validationExceptionType(ValidationExceptionType::NOT_SET),
-    m_validationExceptionTypeHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationExceptionType"))
   {
     m_validationExceptionType = ValidationExceptionTypeMapper::GetValidationExceptionTypeForName(jsonValue.GetString("ValidationExceptionType"));
-
     m_validationExceptionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

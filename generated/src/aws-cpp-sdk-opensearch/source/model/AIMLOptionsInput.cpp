@@ -18,13 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AIMLOptionsInput::AIMLOptionsInput() : 
-    m_naturalLanguageQueryGenerationOptionsHasBeenSet(false)
-{
-}
-
 AIMLOptionsInput::AIMLOptionsInput(JsonView jsonValue)
-  : AIMLOptionsInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AIMLOptionsInput& AIMLOptionsInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NaturalLanguageQueryGenerationOptions"))
   {
     m_naturalLanguageQueryGenerationOptions = jsonValue.GetObject("NaturalLanguageQueryGenerationOptions");
-
     m_naturalLanguageQueryGenerationOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

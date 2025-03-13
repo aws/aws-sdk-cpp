@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableImageDeprecationRequest::EnableImageDeprecationRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_deprecateAtHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EnableImageDeprecationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

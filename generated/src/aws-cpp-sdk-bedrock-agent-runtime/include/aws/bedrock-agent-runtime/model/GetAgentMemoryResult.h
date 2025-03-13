@@ -29,7 +29,7 @@ namespace Model
   class GetAgentMemoryResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GetAgentMemoryResult();
+    AWS_BEDROCKAGENTRUNTIME_API GetAgentMemoryResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API GetAgentMemoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENTRUNTIME_API GetAgentMemoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Contains details of the sessions stored in the memory</p>
      */
-    inline const Aws::Vector<Memory>& GetMemoryContents() const{ return m_memoryContents; }
-    inline void SetMemoryContents(const Aws::Vector<Memory>& value) { m_memoryContents = value; }
-    inline void SetMemoryContents(Aws::Vector<Memory>&& value) { m_memoryContents = std::move(value); }
-    inline GetAgentMemoryResult& WithMemoryContents(const Aws::Vector<Memory>& value) { SetMemoryContents(value); return *this;}
-    inline GetAgentMemoryResult& WithMemoryContents(Aws::Vector<Memory>&& value) { SetMemoryContents(std::move(value)); return *this;}
-    inline GetAgentMemoryResult& AddMemoryContents(const Memory& value) { m_memoryContents.push_back(value); return *this; }
-    inline GetAgentMemoryResult& AddMemoryContents(Memory&& value) { m_memoryContents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Memory>& GetMemoryContents() const { return m_memoryContents; }
+    template<typename MemoryContentsT = Aws::Vector<Memory>>
+    void SetMemoryContents(MemoryContentsT&& value) { m_memoryContentsHasBeenSet = true; m_memoryContents = std::forward<MemoryContentsT>(value); }
+    template<typename MemoryContentsT = Aws::Vector<Memory>>
+    GetAgentMemoryResult& WithMemoryContents(MemoryContentsT&& value) { SetMemoryContents(std::forward<MemoryContentsT>(value)); return *this;}
+    template<typename MemoryContentsT = Memory>
+    GetAgentMemoryResult& AddMemoryContents(MemoryContentsT&& value) { m_memoryContentsHasBeenSet = true; m_memoryContents.emplace_back(std::forward<MemoryContentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetAgentMemoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAgentMemoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAgentMemoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAgentMemoryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAgentMemoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAgentMemoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAgentMemoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAgentMemoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Memory> m_memoryContents;
+    bool m_memoryContentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

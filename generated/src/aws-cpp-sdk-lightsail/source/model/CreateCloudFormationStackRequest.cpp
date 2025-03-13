@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCloudFormationStackRequest::CreateCloudFormationStackRequest() : 
-    m_instancesHasBeenSet(false)
-{
-}
-
 Aws::String CreateCloudFormationStackRequest::SerializePayload() const
 {
   JsonValue payload;

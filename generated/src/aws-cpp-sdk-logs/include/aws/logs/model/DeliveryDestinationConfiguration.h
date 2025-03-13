@@ -32,7 +32,7 @@ namespace Model
   class DeliveryDestinationConfiguration
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DeliveryDestinationConfiguration();
+    AWS_CLOUDWATCHLOGS_API DeliveryDestinationConfiguration() = default;
     AWS_CLOUDWATCHLOGS_API DeliveryDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API DeliveryDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * represents. That Amazon Web Services destination can be a log group in
      * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
-    inline const Aws::String& GetDestinationResourceArn() const{ return m_destinationResourceArn; }
+    inline const Aws::String& GetDestinationResourceArn() const { return m_destinationResourceArn; }
     inline bool DestinationResourceArnHasBeenSet() const { return m_destinationResourceArnHasBeenSet; }
-    inline void SetDestinationResourceArn(const Aws::String& value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn = value; }
-    inline void SetDestinationResourceArn(Aws::String&& value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn = std::move(value); }
-    inline void SetDestinationResourceArn(const char* value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn.assign(value); }
-    inline DeliveryDestinationConfiguration& WithDestinationResourceArn(const Aws::String& value) { SetDestinationResourceArn(value); return *this;}
-    inline DeliveryDestinationConfiguration& WithDestinationResourceArn(Aws::String&& value) { SetDestinationResourceArn(std::move(value)); return *this;}
-    inline DeliveryDestinationConfiguration& WithDestinationResourceArn(const char* value) { SetDestinationResourceArn(value); return *this;}
+    template<typename DestinationResourceArnT = Aws::String>
+    void SetDestinationResourceArn(DestinationResourceArnT&& value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn = std::forward<DestinationResourceArnT>(value); }
+    template<typename DestinationResourceArnT = Aws::String>
+    DeliveryDestinationConfiguration& WithDestinationResourceArn(DestinationResourceArnT&& value) { SetDestinationResourceArn(std::forward<DestinationResourceArnT>(value)); return *this;}
     ///@}
   private:
 

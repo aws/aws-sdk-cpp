@@ -18,19 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties() : 
-    m_warehouseHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_privateLinkServiceNameHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 SnowflakeConnectorProfileProperties::SnowflakeConnectorProfileProperties(JsonView jsonValue)
-  : SnowflakeConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ SnowflakeConnectorProfileProperties& SnowflakeConnectorProfileProperties::operat
   if(jsonValue.ValueExists("warehouse"))
   {
     m_warehouse = jsonValue.GetString("warehouse");
-
     m_warehouseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPrefix"))
   {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
-
     m_bucketPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateLinkServiceName"))
   {
     m_privateLinkServiceName = jsonValue.GetString("privateLinkServiceName");
-
     m_privateLinkServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountName"))
   {
     m_accountName = jsonValue.GetString("accountName");
-
     m_accountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-BundleResourceAssociation::BundleResourceAssociation() : 
-    m_associatedResourceIdHasBeenSet(false),
-    m_associatedResourceType(BundleAssociatedResourceType::NOT_SET),
-    m_associatedResourceTypeHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_state(AssociationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 BundleResourceAssociation::BundleResourceAssociation(JsonView jsonValue)
-  : BundleResourceAssociation()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ BundleResourceAssociation& BundleResourceAssociation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AssociatedResourceId"))
   {
     m_associatedResourceId = jsonValue.GetString("AssociatedResourceId");
-
     m_associatedResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedResourceType"))
   {
     m_associatedResourceType = BundleAssociatedResourceTypeMapper::GetBundleAssociatedResourceTypeForName(jsonValue.GetString("AssociatedResourceType"));
-
     m_associatedResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BundleId"))
   {
     m_bundleId = jsonValue.GetString("BundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetDouble("Created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = AssociationStateMapper::GetAssociationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetObject("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventTriggerRequest::DeleteEventTriggerRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_eventTriggerNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventTriggerRequest::SerializePayload() const
 {
   return {};

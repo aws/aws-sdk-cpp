@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStackRequest::DeleteStackRequest() : 
-    m_stackIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStackRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutResourceLogLevelRequest::PutResourceLogLevelRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 Aws::String PutResourceLogLevelRequest::SerializePayload() const
 {
   JsonValue payload;

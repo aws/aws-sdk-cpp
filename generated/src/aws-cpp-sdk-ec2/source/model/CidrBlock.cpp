@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CidrBlock::CidrBlock() : 
-    m_cidrBlockHasBeenSet(false)
-{
-}
-
 CidrBlock::CidrBlock(const XmlNode& xmlNode)
-  : CidrBlock()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ CidrBlock& CidrBlock::operator =(const XmlNode& xmlNode)
     {
       m_cidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(cidrBlockNode.GetText());
       m_cidrBlockHasBeenSet = true;
+       m_cidrBlockHasBeenSet = true;
     }
   }
 

@@ -20,24 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReservedNodeExchangeStatus::ReservedNodeExchangeStatus() : 
-    m_reservedNodeExchangeRequestIdHasBeenSet(false),
-    m_status(ReservedNodeExchangeStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_sourceReservedNodeIdHasBeenSet(false),
-    m_sourceReservedNodeTypeHasBeenSet(false),
-    m_sourceReservedNodeCount(0),
-    m_sourceReservedNodeCountHasBeenSet(false),
-    m_targetReservedNodeOfferingIdHasBeenSet(false),
-    m_targetReservedNodeTypeHasBeenSet(false),
-    m_targetReservedNodeCount(0),
-    m_targetReservedNodeCountHasBeenSet(false)
-{
-}
-
 ReservedNodeExchangeStatus::ReservedNodeExchangeStatus(const XmlNode& xmlNode)
-  : ReservedNodeExchangeStatus()
 {
   *this = xmlNode;
 }
@@ -53,54 +36,63 @@ ReservedNodeExchangeStatus& ReservedNodeExchangeStatus::operator =(const XmlNode
     {
       m_reservedNodeExchangeRequestId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedNodeExchangeRequestIdNode.GetText());
       m_reservedNodeExchangeRequestIdHasBeenSet = true;
+       m_reservedNodeExchangeRequestIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ReservedNodeExchangeStatusTypeMapper::GetReservedNodeExchangeStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ReservedNodeExchangeStatusTypeMapper::GetReservedNodeExchangeStatusTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode requestTimeNode = resultNode.FirstChild("RequestTime");
     if(!requestTimeNode.IsNull())
     {
       m_requestTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requestTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_requestTimeHasBeenSet = true;
+       m_requestTimeHasBeenSet = true;
     }
     XmlNode sourceReservedNodeIdNode = resultNode.FirstChild("SourceReservedNodeId");
     if(!sourceReservedNodeIdNode.IsNull())
     {
       m_sourceReservedNodeId = Aws::Utils::Xml::DecodeEscapedXmlText(sourceReservedNodeIdNode.GetText());
       m_sourceReservedNodeIdHasBeenSet = true;
+       m_sourceReservedNodeIdHasBeenSet = true;
     }
     XmlNode sourceReservedNodeTypeNode = resultNode.FirstChild("SourceReservedNodeType");
     if(!sourceReservedNodeTypeNode.IsNull())
     {
       m_sourceReservedNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(sourceReservedNodeTypeNode.GetText());
       m_sourceReservedNodeTypeHasBeenSet = true;
+       m_sourceReservedNodeTypeHasBeenSet = true;
     }
     XmlNode sourceReservedNodeCountNode = resultNode.FirstChild("SourceReservedNodeCount");
     if(!sourceReservedNodeCountNode.IsNull())
     {
       m_sourceReservedNodeCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceReservedNodeCountNode.GetText()).c_str()).c_str());
       m_sourceReservedNodeCountHasBeenSet = true;
+       m_sourceReservedNodeCountHasBeenSet = true;
     }
     XmlNode targetReservedNodeOfferingIdNode = resultNode.FirstChild("TargetReservedNodeOfferingId");
     if(!targetReservedNodeOfferingIdNode.IsNull())
     {
       m_targetReservedNodeOfferingId = Aws::Utils::Xml::DecodeEscapedXmlText(targetReservedNodeOfferingIdNode.GetText());
       m_targetReservedNodeOfferingIdHasBeenSet = true;
+       m_targetReservedNodeOfferingIdHasBeenSet = true;
     }
     XmlNode targetReservedNodeTypeNode = resultNode.FirstChild("TargetReservedNodeType");
     if(!targetReservedNodeTypeNode.IsNull())
     {
       m_targetReservedNodeType = Aws::Utils::Xml::DecodeEscapedXmlText(targetReservedNodeTypeNode.GetText());
       m_targetReservedNodeTypeHasBeenSet = true;
+       m_targetReservedNodeTypeHasBeenSet = true;
     }
     XmlNode targetReservedNodeCountNode = resultNode.FirstChild("TargetReservedNodeCount");
     if(!targetReservedNodeCountNode.IsNull())
     {
       m_targetReservedNodeCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetReservedNodeCountNode.GetText()).c_str()).c_str());
       m_targetReservedNodeCountHasBeenSet = true;
+       m_targetReservedNodeCountHasBeenSet = true;
     }
   }
 

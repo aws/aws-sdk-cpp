@@ -22,7 +22,7 @@ namespace Model
   class DescribeAssessmentTemplatesRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API DescribeAssessmentTemplatesRequest();
+    AWS_INSPECTOR_API DescribeAssessmentTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,15 +37,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetAssessmentTemplateArns() const{ return m_assessmentTemplateArns; }
+    inline const Aws::Vector<Aws::String>& GetAssessmentTemplateArns() const { return m_assessmentTemplateArns; }
     inline bool AssessmentTemplateArnsHasBeenSet() const { return m_assessmentTemplateArnsHasBeenSet; }
-    inline void SetAssessmentTemplateArns(const Aws::Vector<Aws::String>& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns = value; }
-    inline void SetAssessmentTemplateArns(Aws::Vector<Aws::String>&& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns = std::move(value); }
-    inline DescribeAssessmentTemplatesRequest& WithAssessmentTemplateArns(const Aws::Vector<Aws::String>& value) { SetAssessmentTemplateArns(value); return *this;}
-    inline DescribeAssessmentTemplatesRequest& WithAssessmentTemplateArns(Aws::Vector<Aws::String>&& value) { SetAssessmentTemplateArns(std::move(value)); return *this;}
-    inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(const Aws::String& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(value); return *this; }
-    inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(Aws::String&& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(std::move(value)); return *this; }
-    inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(const char* value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(value); return *this; }
+    template<typename AssessmentTemplateArnsT = Aws::Vector<Aws::String>>
+    void SetAssessmentTemplateArns(AssessmentTemplateArnsT&& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns = std::forward<AssessmentTemplateArnsT>(value); }
+    template<typename AssessmentTemplateArnsT = Aws::Vector<Aws::String>>
+    DescribeAssessmentTemplatesRequest& WithAssessmentTemplateArns(AssessmentTemplateArnsT&& value) { SetAssessmentTemplateArns(std::forward<AssessmentTemplateArnsT>(value)); return *this;}
+    template<typename AssessmentTemplateArnsT = Aws::String>
+    DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(AssessmentTemplateArnsT&& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.emplace_back(std::forward<AssessmentTemplateArnsT>(value)); return *this; }
     ///@}
   private:
 

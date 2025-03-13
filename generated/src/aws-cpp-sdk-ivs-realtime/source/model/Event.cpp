@@ -18,19 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-Event::Event() : 
-    m_name(EventName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_remoteParticipantIdHasBeenSet(false),
-    m_errorCode(EventErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 Event::Event(JsonView jsonValue)
-  : Event()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Event& Event::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = EventNameMapper::GetEventNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("participantId"))
   {
     m_participantId = jsonValue.GetString("participantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTime"))
   {
     m_eventTime = jsonValue.GetString("eventTime");
-
     m_eventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteParticipantId"))
   {
     m_remoteParticipantId = jsonValue.GetString("remoteParticipantId");
-
     m_remoteParticipantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = EventErrorCodeMapper::GetEventErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

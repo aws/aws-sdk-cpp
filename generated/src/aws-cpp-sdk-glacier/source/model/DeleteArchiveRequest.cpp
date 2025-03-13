@@ -12,13 +12,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteArchiveRequest::DeleteArchiveRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_archiveIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteArchiveRequest::SerializePayload() const
 {
   return {};

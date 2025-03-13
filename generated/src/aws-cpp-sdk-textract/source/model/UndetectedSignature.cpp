@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-UndetectedSignature::UndetectedSignature() : 
-    m_page(0),
-    m_pageHasBeenSet(false)
-{
-}
-
 UndetectedSignature::UndetectedSignature(JsonView jsonValue)
-  : UndetectedSignature()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UndetectedSignature& UndetectedSignature::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrainedModelOutputRequest::DeleteTrainedModelOutputRequest() : 
-    m_trainedModelArnHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrainedModelOutputRequest::SerializePayload() const
 {
   return {};

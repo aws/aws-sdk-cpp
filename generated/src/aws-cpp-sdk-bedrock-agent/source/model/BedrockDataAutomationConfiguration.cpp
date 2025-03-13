@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-BedrockDataAutomationConfiguration::BedrockDataAutomationConfiguration() : 
-    m_parsingModality(ParsingModality::NOT_SET),
-    m_parsingModalityHasBeenSet(false)
-{
-}
-
 BedrockDataAutomationConfiguration::BedrockDataAutomationConfiguration(JsonView jsonValue)
-  : BedrockDataAutomationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BedrockDataAutomationConfiguration& BedrockDataAutomationConfiguration::operator
   if(jsonValue.ValueExists("parsingModality"))
   {
     m_parsingModality = ParsingModalityMapper::GetParsingModalityForName(jsonValue.GetString("parsingModality"));
-
     m_parsingModalityHasBeenSet = true;
   }
-
   return *this;
 }
 

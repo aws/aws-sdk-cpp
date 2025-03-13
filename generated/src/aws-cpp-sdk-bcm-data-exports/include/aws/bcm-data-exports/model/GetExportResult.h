@@ -29,7 +29,7 @@ namespace Model
   class GetExportResult
   {
   public:
-    AWS_BCMDATAEXPORTS_API GetExportResult();
+    AWS_BCMDATAEXPORTS_API GetExportResult() = default;
     AWS_BCMDATAEXPORTS_API GetExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMDATAEXPORTS_API GetExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,42 @@ namespace Model
     /**
      * <p>The data for this specific export.</p>
      */
-    inline const Export& GetExport() const{ return m_export; }
-    inline void SetExport(const Export& value) { m_export = value; }
-    inline void SetExport(Export&& value) { m_export = std::move(value); }
-    inline GetExportResult& WithExport(const Export& value) { SetExport(value); return *this;}
-    inline GetExportResult& WithExport(Export&& value) { SetExport(std::move(value)); return *this;}
+    inline const Export& GetExport() const { return m_export; }
+    template<typename ExportT = Export>
+    void SetExport(ExportT&& value) { m_exportHasBeenSet = true; m_export = std::forward<ExportT>(value); }
+    template<typename ExportT = Export>
+    GetExportResult& WithExport(ExportT&& value) { SetExport(std::forward<ExportT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this specific export.</p>
      */
-    inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
-    inline void SetExportStatus(const ExportStatus& value) { m_exportStatus = value; }
-    inline void SetExportStatus(ExportStatus&& value) { m_exportStatus = std::move(value); }
-    inline GetExportResult& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
-    inline GetExportResult& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    inline const ExportStatus& GetExportStatus() const { return m_exportStatus; }
+    template<typename ExportStatusT = ExportStatus>
+    void SetExportStatus(ExportStatusT&& value) { m_exportStatusHasBeenSet = true; m_exportStatus = std::forward<ExportStatusT>(value); }
+    template<typename ExportStatusT = ExportStatus>
+    GetExportResult& WithExportStatus(ExportStatusT&& value) { SetExportStatus(std::forward<ExportStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Export m_export;
+    bool m_exportHasBeenSet = false;
 
     ExportStatus m_exportStatus;
+    bool m_exportStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

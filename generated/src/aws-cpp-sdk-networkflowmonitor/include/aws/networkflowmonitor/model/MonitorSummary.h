@@ -33,7 +33,7 @@ namespace Model
   class MonitorSummary
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API MonitorSummary();
+    AWS_NETWORKFLOWMONITOR_API MonitorSummary() = default;
     AWS_NETWORKFLOWMONITOR_API MonitorSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API MonitorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the monitor.</p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-    inline MonitorSummary& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline MonitorSummary& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline MonitorSummary& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    MonitorSummary& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the monitor.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline MonitorSummary& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline MonitorSummary& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline MonitorSummary& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    MonitorSummary& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,10 @@ namespace Model
      * <code>DELETING</code>: The monitor is in the process of being deleted.</p> </li>
      * </ul>
      */
-    inline const MonitorStatus& GetMonitorStatus() const{ return m_monitorStatus; }
+    inline MonitorStatus GetMonitorStatus() const { return m_monitorStatus; }
     inline bool MonitorStatusHasBeenSet() const { return m_monitorStatusHasBeenSet; }
-    inline void SetMonitorStatus(const MonitorStatus& value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = value; }
-    inline void SetMonitorStatus(MonitorStatus&& value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = std::move(value); }
-    inline MonitorSummary& WithMonitorStatus(const MonitorStatus& value) { SetMonitorStatus(value); return *this;}
-    inline MonitorSummary& WithMonitorStatus(MonitorStatus&& value) { SetMonitorStatus(std::move(value)); return *this;}
+    inline void SetMonitorStatus(MonitorStatus value) { m_monitorStatusHasBeenSet = true; m_monitorStatus = value; }
+    inline MonitorSummary& WithMonitorStatus(MonitorStatus value) { SetMonitorStatus(value); return *this;}
     ///@}
   private:
 
@@ -92,7 +86,7 @@ namespace Model
     Aws::String m_monitorName;
     bool m_monitorNameHasBeenSet = false;
 
-    MonitorStatus m_monitorStatus;
+    MonitorStatus m_monitorStatus{MonitorStatus::NOT_SET};
     bool m_monitorStatusHasBeenSet = false;
   };
 

@@ -20,20 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeConfigurationDetails::TypeConfigurationDetails() : 
-    m_arnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_typeArnHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_isDefaultConfiguration(false),
-    m_isDefaultConfigurationHasBeenSet(false)
-{
-}
-
 TypeConfigurationDetails::TypeConfigurationDetails(const XmlNode& xmlNode)
-  : TypeConfigurationDetails()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,49 @@ TypeConfigurationDetails& TypeConfigurationDetails::operator =(const XmlNode& xm
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode aliasNode = resultNode.FirstChild("Alias");
     if(!aliasNode.IsNull())
     {
       m_alias = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNode.GetText());
       m_aliasHasBeenSet = true;
+       m_aliasHasBeenSet = true;
     }
     XmlNode configurationNode = resultNode.FirstChild("Configuration");
     if(!configurationNode.IsNull())
     {
       m_configuration = Aws::Utils::Xml::DecodeEscapedXmlText(configurationNode.GetText());
       m_configurationHasBeenSet = true;
+       m_configurationHasBeenSet = true;
     }
     XmlNode lastUpdatedNode = resultNode.FirstChild("LastUpdated");
     if(!lastUpdatedNode.IsNull())
     {
       m_lastUpdated = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdatedHasBeenSet = true;
+       m_lastUpdatedHasBeenSet = true;
     }
     XmlNode typeArnNode = resultNode.FirstChild("TypeArn");
     if(!typeArnNode.IsNull())
     {
       m_typeArn = Aws::Utils::Xml::DecodeEscapedXmlText(typeArnNode.GetText());
       m_typeArnHasBeenSet = true;
+       m_typeArnHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");
     if(!typeNameNode.IsNull())
     {
       m_typeName = Aws::Utils::Xml::DecodeEscapedXmlText(typeNameNode.GetText());
       m_typeNameHasBeenSet = true;
+       m_typeNameHasBeenSet = true;
     }
     XmlNode isDefaultConfigurationNode = resultNode.FirstChild("IsDefaultConfiguration");
     if(!isDefaultConfigurationNode.IsNull())
     {
       m_isDefaultConfiguration = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultConfigurationNode.GetText()).c_str()).c_str());
       m_isDefaultConfigurationHasBeenSet = true;
+       m_isDefaultConfigurationHasBeenSet = true;
     }
   }
 

@@ -18,17 +18,7 @@ namespace LaunchWizard
 namespace Model
 {
 
-DeploymentSpecificationsField::DeploymentSpecificationsField() : 
-    m_allowedValuesHasBeenSet(false),
-    m_conditionalsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiredHasBeenSet(false)
-{
-}
-
 DeploymentSpecificationsField::DeploymentSpecificationsField(JsonView jsonValue)
-  : DeploymentSpecificationsField()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ DeploymentSpecificationsField& DeploymentSpecificationsField::operator =(JsonVie
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionals"))
   {
     Aws::Utils::Array<JsonView> conditionalsJsonList = jsonValue.GetArray("conditionals");
@@ -54,28 +43,21 @@ DeploymentSpecificationsField& DeploymentSpecificationsField::operator =(JsonVie
     }
     m_conditionalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("required"))
   {
     m_required = jsonValue.GetString("required");
-
     m_requiredHasBeenSet = true;
   }
-
   return *this;
 }
 

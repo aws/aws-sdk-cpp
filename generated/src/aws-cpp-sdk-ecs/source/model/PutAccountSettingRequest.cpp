@@ -12,14 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountSettingRequest::PutAccountSettingRequest() : 
-    m_name(SettingName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountSettingRequest::SerializePayload() const
 {
   JsonValue payload;

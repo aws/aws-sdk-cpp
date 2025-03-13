@@ -18,16 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-EngineVersionInfo::EngineVersionInfo() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_enginePatchVersionHasBeenSet(false),
-    m_parameterGroupFamilyHasBeenSet(false)
-{
-}
-
 EngineVersionInfo::EngineVersionInfo(JsonView jsonValue)
-  : EngineVersionInfo()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EngineVersionInfo& EngineVersionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnginePatchVersion"))
   {
     m_enginePatchVersion = jsonValue.GetString("EnginePatchVersion");
-
     m_enginePatchVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterGroupFamily"))
   {
     m_parameterGroupFamily = jsonValue.GetString("ParameterGroupFamily");
-
     m_parameterGroupFamilyHasBeenSet = true;
   }
-
   return *this;
 }
 

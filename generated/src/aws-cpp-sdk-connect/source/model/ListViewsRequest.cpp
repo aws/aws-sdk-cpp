@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListViewsRequest::ListViewsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_type(ViewType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListViewsRequest::SerializePayload() const
 {
   return {};

@@ -20,18 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceMetadataOptions::InstanceMetadataOptions() : 
-    m_httpTokens(InstanceMetadataHttpTokensState::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpEndpoint(InstanceMetadataEndpointState::NOT_SET),
-    m_httpEndpointHasBeenSet(false)
-{
-}
-
 InstanceMetadataOptions::InstanceMetadataOptions(const XmlNode& xmlNode)
-  : InstanceMetadataOptions()
 {
   *this = xmlNode;
 }
@@ -45,20 +34,23 @@ InstanceMetadataOptions& InstanceMetadataOptions::operator =(const XmlNode& xmlN
     XmlNode httpTokensNode = resultNode.FirstChild("HttpTokens");
     if(!httpTokensNode.IsNull())
     {
-      m_httpTokens = InstanceMetadataHttpTokensStateMapper::GetInstanceMetadataHttpTokensStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensNode.GetText()).c_str()).c_str());
+      m_httpTokens = InstanceMetadataHttpTokensStateMapper::GetInstanceMetadataHttpTokensStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpTokensNode.GetText()).c_str()));
       m_httpTokensHasBeenSet = true;
+       m_httpTokensHasBeenSet = true;
     }
     XmlNode httpPutResponseHopLimitNode = resultNode.FirstChild("HttpPutResponseHopLimit");
     if(!httpPutResponseHopLimitNode.IsNull())
     {
       m_httpPutResponseHopLimit = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpPutResponseHopLimitNode.GetText()).c_str()).c_str());
       m_httpPutResponseHopLimitHasBeenSet = true;
+       m_httpPutResponseHopLimitHasBeenSet = true;
     }
     XmlNode httpEndpointNode = resultNode.FirstChild("HttpEndpoint");
     if(!httpEndpointNode.IsNull())
     {
-      m_httpEndpoint = InstanceMetadataEndpointStateMapper::GetInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()).c_str());
+      m_httpEndpoint = InstanceMetadataEndpointStateMapper::GetInstanceMetadataEndpointStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpEndpointNode.GetText()).c_str()));
       m_httpEndpointHasBeenSet = true;
+       m_httpEndpointHasBeenSet = true;
     }
   }
 

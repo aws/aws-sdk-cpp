@@ -33,7 +33,7 @@ namespace Model
   class DomainUnitGrantFilter
   {
   public:
-    AWS_DATAZONE_API DomainUnitGrantFilter();
+    AWS_DATAZONE_API DomainUnitGrantFilter() = default;
     AWS_DATAZONE_API DomainUnitGrantFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DomainUnitGrantFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Specifies a grant filter containing all domain units.</p>
      */
-    inline const AllDomainUnitsGrantFilter& GetAllDomainUnitsGrantFilter() const{ return m_allDomainUnitsGrantFilter; }
+    inline const AllDomainUnitsGrantFilter& GetAllDomainUnitsGrantFilter() const { return m_allDomainUnitsGrantFilter; }
     inline bool AllDomainUnitsGrantFilterHasBeenSet() const { return m_allDomainUnitsGrantFilterHasBeenSet; }
-    inline void SetAllDomainUnitsGrantFilter(const AllDomainUnitsGrantFilter& value) { m_allDomainUnitsGrantFilterHasBeenSet = true; m_allDomainUnitsGrantFilter = value; }
-    inline void SetAllDomainUnitsGrantFilter(AllDomainUnitsGrantFilter&& value) { m_allDomainUnitsGrantFilterHasBeenSet = true; m_allDomainUnitsGrantFilter = std::move(value); }
-    inline DomainUnitGrantFilter& WithAllDomainUnitsGrantFilter(const AllDomainUnitsGrantFilter& value) { SetAllDomainUnitsGrantFilter(value); return *this;}
-    inline DomainUnitGrantFilter& WithAllDomainUnitsGrantFilter(AllDomainUnitsGrantFilter&& value) { SetAllDomainUnitsGrantFilter(std::move(value)); return *this;}
+    template<typename AllDomainUnitsGrantFilterT = AllDomainUnitsGrantFilter>
+    void SetAllDomainUnitsGrantFilter(AllDomainUnitsGrantFilterT&& value) { m_allDomainUnitsGrantFilterHasBeenSet = true; m_allDomainUnitsGrantFilter = std::forward<AllDomainUnitsGrantFilterT>(value); }
+    template<typename AllDomainUnitsGrantFilterT = AllDomainUnitsGrantFilter>
+    DomainUnitGrantFilter& WithAllDomainUnitsGrantFilter(AllDomainUnitsGrantFilterT&& value) { SetAllDomainUnitsGrantFilter(std::forward<AllDomainUnitsGrantFilterT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkAclEntry::AwsEc2NetworkAclEntry() : 
-    m_cidrBlockHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false),
-    m_icmpTypeCodeHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_portRangeHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleActionHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkAclEntry::AwsEc2NetworkAclEntry(JsonView jsonValue)
-  : AwsEc2NetworkAclEntry()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ AwsEc2NetworkAclEntry& AwsEc2NetworkAclEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Egress"))
   {
     m_egress = jsonValue.GetBool("Egress");
-
     m_egressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IcmpTypeCode"))
   {
     m_icmpTypeCode = jsonValue.GetObject("IcmpTypeCode");
-
     m_icmpTypeCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv6CidrBlock"))
   {
     m_ipv6CidrBlock = jsonValue.GetString("Ipv6CidrBlock");
-
     m_ipv6CidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortRange"))
   {
     m_portRange = jsonValue.GetObject("PortRange");
-
     m_portRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleAction"))
   {
     m_ruleAction = jsonValue.GetString("RuleAction");
-
     m_ruleActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleNumber"))
   {
     m_ruleNumber = jsonValue.GetInteger("RuleNumber");
-
     m_ruleNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-DurationRange::DurationRange() : 
-    m_minSeconds(0),
-    m_minSecondsHasBeenSet(false),
-    m_maxSeconds(0),
-    m_maxSecondsHasBeenSet(false)
-{
-}
-
 DurationRange::DurationRange(JsonView jsonValue)
-  : DurationRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DurationRange& DurationRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("minSeconds"))
   {
     m_minSeconds = jsonValue.GetInteger("minSeconds");
-
     m_minSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSeconds"))
   {
     m_maxSeconds = jsonValue.GetInteger("maxSeconds");
-
     m_maxSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

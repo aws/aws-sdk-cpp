@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-VehicleStatus::VehicleStatus() : 
-    m_campaignNameHasBeenSet(false),
-    m_vehicleNameHasBeenSet(false),
-    m_status(VehicleState::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 VehicleStatus::VehicleStatus(JsonView jsonValue)
-  : VehicleStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ VehicleStatus& VehicleStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("campaignName"))
   {
     m_campaignName = jsonValue.GetString("campaignName");
-
     m_campaignNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vehicleName"))
   {
     m_vehicleName = jsonValue.GetString("vehicleName");
-
     m_vehicleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = VehicleStateMapper::GetVehicleStateForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class Script
   {
   public:
-    AWS_APPTEST_API Script();
+    AWS_APPTEST_API Script() = default;
     AWS_APPTEST_API Script(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Script& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The script location of the scripts.</p>
      */
-    inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
+    inline const Aws::String& GetScriptLocation() const { return m_scriptLocation; }
     inline bool ScriptLocationHasBeenSet() const { return m_scriptLocationHasBeenSet; }
-    inline void SetScriptLocation(const Aws::String& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = value; }
-    inline void SetScriptLocation(Aws::String&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::move(value); }
-    inline void SetScriptLocation(const char* value) { m_scriptLocationHasBeenSet = true; m_scriptLocation.assign(value); }
-    inline Script& WithScriptLocation(const Aws::String& value) { SetScriptLocation(value); return *this;}
-    inline Script& WithScriptLocation(Aws::String&& value) { SetScriptLocation(std::move(value)); return *this;}
-    inline Script& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
+    template<typename ScriptLocationT = Aws::String>
+    void SetScriptLocation(ScriptLocationT&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::forward<ScriptLocationT>(value); }
+    template<typename ScriptLocationT = Aws::String>
+    Script& WithScriptLocation(ScriptLocationT&& value) { SetScriptLocation(std::forward<ScriptLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the scripts.</p>
      */
-    inline const ScriptType& GetType() const{ return m_type; }
+    inline ScriptType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ScriptType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ScriptType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Script& WithType(const ScriptType& value) { SetType(value); return *this;}
-    inline Script& WithType(ScriptType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ScriptType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Script& WithType(ScriptType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_scriptLocation;
     bool m_scriptLocationHasBeenSet = false;
 
-    ScriptType m_type;
+    ScriptType m_type{ScriptType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

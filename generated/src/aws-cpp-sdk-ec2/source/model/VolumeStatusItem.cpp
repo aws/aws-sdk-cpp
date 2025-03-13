@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeStatusItem::VolumeStatusItem() : 
-    m_actionsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_eventsHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false),
-    m_attachmentStatusesHasBeenSet(false)
-{
-}
-
 VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode)
-  : VolumeStatusItem()
 {
   *this = xmlNode;
 }
@@ -47,61 +35,68 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("item");
+      m_actionsHasBeenSet = !actionsMember.IsNull();
       while(!actionsMember.IsNull())
       {
         m_actions.push_back(actionsMember);
         actionsMember = actionsMember.NextNode("item");
       }
 
-      m_actionsHasBeenSet = true;
+       m_actionsHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
     if(!outpostArnNode.IsNull())
     {
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
+       m_outpostArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
     {
       XmlNode eventsMember = eventsNode.FirstChild("item");
+      m_eventsHasBeenSet = !eventsMember.IsNull();
       while(!eventsMember.IsNull())
       {
         m_events.push_back(eventsMember);
         eventsMember = eventsMember.NextNode("item");
       }
 
-      m_eventsHasBeenSet = true;
+       m_eventsHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");
     if(!volumeIdNode.IsNull())
     {
       m_volumeId = Aws::Utils::Xml::DecodeEscapedXmlText(volumeIdNode.GetText());
       m_volumeIdHasBeenSet = true;
+       m_volumeIdHasBeenSet = true;
     }
     XmlNode volumeStatusNode = resultNode.FirstChild("volumeStatus");
     if(!volumeStatusNode.IsNull())
     {
       m_volumeStatus = volumeStatusNode;
       m_volumeStatusHasBeenSet = true;
+       m_volumeStatusHasBeenSet = true;
     }
     XmlNode attachmentStatusesNode = resultNode.FirstChild("attachmentStatuses");
     if(!attachmentStatusesNode.IsNull())
     {
       XmlNode attachmentStatusesMember = attachmentStatusesNode.FirstChild("item");
+      m_attachmentStatusesHasBeenSet = !attachmentStatusesMember.IsNull();
       while(!attachmentStatusesMember.IsNull())
       {
         m_attachmentStatuses.push_back(attachmentStatusesMember);
         attachmentStatusesMember = attachmentStatusesMember.NextNode("item");
       }
 
-      m_attachmentStatusesHasBeenSet = true;
+       m_attachmentStatusesHasBeenSet = true;
     }
   }
 

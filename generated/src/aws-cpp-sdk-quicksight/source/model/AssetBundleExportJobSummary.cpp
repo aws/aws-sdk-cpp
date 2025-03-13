@@ -18,25 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleExportJobSummary::AssetBundleExportJobSummary() : 
-    m_jobStatus(AssetBundleExportJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_assetBundleExportJobIdHasBeenSet(false),
-    m_includeAllDependencies(false),
-    m_includeAllDependenciesHasBeenSet(false),
-    m_exportFormat(AssetBundleExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false),
-    m_includePermissions(false),
-    m_includePermissionsHasBeenSet(false),
-    m_includeTags(false),
-    m_includeTagsHasBeenSet(false)
-{
-}
-
 AssetBundleExportJobSummary::AssetBundleExportJobSummary(JsonView jsonValue)
-  : AssetBundleExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ AssetBundleExportJobSummary& AssetBundleExportJobSummary::operator =(JsonView js
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = AssetBundleExportJobStatusMapper::GetAssetBundleExportJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetBundleExportJobId"))
   {
     m_assetBundleExportJobId = jsonValue.GetString("AssetBundleExportJobId");
-
     m_assetBundleExportJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeAllDependencies"))
   {
     m_includeAllDependencies = jsonValue.GetBool("IncludeAllDependencies");
-
     m_includeAllDependenciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportFormat"))
   {
     m_exportFormat = AssetBundleExportFormatMapper::GetAssetBundleExportFormatForName(jsonValue.GetString("ExportFormat"));
-
     m_exportFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludePermissions"))
   {
     m_includePermissions = jsonValue.GetBool("IncludePermissions");
-
     m_includePermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeTags"))
   {
     m_includeTags = jsonValue.GetBool("IncludeTags");
-
     m_includeTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

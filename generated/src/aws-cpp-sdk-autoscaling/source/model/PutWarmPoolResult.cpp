@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutWarmPoolResult::PutWarmPoolResult()
-{
-}
-
 PutWarmPoolResult::PutWarmPoolResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ PutWarmPoolResult& PutWarmPoolResult::operator =(const Aws::AmazonWebServiceResu
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::PutWarmPoolResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

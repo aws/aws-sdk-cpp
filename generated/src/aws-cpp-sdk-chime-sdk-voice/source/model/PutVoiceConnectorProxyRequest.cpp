@@ -12,17 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutVoiceConnectorProxyRequest::PutVoiceConnectorProxyRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_defaultSessionExpiryMinutes(0),
-    m_defaultSessionExpiryMinutesHasBeenSet(false),
-    m_phoneNumberPoolCountriesHasBeenSet(false),
-    m_fallBackPhoneNumberHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false)
-{
-}
-
 Aws::String PutVoiceConnectorProxyRequest::SerializePayload() const
 {
   JsonValue payload;

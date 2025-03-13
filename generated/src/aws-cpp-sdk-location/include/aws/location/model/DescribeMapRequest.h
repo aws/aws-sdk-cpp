@@ -21,7 +21,7 @@ namespace Model
   class DescribeMapRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API DescribeMapRequest();
+    AWS_LOCATIONSERVICE_API DescribeMapRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the map resource.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
+    inline const Aws::String& GetMapName() const { return m_mapName; }
     inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-    inline DescribeMapRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-    inline DescribeMapRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-    inline DescribeMapRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+    template<typename MapNameT = Aws::String>
+    void SetMapName(MapNameT&& value) { m_mapNameHasBeenSet = true; m_mapName = std::forward<MapNameT>(value); }
+    template<typename MapNameT = Aws::String>
+    DescribeMapRequest& WithMapName(MapNameT&& value) { SetMapName(std::forward<MapNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ZeppelinApplicationConfigurationUpdate::ZeppelinApplicationConfigurationUpdate() : 
-    m_monitoringConfigurationUpdateHasBeenSet(false),
-    m_catalogConfigurationUpdateHasBeenSet(false),
-    m_deployAsApplicationConfigurationUpdateHasBeenSet(false),
-    m_customArtifactsConfigurationUpdateHasBeenSet(false)
-{
-}
-
 ZeppelinApplicationConfigurationUpdate::ZeppelinApplicationConfigurationUpdate(JsonView jsonValue)
-  : ZeppelinApplicationConfigurationUpdate()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ZeppelinApplicationConfigurationUpdate& ZeppelinApplicationConfigurationUpdate::
   if(jsonValue.ValueExists("MonitoringConfigurationUpdate"))
   {
     m_monitoringConfigurationUpdate = jsonValue.GetObject("MonitoringConfigurationUpdate");
-
     m_monitoringConfigurationUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogConfigurationUpdate"))
   {
     m_catalogConfigurationUpdate = jsonValue.GetObject("CatalogConfigurationUpdate");
-
     m_catalogConfigurationUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeployAsApplicationConfigurationUpdate"))
   {
     m_deployAsApplicationConfigurationUpdate = jsonValue.GetObject("DeployAsApplicationConfigurationUpdate");
-
     m_deployAsApplicationConfigurationUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomArtifactsConfigurationUpdate"))
   {
     Aws::Utils::Array<JsonView> customArtifactsConfigurationUpdateJsonList = jsonValue.GetArray("CustomArtifactsConfigurationUpdate");
@@ -64,7 +49,6 @@ ZeppelinApplicationConfigurationUpdate& ZeppelinApplicationConfigurationUpdate::
     }
     m_customArtifactsConfigurationUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

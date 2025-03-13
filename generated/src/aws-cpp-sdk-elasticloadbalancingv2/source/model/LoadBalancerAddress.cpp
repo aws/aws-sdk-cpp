@@ -20,16 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-LoadBalancerAddress::LoadBalancerAddress() : 
-    m_ipAddressHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_privateIPv4AddressHasBeenSet(false),
-    m_iPv6AddressHasBeenSet(false)
-{
-}
-
 LoadBalancerAddress::LoadBalancerAddress(const XmlNode& xmlNode)
-  : LoadBalancerAddress()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ LoadBalancerAddress& LoadBalancerAddress::operator =(const XmlNode& xmlNode)
     {
       m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
       m_ipAddressHasBeenSet = true;
+       m_ipAddressHasBeenSet = true;
     }
     XmlNode allocationIdNode = resultNode.FirstChild("AllocationId");
     if(!allocationIdNode.IsNull())
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
+       m_allocationIdHasBeenSet = true;
     }
     XmlNode privateIPv4AddressNode = resultNode.FirstChild("PrivateIPv4Address");
     if(!privateIPv4AddressNode.IsNull())
     {
       m_privateIPv4Address = Aws::Utils::Xml::DecodeEscapedXmlText(privateIPv4AddressNode.GetText());
       m_privateIPv4AddressHasBeenSet = true;
+       m_privateIPv4AddressHasBeenSet = true;
     }
     XmlNode iPv6AddressNode = resultNode.FirstChild("IPv6Address");
     if(!iPv6AddressNode.IsNull())
     {
       m_iPv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(iPv6AddressNode.GetText());
       m_iPv6AddressHasBeenSet = true;
+       m_iPv6AddressHasBeenSet = true;
     }
   }
 

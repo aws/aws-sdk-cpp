@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteDatasetContentRequest::DeleteDatasetContentRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatasetContentRequest::SerializePayload() const
 {
   return {};

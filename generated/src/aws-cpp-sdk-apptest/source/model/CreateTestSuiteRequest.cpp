@@ -12,18 +12,6 @@ using namespace Aws::AppTest::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTestSuiteRequest::CreateTestSuiteRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_beforeStepsHasBeenSet(false),
-    m_afterStepsHasBeenSet(false),
-    m_testCasesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTestSuiteRequest::SerializePayload() const
 {
   JsonValue payload;

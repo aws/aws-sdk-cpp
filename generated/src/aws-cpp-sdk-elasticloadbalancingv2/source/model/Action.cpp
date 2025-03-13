@@ -20,22 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Action::Action() : 
-    m_type(ActionTypeEnum::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false),
-    m_authenticateOidcConfigHasBeenSet(false),
-    m_authenticateCognitoConfigHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_redirectConfigHasBeenSet(false),
-    m_fixedResponseConfigHasBeenSet(false),
-    m_forwardConfigHasBeenSet(false)
-{
-}
-
 Action::Action(const XmlNode& xmlNode)
-  : Action()
 {
   *this = xmlNode;
 }
@@ -49,50 +34,58 @@ Action& Action::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ActionTypeEnumMapper::GetActionTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ActionTypeEnumMapper::GetActionTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");
     if(!targetGroupArnNode.IsNull())
     {
       m_targetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupArnNode.GetText());
       m_targetGroupArnHasBeenSet = true;
+       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode authenticateOidcConfigNode = resultNode.FirstChild("AuthenticateOidcConfig");
     if(!authenticateOidcConfigNode.IsNull())
     {
       m_authenticateOidcConfig = authenticateOidcConfigNode;
       m_authenticateOidcConfigHasBeenSet = true;
+       m_authenticateOidcConfigHasBeenSet = true;
     }
     XmlNode authenticateCognitoConfigNode = resultNode.FirstChild("AuthenticateCognitoConfig");
     if(!authenticateCognitoConfigNode.IsNull())
     {
       m_authenticateCognitoConfig = authenticateCognitoConfigNode;
       m_authenticateCognitoConfigHasBeenSet = true;
+       m_authenticateCognitoConfigHasBeenSet = true;
     }
     XmlNode orderNode = resultNode.FirstChild("Order");
     if(!orderNode.IsNull())
     {
       m_order = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(orderNode.GetText()).c_str()).c_str());
       m_orderHasBeenSet = true;
+       m_orderHasBeenSet = true;
     }
     XmlNode redirectConfigNode = resultNode.FirstChild("RedirectConfig");
     if(!redirectConfigNode.IsNull())
     {
       m_redirectConfig = redirectConfigNode;
       m_redirectConfigHasBeenSet = true;
+       m_redirectConfigHasBeenSet = true;
     }
     XmlNode fixedResponseConfigNode = resultNode.FirstChild("FixedResponseConfig");
     if(!fixedResponseConfigNode.IsNull())
     {
       m_fixedResponseConfig = fixedResponseConfigNode;
       m_fixedResponseConfigHasBeenSet = true;
+       m_fixedResponseConfigHasBeenSet = true;
     }
     XmlNode forwardConfigNode = resultNode.FirstChild("ForwardConfig");
     if(!forwardConfigNode.IsNull())
     {
       m_forwardConfig = forwardConfigNode;
       m_forwardConfigHasBeenSet = true;
+       m_forwardConfigHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-Bumper::Bumper() : 
-    m_endUrlHasBeenSet(false),
-    m_startUrlHasBeenSet(false)
-{
-}
-
 Bumper::Bumper(JsonView jsonValue)
-  : Bumper()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Bumper& Bumper::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndUrl"))
   {
     m_endUrl = jsonValue.GetString("EndUrl");
-
     m_endUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartUrl"))
   {
     m_startUrl = jsonValue.GetString("StartUrl");
-
     m_startUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

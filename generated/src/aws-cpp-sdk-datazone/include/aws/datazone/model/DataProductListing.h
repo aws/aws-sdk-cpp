@@ -35,7 +35,7 @@ namespace Model
   class DataProductListing
   {
   public:
-    AWS_DATAZONE_API DataProductListing();
+    AWS_DATAZONE_API DataProductListing() = default;
     AWS_DATAZONE_API DataProductListing(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DataProductListing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,100 +45,92 @@ namespace Model
     /**
      * <p>The timestamp at which the data product listing was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline DataProductListing& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DataProductListing& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DataProductListing& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the data product listing.</p>
      */
-    inline const Aws::String& GetDataProductId() const{ return m_dataProductId; }
+    inline const Aws::String& GetDataProductId() const { return m_dataProductId; }
     inline bool DataProductIdHasBeenSet() const { return m_dataProductIdHasBeenSet; }
-    inline void SetDataProductId(const Aws::String& value) { m_dataProductIdHasBeenSet = true; m_dataProductId = value; }
-    inline void SetDataProductId(Aws::String&& value) { m_dataProductIdHasBeenSet = true; m_dataProductId = std::move(value); }
-    inline void SetDataProductId(const char* value) { m_dataProductIdHasBeenSet = true; m_dataProductId.assign(value); }
-    inline DataProductListing& WithDataProductId(const Aws::String& value) { SetDataProductId(value); return *this;}
-    inline DataProductListing& WithDataProductId(Aws::String&& value) { SetDataProductId(std::move(value)); return *this;}
-    inline DataProductListing& WithDataProductId(const char* value) { SetDataProductId(value); return *this;}
+    template<typename DataProductIdT = Aws::String>
+    void SetDataProductId(DataProductIdT&& value) { m_dataProductIdHasBeenSet = true; m_dataProductId = std::forward<DataProductIdT>(value); }
+    template<typename DataProductIdT = Aws::String>
+    DataProductListing& WithDataProductId(DataProductIdT&& value) { SetDataProductId(std::forward<DataProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the data product listing.</p>
      */
-    inline const Aws::String& GetDataProductRevision() const{ return m_dataProductRevision; }
+    inline const Aws::String& GetDataProductRevision() const { return m_dataProductRevision; }
     inline bool DataProductRevisionHasBeenSet() const { return m_dataProductRevisionHasBeenSet; }
-    inline void SetDataProductRevision(const Aws::String& value) { m_dataProductRevisionHasBeenSet = true; m_dataProductRevision = value; }
-    inline void SetDataProductRevision(Aws::String&& value) { m_dataProductRevisionHasBeenSet = true; m_dataProductRevision = std::move(value); }
-    inline void SetDataProductRevision(const char* value) { m_dataProductRevisionHasBeenSet = true; m_dataProductRevision.assign(value); }
-    inline DataProductListing& WithDataProductRevision(const Aws::String& value) { SetDataProductRevision(value); return *this;}
-    inline DataProductListing& WithDataProductRevision(Aws::String&& value) { SetDataProductRevision(std::move(value)); return *this;}
-    inline DataProductListing& WithDataProductRevision(const char* value) { SetDataProductRevision(value); return *this;}
+    template<typename DataProductRevisionT = Aws::String>
+    void SetDataProductRevision(DataProductRevisionT&& value) { m_dataProductRevisionHasBeenSet = true; m_dataProductRevision = std::forward<DataProductRevisionT>(value); }
+    template<typename DataProductRevisionT = Aws::String>
+    DataProductListing& WithDataProductRevision(DataProductRevisionT&& value) { SetDataProductRevision(std::forward<DataProductRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata forms of the data product listing.</p>
      */
-    inline const Aws::String& GetForms() const{ return m_forms; }
+    inline const Aws::String& GetForms() const { return m_forms; }
     inline bool FormsHasBeenSet() const { return m_formsHasBeenSet; }
-    inline void SetForms(const Aws::String& value) { m_formsHasBeenSet = true; m_forms = value; }
-    inline void SetForms(Aws::String&& value) { m_formsHasBeenSet = true; m_forms = std::move(value); }
-    inline void SetForms(const char* value) { m_formsHasBeenSet = true; m_forms.assign(value); }
-    inline DataProductListing& WithForms(const Aws::String& value) { SetForms(value); return *this;}
-    inline DataProductListing& WithForms(Aws::String&& value) { SetForms(std::move(value)); return *this;}
-    inline DataProductListing& WithForms(const char* value) { SetForms(value); return *this;}
+    template<typename FormsT = Aws::String>
+    void SetForms(FormsT&& value) { m_formsHasBeenSet = true; m_forms = std::forward<FormsT>(value); }
+    template<typename FormsT = Aws::String>
+    DataProductListing& WithForms(FormsT&& value) { SetForms(std::forward<FormsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The glossary terms of the data product listing.</p>
      */
-    inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const{ return m_glossaryTerms; }
+    inline const Aws::Vector<DetailedGlossaryTerm>& GetGlossaryTerms() const { return m_glossaryTerms; }
     inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
-    inline void SetGlossaryTerms(const Aws::Vector<DetailedGlossaryTerm>& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = value; }
-    inline void SetGlossaryTerms(Aws::Vector<DetailedGlossaryTerm>&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::move(value); }
-    inline DataProductListing& WithGlossaryTerms(const Aws::Vector<DetailedGlossaryTerm>& value) { SetGlossaryTerms(value); return *this;}
-    inline DataProductListing& WithGlossaryTerms(Aws::Vector<DetailedGlossaryTerm>&& value) { SetGlossaryTerms(std::move(value)); return *this;}
-    inline DataProductListing& AddGlossaryTerms(const DetailedGlossaryTerm& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(value); return *this; }
-    inline DataProductListing& AddGlossaryTerms(DetailedGlossaryTerm&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.push_back(std::move(value)); return *this; }
+    template<typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    void SetGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms = std::forward<GlossaryTermsT>(value); }
+    template<typename GlossaryTermsT = Aws::Vector<DetailedGlossaryTerm>>
+    DataProductListing& WithGlossaryTerms(GlossaryTermsT&& value) { SetGlossaryTerms(std::forward<GlossaryTermsT>(value)); return *this;}
+    template<typename GlossaryTermsT = DetailedGlossaryTerm>
+    DataProductListing& AddGlossaryTerms(GlossaryTermsT&& value) { m_glossaryTermsHasBeenSet = true; m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The data assets of the data product listing.</p>
      */
-    inline const Aws::Vector<ListingSummary>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<ListingSummary>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<ListingSummary>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<ListingSummary>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline DataProductListing& WithItems(const Aws::Vector<ListingSummary>& value) { SetItems(value); return *this;}
-    inline DataProductListing& WithItems(Aws::Vector<ListingSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline DataProductListing& AddItems(const ListingSummary& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline DataProductListing& AddItems(ListingSummary&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<ListingSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ListingSummary>>
+    DataProductListing& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ListingSummary>
+    DataProductListing& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the owning project of the data product listing.</p>
      */
-    inline const Aws::String& GetOwningProjectId() const{ return m_owningProjectId; }
+    inline const Aws::String& GetOwningProjectId() const { return m_owningProjectId; }
     inline bool OwningProjectIdHasBeenSet() const { return m_owningProjectIdHasBeenSet; }
-    inline void SetOwningProjectId(const Aws::String& value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId = value; }
-    inline void SetOwningProjectId(Aws::String&& value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId = std::move(value); }
-    inline void SetOwningProjectId(const char* value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId.assign(value); }
-    inline DataProductListing& WithOwningProjectId(const Aws::String& value) { SetOwningProjectId(value); return *this;}
-    inline DataProductListing& WithOwningProjectId(Aws::String&& value) { SetOwningProjectId(std::move(value)); return *this;}
-    inline DataProductListing& WithOwningProjectId(const char* value) { SetOwningProjectId(value); return *this;}
+    template<typename OwningProjectIdT = Aws::String>
+    void SetOwningProjectId(OwningProjectIdT&& value) { m_owningProjectIdHasBeenSet = true; m_owningProjectId = std::forward<OwningProjectIdT>(value); }
+    template<typename OwningProjectIdT = Aws::String>
+    DataProductListing& WithOwningProjectId(OwningProjectIdT&& value) { SetOwningProjectId(std::forward<OwningProjectIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dataProductId;

@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-TrendmicroSourceProperties::TrendmicroSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 TrendmicroSourceProperties::TrendmicroSourceProperties(JsonView jsonValue)
-  : TrendmicroSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrendmicroSourceProperties& TrendmicroSourceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

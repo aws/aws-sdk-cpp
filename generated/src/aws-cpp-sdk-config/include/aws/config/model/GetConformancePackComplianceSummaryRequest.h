@@ -22,7 +22,7 @@ namespace Model
   class GetConformancePackComplianceSummaryRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API GetConformancePackComplianceSummaryRequest();
+    AWS_CONFIGSERVICE_API GetConformancePackComplianceSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,22 +39,21 @@ namespace Model
     /**
      * <p>Names of conformance packs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConformancePackNames() const{ return m_conformancePackNames; }
+    inline const Aws::Vector<Aws::String>& GetConformancePackNames() const { return m_conformancePackNames; }
     inline bool ConformancePackNamesHasBeenSet() const { return m_conformancePackNamesHasBeenSet; }
-    inline void SetConformancePackNames(const Aws::Vector<Aws::String>& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = value; }
-    inline void SetConformancePackNames(Aws::Vector<Aws::String>&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = std::move(value); }
-    inline GetConformancePackComplianceSummaryRequest& WithConformancePackNames(const Aws::Vector<Aws::String>& value) { SetConformancePackNames(value); return *this;}
-    inline GetConformancePackComplianceSummaryRequest& WithConformancePackNames(Aws::Vector<Aws::String>&& value) { SetConformancePackNames(std::move(value)); return *this;}
-    inline GetConformancePackComplianceSummaryRequest& AddConformancePackNames(const Aws::String& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(value); return *this; }
-    inline GetConformancePackComplianceSummaryRequest& AddConformancePackNames(Aws::String&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(std::move(value)); return *this; }
-    inline GetConformancePackComplianceSummaryRequest& AddConformancePackNames(const char* value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.push_back(value); return *this; }
+    template<typename ConformancePackNamesT = Aws::Vector<Aws::String>>
+    void SetConformancePackNames(ConformancePackNamesT&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames = std::forward<ConformancePackNamesT>(value); }
+    template<typename ConformancePackNamesT = Aws::Vector<Aws::String>>
+    GetConformancePackComplianceSummaryRequest& WithConformancePackNames(ConformancePackNamesT&& value) { SetConformancePackNames(std::forward<ConformancePackNamesT>(value)); return *this;}
+    template<typename ConformancePackNamesT = Aws::String>
+    GetConformancePackComplianceSummaryRequest& AddConformancePackNames(ConformancePackNamesT&& value) { m_conformancePackNamesHasBeenSet = true; m_conformancePackNames.emplace_back(std::forward<ConformancePackNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of conformance packs returned on each page.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetConformancePackComplianceSummaryRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -65,21 +64,19 @@ namespace Model
      * <p>The nextToken string returned on a previous page that you use to get the next
      * page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetConformancePackComplianceSummaryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetConformancePackComplianceSummaryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetConformancePackComplianceSummaryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetConformancePackComplianceSummaryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_conformancePackNames;
     bool m_conformancePackNamesHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

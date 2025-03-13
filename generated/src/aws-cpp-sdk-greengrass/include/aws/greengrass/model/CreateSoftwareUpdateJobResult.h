@@ -27,7 +27,7 @@ namespace Model
   class CreateSoftwareUpdateJobResult
   {
   public:
-    AWS_GREENGRASS_API CreateSoftwareUpdateJobResult();
+    AWS_GREENGRASS_API CreateSoftwareUpdateJobResult() = default;
     AWS_GREENGRASS_API CreateSoftwareUpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API CreateSoftwareUpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * The IoT Job ARN corresponding to this update.
      */
-    inline const Aws::String& GetIotJobArn() const{ return m_iotJobArn; }
-    inline void SetIotJobArn(const Aws::String& value) { m_iotJobArn = value; }
-    inline void SetIotJobArn(Aws::String&& value) { m_iotJobArn = std::move(value); }
-    inline void SetIotJobArn(const char* value) { m_iotJobArn.assign(value); }
-    inline CreateSoftwareUpdateJobResult& WithIotJobArn(const Aws::String& value) { SetIotJobArn(value); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithIotJobArn(Aws::String&& value) { SetIotJobArn(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithIotJobArn(const char* value) { SetIotJobArn(value); return *this;}
+    inline const Aws::String& GetIotJobArn() const { return m_iotJobArn; }
+    template<typename IotJobArnT = Aws::String>
+    void SetIotJobArn(IotJobArnT&& value) { m_iotJobArnHasBeenSet = true; m_iotJobArn = std::forward<IotJobArnT>(value); }
+    template<typename IotJobArnT = Aws::String>
+    CreateSoftwareUpdateJobResult& WithIotJobArn(IotJobArnT&& value) { SetIotJobArn(std::forward<IotJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The IoT Job Id corresponding to this update.
      */
-    inline const Aws::String& GetIotJobId() const{ return m_iotJobId; }
-    inline void SetIotJobId(const Aws::String& value) { m_iotJobId = value; }
-    inline void SetIotJobId(Aws::String&& value) { m_iotJobId = std::move(value); }
-    inline void SetIotJobId(const char* value) { m_iotJobId.assign(value); }
-    inline CreateSoftwareUpdateJobResult& WithIotJobId(const Aws::String& value) { SetIotJobId(value); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithIotJobId(Aws::String&& value) { SetIotJobId(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
+    inline const Aws::String& GetIotJobId() const { return m_iotJobId; }
+    template<typename IotJobIdT = Aws::String>
+    void SetIotJobId(IotJobIdT&& value) { m_iotJobIdHasBeenSet = true; m_iotJobId = std::forward<IotJobIdT>(value); }
+    template<typename IotJobIdT = Aws::String>
+    CreateSoftwareUpdateJobResult& WithIotJobId(IotJobIdT&& value) { SetIotJobId(std::forward<IotJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The software version installed on the device or devices after the update.
      */
-    inline const Aws::String& GetPlatformSoftwareVersion() const{ return m_platformSoftwareVersion; }
-    inline void SetPlatformSoftwareVersion(const Aws::String& value) { m_platformSoftwareVersion = value; }
-    inline void SetPlatformSoftwareVersion(Aws::String&& value) { m_platformSoftwareVersion = std::move(value); }
-    inline void SetPlatformSoftwareVersion(const char* value) { m_platformSoftwareVersion.assign(value); }
-    inline CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(const Aws::String& value) { SetPlatformSoftwareVersion(value); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(Aws::String&& value) { SetPlatformSoftwareVersion(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(const char* value) { SetPlatformSoftwareVersion(value); return *this;}
+    inline const Aws::String& GetPlatformSoftwareVersion() const { return m_platformSoftwareVersion; }
+    template<typename PlatformSoftwareVersionT = Aws::String>
+    void SetPlatformSoftwareVersion(PlatformSoftwareVersionT&& value) { m_platformSoftwareVersionHasBeenSet = true; m_platformSoftwareVersion = std::forward<PlatformSoftwareVersionT>(value); }
+    template<typename PlatformSoftwareVersionT = Aws::String>
+    CreateSoftwareUpdateJobResult& WithPlatformSoftwareVersion(PlatformSoftwareVersionT&& value) { SetPlatformSoftwareVersion(std::forward<PlatformSoftwareVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSoftwareUpdateJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSoftwareUpdateJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_iotJobArn;
+    bool m_iotJobArnHasBeenSet = false;
 
     Aws::String m_iotJobId;
+    bool m_iotJobIdHasBeenSet = false;
 
     Aws::String m_platformSoftwareVersion;
+    bool m_platformSoftwareVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

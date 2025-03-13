@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventTriggerRequest::GetEventTriggerRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_eventTriggerNameHasBeenSet(false)
-{
-}
-
 Aws::String GetEventTriggerRequest::SerializePayload() const
 {
   return {};

@@ -21,7 +21,7 @@ namespace Model
   class DescribeGeneratedTemplateRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeGeneratedTemplateRequest();
+    AWS_CLOUDFORMATION_API DescribeGeneratedTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name or Amazon Resource Name (ARN) of a generated template.</p>
      */
-    inline const Aws::String& GetGeneratedTemplateName() const{ return m_generatedTemplateName; }
+    inline const Aws::String& GetGeneratedTemplateName() const { return m_generatedTemplateName; }
     inline bool GeneratedTemplateNameHasBeenSet() const { return m_generatedTemplateNameHasBeenSet; }
-    inline void SetGeneratedTemplateName(const Aws::String& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = value; }
-    inline void SetGeneratedTemplateName(Aws::String&& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = std::move(value); }
-    inline void SetGeneratedTemplateName(const char* value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName.assign(value); }
-    inline DescribeGeneratedTemplateRequest& WithGeneratedTemplateName(const Aws::String& value) { SetGeneratedTemplateName(value); return *this;}
-    inline DescribeGeneratedTemplateRequest& WithGeneratedTemplateName(Aws::String&& value) { SetGeneratedTemplateName(std::move(value)); return *this;}
-    inline DescribeGeneratedTemplateRequest& WithGeneratedTemplateName(const char* value) { SetGeneratedTemplateName(value); return *this;}
+    template<typename GeneratedTemplateNameT = Aws::String>
+    void SetGeneratedTemplateName(GeneratedTemplateNameT&& value) { m_generatedTemplateNameHasBeenSet = true; m_generatedTemplateName = std::forward<GeneratedTemplateNameT>(value); }
+    template<typename GeneratedTemplateNameT = Aws::String>
+    DescribeGeneratedTemplateRequest& WithGeneratedTemplateName(GeneratedTemplateNameT&& value) { SetGeneratedTemplateName(std::forward<GeneratedTemplateNameT>(value)); return *this;}
     ///@}
   private:
 

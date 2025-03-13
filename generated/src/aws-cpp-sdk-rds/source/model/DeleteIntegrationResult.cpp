@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteIntegrationResult::DeleteIntegrationResult() : 
-    m_status(IntegrationStatus::NOT_SET)
-{
-}
-
 DeleteIntegrationResult::DeleteIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DeleteIntegrationResult()
 {
   *this = result;
 }
@@ -44,32 +38,38 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
     if(!sourceArnNode.IsNull())
     {
       m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
+      m_sourceArnHasBeenSet = true;
     }
     XmlNode targetArnNode = resultNode.FirstChild("TargetArn");
     if(!targetArnNode.IsNull())
     {
       m_targetArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetArnNode.GetText());
+      m_targetArnHasBeenSet = true;
     }
     XmlNode integrationNameNode = resultNode.FirstChild("IntegrationName");
     if(!integrationNameNode.IsNull())
     {
       m_integrationName = Aws::Utils::Xml::DecodeEscapedXmlText(integrationNameNode.GetText());
+      m_integrationNameHasBeenSet = true;
     }
     XmlNode integrationArnNode = resultNode.FirstChild("IntegrationArn");
     if(!integrationArnNode.IsNull())
     {
       m_integrationArn = Aws::Utils::Xml::DecodeEscapedXmlText(integrationArnNode.GetText());
+      m_integrationArnHasBeenSet = true;
     }
     XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
     if(!kMSKeyIdNode.IsNull())
     {
       m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
+      m_kMSKeyIdHasBeenSet = true;
     }
     XmlNode additionalEncryptionContextNode = resultNode.FirstChild("AdditionalEncryptionContext");
 
     if(!additionalEncryptionContextNode.IsNull())
     {
       XmlNode additionalEncryptionContextEntry = additionalEncryptionContextNode.FirstChild("entry");
+      m_additionalEncryptionContextHasBeenSet = !additionalEncryptionContextEntry.IsNull();
       while(!additionalEncryptionContextEntry.IsNull())
       {
         XmlNode keyNode = additionalEncryptionContextEntry.FirstChild("key");
@@ -83,12 +83,14 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = IntegrationStatusMapper::GetIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = IntegrationStatusMapper::GetIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -100,11 +102,13 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("Errors");
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("IntegrationError");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
@@ -116,17 +120,20 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
     if(!dataFilterNode.IsNull())
     {
       m_dataFilter = Aws::Utils::Xml::DecodeEscapedXmlText(dataFilterNode.GetText());
+      m_dataFilterHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+      m_descriptionHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteIntegrationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

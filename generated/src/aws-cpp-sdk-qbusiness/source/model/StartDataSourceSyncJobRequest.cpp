@@ -12,13 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDataSourceSyncJobRequest::StartDataSourceSyncJobRequest() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false)
-{
-}
-
 Aws::String StartDataSourceSyncJobRequest::SerializePayload() const
 {
   return {};

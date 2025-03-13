@@ -12,14 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStateMachineAliasesRequest::ListStateMachineAliasesRequest() : 
-    m_stateMachineArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListStateMachineAliasesRequest::SerializePayload() const
 {
   JsonValue payload;

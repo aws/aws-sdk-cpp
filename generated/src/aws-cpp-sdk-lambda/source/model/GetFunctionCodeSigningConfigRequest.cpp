@@ -12,11 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFunctionCodeSigningConfigRequest::GetFunctionCodeSigningConfigRequest() : 
-    m_functionNameHasBeenSet(false)
-{
-}
-
 Aws::String GetFunctionCodeSigningConfigRequest::SerializePayload() const
 {
   return {};

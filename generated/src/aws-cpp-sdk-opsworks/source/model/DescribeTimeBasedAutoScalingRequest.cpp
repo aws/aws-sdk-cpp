@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTimeBasedAutoScalingRequest::DescribeTimeBasedAutoScalingRequest() : 
-    m_instanceIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTimeBasedAutoScalingRequest::SerializePayload() const
 {
   JsonValue payload;

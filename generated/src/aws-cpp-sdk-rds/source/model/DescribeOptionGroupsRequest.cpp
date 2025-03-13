@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeOptionGroupsRequest::DescribeOptionGroupsRequest() : 
-    m_optionGroupNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOptionGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

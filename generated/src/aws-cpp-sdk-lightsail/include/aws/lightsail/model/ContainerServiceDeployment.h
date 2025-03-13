@@ -39,7 +39,7 @@ namespace Model
   class ContainerServiceDeployment
   {
   public:
-    AWS_LIGHTSAIL_API ContainerServiceDeployment();
+    AWS_LIGHTSAIL_API ContainerServiceDeployment() = default;
     AWS_LIGHTSAIL_API ContainerServiceDeployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API ContainerServiceDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The version number of the deployment.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline ContainerServiceDeployment& WithVersion(int value) { SetVersion(value); return *this;}
@@ -68,12 +68,10 @@ namespace Model
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */
-    inline const ContainerServiceDeploymentState& GetState() const{ return m_state; }
+    inline ContainerServiceDeploymentState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ContainerServiceDeploymentState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ContainerServiceDeploymentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ContainerServiceDeployment& WithState(const ContainerServiceDeploymentState& value) { SetState(value); return *this;}
-    inline ContainerServiceDeployment& WithState(ContainerServiceDeploymentState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ContainerServiceDeploymentState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ContainerServiceDeployment& WithState(ContainerServiceDeploymentState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -81,49 +79,47 @@ namespace Model
      * <p>An object that describes the configuration for the containers of the
      * deployment.</p>
      */
-    inline const Aws::Map<Aws::String, Container>& GetContainers() const{ return m_containers; }
+    inline const Aws::Map<Aws::String, Container>& GetContainers() const { return m_containers; }
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-    inline void SetContainers(const Aws::Map<Aws::String, Container>& value) { m_containersHasBeenSet = true; m_containers = value; }
-    inline void SetContainers(Aws::Map<Aws::String, Container>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-    inline ContainerServiceDeployment& WithContainers(const Aws::Map<Aws::String, Container>& value) { SetContainers(value); return *this;}
-    inline ContainerServiceDeployment& WithContainers(Aws::Map<Aws::String, Container>&& value) { SetContainers(std::move(value)); return *this;}
-    inline ContainerServiceDeployment& AddContainers(const Aws::String& key, const Container& value) { m_containersHasBeenSet = true; m_containers.emplace(key, value); return *this; }
-    inline ContainerServiceDeployment& AddContainers(Aws::String&& key, const Container& value) { m_containersHasBeenSet = true; m_containers.emplace(std::move(key), value); return *this; }
-    inline ContainerServiceDeployment& AddContainers(const Aws::String& key, Container&& value) { m_containersHasBeenSet = true; m_containers.emplace(key, std::move(value)); return *this; }
-    inline ContainerServiceDeployment& AddContainers(Aws::String&& key, Container&& value) { m_containersHasBeenSet = true; m_containers.emplace(std::move(key), std::move(value)); return *this; }
-    inline ContainerServiceDeployment& AddContainers(const char* key, Container&& value) { m_containersHasBeenSet = true; m_containers.emplace(key, std::move(value)); return *this; }
-    inline ContainerServiceDeployment& AddContainers(const char* key, const Container& value) { m_containersHasBeenSet = true; m_containers.emplace(key, value); return *this; }
+    template<typename ContainersT = Aws::Map<Aws::String, Container>>
+    void SetContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers = std::forward<ContainersT>(value); }
+    template<typename ContainersT = Aws::Map<Aws::String, Container>>
+    ContainerServiceDeployment& WithContainers(ContainersT&& value) { SetContainers(std::forward<ContainersT>(value)); return *this;}
+    template<typename ContainersKeyT = Aws::String, typename ContainersValueT = Container>
+    ContainerServiceDeployment& AddContainers(ContainersKeyT&& key, ContainersValueT&& value) {
+      m_containersHasBeenSet = true; m_containers.emplace(std::forward<ContainersKeyT>(key), std::forward<ContainersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>An object that describes the endpoint of the deployment.</p>
      */
-    inline const ContainerServiceEndpoint& GetPublicEndpoint() const{ return m_publicEndpoint; }
+    inline const ContainerServiceEndpoint& GetPublicEndpoint() const { return m_publicEndpoint; }
     inline bool PublicEndpointHasBeenSet() const { return m_publicEndpointHasBeenSet; }
-    inline void SetPublicEndpoint(const ContainerServiceEndpoint& value) { m_publicEndpointHasBeenSet = true; m_publicEndpoint = value; }
-    inline void SetPublicEndpoint(ContainerServiceEndpoint&& value) { m_publicEndpointHasBeenSet = true; m_publicEndpoint = std::move(value); }
-    inline ContainerServiceDeployment& WithPublicEndpoint(const ContainerServiceEndpoint& value) { SetPublicEndpoint(value); return *this;}
-    inline ContainerServiceDeployment& WithPublicEndpoint(ContainerServiceEndpoint&& value) { SetPublicEndpoint(std::move(value)); return *this;}
+    template<typename PublicEndpointT = ContainerServiceEndpoint>
+    void SetPublicEndpoint(PublicEndpointT&& value) { m_publicEndpointHasBeenSet = true; m_publicEndpoint = std::forward<PublicEndpointT>(value); }
+    template<typename PublicEndpointT = ContainerServiceEndpoint>
+    ContainerServiceDeployment& WithPublicEndpoint(PublicEndpointT&& value) { SetPublicEndpoint(std::forward<PublicEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the deployment was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ContainerServiceDeployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ContainerServiceDeployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ContainerServiceDeployment& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
 
-    ContainerServiceDeploymentState m_state;
+    ContainerServiceDeploymentState m_state{ContainerServiceDeploymentState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Container> m_containers;
@@ -132,7 +128,7 @@ namespace Model
     ContainerServiceEndpoint m_publicEndpoint;
     bool m_publicEndpointHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
   };
 

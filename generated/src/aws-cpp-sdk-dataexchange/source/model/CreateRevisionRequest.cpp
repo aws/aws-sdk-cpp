@@ -12,13 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRevisionRequest::CreateRevisionRequest() : 
-    m_commentHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

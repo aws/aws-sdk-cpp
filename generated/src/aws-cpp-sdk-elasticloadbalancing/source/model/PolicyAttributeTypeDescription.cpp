@@ -20,17 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-PolicyAttributeTypeDescription::PolicyAttributeTypeDescription() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_cardinalityHasBeenSet(false)
-{
-}
-
 PolicyAttributeTypeDescription::PolicyAttributeTypeDescription(const XmlNode& xmlNode)
-  : PolicyAttributeTypeDescription()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ PolicyAttributeTypeDescription& PolicyAttributeTypeDescription::operator =(const
     {
       m_attributeName = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameNode.GetText());
       m_attributeNameHasBeenSet = true;
+       m_attributeNameHasBeenSet = true;
     }
     XmlNode attributeTypeNode = resultNode.FirstChild("AttributeType");
     if(!attributeTypeNode.IsNull())
     {
       m_attributeType = Aws::Utils::Xml::DecodeEscapedXmlText(attributeTypeNode.GetText());
       m_attributeTypeHasBeenSet = true;
+       m_attributeTypeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode defaultValueNode = resultNode.FirstChild("DefaultValue");
     if(!defaultValueNode.IsNull())
     {
       m_defaultValue = Aws::Utils::Xml::DecodeEscapedXmlText(defaultValueNode.GetText());
       m_defaultValueHasBeenSet = true;
+       m_defaultValueHasBeenSet = true;
     }
     XmlNode cardinalityNode = resultNode.FirstChild("Cardinality");
     if(!cardinalityNode.IsNull())
     {
       m_cardinality = Aws::Utils::Xml::DecodeEscapedXmlText(cardinalityNode.GetText());
       m_cardinalityHasBeenSet = true;
+       m_cardinalityHasBeenSet = true;
     }
   }
 

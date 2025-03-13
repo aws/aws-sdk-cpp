@@ -18,61 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CmafGroupSettings::CmafGroupSettings() : 
-    m_additionalManifestsHasBeenSet(false),
-    m_baseUrlHasBeenSet(false),
-    m_clientCache(CmafClientCache::NOT_SET),
-    m_clientCacheHasBeenSet(false),
-    m_codecSpecification(CmafCodecSpecification::NOT_SET),
-    m_codecSpecificationHasBeenSet(false),
-    m_dashIFrameTrickPlayNameModifierHasBeenSet(false),
-    m_dashManifestStyle(DashManifestStyle::NOT_SET),
-    m_dashManifestStyleHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationSettingsHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_fragmentLength(0),
-    m_fragmentLengthHasBeenSet(false),
-    m_imageBasedTrickPlay(CmafImageBasedTrickPlay::NOT_SET),
-    m_imageBasedTrickPlayHasBeenSet(false),
-    m_imageBasedTrickPlaySettingsHasBeenSet(false),
-    m_manifestCompression(CmafManifestCompression::NOT_SET),
-    m_manifestCompressionHasBeenSet(false),
-    m_manifestDurationFormat(CmafManifestDurationFormat::NOT_SET),
-    m_manifestDurationFormatHasBeenSet(false),
-    m_minBufferTime(0),
-    m_minBufferTimeHasBeenSet(false),
-    m_minFinalSegmentLength(0.0),
-    m_minFinalSegmentLengthHasBeenSet(false),
-    m_mpdManifestBandwidthType(CmafMpdManifestBandwidthType::NOT_SET),
-    m_mpdManifestBandwidthTypeHasBeenSet(false),
-    m_mpdProfile(CmafMpdProfile::NOT_SET),
-    m_mpdProfileHasBeenSet(false),
-    m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
-    m_ptsOffsetHandlingForBFramesHasBeenSet(false),
-    m_segmentControl(CmafSegmentControl::NOT_SET),
-    m_segmentControlHasBeenSet(false),
-    m_segmentLength(0),
-    m_segmentLengthHasBeenSet(false),
-    m_segmentLengthControl(CmafSegmentLengthControl::NOT_SET),
-    m_segmentLengthControlHasBeenSet(false),
-    m_streamInfResolution(CmafStreamInfResolution::NOT_SET),
-    m_streamInfResolutionHasBeenSet(false),
-    m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
-    m_targetDurationCompatibilityModeHasBeenSet(false),
-    m_videoCompositionOffsets(CmafVideoCompositionOffsets::NOT_SET),
-    m_videoCompositionOffsetsHasBeenSet(false),
-    m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
-    m_writeDashManifestHasBeenSet(false),
-    m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
-    m_writeHlsManifestHasBeenSet(false),
-    m_writeSegmentTimelineInRepresentation(CmafWriteSegmentTimelineInRepresentation::NOT_SET),
-    m_writeSegmentTimelineInRepresentationHasBeenSet(false)
-{
-}
-
 CmafGroupSettings::CmafGroupSettings(JsonView jsonValue)
-  : CmafGroupSettings()
 {
   *this = jsonValue;
 }
@@ -88,196 +34,141 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     }
     m_additionalManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseUrl"))
   {
     m_baseUrl = jsonValue.GetString("baseUrl");
-
     m_baseUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientCache"))
   {
     m_clientCache = CmafClientCacheMapper::GetCmafClientCacheForName(jsonValue.GetString("clientCache"));
-
     m_clientCacheHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codecSpecification"))
   {
     m_codecSpecification = CmafCodecSpecificationMapper::GetCmafCodecSpecificationForName(jsonValue.GetString("codecSpecification"));
-
     m_codecSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashIFrameTrickPlayNameModifier"))
   {
     m_dashIFrameTrickPlayNameModifier = jsonValue.GetString("dashIFrameTrickPlayNameModifier");
-
     m_dashIFrameTrickPlayNameModifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashManifestStyle"))
   {
     m_dashManifestStyle = DashManifestStyleMapper::GetDashManifestStyleForName(jsonValue.GetString("dashManifestStyle"));
-
     m_dashManifestStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
-
     m_destinationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fragmentLength"))
   {
     m_fragmentLength = jsonValue.GetInteger("fragmentLength");
-
     m_fragmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBasedTrickPlay"))
   {
     m_imageBasedTrickPlay = CmafImageBasedTrickPlayMapper::GetCmafImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
-
     m_imageBasedTrickPlayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageBasedTrickPlaySettings"))
   {
     m_imageBasedTrickPlaySettings = jsonValue.GetObject("imageBasedTrickPlaySettings");
-
     m_imageBasedTrickPlaySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestCompression"))
   {
     m_manifestCompression = CmafManifestCompressionMapper::GetCmafManifestCompressionForName(jsonValue.GetString("manifestCompression"));
-
     m_manifestCompressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifestDurationFormat"))
   {
     m_manifestDurationFormat = CmafManifestDurationFormatMapper::GetCmafManifestDurationFormatForName(jsonValue.GetString("manifestDurationFormat"));
-
     m_manifestDurationFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minBufferTime"))
   {
     m_minBufferTime = jsonValue.GetInteger("minBufferTime");
-
     m_minBufferTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minFinalSegmentLength"))
   {
     m_minFinalSegmentLength = jsonValue.GetDouble("minFinalSegmentLength");
-
     m_minFinalSegmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpdManifestBandwidthType"))
   {
     m_mpdManifestBandwidthType = CmafMpdManifestBandwidthTypeMapper::GetCmafMpdManifestBandwidthTypeForName(jsonValue.GetString("mpdManifestBandwidthType"));
-
     m_mpdManifestBandwidthTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpdProfile"))
   {
     m_mpdProfile = CmafMpdProfileMapper::GetCmafMpdProfileForName(jsonValue.GetString("mpdProfile"));
-
     m_mpdProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ptsOffsetHandlingForBFrames"))
   {
     m_ptsOffsetHandlingForBFrames = CmafPtsOffsetHandlingForBFramesMapper::GetCmafPtsOffsetHandlingForBFramesForName(jsonValue.GetString("ptsOffsetHandlingForBFrames"));
-
     m_ptsOffsetHandlingForBFramesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentControl"))
   {
     m_segmentControl = CmafSegmentControlMapper::GetCmafSegmentControlForName(jsonValue.GetString("segmentControl"));
-
     m_segmentControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentLength"))
   {
     m_segmentLength = jsonValue.GetInteger("segmentLength");
-
     m_segmentLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentLengthControl"))
   {
     m_segmentLengthControl = CmafSegmentLengthControlMapper::GetCmafSegmentLengthControlForName(jsonValue.GetString("segmentLengthControl"));
-
     m_segmentLengthControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamInfResolution"))
   {
     m_streamInfResolution = CmafStreamInfResolutionMapper::GetCmafStreamInfResolutionForName(jsonValue.GetString("streamInfResolution"));
-
     m_streamInfResolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetDurationCompatibilityMode"))
   {
     m_targetDurationCompatibilityMode = CmafTargetDurationCompatibilityModeMapper::GetCmafTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
-
     m_targetDurationCompatibilityModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoCompositionOffsets"))
   {
     m_videoCompositionOffsets = CmafVideoCompositionOffsetsMapper::GetCmafVideoCompositionOffsetsForName(jsonValue.GetString("videoCompositionOffsets"));
-
     m_videoCompositionOffsetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeDashManifest"))
   {
     m_writeDashManifest = CmafWriteDASHManifestMapper::GetCmafWriteDASHManifestForName(jsonValue.GetString("writeDashManifest"));
-
     m_writeDashManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeHlsManifest"))
   {
     m_writeHlsManifest = CmafWriteHLSManifestMapper::GetCmafWriteHLSManifestForName(jsonValue.GetString("writeHlsManifest"));
-
     m_writeHlsManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeSegmentTimelineInRepresentation"))
   {
     m_writeSegmentTimelineInRepresentation = CmafWriteSegmentTimelineInRepresentationMapper::GetCmafWriteSegmentTimelineInRepresentationForName(jsonValue.GetString("writeSegmentTimelineInRepresentation"));
-
     m_writeSegmentTimelineInRepresentationHasBeenSet = true;
   }
-
   return *this;
 }
 

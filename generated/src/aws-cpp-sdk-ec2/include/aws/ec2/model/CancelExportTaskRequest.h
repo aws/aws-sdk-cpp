@@ -21,7 +21,7 @@ namespace Model
   class CancelExportTaskRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CancelExportTaskRequest();
+    AWS_EC2_API CancelExportTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>CreateInstanceExportTask</code> and <code>ExportImage</code>
      * operations.</p>
      */
-    inline const Aws::String& GetExportTaskId() const{ return m_exportTaskId; }
+    inline const Aws::String& GetExportTaskId() const { return m_exportTaskId; }
     inline bool ExportTaskIdHasBeenSet() const { return m_exportTaskIdHasBeenSet; }
-    inline void SetExportTaskId(const Aws::String& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = value; }
-    inline void SetExportTaskId(Aws::String&& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = std::move(value); }
-    inline void SetExportTaskId(const char* value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId.assign(value); }
-    inline CancelExportTaskRequest& WithExportTaskId(const Aws::String& value) { SetExportTaskId(value); return *this;}
-    inline CancelExportTaskRequest& WithExportTaskId(Aws::String&& value) { SetExportTaskId(std::move(value)); return *this;}
-    inline CancelExportTaskRequest& WithExportTaskId(const char* value) { SetExportTaskId(value); return *this;}
+    template<typename ExportTaskIdT = Aws::String>
+    void SetExportTaskId(ExportTaskIdT&& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = std::forward<ExportTaskIdT>(value); }
+    template<typename ExportTaskIdT = Aws::String>
+    CancelExportTaskRequest& WithExportTaskId(ExportTaskIdT&& value) { SetExportTaskId(std::forward<ExportTaskIdT>(value)); return *this;}
     ///@}
   private:
 

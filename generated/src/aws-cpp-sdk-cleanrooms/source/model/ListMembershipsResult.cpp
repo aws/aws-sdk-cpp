@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMembershipsResult::ListMembershipsResult()
-{
-}
-
 ListMembershipsResult::ListMembershipsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMembershipsResult& ListMembershipsResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("membershipSummaries"))
   {
     Aws::Utils::Array<JsonView> membershipSummariesJsonList = jsonValue.GetArray("membershipSummaries");
@@ -42,14 +37,15 @@ ListMembershipsResult& ListMembershipsResult::operator =(const Aws::AmazonWebSer
     {
       m_membershipSummaries.push_back(membershipSummariesJsonList[membershipSummariesIndex].AsObject());
     }
+    m_membershipSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

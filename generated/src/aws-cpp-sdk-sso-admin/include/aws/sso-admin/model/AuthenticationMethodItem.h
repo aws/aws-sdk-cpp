@@ -33,7 +33,7 @@ namespace Model
   class AuthenticationMethodItem
   {
   public:
-    AWS_SSOADMIN_API AuthenticationMethodItem();
+    AWS_SSOADMIN_API AuthenticationMethodItem() = default;
     AWS_SSOADMIN_API AuthenticationMethodItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AuthenticationMethodItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,29 @@ namespace Model
      * <p>A structure that describes an authentication method. The contents of this
      * structure is determined by the <code>AuthenticationMethodType</code>.</p>
      */
-    inline const AuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
+    inline const AuthenticationMethod& GetAuthenticationMethod() const { return m_authenticationMethod; }
     inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
-    inline void SetAuthenticationMethod(const AuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
-    inline void SetAuthenticationMethod(AuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
-    inline AuthenticationMethodItem& WithAuthenticationMethod(const AuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
-    inline AuthenticationMethodItem& WithAuthenticationMethod(AuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    template<typename AuthenticationMethodT = AuthenticationMethod>
+    void SetAuthenticationMethod(AuthenticationMethodT&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::forward<AuthenticationMethodT>(value); }
+    template<typename AuthenticationMethodT = AuthenticationMethod>
+    AuthenticationMethodItem& WithAuthenticationMethod(AuthenticationMethodT&& value) { SetAuthenticationMethod(std::forward<AuthenticationMethodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of authentication that is used by this method.</p>
      */
-    inline const AuthenticationMethodType& GetAuthenticationMethodType() const{ return m_authenticationMethodType; }
+    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
     inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-    inline void SetAuthenticationMethodType(const AuthenticationMethodType& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-    inline void SetAuthenticationMethodType(AuthenticationMethodType&& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = std::move(value); }
-    inline AuthenticationMethodItem& WithAuthenticationMethodType(const AuthenticationMethodType& value) { SetAuthenticationMethodType(value); return *this;}
-    inline AuthenticationMethodItem& WithAuthenticationMethodType(AuthenticationMethodType&& value) { SetAuthenticationMethodType(std::move(value)); return *this;}
+    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
+    inline AuthenticationMethodItem& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
     ///@}
   private:
 
     AuthenticationMethod m_authenticationMethod;
     bool m_authenticationMethodHasBeenSet = false;
 
-    AuthenticationMethodType m_authenticationMethodType;
+    AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
     bool m_authenticationMethodTypeHasBeenSet = false;
   };
 

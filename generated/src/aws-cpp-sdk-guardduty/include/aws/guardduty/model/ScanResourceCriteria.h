@@ -34,7 +34,7 @@ namespace Model
   class ScanResourceCriteria
   {
   public:
-    AWS_GUARDDUTY_API ScanResourceCriteria();
+    AWS_GUARDDUTY_API ScanResourceCriteria() = default;
     AWS_GUARDDUTY_API ScanResourceCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ScanResourceCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,15 @@ namespace Model
      * <p>Represents condition that when matched will allow a malware scan for a
      * certain resource.</p>
      */
-    inline const Aws::Map<ScanCriterionKey, ScanCondition>& GetInclude() const{ return m_include; }
+    inline const Aws::Map<ScanCriterionKey, ScanCondition>& GetInclude() const { return m_include; }
     inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
-    inline void SetInclude(const Aws::Map<ScanCriterionKey, ScanCondition>& value) { m_includeHasBeenSet = true; m_include = value; }
-    inline void SetInclude(Aws::Map<ScanCriterionKey, ScanCondition>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
-    inline ScanResourceCriteria& WithInclude(const Aws::Map<ScanCriterionKey, ScanCondition>& value) { SetInclude(value); return *this;}
-    inline ScanResourceCriteria& WithInclude(Aws::Map<ScanCriterionKey, ScanCondition>&& value) { SetInclude(std::move(value)); return *this;}
-    inline ScanResourceCriteria& AddInclude(const ScanCriterionKey& key, const ScanCondition& value) { m_includeHasBeenSet = true; m_include.emplace(key, value); return *this; }
-    inline ScanResourceCriteria& AddInclude(ScanCriterionKey&& key, const ScanCondition& value) { m_includeHasBeenSet = true; m_include.emplace(std::move(key), value); return *this; }
-    inline ScanResourceCriteria& AddInclude(const ScanCriterionKey& key, ScanCondition&& value) { m_includeHasBeenSet = true; m_include.emplace(key, std::move(value)); return *this; }
-    inline ScanResourceCriteria& AddInclude(ScanCriterionKey&& key, ScanCondition&& value) { m_includeHasBeenSet = true; m_include.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename IncludeT = Aws::Map<ScanCriterionKey, ScanCondition>>
+    void SetInclude(IncludeT&& value) { m_includeHasBeenSet = true; m_include = std::forward<IncludeT>(value); }
+    template<typename IncludeT = Aws::Map<ScanCriterionKey, ScanCondition>>
+    ScanResourceCriteria& WithInclude(IncludeT&& value) { SetInclude(std::forward<IncludeT>(value)); return *this;}
+    inline ScanResourceCriteria& AddInclude(ScanCriterionKey key, ScanCondition value) {
+      m_includeHasBeenSet = true; m_include.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -62,16 +61,15 @@ namespace Model
      * <p>Represents condition that when matched will prevent a malware scan for a
      * certain resource.</p>
      */
-    inline const Aws::Map<ScanCriterionKey, ScanCondition>& GetExclude() const{ return m_exclude; }
+    inline const Aws::Map<ScanCriterionKey, ScanCondition>& GetExclude() const { return m_exclude; }
     inline bool ExcludeHasBeenSet() const { return m_excludeHasBeenSet; }
-    inline void SetExclude(const Aws::Map<ScanCriterionKey, ScanCondition>& value) { m_excludeHasBeenSet = true; m_exclude = value; }
-    inline void SetExclude(Aws::Map<ScanCriterionKey, ScanCondition>&& value) { m_excludeHasBeenSet = true; m_exclude = std::move(value); }
-    inline ScanResourceCriteria& WithExclude(const Aws::Map<ScanCriterionKey, ScanCondition>& value) { SetExclude(value); return *this;}
-    inline ScanResourceCriteria& WithExclude(Aws::Map<ScanCriterionKey, ScanCondition>&& value) { SetExclude(std::move(value)); return *this;}
-    inline ScanResourceCriteria& AddExclude(const ScanCriterionKey& key, const ScanCondition& value) { m_excludeHasBeenSet = true; m_exclude.emplace(key, value); return *this; }
-    inline ScanResourceCriteria& AddExclude(ScanCriterionKey&& key, const ScanCondition& value) { m_excludeHasBeenSet = true; m_exclude.emplace(std::move(key), value); return *this; }
-    inline ScanResourceCriteria& AddExclude(const ScanCriterionKey& key, ScanCondition&& value) { m_excludeHasBeenSet = true; m_exclude.emplace(key, std::move(value)); return *this; }
-    inline ScanResourceCriteria& AddExclude(ScanCriterionKey&& key, ScanCondition&& value) { m_excludeHasBeenSet = true; m_exclude.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename ExcludeT = Aws::Map<ScanCriterionKey, ScanCondition>>
+    void SetExclude(ExcludeT&& value) { m_excludeHasBeenSet = true; m_exclude = std::forward<ExcludeT>(value); }
+    template<typename ExcludeT = Aws::Map<ScanCriterionKey, ScanCondition>>
+    ScanResourceCriteria& WithExclude(ExcludeT&& value) { SetExclude(std::forward<ExcludeT>(value)); return *this;}
+    inline ScanResourceCriteria& AddExclude(ScanCriterionKey key, ScanCondition value) {
+      m_excludeHasBeenSet = true; m_exclude.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

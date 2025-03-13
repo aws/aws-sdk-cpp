@@ -29,7 +29,7 @@ namespace Model
   class AddResourcePermissionsResult
   {
   public:
-    AWS_WORKDOCS_API AddResourcePermissionsResult();
+    AWS_WORKDOCS_API AddResourcePermissionsResult() = default;
     AWS_WORKDOCS_API AddResourcePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKDOCS_API AddResourcePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The share results.</p>
      */
-    inline const Aws::Vector<ShareResult>& GetShareResults() const{ return m_shareResults; }
-    inline void SetShareResults(const Aws::Vector<ShareResult>& value) { m_shareResults = value; }
-    inline void SetShareResults(Aws::Vector<ShareResult>&& value) { m_shareResults = std::move(value); }
-    inline AddResourcePermissionsResult& WithShareResults(const Aws::Vector<ShareResult>& value) { SetShareResults(value); return *this;}
-    inline AddResourcePermissionsResult& WithShareResults(Aws::Vector<ShareResult>&& value) { SetShareResults(std::move(value)); return *this;}
-    inline AddResourcePermissionsResult& AddShareResults(const ShareResult& value) { m_shareResults.push_back(value); return *this; }
-    inline AddResourcePermissionsResult& AddShareResults(ShareResult&& value) { m_shareResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ShareResult>& GetShareResults() const { return m_shareResults; }
+    template<typename ShareResultsT = Aws::Vector<ShareResult>>
+    void SetShareResults(ShareResultsT&& value) { m_shareResultsHasBeenSet = true; m_shareResults = std::forward<ShareResultsT>(value); }
+    template<typename ShareResultsT = Aws::Vector<ShareResult>>
+    AddResourcePermissionsResult& WithShareResults(ShareResultsT&& value) { SetShareResults(std::forward<ShareResultsT>(value)); return *this;}
+    template<typename ShareResultsT = ShareResult>
+    AddResourcePermissionsResult& AddShareResults(ShareResultsT&& value) { m_shareResultsHasBeenSet = true; m_shareResults.emplace_back(std::forward<ShareResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddResourcePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddResourcePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddResourcePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddResourcePermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ShareResult> m_shareResults;
+    bool m_shareResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

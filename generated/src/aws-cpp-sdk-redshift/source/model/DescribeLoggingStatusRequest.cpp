@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeLoggingStatusRequest::DescribeLoggingStatusRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLoggingStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

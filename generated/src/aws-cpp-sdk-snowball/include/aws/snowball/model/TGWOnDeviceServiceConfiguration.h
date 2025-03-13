@@ -33,7 +33,7 @@ namespace Model
   class TGWOnDeviceServiceConfiguration
   {
   public:
-    AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration();
+    AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration() = default;
     AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API TGWOnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * to physical resource limitations, this value must be set to 80 for Snowball
      * Edge.</p>
      */
-    inline int GetStorageLimit() const{ return m_storageLimit; }
+    inline int GetStorageLimit() const { return m_storageLimit; }
     inline bool StorageLimitHasBeenSet() const { return m_storageLimitHasBeenSet; }
     inline void SetStorageLimit(int value) { m_storageLimitHasBeenSet = true; m_storageLimit = value; }
     inline TGWOnDeviceServiceConfiguration& WithStorageLimit(int value) { SetStorageLimit(value); return *this;}
@@ -55,19 +55,17 @@ namespace Model
     /**
      * <p>The scale unit of the virtual tapes on the device.</p>
      */
-    inline const StorageUnit& GetStorageUnit() const{ return m_storageUnit; }
+    inline StorageUnit GetStorageUnit() const { return m_storageUnit; }
     inline bool StorageUnitHasBeenSet() const { return m_storageUnitHasBeenSet; }
-    inline void SetStorageUnit(const StorageUnit& value) { m_storageUnitHasBeenSet = true; m_storageUnit = value; }
-    inline void SetStorageUnit(StorageUnit&& value) { m_storageUnitHasBeenSet = true; m_storageUnit = std::move(value); }
-    inline TGWOnDeviceServiceConfiguration& WithStorageUnit(const StorageUnit& value) { SetStorageUnit(value); return *this;}
-    inline TGWOnDeviceServiceConfiguration& WithStorageUnit(StorageUnit&& value) { SetStorageUnit(std::move(value)); return *this;}
+    inline void SetStorageUnit(StorageUnit value) { m_storageUnitHasBeenSet = true; m_storageUnit = value; }
+    inline TGWOnDeviceServiceConfiguration& WithStorageUnit(StorageUnit value) { SetStorageUnit(value); return *this;}
     ///@}
   private:
 
-    int m_storageLimit;
+    int m_storageLimit{0};
     bool m_storageLimitHasBeenSet = false;
 
-    StorageUnit m_storageUnit;
+    StorageUnit m_storageUnit{StorageUnit::NOT_SET};
     bool m_storageUnitHasBeenSet = false;
   };
 

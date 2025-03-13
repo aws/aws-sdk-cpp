@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-ConnectionSettings::ConnectionSettings() : 
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false)
-{
-}
-
 ConnectionSettings::ConnectionSettings(const XmlNode& xmlNode)
-  : ConnectionSettings()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ ConnectionSettings& ConnectionSettings::operator =(const XmlNode& xmlNode)
     {
       m_idleTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(idleTimeoutNode.GetText()).c_str()).c_str());
       m_idleTimeoutHasBeenSet = true;
+       m_idleTimeoutHasBeenSet = true;
     }
   }
 

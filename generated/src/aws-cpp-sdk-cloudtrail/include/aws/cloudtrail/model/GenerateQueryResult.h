@@ -27,7 +27,7 @@ namespace Model
   class GenerateQueryResult
   {
   public:
-    AWS_CLOUDTRAIL_API GenerateQueryResult();
+    AWS_CLOUDTRAIL_API GenerateQueryResult() = default;
     AWS_CLOUDTRAIL_API GenerateQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API GenerateQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p> The SQL query statement generated from the prompt. </p>
      */
-    inline const Aws::String& GetQueryStatement() const{ return m_queryStatement; }
-    inline void SetQueryStatement(const Aws::String& value) { m_queryStatement = value; }
-    inline void SetQueryStatement(Aws::String&& value) { m_queryStatement = std::move(value); }
-    inline void SetQueryStatement(const char* value) { m_queryStatement.assign(value); }
-    inline GenerateQueryResult& WithQueryStatement(const Aws::String& value) { SetQueryStatement(value); return *this;}
-    inline GenerateQueryResult& WithQueryStatement(Aws::String&& value) { SetQueryStatement(std::move(value)); return *this;}
-    inline GenerateQueryResult& WithQueryStatement(const char* value) { SetQueryStatement(value); return *this;}
+    inline const Aws::String& GetQueryStatement() const { return m_queryStatement; }
+    template<typename QueryStatementT = Aws::String>
+    void SetQueryStatement(QueryStatementT&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::forward<QueryStatementT>(value); }
+    template<typename QueryStatementT = Aws::String>
+    GenerateQueryResult& WithQueryStatement(QueryStatementT&& value) { SetQueryStatement(std::forward<QueryStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,47 +49,45 @@ namespace Model
      * <code>StartQuery</code> operation, you can pass in either the
      * <code>QueryAlias</code> or <code>QueryStatement</code> parameter. </p>
      */
-    inline const Aws::String& GetQueryAlias() const{ return m_queryAlias; }
-    inline void SetQueryAlias(const Aws::String& value) { m_queryAlias = value; }
-    inline void SetQueryAlias(Aws::String&& value) { m_queryAlias = std::move(value); }
-    inline void SetQueryAlias(const char* value) { m_queryAlias.assign(value); }
-    inline GenerateQueryResult& WithQueryAlias(const Aws::String& value) { SetQueryAlias(value); return *this;}
-    inline GenerateQueryResult& WithQueryAlias(Aws::String&& value) { SetQueryAlias(std::move(value)); return *this;}
-    inline GenerateQueryResult& WithQueryAlias(const char* value) { SetQueryAlias(value); return *this;}
+    inline const Aws::String& GetQueryAlias() const { return m_queryAlias; }
+    template<typename QueryAliasT = Aws::String>
+    void SetQueryAlias(QueryAliasT&& value) { m_queryAliasHasBeenSet = true; m_queryAlias = std::forward<QueryAliasT>(value); }
+    template<typename QueryAliasT = Aws::String>
+    GenerateQueryResult& WithQueryAlias(QueryAliasT&& value) { SetQueryAlias(std::forward<QueryAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The account ID of the event data store owner. </p>
      */
-    inline const Aws::String& GetEventDataStoreOwnerAccountId() const{ return m_eventDataStoreOwnerAccountId; }
-    inline void SetEventDataStoreOwnerAccountId(const Aws::String& value) { m_eventDataStoreOwnerAccountId = value; }
-    inline void SetEventDataStoreOwnerAccountId(Aws::String&& value) { m_eventDataStoreOwnerAccountId = std::move(value); }
-    inline void SetEventDataStoreOwnerAccountId(const char* value) { m_eventDataStoreOwnerAccountId.assign(value); }
-    inline GenerateQueryResult& WithEventDataStoreOwnerAccountId(const Aws::String& value) { SetEventDataStoreOwnerAccountId(value); return *this;}
-    inline GenerateQueryResult& WithEventDataStoreOwnerAccountId(Aws::String&& value) { SetEventDataStoreOwnerAccountId(std::move(value)); return *this;}
-    inline GenerateQueryResult& WithEventDataStoreOwnerAccountId(const char* value) { SetEventDataStoreOwnerAccountId(value); return *this;}
+    inline const Aws::String& GetEventDataStoreOwnerAccountId() const { return m_eventDataStoreOwnerAccountId; }
+    template<typename EventDataStoreOwnerAccountIdT = Aws::String>
+    void SetEventDataStoreOwnerAccountId(EventDataStoreOwnerAccountIdT&& value) { m_eventDataStoreOwnerAccountIdHasBeenSet = true; m_eventDataStoreOwnerAccountId = std::forward<EventDataStoreOwnerAccountIdT>(value); }
+    template<typename EventDataStoreOwnerAccountIdT = Aws::String>
+    GenerateQueryResult& WithEventDataStoreOwnerAccountId(EventDataStoreOwnerAccountIdT&& value) { SetEventDataStoreOwnerAccountId(std::forward<EventDataStoreOwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queryStatement;
+    bool m_queryStatementHasBeenSet = false;
 
     Aws::String m_queryAlias;
+    bool m_queryAliasHasBeenSet = false;
 
     Aws::String m_eventDataStoreOwnerAccountId;
+    bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

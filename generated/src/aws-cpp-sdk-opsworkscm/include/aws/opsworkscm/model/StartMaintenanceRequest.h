@@ -23,7 +23,7 @@ namespace Model
   class StartMaintenanceRequest : public OpsWorksCMRequest
   {
   public:
-    AWS_OPSWORKSCM_API StartMaintenanceRequest();
+    AWS_OPSWORKSCM_API StartMaintenanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the server on which to run maintenance. </p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline StartMaintenanceRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline StartMaintenanceRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline StartMaintenanceRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    StartMaintenanceRequest& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ namespace Model
      * an AWS OpsWorks for Chef Automate Server to Chef Automate 2</a>. </p> </li>
      * </ul>
      */
-    inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+    inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const { return m_engineAttributes; }
     inline bool EngineAttributesHasBeenSet() const { return m_engineAttributesHasBeenSet; }
-    inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
-    inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
-    inline StartMaintenanceRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
-    inline StartMaintenanceRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
-    inline StartMaintenanceRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
-    inline StartMaintenanceRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
+    template<typename EngineAttributesT = Aws::Vector<EngineAttribute>>
+    void SetEngineAttributes(EngineAttributesT&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::forward<EngineAttributesT>(value); }
+    template<typename EngineAttributesT = Aws::Vector<EngineAttribute>>
+    StartMaintenanceRequest& WithEngineAttributes(EngineAttributesT&& value) { SetEngineAttributes(std::forward<EngineAttributesT>(value)); return *this;}
+    template<typename EngineAttributesT = EngineAttribute>
+    StartMaintenanceRequest& AddEngineAttributes(EngineAttributesT&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.emplace_back(std::forward<EngineAttributesT>(value)); return *this; }
     ///@}
   private:
 

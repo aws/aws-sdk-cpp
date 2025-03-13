@@ -12,19 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAnnotationStoreRequest::CreateAnnotationStoreRequest() : 
-    m_referenceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_storeFormat(StoreFormat::NOT_SET),
-    m_storeFormatHasBeenSet(false),
-    m_storeOptionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAnnotationStoreRequest::SerializePayload() const
 {
   JsonValue payload;

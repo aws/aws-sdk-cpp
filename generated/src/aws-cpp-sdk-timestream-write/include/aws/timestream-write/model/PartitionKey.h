@@ -37,7 +37,7 @@ namespace Model
   class PartitionKey
   {
   public:
-    AWS_TIMESTREAMWRITE_API PartitionKey();
+    AWS_TIMESTREAMWRITE_API PartitionKey() = default;
     AWS_TIMESTREAMWRITE_API PartitionKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API PartitionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,22 @@ namespace Model
      * <p> The type of the partition key. Options are DIMENSION (dimension key) and
      * MEASURE (measure key). </p>
      */
-    inline const PartitionKeyType& GetType() const{ return m_type; }
+    inline PartitionKeyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PartitionKeyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PartitionKeyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PartitionKey& WithType(const PartitionKeyType& value) { SetType(value); return *this;}
-    inline PartitionKey& WithType(PartitionKeyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PartitionKeyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PartitionKey& WithType(PartitionKeyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the attribute used for a dimension key. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PartitionKey& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PartitionKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PartitionKey& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PartitionKey& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,22 +72,20 @@ namespace Model
      * ingested records. Options are REQUIRED (dimension key must be specified) and
      * OPTIONAL (dimension key does not have to be specified). </p>
      */
-    inline const PartitionKeyEnforcementLevel& GetEnforcementInRecord() const{ return m_enforcementInRecord; }
+    inline PartitionKeyEnforcementLevel GetEnforcementInRecord() const { return m_enforcementInRecord; }
     inline bool EnforcementInRecordHasBeenSet() const { return m_enforcementInRecordHasBeenSet; }
-    inline void SetEnforcementInRecord(const PartitionKeyEnforcementLevel& value) { m_enforcementInRecordHasBeenSet = true; m_enforcementInRecord = value; }
-    inline void SetEnforcementInRecord(PartitionKeyEnforcementLevel&& value) { m_enforcementInRecordHasBeenSet = true; m_enforcementInRecord = std::move(value); }
-    inline PartitionKey& WithEnforcementInRecord(const PartitionKeyEnforcementLevel& value) { SetEnforcementInRecord(value); return *this;}
-    inline PartitionKey& WithEnforcementInRecord(PartitionKeyEnforcementLevel&& value) { SetEnforcementInRecord(std::move(value)); return *this;}
+    inline void SetEnforcementInRecord(PartitionKeyEnforcementLevel value) { m_enforcementInRecordHasBeenSet = true; m_enforcementInRecord = value; }
+    inline PartitionKey& WithEnforcementInRecord(PartitionKeyEnforcementLevel value) { SetEnforcementInRecord(value); return *this;}
     ///@}
   private:
 
-    PartitionKeyType m_type;
+    PartitionKeyType m_type{PartitionKeyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    PartitionKeyEnforcementLevel m_enforcementInRecord;
+    PartitionKeyEnforcementLevel m_enforcementInRecord{PartitionKeyEnforcementLevel::NOT_SET};
     bool m_enforcementInRecordHasBeenSet = false;
   };
 

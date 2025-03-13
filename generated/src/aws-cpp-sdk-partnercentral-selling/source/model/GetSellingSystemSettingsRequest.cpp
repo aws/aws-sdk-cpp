@@ -12,11 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSellingSystemSettingsRequest::GetSellingSystemSettingsRequest() : 
-    m_catalogHasBeenSet(false)
-{
-}
-
 Aws::String GetSellingSystemSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

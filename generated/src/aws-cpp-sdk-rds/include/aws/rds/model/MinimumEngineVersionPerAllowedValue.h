@@ -32,7 +32,7 @@ namespace Model
   class MinimumEngineVersionPerAllowedValue
   {
   public:
-    AWS_RDS_API MinimumEngineVersionPerAllowedValue();
+    AWS_RDS_API MinimumEngineVersionPerAllowedValue() = default;
     AWS_RDS_API MinimumEngineVersionPerAllowedValue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API MinimumEngineVersionPerAllowedValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The allowed value for an option setting.</p>
      */
-    inline const Aws::String& GetAllowedValue() const{ return m_allowedValue; }
+    inline const Aws::String& GetAllowedValue() const { return m_allowedValue; }
     inline bool AllowedValueHasBeenSet() const { return m_allowedValueHasBeenSet; }
-    inline void SetAllowedValue(const Aws::String& value) { m_allowedValueHasBeenSet = true; m_allowedValue = value; }
-    inline void SetAllowedValue(Aws::String&& value) { m_allowedValueHasBeenSet = true; m_allowedValue = std::move(value); }
-    inline void SetAllowedValue(const char* value) { m_allowedValueHasBeenSet = true; m_allowedValue.assign(value); }
-    inline MinimumEngineVersionPerAllowedValue& WithAllowedValue(const Aws::String& value) { SetAllowedValue(value); return *this;}
-    inline MinimumEngineVersionPerAllowedValue& WithAllowedValue(Aws::String&& value) { SetAllowedValue(std::move(value)); return *this;}
-    inline MinimumEngineVersionPerAllowedValue& WithAllowedValue(const char* value) { SetAllowedValue(value); return *this;}
+    template<typename AllowedValueT = Aws::String>
+    void SetAllowedValue(AllowedValueT&& value) { m_allowedValueHasBeenSet = true; m_allowedValue = std::forward<AllowedValueT>(value); }
+    template<typename AllowedValueT = Aws::String>
+    MinimumEngineVersionPerAllowedValue& WithAllowedValue(AllowedValueT&& value) { SetAllowedValue(std::forward<AllowedValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum DB engine version required for the allowed value.</p>
      */
-    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+    inline const Aws::String& GetMinimumEngineVersion() const { return m_minimumEngineVersion; }
     inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
-    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
-    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
-    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
-    inline MinimumEngineVersionPerAllowedValue& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
-    inline MinimumEngineVersionPerAllowedValue& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
-    inline MinimumEngineVersionPerAllowedValue& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+    template<typename MinimumEngineVersionT = Aws::String>
+    void SetMinimumEngineVersion(MinimumEngineVersionT&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::forward<MinimumEngineVersionT>(value); }
+    template<typename MinimumEngineVersionT = Aws::String>
+    MinimumEngineVersionPerAllowedValue& WithMinimumEngineVersion(MinimumEngineVersionT&& value) { SetMinimumEngineVersion(std::forward<MinimumEngineVersionT>(value)); return *this;}
     ///@}
   private:
 

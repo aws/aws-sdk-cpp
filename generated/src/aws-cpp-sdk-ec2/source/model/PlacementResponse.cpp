@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PlacementResponse::PlacementResponse() : 
-    m_groupNameHasBeenSet(false)
-{
-}
-
 PlacementResponse::PlacementResponse(const XmlNode& xmlNode)
-  : PlacementResponse()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ PlacementResponse& PlacementResponse::operator =(const XmlNode& xmlNode)
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
   }
 

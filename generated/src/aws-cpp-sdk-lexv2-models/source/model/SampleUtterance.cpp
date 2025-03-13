@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SampleUtterance::SampleUtterance() : 
-    m_utteranceHasBeenSet(false)
-{
-}
-
 SampleUtterance::SampleUtterance(JsonView jsonValue)
-  : SampleUtterance()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SampleUtterance& SampleUtterance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("utterance"))
   {
     m_utterance = jsonValue.GetString("utterance");
-
     m_utteranceHasBeenSet = true;
   }
-
   return *this;
 }
 

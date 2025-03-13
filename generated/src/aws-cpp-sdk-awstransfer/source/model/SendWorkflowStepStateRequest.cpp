@@ -12,15 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendWorkflowStepStateRequest::SendWorkflowStepStateRequest() : 
-    m_workflowIdHasBeenSet(false),
-    m_executionIdHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_status(CustomStepStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String SendWorkflowStepStateRequest::SerializePayload() const
 {
   JsonValue payload;

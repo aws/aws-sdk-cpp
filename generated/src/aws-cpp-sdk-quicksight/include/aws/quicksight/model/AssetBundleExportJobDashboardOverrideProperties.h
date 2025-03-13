@@ -34,7 +34,7 @@ namespace Model
   class AssetBundleExportJobDashboardOverrideProperties
   {
   public:
-    AWS_QUICKSIGHT_API AssetBundleExportJobDashboardOverrideProperties();
+    AWS_QUICKSIGHT_API AssetBundleExportJobDashboardOverrideProperties() = default;
     AWS_QUICKSIGHT_API AssetBundleExportJobDashboardOverrideProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API AssetBundleExportJobDashboardOverrideProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The ARN of the specific <code>Dashboard</code> resource whose override
      * properties are configured in this structure.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssetBundleExportJobDashboardOverrideProperties& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssetBundleExportJobDashboardOverrideProperties& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssetBundleExportJobDashboardOverrideProperties& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssetBundleExportJobDashboardOverrideProperties& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,13 @@ namespace Model
      * <p>A list of <code>Dashboard</code> resource properties to generate variables
      * for in the returned CloudFormation template.</p>
      */
-    inline const Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline AssetBundleExportJobDashboardOverrideProperties& WithProperties(const Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>& value) { SetProperties(value); return *this;}
-    inline AssetBundleExportJobDashboardOverrideProperties& WithProperties(Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>&& value) { SetProperties(std::move(value)); return *this;}
-    inline AssetBundleExportJobDashboardOverrideProperties& AddProperties(const AssetBundleExportJobDashboardPropertyToOverride& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline AssetBundleExportJobDashboardOverrideProperties& AddProperties(AssetBundleExportJobDashboardPropertyToOverride&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride>>
+    AssetBundleExportJobDashboardOverrideProperties& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    inline AssetBundleExportJobDashboardOverrideProperties& AddProperties(AssetBundleExportJobDashboardPropertyToOverride value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
     ///@}
   private:
 

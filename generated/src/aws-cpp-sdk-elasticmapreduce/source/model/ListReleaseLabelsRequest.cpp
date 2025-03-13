@@ -12,14 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListReleaseLabelsRequest::ListReleaseLabelsRequest() : 
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListReleaseLabelsRequest::SerializePayload() const
 {
   JsonValue payload;

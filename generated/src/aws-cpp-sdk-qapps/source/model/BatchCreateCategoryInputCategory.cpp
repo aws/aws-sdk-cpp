@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-BatchCreateCategoryInputCategory::BatchCreateCategoryInputCategory() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_colorHasBeenSet(false)
-{
-}
-
 BatchCreateCategoryInputCategory::BatchCreateCategoryInputCategory(JsonView jsonValue)
-  : BatchCreateCategoryInputCategory()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchCreateCategoryInputCategory& BatchCreateCategoryInputCategory::operator =(J
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("color"))
   {
     m_color = jsonValue.GetString("color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

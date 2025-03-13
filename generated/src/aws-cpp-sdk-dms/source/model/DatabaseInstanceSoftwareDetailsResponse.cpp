@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DatabaseInstanceSoftwareDetailsResponse::DatabaseInstanceSoftwareDetailsResponse() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_engineEditionHasBeenSet(false),
-    m_servicePackHasBeenSet(false),
-    m_supportLevelHasBeenSet(false),
-    m_osArchitecture(0),
-    m_osArchitectureHasBeenSet(false),
-    m_tooltipHasBeenSet(false)
-{
-}
-
 DatabaseInstanceSoftwareDetailsResponse::DatabaseInstanceSoftwareDetailsResponse(JsonView jsonValue)
-  : DatabaseInstanceSoftwareDetailsResponse()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ DatabaseInstanceSoftwareDetailsResponse& DatabaseInstanceSoftwareDetailsResponse
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineEdition"))
   {
     m_engineEdition = jsonValue.GetString("EngineEdition");
-
     m_engineEditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServicePack"))
   {
     m_servicePack = jsonValue.GetString("ServicePack");
-
     m_servicePackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportLevel"))
   {
     m_supportLevel = jsonValue.GetString("SupportLevel");
-
     m_supportLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OsArchitecture"))
   {
     m_osArchitecture = jsonValue.GetInteger("OsArchitecture");
-
     m_osArchitectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetString("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   return *this;
 }
 

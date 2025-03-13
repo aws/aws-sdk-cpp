@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupBackupVaultDetails::AwsBackupBackupVaultDetails() : 
-    m_backupVaultArnHasBeenSet(false),
-    m_backupVaultNameHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_notificationsHasBeenSet(false),
-    m_accessPolicyHasBeenSet(false)
-{
-}
-
 AwsBackupBackupVaultDetails::AwsBackupBackupVaultDetails(JsonView jsonValue)
-  : AwsBackupBackupVaultDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AwsBackupBackupVaultDetails& AwsBackupBackupVaultDetails::operator =(JsonView js
   if(jsonValue.ValueExists("BackupVaultArn"))
   {
     m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
-
     m_backupVaultArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupVaultName"))
   {
     m_backupVaultName = jsonValue.GetString("BackupVaultName");
-
     m_backupVaultNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
-
     m_encryptionKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notifications"))
   {
     m_notifications = jsonValue.GetObject("Notifications");
-
     m_notificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPolicy"))
   {
     m_accessPolicy = jsonValue.GetString("AccessPolicy");
-
     m_accessPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListTrafficPolicyVersionsResult::ListTrafficPolicyVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListTrafficPolicyVersionsResult()
 {
   *this = result;
 }
@@ -38,6 +32,7 @@ ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(con
     if(!trafficPoliciesNode.IsNull())
     {
       XmlNode trafficPoliciesMember = trafficPoliciesNode.FirstChild("TrafficPolicy");
+      m_trafficPoliciesHasBeenSet = !trafficPoliciesMember.IsNull();
       while(!trafficPoliciesMember.IsNull())
       {
         m_trafficPolicies.push_back(trafficPoliciesMember);
@@ -49,16 +44,19 @@ ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(con
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode trafficPolicyVersionMarkerNode = resultNode.FirstChild("TrafficPolicyVersionMarker");
     if(!trafficPolicyVersionMarkerNode.IsNull())
     {
       m_trafficPolicyVersionMarker = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyVersionMarkerNode.GetText());
+      m_trafficPolicyVersionMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
+      m_maxItemsHasBeenSet = true;
     }
   }
 
@@ -67,6 +65,7 @@ ListTrafficPolicyVersionsResult& ListTrafficPolicyVersionsResult::operator =(con
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

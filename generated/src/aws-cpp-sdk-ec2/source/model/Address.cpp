@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Address::Address() : 
-    m_allocationIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_domain(DomainType::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfaceOwnerIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicIpv4PoolHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_customerOwnedIpHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_carrierIpHasBeenSet(false),
-    m_serviceManaged(ServiceManaged::NOT_SET),
-    m_serviceManagedHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 Address::Address(const XmlNode& xmlNode)
-  : Address()
 {
   *this = xmlNode;
 }
@@ -58,96 +36,111 @@ Address& Address::operator =(const XmlNode& xmlNode)
     {
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
+       m_allocationIdHasBeenSet = true;
     }
     XmlNode associationIdNode = resultNode.FirstChild("associationId");
     if(!associationIdNode.IsNull())
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
       m_associationIdHasBeenSet = true;
+       m_associationIdHasBeenSet = true;
     }
     XmlNode domainNode = resultNode.FirstChild("domain");
     if(!domainNode.IsNull())
     {
-      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText()).c_str()).c_str());
+      m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText()).c_str()));
       m_domainHasBeenSet = true;
+       m_domainHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode networkInterfaceOwnerIdNode = resultNode.FirstChild("networkInterfaceOwnerId");
     if(!networkInterfaceOwnerIdNode.IsNull())
     {
       m_networkInterfaceOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceOwnerIdNode.GetText());
       m_networkInterfaceOwnerIdHasBeenSet = true;
+       m_networkInterfaceOwnerIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("privateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode publicIpv4PoolNode = resultNode.FirstChild("publicIpv4Pool");
     if(!publicIpv4PoolNode.IsNull())
     {
       m_publicIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpv4PoolNode.GetText());
       m_publicIpv4PoolHasBeenSet = true;
+       m_publicIpv4PoolHasBeenSet = true;
     }
     XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");
     if(!networkBorderGroupNode.IsNull())
     {
       m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
       m_networkBorderGroupHasBeenSet = true;
+       m_networkBorderGroupHasBeenSet = true;
     }
     XmlNode customerOwnedIpNode = resultNode.FirstChild("customerOwnedIp");
     if(!customerOwnedIpNode.IsNull())
     {
       m_customerOwnedIp = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpNode.GetText());
       m_customerOwnedIpHasBeenSet = true;
+       m_customerOwnedIpHasBeenSet = true;
     }
     XmlNode customerOwnedIpv4PoolNode = resultNode.FirstChild("customerOwnedIpv4Pool");
     if(!customerOwnedIpv4PoolNode.IsNull())
     {
       m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
       m_customerOwnedIpv4PoolHasBeenSet = true;
+       m_customerOwnedIpv4PoolHasBeenSet = true;
     }
     XmlNode carrierIpNode = resultNode.FirstChild("carrierIp");
     if(!carrierIpNode.IsNull())
     {
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
       m_carrierIpHasBeenSet = true;
+       m_carrierIpHasBeenSet = true;
     }
     XmlNode serviceManagedNode = resultNode.FirstChild("serviceManaged");
     if(!serviceManagedNode.IsNull())
     {
-      m_serviceManaged = ServiceManagedMapper::GetServiceManagedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceManagedNode.GetText()).c_str()).c_str());
+      m_serviceManaged = ServiceManagedMapper::GetServiceManagedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceManagedNode.GetText()).c_str()));
       m_serviceManagedHasBeenSet = true;
+       m_serviceManagedHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
+       m_publicIpHasBeenSet = true;
     }
   }
 

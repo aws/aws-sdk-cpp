@@ -18,15 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-FormatOptions::FormatOptions() : 
-    m_jsonHasBeenSet(false),
-    m_excelHasBeenSet(false),
-    m_csvHasBeenSet(false)
-{
-}
-
 FormatOptions::FormatOptions(JsonView jsonValue)
-  : FormatOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FormatOptions& FormatOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Json"))
   {
     m_json = jsonValue.GetObject("Json");
-
     m_jsonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Excel"))
   {
     m_excel = jsonValue.GetObject("Excel");
-
     m_excelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Csv"))
   {
     m_csv = jsonValue.GetObject("Csv");
-
     m_csvHasBeenSet = true;
   }
-
   return *this;
 }
 

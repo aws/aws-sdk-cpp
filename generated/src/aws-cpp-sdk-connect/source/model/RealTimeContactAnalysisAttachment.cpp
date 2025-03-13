@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment() : 
-    m_attachmentNameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_attachmentIdHasBeenSet(false),
-    m_status(ArtifactStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RealTimeContactAnalysisAttachment::RealTimeContactAnalysisAttachment(JsonView jsonValue)
-  : RealTimeContactAnalysisAttachment()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RealTimeContactAnalysisAttachment& RealTimeContactAnalysisAttachment::operator =
   if(jsonValue.ValueExists("AttachmentName"))
   {
     m_attachmentName = jsonValue.GetString("AttachmentName");
-
     m_attachmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentId"))
   {
     m_attachmentId = jsonValue.GetString("AttachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ArtifactStatusMapper::GetArtifactStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

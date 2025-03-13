@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateTrustStoreRequest::AssociateTrustStoreRequest() : 
-    m_portalArnHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTrustStoreRequest::SerializePayload() const
 {
   return {};

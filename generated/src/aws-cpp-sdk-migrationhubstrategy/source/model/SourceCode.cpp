@@ -18,17 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-SourceCode::SourceCode() : 
-    m_locationHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_versionControl(VersionControl::NOT_SET),
-    m_versionControlHasBeenSet(false)
-{
-}
-
 SourceCode::SourceCode(JsonView jsonValue)
-  : SourceCode()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SourceCode& SourceCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceVersion"))
   {
     m_sourceVersion = jsonValue.GetString("sourceVersion");
-
     m_sourceVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionControl"))
   {
     m_versionControl = VersionControlMapper::GetVersionControlForName(jsonValue.GetString("versionControl"));
-
     m_versionControlHasBeenSet = true;
   }
-
   return *this;
 }
 

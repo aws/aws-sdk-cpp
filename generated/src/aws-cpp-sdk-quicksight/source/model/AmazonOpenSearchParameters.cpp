@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AmazonOpenSearchParameters::AmazonOpenSearchParameters() : 
-    m_domainHasBeenSet(false)
-{
-}
-
 AmazonOpenSearchParameters::AmazonOpenSearchParameters(JsonView jsonValue)
-  : AmazonOpenSearchParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmazonOpenSearchParameters& AmazonOpenSearchParameters::operator =(JsonView json
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

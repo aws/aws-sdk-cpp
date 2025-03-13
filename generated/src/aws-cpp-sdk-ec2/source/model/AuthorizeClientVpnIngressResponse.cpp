@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AuthorizeClientVpnIngressResponse::AuthorizeClientVpnIngressResponse()
-{
-}
-
 AuthorizeClientVpnIngressResponse::AuthorizeClientVpnIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AuthorizeClientVpnIngressResponse& AuthorizeClientVpnIngressResponse::operator =
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
+      m_statusHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AuthorizeClientVpnIngressResponse& AuthorizeClientVpnIngressResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AuthorizeClientVpnIngressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

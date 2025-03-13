@@ -36,7 +36,7 @@ namespace Model
   class ForecastedEvent
   {
   public:
-    AWS_LOCATIONSERVICE_API ForecastedEvent();
+    AWS_LOCATIONSERVICE_API ForecastedEvent() = default;
     AWS_LOCATIONSERVICE_API ForecastedEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ForecastedEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,35 +46,31 @@ namespace Model
     /**
      * <p>The forecasted event identifier.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline ForecastedEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline ForecastedEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline ForecastedEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    ForecastedEvent& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The geofence identifier pertaining to the forecasted event.</p>
      */
-    inline const Aws::String& GetGeofenceId() const{ return m_geofenceId; }
+    inline const Aws::String& GetGeofenceId() const { return m_geofenceId; }
     inline bool GeofenceIdHasBeenSet() const { return m_geofenceIdHasBeenSet; }
-    inline void SetGeofenceId(const Aws::String& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = value; }
-    inline void SetGeofenceId(Aws::String&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::move(value); }
-    inline void SetGeofenceId(const char* value) { m_geofenceIdHasBeenSet = true; m_geofenceId.assign(value); }
-    inline ForecastedEvent& WithGeofenceId(const Aws::String& value) { SetGeofenceId(value); return *this;}
-    inline ForecastedEvent& WithGeofenceId(Aws::String&& value) { SetGeofenceId(std::move(value)); return *this;}
-    inline ForecastedEvent& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+    template<typename GeofenceIdT = Aws::String>
+    void SetGeofenceId(GeofenceIdT&& value) { m_geofenceIdHasBeenSet = true; m_geofenceId = std::forward<GeofenceIdT>(value); }
+    template<typename GeofenceIdT = Aws::String>
+    ForecastedEvent& WithGeofenceId(GeofenceIdT&& value) { SetGeofenceId(std::forward<GeofenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates if the device is located within the geofence.</p>
      */
-    inline bool GetIsDeviceInGeofence() const{ return m_isDeviceInGeofence; }
+    inline bool GetIsDeviceInGeofence() const { return m_isDeviceInGeofence; }
     inline bool IsDeviceInGeofenceHasBeenSet() const { return m_isDeviceInGeofenceHasBeenSet; }
     inline void SetIsDeviceInGeofence(bool value) { m_isDeviceInGeofenceHasBeenSet = true; m_isDeviceInGeofence = value; }
     inline ForecastedEvent& WithIsDeviceInGeofence(bool value) { SetIsDeviceInGeofence(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     /**
      * <p>The closest distance from the device's position to the geofence.</p>
      */
-    inline double GetNearestDistance() const{ return m_nearestDistance; }
+    inline double GetNearestDistance() const { return m_nearestDistance; }
     inline bool NearestDistanceHasBeenSet() const { return m_nearestDistanceHasBeenSet; }
     inline void SetNearestDistance(double value) { m_nearestDistanceHasBeenSet = true; m_nearestDistance = value; }
     inline ForecastedEvent& WithNearestDistance(double value) { SetNearestDistance(value); return *this;}
@@ -100,12 +96,10 @@ namespace Model
      * current speed within time horizon window.</p> <p> <code>IDLE</code>: If a device
      * is inside of a geofence, and the device is not moving.</p>
      */
-    inline const ForecastedGeofenceEventType& GetEventType() const{ return m_eventType; }
+    inline ForecastedGeofenceEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const ForecastedGeofenceEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(ForecastedGeofenceEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline ForecastedEvent& WithEventType(const ForecastedGeofenceEventType& value) { SetEventType(value); return *this;}
-    inline ForecastedEvent& WithEventType(ForecastedGeofenceEventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(ForecastedGeofenceEventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline ForecastedEvent& WithEventType(ForecastedGeofenceEventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -114,31 +108,28 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
-    inline const Aws::Utils::DateTime& GetForecastedBreachTime() const{ return m_forecastedBreachTime; }
+    inline const Aws::Utils::DateTime& GetForecastedBreachTime() const { return m_forecastedBreachTime; }
     inline bool ForecastedBreachTimeHasBeenSet() const { return m_forecastedBreachTimeHasBeenSet; }
-    inline void SetForecastedBreachTime(const Aws::Utils::DateTime& value) { m_forecastedBreachTimeHasBeenSet = true; m_forecastedBreachTime = value; }
-    inline void SetForecastedBreachTime(Aws::Utils::DateTime&& value) { m_forecastedBreachTimeHasBeenSet = true; m_forecastedBreachTime = std::move(value); }
-    inline ForecastedEvent& WithForecastedBreachTime(const Aws::Utils::DateTime& value) { SetForecastedBreachTime(value); return *this;}
-    inline ForecastedEvent& WithForecastedBreachTime(Aws::Utils::DateTime&& value) { SetForecastedBreachTime(std::move(value)); return *this;}
+    template<typename ForecastedBreachTimeT = Aws::Utils::DateTime>
+    void SetForecastedBreachTime(ForecastedBreachTimeT&& value) { m_forecastedBreachTimeHasBeenSet = true; m_forecastedBreachTime = std::forward<ForecastedBreachTimeT>(value); }
+    template<typename ForecastedBreachTimeT = Aws::Utils::DateTime>
+    ForecastedEvent& WithForecastedBreachTime(ForecastedBreachTimeT&& value) { SetForecastedBreachTime(std::forward<ForecastedBreachTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The geofence properties.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const { return m_geofenceProperties; }
     inline bool GeofencePropertiesHasBeenSet() const { return m_geofencePropertiesHasBeenSet; }
-    inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = value; }
-    inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::move(value); }
-    inline ForecastedEvent& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
-    inline ForecastedEvent& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
-    inline ForecastedEvent& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
-    inline ForecastedEvent& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-    inline ForecastedEvent& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-    inline ForecastedEvent& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline ForecastedEvent& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
-    inline ForecastedEvent& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
-    inline ForecastedEvent& AddGeofenceProperties(const char* key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
+    template<typename GeofencePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetGeofenceProperties(GeofencePropertiesT&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::forward<GeofencePropertiesT>(value); }
+    template<typename GeofencePropertiesT = Aws::Map<Aws::String, Aws::String>>
+    ForecastedEvent& WithGeofenceProperties(GeofencePropertiesT&& value) { SetGeofenceProperties(std::forward<GeofencePropertiesT>(value)); return *this;}
+    template<typename GeofencePropertiesKeyT = Aws::String, typename GeofencePropertiesValueT = Aws::String>
+    ForecastedEvent& AddGeofenceProperties(GeofencePropertiesKeyT&& key, GeofencePropertiesValueT&& value) {
+      m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::forward<GeofencePropertiesKeyT>(key), std::forward<GeofencePropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -148,16 +139,16 @@ namespace Model
     Aws::String m_geofenceId;
     bool m_geofenceIdHasBeenSet = false;
 
-    bool m_isDeviceInGeofence;
+    bool m_isDeviceInGeofence{false};
     bool m_isDeviceInGeofenceHasBeenSet = false;
 
-    double m_nearestDistance;
+    double m_nearestDistance{0.0};
     bool m_nearestDistanceHasBeenSet = false;
 
-    ForecastedGeofenceEventType m_eventType;
+    ForecastedGeofenceEventType m_eventType{ForecastedGeofenceEventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_forecastedBreachTime;
+    Aws::Utils::DateTime m_forecastedBreachTime{};
     bool m_forecastedBreachTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_geofenceProperties;

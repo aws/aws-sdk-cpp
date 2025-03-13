@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DefaultClusterParameters::DefaultClusterParameters() : 
-    m_parameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 DefaultClusterParameters::DefaultClusterParameters(const XmlNode& xmlNode)
-  : DefaultClusterParameters()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ DefaultClusterParameters& DefaultClusterParameters::operator =(const XmlNode& xm
     {
       m_parameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(parameterGroupFamilyNode.GetText());
       m_parameterGroupFamilyHasBeenSet = true;
+       m_parameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
+       m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("Parameter");
       }
 
-      m_parametersHasBeenSet = true;
+       m_parametersHasBeenSet = true;
     }
   }
 

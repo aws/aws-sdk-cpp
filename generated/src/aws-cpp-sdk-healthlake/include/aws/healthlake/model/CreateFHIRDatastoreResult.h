@@ -28,7 +28,7 @@ namespace Model
   class CreateFHIRDatastoreResult
   {
   public:
-    AWS_HEALTHLAKE_API CreateFHIRDatastoreResult();
+    AWS_HEALTHLAKE_API CreateFHIRDatastoreResult() = default;
     AWS_HEALTHLAKE_API CreateFHIRDatastoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_HEALTHLAKE_API CreateFHIRDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>The AWS-generated data store id. This id is in the output from the initial
      * data store creation call.</p>
      */
-    inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-    inline void SetDatastoreId(const Aws::String& value) { m_datastoreId = value; }
-    inline void SetDatastoreId(Aws::String&& value) { m_datastoreId = std::move(value); }
-    inline void SetDatastoreId(const char* value) { m_datastoreId.assign(value); }
-    inline CreateFHIRDatastoreResult& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
+    template<typename DatastoreIdT = Aws::String>
+    void SetDatastoreId(DatastoreIdT&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::forward<DatastoreIdT>(value); }
+    template<typename DatastoreIdT = Aws::String>
+    CreateFHIRDatastoreResult& WithDatastoreId(DatastoreIdT&& value) { SetDatastoreId(std::forward<DatastoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,60 +50,57 @@ namespace Model
      * <p>The data store ARN is generated during the creation of the data store and can
      * be found in the output from the initial data store creation call.</p>
      */
-    inline const Aws::String& GetDatastoreArn() const{ return m_datastoreArn; }
-    inline void SetDatastoreArn(const Aws::String& value) { m_datastoreArn = value; }
-    inline void SetDatastoreArn(Aws::String&& value) { m_datastoreArn = std::move(value); }
-    inline void SetDatastoreArn(const char* value) { m_datastoreArn.assign(value); }
-    inline CreateFHIRDatastoreResult& WithDatastoreArn(const Aws::String& value) { SetDatastoreArn(value); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreArn(Aws::String&& value) { SetDatastoreArn(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreArn(const char* value) { SetDatastoreArn(value); return *this;}
+    inline const Aws::String& GetDatastoreArn() const { return m_datastoreArn; }
+    template<typename DatastoreArnT = Aws::String>
+    void SetDatastoreArn(DatastoreArnT&& value) { m_datastoreArnHasBeenSet = true; m_datastoreArn = std::forward<DatastoreArnT>(value); }
+    template<typename DatastoreArnT = Aws::String>
+    CreateFHIRDatastoreResult& WithDatastoreArn(DatastoreArnT&& value) { SetDatastoreArn(std::forward<DatastoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the FHIR data store.</p>
      */
-    inline const DatastoreStatus& GetDatastoreStatus() const{ return m_datastoreStatus; }
-    inline void SetDatastoreStatus(const DatastoreStatus& value) { m_datastoreStatus = value; }
-    inline void SetDatastoreStatus(DatastoreStatus&& value) { m_datastoreStatus = std::move(value); }
-    inline CreateFHIRDatastoreResult& WithDatastoreStatus(const DatastoreStatus& value) { SetDatastoreStatus(value); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreStatus(DatastoreStatus&& value) { SetDatastoreStatus(std::move(value)); return *this;}
+    inline DatastoreStatus GetDatastoreStatus() const { return m_datastoreStatus; }
+    inline void SetDatastoreStatus(DatastoreStatus value) { m_datastoreStatusHasBeenSet = true; m_datastoreStatus = value; }
+    inline CreateFHIRDatastoreResult& WithDatastoreStatus(DatastoreStatus value) { SetDatastoreStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS endpoint for the created data store.</p>
      */
-    inline const Aws::String& GetDatastoreEndpoint() const{ return m_datastoreEndpoint; }
-    inline void SetDatastoreEndpoint(const Aws::String& value) { m_datastoreEndpoint = value; }
-    inline void SetDatastoreEndpoint(Aws::String&& value) { m_datastoreEndpoint = std::move(value); }
-    inline void SetDatastoreEndpoint(const char* value) { m_datastoreEndpoint.assign(value); }
-    inline CreateFHIRDatastoreResult& WithDatastoreEndpoint(const Aws::String& value) { SetDatastoreEndpoint(value); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreEndpoint(Aws::String&& value) { SetDatastoreEndpoint(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreResult& WithDatastoreEndpoint(const char* value) { SetDatastoreEndpoint(value); return *this;}
+    inline const Aws::String& GetDatastoreEndpoint() const { return m_datastoreEndpoint; }
+    template<typename DatastoreEndpointT = Aws::String>
+    void SetDatastoreEndpoint(DatastoreEndpointT&& value) { m_datastoreEndpointHasBeenSet = true; m_datastoreEndpoint = std::forward<DatastoreEndpointT>(value); }
+    template<typename DatastoreEndpointT = Aws::String>
+    CreateFHIRDatastoreResult& WithDatastoreEndpoint(DatastoreEndpointT&& value) { SetDatastoreEndpoint(std::forward<DatastoreEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFHIRDatastoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFHIRDatastoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFHIRDatastoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datastoreId;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_datastoreArn;
+    bool m_datastoreArnHasBeenSet = false;
 
-    DatastoreStatus m_datastoreStatus;
+    DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
+    bool m_datastoreStatusHasBeenSet = false;
 
     Aws::String m_datastoreEndpoint;
+    bool m_datastoreEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

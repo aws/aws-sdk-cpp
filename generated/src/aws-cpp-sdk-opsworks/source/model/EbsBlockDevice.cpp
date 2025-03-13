@@ -18,21 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-EbsBlockDevice::EbsBlockDevice() : 
-    m_snapshotIdHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
-{
-}
-
 EbsBlockDevice::EbsBlockDevice(JsonView jsonValue)
-  : EbsBlockDevice()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ EbsBlockDevice& EbsBlockDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
     m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iops"))
   {
     m_iops = jsonValue.GetInteger("Iops");
-
     m_iopsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSize"))
   {
     m_volumeSize = jsonValue.GetInteger("VolumeSize");
-
     m_volumeSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeType"))
   {
     m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(jsonValue.GetString("VolumeType"));
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteOnTermination"))
   {
     m_deleteOnTermination = jsonValue.GetBool("DeleteOnTermination");
-
     m_deleteOnTerminationHasBeenSet = true;
   }
-
   return *this;
 }
 

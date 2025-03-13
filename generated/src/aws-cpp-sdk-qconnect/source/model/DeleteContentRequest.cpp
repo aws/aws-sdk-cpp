@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContentRequest::DeleteContentRequest() : 
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContentRequest::SerializePayload() const
 {
   return {};

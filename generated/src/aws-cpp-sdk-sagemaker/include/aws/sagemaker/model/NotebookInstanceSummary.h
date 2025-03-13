@@ -36,7 +36,7 @@ namespace Model
   class NotebookInstanceSummary
   {
   public:
-    AWS_SAGEMAKER_API NotebookInstanceSummary();
+    AWS_SAGEMAKER_API NotebookInstanceSummary() = default;
     AWS_SAGEMAKER_API NotebookInstanceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API NotebookInstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,34 @@ namespace Model
     /**
      * <p>The name of the notebook instance that you want a summary for.</p>
      */
-    inline const Aws::String& GetNotebookInstanceName() const{ return m_notebookInstanceName; }
+    inline const Aws::String& GetNotebookInstanceName() const { return m_notebookInstanceName; }
     inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
-    inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
-    inline void SetNotebookInstanceName(Aws::String&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::move(value); }
-    inline void SetNotebookInstanceName(const char* value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName.assign(value); }
-    inline NotebookInstanceSummary& WithNotebookInstanceName(const Aws::String& value) { SetNotebookInstanceName(value); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceName(Aws::String&& value) { SetNotebookInstanceName(std::move(value)); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceName(const char* value) { SetNotebookInstanceName(value); return *this;}
+    template<typename NotebookInstanceNameT = Aws::String>
+    void SetNotebookInstanceName(NotebookInstanceNameT&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::forward<NotebookInstanceNameT>(value); }
+    template<typename NotebookInstanceNameT = Aws::String>
+    NotebookInstanceSummary& WithNotebookInstanceName(NotebookInstanceNameT&& value) { SetNotebookInstanceName(std::forward<NotebookInstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
      */
-    inline const Aws::String& GetNotebookInstanceArn() const{ return m_notebookInstanceArn; }
+    inline const Aws::String& GetNotebookInstanceArn() const { return m_notebookInstanceArn; }
     inline bool NotebookInstanceArnHasBeenSet() const { return m_notebookInstanceArnHasBeenSet; }
-    inline void SetNotebookInstanceArn(const Aws::String& value) { m_notebookInstanceArnHasBeenSet = true; m_notebookInstanceArn = value; }
-    inline void SetNotebookInstanceArn(Aws::String&& value) { m_notebookInstanceArnHasBeenSet = true; m_notebookInstanceArn = std::move(value); }
-    inline void SetNotebookInstanceArn(const char* value) { m_notebookInstanceArnHasBeenSet = true; m_notebookInstanceArn.assign(value); }
-    inline NotebookInstanceSummary& WithNotebookInstanceArn(const Aws::String& value) { SetNotebookInstanceArn(value); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceArn(Aws::String&& value) { SetNotebookInstanceArn(std::move(value)); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceArn(const char* value) { SetNotebookInstanceArn(value); return *this;}
+    template<typename NotebookInstanceArnT = Aws::String>
+    void SetNotebookInstanceArn(NotebookInstanceArnT&& value) { m_notebookInstanceArnHasBeenSet = true; m_notebookInstanceArn = std::forward<NotebookInstanceArnT>(value); }
+    template<typename NotebookInstanceArnT = Aws::String>
+    NotebookInstanceSummary& WithNotebookInstanceArn(NotebookInstanceArnT&& value) { SetNotebookInstanceArn(std::forward<NotebookInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the notebook instance.</p>
      */
-    inline const NotebookInstanceStatus& GetNotebookInstanceStatus() const{ return m_notebookInstanceStatus; }
+    inline NotebookInstanceStatus GetNotebookInstanceStatus() const { return m_notebookInstanceStatus; }
     inline bool NotebookInstanceStatusHasBeenSet() const { return m_notebookInstanceStatusHasBeenSet; }
-    inline void SetNotebookInstanceStatus(const NotebookInstanceStatus& value) { m_notebookInstanceStatusHasBeenSet = true; m_notebookInstanceStatus = value; }
-    inline void SetNotebookInstanceStatus(NotebookInstanceStatus&& value) { m_notebookInstanceStatusHasBeenSet = true; m_notebookInstanceStatus = std::move(value); }
-    inline NotebookInstanceSummary& WithNotebookInstanceStatus(const NotebookInstanceStatus& value) { SetNotebookInstanceStatus(value); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceStatus(NotebookInstanceStatus&& value) { SetNotebookInstanceStatus(std::move(value)); return *this;}
+    inline void SetNotebookInstanceStatus(NotebookInstanceStatus value) { m_notebookInstanceStatusHasBeenSet = true; m_notebookInstanceStatus = value; }
+    inline NotebookInstanceSummary& WithNotebookInstanceStatus(NotebookInstanceStatus value) { SetNotebookInstanceStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -87,50 +81,46 @@ namespace Model
      * <p>The URL that you use to connect to the Jupyter notebook running in your
      * notebook instance. </p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline NotebookInstanceSummary& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline NotebookInstanceSummary& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline NotebookInstanceSummary& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    NotebookInstanceSummary& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of ML compute instance that the notebook instance is running on.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline NotebookInstanceSummary& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline NotebookInstanceSummary& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline NotebookInstanceSummary& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that shows when the notebook instance was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline NotebookInstanceSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline NotebookInstanceSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    NotebookInstanceSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that shows when the notebook instance was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline NotebookInstanceSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline NotebookInstanceSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    NotebookInstanceSummary& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,14 +131,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
-    inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
+    inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const { return m_notebookInstanceLifecycleConfigName; }
     inline bool NotebookInstanceLifecycleConfigNameHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameHasBeenSet; }
-    inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
-    inline void SetNotebookInstanceLifecycleConfigName(Aws::String&& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = std::move(value); }
-    inline void SetNotebookInstanceLifecycleConfigName(const char* value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName.assign(value); }
-    inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(const Aws::String& value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(Aws::String&& value) { SetNotebookInstanceLifecycleConfigName(std::move(value)); return *this;}
-    inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(const char* value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
+    template<typename NotebookInstanceLifecycleConfigNameT = Aws::String>
+    void SetNotebookInstanceLifecycleConfigName(NotebookInstanceLifecycleConfigNameT&& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = std::forward<NotebookInstanceLifecycleConfigNameT>(value); }
+    template<typename NotebookInstanceLifecycleConfigNameT = Aws::String>
+    NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(NotebookInstanceLifecycleConfigNameT&& value) { SetNotebookInstanceLifecycleConfigName(std::forward<NotebookInstanceLifecycleConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +151,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with SageMaker AI Notebook Instances</a>.</p>
      */
-    inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
+    inline const Aws::String& GetDefaultCodeRepository() const { return m_defaultCodeRepository; }
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
-    inline void SetDefaultCodeRepository(const Aws::String& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = value; }
-    inline void SetDefaultCodeRepository(Aws::String&& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = std::move(value); }
-    inline void SetDefaultCodeRepository(const char* value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository.assign(value); }
-    inline NotebookInstanceSummary& WithDefaultCodeRepository(const Aws::String& value) { SetDefaultCodeRepository(value); return *this;}
-    inline NotebookInstanceSummary& WithDefaultCodeRepository(Aws::String&& value) { SetDefaultCodeRepository(std::move(value)); return *this;}
-    inline NotebookInstanceSummary& WithDefaultCodeRepository(const char* value) { SetDefaultCodeRepository(value); return *this;}
+    template<typename DefaultCodeRepositoryT = Aws::String>
+    void SetDefaultCodeRepository(DefaultCodeRepositoryT&& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = std::forward<DefaultCodeRepositoryT>(value); }
+    template<typename DefaultCodeRepositoryT = Aws::String>
+    NotebookInstanceSummary& WithDefaultCodeRepository(DefaultCodeRepositoryT&& value) { SetDefaultCodeRepository(std::forward<DefaultCodeRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,15 +171,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
      * Git Repositories with SageMaker AI Notebook Instances</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const { return m_additionalCodeRepositories; }
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
-    inline void SetAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = value; }
-    inline void SetAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = std::move(value); }
-    inline NotebookInstanceSummary& WithAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { SetAdditionalCodeRepositories(value); return *this;}
-    inline NotebookInstanceSummary& WithAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { SetAdditionalCodeRepositories(std::move(value)); return *this;}
-    inline NotebookInstanceSummary& AddAdditionalCodeRepositories(const Aws::String& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
-    inline NotebookInstanceSummary& AddAdditionalCodeRepositories(Aws::String&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(std::move(value)); return *this; }
-    inline NotebookInstanceSummary& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
+    template<typename AdditionalCodeRepositoriesT = Aws::Vector<Aws::String>>
+    void SetAdditionalCodeRepositories(AdditionalCodeRepositoriesT&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = std::forward<AdditionalCodeRepositoriesT>(value); }
+    template<typename AdditionalCodeRepositoriesT = Aws::Vector<Aws::String>>
+    NotebookInstanceSummary& WithAdditionalCodeRepositories(AdditionalCodeRepositoriesT&& value) { SetAdditionalCodeRepositories(std::forward<AdditionalCodeRepositoriesT>(value)); return *this;}
+    template<typename AdditionalCodeRepositoriesT = Aws::String>
+    NotebookInstanceSummary& AddAdditionalCodeRepositories(AdditionalCodeRepositoriesT&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.emplace_back(std::forward<AdditionalCodeRepositoriesT>(value)); return *this; }
     ///@}
   private:
 
@@ -203,19 +188,19 @@ namespace Model
     Aws::String m_notebookInstanceArn;
     bool m_notebookInstanceArnHasBeenSet = false;
 
-    NotebookInstanceStatus m_notebookInstanceStatus;
+    NotebookInstanceStatus m_notebookInstanceStatus{NotebookInstanceStatus::NOT_SET};
     bool m_notebookInstanceStatusHasBeenSet = false;
 
     Aws::String m_url;
     bool m_urlHasBeenSet = false;
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_notebookInstanceLifecycleConfigName;

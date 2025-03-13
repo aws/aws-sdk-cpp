@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFrontDistributionOriginGroupFailoverStatusCodes
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The list of status code values that can cause a failover to the next
      * origin.</p>
      */
-    inline const Aws::Vector<int>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<int>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<int>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<int>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& WithItems(const Aws::Vector<int>& value) { SetItems(value); return *this;}
-    inline AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& WithItems(Aws::Vector<int>&& value) { SetItems(std::move(value)); return *this;}
+    template<typename ItemsT = Aws::Vector<int>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<int>>
+    AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
     inline AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& AddItems(int value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
     ///@}
 
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p>The number of status codes that can cause a failover.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
     Aws::Vector<int> m_items;
     bool m_itemsHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
   };
 

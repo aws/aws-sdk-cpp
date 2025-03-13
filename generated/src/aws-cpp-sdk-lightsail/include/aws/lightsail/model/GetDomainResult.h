@@ -28,7 +28,7 @@ namespace Model
   class GetDomainResult
   {
   public:
-    AWS_LIGHTSAIL_API GetDomainResult();
+    AWS_LIGHTSAIL_API GetDomainResult() = default;
     AWS_LIGHTSAIL_API GetDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An array of key-value pairs containing information about your get domain
      * request.</p>
      */
-    inline const Domain& GetDomain() const{ return m_domain; }
-    inline void SetDomain(const Domain& value) { m_domain = value; }
-    inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
-    inline GetDomainResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
-    inline GetDomainResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+    inline const Domain& GetDomain() const { return m_domain; }
+    template<typename DomainT = Domain>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Domain>
+    GetDomainResult& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Domain m_domain;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

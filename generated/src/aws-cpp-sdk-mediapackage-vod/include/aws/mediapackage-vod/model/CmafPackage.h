@@ -33,7 +33,7 @@ namespace Model
   class CmafPackage
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API CmafPackage();
+    AWS_MEDIAPACKAGEVOD_API CmafPackage() = default;
     AWS_MEDIAPACKAGEVOD_API CmafPackage(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API CmafPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,26 @@ namespace Model
 
     ///@{
     
-    inline const CmafEncryption& GetEncryption() const{ return m_encryption; }
+    inline const CmafEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const CmafEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(CmafEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline CmafPackage& WithEncryption(const CmafEncryption& value) { SetEncryption(value); return *this;}
-    inline CmafPackage& WithEncryption(CmafEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = CmafEncryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = CmafEncryption>
+    CmafPackage& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of HLS manifest configurations.
      */
-    inline const Aws::Vector<HlsManifest>& GetHlsManifests() const{ return m_hlsManifests; }
+    inline const Aws::Vector<HlsManifest>& GetHlsManifests() const { return m_hlsManifests; }
     inline bool HlsManifestsHasBeenSet() const { return m_hlsManifestsHasBeenSet; }
-    inline void SetHlsManifests(const Aws::Vector<HlsManifest>& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests = value; }
-    inline void SetHlsManifests(Aws::Vector<HlsManifest>&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests = std::move(value); }
-    inline CmafPackage& WithHlsManifests(const Aws::Vector<HlsManifest>& value) { SetHlsManifests(value); return *this;}
-    inline CmafPackage& WithHlsManifests(Aws::Vector<HlsManifest>&& value) { SetHlsManifests(std::move(value)); return *this;}
-    inline CmafPackage& AddHlsManifests(const HlsManifest& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests.push_back(value); return *this; }
-    inline CmafPackage& AddHlsManifests(HlsManifest&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests.push_back(std::move(value)); return *this; }
+    template<typename HlsManifestsT = Aws::Vector<HlsManifest>>
+    void SetHlsManifests(HlsManifestsT&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests = std::forward<HlsManifestsT>(value); }
+    template<typename HlsManifestsT = Aws::Vector<HlsManifest>>
+    CmafPackage& WithHlsManifests(HlsManifestsT&& value) { SetHlsManifests(std::forward<HlsManifestsT>(value)); return *this;}
+    template<typename HlsManifestsT = HlsManifest>
+    CmafPackage& AddHlsManifests(HlsManifestsT&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests.emplace_back(std::forward<HlsManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,7 +72,7 @@ namespace Model
      * during content playback.
 
      */
-    inline bool GetIncludeEncoderConfigurationInSegments() const{ return m_includeEncoderConfigurationInSegments; }
+    inline bool GetIncludeEncoderConfigurationInSegments() const { return m_includeEncoderConfigurationInSegments; }
     inline bool IncludeEncoderConfigurationInSegmentsHasBeenSet() const { return m_includeEncoderConfigurationInSegmentsHasBeenSet; }
     inline void SetIncludeEncoderConfigurationInSegments(bool value) { m_includeEncoderConfigurationInSegmentsHasBeenSet = true; m_includeEncoderConfigurationInSegments = value; }
     inline CmafPackage& WithIncludeEncoderConfigurationInSegments(bool value) { SetIncludeEncoderConfigurationInSegments(value); return *this;}
@@ -85,7 +85,7 @@ rounded to the
      * nearest multiple of the source fragment duration.
 
      */
-    inline int GetSegmentDurationSeconds() const{ return m_segmentDurationSeconds; }
+    inline int GetSegmentDurationSeconds() const { return m_segmentDurationSeconds; }
     inline bool SegmentDurationSecondsHasBeenSet() const { return m_segmentDurationSecondsHasBeenSet; }
     inline void SetSegmentDurationSeconds(int value) { m_segmentDurationSecondsHasBeenSet = true; m_segmentDurationSeconds = value; }
     inline CmafPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
@@ -98,10 +98,10 @@ rounded to the
     Aws::Vector<HlsManifest> m_hlsManifests;
     bool m_hlsManifestsHasBeenSet = false;
 
-    bool m_includeEncoderConfigurationInSegments;
+    bool m_includeEncoderConfigurationInSegments{false};
     bool m_includeEncoderConfigurationInSegmentsHasBeenSet = false;
 
-    int m_segmentDurationSeconds;
+    int m_segmentDurationSeconds{0};
     bool m_segmentDurationSecondsHasBeenSet = false;
   };
 

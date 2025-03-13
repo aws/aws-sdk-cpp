@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyChannelSettings::JourneyChannelSettings() : 
-    m_connectCampaignArnHasBeenSet(false),
-    m_connectCampaignExecutionRoleArnHasBeenSet(false)
-{
-}
-
 JourneyChannelSettings::JourneyChannelSettings(JsonView jsonValue)
-  : JourneyChannelSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JourneyChannelSettings& JourneyChannelSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectCampaignArn"))
   {
     m_connectCampaignArn = jsonValue.GetString("ConnectCampaignArn");
-
     m_connectCampaignArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectCampaignExecutionRoleArn"))
   {
     m_connectCampaignExecutionRoleArn = jsonValue.GetString("ConnectCampaignExecutionRoleArn");
-
     m_connectCampaignExecutionRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

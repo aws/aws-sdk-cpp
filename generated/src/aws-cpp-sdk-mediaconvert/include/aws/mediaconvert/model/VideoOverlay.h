@@ -38,7 +38,7 @@ namespace Model
   class VideoOverlay
   {
   public:
-    AWS_MEDIACONVERT_API VideoOverlay();
+    AWS_MEDIACONVERT_API VideoOverlay() = default;
     AWS_MEDIACONVERT_API VideoOverlay(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoOverlay& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * timecodes that start at 01:00:00:00 and you want your overlay to end ten minutes
      * into the video, enter 01:10:00:00.
      */
-    inline const Aws::String& GetEndTimecode() const{ return m_endTimecode; }
+    inline const Aws::String& GetEndTimecode() const { return m_endTimecode; }
     inline bool EndTimecodeHasBeenSet() const { return m_endTimecodeHasBeenSet; }
-    inline void SetEndTimecode(const Aws::String& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = value; }
-    inline void SetEndTimecode(Aws::String&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::move(value); }
-    inline void SetEndTimecode(const char* value) { m_endTimecodeHasBeenSet = true; m_endTimecode.assign(value); }
-    inline VideoOverlay& WithEndTimecode(const Aws::String& value) { SetEndTimecode(value); return *this;}
-    inline VideoOverlay& WithEndTimecode(Aws::String&& value) { SetEndTimecode(std::move(value)); return *this;}
-    inline VideoOverlay& WithEndTimecode(const char* value) { SetEndTimecode(value); return *this;}
+    template<typename EndTimecodeT = Aws::String>
+    void SetEndTimecode(EndTimecodeT&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::forward<EndTimecodeT>(value); }
+    template<typename EndTimecodeT = Aws::String>
+    VideoOverlay& WithEndTimecode(EndTimecodeT&& value) { SetEndTimecode(std::forward<EndTimecodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * the base input video's frame, or size: Enter a value for X position, Y position,
      * Width, or Height. To use the full frame of the base input video: Leave blank.
      */
-    inline const VideoOverlayPosition& GetInitialPosition() const{ return m_initialPosition; }
+    inline const VideoOverlayPosition& GetInitialPosition() const { return m_initialPosition; }
     inline bool InitialPositionHasBeenSet() const { return m_initialPositionHasBeenSet; }
-    inline void SetInitialPosition(const VideoOverlayPosition& value) { m_initialPositionHasBeenSet = true; m_initialPosition = value; }
-    inline void SetInitialPosition(VideoOverlayPosition&& value) { m_initialPositionHasBeenSet = true; m_initialPosition = std::move(value); }
-    inline VideoOverlay& WithInitialPosition(const VideoOverlayPosition& value) { SetInitialPosition(value); return *this;}
-    inline VideoOverlay& WithInitialPosition(VideoOverlayPosition&& value) { SetInitialPosition(std::move(value)); return *this;}
+    template<typename InitialPositionT = VideoOverlayPosition>
+    void SetInitialPosition(InitialPositionT&& value) { m_initialPositionHasBeenSet = true; m_initialPosition = std::forward<InitialPositionT>(value); }
+    template<typename InitialPositionT = VideoOverlayPosition>
+    VideoOverlay& WithInitialPosition(InitialPositionT&& value) { SetInitialPosition(std::forward<InitialPositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * Input settings for Video overlay. You can include one or more video overlays in
      * sequence at different times that you specify.
      */
-    inline const VideoOverlayInput& GetInput() const{ return m_input; }
+    inline const VideoOverlayInput& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const VideoOverlayInput& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(VideoOverlayInput&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline VideoOverlay& WithInput(const VideoOverlayInput& value) { SetInput(value); return *this;}
-    inline VideoOverlay& WithInput(VideoOverlayInput&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = VideoOverlayInput>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = VideoOverlayInput>
+    VideoOverlay& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +99,10 @@ namespace Model
      * only once: Choose Once. With either option, you can end playback at a time that
      * you specify by entering a value for End timecode.
      */
-    inline const VideoOverlayPlayBackMode& GetPlayback() const{ return m_playback; }
+    inline VideoOverlayPlayBackMode GetPlayback() const { return m_playback; }
     inline bool PlaybackHasBeenSet() const { return m_playbackHasBeenSet; }
-    inline void SetPlayback(const VideoOverlayPlayBackMode& value) { m_playbackHasBeenSet = true; m_playback = value; }
-    inline void SetPlayback(VideoOverlayPlayBackMode&& value) { m_playbackHasBeenSet = true; m_playback = std::move(value); }
-    inline VideoOverlay& WithPlayback(const VideoOverlayPlayBackMode& value) { SetPlayback(value); return *this;}
-    inline VideoOverlay& WithPlayback(VideoOverlayPlayBackMode&& value) { SetPlayback(std::move(value)); return *this;}
+    inline void SetPlayback(VideoOverlayPlayBackMode value) { m_playbackHasBeenSet = true; m_playback = value; }
+    inline VideoOverlay& WithPlayback(VideoOverlayPlayBackMode value) { SetPlayback(value); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +116,12 @@ namespace Model
      * embedded timecodes that start at 01:00:00:00 and you want your overlay to begin
      * five minutes into the video, enter 01:05:00:00.
      */
-    inline const Aws::String& GetStartTimecode() const{ return m_startTimecode; }
+    inline const Aws::String& GetStartTimecode() const { return m_startTimecode; }
     inline bool StartTimecodeHasBeenSet() const { return m_startTimecodeHasBeenSet; }
-    inline void SetStartTimecode(const Aws::String& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = value; }
-    inline void SetStartTimecode(Aws::String&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::move(value); }
-    inline void SetStartTimecode(const char* value) { m_startTimecodeHasBeenSet = true; m_startTimecode.assign(value); }
-    inline VideoOverlay& WithStartTimecode(const Aws::String& value) { SetStartTimecode(value); return *this;}
-    inline VideoOverlay& WithStartTimecode(Aws::String&& value) { SetStartTimecode(std::move(value)); return *this;}
-    inline VideoOverlay& WithStartTimecode(const char* value) { SetStartTimecode(value); return *this;}
+    template<typename StartTimecodeT = Aws::String>
+    void SetStartTimecode(StartTimecodeT&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::forward<StartTimecodeT>(value); }
+    template<typename StartTimecodeT = Aws::String>
+    VideoOverlay& WithStartTimecode(StartTimecodeT&& value) { SetStartTimecode(std::forward<StartTimecodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +132,14 @@ namespace Model
      * Enter a value for Start timecode, End Timecode, X Position, Y Position, Width,
      * or Height.
      */
-    inline const Aws::Vector<VideoOverlayTransition>& GetTransitions() const{ return m_transitions; }
+    inline const Aws::Vector<VideoOverlayTransition>& GetTransitions() const { return m_transitions; }
     inline bool TransitionsHasBeenSet() const { return m_transitionsHasBeenSet; }
-    inline void SetTransitions(const Aws::Vector<VideoOverlayTransition>& value) { m_transitionsHasBeenSet = true; m_transitions = value; }
-    inline void SetTransitions(Aws::Vector<VideoOverlayTransition>&& value) { m_transitionsHasBeenSet = true; m_transitions = std::move(value); }
-    inline VideoOverlay& WithTransitions(const Aws::Vector<VideoOverlayTransition>& value) { SetTransitions(value); return *this;}
-    inline VideoOverlay& WithTransitions(Aws::Vector<VideoOverlayTransition>&& value) { SetTransitions(std::move(value)); return *this;}
-    inline VideoOverlay& AddTransitions(const VideoOverlayTransition& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(value); return *this; }
-    inline VideoOverlay& AddTransitions(VideoOverlayTransition&& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(std::move(value)); return *this; }
+    template<typename TransitionsT = Aws::Vector<VideoOverlayTransition>>
+    void SetTransitions(TransitionsT&& value) { m_transitionsHasBeenSet = true; m_transitions = std::forward<TransitionsT>(value); }
+    template<typename TransitionsT = Aws::Vector<VideoOverlayTransition>>
+    VideoOverlay& WithTransitions(TransitionsT&& value) { SetTransitions(std::forward<TransitionsT>(value)); return *this;}
+    template<typename TransitionsT = VideoOverlayTransition>
+    VideoOverlay& AddTransitions(TransitionsT&& value) { m_transitionsHasBeenSet = true; m_transitions.emplace_back(std::forward<TransitionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -158,7 +152,7 @@ namespace Model
     VideoOverlayInput m_input;
     bool m_inputHasBeenSet = false;
 
-    VideoOverlayPlayBackMode m_playback;
+    VideoOverlayPlayBackMode m_playback{VideoOverlayPlayBackMode::NOT_SET};
     bool m_playbackHasBeenSet = false;
 
     Aws::String m_startTimecode;

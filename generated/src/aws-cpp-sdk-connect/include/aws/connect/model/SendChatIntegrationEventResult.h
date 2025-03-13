@@ -27,7 +27,7 @@ namespace Model
   class SendChatIntegrationEventResult
   {
   public:
-    AWS_CONNECT_API SendChatIntegrationEventResult();
+    AWS_CONNECT_API SendChatIntegrationEventResult() = default;
     AWS_CONNECT_API SendChatIntegrationEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API SendChatIntegrationEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * if the integration event is not valid without an already existing chat
      * contact.</p>
      */
-    inline const Aws::String& GetInitialContactId() const{ return m_initialContactId; }
-    inline void SetInitialContactId(const Aws::String& value) { m_initialContactId = value; }
-    inline void SetInitialContactId(Aws::String&& value) { m_initialContactId = std::move(value); }
-    inline void SetInitialContactId(const char* value) { m_initialContactId.assign(value); }
-    inline SendChatIntegrationEventResult& WithInitialContactId(const Aws::String& value) { SetInitialContactId(value); return *this;}
-    inline SendChatIntegrationEventResult& WithInitialContactId(Aws::String&& value) { SetInitialContactId(std::move(value)); return *this;}
-    inline SendChatIntegrationEventResult& WithInitialContactId(const char* value) { SetInitialContactId(value); return *this;}
+    inline const Aws::String& GetInitialContactId() const { return m_initialContactId; }
+    template<typename InitialContactIdT = Aws::String>
+    void SetInitialContactId(InitialContactIdT&& value) { m_initialContactIdHasBeenSet = true; m_initialContactId = std::forward<InitialContactIdT>(value); }
+    template<typename InitialContactIdT = Aws::String>
+    SendChatIntegrationEventResult& WithInitialContactId(InitialContactIdT&& value) { SetInitialContactId(std::forward<InitialContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,28 +50,29 @@ namespace Model
      * <p>Whether handling the integration event resulted in creating a new chat or
      * acting on existing chat.</p>
      */
-    inline bool GetNewChatCreated() const{ return m_newChatCreated; }
-    inline void SetNewChatCreated(bool value) { m_newChatCreated = value; }
+    inline bool GetNewChatCreated() const { return m_newChatCreated; }
+    inline void SetNewChatCreated(bool value) { m_newChatCreatedHasBeenSet = true; m_newChatCreated = value; }
     inline SendChatIntegrationEventResult& WithNewChatCreated(bool value) { SetNewChatCreated(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendChatIntegrationEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendChatIntegrationEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendChatIntegrationEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendChatIntegrationEventResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_initialContactId;
+    bool m_initialContactIdHasBeenSet = false;
 
-    bool m_newChatCreated;
+    bool m_newChatCreated{false};
+    bool m_newChatCreatedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

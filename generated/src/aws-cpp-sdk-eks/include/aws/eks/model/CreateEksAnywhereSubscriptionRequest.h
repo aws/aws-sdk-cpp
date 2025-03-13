@@ -25,7 +25,7 @@ namespace Model
   class CreateEksAnywhereSubscriptionRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API CreateEksAnywhereSubscriptionRequest();
+    AWS_EKS_API CreateEksAnywhereSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * (case-sensitive), hyphens, and underscores. It must start with an alphabetic
      * character and can't be longer than 100 characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateEksAnywhereSubscriptionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateEksAnywhereSubscriptionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * or 36 month subscription. This value cannot be changed after creating the
      * subscription.</p>
      */
-    inline const EksAnywhereSubscriptionTerm& GetTerm() const{ return m_term; }
+    inline const EksAnywhereSubscriptionTerm& GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const EksAnywhereSubscriptionTerm& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(EksAnywhereSubscriptionTerm&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline CreateEksAnywhereSubscriptionRequest& WithTerm(const EksAnywhereSubscriptionTerm& value) { SetTerm(value); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithTerm(EksAnywhereSubscriptionTerm&& value) { SetTerm(std::move(value)); return *this;}
+    template<typename TermT = EksAnywhereSubscriptionTerm>
+    void SetTerm(TermT&& value) { m_termHasBeenSet = true; m_term = std::forward<TermT>(value); }
+    template<typename TermT = EksAnywhereSubscriptionTerm>
+    CreateEksAnywhereSubscriptionRequest& WithTerm(TermT&& value) { SetTerm(std::forward<TermT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +74,7 @@ namespace Model
      * between 1 and 100. This value can't be changed after creating the
      * subscription.</p>
      */
-    inline int GetLicenseQuantity() const{ return m_licenseQuantity; }
+    inline int GetLicenseQuantity() const { return m_licenseQuantity; }
     inline bool LicenseQuantityHasBeenSet() const { return m_licenseQuantityHasBeenSet; }
     inline void SetLicenseQuantity(int value) { m_licenseQuantityHasBeenSet = true; m_licenseQuantity = value; }
     inline CreateEksAnywhereSubscriptionRequest& WithLicenseQuantity(int value) { SetLicenseQuantity(value); return *this;}
@@ -88,12 +86,10 @@ namespace Model
      * CLUSTER. With the CLUSTER license type, each license covers support for a single
      * EKS Anywhere cluster.</p>
      */
-    inline const EksAnywhereSubscriptionLicenseType& GetLicenseType() const{ return m_licenseType; }
+    inline EksAnywhereSubscriptionLicenseType GetLicenseType() const { return m_licenseType; }
     inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-    inline void SetLicenseType(const EksAnywhereSubscriptionLicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
-    inline void SetLicenseType(EksAnywhereSubscriptionLicenseType&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
-    inline CreateEksAnywhereSubscriptionRequest& WithLicenseType(const EksAnywhereSubscriptionLicenseType& value) { SetLicenseType(value); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithLicenseType(EksAnywhereSubscriptionLicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+    inline void SetLicenseType(EksAnywhereSubscriptionLicenseType value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
+    inline CreateEksAnywhereSubscriptionRequest& WithLicenseType(EksAnywhereSubscriptionLicenseType value) { SetLicenseType(value); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +97,7 @@ namespace Model
      * <p>A boolean indicating whether the subscription auto renews at the end of the
      * term.</p>
      */
-    inline bool GetAutoRenew() const{ return m_autoRenew; }
+    inline bool GetAutoRenew() const { return m_autoRenew; }
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
     inline CreateEksAnywhereSubscriptionRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
@@ -112,14 +108,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateEksAnywhereSubscriptionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateEksAnywhereSubscriptionRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,19 +123,16 @@ namespace Model
      * tags don't propagate to any other resources associated with the
      * subscription.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateEksAnywhereSubscriptionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEksAnywhereSubscriptionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateEksAnywhereSubscriptionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateEksAnywhereSubscriptionRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -151,13 +142,13 @@ namespace Model
     EksAnywhereSubscriptionTerm m_term;
     bool m_termHasBeenSet = false;
 
-    int m_licenseQuantity;
+    int m_licenseQuantity{0};
     bool m_licenseQuantityHasBeenSet = false;
 
-    EksAnywhereSubscriptionLicenseType m_licenseType;
+    EksAnywhereSubscriptionLicenseType m_licenseType{EksAnywhereSubscriptionLicenseType::NOT_SET};
     bool m_licenseTypeHasBeenSet = false;
 
-    bool m_autoRenew;
+    bool m_autoRenew{false};
     bool m_autoRenewHasBeenSet = false;
 
     Aws::String m_clientRequestToken;

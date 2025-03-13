@@ -20,13 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TrustStoreAssociation::TrustStoreAssociation() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 TrustStoreAssociation::TrustStoreAssociation(const XmlNode& xmlNode)
-  : TrustStoreAssociation()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ TrustStoreAssociation& TrustStoreAssociation::operator =(const XmlNode& xmlNode)
     {
       m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
       m_resourceArnHasBeenSet = true;
+       m_resourceArnHasBeenSet = true;
     }
   }
 

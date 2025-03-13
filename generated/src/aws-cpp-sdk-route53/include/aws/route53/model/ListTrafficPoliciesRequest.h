@@ -30,7 +30,7 @@ namespace Model
   class ListTrafficPoliciesRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListTrafficPoliciesRequest();
+    AWS_ROUTE53_API ListTrafficPoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,14 +55,12 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> that was returned in the previous
      * response.</p>
      */
-    inline const Aws::String& GetTrafficPolicyIdMarker() const{ return m_trafficPolicyIdMarker; }
+    inline const Aws::String& GetTrafficPolicyIdMarker() const { return m_trafficPolicyIdMarker; }
     inline bool TrafficPolicyIdMarkerHasBeenSet() const { return m_trafficPolicyIdMarkerHasBeenSet; }
-    inline void SetTrafficPolicyIdMarker(const Aws::String& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = value; }
-    inline void SetTrafficPolicyIdMarker(Aws::String&& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = std::move(value); }
-    inline void SetTrafficPolicyIdMarker(const char* value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker.assign(value); }
-    inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(const Aws::String& value) { SetTrafficPolicyIdMarker(value); return *this;}
-    inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(Aws::String&& value) { SetTrafficPolicyIdMarker(std::move(value)); return *this;}
-    inline ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(const char* value) { SetTrafficPolicyIdMarker(value); return *this;}
+    template<typename TrafficPolicyIdMarkerT = Aws::String>
+    void SetTrafficPolicyIdMarker(TrafficPolicyIdMarkerT&& value) { m_trafficPolicyIdMarkerHasBeenSet = true; m_trafficPolicyIdMarker = std::forward<TrafficPolicyIdMarkerT>(value); }
+    template<typename TrafficPolicyIdMarkerT = Aws::String>
+    ListTrafficPoliciesRequest& WithTrafficPolicyIdMarker(TrafficPolicyIdMarkerT&& value) { SetTrafficPolicyIdMarker(std::forward<TrafficPolicyIdMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
      * Route 53 will return if you submit another request.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListTrafficPoliciesRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListTrafficPoliciesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListTrafficPoliciesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListTrafficPoliciesRequest& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
   private:
 

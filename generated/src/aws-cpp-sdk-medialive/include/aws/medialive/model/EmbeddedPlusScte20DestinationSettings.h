@@ -29,7 +29,7 @@ namespace Model
   class EmbeddedPlusScte20DestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API EmbeddedPlusScte20DestinationSettings();
+    AWS_MEDIALIVE_API EmbeddedPlusScte20DestinationSettings() = default;
     AWS_MEDIALIVE_API EmbeddedPlusScte20DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API EmbeddedPlusScte20DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

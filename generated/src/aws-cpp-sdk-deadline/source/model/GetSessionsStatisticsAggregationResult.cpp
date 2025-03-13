@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSessionsStatisticsAggregationResult::GetSessionsStatisticsAggregationResult() : 
-    m_status(SessionsStatisticsAggregationStatus::NOT_SET)
-{
-}
-
 GetSessionsStatisticsAggregationResult::GetSessionsStatisticsAggregationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSessionsStatisticsAggregationResult()
 {
   *this = result;
 }
@@ -38,32 +32,30 @@ GetSessionsStatisticsAggregationResult& GetSessionsStatisticsAggregationResult::
     {
       m_statistics.push_back(statisticsJsonList[statisticsIndex].AsObject());
     }
+    m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SessionsStatisticsAggregationStatusMapper::GetSessionsStatisticsAggregationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

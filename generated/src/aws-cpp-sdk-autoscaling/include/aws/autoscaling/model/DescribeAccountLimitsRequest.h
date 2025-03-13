@@ -19,7 +19,7 @@ namespace Model
   class DescribeAccountLimitsRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DescribeAccountLimitsRequest();
+    AWS_AUTOSCALING_API DescribeAccountLimitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

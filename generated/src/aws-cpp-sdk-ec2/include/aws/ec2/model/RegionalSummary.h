@@ -32,7 +32,7 @@ namespace Model
   class RegionalSummary
   {
   public:
-    AWS_EC2_API RegionalSummary();
+    AWS_EC2_API RegionalSummary() = default;
     AWS_EC2_API RegionalSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RegionalSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline RegionalSummary& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline RegionalSummary& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline RegionalSummary& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    RegionalSummary& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The number of accounts in the Region with the same configuration value for
      * the attribute that is most frequently observed.</p>
      */
-    inline int GetNumberOfMatchedAccounts() const{ return m_numberOfMatchedAccounts; }
+    inline int GetNumberOfMatchedAccounts() const { return m_numberOfMatchedAccounts; }
     inline bool NumberOfMatchedAccountsHasBeenSet() const { return m_numberOfMatchedAccountsHasBeenSet; }
     inline void SetNumberOfMatchedAccounts(int value) { m_numberOfMatchedAccountsHasBeenSet = true; m_numberOfMatchedAccounts = value; }
     inline RegionalSummary& WithNumberOfMatchedAccounts(int value) { SetNumberOfMatchedAccounts(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
      * <p>The number of accounts in the Region with a configuration value different
      * from the most frequently observed value for the attribute.</p>
      */
-    inline int GetNumberOfUnmatchedAccounts() const{ return m_numberOfUnmatchedAccounts; }
+    inline int GetNumberOfUnmatchedAccounts() const { return m_numberOfUnmatchedAccounts; }
     inline bool NumberOfUnmatchedAccountsHasBeenSet() const { return m_numberOfUnmatchedAccountsHasBeenSet; }
     inline void SetNumberOfUnmatchedAccounts(int value) { m_numberOfUnmatchedAccountsHasBeenSet = true; m_numberOfUnmatchedAccounts = value; }
     inline RegionalSummary& WithNumberOfUnmatchedAccounts(int value) { SetNumberOfUnmatchedAccounts(value); return *this;}
@@ -80,10 +78,10 @@ namespace Model
     Aws::String m_regionName;
     bool m_regionNameHasBeenSet = false;
 
-    int m_numberOfMatchedAccounts;
+    int m_numberOfMatchedAccounts{0};
     bool m_numberOfMatchedAccountsHasBeenSet = false;
 
-    int m_numberOfUnmatchedAccounts;
+    int m_numberOfUnmatchedAccounts{0};
     bool m_numberOfUnmatchedAccountsHasBeenSet = false;
   };
 

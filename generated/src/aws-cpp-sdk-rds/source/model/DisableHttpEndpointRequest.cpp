@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DisableHttpEndpointRequest::DisableHttpEndpointRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DisableHttpEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

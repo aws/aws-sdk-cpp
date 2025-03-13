@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidSnsTopicException::InvalidSnsTopicException() : 
-    m_topicHasBeenSet(false)
-{
-}
-
 InvalidSnsTopicException::InvalidSnsTopicException(const XmlNode& xmlNode)
-  : InvalidSnsTopicException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InvalidSnsTopicException& InvalidSnsTopicException::operator =(const XmlNode& xm
     {
       m_topic = Aws::Utils::Xml::DecodeEscapedXmlText(topicNode.GetText());
       m_topicHasBeenSet = true;
+       m_topicHasBeenSet = true;
     }
   }
 

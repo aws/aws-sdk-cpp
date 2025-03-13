@@ -33,7 +33,7 @@ namespace Model
   class FirewallMetadata
   {
   public:
-    AWS_NETWORKFIREWALL_API FirewallMetadata();
+    AWS_NETWORKFIREWALL_API FirewallMetadata() = default;
     AWS_NETWORKFIREWALL_API FirewallMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API FirewallMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The descriptive name of the firewall. You can't change the name of a firewall
      * after you create it.</p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
     inline bool FirewallNameHasBeenSet() const { return m_firewallNameHasBeenSet; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallNameHasBeenSet = true; m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallNameHasBeenSet = true; m_firewallName.assign(value); }
-    inline FirewallMetadata& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline FirewallMetadata& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline FirewallMetadata& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    FirewallMetadata& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the firewall.</p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
     inline bool FirewallArnHasBeenSet() const { return m_firewallArnHasBeenSet; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArnHasBeenSet = true; m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArnHasBeenSet = true; m_firewallArn.assign(value); }
-    inline FirewallMetadata& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline FirewallMetadata& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline FirewallMetadata& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    FirewallMetadata& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
   private:
 

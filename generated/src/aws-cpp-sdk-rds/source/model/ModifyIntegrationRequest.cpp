@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyIntegrationRequest::ModifyIntegrationRequest() : 
-    m_integrationIdentifierHasBeenSet(false),
-    m_integrationNameHasBeenSet(false),
-    m_dataFilterHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIntegrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

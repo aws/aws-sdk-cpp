@@ -12,14 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReplicationSetRequest::UpdateReplicationSetRequest() : 
-    m_actionsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateReplicationSetRequest::SerializePayload() const
 {
   JsonValue payload;

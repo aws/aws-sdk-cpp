@@ -34,7 +34,7 @@ namespace Model
   class CreateRemoteAccessSessionResult
   {
   public:
-    AWS_DEVICEFARM_API CreateRemoteAccessSessionResult();
+    AWS_DEVICEFARM_API CreateRemoteAccessSessionResult() = default;
     AWS_DEVICEFARM_API CreateRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API CreateRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A container that describes the remote access session when the request to
      * create a remote access session is sent.</p>
      */
-    inline const RemoteAccessSession& GetRemoteAccessSession() const{ return m_remoteAccessSession; }
-    inline void SetRemoteAccessSession(const RemoteAccessSession& value) { m_remoteAccessSession = value; }
-    inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = std::move(value); }
-    inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(const RemoteAccessSession& value) { SetRemoteAccessSession(value); return *this;}
-    inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
+    inline const RemoteAccessSession& GetRemoteAccessSession() const { return m_remoteAccessSession; }
+    template<typename RemoteAccessSessionT = RemoteAccessSession>
+    void SetRemoteAccessSession(RemoteAccessSessionT&& value) { m_remoteAccessSessionHasBeenSet = true; m_remoteAccessSession = std::forward<RemoteAccessSessionT>(value); }
+    template<typename RemoteAccessSessionT = RemoteAccessSession>
+    CreateRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSessionT&& value) { SetRemoteAccessSession(std::forward<RemoteAccessSessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRemoteAccessSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRemoteAccessSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRemoteAccessSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRemoteAccessSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RemoteAccessSession m_remoteAccessSession;
+    bool m_remoteAccessSessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class ScteHls
   {
   public:
-    AWS_MEDIAPACKAGEV2_API ScteHls();
+    AWS_MEDIAPACKAGEV2_API ScteHls() = default;
     AWS_MEDIAPACKAGEV2_API ScteHls(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API ScteHls& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/mediapackage/latest/ug/scte-35-ad-marker-ext-x-daterange.html">SCTE-35
      * Ad Marker EXT-X-DATERANGE</a>.</p> </li> </ul>
      */
-    inline const AdMarkerHls& GetAdMarkerHls() const{ return m_adMarkerHls; }
+    inline AdMarkerHls GetAdMarkerHls() const { return m_adMarkerHls; }
     inline bool AdMarkerHlsHasBeenSet() const { return m_adMarkerHlsHasBeenSet; }
-    inline void SetAdMarkerHls(const AdMarkerHls& value) { m_adMarkerHlsHasBeenSet = true; m_adMarkerHls = value; }
-    inline void SetAdMarkerHls(AdMarkerHls&& value) { m_adMarkerHlsHasBeenSet = true; m_adMarkerHls = std::move(value); }
-    inline ScteHls& WithAdMarkerHls(const AdMarkerHls& value) { SetAdMarkerHls(value); return *this;}
-    inline ScteHls& WithAdMarkerHls(AdMarkerHls&& value) { SetAdMarkerHls(std::move(value)); return *this;}
+    inline void SetAdMarkerHls(AdMarkerHls value) { m_adMarkerHlsHasBeenSet = true; m_adMarkerHls = value; }
+    inline ScteHls& WithAdMarkerHls(AdMarkerHls value) { SetAdMarkerHls(value); return *this;}
     ///@}
   private:
 
-    AdMarkerHls m_adMarkerHls;
+    AdMarkerHls m_adMarkerHls{AdMarkerHls::NOT_SET};
     bool m_adMarkerHlsHasBeenSet = false;
   };
 

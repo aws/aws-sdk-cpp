@@ -32,7 +32,7 @@ namespace Model
   class BatchArrayProperties
   {
   public:
-    AWS_PIPES_API BatchArrayProperties();
+    AWS_PIPES_API BatchArrayProperties() = default;
     AWS_PIPES_API BatchArrayProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API BatchArrayProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The size of the array, if this is an array batch job.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline BatchArrayProperties& WithSize(int value) { SetSize(value); return *this;}
     ///@}
   private:
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

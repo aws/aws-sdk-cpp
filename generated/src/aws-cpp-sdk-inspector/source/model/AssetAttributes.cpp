@@ -18,21 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssetAttributes::AssetAttributes() : 
-    m_schemaVersion(0),
-    m_schemaVersionHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_autoScalingGroupHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_ipv4AddressesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
-{
-}
-
 AssetAttributes::AssetAttributes(JsonView jsonValue)
-  : AssetAttributes()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetInteger("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingGroup"))
   {
     m_autoScalingGroup = jsonValue.GetString("autoScalingGroup");
-
     m_autoScalingGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiId"))
   {
     m_amiId = jsonValue.GetString("amiId");
-
     m_amiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetString("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv4Addresses"))
   {
     Aws::Utils::Array<JsonView> ipv4AddressesJsonList = jsonValue.GetArray("ipv4Addresses");
@@ -83,7 +59,6 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
     }
     m_ipv4AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -93,7 +68,6 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -103,7 +77,6 @@ AssetAttributes& AssetAttributes::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-SetLoadBalancerPoliciesForBackendServerRequest::SetLoadBalancerPoliciesForBackendServerRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
-{
-}
-
 Aws::String SetLoadBalancerPoliciesForBackendServerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

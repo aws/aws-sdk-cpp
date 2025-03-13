@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration() : 
-    m_targetVisualsHasBeenSet(false),
-    m_targetVisualOptions(TargetVisualOptions::NOT_SET),
-    m_targetVisualOptionsHasBeenSet(false)
-{
-}
-
 SameSheetTargetVisualConfiguration::SameSheetTargetVisualConfiguration(JsonView jsonValue)
-  : SameSheetTargetVisualConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SameSheetTargetVisualConfiguration& SameSheetTargetVisualConfiguration::operator
     }
     m_targetVisualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetVisualOptions"))
   {
     m_targetVisualOptions = TargetVisualOptionsMapper::GetTargetVisualOptionsForName(jsonValue.GetString("TargetVisualOptions"));
-
     m_targetVisualOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

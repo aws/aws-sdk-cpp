@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(JsonView jsonValue)
-  : Subnet()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Subnet& Subnet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubnetIdentifier"))
   {
     m_subnetIdentifier = jsonValue.GetString("SubnetIdentifier");
-
     m_subnetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetString("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class DescribeActionResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeActionResult();
+    AWS_SAGEMAKER_API DescribeActionResult() = default;
     AWS_SAGEMAKER_API DescribeActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,195 +42,192 @@ namespace Model
     /**
      * <p>The name of the action.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
-    inline void SetActionName(const Aws::String& value) { m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionName.assign(value); }
-    inline DescribeActionResult& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline DescribeActionResult& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline DescribeActionResult& WithActionName(const char* value) { SetActionName(value); return *this;}
+    inline const Aws::String& GetActionName() const { return m_actionName; }
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    DescribeActionResult& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the action.</p>
      */
-    inline const Aws::String& GetActionArn() const{ return m_actionArn; }
-    inline void SetActionArn(const Aws::String& value) { m_actionArn = value; }
-    inline void SetActionArn(Aws::String&& value) { m_actionArn = std::move(value); }
-    inline void SetActionArn(const char* value) { m_actionArn.assign(value); }
-    inline DescribeActionResult& WithActionArn(const Aws::String& value) { SetActionArn(value); return *this;}
-    inline DescribeActionResult& WithActionArn(Aws::String&& value) { SetActionArn(std::move(value)); return *this;}
-    inline DescribeActionResult& WithActionArn(const char* value) { SetActionArn(value); return *this;}
+    inline const Aws::String& GetActionArn() const { return m_actionArn; }
+    template<typename ActionArnT = Aws::String>
+    void SetActionArn(ActionArnT&& value) { m_actionArnHasBeenSet = true; m_actionArn = std::forward<ActionArnT>(value); }
+    template<typename ActionArnT = Aws::String>
+    DescribeActionResult& WithActionArn(ActionArnT&& value) { SetActionArn(std::forward<ActionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the action.</p>
      */
-    inline const ActionSource& GetSource() const{ return m_source; }
-    inline void SetSource(const ActionSource& value) { m_source = value; }
-    inline void SetSource(ActionSource&& value) { m_source = std::move(value); }
-    inline DescribeActionResult& WithSource(const ActionSource& value) { SetSource(value); return *this;}
-    inline DescribeActionResult& WithSource(ActionSource&& value) { SetSource(std::move(value)); return *this;}
+    inline const ActionSource& GetSource() const { return m_source; }
+    template<typename SourceT = ActionSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ActionSource>
+    DescribeActionResult& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the action.</p>
      */
-    inline const Aws::String& GetActionType() const{ return m_actionType; }
-    inline void SetActionType(const Aws::String& value) { m_actionType = value; }
-    inline void SetActionType(Aws::String&& value) { m_actionType = std::move(value); }
-    inline void SetActionType(const char* value) { m_actionType.assign(value); }
-    inline DescribeActionResult& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
-    inline DescribeActionResult& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
-    inline DescribeActionResult& WithActionType(const char* value) { SetActionType(value); return *this;}
+    inline const Aws::String& GetActionType() const { return m_actionType; }
+    template<typename ActionTypeT = Aws::String>
+    void SetActionType(ActionTypeT&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::forward<ActionTypeT>(value); }
+    template<typename ActionTypeT = Aws::String>
+    DescribeActionResult& WithActionType(ActionTypeT&& value) { SetActionType(std::forward<ActionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the action.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeActionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeActionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeActionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeActionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the action.</p>
      */
-    inline const ActionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ActionStatus& value) { m_status = value; }
-    inline void SetStatus(ActionStatus&& value) { m_status = std::move(value); }
-    inline DescribeActionResult& WithStatus(const ActionStatus& value) { SetStatus(value); return *this;}
-    inline DescribeActionResult& WithStatus(ActionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ActionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ActionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeActionResult& WithStatus(ActionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the action's properties.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
-    inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_properties = value; }
-    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_properties = std::move(value); }
-    inline DescribeActionResult& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
-    inline DescribeActionResult& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
-    inline DescribeActionResult& AddProperties(const Aws::String& key, const Aws::String& value) { m_properties.emplace(key, value); return *this; }
-    inline DescribeActionResult& AddProperties(Aws::String&& key, const Aws::String& value) { m_properties.emplace(std::move(key), value); return *this; }
-    inline DescribeActionResult& AddProperties(const Aws::String& key, Aws::String&& value) { m_properties.emplace(key, std::move(value)); return *this; }
-    inline DescribeActionResult& AddProperties(Aws::String&& key, Aws::String&& value) { m_properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeActionResult& AddProperties(const char* key, Aws::String&& value) { m_properties.emplace(key, std::move(value)); return *this; }
-    inline DescribeActionResult& AddProperties(Aws::String&& key, const char* value) { m_properties.emplace(std::move(key), value); return *this; }
-    inline DescribeActionResult& AddProperties(const char* key, const char* value) { m_properties.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const { return m_properties; }
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    DescribeActionResult& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesKeyT = Aws::String, typename PropertiesValueT = Aws::String>
+    DescribeActionResult& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+      m_propertiesHasBeenSet = true; m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>When the action was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeActionResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeActionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeActionResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
-    inline DescribeActionResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline DescribeActionResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    DescribeActionResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the action was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeActionResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeActionResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeActionResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
-    inline DescribeActionResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
-    inline DescribeActionResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    template<typename LastModifiedByT = UserContext>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = UserContext>
+    DescribeActionResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
-    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataProperties = value; }
-    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataProperties = std::move(value); }
-    inline DescribeActionResult& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
-    inline DescribeActionResult& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+    inline const MetadataProperties& GetMetadataProperties() const { return m_metadataProperties; }
+    template<typename MetadataPropertiesT = MetadataProperties>
+    void SetMetadataProperties(MetadataPropertiesT&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::forward<MetadataPropertiesT>(value); }
+    template<typename MetadataPropertiesT = MetadataProperties>
+    DescribeActionResult& WithMetadataProperties(MetadataPropertiesT&& value) { SetMetadataProperties(std::forward<MetadataPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
      */
-    inline const Aws::String& GetLineageGroupArn() const{ return m_lineageGroupArn; }
-    inline void SetLineageGroupArn(const Aws::String& value) { m_lineageGroupArn = value; }
-    inline void SetLineageGroupArn(Aws::String&& value) { m_lineageGroupArn = std::move(value); }
-    inline void SetLineageGroupArn(const char* value) { m_lineageGroupArn.assign(value); }
-    inline DescribeActionResult& WithLineageGroupArn(const Aws::String& value) { SetLineageGroupArn(value); return *this;}
-    inline DescribeActionResult& WithLineageGroupArn(Aws::String&& value) { SetLineageGroupArn(std::move(value)); return *this;}
-    inline DescribeActionResult& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
+    inline const Aws::String& GetLineageGroupArn() const { return m_lineageGroupArn; }
+    template<typename LineageGroupArnT = Aws::String>
+    void SetLineageGroupArn(LineageGroupArnT&& value) { m_lineageGroupArnHasBeenSet = true; m_lineageGroupArn = std::forward<LineageGroupArnT>(value); }
+    template<typename LineageGroupArnT = Aws::String>
+    DescribeActionResult& WithLineageGroupArn(LineageGroupArnT&& value) { SetLineageGroupArn(std::forward<LineageGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionName;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_actionArn;
+    bool m_actionArnHasBeenSet = false;
 
     ActionSource m_source;
+    bool m_sourceHasBeenSet = false;
 
     Aws::String m_actionType;
+    bool m_actionTypeHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    ActionStatus m_status;
+    ActionStatus m_status{ActionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
+    bool m_propertiesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
     MetadataProperties m_metadataProperties;
+    bool m_metadataPropertiesHasBeenSet = false;
 
     Aws::String m_lineageGroupArn;
+    bool m_lineageGroupArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

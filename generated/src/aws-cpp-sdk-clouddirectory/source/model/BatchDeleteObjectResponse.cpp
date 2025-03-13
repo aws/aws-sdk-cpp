@@ -18,10 +18,6 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDeleteObjectResponse::BatchDeleteObjectResponse()
-{
-}
-
 BatchDeleteObjectResponse::BatchDeleteObjectResponse(JsonView jsonValue)
 {
   *this = jsonValue;

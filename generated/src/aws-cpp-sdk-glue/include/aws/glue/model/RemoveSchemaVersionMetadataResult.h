@@ -27,7 +27,7 @@ namespace Model
   class RemoveSchemaVersionMetadataResult
   {
   public:
-    AWS_GLUE_API RemoveSchemaVersionMetadataResult();
+    AWS_GLUE_API RemoveSchemaVersionMetadataResult() = default;
     AWS_GLUE_API RemoveSchemaVersionMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API RemoveSchemaVersionMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,47 +36,41 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the schema.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the schema.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaName.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the registry.</p>
      */
-    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
-    inline void SetRegistryName(const Aws::String& value) { m_registryName = value; }
-    inline void SetRegistryName(Aws::String&& value) { m_registryName = std::move(value); }
-    inline void SetRegistryName(const char* value) { m_registryName.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    inline const Aws::String& GetRegistryName() const { return m_registryName; }
+    template<typename RegistryNameT = Aws::String>
+    void SetRegistryName(RegistryNameT&& value) { m_registryNameHasBeenSet = true; m_registryName = std::forward<RegistryNameT>(value); }
+    template<typename RegistryNameT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithRegistryName(RegistryNameT&& value) { SetRegistryName(std::forward<RegistryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest version of the schema.</p>
      */
-    inline bool GetLatestVersion() const{ return m_latestVersion; }
-    inline void SetLatestVersion(bool value) { m_latestVersion = value; }
+    inline bool GetLatestVersion() const { return m_latestVersion; }
+    inline void SetLatestVersion(bool value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
     inline RemoveSchemaVersionMetadataResult& WithLatestVersion(bool value) { SetLatestVersion(value); return *this;}
     ///@}
 
@@ -84,8 +78,8 @@ namespace Model
     /**
      * <p>The version number of the schema.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
-    inline void SetVersionNumber(long long value) { m_versionNumber = value; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
+    inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline RemoveSchemaVersionMetadataResult& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
     ///@}
 
@@ -93,70 +87,71 @@ namespace Model
     /**
      * <p>The version ID for the schema version.</p>
      */
-    inline const Aws::String& GetSchemaVersionId() const{ return m_schemaVersionId; }
-    inline void SetSchemaVersionId(const Aws::String& value) { m_schemaVersionId = value; }
-    inline void SetSchemaVersionId(Aws::String&& value) { m_schemaVersionId = std::move(value); }
-    inline void SetSchemaVersionId(const char* value) { m_schemaVersionId.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithSchemaVersionId(const Aws::String& value) { SetSchemaVersionId(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithSchemaVersionId(Aws::String&& value) { SetSchemaVersionId(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithSchemaVersionId(const char* value) { SetSchemaVersionId(value); return *this;}
+    inline const Aws::String& GetSchemaVersionId() const { return m_schemaVersionId; }
+    template<typename SchemaVersionIdT = Aws::String>
+    void SetSchemaVersionId(SchemaVersionIdT&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::forward<SchemaVersionIdT>(value); }
+    template<typename SchemaVersionIdT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithSchemaVersionId(SchemaVersionIdT&& value) { SetSchemaVersionId(std::forward<SchemaVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata key.</p>
      */
-    inline const Aws::String& GetMetadataKey() const{ return m_metadataKey; }
-    inline void SetMetadataKey(const Aws::String& value) { m_metadataKey = value; }
-    inline void SetMetadataKey(Aws::String&& value) { m_metadataKey = std::move(value); }
-    inline void SetMetadataKey(const char* value) { m_metadataKey.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithMetadataKey(const Aws::String& value) { SetMetadataKey(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithMetadataKey(Aws::String&& value) { SetMetadataKey(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithMetadataKey(const char* value) { SetMetadataKey(value); return *this;}
+    inline const Aws::String& GetMetadataKey() const { return m_metadataKey; }
+    template<typename MetadataKeyT = Aws::String>
+    void SetMetadataKey(MetadataKeyT&& value) { m_metadataKeyHasBeenSet = true; m_metadataKey = std::forward<MetadataKeyT>(value); }
+    template<typename MetadataKeyT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithMetadataKey(MetadataKeyT&& value) { SetMetadataKey(std::forward<MetadataKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the metadata key.</p>
      */
-    inline const Aws::String& GetMetadataValue() const{ return m_metadataValue; }
-    inline void SetMetadataValue(const Aws::String& value) { m_metadataValue = value; }
-    inline void SetMetadataValue(Aws::String&& value) { m_metadataValue = std::move(value); }
-    inline void SetMetadataValue(const char* value) { m_metadataValue.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithMetadataValue(const Aws::String& value) { SetMetadataValue(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithMetadataValue(Aws::String&& value) { SetMetadataValue(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithMetadataValue(const char* value) { SetMetadataValue(value); return *this;}
+    inline const Aws::String& GetMetadataValue() const { return m_metadataValue; }
+    template<typename MetadataValueT = Aws::String>
+    void SetMetadataValue(MetadataValueT&& value) { m_metadataValueHasBeenSet = true; m_metadataValue = std::forward<MetadataValueT>(value); }
+    template<typename MetadataValueT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithMetadataValue(MetadataValueT&& value) { SetMetadataValue(std::forward<MetadataValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemoveSchemaVersionMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemoveSchemaVersionMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemoveSchemaVersionMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_schemaArn;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_schemaName;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_registryName;
+    bool m_registryNameHasBeenSet = false;
 
-    bool m_latestVersion;
+    bool m_latestVersion{false};
+    bool m_latestVersionHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
+    bool m_versionNumberHasBeenSet = false;
 
     Aws::String m_schemaVersionId;
+    bool m_schemaVersionIdHasBeenSet = false;
 
     Aws::String m_metadataKey;
+    bool m_metadataKeyHasBeenSet = false;
 
     Aws::String m_metadataValue;
+    bool m_metadataValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

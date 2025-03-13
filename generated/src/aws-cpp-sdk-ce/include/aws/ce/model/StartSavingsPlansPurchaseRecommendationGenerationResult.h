@@ -27,7 +27,7 @@ namespace Model
   class StartSavingsPlansPurchaseRecommendationGenerationResult
   {
   public:
-    AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult();
+    AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult() = default;
     AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The ID for this specific recommendation.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationId.assign(value); }
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    StartSavingsPlansPurchaseRecommendationGenerationResult& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time of the recommendation generation.</p>
      */
-    inline const Aws::String& GetGenerationStartedTime() const{ return m_generationStartedTime; }
-    inline void SetGenerationStartedTime(const Aws::String& value) { m_generationStartedTime = value; }
-    inline void SetGenerationStartedTime(Aws::String&& value) { m_generationStartedTime = std::move(value); }
-    inline void SetGenerationStartedTime(const char* value) { m_generationStartedTime.assign(value); }
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithGenerationStartedTime(const Aws::String& value) { SetGenerationStartedTime(value); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithGenerationStartedTime(Aws::String&& value) { SetGenerationStartedTime(std::move(value)); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithGenerationStartedTime(const char* value) { SetGenerationStartedTime(value); return *this;}
+    inline const Aws::String& GetGenerationStartedTime() const { return m_generationStartedTime; }
+    template<typename GenerationStartedTimeT = Aws::String>
+    void SetGenerationStartedTime(GenerationStartedTimeT&& value) { m_generationStartedTimeHasBeenSet = true; m_generationStartedTime = std::forward<GenerationStartedTimeT>(value); }
+    template<typename GenerationStartedTimeT = Aws::String>
+    StartSavingsPlansPurchaseRecommendationGenerationResult& WithGenerationStartedTime(GenerationStartedTimeT&& value) { SetGenerationStartedTime(std::forward<GenerationStartedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The estimated time for when the recommendation generation will complete.</p>
      */
-    inline const Aws::String& GetEstimatedCompletionTime() const{ return m_estimatedCompletionTime; }
-    inline void SetEstimatedCompletionTime(const Aws::String& value) { m_estimatedCompletionTime = value; }
-    inline void SetEstimatedCompletionTime(Aws::String&& value) { m_estimatedCompletionTime = std::move(value); }
-    inline void SetEstimatedCompletionTime(const char* value) { m_estimatedCompletionTime.assign(value); }
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithEstimatedCompletionTime(const Aws::String& value) { SetEstimatedCompletionTime(value); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithEstimatedCompletionTime(Aws::String&& value) { SetEstimatedCompletionTime(std::move(value)); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithEstimatedCompletionTime(const char* value) { SetEstimatedCompletionTime(value); return *this;}
+    inline const Aws::String& GetEstimatedCompletionTime() const { return m_estimatedCompletionTime; }
+    template<typename EstimatedCompletionTimeT = Aws::String>
+    void SetEstimatedCompletionTime(EstimatedCompletionTimeT&& value) { m_estimatedCompletionTimeHasBeenSet = true; m_estimatedCompletionTime = std::forward<EstimatedCompletionTimeT>(value); }
+    template<typename EstimatedCompletionTimeT = Aws::String>
+    StartSavingsPlansPurchaseRecommendationGenerationResult& WithEstimatedCompletionTime(EstimatedCompletionTimeT&& value) { SetEstimatedCompletionTime(std::forward<EstimatedCompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSavingsPlansPurchaseRecommendationGenerationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSavingsPlansPurchaseRecommendationGenerationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_recommendationId;
+    bool m_recommendationIdHasBeenSet = false;
 
     Aws::String m_generationStartedTime;
+    bool m_generationStartedTimeHasBeenSet = false;
 
     Aws::String m_estimatedCompletionTime;
+    bool m_estimatedCompletionTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

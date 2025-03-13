@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Observations::Observations() : 
-    m_textHasBeenSet(false)
-{
-}
-
 Observations::Observations(JsonView jsonValue)
-  : Observations()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Observations& Observations::operator =(JsonView jsonValue)
     }
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotVersionSortBy::BotVersionSortBy() : 
-    m_attribute(BotVersionSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 BotVersionSortBy::BotVersionSortBy(JsonView jsonValue)
-  : BotVersionSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BotVersionSortBy& BotVersionSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = BotVersionSortAttributeMapper::GetBotVersionSortAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

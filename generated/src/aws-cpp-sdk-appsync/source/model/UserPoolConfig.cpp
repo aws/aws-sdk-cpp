@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-UserPoolConfig::UserPoolConfig() : 
-    m_userPoolIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_defaultAction(DefaultAction::NOT_SET),
-    m_defaultActionHasBeenSet(false),
-    m_appIdClientRegexHasBeenSet(false)
-{
-}
-
 UserPoolConfig::UserPoolConfig(JsonView jsonValue)
-  : UserPoolConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ UserPoolConfig& UserPoolConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userPoolId"))
   {
     m_userPoolId = jsonValue.GetString("userPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultAction"))
   {
     m_defaultAction = DefaultActionMapper::GetDefaultActionForName(jsonValue.GetString("defaultAction"));
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appIdClientRegex"))
   {
     m_appIdClientRegex = jsonValue.GetString("appIdClientRegex");
-
     m_appIdClientRegexHasBeenSet = true;
   }
-
   return *this;
 }
 

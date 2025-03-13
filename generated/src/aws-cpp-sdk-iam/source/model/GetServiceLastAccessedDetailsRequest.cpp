@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetServiceLastAccessedDetailsRequest::GetServiceLastAccessedDetailsRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceLastAccessedDetailsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

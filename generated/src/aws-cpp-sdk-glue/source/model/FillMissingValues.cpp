@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FillMissingValues::FillMissingValues() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_imputedPathHasBeenSet(false),
-    m_filledPathHasBeenSet(false)
-{
-}
-
 FillMissingValues::FillMissingValues(JsonView jsonValue)
-  : FillMissingValues()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ FillMissingValues& FillMissingValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,21 +39,16 @@ FillMissingValues& FillMissingValues::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImputedPath"))
   {
     m_imputedPath = jsonValue.GetString("ImputedPath");
-
     m_imputedPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilledPath"))
   {
     m_filledPath = jsonValue.GetString("FilledPath");
-
     m_filledPathHasBeenSet = true;
   }
-
   return *this;
 }
 

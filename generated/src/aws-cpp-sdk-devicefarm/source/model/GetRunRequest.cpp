@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRunRequest::GetRunRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetRunRequest::SerializePayload() const
 {
   JsonValue payload;

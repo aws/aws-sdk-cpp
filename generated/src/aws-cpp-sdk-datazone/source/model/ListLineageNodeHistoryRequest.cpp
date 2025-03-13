@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListLineageNodeHistoryRequest::ListLineageNodeHistoryRequest() : 
-    m_direction(EdgeDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_eventTimestampGTEHasBeenSet(false),
-    m_eventTimestampLTEHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListLineageNodeHistoryRequest::SerializePayload() const
 {
   return {};

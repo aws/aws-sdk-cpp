@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ArchiveBooleanExpression::ArchiveBooleanExpression() : 
-    m_evaluateHasBeenSet(false),
-    m_operator(ArchiveBooleanOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 ArchiveBooleanExpression::ArchiveBooleanExpression(JsonView jsonValue)
-  : ArchiveBooleanExpression()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ArchiveBooleanExpression& ArchiveBooleanExpression::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Evaluate"))
   {
     m_evaluate = jsonValue.GetObject("Evaluate");
-
     m_evaluateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = ArchiveBooleanOperatorMapper::GetArchiveBooleanOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

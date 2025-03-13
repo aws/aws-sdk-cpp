@@ -34,7 +34,7 @@ namespace Model
   class TypedLinkFacet
   {
   public:
-    AWS_CLOUDDIRECTORY_API TypedLinkFacet();
+    AWS_CLOUDDIRECTORY_API TypedLinkFacet() = default;
     AWS_CLOUDDIRECTORY_API TypedLinkFacet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API TypedLinkFacet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The unique name of the typed link facet.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TypedLinkFacet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TypedLinkFacet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TypedLinkFacet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TypedLinkFacet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * serve to distinguish the link from others of the same type between the same
      * objects.</p>
      */
-    inline const Aws::Vector<TypedLinkAttributeDefinition>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<TypedLinkAttributeDefinition>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<TypedLinkAttributeDefinition>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<TypedLinkAttributeDefinition>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline TypedLinkFacet& WithAttributes(const Aws::Vector<TypedLinkAttributeDefinition>& value) { SetAttributes(value); return *this;}
-    inline TypedLinkFacet& WithAttributes(Aws::Vector<TypedLinkAttributeDefinition>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline TypedLinkFacet& AddAttributes(const TypedLinkAttributeDefinition& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline TypedLinkFacet& AddAttributes(TypedLinkAttributeDefinition&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<TypedLinkAttributeDefinition>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<TypedLinkAttributeDefinition>>
+    TypedLinkFacet& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = TypedLinkAttributeDefinition>
+    TypedLinkFacet& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,15 +77,14 @@ namespace Model
      * values of these attributes. See <a>ListOutgoingTypedLinks</a> and
      * <a>ListIncomingTypedLinks</a> for details.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
+    inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const { return m_identityAttributeOrder; }
     inline bool IdentityAttributeOrderHasBeenSet() const { return m_identityAttributeOrderHasBeenSet; }
-    inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = value; }
-    inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::move(value); }
-    inline TypedLinkFacet& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
-    inline TypedLinkFacet& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
-    inline TypedLinkFacet& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
-    inline TypedLinkFacet& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(std::move(value)); return *this; }
-    inline TypedLinkFacet& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
+    template<typename IdentityAttributeOrderT = Aws::Vector<Aws::String>>
+    void SetIdentityAttributeOrder(IdentityAttributeOrderT&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::forward<IdentityAttributeOrderT>(value); }
+    template<typename IdentityAttributeOrderT = Aws::Vector<Aws::String>>
+    TypedLinkFacet& WithIdentityAttributeOrder(IdentityAttributeOrderT&& value) { SetIdentityAttributeOrder(std::forward<IdentityAttributeOrderT>(value)); return *this;}
+    template<typename IdentityAttributeOrderT = Aws::String>
+    TypedLinkFacet& AddIdentityAttributeOrder(IdentityAttributeOrderT&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.emplace_back(std::forward<IdentityAttributeOrderT>(value)); return *this; }
     ///@}
   private:
 

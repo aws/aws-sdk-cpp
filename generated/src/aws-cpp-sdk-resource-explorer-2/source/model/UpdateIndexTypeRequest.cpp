@@ -12,13 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateIndexTypeRequest::UpdateIndexTypeRequest() : 
-    m_arnHasBeenSet(false),
-    m_type(IndexType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateIndexTypeRequest::SerializePayload() const
 {
   JsonValue payload;

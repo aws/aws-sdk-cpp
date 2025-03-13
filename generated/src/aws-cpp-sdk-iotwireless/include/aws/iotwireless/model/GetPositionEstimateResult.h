@@ -22,10 +22,9 @@ namespace Model
   class GetPositionEstimateResult
   {
   public:
-    AWS_IOTWIRELESS_API GetPositionEstimateResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_IOTWIRELESS_API GetPositionEstimateResult(GetPositionEstimateResult&&);
-    AWS_IOTWIRELESS_API GetPositionEstimateResult& operator=(GetPositionEstimateResult&&);
+    AWS_IOTWIRELESS_API GetPositionEstimateResult() = default;
+    AWS_IOTWIRELESS_API GetPositionEstimateResult(GetPositionEstimateResult&&) = default;
+    AWS_IOTWIRELESS_API GetPositionEstimateResult& operator=(GetPositionEstimateResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetPositionEstimateResult(const GetPositionEstimateResult&) = delete;
@@ -55,19 +54,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPositionEstimateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPositionEstimateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPositionEstimateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPositionEstimateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_geoJsonPayload;
+    Aws::Utils::Stream::ResponseStream m_geoJsonPayload{};
+    bool m_geoJsonPayloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

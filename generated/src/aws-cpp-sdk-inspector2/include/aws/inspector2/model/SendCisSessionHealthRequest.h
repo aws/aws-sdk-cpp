@@ -21,7 +21,7 @@ namespace Model
   class SendCisSessionHealthRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API SendCisSessionHealthRequest();
+    AWS_INSPECTOR2_API SendCisSessionHealthRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>A unique identifier for the scan job.</p>
      */
-    inline const Aws::String& GetScanJobId() const{ return m_scanJobId; }
+    inline const Aws::String& GetScanJobId() const { return m_scanJobId; }
     inline bool ScanJobIdHasBeenSet() const { return m_scanJobIdHasBeenSet; }
-    inline void SetScanJobId(const Aws::String& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = value; }
-    inline void SetScanJobId(Aws::String&& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = std::move(value); }
-    inline void SetScanJobId(const char* value) { m_scanJobIdHasBeenSet = true; m_scanJobId.assign(value); }
-    inline SendCisSessionHealthRequest& WithScanJobId(const Aws::String& value) { SetScanJobId(value); return *this;}
-    inline SendCisSessionHealthRequest& WithScanJobId(Aws::String&& value) { SetScanJobId(std::move(value)); return *this;}
-    inline SendCisSessionHealthRequest& WithScanJobId(const char* value) { SetScanJobId(value); return *this;}
+    template<typename ScanJobIdT = Aws::String>
+    void SetScanJobId(ScanJobIdT&& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = std::forward<ScanJobIdT>(value); }
+    template<typename ScanJobIdT = Aws::String>
+    SendCisSessionHealthRequest& WithScanJobId(ScanJobIdT&& value) { SetScanJobId(std::forward<ScanJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique token that identifies the CIS session.</p>
      */
-    inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+    inline const Aws::String& GetSessionToken() const { return m_sessionToken; }
     inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
-    inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
-    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
-    inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
-    inline SendCisSessionHealthRequest& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
-    inline SendCisSessionHealthRequest& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
-    inline SendCisSessionHealthRequest& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
+    template<typename SessionTokenT = Aws::String>
+    void SetSessionToken(SessionTokenT&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::forward<SessionTokenT>(value); }
+    template<typename SessionTokenT = Aws::String>
+    SendCisSessionHealthRequest& WithSessionToken(SessionTokenT&& value) { SetSessionToken(std::forward<SessionTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class PlacementConstraint
   {
   public:
-    AWS_SCHEDULER_API PlacementConstraint();
+    AWS_SCHEDULER_API PlacementConstraint() = default;
     AWS_SCHEDULER_API PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster
      * query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline PlacementConstraint& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline PlacementConstraint& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline PlacementConstraint& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    PlacementConstraint& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * <code>memberOf</code> to restrict the selection to a group of valid
      * candidates.</p>
      */
-    inline const PlacementConstraintType& GetType() const{ return m_type; }
+    inline PlacementConstraintType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PlacementConstraintType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PlacementConstraintType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PlacementConstraint& WithType(const PlacementConstraintType& value) { SetType(value); return *this;}
-    inline PlacementConstraint& WithType(PlacementConstraintType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PlacementConstraintType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PlacementConstraint& WithType(PlacementConstraintType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_expression;
     bool m_expressionHasBeenSet = false;
 
-    PlacementConstraintType m_type;
+    PlacementConstraintType m_type{PlacementConstraintType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

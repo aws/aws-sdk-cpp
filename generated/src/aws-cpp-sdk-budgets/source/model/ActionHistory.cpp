@@ -18,18 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-ActionHistory::ActionHistory() : 
-    m_timestampHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_actionHistoryDetailsHasBeenSet(false)
-{
-}
-
 ActionHistory::ActionHistory(JsonView jsonValue)
-  : ActionHistory()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ActionHistory& ActionHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ActionStatusMapper::GetActionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = EventTypeMapper::GetEventTypeForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionHistoryDetails"))
   {
     m_actionHistoryDetails = jsonValue.GetObject("ActionHistoryDetails");
-
     m_actionHistoryDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

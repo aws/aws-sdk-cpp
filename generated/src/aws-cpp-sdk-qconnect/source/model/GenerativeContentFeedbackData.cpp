@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-GenerativeContentFeedbackData::GenerativeContentFeedbackData() : 
-    m_relevance(Relevance::NOT_SET),
-    m_relevanceHasBeenSet(false)
-{
-}
-
 GenerativeContentFeedbackData::GenerativeContentFeedbackData(JsonView jsonValue)
-  : GenerativeContentFeedbackData()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GenerativeContentFeedbackData& GenerativeContentFeedbackData::operator =(JsonVie
   if(jsonValue.ValueExists("relevance"))
   {
     m_relevance = RelevanceMapper::GetRelevanceForName(jsonValue.GetString("relevance"));
-
     m_relevanceHasBeenSet = true;
   }
-
   return *this;
 }
 

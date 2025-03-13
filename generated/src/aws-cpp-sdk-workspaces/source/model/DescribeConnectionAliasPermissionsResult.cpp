@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConnectionAliasPermissionsResult::DescribeConnectionAliasPermissionsResult()
-{
-}
-
 DescribeConnectionAliasPermissionsResult::DescribeConnectionAliasPermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeConnectionAliasPermissionsResult& DescribeConnectionAliasPermissionsResu
   if(jsonValue.ValueExists("AliasId"))
   {
     m_aliasId = jsonValue.GetString("AliasId");
-
+    m_aliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionAliasPermissions"))
   {
     Aws::Utils::Array<JsonView> connectionAliasPermissionsJsonList = jsonValue.GetArray("ConnectionAliasPermissions");
@@ -42,20 +37,20 @@ DescribeConnectionAliasPermissionsResult& DescribeConnectionAliasPermissionsResu
     {
       m_connectionAliasPermissions.push_back(connectionAliasPermissionsJsonList[connectionAliasPermissionsIndex].AsObject());
     }
+    m_connectionAliasPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

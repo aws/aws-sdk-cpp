@@ -31,7 +31,7 @@ namespace Model
   class MatchScoreDetails
   {
   public:
-    AWS_GEOPLACES_API MatchScoreDetails();
+    AWS_GEOPLACES_API MatchScoreDetails() = default;
     AWS_GEOPLACES_API MatchScoreDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API MatchScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>Indicates how well the entire input matches the returned. It is equal to 1 if
      * all input tokens are recognized and matched.</p>
      */
-    inline double GetOverall() const{ return m_overall; }
+    inline double GetOverall() const { return m_overall; }
     inline bool OverallHasBeenSet() const { return m_overallHasBeenSet; }
     inline void SetOverall(double value) { m_overallHasBeenSet = true; m_overall = value; }
     inline MatchScoreDetails& WithOverall(double value) { SetOverall(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
      * <p>Indicates how well the component input matches the returned. It is equal to 1
      * if all input tokens are recognized and matched.</p>
      */
-    inline const ComponentMatchScores& GetComponents() const{ return m_components; }
+    inline const ComponentMatchScores& GetComponents() const { return m_components; }
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
-    inline void SetComponents(const ComponentMatchScores& value) { m_componentsHasBeenSet = true; m_components = value; }
-    inline void SetComponents(ComponentMatchScores&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
-    inline MatchScoreDetails& WithComponents(const ComponentMatchScores& value) { SetComponents(value); return *this;}
-    inline MatchScoreDetails& WithComponents(ComponentMatchScores&& value) { SetComponents(std::move(value)); return *this;}
+    template<typename ComponentsT = ComponentMatchScores>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = ComponentMatchScores>
+    MatchScoreDetails& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
     ///@}
   private:
 
-    double m_overall;
+    double m_overall{0.0};
     bool m_overallHasBeenSet = false;
 
     ComponentMatchScores m_components;

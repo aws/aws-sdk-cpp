@@ -34,7 +34,7 @@ namespace Model
   class ParticipatingGatewaysMulticast
   {
   public:
-    AWS_IOTWIRELESS_API ParticipatingGatewaysMulticast();
+    AWS_IOTWIRELESS_API ParticipatingGatewaysMulticast() = default;
     AWS_IOTWIRELESS_API ParticipatingGatewaysMulticast(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API ParticipatingGatewaysMulticast& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * interval between them. If list is empty the gateway list will be dynamically
      * selected similar to the case of no ParticipatingGateways </p>
      */
-    inline const Aws::Vector<Aws::String>& GetGatewayList() const{ return m_gatewayList; }
+    inline const Aws::Vector<Aws::String>& GetGatewayList() const { return m_gatewayList; }
     inline bool GatewayListHasBeenSet() const { return m_gatewayListHasBeenSet; }
-    inline void SetGatewayList(const Aws::Vector<Aws::String>& value) { m_gatewayListHasBeenSet = true; m_gatewayList = value; }
-    inline void SetGatewayList(Aws::Vector<Aws::String>&& value) { m_gatewayListHasBeenSet = true; m_gatewayList = std::move(value); }
-    inline ParticipatingGatewaysMulticast& WithGatewayList(const Aws::Vector<Aws::String>& value) { SetGatewayList(value); return *this;}
-    inline ParticipatingGatewaysMulticast& WithGatewayList(Aws::Vector<Aws::String>&& value) { SetGatewayList(std::move(value)); return *this;}
-    inline ParticipatingGatewaysMulticast& AddGatewayList(const Aws::String& value) { m_gatewayListHasBeenSet = true; m_gatewayList.push_back(value); return *this; }
-    inline ParticipatingGatewaysMulticast& AddGatewayList(Aws::String&& value) { m_gatewayListHasBeenSet = true; m_gatewayList.push_back(std::move(value)); return *this; }
-    inline ParticipatingGatewaysMulticast& AddGatewayList(const char* value) { m_gatewayListHasBeenSet = true; m_gatewayList.push_back(value); return *this; }
+    template<typename GatewayListT = Aws::Vector<Aws::String>>
+    void SetGatewayList(GatewayListT&& value) { m_gatewayListHasBeenSet = true; m_gatewayList = std::forward<GatewayListT>(value); }
+    template<typename GatewayListT = Aws::Vector<Aws::String>>
+    ParticipatingGatewaysMulticast& WithGatewayList(GatewayListT&& value) { SetGatewayList(std::forward<GatewayListT>(value)); return *this;}
+    template<typename GatewayListT = Aws::String>
+    ParticipatingGatewaysMulticast& AddGatewayList(GatewayListT&& value) { m_gatewayListHasBeenSet = true; m_gatewayList.emplace_back(std::forward<GatewayListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,7 +62,7 @@ namespace Model
      * <p>The duration of time for which AWS IoT Core for LoRaWAN will wait before
      * transmitting the multicast payload to the next gateway in the list.</p>
      */
-    inline int GetTransmissionInterval() const{ return m_transmissionInterval; }
+    inline int GetTransmissionInterval() const { return m_transmissionInterval; }
     inline bool TransmissionIntervalHasBeenSet() const { return m_transmissionIntervalHasBeenSet; }
     inline void SetTransmissionInterval(int value) { m_transmissionIntervalHasBeenSet = true; m_transmissionInterval = value; }
     inline ParticipatingGatewaysMulticast& WithTransmissionInterval(int value) { SetTransmissionInterval(value); return *this;}
@@ -73,7 +72,7 @@ namespace Model
     Aws::Vector<Aws::String> m_gatewayList;
     bool m_gatewayListHasBeenSet = false;
 
-    int m_transmissionInterval;
+    int m_transmissionInterval{0};
     bool m_transmissionIntervalHasBeenSet = false;
   };
 

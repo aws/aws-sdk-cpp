@@ -12,15 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCampaignRequest::UpdateCampaignRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataExtraDimensionsHasBeenSet(false),
-    m_action(UpdateCampaignAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class GetAIGuardrailRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API GetAIGuardrailRequest();
+    AWS_QCONNECT_API GetAIGuardrailRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q in Connect AI Guardrail.</p>
      */
-    inline const Aws::String& GetAiGuardrailId() const{ return m_aiGuardrailId; }
+    inline const Aws::String& GetAiGuardrailId() const { return m_aiGuardrailId; }
     inline bool AiGuardrailIdHasBeenSet() const { return m_aiGuardrailIdHasBeenSet; }
-    inline void SetAiGuardrailId(const Aws::String& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = value; }
-    inline void SetAiGuardrailId(Aws::String&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::move(value); }
-    inline void SetAiGuardrailId(const char* value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId.assign(value); }
-    inline GetAIGuardrailRequest& WithAiGuardrailId(const Aws::String& value) { SetAiGuardrailId(value); return *this;}
-    inline GetAIGuardrailRequest& WithAiGuardrailId(Aws::String&& value) { SetAiGuardrailId(std::move(value)); return *this;}
-    inline GetAIGuardrailRequest& WithAiGuardrailId(const char* value) { SetAiGuardrailId(value); return *this;}
+    template<typename AiGuardrailIdT = Aws::String>
+    void SetAiGuardrailId(AiGuardrailIdT&& value) { m_aiGuardrailIdHasBeenSet = true; m_aiGuardrailId = std::forward<AiGuardrailIdT>(value); }
+    template<typename AiGuardrailIdT = Aws::String>
+    GetAIGuardrailRequest& WithAiGuardrailId(AiGuardrailIdT&& value) { SetAiGuardrailId(std::forward<AiGuardrailIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The identifier of the Amazon Q in Connect assistant. Can be either the ID or
      * the ARN. URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline GetAIGuardrailRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline GetAIGuardrailRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline GetAIGuardrailRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    GetAIGuardrailRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
   private:
 

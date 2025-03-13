@@ -33,7 +33,7 @@ namespace Model
   class UpsertRedshiftTargetOptions
   {
   public:
-    AWS_GLUE_API UpsertRedshiftTargetOptions();
+    AWS_GLUE_API UpsertRedshiftTargetOptions() = default;
     AWS_GLUE_API UpsertRedshiftTargetOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API UpsertRedshiftTargetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,43 +43,38 @@ namespace Model
     /**
      * <p>The physical location of the Redshift table.</p>
      */
-    inline const Aws::String& GetTableLocation() const{ return m_tableLocation; }
+    inline const Aws::String& GetTableLocation() const { return m_tableLocation; }
     inline bool TableLocationHasBeenSet() const { return m_tableLocationHasBeenSet; }
-    inline void SetTableLocation(const Aws::String& value) { m_tableLocationHasBeenSet = true; m_tableLocation = value; }
-    inline void SetTableLocation(Aws::String&& value) { m_tableLocationHasBeenSet = true; m_tableLocation = std::move(value); }
-    inline void SetTableLocation(const char* value) { m_tableLocationHasBeenSet = true; m_tableLocation.assign(value); }
-    inline UpsertRedshiftTargetOptions& WithTableLocation(const Aws::String& value) { SetTableLocation(value); return *this;}
-    inline UpsertRedshiftTargetOptions& WithTableLocation(Aws::String&& value) { SetTableLocation(std::move(value)); return *this;}
-    inline UpsertRedshiftTargetOptions& WithTableLocation(const char* value) { SetTableLocation(value); return *this;}
+    template<typename TableLocationT = Aws::String>
+    void SetTableLocation(TableLocationT&& value) { m_tableLocationHasBeenSet = true; m_tableLocation = std::forward<TableLocationT>(value); }
+    template<typename TableLocationT = Aws::String>
+    UpsertRedshiftTargetOptions& WithTableLocation(TableLocationT&& value) { SetTableLocation(std::forward<TableLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the connection to use to write to Redshift.</p>
      */
-    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+    inline const Aws::String& GetConnectionName() const { return m_connectionName; }
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-    inline UpsertRedshiftTargetOptions& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-    inline UpsertRedshiftTargetOptions& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-    inline UpsertRedshiftTargetOptions& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+    template<typename ConnectionNameT = Aws::String>
+    void SetConnectionName(ConnectionNameT&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::forward<ConnectionNameT>(value); }
+    template<typename ConnectionNameT = Aws::String>
+    UpsertRedshiftTargetOptions& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keys used to determine whether to perform an update or insert.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUpsertKeys() const{ return m_upsertKeys; }
+    inline const Aws::Vector<Aws::String>& GetUpsertKeys() const { return m_upsertKeys; }
     inline bool UpsertKeysHasBeenSet() const { return m_upsertKeysHasBeenSet; }
-    inline void SetUpsertKeys(const Aws::Vector<Aws::String>& value) { m_upsertKeysHasBeenSet = true; m_upsertKeys = value; }
-    inline void SetUpsertKeys(Aws::Vector<Aws::String>&& value) { m_upsertKeysHasBeenSet = true; m_upsertKeys = std::move(value); }
-    inline UpsertRedshiftTargetOptions& WithUpsertKeys(const Aws::Vector<Aws::String>& value) { SetUpsertKeys(value); return *this;}
-    inline UpsertRedshiftTargetOptions& WithUpsertKeys(Aws::Vector<Aws::String>&& value) { SetUpsertKeys(std::move(value)); return *this;}
-    inline UpsertRedshiftTargetOptions& AddUpsertKeys(const Aws::String& value) { m_upsertKeysHasBeenSet = true; m_upsertKeys.push_back(value); return *this; }
-    inline UpsertRedshiftTargetOptions& AddUpsertKeys(Aws::String&& value) { m_upsertKeysHasBeenSet = true; m_upsertKeys.push_back(std::move(value)); return *this; }
-    inline UpsertRedshiftTargetOptions& AddUpsertKeys(const char* value) { m_upsertKeysHasBeenSet = true; m_upsertKeys.push_back(value); return *this; }
+    template<typename UpsertKeysT = Aws::Vector<Aws::String>>
+    void SetUpsertKeys(UpsertKeysT&& value) { m_upsertKeysHasBeenSet = true; m_upsertKeys = std::forward<UpsertKeysT>(value); }
+    template<typename UpsertKeysT = Aws::Vector<Aws::String>>
+    UpsertRedshiftTargetOptions& WithUpsertKeys(UpsertKeysT&& value) { SetUpsertKeys(std::forward<UpsertKeysT>(value)); return *this;}
+    template<typename UpsertKeysT = Aws::String>
+    UpsertRedshiftTargetOptions& AddUpsertKeys(UpsertKeysT&& value) { m_upsertKeysHasBeenSet = true; m_upsertKeys.emplace_back(std::forward<UpsertKeysT>(value)); return *this; }
     ///@}
   private:
 

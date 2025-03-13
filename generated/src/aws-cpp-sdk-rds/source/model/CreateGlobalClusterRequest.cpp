@@ -10,21 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateGlobalClusterRequest::CreateGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_sourceDBClusterIdentifierHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_engineLifecycleSupportHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

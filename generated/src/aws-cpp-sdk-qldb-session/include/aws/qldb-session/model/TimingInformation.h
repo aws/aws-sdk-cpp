@@ -31,7 +31,7 @@ namespace Model
   class TimingInformation
   {
   public:
-    AWS_QLDBSESSION_API TimingInformation();
+    AWS_QLDBSESSION_API TimingInformation() = default;
     AWS_QLDBSESSION_API TimingInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API TimingInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p>The amount of time that QLDB spent on processing the command, measured in
      * milliseconds.</p>
      */
-    inline long long GetProcessingTimeMilliseconds() const{ return m_processingTimeMilliseconds; }
+    inline long long GetProcessingTimeMilliseconds() const { return m_processingTimeMilliseconds; }
     inline bool ProcessingTimeMillisecondsHasBeenSet() const { return m_processingTimeMillisecondsHasBeenSet; }
     inline void SetProcessingTimeMilliseconds(long long value) { m_processingTimeMillisecondsHasBeenSet = true; m_processingTimeMilliseconds = value; }
     inline TimingInformation& WithProcessingTimeMilliseconds(long long value) { SetProcessingTimeMilliseconds(value); return *this;}
     ///@}
   private:
 
-    long long m_processingTimeMilliseconds;
+    long long m_processingTimeMilliseconds{0};
     bool m_processingTimeMillisecondsHasBeenSet = false;
   };
 

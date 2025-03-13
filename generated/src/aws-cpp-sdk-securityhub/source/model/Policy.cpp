@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Policy::Policy() : 
-    m_securityHubHasBeenSet(false)
-{
-}
-
 Policy::Policy(JsonView jsonValue)
-  : Policy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Policy& Policy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SecurityHub"))
   {
     m_securityHub = jsonValue.GetObject("SecurityHub");
-
     m_securityHubHasBeenSet = true;
   }
-
   return *this;
 }
 

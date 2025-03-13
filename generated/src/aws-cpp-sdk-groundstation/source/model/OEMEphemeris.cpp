@@ -18,14 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-OEMEphemeris::OEMEphemeris() : 
-    m_oemDataHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 OEMEphemeris::OEMEphemeris(JsonView jsonValue)
-  : OEMEphemeris()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OEMEphemeris& OEMEphemeris::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("oemData"))
   {
     m_oemData = jsonValue.GetString("oemData");
-
     m_oemDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Object"))
   {
     m_s3Object = jsonValue.GetObject("s3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

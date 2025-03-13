@@ -14,11 +14,5 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectAnomaliesRequest::DetectAnomaliesRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false)
-{
-}
-
 
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FastLaunchLaunchTemplateSpecificationRequest::FastLaunchLaunchTemplateSpecificationRequest() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 FastLaunchLaunchTemplateSpecificationRequest::FastLaunchLaunchTemplateSpecificationRequest(const XmlNode& xmlNode)
-  : FastLaunchLaunchTemplateSpecificationRequest()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ FastLaunchLaunchTemplateSpecificationRequest& FastLaunchLaunchTemplateSpecificat
     {
       m_launchTemplateId = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateIdNode.GetText());
       m_launchTemplateIdHasBeenSet = true;
+       m_launchTemplateIdHasBeenSet = true;
     }
     XmlNode launchTemplateNameNode = resultNode.FirstChild("LaunchTemplateName");
     if(!launchTemplateNameNode.IsNull())
     {
       m_launchTemplateName = Aws::Utils::Xml::DecodeEscapedXmlText(launchTemplateNameNode.GetText());
       m_launchTemplateNameHasBeenSet = true;
+       m_launchTemplateNameHasBeenSet = true;
     }
     XmlNode versionNode = resultNode.FirstChild("Version");
     if(!versionNode.IsNull())
     {
       m_version = Aws::Utils::Xml::DecodeEscapedXmlText(versionNode.GetText());
       m_versionHasBeenSet = true;
+       m_versionHasBeenSet = true;
     }
   }
 

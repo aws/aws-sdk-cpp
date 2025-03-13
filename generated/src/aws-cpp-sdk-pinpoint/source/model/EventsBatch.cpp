@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventsBatch::EventsBatch() : 
-    m_endpointHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 EventsBatch::EventsBatch(JsonView jsonValue)
-  : EventsBatch()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EventsBatch& EventsBatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetObject("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Events"))
   {
     Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("Events").GetAllObjects();
@@ -48,7 +39,6 @@ EventsBatch& EventsBatch::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

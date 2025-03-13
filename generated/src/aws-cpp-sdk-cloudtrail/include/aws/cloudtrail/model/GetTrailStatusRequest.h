@@ -25,7 +25,7 @@ namespace Model
   class GetTrailStatusRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API GetTrailStatusRequest();
+    AWS_CLOUDTRAIL_API GetTrailStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * organization in Organizations, you must provide the full ARN of that trail, and
      * not just the name.</p> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetTrailStatusRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetTrailStatusRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetTrailStatusRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetTrailStatusRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

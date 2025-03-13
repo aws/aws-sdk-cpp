@@ -26,7 +26,7 @@ namespace Model
   class SetTerminationProtectionRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API SetTerminationProtectionRequest();
+    AWS_EMR_API SetTerminationProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,15 +45,14 @@ namespace Model
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> . </p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const{ return m_jobFlowIds; }
+    inline const Aws::Vector<Aws::String>& GetJobFlowIds() const { return m_jobFlowIds; }
     inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
-    inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
-    inline void SetJobFlowIds(Aws::Vector<Aws::String>&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::move(value); }
-    inline SetTerminationProtectionRequest& WithJobFlowIds(const Aws::Vector<Aws::String>& value) { SetJobFlowIds(value); return *this;}
-    inline SetTerminationProtectionRequest& WithJobFlowIds(Aws::Vector<Aws::String>&& value) { SetJobFlowIds(std::move(value)); return *this;}
-    inline SetTerminationProtectionRequest& AddJobFlowIds(const Aws::String& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
-    inline SetTerminationProtectionRequest& AddJobFlowIds(Aws::String&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(std::move(value)); return *this; }
-    inline SetTerminationProtectionRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    void SetJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = std::forward<JobFlowIdsT>(value); }
+    template<typename JobFlowIdsT = Aws::Vector<Aws::String>>
+    SetTerminationProtectionRequest& WithJobFlowIds(JobFlowIdsT&& value) { SetJobFlowIds(std::forward<JobFlowIdsT>(value)); return *this;}
+    template<typename JobFlowIdsT = Aws::String>
+    SetTerminationProtectionRequest& AddJobFlowIds(JobFlowIdsT&& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.emplace_back(std::forward<JobFlowIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,7 +61,7 @@ namespace Model
      * Amazon EC2 instances in the cluster from shutting down due to API calls, user
      * intervention, or job-flow error.</p>
      */
-    inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+    inline bool GetTerminationProtected() const { return m_terminationProtected; }
     inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
     inline SetTerminationProtectionRequest& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
@@ -72,7 +71,7 @@ namespace Model
     Aws::Vector<Aws::String> m_jobFlowIds;
     bool m_jobFlowIdsHasBeenSet = false;
 
-    bool m_terminationProtected;
+    bool m_terminationProtected{false};
     bool m_terminationProtectedHasBeenSet = false;
   };
 

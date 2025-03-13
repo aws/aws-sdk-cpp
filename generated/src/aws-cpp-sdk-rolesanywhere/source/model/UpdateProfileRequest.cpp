@@ -12,19 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProfileRequest::UpdateProfileRequest() : 
-    m_acceptRoleSessionName(false),
-    m_acceptRoleSessionNameHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_managedPolicyArnsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_sessionPolicyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

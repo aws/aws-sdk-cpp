@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-GroundStationData::GroundStationData() : 
-    m_groundStationIdHasBeenSet(false),
-    m_groundStationNameHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 GroundStationData::GroundStationData(JsonView jsonValue)
-  : GroundStationData()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GroundStationData& GroundStationData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("groundStationId"))
   {
     m_groundStationId = jsonValue.GetString("groundStationId");
-
     m_groundStationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groundStationName"))
   {
     m_groundStationName = jsonValue.GetString("groundStationName");
-
     m_groundStationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

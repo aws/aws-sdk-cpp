@@ -31,7 +31,7 @@ namespace Model
   class SampleValue
   {
   public:
-    AWS_LEXMODELSV2_API SampleValue();
+    AWS_LEXMODELSV2_API SampleValue() = default;
     AWS_LEXMODELSV2_API SampleValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SampleValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The value that can be used for a slot type.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline SampleValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline SampleValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline SampleValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    SampleValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

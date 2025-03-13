@@ -18,14 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-MemberFabricAttributes::MemberFabricAttributes() : 
-    m_adminUsernameHasBeenSet(false),
-    m_caEndpointHasBeenSet(false)
-{
-}
-
 MemberFabricAttributes::MemberFabricAttributes(JsonView jsonValue)
-  : MemberFabricAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MemberFabricAttributes& MemberFabricAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdminUsername"))
   {
     m_adminUsername = jsonValue.GetString("AdminUsername");
-
     m_adminUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaEndpoint"))
   {
     m_caEndpoint = jsonValue.GetString("CaEndpoint");
-
     m_caEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

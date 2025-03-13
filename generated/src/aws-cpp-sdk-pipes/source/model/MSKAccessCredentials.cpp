@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-MSKAccessCredentials::MSKAccessCredentials() : 
-    m_saslScram512AuthHasBeenSet(false),
-    m_clientCertificateTlsAuthHasBeenSet(false)
-{
-}
-
 MSKAccessCredentials::MSKAccessCredentials(JsonView jsonValue)
-  : MSKAccessCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MSKAccessCredentials& MSKAccessCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SaslScram512Auth"))
   {
     m_saslScram512Auth = jsonValue.GetString("SaslScram512Auth");
-
     m_saslScram512AuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientCertificateTlsAuth"))
   {
     m_clientCertificateTlsAuth = jsonValue.GetString("ClientCertificateTlsAuth");
-
     m_clientCertificateTlsAuthHasBeenSet = true;
   }
-
   return *this;
 }
 

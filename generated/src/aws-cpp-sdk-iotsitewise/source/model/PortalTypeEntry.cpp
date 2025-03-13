@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-PortalTypeEntry::PortalTypeEntry() : 
-    m_portalToolsHasBeenSet(false)
-{
-}
-
 PortalTypeEntry::PortalTypeEntry(JsonView jsonValue)
-  : PortalTypeEntry()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PortalTypeEntry& PortalTypeEntry::operator =(JsonView jsonValue)
     }
     m_portalToolsHasBeenSet = true;
   }
-
   return *this;
 }
 

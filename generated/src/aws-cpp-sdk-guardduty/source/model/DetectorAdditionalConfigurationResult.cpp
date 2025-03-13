@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DetectorAdditionalConfigurationResult::DetectorAdditionalConfigurationResult() : 
-    m_name(FeatureAdditionalConfiguration::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DetectorAdditionalConfigurationResult::DetectorAdditionalConfigurationResult(JsonView jsonValue)
-  : DetectorAdditionalConfigurationResult()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DetectorAdditionalConfigurationResult& DetectorAdditionalConfigurationResult::op
   if(jsonValue.ValueExists("name"))
   {
     m_name = FeatureAdditionalConfigurationMapper::GetFeatureAdditionalConfigurationForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

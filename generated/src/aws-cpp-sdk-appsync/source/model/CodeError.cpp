@@ -18,15 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-CodeError::CodeError() : 
-    m_errorTypeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 CodeError::CodeError(JsonView jsonValue)
-  : CodeError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CodeError& CodeError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorType"))
   {
     m_errorType = jsonValue.GetString("errorType");
-
     m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

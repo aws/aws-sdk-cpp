@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6Pool::Ipv6Pool() : 
-    m_poolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolCidrBlocksHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Ipv6Pool::Ipv6Pool(const XmlNode& xmlNode)
-  : Ipv6Pool()
 {
   *this = xmlNode;
 }
@@ -45,36 +36,40 @@ Ipv6Pool& Ipv6Pool::operator =(const XmlNode& xmlNode)
     {
       m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
       m_poolIdHasBeenSet = true;
+       m_poolIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode poolCidrBlocksNode = resultNode.FirstChild("poolCidrBlockSet");
     if(!poolCidrBlocksNode.IsNull())
     {
       XmlNode poolCidrBlocksMember = poolCidrBlocksNode.FirstChild("item");
+      m_poolCidrBlocksHasBeenSet = !poolCidrBlocksMember.IsNull();
       while(!poolCidrBlocksMember.IsNull())
       {
         m_poolCidrBlocks.push_back(poolCidrBlocksMember);
         poolCidrBlocksMember = poolCidrBlocksMember.NextNode("item");
       }
 
-      m_poolCidrBlocksHasBeenSet = true;
+       m_poolCidrBlocksHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

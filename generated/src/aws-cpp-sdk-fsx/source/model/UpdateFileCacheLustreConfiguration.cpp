@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration() : 
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
-{
-}
-
 UpdateFileCacheLustreConfiguration::UpdateFileCacheLustreConfiguration(JsonView jsonValue)
-  : UpdateFileCacheLustreConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateFileCacheLustreConfiguration& UpdateFileCacheLustreConfiguration::operator
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

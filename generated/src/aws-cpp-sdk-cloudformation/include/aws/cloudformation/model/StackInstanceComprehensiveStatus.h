@@ -31,7 +31,7 @@ namespace Model
   class StackInstanceComprehensiveStatus
   {
   public:
-    AWS_CLOUDFORMATION_API StackInstanceComprehensiveStatus();
+    AWS_CLOUDFORMATION_API StackInstanceComprehensiveStatus() = default;
     AWS_CLOUDFORMATION_API StackInstanceComprehensiveStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackInstanceComprehensiveStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -67,16 +67,14 @@ namespace Model
      * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
      * specified account and Region completed successfully.</p> </li> </ul>
      */
-    inline const StackInstanceDetailedStatus& GetDetailedStatus() const{ return m_detailedStatus; }
+    inline StackInstanceDetailedStatus GetDetailedStatus() const { return m_detailedStatus; }
     inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
-    inline void SetDetailedStatus(const StackInstanceDetailedStatus& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
-    inline void SetDetailedStatus(StackInstanceDetailedStatus&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
-    inline StackInstanceComprehensiveStatus& WithDetailedStatus(const StackInstanceDetailedStatus& value) { SetDetailedStatus(value); return *this;}
-    inline StackInstanceComprehensiveStatus& WithDetailedStatus(StackInstanceDetailedStatus&& value) { SetDetailedStatus(std::move(value)); return *this;}
+    inline void SetDetailedStatus(StackInstanceDetailedStatus value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
+    inline StackInstanceComprehensiveStatus& WithDetailedStatus(StackInstanceDetailedStatus value) { SetDetailedStatus(value); return *this;}
     ///@}
   private:
 
-    StackInstanceDetailedStatus m_detailedStatus;
+    StackInstanceDetailedStatus m_detailedStatus{StackInstanceDetailedStatus::NOT_SET};
     bool m_detailedStatusHasBeenSet = false;
   };
 

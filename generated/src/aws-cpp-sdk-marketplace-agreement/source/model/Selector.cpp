@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-Selector::Selector() : 
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Selector::Selector(JsonView jsonValue)
-  : Selector()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Selector& Selector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

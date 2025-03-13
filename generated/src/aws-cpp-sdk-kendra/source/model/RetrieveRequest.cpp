@@ -12,20 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetrieveRequest::RetrieveRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_queryTextHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_requestedDocumentAttributesHasBeenSet(false),
-    m_documentRelevanceOverrideConfigurationsHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_userContextHasBeenSet(false)
-{
-}
-
 Aws::String RetrieveRequest::SerializePayload() const
 {
   JsonValue payload;

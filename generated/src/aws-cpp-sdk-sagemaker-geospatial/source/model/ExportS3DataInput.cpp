@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ExportS3DataInput::ExportS3DataInput() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 ExportS3DataInput::ExportS3DataInput(JsonView jsonValue)
-  : ExportS3DataInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExportS3DataInput& ExportS3DataInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

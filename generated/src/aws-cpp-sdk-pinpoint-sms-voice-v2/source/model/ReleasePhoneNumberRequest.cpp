@@ -12,11 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReleasePhoneNumberRequest::ReleasePhoneNumberRequest() : 
-    m_phoneNumberIdHasBeenSet(false)
-{
-}
-
 Aws::String ReleasePhoneNumberRequest::SerializePayload() const
 {
   JsonValue payload;

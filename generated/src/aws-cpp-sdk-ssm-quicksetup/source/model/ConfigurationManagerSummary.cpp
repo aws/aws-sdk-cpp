@@ -18,17 +18,7 @@ namespace SSMQuickSetup
 namespace Model
 {
 
-ConfigurationManagerSummary::ConfigurationManagerSummary() : 
-    m_configurationDefinitionSummariesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_managerArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusSummariesHasBeenSet(false)
-{
-}
-
 ConfigurationManagerSummary::ConfigurationManagerSummary(JsonView jsonValue)
-  : ConfigurationManagerSummary()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ ConfigurationManagerSummary& ConfigurationManagerSummary::operator =(JsonView js
     }
     m_configurationDefinitionSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagerArn"))
   {
     m_managerArn = jsonValue.GetString("ManagerArn");
-
     m_managerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusSummaries"))
   {
     Aws::Utils::Array<JsonView> statusSummariesJsonList = jsonValue.GetArray("StatusSummaries");
@@ -75,7 +58,6 @@ ConfigurationManagerSummary& ConfigurationManagerSummary::operator =(JsonView js
     }
     m_statusSummariesHasBeenSet = true;
   }
-
   return *this;
 }
 

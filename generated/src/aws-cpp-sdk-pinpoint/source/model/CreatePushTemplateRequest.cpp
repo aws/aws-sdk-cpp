@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePushTemplateRequest::CreatePushTemplateRequest() : 
-    m_pushNotificationTemplateRequestHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String CreatePushTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

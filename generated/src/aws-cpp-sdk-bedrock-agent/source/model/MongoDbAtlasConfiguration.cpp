@@ -18,19 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MongoDbAtlasConfiguration::MongoDbAtlasConfiguration() : 
-    m_collectionNameHasBeenSet(false),
-    m_credentialsSecretArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_endpointServiceNameHasBeenSet(false),
-    m_fieldMappingHasBeenSet(false),
-    m_vectorIndexNameHasBeenSet(false)
-{
-}
-
 MongoDbAtlasConfiguration::MongoDbAtlasConfiguration(JsonView jsonValue)
-  : MongoDbAtlasConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ MongoDbAtlasConfiguration& MongoDbAtlasConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("collectionName"))
   {
     m_collectionName = jsonValue.GetString("collectionName");
-
     m_collectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialsSecretArn"))
   {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
-
     m_credentialsSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpointServiceName"))
   {
     m_endpointServiceName = jsonValue.GetString("endpointServiceName");
-
     m_endpointServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldMapping"))
   {
     m_fieldMapping = jsonValue.GetObject("fieldMapping");
-
     m_fieldMappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vectorIndexName"))
   {
     m_vectorIndexName = jsonValue.GetString("vectorIndexName");
-
     m_vectorIndexNameHasBeenSet = true;
   }
-
   return *this;
 }
 

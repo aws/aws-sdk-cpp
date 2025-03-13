@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreFromSnapshotResult::RestoreFromSnapshotResult()
-{
-}
-
 RestoreFromSnapshotResult::RestoreFromSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ RestoreFromSnapshotResult& RestoreFromSnapshotResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetObject("namespace");
-
+    m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
+    m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotName"))
   {
     m_snapshotName = jsonValue.GetString("snapshotName");
-
+    m_snapshotNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

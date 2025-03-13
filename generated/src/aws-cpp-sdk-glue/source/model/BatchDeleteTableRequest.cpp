@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteTableRequest::BatchDeleteTableRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tablesToDeleteHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteTableRequest::SerializePayload() const
 {
   JsonValue payload;

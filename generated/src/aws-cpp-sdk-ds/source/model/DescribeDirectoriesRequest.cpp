@@ -12,14 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDirectoriesRequest::DescribeDirectoriesRequest() : 
-    m_directoryIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDirectoriesRequest::SerializePayload() const
 {
   JsonValue payload;

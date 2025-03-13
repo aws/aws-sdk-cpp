@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InputConfig::InputConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false),
-    m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false)
-{
-}
-
 InputConfig::InputConfig(JsonView jsonValue)
-  : InputConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ InputConfig& InputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataInputConfig"))
   {
     m_dataInputConfig = jsonValue.GetString("DataInputConfig");
-
     m_dataInputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Framework"))
   {
     m_framework = FrameworkMapper::GetFrameworkForName(jsonValue.GetString("Framework"));
-
     m_frameworkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkVersion"))
   {
     m_frameworkVersion = jsonValue.GetString("FrameworkVersion");
-
     m_frameworkVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

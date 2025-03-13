@@ -18,14 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-MetricsConfigurationPolicy::MetricsConfigurationPolicy() : 
-    m_noiseLevel(NoiseLevelType::NOT_SET),
-    m_noiseLevelHasBeenSet(false)
-{
-}
-
 MetricsConfigurationPolicy::MetricsConfigurationPolicy(JsonView jsonValue)
-  : MetricsConfigurationPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MetricsConfigurationPolicy& MetricsConfigurationPolicy::operator =(JsonView json
   if(jsonValue.ValueExists("noiseLevel"))
   {
     m_noiseLevel = NoiseLevelTypeMapper::GetNoiseLevelTypeForName(jsonValue.GetString("noiseLevel"));
-
     m_noiseLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

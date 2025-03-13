@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SAMLPrivateKey::SAMLPrivateKey() : 
-    m_keyIdHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 SAMLPrivateKey::SAMLPrivateKey(const XmlNode& xmlNode)
-  : SAMLPrivateKey()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SAMLPrivateKey& SAMLPrivateKey::operator =(const XmlNode& xmlNode)
     {
       m_keyId = Aws::Utils::Xml::DecodeEscapedXmlText(keyIdNode.GetText());
       m_keyIdHasBeenSet = true;
+       m_keyIdHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
   }
 

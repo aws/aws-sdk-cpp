@@ -18,30 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-ProfileDetail::ProfileDetail() : 
-    m_acceptRoleSessionName(false),
-    m_acceptRoleSessionNameHasBeenSet(false),
-    m_attributeMappingsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_managedPolicyArnsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_profileArnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_requireInstanceProperties(false),
-    m_requireInstancePropertiesHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_sessionPolicyHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ProfileDetail::ProfileDetail(JsonView jsonValue)
-  : ProfileDetail()
 {
   *this = jsonValue;
 }
@@ -51,10 +28,8 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("acceptRoleSessionName"))
   {
     m_acceptRoleSessionName = jsonValue.GetBool("acceptRoleSessionName");
-
     m_acceptRoleSessionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeMappings"))
   {
     Aws::Utils::Array<JsonView> attributeMappingsJsonList = jsonValue.GetArray("attributeMappings");
@@ -64,35 +39,26 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
     }
     m_attributeMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationSeconds"))
   {
     m_durationSeconds = jsonValue.GetInteger("durationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedPolicyArns"))
   {
     Aws::Utils::Array<JsonView> managedPolicyArnsJsonList = jsonValue.GetArray("managedPolicyArns");
@@ -102,35 +68,26 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
     }
     m_managedPolicyArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileArn"))
   {
     m_profileArn = jsonValue.GetString("profileArn");
-
     m_profileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileId"))
   {
     m_profileId = jsonValue.GetString("profileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requireInstanceProperties"))
   {
     m_requireInstanceProperties = jsonValue.GetBool("requireInstanceProperties");
-
     m_requireInstancePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArns"))
   {
     Aws::Utils::Array<JsonView> roleArnsJsonList = jsonValue.GetArray("roleArns");
@@ -140,21 +97,16 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
     }
     m_roleArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionPolicy"))
   {
     m_sessionPolicy = jsonValue.GetString("sessionPolicy");
-
     m_sessionPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-AttributeMapping::AttributeMapping() : 
-    m_certificateField(CertificateField::NOT_SET),
-    m_certificateFieldHasBeenSet(false),
-    m_mappingRulesHasBeenSet(false)
-{
-}
-
 AttributeMapping::AttributeMapping(JsonView jsonValue)
-  : AttributeMapping()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AttributeMapping& AttributeMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateField"))
   {
     m_certificateField = CertificateFieldMapper::GetCertificateFieldForName(jsonValue.GetString("certificateField"));
-
     m_certificateFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mappingRules"))
   {
     Aws::Utils::Array<JsonView> mappingRulesJsonList = jsonValue.GetArray("mappingRules");
@@ -49,7 +39,6 @@ AttributeMapping& AttributeMapping::operator =(JsonView jsonValue)
     }
     m_mappingRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

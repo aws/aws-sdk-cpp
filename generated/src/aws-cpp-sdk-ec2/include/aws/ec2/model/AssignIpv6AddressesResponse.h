@@ -29,7 +29,7 @@ namespace Model
   class AssignIpv6AddressesResponse
   {
   public:
-    AWS_EC2_API AssignIpv6AddressesResponse();
+    AWS_EC2_API AssignIpv6AddressesResponse() = default;
     AWS_EC2_API AssignIpv6AddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssignIpv6AddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,60 +40,60 @@ namespace Model
      * addresses that were assigned to the network interface before the request are not
      * included.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssignedIpv6Addresses() const{ return m_assignedIpv6Addresses; }
-    inline void SetAssignedIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_assignedIpv6Addresses = value; }
-    inline void SetAssignedIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_assignedIpv6Addresses = std::move(value); }
-    inline AssignIpv6AddressesResponse& WithAssignedIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetAssignedIpv6Addresses(value); return *this;}
-    inline AssignIpv6AddressesResponse& WithAssignedIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetAssignedIpv6Addresses(std::move(value)); return *this;}
-    inline AssignIpv6AddressesResponse& AddAssignedIpv6Addresses(const Aws::String& value) { m_assignedIpv6Addresses.push_back(value); return *this; }
-    inline AssignIpv6AddressesResponse& AddAssignedIpv6Addresses(Aws::String&& value) { m_assignedIpv6Addresses.push_back(std::move(value)); return *this; }
-    inline AssignIpv6AddressesResponse& AddAssignedIpv6Addresses(const char* value) { m_assignedIpv6Addresses.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssignedIpv6Addresses() const { return m_assignedIpv6Addresses; }
+    template<typename AssignedIpv6AddressesT = Aws::Vector<Aws::String>>
+    void SetAssignedIpv6Addresses(AssignedIpv6AddressesT&& value) { m_assignedIpv6AddressesHasBeenSet = true; m_assignedIpv6Addresses = std::forward<AssignedIpv6AddressesT>(value); }
+    template<typename AssignedIpv6AddressesT = Aws::Vector<Aws::String>>
+    AssignIpv6AddressesResponse& WithAssignedIpv6Addresses(AssignedIpv6AddressesT&& value) { SetAssignedIpv6Addresses(std::forward<AssignedIpv6AddressesT>(value)); return *this;}
+    template<typename AssignedIpv6AddressesT = Aws::String>
+    AssignIpv6AddressesResponse& AddAssignedIpv6Addresses(AssignedIpv6AddressesT&& value) { m_assignedIpv6AddressesHasBeenSet = true; m_assignedIpv6Addresses.emplace_back(std::forward<AssignedIpv6AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IPv6 prefixes that are assigned to the network interface.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssignedIpv6Prefixes() const{ return m_assignedIpv6Prefixes; }
-    inline void SetAssignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_assignedIpv6Prefixes = value; }
-    inline void SetAssignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_assignedIpv6Prefixes = std::move(value); }
-    inline AssignIpv6AddressesResponse& WithAssignedIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetAssignedIpv6Prefixes(value); return *this;}
-    inline AssignIpv6AddressesResponse& WithAssignedIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetAssignedIpv6Prefixes(std::move(value)); return *this;}
-    inline AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(const Aws::String& value) { m_assignedIpv6Prefixes.push_back(value); return *this; }
-    inline AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(Aws::String&& value) { m_assignedIpv6Prefixes.push_back(std::move(value)); return *this; }
-    inline AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(const char* value) { m_assignedIpv6Prefixes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssignedIpv6Prefixes() const { return m_assignedIpv6Prefixes; }
+    template<typename AssignedIpv6PrefixesT = Aws::Vector<Aws::String>>
+    void SetAssignedIpv6Prefixes(AssignedIpv6PrefixesT&& value) { m_assignedIpv6PrefixesHasBeenSet = true; m_assignedIpv6Prefixes = std::forward<AssignedIpv6PrefixesT>(value); }
+    template<typename AssignedIpv6PrefixesT = Aws::Vector<Aws::String>>
+    AssignIpv6AddressesResponse& WithAssignedIpv6Prefixes(AssignedIpv6PrefixesT&& value) { SetAssignedIpv6Prefixes(std::forward<AssignedIpv6PrefixesT>(value)); return *this;}
+    template<typename AssignedIpv6PrefixesT = Aws::String>
+    AssignIpv6AddressesResponse& AddAssignedIpv6Prefixes(AssignedIpv6PrefixesT&& value) { m_assignedIpv6PrefixesHasBeenSet = true; m_assignedIpv6Prefixes.emplace_back(std::forward<AssignedIpv6PrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceId.assign(value); }
-    inline AssignIpv6AddressesResponse& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline AssignIpv6AddressesResponse& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline AssignIpv6AddressesResponse& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    AssignIpv6AddressesResponse& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssignIpv6AddressesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssignIpv6AddressesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssignIpv6AddressesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_assignedIpv6Addresses;
+    bool m_assignedIpv6AddressesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_assignedIpv6Prefixes;
+    bool m_assignedIpv6PrefixesHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

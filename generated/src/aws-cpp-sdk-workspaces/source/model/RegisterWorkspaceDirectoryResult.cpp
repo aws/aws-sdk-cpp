@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterWorkspaceDirectoryResult::RegisterWorkspaceDirectoryResult() : 
-    m_state(WorkspaceDirectoryState::NOT_SET)
-{
-}
-
 RegisterWorkspaceDirectoryResult::RegisterWorkspaceDirectoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RegisterWorkspaceDirectoryResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ RegisterWorkspaceDirectoryResult& RegisterWorkspaceDirectoryResult::operator =(c
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
+    m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = WorkspaceDirectoryStateMapper::GetWorkspaceDirectoryStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

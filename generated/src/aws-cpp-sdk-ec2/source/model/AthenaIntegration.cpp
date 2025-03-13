@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AthenaIntegration::AthenaIntegration() : 
-    m_integrationResultS3DestinationArnHasBeenSet(false),
-    m_partitionLoadFrequency(PartitionLoadFrequency::NOT_SET),
-    m_partitionLoadFrequencyHasBeenSet(false),
-    m_partitionStartDateHasBeenSet(false),
-    m_partitionEndDateHasBeenSet(false)
-{
-}
-
 AthenaIntegration::AthenaIntegration(const XmlNode& xmlNode)
-  : AthenaIntegration()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ AthenaIntegration& AthenaIntegration::operator =(const XmlNode& xmlNode)
     {
       m_integrationResultS3DestinationArn = Aws::Utils::Xml::DecodeEscapedXmlText(integrationResultS3DestinationArnNode.GetText());
       m_integrationResultS3DestinationArnHasBeenSet = true;
+       m_integrationResultS3DestinationArnHasBeenSet = true;
     }
     XmlNode partitionLoadFrequencyNode = resultNode.FirstChild("PartitionLoadFrequency");
     if(!partitionLoadFrequencyNode.IsNull())
     {
-      m_partitionLoadFrequency = PartitionLoadFrequencyMapper::GetPartitionLoadFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionLoadFrequencyNode.GetText()).c_str()).c_str());
+      m_partitionLoadFrequency = PartitionLoadFrequencyMapper::GetPartitionLoadFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionLoadFrequencyNode.GetText()).c_str()));
       m_partitionLoadFrequencyHasBeenSet = true;
+       m_partitionLoadFrequencyHasBeenSet = true;
     }
     XmlNode partitionStartDateNode = resultNode.FirstChild("PartitionStartDate");
     if(!partitionStartDateNode.IsNull())
     {
       m_partitionStartDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionStartDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_partitionStartDateHasBeenSet = true;
+       m_partitionStartDateHasBeenSet = true;
     }
     XmlNode partitionEndDateNode = resultNode.FirstChild("PartitionEndDate");
     if(!partitionEndDateNode.IsNull())
     {
       m_partitionEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_partitionEndDateHasBeenSet = true;
+       m_partitionEndDateHasBeenSet = true;
     }
   }
 

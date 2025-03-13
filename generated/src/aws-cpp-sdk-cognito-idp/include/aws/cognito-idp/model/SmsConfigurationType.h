@@ -35,7 +35,7 @@ namespace Model
   class SmsConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API SmsConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
      * limit</a>. </p>
      */
-    inline const Aws::String& GetSnsCallerArn() const{ return m_snsCallerArn; }
+    inline const Aws::String& GetSnsCallerArn() const { return m_snsCallerArn; }
     inline bool SnsCallerArnHasBeenSet() const { return m_snsCallerArnHasBeenSet; }
-    inline void SetSnsCallerArn(const Aws::String& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = value; }
-    inline void SetSnsCallerArn(Aws::String&& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = std::move(value); }
-    inline void SetSnsCallerArn(const char* value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn.assign(value); }
-    inline SmsConfigurationType& WithSnsCallerArn(const Aws::String& value) { SetSnsCallerArn(value); return *this;}
-    inline SmsConfigurationType& WithSnsCallerArn(Aws::String&& value) { SetSnsCallerArn(std::move(value)); return *this;}
-    inline SmsConfigurationType& WithSnsCallerArn(const char* value) { SetSnsCallerArn(value); return *this;}
+    template<typename SnsCallerArnT = Aws::String>
+    void SetSnsCallerArn(SnsCallerArnT&& value) { m_snsCallerArnHasBeenSet = true; m_snsCallerArn = std::forward<SnsCallerArnT>(value); }
+    template<typename SnsCallerArnT = Aws::String>
+    SmsConfigurationType& WithSnsCallerArn(SnsCallerArnT&& value) { SetSnsCallerArn(std::forward<SnsCallerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * to use an external ID when granting access to your Amazon Web Services resources
      * to a third party</a>.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline SmsConfigurationType& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline SmsConfigurationType& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline SmsConfigurationType& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    SmsConfigurationType& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS
      * message settings for Amazon Cognito user pools</a>.</p>
      */
-    inline const Aws::String& GetSnsRegion() const{ return m_snsRegion; }
+    inline const Aws::String& GetSnsRegion() const { return m_snsRegion; }
     inline bool SnsRegionHasBeenSet() const { return m_snsRegionHasBeenSet; }
-    inline void SetSnsRegion(const Aws::String& value) { m_snsRegionHasBeenSet = true; m_snsRegion = value; }
-    inline void SetSnsRegion(Aws::String&& value) { m_snsRegionHasBeenSet = true; m_snsRegion = std::move(value); }
-    inline void SetSnsRegion(const char* value) { m_snsRegionHasBeenSet = true; m_snsRegion.assign(value); }
-    inline SmsConfigurationType& WithSnsRegion(const Aws::String& value) { SetSnsRegion(value); return *this;}
-    inline SmsConfigurationType& WithSnsRegion(Aws::String&& value) { SetSnsRegion(std::move(value)); return *this;}
-    inline SmsConfigurationType& WithSnsRegion(const char* value) { SetSnsRegion(value); return *this;}
+    template<typename SnsRegionT = Aws::String>
+    void SetSnsRegion(SnsRegionT&& value) { m_snsRegionHasBeenSet = true; m_snsRegion = std::forward<SnsRegionT>(value); }
+    template<typename SnsRegionT = Aws::String>
+    SmsConfigurationType& WithSnsRegion(SnsRegionT&& value) { SetSnsRegion(std::forward<SnsRegionT>(value)); return *this;}
     ///@}
   private:
 

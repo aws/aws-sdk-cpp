@@ -18,22 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-SuiteDefinitionConfiguration::SuiteDefinitionConfiguration() : 
-    m_suiteDefinitionNameHasBeenSet(false),
-    m_devicesHasBeenSet(false),
-    m_intendedForQualification(false),
-    m_intendedForQualificationHasBeenSet(false),
-    m_isLongDurationTest(false),
-    m_isLongDurationTestHasBeenSet(false),
-    m_rootGroupHasBeenSet(false),
-    m_devicePermissionRoleArnHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 SuiteDefinitionConfiguration::SuiteDefinitionConfiguration(JsonView jsonValue)
-  : SuiteDefinitionConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ SuiteDefinitionConfiguration& SuiteDefinitionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("suiteDefinitionName"))
   {
     m_suiteDefinitionName = jsonValue.GetString("suiteDefinitionName");
-
     m_suiteDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("devices"))
   {
     Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
@@ -56,42 +39,31 @@ SuiteDefinitionConfiguration& SuiteDefinitionConfiguration::operator =(JsonView 
     }
     m_devicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intendedForQualification"))
   {
     m_intendedForQualification = jsonValue.GetBool("intendedForQualification");
-
     m_intendedForQualificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isLongDurationTest"))
   {
     m_isLongDurationTest = jsonValue.GetBool("isLongDurationTest");
-
     m_isLongDurationTestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootGroup"))
   {
     m_rootGroup = jsonValue.GetString("rootGroup");
-
     m_rootGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("devicePermissionRoleArn"))
   {
     m_devicePermissionRoleArn = jsonValue.GetString("devicePermissionRoleArn");
-
     m_devicePermissionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

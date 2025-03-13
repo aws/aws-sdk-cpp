@@ -36,7 +36,7 @@ namespace Model
   class TrustedAdvisorCheckResult
   {
   public:
-    AWS_SUPPORT_API TrustedAdvisorCheckResult();
+    AWS_SUPPORT_API TrustedAdvisorCheckResult() = default;
     AWS_SUPPORT_API TrustedAdvisorCheckResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API TrustedAdvisorCheckResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
-    inline const Aws::String& GetCheckId() const{ return m_checkId; }
+    inline const Aws::String& GetCheckId() const { return m_checkId; }
     inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
-    inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
-    inline void SetCheckId(Aws::String&& value) { m_checkIdHasBeenSet = true; m_checkId = std::move(value); }
-    inline void SetCheckId(const char* value) { m_checkIdHasBeenSet = true; m_checkId.assign(value); }
-    inline TrustedAdvisorCheckResult& WithCheckId(const Aws::String& value) { SetCheckId(value); return *this;}
-    inline TrustedAdvisorCheckResult& WithCheckId(Aws::String&& value) { SetCheckId(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckResult& WithCheckId(const char* value) { SetCheckId(value); return *this;}
+    template<typename CheckIdT = Aws::String>
+    void SetCheckId(CheckIdT&& value) { m_checkIdHasBeenSet = true; m_checkId = std::forward<CheckIdT>(value); }
+    template<typename CheckIdT = Aws::String>
+    TrustedAdvisorCheckResult& WithCheckId(CheckIdT&& value) { SetCheckId(std::forward<CheckIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of the last refresh of the check.</p>
      */
-    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::String& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
-    inline TrustedAdvisorCheckResult& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
-    inline TrustedAdvisorCheckResult& WithTimestamp(Aws::String&& value) { SetTimestamp(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckResult& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+    template<typename TimestampT = Aws::String>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::String>
+    TrustedAdvisorCheckResult& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,24 +71,22 @@ namespace Model
      * <p>The alert status of the check: "ok" (green), "warning" (yellow), "error"
      * (red), or "not_available".</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TrustedAdvisorCheckResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TrustedAdvisorCheckResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TrustedAdvisorCheckResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TrustedAdvisorResourcesSummary& GetResourcesSummary() const{ return m_resourcesSummary; }
+    inline const TrustedAdvisorResourcesSummary& GetResourcesSummary() const { return m_resourcesSummary; }
     inline bool ResourcesSummaryHasBeenSet() const { return m_resourcesSummaryHasBeenSet; }
-    inline void SetResourcesSummary(const TrustedAdvisorResourcesSummary& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = value; }
-    inline void SetResourcesSummary(TrustedAdvisorResourcesSummary&& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = std::move(value); }
-    inline TrustedAdvisorCheckResult& WithResourcesSummary(const TrustedAdvisorResourcesSummary& value) { SetResourcesSummary(value); return *this;}
-    inline TrustedAdvisorCheckResult& WithResourcesSummary(TrustedAdvisorResourcesSummary&& value) { SetResourcesSummary(std::move(value)); return *this;}
+    template<typename ResourcesSummaryT = TrustedAdvisorResourcesSummary>
+    void SetResourcesSummary(ResourcesSummaryT&& value) { m_resourcesSummaryHasBeenSet = true; m_resourcesSummary = std::forward<ResourcesSummaryT>(value); }
+    template<typename ResourcesSummaryT = TrustedAdvisorResourcesSummary>
+    TrustedAdvisorCheckResult& WithResourcesSummary(ResourcesSummaryT&& value) { SetResourcesSummary(std::forward<ResourcesSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,26 +94,26 @@ namespace Model
      * <p>Summary information that relates to the category of the check. Cost
      * Optimizing is the only category that is currently supported.</p>
      */
-    inline const TrustedAdvisorCategorySpecificSummary& GetCategorySpecificSummary() const{ return m_categorySpecificSummary; }
+    inline const TrustedAdvisorCategorySpecificSummary& GetCategorySpecificSummary() const { return m_categorySpecificSummary; }
     inline bool CategorySpecificSummaryHasBeenSet() const { return m_categorySpecificSummaryHasBeenSet; }
-    inline void SetCategorySpecificSummary(const TrustedAdvisorCategorySpecificSummary& value) { m_categorySpecificSummaryHasBeenSet = true; m_categorySpecificSummary = value; }
-    inline void SetCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { m_categorySpecificSummaryHasBeenSet = true; m_categorySpecificSummary = std::move(value); }
-    inline TrustedAdvisorCheckResult& WithCategorySpecificSummary(const TrustedAdvisorCategorySpecificSummary& value) { SetCategorySpecificSummary(value); return *this;}
-    inline TrustedAdvisorCheckResult& WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary&& value) { SetCategorySpecificSummary(std::move(value)); return *this;}
+    template<typename CategorySpecificSummaryT = TrustedAdvisorCategorySpecificSummary>
+    void SetCategorySpecificSummary(CategorySpecificSummaryT&& value) { m_categorySpecificSummaryHasBeenSet = true; m_categorySpecificSummary = std::forward<CategorySpecificSummaryT>(value); }
+    template<typename CategorySpecificSummaryT = TrustedAdvisorCategorySpecificSummary>
+    TrustedAdvisorCheckResult& WithCategorySpecificSummary(CategorySpecificSummaryT&& value) { SetCategorySpecificSummary(std::forward<CategorySpecificSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details about each resource listed in the check result.</p>
      */
-    inline const Aws::Vector<TrustedAdvisorResourceDetail>& GetFlaggedResources() const{ return m_flaggedResources; }
+    inline const Aws::Vector<TrustedAdvisorResourceDetail>& GetFlaggedResources() const { return m_flaggedResources; }
     inline bool FlaggedResourcesHasBeenSet() const { return m_flaggedResourcesHasBeenSet; }
-    inline void SetFlaggedResources(const Aws::Vector<TrustedAdvisorResourceDetail>& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources = value; }
-    inline void SetFlaggedResources(Aws::Vector<TrustedAdvisorResourceDetail>&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources = std::move(value); }
-    inline TrustedAdvisorCheckResult& WithFlaggedResources(const Aws::Vector<TrustedAdvisorResourceDetail>& value) { SetFlaggedResources(value); return *this;}
-    inline TrustedAdvisorCheckResult& WithFlaggedResources(Aws::Vector<TrustedAdvisorResourceDetail>&& value) { SetFlaggedResources(std::move(value)); return *this;}
-    inline TrustedAdvisorCheckResult& AddFlaggedResources(const TrustedAdvisorResourceDetail& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources.push_back(value); return *this; }
-    inline TrustedAdvisorCheckResult& AddFlaggedResources(TrustedAdvisorResourceDetail&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources.push_back(std::move(value)); return *this; }
+    template<typename FlaggedResourcesT = Aws::Vector<TrustedAdvisorResourceDetail>>
+    void SetFlaggedResources(FlaggedResourcesT&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources = std::forward<FlaggedResourcesT>(value); }
+    template<typename FlaggedResourcesT = Aws::Vector<TrustedAdvisorResourceDetail>>
+    TrustedAdvisorCheckResult& WithFlaggedResources(FlaggedResourcesT&& value) { SetFlaggedResources(std::forward<FlaggedResourcesT>(value)); return *this;}
+    template<typename FlaggedResourcesT = TrustedAdvisorResourceDetail>
+    TrustedAdvisorCheckResult& AddFlaggedResources(FlaggedResourcesT&& value) { m_flaggedResourcesHasBeenSet = true; m_flaggedResources.emplace_back(std::forward<FlaggedResourcesT>(value)); return *this; }
     ///@}
   private:
 

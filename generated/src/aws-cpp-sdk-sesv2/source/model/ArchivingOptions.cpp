@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ArchivingOptions::ArchivingOptions() : 
-    m_archiveArnHasBeenSet(false)
-{
-}
-
 ArchivingOptions::ArchivingOptions(JsonView jsonValue)
-  : ArchivingOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ArchivingOptions& ArchivingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArchiveArn"))
   {
     m_archiveArn = jsonValue.GetString("ArchiveArn");
-
     m_archiveArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAlertManagerDefinitionResult::CreateAlertManagerDefinitionResult()
-{
-}
-
 CreateAlertManagerDefinitionResult::CreateAlertManagerDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAlertManagerDefinitionResult& CreateAlertManagerDefinitionResult::operator
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

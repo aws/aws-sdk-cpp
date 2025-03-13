@@ -32,7 +32,7 @@ namespace Model
   class UiTemplate
   {
   public:
-    AWS_SAGEMAKER_API UiTemplate();
+    AWS_SAGEMAKER_API UiTemplate() = default;
     AWS_SAGEMAKER_API UiTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API UiTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The content of the Liquid template for the worker user interface.</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline UiTemplate& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline UiTemplate& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline UiTemplate& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    UiTemplate& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 

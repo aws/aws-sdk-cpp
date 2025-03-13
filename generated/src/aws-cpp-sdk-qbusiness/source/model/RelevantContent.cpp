@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-RelevantContent::RelevantContent() : 
-    m_contentHasBeenSet(false),
-    m_documentIdHasBeenSet(false),
-    m_documentTitleHasBeenSet(false),
-    m_documentUriHasBeenSet(false),
-    m_documentAttributesHasBeenSet(false),
-    m_scoreAttributesHasBeenSet(false)
-{
-}
-
 RelevantContent::RelevantContent(JsonView jsonValue)
-  : RelevantContent()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ RelevantContent& RelevantContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentId"))
   {
     m_documentId = jsonValue.GetString("documentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentTitle"))
   {
     m_documentTitle = jsonValue.GetString("documentTitle");
-
     m_documentTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentUri"))
   {
     m_documentUri = jsonValue.GetString("documentUri");
-
     m_documentUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentAttributes"))
   {
     Aws::Utils::Array<JsonView> documentAttributesJsonList = jsonValue.GetArray("documentAttributes");
@@ -73,14 +54,11 @@ RelevantContent& RelevantContent::operator =(JsonView jsonValue)
     }
     m_documentAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scoreAttributes"))
   {
     m_scoreAttributes = jsonValue.GetObject("scoreAttributes");
-
     m_scoreAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

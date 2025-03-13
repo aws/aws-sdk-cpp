@@ -18,17 +18,7 @@ namespace PI
 namespace Model
 {
 
-DimensionKeyDescription::DimensionKeyDescription() : 
-    m_dimensionsHasBeenSet(false),
-    m_total(0.0),
-    m_totalHasBeenSet(false),
-    m_additionalMetricsHasBeenSet(false),
-    m_partitionsHasBeenSet(false)
-{
-}
-
 DimensionKeyDescription::DimensionKeyDescription(JsonView jsonValue)
-  : DimensionKeyDescription()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ DimensionKeyDescription& DimensionKeyDescription::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetDouble("Total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalMetrics"))
   {
     Aws::Map<Aws::String, JsonView> additionalMetricsJsonMap = jsonValue.GetObject("AdditionalMetrics").GetAllObjects();
@@ -61,7 +48,6 @@ DimensionKeyDescription& DimensionKeyDescription::operator =(JsonView jsonValue)
     }
     m_additionalMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Partitions"))
   {
     Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
@@ -71,7 +57,6 @@ DimensionKeyDescription& DimensionKeyDescription::operator =(JsonView jsonValue)
     }
     m_partitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

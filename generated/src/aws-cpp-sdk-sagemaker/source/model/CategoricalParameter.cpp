@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CategoricalParameter::CategoricalParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CategoricalParameter::CategoricalParameter(JsonView jsonValue)
-  : CategoricalParameter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CategoricalParameter& CategoricalParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
@@ -48,7 +39,6 @@ CategoricalParameter& CategoricalParameter::operator =(JsonView jsonValue)
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

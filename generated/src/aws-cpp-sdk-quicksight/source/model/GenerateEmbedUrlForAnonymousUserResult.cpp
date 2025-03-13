@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateEmbedUrlForAnonymousUserResult::GenerateEmbedUrlForAnonymousUserResult() : 
-    m_status(0)
-{
-}
-
 GenerateEmbedUrlForAnonymousUserResult::GenerateEmbedUrlForAnonymousUserResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GenerateEmbedUrlForAnonymousUserResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ GenerateEmbedUrlForAnonymousUserResult& GenerateEmbedUrlForAnonymousUserResult::
   if(jsonValue.ValueExists("EmbedUrl"))
   {
     m_embedUrl = jsonValue.GetString("EmbedUrl");
-
+    m_embedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnonymousUserArn"))
   {
     m_anonymousUserArn = jsonValue.GetString("AnonymousUserArn");
-
+    m_anonymousUserArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

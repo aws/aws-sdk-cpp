@@ -12,14 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPipelineDefinitionRequest::PutPipelineDefinitionRequest() : 
-    m_pipelineIdHasBeenSet(false),
-    m_pipelineObjectsHasBeenSet(false),
-    m_parameterObjectsHasBeenSet(false),
-    m_parameterValuesHasBeenSet(false)
-{
-}
-
 Aws::String PutPipelineDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

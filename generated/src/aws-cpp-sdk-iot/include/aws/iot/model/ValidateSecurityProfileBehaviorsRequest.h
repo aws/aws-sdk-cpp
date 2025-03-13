@@ -22,7 +22,7 @@ namespace Model
   class ValidateSecurityProfileBehaviorsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ValidateSecurityProfileBehaviorsRequest();
+    AWS_IOT_API ValidateSecurityProfileBehaviorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,14 @@ namespace Model
      * <p>Specifies the behaviors that, when violated by a device (thing), cause an
      * alert.</p>
      */
-    inline const Aws::Vector<Behavior>& GetBehaviors() const{ return m_behaviors; }
+    inline const Aws::Vector<Behavior>& GetBehaviors() const { return m_behaviors; }
     inline bool BehaviorsHasBeenSet() const { return m_behaviorsHasBeenSet; }
-    inline void SetBehaviors(const Aws::Vector<Behavior>& value) { m_behaviorsHasBeenSet = true; m_behaviors = value; }
-    inline void SetBehaviors(Aws::Vector<Behavior>&& value) { m_behaviorsHasBeenSet = true; m_behaviors = std::move(value); }
-    inline ValidateSecurityProfileBehaviorsRequest& WithBehaviors(const Aws::Vector<Behavior>& value) { SetBehaviors(value); return *this;}
-    inline ValidateSecurityProfileBehaviorsRequest& WithBehaviors(Aws::Vector<Behavior>&& value) { SetBehaviors(std::move(value)); return *this;}
-    inline ValidateSecurityProfileBehaviorsRequest& AddBehaviors(const Behavior& value) { m_behaviorsHasBeenSet = true; m_behaviors.push_back(value); return *this; }
-    inline ValidateSecurityProfileBehaviorsRequest& AddBehaviors(Behavior&& value) { m_behaviorsHasBeenSet = true; m_behaviors.push_back(std::move(value)); return *this; }
+    template<typename BehaviorsT = Aws::Vector<Behavior>>
+    void SetBehaviors(BehaviorsT&& value) { m_behaviorsHasBeenSet = true; m_behaviors = std::forward<BehaviorsT>(value); }
+    template<typename BehaviorsT = Aws::Vector<Behavior>>
+    ValidateSecurityProfileBehaviorsRequest& WithBehaviors(BehaviorsT&& value) { SetBehaviors(std::forward<BehaviorsT>(value)); return *this;}
+    template<typename BehaviorsT = Behavior>
+    ValidateSecurityProfileBehaviorsRequest& AddBehaviors(BehaviorsT&& value) { m_behaviorsHasBeenSet = true; m_behaviors.emplace_back(std::forward<BehaviorsT>(value)); return *this; }
     ///@}
   private:
 

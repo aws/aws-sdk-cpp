@@ -12,13 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImageReplicationStatusRequest::DescribeImageReplicationStatusRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImageReplicationStatusRequest::SerializePayload() const
 {
   JsonValue payload;

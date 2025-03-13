@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult() : 
-    m_applicationVersionId(0)
-{
-}
-
 AddApplicationVpcConfigurationResult::AddApplicationVpcConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AddApplicationVpcConfigurationResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ AddApplicationVpcConfigurationResult& AddApplicationVpcConfigurationResult::oper
   if(jsonValue.ValueExists("ApplicationARN"))
   {
     m_applicationARN = jsonValue.GetString("ApplicationARN");
-
+    m_applicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
+    m_applicationVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfigurationDescription"))
   {
     m_vpcConfigurationDescription = jsonValue.GetObject("VpcConfigurationDescription");
-
+    m_vpcConfigurationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");
-
+    m_operationIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

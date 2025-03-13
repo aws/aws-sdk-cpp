@@ -29,7 +29,7 @@ namespace Model
   class GetRelationalDatabaseEventsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseEventsResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseEventsResult() = default;
     AWS_LIGHTSAIL_API GetRelationalDatabaseEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetRelationalDatabaseEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An object describing the result of your get relational database events
      * request.</p>
      */
-    inline const Aws::Vector<RelationalDatabaseEvent>& GetRelationalDatabaseEvents() const{ return m_relationalDatabaseEvents; }
-    inline void SetRelationalDatabaseEvents(const Aws::Vector<RelationalDatabaseEvent>& value) { m_relationalDatabaseEvents = value; }
-    inline void SetRelationalDatabaseEvents(Aws::Vector<RelationalDatabaseEvent>&& value) { m_relationalDatabaseEvents = std::move(value); }
-    inline GetRelationalDatabaseEventsResult& WithRelationalDatabaseEvents(const Aws::Vector<RelationalDatabaseEvent>& value) { SetRelationalDatabaseEvents(value); return *this;}
-    inline GetRelationalDatabaseEventsResult& WithRelationalDatabaseEvents(Aws::Vector<RelationalDatabaseEvent>&& value) { SetRelationalDatabaseEvents(std::move(value)); return *this;}
-    inline GetRelationalDatabaseEventsResult& AddRelationalDatabaseEvents(const RelationalDatabaseEvent& value) { m_relationalDatabaseEvents.push_back(value); return *this; }
-    inline GetRelationalDatabaseEventsResult& AddRelationalDatabaseEvents(RelationalDatabaseEvent&& value) { m_relationalDatabaseEvents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RelationalDatabaseEvent>& GetRelationalDatabaseEvents() const { return m_relationalDatabaseEvents; }
+    template<typename RelationalDatabaseEventsT = Aws::Vector<RelationalDatabaseEvent>>
+    void SetRelationalDatabaseEvents(RelationalDatabaseEventsT&& value) { m_relationalDatabaseEventsHasBeenSet = true; m_relationalDatabaseEvents = std::forward<RelationalDatabaseEventsT>(value); }
+    template<typename RelationalDatabaseEventsT = Aws::Vector<RelationalDatabaseEvent>>
+    GetRelationalDatabaseEventsResult& WithRelationalDatabaseEvents(RelationalDatabaseEventsT&& value) { SetRelationalDatabaseEvents(std::forward<RelationalDatabaseEventsT>(value)); return *this;}
+    template<typename RelationalDatabaseEventsT = RelationalDatabaseEvent>
+    GetRelationalDatabaseEventsResult& AddRelationalDatabaseEvents(RelationalDatabaseEventsT&& value) { m_relationalDatabaseEventsHasBeenSet = true; m_relationalDatabaseEvents.emplace_back(std::forward<RelationalDatabaseEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <code>GetRelationalDatabaseEvents</code> request and specify the next page token
      * using the <code>pageToken</code> parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetRelationalDatabaseEventsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetRelationalDatabaseEventsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetRelationalDatabaseEventsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetRelationalDatabaseEventsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelationalDatabaseEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelationalDatabaseEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelationalDatabaseEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelationalDatabaseEventsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RelationalDatabaseEvent> m_relationalDatabaseEvents;
+    bool m_relationalDatabaseEventsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

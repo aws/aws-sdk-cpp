@@ -12,11 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEngagementRequest::DescribeEngagementRequest() : 
-    m_engagementIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEngagementRequest::SerializePayload() const
 {
   JsonValue payload;

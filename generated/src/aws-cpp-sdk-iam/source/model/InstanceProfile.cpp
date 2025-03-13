@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-InstanceProfile::InstanceProfile() : 
-    m_pathHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_instanceProfileIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_rolesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 InstanceProfile::InstanceProfile(const XmlNode& xmlNode)
-  : InstanceProfile()
 {
   *this = xmlNode;
 }
@@ -48,54 +36,61 @@ InstanceProfile& InstanceProfile::operator =(const XmlNode& xmlNode)
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode instanceProfileNameNode = resultNode.FirstChild("InstanceProfileName");
     if(!instanceProfileNameNode.IsNull())
     {
       m_instanceProfileName = Aws::Utils::Xml::DecodeEscapedXmlText(instanceProfileNameNode.GetText());
       m_instanceProfileNameHasBeenSet = true;
+       m_instanceProfileNameHasBeenSet = true;
     }
     XmlNode instanceProfileIdNode = resultNode.FirstChild("InstanceProfileId");
     if(!instanceProfileIdNode.IsNull())
     {
       m_instanceProfileId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceProfileIdNode.GetText());
       m_instanceProfileIdHasBeenSet = true;
+       m_instanceProfileIdHasBeenSet = true;
     }
     XmlNode arnNode = resultNode.FirstChild("Arn");
     if(!arnNode.IsNull())
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("CreateDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode rolesNode = resultNode.FirstChild("Roles");
     if(!rolesNode.IsNull())
     {
       XmlNode rolesMember = rolesNode.FirstChild("member");
+      m_rolesHasBeenSet = !rolesMember.IsNull();
       while(!rolesMember.IsNull())
       {
         m_roles.push_back(rolesMember);
         rolesMember = rolesMember.NextNode("member");
       }
 
-      m_rolesHasBeenSet = true;
+       m_rolesHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

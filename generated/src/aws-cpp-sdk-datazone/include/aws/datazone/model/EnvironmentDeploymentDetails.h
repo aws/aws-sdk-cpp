@@ -35,7 +35,7 @@ namespace Model
   class EnvironmentDeploymentDetails
   {
   public:
-    AWS_DATAZONE_API EnvironmentDeploymentDetails();
+    AWS_DATAZONE_API EnvironmentDeploymentDetails() = default;
     AWS_DATAZONE_API EnvironmentDeploymentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API EnvironmentDeploymentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,37 +45,33 @@ namespace Model
     /**
      * <p>Environment failure reasons.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>& GetEnvironmentFailureReasons() const{ return m_environmentFailureReasons; }
+    inline const Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>& GetEnvironmentFailureReasons() const { return m_environmentFailureReasons; }
     inline bool EnvironmentFailureReasonsHasBeenSet() const { return m_environmentFailureReasonsHasBeenSet; }
-    inline void SetEnvironmentFailureReasons(const Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons = value; }
-    inline void SetEnvironmentFailureReasons(Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>&& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons = std::move(value); }
-    inline EnvironmentDeploymentDetails& WithEnvironmentFailureReasons(const Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>& value) { SetEnvironmentFailureReasons(value); return *this;}
-    inline EnvironmentDeploymentDetails& WithEnvironmentFailureReasons(Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>&& value) { SetEnvironmentFailureReasons(std::move(value)); return *this;}
-    inline EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(const Aws::String& key, const Aws::Vector<EnvironmentError>& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(key, value); return *this; }
-    inline EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(Aws::String&& key, const Aws::Vector<EnvironmentError>& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(std::move(key), value); return *this; }
-    inline EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(const Aws::String& key, Aws::Vector<EnvironmentError>&& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(key, std::move(value)); return *this; }
-    inline EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(Aws::String&& key, Aws::Vector<EnvironmentError>&& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(std::move(key), std::move(value)); return *this; }
-    inline EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(const char* key, Aws::Vector<EnvironmentError>&& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(key, std::move(value)); return *this; }
-    inline EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(const char* key, const Aws::Vector<EnvironmentError>& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(key, value); return *this; }
+    template<typename EnvironmentFailureReasonsT = Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>>
+    void SetEnvironmentFailureReasons(EnvironmentFailureReasonsT&& value) { m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons = std::forward<EnvironmentFailureReasonsT>(value); }
+    template<typename EnvironmentFailureReasonsT = Aws::Map<Aws::String, Aws::Vector<EnvironmentError>>>
+    EnvironmentDeploymentDetails& WithEnvironmentFailureReasons(EnvironmentFailureReasonsT&& value) { SetEnvironmentFailureReasons(std::forward<EnvironmentFailureReasonsT>(value)); return *this;}
+    template<typename EnvironmentFailureReasonsKeyT = Aws::String, typename EnvironmentFailureReasonsValueT = Aws::Vector<EnvironmentError>>
+    EnvironmentDeploymentDetails& AddEnvironmentFailureReasons(EnvironmentFailureReasonsKeyT&& key, EnvironmentFailureReasonsValueT&& value) {
+      m_environmentFailureReasonsHasBeenSet = true; m_environmentFailureReasons.emplace(std::forward<EnvironmentFailureReasonsKeyT>(key), std::forward<EnvironmentFailureReasonsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The overall deployment status of the environment.</p>
      */
-    inline const OverallDeploymentStatus& GetOverallDeploymentStatus() const{ return m_overallDeploymentStatus; }
+    inline OverallDeploymentStatus GetOverallDeploymentStatus() const { return m_overallDeploymentStatus; }
     inline bool OverallDeploymentStatusHasBeenSet() const { return m_overallDeploymentStatusHasBeenSet; }
-    inline void SetOverallDeploymentStatus(const OverallDeploymentStatus& value) { m_overallDeploymentStatusHasBeenSet = true; m_overallDeploymentStatus = value; }
-    inline void SetOverallDeploymentStatus(OverallDeploymentStatus&& value) { m_overallDeploymentStatusHasBeenSet = true; m_overallDeploymentStatus = std::move(value); }
-    inline EnvironmentDeploymentDetails& WithOverallDeploymentStatus(const OverallDeploymentStatus& value) { SetOverallDeploymentStatus(value); return *this;}
-    inline EnvironmentDeploymentDetails& WithOverallDeploymentStatus(OverallDeploymentStatus&& value) { SetOverallDeploymentStatus(std::move(value)); return *this;}
+    inline void SetOverallDeploymentStatus(OverallDeploymentStatus value) { m_overallDeploymentStatusHasBeenSet = true; m_overallDeploymentStatus = value; }
+    inline EnvironmentDeploymentDetails& WithOverallDeploymentStatus(OverallDeploymentStatus value) { SetOverallDeploymentStatus(value); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Vector<EnvironmentError>> m_environmentFailureReasons;
     bool m_environmentFailureReasonsHasBeenSet = false;
 
-    OverallDeploymentStatus m_overallDeploymentStatus;
+    OverallDeploymentStatus m_overallDeploymentStatus{OverallDeploymentStatus::NOT_SET};
     bool m_overallDeploymentStatusHasBeenSet = false;
   };
 

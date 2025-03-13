@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-CryptogramVerificationArpcMethod2::CryptogramVerificationArpcMethod2() : 
-    m_cardStatusUpdateHasBeenSet(false),
-    m_proprietaryAuthenticationDataHasBeenSet(false)
-{
-}
-
 CryptogramVerificationArpcMethod2::CryptogramVerificationArpcMethod2(JsonView jsonValue)
-  : CryptogramVerificationArpcMethod2()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CryptogramVerificationArpcMethod2& CryptogramVerificationArpcMethod2::operator =
   if(jsonValue.ValueExists("CardStatusUpdate"))
   {
     m_cardStatusUpdate = jsonValue.GetString("CardStatusUpdate");
-
     m_cardStatusUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProprietaryAuthenticationData"))
   {
     m_proprietaryAuthenticationData = jsonValue.GetString("ProprietaryAuthenticationData");
-
     m_proprietaryAuthenticationDataHasBeenSet = true;
   }
-
   return *this;
 }
 

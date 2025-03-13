@@ -32,7 +32,7 @@ namespace Model
   class MonthlySchedule
   {
   public:
-    AWS_INSPECTOR2_API MonthlySchedule();
+    AWS_INSPECTOR2_API MonthlySchedule() = default;
     AWS_INSPECTOR2_API MonthlySchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API MonthlySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The monthly schedule's day.</p>
      */
-    inline const Day& GetDay() const{ return m_day; }
+    inline Day GetDay() const { return m_day; }
     inline bool DayHasBeenSet() const { return m_dayHasBeenSet; }
-    inline void SetDay(const Day& value) { m_dayHasBeenSet = true; m_day = value; }
-    inline void SetDay(Day&& value) { m_dayHasBeenSet = true; m_day = std::move(value); }
-    inline MonthlySchedule& WithDay(const Day& value) { SetDay(value); return *this;}
-    inline MonthlySchedule& WithDay(Day&& value) { SetDay(std::move(value)); return *this;}
+    inline void SetDay(Day value) { m_dayHasBeenSet = true; m_day = value; }
+    inline MonthlySchedule& WithDay(Day value) { SetDay(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The monthly schedule's start time.</p>
      */
-    inline const Time& GetStartTime() const{ return m_startTime; }
+    inline const Time& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Time& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Time&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline MonthlySchedule& WithStartTime(const Time& value) { SetStartTime(value); return *this;}
-    inline MonthlySchedule& WithStartTime(Time&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Time>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Time>
+    MonthlySchedule& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Day m_day;
+    Day m_day{Day::NOT_SET};
     bool m_dayHasBeenSet = false;
 
     Time m_startTime;

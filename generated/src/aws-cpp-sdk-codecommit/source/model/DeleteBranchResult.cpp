@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteBranchResult::DeleteBranchResult()
-{
-}
-
 DeleteBranchResult::DeleteBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteBranchResult& DeleteBranchResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("deletedBranch"))
   {
     m_deletedBranch = jsonValue.GetObject("deletedBranch");
-
+    m_deletedBranchHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class GetAllowedImagesSettingsResponse
   {
   public:
-    AWS_EC2_API GetAllowedImagesSettingsResponse();
+    AWS_EC2_API GetAllowedImagesSettingsResponse() = default;
     AWS_EC2_API GetAllowedImagesSettingsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetAllowedImagesSettingsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,13 +47,11 @@ namespace Model
      * <code>enabled</code>: Only AMIs matching the image criteria are discoverable and
      * available for use.</p> </li> </ul>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
-    inline void SetState(const Aws::String& value) { m_state = value; }
-    inline void SetState(Aws::String&& value) { m_state = std::move(value); }
-    inline void SetState(const char* value) { m_state.assign(value); }
-    inline GetAllowedImagesSettingsResponse& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline GetAllowedImagesSettingsResponse& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline GetAllowedImagesSettingsResponse& WithState(const char* value) { SetState(value); return *this;}
+    inline const Aws::String& GetState() const { return m_state; }
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    GetAllowedImagesSettingsResponse& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,13 +59,13 @@ namespace Model
      * <p>The list of criteria for images that are discoverable and usable in the
      * account in the specified Amazon Web Services Region.</p>
      */
-    inline const Aws::Vector<ImageCriterion>& GetImageCriteria() const{ return m_imageCriteria; }
-    inline void SetImageCriteria(const Aws::Vector<ImageCriterion>& value) { m_imageCriteria = value; }
-    inline void SetImageCriteria(Aws::Vector<ImageCriterion>&& value) { m_imageCriteria = std::move(value); }
-    inline GetAllowedImagesSettingsResponse& WithImageCriteria(const Aws::Vector<ImageCriterion>& value) { SetImageCriteria(value); return *this;}
-    inline GetAllowedImagesSettingsResponse& WithImageCriteria(Aws::Vector<ImageCriterion>&& value) { SetImageCriteria(std::move(value)); return *this;}
-    inline GetAllowedImagesSettingsResponse& AddImageCriteria(const ImageCriterion& value) { m_imageCriteria.push_back(value); return *this; }
-    inline GetAllowedImagesSettingsResponse& AddImageCriteria(ImageCriterion&& value) { m_imageCriteria.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ImageCriterion>& GetImageCriteria() const { return m_imageCriteria; }
+    template<typename ImageCriteriaT = Aws::Vector<ImageCriterion>>
+    void SetImageCriteria(ImageCriteriaT&& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria = std::forward<ImageCriteriaT>(value); }
+    template<typename ImageCriteriaT = Aws::Vector<ImageCriterion>>
+    GetAllowedImagesSettingsResponse& WithImageCriteria(ImageCriteriaT&& value) { SetImageCriteria(std::forward<ImageCriteriaT>(value)); return *this;}
+    template<typename ImageCriteriaT = ImageCriterion>
+    GetAllowedImagesSettingsResponse& AddImageCriteria(ImageCriteriaT&& value) { m_imageCriteriaHasBeenSet = true; m_imageCriteria.emplace_back(std::forward<ImageCriteriaT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,30 +76,32 @@ namespace Model
      * Allowed AMIs settings is managed by a declarative policy and can't be modified
      * by the account.</p> </li> </ul>
      */
-    inline const ManagedBy& GetManagedBy() const{ return m_managedBy; }
-    inline void SetManagedBy(const ManagedBy& value) { m_managedBy = value; }
-    inline void SetManagedBy(ManagedBy&& value) { m_managedBy = std::move(value); }
-    inline GetAllowedImagesSettingsResponse& WithManagedBy(const ManagedBy& value) { SetManagedBy(value); return *this;}
-    inline GetAllowedImagesSettingsResponse& WithManagedBy(ManagedBy&& value) { SetManagedBy(std::move(value)); return *this;}
+    inline ManagedBy GetManagedBy() const { return m_managedBy; }
+    inline void SetManagedBy(ManagedBy value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+    inline GetAllowedImagesSettingsResponse& WithManagedBy(ManagedBy value) { SetManagedBy(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetAllowedImagesSettingsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetAllowedImagesSettingsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetAllowedImagesSettingsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_state;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<ImageCriterion> m_imageCriteria;
+    bool m_imageCriteriaHasBeenSet = false;
 
-    ManagedBy m_managedBy;
+    ManagedBy m_managedBy{ManagedBy::NOT_SET};
+    bool m_managedByHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

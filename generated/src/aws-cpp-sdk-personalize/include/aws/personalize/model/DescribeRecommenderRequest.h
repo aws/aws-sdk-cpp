@@ -21,7 +21,7 @@ namespace Model
   class DescribeRecommenderRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API DescribeRecommenderRequest();
+    AWS_PERSONALIZE_API DescribeRecommenderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
      */
-    inline const Aws::String& GetRecommenderArn() const{ return m_recommenderArn; }
+    inline const Aws::String& GetRecommenderArn() const { return m_recommenderArn; }
     inline bool RecommenderArnHasBeenSet() const { return m_recommenderArnHasBeenSet; }
-    inline void SetRecommenderArn(const Aws::String& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = value; }
-    inline void SetRecommenderArn(Aws::String&& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = std::move(value); }
-    inline void SetRecommenderArn(const char* value) { m_recommenderArnHasBeenSet = true; m_recommenderArn.assign(value); }
-    inline DescribeRecommenderRequest& WithRecommenderArn(const Aws::String& value) { SetRecommenderArn(value); return *this;}
-    inline DescribeRecommenderRequest& WithRecommenderArn(Aws::String&& value) { SetRecommenderArn(std::move(value)); return *this;}
-    inline DescribeRecommenderRequest& WithRecommenderArn(const char* value) { SetRecommenderArn(value); return *this;}
+    template<typename RecommenderArnT = Aws::String>
+    void SetRecommenderArn(RecommenderArnT&& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = std::forward<RecommenderArnT>(value); }
+    template<typename RecommenderArnT = Aws::String>
+    DescribeRecommenderRequest& WithRecommenderArn(RecommenderArnT&& value) { SetRecommenderArn(std::forward<RecommenderArnT>(value)); return *this;}
     ///@}
   private:
 

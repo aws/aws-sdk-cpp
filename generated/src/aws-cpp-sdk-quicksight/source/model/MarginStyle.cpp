@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MarginStyle::MarginStyle() : 
-    m_show(false),
-    m_showHasBeenSet(false)
-{
-}
-
 MarginStyle::MarginStyle(JsonView jsonValue)
-  : MarginStyle()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MarginStyle& MarginStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Show"))
   {
     m_show = jsonValue.GetBool("Show");
-
     m_showHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateLexBotRequest::DisassociateLexBotRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_botNameHasBeenSet(false),
-    m_lexRegionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DisassociateLexBotRequest::SerializePayload() const
 {
   return {};

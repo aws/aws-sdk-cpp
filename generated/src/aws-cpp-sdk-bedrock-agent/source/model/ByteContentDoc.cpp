@@ -19,14 +19,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ByteContentDoc::ByteContentDoc() : 
-    m_dataHasBeenSet(false),
-    m_mimeTypeHasBeenSet(false)
-{
-}
-
 ByteContentDoc::ByteContentDoc(JsonView jsonValue)
-  : ByteContentDoc()
 {
   *this = jsonValue;
 }
@@ -38,14 +31,11 @@ ByteContentDoc& ByteContentDoc::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mimeType"))
   {
     m_mimeType = jsonValue.GetString("mimeType");
-
     m_mimeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

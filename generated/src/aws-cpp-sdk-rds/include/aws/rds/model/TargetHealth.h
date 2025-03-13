@@ -34,7 +34,7 @@ namespace Model
   class TargetHealth
   {
   public:
-    AWS_RDS_API TargetHealth();
+    AWS_RDS_API TargetHealth() = default;
     AWS_RDS_API TargetHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API TargetHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,12 +50,10 @@ namespace Model
      * &gt; <code>available</code> &gt; <code>unavailable</code> &gt;
      * <code>available</code> </p>
      */
-    inline const TargetState& GetState() const{ return m_state; }
+    inline TargetState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const TargetState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(TargetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline TargetHealth& WithState(const TargetState& value) { SetState(value); return *this;}
-    inline TargetHealth& WithState(TargetState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(TargetState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TargetHealth& WithState(TargetState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>The reason for the current health <code>State</code> of the RDS Proxy
      * target.</p>
      */
-    inline const TargetHealthReason& GetReason() const{ return m_reason; }
+    inline TargetHealthReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const TargetHealthReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(TargetHealthReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline TargetHealth& WithReason(const TargetHealthReason& value) { SetReason(value); return *this;}
-    inline TargetHealth& WithReason(TargetHealthReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(TargetHealthReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline TargetHealth& WithReason(TargetHealthReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
@@ -76,21 +72,19 @@ namespace Model
      * <p>A description of the health of the RDS Proxy target. If the
      * <code>State</code> is <code>AVAILABLE</code>, a description is not included.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TargetHealth& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TargetHealth& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TargetHealth& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TargetHealth& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    TargetState m_state;
+    TargetState m_state{TargetState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    TargetHealthReason m_reason;
+    TargetHealthReason m_reason{TargetHealthReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
     Aws::String m_description;

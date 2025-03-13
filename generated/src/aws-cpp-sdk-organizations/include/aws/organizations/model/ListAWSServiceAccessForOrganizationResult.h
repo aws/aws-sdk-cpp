@@ -29,7 +29,7 @@ namespace Model
   class ListAWSServiceAccessForOrganizationResult
   {
   public:
-    AWS_ORGANIZATIONS_API ListAWSServiceAccessForOrganizationResult();
+    AWS_ORGANIZATIONS_API ListAWSServiceAccessForOrganizationResult() = default;
     AWS_ORGANIZATIONS_API ListAWSServiceAccessForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ORGANIZATIONS_API ListAWSServiceAccessForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * the name and the date that it was enabled for integration with
      * Organizations.</p>
      */
-    inline const Aws::Vector<EnabledServicePrincipal>& GetEnabledServicePrincipals() const{ return m_enabledServicePrincipals; }
-    inline void SetEnabledServicePrincipals(const Aws::Vector<EnabledServicePrincipal>& value) { m_enabledServicePrincipals = value; }
-    inline void SetEnabledServicePrincipals(Aws::Vector<EnabledServicePrincipal>&& value) { m_enabledServicePrincipals = std::move(value); }
-    inline ListAWSServiceAccessForOrganizationResult& WithEnabledServicePrincipals(const Aws::Vector<EnabledServicePrincipal>& value) { SetEnabledServicePrincipals(value); return *this;}
-    inline ListAWSServiceAccessForOrganizationResult& WithEnabledServicePrincipals(Aws::Vector<EnabledServicePrincipal>&& value) { SetEnabledServicePrincipals(std::move(value)); return *this;}
-    inline ListAWSServiceAccessForOrganizationResult& AddEnabledServicePrincipals(const EnabledServicePrincipal& value) { m_enabledServicePrincipals.push_back(value); return *this; }
-    inline ListAWSServiceAccessForOrganizationResult& AddEnabledServicePrincipals(EnabledServicePrincipal&& value) { m_enabledServicePrincipals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EnabledServicePrincipal>& GetEnabledServicePrincipals() const { return m_enabledServicePrincipals; }
+    template<typename EnabledServicePrincipalsT = Aws::Vector<EnabledServicePrincipal>>
+    void SetEnabledServicePrincipals(EnabledServicePrincipalsT&& value) { m_enabledServicePrincipalsHasBeenSet = true; m_enabledServicePrincipals = std::forward<EnabledServicePrincipalsT>(value); }
+    template<typename EnabledServicePrincipalsT = Aws::Vector<EnabledServicePrincipal>>
+    ListAWSServiceAccessForOrganizationResult& WithEnabledServicePrincipals(EnabledServicePrincipalsT&& value) { SetEnabledServicePrincipals(std::forward<EnabledServicePrincipalsT>(value)); return *this;}
+    template<typename EnabledServicePrincipalsT = EnabledServicePrincipal>
+    ListAWSServiceAccessForOrganizationResult& AddEnabledServicePrincipals(EnabledServicePrincipalsT&& value) { m_enabledServicePrincipalsHasBeenSet = true; m_enabledServicePrincipals.emplace_back(std::forward<EnabledServicePrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAWSServiceAccessForOrganizationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAWSServiceAccessForOrganizationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAWSServiceAccessForOrganizationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAWSServiceAccessForOrganizationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAWSServiceAccessForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAWSServiceAccessForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAWSServiceAccessForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAWSServiceAccessForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EnabledServicePrincipal> m_enabledServicePrincipals;
+    bool m_enabledServicePrincipalsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

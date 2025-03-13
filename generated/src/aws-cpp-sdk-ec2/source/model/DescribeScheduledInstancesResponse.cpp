@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeScheduledInstancesResponse::DescribeScheduledInstancesResponse()
-{
-}
-
 DescribeScheduledInstancesResponse::DescribeScheduledInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeScheduledInstancesResponse& DescribeScheduledInstancesResponse::operator
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode scheduledInstanceSetNode = resultNode.FirstChild("scheduledInstanceSet");
     if(!scheduledInstanceSetNode.IsNull())
     {
       XmlNode scheduledInstanceSetMember = scheduledInstanceSetNode.FirstChild("item");
+      m_scheduledInstanceSetHasBeenSet = !scheduledInstanceSetMember.IsNull();
       while(!scheduledInstanceSetMember.IsNull())
       {
         m_scheduledInstanceSet.push_back(scheduledInstanceSetMember);
@@ -61,6 +59,7 @@ DescribeScheduledInstancesResponse& DescribeScheduledInstancesResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeScheduledInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

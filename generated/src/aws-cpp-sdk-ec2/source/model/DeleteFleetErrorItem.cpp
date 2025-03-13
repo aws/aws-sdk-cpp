@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeleteFleetErrorItem::DeleteFleetErrorItem() : 
-    m_errorHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 DeleteFleetErrorItem::DeleteFleetErrorItem(const XmlNode& xmlNode)
-  : DeleteFleetErrorItem()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DeleteFleetErrorItem& DeleteFleetErrorItem::operator =(const XmlNode& xmlNode)
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+       m_errorHasBeenSet = true;
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");
     if(!fleetIdNode.IsNull())
     {
       m_fleetId = Aws::Utils::Xml::DecodeEscapedXmlText(fleetIdNode.GetText());
       m_fleetIdHasBeenSet = true;
+       m_fleetIdHasBeenSet = true;
     }
   }
 

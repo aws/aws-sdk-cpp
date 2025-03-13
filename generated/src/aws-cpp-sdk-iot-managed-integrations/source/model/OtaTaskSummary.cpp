@@ -18,19 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskSummary::OtaTaskSummary() : 
-    m_taskIdHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_taskConfigurationIdHasBeenSet(false),
-    m_status(OtaStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OtaTaskSummary::OtaTaskSummary(JsonView jsonValue)
-  : OtaTaskSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ OtaTaskSummary& OtaTaskSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TaskId"))
   {
     m_taskId = jsonValue.GetString("TaskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskConfigurationId"))
   {
     m_taskConfigurationId = jsonValue.GetString("TaskConfigurationId");
-
     m_taskConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OtaStatusMapper::GetOtaStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

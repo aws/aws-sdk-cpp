@@ -12,11 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDbInstanceRequest::GetDbInstanceRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

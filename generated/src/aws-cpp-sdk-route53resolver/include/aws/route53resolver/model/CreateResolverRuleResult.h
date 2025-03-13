@@ -28,7 +28,7 @@ namespace Model
   class CreateResolverRuleResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API CreateResolverRuleResult();
+    AWS_ROUTE53RESOLVER_API CreateResolverRuleResult() = default;
     AWS_ROUTE53RESOLVER_API CreateResolverRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API CreateResolverRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about the <code>CreateResolverRule</code> request, including the
      * status of the request.</p>
      */
-    inline const ResolverRule& GetResolverRule() const{ return m_resolverRule; }
-    inline void SetResolverRule(const ResolverRule& value) { m_resolverRule = value; }
-    inline void SetResolverRule(ResolverRule&& value) { m_resolverRule = std::move(value); }
-    inline CreateResolverRuleResult& WithResolverRule(const ResolverRule& value) { SetResolverRule(value); return *this;}
-    inline CreateResolverRuleResult& WithResolverRule(ResolverRule&& value) { SetResolverRule(std::move(value)); return *this;}
+    inline const ResolverRule& GetResolverRule() const { return m_resolverRule; }
+    template<typename ResolverRuleT = ResolverRule>
+    void SetResolverRule(ResolverRuleT&& value) { m_resolverRuleHasBeenSet = true; m_resolverRule = std::forward<ResolverRuleT>(value); }
+    template<typename ResolverRuleT = ResolverRule>
+    CreateResolverRuleResult& WithResolverRule(ResolverRuleT&& value) { SetResolverRule(std::forward<ResolverRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResolverRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResolverRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResolverRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResolverRuleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResolverRule m_resolverRule;
+    bool m_resolverRuleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

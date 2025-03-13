@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogDeltaSource::CatalogDeltaSource() : 
-    m_nameHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_additionalDeltaOptionsHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 CatalogDeltaSource::CatalogDeltaSource(JsonView jsonValue)
-  : CatalogDeltaSource()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CatalogDeltaSource& CatalogDeltaSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalDeltaOptions"))
   {
     Aws::Map<Aws::String, JsonView> additionalDeltaOptionsJsonMap = jsonValue.GetObject("AdditionalDeltaOptions").GetAllObjects();
@@ -65,7 +49,6 @@ CatalogDeltaSource& CatalogDeltaSource::operator =(JsonView jsonValue)
     }
     m_additionalDeltaOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -75,7 +58,6 @@ CatalogDeltaSource& CatalogDeltaSource::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

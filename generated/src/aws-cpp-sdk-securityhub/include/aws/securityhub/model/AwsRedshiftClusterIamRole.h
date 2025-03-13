@@ -32,7 +32,7 @@ namespace Model
   class AwsRedshiftClusterIamRole
   {
   public:
-    AWS_SECURITYHUB_API AwsRedshiftClusterIamRole();
+    AWS_SECURITYHUB_API AwsRedshiftClusterIamRole() = default;
     AWS_SECURITYHUB_API AwsRedshiftClusterIamRole(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRedshiftClusterIamRole& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The status of the IAM role's association with the cluster.</p> <p>Valid
      * values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
      */
-    inline const Aws::String& GetApplyStatus() const{ return m_applyStatus; }
+    inline const Aws::String& GetApplyStatus() const { return m_applyStatus; }
     inline bool ApplyStatusHasBeenSet() const { return m_applyStatusHasBeenSet; }
-    inline void SetApplyStatus(const Aws::String& value) { m_applyStatusHasBeenSet = true; m_applyStatus = value; }
-    inline void SetApplyStatus(Aws::String&& value) { m_applyStatusHasBeenSet = true; m_applyStatus = std::move(value); }
-    inline void SetApplyStatus(const char* value) { m_applyStatusHasBeenSet = true; m_applyStatus.assign(value); }
-    inline AwsRedshiftClusterIamRole& WithApplyStatus(const Aws::String& value) { SetApplyStatus(value); return *this;}
-    inline AwsRedshiftClusterIamRole& WithApplyStatus(Aws::String&& value) { SetApplyStatus(std::move(value)); return *this;}
-    inline AwsRedshiftClusterIamRole& WithApplyStatus(const char* value) { SetApplyStatus(value); return *this;}
+    template<typename ApplyStatusT = Aws::String>
+    void SetApplyStatus(ApplyStatusT&& value) { m_applyStatusHasBeenSet = true; m_applyStatus = std::forward<ApplyStatusT>(value); }
+    template<typename ApplyStatusT = Aws::String>
+    AwsRedshiftClusterIamRole& WithApplyStatus(ApplyStatusT&& value) { SetApplyStatus(std::forward<ApplyStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM role.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline AwsRedshiftClusterIamRole& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline AwsRedshiftClusterIamRole& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline AwsRedshiftClusterIamRole& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    AwsRedshiftClusterIamRole& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
   private:
 

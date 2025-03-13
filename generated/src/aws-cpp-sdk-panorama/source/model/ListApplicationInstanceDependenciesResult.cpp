@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListApplicationInstanceDependenciesResult::ListApplicationInstanceDependenciesResult()
-{
-}
-
 ListApplicationInstanceDependenciesResult::ListApplicationInstanceDependenciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListApplicationInstanceDependenciesResult& ListApplicationInstanceDependenciesRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageObjects"))
   {
     Aws::Utils::Array<JsonView> packageObjectsJsonList = jsonValue.GetArray("PackageObjects");
@@ -42,14 +37,15 @@ ListApplicationInstanceDependenciesResult& ListApplicationInstanceDependenciesRe
     {
       m_packageObjects.push_back(packageObjectsJsonList[packageObjectsIndex].AsObject());
     }
+    m_packageObjectsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

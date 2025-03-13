@@ -12,14 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCisScanReportRequest::GetCisScanReportRequest() : 
-    m_reportFormat(CisReportFormat::NOT_SET),
-    m_reportFormatHasBeenSet(false),
-    m_scanArnHasBeenSet(false),
-    m_targetAccountsHasBeenSet(false)
-{
-}
-
 Aws::String GetCisScanReportRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class OptimizationObjective
   {
   public:
-    AWS_PERSONALIZE_API OptimizationObjective();
+    AWS_PERSONALIZE_API OptimizationObjective() = default;
     AWS_PERSONALIZE_API OptimizationObjective(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API OptimizationObjective& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE
      * (to maximize revenue).</p>
      */
-    inline const Aws::String& GetItemAttribute() const{ return m_itemAttribute; }
+    inline const Aws::String& GetItemAttribute() const { return m_itemAttribute; }
     inline bool ItemAttributeHasBeenSet() const { return m_itemAttributeHasBeenSet; }
-    inline void SetItemAttribute(const Aws::String& value) { m_itemAttributeHasBeenSet = true; m_itemAttribute = value; }
-    inline void SetItemAttribute(Aws::String&& value) { m_itemAttributeHasBeenSet = true; m_itemAttribute = std::move(value); }
-    inline void SetItemAttribute(const char* value) { m_itemAttributeHasBeenSet = true; m_itemAttribute.assign(value); }
-    inline OptimizationObjective& WithItemAttribute(const Aws::String& value) { SetItemAttribute(value); return *this;}
-    inline OptimizationObjective& WithItemAttribute(Aws::String&& value) { SetItemAttribute(std::move(value)); return *this;}
-    inline OptimizationObjective& WithItemAttribute(const char* value) { SetItemAttribute(value); return *this;}
+    template<typename ItemAttributeT = Aws::String>
+    void SetItemAttribute(ItemAttributeT&& value) { m_itemAttributeHasBeenSet = true; m_itemAttribute = std::forward<ItemAttributeT>(value); }
+    template<typename ItemAttributeT = Aws::String>
+    OptimizationObjective& WithItemAttribute(ItemAttributeT&& value) { SetItemAttribute(std::forward<ItemAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * <p>Specifies how Amazon Personalize balances the importance of your optimization
      * objective versus relevance.</p>
      */
-    inline const ObjectiveSensitivity& GetObjectiveSensitivity() const{ return m_objectiveSensitivity; }
+    inline ObjectiveSensitivity GetObjectiveSensitivity() const { return m_objectiveSensitivity; }
     inline bool ObjectiveSensitivityHasBeenSet() const { return m_objectiveSensitivityHasBeenSet; }
-    inline void SetObjectiveSensitivity(const ObjectiveSensitivity& value) { m_objectiveSensitivityHasBeenSet = true; m_objectiveSensitivity = value; }
-    inline void SetObjectiveSensitivity(ObjectiveSensitivity&& value) { m_objectiveSensitivityHasBeenSet = true; m_objectiveSensitivity = std::move(value); }
-    inline OptimizationObjective& WithObjectiveSensitivity(const ObjectiveSensitivity& value) { SetObjectiveSensitivity(value); return *this;}
-    inline OptimizationObjective& WithObjectiveSensitivity(ObjectiveSensitivity&& value) { SetObjectiveSensitivity(std::move(value)); return *this;}
+    inline void SetObjectiveSensitivity(ObjectiveSensitivity value) { m_objectiveSensitivityHasBeenSet = true; m_objectiveSensitivity = value; }
+    inline OptimizationObjective& WithObjectiveSensitivity(ObjectiveSensitivity value) { SetObjectiveSensitivity(value); return *this;}
     ///@}
   private:
 
     Aws::String m_itemAttribute;
     bool m_itemAttributeHasBeenSet = false;
 
-    ObjectiveSensitivity m_objectiveSensitivity;
+    ObjectiveSensitivity m_objectiveSensitivity{ObjectiveSensitivity::NOT_SET};
     bool m_objectiveSensitivityHasBeenSet = false;
   };
 

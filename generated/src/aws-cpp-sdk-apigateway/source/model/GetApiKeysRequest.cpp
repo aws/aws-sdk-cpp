@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetApiKeysRequest::GetApiKeysRequest() : 
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nameQueryHasBeenSet(false),
-    m_customerIdHasBeenSet(false),
-    m_includeValues(false),
-    m_includeValuesHasBeenSet(false)
-{
-}
-
 Aws::String GetApiKeysRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftCredentialConfiguration::RedshiftCredentialConfiguration() : 
-    m_secretManagerArnHasBeenSet(false)
-{
-}
-
 RedshiftCredentialConfiguration::RedshiftCredentialConfiguration(JsonView jsonValue)
-  : RedshiftCredentialConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RedshiftCredentialConfiguration& RedshiftCredentialConfiguration::operator =(Jso
   if(jsonValue.ValueExists("secretManagerArn"))
   {
     m_secretManagerArn = jsonValue.GetString("secretManagerArn");
-
     m_secretManagerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

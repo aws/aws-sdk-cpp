@@ -35,7 +35,7 @@ namespace Model
   class UpgradeStepItem
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem();
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem() = default;
     AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * through: <ul> <li>PreUpgradeCheck</li> <li>Snapshot</li> <li>Upgrade</li> </ul>
      * </p>
      */
-    inline const UpgradeStep& GetUpgradeStep() const{ return m_upgradeStep; }
+    inline UpgradeStep GetUpgradeStep() const { return m_upgradeStep; }
     inline bool UpgradeStepHasBeenSet() const { return m_upgradeStepHasBeenSet; }
-    inline void SetUpgradeStep(const UpgradeStep& value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = value; }
-    inline void SetUpgradeStep(UpgradeStep&& value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = std::move(value); }
-    inline UpgradeStepItem& WithUpgradeStep(const UpgradeStep& value) { SetUpgradeStep(value); return *this;}
-    inline UpgradeStepItem& WithUpgradeStep(UpgradeStep&& value) { SetUpgradeStep(std::move(value)); return *this;}
+    inline void SetUpgradeStep(UpgradeStep value) { m_upgradeStepHasBeenSet = true; m_upgradeStep = value; }
+    inline UpgradeStepItem& WithUpgradeStep(UpgradeStep value) { SetUpgradeStep(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * of the following values: <ul> <li>In Progress</li> <li>Succeeded</li>
      * <li>Succeeded with Issues</li> <li>Failed</li> </ul> </p>
      */
-    inline const UpgradeStatus& GetUpgradeStepStatus() const{ return m_upgradeStepStatus; }
+    inline UpgradeStatus GetUpgradeStepStatus() const { return m_upgradeStepStatus; }
     inline bool UpgradeStepStatusHasBeenSet() const { return m_upgradeStepStatusHasBeenSet; }
-    inline void SetUpgradeStepStatus(const UpgradeStatus& value) { m_upgradeStepStatusHasBeenSet = true; m_upgradeStepStatus = value; }
-    inline void SetUpgradeStepStatus(UpgradeStatus&& value) { m_upgradeStepStatusHasBeenSet = true; m_upgradeStepStatus = std::move(value); }
-    inline UpgradeStepItem& WithUpgradeStepStatus(const UpgradeStatus& value) { SetUpgradeStepStatus(value); return *this;}
-    inline UpgradeStepItem& WithUpgradeStepStatus(UpgradeStatus&& value) { SetUpgradeStepStatus(std::move(value)); return *this;}
+    inline void SetUpgradeStepStatus(UpgradeStatus value) { m_upgradeStepStatusHasBeenSet = true; m_upgradeStepStatus = value; }
+    inline UpgradeStepItem& WithUpgradeStepStatus(UpgradeStatus value) { SetUpgradeStepStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +70,14 @@ namespace Model
      * <p>A list of strings containing detailed information about the errors
      * encountered in a particular step.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIssues() const{ return m_issues; }
+    inline const Aws::Vector<Aws::String>& GetIssues() const { return m_issues; }
     inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
-    inline void SetIssues(const Aws::Vector<Aws::String>& value) { m_issuesHasBeenSet = true; m_issues = value; }
-    inline void SetIssues(Aws::Vector<Aws::String>&& value) { m_issuesHasBeenSet = true; m_issues = std::move(value); }
-    inline UpgradeStepItem& WithIssues(const Aws::Vector<Aws::String>& value) { SetIssues(value); return *this;}
-    inline UpgradeStepItem& WithIssues(Aws::Vector<Aws::String>&& value) { SetIssues(std::move(value)); return *this;}
-    inline UpgradeStepItem& AddIssues(const Aws::String& value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
-    inline UpgradeStepItem& AddIssues(Aws::String&& value) { m_issuesHasBeenSet = true; m_issues.push_back(std::move(value)); return *this; }
-    inline UpgradeStepItem& AddIssues(const char* value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
+    template<typename IssuesT = Aws::Vector<Aws::String>>
+    void SetIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues = std::forward<IssuesT>(value); }
+    template<typename IssuesT = Aws::Vector<Aws::String>>
+    UpgradeStepItem& WithIssues(IssuesT&& value) { SetIssues(std::forward<IssuesT>(value)); return *this;}
+    template<typename IssuesT = Aws::String>
+    UpgradeStepItem& AddIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues.emplace_back(std::forward<IssuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,23 +85,23 @@ namespace Model
      * <p>The Floating point value representing progress percentage of a particular
      * step.</p>
      */
-    inline double GetProgressPercent() const{ return m_progressPercent; }
+    inline double GetProgressPercent() const { return m_progressPercent; }
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
     inline void SetProgressPercent(double value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
     inline UpgradeStepItem& WithProgressPercent(double value) { SetProgressPercent(value); return *this;}
     ///@}
   private:
 
-    UpgradeStep m_upgradeStep;
+    UpgradeStep m_upgradeStep{UpgradeStep::NOT_SET};
     bool m_upgradeStepHasBeenSet = false;
 
-    UpgradeStatus m_upgradeStepStatus;
+    UpgradeStatus m_upgradeStepStatus{UpgradeStatus::NOT_SET};
     bool m_upgradeStepStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_issues;
     bool m_issuesHasBeenSet = false;
 
-    double m_progressPercent;
+    double m_progressPercent{0.0};
     bool m_progressPercentHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class SidewalkAccountInfo
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkAccountInfo();
+    AWS_IOTWIRELESS_API SidewalkAccountInfo() = default;
     AWS_IOTWIRELESS_API SidewalkAccountInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkAccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The Sidewalk Amazon ID.</p>
      */
-    inline const Aws::String& GetAmazonId() const{ return m_amazonId; }
+    inline const Aws::String& GetAmazonId() const { return m_amazonId; }
     inline bool AmazonIdHasBeenSet() const { return m_amazonIdHasBeenSet; }
-    inline void SetAmazonId(const Aws::String& value) { m_amazonIdHasBeenSet = true; m_amazonId = value; }
-    inline void SetAmazonId(Aws::String&& value) { m_amazonIdHasBeenSet = true; m_amazonId = std::move(value); }
-    inline void SetAmazonId(const char* value) { m_amazonIdHasBeenSet = true; m_amazonId.assign(value); }
-    inline SidewalkAccountInfo& WithAmazonId(const Aws::String& value) { SetAmazonId(value); return *this;}
-    inline SidewalkAccountInfo& WithAmazonId(Aws::String&& value) { SetAmazonId(std::move(value)); return *this;}
-    inline SidewalkAccountInfo& WithAmazonId(const char* value) { SetAmazonId(value); return *this;}
+    template<typename AmazonIdT = Aws::String>
+    void SetAmazonId(AmazonIdT&& value) { m_amazonIdHasBeenSet = true; m_amazonId = std::forward<AmazonIdT>(value); }
+    template<typename AmazonIdT = Aws::String>
+    SidewalkAccountInfo& WithAmazonId(AmazonIdT&& value) { SetAmazonId(std::forward<AmazonIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Sidewalk application server private key.</p>
      */
-    inline const Aws::String& GetAppServerPrivateKey() const{ return m_appServerPrivateKey; }
+    inline const Aws::String& GetAppServerPrivateKey() const { return m_appServerPrivateKey; }
     inline bool AppServerPrivateKeyHasBeenSet() const { return m_appServerPrivateKeyHasBeenSet; }
-    inline void SetAppServerPrivateKey(const Aws::String& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = value; }
-    inline void SetAppServerPrivateKey(Aws::String&& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = std::move(value); }
-    inline void SetAppServerPrivateKey(const char* value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey.assign(value); }
-    inline SidewalkAccountInfo& WithAppServerPrivateKey(const Aws::String& value) { SetAppServerPrivateKey(value); return *this;}
-    inline SidewalkAccountInfo& WithAppServerPrivateKey(Aws::String&& value) { SetAppServerPrivateKey(std::move(value)); return *this;}
-    inline SidewalkAccountInfo& WithAppServerPrivateKey(const char* value) { SetAppServerPrivateKey(value); return *this;}
+    template<typename AppServerPrivateKeyT = Aws::String>
+    void SetAppServerPrivateKey(AppServerPrivateKeyT&& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = std::forward<AppServerPrivateKeyT>(value); }
+    template<typename AppServerPrivateKeyT = Aws::String>
+    SidewalkAccountInfo& WithAppServerPrivateKey(AppServerPrivateKeyT&& value) { SetAppServerPrivateKey(std::forward<AppServerPrivateKeyT>(value)); return *this;}
     ///@}
   private:
 

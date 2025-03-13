@@ -18,16 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetFromSignedUrlRequestDetails::ImportAssetFromSignedUrlRequestDetails() : 
-    m_assetNameHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_md5HashHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 ImportAssetFromSignedUrlRequestDetails::ImportAssetFromSignedUrlRequestDetails(JsonView jsonValue)
-  : ImportAssetFromSignedUrlRequestDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ImportAssetFromSignedUrlRequestDetails& ImportAssetFromSignedUrlRequestDetails::
   if(jsonValue.ValueExists("AssetName"))
   {
     m_assetName = jsonValue.GetString("AssetName");
-
     m_assetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Md5Hash"))
   {
     m_md5Hash = jsonValue.GetString("Md5Hash");
-
     m_md5HashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOrderRequest::GetOrderRequest() : 
-    m_orderIdHasBeenSet(false)
-{
-}
-
 Aws::String GetOrderRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class RoutingCriteriaInput
   {
   public:
-    AWS_CONNECT_API RoutingCriteriaInput();
+    AWS_CONNECT_API RoutingCriteriaInput() = default;
     AWS_CONNECT_API RoutingCriteriaInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RoutingCriteriaInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * When all steps are exhausted, the contact will be offered to any agent in the
      * queue.</p>
      */
-    inline const Aws::Vector<RoutingCriteriaInputStep>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<RoutingCriteriaInputStep>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<RoutingCriteriaInputStep>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<RoutingCriteriaInputStep>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline RoutingCriteriaInput& WithSteps(const Aws::Vector<RoutingCriteriaInputStep>& value) { SetSteps(value); return *this;}
-    inline RoutingCriteriaInput& WithSteps(Aws::Vector<RoutingCriteriaInputStep>&& value) { SetSteps(std::move(value)); return *this;}
-    inline RoutingCriteriaInput& AddSteps(const RoutingCriteriaInputStep& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline RoutingCriteriaInput& AddSteps(RoutingCriteriaInputStep&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<RoutingCriteriaInputStep>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<RoutingCriteriaInputStep>>
+    RoutingCriteriaInput& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = RoutingCriteriaInputStep>
+    RoutingCriteriaInput& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
   private:
 

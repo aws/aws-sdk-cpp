@@ -18,21 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-TypedLinkAttributeDefinition::TypedLinkAttributeDefinition() : 
-    m_nameHasBeenSet(false),
-    m_type(FacetAttributeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_isImmutable(false),
-    m_isImmutableHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_requiredBehavior(RequiredAttributeBehavior::NOT_SET),
-    m_requiredBehaviorHasBeenSet(false)
-{
-}
-
 TypedLinkAttributeDefinition::TypedLinkAttributeDefinition(JsonView jsonValue)
-  : TypedLinkAttributeDefinition()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ TypedLinkAttributeDefinition& TypedLinkAttributeDefinition::operator =(JsonView 
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = FacetAttributeTypeMapper::GetFacetAttributeTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetObject("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsImmutable"))
   {
     m_isImmutable = jsonValue.GetBool("IsImmutable");
-
     m_isImmutableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Map<Aws::String, JsonView> rulesJsonMap = jsonValue.GetObject("Rules").GetAllObjects();
@@ -76,14 +54,11 @@ TypedLinkAttributeDefinition& TypedLinkAttributeDefinition::operator =(JsonView 
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiredBehavior"))
   {
     m_requiredBehavior = RequiredAttributeBehaviorMapper::GetRequiredAttributeBehaviorForName(jsonValue.GetString("RequiredBehavior"));
-
     m_requiredBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

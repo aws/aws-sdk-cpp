@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfirmConnectionRequest::ConfirmConnectionRequest() : 
-    m_connectionIdHasBeenSet(false)
-{
-}
-
 Aws::String ConfirmConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

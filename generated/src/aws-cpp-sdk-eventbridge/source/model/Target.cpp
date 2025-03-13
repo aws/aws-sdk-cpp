@@ -18,29 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-Target::Target() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputPathHasBeenSet(false),
-    m_inputTransformerHasBeenSet(false),
-    m_kinesisParametersHasBeenSet(false),
-    m_runCommandParametersHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false),
-    m_batchParametersHasBeenSet(false),
-    m_sqsParametersHasBeenSet(false),
-    m_httpParametersHasBeenSet(false),
-    m_redshiftDataParametersHasBeenSet(false),
-    m_sageMakerPipelineParametersHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false),
-    m_appSyncParametersHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -50,122 +28,88 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetString("Input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputPath"))
   {
     m_inputPath = jsonValue.GetString("InputPath");
-
     m_inputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputTransformer"))
   {
     m_inputTransformer = jsonValue.GetObject("InputTransformer");
-
     m_inputTransformerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisParameters"))
   {
     m_kinesisParameters = jsonValue.GetObject("KinesisParameters");
-
     m_kinesisParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunCommandParameters"))
   {
     m_runCommandParameters = jsonValue.GetObject("RunCommandParameters");
-
     m_runCommandParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EcsParameters"))
   {
     m_ecsParameters = jsonValue.GetObject("EcsParameters");
-
     m_ecsParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchParameters"))
   {
     m_batchParameters = jsonValue.GetObject("BatchParameters");
-
     m_batchParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SqsParameters"))
   {
     m_sqsParameters = jsonValue.GetObject("SqsParameters");
-
     m_sqsParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpParameters"))
   {
     m_httpParameters = jsonValue.GetObject("HttpParameters");
-
     m_httpParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDataParameters"))
   {
     m_redshiftDataParameters = jsonValue.GetObject("RedshiftDataParameters");
-
     m_redshiftDataParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SageMakerPipelineParameters"))
   {
     m_sageMakerPipelineParameters = jsonValue.GetObject("SageMakerPipelineParameters");
-
     m_sageMakerPipelineParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeadLetterConfig"))
   {
     m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
-
     m_deadLetterConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryPolicy"))
   {
     m_retryPolicy = jsonValue.GetObject("RetryPolicy");
-
     m_retryPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppSyncParameters"))
   {
     m_appSyncParameters = jsonValue.GetObject("AppSyncParameters");
-
     m_appSyncParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

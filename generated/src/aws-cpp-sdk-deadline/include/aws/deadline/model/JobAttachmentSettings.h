@@ -32,7 +32,7 @@ namespace Model
   class JobAttachmentSettings
   {
   public:
-    AWS_DEADLINE_API JobAttachmentSettings();
+    AWS_DEADLINE_API JobAttachmentSettings() = default;
     AWS_DEADLINE_API JobAttachmentSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API JobAttachmentSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket name.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline JobAttachmentSettings& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline JobAttachmentSettings& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline JobAttachmentSettings& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    JobAttachmentSettings& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The root prefix.</p>
      */
-    inline const Aws::String& GetRootPrefix() const{ return m_rootPrefix; }
+    inline const Aws::String& GetRootPrefix() const { return m_rootPrefix; }
     inline bool RootPrefixHasBeenSet() const { return m_rootPrefixHasBeenSet; }
-    inline void SetRootPrefix(const Aws::String& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = value; }
-    inline void SetRootPrefix(Aws::String&& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = std::move(value); }
-    inline void SetRootPrefix(const char* value) { m_rootPrefixHasBeenSet = true; m_rootPrefix.assign(value); }
-    inline JobAttachmentSettings& WithRootPrefix(const Aws::String& value) { SetRootPrefix(value); return *this;}
-    inline JobAttachmentSettings& WithRootPrefix(Aws::String&& value) { SetRootPrefix(std::move(value)); return *this;}
-    inline JobAttachmentSettings& WithRootPrefix(const char* value) { SetRootPrefix(value); return *this;}
+    template<typename RootPrefixT = Aws::String>
+    void SetRootPrefix(RootPrefixT&& value) { m_rootPrefixHasBeenSet = true; m_rootPrefix = std::forward<RootPrefixT>(value); }
+    template<typename RootPrefixT = Aws::String>
+    JobAttachmentSettings& WithRootPrefix(RootPrefixT&& value) { SetRootPrefix(std::forward<RootPrefixT>(value)); return *this;}
     ///@}
   private:
 

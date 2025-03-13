@@ -12,13 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendManagedThingCommandRequest::SendManagedThingCommandRequest() : 
-    m_managedThingIdHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_connectorAssociationIdHasBeenSet(false)
-{
-}
-
 Aws::String SendManagedThingCommandRequest::SerializePayload() const
 {
   JsonValue payload;

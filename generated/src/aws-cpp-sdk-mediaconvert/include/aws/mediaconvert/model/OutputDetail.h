@@ -31,7 +31,7 @@ namespace Model
   class OutputDetail
   {
   public:
-    AWS_MEDIACONVERT_API OutputDetail();
+    AWS_MEDIACONVERT_API OutputDetail() = default;
     AWS_MEDIACONVERT_API OutputDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API OutputDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * Duration in milliseconds
      */
-    inline int GetDurationInMs() const{ return m_durationInMs; }
+    inline int GetDurationInMs() const { return m_durationInMs; }
     inline bool DurationInMsHasBeenSet() const { return m_durationInMsHasBeenSet; }
     inline void SetDurationInMs(int value) { m_durationInMsHasBeenSet = true; m_durationInMs = value; }
     inline OutputDetail& WithDurationInMs(int value) { SetDurationInMs(value); return *this;}
@@ -51,16 +51,16 @@ namespace Model
     /**
      * Contains details about the output's video stream
      */
-    inline const VideoDetail& GetVideoDetails() const{ return m_videoDetails; }
+    inline const VideoDetail& GetVideoDetails() const { return m_videoDetails; }
     inline bool VideoDetailsHasBeenSet() const { return m_videoDetailsHasBeenSet; }
-    inline void SetVideoDetails(const VideoDetail& value) { m_videoDetailsHasBeenSet = true; m_videoDetails = value; }
-    inline void SetVideoDetails(VideoDetail&& value) { m_videoDetailsHasBeenSet = true; m_videoDetails = std::move(value); }
-    inline OutputDetail& WithVideoDetails(const VideoDetail& value) { SetVideoDetails(value); return *this;}
-    inline OutputDetail& WithVideoDetails(VideoDetail&& value) { SetVideoDetails(std::move(value)); return *this;}
+    template<typename VideoDetailsT = VideoDetail>
+    void SetVideoDetails(VideoDetailsT&& value) { m_videoDetailsHasBeenSet = true; m_videoDetails = std::forward<VideoDetailsT>(value); }
+    template<typename VideoDetailsT = VideoDetail>
+    OutputDetail& WithVideoDetails(VideoDetailsT&& value) { SetVideoDetails(std::forward<VideoDetailsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_durationInMs;
+    int m_durationInMs{0};
     bool m_durationInMsHasBeenSet = false;
 
     VideoDetail m_videoDetails;

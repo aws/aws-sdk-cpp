@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration() : 
-    m_embeddingModelArnHasBeenSet(false),
-    m_embeddingModelConfigurationHasBeenSet(false),
-    m_supplementalDataStorageConfigurationHasBeenSet(false)
-{
-}
-
 VectorKnowledgeBaseConfiguration::VectorKnowledgeBaseConfiguration(JsonView jsonValue)
-  : VectorKnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VectorKnowledgeBaseConfiguration& VectorKnowledgeBaseConfiguration::operator =(J
   if(jsonValue.ValueExists("embeddingModelArn"))
   {
     m_embeddingModelArn = jsonValue.GetString("embeddingModelArn");
-
     m_embeddingModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("embeddingModelConfiguration"))
   {
     m_embeddingModelConfiguration = jsonValue.GetObject("embeddingModelConfiguration");
-
     m_embeddingModelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supplementalDataStorageConfiguration"))
   {
     m_supplementalDataStorageConfiguration = jsonValue.GetObject("supplementalDataStorageConfiguration");
-
     m_supplementalDataStorageConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

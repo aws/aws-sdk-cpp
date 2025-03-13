@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-Compliance::Compliance() : 
-    m_complianceType(ComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_complianceContributorCountHasBeenSet(false)
-{
-}
-
 Compliance::Compliance(JsonView jsonValue)
-  : Compliance()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Compliance& Compliance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ComplianceTypeMapper::GetComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceContributorCount"))
   {
     m_complianceContributorCount = jsonValue.GetObject("ComplianceContributorCount");
-
     m_complianceContributorCountHasBeenSet = true;
   }
-
   return *this;
 }
 

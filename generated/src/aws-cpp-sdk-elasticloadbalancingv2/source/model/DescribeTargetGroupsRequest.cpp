@@ -10,16 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeTargetGroupsRequest::DescribeTargetGroupsRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_targetGroupArnsHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTargetGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

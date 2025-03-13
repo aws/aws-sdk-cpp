@@ -18,15 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-RestApiClientException::RestApiClientException() : 
-    m_restApiStatusCode(0),
-    m_restApiStatusCodeHasBeenSet(false),
-    m_restApiResponseHasBeenSet(false)
-{
-}
-
 RestApiClientException::RestApiClientException(JsonView jsonValue)
-  : RestApiClientException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RestApiClientException& RestApiClientException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RestApiStatusCode"))
   {
     m_restApiStatusCode = jsonValue.GetInteger("RestApiStatusCode");
-
     m_restApiStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestApiResponse"))
   {
     m_restApiResponse = jsonValue.GetObject("RestApiResponse");
-
     m_restApiResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

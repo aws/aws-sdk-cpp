@@ -33,7 +33,7 @@ namespace Model
   class Server
   {
   public:
-    AWS_SMS_API Server();
+    AWS_SMS_API Server() = default;
     AWS_SMS_API Server(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Server& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,59 +43,53 @@ namespace Model
     /**
      * <p>The ID of the server.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline Server& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline Server& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline Server& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    Server& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of server.</p>
      */
-    inline const ServerType& GetServerType() const{ return m_serverType; }
+    inline ServerType GetServerType() const { return m_serverType; }
     inline bool ServerTypeHasBeenSet() const { return m_serverTypeHasBeenSet; }
-    inline void SetServerType(const ServerType& value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
-    inline void SetServerType(ServerType&& value) { m_serverTypeHasBeenSet = true; m_serverType = std::move(value); }
-    inline Server& WithServerType(const ServerType& value) { SetServerType(value); return *this;}
-    inline Server& WithServerType(ServerType&& value) { SetServerType(std::move(value)); return *this;}
+    inline void SetServerType(ServerType value) { m_serverTypeHasBeenSet = true; m_serverType = value; }
+    inline Server& WithServerType(ServerType value) { SetServerType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the VM server.</p>
      */
-    inline const VmServer& GetVmServer() const{ return m_vmServer; }
+    inline const VmServer& GetVmServer() const { return m_vmServer; }
     inline bool VmServerHasBeenSet() const { return m_vmServerHasBeenSet; }
-    inline void SetVmServer(const VmServer& value) { m_vmServerHasBeenSet = true; m_vmServer = value; }
-    inline void SetVmServer(VmServer&& value) { m_vmServerHasBeenSet = true; m_vmServer = std::move(value); }
-    inline Server& WithVmServer(const VmServer& value) { SetVmServer(value); return *this;}
-    inline Server& WithVmServer(VmServer&& value) { SetVmServer(std::move(value)); return *this;}
+    template<typename VmServerT = VmServer>
+    void SetVmServer(VmServerT&& value) { m_vmServerHasBeenSet = true; m_vmServer = std::forward<VmServerT>(value); }
+    template<typename VmServerT = VmServer>
+    Server& WithVmServer(VmServerT&& value) { SetVmServer(std::forward<VmServerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the replication job.</p>
      */
-    inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
+    inline const Aws::String& GetReplicationJobId() const { return m_replicationJobId; }
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
-    inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
-    inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
-    inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
-    inline Server& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
-    inline Server& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
-    inline Server& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+    template<typename ReplicationJobIdT = Aws::String>
+    void SetReplicationJobId(ReplicationJobIdT&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::forward<ReplicationJobIdT>(value); }
+    template<typename ReplicationJobIdT = Aws::String>
+    Server& WithReplicationJobId(ReplicationJobIdT&& value) { SetReplicationJobId(std::forward<ReplicationJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the replication job is deleted or failed.</p>
      */
-    inline bool GetReplicationJobTerminated() const{ return m_replicationJobTerminated; }
+    inline bool GetReplicationJobTerminated() const { return m_replicationJobTerminated; }
     inline bool ReplicationJobTerminatedHasBeenSet() const { return m_replicationJobTerminatedHasBeenSet; }
     inline void SetReplicationJobTerminated(bool value) { m_replicationJobTerminatedHasBeenSet = true; m_replicationJobTerminated = value; }
     inline Server& WithReplicationJobTerminated(bool value) { SetReplicationJobTerminated(value); return *this;}
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet = false;
 
-    ServerType m_serverType;
+    ServerType m_serverType{ServerType::NOT_SET};
     bool m_serverTypeHasBeenSet = false;
 
     VmServer m_vmServer;
@@ -114,7 +108,7 @@ namespace Model
     Aws::String m_replicationJobId;
     bool m_replicationJobIdHasBeenSet = false;
 
-    bool m_replicationJobTerminated;
+    bool m_replicationJobTerminated{false};
     bool m_replicationJobTerminatedHasBeenSet = false;
   };
 

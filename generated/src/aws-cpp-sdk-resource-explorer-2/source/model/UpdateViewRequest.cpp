@@ -12,13 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateViewRequest::UpdateViewRequest() : 
-    m_filtersHasBeenSet(false),
-    m_includedPropertiesHasBeenSet(false),
-    m_viewArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateViewRequest::SerializePayload() const
 {
   JsonValue payload;

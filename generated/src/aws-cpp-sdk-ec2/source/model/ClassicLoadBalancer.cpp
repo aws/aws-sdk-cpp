@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClassicLoadBalancer::ClassicLoadBalancer() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ClassicLoadBalancer::ClassicLoadBalancer(const XmlNode& xmlNode)
-  : ClassicLoadBalancer()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ClassicLoadBalancer& ClassicLoadBalancer::operator =(const XmlNode& xmlNode)
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
   }
 

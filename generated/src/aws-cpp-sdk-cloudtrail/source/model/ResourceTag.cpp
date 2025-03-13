@@ -18,14 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-ResourceTag::ResourceTag() : 
-    m_resourceIdHasBeenSet(false),
-    m_tagsListHasBeenSet(false)
-{
-}
-
 ResourceTag::ResourceTag(JsonView jsonValue)
-  : ResourceTag()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResourceTag& ResourceTag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagsList"))
   {
     Aws::Utils::Array<JsonView> tagsListJsonList = jsonValue.GetArray("TagsList");
@@ -48,7 +39,6 @@ ResourceTag& ResourceTag::operator =(JsonView jsonValue)
     }
     m_tagsListHasBeenSet = true;
   }
-
   return *this;
 }
 

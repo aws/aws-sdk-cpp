@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-EcsEphemeralStorage::EcsEphemeralStorage() : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false)
-{
-}
-
 EcsEphemeralStorage::EcsEphemeralStorage(JsonView jsonValue)
-  : EcsEphemeralStorage()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EcsEphemeralStorage& EcsEphemeralStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sizeInGiB"))
   {
     m_sizeInGiB = jsonValue.GetInteger("sizeInGiB");
-
     m_sizeInGiBHasBeenSet = true;
   }
-
   return *this;
 }
 

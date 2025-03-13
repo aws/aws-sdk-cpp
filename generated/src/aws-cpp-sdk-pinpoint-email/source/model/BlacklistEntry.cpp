@@ -18,15 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-BlacklistEntry::BlacklistEntry() : 
-    m_rblNameHasBeenSet(false),
-    m_listingTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 BlacklistEntry::BlacklistEntry(JsonView jsonValue)
-  : BlacklistEntry()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BlacklistEntry& BlacklistEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RblName"))
   {
     m_rblName = jsonValue.GetString("RblName");
-
     m_rblNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListingTime"))
   {
     m_listingTime = jsonValue.GetDouble("ListingTime");
-
     m_listingTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

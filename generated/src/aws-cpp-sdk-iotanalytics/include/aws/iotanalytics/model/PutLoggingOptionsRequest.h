@@ -21,7 +21,7 @@ namespace Model
   class PutLoggingOptionsRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API PutLoggingOptionsRequest();
+    AWS_IOTANALYTICS_API PutLoggingOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>The new values of the IoT Analytics logging options.</p>
      */
-    inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
+    inline const LoggingOptions& GetLoggingOptions() const { return m_loggingOptions; }
     inline bool LoggingOptionsHasBeenSet() const { return m_loggingOptionsHasBeenSet; }
-    inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = value; }
-    inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = std::move(value); }
-    inline PutLoggingOptionsRequest& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
-    inline PutLoggingOptionsRequest& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
+    template<typename LoggingOptionsT = LoggingOptions>
+    void SetLoggingOptions(LoggingOptionsT&& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = std::forward<LoggingOptionsT>(value); }
+    template<typename LoggingOptionsT = LoggingOptions>
+    PutLoggingOptionsRequest& WithLoggingOptions(LoggingOptionsT&& value) { SetLoggingOptions(std::forward<LoggingOptionsT>(value)); return *this;}
     ///@}
   private:
 

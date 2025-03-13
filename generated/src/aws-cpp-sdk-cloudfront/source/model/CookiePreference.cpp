@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CookiePreference::CookiePreference() : 
-    m_forward(ItemSelection::NOT_SET),
-    m_forwardHasBeenSet(false),
-    m_whitelistedNamesHasBeenSet(false)
-{
-}
-
 CookiePreference::CookiePreference(const XmlNode& xmlNode)
-  : CookiePreference()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ CookiePreference& CookiePreference::operator =(const XmlNode& xmlNode)
     XmlNode forwardNode = resultNode.FirstChild("Forward");
     if(!forwardNode.IsNull())
     {
-      m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardNode.GetText()).c_str()).c_str());
+      m_forward = ItemSelectionMapper::GetItemSelectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forwardNode.GetText()).c_str()));
       m_forwardHasBeenSet = true;
+       m_forwardHasBeenSet = true;
     }
     XmlNode whitelistedNamesNode = resultNode.FirstChild("WhitelistedNames");
     if(!whitelistedNamesNode.IsNull())
     {
       m_whitelistedNames = whitelistedNamesNode;
       m_whitelistedNamesHasBeenSet = true;
+       m_whitelistedNamesHasBeenSet = true;
     }
   }
 

@@ -32,7 +32,7 @@ namespace Model
   class TlsCertificateData
   {
   public:
-    AWS_NETWORKFIREWALL_API TlsCertificateData();
+    AWS_NETWORKFIREWALL_API TlsCertificateData() = default;
     AWS_NETWORKFIREWALL_API TlsCertificateData(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API TlsCertificateData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline TlsCertificateData& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline TlsCertificateData& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline TlsCertificateData& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    TlsCertificateData& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The serial number of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateSerial() const{ return m_certificateSerial; }
+    inline const Aws::String& GetCertificateSerial() const { return m_certificateSerial; }
     inline bool CertificateSerialHasBeenSet() const { return m_certificateSerialHasBeenSet; }
-    inline void SetCertificateSerial(const Aws::String& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = value; }
-    inline void SetCertificateSerial(Aws::String&& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = std::move(value); }
-    inline void SetCertificateSerial(const char* value) { m_certificateSerialHasBeenSet = true; m_certificateSerial.assign(value); }
-    inline TlsCertificateData& WithCertificateSerial(const Aws::String& value) { SetCertificateSerial(value); return *this;}
-    inline TlsCertificateData& WithCertificateSerial(Aws::String&& value) { SetCertificateSerial(std::move(value)); return *this;}
-    inline TlsCertificateData& WithCertificateSerial(const char* value) { SetCertificateSerial(value); return *this;}
+    template<typename CertificateSerialT = Aws::String>
+    void SetCertificateSerial(CertificateSerialT&& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = std::forward<CertificateSerialT>(value); }
+    template<typename CertificateSerialT = Aws::String>
+    TlsCertificateData& WithCertificateSerial(CertificateSerialT&& value) { SetCertificateSerial(std::forward<CertificateSerialT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the certificate.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline TlsCertificateData& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline TlsCertificateData& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline TlsCertificateData& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    TlsCertificateData& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * <p>Contains details about the certificate status, including information about
      * certificate errors.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline TlsCertificateData& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline TlsCertificateData& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline TlsCertificateData& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    TlsCertificateData& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 

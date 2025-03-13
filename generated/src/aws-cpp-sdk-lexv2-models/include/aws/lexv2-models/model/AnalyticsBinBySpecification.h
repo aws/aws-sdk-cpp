@@ -34,7 +34,7 @@ namespace Model
   class AnalyticsBinBySpecification
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsBinBySpecification();
+    AWS_LEXMODELSV2_API AnalyticsBinBySpecification() = default;
     AWS_LEXMODELSV2_API AnalyticsBinBySpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsBinBySpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,20 @@ namespace Model
     /**
      * <p>Specifies the time metric by which to bin the analytics data.</p>
      */
-    inline const AnalyticsBinByName& GetName() const{ return m_name; }
+    inline AnalyticsBinByName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsBinByName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsBinByName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsBinBySpecification& WithName(const AnalyticsBinByName& value) { SetName(value); return *this;}
-    inline AnalyticsBinBySpecification& WithName(AnalyticsBinByName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsBinByName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsBinBySpecification& WithName(AnalyticsBinByName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the interval of time by which to bin the analytics data.</p>
      */
-    inline const AnalyticsInterval& GetInterval() const{ return m_interval; }
+    inline AnalyticsInterval GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-    inline void SetInterval(const AnalyticsInterval& value) { m_intervalHasBeenSet = true; m_interval = value; }
-    inline void SetInterval(AnalyticsInterval&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-    inline AnalyticsBinBySpecification& WithInterval(const AnalyticsInterval& value) { SetInterval(value); return *this;}
-    inline AnalyticsBinBySpecification& WithInterval(AnalyticsInterval&& value) { SetInterval(std::move(value)); return *this;}
+    inline void SetInterval(AnalyticsInterval value) { m_intervalHasBeenSet = true; m_interval = value; }
+    inline AnalyticsBinBySpecification& WithInterval(AnalyticsInterval value) { SetInterval(value); return *this;}
     ///@}
 
     ///@{
@@ -70,22 +66,20 @@ namespace Model
      * If this field is left blank, the default order is by the key of the bin in
      * descending order.</p>
      */
-    inline const AnalyticsSortOrder& GetOrder() const{ return m_order; }
+    inline AnalyticsSortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const AnalyticsSortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(AnalyticsSortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline AnalyticsBinBySpecification& WithOrder(const AnalyticsSortOrder& value) { SetOrder(value); return *this;}
-    inline AnalyticsBinBySpecification& WithOrder(AnalyticsSortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(AnalyticsSortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline AnalyticsBinBySpecification& WithOrder(AnalyticsSortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    AnalyticsBinByName m_name;
+    AnalyticsBinByName m_name{AnalyticsBinByName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsInterval m_interval;
+    AnalyticsInterval m_interval{AnalyticsInterval::NOT_SET};
     bool m_intervalHasBeenSet = false;
 
-    AnalyticsSortOrder m_order;
+    AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

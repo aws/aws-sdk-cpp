@@ -12,11 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCoreDeviceRequest::DeleteCoreDeviceRequest() : 
-    m_coreDeviceThingNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCoreDeviceRequest::SerializePayload() const
 {
   return {};

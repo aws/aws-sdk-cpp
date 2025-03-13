@@ -21,7 +21,7 @@ namespace Model
   class DescribeAttackRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API DescribeAttackRequest();
+    AWS_SHIELD_API DescribeAttackRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier (ID) for the attack.</p>
      */
-    inline const Aws::String& GetAttackId() const{ return m_attackId; }
+    inline const Aws::String& GetAttackId() const { return m_attackId; }
     inline bool AttackIdHasBeenSet() const { return m_attackIdHasBeenSet; }
-    inline void SetAttackId(const Aws::String& value) { m_attackIdHasBeenSet = true; m_attackId = value; }
-    inline void SetAttackId(Aws::String&& value) { m_attackIdHasBeenSet = true; m_attackId = std::move(value); }
-    inline void SetAttackId(const char* value) { m_attackIdHasBeenSet = true; m_attackId.assign(value); }
-    inline DescribeAttackRequest& WithAttackId(const Aws::String& value) { SetAttackId(value); return *this;}
-    inline DescribeAttackRequest& WithAttackId(Aws::String&& value) { SetAttackId(std::move(value)); return *this;}
-    inline DescribeAttackRequest& WithAttackId(const char* value) { SetAttackId(value); return *this;}
+    template<typename AttackIdT = Aws::String>
+    void SetAttackId(AttackIdT&& value) { m_attackIdHasBeenSet = true; m_attackId = std::forward<AttackIdT>(value); }
+    template<typename AttackIdT = Aws::String>
+    DescribeAttackRequest& WithAttackId(AttackIdT&& value) { SetAttackId(std::forward<AttackIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-ListGroupingStatusesFilter::ListGroupingStatusesFilter() : 
-    m_name(ListGroupingStatusesFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ListGroupingStatusesFilter::ListGroupingStatusesFilter(JsonView jsonValue)
-  : ListGroupingStatusesFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ListGroupingStatusesFilter& ListGroupingStatusesFilter::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ListGroupingStatusesFilterNameMapper::GetListGroupingStatusesFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ ListGroupingStatusesFilter& ListGroupingStatusesFilter::operator =(JsonView json
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

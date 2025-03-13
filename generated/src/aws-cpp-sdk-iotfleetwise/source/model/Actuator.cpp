@@ -18,25 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-Actuator::Actuator() : 
-    m_fullyQualifiedNameHasBeenSet(false),
-    m_dataType(NodeDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_unitHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false),
-    m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_structFullyQualifiedNameHasBeenSet(false)
-{
-}
-
 Actuator::Actuator(JsonView jsonValue)
-  : Actuator()
 {
   *this = jsonValue;
 }
@@ -46,31 +28,23 @@ Actuator& Actuator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fullyQualifiedName"))
   {
     m_fullyQualifiedName = jsonValue.GetString("fullyQualifiedName");
-
     m_fullyQualifiedNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = NodeDataTypeMapper::GetNodeDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedValues"))
   {
     Aws::Utils::Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
@@ -80,42 +54,31 @@ Actuator& Actuator::operator =(JsonView jsonValue)
     }
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetDouble("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetDouble("max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deprecationMessage"))
   {
     m_deprecationMessage = jsonValue.GetString("deprecationMessage");
-
     m_deprecationMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("structFullyQualifiedName"))
   {
     m_structFullyQualifiedName = jsonValue.GetString("structFullyQualifiedName");
-
     m_structFullyQualifiedNameHasBeenSet = true;
   }
-
   return *this;
 }
 

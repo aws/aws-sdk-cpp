@@ -33,7 +33,7 @@ namespace Model
   class BarChartSortConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API BarChartSortConfiguration();
+    AWS_QUICKSIGHT_API BarChartSortConfiguration() = default;
     AWS_QUICKSIGHT_API BarChartSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BarChartSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,78 +43,78 @@ namespace Model
     /**
      * <p>The sort configuration of category fields.</p>
      */
-    inline const Aws::Vector<FieldSortOptions>& GetCategorySort() const{ return m_categorySort; }
+    inline const Aws::Vector<FieldSortOptions>& GetCategorySort() const { return m_categorySort; }
     inline bool CategorySortHasBeenSet() const { return m_categorySortHasBeenSet; }
-    inline void SetCategorySort(const Aws::Vector<FieldSortOptions>& value) { m_categorySortHasBeenSet = true; m_categorySort = value; }
-    inline void SetCategorySort(Aws::Vector<FieldSortOptions>&& value) { m_categorySortHasBeenSet = true; m_categorySort = std::move(value); }
-    inline BarChartSortConfiguration& WithCategorySort(const Aws::Vector<FieldSortOptions>& value) { SetCategorySort(value); return *this;}
-    inline BarChartSortConfiguration& WithCategorySort(Aws::Vector<FieldSortOptions>&& value) { SetCategorySort(std::move(value)); return *this;}
-    inline BarChartSortConfiguration& AddCategorySort(const FieldSortOptions& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(value); return *this; }
-    inline BarChartSortConfiguration& AddCategorySort(FieldSortOptions&& value) { m_categorySortHasBeenSet = true; m_categorySort.push_back(std::move(value)); return *this; }
+    template<typename CategorySortT = Aws::Vector<FieldSortOptions>>
+    void SetCategorySort(CategorySortT&& value) { m_categorySortHasBeenSet = true; m_categorySort = std::forward<CategorySortT>(value); }
+    template<typename CategorySortT = Aws::Vector<FieldSortOptions>>
+    BarChartSortConfiguration& WithCategorySort(CategorySortT&& value) { SetCategorySort(std::forward<CategorySortT>(value)); return *this;}
+    template<typename CategorySortT = FieldSortOptions>
+    BarChartSortConfiguration& AddCategorySort(CategorySortT&& value) { m_categorySortHasBeenSet = true; m_categorySort.emplace_back(std::forward<CategorySortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The limit on the number of categories displayed in a bar chart.</p>
      */
-    inline const ItemsLimitConfiguration& GetCategoryItemsLimit() const{ return m_categoryItemsLimit; }
+    inline const ItemsLimitConfiguration& GetCategoryItemsLimit() const { return m_categoryItemsLimit; }
     inline bool CategoryItemsLimitHasBeenSet() const { return m_categoryItemsLimitHasBeenSet; }
-    inline void SetCategoryItemsLimit(const ItemsLimitConfiguration& value) { m_categoryItemsLimitHasBeenSet = true; m_categoryItemsLimit = value; }
-    inline void SetCategoryItemsLimit(ItemsLimitConfiguration&& value) { m_categoryItemsLimitHasBeenSet = true; m_categoryItemsLimit = std::move(value); }
-    inline BarChartSortConfiguration& WithCategoryItemsLimit(const ItemsLimitConfiguration& value) { SetCategoryItemsLimit(value); return *this;}
-    inline BarChartSortConfiguration& WithCategoryItemsLimit(ItemsLimitConfiguration&& value) { SetCategoryItemsLimit(std::move(value)); return *this;}
+    template<typename CategoryItemsLimitT = ItemsLimitConfiguration>
+    void SetCategoryItemsLimit(CategoryItemsLimitT&& value) { m_categoryItemsLimitHasBeenSet = true; m_categoryItemsLimit = std::forward<CategoryItemsLimitT>(value); }
+    template<typename CategoryItemsLimitT = ItemsLimitConfiguration>
+    BarChartSortConfiguration& WithCategoryItemsLimit(CategoryItemsLimitT&& value) { SetCategoryItemsLimit(std::forward<CategoryItemsLimitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of color fields in a bar chart.</p>
      */
-    inline const Aws::Vector<FieldSortOptions>& GetColorSort() const{ return m_colorSort; }
+    inline const Aws::Vector<FieldSortOptions>& GetColorSort() const { return m_colorSort; }
     inline bool ColorSortHasBeenSet() const { return m_colorSortHasBeenSet; }
-    inline void SetColorSort(const Aws::Vector<FieldSortOptions>& value) { m_colorSortHasBeenSet = true; m_colorSort = value; }
-    inline void SetColorSort(Aws::Vector<FieldSortOptions>&& value) { m_colorSortHasBeenSet = true; m_colorSort = std::move(value); }
-    inline BarChartSortConfiguration& WithColorSort(const Aws::Vector<FieldSortOptions>& value) { SetColorSort(value); return *this;}
-    inline BarChartSortConfiguration& WithColorSort(Aws::Vector<FieldSortOptions>&& value) { SetColorSort(std::move(value)); return *this;}
-    inline BarChartSortConfiguration& AddColorSort(const FieldSortOptions& value) { m_colorSortHasBeenSet = true; m_colorSort.push_back(value); return *this; }
-    inline BarChartSortConfiguration& AddColorSort(FieldSortOptions&& value) { m_colorSortHasBeenSet = true; m_colorSort.push_back(std::move(value)); return *this; }
+    template<typename ColorSortT = Aws::Vector<FieldSortOptions>>
+    void SetColorSort(ColorSortT&& value) { m_colorSortHasBeenSet = true; m_colorSort = std::forward<ColorSortT>(value); }
+    template<typename ColorSortT = Aws::Vector<FieldSortOptions>>
+    BarChartSortConfiguration& WithColorSort(ColorSortT&& value) { SetColorSort(std::forward<ColorSortT>(value)); return *this;}
+    template<typename ColorSortT = FieldSortOptions>
+    BarChartSortConfiguration& AddColorSort(ColorSortT&& value) { m_colorSortHasBeenSet = true; m_colorSort.emplace_back(std::forward<ColorSortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The limit on the number of values displayed in a bar chart.</p>
      */
-    inline const ItemsLimitConfiguration& GetColorItemsLimit() const{ return m_colorItemsLimit; }
+    inline const ItemsLimitConfiguration& GetColorItemsLimit() const { return m_colorItemsLimit; }
     inline bool ColorItemsLimitHasBeenSet() const { return m_colorItemsLimitHasBeenSet; }
-    inline void SetColorItemsLimit(const ItemsLimitConfiguration& value) { m_colorItemsLimitHasBeenSet = true; m_colorItemsLimit = value; }
-    inline void SetColorItemsLimit(ItemsLimitConfiguration&& value) { m_colorItemsLimitHasBeenSet = true; m_colorItemsLimit = std::move(value); }
-    inline BarChartSortConfiguration& WithColorItemsLimit(const ItemsLimitConfiguration& value) { SetColorItemsLimit(value); return *this;}
-    inline BarChartSortConfiguration& WithColorItemsLimit(ItemsLimitConfiguration&& value) { SetColorItemsLimit(std::move(value)); return *this;}
+    template<typename ColorItemsLimitT = ItemsLimitConfiguration>
+    void SetColorItemsLimit(ColorItemsLimitT&& value) { m_colorItemsLimitHasBeenSet = true; m_colorItemsLimit = std::forward<ColorItemsLimitT>(value); }
+    template<typename ColorItemsLimitT = ItemsLimitConfiguration>
+    BarChartSortConfiguration& WithColorItemsLimit(ColorItemsLimitT&& value) { SetColorItemsLimit(std::forward<ColorItemsLimitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of the small multiples field.</p>
      */
-    inline const Aws::Vector<FieldSortOptions>& GetSmallMultiplesSort() const{ return m_smallMultiplesSort; }
+    inline const Aws::Vector<FieldSortOptions>& GetSmallMultiplesSort() const { return m_smallMultiplesSort; }
     inline bool SmallMultiplesSortHasBeenSet() const { return m_smallMultiplesSortHasBeenSet; }
-    inline void SetSmallMultiplesSort(const Aws::Vector<FieldSortOptions>& value) { m_smallMultiplesSortHasBeenSet = true; m_smallMultiplesSort = value; }
-    inline void SetSmallMultiplesSort(Aws::Vector<FieldSortOptions>&& value) { m_smallMultiplesSortHasBeenSet = true; m_smallMultiplesSort = std::move(value); }
-    inline BarChartSortConfiguration& WithSmallMultiplesSort(const Aws::Vector<FieldSortOptions>& value) { SetSmallMultiplesSort(value); return *this;}
-    inline BarChartSortConfiguration& WithSmallMultiplesSort(Aws::Vector<FieldSortOptions>&& value) { SetSmallMultiplesSort(std::move(value)); return *this;}
-    inline BarChartSortConfiguration& AddSmallMultiplesSort(const FieldSortOptions& value) { m_smallMultiplesSortHasBeenSet = true; m_smallMultiplesSort.push_back(value); return *this; }
-    inline BarChartSortConfiguration& AddSmallMultiplesSort(FieldSortOptions&& value) { m_smallMultiplesSortHasBeenSet = true; m_smallMultiplesSort.push_back(std::move(value)); return *this; }
+    template<typename SmallMultiplesSortT = Aws::Vector<FieldSortOptions>>
+    void SetSmallMultiplesSort(SmallMultiplesSortT&& value) { m_smallMultiplesSortHasBeenSet = true; m_smallMultiplesSort = std::forward<SmallMultiplesSortT>(value); }
+    template<typename SmallMultiplesSortT = Aws::Vector<FieldSortOptions>>
+    BarChartSortConfiguration& WithSmallMultiplesSort(SmallMultiplesSortT&& value) { SetSmallMultiplesSort(std::forward<SmallMultiplesSortT>(value)); return *this;}
+    template<typename SmallMultiplesSortT = FieldSortOptions>
+    BarChartSortConfiguration& AddSmallMultiplesSort(SmallMultiplesSortT&& value) { m_smallMultiplesSortHasBeenSet = true; m_smallMultiplesSort.emplace_back(std::forward<SmallMultiplesSortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The limit on the number of small multiples panels that are displayed.</p>
      */
-    inline const ItemsLimitConfiguration& GetSmallMultiplesLimitConfiguration() const{ return m_smallMultiplesLimitConfiguration; }
+    inline const ItemsLimitConfiguration& GetSmallMultiplesLimitConfiguration() const { return m_smallMultiplesLimitConfiguration; }
     inline bool SmallMultiplesLimitConfigurationHasBeenSet() const { return m_smallMultiplesLimitConfigurationHasBeenSet; }
-    inline void SetSmallMultiplesLimitConfiguration(const ItemsLimitConfiguration& value) { m_smallMultiplesLimitConfigurationHasBeenSet = true; m_smallMultiplesLimitConfiguration = value; }
-    inline void SetSmallMultiplesLimitConfiguration(ItemsLimitConfiguration&& value) { m_smallMultiplesLimitConfigurationHasBeenSet = true; m_smallMultiplesLimitConfiguration = std::move(value); }
-    inline BarChartSortConfiguration& WithSmallMultiplesLimitConfiguration(const ItemsLimitConfiguration& value) { SetSmallMultiplesLimitConfiguration(value); return *this;}
-    inline BarChartSortConfiguration& WithSmallMultiplesLimitConfiguration(ItemsLimitConfiguration&& value) { SetSmallMultiplesLimitConfiguration(std::move(value)); return *this;}
+    template<typename SmallMultiplesLimitConfigurationT = ItemsLimitConfiguration>
+    void SetSmallMultiplesLimitConfiguration(SmallMultiplesLimitConfigurationT&& value) { m_smallMultiplesLimitConfigurationHasBeenSet = true; m_smallMultiplesLimitConfiguration = std::forward<SmallMultiplesLimitConfigurationT>(value); }
+    template<typename SmallMultiplesLimitConfigurationT = ItemsLimitConfiguration>
+    BarChartSortConfiguration& WithSmallMultiplesLimitConfiguration(SmallMultiplesLimitConfigurationT&& value) { SetSmallMultiplesLimitConfiguration(std::forward<SmallMultiplesLimitConfigurationT>(value)); return *this;}
     ///@}
   private:
 

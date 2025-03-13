@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FeatureDefinition::FeatureDefinition() : 
-    m_featureNameHasBeenSet(false),
-    m_featureType(FeatureType::NOT_SET),
-    m_featureTypeHasBeenSet(false),
-    m_collectionType(CollectionType::NOT_SET),
-    m_collectionTypeHasBeenSet(false),
-    m_collectionConfigHasBeenSet(false)
-{
-}
-
 FeatureDefinition::FeatureDefinition(JsonView jsonValue)
-  : FeatureDefinition()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FeatureDefinition& FeatureDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeatureName"))
   {
     m_featureName = jsonValue.GetString("FeatureName");
-
     m_featureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureType"))
   {
     m_featureType = FeatureTypeMapper::GetFeatureTypeForName(jsonValue.GetString("FeatureType"));
-
     m_featureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionType"))
   {
     m_collectionType = CollectionTypeMapper::GetCollectionTypeForName(jsonValue.GetString("CollectionType"));
-
     m_collectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionConfig"))
   {
     m_collectionConfig = jsonValue.GetObject("CollectionConfig");
-
     m_collectionConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

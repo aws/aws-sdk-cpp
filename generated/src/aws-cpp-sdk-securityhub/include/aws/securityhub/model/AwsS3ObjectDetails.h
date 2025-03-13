@@ -31,7 +31,7 @@ namespace Model
   class AwsS3ObjectDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsS3ObjectDetails();
+    AWS_SECURITYHUB_API AwsS3ObjectDetails() = default;
     AWS_SECURITYHUB_API AwsS3ObjectDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3ObjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * about the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetLastModified() const{ return m_lastModified; }
+    inline const Aws::String& GetLastModified() const { return m_lastModified; }
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-    inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-    inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-    inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
-    inline AwsS3ObjectDetails& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
-    inline AwsS3ObjectDetails& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
-    inline AwsS3ObjectDetails& WithLastModified(const char* value) { SetLastModified(value); return *this;}
+    template<typename LastModifiedT = Aws::String>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::String>
+    AwsS3ObjectDetails& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,42 +56,36 @@ namespace Model
      * <p>The opaque identifier assigned by a web server to a specific version of a
      * resource found at a URL.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline AwsS3ObjectDetails& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline AwsS3ObjectDetails& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline AwsS3ObjectDetails& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    AwsS3ObjectDetails& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the object.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline AwsS3ObjectDetails& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline AwsS3ObjectDetails& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline AwsS3ObjectDetails& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    AwsS3ObjectDetails& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A standard MIME type describing the format of the object data.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline AwsS3ObjectDetails& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline AwsS3ObjectDetails& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline AwsS3ObjectDetails& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    AwsS3ObjectDetails& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +93,12 @@ namespace Model
      * <p>If the object is stored using server-side encryption, the value of the
      * server-side encryption algorithm used when storing this object in Amazon S3.</p>
      */
-    inline const Aws::String& GetServerSideEncryption() const{ return m_serverSideEncryption; }
+    inline const Aws::String& GetServerSideEncryption() const { return m_serverSideEncryption; }
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
-    inline void SetServerSideEncryption(const Aws::String& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
-    inline void SetServerSideEncryption(Aws::String&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
-    inline void SetServerSideEncryption(const char* value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption.assign(value); }
-    inline AwsS3ObjectDetails& WithServerSideEncryption(const Aws::String& value) { SetServerSideEncryption(value); return *this;}
-    inline AwsS3ObjectDetails& WithServerSideEncryption(Aws::String&& value) { SetServerSideEncryption(std::move(value)); return *this;}
-    inline AwsS3ObjectDetails& WithServerSideEncryption(const char* value) { SetServerSideEncryption(value); return *this;}
+    template<typename ServerSideEncryptionT = Aws::String>
+    void SetServerSideEncryption(ServerSideEncryptionT&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::forward<ServerSideEncryptionT>(value); }
+    template<typename ServerSideEncryptionT = Aws::String>
+    AwsS3ObjectDetails& WithServerSideEncryption(ServerSideEncryptionT&& value) { SetServerSideEncryption(std::forward<ServerSideEncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +106,12 @@ namespace Model
      * <p>The identifier of the KMS symmetric customer managed key that was used for
      * the object.</p>
      */
-    inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
+    inline const Aws::String& GetSSEKMSKeyId() const { return m_sSEKMSKeyId; }
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
-    inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
-    inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
-    inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
-    inline AwsS3ObjectDetails& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
-    inline AwsS3ObjectDetails& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
-    inline AwsS3ObjectDetails& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
+    template<typename SSEKMSKeyIdT = Aws::String>
+    void SetSSEKMSKeyId(SSEKMSKeyIdT&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::forward<SSEKMSKeyIdT>(value); }
+    template<typename SSEKMSKeyIdT = Aws::String>
+    AwsS3ObjectDetails& WithSSEKMSKeyId(SSEKMSKeyIdT&& value) { SetSSEKMSKeyId(std::forward<SSEKMSKeyIdT>(value)); return *this;}
     ///@}
   private:
 

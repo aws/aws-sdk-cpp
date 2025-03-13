@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateColumnStatisticsForTableRequest::UpdateColumnStatisticsForTableRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_columnStatisticsListHasBeenSet(false)
-{
-}
-
 Aws::String UpdateColumnStatisticsForTableRequest::SerializePayload() const
 {
   JsonValue payload;

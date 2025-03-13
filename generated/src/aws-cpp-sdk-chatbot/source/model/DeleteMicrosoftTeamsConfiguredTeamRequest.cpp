@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMicrosoftTeamsConfiguredTeamRequest::DeleteMicrosoftTeamsConfiguredTeamRequest() : 
-    m_teamIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMicrosoftTeamsConfiguredTeamRequest::SerializePayload() const
 {
   JsonValue payload;

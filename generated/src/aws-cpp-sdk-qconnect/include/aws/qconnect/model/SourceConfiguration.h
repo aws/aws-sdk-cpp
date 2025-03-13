@@ -33,7 +33,7 @@ namespace Model
   class SourceConfiguration
   {
   public:
-    AWS_QCONNECT_API SourceConfiguration();
+    AWS_QCONNECT_API SourceConfiguration() = default;
     AWS_QCONNECT_API SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>Configuration information for Amazon AppIntegrations to automatically ingest
      * content.</p>
      */
-    inline const AppIntegrationsConfiguration& GetAppIntegrations() const{ return m_appIntegrations; }
+    inline const AppIntegrationsConfiguration& GetAppIntegrations() const { return m_appIntegrations; }
     inline bool AppIntegrationsHasBeenSet() const { return m_appIntegrationsHasBeenSet; }
-    inline void SetAppIntegrations(const AppIntegrationsConfiguration& value) { m_appIntegrationsHasBeenSet = true; m_appIntegrations = value; }
-    inline void SetAppIntegrations(AppIntegrationsConfiguration&& value) { m_appIntegrationsHasBeenSet = true; m_appIntegrations = std::move(value); }
-    inline SourceConfiguration& WithAppIntegrations(const AppIntegrationsConfiguration& value) { SetAppIntegrations(value); return *this;}
-    inline SourceConfiguration& WithAppIntegrations(AppIntegrationsConfiguration&& value) { SetAppIntegrations(std::move(value)); return *this;}
+    template<typename AppIntegrationsT = AppIntegrationsConfiguration>
+    void SetAppIntegrations(AppIntegrationsT&& value) { m_appIntegrationsHasBeenSet = true; m_appIntegrations = std::forward<AppIntegrationsT>(value); }
+    template<typename AppIntegrationsT = AppIntegrationsConfiguration>
+    SourceConfiguration& WithAppIntegrations(AppIntegrationsT&& value) { SetAppIntegrations(std::forward<AppIntegrationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Source configuration for managed resources.</p>
      */
-    inline const ManagedSourceConfiguration& GetManagedSourceConfiguration() const{ return m_managedSourceConfiguration; }
+    inline const ManagedSourceConfiguration& GetManagedSourceConfiguration() const { return m_managedSourceConfiguration; }
     inline bool ManagedSourceConfigurationHasBeenSet() const { return m_managedSourceConfigurationHasBeenSet; }
-    inline void SetManagedSourceConfiguration(const ManagedSourceConfiguration& value) { m_managedSourceConfigurationHasBeenSet = true; m_managedSourceConfiguration = value; }
-    inline void SetManagedSourceConfiguration(ManagedSourceConfiguration&& value) { m_managedSourceConfigurationHasBeenSet = true; m_managedSourceConfiguration = std::move(value); }
-    inline SourceConfiguration& WithManagedSourceConfiguration(const ManagedSourceConfiguration& value) { SetManagedSourceConfiguration(value); return *this;}
-    inline SourceConfiguration& WithManagedSourceConfiguration(ManagedSourceConfiguration&& value) { SetManagedSourceConfiguration(std::move(value)); return *this;}
+    template<typename ManagedSourceConfigurationT = ManagedSourceConfiguration>
+    void SetManagedSourceConfiguration(ManagedSourceConfigurationT&& value) { m_managedSourceConfigurationHasBeenSet = true; m_managedSourceConfiguration = std::forward<ManagedSourceConfigurationT>(value); }
+    template<typename ManagedSourceConfigurationT = ManagedSourceConfiguration>
+    SourceConfiguration& WithManagedSourceConfiguration(ManagedSourceConfigurationT&& value) { SetManagedSourceConfiguration(std::forward<ManagedSourceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotInstanceStateFault::SpotInstanceStateFault() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 SpotInstanceStateFault::SpotInstanceStateFault(const XmlNode& xmlNode)
-  : SpotInstanceStateFault()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SpotInstanceStateFault& SpotInstanceStateFault::operator =(const XmlNode& xmlNod
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");
     if(!messageNode.IsNull())
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class CustomColor
   {
   public:
-    AWS_QUICKSIGHT_API CustomColor();
+    AWS_QUICKSIGHT_API CustomColor() = default;
     AWS_QUICKSIGHT_API CustomColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The data value that the color is applied to.</p>
      */
-    inline const Aws::String& GetFieldValue() const{ return m_fieldValue; }
+    inline const Aws::String& GetFieldValue() const { return m_fieldValue; }
     inline bool FieldValueHasBeenSet() const { return m_fieldValueHasBeenSet; }
-    inline void SetFieldValue(const Aws::String& value) { m_fieldValueHasBeenSet = true; m_fieldValue = value; }
-    inline void SetFieldValue(Aws::String&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::move(value); }
-    inline void SetFieldValue(const char* value) { m_fieldValueHasBeenSet = true; m_fieldValue.assign(value); }
-    inline CustomColor& WithFieldValue(const Aws::String& value) { SetFieldValue(value); return *this;}
-    inline CustomColor& WithFieldValue(Aws::String&& value) { SetFieldValue(std::move(value)); return *this;}
-    inline CustomColor& WithFieldValue(const char* value) { SetFieldValue(value); return *this;}
+    template<typename FieldValueT = Aws::String>
+    void SetFieldValue(FieldValueT&& value) { m_fieldValueHasBeenSet = true; m_fieldValue = std::forward<FieldValueT>(value); }
+    template<typename FieldValueT = Aws::String>
+    CustomColor& WithFieldValue(FieldValueT&& value) { SetFieldValue(std::forward<FieldValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The color that is applied to the data value.</p>
      */
-    inline const Aws::String& GetColor() const{ return m_color; }
+    inline const Aws::String& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-    inline CustomColor& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-    inline CustomColor& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-    inline CustomColor& WithColor(const char* value) { SetColor(value); return *this;}
+    template<typename ColorT = Aws::String>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::String>
+    CustomColor& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of a special data value.</p>
      */
-    inline const SpecialValue& GetSpecialValue() const{ return m_specialValue; }
+    inline SpecialValue GetSpecialValue() const { return m_specialValue; }
     inline bool SpecialValueHasBeenSet() const { return m_specialValueHasBeenSet; }
-    inline void SetSpecialValue(const SpecialValue& value) { m_specialValueHasBeenSet = true; m_specialValue = value; }
-    inline void SetSpecialValue(SpecialValue&& value) { m_specialValueHasBeenSet = true; m_specialValue = std::move(value); }
-    inline CustomColor& WithSpecialValue(const SpecialValue& value) { SetSpecialValue(value); return *this;}
-    inline CustomColor& WithSpecialValue(SpecialValue&& value) { SetSpecialValue(std::move(value)); return *this;}
+    inline void SetSpecialValue(SpecialValue value) { m_specialValueHasBeenSet = true; m_specialValue = value; }
+    inline CustomColor& WithSpecialValue(SpecialValue value) { SetSpecialValue(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_color;
     bool m_colorHasBeenSet = false;
 
-    SpecialValue m_specialValue;
+    SpecialValue m_specialValue{SpecialValue::NOT_SET};
     bool m_specialValueHasBeenSet = false;
   };
 

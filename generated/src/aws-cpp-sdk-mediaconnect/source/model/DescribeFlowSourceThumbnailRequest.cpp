@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFlowSourceThumbnailRequest::DescribeFlowSourceThumbnailRequest() : 
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFlowSourceThumbnailRequest::SerializePayload() const
 {
   return {};

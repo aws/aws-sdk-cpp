@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-DetectedLanguageLowConfidenceException::DetectedLanguageLowConfidenceException() : 
-    m_messageHasBeenSet(false),
-    m_detectedLanguageCodeHasBeenSet(false)
-{
-}
-
 DetectedLanguageLowConfidenceException::DetectedLanguageLowConfidenceException(JsonView jsonValue)
-  : DetectedLanguageLowConfidenceException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DetectedLanguageLowConfidenceException& DetectedLanguageLowConfidenceException::
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectedLanguageCode"))
   {
     m_detectedLanguageCode = jsonValue.GetString("DetectedLanguageCode");
-
     m_detectedLanguageCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

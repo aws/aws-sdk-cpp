@@ -18,18 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-NFSFileShareDefaults::NFSFileShareDefaults() : 
-    m_fileModeHasBeenSet(false),
-    m_directoryModeHasBeenSet(false),
-    m_groupId(0),
-    m_groupIdHasBeenSet(false),
-    m_ownerId(0),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 NFSFileShareDefaults::NFSFileShareDefaults(JsonView jsonValue)
-  : NFSFileShareDefaults()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ NFSFileShareDefaults& NFSFileShareDefaults::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileMode"))
   {
     m_fileMode = jsonValue.GetString("FileMode");
-
     m_fileModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryMode"))
   {
     m_directoryMode = jsonValue.GetString("DirectoryMode");
-
     m_directoryModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetInt64("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetInt64("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   return *this;
 }
 

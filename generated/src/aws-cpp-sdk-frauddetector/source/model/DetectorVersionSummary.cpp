@@ -18,17 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-DetectorVersionSummary::DetectorVersionSummary() : 
-    m_detectorVersionIdHasBeenSet(false),
-    m_status(DetectorVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 DetectorVersionSummary::DetectorVersionSummary(JsonView jsonValue)
-  : DetectorVersionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DetectorVersionSummary& DetectorVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detectorVersionId"))
   {
     m_detectorVersionId = jsonValue.GetString("detectorVersionId");
-
     m_detectorVersionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DetectorVersionStatusMapper::GetDetectorVersionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

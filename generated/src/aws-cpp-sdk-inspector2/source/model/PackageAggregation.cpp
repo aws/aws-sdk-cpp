@@ -18,17 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-PackageAggregation::PackageAggregation() : 
-    m_packageNamesHasBeenSet(false),
-    m_sortBy(PackageSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 PackageAggregation::PackageAggregation(JsonView jsonValue)
-  : PackageAggregation()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ PackageAggregation& PackageAggregation::operator =(JsonView jsonValue)
     }
     m_packageNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = PackageSortByMapper::GetPackageSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

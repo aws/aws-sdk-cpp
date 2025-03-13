@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputDeviceSettings::InputDeviceSettings() : 
-    m_idHasBeenSet(false)
-{
-}
-
 InputDeviceSettings::InputDeviceSettings(JsonView jsonValue)
-  : InputDeviceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputDeviceSettings& InputDeviceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

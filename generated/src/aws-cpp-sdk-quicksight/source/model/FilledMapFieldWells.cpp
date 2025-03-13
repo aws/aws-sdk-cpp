@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FilledMapFieldWells::FilledMapFieldWells() : 
-    m_filledMapAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 FilledMapFieldWells::FilledMapFieldWells(JsonView jsonValue)
-  : FilledMapFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FilledMapFieldWells& FilledMapFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilledMapAggregatedFieldWells"))
   {
     m_filledMapAggregatedFieldWells = jsonValue.GetObject("FilledMapAggregatedFieldWells");
-
     m_filledMapAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

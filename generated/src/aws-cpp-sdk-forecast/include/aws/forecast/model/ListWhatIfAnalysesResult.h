@@ -29,7 +29,7 @@ namespace Model
   class ListWhatIfAnalysesResult
   {
   public:
-    AWS_FORECASTSERVICE_API ListWhatIfAnalysesResult();
+    AWS_FORECASTSERVICE_API ListWhatIfAnalysesResult() = default;
     AWS_FORECASTSERVICE_API ListWhatIfAnalysesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API ListWhatIfAnalysesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>WhatIfAnalysisSummary</code> objects that describe the
      * matched analyses.</p>
      */
-    inline const Aws::Vector<WhatIfAnalysisSummary>& GetWhatIfAnalyses() const{ return m_whatIfAnalyses; }
-    inline void SetWhatIfAnalyses(const Aws::Vector<WhatIfAnalysisSummary>& value) { m_whatIfAnalyses = value; }
-    inline void SetWhatIfAnalyses(Aws::Vector<WhatIfAnalysisSummary>&& value) { m_whatIfAnalyses = std::move(value); }
-    inline ListWhatIfAnalysesResult& WithWhatIfAnalyses(const Aws::Vector<WhatIfAnalysisSummary>& value) { SetWhatIfAnalyses(value); return *this;}
-    inline ListWhatIfAnalysesResult& WithWhatIfAnalyses(Aws::Vector<WhatIfAnalysisSummary>&& value) { SetWhatIfAnalyses(std::move(value)); return *this;}
-    inline ListWhatIfAnalysesResult& AddWhatIfAnalyses(const WhatIfAnalysisSummary& value) { m_whatIfAnalyses.push_back(value); return *this; }
-    inline ListWhatIfAnalysesResult& AddWhatIfAnalyses(WhatIfAnalysisSummary&& value) { m_whatIfAnalyses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WhatIfAnalysisSummary>& GetWhatIfAnalyses() const { return m_whatIfAnalyses; }
+    template<typename WhatIfAnalysesT = Aws::Vector<WhatIfAnalysisSummary>>
+    void SetWhatIfAnalyses(WhatIfAnalysesT&& value) { m_whatIfAnalysesHasBeenSet = true; m_whatIfAnalyses = std::forward<WhatIfAnalysesT>(value); }
+    template<typename WhatIfAnalysesT = Aws::Vector<WhatIfAnalysisSummary>>
+    ListWhatIfAnalysesResult& WithWhatIfAnalyses(WhatIfAnalysesT&& value) { SetWhatIfAnalyses(std::forward<WhatIfAnalysesT>(value)); return *this;}
+    template<typename WhatIfAnalysesT = WhatIfAnalysisSummary>
+    ListWhatIfAnalysesResult& AddWhatIfAnalyses(WhatIfAnalysesT&& value) { m_whatIfAnalysesHasBeenSet = true; m_whatIfAnalyses.emplace_back(std::forward<WhatIfAnalysesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, Forecast returns this token. To retrieve the
      * next set of results, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWhatIfAnalysesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWhatIfAnalysesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWhatIfAnalysesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWhatIfAnalysesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWhatIfAnalysesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWhatIfAnalysesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWhatIfAnalysesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWhatIfAnalysesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<WhatIfAnalysisSummary> m_whatIfAnalyses;
+    bool m_whatIfAnalysesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-S3DestinationConfiguration::S3DestinationConfiguration() : 
-    m_storageConfigurationArnHasBeenSet(false),
-    m_encoderConfigurationArnsHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false),
-    m_thumbnailConfigurationsHasBeenSet(false)
-{
-}
-
 S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
-  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("storageConfigurationArn"))
   {
     m_storageConfigurationArn = jsonValue.GetString("storageConfigurationArn");
-
     m_storageConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encoderConfigurationArns"))
   {
     Aws::Utils::Array<JsonView> encoderConfigurationArnsJsonList = jsonValue.GetArray("encoderConfigurationArns");
@@ -50,14 +39,11 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
     }
     m_encoderConfigurationArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingConfiguration"))
   {
     m_recordingConfiguration = jsonValue.GetObject("recordingConfiguration");
-
     m_recordingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailConfigurations"))
   {
     Aws::Utils::Array<JsonView> thumbnailConfigurationsJsonList = jsonValue.GetArray("thumbnailConfigurations");
@@ -67,7 +53,6 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
     }
     m_thumbnailConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,21 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDatasetEntriesRequest::ListDatasetEntriesRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false),
-    m_labeled(false),
-    m_labeledHasBeenSet(false),
-    m_anomalyClassHasBeenSet(false),
-    m_beforeCreationDateHasBeenSet(false),
-    m_afterCreationDateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sourceRefContainsHasBeenSet(false)
-{
-}
-
 Aws::String ListDatasetEntriesRequest::SerializePayload() const
 {
   return {};

@@ -12,11 +12,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSubjectRequest::GetSubjectRequest() : 
-    m_subjectIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSubjectRequest::SerializePayload() const
 {
   return {};

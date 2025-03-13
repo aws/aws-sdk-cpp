@@ -27,7 +27,7 @@ namespace Model
   class GetPrimaryEmailResult
   {
   public:
-    AWS_ACCOUNT_API GetPrimaryEmailResult();
+    AWS_ACCOUNT_API GetPrimaryEmailResult() = default;
     AWS_ACCOUNT_API GetPrimaryEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCOUNT_API GetPrimaryEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>Retrieves the primary email address associated with the specified
      * account.</p>
      */
-    inline const Aws::String& GetPrimaryEmail() const{ return m_primaryEmail; }
-    inline void SetPrimaryEmail(const Aws::String& value) { m_primaryEmail = value; }
-    inline void SetPrimaryEmail(Aws::String&& value) { m_primaryEmail = std::move(value); }
-    inline void SetPrimaryEmail(const char* value) { m_primaryEmail.assign(value); }
-    inline GetPrimaryEmailResult& WithPrimaryEmail(const Aws::String& value) { SetPrimaryEmail(value); return *this;}
-    inline GetPrimaryEmailResult& WithPrimaryEmail(Aws::String&& value) { SetPrimaryEmail(std::move(value)); return *this;}
-    inline GetPrimaryEmailResult& WithPrimaryEmail(const char* value) { SetPrimaryEmail(value); return *this;}
+    inline const Aws::String& GetPrimaryEmail() const { return m_primaryEmail; }
+    template<typename PrimaryEmailT = Aws::String>
+    void SetPrimaryEmail(PrimaryEmailT&& value) { m_primaryEmailHasBeenSet = true; m_primaryEmail = std::forward<PrimaryEmailT>(value); }
+    template<typename PrimaryEmailT = Aws::String>
+    GetPrimaryEmailResult& WithPrimaryEmail(PrimaryEmailT&& value) { SetPrimaryEmail(std::forward<PrimaryEmailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPrimaryEmailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPrimaryEmailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPrimaryEmailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPrimaryEmailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_primaryEmail;
+    bool m_primaryEmailHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

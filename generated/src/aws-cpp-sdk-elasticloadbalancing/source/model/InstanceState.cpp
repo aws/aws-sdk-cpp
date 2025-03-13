@@ -20,16 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-InstanceState::InstanceState() : 
-    m_instanceIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_reasonCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 InstanceState::InstanceState(const XmlNode& xmlNode)
-  : InstanceState()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ InstanceState& InstanceState::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode reasonCodeNode = resultNode.FirstChild("ReasonCode");
     if(!reasonCodeNode.IsNull())
     {
       m_reasonCode = Aws::Utils::Xml::DecodeEscapedXmlText(reasonCodeNode.GetText());
       m_reasonCodeHasBeenSet = true;
+       m_reasonCodeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

@@ -18,18 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-AssertionAttributes::AssertionAttributes() : 
-    m_emailHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_loginHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_orgHasBeenSet(false),
-    m_roleHasBeenSet(false)
-{
-}
-
 AssertionAttributes::AssertionAttributes(JsonView jsonValue)
-  : AssertionAttributes()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AssertionAttributes& AssertionAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groups"))
   {
     m_groups = jsonValue.GetString("groups");
-
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("login"))
   {
     m_login = jsonValue.GetString("login");
-
     m_loginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("org"))
   {
     m_org = jsonValue.GetString("org");
-
     m_orgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = jsonValue.GetString("role");
-
     m_roleHasBeenSet = true;
   }
-
   return *this;
 }
 

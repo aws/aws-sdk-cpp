@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayAttachmentBgpConfiguration::TransitGatewayAttachmentBgpConfiguration() : 
-    m_transitGatewayAsn(0),
-    m_transitGatewayAsnHasBeenSet(false),
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false),
-    m_transitGatewayAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_bgpStatus(BgpStatus::NOT_SET),
-    m_bgpStatusHasBeenSet(false)
-{
-}
-
 TransitGatewayAttachmentBgpConfiguration::TransitGatewayAttachmentBgpConfiguration(const XmlNode& xmlNode)
-  : TransitGatewayAttachmentBgpConfiguration()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ TransitGatewayAttachmentBgpConfiguration& TransitGatewayAttachmentBgpConfigurati
     {
       m_transitGatewayAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAsnNode.GetText()).c_str()).c_str());
       m_transitGatewayAsnHasBeenSet = true;
+       m_transitGatewayAsnHasBeenSet = true;
     }
     XmlNode peerAsnNode = resultNode.FirstChild("peerAsn");
     if(!peerAsnNode.IsNull())
     {
       m_peerAsn = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerAsnNode.GetText()).c_str()).c_str());
       m_peerAsnHasBeenSet = true;
+       m_peerAsnHasBeenSet = true;
     }
     XmlNode transitGatewayAddressNode = resultNode.FirstChild("transitGatewayAddress");
     if(!transitGatewayAddressNode.IsNull())
     {
       m_transitGatewayAddress = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAddressNode.GetText());
       m_transitGatewayAddressHasBeenSet = true;
+       m_transitGatewayAddressHasBeenSet = true;
     }
     XmlNode peerAddressNode = resultNode.FirstChild("peerAddress");
     if(!peerAddressNode.IsNull())
     {
       m_peerAddress = Aws::Utils::Xml::DecodeEscapedXmlText(peerAddressNode.GetText());
       m_peerAddressHasBeenSet = true;
+       m_peerAddressHasBeenSet = true;
     }
     XmlNode bgpStatusNode = resultNode.FirstChild("bgpStatus");
     if(!bgpStatusNode.IsNull())
     {
-      m_bgpStatus = BgpStatusMapper::GetBgpStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bgpStatusNode.GetText()).c_str()).c_str());
+      m_bgpStatus = BgpStatusMapper::GetBgpStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bgpStatusNode.GetText()).c_str()));
       m_bgpStatusHasBeenSet = true;
+       m_bgpStatusHasBeenSet = true;
     }
   }
 

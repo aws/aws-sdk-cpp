@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-StopInstancesRequest::StopInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_hibernate(false),
-    m_hibernateHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String StopInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

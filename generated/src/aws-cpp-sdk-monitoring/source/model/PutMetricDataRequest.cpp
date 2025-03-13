@@ -10,15 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutMetricDataRequest::PutMetricDataRequest() : 
-    m_namespaceHasBeenSet(false),
-    m_metricDataHasBeenSet(false),
-    m_entityMetricDataHasBeenSet(false),
-    m_strictEntityValidation(false),
-    m_strictEntityValidationHasBeenSet(false)
-{
-}
-
 Aws::String PutMetricDataRequest::SerializePayload() const
 {
   Aws::StringStream ss;

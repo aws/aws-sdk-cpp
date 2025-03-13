@@ -33,7 +33,7 @@ namespace Model
   class FolderMember
   {
   public:
-    AWS_QUICKSIGHT_API FolderMember();
+    AWS_QUICKSIGHT_API FolderMember() = default;
     AWS_QUICKSIGHT_API FolderMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FolderMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The ID of an asset in the folder.</p>
      */
-    inline const Aws::String& GetMemberId() const{ return m_memberId; }
+    inline const Aws::String& GetMemberId() const { return m_memberId; }
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
-    inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
-    inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
-    inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
-    inline FolderMember& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
-    inline FolderMember& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
-    inline FolderMember& WithMemberId(const char* value) { SetMemberId(value); return *this;}
+    template<typename MemberIdT = Aws::String>
+    void SetMemberId(MemberIdT&& value) { m_memberIdHasBeenSet = true; m_memberId = std::forward<MemberIdT>(value); }
+    template<typename MemberIdT = Aws::String>
+    FolderMember& WithMemberId(MemberIdT&& value) { SetMemberId(std::forward<MemberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of asset that it is.</p>
      */
-    inline const MemberType& GetMemberType() const{ return m_memberType; }
+    inline MemberType GetMemberType() const { return m_memberType; }
     inline bool MemberTypeHasBeenSet() const { return m_memberTypeHasBeenSet; }
-    inline void SetMemberType(const MemberType& value) { m_memberTypeHasBeenSet = true; m_memberType = value; }
-    inline void SetMemberType(MemberType&& value) { m_memberTypeHasBeenSet = true; m_memberType = std::move(value); }
-    inline FolderMember& WithMemberType(const MemberType& value) { SetMemberType(value); return *this;}
-    inline FolderMember& WithMemberType(MemberType&& value) { SetMemberType(std::move(value)); return *this;}
+    inline void SetMemberType(MemberType value) { m_memberTypeHasBeenSet = true; m_memberType = value; }
+    inline FolderMember& WithMemberType(MemberType value) { SetMemberType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_memberId;
     bool m_memberIdHasBeenSet = false;
 
-    MemberType m_memberType;
+    MemberType m_memberType{MemberType::NOT_SET};
     bool m_memberTypeHasBeenSet = false;
   };
 

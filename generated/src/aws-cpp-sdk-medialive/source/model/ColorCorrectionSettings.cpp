@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ColorCorrectionSettings::ColorCorrectionSettings() : 
-    m_globalColorCorrectionsHasBeenSet(false)
-{
-}
-
 ColorCorrectionSettings::ColorCorrectionSettings(JsonView jsonValue)
-  : ColorCorrectionSettings()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ColorCorrectionSettings& ColorCorrectionSettings::operator =(JsonView jsonValue)
     }
     m_globalColorCorrectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

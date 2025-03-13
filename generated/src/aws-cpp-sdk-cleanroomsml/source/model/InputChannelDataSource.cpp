@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InputChannelDataSource::InputChannelDataSource() : 
-    m_protectedQueryInputParametersHasBeenSet(false)
-{
-}
-
 InputChannelDataSource::InputChannelDataSource(JsonView jsonValue)
-  : InputChannelDataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputChannelDataSource& InputChannelDataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("protectedQueryInputParameters"))
   {
     m_protectedQueryInputParameters = jsonValue.GetObject("protectedQueryInputParameters");
-
     m_protectedQueryInputParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

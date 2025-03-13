@@ -35,7 +35,7 @@ namespace Model
   class UpgradePolicyResponse
   {
   public:
-    AWS_EKS_API UpgradePolicyResponse();
+    AWS_EKS_API UpgradePolicyResponse() = default;
     AWS_EKS_API UpgradePolicyResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API UpgradePolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
      * more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a> </p>
      */
-    inline const SupportType& GetSupportType() const{ return m_supportType; }
+    inline SupportType GetSupportType() const { return m_supportType; }
     inline bool SupportTypeHasBeenSet() const { return m_supportTypeHasBeenSet; }
-    inline void SetSupportType(const SupportType& value) { m_supportTypeHasBeenSet = true; m_supportType = value; }
-    inline void SetSupportType(SupportType&& value) { m_supportTypeHasBeenSet = true; m_supportType = std::move(value); }
-    inline UpgradePolicyResponse& WithSupportType(const SupportType& value) { SetSupportType(value); return *this;}
-    inline UpgradePolicyResponse& WithSupportType(SupportType&& value) { SetSupportType(std::move(value)); return *this;}
+    inline void SetSupportType(SupportType value) { m_supportTypeHasBeenSet = true; m_supportType = value; }
+    inline UpgradePolicyResponse& WithSupportType(SupportType value) { SetSupportType(value); return *this;}
     ///@}
   private:
 
-    SupportType m_supportType;
+    SupportType m_supportType{SupportType::NOT_SET};
     bool m_supportTypeHasBeenSet = false;
   };
 

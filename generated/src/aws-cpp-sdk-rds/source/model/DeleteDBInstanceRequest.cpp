@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteDBInstanceRequest::DeleteDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_skipFinalSnapshot(false),
-    m_skipFinalSnapshotHasBeenSet(false),
-    m_finalDBSnapshotIdentifierHasBeenSet(false),
-    m_deleteAutomatedBackups(false),
-    m_deleteAutomatedBackupsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

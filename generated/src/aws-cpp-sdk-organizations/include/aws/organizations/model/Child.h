@@ -33,7 +33,7 @@ namespace Model
   class Child
   {
   public:
-    AWS_ORGANIZATIONS_API Child();
+    AWS_ORGANIZATIONS_API Child() = default;
     AWS_ORGANIZATIONS_API Child(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Child& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,33 +50,29 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
      * digits.</p> </li> </ul>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Child& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Child& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Child& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Child& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of this child entity.</p>
      */
-    inline const ChildType& GetType() const{ return m_type; }
+    inline ChildType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChildType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChildType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Child& WithType(const ChildType& value) { SetType(value); return *this;}
-    inline Child& WithType(ChildType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChildType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Child& WithType(ChildType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ChildType m_type;
+    ChildType m_type{ChildType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

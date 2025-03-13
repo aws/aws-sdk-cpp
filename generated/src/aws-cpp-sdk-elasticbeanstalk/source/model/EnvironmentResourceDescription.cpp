@@ -20,20 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentResourceDescription::EnvironmentResourceDescription() : 
-    m_environmentNameHasBeenSet(false),
-    m_autoScalingGroupsHasBeenSet(false),
-    m_instancesHasBeenSet(false),
-    m_launchConfigurationsHasBeenSet(false),
-    m_launchTemplatesHasBeenSet(false),
-    m_loadBalancersHasBeenSet(false),
-    m_triggersHasBeenSet(false),
-    m_queuesHasBeenSet(false)
-{
-}
-
 EnvironmentResourceDescription::EnvironmentResourceDescription(const XmlNode& xmlNode)
-  : EnvironmentResourceDescription()
 {
   *this = xmlNode;
 }
@@ -49,90 +36,98 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
     {
       m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
       m_environmentNameHasBeenSet = true;
+       m_environmentNameHasBeenSet = true;
     }
     XmlNode autoScalingGroupsNode = resultNode.FirstChild("AutoScalingGroups");
     if(!autoScalingGroupsNode.IsNull())
     {
       XmlNode autoScalingGroupsMember = autoScalingGroupsNode.FirstChild("member");
+      m_autoScalingGroupsHasBeenSet = !autoScalingGroupsMember.IsNull();
       while(!autoScalingGroupsMember.IsNull())
       {
         m_autoScalingGroups.push_back(autoScalingGroupsMember);
         autoScalingGroupsMember = autoScalingGroupsMember.NextNode("member");
       }
 
-      m_autoScalingGroupsHasBeenSet = true;
+       m_autoScalingGroupsHasBeenSet = true;
     }
     XmlNode instancesNode = resultNode.FirstChild("Instances");
     if(!instancesNode.IsNull())
     {
       XmlNode instancesMember = instancesNode.FirstChild("member");
+      m_instancesHasBeenSet = !instancesMember.IsNull();
       while(!instancesMember.IsNull())
       {
         m_instances.push_back(instancesMember);
         instancesMember = instancesMember.NextNode("member");
       }
 
-      m_instancesHasBeenSet = true;
+       m_instancesHasBeenSet = true;
     }
     XmlNode launchConfigurationsNode = resultNode.FirstChild("LaunchConfigurations");
     if(!launchConfigurationsNode.IsNull())
     {
       XmlNode launchConfigurationsMember = launchConfigurationsNode.FirstChild("member");
+      m_launchConfigurationsHasBeenSet = !launchConfigurationsMember.IsNull();
       while(!launchConfigurationsMember.IsNull())
       {
         m_launchConfigurations.push_back(launchConfigurationsMember);
         launchConfigurationsMember = launchConfigurationsMember.NextNode("member");
       }
 
-      m_launchConfigurationsHasBeenSet = true;
+       m_launchConfigurationsHasBeenSet = true;
     }
     XmlNode launchTemplatesNode = resultNode.FirstChild("LaunchTemplates");
     if(!launchTemplatesNode.IsNull())
     {
       XmlNode launchTemplatesMember = launchTemplatesNode.FirstChild("member");
+      m_launchTemplatesHasBeenSet = !launchTemplatesMember.IsNull();
       while(!launchTemplatesMember.IsNull())
       {
         m_launchTemplates.push_back(launchTemplatesMember);
         launchTemplatesMember = launchTemplatesMember.NextNode("member");
       }
 
-      m_launchTemplatesHasBeenSet = true;
+       m_launchTemplatesHasBeenSet = true;
     }
     XmlNode loadBalancersNode = resultNode.FirstChild("LoadBalancers");
     if(!loadBalancersNode.IsNull())
     {
       XmlNode loadBalancersMember = loadBalancersNode.FirstChild("member");
+      m_loadBalancersHasBeenSet = !loadBalancersMember.IsNull();
       while(!loadBalancersMember.IsNull())
       {
         m_loadBalancers.push_back(loadBalancersMember);
         loadBalancersMember = loadBalancersMember.NextNode("member");
       }
 
-      m_loadBalancersHasBeenSet = true;
+       m_loadBalancersHasBeenSet = true;
     }
     XmlNode triggersNode = resultNode.FirstChild("Triggers");
     if(!triggersNode.IsNull())
     {
       XmlNode triggersMember = triggersNode.FirstChild("member");
+      m_triggersHasBeenSet = !triggersMember.IsNull();
       while(!triggersMember.IsNull())
       {
         m_triggers.push_back(triggersMember);
         triggersMember = triggersMember.NextNode("member");
       }
 
-      m_triggersHasBeenSet = true;
+       m_triggersHasBeenSet = true;
     }
     XmlNode queuesNode = resultNode.FirstChild("Queues");
     if(!queuesNode.IsNull())
     {
       XmlNode queuesMember = queuesNode.FirstChild("member");
+      m_queuesHasBeenSet = !queuesMember.IsNull();
       while(!queuesMember.IsNull())
       {
         m_queues.push_back(queuesMember);
         queuesMember = queuesMember.NextNode("member");
       }
 
-      m_queuesHasBeenSet = true;
+       m_queuesHasBeenSet = true;
     }
   }
 

@@ -17,16 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-TestDNSAnswerRequest::TestDNSAnswerRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_recordNameHasBeenSet(false),
-    m_recordType(RRType::NOT_SET),
-    m_recordTypeHasBeenSet(false),
-    m_resolverIPHasBeenSet(false),
-    m_eDNS0ClientSubnetIPHasBeenSet(false),
-    m_eDNS0ClientSubnetMaskHasBeenSet(false)
-{
-}
 
 Aws::String TestDNSAnswerRequest::SerializePayload() const
 {

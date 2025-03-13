@@ -35,50 +35,49 @@ namespace Model
   class ListConnectInstanceIntegrationsResult
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API ListConnectInstanceIntegrationsResult();
+    AWS_CONNECTCAMPAIGNSV2_API ListConnectInstanceIntegrationsResult() = default;
     AWS_CONNECTCAMPAIGNSV2_API ListConnectInstanceIntegrationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCAMPAIGNSV2_API ListConnectInstanceIntegrationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListConnectInstanceIntegrationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConnectInstanceIntegrationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConnectInstanceIntegrationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConnectInstanceIntegrationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<IntegrationSummary>& GetIntegrationSummaryList() const{ return m_integrationSummaryList; }
-    inline void SetIntegrationSummaryList(const Aws::Vector<IntegrationSummary>& value) { m_integrationSummaryList = value; }
-    inline void SetIntegrationSummaryList(Aws::Vector<IntegrationSummary>&& value) { m_integrationSummaryList = std::move(value); }
-    inline ListConnectInstanceIntegrationsResult& WithIntegrationSummaryList(const Aws::Vector<IntegrationSummary>& value) { SetIntegrationSummaryList(value); return *this;}
-    inline ListConnectInstanceIntegrationsResult& WithIntegrationSummaryList(Aws::Vector<IntegrationSummary>&& value) { SetIntegrationSummaryList(std::move(value)); return *this;}
-    inline ListConnectInstanceIntegrationsResult& AddIntegrationSummaryList(const IntegrationSummary& value) { m_integrationSummaryList.push_back(value); return *this; }
-    inline ListConnectInstanceIntegrationsResult& AddIntegrationSummaryList(IntegrationSummary&& value) { m_integrationSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IntegrationSummary>& GetIntegrationSummaryList() const { return m_integrationSummaryList; }
+    template<typename IntegrationSummaryListT = Aws::Vector<IntegrationSummary>>
+    void SetIntegrationSummaryList(IntegrationSummaryListT&& value) { m_integrationSummaryListHasBeenSet = true; m_integrationSummaryList = std::forward<IntegrationSummaryListT>(value); }
+    template<typename IntegrationSummaryListT = Aws::Vector<IntegrationSummary>>
+    ListConnectInstanceIntegrationsResult& WithIntegrationSummaryList(IntegrationSummaryListT&& value) { SetIntegrationSummaryList(std::forward<IntegrationSummaryListT>(value)); return *this;}
+    template<typename IntegrationSummaryListT = IntegrationSummary>
+    ListConnectInstanceIntegrationsResult& AddIntegrationSummaryList(IntegrationSummaryListT&& value) { m_integrationSummaryListHasBeenSet = true; m_integrationSummaryList.emplace_back(std::forward<IntegrationSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConnectInstanceIntegrationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConnectInstanceIntegrationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConnectInstanceIntegrationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConnectInstanceIntegrationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<IntegrationSummary> m_integrationSummaryList;
+    bool m_integrationSummaryListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

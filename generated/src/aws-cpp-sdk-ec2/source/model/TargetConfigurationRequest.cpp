@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetConfigurationRequest::TargetConfigurationRequest() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
-{
-}
-
 TargetConfigurationRequest::TargetConfigurationRequest(const XmlNode& xmlNode)
-  : TargetConfigurationRequest()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ TargetConfigurationRequest& TargetConfigurationRequest::operator =(const XmlNode
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
+       m_instanceCountHasBeenSet = true;
     }
     XmlNode offeringIdNode = resultNode.FirstChild("OfferingId");
     if(!offeringIdNode.IsNull())
     {
       m_offeringId = Aws::Utils::Xml::DecodeEscapedXmlText(offeringIdNode.GetText());
       m_offeringIdHasBeenSet = true;
+       m_offeringIdHasBeenSet = true;
     }
   }
 

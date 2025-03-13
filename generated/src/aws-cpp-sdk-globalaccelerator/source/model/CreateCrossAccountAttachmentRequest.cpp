@@ -12,16 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCrossAccountAttachmentRequest::CreateCrossAccountAttachmentRequest() : 
-    m_nameHasBeenSet(false),
-    m_principalsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCrossAccountAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

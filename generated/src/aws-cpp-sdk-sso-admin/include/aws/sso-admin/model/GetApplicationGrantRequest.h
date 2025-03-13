@@ -22,7 +22,7 @@ namespace Model
   class GetApplicationGrantRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API GetApplicationGrantRequest();
+    AWS_SSOADMIN_API GetApplicationGrantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,33 +39,29 @@ namespace Model
     /**
      * <p>Specifies the ARN of the application that contains the grant.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline GetApplicationGrantRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline GetApplicationGrantRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline GetApplicationGrantRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    GetApplicationGrantRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the type of grant.</p>
      */
-    inline const GrantType& GetGrantType() const{ return m_grantType; }
+    inline GrantType GetGrantType() const { return m_grantType; }
     inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
-    inline void SetGrantType(const GrantType& value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
-    inline void SetGrantType(GrantType&& value) { m_grantTypeHasBeenSet = true; m_grantType = std::move(value); }
-    inline GetApplicationGrantRequest& WithGrantType(const GrantType& value) { SetGrantType(value); return *this;}
-    inline GetApplicationGrantRequest& WithGrantType(GrantType&& value) { SetGrantType(std::move(value)); return *this;}
+    inline void SetGrantType(GrantType value) { m_grantTypeHasBeenSet = true; m_grantType = value; }
+    inline GetApplicationGrantRequest& WithGrantType(GrantType value) { SetGrantType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    GrantType m_grantType;
+    GrantType m_grantType{GrantType::NOT_SET};
     bool m_grantTypeHasBeenSet = false;
   };
 

@@ -20,21 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-LifecycleRule::LifecycleRule() : 
-    m_expirationHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(ExpirationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_transitionsHasBeenSet(false),
-    m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_noncurrentVersionExpirationHasBeenSet(false),
-    m_abortIncompleteMultipartUploadHasBeenSet(false)
-{
-}
-
 LifecycleRule::LifecycleRule(const XmlNode& xmlNode)
-  : LifecycleRule()
 {
   *this = xmlNode;
 }
@@ -50,60 +36,68 @@ LifecycleRule& LifecycleRule::operator =(const XmlNode& xmlNode)
     {
       m_expiration = expirationNode;
       m_expirationHasBeenSet = true;
+       m_expirationHasBeenSet = true;
     }
     XmlNode iDNode = resultNode.FirstChild("ID");
     if(!iDNode.IsNull())
     {
       m_iD = Aws::Utils::Xml::DecodeEscapedXmlText(iDNode.GetText());
       m_iDHasBeenSet = true;
+       m_iDHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode transitionsNode = resultNode.FirstChild("Transition");
     if(!transitionsNode.IsNull())
     {
       XmlNode transitionMember = transitionsNode;
+      m_transitionsHasBeenSet = !transitionMember.IsNull();
       while(!transitionMember.IsNull())
       {
         m_transitions.push_back(transitionMember);
         transitionMember = transitionMember.NextNode("Transition");
       }
 
-      m_transitionsHasBeenSet = true;
+       m_transitionsHasBeenSet = true;
     }
     XmlNode noncurrentVersionTransitionsNode = resultNode.FirstChild("NoncurrentVersionTransition");
     if(!noncurrentVersionTransitionsNode.IsNull())
     {
       XmlNode noncurrentVersionTransitionMember = noncurrentVersionTransitionsNode;
+      m_noncurrentVersionTransitionsHasBeenSet = !noncurrentVersionTransitionMember.IsNull();
       while(!noncurrentVersionTransitionMember.IsNull())
       {
         m_noncurrentVersionTransitions.push_back(noncurrentVersionTransitionMember);
         noncurrentVersionTransitionMember = noncurrentVersionTransitionMember.NextNode("NoncurrentVersionTransition");
       }
 
-      m_noncurrentVersionTransitionsHasBeenSet = true;
+       m_noncurrentVersionTransitionsHasBeenSet = true;
     }
     XmlNode noncurrentVersionExpirationNode = resultNode.FirstChild("NoncurrentVersionExpiration");
     if(!noncurrentVersionExpirationNode.IsNull())
     {
       m_noncurrentVersionExpiration = noncurrentVersionExpirationNode;
       m_noncurrentVersionExpirationHasBeenSet = true;
+       m_noncurrentVersionExpirationHasBeenSet = true;
     }
     XmlNode abortIncompleteMultipartUploadNode = resultNode.FirstChild("AbortIncompleteMultipartUpload");
     if(!abortIncompleteMultipartUploadNode.IsNull())
     {
       m_abortIncompleteMultipartUpload = abortIncompleteMultipartUploadNode;
       m_abortIncompleteMultipartUploadHasBeenSet = true;
+       m_abortIncompleteMultipartUploadHasBeenSet = true;
     }
   }
 

@@ -10,24 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetSpotPlacementScoresRequest::GetSpotPlacementScoresRequest() : 
-    m_instanceTypesHasBeenSet(false),
-    m_targetCapacity(0),
-    m_targetCapacityHasBeenSet(false),
-    m_targetCapacityUnitType(TargetCapacityUnitType::NOT_SET),
-    m_targetCapacityUnitTypeHasBeenSet(false),
-    m_singleAvailabilityZone(false),
-    m_singleAvailabilityZoneHasBeenSet(false),
-    m_regionNamesHasBeenSet(false),
-    m_instanceRequirementsWithMetadataHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetSpotPlacementScoresRequest::SerializePayload() const
 {
   Aws::StringStream ss;

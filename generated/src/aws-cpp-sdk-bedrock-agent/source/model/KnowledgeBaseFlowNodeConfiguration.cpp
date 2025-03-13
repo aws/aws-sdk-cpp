@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-KnowledgeBaseFlowNodeConfiguration::KnowledgeBaseFlowNodeConfiguration() : 
-    m_guardrailConfigurationHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_modelIdHasBeenSet(false)
-{
-}
-
 KnowledgeBaseFlowNodeConfiguration::KnowledgeBaseFlowNodeConfiguration(JsonView jsonValue)
-  : KnowledgeBaseFlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KnowledgeBaseFlowNodeConfiguration& KnowledgeBaseFlowNodeConfiguration::operator
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-
     m_guardrailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   return *this;
 }
 

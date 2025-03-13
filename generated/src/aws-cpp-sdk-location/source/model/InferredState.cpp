@@ -18,18 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-InferredState::InferredState() : 
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_deviationDistance(0.0),
-    m_deviationDistanceHasBeenSet(false),
-    m_proxyDetected(false),
-    m_proxyDetectedHasBeenSet(false)
-{
-}
-
 InferredState::InferredState(JsonView jsonValue)
-  : InferredState()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ InferredState& InferredState::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accuracy"))
   {
     m_accuracy = jsonValue.GetObject("Accuracy");
-
     m_accuracyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviationDistance"))
   {
     m_deviationDistance = jsonValue.GetDouble("DeviationDistance");
-
     m_deviationDistanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProxyDetected"))
   {
     m_proxyDetected = jsonValue.GetBool("ProxyDetected");
-
     m_proxyDetectedHasBeenSet = true;
   }
-
   return *this;
 }
 

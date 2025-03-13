@@ -26,7 +26,7 @@ namespace Model
   class GetFunction2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API GetFunction2020_05_31Request();
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the function whose code you are getting.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetFunction2020_05_31Request& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetFunction2020_05_31Request& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetFunction2020_05_31Request& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetFunction2020_05_31Request& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
-    inline const FunctionStage& GetStage() const{ return m_stage; }
+    inline FunctionStage GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline GetFunction2020_05_31Request& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
-    inline GetFunction2020_05_31Request& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}
+    inline void SetStage(FunctionStage value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline GetFunction2020_05_31Request& WithStage(FunctionStage value) { SetStage(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    FunctionStage m_stage;
+    FunctionStage m_stage{FunctionStage::NOT_SET};
     bool m_stageHasBeenSet = false;
   };
 

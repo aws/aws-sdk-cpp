@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetGeoLocationRequest::GetGeoLocationRequest() : 
-    m_continentCodeHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_subdivisionCodeHasBeenSet(false)
-{
-}
 
 Aws::String GetGeoLocationRequest::SerializePayload() const
 {

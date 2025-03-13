@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-BaselineEbsBandwidthMbpsRequest::BaselineEbsBandwidthMbpsRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 BaselineEbsBandwidthMbpsRequest::BaselineEbsBandwidthMbpsRequest(const XmlNode& xmlNode)
-  : BaselineEbsBandwidthMbpsRequest()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ BaselineEbsBandwidthMbpsRequest& BaselineEbsBandwidthMbpsRequest::operator =(con
     {
       m_min = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
+       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
       m_max = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

@@ -24,7 +24,7 @@ namespace Model
   class UpdateWorkforceRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateWorkforceRequest();
+    AWS_SAGEMAKER_API UpdateWorkforceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
      * operation.</p>
      */
-    inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
+    inline const Aws::String& GetWorkforceName() const { return m_workforceName; }
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
-    inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
-    inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
-    inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
-    inline UpdateWorkforceRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
-    inline UpdateWorkforceRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
-    inline UpdateWorkforceRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
+    template<typename WorkforceNameT = Aws::String>
+    void SetWorkforceName(WorkforceNameT&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::forward<WorkforceNameT>(value); }
+    template<typename WorkforceNameT = Aws::String>
+    UpdateWorkforceRequest& WithWorkforceName(WorkforceNameT&& value) { SetWorkforceName(std::forward<WorkforceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: Ten
      * CIDR values</p>
      */
-    inline const SourceIpConfig& GetSourceIpConfig() const{ return m_sourceIpConfig; }
+    inline const SourceIpConfig& GetSourceIpConfig() const { return m_sourceIpConfig; }
     inline bool SourceIpConfigHasBeenSet() const { return m_sourceIpConfigHasBeenSet; }
-    inline void SetSourceIpConfig(const SourceIpConfig& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = value; }
-    inline void SetSourceIpConfig(SourceIpConfig&& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = std::move(value); }
-    inline UpdateWorkforceRequest& WithSourceIpConfig(const SourceIpConfig& value) { SetSourceIpConfig(value); return *this;}
-    inline UpdateWorkforceRequest& WithSourceIpConfig(SourceIpConfig&& value) { SetSourceIpConfig(std::move(value)); return *this;}
+    template<typename SourceIpConfigT = SourceIpConfig>
+    void SetSourceIpConfig(SourceIpConfigT&& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = std::forward<SourceIpConfigT>(value); }
+    template<typename SourceIpConfigT = SourceIpConfig>
+    UpdateWorkforceRequest& WithSourceIpConfig(SourceIpConfigT&& value) { SetSourceIpConfig(std::forward<SourceIpConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,24 +72,24 @@ namespace Model
      * <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration
      * for a workforce made using your own IdP.</p>
      */
-    inline const OidcConfig& GetOidcConfig() const{ return m_oidcConfig; }
+    inline const OidcConfig& GetOidcConfig() const { return m_oidcConfig; }
     inline bool OidcConfigHasBeenSet() const { return m_oidcConfigHasBeenSet; }
-    inline void SetOidcConfig(const OidcConfig& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = value; }
-    inline void SetOidcConfig(OidcConfig&& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = std::move(value); }
-    inline UpdateWorkforceRequest& WithOidcConfig(const OidcConfig& value) { SetOidcConfig(value); return *this;}
-    inline UpdateWorkforceRequest& WithOidcConfig(OidcConfig&& value) { SetOidcConfig(std::move(value)); return *this;}
+    template<typename OidcConfigT = OidcConfig>
+    void SetOidcConfig(OidcConfigT&& value) { m_oidcConfigHasBeenSet = true; m_oidcConfig = std::forward<OidcConfigT>(value); }
+    template<typename OidcConfigT = OidcConfig>
+    UpdateWorkforceRequest& WithOidcConfig(OidcConfigT&& value) { SetOidcConfig(std::forward<OidcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Use this parameter to update your VPC configuration for a workforce.</p>
      */
-    inline const WorkforceVpcConfigRequest& GetWorkforceVpcConfig() const{ return m_workforceVpcConfig; }
+    inline const WorkforceVpcConfigRequest& GetWorkforceVpcConfig() const { return m_workforceVpcConfig; }
     inline bool WorkforceVpcConfigHasBeenSet() const { return m_workforceVpcConfigHasBeenSet; }
-    inline void SetWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = value; }
-    inline void SetWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = std::move(value); }
-    inline UpdateWorkforceRequest& WithWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { SetWorkforceVpcConfig(value); return *this;}
-    inline UpdateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { SetWorkforceVpcConfig(std::move(value)); return *this;}
+    template<typename WorkforceVpcConfigT = WorkforceVpcConfigRequest>
+    void SetWorkforceVpcConfig(WorkforceVpcConfigT&& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = std::forward<WorkforceVpcConfigT>(value); }
+    template<typename WorkforceVpcConfigT = WorkforceVpcConfigRequest>
+    UpdateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigT&& value) { SetWorkforceVpcConfig(std::forward<WorkforceVpcConfigT>(value)); return *this;}
     ///@}
   private:
 

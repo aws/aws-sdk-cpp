@@ -18,18 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-DestinationSummary::DestinationSummary() : 
-    m_descriptionHasBeenSet(false),
-    m_deliveryDestinationArnHasBeenSet(false),
-    m_deliveryDestinationType(DeliveryDestinationType::NOT_SET),
-    m_deliveryDestinationTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 DestinationSummary::DestinationSummary(JsonView jsonValue)
-  : DestinationSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DestinationSummary& DestinationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryDestinationArn"))
   {
     m_deliveryDestinationArn = jsonValue.GetString("DeliveryDestinationArn");
-
     m_deliveryDestinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryDestinationType"))
   {
     m_deliveryDestinationType = DeliveryDestinationTypeMapper::GetDeliveryDestinationTypeForName(jsonValue.GetString("DeliveryDestinationType"));
-
     m_deliveryDestinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

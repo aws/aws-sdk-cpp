@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-DeletionTaskFailureReasonType::DeletionTaskFailureReasonType() : 
-    m_reasonHasBeenSet(false),
-    m_roleUsageListHasBeenSet(false)
-{
-}
-
 DeletionTaskFailureReasonType::DeletionTaskFailureReasonType(const XmlNode& xmlNode)
-  : DeletionTaskFailureReasonType()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ DeletionTaskFailureReasonType& DeletionTaskFailureReasonType::operator =(const X
     {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
+       m_reasonHasBeenSet = true;
     }
     XmlNode roleUsageListNode = resultNode.FirstChild("RoleUsageList");
     if(!roleUsageListNode.IsNull())
     {
       XmlNode roleUsageListMember = roleUsageListNode.FirstChild("member");
+      m_roleUsageListHasBeenSet = !roleUsageListMember.IsNull();
       while(!roleUsageListMember.IsNull())
       {
         m_roleUsageList.push_back(roleUsageListMember);
         roleUsageListMember = roleUsageListMember.NextNode("member");
       }
 
-      m_roleUsageListHasBeenSet = true;
+       m_roleUsageListHasBeenSet = true;
     }
   }
 

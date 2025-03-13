@@ -21,7 +21,7 @@ namespace Model
   class CreatePresignedNotebookInstanceUrlRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlRequest();
+    AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>The name of the notebook instance.</p>
      */
-    inline const Aws::String& GetNotebookInstanceName() const{ return m_notebookInstanceName; }
+    inline const Aws::String& GetNotebookInstanceName() const { return m_notebookInstanceName; }
     inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
-    inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
-    inline void SetNotebookInstanceName(Aws::String&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::move(value); }
-    inline void SetNotebookInstanceName(const char* value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName.assign(value); }
-    inline CreatePresignedNotebookInstanceUrlRequest& WithNotebookInstanceName(const Aws::String& value) { SetNotebookInstanceName(value); return *this;}
-    inline CreatePresignedNotebookInstanceUrlRequest& WithNotebookInstanceName(Aws::String&& value) { SetNotebookInstanceName(std::move(value)); return *this;}
-    inline CreatePresignedNotebookInstanceUrlRequest& WithNotebookInstanceName(const char* value) { SetNotebookInstanceName(value); return *this;}
+    template<typename NotebookInstanceNameT = Aws::String>
+    void SetNotebookInstanceName(NotebookInstanceNameT&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::forward<NotebookInstanceNameT>(value); }
+    template<typename NotebookInstanceNameT = Aws::String>
+    CreatePresignedNotebookInstanceUrlRequest& WithNotebookInstanceName(NotebookInstanceNameT&& value) { SetNotebookInstanceName(std::forward<NotebookInstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration of the session, in seconds. The default is 12 hours.</p>
      */
-    inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
+    inline int GetSessionExpirationDurationInSeconds() const { return m_sessionExpirationDurationInSeconds; }
     inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
     inline void SetSessionExpirationDurationInSeconds(int value) { m_sessionExpirationDurationInSecondsHasBeenSet = true; m_sessionExpirationDurationInSeconds = value; }
     inline CreatePresignedNotebookInstanceUrlRequest& WithSessionExpirationDurationInSeconds(int value) { SetSessionExpirationDurationInSeconds(value); return *this;}
@@ -62,7 +60,7 @@ namespace Model
     Aws::String m_notebookInstanceName;
     bool m_notebookInstanceNameHasBeenSet = false;
 
-    int m_sessionExpirationDurationInSeconds;
+    int m_sessionExpirationDurationInSeconds{0};
     bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
   };
 

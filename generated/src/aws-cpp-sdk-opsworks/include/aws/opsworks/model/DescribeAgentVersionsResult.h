@@ -35,7 +35,7 @@ namespace Model
   class DescribeAgentVersionsResult
   {
   public:
-    AWS_OPSWORKS_API DescribeAgentVersionsResult();
+    AWS_OPSWORKS_API DescribeAgentVersionsResult() = default;
     AWS_OPSWORKS_API DescribeAgentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeAgentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,30 +46,30 @@ namespace Model
      * that this value is the complete version number, not the abbreviated number used
      * by the console.</p>
      */
-    inline const Aws::Vector<AgentVersion>& GetAgentVersions() const{ return m_agentVersions; }
-    inline void SetAgentVersions(const Aws::Vector<AgentVersion>& value) { m_agentVersions = value; }
-    inline void SetAgentVersions(Aws::Vector<AgentVersion>&& value) { m_agentVersions = std::move(value); }
-    inline DescribeAgentVersionsResult& WithAgentVersions(const Aws::Vector<AgentVersion>& value) { SetAgentVersions(value); return *this;}
-    inline DescribeAgentVersionsResult& WithAgentVersions(Aws::Vector<AgentVersion>&& value) { SetAgentVersions(std::move(value)); return *this;}
-    inline DescribeAgentVersionsResult& AddAgentVersions(const AgentVersion& value) { m_agentVersions.push_back(value); return *this; }
-    inline DescribeAgentVersionsResult& AddAgentVersions(AgentVersion&& value) { m_agentVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AgentVersion>& GetAgentVersions() const { return m_agentVersions; }
+    template<typename AgentVersionsT = Aws::Vector<AgentVersion>>
+    void SetAgentVersions(AgentVersionsT&& value) { m_agentVersionsHasBeenSet = true; m_agentVersions = std::forward<AgentVersionsT>(value); }
+    template<typename AgentVersionsT = Aws::Vector<AgentVersion>>
+    DescribeAgentVersionsResult& WithAgentVersions(AgentVersionsT&& value) { SetAgentVersions(std::forward<AgentVersionsT>(value)); return *this;}
+    template<typename AgentVersionsT = AgentVersion>
+    DescribeAgentVersionsResult& AddAgentVersions(AgentVersionsT&& value) { m_agentVersionsHasBeenSet = true; m_agentVersions.emplace_back(std::forward<AgentVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAgentVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAgentVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAgentVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAgentVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgentVersion> m_agentVersions;
+    bool m_agentVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

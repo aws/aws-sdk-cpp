@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEventBridgeRuleTemplateRequest::GetEventBridgeRuleTemplateRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetEventBridgeRuleTemplateRequest::SerializePayload() const
 {
   return {};

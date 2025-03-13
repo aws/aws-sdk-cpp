@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-MediaAnalysisOutputConfig::MediaAnalysisOutputConfig() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
-{
-}
-
 MediaAnalysisOutputConfig::MediaAnalysisOutputConfig(JsonView jsonValue)
-  : MediaAnalysisOutputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MediaAnalysisOutputConfig& MediaAnalysisOutputConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

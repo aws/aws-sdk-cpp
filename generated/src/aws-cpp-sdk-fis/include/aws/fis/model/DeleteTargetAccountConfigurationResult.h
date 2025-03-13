@@ -28,7 +28,7 @@ namespace Model
   class DeleteTargetAccountConfigurationResult
   {
   public:
-    AWS_FIS_API DeleteTargetAccountConfigurationResult();
+    AWS_FIS_API DeleteTargetAccountConfigurationResult() = default;
     AWS_FIS_API DeleteTargetAccountConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIS_API DeleteTargetAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the target account configuration.</p>
      */
-    inline const TargetAccountConfiguration& GetTargetAccountConfiguration() const{ return m_targetAccountConfiguration; }
-    inline void SetTargetAccountConfiguration(const TargetAccountConfiguration& value) { m_targetAccountConfiguration = value; }
-    inline void SetTargetAccountConfiguration(TargetAccountConfiguration&& value) { m_targetAccountConfiguration = std::move(value); }
-    inline DeleteTargetAccountConfigurationResult& WithTargetAccountConfiguration(const TargetAccountConfiguration& value) { SetTargetAccountConfiguration(value); return *this;}
-    inline DeleteTargetAccountConfigurationResult& WithTargetAccountConfiguration(TargetAccountConfiguration&& value) { SetTargetAccountConfiguration(std::move(value)); return *this;}
+    inline const TargetAccountConfiguration& GetTargetAccountConfiguration() const { return m_targetAccountConfiguration; }
+    template<typename TargetAccountConfigurationT = TargetAccountConfiguration>
+    void SetTargetAccountConfiguration(TargetAccountConfigurationT&& value) { m_targetAccountConfigurationHasBeenSet = true; m_targetAccountConfiguration = std::forward<TargetAccountConfigurationT>(value); }
+    template<typename TargetAccountConfigurationT = TargetAccountConfiguration>
+    DeleteTargetAccountConfigurationResult& WithTargetAccountConfiguration(TargetAccountConfigurationT&& value) { SetTargetAccountConfiguration(std::forward<TargetAccountConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteTargetAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteTargetAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteTargetAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteTargetAccountConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TargetAccountConfiguration m_targetAccountConfiguration;
+    bool m_targetAccountConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateManagedRuleSetVersionExpiryDateResult::UpdateManagedRuleSetVersionExpiryDateResult()
-{
-}
-
 UpdateManagedRuleSetVersionExpiryDateResult::UpdateManagedRuleSetVersionExpiryDateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateManagedRuleSetVersionExpiryDateResult& UpdateManagedRuleSetVersionExpiryDa
   if(jsonValue.ValueExists("ExpiringVersion"))
   {
     m_expiringVersion = jsonValue.GetString("ExpiringVersion");
-
+    m_expiringVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiryTimestamp"))
   {
     m_expiryTimestamp = jsonValue.GetDouble("ExpiryTimestamp");
-
+    m_expiryTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextLockToken"))
   {
     m_nextLockToken = jsonValue.GetString("NextLockToken");
-
+    m_nextLockTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

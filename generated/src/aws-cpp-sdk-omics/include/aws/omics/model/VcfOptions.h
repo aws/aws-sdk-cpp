@@ -29,7 +29,7 @@ namespace Model
   class VcfOptions
   {
   public:
-    AWS_OMICS_API VcfOptions();
+    AWS_OMICS_API VcfOptions() = default;
     AWS_OMICS_API VcfOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API VcfOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The file's ignore qual field setting.</p>
      */
-    inline bool GetIgnoreQualField() const{ return m_ignoreQualField; }
+    inline bool GetIgnoreQualField() const { return m_ignoreQualField; }
     inline bool IgnoreQualFieldHasBeenSet() const { return m_ignoreQualFieldHasBeenSet; }
     inline void SetIgnoreQualField(bool value) { m_ignoreQualFieldHasBeenSet = true; m_ignoreQualField = value; }
     inline VcfOptions& WithIgnoreQualField(bool value) { SetIgnoreQualField(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>The file's ignore filter field setting.</p>
      */
-    inline bool GetIgnoreFilterField() const{ return m_ignoreFilterField; }
+    inline bool GetIgnoreFilterField() const { return m_ignoreFilterField; }
     inline bool IgnoreFilterFieldHasBeenSet() const { return m_ignoreFilterFieldHasBeenSet; }
     inline void SetIgnoreFilterField(bool value) { m_ignoreFilterFieldHasBeenSet = true; m_ignoreFilterField = value; }
     inline VcfOptions& WithIgnoreFilterField(bool value) { SetIgnoreFilterField(value); return *this;}
     ///@}
   private:
 
-    bool m_ignoreQualField;
+    bool m_ignoreQualField{false};
     bool m_ignoreQualFieldHasBeenSet = false;
 
-    bool m_ignoreFilterField;
+    bool m_ignoreFilterField{false};
     bool m_ignoreFilterFieldHasBeenSet = false;
   };
 

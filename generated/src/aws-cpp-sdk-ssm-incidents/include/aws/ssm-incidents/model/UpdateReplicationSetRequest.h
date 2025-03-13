@@ -24,7 +24,7 @@ namespace Model
   class UpdateReplicationSetRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API UpdateReplicationSetRequest();
+    AWS_SSMINCIDENTS_API UpdateReplicationSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,26 @@ namespace Model
     /**
      * <p>An action to add or delete a Region.</p>
      */
-    inline const Aws::Vector<UpdateReplicationSetAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<UpdateReplicationSetAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<UpdateReplicationSetAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<UpdateReplicationSetAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline UpdateReplicationSetRequest& WithActions(const Aws::Vector<UpdateReplicationSetAction>& value) { SetActions(value); return *this;}
-    inline UpdateReplicationSetRequest& WithActions(Aws::Vector<UpdateReplicationSetAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline UpdateReplicationSetRequest& AddActions(const UpdateReplicationSetAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline UpdateReplicationSetRequest& AddActions(UpdateReplicationSetAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<UpdateReplicationSetAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<UpdateReplicationSetAction>>
+    UpdateReplicationSetRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = UpdateReplicationSetAction>
+    UpdateReplicationSetRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the replication set you're updating.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateReplicationSetRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateReplicationSetRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateReplicationSetRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateReplicationSetRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p>A token that ensures that the operation is called only once with the
      * specified details.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateReplicationSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateReplicationSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateReplicationSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateReplicationSetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

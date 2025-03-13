@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-TimeWindow::TimeWindow() : 
-    m_openHoursHasBeenSet(false),
-    m_restrictedPeriodsHasBeenSet(false)
-{
-}
-
 TimeWindow::TimeWindow(JsonView jsonValue)
-  : TimeWindow()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimeWindow& TimeWindow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("openHours"))
   {
     m_openHours = jsonValue.GetObject("openHours");
-
     m_openHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restrictedPeriods"))
   {
     m_restrictedPeriods = jsonValue.GetObject("restrictedPeriods");
-
     m_restrictedPeriodsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class GetStageResult
   {
   public:
-    AWS_IVSREALTIME_API GetStageResult();
+    AWS_IVSREALTIME_API GetStageResult() = default;
     AWS_IVSREALTIME_API GetStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API GetStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The stage that is returned.</p>
      */
-    inline const Stage& GetStage() const{ return m_stage; }
-    inline void SetStage(const Stage& value) { m_stage = value; }
-    inline void SetStage(Stage&& value) { m_stage = std::move(value); }
-    inline GetStageResult& WithStage(const Stage& value) { SetStage(value); return *this;}
-    inline GetStageResult& WithStage(Stage&& value) { SetStage(std::move(value)); return *this;}
+    inline const Stage& GetStage() const { return m_stage; }
+    template<typename StageT = Stage>
+    void SetStage(StageT&& value) { m_stageHasBeenSet = true; m_stage = std::forward<StageT>(value); }
+    template<typename StageT = Stage>
+    GetStageResult& WithStage(StageT&& value) { SetStage(std::forward<StageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Stage m_stage;
+    bool m_stageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

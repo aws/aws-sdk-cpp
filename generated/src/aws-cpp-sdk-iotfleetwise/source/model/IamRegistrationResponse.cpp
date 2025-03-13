@@ -18,16 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-IamRegistrationResponse::IamRegistrationResponse() : 
-    m_roleArnHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 IamRegistrationResponse::IamRegistrationResponse(JsonView jsonValue)
-  : IamRegistrationResponse()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ IamRegistrationResponse& IamRegistrationResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("registrationStatus"));
-
     m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

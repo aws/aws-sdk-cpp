@@ -33,7 +33,7 @@ namespace Model
   class ConfigurationObject
   {
   public:
-    AWS_GLUE_API ConfigurationObject();
+    AWS_GLUE_API ConfigurationObject() = default;
     AWS_GLUE_API ConfigurationObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ConfigurationObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,57 +43,50 @@ namespace Model
     /**
      * <p>A default value for the parameter.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline ConfigurationObject& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline ConfigurationObject& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline ConfigurationObject& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    ConfigurationObject& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of allowed values for the parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::Vector<Aws::String>& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline ConfigurationObject& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
-    inline ConfigurationObject& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline ConfigurationObject& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-    inline ConfigurationObject& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
-    inline ConfigurationObject& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    ConfigurationObject& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    ConfigurationObject& AddAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.emplace_back(std::forward<AllowedValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A minimum allowed value for the parameter.</p>
      */
-    inline const Aws::String& GetMinValue() const{ return m_minValue; }
+    inline const Aws::String& GetMinValue() const { return m_minValue; }
     inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
-    inline void SetMinValue(const Aws::String& value) { m_minValueHasBeenSet = true; m_minValue = value; }
-    inline void SetMinValue(Aws::String&& value) { m_minValueHasBeenSet = true; m_minValue = std::move(value); }
-    inline void SetMinValue(const char* value) { m_minValueHasBeenSet = true; m_minValue.assign(value); }
-    inline ConfigurationObject& WithMinValue(const Aws::String& value) { SetMinValue(value); return *this;}
-    inline ConfigurationObject& WithMinValue(Aws::String&& value) { SetMinValue(std::move(value)); return *this;}
-    inline ConfigurationObject& WithMinValue(const char* value) { SetMinValue(value); return *this;}
+    template<typename MinValueT = Aws::String>
+    void SetMinValue(MinValueT&& value) { m_minValueHasBeenSet = true; m_minValue = std::forward<MinValueT>(value); }
+    template<typename MinValueT = Aws::String>
+    ConfigurationObject& WithMinValue(MinValueT&& value) { SetMinValue(std::forward<MinValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A maximum allowed value for the parameter.</p>
      */
-    inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
+    inline const Aws::String& GetMaxValue() const { return m_maxValue; }
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
-    inline void SetMaxValue(const Aws::String& value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
-    inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::move(value); }
-    inline void SetMaxValue(const char* value) { m_maxValueHasBeenSet = true; m_maxValue.assign(value); }
-    inline ConfigurationObject& WithMaxValue(const Aws::String& value) { SetMaxValue(value); return *this;}
-    inline ConfigurationObject& WithMaxValue(Aws::String&& value) { SetMaxValue(std::move(value)); return *this;}
-    inline ConfigurationObject& WithMaxValue(const char* value) { SetMaxValue(value); return *this;}
+    template<typename MaxValueT = Aws::String>
+    void SetMaxValue(MaxValueT&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::forward<MaxValueT>(value); }
+    template<typename MaxValueT = Aws::String>
+    ConfigurationObject& WithMaxValue(MaxValueT&& value) { SetMaxValue(std::forward<MaxValueT>(value)); return *this;}
     ///@}
   private:
 

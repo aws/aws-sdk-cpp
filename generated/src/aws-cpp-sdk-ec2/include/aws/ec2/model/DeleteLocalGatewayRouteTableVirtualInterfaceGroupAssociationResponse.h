@@ -28,7 +28,7 @@ namespace Model
   class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse
   {
   public:
-    AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse();
+    AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse() = default;
     AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
-    inline const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& GetLocalGatewayRouteTableVirtualInterfaceGroupAssociation() const{ return m_localGatewayRouteTableVirtualInterfaceGroupAssociation; }
-    inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociation = value; }
-    inline void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociation&& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociation = std::move(value); }
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociation(const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(value); return *this;}
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociation&& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(std::move(value)); return *this;}
+    inline const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& GetLocalGatewayRouteTableVirtualInterfaceGroupAssociation() const { return m_localGatewayRouteTableVirtualInterfaceGroupAssociation; }
+    template<typename LocalGatewayRouteTableVirtualInterfaceGroupAssociationT = LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+    void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociationT&& value) { m_localGatewayRouteTableVirtualInterfaceGroupAssociationHasBeenSet = true; m_localGatewayRouteTableVirtualInterfaceGroupAssociation = std::forward<LocalGatewayRouteTableVirtualInterfaceGroupAssociationT>(value); }
+    template<typename LocalGatewayRouteTableVirtualInterfaceGroupAssociationT = LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+    DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociationT&& value) { SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(std::forward<LocalGatewayRouteTableVirtualInterfaceGroupAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     LocalGatewayRouteTableVirtualInterfaceGroupAssociation m_localGatewayRouteTableVirtualInterfaceGroupAssociation;
+    bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

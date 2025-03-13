@@ -33,7 +33,7 @@ namespace Model
   class TlsValidationContextAcmTrust
   {
   public:
-    AWS_APPMESH_API TlsValidationContextAcmTrust();
+    AWS_APPMESH_API TlsValidationContextAcmTrust() = default;
     AWS_APPMESH_API TlsValidationContextAcmTrust(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API TlsValidationContextAcmTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCertificateAuthorityArns() const{ return m_certificateAuthorityArns; }
+    inline const Aws::Vector<Aws::String>& GetCertificateAuthorityArns() const { return m_certificateAuthorityArns; }
     inline bool CertificateAuthorityArnsHasBeenSet() const { return m_certificateAuthorityArnsHasBeenSet; }
-    inline void SetCertificateAuthorityArns(const Aws::Vector<Aws::String>& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = value; }
-    inline void SetCertificateAuthorityArns(Aws::Vector<Aws::String>&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = std::move(value); }
-    inline TlsValidationContextAcmTrust& WithCertificateAuthorityArns(const Aws::Vector<Aws::String>& value) { SetCertificateAuthorityArns(value); return *this;}
-    inline TlsValidationContextAcmTrust& WithCertificateAuthorityArns(Aws::Vector<Aws::String>&& value) { SetCertificateAuthorityArns(std::move(value)); return *this;}
-    inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(const Aws::String& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(value); return *this; }
-    inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(Aws::String&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(std::move(value)); return *this; }
-    inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(const char* value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(value); return *this; }
+    template<typename CertificateAuthorityArnsT = Aws::Vector<Aws::String>>
+    void SetCertificateAuthorityArns(CertificateAuthorityArnsT&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = std::forward<CertificateAuthorityArnsT>(value); }
+    template<typename CertificateAuthorityArnsT = Aws::Vector<Aws::String>>
+    TlsValidationContextAcmTrust& WithCertificateAuthorityArns(CertificateAuthorityArnsT&& value) { SetCertificateAuthorityArns(std::forward<CertificateAuthorityArnsT>(value)); return *this;}
+    template<typename CertificateAuthorityArnsT = Aws::String>
+    TlsValidationContextAcmTrust& AddCertificateAuthorityArns(CertificateAuthorityArnsT&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.emplace_back(std::forward<CertificateAuthorityArnsT>(value)); return *this; }
     ///@}
   private:
 

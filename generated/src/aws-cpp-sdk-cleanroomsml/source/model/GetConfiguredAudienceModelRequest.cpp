@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfiguredAudienceModelRequest::GetConfiguredAudienceModelRequest() : 
-    m_configuredAudienceModelArnHasBeenSet(false)
-{
-}
-
 Aws::String GetConfiguredAudienceModelRequest::SerializePayload() const
 {
   return {};

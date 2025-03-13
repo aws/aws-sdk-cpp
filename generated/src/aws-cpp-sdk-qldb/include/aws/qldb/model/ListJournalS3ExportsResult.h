@@ -29,7 +29,7 @@ namespace Model
   class ListJournalS3ExportsResult
   {
   public:
-    AWS_QLDB_API ListJournalS3ExportsResult();
+    AWS_QLDB_API ListJournalS3ExportsResult() = default;
     AWS_QLDB_API ListJournalS3ExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QLDB_API ListJournalS3ExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The journal export jobs for all ledgers that are associated with the current
      * Amazon Web Services account and Region.</p>
      */
-    inline const Aws::Vector<JournalS3ExportDescription>& GetJournalS3Exports() const{ return m_journalS3Exports; }
-    inline void SetJournalS3Exports(const Aws::Vector<JournalS3ExportDescription>& value) { m_journalS3Exports = value; }
-    inline void SetJournalS3Exports(Aws::Vector<JournalS3ExportDescription>&& value) { m_journalS3Exports = std::move(value); }
-    inline ListJournalS3ExportsResult& WithJournalS3Exports(const Aws::Vector<JournalS3ExportDescription>& value) { SetJournalS3Exports(value); return *this;}
-    inline ListJournalS3ExportsResult& WithJournalS3Exports(Aws::Vector<JournalS3ExportDescription>&& value) { SetJournalS3Exports(std::move(value)); return *this;}
-    inline ListJournalS3ExportsResult& AddJournalS3Exports(const JournalS3ExportDescription& value) { m_journalS3Exports.push_back(value); return *this; }
-    inline ListJournalS3ExportsResult& AddJournalS3Exports(JournalS3ExportDescription&& value) { m_journalS3Exports.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JournalS3ExportDescription>& GetJournalS3Exports() const { return m_journalS3Exports; }
+    template<typename JournalS3ExportsT = Aws::Vector<JournalS3ExportDescription>>
+    void SetJournalS3Exports(JournalS3ExportsT&& value) { m_journalS3ExportsHasBeenSet = true; m_journalS3Exports = std::forward<JournalS3ExportsT>(value); }
+    template<typename JournalS3ExportsT = Aws::Vector<JournalS3ExportDescription>>
+    ListJournalS3ExportsResult& WithJournalS3Exports(JournalS3ExportsT&& value) { SetJournalS3Exports(std::forward<JournalS3ExportsT>(value)); return *this;}
+    template<typename JournalS3ExportsT = JournalS3ExportDescription>
+    ListJournalS3ExportsResult& AddJournalS3Exports(JournalS3ExportsT&& value) { m_journalS3ExportsHasBeenSet = true; m_journalS3Exports.emplace_back(std::forward<JournalS3ExportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code>
      * call.</p> </li> </ul>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListJournalS3ExportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJournalS3ExportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJournalS3ExportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJournalS3ExportsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListJournalS3ExportsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListJournalS3ExportsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListJournalS3ExportsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListJournalS3ExportsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<JournalS3ExportDescription> m_journalS3Exports;
+    bool m_journalS3ExportsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

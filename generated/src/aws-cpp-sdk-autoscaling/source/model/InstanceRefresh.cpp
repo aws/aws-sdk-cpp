@@ -20,27 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceRefresh::InstanceRefresh() : 
-    m_instanceRefreshIdHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_status(InstanceRefreshStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_percentageComplete(0),
-    m_percentageCompleteHasBeenSet(false),
-    m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false),
-    m_progressDetailsHasBeenSet(false),
-    m_preferencesHasBeenSet(false),
-    m_desiredConfigurationHasBeenSet(false),
-    m_rollbackDetailsHasBeenSet(false)
-{
-}
-
 InstanceRefresh::InstanceRefresh(const XmlNode& xmlNode)
-  : InstanceRefresh()
 {
   *this = xmlNode;
 }
@@ -56,72 +36,84 @@ InstanceRefresh& InstanceRefresh::operator =(const XmlNode& xmlNode)
     {
       m_instanceRefreshId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceRefreshIdNode.GetText());
       m_instanceRefreshIdHasBeenSet = true;
+       m_instanceRefreshIdHasBeenSet = true;
     }
     XmlNode autoScalingGroupNameNode = resultNode.FirstChild("AutoScalingGroupName");
     if(!autoScalingGroupNameNode.IsNull())
     {
       m_autoScalingGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupNameNode.GetText());
       m_autoScalingGroupNameHasBeenSet = true;
+       m_autoScalingGroupNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = InstanceRefreshStatusMapper::GetInstanceRefreshStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = InstanceRefreshStatusMapper::GetInstanceRefreshStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
     if(!statusReasonNode.IsNull())
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+       m_statusReasonHasBeenSet = true;
     }
     XmlNode startTimeNode = resultNode.FirstChild("StartTime");
     if(!startTimeNode.IsNull())
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
       m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
+       m_endTimeHasBeenSet = true;
     }
     XmlNode percentageCompleteNode = resultNode.FirstChild("PercentageComplete");
     if(!percentageCompleteNode.IsNull())
     {
       m_percentageComplete = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompleteNode.GetText()).c_str()).c_str());
       m_percentageCompleteHasBeenSet = true;
+       m_percentageCompleteHasBeenSet = true;
     }
     XmlNode instancesToUpdateNode = resultNode.FirstChild("InstancesToUpdate");
     if(!instancesToUpdateNode.IsNull())
     {
       m_instancesToUpdate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancesToUpdateNode.GetText()).c_str()).c_str());
       m_instancesToUpdateHasBeenSet = true;
+       m_instancesToUpdateHasBeenSet = true;
     }
     XmlNode progressDetailsNode = resultNode.FirstChild("ProgressDetails");
     if(!progressDetailsNode.IsNull())
     {
       m_progressDetails = progressDetailsNode;
       m_progressDetailsHasBeenSet = true;
+       m_progressDetailsHasBeenSet = true;
     }
     XmlNode preferencesNode = resultNode.FirstChild("Preferences");
     if(!preferencesNode.IsNull())
     {
       m_preferences = preferencesNode;
       m_preferencesHasBeenSet = true;
+       m_preferencesHasBeenSet = true;
     }
     XmlNode desiredConfigurationNode = resultNode.FirstChild("DesiredConfiguration");
     if(!desiredConfigurationNode.IsNull())
     {
       m_desiredConfiguration = desiredConfigurationNode;
       m_desiredConfigurationHasBeenSet = true;
+       m_desiredConfigurationHasBeenSet = true;
     }
     XmlNode rollbackDetailsNode = resultNode.FirstChild("RollbackDetails");
     if(!rollbackDetailsNode.IsNull())
     {
       m_rollbackDetails = rollbackDetailsNode;
       m_rollbackDetailsHasBeenSet = true;
+       m_rollbackDetailsHasBeenSet = true;
     }
   }
 

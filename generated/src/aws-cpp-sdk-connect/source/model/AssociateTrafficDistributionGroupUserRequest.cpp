@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateTrafficDistributionGroupUserRequest::AssociateTrafficDistributionGroupUserRequest() : 
-    m_trafficDistributionGroupIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTrafficDistributionGroupUserRequest::SerializePayload() const
 {
   JsonValue payload;

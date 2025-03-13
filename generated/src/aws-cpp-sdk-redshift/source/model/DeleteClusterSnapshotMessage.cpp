@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage() : 
-    m_snapshotIdentifierHasBeenSet(false),
-    m_snapshotClusterIdentifierHasBeenSet(false)
-{
-}
-
 DeleteClusterSnapshotMessage::DeleteClusterSnapshotMessage(const XmlNode& xmlNode)
-  : DeleteClusterSnapshotMessage()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DeleteClusterSnapshotMessage& DeleteClusterSnapshotMessage::operator =(const Xml
     {
       m_snapshotIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdentifierNode.GetText());
       m_snapshotIdentifierHasBeenSet = true;
+       m_snapshotIdentifierHasBeenSet = true;
     }
     XmlNode snapshotClusterIdentifierNode = resultNode.FirstChild("SnapshotClusterIdentifier");
     if(!snapshotClusterIdentifierNode.IsNull())
     {
       m_snapshotClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotClusterIdentifierNode.GetText());
       m_snapshotClusterIdentifierHasBeenSet = true;
+       m_snapshotClusterIdentifierHasBeenSet = true;
     }
   }
 

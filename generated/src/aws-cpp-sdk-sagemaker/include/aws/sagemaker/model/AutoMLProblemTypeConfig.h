@@ -37,7 +37,7 @@ namespace Model
   class AutoMLProblemTypeConfig
   {
   public:
-    AWS_SAGEMAKER_API AutoMLProblemTypeConfig();
+    AWS_SAGEMAKER_API AutoMLProblemTypeConfig() = default;
     AWS_SAGEMAKER_API AutoMLProblemTypeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLProblemTypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * <p>Settings used to configure an AutoML job V2 for the image classification
      * problem type.</p>
      */
-    inline const ImageClassificationJobConfig& GetImageClassificationJobConfig() const{ return m_imageClassificationJobConfig; }
+    inline const ImageClassificationJobConfig& GetImageClassificationJobConfig() const { return m_imageClassificationJobConfig; }
     inline bool ImageClassificationJobConfigHasBeenSet() const { return m_imageClassificationJobConfigHasBeenSet; }
-    inline void SetImageClassificationJobConfig(const ImageClassificationJobConfig& value) { m_imageClassificationJobConfigHasBeenSet = true; m_imageClassificationJobConfig = value; }
-    inline void SetImageClassificationJobConfig(ImageClassificationJobConfig&& value) { m_imageClassificationJobConfigHasBeenSet = true; m_imageClassificationJobConfig = std::move(value); }
-    inline AutoMLProblemTypeConfig& WithImageClassificationJobConfig(const ImageClassificationJobConfig& value) { SetImageClassificationJobConfig(value); return *this;}
-    inline AutoMLProblemTypeConfig& WithImageClassificationJobConfig(ImageClassificationJobConfig&& value) { SetImageClassificationJobConfig(std::move(value)); return *this;}
+    template<typename ImageClassificationJobConfigT = ImageClassificationJobConfig>
+    void SetImageClassificationJobConfig(ImageClassificationJobConfigT&& value) { m_imageClassificationJobConfigHasBeenSet = true; m_imageClassificationJobConfig = std::forward<ImageClassificationJobConfigT>(value); }
+    template<typename ImageClassificationJobConfigT = ImageClassificationJobConfig>
+    AutoMLProblemTypeConfig& WithImageClassificationJobConfig(ImageClassificationJobConfigT&& value) { SetImageClassificationJobConfig(std::forward<ImageClassificationJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <p>Settings used to configure an AutoML job V2 for the text classification
      * problem type.</p>
      */
-    inline const TextClassificationJobConfig& GetTextClassificationJobConfig() const{ return m_textClassificationJobConfig; }
+    inline const TextClassificationJobConfig& GetTextClassificationJobConfig() const { return m_textClassificationJobConfig; }
     inline bool TextClassificationJobConfigHasBeenSet() const { return m_textClassificationJobConfigHasBeenSet; }
-    inline void SetTextClassificationJobConfig(const TextClassificationJobConfig& value) { m_textClassificationJobConfigHasBeenSet = true; m_textClassificationJobConfig = value; }
-    inline void SetTextClassificationJobConfig(TextClassificationJobConfig&& value) { m_textClassificationJobConfigHasBeenSet = true; m_textClassificationJobConfig = std::move(value); }
-    inline AutoMLProblemTypeConfig& WithTextClassificationJobConfig(const TextClassificationJobConfig& value) { SetTextClassificationJobConfig(value); return *this;}
-    inline AutoMLProblemTypeConfig& WithTextClassificationJobConfig(TextClassificationJobConfig&& value) { SetTextClassificationJobConfig(std::move(value)); return *this;}
+    template<typename TextClassificationJobConfigT = TextClassificationJobConfig>
+    void SetTextClassificationJobConfig(TextClassificationJobConfigT&& value) { m_textClassificationJobConfigHasBeenSet = true; m_textClassificationJobConfig = std::forward<TextClassificationJobConfigT>(value); }
+    template<typename TextClassificationJobConfigT = TextClassificationJobConfig>
+    AutoMLProblemTypeConfig& WithTextClassificationJobConfig(TextClassificationJobConfigT&& value) { SetTextClassificationJobConfig(std::forward<TextClassificationJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * <p>Settings used to configure an AutoML job V2 for the time-series forecasting
      * problem type.</p>
      */
-    inline const TimeSeriesForecastingJobConfig& GetTimeSeriesForecastingJobConfig() const{ return m_timeSeriesForecastingJobConfig; }
+    inline const TimeSeriesForecastingJobConfig& GetTimeSeriesForecastingJobConfig() const { return m_timeSeriesForecastingJobConfig; }
     inline bool TimeSeriesForecastingJobConfigHasBeenSet() const { return m_timeSeriesForecastingJobConfigHasBeenSet; }
-    inline void SetTimeSeriesForecastingJobConfig(const TimeSeriesForecastingJobConfig& value) { m_timeSeriesForecastingJobConfigHasBeenSet = true; m_timeSeriesForecastingJobConfig = value; }
-    inline void SetTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfig&& value) { m_timeSeriesForecastingJobConfigHasBeenSet = true; m_timeSeriesForecastingJobConfig = std::move(value); }
-    inline AutoMLProblemTypeConfig& WithTimeSeriesForecastingJobConfig(const TimeSeriesForecastingJobConfig& value) { SetTimeSeriesForecastingJobConfig(value); return *this;}
-    inline AutoMLProblemTypeConfig& WithTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfig&& value) { SetTimeSeriesForecastingJobConfig(std::move(value)); return *this;}
+    template<typename TimeSeriesForecastingJobConfigT = TimeSeriesForecastingJobConfig>
+    void SetTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfigT&& value) { m_timeSeriesForecastingJobConfigHasBeenSet = true; m_timeSeriesForecastingJobConfig = std::forward<TimeSeriesForecastingJobConfigT>(value); }
+    template<typename TimeSeriesForecastingJobConfigT = TimeSeriesForecastingJobConfig>
+    AutoMLProblemTypeConfig& WithTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfigT&& value) { SetTimeSeriesForecastingJobConfig(std::forward<TimeSeriesForecastingJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +87,12 @@ namespace Model
      * <p>Settings used to configure an AutoML job V2 for the tabular problem type
      * (regression, classification).</p>
      */
-    inline const TabularJobConfig& GetTabularJobConfig() const{ return m_tabularJobConfig; }
+    inline const TabularJobConfig& GetTabularJobConfig() const { return m_tabularJobConfig; }
     inline bool TabularJobConfigHasBeenSet() const { return m_tabularJobConfigHasBeenSet; }
-    inline void SetTabularJobConfig(const TabularJobConfig& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = value; }
-    inline void SetTabularJobConfig(TabularJobConfig&& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = std::move(value); }
-    inline AutoMLProblemTypeConfig& WithTabularJobConfig(const TabularJobConfig& value) { SetTabularJobConfig(value); return *this;}
-    inline AutoMLProblemTypeConfig& WithTabularJobConfig(TabularJobConfig&& value) { SetTabularJobConfig(std::move(value)); return *this;}
+    template<typename TabularJobConfigT = TabularJobConfig>
+    void SetTabularJobConfig(TabularJobConfigT&& value) { m_tabularJobConfigHasBeenSet = true; m_tabularJobConfig = std::forward<TabularJobConfigT>(value); }
+    template<typename TabularJobConfigT = TabularJobConfig>
+    AutoMLProblemTypeConfig& WithTabularJobConfig(TabularJobConfigT&& value) { SetTabularJobConfig(std::forward<TabularJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +104,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/canvas.html">full list of
      * its supported Regions</a>.</p> 
      */
-    inline const TextGenerationJobConfig& GetTextGenerationJobConfig() const{ return m_textGenerationJobConfig; }
+    inline const TextGenerationJobConfig& GetTextGenerationJobConfig() const { return m_textGenerationJobConfig; }
     inline bool TextGenerationJobConfigHasBeenSet() const { return m_textGenerationJobConfigHasBeenSet; }
-    inline void SetTextGenerationJobConfig(const TextGenerationJobConfig& value) { m_textGenerationJobConfigHasBeenSet = true; m_textGenerationJobConfig = value; }
-    inline void SetTextGenerationJobConfig(TextGenerationJobConfig&& value) { m_textGenerationJobConfigHasBeenSet = true; m_textGenerationJobConfig = std::move(value); }
-    inline AutoMLProblemTypeConfig& WithTextGenerationJobConfig(const TextGenerationJobConfig& value) { SetTextGenerationJobConfig(value); return *this;}
-    inline AutoMLProblemTypeConfig& WithTextGenerationJobConfig(TextGenerationJobConfig&& value) { SetTextGenerationJobConfig(std::move(value)); return *this;}
+    template<typename TextGenerationJobConfigT = TextGenerationJobConfig>
+    void SetTextGenerationJobConfig(TextGenerationJobConfigT&& value) { m_textGenerationJobConfigHasBeenSet = true; m_textGenerationJobConfig = std::forward<TextGenerationJobConfigT>(value); }
+    template<typename TextGenerationJobConfigT = TextGenerationJobConfig>
+    AutoMLProblemTypeConfig& WithTextGenerationJobConfig(TextGenerationJobConfigT&& value) { SetTextGenerationJobConfig(std::forward<TextGenerationJobConfigT>(value)); return *this;}
     ///@}
   private:
 

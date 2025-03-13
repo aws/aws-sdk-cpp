@@ -33,7 +33,7 @@ namespace Model
   class AutoMLAlgorithmConfig
   {
   public:
-    AWS_SAGEMAKER_API AutoMLAlgorithmConfig();
+    AWS_SAGEMAKER_API AutoMLAlgorithmConfig() = default;
     AWS_SAGEMAKER_API AutoMLAlgorithmConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLAlgorithmConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,14 +60,13 @@ namespace Model
      * <li> <p>"arima"</p> </li> <li> <p>"npts"</p> </li> <li> <p>"ets"</p> </li> </ul>
      * </li> </ul> </li> </ul>
      */
-    inline const Aws::Vector<AutoMLAlgorithm>& GetAutoMLAlgorithms() const{ return m_autoMLAlgorithms; }
+    inline const Aws::Vector<AutoMLAlgorithm>& GetAutoMLAlgorithms() const { return m_autoMLAlgorithms; }
     inline bool AutoMLAlgorithmsHasBeenSet() const { return m_autoMLAlgorithmsHasBeenSet; }
-    inline void SetAutoMLAlgorithms(const Aws::Vector<AutoMLAlgorithm>& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms = value; }
-    inline void SetAutoMLAlgorithms(Aws::Vector<AutoMLAlgorithm>&& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms = std::move(value); }
-    inline AutoMLAlgorithmConfig& WithAutoMLAlgorithms(const Aws::Vector<AutoMLAlgorithm>& value) { SetAutoMLAlgorithms(value); return *this;}
-    inline AutoMLAlgorithmConfig& WithAutoMLAlgorithms(Aws::Vector<AutoMLAlgorithm>&& value) { SetAutoMLAlgorithms(std::move(value)); return *this;}
-    inline AutoMLAlgorithmConfig& AddAutoMLAlgorithms(const AutoMLAlgorithm& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms.push_back(value); return *this; }
-    inline AutoMLAlgorithmConfig& AddAutoMLAlgorithms(AutoMLAlgorithm&& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms.push_back(std::move(value)); return *this; }
+    template<typename AutoMLAlgorithmsT = Aws::Vector<AutoMLAlgorithm>>
+    void SetAutoMLAlgorithms(AutoMLAlgorithmsT&& value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms = std::forward<AutoMLAlgorithmsT>(value); }
+    template<typename AutoMLAlgorithmsT = Aws::Vector<AutoMLAlgorithm>>
+    AutoMLAlgorithmConfig& WithAutoMLAlgorithms(AutoMLAlgorithmsT&& value) { SetAutoMLAlgorithms(std::forward<AutoMLAlgorithmsT>(value)); return *this;}
+    inline AutoMLAlgorithmConfig& AddAutoMLAlgorithms(AutoMLAlgorithm value) { m_autoMLAlgorithmsHasBeenSet = true; m_autoMLAlgorithms.push_back(value); return *this; }
     ///@}
   private:
 

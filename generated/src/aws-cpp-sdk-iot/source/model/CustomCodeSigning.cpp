@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CustomCodeSigning::CustomCodeSigning() : 
-    m_signatureHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_hashAlgorithmHasBeenSet(false),
-    m_signatureAlgorithmHasBeenSet(false)
-{
-}
-
 CustomCodeSigning::CustomCodeSigning(JsonView jsonValue)
-  : CustomCodeSigning()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CustomCodeSigning& CustomCodeSigning::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = jsonValue.GetObject("signature");
-
     m_signatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateChain"))
   {
     m_certificateChain = jsonValue.GetObject("certificateChain");
-
     m_certificateChainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashAlgorithm"))
   {
     m_hashAlgorithm = jsonValue.GetString("hashAlgorithm");
-
     m_hashAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureAlgorithm"))
   {
     m_signatureAlgorithm = jsonValue.GetString("signatureAlgorithm");
-
     m_signatureAlgorithmHasBeenSet = true;
   }
-
   return *this;
 }
 

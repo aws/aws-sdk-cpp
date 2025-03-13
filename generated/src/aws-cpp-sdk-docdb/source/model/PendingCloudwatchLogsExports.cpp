@@ -20,14 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-PendingCloudwatchLogsExports::PendingCloudwatchLogsExports() : 
-    m_logTypesToEnableHasBeenSet(false),
-    m_logTypesToDisableHasBeenSet(false)
-{
-}
-
 PendingCloudwatchLogsExports::PendingCloudwatchLogsExports(const XmlNode& xmlNode)
-  : PendingCloudwatchLogsExports()
 {
   *this = xmlNode;
 }
@@ -42,25 +35,27 @@ PendingCloudwatchLogsExports& PendingCloudwatchLogsExports::operator =(const Xml
     if(!logTypesToEnableNode.IsNull())
     {
       XmlNode logTypesToEnableMember = logTypesToEnableNode.FirstChild("member");
+      m_logTypesToEnableHasBeenSet = !logTypesToEnableMember.IsNull();
       while(!logTypesToEnableMember.IsNull())
       {
         m_logTypesToEnable.push_back(logTypesToEnableMember.GetText());
         logTypesToEnableMember = logTypesToEnableMember.NextNode("member");
       }
 
-      m_logTypesToEnableHasBeenSet = true;
+       m_logTypesToEnableHasBeenSet = true;
     }
     XmlNode logTypesToDisableNode = resultNode.FirstChild("LogTypesToDisable");
     if(!logTypesToDisableNode.IsNull())
     {
       XmlNode logTypesToDisableMember = logTypesToDisableNode.FirstChild("member");
+      m_logTypesToDisableHasBeenSet = !logTypesToDisableMember.IsNull();
       while(!logTypesToDisableMember.IsNull())
       {
         m_logTypesToDisable.push_back(logTypesToDisableMember.GetText());
         logTypesToDisableMember = logTypesToDisableMember.NextNode("member");
       }
 
-      m_logTypesToDisableHasBeenSet = true;
+       m_logTypesToDisableHasBeenSet = true;
     }
   }
 

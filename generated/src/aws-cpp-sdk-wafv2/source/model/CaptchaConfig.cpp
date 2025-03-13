@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-CaptchaConfig::CaptchaConfig() : 
-    m_immunityTimePropertyHasBeenSet(false)
-{
-}
-
 CaptchaConfig::CaptchaConfig(JsonView jsonValue)
-  : CaptchaConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CaptchaConfig& CaptchaConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImmunityTimeProperty"))
   {
     m_immunityTimeProperty = jsonValue.GetObject("ImmunityTimeProperty");
-
     m_immunityTimePropertyHasBeenSet = true;
   }
-
   return *this;
 }
 

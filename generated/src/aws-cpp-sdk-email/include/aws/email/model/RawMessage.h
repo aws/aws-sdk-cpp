@@ -31,7 +31,7 @@ namespace Model
   class RawMessage
   {
   public:
-    AWS_SES_API RawMessage();
+    AWS_SES_API RawMessage() = default;
     AWS_SES_API RawMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API RawMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,16 +57,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Amazon SES
      * Developer Guide</a>.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline RawMessage& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline RawMessage& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    RawMessage& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
   };
 

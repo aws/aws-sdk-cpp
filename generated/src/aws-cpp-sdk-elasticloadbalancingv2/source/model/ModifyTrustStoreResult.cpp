@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyTrustStoreResult::ModifyTrustStoreResult()
-{
-}
-
 ModifyTrustStoreResult::ModifyTrustStoreResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyTrustStoreResult& ModifyTrustStoreResult::operator =(const Aws::AmazonWebS
     if(!trustStoresNode.IsNull())
     {
       XmlNode trustStoresMember = trustStoresNode.FirstChild("member");
+      m_trustStoresHasBeenSet = !trustStoresMember.IsNull();
       while(!trustStoresMember.IsNull())
       {
         m_trustStores.push_back(trustStoresMember);
@@ -54,6 +51,7 @@ ModifyTrustStoreResult& ModifyTrustStoreResult::operator =(const Aws::AmazonWebS
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancingv2::Model::ModifyTrustStoreResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

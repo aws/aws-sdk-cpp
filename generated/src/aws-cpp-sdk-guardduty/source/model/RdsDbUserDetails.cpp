@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RdsDbUserDetails::RdsDbUserDetails() : 
-    m_userHasBeenSet(false),
-    m_applicationHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_sslHasBeenSet(false),
-    m_authMethodHasBeenSet(false)
-{
-}
-
 RdsDbUserDetails::RdsDbUserDetails(JsonView jsonValue)
-  : RdsDbUserDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RdsDbUserDetails& RdsDbUserDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("application"))
   {
     m_application = jsonValue.GetString("application");
-
     m_applicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("database"))
   {
     m_database = jsonValue.GetString("database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssl"))
   {
     m_ssl = jsonValue.GetString("ssl");
-
     m_sslHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authMethod"))
   {
     m_authMethod = jsonValue.GetString("authMethod");
-
     m_authMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

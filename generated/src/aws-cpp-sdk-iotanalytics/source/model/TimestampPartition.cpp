@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-TimestampPartition::TimestampPartition() : 
-    m_attributeNameHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false)
-{
-}
-
 TimestampPartition::TimestampPartition(JsonView jsonValue)
-  : TimestampPartition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestampPartition& TimestampPartition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attributeName"))
   {
     m_attributeName = jsonValue.GetString("attributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestampFormat"))
   {
     m_timestampFormat = jsonValue.GetString("timestampFormat");
-
     m_timestampFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

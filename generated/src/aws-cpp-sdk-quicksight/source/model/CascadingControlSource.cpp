@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CascadingControlSource::CascadingControlSource() : 
-    m_sourceSheetControlIdHasBeenSet(false),
-    m_columnToMatchHasBeenSet(false)
-{
-}
-
 CascadingControlSource::CascadingControlSource(JsonView jsonValue)
-  : CascadingControlSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CascadingControlSource& CascadingControlSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceSheetControlId"))
   {
     m_sourceSheetControlId = jsonValue.GetString("SourceSheetControlId");
-
     m_sourceSheetControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnToMatch"))
   {
     m_columnToMatch = jsonValue.GetObject("ColumnToMatch");
-
     m_columnToMatchHasBeenSet = true;
   }
-
   return *this;
 }
 

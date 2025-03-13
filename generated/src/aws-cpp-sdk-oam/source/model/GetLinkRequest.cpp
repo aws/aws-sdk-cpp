@@ -12,11 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLinkRequest::GetLinkRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetLinkRequest::SerializePayload() const
 {
   JsonValue payload;

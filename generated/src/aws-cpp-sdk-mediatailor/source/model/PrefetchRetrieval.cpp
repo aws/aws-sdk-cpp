@@ -18,15 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-PrefetchRetrieval::PrefetchRetrieval() : 
-    m_dynamicVariablesHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 PrefetchRetrieval::PrefetchRetrieval(JsonView jsonValue)
-  : PrefetchRetrieval()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ PrefetchRetrieval& PrefetchRetrieval::operator =(JsonView jsonValue)
     }
     m_dynamicVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

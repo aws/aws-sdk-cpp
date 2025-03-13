@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkgroupRequest::DeleteWorkgroupRequest() : 
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkgroupRequest::SerializePayload() const
 {
   JsonValue payload;

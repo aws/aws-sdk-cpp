@@ -27,7 +27,7 @@ namespace Model
   class PutConformancePackResult
   {
   public:
-    AWS_CONFIGSERVICE_API PutConformancePackResult();
+    AWS_CONFIGSERVICE_API PutConformancePackResult() = default;
     AWS_CONFIGSERVICE_API PutConformancePackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API PutConformancePackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>ARN of the conformance pack.</p>
      */
-    inline const Aws::String& GetConformancePackArn() const{ return m_conformancePackArn; }
-    inline void SetConformancePackArn(const Aws::String& value) { m_conformancePackArn = value; }
-    inline void SetConformancePackArn(Aws::String&& value) { m_conformancePackArn = std::move(value); }
-    inline void SetConformancePackArn(const char* value) { m_conformancePackArn.assign(value); }
-    inline PutConformancePackResult& WithConformancePackArn(const Aws::String& value) { SetConformancePackArn(value); return *this;}
-    inline PutConformancePackResult& WithConformancePackArn(Aws::String&& value) { SetConformancePackArn(std::move(value)); return *this;}
-    inline PutConformancePackResult& WithConformancePackArn(const char* value) { SetConformancePackArn(value); return *this;}
+    inline const Aws::String& GetConformancePackArn() const { return m_conformancePackArn; }
+    template<typename ConformancePackArnT = Aws::String>
+    void SetConformancePackArn(ConformancePackArnT&& value) { m_conformancePackArnHasBeenSet = true; m_conformancePackArn = std::forward<ConformancePackArnT>(value); }
+    template<typename ConformancePackArnT = Aws::String>
+    PutConformancePackResult& WithConformancePackArn(ConformancePackArnT&& value) { SetConformancePackArn(std::forward<ConformancePackArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutConformancePackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutConformancePackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutConformancePackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutConformancePackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_conformancePackArn;
+    bool m_conformancePackArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,18 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-PutWarmPoolRequest::PutWarmPoolRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_maxGroupPreparedCapacity(0),
-    m_maxGroupPreparedCapacityHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_poolState(WarmPoolState::NOT_SET),
-    m_poolStateHasBeenSet(false),
-    m_instanceReusePolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutWarmPoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-RealtimeLogConfigs::RealtimeLogConfigs() : 
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false)
-{
-}
-
 RealtimeLogConfigs::RealtimeLogConfigs(const XmlNode& xmlNode)
-  : RealtimeLogConfigs()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,41 @@ RealtimeLogConfigs& RealtimeLogConfigs::operator =(const XmlNode& xmlNode)
     {
       m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText()).c_str()).c_str());
       m_maxItemsHasBeenSet = true;
+       m_maxItemsHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("member");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);
         itemsMember = itemsMember.NextNode("member");
       }
 
-      m_itemsHasBeenSet = true;
+       m_itemsHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
       m_isTruncatedHasBeenSet = true;
+       m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
+       m_markerHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
       m_nextMarkerHasBeenSet = true;
+       m_nextMarkerHasBeenSet = true;
     }
   }
 

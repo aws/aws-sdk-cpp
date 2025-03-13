@@ -39,7 +39,7 @@ namespace Model
   class IntelligentTieringConfiguration
   {
   public:
-    AWS_S3CRT_API IntelligentTieringConfiguration();
+    AWS_S3CRT_API IntelligentTieringConfiguration() = default;
     AWS_S3CRT_API IntelligentTieringConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API IntelligentTieringConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline IntelligentTieringConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline IntelligentTieringConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline IntelligentTieringConfiguration& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    IntelligentTieringConfiguration& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,24 +63,22 @@ namespace Model
      * <p>Specifies a bucket filter. The configuration only includes objects that meet
      * the filter's criteria.</p>
      */
-    inline const IntelligentTieringFilter& GetFilter() const{ return m_filter; }
+    inline const IntelligentTieringFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const IntelligentTieringFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(IntelligentTieringFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline IntelligentTieringConfiguration& WithFilter(const IntelligentTieringFilter& value) { SetFilter(value); return *this;}
-    inline IntelligentTieringConfiguration& WithFilter(IntelligentTieringFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = IntelligentTieringFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = IntelligentTieringFilter>
+    IntelligentTieringConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the status of the configuration.</p>
      */
-    inline const IntelligentTieringStatus& GetStatus() const{ return m_status; }
+    inline IntelligentTieringStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const IntelligentTieringStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(IntelligentTieringStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline IntelligentTieringConfiguration& WithStatus(const IntelligentTieringStatus& value) { SetStatus(value); return *this;}
-    inline IntelligentTieringConfiguration& WithStatus(IntelligentTieringStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(IntelligentTieringStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline IntelligentTieringConfiguration& WithStatus(IntelligentTieringStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,14 @@ namespace Model
      * <p>Specifies the S3 Intelligent-Tiering storage class tier of the
      * configuration.</p>
      */
-    inline const Aws::Vector<Tiering>& GetTierings() const{ return m_tierings; }
+    inline const Aws::Vector<Tiering>& GetTierings() const { return m_tierings; }
     inline bool TieringsHasBeenSet() const { return m_tieringsHasBeenSet; }
-    inline void SetTierings(const Aws::Vector<Tiering>& value) { m_tieringsHasBeenSet = true; m_tierings = value; }
-    inline void SetTierings(Aws::Vector<Tiering>&& value) { m_tieringsHasBeenSet = true; m_tierings = std::move(value); }
-    inline IntelligentTieringConfiguration& WithTierings(const Aws::Vector<Tiering>& value) { SetTierings(value); return *this;}
-    inline IntelligentTieringConfiguration& WithTierings(Aws::Vector<Tiering>&& value) { SetTierings(std::move(value)); return *this;}
-    inline IntelligentTieringConfiguration& AddTierings(const Tiering& value) { m_tieringsHasBeenSet = true; m_tierings.push_back(value); return *this; }
-    inline IntelligentTieringConfiguration& AddTierings(Tiering&& value) { m_tieringsHasBeenSet = true; m_tierings.push_back(std::move(value)); return *this; }
+    template<typename TieringsT = Aws::Vector<Tiering>>
+    void SetTierings(TieringsT&& value) { m_tieringsHasBeenSet = true; m_tierings = std::forward<TieringsT>(value); }
+    template<typename TieringsT = Aws::Vector<Tiering>>
+    IntelligentTieringConfiguration& WithTierings(TieringsT&& value) { SetTierings(std::forward<TieringsT>(value)); return *this;}
+    template<typename TieringsT = Tiering>
+    IntelligentTieringConfiguration& AddTierings(TieringsT&& value) { m_tieringsHasBeenSet = true; m_tierings.emplace_back(std::forward<TieringsT>(value)); return *this; }
     ///@}
   private:
 
@@ -107,7 +103,7 @@ namespace Model
     IntelligentTieringFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    IntelligentTieringStatus m_status;
+    IntelligentTieringStatus m_status{IntelligentTieringStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tiering> m_tierings;

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RenderableTask::RenderableTask() : 
-    m_inputHasBeenSet(false)
-{
-}
-
 RenderableTask::RenderableTask(JsonView jsonValue)
-  : RenderableTask()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RenderableTask& RenderableTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetString("Input");
-
     m_inputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInstanceAttributeRequest::UpdateInstanceAttributeRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_attributeType(InstanceAttributeType::NOT_SET),
-    m_attributeTypeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateInstanceAttributeRequest::SerializePayload() const
 {
   JsonValue payload;

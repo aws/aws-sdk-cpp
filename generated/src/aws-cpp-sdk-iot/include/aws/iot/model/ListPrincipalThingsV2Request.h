@@ -26,7 +26,7 @@ namespace Model
   class ListPrincipalThingsV2Request : public IoTRequest
   {
   public:
-    AWS_IOT_API ListPrincipalThingsV2Request();
+    AWS_IOT_API ListPrincipalThingsV2Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,21 +47,19 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPrincipalThingsV2Request& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPrincipalThingsV2Request& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPrincipalThingsV2Request& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPrincipalThingsV2Request& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return in this operation.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPrincipalThingsV2Request& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -72,14 +70,12 @@ namespace Model
      * <p>The principal. A principal can be an X.509 certificate or an Amazon Cognito
      * ID.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline ListPrincipalThingsV2Request& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline ListPrincipalThingsV2Request& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline ListPrincipalThingsV2Request& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    ListPrincipalThingsV2Request& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,25 +90,23 @@ namespace Model
      * specified thing. Multiple things can be attached to the principal.</p> </li>
      * </ul>
      */
-    inline const ThingPrincipalType& GetThingPrincipalType() const{ return m_thingPrincipalType; }
+    inline ThingPrincipalType GetThingPrincipalType() const { return m_thingPrincipalType; }
     inline bool ThingPrincipalTypeHasBeenSet() const { return m_thingPrincipalTypeHasBeenSet; }
-    inline void SetThingPrincipalType(const ThingPrincipalType& value) { m_thingPrincipalTypeHasBeenSet = true; m_thingPrincipalType = value; }
-    inline void SetThingPrincipalType(ThingPrincipalType&& value) { m_thingPrincipalTypeHasBeenSet = true; m_thingPrincipalType = std::move(value); }
-    inline ListPrincipalThingsV2Request& WithThingPrincipalType(const ThingPrincipalType& value) { SetThingPrincipalType(value); return *this;}
-    inline ListPrincipalThingsV2Request& WithThingPrincipalType(ThingPrincipalType&& value) { SetThingPrincipalType(std::move(value)); return *this;}
+    inline void SetThingPrincipalType(ThingPrincipalType value) { m_thingPrincipalTypeHasBeenSet = true; m_thingPrincipalType = value; }
+    inline ListPrincipalThingsV2Request& WithThingPrincipalType(ThingPrincipalType value) { SetThingPrincipalType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_principal;
     bool m_principalHasBeenSet = false;
 
-    ThingPrincipalType m_thingPrincipalType;
+    ThingPrincipalType m_thingPrincipalType{ThingPrincipalType::NOT_SET};
     bool m_thingPrincipalTypeHasBeenSet = false;
   };
 

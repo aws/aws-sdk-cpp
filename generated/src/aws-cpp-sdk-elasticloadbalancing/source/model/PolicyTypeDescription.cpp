@@ -20,15 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-PolicyTypeDescription::PolicyTypeDescription() : 
-    m_policyTypeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_policyAttributeTypeDescriptionsHasBeenSet(false)
-{
-}
-
 PolicyTypeDescription::PolicyTypeDescription(const XmlNode& xmlNode)
-  : PolicyTypeDescription()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ PolicyTypeDescription& PolicyTypeDescription::operator =(const XmlNode& xmlNode)
     {
       m_policyTypeName = Aws::Utils::Xml::DecodeEscapedXmlText(policyTypeNameNode.GetText());
       m_policyTypeNameHasBeenSet = true;
+       m_policyTypeNameHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode policyAttributeTypeDescriptionsNode = resultNode.FirstChild("PolicyAttributeTypeDescriptions");
     if(!policyAttributeTypeDescriptionsNode.IsNull())
     {
       XmlNode policyAttributeTypeDescriptionsMember = policyAttributeTypeDescriptionsNode.FirstChild("member");
+      m_policyAttributeTypeDescriptionsHasBeenSet = !policyAttributeTypeDescriptionsMember.IsNull();
       while(!policyAttributeTypeDescriptionsMember.IsNull())
       {
         m_policyAttributeTypeDescriptions.push_back(policyAttributeTypeDescriptionsMember);
         policyAttributeTypeDescriptionsMember = policyAttributeTypeDescriptionsMember.NextNode("member");
       }
 
-      m_policyAttributeTypeDescriptionsHasBeenSet = true;
+       m_policyAttributeTypeDescriptionsHasBeenSet = true;
     }
   }
 

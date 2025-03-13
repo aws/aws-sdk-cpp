@@ -18,19 +18,7 @@ namespace Batch
 namespace Model
 {
 
-AttemptDetail::AttemptDetail() : 
-    m_containerHasBeenSet(false),
-    m_startedAt(0),
-    m_startedAtHasBeenSet(false),
-    m_stoppedAt(0),
-    m_stoppedAtHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_taskPropertiesHasBeenSet(false)
-{
-}
-
 AttemptDetail::AttemptDetail(JsonView jsonValue)
-  : AttemptDetail()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AttemptDetail& AttemptDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("container"))
   {
     m_container = jsonValue.GetObject("container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetInt64("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stoppedAt"))
   {
     m_stoppedAt = jsonValue.GetInt64("stoppedAt");
-
     m_stoppedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskProperties"))
   {
     Aws::Utils::Array<JsonView> taskPropertiesJsonList = jsonValue.GetArray("taskProperties");
@@ -74,7 +54,6 @@ AttemptDetail& AttemptDetail::operator =(JsonView jsonValue)
     }
     m_taskPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

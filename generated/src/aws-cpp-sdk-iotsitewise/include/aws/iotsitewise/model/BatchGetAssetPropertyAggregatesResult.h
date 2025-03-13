@@ -31,7 +31,7 @@ namespace Model
   class BatchGetAssetPropertyAggregatesResult
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesResult();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesResult() = default;
     AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSITEWISE_API BatchGetAssetPropertyAggregatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * <p>A list of the errors (if any) associated with the batch request. Each error
      * entry contains the <code>entryId</code> of the entry that failed.</p>
      */
-    inline const Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
-    inline void SetErrorEntries(const Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>& value) { m_errorEntries = value; }
-    inline void SetErrorEntries(Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>&& value) { m_errorEntries = std::move(value); }
-    inline BatchGetAssetPropertyAggregatesResult& WithErrorEntries(const Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>& value) { SetErrorEntries(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithErrorEntries(Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& AddErrorEntries(const BatchGetAssetPropertyAggregatesErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
-    inline BatchGetAssetPropertyAggregatesResult& AddErrorEntries(BatchGetAssetPropertyAggregatesErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>& GetErrorEntries() const { return m_errorEntries; }
+    template<typename ErrorEntriesT = Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>>
+    void SetErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries = std::forward<ErrorEntriesT>(value); }
+    template<typename ErrorEntriesT = Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry>>
+    BatchGetAssetPropertyAggregatesResult& WithErrorEntries(ErrorEntriesT&& value) { SetErrorEntries(std::forward<ErrorEntriesT>(value)); return *this;}
+    template<typename ErrorEntriesT = BatchGetAssetPropertyAggregatesErrorEntry>
+    BatchGetAssetPropertyAggregatesResult& AddErrorEntries(ErrorEntriesT&& value) { m_errorEntriesHasBeenSet = true; m_errorEntries.emplace_back(std::forward<ErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,13 +56,13 @@ namespace Model
      * Each success entry contains the <code>entryId</code> of the entry that succeeded
      * and the latest query result.</p>
      */
-    inline const Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>& GetSuccessEntries() const{ return m_successEntries; }
-    inline void SetSuccessEntries(const Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>& value) { m_successEntries = value; }
-    inline void SetSuccessEntries(Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>&& value) { m_successEntries = std::move(value); }
-    inline BatchGetAssetPropertyAggregatesResult& WithSuccessEntries(const Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>& value) { SetSuccessEntries(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithSuccessEntries(Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>&& value) { SetSuccessEntries(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& AddSuccessEntries(const BatchGetAssetPropertyAggregatesSuccessEntry& value) { m_successEntries.push_back(value); return *this; }
-    inline BatchGetAssetPropertyAggregatesResult& AddSuccessEntries(BatchGetAssetPropertyAggregatesSuccessEntry&& value) { m_successEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>& GetSuccessEntries() const { return m_successEntries; }
+    template<typename SuccessEntriesT = Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>>
+    void SetSuccessEntries(SuccessEntriesT&& value) { m_successEntriesHasBeenSet = true; m_successEntries = std::forward<SuccessEntriesT>(value); }
+    template<typename SuccessEntriesT = Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry>>
+    BatchGetAssetPropertyAggregatesResult& WithSuccessEntries(SuccessEntriesT&& value) { SetSuccessEntries(std::forward<SuccessEntriesT>(value)); return *this;}
+    template<typename SuccessEntriesT = BatchGetAssetPropertyAggregatesSuccessEntry>
+    BatchGetAssetPropertyAggregatesResult& AddSuccessEntries(SuccessEntriesT&& value) { m_successEntriesHasBeenSet = true; m_successEntries.emplace_back(std::forward<SuccessEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,13 +71,13 @@ namespace Model
      * these entries had been completely processed by previous paginated requests. Each
      * skipped entry contains the <code>entryId</code> of the entry that skipped.</p>
      */
-    inline const Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>& GetSkippedEntries() const{ return m_skippedEntries; }
-    inline void SetSkippedEntries(const Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>& value) { m_skippedEntries = value; }
-    inline void SetSkippedEntries(Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>&& value) { m_skippedEntries = std::move(value); }
-    inline BatchGetAssetPropertyAggregatesResult& WithSkippedEntries(const Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>& value) { SetSkippedEntries(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithSkippedEntries(Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>&& value) { SetSkippedEntries(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& AddSkippedEntries(const BatchGetAssetPropertyAggregatesSkippedEntry& value) { m_skippedEntries.push_back(value); return *this; }
-    inline BatchGetAssetPropertyAggregatesResult& AddSkippedEntries(BatchGetAssetPropertyAggregatesSkippedEntry&& value) { m_skippedEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>& GetSkippedEntries() const { return m_skippedEntries; }
+    template<typename SkippedEntriesT = Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>>
+    void SetSkippedEntries(SkippedEntriesT&& value) { m_skippedEntriesHasBeenSet = true; m_skippedEntries = std::forward<SkippedEntriesT>(value); }
+    template<typename SkippedEntriesT = Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry>>
+    BatchGetAssetPropertyAggregatesResult& WithSkippedEntries(SkippedEntriesT&& value) { SetSkippedEntries(std::forward<SkippedEntriesT>(value)); return *this;}
+    template<typename SkippedEntriesT = BatchGetAssetPropertyAggregatesSkippedEntry>
+    BatchGetAssetPropertyAggregatesResult& AddSkippedEntries(SkippedEntriesT&& value) { m_skippedEntriesHasBeenSet = true; m_skippedEntries.emplace_back(std::forward<SkippedEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,36 +85,37 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline BatchGetAssetPropertyAggregatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    BatchGetAssetPropertyAggregatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetAssetPropertyAggregatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyAggregatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetAssetPropertyAggregatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetAssetPropertyAggregatesErrorEntry> m_errorEntries;
+    bool m_errorEntriesHasBeenSet = false;
 
     Aws::Vector<BatchGetAssetPropertyAggregatesSuccessEntry> m_successEntries;
+    bool m_successEntriesHasBeenSet = false;
 
     Aws::Vector<BatchGetAssetPropertyAggregatesSkippedEntry> m_skippedEntries;
+    bool m_skippedEntriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

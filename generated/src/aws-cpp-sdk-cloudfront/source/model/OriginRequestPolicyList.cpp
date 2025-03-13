@@ -20,18 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginRequestPolicyList::OriginRequestPolicyList() : 
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 OriginRequestPolicyList::OriginRequestPolicyList(const XmlNode& xmlNode)
-  : OriginRequestPolicyList()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,34 @@ OriginRequestPolicyList& OriginRequestPolicyList::operator =(const XmlNode& xmlN
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
       m_nextMarkerHasBeenSet = true;
+       m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText()).c_str()).c_str());
       m_maxItemsHasBeenSet = true;
+       m_maxItemsHasBeenSet = true;
     }
     XmlNode quantityNode = resultNode.FirstChild("Quantity");
     if(!quantityNode.IsNull())
     {
       m_quantity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(quantityNode.GetText()).c_str()).c_str());
       m_quantityHasBeenSet = true;
+       m_quantityHasBeenSet = true;
     }
     XmlNode itemsNode = resultNode.FirstChild("Items");
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("OriginRequestPolicySummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);
         itemsMember = itemsMember.NextNode("OriginRequestPolicySummary");
       }
 
-      m_itemsHasBeenSet = true;
+       m_itemsHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class EvaluationConfig
   {
   public:
-    AWS_BEDROCK_API EvaluationConfig();
+    AWS_BEDROCK_API EvaluationConfig() = default;
     AWS_BEDROCK_API EvaluationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Contains the configuration details of an automated evaluation job that
      * computes metrics.</p>
      */
-    inline const AutomatedEvaluationConfig& GetAutomated() const{ return m_automated; }
+    inline const AutomatedEvaluationConfig& GetAutomated() const { return m_automated; }
     inline bool AutomatedHasBeenSet() const { return m_automatedHasBeenSet; }
-    inline void SetAutomated(const AutomatedEvaluationConfig& value) { m_automatedHasBeenSet = true; m_automated = value; }
-    inline void SetAutomated(AutomatedEvaluationConfig&& value) { m_automatedHasBeenSet = true; m_automated = std::move(value); }
-    inline EvaluationConfig& WithAutomated(const AutomatedEvaluationConfig& value) { SetAutomated(value); return *this;}
-    inline EvaluationConfig& WithAutomated(AutomatedEvaluationConfig&& value) { SetAutomated(std::move(value)); return *this;}
+    template<typename AutomatedT = AutomatedEvaluationConfig>
+    void SetAutomated(AutomatedT&& value) { m_automatedHasBeenSet = true; m_automated = std::forward<AutomatedT>(value); }
+    template<typename AutomatedT = AutomatedEvaluationConfig>
+    EvaluationConfig& WithAutomated(AutomatedT&& value) { SetAutomated(std::forward<AutomatedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Contains the configuration details of an evaluation job that uses human
      * workers.</p>
      */
-    inline const HumanEvaluationConfig& GetHuman() const{ return m_human; }
+    inline const HumanEvaluationConfig& GetHuman() const { return m_human; }
     inline bool HumanHasBeenSet() const { return m_humanHasBeenSet; }
-    inline void SetHuman(const HumanEvaluationConfig& value) { m_humanHasBeenSet = true; m_human = value; }
-    inline void SetHuman(HumanEvaluationConfig&& value) { m_humanHasBeenSet = true; m_human = std::move(value); }
-    inline EvaluationConfig& WithHuman(const HumanEvaluationConfig& value) { SetHuman(value); return *this;}
-    inline EvaluationConfig& WithHuman(HumanEvaluationConfig&& value) { SetHuman(std::move(value)); return *this;}
+    template<typename HumanT = HumanEvaluationConfig>
+    void SetHuman(HumanT&& value) { m_humanHasBeenSet = true; m_human = std::forward<HumanT>(value); }
+    template<typename HumanT = HumanEvaluationConfig>
+    EvaluationConfig& WithHuman(HumanT&& value) { SetHuman(std::forward<HumanT>(value)); return *this;}
     ///@}
   private:
 

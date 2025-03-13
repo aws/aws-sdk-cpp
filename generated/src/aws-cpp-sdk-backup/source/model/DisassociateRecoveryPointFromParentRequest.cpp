@@ -12,12 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateRecoveryPointFromParentRequest::DisassociateRecoveryPointFromParentRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateRecoveryPointFromParentRequest::SerializePayload() const
 {
   return {};

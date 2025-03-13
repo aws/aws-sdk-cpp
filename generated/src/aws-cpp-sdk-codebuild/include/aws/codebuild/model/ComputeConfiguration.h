@@ -33,7 +33,7 @@ namespace Model
   class ComputeConfiguration
   {
   public:
-    AWS_CODEBUILD_API ComputeConfiguration();
+    AWS_CODEBUILD_API ComputeConfiguration() = default;
     AWS_CODEBUILD_API ComputeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ComputeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The number of vCPUs of the instance type included in your fleet.</p>
      */
-    inline long long GetVCpu() const{ return m_vCpu; }
+    inline long long GetVCpu() const { return m_vCpu; }
     inline bool VCpuHasBeenSet() const { return m_vCpuHasBeenSet; }
     inline void SetVCpu(long long value) { m_vCpuHasBeenSet = true; m_vCpu = value; }
     inline ComputeConfiguration& WithVCpu(long long value) { SetVCpu(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The amount of memory of the instance type included in your fleet.</p>
      */
-    inline long long GetMemory() const{ return m_memory; }
+    inline long long GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(long long value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline ComputeConfiguration& WithMemory(long long value) { SetMemory(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The amount of disk space of the instance type included in your fleet.</p>
      */
-    inline long long GetDisk() const{ return m_disk; }
+    inline long long GetDisk() const { return m_disk; }
     inline bool DiskHasBeenSet() const { return m_diskHasBeenSet; }
     inline void SetDisk(long long value) { m_diskHasBeenSet = true; m_disk = value; }
     inline ComputeConfiguration& WithDisk(long long value) { SetDisk(value); return *this;}
@@ -73,25 +73,23 @@ namespace Model
     /**
      * <p>The machine type of the instance type included in your fleet.</p>
      */
-    inline const MachineType& GetMachineType() const{ return m_machineType; }
+    inline MachineType GetMachineType() const { return m_machineType; }
     inline bool MachineTypeHasBeenSet() const { return m_machineTypeHasBeenSet; }
-    inline void SetMachineType(const MachineType& value) { m_machineTypeHasBeenSet = true; m_machineType = value; }
-    inline void SetMachineType(MachineType&& value) { m_machineTypeHasBeenSet = true; m_machineType = std::move(value); }
-    inline ComputeConfiguration& WithMachineType(const MachineType& value) { SetMachineType(value); return *this;}
-    inline ComputeConfiguration& WithMachineType(MachineType&& value) { SetMachineType(std::move(value)); return *this;}
+    inline void SetMachineType(MachineType value) { m_machineTypeHasBeenSet = true; m_machineType = value; }
+    inline ComputeConfiguration& WithMachineType(MachineType value) { SetMachineType(value); return *this;}
     ///@}
   private:
 
-    long long m_vCpu;
+    long long m_vCpu{0};
     bool m_vCpuHasBeenSet = false;
 
-    long long m_memory;
+    long long m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    long long m_disk;
+    long long m_disk{0};
     bool m_diskHasBeenSet = false;
 
-    MachineType m_machineType;
+    MachineType m_machineType{MachineType::NOT_SET};
     bool m_machineTypeHasBeenSet = false;
   };
 

@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-PluginTypeMetadataSummary::PluginTypeMetadataSummary() : 
-    m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_category(PluginTypeCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 PluginTypeMetadataSummary::PluginTypeMetadataSummary(JsonView jsonValue)
-  : PluginTypeMetadataSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PluginTypeMetadataSummary& PluginTypeMetadataSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("type"))
   {
     m_type = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = PluginTypeCategoryMapper::GetPluginTypeCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

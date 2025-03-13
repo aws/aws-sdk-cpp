@@ -33,85 +33,83 @@ namespace Model
   class GetAnswerResult
   {
   public:
-    AWS_WELLARCHITECTED_API GetAnswerResult();
+    AWS_WELLARCHITECTED_API GetAnswerResult() = default;
     AWS_WELLARCHITECTED_API GetAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API GetAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-    inline GetAnswerResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline GetAnswerResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline GetAnswerResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    GetAnswerResult& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
-    inline void SetMilestoneNumber(int value) { m_milestoneNumber = value; }
+    inline int GetMilestoneNumber() const { return m_milestoneNumber; }
+    inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
     inline GetAnswerResult& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAlias.assign(value); }
-    inline GetAnswerResult& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline GetAnswerResult& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline GetAnswerResult& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    GetAnswerResult& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN for the lens.</p>
      */
-    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
-    inline void SetLensArn(const Aws::String& value) { m_lensArn = value; }
-    inline void SetLensArn(Aws::String&& value) { m_lensArn = std::move(value); }
-    inline void SetLensArn(const char* value) { m_lensArn.assign(value); }
-    inline GetAnswerResult& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-    inline GetAnswerResult& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-    inline GetAnswerResult& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    inline const Aws::String& GetLensArn() const { return m_lensArn; }
+    template<typename LensArnT = Aws::String>
+    void SetLensArn(LensArnT&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::forward<LensArnT>(value); }
+    template<typename LensArnT = Aws::String>
+    GetAnswerResult& WithLensArn(LensArnT&& value) { SetLensArn(std::forward<LensArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Answer& GetAnswer() const{ return m_answer; }
-    inline void SetAnswer(const Answer& value) { m_answer = value; }
-    inline void SetAnswer(Answer&& value) { m_answer = std::move(value); }
-    inline GetAnswerResult& WithAnswer(const Answer& value) { SetAnswer(value); return *this;}
-    inline GetAnswerResult& WithAnswer(Answer&& value) { SetAnswer(std::move(value)); return *this;}
+    inline const Answer& GetAnswer() const { return m_answer; }
+    template<typename AnswerT = Answer>
+    void SetAnswer(AnswerT&& value) { m_answerHasBeenSet = true; m_answer = std::forward<AnswerT>(value); }
+    template<typename AnswerT = Answer>
+    GetAnswerResult& WithAnswer(AnswerT&& value) { SetAnswer(std::forward<AnswerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAnswerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAnswerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAnswerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAnswerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workloadId;
+    bool m_workloadIdHasBeenSet = false;
 
-    int m_milestoneNumber;
+    int m_milestoneNumber{0};
+    bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_lensAlias;
+    bool m_lensAliasHasBeenSet = false;
 
     Aws::String m_lensArn;
+    bool m_lensArnHasBeenSet = false;
 
     Answer m_answer;
+    bool m_answerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,22 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RetrievalResultLocation::RetrievalResultLocation() : 
-    m_confluenceLocationHasBeenSet(false),
-    m_customDocumentLocationHasBeenSet(false),
-    m_kendraDocumentLocationHasBeenSet(false),
-    m_s3LocationHasBeenSet(false),
-    m_salesforceLocationHasBeenSet(false),
-    m_sharePointLocationHasBeenSet(false),
-    m_sqlLocationHasBeenSet(false),
-    m_type(RetrievalResultLocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_webLocationHasBeenSet(false)
-{
-}
-
 RetrievalResultLocation::RetrievalResultLocation(JsonView jsonValue)
-  : RetrievalResultLocation()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("confluenceLocation"))
   {
     m_confluenceLocation = jsonValue.GetObject("confluenceLocation");
-
     m_confluenceLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDocumentLocation"))
   {
     m_customDocumentLocation = jsonValue.GetObject("customDocumentLocation");
-
     m_customDocumentLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kendraDocumentLocation"))
   {
     m_kendraDocumentLocation = jsonValue.GetObject("kendraDocumentLocation");
-
     m_kendraDocumentLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("salesforceLocation"))
   {
     m_salesforceLocation = jsonValue.GetObject("salesforceLocation");
-
     m_salesforceLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharePointLocation"))
   {
     m_sharePointLocation = jsonValue.GetObject("sharePointLocation");
-
     m_sharePointLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sqlLocation"))
   {
     m_sqlLocation = jsonValue.GetObject("sqlLocation");
-
     m_sqlLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RetrievalResultLocationTypeMapper::GetRetrievalResultLocationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webLocation"))
   {
     m_webLocation = jsonValue.GetObject("webLocation");
-
     m_webLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

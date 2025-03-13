@@ -28,7 +28,7 @@ namespace Model
   class GetSampleDataResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API GetSampleDataResult();
+    AWS_LOOKOUTMETRICS_API GetSampleDataResult() = default;
     AWS_LOOKOUTMETRICS_API GetSampleDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API GetSampleDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,46 +37,46 @@ namespace Model
     /**
      * <p>A list of header labels for the records.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHeaderValues() const{ return m_headerValues; }
-    inline void SetHeaderValues(const Aws::Vector<Aws::String>& value) { m_headerValues = value; }
-    inline void SetHeaderValues(Aws::Vector<Aws::String>&& value) { m_headerValues = std::move(value); }
-    inline GetSampleDataResult& WithHeaderValues(const Aws::Vector<Aws::String>& value) { SetHeaderValues(value); return *this;}
-    inline GetSampleDataResult& WithHeaderValues(Aws::Vector<Aws::String>&& value) { SetHeaderValues(std::move(value)); return *this;}
-    inline GetSampleDataResult& AddHeaderValues(const Aws::String& value) { m_headerValues.push_back(value); return *this; }
-    inline GetSampleDataResult& AddHeaderValues(Aws::String&& value) { m_headerValues.push_back(std::move(value)); return *this; }
-    inline GetSampleDataResult& AddHeaderValues(const char* value) { m_headerValues.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetHeaderValues() const { return m_headerValues; }
+    template<typename HeaderValuesT = Aws::Vector<Aws::String>>
+    void SetHeaderValues(HeaderValuesT&& value) { m_headerValuesHasBeenSet = true; m_headerValues = std::forward<HeaderValuesT>(value); }
+    template<typename HeaderValuesT = Aws::Vector<Aws::String>>
+    GetSampleDataResult& WithHeaderValues(HeaderValuesT&& value) { SetHeaderValues(std::forward<HeaderValuesT>(value)); return *this;}
+    template<typename HeaderValuesT = Aws::String>
+    GetSampleDataResult& AddHeaderValues(HeaderValuesT&& value) { m_headerValuesHasBeenSet = true; m_headerValues.emplace_back(std::forward<HeaderValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of records.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSampleRows() const{ return m_sampleRows; }
-    inline void SetSampleRows(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_sampleRows = value; }
-    inline void SetSampleRows(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_sampleRows = std::move(value); }
-    inline GetSampleDataResult& WithSampleRows(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetSampleRows(value); return *this;}
-    inline GetSampleDataResult& WithSampleRows(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetSampleRows(std::move(value)); return *this;}
-    inline GetSampleDataResult& AddSampleRows(const Aws::Vector<Aws::String>& value) { m_sampleRows.push_back(value); return *this; }
-    inline GetSampleDataResult& AddSampleRows(Aws::Vector<Aws::String>&& value) { m_sampleRows.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSampleRows() const { return m_sampleRows; }
+    template<typename SampleRowsT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetSampleRows(SampleRowsT&& value) { m_sampleRowsHasBeenSet = true; m_sampleRows = std::forward<SampleRowsT>(value); }
+    template<typename SampleRowsT = Aws::Vector<Aws::Vector<Aws::String>>>
+    GetSampleDataResult& WithSampleRows(SampleRowsT&& value) { SetSampleRows(std::forward<SampleRowsT>(value)); return *this;}
+    template<typename SampleRowsT = Aws::Vector<Aws::String>>
+    GetSampleDataResult& AddSampleRows(SampleRowsT&& value) { m_sampleRowsHasBeenSet = true; m_sampleRows.emplace_back(std::forward<SampleRowsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSampleDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSampleDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSampleDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSampleDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_headerValues;
+    bool m_headerValuesHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<Aws::String>> m_sampleRows;
+    bool m_sampleRowsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

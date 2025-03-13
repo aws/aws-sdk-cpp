@@ -29,7 +29,7 @@ namespace Model
   class ListTunnelsResult
   {
   public:
-    AWS_IOTSECURETUNNELING_API ListTunnelsResult();
+    AWS_IOTSECURETUNNELING_API ListTunnelsResult() = default;
     AWS_IOTSECURETUNNELING_API ListTunnelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTSECURETUNNELING_API ListTunnelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A short description of the tunnels in an Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<TunnelSummary>& GetTunnelSummaries() const{ return m_tunnelSummaries; }
-    inline void SetTunnelSummaries(const Aws::Vector<TunnelSummary>& value) { m_tunnelSummaries = value; }
-    inline void SetTunnelSummaries(Aws::Vector<TunnelSummary>&& value) { m_tunnelSummaries = std::move(value); }
-    inline ListTunnelsResult& WithTunnelSummaries(const Aws::Vector<TunnelSummary>& value) { SetTunnelSummaries(value); return *this;}
-    inline ListTunnelsResult& WithTunnelSummaries(Aws::Vector<TunnelSummary>&& value) { SetTunnelSummaries(std::move(value)); return *this;}
-    inline ListTunnelsResult& AddTunnelSummaries(const TunnelSummary& value) { m_tunnelSummaries.push_back(value); return *this; }
-    inline ListTunnelsResult& AddTunnelSummaries(TunnelSummary&& value) { m_tunnelSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TunnelSummary>& GetTunnelSummaries() const { return m_tunnelSummaries; }
+    template<typename TunnelSummariesT = Aws::Vector<TunnelSummary>>
+    void SetTunnelSummaries(TunnelSummariesT&& value) { m_tunnelSummariesHasBeenSet = true; m_tunnelSummaries = std::forward<TunnelSummariesT>(value); }
+    template<typename TunnelSummariesT = Aws::Vector<TunnelSummary>>
+    ListTunnelsResult& WithTunnelSummaries(TunnelSummariesT&& value) { SetTunnelSummaries(std::forward<TunnelSummariesT>(value)); return *this;}
+    template<typename TunnelSummariesT = TunnelSummary>
+    ListTunnelsResult& AddTunnelSummaries(TunnelSummariesT&& value) { m_tunnelSummariesHasBeenSet = true; m_tunnelSummaries.emplace_back(std::forward<TunnelSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token to use to get the next set of results, or null if there are no
      * additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTunnelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTunnelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTunnelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTunnelsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTunnelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTunnelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTunnelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTunnelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TunnelSummary> m_tunnelSummaries;
+    bool m_tunnelSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

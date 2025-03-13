@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-NotificationRecipientType::NotificationRecipientType() : 
-    m_userTagsHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
-{
-}
-
 NotificationRecipientType::NotificationRecipientType(JsonView jsonValue)
-  : NotificationRecipientType()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ NotificationRecipientType& NotificationRecipientType::operator =(JsonView jsonVa
     }
     m_userTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserIds"))
   {
     Aws::Utils::Array<JsonView> userIdsJsonList = jsonValue.GetArray("UserIds");
@@ -51,7 +43,6 @@ NotificationRecipientType& NotificationRecipientType::operator =(JsonView jsonVa
     }
     m_userIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

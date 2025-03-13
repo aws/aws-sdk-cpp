@@ -18,18 +18,7 @@ namespace Chime
 namespace Model
 {
 
-TelephonySettings::TelephonySettings() : 
-    m_inboundCalling(false),
-    m_inboundCallingHasBeenSet(false),
-    m_outboundCalling(false),
-    m_outboundCallingHasBeenSet(false),
-    m_sMS(false),
-    m_sMSHasBeenSet(false)
-{
-}
-
 TelephonySettings::TelephonySettings(JsonView jsonValue)
-  : TelephonySettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TelephonySettings& TelephonySettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InboundCalling"))
   {
     m_inboundCalling = jsonValue.GetBool("InboundCalling");
-
     m_inboundCallingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundCalling"))
   {
     m_outboundCalling = jsonValue.GetBool("OutboundCalling");
-
     m_outboundCallingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SMS"))
   {
     m_sMS = jsonValue.GetBool("SMS");
-
     m_sMSHasBeenSet = true;
   }
-
   return *this;
 }
 

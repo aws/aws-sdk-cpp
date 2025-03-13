@@ -32,7 +32,7 @@ namespace Model
   class ExportTaskDetails
   {
   public:
-    AWS_NEPTUNEGRAPH_API ExportTaskDetails();
+    AWS_NEPTUNEGRAPH_API ExportTaskDetails() = default;
     AWS_NEPTUNEGRAPH_API ExportTaskDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API ExportTaskDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,19 @@ namespace Model
     /**
      * <p>The start time of the export task.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ExportTaskDetails& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ExportTaskDetails& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ExportTaskDetails& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time elapsed, in seconds, since the start time of the export task.</p>
      */
-    inline long long GetTimeElapsedSeconds() const{ return m_timeElapsedSeconds; }
+    inline long long GetTimeElapsedSeconds() const { return m_timeElapsedSeconds; }
     inline bool TimeElapsedSecondsHasBeenSet() const { return m_timeElapsedSecondsHasBeenSet; }
     inline void SetTimeElapsedSeconds(long long value) { m_timeElapsedSecondsHasBeenSet = true; m_timeElapsedSeconds = value; }
     inline ExportTaskDetails& WithTimeElapsedSeconds(long long value) { SetTimeElapsedSeconds(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>The number of progress percentage of the export task.</p>
      */
-    inline int GetProgressPercentage() const{ return m_progressPercentage; }
+    inline int GetProgressPercentage() const { return m_progressPercentage; }
     inline bool ProgressPercentageHasBeenSet() const { return m_progressPercentageHasBeenSet; }
     inline void SetProgressPercentage(int value) { m_progressPercentageHasBeenSet = true; m_progressPercentage = value; }
     inline ExportTaskDetails& WithProgressPercentage(int value) { SetProgressPercentage(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The number of exported vertices.</p>
      */
-    inline long long GetNumVerticesWritten() const{ return m_numVerticesWritten; }
+    inline long long GetNumVerticesWritten() const { return m_numVerticesWritten; }
     inline bool NumVerticesWrittenHasBeenSet() const { return m_numVerticesWrittenHasBeenSet; }
     inline void SetNumVerticesWritten(long long value) { m_numVerticesWrittenHasBeenSet = true; m_numVerticesWritten = value; }
     inline ExportTaskDetails& WithNumVerticesWritten(long long value) { SetNumVerticesWritten(value); return *this;}
@@ -84,26 +84,26 @@ namespace Model
     /**
      * <p>The number of exported edges.</p>
      */
-    inline long long GetNumEdgesWritten() const{ return m_numEdgesWritten; }
+    inline long long GetNumEdgesWritten() const { return m_numEdgesWritten; }
     inline bool NumEdgesWrittenHasBeenSet() const { return m_numEdgesWrittenHasBeenSet; }
     inline void SetNumEdgesWritten(long long value) { m_numEdgesWrittenHasBeenSet = true; m_numEdgesWritten = value; }
     inline ExportTaskDetails& WithNumEdgesWritten(long long value) { SetNumEdgesWritten(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    long long m_timeElapsedSeconds;
+    long long m_timeElapsedSeconds{0};
     bool m_timeElapsedSecondsHasBeenSet = false;
 
-    int m_progressPercentage;
+    int m_progressPercentage{0};
     bool m_progressPercentageHasBeenSet = false;
 
-    long long m_numVerticesWritten;
+    long long m_numVerticesWritten{0};
     bool m_numVerticesWrittenHasBeenSet = false;
 
-    long long m_numEdgesWritten;
+    long long m_numEdgesWritten{0};
     bool m_numEdgesWrittenHasBeenSet = false;
   };
 

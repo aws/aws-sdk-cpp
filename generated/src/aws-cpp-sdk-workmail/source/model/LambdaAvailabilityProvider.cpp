@@ -18,13 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-LambdaAvailabilityProvider::LambdaAvailabilityProvider() : 
-    m_lambdaArnHasBeenSet(false)
-{
-}
-
 LambdaAvailabilityProvider::LambdaAvailabilityProvider(JsonView jsonValue)
-  : LambdaAvailabilityProvider()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaAvailabilityProvider& LambdaAvailabilityProvider::operator =(JsonView json
   if(jsonValue.ValueExists("LambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

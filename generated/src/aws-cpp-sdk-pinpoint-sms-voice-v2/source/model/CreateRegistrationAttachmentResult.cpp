@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRegistrationAttachmentResult::CreateRegistrationAttachmentResult() : 
-    m_attachmentStatus(AttachmentStatus::NOT_SET)
-{
-}
-
 CreateRegistrationAttachmentResult::CreateRegistrationAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateRegistrationAttachmentResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ CreateRegistrationAttachmentResult& CreateRegistrationAttachmentResult::operator
   if(jsonValue.ValueExists("RegistrationAttachmentArn"))
   {
     m_registrationAttachmentArn = jsonValue.GetString("RegistrationAttachmentArn");
-
+    m_registrationAttachmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationAttachmentId"))
   {
     m_registrationAttachmentId = jsonValue.GetString("RegistrationAttachmentId");
-
+    m_registrationAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentStatus"))
   {
     m_attachmentStatus = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("AttachmentStatus"));
-
+    m_attachmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -56,20 +47,20 @@ CreateRegistrationAttachmentResult& CreateRegistrationAttachmentResult::operator
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

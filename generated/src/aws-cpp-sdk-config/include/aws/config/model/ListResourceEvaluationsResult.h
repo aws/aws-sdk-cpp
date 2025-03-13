@@ -29,7 +29,7 @@ namespace Model
   class ListResourceEvaluationsResult
   {
   public:
-    AWS_CONFIGSERVICE_API ListResourceEvaluationsResult();
+    AWS_CONFIGSERVICE_API ListResourceEvaluationsResult() = default;
     AWS_CONFIGSERVICE_API ListResourceEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API ListResourceEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns a <code>ResourceEvaluations</code> object.</p>
      */
-    inline const Aws::Vector<ResourceEvaluation>& GetResourceEvaluations() const{ return m_resourceEvaluations; }
-    inline void SetResourceEvaluations(const Aws::Vector<ResourceEvaluation>& value) { m_resourceEvaluations = value; }
-    inline void SetResourceEvaluations(Aws::Vector<ResourceEvaluation>&& value) { m_resourceEvaluations = std::move(value); }
-    inline ListResourceEvaluationsResult& WithResourceEvaluations(const Aws::Vector<ResourceEvaluation>& value) { SetResourceEvaluations(value); return *this;}
-    inline ListResourceEvaluationsResult& WithResourceEvaluations(Aws::Vector<ResourceEvaluation>&& value) { SetResourceEvaluations(std::move(value)); return *this;}
-    inline ListResourceEvaluationsResult& AddResourceEvaluations(const ResourceEvaluation& value) { m_resourceEvaluations.push_back(value); return *this; }
-    inline ListResourceEvaluationsResult& AddResourceEvaluations(ResourceEvaluation&& value) { m_resourceEvaluations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceEvaluation>& GetResourceEvaluations() const { return m_resourceEvaluations; }
+    template<typename ResourceEvaluationsT = Aws::Vector<ResourceEvaluation>>
+    void SetResourceEvaluations(ResourceEvaluationsT&& value) { m_resourceEvaluationsHasBeenSet = true; m_resourceEvaluations = std::forward<ResourceEvaluationsT>(value); }
+    template<typename ResourceEvaluationsT = Aws::Vector<ResourceEvaluation>>
+    ListResourceEvaluationsResult& WithResourceEvaluations(ResourceEvaluationsT&& value) { SetResourceEvaluations(std::forward<ResourceEvaluationsT>(value)); return *this;}
+    template<typename ResourceEvaluationsT = ResourceEvaluation>
+    ListResourceEvaluationsResult& AddResourceEvaluations(ResourceEvaluationsT&& value) { m_resourceEvaluationsHasBeenSet = true; m_resourceEvaluations.emplace_back(std::forward<ResourceEvaluationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourceEvaluationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceEvaluationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceEvaluationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceEvaluationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourceEvaluationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourceEvaluationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourceEvaluationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourceEvaluationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceEvaluation> m_resourceEvaluations;
+    bool m_resourceEvaluationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

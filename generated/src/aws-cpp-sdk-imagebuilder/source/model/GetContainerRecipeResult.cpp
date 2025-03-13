@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContainerRecipeResult::GetContainerRecipeResult()
-{
-}
-
 GetContainerRecipeResult::GetContainerRecipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ GetContainerRecipeResult& GetContainerRecipeResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerRecipe"))
   {
     m_containerRecipe = jsonValue.GetObject("containerRecipe");
-
+    m_containerRecipeHasBeenSet = true;
   }
-
 
 
   return *this;

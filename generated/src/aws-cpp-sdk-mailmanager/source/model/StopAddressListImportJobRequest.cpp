@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopAddressListImportJobRequest::StopAddressListImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopAddressListImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

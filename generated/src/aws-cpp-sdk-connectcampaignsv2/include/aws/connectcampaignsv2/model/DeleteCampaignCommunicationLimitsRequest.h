@@ -30,7 +30,7 @@ namespace Model
   class DeleteCampaignCommunicationLimitsRequest : public ConnectCampaignsV2Request
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API DeleteCampaignCommunicationLimitsRequest();
+    AWS_CONNECTCAMPAIGNSV2_API DeleteCampaignCommunicationLimitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,31 +45,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DeleteCampaignCommunicationLimitsRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteCampaignCommunicationLimitsRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteCampaignCommunicationLimitsRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteCampaignCommunicationLimitsRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CommunicationLimitsConfigType& GetConfig() const{ return m_config; }
+    inline CommunicationLimitsConfigType GetConfig() const { return m_config; }
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-    inline void SetConfig(const CommunicationLimitsConfigType& value) { m_configHasBeenSet = true; m_config = value; }
-    inline void SetConfig(CommunicationLimitsConfigType&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-    inline DeleteCampaignCommunicationLimitsRequest& WithConfig(const CommunicationLimitsConfigType& value) { SetConfig(value); return *this;}
-    inline DeleteCampaignCommunicationLimitsRequest& WithConfig(CommunicationLimitsConfigType&& value) { SetConfig(std::move(value)); return *this;}
+    inline void SetConfig(CommunicationLimitsConfigType value) { m_configHasBeenSet = true; m_config = value; }
+    inline DeleteCampaignCommunicationLimitsRequest& WithConfig(CommunicationLimitsConfigType value) { SetConfig(value); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    CommunicationLimitsConfigType m_config;
+    CommunicationLimitsConfigType m_config{CommunicationLimitsConfigType::NOT_SET};
     bool m_configHasBeenSet = false;
   };
 

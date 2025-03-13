@@ -19,7 +19,7 @@ namespace Model
   class DisassociateDRTRoleRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API DisassociateDRTRoleRequest();
+    AWS_SHIELD_API DisassociateDRTRoleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

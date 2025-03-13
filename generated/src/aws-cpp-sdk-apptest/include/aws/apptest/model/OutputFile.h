@@ -31,7 +31,7 @@ namespace Model
   class OutputFile
   {
   public:
-    AWS_APPTEST_API OutputFile();
+    AWS_APPTEST_API OutputFile() = default;
     AWS_APPTEST_API OutputFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API OutputFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The file location of the output file.</p>
      */
-    inline const Aws::String& GetFileLocation() const{ return m_fileLocation; }
+    inline const Aws::String& GetFileLocation() const { return m_fileLocation; }
     inline bool FileLocationHasBeenSet() const { return m_fileLocationHasBeenSet; }
-    inline void SetFileLocation(const Aws::String& value) { m_fileLocationHasBeenSet = true; m_fileLocation = value; }
-    inline void SetFileLocation(Aws::String&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::move(value); }
-    inline void SetFileLocation(const char* value) { m_fileLocationHasBeenSet = true; m_fileLocation.assign(value); }
-    inline OutputFile& WithFileLocation(const Aws::String& value) { SetFileLocation(value); return *this;}
-    inline OutputFile& WithFileLocation(Aws::String&& value) { SetFileLocation(std::move(value)); return *this;}
-    inline OutputFile& WithFileLocation(const char* value) { SetFileLocation(value); return *this;}
+    template<typename FileLocationT = Aws::String>
+    void SetFileLocation(FileLocationT&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::forward<FileLocationT>(value); }
+    template<typename FileLocationT = Aws::String>
+    OutputFile& WithFileLocation(FileLocationT&& value) { SetFileLocation(std::forward<FileLocationT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class ProvisionedProductAttribute
   {
   public:
-    AWS_SERVICECATALOG_API ProvisionedProductAttribute();
+    AWS_SERVICECATALOG_API ProvisionedProductAttribute() = default;
     AWS_SERVICECATALOG_API ProvisionedProductAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProvisionedProductAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The user-friendly name of the provisioned product.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ProvisionedProductAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ProvisionedProductAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ProvisionedProductAttribute& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the provisioned product.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ProvisionedProductAttribute& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ProvisionedProductAttribute& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ProvisionedProductAttribute& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +72,24 @@ namespace Model
      * <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>, and
      * <code>EXTERNAL</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ProvisionedProductAttribute& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ProvisionedProductAttribute& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ProvisionedProductAttribute& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the provisioned product.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ProvisionedProductAttribute& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ProvisionedProductAttribute& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ProvisionedProductAttribute& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,38 +112,34 @@ namespace Model
      * Wait for an <code>AVAILABLE</code> status before performing operations.</p>
      * </li> </ul>
      */
-    inline const ProvisionedProductStatus& GetStatus() const{ return m_status; }
+    inline ProvisionedProductStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProvisionedProductStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProvisionedProductStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProvisionedProductAttribute& WithStatus(const ProvisionedProductStatus& value) { SetStatus(value); return *this;}
-    inline ProvisionedProductAttribute& WithStatus(ProvisionedProductStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProvisionedProductStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProvisionedProductAttribute& WithStatus(ProvisionedProductStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status message of the provisioned product.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ProvisionedProductAttribute& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ProvisionedProductAttribute& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ProvisionedProductAttribute& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline ProvisionedProductAttribute& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline ProvisionedProductAttribute& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    ProvisionedProductAttribute& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,14 +148,12 @@ namespace Model
      * requests differ only by the idempotency token, the same response is returned for
      * each repeated request.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline ProvisionedProductAttribute& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline ProvisionedProductAttribute& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    ProvisionedProductAttribute& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,14 +161,12 @@ namespace Model
      * <p>The record identifier of the last request performed on this provisioned
      * product.</p>
      */
-    inline const Aws::String& GetLastRecordId() const{ return m_lastRecordId; }
+    inline const Aws::String& GetLastRecordId() const { return m_lastRecordId; }
     inline bool LastRecordIdHasBeenSet() const { return m_lastRecordIdHasBeenSet; }
-    inline void SetLastRecordId(const Aws::String& value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId = value; }
-    inline void SetLastRecordId(Aws::String&& value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId = std::move(value); }
-    inline void SetLastRecordId(const char* value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId.assign(value); }
-    inline ProvisionedProductAttribute& WithLastRecordId(const Aws::String& value) { SetLastRecordId(value); return *this;}
-    inline ProvisionedProductAttribute& WithLastRecordId(Aws::String&& value) { SetLastRecordId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithLastRecordId(const char* value) { SetLastRecordId(value); return *this;}
+    template<typename LastRecordIdT = Aws::String>
+    void SetLastRecordId(LastRecordIdT&& value) { m_lastRecordIdHasBeenSet = true; m_lastRecordId = std::forward<LastRecordIdT>(value); }
+    template<typename LastRecordIdT = Aws::String>
+    ProvisionedProductAttribute& WithLastRecordId(LastRecordIdT&& value) { SetLastRecordId(std::forward<LastRecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +177,12 @@ namespace Model
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetLastProvisioningRecordId() const{ return m_lastProvisioningRecordId; }
+    inline const Aws::String& GetLastProvisioningRecordId() const { return m_lastProvisioningRecordId; }
     inline bool LastProvisioningRecordIdHasBeenSet() const { return m_lastProvisioningRecordIdHasBeenSet; }
-    inline void SetLastProvisioningRecordId(const Aws::String& value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId = value; }
-    inline void SetLastProvisioningRecordId(Aws::String&& value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId = std::move(value); }
-    inline void SetLastProvisioningRecordId(const char* value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId.assign(value); }
-    inline ProvisionedProductAttribute& WithLastProvisioningRecordId(const Aws::String& value) { SetLastProvisioningRecordId(value); return *this;}
-    inline ProvisionedProductAttribute& WithLastProvisioningRecordId(Aws::String&& value) { SetLastProvisioningRecordId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithLastProvisioningRecordId(const char* value) { SetLastProvisioningRecordId(value); return *this;}
+    template<typename LastProvisioningRecordIdT = Aws::String>
+    void SetLastProvisioningRecordId(LastProvisioningRecordIdT&& value) { m_lastProvisioningRecordIdHasBeenSet = true; m_lastProvisioningRecordId = std::forward<LastProvisioningRecordIdT>(value); }
+    template<typename LastProvisioningRecordIdT = Aws::String>
+    ProvisionedProductAttribute& WithLastProvisioningRecordId(LastProvisioningRecordIdT&& value) { SetLastProvisioningRecordId(std::forward<LastProvisioningRecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,28 +193,26 @@ namespace Model
      * ExecuteProvisionedProductPlan </p> </li> <li> <p> TerminateProvisionedProduct
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetLastSuccessfulProvisioningRecordId() const{ return m_lastSuccessfulProvisioningRecordId; }
+    inline const Aws::String& GetLastSuccessfulProvisioningRecordId() const { return m_lastSuccessfulProvisioningRecordId; }
     inline bool LastSuccessfulProvisioningRecordIdHasBeenSet() const { return m_lastSuccessfulProvisioningRecordIdHasBeenSet; }
-    inline void SetLastSuccessfulProvisioningRecordId(const Aws::String& value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId = value; }
-    inline void SetLastSuccessfulProvisioningRecordId(Aws::String&& value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId = std::move(value); }
-    inline void SetLastSuccessfulProvisioningRecordId(const char* value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId.assign(value); }
-    inline ProvisionedProductAttribute& WithLastSuccessfulProvisioningRecordId(const Aws::String& value) { SetLastSuccessfulProvisioningRecordId(value); return *this;}
-    inline ProvisionedProductAttribute& WithLastSuccessfulProvisioningRecordId(Aws::String&& value) { SetLastSuccessfulProvisioningRecordId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithLastSuccessfulProvisioningRecordId(const char* value) { SetLastSuccessfulProvisioningRecordId(value); return *this;}
+    template<typename LastSuccessfulProvisioningRecordIdT = Aws::String>
+    void SetLastSuccessfulProvisioningRecordId(LastSuccessfulProvisioningRecordIdT&& value) { m_lastSuccessfulProvisioningRecordIdHasBeenSet = true; m_lastSuccessfulProvisioningRecordId = std::forward<LastSuccessfulProvisioningRecordIdT>(value); }
+    template<typename LastSuccessfulProvisioningRecordIdT = Aws::String>
+    ProvisionedProductAttribute& WithLastSuccessfulProvisioningRecordId(LastSuccessfulProvisioningRecordIdT&& value) { SetLastSuccessfulProvisioningRecordId(std::forward<LastSuccessfulProvisioningRecordIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ProvisionedProductAttribute& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ProvisionedProductAttribute& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ProvisionedProductAttribute& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ProvisionedProductAttribute& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ProvisionedProductAttribute& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -240,98 +220,84 @@ namespace Model
      * <p>The assigned identifier for the resource, such as an EC2 instance ID or an S3
      * bucket name.</p>
      */
-    inline const Aws::String& GetPhysicalId() const{ return m_physicalId; }
+    inline const Aws::String& GetPhysicalId() const { return m_physicalId; }
     inline bool PhysicalIdHasBeenSet() const { return m_physicalIdHasBeenSet; }
-    inline void SetPhysicalId(const Aws::String& value) { m_physicalIdHasBeenSet = true; m_physicalId = value; }
-    inline void SetPhysicalId(Aws::String&& value) { m_physicalIdHasBeenSet = true; m_physicalId = std::move(value); }
-    inline void SetPhysicalId(const char* value) { m_physicalIdHasBeenSet = true; m_physicalId.assign(value); }
-    inline ProvisionedProductAttribute& WithPhysicalId(const Aws::String& value) { SetPhysicalId(value); return *this;}
-    inline ProvisionedProductAttribute& WithPhysicalId(Aws::String&& value) { SetPhysicalId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithPhysicalId(const char* value) { SetPhysicalId(value); return *this;}
+    template<typename PhysicalIdT = Aws::String>
+    void SetPhysicalId(PhysicalIdT&& value) { m_physicalIdHasBeenSet = true; m_physicalId = std::forward<PhysicalIdT>(value); }
+    template<typename PhysicalIdT = Aws::String>
+    ProvisionedProductAttribute& WithPhysicalId(PhysicalIdT&& value) { SetPhysicalId(std::forward<PhysicalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier.</p>
      */
-    inline const Aws::String& GetProductId() const{ return m_productId; }
+    inline const Aws::String& GetProductId() const { return m_productId; }
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-    inline ProvisionedProductAttribute& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-    inline ProvisionedProductAttribute& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithProductId(const char* value) { SetProductId(value); return *this;}
+    template<typename ProductIdT = Aws::String>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = Aws::String>
+    ProvisionedProductAttribute& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the product.</p>
      */
-    inline const Aws::String& GetProductName() const{ return m_productName; }
+    inline const Aws::String& GetProductName() const { return m_productName; }
     inline bool ProductNameHasBeenSet() const { return m_productNameHasBeenSet; }
-    inline void SetProductName(const Aws::String& value) { m_productNameHasBeenSet = true; m_productName = value; }
-    inline void SetProductName(Aws::String&& value) { m_productNameHasBeenSet = true; m_productName = std::move(value); }
-    inline void SetProductName(const char* value) { m_productNameHasBeenSet = true; m_productName.assign(value); }
-    inline ProvisionedProductAttribute& WithProductName(const Aws::String& value) { SetProductName(value); return *this;}
-    inline ProvisionedProductAttribute& WithProductName(Aws::String&& value) { SetProductName(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithProductName(const char* value) { SetProductName(value); return *this;}
+    template<typename ProductNameT = Aws::String>
+    void SetProductName(ProductNameT&& value) { m_productNameHasBeenSet = true; m_productName = std::forward<ProductNameT>(value); }
+    template<typename ProductNameT = Aws::String>
+    ProvisionedProductAttribute& WithProductName(ProductNameT&& value) { SetProductName(std::forward<ProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the provisioning artifact.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+    inline const Aws::String& GetProvisioningArtifactId() const { return m_provisioningArtifactId; }
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
-    inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
-    inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
-    inline ProvisionedProductAttribute& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
-    inline ProvisionedProductAttribute& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    void SetProvisioningArtifactId(ProvisioningArtifactIdT&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::forward<ProvisioningArtifactIdT>(value); }
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    ProvisionedProductAttribute& WithProvisioningArtifactId(ProvisioningArtifactIdT&& value) { SetProvisioningArtifactId(std::forward<ProvisioningArtifactIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the provisioning artifact.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactName() const{ return m_provisioningArtifactName; }
+    inline const Aws::String& GetProvisioningArtifactName() const { return m_provisioningArtifactName; }
     inline bool ProvisioningArtifactNameHasBeenSet() const { return m_provisioningArtifactNameHasBeenSet; }
-    inline void SetProvisioningArtifactName(const Aws::String& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = value; }
-    inline void SetProvisioningArtifactName(Aws::String&& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = std::move(value); }
-    inline void SetProvisioningArtifactName(const char* value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName.assign(value); }
-    inline ProvisionedProductAttribute& WithProvisioningArtifactName(const Aws::String& value) { SetProvisioningArtifactName(value); return *this;}
-    inline ProvisionedProductAttribute& WithProvisioningArtifactName(Aws::String&& value) { SetProvisioningArtifactName(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithProvisioningArtifactName(const char* value) { SetProvisioningArtifactName(value); return *this;}
+    template<typename ProvisioningArtifactNameT = Aws::String>
+    void SetProvisioningArtifactName(ProvisioningArtifactNameT&& value) { m_provisioningArtifactNameHasBeenSet = true; m_provisioningArtifactName = std::forward<ProvisioningArtifactNameT>(value); }
+    template<typename ProvisioningArtifactNameT = Aws::String>
+    ProvisionedProductAttribute& WithProvisioningArtifactName(ProvisioningArtifactNameT&& value) { SetProvisioningArtifactName(std::forward<ProvisioningArtifactNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-    inline ProvisionedProductAttribute& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline ProvisionedProductAttribute& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    ProvisionedProductAttribute& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
-    inline const Aws::String& GetUserArnSession() const{ return m_userArnSession; }
+    inline const Aws::String& GetUserArnSession() const { return m_userArnSession; }
     inline bool UserArnSessionHasBeenSet() const { return m_userArnSessionHasBeenSet; }
-    inline void SetUserArnSession(const Aws::String& value) { m_userArnSessionHasBeenSet = true; m_userArnSession = value; }
-    inline void SetUserArnSession(Aws::String&& value) { m_userArnSessionHasBeenSet = true; m_userArnSession = std::move(value); }
-    inline void SetUserArnSession(const char* value) { m_userArnSessionHasBeenSet = true; m_userArnSession.assign(value); }
-    inline ProvisionedProductAttribute& WithUserArnSession(const Aws::String& value) { SetUserArnSession(value); return *this;}
-    inline ProvisionedProductAttribute& WithUserArnSession(Aws::String&& value) { SetUserArnSession(std::move(value)); return *this;}
-    inline ProvisionedProductAttribute& WithUserArnSession(const char* value) { SetUserArnSession(value); return *this;}
+    template<typename UserArnSessionT = Aws::String>
+    void SetUserArnSession(UserArnSessionT&& value) { m_userArnSessionHasBeenSet = true; m_userArnSession = std::forward<UserArnSessionT>(value); }
+    template<typename UserArnSessionT = Aws::String>
+    ProvisionedProductAttribute& WithUserArnSession(UserArnSessionT&& value) { SetUserArnSession(std::forward<UserArnSessionT>(value)); return *this;}
     ///@}
   private:
 
@@ -347,13 +313,13 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ProvisionedProductStatus m_status;
+    ProvisionedProductStatus m_status{ProvisionedProductStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_idempotencyToken;

@@ -10,18 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-CreateIntegrationRequest::CreateIntegrationRequest() : 
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_integrationNameHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataFilterHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntegrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

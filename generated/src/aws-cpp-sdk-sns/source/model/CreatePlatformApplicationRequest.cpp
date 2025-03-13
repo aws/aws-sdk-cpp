@@ -10,13 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CreatePlatformApplicationRequest::CreatePlatformApplicationRequest() : 
-    m_nameHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlatformApplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

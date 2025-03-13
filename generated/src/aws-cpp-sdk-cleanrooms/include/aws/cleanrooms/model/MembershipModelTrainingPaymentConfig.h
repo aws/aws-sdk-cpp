@@ -30,7 +30,7 @@ namespace Model
   class MembershipModelTrainingPaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API MembershipModelTrainingPaymentConfig();
+    AWS_CLEANROOMS_API MembershipModelTrainingPaymentConfig() = default;
     AWS_CLEANROOMS_API MembershipModelTrainingPaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipModelTrainingPaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * the value to <code>TRUE</code> but you are not responsible to pay for model
      * training costs. </p> </li> </ul>
      */
-    inline bool GetIsResponsible() const{ return m_isResponsible; }
+    inline bool GetIsResponsible() const { return m_isResponsible; }
     inline bool IsResponsibleHasBeenSet() const { return m_isResponsibleHasBeenSet; }
     inline void SetIsResponsible(bool value) { m_isResponsibleHasBeenSet = true; m_isResponsible = value; }
     inline MembershipModelTrainingPaymentConfig& WithIsResponsible(bool value) { SetIsResponsible(value); return *this;}
     ///@}
   private:
 
-    bool m_isResponsible;
+    bool m_isResponsible{false};
     bool m_isResponsibleHasBeenSet = false;
   };
 

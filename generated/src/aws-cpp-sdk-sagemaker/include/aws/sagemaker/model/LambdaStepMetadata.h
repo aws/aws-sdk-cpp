@@ -33,7 +33,7 @@ namespace Model
   class LambdaStepMetadata
   {
   public:
-    AWS_SAGEMAKER_API LambdaStepMetadata();
+    AWS_SAGEMAKER_API LambdaStepMetadata() = default;
     AWS_SAGEMAKER_API LambdaStepMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API LambdaStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
      * step execution.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline LambdaStepMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline LambdaStepMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline LambdaStepMetadata& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    LambdaStepMetadata& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the output parameters of the Lambda step.</p>
      */
-    inline const Aws::Vector<OutputParameter>& GetOutputParameters() const{ return m_outputParameters; }
+    inline const Aws::Vector<OutputParameter>& GetOutputParameters() const { return m_outputParameters; }
     inline bool OutputParametersHasBeenSet() const { return m_outputParametersHasBeenSet; }
-    inline void SetOutputParameters(const Aws::Vector<OutputParameter>& value) { m_outputParametersHasBeenSet = true; m_outputParameters = value; }
-    inline void SetOutputParameters(Aws::Vector<OutputParameter>&& value) { m_outputParametersHasBeenSet = true; m_outputParameters = std::move(value); }
-    inline LambdaStepMetadata& WithOutputParameters(const Aws::Vector<OutputParameter>& value) { SetOutputParameters(value); return *this;}
-    inline LambdaStepMetadata& WithOutputParameters(Aws::Vector<OutputParameter>&& value) { SetOutputParameters(std::move(value)); return *this;}
-    inline LambdaStepMetadata& AddOutputParameters(const OutputParameter& value) { m_outputParametersHasBeenSet = true; m_outputParameters.push_back(value); return *this; }
-    inline LambdaStepMetadata& AddOutputParameters(OutputParameter&& value) { m_outputParametersHasBeenSet = true; m_outputParameters.push_back(std::move(value)); return *this; }
+    template<typename OutputParametersT = Aws::Vector<OutputParameter>>
+    void SetOutputParameters(OutputParametersT&& value) { m_outputParametersHasBeenSet = true; m_outputParameters = std::forward<OutputParametersT>(value); }
+    template<typename OutputParametersT = Aws::Vector<OutputParameter>>
+    LambdaStepMetadata& WithOutputParameters(OutputParametersT&& value) { SetOutputParameters(std::forward<OutputParametersT>(value)); return *this;}
+    template<typename OutputParametersT = OutputParameter>
+    LambdaStepMetadata& AddOutputParameters(OutputParametersT&& value) { m_outputParametersHasBeenSet = true; m_outputParameters.emplace_back(std::forward<OutputParametersT>(value)); return *this; }
     ///@}
   private:
 

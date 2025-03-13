@@ -12,13 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLedgerPermissionsModeRequest::UpdateLedgerPermissionsModeRequest() : 
-    m_nameHasBeenSet(false),
-    m_permissionsMode(PermissionsMode::NOT_SET),
-    m_permissionsModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLedgerPermissionsModeRequest::SerializePayload() const
 {
   JsonValue payload;

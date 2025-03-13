@@ -31,7 +31,7 @@ namespace Model
   class CaseSummary
   {
   public:
-    AWS_CONNECTCASES_API CaseSummary();
+    AWS_CONNECTCASES_API CaseSummary() = default;
     AWS_CONNECTCASES_API CaseSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API CaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>A unique identifier of the case.</p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline CaseSummary& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline CaseSummary& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline CaseSummary& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    CaseSummary& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier of a template.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-    inline CaseSummary& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline CaseSummary& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline CaseSummary& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    CaseSummary& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
   private:
 

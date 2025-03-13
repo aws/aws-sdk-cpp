@@ -21,7 +21,7 @@ namespace Model
   class GetEventPredictionMetadataRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API GetEventPredictionMetadataRequest();
+    AWS_FRAUDDETECTOR_API GetEventPredictionMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> The event ID. </p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline GetEventPredictionMetadataRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline GetEventPredictionMetadataRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline GetEventPredictionMetadataRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    GetEventPredictionMetadataRequest& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,42 +51,36 @@ namespace Model
      * <p> The event type associated with the detector specified for the prediction.
      * </p>
      */
-    inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
+    inline const Aws::String& GetEventTypeName() const { return m_eventTypeName; }
     inline bool EventTypeNameHasBeenSet() const { return m_eventTypeNameHasBeenSet; }
-    inline void SetEventTypeName(const Aws::String& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = value; }
-    inline void SetEventTypeName(Aws::String&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::move(value); }
-    inline void SetEventTypeName(const char* value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName.assign(value); }
-    inline GetEventPredictionMetadataRequest& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-    inline GetEventPredictionMetadataRequest& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-    inline GetEventPredictionMetadataRequest& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    template<typename EventTypeNameT = Aws::String>
+    void SetEventTypeName(EventTypeNameT&& value) { m_eventTypeNameHasBeenSet = true; m_eventTypeName = std::forward<EventTypeNameT>(value); }
+    template<typename EventTypeNameT = Aws::String>
+    GetEventPredictionMetadataRequest& WithEventTypeName(EventTypeNameT&& value) { SetEventTypeName(std::forward<EventTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The detector ID. </p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline GetEventPredictionMetadataRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline GetEventPredictionMetadataRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline GetEventPredictionMetadataRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    GetEventPredictionMetadataRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The detector version ID. </p>
      */
-    inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
+    inline const Aws::String& GetDetectorVersionId() const { return m_detectorVersionId; }
     inline bool DetectorVersionIdHasBeenSet() const { return m_detectorVersionIdHasBeenSet; }
-    inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = value; }
-    inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::move(value); }
-    inline void SetDetectorVersionId(const char* value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId.assign(value); }
-    inline GetEventPredictionMetadataRequest& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-    inline GetEventPredictionMetadataRequest& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-    inline GetEventPredictionMetadataRequest& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    template<typename DetectorVersionIdT = Aws::String>
+    void SetDetectorVersionId(DetectorVersionIdT&& value) { m_detectorVersionIdHasBeenSet = true; m_detectorVersionId = std::forward<DetectorVersionIdT>(value); }
+    template<typename DetectorVersionIdT = Aws::String>
+    GetEventPredictionMetadataRequest& WithDetectorVersionId(DetectorVersionIdT&& value) { SetDetectorVersionId(std::forward<DetectorVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +91,12 @@ namespace Model
      * first, and using the <code>predictionTimestamp</code> value in the response to
      * provide an accurate prediction timestamp value.</p>
      */
-    inline const Aws::String& GetPredictionTimestamp() const{ return m_predictionTimestamp; }
+    inline const Aws::String& GetPredictionTimestamp() const { return m_predictionTimestamp; }
     inline bool PredictionTimestampHasBeenSet() const { return m_predictionTimestampHasBeenSet; }
-    inline void SetPredictionTimestamp(const Aws::String& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = value; }
-    inline void SetPredictionTimestamp(Aws::String&& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = std::move(value); }
-    inline void SetPredictionTimestamp(const char* value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp.assign(value); }
-    inline GetEventPredictionMetadataRequest& WithPredictionTimestamp(const Aws::String& value) { SetPredictionTimestamp(value); return *this;}
-    inline GetEventPredictionMetadataRequest& WithPredictionTimestamp(Aws::String&& value) { SetPredictionTimestamp(std::move(value)); return *this;}
-    inline GetEventPredictionMetadataRequest& WithPredictionTimestamp(const char* value) { SetPredictionTimestamp(value); return *this;}
+    template<typename PredictionTimestampT = Aws::String>
+    void SetPredictionTimestamp(PredictionTimestampT&& value) { m_predictionTimestampHasBeenSet = true; m_predictionTimestamp = std::forward<PredictionTimestampT>(value); }
+    template<typename PredictionTimestampT = Aws::String>
+    GetEventPredictionMetadataRequest& WithPredictionTimestamp(PredictionTimestampT&& value) { SetPredictionTimestamp(std::forward<PredictionTimestampT>(value)); return *this;}
     ///@}
   private:
 

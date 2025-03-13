@@ -12,19 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateContentRequest::UpdateContentRequest() : 
-    m_contentIdHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_overrideLinkOutUriHasBeenSet(false),
-    m_removeOverrideLinkOutUri(false),
-    m_removeOverrideLinkOutUriHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_uploadIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateContentRequest::SerializePayload() const
 {
   JsonValue payload;

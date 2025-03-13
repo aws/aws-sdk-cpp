@@ -41,7 +41,7 @@ namespace Model
   class DocumentClassifierInputDataConfig
   {
   public:
-    AWS_COMPREHEND_API DocumentClassifierInputDataConfig();
+    AWS_COMPREHEND_API DocumentClassifierInputDataConfig() = default;
     AWS_COMPREHEND_API DocumentClassifierInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DocumentClassifierInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,10 @@ namespace Model
      * you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as
      * the default.</p>
      */
-    inline const DocumentClassifierDataFormat& GetDataFormat() const{ return m_dataFormat; }
+    inline DocumentClassifierDataFormat GetDataFormat() const { return m_dataFormat; }
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-    inline void SetDataFormat(const DocumentClassifierDataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-    inline void SetDataFormat(DocumentClassifierDataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-    inline DocumentClassifierInputDataConfig& WithDataFormat(const DocumentClassifierDataFormat& value) { SetDataFormat(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithDataFormat(DocumentClassifierDataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline void SetDataFormat(DocumentClassifierDataFormat value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline DocumentClassifierInputDataConfig& WithDataFormat(DocumentClassifierDataFormat value) { SetDataFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * input.</p> <p>This parameter is required if you set <code>DataFormat</code> to
      * <code>COMPREHEND_CSV</code>.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline DocumentClassifierInputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline DocumentClassifierInputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    DocumentClassifierInputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * the document classifier. The URI must be in the same Amazon Web Services Region
      * as the API endpoint that you are calling. </p>
      */
-    inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
+    inline const Aws::String& GetTestS3Uri() const { return m_testS3Uri; }
     inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
-    inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
-    inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
-    inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
-    inline DocumentClassifierInputDataConfig& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
-    inline DocumentClassifierInputDataConfig& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
+    template<typename TestS3UriT = Aws::String>
+    void SetTestS3Uri(TestS3UriT&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::forward<TestS3UriT>(value); }
+    template<typename TestS3UriT = Aws::String>
+    DocumentClassifierInputDataConfig& WithTestS3Uri(TestS3UriT&& value) { SetTestS3Uri(std::forward<TestS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * that line will be combined to make a single unique label, such as
      * LABELLABELLABEL.</p>
      */
-    inline const Aws::String& GetLabelDelimiter() const{ return m_labelDelimiter; }
+    inline const Aws::String& GetLabelDelimiter() const { return m_labelDelimiter; }
     inline bool LabelDelimiterHasBeenSet() const { return m_labelDelimiterHasBeenSet; }
-    inline void SetLabelDelimiter(const Aws::String& value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter = value; }
-    inline void SetLabelDelimiter(Aws::String&& value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter = std::move(value); }
-    inline void SetLabelDelimiter(const char* value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter.assign(value); }
-    inline DocumentClassifierInputDataConfig& WithLabelDelimiter(const Aws::String& value) { SetLabelDelimiter(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithLabelDelimiter(Aws::String&& value) { SetLabelDelimiter(std::move(value)); return *this;}
-    inline DocumentClassifierInputDataConfig& WithLabelDelimiter(const char* value) { SetLabelDelimiter(value); return *this;}
+    template<typename LabelDelimiterT = Aws::String>
+    void SetLabelDelimiter(LabelDelimiterT&& value) { m_labelDelimiterHasBeenSet = true; m_labelDelimiter = std::forward<LabelDelimiterT>(value); }
+    template<typename LabelDelimiterT = Aws::String>
+    DocumentClassifierInputDataConfig& WithLabelDelimiter(LabelDelimiterT&& value) { SetLabelDelimiter(std::forward<LabelDelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +125,14 @@ namespace Model
      * Amazon SageMaker Ground Truth.</p> <p>This parameter is required if you set
      * <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.</p>
      */
-    inline const Aws::Vector<AugmentedManifestsListItem>& GetAugmentedManifests() const{ return m_augmentedManifests; }
+    inline const Aws::Vector<AugmentedManifestsListItem>& GetAugmentedManifests() const { return m_augmentedManifests; }
     inline bool AugmentedManifestsHasBeenSet() const { return m_augmentedManifestsHasBeenSet; }
-    inline void SetAugmentedManifests(const Aws::Vector<AugmentedManifestsListItem>& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests = value; }
-    inline void SetAugmentedManifests(Aws::Vector<AugmentedManifestsListItem>&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests = std::move(value); }
-    inline DocumentClassifierInputDataConfig& WithAugmentedManifests(const Aws::Vector<AugmentedManifestsListItem>& value) { SetAugmentedManifests(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithAugmentedManifests(Aws::Vector<AugmentedManifestsListItem>&& value) { SetAugmentedManifests(std::move(value)); return *this;}
-    inline DocumentClassifierInputDataConfig& AddAugmentedManifests(const AugmentedManifestsListItem& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests.push_back(value); return *this; }
-    inline DocumentClassifierInputDataConfig& AddAugmentedManifests(AugmentedManifestsListItem&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests.push_back(std::move(value)); return *this; }
+    template<typename AugmentedManifestsT = Aws::Vector<AugmentedManifestsListItem>>
+    void SetAugmentedManifests(AugmentedManifestsT&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests = std::forward<AugmentedManifestsT>(value); }
+    template<typename AugmentedManifestsT = Aws::Vector<AugmentedManifestsListItem>>
+    DocumentClassifierInputDataConfig& WithAugmentedManifests(AugmentedManifestsT&& value) { SetAugmentedManifests(std::forward<AugmentedManifestsT>(value)); return *this;}
+    template<typename AugmentedManifestsT = AugmentedManifestsListItem>
+    DocumentClassifierInputDataConfig& AddAugmentedManifests(AugmentedManifestsT&& value) { m_augmentedManifestsHasBeenSet = true; m_augmentedManifests.emplace_back(std::forward<AugmentedManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -149,12 +141,10 @@ namespace Model
      * documents to create a plain-text model, and provide semi-structured documents to
      * create a native document model.</p>
      */
-    inline const DocumentClassifierDocumentTypeFormat& GetDocumentType() const{ return m_documentType; }
+    inline DocumentClassifierDocumentTypeFormat GetDocumentType() const { return m_documentType; }
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
-    inline void SetDocumentType(const DocumentClassifierDocumentTypeFormat& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
-    inline void SetDocumentType(DocumentClassifierDocumentTypeFormat&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
-    inline DocumentClassifierInputDataConfig& WithDocumentType(const DocumentClassifierDocumentTypeFormat& value) { SetDocumentType(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithDocumentType(DocumentClassifierDocumentTypeFormat&& value) { SetDocumentType(std::move(value)); return *this;}
+    inline void SetDocumentType(DocumentClassifierDocumentTypeFormat value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+    inline DocumentClassifierInputDataConfig& WithDocumentType(DocumentClassifierDocumentTypeFormat value) { SetDocumentType(value); return *this;}
     ///@}
 
     ///@{
@@ -162,26 +152,26 @@ namespace Model
      * <p>The S3 location of the training documents. This parameter is required in a
      * request to create a native document model.</p>
      */
-    inline const DocumentClassifierDocuments& GetDocuments() const{ return m_documents; }
+    inline const DocumentClassifierDocuments& GetDocuments() const { return m_documents; }
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
-    inline void SetDocuments(const DocumentClassifierDocuments& value) { m_documentsHasBeenSet = true; m_documents = value; }
-    inline void SetDocuments(DocumentClassifierDocuments&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
-    inline DocumentClassifierInputDataConfig& WithDocuments(const DocumentClassifierDocuments& value) { SetDocuments(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithDocuments(DocumentClassifierDocuments&& value) { SetDocuments(std::move(value)); return *this;}
+    template<typename DocumentsT = DocumentClassifierDocuments>
+    void SetDocuments(DocumentsT&& value) { m_documentsHasBeenSet = true; m_documents = std::forward<DocumentsT>(value); }
+    template<typename DocumentsT = DocumentClassifierDocuments>
+    DocumentClassifierInputDataConfig& WithDocuments(DocumentsT&& value) { SetDocuments(std::forward<DocumentsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocumentReaderConfig& GetDocumentReaderConfig() const{ return m_documentReaderConfig; }
+    inline const DocumentReaderConfig& GetDocumentReaderConfig() const { return m_documentReaderConfig; }
     inline bool DocumentReaderConfigHasBeenSet() const { return m_documentReaderConfigHasBeenSet; }
-    inline void SetDocumentReaderConfig(const DocumentReaderConfig& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = value; }
-    inline void SetDocumentReaderConfig(DocumentReaderConfig&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::move(value); }
-    inline DocumentClassifierInputDataConfig& WithDocumentReaderConfig(const DocumentReaderConfig& value) { SetDocumentReaderConfig(value); return *this;}
-    inline DocumentClassifierInputDataConfig& WithDocumentReaderConfig(DocumentReaderConfig&& value) { SetDocumentReaderConfig(std::move(value)); return *this;}
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    void SetDocumentReaderConfig(DocumentReaderConfigT&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::forward<DocumentReaderConfigT>(value); }
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    DocumentClassifierInputDataConfig& WithDocumentReaderConfig(DocumentReaderConfigT&& value) { SetDocumentReaderConfig(std::forward<DocumentReaderConfigT>(value)); return *this;}
     ///@}
   private:
 
-    DocumentClassifierDataFormat m_dataFormat;
+    DocumentClassifierDataFormat m_dataFormat{DocumentClassifierDataFormat::NOT_SET};
     bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_s3Uri;
@@ -196,7 +186,7 @@ namespace Model
     Aws::Vector<AugmentedManifestsListItem> m_augmentedManifests;
     bool m_augmentedManifestsHasBeenSet = false;
 
-    DocumentClassifierDocumentTypeFormat m_documentType;
+    DocumentClassifierDocumentTypeFormat m_documentType{DocumentClassifierDocumentTypeFormat::NOT_SET};
     bool m_documentTypeHasBeenSet = false;
 
     DocumentClassifierDocuments m_documents;

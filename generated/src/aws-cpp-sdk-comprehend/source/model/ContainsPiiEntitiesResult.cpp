@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ContainsPiiEntitiesResult::ContainsPiiEntitiesResult()
-{
-}
-
 ContainsPiiEntitiesResult::ContainsPiiEntitiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ContainsPiiEntitiesResult& ContainsPiiEntitiesResult::operator =(const Aws::Amaz
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
     }
+    m_labelsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

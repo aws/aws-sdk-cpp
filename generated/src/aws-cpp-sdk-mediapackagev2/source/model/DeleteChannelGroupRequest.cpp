@@ -12,11 +12,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelGroupRequest::DeleteChannelGroupRequest() : 
-    m_channelGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelGroupRequest::SerializePayload() const
 {
   return {};

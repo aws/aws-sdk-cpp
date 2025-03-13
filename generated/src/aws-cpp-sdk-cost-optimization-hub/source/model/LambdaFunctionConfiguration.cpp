@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-LambdaFunctionConfiguration::LambdaFunctionConfiguration() : 
-    m_computeHasBeenSet(false)
-{
-}
-
 LambdaFunctionConfiguration::LambdaFunctionConfiguration(JsonView jsonValue)
-  : LambdaFunctionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaFunctionConfiguration& LambdaFunctionConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("compute"))
   {
     m_compute = jsonValue.GetObject("compute");
-
     m_computeHasBeenSet = true;
   }
-
   return *this;
 }
 

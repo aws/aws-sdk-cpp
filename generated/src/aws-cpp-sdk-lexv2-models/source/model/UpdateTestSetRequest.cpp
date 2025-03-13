@@ -12,13 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTestSetRequest::UpdateTestSetRequest() : 
-    m_testSetIdHasBeenSet(false),
-    m_testSetNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTestSetRequest::SerializePayload() const
 {
   JsonValue payload;

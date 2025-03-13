@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OutputConfig::OutputConfig() : 
-    m_s3OutputLocationHasBeenSet(false),
-    m_targetDevice(TargetDevice::NOT_SET),
-    m_targetDeviceHasBeenSet(false),
-    m_targetPlatformHasBeenSet(false),
-    m_compilerOptionsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 OutputConfig::OutputConfig(JsonView jsonValue)
-  : OutputConfig()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ OutputConfig& OutputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3OutputLocation"))
   {
     m_s3OutputLocation = jsonValue.GetString("S3OutputLocation");
-
     m_s3OutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDevice"))
   {
     m_targetDevice = TargetDeviceMapper::GetTargetDeviceForName(jsonValue.GetString("TargetDevice"));
-
     m_targetDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetPlatform"))
   {
     m_targetPlatform = jsonValue.GetObject("TargetPlatform");
-
     m_targetPlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilerOptions"))
   {
     m_compilerOptions = jsonValue.GetString("CompilerOptions");
-
     m_compilerOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

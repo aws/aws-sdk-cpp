@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-MicrosoftSQLServerCatalogTarget::MicrosoftSQLServerCatalogTarget() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false)
-{
-}
-
 MicrosoftSQLServerCatalogTarget::MicrosoftSQLServerCatalogTarget(JsonView jsonValue)
-  : MicrosoftSQLServerCatalogTarget()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ MicrosoftSQLServerCatalogTarget& MicrosoftSQLServerCatalogTarget::operator =(Jso
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,21 +39,16 @@ MicrosoftSQLServerCatalogTarget& MicrosoftSQLServerCatalogTarget::operator =(Jso
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   return *this;
 }
 

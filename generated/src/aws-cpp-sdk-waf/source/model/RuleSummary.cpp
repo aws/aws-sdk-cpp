@@ -18,14 +18,7 @@ namespace WAF
 namespace Model
 {
 
-RuleSummary::RuleSummary() : 
-    m_ruleIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 RuleSummary::RuleSummary(JsonView jsonValue)
-  : RuleSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuleSummary& RuleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

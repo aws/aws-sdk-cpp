@@ -18,26 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-Webhook::Webhook() : 
-    m_urlHasBeenSet(false),
-    m_payloadUrlHasBeenSet(false),
-    m_secretHasBeenSet(false),
-    m_branchFilterHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false),
-    m_buildType(WebhookBuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false),
-    m_manualCreation(false),
-    m_manualCreationHasBeenSet(false),
-    m_lastModifiedSecretHasBeenSet(false),
-    m_scopeConfigurationHasBeenSet(false),
-    m_status(WebhookStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 Webhook::Webhook(JsonView jsonValue)
-  : Webhook()
 {
   *this = jsonValue;
 }
@@ -47,31 +28,23 @@ Webhook& Webhook::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payloadUrl"))
   {
     m_payloadUrl = jsonValue.GetString("payloadUrl");
-
     m_payloadUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secret"))
   {
     m_secret = jsonValue.GetString("secret");
-
     m_secretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchFilter"))
   {
     m_branchFilter = jsonValue.GetString("branchFilter");
-
     m_branchFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterGroups"))
   {
     Aws::Utils::Array<JsonView> filterGroupsJsonList = jsonValue.GetArray("filterGroups");
@@ -88,49 +61,36 @@ Webhook& Webhook::operator =(JsonView jsonValue)
     }
     m_filterGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildType"))
   {
     m_buildType = WebhookBuildTypeMapper::GetWebhookBuildTypeForName(jsonValue.GetString("buildType"));
-
     m_buildTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manualCreation"))
   {
     m_manualCreation = jsonValue.GetBool("manualCreation");
-
     m_manualCreationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedSecret"))
   {
     m_lastModifiedSecret = jsonValue.GetDouble("lastModifiedSecret");
-
     m_lastModifiedSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scopeConfiguration"))
   {
     m_scopeConfiguration = jsonValue.GetObject("scopeConfiguration");
-
     m_scopeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WebhookStatusMapper::GetWebhookStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

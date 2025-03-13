@@ -18,16 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-BatchDeleteImportDataError::BatchDeleteImportDataError() : 
-    m_importTaskIdHasBeenSet(false),
-    m_errorCode(BatchDeleteImportDataErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorDescriptionHasBeenSet(false)
-{
-}
-
 BatchDeleteImportDataError::BatchDeleteImportDataError(JsonView jsonValue)
-  : BatchDeleteImportDataError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchDeleteImportDataError& BatchDeleteImportDataError::operator =(JsonView json
   if(jsonValue.ValueExists("importTaskId"))
   {
     m_importTaskId = jsonValue.GetString("importTaskId");
-
     m_importTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = BatchDeleteImportDataErrorCodeMapper::GetBatchDeleteImportDataErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDescription"))
   {
     m_errorDescription = jsonValue.GetString("errorDescription");
-
     m_errorDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateShardCountRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API UpdateShardCountRequest();
+    AWS_KINESIS_API UpdateShardCountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline UpdateShardCountRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline UpdateShardCountRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline UpdateShardCountRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    UpdateShardCountRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * increase.</p> </li> <li> <p>Scale a stream with more than 10000 shards down
      * unless you set this value to less than 10000 shards.</p> </li> </ul>
      */
-    inline int GetTargetShardCount() const{ return m_targetShardCount; }
+    inline int GetTargetShardCount() const { return m_targetShardCount; }
     inline bool TargetShardCountHasBeenSet() const { return m_targetShardCountHasBeenSet; }
     inline void SetTargetShardCount(int value) { m_targetShardCountHasBeenSet = true; m_targetShardCount = value; }
     inline UpdateShardCountRequest& WithTargetShardCount(int value) { SetTargetShardCount(value); return *this;}
@@ -74,36 +72,32 @@ namespace Model
     /**
      * <p>The scaling type. Uniform scaling creates shards of equal size.</p>
      */
-    inline const ScalingType& GetScalingType() const{ return m_scalingType; }
+    inline ScalingType GetScalingType() const { return m_scalingType; }
     inline bool ScalingTypeHasBeenSet() const { return m_scalingTypeHasBeenSet; }
-    inline void SetScalingType(const ScalingType& value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
-    inline void SetScalingType(ScalingType&& value) { m_scalingTypeHasBeenSet = true; m_scalingType = std::move(value); }
-    inline UpdateShardCountRequest& WithScalingType(const ScalingType& value) { SetScalingType(value); return *this;}
-    inline UpdateShardCountRequest& WithScalingType(ScalingType&& value) { SetScalingType(std::move(value)); return *this;}
+    inline void SetScalingType(ScalingType value) { m_scalingTypeHasBeenSet = true; m_scalingType = value; }
+    inline UpdateShardCountRequest& WithScalingType(ScalingType value) { SetScalingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline UpdateShardCountRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline UpdateShardCountRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline UpdateShardCountRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    UpdateShardCountRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet = false;
 
-    int m_targetShardCount;
+    int m_targetShardCount{0};
     bool m_targetShardCountHasBeenSet = false;
 
-    ScalingType m_scalingType;
+    ScalingType m_scalingType{ScalingType::NOT_SET};
     bool m_scalingTypeHasBeenSet = false;
 
     Aws::String m_streamARN;

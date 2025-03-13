@@ -38,7 +38,7 @@ namespace Model
   class Alias
   {
   public:
-    AWS_FSX_API Alias();
+    AWS_FSX_API Alias() = default;
     AWS_FSX_API Alias(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Alias& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * lowercase letters (a-z), regardless of how you specify them: as uppercase
      * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Alias& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Alias& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Alias& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Alias& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,19 +75,17 @@ namespace Model
      * <li> <p>DELETE_FAILED - Amazon FSx was unable to disassociate the DNS alias from
      * the file system.</p> </li> </ul>
      */
-    inline const AliasLifecycle& GetLifecycle() const{ return m_lifecycle; }
+    inline AliasLifecycle GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const AliasLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(AliasLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline Alias& WithLifecycle(const AliasLifecycle& value) { SetLifecycle(value); return *this;}
-    inline Alias& WithLifecycle(AliasLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline void SetLifecycle(AliasLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline Alias& WithLifecycle(AliasLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AliasLifecycle m_lifecycle;
+    AliasLifecycle m_lifecycle{AliasLifecycle::NOT_SET};
     bool m_lifecycleHasBeenSet = false;
   };
 

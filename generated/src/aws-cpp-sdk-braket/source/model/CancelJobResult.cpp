@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelJobResult::CancelJobResult() : 
-    m_cancellationStatus(CancellationStatus::NOT_SET)
-{
-}
-
 CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CancelJobResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CancelJobResult& CancelJobResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("cancellationStatus"))
   {
     m_cancellationStatus = CancellationStatusMapper::GetCancellationStatusForName(jsonValue.GetString("cancellationStatus"));
-
+    m_cancellationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
+    m_jobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

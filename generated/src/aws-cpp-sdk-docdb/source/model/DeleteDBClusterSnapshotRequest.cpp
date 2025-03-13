@@ -10,11 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-DeleteDBClusterSnapshotRequest::DeleteDBClusterSnapshotRequest() : 
-    m_dBClusterSnapshotIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDBClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

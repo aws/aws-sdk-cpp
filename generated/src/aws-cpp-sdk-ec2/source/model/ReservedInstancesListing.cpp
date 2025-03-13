@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesListing::ReservedInstancesListing() : 
-    m_clientTokenHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_instanceCountsHasBeenSet(false),
-    m_priceSchedulesHasBeenSet(false),
-    m_reservedInstancesIdHasBeenSet(false),
-    m_reservedInstancesListingIdHasBeenSet(false),
-    m_status(ListingStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_updateDateHasBeenSet(false)
-{
-}
-
 ReservedInstancesListing::ReservedInstancesListing(const XmlNode& xmlNode)
-  : ReservedInstancesListing()
 {
   *this = xmlNode;
 }
@@ -52,78 +36,88 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
       m_clientTokenHasBeenSet = true;
+       m_clientTokenHasBeenSet = true;
     }
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
       m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
+       m_createDateHasBeenSet = true;
     }
     XmlNode instanceCountsNode = resultNode.FirstChild("instanceCounts");
     if(!instanceCountsNode.IsNull())
     {
       XmlNode instanceCountsMember = instanceCountsNode.FirstChild("item");
+      m_instanceCountsHasBeenSet = !instanceCountsMember.IsNull();
       while(!instanceCountsMember.IsNull())
       {
         m_instanceCounts.push_back(instanceCountsMember);
         instanceCountsMember = instanceCountsMember.NextNode("item");
       }
 
-      m_instanceCountsHasBeenSet = true;
+       m_instanceCountsHasBeenSet = true;
     }
     XmlNode priceSchedulesNode = resultNode.FirstChild("priceSchedules");
     if(!priceSchedulesNode.IsNull())
     {
       XmlNode priceSchedulesMember = priceSchedulesNode.FirstChild("item");
+      m_priceSchedulesHasBeenSet = !priceSchedulesMember.IsNull();
       while(!priceSchedulesMember.IsNull())
       {
         m_priceSchedules.push_back(priceSchedulesMember);
         priceSchedulesMember = priceSchedulesMember.NextNode("item");
       }
 
-      m_priceSchedulesHasBeenSet = true;
+       m_priceSchedulesHasBeenSet = true;
     }
     XmlNode reservedInstancesIdNode = resultNode.FirstChild("reservedInstancesId");
     if(!reservedInstancesIdNode.IsNull())
     {
       m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
       m_reservedInstancesIdHasBeenSet = true;
+       m_reservedInstancesIdHasBeenSet = true;
     }
     XmlNode reservedInstancesListingIdNode = resultNode.FirstChild("reservedInstancesListingId");
     if(!reservedInstancesListingIdNode.IsNull())
     {
       m_reservedInstancesListingId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesListingIdNode.GetText());
       m_reservedInstancesListingIdHasBeenSet = true;
+       m_reservedInstancesListingIdHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = ListingStatusMapper::GetListingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ListingStatusMapper::GetListingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("updateDate");
     if(!updateDateNode.IsNull())
     {
       m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
+       m_updateDateHasBeenSet = true;
     }
   }
 

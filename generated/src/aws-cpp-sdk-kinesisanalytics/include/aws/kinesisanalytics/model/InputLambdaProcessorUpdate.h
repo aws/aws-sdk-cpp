@@ -34,7 +34,7 @@ namespace Model
   class InputLambdaProcessorUpdate
   {
   public:
-    AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate();
+    AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate() = default;
     AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
      * ARNs: AWS Lambda</a> </p> 
      */
-    inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
+    inline const Aws::String& GetResourceARNUpdate() const { return m_resourceARNUpdate; }
     inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
-    inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
-    inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
-    inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
-    inline InputLambdaProcessorUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
-    inline InputLambdaProcessorUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
-    inline InputLambdaProcessorUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
+    template<typename ResourceARNUpdateT = Aws::String>
+    void SetResourceARNUpdate(ResourceARNUpdateT&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::forward<ResourceARNUpdateT>(value); }
+    template<typename ResourceARNUpdateT = Aws::String>
+    InputLambdaProcessorUpdate& WithResourceARNUpdate(ResourceARNUpdateT&& value) { SetResourceARNUpdate(std::forward<ResourceARNUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The ARN of the new IAM role that is used to access the AWS Lambda
      * function.</p>
      */
-    inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
+    inline const Aws::String& GetRoleARNUpdate() const { return m_roleARNUpdate; }
     inline bool RoleARNUpdateHasBeenSet() const { return m_roleARNUpdateHasBeenSet; }
-    inline void SetRoleARNUpdate(const Aws::String& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = value; }
-    inline void SetRoleARNUpdate(Aws::String&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::move(value); }
-    inline void SetRoleARNUpdate(const char* value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate.assign(value); }
-    inline InputLambdaProcessorUpdate& WithRoleARNUpdate(const Aws::String& value) { SetRoleARNUpdate(value); return *this;}
-    inline InputLambdaProcessorUpdate& WithRoleARNUpdate(Aws::String&& value) { SetRoleARNUpdate(std::move(value)); return *this;}
-    inline InputLambdaProcessorUpdate& WithRoleARNUpdate(const char* value) { SetRoleARNUpdate(value); return *this;}
+    template<typename RoleARNUpdateT = Aws::String>
+    void SetRoleARNUpdate(RoleARNUpdateT&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::forward<RoleARNUpdateT>(value); }
+    template<typename RoleARNUpdateT = Aws::String>
+    InputLambdaProcessorUpdate& WithRoleARNUpdate(RoleARNUpdateT&& value) { SetRoleARNUpdate(std::forward<RoleARNUpdateT>(value)); return *this;}
     ///@}
   private:
 

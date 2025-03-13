@@ -18,19 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkListDevice::SidewalkListDevice() : 
-    m_amazonIdHasBeenSet(false),
-    m_sidewalkIdHasBeenSet(false),
-    m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false),
-    m_deviceProfileIdHasBeenSet(false),
-    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 SidewalkListDevice::SidewalkListDevice(JsonView jsonValue)
-  : SidewalkListDevice()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ SidewalkListDevice& SidewalkListDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AmazonId"))
   {
     m_amazonId = jsonValue.GetString("AmazonId");
-
     m_amazonIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SidewalkId"))
   {
     m_sidewalkId = jsonValue.GetString("SidewalkId");
-
     m_sidewalkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SidewalkManufacturingSn"))
   {
     m_sidewalkManufacturingSn = jsonValue.GetString("SidewalkManufacturingSn");
-
     m_sidewalkManufacturingSnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceCertificates"))
   {
     Aws::Utils::Array<JsonView> deviceCertificatesJsonList = jsonValue.GetArray("DeviceCertificates");
@@ -67,21 +49,16 @@ SidewalkListDevice& SidewalkListDevice::operator =(JsonView jsonValue)
     }
     m_deviceCertificatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceProfileId"))
   {
     m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
-
     m_deviceProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WirelessDeviceSidewalkStatusMapper::GetWirelessDeviceSidewalkStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

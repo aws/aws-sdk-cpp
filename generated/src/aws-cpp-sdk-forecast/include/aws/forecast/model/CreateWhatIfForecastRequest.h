@@ -25,7 +25,7 @@ namespace Model
   class CreateWhatIfForecastRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API CreateWhatIfForecastRequest();
+    AWS_FORECASTSERVICE_API CreateWhatIfForecastRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p>The name of the what-if forecast. Names must be unique within each what-if
      * analysis.</p>
      */
-    inline const Aws::String& GetWhatIfForecastName() const{ return m_whatIfForecastName; }
+    inline const Aws::String& GetWhatIfForecastName() const { return m_whatIfForecastName; }
     inline bool WhatIfForecastNameHasBeenSet() const { return m_whatIfForecastNameHasBeenSet; }
-    inline void SetWhatIfForecastName(const Aws::String& value) { m_whatIfForecastNameHasBeenSet = true; m_whatIfForecastName = value; }
-    inline void SetWhatIfForecastName(Aws::String&& value) { m_whatIfForecastNameHasBeenSet = true; m_whatIfForecastName = std::move(value); }
-    inline void SetWhatIfForecastName(const char* value) { m_whatIfForecastNameHasBeenSet = true; m_whatIfForecastName.assign(value); }
-    inline CreateWhatIfForecastRequest& WithWhatIfForecastName(const Aws::String& value) { SetWhatIfForecastName(value); return *this;}
-    inline CreateWhatIfForecastRequest& WithWhatIfForecastName(Aws::String&& value) { SetWhatIfForecastName(std::move(value)); return *this;}
-    inline CreateWhatIfForecastRequest& WithWhatIfForecastName(const char* value) { SetWhatIfForecastName(value); return *this;}
+    template<typename WhatIfForecastNameT = Aws::String>
+    void SetWhatIfForecastName(WhatIfForecastNameT&& value) { m_whatIfForecastNameHasBeenSet = true; m_whatIfForecastName = std::forward<WhatIfForecastNameT>(value); }
+    template<typename WhatIfForecastNameT = Aws::String>
+    CreateWhatIfForecastRequest& WithWhatIfForecastName(WhatIfForecastNameT&& value) { SetWhatIfForecastName(std::forward<WhatIfForecastNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>
      */
-    inline const Aws::String& GetWhatIfAnalysisArn() const{ return m_whatIfAnalysisArn; }
+    inline const Aws::String& GetWhatIfAnalysisArn() const { return m_whatIfAnalysisArn; }
     inline bool WhatIfAnalysisArnHasBeenSet() const { return m_whatIfAnalysisArnHasBeenSet; }
-    inline void SetWhatIfAnalysisArn(const Aws::String& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = value; }
-    inline void SetWhatIfAnalysisArn(Aws::String&& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = std::move(value); }
-    inline void SetWhatIfAnalysisArn(const char* value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn.assign(value); }
-    inline CreateWhatIfForecastRequest& WithWhatIfAnalysisArn(const Aws::String& value) { SetWhatIfAnalysisArn(value); return *this;}
-    inline CreateWhatIfForecastRequest& WithWhatIfAnalysisArn(Aws::String&& value) { SetWhatIfAnalysisArn(std::move(value)); return *this;}
-    inline CreateWhatIfForecastRequest& WithWhatIfAnalysisArn(const char* value) { SetWhatIfAnalysisArn(value); return *this;}
+    template<typename WhatIfAnalysisArnT = Aws::String>
+    void SetWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = std::forward<WhatIfAnalysisArnT>(value); }
+    template<typename WhatIfAnalysisArnT = Aws::String>
+    CreateWhatIfForecastRequest& WithWhatIfAnalysisArn(WhatIfAnalysisArnT&& value) { SetWhatIfAnalysisArn(std::forward<WhatIfAnalysisArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,14 @@ namespace Model
      * only when all conditions are met. If no conditions are provided, the action is
      * applied to all items.</p>
      */
-    inline const Aws::Vector<TimeSeriesTransformation>& GetTimeSeriesTransformations() const{ return m_timeSeriesTransformations; }
+    inline const Aws::Vector<TimeSeriesTransformation>& GetTimeSeriesTransformations() const { return m_timeSeriesTransformations; }
     inline bool TimeSeriesTransformationsHasBeenSet() const { return m_timeSeriesTransformationsHasBeenSet; }
-    inline void SetTimeSeriesTransformations(const Aws::Vector<TimeSeriesTransformation>& value) { m_timeSeriesTransformationsHasBeenSet = true; m_timeSeriesTransformations = value; }
-    inline void SetTimeSeriesTransformations(Aws::Vector<TimeSeriesTransformation>&& value) { m_timeSeriesTransformationsHasBeenSet = true; m_timeSeriesTransformations = std::move(value); }
-    inline CreateWhatIfForecastRequest& WithTimeSeriesTransformations(const Aws::Vector<TimeSeriesTransformation>& value) { SetTimeSeriesTransformations(value); return *this;}
-    inline CreateWhatIfForecastRequest& WithTimeSeriesTransformations(Aws::Vector<TimeSeriesTransformation>&& value) { SetTimeSeriesTransformations(std::move(value)); return *this;}
-    inline CreateWhatIfForecastRequest& AddTimeSeriesTransformations(const TimeSeriesTransformation& value) { m_timeSeriesTransformationsHasBeenSet = true; m_timeSeriesTransformations.push_back(value); return *this; }
-    inline CreateWhatIfForecastRequest& AddTimeSeriesTransformations(TimeSeriesTransformation&& value) { m_timeSeriesTransformationsHasBeenSet = true; m_timeSeriesTransformations.push_back(std::move(value)); return *this; }
+    template<typename TimeSeriesTransformationsT = Aws::Vector<TimeSeriesTransformation>>
+    void SetTimeSeriesTransformations(TimeSeriesTransformationsT&& value) { m_timeSeriesTransformationsHasBeenSet = true; m_timeSeriesTransformations = std::forward<TimeSeriesTransformationsT>(value); }
+    template<typename TimeSeriesTransformationsT = Aws::Vector<TimeSeriesTransformation>>
+    CreateWhatIfForecastRequest& WithTimeSeriesTransformations(TimeSeriesTransformationsT&& value) { SetTimeSeriesTransformations(std::forward<TimeSeriesTransformationsT>(value)); return *this;}
+    template<typename TimeSeriesTransformationsT = TimeSeriesTransformation>
+    CreateWhatIfForecastRequest& AddTimeSeriesTransformations(TimeSeriesTransformationsT&& value) { m_timeSeriesTransformationsHasBeenSet = true; m_timeSeriesTransformations.emplace_back(std::forward<TimeSeriesTransformationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,12 +94,12 @@ namespace Model
      * same time series.</p> <p>Timestamps and item_ids not included in this dataset
      * are not included in the what-if analysis. </p>
      */
-    inline const TimeSeriesReplacementsDataSource& GetTimeSeriesReplacementsDataSource() const{ return m_timeSeriesReplacementsDataSource; }
+    inline const TimeSeriesReplacementsDataSource& GetTimeSeriesReplacementsDataSource() const { return m_timeSeriesReplacementsDataSource; }
     inline bool TimeSeriesReplacementsDataSourceHasBeenSet() const { return m_timeSeriesReplacementsDataSourceHasBeenSet; }
-    inline void SetTimeSeriesReplacementsDataSource(const TimeSeriesReplacementsDataSource& value) { m_timeSeriesReplacementsDataSourceHasBeenSet = true; m_timeSeriesReplacementsDataSource = value; }
-    inline void SetTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSource&& value) { m_timeSeriesReplacementsDataSourceHasBeenSet = true; m_timeSeriesReplacementsDataSource = std::move(value); }
-    inline CreateWhatIfForecastRequest& WithTimeSeriesReplacementsDataSource(const TimeSeriesReplacementsDataSource& value) { SetTimeSeriesReplacementsDataSource(value); return *this;}
-    inline CreateWhatIfForecastRequest& WithTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSource&& value) { SetTimeSeriesReplacementsDataSource(std::move(value)); return *this;}
+    template<typename TimeSeriesReplacementsDataSourceT = TimeSeriesReplacementsDataSource>
+    void SetTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSourceT&& value) { m_timeSeriesReplacementsDataSourceHasBeenSet = true; m_timeSeriesReplacementsDataSource = std::forward<TimeSeriesReplacementsDataSourceT>(value); }
+    template<typename TimeSeriesReplacementsDataSourceT = TimeSeriesReplacementsDataSource>
+    CreateWhatIfForecastRequest& WithTimeSeriesReplacementsDataSource(TimeSeriesReplacementsDataSourceT&& value) { SetTimeSeriesReplacementsDataSource(std::forward<TimeSeriesReplacementsDataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +108,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a>
      * to apply to the what if forecast.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWhatIfForecastRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateWhatIfForecastRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWhatIfForecastRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateWhatIfForecastRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateWhatIfForecastRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateWhatIfForecastRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

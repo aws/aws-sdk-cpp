@@ -18,41 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DevEndpoint::DevEndpoint() : 
-    m_endpointNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_yarnEndpointAddressHasBeenSet(false),
-    m_privateAddressHasBeenSet(false),
-    m_zeppelinRemoteSparkInterpreterPort(0),
-    m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
-    m_publicAddressHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_numberOfNodes(0),
-    m_numberOfNodesHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_publicKeyHasBeenSet(false),
-    m_publicKeysHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_argumentsHasBeenSet(false)
-{
-}
-
 DevEndpoint::DevEndpoint(JsonView jsonValue)
-  : DevEndpoint()
 {
   *this = jsonValue;
 }
@@ -62,17 +28,13 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -82,140 +44,101 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YarnEndpointAddress"))
   {
     m_yarnEndpointAddress = jsonValue.GetString("YarnEndpointAddress");
-
     m_yarnEndpointAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateAddress"))
   {
     m_privateAddress = jsonValue.GetString("PrivateAddress");
-
     m_privateAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZeppelinRemoteSparkInterpreterPort"))
   {
     m_zeppelinRemoteSparkInterpreterPort = jsonValue.GetInteger("ZeppelinRemoteSparkInterpreterPort");
-
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicAddress"))
   {
     m_publicAddress = jsonValue.GetString("PublicAddress");
-
     m_publicAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerType"))
   {
     m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
-
     m_workerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlueVersion"))
   {
     m_glueVersion = jsonValue.GetString("GlueVersion");
-
     m_glueVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfWorkers"))
   {
     m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
-
     m_numberOfWorkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNodes"))
   {
     m_numberOfNodes = jsonValue.GetInteger("NumberOfNodes");
-
     m_numberOfNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtraPythonLibsS3Path"))
   {
     m_extraPythonLibsS3Path = jsonValue.GetString("ExtraPythonLibsS3Path");
-
     m_extraPythonLibsS3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtraJarsS3Path"))
   {
     m_extraJarsS3Path = jsonValue.GetString("ExtraJarsS3Path");
-
     m_extraJarsS3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateStatus"))
   {
     m_lastUpdateStatus = jsonValue.GetString("LastUpdateStatus");
-
     m_lastUpdateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("LastModifiedTimestamp");
-
     m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKey"))
   {
     m_publicKey = jsonValue.GetString("PublicKey");
-
     m_publicKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKeys"))
   {
     Aws::Utils::Array<JsonView> publicKeysJsonList = jsonValue.GetArray("PublicKeys");
@@ -225,14 +148,11 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     }
     m_publicKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfiguration"))
   {
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
-
     m_securityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arguments"))
   {
     Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
@@ -242,7 +162,6 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     }
     m_argumentsHasBeenSet = true;
   }
-
   return *this;
 }
 

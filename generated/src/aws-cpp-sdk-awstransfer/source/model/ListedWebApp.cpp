@@ -18,16 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedWebApp::ListedWebApp() : 
-    m_arnHasBeenSet(false),
-    m_webAppIdHasBeenSet(false),
-    m_accessEndpointHasBeenSet(false),
-    m_webAppEndpointHasBeenSet(false)
-{
-}
-
 ListedWebApp::ListedWebApp(JsonView jsonValue)
-  : ListedWebApp()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ListedWebApp& ListedWebApp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAppId"))
   {
     m_webAppId = jsonValue.GetString("WebAppId");
-
     m_webAppIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessEndpoint"))
   {
     m_accessEndpoint = jsonValue.GetString("AccessEndpoint");
-
     m_accessEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAppEndpoint"))
   {
     m_webAppEndpoint = jsonValue.GetString("WebAppEndpoint");
-
     m_webAppEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

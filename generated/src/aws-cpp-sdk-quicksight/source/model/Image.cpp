@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Image::Image() : 
-    m_sourceHasBeenSet(false),
-    m_generatedImageUrlHasBeenSet(false)
-{
-}
-
 Image::Image(JsonView jsonValue)
-  : Image()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Image& Image::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetObject("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeneratedImageUrl"))
   {
     m_generatedImageUrl = jsonValue.GetString("GeneratedImageUrl");
-
     m_generatedImageUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

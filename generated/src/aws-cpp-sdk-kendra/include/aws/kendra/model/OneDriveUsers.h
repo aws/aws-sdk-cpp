@@ -34,7 +34,7 @@ namespace Model
   class OneDriveUsers
   {
   public:
-    AWS_KENDRA_API OneDriveUsers();
+    AWS_KENDRA_API OneDriveUsers() = default;
     AWS_KENDRA_API OneDriveUsers(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API OneDriveUsers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * <code>OneDriveUserS3Path</code> field to specify the location of a file
      * containing a list of users.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOneDriveUserList() const{ return m_oneDriveUserList; }
+    inline const Aws::Vector<Aws::String>& GetOneDriveUserList() const { return m_oneDriveUserList; }
     inline bool OneDriveUserListHasBeenSet() const { return m_oneDriveUserListHasBeenSet; }
-    inline void SetOneDriveUserList(const Aws::Vector<Aws::String>& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList = value; }
-    inline void SetOneDriveUserList(Aws::Vector<Aws::String>&& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList = std::move(value); }
-    inline OneDriveUsers& WithOneDriveUserList(const Aws::Vector<Aws::String>& value) { SetOneDriveUserList(value); return *this;}
-    inline OneDriveUsers& WithOneDriveUserList(Aws::Vector<Aws::String>&& value) { SetOneDriveUserList(std::move(value)); return *this;}
-    inline OneDriveUsers& AddOneDriveUserList(const Aws::String& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.push_back(value); return *this; }
-    inline OneDriveUsers& AddOneDriveUserList(Aws::String&& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.push_back(std::move(value)); return *this; }
-    inline OneDriveUsers& AddOneDriveUserList(const char* value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.push_back(value); return *this; }
+    template<typename OneDriveUserListT = Aws::Vector<Aws::String>>
+    void SetOneDriveUserList(OneDriveUserListT&& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList = std::forward<OneDriveUserListT>(value); }
+    template<typename OneDriveUserListT = Aws::Vector<Aws::String>>
+    OneDriveUsers& WithOneDriveUserList(OneDriveUserListT&& value) { SetOneDriveUserList(std::forward<OneDriveUserListT>(value)); return *this;}
+    template<typename OneDriveUserListT = Aws::String>
+    OneDriveUsers& AddOneDriveUserList(OneDriveUserListT&& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.emplace_back(std::forward<OneDriveUserListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,12 +63,12 @@ namespace Model
      * <p>The S3 bucket location of a file containing a list of users whose documents
      * should be indexed.</p>
      */
-    inline const S3Path& GetOneDriveUserS3Path() const{ return m_oneDriveUserS3Path; }
+    inline const S3Path& GetOneDriveUserS3Path() const { return m_oneDriveUserS3Path; }
     inline bool OneDriveUserS3PathHasBeenSet() const { return m_oneDriveUserS3PathHasBeenSet; }
-    inline void SetOneDriveUserS3Path(const S3Path& value) { m_oneDriveUserS3PathHasBeenSet = true; m_oneDriveUserS3Path = value; }
-    inline void SetOneDriveUserS3Path(S3Path&& value) { m_oneDriveUserS3PathHasBeenSet = true; m_oneDriveUserS3Path = std::move(value); }
-    inline OneDriveUsers& WithOneDriveUserS3Path(const S3Path& value) { SetOneDriveUserS3Path(value); return *this;}
-    inline OneDriveUsers& WithOneDriveUserS3Path(S3Path&& value) { SetOneDriveUserS3Path(std::move(value)); return *this;}
+    template<typename OneDriveUserS3PathT = S3Path>
+    void SetOneDriveUserS3Path(OneDriveUserS3PathT&& value) { m_oneDriveUserS3PathHasBeenSet = true; m_oneDriveUserS3Path = std::forward<OneDriveUserS3PathT>(value); }
+    template<typename OneDriveUserS3PathT = S3Path>
+    OneDriveUsers& WithOneDriveUserS3Path(OneDriveUserS3PathT&& value) { SetOneDriveUserS3Path(std::forward<OneDriveUserS3PathT>(value)); return *this;}
     ///@}
   private:
 

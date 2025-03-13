@@ -18,17 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-PublicKey::PublicKey() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_publicKeyMaterialHasBeenSet(false),
-    m_fingerprintHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PublicKey::PublicKey(JsonView jsonValue)
-  : PublicKey()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PublicKey& PublicKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicKeyMaterial"))
   {
     m_publicKeyMaterial = jsonValue.GetString("publicKeyMaterial");
-
     m_publicKeyMaterialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fingerprint"))
   {
     m_fingerprint = jsonValue.GetString("fingerprint");
-
     m_fingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -72,7 +54,6 @@ PublicKey& PublicKey::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

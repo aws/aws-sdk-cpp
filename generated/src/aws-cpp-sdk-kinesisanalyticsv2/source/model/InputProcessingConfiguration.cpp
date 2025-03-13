@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-InputProcessingConfiguration::InputProcessingConfiguration() : 
-    m_inputLambdaProcessorHasBeenSet(false)
-{
-}
-
 InputProcessingConfiguration::InputProcessingConfiguration(JsonView jsonValue)
-  : InputProcessingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InputProcessingConfiguration& InputProcessingConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("InputLambdaProcessor"))
   {
     m_inputLambdaProcessor = jsonValue.GetObject("InputLambdaProcessor");
-
     m_inputLambdaProcessorHasBeenSet = true;
   }
-
   return *this;
 }
 

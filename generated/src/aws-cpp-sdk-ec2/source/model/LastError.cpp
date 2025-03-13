@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LastError::LastError() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 LastError::LastError(const XmlNode& xmlNode)
-  : LastError()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ LastError& LastError::operator =(const XmlNode& xmlNode)
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
       m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
       m_codeHasBeenSet = true;
+       m_codeHasBeenSet = true;
     }
   }
 

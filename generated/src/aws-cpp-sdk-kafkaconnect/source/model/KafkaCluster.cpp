@@ -18,13 +18,7 @@ namespace KafkaConnect
 namespace Model
 {
 
-KafkaCluster::KafkaCluster() : 
-    m_apacheKafkaClusterHasBeenSet(false)
-{
-}
-
 KafkaCluster::KafkaCluster(JsonView jsonValue)
-  : KafkaCluster()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KafkaCluster& KafkaCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apacheKafkaCluster"))
   {
     m_apacheKafkaCluster = jsonValue.GetObject("apacheKafkaCluster");
-
     m_apacheKafkaClusterHasBeenSet = true;
   }
-
   return *this;
 }
 

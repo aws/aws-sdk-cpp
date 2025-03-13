@@ -36,7 +36,7 @@ namespace Model
   class EntityDetails
   {
   public:
-    AWS_IAM_API EntityDetails();
+    AWS_IAM_API EntityDetails() = default;
     AWS_IAM_API EntityDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API EntityDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,12 @@ namespace Model
      * <p>The <code>EntityInfo</code> object that contains details about the entity
      * (user or role).</p>
      */
-    inline const EntityInfo& GetEntityInfo() const{ return m_entityInfo; }
+    inline const EntityInfo& GetEntityInfo() const { return m_entityInfo; }
     inline bool EntityInfoHasBeenSet() const { return m_entityInfoHasBeenSet; }
-    inline void SetEntityInfo(const EntityInfo& value) { m_entityInfoHasBeenSet = true; m_entityInfo = value; }
-    inline void SetEntityInfo(EntityInfo&& value) { m_entityInfoHasBeenSet = true; m_entityInfo = std::move(value); }
-    inline EntityDetails& WithEntityInfo(const EntityInfo& value) { SetEntityInfo(value); return *this;}
-    inline EntityDetails& WithEntityInfo(EntityInfo&& value) { SetEntityInfo(std::move(value)); return *this;}
+    template<typename EntityInfoT = EntityInfo>
+    void SetEntityInfo(EntityInfoT&& value) { m_entityInfoHasBeenSet = true; m_entityInfo = std::forward<EntityInfoT>(value); }
+    template<typename EntityInfoT = EntityInfo>
+    EntityDetails& WithEntityInfo(EntityInfoT&& value) { SetEntityInfo(std::forward<EntityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +67,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAuthenticated() const{ return m_lastAuthenticated; }
+    inline const Aws::Utils::DateTime& GetLastAuthenticated() const { return m_lastAuthenticated; }
     inline bool LastAuthenticatedHasBeenSet() const { return m_lastAuthenticatedHasBeenSet; }
-    inline void SetLastAuthenticated(const Aws::Utils::DateTime& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = value; }
-    inline void SetLastAuthenticated(Aws::Utils::DateTime&& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = std::move(value); }
-    inline EntityDetails& WithLastAuthenticated(const Aws::Utils::DateTime& value) { SetLastAuthenticated(value); return *this;}
-    inline EntityDetails& WithLastAuthenticated(Aws::Utils::DateTime&& value) { SetLastAuthenticated(std::move(value)); return *this;}
+    template<typename LastAuthenticatedT = Aws::Utils::DateTime>
+    void SetLastAuthenticated(LastAuthenticatedT&& value) { m_lastAuthenticatedHasBeenSet = true; m_lastAuthenticated = std::forward<LastAuthenticatedT>(value); }
+    template<typename LastAuthenticatedT = Aws::Utils::DateTime>
+    EntityDetails& WithLastAuthenticated(LastAuthenticatedT&& value) { SetLastAuthenticated(std::forward<LastAuthenticatedT>(value)); return *this;}
     ///@}
   private:
 
     EntityInfo m_entityInfo;
     bool m_entityInfoHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAuthenticated;
+    Aws::Utils::DateTime m_lastAuthenticated{};
     bool m_lastAuthenticatedHasBeenSet = false;
   };
 

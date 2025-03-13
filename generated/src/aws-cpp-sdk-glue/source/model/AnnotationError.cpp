@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AnnotationError::AnnotationError() : 
-    m_profileIdHasBeenSet(false),
-    m_statisticIdHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 AnnotationError::AnnotationError(JsonView jsonValue)
-  : AnnotationError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AnnotationError& AnnotationError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatisticId"))
   {
     m_statisticId = jsonValue.GetString("StatisticId");
-
     m_statisticIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

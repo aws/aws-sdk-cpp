@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIngestionsRequest::ListIngestionsRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListIngestionsRequest::SerializePayload() const
 {
   return {};

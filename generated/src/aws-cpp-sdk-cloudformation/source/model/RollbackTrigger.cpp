@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-RollbackTrigger::RollbackTrigger() : 
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 RollbackTrigger::RollbackTrigger(const XmlNode& xmlNode)
-  : RollbackTrigger()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ RollbackTrigger& RollbackTrigger::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
   }
 

@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DataSourceVpcConfiguration::DataSourceVpcConfiguration() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 DataSourceVpcConfiguration::DataSourceVpcConfiguration(JsonView jsonValue)
-  : DataSourceVpcConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ DataSourceVpcConfiguration& DataSourceVpcConfiguration::operator =(JsonView json
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -51,7 +43,6 @@ DataSourceVpcConfiguration& DataSourceVpcConfiguration::operator =(JsonView json
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

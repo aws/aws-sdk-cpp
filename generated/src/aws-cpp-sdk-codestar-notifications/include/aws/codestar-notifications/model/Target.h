@@ -32,7 +32,7 @@ namespace Model
   class Target
   {
   public:
-    AWS_CODESTARNOTIFICATIONS_API Target();
+    AWS_CODESTARNOTIFICATIONS_API Target() = default;
     AWS_CODESTARNOTIFICATIONS_API Target(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARNOTIFICATIONS_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>Chatbot topics are specified as <code>SNS</code>.</p> </li> <li> <p>Chatbot
      * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+    inline const Aws::String& GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
-    inline Target& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
-    inline Target& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
-    inline Target& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+    template<typename TargetTypeT = Aws::String>
+    void SetTargetType(TargetTypeT&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::forward<TargetTypeT>(value); }
+    template<typename TargetTypeT = Aws::String>
+    Target& WithTargetType(TargetTypeT&& value) { SetTargetType(std::forward<TargetTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</p>
      */
-    inline const Aws::String& GetTargetAddress() const{ return m_targetAddress; }
+    inline const Aws::String& GetTargetAddress() const { return m_targetAddress; }
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
-    inline void SetTargetAddress(const Aws::String& value) { m_targetAddressHasBeenSet = true; m_targetAddress = value; }
-    inline void SetTargetAddress(Aws::String&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::move(value); }
-    inline void SetTargetAddress(const char* value) { m_targetAddressHasBeenSet = true; m_targetAddress.assign(value); }
-    inline Target& WithTargetAddress(const Aws::String& value) { SetTargetAddress(value); return *this;}
-    inline Target& WithTargetAddress(Aws::String&& value) { SetTargetAddress(std::move(value)); return *this;}
-    inline Target& WithTargetAddress(const char* value) { SetTargetAddress(value); return *this;}
+    template<typename TargetAddressT = Aws::String>
+    void SetTargetAddress(TargetAddressT&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::forward<TargetAddressT>(value); }
+    template<typename TargetAddressT = Aws::String>
+    Target& WithTargetAddress(TargetAddressT&& value) { SetTargetAddress(std::forward<TargetAddressT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ClassificationResult::ClassificationResult() : 
-    m_mimeTypeHasBeenSet(false),
-    m_sizeClassified(0),
-    m_sizeClassifiedHasBeenSet(false),
-    m_additionalOccurrences(false),
-    m_additionalOccurrencesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_sensitiveDataHasBeenSet(false),
-    m_customDataIdentifiersHasBeenSet(false)
-{
-}
-
 ClassificationResult::ClassificationResult(JsonView jsonValue)
-  : ClassificationResult()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MimeType"))
   {
     m_mimeType = jsonValue.GetString("MimeType");
-
     m_mimeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeClassified"))
   {
     m_sizeClassified = jsonValue.GetInt64("SizeClassified");
-
     m_sizeClassifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalOccurrences"))
   {
     m_additionalOccurrences = jsonValue.GetBool("AdditionalOccurrences");
-
     m_additionalOccurrencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SensitiveData"))
   {
     Aws::Utils::Array<JsonView> sensitiveDataJsonList = jsonValue.GetArray("SensitiveData");
@@ -75,14 +54,11 @@ ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
     }
     m_sensitiveDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDataIdentifiers"))
   {
     m_customDataIdentifiers = jsonValue.GetObject("CustomDataIdentifiers");
-
     m_customDataIdentifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeRepositoryRequest::DescribeRepositoryRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRepositoryRequest::SerializePayload() const
 {
   return {};

@@ -35,7 +35,7 @@ namespace Model
   class Content
   {
   public:
-    AWS_SES_API Content();
+    AWS_SES_API Content() = default;
     AWS_SES_API Content(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API Content& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The textual data of the content.</p>
      */
-    inline const Aws::String& GetData() const{ return m_data; }
+    inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-    inline Content& WithData(const Aws::String& value) { SetData(value); return *this;}
-    inline Content& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-    inline Content& WithData(const char* value) { SetData(value); return *this;}
+    template<typename DataT = Aws::String>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::String>
+    Content& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The character set of the content.</p>
      */
-    inline const Aws::String& GetCharset() const{ return m_charset; }
+    inline const Aws::String& GetCharset() const { return m_charset; }
     inline bool CharsetHasBeenSet() const { return m_charsetHasBeenSet; }
-    inline void SetCharset(const Aws::String& value) { m_charsetHasBeenSet = true; m_charset = value; }
-    inline void SetCharset(Aws::String&& value) { m_charsetHasBeenSet = true; m_charset = std::move(value); }
-    inline void SetCharset(const char* value) { m_charsetHasBeenSet = true; m_charset.assign(value); }
-    inline Content& WithCharset(const Aws::String& value) { SetCharset(value); return *this;}
-    inline Content& WithCharset(Aws::String&& value) { SetCharset(std::move(value)); return *this;}
-    inline Content& WithCharset(const char* value) { SetCharset(value); return *this;}
+    template<typename CharsetT = Aws::String>
+    void SetCharset(CharsetT&& value) { m_charsetHasBeenSet = true; m_charset = std::forward<CharsetT>(value); }
+    template<typename CharsetT = Aws::String>
+    Content& WithCharset(CharsetT&& value) { SetCharset(std::forward<CharsetT>(value)); return *this;}
     ///@}
   private:
 

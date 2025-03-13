@@ -34,7 +34,7 @@ namespace Model
   class TopicVisual
   {
   public:
-    AWS_QUICKSIGHT_API TopicVisual();
+    AWS_QUICKSIGHT_API TopicVisual() = default;
     AWS_QUICKSIGHT_API TopicVisual(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,59 +44,55 @@ namespace Model
     /**
      * <p>The visual ID for the <code>TopicVisual</code>.</p>
      */
-    inline const Aws::String& GetVisualId() const{ return m_visualId; }
+    inline const Aws::String& GetVisualId() const { return m_visualId; }
     inline bool VisualIdHasBeenSet() const { return m_visualIdHasBeenSet; }
-    inline void SetVisualId(const Aws::String& value) { m_visualIdHasBeenSet = true; m_visualId = value; }
-    inline void SetVisualId(Aws::String&& value) { m_visualIdHasBeenSet = true; m_visualId = std::move(value); }
-    inline void SetVisualId(const char* value) { m_visualIdHasBeenSet = true; m_visualId.assign(value); }
-    inline TopicVisual& WithVisualId(const Aws::String& value) { SetVisualId(value); return *this;}
-    inline TopicVisual& WithVisualId(Aws::String&& value) { SetVisualId(std::move(value)); return *this;}
-    inline TopicVisual& WithVisualId(const char* value) { SetVisualId(value); return *this;}
+    template<typename VisualIdT = Aws::String>
+    void SetVisualId(VisualIdT&& value) { m_visualIdHasBeenSet = true; m_visualId = std::forward<VisualIdT>(value); }
+    template<typename VisualIdT = Aws::String>
+    TopicVisual& WithVisualId(VisualIdT&& value) { SetVisualId(std::forward<VisualIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The role for the <code>TopicVisual</code>.</p>
      */
-    inline const VisualRole& GetRole() const{ return m_role; }
+    inline VisualRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const VisualRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(VisualRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline TopicVisual& WithRole(const VisualRole& value) { SetRole(value); return *this;}
-    inline TopicVisual& WithRole(VisualRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(VisualRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline TopicVisual& WithRole(VisualRole value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ir for the <code>TopicVisual</code>.</p>
      */
-    inline const TopicIR& GetIr() const{ return m_ir; }
+    inline const TopicIR& GetIr() const { return m_ir; }
     inline bool IrHasBeenSet() const { return m_irHasBeenSet; }
-    inline void SetIr(const TopicIR& value) { m_irHasBeenSet = true; m_ir = value; }
-    inline void SetIr(TopicIR&& value) { m_irHasBeenSet = true; m_ir = std::move(value); }
-    inline TopicVisual& WithIr(const TopicIR& value) { SetIr(value); return *this;}
-    inline TopicVisual& WithIr(TopicIR&& value) { SetIr(std::move(value)); return *this;}
+    template<typename IrT = TopicIR>
+    void SetIr(IrT&& value) { m_irHasBeenSet = true; m_ir = std::forward<IrT>(value); }
+    template<typename IrT = TopicIR>
+    TopicVisual& WithIr(IrT&& value) { SetIr(std::forward<IrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The supporting visuals for the <code>TopicVisual</code>.</p>
      */
-    inline const Aws::Vector<TopicVisual>& GetSupportingVisuals() const{ return m_supportingVisuals; }
+    inline const Aws::Vector<TopicVisual>& GetSupportingVisuals() const { return m_supportingVisuals; }
     inline bool SupportingVisualsHasBeenSet() const { return m_supportingVisualsHasBeenSet; }
-    inline void SetSupportingVisuals(const Aws::Vector<TopicVisual>& value) { m_supportingVisualsHasBeenSet = true; m_supportingVisuals = value; }
-    inline void SetSupportingVisuals(Aws::Vector<TopicVisual>&& value) { m_supportingVisualsHasBeenSet = true; m_supportingVisuals = std::move(value); }
-    inline TopicVisual& WithSupportingVisuals(const Aws::Vector<TopicVisual>& value) { SetSupportingVisuals(value); return *this;}
-    inline TopicVisual& WithSupportingVisuals(Aws::Vector<TopicVisual>&& value) { SetSupportingVisuals(std::move(value)); return *this;}
-    inline TopicVisual& AddSupportingVisuals(const TopicVisual& value) { m_supportingVisualsHasBeenSet = true; m_supportingVisuals.push_back(value); return *this; }
-    inline TopicVisual& AddSupportingVisuals(TopicVisual&& value) { m_supportingVisualsHasBeenSet = true; m_supportingVisuals.push_back(std::move(value)); return *this; }
+    template<typename SupportingVisualsT = Aws::Vector<TopicVisual>>
+    void SetSupportingVisuals(SupportingVisualsT&& value) { m_supportingVisualsHasBeenSet = true; m_supportingVisuals = std::forward<SupportingVisualsT>(value); }
+    template<typename SupportingVisualsT = Aws::Vector<TopicVisual>>
+    TopicVisual& WithSupportingVisuals(SupportingVisualsT&& value) { SetSupportingVisuals(std::forward<SupportingVisualsT>(value)); return *this;}
+    template<typename SupportingVisualsT = TopicVisual>
+    TopicVisual& AddSupportingVisuals(SupportingVisualsT&& value) { m_supportingVisualsHasBeenSet = true; m_supportingVisuals.emplace_back(std::forward<SupportingVisualsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_visualId;
     bool m_visualIdHasBeenSet = false;
 
-    VisualRole m_role;
+    VisualRole m_role{VisualRole::NOT_SET};
     bool m_roleHasBeenSet = false;
 
     TopicIR m_ir;

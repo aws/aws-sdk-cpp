@@ -29,7 +29,7 @@ namespace Model
   class ListTrainingJobsResult
   {
   public:
-    AWS_SAGEMAKER_API ListTrainingJobsResult();
+    AWS_SAGEMAKER_API ListTrainingJobsResult() = default;
     AWS_SAGEMAKER_API ListTrainingJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListTrainingJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>TrainingJobSummary</code> objects, each listing a training
      * job.</p>
      */
-    inline const Aws::Vector<TrainingJobSummary>& GetTrainingJobSummaries() const{ return m_trainingJobSummaries; }
-    inline void SetTrainingJobSummaries(const Aws::Vector<TrainingJobSummary>& value) { m_trainingJobSummaries = value; }
-    inline void SetTrainingJobSummaries(Aws::Vector<TrainingJobSummary>&& value) { m_trainingJobSummaries = std::move(value); }
-    inline ListTrainingJobsResult& WithTrainingJobSummaries(const Aws::Vector<TrainingJobSummary>& value) { SetTrainingJobSummaries(value); return *this;}
-    inline ListTrainingJobsResult& WithTrainingJobSummaries(Aws::Vector<TrainingJobSummary>&& value) { SetTrainingJobSummaries(std::move(value)); return *this;}
-    inline ListTrainingJobsResult& AddTrainingJobSummaries(const TrainingJobSummary& value) { m_trainingJobSummaries.push_back(value); return *this; }
-    inline ListTrainingJobsResult& AddTrainingJobSummaries(TrainingJobSummary&& value) { m_trainingJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrainingJobSummary>& GetTrainingJobSummaries() const { return m_trainingJobSummaries; }
+    template<typename TrainingJobSummariesT = Aws::Vector<TrainingJobSummary>>
+    void SetTrainingJobSummaries(TrainingJobSummariesT&& value) { m_trainingJobSummariesHasBeenSet = true; m_trainingJobSummaries = std::forward<TrainingJobSummariesT>(value); }
+    template<typename TrainingJobSummariesT = Aws::Vector<TrainingJobSummary>>
+    ListTrainingJobsResult& WithTrainingJobSummaries(TrainingJobSummariesT&& value) { SetTrainingJobSummaries(std::forward<TrainingJobSummariesT>(value)); return *this;}
+    template<typename TrainingJobSummariesT = TrainingJobSummary>
+    ListTrainingJobsResult& AddTrainingJobSummaries(TrainingJobSummariesT&& value) { m_trainingJobSummariesHasBeenSet = true; m_trainingJobSummaries.emplace_back(std::forward<TrainingJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, SageMaker returns this token. To retrieve the
      * next set of training jobs, use it in the subsequent request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTrainingJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTrainingJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTrainingJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTrainingJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTrainingJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTrainingJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTrainingJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTrainingJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrainingJobSummary> m_trainingJobSummaries;
+    bool m_trainingJobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

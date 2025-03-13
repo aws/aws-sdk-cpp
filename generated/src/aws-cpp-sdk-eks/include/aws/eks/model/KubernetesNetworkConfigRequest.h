@@ -34,7 +34,7 @@ namespace Model
   class KubernetesNetworkConfigRequest
   {
   public:
-    AWS_EKS_API KubernetesNetworkConfigRequest();
+    AWS_EKS_API KubernetesNetworkConfigRequest() = default;
     AWS_EKS_API KubernetesNetworkConfigRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API KubernetesNetworkConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * only specify a custom CIDR block when you create a cluster. You can't change
      * this value after the cluster is created.</p> 
      */
-    inline const Aws::String& GetServiceIpv4Cidr() const{ return m_serviceIpv4Cidr; }
+    inline const Aws::String& GetServiceIpv4Cidr() const { return m_serviceIpv4Cidr; }
     inline bool ServiceIpv4CidrHasBeenSet() const { return m_serviceIpv4CidrHasBeenSet; }
-    inline void SetServiceIpv4Cidr(const Aws::String& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = value; }
-    inline void SetServiceIpv4Cidr(Aws::String&& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = std::move(value); }
-    inline void SetServiceIpv4Cidr(const char* value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr.assign(value); }
-    inline KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(const Aws::String& value) { SetServiceIpv4Cidr(value); return *this;}
-    inline KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(Aws::String&& value) { SetServiceIpv4Cidr(std::move(value)); return *this;}
-    inline KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(const char* value) { SetServiceIpv4Cidr(value); return *this;}
+    template<typename ServiceIpv4CidrT = Aws::String>
+    void SetServiceIpv4Cidr(ServiceIpv4CidrT&& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = std::forward<ServiceIpv4CidrT>(value); }
+    template<typename ServiceIpv4CidrT = Aws::String>
+    KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(ServiceIpv4CidrT&& value) { SetServiceIpv4Cidr(std::forward<ServiceIpv4CidrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +84,10 @@ namespace Model
      * <code>IPv6</code> CIDR block. Pod addresses are assigned from the subnet's
      * <code>IPv6</code> CIDR.</p>
      */
-    inline const IpFamily& GetIpFamily() const{ return m_ipFamily; }
+    inline IpFamily GetIpFamily() const { return m_ipFamily; }
     inline bool IpFamilyHasBeenSet() const { return m_ipFamilyHasBeenSet; }
-    inline void SetIpFamily(const IpFamily& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = value; }
-    inline void SetIpFamily(IpFamily&& value) { m_ipFamilyHasBeenSet = true; m_ipFamily = std::move(value); }
-    inline KubernetesNetworkConfigRequest& WithIpFamily(const IpFamily& value) { SetIpFamily(value); return *this;}
-    inline KubernetesNetworkConfigRequest& WithIpFamily(IpFamily&& value) { SetIpFamily(std::move(value)); return *this;}
+    inline void SetIpFamily(IpFamily value) { m_ipFamilyHasBeenSet = true; m_ipFamily = value; }
+    inline KubernetesNetworkConfigRequest& WithIpFamily(IpFamily value) { SetIpFamily(value); return *this;}
     ///@}
 
     ///@{
@@ -100,19 +96,19 @@ namespace Model
      * Mode cluster. For more information, see EKS Auto Mode load balancing capability
      * in the <i>Amazon EKS User Guide</i>.</p>
      */
-    inline const ElasticLoadBalancing& GetElasticLoadBalancing() const{ return m_elasticLoadBalancing; }
+    inline const ElasticLoadBalancing& GetElasticLoadBalancing() const { return m_elasticLoadBalancing; }
     inline bool ElasticLoadBalancingHasBeenSet() const { return m_elasticLoadBalancingHasBeenSet; }
-    inline void SetElasticLoadBalancing(const ElasticLoadBalancing& value) { m_elasticLoadBalancingHasBeenSet = true; m_elasticLoadBalancing = value; }
-    inline void SetElasticLoadBalancing(ElasticLoadBalancing&& value) { m_elasticLoadBalancingHasBeenSet = true; m_elasticLoadBalancing = std::move(value); }
-    inline KubernetesNetworkConfigRequest& WithElasticLoadBalancing(const ElasticLoadBalancing& value) { SetElasticLoadBalancing(value); return *this;}
-    inline KubernetesNetworkConfigRequest& WithElasticLoadBalancing(ElasticLoadBalancing&& value) { SetElasticLoadBalancing(std::move(value)); return *this;}
+    template<typename ElasticLoadBalancingT = ElasticLoadBalancing>
+    void SetElasticLoadBalancing(ElasticLoadBalancingT&& value) { m_elasticLoadBalancingHasBeenSet = true; m_elasticLoadBalancing = std::forward<ElasticLoadBalancingT>(value); }
+    template<typename ElasticLoadBalancingT = ElasticLoadBalancing>
+    KubernetesNetworkConfigRequest& WithElasticLoadBalancing(ElasticLoadBalancingT&& value) { SetElasticLoadBalancing(std::forward<ElasticLoadBalancingT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceIpv4Cidr;
     bool m_serviceIpv4CidrHasBeenSet = false;
 
-    IpFamily m_ipFamily;
+    IpFamily m_ipFamily{IpFamily::NOT_SET};
     bool m_ipFamilyHasBeenSet = false;
 
     ElasticLoadBalancing m_elasticLoadBalancing;

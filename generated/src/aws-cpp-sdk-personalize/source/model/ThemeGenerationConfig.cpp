@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-ThemeGenerationConfig::ThemeGenerationConfig() : 
-    m_fieldsForThemeGenerationHasBeenSet(false)
-{
-}
-
 ThemeGenerationConfig::ThemeGenerationConfig(JsonView jsonValue)
-  : ThemeGenerationConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ThemeGenerationConfig& ThemeGenerationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldsForThemeGeneration"))
   {
     m_fieldsForThemeGeneration = jsonValue.GetObject("fieldsForThemeGeneration");
-
     m_fieldsForThemeGenerationHasBeenSet = true;
   }
-
   return *this;
 }
 

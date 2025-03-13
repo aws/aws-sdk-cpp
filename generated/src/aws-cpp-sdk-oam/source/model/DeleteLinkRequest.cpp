@@ -12,11 +12,6 @@ using namespace Aws::OAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLinkRequest::DeleteLinkRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLinkRequest::SerializePayload() const
 {
   JsonValue payload;

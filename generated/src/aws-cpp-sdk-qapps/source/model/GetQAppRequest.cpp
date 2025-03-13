@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetQAppRequest::GetQAppRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_appVersion(0),
-    m_appVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetQAppRequest::SerializePayload() const
 {
   return {};

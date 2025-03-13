@@ -18,15 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-ResourceEndpointListItem::ResourceEndpointListItem() : 
-    m_protocol(ChannelProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_resourceEndpointHasBeenSet(false)
-{
-}
-
 ResourceEndpointListItem::ResourceEndpointListItem(JsonView jsonValue)
-  : ResourceEndpointListItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceEndpointListItem& ResourceEndpointListItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = ChannelProtocolMapper::GetChannelProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceEndpoint"))
   {
     m_resourceEndpoint = jsonValue.GetString("ResourceEndpoint");
-
     m_resourceEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

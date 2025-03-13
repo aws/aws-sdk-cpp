@@ -18,22 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-Operation::Operation() : 
-    m_idHasBeenSet(false),
-    m_type(OperationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Operation::Operation(JsonView jsonValue)
-  : Operation()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ Operation& Operation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = OperationTypeMapper::GetOperationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDate"))
   {
     m_updateDate = jsonValue.GetDouble("UpdateDate");
-
     m_updateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Map<Aws::String, JsonView> targetsJsonMap = jsonValue.GetObject("Targets").GetAllObjects();
@@ -98,7 +69,6 @@ Operation& Operation::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   return *this;
 }
 

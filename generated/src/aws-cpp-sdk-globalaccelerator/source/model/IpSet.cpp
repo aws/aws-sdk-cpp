@@ -18,15 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-IpSet::IpSet() : 
-    m_ipAddressesHasBeenSet(false),
-    m_ipAddressFamily(IpAddressFamily::NOT_SET),
-    m_ipAddressFamilyHasBeenSet(false)
-{
-}
-
 IpSet::IpSet(JsonView jsonValue)
-  : IpSet()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ IpSet& IpSet::operator =(JsonView jsonValue)
     }
     m_ipAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddressFamily"))
   {
     m_ipAddressFamily = IpAddressFamilyMapper::GetIpAddressFamilyForName(jsonValue.GetString("IpAddressFamily"));
-
     m_ipAddressFamilyHasBeenSet = true;
   }
-
   return *this;
 }
 

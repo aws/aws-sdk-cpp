@@ -10,15 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListVirtualMFADevicesRequest::ListVirtualMFADevicesRequest() : 
-    m_assignmentStatus(AssignmentStatusType::NOT_SET),
-    m_assignmentStatusHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListVirtualMFADevicesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

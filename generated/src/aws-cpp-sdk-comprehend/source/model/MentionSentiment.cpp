@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-MentionSentiment::MentionSentiment() : 
-    m_sentiment(SentimentType::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_sentimentScoreHasBeenSet(false)
-{
-}
-
 MentionSentiment::MentionSentiment(JsonView jsonValue)
-  : MentionSentiment()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MentionSentiment& MentionSentiment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("Sentiment"));
-
     m_sentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentimentScore"))
   {
     m_sentimentScore = jsonValue.GetObject("SentimentScore");
-
     m_sentimentScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

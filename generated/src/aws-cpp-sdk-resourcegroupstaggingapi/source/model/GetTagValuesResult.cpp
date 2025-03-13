@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTagValuesResult::GetTagValuesResult()
-{
-}
-
 GetTagValuesResult::GetTagValuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetTagValuesResult& GetTagValuesResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("PaginationToken"))
   {
     m_paginationToken = jsonValue.GetString("PaginationToken");
-
+    m_paginationTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValues"))
   {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
@@ -42,14 +37,15 @@ GetTagValuesResult& GetTagValuesResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());
     }
+    m_tagValuesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

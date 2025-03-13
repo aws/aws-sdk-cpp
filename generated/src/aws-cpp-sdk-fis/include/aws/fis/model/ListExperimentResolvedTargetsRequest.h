@@ -25,7 +25,7 @@ namespace Model
   class ListExperimentResolvedTargetsRequest : public FISRequest
   {
   public:
-    AWS_FIS_API ListExperimentResolvedTargetsRequest();
+    AWS_FIS_API ListExperimentResolvedTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the experiment.</p>
      */
-    inline const Aws::String& GetExperimentId() const{ return m_experimentId; }
+    inline const Aws::String& GetExperimentId() const { return m_experimentId; }
     inline bool ExperimentIdHasBeenSet() const { return m_experimentIdHasBeenSet; }
-    inline void SetExperimentId(const Aws::String& value) { m_experimentIdHasBeenSet = true; m_experimentId = value; }
-    inline void SetExperimentId(Aws::String&& value) { m_experimentIdHasBeenSet = true; m_experimentId = std::move(value); }
-    inline void SetExperimentId(const char* value) { m_experimentIdHasBeenSet = true; m_experimentId.assign(value); }
-    inline ListExperimentResolvedTargetsRequest& WithExperimentId(const Aws::String& value) { SetExperimentId(value); return *this;}
-    inline ListExperimentResolvedTargetsRequest& WithExperimentId(Aws::String&& value) { SetExperimentId(std::move(value)); return *this;}
-    inline ListExperimentResolvedTargetsRequest& WithExperimentId(const char* value) { SetExperimentId(value); return *this;}
+    template<typename ExperimentIdT = Aws::String>
+    void SetExperimentId(ExperimentIdT&& value) { m_experimentIdHasBeenSet = true; m_experimentId = std::forward<ExperimentIdT>(value); }
+    template<typename ExperimentIdT = Aws::String>
+    ListExperimentResolvedTargetsRequest& WithExperimentId(ExperimentIdT&& value) { SetExperimentId(std::forward<ExperimentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The maximum number of results to return with a single call. To retrieve the
      * remaining results, make another call with the returned nextToken value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListExperimentResolvedTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -67,35 +65,31 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListExperimentResolvedTargetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExperimentResolvedTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExperimentResolvedTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExperimentResolvedTargetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the target.</p>
      */
-    inline const Aws::String& GetTargetName() const{ return m_targetName; }
+    inline const Aws::String& GetTargetName() const { return m_targetName; }
     inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-    inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
-    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
-    inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
-    inline ListExperimentResolvedTargetsRequest& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
-    inline ListExperimentResolvedTargetsRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
-    inline ListExperimentResolvedTargetsRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+    template<typename TargetNameT = Aws::String>
+    void SetTargetName(TargetNameT&& value) { m_targetNameHasBeenSet = true; m_targetName = std::forward<TargetNameT>(value); }
+    template<typename TargetNameT = Aws::String>
+    ListExperimentResolvedTargetsRequest& WithTargetName(TargetNameT&& value) { SetTargetName(std::forward<TargetNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_experimentId;
     bool m_experimentIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

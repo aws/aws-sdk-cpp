@@ -32,7 +32,7 @@ namespace Model
   class LocalNavigationConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API LocalNavigationConfiguration();
+    AWS_QUICKSIGHT_API LocalNavigationConfiguration() = default;
     AWS_QUICKSIGHT_API LocalNavigationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LocalNavigationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The sheet that is targeted for navigation in the same analysis.</p>
      */
-    inline const Aws::String& GetTargetSheetId() const{ return m_targetSheetId; }
+    inline const Aws::String& GetTargetSheetId() const { return m_targetSheetId; }
     inline bool TargetSheetIdHasBeenSet() const { return m_targetSheetIdHasBeenSet; }
-    inline void SetTargetSheetId(const Aws::String& value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId = value; }
-    inline void SetTargetSheetId(Aws::String&& value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId = std::move(value); }
-    inline void SetTargetSheetId(const char* value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId.assign(value); }
-    inline LocalNavigationConfiguration& WithTargetSheetId(const Aws::String& value) { SetTargetSheetId(value); return *this;}
-    inline LocalNavigationConfiguration& WithTargetSheetId(Aws::String&& value) { SetTargetSheetId(std::move(value)); return *this;}
-    inline LocalNavigationConfiguration& WithTargetSheetId(const char* value) { SetTargetSheetId(value); return *this;}
+    template<typename TargetSheetIdT = Aws::String>
+    void SetTargetSheetId(TargetSheetIdT&& value) { m_targetSheetIdHasBeenSet = true; m_targetSheetId = std::forward<TargetSheetIdT>(value); }
+    template<typename TargetSheetIdT = Aws::String>
+    LocalNavigationConfiguration& WithTargetSheetId(TargetSheetIdT&& value) { SetTargetSheetId(std::forward<TargetSheetIdT>(value)); return *this;}
     ///@}
   private:
 

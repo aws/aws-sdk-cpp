@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NeuronDeviceInfo::NeuronDeviceInfo() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_coreInfoHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false)
-{
-}
-
 NeuronDeviceInfo::NeuronDeviceInfo(const XmlNode& xmlNode)
-  : NeuronDeviceInfo()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ NeuronDeviceInfo& NeuronDeviceInfo::operator =(const XmlNode& xmlNode)
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode coreInfoNode = resultNode.FirstChild("coreInfo");
     if(!coreInfoNode.IsNull())
     {
       m_coreInfo = coreInfoNode;
       m_coreInfoHasBeenSet = true;
+       m_coreInfoHasBeenSet = true;
     }
     XmlNode memoryInfoNode = resultNode.FirstChild("memoryInfo");
     if(!memoryInfoNode.IsNull())
     {
       m_memoryInfo = memoryInfoNode;
       m_memoryInfoHasBeenSet = true;
+       m_memoryInfoHasBeenSet = true;
     }
   }
 

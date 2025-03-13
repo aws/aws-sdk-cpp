@@ -32,7 +32,7 @@ namespace Model
   class IpRoute
   {
   public:
-    AWS_DIRECTORYSERVICE_API IpRoute();
+    AWS_DIRECTORYSERVICE_API IpRoute() = default;
     AWS_DIRECTORYSERVICE_API IpRoute(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API IpRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * single IP address use a CIDR address block with /32. For example
      * 10.0.0.0/32.</p>
      */
-    inline const Aws::String& GetCidrIp() const{ return m_cidrIp; }
+    inline const Aws::String& GetCidrIp() const { return m_cidrIp; }
     inline bool CidrIpHasBeenSet() const { return m_cidrIpHasBeenSet; }
-    inline void SetCidrIp(const Aws::String& value) { m_cidrIpHasBeenSet = true; m_cidrIp = value; }
-    inline void SetCidrIp(Aws::String&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::move(value); }
-    inline void SetCidrIp(const char* value) { m_cidrIpHasBeenSet = true; m_cidrIp.assign(value); }
-    inline IpRoute& WithCidrIp(const Aws::String& value) { SetCidrIp(value); return *this;}
-    inline IpRoute& WithCidrIp(Aws::String&& value) { SetCidrIp(std::move(value)); return *this;}
-    inline IpRoute& WithCidrIp(const char* value) { SetCidrIp(value); return *this;}
+    template<typename CidrIpT = Aws::String>
+    void SetCidrIp(CidrIpT&& value) { m_cidrIpHasBeenSet = true; m_cidrIp = std::forward<CidrIpT>(value); }
+    template<typename CidrIpT = Aws::String>
+    IpRoute& WithCidrIp(CidrIpT&& value) { SetCidrIp(std::forward<CidrIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the address block.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline IpRoute& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline IpRoute& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline IpRoute& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    IpRoute& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

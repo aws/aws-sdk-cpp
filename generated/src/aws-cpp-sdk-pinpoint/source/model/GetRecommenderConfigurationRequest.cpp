@@ -12,11 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRecommenderConfigurationRequest::GetRecommenderConfigurationRequest() : 
-    m_recommenderIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRecommenderConfigurationRequest::SerializePayload() const
 {
   return {};

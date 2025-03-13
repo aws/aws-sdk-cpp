@@ -31,7 +31,7 @@ namespace Model
   class CustomerProfilesIntegrationIdentifier
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationIdentifier();
+    AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationIdentifier() = default;
     AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CustomerProfilesIntegrationIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
+    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-    inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-    inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-    inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-    inline CustomerProfilesIntegrationIdentifier& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-    inline CustomerProfilesIntegrationIdentifier& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-    inline CustomerProfilesIntegrationIdentifier& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    template<typename DomainArnT = Aws::String>
+    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
+    template<typename DomainArnT = Aws::String>
+    CustomerProfilesIntegrationIdentifier& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -44,7 +44,7 @@ namespace Model
   class ManagedResourceSummary
   {
   public:
-    AWS_ARCZONALSHIFT_API ManagedResourceSummary();
+    AWS_ARCZONALSHIFT_API ManagedResourceSummary() = default;
     AWS_ARCZONALSHIFT_API ManagedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API ManagedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,72 +56,67 @@ namespace Model
      * Availability Zones or not. The key name is the Availability Zone where the
      * resource is deployed. The value is 1 or 0.</p>
      */
-    inline const Aws::Map<Aws::String, double>& GetAppliedWeights() const{ return m_appliedWeights; }
+    inline const Aws::Map<Aws::String, double>& GetAppliedWeights() const { return m_appliedWeights; }
     inline bool AppliedWeightsHasBeenSet() const { return m_appliedWeightsHasBeenSet; }
-    inline void SetAppliedWeights(const Aws::Map<Aws::String, double>& value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights = value; }
-    inline void SetAppliedWeights(Aws::Map<Aws::String, double>&& value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights = std::move(value); }
-    inline ManagedResourceSummary& WithAppliedWeights(const Aws::Map<Aws::String, double>& value) { SetAppliedWeights(value); return *this;}
-    inline ManagedResourceSummary& WithAppliedWeights(Aws::Map<Aws::String, double>&& value) { SetAppliedWeights(std::move(value)); return *this;}
-    inline ManagedResourceSummary& AddAppliedWeights(const Aws::String& key, double value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights.emplace(key, value); return *this; }
-    inline ManagedResourceSummary& AddAppliedWeights(Aws::String&& key, double value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights.emplace(std::move(key), value); return *this; }
-    inline ManagedResourceSummary& AddAppliedWeights(const char* key, double value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights.emplace(key, value); return *this; }
+    template<typename AppliedWeightsT = Aws::Map<Aws::String, double>>
+    void SetAppliedWeights(AppliedWeightsT&& value) { m_appliedWeightsHasBeenSet = true; m_appliedWeights = std::forward<AppliedWeightsT>(value); }
+    template<typename AppliedWeightsT = Aws::Map<Aws::String, double>>
+    ManagedResourceSummary& WithAppliedWeights(AppliedWeightsT&& value) { SetAppliedWeights(std::forward<AppliedWeightsT>(value)); return *this;}
+    inline ManagedResourceSummary& AddAppliedWeights(Aws::String key, double value) {
+      m_appliedWeightsHasBeenSet = true; m_appliedWeights.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the managed resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ManagedResourceSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ManagedResourceSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ManagedResourceSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ManagedResourceSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of the autoshifts that have been completed for a resource.</p>
      */
-    inline const Aws::Vector<AutoshiftInResource>& GetAutoshifts() const{ return m_autoshifts; }
+    inline const Aws::Vector<AutoshiftInResource>& GetAutoshifts() const { return m_autoshifts; }
     inline bool AutoshiftsHasBeenSet() const { return m_autoshiftsHasBeenSet; }
-    inline void SetAutoshifts(const Aws::Vector<AutoshiftInResource>& value) { m_autoshiftsHasBeenSet = true; m_autoshifts = value; }
-    inline void SetAutoshifts(Aws::Vector<AutoshiftInResource>&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts = std::move(value); }
-    inline ManagedResourceSummary& WithAutoshifts(const Aws::Vector<AutoshiftInResource>& value) { SetAutoshifts(value); return *this;}
-    inline ManagedResourceSummary& WithAutoshifts(Aws::Vector<AutoshiftInResource>&& value) { SetAutoshifts(std::move(value)); return *this;}
-    inline ManagedResourceSummary& AddAutoshifts(const AutoshiftInResource& value) { m_autoshiftsHasBeenSet = true; m_autoshifts.push_back(value); return *this; }
-    inline ManagedResourceSummary& AddAutoshifts(AutoshiftInResource&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts.push_back(std::move(value)); return *this; }
+    template<typename AutoshiftsT = Aws::Vector<AutoshiftInResource>>
+    void SetAutoshifts(AutoshiftsT&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts = std::forward<AutoshiftsT>(value); }
+    template<typename AutoshiftsT = Aws::Vector<AutoshiftInResource>>
+    ManagedResourceSummary& WithAutoshifts(AutoshiftsT&& value) { SetAutoshifts(std::forward<AutoshiftsT>(value)); return *this;}
+    template<typename AutoshiftsT = AutoshiftInResource>
+    ManagedResourceSummary& AddAutoshifts(AutoshiftsT&& value) { m_autoshiftsHasBeenSet = true; m_autoshifts.emplace_back(std::forward<AutoshiftsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zones that a resource is deployed in.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const { return m_availabilityZones; }
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
-    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
-    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
-    inline ManagedResourceSummary& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
-    inline ManagedResourceSummary& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
-    inline ManagedResourceSummary& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
-    inline ManagedResourceSummary& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
-    inline ManagedResourceSummary& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::forward<AvailabilityZonesT>(value); }
+    template<typename AvailabilityZonesT = Aws::Vector<Aws::String>>
+    ManagedResourceSummary& WithAvailabilityZones(AvailabilityZonesT&& value) { SetAvailabilityZones(std::forward<AvailabilityZonesT>(value)); return *this;}
+    template<typename AvailabilityZonesT = Aws::String>
+    ManagedResourceSummary& AddAvailabilityZones(AvailabilityZonesT&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.emplace_back(std::forward<AvailabilityZonesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the managed resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ManagedResourceSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ManagedResourceSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ManagedResourceSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ManagedResourceSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +129,10 @@ namespace Model
      * <code>DISABLED</code>.</p> <p>Route 53 ARC updates this status; you can't set a
      * practice run status to <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const ZonalAutoshiftStatus& GetPracticeRunStatus() const{ return m_practiceRunStatus; }
+    inline ZonalAutoshiftStatus GetPracticeRunStatus() const { return m_practiceRunStatus; }
     inline bool PracticeRunStatusHasBeenSet() const { return m_practiceRunStatusHasBeenSet; }
-    inline void SetPracticeRunStatus(const ZonalAutoshiftStatus& value) { m_practiceRunStatusHasBeenSet = true; m_practiceRunStatus = value; }
-    inline void SetPracticeRunStatus(ZonalAutoshiftStatus&& value) { m_practiceRunStatusHasBeenSet = true; m_practiceRunStatus = std::move(value); }
-    inline ManagedResourceSummary& WithPracticeRunStatus(const ZonalAutoshiftStatus& value) { SetPracticeRunStatus(value); return *this;}
-    inline ManagedResourceSummary& WithPracticeRunStatus(ZonalAutoshiftStatus&& value) { SetPracticeRunStatus(std::move(value)); return *this;}
+    inline void SetPracticeRunStatus(ZonalAutoshiftStatus value) { m_practiceRunStatusHasBeenSet = true; m_practiceRunStatus = value; }
+    inline ManagedResourceSummary& WithPracticeRunStatus(ZonalAutoshiftStatus value) { SetPracticeRunStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -148,26 +141,24 @@ namespace Model
      * for a resource, you can set the value of the status to <code>ENABLED</code> or
      * <code>DISABLED</code>.</p>
      */
-    inline const ZonalAutoshiftStatus& GetZonalAutoshiftStatus() const{ return m_zonalAutoshiftStatus; }
+    inline ZonalAutoshiftStatus GetZonalAutoshiftStatus() const { return m_zonalAutoshiftStatus; }
     inline bool ZonalAutoshiftStatusHasBeenSet() const { return m_zonalAutoshiftStatusHasBeenSet; }
-    inline void SetZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
-    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = std::move(value); }
-    inline ManagedResourceSummary& WithZonalAutoshiftStatus(const ZonalAutoshiftStatus& value) { SetZonalAutoshiftStatus(value); return *this;}
-    inline ManagedResourceSummary& WithZonalAutoshiftStatus(ZonalAutoshiftStatus&& value) { SetZonalAutoshiftStatus(std::move(value)); return *this;}
+    inline void SetZonalAutoshiftStatus(ZonalAutoshiftStatus value) { m_zonalAutoshiftStatusHasBeenSet = true; m_zonalAutoshiftStatus = value; }
+    inline ManagedResourceSummary& WithZonalAutoshiftStatus(ZonalAutoshiftStatus value) { SetZonalAutoshiftStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of the zonal shifts for a resource.</p>
      */
-    inline const Aws::Vector<ZonalShiftInResource>& GetZonalShifts() const{ return m_zonalShifts; }
+    inline const Aws::Vector<ZonalShiftInResource>& GetZonalShifts() const { return m_zonalShifts; }
     inline bool ZonalShiftsHasBeenSet() const { return m_zonalShiftsHasBeenSet; }
-    inline void SetZonalShifts(const Aws::Vector<ZonalShiftInResource>& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts = value; }
-    inline void SetZonalShifts(Aws::Vector<ZonalShiftInResource>&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts = std::move(value); }
-    inline ManagedResourceSummary& WithZonalShifts(const Aws::Vector<ZonalShiftInResource>& value) { SetZonalShifts(value); return *this;}
-    inline ManagedResourceSummary& WithZonalShifts(Aws::Vector<ZonalShiftInResource>&& value) { SetZonalShifts(std::move(value)); return *this;}
-    inline ManagedResourceSummary& AddZonalShifts(const ZonalShiftInResource& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts.push_back(value); return *this; }
-    inline ManagedResourceSummary& AddZonalShifts(ZonalShiftInResource&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts.push_back(std::move(value)); return *this; }
+    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
+    void SetZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts = std::forward<ZonalShiftsT>(value); }
+    template<typename ZonalShiftsT = Aws::Vector<ZonalShiftInResource>>
+    ManagedResourceSummary& WithZonalShifts(ZonalShiftsT&& value) { SetZonalShifts(std::forward<ZonalShiftsT>(value)); return *this;}
+    template<typename ZonalShiftsT = ZonalShiftInResource>
+    ManagedResourceSummary& AddZonalShifts(ZonalShiftsT&& value) { m_zonalShiftsHasBeenSet = true; m_zonalShifts.emplace_back(std::forward<ZonalShiftsT>(value)); return *this; }
     ///@}
   private:
 
@@ -186,10 +177,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ZonalAutoshiftStatus m_practiceRunStatus;
+    ZonalAutoshiftStatus m_practiceRunStatus{ZonalAutoshiftStatus::NOT_SET};
     bool m_practiceRunStatusHasBeenSet = false;
 
-    ZonalAutoshiftStatus m_zonalAutoshiftStatus;
+    ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
     bool m_zonalAutoshiftStatusHasBeenSet = false;
 
     Aws::Vector<ZonalShiftInResource> m_zonalShifts;

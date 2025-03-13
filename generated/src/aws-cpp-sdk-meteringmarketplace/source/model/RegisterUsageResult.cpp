@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterUsageResult::RegisterUsageResult()
-{
-}
-
 RegisterUsageResult::RegisterUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ RegisterUsageResult& RegisterUsageResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("PublicKeyRotationTimestamp"))
   {
     m_publicKeyRotationTimestamp = jsonValue.GetDouble("PublicKeyRotationTimestamp");
-
+    m_publicKeyRotationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signature"))
   {
     m_signature = jsonValue.GetString("Signature");
-
+    m_signatureHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeTokenRequest::RevokeTokenRequest() : 
-    m_tokenHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
-{
-}
-
 Aws::String RevokeTokenRequest::SerializePayload() const
 {
   JsonValue payload;

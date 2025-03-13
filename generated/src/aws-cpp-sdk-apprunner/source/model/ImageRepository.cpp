@@ -18,16 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-ImageRepository::ImageRepository() : 
-    m_imageIdentifierHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false),
-    m_imageRepositoryType(ImageRepositoryType::NOT_SET),
-    m_imageRepositoryTypeHasBeenSet(false)
-{
-}
-
 ImageRepository::ImageRepository(JsonView jsonValue)
-  : ImageRepository()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ImageRepository& ImageRepository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageIdentifier"))
   {
     m_imageIdentifier = jsonValue.GetString("ImageIdentifier");
-
     m_imageIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageConfiguration"))
   {
     m_imageConfiguration = jsonValue.GetObject("ImageConfiguration");
-
     m_imageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageRepositoryType"))
   {
     m_imageRepositoryType = ImageRepositoryTypeMapper::GetImageRepositoryTypeForName(jsonValue.GetString("ImageRepositoryType"));
-
     m_imageRepositoryTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

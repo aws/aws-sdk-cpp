@@ -12,15 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceShareInvitationsRequest::GetResourceShareInvitationsRequest() : 
-    m_resourceShareInvitationArnsHasBeenSet(false),
-    m_resourceShareArnsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceShareInvitationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class DataLakeUpdateException
   {
   public:
-    AWS_SECURITYLAKE_API DataLakeUpdateException();
+    AWS_SECURITYLAKE_API DataLakeUpdateException() = default;
     AWS_SECURITYLAKE_API DataLakeUpdateException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API DataLakeUpdateException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The reason code for the exception of the last <code>UpdateDataLake</code> or
      * <code>DeleteDataLake</code> API request.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline DataLakeUpdateException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline DataLakeUpdateException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline DataLakeUpdateException& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    DataLakeUpdateException& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The reason for the exception of the last <code>UpdateDataLake</code>or
      * <code>DeleteDataLake</code> API request.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline DataLakeUpdateException& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline DataLakeUpdateException& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline DataLakeUpdateException& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    DataLakeUpdateException& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

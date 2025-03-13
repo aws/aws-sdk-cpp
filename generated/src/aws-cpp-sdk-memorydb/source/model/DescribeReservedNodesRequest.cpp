@@ -12,18 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReservedNodesRequest::DescribeReservedNodesRequest() : 
-    m_reservationIdHasBeenSet(false),
-    m_reservedNodesOfferingIdHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedNodesRequest::SerializePayload() const
 {
   JsonValue payload;

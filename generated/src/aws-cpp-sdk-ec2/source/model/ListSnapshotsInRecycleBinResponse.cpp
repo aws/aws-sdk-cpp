@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSnapshotsInRecycleBinResponse::ListSnapshotsInRecycleBinResponse()
-{
-}
-
 ListSnapshotsInRecycleBinResponse::ListSnapshotsInRecycleBinResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListSnapshotsInRecycleBinResponse& ListSnapshotsInRecycleBinResponse::operator =
     if(!snapshotsNode.IsNull())
     {
       XmlNode snapshotsMember = snapshotsNode.FirstChild("item");
+      m_snapshotsHasBeenSet = !snapshotsMember.IsNull();
       while(!snapshotsMember.IsNull())
       {
         m_snapshots.push_back(snapshotsMember);
@@ -53,6 +50,7 @@ ListSnapshotsInRecycleBinResponse& ListSnapshotsInRecycleBinResponse::operator =
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ ListSnapshotsInRecycleBinResponse& ListSnapshotsInRecycleBinResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ListSnapshotsInRecycleBinResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

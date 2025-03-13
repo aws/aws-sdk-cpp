@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContactFlowRequest::DeleteContactFlowRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContactFlowRequest::SerializePayload() const
 {
   return {};

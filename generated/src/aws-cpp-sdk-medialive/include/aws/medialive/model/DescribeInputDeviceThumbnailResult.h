@@ -30,10 +30,9 @@ namespace Model
   class DescribeInputDeviceThumbnailResult
   {
   public:
-    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult(DescribeInputDeviceThumbnailResult&&);
-    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult& operator=(DescribeInputDeviceThumbnailResult&&);
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult() = default;
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult(DescribeInputDeviceThumbnailResult&&) = default;
+    AWS_MEDIALIVE_API DescribeInputDeviceThumbnailResult& operator=(DescribeInputDeviceThumbnailResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     DescribeInputDeviceThumbnailResult(const DescribeInputDeviceThumbnailResult&) = delete;
@@ -59,19 +58,17 @@ namespace Model
     /**
      * Specifies the media type of the thumbnail.
      */
-    inline const ContentType& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const ContentType& value) { m_contentType = value; }
-    inline void SetContentType(ContentType&& value) { m_contentType = std::move(value); }
-    inline DescribeInputDeviceThumbnailResult& WithContentType(const ContentType& value) { SetContentType(value); return *this;}
-    inline DescribeInputDeviceThumbnailResult& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
+    inline ContentType GetContentType() const { return m_contentType; }
+    inline void SetContentType(ContentType value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
+    inline DescribeInputDeviceThumbnailResult& WithContentType(ContentType value) { SetContentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The length of the content.
      */
-    inline long long GetContentLength() const{ return m_contentLength; }
-    inline void SetContentLength(long long value) { m_contentLength = value; }
+    inline long long GetContentLength() const { return m_contentLength; }
+    inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
     inline DescribeInputDeviceThumbnailResult& WithContentLength(long long value) { SetContentLength(value); return *this;}
     ///@}
 
@@ -79,49 +76,51 @@ namespace Model
     /**
      * The unique, cacheable version of this thumbnail.
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline DescribeInputDeviceThumbnailResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline DescribeInputDeviceThumbnailResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline DescribeInputDeviceThumbnailResult& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    DescribeInputDeviceThumbnailResult& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The date and time the thumbnail was last updated at the device.
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
-    inline DescribeInputDeviceThumbnailResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline DescribeInputDeviceThumbnailResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    DescribeInputDeviceThumbnailResult& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeInputDeviceThumbnailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeInputDeviceThumbnailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeInputDeviceThumbnailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeInputDeviceThumbnailResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_body;
+    Aws::Utils::Stream::ResponseStream m_body{};
+    bool m_bodyHasBeenSet = false;
 
-    ContentType m_contentType;
+    ContentType m_contentType{ContentType::NOT_SET};
+    bool m_contentTypeHasBeenSet = false;
 
-    long long m_contentLength;
+    long long m_contentLength{0};
+    bool m_contentLengthHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

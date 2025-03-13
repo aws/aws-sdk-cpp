@@ -21,7 +21,7 @@ namespace Model
   class GetConnectPeerRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API GetConnectPeerRequest();
+    AWS_NETWORKMANAGER_API GetConnectPeerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the Connect peer.</p>
      */
-    inline const Aws::String& GetConnectPeerId() const{ return m_connectPeerId; }
+    inline const Aws::String& GetConnectPeerId() const { return m_connectPeerId; }
     inline bool ConnectPeerIdHasBeenSet() const { return m_connectPeerIdHasBeenSet; }
-    inline void SetConnectPeerId(const Aws::String& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = value; }
-    inline void SetConnectPeerId(Aws::String&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::move(value); }
-    inline void SetConnectPeerId(const char* value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId.assign(value); }
-    inline GetConnectPeerRequest& WithConnectPeerId(const Aws::String& value) { SetConnectPeerId(value); return *this;}
-    inline GetConnectPeerRequest& WithConnectPeerId(Aws::String&& value) { SetConnectPeerId(std::move(value)); return *this;}
-    inline GetConnectPeerRequest& WithConnectPeerId(const char* value) { SetConnectPeerId(value); return *this;}
+    template<typename ConnectPeerIdT = Aws::String>
+    void SetConnectPeerId(ConnectPeerIdT&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::forward<ConnectPeerIdT>(value); }
+    template<typename ConnectPeerIdT = Aws::String>
+    GetConnectPeerRequest& WithConnectPeerId(ConnectPeerIdT&& value) { SetConnectPeerId(std::forward<ConnectPeerIdT>(value)); return *this;}
     ///@}
   private:
 

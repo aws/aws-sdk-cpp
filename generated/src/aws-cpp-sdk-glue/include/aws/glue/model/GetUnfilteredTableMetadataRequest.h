@@ -27,7 +27,7 @@ namespace Model
   class GetUnfilteredTableMetadataRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetUnfilteredTableMetadataRequest();
+    AWS_GLUE_API GetUnfilteredTableMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,42 +45,36 @@ namespace Model
      * <p>Specified only if the base tables belong to a different Amazon Web Services
      * Region.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline GetUnfilteredTableMetadataRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    GetUnfilteredTableMetadataRequest& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The catalog ID where the table resides.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline GetUnfilteredTableMetadataRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    GetUnfilteredTableMetadataRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>(Required) Specifies the name of a database that contains the table.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline GetUnfilteredTableMetadataRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    GetUnfilteredTableMetadataRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,26 +82,24 @@ namespace Model
      * <p>(Required) Specifies the name of a table for which you are requesting
      * metadata.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetUnfilteredTableMetadataRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetUnfilteredTableMetadataRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure containing Lake Formation audit context information.</p>
      */
-    inline const AuditContext& GetAuditContext() const{ return m_auditContext; }
+    inline const AuditContext& GetAuditContext() const { return m_auditContext; }
     inline bool AuditContextHasBeenSet() const { return m_auditContextHasBeenSet; }
-    inline void SetAuditContext(const AuditContext& value) { m_auditContextHasBeenSet = true; m_auditContext = value; }
-    inline void SetAuditContext(AuditContext&& value) { m_auditContextHasBeenSet = true; m_auditContext = std::move(value); }
-    inline GetUnfilteredTableMetadataRequest& WithAuditContext(const AuditContext& value) { SetAuditContext(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithAuditContext(AuditContext&& value) { SetAuditContext(std::move(value)); return *this;}
+    template<typename AuditContextT = AuditContext>
+    void SetAuditContext(AuditContextT&& value) { m_auditContextHasBeenSet = true; m_auditContext = std::forward<AuditContextT>(value); }
+    template<typename AuditContextT = AuditContext>
+    GetUnfilteredTableMetadataRequest& WithAuditContext(AuditContextT&& value) { SetAuditContext(std::forward<AuditContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,42 +129,37 @@ namespace Model
      * table, Lake Formation throws an exception, and will not return unfiltered table
      * metadata and data access credentials.</p>
      */
-    inline const Aws::Vector<PermissionType>& GetSupportedPermissionTypes() const{ return m_supportedPermissionTypes; }
+    inline const Aws::Vector<PermissionType>& GetSupportedPermissionTypes() const { return m_supportedPermissionTypes; }
     inline bool SupportedPermissionTypesHasBeenSet() const { return m_supportedPermissionTypesHasBeenSet; }
-    inline void SetSupportedPermissionTypes(const Aws::Vector<PermissionType>& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes = value; }
-    inline void SetSupportedPermissionTypes(Aws::Vector<PermissionType>&& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes = std::move(value); }
-    inline GetUnfilteredTableMetadataRequest& WithSupportedPermissionTypes(const Aws::Vector<PermissionType>& value) { SetSupportedPermissionTypes(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithSupportedPermissionTypes(Aws::Vector<PermissionType>&& value) { SetSupportedPermissionTypes(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& AddSupportedPermissionTypes(const PermissionType& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes.push_back(value); return *this; }
-    inline GetUnfilteredTableMetadataRequest& AddSupportedPermissionTypes(PermissionType&& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes.push_back(std::move(value)); return *this; }
+    template<typename SupportedPermissionTypesT = Aws::Vector<PermissionType>>
+    void SetSupportedPermissionTypes(SupportedPermissionTypesT&& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes = std::forward<SupportedPermissionTypesT>(value); }
+    template<typename SupportedPermissionTypesT = Aws::Vector<PermissionType>>
+    GetUnfilteredTableMetadataRequest& WithSupportedPermissionTypes(SupportedPermissionTypesT&& value) { SetSupportedPermissionTypes(std::forward<SupportedPermissionTypesT>(value)); return *this;}
+    inline GetUnfilteredTableMetadataRequest& AddSupportedPermissionTypes(PermissionType value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resource ARN of the view.</p>
      */
-    inline const Aws::String& GetParentResourceArn() const{ return m_parentResourceArn; }
+    inline const Aws::String& GetParentResourceArn() const { return m_parentResourceArn; }
     inline bool ParentResourceArnHasBeenSet() const { return m_parentResourceArnHasBeenSet; }
-    inline void SetParentResourceArn(const Aws::String& value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn = value; }
-    inline void SetParentResourceArn(Aws::String&& value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn = std::move(value); }
-    inline void SetParentResourceArn(const char* value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn.assign(value); }
-    inline GetUnfilteredTableMetadataRequest& WithParentResourceArn(const Aws::String& value) { SetParentResourceArn(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithParentResourceArn(Aws::String&& value) { SetParentResourceArn(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithParentResourceArn(const char* value) { SetParentResourceArn(value); return *this;}
+    template<typename ParentResourceArnT = Aws::String>
+    void SetParentResourceArn(ParentResourceArnT&& value) { m_parentResourceArnHasBeenSet = true; m_parentResourceArn = std::forward<ParentResourceArnT>(value); }
+    template<typename ParentResourceArnT = Aws::String>
+    GetUnfilteredTableMetadataRequest& WithParentResourceArn(ParentResourceArnT&& value) { SetParentResourceArn(std::forward<ParentResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ARN of the root view in a chain of nested views.</p>
      */
-    inline const Aws::String& GetRootResourceArn() const{ return m_rootResourceArn; }
+    inline const Aws::String& GetRootResourceArn() const { return m_rootResourceArn; }
     inline bool RootResourceArnHasBeenSet() const { return m_rootResourceArnHasBeenSet; }
-    inline void SetRootResourceArn(const Aws::String& value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn = value; }
-    inline void SetRootResourceArn(Aws::String&& value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn = std::move(value); }
-    inline void SetRootResourceArn(const char* value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn.assign(value); }
-    inline GetUnfilteredTableMetadataRequest& WithRootResourceArn(const Aws::String& value) { SetRootResourceArn(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithRootResourceArn(Aws::String&& value) { SetRootResourceArn(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithRootResourceArn(const char* value) { SetRootResourceArn(value); return *this;}
+    template<typename RootResourceArnT = Aws::String>
+    void SetRootResourceArn(RootResourceArnT&& value) { m_rootResourceArnHasBeenSet = true; m_rootResourceArn = std::forward<RootResourceArnT>(value); }
+    template<typename RootResourceArnT = Aws::String>
+    GetUnfilteredTableMetadataRequest& WithRootResourceArn(RootResourceArnT&& value) { SetRootResourceArn(std::forward<RootResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +167,12 @@ namespace Model
      * <p>A structure specifying the dialect and dialect version used by the query
      * engine.</p>
      */
-    inline const SupportedDialect& GetSupportedDialect() const{ return m_supportedDialect; }
+    inline const SupportedDialect& GetSupportedDialect() const { return m_supportedDialect; }
     inline bool SupportedDialectHasBeenSet() const { return m_supportedDialectHasBeenSet; }
-    inline void SetSupportedDialect(const SupportedDialect& value) { m_supportedDialectHasBeenSet = true; m_supportedDialect = value; }
-    inline void SetSupportedDialect(SupportedDialect&& value) { m_supportedDialectHasBeenSet = true; m_supportedDialect = std::move(value); }
-    inline GetUnfilteredTableMetadataRequest& WithSupportedDialect(const SupportedDialect& value) { SetSupportedDialect(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithSupportedDialect(SupportedDialect&& value) { SetSupportedDialect(std::move(value)); return *this;}
+    template<typename SupportedDialectT = SupportedDialect>
+    void SetSupportedDialect(SupportedDialectT&& value) { m_supportedDialectHasBeenSet = true; m_supportedDialect = std::forward<SupportedDialectT>(value); }
+    template<typename SupportedDialectT = SupportedDialect>
+    GetUnfilteredTableMetadataRequest& WithSupportedDialect(SupportedDialectT&& value) { SetSupportedDialect(std::forward<SupportedDialectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +180,13 @@ namespace Model
      * <p>The Lake Formation data permissions of the caller on the table. Used to
      * authorize the call when no view context is found.</p>
      */
-    inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
+    inline const Aws::Vector<Permission>& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline GetUnfilteredTableMetadataRequest& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline GetUnfilteredTableMetadataRequest& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-    inline GetUnfilteredTableMetadataRequest& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    GetUnfilteredTableMetadataRequest& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    inline GetUnfilteredTableMetadataRequest& AddPermissions(Permission value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -209,12 +195,12 @@ namespace Model
      * Glue. Contains both a Lake Formation generated authorization identifier and
      * information from the request's authorization context.</p>
      */
-    inline const QuerySessionContext& GetQuerySessionContext() const{ return m_querySessionContext; }
+    inline const QuerySessionContext& GetQuerySessionContext() const { return m_querySessionContext; }
     inline bool QuerySessionContextHasBeenSet() const { return m_querySessionContextHasBeenSet; }
-    inline void SetQuerySessionContext(const QuerySessionContext& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = value; }
-    inline void SetQuerySessionContext(QuerySessionContext&& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = std::move(value); }
-    inline GetUnfilteredTableMetadataRequest& WithQuerySessionContext(const QuerySessionContext& value) { SetQuerySessionContext(value); return *this;}
-    inline GetUnfilteredTableMetadataRequest& WithQuerySessionContext(QuerySessionContext&& value) { SetQuerySessionContext(std::move(value)); return *this;}
+    template<typename QuerySessionContextT = QuerySessionContext>
+    void SetQuerySessionContext(QuerySessionContextT&& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = std::forward<QuerySessionContextT>(value); }
+    template<typename QuerySessionContextT = QuerySessionContext>
+    GetUnfilteredTableMetadataRequest& WithQuerySessionContext(QuerySessionContextT&& value) { SetQuerySessionContext(std::forward<QuerySessionContextT>(value)); return *this;}
     ///@}
   private:
 

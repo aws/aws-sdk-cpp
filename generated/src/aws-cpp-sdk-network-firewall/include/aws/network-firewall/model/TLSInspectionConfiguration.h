@@ -46,7 +46,7 @@ namespace Model
   class TLSInspectionConfiguration
   {
   public:
-    AWS_NETWORKFIREWALL_API TLSInspectionConfiguration();
+    AWS_NETWORKFIREWALL_API TLSInspectionConfiguration() = default;
     AWS_NETWORKFIREWALL_API TLSInspectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API TLSInspectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,14 @@ namespace Model
      * <p>Lists the server certificate configurations that are associated with the TLS
      * configuration.</p>
      */
-    inline const Aws::Vector<ServerCertificateConfiguration>& GetServerCertificateConfigurations() const{ return m_serverCertificateConfigurations; }
+    inline const Aws::Vector<ServerCertificateConfiguration>& GetServerCertificateConfigurations() const { return m_serverCertificateConfigurations; }
     inline bool ServerCertificateConfigurationsHasBeenSet() const { return m_serverCertificateConfigurationsHasBeenSet; }
-    inline void SetServerCertificateConfigurations(const Aws::Vector<ServerCertificateConfiguration>& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations = value; }
-    inline void SetServerCertificateConfigurations(Aws::Vector<ServerCertificateConfiguration>&& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations = std::move(value); }
-    inline TLSInspectionConfiguration& WithServerCertificateConfigurations(const Aws::Vector<ServerCertificateConfiguration>& value) { SetServerCertificateConfigurations(value); return *this;}
-    inline TLSInspectionConfiguration& WithServerCertificateConfigurations(Aws::Vector<ServerCertificateConfiguration>&& value) { SetServerCertificateConfigurations(std::move(value)); return *this;}
-    inline TLSInspectionConfiguration& AddServerCertificateConfigurations(const ServerCertificateConfiguration& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations.push_back(value); return *this; }
-    inline TLSInspectionConfiguration& AddServerCertificateConfigurations(ServerCertificateConfiguration&& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ServerCertificateConfigurationsT = Aws::Vector<ServerCertificateConfiguration>>
+    void SetServerCertificateConfigurations(ServerCertificateConfigurationsT&& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations = std::forward<ServerCertificateConfigurationsT>(value); }
+    template<typename ServerCertificateConfigurationsT = Aws::Vector<ServerCertificateConfiguration>>
+    TLSInspectionConfiguration& WithServerCertificateConfigurations(ServerCertificateConfigurationsT&& value) { SetServerCertificateConfigurations(std::forward<ServerCertificateConfigurationsT>(value)); return *this;}
+    template<typename ServerCertificateConfigurationsT = ServerCertificateConfiguration>
+    TLSInspectionConfiguration& AddServerCertificateConfigurations(ServerCertificateConfigurationsT&& value) { m_serverCertificateConfigurationsHasBeenSet = true; m_serverCertificateConfigurations.emplace_back(std::forward<ServerCertificateConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

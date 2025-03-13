@@ -35,7 +35,7 @@ namespace Model
   class CustomDomain
   {
   public:
-    AWS_APPRUNNER_API CustomDomain();
+    AWS_APPRUNNER_API CustomDomain() = default;
     AWS_APPRUNNER_API CustomDomain(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API CustomDomain& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <code>login.example.com</code> or <code>admin.login.example.com</code>), or a
      * wildcard (for example, <code>*.example.com</code>).</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline CustomDomain& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline CustomDomain& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline CustomDomain& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    CustomDomain& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is
      * associated with the App Runner service in addition to the base domain.</p>
      */
-    inline bool GetEnableWWWSubdomain() const{ return m_enableWWWSubdomain; }
+    inline bool GetEnableWWWSubdomain() const { return m_enableWWWSubdomain; }
     inline bool EnableWWWSubdomainHasBeenSet() const { return m_enableWWWSubdomainHasBeenSet; }
     inline void SetEnableWWWSubdomain(bool value) { m_enableWWWSubdomainHasBeenSet = true; m_enableWWWSubdomain = value; }
     inline CustomDomain& WithEnableWWWSubdomain(bool value) { SetEnableWWWSubdomain(value); return *this;}
@@ -73,39 +71,37 @@ namespace Model
     /**
      * <p>A list of certificate CNAME records that's used for this domain name.</p>
      */
-    inline const Aws::Vector<CertificateValidationRecord>& GetCertificateValidationRecords() const{ return m_certificateValidationRecords; }
+    inline const Aws::Vector<CertificateValidationRecord>& GetCertificateValidationRecords() const { return m_certificateValidationRecords; }
     inline bool CertificateValidationRecordsHasBeenSet() const { return m_certificateValidationRecordsHasBeenSet; }
-    inline void SetCertificateValidationRecords(const Aws::Vector<CertificateValidationRecord>& value) { m_certificateValidationRecordsHasBeenSet = true; m_certificateValidationRecords = value; }
-    inline void SetCertificateValidationRecords(Aws::Vector<CertificateValidationRecord>&& value) { m_certificateValidationRecordsHasBeenSet = true; m_certificateValidationRecords = std::move(value); }
-    inline CustomDomain& WithCertificateValidationRecords(const Aws::Vector<CertificateValidationRecord>& value) { SetCertificateValidationRecords(value); return *this;}
-    inline CustomDomain& WithCertificateValidationRecords(Aws::Vector<CertificateValidationRecord>&& value) { SetCertificateValidationRecords(std::move(value)); return *this;}
-    inline CustomDomain& AddCertificateValidationRecords(const CertificateValidationRecord& value) { m_certificateValidationRecordsHasBeenSet = true; m_certificateValidationRecords.push_back(value); return *this; }
-    inline CustomDomain& AddCertificateValidationRecords(CertificateValidationRecord&& value) { m_certificateValidationRecordsHasBeenSet = true; m_certificateValidationRecords.push_back(std::move(value)); return *this; }
+    template<typename CertificateValidationRecordsT = Aws::Vector<CertificateValidationRecord>>
+    void SetCertificateValidationRecords(CertificateValidationRecordsT&& value) { m_certificateValidationRecordsHasBeenSet = true; m_certificateValidationRecords = std::forward<CertificateValidationRecordsT>(value); }
+    template<typename CertificateValidationRecordsT = Aws::Vector<CertificateValidationRecord>>
+    CustomDomain& WithCertificateValidationRecords(CertificateValidationRecordsT&& value) { SetCertificateValidationRecords(std::forward<CertificateValidationRecordsT>(value)); return *this;}
+    template<typename CertificateValidationRecordsT = CertificateValidationRecord>
+    CustomDomain& AddCertificateValidationRecords(CertificateValidationRecordsT&& value) { m_certificateValidationRecordsHasBeenSet = true; m_certificateValidationRecords.emplace_back(std::forward<CertificateValidationRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The current state of the domain name association.</p>
      */
-    inline const CustomDomainAssociationStatus& GetStatus() const{ return m_status; }
+    inline CustomDomainAssociationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CustomDomainAssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CustomDomainAssociationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CustomDomain& WithStatus(const CustomDomainAssociationStatus& value) { SetStatus(value); return *this;}
-    inline CustomDomain& WithStatus(CustomDomainAssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CustomDomainAssociationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CustomDomain& WithStatus(CustomDomainAssociationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    bool m_enableWWWSubdomain;
+    bool m_enableWWWSubdomain{false};
     bool m_enableWWWSubdomainHasBeenSet = false;
 
     Aws::Vector<CertificateValidationRecord> m_certificateValidationRecords;
     bool m_certificateValidationRecordsHasBeenSet = false;
 
-    CustomDomainAssociationStatus m_status;
+    CustomDomainAssociationStatus m_status{CustomDomainAssociationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

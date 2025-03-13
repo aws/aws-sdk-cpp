@@ -22,7 +22,7 @@ namespace Model
   class AddApplicationReferenceDataSourceRequest : public KinesisAnalyticsV2Request
   {
   public:
-    AWS_KINESISANALYTICSV2_API AddApplicationReferenceDataSourceRequest();
+    AWS_KINESISANALYTICSV2_API AddApplicationReferenceDataSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of an existing application.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline AddApplicationReferenceDataSourceRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline AddApplicationReferenceDataSourceRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline AddApplicationReferenceDataSourceRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    AddApplicationReferenceDataSourceRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * application version. If the version specified is not the current version, the
      * <code>ConcurrentModificationException</code> is returned.</p>
      */
-    inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
+    inline long long GetCurrentApplicationVersionId() const { return m_currentApplicationVersionId; }
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
     inline AddApplicationReferenceDataSourceRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
@@ -69,19 +67,19 @@ namespace Model
      * table that is created. You provide an S3 bucket, object key name, and the
      * resulting in-application table that is created. </p>
      */
-    inline const ReferenceDataSource& GetReferenceDataSource() const{ return m_referenceDataSource; }
+    inline const ReferenceDataSource& GetReferenceDataSource() const { return m_referenceDataSource; }
     inline bool ReferenceDataSourceHasBeenSet() const { return m_referenceDataSourceHasBeenSet; }
-    inline void SetReferenceDataSource(const ReferenceDataSource& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = value; }
-    inline void SetReferenceDataSource(ReferenceDataSource&& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = std::move(value); }
-    inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(const ReferenceDataSource& value) { SetReferenceDataSource(value); return *this;}
-    inline AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(ReferenceDataSource&& value) { SetReferenceDataSource(std::move(value)); return *this;}
+    template<typename ReferenceDataSourceT = ReferenceDataSource>
+    void SetReferenceDataSource(ReferenceDataSourceT&& value) { m_referenceDataSourceHasBeenSet = true; m_referenceDataSource = std::forward<ReferenceDataSourceT>(value); }
+    template<typename ReferenceDataSourceT = ReferenceDataSource>
+    AddApplicationReferenceDataSourceRequest& WithReferenceDataSource(ReferenceDataSourceT&& value) { SetReferenceDataSource(std::forward<ReferenceDataSourceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet = false;
 
-    long long m_currentApplicationVersionId;
+    long long m_currentApplicationVersionId{0};
     bool m_currentApplicationVersionIdHasBeenSet = false;
 
     ReferenceDataSource m_referenceDataSource;

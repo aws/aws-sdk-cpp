@@ -34,7 +34,7 @@ namespace Model
   class StateEndpoint
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API StateEndpoint();
+    AWS_IOTMANAGEDINTEGRATIONS_API StateEndpoint() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API StateEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API StateEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>Numeric identifier of the endpoint</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline StateEndpoint& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline StateEndpoint& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline StateEndpoint& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    StateEndpoint& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>Describe the endpoint with an id, a name, and the relevant capabilities for
      * the reporting state.</p>
      */
-    inline const Aws::Vector<StateCapability>& GetCapabilities() const{ return m_capabilities; }
+    inline const Aws::Vector<StateCapability>& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<StateCapability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<StateCapability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline StateEndpoint& WithCapabilities(const Aws::Vector<StateCapability>& value) { SetCapabilities(value); return *this;}
-    inline StateEndpoint& WithCapabilities(Aws::Vector<StateCapability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline StateEndpoint& AddCapabilities(const StateCapability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline StateEndpoint& AddCapabilities(StateCapability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    template<typename CapabilitiesT = Aws::Vector<StateCapability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<StateCapability>>
+    StateEndpoint& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    template<typename CapabilitiesT = StateCapability>
+    StateEndpoint& AddCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.emplace_back(std::forward<CapabilitiesT>(value)); return *this; }
     ///@}
   private:
 

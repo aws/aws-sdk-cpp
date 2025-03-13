@@ -29,7 +29,7 @@ namespace Model
   class ListTablesResult
   {
   public:
-    AWS_S3TABLES_API ListTablesResult();
+    AWS_S3TABLES_API ListTablesResult() = default;
     AWS_S3TABLES_API ListTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API ListTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of tables.</p>
      */
-    inline const Aws::Vector<TableSummary>& GetTables() const{ return m_tables; }
-    inline void SetTables(const Aws::Vector<TableSummary>& value) { m_tables = value; }
-    inline void SetTables(Aws::Vector<TableSummary>&& value) { m_tables = std::move(value); }
-    inline ListTablesResult& WithTables(const Aws::Vector<TableSummary>& value) { SetTables(value); return *this;}
-    inline ListTablesResult& WithTables(Aws::Vector<TableSummary>&& value) { SetTables(std::move(value)); return *this;}
-    inline ListTablesResult& AddTables(const TableSummary& value) { m_tables.push_back(value); return *this; }
-    inline ListTablesResult& AddTables(TableSummary&& value) { m_tables.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TableSummary>& GetTables() const { return m_tables; }
+    template<typename TablesT = Aws::Vector<TableSummary>>
+    void SetTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables = std::forward<TablesT>(value); }
+    template<typename TablesT = Aws::Vector<TableSummary>>
+    ListTablesResult& WithTables(TablesT&& value) { SetTables(std::forward<TablesT>(value)); return *this;}
+    template<typename TablesT = TableSummary>
+    ListTablesResult& AddTables(TablesT&& value) { m_tablesHasBeenSet = true; m_tables.emplace_back(std::forward<TablesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>You can use this <code>ContinuationToken</code> for pagination of the list
      * results.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
-    inline ListTablesResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListTablesResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListTablesResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListTablesResult& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTablesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTablesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTablesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTablesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TableSummary> m_tables;
+    bool m_tablesHasBeenSet = false;
 
     Aws::String m_continuationToken;
+    bool m_continuationTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

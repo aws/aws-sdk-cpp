@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RegisteredUserQSearchBarEmbeddingConfiguration::RegisteredUserQSearchBarEmbeddingConfiguration() : 
-    m_initialTopicIdHasBeenSet(false)
-{
-}
-
 RegisteredUserQSearchBarEmbeddingConfiguration::RegisteredUserQSearchBarEmbeddingConfiguration(JsonView jsonValue)
-  : RegisteredUserQSearchBarEmbeddingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RegisteredUserQSearchBarEmbeddingConfiguration& RegisteredUserQSearchBarEmbeddin
   if(jsonValue.ValueExists("InitialTopicId"))
   {
     m_initialTopicId = jsonValue.GetString("InitialTopicId");
-
     m_initialTopicIdHasBeenSet = true;
   }
-
   return *this;
 }
 

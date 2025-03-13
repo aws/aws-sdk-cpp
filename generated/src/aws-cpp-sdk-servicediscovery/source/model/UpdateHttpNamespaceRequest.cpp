@@ -12,14 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateHttpNamespaceRequest::UpdateHttpNamespaceRequest() : 
-    m_idHasBeenSet(false),
-    m_updaterRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_updaterRequestIdHasBeenSet(true),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateHttpNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

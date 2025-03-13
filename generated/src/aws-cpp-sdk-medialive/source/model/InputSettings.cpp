@@ -18,30 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputSettings::InputSettings() : 
-    m_audioSelectorsHasBeenSet(false),
-    m_captionSelectorsHasBeenSet(false),
-    m_deblockFilter(InputDeblockFilter::NOT_SET),
-    m_deblockFilterHasBeenSet(false),
-    m_denoiseFilter(InputDenoiseFilter::NOT_SET),
-    m_denoiseFilterHasBeenSet(false),
-    m_filterStrength(0),
-    m_filterStrengthHasBeenSet(false),
-    m_inputFilter(InputFilter::NOT_SET),
-    m_inputFilterHasBeenSet(false),
-    m_networkInputSettingsHasBeenSet(false),
-    m_scte35Pid(0),
-    m_scte35PidHasBeenSet(false),
-    m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
-    m_smpte2038DataPreferenceHasBeenSet(false),
-    m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
-    m_sourceEndBehaviorHasBeenSet(false),
-    m_videoSelectorHasBeenSet(false)
-{
-}
-
 InputSettings::InputSettings(JsonView jsonValue)
-  : InputSettings()
 {
   *this = jsonValue;
 }
@@ -57,7 +34,6 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
     }
     m_audioSelectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("captionSelectors"))
   {
     Aws::Utils::Array<JsonView> captionSelectorsJsonList = jsonValue.GetArray("captionSelectors");
@@ -67,70 +43,51 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
     }
     m_captionSelectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deblockFilter"))
   {
     m_deblockFilter = InputDeblockFilterMapper::GetInputDeblockFilterForName(jsonValue.GetString("deblockFilter"));
-
     m_deblockFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("denoiseFilter"))
   {
     m_denoiseFilter = InputDenoiseFilterMapper::GetInputDenoiseFilterForName(jsonValue.GetString("denoiseFilter"));
-
     m_denoiseFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterStrength"))
   {
     m_filterStrength = jsonValue.GetInteger("filterStrength");
-
     m_filterStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputFilter"))
   {
     m_inputFilter = InputFilterMapper::GetInputFilterForName(jsonValue.GetString("inputFilter"));
-
     m_inputFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInputSettings"))
   {
     m_networkInputSettings = jsonValue.GetObject("networkInputSettings");
-
     m_networkInputSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Pid"))
   {
     m_scte35Pid = jsonValue.GetInteger("scte35Pid");
-
     m_scte35PidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("smpte2038DataPreference"))
   {
     m_smpte2038DataPreference = Smpte2038DataPreferenceMapper::GetSmpte2038DataPreferenceForName(jsonValue.GetString("smpte2038DataPreference"));
-
     m_smpte2038DataPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEndBehavior"))
   {
     m_sourceEndBehavior = InputSourceEndBehaviorMapper::GetInputSourceEndBehaviorForName(jsonValue.GetString("sourceEndBehavior"));
-
     m_sourceEndBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoSelector"))
   {
     m_videoSelector = jsonValue.GetObject("videoSelector");
-
     m_videoSelectorHasBeenSet = true;
   }
-
   return *this;
 }
 

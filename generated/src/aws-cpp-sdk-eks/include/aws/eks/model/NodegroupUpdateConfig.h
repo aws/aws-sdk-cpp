@@ -34,7 +34,7 @@ namespace Model
   class NodegroupUpdateConfig
   {
   public:
-    AWS_EKS_API NodegroupUpdateConfig();
+    AWS_EKS_API NodegroupUpdateConfig() = default;
     AWS_EKS_API NodegroupUpdateConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API NodegroupUpdateConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <code>maxUnavailablePercentage</code> is required to have a value.The maximum
      * number is 100.</p>
      */
-    inline int GetMaxUnavailable() const{ return m_maxUnavailable; }
+    inline int GetMaxUnavailable() const { return m_maxUnavailable; }
     inline bool MaxUnavailableHasBeenSet() const { return m_maxUnavailableHasBeenSet; }
     inline void SetMaxUnavailable(int value) { m_maxUnavailableHasBeenSet = true; m_maxUnavailable = value; }
     inline NodegroupUpdateConfig& WithMaxUnavailable(int value) { SetMaxUnavailable(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
      * percentage of nodes are updated in parallel, up to 100 nodes at once. This value
      * or <code>maxUnavailable</code> is required to have a value.</p>
      */
-    inline int GetMaxUnavailablePercentage() const{ return m_maxUnavailablePercentage; }
+    inline int GetMaxUnavailablePercentage() const { return m_maxUnavailablePercentage; }
     inline bool MaxUnavailablePercentageHasBeenSet() const { return m_maxUnavailablePercentageHasBeenSet; }
     inline void SetMaxUnavailablePercentage(int value) { m_maxUnavailablePercentageHasBeenSet = true; m_maxUnavailablePercentage = value; }
     inline NodegroupUpdateConfig& WithMaxUnavailablePercentage(int value) { SetMaxUnavailablePercentage(value); return *this;}
@@ -82,22 +82,20 @@ namespace Model
      * constrained to resources or costs (for example, with hardware accelerators such
      * as GPUs).</p>
      */
-    inline const NodegroupUpdateStrategies& GetUpdateStrategy() const{ return m_updateStrategy; }
+    inline NodegroupUpdateStrategies GetUpdateStrategy() const { return m_updateStrategy; }
     inline bool UpdateStrategyHasBeenSet() const { return m_updateStrategyHasBeenSet; }
-    inline void SetUpdateStrategy(const NodegroupUpdateStrategies& value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = value; }
-    inline void SetUpdateStrategy(NodegroupUpdateStrategies&& value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = std::move(value); }
-    inline NodegroupUpdateConfig& WithUpdateStrategy(const NodegroupUpdateStrategies& value) { SetUpdateStrategy(value); return *this;}
-    inline NodegroupUpdateConfig& WithUpdateStrategy(NodegroupUpdateStrategies&& value) { SetUpdateStrategy(std::move(value)); return *this;}
+    inline void SetUpdateStrategy(NodegroupUpdateStrategies value) { m_updateStrategyHasBeenSet = true; m_updateStrategy = value; }
+    inline NodegroupUpdateConfig& WithUpdateStrategy(NodegroupUpdateStrategies value) { SetUpdateStrategy(value); return *this;}
     ///@}
   private:
 
-    int m_maxUnavailable;
+    int m_maxUnavailable{0};
     bool m_maxUnavailableHasBeenSet = false;
 
-    int m_maxUnavailablePercentage;
+    int m_maxUnavailablePercentage{0};
     bool m_maxUnavailablePercentageHasBeenSet = false;
 
-    NodegroupUpdateStrategies m_updateStrategy;
+    NodegroupUpdateStrategies m_updateStrategy{NodegroupUpdateStrategies::NOT_SET};
     bool m_updateStrategyHasBeenSet = false;
   };
 

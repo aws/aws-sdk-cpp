@@ -12,15 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRecommendationsRequest::ListRecommendationsRequest() : 
-    m_insightIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

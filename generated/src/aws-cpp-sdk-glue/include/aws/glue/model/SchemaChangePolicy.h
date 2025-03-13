@@ -33,7 +33,7 @@ namespace Model
   class SchemaChangePolicy
   {
   public:
-    AWS_GLUE_API SchemaChangePolicy();
+    AWS_GLUE_API SchemaChangePolicy() = default;
     AWS_GLUE_API SchemaChangePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SchemaChangePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The update behavior when the crawler finds a changed schema.</p>
      */
-    inline const UpdateBehavior& GetUpdateBehavior() const{ return m_updateBehavior; }
+    inline UpdateBehavior GetUpdateBehavior() const { return m_updateBehavior; }
     inline bool UpdateBehaviorHasBeenSet() const { return m_updateBehaviorHasBeenSet; }
-    inline void SetUpdateBehavior(const UpdateBehavior& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
-    inline void SetUpdateBehavior(UpdateBehavior&& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = std::move(value); }
-    inline SchemaChangePolicy& WithUpdateBehavior(const UpdateBehavior& value) { SetUpdateBehavior(value); return *this;}
-    inline SchemaChangePolicy& WithUpdateBehavior(UpdateBehavior&& value) { SetUpdateBehavior(std::move(value)); return *this;}
+    inline void SetUpdateBehavior(UpdateBehavior value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
+    inline SchemaChangePolicy& WithUpdateBehavior(UpdateBehavior value) { SetUpdateBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The deletion behavior when the crawler finds a deleted object.</p>
      */
-    inline const DeleteBehavior& GetDeleteBehavior() const{ return m_deleteBehavior; }
+    inline DeleteBehavior GetDeleteBehavior() const { return m_deleteBehavior; }
     inline bool DeleteBehaviorHasBeenSet() const { return m_deleteBehaviorHasBeenSet; }
-    inline void SetDeleteBehavior(const DeleteBehavior& value) { m_deleteBehaviorHasBeenSet = true; m_deleteBehavior = value; }
-    inline void SetDeleteBehavior(DeleteBehavior&& value) { m_deleteBehaviorHasBeenSet = true; m_deleteBehavior = std::move(value); }
-    inline SchemaChangePolicy& WithDeleteBehavior(const DeleteBehavior& value) { SetDeleteBehavior(value); return *this;}
-    inline SchemaChangePolicy& WithDeleteBehavior(DeleteBehavior&& value) { SetDeleteBehavior(std::move(value)); return *this;}
+    inline void SetDeleteBehavior(DeleteBehavior value) { m_deleteBehaviorHasBeenSet = true; m_deleteBehavior = value; }
+    inline SchemaChangePolicy& WithDeleteBehavior(DeleteBehavior value) { SetDeleteBehavior(value); return *this;}
     ///@}
   private:
 
-    UpdateBehavior m_updateBehavior;
+    UpdateBehavior m_updateBehavior{UpdateBehavior::NOT_SET};
     bool m_updateBehaviorHasBeenSet = false;
 
-    DeleteBehavior m_deleteBehavior;
+    DeleteBehavior m_deleteBehavior{DeleteBehavior::NOT_SET};
     bool m_deleteBehaviorHasBeenSet = false;
   };
 

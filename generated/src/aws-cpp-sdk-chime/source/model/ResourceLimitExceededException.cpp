@@ -18,15 +18,7 @@ namespace Chime
 namespace Model
 {
 
-ResourceLimitExceededException::ResourceLimitExceededException() : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue)
-  : ResourceLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceLimitExceededException& ResourceLimitExceededException::operator =(JsonV
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

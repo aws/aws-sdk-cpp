@@ -18,15 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_networkInterfacesHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(JsonView jsonValue)
-  : VpcEndpoint()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ VpcEndpoint& VpcEndpoint::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("vpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

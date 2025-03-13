@@ -36,7 +36,7 @@ namespace Model
   class RoutingProfileSearchCriteria
   {
   public:
-    AWS_CONNECT_API RoutingProfileSearchCriteria();
+    AWS_CONNECT_API RoutingProfileSearchCriteria() = default;
     AWS_CONNECT_API RoutingProfileSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RoutingProfileSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline const Aws::Vector<RoutingProfileSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<RoutingProfileSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline RoutingProfileSearchCriteria& WithOrConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline RoutingProfileSearchCriteria& WithOrConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline RoutingProfileSearchCriteria& AddOrConditions(const RoutingProfileSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline RoutingProfileSearchCriteria& AddOrConditions(RoutingProfileSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<RoutingProfileSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<RoutingProfileSearchCriteria>>
+    RoutingProfileSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = RoutingProfileSearchCriteria>
+    RoutingProfileSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline const Aws::Vector<RoutingProfileSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<RoutingProfileSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline RoutingProfileSearchCriteria& WithAndConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline RoutingProfileSearchCriteria& WithAndConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline RoutingProfileSearchCriteria& AddAndConditions(const RoutingProfileSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline RoutingProfileSearchCriteria& AddAndConditions(RoutingProfileSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<RoutingProfileSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<RoutingProfileSearchCriteria>>
+    RoutingProfileSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = RoutingProfileSearchCriteria>
+    RoutingProfileSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * <code>associatedQueueIds</code>, <code>name</code>, <code>description</code>,
      * and <code>resourceID</code>.</p> 
      */
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline RoutingProfileSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline RoutingProfileSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    RoutingProfileSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-LexTranscriptFilter::LexTranscriptFilter() : 
-    m_dateRangeFilterHasBeenSet(false)
-{
-}
-
 LexTranscriptFilter::LexTranscriptFilter(JsonView jsonValue)
-  : LexTranscriptFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LexTranscriptFilter& LexTranscriptFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dateRangeFilter"))
   {
     m_dateRangeFilter = jsonValue.GetObject("dateRangeFilter");
-
     m_dateRangeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

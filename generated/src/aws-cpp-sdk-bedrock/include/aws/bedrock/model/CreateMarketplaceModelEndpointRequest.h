@@ -25,7 +25,7 @@ namespace Model
   class CreateMarketplaceModelEndpointRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API CreateMarketplaceModelEndpointRequest();
+    AWS_BEDROCK_API CreateMarketplaceModelEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ARN of the model from Amazon Bedrock Marketplace that you want to deploy
      * to the endpoint.</p>
      */
-    inline const Aws::String& GetModelSourceIdentifier() const{ return m_modelSourceIdentifier; }
+    inline const Aws::String& GetModelSourceIdentifier() const { return m_modelSourceIdentifier; }
     inline bool ModelSourceIdentifierHasBeenSet() const { return m_modelSourceIdentifierHasBeenSet; }
-    inline void SetModelSourceIdentifier(const Aws::String& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = value; }
-    inline void SetModelSourceIdentifier(Aws::String&& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = std::move(value); }
-    inline void SetModelSourceIdentifier(const char* value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier.assign(value); }
-    inline CreateMarketplaceModelEndpointRequest& WithModelSourceIdentifier(const Aws::String& value) { SetModelSourceIdentifier(value); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithModelSourceIdentifier(Aws::String&& value) { SetModelSourceIdentifier(std::move(value)); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithModelSourceIdentifier(const char* value) { SetModelSourceIdentifier(value); return *this;}
+    template<typename ModelSourceIdentifierT = Aws::String>
+    void SetModelSourceIdentifier(ModelSourceIdentifierT&& value) { m_modelSourceIdentifierHasBeenSet = true; m_modelSourceIdentifier = std::forward<ModelSourceIdentifierT>(value); }
+    template<typename ModelSourceIdentifierT = Aws::String>
+    CreateMarketplaceModelEndpointRequest& WithModelSourceIdentifier(ModelSourceIdentifierT&& value) { SetModelSourceIdentifier(std::forward<ModelSourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,12 @@ namespace Model
      * <p>The configuration for the endpoint, including the number and type of
      * instances to use.</p>
      */
-    inline const EndpointConfig& GetEndpointConfig() const{ return m_endpointConfig; }
+    inline const EndpointConfig& GetEndpointConfig() const { return m_endpointConfig; }
     inline bool EndpointConfigHasBeenSet() const { return m_endpointConfigHasBeenSet; }
-    inline void SetEndpointConfig(const EndpointConfig& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = value; }
-    inline void SetEndpointConfig(EndpointConfig&& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = std::move(value); }
-    inline CreateMarketplaceModelEndpointRequest& WithEndpointConfig(const EndpointConfig& value) { SetEndpointConfig(value); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithEndpointConfig(EndpointConfig&& value) { SetEndpointConfig(std::move(value)); return *this;}
+    template<typename EndpointConfigT = EndpointConfig>
+    void SetEndpointConfig(EndpointConfigT&& value) { m_endpointConfigHasBeenSet = true; m_endpointConfig = std::forward<EndpointConfigT>(value); }
+    template<typename EndpointConfigT = EndpointConfig>
+    CreateMarketplaceModelEndpointRequest& WithEndpointConfig(EndpointConfigT&& value) { SetEndpointConfig(std::forward<EndpointConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +67,7 @@ namespace Model
      * <p>Indicates whether you accept the end-user license agreement (EULA) for the
      * model. Set to <code>true</code> to accept the EULA.</p>
      */
-    inline bool GetAcceptEula() const{ return m_acceptEula; }
+    inline bool GetAcceptEula() const { return m_acceptEula; }
     inline bool AcceptEulaHasBeenSet() const { return m_acceptEulaHasBeenSet; }
     inline void SetAcceptEula(bool value) { m_acceptEulaHasBeenSet = true; m_acceptEula = value; }
     inline CreateMarketplaceModelEndpointRequest& WithAcceptEula(bool value) { SetAcceptEula(value); return *this;}
@@ -80,14 +78,12 @@ namespace Model
      * <p>The name of the endpoint. This name must be unique within your Amazon Web
      * Services account and region.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline CreateMarketplaceModelEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    CreateMarketplaceModelEndpointRequest& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * you're not using the Amazon Web Services SDK or the CLI, you must provide this
      * token or the action will fail.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline CreateMarketplaceModelEndpointRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    CreateMarketplaceModelEndpointRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,14 @@ namespace Model
      * endpoint. You can use these tags to organize and identify your Amazon Web
      * Services resources.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMarketplaceModelEndpointRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMarketplaceModelEndpointRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateMarketplaceModelEndpointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateMarketplaceModelEndpointRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateMarketplaceModelEndpointRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -131,7 +125,7 @@ namespace Model
     EndpointConfig m_endpointConfig;
     bool m_endpointConfigHasBeenSet = false;
 
-    bool m_acceptEula;
+    bool m_acceptEula{false};
     bool m_acceptEulaHasBeenSet = false;
 
     Aws::String m_endpointName;

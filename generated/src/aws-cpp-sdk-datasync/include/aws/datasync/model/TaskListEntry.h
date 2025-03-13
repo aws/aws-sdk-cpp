@@ -37,7 +37,7 @@ namespace Model
   class TaskListEntry
   {
   public:
-    AWS_DATASYNC_API TaskListEntry();
+    AWS_DATASYNC_API TaskListEntry() = default;
     AWS_DATASYNC_API TaskListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,40 +47,34 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
-    inline TaskListEntry& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline TaskListEntry& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline TaskListEntry& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    TaskListEntry& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the task.</p>
      */
-    inline const TaskStatus& GetStatus() const{ return m_status; }
+    inline TaskStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TaskListEntry& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-    inline TaskListEntry& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TaskStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TaskListEntry& WithStatus(TaskStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TaskListEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TaskListEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TaskListEntry& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TaskListEntry& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,25 +83,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
      * a task mode for your data transfer</a>.</p>
      */
-    inline const TaskMode& GetTaskMode() const{ return m_taskMode; }
+    inline TaskMode GetTaskMode() const { return m_taskMode; }
     inline bool TaskModeHasBeenSet() const { return m_taskModeHasBeenSet; }
-    inline void SetTaskMode(const TaskMode& value) { m_taskModeHasBeenSet = true; m_taskMode = value; }
-    inline void SetTaskMode(TaskMode&& value) { m_taskModeHasBeenSet = true; m_taskMode = std::move(value); }
-    inline TaskListEntry& WithTaskMode(const TaskMode& value) { SetTaskMode(value); return *this;}
-    inline TaskListEntry& WithTaskMode(TaskMode&& value) { SetTaskMode(std::move(value)); return *this;}
+    inline void SetTaskMode(TaskMode value) { m_taskModeHasBeenSet = true; m_taskMode = value; }
+    inline TaskListEntry& WithTaskMode(TaskMode value) { SetTaskMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_taskArn;
     bool m_taskArnHasBeenSet = false;
 
-    TaskStatus m_status;
+    TaskStatus m_status{TaskStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TaskMode m_taskMode;
+    TaskMode m_taskMode{TaskMode::NOT_SET};
     bool m_taskModeHasBeenSet = false;
   };
 

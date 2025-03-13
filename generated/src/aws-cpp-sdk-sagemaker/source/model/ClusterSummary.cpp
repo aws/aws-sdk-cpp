@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterSummary::ClusterSummary() : 
-    m_clusterArnHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false),
-    m_trainingPlanArnsHasBeenSet(false)
-{
-}
-
 ClusterSummary::ClusterSummary(JsonView jsonValue)
-  : ClusterSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterStatus"))
   {
     m_clusterStatus = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("ClusterStatus"));
-
     m_clusterStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanArns"))
   {
     Aws::Utils::Array<JsonView> trainingPlanArnsJsonList = jsonValue.GetArray("TrainingPlanArns");
@@ -73,7 +54,6 @@ ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
     }
     m_trainingPlanArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EventCondition::EventCondition() : 
-    m_dimensionsHasBeenSet(false),
-    m_messageActivityHasBeenSet(false)
-{
-}
-
 EventCondition::EventCondition(JsonView jsonValue)
-  : EventCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventCondition& EventCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dimensions"))
   {
     m_dimensions = jsonValue.GetObject("Dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageActivity"))
   {
     m_messageActivity = jsonValue.GetString("MessageActivity");
-
     m_messageActivityHasBeenSet = true;
   }
-
   return *this;
 }
 

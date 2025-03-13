@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupRule::SecurityGroupRule() : 
-    m_securityGroupRuleIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupOwnerIdHasBeenSet(false),
-    m_isEgress(false),
-    m_isEgressHasBeenSet(false),
-    m_ipProtocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_cidrIpv4HasBeenSet(false),
-    m_cidrIpv6HasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_referencedGroupInfoHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_securityGroupRuleArnHasBeenSet(false)
-{
-}
-
 SecurityGroupRule::SecurityGroupRule(const XmlNode& xmlNode)
-  : SecurityGroupRule()
 {
   *this = xmlNode;
 }
@@ -58,90 +36,104 @@ SecurityGroupRule& SecurityGroupRule::operator =(const XmlNode& xmlNode)
     {
       m_securityGroupRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleIdNode.GetText());
       m_securityGroupRuleIdHasBeenSet = true;
+       m_securityGroupRuleIdHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode groupOwnerIdNode = resultNode.FirstChild("groupOwnerId");
     if(!groupOwnerIdNode.IsNull())
     {
       m_groupOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(groupOwnerIdNode.GetText());
       m_groupOwnerIdHasBeenSet = true;
+       m_groupOwnerIdHasBeenSet = true;
     }
     XmlNode isEgressNode = resultNode.FirstChild("isEgress");
     if(!isEgressNode.IsNull())
     {
       m_isEgress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isEgressNode.GetText()).c_str()).c_str());
       m_isEgressHasBeenSet = true;
+       m_isEgressHasBeenSet = true;
     }
     XmlNode ipProtocolNode = resultNode.FirstChild("ipProtocol");
     if(!ipProtocolNode.IsNull())
     {
       m_ipProtocol = Aws::Utils::Xml::DecodeEscapedXmlText(ipProtocolNode.GetText());
       m_ipProtocolHasBeenSet = true;
+       m_ipProtocolHasBeenSet = true;
     }
     XmlNode fromPortNode = resultNode.FirstChild("fromPort");
     if(!fromPortNode.IsNull())
     {
       m_fromPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromPortNode.GetText()).c_str()).c_str());
       m_fromPortHasBeenSet = true;
+       m_fromPortHasBeenSet = true;
     }
     XmlNode toPortNode = resultNode.FirstChild("toPort");
     if(!toPortNode.IsNull())
     {
       m_toPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toPortNode.GetText()).c_str()).c_str());
       m_toPortHasBeenSet = true;
+       m_toPortHasBeenSet = true;
     }
     XmlNode cidrIpv4Node = resultNode.FirstChild("cidrIpv4");
     if(!cidrIpv4Node.IsNull())
     {
       m_cidrIpv4 = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpv4Node.GetText());
       m_cidrIpv4HasBeenSet = true;
+       m_cidrIpv4HasBeenSet = true;
     }
     XmlNode cidrIpv6Node = resultNode.FirstChild("cidrIpv6");
     if(!cidrIpv6Node.IsNull())
     {
       m_cidrIpv6 = Aws::Utils::Xml::DecodeEscapedXmlText(cidrIpv6Node.GetText());
       m_cidrIpv6HasBeenSet = true;
+       m_cidrIpv6HasBeenSet = true;
     }
     XmlNode prefixListIdNode = resultNode.FirstChild("prefixListId");
     if(!prefixListIdNode.IsNull())
     {
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
+       m_prefixListIdHasBeenSet = true;
     }
     XmlNode referencedGroupInfoNode = resultNode.FirstChild("referencedGroupInfo");
     if(!referencedGroupInfoNode.IsNull())
     {
       m_referencedGroupInfo = referencedGroupInfoNode;
       m_referencedGroupInfoHasBeenSet = true;
+       m_referencedGroupInfoHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode securityGroupRuleArnNode = resultNode.FirstChild("securityGroupRuleArn");
     if(!securityGroupRuleArnNode.IsNull())
     {
       m_securityGroupRuleArn = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleArnNode.GetText());
       m_securityGroupRuleArnHasBeenSet = true;
+       m_securityGroupRuleArnHasBeenSet = true;
     }
   }
 

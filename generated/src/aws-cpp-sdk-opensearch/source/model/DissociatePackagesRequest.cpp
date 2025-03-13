@@ -12,12 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DissociatePackagesRequest::DissociatePackagesRequest() : 
-    m_packageListHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DissociatePackagesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ClientStat::ClientStat() : 
-    m_userAgentHasBeenSet(false),
-    m_numberOfRequestsLast30Days(0),
-    m_numberOfRequestsLast30DaysHasBeenSet(false),
-    m_lastRequestTimeHasBeenSet(false)
-{
-}
-
 ClientStat::ClientStat(JsonView jsonValue)
-  : ClientStat()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ClientStat& ClientStat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userAgent"))
   {
     m_userAgent = jsonValue.GetString("userAgent");
-
     m_userAgentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRequestsLast30Days"))
   {
     m_numberOfRequestsLast30Days = jsonValue.GetInteger("numberOfRequestsLast30Days");
-
     m_numberOfRequestsLast30DaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRequestTime"))
   {
     m_lastRequestTime = jsonValue.GetDouble("lastRequestTime");
-
     m_lastRequestTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

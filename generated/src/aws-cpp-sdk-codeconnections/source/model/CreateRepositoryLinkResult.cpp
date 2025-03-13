@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRepositoryLinkResult::CreateRepositoryLinkResult()
-{
-}
-
 CreateRepositoryLinkResult::CreateRepositoryLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateRepositoryLinkResult& CreateRepositoryLinkResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("RepositoryLinkInfo"))
   {
     m_repositoryLinkInfo = jsonValue.GetObject("RepositoryLinkInfo");
-
+    m_repositoryLinkInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

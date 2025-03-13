@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReverseReplicationRequest::ReverseReplicationRequest() : 
-    m_recoveryInstanceIDHasBeenSet(false)
-{
-}
-
 Aws::String ReverseReplicationRequest::SerializePayload() const
 {
   JsonValue payload;

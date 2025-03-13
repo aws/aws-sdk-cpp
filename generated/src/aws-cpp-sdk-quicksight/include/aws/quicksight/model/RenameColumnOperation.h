@@ -31,7 +31,7 @@ namespace Model
   class RenameColumnOperation
   {
   public:
-    AWS_QUICKSIGHT_API RenameColumnOperation();
+    AWS_QUICKSIGHT_API RenameColumnOperation() = default;
     AWS_QUICKSIGHT_API RenameColumnOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RenameColumnOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the column to be renamed.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline RenameColumnOperation& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline RenameColumnOperation& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline RenameColumnOperation& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    RenameColumnOperation& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for the column.</p>
      */
-    inline const Aws::String& GetNewColumnName() const{ return m_newColumnName; }
+    inline const Aws::String& GetNewColumnName() const { return m_newColumnName; }
     inline bool NewColumnNameHasBeenSet() const { return m_newColumnNameHasBeenSet; }
-    inline void SetNewColumnName(const Aws::String& value) { m_newColumnNameHasBeenSet = true; m_newColumnName = value; }
-    inline void SetNewColumnName(Aws::String&& value) { m_newColumnNameHasBeenSet = true; m_newColumnName = std::move(value); }
-    inline void SetNewColumnName(const char* value) { m_newColumnNameHasBeenSet = true; m_newColumnName.assign(value); }
-    inline RenameColumnOperation& WithNewColumnName(const Aws::String& value) { SetNewColumnName(value); return *this;}
-    inline RenameColumnOperation& WithNewColumnName(Aws::String&& value) { SetNewColumnName(std::move(value)); return *this;}
-    inline RenameColumnOperation& WithNewColumnName(const char* value) { SetNewColumnName(value); return *this;}
+    template<typename NewColumnNameT = Aws::String>
+    void SetNewColumnName(NewColumnNameT&& value) { m_newColumnNameHasBeenSet = true; m_newColumnName = std::forward<NewColumnNameT>(value); }
+    template<typename NewColumnNameT = Aws::String>
+    RenameColumnOperation& WithNewColumnName(NewColumnNameT&& value) { SetNewColumnName(std::forward<NewColumnNameT>(value)); return *this;}
     ///@}
   private:
 

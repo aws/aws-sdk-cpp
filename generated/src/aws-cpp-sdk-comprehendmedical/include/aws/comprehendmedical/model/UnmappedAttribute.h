@@ -33,7 +33,7 @@ namespace Model
   class UnmappedAttribute
   {
   public:
-    AWS_COMPREHENDMEDICAL_API UnmappedAttribute();
+    AWS_COMPREHENDMEDICAL_API UnmappedAttribute() = default;
     AWS_COMPREHENDMEDICAL_API UnmappedAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API UnmappedAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or
      * "PROTECTED_HEALTH_INFORMATION". </p>
      */
-    inline const EntityType& GetType() const{ return m_type; }
+    inline EntityType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EntityType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UnmappedAttribute& WithType(const EntityType& value) { SetType(value); return *this;}
-    inline UnmappedAttribute& WithType(EntityType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EntityType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UnmappedAttribute& WithType(EntityType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,16 +56,16 @@ namespace Model
      * <p> The specific attribute that has been extracted but not mapped to an entity.
      * </p>
      */
-    inline const Attribute& GetAttribute() const{ return m_attribute; }
+    inline const Attribute& GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const Attribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(Attribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline UnmappedAttribute& WithAttribute(const Attribute& value) { SetAttribute(value); return *this;}
-    inline UnmappedAttribute& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
+    template<typename AttributeT = Attribute>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Attribute>
+    UnmappedAttribute& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
   private:
 
-    EntityType m_type;
+    EntityType m_type{EntityType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Attribute m_attribute;

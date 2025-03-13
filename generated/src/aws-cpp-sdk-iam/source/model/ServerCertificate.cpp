@@ -20,16 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ServerCertificate::ServerCertificate() : 
-    m_serverCertificateMetadataHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ServerCertificate::ServerCertificate(const XmlNode& xmlNode)
-  : ServerCertificate()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ ServerCertificate& ServerCertificate::operator =(const XmlNode& xmlNode)
     {
       m_serverCertificateMetadata = serverCertificateMetadataNode;
       m_serverCertificateMetadataHasBeenSet = true;
+       m_serverCertificateMetadataHasBeenSet = true;
     }
     XmlNode certificateBodyNode = resultNode.FirstChild("CertificateBody");
     if(!certificateBodyNode.IsNull())
     {
       m_certificateBody = Aws::Utils::Xml::DecodeEscapedXmlText(certificateBodyNode.GetText());
       m_certificateBodyHasBeenSet = true;
+       m_certificateBodyHasBeenSet = true;
     }
     XmlNode certificateChainNode = resultNode.FirstChild("CertificateChain");
     if(!certificateChainNode.IsNull())
     {
       m_certificateChain = Aws::Utils::Xml::DecodeEscapedXmlText(certificateChainNode.GetText());
       m_certificateChainHasBeenSet = true;
+       m_certificateChainHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

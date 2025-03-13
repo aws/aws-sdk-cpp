@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGcmChannelRequest::UpdateGcmChannelRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_gCMChannelRequestHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGcmChannelRequest::SerializePayload() const
 {
   JsonValue payload;

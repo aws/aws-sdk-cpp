@@ -18,13 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-SlotDefaultValue::SlotDefaultValue() : 
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 SlotDefaultValue::SlotDefaultValue(JsonView jsonValue)
-  : SlotDefaultValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SlotDefaultValue& SlotDefaultValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

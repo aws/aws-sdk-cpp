@@ -21,7 +21,7 @@ namespace Model
   class PutReplicationConfigurationRequest : public ECRRequest
   {
   public:
-    AWS_ECR_API PutReplicationConfigurationRequest();
+    AWS_ECR_API PutReplicationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
     /**
      * <p>An object representing the replication configuration for a registry.</p>
      */
-    inline const ReplicationConfiguration& GetReplicationConfiguration() const{ return m_replicationConfiguration; }
+    inline const ReplicationConfiguration& GetReplicationConfiguration() const { return m_replicationConfiguration; }
     inline bool ReplicationConfigurationHasBeenSet() const { return m_replicationConfigurationHasBeenSet; }
-    inline void SetReplicationConfiguration(const ReplicationConfiguration& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = value; }
-    inline void SetReplicationConfiguration(ReplicationConfiguration&& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = std::move(value); }
-    inline PutReplicationConfigurationRequest& WithReplicationConfiguration(const ReplicationConfiguration& value) { SetReplicationConfiguration(value); return *this;}
-    inline PutReplicationConfigurationRequest& WithReplicationConfiguration(ReplicationConfiguration&& value) { SetReplicationConfiguration(std::move(value)); return *this;}
+    template<typename ReplicationConfigurationT = ReplicationConfiguration>
+    void SetReplicationConfiguration(ReplicationConfigurationT&& value) { m_replicationConfigurationHasBeenSet = true; m_replicationConfiguration = std::forward<ReplicationConfigurationT>(value); }
+    template<typename ReplicationConfigurationT = ReplicationConfiguration>
+    PutReplicationConfigurationRequest& WithReplicationConfiguration(ReplicationConfigurationT&& value) { SetReplicationConfiguration(std::forward<ReplicationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

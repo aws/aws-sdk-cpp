@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRelatedItemResult::CreateRelatedItemResult()
-{
-}
-
 CreateRelatedItemResult::CreateRelatedItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateRelatedItemResult& CreateRelatedItemResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("relatedItemArn"))
   {
     m_relatedItemArn = jsonValue.GetString("relatedItemArn");
-
+    m_relatedItemArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedItemId"))
   {
     m_relatedItemId = jsonValue.GetString("relatedItemId");
-
+    m_relatedItemIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

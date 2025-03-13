@@ -12,12 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAdapterVersionRequest::DeleteAdapterVersionRequest() : 
-    m_adapterIdHasBeenSet(false),
-    m_adapterVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAdapterVersionRequest::SerializePayload() const
 {
   JsonValue payload;

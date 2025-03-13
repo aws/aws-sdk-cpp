@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-ResourceNotFound::ResourceNotFound() : 
-    m_resourceARNHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourceNotFound::ResourceNotFound(JsonView jsonValue)
-  : ResourceNotFound()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceNotFound& ResourceNotFound::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PromptTemplateConfiguration::PromptTemplateConfiguration() : 
-    m_chatHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 PromptTemplateConfiguration::PromptTemplateConfiguration(JsonView jsonValue)
-  : PromptTemplateConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PromptTemplateConfiguration& PromptTemplateConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("chat"))
   {
     m_chat = jsonValue.GetObject("chat");
-
     m_chatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetObject("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

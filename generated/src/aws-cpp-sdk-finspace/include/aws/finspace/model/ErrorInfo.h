@@ -33,7 +33,7 @@ namespace Model
   class ErrorInfo
   {
   public:
-    AWS_FINSPACE_API ErrorInfo();
+    AWS_FINSPACE_API ErrorInfo() = default;
     AWS_FINSPACE_API ErrorInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API ErrorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>Specifies the error message that appears if a flow fails. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ErrorInfo& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ErrorInfo& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ErrorInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ErrorInfo& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the type of error.</p>
      */
-    inline const ErrorDetails& GetErrorType() const{ return m_errorType; }
+    inline ErrorDetails GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const ErrorDetails& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(ErrorDetails&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline ErrorInfo& WithErrorType(const ErrorDetails& value) { SetErrorType(value); return *this;}
-    inline ErrorInfo& WithErrorType(ErrorDetails&& value) { SetErrorType(std::move(value)); return *this;}
+    inline void SetErrorType(ErrorDetails value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline ErrorInfo& WithErrorType(ErrorDetails value) { SetErrorType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    ErrorDetails m_errorType;
+    ErrorDetails m_errorType{ErrorDetails::NOT_SET};
     bool m_errorTypeHasBeenSet = false;
   };
 

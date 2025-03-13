@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-Milestone::Milestone() : 
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false),
-    m_milestoneNameHasBeenSet(false),
-    m_recordedAtHasBeenSet(false),
-    m_workloadHasBeenSet(false)
-{
-}
-
 Milestone::Milestone(JsonView jsonValue)
-  : Milestone()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Milestone& Milestone::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MilestoneNumber"))
   {
     m_milestoneNumber = jsonValue.GetInteger("MilestoneNumber");
-
     m_milestoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MilestoneName"))
   {
     m_milestoneName = jsonValue.GetString("MilestoneName");
-
     m_milestoneNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordedAt"))
   {
     m_recordedAt = jsonValue.GetDouble("RecordedAt");
-
     m_recordedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Workload"))
   {
     m_workload = jsonValue.GetObject("Workload");
-
     m_workloadHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIVisualLayoutOptions::KPIVisualLayoutOptions() : 
-    m_standardLayoutHasBeenSet(false)
-{
-}
-
 KPIVisualLayoutOptions::KPIVisualLayoutOptions(JsonView jsonValue)
-  : KPIVisualLayoutOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KPIVisualLayoutOptions& KPIVisualLayoutOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StandardLayout"))
   {
     m_standardLayout = jsonValue.GetObject("StandardLayout");
-
     m_standardLayoutHasBeenSet = true;
   }
-
   return *this;
 }
 

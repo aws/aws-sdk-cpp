@@ -29,7 +29,7 @@ namespace Model
   class DescribeAlarmsForMetricResult
   {
   public:
-    AWS_CLOUDWATCH_API DescribeAlarmsForMetricResult();
+    AWS_CLOUDWATCH_API DescribeAlarmsForMetricResult() = default;
     AWS_CLOUDWATCH_API DescribeAlarmsForMetricResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API DescribeAlarmsForMetricResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>The information for each alarm with the specified metric.</p>
      */
-    inline const Aws::Vector<MetricAlarm>& GetMetricAlarms() const{ return m_metricAlarms; }
-    inline void SetMetricAlarms(const Aws::Vector<MetricAlarm>& value) { m_metricAlarms = value; }
-    inline void SetMetricAlarms(Aws::Vector<MetricAlarm>&& value) { m_metricAlarms = std::move(value); }
-    inline DescribeAlarmsForMetricResult& WithMetricAlarms(const Aws::Vector<MetricAlarm>& value) { SetMetricAlarms(value); return *this;}
-    inline DescribeAlarmsForMetricResult& WithMetricAlarms(Aws::Vector<MetricAlarm>&& value) { SetMetricAlarms(std::move(value)); return *this;}
-    inline DescribeAlarmsForMetricResult& AddMetricAlarms(const MetricAlarm& value) { m_metricAlarms.push_back(value); return *this; }
-    inline DescribeAlarmsForMetricResult& AddMetricAlarms(MetricAlarm&& value) { m_metricAlarms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MetricAlarm>& GetMetricAlarms() const { return m_metricAlarms; }
+    template<typename MetricAlarmsT = Aws::Vector<MetricAlarm>>
+    void SetMetricAlarms(MetricAlarmsT&& value) { m_metricAlarmsHasBeenSet = true; m_metricAlarms = std::forward<MetricAlarmsT>(value); }
+    template<typename MetricAlarmsT = Aws::Vector<MetricAlarm>>
+    DescribeAlarmsForMetricResult& WithMetricAlarms(MetricAlarmsT&& value) { SetMetricAlarms(std::forward<MetricAlarmsT>(value)); return *this;}
+    template<typename MetricAlarmsT = MetricAlarm>
+    DescribeAlarmsForMetricResult& AddMetricAlarms(MetricAlarmsT&& value) { m_metricAlarmsHasBeenSet = true; m_metricAlarms.emplace_back(std::forward<MetricAlarmsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeAlarmsForMetricResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeAlarmsForMetricResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeAlarmsForMetricResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MetricAlarm> m_metricAlarms;
+    bool m_metricAlarmsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

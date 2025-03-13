@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputDeviceNetworkSettings::InputDeviceNetworkSettings() : 
-    m_dnsAddressesHasBeenSet(false),
-    m_gatewayHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_ipScheme(InputDeviceIpScheme::NOT_SET),
-    m_ipSchemeHasBeenSet(false),
-    m_subnetMaskHasBeenSet(false)
-{
-}
-
 InputDeviceNetworkSettings::InputDeviceNetworkSettings(JsonView jsonValue)
-  : InputDeviceNetworkSettings()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ InputDeviceNetworkSettings& InputDeviceNetworkSettings::operator =(JsonView json
     }
     m_dnsAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gateway"))
   {
     m_gateway = jsonValue.GetString("gateway");
-
     m_gatewayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipScheme"))
   {
     m_ipScheme = InputDeviceIpSchemeMapper::GetInputDeviceIpSchemeForName(jsonValue.GetString("ipScheme"));
-
     m_ipSchemeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetMask"))
   {
     m_subnetMask = jsonValue.GetString("subnetMask");
-
     m_subnetMaskHasBeenSet = true;
   }
-
   return *this;
 }
 

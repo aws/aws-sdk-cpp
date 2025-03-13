@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-AmazonCodeGuruProfilerIntegration::AmazonCodeGuruProfilerIntegration() : 
-    m_status(EventSourceOptInStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AmazonCodeGuruProfilerIntegration::AmazonCodeGuruProfilerIntegration(JsonView jsonValue)
-  : AmazonCodeGuruProfilerIntegration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AmazonCodeGuruProfilerIntegration& AmazonCodeGuruProfilerIntegration::operator =
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EventSourceOptInStatusMapper::GetEventSourceOptInStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

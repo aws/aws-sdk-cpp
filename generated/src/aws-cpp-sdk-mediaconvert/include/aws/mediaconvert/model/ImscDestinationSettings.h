@@ -37,7 +37,7 @@ namespace Model
   class ImscDestinationSettings
   {
   public:
-    AWS_MEDIACONVERT_API ImscDestinationSettings();
+    AWS_MEDIACONVERT_API ImscDestinationSettings() = default;
     AWS_MEDIACONVERT_API ImscDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ImscDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
      * value="subtitle"/>.
      */
-    inline const ImscAccessibilitySubs& GetAccessibility() const{ return m_accessibility; }
+    inline ImscAccessibilitySubs GetAccessibility() const { return m_accessibility; }
     inline bool AccessibilityHasBeenSet() const { return m_accessibilityHasBeenSet; }
-    inline void SetAccessibility(const ImscAccessibilitySubs& value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
-    inline void SetAccessibility(ImscAccessibilitySubs&& value) { m_accessibilityHasBeenSet = true; m_accessibility = std::move(value); }
-    inline ImscDestinationSettings& WithAccessibility(const ImscAccessibilitySubs& value) { SetAccessibility(value); return *this;}
-    inline ImscDestinationSettings& WithAccessibility(ImscAccessibilitySubs&& value) { SetAccessibility(std::move(value)); return *this;}
+    inline void SetAccessibility(ImscAccessibilitySubs value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
+    inline ImscDestinationSettings& WithAccessibility(ImscAccessibilitySubs value) { SetAccessibility(value); return *this;}
     ///@}
 
     ///@{
@@ -74,19 +72,17 @@ namespace Model
      * only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting
      * for simplified output captions.
      */
-    inline const ImscStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
+    inline ImscStylePassthrough GetStylePassthrough() const { return m_stylePassthrough; }
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
-    inline void SetStylePassthrough(const ImscStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
-    inline void SetStylePassthrough(ImscStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
-    inline ImscDestinationSettings& WithStylePassthrough(const ImscStylePassthrough& value) { SetStylePassthrough(value); return *this;}
-    inline ImscDestinationSettings& WithStylePassthrough(ImscStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
+    inline void SetStylePassthrough(ImscStylePassthrough value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
+    inline ImscDestinationSettings& WithStylePassthrough(ImscStylePassthrough value) { SetStylePassthrough(value); return *this;}
     ///@}
   private:
 
-    ImscAccessibilitySubs m_accessibility;
+    ImscAccessibilitySubs m_accessibility{ImscAccessibilitySubs::NOT_SET};
     bool m_accessibilityHasBeenSet = false;
 
-    ImscStylePassthrough m_stylePassthrough;
+    ImscStylePassthrough m_stylePassthrough{ImscStylePassthrough::NOT_SET};
     bool m_stylePassthroughHasBeenSet = false;
   };
 

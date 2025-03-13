@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-InternalServerErrorException::InternalServerErrorException() : 
-    m_invalidParameterHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InternalServerErrorException::InternalServerErrorException(JsonView jsonValue)
-  : InternalServerErrorException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalServerErrorException& InternalServerErrorException::operator =(JsonView 
   if(jsonValue.ValueExists("invalidParameter"))
   {
     m_invalidParameter = jsonValue.GetString("invalidParameter");
-
     m_invalidParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

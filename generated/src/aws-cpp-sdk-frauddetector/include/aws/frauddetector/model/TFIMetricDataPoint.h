@@ -30,7 +30,7 @@ namespace Model
   class TFIMetricDataPoint
   {
   public:
-    AWS_FRAUDDETECTOR_API TFIMetricDataPoint();
+    AWS_FRAUDDETECTOR_API TFIMetricDataPoint() = default;
     AWS_FRAUDDETECTOR_API TFIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API TFIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p> The false positive rate. This is the percentage of total legitimate events
      * that are incorrectly predicted as fraud. </p>
      */
-    inline double GetFpr() const{ return m_fpr; }
+    inline double GetFpr() const { return m_fpr; }
     inline bool FprHasBeenSet() const { return m_fprHasBeenSet; }
     inline void SetFpr(double value) { m_fprHasBeenSet = true; m_fpr = value; }
     inline TFIMetricDataPoint& WithFpr(double value) { SetFpr(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * <p> The percentage of fraud events correctly predicted as fraudulent as compared
      * to all events predicted as fraudulent. </p>
      */
-    inline double GetPrecision() const{ return m_precision; }
+    inline double GetPrecision() const { return m_precision; }
     inline bool PrecisionHasBeenSet() const { return m_precisionHasBeenSet; }
     inline void SetPrecision(double value) { m_precisionHasBeenSet = true; m_precision = value; }
     inline TFIMetricDataPoint& WithPrecision(double value) { SetPrecision(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
      * <p> The true positive rate. This is the percentage of total fraud the model
      * detects. Also known as capture rate. </p>
      */
-    inline double GetTpr() const{ return m_tpr; }
+    inline double GetTpr() const { return m_tpr; }
     inline bool TprHasBeenSet() const { return m_tprHasBeenSet; }
     inline void SetTpr(double value) { m_tprHasBeenSet = true; m_tpr = value; }
     inline TFIMetricDataPoint& WithTpr(double value) { SetTpr(value); return *this;}
@@ -75,23 +75,23 @@ namespace Model
      * example, a threshold of 500 means any model score 500 or above is labeled as
      * fraud. </p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline TFIMetricDataPoint& WithThreshold(double value) { SetThreshold(value); return *this;}
     ///@}
   private:
 
-    double m_fpr;
+    double m_fpr{0.0};
     bool m_fprHasBeenSet = false;
 
-    double m_precision;
+    double m_precision{0.0};
     bool m_precisionHasBeenSet = false;
 
-    double m_tpr;
+    double m_tpr{0.0};
     bool m_tprHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
   };
 

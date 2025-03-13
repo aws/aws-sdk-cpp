@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupForVpc::SecurityGroupForVpc() : 
-    m_descriptionHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_primaryVpcIdHasBeenSet(false)
-{
-}
-
 SecurityGroupForVpc::SecurityGroupForVpc(const XmlNode& xmlNode)
-  : SecurityGroupForVpc()
 {
   *this = xmlNode;
 }
@@ -47,42 +36,48 @@ SecurityGroupForVpc& SecurityGroupForVpc::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode groupNameNode = resultNode.FirstChild("groupName");
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
       m_groupNameHasBeenSet = true;
+       m_groupNameHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode groupIdNode = resultNode.FirstChild("groupId");
     if(!groupIdNode.IsNull())
     {
       m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
       m_groupIdHasBeenSet = true;
+       m_groupIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode primaryVpcIdNode = resultNode.FirstChild("primaryVpcId");
     if(!primaryVpcIdNode.IsNull())
     {
       m_primaryVpcId = Aws::Utils::Xml::DecodeEscapedXmlText(primaryVpcIdNode.GetText());
       m_primaryVpcIdHasBeenSet = true;
+       m_primaryVpcIdHasBeenSet = true;
     }
   }
 

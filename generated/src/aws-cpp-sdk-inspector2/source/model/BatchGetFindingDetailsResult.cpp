@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetFindingDetailsResult::BatchGetFindingDetailsResult()
-{
-}
-
 BatchGetFindingDetailsResult::BatchGetFindingDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetFindingDetailsResult& BatchGetFindingDetailsResult::operator =(const Aws
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingDetails"))
   {
     Aws::Utils::Array<JsonView> findingDetailsJsonList = jsonValue.GetArray("findingDetails");
@@ -45,14 +41,15 @@ BatchGetFindingDetailsResult& BatchGetFindingDetailsResult::operator =(const Aws
     {
       m_findingDetails.push_back(findingDetailsJsonList[findingDetailsIndex].AsObject());
     }
+    m_findingDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

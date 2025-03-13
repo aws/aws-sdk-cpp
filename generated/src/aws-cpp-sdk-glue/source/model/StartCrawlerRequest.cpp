@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCrawlerRequest::StartCrawlerRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StartCrawlerRequest::SerializePayload() const
 {
   JsonValue payload;

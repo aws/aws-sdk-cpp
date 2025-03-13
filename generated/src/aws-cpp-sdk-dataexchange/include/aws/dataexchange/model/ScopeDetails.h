@@ -35,7 +35,7 @@ namespace Model
   class ScopeDetails
   {
   public:
-    AWS_DATAEXCHANGE_API ScopeDetails();
+    AWS_DATAEXCHANGE_API ScopeDetails() = default;
     AWS_DATAEXCHANGE_API ScopeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API ScopeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,42 @@ namespace Model
     /**
      * <p>Underlying LF resources that will be affected by this notification.</p>
      */
-    inline const Aws::Vector<LakeFormationTagPolicyDetails>& GetLakeFormationTagPolicies() const{ return m_lakeFormationTagPolicies; }
+    inline const Aws::Vector<LakeFormationTagPolicyDetails>& GetLakeFormationTagPolicies() const { return m_lakeFormationTagPolicies; }
     inline bool LakeFormationTagPoliciesHasBeenSet() const { return m_lakeFormationTagPoliciesHasBeenSet; }
-    inline void SetLakeFormationTagPolicies(const Aws::Vector<LakeFormationTagPolicyDetails>& value) { m_lakeFormationTagPoliciesHasBeenSet = true; m_lakeFormationTagPolicies = value; }
-    inline void SetLakeFormationTagPolicies(Aws::Vector<LakeFormationTagPolicyDetails>&& value) { m_lakeFormationTagPoliciesHasBeenSet = true; m_lakeFormationTagPolicies = std::move(value); }
-    inline ScopeDetails& WithLakeFormationTagPolicies(const Aws::Vector<LakeFormationTagPolicyDetails>& value) { SetLakeFormationTagPolicies(value); return *this;}
-    inline ScopeDetails& WithLakeFormationTagPolicies(Aws::Vector<LakeFormationTagPolicyDetails>&& value) { SetLakeFormationTagPolicies(std::move(value)); return *this;}
-    inline ScopeDetails& AddLakeFormationTagPolicies(const LakeFormationTagPolicyDetails& value) { m_lakeFormationTagPoliciesHasBeenSet = true; m_lakeFormationTagPolicies.push_back(value); return *this; }
-    inline ScopeDetails& AddLakeFormationTagPolicies(LakeFormationTagPolicyDetails&& value) { m_lakeFormationTagPoliciesHasBeenSet = true; m_lakeFormationTagPolicies.push_back(std::move(value)); return *this; }
+    template<typename LakeFormationTagPoliciesT = Aws::Vector<LakeFormationTagPolicyDetails>>
+    void SetLakeFormationTagPolicies(LakeFormationTagPoliciesT&& value) { m_lakeFormationTagPoliciesHasBeenSet = true; m_lakeFormationTagPolicies = std::forward<LakeFormationTagPoliciesT>(value); }
+    template<typename LakeFormationTagPoliciesT = Aws::Vector<LakeFormationTagPolicyDetails>>
+    ScopeDetails& WithLakeFormationTagPolicies(LakeFormationTagPoliciesT&& value) { SetLakeFormationTagPolicies(std::forward<LakeFormationTagPoliciesT>(value)); return *this;}
+    template<typename LakeFormationTagPoliciesT = LakeFormationTagPolicyDetails>
+    ScopeDetails& AddLakeFormationTagPolicies(LakeFormationTagPoliciesT&& value) { m_lakeFormationTagPoliciesHasBeenSet = true; m_lakeFormationTagPolicies.emplace_back(std::forward<LakeFormationTagPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Underlying Redshift resources that will be affected by this notification.</p>
      */
-    inline const Aws::Vector<RedshiftDataShareDetails>& GetRedshiftDataShares() const{ return m_redshiftDataShares; }
+    inline const Aws::Vector<RedshiftDataShareDetails>& GetRedshiftDataShares() const { return m_redshiftDataShares; }
     inline bool RedshiftDataSharesHasBeenSet() const { return m_redshiftDataSharesHasBeenSet; }
-    inline void SetRedshiftDataShares(const Aws::Vector<RedshiftDataShareDetails>& value) { m_redshiftDataSharesHasBeenSet = true; m_redshiftDataShares = value; }
-    inline void SetRedshiftDataShares(Aws::Vector<RedshiftDataShareDetails>&& value) { m_redshiftDataSharesHasBeenSet = true; m_redshiftDataShares = std::move(value); }
-    inline ScopeDetails& WithRedshiftDataShares(const Aws::Vector<RedshiftDataShareDetails>& value) { SetRedshiftDataShares(value); return *this;}
-    inline ScopeDetails& WithRedshiftDataShares(Aws::Vector<RedshiftDataShareDetails>&& value) { SetRedshiftDataShares(std::move(value)); return *this;}
-    inline ScopeDetails& AddRedshiftDataShares(const RedshiftDataShareDetails& value) { m_redshiftDataSharesHasBeenSet = true; m_redshiftDataShares.push_back(value); return *this; }
-    inline ScopeDetails& AddRedshiftDataShares(RedshiftDataShareDetails&& value) { m_redshiftDataSharesHasBeenSet = true; m_redshiftDataShares.push_back(std::move(value)); return *this; }
+    template<typename RedshiftDataSharesT = Aws::Vector<RedshiftDataShareDetails>>
+    void SetRedshiftDataShares(RedshiftDataSharesT&& value) { m_redshiftDataSharesHasBeenSet = true; m_redshiftDataShares = std::forward<RedshiftDataSharesT>(value); }
+    template<typename RedshiftDataSharesT = Aws::Vector<RedshiftDataShareDetails>>
+    ScopeDetails& WithRedshiftDataShares(RedshiftDataSharesT&& value) { SetRedshiftDataShares(std::forward<RedshiftDataSharesT>(value)); return *this;}
+    template<typename RedshiftDataSharesT = RedshiftDataShareDetails>
+    ScopeDetails& AddRedshiftDataShares(RedshiftDataSharesT&& value) { m_redshiftDataSharesHasBeenSet = true; m_redshiftDataShares.emplace_back(std::forward<RedshiftDataSharesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Underlying S3 resources that will be affected by this notification.</p>
      */
-    inline const Aws::Vector<S3DataAccessDetails>& GetS3DataAccesses() const{ return m_s3DataAccesses; }
+    inline const Aws::Vector<S3DataAccessDetails>& GetS3DataAccesses() const { return m_s3DataAccesses; }
     inline bool S3DataAccessesHasBeenSet() const { return m_s3DataAccessesHasBeenSet; }
-    inline void SetS3DataAccesses(const Aws::Vector<S3DataAccessDetails>& value) { m_s3DataAccessesHasBeenSet = true; m_s3DataAccesses = value; }
-    inline void SetS3DataAccesses(Aws::Vector<S3DataAccessDetails>&& value) { m_s3DataAccessesHasBeenSet = true; m_s3DataAccesses = std::move(value); }
-    inline ScopeDetails& WithS3DataAccesses(const Aws::Vector<S3DataAccessDetails>& value) { SetS3DataAccesses(value); return *this;}
-    inline ScopeDetails& WithS3DataAccesses(Aws::Vector<S3DataAccessDetails>&& value) { SetS3DataAccesses(std::move(value)); return *this;}
-    inline ScopeDetails& AddS3DataAccesses(const S3DataAccessDetails& value) { m_s3DataAccessesHasBeenSet = true; m_s3DataAccesses.push_back(value); return *this; }
-    inline ScopeDetails& AddS3DataAccesses(S3DataAccessDetails&& value) { m_s3DataAccessesHasBeenSet = true; m_s3DataAccesses.push_back(std::move(value)); return *this; }
+    template<typename S3DataAccessesT = Aws::Vector<S3DataAccessDetails>>
+    void SetS3DataAccesses(S3DataAccessesT&& value) { m_s3DataAccessesHasBeenSet = true; m_s3DataAccesses = std::forward<S3DataAccessesT>(value); }
+    template<typename S3DataAccessesT = Aws::Vector<S3DataAccessDetails>>
+    ScopeDetails& WithS3DataAccesses(S3DataAccessesT&& value) { SetS3DataAccesses(std::forward<S3DataAccessesT>(value)); return *this;}
+    template<typename S3DataAccessesT = S3DataAccessDetails>
+    ScopeDetails& AddS3DataAccesses(S3DataAccessesT&& value) { m_s3DataAccessesHasBeenSet = true; m_s3DataAccesses.emplace_back(std::forward<S3DataAccessesT>(value)); return *this; }
     ///@}
   private:
 

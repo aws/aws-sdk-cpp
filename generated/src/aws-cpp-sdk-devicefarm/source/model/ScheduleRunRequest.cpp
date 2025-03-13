@@ -12,18 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ScheduleRunRequest::ScheduleRunRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_appArnHasBeenSet(false),
-    m_devicePoolArnHasBeenSet(false),
-    m_deviceSelectionConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_executionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String ScheduleRunRequest::SerializePayload() const
 {
   JsonValue payload;

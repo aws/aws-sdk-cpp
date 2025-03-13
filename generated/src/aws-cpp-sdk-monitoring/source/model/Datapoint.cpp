@@ -20,26 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-Datapoint::Datapoint() : 
-    m_timestampHasBeenSet(false),
-    m_sampleCount(0.0),
-    m_sampleCountHasBeenSet(false),
-    m_average(0.0),
-    m_averageHasBeenSet(false),
-    m_sum(0.0),
-    m_sumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_extendedStatisticsHasBeenSet(false)
-{
-}
-
 Datapoint::Datapoint(const XmlNode& xmlNode)
-  : Datapoint()
 {
   *this = xmlNode;
 }
@@ -55,48 +36,56 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
     {
       m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_timestampHasBeenSet = true;
+       m_timestampHasBeenSet = true;
     }
     XmlNode sampleCountNode = resultNode.FirstChild("SampleCount");
     if(!sampleCountNode.IsNull())
     {
       m_sampleCount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sampleCountNode.GetText()).c_str()).c_str());
       m_sampleCountHasBeenSet = true;
+       m_sampleCountHasBeenSet = true;
     }
     XmlNode averageNode = resultNode.FirstChild("Average");
     if(!averageNode.IsNull())
     {
       m_average = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(averageNode.GetText()).c_str()).c_str());
       m_averageHasBeenSet = true;
+       m_averageHasBeenSet = true;
     }
     XmlNode sumNode = resultNode.FirstChild("Sum");
     if(!sumNode.IsNull())
     {
       m_sum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sumNode.GetText()).c_str()).c_str());
       m_sumHasBeenSet = true;
+       m_sumHasBeenSet = true;
     }
     XmlNode minimumNode = resultNode.FirstChild("Minimum");
     if(!minimumNode.IsNull())
     {
       m_minimum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
       m_minimumHasBeenSet = true;
+       m_minimumHasBeenSet = true;
     }
     XmlNode maximumNode = resultNode.FirstChild("Maximum");
     if(!maximumNode.IsNull())
     {
       m_maximum = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
       m_maximumHasBeenSet = true;
+       m_maximumHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
     XmlNode extendedStatisticsNode = resultNode.FirstChild("ExtendedStatistics");
 
     if(!extendedStatisticsNode.IsNull())
     {
       XmlNode extendedStatisticsEntry = extendedStatisticsNode.FirstChild("entry");
+      m_extendedStatisticsHasBeenSet = !extendedStatisticsEntry.IsNull();
       while(!extendedStatisticsEntry.IsNull())
       {
         XmlNode keyNode = extendedStatisticsEntry.FirstChild("key");
@@ -106,7 +95,7 @@ Datapoint& Datapoint::operator =(const XmlNode& xmlNode)
         extendedStatisticsEntry = extendedStatisticsEntry.NextNode("entry");
       }
 
-      m_extendedStatisticsHasBeenSet = true;
+       m_extendedStatisticsHasBeenSet = true;
     }
   }
 

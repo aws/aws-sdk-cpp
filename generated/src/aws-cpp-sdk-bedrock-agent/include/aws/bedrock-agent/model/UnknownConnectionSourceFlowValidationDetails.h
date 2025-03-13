@@ -32,7 +32,7 @@ namespace Model
   class UnknownConnectionSourceFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API UnknownConnectionSourceFlowValidationDetails();
+    AWS_BEDROCKAGENT_API UnknownConnectionSourceFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API UnknownConnectionSourceFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API UnknownConnectionSourceFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the connection with the unknown source.</p>
      */
-    inline const Aws::String& GetConnection() const{ return m_connection; }
+    inline const Aws::String& GetConnection() const { return m_connection; }
     inline bool ConnectionHasBeenSet() const { return m_connectionHasBeenSet; }
-    inline void SetConnection(const Aws::String& value) { m_connectionHasBeenSet = true; m_connection = value; }
-    inline void SetConnection(Aws::String&& value) { m_connectionHasBeenSet = true; m_connection = std::move(value); }
-    inline void SetConnection(const char* value) { m_connectionHasBeenSet = true; m_connection.assign(value); }
-    inline UnknownConnectionSourceFlowValidationDetails& WithConnection(const Aws::String& value) { SetConnection(value); return *this;}
-    inline UnknownConnectionSourceFlowValidationDetails& WithConnection(Aws::String&& value) { SetConnection(std::move(value)); return *this;}
-    inline UnknownConnectionSourceFlowValidationDetails& WithConnection(const char* value) { SetConnection(value); return *this;}
+    template<typename ConnectionT = Aws::String>
+    void SetConnection(ConnectionT&& value) { m_connectionHasBeenSet = true; m_connection = std::forward<ConnectionT>(value); }
+    template<typename ConnectionT = Aws::String>
+    UnknownConnectionSourceFlowValidationDetails& WithConnection(ConnectionT&& value) { SetConnection(std::forward<ConnectionT>(value)); return *this;}
     ///@}
   private:
 

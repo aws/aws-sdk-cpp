@@ -34,7 +34,7 @@ namespace Model
   class Ipv6Pool
   {
   public:
-    AWS_EC2_API Ipv6Pool();
+    AWS_EC2_API Ipv6Pool() = default;
     AWS_EC2_API Ipv6Pool(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Ipv6Pool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,56 +46,52 @@ namespace Model
     /**
      * <p>The ID of the address pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline Ipv6Pool& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline Ipv6Pool& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline Ipv6Pool& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    Ipv6Pool& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the address pool.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Ipv6Pool& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Ipv6Pool& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Ipv6Pool& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Ipv6Pool& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIDR blocks for the address pool.</p>
      */
-    inline const Aws::Vector<PoolCidrBlock>& GetPoolCidrBlocks() const{ return m_poolCidrBlocks; }
+    inline const Aws::Vector<PoolCidrBlock>& GetPoolCidrBlocks() const { return m_poolCidrBlocks; }
     inline bool PoolCidrBlocksHasBeenSet() const { return m_poolCidrBlocksHasBeenSet; }
-    inline void SetPoolCidrBlocks(const Aws::Vector<PoolCidrBlock>& value) { m_poolCidrBlocksHasBeenSet = true; m_poolCidrBlocks = value; }
-    inline void SetPoolCidrBlocks(Aws::Vector<PoolCidrBlock>&& value) { m_poolCidrBlocksHasBeenSet = true; m_poolCidrBlocks = std::move(value); }
-    inline Ipv6Pool& WithPoolCidrBlocks(const Aws::Vector<PoolCidrBlock>& value) { SetPoolCidrBlocks(value); return *this;}
-    inline Ipv6Pool& WithPoolCidrBlocks(Aws::Vector<PoolCidrBlock>&& value) { SetPoolCidrBlocks(std::move(value)); return *this;}
-    inline Ipv6Pool& AddPoolCidrBlocks(const PoolCidrBlock& value) { m_poolCidrBlocksHasBeenSet = true; m_poolCidrBlocks.push_back(value); return *this; }
-    inline Ipv6Pool& AddPoolCidrBlocks(PoolCidrBlock&& value) { m_poolCidrBlocksHasBeenSet = true; m_poolCidrBlocks.push_back(std::move(value)); return *this; }
+    template<typename PoolCidrBlocksT = Aws::Vector<PoolCidrBlock>>
+    void SetPoolCidrBlocks(PoolCidrBlocksT&& value) { m_poolCidrBlocksHasBeenSet = true; m_poolCidrBlocks = std::forward<PoolCidrBlocksT>(value); }
+    template<typename PoolCidrBlocksT = Aws::Vector<PoolCidrBlock>>
+    Ipv6Pool& WithPoolCidrBlocks(PoolCidrBlocksT&& value) { SetPoolCidrBlocks(std::forward<PoolCidrBlocksT>(value)); return *this;}
+    template<typename PoolCidrBlocksT = PoolCidrBlock>
+    Ipv6Pool& AddPoolCidrBlocks(PoolCidrBlocksT&& value) { m_poolCidrBlocksHasBeenSet = true; m_poolCidrBlocks.emplace_back(std::forward<PoolCidrBlocksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any tags for the address pool.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Ipv6Pool& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Ipv6Pool& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Ipv6Pool& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Ipv6Pool& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Ipv6Pool& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Ipv6Pool& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

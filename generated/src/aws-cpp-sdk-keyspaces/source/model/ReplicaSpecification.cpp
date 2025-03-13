@@ -18,16 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-ReplicaSpecification::ReplicaSpecification() : 
-    m_regionHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_readCapacityAutoScalingHasBeenSet(false)
-{
-}
-
 ReplicaSpecification::ReplicaSpecification(JsonView jsonValue)
-  : ReplicaSpecification()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReplicaSpecification& ReplicaSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInt64("readCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readCapacityAutoScaling"))
   {
     m_readCapacityAutoScaling = jsonValue.GetObject("readCapacityAutoScaling");
-
     m_readCapacityAutoScalingHasBeenSet = true;
   }
-
   return *this;
 }
 

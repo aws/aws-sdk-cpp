@@ -12,11 +12,6 @@ using namespace Aws::RecycleBin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRuleRequest::GetRuleRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetRuleRequest::SerializePayload() const
 {
   return {};

@@ -18,24 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-GlobalConfiguration::GlobalConfiguration() : 
-    m_initialAudioGain(0),
-    m_initialAudioGainHasBeenSet(false),
-    m_inputEndAction(GlobalConfigurationInputEndAction::NOT_SET),
-    m_inputEndActionHasBeenSet(false),
-    m_inputLossBehaviorHasBeenSet(false),
-    m_outputLockingMode(GlobalConfigurationOutputLockingMode::NOT_SET),
-    m_outputLockingModeHasBeenSet(false),
-    m_outputTimingSource(GlobalConfigurationOutputTimingSource::NOT_SET),
-    m_outputTimingSourceHasBeenSet(false),
-    m_supportLowFramerateInputs(GlobalConfigurationLowFramerateInputs::NOT_SET),
-    m_supportLowFramerateInputsHasBeenSet(false),
-    m_outputLockingSettingsHasBeenSet(false)
-{
-}
-
 GlobalConfiguration::GlobalConfiguration(JsonView jsonValue)
-  : GlobalConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ GlobalConfiguration& GlobalConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("initialAudioGain"))
   {
     m_initialAudioGain = jsonValue.GetInteger("initialAudioGain");
-
     m_initialAudioGainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputEndAction"))
   {
     m_inputEndAction = GlobalConfigurationInputEndActionMapper::GetGlobalConfigurationInputEndActionForName(jsonValue.GetString("inputEndAction"));
-
     m_inputEndActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLossBehavior"))
   {
     m_inputLossBehavior = jsonValue.GetObject("inputLossBehavior");
-
     m_inputLossBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLockingMode"))
   {
     m_outputLockingMode = GlobalConfigurationOutputLockingModeMapper::GetGlobalConfigurationOutputLockingModeForName(jsonValue.GetString("outputLockingMode"));
-
     m_outputLockingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputTimingSource"))
   {
     m_outputTimingSource = GlobalConfigurationOutputTimingSourceMapper::GetGlobalConfigurationOutputTimingSourceForName(jsonValue.GetString("outputTimingSource"));
-
     m_outputTimingSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportLowFramerateInputs"))
   {
     m_supportLowFramerateInputs = GlobalConfigurationLowFramerateInputsMapper::GetGlobalConfigurationLowFramerateInputsForName(jsonValue.GetString("supportLowFramerateInputs"));
-
     m_supportLowFramerateInputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputLockingSettings"))
   {
     m_outputLockingSettings = jsonValue.GetObject("outputLockingSettings");
-
     m_outputLockingSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

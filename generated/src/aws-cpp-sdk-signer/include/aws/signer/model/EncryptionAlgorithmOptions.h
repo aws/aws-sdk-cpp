@@ -33,7 +33,7 @@ namespace Model
   class EncryptionAlgorithmOptions
   {
   public:
-    AWS_SIGNER_API EncryptionAlgorithmOptions();
+    AWS_SIGNER_API EncryptionAlgorithmOptions() = default;
     AWS_SIGNER_API EncryptionAlgorithmOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API EncryptionAlgorithmOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,30 @@ namespace Model
      * <p>The set of accepted encryption algorithms that are allowed in a code-signing
      * job.</p>
      */
-    inline const Aws::Vector<EncryptionAlgorithm>& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::Vector<EncryptionAlgorithm>& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::Vector<EncryptionAlgorithm>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::Vector<EncryptionAlgorithm>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline EncryptionAlgorithmOptions& WithAllowedValues(const Aws::Vector<EncryptionAlgorithm>& value) { SetAllowedValues(value); return *this;}
-    inline EncryptionAlgorithmOptions& WithAllowedValues(Aws::Vector<EncryptionAlgorithm>&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline EncryptionAlgorithmOptions& AddAllowedValues(const EncryptionAlgorithm& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-    inline EncryptionAlgorithmOptions& AddAllowedValues(EncryptionAlgorithm&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
+    template<typename AllowedValuesT = Aws::Vector<EncryptionAlgorithm>>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::Vector<EncryptionAlgorithm>>
+    EncryptionAlgorithmOptions& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
+    inline EncryptionAlgorithmOptions& AddAllowedValues(EncryptionAlgorithm value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The default encryption algorithm that is used by a code-signing job.</p>
      */
-    inline const EncryptionAlgorithm& GetDefaultValue() const{ return m_defaultValue; }
+    inline EncryptionAlgorithm GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const EncryptionAlgorithm& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(EncryptionAlgorithm&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline EncryptionAlgorithmOptions& WithDefaultValue(const EncryptionAlgorithm& value) { SetDefaultValue(value); return *this;}
-    inline EncryptionAlgorithmOptions& WithDefaultValue(EncryptionAlgorithm&& value) { SetDefaultValue(std::move(value)); return *this;}
+    inline void SetDefaultValue(EncryptionAlgorithm value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline EncryptionAlgorithmOptions& WithDefaultValue(EncryptionAlgorithm value) { SetDefaultValue(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<EncryptionAlgorithm> m_allowedValues;
     bool m_allowedValuesHasBeenSet = false;
 
-    EncryptionAlgorithm m_defaultValue;
+    EncryptionAlgorithm m_defaultValue{EncryptionAlgorithm::NOT_SET};
     bool m_defaultValueHasBeenSet = false;
   };
 

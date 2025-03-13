@@ -18,16 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary() : 
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_readMarkerTimestampHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 AppInstanceUserMembershipSummary::AppInstanceUserMembershipSummary(JsonView jsonValue)
-  : AppInstanceUserMembershipSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AppInstanceUserMembershipSummary& AppInstanceUserMembershipSummary::operator =(J
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ChannelMembershipTypeMapper::GetChannelMembershipTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadMarkerTimestamp"))
   {
     m_readMarkerTimestamp = jsonValue.GetDouble("ReadMarkerTimestamp");
-
     m_readMarkerTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubChannelId"))
   {
     m_subChannelId = jsonValue.GetString("SubChannelId");
-
     m_subChannelIdHasBeenSet = true;
   }
-
   return *this;
 }
 

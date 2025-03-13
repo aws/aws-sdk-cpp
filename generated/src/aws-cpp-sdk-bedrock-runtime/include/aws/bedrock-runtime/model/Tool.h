@@ -35,7 +35,7 @@ namespace Model
   class Tool
   {
   public:
-    AWS_BEDROCKRUNTIME_API Tool();
+    AWS_BEDROCKRUNTIME_API Tool() = default;
     AWS_BEDROCKRUNTIME_API Tool(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>The specfication for the tool.</p>
      */
-    inline const ToolSpecification& GetToolSpec() const{ return m_toolSpec; }
+    inline const ToolSpecification& GetToolSpec() const { return m_toolSpec; }
     inline bool ToolSpecHasBeenSet() const { return m_toolSpecHasBeenSet; }
-    inline void SetToolSpec(const ToolSpecification& value) { m_toolSpecHasBeenSet = true; m_toolSpec = value; }
-    inline void SetToolSpec(ToolSpecification&& value) { m_toolSpecHasBeenSet = true; m_toolSpec = std::move(value); }
-    inline Tool& WithToolSpec(const ToolSpecification& value) { SetToolSpec(value); return *this;}
-    inline Tool& WithToolSpec(ToolSpecification&& value) { SetToolSpec(std::move(value)); return *this;}
+    template<typename ToolSpecT = ToolSpecification>
+    void SetToolSpec(ToolSpecT&& value) { m_toolSpecHasBeenSet = true; m_toolSpec = std::forward<ToolSpecT>(value); }
+    template<typename ToolSpecT = ToolSpecification>
+    Tool& WithToolSpec(ToolSpecT&& value) { SetToolSpec(std::forward<ToolSpecT>(value)); return *this;}
     ///@}
   private:
 

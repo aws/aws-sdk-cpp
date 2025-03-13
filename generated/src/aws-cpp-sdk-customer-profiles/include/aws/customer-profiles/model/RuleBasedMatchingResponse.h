@@ -37,7 +37,7 @@ namespace Model
   class RuleBasedMatchingResponse
   {
   public:
-    AWS_CUSTOMERPROFILES_API RuleBasedMatchingResponse();
+    AWS_CUSTOMERPROFILES_API RuleBasedMatchingResponse() = default;
     AWS_CUSTOMERPROFILES_API RuleBasedMatchingResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API RuleBasedMatchingResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * <p>The flag that enables the rule-based matching process of duplicate
      * profiles.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline RuleBasedMatchingResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -59,14 +59,14 @@ namespace Model
      * <p>Configures how the rule-based matching process should match profiles. You can
      * have up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.</p>
      */
-    inline const Aws::Vector<MatchingRule>& GetMatchingRules() const{ return m_matchingRules; }
+    inline const Aws::Vector<MatchingRule>& GetMatchingRules() const { return m_matchingRules; }
     inline bool MatchingRulesHasBeenSet() const { return m_matchingRulesHasBeenSet; }
-    inline void SetMatchingRules(const Aws::Vector<MatchingRule>& value) { m_matchingRulesHasBeenSet = true; m_matchingRules = value; }
-    inline void SetMatchingRules(Aws::Vector<MatchingRule>&& value) { m_matchingRulesHasBeenSet = true; m_matchingRules = std::move(value); }
-    inline RuleBasedMatchingResponse& WithMatchingRules(const Aws::Vector<MatchingRule>& value) { SetMatchingRules(value); return *this;}
-    inline RuleBasedMatchingResponse& WithMatchingRules(Aws::Vector<MatchingRule>&& value) { SetMatchingRules(std::move(value)); return *this;}
-    inline RuleBasedMatchingResponse& AddMatchingRules(const MatchingRule& value) { m_matchingRulesHasBeenSet = true; m_matchingRules.push_back(value); return *this; }
-    inline RuleBasedMatchingResponse& AddMatchingRules(MatchingRule&& value) { m_matchingRulesHasBeenSet = true; m_matchingRules.push_back(std::move(value)); return *this; }
+    template<typename MatchingRulesT = Aws::Vector<MatchingRule>>
+    void SetMatchingRules(MatchingRulesT&& value) { m_matchingRulesHasBeenSet = true; m_matchingRules = std::forward<MatchingRulesT>(value); }
+    template<typename MatchingRulesT = Aws::Vector<MatchingRule>>
+    RuleBasedMatchingResponse& WithMatchingRules(MatchingRulesT&& value) { SetMatchingRules(std::forward<MatchingRulesT>(value)); return *this;}
+    template<typename MatchingRulesT = MatchingRule>
+    RuleBasedMatchingResponse& AddMatchingRules(MatchingRulesT&& value) { m_matchingRulesHasBeenSet = true; m_matchingRules.emplace_back(std::forward<MatchingRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,12 +81,10 @@ namespace Model
      * <p>ACTIVE</p> <ul> <li> <p>The rule is ready to use. You can change the rule a
      * day after the status is in <code>ACTIVE</code>.</p> </li> </ul>
      */
-    inline const RuleBasedMatchingStatus& GetStatus() const{ return m_status; }
+    inline RuleBasedMatchingStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RuleBasedMatchingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RuleBasedMatchingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RuleBasedMatchingResponse& WithStatus(const RuleBasedMatchingStatus& value) { SetStatus(value); return *this;}
-    inline RuleBasedMatchingResponse& WithStatus(RuleBasedMatchingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RuleBasedMatchingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RuleBasedMatchingResponse& WithStatus(RuleBasedMatchingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +93,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_MatchingRule.html">MatchingRule</a>
      * </p>
      */
-    inline int GetMaxAllowedRuleLevelForMerging() const{ return m_maxAllowedRuleLevelForMerging; }
+    inline int GetMaxAllowedRuleLevelForMerging() const { return m_maxAllowedRuleLevelForMerging; }
     inline bool MaxAllowedRuleLevelForMergingHasBeenSet() const { return m_maxAllowedRuleLevelForMergingHasBeenSet; }
     inline void SetMaxAllowedRuleLevelForMerging(int value) { m_maxAllowedRuleLevelForMergingHasBeenSet = true; m_maxAllowedRuleLevelForMerging = value; }
     inline RuleBasedMatchingResponse& WithMaxAllowedRuleLevelForMerging(int value) { SetMaxAllowedRuleLevelForMerging(value); return *this;}
@@ -105,7 +103,7 @@ namespace Model
     /**
      * <p>Indicates the maximum allowed rule level.</p>
      */
-    inline int GetMaxAllowedRuleLevelForMatching() const{ return m_maxAllowedRuleLevelForMatching; }
+    inline int GetMaxAllowedRuleLevelForMatching() const { return m_maxAllowedRuleLevelForMatching; }
     inline bool MaxAllowedRuleLevelForMatchingHasBeenSet() const { return m_maxAllowedRuleLevelForMatchingHasBeenSet; }
     inline void SetMaxAllowedRuleLevelForMatching(int value) { m_maxAllowedRuleLevelForMatchingHasBeenSet = true; m_maxAllowedRuleLevelForMatching = value; }
     inline RuleBasedMatchingResponse& WithMaxAllowedRuleLevelForMatching(int value) { SetMaxAllowedRuleLevelForMatching(value); return *this;}
@@ -116,48 +114,48 @@ namespace Model
      * <p>Configures information about the <code>AttributeTypesSelector</code> where
      * the rule-based identity resolution uses to match profiles.</p>
      */
-    inline const AttributeTypesSelector& GetAttributeTypesSelector() const{ return m_attributeTypesSelector; }
+    inline const AttributeTypesSelector& GetAttributeTypesSelector() const { return m_attributeTypesSelector; }
     inline bool AttributeTypesSelectorHasBeenSet() const { return m_attributeTypesSelectorHasBeenSet; }
-    inline void SetAttributeTypesSelector(const AttributeTypesSelector& value) { m_attributeTypesSelectorHasBeenSet = true; m_attributeTypesSelector = value; }
-    inline void SetAttributeTypesSelector(AttributeTypesSelector&& value) { m_attributeTypesSelectorHasBeenSet = true; m_attributeTypesSelector = std::move(value); }
-    inline RuleBasedMatchingResponse& WithAttributeTypesSelector(const AttributeTypesSelector& value) { SetAttributeTypesSelector(value); return *this;}
-    inline RuleBasedMatchingResponse& WithAttributeTypesSelector(AttributeTypesSelector&& value) { SetAttributeTypesSelector(std::move(value)); return *this;}
+    template<typename AttributeTypesSelectorT = AttributeTypesSelector>
+    void SetAttributeTypesSelector(AttributeTypesSelectorT&& value) { m_attributeTypesSelectorHasBeenSet = true; m_attributeTypesSelector = std::forward<AttributeTypesSelectorT>(value); }
+    template<typename AttributeTypesSelectorT = AttributeTypesSelector>
+    RuleBasedMatchingResponse& WithAttributeTypesSelector(AttributeTypesSelectorT&& value) { SetAttributeTypesSelector(std::forward<AttributeTypesSelectorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ConflictResolution& GetConflictResolution() const{ return m_conflictResolution; }
+    inline const ConflictResolution& GetConflictResolution() const { return m_conflictResolution; }
     inline bool ConflictResolutionHasBeenSet() const { return m_conflictResolutionHasBeenSet; }
-    inline void SetConflictResolution(const ConflictResolution& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = value; }
-    inline void SetConflictResolution(ConflictResolution&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::move(value); }
-    inline RuleBasedMatchingResponse& WithConflictResolution(const ConflictResolution& value) { SetConflictResolution(value); return *this;}
-    inline RuleBasedMatchingResponse& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
+    template<typename ConflictResolutionT = ConflictResolution>
+    void SetConflictResolution(ConflictResolutionT&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::forward<ConflictResolutionT>(value); }
+    template<typename ConflictResolutionT = ConflictResolution>
+    RuleBasedMatchingResponse& WithConflictResolution(ConflictResolutionT&& value) { SetConflictResolution(std::forward<ConflictResolutionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExportingConfig& GetExportingConfig() const{ return m_exportingConfig; }
+    inline const ExportingConfig& GetExportingConfig() const { return m_exportingConfig; }
     inline bool ExportingConfigHasBeenSet() const { return m_exportingConfigHasBeenSet; }
-    inline void SetExportingConfig(const ExportingConfig& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = value; }
-    inline void SetExportingConfig(ExportingConfig&& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = std::move(value); }
-    inline RuleBasedMatchingResponse& WithExportingConfig(const ExportingConfig& value) { SetExportingConfig(value); return *this;}
-    inline RuleBasedMatchingResponse& WithExportingConfig(ExportingConfig&& value) { SetExportingConfig(std::move(value)); return *this;}
+    template<typename ExportingConfigT = ExportingConfig>
+    void SetExportingConfig(ExportingConfigT&& value) { m_exportingConfigHasBeenSet = true; m_exportingConfig = std::forward<ExportingConfigT>(value); }
+    template<typename ExportingConfigT = ExportingConfig>
+    RuleBasedMatchingResponse& WithExportingConfig(ExportingConfigT&& value) { SetExportingConfig(std::forward<ExportingConfigT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<MatchingRule> m_matchingRules;
     bool m_matchingRulesHasBeenSet = false;
 
-    RuleBasedMatchingStatus m_status;
+    RuleBasedMatchingStatus m_status{RuleBasedMatchingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_maxAllowedRuleLevelForMerging;
+    int m_maxAllowedRuleLevelForMerging{0};
     bool m_maxAllowedRuleLevelForMergingHasBeenSet = false;
 
-    int m_maxAllowedRuleLevelForMatching;
+    int m_maxAllowedRuleLevelForMatching{0};
     bool m_maxAllowedRuleLevelForMatchingHasBeenSet = false;
 
     AttributeTypesSelector m_attributeTypesSelector;

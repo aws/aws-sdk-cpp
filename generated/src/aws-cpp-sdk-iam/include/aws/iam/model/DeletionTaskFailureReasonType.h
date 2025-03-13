@@ -36,7 +36,7 @@ namespace Model
   class DeletionTaskFailureReasonType
   {
   public:
-    AWS_IAM_API DeletionTaskFailureReasonType();
+    AWS_IAM_API DeletionTaskFailureReasonType() = default;
     AWS_IAM_API DeletionTaskFailureReasonType(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API DeletionTaskFailureReasonType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,12 @@ namespace Model
      * <p>A short description of the reason that the service-linked role deletion
      * failed.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline DeletionTaskFailureReasonType& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline DeletionTaskFailureReasonType& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline DeletionTaskFailureReasonType& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    DeletionTaskFailureReasonType& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,14 @@ namespace Model
      * deleted. This parameter includes a list of the resources that are associated
      * with the role and the Region in which the resources are being used.</p>
      */
-    inline const Aws::Vector<RoleUsageType>& GetRoleUsageList() const{ return m_roleUsageList; }
+    inline const Aws::Vector<RoleUsageType>& GetRoleUsageList() const { return m_roleUsageList; }
     inline bool RoleUsageListHasBeenSet() const { return m_roleUsageListHasBeenSet; }
-    inline void SetRoleUsageList(const Aws::Vector<RoleUsageType>& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList = value; }
-    inline void SetRoleUsageList(Aws::Vector<RoleUsageType>&& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList = std::move(value); }
-    inline DeletionTaskFailureReasonType& WithRoleUsageList(const Aws::Vector<RoleUsageType>& value) { SetRoleUsageList(value); return *this;}
-    inline DeletionTaskFailureReasonType& WithRoleUsageList(Aws::Vector<RoleUsageType>&& value) { SetRoleUsageList(std::move(value)); return *this;}
-    inline DeletionTaskFailureReasonType& AddRoleUsageList(const RoleUsageType& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList.push_back(value); return *this; }
-    inline DeletionTaskFailureReasonType& AddRoleUsageList(RoleUsageType&& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList.push_back(std::move(value)); return *this; }
+    template<typename RoleUsageListT = Aws::Vector<RoleUsageType>>
+    void SetRoleUsageList(RoleUsageListT&& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList = std::forward<RoleUsageListT>(value); }
+    template<typename RoleUsageListT = Aws::Vector<RoleUsageType>>
+    DeletionTaskFailureReasonType& WithRoleUsageList(RoleUsageListT&& value) { SetRoleUsageList(std::forward<RoleUsageListT>(value)); return *this;}
+    template<typename RoleUsageListT = RoleUsageType>
+    DeletionTaskFailureReasonType& AddRoleUsageList(RoleUsageListT&& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList.emplace_back(std::forward<RoleUsageListT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCertificatesResult::DescribeCertificatesResult()
-{
-}
-
 DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Certificates"))
   {
     Aws::Utils::Array<JsonView> certificatesJsonList = jsonValue.GetArray("Certificates");
@@ -42,14 +37,15 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
     {
       m_certificates.push_back(certificatesJsonList[certificatesIndex].AsObject());
     }
+    m_certificatesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

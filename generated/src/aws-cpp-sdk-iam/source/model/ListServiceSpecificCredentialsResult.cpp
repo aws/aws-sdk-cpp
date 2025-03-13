@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListServiceSpecificCredentialsResult::ListServiceSpecificCredentialsResult()
-{
-}
-
 ListServiceSpecificCredentialsResult::ListServiceSpecificCredentialsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListServiceSpecificCredentialsResult& ListServiceSpecificCredentialsResult::oper
     if(!serviceSpecificCredentialsNode.IsNull())
     {
       XmlNode serviceSpecificCredentialsMember = serviceSpecificCredentialsNode.FirstChild("member");
+      m_serviceSpecificCredentialsHasBeenSet = !serviceSpecificCredentialsMember.IsNull();
       while(!serviceSpecificCredentialsMember.IsNull())
       {
         m_serviceSpecificCredentials.push_back(serviceSpecificCredentialsMember);
@@ -54,6 +51,7 @@ ListServiceSpecificCredentialsResult& ListServiceSpecificCredentialsResult::oper
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListServiceSpecificCredentialsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

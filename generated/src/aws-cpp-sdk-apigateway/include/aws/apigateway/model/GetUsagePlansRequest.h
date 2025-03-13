@@ -29,7 +29,7 @@ namespace Model
   class GetUsagePlansRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetUsagePlansRequest();
+    AWS_APIGATEWAY_API GetUsagePlansRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline GetUsagePlansRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetUsagePlansRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetUsagePlansRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetUsagePlansRequest& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the API key associated with the usage plans.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline GetUsagePlansRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline GetUsagePlansRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline GetUsagePlansRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    GetUsagePlansRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +71,7 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetUsagePlansRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

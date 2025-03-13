@@ -31,7 +31,7 @@ namespace Model
   class CustomLogSourceAttributes
   {
   public:
-    AWS_SECURITYLAKE_API CustomLogSourceAttributes();
+    AWS_SECURITYLAKE_API CustomLogSourceAttributes() = default;
     AWS_SECURITYLAKE_API CustomLogSourceAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API CustomLogSourceAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ARN of the Glue crawler.</p>
      */
-    inline const Aws::String& GetCrawlerArn() const{ return m_crawlerArn; }
+    inline const Aws::String& GetCrawlerArn() const { return m_crawlerArn; }
     inline bool CrawlerArnHasBeenSet() const { return m_crawlerArnHasBeenSet; }
-    inline void SetCrawlerArn(const Aws::String& value) { m_crawlerArnHasBeenSet = true; m_crawlerArn = value; }
-    inline void SetCrawlerArn(Aws::String&& value) { m_crawlerArnHasBeenSet = true; m_crawlerArn = std::move(value); }
-    inline void SetCrawlerArn(const char* value) { m_crawlerArnHasBeenSet = true; m_crawlerArn.assign(value); }
-    inline CustomLogSourceAttributes& WithCrawlerArn(const Aws::String& value) { SetCrawlerArn(value); return *this;}
-    inline CustomLogSourceAttributes& WithCrawlerArn(Aws::String&& value) { SetCrawlerArn(std::move(value)); return *this;}
-    inline CustomLogSourceAttributes& WithCrawlerArn(const char* value) { SetCrawlerArn(value); return *this;}
+    template<typename CrawlerArnT = Aws::String>
+    void SetCrawlerArn(CrawlerArnT&& value) { m_crawlerArnHasBeenSet = true; m_crawlerArn = std::forward<CrawlerArnT>(value); }
+    template<typename CrawlerArnT = Aws::String>
+    CustomLogSourceAttributes& WithCrawlerArn(CrawlerArnT&& value) { SetCrawlerArn(std::forward<CrawlerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,24 @@ namespace Model
      * <p>The ARN of the Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
-    inline const Aws::String& GetDatabaseArn() const{ return m_databaseArn; }
+    inline const Aws::String& GetDatabaseArn() const { return m_databaseArn; }
     inline bool DatabaseArnHasBeenSet() const { return m_databaseArnHasBeenSet; }
-    inline void SetDatabaseArn(const Aws::String& value) { m_databaseArnHasBeenSet = true; m_databaseArn = value; }
-    inline void SetDatabaseArn(Aws::String&& value) { m_databaseArnHasBeenSet = true; m_databaseArn = std::move(value); }
-    inline void SetDatabaseArn(const char* value) { m_databaseArnHasBeenSet = true; m_databaseArn.assign(value); }
-    inline CustomLogSourceAttributes& WithDatabaseArn(const Aws::String& value) { SetDatabaseArn(value); return *this;}
-    inline CustomLogSourceAttributes& WithDatabaseArn(Aws::String&& value) { SetDatabaseArn(std::move(value)); return *this;}
-    inline CustomLogSourceAttributes& WithDatabaseArn(const char* value) { SetDatabaseArn(value); return *this;}
+    template<typename DatabaseArnT = Aws::String>
+    void SetDatabaseArn(DatabaseArnT&& value) { m_databaseArnHasBeenSet = true; m_databaseArn = std::forward<DatabaseArnT>(value); }
+    template<typename DatabaseArnT = Aws::String>
+    CustomLogSourceAttributes& WithDatabaseArn(DatabaseArnT&& value) { SetDatabaseArn(std::forward<DatabaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Glue table.</p>
      */
-    inline const Aws::String& GetTableArn() const{ return m_tableArn; }
+    inline const Aws::String& GetTableArn() const { return m_tableArn; }
     inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
-    inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
-    inline void SetTableArn(Aws::String&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::move(value); }
-    inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
-    inline CustomLogSourceAttributes& WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
-    inline CustomLogSourceAttributes& WithTableArn(Aws::String&& value) { SetTableArn(std::move(value)); return *this;}
-    inline CustomLogSourceAttributes& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+    template<typename TableArnT = Aws::String>
+    void SetTableArn(TableArnT&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::forward<TableArnT>(value); }
+    template<typename TableArnT = Aws::String>
+    CustomLogSourceAttributes& WithTableArn(TableArnT&& value) { SetTableArn(std::forward<TableArnT>(value)); return *this;}
     ///@}
   private:
 

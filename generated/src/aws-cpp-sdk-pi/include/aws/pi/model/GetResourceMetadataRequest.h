@@ -22,7 +22,7 @@ namespace Model
   class GetResourceMetadataRequest : public PIRequest
   {
   public:
-    AWS_PI_API GetResourceMetadataRequest();
+    AWS_PI_API GetResourceMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,10 @@ namespace Model
      * <p>The Amazon Web Services service for which Performance Insights returns
      * metrics.</p>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline GetResourceMetadataRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline GetResourceMetadataRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline GetResourceMetadataRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
@@ -55,18 +53,16 @@ namespace Model
      * use a DB instance as a data source, specify its <code>DbiResourceId</code>
      * value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline GetResourceMetadataRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline GetResourceMetadataRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline GetResourceMetadataRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    GetResourceMetadataRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;

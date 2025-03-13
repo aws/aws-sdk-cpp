@@ -18,16 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-ReplicaSpecificationSummary::ReplicaSpecificationSummary() : 
-    m_regionHasBeenSet(false),
-    m_status(TableStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_capacitySpecificationHasBeenSet(false)
-{
-}
-
 ReplicaSpecificationSummary::ReplicaSpecificationSummary(JsonView jsonValue)
-  : ReplicaSpecificationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReplicaSpecificationSummary& ReplicaSpecificationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TableStatusMapper::GetTableStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacitySpecification"))
   {
     m_capacitySpecification = jsonValue.GetObject("capacitySpecification");
-
     m_capacitySpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

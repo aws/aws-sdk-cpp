@@ -38,7 +38,7 @@ namespace Model
   class QueryStatistics
   {
   public:
-    AWS_CLOUDWATCHLOGS_API QueryStatistics();
+    AWS_CLOUDWATCHLOGS_API QueryStatistics() = default;
     AWS_CLOUDWATCHLOGS_API QueryStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API QueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
     /**
      * <p>The number of log events that matched the query string.</p>
      */
-    inline double GetRecordsMatched() const{ return m_recordsMatched; }
+    inline double GetRecordsMatched() const { return m_recordsMatched; }
     inline bool RecordsMatchedHasBeenSet() const { return m_recordsMatchedHasBeenSet; }
     inline void SetRecordsMatched(double value) { m_recordsMatchedHasBeenSet = true; m_recordsMatched = value; }
     inline QueryStatistics& WithRecordsMatched(double value) { SetRecordsMatched(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The total number of log events scanned during the query.</p>
      */
-    inline double GetRecordsScanned() const{ return m_recordsScanned; }
+    inline double GetRecordsScanned() const { return m_recordsScanned; }
     inline bool RecordsScannedHasBeenSet() const { return m_recordsScannedHasBeenSet; }
     inline void SetRecordsScanned(double value) { m_recordsScannedHasBeenSet = true; m_recordsScanned = value; }
     inline QueryStatistics& WithRecordsScanned(double value) { SetRecordsScanned(value); return *this;}
@@ -72,7 +72,7 @@ namespace Model
      * about field indexes, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
      */
-    inline double GetEstimatedRecordsSkipped() const{ return m_estimatedRecordsSkipped; }
+    inline double GetEstimatedRecordsSkipped() const { return m_estimatedRecordsSkipped; }
     inline bool EstimatedRecordsSkippedHasBeenSet() const { return m_estimatedRecordsSkippedHasBeenSet; }
     inline void SetEstimatedRecordsSkipped(double value) { m_estimatedRecordsSkippedHasBeenSet = true; m_estimatedRecordsSkipped = value; }
     inline QueryStatistics& WithEstimatedRecordsSkipped(double value) { SetEstimatedRecordsSkipped(value); return *this;}
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The total number of bytes in the log events scanned during the query.</p>
      */
-    inline double GetBytesScanned() const{ return m_bytesScanned; }
+    inline double GetBytesScanned() const { return m_bytesScanned; }
     inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
     inline void SetBytesScanned(double value) { m_bytesScannedHasBeenSet = true; m_bytesScanned = value; }
     inline QueryStatistics& WithBytesScanned(double value) { SetBytesScanned(value); return *this;}
@@ -96,7 +96,7 @@ namespace Model
      * more information about field indexes, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
      */
-    inline double GetEstimatedBytesSkipped() const{ return m_estimatedBytesSkipped; }
+    inline double GetEstimatedBytesSkipped() const { return m_estimatedBytesSkipped; }
     inline bool EstimatedBytesSkippedHasBeenSet() const { return m_estimatedBytesSkippedHasBeenSet; }
     inline void SetEstimatedBytesSkipped(double value) { m_estimatedBytesSkippedHasBeenSet = true; m_estimatedBytesSkipped = value; }
     inline QueryStatistics& WithEstimatedBytesSkipped(double value) { SetEstimatedBytesSkipped(value); return *this;}
@@ -106,29 +106,29 @@ namespace Model
     /**
      * <p>The number of log groups that were scanned by this query.</p>
      */
-    inline double GetLogGroupsScanned() const{ return m_logGroupsScanned; }
+    inline double GetLogGroupsScanned() const { return m_logGroupsScanned; }
     inline bool LogGroupsScannedHasBeenSet() const { return m_logGroupsScannedHasBeenSet; }
     inline void SetLogGroupsScanned(double value) { m_logGroupsScannedHasBeenSet = true; m_logGroupsScanned = value; }
     inline QueryStatistics& WithLogGroupsScanned(double value) { SetLogGroupsScanned(value); return *this;}
     ///@}
   private:
 
-    double m_recordsMatched;
+    double m_recordsMatched{0.0};
     bool m_recordsMatchedHasBeenSet = false;
 
-    double m_recordsScanned;
+    double m_recordsScanned{0.0};
     bool m_recordsScannedHasBeenSet = false;
 
-    double m_estimatedRecordsSkipped;
+    double m_estimatedRecordsSkipped{0.0};
     bool m_estimatedRecordsSkippedHasBeenSet = false;
 
-    double m_bytesScanned;
+    double m_bytesScanned{0.0};
     bool m_bytesScannedHasBeenSet = false;
 
-    double m_estimatedBytesSkipped;
+    double m_estimatedBytesSkipped{0.0};
     bool m_estimatedBytesSkippedHasBeenSet = false;
 
-    double m_logGroupsScanned;
+    double m_logGroupsScanned{0.0};
     bool m_logGroupsScannedHasBeenSet = false;
   };
 

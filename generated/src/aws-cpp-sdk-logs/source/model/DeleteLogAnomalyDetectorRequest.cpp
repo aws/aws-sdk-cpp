@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLogAnomalyDetectorRequest::DeleteLogAnomalyDetectorRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLogAnomalyDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

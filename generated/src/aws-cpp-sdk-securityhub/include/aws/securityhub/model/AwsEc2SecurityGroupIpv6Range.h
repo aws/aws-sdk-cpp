@@ -31,7 +31,7 @@ namespace Model
   class AwsEc2SecurityGroupIpv6Range
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range() = default;
     AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2SecurityGroupIpv6Range& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * group, but not both. To specify a single IPv6 address, use the /128 prefix
      * length.</p>
      */
-    inline const Aws::String& GetCidrIpv6() const{ return m_cidrIpv6; }
+    inline const Aws::String& GetCidrIpv6() const { return m_cidrIpv6; }
     inline bool CidrIpv6HasBeenSet() const { return m_cidrIpv6HasBeenSet; }
-    inline void SetCidrIpv6(const Aws::String& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = value; }
-    inline void SetCidrIpv6(Aws::String&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::move(value); }
-    inline void SetCidrIpv6(const char* value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6.assign(value); }
-    inline AwsEc2SecurityGroupIpv6Range& WithCidrIpv6(const Aws::String& value) { SetCidrIpv6(value); return *this;}
-    inline AwsEc2SecurityGroupIpv6Range& WithCidrIpv6(Aws::String&& value) { SetCidrIpv6(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupIpv6Range& WithCidrIpv6(const char* value) { SetCidrIpv6(value); return *this;}
+    template<typename CidrIpv6T = Aws::String>
+    void SetCidrIpv6(CidrIpv6T&& value) { m_cidrIpv6HasBeenSet = true; m_cidrIpv6 = std::forward<CidrIpv6T>(value); }
+    template<typename CidrIpv6T = Aws::String>
+    AwsEc2SecurityGroupIpv6Range& WithCidrIpv6(CidrIpv6T&& value) { SetCidrIpv6(std::forward<CidrIpv6T>(value)); return *this;}
     ///@}
   private:
 

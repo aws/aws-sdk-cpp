@@ -23,7 +23,7 @@ namespace Model
   class UpdateMLTransformRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateMLTransformRequest();
+    AWS_GLUE_API UpdateMLTransformRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>A unique identifier that was generated when the transform was created.</p>
      */
-    inline const Aws::String& GetTransformId() const{ return m_transformId; }
+    inline const Aws::String& GetTransformId() const { return m_transformId; }
     inline bool TransformIdHasBeenSet() const { return m_transformIdHasBeenSet; }
-    inline void SetTransformId(const Aws::String& value) { m_transformIdHasBeenSet = true; m_transformId = value; }
-    inline void SetTransformId(Aws::String&& value) { m_transformIdHasBeenSet = true; m_transformId = std::move(value); }
-    inline void SetTransformId(const char* value) { m_transformIdHasBeenSet = true; m_transformId.assign(value); }
-    inline UpdateMLTransformRequest& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-    inline UpdateMLTransformRequest& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-    inline UpdateMLTransformRequest& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    template<typename TransformIdT = Aws::String>
+    void SetTransformId(TransformIdT&& value) { m_transformIdHasBeenSet = true; m_transformId = std::forward<TransformIdT>(value); }
+    template<typename TransformIdT = Aws::String>
+    UpdateMLTransformRequest& WithTransformId(TransformIdT&& value) { SetTransformId(std::forward<TransformIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique name that you gave the transform when you created it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateMLTransformRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateMLTransformRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateMLTransformRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateMLTransformRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the transform. The default is an empty string.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateMLTransformRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateMLTransformRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateMLTransformRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateMLTransformRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +77,12 @@ namespace Model
      * <p>The configuration parameters that are specific to the transform type
      * (algorithm) used. Conditionally dependent on the transform type.</p>
      */
-    inline const TransformParameters& GetParameters() const{ return m_parameters; }
+    inline const TransformParameters& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const TransformParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(TransformParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline UpdateMLTransformRequest& WithParameters(const TransformParameters& value) { SetParameters(value); return *this;}
-    inline UpdateMLTransformRequest& WithParameters(TransformParameters&& value) { SetParameters(std::move(value)); return *this;}
+    template<typename ParametersT = TransformParameters>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = TransformParameters>
+    UpdateMLTransformRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
      * permissions.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline UpdateMLTransformRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline UpdateMLTransformRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline UpdateMLTransformRequest& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    UpdateMLTransformRequest& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue
      * Versions</a> in the developer guide.</p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
-    inline UpdateMLTransformRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline UpdateMLTransformRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline UpdateMLTransformRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    UpdateMLTransformRequest& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,7 +126,7 @@ namespace Model
      * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
      * and becomes read-only.</p>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline UpdateMLTransformRequest& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
@@ -153,12 +143,10 @@ namespace Model
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
      * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
      */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
+    inline WorkerType GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-    inline UpdateMLTransformRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-    inline UpdateMLTransformRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+    inline void SetWorkerType(WorkerType value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline UpdateMLTransformRequest& WithWorkerType(WorkerType value) { SetWorkerType(value); return *this;}
     ///@}
 
     ///@{
@@ -166,7 +154,7 @@ namespace Model
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
      * when this task runs.</p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline UpdateMLTransformRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
@@ -179,7 +167,7 @@ namespace Model
      * terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes
      * (48 hours).</p>
      */
-    inline int GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const { return m_timeout; }
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
     inline UpdateMLTransformRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
@@ -190,7 +178,7 @@ namespace Model
      * <p>The maximum number of times to retry a task for this transform after a task
      * run fails.</p>
      */
-    inline int GetMaxRetries() const{ return m_maxRetries; }
+    inline int GetMaxRetries() const { return m_maxRetries; }
     inline bool MaxRetriesHasBeenSet() const { return m_maxRetriesHasBeenSet; }
     inline void SetMaxRetries(int value) { m_maxRetriesHasBeenSet = true; m_maxRetries = value; }
     inline UpdateMLTransformRequest& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
@@ -215,19 +203,19 @@ namespace Model
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
 
-    WorkerType m_workerType;
+    WorkerType m_workerType{WorkerType::NOT_SET};
     bool m_workerTypeHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
     bool m_numberOfWorkersHasBeenSet = false;
 
-    int m_timeout;
+    int m_timeout{0};
     bool m_timeoutHasBeenSet = false;
 
-    int m_maxRetries;
+    int m_maxRetries{0};
     bool m_maxRetriesHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartOnDemandReplicationRunRequest::StartOnDemandReplicationRunRequest() : 
-    m_replicationJobIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String StartOnDemandReplicationRunRequest::SerializePayload() const
 {
   JsonValue payload;

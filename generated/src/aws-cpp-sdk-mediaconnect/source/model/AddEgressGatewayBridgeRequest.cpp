@@ -18,14 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-AddEgressGatewayBridgeRequest::AddEgressGatewayBridgeRequest() : 
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false)
-{
-}
-
 AddEgressGatewayBridgeRequest::AddEgressGatewayBridgeRequest(JsonView jsonValue)
-  : AddEgressGatewayBridgeRequest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AddEgressGatewayBridgeRequest& AddEgressGatewayBridgeRequest::operator =(JsonVie
   if(jsonValue.ValueExists("maxBitrate"))
   {
     m_maxBitrate = jsonValue.GetInteger("maxBitrate");
-
     m_maxBitrateHasBeenSet = true;
   }
-
   return *this;
 }
 

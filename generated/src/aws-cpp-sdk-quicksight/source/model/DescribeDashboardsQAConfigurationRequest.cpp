@@ -12,11 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDashboardsQAConfigurationRequest::DescribeDashboardsQAConfigurationRequest() : 
-    m_awsAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDashboardsQAConfigurationRequest::SerializePayload() const
 {
   return {};

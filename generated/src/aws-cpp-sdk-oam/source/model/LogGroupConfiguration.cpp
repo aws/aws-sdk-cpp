@@ -18,13 +18,7 @@ namespace OAM
 namespace Model
 {
 
-LogGroupConfiguration::LogGroupConfiguration() : 
-    m_filterHasBeenSet(false)
-{
-}
-
 LogGroupConfiguration::LogGroupConfiguration(JsonView jsonValue)
-  : LogGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LogGroupConfiguration& LogGroupConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Filter"))
   {
     m_filter = jsonValue.GetString("Filter");
-
     m_filterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceLevelTestResults::UtteranceLevelTestResults() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 UtteranceLevelTestResults::UtteranceLevelTestResults(JsonView jsonValue)
-  : UtteranceLevelTestResults()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UtteranceLevelTestResults& UtteranceLevelTestResults::operator =(JsonView jsonVa
     }
     m_itemsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails() : 
-    m_customResponseHasBeenSet(false)
-{
-}
-
 AwsWafv2ActionBlockDetails::AwsWafv2ActionBlockDetails(JsonView jsonValue)
-  : AwsWafv2ActionBlockDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsWafv2ActionBlockDetails& AwsWafv2ActionBlockDetails::operator =(JsonView json
   if(jsonValue.ValueExists("CustomResponse"))
   {
     m_customResponse = jsonValue.GetObject("CustomResponse");
-
     m_customResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

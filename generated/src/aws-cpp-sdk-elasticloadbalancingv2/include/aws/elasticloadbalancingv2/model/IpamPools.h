@@ -33,7 +33,7 @@ namespace Model
   class IpamPools
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API IpamPools();
+    AWS_ELASTICLOADBALANCINGV2_API IpamPools() = default;
     AWS_ELASTICLOADBALANCINGV2_API IpamPools(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API IpamPools& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID of the IPv4 IPAM pool.</p>
      */
-    inline const Aws::String& GetIpv4IpamPoolId() const{ return m_ipv4IpamPoolId; }
+    inline const Aws::String& GetIpv4IpamPoolId() const { return m_ipv4IpamPoolId; }
     inline bool Ipv4IpamPoolIdHasBeenSet() const { return m_ipv4IpamPoolIdHasBeenSet; }
-    inline void SetIpv4IpamPoolId(const Aws::String& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = value; }
-    inline void SetIpv4IpamPoolId(Aws::String&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::move(value); }
-    inline void SetIpv4IpamPoolId(const char* value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId.assign(value); }
-    inline IpamPools& WithIpv4IpamPoolId(const Aws::String& value) { SetIpv4IpamPoolId(value); return *this;}
-    inline IpamPools& WithIpv4IpamPoolId(Aws::String&& value) { SetIpv4IpamPoolId(std::move(value)); return *this;}
-    inline IpamPools& WithIpv4IpamPoolId(const char* value) { SetIpv4IpamPoolId(value); return *this;}
+    template<typename Ipv4IpamPoolIdT = Aws::String>
+    void SetIpv4IpamPoolId(Ipv4IpamPoolIdT&& value) { m_ipv4IpamPoolIdHasBeenSet = true; m_ipv4IpamPoolId = std::forward<Ipv4IpamPoolIdT>(value); }
+    template<typename Ipv4IpamPoolIdT = Aws::String>
+    IpamPools& WithIpv4IpamPoolId(Ipv4IpamPoolIdT&& value) { SetIpv4IpamPoolId(std::forward<Ipv4IpamPoolIdT>(value)); return *this;}
     ///@}
   private:
 

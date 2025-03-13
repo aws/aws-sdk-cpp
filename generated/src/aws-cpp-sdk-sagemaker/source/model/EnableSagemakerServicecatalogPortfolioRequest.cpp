@@ -12,10 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableSagemakerServicecatalogPortfolioRequest::EnableSagemakerServicecatalogPortfolioRequest()
-{
-}
-
 Aws::String EnableSagemakerServicecatalogPortfolioRequest::SerializePayload() const
 {
   return "{}";

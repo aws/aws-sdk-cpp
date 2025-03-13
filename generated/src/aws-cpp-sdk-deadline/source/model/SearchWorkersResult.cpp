@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchWorkersResult::SearchWorkersResult() : 
-    m_nextItemOffset(0),
-    m_totalResults(0)
-{
-}
-
 SearchWorkersResult::SearchWorkersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchWorkersResult()
 {
   *this = result;
 }
@@ -39,26 +32,25 @@ SearchWorkersResult& SearchWorkersResult::operator =(const Aws::AmazonWebService
     {
       m_workers.push_back(workersJsonList[workersIndex].AsObject());
     }
+    m_workersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextItemOffset"))
   {
     m_nextItemOffset = jsonValue.GetInteger("nextItemOffset");
-
+    m_nextItemOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalResults"))
   {
     m_totalResults = jsonValue.GetInteger("totalResults");
-
+    m_totalResultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ArcAxisConfiguration::ArcAxisConfiguration() : 
-    m_rangeHasBeenSet(false),
-    m_reserveRange(0),
-    m_reserveRangeHasBeenSet(false)
-{
-}
-
 ArcAxisConfiguration::ArcAxisConfiguration(JsonView jsonValue)
-  : ArcAxisConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ArcAxisConfiguration& ArcAxisConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReserveRange"))
   {
     m_reserveRange = jsonValue.GetInteger("ReserveRange");
-
     m_reserveRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

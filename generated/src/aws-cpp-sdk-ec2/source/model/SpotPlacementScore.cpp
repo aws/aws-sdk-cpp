@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotPlacementScore::SpotPlacementScore() : 
-    m_regionHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 SpotPlacementScore::SpotPlacementScore(const XmlNode& xmlNode)
-  : SpotPlacementScore()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ SpotPlacementScore& SpotPlacementScore::operator =(const XmlNode& xmlNode)
     {
       m_region = Aws::Utils::Xml::DecodeEscapedXmlText(regionNode.GetText());
       m_regionHasBeenSet = true;
+       m_regionHasBeenSet = true;
     }
     XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
     if(!availabilityZoneIdNode.IsNull())
     {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
+       m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode scoreNode = resultNode.FirstChild("score");
     if(!scoreNode.IsNull())
     {
       m_score = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scoreNode.GetText()).c_str()).c_str());
       m_scoreHasBeenSet = true;
+       m_scoreHasBeenSet = true;
     }
   }
 

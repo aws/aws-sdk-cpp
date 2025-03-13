@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUserRequest::GetUserRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String GetUserRequest::SerializePayload() const
 {
   return {};

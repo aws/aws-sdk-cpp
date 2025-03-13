@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableAddOnRequest::EnableAddOnRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_addOnRequestHasBeenSet(false)
-{
-}
-
 Aws::String EnableAddOnRequest::SerializePayload() const
 {
   JsonValue payload;

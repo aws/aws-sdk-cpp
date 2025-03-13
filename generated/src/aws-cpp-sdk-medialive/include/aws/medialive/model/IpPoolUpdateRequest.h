@@ -31,7 +31,7 @@ namespace Model
   class IpPoolUpdateRequest
   {
   public:
-    AWS_MEDIALIVE_API IpPoolUpdateRequest();
+    AWS_MEDIALIVE_API IpPoolUpdateRequest() = default;
     AWS_MEDIALIVE_API IpPoolUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API IpPoolUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * A CIDR block of IP addresses to reserve for MediaLive Anywhere.
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline IpPoolUpdateRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline IpPoolUpdateRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline IpPoolUpdateRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    IpPoolUpdateRequest& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 

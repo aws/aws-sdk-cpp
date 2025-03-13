@@ -28,7 +28,7 @@ namespace Model
   class CreateFolderResult
   {
   public:
-    AWS_WORKDOCS_API CreateFolderResult();
+    AWS_WORKDOCS_API CreateFolderResult() = default;
     AWS_WORKDOCS_API CreateFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKDOCS_API CreateFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The metadata of the folder.</p>
      */
-    inline const FolderMetadata& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const FolderMetadata& value) { m_metadata = value; }
-    inline void SetMetadata(FolderMetadata&& value) { m_metadata = std::move(value); }
-    inline CreateFolderResult& WithMetadata(const FolderMetadata& value) { SetMetadata(value); return *this;}
-    inline CreateFolderResult& WithMetadata(FolderMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const FolderMetadata& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = FolderMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = FolderMetadata>
+    CreateFolderResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFolderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FolderMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

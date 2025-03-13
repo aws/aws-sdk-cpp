@@ -18,18 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-View::View() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 View::View(JsonView jsonValue)
-  : View()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ View& View::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetObject("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

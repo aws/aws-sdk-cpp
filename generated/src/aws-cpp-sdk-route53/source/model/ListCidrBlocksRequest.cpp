@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCidrBlocksRequest::ListCidrBlocksRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_locationNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResultsHasBeenSet(false)
-{
-}
 
 Aws::String ListCidrBlocksRequest::SerializePayload() const
 {

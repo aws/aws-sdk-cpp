@@ -37,7 +37,7 @@ namespace Model
   class LaunchTemplateInstanceMetadataOptionsRequest
   {
   public:
-    AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest();
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest() = default;
     AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateInstanceMetadataOptionsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -60,12 +60,10 @@ namespace Model
      * Image (AMI) for your instance is <code>v2.0</code>, the default is
      * <code>required</code>.</p>
      */
-    inline const LaunchTemplateHttpTokensState& GetHttpTokens() const{ return m_httpTokens; }
+    inline LaunchTemplateHttpTokensState GetHttpTokens() const { return m_httpTokens; }
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
-    inline void SetHttpTokens(const LaunchTemplateHttpTokensState& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
-    inline void SetHttpTokens(LaunchTemplateHttpTokensState&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpTokens(const LaunchTemplateHttpTokensState& value) { SetHttpTokens(value); return *this;}
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpTokens(LaunchTemplateHttpTokensState&& value) { SetHttpTokens(std::move(value)); return *this;}
+    inline void SetHttpTokens(LaunchTemplateHttpTokensState value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpTokens(LaunchTemplateHttpTokensState value) { SetHttpTokens(value); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * larger the number, the further instance metadata requests can travel.</p>
      * <p>Default: <code>1</code> </p> <p>Possible values: Integers from 1 to 64</p>
      */
-    inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
+    inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
     inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
@@ -87,12 +85,10 @@ namespace Model
      *  <p>If you specify a value of <code>disabled</code>, you will not be able
      * to access your instance metadata. </p> 
      */
-    inline const LaunchTemplateInstanceMetadataEndpointState& GetHttpEndpoint() const{ return m_httpEndpoint; }
+    inline LaunchTemplateInstanceMetadataEndpointState GetHttpEndpoint() const { return m_httpEndpoint; }
     inline bool HttpEndpointHasBeenSet() const { return m_httpEndpointHasBeenSet; }
-    inline void SetHttpEndpoint(const LaunchTemplateInstanceMetadataEndpointState& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
-    inline void SetHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = std::move(value); }
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(const LaunchTemplateInstanceMetadataEndpointState& value) { SetHttpEndpoint(value); return *this;}
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState&& value) { SetHttpEndpoint(std::move(value)); return *this;}
+    inline void SetHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState value) { m_httpEndpointHasBeenSet = true; m_httpEndpoint = value; }
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpEndpoint(LaunchTemplateInstanceMetadataEndpointState value) { SetHttpEndpoint(value); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +96,10 @@ namespace Model
      * <p>Enables or disables the IPv6 endpoint for the instance metadata service.</p>
      * <p>Default: <code>disabled</code> </p>
      */
-    inline const LaunchTemplateInstanceMetadataProtocolIpv6& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
+    inline LaunchTemplateInstanceMetadataProtocolIpv6 GetHttpProtocolIpv6() const { return m_httpProtocolIpv6; }
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
-    inline void SetHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
-    inline void SetHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(const LaunchTemplateInstanceMetadataProtocolIpv6& value) { SetHttpProtocolIpv6(value); return *this;}
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
+    inline void SetHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6 value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithHttpProtocolIpv6(LaunchTemplateInstanceMetadataProtocolIpv6 value) { SetHttpProtocolIpv6(value); return *this;}
     ///@}
 
     ///@{
@@ -117,28 +111,26 @@ namespace Model
      * tags for your EC2 instances using instance metadata</a>.</p> <p>Default:
      * <code>disabled</code> </p>
      */
-    inline const LaunchTemplateInstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }
+    inline LaunchTemplateInstanceMetadataTagsState GetInstanceMetadataTags() const { return m_instanceMetadataTags; }
     inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }
-    inline void SetInstanceMetadataTags(const LaunchTemplateInstanceMetadataTagsState& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
-    inline void SetInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState&& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = std::move(value); }
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(const LaunchTemplateInstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
-    inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
+    inline void SetInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
+    inline LaunchTemplateInstanceMetadataOptionsRequest& WithInstanceMetadataTags(LaunchTemplateInstanceMetadataTagsState value) { SetInstanceMetadataTags(value); return *this;}
     ///@}
   private:
 
-    LaunchTemplateHttpTokensState m_httpTokens;
+    LaunchTemplateHttpTokensState m_httpTokens{LaunchTemplateHttpTokensState::NOT_SET};
     bool m_httpTokensHasBeenSet = false;
 
-    int m_httpPutResponseHopLimit;
+    int m_httpPutResponseHopLimit{0};
     bool m_httpPutResponseHopLimitHasBeenSet = false;
 
-    LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint;
+    LaunchTemplateInstanceMetadataEndpointState m_httpEndpoint{LaunchTemplateInstanceMetadataEndpointState::NOT_SET};
     bool m_httpEndpointHasBeenSet = false;
 
-    LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6;
+    LaunchTemplateInstanceMetadataProtocolIpv6 m_httpProtocolIpv6{LaunchTemplateInstanceMetadataProtocolIpv6::NOT_SET};
     bool m_httpProtocolIpv6HasBeenSet = false;
 
-    LaunchTemplateInstanceMetadataTagsState m_instanceMetadataTags;
+    LaunchTemplateInstanceMetadataTagsState m_instanceMetadataTags{LaunchTemplateInstanceMetadataTagsState::NOT_SET};
     bool m_instanceMetadataTagsHasBeenSet = false;
   };
 

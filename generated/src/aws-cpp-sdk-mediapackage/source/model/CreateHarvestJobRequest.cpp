@@ -12,15 +12,6 @@ using namespace Aws::MediaPackage::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHarvestJobRequest::CreateHarvestJobRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_originEndpointIdHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String CreateHarvestJobRequest::SerializePayload() const
 {
   JsonValue payload;

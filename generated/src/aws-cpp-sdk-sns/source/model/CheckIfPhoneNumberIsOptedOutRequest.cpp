@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-CheckIfPhoneNumberIsOptedOutRequest::CheckIfPhoneNumberIsOptedOutRequest() : 
-    m_phoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String CheckIfPhoneNumberIsOptedOutRequest::SerializePayload() const
 {
   Aws::StringStream ss;

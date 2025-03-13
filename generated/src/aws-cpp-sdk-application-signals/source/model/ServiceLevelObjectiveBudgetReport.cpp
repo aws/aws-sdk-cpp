@@ -18,31 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_evaluationType(EvaluationType::NOT_SET),
-    m_evaluationTypeHasBeenSet(false),
-    m_budgetStatus(ServiceLevelObjectiveBudgetStatus::NOT_SET),
-    m_budgetStatusHasBeenSet(false),
-    m_attainment(0.0),
-    m_attainmentHasBeenSet(false),
-    m_totalBudgetSeconds(0),
-    m_totalBudgetSecondsHasBeenSet(false),
-    m_budgetSecondsRemaining(0),
-    m_budgetSecondsRemainingHasBeenSet(false),
-    m_totalBudgetRequests(0),
-    m_totalBudgetRequestsHasBeenSet(false),
-    m_budgetRequestsRemaining(0),
-    m_budgetRequestsRemainingHasBeenSet(false),
-    m_sliHasBeenSet(false),
-    m_requestBasedSliHasBeenSet(false),
-    m_goalHasBeenSet(false)
-{
-}
-
 ServiceLevelObjectiveBudgetReport::ServiceLevelObjectiveBudgetReport(JsonView jsonValue)
-  : ServiceLevelObjectiveBudgetReport()
 {
   *this = jsonValue;
 }
@@ -52,87 +28,63 @@ ServiceLevelObjectiveBudgetReport& ServiceLevelObjectiveBudgetReport::operator =
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationType"))
   {
     m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
-
     m_evaluationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetStatus"))
   {
     m_budgetStatus = ServiceLevelObjectiveBudgetStatusMapper::GetServiceLevelObjectiveBudgetStatusForName(jsonValue.GetString("BudgetStatus"));
-
     m_budgetStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attainment"))
   {
     m_attainment = jsonValue.GetDouble("Attainment");
-
     m_attainmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalBudgetSeconds"))
   {
     m_totalBudgetSeconds = jsonValue.GetInteger("TotalBudgetSeconds");
-
     m_totalBudgetSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetSecondsRemaining"))
   {
     m_budgetSecondsRemaining = jsonValue.GetInteger("BudgetSecondsRemaining");
-
     m_budgetSecondsRemainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalBudgetRequests"))
   {
     m_totalBudgetRequests = jsonValue.GetInteger("TotalBudgetRequests");
-
     m_totalBudgetRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BudgetRequestsRemaining"))
   {
     m_budgetRequestsRemaining = jsonValue.GetInteger("BudgetRequestsRemaining");
-
     m_budgetRequestsRemainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sli"))
   {
     m_sli = jsonValue.GetObject("Sli");
-
     m_sliHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestBasedSli"))
   {
     m_requestBasedSli = jsonValue.GetObject("RequestBasedSli");
-
     m_requestBasedSliHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Goal"))
   {
     m_goal = jsonValue.GetObject("Goal");
-
     m_goalHasBeenSet = true;
   }
-
   return *this;
 }
 

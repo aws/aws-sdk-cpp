@@ -25,7 +25,7 @@ namespace Model
   class ListDataSetsRequest : public DataExchangeRequest
   {
   public:
-    AWS_DATAEXCHANGE_API ListDataSetsRequest();
+    AWS_DATAEXCHANGE_API ListDataSetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The maximum number of results returned by a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDataSetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDataSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDataSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDataSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDataSetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,18 +66,16 @@ namespace Model
      * <p>A property that defines the data set as OWNED by the account (for providers)
      * or ENTITLED to the account (for subscribers).</p>
      */
-    inline const Aws::String& GetOrigin() const{ return m_origin; }
+    inline const Aws::String& GetOrigin() const { return m_origin; }
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-    inline void SetOrigin(const Aws::String& value) { m_originHasBeenSet = true; m_origin = value; }
-    inline void SetOrigin(Aws::String&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-    inline void SetOrigin(const char* value) { m_originHasBeenSet = true; m_origin.assign(value); }
-    inline ListDataSetsRequest& WithOrigin(const Aws::String& value) { SetOrigin(value); return *this;}
-    inline ListDataSetsRequest& WithOrigin(Aws::String&& value) { SetOrigin(std::move(value)); return *this;}
-    inline ListDataSetsRequest& WithOrigin(const char* value) { SetOrigin(value); return *this;}
+    template<typename OriginT = Aws::String>
+    void SetOrigin(OriginT&& value) { m_originHasBeenSet = true; m_origin = std::forward<OriginT>(value); }
+    template<typename OriginT = Aws::String>
+    ListDataSetsRequest& WithOrigin(OriginT&& value) { SetOrigin(std::forward<OriginT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

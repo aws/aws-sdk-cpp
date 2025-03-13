@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ChoiceAnswerSummary::ChoiceAnswerSummary() : 
-    m_choiceIdHasBeenSet(false),
-    m_status(ChoiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reason(ChoiceReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ChoiceAnswerSummary::ChoiceAnswerSummary(JsonView jsonValue)
-  : ChoiceAnswerSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ChoiceAnswerSummary& ChoiceAnswerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChoiceId"))
   {
     m_choiceId = jsonValue.GetString("ChoiceId");
-
     m_choiceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChoiceStatusMapper::GetChoiceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ChoiceReasonMapper::GetChoiceReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

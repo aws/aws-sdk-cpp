@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSettingsResult::DescribeSettingsResult()
-{
-}
-
 DescribeSettingsResult::DescribeSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeSettingsResult& DescribeSettingsResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
+    m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SettingEntries"))
   {
     Aws::Utils::Array<JsonView> settingEntriesJsonList = jsonValue.GetArray("SettingEntries");
@@ -42,20 +37,20 @@ DescribeSettingsResult& DescribeSettingsResult::operator =(const Aws::AmazonWebS
     {
       m_settingEntries.push_back(settingEntriesJsonList[settingEntriesIndex].AsObject());
     }
+    m_settingEntriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

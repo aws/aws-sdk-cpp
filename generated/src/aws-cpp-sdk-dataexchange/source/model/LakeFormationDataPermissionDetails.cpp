@@ -18,13 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-LakeFormationDataPermissionDetails::LakeFormationDataPermissionDetails() : 
-    m_lFTagPolicyHasBeenSet(false)
-{
-}
-
 LakeFormationDataPermissionDetails::LakeFormationDataPermissionDetails(JsonView jsonValue)
-  : LakeFormationDataPermissionDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LakeFormationDataPermissionDetails& LakeFormationDataPermissionDetails::operator
   if(jsonValue.ValueExists("LFTagPolicy"))
   {
     m_lFTagPolicy = jsonValue.GetObject("LFTagPolicy");
-
     m_lFTagPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

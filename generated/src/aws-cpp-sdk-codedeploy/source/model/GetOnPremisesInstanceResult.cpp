@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOnPremisesInstanceResult::GetOnPremisesInstanceResult()
-{
-}
-
 GetOnPremisesInstanceResult::GetOnPremisesInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetOnPremisesInstanceResult& GetOnPremisesInstanceResult::operator =(const Aws::
   if(jsonValue.ValueExists("instanceInfo"))
   {
     m_instanceInfo = jsonValue.GetObject("instanceInfo");
-
+    m_instanceInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

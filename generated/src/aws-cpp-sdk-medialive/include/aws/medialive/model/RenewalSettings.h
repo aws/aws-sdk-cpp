@@ -31,7 +31,7 @@ namespace Model
   class RenewalSettings
   {
   public:
-    AWS_MEDIALIVE_API RenewalSettings();
+    AWS_MEDIALIVE_API RenewalSettings() = default;
     AWS_MEDIALIVE_API RenewalSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API RenewalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,29 +41,27 @@ namespace Model
     /**
      * Automatic renewal status for the reservation
      */
-    inline const ReservationAutomaticRenewal& GetAutomaticRenewal() const{ return m_automaticRenewal; }
+    inline ReservationAutomaticRenewal GetAutomaticRenewal() const { return m_automaticRenewal; }
     inline bool AutomaticRenewalHasBeenSet() const { return m_automaticRenewalHasBeenSet; }
-    inline void SetAutomaticRenewal(const ReservationAutomaticRenewal& value) { m_automaticRenewalHasBeenSet = true; m_automaticRenewal = value; }
-    inline void SetAutomaticRenewal(ReservationAutomaticRenewal&& value) { m_automaticRenewalHasBeenSet = true; m_automaticRenewal = std::move(value); }
-    inline RenewalSettings& WithAutomaticRenewal(const ReservationAutomaticRenewal& value) { SetAutomaticRenewal(value); return *this;}
-    inline RenewalSettings& WithAutomaticRenewal(ReservationAutomaticRenewal&& value) { SetAutomaticRenewal(std::move(value)); return *this;}
+    inline void SetAutomaticRenewal(ReservationAutomaticRenewal value) { m_automaticRenewalHasBeenSet = true; m_automaticRenewal = value; }
+    inline RenewalSettings& WithAutomaticRenewal(ReservationAutomaticRenewal value) { SetAutomaticRenewal(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Count for the reservation renewal
      */
-    inline int GetRenewalCount() const{ return m_renewalCount; }
+    inline int GetRenewalCount() const { return m_renewalCount; }
     inline bool RenewalCountHasBeenSet() const { return m_renewalCountHasBeenSet; }
     inline void SetRenewalCount(int value) { m_renewalCountHasBeenSet = true; m_renewalCount = value; }
     inline RenewalSettings& WithRenewalCount(int value) { SetRenewalCount(value); return *this;}
     ///@}
   private:
 
-    ReservationAutomaticRenewal m_automaticRenewal;
+    ReservationAutomaticRenewal m_automaticRenewal{ReservationAutomaticRenewal::NOT_SET};
     bool m_automaticRenewalHasBeenSet = false;
 
-    int m_renewalCount;
+    int m_renewalCount{0};
     bool m_renewalCountHasBeenSet = false;
   };
 

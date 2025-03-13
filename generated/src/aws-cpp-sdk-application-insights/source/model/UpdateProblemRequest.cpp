@@ -12,15 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProblemRequest::UpdateProblemRequest() : 
-    m_problemIdHasBeenSet(false),
-    m_updateStatus(UpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProblemRequest::SerializePayload() const
 {
   JsonValue payload;

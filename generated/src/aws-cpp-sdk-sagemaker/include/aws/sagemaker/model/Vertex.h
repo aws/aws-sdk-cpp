@@ -33,7 +33,7 @@ namespace Model
   class Vertex
   {
   public:
-    AWS_SAGEMAKER_API Vertex();
+    AWS_SAGEMAKER_API Vertex() = default;
     AWS_SAGEMAKER_API Vertex(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Vertex& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the lineage entity resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Vertex& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Vertex& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Vertex& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Vertex& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,26 +56,22 @@ namespace Model
      * <p>The type of the lineage entity resource. For example: <code>DataSet</code>,
      * <code>Model</code>, <code>Endpoint</code>, etc...</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Vertex& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Vertex& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Vertex& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Vertex& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource of the lineage entity.</p>
      */
-    inline const LineageType& GetLineageType() const{ return m_lineageType; }
+    inline LineageType GetLineageType() const { return m_lineageType; }
     inline bool LineageTypeHasBeenSet() const { return m_lineageTypeHasBeenSet; }
-    inline void SetLineageType(const LineageType& value) { m_lineageTypeHasBeenSet = true; m_lineageType = value; }
-    inline void SetLineageType(LineageType&& value) { m_lineageTypeHasBeenSet = true; m_lineageType = std::move(value); }
-    inline Vertex& WithLineageType(const LineageType& value) { SetLineageType(value); return *this;}
-    inline Vertex& WithLineageType(LineageType&& value) { SetLineageType(std::move(value)); return *this;}
+    inline void SetLineageType(LineageType value) { m_lineageTypeHasBeenSet = true; m_lineageType = value; }
+    inline Vertex& WithLineageType(LineageType value) { SetLineageType(value); return *this;}
     ///@}
   private:
 
@@ -87,7 +81,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    LineageType m_lineageType;
+    LineageType m_lineageType{LineageType::NOT_SET};
     bool m_lineageTypeHasBeenSet = false;
   };
 

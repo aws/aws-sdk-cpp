@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ConversationLevelTestResultItem::ConversationLevelTestResultItem() : 
-    m_conversationIdHasBeenSet(false),
-    m_endToEndResult(TestResultMatchStatus::NOT_SET),
-    m_endToEndResultHasBeenSet(false),
-    m_speechTranscriptionResult(TestResultMatchStatus::NOT_SET),
-    m_speechTranscriptionResultHasBeenSet(false),
-    m_intentClassificationResultsHasBeenSet(false),
-    m_slotResolutionResultsHasBeenSet(false)
-{
-}
-
 ConversationLevelTestResultItem::ConversationLevelTestResultItem(JsonView jsonValue)
-  : ConversationLevelTestResultItem()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ ConversationLevelTestResultItem& ConversationLevelTestResultItem::operator =(Jso
   if(jsonValue.ValueExists("conversationId"))
   {
     m_conversationId = jsonValue.GetString("conversationId");
-
     m_conversationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endToEndResult"))
   {
     m_endToEndResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("endToEndResult"));
-
     m_endToEndResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechTranscriptionResult"))
   {
     m_speechTranscriptionResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("speechTranscriptionResult"));
-
     m_speechTranscriptionResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentClassificationResults"))
   {
     Aws::Utils::Array<JsonView> intentClassificationResultsJsonList = jsonValue.GetArray("intentClassificationResults");
@@ -67,7 +49,6 @@ ConversationLevelTestResultItem& ConversationLevelTestResultItem::operator =(Jso
     }
     m_intentClassificationResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotResolutionResults"))
   {
     Aws::Utils::Array<JsonView> slotResolutionResultsJsonList = jsonValue.GetArray("slotResolutionResults");
@@ -77,7 +58,6 @@ ConversationLevelTestResultItem& ConversationLevelTestResultItem::operator =(Jso
     }
     m_slotResolutionResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

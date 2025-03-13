@@ -18,16 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-DynamicCardVerificationValue::DynamicCardVerificationValue() : 
-    m_panSequenceNumberHasBeenSet(false),
-    m_cardExpiryDateHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false),
-    m_applicationTransactionCounterHasBeenSet(false)
-{
-}
-
 DynamicCardVerificationValue::DynamicCardVerificationValue(JsonView jsonValue)
-  : DynamicCardVerificationValue()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DynamicCardVerificationValue& DynamicCardVerificationValue::operator =(JsonView 
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CardExpiryDate"))
   {
     m_cardExpiryDate = jsonValue.GetString("CardExpiryDate");
-
     m_cardExpiryDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTransactionCounter"))
   {
     m_applicationTransactionCounter = jsonValue.GetString("ApplicationTransactionCounter");
-
     m_applicationTransactionCounterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class CalculateRouteResult
   {
   public:
-    AWS_LOCATIONSERVICE_API CalculateRouteResult();
+    AWS_LOCATIONSERVICE_API CalculateRouteResult() = default;
     AWS_LOCATIONSERVICE_API CalculateRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API CalculateRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -60,13 +60,13 @@ namespace Model
      * </li> <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position.
      * The <code>EndPosition</code> is the destination position.</p> </li> </ul>
      */
-    inline const Aws::Vector<Leg>& GetLegs() const{ return m_legs; }
-    inline void SetLegs(const Aws::Vector<Leg>& value) { m_legs = value; }
-    inline void SetLegs(Aws::Vector<Leg>&& value) { m_legs = std::move(value); }
-    inline CalculateRouteResult& WithLegs(const Aws::Vector<Leg>& value) { SetLegs(value); return *this;}
-    inline CalculateRouteResult& WithLegs(Aws::Vector<Leg>&& value) { SetLegs(std::move(value)); return *this;}
-    inline CalculateRouteResult& AddLegs(const Leg& value) { m_legs.push_back(value); return *this; }
-    inline CalculateRouteResult& AddLegs(Leg&& value) { m_legs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Leg>& GetLegs() const { return m_legs; }
+    template<typename LegsT = Aws::Vector<Leg>>
+    void SetLegs(LegsT&& value) { m_legsHasBeenSet = true; m_legs = std::forward<LegsT>(value); }
+    template<typename LegsT = Aws::Vector<Leg>>
+    CalculateRouteResult& WithLegs(LegsT&& value) { SetLegs(std::forward<LegsT>(value)); return *this;}
+    template<typename LegsT = Leg>
+    CalculateRouteResult& AddLegs(LegsT&& value) { m_legsHasBeenSet = true; m_legs.emplace_back(std::forward<LegsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,30 +75,31 @@ namespace Model
      * <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
      * <code>DurationSeconds</code>.</p>
      */
-    inline const CalculateRouteSummary& GetSummary() const{ return m_summary; }
-    inline void SetSummary(const CalculateRouteSummary& value) { m_summary = value; }
-    inline void SetSummary(CalculateRouteSummary&& value) { m_summary = std::move(value); }
-    inline CalculateRouteResult& WithSummary(const CalculateRouteSummary& value) { SetSummary(value); return *this;}
-    inline CalculateRouteResult& WithSummary(CalculateRouteSummary&& value) { SetSummary(std::move(value)); return *this;}
+    inline const CalculateRouteSummary& GetSummary() const { return m_summary; }
+    template<typename SummaryT = CalculateRouteSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = CalculateRouteSummary>
+    CalculateRouteResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CalculateRouteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CalculateRouteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CalculateRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CalculateRouteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Leg> m_legs;
+    bool m_legsHasBeenSet = false;
 
     CalculateRouteSummary m_summary;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

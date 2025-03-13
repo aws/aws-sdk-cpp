@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AccessScopePathRequest::AccessScopePathRequest() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_throughResourcesHasBeenSet(false)
-{
-}
-
 AccessScopePathRequest::AccessScopePathRequest(const XmlNode& xmlNode)
-  : AccessScopePathRequest()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ AccessScopePathRequest& AccessScopePathRequest::operator =(const XmlNode& xmlNod
     {
       m_source = sourceNode;
       m_sourceHasBeenSet = true;
+       m_sourceHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
     if(!destinationNode.IsNull())
     {
       m_destination = destinationNode;
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
     XmlNode throughResourcesNode = resultNode.FirstChild("ThroughResource");
     if(!throughResourcesNode.IsNull())
     {
       XmlNode throughResourcesMember = throughResourcesNode.FirstChild("item");
+      m_throughResourcesHasBeenSet = !throughResourcesMember.IsNull();
       while(!throughResourcesMember.IsNull())
       {
         m_throughResources.push_back(throughResourcesMember);
         throughResourcesMember = throughResourcesMember.NextNode("item");
       }
 
-      m_throughResourcesHasBeenSet = true;
+       m_throughResourcesHasBeenSet = true;
     }
   }
 

@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAddonVersionsRequest::DescribeAddonVersionsRequest() : 
-    m_kubernetesVersionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_typesHasBeenSet(false),
-    m_publishersHasBeenSet(false),
-    m_ownersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAddonVersionsRequest::SerializePayload() const
 {
   return {};

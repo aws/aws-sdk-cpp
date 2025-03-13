@@ -29,7 +29,7 @@ namespace Model
   class CreateFirewallResult
   {
   public:
-    AWS_NETWORKFIREWALL_API CreateFirewallResult();
+    AWS_NETWORKFIREWALL_API CreateFirewallResult() = default;
     AWS_NETWORKFIREWALL_API CreateFirewallResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API CreateFirewallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,11 @@ namespace Model
      * firewall policy and the subnets in your VPC to use for the firewall endpoints.
      * </p>
      */
-    inline const Firewall& GetFirewall() const{ return m_firewall; }
-    inline void SetFirewall(const Firewall& value) { m_firewall = value; }
-    inline void SetFirewall(Firewall&& value) { m_firewall = std::move(value); }
-    inline CreateFirewallResult& WithFirewall(const Firewall& value) { SetFirewall(value); return *this;}
-    inline CreateFirewallResult& WithFirewall(Firewall&& value) { SetFirewall(std::move(value)); return *this;}
+    inline const Firewall& GetFirewall() const { return m_firewall; }
+    template<typename FirewallT = Firewall>
+    void SetFirewall(FirewallT&& value) { m_firewallHasBeenSet = true; m_firewall = std::forward<FirewallT>(value); }
+    template<typename FirewallT = Firewall>
+    CreateFirewallResult& WithFirewall(FirewallT&& value) { SetFirewall(std::forward<FirewallT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * retrieve this for a firewall by calling <a>DescribeFirewall</a> and providing
      * the firewall name and ARN.</p>
      */
-    inline const FirewallStatus& GetFirewallStatus() const{ return m_firewallStatus; }
-    inline void SetFirewallStatus(const FirewallStatus& value) { m_firewallStatus = value; }
-    inline void SetFirewallStatus(FirewallStatus&& value) { m_firewallStatus = std::move(value); }
-    inline CreateFirewallResult& WithFirewallStatus(const FirewallStatus& value) { SetFirewallStatus(value); return *this;}
-    inline CreateFirewallResult& WithFirewallStatus(FirewallStatus&& value) { SetFirewallStatus(std::move(value)); return *this;}
+    inline const FirewallStatus& GetFirewallStatus() const { return m_firewallStatus; }
+    template<typename FirewallStatusT = FirewallStatus>
+    void SetFirewallStatus(FirewallStatusT&& value) { m_firewallStatusHasBeenSet = true; m_firewallStatus = std::forward<FirewallStatusT>(value); }
+    template<typename FirewallStatusT = FirewallStatus>
+    CreateFirewallResult& WithFirewallStatus(FirewallStatusT&& value) { SetFirewallStatus(std::forward<FirewallStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFirewallResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFirewallResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFirewallResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFirewallResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Firewall m_firewall;
+    bool m_firewallHasBeenSet = false;
 
     FirewallStatus m_firewallStatus;
+    bool m_firewallStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

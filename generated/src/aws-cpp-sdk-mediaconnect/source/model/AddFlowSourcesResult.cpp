@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddFlowSourcesResult::AddFlowSourcesResult()
-{
-}
-
 AddFlowSourcesResult::AddFlowSourcesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ AddFlowSourcesResult& AddFlowSourcesResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -42,14 +37,15 @@ AddFlowSourcesResult& AddFlowSourcesResult::operator =(const Aws::AmazonWebServi
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
     }
+    m_sourcesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicRefreshDetails::TopicRefreshDetails() : 
-    m_refreshArnHasBeenSet(false),
-    m_refreshIdHasBeenSet(false),
-    m_refreshStatus(TopicRefreshStatus::NOT_SET),
-    m_refreshStatusHasBeenSet(false)
-{
-}
-
 TopicRefreshDetails::TopicRefreshDetails(JsonView jsonValue)
-  : TopicRefreshDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TopicRefreshDetails& TopicRefreshDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RefreshArn"))
   {
     m_refreshArn = jsonValue.GetString("RefreshArn");
-
     m_refreshArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshId"))
   {
     m_refreshId = jsonValue.GetString("RefreshId");
-
     m_refreshIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RefreshStatus"))
   {
     m_refreshStatus = TopicRefreshStatusMapper::GetTopicRefreshStatusForName(jsonValue.GetString("RefreshStatus"));
-
     m_refreshStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

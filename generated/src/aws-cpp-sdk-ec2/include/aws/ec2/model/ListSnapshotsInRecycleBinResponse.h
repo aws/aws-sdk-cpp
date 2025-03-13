@@ -30,7 +30,7 @@ namespace Model
   class ListSnapshotsInRecycleBinResponse
   {
   public:
-    AWS_EC2_API ListSnapshotsInRecycleBinResponse();
+    AWS_EC2_API ListSnapshotsInRecycleBinResponse() = default;
     AWS_EC2_API ListSnapshotsInRecycleBinResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ListSnapshotsInRecycleBinResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the snapshots.</p>
      */
-    inline const Aws::Vector<SnapshotRecycleBinInfo>& GetSnapshots() const{ return m_snapshots; }
-    inline void SetSnapshots(const Aws::Vector<SnapshotRecycleBinInfo>& value) { m_snapshots = value; }
-    inline void SetSnapshots(Aws::Vector<SnapshotRecycleBinInfo>&& value) { m_snapshots = std::move(value); }
-    inline ListSnapshotsInRecycleBinResponse& WithSnapshots(const Aws::Vector<SnapshotRecycleBinInfo>& value) { SetSnapshots(value); return *this;}
-    inline ListSnapshotsInRecycleBinResponse& WithSnapshots(Aws::Vector<SnapshotRecycleBinInfo>&& value) { SetSnapshots(std::move(value)); return *this;}
-    inline ListSnapshotsInRecycleBinResponse& AddSnapshots(const SnapshotRecycleBinInfo& value) { m_snapshots.push_back(value); return *this; }
-    inline ListSnapshotsInRecycleBinResponse& AddSnapshots(SnapshotRecycleBinInfo&& value) { m_snapshots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SnapshotRecycleBinInfo>& GetSnapshots() const { return m_snapshots; }
+    template<typename SnapshotsT = Aws::Vector<SnapshotRecycleBinInfo>>
+    void SetSnapshots(SnapshotsT&& value) { m_snapshotsHasBeenSet = true; m_snapshots = std::forward<SnapshotsT>(value); }
+    template<typename SnapshotsT = Aws::Vector<SnapshotRecycleBinInfo>>
+    ListSnapshotsInRecycleBinResponse& WithSnapshots(SnapshotsT&& value) { SetSnapshots(std::forward<SnapshotsT>(value)); return *this;}
+    template<typename SnapshotsT = SnapshotRecycleBinInfo>
+    ListSnapshotsInRecycleBinResponse& AddSnapshots(SnapshotsT&& value) { m_snapshotsHasBeenSet = true; m_snapshots.emplace_back(std::forward<SnapshotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSnapshotsInRecycleBinResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSnapshotsInRecycleBinResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSnapshotsInRecycleBinResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSnapshotsInRecycleBinResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListSnapshotsInRecycleBinResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListSnapshotsInRecycleBinResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListSnapshotsInRecycleBinResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SnapshotRecycleBinInfo> m_snapshots;
+    bool m_snapshotsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

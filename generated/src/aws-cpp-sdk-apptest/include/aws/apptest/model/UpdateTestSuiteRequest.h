@@ -24,7 +24,7 @@ namespace Model
   class UpdateTestSuiteRequest : public AppTestRequest
   {
   public:
-    AWS_APPTEST_API UpdateTestSuiteRequest();
+    AWS_APPTEST_API UpdateTestSuiteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,68 +39,64 @@ namespace Model
     /**
      * <p>The test suite ID of the test suite.</p>
      */
-    inline const Aws::String& GetTestSuiteId() const{ return m_testSuiteId; }
+    inline const Aws::String& GetTestSuiteId() const { return m_testSuiteId; }
     inline bool TestSuiteIdHasBeenSet() const { return m_testSuiteIdHasBeenSet; }
-    inline void SetTestSuiteId(const Aws::String& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = value; }
-    inline void SetTestSuiteId(Aws::String&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::move(value); }
-    inline void SetTestSuiteId(const char* value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId.assign(value); }
-    inline UpdateTestSuiteRequest& WithTestSuiteId(const Aws::String& value) { SetTestSuiteId(value); return *this;}
-    inline UpdateTestSuiteRequest& WithTestSuiteId(Aws::String&& value) { SetTestSuiteId(std::move(value)); return *this;}
-    inline UpdateTestSuiteRequest& WithTestSuiteId(const char* value) { SetTestSuiteId(value); return *this;}
+    template<typename TestSuiteIdT = Aws::String>
+    void SetTestSuiteId(TestSuiteIdT&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::forward<TestSuiteIdT>(value); }
+    template<typename TestSuiteIdT = Aws::String>
+    UpdateTestSuiteRequest& WithTestSuiteId(TestSuiteIdT&& value) { SetTestSuiteId(std::forward<TestSuiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the test suite.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateTestSuiteRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateTestSuiteRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateTestSuiteRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateTestSuiteRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The before steps for the test suite.</p>
      */
-    inline const Aws::Vector<Step>& GetBeforeSteps() const{ return m_beforeSteps; }
+    inline const Aws::Vector<Step>& GetBeforeSteps() const { return m_beforeSteps; }
     inline bool BeforeStepsHasBeenSet() const { return m_beforeStepsHasBeenSet; }
-    inline void SetBeforeSteps(const Aws::Vector<Step>& value) { m_beforeStepsHasBeenSet = true; m_beforeSteps = value; }
-    inline void SetBeforeSteps(Aws::Vector<Step>&& value) { m_beforeStepsHasBeenSet = true; m_beforeSteps = std::move(value); }
-    inline UpdateTestSuiteRequest& WithBeforeSteps(const Aws::Vector<Step>& value) { SetBeforeSteps(value); return *this;}
-    inline UpdateTestSuiteRequest& WithBeforeSteps(Aws::Vector<Step>&& value) { SetBeforeSteps(std::move(value)); return *this;}
-    inline UpdateTestSuiteRequest& AddBeforeSteps(const Step& value) { m_beforeStepsHasBeenSet = true; m_beforeSteps.push_back(value); return *this; }
-    inline UpdateTestSuiteRequest& AddBeforeSteps(Step&& value) { m_beforeStepsHasBeenSet = true; m_beforeSteps.push_back(std::move(value)); return *this; }
+    template<typename BeforeStepsT = Aws::Vector<Step>>
+    void SetBeforeSteps(BeforeStepsT&& value) { m_beforeStepsHasBeenSet = true; m_beforeSteps = std::forward<BeforeStepsT>(value); }
+    template<typename BeforeStepsT = Aws::Vector<Step>>
+    UpdateTestSuiteRequest& WithBeforeSteps(BeforeStepsT&& value) { SetBeforeSteps(std::forward<BeforeStepsT>(value)); return *this;}
+    template<typename BeforeStepsT = Step>
+    UpdateTestSuiteRequest& AddBeforeSteps(BeforeStepsT&& value) { m_beforeStepsHasBeenSet = true; m_beforeSteps.emplace_back(std::forward<BeforeStepsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The after steps of the test suite.</p>
      */
-    inline const Aws::Vector<Step>& GetAfterSteps() const{ return m_afterSteps; }
+    inline const Aws::Vector<Step>& GetAfterSteps() const { return m_afterSteps; }
     inline bool AfterStepsHasBeenSet() const { return m_afterStepsHasBeenSet; }
-    inline void SetAfterSteps(const Aws::Vector<Step>& value) { m_afterStepsHasBeenSet = true; m_afterSteps = value; }
-    inline void SetAfterSteps(Aws::Vector<Step>&& value) { m_afterStepsHasBeenSet = true; m_afterSteps = std::move(value); }
-    inline UpdateTestSuiteRequest& WithAfterSteps(const Aws::Vector<Step>& value) { SetAfterSteps(value); return *this;}
-    inline UpdateTestSuiteRequest& WithAfterSteps(Aws::Vector<Step>&& value) { SetAfterSteps(std::move(value)); return *this;}
-    inline UpdateTestSuiteRequest& AddAfterSteps(const Step& value) { m_afterStepsHasBeenSet = true; m_afterSteps.push_back(value); return *this; }
-    inline UpdateTestSuiteRequest& AddAfterSteps(Step&& value) { m_afterStepsHasBeenSet = true; m_afterSteps.push_back(std::move(value)); return *this; }
+    template<typename AfterStepsT = Aws::Vector<Step>>
+    void SetAfterSteps(AfterStepsT&& value) { m_afterStepsHasBeenSet = true; m_afterSteps = std::forward<AfterStepsT>(value); }
+    template<typename AfterStepsT = Aws::Vector<Step>>
+    UpdateTestSuiteRequest& WithAfterSteps(AfterStepsT&& value) { SetAfterSteps(std::forward<AfterStepsT>(value)); return *this;}
+    template<typename AfterStepsT = Step>
+    UpdateTestSuiteRequest& AddAfterSteps(AfterStepsT&& value) { m_afterStepsHasBeenSet = true; m_afterSteps.emplace_back(std::forward<AfterStepsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The test cases in the test suite.</p>
      */
-    inline const TestCases& GetTestCases() const{ return m_testCases; }
+    inline const TestCases& GetTestCases() const { return m_testCases; }
     inline bool TestCasesHasBeenSet() const { return m_testCasesHasBeenSet; }
-    inline void SetTestCases(const TestCases& value) { m_testCasesHasBeenSet = true; m_testCases = value; }
-    inline void SetTestCases(TestCases&& value) { m_testCasesHasBeenSet = true; m_testCases = std::move(value); }
-    inline UpdateTestSuiteRequest& WithTestCases(const TestCases& value) { SetTestCases(value); return *this;}
-    inline UpdateTestSuiteRequest& WithTestCases(TestCases&& value) { SetTestCases(std::move(value)); return *this;}
+    template<typename TestCasesT = TestCases>
+    void SetTestCases(TestCasesT&& value) { m_testCasesHasBeenSet = true; m_testCases = std::forward<TestCasesT>(value); }
+    template<typename TestCasesT = TestCases>
+    UpdateTestSuiteRequest& WithTestCases(TestCasesT&& value) { SetTestCases(std::forward<TestCasesT>(value)); return *this;}
     ///@}
   private:
 

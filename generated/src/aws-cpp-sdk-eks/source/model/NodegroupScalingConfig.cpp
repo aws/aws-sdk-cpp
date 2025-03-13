@@ -18,18 +18,7 @@ namespace EKS
 namespace Model
 {
 
-NodegroupScalingConfig::NodegroupScalingConfig() : 
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_desiredSize(0),
-    m_desiredSizeHasBeenSet(false)
-{
-}
-
 NodegroupScalingConfig::NodegroupScalingConfig(JsonView jsonValue)
-  : NodegroupScalingConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ NodegroupScalingConfig& NodegroupScalingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("minSize"))
   {
     m_minSize = jsonValue.GetInteger("minSize");
-
     m_minSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxSize"))
   {
     m_maxSize = jsonValue.GetInteger("maxSize");
-
     m_maxSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredSize"))
   {
     m_desiredSize = jsonValue.GetInteger("desiredSize");
-
     m_desiredSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-RetryConfigCriteria::RetryConfigCriteria() : 
-    m_failureType(RetryCriteriaFailureType::NOT_SET),
-    m_failureTypeHasBeenSet(false),
-    m_minNumberOfRetries(0),
-    m_minNumberOfRetriesHasBeenSet(false)
-{
-}
-
 RetryConfigCriteria::RetryConfigCriteria(JsonView jsonValue)
-  : RetryConfigCriteria()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetryConfigCriteria& RetryConfigCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailureType"))
   {
     m_failureType = RetryCriteriaFailureTypeMapper::GetRetryCriteriaFailureTypeForName(jsonValue.GetString("FailureType"));
-
     m_failureTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinNumberOfRetries"))
   {
     m_minNumberOfRetries = jsonValue.GetInteger("MinNumberOfRetries");
-
     m_minNumberOfRetriesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReportCreationResult::DescribeReportCreationResult()
-{
-}
-
 DescribeReportCreationResult::DescribeReportCreationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DescribeReportCreationResult& DescribeReportCreationResult::operator =(const Aws
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Location"))
   {
     m_s3Location = jsonValue.GetString("S3Location");
-
+    m_s3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

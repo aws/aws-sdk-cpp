@@ -22,7 +22,7 @@ namespace Model
   class GetActionRecommendationsRequest : public PersonalizeRuntimeRequest
   {
   public:
-    AWS_PERSONALIZERUNTIME_API GetActionRecommendationsRequest();
+    AWS_PERSONALIZERUNTIME_API GetActionRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,35 +39,31 @@ namespace Model
      * recommendations. This campaign must deploy a solution version trained with a
      * PERSONALIZED_ACTIONS recipe.</p>
      */
-    inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
+    inline const Aws::String& GetCampaignArn() const { return m_campaignArn; }
     inline bool CampaignArnHasBeenSet() const { return m_campaignArnHasBeenSet; }
-    inline void SetCampaignArn(const Aws::String& value) { m_campaignArnHasBeenSet = true; m_campaignArn = value; }
-    inline void SetCampaignArn(Aws::String&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::move(value); }
-    inline void SetCampaignArn(const char* value) { m_campaignArnHasBeenSet = true; m_campaignArn.assign(value); }
-    inline GetActionRecommendationsRequest& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-    inline GetActionRecommendationsRequest& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-    inline GetActionRecommendationsRequest& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    template<typename CampaignArnT = Aws::String>
+    void SetCampaignArn(CampaignArnT&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::forward<CampaignArnT>(value); }
+    template<typename CampaignArnT = Aws::String>
+    GetActionRecommendationsRequest& WithCampaignArn(CampaignArnT&& value) { SetCampaignArn(std::forward<CampaignArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user ID of the user to provide action recommendations for.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline GetActionRecommendationsRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline GetActionRecommendationsRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline GetActionRecommendationsRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    GetActionRecommendationsRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of results to return. The default is 5. The maximum is 100.</p>
      */
-    inline int GetNumResults() const{ return m_numResults; }
+    inline int GetNumResults() const { return m_numResults; }
     inline bool NumResultsHasBeenSet() const { return m_numResultsHasBeenSet; }
     inline void SetNumResults(int value) { m_numResultsHasBeenSet = true; m_numResults = value; }
     inline GetActionRecommendationsRequest& WithNumResults(int value) { SetNumResults(value); return *this;}
@@ -81,14 +77,12 @@ namespace Model
      * Recommendations</a>.</p> <p>When using this parameter, be sure the filter
      * resource is <code>ACTIVE</code>.</p>
      */
-    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
-    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
-    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
-    inline GetActionRecommendationsRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
-    inline GetActionRecommendationsRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
-    inline GetActionRecommendationsRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+    template<typename FilterArnT = Aws::String>
+    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
+    template<typename FilterArnT = Aws::String>
+    GetActionRecommendationsRequest& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,19 +100,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
      * recommendations and user segments</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const{ return m_filterValues; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const { return m_filterValues; }
     inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
-    inline void SetFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
-    inline void SetFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
-    inline GetActionRecommendationsRequest& WithFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { SetFilterValues(value); return *this;}
-    inline GetActionRecommendationsRequest& WithFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
-    inline GetActionRecommendationsRequest& AddFilterValues(const Aws::String& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
-    inline GetActionRecommendationsRequest& AddFilterValues(Aws::String&& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
-    inline GetActionRecommendationsRequest& AddFilterValues(const Aws::String& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
-    inline GetActionRecommendationsRequest& AddFilterValues(Aws::String&& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetActionRecommendationsRequest& AddFilterValues(const char* key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
-    inline GetActionRecommendationsRequest& AddFilterValues(Aws::String&& key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
-    inline GetActionRecommendationsRequest& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
+    template<typename FilterValuesT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilterValues(FilterValuesT&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::forward<FilterValuesT>(value); }
+    template<typename FilterValuesT = Aws::Map<Aws::String, Aws::String>>
+    GetActionRecommendationsRequest& WithFilterValues(FilterValuesT&& value) { SetFilterValues(std::forward<FilterValuesT>(value)); return *this;}
+    template<typename FilterValuesKeyT = Aws::String, typename FilterValuesValueT = Aws::String>
+    GetActionRecommendationsRequest& AddFilterValues(FilterValuesKeyT&& key, FilterValuesValueT&& value) {
+      m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::forward<FilterValuesKeyT>(key), std::forward<FilterValuesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -128,7 +119,7 @@ namespace Model
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
 
-    int m_numResults;
+    int m_numResults{0};
     bool m_numResultsHasBeenSet = false;
 
     Aws::String m_filterArn;

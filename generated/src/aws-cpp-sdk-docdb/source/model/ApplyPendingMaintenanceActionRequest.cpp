@@ -10,13 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-ApplyPendingMaintenanceActionRequest::ApplyPendingMaintenanceActionRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_applyActionHasBeenSet(false),
-    m_optInTypeHasBeenSet(false)
-{
-}
-
 Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

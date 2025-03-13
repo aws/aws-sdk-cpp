@@ -37,7 +37,7 @@ namespace Model
   class Pipeline
   {
   public:
-    AWS_SAGEMAKER_API Pipeline();
+    AWS_SAGEMAKER_API Pipeline() = default;
     AWS_SAGEMAKER_API Pipeline(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,164 +47,152 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineArn() const{ return m_pipelineArn; }
+    inline const Aws::String& GetPipelineArn() const { return m_pipelineArn; }
     inline bool PipelineArnHasBeenSet() const { return m_pipelineArnHasBeenSet; }
-    inline void SetPipelineArn(const Aws::String& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = value; }
-    inline void SetPipelineArn(Aws::String&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::move(value); }
-    inline void SetPipelineArn(const char* value) { m_pipelineArnHasBeenSet = true; m_pipelineArn.assign(value); }
-    inline Pipeline& WithPipelineArn(const Aws::String& value) { SetPipelineArn(value); return *this;}
-    inline Pipeline& WithPipelineArn(Aws::String&& value) { SetPipelineArn(std::move(value)); return *this;}
-    inline Pipeline& WithPipelineArn(const char* value) { SetPipelineArn(value); return *this;}
+    template<typename PipelineArnT = Aws::String>
+    void SetPipelineArn(PipelineArnT&& value) { m_pipelineArnHasBeenSet = true; m_pipelineArn = std::forward<PipelineArnT>(value); }
+    template<typename PipelineArnT = Aws::String>
+    Pipeline& WithPipelineArn(PipelineArnT&& value) { SetPipelineArn(std::forward<PipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
+    inline const Aws::String& GetPipelineName() const { return m_pipelineName; }
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-    inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-    inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-    inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-    inline Pipeline& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-    inline Pipeline& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-    inline Pipeline& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    template<typename PipelineNameT = Aws::String>
+    void SetPipelineName(PipelineNameT&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::forward<PipelineNameT>(value); }
+    template<typename PipelineNameT = Aws::String>
+    Pipeline& WithPipelineName(PipelineNameT&& value) { SetPipelineName(std::forward<PipelineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineDisplayName() const{ return m_pipelineDisplayName; }
+    inline const Aws::String& GetPipelineDisplayName() const { return m_pipelineDisplayName; }
     inline bool PipelineDisplayNameHasBeenSet() const { return m_pipelineDisplayNameHasBeenSet; }
-    inline void SetPipelineDisplayName(const Aws::String& value) { m_pipelineDisplayNameHasBeenSet = true; m_pipelineDisplayName = value; }
-    inline void SetPipelineDisplayName(Aws::String&& value) { m_pipelineDisplayNameHasBeenSet = true; m_pipelineDisplayName = std::move(value); }
-    inline void SetPipelineDisplayName(const char* value) { m_pipelineDisplayNameHasBeenSet = true; m_pipelineDisplayName.assign(value); }
-    inline Pipeline& WithPipelineDisplayName(const Aws::String& value) { SetPipelineDisplayName(value); return *this;}
-    inline Pipeline& WithPipelineDisplayName(Aws::String&& value) { SetPipelineDisplayName(std::move(value)); return *this;}
-    inline Pipeline& WithPipelineDisplayName(const char* value) { SetPipelineDisplayName(value); return *this;}
+    template<typename PipelineDisplayNameT = Aws::String>
+    void SetPipelineDisplayName(PipelineDisplayNameT&& value) { m_pipelineDisplayNameHasBeenSet = true; m_pipelineDisplayName = std::forward<PipelineDisplayNameT>(value); }
+    template<typename PipelineDisplayNameT = Aws::String>
+    Pipeline& WithPipelineDisplayName(PipelineDisplayNameT&& value) { SetPipelineDisplayName(std::forward<PipelineDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the pipeline.</p>
      */
-    inline const Aws::String& GetPipelineDescription() const{ return m_pipelineDescription; }
+    inline const Aws::String& GetPipelineDescription() const { return m_pipelineDescription; }
     inline bool PipelineDescriptionHasBeenSet() const { return m_pipelineDescriptionHasBeenSet; }
-    inline void SetPipelineDescription(const Aws::String& value) { m_pipelineDescriptionHasBeenSet = true; m_pipelineDescription = value; }
-    inline void SetPipelineDescription(Aws::String&& value) { m_pipelineDescriptionHasBeenSet = true; m_pipelineDescription = std::move(value); }
-    inline void SetPipelineDescription(const char* value) { m_pipelineDescriptionHasBeenSet = true; m_pipelineDescription.assign(value); }
-    inline Pipeline& WithPipelineDescription(const Aws::String& value) { SetPipelineDescription(value); return *this;}
-    inline Pipeline& WithPipelineDescription(Aws::String&& value) { SetPipelineDescription(std::move(value)); return *this;}
-    inline Pipeline& WithPipelineDescription(const char* value) { SetPipelineDescription(value); return *this;}
+    template<typename PipelineDescriptionT = Aws::String>
+    void SetPipelineDescription(PipelineDescriptionT&& value) { m_pipelineDescriptionHasBeenSet = true; m_pipelineDescription = std::forward<PipelineDescriptionT>(value); }
+    template<typename PipelineDescriptionT = Aws::String>
+    Pipeline& WithPipelineDescription(PipelineDescriptionT&& value) { SetPipelineDescription(std::forward<PipelineDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the role that created the pipeline.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline Pipeline& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline Pipeline& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline Pipeline& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    Pipeline& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the pipeline.</p>
      */
-    inline const PipelineStatus& GetPipelineStatus() const{ return m_pipelineStatus; }
+    inline PipelineStatus GetPipelineStatus() const { return m_pipelineStatus; }
     inline bool PipelineStatusHasBeenSet() const { return m_pipelineStatusHasBeenSet; }
-    inline void SetPipelineStatus(const PipelineStatus& value) { m_pipelineStatusHasBeenSet = true; m_pipelineStatus = value; }
-    inline void SetPipelineStatus(PipelineStatus&& value) { m_pipelineStatusHasBeenSet = true; m_pipelineStatus = std::move(value); }
-    inline Pipeline& WithPipelineStatus(const PipelineStatus& value) { SetPipelineStatus(value); return *this;}
-    inline Pipeline& WithPipelineStatus(PipelineStatus&& value) { SetPipelineStatus(std::move(value)); return *this;}
+    inline void SetPipelineStatus(PipelineStatus value) { m_pipelineStatusHasBeenSet = true; m_pipelineStatus = value; }
+    inline Pipeline& WithPipelineStatus(PipelineStatus value) { SetPipelineStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time of the pipeline.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Pipeline& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Pipeline& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Pipeline& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the pipeline was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Pipeline& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Pipeline& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Pipeline& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the pipeline was last run.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRunTime() const{ return m_lastRunTime; }
+    inline const Aws::Utils::DateTime& GetLastRunTime() const { return m_lastRunTime; }
     inline bool LastRunTimeHasBeenSet() const { return m_lastRunTimeHasBeenSet; }
-    inline void SetLastRunTime(const Aws::Utils::DateTime& value) { m_lastRunTimeHasBeenSet = true; m_lastRunTime = value; }
-    inline void SetLastRunTime(Aws::Utils::DateTime&& value) { m_lastRunTimeHasBeenSet = true; m_lastRunTime = std::move(value); }
-    inline Pipeline& WithLastRunTime(const Aws::Utils::DateTime& value) { SetLastRunTime(value); return *this;}
-    inline Pipeline& WithLastRunTime(Aws::Utils::DateTime&& value) { SetLastRunTime(std::move(value)); return *this;}
+    template<typename LastRunTimeT = Aws::Utils::DateTime>
+    void SetLastRunTime(LastRunTimeT&& value) { m_lastRunTimeHasBeenSet = true; m_lastRunTime = std::forward<LastRunTimeT>(value); }
+    template<typename LastRunTimeT = Aws::Utils::DateTime>
+    Pipeline& WithLastRunTime(LastRunTimeT&& value) { SetLastRunTime(std::forward<LastRunTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline Pipeline& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline Pipeline& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    Pipeline& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+    inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
-    inline Pipeline& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
-    inline Pipeline& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    template<typename LastModifiedByT = UserContext>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = UserContext>
+    Pipeline& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parallelism configuration applied to the pipeline.</p>
      */
-    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const { return m_parallelismConfiguration; }
     inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
-    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
-    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
-    inline Pipeline& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
-    inline Pipeline& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+    template<typename ParallelismConfigurationT = ParallelismConfiguration>
+    void SetParallelismConfiguration(ParallelismConfigurationT&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::forward<ParallelismConfigurationT>(value); }
+    template<typename ParallelismConfigurationT = ParallelismConfiguration>
+    Pipeline& WithParallelismConfiguration(ParallelismConfigurationT&& value) { SetParallelismConfiguration(std::forward<ParallelismConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of tags that apply to the pipeline.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Pipeline& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Pipeline& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Pipeline& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Pipeline& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Pipeline& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Pipeline& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -223,16 +211,16 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    PipelineStatus m_pipelineStatus;
+    PipelineStatus m_pipelineStatus{PipelineStatus::NOT_SET};
     bool m_pipelineStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRunTime;
+    Aws::Utils::DateTime m_lastRunTime{};
     bool m_lastRunTimeHasBeenSet = false;
 
     UserContext m_createdBy;

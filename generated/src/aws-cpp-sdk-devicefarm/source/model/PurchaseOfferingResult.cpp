@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseOfferingResult::PurchaseOfferingResult()
-{
-}
-
 PurchaseOfferingResult::PurchaseOfferingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PurchaseOfferingResult& PurchaseOfferingResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("offeringTransaction"))
   {
     m_offeringTransaction = jsonValue.GetObject("offeringTransaction");
-
+    m_offeringTransactionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

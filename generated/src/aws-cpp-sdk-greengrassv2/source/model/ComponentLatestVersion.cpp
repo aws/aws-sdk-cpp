@@ -18,18 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentLatestVersion::ComponentLatestVersion() : 
-    m_arnHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publisherHasBeenSet(false),
-    m_platformsHasBeenSet(false)
-{
-}
-
 ComponentLatestVersion::ComponentLatestVersion(JsonView jsonValue)
-  : ComponentLatestVersion()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ComponentLatestVersion& ComponentLatestVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentVersion"))
   {
     m_componentVersion = jsonValue.GetString("componentVersion");
-
     m_componentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("creationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publisher"))
   {
     m_publisher = jsonValue.GetString("publisher");
-
     m_publisherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platforms"))
   {
     Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");
@@ -80,7 +59,6 @@ ComponentLatestVersion& ComponentLatestVersion::operator =(JsonView jsonValue)
     }
     m_platformsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class ListConnectorsRequest : public KafkaConnectRequest
   {
   public:
-    AWS_KAFKACONNECT_API ListConnectorsRequest();
+    AWS_KAFKACONNECT_API ListConnectorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The name prefix that you want to use to search for and list connectors.</p>
      */
-    inline const Aws::String& GetConnectorNamePrefix() const{ return m_connectorNamePrefix; }
+    inline const Aws::String& GetConnectorNamePrefix() const { return m_connectorNamePrefix; }
     inline bool ConnectorNamePrefixHasBeenSet() const { return m_connectorNamePrefixHasBeenSet; }
-    inline void SetConnectorNamePrefix(const Aws::String& value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix = value; }
-    inline void SetConnectorNamePrefix(Aws::String&& value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix = std::move(value); }
-    inline void SetConnectorNamePrefix(const char* value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix.assign(value); }
-    inline ListConnectorsRequest& WithConnectorNamePrefix(const Aws::String& value) { SetConnectorNamePrefix(value); return *this;}
-    inline ListConnectorsRequest& WithConnectorNamePrefix(Aws::String&& value) { SetConnectorNamePrefix(std::move(value)); return *this;}
-    inline ListConnectorsRequest& WithConnectorNamePrefix(const char* value) { SetConnectorNamePrefix(value); return *this;}
+    template<typename ConnectorNamePrefixT = Aws::String>
+    void SetConnectorNamePrefix(ConnectorNamePrefixT&& value) { m_connectorNamePrefixHasBeenSet = true; m_connectorNamePrefix = std::forward<ConnectorNamePrefixT>(value); }
+    template<typename ConnectorNamePrefixT = Aws::String>
+    ListConnectorsRequest& WithConnectorNamePrefix(ConnectorNamePrefixT&& value) { SetConnectorNamePrefix(std::forward<ConnectorNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of connectors to list in one response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListConnectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,21 +66,19 @@ namespace Model
      * NextToken. Send this NextToken in a subsequent request to continue listing from
      * where the previous operation left off.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListConnectorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConnectorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConnectorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConnectorsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectorNamePrefix;
     bool m_connectorNamePrefixHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

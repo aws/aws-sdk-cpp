@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-ServerShutdownException::ServerShutdownException() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 ServerShutdownException::ServerShutdownException(JsonView jsonValue)
-  : ServerShutdownException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ServerShutdownException& ServerShutdownException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

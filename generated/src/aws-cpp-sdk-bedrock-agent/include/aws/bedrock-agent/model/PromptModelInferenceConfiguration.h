@@ -35,7 +35,7 @@ namespace Model
   class PromptModelInferenceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API PromptModelInferenceConfiguration();
+    AWS_BEDROCKAGENT_API PromptModelInferenceConfiguration() = default;
     AWS_BEDROCKAGENT_API PromptModelInferenceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptModelInferenceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The maximum number of tokens to return in the response.</p>
      */
-    inline int GetMaxTokens() const{ return m_maxTokens; }
+    inline int GetMaxTokens() const { return m_maxTokens; }
     inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
     inline void SetMaxTokens(int value) { m_maxTokensHasBeenSet = true; m_maxTokens = value; }
     inline PromptModelInferenceConfiguration& WithMaxTokens(int value) { SetMaxTokens(value); return *this;}
@@ -56,15 +56,14 @@ namespace Model
      * <p>A list of strings that define sequences after which the model will stop
      * generating.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStopSequences() const{ return m_stopSequences; }
+    inline const Aws::Vector<Aws::String>& GetStopSequences() const { return m_stopSequences; }
     inline bool StopSequencesHasBeenSet() const { return m_stopSequencesHasBeenSet; }
-    inline void SetStopSequences(const Aws::Vector<Aws::String>& value) { m_stopSequencesHasBeenSet = true; m_stopSequences = value; }
-    inline void SetStopSequences(Aws::Vector<Aws::String>&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences = std::move(value); }
-    inline PromptModelInferenceConfiguration& WithStopSequences(const Aws::Vector<Aws::String>& value) { SetStopSequences(value); return *this;}
-    inline PromptModelInferenceConfiguration& WithStopSequences(Aws::Vector<Aws::String>&& value) { SetStopSequences(std::move(value)); return *this;}
-    inline PromptModelInferenceConfiguration& AddStopSequences(const Aws::String& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.push_back(value); return *this; }
-    inline PromptModelInferenceConfiguration& AddStopSequences(Aws::String&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.push_back(std::move(value)); return *this; }
-    inline PromptModelInferenceConfiguration& AddStopSequences(const char* value) { m_stopSequencesHasBeenSet = true; m_stopSequences.push_back(value); return *this; }
+    template<typename StopSequencesT = Aws::Vector<Aws::String>>
+    void SetStopSequences(StopSequencesT&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences = std::forward<StopSequencesT>(value); }
+    template<typename StopSequencesT = Aws::Vector<Aws::String>>
+    PromptModelInferenceConfiguration& WithStopSequences(StopSequencesT&& value) { SetStopSequences(std::forward<StopSequencesT>(value)); return *this;}
+    template<typename StopSequencesT = Aws::String>
+    PromptModelInferenceConfiguration& AddStopSequences(StopSequencesT&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.emplace_back(std::forward<StopSequencesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,7 +71,7 @@ namespace Model
      * <p>Controls the randomness of the response. Choose a lower value for more
      * predictable outputs and a higher value for more surprising outputs.</p>
      */
-    inline double GetTemperature() const{ return m_temperature; }
+    inline double GetTemperature() const { return m_temperature; }
     inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
     inline void SetTemperature(double value) { m_temperatureHasBeenSet = true; m_temperature = value; }
     inline PromptModelInferenceConfiguration& WithTemperature(double value) { SetTemperature(value); return *this;}
@@ -83,23 +82,23 @@ namespace Model
      * <p>The percentage of most-likely candidates that the model considers for the
      * next token.</p>
      */
-    inline double GetTopP() const{ return m_topP; }
+    inline double GetTopP() const { return m_topP; }
     inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
     inline void SetTopP(double value) { m_topPHasBeenSet = true; m_topP = value; }
     inline PromptModelInferenceConfiguration& WithTopP(double value) { SetTopP(value); return *this;}
     ///@}
   private:
 
-    int m_maxTokens;
+    int m_maxTokens{0};
     bool m_maxTokensHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stopSequences;
     bool m_stopSequencesHasBeenSet = false;
 
-    double m_temperature;
+    double m_temperature{0.0};
     bool m_temperatureHasBeenSet = false;
 
-    double m_topP;
+    double m_topP{0.0};
     bool m_topPHasBeenSet = false;
   };
 

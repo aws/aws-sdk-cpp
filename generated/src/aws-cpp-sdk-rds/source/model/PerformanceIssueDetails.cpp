@@ -20,16 +20,7 @@ namespace RDS
 namespace Model
 {
 
-PerformanceIssueDetails::PerformanceIssueDetails() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_analysisHasBeenSet(false)
-{
-}
-
 PerformanceIssueDetails::PerformanceIssueDetails(const XmlNode& xmlNode)
-  : PerformanceIssueDetails()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ PerformanceIssueDetails& PerformanceIssueDetails::operator =(const XmlNode& xmlN
     {
       m_startTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startTimeHasBeenSet = true;
+       m_startTimeHasBeenSet = true;
     }
     XmlNode endTimeNode = resultNode.FirstChild("EndTime");
     if(!endTimeNode.IsNull())
     {
       m_endTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimeHasBeenSet = true;
+       m_endTimeHasBeenSet = true;
     }
     XmlNode metricsNode = resultNode.FirstChild("Metrics");
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);
         metricsMember = metricsMember.NextNode("member");
       }
 
-      m_metricsHasBeenSet = true;
+       m_metricsHasBeenSet = true;
     }
     XmlNode analysisNode = resultNode.FirstChild("Analysis");
     if(!analysisNode.IsNull())
     {
       m_analysis = Aws::Utils::Xml::DecodeEscapedXmlText(analysisNode.GetText());
       m_analysisHasBeenSet = true;
+       m_analysisHasBeenSet = true;
     }
   }
 

@@ -35,7 +35,7 @@ namespace Model
   class ComponentDataConfiguration
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration();
+    AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The name of the data model to use to bind data to a component.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
+    inline const Aws::String& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
-    inline ComponentDataConfiguration& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-    inline ComponentDataConfiguration& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-    inline ComponentDataConfiguration& WithModel(const char* value) { SetModel(value); return *this;}
+    template<typename ModelT = Aws::String>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Aws::String>
+    ComponentDataConfiguration& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes how to sort the component's properties.</p>
      */
-    inline const Aws::Vector<SortProperty>& GetSort() const{ return m_sort; }
+    inline const Aws::Vector<SortProperty>& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const Aws::Vector<SortProperty>& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(Aws::Vector<SortProperty>&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ComponentDataConfiguration& WithSort(const Aws::Vector<SortProperty>& value) { SetSort(value); return *this;}
-    inline ComponentDataConfiguration& WithSort(Aws::Vector<SortProperty>&& value) { SetSort(std::move(value)); return *this;}
-    inline ComponentDataConfiguration& AddSort(const SortProperty& value) { m_sortHasBeenSet = true; m_sort.push_back(value); return *this; }
-    inline ComponentDataConfiguration& AddSort(SortProperty&& value) { m_sortHasBeenSet = true; m_sort.push_back(std::move(value)); return *this; }
+    template<typename SortT = Aws::Vector<SortProperty>>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = Aws::Vector<SortProperty>>
+    ComponentDataConfiguration& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
+    template<typename SortT = SortProperty>
+    ComponentDataConfiguration& AddSort(SortT&& value) { m_sortHasBeenSet = true; m_sort.emplace_back(std::forward<SortT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * <p>Represents the conditional logic to use when binding data to a component. Use
      * this property to retrieve only a subset of the data in a collection.</p>
      */
-    inline const Predicate& GetPredicate() const{ return m_predicate; }
+    inline const Predicate& GetPredicate() const { return m_predicate; }
     inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
-    inline void SetPredicate(const Predicate& value) { m_predicateHasBeenSet = true; m_predicate = value; }
-    inline void SetPredicate(Predicate&& value) { m_predicateHasBeenSet = true; m_predicate = std::move(value); }
-    inline ComponentDataConfiguration& WithPredicate(const Predicate& value) { SetPredicate(value); return *this;}
-    inline ComponentDataConfiguration& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
+    template<typename PredicateT = Predicate>
+    void SetPredicate(PredicateT&& value) { m_predicateHasBeenSet = true; m_predicate = std::forward<PredicateT>(value); }
+    template<typename PredicateT = Predicate>
+    ComponentDataConfiguration& WithPredicate(PredicateT&& value) { SetPredicate(std::forward<PredicateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,15 +85,14 @@ namespace Model
      * <p>A list of IDs to use to bind data to a component. Use this property to bind
      * specifically chosen data, rather than data retrieved from a query.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentifiers() const{ return m_identifiers; }
+    inline const Aws::Vector<Aws::String>& GetIdentifiers() const { return m_identifiers; }
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-    inline void SetIdentifiers(const Aws::Vector<Aws::String>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-    inline void SetIdentifiers(Aws::Vector<Aws::String>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-    inline ComponentDataConfiguration& WithIdentifiers(const Aws::Vector<Aws::String>& value) { SetIdentifiers(value); return *this;}
-    inline ComponentDataConfiguration& WithIdentifiers(Aws::Vector<Aws::String>&& value) { SetIdentifiers(std::move(value)); return *this;}
-    inline ComponentDataConfiguration& AddIdentifiers(const Aws::String& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-    inline ComponentDataConfiguration& AddIdentifiers(Aws::String&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
-    inline ComponentDataConfiguration& AddIdentifiers(const char* value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
+    template<typename IdentifiersT = Aws::Vector<Aws::String>>
+    void SetIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::forward<IdentifiersT>(value); }
+    template<typename IdentifiersT = Aws::Vector<Aws::String>>
+    ComponentDataConfiguration& WithIdentifiers(IdentifiersT&& value) { SetIdentifiers(std::forward<IdentifiersT>(value)); return *this;}
+    template<typename IdentifiersT = Aws::String>
+    ComponentDataConfiguration& AddIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers.emplace_back(std::forward<IdentifiersT>(value)); return *this; }
     ///@}
   private:
 

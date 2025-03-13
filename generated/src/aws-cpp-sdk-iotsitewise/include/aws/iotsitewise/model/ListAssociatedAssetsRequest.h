@@ -26,7 +26,7 @@ namespace Model
   class ListAssociatedAssetsRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API ListAssociatedAssetsRequest();
+    AWS_IOTSITEWISE_API ListAssociatedAssetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline ListAssociatedAssetsRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline ListAssociatedAssetsRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline ListAssociatedAssetsRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    ListAssociatedAssetsRequest& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetHierarchyId() const{ return m_hierarchyId; }
+    inline const Aws::String& GetHierarchyId() const { return m_hierarchyId; }
     inline bool HierarchyIdHasBeenSet() const { return m_hierarchyIdHasBeenSet; }
-    inline void SetHierarchyId(const Aws::String& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = value; }
-    inline void SetHierarchyId(Aws::String&& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = std::move(value); }
-    inline void SetHierarchyId(const char* value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId.assign(value); }
-    inline ListAssociatedAssetsRequest& WithHierarchyId(const Aws::String& value) { SetHierarchyId(value); return *this;}
-    inline ListAssociatedAssetsRequest& WithHierarchyId(Aws::String&& value) { SetHierarchyId(std::move(value)); return *this;}
-    inline ListAssociatedAssetsRequest& WithHierarchyId(const char* value) { SetHierarchyId(value); return *this;}
+    template<typename HierarchyIdT = Aws::String>
+    void SetHierarchyId(HierarchyIdT&& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = std::forward<HierarchyIdT>(value); }
+    template<typename HierarchyIdT = Aws::String>
+    ListAssociatedAssetsRequest& WithHierarchyId(HierarchyIdT&& value) { SetHierarchyId(std::forward<HierarchyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,26 +84,22 @@ namespace Model
      * list includes the asset's parent asset.</p> </li> </ul> <p>Default:
      * <code>CHILD</code> </p>
      */
-    inline const TraversalDirection& GetTraversalDirection() const{ return m_traversalDirection; }
+    inline TraversalDirection GetTraversalDirection() const { return m_traversalDirection; }
     inline bool TraversalDirectionHasBeenSet() const { return m_traversalDirectionHasBeenSet; }
-    inline void SetTraversalDirection(const TraversalDirection& value) { m_traversalDirectionHasBeenSet = true; m_traversalDirection = value; }
-    inline void SetTraversalDirection(TraversalDirection&& value) { m_traversalDirectionHasBeenSet = true; m_traversalDirection = std::move(value); }
-    inline ListAssociatedAssetsRequest& WithTraversalDirection(const TraversalDirection& value) { SetTraversalDirection(value); return *this;}
-    inline ListAssociatedAssetsRequest& WithTraversalDirection(TraversalDirection&& value) { SetTraversalDirection(std::move(value)); return *this;}
+    inline void SetTraversalDirection(TraversalDirection value) { m_traversalDirectionHasBeenSet = true; m_traversalDirection = value; }
+    inline ListAssociatedAssetsRequest& WithTraversalDirection(TraversalDirection value) { SetTraversalDirection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token to be used for the next set of paginated results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAssociatedAssetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssociatedAssetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssociatedAssetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssociatedAssetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +107,7 @@ namespace Model
      * <p>The maximum number of results to return for each paginated request.</p>
      * <p>Default: 50</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAssociatedAssetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -128,13 +120,13 @@ namespace Model
     Aws::String m_hierarchyId;
     bool m_hierarchyIdHasBeenSet = false;
 
-    TraversalDirection m_traversalDirection;
+    TraversalDirection m_traversalDirection{TraversalDirection::NOT_SET};
     bool m_traversalDirectionHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

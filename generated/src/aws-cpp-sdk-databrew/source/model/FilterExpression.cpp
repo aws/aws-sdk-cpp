@@ -18,14 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-FilterExpression::FilterExpression() : 
-    m_expressionHasBeenSet(false),
-    m_valuesMapHasBeenSet(false)
-{
-}
-
 FilterExpression::FilterExpression(JsonView jsonValue)
-  : FilterExpression()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FilterExpression& FilterExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValuesMap"))
   {
     Aws::Map<Aws::String, JsonView> valuesMapJsonMap = jsonValue.GetObject("ValuesMap").GetAllObjects();
@@ -48,7 +39,6 @@ FilterExpression& FilterExpression::operator =(JsonView jsonValue)
     }
     m_valuesMapHasBeenSet = true;
   }
-
   return *this;
 }
 

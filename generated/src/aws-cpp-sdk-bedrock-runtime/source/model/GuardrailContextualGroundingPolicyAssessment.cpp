@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailContextualGroundingPolicyAssessment::GuardrailContextualGroundingPolicyAssessment() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 GuardrailContextualGroundingPolicyAssessment::GuardrailContextualGroundingPolicyAssessment(JsonView jsonValue)
-  : GuardrailContextualGroundingPolicyAssessment()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GuardrailContextualGroundingPolicyAssessment& GuardrailContextualGroundingPolicy
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

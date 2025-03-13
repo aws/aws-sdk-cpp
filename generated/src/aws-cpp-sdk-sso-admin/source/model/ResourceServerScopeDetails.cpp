@@ -18,14 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ResourceServerScopeDetails::ResourceServerScopeDetails() : 
-    m_detailedTitleHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false)
-{
-}
-
 ResourceServerScopeDetails::ResourceServerScopeDetails(JsonView jsonValue)
-  : ResourceServerScopeDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceServerScopeDetails& ResourceServerScopeDetails::operator =(JsonView json
   if(jsonValue.ValueExists("DetailedTitle"))
   {
     m_detailedTitle = jsonValue.GetString("DetailedTitle");
-
     m_detailedTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongDescription"))
   {
     m_longDescription = jsonValue.GetString("LongDescription");
-
     m_longDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

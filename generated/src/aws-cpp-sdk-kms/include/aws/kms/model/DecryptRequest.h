@@ -26,7 +26,7 @@ namespace Model
   class DecryptRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API DecryptRequest();
+    AWS_KMS_API DecryptRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
+    inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const { return m_ciphertextBlob; }
     inline bool CiphertextBlobHasBeenSet() const { return m_ciphertextBlobHasBeenSet; }
-    inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = value; }
-    inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = std::move(value); }
-    inline DecryptRequest& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
-    inline DecryptRequest& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
+    template<typename CiphertextBlobT = Aws::Utils::ByteBuffer>
+    void SetCiphertextBlob(CiphertextBlobT&& value) { m_ciphertextBlobHasBeenSet = true; m_ciphertextBlob = std::forward<CiphertextBlobT>(value); }
+    template<typename CiphertextBlobT = Aws::Utils::ByteBuffer>
+    DecryptRequest& WithCiphertextBlob(CiphertextBlobT&& value) { SetCiphertextBlob(std::forward<CiphertextBlobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,19 +68,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const { return m_encryptionContext; }
     inline bool EncryptionContextHasBeenSet() const { return m_encryptionContextHasBeenSet; }
-    inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
-    inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
-    inline DecryptRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
-    inline DecryptRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
-    inline DecryptRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
-    inline DecryptRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
-    inline DecryptRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
-    inline DecryptRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline DecryptRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
-    inline DecryptRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
-    inline DecryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
+    template<typename EncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetEncryptionContext(EncryptionContextT&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::forward<EncryptionContextT>(value); }
+    template<typename EncryptionContextT = Aws::Map<Aws::String, Aws::String>>
+    DecryptRequest& WithEncryptionContext(EncryptionContextT&& value) { SetEncryptionContext(std::forward<EncryptionContextT>(value)); return *this;}
+    template<typename EncryptionContextKeyT = Aws::String, typename EncryptionContextValueT = Aws::String>
+    DecryptRequest& AddEncryptionContext(EncryptionContextKeyT&& key, EncryptionContextValueT&& value) {
+      m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::forward<EncryptionContextKeyT>(key), std::forward<EncryptionContextValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -93,15 +90,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+    inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
-    inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
-    inline DecryptRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
-    inline DecryptRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
-    inline DecryptRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
-    inline DecryptRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
-    inline DecryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    void SetGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::forward<GrantTokensT>(value); }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    DecryptRequest& WithGrantTokens(GrantTokensT&& value) { SetGrantTokens(std::forward<GrantTokensT>(value)); return *this;}
+    template<typename GrantTokensT = Aws::String>
+    DecryptRequest& AddGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.emplace_back(std::forward<GrantTokensT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -126,14 +122,12 @@ namespace Model
      * <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use
      * <a>ListAliases</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline DecryptRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline DecryptRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline DecryptRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    DecryptRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +140,10 @@ namespace Model
      * represents the only supported algorithm that is valid for symmetric encryption
      * KMS keys.</p>
      */
-    inline const EncryptionAlgorithmSpec& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
+    inline EncryptionAlgorithmSpec GetEncryptionAlgorithm() const { return m_encryptionAlgorithm; }
     inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
-    inline void SetEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
-    inline void SetEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
-    inline DecryptRequest& WithEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetEncryptionAlgorithm(value); return *this;}
-    inline DecryptRequest& WithEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
+    inline void SetEncryptionAlgorithm(EncryptionAlgorithmSpec value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
+    inline DecryptRequest& WithEncryptionAlgorithm(EncryptionAlgorithmSpec value) { SetEncryptionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -176,12 +168,12 @@ namespace Model
      * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
-    inline const RecipientInfo& GetRecipient() const{ return m_recipient; }
+    inline const RecipientInfo& GetRecipient() const { return m_recipient; }
     inline bool RecipientHasBeenSet() const { return m_recipientHasBeenSet; }
-    inline void SetRecipient(const RecipientInfo& value) { m_recipientHasBeenSet = true; m_recipient = value; }
-    inline void SetRecipient(RecipientInfo&& value) { m_recipientHasBeenSet = true; m_recipient = std::move(value); }
-    inline DecryptRequest& WithRecipient(const RecipientInfo& value) { SetRecipient(value); return *this;}
-    inline DecryptRequest& WithRecipient(RecipientInfo&& value) { SetRecipient(std::move(value)); return *this;}
+    template<typename RecipientT = RecipientInfo>
+    void SetRecipient(RecipientT&& value) { m_recipientHasBeenSet = true; m_recipient = std::forward<RecipientT>(value); }
+    template<typename RecipientT = RecipientInfo>
+    DecryptRequest& WithRecipient(RecipientT&& value) { SetRecipient(std::forward<RecipientT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,14 +183,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
      * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DecryptRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_ciphertextBlob;
+    Aws::Utils::ByteBuffer m_ciphertextBlob{};
     bool m_ciphertextBlobHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
@@ -210,13 +202,13 @@ namespace Model
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    EncryptionAlgorithmSpec m_encryptionAlgorithm;
+    EncryptionAlgorithmSpec m_encryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
     bool m_encryptionAlgorithmHasBeenSet = false;
 
     RecipientInfo m_recipient;
     bool m_recipientHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

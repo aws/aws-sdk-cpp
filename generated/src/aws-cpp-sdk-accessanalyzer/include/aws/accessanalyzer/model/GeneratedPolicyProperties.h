@@ -32,7 +32,7 @@ namespace Model
   class GeneratedPolicyProperties
   {
   public:
-    AWS_ACCESSANALYZER_API GeneratedPolicyProperties();
+    AWS_ACCESSANALYZER_API GeneratedPolicyProperties() = default;
     AWS_ACCESSANALYZER_API GeneratedPolicyProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API GeneratedPolicyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * possible actions for a service that IAM Access Analyzer identified from the
      * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
      */
-    inline bool GetIsComplete() const{ return m_isComplete; }
+    inline bool GetIsComplete() const { return m_isComplete; }
     inline bool IsCompleteHasBeenSet() const { return m_isCompleteHasBeenSet; }
     inline void SetIsComplete(bool value) { m_isCompleteHasBeenSet = true; m_isComplete = value; }
     inline GeneratedPolicyProperties& WithIsComplete(bool value) { SetIsComplete(value); return *this;}
@@ -55,30 +55,28 @@ namespace Model
      * <p>The ARN of the IAM entity (user or role) for which you are generating a
      * policy.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline GeneratedPolicyProperties& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline GeneratedPolicyProperties& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline GeneratedPolicyProperties& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    GeneratedPolicyProperties& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
      */
-    inline const CloudTrailProperties& GetCloudTrailProperties() const{ return m_cloudTrailProperties; }
+    inline const CloudTrailProperties& GetCloudTrailProperties() const { return m_cloudTrailProperties; }
     inline bool CloudTrailPropertiesHasBeenSet() const { return m_cloudTrailPropertiesHasBeenSet; }
-    inline void SetCloudTrailProperties(const CloudTrailProperties& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = value; }
-    inline void SetCloudTrailProperties(CloudTrailProperties&& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = std::move(value); }
-    inline GeneratedPolicyProperties& WithCloudTrailProperties(const CloudTrailProperties& value) { SetCloudTrailProperties(value); return *this;}
-    inline GeneratedPolicyProperties& WithCloudTrailProperties(CloudTrailProperties&& value) { SetCloudTrailProperties(std::move(value)); return *this;}
+    template<typename CloudTrailPropertiesT = CloudTrailProperties>
+    void SetCloudTrailProperties(CloudTrailPropertiesT&& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = std::forward<CloudTrailPropertiesT>(value); }
+    template<typename CloudTrailPropertiesT = CloudTrailProperties>
+    GeneratedPolicyProperties& WithCloudTrailProperties(CloudTrailPropertiesT&& value) { SetCloudTrailProperties(std::forward<CloudTrailPropertiesT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isComplete;
+    bool m_isComplete{false};
     bool m_isCompleteHasBeenSet = false;
 
     Aws::String m_principalArn;

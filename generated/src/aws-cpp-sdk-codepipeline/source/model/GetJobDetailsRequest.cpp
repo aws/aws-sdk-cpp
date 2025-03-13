@@ -12,11 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobDetailsRequest::GetJobDetailsRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetJobDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

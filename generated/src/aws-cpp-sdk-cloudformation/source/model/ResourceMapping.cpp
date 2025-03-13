@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceMapping::ResourceMapping() : 
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false)
-{
-}
-
 ResourceMapping::ResourceMapping(const XmlNode& xmlNode)
-  : ResourceMapping()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ResourceMapping& ResourceMapping::operator =(const XmlNode& xmlNode)
     {
       m_source = sourceNode;
       m_sourceHasBeenSet = true;
+       m_sourceHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("Destination");
     if(!destinationNode.IsNull())
     {
       m_destination = destinationNode;
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
   }
 

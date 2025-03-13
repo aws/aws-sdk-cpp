@@ -34,7 +34,7 @@ namespace Model
   class RepositoryCatalogDataInput
   {
   public:
-    AWS_ECRPUBLIC_API RepositoryCatalogDataInput();
+    AWS_ECRPUBLIC_API RepositoryCatalogDataInput() = default;
     AWS_ECRPUBLIC_API RepositoryCatalogDataInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECRPUBLIC_API RepositoryCatalogDataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * both the image details and also when searching for repositories on the Amazon
      * ECR Public Gallery.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RepositoryCatalogDataInput& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RepositoryCatalogDataInput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RepositoryCatalogDataInput& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RepositoryCatalogDataInput& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,15 +65,14 @@ namespace Model
      * <code>ARM</code> </p> </li> <li> <p> <code>ARM 64</code> </p> </li> <li> <p>
      * <code>x86</code> </p> </li> <li> <p> <code>x86-64</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetArchitectures() const{ return m_architectures; }
+    inline const Aws::Vector<Aws::String>& GetArchitectures() const { return m_architectures; }
     inline bool ArchitecturesHasBeenSet() const { return m_architecturesHasBeenSet; }
-    inline void SetArchitectures(const Aws::Vector<Aws::String>& value) { m_architecturesHasBeenSet = true; m_architectures = value; }
-    inline void SetArchitectures(Aws::Vector<Aws::String>&& value) { m_architecturesHasBeenSet = true; m_architectures = std::move(value); }
-    inline RepositoryCatalogDataInput& WithArchitectures(const Aws::Vector<Aws::String>& value) { SetArchitectures(value); return *this;}
-    inline RepositoryCatalogDataInput& WithArchitectures(Aws::Vector<Aws::String>&& value) { SetArchitectures(std::move(value)); return *this;}
-    inline RepositoryCatalogDataInput& AddArchitectures(const Aws::String& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
-    inline RepositoryCatalogDataInput& AddArchitectures(Aws::String&& value) { m_architecturesHasBeenSet = true; m_architectures.push_back(std::move(value)); return *this; }
-    inline RepositoryCatalogDataInput& AddArchitectures(const char* value) { m_architecturesHasBeenSet = true; m_architectures.push_back(value); return *this; }
+    template<typename ArchitecturesT = Aws::Vector<Aws::String>>
+    void SetArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures = std::forward<ArchitecturesT>(value); }
+    template<typename ArchitecturesT = Aws::Vector<Aws::String>>
+    RepositoryCatalogDataInput& WithArchitectures(ArchitecturesT&& value) { SetArchitectures(std::forward<ArchitecturesT>(value)); return *this;}
+    template<typename ArchitecturesT = Aws::String>
+    RepositoryCatalogDataInput& AddArchitectures(ArchitecturesT&& value) { m_architecturesHasBeenSet = true; m_architectures.emplace_back(std::forward<ArchitecturesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,15 +85,14 @@ namespace Model
      * discoverable in the Amazon ECR Public Gallery.</p>  <ul> <li> <p>
      * <code>Linux</code> </p> </li> <li> <p> <code>Windows</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetOperatingSystems() const{ return m_operatingSystems; }
+    inline const Aws::Vector<Aws::String>& GetOperatingSystems() const { return m_operatingSystems; }
     inline bool OperatingSystemsHasBeenSet() const { return m_operatingSystemsHasBeenSet; }
-    inline void SetOperatingSystems(const Aws::Vector<Aws::String>& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = value; }
-    inline void SetOperatingSystems(Aws::Vector<Aws::String>&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = std::move(value); }
-    inline RepositoryCatalogDataInput& WithOperatingSystems(const Aws::Vector<Aws::String>& value) { SetOperatingSystems(value); return *this;}
-    inline RepositoryCatalogDataInput& WithOperatingSystems(Aws::Vector<Aws::String>&& value) { SetOperatingSystems(std::move(value)); return *this;}
-    inline RepositoryCatalogDataInput& AddOperatingSystems(const Aws::String& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.push_back(value); return *this; }
-    inline RepositoryCatalogDataInput& AddOperatingSystems(Aws::String&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.push_back(std::move(value)); return *this; }
-    inline RepositoryCatalogDataInput& AddOperatingSystems(const char* value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.push_back(value); return *this; }
+    template<typename OperatingSystemsT = Aws::Vector<Aws::String>>
+    void SetOperatingSystems(OperatingSystemsT&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems = std::forward<OperatingSystemsT>(value); }
+    template<typename OperatingSystemsT = Aws::Vector<Aws::String>>
+    RepositoryCatalogDataInput& WithOperatingSystems(OperatingSystemsT&& value) { SetOperatingSystems(std::forward<OperatingSystemsT>(value)); return *this;}
+    template<typename OperatingSystemsT = Aws::String>
+    RepositoryCatalogDataInput& AddOperatingSystems(OperatingSystemsT&& value) { m_operatingSystemsHasBeenSet = true; m_operatingSystems.emplace_back(std::forward<OperatingSystemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,12 +101,12 @@ namespace Model
      * is only publicly visible in the Amazon ECR Public Gallery for verified
      * accounts.</p> 
      */
-    inline const Aws::Utils::ByteBuffer& GetLogoImageBlob() const{ return m_logoImageBlob; }
+    inline const Aws::Utils::ByteBuffer& GetLogoImageBlob() const { return m_logoImageBlob; }
     inline bool LogoImageBlobHasBeenSet() const { return m_logoImageBlobHasBeenSet; }
-    inline void SetLogoImageBlob(const Aws::Utils::ByteBuffer& value) { m_logoImageBlobHasBeenSet = true; m_logoImageBlob = value; }
-    inline void SetLogoImageBlob(Aws::Utils::ByteBuffer&& value) { m_logoImageBlobHasBeenSet = true; m_logoImageBlob = std::move(value); }
-    inline RepositoryCatalogDataInput& WithLogoImageBlob(const Aws::Utils::ByteBuffer& value) { SetLogoImageBlob(value); return *this;}
-    inline RepositoryCatalogDataInput& WithLogoImageBlob(Aws::Utils::ByteBuffer&& value) { SetLogoImageBlob(std::move(value)); return *this;}
+    template<typename LogoImageBlobT = Aws::Utils::ByteBuffer>
+    void SetLogoImageBlob(LogoImageBlobT&& value) { m_logoImageBlobHasBeenSet = true; m_logoImageBlob = std::forward<LogoImageBlobT>(value); }
+    template<typename LogoImageBlobT = Aws::Utils::ByteBuffer>
+    RepositoryCatalogDataInput& WithLogoImageBlob(LogoImageBlobT&& value) { SetLogoImageBlob(std::forward<LogoImageBlobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +115,12 @@ namespace Model
      * visible in the Amazon ECR Public Gallery. The text must be in markdown
      * format.</p>
      */
-    inline const Aws::String& GetAboutText() const{ return m_aboutText; }
+    inline const Aws::String& GetAboutText() const { return m_aboutText; }
     inline bool AboutTextHasBeenSet() const { return m_aboutTextHasBeenSet; }
-    inline void SetAboutText(const Aws::String& value) { m_aboutTextHasBeenSet = true; m_aboutText = value; }
-    inline void SetAboutText(Aws::String&& value) { m_aboutTextHasBeenSet = true; m_aboutText = std::move(value); }
-    inline void SetAboutText(const char* value) { m_aboutTextHasBeenSet = true; m_aboutText.assign(value); }
-    inline RepositoryCatalogDataInput& WithAboutText(const Aws::String& value) { SetAboutText(value); return *this;}
-    inline RepositoryCatalogDataInput& WithAboutText(Aws::String&& value) { SetAboutText(std::move(value)); return *this;}
-    inline RepositoryCatalogDataInput& WithAboutText(const char* value) { SetAboutText(value); return *this;}
+    template<typename AboutTextT = Aws::String>
+    void SetAboutText(AboutTextT&& value) { m_aboutTextHasBeenSet = true; m_aboutText = std::forward<AboutTextT>(value); }
+    template<typename AboutTextT = Aws::String>
+    RepositoryCatalogDataInput& WithAboutText(AboutTextT&& value) { SetAboutText(std::forward<AboutTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +130,12 @@ namespace Model
      * context, support information, and additional usage details for users of the
      * repository. The text must be in markdown format.</p>
      */
-    inline const Aws::String& GetUsageText() const{ return m_usageText; }
+    inline const Aws::String& GetUsageText() const { return m_usageText; }
     inline bool UsageTextHasBeenSet() const { return m_usageTextHasBeenSet; }
-    inline void SetUsageText(const Aws::String& value) { m_usageTextHasBeenSet = true; m_usageText = value; }
-    inline void SetUsageText(Aws::String&& value) { m_usageTextHasBeenSet = true; m_usageText = std::move(value); }
-    inline void SetUsageText(const char* value) { m_usageTextHasBeenSet = true; m_usageText.assign(value); }
-    inline RepositoryCatalogDataInput& WithUsageText(const Aws::String& value) { SetUsageText(value); return *this;}
-    inline RepositoryCatalogDataInput& WithUsageText(Aws::String&& value) { SetUsageText(std::move(value)); return *this;}
-    inline RepositoryCatalogDataInput& WithUsageText(const char* value) { SetUsageText(value); return *this;}
+    template<typename UsageTextT = Aws::String>
+    void SetUsageText(UsageTextT&& value) { m_usageTextHasBeenSet = true; m_usageText = std::forward<UsageTextT>(value); }
+    template<typename UsageTextT = Aws::String>
+    RepositoryCatalogDataInput& WithUsageText(UsageTextT&& value) { SetUsageText(std::forward<UsageTextT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,7 +148,7 @@ namespace Model
     Aws::Vector<Aws::String> m_operatingSystems;
     bool m_operatingSystemsHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_logoImageBlob;
+    Aws::Utils::ByteBuffer m_logoImageBlob{};
     bool m_logoImageBlobHasBeenSet = false;
 
     Aws::String m_aboutText;

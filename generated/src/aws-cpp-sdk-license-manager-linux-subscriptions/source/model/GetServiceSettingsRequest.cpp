@@ -12,10 +12,6 @@ using namespace Aws::LicenseManagerLinuxSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceSettingsRequest::GetServiceSettingsRequest()
-{
-}
-
 Aws::String GetServiceSettingsRequest::SerializePayload() const
 {
   return {};

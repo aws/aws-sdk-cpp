@@ -35,7 +35,7 @@ namespace Model
   class ServiceAccountTokenSummaryWithKey
   {
   public:
-    AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummaryWithKey();
+    AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummaryWithKey() = default;
     AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummaryWithKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummaryWithKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The unique ID of the service account token.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ServiceAccountTokenSummaryWithKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ServiceAccountTokenSummaryWithKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ServiceAccountTokenSummaryWithKey& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ServiceAccountTokenSummaryWithKey& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * <p>The key for the service account token. Used when making calls to the Grafana
      * HTTP APIs to authenticate and authorize the requests.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ServiceAccountTokenSummaryWithKey& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ServiceAccountTokenSummaryWithKey& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ServiceAccountTokenSummaryWithKey& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ServiceAccountTokenSummaryWithKey& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service account token.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ServiceAccountTokenSummaryWithKey& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ServiceAccountTokenSummaryWithKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ServiceAccountTokenSummaryWithKey& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceAccountTokenSummaryWithKey& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,17 +20,7 @@ namespace SNS
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_subscriptionArnHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_topicArnHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(const XmlNode& xmlNode)
-  : Subscription()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ Subscription& Subscription::operator =(const XmlNode& xmlNode)
     {
       m_subscriptionArn = Aws::Utils::Xml::DecodeEscapedXmlText(subscriptionArnNode.GetText());
       m_subscriptionArnHasBeenSet = true;
+       m_subscriptionArnHasBeenSet = true;
     }
     XmlNode ownerNode = resultNode.FirstChild("Owner");
     if(!ownerNode.IsNull())
     {
       m_owner = Aws::Utils::Xml::DecodeEscapedXmlText(ownerNode.GetText());
       m_ownerHasBeenSet = true;
+       m_ownerHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode topicArnNode = resultNode.FirstChild("TopicArn");
     if(!topicArnNode.IsNull())
     {
       m_topicArn = Aws::Utils::Xml::DecodeEscapedXmlText(topicArnNode.GetText());
       m_topicArnHasBeenSet = true;
+       m_topicArnHasBeenSet = true;
     }
   }
 

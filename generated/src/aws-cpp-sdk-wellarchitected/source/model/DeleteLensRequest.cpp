@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteLensRequest::DeleteLensRequest() : 
-    m_lensAliasHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_lensStatus(LensStatusType::NOT_SET),
-    m_lensStatusHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLensRequest::SerializePayload() const
 {
   return {};

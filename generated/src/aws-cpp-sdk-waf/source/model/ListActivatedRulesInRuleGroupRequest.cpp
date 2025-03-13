@@ -12,14 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListActivatedRulesInRuleGroupRequest::ListActivatedRulesInRuleGroupRequest() : 
-    m_ruleGroupIdHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListActivatedRulesInRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

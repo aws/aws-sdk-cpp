@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateTransitGatewayMulticastDomainRequest::AssociateTransitGatewayMulticastDomainRequest() : 
-    m_transitGatewayMulticastDomainIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AssociateTransitGatewayMulticastDomainRequest::SerializePayload() const
 {
   Aws::StringStream ss;

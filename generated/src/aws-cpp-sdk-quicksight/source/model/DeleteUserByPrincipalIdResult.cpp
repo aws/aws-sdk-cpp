@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteUserByPrincipalIdResult::DeleteUserByPrincipalIdResult() : 
-    m_status(0)
-{
-}
-
 DeleteUserByPrincipalIdResult::DeleteUserByPrincipalIdResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteUserByPrincipalIdResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteUserByPrincipalIdResult& DeleteUserByPrincipalIdResult::operator =(const A
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

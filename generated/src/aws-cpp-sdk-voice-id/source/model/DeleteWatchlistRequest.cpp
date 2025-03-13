@@ -12,12 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWatchlistRequest::DeleteWatchlistRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_watchlistIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWatchlistRequest::SerializePayload() const
 {
   JsonValue payload;

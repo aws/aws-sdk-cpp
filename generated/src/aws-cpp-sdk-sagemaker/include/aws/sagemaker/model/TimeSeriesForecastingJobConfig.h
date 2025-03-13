@@ -38,7 +38,7 @@ namespace Model
   class TimeSeriesForecastingJobConfig
   {
   public:
-    AWS_SAGEMAKER_API TimeSeriesForecastingJobConfig();
+    AWS_SAGEMAKER_API TimeSeriesForecastingJobConfig() = default;
     AWS_SAGEMAKER_API TimeSeriesForecastingJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TimeSeriesForecastingJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,24 +62,22 @@ namespace Model
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
      * column set in <code>TimeSeriesConfig</code>.</p> 
      */
-    inline const Aws::String& GetFeatureSpecificationS3Uri() const{ return m_featureSpecificationS3Uri; }
+    inline const Aws::String& GetFeatureSpecificationS3Uri() const { return m_featureSpecificationS3Uri; }
     inline bool FeatureSpecificationS3UriHasBeenSet() const { return m_featureSpecificationS3UriHasBeenSet; }
-    inline void SetFeatureSpecificationS3Uri(const Aws::String& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = value; }
-    inline void SetFeatureSpecificationS3Uri(Aws::String&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::move(value); }
-    inline void SetFeatureSpecificationS3Uri(const char* value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri.assign(value); }
-    inline TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(const Aws::String& value) { SetFeatureSpecificationS3Uri(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(Aws::String&& value) { SetFeatureSpecificationS3Uri(std::move(value)); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(const char* value) { SetFeatureSpecificationS3Uri(value); return *this;}
+    template<typename FeatureSpecificationS3UriT = Aws::String>
+    void SetFeatureSpecificationS3Uri(FeatureSpecificationS3UriT&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::forward<FeatureSpecificationS3UriT>(value); }
+    template<typename FeatureSpecificationS3UriT = Aws::String>
+    TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(FeatureSpecificationS3UriT&& value) { SetFeatureSpecificationS3Uri(std::forward<FeatureSpecificationS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
+    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const { return m_completionCriteria; }
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
-    inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
-    inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
-    inline TimeSeriesForecastingJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    void SetCompletionCriteria(CompletionCriteriaT&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::forward<CompletionCriteriaT>(value); }
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    TimeSeriesForecastingJobConfig& WithCompletionCriteria(CompletionCriteriaT&& value) { SetCompletionCriteria(std::forward<CompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +92,12 @@ namespace Model
      * <p>Hour - 1-23</p> </li> <li> <p>Day - 1-6</p> </li> <li> <p>Week - 1-4</p>
      * </li> <li> <p>Month - 1-11</p> </li> <li> <p>Year - 1</p> </li> </ul>
      */
-    inline const Aws::String& GetForecastFrequency() const{ return m_forecastFrequency; }
+    inline const Aws::String& GetForecastFrequency() const { return m_forecastFrequency; }
     inline bool ForecastFrequencyHasBeenSet() const { return m_forecastFrequencyHasBeenSet; }
-    inline void SetForecastFrequency(const Aws::String& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = value; }
-    inline void SetForecastFrequency(Aws::String&& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = std::move(value); }
-    inline void SetForecastFrequency(const char* value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency.assign(value); }
-    inline TimeSeriesForecastingJobConfig& WithForecastFrequency(const Aws::String& value) { SetForecastFrequency(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithForecastFrequency(Aws::String&& value) { SetForecastFrequency(std::move(value)); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithForecastFrequency(const char* value) { SetForecastFrequency(value); return *this;}
+    template<typename ForecastFrequencyT = Aws::String>
+    void SetForecastFrequency(ForecastFrequencyT&& value) { m_forecastFrequencyHasBeenSet = true; m_forecastFrequency = std::forward<ForecastFrequencyT>(value); }
+    template<typename ForecastFrequencyT = Aws::String>
+    TimeSeriesForecastingJobConfig& WithForecastFrequency(ForecastFrequencyT&& value) { SetForecastFrequency(std::forward<ForecastFrequencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +106,7 @@ namespace Model
      * also called the prediction length. The maximum forecast horizon is the lesser of
      * 500 time-steps or 1/4 of the time-steps in the dataset.</p>
      */
-    inline int GetForecastHorizon() const{ return m_forecastHorizon; }
+    inline int GetForecastHorizon() const { return m_forecastHorizon; }
     inline bool ForecastHorizonHasBeenSet() const { return m_forecastHorizonHasBeenSet; }
     inline void SetForecastHorizon(int value) { m_forecastHorizonHasBeenSet = true; m_forecastHorizon = value; }
     inline TimeSeriesForecastingJobConfig& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
@@ -124,15 +120,14 @@ namespace Model
      * specified. When <code>ForecastQuantiles</code> is not provided, the AutoML job
      * uses the quantiles p10, p50, and p90 as default.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastQuantiles() const{ return m_forecastQuantiles; }
+    inline const Aws::Vector<Aws::String>& GetForecastQuantiles() const { return m_forecastQuantiles; }
     inline bool ForecastQuantilesHasBeenSet() const { return m_forecastQuantilesHasBeenSet; }
-    inline void SetForecastQuantiles(const Aws::Vector<Aws::String>& value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles = value; }
-    inline void SetForecastQuantiles(Aws::Vector<Aws::String>&& value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles = std::move(value); }
-    inline TimeSeriesForecastingJobConfig& WithForecastQuantiles(const Aws::Vector<Aws::String>& value) { SetForecastQuantiles(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithForecastQuantiles(Aws::Vector<Aws::String>&& value) { SetForecastQuantiles(std::move(value)); return *this;}
-    inline TimeSeriesForecastingJobConfig& AddForecastQuantiles(const Aws::String& value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles.push_back(value); return *this; }
-    inline TimeSeriesForecastingJobConfig& AddForecastQuantiles(Aws::String&& value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles.push_back(std::move(value)); return *this; }
-    inline TimeSeriesForecastingJobConfig& AddForecastQuantiles(const char* value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles.push_back(value); return *this; }
+    template<typename ForecastQuantilesT = Aws::Vector<Aws::String>>
+    void SetForecastQuantiles(ForecastQuantilesT&& value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles = std::forward<ForecastQuantilesT>(value); }
+    template<typename ForecastQuantilesT = Aws::Vector<Aws::String>>
+    TimeSeriesForecastingJobConfig& WithForecastQuantiles(ForecastQuantilesT&& value) { SetForecastQuantiles(std::forward<ForecastQuantilesT>(value)); return *this;}
+    template<typename ForecastQuantilesT = Aws::String>
+    TimeSeriesForecastingJobConfig& AddForecastQuantiles(ForecastQuantilesT&& value) { m_forecastQuantilesHasBeenSet = true; m_forecastQuantiles.emplace_back(std::forward<ForecastQuantilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -140,24 +135,24 @@ namespace Model
      * <p>The transformations modifying specific attributes of the time-series, such as
      * filling strategies for missing values.</p>
      */
-    inline const TimeSeriesTransformations& GetTransformations() const{ return m_transformations; }
+    inline const TimeSeriesTransformations& GetTransformations() const { return m_transformations; }
     inline bool TransformationsHasBeenSet() const { return m_transformationsHasBeenSet; }
-    inline void SetTransformations(const TimeSeriesTransformations& value) { m_transformationsHasBeenSet = true; m_transformations = value; }
-    inline void SetTransformations(TimeSeriesTransformations&& value) { m_transformationsHasBeenSet = true; m_transformations = std::move(value); }
-    inline TimeSeriesForecastingJobConfig& WithTransformations(const TimeSeriesTransformations& value) { SetTransformations(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithTransformations(TimeSeriesTransformations&& value) { SetTransformations(std::move(value)); return *this;}
+    template<typename TransformationsT = TimeSeriesTransformations>
+    void SetTransformations(TransformationsT&& value) { m_transformationsHasBeenSet = true; m_transformations = std::forward<TransformationsT>(value); }
+    template<typename TransformationsT = TimeSeriesTransformations>
+    TimeSeriesForecastingJobConfig& WithTransformations(TransformationsT&& value) { SetTransformations(std::forward<TransformationsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The collection of components that defines the time-series.</p>
      */
-    inline const TimeSeriesConfig& GetTimeSeriesConfig() const{ return m_timeSeriesConfig; }
+    inline const TimeSeriesConfig& GetTimeSeriesConfig() const { return m_timeSeriesConfig; }
     inline bool TimeSeriesConfigHasBeenSet() const { return m_timeSeriesConfigHasBeenSet; }
-    inline void SetTimeSeriesConfig(const TimeSeriesConfig& value) { m_timeSeriesConfigHasBeenSet = true; m_timeSeriesConfig = value; }
-    inline void SetTimeSeriesConfig(TimeSeriesConfig&& value) { m_timeSeriesConfigHasBeenSet = true; m_timeSeriesConfig = std::move(value); }
-    inline TimeSeriesForecastingJobConfig& WithTimeSeriesConfig(const TimeSeriesConfig& value) { SetTimeSeriesConfig(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithTimeSeriesConfig(TimeSeriesConfig&& value) { SetTimeSeriesConfig(std::move(value)); return *this;}
+    template<typename TimeSeriesConfigT = TimeSeriesConfig>
+    void SetTimeSeriesConfig(TimeSeriesConfigT&& value) { m_timeSeriesConfigHasBeenSet = true; m_timeSeriesConfig = std::forward<TimeSeriesConfigT>(value); }
+    template<typename TimeSeriesConfigT = TimeSeriesConfig>
+    TimeSeriesForecastingJobConfig& WithTimeSeriesConfig(TimeSeriesConfigT&& value) { SetTimeSeriesConfig(std::forward<TimeSeriesConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,24 +160,24 @@ namespace Model
      * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
-    inline const Aws::Vector<HolidayConfigAttributes>& GetHolidayConfig() const{ return m_holidayConfig; }
+    inline const Aws::Vector<HolidayConfigAttributes>& GetHolidayConfig() const { return m_holidayConfig; }
     inline bool HolidayConfigHasBeenSet() const { return m_holidayConfigHasBeenSet; }
-    inline void SetHolidayConfig(const Aws::Vector<HolidayConfigAttributes>& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = value; }
-    inline void SetHolidayConfig(Aws::Vector<HolidayConfigAttributes>&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = std::move(value); }
-    inline TimeSeriesForecastingJobConfig& WithHolidayConfig(const Aws::Vector<HolidayConfigAttributes>& value) { SetHolidayConfig(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithHolidayConfig(Aws::Vector<HolidayConfigAttributes>&& value) { SetHolidayConfig(std::move(value)); return *this;}
-    inline TimeSeriesForecastingJobConfig& AddHolidayConfig(const HolidayConfigAttributes& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(value); return *this; }
-    inline TimeSeriesForecastingJobConfig& AddHolidayConfig(HolidayConfigAttributes&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(std::move(value)); return *this; }
+    template<typename HolidayConfigT = Aws::Vector<HolidayConfigAttributes>>
+    void SetHolidayConfig(HolidayConfigT&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = std::forward<HolidayConfigT>(value); }
+    template<typename HolidayConfigT = Aws::Vector<HolidayConfigAttributes>>
+    TimeSeriesForecastingJobConfig& WithHolidayConfig(HolidayConfigT&& value) { SetHolidayConfig(std::forward<HolidayConfigT>(value)); return *this;}
+    template<typename HolidayConfigT = HolidayConfigAttributes>
+    TimeSeriesForecastingJobConfig& AddHolidayConfig(HolidayConfigT&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.emplace_back(std::forward<HolidayConfigT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const CandidateGenerationConfig& GetCandidateGenerationConfig() const{ return m_candidateGenerationConfig; }
+    inline const CandidateGenerationConfig& GetCandidateGenerationConfig() const { return m_candidateGenerationConfig; }
     inline bool CandidateGenerationConfigHasBeenSet() const { return m_candidateGenerationConfigHasBeenSet; }
-    inline void SetCandidateGenerationConfig(const CandidateGenerationConfig& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = value; }
-    inline void SetCandidateGenerationConfig(CandidateGenerationConfig&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::move(value); }
-    inline TimeSeriesForecastingJobConfig& WithCandidateGenerationConfig(const CandidateGenerationConfig& value) { SetCandidateGenerationConfig(value); return *this;}
-    inline TimeSeriesForecastingJobConfig& WithCandidateGenerationConfig(CandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
+    template<typename CandidateGenerationConfigT = CandidateGenerationConfig>
+    void SetCandidateGenerationConfig(CandidateGenerationConfigT&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::forward<CandidateGenerationConfigT>(value); }
+    template<typename CandidateGenerationConfigT = CandidateGenerationConfig>
+    TimeSeriesForecastingJobConfig& WithCandidateGenerationConfig(CandidateGenerationConfigT&& value) { SetCandidateGenerationConfig(std::forward<CandidateGenerationConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -195,7 +190,7 @@ namespace Model
     Aws::String m_forecastFrequency;
     bool m_forecastFrequencyHasBeenSet = false;
 
-    int m_forecastHorizon;
+    int m_forecastHorizon{0};
     bool m_forecastHorizonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastQuantiles;

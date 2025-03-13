@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-ConfigurationStatus::ConfigurationStatus() : 
-    m_errorHasBeenSet(false),
-    m_state(ConfigurationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ConfigurationStatus::ConfigurationStatus(JsonView jsonValue)
-  : ConfigurationStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ConfigurationStatus& ConfigurationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ConfigurationStateMapper::GetConfigurationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

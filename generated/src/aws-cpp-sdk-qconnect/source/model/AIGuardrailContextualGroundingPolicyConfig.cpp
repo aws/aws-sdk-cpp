@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIGuardrailContextualGroundingPolicyConfig::AIGuardrailContextualGroundingPolicyConfig() : 
-    m_filtersConfigHasBeenSet(false)
-{
-}
-
 AIGuardrailContextualGroundingPolicyConfig::AIGuardrailContextualGroundingPolicyConfig(JsonView jsonValue)
-  : AIGuardrailContextualGroundingPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AIGuardrailContextualGroundingPolicyConfig& AIGuardrailContextualGroundingPolicy
     }
     m_filtersConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class ListTypeVersionsRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListTypeVersionsRequest();
+    AWS_CLOUDFORMATION_API ListTypeVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,10 @@ namespace Model
      * <p>The kind of the extension.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
-    inline const RegistryType& GetType() const{ return m_type; }
+    inline RegistryType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListTypeVersionsRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
-    inline ListTypeVersionsRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RegistryType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListTypeVersionsRequest& WithType(RegistryType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>Conditional: You must specify either <code>TypeName</code> and
      * <code>Type</code>, or <code>Arn</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline ListTypeVersionsRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ListTypeVersionsRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ListTypeVersionsRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ListTypeVersionsRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * summary information.</p> <p>Conditional: You must specify either
      * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListTypeVersionsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListTypeVersionsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListTypeVersionsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListTypeVersionsRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +84,7 @@ namespace Model
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTypeVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -105,14 +99,12 @@ namespace Model
      * remaining results, the previous response object's <code>NextToken</code>
      * parameter is set to <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTypeVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTypeVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTypeVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTypeVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +117,10 @@ namespace Model
      * been deregistered and can no longer be used in CloudFormation operations.</p>
      * </li> </ul> <p>The default is <code>LIVE</code>.</p>
      */
-    inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
+    inline DeprecatedStatus GetDeprecatedStatus() const { return m_deprecatedStatus; }
     inline bool DeprecatedStatusHasBeenSet() const { return m_deprecatedStatusHasBeenSet; }
-    inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
-    inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = std::move(value); }
-    inline ListTypeVersionsRequest& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
-    inline ListTypeVersionsRequest& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
+    inline void SetDeprecatedStatus(DeprecatedStatus value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
+    inline ListTypeVersionsRequest& WithDeprecatedStatus(DeprecatedStatus value) { SetDeprecatedStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -138,18 +128,16 @@ namespace Model
      * <p>The publisher ID of the extension publisher.</p> <p>Extensions published by
      * Amazon aren't assigned a publisher ID.</p>
      */
-    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+    inline const Aws::String& GetPublisherId() const { return m_publisherId; }
     inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
-    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
-    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
-    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
-    inline ListTypeVersionsRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
-    inline ListTypeVersionsRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
-    inline ListTypeVersionsRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+    template<typename PublisherIdT = Aws::String>
+    void SetPublisherId(PublisherIdT&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::forward<PublisherIdT>(value); }
+    template<typename PublisherIdT = Aws::String>
+    ListTypeVersionsRequest& WithPublisherId(PublisherIdT&& value) { SetPublisherId(std::forward<PublisherIdT>(value)); return *this;}
     ///@}
   private:
 
-    RegistryType m_type;
+    RegistryType m_type{RegistryType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_typeName;
@@ -158,13 +146,13 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    DeprecatedStatus m_deprecatedStatus;
+    DeprecatedStatus m_deprecatedStatus{DeprecatedStatus::NOT_SET};
     bool m_deprecatedStatusHasBeenSet = false;
 
     Aws::String m_publisherId;

@@ -12,13 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergePullRequestByFastForwardRequest::MergePullRequestByFastForwardRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_sourceCommitIdHasBeenSet(false)
-{
-}
-
 Aws::String MergePullRequestByFastForwardRequest::SerializePayload() const
 {
   JsonValue payload;

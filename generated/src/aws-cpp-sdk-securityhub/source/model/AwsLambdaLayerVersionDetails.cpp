@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaLayerVersionDetails::AwsLambdaLayerVersionDetails() : 
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_compatibleRuntimesHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
-{
-}
-
 AwsLambdaLayerVersionDetails::AwsLambdaLayerVersionDetails(JsonView jsonValue)
-  : AwsLambdaLayerVersionDetails()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ AwsLambdaLayerVersionDetails& AwsLambdaLayerVersionDetails::operator =(JsonView 
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompatibleRuntimes"))
   {
     Aws::Utils::Array<JsonView> compatibleRuntimesJsonList = jsonValue.GetArray("CompatibleRuntimes");
@@ -50,14 +39,11 @@ AwsLambdaLayerVersionDetails& AwsLambdaLayerVersionDetails::operator =(JsonView 
     }
     m_compatibleRuntimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   return *this;
 }
 

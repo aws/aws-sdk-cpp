@@ -35,7 +35,7 @@ namespace Model
   class DefaultClientBrandingAttributes
   {
   public:
-    AWS_WORKSPACES_API DefaultClientBrandingAttributes();
+    AWS_WORKSPACES_API DefaultClientBrandingAttributes() = default;
     AWS_WORKSPACES_API DefaultClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API DefaultClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The logo. The only image format accepted is a binary data object that is
      * converted from a <code>.png</code> file.</p>
      */
-    inline const Aws::String& GetLogoUrl() const{ return m_logoUrl; }
+    inline const Aws::String& GetLogoUrl() const { return m_logoUrl; }
     inline bool LogoUrlHasBeenSet() const { return m_logoUrlHasBeenSet; }
-    inline void SetLogoUrl(const Aws::String& value) { m_logoUrlHasBeenSet = true; m_logoUrl = value; }
-    inline void SetLogoUrl(Aws::String&& value) { m_logoUrlHasBeenSet = true; m_logoUrl = std::move(value); }
-    inline void SetLogoUrl(const char* value) { m_logoUrlHasBeenSet = true; m_logoUrl.assign(value); }
-    inline DefaultClientBrandingAttributes& WithLogoUrl(const Aws::String& value) { SetLogoUrl(value); return *this;}
-    inline DefaultClientBrandingAttributes& WithLogoUrl(Aws::String&& value) { SetLogoUrl(std::move(value)); return *this;}
-    inline DefaultClientBrandingAttributes& WithLogoUrl(const char* value) { SetLogoUrl(value); return *this;}
+    template<typename LogoUrlT = Aws::String>
+    void SetLogoUrl(LogoUrlT&& value) { m_logoUrlHasBeenSet = true; m_logoUrl = std::forward<LogoUrlT>(value); }
+    template<typename LogoUrlT = Aws::String>
+    DefaultClientBrandingAttributes& WithLogoUrl(LogoUrlT&& value) { SetLogoUrl(std::forward<LogoUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * parameter for each platform type, but not both.</p> </li> <li> <p>The default
      * email is <code>workspaces-feedback@amazon.com</code>.</p> </li> </ul> 
      */
-    inline const Aws::String& GetSupportEmail() const{ return m_supportEmail; }
+    inline const Aws::String& GetSupportEmail() const { return m_supportEmail; }
     inline bool SupportEmailHasBeenSet() const { return m_supportEmailHasBeenSet; }
-    inline void SetSupportEmail(const Aws::String& value) { m_supportEmailHasBeenSet = true; m_supportEmail = value; }
-    inline void SetSupportEmail(Aws::String&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::move(value); }
-    inline void SetSupportEmail(const char* value) { m_supportEmailHasBeenSet = true; m_supportEmail.assign(value); }
-    inline DefaultClientBrandingAttributes& WithSupportEmail(const Aws::String& value) { SetSupportEmail(value); return *this;}
-    inline DefaultClientBrandingAttributes& WithSupportEmail(Aws::String&& value) { SetSupportEmail(std::move(value)); return *this;}
-    inline DefaultClientBrandingAttributes& WithSupportEmail(const char* value) { SetSupportEmail(value); return *this;}
+    template<typename SupportEmailT = Aws::String>
+    void SetSupportEmail(SupportEmailT&& value) { m_supportEmailHasBeenSet = true; m_supportEmail = std::forward<SupportEmailT>(value); }
+    template<typename SupportEmailT = Aws::String>
+    DefaultClientBrandingAttributes& WithSupportEmail(SupportEmailT&& value) { SetSupportEmail(std::forward<SupportEmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * both.</p> </li> <li> <p>The default support link is
      * <code>workspaces-feedback@amazon.com</code>.</p> </li> </ul> 
      */
-    inline const Aws::String& GetSupportLink() const{ return m_supportLink; }
+    inline const Aws::String& GetSupportLink() const { return m_supportLink; }
     inline bool SupportLinkHasBeenSet() const { return m_supportLinkHasBeenSet; }
-    inline void SetSupportLink(const Aws::String& value) { m_supportLinkHasBeenSet = true; m_supportLink = value; }
-    inline void SetSupportLink(Aws::String&& value) { m_supportLinkHasBeenSet = true; m_supportLink = std::move(value); }
-    inline void SetSupportLink(const char* value) { m_supportLinkHasBeenSet = true; m_supportLink.assign(value); }
-    inline DefaultClientBrandingAttributes& WithSupportLink(const Aws::String& value) { SetSupportLink(value); return *this;}
-    inline DefaultClientBrandingAttributes& WithSupportLink(Aws::String&& value) { SetSupportLink(std::move(value)); return *this;}
-    inline DefaultClientBrandingAttributes& WithSupportLink(const char* value) { SetSupportLink(value); return *this;}
+    template<typename SupportLinkT = Aws::String>
+    void SetSupportLink(SupportLinkT&& value) { m_supportLinkHasBeenSet = true; m_supportLink = std::forward<SupportLinkT>(value); }
+    template<typename SupportLinkT = Aws::String>
+    DefaultClientBrandingAttributes& WithSupportLink(SupportLinkT&& value) { SetSupportLink(std::forward<SupportLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * <p>The forgotten password link. This is the web address that users can go to if
      * they forget the password for their WorkSpace.</p>
      */
-    inline const Aws::String& GetForgotPasswordLink() const{ return m_forgotPasswordLink; }
+    inline const Aws::String& GetForgotPasswordLink() const { return m_forgotPasswordLink; }
     inline bool ForgotPasswordLinkHasBeenSet() const { return m_forgotPasswordLinkHasBeenSet; }
-    inline void SetForgotPasswordLink(const Aws::String& value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink = value; }
-    inline void SetForgotPasswordLink(Aws::String&& value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink = std::move(value); }
-    inline void SetForgotPasswordLink(const char* value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink.assign(value); }
-    inline DefaultClientBrandingAttributes& WithForgotPasswordLink(const Aws::String& value) { SetForgotPasswordLink(value); return *this;}
-    inline DefaultClientBrandingAttributes& WithForgotPasswordLink(Aws::String&& value) { SetForgotPasswordLink(std::move(value)); return *this;}
-    inline DefaultClientBrandingAttributes& WithForgotPasswordLink(const char* value) { SetForgotPasswordLink(value); return *this;}
+    template<typename ForgotPasswordLinkT = Aws::String>
+    void SetForgotPasswordLink(ForgotPasswordLinkT&& value) { m_forgotPasswordLinkHasBeenSet = true; m_forgotPasswordLink = std::forward<ForgotPasswordLinkT>(value); }
+    template<typename ForgotPasswordLinkT = Aws::String>
+    DefaultClientBrandingAttributes& WithForgotPasswordLink(ForgotPasswordLinkT&& value) { SetForgotPasswordLink(std::forward<ForgotPasswordLinkT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,19 +108,16 @@ namespace Model
      * <code>a, b, blockquote, br, cite, code, dd, dl, dt, div, em, i, li, ol, p, pre,
      * q, small, span, strike, strong, sub, sup, u, ul</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const{ return m_loginMessage; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLoginMessage() const { return m_loginMessage; }
     inline bool LoginMessageHasBeenSet() const { return m_loginMessageHasBeenSet; }
-    inline void SetLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { m_loginMessageHasBeenSet = true; m_loginMessage = value; }
-    inline void SetLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::move(value); }
-    inline DefaultClientBrandingAttributes& WithLoginMessage(const Aws::Map<Aws::String, Aws::String>& value) { SetLoginMessage(value); return *this;}
-    inline DefaultClientBrandingAttributes& WithLoginMessage(Aws::Map<Aws::String, Aws::String>&& value) { SetLoginMessage(std::move(value)); return *this;}
-    inline DefaultClientBrandingAttributes& AddLoginMessage(const Aws::String& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
-    inline DefaultClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const Aws::String& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
-    inline DefaultClientBrandingAttributes& AddLoginMessage(const Aws::String& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
-    inline DefaultClientBrandingAttributes& AddLoginMessage(Aws::String&& key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), std::move(value)); return *this; }
-    inline DefaultClientBrandingAttributes& AddLoginMessage(const char* key, Aws::String&& value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, std::move(value)); return *this; }
-    inline DefaultClientBrandingAttributes& AddLoginMessage(Aws::String&& key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::move(key), value); return *this; }
-    inline DefaultClientBrandingAttributes& AddLoginMessage(const char* key, const char* value) { m_loginMessageHasBeenSet = true; m_loginMessage.emplace(key, value); return *this; }
+    template<typename LoginMessageT = Aws::Map<Aws::String, Aws::String>>
+    void SetLoginMessage(LoginMessageT&& value) { m_loginMessageHasBeenSet = true; m_loginMessage = std::forward<LoginMessageT>(value); }
+    template<typename LoginMessageT = Aws::Map<Aws::String, Aws::String>>
+    DefaultClientBrandingAttributes& WithLoginMessage(LoginMessageT&& value) { SetLoginMessage(std::forward<LoginMessageT>(value)); return *this;}
+    template<typename LoginMessageKeyT = Aws::String, typename LoginMessageValueT = Aws::String>
+    DefaultClientBrandingAttributes& AddLoginMessage(LoginMessageKeyT&& key, LoginMessageValueT&& value) {
+      m_loginMessageHasBeenSet = true; m_loginMessage.emplace(std::forward<LoginMessageKeyT>(key), std::forward<LoginMessageValueT>(value)); return *this;
+    }
     ///@}
   private:
 

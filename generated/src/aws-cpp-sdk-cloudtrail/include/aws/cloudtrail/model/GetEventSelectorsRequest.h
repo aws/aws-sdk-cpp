@@ -21,7 +21,7 @@ namespace Model
   class GetEventSelectorsRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API GetEventSelectorsRequest();
+    AWS_CLOUDTRAIL_API GetEventSelectorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
-    inline const Aws::String& GetTrailName() const{ return m_trailName; }
+    inline const Aws::String& GetTrailName() const { return m_trailName; }
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
-    inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
-    inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
-    inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
-    inline GetEventSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
-    inline GetEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
-    inline GetEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
+    template<typename TrailNameT = Aws::String>
+    void SetTrailName(TrailNameT&& value) { m_trailNameHasBeenSet = true; m_trailName = std::forward<TrailNameT>(value); }
+    template<typename TrailNameT = Aws::String>
+    GetEventSelectorsRequest& WithTrailName(TrailNameT&& value) { SetTrailName(std::forward<TrailNameT>(value)); return *this;}
     ///@}
   private:
 

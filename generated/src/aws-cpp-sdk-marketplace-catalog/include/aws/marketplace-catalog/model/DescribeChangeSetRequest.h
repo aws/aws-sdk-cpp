@@ -25,7 +25,7 @@ namespace Model
   class DescribeChangeSetRequest : public MarketplaceCatalogRequest
   {
   public:
-    AWS_MARKETPLACECATALOG_API DescribeChangeSetRequest();
+    AWS_MARKETPLACECATALOG_API DescribeChangeSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>Required. The catalog related to the request. Fixed value:
      * <code>AWSMarketplace</code> </p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline DescribeChangeSetRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline DescribeChangeSetRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline DescribeChangeSetRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    DescribeChangeSetRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
      * that you want to describe the details for.</p>
      */
-    inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
+    inline const Aws::String& GetChangeSetId() const { return m_changeSetId; }
     inline bool ChangeSetIdHasBeenSet() const { return m_changeSetIdHasBeenSet; }
-    inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
-    inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::move(value); }
-    inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
-    inline DescribeChangeSetRequest& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
-    inline DescribeChangeSetRequest& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
-    inline DescribeChangeSetRequest& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
+    template<typename ChangeSetIdT = Aws::String>
+    void SetChangeSetId(ChangeSetIdT&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::forward<ChangeSetIdT>(value); }
+    template<typename ChangeSetIdT = Aws::String>
+    DescribeChangeSetRequest& WithChangeSetId(ChangeSetIdT&& value) { SetChangeSetId(std::forward<ChangeSetIdT>(value)); return *this;}
     ///@}
   private:
 

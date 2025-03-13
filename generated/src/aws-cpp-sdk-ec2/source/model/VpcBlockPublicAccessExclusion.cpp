@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcBlockPublicAccessExclusion::VpcBlockPublicAccessExclusion() : 
-    m_exclusionIdHasBeenSet(false),
-    m_internetGatewayExclusionMode(InternetGatewayExclusionMode::NOT_SET),
-    m_internetGatewayExclusionModeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_state(VpcBlockPublicAccessExclusionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_deletionTimestampHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VpcBlockPublicAccessExclusion::VpcBlockPublicAccessExclusion(const XmlNode& xmlNode)
-  : VpcBlockPublicAccessExclusion()
 {
   *this = xmlNode;
 }
@@ -52,60 +36,69 @@ VpcBlockPublicAccessExclusion& VpcBlockPublicAccessExclusion::operator =(const X
     {
       m_exclusionId = Aws::Utils::Xml::DecodeEscapedXmlText(exclusionIdNode.GetText());
       m_exclusionIdHasBeenSet = true;
+       m_exclusionIdHasBeenSet = true;
     }
     XmlNode internetGatewayExclusionModeNode = resultNode.FirstChild("internetGatewayExclusionMode");
     if(!internetGatewayExclusionModeNode.IsNull())
     {
-      m_internetGatewayExclusionMode = InternetGatewayExclusionModeMapper::GetInternetGatewayExclusionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayExclusionModeNode.GetText()).c_str()).c_str());
+      m_internetGatewayExclusionMode = InternetGatewayExclusionModeMapper::GetInternetGatewayExclusionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayExclusionModeNode.GetText()).c_str()));
       m_internetGatewayExclusionModeHasBeenSet = true;
+       m_internetGatewayExclusionModeHasBeenSet = true;
     }
     XmlNode resourceArnNode = resultNode.FirstChild("resourceArn");
     if(!resourceArnNode.IsNull())
     {
       m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
       m_resourceArnHasBeenSet = true;
+       m_resourceArnHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcBlockPublicAccessExclusionStateMapper::GetVpcBlockPublicAccessExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcBlockPublicAccessExclusionStateMapper::GetVpcBlockPublicAccessExclusionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("reason");
     if(!reasonNode.IsNull())
     {
       m_reason = Aws::Utils::Xml::DecodeEscapedXmlText(reasonNode.GetText());
       m_reasonHasBeenSet = true;
+       m_reasonHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("creationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
       m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
+       m_creationTimestampHasBeenSet = true;
     }
     XmlNode lastUpdateTimestampNode = resultNode.FirstChild("lastUpdateTimestamp");
     if(!lastUpdateTimestampNode.IsNull())
     {
       m_lastUpdateTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdateTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastUpdateTimestampHasBeenSet = true;
+       m_lastUpdateTimestampHasBeenSet = true;
     }
     XmlNode deletionTimestampNode = resultNode.FirstChild("deletionTimestamp");
     if(!deletionTimestampNode.IsNull())
     {
       m_deletionTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_deletionTimestampHasBeenSet = true;
+       m_deletionTimestampHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteOptOutListResult::DeleteOptOutListResult()
-{
-}
-
 DeleteOptOutListResult::DeleteOptOutListResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DeleteOptOutListResult& DeleteOptOutListResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("OptOutListArn"))
   {
     m_optOutListArn = jsonValue.GetString("OptOutListArn");
-
+    m_optOutListArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptOutListName"))
   {
     m_optOutListName = jsonValue.GetString("OptOutListName");
-
+    m_optOutListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

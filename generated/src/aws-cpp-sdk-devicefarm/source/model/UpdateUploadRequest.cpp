@@ -12,15 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUploadRequest::UpdateUploadRequest() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_editContent(false),
-    m_editContentHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUploadRequest::SerializePayload() const
 {
   JsonValue payload;

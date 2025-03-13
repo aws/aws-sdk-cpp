@@ -24,7 +24,7 @@ namespace Model
   class StartInstanceRefreshRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API StartInstanceRefreshRequest();
+    AWS_AUTOSCALING_API StartInstanceRefreshRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline StartInstanceRefreshRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline StartInstanceRefreshRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline StartInstanceRefreshRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    StartInstanceRefreshRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>The strategy to use for the instance refresh. The only valid value is
      * <code>Rolling</code>.</p>
      */
-    inline const RefreshStrategy& GetStrategy() const{ return m_strategy; }
+    inline RefreshStrategy GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const RefreshStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(RefreshStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline StartInstanceRefreshRequest& WithStrategy(const RefreshStrategy& value) { SetStrategy(value); return *this;}
-    inline StartInstanceRefreshRequest& WithStrategy(RefreshStrategy&& value) { SetStrategy(std::move(value)); return *this;}
+    inline void SetStrategy(RefreshStrategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline StartInstanceRefreshRequest& WithStrategy(RefreshStrategy value) { SetStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * template and instance types. This can help you reduce the number of replacements
      * that are required to apply updates. </p> 
      */
-    inline const DesiredConfiguration& GetDesiredConfiguration() const{ return m_desiredConfiguration; }
+    inline const DesiredConfiguration& GetDesiredConfiguration() const { return m_desiredConfiguration; }
     inline bool DesiredConfigurationHasBeenSet() const { return m_desiredConfigurationHasBeenSet; }
-    inline void SetDesiredConfiguration(const DesiredConfiguration& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = value; }
-    inline void SetDesiredConfiguration(DesiredConfiguration&& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = std::move(value); }
-    inline StartInstanceRefreshRequest& WithDesiredConfiguration(const DesiredConfiguration& value) { SetDesiredConfiguration(value); return *this;}
-    inline StartInstanceRefreshRequest& WithDesiredConfiguration(DesiredConfiguration&& value) { SetDesiredConfiguration(std::move(value)); return *this;}
+    template<typename DesiredConfigurationT = DesiredConfiguration>
+    void SetDesiredConfiguration(DesiredConfigurationT&& value) { m_desiredConfigurationHasBeenSet = true; m_desiredConfiguration = std::forward<DesiredConfigurationT>(value); }
+    template<typename DesiredConfigurationT = DesiredConfiguration>
+    StartInstanceRefreshRequest& WithDesiredConfiguration(DesiredConfigurationT&& value) { SetDesiredConfiguration(std::forward<DesiredConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,19 +94,19 @@ namespace Model
      * <p>Checkpoints</p> </li> <li> <p>CloudWatch alarms</p> </li> <li> <p>Skip
      * matching</p> </li> <li> <p>Bake time</p> </li> </ul>
      */
-    inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
+    inline const RefreshPreferences& GetPreferences() const { return m_preferences; }
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
-    inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
-    inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
-    inline StartInstanceRefreshRequest& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
-    inline StartInstanceRefreshRequest& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
+    template<typename PreferencesT = RefreshPreferences>
+    void SetPreferences(PreferencesT&& value) { m_preferencesHasBeenSet = true; m_preferences = std::forward<PreferencesT>(value); }
+    template<typename PreferencesT = RefreshPreferences>
+    StartInstanceRefreshRequest& WithPreferences(PreferencesT&& value) { SetPreferences(std::forward<PreferencesT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet = false;
 
-    RefreshStrategy m_strategy;
+    RefreshStrategy m_strategy{RefreshStrategy::NOT_SET};
     bool m_strategyHasBeenSet = false;
 
     DesiredConfiguration m_desiredConfiguration;

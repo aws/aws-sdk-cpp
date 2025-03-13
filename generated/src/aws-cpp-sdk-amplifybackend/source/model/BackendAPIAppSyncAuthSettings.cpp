@@ -18,21 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings() : 
-    m_cognitoUserPoolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expirationTime(0.0),
-    m_expirationTimeHasBeenSet(false),
-    m_openIDAuthTTLHasBeenSet(false),
-    m_openIDClientIdHasBeenSet(false),
-    m_openIDIatTTLHasBeenSet(false),
-    m_openIDIssueURLHasBeenSet(false),
-    m_openIDProviderNameHasBeenSet(false)
-{
-}
-
 BackendAPIAppSyncAuthSettings::BackendAPIAppSyncAuthSettings(JsonView jsonValue)
-  : BackendAPIAppSyncAuthSettings()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ BackendAPIAppSyncAuthSettings& BackendAPIAppSyncAuthSettings::operator =(JsonVie
   if(jsonValue.ValueExists("cognitoUserPoolId"))
   {
     m_cognitoUserPoolId = jsonValue.GetString("cognitoUserPoolId");
-
     m_cognitoUserPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationTime"))
   {
     m_expirationTime = jsonValue.GetDouble("expirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDAuthTTL"))
   {
     m_openIDAuthTTL = jsonValue.GetString("openIDAuthTTL");
-
     m_openIDAuthTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDClientId"))
   {
     m_openIDClientId = jsonValue.GetString("openIDClientId");
-
     m_openIDClientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDIatTTL"))
   {
     m_openIDIatTTL = jsonValue.GetString("openIDIatTTL");
-
     m_openIDIatTTLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDIssueURL"))
   {
     m_openIDIssueURL = jsonValue.GetString("openIDIssueURL");
-
     m_openIDIssueURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIDProviderName"))
   {
     m_openIDProviderName = jsonValue.GetString("openIDProviderName");
-
     m_openIDProviderNameHasBeenSet = true;
   }
-
   return *this;
 }
 

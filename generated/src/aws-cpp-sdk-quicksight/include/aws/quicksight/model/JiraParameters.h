@@ -31,7 +31,7 @@ namespace Model
   class JiraParameters
   {
   public:
-    AWS_QUICKSIGHT_API JiraParameters();
+    AWS_QUICKSIGHT_API JiraParameters() = default;
     AWS_QUICKSIGHT_API JiraParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API JiraParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The base URL of the Jira site.</p>
      */
-    inline const Aws::String& GetSiteBaseUrl() const{ return m_siteBaseUrl; }
+    inline const Aws::String& GetSiteBaseUrl() const { return m_siteBaseUrl; }
     inline bool SiteBaseUrlHasBeenSet() const { return m_siteBaseUrlHasBeenSet; }
-    inline void SetSiteBaseUrl(const Aws::String& value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl = value; }
-    inline void SetSiteBaseUrl(Aws::String&& value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl = std::move(value); }
-    inline void SetSiteBaseUrl(const char* value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl.assign(value); }
-    inline JiraParameters& WithSiteBaseUrl(const Aws::String& value) { SetSiteBaseUrl(value); return *this;}
-    inline JiraParameters& WithSiteBaseUrl(Aws::String&& value) { SetSiteBaseUrl(std::move(value)); return *this;}
-    inline JiraParameters& WithSiteBaseUrl(const char* value) { SetSiteBaseUrl(value); return *this;}
+    template<typename SiteBaseUrlT = Aws::String>
+    void SetSiteBaseUrl(SiteBaseUrlT&& value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl = std::forward<SiteBaseUrlT>(value); }
+    template<typename SiteBaseUrlT = Aws::String>
+    JiraParameters& WithSiteBaseUrl(SiteBaseUrlT&& value) { SetSiteBaseUrl(std::forward<SiteBaseUrlT>(value)); return *this;}
     ///@}
   private:
 

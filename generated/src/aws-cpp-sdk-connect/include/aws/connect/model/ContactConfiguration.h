@@ -33,7 +33,7 @@ namespace Model
   class ContactConfiguration
   {
   public:
-    AWS_CONNECT_API ContactConfiguration();
+    AWS_CONNECT_API ContactConfiguration() = default;
     AWS_CONNECT_API ContactConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ContactConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The identifier of the contact within the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline ContactConfiguration& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline ContactConfiguration& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline ContactConfiguration& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    ContactConfiguration& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <code>CUSTOMER</code> is currently supported. Any other values other than
      * <code>CUSTOMER</code> will result in an exception (4xx error).</p> 
      */
-    inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
+    inline ParticipantRole GetParticipantRole() const { return m_participantRole; }
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-    inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-    inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-    inline ContactConfiguration& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-    inline ContactConfiguration& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    inline void SetParticipantRole(ParticipantRole value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
+    inline ContactConfiguration& WithParticipantRole(ParticipantRole value) { SetParticipantRole(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>Whether to include raw connect message in the push notification payload.
      * Default is <code>False</code>.</p>
      */
-    inline bool GetIncludeRawMessage() const{ return m_includeRawMessage; }
+    inline bool GetIncludeRawMessage() const { return m_includeRawMessage; }
     inline bool IncludeRawMessageHasBeenSet() const { return m_includeRawMessageHasBeenSet; }
     inline void SetIncludeRawMessage(bool value) { m_includeRawMessageHasBeenSet = true; m_includeRawMessage = value; }
     inline ContactConfiguration& WithIncludeRawMessage(bool value) { SetIncludeRawMessage(value); return *this;}
@@ -82,10 +78,10 @@ namespace Model
     Aws::String m_contactId;
     bool m_contactIdHasBeenSet = false;
 
-    ParticipantRole m_participantRole;
+    ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
     bool m_participantRoleHasBeenSet = false;
 
-    bool m_includeRawMessage;
+    bool m_includeRawMessage{false};
     bool m_includeRawMessageHasBeenSet = false;
   };
 

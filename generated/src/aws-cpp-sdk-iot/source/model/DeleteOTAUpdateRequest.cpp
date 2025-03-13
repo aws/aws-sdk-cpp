@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteOTAUpdateRequest::DeleteOTAUpdateRequest() : 
-    m_otaUpdateIdHasBeenSet(false),
-    m_deleteStream(false),
-    m_deleteStreamHasBeenSet(false),
-    m_forceDeleteAWSJob(false),
-    m_forceDeleteAWSJobHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOTAUpdateRequest::SerializePayload() const
 {
   return {};

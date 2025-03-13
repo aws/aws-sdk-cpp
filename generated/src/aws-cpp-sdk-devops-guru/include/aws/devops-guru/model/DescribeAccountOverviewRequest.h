@@ -21,7 +21,7 @@ namespace Model
   class DescribeAccountOverviewRequest : public DevOpsGuruRequest
   {
   public:
-    AWS_DEVOPSGURU_API DescribeAccountOverviewRequest();
+    AWS_DEVOPSGURU_API DescribeAccountOverviewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
      * day level. The floor of the start time is used. Returned information occurred
      * after this day. </p>
      */
-    inline const Aws::Utils::DateTime& GetFromTime() const{ return m_fromTime; }
+    inline const Aws::Utils::DateTime& GetFromTime() const { return m_fromTime; }
     inline bool FromTimeHasBeenSet() const { return m_fromTimeHasBeenSet; }
-    inline void SetFromTime(const Aws::Utils::DateTime& value) { m_fromTimeHasBeenSet = true; m_fromTime = value; }
-    inline void SetFromTime(Aws::Utils::DateTime&& value) { m_fromTimeHasBeenSet = true; m_fromTime = std::move(value); }
-    inline DescribeAccountOverviewRequest& WithFromTime(const Aws::Utils::DateTime& value) { SetFromTime(value); return *this;}
-    inline DescribeAccountOverviewRequest& WithFromTime(Aws::Utils::DateTime&& value) { SetFromTime(std::move(value)); return *this;}
+    template<typename FromTimeT = Aws::Utils::DateTime>
+    void SetFromTime(FromTimeT&& value) { m_fromTimeHasBeenSet = true; m_fromTime = std::forward<FromTimeT>(value); }
+    template<typename FromTimeT = Aws::Utils::DateTime>
+    DescribeAccountOverviewRequest& WithFromTime(FromTimeT&& value) { SetFromTime(std::forward<FromTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,19 +52,19 @@ namespace Model
      * day level. The floor of the start time is used. Returned information occurred
      * before this day. If this is not specified, then the current day is used. </p>
      */
-    inline const Aws::Utils::DateTime& GetToTime() const{ return m_toTime; }
+    inline const Aws::Utils::DateTime& GetToTime() const { return m_toTime; }
     inline bool ToTimeHasBeenSet() const { return m_toTimeHasBeenSet; }
-    inline void SetToTime(const Aws::Utils::DateTime& value) { m_toTimeHasBeenSet = true; m_toTime = value; }
-    inline void SetToTime(Aws::Utils::DateTime&& value) { m_toTimeHasBeenSet = true; m_toTime = std::move(value); }
-    inline DescribeAccountOverviewRequest& WithToTime(const Aws::Utils::DateTime& value) { SetToTime(value); return *this;}
-    inline DescribeAccountOverviewRequest& WithToTime(Aws::Utils::DateTime&& value) { SetToTime(std::move(value)); return *this;}
+    template<typename ToTimeT = Aws::Utils::DateTime>
+    void SetToTime(ToTimeT&& value) { m_toTimeHasBeenSet = true; m_toTime = std::forward<ToTimeT>(value); }
+    template<typename ToTimeT = Aws::Utils::DateTime>
+    DescribeAccountOverviewRequest& WithToTime(ToTimeT&& value) { SetToTime(std::forward<ToTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_fromTime;
+    Aws::Utils::DateTime m_fromTime{};
     bool m_fromTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toTime;
+    Aws::Utils::DateTime m_toTime{};
     bool m_toTimeHasBeenSet = false;
   };
 

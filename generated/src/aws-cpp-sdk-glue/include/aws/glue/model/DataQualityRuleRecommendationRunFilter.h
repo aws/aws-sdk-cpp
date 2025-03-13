@@ -33,7 +33,7 @@ namespace Model
   class DataQualityRuleRecommendationRunFilter
   {
   public:
-    AWS_GLUE_API DataQualityRuleRecommendationRunFilter();
+    AWS_GLUE_API DataQualityRuleRecommendationRunFilter() = default;
     AWS_GLUE_API DataQualityRuleRecommendationRunFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API DataQualityRuleRecommendationRunFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,46 +43,46 @@ namespace Model
     /**
      * <p>Filter based on a specified data source (Glue table).</p>
      */
-    inline const DataSource& GetDataSource() const{ return m_dataSource; }
+    inline const DataSource& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline DataQualityRuleRecommendationRunFilter& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-    inline DataQualityRuleRecommendationRunFilter& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = DataSource>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = DataSource>
+    DataQualityRuleRecommendationRunFilter& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter based on time for results started before provided time.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedBefore() const{ return m_startedBefore; }
+    inline const Aws::Utils::DateTime& GetStartedBefore() const { return m_startedBefore; }
     inline bool StartedBeforeHasBeenSet() const { return m_startedBeforeHasBeenSet; }
-    inline void SetStartedBefore(const Aws::Utils::DateTime& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = value; }
-    inline void SetStartedBefore(Aws::Utils::DateTime&& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = std::move(value); }
-    inline DataQualityRuleRecommendationRunFilter& WithStartedBefore(const Aws::Utils::DateTime& value) { SetStartedBefore(value); return *this;}
-    inline DataQualityRuleRecommendationRunFilter& WithStartedBefore(Aws::Utils::DateTime&& value) { SetStartedBefore(std::move(value)); return *this;}
+    template<typename StartedBeforeT = Aws::Utils::DateTime>
+    void SetStartedBefore(StartedBeforeT&& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = std::forward<StartedBeforeT>(value); }
+    template<typename StartedBeforeT = Aws::Utils::DateTime>
+    DataQualityRuleRecommendationRunFilter& WithStartedBefore(StartedBeforeT&& value) { SetStartedBefore(std::forward<StartedBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter based on time for results started after provided time.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedAfter() const{ return m_startedAfter; }
+    inline const Aws::Utils::DateTime& GetStartedAfter() const { return m_startedAfter; }
     inline bool StartedAfterHasBeenSet() const { return m_startedAfterHasBeenSet; }
-    inline void SetStartedAfter(const Aws::Utils::DateTime& value) { m_startedAfterHasBeenSet = true; m_startedAfter = value; }
-    inline void SetStartedAfter(Aws::Utils::DateTime&& value) { m_startedAfterHasBeenSet = true; m_startedAfter = std::move(value); }
-    inline DataQualityRuleRecommendationRunFilter& WithStartedAfter(const Aws::Utils::DateTime& value) { SetStartedAfter(value); return *this;}
-    inline DataQualityRuleRecommendationRunFilter& WithStartedAfter(Aws::Utils::DateTime&& value) { SetStartedAfter(std::move(value)); return *this;}
+    template<typename StartedAfterT = Aws::Utils::DateTime>
+    void SetStartedAfter(StartedAfterT&& value) { m_startedAfterHasBeenSet = true; m_startedAfter = std::forward<StartedAfterT>(value); }
+    template<typename StartedAfterT = Aws::Utils::DateTime>
+    DataQualityRuleRecommendationRunFilter& WithStartedAfter(StartedAfterT&& value) { SetStartedAfter(std::forward<StartedAfterT>(value)); return *this;}
     ///@}
   private:
 
     DataSource m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedBefore;
+    Aws::Utils::DateTime m_startedBefore{};
     bool m_startedBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedAfter;
+    Aws::Utils::DateTime m_startedAfter{};
     bool m_startedAfterHasBeenSet = false;
   };
 

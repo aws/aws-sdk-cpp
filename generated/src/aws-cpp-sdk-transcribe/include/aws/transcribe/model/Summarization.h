@@ -31,7 +31,7 @@ namespace Model
   class Summarization
   {
   public:
-    AWS_TRANSCRIBESERVICE_API Summarization();
+    AWS_TRANSCRIBESERVICE_API Summarization() = default;
     AWS_TRANSCRIBESERVICE_API Summarization(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Summarization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-enable-summarization.html">Enabling
      * generative call summarization</a>.</p>
      */
-    inline bool GetGenerateAbstractiveSummary() const{ return m_generateAbstractiveSummary; }
+    inline bool GetGenerateAbstractiveSummary() const { return m_generateAbstractiveSummary; }
     inline bool GenerateAbstractiveSummaryHasBeenSet() const { return m_generateAbstractiveSummaryHasBeenSet; }
     inline void SetGenerateAbstractiveSummary(bool value) { m_generateAbstractiveSummaryHasBeenSet = true; m_generateAbstractiveSummary = value; }
     inline Summarization& WithGenerateAbstractiveSummary(bool value) { SetGenerateAbstractiveSummary(value); return *this;}
     ///@}
   private:
 
-    bool m_generateAbstractiveSummary;
+    bool m_generateAbstractiveSummary{false};
     bool m_generateAbstractiveSummaryHasBeenSet = false;
   };
 

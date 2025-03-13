@@ -34,7 +34,7 @@ namespace Model
   class GetCommitResult
   {
   public:
-    AWS_CODECOMMIT_API GetCommitResult();
+    AWS_CODECOMMIT_API GetCommitResult() = default;
     AWS_CODECOMMIT_API GetCommitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API GetCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A commit data type object that contains information about the specified
      * commit.</p>
      */
-    inline const Commit& GetCommit() const{ return m_commit; }
-    inline void SetCommit(const Commit& value) { m_commit = value; }
-    inline void SetCommit(Commit&& value) { m_commit = std::move(value); }
-    inline GetCommitResult& WithCommit(const Commit& value) { SetCommit(value); return *this;}
-    inline GetCommitResult& WithCommit(Commit&& value) { SetCommit(std::move(value)); return *this;}
+    inline const Commit& GetCommit() const { return m_commit; }
+    template<typename CommitT = Commit>
+    void SetCommit(CommitT&& value) { m_commitHasBeenSet = true; m_commit = std::forward<CommitT>(value); }
+    template<typename CommitT = Commit>
+    GetCommitResult& WithCommit(CommitT&& value) { SetCommit(std::forward<CommitT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCommitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCommitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCommitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCommitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Commit m_commit;
+    bool m_commitHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

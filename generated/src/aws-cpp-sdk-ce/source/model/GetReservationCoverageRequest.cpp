@@ -12,20 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReservationCoverageRequest::GetReservationCoverageRequest() : 
-    m_timePeriodHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_granularity(Granularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetReservationCoverageRequest::SerializePayload() const
 {
   JsonValue payload;

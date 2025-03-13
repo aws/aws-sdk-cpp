@@ -33,7 +33,7 @@ namespace Model
   class LaunchTemplateNetworkPerformanceOptions
   {
   public:
-    AWS_EC2_API LaunchTemplateNetworkPerformanceOptions();
+    AWS_EC2_API LaunchTemplateNetworkPerformanceOptions() = default;
     AWS_EC2_API LaunchTemplateNetworkPerformanceOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API LaunchTemplateNetworkPerformanceOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,16 +48,14 @@ namespace Model
      * baseline bandwidth for your instance remains the same. The default option uses
      * the standard bandwidth configuration for your instance type.</p>
      */
-    inline const InstanceBandwidthWeighting& GetBandwidthWeighting() const{ return m_bandwidthWeighting; }
+    inline InstanceBandwidthWeighting GetBandwidthWeighting() const { return m_bandwidthWeighting; }
     inline bool BandwidthWeightingHasBeenSet() const { return m_bandwidthWeightingHasBeenSet; }
-    inline void SetBandwidthWeighting(const InstanceBandwidthWeighting& value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
-    inline void SetBandwidthWeighting(InstanceBandwidthWeighting&& value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = std::move(value); }
-    inline LaunchTemplateNetworkPerformanceOptions& WithBandwidthWeighting(const InstanceBandwidthWeighting& value) { SetBandwidthWeighting(value); return *this;}
-    inline LaunchTemplateNetworkPerformanceOptions& WithBandwidthWeighting(InstanceBandwidthWeighting&& value) { SetBandwidthWeighting(std::move(value)); return *this;}
+    inline void SetBandwidthWeighting(InstanceBandwidthWeighting value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
+    inline LaunchTemplateNetworkPerformanceOptions& WithBandwidthWeighting(InstanceBandwidthWeighting value) { SetBandwidthWeighting(value); return *this;}
     ///@}
   private:
 
-    InstanceBandwidthWeighting m_bandwidthWeighting;
+    InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
     bool m_bandwidthWeightingHasBeenSet = false;
   };
 

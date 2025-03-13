@@ -33,7 +33,7 @@ namespace Model
   class Thumbnail
   {
   public:
-    AWS_MEDIALIVE_API Thumbnail();
+    AWS_MEDIALIVE_API Thumbnail() = default;
     AWS_MEDIALIVE_API Thumbnail(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Thumbnail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,46 @@ namespace Model
     /**
      * The binary data for the latest thumbnail.
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline Thumbnail& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline Thumbnail& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline Thumbnail& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    Thumbnail& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The content type for the latest thumbnail.
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline Thumbnail& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline Thumbnail& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline Thumbnail& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    Thumbnail& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Thumbnail Type
      */
-    inline const ThumbnailType& GetThumbnailType() const{ return m_thumbnailType; }
+    inline ThumbnailType GetThumbnailType() const { return m_thumbnailType; }
     inline bool ThumbnailTypeHasBeenSet() const { return m_thumbnailTypeHasBeenSet; }
-    inline void SetThumbnailType(const ThumbnailType& value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType = value; }
-    inline void SetThumbnailType(ThumbnailType&& value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType = std::move(value); }
-    inline Thumbnail& WithThumbnailType(const ThumbnailType& value) { SetThumbnailType(value); return *this;}
-    inline Thumbnail& WithThumbnailType(ThumbnailType&& value) { SetThumbnailType(std::move(value)); return *this;}
+    inline void SetThumbnailType(ThumbnailType value) { m_thumbnailTypeHasBeenSet = true; m_thumbnailType = value; }
+    inline Thumbnail& WithThumbnailType(ThumbnailType value) { SetThumbnailType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Time stamp for the latest thumbnail.
      */
-    inline const Aws::Utils::DateTime& GetTimeStamp() const{ return m_timeStamp; }
+    inline const Aws::Utils::DateTime& GetTimeStamp() const { return m_timeStamp; }
     inline bool TimeStampHasBeenSet() const { return m_timeStampHasBeenSet; }
-    inline void SetTimeStamp(const Aws::Utils::DateTime& value) { m_timeStampHasBeenSet = true; m_timeStamp = value; }
-    inline void SetTimeStamp(Aws::Utils::DateTime&& value) { m_timeStampHasBeenSet = true; m_timeStamp = std::move(value); }
-    inline Thumbnail& WithTimeStamp(const Aws::Utils::DateTime& value) { SetTimeStamp(value); return *this;}
-    inline Thumbnail& WithTimeStamp(Aws::Utils::DateTime&& value) { SetTimeStamp(std::move(value)); return *this;}
+    template<typename TimeStampT = Aws::Utils::DateTime>
+    void SetTimeStamp(TimeStampT&& value) { m_timeStampHasBeenSet = true; m_timeStamp = std::forward<TimeStampT>(value); }
+    template<typename TimeStampT = Aws::Utils::DateTime>
+    Thumbnail& WithTimeStamp(TimeStampT&& value) { SetTimeStamp(std::forward<TimeStampT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,10 +92,10 @@ namespace Model
     Aws::String m_contentType;
     bool m_contentTypeHasBeenSet = false;
 
-    ThumbnailType m_thumbnailType;
+    ThumbnailType m_thumbnailType{ThumbnailType::NOT_SET};
     bool m_thumbnailTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timeStamp;
+    Aws::Utils::DateTime m_timeStamp{};
     bool m_timeStampHasBeenSet = false;
   };
 

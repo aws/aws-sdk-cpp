@@ -18,17 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-AlarmState::AlarmState() : 
-    m_stateName(AlarmStateName::NOT_SET),
-    m_stateNameHasBeenSet(false),
-    m_ruleEvaluationHasBeenSet(false),
-    m_customerActionHasBeenSet(false),
-    m_systemEventHasBeenSet(false)
-{
-}
-
 AlarmState::AlarmState(JsonView jsonValue)
-  : AlarmState()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AlarmState& AlarmState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stateName"))
   {
     m_stateName = AlarmStateNameMapper::GetAlarmStateNameForName(jsonValue.GetString("stateName"));
-
     m_stateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleEvaluation"))
   {
     m_ruleEvaluation = jsonValue.GetObject("ruleEvaluation");
-
     m_ruleEvaluationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerAction"))
   {
     m_customerAction = jsonValue.GetObject("customerAction");
-
     m_customerActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemEvent"))
   {
     m_systemEvent = jsonValue.GetObject("systemEvent");
-
     m_systemEventHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class ListDatasetEntriesResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult();
+    AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult() = default;
     AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>A list of the entries (JSON Lines) within the dataset.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatasetEntries() const{ return m_datasetEntries; }
-    inline void SetDatasetEntries(const Aws::Vector<Aws::String>& value) { m_datasetEntries = value; }
-    inline void SetDatasetEntries(Aws::Vector<Aws::String>&& value) { m_datasetEntries = std::move(value); }
-    inline ListDatasetEntriesResult& WithDatasetEntries(const Aws::Vector<Aws::String>& value) { SetDatasetEntries(value); return *this;}
-    inline ListDatasetEntriesResult& WithDatasetEntries(Aws::Vector<Aws::String>&& value) { SetDatasetEntries(std::move(value)); return *this;}
-    inline ListDatasetEntriesResult& AddDatasetEntries(const Aws::String& value) { m_datasetEntries.push_back(value); return *this; }
-    inline ListDatasetEntriesResult& AddDatasetEntries(Aws::String&& value) { m_datasetEntries.push_back(std::move(value)); return *this; }
-    inline ListDatasetEntriesResult& AddDatasetEntries(const char* value) { m_datasetEntries.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDatasetEntries() const { return m_datasetEntries; }
+    template<typename DatasetEntriesT = Aws::Vector<Aws::String>>
+    void SetDatasetEntries(DatasetEntriesT&& value) { m_datasetEntriesHasBeenSet = true; m_datasetEntries = std::forward<DatasetEntriesT>(value); }
+    template<typename DatasetEntriesT = Aws::Vector<Aws::String>>
+    ListDatasetEntriesResult& WithDatasetEntries(DatasetEntriesT&& value) { SetDatasetEntries(std::forward<DatasetEntriesT>(value)); return *this;}
+    template<typename DatasetEntriesT = Aws::String>
+    ListDatasetEntriesResult& AddDatasetEntries(DatasetEntriesT&& value) { m_datasetEntriesHasBeenSet = true; m_datasetEntries.emplace_back(std::forward<DatasetEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +52,31 @@ namespace Model
      * that you can use in the subsequent request to retrieve the next set ofdataset
      * entries.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDatasetEntriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDatasetEntriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDatasetEntriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDatasetEntriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDatasetEntriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDatasetEntriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDatasetEntriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDatasetEntriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_datasetEntries;
+    bool m_datasetEntriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

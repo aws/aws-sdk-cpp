@@ -12,11 +12,6 @@ using namespace Aws::SimSpaceWeaver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartClockRequest::StartClockRequest() : 
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String StartClockRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,22 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-CatalogItem::CatalogItem() : 
-    m_catalogItemIdHasBeenSet(false),
-    m_itemStatus(CatalogItemStatus::NOT_SET),
-    m_itemStatusHasBeenSet(false),
-    m_eC2CapacitiesHasBeenSet(false),
-    m_powerKva(0.0),
-    m_powerKvaHasBeenSet(false),
-    m_weightLbs(0),
-    m_weightLbsHasBeenSet(false),
-    m_supportedUplinkGbpsHasBeenSet(false),
-    m_supportedStorageHasBeenSet(false)
-{
-}
-
 CatalogItem::CatalogItem(JsonView jsonValue)
-  : CatalogItem()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogItemId"))
   {
     m_catalogItemId = jsonValue.GetString("CatalogItemId");
-
     m_catalogItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemStatus"))
   {
     m_itemStatus = CatalogItemStatusMapper::GetCatalogItemStatusForName(jsonValue.GetString("ItemStatus"));
-
     m_itemStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EC2Capacities"))
   {
     Aws::Utils::Array<JsonView> eC2CapacitiesJsonList = jsonValue.GetArray("EC2Capacities");
@@ -63,21 +44,16 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
     }
     m_eC2CapacitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PowerKva"))
   {
     m_powerKva = jsonValue.GetDouble("PowerKva");
-
     m_powerKvaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeightLbs"))
   {
     m_weightLbs = jsonValue.GetInteger("WeightLbs");
-
     m_weightLbsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedUplinkGbps"))
   {
     Aws::Utils::Array<JsonView> supportedUplinkGbpsJsonList = jsonValue.GetArray("SupportedUplinkGbps");
@@ -87,7 +63,6 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
     }
     m_supportedUplinkGbpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedStorage"))
   {
     Aws::Utils::Array<JsonView> supportedStorageJsonList = jsonValue.GetArray("SupportedStorage");
@@ -97,7 +72,6 @@ CatalogItem& CatalogItem::operator =(JsonView jsonValue)
     }
     m_supportedStorageHasBeenSet = true;
   }
-
   return *this;
 }
 

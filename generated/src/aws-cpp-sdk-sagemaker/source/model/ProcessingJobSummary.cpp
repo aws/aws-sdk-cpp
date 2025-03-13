@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingJobSummary::ProcessingJobSummary() : 
-    m_processingJobNameHasBeenSet(false),
-    m_processingJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_processingEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_processingJobStatus(ProcessingJobStatus::NOT_SET),
-    m_processingJobStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_exitMessageHasBeenSet(false)
-{
-}
-
 ProcessingJobSummary::ProcessingJobSummary(JsonView jsonValue)
-  : ProcessingJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ProcessingJobSummary& ProcessingJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProcessingJobName"))
   {
     m_processingJobName = jsonValue.GetString("ProcessingJobName");
-
     m_processingJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingJobArn"))
   {
     m_processingJobArn = jsonValue.GetString("ProcessingJobArn");
-
     m_processingJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingEndTime"))
   {
     m_processingEndTime = jsonValue.GetDouble("ProcessingEndTime");
-
     m_processingEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingJobStatus"))
   {
     m_processingJobStatus = ProcessingJobStatusMapper::GetProcessingJobStatusForName(jsonValue.GetString("ProcessingJobStatus"));
-
     m_processingJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExitMessage"))
   {
     m_exitMessage = jsonValue.GetString("ExitMessage");
-
     m_exitMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

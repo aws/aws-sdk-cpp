@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTableStatisticsResult::DescribeTableStatisticsResult()
-{
-}
-
 DescribeTableStatisticsResult::DescribeTableStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const A
   if(jsonValue.ValueExists("ReplicationTaskArn"))
   {
     m_replicationTaskArn = jsonValue.GetString("ReplicationTaskArn");
-
+    m_replicationTaskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableStatistics"))
   {
     Aws::Utils::Array<JsonView> tableStatisticsJsonList = jsonValue.GetArray("TableStatistics");
@@ -42,20 +37,20 @@ DescribeTableStatisticsResult& DescribeTableStatisticsResult::operator =(const A
     {
       m_tableStatistics.push_back(tableStatisticsJsonList[tableStatisticsIndex].AsObject());
     }
+    m_tableStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

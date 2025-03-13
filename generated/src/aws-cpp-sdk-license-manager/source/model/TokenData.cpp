@@ -18,19 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-TokenData::TokenData() : 
-    m_tokenIdHasBeenSet(false),
-    m_tokenTypeHasBeenSet(false),
-    m_licenseArnHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_tokenPropertiesHasBeenSet(false),
-    m_roleArnsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 TokenData::TokenData(JsonView jsonValue)
-  : TokenData()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ TokenData& TokenData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TokenId"))
   {
     m_tokenId = jsonValue.GetString("TokenId");
-
     m_tokenIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenType"))
   {
     m_tokenType = jsonValue.GetString("TokenType");
-
     m_tokenTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseArn"))
   {
     m_licenseArn = jsonValue.GetString("LicenseArn");
-
     m_licenseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTime"))
   {
     m_expirationTime = jsonValue.GetString("ExpirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TokenProperties"))
   {
     Aws::Utils::Array<JsonView> tokenPropertiesJsonList = jsonValue.GetArray("TokenProperties");
@@ -74,7 +54,6 @@ TokenData& TokenData::operator =(JsonView jsonValue)
     }
     m_tokenPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArns"))
   {
     Aws::Utils::Array<JsonView> roleArnsJsonList = jsonValue.GetArray("RoleArns");
@@ -84,14 +63,11 @@ TokenData& TokenData::operator =(JsonView jsonValue)
     }
     m_roleArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

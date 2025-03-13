@@ -18,17 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-FilterCondition::FilterCondition() : 
-    m_name(ListDomainsAttributeName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 FilterCondition::FilterCondition(JsonView jsonValue)
-  : FilterCondition()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = ListDomainsAttributeNameMapper::GetListDomainsAttributeNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -58,7 +44,6 @@ FilterCondition& FilterCondition::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

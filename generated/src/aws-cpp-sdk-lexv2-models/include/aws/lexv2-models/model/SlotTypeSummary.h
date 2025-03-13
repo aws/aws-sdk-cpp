@@ -33,7 +33,7 @@ namespace Model
   class SlotTypeSummary
   {
   public:
-    AWS_LEXMODELSV2_API SlotTypeSummary();
+    AWS_LEXMODELSV2_API SlotTypeSummary() = default;
     AWS_LEXMODELSV2_API SlotTypeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API SlotTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The unique identifier assigned to the slot type.</p>
      */
-    inline const Aws::String& GetSlotTypeId() const{ return m_slotTypeId; }
+    inline const Aws::String& GetSlotTypeId() const { return m_slotTypeId; }
     inline bool SlotTypeIdHasBeenSet() const { return m_slotTypeIdHasBeenSet; }
-    inline void SetSlotTypeId(const Aws::String& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = value; }
-    inline void SetSlotTypeId(Aws::String&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::move(value); }
-    inline void SetSlotTypeId(const char* value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId.assign(value); }
-    inline SlotTypeSummary& WithSlotTypeId(const Aws::String& value) { SetSlotTypeId(value); return *this;}
-    inline SlotTypeSummary& WithSlotTypeId(Aws::String&& value) { SetSlotTypeId(std::move(value)); return *this;}
-    inline SlotTypeSummary& WithSlotTypeId(const char* value) { SetSlotTypeId(value); return *this;}
+    template<typename SlotTypeIdT = Aws::String>
+    void SetSlotTypeId(SlotTypeIdT&& value) { m_slotTypeIdHasBeenSet = true; m_slotTypeId = std::forward<SlotTypeIdT>(value); }
+    template<typename SlotTypeIdT = Aws::String>
+    SlotTypeSummary& WithSlotTypeId(SlotTypeIdT&& value) { SetSlotTypeId(std::forward<SlotTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the slot type.</p>
      */
-    inline const Aws::String& GetSlotTypeName() const{ return m_slotTypeName; }
+    inline const Aws::String& GetSlotTypeName() const { return m_slotTypeName; }
     inline bool SlotTypeNameHasBeenSet() const { return m_slotTypeNameHasBeenSet; }
-    inline void SetSlotTypeName(const Aws::String& value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName = value; }
-    inline void SetSlotTypeName(Aws::String&& value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName = std::move(value); }
-    inline void SetSlotTypeName(const char* value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName.assign(value); }
-    inline SlotTypeSummary& WithSlotTypeName(const Aws::String& value) { SetSlotTypeName(value); return *this;}
-    inline SlotTypeSummary& WithSlotTypeName(Aws::String&& value) { SetSlotTypeName(std::move(value)); return *this;}
-    inline SlotTypeSummary& WithSlotTypeName(const char* value) { SetSlotTypeName(value); return *this;}
+    template<typename SlotTypeNameT = Aws::String>
+    void SetSlotTypeName(SlotTypeNameT&& value) { m_slotTypeNameHasBeenSet = true; m_slotTypeName = std::forward<SlotTypeNameT>(value); }
+    template<typename SlotTypeNameT = Aws::String>
+    SlotTypeSummary& WithSlotTypeName(SlotTypeNameT&& value) { SetSlotTypeName(std::forward<SlotTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the slot type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SlotTypeSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SlotTypeSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SlotTypeSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SlotTypeSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +80,24 @@ namespace Model
      * <p>If the slot type is derived from a built-on slot type, the name of the parent
      * slot type.</p>
      */
-    inline const Aws::String& GetParentSlotTypeSignature() const{ return m_parentSlotTypeSignature; }
+    inline const Aws::String& GetParentSlotTypeSignature() const { return m_parentSlotTypeSignature; }
     inline bool ParentSlotTypeSignatureHasBeenSet() const { return m_parentSlotTypeSignatureHasBeenSet; }
-    inline void SetParentSlotTypeSignature(const Aws::String& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = value; }
-    inline void SetParentSlotTypeSignature(Aws::String&& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = std::move(value); }
-    inline void SetParentSlotTypeSignature(const char* value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature.assign(value); }
-    inline SlotTypeSummary& WithParentSlotTypeSignature(const Aws::String& value) { SetParentSlotTypeSignature(value); return *this;}
-    inline SlotTypeSummary& WithParentSlotTypeSignature(Aws::String&& value) { SetParentSlotTypeSignature(std::move(value)); return *this;}
-    inline SlotTypeSummary& WithParentSlotTypeSignature(const char* value) { SetParentSlotTypeSignature(value); return *this;}
+    template<typename ParentSlotTypeSignatureT = Aws::String>
+    void SetParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = std::forward<ParentSlotTypeSignatureT>(value); }
+    template<typename ParentSlotTypeSignatureT = Aws::String>
+    SlotTypeSummary& WithParentSlotTypeSignature(ParentSlotTypeSignatureT&& value) { SetParentSlotTypeSignature(std::forward<ParentSlotTypeSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the slot type was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline SlotTypeSummary& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline SlotTypeSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    SlotTypeSummary& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */
-    inline const SlotTypeCategory& GetSlotTypeCategory() const{ return m_slotTypeCategory; }
+    inline SlotTypeCategory GetSlotTypeCategory() const { return m_slotTypeCategory; }
     inline bool SlotTypeCategoryHasBeenSet() const { return m_slotTypeCategoryHasBeenSet; }
-    inline void SetSlotTypeCategory(const SlotTypeCategory& value) { m_slotTypeCategoryHasBeenSet = true; m_slotTypeCategory = value; }
-    inline void SetSlotTypeCategory(SlotTypeCategory&& value) { m_slotTypeCategoryHasBeenSet = true; m_slotTypeCategory = std::move(value); }
-    inline SlotTypeSummary& WithSlotTypeCategory(const SlotTypeCategory& value) { SetSlotTypeCategory(value); return *this;}
-    inline SlotTypeSummary& WithSlotTypeCategory(SlotTypeCategory&& value) { SetSlotTypeCategory(std::move(value)); return *this;}
+    inline void SetSlotTypeCategory(SlotTypeCategory value) { m_slotTypeCategoryHasBeenSet = true; m_slotTypeCategory = value; }
+    inline SlotTypeSummary& WithSlotTypeCategory(SlotTypeCategory value) { SetSlotTypeCategory(value); return *this;}
     ///@}
   private:
 
@@ -144,10 +134,10 @@ namespace Model
     Aws::String m_parentSlotTypeSignature;
     bool m_parentSlotTypeSignatureHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
 
-    SlotTypeCategory m_slotTypeCategory;
+    SlotTypeCategory m_slotTypeCategory{SlotTypeCategory::NOT_SET};
     bool m_slotTypeCategoryHasBeenSet = false;
   };
 

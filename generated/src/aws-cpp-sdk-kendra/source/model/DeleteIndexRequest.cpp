@@ -12,11 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIndexRequest::DeleteIndexRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIndexRequest::SerializePayload() const
 {
   JsonValue payload;

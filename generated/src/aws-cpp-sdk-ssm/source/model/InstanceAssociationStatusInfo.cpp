@@ -18,24 +18,7 @@ namespace SSM
 namespace Model
 {
 
-InstanceAssociationStatusInfo::InstanceAssociationStatusInfo() : 
-    m_associationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_associationVersionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_executionDateHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_detailedStatusHasBeenSet(false),
-    m_executionSummaryHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_outputUrlHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
-{
-}
-
 InstanceAssociationStatusInfo::InstanceAssociationStatusInfo(JsonView jsonValue)
-  : InstanceAssociationStatusInfo()
 {
   *this = jsonValue;
 }
@@ -45,87 +28,63 @@ InstanceAssociationStatusInfo& InstanceAssociationStatusInfo::operator =(JsonVie
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationVersion"))
   {
     m_associationVersion = jsonValue.GetString("AssociationVersion");
-
     m_associationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionDate"))
   {
     m_executionDate = jsonValue.GetDouble("ExecutionDate");
-
     m_executionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailedStatus"))
   {
     m_detailedStatus = jsonValue.GetString("DetailedStatus");
-
     m_detailedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionSummary"))
   {
     m_executionSummary = jsonValue.GetString("ExecutionSummary");
-
     m_executionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputUrl"))
   {
     m_outputUrl = jsonValue.GetObject("OutputUrl");
-
     m_outputUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationName"))
   {
     m_associationName = jsonValue.GetString("AssociationName");
-
     m_associationNameHasBeenSet = true;
   }
-
   return *this;
 }
 

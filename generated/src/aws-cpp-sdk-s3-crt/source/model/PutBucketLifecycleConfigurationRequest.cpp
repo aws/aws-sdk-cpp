@@ -17,17 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutBucketLifecycleConfigurationRequest::PutBucketLifecycleConfigurationRequest() : 
-    m_bucketHasBeenSet(false),
-    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_lifecycleConfigurationHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_transitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize::NOT_SET),
-    m_transitionDefaultMinimumObjectSizeHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool PutBucketLifecycleConfigurationRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

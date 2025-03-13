@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-Body::Body() : 
-    m_textHasBeenSet(false),
-    m_htmlHasBeenSet(false)
-{
-}
-
 Body::Body(const XmlNode& xmlNode)
-  : Body()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Body& Body::operator =(const XmlNode& xmlNode)
     {
       m_text = textNode;
       m_textHasBeenSet = true;
+       m_textHasBeenSet = true;
     }
     XmlNode htmlNode = resultNode.FirstChild("Html");
     if(!htmlNode.IsNull())
     {
       m_html = htmlNode;
       m_htmlHasBeenSet = true;
+       m_htmlHasBeenSet = true;
     }
   }
 

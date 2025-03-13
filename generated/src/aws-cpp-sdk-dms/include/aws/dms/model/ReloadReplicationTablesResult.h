@@ -32,7 +32,7 @@ namespace Model
   class ReloadReplicationTablesResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ReloadReplicationTablesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ReloadReplicationTablesResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ReloadReplicationTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API ReloadReplicationTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
      * <p>The Amazon Resource Name of the replication config for which to reload
      * tables.</p>
      */
-    inline const Aws::String& GetReplicationConfigArn() const{ return m_replicationConfigArn; }
-    inline void SetReplicationConfigArn(const Aws::String& value) { m_replicationConfigArn = value; }
-    inline void SetReplicationConfigArn(Aws::String&& value) { m_replicationConfigArn = std::move(value); }
-    inline void SetReplicationConfigArn(const char* value) { m_replicationConfigArn.assign(value); }
-    inline ReloadReplicationTablesResult& WithReplicationConfigArn(const Aws::String& value) { SetReplicationConfigArn(value); return *this;}
-    inline ReloadReplicationTablesResult& WithReplicationConfigArn(Aws::String&& value) { SetReplicationConfigArn(std::move(value)); return *this;}
-    inline ReloadReplicationTablesResult& WithReplicationConfigArn(const char* value) { SetReplicationConfigArn(value); return *this;}
+    inline const Aws::String& GetReplicationConfigArn() const { return m_replicationConfigArn; }
+    template<typename ReplicationConfigArnT = Aws::String>
+    void SetReplicationConfigArn(ReplicationConfigArnT&& value) { m_replicationConfigArnHasBeenSet = true; m_replicationConfigArn = std::forward<ReplicationConfigArnT>(value); }
+    template<typename ReplicationConfigArnT = Aws::String>
+    ReloadReplicationTablesResult& WithReplicationConfigArn(ReplicationConfigArnT&& value) { SetReplicationConfigArn(std::forward<ReplicationConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ReloadReplicationTablesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ReloadReplicationTablesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ReloadReplicationTablesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ReloadReplicationTablesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_replicationConfigArn;
+    bool m_replicationConfigArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidSNSDestinationException::InvalidSNSDestinationException() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 InvalidSNSDestinationException::InvalidSNSDestinationException(const XmlNode& xmlNode)
-  : InvalidSNSDestinationException()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InvalidSNSDestinationException& InvalidSNSDestinationException::operator =(const
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
     XmlNode eventDestinationNameNode = resultNode.FirstChild("EventDestinationName");
     if(!eventDestinationNameNode.IsNull())
     {
       m_eventDestinationName = Aws::Utils::Xml::DecodeEscapedXmlText(eventDestinationNameNode.GetText());
       m_eventDestinationNameHasBeenSet = true;
+       m_eventDestinationNameHasBeenSet = true;
     }
   }
 

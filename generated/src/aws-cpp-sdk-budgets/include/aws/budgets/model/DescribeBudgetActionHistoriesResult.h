@@ -29,7 +29,7 @@ namespace Model
   class DescribeBudgetActionHistoriesResult
   {
   public:
-    AWS_BUDGETS_API DescribeBudgetActionHistoriesResult();
+    AWS_BUDGETS_API DescribeBudgetActionHistoriesResult() = default;
     AWS_BUDGETS_API DescribeBudgetActionHistoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BUDGETS_API DescribeBudgetActionHistoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,42 @@ namespace Model
     /**
      * <p> The historical record of the budget action resource. </p>
      */
-    inline const Aws::Vector<ActionHistory>& GetActionHistories() const{ return m_actionHistories; }
-    inline void SetActionHistories(const Aws::Vector<ActionHistory>& value) { m_actionHistories = value; }
-    inline void SetActionHistories(Aws::Vector<ActionHistory>&& value) { m_actionHistories = std::move(value); }
-    inline DescribeBudgetActionHistoriesResult& WithActionHistories(const Aws::Vector<ActionHistory>& value) { SetActionHistories(value); return *this;}
-    inline DescribeBudgetActionHistoriesResult& WithActionHistories(Aws::Vector<ActionHistory>&& value) { SetActionHistories(std::move(value)); return *this;}
-    inline DescribeBudgetActionHistoriesResult& AddActionHistories(const ActionHistory& value) { m_actionHistories.push_back(value); return *this; }
-    inline DescribeBudgetActionHistoriesResult& AddActionHistories(ActionHistory&& value) { m_actionHistories.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActionHistory>& GetActionHistories() const { return m_actionHistories; }
+    template<typename ActionHistoriesT = Aws::Vector<ActionHistory>>
+    void SetActionHistories(ActionHistoriesT&& value) { m_actionHistoriesHasBeenSet = true; m_actionHistories = std::forward<ActionHistoriesT>(value); }
+    template<typename ActionHistoriesT = Aws::Vector<ActionHistory>>
+    DescribeBudgetActionHistoriesResult& WithActionHistories(ActionHistoriesT&& value) { SetActionHistories(std::forward<ActionHistoriesT>(value)); return *this;}
+    template<typename ActionHistoriesT = ActionHistory>
+    DescribeBudgetActionHistoriesResult& AddActionHistories(ActionHistoriesT&& value) { m_actionHistoriesHasBeenSet = true; m_actionHistories.emplace_back(std::forward<ActionHistoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeBudgetActionHistoriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeBudgetActionHistoriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeBudgetActionHistoriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeBudgetActionHistoriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBudgetActionHistoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBudgetActionHistoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBudgetActionHistoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBudgetActionHistoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ActionHistory> m_actionHistories;
+    bool m_actionHistoriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

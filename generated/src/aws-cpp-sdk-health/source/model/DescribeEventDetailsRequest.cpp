@@ -12,12 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventDetailsRequest::DescribeEventDetailsRequest() : 
-    m_eventArnsHasBeenSet(false),
-    m_localeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

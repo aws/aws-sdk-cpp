@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCertificateProviderRequest::DeleteCertificateProviderRequest() : 
-    m_certificateProviderNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCertificateProviderRequest::SerializePayload() const
 {
   return {};

@@ -18,17 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationAssociationMetadata::RegistrationAssociationMetadata() : 
-    m_resourceArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false)
-{
-}
-
 RegistrationAssociationMetadata::RegistrationAssociationMetadata(JsonView jsonValue)
-  : RegistrationAssociationMetadata()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RegistrationAssociationMetadata& RegistrationAssociationMetadata::operator =(Jso
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

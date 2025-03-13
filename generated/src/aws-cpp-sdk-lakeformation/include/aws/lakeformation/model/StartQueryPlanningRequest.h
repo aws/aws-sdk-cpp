@@ -22,7 +22,7 @@ namespace Model
   class StartQueryPlanningRequest : public LakeFormationRequest
   {
   public:
-    AWS_LAKEFORMATION_API StartQueryPlanningRequest();
+    AWS_LAKEFORMATION_API StartQueryPlanningRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>A structure containing information about the query plan.</p>
      */
-    inline const QueryPlanningContext& GetQueryPlanningContext() const{ return m_queryPlanningContext; }
+    inline const QueryPlanningContext& GetQueryPlanningContext() const { return m_queryPlanningContext; }
     inline bool QueryPlanningContextHasBeenSet() const { return m_queryPlanningContextHasBeenSet; }
-    inline void SetQueryPlanningContext(const QueryPlanningContext& value) { m_queryPlanningContextHasBeenSet = true; m_queryPlanningContext = value; }
-    inline void SetQueryPlanningContext(QueryPlanningContext&& value) { m_queryPlanningContextHasBeenSet = true; m_queryPlanningContext = std::move(value); }
-    inline StartQueryPlanningRequest& WithQueryPlanningContext(const QueryPlanningContext& value) { SetQueryPlanningContext(value); return *this;}
-    inline StartQueryPlanningRequest& WithQueryPlanningContext(QueryPlanningContext&& value) { SetQueryPlanningContext(std::move(value)); return *this;}
+    template<typename QueryPlanningContextT = QueryPlanningContext>
+    void SetQueryPlanningContext(QueryPlanningContextT&& value) { m_queryPlanningContextHasBeenSet = true; m_queryPlanningContext = std::forward<QueryPlanningContextT>(value); }
+    template<typename QueryPlanningContextT = QueryPlanningContext>
+    StartQueryPlanningRequest& WithQueryPlanningContext(QueryPlanningContextT&& value) { SetQueryPlanningContext(std::forward<QueryPlanningContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A PartiQL query statement used as an input to the planner service.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline StartQueryPlanningRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline StartQueryPlanningRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline StartQueryPlanningRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    StartQueryPlanningRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
   private:
 

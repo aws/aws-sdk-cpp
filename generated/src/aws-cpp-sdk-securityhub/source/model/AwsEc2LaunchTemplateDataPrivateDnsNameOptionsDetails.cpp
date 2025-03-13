@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails() : 
-    m_enableResourceNameDnsAAAARecord(false),
-    m_enableResourceNameDnsAAAARecordHasBeenSet(false),
-    m_enableResourceNameDnsARecord(false),
-    m_enableResourceNameDnsARecordHasBeenSet(false),
-    m_hostnameTypeHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails::AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails& AwsEc2LaunchTemplateDataPr
   if(jsonValue.ValueExists("EnableResourceNameDnsAAAARecord"))
   {
     m_enableResourceNameDnsAAAARecord = jsonValue.GetBool("EnableResourceNameDnsAAAARecord");
-
     m_enableResourceNameDnsAAAARecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableResourceNameDnsARecord"))
   {
     m_enableResourceNameDnsARecord = jsonValue.GetBool("EnableResourceNameDnsARecord");
-
     m_enableResourceNameDnsARecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostnameType"))
   {
     m_hostnameType = jsonValue.GetString("HostnameType");
-
     m_hostnameTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

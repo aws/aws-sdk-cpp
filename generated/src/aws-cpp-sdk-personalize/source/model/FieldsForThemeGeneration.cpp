@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-FieldsForThemeGeneration::FieldsForThemeGeneration() : 
-    m_itemNameHasBeenSet(false)
-{
-}
-
 FieldsForThemeGeneration::FieldsForThemeGeneration(JsonView jsonValue)
-  : FieldsForThemeGeneration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FieldsForThemeGeneration& FieldsForThemeGeneration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("itemName"))
   {
     m_itemName = jsonValue.GetString("itemName");
-
     m_itemNameHasBeenSet = true;
   }
-
   return *this;
 }
 

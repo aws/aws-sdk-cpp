@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMediaConcatenationPipelineResult::CreateMediaConcatenationPipelineResult()
-{
-}
-
 CreateMediaConcatenationPipelineResult::CreateMediaConcatenationPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMediaConcatenationPipelineResult& CreateMediaConcatenationPipelineResult::
   if(jsonValue.ValueExists("MediaConcatenationPipeline"))
   {
     m_mediaConcatenationPipeline = jsonValue.GetObject("MediaConcatenationPipeline");
-
+    m_mediaConcatenationPipelineHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

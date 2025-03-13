@@ -12,10 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetModelInvocationLoggingConfigurationRequest::GetModelInvocationLoggingConfigurationRequest()
-{
-}
-
 Aws::String GetModelInvocationLoggingConfigurationRequest::SerializePayload() const
 {
   return {};

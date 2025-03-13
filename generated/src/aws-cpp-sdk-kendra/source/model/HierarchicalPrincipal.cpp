@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-HierarchicalPrincipal::HierarchicalPrincipal() : 
-    m_principalListHasBeenSet(false)
-{
-}
-
 HierarchicalPrincipal::HierarchicalPrincipal(JsonView jsonValue)
-  : HierarchicalPrincipal()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ HierarchicalPrincipal& HierarchicalPrincipal::operator =(JsonView jsonValue)
     }
     m_principalListHasBeenSet = true;
   }
-
   return *this;
 }
 

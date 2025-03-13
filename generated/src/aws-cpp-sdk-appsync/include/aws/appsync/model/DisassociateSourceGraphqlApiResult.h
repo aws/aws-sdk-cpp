@@ -28,7 +28,7 @@ namespace Model
   class DisassociateSourceGraphqlApiResult
   {
   public:
-    AWS_APPSYNC_API DisassociateSourceGraphqlApiResult();
+    AWS_APPSYNC_API DisassociateSourceGraphqlApiResult() = default;
     AWS_APPSYNC_API DisassociateSourceGraphqlApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API DisassociateSourceGraphqlApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The state of the source API association.</p>
      */
-    inline const SourceApiAssociationStatus& GetSourceApiAssociationStatus() const{ return m_sourceApiAssociationStatus; }
-    inline void SetSourceApiAssociationStatus(const SourceApiAssociationStatus& value) { m_sourceApiAssociationStatus = value; }
-    inline void SetSourceApiAssociationStatus(SourceApiAssociationStatus&& value) { m_sourceApiAssociationStatus = std::move(value); }
-    inline DisassociateSourceGraphqlApiResult& WithSourceApiAssociationStatus(const SourceApiAssociationStatus& value) { SetSourceApiAssociationStatus(value); return *this;}
-    inline DisassociateSourceGraphqlApiResult& WithSourceApiAssociationStatus(SourceApiAssociationStatus&& value) { SetSourceApiAssociationStatus(std::move(value)); return *this;}
+    inline SourceApiAssociationStatus GetSourceApiAssociationStatus() const { return m_sourceApiAssociationStatus; }
+    inline void SetSourceApiAssociationStatus(SourceApiAssociationStatus value) { m_sourceApiAssociationStatusHasBeenSet = true; m_sourceApiAssociationStatus = value; }
+    inline DisassociateSourceGraphqlApiResult& WithSourceApiAssociationStatus(SourceApiAssociationStatus value) { SetSourceApiAssociationStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateSourceGraphqlApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateSourceGraphqlApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateSourceGraphqlApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateSourceGraphqlApiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SourceApiAssociationStatus m_sourceApiAssociationStatus;
+    SourceApiAssociationStatus m_sourceApiAssociationStatus{SourceApiAssociationStatus::NOT_SET};
+    bool m_sourceApiAssociationStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

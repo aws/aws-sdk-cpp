@@ -36,7 +36,7 @@ namespace Model
   class EvaluationFormSection
   {
   public:
-    AWS_CONNECT_API EvaluationFormSection();
+    AWS_CONNECT_API EvaluationFormSection() = default;
     AWS_CONNECT_API EvaluationFormSection(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EvaluationFormSection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The title of the section.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline EvaluationFormSection& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline EvaluationFormSection& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline EvaluationFormSection& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    EvaluationFormSection& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,49 +59,45 @@ namespace Model
      * <p>The identifier of the section. An identifier must be unique within the
      * evaluation form.</p>
      */
-    inline const Aws::String& GetRefId() const{ return m_refId; }
+    inline const Aws::String& GetRefId() const { return m_refId; }
     inline bool RefIdHasBeenSet() const { return m_refIdHasBeenSet; }
-    inline void SetRefId(const Aws::String& value) { m_refIdHasBeenSet = true; m_refId = value; }
-    inline void SetRefId(Aws::String&& value) { m_refIdHasBeenSet = true; m_refId = std::move(value); }
-    inline void SetRefId(const char* value) { m_refIdHasBeenSet = true; m_refId.assign(value); }
-    inline EvaluationFormSection& WithRefId(const Aws::String& value) { SetRefId(value); return *this;}
-    inline EvaluationFormSection& WithRefId(Aws::String&& value) { SetRefId(std::move(value)); return *this;}
-    inline EvaluationFormSection& WithRefId(const char* value) { SetRefId(value); return *this;}
+    template<typename RefIdT = Aws::String>
+    void SetRefId(RefIdT&& value) { m_refIdHasBeenSet = true; m_refId = std::forward<RefIdT>(value); }
+    template<typename RefIdT = Aws::String>
+    EvaluationFormSection& WithRefId(RefIdT&& value) { SetRefId(std::forward<RefIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instructions of the section.</p>
      */
-    inline const Aws::String& GetInstructions() const{ return m_instructions; }
+    inline const Aws::String& GetInstructions() const { return m_instructions; }
     inline bool InstructionsHasBeenSet() const { return m_instructionsHasBeenSet; }
-    inline void SetInstructions(const Aws::String& value) { m_instructionsHasBeenSet = true; m_instructions = value; }
-    inline void SetInstructions(Aws::String&& value) { m_instructionsHasBeenSet = true; m_instructions = std::move(value); }
-    inline void SetInstructions(const char* value) { m_instructionsHasBeenSet = true; m_instructions.assign(value); }
-    inline EvaluationFormSection& WithInstructions(const Aws::String& value) { SetInstructions(value); return *this;}
-    inline EvaluationFormSection& WithInstructions(Aws::String&& value) { SetInstructions(std::move(value)); return *this;}
-    inline EvaluationFormSection& WithInstructions(const char* value) { SetInstructions(value); return *this;}
+    template<typename InstructionsT = Aws::String>
+    void SetInstructions(InstructionsT&& value) { m_instructionsHasBeenSet = true; m_instructions = std::forward<InstructionsT>(value); }
+    template<typename InstructionsT = Aws::String>
+    EvaluationFormSection& WithInstructions(InstructionsT&& value) { SetInstructions(std::forward<InstructionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The items of the section.</p>
      */
-    inline const Aws::Vector<EvaluationFormItem>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<EvaluationFormItem>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<EvaluationFormItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<EvaluationFormItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline EvaluationFormSection& WithItems(const Aws::Vector<EvaluationFormItem>& value) { SetItems(value); return *this;}
-    inline EvaluationFormSection& WithItems(Aws::Vector<EvaluationFormItem>&& value) { SetItems(std::move(value)); return *this;}
-    inline EvaluationFormSection& AddItems(const EvaluationFormItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline EvaluationFormSection& AddItems(EvaluationFormItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<EvaluationFormItem>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<EvaluationFormItem>>
+    EvaluationFormSection& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = EvaluationFormItem>
+    EvaluationFormSection& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The scoring weight of the section.</p>
      */
-    inline double GetWeight() const{ return m_weight; }
+    inline double GetWeight() const { return m_weight; }
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
     inline void SetWeight(double value) { m_weightHasBeenSet = true; m_weight = value; }
     inline EvaluationFormSection& WithWeight(double value) { SetWeight(value); return *this;}
@@ -122,7 +116,7 @@ namespace Model
     Aws::Vector<EvaluationFormItem> m_items;
     bool m_itemsHasBeenSet = false;
 
-    double m_weight;
+    double m_weight{0.0};
     bool m_weightHasBeenSet = false;
   };
 

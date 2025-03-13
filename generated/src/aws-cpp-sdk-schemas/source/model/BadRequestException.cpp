@@ -18,14 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-BadRequestException::BadRequestException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BadRequestException::BadRequestException(JsonView jsonValue)
-  : BadRequestException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BadRequestException& BadRequestException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

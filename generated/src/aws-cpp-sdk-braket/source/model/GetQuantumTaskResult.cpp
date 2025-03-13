@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQuantumTaskResult::GetQuantumTaskResult() : 
-    m_shots(0),
-    m_status(QuantumTaskStatus::NOT_SET)
-{
-}
-
 GetQuantumTaskResult::GetQuantumTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQuantumTaskResult()
 {
   *this = result;
 }
@@ -39,80 +32,68 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
     {
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());
     }
+    m_associationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceArn"))
   {
     m_deviceArn = jsonValue.GetString("deviceArn");
-
+    m_deviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceParameters"))
   {
     m_deviceParameters = jsonValue.GetString("deviceParameters");
-
+    m_deviceParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetString("endedAt");
-
+    m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
+    m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Bucket"))
   {
     m_outputS3Bucket = jsonValue.GetString("outputS3Bucket");
-
+    m_outputS3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputS3Directory"))
   {
     m_outputS3Directory = jsonValue.GetString("outputS3Directory");
-
+    m_outputS3DirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quantumTaskArn"))
   {
     m_quantumTaskArn = jsonValue.GetString("quantumTaskArn");
-
+    m_quantumTaskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueInfo"))
   {
     m_queueInfo = jsonValue.GetObject("queueInfo");
-
+    m_queueInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shots"))
   {
     m_shots = jsonValue.GetInt64("shots");
-
+    m_shotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = QuantumTaskStatusMapper::GetQuantumTaskStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -120,14 +101,15 @@ GetQuantumTaskResult& GetQuantumTaskResult::operator =(const Aws::AmazonWebServi
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowDefinition::FlowDefinition() : 
-    m_connectionsHasBeenSet(false),
-    m_nodesHasBeenSet(false)
-{
-}
-
 FlowDefinition::FlowDefinition(JsonView jsonValue)
-  : FlowDefinition()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
     }
     m_connectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodes"))
   {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
@@ -51,7 +43,6 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
     }
     m_nodesHasBeenSet = true;
   }
-
   return *this;
 }
 

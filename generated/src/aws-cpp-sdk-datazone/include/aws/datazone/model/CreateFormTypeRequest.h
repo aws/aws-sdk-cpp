@@ -23,7 +23,7 @@ namespace Model
   class CreateFormTypeRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API CreateFormTypeRequest();
+    AWS_DATAZONE_API CreateFormTypeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The description of this Amazon DataZone metadata form type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateFormTypeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateFormTypeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateFormTypeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateFormTypeRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,66 +51,58 @@ namespace Model
      * <p>The ID of the Amazon DataZone domain in which this metadata form type is
      * created.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline CreateFormTypeRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline CreateFormTypeRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline CreateFormTypeRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    CreateFormTypeRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model of this Amazon DataZone metadata form type.</p>
      */
-    inline const Model& GetModel() const{ return m_model; }
+    inline const Model& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Model& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Model&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline CreateFormTypeRequest& WithModel(const Model& value) { SetModel(value); return *this;}
-    inline CreateFormTypeRequest& WithModel(Model&& value) { SetModel(std::move(value)); return *this;}
+    template<typename ModelT = Model>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Model>
+    CreateFormTypeRequest& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of this Amazon DataZone metadata form type.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateFormTypeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateFormTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateFormTypeRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateFormTypeRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon DataZone project that owns this metadata form type.</p>
      */
-    inline const Aws::String& GetOwningProjectIdentifier() const{ return m_owningProjectIdentifier; }
+    inline const Aws::String& GetOwningProjectIdentifier() const { return m_owningProjectIdentifier; }
     inline bool OwningProjectIdentifierHasBeenSet() const { return m_owningProjectIdentifierHasBeenSet; }
-    inline void SetOwningProjectIdentifier(const Aws::String& value) { m_owningProjectIdentifierHasBeenSet = true; m_owningProjectIdentifier = value; }
-    inline void SetOwningProjectIdentifier(Aws::String&& value) { m_owningProjectIdentifierHasBeenSet = true; m_owningProjectIdentifier = std::move(value); }
-    inline void SetOwningProjectIdentifier(const char* value) { m_owningProjectIdentifierHasBeenSet = true; m_owningProjectIdentifier.assign(value); }
-    inline CreateFormTypeRequest& WithOwningProjectIdentifier(const Aws::String& value) { SetOwningProjectIdentifier(value); return *this;}
-    inline CreateFormTypeRequest& WithOwningProjectIdentifier(Aws::String&& value) { SetOwningProjectIdentifier(std::move(value)); return *this;}
-    inline CreateFormTypeRequest& WithOwningProjectIdentifier(const char* value) { SetOwningProjectIdentifier(value); return *this;}
+    template<typename OwningProjectIdentifierT = Aws::String>
+    void SetOwningProjectIdentifier(OwningProjectIdentifierT&& value) { m_owningProjectIdentifierHasBeenSet = true; m_owningProjectIdentifier = std::forward<OwningProjectIdentifierT>(value); }
+    template<typename OwningProjectIdentifierT = Aws::String>
+    CreateFormTypeRequest& WithOwningProjectIdentifier(OwningProjectIdentifierT&& value) { SetOwningProjectIdentifier(std::forward<OwningProjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of this Amazon DataZone metadata form type.</p>
      */
-    inline const FormTypeStatus& GetStatus() const{ return m_status; }
+    inline FormTypeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FormTypeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FormTypeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CreateFormTypeRequest& WithStatus(const FormTypeStatus& value) { SetStatus(value); return *this;}
-    inline CreateFormTypeRequest& WithStatus(FormTypeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FormTypeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateFormTypeRequest& WithStatus(FormTypeStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -131,7 +121,7 @@ namespace Model
     Aws::String m_owningProjectIdentifier;
     bool m_owningProjectIdentifierHasBeenSet = false;
 
-    FormTypeStatus m_status;
+    FormTypeStatus m_status{FormTypeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

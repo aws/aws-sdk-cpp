@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEmailTemplateRequest::DeleteEmailTemplateRequest() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEmailTemplateRequest::SerializePayload() const
 {
   return {};

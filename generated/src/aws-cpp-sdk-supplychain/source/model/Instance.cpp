@@ -18,25 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-Instance::Instance() : 
-    m_instanceIdHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_state(InstanceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_webAppDnsDomainHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_instanceDescriptionHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_versionNumber(0.0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Instance::Instance(JsonView jsonValue)
-  : Instance()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ Instance& Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webAppDnsDomain"))
   {
     m_webAppDnsDomain = jsonValue.GetString("webAppDnsDomain");
-
     m_webAppDnsDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceName"))
   {
     m_instanceName = jsonValue.GetString("instanceName");
-
     m_instanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceDescription"))
   {
     m_instanceDescription = jsonValue.GetString("instanceDescription");
-
     m_instanceDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetDouble("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

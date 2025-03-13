@@ -21,7 +21,7 @@ namespace Model
   class StartDataSourceIntrospectionRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API StartDataSourceIntrospectionRequest();
+    AWS_APPSYNC_API StartDataSourceIntrospectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>The <code>rdsDataApiConfig</code> object data.</p>
      */
-    inline const RdsDataApiConfig& GetRdsDataApiConfig() const{ return m_rdsDataApiConfig; }
+    inline const RdsDataApiConfig& GetRdsDataApiConfig() const { return m_rdsDataApiConfig; }
     inline bool RdsDataApiConfigHasBeenSet() const { return m_rdsDataApiConfigHasBeenSet; }
-    inline void SetRdsDataApiConfig(const RdsDataApiConfig& value) { m_rdsDataApiConfigHasBeenSet = true; m_rdsDataApiConfig = value; }
-    inline void SetRdsDataApiConfig(RdsDataApiConfig&& value) { m_rdsDataApiConfigHasBeenSet = true; m_rdsDataApiConfig = std::move(value); }
-    inline StartDataSourceIntrospectionRequest& WithRdsDataApiConfig(const RdsDataApiConfig& value) { SetRdsDataApiConfig(value); return *this;}
-    inline StartDataSourceIntrospectionRequest& WithRdsDataApiConfig(RdsDataApiConfig&& value) { SetRdsDataApiConfig(std::move(value)); return *this;}
+    template<typename RdsDataApiConfigT = RdsDataApiConfig>
+    void SetRdsDataApiConfig(RdsDataApiConfigT&& value) { m_rdsDataApiConfigHasBeenSet = true; m_rdsDataApiConfig = std::forward<RdsDataApiConfigT>(value); }
+    template<typename RdsDataApiConfigT = RdsDataApiConfig>
+    StartDataSourceIntrospectionRequest& WithRdsDataApiConfig(RdsDataApiConfigT&& value) { SetRdsDataApiConfig(std::forward<RdsDataApiConfigT>(value)); return *this;}
     ///@}
   private:
 

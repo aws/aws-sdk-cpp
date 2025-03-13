@@ -29,7 +29,7 @@ namespace Model
   class ListModelInvocationJobsRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API ListModelInvocationJobsRequest();
+    AWS_BEDROCK_API ListModelInvocationJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,12 @@ namespace Model
      * <p>Specify a time to filter for batch inference jobs that were submitted after
      * the time you specify.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const{ return m_submitTimeAfter; }
+    inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const { return m_submitTimeAfter; }
     inline bool SubmitTimeAfterHasBeenSet() const { return m_submitTimeAfterHasBeenSet; }
-    inline void SetSubmitTimeAfter(const Aws::Utils::DateTime& value) { m_submitTimeAfterHasBeenSet = true; m_submitTimeAfter = value; }
-    inline void SetSubmitTimeAfter(Aws::Utils::DateTime&& value) { m_submitTimeAfterHasBeenSet = true; m_submitTimeAfter = std::move(value); }
-    inline ListModelInvocationJobsRequest& WithSubmitTimeAfter(const Aws::Utils::DateTime& value) { SetSubmitTimeAfter(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithSubmitTimeAfter(Aws::Utils::DateTime&& value) { SetSubmitTimeAfter(std::move(value)); return *this;}
+    template<typename SubmitTimeAfterT = Aws::Utils::DateTime>
+    void SetSubmitTimeAfter(SubmitTimeAfterT&& value) { m_submitTimeAfterHasBeenSet = true; m_submitTimeAfter = std::forward<SubmitTimeAfterT>(value); }
+    template<typename SubmitTimeAfterT = Aws::Utils::DateTime>
+    ListModelInvocationJobsRequest& WithSubmitTimeAfter(SubmitTimeAfterT&& value) { SetSubmitTimeAfter(std::forward<SubmitTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>Specify a time to filter for batch inference jobs that were submitted before
      * the time you specify.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const{ return m_submitTimeBefore; }
+    inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const { return m_submitTimeBefore; }
     inline bool SubmitTimeBeforeHasBeenSet() const { return m_submitTimeBeforeHasBeenSet; }
-    inline void SetSubmitTimeBefore(const Aws::Utils::DateTime& value) { m_submitTimeBeforeHasBeenSet = true; m_submitTimeBefore = value; }
-    inline void SetSubmitTimeBefore(Aws::Utils::DateTime&& value) { m_submitTimeBeforeHasBeenSet = true; m_submitTimeBefore = std::move(value); }
-    inline ListModelInvocationJobsRequest& WithSubmitTimeBefore(const Aws::Utils::DateTime& value) { SetSubmitTimeBefore(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithSubmitTimeBefore(Aws::Utils::DateTime&& value) { SetSubmitTimeBefore(std::move(value)); return *this;}
+    template<typename SubmitTimeBeforeT = Aws::Utils::DateTime>
+    void SetSubmitTimeBefore(SubmitTimeBeforeT&& value) { m_submitTimeBeforeHasBeenSet = true; m_submitTimeBefore = std::forward<SubmitTimeBeforeT>(value); }
+    template<typename SubmitTimeBeforeT = Aws::Utils::DateTime>
+    ListModelInvocationJobsRequest& WithSubmitTimeBefore(SubmitTimeBeforeT&& value) { SetSubmitTimeBefore(std::forward<SubmitTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +100,10 @@ namespace Model
      * a user.</p> </li> <li> <p>Stopping – This job is being stopped by a user.</p>
      * </li> </ul>
      */
-    inline const ModelInvocationJobStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline ModelInvocationJobStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const ModelInvocationJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(ModelInvocationJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListModelInvocationJobsRequest& WithStatusEquals(const ModelInvocationJobStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithStatusEquals(ModelInvocationJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(ModelInvocationJobStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListModelInvocationJobsRequest& WithStatusEquals(ModelInvocationJobStatus value) { SetStatusEquals(value); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +111,12 @@ namespace Model
      * <p>Specify a string to filter for batch inference jobs whose names contain the
      * string.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline ListModelInvocationJobsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline ListModelInvocationJobsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    ListModelInvocationJobsRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,7 +125,7 @@ namespace Model
      * number that you specify, a <code>nextToken</code> value is returned. Use the
      * <code>nextToken</code> in a request to return the next batch of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListModelInvocationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -143,63 +139,57 @@ namespace Model
      * the next batch of results, send the <code>nextToken</code> value in another
      * request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListModelInvocationJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelInvocationJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelInvocationJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An attribute by which to sort the results.</p>
      */
-    inline const SortJobsBy& GetSortBy() const{ return m_sortBy; }
+    inline SortJobsBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortJobsBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortJobsBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListModelInvocationJobsRequest& WithSortBy(const SortJobsBy& value) { SetSortBy(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithSortBy(SortJobsBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortJobsBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListModelInvocationJobsRequest& WithSortBy(SortJobsBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether to sort the results by ascending or descending order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListModelInvocationJobsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListModelInvocationJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListModelInvocationJobsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_submitTimeAfter;
+    Aws::Utils::DateTime m_submitTimeAfter{};
     bool m_submitTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submitTimeBefore;
+    Aws::Utils::DateTime m_submitTimeBefore{};
     bool m_submitTimeBeforeHasBeenSet = false;
 
-    ModelInvocationJobStatus m_statusEquals;
+    ModelInvocationJobStatus m_statusEquals{ModelInvocationJobStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortJobsBy m_sortBy;
+    SortJobsBy m_sortBy{SortJobsBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

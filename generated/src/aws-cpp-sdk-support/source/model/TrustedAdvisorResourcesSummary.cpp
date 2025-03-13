@@ -18,20 +18,7 @@ namespace Support
 namespace Model
 {
 
-TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary() : 
-    m_resourcesProcessed(0),
-    m_resourcesProcessedHasBeenSet(false),
-    m_resourcesFlagged(0),
-    m_resourcesFlaggedHasBeenSet(false),
-    m_resourcesIgnored(0),
-    m_resourcesIgnoredHasBeenSet(false),
-    m_resourcesSuppressed(0),
-    m_resourcesSuppressedHasBeenSet(false)
-{
-}
-
 TrustedAdvisorResourcesSummary::TrustedAdvisorResourcesSummary(JsonView jsonValue)
-  : TrustedAdvisorResourcesSummary()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TrustedAdvisorResourcesSummary& TrustedAdvisorResourcesSummary::operator =(JsonV
   if(jsonValue.ValueExists("resourcesProcessed"))
   {
     m_resourcesProcessed = jsonValue.GetInt64("resourcesProcessed");
-
     m_resourcesProcessedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesFlagged"))
   {
     m_resourcesFlagged = jsonValue.GetInt64("resourcesFlagged");
-
     m_resourcesFlaggedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesIgnored"))
   {
     m_resourcesIgnored = jsonValue.GetInt64("resourcesIgnored");
-
     m_resourcesIgnoredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesSuppressed"))
   {
     m_resourcesSuppressed = jsonValue.GetInt64("resourcesSuppressed");
-
     m_resourcesSuppressedHasBeenSet = true;
   }
-
   return *this;
 }
 

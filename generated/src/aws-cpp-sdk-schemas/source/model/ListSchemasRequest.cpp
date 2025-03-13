@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSchemasRequest::ListSchemasRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_schemaNamePrefixHasBeenSet(false)
-{
-}
-
 Aws::String ListSchemasRequest::SerializePayload() const
 {
   return {};

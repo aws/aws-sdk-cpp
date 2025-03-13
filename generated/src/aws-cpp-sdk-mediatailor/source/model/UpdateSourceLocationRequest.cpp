@@ -12,15 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSourceLocationRequest::UpdateSourceLocationRequest() : 
-    m_accessConfigurationHasBeenSet(false),
-    m_defaultSegmentDeliveryConfigurationHasBeenSet(false),
-    m_httpConfigurationHasBeenSet(false),
-    m_segmentDeliveryConfigurationsHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSourceLocationRequest::SerializePayload() const
 {
   JsonValue payload;

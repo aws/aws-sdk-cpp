@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-Attachments::Attachments() : 
-    m_manifestsHasBeenSet(false),
-    m_fileSystem(JobAttachmentsFileSystem::NOT_SET),
-    m_fileSystemHasBeenSet(false)
-{
-}
-
 Attachments::Attachments(JsonView jsonValue)
-  : Attachments()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ Attachments& Attachments::operator =(JsonView jsonValue)
     }
     m_manifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSystem"))
   {
     m_fileSystem = JobAttachmentsFileSystemMapper::GetJobAttachmentsFileSystemForName(jsonValue.GetString("fileSystem"));
-
     m_fileSystemHasBeenSet = true;
   }
-
   return *this;
 }
 

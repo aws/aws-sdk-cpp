@@ -18,19 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleSet::ManagedRuleSet() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_publishedVersionsHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false)
-{
-}
-
 ManagedRuleSet::ManagedRuleSet(JsonView jsonValue)
-  : ManagedRuleSet()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ManagedRuleSet& ManagedRuleSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishedVersions"))
   {
     Aws::Map<Aws::String, JsonView> publishedVersionsJsonMap = jsonValue.GetObject("PublishedVersions").GetAllObjects();
@@ -74,21 +54,16 @@ ManagedRuleSet& ManagedRuleSet::operator =(JsonView jsonValue)
     }
     m_publishedVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendedVersion"))
   {
     m_recommendedVersion = jsonValue.GetString("RecommendedVersion");
-
     m_recommendedVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelNamespace"))
   {
     m_labelNamespace = jsonValue.GetString("LabelNamespace");
-
     m_labelNamespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

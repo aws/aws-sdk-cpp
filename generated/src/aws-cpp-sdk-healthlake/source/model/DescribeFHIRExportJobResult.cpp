@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFHIRExportJobResult::DescribeFHIRExportJobResult()
-{
-}
-
 DescribeFHIRExportJobResult::DescribeFHIRExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeFHIRExportJobResult& DescribeFHIRExportJobResult::operator =(const Aws::
   if(jsonValue.ValueExists("ExportJobProperties"))
   {
     m_exportJobProperties = jsonValue.GetObject("ExportJobProperties");
-
+    m_exportJobPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

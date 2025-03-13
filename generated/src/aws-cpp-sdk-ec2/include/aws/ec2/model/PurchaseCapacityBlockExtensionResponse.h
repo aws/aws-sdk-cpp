@@ -29,7 +29,7 @@ namespace Model
   class PurchaseCapacityBlockExtensionResponse
   {
   public:
-    AWS_EC2_API PurchaseCapacityBlockExtensionResponse();
+    AWS_EC2_API PurchaseCapacityBlockExtensionResponse() = default;
     AWS_EC2_API PurchaseCapacityBlockExtensionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API PurchaseCapacityBlockExtensionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>The purchased Capacity Block extensions. </p>
      */
-    inline const Aws::Vector<CapacityBlockExtension>& GetCapacityBlockExtensions() const{ return m_capacityBlockExtensions; }
-    inline void SetCapacityBlockExtensions(const Aws::Vector<CapacityBlockExtension>& value) { m_capacityBlockExtensions = value; }
-    inline void SetCapacityBlockExtensions(Aws::Vector<CapacityBlockExtension>&& value) { m_capacityBlockExtensions = std::move(value); }
-    inline PurchaseCapacityBlockExtensionResponse& WithCapacityBlockExtensions(const Aws::Vector<CapacityBlockExtension>& value) { SetCapacityBlockExtensions(value); return *this;}
-    inline PurchaseCapacityBlockExtensionResponse& WithCapacityBlockExtensions(Aws::Vector<CapacityBlockExtension>&& value) { SetCapacityBlockExtensions(std::move(value)); return *this;}
-    inline PurchaseCapacityBlockExtensionResponse& AddCapacityBlockExtensions(const CapacityBlockExtension& value) { m_capacityBlockExtensions.push_back(value); return *this; }
-    inline PurchaseCapacityBlockExtensionResponse& AddCapacityBlockExtensions(CapacityBlockExtension&& value) { m_capacityBlockExtensions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CapacityBlockExtension>& GetCapacityBlockExtensions() const { return m_capacityBlockExtensions; }
+    template<typename CapacityBlockExtensionsT = Aws::Vector<CapacityBlockExtension>>
+    void SetCapacityBlockExtensions(CapacityBlockExtensionsT&& value) { m_capacityBlockExtensionsHasBeenSet = true; m_capacityBlockExtensions = std::forward<CapacityBlockExtensionsT>(value); }
+    template<typename CapacityBlockExtensionsT = Aws::Vector<CapacityBlockExtension>>
+    PurchaseCapacityBlockExtensionResponse& WithCapacityBlockExtensions(CapacityBlockExtensionsT&& value) { SetCapacityBlockExtensions(std::forward<CapacityBlockExtensionsT>(value)); return *this;}
+    template<typename CapacityBlockExtensionsT = CapacityBlockExtension>
+    PurchaseCapacityBlockExtensionResponse& AddCapacityBlockExtensions(CapacityBlockExtensionsT&& value) { m_capacityBlockExtensionsHasBeenSet = true; m_capacityBlockExtensions.emplace_back(std::forward<CapacityBlockExtensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PurchaseCapacityBlockExtensionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PurchaseCapacityBlockExtensionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PurchaseCapacityBlockExtensionResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CapacityBlockExtension> m_capacityBlockExtensions;
+    bool m_capacityBlockExtensionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

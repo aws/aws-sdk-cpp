@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeSimulationRequest::DescribeSimulationRequest() : 
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSimulationRequest::SerializePayload() const
 {
   return {};

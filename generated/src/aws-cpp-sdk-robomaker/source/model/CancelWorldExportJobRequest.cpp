@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelWorldExportJobRequest::CancelWorldExportJobRequest() : 
-    m_jobHasBeenSet(false)
-{
-}
-
 Aws::String CancelWorldExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

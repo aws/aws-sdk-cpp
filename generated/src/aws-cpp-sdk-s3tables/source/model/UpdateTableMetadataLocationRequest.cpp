@@ -12,15 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTableMetadataLocationRequest::UpdateTableMetadataLocationRequest() : 
-    m_tableBucketARNHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionTokenHasBeenSet(false),
-    m_metadataLocationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTableMetadataLocationRequest::SerializePayload() const
 {
   JsonValue payload;

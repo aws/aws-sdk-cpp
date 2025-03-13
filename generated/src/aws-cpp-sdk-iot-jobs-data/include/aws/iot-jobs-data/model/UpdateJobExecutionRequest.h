@@ -23,7 +23,7 @@ namespace Model
   class UpdateJobExecutionRequest : public IoTJobsDataPlaneRequest
   {
   public:
-    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionRequest();
+    AWS_IOTJOBSDATAPLANE_API UpdateJobExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The unique identifier assigned to this job when it was created.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline UpdateJobExecutionRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline UpdateJobExecutionRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline UpdateJobExecutionRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    UpdateJobExecutionRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the thing associated with the device.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline UpdateJobExecutionRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline UpdateJobExecutionRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline UpdateJobExecutionRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    UpdateJobExecutionRequest& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +63,10 @@ namespace Model
      * <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or
      * REJECTED). This must be specified on every update.</p>
      */
-    inline const JobExecutionStatus& GetStatus() const{ return m_status; }
+    inline JobExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateJobExecutionRequest& WithStatus(const JobExecutionStatus& value) { SetStatus(value); return *this;}
-    inline UpdateJobExecutionRequest& WithStatus(JobExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateJobExecutionRequest& WithStatus(JobExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -81,19 +75,16 @@ namespace Model
      * job execution. If not specified, the statusDetails are unchanged.</p> <p>The
      * maximum length of the value in the name/value pair is 1,024 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline UpdateJobExecutionRequest& WithStatusDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetStatusDetails(value); return *this;}
-    inline UpdateJobExecutionRequest& WithStatusDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline UpdateJobExecutionRequest& AddStatusDetails(const Aws::String& key, const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, value); return *this; }
-    inline UpdateJobExecutionRequest& AddStatusDetails(Aws::String&& key, const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), value); return *this; }
-    inline UpdateJobExecutionRequest& AddStatusDetails(const Aws::String& key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, std::move(value)); return *this; }
-    inline UpdateJobExecutionRequest& AddStatusDetails(Aws::String&& key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateJobExecutionRequest& AddStatusDetails(const char* key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, std::move(value)); return *this; }
-    inline UpdateJobExecutionRequest& AddStatusDetails(Aws::String&& key, const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), value); return *this; }
-    inline UpdateJobExecutionRequest& AddStatusDetails(const char* key, const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, value); return *this; }
+    template<typename StatusDetailsT = Aws::Map<Aws::String, Aws::String>>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateJobExecutionRequest& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
+    template<typename StatusDetailsKeyT = Aws::String, typename StatusDetailsValueT = Aws::String>
+    UpdateJobExecutionRequest& AddStatusDetails(StatusDetailsKeyT&& key, StatusDetailsValueT&& value) {
+      m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::forward<StatusDetailsKeyT>(key), std::forward<StatusDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -111,7 +102,7 @@ namespace Model
      * current step timer (created by an earlier use of
      * <code>UpdateJobExecutionRequest</code>).</p>
      */
-    inline long long GetStepTimeoutInMinutes() const{ return m_stepTimeoutInMinutes; }
+    inline long long GetStepTimeoutInMinutes() const { return m_stepTimeoutInMinutes; }
     inline bool StepTimeoutInMinutesHasBeenSet() const { return m_stepTimeoutInMinutesHasBeenSet; }
     inline void SetStepTimeoutInMinutes(long long value) { m_stepTimeoutInMinutesHasBeenSet = true; m_stepTimeoutInMinutes = value; }
     inline UpdateJobExecutionRequest& WithStepTimeoutInMinutes(long long value) { SetStepTimeoutInMinutes(value); return *this;}
@@ -127,7 +118,7 @@ namespace Model
      * separate DescribeJobExecution request in order to obtain the job execution
      * status data.)</p>
      */
-    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+    inline long long GetExpectedVersion() const { return m_expectedVersion; }
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
     inline UpdateJobExecutionRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
@@ -138,7 +129,7 @@ namespace Model
      * <p>Optional. When included and set to true, the response contains the
      * JobExecutionState data. The default is false.</p>
      */
-    inline bool GetIncludeJobExecutionState() const{ return m_includeJobExecutionState; }
+    inline bool GetIncludeJobExecutionState() const { return m_includeJobExecutionState; }
     inline bool IncludeJobExecutionStateHasBeenSet() const { return m_includeJobExecutionStateHasBeenSet; }
     inline void SetIncludeJobExecutionState(bool value) { m_includeJobExecutionStateHasBeenSet = true; m_includeJobExecutionState = value; }
     inline UpdateJobExecutionRequest& WithIncludeJobExecutionState(bool value) { SetIncludeJobExecutionState(value); return *this;}
@@ -149,7 +140,7 @@ namespace Model
      * <p>Optional. When set to true, the response contains the job document. The
      * default is false.</p>
      */
-    inline bool GetIncludeJobDocument() const{ return m_includeJobDocument; }
+    inline bool GetIncludeJobDocument() const { return m_includeJobDocument; }
     inline bool IncludeJobDocumentHasBeenSet() const { return m_includeJobDocumentHasBeenSet; }
     inline void SetIncludeJobDocument(bool value) { m_includeJobDocumentHasBeenSet = true; m_includeJobDocument = value; }
     inline UpdateJobExecutionRequest& WithIncludeJobDocument(bool value) { SetIncludeJobDocument(value); return *this;}
@@ -160,7 +151,7 @@ namespace Model
      * <p>Optional. A number that identifies a particular job execution on a particular
      * device.</p>
      */
-    inline long long GetExecutionNumber() const{ return m_executionNumber; }
+    inline long long GetExecutionNumber() const { return m_executionNumber; }
     inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
     inline void SetExecutionNumber(long long value) { m_executionNumberHasBeenSet = true; m_executionNumber = value; }
     inline UpdateJobExecutionRequest& WithExecutionNumber(long long value) { SetExecutionNumber(value); return *this;}
@@ -173,25 +164,25 @@ namespace Model
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet = false;
 
-    JobExecutionStatus m_status;
+    JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
 
-    long long m_stepTimeoutInMinutes;
+    long long m_stepTimeoutInMinutes{0};
     bool m_stepTimeoutInMinutesHasBeenSet = false;
 
-    long long m_expectedVersion;
+    long long m_expectedVersion{0};
     bool m_expectedVersionHasBeenSet = false;
 
-    bool m_includeJobExecutionState;
+    bool m_includeJobExecutionState{false};
     bool m_includeJobExecutionStateHasBeenSet = false;
 
-    bool m_includeJobDocument;
+    bool m_includeJobDocument{false};
     bool m_includeJobDocumentHasBeenSet = false;
 
-    long long m_executionNumber;
+    long long m_executionNumber{0};
     bool m_executionNumberHasBeenSet = false;
   };
 

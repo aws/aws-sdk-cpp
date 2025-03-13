@@ -32,7 +32,7 @@ namespace Model
   class FlowConditionalConnectionConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API FlowConditionalConnectionConfiguration();
+    AWS_BEDROCKAGENT_API FlowConditionalConnectionConfiguration() = default;
     AWS_BEDROCKAGENT_API FlowConditionalConnectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowConditionalConnectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/node-types.html">Node
      * types</a> topic in the Amazon Bedrock User Guide.</p>
      */
-    inline const Aws::String& GetCondition() const{ return m_condition; }
+    inline const Aws::String& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-    inline FlowConditionalConnectionConfiguration& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-    inline FlowConditionalConnectionConfiguration& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-    inline FlowConditionalConnectionConfiguration& WithCondition(const char* value) { SetCondition(value); return *this;}
+    template<typename ConditionT = Aws::String>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::String>
+    FlowConditionalConnectionConfiguration& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
   private:
 

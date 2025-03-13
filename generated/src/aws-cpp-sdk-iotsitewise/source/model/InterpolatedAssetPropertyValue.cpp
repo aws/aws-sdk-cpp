@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue() : 
-    m_timestampHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 InterpolatedAssetPropertyValue::InterpolatedAssetPropertyValue(JsonView jsonValue)
-  : InterpolatedAssetPropertyValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InterpolatedAssetPropertyValue& InterpolatedAssetPropertyValue::operator =(JsonV
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetObject("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

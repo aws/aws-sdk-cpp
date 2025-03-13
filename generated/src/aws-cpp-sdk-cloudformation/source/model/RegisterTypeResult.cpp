@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterTypeResult::RegisterTypeResult()
-{
-}
-
 RegisterTypeResult::RegisterTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ RegisterTypeResult& RegisterTypeResult::operator =(const Aws::AmazonWebServiceRe
     if(!registrationTokenNode.IsNull())
     {
       m_registrationToken = Aws::Utils::Xml::DecodeEscapedXmlText(registrationTokenNode.GetText());
+      m_registrationTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::RegisterTypeResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

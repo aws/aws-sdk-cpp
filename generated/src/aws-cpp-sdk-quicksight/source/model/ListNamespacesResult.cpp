@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListNamespacesResult::ListNamespacesResult() : 
-    m_status(0)
-{
-}
-
 ListNamespacesResult::ListNamespacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListNamespacesResult()
 {
   *this = result;
 }
@@ -38,24 +32,24 @@ ListNamespacesResult& ListNamespacesResult::operator =(const Aws::AmazonWebServi
     {
       m_namespaces.push_back(namespacesJsonList[namespacesIndex].AsObject());
     }
+    m_namespacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

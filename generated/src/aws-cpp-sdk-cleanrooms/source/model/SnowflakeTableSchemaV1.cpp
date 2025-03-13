@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-SnowflakeTableSchemaV1::SnowflakeTableSchemaV1() : 
-    m_columnNameHasBeenSet(false),
-    m_columnTypeHasBeenSet(false)
-{
-}
-
 SnowflakeTableSchemaV1::SnowflakeTableSchemaV1(JsonView jsonValue)
-  : SnowflakeTableSchemaV1()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SnowflakeTableSchemaV1& SnowflakeTableSchemaV1::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("columnType"))
   {
     m_columnType = jsonValue.GetString("columnType");
-
     m_columnTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

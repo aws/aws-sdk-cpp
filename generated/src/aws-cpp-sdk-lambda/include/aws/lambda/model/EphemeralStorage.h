@@ -33,7 +33,7 @@ namespace Model
   class EphemeralStorage
   {
   public:
-    AWS_LAMBDA_API EphemeralStorage();
+    AWS_LAMBDA_API EphemeralStorage() = default;
     AWS_LAMBDA_API EphemeralStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API EphemeralStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The size of the function's <code>/tmp</code> directory.</p>
      */
-    inline int GetSize() const{ return m_size; }
+    inline int GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
     inline EphemeralStorage& WithSize(int value) { SetSize(value); return *this;}
     ///@}
   private:
 
-    int m_size;
+    int m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

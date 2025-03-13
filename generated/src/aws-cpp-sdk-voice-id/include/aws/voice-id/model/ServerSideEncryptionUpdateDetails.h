@@ -36,7 +36,7 @@ namespace Model
   class ServerSideEncryptionUpdateDetails
   {
   public:
-    AWS_VOICEID_API ServerSideEncryptionUpdateDetails();
+    AWS_VOICEID_API ServerSideEncryptionUpdateDetails() = default;
     AWS_VOICEID_API ServerSideEncryptionUpdateDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API ServerSideEncryptionUpdateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED,
      * this message explains the cause of the failure.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServerSideEncryptionUpdateDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServerSideEncryptionUpdateDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServerSideEncryptionUpdateDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServerSideEncryptionUpdateDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The previous KMS key ID the domain was encrypted with, before
      * ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
      */
-    inline const Aws::String& GetOldKmsKeyId() const{ return m_oldKmsKeyId; }
+    inline const Aws::String& GetOldKmsKeyId() const { return m_oldKmsKeyId; }
     inline bool OldKmsKeyIdHasBeenSet() const { return m_oldKmsKeyIdHasBeenSet; }
-    inline void SetOldKmsKeyId(const Aws::String& value) { m_oldKmsKeyIdHasBeenSet = true; m_oldKmsKeyId = value; }
-    inline void SetOldKmsKeyId(Aws::String&& value) { m_oldKmsKeyIdHasBeenSet = true; m_oldKmsKeyId = std::move(value); }
-    inline void SetOldKmsKeyId(const char* value) { m_oldKmsKeyIdHasBeenSet = true; m_oldKmsKeyId.assign(value); }
-    inline ServerSideEncryptionUpdateDetails& WithOldKmsKeyId(const Aws::String& value) { SetOldKmsKeyId(value); return *this;}
-    inline ServerSideEncryptionUpdateDetails& WithOldKmsKeyId(Aws::String&& value) { SetOldKmsKeyId(std::move(value)); return *this;}
-    inline ServerSideEncryptionUpdateDetails& WithOldKmsKeyId(const char* value) { SetOldKmsKeyId(value); return *this;}
+    template<typename OldKmsKeyIdT = Aws::String>
+    void SetOldKmsKeyId(OldKmsKeyIdT&& value) { m_oldKmsKeyIdHasBeenSet = true; m_oldKmsKeyId = std::forward<OldKmsKeyIdT>(value); }
+    template<typename OldKmsKeyIdT = Aws::String>
+    ServerSideEncryptionUpdateDetails& WithOldKmsKeyId(OldKmsKeyIdT&& value) { SetOldKmsKeyId(std::forward<OldKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,10 @@ namespace Model
      * to be made accessible, and then an UpdateDomain call with the existing
      * server-side encryption configuration will re-attempt this update process.</p>
      */
-    inline const ServerSideEncryptionUpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+    inline ServerSideEncryptionUpdateStatus GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const ServerSideEncryptionUpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(ServerSideEncryptionUpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline ServerSideEncryptionUpdateDetails& WithUpdateStatus(const ServerSideEncryptionUpdateStatus& value) { SetUpdateStatus(value); return *this;}
-    inline ServerSideEncryptionUpdateDetails& WithUpdateStatus(ServerSideEncryptionUpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(ServerSideEncryptionUpdateStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline ServerSideEncryptionUpdateDetails& WithUpdateStatus(ServerSideEncryptionUpdateStatus value) { SetUpdateStatus(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +89,7 @@ namespace Model
     Aws::String m_oldKmsKeyId;
     bool m_oldKmsKeyIdHasBeenSet = false;
 
-    ServerSideEncryptionUpdateStatus m_updateStatus;
+    ServerSideEncryptionUpdateStatus m_updateStatus{ServerSideEncryptionUpdateStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
   };
 

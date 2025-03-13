@@ -39,7 +39,7 @@ namespace Model
   class PropertyDifference
   {
   public:
-    AWS_CLOUDFORMATION_API PropertyDifference();
+    AWS_CLOUDFORMATION_API PropertyDifference() = default;
     AWS_CLOUDFORMATION_API PropertyDifference(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API PropertyDifference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The fully-qualified path to the resource property.</p>
      */
-    inline const Aws::String& GetPropertyPath() const{ return m_propertyPath; }
+    inline const Aws::String& GetPropertyPath() const { return m_propertyPath; }
     inline bool PropertyPathHasBeenSet() const { return m_propertyPathHasBeenSet; }
-    inline void SetPropertyPath(const Aws::String& value) { m_propertyPathHasBeenSet = true; m_propertyPath = value; }
-    inline void SetPropertyPath(Aws::String&& value) { m_propertyPathHasBeenSet = true; m_propertyPath = std::move(value); }
-    inline void SetPropertyPath(const char* value) { m_propertyPathHasBeenSet = true; m_propertyPath.assign(value); }
-    inline PropertyDifference& WithPropertyPath(const Aws::String& value) { SetPropertyPath(value); return *this;}
-    inline PropertyDifference& WithPropertyPath(Aws::String&& value) { SetPropertyPath(std::move(value)); return *this;}
-    inline PropertyDifference& WithPropertyPath(const char* value) { SetPropertyPath(value); return *this;}
+    template<typename PropertyPathT = Aws::String>
+    void SetPropertyPath(PropertyPathT&& value) { m_propertyPathHasBeenSet = true; m_propertyPath = std::forward<PropertyPathT>(value); }
+    template<typename PropertyPathT = Aws::String>
+    PropertyDifference& WithPropertyPath(PropertyPathT&& value) { SetPropertyPath(std::forward<PropertyPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +64,24 @@ namespace Model
      * <p>The expected property value of the resource property, as defined in the stack
      * template and any values specified as template parameters.</p>
      */
-    inline const Aws::String& GetExpectedValue() const{ return m_expectedValue; }
+    inline const Aws::String& GetExpectedValue() const { return m_expectedValue; }
     inline bool ExpectedValueHasBeenSet() const { return m_expectedValueHasBeenSet; }
-    inline void SetExpectedValue(const Aws::String& value) { m_expectedValueHasBeenSet = true; m_expectedValue = value; }
-    inline void SetExpectedValue(Aws::String&& value) { m_expectedValueHasBeenSet = true; m_expectedValue = std::move(value); }
-    inline void SetExpectedValue(const char* value) { m_expectedValueHasBeenSet = true; m_expectedValue.assign(value); }
-    inline PropertyDifference& WithExpectedValue(const Aws::String& value) { SetExpectedValue(value); return *this;}
-    inline PropertyDifference& WithExpectedValue(Aws::String&& value) { SetExpectedValue(std::move(value)); return *this;}
-    inline PropertyDifference& WithExpectedValue(const char* value) { SetExpectedValue(value); return *this;}
+    template<typename ExpectedValueT = Aws::String>
+    void SetExpectedValue(ExpectedValueT&& value) { m_expectedValueHasBeenSet = true; m_expectedValue = std::forward<ExpectedValueT>(value); }
+    template<typename ExpectedValueT = Aws::String>
+    PropertyDifference& WithExpectedValue(ExpectedValueT&& value) { SetExpectedValue(std::forward<ExpectedValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actual property value of the resource property.</p>
      */
-    inline const Aws::String& GetActualValue() const{ return m_actualValue; }
+    inline const Aws::String& GetActualValue() const { return m_actualValue; }
     inline bool ActualValueHasBeenSet() const { return m_actualValueHasBeenSet; }
-    inline void SetActualValue(const Aws::String& value) { m_actualValueHasBeenSet = true; m_actualValue = value; }
-    inline void SetActualValue(Aws::String&& value) { m_actualValueHasBeenSet = true; m_actualValue = std::move(value); }
-    inline void SetActualValue(const char* value) { m_actualValueHasBeenSet = true; m_actualValue.assign(value); }
-    inline PropertyDifference& WithActualValue(const Aws::String& value) { SetActualValue(value); return *this;}
-    inline PropertyDifference& WithActualValue(Aws::String&& value) { SetActualValue(std::move(value)); return *this;}
-    inline PropertyDifference& WithActualValue(const char* value) { SetActualValue(value); return *this;}
+    template<typename ActualValueT = Aws::String>
+    void SetActualValue(ActualValueT&& value) { m_actualValueHasBeenSet = true; m_actualValue = std::forward<ActualValueT>(value); }
+    template<typename ActualValueT = Aws::String>
+    PropertyDifference& WithActualValue(ActualValueT&& value) { SetActualValue(std::forward<ActualValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,10 @@ namespace Model
      * current property value differs from its expected value (as defined in the stack
      * template and any values specified as template parameters).</p> </li> </ul>
      */
-    inline const DifferenceType& GetDifferenceType() const{ return m_differenceType; }
+    inline DifferenceType GetDifferenceType() const { return m_differenceType; }
     inline bool DifferenceTypeHasBeenSet() const { return m_differenceTypeHasBeenSet; }
-    inline void SetDifferenceType(const DifferenceType& value) { m_differenceTypeHasBeenSet = true; m_differenceType = value; }
-    inline void SetDifferenceType(DifferenceType&& value) { m_differenceTypeHasBeenSet = true; m_differenceType = std::move(value); }
-    inline PropertyDifference& WithDifferenceType(const DifferenceType& value) { SetDifferenceType(value); return *this;}
-    inline PropertyDifference& WithDifferenceType(DifferenceType&& value) { SetDifferenceType(std::move(value)); return *this;}
+    inline void SetDifferenceType(DifferenceType value) { m_differenceTypeHasBeenSet = true; m_differenceType = value; }
+    inline PropertyDifference& WithDifferenceType(DifferenceType value) { SetDifferenceType(value); return *this;}
     ///@}
   private:
 
@@ -117,7 +109,7 @@ namespace Model
     Aws::String m_actualValue;
     bool m_actualValueHasBeenSet = false;
 
-    DifferenceType m_differenceType;
+    DifferenceType m_differenceType{DifferenceType::NOT_SET};
     bool m_differenceTypeHasBeenSet = false;
   };
 

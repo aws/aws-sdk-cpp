@@ -38,7 +38,7 @@ namespace Model
   class MessageDsn
   {
   public:
-    AWS_SES_API MessageDsn();
+    AWS_SES_API MessageDsn() = default;
     AWS_SES_API MessageDsn(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API MessageDsn& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,14 +53,12 @@ namespace Model
      * (<code>mta-name-type; mta-name</code>). The default value is <code>dns;
      * inbound-smtp.[region].amazonaws.com</code>.</p>
      */
-    inline const Aws::String& GetReportingMta() const{ return m_reportingMta; }
+    inline const Aws::String& GetReportingMta() const { return m_reportingMta; }
     inline bool ReportingMtaHasBeenSet() const { return m_reportingMtaHasBeenSet; }
-    inline void SetReportingMta(const Aws::String& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = value; }
-    inline void SetReportingMta(Aws::String&& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = std::move(value); }
-    inline void SetReportingMta(const char* value) { m_reportingMtaHasBeenSet = true; m_reportingMta.assign(value); }
-    inline MessageDsn& WithReportingMta(const Aws::String& value) { SetReportingMta(value); return *this;}
-    inline MessageDsn& WithReportingMta(Aws::String&& value) { SetReportingMta(std::move(value)); return *this;}
-    inline MessageDsn& WithReportingMta(const char* value) { SetReportingMta(value); return *this;}
+    template<typename ReportingMtaT = Aws::String>
+    void SetReportingMta(ReportingMtaT&& value) { m_reportingMtaHasBeenSet = true; m_reportingMta = std::forward<ReportingMtaT>(value); }
+    template<typename ReportingMtaT = Aws::String>
+    MessageDsn& WithReportingMta(ReportingMtaT&& value) { SetReportingMta(std::forward<ReportingMtaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,33 +66,33 @@ namespace Model
      * <p>When the message was received by the reporting mail transfer agent (MTA), in
      * <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a> date-time format.</p>
      */
-    inline const Aws::Utils::DateTime& GetArrivalDate() const{ return m_arrivalDate; }
+    inline const Aws::Utils::DateTime& GetArrivalDate() const { return m_arrivalDate; }
     inline bool ArrivalDateHasBeenSet() const { return m_arrivalDateHasBeenSet; }
-    inline void SetArrivalDate(const Aws::Utils::DateTime& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = value; }
-    inline void SetArrivalDate(Aws::Utils::DateTime&& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = std::move(value); }
-    inline MessageDsn& WithArrivalDate(const Aws::Utils::DateTime& value) { SetArrivalDate(value); return *this;}
-    inline MessageDsn& WithArrivalDate(Aws::Utils::DateTime&& value) { SetArrivalDate(std::move(value)); return *this;}
+    template<typename ArrivalDateT = Aws::Utils::DateTime>
+    void SetArrivalDate(ArrivalDateT&& value) { m_arrivalDateHasBeenSet = true; m_arrivalDate = std::forward<ArrivalDateT>(value); }
+    template<typename ArrivalDateT = Aws::Utils::DateTime>
+    MessageDsn& WithArrivalDate(ArrivalDateT&& value) { SetArrivalDate(std::forward<ArrivalDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional X-headers to include in the DSN.</p>
      */
-    inline const Aws::Vector<ExtensionField>& GetExtensionFields() const{ return m_extensionFields; }
+    inline const Aws::Vector<ExtensionField>& GetExtensionFields() const { return m_extensionFields; }
     inline bool ExtensionFieldsHasBeenSet() const { return m_extensionFieldsHasBeenSet; }
-    inline void SetExtensionFields(const Aws::Vector<ExtensionField>& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = value; }
-    inline void SetExtensionFields(Aws::Vector<ExtensionField>&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = std::move(value); }
-    inline MessageDsn& WithExtensionFields(const Aws::Vector<ExtensionField>& value) { SetExtensionFields(value); return *this;}
-    inline MessageDsn& WithExtensionFields(Aws::Vector<ExtensionField>&& value) { SetExtensionFields(std::move(value)); return *this;}
-    inline MessageDsn& AddExtensionFields(const ExtensionField& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(value); return *this; }
-    inline MessageDsn& AddExtensionFields(ExtensionField&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.push_back(std::move(value)); return *this; }
+    template<typename ExtensionFieldsT = Aws::Vector<ExtensionField>>
+    void SetExtensionFields(ExtensionFieldsT&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields = std::forward<ExtensionFieldsT>(value); }
+    template<typename ExtensionFieldsT = Aws::Vector<ExtensionField>>
+    MessageDsn& WithExtensionFields(ExtensionFieldsT&& value) { SetExtensionFields(std::forward<ExtensionFieldsT>(value)); return *this;}
+    template<typename ExtensionFieldsT = ExtensionField>
+    MessageDsn& AddExtensionFields(ExtensionFieldsT&& value) { m_extensionFieldsHasBeenSet = true; m_extensionFields.emplace_back(std::forward<ExtensionFieldsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_reportingMta;
     bool m_reportingMtaHasBeenSet = false;
 
-    Aws::Utils::DateTime m_arrivalDate;
+    Aws::Utils::DateTime m_arrivalDate{};
     bool m_arrivalDateHasBeenSet = false;
 
     Aws::Vector<ExtensionField> m_extensionFields;

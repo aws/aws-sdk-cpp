@@ -34,7 +34,7 @@ namespace Model
   class ContextDataType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ContextDataType();
+    AWS_COGNITOIDENTITYPROVIDER_API ContextDataType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API ContextDataType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API ContextDataType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,50 @@ namespace Model
     /**
      * <p>The source IP address of your user's device.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline ContextDataType& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline ContextDataType& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline ContextDataType& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    ContextDataType& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of your application's service endpoint.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline ContextDataType& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline ContextDataType& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline ContextDataType& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    ContextDataType& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path of your application's service endpoint.</p>
      */
-    inline const Aws::String& GetServerPath() const{ return m_serverPath; }
+    inline const Aws::String& GetServerPath() const { return m_serverPath; }
     inline bool ServerPathHasBeenSet() const { return m_serverPathHasBeenSet; }
-    inline void SetServerPath(const Aws::String& value) { m_serverPathHasBeenSet = true; m_serverPath = value; }
-    inline void SetServerPath(Aws::String&& value) { m_serverPathHasBeenSet = true; m_serverPath = std::move(value); }
-    inline void SetServerPath(const char* value) { m_serverPathHasBeenSet = true; m_serverPath.assign(value); }
-    inline ContextDataType& WithServerPath(const Aws::String& value) { SetServerPath(value); return *this;}
-    inline ContextDataType& WithServerPath(Aws::String&& value) { SetServerPath(std::move(value)); return *this;}
-    inline ContextDataType& WithServerPath(const char* value) { SetServerPath(value); return *this;}
+    template<typename ServerPathT = Aws::String>
+    void SetServerPath(ServerPathT&& value) { m_serverPathHasBeenSet = true; m_serverPath = std::forward<ServerPathT>(value); }
+    template<typename ServerPathT = Aws::String>
+    ContextDataType& WithServerPath(ServerPathT&& value) { SetServerPath(std::forward<ServerPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP headers from your user's authentication request.</p>
      */
-    inline const Aws::Vector<HttpHeader>& GetHttpHeaders() const{ return m_httpHeaders; }
+    inline const Aws::Vector<HttpHeader>& GetHttpHeaders() const { return m_httpHeaders; }
     inline bool HttpHeadersHasBeenSet() const { return m_httpHeadersHasBeenSet; }
-    inline void SetHttpHeaders(const Aws::Vector<HttpHeader>& value) { m_httpHeadersHasBeenSet = true; m_httpHeaders = value; }
-    inline void SetHttpHeaders(Aws::Vector<HttpHeader>&& value) { m_httpHeadersHasBeenSet = true; m_httpHeaders = std::move(value); }
-    inline ContextDataType& WithHttpHeaders(const Aws::Vector<HttpHeader>& value) { SetHttpHeaders(value); return *this;}
-    inline ContextDataType& WithHttpHeaders(Aws::Vector<HttpHeader>&& value) { SetHttpHeaders(std::move(value)); return *this;}
-    inline ContextDataType& AddHttpHeaders(const HttpHeader& value) { m_httpHeadersHasBeenSet = true; m_httpHeaders.push_back(value); return *this; }
-    inline ContextDataType& AddHttpHeaders(HttpHeader&& value) { m_httpHeadersHasBeenSet = true; m_httpHeaders.push_back(std::move(value)); return *this; }
+    template<typename HttpHeadersT = Aws::Vector<HttpHeader>>
+    void SetHttpHeaders(HttpHeadersT&& value) { m_httpHeadersHasBeenSet = true; m_httpHeaders = std::forward<HttpHeadersT>(value); }
+    template<typename HttpHeadersT = Aws::Vector<HttpHeader>>
+    ContextDataType& WithHttpHeaders(HttpHeadersT&& value) { SetHttpHeaders(std::forward<HttpHeadersT>(value)); return *this;}
+    template<typename HttpHeadersT = HttpHeader>
+    ContextDataType& AddHttpHeaders(HttpHeadersT&& value) { m_httpHeadersHasBeenSet = true; m_httpHeaders.emplace_back(std::forward<HttpHeadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,14 +97,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint">Adding
      * user device and session data to API requests</a>.</p>
      */
-    inline const Aws::String& GetEncodedData() const{ return m_encodedData; }
+    inline const Aws::String& GetEncodedData() const { return m_encodedData; }
     inline bool EncodedDataHasBeenSet() const { return m_encodedDataHasBeenSet; }
-    inline void SetEncodedData(const Aws::String& value) { m_encodedDataHasBeenSet = true; m_encodedData = value; }
-    inline void SetEncodedData(Aws::String&& value) { m_encodedDataHasBeenSet = true; m_encodedData = std::move(value); }
-    inline void SetEncodedData(const char* value) { m_encodedDataHasBeenSet = true; m_encodedData.assign(value); }
-    inline ContextDataType& WithEncodedData(const Aws::String& value) { SetEncodedData(value); return *this;}
-    inline ContextDataType& WithEncodedData(Aws::String&& value) { SetEncodedData(std::move(value)); return *this;}
-    inline ContextDataType& WithEncodedData(const char* value) { SetEncodedData(value); return *this;}
+    template<typename EncodedDataT = Aws::String>
+    void SetEncodedData(EncodedDataT&& value) { m_encodedDataHasBeenSet = true; m_encodedData = std::forward<EncodedDataT>(value); }
+    template<typename EncodedDataT = Aws::String>
+    ContextDataType& WithEncodedData(EncodedDataT&& value) { SetEncodedData(std::forward<EncodedDataT>(value)); return *this;}
     ///@}
   private:
 

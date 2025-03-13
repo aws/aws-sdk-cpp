@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-HookConfiguration::HookConfiguration() : 
-    m_invocationConditionHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 HookConfiguration::HookConfiguration(JsonView jsonValue)
-  : HookConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ HookConfiguration& HookConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invocationCondition"))
   {
     m_invocationCondition = jsonValue.GetObject("invocationCondition");
-
     m_invocationConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("lambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

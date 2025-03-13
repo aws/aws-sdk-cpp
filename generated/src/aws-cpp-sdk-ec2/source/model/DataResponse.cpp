@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DataResponse::DataResponse() : 
-    m_idHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_metric(MetricType::NOT_SET),
-    m_metricHasBeenSet(false),
-    m_statistic(StatisticType::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_period(PeriodType::NOT_SET),
-    m_periodHasBeenSet(false),
-    m_metricPointsHasBeenSet(false)
-{
-}
-
 DataResponse::DataResponse(const XmlNode& xmlNode)
-  : DataResponse()
 {
   *this = xmlNode;
 }
@@ -51,48 +36,55 @@ DataResponse& DataResponse::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode sourceNode = resultNode.FirstChild("source");
     if(!sourceNode.IsNull())
     {
       m_source = Aws::Utils::Xml::DecodeEscapedXmlText(sourceNode.GetText());
       m_sourceHasBeenSet = true;
+       m_sourceHasBeenSet = true;
     }
     XmlNode destinationNode = resultNode.FirstChild("destination");
     if(!destinationNode.IsNull())
     {
       m_destination = Aws::Utils::Xml::DecodeEscapedXmlText(destinationNode.GetText());
       m_destinationHasBeenSet = true;
+       m_destinationHasBeenSet = true;
     }
     XmlNode metricNode = resultNode.FirstChild("metric");
     if(!metricNode.IsNull())
     {
-      m_metric = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText()).c_str()).c_str());
+      m_metric = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText()).c_str()));
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
     XmlNode statisticNode = resultNode.FirstChild("statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = StatisticTypeMapper::GetStatisticTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = StatisticTypeMapper::GetStatisticTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
+       m_statisticHasBeenSet = true;
     }
     XmlNode periodNode = resultNode.FirstChild("period");
     if(!periodNode.IsNull())
     {
-      m_period = PeriodTypeMapper::GetPeriodTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()).c_str());
+      m_period = PeriodTypeMapper::GetPeriodTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(periodNode.GetText()).c_str()));
       m_periodHasBeenSet = true;
+       m_periodHasBeenSet = true;
     }
     XmlNode metricPointsNode = resultNode.FirstChild("metricPointSet");
     if(!metricPointsNode.IsNull())
     {
       XmlNode metricPointsMember = metricPointsNode.FirstChild("item");
+      m_metricPointsHasBeenSet = !metricPointsMember.IsNull();
       while(!metricPointsMember.IsNull())
       {
         m_metricPoints.push_back(metricPointsMember);
         metricPointsMember = metricPointsMember.NextNode("item");
       }
 
-      m_metricPointsHasBeenSet = true;
+       m_metricPointsHasBeenSet = true;
     }
   }
 

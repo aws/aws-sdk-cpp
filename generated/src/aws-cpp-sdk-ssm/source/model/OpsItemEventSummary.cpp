@@ -18,19 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemEventSummary::OpsItemEventSummary() : 
-    m_opsItemIdHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_detailTypeHasBeenSet(false),
-    m_detailHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 OpsItemEventSummary::OpsItemEventSummary(JsonView jsonValue)
-  : OpsItemEventSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ OpsItemEventSummary& OpsItemEventSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpsItemId"))
   {
     m_opsItemId = jsonValue.GetString("OpsItemId");
-
     m_opsItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventId"))
   {
     m_eventId = jsonValue.GetString("EventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetailType"))
   {
     m_detailType = jsonValue.GetString("DetailType");
-
     m_detailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Detail"))
   {
     m_detail = jsonValue.GetString("Detail");
-
     m_detailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

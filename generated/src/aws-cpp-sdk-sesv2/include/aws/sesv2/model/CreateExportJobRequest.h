@@ -26,7 +26,7 @@ namespace Model
   class CreateExportJobRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API CreateExportJobRequest();
+    AWS_SESV2_API CreateExportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>The data source for the export job.</p>
      */
-    inline const ExportDataSource& GetExportDataSource() const{ return m_exportDataSource; }
+    inline const ExportDataSource& GetExportDataSource() const { return m_exportDataSource; }
     inline bool ExportDataSourceHasBeenSet() const { return m_exportDataSourceHasBeenSet; }
-    inline void SetExportDataSource(const ExportDataSource& value) { m_exportDataSourceHasBeenSet = true; m_exportDataSource = value; }
-    inline void SetExportDataSource(ExportDataSource&& value) { m_exportDataSourceHasBeenSet = true; m_exportDataSource = std::move(value); }
-    inline CreateExportJobRequest& WithExportDataSource(const ExportDataSource& value) { SetExportDataSource(value); return *this;}
-    inline CreateExportJobRequest& WithExportDataSource(ExportDataSource&& value) { SetExportDataSource(std::move(value)); return *this;}
+    template<typename ExportDataSourceT = ExportDataSource>
+    void SetExportDataSource(ExportDataSourceT&& value) { m_exportDataSourceHasBeenSet = true; m_exportDataSource = std::forward<ExportDataSourceT>(value); }
+    template<typename ExportDataSourceT = ExportDataSource>
+    CreateExportJobRequest& WithExportDataSource(ExportDataSourceT&& value) { SetExportDataSource(std::forward<ExportDataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The destination for the export job.</p>
      */
-    inline const ExportDestination& GetExportDestination() const{ return m_exportDestination; }
+    inline const ExportDestination& GetExportDestination() const { return m_exportDestination; }
     inline bool ExportDestinationHasBeenSet() const { return m_exportDestinationHasBeenSet; }
-    inline void SetExportDestination(const ExportDestination& value) { m_exportDestinationHasBeenSet = true; m_exportDestination = value; }
-    inline void SetExportDestination(ExportDestination&& value) { m_exportDestinationHasBeenSet = true; m_exportDestination = std::move(value); }
-    inline CreateExportJobRequest& WithExportDestination(const ExportDestination& value) { SetExportDestination(value); return *this;}
-    inline CreateExportJobRequest& WithExportDestination(ExportDestination&& value) { SetExportDestination(std::move(value)); return *this;}
+    template<typename ExportDestinationT = ExportDestination>
+    void SetExportDestination(ExportDestinationT&& value) { m_exportDestinationHasBeenSet = true; m_exportDestination = std::forward<ExportDestinationT>(value); }
+    template<typename ExportDestinationT = ExportDestination>
+    CreateExportJobRequest& WithExportDestination(ExportDestinationT&& value) { SetExportDestination(std::forward<ExportDestinationT>(value)); return *this;}
     ///@}
   private:
 

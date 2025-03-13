@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJobUnlockCodeResult::GetJobUnlockCodeResult()
-{
-}
-
 GetJobUnlockCodeResult::GetJobUnlockCodeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetJobUnlockCodeResult& GetJobUnlockCodeResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("UnlockCode"))
   {
     m_unlockCode = jsonValue.GetString("UnlockCode");
-
+    m_unlockCodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

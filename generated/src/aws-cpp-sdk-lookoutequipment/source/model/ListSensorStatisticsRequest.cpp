@@ -12,15 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSensorStatisticsRequest::ListSensorStatisticsRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_ingestionJobIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSensorStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

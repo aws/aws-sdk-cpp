@@ -34,7 +34,7 @@ namespace Model
   class ImplicitFilterConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ImplicitFilterConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API ImplicitFilterConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API ImplicitFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ImplicitFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>Metadata that can be used in a filter.</p>
      */
-    inline const Aws::Vector<MetadataAttributeSchema>& GetMetadataAttributes() const{ return m_metadataAttributes; }
+    inline const Aws::Vector<MetadataAttributeSchema>& GetMetadataAttributes() const { return m_metadataAttributes; }
     inline bool MetadataAttributesHasBeenSet() const { return m_metadataAttributesHasBeenSet; }
-    inline void SetMetadataAttributes(const Aws::Vector<MetadataAttributeSchema>& value) { m_metadataAttributesHasBeenSet = true; m_metadataAttributes = value; }
-    inline void SetMetadataAttributes(Aws::Vector<MetadataAttributeSchema>&& value) { m_metadataAttributesHasBeenSet = true; m_metadataAttributes = std::move(value); }
-    inline ImplicitFilterConfiguration& WithMetadataAttributes(const Aws::Vector<MetadataAttributeSchema>& value) { SetMetadataAttributes(value); return *this;}
-    inline ImplicitFilterConfiguration& WithMetadataAttributes(Aws::Vector<MetadataAttributeSchema>&& value) { SetMetadataAttributes(std::move(value)); return *this;}
-    inline ImplicitFilterConfiguration& AddMetadataAttributes(const MetadataAttributeSchema& value) { m_metadataAttributesHasBeenSet = true; m_metadataAttributes.push_back(value); return *this; }
-    inline ImplicitFilterConfiguration& AddMetadataAttributes(MetadataAttributeSchema&& value) { m_metadataAttributesHasBeenSet = true; m_metadataAttributes.push_back(std::move(value)); return *this; }
+    template<typename MetadataAttributesT = Aws::Vector<MetadataAttributeSchema>>
+    void SetMetadataAttributes(MetadataAttributesT&& value) { m_metadataAttributesHasBeenSet = true; m_metadataAttributes = std::forward<MetadataAttributesT>(value); }
+    template<typename MetadataAttributesT = Aws::Vector<MetadataAttributeSchema>>
+    ImplicitFilterConfiguration& WithMetadataAttributes(MetadataAttributesT&& value) { SetMetadataAttributes(std::forward<MetadataAttributesT>(value)); return *this;}
+    template<typename MetadataAttributesT = MetadataAttributeSchema>
+    ImplicitFilterConfiguration& AddMetadataAttributes(MetadataAttributesT&& value) { m_metadataAttributesHasBeenSet = true; m_metadataAttributes.emplace_back(std::forward<MetadataAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The model that generates the filter.</p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline ImplicitFilterConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline ImplicitFilterConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline ImplicitFilterConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    ImplicitFilterConfiguration& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
   private:
 

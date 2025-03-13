@@ -32,7 +32,7 @@ namespace Model
   class HudiTarget
   {
   public:
-    AWS_GLUE_API HudiTarget();
+    AWS_GLUE_API HudiTarget() = default;
     AWS_GLUE_API HudiTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API HudiTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * may be located in a child folder of the root folder.</p> <p>The crawler will
      * scan all folders underneath a path for a Hudi folder.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPaths() const{ return m_paths; }
+    inline const Aws::Vector<Aws::String>& GetPaths() const { return m_paths; }
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
-    inline void SetPaths(const Aws::Vector<Aws::String>& value) { m_pathsHasBeenSet = true; m_paths = value; }
-    inline void SetPaths(Aws::Vector<Aws::String>&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
-    inline HudiTarget& WithPaths(const Aws::Vector<Aws::String>& value) { SetPaths(value); return *this;}
-    inline HudiTarget& WithPaths(Aws::Vector<Aws::String>&& value) { SetPaths(std::move(value)); return *this;}
-    inline HudiTarget& AddPaths(const Aws::String& value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
-    inline HudiTarget& AddPaths(Aws::String&& value) { m_pathsHasBeenSet = true; m_paths.push_back(std::move(value)); return *this; }
-    inline HudiTarget& AddPaths(const char* value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    void SetPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths = std::forward<PathsT>(value); }
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    HudiTarget& WithPaths(PathsT&& value) { SetPaths(std::forward<PathsT>(value)); return *this;}
+    template<typename PathsT = Aws::String>
+    HudiTarget& AddPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths.emplace_back(std::forward<PathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +61,12 @@ namespace Model
      * files are stored in buckets that require VPC authorization, you can set their
      * connection properties here.</p>
      */
-    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+    inline const Aws::String& GetConnectionName() const { return m_connectionName; }
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-    inline HudiTarget& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-    inline HudiTarget& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-    inline HudiTarget& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+    template<typename ConnectionNameT = Aws::String>
+    void SetConnectionName(ConnectionNameT&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::forward<ConnectionNameT>(value); }
+    template<typename ConnectionNameT = Aws::String>
+    HudiTarget& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,15 +76,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
      * Tables with a Crawler</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
+    inline const Aws::Vector<Aws::String>& GetExclusions() const { return m_exclusions; }
     inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
-    inline void SetExclusions(const Aws::Vector<Aws::String>& value) { m_exclusionsHasBeenSet = true; m_exclusions = value; }
-    inline void SetExclusions(Aws::Vector<Aws::String>&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::move(value); }
-    inline HudiTarget& WithExclusions(const Aws::Vector<Aws::String>& value) { SetExclusions(value); return *this;}
-    inline HudiTarget& WithExclusions(Aws::Vector<Aws::String>&& value) { SetExclusions(std::move(value)); return *this;}
-    inline HudiTarget& AddExclusions(const Aws::String& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
-    inline HudiTarget& AddExclusions(Aws::String&& value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(std::move(value)); return *this; }
-    inline HudiTarget& AddExclusions(const char* value) { m_exclusionsHasBeenSet = true; m_exclusions.push_back(value); return *this; }
+    template<typename ExclusionsT = Aws::Vector<Aws::String>>
+    void SetExclusions(ExclusionsT&& value) { m_exclusionsHasBeenSet = true; m_exclusions = std::forward<ExclusionsT>(value); }
+    template<typename ExclusionsT = Aws::Vector<Aws::String>>
+    HudiTarget& WithExclusions(ExclusionsT&& value) { SetExclusions(std::forward<ExclusionsT>(value)); return *this;}
+    template<typename ExclusionsT = Aws::String>
+    HudiTarget& AddExclusions(ExclusionsT&& value) { m_exclusionsHasBeenSet = true; m_exclusions.emplace_back(std::forward<ExclusionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,7 +92,7 @@ namespace Model
      * discover the Hudi metadata folder in your Amazon S3 path. Used to limit the
      * crawler run time.</p>
      */
-    inline int GetMaximumTraversalDepth() const{ return m_maximumTraversalDepth; }
+    inline int GetMaximumTraversalDepth() const { return m_maximumTraversalDepth; }
     inline bool MaximumTraversalDepthHasBeenSet() const { return m_maximumTraversalDepthHasBeenSet; }
     inline void SetMaximumTraversalDepth(int value) { m_maximumTraversalDepthHasBeenSet = true; m_maximumTraversalDepth = value; }
     inline HudiTarget& WithMaximumTraversalDepth(int value) { SetMaximumTraversalDepth(value); return *this;}
@@ -112,7 +108,7 @@ namespace Model
     Aws::Vector<Aws::String> m_exclusions;
     bool m_exclusionsHasBeenSet = false;
 
-    int m_maximumTraversalDepth;
+    int m_maximumTraversalDepth{0};
     bool m_maximumTraversalDepthHasBeenSet = false;
   };
 

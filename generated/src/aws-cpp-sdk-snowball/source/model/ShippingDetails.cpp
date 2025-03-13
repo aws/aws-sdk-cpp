@@ -18,16 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-ShippingDetails::ShippingDetails() : 
-    m_shippingOption(ShippingOption::NOT_SET),
-    m_shippingOptionHasBeenSet(false),
-    m_inboundShipmentHasBeenSet(false),
-    m_outboundShipmentHasBeenSet(false)
-{
-}
-
 ShippingDetails::ShippingDetails(JsonView jsonValue)
-  : ShippingDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ShippingDetails& ShippingDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShippingOption"))
   {
     m_shippingOption = ShippingOptionMapper::GetShippingOptionForName(jsonValue.GetString("ShippingOption"));
-
     m_shippingOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboundShipment"))
   {
     m_inboundShipment = jsonValue.GetObject("InboundShipment");
-
     m_inboundShipmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutboundShipment"))
   {
     m_outboundShipment = jsonValue.GetObject("OutboundShipment");
-
     m_outboundShipmentHasBeenSet = true;
   }
-
   return *this;
 }
 

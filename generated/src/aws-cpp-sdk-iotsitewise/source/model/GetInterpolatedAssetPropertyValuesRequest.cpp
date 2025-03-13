@@ -15,31 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetInterpolatedAssetPropertyValuesRequest::GetInterpolatedAssetPropertyValuesRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_startTimeInSeconds(0),
-    m_startTimeInSecondsHasBeenSet(false),
-    m_startTimeOffsetInNanos(0),
-    m_startTimeOffsetInNanosHasBeenSet(false),
-    m_endTimeInSeconds(0),
-    m_endTimeInSecondsHasBeenSet(false),
-    m_endTimeOffsetInNanos(0),
-    m_endTimeOffsetInNanosHasBeenSet(false),
-    m_quality(Quality::NOT_SET),
-    m_qualityHasBeenSet(false),
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_intervalWindowInSeconds(0),
-    m_intervalWindowInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String GetInterpolatedAssetPropertyValuesRequest::SerializePayload() const
 {
   return {};

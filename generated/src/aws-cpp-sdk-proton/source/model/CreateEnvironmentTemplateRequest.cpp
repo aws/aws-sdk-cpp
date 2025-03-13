@@ -12,17 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEnvironmentTemplateRequest::CreateEnvironmentTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_provisioning(Provisioning::NOT_SET),
-    m_provisioningHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEnvironmentTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

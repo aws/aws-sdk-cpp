@@ -12,21 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendEmailRequest::SendEmailRequest() : 
-    m_fromEmailAddressHasBeenSet(false),
-    m_fromEmailAddressIdentityArnHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_replyToAddressesHasBeenSet(false),
-    m_feedbackForwardingEmailAddressHasBeenSet(false),
-    m_feedbackForwardingEmailAddressIdentityArnHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_emailTagsHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_listManagementOptionsHasBeenSet(false)
-{
-}
-
 Aws::String SendEmailRequest::SerializePayload() const
 {
   JsonValue payload;

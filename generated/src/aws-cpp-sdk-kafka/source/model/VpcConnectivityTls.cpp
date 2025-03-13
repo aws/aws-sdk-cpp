@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-VpcConnectivityTls::VpcConnectivityTls() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 VpcConnectivityTls::VpcConnectivityTls(JsonView jsonValue)
-  : VpcConnectivityTls()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ VpcConnectivityTls& VpcConnectivityTls::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

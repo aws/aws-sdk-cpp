@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VCpuInfo::VCpuInfo() : 
-    m_defaultVCpus(0),
-    m_defaultVCpusHasBeenSet(false),
-    m_defaultCores(0),
-    m_defaultCoresHasBeenSet(false),
-    m_defaultThreadsPerCore(0),
-    m_defaultThreadsPerCoreHasBeenSet(false),
-    m_validCoresHasBeenSet(false),
-    m_validThreadsPerCoreHasBeenSet(false)
-{
-}
-
 VCpuInfo::VCpuInfo(const XmlNode& xmlNode)
-  : VCpuInfo()
 {
   *this = xmlNode;
 }
@@ -49,42 +36,47 @@ VCpuInfo& VCpuInfo::operator =(const XmlNode& xmlNode)
     {
       m_defaultVCpus = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultVCpusNode.GetText()).c_str()).c_str());
       m_defaultVCpusHasBeenSet = true;
+       m_defaultVCpusHasBeenSet = true;
     }
     XmlNode defaultCoresNode = resultNode.FirstChild("defaultCores");
     if(!defaultCoresNode.IsNull())
     {
       m_defaultCores = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultCoresNode.GetText()).c_str()).c_str());
       m_defaultCoresHasBeenSet = true;
+       m_defaultCoresHasBeenSet = true;
     }
     XmlNode defaultThreadsPerCoreNode = resultNode.FirstChild("defaultThreadsPerCore");
     if(!defaultThreadsPerCoreNode.IsNull())
     {
       m_defaultThreadsPerCore = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultThreadsPerCoreNode.GetText()).c_str()).c_str());
       m_defaultThreadsPerCoreHasBeenSet = true;
+       m_defaultThreadsPerCoreHasBeenSet = true;
     }
     XmlNode validCoresNode = resultNode.FirstChild("validCores");
     if(!validCoresNode.IsNull())
     {
       XmlNode validCoresMember = validCoresNode.FirstChild("item");
+      m_validCoresHasBeenSet = !validCoresMember.IsNull();
       while(!validCoresMember.IsNull())
       {
         m_validCores.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(validCoresMember.GetText().c_str()).c_str()));
         validCoresMember = validCoresMember.NextNode("item");
       }
 
-      m_validCoresHasBeenSet = true;
+       m_validCoresHasBeenSet = true;
     }
     XmlNode validThreadsPerCoreNode = resultNode.FirstChild("validThreadsPerCore");
     if(!validThreadsPerCoreNode.IsNull())
     {
       XmlNode validThreadsPerCoreMember = validThreadsPerCoreNode.FirstChild("item");
+      m_validThreadsPerCoreHasBeenSet = !validThreadsPerCoreMember.IsNull();
       while(!validThreadsPerCoreMember.IsNull())
       {
         m_validThreadsPerCore.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(validThreadsPerCoreMember.GetText().c_str()).c_str()));
         validThreadsPerCoreMember = validThreadsPerCoreMember.NextNode("item");
       }
 
-      m_validThreadsPerCoreHasBeenSet = true;
+       m_validThreadsPerCoreHasBeenSet = true;
     }
   }
 

@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWebExperienceRequest::DeleteWebExperienceRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_webExperienceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWebExperienceRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-OutputSampleFileSource::OutputSampleFileSource() : 
-    m_fileLocationHasBeenSet(false)
-{
-}
-
 OutputSampleFileSource::OutputSampleFileSource(JsonView jsonValue)
-  : OutputSampleFileSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputSampleFileSource& OutputSampleFileSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileLocation"))
   {
     m_fileLocation = jsonValue.GetObject("fileLocation");
-
     m_fileLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

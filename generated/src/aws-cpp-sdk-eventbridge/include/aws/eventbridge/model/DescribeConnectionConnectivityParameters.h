@@ -36,7 +36,7 @@ namespace Model
   class DescribeConnectionConnectivityParameters
   {
   public:
-    AWS_EVENTBRIDGE_API DescribeConnectionConnectivityParameters();
+    AWS_EVENTBRIDGE_API DescribeConnectionConnectivityParameters() = default;
     AWS_EVENTBRIDGE_API DescribeConnectionConnectivityParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API DescribeConnectionConnectivityParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>The parameters for EventBridge to use when invoking the resource
      * endpoint.</p>
      */
-    inline const DescribeConnectionResourceParameters& GetResourceParameters() const{ return m_resourceParameters; }
+    inline const DescribeConnectionResourceParameters& GetResourceParameters() const { return m_resourceParameters; }
     inline bool ResourceParametersHasBeenSet() const { return m_resourceParametersHasBeenSet; }
-    inline void SetResourceParameters(const DescribeConnectionResourceParameters& value) { m_resourceParametersHasBeenSet = true; m_resourceParameters = value; }
-    inline void SetResourceParameters(DescribeConnectionResourceParameters&& value) { m_resourceParametersHasBeenSet = true; m_resourceParameters = std::move(value); }
-    inline DescribeConnectionConnectivityParameters& WithResourceParameters(const DescribeConnectionResourceParameters& value) { SetResourceParameters(value); return *this;}
-    inline DescribeConnectionConnectivityParameters& WithResourceParameters(DescribeConnectionResourceParameters&& value) { SetResourceParameters(std::move(value)); return *this;}
+    template<typename ResourceParametersT = DescribeConnectionResourceParameters>
+    void SetResourceParameters(ResourceParametersT&& value) { m_resourceParametersHasBeenSet = true; m_resourceParameters = std::forward<ResourceParametersT>(value); }
+    template<typename ResourceParametersT = DescribeConnectionResourceParameters>
+    DescribeConnectionConnectivityParameters& WithResourceParameters(ResourceParametersT&& value) { SetResourceParameters(std::forward<ResourceParametersT>(value)); return *this;}
     ///@}
   private:
 

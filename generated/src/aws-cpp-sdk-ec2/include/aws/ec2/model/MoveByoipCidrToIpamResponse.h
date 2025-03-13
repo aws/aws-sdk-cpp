@@ -28,7 +28,7 @@ namespace Model
   class MoveByoipCidrToIpamResponse
   {
   public:
-    AWS_EC2_API MoveByoipCidrToIpamResponse();
+    AWS_EC2_API MoveByoipCidrToIpamResponse() = default;
     AWS_EC2_API MoveByoipCidrToIpamResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API MoveByoipCidrToIpamResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The BYOIP CIDR.</p>
      */
-    inline const ByoipCidr& GetByoipCidr() const{ return m_byoipCidr; }
-    inline void SetByoipCidr(const ByoipCidr& value) { m_byoipCidr = value; }
-    inline void SetByoipCidr(ByoipCidr&& value) { m_byoipCidr = std::move(value); }
-    inline MoveByoipCidrToIpamResponse& WithByoipCidr(const ByoipCidr& value) { SetByoipCidr(value); return *this;}
-    inline MoveByoipCidrToIpamResponse& WithByoipCidr(ByoipCidr&& value) { SetByoipCidr(std::move(value)); return *this;}
+    inline const ByoipCidr& GetByoipCidr() const { return m_byoipCidr; }
+    template<typename ByoipCidrT = ByoipCidr>
+    void SetByoipCidr(ByoipCidrT&& value) { m_byoipCidrHasBeenSet = true; m_byoipCidr = std::forward<ByoipCidrT>(value); }
+    template<typename ByoipCidrT = ByoipCidr>
+    MoveByoipCidrToIpamResponse& WithByoipCidr(ByoipCidrT&& value) { SetByoipCidr(std::forward<ByoipCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline MoveByoipCidrToIpamResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline MoveByoipCidrToIpamResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    MoveByoipCidrToIpamResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ByoipCidr m_byoipCidr;
+    bool m_byoipCidrHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

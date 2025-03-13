@@ -12,14 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePolicyRequest::UpdatePolicyRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

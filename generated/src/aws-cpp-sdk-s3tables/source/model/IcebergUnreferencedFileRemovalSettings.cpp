@@ -18,16 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-IcebergUnreferencedFileRemovalSettings::IcebergUnreferencedFileRemovalSettings() : 
-    m_unreferencedDays(0),
-    m_unreferencedDaysHasBeenSet(false),
-    m_nonCurrentDays(0),
-    m_nonCurrentDaysHasBeenSet(false)
-{
-}
-
 IcebergUnreferencedFileRemovalSettings::IcebergUnreferencedFileRemovalSettings(JsonView jsonValue)
-  : IcebergUnreferencedFileRemovalSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IcebergUnreferencedFileRemovalSettings& IcebergUnreferencedFileRemovalSettings::
   if(jsonValue.ValueExists("unreferencedDays"))
   {
     m_unreferencedDays = jsonValue.GetInteger("unreferencedDays");
-
     m_unreferencedDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nonCurrentDays"))
   {
     m_nonCurrentDays = jsonValue.GetInteger("nonCurrentDays");
-
     m_nonCurrentDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

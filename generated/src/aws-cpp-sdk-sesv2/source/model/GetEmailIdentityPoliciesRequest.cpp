@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEmailIdentityPoliciesRequest::GetEmailIdentityPoliciesRequest() : 
-    m_emailIdentityHasBeenSet(false)
-{
-}
-
 Aws::String GetEmailIdentityPoliciesRequest::SerializePayload() const
 {
   return {};

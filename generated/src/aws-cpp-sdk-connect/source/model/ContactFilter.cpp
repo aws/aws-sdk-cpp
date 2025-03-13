@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactFilter::ContactFilter() : 
-    m_contactStatesHasBeenSet(false)
-{
-}
-
 ContactFilter::ContactFilter(JsonView jsonValue)
-  : ContactFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ContactFilter& ContactFilter::operator =(JsonView jsonValue)
     }
     m_contactStatesHasBeenSet = true;
   }
-
   return *this;
 }
 

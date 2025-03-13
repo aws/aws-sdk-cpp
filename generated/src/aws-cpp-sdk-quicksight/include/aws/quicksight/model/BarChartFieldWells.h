@@ -33,7 +33,7 @@ namespace Model
   class BarChartFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API BarChartFieldWells();
+    AWS_QUICKSIGHT_API BarChartFieldWells() = default;
     AWS_QUICKSIGHT_API BarChartFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BarChartFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The aggregated field wells of a bar chart.</p>
      */
-    inline const BarChartAggregatedFieldWells& GetBarChartAggregatedFieldWells() const{ return m_barChartAggregatedFieldWells; }
+    inline const BarChartAggregatedFieldWells& GetBarChartAggregatedFieldWells() const { return m_barChartAggregatedFieldWells; }
     inline bool BarChartAggregatedFieldWellsHasBeenSet() const { return m_barChartAggregatedFieldWellsHasBeenSet; }
-    inline void SetBarChartAggregatedFieldWells(const BarChartAggregatedFieldWells& value) { m_barChartAggregatedFieldWellsHasBeenSet = true; m_barChartAggregatedFieldWells = value; }
-    inline void SetBarChartAggregatedFieldWells(BarChartAggregatedFieldWells&& value) { m_barChartAggregatedFieldWellsHasBeenSet = true; m_barChartAggregatedFieldWells = std::move(value); }
-    inline BarChartFieldWells& WithBarChartAggregatedFieldWells(const BarChartAggregatedFieldWells& value) { SetBarChartAggregatedFieldWells(value); return *this;}
-    inline BarChartFieldWells& WithBarChartAggregatedFieldWells(BarChartAggregatedFieldWells&& value) { SetBarChartAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename BarChartAggregatedFieldWellsT = BarChartAggregatedFieldWells>
+    void SetBarChartAggregatedFieldWells(BarChartAggregatedFieldWellsT&& value) { m_barChartAggregatedFieldWellsHasBeenSet = true; m_barChartAggregatedFieldWells = std::forward<BarChartAggregatedFieldWellsT>(value); }
+    template<typename BarChartAggregatedFieldWellsT = BarChartAggregatedFieldWells>
+    BarChartFieldWells& WithBarChartAggregatedFieldWells(BarChartAggregatedFieldWellsT&& value) { SetBarChartAggregatedFieldWells(std::forward<BarChartAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

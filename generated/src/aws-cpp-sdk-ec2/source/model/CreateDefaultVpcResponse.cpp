@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDefaultVpcResponse::CreateDefaultVpcResponse()
-{
-}
-
 CreateDefaultVpcResponse::CreateDefaultVpcResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateDefaultVpcResponse& CreateDefaultVpcResponse::operator =(const Aws::Amazon
     if(!vpcNode.IsNull())
     {
       m_vpc = vpcNode;
+      m_vpcHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateDefaultVpcResponse& CreateDefaultVpcResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateDefaultVpcResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

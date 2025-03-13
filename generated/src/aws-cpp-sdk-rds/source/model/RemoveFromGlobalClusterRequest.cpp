@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RemoveFromGlobalClusterRequest::RemoveFromGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RemoveFromGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

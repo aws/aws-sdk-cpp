@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelFindingsReportRequest::CancelFindingsReportRequest() : 
-    m_reportIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelFindingsReportRequest::SerializePayload() const
 {
   JsonValue payload;

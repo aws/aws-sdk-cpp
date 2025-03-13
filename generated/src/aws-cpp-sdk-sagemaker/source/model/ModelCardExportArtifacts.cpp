@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelCardExportArtifacts::ModelCardExportArtifacts() : 
-    m_s3ExportArtifactsHasBeenSet(false)
-{
-}
-
 ModelCardExportArtifacts::ModelCardExportArtifacts(JsonView jsonValue)
-  : ModelCardExportArtifacts()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ModelCardExportArtifacts& ModelCardExportArtifacts::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("S3ExportArtifacts"))
   {
     m_s3ExportArtifacts = jsonValue.GetString("S3ExportArtifacts");
-
     m_s3ExportArtifactsHasBeenSet = true;
   }
-
   return *this;
 }
 

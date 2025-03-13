@@ -35,7 +35,7 @@ namespace Model
   class BrokerSummary
   {
   public:
-    AWS_MQ_API BrokerSummary();
+    AWS_MQ_API BrokerSummary() = default;
     AWS_MQ_API BrokerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API BrokerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The broker's Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::String& GetBrokerArn() const{ return m_brokerArn; }
+    inline const Aws::String& GetBrokerArn() const { return m_brokerArn; }
     inline bool BrokerArnHasBeenSet() const { return m_brokerArnHasBeenSet; }
-    inline void SetBrokerArn(const Aws::String& value) { m_brokerArnHasBeenSet = true; m_brokerArn = value; }
-    inline void SetBrokerArn(Aws::String&& value) { m_brokerArnHasBeenSet = true; m_brokerArn = std::move(value); }
-    inline void SetBrokerArn(const char* value) { m_brokerArnHasBeenSet = true; m_brokerArn.assign(value); }
-    inline BrokerSummary& WithBrokerArn(const Aws::String& value) { SetBrokerArn(value); return *this;}
-    inline BrokerSummary& WithBrokerArn(Aws::String&& value) { SetBrokerArn(std::move(value)); return *this;}
-    inline BrokerSummary& WithBrokerArn(const char* value) { SetBrokerArn(value); return *this;}
+    template<typename BrokerArnT = Aws::String>
+    void SetBrokerArn(BrokerArnT&& value) { m_brokerArnHasBeenSet = true; m_brokerArn = std::forward<BrokerArnT>(value); }
+    template<typename BrokerArnT = Aws::String>
+    BrokerSummary& WithBrokerArn(BrokerArnT&& value) { SetBrokerArn(std::forward<BrokerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
-    inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
+    inline const Aws::String& GetBrokerId() const { return m_brokerId; }
     inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
-    inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
-    inline void SetBrokerId(Aws::String&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::move(value); }
-    inline void SetBrokerId(const char* value) { m_brokerIdHasBeenSet = true; m_brokerId.assign(value); }
-    inline BrokerSummary& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
-    inline BrokerSummary& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
-    inline BrokerSummary& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
+    template<typename BrokerIdT = Aws::String>
+    void SetBrokerId(BrokerIdT&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::forward<BrokerIdT>(value); }
+    template<typename BrokerIdT = Aws::String>
+    BrokerSummary& WithBrokerId(BrokerIdT&& value) { SetBrokerId(std::forward<BrokerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,76 +72,66 @@ namespace Model
      * underscores, and must not contain white spaces, brackets, wildcard characters,
      * or special characters.</p>
      */
-    inline const Aws::String& GetBrokerName() const{ return m_brokerName; }
+    inline const Aws::String& GetBrokerName() const { return m_brokerName; }
     inline bool BrokerNameHasBeenSet() const { return m_brokerNameHasBeenSet; }
-    inline void SetBrokerName(const Aws::String& value) { m_brokerNameHasBeenSet = true; m_brokerName = value; }
-    inline void SetBrokerName(Aws::String&& value) { m_brokerNameHasBeenSet = true; m_brokerName = std::move(value); }
-    inline void SetBrokerName(const char* value) { m_brokerNameHasBeenSet = true; m_brokerName.assign(value); }
-    inline BrokerSummary& WithBrokerName(const Aws::String& value) { SetBrokerName(value); return *this;}
-    inline BrokerSummary& WithBrokerName(Aws::String&& value) { SetBrokerName(std::move(value)); return *this;}
-    inline BrokerSummary& WithBrokerName(const char* value) { SetBrokerName(value); return *this;}
+    template<typename BrokerNameT = Aws::String>
+    void SetBrokerName(BrokerNameT&& value) { m_brokerNameHasBeenSet = true; m_brokerName = std::forward<BrokerNameT>(value); }
+    template<typename BrokerNameT = Aws::String>
+    BrokerSummary& WithBrokerName(BrokerNameT&& value) { SetBrokerName(std::forward<BrokerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The broker's status.</p>
      */
-    inline const BrokerState& GetBrokerState() const{ return m_brokerState; }
+    inline BrokerState GetBrokerState() const { return m_brokerState; }
     inline bool BrokerStateHasBeenSet() const { return m_brokerStateHasBeenSet; }
-    inline void SetBrokerState(const BrokerState& value) { m_brokerStateHasBeenSet = true; m_brokerState = value; }
-    inline void SetBrokerState(BrokerState&& value) { m_brokerStateHasBeenSet = true; m_brokerState = std::move(value); }
-    inline BrokerSummary& WithBrokerState(const BrokerState& value) { SetBrokerState(value); return *this;}
-    inline BrokerSummary& WithBrokerState(BrokerState&& value) { SetBrokerState(std::move(value)); return *this;}
+    inline void SetBrokerState(BrokerState value) { m_brokerStateHasBeenSet = true; m_brokerState = value; }
+    inline BrokerSummary& WithBrokerState(BrokerState value) { SetBrokerState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the broker was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline BrokerSummary& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline BrokerSummary& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    BrokerSummary& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The broker's deployment mode.</p>
      */
-    inline const DeploymentMode& GetDeploymentMode() const{ return m_deploymentMode; }
+    inline DeploymentMode GetDeploymentMode() const { return m_deploymentMode; }
     inline bool DeploymentModeHasBeenSet() const { return m_deploymentModeHasBeenSet; }
-    inline void SetDeploymentMode(const DeploymentMode& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = value; }
-    inline void SetDeploymentMode(DeploymentMode&& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = std::move(value); }
-    inline BrokerSummary& WithDeploymentMode(const DeploymentMode& value) { SetDeploymentMode(value); return *this;}
-    inline BrokerSummary& WithDeploymentMode(DeploymentMode&& value) { SetDeploymentMode(std::move(value)); return *this;}
+    inline void SetDeploymentMode(DeploymentMode value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = value; }
+    inline BrokerSummary& WithDeploymentMode(DeploymentMode value) { SetDeploymentMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of broker engine.</p>
      */
-    inline const EngineType& GetEngineType() const{ return m_engineType; }
+    inline EngineType GetEngineType() const { return m_engineType; }
     inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
-    inline void SetEngineType(const EngineType& value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
-    inline void SetEngineType(EngineType&& value) { m_engineTypeHasBeenSet = true; m_engineType = std::move(value); }
-    inline BrokerSummary& WithEngineType(const EngineType& value) { SetEngineType(value); return *this;}
-    inline BrokerSummary& WithEngineType(EngineType&& value) { SetEngineType(std::move(value)); return *this;}
+    inline void SetEngineType(EngineType value) { m_engineTypeHasBeenSet = true; m_engineType = value; }
+    inline BrokerSummary& WithEngineType(EngineType value) { SetEngineType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The broker's instance type.</p>
      */
-    inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
+    inline const Aws::String& GetHostInstanceType() const { return m_hostInstanceType; }
     inline bool HostInstanceTypeHasBeenSet() const { return m_hostInstanceTypeHasBeenSet; }
-    inline void SetHostInstanceType(const Aws::String& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = value; }
-    inline void SetHostInstanceType(Aws::String&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::move(value); }
-    inline void SetHostInstanceType(const char* value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType.assign(value); }
-    inline BrokerSummary& WithHostInstanceType(const Aws::String& value) { SetHostInstanceType(value); return *this;}
-    inline BrokerSummary& WithHostInstanceType(Aws::String&& value) { SetHostInstanceType(std::move(value)); return *this;}
-    inline BrokerSummary& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
+    template<typename HostInstanceTypeT = Aws::String>
+    void SetHostInstanceType(HostInstanceTypeT&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::forward<HostInstanceTypeT>(value); }
+    template<typename HostInstanceTypeT = Aws::String>
+    BrokerSummary& WithHostInstanceType(HostInstanceTypeT&& value) { SetHostInstanceType(std::forward<HostInstanceTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,16 +144,16 @@ namespace Model
     Aws::String m_brokerName;
     bool m_brokerNameHasBeenSet = false;
 
-    BrokerState m_brokerState;
+    BrokerState m_brokerState{BrokerState::NOT_SET};
     bool m_brokerStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
-    DeploymentMode m_deploymentMode;
+    DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
     bool m_deploymentModeHasBeenSet = false;
 
-    EngineType m_engineType;
+    EngineType m_engineType{EngineType::NOT_SET};
     bool m_engineTypeHasBeenSet = false;
 
     Aws::String m_hostInstanceType;

@@ -12,16 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTestGridSessionArtifactsRequest::ListTestGridSessionArtifactsRequest() : 
-    m_sessionArnHasBeenSet(false),
-    m_type(TestGridSessionArtifactCategory::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxResult(0),
-    m_maxResultHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTestGridSessionArtifactsRequest::SerializePayload() const
 {
   JsonValue payload;

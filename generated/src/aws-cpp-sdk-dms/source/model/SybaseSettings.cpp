@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-SybaseSettings::SybaseSettings() : 
-    m_databaseNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
-{
-}
-
 SybaseSettings::SybaseSettings(JsonView jsonValue)
-  : SybaseSettings()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SybaseSettings& SybaseSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerAccessRoleArn"))
   {
     m_secretsManagerAccessRoleArn = jsonValue.GetString("SecretsManagerAccessRoleArn");
-
     m_secretsManagerAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretsManagerSecretId"))
   {
     m_secretsManagerSecretId = jsonValue.GetString("SecretsManagerSecretId");
-
     m_secretsManagerSecretIdHasBeenSet = true;
   }
-
   return *this;
 }
 

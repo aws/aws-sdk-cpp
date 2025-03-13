@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-SecurityControlCustomParameter::SecurityControlCustomParameter() : 
-    m_securityControlIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 SecurityControlCustomParameter::SecurityControlCustomParameter(JsonView jsonValue)
-  : SecurityControlCustomParameter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SecurityControlCustomParameter& SecurityControlCustomParameter::operator =(JsonV
   if(jsonValue.ValueExists("SecurityControlId"))
   {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
-
     m_securityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -48,7 +39,6 @@ SecurityControlCustomParameter& SecurityControlCustomParameter::operator =(JsonV
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEncryptionConfigurationRequest::PutEncryptionConfigurationRequest() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutEncryptionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

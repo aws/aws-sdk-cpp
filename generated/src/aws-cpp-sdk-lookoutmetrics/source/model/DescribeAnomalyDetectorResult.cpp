@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult() : 
-    m_status(AnomalyDetectorStatus::NOT_SET),
-    m_failureType(AnomalyDetectorFailureType::NOT_SET)
-{
-}
-
 DescribeAnomalyDetectorResult::DescribeAnomalyDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAnomalyDetectorResult()
 {
   *this = result;
 }
@@ -35,69 +28,60 @@ DescribeAnomalyDetectorResult& DescribeAnomalyDetectorResult::operator =(const A
   if(jsonValue.ValueExists("AnomalyDetectorArn"))
   {
     m_anomalyDetectorArn = jsonValue.GetString("AnomalyDetectorArn");
-
+    m_anomalyDetectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyDetectorName"))
   {
     m_anomalyDetectorName = jsonValue.GetString("AnomalyDetectorName");
-
+    m_anomalyDetectorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyDetectorDescription"))
   {
     m_anomalyDetectorDescription = jsonValue.GetString("AnomalyDetectorDescription");
-
+    m_anomalyDetectorDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnomalyDetectorConfig"))
   {
     m_anomalyDetectorConfig = jsonValue.GetObject("AnomalyDetectorConfig");
-
+    m_anomalyDetectorConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
+    m_lastModificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AnomalyDetectorStatusMapper::GetAnomalyDetectorStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
+    m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureType"))
   {
     m_failureType = AnomalyDetectorFailureTypeMapper::GetAnomalyDetectorFailureTypeForName(jsonValue.GetString("FailureType"));
-
+    m_failureTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

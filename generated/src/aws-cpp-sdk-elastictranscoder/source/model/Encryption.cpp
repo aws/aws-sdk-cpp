@@ -18,16 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Encryption::Encryption() : 
-    m_modeHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_keyMd5HasBeenSet(false),
-    m_initializationVectorHasBeenSet(false)
-{
-}
-
 Encryption::Encryption(JsonView jsonValue)
-  : Encryption()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Encryption& Encryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = jsonValue.GetString("Mode");
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyMd5"))
   {
     m_keyMd5 = jsonValue.GetString("KeyMd5");
-
     m_keyMd5HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitializationVector"))
   {
     m_initializationVector = jsonValue.GetString("InitializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   return *this;
 }
 

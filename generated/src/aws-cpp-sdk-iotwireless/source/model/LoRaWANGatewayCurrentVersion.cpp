@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion() : 
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 LoRaWANGatewayCurrentVersion::LoRaWANGatewayCurrentVersion(JsonView jsonValue)
-  : LoRaWANGatewayCurrentVersion()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LoRaWANGatewayCurrentVersion& LoRaWANGatewayCurrentVersion::operator =(JsonView 
   if(jsonValue.ValueExists("CurrentVersion"))
   {
     m_currentVersion = jsonValue.GetObject("CurrentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

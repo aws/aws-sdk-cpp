@@ -34,7 +34,7 @@ namespace Model
   class CanaryRunStatus
   {
   public:
-    AWS_SYNTHETICS_API CanaryRunStatus();
+    AWS_SYNTHETICS_API CanaryRunStatus() = default;
     AWS_SYNTHETICS_API CanaryRunStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryRunStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The current state of the run.</p>
      */
-    inline const CanaryRunState& GetState() const{ return m_state; }
+    inline CanaryRunState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CanaryRunState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CanaryRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CanaryRunStatus& WithState(const CanaryRunState& value) { SetState(value); return *this;}
-    inline CanaryRunStatus& WithState(CanaryRunState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CanaryRunState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CanaryRunStatus& WithState(CanaryRunState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>If run of the canary failed, this field contains the reason for the
      * error.</p>
      */
-    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+    inline const Aws::String& GetStateReason() const { return m_stateReason; }
     inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
-    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
-    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
-    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
-    inline CanaryRunStatus& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
-    inline CanaryRunStatus& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
-    inline CanaryRunStatus& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+    template<typename StateReasonT = Aws::String>
+    void SetStateReason(StateReasonT&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::forward<StateReasonT>(value); }
+    template<typename StateReasonT = Aws::String>
+    CanaryRunStatus& WithStateReason(StateReasonT&& value) { SetStateReason(std::forward<StateReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,22 +69,20 @@ namespace Model
      * canary code. If this value is <code>EXECUTION_FAILURE</code>, an exception
      * occurred in CloudWatch Synthetics.</p>
      */
-    inline const CanaryRunStateReasonCode& GetStateReasonCode() const{ return m_stateReasonCode; }
+    inline CanaryRunStateReasonCode GetStateReasonCode() const { return m_stateReasonCode; }
     inline bool StateReasonCodeHasBeenSet() const { return m_stateReasonCodeHasBeenSet; }
-    inline void SetStateReasonCode(const CanaryRunStateReasonCode& value) { m_stateReasonCodeHasBeenSet = true; m_stateReasonCode = value; }
-    inline void SetStateReasonCode(CanaryRunStateReasonCode&& value) { m_stateReasonCodeHasBeenSet = true; m_stateReasonCode = std::move(value); }
-    inline CanaryRunStatus& WithStateReasonCode(const CanaryRunStateReasonCode& value) { SetStateReasonCode(value); return *this;}
-    inline CanaryRunStatus& WithStateReasonCode(CanaryRunStateReasonCode&& value) { SetStateReasonCode(std::move(value)); return *this;}
+    inline void SetStateReasonCode(CanaryRunStateReasonCode value) { m_stateReasonCodeHasBeenSet = true; m_stateReasonCode = value; }
+    inline CanaryRunStatus& WithStateReasonCode(CanaryRunStateReasonCode value) { SetStateReasonCode(value); return *this;}
     ///@}
   private:
 
-    CanaryRunState m_state;
+    CanaryRunState m_state{CanaryRunState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_stateReason;
     bool m_stateReasonHasBeenSet = false;
 
-    CanaryRunStateReasonCode m_stateReasonCode;
+    CanaryRunStateReasonCode m_stateReasonCode{CanaryRunStateReasonCode::NOT_SET};
     bool m_stateReasonCodeHasBeenSet = false;
   };
 

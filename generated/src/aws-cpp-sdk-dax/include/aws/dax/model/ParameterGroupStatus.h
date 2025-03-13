@@ -32,7 +32,7 @@ namespace Model
   class ParameterGroupStatus
   {
   public:
-    AWS_DAX_API ParameterGroupStatus();
+    AWS_DAX_API ParameterGroupStatus() = default;
     AWS_DAX_API ParameterGroupStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API ParameterGroupStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,43 +42,38 @@ namespace Model
     /**
      * <p>The name of the parameter group.</p>
      */
-    inline const Aws::String& GetParameterGroupName() const{ return m_parameterGroupName; }
+    inline const Aws::String& GetParameterGroupName() const { return m_parameterGroupName; }
     inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
-    inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
-    inline void SetParameterGroupName(Aws::String&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::move(value); }
-    inline void SetParameterGroupName(const char* value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName.assign(value); }
-    inline ParameterGroupStatus& WithParameterGroupName(const Aws::String& value) { SetParameterGroupName(value); return *this;}
-    inline ParameterGroupStatus& WithParameterGroupName(Aws::String&& value) { SetParameterGroupName(std::move(value)); return *this;}
-    inline ParameterGroupStatus& WithParameterGroupName(const char* value) { SetParameterGroupName(value); return *this;}
+    template<typename ParameterGroupNameT = Aws::String>
+    void SetParameterGroupName(ParameterGroupNameT&& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = std::forward<ParameterGroupNameT>(value); }
+    template<typename ParameterGroupNameT = Aws::String>
+    ParameterGroupStatus& WithParameterGroupName(ParameterGroupNameT&& value) { SetParameterGroupName(std::forward<ParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of parameter updates. </p>
      */
-    inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+    inline const Aws::String& GetParameterApplyStatus() const { return m_parameterApplyStatus; }
     inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
-    inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
-    inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::move(value); }
-    inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
-    inline ParameterGroupStatus& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
-    inline ParameterGroupStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(std::move(value)); return *this;}
-    inline ParameterGroupStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
+    template<typename ParameterApplyStatusT = Aws::String>
+    void SetParameterApplyStatus(ParameterApplyStatusT&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = std::forward<ParameterApplyStatusT>(value); }
+    template<typename ParameterApplyStatusT = Aws::String>
+    ParameterGroupStatus& WithParameterApplyStatus(ParameterApplyStatusT&& value) { SetParameterApplyStatus(std::forward<ParameterApplyStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node IDs of one or more nodes to be rebooted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNodeIdsToReboot() const{ return m_nodeIdsToReboot; }
+    inline const Aws::Vector<Aws::String>& GetNodeIdsToReboot() const { return m_nodeIdsToReboot; }
     inline bool NodeIdsToRebootHasBeenSet() const { return m_nodeIdsToRebootHasBeenSet; }
-    inline void SetNodeIdsToReboot(const Aws::Vector<Aws::String>& value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot = value; }
-    inline void SetNodeIdsToReboot(Aws::Vector<Aws::String>&& value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot = std::move(value); }
-    inline ParameterGroupStatus& WithNodeIdsToReboot(const Aws::Vector<Aws::String>& value) { SetNodeIdsToReboot(value); return *this;}
-    inline ParameterGroupStatus& WithNodeIdsToReboot(Aws::Vector<Aws::String>&& value) { SetNodeIdsToReboot(std::move(value)); return *this;}
-    inline ParameterGroupStatus& AddNodeIdsToReboot(const Aws::String& value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot.push_back(value); return *this; }
-    inline ParameterGroupStatus& AddNodeIdsToReboot(Aws::String&& value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot.push_back(std::move(value)); return *this; }
-    inline ParameterGroupStatus& AddNodeIdsToReboot(const char* value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot.push_back(value); return *this; }
+    template<typename NodeIdsToRebootT = Aws::Vector<Aws::String>>
+    void SetNodeIdsToReboot(NodeIdsToRebootT&& value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot = std::forward<NodeIdsToRebootT>(value); }
+    template<typename NodeIdsToRebootT = Aws::Vector<Aws::String>>
+    ParameterGroupStatus& WithNodeIdsToReboot(NodeIdsToRebootT&& value) { SetNodeIdsToReboot(std::forward<NodeIdsToRebootT>(value)); return *this;}
+    template<typename NodeIdsToRebootT = Aws::String>
+    ParameterGroupStatus& AddNodeIdsToReboot(NodeIdsToRebootT&& value) { m_nodeIdsToRebootHasBeenSet = true; m_nodeIdsToReboot.emplace_back(std::forward<NodeIdsToRebootT>(value)); return *this; }
     ///@}
   private:
 

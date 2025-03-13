@@ -18,17 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-SpekeKeyProvider::SpekeKeyProvider() : 
-    m_encryptionContractConfigurationHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_drmSystemsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 SpekeKeyProvider::SpekeKeyProvider(JsonView jsonValue)
-  : SpekeKeyProvider()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EncryptionContractConfiguration"))
   {
     m_encryptionContractConfiguration = jsonValue.GetObject("EncryptionContractConfiguration");
-
     m_encryptionContractConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrmSystems"))
   {
     Aws::Utils::Array<JsonView> drmSystemsJsonList = jsonValue.GetArray("DrmSystems");
@@ -58,21 +44,16 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
     }
     m_drmSystemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

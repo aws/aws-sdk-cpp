@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClassifierRequest::UpdateClassifierRequest() : 
-    m_grokClassifierHasBeenSet(false),
-    m_xMLClassifierHasBeenSet(false),
-    m_jsonClassifierHasBeenSet(false),
-    m_csvClassifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

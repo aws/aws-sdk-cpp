@@ -20,19 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-UpgradeTarget::UpgradeTarget() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_autoUpgrade(false),
-    m_autoUpgradeHasBeenSet(false),
-    m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false)
-{
-}
-
 UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode)
-  : UpgradeTarget()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
     {
       m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
       m_engineHasBeenSet = true;
+       m_engineHasBeenSet = true;
     }
     XmlNode engineVersionNode = resultNode.FirstChild("EngineVersion");
     if(!engineVersionNode.IsNull())
     {
       m_engineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(engineVersionNode.GetText());
       m_engineVersionHasBeenSet = true;
+       m_engineVersionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode autoUpgradeNode = resultNode.FirstChild("AutoUpgrade");
     if(!autoUpgradeNode.IsNull())
     {
       m_autoUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoUpgradeNode.GetText()).c_str()).c_str());
       m_autoUpgradeHasBeenSet = true;
+       m_autoUpgradeHasBeenSet = true;
     }
     XmlNode isMajorVersionUpgradeNode = resultNode.FirstChild("IsMajorVersionUpgrade");
     if(!isMajorVersionUpgradeNode.IsNull())
     {
       m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isMajorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_isMajorVersionUpgradeHasBeenSet = true;
+       m_isMajorVersionUpgradeHasBeenSet = true;
     }
   }
 

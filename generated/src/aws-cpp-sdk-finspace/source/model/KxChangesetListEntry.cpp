@@ -18,18 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxChangesetListEntry::KxChangesetListEntry() : 
-    m_changesetIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_activeFromTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false),
-    m_status(ChangesetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 KxChangesetListEntry::KxChangesetListEntry(JsonView jsonValue)
-  : KxChangesetListEntry()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ KxChangesetListEntry& KxChangesetListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("changesetId"))
   {
     m_changesetId = jsonValue.GetString("changesetId");
-
     m_changesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeFromTimestamp"))
   {
     m_activeFromTimestamp = jsonValue.GetDouble("activeFromTimestamp");
-
     m_activeFromTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
     m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ChangesetStatusMapper::GetChangesetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryLoggingConfigResult::GetQueryLoggingConfigResult()
-{
-}
-
 GetQueryLoggingConfigResult::GetQueryLoggingConfigResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetQueryLoggingConfigResult& GetQueryLoggingConfigResult::operator =(const Aws::
     if(!queryLoggingConfigNode.IsNull())
     {
       m_queryLoggingConfig = queryLoggingConfigNode;
+      m_queryLoggingConfigHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ GetQueryLoggingConfigResult& GetQueryLoggingConfigResult::operator =(const Aws::
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

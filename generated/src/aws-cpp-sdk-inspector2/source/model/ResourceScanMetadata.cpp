@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ResourceScanMetadata::ResourceScanMetadata() : 
-    m_ec2HasBeenSet(false),
-    m_ecrImageHasBeenSet(false),
-    m_ecrRepositoryHasBeenSet(false),
-    m_lambdaFunctionHasBeenSet(false)
-{
-}
-
 ResourceScanMetadata::ResourceScanMetadata(JsonView jsonValue)
-  : ResourceScanMetadata()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourceScanMetadata& ResourceScanMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ec2"))
   {
     m_ec2 = jsonValue.GetObject("ec2");
-
     m_ec2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrImage"))
   {
     m_ecrImage = jsonValue.GetObject("ecrImage");
-
     m_ecrImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrRepository"))
   {
     m_ecrRepository = jsonValue.GetObject("ecrRepository");
-
     m_ecrRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunction"))
   {
     m_lambdaFunction = jsonValue.GetObject("lambdaFunction");
-
     m_lambdaFunctionHasBeenSet = true;
   }
-
   return *this;
 }
 

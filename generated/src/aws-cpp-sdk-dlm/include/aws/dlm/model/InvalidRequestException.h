@@ -33,7 +33,7 @@ namespace Model
   class InvalidRequestException
   {
   public:
-    AWS_DLM_API InvalidRequestException();
+    AWS_DLM_API InvalidRequestException() = default;
     AWS_DLM_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,56 +41,50 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidRequestException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline InvalidRequestException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline InvalidRequestException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline InvalidRequestException& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    InvalidRequestException& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request omitted one or more required parameters.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRequiredParameters() const{ return m_requiredParameters; }
+    inline const Aws::Vector<Aws::String>& GetRequiredParameters() const { return m_requiredParameters; }
     inline bool RequiredParametersHasBeenSet() const { return m_requiredParametersHasBeenSet; }
-    inline void SetRequiredParameters(const Aws::Vector<Aws::String>& value) { m_requiredParametersHasBeenSet = true; m_requiredParameters = value; }
-    inline void SetRequiredParameters(Aws::Vector<Aws::String>&& value) { m_requiredParametersHasBeenSet = true; m_requiredParameters = std::move(value); }
-    inline InvalidRequestException& WithRequiredParameters(const Aws::Vector<Aws::String>& value) { SetRequiredParameters(value); return *this;}
-    inline InvalidRequestException& WithRequiredParameters(Aws::Vector<Aws::String>&& value) { SetRequiredParameters(std::move(value)); return *this;}
-    inline InvalidRequestException& AddRequiredParameters(const Aws::String& value) { m_requiredParametersHasBeenSet = true; m_requiredParameters.push_back(value); return *this; }
-    inline InvalidRequestException& AddRequiredParameters(Aws::String&& value) { m_requiredParametersHasBeenSet = true; m_requiredParameters.push_back(std::move(value)); return *this; }
-    inline InvalidRequestException& AddRequiredParameters(const char* value) { m_requiredParametersHasBeenSet = true; m_requiredParameters.push_back(value); return *this; }
+    template<typename RequiredParametersT = Aws::Vector<Aws::String>>
+    void SetRequiredParameters(RequiredParametersT&& value) { m_requiredParametersHasBeenSet = true; m_requiredParameters = std::forward<RequiredParametersT>(value); }
+    template<typename RequiredParametersT = Aws::Vector<Aws::String>>
+    InvalidRequestException& WithRequiredParameters(RequiredParametersT&& value) { SetRequiredParameters(std::forward<RequiredParametersT>(value)); return *this;}
+    template<typename RequiredParametersT = Aws::String>
+    InvalidRequestException& AddRequiredParameters(RequiredParametersT&& value) { m_requiredParametersHasBeenSet = true; m_requiredParameters.emplace_back(std::forward<RequiredParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The request included parameters that cannot be provided together.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMutuallyExclusiveParameters() const{ return m_mutuallyExclusiveParameters; }
+    inline const Aws::Vector<Aws::String>& GetMutuallyExclusiveParameters() const { return m_mutuallyExclusiveParameters; }
     inline bool MutuallyExclusiveParametersHasBeenSet() const { return m_mutuallyExclusiveParametersHasBeenSet; }
-    inline void SetMutuallyExclusiveParameters(const Aws::Vector<Aws::String>& value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters = value; }
-    inline void SetMutuallyExclusiveParameters(Aws::Vector<Aws::String>&& value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters = std::move(value); }
-    inline InvalidRequestException& WithMutuallyExclusiveParameters(const Aws::Vector<Aws::String>& value) { SetMutuallyExclusiveParameters(value); return *this;}
-    inline InvalidRequestException& WithMutuallyExclusiveParameters(Aws::Vector<Aws::String>&& value) { SetMutuallyExclusiveParameters(std::move(value)); return *this;}
-    inline InvalidRequestException& AddMutuallyExclusiveParameters(const Aws::String& value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters.push_back(value); return *this; }
-    inline InvalidRequestException& AddMutuallyExclusiveParameters(Aws::String&& value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters.push_back(std::move(value)); return *this; }
-    inline InvalidRequestException& AddMutuallyExclusiveParameters(const char* value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters.push_back(value); return *this; }
+    template<typename MutuallyExclusiveParametersT = Aws::Vector<Aws::String>>
+    void SetMutuallyExclusiveParameters(MutuallyExclusiveParametersT&& value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters = std::forward<MutuallyExclusiveParametersT>(value); }
+    template<typename MutuallyExclusiveParametersT = Aws::Vector<Aws::String>>
+    InvalidRequestException& WithMutuallyExclusiveParameters(MutuallyExclusiveParametersT&& value) { SetMutuallyExclusiveParameters(std::forward<MutuallyExclusiveParametersT>(value)); return *this;}
+    template<typename MutuallyExclusiveParametersT = Aws::String>
+    InvalidRequestException& AddMutuallyExclusiveParameters(MutuallyExclusiveParametersT&& value) { m_mutuallyExclusiveParametersHasBeenSet = true; m_mutuallyExclusiveParameters.emplace_back(std::forward<MutuallyExclusiveParametersT>(value)); return *this; }
     ///@}
   private:
 

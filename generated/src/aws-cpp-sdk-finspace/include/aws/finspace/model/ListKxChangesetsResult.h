@@ -29,7 +29,7 @@ namespace Model
   class ListKxChangesetsResult
   {
   public:
-    AWS_FINSPACE_API ListKxChangesetsResult();
+    AWS_FINSPACE_API ListKxChangesetsResult() = default;
     AWS_FINSPACE_API ListKxChangesetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API ListKxChangesetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of changesets for a database.</p>
      */
-    inline const Aws::Vector<KxChangesetListEntry>& GetKxChangesets() const{ return m_kxChangesets; }
-    inline void SetKxChangesets(const Aws::Vector<KxChangesetListEntry>& value) { m_kxChangesets = value; }
-    inline void SetKxChangesets(Aws::Vector<KxChangesetListEntry>&& value) { m_kxChangesets = std::move(value); }
-    inline ListKxChangesetsResult& WithKxChangesets(const Aws::Vector<KxChangesetListEntry>& value) { SetKxChangesets(value); return *this;}
-    inline ListKxChangesetsResult& WithKxChangesets(Aws::Vector<KxChangesetListEntry>&& value) { SetKxChangesets(std::move(value)); return *this;}
-    inline ListKxChangesetsResult& AddKxChangesets(const KxChangesetListEntry& value) { m_kxChangesets.push_back(value); return *this; }
-    inline ListKxChangesetsResult& AddKxChangesets(KxChangesetListEntry&& value) { m_kxChangesets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KxChangesetListEntry>& GetKxChangesets() const { return m_kxChangesets; }
+    template<typename KxChangesetsT = Aws::Vector<KxChangesetListEntry>>
+    void SetKxChangesets(KxChangesetsT&& value) { m_kxChangesetsHasBeenSet = true; m_kxChangesets = std::forward<KxChangesetsT>(value); }
+    template<typename KxChangesetsT = Aws::Vector<KxChangesetListEntry>>
+    ListKxChangesetsResult& WithKxChangesets(KxChangesetsT&& value) { SetKxChangesets(std::forward<KxChangesetsT>(value)); return *this;}
+    template<typename KxChangesetsT = KxChangesetListEntry>
+    ListKxChangesetsResult& AddKxChangesets(KxChangesetsT&& value) { m_kxChangesetsHasBeenSet = true; m_kxChangesets.emplace_back(std::forward<KxChangesetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token that indicates where a results page should begin.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListKxChangesetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListKxChangesetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListKxChangesetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListKxChangesetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKxChangesetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKxChangesetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKxChangesetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKxChangesetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KxChangesetListEntry> m_kxChangesets;
+    bool m_kxChangesetsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

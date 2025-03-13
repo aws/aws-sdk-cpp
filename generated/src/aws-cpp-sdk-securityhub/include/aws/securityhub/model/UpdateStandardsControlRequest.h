@@ -22,7 +22,7 @@ namespace Model
   class UpdateStandardsControlRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API UpdateStandardsControlRequest();
+    AWS_SECURITYHUB_API UpdateStandardsControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The ARN of the security standard control to enable or disable.</p>
      */
-    inline const Aws::String& GetStandardsControlArn() const{ return m_standardsControlArn; }
+    inline const Aws::String& GetStandardsControlArn() const { return m_standardsControlArn; }
     inline bool StandardsControlArnHasBeenSet() const { return m_standardsControlArnHasBeenSet; }
-    inline void SetStandardsControlArn(const Aws::String& value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn = value; }
-    inline void SetStandardsControlArn(Aws::String&& value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn = std::move(value); }
-    inline void SetStandardsControlArn(const char* value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn.assign(value); }
-    inline UpdateStandardsControlRequest& WithStandardsControlArn(const Aws::String& value) { SetStandardsControlArn(value); return *this;}
-    inline UpdateStandardsControlRequest& WithStandardsControlArn(Aws::String&& value) { SetStandardsControlArn(std::move(value)); return *this;}
-    inline UpdateStandardsControlRequest& WithStandardsControlArn(const char* value) { SetStandardsControlArn(value); return *this;}
+    template<typename StandardsControlArnT = Aws::String>
+    void SetStandardsControlArn(StandardsControlArnT&& value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn = std::forward<StandardsControlArnT>(value); }
+    template<typename StandardsControlArnT = Aws::String>
+    UpdateStandardsControlRequest& WithStandardsControlArn(StandardsControlArnT&& value) { SetStandardsControlArn(std::forward<StandardsControlArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated status of the security standard control.</p>
      */
-    inline const ControlStatus& GetControlStatus() const{ return m_controlStatus; }
+    inline ControlStatus GetControlStatus() const { return m_controlStatus; }
     inline bool ControlStatusHasBeenSet() const { return m_controlStatusHasBeenSet; }
-    inline void SetControlStatus(const ControlStatus& value) { m_controlStatusHasBeenSet = true; m_controlStatus = value; }
-    inline void SetControlStatus(ControlStatus&& value) { m_controlStatusHasBeenSet = true; m_controlStatus = std::move(value); }
-    inline UpdateStandardsControlRequest& WithControlStatus(const ControlStatus& value) { SetControlStatus(value); return *this;}
-    inline UpdateStandardsControlRequest& WithControlStatus(ControlStatus&& value) { SetControlStatus(std::move(value)); return *this;}
+    inline void SetControlStatus(ControlStatus value) { m_controlStatusHasBeenSet = true; m_controlStatus = value; }
+    inline UpdateStandardsControlRequest& WithControlStatus(ControlStatus value) { SetControlStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -64,21 +60,19 @@ namespace Model
      * <p>A description of the reason why you are disabling a security standard
      * control. If you are disabling a control, then this is required.</p>
      */
-    inline const Aws::String& GetDisabledReason() const{ return m_disabledReason; }
+    inline const Aws::String& GetDisabledReason() const { return m_disabledReason; }
     inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
-    inline void SetDisabledReason(const Aws::String& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
-    inline void SetDisabledReason(Aws::String&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
-    inline void SetDisabledReason(const char* value) { m_disabledReasonHasBeenSet = true; m_disabledReason.assign(value); }
-    inline UpdateStandardsControlRequest& WithDisabledReason(const Aws::String& value) { SetDisabledReason(value); return *this;}
-    inline UpdateStandardsControlRequest& WithDisabledReason(Aws::String&& value) { SetDisabledReason(std::move(value)); return *this;}
-    inline UpdateStandardsControlRequest& WithDisabledReason(const char* value) { SetDisabledReason(value); return *this;}
+    template<typename DisabledReasonT = Aws::String>
+    void SetDisabledReason(DisabledReasonT&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::forward<DisabledReasonT>(value); }
+    template<typename DisabledReasonT = Aws::String>
+    UpdateStandardsControlRequest& WithDisabledReason(DisabledReasonT&& value) { SetDisabledReason(std::forward<DisabledReasonT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_standardsControlArn;
     bool m_standardsControlArnHasBeenSet = false;
 
-    ControlStatus m_controlStatus;
+    ControlStatus m_controlStatus{ControlStatus::NOT_SET};
     bool m_controlStatusHasBeenSet = false;
 
     Aws::String m_disabledReason;

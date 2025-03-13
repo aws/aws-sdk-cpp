@@ -21,7 +21,7 @@ namespace Model
   class DescribeInterconnectsRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API DescribeInterconnectsRequest();
+    AWS_DIRECTCONNECT_API DescribeInterconnectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the interconnect.</p>
      */
-    inline const Aws::String& GetInterconnectId() const{ return m_interconnectId; }
+    inline const Aws::String& GetInterconnectId() const { return m_interconnectId; }
     inline bool InterconnectIdHasBeenSet() const { return m_interconnectIdHasBeenSet; }
-    inline void SetInterconnectId(const Aws::String& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
-    inline void SetInterconnectId(Aws::String&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = std::move(value); }
-    inline void SetInterconnectId(const char* value) { m_interconnectIdHasBeenSet = true; m_interconnectId.assign(value); }
-    inline DescribeInterconnectsRequest& WithInterconnectId(const Aws::String& value) { SetInterconnectId(value); return *this;}
-    inline DescribeInterconnectsRequest& WithInterconnectId(Aws::String&& value) { SetInterconnectId(std::move(value)); return *this;}
-    inline DescribeInterconnectsRequest& WithInterconnectId(const char* value) { SetInterconnectId(value); return *this;}
+    template<typename InterconnectIdT = Aws::String>
+    void SetInterconnectId(InterconnectIdT&& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = std::forward<InterconnectIdT>(value); }
+    template<typename InterconnectIdT = Aws::String>
+    DescribeInterconnectsRequest& WithInterconnectId(InterconnectIdT&& value) { SetInterconnectId(std::forward<InterconnectIdT>(value)); return *this;}
     ///@}
   private:
 

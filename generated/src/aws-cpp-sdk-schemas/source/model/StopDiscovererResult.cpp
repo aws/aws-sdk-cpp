@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopDiscovererResult::StopDiscovererResult() : 
-    m_state(DiscovererState::NOT_SET)
-{
-}
-
 StopDiscovererResult::StopDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopDiscovererResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StopDiscovererResult& StopDiscovererResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("DiscovererId"))
   {
     m_discovererId = jsonValue.GetString("DiscovererId");
-
+    m_discovererIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = DiscovererStateMapper::GetDiscovererStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

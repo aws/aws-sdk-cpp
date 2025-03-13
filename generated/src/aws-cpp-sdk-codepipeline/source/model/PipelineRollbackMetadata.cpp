@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-PipelineRollbackMetadata::PipelineRollbackMetadata() : 
-    m_rollbackTargetPipelineExecutionIdHasBeenSet(false)
-{
-}
-
 PipelineRollbackMetadata::PipelineRollbackMetadata(JsonView jsonValue)
-  : PipelineRollbackMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PipelineRollbackMetadata& PipelineRollbackMetadata::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("rollbackTargetPipelineExecutionId"))
   {
     m_rollbackTargetPipelineExecutionId = jsonValue.GetString("rollbackTargetPipelineExecutionId");
-
     m_rollbackTargetPipelineExecutionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

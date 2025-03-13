@@ -32,7 +32,7 @@ namespace Model
   class TemplateShareSummary
   {
   public:
-    AWS_WELLARCHITECTED_API TemplateShareSummary();
+    AWS_WELLARCHITECTED_API TemplateShareSummary() = default;
     AWS_WELLARCHITECTED_API TemplateShareSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API TemplateShareSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,50 +40,42 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetShareId() const{ return m_shareId; }
+    inline const Aws::String& GetShareId() const { return m_shareId; }
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-    inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-    inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-    inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-    inline TemplateShareSummary& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-    inline TemplateShareSummary& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-    inline TemplateShareSummary& WithShareId(const char* value) { SetShareId(value); return *this;}
+    template<typename ShareIdT = Aws::String>
+    void SetShareId(ShareIdT&& value) { m_shareIdHasBeenSet = true; m_shareId = std::forward<ShareIdT>(value); }
+    template<typename ShareIdT = Aws::String>
+    TemplateShareSummary& WithShareId(ShareIdT&& value) { SetShareId(std::forward<ShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSharedWith() const{ return m_sharedWith; }
+    inline const Aws::String& GetSharedWith() const { return m_sharedWith; }
     inline bool SharedWithHasBeenSet() const { return m_sharedWithHasBeenSet; }
-    inline void SetSharedWith(const Aws::String& value) { m_sharedWithHasBeenSet = true; m_sharedWith = value; }
-    inline void SetSharedWith(Aws::String&& value) { m_sharedWithHasBeenSet = true; m_sharedWith = std::move(value); }
-    inline void SetSharedWith(const char* value) { m_sharedWithHasBeenSet = true; m_sharedWith.assign(value); }
-    inline TemplateShareSummary& WithSharedWith(const Aws::String& value) { SetSharedWith(value); return *this;}
-    inline TemplateShareSummary& WithSharedWith(Aws::String&& value) { SetSharedWith(std::move(value)); return *this;}
-    inline TemplateShareSummary& WithSharedWith(const char* value) { SetSharedWith(value); return *this;}
+    template<typename SharedWithT = Aws::String>
+    void SetSharedWith(SharedWithT&& value) { m_sharedWithHasBeenSet = true; m_sharedWith = std::forward<SharedWithT>(value); }
+    template<typename SharedWithT = Aws::String>
+    TemplateShareSummary& WithSharedWith(SharedWithT&& value) { SetSharedWith(std::forward<SharedWithT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ShareStatus& GetStatus() const{ return m_status; }
+    inline ShareStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ShareStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ShareStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TemplateShareSummary& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
-    inline TemplateShareSummary& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ShareStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TemplateShareSummary& WithStatus(ShareStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Review template share invitation status message. </p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline TemplateShareSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline TemplateShareSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline TemplateShareSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    TemplateShareSummary& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -93,7 +85,7 @@ namespace Model
     Aws::String m_sharedWith;
     bool m_sharedWithHasBeenSet = false;
 
-    ShareStatus m_status;
+    ShareStatus m_status{ShareStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

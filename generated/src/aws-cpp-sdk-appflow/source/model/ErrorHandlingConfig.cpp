@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ErrorHandlingConfig::ErrorHandlingConfig() : 
-    m_failOnFirstDestinationError(false),
-    m_failOnFirstDestinationErrorHasBeenSet(false),
-    m_bucketPrefixHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 ErrorHandlingConfig::ErrorHandlingConfig(JsonView jsonValue)
-  : ErrorHandlingConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ErrorHandlingConfig& ErrorHandlingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failOnFirstDestinationError"))
   {
     m_failOnFirstDestinationError = jsonValue.GetBool("failOnFirstDestinationError");
-
     m_failOnFirstDestinationErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPrefix"))
   {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
-
     m_bucketPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

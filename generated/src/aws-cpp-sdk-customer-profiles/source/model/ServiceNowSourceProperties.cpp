@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ServiceNowSourceProperties::ServiceNowSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 ServiceNowSourceProperties::ServiceNowSourceProperties(JsonView jsonValue)
-  : ServiceNowSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServiceNowSourceProperties& ServiceNowSourceProperties::operator =(JsonView json
   if(jsonValue.ValueExists("Object"))
   {
     m_object = jsonValue.GetString("Object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

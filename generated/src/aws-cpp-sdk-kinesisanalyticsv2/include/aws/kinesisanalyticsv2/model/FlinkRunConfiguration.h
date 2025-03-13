@@ -30,7 +30,7 @@ namespace Model
   class FlinkRunConfiguration
   {
   public:
-    AWS_KINESISANALYTICSV2_API FlinkRunConfiguration();
+    AWS_KINESISANALYTICSV2_API FlinkRunConfiguration() = default;
     AWS_KINESISANALYTICSV2_API FlinkRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API FlinkRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
      * was previously set to <code>true</code>.</p> 
      */
-    inline bool GetAllowNonRestoredState() const{ return m_allowNonRestoredState; }
+    inline bool GetAllowNonRestoredState() const { return m_allowNonRestoredState; }
     inline bool AllowNonRestoredStateHasBeenSet() const { return m_allowNonRestoredStateHasBeenSet; }
     inline void SetAllowNonRestoredState(bool value) { m_allowNonRestoredStateHasBeenSet = true; m_allowNonRestoredState = value; }
     inline FlinkRunConfiguration& WithAllowNonRestoredState(bool value) { SetAllowNonRestoredState(value); return *this;}
     ///@}
   private:
 
-    bool m_allowNonRestoredState;
+    bool m_allowNonRestoredState{false};
     bool m_allowNonRestoredStateHasBeenSet = false;
   };
 

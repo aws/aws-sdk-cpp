@@ -20,13 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Warnings::Warnings() : 
-    m_unrecognizedResourceTypesHasBeenSet(false)
-{
-}
-
 Warnings::Warnings(const XmlNode& xmlNode)
-  : Warnings()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ Warnings& Warnings::operator =(const XmlNode& xmlNode)
     if(!unrecognizedResourceTypesNode.IsNull())
     {
       XmlNode unrecognizedResourceTypesMember = unrecognizedResourceTypesNode.FirstChild("member");
+      m_unrecognizedResourceTypesHasBeenSet = !unrecognizedResourceTypesMember.IsNull();
       while(!unrecognizedResourceTypesMember.IsNull())
       {
         m_unrecognizedResourceTypes.push_back(unrecognizedResourceTypesMember.GetText());
         unrecognizedResourceTypesMember = unrecognizedResourceTypesMember.NextNode("member");
       }
 
-      m_unrecognizedResourceTypesHasBeenSet = true;
+       m_unrecognizedResourceTypesHasBeenSet = true;
     }
   }
 

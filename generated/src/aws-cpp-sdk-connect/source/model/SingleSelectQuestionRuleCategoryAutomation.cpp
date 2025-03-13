@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SingleSelectQuestionRuleCategoryAutomation::SingleSelectQuestionRuleCategoryAutomation() : 
-    m_categoryHasBeenSet(false),
-    m_condition(SingleSelectQuestionRuleCategoryAutomationCondition::NOT_SET),
-    m_conditionHasBeenSet(false),
-    m_optionRefIdHasBeenSet(false)
-{
-}
-
 SingleSelectQuestionRuleCategoryAutomation::SingleSelectQuestionRuleCategoryAutomation(JsonView jsonValue)
-  : SingleSelectQuestionRuleCategoryAutomation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SingleSelectQuestionRuleCategoryAutomation& SingleSelectQuestionRuleCategoryAuto
   if(jsonValue.ValueExists("Category"))
   {
     m_category = jsonValue.GetString("Category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = SingleSelectQuestionRuleCategoryAutomationConditionMapper::GetSingleSelectQuestionRuleCategoryAutomationConditionForName(jsonValue.GetString("Condition"));
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptionRefId"))
   {
     m_optionRefId = jsonValue.GetString("OptionRefId");
-
     m_optionRefIdHasBeenSet = true;
   }
-
   return *this;
 }
 

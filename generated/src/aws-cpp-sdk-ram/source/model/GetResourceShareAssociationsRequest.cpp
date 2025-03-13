@@ -12,20 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceShareAssociationsRequest::GetResourceShareAssociationsRequest() : 
-    m_associationType(ResourceShareAssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false),
-    m_resourceShareArnsHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_associationStatus(ResourceShareAssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceShareAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

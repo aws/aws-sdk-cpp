@@ -27,7 +27,7 @@ namespace Model
   class ImportDocumentResult
   {
   public:
-    AWS_QAPPS_API ImportDocumentResult();
+    AWS_QAPPS_API ImportDocumentResult() = default;
     AWS_QAPPS_API ImportDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API ImportDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier assigned to the uploaded file.</p>
      */
-    inline const Aws::String& GetFileId() const{ return m_fileId; }
-    inline void SetFileId(const Aws::String& value) { m_fileId = value; }
-    inline void SetFileId(Aws::String&& value) { m_fileId = std::move(value); }
-    inline void SetFileId(const char* value) { m_fileId.assign(value); }
-    inline ImportDocumentResult& WithFileId(const Aws::String& value) { SetFileId(value); return *this;}
-    inline ImportDocumentResult& WithFileId(Aws::String&& value) { SetFileId(std::move(value)); return *this;}
-    inline ImportDocumentResult& WithFileId(const char* value) { SetFileId(value); return *this;}
+    inline const Aws::String& GetFileId() const { return m_fileId; }
+    template<typename FileIdT = Aws::String>
+    void SetFileId(FileIdT&& value) { m_fileIdHasBeenSet = true; m_fileId = std::forward<FileIdT>(value); }
+    template<typename FileIdT = Aws::String>
+    ImportDocumentResult& WithFileId(FileIdT&& value) { SetFileId(std::forward<FileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ImportDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ImportDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ImportDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ImportDocumentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileId;
+    bool m_fileIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

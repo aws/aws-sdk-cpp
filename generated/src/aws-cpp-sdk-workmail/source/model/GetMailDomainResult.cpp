@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMailDomainResult::GetMailDomainResult() : 
-    m_isTestDomain(false),
-    m_isDefault(false),
-    m_ownershipVerificationStatus(DnsRecordVerificationStatus::NOT_SET),
-    m_dkimVerificationStatus(DnsRecordVerificationStatus::NOT_SET)
-{
-}
-
 GetMailDomainResult::GetMailDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMailDomainResult()
 {
   *this = result;
 }
@@ -41,38 +32,35 @@ GetMailDomainResult& GetMailDomainResult::operator =(const Aws::AmazonWebService
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
+    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsTestDomain"))
   {
     m_isTestDomain = jsonValue.GetBool("IsTestDomain");
-
+    m_isTestDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefault"))
   {
     m_isDefault = jsonValue.GetBool("IsDefault");
-
+    m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnershipVerificationStatus"))
   {
     m_ownershipVerificationStatus = DnsRecordVerificationStatusMapper::GetDnsRecordVerificationStatusForName(jsonValue.GetString("OwnershipVerificationStatus"));
-
+    m_ownershipVerificationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DkimVerificationStatus"))
   {
     m_dkimVerificationStatus = DnsRecordVerificationStatusMapper::GetDnsRecordVerificationStatusForName(jsonValue.GetString("DkimVerificationStatus"));
-
+    m_dkimVerificationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-LendingResult::LendingResult() : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_pageClassificationHasBeenSet(false),
-    m_extractionsHasBeenSet(false)
-{
-}
-
 LendingResult::LendingResult(JsonView jsonValue)
-  : LendingResult()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ LendingResult& LendingResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageClassification"))
   {
     m_pageClassification = jsonValue.GetObject("PageClassification");
-
     m_pageClassificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Extractions"))
   {
     Aws::Utils::Array<JsonView> extractionsJsonList = jsonValue.GetArray("Extractions");
@@ -57,7 +44,6 @@ LendingResult& LendingResult::operator =(JsonView jsonValue)
     }
     m_extractionsHasBeenSet = true;
   }
-
   return *this;
 }
 

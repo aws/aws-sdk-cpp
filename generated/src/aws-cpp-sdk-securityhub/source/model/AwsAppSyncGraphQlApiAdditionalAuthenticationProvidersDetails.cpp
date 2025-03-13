@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails() : 
-    m_authenticationTypeHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false),
-    m_openIdConnectConfigHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false)
-{
-}
-
 AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails::AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails(JsonView jsonValue)
-  : AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails& AwsAppSyncGraphQlA
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = jsonValue.GetString("AuthenticationType");
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaAuthorizerConfig"))
   {
     m_lambdaAuthorizerConfig = jsonValue.GetObject("LambdaAuthorizerConfig");
-
     m_lambdaAuthorizerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenIdConnectConfig"))
   {
     m_openIdConnectConfig = jsonValue.GetObject("OpenIdConnectConfig");
-
     m_openIdConnectConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolConfig"))
   {
     m_userPoolConfig = jsonValue.GetObject("UserPoolConfig");
-
     m_userPoolConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

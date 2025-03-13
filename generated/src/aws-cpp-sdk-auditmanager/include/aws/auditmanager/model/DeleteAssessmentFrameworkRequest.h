@@ -21,7 +21,7 @@ namespace Model
   class DeleteAssessmentFrameworkRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API DeleteAssessmentFrameworkRequest();
+    AWS_AUDITMANAGER_API DeleteAssessmentFrameworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The identifier for the custom framework. </p>
      */
-    inline const Aws::String& GetFrameworkId() const{ return m_frameworkId; }
+    inline const Aws::String& GetFrameworkId() const { return m_frameworkId; }
     inline bool FrameworkIdHasBeenSet() const { return m_frameworkIdHasBeenSet; }
-    inline void SetFrameworkId(const Aws::String& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = value; }
-    inline void SetFrameworkId(Aws::String&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::move(value); }
-    inline void SetFrameworkId(const char* value) { m_frameworkIdHasBeenSet = true; m_frameworkId.assign(value); }
-    inline DeleteAssessmentFrameworkRequest& WithFrameworkId(const Aws::String& value) { SetFrameworkId(value); return *this;}
-    inline DeleteAssessmentFrameworkRequest& WithFrameworkId(Aws::String&& value) { SetFrameworkId(std::move(value)); return *this;}
-    inline DeleteAssessmentFrameworkRequest& WithFrameworkId(const char* value) { SetFrameworkId(value); return *this;}
+    template<typename FrameworkIdT = Aws::String>
+    void SetFrameworkId(FrameworkIdT&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::forward<FrameworkIdT>(value); }
+    template<typename FrameworkIdT = Aws::String>
+    DeleteAssessmentFrameworkRequest& WithFrameworkId(FrameworkIdT&& value) { SetFrameworkId(std::forward<FrameworkIdT>(value)); return *this;}
     ///@}
   private:
 

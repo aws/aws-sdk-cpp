@@ -20,13 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MetricCollectionType::MetricCollectionType() : 
-    m_metricHasBeenSet(false)
-{
-}
-
 MetricCollectionType::MetricCollectionType(const XmlNode& xmlNode)
-  : MetricCollectionType()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ MetricCollectionType& MetricCollectionType::operator =(const XmlNode& xmlNode)
     {
       m_metric = Aws::Utils::Xml::DecodeEscapedXmlText(metricNode.GetText());
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
   }
 

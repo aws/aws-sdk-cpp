@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ExportLensRequest::ExportLensRequest() : 
-    m_lensAliasHasBeenSet(false),
-    m_lensVersionHasBeenSet(false)
-{
-}
-
 Aws::String ExportLensRequest::SerializePayload() const
 {
   return {};

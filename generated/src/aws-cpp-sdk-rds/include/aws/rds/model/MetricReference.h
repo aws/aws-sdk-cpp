@@ -32,7 +32,7 @@ namespace Model
   class MetricReference
   {
   public:
-    AWS_RDS_API MetricReference();
+    AWS_RDS_API MetricReference() = default;
     AWS_RDS_API MetricReference(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API MetricReference& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The name of the metric reference.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MetricReference& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MetricReference& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MetricReference& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MetricReference& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of a performance issue.</p>
      */
-    inline const ReferenceDetails& GetReferenceDetails() const{ return m_referenceDetails; }
+    inline const ReferenceDetails& GetReferenceDetails() const { return m_referenceDetails; }
     inline bool ReferenceDetailsHasBeenSet() const { return m_referenceDetailsHasBeenSet; }
-    inline void SetReferenceDetails(const ReferenceDetails& value) { m_referenceDetailsHasBeenSet = true; m_referenceDetails = value; }
-    inline void SetReferenceDetails(ReferenceDetails&& value) { m_referenceDetailsHasBeenSet = true; m_referenceDetails = std::move(value); }
-    inline MetricReference& WithReferenceDetails(const ReferenceDetails& value) { SetReferenceDetails(value); return *this;}
-    inline MetricReference& WithReferenceDetails(ReferenceDetails&& value) { SetReferenceDetails(std::move(value)); return *this;}
+    template<typename ReferenceDetailsT = ReferenceDetails>
+    void SetReferenceDetails(ReferenceDetailsT&& value) { m_referenceDetailsHasBeenSet = true; m_referenceDetails = std::forward<ReferenceDetailsT>(value); }
+    template<typename ReferenceDetailsT = ReferenceDetails>
+    MetricReference& WithReferenceDetails(ReferenceDetailsT&& value) { SetReferenceDetails(std::forward<ReferenceDetailsT>(value)); return *this;}
     ///@}
   private:
 

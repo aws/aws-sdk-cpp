@@ -18,21 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DatasetMetadata::DatasetMetadata() : 
-    m_creationTimestampHasBeenSet(false),
-    m_datasetType(DatasetType::NOT_SET),
-    m_datasetTypeHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_status(DatasetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_statusMessageCode(DatasetStatusMessageCode::NOT_SET),
-    m_statusMessageCodeHasBeenSet(false)
-{
-}
-
 DatasetMetadata::DatasetMetadata(JsonView jsonValue)
-  : DatasetMetadata()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ DatasetMetadata& DatasetMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetType"))
   {
     m_datasetType = DatasetTypeMapper::GetDatasetTypeForName(jsonValue.GetString("DatasetType"));
-
     m_datasetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessageCode"))
   {
     m_statusMessageCode = DatasetStatusMessageCodeMapper::GetDatasetStatusMessageCodeForName(jsonValue.GetString("StatusMessageCode"));
-
     m_statusMessageCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

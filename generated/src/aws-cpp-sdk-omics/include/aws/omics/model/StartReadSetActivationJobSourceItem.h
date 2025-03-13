@@ -31,7 +31,7 @@ namespace Model
   class StartReadSetActivationJobSourceItem
   {
   public:
-    AWS_OMICS_API StartReadSetActivationJobSourceItem();
+    AWS_OMICS_API StartReadSetActivationJobSourceItem() = default;
     AWS_OMICS_API StartReadSetActivationJobSourceItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API StartReadSetActivationJobSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The source's read set ID.</p>
      */
-    inline const Aws::String& GetReadSetId() const{ return m_readSetId; }
+    inline const Aws::String& GetReadSetId() const { return m_readSetId; }
     inline bool ReadSetIdHasBeenSet() const { return m_readSetIdHasBeenSet; }
-    inline void SetReadSetId(const Aws::String& value) { m_readSetIdHasBeenSet = true; m_readSetId = value; }
-    inline void SetReadSetId(Aws::String&& value) { m_readSetIdHasBeenSet = true; m_readSetId = std::move(value); }
-    inline void SetReadSetId(const char* value) { m_readSetIdHasBeenSet = true; m_readSetId.assign(value); }
-    inline StartReadSetActivationJobSourceItem& WithReadSetId(const Aws::String& value) { SetReadSetId(value); return *this;}
-    inline StartReadSetActivationJobSourceItem& WithReadSetId(Aws::String&& value) { SetReadSetId(std::move(value)); return *this;}
-    inline StartReadSetActivationJobSourceItem& WithReadSetId(const char* value) { SetReadSetId(value); return *this;}
+    template<typename ReadSetIdT = Aws::String>
+    void SetReadSetId(ReadSetIdT&& value) { m_readSetIdHasBeenSet = true; m_readSetId = std::forward<ReadSetIdT>(value); }
+    template<typename ReadSetIdT = Aws::String>
+    StartReadSetActivationJobSourceItem& WithReadSetId(ReadSetIdT&& value) { SetReadSetId(std::forward<ReadSetIdT>(value)); return *this;}
     ///@}
   private:
 

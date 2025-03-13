@@ -31,7 +31,7 @@ namespace Model
   class CmafIngestOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API CmafIngestOutputSettings();
+    AWS_MEDIALIVE_API CmafIngestOutputSettings() = default;
     AWS_MEDIALIVE_API CmafIngestOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API CmafIngestOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * String concatenated to the end of the destination filename.  Required for
      * multiple outputs of the same type.
      */
-    inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+    inline const Aws::String& GetNameModifier() const { return m_nameModifier; }
     inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
-    inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
-    inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
-    inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
-    inline CmafIngestOutputSettings& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
-    inline CmafIngestOutputSettings& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
-    inline CmafIngestOutputSettings& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
+    template<typename NameModifierT = Aws::String>
+    void SetNameModifier(NameModifierT&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::forward<NameModifierT>(value); }
+    template<typename NameModifierT = Aws::String>
+    CmafIngestOutputSettings& WithNameModifier(NameModifierT&& value) { SetNameModifier(std::forward<NameModifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,28 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CompilationJobSummary::CompilationJobSummary() : 
-    m_compilationJobNameHasBeenSet(false),
-    m_compilationJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_compilationStartTimeHasBeenSet(false),
-    m_compilationEndTimeHasBeenSet(false),
-    m_compilationTargetDevice(TargetDevice::NOT_SET),
-    m_compilationTargetDeviceHasBeenSet(false),
-    m_compilationTargetPlatformOs(TargetPlatformOs::NOT_SET),
-    m_compilationTargetPlatformOsHasBeenSet(false),
-    m_compilationTargetPlatformArch(TargetPlatformArch::NOT_SET),
-    m_compilationTargetPlatformArchHasBeenSet(false),
-    m_compilationTargetPlatformAccelerator(TargetPlatformAccelerator::NOT_SET),
-    m_compilationTargetPlatformAcceleratorHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_compilationJobStatus(CompilationJobStatus::NOT_SET),
-    m_compilationJobStatusHasBeenSet(false)
-{
-}
-
 CompilationJobSummary::CompilationJobSummary(JsonView jsonValue)
-  : CompilationJobSummary()
 {
   *this = jsonValue;
 }
@@ -49,80 +28,58 @@ CompilationJobSummary& CompilationJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompilationJobName"))
   {
     m_compilationJobName = jsonValue.GetString("CompilationJobName");
-
     m_compilationJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationJobArn"))
   {
     m_compilationJobArn = jsonValue.GetString("CompilationJobArn");
-
     m_compilationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationStartTime"))
   {
     m_compilationStartTime = jsonValue.GetDouble("CompilationStartTime");
-
     m_compilationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationEndTime"))
   {
     m_compilationEndTime = jsonValue.GetDouble("CompilationEndTime");
-
     m_compilationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationTargetDevice"))
   {
     m_compilationTargetDevice = TargetDeviceMapper::GetTargetDeviceForName(jsonValue.GetString("CompilationTargetDevice"));
-
     m_compilationTargetDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationTargetPlatformOs"))
   {
     m_compilationTargetPlatformOs = TargetPlatformOsMapper::GetTargetPlatformOsForName(jsonValue.GetString("CompilationTargetPlatformOs"));
-
     m_compilationTargetPlatformOsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationTargetPlatformArch"))
   {
     m_compilationTargetPlatformArch = TargetPlatformArchMapper::GetTargetPlatformArchForName(jsonValue.GetString("CompilationTargetPlatformArch"));
-
     m_compilationTargetPlatformArchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationTargetPlatformAccelerator"))
   {
     m_compilationTargetPlatformAccelerator = TargetPlatformAcceleratorMapper::GetTargetPlatformAcceleratorForName(jsonValue.GetString("CompilationTargetPlatformAccelerator"));
-
     m_compilationTargetPlatformAcceleratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationJobStatus"))
   {
     m_compilationJobStatus = CompilationJobStatusMapper::GetCompilationJobStatusForName(jsonValue.GetString("CompilationJobStatus"));
-
     m_compilationJobStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

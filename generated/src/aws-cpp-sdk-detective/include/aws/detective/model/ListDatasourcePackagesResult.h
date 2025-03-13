@@ -30,7 +30,7 @@ namespace Model
   class ListDatasourcePackagesResult
   {
   public:
-    AWS_DETECTIVE_API ListDatasourcePackagesResult();
+    AWS_DETECTIVE_API ListDatasourcePackagesResult() = default;
     AWS_DETECTIVE_API ListDatasourcePackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DETECTIVE_API ListDatasourcePackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,15 +39,14 @@ namespace Model
     /**
      * <p>Details on the data source packages active in the behavior graph.</p>
      */
-    inline const Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>& GetDatasourcePackages() const{ return m_datasourcePackages; }
-    inline void SetDatasourcePackages(const Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>& value) { m_datasourcePackages = value; }
-    inline void SetDatasourcePackages(Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>&& value) { m_datasourcePackages = std::move(value); }
-    inline ListDatasourcePackagesResult& WithDatasourcePackages(const Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>& value) { SetDatasourcePackages(value); return *this;}
-    inline ListDatasourcePackagesResult& WithDatasourcePackages(Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>&& value) { SetDatasourcePackages(std::move(value)); return *this;}
-    inline ListDatasourcePackagesResult& AddDatasourcePackages(const DatasourcePackage& key, const DatasourcePackageIngestDetail& value) { m_datasourcePackages.emplace(key, value); return *this; }
-    inline ListDatasourcePackagesResult& AddDatasourcePackages(DatasourcePackage&& key, const DatasourcePackageIngestDetail& value) { m_datasourcePackages.emplace(std::move(key), value); return *this; }
-    inline ListDatasourcePackagesResult& AddDatasourcePackages(const DatasourcePackage& key, DatasourcePackageIngestDetail&& value) { m_datasourcePackages.emplace(key, std::move(value)); return *this; }
-    inline ListDatasourcePackagesResult& AddDatasourcePackages(DatasourcePackage&& key, DatasourcePackageIngestDetail&& value) { m_datasourcePackages.emplace(std::move(key), std::move(value)); return *this; }
+    inline const Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>& GetDatasourcePackages() const { return m_datasourcePackages; }
+    template<typename DatasourcePackagesT = Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>>
+    void SetDatasourcePackages(DatasourcePackagesT&& value) { m_datasourcePackagesHasBeenSet = true; m_datasourcePackages = std::forward<DatasourcePackagesT>(value); }
+    template<typename DatasourcePackagesT = Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail>>
+    ListDatasourcePackagesResult& WithDatasourcePackages(DatasourcePackagesT&& value) { SetDatasourcePackages(std::forward<DatasourcePackagesT>(value)); return *this;}
+    inline ListDatasourcePackagesResult& AddDatasourcePackages(DatasourcePackage key, DatasourcePackageIngestDetail value) {
+      m_datasourcePackagesHasBeenSet = true; m_datasourcePackages.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -56,32 +55,31 @@ namespace Model
      * returned with the previous set of results. The initial request does not include
      * a pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDatasourcePackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDatasourcePackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDatasourcePackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDatasourcePackagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDatasourcePackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDatasourcePackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDatasourcePackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDatasourcePackagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<DatasourcePackage, DatasourcePackageIngestDetail> m_datasourcePackages;
+    bool m_datasourcePackagesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetExportJobRequest::CreateDatasetExportJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_ingestionMode(IngestionMode::NOT_SET),
-    m_ingestionModeHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_jobOutputHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

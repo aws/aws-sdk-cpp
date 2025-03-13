@@ -31,7 +31,7 @@ namespace Model
   class CapacityUnitsConfiguration
   {
   public:
-    AWS_KENDRA_API CapacityUnitsConfiguration();
+    AWS_KENDRA_API CapacityUnitsConfiguration() = default;
     AWS_KENDRA_API CapacityUnitsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API CapacityUnitsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * provides 30 GB of storage space or 100,000 documents, whichever is reached
      * first. You can add up to 100 extra capacity units.</p>
      */
-    inline int GetStorageCapacityUnits() const{ return m_storageCapacityUnits; }
+    inline int GetStorageCapacityUnits() const { return m_storageCapacityUnits; }
     inline bool StorageCapacityUnitsHasBeenSet() const { return m_storageCapacityUnitsHasBeenSet; }
     inline void SetStorageCapacityUnits(int value) { m_storageCapacityUnitsHasBeenSet = true; m_storageCapacityUnits = value; }
     inline CapacityUnitsConfiguration& WithStorageCapacityUnits(int value) { SetStorageCapacityUnits(value); return *this;}
@@ -63,17 +63,17 @@ namespace Model
      * queries per second for an index, the <code>GetQuerySuggestions</code> capacity
      * is 2.5 calls per second (higher than five times 0.2 queries per second).</p>
      */
-    inline int GetQueryCapacityUnits() const{ return m_queryCapacityUnits; }
+    inline int GetQueryCapacityUnits() const { return m_queryCapacityUnits; }
     inline bool QueryCapacityUnitsHasBeenSet() const { return m_queryCapacityUnitsHasBeenSet; }
     inline void SetQueryCapacityUnits(int value) { m_queryCapacityUnitsHasBeenSet = true; m_queryCapacityUnits = value; }
     inline CapacityUnitsConfiguration& WithQueryCapacityUnits(int value) { SetQueryCapacityUnits(value); return *this;}
     ///@}
   private:
 
-    int m_storageCapacityUnits;
+    int m_storageCapacityUnits{0};
     bool m_storageCapacityUnitsHasBeenSet = false;
 
-    int m_queryCapacityUnits;
+    int m_queryCapacityUnits{0};
     bool m_queryCapacityUnitsHasBeenSet = false;
   };
 

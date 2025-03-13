@@ -12,17 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAuditSuppressionsRequest::ListAuditSuppressionsRequest() : 
-    m_checkNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAuditSuppressionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationAuthenticationMethodsResult
   {
   public:
-    AWS_SSOADMIN_API ListApplicationAuthenticationMethodsResult();
+    AWS_SSOADMIN_API ListApplicationAuthenticationMethodsResult() = default;
     AWS_SSOADMIN_API ListApplicationAuthenticationMethodsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API ListApplicationAuthenticationMethodsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array list of authentication methods for the specified application.</p>
      */
-    inline const Aws::Vector<AuthenticationMethodItem>& GetAuthenticationMethods() const{ return m_authenticationMethods; }
-    inline void SetAuthenticationMethods(const Aws::Vector<AuthenticationMethodItem>& value) { m_authenticationMethods = value; }
-    inline void SetAuthenticationMethods(Aws::Vector<AuthenticationMethodItem>&& value) { m_authenticationMethods = std::move(value); }
-    inline ListApplicationAuthenticationMethodsResult& WithAuthenticationMethods(const Aws::Vector<AuthenticationMethodItem>& value) { SetAuthenticationMethods(value); return *this;}
-    inline ListApplicationAuthenticationMethodsResult& WithAuthenticationMethods(Aws::Vector<AuthenticationMethodItem>&& value) { SetAuthenticationMethods(std::move(value)); return *this;}
-    inline ListApplicationAuthenticationMethodsResult& AddAuthenticationMethods(const AuthenticationMethodItem& value) { m_authenticationMethods.push_back(value); return *this; }
-    inline ListApplicationAuthenticationMethodsResult& AddAuthenticationMethods(AuthenticationMethodItem&& value) { m_authenticationMethods.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthenticationMethodItem>& GetAuthenticationMethods() const { return m_authenticationMethods; }
+    template<typename AuthenticationMethodsT = Aws::Vector<AuthenticationMethodItem>>
+    void SetAuthenticationMethods(AuthenticationMethodsT&& value) { m_authenticationMethodsHasBeenSet = true; m_authenticationMethods = std::forward<AuthenticationMethodsT>(value); }
+    template<typename AuthenticationMethodsT = Aws::Vector<AuthenticationMethodItem>>
+    ListApplicationAuthenticationMethodsResult& WithAuthenticationMethods(AuthenticationMethodsT&& value) { SetAuthenticationMethods(std::forward<AuthenticationMethodsT>(value)); return *this;}
+    template<typename AuthenticationMethodsT = AuthenticationMethodItem>
+    ListApplicationAuthenticationMethodsResult& AddAuthenticationMethods(AuthenticationMethodsT&& value) { m_authenticationMethodsHasBeenSet = true; m_authenticationMethods.emplace_back(std::forward<AuthenticationMethodsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * element comes back as <code>null</code>. This indicates that this is the last
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationAuthenticationMethodsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationAuthenticationMethodsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationAuthenticationMethodsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationAuthenticationMethodsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationAuthenticationMethodsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationAuthenticationMethodsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationAuthenticationMethodsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationAuthenticationMethodsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuthenticationMethodItem> m_authenticationMethods;
+    bool m_authenticationMethodsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

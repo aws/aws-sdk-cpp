@@ -20,16 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-S3TablesDestinationResult::S3TablesDestinationResult() : 
-    m_tableBucketArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableNamespaceHasBeenSet(false)
-{
-}
-
 S3TablesDestinationResult::S3TablesDestinationResult(const XmlNode& xmlNode)
-  : S3TablesDestinationResult()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ S3TablesDestinationResult& S3TablesDestinationResult::operator =(const XmlNode& 
     {
       m_tableBucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(tableBucketArnNode.GetText());
       m_tableBucketArnHasBeenSet = true;
+       m_tableBucketArnHasBeenSet = true;
     }
     XmlNode tableNameNode = resultNode.FirstChild("TableName");
     if(!tableNameNode.IsNull())
     {
       m_tableName = Aws::Utils::Xml::DecodeEscapedXmlText(tableNameNode.GetText());
       m_tableNameHasBeenSet = true;
+       m_tableNameHasBeenSet = true;
     }
     XmlNode tableArnNode = resultNode.FirstChild("TableArn");
     if(!tableArnNode.IsNull())
     {
       m_tableArn = Aws::Utils::Xml::DecodeEscapedXmlText(tableArnNode.GetText());
       m_tableArnHasBeenSet = true;
+       m_tableArnHasBeenSet = true;
     }
     XmlNode tableNamespaceNode = resultNode.FirstChild("TableNamespace");
     if(!tableNamespaceNode.IsNull())
     {
       m_tableNamespace = Aws::Utils::Xml::DecodeEscapedXmlText(tableNamespaceNode.GetText());
       m_tableNamespaceHasBeenSet = true;
+       m_tableNamespaceHasBeenSet = true;
     }
   }
 

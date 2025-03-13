@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-RoutingRule::RoutingRule() : 
-    m_conditionHasBeenSet(false),
-    m_redirectHasBeenSet(false)
-{
-}
-
 RoutingRule::RoutingRule(const XmlNode& xmlNode)
-  : RoutingRule()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ RoutingRule& RoutingRule::operator =(const XmlNode& xmlNode)
     {
       m_condition = conditionNode;
       m_conditionHasBeenSet = true;
+       m_conditionHasBeenSet = true;
     }
     XmlNode redirectNode = resultNode.FirstChild("Redirect");
     if(!redirectNode.IsNull())
     {
       m_redirect = redirectNode;
       m_redirectHasBeenSet = true;
+       m_redirectHasBeenSet = true;
     }
   }
 

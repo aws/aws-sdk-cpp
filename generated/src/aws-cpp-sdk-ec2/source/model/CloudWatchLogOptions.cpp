@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CloudWatchLogOptions::CloudWatchLogOptions() : 
-    m_logEnabled(false),
-    m_logEnabledHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
-    m_logOutputFormatHasBeenSet(false)
-{
-}
-
 CloudWatchLogOptions::CloudWatchLogOptions(const XmlNode& xmlNode)
-  : CloudWatchLogOptions()
 {
   *this = xmlNode;
 }
@@ -45,18 +36,21 @@ CloudWatchLogOptions& CloudWatchLogOptions::operator =(const XmlNode& xmlNode)
     {
       m_logEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logEnabledNode.GetText()).c_str()).c_str());
       m_logEnabledHasBeenSet = true;
+       m_logEnabledHasBeenSet = true;
     }
     XmlNode logGroupArnNode = resultNode.FirstChild("logGroupArn");
     if(!logGroupArnNode.IsNull())
     {
       m_logGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(logGroupArnNode.GetText());
       m_logGroupArnHasBeenSet = true;
+       m_logGroupArnHasBeenSet = true;
     }
     XmlNode logOutputFormatNode = resultNode.FirstChild("logOutputFormat");
     if(!logOutputFormatNode.IsNull())
     {
       m_logOutputFormat = Aws::Utils::Xml::DecodeEscapedXmlText(logOutputFormatNode.GetText());
       m_logOutputFormatHasBeenSet = true;
+       m_logOutputFormatHasBeenSet = true;
     }
   }
 

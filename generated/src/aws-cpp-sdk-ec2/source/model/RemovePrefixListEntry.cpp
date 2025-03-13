@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RemovePrefixListEntry::RemovePrefixListEntry() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 RemovePrefixListEntry::RemovePrefixListEntry(const XmlNode& xmlNode)
-  : RemovePrefixListEntry()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ RemovePrefixListEntry& RemovePrefixListEntry::operator =(const XmlNode& xmlNode)
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
   }
 

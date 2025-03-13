@@ -18,13 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-ELBInfo::ELBInfo() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ELBInfo::ELBInfo(JsonView jsonValue)
-  : ELBInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ELBInfo& ELBInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

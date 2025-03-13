@@ -20,15 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Listener::Listener() : 
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 Listener::Listener(const XmlNode& xmlNode)
-  : Listener()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
   }
 

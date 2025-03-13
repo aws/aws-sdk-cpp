@@ -47,7 +47,7 @@ namespace Model
   class CreateEndpointRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API CreateEndpointRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API CreateEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -66,14 +66,12 @@ namespace Model
      * must contain only ASCII letters, digits, and hyphens. They can't end with a
      * hyphen, or contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
+    inline const Aws::String& GetEndpointIdentifier() const { return m_endpointIdentifier; }
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
-    inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
-    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
-    inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
-    inline CreateEndpointRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
-    inline CreateEndpointRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
+    template<typename EndpointIdentifierT = Aws::String>
+    void SetEndpointIdentifier(EndpointIdentifierT&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::forward<EndpointIdentifierT>(value); }
+    template<typename EndpointIdentifierT = Aws::String>
+    CreateEndpointRequest& WithEndpointIdentifier(EndpointIdentifierT&& value) { SetEndpointIdentifier(std::forward<EndpointIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +79,10 @@ namespace Model
      * <p>The type of endpoint. Valid values are <code>source</code> and
      * <code>target</code>.</p>
      */
-    inline const ReplicationEndpointTypeValue& GetEndpointType() const{ return m_endpointType; }
+    inline ReplicationEndpointTypeValue GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(ReplicationEndpointTypeValue&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline CreateEndpointRequest& WithEndpointType(const ReplicationEndpointTypeValue& value) { SetEndpointType(value); return *this;}
-    inline CreateEndpointRequest& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline void SetEndpointType(ReplicationEndpointTypeValue value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline CreateEndpointRequest& WithEndpointType(ReplicationEndpointTypeValue value) { SetEndpointType(value); return *this;}
     ///@}
 
     ///@{
@@ -105,63 +101,55 @@ namespace Model
      * <code>gcp-mysql</code>, <code>azure-sql-managed-instance</code>,
      * <code>redis</code>, <code>dms-transfer</code>.</p>
      */
-    inline const Aws::String& GetEngineName() const{ return m_engineName; }
+    inline const Aws::String& GetEngineName() const { return m_engineName; }
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
-    inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
-    inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
-    inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
-    inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
-    inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+    template<typename EngineNameT = Aws::String>
+    void SetEngineName(EngineNameT&& value) { m_engineNameHasBeenSet = true; m_engineName = std::forward<EngineNameT>(value); }
+    template<typename EngineNameT = Aws::String>
+    CreateEndpointRequest& WithEngineName(EngineNameT&& value) { SetEngineName(std::forward<EngineNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user name to be used to log in to the endpoint database.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline CreateEndpointRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline CreateEndpointRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    CreateEndpointRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password to be used to log in to the endpoint database.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline CreateEndpointRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline CreateEndpointRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    CreateEndpointRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the server where the endpoint database resides.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline CreateEndpointRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline CreateEndpointRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    CreateEndpointRequest& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline CreateEndpointRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -173,14 +161,12 @@ namespace Model
      * not specify DatabaseName. To migrate to a specific database, use this setting
      * and <code>targetDbType</code>.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline CreateEndpointRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline CreateEndpointRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    CreateEndpointRequest& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +179,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working
      * with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const Aws::String& GetExtraConnectionAttributes() const{ return m_extraConnectionAttributes; }
+    inline const Aws::String& GetExtraConnectionAttributes() const { return m_extraConnectionAttributes; }
     inline bool ExtraConnectionAttributesHasBeenSet() const { return m_extraConnectionAttributesHasBeenSet; }
-    inline void SetExtraConnectionAttributes(const Aws::String& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = value; }
-    inline void SetExtraConnectionAttributes(Aws::String&& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = std::move(value); }
-    inline void SetExtraConnectionAttributes(const char* value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes.assign(value); }
-    inline CreateEndpointRequest& WithExtraConnectionAttributes(const Aws::String& value) { SetExtraConnectionAttributes(value); return *this;}
-    inline CreateEndpointRequest& WithExtraConnectionAttributes(Aws::String&& value) { SetExtraConnectionAttributes(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithExtraConnectionAttributes(const char* value) { SetExtraConnectionAttributes(value); return *this;}
+    template<typename ExtraConnectionAttributesT = Aws::String>
+    void SetExtraConnectionAttributes(ExtraConnectionAttributesT&& value) { m_extraConnectionAttributesHasBeenSet = true; m_extraConnectionAttributes = std::forward<ExtraConnectionAttributesT>(value); }
+    template<typename ExtraConnectionAttributesT = Aws::String>
+    CreateEndpointRequest& WithExtraConnectionAttributes(ExtraConnectionAttributesT&& value) { SetExtraConnectionAttributes(std::forward<ExtraConnectionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,42 +196,38 @@ namespace Model
      * Services account has a different default encryption key for each Amazon Web
      * Services Region.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateEndpointRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateEndpointRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateEndpointRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more tags to be assigned to the endpoint.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateEndpointRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateEndpointRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEndpointRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateEndpointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateEndpointRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateEndpointRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline CreateEndpointRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline CreateEndpointRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    CreateEndpointRequest& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,12 +235,10 @@ namespace Model
      * <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The
      * default is <code>none</code> </p>
      */
-    inline const DmsSslModeValue& GetSslMode() const{ return m_sslMode; }
+    inline DmsSslModeValue GetSslMode() const { return m_sslMode; }
     inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
-    inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
-    inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = std::move(value); }
-    inline CreateEndpointRequest& WithSslMode(const DmsSslModeValue& value) { SetSslMode(value); return *this;}
-    inline CreateEndpointRequest& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
+    inline void SetSslMode(DmsSslModeValue value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
+    inline CreateEndpointRequest& WithSslMode(DmsSslModeValue value) { SetSslMode(value); return *this;}
     ///@}
 
     ///@{
@@ -269,28 +247,24 @@ namespace Model
      * use to create the endpoint. The role must allow the <code>iam:PassRole</code>
      * action.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline CreateEndpointRequest& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline CreateEndpointRequest& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    CreateEndpointRequest& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The external table definition. </p>
      */
-    inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
+    inline const Aws::String& GetExternalTableDefinition() const { return m_externalTableDefinition; }
     inline bool ExternalTableDefinitionHasBeenSet() const { return m_externalTableDefinitionHasBeenSet; }
-    inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
-    inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
-    inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
-    inline CreateEndpointRequest& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
-    inline CreateEndpointRequest& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
+    template<typename ExternalTableDefinitionT = Aws::String>
+    void SetExternalTableDefinition(ExternalTableDefinitionT&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::forward<ExternalTableDefinitionT>(value); }
+    template<typename ExternalTableDefinitionT = Aws::String>
+    CreateEndpointRequest& WithExternalTableDefinition(ExternalTableDefinitionT&& value) { SetExternalTableDefinition(std::forward<ExternalTableDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -301,12 +275,12 @@ namespace Model
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration
      * Service User Guide.</i> </p>
      */
-    inline const DynamoDbSettings& GetDynamoDbSettings() const{ return m_dynamoDbSettings; }
+    inline const DynamoDbSettings& GetDynamoDbSettings() const { return m_dynamoDbSettings; }
     inline bool DynamoDbSettingsHasBeenSet() const { return m_dynamoDbSettingsHasBeenSet; }
-    inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
-    inline void SetDynamoDbSettings(DynamoDbSettings&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::move(value); }
-    inline CreateEndpointRequest& WithDynamoDbSettings(const DynamoDbSettings& value) { SetDynamoDbSettings(value); return *this;}
-    inline CreateEndpointRequest& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
+    template<typename DynamoDbSettingsT = DynamoDbSettings>
+    void SetDynamoDbSettings(DynamoDbSettingsT&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::forward<DynamoDbSettingsT>(value); }
+    template<typename DynamoDbSettingsT = DynamoDbSettings>
+    CreateEndpointRequest& WithDynamoDbSettings(DynamoDbSettingsT&& value) { SetDynamoDbSettings(std::forward<DynamoDbSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -317,12 +291,12 @@ namespace Model
      * Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const S3Settings& GetS3Settings() const{ return m_s3Settings; }
+    inline const S3Settings& GetS3Settings() const { return m_s3Settings; }
     inline bool S3SettingsHasBeenSet() const { return m_s3SettingsHasBeenSet; }
-    inline void SetS3Settings(const S3Settings& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = value; }
-    inline void SetS3Settings(S3Settings&& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = std::move(value); }
-    inline CreateEndpointRequest& WithS3Settings(const S3Settings& value) { SetS3Settings(value); return *this;}
-    inline CreateEndpointRequest& WithS3Settings(S3Settings&& value) { SetS3Settings(std::move(value)); return *this;}
+    template<typename S3SettingsT = S3Settings>
+    void SetS3Settings(S3SettingsT&& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = std::forward<S3SettingsT>(value); }
+    template<typename S3SettingsT = S3Settings>
+    CreateEndpointRequest& WithS3Settings(S3SettingsT&& value) { SetS3Settings(std::forward<S3SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -337,12 +311,12 @@ namespace Model
      * for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
      * "BucketName": "string", } </code> </p>
      */
-    inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
+    inline const DmsTransferSettings& GetDmsTransferSettings() const { return m_dmsTransferSettings; }
     inline bool DmsTransferSettingsHasBeenSet() const { return m_dmsTransferSettingsHasBeenSet; }
-    inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
-    inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
-    inline CreateEndpointRequest& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
-    inline CreateEndpointRequest& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
+    template<typename DmsTransferSettingsT = DmsTransferSettings>
+    void SetDmsTransferSettings(DmsTransferSettingsT&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::forward<DmsTransferSettingsT>(value); }
+    template<typename DmsTransferSettingsT = DmsTransferSettings>
+    CreateEndpointRequest& WithDmsTransferSettings(DmsTransferSettingsT&& value) { SetDmsTransferSettings(std::forward<DmsTransferSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -353,12 +327,12 @@ namespace Model
      * configuration settings when using MongoDB as a source for Database Migration
      * Service</a> in the <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const MongoDbSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
+    inline const MongoDbSettings& GetMongoDbSettings() const { return m_mongoDbSettings; }
     inline bool MongoDbSettingsHasBeenSet() const { return m_mongoDbSettingsHasBeenSet; }
-    inline void SetMongoDbSettings(const MongoDbSettings& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = value; }
-    inline void SetMongoDbSettings(MongoDbSettings&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::move(value); }
-    inline CreateEndpointRequest& WithMongoDbSettings(const MongoDbSettings& value) { SetMongoDbSettings(value); return *this;}
-    inline CreateEndpointRequest& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
+    template<typename MongoDbSettingsT = MongoDbSettings>
+    void SetMongoDbSettings(MongoDbSettingsT&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::forward<MongoDbSettingsT>(value); }
+    template<typename MongoDbSettingsT = MongoDbSettings>
+    CreateEndpointRequest& WithMongoDbSettings(MongoDbSettingsT&& value) { SetMongoDbSettings(std::forward<MongoDbSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -369,12 +343,12 @@ namespace Model
      * object mapping to migrate data to a Kinesis data stream</a> in the <i>Database
      * Migration Service User Guide.</i> </p>
      */
-    inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
+    inline const KinesisSettings& GetKinesisSettings() const { return m_kinesisSettings; }
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
-    inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
-    inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
-    inline CreateEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
-    inline CreateEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
+    template<typename KinesisSettingsT = KinesisSettings>
+    void SetKinesisSettings(KinesisSettingsT&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::forward<KinesisSettingsT>(value); }
+    template<typename KinesisSettingsT = KinesisSettings>
+    CreateEndpointRequest& WithKinesisSettings(KinesisSettingsT&& value) { SetKinesisSettings(std::forward<KinesisSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -385,12 +359,12 @@ namespace Model
      * object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration
      * Service User Guide.</i> </p>
      */
-    inline const KafkaSettings& GetKafkaSettings() const{ return m_kafkaSettings; }
+    inline const KafkaSettings& GetKafkaSettings() const { return m_kafkaSettings; }
     inline bool KafkaSettingsHasBeenSet() const { return m_kafkaSettingsHasBeenSet; }
-    inline void SetKafkaSettings(const KafkaSettings& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = value; }
-    inline void SetKafkaSettings(KafkaSettings&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::move(value); }
-    inline CreateEndpointRequest& WithKafkaSettings(const KafkaSettings& value) { SetKafkaSettings(value); return *this;}
-    inline CreateEndpointRequest& WithKafkaSettings(KafkaSettings&& value) { SetKafkaSettings(std::move(value)); return *this;}
+    template<typename KafkaSettingsT = KafkaSettings>
+    void SetKafkaSettings(KafkaSettingsT&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::forward<KafkaSettingsT>(value); }
+    template<typename KafkaSettingsT = KafkaSettings>
+    CreateEndpointRequest& WithKafkaSettings(KafkaSettingsT&& value) { SetKafkaSettings(std::forward<KafkaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -401,12 +375,12 @@ namespace Model
      * Connection Attributes When Using OpenSearch as a Target for DMS</a> in the
      * <i>Database Migration Service User Guide</i>.</p>
      */
-    inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
+    inline const ElasticsearchSettings& GetElasticsearchSettings() const { return m_elasticsearchSettings; }
     inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
-    inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
-    inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
-    inline CreateEndpointRequest& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
-    inline CreateEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
+    template<typename ElasticsearchSettingsT = ElasticsearchSettings>
+    void SetElasticsearchSettings(ElasticsearchSettingsT&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::forward<ElasticsearchSettingsT>(value); }
+    template<typename ElasticsearchSettingsT = ElasticsearchSettings>
+    CreateEndpointRequest& WithElasticsearchSettings(ElasticsearchSettingsT&& value) { SetElasticsearchSettings(std::forward<ElasticsearchSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -417,22 +391,22 @@ namespace Model
      * graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
      * in the <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
+    inline const NeptuneSettings& GetNeptuneSettings() const { return m_neptuneSettings; }
     inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
-    inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
-    inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
-    inline CreateEndpointRequest& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
-    inline CreateEndpointRequest& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
+    template<typename NeptuneSettingsT = NeptuneSettings>
+    void SetNeptuneSettings(NeptuneSettingsT&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::forward<NeptuneSettingsT>(value); }
+    template<typename NeptuneSettingsT = NeptuneSettings>
+    CreateEndpointRequest& WithNeptuneSettings(NeptuneSettingsT&& value) { SetNeptuneSettings(std::forward<NeptuneSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RedshiftSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
+    inline const RedshiftSettings& GetRedshiftSettings() const { return m_redshiftSettings; }
     inline bool RedshiftSettingsHasBeenSet() const { return m_redshiftSettingsHasBeenSet; }
-    inline void SetRedshiftSettings(const RedshiftSettings& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = value; }
-    inline void SetRedshiftSettings(RedshiftSettings&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::move(value); }
-    inline CreateEndpointRequest& WithRedshiftSettings(const RedshiftSettings& value) { SetRedshiftSettings(value); return *this;}
-    inline CreateEndpointRequest& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
+    template<typename RedshiftSettingsT = RedshiftSettings>
+    void SetRedshiftSettings(RedshiftSettingsT&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::forward<RedshiftSettingsT>(value); }
+    template<typename RedshiftSettingsT = RedshiftSettings>
+    CreateEndpointRequest& WithRedshiftSettings(RedshiftSettingsT&& value) { SetRedshiftSettings(std::forward<RedshiftSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -445,12 +419,12 @@ namespace Model
      * Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const PostgreSQLSettings& GetPostgreSQLSettings() const{ return m_postgreSQLSettings; }
+    inline const PostgreSQLSettings& GetPostgreSQLSettings() const { return m_postgreSQLSettings; }
     inline bool PostgreSQLSettingsHasBeenSet() const { return m_postgreSQLSettingsHasBeenSet; }
-    inline void SetPostgreSQLSettings(const PostgreSQLSettings& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = value; }
-    inline void SetPostgreSQLSettings(PostgreSQLSettings&& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = std::move(value); }
-    inline CreateEndpointRequest& WithPostgreSQLSettings(const PostgreSQLSettings& value) { SetPostgreSQLSettings(value); return *this;}
-    inline CreateEndpointRequest& WithPostgreSQLSettings(PostgreSQLSettings&& value) { SetPostgreSQLSettings(std::move(value)); return *this;}
+    template<typename PostgreSQLSettingsT = PostgreSQLSettings>
+    void SetPostgreSQLSettings(PostgreSQLSettingsT&& value) { m_postgreSQLSettingsHasBeenSet = true; m_postgreSQLSettings = std::forward<PostgreSQLSettingsT>(value); }
+    template<typename PostgreSQLSettingsT = PostgreSQLSettings>
+    CreateEndpointRequest& WithPostgreSQLSettings(PostgreSQLSettingsT&& value) { SetPostgreSQLSettings(std::forward<PostgreSQLSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -463,12 +437,12 @@ namespace Model
      * connection attributes when using a MySQL-compatible database as a target for
      * DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const MySQLSettings& GetMySQLSettings() const{ return m_mySQLSettings; }
+    inline const MySQLSettings& GetMySQLSettings() const { return m_mySQLSettings; }
     inline bool MySQLSettingsHasBeenSet() const { return m_mySQLSettingsHasBeenSet; }
-    inline void SetMySQLSettings(const MySQLSettings& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = value; }
-    inline void SetMySQLSettings(MySQLSettings&& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = std::move(value); }
-    inline CreateEndpointRequest& WithMySQLSettings(const MySQLSettings& value) { SetMySQLSettings(value); return *this;}
-    inline CreateEndpointRequest& WithMySQLSettings(MySQLSettings&& value) { SetMySQLSettings(std::move(value)); return *this;}
+    template<typename MySQLSettingsT = MySQLSettings>
+    void SetMySQLSettings(MySQLSettingsT&& value) { m_mySQLSettingsHasBeenSet = true; m_mySQLSettings = std::forward<MySQLSettingsT>(value); }
+    template<typename MySQLSettingsT = MySQLSettings>
+    CreateEndpointRequest& WithMySQLSettings(MySQLSettingsT&& value) { SetMySQLSettings(std::forward<MySQLSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -481,12 +455,12 @@ namespace Model
      * Extra connection attributes when using Oracle as a target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const OracleSettings& GetOracleSettings() const{ return m_oracleSettings; }
+    inline const OracleSettings& GetOracleSettings() const { return m_oracleSettings; }
     inline bool OracleSettingsHasBeenSet() const { return m_oracleSettingsHasBeenSet; }
-    inline void SetOracleSettings(const OracleSettings& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = value; }
-    inline void SetOracleSettings(OracleSettings&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::move(value); }
-    inline CreateEndpointRequest& WithOracleSettings(const OracleSettings& value) { SetOracleSettings(value); return *this;}
-    inline CreateEndpointRequest& WithOracleSettings(OracleSettings&& value) { SetOracleSettings(std::move(value)); return *this;}
+    template<typename OracleSettingsT = OracleSettings>
+    void SetOracleSettings(OracleSettingsT&& value) { m_oracleSettingsHasBeenSet = true; m_oracleSettings = std::forward<OracleSettingsT>(value); }
+    template<typename OracleSettingsT = OracleSettings>
+    CreateEndpointRequest& WithOracleSettings(OracleSettingsT&& value) { SetOracleSettings(std::forward<OracleSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -499,12 +473,12 @@ namespace Model
      * connection attributes when using SAP ASE as a target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const SybaseSettings& GetSybaseSettings() const{ return m_sybaseSettings; }
+    inline const SybaseSettings& GetSybaseSettings() const { return m_sybaseSettings; }
     inline bool SybaseSettingsHasBeenSet() const { return m_sybaseSettingsHasBeenSet; }
-    inline void SetSybaseSettings(const SybaseSettings& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = value; }
-    inline void SetSybaseSettings(SybaseSettings&& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = std::move(value); }
-    inline CreateEndpointRequest& WithSybaseSettings(const SybaseSettings& value) { SetSybaseSettings(value); return *this;}
-    inline CreateEndpointRequest& WithSybaseSettings(SybaseSettings&& value) { SetSybaseSettings(std::move(value)); return *this;}
+    template<typename SybaseSettingsT = SybaseSettings>
+    void SetSybaseSettings(SybaseSettingsT&& value) { m_sybaseSettingsHasBeenSet = true; m_sybaseSettings = std::forward<SybaseSettingsT>(value); }
+    template<typename SybaseSettingsT = SybaseSettings>
+    CreateEndpointRequest& WithSybaseSettings(SybaseSettingsT&& value) { SetSybaseSettings(std::forward<SybaseSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -517,12 +491,12 @@ namespace Model
      * Extra connection attributes when using SQL Server as a target for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const MicrosoftSQLServerSettings& GetMicrosoftSQLServerSettings() const{ return m_microsoftSQLServerSettings; }
+    inline const MicrosoftSQLServerSettings& GetMicrosoftSQLServerSettings() const { return m_microsoftSQLServerSettings; }
     inline bool MicrosoftSQLServerSettingsHasBeenSet() const { return m_microsoftSQLServerSettingsHasBeenSet; }
-    inline void SetMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = value; }
-    inline void SetMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = std::move(value); }
-    inline CreateEndpointRequest& WithMicrosoftSQLServerSettings(const MicrosoftSQLServerSettings& value) { SetMicrosoftSQLServerSettings(value); return *this;}
-    inline CreateEndpointRequest& WithMicrosoftSQLServerSettings(MicrosoftSQLServerSettings&& value) { SetMicrosoftSQLServerSettings(std::move(value)); return *this;}
+    template<typename MicrosoftSQLServerSettingsT = MicrosoftSQLServerSettings>
+    void SetMicrosoftSQLServerSettings(MicrosoftSQLServerSettingsT&& value) { m_microsoftSQLServerSettingsHasBeenSet = true; m_microsoftSQLServerSettings = std::forward<MicrosoftSQLServerSettingsT>(value); }
+    template<typename MicrosoftSQLServerSettingsT = MicrosoftSQLServerSettings>
+    CreateEndpointRequest& WithMicrosoftSQLServerSettings(MicrosoftSQLServerSettingsT&& value) { SetMicrosoftSQLServerSettings(std::forward<MicrosoftSQLServerSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -533,12 +507,12 @@ namespace Model
      * connection attributes when using Db2 LUW as a source for DMS</a> in the
      * <i>Database Migration Service User Guide.</i> </p>
      */
-    inline const IBMDb2Settings& GetIBMDb2Settings() const{ return m_iBMDb2Settings; }
+    inline const IBMDb2Settings& GetIBMDb2Settings() const { return m_iBMDb2Settings; }
     inline bool IBMDb2SettingsHasBeenSet() const { return m_iBMDb2SettingsHasBeenSet; }
-    inline void SetIBMDb2Settings(const IBMDb2Settings& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = value; }
-    inline void SetIBMDb2Settings(IBMDb2Settings&& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = std::move(value); }
-    inline CreateEndpointRequest& WithIBMDb2Settings(const IBMDb2Settings& value) { SetIBMDb2Settings(value); return *this;}
-    inline CreateEndpointRequest& WithIBMDb2Settings(IBMDb2Settings&& value) { SetIBMDb2Settings(std::move(value)); return *this;}
+    template<typename IBMDb2SettingsT = IBMDb2Settings>
+    void SetIBMDb2Settings(IBMDb2SettingsT&& value) { m_iBMDb2SettingsHasBeenSet = true; m_iBMDb2Settings = std::forward<IBMDb2SettingsT>(value); }
+    template<typename IBMDb2SettingsT = IBMDb2Settings>
+    CreateEndpointRequest& WithIBMDb2Settings(IBMDb2SettingsT&& value) { SetIBMDb2Settings(std::forward<IBMDb2SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -554,67 +528,65 @@ namespace Model
      * don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
      * identifier value for the end of <code>EndpointArn</code>.</p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline CreateEndpointRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline CreateEndpointRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    CreateEndpointRequest& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DocDbSettings& GetDocDbSettings() const{ return m_docDbSettings; }
+    inline const DocDbSettings& GetDocDbSettings() const { return m_docDbSettings; }
     inline bool DocDbSettingsHasBeenSet() const { return m_docDbSettingsHasBeenSet; }
-    inline void SetDocDbSettings(const DocDbSettings& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = value; }
-    inline void SetDocDbSettings(DocDbSettings&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::move(value); }
-    inline CreateEndpointRequest& WithDocDbSettings(const DocDbSettings& value) { SetDocDbSettings(value); return *this;}
-    inline CreateEndpointRequest& WithDocDbSettings(DocDbSettings&& value) { SetDocDbSettings(std::move(value)); return *this;}
+    template<typename DocDbSettingsT = DocDbSettings>
+    void SetDocDbSettings(DocDbSettingsT&& value) { m_docDbSettingsHasBeenSet = true; m_docDbSettings = std::forward<DocDbSettingsT>(value); }
+    template<typename DocDbSettingsT = DocDbSettings>
+    CreateEndpointRequest& WithDocDbSettings(DocDbSettingsT&& value) { SetDocDbSettings(std::forward<DocDbSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings in JSON format for the target Redis endpoint.</p>
      */
-    inline const RedisSettings& GetRedisSettings() const{ return m_redisSettings; }
+    inline const RedisSettings& GetRedisSettings() const { return m_redisSettings; }
     inline bool RedisSettingsHasBeenSet() const { return m_redisSettingsHasBeenSet; }
-    inline void SetRedisSettings(const RedisSettings& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = value; }
-    inline void SetRedisSettings(RedisSettings&& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = std::move(value); }
-    inline CreateEndpointRequest& WithRedisSettings(const RedisSettings& value) { SetRedisSettings(value); return *this;}
-    inline CreateEndpointRequest& WithRedisSettings(RedisSettings&& value) { SetRedisSettings(std::move(value)); return *this;}
+    template<typename RedisSettingsT = RedisSettings>
+    void SetRedisSettings(RedisSettingsT&& value) { m_redisSettingsHasBeenSet = true; m_redisSettings = std::forward<RedisSettingsT>(value); }
+    template<typename RedisSettingsT = RedisSettings>
+    CreateEndpointRequest& WithRedisSettings(RedisSettingsT&& value) { SetRedisSettings(std::forward<RedisSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
      */
-    inline const GcpMySQLSettings& GetGcpMySQLSettings() const{ return m_gcpMySQLSettings; }
+    inline const GcpMySQLSettings& GetGcpMySQLSettings() const { return m_gcpMySQLSettings; }
     inline bool GcpMySQLSettingsHasBeenSet() const { return m_gcpMySQLSettingsHasBeenSet; }
-    inline void SetGcpMySQLSettings(const GcpMySQLSettings& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = value; }
-    inline void SetGcpMySQLSettings(GcpMySQLSettings&& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = std::move(value); }
-    inline CreateEndpointRequest& WithGcpMySQLSettings(const GcpMySQLSettings& value) { SetGcpMySQLSettings(value); return *this;}
-    inline CreateEndpointRequest& WithGcpMySQLSettings(GcpMySQLSettings&& value) { SetGcpMySQLSettings(std::move(value)); return *this;}
+    template<typename GcpMySQLSettingsT = GcpMySQLSettings>
+    void SetGcpMySQLSettings(GcpMySQLSettingsT&& value) { m_gcpMySQLSettingsHasBeenSet = true; m_gcpMySQLSettings = std::forward<GcpMySQLSettingsT>(value); }
+    template<typename GcpMySQLSettingsT = GcpMySQLSettings>
+    CreateEndpointRequest& WithGcpMySQLSettings(GcpMySQLSettingsT&& value) { SetGcpMySQLSettings(std::forward<GcpMySQLSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
      */
-    inline const TimestreamSettings& GetTimestreamSettings() const{ return m_timestreamSettings; }
+    inline const TimestreamSettings& GetTimestreamSettings() const { return m_timestreamSettings; }
     inline bool TimestreamSettingsHasBeenSet() const { return m_timestreamSettingsHasBeenSet; }
-    inline void SetTimestreamSettings(const TimestreamSettings& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = value; }
-    inline void SetTimestreamSettings(TimestreamSettings&& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = std::move(value); }
-    inline CreateEndpointRequest& WithTimestreamSettings(const TimestreamSettings& value) { SetTimestreamSettings(value); return *this;}
-    inline CreateEndpointRequest& WithTimestreamSettings(TimestreamSettings&& value) { SetTimestreamSettings(std::move(value)); return *this;}
+    template<typename TimestreamSettingsT = TimestreamSettings>
+    void SetTimestreamSettings(TimestreamSettingsT&& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = std::forward<TimestreamSettingsT>(value); }
+    template<typename TimestreamSettingsT = TimestreamSettings>
+    CreateEndpointRequest& WithTimestreamSettings(TimestreamSettingsT&& value) { SetTimestreamSettings(std::forward<TimestreamSettingsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointIdentifier;
     bool m_endpointIdentifierHasBeenSet = false;
 
-    ReplicationEndpointTypeValue m_endpointType;
+    ReplicationEndpointTypeValue m_endpointType{ReplicationEndpointTypeValue::NOT_SET};
     bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_engineName;
@@ -629,7 +601,7 @@ namespace Model
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_databaseName;
@@ -647,7 +619,7 @@ namespace Model
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
 
-    DmsSslModeValue m_sslMode;
+    DmsSslModeValue m_sslMode{DmsSslModeValue::NOT_SET};
     bool m_sslModeHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;

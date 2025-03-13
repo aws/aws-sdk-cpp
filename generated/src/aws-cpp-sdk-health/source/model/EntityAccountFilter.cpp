@@ -18,15 +18,7 @@ namespace Health
 namespace Model
 {
 
-EntityAccountFilter::EntityAccountFilter() : 
-    m_eventArnHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_statusCodesHasBeenSet(false)
-{
-}
-
 EntityAccountFilter::EntityAccountFilter(JsonView jsonValue)
-  : EntityAccountFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EntityAccountFilter& EntityAccountFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventArn"))
   {
     m_eventArn = jsonValue.GetString("eventArn");
-
     m_eventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCodes"))
   {
     Aws::Utils::Array<JsonView> statusCodesJsonList = jsonValue.GetArray("statusCodes");
@@ -56,7 +44,6 @@ EntityAccountFilter& EntityAccountFilter::operator =(JsonView jsonValue)
     }
     m_statusCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

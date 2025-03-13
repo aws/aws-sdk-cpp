@@ -18,15 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-ManagedNotificationConfigurationStructure::ManagedNotificationConfigurationStructure() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ManagedNotificationConfigurationStructure::ManagedNotificationConfigurationStructure(JsonView jsonValue)
-  : ManagedNotificationConfigurationStructure()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ManagedNotificationConfigurationStructure& ManagedNotificationConfigurationStruc
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

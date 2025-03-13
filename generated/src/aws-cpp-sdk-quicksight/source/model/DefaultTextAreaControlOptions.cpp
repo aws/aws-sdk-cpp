@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultTextAreaControlOptions::DefaultTextAreaControlOptions() : 
-    m_delimiterHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false)
-{
-}
-
 DefaultTextAreaControlOptions::DefaultTextAreaControlOptions(JsonView jsonValue)
-  : DefaultTextAreaControlOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DefaultTextAreaControlOptions& DefaultTextAreaControlOptions::operator =(JsonVie
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

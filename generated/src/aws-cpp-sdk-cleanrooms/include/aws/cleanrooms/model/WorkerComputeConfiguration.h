@@ -32,7 +32,7 @@ namespace Model
   class WorkerComputeConfiguration
   {
   public:
-    AWS_CLEANROOMS_API WorkerComputeConfiguration();
+    AWS_CLEANROOMS_API WorkerComputeConfiguration() = default;
     AWS_CLEANROOMS_API WorkerComputeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API WorkerComputeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p> The worker compute configuration type.</p>
      */
-    inline const WorkerComputeType& GetType() const{ return m_type; }
+    inline WorkerComputeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WorkerComputeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WorkerComputeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline WorkerComputeConfiguration& WithType(const WorkerComputeType& value) { SetType(value); return *this;}
-    inline WorkerComputeConfiguration& WithType(WorkerComputeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WorkerComputeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline WorkerComputeConfiguration& WithType(WorkerComputeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of workers.</p>
      */
-    inline int GetNumber() const{ return m_number; }
+    inline int GetNumber() const { return m_number; }
     inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
     inline void SetNumber(int value) { m_numberHasBeenSet = true; m_number = value; }
     inline WorkerComputeConfiguration& WithNumber(int value) { SetNumber(value); return *this;}
     ///@}
   private:
 
-    WorkerComputeType m_type;
+    WorkerComputeType m_type{WorkerComputeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_number;
+    int m_number{0};
     bool m_numberHasBeenSet = false;
   };
 

@@ -18,20 +18,7 @@ namespace ACM
 namespace Model
 {
 
-DomainValidation::DomainValidation() : 
-    m_domainNameHasBeenSet(false),
-    m_validationEmailsHasBeenSet(false),
-    m_validationDomainHasBeenSet(false),
-    m_validationStatus(DomainStatus::NOT_SET),
-    m_validationStatusHasBeenSet(false),
-    m_resourceRecordHasBeenSet(false),
-    m_validationMethod(ValidationMethod::NOT_SET),
-    m_validationMethodHasBeenSet(false)
-{
-}
-
 DomainValidation::DomainValidation(JsonView jsonValue)
-  : DomainValidation()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ DomainValidation& DomainValidation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationEmails"))
   {
     Aws::Utils::Array<JsonView> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
@@ -54,35 +39,26 @@ DomainValidation& DomainValidation::operator =(JsonView jsonValue)
     }
     m_validationEmailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationDomain"))
   {
     m_validationDomain = jsonValue.GetString("ValidationDomain");
-
     m_validationDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationStatus"))
   {
     m_validationStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("ValidationStatus"));
-
     m_validationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRecord"))
   {
     m_resourceRecord = jsonValue.GetObject("ResourceRecord");
-
     m_resourceRecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationMethod"))
   {
     m_validationMethod = ValidationMethodMapper::GetValidationMethodForName(jsonValue.GetString("ValidationMethod"));
-
     m_validationMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

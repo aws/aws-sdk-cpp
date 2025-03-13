@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RequestSpotInstancesResponse::RequestSpotInstancesResponse()
-{
-}
-
 RequestSpotInstancesResponse::RequestSpotInstancesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RequestSpotInstancesResponse& RequestSpotInstancesResponse::operator =(const Aws
     if(!spotInstanceRequestsNode.IsNull())
     {
       XmlNode spotInstanceRequestsMember = spotInstanceRequestsNode.FirstChild("item");
+      m_spotInstanceRequestsHasBeenSet = !spotInstanceRequestsMember.IsNull();
       while(!spotInstanceRequestsMember.IsNull())
       {
         m_spotInstanceRequests.push_back(spotInstanceRequestsMember);
@@ -56,6 +53,7 @@ RequestSpotInstancesResponse& RequestSpotInstancesResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RequestSpotInstancesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

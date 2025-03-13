@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SignalApplicationInstanceNodeInstancesResult::SignalApplicationInstanceNodeInstancesResult()
-{
-}
-
 SignalApplicationInstanceNodeInstancesResult::SignalApplicationInstanceNodeInstancesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ SignalApplicationInstanceNodeInstancesResult& SignalApplicationInstanceNodeInsta
   if(jsonValue.ValueExists("ApplicationInstanceId"))
   {
     m_applicationInstanceId = jsonValue.GetString("ApplicationInstanceId");
-
+    m_applicationInstanceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

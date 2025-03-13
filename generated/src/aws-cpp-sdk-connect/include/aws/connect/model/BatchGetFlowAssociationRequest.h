@@ -23,7 +23,7 @@ namespace Model
   class BatchGetFlowAssociationRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API BatchGetFlowAssociationRequest();
+    AWS_CONNECT_API BatchGetFlowAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline BatchGetFlowAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline BatchGetFlowAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline BatchGetFlowAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    BatchGetFlowAssociationRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,27 +56,24 @@ namespace Model
      * Messaging Social phone number ARN when using
      * <code>WHATSAPP_MESSAGING_PHONE_NUMBER</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline BatchGetFlowAssociationRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline BatchGetFlowAssociationRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline BatchGetFlowAssociationRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline BatchGetFlowAssociationRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline BatchGetFlowAssociationRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    BatchGetFlowAssociationRequest& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    BatchGetFlowAssociationRequest& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of resource association.</p>
      */
-    inline const ListFlowAssociationResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ListFlowAssociationResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ListFlowAssociationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ListFlowAssociationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline BatchGetFlowAssociationRequest& WithResourceType(const ListFlowAssociationResourceType& value) { SetResourceType(value); return *this;}
-    inline BatchGetFlowAssociationRequest& WithResourceType(ListFlowAssociationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ListFlowAssociationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline BatchGetFlowAssociationRequest& WithResourceType(ListFlowAssociationResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -88,7 +83,7 @@ namespace Model
     Aws::Vector<Aws::String> m_resourceIds;
     bool m_resourceIdsHasBeenSet = false;
 
-    ListFlowAssociationResourceType m_resourceType;
+    ListFlowAssociationResourceType m_resourceType{ListFlowAssociationResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

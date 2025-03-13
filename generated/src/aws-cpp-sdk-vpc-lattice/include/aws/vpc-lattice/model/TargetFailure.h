@@ -31,7 +31,7 @@ namespace Model
   class TargetFailure
   {
   public:
-    AWS_VPCLATTICE_API TargetFailure();
+    AWS_VPCLATTICE_API TargetFailure() = default;
     AWS_VPCLATTICE_API TargetFailure(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API TargetFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The failure code.</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
-    inline TargetFailure& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline TargetFailure& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline TargetFailure& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    TargetFailure& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure message.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline TargetFailure& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline TargetFailure& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline TargetFailure& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    TargetFailure& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * Lambda function. If the target group type is <code>ALB</code>, this is the ARN
      * of an Application Load Balancer.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TargetFailure& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TargetFailure& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TargetFailure& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TargetFailure& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * <p>The port on which the target is listening. This parameter doesn't apply if
      * the target is a Lambda function.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline TargetFailure& WithPort(int value) { SetPort(value); return *this;}
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

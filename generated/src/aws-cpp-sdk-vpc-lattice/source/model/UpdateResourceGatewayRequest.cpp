@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceGatewayRequest::UpdateResourceGatewayRequest() : 
-    m_resourceGatewayIdentifierHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

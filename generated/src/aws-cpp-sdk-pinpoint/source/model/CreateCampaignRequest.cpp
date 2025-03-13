@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCampaignRequest::CreateCampaignRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_writeCampaignRequestHasBeenSet(false)
-{
-}
-
 Aws::String CreateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

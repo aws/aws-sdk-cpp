@@ -18,17 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-MediaStreamOutputConfigurationRequest::MediaStreamOutputConfigurationRequest() : 
-    m_destinationConfigurationsHasBeenSet(false),
-    m_encodingName(EncodingName::NOT_SET),
-    m_encodingNameHasBeenSet(false),
-    m_encodingParametersHasBeenSet(false),
-    m_mediaStreamNameHasBeenSet(false)
-{
-}
-
 MediaStreamOutputConfigurationRequest::MediaStreamOutputConfigurationRequest(JsonView jsonValue)
-  : MediaStreamOutputConfigurationRequest()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ MediaStreamOutputConfigurationRequest& MediaStreamOutputConfigurationRequest::op
     }
     m_destinationConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encodingName"))
   {
     m_encodingName = EncodingNameMapper::GetEncodingNameForName(jsonValue.GetString("encodingName"));
-
     m_encodingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encodingParameters"))
   {
     m_encodingParameters = jsonValue.GetObject("encodingParameters");
-
     m_encodingParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaStreamName"))
   {
     m_mediaStreamName = jsonValue.GetString("mediaStreamName");
-
     m_mediaStreamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

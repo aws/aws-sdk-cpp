@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WaterfallChartAggregatedFieldWells::WaterfallChartAggregatedFieldWells() : 
-    m_categoriesHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_breakdownsHasBeenSet(false)
-{
-}
-
 WaterfallChartAggregatedFieldWells::WaterfallChartAggregatedFieldWells(JsonView jsonValue)
-  : WaterfallChartAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ WaterfallChartAggregatedFieldWells& WaterfallChartAggregatedFieldWells::operator
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -52,7 +43,6 @@ WaterfallChartAggregatedFieldWells& WaterfallChartAggregatedFieldWells::operator
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Breakdowns"))
   {
     Aws::Utils::Array<JsonView> breakdownsJsonList = jsonValue.GetArray("Breakdowns");
@@ -62,7 +52,6 @@ WaterfallChartAggregatedFieldWells& WaterfallChartAggregatedFieldWells::operator
     }
     m_breakdownsHasBeenSet = true;
   }
-
   return *this;
 }
 

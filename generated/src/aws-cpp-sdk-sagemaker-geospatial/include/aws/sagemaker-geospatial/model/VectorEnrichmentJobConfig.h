@@ -33,7 +33,7 @@ namespace Model
   class VectorEnrichmentJobConfig
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobConfig();
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobConfig() = default;
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The input structure for Map Matching operation type.</p>
      */
-    inline const MapMatchingConfig& GetMapMatchingConfig() const{ return m_mapMatchingConfig; }
+    inline const MapMatchingConfig& GetMapMatchingConfig() const { return m_mapMatchingConfig; }
     inline bool MapMatchingConfigHasBeenSet() const { return m_mapMatchingConfigHasBeenSet; }
-    inline void SetMapMatchingConfig(const MapMatchingConfig& value) { m_mapMatchingConfigHasBeenSet = true; m_mapMatchingConfig = value; }
-    inline void SetMapMatchingConfig(MapMatchingConfig&& value) { m_mapMatchingConfigHasBeenSet = true; m_mapMatchingConfig = std::move(value); }
-    inline VectorEnrichmentJobConfig& WithMapMatchingConfig(const MapMatchingConfig& value) { SetMapMatchingConfig(value); return *this;}
-    inline VectorEnrichmentJobConfig& WithMapMatchingConfig(MapMatchingConfig&& value) { SetMapMatchingConfig(std::move(value)); return *this;}
+    template<typename MapMatchingConfigT = MapMatchingConfig>
+    void SetMapMatchingConfig(MapMatchingConfigT&& value) { m_mapMatchingConfigHasBeenSet = true; m_mapMatchingConfig = std::forward<MapMatchingConfigT>(value); }
+    template<typename MapMatchingConfigT = MapMatchingConfig>
+    VectorEnrichmentJobConfig& WithMapMatchingConfig(MapMatchingConfigT&& value) { SetMapMatchingConfig(std::forward<MapMatchingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The input structure for Reverse Geocoding operation type.</p>
      */
-    inline const ReverseGeocodingConfig& GetReverseGeocodingConfig() const{ return m_reverseGeocodingConfig; }
+    inline const ReverseGeocodingConfig& GetReverseGeocodingConfig() const { return m_reverseGeocodingConfig; }
     inline bool ReverseGeocodingConfigHasBeenSet() const { return m_reverseGeocodingConfigHasBeenSet; }
-    inline void SetReverseGeocodingConfig(const ReverseGeocodingConfig& value) { m_reverseGeocodingConfigHasBeenSet = true; m_reverseGeocodingConfig = value; }
-    inline void SetReverseGeocodingConfig(ReverseGeocodingConfig&& value) { m_reverseGeocodingConfigHasBeenSet = true; m_reverseGeocodingConfig = std::move(value); }
-    inline VectorEnrichmentJobConfig& WithReverseGeocodingConfig(const ReverseGeocodingConfig& value) { SetReverseGeocodingConfig(value); return *this;}
-    inline VectorEnrichmentJobConfig& WithReverseGeocodingConfig(ReverseGeocodingConfig&& value) { SetReverseGeocodingConfig(std::move(value)); return *this;}
+    template<typename ReverseGeocodingConfigT = ReverseGeocodingConfig>
+    void SetReverseGeocodingConfig(ReverseGeocodingConfigT&& value) { m_reverseGeocodingConfigHasBeenSet = true; m_reverseGeocodingConfig = std::forward<ReverseGeocodingConfigT>(value); }
+    template<typename ReverseGeocodingConfigT = ReverseGeocodingConfig>
+    VectorEnrichmentJobConfig& WithReverseGeocodingConfig(ReverseGeocodingConfigT&& value) { SetReverseGeocodingConfig(std::forward<ReverseGeocodingConfigT>(value)); return *this;}
     ///@}
   private:
 

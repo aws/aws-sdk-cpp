@@ -18,18 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes() : 
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_childPolicy(ChildPolicy::NOT_SET),
-    m_childPolicyHasBeenSet(false),
-    m_cause(WorkflowExecutionTerminatedCause::NOT_SET),
-    m_causeHasBeenSet(false)
-{
-}
-
 WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(JsonView jsonValue)
-  : WorkflowExecutionTerminatedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ WorkflowExecutionTerminatedEventAttributes& WorkflowExecutionTerminatedEventAttr
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("childPolicy"))
   {
     m_childPolicy = ChildPolicyMapper::GetChildPolicyForName(jsonValue.GetString("childPolicy"));
-
     m_childPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = WorkflowExecutionTerminatedCauseMapper::GetWorkflowExecutionTerminatedCauseForName(jsonValue.GetString("cause"));
-
     m_causeHasBeenSet = true;
   }
-
   return *this;
 }
 

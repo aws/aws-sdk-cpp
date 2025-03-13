@@ -31,7 +31,7 @@ namespace Model
   class SessionManagerOutputUrl
   {
   public:
-    AWS_SSM_API SessionManagerOutputUrl();
+    AWS_SSM_API SessionManagerOutputUrl() = default;
     AWS_SSM_API SessionManagerOutputUrl(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API SessionManagerOutputUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetS3OutputUrl() const{ return m_s3OutputUrl; }
+    inline const Aws::String& GetS3OutputUrl() const { return m_s3OutputUrl; }
     inline bool S3OutputUrlHasBeenSet() const { return m_s3OutputUrlHasBeenSet; }
-    inline void SetS3OutputUrl(const Aws::String& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = value; }
-    inline void SetS3OutputUrl(Aws::String&& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = std::move(value); }
-    inline void SetS3OutputUrl(const char* value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl.assign(value); }
-    inline SessionManagerOutputUrl& WithS3OutputUrl(const Aws::String& value) { SetS3OutputUrl(value); return *this;}
-    inline SessionManagerOutputUrl& WithS3OutputUrl(Aws::String&& value) { SetS3OutputUrl(std::move(value)); return *this;}
-    inline SessionManagerOutputUrl& WithS3OutputUrl(const char* value) { SetS3OutputUrl(value); return *this;}
+    template<typename S3OutputUrlT = Aws::String>
+    void SetS3OutputUrl(S3OutputUrlT&& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = std::forward<S3OutputUrlT>(value); }
+    template<typename S3OutputUrlT = Aws::String>
+    SessionManagerOutputUrl& WithS3OutputUrl(S3OutputUrlT&& value) { SetS3OutputUrl(std::forward<S3OutputUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetCloudWatchOutputUrl() const{ return m_cloudWatchOutputUrl; }
+    inline const Aws::String& GetCloudWatchOutputUrl() const { return m_cloudWatchOutputUrl; }
     inline bool CloudWatchOutputUrlHasBeenSet() const { return m_cloudWatchOutputUrlHasBeenSet; }
-    inline void SetCloudWatchOutputUrl(const Aws::String& value) { m_cloudWatchOutputUrlHasBeenSet = true; m_cloudWatchOutputUrl = value; }
-    inline void SetCloudWatchOutputUrl(Aws::String&& value) { m_cloudWatchOutputUrlHasBeenSet = true; m_cloudWatchOutputUrl = std::move(value); }
-    inline void SetCloudWatchOutputUrl(const char* value) { m_cloudWatchOutputUrlHasBeenSet = true; m_cloudWatchOutputUrl.assign(value); }
-    inline SessionManagerOutputUrl& WithCloudWatchOutputUrl(const Aws::String& value) { SetCloudWatchOutputUrl(value); return *this;}
-    inline SessionManagerOutputUrl& WithCloudWatchOutputUrl(Aws::String&& value) { SetCloudWatchOutputUrl(std::move(value)); return *this;}
-    inline SessionManagerOutputUrl& WithCloudWatchOutputUrl(const char* value) { SetCloudWatchOutputUrl(value); return *this;}
+    template<typename CloudWatchOutputUrlT = Aws::String>
+    void SetCloudWatchOutputUrl(CloudWatchOutputUrlT&& value) { m_cloudWatchOutputUrlHasBeenSet = true; m_cloudWatchOutputUrl = std::forward<CloudWatchOutputUrlT>(value); }
+    template<typename CloudWatchOutputUrlT = Aws::String>
+    SessionManagerOutputUrl& WithCloudWatchOutputUrl(CloudWatchOutputUrlT&& value) { SetCloudWatchOutputUrl(std::forward<CloudWatchOutputUrlT>(value)); return *this;}
     ///@}
   private:
 

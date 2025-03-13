@@ -32,7 +32,7 @@ namespace Model
   class AwsGuardDutyDetectorFeaturesDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsGuardDutyDetectorFeaturesDetails();
+    AWS_SECURITYHUB_API AwsGuardDutyDetectorFeaturesDetails() = default;
     AWS_SECURITYHUB_API AwsGuardDutyDetectorFeaturesDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsGuardDutyDetectorFeaturesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> Indicates the name of the feature that is activated for the detector. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsGuardDutyDetectorFeaturesDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsGuardDutyDetectorFeaturesDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsGuardDutyDetectorFeaturesDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsGuardDutyDetectorFeaturesDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates the status of the feature that is activated for the detector. </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsGuardDutyDetectorFeaturesDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsGuardDutyDetectorFeaturesDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsGuardDutyDetectorFeaturesDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsGuardDutyDetectorFeaturesDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

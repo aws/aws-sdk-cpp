@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopProcessingJobRequest::StopProcessingJobRequest() : 
-    m_processingJobNameHasBeenSet(false)
-{
-}
-
 Aws::String StopProcessingJobRequest::SerializePayload() const
 {
   JsonValue payload;

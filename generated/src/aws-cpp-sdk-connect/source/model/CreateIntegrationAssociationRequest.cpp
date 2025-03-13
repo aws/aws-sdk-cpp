@@ -12,19 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIntegrationAssociationRequest::CreateIntegrationAssociationRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_integrationType(IntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false),
-    m_integrationArnHasBeenSet(false),
-    m_sourceApplicationUrlHasBeenSet(false),
-    m_sourceApplicationNameHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateIntegrationAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

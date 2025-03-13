@@ -31,7 +31,7 @@ namespace Model
   class PostAgentProfileRequest : public StreamingCodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API PostAgentProfileRequest();
+    AWS_CODEGURUPROFILER_API PostAgentProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * prevent the accidental submission of duplicate profiling data if there are
      * failures and retries. </p>
      */
-    inline const Aws::String& GetProfileToken() const{ return m_profileToken; }
+    inline const Aws::String& GetProfileToken() const { return m_profileToken; }
     inline bool ProfileTokenHasBeenSet() const { return m_profileTokenHasBeenSet; }
-    inline void SetProfileToken(const Aws::String& value) { m_profileTokenHasBeenSet = true; m_profileToken = value; }
-    inline void SetProfileToken(Aws::String&& value) { m_profileTokenHasBeenSet = true; m_profileToken = std::move(value); }
-    inline void SetProfileToken(const char* value) { m_profileTokenHasBeenSet = true; m_profileToken.assign(value); }
-    inline PostAgentProfileRequest& WithProfileToken(const Aws::String& value) { SetProfileToken(value); return *this;}
-    inline PostAgentProfileRequest& WithProfileToken(Aws::String&& value) { SetProfileToken(std::move(value)); return *this;}
-    inline PostAgentProfileRequest& WithProfileToken(const char* value) { SetProfileToken(value); return *this;}
+    template<typename ProfileTokenT = Aws::String>
+    void SetProfileToken(ProfileTokenT&& value) { m_profileTokenHasBeenSet = true; m_profileToken = std::forward<ProfileTokenT>(value); }
+    template<typename ProfileTokenT = Aws::String>
+    PostAgentProfileRequest& WithProfileToken(ProfileTokenT&& value) { SetProfileToken(std::forward<ProfileTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p> The name of the profiling group with the aggregated profile that receives
      * the submitted profiling data. </p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-    inline PostAgentProfileRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline PostAgentProfileRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline PostAgentProfileRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    PostAgentProfileRequest& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class Folder
   {
   public:
-    AWS_CODECOMMIT_API Folder();
+    AWS_CODECOMMIT_API Folder() = default;
     AWS_CODECOMMIT_API Folder(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Folder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The full SHA-1 pointer of the tree information for the commit that contains
      * the folder.</p>
      */
-    inline const Aws::String& GetTreeId() const{ return m_treeId; }
+    inline const Aws::String& GetTreeId() const { return m_treeId; }
     inline bool TreeIdHasBeenSet() const { return m_treeIdHasBeenSet; }
-    inline void SetTreeId(const Aws::String& value) { m_treeIdHasBeenSet = true; m_treeId = value; }
-    inline void SetTreeId(Aws::String&& value) { m_treeIdHasBeenSet = true; m_treeId = std::move(value); }
-    inline void SetTreeId(const char* value) { m_treeIdHasBeenSet = true; m_treeId.assign(value); }
-    inline Folder& WithTreeId(const Aws::String& value) { SetTreeId(value); return *this;}
-    inline Folder& WithTreeId(Aws::String&& value) { SetTreeId(std::move(value)); return *this;}
-    inline Folder& WithTreeId(const char* value) { SetTreeId(value); return *this;}
+    template<typename TreeIdT = Aws::String>
+    void SetTreeId(TreeIdT&& value) { m_treeIdHasBeenSet = true; m_treeId = std::forward<TreeIdT>(value); }
+    template<typename TreeIdT = Aws::String>
+    Folder& WithTreeId(TreeIdT&& value) { SetTreeId(std::forward<TreeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fully qualified path of the folder in the repository.</p>
      */
-    inline const Aws::String& GetAbsolutePath() const{ return m_absolutePath; }
+    inline const Aws::String& GetAbsolutePath() const { return m_absolutePath; }
     inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
-    inline void SetAbsolutePath(const Aws::String& value) { m_absolutePathHasBeenSet = true; m_absolutePath = value; }
-    inline void SetAbsolutePath(Aws::String&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::move(value); }
-    inline void SetAbsolutePath(const char* value) { m_absolutePathHasBeenSet = true; m_absolutePath.assign(value); }
-    inline Folder& WithAbsolutePath(const Aws::String& value) { SetAbsolutePath(value); return *this;}
-    inline Folder& WithAbsolutePath(Aws::String&& value) { SetAbsolutePath(std::move(value)); return *this;}
-    inline Folder& WithAbsolutePath(const char* value) { SetAbsolutePath(value); return *this;}
+    template<typename AbsolutePathT = Aws::String>
+    void SetAbsolutePath(AbsolutePathT&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::forward<AbsolutePathT>(value); }
+    template<typename AbsolutePathT = Aws::String>
+    Folder& WithAbsolutePath(AbsolutePathT&& value) { SetAbsolutePath(std::forward<AbsolutePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The relative path of the specified folder from the folder where the query
      * originated.</p>
      */
-    inline const Aws::String& GetRelativePath() const{ return m_relativePath; }
+    inline const Aws::String& GetRelativePath() const { return m_relativePath; }
     inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
-    inline void SetRelativePath(const Aws::String& value) { m_relativePathHasBeenSet = true; m_relativePath = value; }
-    inline void SetRelativePath(Aws::String&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::move(value); }
-    inline void SetRelativePath(const char* value) { m_relativePathHasBeenSet = true; m_relativePath.assign(value); }
-    inline Folder& WithRelativePath(const Aws::String& value) { SetRelativePath(value); return *this;}
-    inline Folder& WithRelativePath(Aws::String&& value) { SetRelativePath(std::move(value)); return *this;}
-    inline Folder& WithRelativePath(const char* value) { SetRelativePath(value); return *this;}
+    template<typename RelativePathT = Aws::String>
+    void SetRelativePath(RelativePathT&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::forward<RelativePathT>(value); }
+    template<typename RelativePathT = Aws::String>
+    Folder& WithRelativePath(RelativePathT&& value) { SetRelativePath(std::forward<RelativePathT>(value)); return *this;}
     ///@}
   private:
 

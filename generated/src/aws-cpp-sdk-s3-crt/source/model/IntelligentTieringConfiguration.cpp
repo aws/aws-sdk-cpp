@@ -20,17 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-IntelligentTieringConfiguration::IntelligentTieringConfiguration() : 
-    m_idHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_status(IntelligentTieringStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tieringsHasBeenSet(false)
-{
-}
-
 IntelligentTieringConfiguration::IntelligentTieringConfiguration(const XmlNode& xmlNode)
-  : IntelligentTieringConfiguration()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,34 @@ IntelligentTieringConfiguration& IntelligentTieringConfiguration::operator =(con
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode filterNode = resultNode.FirstChild("Filter");
     if(!filterNode.IsNull())
     {
       m_filter = filterNode;
       m_filterHasBeenSet = true;
+       m_filterHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = IntelligentTieringStatusMapper::GetIntelligentTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = IntelligentTieringStatusMapper::GetIntelligentTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode tieringsNode = resultNode.FirstChild("Tiering");
     if(!tieringsNode.IsNull())
     {
       XmlNode tieringMember = tieringsNode;
+      m_tieringsHasBeenSet = !tieringMember.IsNull();
       while(!tieringMember.IsNull())
       {
         m_tierings.push_back(tieringMember);
         tieringMember = tieringMember.NextNode("Tiering");
       }
 
-      m_tieringsHasBeenSet = true;
+       m_tieringsHasBeenSet = true;
     }
   }
 

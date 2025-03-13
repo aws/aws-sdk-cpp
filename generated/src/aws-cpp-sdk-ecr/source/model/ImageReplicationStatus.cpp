@@ -18,17 +18,7 @@ namespace ECR
 namespace Model
 {
 
-ImageReplicationStatus::ImageReplicationStatus() : 
-    m_regionHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_status(ReplicationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 ImageReplicationStatus::ImageReplicationStatus(JsonView jsonValue)
-  : ImageReplicationStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ImageReplicationStatus& ImageReplicationStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReplicationStatusMapper::GetReplicationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCode"))
   {
     m_failureCode = jsonValue.GetString("failureCode");
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

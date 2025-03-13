@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopChannelRequest::StopChannelRequest() : 
-    m_channelIdHasBeenSet(false)
-{
-}
-
 Aws::String StopChannelRequest::SerializePayload() const
 {
   return {};

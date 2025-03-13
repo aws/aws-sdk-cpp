@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-StateExitedEventDetails::StateExitedEventDetails() : 
-    m_nameHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputDetailsHasBeenSet(false),
-    m_assignedVariablesHasBeenSet(false),
-    m_assignedVariablesDetailsHasBeenSet(false)
-{
-}
-
 StateExitedEventDetails::StateExitedEventDetails(JsonView jsonValue)
-  : StateExitedEventDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ StateExitedEventDetails& StateExitedEventDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetString("output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputDetails"))
   {
     m_outputDetails = jsonValue.GetObject("outputDetails");
-
     m_outputDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assignedVariables"))
   {
     Aws::Map<Aws::String, JsonView> assignedVariablesJsonMap = jsonValue.GetObject("assignedVariables").GetAllObjects();
@@ -65,14 +49,11 @@ StateExitedEventDetails& StateExitedEventDetails::operator =(JsonView jsonValue)
     }
     m_assignedVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assignedVariablesDetails"))
   {
     m_assignedVariablesDetails = jsonValue.GetObject("assignedVariablesDetails");
-
     m_assignedVariablesDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

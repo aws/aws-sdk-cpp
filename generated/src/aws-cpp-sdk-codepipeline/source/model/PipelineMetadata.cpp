@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-PipelineMetadata::PipelineMetadata() : 
-    m_pipelineArnHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_updatedHasBeenSet(false),
-    m_pollingDisabledAtHasBeenSet(false)
-{
-}
-
 PipelineMetadata::PipelineMetadata(JsonView jsonValue)
-  : PipelineMetadata()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PipelineMetadata& PipelineMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineArn"))
   {
     m_pipelineArn = jsonValue.GetString("pipelineArn");
-
     m_pipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updated"))
   {
     m_updated = jsonValue.GetDouble("updated");
-
     m_updatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pollingDisabledAt"))
   {
     m_pollingDisabledAt = jsonValue.GetDouble("pollingDisabledAt");
-
     m_pollingDisabledAtHasBeenSet = true;
   }
-
   return *this;
 }
 

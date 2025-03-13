@@ -30,7 +30,7 @@ namespace Model
   class HistoricalOptions
   {
   public:
-    AWS_BUDGETS_API HistoricalOptions();
+    AWS_BUDGETS_API HistoricalOptions() = default;
     AWS_BUDGETS_API HistoricalOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API HistoricalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</p>
      * </li> </ul>
      */
-    inline int GetBudgetAdjustmentPeriod() const{ return m_budgetAdjustmentPeriod; }
+    inline int GetBudgetAdjustmentPeriod() const { return m_budgetAdjustmentPeriod; }
     inline bool BudgetAdjustmentPeriodHasBeenSet() const { return m_budgetAdjustmentPeriodHasBeenSet; }
     inline void SetBudgetAdjustmentPeriod(int value) { m_budgetAdjustmentPeriodHasBeenSet = true; m_budgetAdjustmentPeriod = value; }
     inline HistoricalOptions& WithBudgetAdjustmentPeriod(int value) { SetBudgetAdjustmentPeriod(value); return *this;}
@@ -69,17 +69,17 @@ namespace Model
      * calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost
      * data.</p>
      */
-    inline int GetLookBackAvailablePeriods() const{ return m_lookBackAvailablePeriods; }
+    inline int GetLookBackAvailablePeriods() const { return m_lookBackAvailablePeriods; }
     inline bool LookBackAvailablePeriodsHasBeenSet() const { return m_lookBackAvailablePeriodsHasBeenSet; }
     inline void SetLookBackAvailablePeriods(int value) { m_lookBackAvailablePeriodsHasBeenSet = true; m_lookBackAvailablePeriods = value; }
     inline HistoricalOptions& WithLookBackAvailablePeriods(int value) { SetLookBackAvailablePeriods(value); return *this;}
     ///@}
   private:
 
-    int m_budgetAdjustmentPeriod;
+    int m_budgetAdjustmentPeriod{0};
     bool m_budgetAdjustmentPeriodHasBeenSet = false;
 
-    int m_lookBackAvailablePeriods;
+    int m_lookBackAvailablePeriods{0};
     bool m_lookBackAvailablePeriodsHasBeenSet = false;
   };
 

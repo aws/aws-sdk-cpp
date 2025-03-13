@@ -32,7 +32,7 @@ namespace Model
   class EbsBlockDeviceResponse
   {
   public:
-    AWS_EC2_API EbsBlockDeviceResponse();
+    AWS_EC2_API EbsBlockDeviceResponse() = default;
     AWS_EC2_API EbsBlockDeviceResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API EbsBlockDeviceResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Indicates whether the volume is encrypted.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline EbsBlockDeviceResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
     inline EbsBlockDeviceResponse& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * represents the baseline performance of the volume and the rate at which the
      * volume accumulates I/O credits for bursting.</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline EbsBlockDeviceResponse& WithIops(int value) { SetIops(value); return *this;}
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>The throughput that the volume supports, in MiB/s.</p>
      */
-    inline int GetThroughput() const{ return m_throughput; }
+    inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline EbsBlockDeviceResponse& WithThroughput(int value) { SetThroughput(value); return *this;}
@@ -89,35 +89,31 @@ namespace Model
      * <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed
      * KMS key to use for EBS encryption.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline EbsBlockDeviceResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline EbsBlockDeviceResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline EbsBlockDeviceResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    EbsBlockDeviceResponse& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline EbsBlockDeviceResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline EbsBlockDeviceResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline EbsBlockDeviceResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    EbsBlockDeviceResponse& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline int GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const { return m_volumeSize; }
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline EbsBlockDeviceResponse& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
@@ -129,25 +125,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
      * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
-    inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+    inline VolumeType GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline EbsBlockDeviceResponse& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
-    inline EbsBlockDeviceResponse& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
+    inline void SetVolumeType(VolumeType value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
+    inline EbsBlockDeviceResponse& WithVolumeType(VolumeType value) { SetVolumeType(value); return *this;}
     ///@}
   private:
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
-    bool m_deleteOnTermination;
+    bool m_deleteOnTermination{false};
     bool m_deleteOnTerminationHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    int m_throughput;
+    int m_throughput{0};
     bool m_throughputHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
@@ -156,10 +150,10 @@ namespace Model
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_volumeSize;
+    int m_volumeSize{0};
     bool m_volumeSizeHasBeenSet = false;
 
-    VolumeType m_volumeType;
+    VolumeType m_volumeType{VolumeType::NOT_SET};
     bool m_volumeTypeHasBeenSet = false;
   };
 

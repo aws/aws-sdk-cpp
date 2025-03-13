@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyTrafficMirrorFilterNetworkServicesResponse::ModifyTrafficMirrorFilterNetworkServicesResponse()
-{
-}
-
 ModifyTrafficMirrorFilterNetworkServicesResponse::ModifyTrafficMirrorFilterNetworkServicesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyTrafficMirrorFilterNetworkServicesResponse& ModifyTrafficMirrorFilterNetwo
     if(!trafficMirrorFilterNode.IsNull())
     {
       m_trafficMirrorFilter = trafficMirrorFilterNode;
+      m_trafficMirrorFilterHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyTrafficMirrorFilterNetworkServicesResponse& ModifyTrafficMirrorFilterNetwo
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyTrafficMirrorFilterNetworkServicesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

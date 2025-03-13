@@ -32,7 +32,7 @@ namespace Model
   class SamplingStrategy
   {
   public:
-    AWS_XRAY_API SamplingStrategy();
+    AWS_XRAY_API SamplingStrategy() = default;
     AWS_XRAY_API SamplingStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API SamplingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The name of a sampling rule.</p>
      */
-    inline const SamplingStrategyName& GetName() const{ return m_name; }
+    inline SamplingStrategyName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SamplingStrategyName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SamplingStrategyName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SamplingStrategy& WithName(const SamplingStrategyName& value) { SetName(value); return *this;}
-    inline SamplingStrategy& WithName(SamplingStrategyName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SamplingStrategyName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SamplingStrategy& WithName(SamplingStrategyName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of a sampling rule.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline SamplingStrategy& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    SamplingStrategyName m_name;
+    SamplingStrategyName m_name{SamplingStrategyName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

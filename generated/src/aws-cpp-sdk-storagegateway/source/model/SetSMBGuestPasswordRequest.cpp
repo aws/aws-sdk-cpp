@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetSMBGuestPasswordRequest::SetSMBGuestPasswordRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Aws::String SetSMBGuestPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

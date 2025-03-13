@@ -33,7 +33,7 @@ namespace Model
   class ProtectConfigurationRuleSetNumberOverride
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationRuleSetNumberOverride();
+    AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationRuleSetNumberOverride() = default;
     AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationRuleSetNumberOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationRuleSetNumberOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The destination phone number in E.164 format.</p>
      */
-    inline const Aws::String& GetDestinationPhoneNumber() const{ return m_destinationPhoneNumber; }
+    inline const Aws::String& GetDestinationPhoneNumber() const { return m_destinationPhoneNumber; }
     inline bool DestinationPhoneNumberHasBeenSet() const { return m_destinationPhoneNumberHasBeenSet; }
-    inline void SetDestinationPhoneNumber(const Aws::String& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = value; }
-    inline void SetDestinationPhoneNumber(Aws::String&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::move(value); }
-    inline void SetDestinationPhoneNumber(const char* value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber.assign(value); }
-    inline ProtectConfigurationRuleSetNumberOverride& WithDestinationPhoneNumber(const Aws::String& value) { SetDestinationPhoneNumber(value); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithDestinationPhoneNumber(Aws::String&& value) { SetDestinationPhoneNumber(std::move(value)); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithDestinationPhoneNumber(const char* value) { SetDestinationPhoneNumber(value); return *this;}
+    template<typename DestinationPhoneNumberT = Aws::String>
+    void SetDestinationPhoneNumber(DestinationPhoneNumberT&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::forward<DestinationPhoneNumberT>(value); }
+    template<typename DestinationPhoneNumberT = Aws::String>
+    ProtectConfigurationRuleSetNumberOverride& WithDestinationPhoneNumber(DestinationPhoneNumberT&& value) { SetDestinationPhoneNumber(std::forward<DestinationPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>The time when the rule was created, in <a
      * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline ProtectConfigurationRuleSetNumberOverride& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    ProtectConfigurationRuleSetNumberOverride& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * <p>The action for the rule to perform of either blocking or allowing messages to
      * the destination phone number.</p>
      */
-    inline const ProtectConfigurationRuleOverrideAction& GetAction() const{ return m_action; }
+    inline ProtectConfigurationRuleOverrideAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ProtectConfigurationRuleOverrideAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ProtectConfigurationRuleOverrideAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ProtectConfigurationRuleSetNumberOverride& WithAction(const ProtectConfigurationRuleOverrideAction& value) { SetAction(value); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithAction(ProtectConfigurationRuleOverrideAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ProtectConfigurationRuleOverrideAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ProtectConfigurationRuleSetNumberOverride& WithAction(ProtectConfigurationRuleOverrideAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
      * region.</p>
      */
-    inline const Aws::String& GetIsoCountryCode() const{ return m_isoCountryCode; }
+    inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
     inline bool IsoCountryCodeHasBeenSet() const { return m_isoCountryCodeHasBeenSet; }
-    inline void SetIsoCountryCode(const Aws::String& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = value; }
-    inline void SetIsoCountryCode(Aws::String&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::move(value); }
-    inline void SetIsoCountryCode(const char* value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode.assign(value); }
-    inline ProtectConfigurationRuleSetNumberOverride& WithIsoCountryCode(const Aws::String& value) { SetIsoCountryCode(value); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithIsoCountryCode(Aws::String&& value) { SetIsoCountryCode(std::move(value)); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithIsoCountryCode(const char* value) { SetIsoCountryCode(value); return *this;}
+    template<typename IsoCountryCodeT = Aws::String>
+    void SetIsoCountryCode(IsoCountryCodeT&& value) { m_isoCountryCodeHasBeenSet = true; m_isoCountryCode = std::forward<IsoCountryCodeT>(value); }
+    template<typename IsoCountryCodeT = Aws::String>
+    ProtectConfigurationRuleSetNumberOverride& WithIsoCountryCode(IsoCountryCodeT&& value) { SetIsoCountryCode(std::forward<IsoCountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,28 +93,28 @@ namespace Model
      * <p>The time the rule will expire at. If <code>ExpirationTimestamp</code> is not
      * set then the rule will not expire.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationTimestamp() const{ return m_expirationTimestamp; }
+    inline const Aws::Utils::DateTime& GetExpirationTimestamp() const { return m_expirationTimestamp; }
     inline bool ExpirationTimestampHasBeenSet() const { return m_expirationTimestampHasBeenSet; }
-    inline void SetExpirationTimestamp(const Aws::Utils::DateTime& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = value; }
-    inline void SetExpirationTimestamp(Aws::Utils::DateTime&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = std::move(value); }
-    inline ProtectConfigurationRuleSetNumberOverride& WithExpirationTimestamp(const Aws::Utils::DateTime& value) { SetExpirationTimestamp(value); return *this;}
-    inline ProtectConfigurationRuleSetNumberOverride& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(std::move(value)); return *this;}
+    template<typename ExpirationTimestampT = Aws::Utils::DateTime>
+    void SetExpirationTimestamp(ExpirationTimestampT&& value) { m_expirationTimestampHasBeenSet = true; m_expirationTimestamp = std::forward<ExpirationTimestampT>(value); }
+    template<typename ExpirationTimestampT = Aws::Utils::DateTime>
+    ProtectConfigurationRuleSetNumberOverride& WithExpirationTimestamp(ExpirationTimestampT&& value) { SetExpirationTimestamp(std::forward<ExpirationTimestampT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationPhoneNumber;
     bool m_destinationPhoneNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    ProtectConfigurationRuleOverrideAction m_action;
+    ProtectConfigurationRuleOverrideAction m_action{ProtectConfigurationRuleOverrideAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_isoCountryCode;
     bool m_isoCountryCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTimestamp;
+    Aws::Utils::DateTime m_expirationTimestamp{};
     bool m_expirationTimestampHasBeenSet = false;
   };
 

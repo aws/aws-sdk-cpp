@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SnowflakeRoleConfiguration::SnowflakeRoleConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_snowflakeRoleHasBeenSet(false)
-{
-}
-
 SnowflakeRoleConfiguration::SnowflakeRoleConfiguration(JsonView jsonValue)
-  : SnowflakeRoleConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SnowflakeRoleConfiguration& SnowflakeRoleConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowflakeRole"))
   {
     m_snowflakeRole = jsonValue.GetString("SnowflakeRole");
-
     m_snowflakeRoleHasBeenSet = true;
   }
-
   return *this;
 }
 

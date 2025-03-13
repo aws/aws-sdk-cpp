@@ -18,13 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-SlotDefaultValueSpec::SlotDefaultValueSpec() : 
-    m_defaultValueListHasBeenSet(false)
-{
-}
-
 SlotDefaultValueSpec::SlotDefaultValueSpec(JsonView jsonValue)
-  : SlotDefaultValueSpec()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SlotDefaultValueSpec& SlotDefaultValueSpec::operator =(JsonView jsonValue)
     }
     m_defaultValueListHasBeenSet = true;
   }
-
   return *this;
 }
 

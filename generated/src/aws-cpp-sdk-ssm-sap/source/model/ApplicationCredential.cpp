@@ -18,16 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-ApplicationCredential::ApplicationCredential() : 
-    m_databaseNameHasBeenSet(false),
-    m_credentialType(CredentialType::NOT_SET),
-    m_credentialTypeHasBeenSet(false),
-    m_secretIdHasBeenSet(false)
-{
-}
-
 ApplicationCredential::ApplicationCredential(JsonView jsonValue)
-  : ApplicationCredential()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ApplicationCredential& ApplicationCredential::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CredentialType"))
   {
     m_credentialType = CredentialTypeMapper::GetCredentialTypeForName(jsonValue.GetString("CredentialType"));
-
     m_credentialTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretId"))
   {
     m_secretId = jsonValue.GetString("SecretId");
-
     m_secretIdHasBeenSet = true;
   }
-
   return *this;
 }
 

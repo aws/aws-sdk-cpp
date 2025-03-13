@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIAMPolicyAssignmentRequest::DeleteIAMPolicyAssignmentRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_assignmentNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIAMPolicyAssignmentRequest::SerializePayload() const
 {
   return {};

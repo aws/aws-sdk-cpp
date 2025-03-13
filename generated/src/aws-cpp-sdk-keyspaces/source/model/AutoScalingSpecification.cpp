@@ -18,14 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-AutoScalingSpecification::AutoScalingSpecification() : 
-    m_writeCapacityAutoScalingHasBeenSet(false),
-    m_readCapacityAutoScalingHasBeenSet(false)
-{
-}
-
 AutoScalingSpecification::AutoScalingSpecification(JsonView jsonValue)
-  : AutoScalingSpecification()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoScalingSpecification& AutoScalingSpecification::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("writeCapacityAutoScaling"))
   {
     m_writeCapacityAutoScaling = jsonValue.GetObject("writeCapacityAutoScaling");
-
     m_writeCapacityAutoScalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readCapacityAutoScaling"))
   {
     m_readCapacityAutoScaling = jsonValue.GetObject("readCapacityAutoScaling");
-
     m_readCapacityAutoScalingHasBeenSet = true;
   }
-
   return *this;
 }
 

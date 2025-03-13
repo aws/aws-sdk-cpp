@@ -18,20 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ClipLimits::ClipLimits() : 
-    m_maximumRGBTolerance(0),
-    m_maximumRGBToleranceHasBeenSet(false),
-    m_maximumYUV(0),
-    m_maximumYUVHasBeenSet(false),
-    m_minimumRGBTolerance(0),
-    m_minimumRGBToleranceHasBeenSet(false),
-    m_minimumYUV(0),
-    m_minimumYUVHasBeenSet(false)
-{
-}
-
 ClipLimits::ClipLimits(JsonView jsonValue)
-  : ClipLimits()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ClipLimits& ClipLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maximumRGBTolerance"))
   {
     m_maximumRGBTolerance = jsonValue.GetInteger("maximumRGBTolerance");
-
     m_maximumRGBToleranceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumYUV"))
   {
     m_maximumYUV = jsonValue.GetInteger("maximumYUV");
-
     m_maximumYUVHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumRGBTolerance"))
   {
     m_minimumRGBTolerance = jsonValue.GetInteger("minimumRGBTolerance");
-
     m_minimumRGBToleranceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumYUV"))
   {
     m_minimumYUV = jsonValue.GetInteger("minimumYUV");
-
     m_minimumYUVHasBeenSet = true;
   }
-
   return *this;
 }
 

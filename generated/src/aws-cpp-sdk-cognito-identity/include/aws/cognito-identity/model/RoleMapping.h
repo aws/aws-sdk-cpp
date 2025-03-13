@@ -33,7 +33,7 @@ namespace Model
   class RoleMapping
   {
   public:
-    AWS_COGNITOIDENTITY_API RoleMapping();
+    AWS_COGNITOIDENTITY_API RoleMapping() = default;
     AWS_COGNITOIDENTITY_API RoleMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITY_API RoleMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * token to map groups to roles. Rules will attempt to match claims from the token
      * to map to a role.</p>
      */
-    inline const RoleMappingType& GetType() const{ return m_type; }
+    inline RoleMappingType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RoleMappingType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RoleMappingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RoleMapping& WithType(const RoleMappingType& value) { SetType(value); return *this;}
-    inline RoleMapping& WithType(RoleMappingType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RoleMappingType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RoleMapping& WithType(RoleMappingType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * type, or there is no <code>cognito:preferred_role</code> claim and there are
      * multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
      */
-    inline const AmbiguousRoleResolutionType& GetAmbiguousRoleResolution() const{ return m_ambiguousRoleResolution; }
+    inline AmbiguousRoleResolutionType GetAmbiguousRoleResolution() const { return m_ambiguousRoleResolution; }
     inline bool AmbiguousRoleResolutionHasBeenSet() const { return m_ambiguousRoleResolutionHasBeenSet; }
-    inline void SetAmbiguousRoleResolution(const AmbiguousRoleResolutionType& value) { m_ambiguousRoleResolutionHasBeenSet = true; m_ambiguousRoleResolution = value; }
-    inline void SetAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { m_ambiguousRoleResolutionHasBeenSet = true; m_ambiguousRoleResolution = std::move(value); }
-    inline RoleMapping& WithAmbiguousRoleResolution(const AmbiguousRoleResolutionType& value) { SetAmbiguousRoleResolution(value); return *this;}
-    inline RoleMapping& WithAmbiguousRoleResolution(AmbiguousRoleResolutionType&& value) { SetAmbiguousRoleResolution(std::move(value)); return *this;}
+    inline void SetAmbiguousRoleResolution(AmbiguousRoleResolutionType value) { m_ambiguousRoleResolutionHasBeenSet = true; m_ambiguousRoleResolution = value; }
+    inline RoleMapping& WithAmbiguousRoleResolution(AmbiguousRoleResolutionType value) { SetAmbiguousRoleResolution(value); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +71,19 @@ namespace Model
      * <p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules
      * as the role mapping type, <code>RulesConfiguration</code> is required.</p>
      */
-    inline const RulesConfigurationType& GetRulesConfiguration() const{ return m_rulesConfiguration; }
+    inline const RulesConfigurationType& GetRulesConfiguration() const { return m_rulesConfiguration; }
     inline bool RulesConfigurationHasBeenSet() const { return m_rulesConfigurationHasBeenSet; }
-    inline void SetRulesConfiguration(const RulesConfigurationType& value) { m_rulesConfigurationHasBeenSet = true; m_rulesConfiguration = value; }
-    inline void SetRulesConfiguration(RulesConfigurationType&& value) { m_rulesConfigurationHasBeenSet = true; m_rulesConfiguration = std::move(value); }
-    inline RoleMapping& WithRulesConfiguration(const RulesConfigurationType& value) { SetRulesConfiguration(value); return *this;}
-    inline RoleMapping& WithRulesConfiguration(RulesConfigurationType&& value) { SetRulesConfiguration(std::move(value)); return *this;}
+    template<typename RulesConfigurationT = RulesConfigurationType>
+    void SetRulesConfiguration(RulesConfigurationT&& value) { m_rulesConfigurationHasBeenSet = true; m_rulesConfiguration = std::forward<RulesConfigurationT>(value); }
+    template<typename RulesConfigurationT = RulesConfigurationType>
+    RoleMapping& WithRulesConfiguration(RulesConfigurationT&& value) { SetRulesConfiguration(std::forward<RulesConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    RoleMappingType m_type;
+    RoleMappingType m_type{RoleMappingType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    AmbiguousRoleResolutionType m_ambiguousRoleResolution;
+    AmbiguousRoleResolutionType m_ambiguousRoleResolution{AmbiguousRoleResolutionType::NOT_SET};
     bool m_ambiguousRoleResolutionHasBeenSet = false;
 
     RulesConfigurationType m_rulesConfiguration;

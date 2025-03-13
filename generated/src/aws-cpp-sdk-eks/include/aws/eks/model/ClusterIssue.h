@@ -33,7 +33,7 @@ namespace Model
   class ClusterIssue
   {
   public:
-    AWS_EKS_API ClusterIssue();
+    AWS_EKS_API ClusterIssue() = default;
     AWS_EKS_API ClusterIssue(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API ClusterIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,45 +43,40 @@ namespace Model
     /**
      * <p>The error code of the issue.</p>
      */
-    inline const ClusterIssueCode& GetCode() const{ return m_code; }
+    inline ClusterIssueCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ClusterIssueCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ClusterIssueCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ClusterIssue& WithCode(const ClusterIssueCode& value) { SetCode(value); return *this;}
-    inline ClusterIssue& WithCode(ClusterIssueCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ClusterIssueCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ClusterIssue& WithCode(ClusterIssueCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the issue.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ClusterIssue& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ClusterIssue& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ClusterIssue& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ClusterIssue& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource IDs that the issue relates to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+    inline const Aws::Vector<Aws::String>& GetResourceIds() const { return m_resourceIds; }
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
-    inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
-    inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
-    inline ClusterIssue& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
-    inline ClusterIssue& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
-    inline ClusterIssue& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
-    inline ClusterIssue& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
-    inline ClusterIssue& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    void SetResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::forward<ResourceIdsT>(value); }
+    template<typename ResourceIdsT = Aws::Vector<Aws::String>>
+    ClusterIssue& WithResourceIds(ResourceIdsT&& value) { SetResourceIds(std::forward<ResourceIdsT>(value)); return *this;}
+    template<typename ResourceIdsT = Aws::String>
+    ClusterIssue& AddResourceIds(ResourceIdsT&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.emplace_back(std::forward<ResourceIdsT>(value)); return *this; }
     ///@}
   private:
 
-    ClusterIssueCode m_code;
+    ClusterIssueCode m_code{ClusterIssueCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

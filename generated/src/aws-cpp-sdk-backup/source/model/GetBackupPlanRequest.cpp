@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBackupPlanRequest::GetBackupPlanRequest() : 
-    m_backupPlanIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetBackupPlanRequest::SerializePayload() const
 {
   return {};

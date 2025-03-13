@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-StudioWebPortalSettings::StudioWebPortalSettings() : 
-    m_hiddenMlToolsHasBeenSet(false),
-    m_hiddenAppTypesHasBeenSet(false),
-    m_hiddenInstanceTypesHasBeenSet(false),
-    m_hiddenSageMakerImageVersionAliasesHasBeenSet(false)
-{
-}
-
 StudioWebPortalSettings::StudioWebPortalSettings(JsonView jsonValue)
-  : StudioWebPortalSettings()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ StudioWebPortalSettings& StudioWebPortalSettings::operator =(JsonView jsonValue)
     }
     m_hiddenMlToolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiddenAppTypes"))
   {
     Aws::Utils::Array<JsonView> hiddenAppTypesJsonList = jsonValue.GetArray("HiddenAppTypes");
@@ -53,7 +43,6 @@ StudioWebPortalSettings& StudioWebPortalSettings::operator =(JsonView jsonValue)
     }
     m_hiddenAppTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiddenInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> hiddenInstanceTypesJsonList = jsonValue.GetArray("HiddenInstanceTypes");
@@ -63,7 +52,6 @@ StudioWebPortalSettings& StudioWebPortalSettings::operator =(JsonView jsonValue)
     }
     m_hiddenInstanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiddenSageMakerImageVersionAliases"))
   {
     Aws::Utils::Array<JsonView> hiddenSageMakerImageVersionAliasesJsonList = jsonValue.GetArray("HiddenSageMakerImageVersionAliases");
@@ -73,7 +61,6 @@ StudioWebPortalSettings& StudioWebPortalSettings::operator =(JsonView jsonValue)
     }
     m_hiddenSageMakerImageVersionAliasesHasBeenSet = true;
   }
-
   return *this;
 }
 

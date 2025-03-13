@@ -32,7 +32,7 @@ namespace Model
   class GetApiResult
   {
   public:
-    AWS_APIGATEWAYV2_API GetApiResult();
+    AWS_APIGATEWAYV2_API GetApiResult() = default;
     AWS_APIGATEWAYV2_API GetApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAYV2_API GetApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * The stage name is typically appended to this URI to form a complete path to a
      * deployed API stage.</p>
      */
-    inline const Aws::String& GetApiEndpoint() const{ return m_apiEndpoint; }
-    inline void SetApiEndpoint(const Aws::String& value) { m_apiEndpoint = value; }
-    inline void SetApiEndpoint(Aws::String&& value) { m_apiEndpoint = std::move(value); }
-    inline void SetApiEndpoint(const char* value) { m_apiEndpoint.assign(value); }
-    inline GetApiResult& WithApiEndpoint(const Aws::String& value) { SetApiEndpoint(value); return *this;}
-    inline GetApiResult& WithApiEndpoint(Aws::String&& value) { SetApiEndpoint(std::move(value)); return *this;}
-    inline GetApiResult& WithApiEndpoint(const char* value) { SetApiEndpoint(value); return *this;}
+    inline const Aws::String& GetApiEndpoint() const { return m_apiEndpoint; }
+    template<typename ApiEndpointT = Aws::String>
+    void SetApiEndpoint(ApiEndpointT&& value) { m_apiEndpointHasBeenSet = true; m_apiEndpoint = std::forward<ApiEndpointT>(value); }
+    template<typename ApiEndpointT = Aws::String>
+    GetApiResult& WithApiEndpoint(ApiEndpointT&& value) { SetApiEndpoint(std::forward<ApiEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,8 +56,8 @@ namespace Model
      * delete a managed API by using API Gateway. A managed API can be deleted only
      * through the tooling or service that created it.</p>
      */
-    inline bool GetApiGatewayManaged() const{ return m_apiGatewayManaged; }
-    inline void SetApiGatewayManaged(bool value) { m_apiGatewayManaged = value; }
+    inline bool GetApiGatewayManaged() const { return m_apiGatewayManaged; }
+    inline void SetApiGatewayManaged(bool value) { m_apiGatewayManagedHasBeenSet = true; m_apiGatewayManaged = value; }
     inline GetApiResult& WithApiGatewayManaged(bool value) { SetApiGatewayManaged(value); return *this;}
     ///@}
 
@@ -67,13 +65,11 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
-    inline void SetApiId(const Aws::String& value) { m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiId.assign(value); }
-    inline GetApiResult& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline GetApiResult& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline GetApiResult& WithApiId(const char* value) { SetApiId(value); return *this;}
+    inline const Aws::String& GetApiId() const { return m_apiId; }
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    GetApiResult& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,48 +78,44 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
-    inline const Aws::String& GetApiKeySelectionExpression() const{ return m_apiKeySelectionExpression; }
-    inline void SetApiKeySelectionExpression(const Aws::String& value) { m_apiKeySelectionExpression = value; }
-    inline void SetApiKeySelectionExpression(Aws::String&& value) { m_apiKeySelectionExpression = std::move(value); }
-    inline void SetApiKeySelectionExpression(const char* value) { m_apiKeySelectionExpression.assign(value); }
-    inline GetApiResult& WithApiKeySelectionExpression(const Aws::String& value) { SetApiKeySelectionExpression(value); return *this;}
-    inline GetApiResult& WithApiKeySelectionExpression(Aws::String&& value) { SetApiKeySelectionExpression(std::move(value)); return *this;}
-    inline GetApiResult& WithApiKeySelectionExpression(const char* value) { SetApiKeySelectionExpression(value); return *this;}
+    inline const Aws::String& GetApiKeySelectionExpression() const { return m_apiKeySelectionExpression; }
+    template<typename ApiKeySelectionExpressionT = Aws::String>
+    void SetApiKeySelectionExpression(ApiKeySelectionExpressionT&& value) { m_apiKeySelectionExpressionHasBeenSet = true; m_apiKeySelectionExpression = std::forward<ApiKeySelectionExpressionT>(value); }
+    template<typename ApiKeySelectionExpressionT = Aws::String>
+    GetApiResult& WithApiKeySelectionExpression(ApiKeySelectionExpressionT&& value) { SetApiKeySelectionExpression(std::forward<ApiKeySelectionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A CORS configuration. Supported only for HTTP APIs.</p>
      */
-    inline const Cors& GetCorsConfiguration() const{ return m_corsConfiguration; }
-    inline void SetCorsConfiguration(const Cors& value) { m_corsConfiguration = value; }
-    inline void SetCorsConfiguration(Cors&& value) { m_corsConfiguration = std::move(value); }
-    inline GetApiResult& WithCorsConfiguration(const Cors& value) { SetCorsConfiguration(value); return *this;}
-    inline GetApiResult& WithCorsConfiguration(Cors&& value) { SetCorsConfiguration(std::move(value)); return *this;}
+    inline const Cors& GetCorsConfiguration() const { return m_corsConfiguration; }
+    template<typename CorsConfigurationT = Cors>
+    void SetCorsConfiguration(CorsConfigurationT&& value) { m_corsConfigurationHasBeenSet = true; m_corsConfiguration = std::forward<CorsConfigurationT>(value); }
+    template<typename CorsConfigurationT = Cors>
+    GetApiResult& WithCorsConfiguration(CorsConfigurationT&& value) { SetCorsConfiguration(std::forward<CorsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the API was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetApiResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetApiResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetApiResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the API.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetApiResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetApiResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetApiResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetApiResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,8 +123,8 @@ namespace Model
      * <p>Avoid validating models when creating a deployment. Supported only for
      * WebSocket APIs.</p>
      */
-    inline bool GetDisableSchemaValidation() const{ return m_disableSchemaValidation; }
-    inline void SetDisableSchemaValidation(bool value) { m_disableSchemaValidation = value; }
+    inline bool GetDisableSchemaValidation() const { return m_disableSchemaValidation; }
+    inline void SetDisableSchemaValidation(bool value) { m_disableSchemaValidationHasBeenSet = true; m_disableSchemaValidation = value; }
     inline GetApiResult& WithDisableSchemaValidation(bool value) { SetDisableSchemaValidation(value); return *this;}
     ///@}
 
@@ -144,8 +136,8 @@ namespace Model
      * clients use a custom domain name to invoke your API, disable the default
      * endpoint.</p>
      */
-    inline bool GetDisableExecuteApiEndpoint() const{ return m_disableExecuteApiEndpoint; }
-    inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpoint = value; }
+    inline bool GetDisableExecuteApiEndpoint() const { return m_disableExecuteApiEndpoint; }
+    inline void SetDisableExecuteApiEndpoint(bool value) { m_disableExecuteApiEndpointHasBeenSet = true; m_disableExecuteApiEndpoint = value; }
     inline GetApiResult& WithDisableExecuteApiEndpoint(bool value) { SetDisableExecuteApiEndpoint(value); return *this;}
     ///@}
 
@@ -155,38 +147,33 @@ namespace Model
      * properties of your OpenAPI definition which are ignored during import. Supported
      * only for HTTP APIs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImportInfo() const{ return m_importInfo; }
-    inline void SetImportInfo(const Aws::Vector<Aws::String>& value) { m_importInfo = value; }
-    inline void SetImportInfo(Aws::Vector<Aws::String>&& value) { m_importInfo = std::move(value); }
-    inline GetApiResult& WithImportInfo(const Aws::Vector<Aws::String>& value) { SetImportInfo(value); return *this;}
-    inline GetApiResult& WithImportInfo(Aws::Vector<Aws::String>&& value) { SetImportInfo(std::move(value)); return *this;}
-    inline GetApiResult& AddImportInfo(const Aws::String& value) { m_importInfo.push_back(value); return *this; }
-    inline GetApiResult& AddImportInfo(Aws::String&& value) { m_importInfo.push_back(std::move(value)); return *this; }
-    inline GetApiResult& AddImportInfo(const char* value) { m_importInfo.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetImportInfo() const { return m_importInfo; }
+    template<typename ImportInfoT = Aws::Vector<Aws::String>>
+    void SetImportInfo(ImportInfoT&& value) { m_importInfoHasBeenSet = true; m_importInfo = std::forward<ImportInfoT>(value); }
+    template<typename ImportInfoT = Aws::Vector<Aws::String>>
+    GetApiResult& WithImportInfo(ImportInfoT&& value) { SetImportInfo(std::forward<ImportInfoT>(value)); return *this;}
+    template<typename ImportInfoT = Aws::String>
+    GetApiResult& AddImportInfo(ImportInfoT&& value) { m_importInfoHasBeenSet = true; m_importInfo.emplace_back(std::forward<ImportInfoT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the API.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetApiResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetApiResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetApiResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetApiResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API protocol.</p>
      */
-    inline const ProtocolType& GetProtocolType() const{ return m_protocolType; }
-    inline void SetProtocolType(const ProtocolType& value) { m_protocolType = value; }
-    inline void SetProtocolType(ProtocolType&& value) { m_protocolType = std::move(value); }
-    inline GetApiResult& WithProtocolType(const ProtocolType& value) { SetProtocolType(value); return *this;}
-    inline GetApiResult& WithProtocolType(ProtocolType&& value) { SetProtocolType(std::move(value)); return *this;}
+    inline ProtocolType GetProtocolType() const { return m_protocolType; }
+    inline void SetProtocolType(ProtocolType value) { m_protocolTypeHasBeenSet = true; m_protocolType = value; }
+    inline GetApiResult& WithProtocolType(ProtocolType value) { SetProtocolType(value); return *this;}
     ///@}
 
     ///@{
@@ -196,44 +183,37 @@ namespace Model
      * provided, this will be the default for HTTP APIs. This property is required for
      * WebSocket APIs.</p>
      */
-    inline const Aws::String& GetRouteSelectionExpression() const{ return m_routeSelectionExpression; }
-    inline void SetRouteSelectionExpression(const Aws::String& value) { m_routeSelectionExpression = value; }
-    inline void SetRouteSelectionExpression(Aws::String&& value) { m_routeSelectionExpression = std::move(value); }
-    inline void SetRouteSelectionExpression(const char* value) { m_routeSelectionExpression.assign(value); }
-    inline GetApiResult& WithRouteSelectionExpression(const Aws::String& value) { SetRouteSelectionExpression(value); return *this;}
-    inline GetApiResult& WithRouteSelectionExpression(Aws::String&& value) { SetRouteSelectionExpression(std::move(value)); return *this;}
-    inline GetApiResult& WithRouteSelectionExpression(const char* value) { SetRouteSelectionExpression(value); return *this;}
+    inline const Aws::String& GetRouteSelectionExpression() const { return m_routeSelectionExpression; }
+    template<typename RouteSelectionExpressionT = Aws::String>
+    void SetRouteSelectionExpression(RouteSelectionExpressionT&& value) { m_routeSelectionExpressionHasBeenSet = true; m_routeSelectionExpression = std::forward<RouteSelectionExpressionT>(value); }
+    template<typename RouteSelectionExpressionT = Aws::String>
+    GetApiResult& WithRouteSelectionExpression(RouteSelectionExpressionT&& value) { SetRouteSelectionExpression(std::forward<RouteSelectionExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of tags associated with the API.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetApiResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetApiResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetApiResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetApiResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetApiResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetApiResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetApiResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetApiResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetApiResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetApiResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetApiResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A version identifier for the API.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline GetApiResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline GetApiResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline GetApiResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    GetApiResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,61 +221,75 @@ namespace Model
      * <p>The warning messages reported when failonwarnings is turned on during API
      * import.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
-    inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warnings = value; }
-    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warnings = std::move(value); }
-    inline GetApiResult& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
-    inline GetApiResult& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(std::move(value)); return *this;}
-    inline GetApiResult& AddWarnings(const Aws::String& value) { m_warnings.push_back(value); return *this; }
-    inline GetApiResult& AddWarnings(Aws::String&& value) { m_warnings.push_back(std::move(value)); return *this; }
-    inline GetApiResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetWarnings() const { return m_warnings; }
+    template<typename WarningsT = Aws::Vector<Aws::String>>
+    void SetWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings = std::forward<WarningsT>(value); }
+    template<typename WarningsT = Aws::Vector<Aws::String>>
+    GetApiResult& WithWarnings(WarningsT&& value) { SetWarnings(std::forward<WarningsT>(value)); return *this;}
+    template<typename WarningsT = Aws::String>
+    GetApiResult& AddWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings.emplace_back(std::forward<WarningsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_apiEndpoint;
+    bool m_apiEndpointHasBeenSet = false;
 
-    bool m_apiGatewayManaged;
+    bool m_apiGatewayManaged{false};
+    bool m_apiGatewayManagedHasBeenSet = false;
 
     Aws::String m_apiId;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_apiKeySelectionExpression;
+    bool m_apiKeySelectionExpressionHasBeenSet = false;
 
     Cors m_corsConfiguration;
+    bool m_corsConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    bool m_disableSchemaValidation;
+    bool m_disableSchemaValidation{false};
+    bool m_disableSchemaValidationHasBeenSet = false;
 
-    bool m_disableExecuteApiEndpoint;
+    bool m_disableExecuteApiEndpoint{false};
+    bool m_disableExecuteApiEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_importInfo;
+    bool m_importInfoHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    ProtocolType m_protocolType;
+    ProtocolType m_protocolType{ProtocolType::NOT_SET};
+    bool m_protocolTypeHasBeenSet = false;
 
     Aws::String m_routeSelectionExpression;
+    bool m_routeSelectionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_warnings;
+    bool m_warningsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

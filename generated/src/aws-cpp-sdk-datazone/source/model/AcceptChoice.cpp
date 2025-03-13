@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AcceptChoice::AcceptChoice() : 
-    m_editedValueHasBeenSet(false),
-    m_predictionChoice(0),
-    m_predictionChoiceHasBeenSet(false),
-    m_predictionTargetHasBeenSet(false)
-{
-}
-
 AcceptChoice::AcceptChoice(JsonView jsonValue)
-  : AcceptChoice()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AcceptChoice& AcceptChoice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("editedValue"))
   {
     m_editedValue = jsonValue.GetString("editedValue");
-
     m_editedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictionChoice"))
   {
     m_predictionChoice = jsonValue.GetInteger("predictionChoice");
-
     m_predictionChoiceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictionTarget"))
   {
     m_predictionTarget = jsonValue.GetString("predictionTarget");
-
     m_predictionTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

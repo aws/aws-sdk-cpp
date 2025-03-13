@@ -22,7 +22,7 @@ namespace Model
   class GenerateQueryRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API GenerateQueryRequest();
+    AWS_CLOUDTRAIL_API GenerateQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p> The ARN (or ID suffix of the ARN) of the event data store that you want to
      * query. You can only specify one event data store. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventDataStores() const{ return m_eventDataStores; }
+    inline const Aws::Vector<Aws::String>& GetEventDataStores() const { return m_eventDataStores; }
     inline bool EventDataStoresHasBeenSet() const { return m_eventDataStoresHasBeenSet; }
-    inline void SetEventDataStores(const Aws::Vector<Aws::String>& value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores = value; }
-    inline void SetEventDataStores(Aws::Vector<Aws::String>&& value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores = std::move(value); }
-    inline GenerateQueryRequest& WithEventDataStores(const Aws::Vector<Aws::String>& value) { SetEventDataStores(value); return *this;}
-    inline GenerateQueryRequest& WithEventDataStores(Aws::Vector<Aws::String>&& value) { SetEventDataStores(std::move(value)); return *this;}
-    inline GenerateQueryRequest& AddEventDataStores(const Aws::String& value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores.push_back(value); return *this; }
-    inline GenerateQueryRequest& AddEventDataStores(Aws::String&& value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores.push_back(std::move(value)); return *this; }
-    inline GenerateQueryRequest& AddEventDataStores(const char* value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores.push_back(value); return *this; }
+    template<typename EventDataStoresT = Aws::Vector<Aws::String>>
+    void SetEventDataStores(EventDataStoresT&& value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores = std::forward<EventDataStoresT>(value); }
+    template<typename EventDataStoresT = Aws::Vector<Aws::String>>
+    GenerateQueryRequest& WithEventDataStores(EventDataStoresT&& value) { SetEventDataStores(std::forward<EventDataStoresT>(value)); return *this;}
+    template<typename EventDataStoresT = Aws::String>
+    GenerateQueryRequest& AddEventDataStores(EventDataStoresT&& value) { m_eventDataStoresHasBeenSet = true; m_eventDataStores.emplace_back(std::forward<EventDataStoresT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html#lake-query-generator-examples">Example
      * prompts</a> in the <i>CloudTrail </i> user guide. </p>
      */
-    inline const Aws::String& GetPrompt() const{ return m_prompt; }
+    inline const Aws::String& GetPrompt() const { return m_prompt; }
     inline bool PromptHasBeenSet() const { return m_promptHasBeenSet; }
-    inline void SetPrompt(const Aws::String& value) { m_promptHasBeenSet = true; m_prompt = value; }
-    inline void SetPrompt(Aws::String&& value) { m_promptHasBeenSet = true; m_prompt = std::move(value); }
-    inline void SetPrompt(const char* value) { m_promptHasBeenSet = true; m_prompt.assign(value); }
-    inline GenerateQueryRequest& WithPrompt(const Aws::String& value) { SetPrompt(value); return *this;}
-    inline GenerateQueryRequest& WithPrompt(Aws::String&& value) { SetPrompt(std::move(value)); return *this;}
-    inline GenerateQueryRequest& WithPrompt(const char* value) { SetPrompt(value); return *this;}
+    template<typename PromptT = Aws::String>
+    void SetPrompt(PromptT&& value) { m_promptHasBeenSet = true; m_prompt = std::forward<PromptT>(value); }
+    template<typename PromptT = Aws::String>
+    GenerateQueryRequest& WithPrompt(PromptT&& value) { SetPrompt(std::forward<PromptT>(value)); return *this;}
     ///@}
   private:
 

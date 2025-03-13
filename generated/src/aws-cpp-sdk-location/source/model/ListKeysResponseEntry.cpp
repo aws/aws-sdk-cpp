@@ -18,18 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ListKeysResponseEntry::ListKeysResponseEntry() : 
-    m_keyNameHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 ListKeysResponseEntry::ListKeysResponseEntry(JsonView jsonValue)
-  : ListKeysResponseEntry()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ListKeysResponseEntry& ListKeysResponseEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyName"))
   {
     m_keyName = jsonValue.GetString("KeyName");
-
     m_keyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpireTime"))
   {
     m_expireTime = jsonValue.GetString("ExpireTime");
-
     m_expireTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Restrictions"))
   {
     m_restrictions = jsonValue.GetObject("Restrictions");
-
     m_restrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListManagedInsightRulesResult::ListManagedInsightRulesResult()
-{
-}
-
 ListManagedInsightRulesResult::ListManagedInsightRulesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListManagedInsightRulesResult& ListManagedInsightRulesResult::operator =(const A
     if(!managedRulesNode.IsNull())
     {
       XmlNode managedRulesMember = managedRulesNode.FirstChild("member");
+      m_managedRulesHasBeenSet = !managedRulesMember.IsNull();
       while(!managedRulesMember.IsNull())
       {
         m_managedRules.push_back(managedRulesMember);
@@ -53,12 +50,14 @@ ListManagedInsightRulesResult& ListManagedInsightRulesResult::operator =(const A
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::ListManagedInsightRulesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

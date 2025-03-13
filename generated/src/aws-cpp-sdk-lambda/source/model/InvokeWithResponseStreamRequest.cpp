@@ -17,18 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-InvokeWithResponseStreamRequest::InvokeWithResponseStreamRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_invocationType(ResponseStreamingInvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false),
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_clientContextHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 
 void InvokeWithResponseStreamRequest::AddQueryStringParameters(URI& uri) const
 {

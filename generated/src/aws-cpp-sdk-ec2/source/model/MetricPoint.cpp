@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MetricPoint::MetricPoint() : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 MetricPoint::MetricPoint(const XmlNode& xmlNode)
-  : MetricPoint()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ MetricPoint& MetricPoint::operator =(const XmlNode& xmlNode)
     {
       m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_startDateHasBeenSet = true;
+       m_startDateHasBeenSet = true;
     }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
     if(!endDateNode.IsNull())
     {
       m_endDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endDateHasBeenSet = true;
+       m_endDateHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("value");
     if(!valueNode.IsNull())
     {
       m_value = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

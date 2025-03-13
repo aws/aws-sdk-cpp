@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFleetRequest::DeleteFleetRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetRequest::SerializePayload() const
 {
   JsonValue payload;

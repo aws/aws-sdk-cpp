@@ -20,16 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DomainMembership::DomainMembership() : 
-    m_domainHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_fQDNHasBeenSet(false),
-    m_iAMRoleNameHasBeenSet(false)
-{
-}
-
 DomainMembership::DomainMembership(const XmlNode& xmlNode)
-  : DomainMembership()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
     {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
+       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode fQDNNode = resultNode.FirstChild("FQDN");
     if(!fQDNNode.IsNull())
     {
       m_fQDN = Aws::Utils::Xml::DecodeEscapedXmlText(fQDNNode.GetText());
       m_fQDNHasBeenSet = true;
+       m_fQDNHasBeenSet = true;
     }
     XmlNode iAMRoleNameNode = resultNode.FirstChild("IAMRoleName");
     if(!iAMRoleNameNode.IsNull())
     {
       m_iAMRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleNameNode.GetText());
       m_iAMRoleNameHasBeenSet = true;
+       m_iAMRoleNameHasBeenSet = true;
     }
   }
 

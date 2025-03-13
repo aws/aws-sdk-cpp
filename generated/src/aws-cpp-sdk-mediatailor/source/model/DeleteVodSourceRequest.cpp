@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVodSourceRequest::DeleteVodSourceRequest() : 
-    m_sourceLocationNameHasBeenSet(false),
-    m_vodSourceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVodSourceRequest::SerializePayload() const
 {
   return {};

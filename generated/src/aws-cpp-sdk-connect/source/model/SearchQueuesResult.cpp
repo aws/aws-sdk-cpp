@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchQueuesResult::SearchQueuesResult() : 
-    m_approximateTotalCount(0)
-{
-}
-
 SearchQueuesResult::SearchQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchQueuesResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ SearchQueuesResult& SearchQueuesResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsObject());
     }
+    m_queuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateTotalCount"))
   {
     m_approximateTotalCount = jsonValue.GetInt64("ApproximateTotalCount");
-
+    m_approximateTotalCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

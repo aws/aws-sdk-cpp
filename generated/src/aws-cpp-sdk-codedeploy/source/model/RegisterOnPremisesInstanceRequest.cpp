@@ -12,13 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterOnPremisesInstanceRequest::RegisterOnPremisesInstanceRequest() : 
-    m_instanceNameHasBeenSet(false),
-    m_iamSessionArnHasBeenSet(false),
-    m_iamUserArnHasBeenSet(false)
-{
-}
-
 Aws::String RegisterOnPremisesInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

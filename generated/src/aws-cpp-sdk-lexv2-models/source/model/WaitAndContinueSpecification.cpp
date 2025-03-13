@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-WaitAndContinueSpecification::WaitAndContinueSpecification() : 
-    m_waitingResponseHasBeenSet(false),
-    m_continueResponseHasBeenSet(false),
-    m_stillWaitingResponseHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 WaitAndContinueSpecification::WaitAndContinueSpecification(JsonView jsonValue)
-  : WaitAndContinueSpecification()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ WaitAndContinueSpecification& WaitAndContinueSpecification::operator =(JsonView 
   if(jsonValue.ValueExists("waitingResponse"))
   {
     m_waitingResponse = jsonValue.GetObject("waitingResponse");
-
     m_waitingResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("continueResponse"))
   {
     m_continueResponse = jsonValue.GetObject("continueResponse");
-
     m_continueResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stillWaitingResponse"))
   {
     m_stillWaitingResponse = jsonValue.GetObject("stillWaitingResponse");
-
     m_stillWaitingResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   return *this;
 }
 

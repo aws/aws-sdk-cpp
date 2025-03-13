@@ -29,7 +29,7 @@ namespace Model
   class DescribeAggregateComplianceByConformancePacksResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeAggregateComplianceByConformancePacksResult();
+    AWS_CONFIGSERVICE_API DescribeAggregateComplianceByConformancePacksResult() = default;
     AWS_CONFIGSERVICE_API DescribeAggregateComplianceByConformancePacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeAggregateComplianceByConformancePacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns the <code>AggregateComplianceByConformancePack</code> object.</p>
      */
-    inline const Aws::Vector<AggregateComplianceByConformancePack>& GetAggregateComplianceByConformancePacks() const{ return m_aggregateComplianceByConformancePacks; }
-    inline void SetAggregateComplianceByConformancePacks(const Aws::Vector<AggregateComplianceByConformancePack>& value) { m_aggregateComplianceByConformancePacks = value; }
-    inline void SetAggregateComplianceByConformancePacks(Aws::Vector<AggregateComplianceByConformancePack>&& value) { m_aggregateComplianceByConformancePacks = std::move(value); }
-    inline DescribeAggregateComplianceByConformancePacksResult& WithAggregateComplianceByConformancePacks(const Aws::Vector<AggregateComplianceByConformancePack>& value) { SetAggregateComplianceByConformancePacks(value); return *this;}
-    inline DescribeAggregateComplianceByConformancePacksResult& WithAggregateComplianceByConformancePacks(Aws::Vector<AggregateComplianceByConformancePack>&& value) { SetAggregateComplianceByConformancePacks(std::move(value)); return *this;}
-    inline DescribeAggregateComplianceByConformancePacksResult& AddAggregateComplianceByConformancePacks(const AggregateComplianceByConformancePack& value) { m_aggregateComplianceByConformancePacks.push_back(value); return *this; }
-    inline DescribeAggregateComplianceByConformancePacksResult& AddAggregateComplianceByConformancePacks(AggregateComplianceByConformancePack&& value) { m_aggregateComplianceByConformancePacks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AggregateComplianceByConformancePack>& GetAggregateComplianceByConformancePacks() const { return m_aggregateComplianceByConformancePacks; }
+    template<typename AggregateComplianceByConformancePacksT = Aws::Vector<AggregateComplianceByConformancePack>>
+    void SetAggregateComplianceByConformancePacks(AggregateComplianceByConformancePacksT&& value) { m_aggregateComplianceByConformancePacksHasBeenSet = true; m_aggregateComplianceByConformancePacks = std::forward<AggregateComplianceByConformancePacksT>(value); }
+    template<typename AggregateComplianceByConformancePacksT = Aws::Vector<AggregateComplianceByConformancePack>>
+    DescribeAggregateComplianceByConformancePacksResult& WithAggregateComplianceByConformancePacks(AggregateComplianceByConformancePacksT&& value) { SetAggregateComplianceByConformancePacks(std::forward<AggregateComplianceByConformancePacksT>(value)); return *this;}
+    template<typename AggregateComplianceByConformancePacksT = AggregateComplianceByConformancePack>
+    DescribeAggregateComplianceByConformancePacksResult& AddAggregateComplianceByConformancePacks(AggregateComplianceByConformancePacksT&& value) { m_aggregateComplianceByConformancePacksHasBeenSet = true; m_aggregateComplianceByConformancePacks.emplace_back(std::forward<AggregateComplianceByConformancePacksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAggregateComplianceByConformancePacksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAggregateComplianceByConformancePacksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAggregateComplianceByConformancePacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAggregateComplianceByConformancePacksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAggregateComplianceByConformancePacksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAggregateComplianceByConformancePacksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAggregateComplianceByConformancePacksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAggregateComplianceByConformancePacksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AggregateComplianceByConformancePack> m_aggregateComplianceByConformancePacks;
+    bool m_aggregateComplianceByConformancePacksHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

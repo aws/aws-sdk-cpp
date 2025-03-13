@@ -18,15 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Permission::Permission() : 
-    m_granteeTypeHasBeenSet(false),
-    m_granteeHasBeenSet(false),
-    m_accessHasBeenSet(false)
-{
-}
-
 Permission::Permission(JsonView jsonValue)
-  : Permission()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Permission& Permission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GranteeType"))
   {
     m_granteeType = jsonValue.GetString("GranteeType");
-
     m_granteeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Grantee"))
   {
     m_grantee = jsonValue.GetString("Grantee");
-
     m_granteeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Access"))
   {
     Aws::Utils::Array<JsonView> accessJsonList = jsonValue.GetArray("Access");
@@ -56,7 +44,6 @@ Permission& Permission::operator =(JsonView jsonValue)
     }
     m_accessHasBeenSet = true;
   }
-
   return *this;
 }
 

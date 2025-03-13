@@ -32,7 +32,7 @@ namespace Model
   class AvailabilityOptionsStatus
   {
   public:
-    AWS_CLOUDSEARCH_API AvailabilityOptionsStatus();
+    AWS_CLOUDSEARCH_API AvailabilityOptionsStatus() = default;
     AWS_CLOUDSEARCH_API AvailabilityOptionsStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API AvailabilityOptionsStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The availability options configured for the domain.</p>
      */
-    inline bool GetOptions() const{ return m_options; }
+    inline bool GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
     inline void SetOptions(bool value) { m_optionsHasBeenSet = true; m_options = value; }
     inline AvailabilityOptionsStatus& WithOptions(bool value) { SetOptions(value); return *this;}
@@ -52,16 +52,16 @@ namespace Model
 
     ///@{
     
-    inline const OptionStatus& GetStatus() const{ return m_status; }
+    inline const OptionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AvailabilityOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-    inline AvailabilityOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OptionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OptionStatus>
+    AvailabilityOptionsStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_options;
+    bool m_options{false};
     bool m_optionsHasBeenSet = false;
 
     OptionStatus m_status;

@@ -18,17 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-AssetDetails::AssetDetails() : 
-    m_s3SnapshotAssetHasBeenSet(false),
-    m_redshiftDataShareAssetHasBeenSet(false),
-    m_apiGatewayApiAssetHasBeenSet(false),
-    m_s3DataAccessAssetHasBeenSet(false),
-    m_lakeFormationDataPermissionAssetHasBeenSet(false)
-{
-}
-
 AssetDetails::AssetDetails(JsonView jsonValue)
-  : AssetDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AssetDetails& AssetDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3SnapshotAsset"))
   {
     m_s3SnapshotAsset = jsonValue.GetObject("S3SnapshotAsset");
-
     m_s3SnapshotAssetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftDataShareAsset"))
   {
     m_redshiftDataShareAsset = jsonValue.GetObject("RedshiftDataShareAsset");
-
     m_redshiftDataShareAssetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiGatewayApiAsset"))
   {
     m_apiGatewayApiAsset = jsonValue.GetObject("ApiGatewayApiAsset");
-
     m_apiGatewayApiAssetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataAccessAsset"))
   {
     m_s3DataAccessAsset = jsonValue.GetObject("S3DataAccessAsset");
-
     m_s3DataAccessAssetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LakeFormationDataPermissionAsset"))
   {
     m_lakeFormationDataPermissionAsset = jsonValue.GetObject("LakeFormationDataPermissionAsset");
-
     m_lakeFormationDataPermissionAssetHasBeenSet = true;
   }
-
   return *this;
 }
 

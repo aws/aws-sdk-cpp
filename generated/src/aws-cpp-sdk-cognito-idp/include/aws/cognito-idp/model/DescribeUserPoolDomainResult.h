@@ -28,7 +28,7 @@ namespace Model
   class DescribeUserPoolDomainResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API DescribeUserPoolDomainResult();
+    AWS_COGNITOIDENTITYPROVIDER_API DescribeUserPoolDomainResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API DescribeUserPoolDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API DescribeUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the requested user pool domain.</p>
      */
-    inline const DomainDescriptionType& GetDomainDescription() const{ return m_domainDescription; }
-    inline void SetDomainDescription(const DomainDescriptionType& value) { m_domainDescription = value; }
-    inline void SetDomainDescription(DomainDescriptionType&& value) { m_domainDescription = std::move(value); }
-    inline DescribeUserPoolDomainResult& WithDomainDescription(const DomainDescriptionType& value) { SetDomainDescription(value); return *this;}
-    inline DescribeUserPoolDomainResult& WithDomainDescription(DomainDescriptionType&& value) { SetDomainDescription(std::move(value)); return *this;}
+    inline const DomainDescriptionType& GetDomainDescription() const { return m_domainDescription; }
+    template<typename DomainDescriptionT = DomainDescriptionType>
+    void SetDomainDescription(DomainDescriptionT&& value) { m_domainDescriptionHasBeenSet = true; m_domainDescription = std::forward<DomainDescriptionT>(value); }
+    template<typename DomainDescriptionT = DomainDescriptionType>
+    DescribeUserPoolDomainResult& WithDomainDescription(DomainDescriptionT&& value) { SetDomainDescription(std::forward<DomainDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeUserPoolDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeUserPoolDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeUserPoolDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainDescriptionType m_domainDescription;
+    bool m_domainDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

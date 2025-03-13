@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGatewaySoftwareNowRequest::UpdateGatewaySoftwareNowRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGatewaySoftwareNowRequest::SerializePayload() const
 {
   JsonValue payload;

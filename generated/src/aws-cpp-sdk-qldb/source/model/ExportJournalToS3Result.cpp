@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ExportJournalToS3Result::ExportJournalToS3Result()
-{
-}
-
 ExportJournalToS3Result::ExportJournalToS3Result(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ExportJournalToS3Result& ExportJournalToS3Result::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ExportId"))
   {
     m_exportId = jsonValue.GetString("ExportId");
-
+    m_exportIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

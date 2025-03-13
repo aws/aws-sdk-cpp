@@ -31,7 +31,7 @@ namespace Model
   class MessageStartEvent
   {
   public:
-    AWS_BEDROCKRUNTIME_API MessageStartEvent();
+    AWS_BEDROCKRUNTIME_API MessageStartEvent() = default;
     AWS_BEDROCKRUNTIME_API MessageStartEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API MessageStartEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The role for the message.</p>
      */
-    inline const ConversationRole& GetRole() const{ return m_role; }
+    inline ConversationRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const ConversationRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(ConversationRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline MessageStartEvent& WithRole(const ConversationRole& value) { SetRole(value); return *this;}
-    inline MessageStartEvent& WithRole(ConversationRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(ConversationRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline MessageStartEvent& WithRole(ConversationRole value) { SetRole(value); return *this;}
     ///@}
   private:
 
-    ConversationRole m_role;
+    ConversationRole m_role{ConversationRole::NOT_SET};
     bool m_roleHasBeenSet = false;
   };
 

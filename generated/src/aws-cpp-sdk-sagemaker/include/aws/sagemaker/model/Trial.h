@@ -40,7 +40,7 @@ namespace Model
   class Trial
   {
   public:
-    AWS_SAGEMAKER_API Trial();
+    AWS_SAGEMAKER_API Trial() = default;
     AWS_SAGEMAKER_API Trial(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Trial& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
     /**
      * <p>The name of the trial.</p>
      */
-    inline const Aws::String& GetTrialName() const{ return m_trialName; }
+    inline const Aws::String& GetTrialName() const { return m_trialName; }
     inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
-    inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
-    inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
-    inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
-    inline Trial& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
-    inline Trial& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
-    inline Trial& WithTrialName(const char* value) { SetTrialName(value); return *this;}
+    template<typename TrialNameT = Aws::String>
+    void SetTrialName(TrialNameT&& value) { m_trialNameHasBeenSet = true; m_trialName = std::forward<TrialNameT>(value); }
+    template<typename TrialNameT = Aws::String>
+    Trial& WithTrialName(TrialNameT&& value) { SetTrialName(std::forward<TrialNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the trial.</p>
      */
-    inline const Aws::String& GetTrialArn() const{ return m_trialArn; }
+    inline const Aws::String& GetTrialArn() const { return m_trialArn; }
     inline bool TrialArnHasBeenSet() const { return m_trialArnHasBeenSet; }
-    inline void SetTrialArn(const Aws::String& value) { m_trialArnHasBeenSet = true; m_trialArn = value; }
-    inline void SetTrialArn(Aws::String&& value) { m_trialArnHasBeenSet = true; m_trialArn = std::move(value); }
-    inline void SetTrialArn(const char* value) { m_trialArnHasBeenSet = true; m_trialArn.assign(value); }
-    inline Trial& WithTrialArn(const Aws::String& value) { SetTrialArn(value); return *this;}
-    inline Trial& WithTrialArn(Aws::String&& value) { SetTrialArn(std::move(value)); return *this;}
-    inline Trial& WithTrialArn(const char* value) { SetTrialArn(value); return *this;}
+    template<typename TrialArnT = Aws::String>
+    void SetTrialArn(TrialArnT&& value) { m_trialArnHasBeenSet = true; m_trialArn = std::forward<TrialArnT>(value); }
+    template<typename TrialArnT = Aws::String>
+    Trial& WithTrialArn(TrialArnT&& value) { SetTrialArn(std::forward<TrialArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,94 +75,90 @@ namespace Model
      * <p>The name of the trial as displayed. If <code>DisplayName</code> isn't
      * specified, <code>TrialName</code> is displayed.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Trial& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Trial& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Trial& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Trial& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the experiment the trial is part of.</p>
      */
-    inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
+    inline const Aws::String& GetExperimentName() const { return m_experimentName; }
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
-    inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
-    inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
-    inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
-    inline Trial& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
-    inline Trial& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
-    inline Trial& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
+    template<typename ExperimentNameT = Aws::String>
+    void SetExperimentName(ExperimentNameT&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::forward<ExperimentNameT>(value); }
+    template<typename ExperimentNameT = Aws::String>
+    Trial& WithExperimentName(ExperimentNameT&& value) { SetExperimentName(std::forward<ExperimentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TrialSource& GetSource() const{ return m_source; }
+    inline const TrialSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const TrialSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(TrialSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline Trial& WithSource(const TrialSource& value) { SetSource(value); return *this;}
-    inline Trial& WithSource(TrialSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = TrialSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = TrialSource>
+    Trial& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the trial was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Trial& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Trial& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Trial& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Who created the trial.</p>
      */
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline Trial& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline Trial& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    Trial& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Who last modified the trial.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Trial& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Trial& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Trial& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+    inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
-    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
-    inline Trial& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
-    inline Trial& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    template<typename LastModifiedByT = UserContext>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = UserContext>
+    Trial& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
+    inline const MetadataProperties& GetMetadataProperties() const { return m_metadataProperties; }
     inline bool MetadataPropertiesHasBeenSet() const { return m_metadataPropertiesHasBeenSet; }
-    inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = value; }
-    inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::move(value); }
-    inline Trial& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
-    inline Trial& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
+    template<typename MetadataPropertiesT = MetadataProperties>
+    void SetMetadataProperties(MetadataPropertiesT&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::forward<MetadataPropertiesT>(value); }
+    template<typename MetadataPropertiesT = MetadataProperties>
+    Trial& WithMetadataProperties(MetadataPropertiesT&& value) { SetMetadataProperties(std::forward<MetadataPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,14 +167,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
      * API to search on the tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Trial& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Trial& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Trial& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Trial& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Trial& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Trial& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -190,14 +182,14 @@ namespace Model
      * <p>A list of the components associated with the trial. For each component, a
      * summary of the component's properties is included.</p>
      */
-    inline const Aws::Vector<TrialComponentSimpleSummary>& GetTrialComponentSummaries() const{ return m_trialComponentSummaries; }
+    inline const Aws::Vector<TrialComponentSimpleSummary>& GetTrialComponentSummaries() const { return m_trialComponentSummaries; }
     inline bool TrialComponentSummariesHasBeenSet() const { return m_trialComponentSummariesHasBeenSet; }
-    inline void SetTrialComponentSummaries(const Aws::Vector<TrialComponentSimpleSummary>& value) { m_trialComponentSummariesHasBeenSet = true; m_trialComponentSummaries = value; }
-    inline void SetTrialComponentSummaries(Aws::Vector<TrialComponentSimpleSummary>&& value) { m_trialComponentSummariesHasBeenSet = true; m_trialComponentSummaries = std::move(value); }
-    inline Trial& WithTrialComponentSummaries(const Aws::Vector<TrialComponentSimpleSummary>& value) { SetTrialComponentSummaries(value); return *this;}
-    inline Trial& WithTrialComponentSummaries(Aws::Vector<TrialComponentSimpleSummary>&& value) { SetTrialComponentSummaries(std::move(value)); return *this;}
-    inline Trial& AddTrialComponentSummaries(const TrialComponentSimpleSummary& value) { m_trialComponentSummariesHasBeenSet = true; m_trialComponentSummaries.push_back(value); return *this; }
-    inline Trial& AddTrialComponentSummaries(TrialComponentSimpleSummary&& value) { m_trialComponentSummariesHasBeenSet = true; m_trialComponentSummaries.push_back(std::move(value)); return *this; }
+    template<typename TrialComponentSummariesT = Aws::Vector<TrialComponentSimpleSummary>>
+    void SetTrialComponentSummaries(TrialComponentSummariesT&& value) { m_trialComponentSummariesHasBeenSet = true; m_trialComponentSummaries = std::forward<TrialComponentSummariesT>(value); }
+    template<typename TrialComponentSummariesT = Aws::Vector<TrialComponentSimpleSummary>>
+    Trial& WithTrialComponentSummaries(TrialComponentSummariesT&& value) { SetTrialComponentSummaries(std::forward<TrialComponentSummariesT>(value)); return *this;}
+    template<typename TrialComponentSummariesT = TrialComponentSimpleSummary>
+    Trial& AddTrialComponentSummaries(TrialComponentSummariesT&& value) { m_trialComponentSummariesHasBeenSet = true; m_trialComponentSummaries.emplace_back(std::forward<TrialComponentSummariesT>(value)); return *this; }
     ///@}
   private:
 
@@ -216,13 +208,13 @@ namespace Model
     TrialSource m_source;
     bool m_sourceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     UserContext m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;

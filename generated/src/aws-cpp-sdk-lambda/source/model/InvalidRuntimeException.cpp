@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-InvalidRuntimeException::InvalidRuntimeException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InvalidRuntimeException::InvalidRuntimeException(JsonView jsonValue)
-  : InvalidRuntimeException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidRuntimeException& InvalidRuntimeException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

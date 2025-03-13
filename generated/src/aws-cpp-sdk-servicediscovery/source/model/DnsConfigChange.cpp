@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-DnsConfigChange::DnsConfigChange() : 
-    m_dnsRecordsHasBeenSet(false)
-{
-}
-
 DnsConfigChange::DnsConfigChange(JsonView jsonValue)
-  : DnsConfigChange()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DnsConfigChange& DnsConfigChange::operator =(JsonView jsonValue)
     }
     m_dnsRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

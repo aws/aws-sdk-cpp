@@ -34,7 +34,7 @@ namespace Model
   class Video
   {
   public:
-    AWS_REKOGNITION_API Video();
+    AWS_REKOGNITION_API Video() = default;
     AWS_REKOGNITION_API Video(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Video& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket name and file name for the video.</p>
      */
-    inline const S3Object& GetS3Object() const{ return m_s3Object; }
+    inline const S3Object& GetS3Object() const { return m_s3Object; }
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-    inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-    inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-    inline Video& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-    inline Video& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
+    template<typename S3ObjectT = S3Object>
+    void SetS3Object(S3ObjectT&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::forward<S3ObjectT>(value); }
+    template<typename S3ObjectT = S3Object>
+    Video& WithS3Object(S3ObjectT&& value) { SetS3Object(std::forward<S3ObjectT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-Logging::Logging() : 
-    m_clusterLoggingHasBeenSet(false)
-{
-}
-
 Logging::Logging(JsonView jsonValue)
-  : Logging()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Logging& Logging::operator =(JsonView jsonValue)
     }
     m_clusterLoggingHasBeenSet = true;
   }
-
   return *this;
 }
 

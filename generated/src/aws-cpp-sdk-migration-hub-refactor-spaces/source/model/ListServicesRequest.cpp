@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListServicesRequest::ListServicesRequest() : 
-    m_applicationIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListServicesRequest::SerializePayload() const
 {
   return {};

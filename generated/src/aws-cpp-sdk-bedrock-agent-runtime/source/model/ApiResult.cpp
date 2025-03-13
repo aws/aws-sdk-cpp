@@ -18,23 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ApiResult::ApiResult() : 
-    m_actionGroupHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_apiPathHasBeenSet(false),
-    m_confirmationState(ConfirmationState::NOT_SET),
-    m_confirmationStateHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_httpStatusCode(0),
-    m_httpStatusCodeHasBeenSet(false),
-    m_responseBodyHasBeenSet(false),
-    m_responseState(ResponseState::NOT_SET),
-    m_responseStateHasBeenSet(false)
-{
-}
-
 ApiResult::ApiResult(JsonView jsonValue)
-  : ApiResult()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroup"))
   {
     m_actionGroup = jsonValue.GetString("actionGroup");
-
     m_actionGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiPath"))
   {
     m_apiPath = jsonValue.GetString("apiPath");
-
     m_apiPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationState"))
   {
     m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
-
     m_confirmationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpMethod"))
   {
     m_httpMethod = jsonValue.GetString("httpMethod");
-
     m_httpMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpStatusCode"))
   {
     m_httpStatusCode = jsonValue.GetInteger("httpStatusCode");
-
     m_httpStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseBody"))
   {
     Aws::Map<Aws::String, JsonView> responseBodyJsonMap = jsonValue.GetObject("responseBody").GetAllObjects();
@@ -92,14 +64,11 @@ ApiResult& ApiResult::operator =(JsonView jsonValue)
     }
     m_responseBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseState"))
   {
     m_responseState = ResponseStateMapper::GetResponseStateForName(jsonValue.GetString("responseState"));
-
     m_responseStateHasBeenSet = true;
   }
-
   return *this;
 }
 

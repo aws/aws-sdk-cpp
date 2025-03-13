@@ -12,12 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTargetGroupRequest::UpdateTargetGroupRequest() : 
-    m_healthCheckHasBeenSet(false),
-    m_targetGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTargetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

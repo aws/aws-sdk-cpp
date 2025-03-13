@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OpenZFSNfsExport::OpenZFSNfsExport() : 
-    m_clientConfigurationsHasBeenSet(false)
-{
-}
-
 OpenZFSNfsExport::OpenZFSNfsExport(JsonView jsonValue)
-  : OpenZFSNfsExport()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OpenZFSNfsExport& OpenZFSNfsExport::operator =(JsonView jsonValue)
     }
     m_clientConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

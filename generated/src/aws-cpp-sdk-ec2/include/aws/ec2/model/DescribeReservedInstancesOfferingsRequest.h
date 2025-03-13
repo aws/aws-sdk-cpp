@@ -32,7 +32,7 @@ namespace Model
   class DescribeReservedInstancesOfferingsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeReservedInstancesOfferingsRequest();
+    AWS_EC2_API DescribeReservedInstancesOfferingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,21 +51,19 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    DescribeReservedInstancesOfferingsRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Include Reserved Instance Marketplace offerings in the response.</p>
      */
-    inline bool GetIncludeMarketplace() const{ return m_includeMarketplace; }
+    inline bool GetIncludeMarketplace() const { return m_includeMarketplace; }
     inline bool IncludeMarketplaceHasBeenSet() const { return m_includeMarketplaceHasBeenSet; }
     inline void SetIncludeMarketplace(bool value) { m_includeMarketplaceHasBeenSet = true; m_includeMarketplace = value; }
     inline DescribeReservedInstancesOfferingsRequest& WithIncludeMarketplace(bool value) { SetIncludeMarketplace(value); return *this;}
@@ -78,12 +76,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
      * EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
      * <p>Default: 94608000 (3 years)</p>
      */
-    inline long long GetMaxDuration() const{ return m_maxDuration; }
+    inline long long GetMaxDuration() const { return m_maxDuration; }
     inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
     inline void SetMaxDuration(long long value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
     inline DescribeReservedInstancesOfferingsRequest& WithMaxDuration(long long value) { SetMaxDuration(value); return *this;}
@@ -102,7 +98,7 @@ namespace Model
      * <p>The maximum number of instances to filter when searching for offerings.</p>
      * <p>Default: 20</p>
      */
-    inline int GetMaxInstanceCount() const{ return m_maxInstanceCount; }
+    inline int GetMaxInstanceCount() const { return m_maxInstanceCount; }
     inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
     inline void SetMaxInstanceCount(int value) { m_maxInstanceCountHasBeenSet = true; m_maxInstanceCount = value; }
     inline DescribeReservedInstancesOfferingsRequest& WithMaxInstanceCount(int value) { SetMaxInstanceCount(value); return *this;}
@@ -113,7 +109,7 @@ namespace Model
      * <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
      * <p>Default: 2592000 (1 month)</p>
      */
-    inline long long GetMinDuration() const{ return m_minDuration; }
+    inline long long GetMinDuration() const { return m_minDuration; }
     inline bool MinDurationHasBeenSet() const { return m_minDurationHasBeenSet; }
     inline void SetMinDuration(long long value) { m_minDurationHasBeenSet = true; m_minDuration = value; }
     inline DescribeReservedInstancesOfferingsRequest& WithMinDuration(long long value) { SetMinDuration(value); return *this;}
@@ -124,12 +120,10 @@ namespace Model
      * <p>The offering class of the Reserved Instance. Can be <code>standard</code> or
      * <code>convertible</code>.</p>
      */
-    inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+    inline OfferingClassType GetOfferingClass() const { return m_offeringClass; }
     inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
-    inline void SetOfferingClass(const OfferingClassType& value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
-    inline void SetOfferingClass(OfferingClassType&& value) { m_offeringClassHasBeenSet = true; m_offeringClass = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingClass(const OfferingClassType& value) { SetOfferingClass(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingClass(OfferingClassType&& value) { SetOfferingClass(std::move(value)); return *this;}
+    inline void SetOfferingClass(OfferingClassType value) { m_offeringClassHasBeenSet = true; m_offeringClass = value; }
+    inline DescribeReservedInstancesOfferingsRequest& WithOfferingClass(OfferingClassType value) { SetOfferingClass(value); return *this;}
     ///@}
 
     ///@{
@@ -137,27 +131,24 @@ namespace Model
      * <p>The Reserved Instance product platform description. Instances that include
      * <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
      */
-    inline const RIProductDescription& GetProductDescription() const{ return m_productDescription; }
+    inline RIProductDescription GetProductDescription() const { return m_productDescription; }
     inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
-    inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
-    inline void SetProductDescription(RIProductDescription&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithProductDescription(const RIProductDescription& value) { SetProductDescription(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithProductDescription(RIProductDescription&& value) { SetProductDescription(std::move(value)); return *this;}
+    inline void SetProductDescription(RIProductDescription value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
+    inline DescribeReservedInstancesOfferingsRequest& WithProductDescription(RIProductDescription value) { SetProductDescription(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more Reserved Instances offering IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReservedInstancesOfferingIds() const{ return m_reservedInstancesOfferingIds; }
+    inline const Aws::Vector<Aws::String>& GetReservedInstancesOfferingIds() const { return m_reservedInstancesOfferingIds; }
     inline bool ReservedInstancesOfferingIdsHasBeenSet() const { return m_reservedInstancesOfferingIdsHasBeenSet; }
-    inline void SetReservedInstancesOfferingIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds = value; }
-    inline void SetReservedInstancesOfferingIds(Aws::Vector<Aws::String>&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithReservedInstancesOfferingIds(const Aws::Vector<Aws::String>& value) { SetReservedInstancesOfferingIds(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithReservedInstancesOfferingIds(Aws::Vector<Aws::String>&& value) { SetReservedInstancesOfferingIds(std::move(value)); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(const Aws::String& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(value); return *this; }
-    inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(Aws::String&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(std::move(value)); return *this; }
-    inline DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(const char* value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.push_back(value); return *this; }
+    template<typename ReservedInstancesOfferingIdsT = Aws::Vector<Aws::String>>
+    void SetReservedInstancesOfferingIds(ReservedInstancesOfferingIdsT&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds = std::forward<ReservedInstancesOfferingIdsT>(value); }
+    template<typename ReservedInstancesOfferingIdsT = Aws::Vector<Aws::String>>
+    DescribeReservedInstancesOfferingsRequest& WithReservedInstancesOfferingIds(ReservedInstancesOfferingIdsT&& value) { SetReservedInstancesOfferingIds(std::forward<ReservedInstancesOfferingIdsT>(value)); return *this;}
+    template<typename ReservedInstancesOfferingIdsT = Aws::String>
+    DescribeReservedInstancesOfferingsRequest& AddReservedInstancesOfferingIds(ReservedInstancesOfferingIdsT&& value) { m_reservedInstancesOfferingIdsHasBeenSet = true; m_reservedInstancesOfferingIds.emplace_back(std::forward<ReservedInstancesOfferingIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -167,7 +158,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeReservedInstancesOfferingsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -200,14 +191,14 @@ namespace Model
      * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
      * (for example, 0.84).</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeReservedInstancesOfferingsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeReservedInstancesOfferingsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -219,12 +210,10 @@ namespace Model
      * parameter. Use the <code>default</code> or <code>dedicated</code> values
      * only.</p> <p>Default: <code>default</code> </p>
      */
-    inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
+    inline Tenancy GetInstanceTenancy() const { return m_instanceTenancy; }
     inline bool InstanceTenancyHasBeenSet() const { return m_instanceTenancyHasBeenSet; }
-    inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
-    inline void SetInstanceTenancy(Tenancy&& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(const Tenancy& value) { SetInstanceTenancy(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy&& value) { SetInstanceTenancy(std::move(value)); return *this;}
+    inline void SetInstanceTenancy(Tenancy value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
+    inline DescribeReservedInstancesOfferingsRequest& WithInstanceTenancy(Tenancy value) { SetInstanceTenancy(value); return *this;}
     ///@}
 
     ///@{
@@ -233,26 +222,22 @@ namespace Model
      * 2011-11-01 API version, you only have access to the <code>Medium
      * Utilization</code> Reserved Instance offering type. </p>
      */
-    inline const OfferingTypeValues& GetOfferingType() const{ return m_offeringType; }
+    inline OfferingTypeValues GetOfferingType() const { return m_offeringType; }
     inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
-    inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
-    inline void SetOfferingType(OfferingTypeValues&& value) { m_offeringTypeHasBeenSet = true; m_offeringType = std::move(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(const OfferingTypeValues& value) { SetOfferingType(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues&& value) { SetOfferingType(std::move(value)); return *this;}
+    inline void SetOfferingType(OfferingTypeValues value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
+    inline DescribeReservedInstancesOfferingsRequest& WithOfferingType(OfferingTypeValues value) { SetOfferingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token to retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeReservedInstancesOfferingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReservedInstancesOfferingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReservedInstancesOfferingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -262,7 +247,7 @@ namespace Model
      * with the returned <code>NextToken</code> value. The maximum is 100.</p>
      * <p>Default: 100</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -272,46 +257,46 @@ namespace Model
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    bool m_includeMarketplace;
+    bool m_includeMarketplace{false};
     bool m_includeMarketplaceHasBeenSet = false;
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    long long m_maxDuration;
+    long long m_maxDuration{0};
     bool m_maxDurationHasBeenSet = false;
 
-    int m_maxInstanceCount;
+    int m_maxInstanceCount{0};
     bool m_maxInstanceCountHasBeenSet = false;
 
-    long long m_minDuration;
+    long long m_minDuration{0};
     bool m_minDurationHasBeenSet = false;
 
-    OfferingClassType m_offeringClass;
+    OfferingClassType m_offeringClass{OfferingClassType::NOT_SET};
     bool m_offeringClassHasBeenSet = false;
 
-    RIProductDescription m_productDescription;
+    RIProductDescription m_productDescription{RIProductDescription::NOT_SET};
     bool m_productDescriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reservedInstancesOfferingIds;
     bool m_reservedInstancesOfferingIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    Tenancy m_instanceTenancy;
+    Tenancy m_instanceTenancy{Tenancy::NOT_SET};
     bool m_instanceTenancyHasBeenSet = false;
 
-    OfferingTypeValues m_offeringType;
+    OfferingTypeValues m_offeringType{OfferingTypeValues::NOT_SET};
     bool m_offeringTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

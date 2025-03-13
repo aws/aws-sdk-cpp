@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DisableInsightRulesRequest::DisableInsightRulesRequest() : 
-    m_ruleNamesHasBeenSet(false)
-{
-}
-
 Aws::String DisableInsightRulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

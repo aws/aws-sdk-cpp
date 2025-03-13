@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMembersResult::GetMembersResult()
-{
-}
-
 GetMembersResult::GetMembersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetMembersResult& GetMembersResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_members.push_back(membersJsonList[membersIndex].AsObject());
     }
+    m_membersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedAccounts"))
   {
     Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
@@ -45,14 +41,15 @@ GetMembersResult& GetMembersResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());
     }
+    m_unprocessedAccountsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

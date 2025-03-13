@@ -18,15 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentRunWith::ComponentRunWith() : 
-    m_posixUserHasBeenSet(false),
-    m_systemResourceLimitsHasBeenSet(false),
-    m_windowsUserHasBeenSet(false)
-{
-}
-
 ComponentRunWith::ComponentRunWith(JsonView jsonValue)
-  : ComponentRunWith()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComponentRunWith& ComponentRunWith::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("posixUser"))
   {
     m_posixUser = jsonValue.GetString("posixUser");
-
     m_posixUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemResourceLimits"))
   {
     m_systemResourceLimits = jsonValue.GetObject("systemResourceLimits");
-
     m_systemResourceLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("windowsUser"))
   {
     m_windowsUser = jsonValue.GetString("windowsUser");
-
     m_windowsUserHasBeenSet = true;
   }
-
   return *this;
 }
 

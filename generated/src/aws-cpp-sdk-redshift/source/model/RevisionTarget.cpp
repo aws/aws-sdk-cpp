@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RevisionTarget::RevisionTarget() : 
-    m_databaseRevisionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_databaseRevisionReleaseDateHasBeenSet(false)
-{
-}
-
 RevisionTarget::RevisionTarget(const XmlNode& xmlNode)
-  : RevisionTarget()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ RevisionTarget& RevisionTarget::operator =(const XmlNode& xmlNode)
     {
       m_databaseRevision = Aws::Utils::Xml::DecodeEscapedXmlText(databaseRevisionNode.GetText());
       m_databaseRevisionHasBeenSet = true;
+       m_databaseRevisionHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode databaseRevisionReleaseDateNode = resultNode.FirstChild("DatabaseRevisionReleaseDate");
     if(!databaseRevisionReleaseDateNode.IsNull())
     {
       m_databaseRevisionReleaseDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseRevisionReleaseDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_databaseRevisionReleaseDateHasBeenSet = true;
+       m_databaseRevisionReleaseDateHasBeenSet = true;
     }
   }
 

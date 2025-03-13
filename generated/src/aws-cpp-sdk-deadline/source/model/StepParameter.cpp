@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepParameter::StepParameter() : 
-    m_nameHasBeenSet(false),
-    m_type(StepParameterType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 StepParameter::StepParameter(JsonView jsonValue)
-  : StepParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StepParameter& StepParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = StepParameterTypeMapper::GetStepParameterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

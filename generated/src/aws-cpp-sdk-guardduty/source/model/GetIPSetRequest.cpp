@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIPSetRequest::GetIPSetRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_ipSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetIPSetRequest::SerializePayload() const
 {
   return {};

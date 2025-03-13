@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation() : 
-    m_carrierIpHasBeenSet(false),
-    m_customerOwnedIpHasBeenSet(false),
-    m_ipOwnerIdHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 InstanceNetworkInterfaceAssociation::InstanceNetworkInterfaceAssociation(const XmlNode& xmlNode)
-  : InstanceNetworkInterfaceAssociation()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ InstanceNetworkInterfaceAssociation& InstanceNetworkInterfaceAssociation::operat
     {
       m_carrierIp = Aws::Utils::Xml::DecodeEscapedXmlText(carrierIpNode.GetText());
       m_carrierIpHasBeenSet = true;
+       m_carrierIpHasBeenSet = true;
     }
     XmlNode customerOwnedIpNode = resultNode.FirstChild("customerOwnedIp");
     if(!customerOwnedIpNode.IsNull())
     {
       m_customerOwnedIp = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpNode.GetText());
       m_customerOwnedIpHasBeenSet = true;
+       m_customerOwnedIpHasBeenSet = true;
     }
     XmlNode ipOwnerIdNode = resultNode.FirstChild("ipOwnerId");
     if(!ipOwnerIdNode.IsNull())
     {
       m_ipOwnerId = Aws::Utils::Xml::DecodeEscapedXmlText(ipOwnerIdNode.GetText());
       m_ipOwnerIdHasBeenSet = true;
+       m_ipOwnerIdHasBeenSet = true;
     }
     XmlNode publicDnsNameNode = resultNode.FirstChild("publicDnsName");
     if(!publicDnsNameNode.IsNull())
     {
       m_publicDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(publicDnsNameNode.GetText());
       m_publicDnsNameHasBeenSet = true;
+       m_publicDnsNameHasBeenSet = true;
     }
     XmlNode publicIpNode = resultNode.FirstChild("publicIp");
     if(!publicIpNode.IsNull())
     {
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
       m_publicIpHasBeenSet = true;
+       m_publicIpHasBeenSet = true;
     }
   }
 

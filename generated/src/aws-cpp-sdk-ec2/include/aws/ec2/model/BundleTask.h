@@ -35,7 +35,7 @@ namespace Model
   class BundleTask
   {
   public:
-    AWS_EC2_API BundleTask();
+    AWS_EC2_API BundleTask() = default;
     AWS_EC2_API BundleTask(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API BundleTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,102 +47,94 @@ namespace Model
     /**
      * <p>The ID of the instance associated with this bundle task.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline BundleTask& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline BundleTask& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline BundleTask& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    BundleTask& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the bundle task.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline BundleTask& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline BundleTask& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline BundleTask& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    BundleTask& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the task.</p>
      */
-    inline const BundleTaskState& GetState() const{ return m_state; }
+    inline BundleTaskState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const BundleTaskState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(BundleTaskState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline BundleTask& WithState(const BundleTaskState& value) { SetState(value); return *this;}
-    inline BundleTask& WithState(BundleTaskState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(BundleTaskState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline BundleTask& WithState(BundleTaskState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time this task started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline BundleTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline BundleTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    BundleTask& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of the most recent update for the task.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline BundleTask& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline BundleTask& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    BundleTask& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 storage locations.</p>
      */
-    inline const Storage& GetStorage() const{ return m_storage; }
+    inline const Storage& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const Storage& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(Storage&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline BundleTask& WithStorage(const Storage& value) { SetStorage(value); return *this;}
-    inline BundleTask& WithStorage(Storage&& value) { SetStorage(std::move(value)); return *this;}
+    template<typename StorageT = Storage>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = Storage>
+    BundleTask& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The level of task completion, as a percent (for example, 20%).</p>
      */
-    inline const Aws::String& GetProgress() const{ return m_progress; }
+    inline const Aws::String& GetProgress() const { return m_progress; }
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
-    inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
-    inline void SetProgress(Aws::String&& value) { m_progressHasBeenSet = true; m_progress = std::move(value); }
-    inline void SetProgress(const char* value) { m_progressHasBeenSet = true; m_progress.assign(value); }
-    inline BundleTask& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
-    inline BundleTask& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
-    inline BundleTask& WithProgress(const char* value) { SetProgress(value); return *this;}
+    template<typename ProgressT = Aws::String>
+    void SetProgress(ProgressT&& value) { m_progressHasBeenSet = true; m_progress = std::forward<ProgressT>(value); }
+    template<typename ProgressT = Aws::String>
+    BundleTask& WithProgress(ProgressT&& value) { SetProgress(std::forward<ProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the task fails, a description of the error.</p>
      */
-    inline const BundleTaskError& GetBundleTaskError() const{ return m_bundleTaskError; }
+    inline const BundleTaskError& GetBundleTaskError() const { return m_bundleTaskError; }
     inline bool BundleTaskErrorHasBeenSet() const { return m_bundleTaskErrorHasBeenSet; }
-    inline void SetBundleTaskError(const BundleTaskError& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = value; }
-    inline void SetBundleTaskError(BundleTaskError&& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = std::move(value); }
-    inline BundleTask& WithBundleTaskError(const BundleTaskError& value) { SetBundleTaskError(value); return *this;}
-    inline BundleTask& WithBundleTaskError(BundleTaskError&& value) { SetBundleTaskError(std::move(value)); return *this;}
+    template<typename BundleTaskErrorT = BundleTaskError>
+    void SetBundleTaskError(BundleTaskErrorT&& value) { m_bundleTaskErrorHasBeenSet = true; m_bundleTaskError = std::forward<BundleTaskErrorT>(value); }
+    template<typename BundleTaskErrorT = BundleTaskError>
+    BundleTask& WithBundleTaskError(BundleTaskErrorT&& value) { SetBundleTaskError(std::forward<BundleTaskErrorT>(value)); return *this;}
     ///@}
   private:
 
@@ -152,13 +144,13 @@ namespace Model
     Aws::String m_bundleId;
     bool m_bundleIdHasBeenSet = false;
 
-    BundleTaskState m_state;
+    BundleTaskState m_state{BundleTaskState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
 
     Storage m_storage;

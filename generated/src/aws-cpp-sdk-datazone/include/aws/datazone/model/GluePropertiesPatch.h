@@ -32,7 +32,7 @@ namespace Model
   class GluePropertiesPatch
   {
   public:
-    AWS_DATAZONE_API GluePropertiesPatch();
+    AWS_DATAZONE_API GluePropertiesPatch() = default;
     AWS_DATAZONE_API GluePropertiesPatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API GluePropertiesPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services Glue properties patch of a connection.</p>
      */
-    inline const GlueConnectionPatch& GetGlueConnectionInput() const{ return m_glueConnectionInput; }
+    inline const GlueConnectionPatch& GetGlueConnectionInput() const { return m_glueConnectionInput; }
     inline bool GlueConnectionInputHasBeenSet() const { return m_glueConnectionInputHasBeenSet; }
-    inline void SetGlueConnectionInput(const GlueConnectionPatch& value) { m_glueConnectionInputHasBeenSet = true; m_glueConnectionInput = value; }
-    inline void SetGlueConnectionInput(GlueConnectionPatch&& value) { m_glueConnectionInputHasBeenSet = true; m_glueConnectionInput = std::move(value); }
-    inline GluePropertiesPatch& WithGlueConnectionInput(const GlueConnectionPatch& value) { SetGlueConnectionInput(value); return *this;}
-    inline GluePropertiesPatch& WithGlueConnectionInput(GlueConnectionPatch&& value) { SetGlueConnectionInput(std::move(value)); return *this;}
+    template<typename GlueConnectionInputT = GlueConnectionPatch>
+    void SetGlueConnectionInput(GlueConnectionInputT&& value) { m_glueConnectionInputHasBeenSet = true; m_glueConnectionInput = std::forward<GlueConnectionInputT>(value); }
+    template<typename GlueConnectionInputT = GlueConnectionPatch>
+    GluePropertiesPatch& WithGlueConnectionInput(GlueConnectionInputT&& value) { SetGlueConnectionInput(std::forward<GlueConnectionInputT>(value)); return *this;}
     ///@}
   private:
 

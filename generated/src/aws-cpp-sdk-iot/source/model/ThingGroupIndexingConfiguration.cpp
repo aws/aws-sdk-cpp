@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ThingGroupIndexingConfiguration::ThingGroupIndexingConfiguration() : 
-    m_thingGroupIndexingMode(ThingGroupIndexingMode::NOT_SET),
-    m_thingGroupIndexingModeHasBeenSet(false),
-    m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false)
-{
-}
-
 ThingGroupIndexingConfiguration::ThingGroupIndexingConfiguration(JsonView jsonValue)
-  : ThingGroupIndexingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ThingGroupIndexingConfiguration& ThingGroupIndexingConfiguration::operator =(Jso
   if(jsonValue.ValueExists("thingGroupIndexingMode"))
   {
     m_thingGroupIndexingMode = ThingGroupIndexingModeMapper::GetThingGroupIndexingModeForName(jsonValue.GetString("thingGroupIndexingMode"));
-
     m_thingGroupIndexingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedFields"))
   {
     Aws::Utils::Array<JsonView> managedFieldsJsonList = jsonValue.GetArray("managedFields");
@@ -50,7 +39,6 @@ ThingGroupIndexingConfiguration& ThingGroupIndexingConfiguration::operator =(Jso
     }
     m_managedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customFields"))
   {
     Aws::Utils::Array<JsonView> customFieldsJsonList = jsonValue.GetArray("customFields");
@@ -60,7 +48,6 @@ ThingGroupIndexingConfiguration& ThingGroupIndexingConfiguration::operator =(Jso
     }
     m_customFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

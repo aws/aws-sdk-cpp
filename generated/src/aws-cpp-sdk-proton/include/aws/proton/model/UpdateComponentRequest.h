@@ -23,7 +23,7 @@ namespace Model
   class UpdateComponentRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API UpdateComponentRequest();
+    AWS_PROTON_API UpdateComponentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The client token for the updated component.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateComponentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateComponentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateComponentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,40 +59,34 @@ namespace Model
      * <code>templateSource</code>, and/or <code>type</code> that you provide. Only
      * requested parameters are updated.</p> </dd> </dl>
      */
-    inline const ComponentDeploymentUpdateType& GetDeploymentType() const{ return m_deploymentType; }
+    inline ComponentDeploymentUpdateType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const ComponentDeploymentUpdateType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(ComponentDeploymentUpdateType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline UpdateComponentRequest& WithDeploymentType(const ComponentDeploymentUpdateType& value) { SetDeploymentType(value); return *this;}
-    inline UpdateComponentRequest& WithDeploymentType(ComponentDeploymentUpdateType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(ComponentDeploymentUpdateType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline UpdateComponentRequest& WithDeploymentType(ComponentDeploymentUpdateType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional customer-provided description of the component.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateComponentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateComponentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateComponentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the component to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateComponentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateComponentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateComponentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * attached to. Specify non-empty values for both <code>serviceInstanceName</code>
      * and <code>serviceName</code> or for neither of them.</p>
      */
-    inline const Aws::String& GetServiceInstanceName() const{ return m_serviceInstanceName; }
+    inline const Aws::String& GetServiceInstanceName() const { return m_serviceInstanceName; }
     inline bool ServiceInstanceNameHasBeenSet() const { return m_serviceInstanceNameHasBeenSet; }
-    inline void SetServiceInstanceName(const Aws::String& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = value; }
-    inline void SetServiceInstanceName(Aws::String&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::move(value); }
-    inline void SetServiceInstanceName(const char* value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName.assign(value); }
-    inline UpdateComponentRequest& WithServiceInstanceName(const Aws::String& value) { SetServiceInstanceName(value); return *this;}
-    inline UpdateComponentRequest& WithServiceInstanceName(Aws::String&& value) { SetServiceInstanceName(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithServiceInstanceName(const char* value) { SetServiceInstanceName(value); return *this;}
+    template<typename ServiceInstanceNameT = Aws::String>
+    void SetServiceInstanceName(ServiceInstanceNameT&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::forward<ServiceInstanceNameT>(value); }
+    template<typename ServiceInstanceNameT = Aws::String>
+    UpdateComponentRequest& WithServiceInstanceName(ServiceInstanceNameT&& value) { SetServiceInstanceName(std::forward<ServiceInstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +113,12 @@ namespace Model
      * attached to. Specify non-empty values for both <code>serviceInstanceName</code>
      * and <code>serviceName</code> or for neither of them.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline UpdateComponentRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline UpdateComponentRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    UpdateComponentRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +126,12 @@ namespace Model
      * <p>The service spec that you want the component to use to access service inputs.
      * Set this only when the component is attached to a service instance.</p>
      */
-    inline const Aws::String& GetServiceSpec() const{ return m_serviceSpec; }
+    inline const Aws::String& GetServiceSpec() const { return m_serviceSpec; }
     inline bool ServiceSpecHasBeenSet() const { return m_serviceSpecHasBeenSet; }
-    inline void SetServiceSpec(const Aws::String& value) { m_serviceSpecHasBeenSet = true; m_serviceSpec = value; }
-    inline void SetServiceSpec(Aws::String&& value) { m_serviceSpecHasBeenSet = true; m_serviceSpec = std::move(value); }
-    inline void SetServiceSpec(const char* value) { m_serviceSpecHasBeenSet = true; m_serviceSpec.assign(value); }
-    inline UpdateComponentRequest& WithServiceSpec(const Aws::String& value) { SetServiceSpec(value); return *this;}
-    inline UpdateComponentRequest& WithServiceSpec(Aws::String&& value) { SetServiceSpec(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithServiceSpec(const char* value) { SetServiceSpec(value); return *this;}
+    template<typename ServiceSpecT = Aws::String>
+    void SetServiceSpec(ServiceSpecT&& value) { m_serviceSpecHasBeenSet = true; m_serviceSpec = std::forward<ServiceSpecT>(value); }
+    template<typename ServiceSpecT = Aws::String>
+    UpdateComponentRequest& WithServiceSpec(ServiceSpecT&& value) { SetServiceSpec(std::forward<ServiceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,21 +140,19 @@ namespace Model
      * that a custom component provisions.</p>  <p>Components support a single
      * IaC file, even if you use Terraform as your template language.</p> 
      */
-    inline const Aws::String& GetTemplateFile() const{ return m_templateFile; }
+    inline const Aws::String& GetTemplateFile() const { return m_templateFile; }
     inline bool TemplateFileHasBeenSet() const { return m_templateFileHasBeenSet; }
-    inline void SetTemplateFile(const Aws::String& value) { m_templateFileHasBeenSet = true; m_templateFile = value; }
-    inline void SetTemplateFile(Aws::String&& value) { m_templateFileHasBeenSet = true; m_templateFile = std::move(value); }
-    inline void SetTemplateFile(const char* value) { m_templateFileHasBeenSet = true; m_templateFile.assign(value); }
-    inline UpdateComponentRequest& WithTemplateFile(const Aws::String& value) { SetTemplateFile(value); return *this;}
-    inline UpdateComponentRequest& WithTemplateFile(Aws::String&& value) { SetTemplateFile(std::move(value)); return *this;}
-    inline UpdateComponentRequest& WithTemplateFile(const char* value) { SetTemplateFile(value); return *this;}
+    template<typename TemplateFileT = Aws::String>
+    void SetTemplateFile(TemplateFileT&& value) { m_templateFileHasBeenSet = true; m_templateFile = std::forward<TemplateFileT>(value); }
+    template<typename TemplateFileT = Aws::String>
+    UpdateComponentRequest& WithTemplateFile(TemplateFileT&& value) { SetTemplateFile(std::forward<TemplateFileT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    ComponentDeploymentUpdateType m_deploymentType;
+    ComponentDeploymentUpdateType m_deploymentType{ComponentDeploymentUpdateType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_description;

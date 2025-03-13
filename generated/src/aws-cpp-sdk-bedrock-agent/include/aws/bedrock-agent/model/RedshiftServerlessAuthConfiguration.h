@@ -35,7 +35,7 @@ namespace Model
   class RedshiftServerlessAuthConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RedshiftServerlessAuthConfiguration();
+    AWS_BEDROCKAGENT_API RedshiftServerlessAuthConfiguration() = default;
     AWS_BEDROCKAGENT_API RedshiftServerlessAuthConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RedshiftServerlessAuthConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,26 @@ namespace Model
     /**
      * <p>The type of authentication to use.</p>
      */
-    inline const RedshiftServerlessAuthType& GetType() const{ return m_type; }
+    inline RedshiftServerlessAuthType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RedshiftServerlessAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RedshiftServerlessAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RedshiftServerlessAuthConfiguration& WithType(const RedshiftServerlessAuthType& value) { SetType(value); return *this;}
-    inline RedshiftServerlessAuthConfiguration& WithType(RedshiftServerlessAuthType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RedshiftServerlessAuthType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RedshiftServerlessAuthConfiguration& WithType(RedshiftServerlessAuthType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of an Secrets Manager secret for authentication.</p>
      */
-    inline const Aws::String& GetUsernamePasswordSecretArn() const{ return m_usernamePasswordSecretArn; }
+    inline const Aws::String& GetUsernamePasswordSecretArn() const { return m_usernamePasswordSecretArn; }
     inline bool UsernamePasswordSecretArnHasBeenSet() const { return m_usernamePasswordSecretArnHasBeenSet; }
-    inline void SetUsernamePasswordSecretArn(const Aws::String& value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn = value; }
-    inline void SetUsernamePasswordSecretArn(Aws::String&& value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn = std::move(value); }
-    inline void SetUsernamePasswordSecretArn(const char* value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn.assign(value); }
-    inline RedshiftServerlessAuthConfiguration& WithUsernamePasswordSecretArn(const Aws::String& value) { SetUsernamePasswordSecretArn(value); return *this;}
-    inline RedshiftServerlessAuthConfiguration& WithUsernamePasswordSecretArn(Aws::String&& value) { SetUsernamePasswordSecretArn(std::move(value)); return *this;}
-    inline RedshiftServerlessAuthConfiguration& WithUsernamePasswordSecretArn(const char* value) { SetUsernamePasswordSecretArn(value); return *this;}
+    template<typename UsernamePasswordSecretArnT = Aws::String>
+    void SetUsernamePasswordSecretArn(UsernamePasswordSecretArnT&& value) { m_usernamePasswordSecretArnHasBeenSet = true; m_usernamePasswordSecretArn = std::forward<UsernamePasswordSecretArnT>(value); }
+    template<typename UsernamePasswordSecretArnT = Aws::String>
+    RedshiftServerlessAuthConfiguration& WithUsernamePasswordSecretArn(UsernamePasswordSecretArnT&& value) { SetUsernamePasswordSecretArn(std::forward<UsernamePasswordSecretArnT>(value)); return *this;}
     ///@}
   private:
 
-    RedshiftServerlessAuthType m_type;
+    RedshiftServerlessAuthType m_type{RedshiftServerlessAuthType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_usernamePasswordSecretArn;

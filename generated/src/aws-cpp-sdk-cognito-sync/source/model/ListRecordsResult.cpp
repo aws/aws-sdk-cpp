@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRecordsResult::ListRecordsResult() : 
-    m_count(0),
-    m_datasetSyncCount(0),
-    m_datasetExists(false),
-    m_datasetDeletedAfterRequestedSyncCount(false)
-{
-}
-
 ListRecordsResult::ListRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListRecordsResult()
 {
   *this = result;
 }
@@ -41,32 +32,28 @@ ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
+    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
+    m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetSyncCount"))
   {
     m_datasetSyncCount = jsonValue.GetInt64("DatasetSyncCount");
-
+    m_datasetSyncCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
+    m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MergedDatasetNames"))
   {
     Aws::Utils::Array<JsonView> mergedDatasetNamesJsonList = jsonValue.GetArray("MergedDatasetNames");
@@ -74,32 +61,30 @@ ListRecordsResult& ListRecordsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_mergedDatasetNames.push_back(mergedDatasetNamesJsonList[mergedDatasetNamesIndex].AsString());
     }
+    m_mergedDatasetNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetExists"))
   {
     m_datasetExists = jsonValue.GetBool("DatasetExists");
-
+    m_datasetExistsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetDeletedAfterRequestedSyncCount"))
   {
     m_datasetDeletedAfterRequestedSyncCount = jsonValue.GetBool("DatasetDeletedAfterRequestedSyncCount");
-
+    m_datasetDeletedAfterRequestedSyncCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncSessionToken"))
   {
     m_syncSessionToken = jsonValue.GetString("SyncSessionToken");
-
+    m_syncSessionTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -37,7 +37,7 @@ namespace Model
   class GetIdentityVerificationAttributesResult
   {
   public:
-    AWS_SES_API GetIdentityVerificationAttributesResult();
+    AWS_SES_API GetIdentityVerificationAttributesResult() = default;
     AWS_SES_API GetIdentityVerificationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SES_API GetIdentityVerificationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,32 +46,32 @@ namespace Model
     /**
      * <p>A map of Identities to IdentityVerificationAttributes objects.</p>
      */
-    inline const Aws::Map<Aws::String, IdentityVerificationAttributes>& GetVerificationAttributes() const{ return m_verificationAttributes; }
-    inline void SetVerificationAttributes(const Aws::Map<Aws::String, IdentityVerificationAttributes>& value) { m_verificationAttributes = value; }
-    inline void SetVerificationAttributes(Aws::Map<Aws::String, IdentityVerificationAttributes>&& value) { m_verificationAttributes = std::move(value); }
-    inline GetIdentityVerificationAttributesResult& WithVerificationAttributes(const Aws::Map<Aws::String, IdentityVerificationAttributes>& value) { SetVerificationAttributes(value); return *this;}
-    inline GetIdentityVerificationAttributesResult& WithVerificationAttributes(Aws::Map<Aws::String, IdentityVerificationAttributes>&& value) { SetVerificationAttributes(std::move(value)); return *this;}
-    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const Aws::String& key, const IdentityVerificationAttributes& value) { m_verificationAttributes.emplace(key, value); return *this; }
-    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(Aws::String&& key, const IdentityVerificationAttributes& value) { m_verificationAttributes.emplace(std::move(key), value); return *this; }
-    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const Aws::String& key, IdentityVerificationAttributes&& value) { m_verificationAttributes.emplace(key, std::move(value)); return *this; }
-    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(Aws::String&& key, IdentityVerificationAttributes&& value) { m_verificationAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const char* key, IdentityVerificationAttributes&& value) { m_verificationAttributes.emplace(key, std::move(value)); return *this; }
-    inline GetIdentityVerificationAttributesResult& AddVerificationAttributes(const char* key, const IdentityVerificationAttributes& value) { m_verificationAttributes.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, IdentityVerificationAttributes>& GetVerificationAttributes() const { return m_verificationAttributes; }
+    template<typename VerificationAttributesT = Aws::Map<Aws::String, IdentityVerificationAttributes>>
+    void SetVerificationAttributes(VerificationAttributesT&& value) { m_verificationAttributesHasBeenSet = true; m_verificationAttributes = std::forward<VerificationAttributesT>(value); }
+    template<typename VerificationAttributesT = Aws::Map<Aws::String, IdentityVerificationAttributes>>
+    GetIdentityVerificationAttributesResult& WithVerificationAttributes(VerificationAttributesT&& value) { SetVerificationAttributes(std::forward<VerificationAttributesT>(value)); return *this;}
+    template<typename VerificationAttributesKeyT = Aws::String, typename VerificationAttributesValueT = IdentityVerificationAttributes>
+    GetIdentityVerificationAttributesResult& AddVerificationAttributes(VerificationAttributesKeyT&& key, VerificationAttributesValueT&& value) {
+      m_verificationAttributesHasBeenSet = true; m_verificationAttributes.emplace(std::forward<VerificationAttributesKeyT>(key), std::forward<VerificationAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetIdentityVerificationAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetIdentityVerificationAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetIdentityVerificationAttributesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, IdentityVerificationAttributes> m_verificationAttributes;
+    bool m_verificationAttributesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

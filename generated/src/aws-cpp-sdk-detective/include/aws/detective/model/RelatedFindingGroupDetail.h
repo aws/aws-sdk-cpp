@@ -34,7 +34,7 @@ namespace Model
   class RelatedFindingGroupDetail
   {
   public:
-    AWS_DETECTIVE_API RelatedFindingGroupDetail();
+    AWS_DETECTIVE_API RelatedFindingGroupDetail() = default;
     AWS_DETECTIVE_API RelatedFindingGroupDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API RelatedFindingGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The unique identifier for the finding group.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline RelatedFindingGroupDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline RelatedFindingGroupDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline RelatedFindingGroupDetail& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    RelatedFindingGroupDetail& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

@@ -28,33 +28,35 @@ namespace Model
   class IncreaseReplicaCountResult
   {
   public:
-    AWS_ELASTICACHE_API IncreaseReplicaCountResult();
+    AWS_ELASTICACHE_API IncreaseReplicaCountResult() = default;
     AWS_ELASTICACHE_API IncreaseReplicaCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API IncreaseReplicaCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ReplicationGroup& GetReplicationGroup() const{ return m_replicationGroup; }
-    inline void SetReplicationGroup(const ReplicationGroup& value) { m_replicationGroup = value; }
-    inline void SetReplicationGroup(ReplicationGroup&& value) { m_replicationGroup = std::move(value); }
-    inline IncreaseReplicaCountResult& WithReplicationGroup(const ReplicationGroup& value) { SetReplicationGroup(value); return *this;}
-    inline IncreaseReplicaCountResult& WithReplicationGroup(ReplicationGroup&& value) { SetReplicationGroup(std::move(value)); return *this;}
+    inline const ReplicationGroup& GetReplicationGroup() const { return m_replicationGroup; }
+    template<typename ReplicationGroupT = ReplicationGroup>
+    void SetReplicationGroup(ReplicationGroupT&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = std::forward<ReplicationGroupT>(value); }
+    template<typename ReplicationGroupT = ReplicationGroup>
+    IncreaseReplicaCountResult& WithReplicationGroup(ReplicationGroupT&& value) { SetReplicationGroup(std::forward<ReplicationGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline IncreaseReplicaCountResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline IncreaseReplicaCountResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    IncreaseReplicaCountResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ReplicationGroup m_replicationGroup;
+    bool m_replicationGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

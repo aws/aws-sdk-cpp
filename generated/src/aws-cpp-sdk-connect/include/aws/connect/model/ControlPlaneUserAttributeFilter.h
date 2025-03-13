@@ -42,7 +42,7 @@ namespace Model
   class ControlPlaneUserAttributeFilter
   {
   public:
-    AWS_CONNECT_API ControlPlaneUserAttributeFilter();
+    AWS_CONNECT_API ControlPlaneUserAttributeFilter() = default;
     AWS_CONNECT_API ControlPlaneUserAttributeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ControlPlaneUserAttributeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
-    inline const Aws::Vector<AttributeAndCondition>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<AttributeAndCondition>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<AttributeAndCondition>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<AttributeAndCondition>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline ControlPlaneUserAttributeFilter& WithOrConditions(const Aws::Vector<AttributeAndCondition>& value) { SetOrConditions(value); return *this;}
-    inline ControlPlaneUserAttributeFilter& WithOrConditions(Aws::Vector<AttributeAndCondition>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline ControlPlaneUserAttributeFilter& AddOrConditions(const AttributeAndCondition& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline ControlPlaneUserAttributeFilter& AddOrConditions(AttributeAndCondition&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<AttributeAndCondition>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<AttributeAndCondition>>
+    ControlPlaneUserAttributeFilter& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = AttributeAndCondition>
+    ControlPlaneUserAttributeFilter& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,32 +68,32 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
-    inline const AttributeAndCondition& GetAndCondition() const{ return m_andCondition; }
+    inline const AttributeAndCondition& GetAndCondition() const { return m_andCondition; }
     inline bool AndConditionHasBeenSet() const { return m_andConditionHasBeenSet; }
-    inline void SetAndCondition(const AttributeAndCondition& value) { m_andConditionHasBeenSet = true; m_andCondition = value; }
-    inline void SetAndCondition(AttributeAndCondition&& value) { m_andConditionHasBeenSet = true; m_andCondition = std::move(value); }
-    inline ControlPlaneUserAttributeFilter& WithAndCondition(const AttributeAndCondition& value) { SetAndCondition(value); return *this;}
-    inline ControlPlaneUserAttributeFilter& WithAndCondition(AttributeAndCondition&& value) { SetAndCondition(std::move(value)); return *this;}
+    template<typename AndConditionT = AttributeAndCondition>
+    void SetAndCondition(AndConditionT&& value) { m_andConditionHasBeenSet = true; m_andCondition = std::forward<AndConditionT>(value); }
+    template<typename AndConditionT = AttributeAndCondition>
+    ControlPlaneUserAttributeFilter& WithAndCondition(AndConditionT&& value) { SetAndCondition(std::forward<AndConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TagCondition& GetTagCondition() const{ return m_tagCondition; }
+    inline const TagCondition& GetTagCondition() const { return m_tagCondition; }
     inline bool TagConditionHasBeenSet() const { return m_tagConditionHasBeenSet; }
-    inline void SetTagCondition(const TagCondition& value) { m_tagConditionHasBeenSet = true; m_tagCondition = value; }
-    inline void SetTagCondition(TagCondition&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::move(value); }
-    inline ControlPlaneUserAttributeFilter& WithTagCondition(const TagCondition& value) { SetTagCondition(value); return *this;}
-    inline ControlPlaneUserAttributeFilter& WithTagCondition(TagCondition&& value) { SetTagCondition(std::move(value)); return *this;}
+    template<typename TagConditionT = TagCondition>
+    void SetTagCondition(TagConditionT&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::forward<TagConditionT>(value); }
+    template<typename TagConditionT = TagCondition>
+    ControlPlaneUserAttributeFilter& WithTagCondition(TagConditionT&& value) { SetTagCondition(std::forward<TagConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const{ return m_hierarchyGroupCondition; }
+    inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const { return m_hierarchyGroupCondition; }
     inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
-    inline void SetHierarchyGroupCondition(const HierarchyGroupCondition& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = value; }
-    inline void SetHierarchyGroupCondition(HierarchyGroupCondition&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::move(value); }
-    inline ControlPlaneUserAttributeFilter& WithHierarchyGroupCondition(const HierarchyGroupCondition& value) { SetHierarchyGroupCondition(value); return *this;}
-    inline ControlPlaneUserAttributeFilter& WithHierarchyGroupCondition(HierarchyGroupCondition&& value) { SetHierarchyGroupCondition(std::move(value)); return *this;}
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    void SetHierarchyGroupCondition(HierarchyGroupConditionT&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::forward<HierarchyGroupConditionT>(value); }
+    template<typename HierarchyGroupConditionT = HierarchyGroupCondition>
+    ControlPlaneUserAttributeFilter& WithHierarchyGroupCondition(HierarchyGroupConditionT&& value) { SetHierarchyGroupCondition(std::forward<HierarchyGroupConditionT>(value)); return *this;}
     ///@}
   private:
 

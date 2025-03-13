@@ -12,14 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteCustomVocabularyItemRequest::BatchDeleteCustomVocabularyItemRequest() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_customVocabularyItemListHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteCustomVocabularyItemRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -14,11 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateInvalidation2020_05_31Request::CreateInvalidation2020_05_31Request() : 
-    m_distributionIdHasBeenSet(false),
-    m_invalidationBatchHasBeenSet(false)
-{
-}
 
 Aws::String CreateInvalidation2020_05_31Request::SerializePayload() const
 {

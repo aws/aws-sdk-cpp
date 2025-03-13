@@ -35,7 +35,7 @@ namespace Model
   class GetStagesResult
   {
   public:
-    AWS_APIGATEWAY_API GetStagesResult();
+    AWS_APIGATEWAY_API GetStagesResult() = default;
     AWS_APIGATEWAY_API GetStagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetStagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
     /**
      * <p>The current page of elements from this collection.</p>
      */
-    inline const Aws::Vector<Stage>& GetItem() const{ return m_item; }
-    inline void SetItem(const Aws::Vector<Stage>& value) { m_item = value; }
-    inline void SetItem(Aws::Vector<Stage>&& value) { m_item = std::move(value); }
-    inline GetStagesResult& WithItem(const Aws::Vector<Stage>& value) { SetItem(value); return *this;}
-    inline GetStagesResult& WithItem(Aws::Vector<Stage>&& value) { SetItem(std::move(value)); return *this;}
-    inline GetStagesResult& AddItem(const Stage& value) { m_item.push_back(value); return *this; }
-    inline GetStagesResult& AddItem(Stage&& value) { m_item.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Stage>& GetItem() const { return m_item; }
+    template<typename ItemT = Aws::Vector<Stage>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Vector<Stage>>
+    GetStagesResult& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemT = Stage>
+    GetStagesResult& AddItem(ItemT&& value) { m_itemHasBeenSet = true; m_item.emplace_back(std::forward<ItemT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Stage> m_item;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

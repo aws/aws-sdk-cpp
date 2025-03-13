@@ -34,7 +34,7 @@ namespace Model
   class DataSourceSearchFilter
   {
   public:
-    AWS_QUICKSIGHT_API DataSourceSearchFilter();
+    AWS_QUICKSIGHT_API DataSourceSearchFilter() = default;
     AWS_QUICKSIGHT_API DataSourceSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataSourceSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * "Test"</code>. The <code>"StringLike"</code> operator only supports the
      * <code>NAME</code> value <code>DATASOURCE_NAME</code>.</p>
      */
-    inline const FilterOperator& GetOperator() const{ return m_operator; }
+    inline FilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const FilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(FilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline DataSourceSearchFilter& WithOperator(const FilterOperator& value) { SetOperator(value); return *this;}
-    inline DataSourceSearchFilter& WithOperator(FilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(FilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline DataSourceSearchFilter& WithOperator(FilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +80,10 @@ namespace Model
      * sources whose names have a substring match to the provided value are
      * returned.</p> </li> </ul>
      */
-    inline const DataSourceFilterAttribute& GetName() const{ return m_name; }
+    inline DataSourceFilterAttribute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DataSourceFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DataSourceFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DataSourceSearchFilter& WithName(const DataSourceFilterAttribute& value) { SetName(value); return *this;}
-    inline DataSourceSearchFilter& WithName(DataSourceFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DataSourceFilterAttribute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DataSourceSearchFilter& WithName(DataSourceFilterAttribute value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -97,21 +93,19 @@ namespace Model
      * example, <code>"Value":
      * "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline DataSourceSearchFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline DataSourceSearchFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline DataSourceSearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    DataSourceSearchFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterOperator m_operator;
+    FilterOperator m_operator{FilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    DataSourceFilterAttribute m_name;
+    DataSourceFilterAttribute m_name{DataSourceFilterAttribute::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

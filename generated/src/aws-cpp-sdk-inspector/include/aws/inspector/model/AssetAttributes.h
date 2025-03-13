@@ -35,7 +35,7 @@ namespace Model
   class AssetAttributes
   {
   public:
-    AWS_INSPECTOR_API AssetAttributes();
+    AWS_INSPECTOR_API AssetAttributes() = default;
     AWS_INSPECTOR_API AssetAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AssetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The schema version of this data type.</p>
      */
-    inline int GetSchemaVersion() const{ return m_schemaVersion; }
+    inline int GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
     inline void SetSchemaVersion(int value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
     inline AssetAttributes& WithSchemaVersion(int value) { SetSchemaVersion(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
      * <p>The ID of the agent that is installed on the EC2 instance where the finding
      * is generated.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline AssetAttributes& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline AssetAttributes& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline AssetAttributes& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    AssetAttributes& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>The Auto Scaling group of the EC2 instance where the finding is
      * generated.</p>
      */
-    inline const Aws::String& GetAutoScalingGroup() const{ return m_autoScalingGroup; }
+    inline const Aws::String& GetAutoScalingGroup() const { return m_autoScalingGroup; }
     inline bool AutoScalingGroupHasBeenSet() const { return m_autoScalingGroupHasBeenSet; }
-    inline void SetAutoScalingGroup(const Aws::String& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
-    inline void SetAutoScalingGroup(Aws::String&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::move(value); }
-    inline void SetAutoScalingGroup(const char* value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup.assign(value); }
-    inline AssetAttributes& WithAutoScalingGroup(const Aws::String& value) { SetAutoScalingGroup(value); return *this;}
-    inline AssetAttributes& WithAutoScalingGroup(Aws::String&& value) { SetAutoScalingGroup(std::move(value)); return *this;}
-    inline AssetAttributes& WithAutoScalingGroup(const char* value) { SetAutoScalingGroup(value); return *this;}
+    template<typename AutoScalingGroupT = Aws::String>
+    void SetAutoScalingGroup(AutoScalingGroupT&& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = std::forward<AutoScalingGroupT>(value); }
+    template<typename AutoScalingGroupT = Aws::String>
+    AssetAttributes& WithAutoScalingGroup(AutoScalingGroupT&& value) { SetAutoScalingGroup(std::forward<AutoScalingGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,28 +82,24 @@ namespace Model
      * <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2
      * instance where the finding is generated.</p>
      */
-    inline const Aws::String& GetAmiId() const{ return m_amiId; }
+    inline const Aws::String& GetAmiId() const { return m_amiId; }
     inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-    inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
-    inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = std::move(value); }
-    inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
-    inline AssetAttributes& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
-    inline AssetAttributes& WithAmiId(Aws::String&& value) { SetAmiId(std::move(value)); return *this;}
-    inline AssetAttributes& WithAmiId(const char* value) { SetAmiId(value); return *this;}
+    template<typename AmiIdT = Aws::String>
+    void SetAmiId(AmiIdT&& value) { m_amiIdHasBeenSet = true; m_amiId = std::forward<AmiIdT>(value); }
+    template<typename AmiIdT = Aws::String>
+    AssetAttributes& WithAmiId(AmiIdT&& value) { SetAmiId(std::forward<AmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hostname of the EC2 instance where the finding is generated.</p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline AssetAttributes& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline AssetAttributes& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline AssetAttributes& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    AssetAttributes& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,29 +107,28 @@ namespace Model
      * <p>The list of IP v4 addresses of the EC2 instance where the finding is
      * generated.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpv4Addresses() const{ return m_ipv4Addresses; }
+    inline const Aws::Vector<Aws::String>& GetIpv4Addresses() const { return m_ipv4Addresses; }
     inline bool Ipv4AddressesHasBeenSet() const { return m_ipv4AddressesHasBeenSet; }
-    inline void SetIpv4Addresses(const Aws::Vector<Aws::String>& value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses = value; }
-    inline void SetIpv4Addresses(Aws::Vector<Aws::String>&& value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses = std::move(value); }
-    inline AssetAttributes& WithIpv4Addresses(const Aws::Vector<Aws::String>& value) { SetIpv4Addresses(value); return *this;}
-    inline AssetAttributes& WithIpv4Addresses(Aws::Vector<Aws::String>&& value) { SetIpv4Addresses(std::move(value)); return *this;}
-    inline AssetAttributes& AddIpv4Addresses(const Aws::String& value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses.push_back(value); return *this; }
-    inline AssetAttributes& AddIpv4Addresses(Aws::String&& value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses.push_back(std::move(value)); return *this; }
-    inline AssetAttributes& AddIpv4Addresses(const char* value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses.push_back(value); return *this; }
+    template<typename Ipv4AddressesT = Aws::Vector<Aws::String>>
+    void SetIpv4Addresses(Ipv4AddressesT&& value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses = std::forward<Ipv4AddressesT>(value); }
+    template<typename Ipv4AddressesT = Aws::Vector<Aws::String>>
+    AssetAttributes& WithIpv4Addresses(Ipv4AddressesT&& value) { SetIpv4Addresses(std::forward<Ipv4AddressesT>(value)); return *this;}
+    template<typename Ipv4AddressesT = Aws::String>
+    AssetAttributes& AddIpv4Addresses(Ipv4AddressesT&& value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses.emplace_back(std::forward<Ipv4AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags related to the EC2 instance where the finding is generated.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AssetAttributes& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AssetAttributes& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AssetAttributes& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AssetAttributes& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AssetAttributes& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AssetAttributes& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,18 +136,18 @@ namespace Model
      * <p>An array of the network interfaces interacting with the EC2 instance where
      * the finding is generated.</p>
      */
-    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline AssetAttributes& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
-    inline AssetAttributes& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline AssetAttributes& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline AssetAttributes& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<NetworkInterface>>
+    AssetAttributes& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = NetworkInterface>
+    AssetAttributes& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_schemaVersion;
+    int m_schemaVersion{0};
     bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_agentId;

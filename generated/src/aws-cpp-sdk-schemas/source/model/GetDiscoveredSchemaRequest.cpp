@@ -12,13 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDiscoveredSchemaRequest::GetDiscoveredSchemaRequest() : 
-    m_eventsHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String GetDiscoveredSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

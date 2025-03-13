@@ -18,36 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-InstanceRecommendation::InstanceRecommendation() : 
-    m_instanceArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_currentInstanceTypeHasBeenSet(false),
-    m_finding(Finding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_recommendationOptionsHasBeenSet(false),
-    m_recommendationSourcesHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false),
-    m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_externalMetricStatusHasBeenSet(false),
-    m_currentInstanceGpuInfoHasBeenSet(false),
-    m_idle(InstanceIdle::NOT_SET),
-    m_idleHasBeenSet(false)
-{
-}
-
 InstanceRecommendation::InstanceRecommendation(JsonView jsonValue)
-  : InstanceRecommendation()
 {
   *this = jsonValue;
 }
@@ -57,38 +28,28 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceName"))
   {
     m_instanceName = jsonValue.GetString("instanceName");
-
     m_instanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentInstanceType"))
   {
     m_currentInstanceType = jsonValue.GetString("currentInstanceType");
-
     m_currentInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finding"))
   {
     m_finding = FindingMapper::GetFindingForName(jsonValue.GetString("finding"));
-
     m_findingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("findingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
@@ -98,7 +59,6 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     }
     m_findingReasonCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
@@ -108,14 +68,11 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     }
     m_utilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriodInDays"))
   {
     m_lookBackPeriodInDays = jsonValue.GetDouble("lookBackPeriodInDays");
-
     m_lookBackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationOptions"))
   {
     Aws::Utils::Array<JsonView> recommendationOptionsJsonList = jsonValue.GetArray("recommendationOptions");
@@ -125,7 +82,6 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     }
     m_recommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationSources"))
   {
     Aws::Utils::Array<JsonView> recommendationSourcesJsonList = jsonValue.GetArray("recommendationSources");
@@ -135,28 +91,21 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     }
     m_recommendationSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentPerformanceRisk"))
   {
     m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
-
     m_currentPerformanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
   {
     m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
     m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferredWorkloadTypes"))
   {
     Aws::Utils::Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
@@ -166,14 +115,11 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     }
     m_inferredWorkloadTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceState"))
   {
     m_instanceState = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("instanceState"));
-
     m_instanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -183,28 +129,21 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalMetricStatus"))
   {
     m_externalMetricStatus = jsonValue.GetObject("externalMetricStatus");
-
     m_externalMetricStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentInstanceGpuInfo"))
   {
     m_currentInstanceGpuInfo = jsonValue.GetObject("currentInstanceGpuInfo");
-
     m_currentInstanceGpuInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idle"))
   {
     m_idle = InstanceIdleMapper::GetInstanceIdleForName(jsonValue.GetString("idle"));
-
     m_idleHasBeenSet = true;
   }
-
   return *this;
 }
 

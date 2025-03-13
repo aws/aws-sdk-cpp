@@ -12,13 +12,6 @@ using namespace Aws::IoT1ClickDevicesService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeviceStateRequest::UpdateDeviceStateRequest() : 
-    m_deviceIdHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeviceStateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobInputConfig::LabelingJobInputConfig() : 
-    m_dataSourceHasBeenSet(false),
-    m_dataAttributesHasBeenSet(false)
-{
-}
-
 LabelingJobInputConfig::LabelingJobInputConfig(JsonView jsonValue)
-  : LabelingJobInputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LabelingJobInputConfig& LabelingJobInputConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAttributes"))
   {
     m_dataAttributes = jsonValue.GetObject("DataAttributes");
-
     m_dataAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

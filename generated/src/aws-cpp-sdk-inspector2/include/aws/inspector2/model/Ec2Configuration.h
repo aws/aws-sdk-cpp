@@ -32,7 +32,7 @@ namespace Model
   class Ec2Configuration
   {
   public:
-    AWS_INSPECTOR2_API Ec2Configuration();
+    AWS_INSPECTOR2_API Ec2Configuration() = default;
     AWS_INSPECTOR2_API Ec2Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Ec2Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The scan method that is applied to the instance.</p>
      */
-    inline const Ec2ScanMode& GetScanMode() const{ return m_scanMode; }
+    inline Ec2ScanMode GetScanMode() const { return m_scanMode; }
     inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
-    inline void SetScanMode(const Ec2ScanMode& value) { m_scanModeHasBeenSet = true; m_scanMode = value; }
-    inline void SetScanMode(Ec2ScanMode&& value) { m_scanModeHasBeenSet = true; m_scanMode = std::move(value); }
-    inline Ec2Configuration& WithScanMode(const Ec2ScanMode& value) { SetScanMode(value); return *this;}
-    inline Ec2Configuration& WithScanMode(Ec2ScanMode&& value) { SetScanMode(std::move(value)); return *this;}
+    inline void SetScanMode(Ec2ScanMode value) { m_scanModeHasBeenSet = true; m_scanMode = value; }
+    inline Ec2Configuration& WithScanMode(Ec2ScanMode value) { SetScanMode(value); return *this;}
     ///@}
   private:
 
-    Ec2ScanMode m_scanMode;
+    Ec2ScanMode m_scanMode{Ec2ScanMode::NOT_SET};
     bool m_scanModeHasBeenSet = false;
   };
 

@@ -12,30 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePredictorRequest::CreatePredictorRequest() : 
-    m_predictorNameHasBeenSet(false),
-    m_algorithmArnHasBeenSet(false),
-    m_forecastHorizon(0),
-    m_forecastHorizonHasBeenSet(false),
-    m_forecastTypesHasBeenSet(false),
-    m_performAutoML(false),
-    m_performAutoMLHasBeenSet(false),
-    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
-    m_autoMLOverrideStrategyHasBeenSet(false),
-    m_performHPO(false),
-    m_performHPOHasBeenSet(false),
-    m_trainingParametersHasBeenSet(false),
-    m_evaluationParametersHasBeenSet(false),
-    m_hPOConfigHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_featurizationConfigHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_optimizationMetric(OptimizationMetric::NOT_SET),
-    m_optimizationMetricHasBeenSet(false)
-{
-}
-
 Aws::String CreatePredictorRequest::SerializePayload() const
 {
   JsonValue payload;

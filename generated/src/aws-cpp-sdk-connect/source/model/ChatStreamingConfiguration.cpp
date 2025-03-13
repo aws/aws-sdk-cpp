@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ChatStreamingConfiguration::ChatStreamingConfiguration() : 
-    m_streamingEndpointArnHasBeenSet(false)
-{
-}
-
 ChatStreamingConfiguration::ChatStreamingConfiguration(JsonView jsonValue)
-  : ChatStreamingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChatStreamingConfiguration& ChatStreamingConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("StreamingEndpointArn"))
   {
     m_streamingEndpointArn = jsonValue.GetString("StreamingEndpointArn");
-
     m_streamingEndpointArnHasBeenSet = true;
   }
-
   return *this;
 }
 

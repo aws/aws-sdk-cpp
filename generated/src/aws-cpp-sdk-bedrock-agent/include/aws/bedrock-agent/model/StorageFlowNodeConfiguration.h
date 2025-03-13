@@ -32,7 +32,7 @@ namespace Model
   class StorageFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API StorageFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API StorageFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API StorageFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API StorageFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Contains configurations for the service to use for storing the input into the
      * node.</p>
      */
-    inline const StorageFlowNodeServiceConfiguration& GetServiceConfiguration() const{ return m_serviceConfiguration; }
+    inline const StorageFlowNodeServiceConfiguration& GetServiceConfiguration() const { return m_serviceConfiguration; }
     inline bool ServiceConfigurationHasBeenSet() const { return m_serviceConfigurationHasBeenSet; }
-    inline void SetServiceConfiguration(const StorageFlowNodeServiceConfiguration& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = value; }
-    inline void SetServiceConfiguration(StorageFlowNodeServiceConfiguration&& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = std::move(value); }
-    inline StorageFlowNodeConfiguration& WithServiceConfiguration(const StorageFlowNodeServiceConfiguration& value) { SetServiceConfiguration(value); return *this;}
-    inline StorageFlowNodeConfiguration& WithServiceConfiguration(StorageFlowNodeServiceConfiguration&& value) { SetServiceConfiguration(std::move(value)); return *this;}
+    template<typename ServiceConfigurationT = StorageFlowNodeServiceConfiguration>
+    void SetServiceConfiguration(ServiceConfigurationT&& value) { m_serviceConfigurationHasBeenSet = true; m_serviceConfiguration = std::forward<ServiceConfigurationT>(value); }
+    template<typename ServiceConfigurationT = StorageFlowNodeServiceConfiguration>
+    StorageFlowNodeConfiguration& WithServiceConfiguration(ServiceConfigurationT&& value) { SetServiceConfiguration(std::forward<ServiceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Content::Content() : 
-    m_textHasBeenSet(false)
-{
-}
-
 Content::Content(JsonView jsonValue)
-  : Content()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Content& Content::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

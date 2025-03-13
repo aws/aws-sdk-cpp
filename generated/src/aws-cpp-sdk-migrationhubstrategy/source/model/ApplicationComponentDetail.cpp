@@ -18,42 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ApplicationComponentDetail::ApplicationComponentDetail() : 
-    m_analysisStatus(SrcCodeOrDbAnalysisStatus::NOT_SET),
-    m_analysisStatusHasBeenSet(false),
-    m_antipatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false),
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_appUnitErrorHasBeenSet(false),
-    m_associatedServerIdHasBeenSet(false),
-    m_databaseConfigDetailHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_inclusionStatus(InclusionStatus::NOT_SET),
-    m_inclusionStatusHasBeenSet(false),
-    m_lastAnalyzedTimestampHasBeenSet(false),
-    m_listAntipatternSeveritySummaryHasBeenSet(false),
-    m_moreServerAssociationExists(false),
-    m_moreServerAssociationExistsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_osDriverHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_recommendationSetHasBeenSet(false),
-    m_resourceSubType(ResourceSubType::NOT_SET),
-    m_resourceSubTypeHasBeenSet(false),
-    m_resultListHasBeenSet(false),
-    m_runtimeStatus(RuntimeAnalysisStatus::NOT_SET),
-    m_runtimeStatusHasBeenSet(false),
-    m_runtimeStatusMessageHasBeenSet(false),
-    m_sourceCodeRepositoriesHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ApplicationComponentDetail::ApplicationComponentDetail(JsonView jsonValue)
-  : ApplicationComponentDetail()
 {
   *this = jsonValue;
 }
@@ -63,80 +28,58 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
   if(jsonValue.ValueExists("analysisStatus"))
   {
     m_analysisStatus = SrcCodeOrDbAnalysisStatusMapper::GetSrcCodeOrDbAnalysisStatusForName(jsonValue.GetString("analysisStatus"));
-
     m_analysisStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportS3Object"))
   {
     m_antipatternReportS3Object = jsonValue.GetObject("antipatternReportS3Object");
-
     m_antipatternReportS3ObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatus"))
   {
     m_antipatternReportStatus = AntipatternReportStatusMapper::GetAntipatternReportStatusForName(jsonValue.GetString("antipatternReportStatus"));
-
     m_antipatternReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatusMessage"))
   {
     m_antipatternReportStatusMessage = jsonValue.GetString("antipatternReportStatusMessage");
-
     m_antipatternReportStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appType"))
   {
     m_appType = AppTypeMapper::GetAppTypeForName(jsonValue.GetString("appType"));
-
     m_appTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appUnitError"))
   {
     m_appUnitError = jsonValue.GetObject("appUnitError");
-
     m_appUnitErrorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedServerId"))
   {
     m_associatedServerId = jsonValue.GetString("associatedServerId");
-
     m_associatedServerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseConfigDetail"))
   {
     m_databaseConfigDetail = jsonValue.GetObject("databaseConfigDetail");
-
     m_databaseConfigDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inclusionStatus"))
   {
     m_inclusionStatus = InclusionStatusMapper::GetInclusionStatusForName(jsonValue.GetString("inclusionStatus"));
-
     m_inclusionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAnalyzedTimestamp"))
   {
     m_lastAnalyzedTimestamp = jsonValue.GetDouble("lastAnalyzedTimestamp");
-
     m_lastAnalyzedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
     Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
@@ -146,49 +89,36 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
     }
     m_listAntipatternSeveritySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moreServerAssociationExists"))
   {
     m_moreServerAssociationExists = jsonValue.GetBool("moreServerAssociationExists");
-
     m_moreServerAssociationExistsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osDriver"))
   {
     m_osDriver = jsonValue.GetString("osDriver");
-
     m_osDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osVersion"))
   {
     m_osVersion = jsonValue.GetString("osVersion");
-
     m_osVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationSet"))
   {
     m_recommendationSet = jsonValue.GetObject("recommendationSet");
-
     m_recommendationSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceSubType"))
   {
     m_resourceSubType = ResourceSubTypeMapper::GetResourceSubTypeForName(jsonValue.GetString("resourceSubType"));
-
     m_resourceSubTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultList"))
   {
     Aws::Utils::Array<JsonView> resultListJsonList = jsonValue.GetArray("resultList");
@@ -198,21 +128,16 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
     }
     m_resultListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeStatus"))
   {
     m_runtimeStatus = RuntimeAnalysisStatusMapper::GetRuntimeAnalysisStatusForName(jsonValue.GetString("runtimeStatus"));
-
     m_runtimeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeStatusMessage"))
   {
     m_runtimeStatusMessage = jsonValue.GetString("runtimeStatusMessage");
-
     m_runtimeStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeRepositories"))
   {
     Aws::Utils::Array<JsonView> sourceCodeRepositoriesJsonList = jsonValue.GetArray("sourceCodeRepositories");
@@ -222,14 +147,11 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
     }
     m_sourceCodeRepositoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class FreeFormLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API FreeFormLayoutConfiguration();
+    AWS_QUICKSIGHT_API FreeFormLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API FreeFormLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FreeFormLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The elements that are included in a free-form layout.</p>
      */
-    inline const Aws::Vector<FreeFormLayoutElement>& GetElements() const{ return m_elements; }
+    inline const Aws::Vector<FreeFormLayoutElement>& GetElements() const { return m_elements; }
     inline bool ElementsHasBeenSet() const { return m_elementsHasBeenSet; }
-    inline void SetElements(const Aws::Vector<FreeFormLayoutElement>& value) { m_elementsHasBeenSet = true; m_elements = value; }
-    inline void SetElements(Aws::Vector<FreeFormLayoutElement>&& value) { m_elementsHasBeenSet = true; m_elements = std::move(value); }
-    inline FreeFormLayoutConfiguration& WithElements(const Aws::Vector<FreeFormLayoutElement>& value) { SetElements(value); return *this;}
-    inline FreeFormLayoutConfiguration& WithElements(Aws::Vector<FreeFormLayoutElement>&& value) { SetElements(std::move(value)); return *this;}
-    inline FreeFormLayoutConfiguration& AddElements(const FreeFormLayoutElement& value) { m_elementsHasBeenSet = true; m_elements.push_back(value); return *this; }
-    inline FreeFormLayoutConfiguration& AddElements(FreeFormLayoutElement&& value) { m_elementsHasBeenSet = true; m_elements.push_back(std::move(value)); return *this; }
+    template<typename ElementsT = Aws::Vector<FreeFormLayoutElement>>
+    void SetElements(ElementsT&& value) { m_elementsHasBeenSet = true; m_elements = std::forward<ElementsT>(value); }
+    template<typename ElementsT = Aws::Vector<FreeFormLayoutElement>>
+    FreeFormLayoutConfiguration& WithElements(ElementsT&& value) { SetElements(std::forward<ElementsT>(value)); return *this;}
+    template<typename ElementsT = FreeFormLayoutElement>
+    FreeFormLayoutConfiguration& AddElements(ElementsT&& value) { m_elementsHasBeenSet = true; m_elements.emplace_back(std::forward<ElementsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const FreeFormLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
+    inline const FreeFormLayoutCanvasSizeOptions& GetCanvasSizeOptions() const { return m_canvasSizeOptions; }
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-    inline void SetCanvasSizeOptions(const FreeFormLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-    inline void SetCanvasSizeOptions(FreeFormLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-    inline FreeFormLayoutConfiguration& WithCanvasSizeOptions(const FreeFormLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-    inline FreeFormLayoutConfiguration& WithCanvasSizeOptions(FreeFormLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
+    template<typename CanvasSizeOptionsT = FreeFormLayoutCanvasSizeOptions>
+    void SetCanvasSizeOptions(CanvasSizeOptionsT&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::forward<CanvasSizeOptionsT>(value); }
+    template<typename CanvasSizeOptionsT = FreeFormLayoutCanvasSizeOptions>
+    FreeFormLayoutConfiguration& WithCanvasSizeOptions(CanvasSizeOptionsT&& value) { SetCanvasSizeOptions(std::forward<CanvasSizeOptionsT>(value)); return *this;}
     ///@}
   private:
 

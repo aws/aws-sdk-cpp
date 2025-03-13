@@ -29,7 +29,7 @@ namespace Model
   class GetSetupHistoryResult
   {
   public:
-    AWS_LIGHTSAIL_API GetSetupHistoryResult();
+    AWS_LIGHTSAIL_API GetSetupHistoryResult() = default;
     AWS_LIGHTSAIL_API GetSetupHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetSetupHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The historical information that's returned.</p>
      */
-    inline const Aws::Vector<SetupHistory>& GetSetupHistory() const{ return m_setupHistory; }
-    inline void SetSetupHistory(const Aws::Vector<SetupHistory>& value) { m_setupHistory = value; }
-    inline void SetSetupHistory(Aws::Vector<SetupHistory>&& value) { m_setupHistory = std::move(value); }
-    inline GetSetupHistoryResult& WithSetupHistory(const Aws::Vector<SetupHistory>& value) { SetSetupHistory(value); return *this;}
-    inline GetSetupHistoryResult& WithSetupHistory(Aws::Vector<SetupHistory>&& value) { SetSetupHistory(std::move(value)); return *this;}
-    inline GetSetupHistoryResult& AddSetupHistory(const SetupHistory& value) { m_setupHistory.push_back(value); return *this; }
-    inline GetSetupHistoryResult& AddSetupHistory(SetupHistory&& value) { m_setupHistory.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SetupHistory>& GetSetupHistory() const { return m_setupHistory; }
+    template<typename SetupHistoryT = Aws::Vector<SetupHistory>>
+    void SetSetupHistory(SetupHistoryT&& value) { m_setupHistoryHasBeenSet = true; m_setupHistory = std::forward<SetupHistoryT>(value); }
+    template<typename SetupHistoryT = Aws::Vector<SetupHistory>>
+    GetSetupHistoryResult& WithSetupHistory(SetupHistoryT&& value) { SetSetupHistory(std::forward<SetupHistoryT>(value)); return *this;}
+    template<typename SetupHistoryT = SetupHistory>
+    GetSetupHistoryResult& AddSetupHistory(SetupHistoryT&& value) { m_setupHistoryHasBeenSet = true; m_setupHistory.emplace_back(std::forward<SetupHistoryT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * <p>To get the next page of results, perform another <code>GetSetupHistory</code>
      * request and specify the next page token using the pageToken parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetSetupHistoryResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetSetupHistoryResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetSetupHistoryResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetSetupHistoryResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSetupHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSetupHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSetupHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSetupHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SetupHistory> m_setupHistory;
+    bool m_setupHistoryHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

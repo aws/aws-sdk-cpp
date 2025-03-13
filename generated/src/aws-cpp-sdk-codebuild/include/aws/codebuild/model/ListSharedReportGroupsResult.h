@@ -28,7 +28,7 @@ namespace Model
   class ListSharedReportGroupsResult
   {
   public:
-    AWS_CODEBUILD_API ListSharedReportGroupsResult();
+    AWS_CODEBUILD_API ListSharedReportGroupsResult() = default;
     AWS_CODEBUILD_API ListSharedReportGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API ListSharedReportGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * each subsequent next token that is returned, until no more next tokens are
      * returned. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSharedReportGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSharedReportGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSharedReportGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSharedReportGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,33 +55,33 @@ namespace Model
      * <p> The list of ARNs for the report groups shared with the current Amazon Web
      * Services account or user. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetReportGroups() const{ return m_reportGroups; }
-    inline void SetReportGroups(const Aws::Vector<Aws::String>& value) { m_reportGroups = value; }
-    inline void SetReportGroups(Aws::Vector<Aws::String>&& value) { m_reportGroups = std::move(value); }
-    inline ListSharedReportGroupsResult& WithReportGroups(const Aws::Vector<Aws::String>& value) { SetReportGroups(value); return *this;}
-    inline ListSharedReportGroupsResult& WithReportGroups(Aws::Vector<Aws::String>&& value) { SetReportGroups(std::move(value)); return *this;}
-    inline ListSharedReportGroupsResult& AddReportGroups(const Aws::String& value) { m_reportGroups.push_back(value); return *this; }
-    inline ListSharedReportGroupsResult& AddReportGroups(Aws::String&& value) { m_reportGroups.push_back(std::move(value)); return *this; }
-    inline ListSharedReportGroupsResult& AddReportGroups(const char* value) { m_reportGroups.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetReportGroups() const { return m_reportGroups; }
+    template<typename ReportGroupsT = Aws::Vector<Aws::String>>
+    void SetReportGroups(ReportGroupsT&& value) { m_reportGroupsHasBeenSet = true; m_reportGroups = std::forward<ReportGroupsT>(value); }
+    template<typename ReportGroupsT = Aws::Vector<Aws::String>>
+    ListSharedReportGroupsResult& WithReportGroups(ReportGroupsT&& value) { SetReportGroups(std::forward<ReportGroupsT>(value)); return *this;}
+    template<typename ReportGroupsT = Aws::String>
+    ListSharedReportGroupsResult& AddReportGroups(ReportGroupsT&& value) { m_reportGroupsHasBeenSet = true; m_reportGroups.emplace_back(std::forward<ReportGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSharedReportGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSharedReportGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSharedReportGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSharedReportGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_reportGroups;
+    bool m_reportGroupsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

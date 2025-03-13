@@ -18,18 +18,7 @@ namespace PinpointSMSVoice
 namespace Model
 {
 
-EventDestinationDefinition::EventDestinationDefinition() : 
-    m_cloudWatchLogsDestinationHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false),
-    m_snsDestinationHasBeenSet(false)
-{
-}
-
 EventDestinationDefinition::EventDestinationDefinition(JsonView jsonValue)
-  : EventDestinationDefinition()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EventDestinationDefinition& EventDestinationDefinition::operator =(JsonView json
   if(jsonValue.ValueExists("CloudWatchLogsDestination"))
   {
     m_cloudWatchLogsDestination = jsonValue.GetObject("CloudWatchLogsDestination");
-
     m_cloudWatchLogsDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KinesisFirehoseDestination"))
   {
     m_kinesisFirehoseDestination = jsonValue.GetObject("KinesisFirehoseDestination");
-
     m_kinesisFirehoseDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchingEventTypes"))
   {
     Aws::Utils::Array<JsonView> matchingEventTypesJsonList = jsonValue.GetArray("MatchingEventTypes");
@@ -66,14 +49,11 @@ EventDestinationDefinition& EventDestinationDefinition::operator =(JsonView json
     }
     m_matchingEventTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsDestination"))
   {
     m_snsDestination = jsonValue.GetObject("SnsDestination");
-
     m_snsDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

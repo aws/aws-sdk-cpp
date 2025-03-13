@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBInstanceRole::DBInstanceRole() : 
-    m_roleArnHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DBInstanceRole::DBInstanceRole(const XmlNode& xmlNode)
-  : DBInstanceRole()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ DBInstanceRole& DBInstanceRole::operator =(const XmlNode& xmlNode)
     {
       m_roleArn = Aws::Utils::Xml::DecodeEscapedXmlText(roleArnNode.GetText());
       m_roleArnHasBeenSet = true;
+       m_roleArnHasBeenSet = true;
     }
     XmlNode featureNameNode = resultNode.FirstChild("FeatureName");
     if(!featureNameNode.IsNull())
     {
       m_featureName = Aws::Utils::Xml::DecodeEscapedXmlText(featureNameNode.GetText());
       m_featureNameHasBeenSet = true;
+       m_featureNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

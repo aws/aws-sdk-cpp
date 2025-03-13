@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-InstanceConfiguration::InstanceConfiguration() : 
-    m_imageHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false)
-{
-}
-
 InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
-  : InstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InstanceConfiguration& InstanceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blockDeviceMappings"))
   {
     Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
@@ -48,7 +39,6 @@ InstanceConfiguration& InstanceConfiguration::operator =(JsonView jsonValue)
     }
     m_blockDeviceMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

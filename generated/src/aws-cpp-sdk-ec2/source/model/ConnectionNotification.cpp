@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConnectionNotification::ConnectionNotification() : 
-    m_connectionNotificationIdHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_connectionNotificationType(ConnectionNotificationType::NOT_SET),
-    m_connectionNotificationTypeHasBeenSet(false),
-    m_connectionNotificationArnHasBeenSet(false),
-    m_connectionEventsHasBeenSet(false),
-    m_connectionNotificationState(ConnectionNotificationState::NOT_SET),
-    m_connectionNotificationStateHasBeenSet(false),
-    m_serviceRegionHasBeenSet(false)
-{
-}
-
 ConnectionNotification::ConnectionNotification(const XmlNode& xmlNode)
-  : ConnectionNotification()
 {
   *this = xmlNode;
 }
@@ -51,54 +36,62 @@ ConnectionNotification& ConnectionNotification::operator =(const XmlNode& xmlNod
     {
       m_connectionNotificationId = Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationIdNode.GetText());
       m_connectionNotificationIdHasBeenSet = true;
+       m_connectionNotificationIdHasBeenSet = true;
     }
     XmlNode serviceIdNode = resultNode.FirstChild("serviceId");
     if(!serviceIdNode.IsNull())
     {
       m_serviceId = Aws::Utils::Xml::DecodeEscapedXmlText(serviceIdNode.GetText());
       m_serviceIdHasBeenSet = true;
+       m_serviceIdHasBeenSet = true;
     }
     XmlNode vpcEndpointIdNode = resultNode.FirstChild("vpcEndpointId");
     if(!vpcEndpointIdNode.IsNull())
     {
       m_vpcEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcEndpointIdNode.GetText());
       m_vpcEndpointIdHasBeenSet = true;
+       m_vpcEndpointIdHasBeenSet = true;
     }
     XmlNode connectionNotificationTypeNode = resultNode.FirstChild("connectionNotificationType");
     if(!connectionNotificationTypeNode.IsNull())
     {
-      m_connectionNotificationType = ConnectionNotificationTypeMapper::GetConnectionNotificationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationTypeNode.GetText()).c_str()).c_str());
+      m_connectionNotificationType = ConnectionNotificationTypeMapper::GetConnectionNotificationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationTypeNode.GetText()).c_str()));
       m_connectionNotificationTypeHasBeenSet = true;
+       m_connectionNotificationTypeHasBeenSet = true;
     }
     XmlNode connectionNotificationArnNode = resultNode.FirstChild("connectionNotificationArn");
     if(!connectionNotificationArnNode.IsNull())
     {
       m_connectionNotificationArn = Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationArnNode.GetText());
       m_connectionNotificationArnHasBeenSet = true;
+       m_connectionNotificationArnHasBeenSet = true;
     }
     XmlNode connectionEventsNode = resultNode.FirstChild("connectionEvents");
     if(!connectionEventsNode.IsNull())
     {
       XmlNode connectionEventsMember = connectionEventsNode.FirstChild("item");
+      m_connectionEventsHasBeenSet = !connectionEventsMember.IsNull();
       while(!connectionEventsMember.IsNull())
       {
         m_connectionEvents.push_back(connectionEventsMember.GetText());
         connectionEventsMember = connectionEventsMember.NextNode("item");
       }
 
-      m_connectionEventsHasBeenSet = true;
+       m_connectionEventsHasBeenSet = true;
     }
     XmlNode connectionNotificationStateNode = resultNode.FirstChild("connectionNotificationState");
     if(!connectionNotificationStateNode.IsNull())
     {
-      m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationStateNode.GetText()).c_str()).c_str());
+      m_connectionNotificationState = ConnectionNotificationStateMapper::GetConnectionNotificationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionNotificationStateNode.GetText()).c_str()));
       m_connectionNotificationStateHasBeenSet = true;
+       m_connectionNotificationStateHasBeenSet = true;
     }
     XmlNode serviceRegionNode = resultNode.FirstChild("serviceRegion");
     if(!serviceRegionNode.IsNull())
     {
       m_serviceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(serviceRegionNode.GetText());
       m_serviceRegionHasBeenSet = true;
+       m_serviceRegionHasBeenSet = true;
     }
   }
 

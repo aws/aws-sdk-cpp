@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MetricStat::MetricStat() : 
-    m_metricHasBeenSet(false),
-    m_statHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 MetricStat::MetricStat(const XmlNode& xmlNode)
-  : MetricStat()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ MetricStat& MetricStat::operator =(const XmlNode& xmlNode)
     {
       m_metric = metricNode;
       m_metricHasBeenSet = true;
+       m_metricHasBeenSet = true;
     }
     XmlNode statNode = resultNode.FirstChild("Stat");
     if(!statNode.IsNull())
     {
       m_stat = Aws::Utils::Xml::DecodeEscapedXmlText(statNode.GetText());
       m_statHasBeenSet = true;
+       m_statHasBeenSet = true;
     }
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
       m_unit = Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText());
       m_unitHasBeenSet = true;
+       m_unitHasBeenSet = true;
     }
   }
 

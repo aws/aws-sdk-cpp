@@ -22,7 +22,7 @@ namespace Model
   class AssociateInstanceEventWindowRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AssociateInstanceEventWindowRequest();
+    AWS_EC2_API AssociateInstanceEventWindowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AssociateInstanceEventWindowRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -54,30 +54,28 @@ namespace Model
     /**
      * <p>The ID of the event window.</p>
      */
-    inline const Aws::String& GetInstanceEventWindowId() const{ return m_instanceEventWindowId; }
+    inline const Aws::String& GetInstanceEventWindowId() const { return m_instanceEventWindowId; }
     inline bool InstanceEventWindowIdHasBeenSet() const { return m_instanceEventWindowIdHasBeenSet; }
-    inline void SetInstanceEventWindowId(const Aws::String& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = value; }
-    inline void SetInstanceEventWindowId(Aws::String&& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = std::move(value); }
-    inline void SetInstanceEventWindowId(const char* value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId.assign(value); }
-    inline AssociateInstanceEventWindowRequest& WithInstanceEventWindowId(const Aws::String& value) { SetInstanceEventWindowId(value); return *this;}
-    inline AssociateInstanceEventWindowRequest& WithInstanceEventWindowId(Aws::String&& value) { SetInstanceEventWindowId(std::move(value)); return *this;}
-    inline AssociateInstanceEventWindowRequest& WithInstanceEventWindowId(const char* value) { SetInstanceEventWindowId(value); return *this;}
+    template<typename InstanceEventWindowIdT = Aws::String>
+    void SetInstanceEventWindowId(InstanceEventWindowIdT&& value) { m_instanceEventWindowIdHasBeenSet = true; m_instanceEventWindowId = std::forward<InstanceEventWindowIdT>(value); }
+    template<typename InstanceEventWindowIdT = Aws::String>
+    AssociateInstanceEventWindowRequest& WithInstanceEventWindowId(InstanceEventWindowIdT&& value) { SetInstanceEventWindowId(std::forward<InstanceEventWindowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more targets associated with the specified event window.</p>
      */
-    inline const InstanceEventWindowAssociationRequest& GetAssociationTarget() const{ return m_associationTarget; }
+    inline const InstanceEventWindowAssociationRequest& GetAssociationTarget() const { return m_associationTarget; }
     inline bool AssociationTargetHasBeenSet() const { return m_associationTargetHasBeenSet; }
-    inline void SetAssociationTarget(const InstanceEventWindowAssociationRequest& value) { m_associationTargetHasBeenSet = true; m_associationTarget = value; }
-    inline void SetAssociationTarget(InstanceEventWindowAssociationRequest&& value) { m_associationTargetHasBeenSet = true; m_associationTarget = std::move(value); }
-    inline AssociateInstanceEventWindowRequest& WithAssociationTarget(const InstanceEventWindowAssociationRequest& value) { SetAssociationTarget(value); return *this;}
-    inline AssociateInstanceEventWindowRequest& WithAssociationTarget(InstanceEventWindowAssociationRequest&& value) { SetAssociationTarget(std::move(value)); return *this;}
+    template<typename AssociationTargetT = InstanceEventWindowAssociationRequest>
+    void SetAssociationTarget(AssociationTargetT&& value) { m_associationTargetHasBeenSet = true; m_associationTarget = std::forward<AssociationTargetT>(value); }
+    template<typename AssociationTargetT = InstanceEventWindowAssociationRequest>
+    AssociateInstanceEventWindowRequest& WithAssociationTarget(AssociationTargetT&& value) { SetAssociationTarget(std::forward<AssociationTargetT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_instanceEventWindowId;

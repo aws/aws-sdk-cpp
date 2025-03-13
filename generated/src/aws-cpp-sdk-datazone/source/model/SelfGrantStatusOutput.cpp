@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SelfGrantStatusOutput::SelfGrantStatusOutput() : 
-    m_glueSelfGrantStatusHasBeenSet(false),
-    m_redshiftSelfGrantStatusHasBeenSet(false)
-{
-}
-
 SelfGrantStatusOutput::SelfGrantStatusOutput(JsonView jsonValue)
-  : SelfGrantStatusOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SelfGrantStatusOutput& SelfGrantStatusOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("glueSelfGrantStatus"))
   {
     m_glueSelfGrantStatus = jsonValue.GetObject("glueSelfGrantStatus");
-
     m_glueSelfGrantStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftSelfGrantStatus"))
   {
     m_redshiftSelfGrantStatus = jsonValue.GetObject("redshiftSelfGrantStatus");
-
     m_redshiftSelfGrantStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

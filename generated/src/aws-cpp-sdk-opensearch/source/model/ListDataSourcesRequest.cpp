@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataSourcesRequest::ListDataSourcesRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String ListDataSourcesRequest::SerializePayload() const
 {
   return {};

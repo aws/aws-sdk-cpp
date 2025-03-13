@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTransformerJobResult::GetTransformerJobResult() : 
-    m_status(TransformerJobStatus::NOT_SET)
-{
-}
-
 GetTransformerJobResult::GetTransformerJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTransformerJobResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetTransformerJobResult& GetTransformerJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("status"))
   {
     m_status = TransformerJobStatusMapper::GetTransformerJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputFiles"))
   {
     Aws::Utils::Array<JsonView> outputFilesJsonList = jsonValue.GetArray("outputFiles");
@@ -44,20 +37,20 @@ GetTransformerJobResult& GetTransformerJobResult::operator =(const Aws::AmazonWe
     {
       m_outputFiles.push_back(outputFilesJsonList[outputFilesIndex].AsObject());
     }
+    m_outputFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
+    m_messageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

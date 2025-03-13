@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TimeBasedCanary::TimeBasedCanary() : 
-    m_canaryPercentage(0),
-    m_canaryPercentageHasBeenSet(false),
-    m_canaryInterval(0),
-    m_canaryIntervalHasBeenSet(false)
-{
-}
-
 TimeBasedCanary::TimeBasedCanary(JsonView jsonValue)
-  : TimeBasedCanary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimeBasedCanary& TimeBasedCanary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("canaryPercentage"))
   {
     m_canaryPercentage = jsonValue.GetInteger("canaryPercentage");
-
     m_canaryPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("canaryInterval"))
   {
     m_canaryInterval = jsonValue.GetInteger("canaryInterval");
-
     m_canaryIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

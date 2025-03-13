@@ -29,7 +29,7 @@ namespace Model
   class ListKxClusterNodesResult
   {
   public:
-    AWS_FINSPACE_API ListKxClusterNodesResult();
+    AWS_FINSPACE_API ListKxClusterNodesResult() = default;
     AWS_FINSPACE_API ListKxClusterNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API ListKxClusterNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of nodes associated with the cluster.</p>
      */
-    inline const Aws::Vector<KxNode>& GetNodes() const{ return m_nodes; }
-    inline void SetNodes(const Aws::Vector<KxNode>& value) { m_nodes = value; }
-    inline void SetNodes(Aws::Vector<KxNode>&& value) { m_nodes = std::move(value); }
-    inline ListKxClusterNodesResult& WithNodes(const Aws::Vector<KxNode>& value) { SetNodes(value); return *this;}
-    inline ListKxClusterNodesResult& WithNodes(Aws::Vector<KxNode>&& value) { SetNodes(std::move(value)); return *this;}
-    inline ListKxClusterNodesResult& AddNodes(const KxNode& value) { m_nodes.push_back(value); return *this; }
-    inline ListKxClusterNodesResult& AddNodes(KxNode&& value) { m_nodes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KxNode>& GetNodes() const { return m_nodes; }
+    template<typename NodesT = Aws::Vector<KxNode>>
+    void SetNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes = std::forward<NodesT>(value); }
+    template<typename NodesT = Aws::Vector<KxNode>>
+    ListKxClusterNodesResult& WithNodes(NodesT&& value) { SetNodes(std::forward<NodesT>(value)); return *this;}
+    template<typename NodesT = KxNode>
+    ListKxClusterNodesResult& AddNodes(NodesT&& value) { m_nodesHasBeenSet = true; m_nodes.emplace_back(std::forward<NodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token that indicates where a results page should begin.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListKxClusterNodesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListKxClusterNodesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListKxClusterNodesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListKxClusterNodesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKxClusterNodesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKxClusterNodesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKxClusterNodesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKxClusterNodesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KxNode> m_nodes;
+    bool m_nodesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

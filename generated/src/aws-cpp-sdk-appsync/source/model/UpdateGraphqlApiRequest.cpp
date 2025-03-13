@@ -12,30 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGraphqlApiRequest::UpdateGraphqlApiRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_logConfigHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_userPoolConfigHasBeenSet(false),
-    m_openIDConnectConfigHasBeenSet(false),
-    m_additionalAuthenticationProvidersHasBeenSet(false),
-    m_xrayEnabled(false),
-    m_xrayEnabledHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false),
-    m_mergedApiExecutionRoleArnHasBeenSet(false),
-    m_ownerContactHasBeenSet(false),
-    m_introspectionConfig(GraphQLApiIntrospectionConfig::NOT_SET),
-    m_introspectionConfigHasBeenSet(false),
-    m_queryDepthLimit(0),
-    m_queryDepthLimitHasBeenSet(false),
-    m_resolverCountLimit(0),
-    m_resolverCountLimitHasBeenSet(false),
-    m_enhancedMetricsConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGraphqlApiRequest::SerializePayload() const
 {
   JsonValue payload;

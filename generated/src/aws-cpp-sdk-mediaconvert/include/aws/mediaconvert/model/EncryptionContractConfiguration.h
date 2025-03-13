@@ -36,7 +36,7 @@ namespace Model
   class EncryptionContractConfiguration
   {
   public:
-    AWS_MEDIACONVERT_API EncryptionContractConfiguration();
+    AWS_MEDIACONVERT_API EncryptionContractConfiguration() = default;
     AWS_MEDIACONVERT_API EncryptionContractConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API EncryptionContractConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * outputs: Choose Unencrypted. When you do, to encrypt your video outputs, you
      * must also specify a SPEKE v2.0 video preset (other than Shared or Unencrypted).
      */
-    inline const PresetSpeke20Audio& GetSpekeAudioPreset() const{ return m_spekeAudioPreset; }
+    inline PresetSpeke20Audio GetSpekeAudioPreset() const { return m_spekeAudioPreset; }
     inline bool SpekeAudioPresetHasBeenSet() const { return m_spekeAudioPresetHasBeenSet; }
-    inline void SetSpekeAudioPreset(const PresetSpeke20Audio& value) { m_spekeAudioPresetHasBeenSet = true; m_spekeAudioPreset = value; }
-    inline void SetSpekeAudioPreset(PresetSpeke20Audio&& value) { m_spekeAudioPresetHasBeenSet = true; m_spekeAudioPreset = std::move(value); }
-    inline EncryptionContractConfiguration& WithSpekeAudioPreset(const PresetSpeke20Audio& value) { SetSpekeAudioPreset(value); return *this;}
-    inline EncryptionContractConfiguration& WithSpekeAudioPreset(PresetSpeke20Audio&& value) { SetSpekeAudioPreset(std::move(value)); return *this;}
+    inline void SetSpekeAudioPreset(PresetSpeke20Audio value) { m_spekeAudioPresetHasBeenSet = true; m_spekeAudioPreset = value; }
+    inline EncryptionContractConfiguration& WithSpekeAudioPreset(PresetSpeke20Audio value) { SetSpekeAudioPreset(value); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +73,17 @@ namespace Model
      * outputs: Choose Unencrypted. When you do, to encrypt your audio outputs, you
      * must also specify a SPEKE v2.0 audio preset (other than Shared or Unencrypted).
      */
-    inline const PresetSpeke20Video& GetSpekeVideoPreset() const{ return m_spekeVideoPreset; }
+    inline PresetSpeke20Video GetSpekeVideoPreset() const { return m_spekeVideoPreset; }
     inline bool SpekeVideoPresetHasBeenSet() const { return m_spekeVideoPresetHasBeenSet; }
-    inline void SetSpekeVideoPreset(const PresetSpeke20Video& value) { m_spekeVideoPresetHasBeenSet = true; m_spekeVideoPreset = value; }
-    inline void SetSpekeVideoPreset(PresetSpeke20Video&& value) { m_spekeVideoPresetHasBeenSet = true; m_spekeVideoPreset = std::move(value); }
-    inline EncryptionContractConfiguration& WithSpekeVideoPreset(const PresetSpeke20Video& value) { SetSpekeVideoPreset(value); return *this;}
-    inline EncryptionContractConfiguration& WithSpekeVideoPreset(PresetSpeke20Video&& value) { SetSpekeVideoPreset(std::move(value)); return *this;}
+    inline void SetSpekeVideoPreset(PresetSpeke20Video value) { m_spekeVideoPresetHasBeenSet = true; m_spekeVideoPreset = value; }
+    inline EncryptionContractConfiguration& WithSpekeVideoPreset(PresetSpeke20Video value) { SetSpekeVideoPreset(value); return *this;}
     ///@}
   private:
 
-    PresetSpeke20Audio m_spekeAudioPreset;
+    PresetSpeke20Audio m_spekeAudioPreset{PresetSpeke20Audio::NOT_SET};
     bool m_spekeAudioPresetHasBeenSet = false;
 
-    PresetSpeke20Video m_spekeVideoPreset;
+    PresetSpeke20Video m_spekeVideoPreset{PresetSpeke20Video::NOT_SET};
     bool m_spekeVideoPresetHasBeenSet = false;
   };
 

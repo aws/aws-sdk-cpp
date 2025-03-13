@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListReceiptRuleSetsRequest::ListReceiptRuleSetsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListReceiptRuleSetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

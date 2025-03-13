@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-PrivateConnectionProvisioningState::PrivateConnectionProvisioningState() : 
-    m_status(PrivateConnectionProvisioningStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_failureCause(PrivateConnectionProvisioningFailureCause::NOT_SET),
-    m_failureCauseHasBeenSet(false)
-{
-}
-
 PrivateConnectionProvisioningState::PrivateConnectionProvisioningState(JsonView jsonValue)
-  : PrivateConnectionProvisioningState()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PrivateConnectionProvisioningState& PrivateConnectionProvisioningState::operator
   if(jsonValue.ValueExists("status"))
   {
     m_status = PrivateConnectionProvisioningStatusMapper::GetPrivateConnectionProvisioningStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCause"))
   {
     m_failureCause = PrivateConnectionProvisioningFailureCauseMapper::GetPrivateConnectionProvisioningFailureCauseForName(jsonValue.GetString("failureCause"));
-
     m_failureCauseHasBeenSet = true;
   }
-
   return *this;
 }
 

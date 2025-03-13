@@ -18,13 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-DeadLetterConfig::DeadLetterConfig() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 DeadLetterConfig::DeadLetterConfig(JsonView jsonValue)
-  : DeadLetterConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeadLetterConfig& DeadLetterConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

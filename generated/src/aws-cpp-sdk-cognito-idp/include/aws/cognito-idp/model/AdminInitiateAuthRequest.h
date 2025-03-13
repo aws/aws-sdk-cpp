@@ -29,7 +29,7 @@ namespace Model
   class AdminInitiateAuthRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminInitiateAuthRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The ID of the user pool where the user wants to sign in.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminInitiateAuthRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminInitiateAuthRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminInitiateAuthRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminInitiateAuthRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the app client where the user wants to sign in.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline AdminInitiateAuthRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline AdminInitiateAuthRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline AdminInitiateAuthRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    AdminInitiateAuthRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +97,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html">SDK
      * authorization models</a>.</p> </dd> </dl>
      */
-    inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
+    inline AuthFlowType GetAuthFlow() const { return m_authFlow; }
     inline bool AuthFlowHasBeenSet() const { return m_authFlowHasBeenSet; }
-    inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
-    inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
-    inline AdminInitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
-    inline AdminInitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
+    inline void SetAuthFlow(AuthFlowType value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
+    inline AdminInitiateAuthRequest& WithAuthFlow(AuthFlowType value) { SetAuthFlow(value); return *this;}
     ///@}
 
     ///@{
@@ -139,19 +133,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
      * with user devices in your user pool</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAuthParameters() const{ return m_authParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAuthParameters() const { return m_authParameters; }
     inline bool AuthParametersHasBeenSet() const { return m_authParametersHasBeenSet; }
-    inline void SetAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_authParametersHasBeenSet = true; m_authParameters = value; }
-    inline void SetAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::move(value); }
-    inline AdminInitiateAuthRequest& WithAuthParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAuthParameters(value); return *this;}
-    inline AdminInitiateAuthRequest& WithAuthParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAuthParameters(std::move(value)); return *this;}
-    inline AdminInitiateAuthRequest& AddAuthParameters(const Aws::String& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
-    inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, const Aws::String& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
-    inline AdminInitiateAuthRequest& AddAuthParameters(const Aws::String& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
-    inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline AdminInitiateAuthRequest& AddAuthParameters(const char* key, Aws::String&& value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, std::move(value)); return *this; }
-    inline AdminInitiateAuthRequest& AddAuthParameters(Aws::String&& key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(std::move(key), value); return *this; }
-    inline AdminInitiateAuthRequest& AddAuthParameters(const char* key, const char* value) { m_authParametersHasBeenSet = true; m_authParameters.emplace(key, value); return *this; }
+    template<typename AuthParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetAuthParameters(AuthParametersT&& value) { m_authParametersHasBeenSet = true; m_authParameters = std::forward<AuthParametersT>(value); }
+    template<typename AuthParametersT = Aws::Map<Aws::String, Aws::String>>
+    AdminInitiateAuthRequest& WithAuthParameters(AuthParametersT&& value) { SetAuthParameters(std::forward<AuthParametersT>(value)); return *this;}
+    template<typename AuthParametersKeyT = Aws::String, typename AuthParametersValueT = Aws::String>
+    AdminInitiateAuthRequest& AddAuthParameters(AuthParametersKeyT&& key, AuthParametersValueT&& value) {
+      m_authParametersHasBeenSet = true; m_authParameters.emplace(std::forward<AuthParametersKeyT>(key), std::forward<AuthParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -187,19 +178,16 @@ namespace Model
      * <code>ClientMetadata</code> value. Don't send sensitive information in this
      * parameter.</p> </li> </ul> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const{ return m_clientMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const { return m_clientMetadata; }
     inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
-    inline void SetClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = value; }
-    inline void SetClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::move(value); }
-    inline AdminInitiateAuthRequest& WithClientMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientMetadata(value); return *this;}
-    inline AdminInitiateAuthRequest& WithClientMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientMetadata(std::move(value)); return *this;}
-    inline AdminInitiateAuthRequest& AddClientMetadata(const Aws::String& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
-    inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, const Aws::String& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
-    inline AdminInitiateAuthRequest& AddClientMetadata(const Aws::String& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
-    inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline AdminInitiateAuthRequest& AddClientMetadata(const char* key, Aws::String&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, std::move(value)); return *this; }
-    inline AdminInitiateAuthRequest& AddClientMetadata(Aws::String&& key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::move(key), value); return *this; }
-    inline AdminInitiateAuthRequest& AddClientMetadata(const char* key, const char* value) { m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(key, value); return *this; }
+    template<typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetClientMetadata(ClientMetadataT&& value) { m_clientMetadataHasBeenSet = true; m_clientMetadata = std::forward<ClientMetadataT>(value); }
+    template<typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+    AdminInitiateAuthRequest& WithClientMetadata(ClientMetadataT&& value) { SetClientMetadata(std::forward<ClientMetadataT>(value)); return *this;}
+    template<typename ClientMetadataKeyT = Aws::String, typename ClientMetadataValueT = Aws::String>
+    AdminInitiateAuthRequest& AddClientMetadata(ClientMetadataKeyT&& key, ClientMetadataValueT&& value) {
+      m_clientMetadataHasBeenSet = true; m_clientMetadata.emplace(std::forward<ClientMetadataKeyT>(key), std::forward<ClientMetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -209,12 +197,12 @@ namespace Model
      * push notifications, for example a device identifier, email address, or phone
      * number.</p>
      */
-    inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
+    inline const AnalyticsMetadataType& GetAnalyticsMetadata() const { return m_analyticsMetadata; }
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
-    inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
-    inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
-    inline AdminInitiateAuthRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
-    inline AdminInitiateAuthRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
+    template<typename AnalyticsMetadataT = AnalyticsMetadataType>
+    void SetAnalyticsMetadata(AnalyticsMetadataT&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::forward<AnalyticsMetadataT>(value); }
+    template<typename AnalyticsMetadataT = AnalyticsMetadataType>
+    AdminInitiateAuthRequest& WithAnalyticsMetadata(AnalyticsMetadataT&& value) { SetAnalyticsMetadata(std::forward<AnalyticsMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -226,12 +214,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
      * data for threat protection in applications</a>.</p>
      */
-    inline const ContextDataType& GetContextData() const{ return m_contextData; }
+    inline const ContextDataType& GetContextData() const { return m_contextData; }
     inline bool ContextDataHasBeenSet() const { return m_contextDataHasBeenSet; }
-    inline void SetContextData(const ContextDataType& value) { m_contextDataHasBeenSet = true; m_contextData = value; }
-    inline void SetContextData(ContextDataType&& value) { m_contextDataHasBeenSet = true; m_contextData = std::move(value); }
-    inline AdminInitiateAuthRequest& WithContextData(const ContextDataType& value) { SetContextData(value); return *this;}
-    inline AdminInitiateAuthRequest& WithContextData(ContextDataType&& value) { SetContextData(std::move(value)); return *this;}
+    template<typename ContextDataT = ContextDataType>
+    void SetContextData(ContextDataT&& value) { m_contextDataHasBeenSet = true; m_contextData = std::forward<ContextDataT>(value); }
+    template<typename ContextDataT = ContextDataType>
+    AdminInitiateAuthRequest& WithContextData(ContextDataT&& value) { SetContextData(std::forward<ContextDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,14 +230,12 @@ namespace Model
      * of <code>EMAIL_OTP</code> or <code>SMS_OTP</code>, depending on how your user
      * pool sent the confirmation-code message.</p>
      */
-    inline const Aws::String& GetSession() const{ return m_session; }
+    inline const Aws::String& GetSession() const { return m_session; }
     inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
-    inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
-    inline void SetSession(Aws::String&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
-    inline void SetSession(const char* value) { m_sessionHasBeenSet = true; m_session.assign(value); }
-    inline AdminInitiateAuthRequest& WithSession(const Aws::String& value) { SetSession(value); return *this;}
-    inline AdminInitiateAuthRequest& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
-    inline AdminInitiateAuthRequest& WithSession(const char* value) { SetSession(value); return *this;}
+    template<typename SessionT = Aws::String>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Aws::String>
+    AdminInitiateAuthRequest& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
   private:
 
@@ -259,7 +245,7 @@ namespace Model
     Aws::String m_clientId;
     bool m_clientIdHasBeenSet = false;
 
-    AuthFlowType m_authFlow;
+    AuthFlowType m_authFlow{AuthFlowType::NOT_SET};
     bool m_authFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_authParameters;

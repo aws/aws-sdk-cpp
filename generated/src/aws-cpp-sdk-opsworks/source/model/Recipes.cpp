@@ -18,17 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-Recipes::Recipes() : 
-    m_setupHasBeenSet(false),
-    m_configureHasBeenSet(false),
-    m_deployHasBeenSet(false),
-    m_undeployHasBeenSet(false),
-    m_shutdownHasBeenSet(false)
-{
-}
-
 Recipes::Recipes(JsonView jsonValue)
-  : Recipes()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ Recipes& Recipes::operator =(JsonView jsonValue)
     }
     m_setupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configure"))
   {
     Aws::Utils::Array<JsonView> configureJsonList = jsonValue.GetArray("Configure");
@@ -54,7 +43,6 @@ Recipes& Recipes::operator =(JsonView jsonValue)
     }
     m_configureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Deploy"))
   {
     Aws::Utils::Array<JsonView> deployJsonList = jsonValue.GetArray("Deploy");
@@ -64,7 +52,6 @@ Recipes& Recipes::operator =(JsonView jsonValue)
     }
     m_deployHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Undeploy"))
   {
     Aws::Utils::Array<JsonView> undeployJsonList = jsonValue.GetArray("Undeploy");
@@ -74,7 +61,6 @@ Recipes& Recipes::operator =(JsonView jsonValue)
     }
     m_undeployHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shutdown"))
   {
     Aws::Utils::Array<JsonView> shutdownJsonList = jsonValue.GetArray("Shutdown");
@@ -84,7 +70,6 @@ Recipes& Recipes::operator =(JsonView jsonValue)
     }
     m_shutdownHasBeenSet = true;
   }
-
   return *this;
 }
 

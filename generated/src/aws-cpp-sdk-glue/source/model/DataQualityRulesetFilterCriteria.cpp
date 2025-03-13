@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityRulesetFilterCriteria::DataQualityRulesetFilterCriteria() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_lastModifiedBeforeHasBeenSet(false),
-    m_lastModifiedAfterHasBeenSet(false),
-    m_targetTableHasBeenSet(false)
-{
-}
-
 DataQualityRulesetFilterCriteria::DataQualityRulesetFilterCriteria(JsonView jsonValue)
-  : DataQualityRulesetFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ DataQualityRulesetFilterCriteria& DataQualityRulesetFilterCriteria::operator =(J
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBefore"))
   {
     m_createdBefore = jsonValue.GetDouble("CreatedBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAfter"))
   {
     m_createdAfter = jsonValue.GetDouble("CreatedAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBefore"))
   {
     m_lastModifiedBefore = jsonValue.GetDouble("LastModifiedBefore");
-
     m_lastModifiedBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedAfter"))
   {
     m_lastModifiedAfter = jsonValue.GetDouble("LastModifiedAfter");
-
     m_lastModifiedAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTable"))
   {
     m_targetTable = jsonValue.GetObject("TargetTable");
-
     m_targetTableHasBeenSet = true;
   }
-
   return *this;
 }
 

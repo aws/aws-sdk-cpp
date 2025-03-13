@@ -32,7 +32,7 @@ namespace Model
   class ConnectionBasicAuthResponseParameters
   {
   public:
-    AWS_EVENTBRIDGE_API ConnectionBasicAuthResponseParameters();
+    AWS_EVENTBRIDGE_API ConnectionBasicAuthResponseParameters() = default;
     AWS_EVENTBRIDGE_API ConnectionBasicAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ConnectionBasicAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The user name to use for Basic authorization.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline ConnectionBasicAuthResponseParameters& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline ConnectionBasicAuthResponseParameters& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline ConnectionBasicAuthResponseParameters& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    ConnectionBasicAuthResponseParameters& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 

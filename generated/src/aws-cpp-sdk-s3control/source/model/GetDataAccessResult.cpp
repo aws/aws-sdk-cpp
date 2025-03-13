@@ -44,6 +44,7 @@ GetDataAccessResult& GetDataAccessResult::operator =(const Aws::AmazonWebService
     if(!granteeNode.IsNull())
     {
       m_grantee = granteeNode;
+      m_granteeHasBeenSet = true;
     }
   }
 

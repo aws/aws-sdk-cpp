@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetContextKeysForPrincipalPolicyRequest::GetContextKeysForPrincipalPolicyRequest() : 
-    m_policySourceArnHasBeenSet(false),
-    m_policyInputListHasBeenSet(false)
-{
-}
-
 Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

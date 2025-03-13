@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePresignedUrlResult::CreatePresignedUrlResult()
-{
-}
-
 CreatePresignedUrlResult::CreatePresignedUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ CreatePresignedUrlResult& CreatePresignedUrlResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("fileId"))
   {
     m_fileId = jsonValue.GetString("fileId");
-
+    m_fileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("presignedUrl"))
   {
     m_presignedUrl = jsonValue.GetString("presignedUrl");
-
+    m_presignedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("presignedUrlFields"))
   {
     Aws::Map<Aws::String, JsonView> presignedUrlFieldsJsonMap = jsonValue.GetObject("presignedUrlFields").GetAllObjects();
@@ -48,20 +42,20 @@ CreatePresignedUrlResult& CreatePresignedUrlResult::operator =(const Aws::Amazon
     {
       m_presignedUrlFields[presignedUrlFieldsItem.first] = presignedUrlFieldsItem.second.AsString();
     }
+    m_presignedUrlFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("presignedUrlExpiration"))
   {
     m_presignedUrlExpiration = jsonValue.GetString("presignedUrlExpiration");
-
+    m_presignedUrlExpirationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-QueryString::QueryString()
-{
-}
-
 QueryString::QueryString(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -12,11 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateFromAdministratorAccountRequest::DisassociateFromAdministratorAccountRequest() : 
-    m_detectorIdHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateFromAdministratorAccountRequest::SerializePayload() const
 {
   return {};

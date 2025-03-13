@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateCustomLineItemResult::UpdateCustomLineItemResult() : 
-    m_lastModifiedTime(0),
-    m_associationSize(0)
-{
-}
-
 UpdateCustomLineItemResult::UpdateCustomLineItemResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateCustomLineItemResult()
 {
   *this = result;
 }
@@ -35,51 +28,45 @@ UpdateCustomLineItemResult& UpdateCustomLineItemResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingGroupArn"))
   {
     m_billingGroupArn = jsonValue.GetString("BillingGroupArn");
-
+    m_billingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChargeDetails"))
   {
     m_chargeDetails = jsonValue.GetObject("ChargeDetails");
-
+    m_chargeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetInt64("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationSize"))
   {
     m_associationSize = jsonValue.GetInt64("AssociationSize");
-
+    m_associationSizeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

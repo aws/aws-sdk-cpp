@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProcessingS3Output::ProcessingS3Output() : 
-    m_s3UriHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3UploadMode(ProcessingS3UploadMode::NOT_SET),
-    m_s3UploadModeHasBeenSet(false)
-{
-}
-
 ProcessingS3Output::ProcessingS3Output(JsonView jsonValue)
-  : ProcessingS3Output()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProcessingS3Output& ProcessingS3Output::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalPath"))
   {
     m_localPath = jsonValue.GetString("LocalPath");
-
     m_localPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3UploadMode"))
   {
     m_s3UploadMode = ProcessingS3UploadModeMapper::GetProcessingS3UploadModeForName(jsonValue.GetString("S3UploadMode"));
-
     m_s3UploadModeHasBeenSet = true;
   }
-
   return *this;
 }
 

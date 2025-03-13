@@ -12,11 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCampaignRequest::DescribeCampaignRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCampaignRequest::SerializePayload() const
 {
   return {};

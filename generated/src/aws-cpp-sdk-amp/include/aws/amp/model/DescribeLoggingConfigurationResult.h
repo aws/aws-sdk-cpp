@@ -34,7 +34,7 @@ namespace Model
   class DescribeLoggingConfigurationResult
   {
   public:
-    AWS_PROMETHEUSSERVICE_API DescribeLoggingConfigurationResult();
+    AWS_PROMETHEUSSERVICE_API DescribeLoggingConfigurationResult() = default;
     AWS_PROMETHEUSSERVICE_API DescribeLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROMETHEUSSERVICE_API DescribeLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
      * <p>A structure that displays the information about the logging
      * configuration.</p>
      */
-    inline const LoggingConfigurationMetadata& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
-    inline void SetLoggingConfiguration(const LoggingConfigurationMetadata& value) { m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(LoggingConfigurationMetadata&& value) { m_loggingConfiguration = std::move(value); }
-    inline DescribeLoggingConfigurationResult& WithLoggingConfiguration(const LoggingConfigurationMetadata& value) { SetLoggingConfiguration(value); return *this;}
-    inline DescribeLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationMetadata&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    inline const LoggingConfigurationMetadata& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+    template<typename LoggingConfigurationT = LoggingConfigurationMetadata>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = LoggingConfigurationMetadata>
+    DescribeLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLoggingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLoggingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLoggingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLoggingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LoggingConfigurationMetadata m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

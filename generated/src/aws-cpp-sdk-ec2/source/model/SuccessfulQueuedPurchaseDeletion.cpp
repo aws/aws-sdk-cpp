@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion() : 
-    m_reservedInstancesIdHasBeenSet(false)
-{
-}
-
 SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion(const XmlNode& xmlNode)
-  : SuccessfulQueuedPurchaseDeletion()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ SuccessfulQueuedPurchaseDeletion& SuccessfulQueuedPurchaseDeletion::operator =(c
     {
       m_reservedInstancesId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstancesIdNode.GetText());
       m_reservedInstancesIdHasBeenSet = true;
+       m_reservedInstancesIdHasBeenSet = true;
     }
   }
 

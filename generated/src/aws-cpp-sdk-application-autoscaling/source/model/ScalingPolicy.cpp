@@ -18,26 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-ScalingPolicy::ScalingPolicy() : 
-    m_policyARNHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_stepScalingPolicyConfigurationHasBeenSet(false),
-    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false),
-    m_predictiveScalingPolicyConfigurationHasBeenSet(false),
-    m_alarmsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 ScalingPolicy::ScalingPolicy(JsonView jsonValue)
-  : ScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -47,66 +28,48 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyARN"))
   {
     m_policyARN = jsonValue.GetString("PolicyARN");
-
     m_policyARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceNamespace"))
   {
     m_serviceNamespace = ServiceNamespaceMapper::GetServiceNamespaceForName(jsonValue.GetString("ServiceNamespace"));
-
     m_serviceNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalableDimension"))
   {
     m_scalableDimension = ScalableDimensionMapper::GetScalableDimensionForName(jsonValue.GetString("ScalableDimension"));
-
     m_scalableDimensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepScalingPolicyConfiguration"))
   {
     m_stepScalingPolicyConfiguration = jsonValue.GetObject("StepScalingPolicyConfiguration");
-
     m_stepScalingPolicyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTrackingScalingPolicyConfiguration"))
   {
     m_targetTrackingScalingPolicyConfiguration = jsonValue.GetObject("TargetTrackingScalingPolicyConfiguration");
-
     m_targetTrackingScalingPolicyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictiveScalingPolicyConfiguration"))
   {
     m_predictiveScalingPolicyConfiguration = jsonValue.GetObject("PredictiveScalingPolicyConfiguration");
-
     m_predictiveScalingPolicyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alarms"))
   {
     Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
@@ -116,14 +79,11 @@ ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
     }
     m_alarmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class AgentlessConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API AgentlessConfig();
+    AWS_CONNECTCAMPAIGNSV2_API AgentlessConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API AgentlessConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API AgentlessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;

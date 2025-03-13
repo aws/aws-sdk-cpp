@@ -18,16 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-Query::Query() : 
-    m_queryIdHasBeenSet(false),
-    m_queryStatus(QueryStatus::NOT_SET),
-    m_queryStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 Query::Query(JsonView jsonValue)
-  : Query()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Query& Query::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
     m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatus"))
   {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
-
     m_queryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

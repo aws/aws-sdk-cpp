@@ -27,7 +27,7 @@ namespace Model
   class DeleteWorkspaceApiKeyResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API DeleteWorkspaceApiKeyResult();
+    AWS_MANAGEDGRAFANA_API DeleteWorkspaceApiKeyResult() = default;
     AWS_MANAGEDGRAFANA_API DeleteWorkspaceApiKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API DeleteWorkspaceApiKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The name of the key that was deleted.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
-    inline DeleteWorkspaceApiKeyResult& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline DeleteWorkspaceApiKeyResult& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline DeleteWorkspaceApiKeyResult& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    DeleteWorkspaceApiKeyResult& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the workspace where the key was deleted.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-    inline DeleteWorkspaceApiKeyResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline DeleteWorkspaceApiKeyResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline DeleteWorkspaceApiKeyResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    DeleteWorkspaceApiKeyResult& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteWorkspaceApiKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteWorkspaceApiKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteWorkspaceApiKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteWorkspaceApiKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

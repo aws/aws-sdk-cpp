@@ -12,13 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConfigurationRecordersRequest::DescribeConfigurationRecordersRequest() : 
-    m_configurationRecorderNamesHasBeenSet(false),
-    m_servicePrincipalHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationRecordersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class AssetFilterConfiguration
   {
   public:
-    AWS_DATAZONE_API AssetFilterConfiguration();
+    AWS_DATAZONE_API AssetFilterConfiguration() = default;
     AWS_DATAZONE_API AssetFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API AssetFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The column configuration of the asset filter.</p>
      */
-    inline const ColumnFilterConfiguration& GetColumnConfiguration() const{ return m_columnConfiguration; }
+    inline const ColumnFilterConfiguration& GetColumnConfiguration() const { return m_columnConfiguration; }
     inline bool ColumnConfigurationHasBeenSet() const { return m_columnConfigurationHasBeenSet; }
-    inline void SetColumnConfiguration(const ColumnFilterConfiguration& value) { m_columnConfigurationHasBeenSet = true; m_columnConfiguration = value; }
-    inline void SetColumnConfiguration(ColumnFilterConfiguration&& value) { m_columnConfigurationHasBeenSet = true; m_columnConfiguration = std::move(value); }
-    inline AssetFilterConfiguration& WithColumnConfiguration(const ColumnFilterConfiguration& value) { SetColumnConfiguration(value); return *this;}
-    inline AssetFilterConfiguration& WithColumnConfiguration(ColumnFilterConfiguration&& value) { SetColumnConfiguration(std::move(value)); return *this;}
+    template<typename ColumnConfigurationT = ColumnFilterConfiguration>
+    void SetColumnConfiguration(ColumnConfigurationT&& value) { m_columnConfigurationHasBeenSet = true; m_columnConfiguration = std::forward<ColumnConfigurationT>(value); }
+    template<typename ColumnConfigurationT = ColumnFilterConfiguration>
+    AssetFilterConfiguration& WithColumnConfiguration(ColumnConfigurationT&& value) { SetColumnConfiguration(std::forward<ColumnConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The row configuration of the asset filter.</p>
      */
-    inline const RowFilterConfiguration& GetRowConfiguration() const{ return m_rowConfiguration; }
+    inline const RowFilterConfiguration& GetRowConfiguration() const { return m_rowConfiguration; }
     inline bool RowConfigurationHasBeenSet() const { return m_rowConfigurationHasBeenSet; }
-    inline void SetRowConfiguration(const RowFilterConfiguration& value) { m_rowConfigurationHasBeenSet = true; m_rowConfiguration = value; }
-    inline void SetRowConfiguration(RowFilterConfiguration&& value) { m_rowConfigurationHasBeenSet = true; m_rowConfiguration = std::move(value); }
-    inline AssetFilterConfiguration& WithRowConfiguration(const RowFilterConfiguration& value) { SetRowConfiguration(value); return *this;}
-    inline AssetFilterConfiguration& WithRowConfiguration(RowFilterConfiguration&& value) { SetRowConfiguration(std::move(value)); return *this;}
+    template<typename RowConfigurationT = RowFilterConfiguration>
+    void SetRowConfiguration(RowConfigurationT&& value) { m_rowConfigurationHasBeenSet = true; m_rowConfiguration = std::forward<RowConfigurationT>(value); }
+    template<typename RowConfigurationT = RowFilterConfiguration>
+    AssetFilterConfiguration& WithRowConfiguration(RowConfigurationT&& value) { SetRowConfiguration(std::forward<RowConfigurationT>(value)); return *this;}
     ///@}
   private:
 

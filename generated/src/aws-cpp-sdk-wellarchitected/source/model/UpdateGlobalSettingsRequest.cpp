@@ -12,15 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGlobalSettingsRequest::UpdateGlobalSettingsRequest() : 
-    m_organizationSharingStatus(OrganizationSharingStatus::NOT_SET),
-    m_organizationSharingStatusHasBeenSet(false),
-    m_discoveryIntegrationStatus(DiscoveryIntegrationStatus::NOT_SET),
-    m_discoveryIntegrationStatusHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGlobalSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

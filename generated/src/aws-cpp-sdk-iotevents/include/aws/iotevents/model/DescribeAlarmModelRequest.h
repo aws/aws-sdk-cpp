@@ -25,7 +25,7 @@ namespace Model
   class DescribeAlarmModelRequest : public IoTEventsRequest
   {
   public:
-    AWS_IOTEVENTS_API DescribeAlarmModelRequest();
+    AWS_IOTEVENTS_API DescribeAlarmModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
+    inline const Aws::String& GetAlarmModelName() const { return m_alarmModelName; }
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-    inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-    inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-    inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-    inline DescribeAlarmModelRequest& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-    inline DescribeAlarmModelRequest& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-    inline DescribeAlarmModelRequest& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    template<typename AlarmModelNameT = Aws::String>
+    void SetAlarmModelName(AlarmModelNameT&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::forward<AlarmModelNameT>(value); }
+    template<typename AlarmModelNameT = Aws::String>
+    DescribeAlarmModelRequest& WithAlarmModelName(AlarmModelNameT&& value) { SetAlarmModelName(std::forward<AlarmModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelVersion() const{ return m_alarmModelVersion; }
+    inline const Aws::String& GetAlarmModelVersion() const { return m_alarmModelVersion; }
     inline bool AlarmModelVersionHasBeenSet() const { return m_alarmModelVersionHasBeenSet; }
-    inline void SetAlarmModelVersion(const Aws::String& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = value; }
-    inline void SetAlarmModelVersion(Aws::String&& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = std::move(value); }
-    inline void SetAlarmModelVersion(const char* value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion.assign(value); }
-    inline DescribeAlarmModelRequest& WithAlarmModelVersion(const Aws::String& value) { SetAlarmModelVersion(value); return *this;}
-    inline DescribeAlarmModelRequest& WithAlarmModelVersion(Aws::String&& value) { SetAlarmModelVersion(std::move(value)); return *this;}
-    inline DescribeAlarmModelRequest& WithAlarmModelVersion(const char* value) { SetAlarmModelVersion(value); return *this;}
+    template<typename AlarmModelVersionT = Aws::String>
+    void SetAlarmModelVersion(AlarmModelVersionT&& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = std::forward<AlarmModelVersionT>(value); }
+    template<typename AlarmModelVersionT = Aws::String>
+    DescribeAlarmModelRequest& WithAlarmModelVersion(AlarmModelVersionT&& value) { SetAlarmModelVersion(std::forward<AlarmModelVersionT>(value)); return *this;}
     ///@}
   private:
 

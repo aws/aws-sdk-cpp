@@ -18,14 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocationObjectStorageResult::DescribeLocationObjectStorageResult() : 
-    m_serverPort(0),
-    m_serverProtocol(ObjectStorageServerProtocol::NOT_SET)
-{
-}
-
 DescribeLocationObjectStorageResult::DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeLocationObjectStorageResult()
 {
   *this = result;
 }
@@ -36,33 +29,28 @@ DescribeLocationObjectStorageResult& DescribeLocationObjectStorageResult::operat
   if(jsonValue.ValueExists("LocationArn"))
   {
     m_locationArn = jsonValue.GetString("LocationArn");
-
+    m_locationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
+    m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessKey"))
   {
     m_accessKey = jsonValue.GetString("AccessKey");
-
+    m_accessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerPort"))
   {
     m_serverPort = jsonValue.GetInteger("ServerPort");
-
+    m_serverPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerProtocol"))
   {
     m_serverProtocol = ObjectStorageServerProtocolMapper::GetObjectStorageServerProtocolForName(jsonValue.GetString("ServerProtocol"));
-
+    m_serverProtocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentArns"))
   {
     Aws::Utils::Array<JsonView> agentArnsJsonList = jsonValue.GetArray("AgentArns");
@@ -70,25 +58,25 @@ DescribeLocationObjectStorageResult& DescribeLocationObjectStorageResult::operat
     {
       m_agentArns.push_back(agentArnsJsonList[agentArnsIndex].AsString());
     }
+    m_agentArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerCertificate"))
   {
     m_serverCertificate = HashingUtils::Base64Decode(jsonValue.GetString("ServerCertificate"));
+    m_serverCertificateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class SnowflakeTableReference
   {
   public:
-    AWS_CLEANROOMS_API SnowflakeTableReference();
+    AWS_CLEANROOMS_API SnowflakeTableReference() = default;
     AWS_CLEANROOMS_API SnowflakeTableReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API SnowflakeTableReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,82 +42,72 @@ namespace Model
     /**
      * <p> The secret ARN of the Snowflake table reference.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline SnowflakeTableReference& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline SnowflakeTableReference& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline SnowflakeTableReference& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    SnowflakeTableReference& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The account identifier for the Snowflake table reference.</p>
      */
-    inline const Aws::String& GetAccountIdentifier() const{ return m_accountIdentifier; }
+    inline const Aws::String& GetAccountIdentifier() const { return m_accountIdentifier; }
     inline bool AccountIdentifierHasBeenSet() const { return m_accountIdentifierHasBeenSet; }
-    inline void SetAccountIdentifier(const Aws::String& value) { m_accountIdentifierHasBeenSet = true; m_accountIdentifier = value; }
-    inline void SetAccountIdentifier(Aws::String&& value) { m_accountIdentifierHasBeenSet = true; m_accountIdentifier = std::move(value); }
-    inline void SetAccountIdentifier(const char* value) { m_accountIdentifierHasBeenSet = true; m_accountIdentifier.assign(value); }
-    inline SnowflakeTableReference& WithAccountIdentifier(const Aws::String& value) { SetAccountIdentifier(value); return *this;}
-    inline SnowflakeTableReference& WithAccountIdentifier(Aws::String&& value) { SetAccountIdentifier(std::move(value)); return *this;}
-    inline SnowflakeTableReference& WithAccountIdentifier(const char* value) { SetAccountIdentifier(value); return *this;}
+    template<typename AccountIdentifierT = Aws::String>
+    void SetAccountIdentifier(AccountIdentifierT&& value) { m_accountIdentifierHasBeenSet = true; m_accountIdentifier = std::forward<AccountIdentifierT>(value); }
+    template<typename AccountIdentifierT = Aws::String>
+    SnowflakeTableReference& WithAccountIdentifier(AccountIdentifierT&& value) { SetAccountIdentifier(std::forward<AccountIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the database the Snowflake table belongs to.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline SnowflakeTableReference& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline SnowflakeTableReference& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline SnowflakeTableReference& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    SnowflakeTableReference& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the Snowflake table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline SnowflakeTableReference& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline SnowflakeTableReference& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline SnowflakeTableReference& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    SnowflakeTableReference& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The schema name of the Snowflake table reference.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-    inline SnowflakeTableReference& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline SnowflakeTableReference& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline SnowflakeTableReference& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    SnowflakeTableReference& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The schema of the Snowflake table.</p>
      */
-    inline const SnowflakeTableSchema& GetTableSchema() const{ return m_tableSchema; }
+    inline const SnowflakeTableSchema& GetTableSchema() const { return m_tableSchema; }
     inline bool TableSchemaHasBeenSet() const { return m_tableSchemaHasBeenSet; }
-    inline void SetTableSchema(const SnowflakeTableSchema& value) { m_tableSchemaHasBeenSet = true; m_tableSchema = value; }
-    inline void SetTableSchema(SnowflakeTableSchema&& value) { m_tableSchemaHasBeenSet = true; m_tableSchema = std::move(value); }
-    inline SnowflakeTableReference& WithTableSchema(const SnowflakeTableSchema& value) { SetTableSchema(value); return *this;}
-    inline SnowflakeTableReference& WithTableSchema(SnowflakeTableSchema&& value) { SetTableSchema(std::move(value)); return *this;}
+    template<typename TableSchemaT = SnowflakeTableSchema>
+    void SetTableSchema(TableSchemaT&& value) { m_tableSchemaHasBeenSet = true; m_tableSchema = std::forward<TableSchemaT>(value); }
+    template<typename TableSchemaT = SnowflakeTableSchema>
+    SnowflakeTableReference& WithTableSchema(TableSchemaT&& value) { SetTableSchema(std::forward<TableSchemaT>(value)); return *this;}
     ///@}
   private:
 

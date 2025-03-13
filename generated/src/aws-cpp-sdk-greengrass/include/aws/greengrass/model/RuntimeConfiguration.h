@@ -31,7 +31,7 @@ namespace Model
   class RuntimeConfiguration
   {
   public:
-    AWS_GREENGRASS_API RuntimeConfiguration();
+    AWS_GREENGRASS_API RuntimeConfiguration() = default;
     AWS_GREENGRASS_API RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * Configuration for telemetry service.
      */
-    inline const TelemetryConfiguration& GetTelemetryConfiguration() const{ return m_telemetryConfiguration; }
+    inline const TelemetryConfiguration& GetTelemetryConfiguration() const { return m_telemetryConfiguration; }
     inline bool TelemetryConfigurationHasBeenSet() const { return m_telemetryConfigurationHasBeenSet; }
-    inline void SetTelemetryConfiguration(const TelemetryConfiguration& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = value; }
-    inline void SetTelemetryConfiguration(TelemetryConfiguration&& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = std::move(value); }
-    inline RuntimeConfiguration& WithTelemetryConfiguration(const TelemetryConfiguration& value) { SetTelemetryConfiguration(value); return *this;}
-    inline RuntimeConfiguration& WithTelemetryConfiguration(TelemetryConfiguration&& value) { SetTelemetryConfiguration(std::move(value)); return *this;}
+    template<typename TelemetryConfigurationT = TelemetryConfiguration>
+    void SetTelemetryConfiguration(TelemetryConfigurationT&& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = std::forward<TelemetryConfigurationT>(value); }
+    template<typename TelemetryConfigurationT = TelemetryConfiguration>
+    RuntimeConfiguration& WithTelemetryConfiguration(TelemetryConfigurationT&& value) { SetTelemetryConfiguration(std::forward<TelemetryConfigurationT>(value)); return *this;}
     ///@}
   private:
 

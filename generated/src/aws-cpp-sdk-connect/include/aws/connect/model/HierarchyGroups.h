@@ -32,7 +32,7 @@ namespace Model
   class HierarchyGroups
   {
   public:
-    AWS_CONNECT_API HierarchyGroups();
+    AWS_CONNECT_API HierarchyGroups() = default;
     AWS_CONNECT_API HierarchyGroups(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HierarchyGroups& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,60 +42,60 @@ namespace Model
     /**
      * <p>The group at level one of the agent hierarchy.</p>
      */
-    inline const AgentHierarchyGroup& GetLevel1() const{ return m_level1; }
+    inline const AgentHierarchyGroup& GetLevel1() const { return m_level1; }
     inline bool Level1HasBeenSet() const { return m_level1HasBeenSet; }
-    inline void SetLevel1(const AgentHierarchyGroup& value) { m_level1HasBeenSet = true; m_level1 = value; }
-    inline void SetLevel1(AgentHierarchyGroup&& value) { m_level1HasBeenSet = true; m_level1 = std::move(value); }
-    inline HierarchyGroups& WithLevel1(const AgentHierarchyGroup& value) { SetLevel1(value); return *this;}
-    inline HierarchyGroups& WithLevel1(AgentHierarchyGroup&& value) { SetLevel1(std::move(value)); return *this;}
+    template<typename Level1T = AgentHierarchyGroup>
+    void SetLevel1(Level1T&& value) { m_level1HasBeenSet = true; m_level1 = std::forward<Level1T>(value); }
+    template<typename Level1T = AgentHierarchyGroup>
+    HierarchyGroups& WithLevel1(Level1T&& value) { SetLevel1(std::forward<Level1T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group at level two of the agent hierarchy.</p>
      */
-    inline const AgentHierarchyGroup& GetLevel2() const{ return m_level2; }
+    inline const AgentHierarchyGroup& GetLevel2() const { return m_level2; }
     inline bool Level2HasBeenSet() const { return m_level2HasBeenSet; }
-    inline void SetLevel2(const AgentHierarchyGroup& value) { m_level2HasBeenSet = true; m_level2 = value; }
-    inline void SetLevel2(AgentHierarchyGroup&& value) { m_level2HasBeenSet = true; m_level2 = std::move(value); }
-    inline HierarchyGroups& WithLevel2(const AgentHierarchyGroup& value) { SetLevel2(value); return *this;}
-    inline HierarchyGroups& WithLevel2(AgentHierarchyGroup&& value) { SetLevel2(std::move(value)); return *this;}
+    template<typename Level2T = AgentHierarchyGroup>
+    void SetLevel2(Level2T&& value) { m_level2HasBeenSet = true; m_level2 = std::forward<Level2T>(value); }
+    template<typename Level2T = AgentHierarchyGroup>
+    HierarchyGroups& WithLevel2(Level2T&& value) { SetLevel2(std::forward<Level2T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group at level three of the agent hierarchy.</p>
      */
-    inline const AgentHierarchyGroup& GetLevel3() const{ return m_level3; }
+    inline const AgentHierarchyGroup& GetLevel3() const { return m_level3; }
     inline bool Level3HasBeenSet() const { return m_level3HasBeenSet; }
-    inline void SetLevel3(const AgentHierarchyGroup& value) { m_level3HasBeenSet = true; m_level3 = value; }
-    inline void SetLevel3(AgentHierarchyGroup&& value) { m_level3HasBeenSet = true; m_level3 = std::move(value); }
-    inline HierarchyGroups& WithLevel3(const AgentHierarchyGroup& value) { SetLevel3(value); return *this;}
-    inline HierarchyGroups& WithLevel3(AgentHierarchyGroup&& value) { SetLevel3(std::move(value)); return *this;}
+    template<typename Level3T = AgentHierarchyGroup>
+    void SetLevel3(Level3T&& value) { m_level3HasBeenSet = true; m_level3 = std::forward<Level3T>(value); }
+    template<typename Level3T = AgentHierarchyGroup>
+    HierarchyGroups& WithLevel3(Level3T&& value) { SetLevel3(std::forward<Level3T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group at level four of the agent hierarchy.</p>
      */
-    inline const AgentHierarchyGroup& GetLevel4() const{ return m_level4; }
+    inline const AgentHierarchyGroup& GetLevel4() const { return m_level4; }
     inline bool Level4HasBeenSet() const { return m_level4HasBeenSet; }
-    inline void SetLevel4(const AgentHierarchyGroup& value) { m_level4HasBeenSet = true; m_level4 = value; }
-    inline void SetLevel4(AgentHierarchyGroup&& value) { m_level4HasBeenSet = true; m_level4 = std::move(value); }
-    inline HierarchyGroups& WithLevel4(const AgentHierarchyGroup& value) { SetLevel4(value); return *this;}
-    inline HierarchyGroups& WithLevel4(AgentHierarchyGroup&& value) { SetLevel4(std::move(value)); return *this;}
+    template<typename Level4T = AgentHierarchyGroup>
+    void SetLevel4(Level4T&& value) { m_level4HasBeenSet = true; m_level4 = std::forward<Level4T>(value); }
+    template<typename Level4T = AgentHierarchyGroup>
+    HierarchyGroups& WithLevel4(Level4T&& value) { SetLevel4(std::forward<Level4T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group at level five of the agent hierarchy.</p>
      */
-    inline const AgentHierarchyGroup& GetLevel5() const{ return m_level5; }
+    inline const AgentHierarchyGroup& GetLevel5() const { return m_level5; }
     inline bool Level5HasBeenSet() const { return m_level5HasBeenSet; }
-    inline void SetLevel5(const AgentHierarchyGroup& value) { m_level5HasBeenSet = true; m_level5 = value; }
-    inline void SetLevel5(AgentHierarchyGroup&& value) { m_level5HasBeenSet = true; m_level5 = std::move(value); }
-    inline HierarchyGroups& WithLevel5(const AgentHierarchyGroup& value) { SetLevel5(value); return *this;}
-    inline HierarchyGroups& WithLevel5(AgentHierarchyGroup&& value) { SetLevel5(std::move(value)); return *this;}
+    template<typename Level5T = AgentHierarchyGroup>
+    void SetLevel5(Level5T&& value) { m_level5HasBeenSet = true; m_level5 = std::forward<Level5T>(value); }
+    template<typename Level5T = AgentHierarchyGroup>
+    HierarchyGroups& WithLevel5(Level5T&& value) { SetLevel5(std::forward<Level5T>(value)); return *this;}
     ///@}
   private:
 

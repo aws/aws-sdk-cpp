@@ -22,7 +22,7 @@ namespace Model
   class ModifyEndpointEncryptionModeRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ModifyEndpointEncryptionModeRequest();
+    AWS_WORKSPACES_API ModifyEndpointEncryptionModeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p> The identifier of the directory.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline ModifyEndpointEncryptionModeRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline ModifyEndpointEncryptionModeRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline ModifyEndpointEncryptionModeRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    ModifyEndpointEncryptionModeRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * <p>The encryption mode used for endpoint connections when streaming to
      * WorkSpaces Personal or WorkSpace Pools.</p>
      */
-    inline const EndpointEncryptionMode& GetEndpointEncryptionMode() const{ return m_endpointEncryptionMode; }
+    inline EndpointEncryptionMode GetEndpointEncryptionMode() const { return m_endpointEncryptionMode; }
     inline bool EndpointEncryptionModeHasBeenSet() const { return m_endpointEncryptionModeHasBeenSet; }
-    inline void SetEndpointEncryptionMode(const EndpointEncryptionMode& value) { m_endpointEncryptionModeHasBeenSet = true; m_endpointEncryptionMode = value; }
-    inline void SetEndpointEncryptionMode(EndpointEncryptionMode&& value) { m_endpointEncryptionModeHasBeenSet = true; m_endpointEncryptionMode = std::move(value); }
-    inline ModifyEndpointEncryptionModeRequest& WithEndpointEncryptionMode(const EndpointEncryptionMode& value) { SetEndpointEncryptionMode(value); return *this;}
-    inline ModifyEndpointEncryptionModeRequest& WithEndpointEncryptionMode(EndpointEncryptionMode&& value) { SetEndpointEncryptionMode(std::move(value)); return *this;}
+    inline void SetEndpointEncryptionMode(EndpointEncryptionMode value) { m_endpointEncryptionModeHasBeenSet = true; m_endpointEncryptionMode = value; }
+    inline ModifyEndpointEncryptionModeRequest& WithEndpointEncryptionMode(EndpointEncryptionMode value) { SetEndpointEncryptionMode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    EndpointEncryptionMode m_endpointEncryptionMode;
+    EndpointEncryptionMode m_endpointEncryptionMode{EndpointEncryptionMode::NOT_SET};
     bool m_endpointEncryptionModeHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class ServiceAccountCredentials
   {
   public:
-    AWS_APPSTREAM_API ServiceAccountCredentials();
+    AWS_APPSTREAM_API ServiceAccountCredentials() = default;
     AWS_APPSTREAM_API ServiceAccountCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API ServiceAccountCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * change/reset the password on descendant computer objects for the organizational
      * units specified.</p>
      */
-    inline const Aws::String& GetAccountName() const{ return m_accountName; }
+    inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
-    inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
-    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
-    inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
-    inline ServiceAccountCredentials& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
-    inline ServiceAccountCredentials& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
-    inline ServiceAccountCredentials& WithAccountName(const char* value) { SetAccountName(value); return *this;}
+    template<typename AccountNameT = Aws::String>
+    void SetAccountName(AccountNameT&& value) { m_accountNameHasBeenSet = true; m_accountName = std::forward<AccountNameT>(value); }
+    template<typename AccountNameT = Aws::String>
+    ServiceAccountCredentials& WithAccountName(AccountNameT&& value) { SetAccountName(std::forward<AccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The password for the account.</p>
      */
-    inline const Aws::String& GetAccountPassword() const{ return m_accountPassword; }
+    inline const Aws::String& GetAccountPassword() const { return m_accountPassword; }
     inline bool AccountPasswordHasBeenSet() const { return m_accountPasswordHasBeenSet; }
-    inline void SetAccountPassword(const Aws::String& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = value; }
-    inline void SetAccountPassword(Aws::String&& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = std::move(value); }
-    inline void SetAccountPassword(const char* value) { m_accountPasswordHasBeenSet = true; m_accountPassword.assign(value); }
-    inline ServiceAccountCredentials& WithAccountPassword(const Aws::String& value) { SetAccountPassword(value); return *this;}
-    inline ServiceAccountCredentials& WithAccountPassword(Aws::String&& value) { SetAccountPassword(std::move(value)); return *this;}
-    inline ServiceAccountCredentials& WithAccountPassword(const char* value) { SetAccountPassword(value); return *this;}
+    template<typename AccountPasswordT = Aws::String>
+    void SetAccountPassword(AccountPasswordT&& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = std::forward<AccountPasswordT>(value); }
+    template<typename AccountPasswordT = Aws::String>
+    ServiceAccountCredentials& WithAccountPassword(AccountPasswordT&& value) { SetAccountPassword(std::forward<AccountPasswordT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class Artifact
   {
   public:
-    AWS_DEVICEFARM_API Artifact();
+    AWS_DEVICEFARM_API Artifact() = default;
     AWS_DEVICEFARM_API Artifact(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Artifact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The artifact's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Artifact& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Artifact& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Artifact& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Artifact& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The artifact's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Artifact& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Artifact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Artifact& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Artifact& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,26 +78,22 @@ namespace Model
      * <p>CUSTOMER_ARTIFACT</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li> <li>
      * <p>TESTSPEC_OUTPUT</p> </li> </ul>
      */
-    inline const ArtifactType& GetType() const{ return m_type; }
+    inline ArtifactType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Artifact& WithType(const ArtifactType& value) { SetType(value); return *this;}
-    inline Artifact& WithType(ArtifactType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ArtifactType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Artifact& WithType(ArtifactType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The artifact's file extension.</p>
      */
-    inline const Aws::String& GetExtension() const{ return m_extension; }
+    inline const Aws::String& GetExtension() const { return m_extension; }
     inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
-    inline void SetExtension(const Aws::String& value) { m_extensionHasBeenSet = true; m_extension = value; }
-    inline void SetExtension(Aws::String&& value) { m_extensionHasBeenSet = true; m_extension = std::move(value); }
-    inline void SetExtension(const char* value) { m_extensionHasBeenSet = true; m_extension.assign(value); }
-    inline Artifact& WithExtension(const Aws::String& value) { SetExtension(value); return *this;}
-    inline Artifact& WithExtension(Aws::String&& value) { SetExtension(std::move(value)); return *this;}
-    inline Artifact& WithExtension(const char* value) { SetExtension(value); return *this;}
+    template<typename ExtensionT = Aws::String>
+    void SetExtension(ExtensionT&& value) { m_extensionHasBeenSet = true; m_extension = std::forward<ExtensionT>(value); }
+    template<typename ExtensionT = Aws::String>
+    Artifact& WithExtension(ExtensionT&& value) { SetExtension(std::forward<ExtensionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +101,12 @@ namespace Model
      * <p>The presigned Amazon S3 URL that can be used with a GET request to download
      * the artifact's file.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline Artifact& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline Artifact& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline Artifact& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    Artifact& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,7 +116,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ArtifactType m_type;
+    ArtifactType m_type{ArtifactType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_extension;

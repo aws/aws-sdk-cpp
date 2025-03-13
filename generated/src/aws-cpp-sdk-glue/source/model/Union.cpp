@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Union::Union() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_unionType(UnionType::NOT_SET),
-    m_unionTypeHasBeenSet(false)
-{
-}
-
 Union::Union(JsonView jsonValue)
-  : Union()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ Union& Union::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -50,14 +39,11 @@ Union& Union::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnionType"))
   {
     m_unionType = UnionTypeMapper::GetUnionTypeForName(jsonValue.GetString("UnionType"));
-
     m_unionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class StartConfigRulesEvaluationRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API StartConfigRulesEvaluationRequest();
+    AWS_CONFIGSERVICE_API StartConfigRulesEvaluationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The list of names of Config rules that you want to run evaluations for.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
+    inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const { return m_configRuleNames; }
     inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
-    inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
-    inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::move(value); }
-    inline StartConfigRulesEvaluationRequest& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
-    inline StartConfigRulesEvaluationRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(std::move(value)); return *this;}
-    inline StartConfigRulesEvaluationRequest& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
-    inline StartConfigRulesEvaluationRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(std::move(value)); return *this; }
-    inline StartConfigRulesEvaluationRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
+    template<typename ConfigRuleNamesT = Aws::Vector<Aws::String>>
+    void SetConfigRuleNames(ConfigRuleNamesT&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = std::forward<ConfigRuleNamesT>(value); }
+    template<typename ConfigRuleNamesT = Aws::Vector<Aws::String>>
+    StartConfigRulesEvaluationRequest& WithConfigRuleNames(ConfigRuleNamesT&& value) { SetConfigRuleNames(std::forward<ConfigRuleNamesT>(value)); return *this;}
+    template<typename ConfigRuleNamesT = Aws::String>
+    StartConfigRulesEvaluationRequest& AddConfigRuleNames(ConfigRuleNamesT&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.emplace_back(std::forward<ConfigRuleNamesT>(value)); return *this; }
     ///@}
   private:
 

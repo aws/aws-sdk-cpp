@@ -18,26 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfiguration() : 
-    m_accountScopeHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_normalizedUnitsToPurchaseHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_numberOfInstancesToPurchaseHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_reservedInstancesRegionHasBeenSet(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_monthlyRecurringCostHasBeenSet(false)
-{
-}
-
 ElastiCacheReservedInstancesConfiguration::ElastiCacheReservedInstancesConfiguration(JsonView jsonValue)
-  : ElastiCacheReservedInstancesConfiguration()
 {
   *this = jsonValue;
 }
@@ -47,94 +28,68 @@ ElastiCacheReservedInstancesConfiguration& ElastiCacheReservedInstancesConfigura
   if(jsonValue.ValueExists("accountScope"))
   {
     m_accountScope = jsonValue.GetString("accountScope");
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("normalizedUnitsToPurchase"))
   {
     m_normalizedUnitsToPurchase = jsonValue.GetString("normalizedUnitsToPurchase");
-
     m_normalizedUnitsToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("term"))
   {
     m_term = jsonValue.GetString("term");
-
     m_termHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentOption"))
   {
     m_paymentOption = jsonValue.GetString("paymentOption");
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfInstancesToPurchase"))
   {
     m_numberOfInstancesToPurchase = jsonValue.GetString("numberOfInstancesToPurchase");
-
     m_numberOfInstancesToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceFamily"))
   {
     m_instanceFamily = jsonValue.GetString("instanceFamily");
-
     m_instanceFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reservedInstancesRegion"))
   {
     m_reservedInstancesRegion = jsonValue.GetString("reservedInstancesRegion");
-
     m_reservedInstancesRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentGeneration"))
   {
     m_currentGeneration = jsonValue.GetString("currentGeneration");
-
     m_currentGenerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeFlexEligible"))
   {
     m_sizeFlexEligible = jsonValue.GetBool("sizeFlexEligible");
-
     m_sizeFlexEligibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upfrontCost"))
   {
     m_upfrontCost = jsonValue.GetString("upfrontCost");
-
     m_upfrontCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monthlyRecurringCost"))
   {
     m_monthlyRecurringCost = jsonValue.GetString("monthlyRecurringCost");
-
     m_monthlyRecurringCostHasBeenSet = true;
   }
-
   return *this;
 }
 

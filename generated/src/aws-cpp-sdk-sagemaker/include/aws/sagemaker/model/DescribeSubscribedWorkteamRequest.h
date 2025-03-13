@@ -21,7 +21,7 @@ namespace Model
   class DescribeSubscribedWorkteamRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeSubscribedWorkteamRequest();
+    AWS_SAGEMAKER_API DescribeSubscribedWorkteamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
      */
-    inline const Aws::String& GetWorkteamArn() const{ return m_workteamArn; }
+    inline const Aws::String& GetWorkteamArn() const { return m_workteamArn; }
     inline bool WorkteamArnHasBeenSet() const { return m_workteamArnHasBeenSet; }
-    inline void SetWorkteamArn(const Aws::String& value) { m_workteamArnHasBeenSet = true; m_workteamArn = value; }
-    inline void SetWorkteamArn(Aws::String&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::move(value); }
-    inline void SetWorkteamArn(const char* value) { m_workteamArnHasBeenSet = true; m_workteamArn.assign(value); }
-    inline DescribeSubscribedWorkteamRequest& WithWorkteamArn(const Aws::String& value) { SetWorkteamArn(value); return *this;}
-    inline DescribeSubscribedWorkteamRequest& WithWorkteamArn(Aws::String&& value) { SetWorkteamArn(std::move(value)); return *this;}
-    inline DescribeSubscribedWorkteamRequest& WithWorkteamArn(const char* value) { SetWorkteamArn(value); return *this;}
+    template<typename WorkteamArnT = Aws::String>
+    void SetWorkteamArn(WorkteamArnT&& value) { m_workteamArnHasBeenSet = true; m_workteamArn = std::forward<WorkteamArnT>(value); }
+    template<typename WorkteamArnT = Aws::String>
+    DescribeSubscribedWorkteamRequest& WithWorkteamArn(WorkteamArnT&& value) { SetWorkteamArn(std::forward<WorkteamArnT>(value)); return *this;}
     ///@}
   private:
 

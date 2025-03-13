@@ -23,7 +23,7 @@ namespace Model
   class DescribeInstanceConnectEndpointsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeInstanceConnectEndpointsRequest();
+    AWS_EC2_API DescribeInstanceConnectEndpointsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeInstanceConnectEndpointsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeInstanceConnectEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,14 +69,12 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeInstanceConnectEndpointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeInstanceConnectEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeInstanceConnectEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeInstanceConnectEndpointsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,36 +99,35 @@ namespace Model
      * value, regardless of tag key.</p> </li> <li> <p> <code>vpc-id</code> - The ID of
      * the VPC in which the EC2 Instance Connect Endpoint was created.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeInstanceConnectEndpointsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeInstanceConnectEndpointsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeInstanceConnectEndpointsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeInstanceConnectEndpointsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeInstanceConnectEndpointsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeInstanceConnectEndpointsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>One or more EC2 Instance Connect Endpoint IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceConnectEndpointIds() const{ return m_instanceConnectEndpointIds; }
+    inline const Aws::Vector<Aws::String>& GetInstanceConnectEndpointIds() const { return m_instanceConnectEndpointIds; }
     inline bool InstanceConnectEndpointIdsHasBeenSet() const { return m_instanceConnectEndpointIdsHasBeenSet; }
-    inline void SetInstanceConnectEndpointIds(const Aws::Vector<Aws::String>& value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds = value; }
-    inline void SetInstanceConnectEndpointIds(Aws::Vector<Aws::String>&& value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds = std::move(value); }
-    inline DescribeInstanceConnectEndpointsRequest& WithInstanceConnectEndpointIds(const Aws::Vector<Aws::String>& value) { SetInstanceConnectEndpointIds(value); return *this;}
-    inline DescribeInstanceConnectEndpointsRequest& WithInstanceConnectEndpointIds(Aws::Vector<Aws::String>&& value) { SetInstanceConnectEndpointIds(std::move(value)); return *this;}
-    inline DescribeInstanceConnectEndpointsRequest& AddInstanceConnectEndpointIds(const Aws::String& value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds.push_back(value); return *this; }
-    inline DescribeInstanceConnectEndpointsRequest& AddInstanceConnectEndpointIds(Aws::String&& value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds.push_back(std::move(value)); return *this; }
-    inline DescribeInstanceConnectEndpointsRequest& AddInstanceConnectEndpointIds(const char* value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds.push_back(value); return *this; }
+    template<typename InstanceConnectEndpointIdsT = Aws::Vector<Aws::String>>
+    void SetInstanceConnectEndpointIds(InstanceConnectEndpointIdsT&& value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds = std::forward<InstanceConnectEndpointIdsT>(value); }
+    template<typename InstanceConnectEndpointIdsT = Aws::Vector<Aws::String>>
+    DescribeInstanceConnectEndpointsRequest& WithInstanceConnectEndpointIds(InstanceConnectEndpointIdsT&& value) { SetInstanceConnectEndpointIds(std::forward<InstanceConnectEndpointIdsT>(value)); return *this;}
+    template<typename InstanceConnectEndpointIdsT = Aws::String>
+    DescribeInstanceConnectEndpointsRequest& AddInstanceConnectEndpointIds(InstanceConnectEndpointIdsT&& value) { m_instanceConnectEndpointIdsHasBeenSet = true; m_instanceConnectEndpointIds.emplace_back(std::forward<InstanceConnectEndpointIdsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -32,7 +32,7 @@ namespace Model
   class RegisteredUserDashboardVisualEmbeddingConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API RegisteredUserDashboardVisualEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserDashboardVisualEmbeddingConfiguration() = default;
     AWS_QUICKSIGHT_API RegisteredUserDashboardVisualEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RegisteredUserDashboardVisualEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail
      * with <code>InvalidParameterValueException</code>.</p>
      */
-    inline const DashboardVisualId& GetInitialDashboardVisualId() const{ return m_initialDashboardVisualId; }
+    inline const DashboardVisualId& GetInitialDashboardVisualId() const { return m_initialDashboardVisualId; }
     inline bool InitialDashboardVisualIdHasBeenSet() const { return m_initialDashboardVisualIdHasBeenSet; }
-    inline void SetInitialDashboardVisualId(const DashboardVisualId& value) { m_initialDashboardVisualIdHasBeenSet = true; m_initialDashboardVisualId = value; }
-    inline void SetInitialDashboardVisualId(DashboardVisualId&& value) { m_initialDashboardVisualIdHasBeenSet = true; m_initialDashboardVisualId = std::move(value); }
-    inline RegisteredUserDashboardVisualEmbeddingConfiguration& WithInitialDashboardVisualId(const DashboardVisualId& value) { SetInitialDashboardVisualId(value); return *this;}
-    inline RegisteredUserDashboardVisualEmbeddingConfiguration& WithInitialDashboardVisualId(DashboardVisualId&& value) { SetInitialDashboardVisualId(std::move(value)); return *this;}
+    template<typename InitialDashboardVisualIdT = DashboardVisualId>
+    void SetInitialDashboardVisualId(InitialDashboardVisualIdT&& value) { m_initialDashboardVisualIdHasBeenSet = true; m_initialDashboardVisualId = std::forward<InitialDashboardVisualIdT>(value); }
+    template<typename InitialDashboardVisualIdT = DashboardVisualId>
+    RegisteredUserDashboardVisualEmbeddingConfiguration& WithInitialDashboardVisualId(InitialDashboardVisualIdT&& value) { SetInitialDashboardVisualId(std::forward<InitialDashboardVisualIdT>(value)); return *this;}
     ///@}
   private:
 

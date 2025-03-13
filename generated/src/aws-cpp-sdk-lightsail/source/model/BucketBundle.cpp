@@ -18,22 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-BucketBundle::BucketBundle() : 
-    m_bundleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_storagePerMonthInGb(0),
-    m_storagePerMonthInGbHasBeenSet(false),
-    m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false)
-{
-}
-
 BucketBundle::BucketBundle(JsonView jsonValue)
-  : BucketBundle()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ BucketBundle& BucketBundle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bundleId"))
   {
     m_bundleId = jsonValue.GetString("bundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("price"))
   {
     m_price = jsonValue.GetDouble("price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storagePerMonthInGb"))
   {
     m_storagePerMonthInGb = jsonValue.GetInteger("storagePerMonthInGb");
-
     m_storagePerMonthInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferPerMonthInGb"))
   {
     m_transferPerMonthInGb = jsonValue.GetInteger("transferPerMonthInGb");
-
     m_transferPerMonthInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isActive"))
   {
     m_isActive = jsonValue.GetBool("isActive");
-
     m_isActiveHasBeenSet = true;
   }
-
   return *this;
 }
 

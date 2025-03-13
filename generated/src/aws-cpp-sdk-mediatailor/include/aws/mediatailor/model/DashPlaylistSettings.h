@@ -29,7 +29,7 @@ namespace Model
   class DashPlaylistSettings
   {
   public:
-    AWS_MEDIATAILOR_API DashPlaylistSettings();
+    AWS_MEDIATAILOR_API DashPlaylistSettings() = default;
     AWS_MEDIATAILOR_API DashPlaylistSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API DashPlaylistSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
      * <p>The total duration (in seconds) of each manifest. Minimum value:
      * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
-    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+    inline int GetManifestWindowSeconds() const { return m_manifestWindowSeconds; }
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
     inline DashPlaylistSettings& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * available in the buffer. Minimum value: <code>2</code> seconds. Maximum value:
      * <code>60</code> seconds.</p>
      */
-    inline int GetMinBufferTimeSeconds() const{ return m_minBufferTimeSeconds; }
+    inline int GetMinBufferTimeSeconds() const { return m_minBufferTimeSeconds; }
     inline bool MinBufferTimeSecondsHasBeenSet() const { return m_minBufferTimeSecondsHasBeenSet; }
     inline void SetMinBufferTimeSeconds(int value) { m_minBufferTimeSecondsHasBeenSet = true; m_minBufferTimeSeconds = value; }
     inline DashPlaylistSettings& WithMinBufferTimeSeconds(int value) { SetMinBufferTimeSeconds(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * requesting updates to the manifest. Minimum value: <code>2</code> seconds.
      * Maximum value: <code>60</code> seconds.</p>
      */
-    inline int GetMinUpdatePeriodSeconds() const{ return m_minUpdatePeriodSeconds; }
+    inline int GetMinUpdatePeriodSeconds() const { return m_minUpdatePeriodSeconds; }
     inline bool MinUpdatePeriodSecondsHasBeenSet() const { return m_minUpdatePeriodSecondsHasBeenSet; }
     inline void SetMinUpdatePeriodSeconds(int value) { m_minUpdatePeriodSecondsHasBeenSet = true; m_minUpdatePeriodSeconds = value; }
     inline DashPlaylistSettings& WithMinUpdatePeriodSeconds(int value) { SetMinUpdatePeriodSeconds(value); return *this;}
@@ -76,23 +76,23 @@ namespace Model
      * the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value:
      * <code>60</code> seconds.</p>
      */
-    inline int GetSuggestedPresentationDelaySeconds() const{ return m_suggestedPresentationDelaySeconds; }
+    inline int GetSuggestedPresentationDelaySeconds() const { return m_suggestedPresentationDelaySeconds; }
     inline bool SuggestedPresentationDelaySecondsHasBeenSet() const { return m_suggestedPresentationDelaySecondsHasBeenSet; }
     inline void SetSuggestedPresentationDelaySeconds(int value) { m_suggestedPresentationDelaySecondsHasBeenSet = true; m_suggestedPresentationDelaySeconds = value; }
     inline DashPlaylistSettings& WithSuggestedPresentationDelaySeconds(int value) { SetSuggestedPresentationDelaySeconds(value); return *this;}
     ///@}
   private:
 
-    int m_manifestWindowSeconds;
+    int m_manifestWindowSeconds{0};
     bool m_manifestWindowSecondsHasBeenSet = false;
 
-    int m_minBufferTimeSeconds;
+    int m_minBufferTimeSeconds{0};
     bool m_minBufferTimeSecondsHasBeenSet = false;
 
-    int m_minUpdatePeriodSeconds;
+    int m_minUpdatePeriodSeconds{0};
     bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
-    int m_suggestedPresentationDelaySeconds;
+    int m_suggestedPresentationDelaySeconds{0};
     bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
   };
 

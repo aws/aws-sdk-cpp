@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AttachVolumeResult::AttachVolumeResult()
-{
-}
-
 AttachVolumeResult::AttachVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ AttachVolumeResult& AttachVolumeResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
+    m_volumeARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetARN"))
   {
     m_targetARN = jsonValue.GetString("TargetARN");
-
+    m_targetARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

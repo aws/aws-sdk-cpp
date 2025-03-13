@@ -18,19 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-TemplateVersionResponse::TemplateVersionResponse() : 
-    m_creationDateHasBeenSet(false),
-    m_defaultSubstitutionsHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_templateDescriptionHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateTypeHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 TemplateVersionResponse::TemplateVersionResponse(JsonView jsonValue)
-  : TemplateVersionResponse()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ TemplateVersionResponse& TemplateVersionResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSubstitutions"))
   {
     m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
-
     m_defaultSubstitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateDescription"))
   {
     m_templateDescription = jsonValue.GetString("TemplateDescription");
-
     m_templateDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateType"))
   {
     m_templateType = jsonValue.GetString("TemplateType");
-
     m_templateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

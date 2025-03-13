@@ -12,12 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetVoiceMessageSpendLimitOverrideRequest::SetVoiceMessageSpendLimitOverrideRequest() : 
-    m_monthlyLimit(0),
-    m_monthlyLimitHasBeenSet(false)
-{
-}
-
 Aws::String SetVoiceMessageSpendLimitOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

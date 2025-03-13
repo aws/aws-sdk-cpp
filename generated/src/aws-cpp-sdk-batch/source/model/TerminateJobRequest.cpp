@@ -12,12 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateJobRequest::TerminateJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String TerminateJobRequest::SerializePayload() const
 {
   JsonValue payload;

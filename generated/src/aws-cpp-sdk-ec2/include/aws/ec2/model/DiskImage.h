@@ -33,7 +33,7 @@ namespace Model
   class DiskImage
   {
   public:
-    AWS_EC2_API DiskImage();
+    AWS_EC2_API DiskImage() = default;
     AWS_EC2_API DiskImage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DiskImage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,38 +45,36 @@ namespace Model
     /**
      * <p>A description of the disk image.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DiskImage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DiskImage& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DiskImage& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DiskImage& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the disk image.</p>
      */
-    inline const DiskImageDetail& GetImage() const{ return m_image; }
+    inline const DiskImageDetail& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(DiskImageDetail&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline DiskImage& WithImage(const DiskImageDetail& value) { SetImage(value); return *this;}
-    inline DiskImage& WithImage(DiskImageDetail&& value) { SetImage(std::move(value)); return *this;}
+    template<typename ImageT = DiskImageDetail>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = DiskImageDetail>
+    DiskImage& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the volume.</p>
      */
-    inline const VolumeDetail& GetVolume() const{ return m_volume; }
+    inline const VolumeDetail& GetVolume() const { return m_volume; }
     inline bool VolumeHasBeenSet() const { return m_volumeHasBeenSet; }
-    inline void SetVolume(const VolumeDetail& value) { m_volumeHasBeenSet = true; m_volume = value; }
-    inline void SetVolume(VolumeDetail&& value) { m_volumeHasBeenSet = true; m_volume = std::move(value); }
-    inline DiskImage& WithVolume(const VolumeDetail& value) { SetVolume(value); return *this;}
-    inline DiskImage& WithVolume(VolumeDetail&& value) { SetVolume(std::move(value)); return *this;}
+    template<typename VolumeT = VolumeDetail>
+    void SetVolume(VolumeT&& value) { m_volumeHasBeenSet = true; m_volume = std::forward<VolumeT>(value); }
+    template<typename VolumeT = VolumeDetail>
+    DiskImage& WithVolume(VolumeT&& value) { SetVolume(std::forward<VolumeT>(value)); return *this;}
     ///@}
   private:
 

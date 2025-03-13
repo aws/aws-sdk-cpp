@@ -18,19 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-EnabledControlDetails::EnabledControlDetails() : 
-    m_arnHasBeenSet(false),
-    m_controlIdentifierHasBeenSet(false),
-    m_driftStatusSummaryHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_targetIdentifierHasBeenSet(false),
-    m_targetRegionsHasBeenSet(false)
-{
-}
-
 EnabledControlDetails::EnabledControlDetails(JsonView jsonValue)
-  : EnabledControlDetails()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ EnabledControlDetails& EnabledControlDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlIdentifier"))
   {
     m_controlIdentifier = jsonValue.GetString("controlIdentifier");
-
     m_controlIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("driftStatusSummary"))
   {
     m_driftStatusSummary = jsonValue.GetObject("driftStatusSummary");
-
     m_driftStatusSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -67,21 +49,16 @@ EnabledControlDetails& EnabledControlDetails::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusSummary"))
   {
     m_statusSummary = jsonValue.GetObject("statusSummary");
-
     m_statusSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetIdentifier"))
   {
     m_targetIdentifier = jsonValue.GetString("targetIdentifier");
-
     m_targetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRegions"))
   {
     Aws::Utils::Array<JsonView> targetRegionsJsonList = jsonValue.GetArray("targetRegions");
@@ -91,7 +68,6 @@ EnabledControlDetails& EnabledControlDetails::operator =(JsonView jsonValue)
     }
     m_targetRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

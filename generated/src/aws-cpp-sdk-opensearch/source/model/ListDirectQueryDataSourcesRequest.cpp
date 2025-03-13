@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDirectQueryDataSourcesRequest::ListDirectQueryDataSourcesRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListDirectQueryDataSourcesRequest::SerializePayload() const
 {
   return {};

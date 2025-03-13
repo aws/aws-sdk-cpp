@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteDetectorResult
   {
   public:
-    AWS_IOTEVENTSDATA_API BatchDeleteDetectorResult();
+    AWS_IOTEVENTSDATA_API BatchDeleteDetectorResult() = default;
     AWS_IOTEVENTSDATA_API BatchDeleteDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTSDATA_API BatchDeleteDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * (<code>[]</code>) if there are no errors. Each error entry contains a
      * <code>messageId</code> that helps you identify the entry that failed.</p>
      */
-    inline const Aws::Vector<BatchDeleteDetectorErrorEntry>& GetBatchDeleteDetectorErrorEntries() const{ return m_batchDeleteDetectorErrorEntries; }
-    inline void SetBatchDeleteDetectorErrorEntries(const Aws::Vector<BatchDeleteDetectorErrorEntry>& value) { m_batchDeleteDetectorErrorEntries = value; }
-    inline void SetBatchDeleteDetectorErrorEntries(Aws::Vector<BatchDeleteDetectorErrorEntry>&& value) { m_batchDeleteDetectorErrorEntries = std::move(value); }
-    inline BatchDeleteDetectorResult& WithBatchDeleteDetectorErrorEntries(const Aws::Vector<BatchDeleteDetectorErrorEntry>& value) { SetBatchDeleteDetectorErrorEntries(value); return *this;}
-    inline BatchDeleteDetectorResult& WithBatchDeleteDetectorErrorEntries(Aws::Vector<BatchDeleteDetectorErrorEntry>&& value) { SetBatchDeleteDetectorErrorEntries(std::move(value)); return *this;}
-    inline BatchDeleteDetectorResult& AddBatchDeleteDetectorErrorEntries(const BatchDeleteDetectorErrorEntry& value) { m_batchDeleteDetectorErrorEntries.push_back(value); return *this; }
-    inline BatchDeleteDetectorResult& AddBatchDeleteDetectorErrorEntries(BatchDeleteDetectorErrorEntry&& value) { m_batchDeleteDetectorErrorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteDetectorErrorEntry>& GetBatchDeleteDetectorErrorEntries() const { return m_batchDeleteDetectorErrorEntries; }
+    template<typename BatchDeleteDetectorErrorEntriesT = Aws::Vector<BatchDeleteDetectorErrorEntry>>
+    void SetBatchDeleteDetectorErrorEntries(BatchDeleteDetectorErrorEntriesT&& value) { m_batchDeleteDetectorErrorEntriesHasBeenSet = true; m_batchDeleteDetectorErrorEntries = std::forward<BatchDeleteDetectorErrorEntriesT>(value); }
+    template<typename BatchDeleteDetectorErrorEntriesT = Aws::Vector<BatchDeleteDetectorErrorEntry>>
+    BatchDeleteDetectorResult& WithBatchDeleteDetectorErrorEntries(BatchDeleteDetectorErrorEntriesT&& value) { SetBatchDeleteDetectorErrorEntries(std::forward<BatchDeleteDetectorErrorEntriesT>(value)); return *this;}
+    template<typename BatchDeleteDetectorErrorEntriesT = BatchDeleteDetectorErrorEntry>
+    BatchDeleteDetectorResult& AddBatchDeleteDetectorErrorEntries(BatchDeleteDetectorErrorEntriesT&& value) { m_batchDeleteDetectorErrorEntriesHasBeenSet = true; m_batchDeleteDetectorErrorEntries.emplace_back(std::forward<BatchDeleteDetectorErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteDetectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteDetectorErrorEntry> m_batchDeleteDetectorErrorEntries;
+    bool m_batchDeleteDetectorErrorEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

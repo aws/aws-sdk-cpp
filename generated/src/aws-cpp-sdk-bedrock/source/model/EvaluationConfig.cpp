@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-EvaluationConfig::EvaluationConfig() : 
-    m_automatedHasBeenSet(false),
-    m_humanHasBeenSet(false)
-{
-}
-
 EvaluationConfig::EvaluationConfig(JsonView jsonValue)
-  : EvaluationConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EvaluationConfig& EvaluationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("automated"))
   {
     m_automated = jsonValue.GetObject("automated");
-
     m_automatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("human"))
   {
     m_human = jsonValue.GetObject("human");
-
     m_humanHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace PI
 namespace Model
 {
 
-Data::Data() : 
-    m_performanceInsightsMetricHasBeenSet(false)
-{
-}
-
 Data::Data(JsonView jsonValue)
-  : Data()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Data& Data::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PerformanceInsightsMetric"))
   {
     m_performanceInsightsMetric = jsonValue.GetObject("PerformanceInsightsMetric");
-
     m_performanceInsightsMetricHasBeenSet = true;
   }
-
   return *this;
 }
 

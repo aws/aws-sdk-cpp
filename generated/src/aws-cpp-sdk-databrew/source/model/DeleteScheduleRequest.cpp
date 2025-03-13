@@ -12,11 +12,6 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScheduleRequest::DeleteScheduleRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduleRequest::SerializePayload() const
 {
   return {};

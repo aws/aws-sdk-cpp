@@ -10,23 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-DescribeDBEngineVersionsRequest::DescribeDBEngineVersionsRequest() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_defaultOnly(false),
-    m_defaultOnlyHasBeenSet(false),
-    m_listSupportedCharacterSets(false),
-    m_listSupportedCharacterSetsHasBeenSet(false),
-    m_listSupportedTimezones(false),
-    m_listSupportedTimezonesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBEngineVersionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

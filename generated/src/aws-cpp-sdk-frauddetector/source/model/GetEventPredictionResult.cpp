@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventPredictionResult::GetEventPredictionResult()
-{
-}
-
 GetEventPredictionResult::GetEventPredictionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
     {
       m_modelScores.push_back(modelScoresJsonList[modelScoresIndex].AsObject());
     }
+    m_modelScoresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleResults"))
   {
     Aws::Utils::Array<JsonView> ruleResultsJsonList = jsonValue.GetArray("ruleResults");
@@ -45,8 +41,8 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
     {
       m_ruleResults.push_back(ruleResultsJsonList[ruleResultsIndex].AsObject());
     }
+    m_ruleResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalModelOutputs"))
   {
     Aws::Utils::Array<JsonView> externalModelOutputsJsonList = jsonValue.GetArray("externalModelOutputs");
@@ -54,14 +50,15 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
     {
       m_externalModelOutputs.push_back(externalModelOutputsJsonList[externalModelOutputsIndex].AsObject());
     }
+    m_externalModelOutputsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

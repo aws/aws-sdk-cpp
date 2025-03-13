@@ -28,7 +28,7 @@ namespace Model
   class ListFoundationModelsRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API ListFoundationModelsRequest();
+    AWS_BEDROCK_API ListFoundationModelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>Return models belonging to the model provider that you specify.</p>
      */
-    inline const Aws::String& GetByProvider() const{ return m_byProvider; }
+    inline const Aws::String& GetByProvider() const { return m_byProvider; }
     inline bool ByProviderHasBeenSet() const { return m_byProviderHasBeenSet; }
-    inline void SetByProvider(const Aws::String& value) { m_byProviderHasBeenSet = true; m_byProvider = value; }
-    inline void SetByProvider(Aws::String&& value) { m_byProviderHasBeenSet = true; m_byProvider = std::move(value); }
-    inline void SetByProvider(const char* value) { m_byProviderHasBeenSet = true; m_byProvider.assign(value); }
-    inline ListFoundationModelsRequest& WithByProvider(const Aws::String& value) { SetByProvider(value); return *this;}
-    inline ListFoundationModelsRequest& WithByProvider(Aws::String&& value) { SetByProvider(std::move(value)); return *this;}
-    inline ListFoundationModelsRequest& WithByProvider(const char* value) { SetByProvider(value); return *this;}
+    template<typename ByProviderT = Aws::String>
+    void SetByProvider(ByProviderT&& value) { m_byProviderHasBeenSet = true; m_byProvider = std::forward<ByProviderT>(value); }
+    template<typename ByProviderT = Aws::String>
+    ListFoundationModelsRequest& WithByProvider(ByProviderT&& value) { SetByProvider(std::forward<ByProviderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,24 +62,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
      * Bedrock User Guide</a>.</p>
      */
-    inline const ModelCustomization& GetByCustomizationType() const{ return m_byCustomizationType; }
+    inline ModelCustomization GetByCustomizationType() const { return m_byCustomizationType; }
     inline bool ByCustomizationTypeHasBeenSet() const { return m_byCustomizationTypeHasBeenSet; }
-    inline void SetByCustomizationType(const ModelCustomization& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = value; }
-    inline void SetByCustomizationType(ModelCustomization&& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = std::move(value); }
-    inline ListFoundationModelsRequest& WithByCustomizationType(const ModelCustomization& value) { SetByCustomizationType(value); return *this;}
-    inline ListFoundationModelsRequest& WithByCustomizationType(ModelCustomization&& value) { SetByCustomizationType(std::move(value)); return *this;}
+    inline void SetByCustomizationType(ModelCustomization value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = value; }
+    inline ListFoundationModelsRequest& WithByCustomizationType(ModelCustomization value) { SetByCustomizationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Return models that support the output modality that you specify.</p>
      */
-    inline const ModelModality& GetByOutputModality() const{ return m_byOutputModality; }
+    inline ModelModality GetByOutputModality() const { return m_byOutputModality; }
     inline bool ByOutputModalityHasBeenSet() const { return m_byOutputModalityHasBeenSet; }
-    inline void SetByOutputModality(const ModelModality& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = value; }
-    inline void SetByOutputModality(ModelModality&& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = std::move(value); }
-    inline ListFoundationModelsRequest& WithByOutputModality(const ModelModality& value) { SetByOutputModality(value); return *this;}
-    inline ListFoundationModelsRequest& WithByOutputModality(ModelModality&& value) { SetByOutputModality(std::move(value)); return *this;}
+    inline void SetByOutputModality(ModelModality value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = value; }
+    inline ListFoundationModelsRequest& WithByOutputModality(ModelModality value) { SetByOutputModality(value); return *this;}
     ///@}
 
     ///@{
@@ -93,25 +87,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
      * Bedrock User Guide</a>.</p>
      */
-    inline const InferenceType& GetByInferenceType() const{ return m_byInferenceType; }
+    inline InferenceType GetByInferenceType() const { return m_byInferenceType; }
     inline bool ByInferenceTypeHasBeenSet() const { return m_byInferenceTypeHasBeenSet; }
-    inline void SetByInferenceType(const InferenceType& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = value; }
-    inline void SetByInferenceType(InferenceType&& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = std::move(value); }
-    inline ListFoundationModelsRequest& WithByInferenceType(const InferenceType& value) { SetByInferenceType(value); return *this;}
-    inline ListFoundationModelsRequest& WithByInferenceType(InferenceType&& value) { SetByInferenceType(std::move(value)); return *this;}
+    inline void SetByInferenceType(InferenceType value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = value; }
+    inline ListFoundationModelsRequest& WithByInferenceType(InferenceType value) { SetByInferenceType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_byProvider;
     bool m_byProviderHasBeenSet = false;
 
-    ModelCustomization m_byCustomizationType;
+    ModelCustomization m_byCustomizationType{ModelCustomization::NOT_SET};
     bool m_byCustomizationTypeHasBeenSet = false;
 
-    ModelModality m_byOutputModality;
+    ModelModality m_byOutputModality{ModelModality::NOT_SET};
     bool m_byOutputModalityHasBeenSet = false;
 
-    InferenceType m_byInferenceType;
+    InferenceType m_byInferenceType{InferenceType::NOT_SET};
     bool m_byInferenceTypeHasBeenSet = false;
   };
 

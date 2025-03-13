@@ -12,12 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGroupProfileRequest::GetGroupProfileRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetGroupProfileRequest::SerializePayload() const
 {
   return {};

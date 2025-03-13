@@ -21,7 +21,7 @@ namespace Model
   class GetPermissionRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API GetPermissionRequest();
+    AWS_RAM_API GetPermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
      */
-    inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
+    inline const Aws::String& GetPermissionArn() const { return m_permissionArn; }
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
-    inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
-    inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
-    inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
-    inline GetPermissionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
-    inline GetPermissionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
-    inline GetPermissionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+    template<typename PermissionArnT = Aws::String>
+    void SetPermissionArn(PermissionArnT&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::forward<PermissionArnT>(value); }
+    template<typename PermissionArnT = Aws::String>
+    GetPermissionRequest& WithPermissionArn(PermissionArnT&& value) { SetPermissionArn(std::forward<PermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * specify this parameter, the operation retrieves the default version.</p> <p>To
      * see the list of available versions, use <a>ListPermissionVersions</a>.</p>
      */
-    inline int GetPermissionVersion() const{ return m_permissionVersion; }
+    inline int GetPermissionVersion() const { return m_permissionVersion; }
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
     inline GetPermissionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_permissionArn;
     bool m_permissionArnHasBeenSet = false;
 
-    int m_permissionVersion;
+    int m_permissionVersion{0};
     bool m_permissionVersionHasBeenSet = false;
   };
 

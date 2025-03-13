@@ -18,14 +18,7 @@ namespace XRay
 namespace Model
 {
 
-RetrievedService::RetrievedService() : 
-    m_serviceHasBeenSet(false),
-    m_linksHasBeenSet(false)
-{
-}
-
 RetrievedService::RetrievedService(JsonView jsonValue)
-  : RetrievedService()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RetrievedService& RetrievedService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetObject("Service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Links"))
   {
     Aws::Utils::Array<JsonView> linksJsonList = jsonValue.GetArray("Links");
@@ -48,7 +39,6 @@ RetrievedService& RetrievedService::operator =(JsonView jsonValue)
     }
     m_linksHasBeenSet = true;
   }
-
   return *this;
 }
 

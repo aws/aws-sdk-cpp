@@ -18,16 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ReportOverrides::ReportOverrides() : 
-    m_transferredHasBeenSet(false),
-    m_verifiedHasBeenSet(false),
-    m_deletedHasBeenSet(false),
-    m_skippedHasBeenSet(false)
-{
-}
-
 ReportOverrides::ReportOverrides(JsonView jsonValue)
-  : ReportOverrides()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ReportOverrides& ReportOverrides::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Transferred"))
   {
     m_transferred = jsonValue.GetObject("Transferred");
-
     m_transferredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Verified"))
   {
     m_verified = jsonValue.GetObject("Verified");
-
     m_verifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Deleted"))
   {
     m_deleted = jsonValue.GetObject("Deleted");
-
     m_deletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Skipped"))
   {
     m_skipped = jsonValue.GetObject("Skipped");
-
     m_skippedHasBeenSet = true;
   }
-
   return *this;
 }
 

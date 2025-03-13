@@ -28,7 +28,7 @@ namespace Model
   class DescribeVpcBlockPublicAccessOptionsResponse
   {
   public:
-    AWS_EC2_API DescribeVpcBlockPublicAccessOptionsResponse();
+    AWS_EC2_API DescribeVpcBlockPublicAccessOptionsResponse() = default;
     AWS_EC2_API DescribeVpcBlockPublicAccessOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVpcBlockPublicAccessOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Details related to the options.</p>
      */
-    inline const VpcBlockPublicAccessOptions& GetVpcBlockPublicAccessOptions() const{ return m_vpcBlockPublicAccessOptions; }
-    inline void SetVpcBlockPublicAccessOptions(const VpcBlockPublicAccessOptions& value) { m_vpcBlockPublicAccessOptions = value; }
-    inline void SetVpcBlockPublicAccessOptions(VpcBlockPublicAccessOptions&& value) { m_vpcBlockPublicAccessOptions = std::move(value); }
-    inline DescribeVpcBlockPublicAccessOptionsResponse& WithVpcBlockPublicAccessOptions(const VpcBlockPublicAccessOptions& value) { SetVpcBlockPublicAccessOptions(value); return *this;}
-    inline DescribeVpcBlockPublicAccessOptionsResponse& WithVpcBlockPublicAccessOptions(VpcBlockPublicAccessOptions&& value) { SetVpcBlockPublicAccessOptions(std::move(value)); return *this;}
+    inline const VpcBlockPublicAccessOptions& GetVpcBlockPublicAccessOptions() const { return m_vpcBlockPublicAccessOptions; }
+    template<typename VpcBlockPublicAccessOptionsT = VpcBlockPublicAccessOptions>
+    void SetVpcBlockPublicAccessOptions(VpcBlockPublicAccessOptionsT&& value) { m_vpcBlockPublicAccessOptionsHasBeenSet = true; m_vpcBlockPublicAccessOptions = std::forward<VpcBlockPublicAccessOptionsT>(value); }
+    template<typename VpcBlockPublicAccessOptionsT = VpcBlockPublicAccessOptions>
+    DescribeVpcBlockPublicAccessOptionsResponse& WithVpcBlockPublicAccessOptions(VpcBlockPublicAccessOptionsT&& value) { SetVpcBlockPublicAccessOptions(std::forward<VpcBlockPublicAccessOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVpcBlockPublicAccessOptionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVpcBlockPublicAccessOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVpcBlockPublicAccessOptionsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpcBlockPublicAccessOptions m_vpcBlockPublicAccessOptions;
+    bool m_vpcBlockPublicAccessOptionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

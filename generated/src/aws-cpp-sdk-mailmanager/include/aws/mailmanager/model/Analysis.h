@@ -33,7 +33,7 @@ namespace Model
   class Analysis
   {
   public:
-    AWS_MAILMANAGER_API Analysis();
+    AWS_MAILMANAGER_API Analysis() = default;
     AWS_MAILMANAGER_API Analysis(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Analysis& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Add On.</p>
      */
-    inline const Aws::String& GetAnalyzer() const{ return m_analyzer; }
+    inline const Aws::String& GetAnalyzer() const { return m_analyzer; }
     inline bool AnalyzerHasBeenSet() const { return m_analyzerHasBeenSet; }
-    inline void SetAnalyzer(const Aws::String& value) { m_analyzerHasBeenSet = true; m_analyzer = value; }
-    inline void SetAnalyzer(Aws::String&& value) { m_analyzerHasBeenSet = true; m_analyzer = std::move(value); }
-    inline void SetAnalyzer(const char* value) { m_analyzerHasBeenSet = true; m_analyzer.assign(value); }
-    inline Analysis& WithAnalyzer(const Aws::String& value) { SetAnalyzer(value); return *this;}
-    inline Analysis& WithAnalyzer(Aws::String&& value) { SetAnalyzer(std::move(value)); return *this;}
-    inline Analysis& WithAnalyzer(const char* value) { SetAnalyzer(value); return *this;}
+    template<typename AnalyzerT = Aws::String>
+    void SetAnalyzer(AnalyzerT&& value) { m_analyzerHasBeenSet = true; m_analyzer = std::forward<AnalyzerT>(value); }
+    template<typename AnalyzerT = Aws::String>
+    Analysis& WithAnalyzer(AnalyzerT&& value) { SetAnalyzer(std::forward<AnalyzerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The returned value from an Add On.</p>
      */
-    inline const Aws::String& GetResultField() const{ return m_resultField; }
+    inline const Aws::String& GetResultField() const { return m_resultField; }
     inline bool ResultFieldHasBeenSet() const { return m_resultFieldHasBeenSet; }
-    inline void SetResultField(const Aws::String& value) { m_resultFieldHasBeenSet = true; m_resultField = value; }
-    inline void SetResultField(Aws::String&& value) { m_resultFieldHasBeenSet = true; m_resultField = std::move(value); }
-    inline void SetResultField(const char* value) { m_resultFieldHasBeenSet = true; m_resultField.assign(value); }
-    inline Analysis& WithResultField(const Aws::String& value) { SetResultField(value); return *this;}
-    inline Analysis& WithResultField(Aws::String&& value) { SetResultField(std::move(value)); return *this;}
-    inline Analysis& WithResultField(const char* value) { SetResultField(value); return *this;}
+    template<typename ResultFieldT = Aws::String>
+    void SetResultField(ResultFieldT&& value) { m_resultFieldHasBeenSet = true; m_resultField = std::forward<ResultFieldT>(value); }
+    template<typename ResultFieldT = Aws::String>
+    Analysis& WithResultField(ResultFieldT&& value) { SetResultField(std::forward<ResultFieldT>(value)); return *this;}
     ///@}
   private:
 

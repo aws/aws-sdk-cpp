@@ -22,7 +22,7 @@ namespace Model
   class PutContactInformationRequest : public AccountRequest
   {
   public:
-    AWS_ACCOUNT_API PutContactInformationRequest();
+    AWS_ACCOUNT_API PutContactInformationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -56,14 +56,12 @@ namespace Model
      * specify this parameter. Instead, call the operation using an identity belonging
      * to the account whose contacts you wish to retrieve or modify.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline PutContactInformationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline PutContactInformationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline PutContactInformationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PutContactInformationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * <p>Contains the details of the primary contact information associated with an
      * Amazon Web Services account.</p>
      */
-    inline const ContactInformation& GetContactInformation() const{ return m_contactInformation; }
+    inline const ContactInformation& GetContactInformation() const { return m_contactInformation; }
     inline bool ContactInformationHasBeenSet() const { return m_contactInformationHasBeenSet; }
-    inline void SetContactInformation(const ContactInformation& value) { m_contactInformationHasBeenSet = true; m_contactInformation = value; }
-    inline void SetContactInformation(ContactInformation&& value) { m_contactInformationHasBeenSet = true; m_contactInformation = std::move(value); }
-    inline PutContactInformationRequest& WithContactInformation(const ContactInformation& value) { SetContactInformation(value); return *this;}
-    inline PutContactInformationRequest& WithContactInformation(ContactInformation&& value) { SetContactInformation(std::move(value)); return *this;}
+    template<typename ContactInformationT = ContactInformation>
+    void SetContactInformation(ContactInformationT&& value) { m_contactInformationHasBeenSet = true; m_contactInformation = std::forward<ContactInformationT>(value); }
+    template<typename ContactInformationT = ContactInformation>
+    PutContactInformationRequest& WithContactInformation(ContactInformationT&& value) { SetContactInformation(std::forward<ContactInformationT>(value)); return *this;}
     ///@}
   private:
 

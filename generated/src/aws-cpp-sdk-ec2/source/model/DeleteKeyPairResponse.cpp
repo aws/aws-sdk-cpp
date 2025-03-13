@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteKeyPairResponse::DeleteKeyPairResponse() : 
-    m_return(false)
-{
-}
-
 DeleteKeyPairResponse::DeleteKeyPairResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DeleteKeyPairResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ DeleteKeyPairResponse& DeleteKeyPairResponse::operator =(const Aws::AmazonWebSer
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
     XmlNode keyPairIdNode = resultNode.FirstChild("keyPairId");
     if(!keyPairIdNode.IsNull())
     {
       m_keyPairId = Aws::Utils::Xml::DecodeEscapedXmlText(keyPairIdNode.GetText());
+      m_keyPairIdHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ DeleteKeyPairResponse& DeleteKeyPairResponse::operator =(const Aws::AmazonWebSer
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteKeyPairResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

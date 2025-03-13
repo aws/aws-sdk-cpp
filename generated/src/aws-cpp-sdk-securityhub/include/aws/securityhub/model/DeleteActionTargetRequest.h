@@ -21,7 +21,7 @@ namespace Model
   class DeleteActionTargetRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API DeleteActionTargetRequest();
+    AWS_SECURITYHUB_API DeleteActionTargetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom action target to delete.</p>
      */
-    inline const Aws::String& GetActionTargetArn() const{ return m_actionTargetArn; }
+    inline const Aws::String& GetActionTargetArn() const { return m_actionTargetArn; }
     inline bool ActionTargetArnHasBeenSet() const { return m_actionTargetArnHasBeenSet; }
-    inline void SetActionTargetArn(const Aws::String& value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn = value; }
-    inline void SetActionTargetArn(Aws::String&& value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn = std::move(value); }
-    inline void SetActionTargetArn(const char* value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn.assign(value); }
-    inline DeleteActionTargetRequest& WithActionTargetArn(const Aws::String& value) { SetActionTargetArn(value); return *this;}
-    inline DeleteActionTargetRequest& WithActionTargetArn(Aws::String&& value) { SetActionTargetArn(std::move(value)); return *this;}
-    inline DeleteActionTargetRequest& WithActionTargetArn(const char* value) { SetActionTargetArn(value); return *this;}
+    template<typename ActionTargetArnT = Aws::String>
+    void SetActionTargetArn(ActionTargetArnT&& value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn = std::forward<ActionTargetArnT>(value); }
+    template<typename ActionTargetArnT = Aws::String>
+    DeleteActionTargetRequest& WithActionTargetArn(ActionTargetArnT&& value) { SetActionTargetArn(std::forward<ActionTargetArnT>(value)); return *this;}
     ///@}
   private:
 

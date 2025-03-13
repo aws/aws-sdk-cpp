@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkAclAssociation::NetworkAclAssociation() : 
-    m_networkAclAssociationIdHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 NetworkAclAssociation::NetworkAclAssociation(const XmlNode& xmlNode)
-  : NetworkAclAssociation()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ NetworkAclAssociation& NetworkAclAssociation::operator =(const XmlNode& xmlNode)
     {
       m_networkAclAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(networkAclAssociationIdNode.GetText());
       m_networkAclAssociationIdHasBeenSet = true;
+       m_networkAclAssociationIdHasBeenSet = true;
     }
     XmlNode networkAclIdNode = resultNode.FirstChild("networkAclId");
     if(!networkAclIdNode.IsNull())
     {
       m_networkAclId = Aws::Utils::Xml::DecodeEscapedXmlText(networkAclIdNode.GetText());
       m_networkAclIdHasBeenSet = true;
+       m_networkAclIdHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("subnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
   }
 

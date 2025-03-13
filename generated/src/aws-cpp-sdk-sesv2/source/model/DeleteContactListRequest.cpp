@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContactListRequest::DeleteContactListRequest() : 
-    m_contactListNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContactListRequest::SerializePayload() const
 {
   return {};

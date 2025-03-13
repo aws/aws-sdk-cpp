@@ -12,12 +12,6 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJourneyRequest::GetJourneyRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_journeyIdHasBeenSet(false)
-{
-}
-
 Aws::String GetJourneyRequest::SerializePayload() const
 {
   return {};

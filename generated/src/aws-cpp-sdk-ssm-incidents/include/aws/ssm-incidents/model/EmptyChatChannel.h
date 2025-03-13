@@ -30,7 +30,7 @@ namespace Model
   class EmptyChatChannel
   {
   public:
-    AWS_SSMINCIDENTS_API EmptyChatChannel();
+    AWS_SSMINCIDENTS_API EmptyChatChannel() = default;
     AWS_SSMINCIDENTS_API EmptyChatChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API EmptyChatChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;

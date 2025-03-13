@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteContainerRecipeResult::DeleteContainerRecipeResult()
-{
-}
-
 DeleteContainerRecipeResult::DeleteContainerRecipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ DeleteContainerRecipeResult& DeleteContainerRecipeResult::operator =(const Aws::
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerRecipeArn"))
   {
     m_containerRecipeArn = jsonValue.GetString("containerRecipeArn");
-
+    m_containerRecipeArnHasBeenSet = true;
   }
-
 
 
   return *this;

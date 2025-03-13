@@ -31,7 +31,7 @@ namespace Model
   class LaunchIntoInstanceProperties
   {
   public:
-    AWS_DRS_API LaunchIntoInstanceProperties();
+    AWS_DRS_API LaunchIntoInstanceProperties() = default;
     AWS_DRS_API LaunchIntoInstanceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API LaunchIntoInstanceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>Optionally holds EC2 instance ID of an instance to launch into, instead of
      * launching a new instance during drill, recovery or failback.</p>
      */
-    inline const Aws::String& GetLaunchIntoEC2InstanceID() const{ return m_launchIntoEC2InstanceID; }
+    inline const Aws::String& GetLaunchIntoEC2InstanceID() const { return m_launchIntoEC2InstanceID; }
     inline bool LaunchIntoEC2InstanceIDHasBeenSet() const { return m_launchIntoEC2InstanceIDHasBeenSet; }
-    inline void SetLaunchIntoEC2InstanceID(const Aws::String& value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID = value; }
-    inline void SetLaunchIntoEC2InstanceID(Aws::String&& value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID = std::move(value); }
-    inline void SetLaunchIntoEC2InstanceID(const char* value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID.assign(value); }
-    inline LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(const Aws::String& value) { SetLaunchIntoEC2InstanceID(value); return *this;}
-    inline LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(Aws::String&& value) { SetLaunchIntoEC2InstanceID(std::move(value)); return *this;}
-    inline LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(const char* value) { SetLaunchIntoEC2InstanceID(value); return *this;}
+    template<typename LaunchIntoEC2InstanceIDT = Aws::String>
+    void SetLaunchIntoEC2InstanceID(LaunchIntoEC2InstanceIDT&& value) { m_launchIntoEC2InstanceIDHasBeenSet = true; m_launchIntoEC2InstanceID = std::forward<LaunchIntoEC2InstanceIDT>(value); }
+    template<typename LaunchIntoEC2InstanceIDT = Aws::String>
+    LaunchIntoInstanceProperties& WithLaunchIntoEC2InstanceID(LaunchIntoEC2InstanceIDT&& value) { SetLaunchIntoEC2InstanceID(std::forward<LaunchIntoEC2InstanceIDT>(value)); return *this;}
     ///@}
   private:
 

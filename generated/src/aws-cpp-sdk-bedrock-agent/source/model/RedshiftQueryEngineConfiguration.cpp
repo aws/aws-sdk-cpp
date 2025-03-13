@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftQueryEngineConfiguration::RedshiftQueryEngineConfiguration() : 
-    m_provisionedConfigurationHasBeenSet(false),
-    m_serverlessConfigurationHasBeenSet(false),
-    m_type(RedshiftQueryEngineType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RedshiftQueryEngineConfiguration::RedshiftQueryEngineConfiguration(JsonView jsonValue)
-  : RedshiftQueryEngineConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RedshiftQueryEngineConfiguration& RedshiftQueryEngineConfiguration::operator =(J
   if(jsonValue.ValueExists("provisionedConfiguration"))
   {
     m_provisionedConfiguration = jsonValue.GetObject("provisionedConfiguration");
-
     m_provisionedConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverlessConfiguration"))
   {
     m_serverlessConfiguration = jsonValue.GetObject("serverlessConfiguration");
-
     m_serverlessConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RedshiftQueryEngineTypeMapper::GetRedshiftQueryEngineTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

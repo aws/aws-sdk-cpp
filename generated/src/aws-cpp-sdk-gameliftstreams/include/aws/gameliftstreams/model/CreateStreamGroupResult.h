@@ -34,7 +34,7 @@ namespace Model
   class CreateStreamGroupResult
   {
   public:
-    AWS_GAMELIFTSTREAMS_API CreateStreamGroupResult();
+    AWS_GAMELIFTSTREAMS_API CreateStreamGroupResult() = default;
     AWS_GAMELIFTSTREAMS_API CreateStreamGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFTSTREAMS_API CreateStreamGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,11 @@ namespace Model
      * Format is <code>arn:aws:gameliftstreams:[AWS Region]:[AWS
      * account]:streamgroup/[resource ID]</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateStreamGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateStreamGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateStreamGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateStreamGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,13 @@ namespace Model
      * <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssociatedApplications() const{ return m_associatedApplications; }
-    inline void SetAssociatedApplications(const Aws::Vector<Aws::String>& value) { m_associatedApplications = value; }
-    inline void SetAssociatedApplications(Aws::Vector<Aws::String>&& value) { m_associatedApplications = std::move(value); }
-    inline CreateStreamGroupResult& WithAssociatedApplications(const Aws::Vector<Aws::String>& value) { SetAssociatedApplications(value); return *this;}
-    inline CreateStreamGroupResult& WithAssociatedApplications(Aws::Vector<Aws::String>&& value) { SetAssociatedApplications(std::move(value)); return *this;}
-    inline CreateStreamGroupResult& AddAssociatedApplications(const Aws::String& value) { m_associatedApplications.push_back(value); return *this; }
-    inline CreateStreamGroupResult& AddAssociatedApplications(Aws::String&& value) { m_associatedApplications.push_back(std::move(value)); return *this; }
-    inline CreateStreamGroupResult& AddAssociatedApplications(const char* value) { m_associatedApplications.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssociatedApplications() const { return m_associatedApplications; }
+    template<typename AssociatedApplicationsT = Aws::Vector<Aws::String>>
+    void SetAssociatedApplications(AssociatedApplicationsT&& value) { m_associatedApplicationsHasBeenSet = true; m_associatedApplications = std::forward<AssociatedApplicationsT>(value); }
+    template<typename AssociatedApplicationsT = Aws::Vector<Aws::String>>
+    CreateStreamGroupResult& WithAssociatedApplications(AssociatedApplicationsT&& value) { SetAssociatedApplications(std::forward<AssociatedApplicationsT>(value)); return *this;}
+    template<typename AssociatedApplicationsT = Aws::String>
+    CreateStreamGroupResult& AddAssociatedApplications(AssociatedApplicationsT&& value) { m_associatedApplicationsHasBeenSet = true; m_associatedApplications.emplace_back(std::forward<AssociatedApplicationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,11 +79,11 @@ namespace Model
      * expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateStreamGroupResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateStreamGroupResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateStreamGroupResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,24 +91,22 @@ namespace Model
      * <p>The Amazon GameLift Streams application that is associated with this stream
      * group.</p>
      */
-    inline const DefaultApplication& GetDefaultApplication() const{ return m_defaultApplication; }
-    inline void SetDefaultApplication(const DefaultApplication& value) { m_defaultApplication = value; }
-    inline void SetDefaultApplication(DefaultApplication&& value) { m_defaultApplication = std::move(value); }
-    inline CreateStreamGroupResult& WithDefaultApplication(const DefaultApplication& value) { SetDefaultApplication(value); return *this;}
-    inline CreateStreamGroupResult& WithDefaultApplication(DefaultApplication&& value) { SetDefaultApplication(std::move(value)); return *this;}
+    inline const DefaultApplication& GetDefaultApplication() const { return m_defaultApplication; }
+    template<typename DefaultApplicationT = DefaultApplication>
+    void SetDefaultApplication(DefaultApplicationT&& value) { m_defaultApplicationHasBeenSet = true; m_defaultApplication = std::forward<DefaultApplicationT>(value); }
+    template<typename DefaultApplicationT = DefaultApplication>
+    CreateStreamGroupResult& WithDefaultApplication(DefaultApplicationT&& value) { SetDefaultApplication(std::forward<DefaultApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A descriptive label for the stream group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateStreamGroupResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateStreamGroupResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateStreamGroupResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateStreamGroupResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,13 +114,11 @@ namespace Model
      * <p>A unique ID value that is assigned to the resource when it's created. Format
      * example: <code>1AB2C3De4</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateStreamGroupResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateStreamGroupResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateStreamGroupResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateStreamGroupResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,11 +127,11 @@ namespace Model
      * are expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline CreateStreamGroupResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline CreateStreamGroupResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    CreateStreamGroupResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,13 +148,13 @@ namespace Model
      * GameLift Streams is working to remove this location. It releases all provisioned
      * capacity for this location in this stream group. </p> </li> </ul>
      */
-    inline const Aws::Vector<LocationState>& GetLocationStates() const{ return m_locationStates; }
-    inline void SetLocationStates(const Aws::Vector<LocationState>& value) { m_locationStates = value; }
-    inline void SetLocationStates(Aws::Vector<LocationState>&& value) { m_locationStates = std::move(value); }
-    inline CreateStreamGroupResult& WithLocationStates(const Aws::Vector<LocationState>& value) { SetLocationStates(value); return *this;}
-    inline CreateStreamGroupResult& WithLocationStates(Aws::Vector<LocationState>&& value) { SetLocationStates(std::move(value)); return *this;}
-    inline CreateStreamGroupResult& AddLocationStates(const LocationState& value) { m_locationStates.push_back(value); return *this; }
-    inline CreateStreamGroupResult& AddLocationStates(LocationState&& value) { m_locationStates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LocationState>& GetLocationStates() const { return m_locationStates; }
+    template<typename LocationStatesT = Aws::Vector<LocationState>>
+    void SetLocationStates(LocationStatesT&& value) { m_locationStatesHasBeenSet = true; m_locationStates = std::forward<LocationStatesT>(value); }
+    template<typename LocationStatesT = Aws::Vector<LocationState>>
+    CreateStreamGroupResult& WithLocationStates(LocationStatesT&& value) { SetLocationStates(std::forward<LocationStatesT>(value)); return *this;}
+    template<typename LocationStatesT = LocationState>
+    CreateStreamGroupResult& AddLocationStates(LocationStatesT&& value) { m_locationStatesHasBeenSet = true; m_locationStates.emplace_back(std::forward<LocationStatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,11 +172,9 @@ namespace Model
      * <code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are
      * in the process of updating (either activating or deleting). </p> </li> </ul>
      */
-    inline const StreamGroupStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const StreamGroupStatus& value) { m_status = value; }
-    inline void SetStatus(StreamGroupStatus&& value) { m_status = std::move(value); }
-    inline CreateStreamGroupResult& WithStatus(const StreamGroupStatus& value) { SetStatus(value); return *this;}
-    inline CreateStreamGroupResult& WithStatus(StreamGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline StreamGroupStatus GetStatus() const { return m_status; }
+    inline void SetStatus(StreamGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateStreamGroupResult& WithStatus(StreamGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -199,11 +190,9 @@ namespace Model
      * to make the request using a different stream class or in another region. </p>
      * </li> </ul>
      */
-    inline const StreamGroupStatusReason& GetStatusReason() const{ return m_statusReason; }
-    inline void SetStatusReason(const StreamGroupStatusReason& value) { m_statusReason = value; }
-    inline void SetStatusReason(StreamGroupStatusReason&& value) { m_statusReason = std::move(value); }
-    inline CreateStreamGroupResult& WithStatusReason(const StreamGroupStatusReason& value) { SetStatusReason(value); return *this;}
-    inline CreateStreamGroupResult& WithStatusReason(StreamGroupStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline StreamGroupStatusReason GetStatusReason() const { return m_statusReason; }
+    inline void SetStatusReason(StreamGroupStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline CreateStreamGroupResult& WithStatusReason(StreamGroupStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
 
     ///@{
@@ -247,48 +236,56 @@ namespace Model
      * 8 vCPUs, 32 GB RAM, 16 GB VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent
      * stream session</p> </li> </ul> </li> </ul>
      */
-    inline const StreamClass& GetStreamClass() const{ return m_streamClass; }
-    inline void SetStreamClass(const StreamClass& value) { m_streamClass = value; }
-    inline void SetStreamClass(StreamClass&& value) { m_streamClass = std::move(value); }
-    inline CreateStreamGroupResult& WithStreamClass(const StreamClass& value) { SetStreamClass(value); return *this;}
-    inline CreateStreamGroupResult& WithStreamClass(StreamClass&& value) { SetStreamClass(std::move(value)); return *this;}
+    inline StreamClass GetStreamClass() const { return m_streamClass; }
+    inline void SetStreamClass(StreamClass value) { m_streamClassHasBeenSet = true; m_streamClass = value; }
+    inline CreateStreamGroupResult& WithStreamClass(StreamClass value) { SetStreamClass(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateStreamGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateStreamGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateStreamGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateStreamGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_associatedApplications;
+    bool m_associatedApplicationsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     DefaultApplication m_defaultApplication;
+    bool m_defaultApplicationHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LocationState> m_locationStates;
+    bool m_locationStatesHasBeenSet = false;
 
-    StreamGroupStatus m_status;
+    StreamGroupStatus m_status{StreamGroupStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    StreamGroupStatusReason m_statusReason;
+    StreamGroupStatusReason m_statusReason{StreamGroupStatusReason::NOT_SET};
+    bool m_statusReasonHasBeenSet = false;
 
-    StreamClass m_streamClass;
+    StreamClass m_streamClass{StreamClass::NOT_SET};
+    bool m_streamClassHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

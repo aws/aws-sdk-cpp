@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TemplateSummaryConfig::TemplateSummaryConfig() : 
-    m_treatUnrecognizedResourceTypesAsWarnings(false),
-    m_treatUnrecognizedResourceTypesAsWarningsHasBeenSet(false)
-{
-}
-
 TemplateSummaryConfig::TemplateSummaryConfig(const XmlNode& xmlNode)
-  : TemplateSummaryConfig()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ TemplateSummaryConfig& TemplateSummaryConfig::operator =(const XmlNode& xmlNode)
     {
       m_treatUnrecognizedResourceTypesAsWarnings = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(treatUnrecognizedResourceTypesAsWarningsNode.GetText()).c_str()).c_str());
       m_treatUnrecognizedResourceTypesAsWarningsHasBeenSet = true;
+       m_treatUnrecognizedResourceTypesAsWarningsHasBeenSet = true;
     }
   }
 

@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() : 
-    m_bgpAsn(0),
-    m_bgpAsnHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_certificateArnHasBeenSet(false),
-    m_type(GatewayType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_bgpAsnExtended(0),
-    m_bgpAsnExtendedHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomerGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

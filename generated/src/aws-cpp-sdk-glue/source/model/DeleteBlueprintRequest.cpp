@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteBlueprintRequest::DeleteBlueprintRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBlueprintRequest::SerializePayload() const
 {
   JsonValue payload;

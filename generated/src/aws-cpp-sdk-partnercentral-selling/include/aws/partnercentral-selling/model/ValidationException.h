@@ -37,7 +37,7 @@ namespace Model
   class ValidationException
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ValidationException();
+    AWS_PARTNERCENTRALSELLING_API ValidationException() = default;
     AWS_PARTNERCENTRALSELLING_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,24 @@ namespace Model
      * <p>A list of issues that were discovered in the submitted request or the
      * resource state.</p>
      */
-    inline const Aws::Vector<ValidationExceptionError>& GetErrorList() const{ return m_errorList; }
+    inline const Aws::Vector<ValidationExceptionError>& GetErrorList() const { return m_errorList; }
     inline bool ErrorListHasBeenSet() const { return m_errorListHasBeenSet; }
-    inline void SetErrorList(const Aws::Vector<ValidationExceptionError>& value) { m_errorListHasBeenSet = true; m_errorList = value; }
-    inline void SetErrorList(Aws::Vector<ValidationExceptionError>&& value) { m_errorListHasBeenSet = true; m_errorList = std::move(value); }
-    inline ValidationException& WithErrorList(const Aws::Vector<ValidationExceptionError>& value) { SetErrorList(value); return *this;}
-    inline ValidationException& WithErrorList(Aws::Vector<ValidationExceptionError>&& value) { SetErrorList(std::move(value)); return *this;}
-    inline ValidationException& AddErrorList(const ValidationExceptionError& value) { m_errorListHasBeenSet = true; m_errorList.push_back(value); return *this; }
-    inline ValidationException& AddErrorList(ValidationExceptionError&& value) { m_errorListHasBeenSet = true; m_errorList.push_back(std::move(value)); return *this; }
+    template<typename ErrorListT = Aws::Vector<ValidationExceptionError>>
+    void SetErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList = std::forward<ErrorListT>(value); }
+    template<typename ErrorListT = Aws::Vector<ValidationExceptionError>>
+    ValidationException& WithErrorList(ErrorListT&& value) { SetErrorList(std::forward<ErrorListT>(value)); return *this;}
+    template<typename ErrorListT = ValidationExceptionError>
+    ValidationException& AddErrorList(ErrorListT&& value) { m_errorListHasBeenSet = true; m_errorList.emplace_back(std::forward<ErrorListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ValidationException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,10 @@ namespace Model
      * Check that your change aligns with the business rules defined by AWS Partner
      * Central.</p> </li> </ul>
      */
-    inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
+    inline ValidationExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ValidationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ValidationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline ValidationException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
-    inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ValidationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ValidationException& WithReason(ValidationExceptionReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
@@ -95,7 +91,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ValidationExceptionReason m_reason;
+    ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

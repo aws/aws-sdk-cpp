@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateServiceSettingsResult::UpdateServiceSettingsResult() : 
-    m_linuxSubscriptionsDiscovery(LinuxSubscriptionsDiscovery::NOT_SET),
-    m_status(Status::NOT_SET)
-{
-}
-
 UpdateServiceSettingsResult::UpdateServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateServiceSettingsResult()
 {
   *this = result;
 }
@@ -39,26 +32,23 @@ UpdateServiceSettingsResult& UpdateServiceSettingsResult::operator =(const Aws::
     {
       m_homeRegions.push_back(homeRegionsJsonList[homeRegionsIndex].AsString());
     }
+    m_homeRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinuxSubscriptionsDiscovery"))
   {
     m_linuxSubscriptionsDiscovery = LinuxSubscriptionsDiscoveryMapper::GetLinuxSubscriptionsDiscoveryForName(jsonValue.GetString("LinuxSubscriptionsDiscovery"));
-
+    m_linuxSubscriptionsDiscoveryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinuxSubscriptionsDiscoverySettings"))
   {
     m_linuxSubscriptionsDiscoverySettings = jsonValue.GetObject("LinuxSubscriptionsDiscoverySettings");
-
+    m_linuxSubscriptionsDiscoverySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     Aws::Map<Aws::String, JsonView> statusMessageJsonMap = jsonValue.GetObject("StatusMessage").GetAllObjects();
@@ -66,14 +56,15 @@ UpdateServiceSettingsResult& UpdateServiceSettingsResult::operator =(const Aws::
     {
       m_statusMessage[statusMessageItem.first] = statusMessageItem.second.AsString();
     }
+    m_statusMessageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

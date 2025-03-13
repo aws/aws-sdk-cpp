@@ -36,7 +36,7 @@ namespace Model
   class IntegrationDetails
   {
   public:
-    AWS_CLOUDWATCHLOGS_API IntegrationDetails();
+    AWS_CLOUDWATCHLOGS_API IntegrationDetails() = default;
     AWS_CLOUDWATCHLOGS_API IntegrationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API IntegrationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>This structure contains complete information about one integration between
      * CloudWatch Logs and OpenSearch Service.</p>
      */
-    inline const OpenSearchIntegrationDetails& GetOpenSearchIntegrationDetails() const{ return m_openSearchIntegrationDetails; }
+    inline const OpenSearchIntegrationDetails& GetOpenSearchIntegrationDetails() const { return m_openSearchIntegrationDetails; }
     inline bool OpenSearchIntegrationDetailsHasBeenSet() const { return m_openSearchIntegrationDetailsHasBeenSet; }
-    inline void SetOpenSearchIntegrationDetails(const OpenSearchIntegrationDetails& value) { m_openSearchIntegrationDetailsHasBeenSet = true; m_openSearchIntegrationDetails = value; }
-    inline void SetOpenSearchIntegrationDetails(OpenSearchIntegrationDetails&& value) { m_openSearchIntegrationDetailsHasBeenSet = true; m_openSearchIntegrationDetails = std::move(value); }
-    inline IntegrationDetails& WithOpenSearchIntegrationDetails(const OpenSearchIntegrationDetails& value) { SetOpenSearchIntegrationDetails(value); return *this;}
-    inline IntegrationDetails& WithOpenSearchIntegrationDetails(OpenSearchIntegrationDetails&& value) { SetOpenSearchIntegrationDetails(std::move(value)); return *this;}
+    template<typename OpenSearchIntegrationDetailsT = OpenSearchIntegrationDetails>
+    void SetOpenSearchIntegrationDetails(OpenSearchIntegrationDetailsT&& value) { m_openSearchIntegrationDetailsHasBeenSet = true; m_openSearchIntegrationDetails = std::forward<OpenSearchIntegrationDetailsT>(value); }
+    template<typename OpenSearchIntegrationDetailsT = OpenSearchIntegrationDetails>
+    IntegrationDetails& WithOpenSearchIntegrationDetails(OpenSearchIntegrationDetailsT&& value) { SetOpenSearchIntegrationDetails(std::forward<OpenSearchIntegrationDetailsT>(value)); return *this;}
     ///@}
   private:
 

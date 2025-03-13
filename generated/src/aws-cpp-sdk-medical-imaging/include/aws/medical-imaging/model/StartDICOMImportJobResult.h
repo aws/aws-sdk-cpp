@@ -29,7 +29,7 @@ namespace Model
   class StartDICOMImportJobResult
   {
   public:
-    AWS_MEDICALIMAGING_API StartDICOMImportJobResult();
+    AWS_MEDICALIMAGING_API StartDICOMImportJobResult() = default;
     AWS_MEDICALIMAGING_API StartDICOMImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDICALIMAGING_API StartDICOMImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,68 @@ namespace Model
     /**
      * <p>The data store identifier.</p>
      */
-    inline const Aws::String& GetDatastoreId() const{ return m_datastoreId; }
-    inline void SetDatastoreId(const Aws::String& value) { m_datastoreId = value; }
-    inline void SetDatastoreId(Aws::String&& value) { m_datastoreId = std::move(value); }
-    inline void SetDatastoreId(const char* value) { m_datastoreId.assign(value); }
-    inline StartDICOMImportJobResult& WithDatastoreId(const Aws::String& value) { SetDatastoreId(value); return *this;}
-    inline StartDICOMImportJobResult& WithDatastoreId(Aws::String&& value) { SetDatastoreId(std::move(value)); return *this;}
-    inline StartDICOMImportJobResult& WithDatastoreId(const char* value) { SetDatastoreId(value); return *this;}
+    inline const Aws::String& GetDatastoreId() const { return m_datastoreId; }
+    template<typename DatastoreIdT = Aws::String>
+    void SetDatastoreId(DatastoreIdT&& value) { m_datastoreIdHasBeenSet = true; m_datastoreId = std::forward<DatastoreIdT>(value); }
+    template<typename DatastoreIdT = Aws::String>
+    StartDICOMImportJobResult& WithDatastoreId(DatastoreIdT&& value) { SetDatastoreId(std::forward<DatastoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The import job identifier.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline StartDICOMImportJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline StartDICOMImportJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline StartDICOMImportJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    StartDICOMImportJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The import job status.</p>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
-    inline StartDICOMImportJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline StartDICOMImportJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline StartDICOMImportJobResult& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the import job was submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmittedAt() const{ return m_submittedAt; }
-    inline void SetSubmittedAt(const Aws::Utils::DateTime& value) { m_submittedAt = value; }
-    inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAt = std::move(value); }
-    inline StartDICOMImportJobResult& WithSubmittedAt(const Aws::Utils::DateTime& value) { SetSubmittedAt(value); return *this;}
-    inline StartDICOMImportJobResult& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetSubmittedAt() const { return m_submittedAt; }
+    template<typename SubmittedAtT = Aws::Utils::DateTime>
+    void SetSubmittedAt(SubmittedAtT&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = std::forward<SubmittedAtT>(value); }
+    template<typename SubmittedAtT = Aws::Utils::DateTime>
+    StartDICOMImportJobResult& WithSubmittedAt(SubmittedAtT&& value) { SetSubmittedAt(std::forward<SubmittedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartDICOMImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartDICOMImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartDICOMImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartDICOMImportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datastoreId;
+    bool m_datastoreIdHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
+    bool m_jobStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submittedAt;
+    Aws::Utils::DateTime m_submittedAt{};
+    bool m_submittedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

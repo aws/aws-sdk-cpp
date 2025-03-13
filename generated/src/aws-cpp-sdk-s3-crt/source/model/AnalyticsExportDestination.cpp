@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AnalyticsExportDestination::AnalyticsExportDestination() : 
-    m_s3BucketDestinationHasBeenSet(false)
-{
-}
-
 AnalyticsExportDestination::AnalyticsExportDestination(const XmlNode& xmlNode)
-  : AnalyticsExportDestination()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ AnalyticsExportDestination& AnalyticsExportDestination::operator =(const XmlNode
     {
       m_s3BucketDestination = s3BucketDestinationNode;
       m_s3BucketDestinationHasBeenSet = true;
+       m_s3BucketDestinationHasBeenSet = true;
     }
   }
 

@@ -31,7 +31,7 @@ namespace Model
   class MediaConnectFlow
   {
   public:
-    AWS_MEDIALIVE_API MediaConnectFlow();
+    AWS_MEDIALIVE_API MediaConnectFlow() = default;
     AWS_MEDIALIVE_API MediaConnectFlow(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MediaConnectFlow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * The unique ARN of the MediaConnect Flow being used as a source.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline MediaConnectFlow& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline MediaConnectFlow& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline MediaConnectFlow& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    MediaConnectFlow& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
   private:
 

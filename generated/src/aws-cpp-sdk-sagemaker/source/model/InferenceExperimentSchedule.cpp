@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceExperimentSchedule::InferenceExperimentSchedule() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 InferenceExperimentSchedule::InferenceExperimentSchedule(JsonView jsonValue)
-  : InferenceExperimentSchedule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InferenceExperimentSchedule& InferenceExperimentSchedule::operator =(JsonView js
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

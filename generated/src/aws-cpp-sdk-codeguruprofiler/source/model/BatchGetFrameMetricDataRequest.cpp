@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-BatchGetFrameMetricDataRequest::BatchGetFrameMetricDataRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_frameMetricsHasBeenSet(false),
-    m_periodHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_targetResolution(AggregationPeriod::NOT_SET),
-    m_targetResolutionHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetFrameMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

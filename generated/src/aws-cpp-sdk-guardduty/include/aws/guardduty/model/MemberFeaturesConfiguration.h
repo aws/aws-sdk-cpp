@@ -35,7 +35,7 @@ namespace Model
   class MemberFeaturesConfiguration
   {
   public:
-    AWS_GUARDDUTY_API MemberFeaturesConfiguration();
+    AWS_GUARDDUTY_API MemberFeaturesConfiguration() = default;
     AWS_GUARDDUTY_API MemberFeaturesConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API MemberFeaturesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,45 +45,41 @@ namespace Model
     /**
      * <p>The name of the feature.</p>
      */
-    inline const OrgFeature& GetName() const{ return m_name; }
+    inline OrgFeature GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const OrgFeature& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(OrgFeature&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline MemberFeaturesConfiguration& WithName(const OrgFeature& value) { SetName(value); return *this;}
-    inline MemberFeaturesConfiguration& WithName(OrgFeature&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(OrgFeature value) { m_nameHasBeenSet = true; m_name = value; }
+    inline MemberFeaturesConfiguration& WithName(OrgFeature value) { SetName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the feature.</p>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline MemberFeaturesConfiguration& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline MemberFeaturesConfiguration& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline MemberFeaturesConfiguration& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional configuration of the feature for the member account.</p>
      */
-    inline const Aws::Vector<MemberAdditionalConfiguration>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+    inline const Aws::Vector<MemberAdditionalConfiguration>& GetAdditionalConfiguration() const { return m_additionalConfiguration; }
     inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
-    inline void SetAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfiguration>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
-    inline void SetAdditionalConfiguration(Aws::Vector<MemberAdditionalConfiguration>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
-    inline MemberFeaturesConfiguration& WithAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfiguration>& value) { SetAdditionalConfiguration(value); return *this;}
-    inline MemberFeaturesConfiguration& WithAdditionalConfiguration(Aws::Vector<MemberAdditionalConfiguration>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
-    inline MemberFeaturesConfiguration& AddAdditionalConfiguration(const MemberAdditionalConfiguration& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
-    inline MemberFeaturesConfiguration& AddAdditionalConfiguration(MemberAdditionalConfiguration&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+    template<typename AdditionalConfigurationT = Aws::Vector<MemberAdditionalConfiguration>>
+    void SetAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::forward<AdditionalConfigurationT>(value); }
+    template<typename AdditionalConfigurationT = Aws::Vector<MemberAdditionalConfiguration>>
+    MemberFeaturesConfiguration& WithAdditionalConfiguration(AdditionalConfigurationT&& value) { SetAdditionalConfiguration(std::forward<AdditionalConfigurationT>(value)); return *this;}
+    template<typename AdditionalConfigurationT = MemberAdditionalConfiguration>
+    MemberFeaturesConfiguration& AddAdditionalConfiguration(AdditionalConfigurationT&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.emplace_back(std::forward<AdditionalConfigurationT>(value)); return *this; }
     ///@}
   private:
 
-    OrgFeature m_name;
+    OrgFeature m_name{OrgFeature::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<MemberAdditionalConfiguration> m_additionalConfiguration;

@@ -33,7 +33,7 @@ namespace Model
   class AccountSettings
   {
   public:
-    AWS_PROTON_API AccountSettings();
+    AWS_PROTON_API AccountSettings() = default;
     AWS_PROTON_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * provisioning pipelines. Proton assumes this role for CodeBuild-based
      * provisioning.</p>
      */
-    inline const Aws::String& GetPipelineCodebuildRoleArn() const{ return m_pipelineCodebuildRoleArn; }
+    inline const Aws::String& GetPipelineCodebuildRoleArn() const { return m_pipelineCodebuildRoleArn; }
     inline bool PipelineCodebuildRoleArnHasBeenSet() const { return m_pipelineCodebuildRoleArnHasBeenSet; }
-    inline void SetPipelineCodebuildRoleArn(const Aws::String& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = value; }
-    inline void SetPipelineCodebuildRoleArn(Aws::String&& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = std::move(value); }
-    inline void SetPipelineCodebuildRoleArn(const char* value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn.assign(value); }
-    inline AccountSettings& WithPipelineCodebuildRoleArn(const Aws::String& value) { SetPipelineCodebuildRoleArn(value); return *this;}
-    inline AccountSettings& WithPipelineCodebuildRoleArn(Aws::String&& value) { SetPipelineCodebuildRoleArn(std::move(value)); return *this;}
-    inline AccountSettings& WithPipelineCodebuildRoleArn(const char* value) { SetPipelineCodebuildRoleArn(value); return *this;}
+    template<typename PipelineCodebuildRoleArnT = Aws::String>
+    void SetPipelineCodebuildRoleArn(PipelineCodebuildRoleArnT&& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = std::forward<PipelineCodebuildRoleArnT>(value); }
+    template<typename PipelineCodebuildRoleArnT = Aws::String>
+    AccountSettings& WithPipelineCodebuildRoleArn(PipelineCodebuildRoleArnT&& value) { SetPipelineCodebuildRoleArn(std::forward<PipelineCodebuildRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * pipelines. A linked repository is a repository that has been registered with
      * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
-    inline const RepositoryBranch& GetPipelineProvisioningRepository() const{ return m_pipelineProvisioningRepository; }
+    inline const RepositoryBranch& GetPipelineProvisioningRepository() const { return m_pipelineProvisioningRepository; }
     inline bool PipelineProvisioningRepositoryHasBeenSet() const { return m_pipelineProvisioningRepositoryHasBeenSet; }
-    inline void SetPipelineProvisioningRepository(const RepositoryBranch& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = value; }
-    inline void SetPipelineProvisioningRepository(RepositoryBranch&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::move(value); }
-    inline AccountSettings& WithPipelineProvisioningRepository(const RepositoryBranch& value) { SetPipelineProvisioningRepository(value); return *this;}
-    inline AccountSettings& WithPipelineProvisioningRepository(RepositoryBranch&& value) { SetPipelineProvisioningRepository(std::move(value)); return *this;}
+    template<typename PipelineProvisioningRepositoryT = RepositoryBranch>
+    void SetPipelineProvisioningRepository(PipelineProvisioningRepositoryT&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::forward<PipelineProvisioningRepositoryT>(value); }
+    template<typename PipelineProvisioningRepositoryT = RepositoryBranch>
+    AccountSettings& WithPipelineProvisioningRepository(PipelineProvisioningRepositoryT&& value) { SetPipelineProvisioningRepository(std::forward<PipelineProvisioningRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * provisioning, and by customer-owned automation for self-managed
      * provisioning.</p>
      */
-    inline const Aws::String& GetPipelineServiceRoleArn() const{ return m_pipelineServiceRoleArn; }
+    inline const Aws::String& GetPipelineServiceRoleArn() const { return m_pipelineServiceRoleArn; }
     inline bool PipelineServiceRoleArnHasBeenSet() const { return m_pipelineServiceRoleArnHasBeenSet; }
-    inline void SetPipelineServiceRoleArn(const Aws::String& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = value; }
-    inline void SetPipelineServiceRoleArn(Aws::String&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::move(value); }
-    inline void SetPipelineServiceRoleArn(const char* value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn.assign(value); }
-    inline AccountSettings& WithPipelineServiceRoleArn(const Aws::String& value) { SetPipelineServiceRoleArn(value); return *this;}
-    inline AccountSettings& WithPipelineServiceRoleArn(Aws::String&& value) { SetPipelineServiceRoleArn(std::move(value)); return *this;}
-    inline AccountSettings& WithPipelineServiceRoleArn(const char* value) { SetPipelineServiceRoleArn(value); return *this;}
+    template<typename PipelineServiceRoleArnT = Aws::String>
+    void SetPipelineServiceRoleArn(PipelineServiceRoleArnT&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::forward<PipelineServiceRoleArnT>(value); }
+    template<typename PipelineServiceRoleArnT = Aws::String>
+    AccountSettings& WithPipelineServiceRoleArn(PipelineServiceRoleArnT&& value) { SetPipelineServiceRoleArn(std::forward<PipelineServiceRoleArnT>(value)); return *this;}
     ///@}
   private:
 

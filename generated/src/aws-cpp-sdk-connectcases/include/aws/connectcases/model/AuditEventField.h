@@ -32,7 +32,7 @@ namespace Model
   class AuditEventField
   {
   public:
-    AWS_CONNECTCASES_API AuditEventField();
+    AWS_CONNECTCASES_API AuditEventField() = default;
     AWS_CONNECTCASES_API AuditEventField(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API AuditEventField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,38 +42,36 @@ namespace Model
     /**
      * <p>Unique identifier of field in an Audit History entry.</p>
      */
-    inline const Aws::String& GetEventFieldId() const{ return m_eventFieldId; }
+    inline const Aws::String& GetEventFieldId() const { return m_eventFieldId; }
     inline bool EventFieldIdHasBeenSet() const { return m_eventFieldIdHasBeenSet; }
-    inline void SetEventFieldId(const Aws::String& value) { m_eventFieldIdHasBeenSet = true; m_eventFieldId = value; }
-    inline void SetEventFieldId(Aws::String&& value) { m_eventFieldIdHasBeenSet = true; m_eventFieldId = std::move(value); }
-    inline void SetEventFieldId(const char* value) { m_eventFieldIdHasBeenSet = true; m_eventFieldId.assign(value); }
-    inline AuditEventField& WithEventFieldId(const Aws::String& value) { SetEventFieldId(value); return *this;}
-    inline AuditEventField& WithEventFieldId(Aws::String&& value) { SetEventFieldId(std::move(value)); return *this;}
-    inline AuditEventField& WithEventFieldId(const char* value) { SetEventFieldId(value); return *this;}
+    template<typename EventFieldIdT = Aws::String>
+    void SetEventFieldId(EventFieldIdT&& value) { m_eventFieldIdHasBeenSet = true; m_eventFieldId = std::forward<EventFieldIdT>(value); }
+    template<typename EventFieldIdT = Aws::String>
+    AuditEventField& WithEventFieldId(EventFieldIdT&& value) { SetEventFieldId(std::forward<EventFieldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Union of potential field value types.</p>
      */
-    inline const AuditEventFieldValueUnion& GetNewValue() const{ return m_newValue; }
+    inline const AuditEventFieldValueUnion& GetNewValue() const { return m_newValue; }
     inline bool NewValueHasBeenSet() const { return m_newValueHasBeenSet; }
-    inline void SetNewValue(const AuditEventFieldValueUnion& value) { m_newValueHasBeenSet = true; m_newValue = value; }
-    inline void SetNewValue(AuditEventFieldValueUnion&& value) { m_newValueHasBeenSet = true; m_newValue = std::move(value); }
-    inline AuditEventField& WithNewValue(const AuditEventFieldValueUnion& value) { SetNewValue(value); return *this;}
-    inline AuditEventField& WithNewValue(AuditEventFieldValueUnion&& value) { SetNewValue(std::move(value)); return *this;}
+    template<typename NewValueT = AuditEventFieldValueUnion>
+    void SetNewValue(NewValueT&& value) { m_newValueHasBeenSet = true; m_newValue = std::forward<NewValueT>(value); }
+    template<typename NewValueT = AuditEventFieldValueUnion>
+    AuditEventField& WithNewValue(NewValueT&& value) { SetNewValue(std::forward<NewValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Union of potential field value types.</p>
      */
-    inline const AuditEventFieldValueUnion& GetOldValue() const{ return m_oldValue; }
+    inline const AuditEventFieldValueUnion& GetOldValue() const { return m_oldValue; }
     inline bool OldValueHasBeenSet() const { return m_oldValueHasBeenSet; }
-    inline void SetOldValue(const AuditEventFieldValueUnion& value) { m_oldValueHasBeenSet = true; m_oldValue = value; }
-    inline void SetOldValue(AuditEventFieldValueUnion&& value) { m_oldValueHasBeenSet = true; m_oldValue = std::move(value); }
-    inline AuditEventField& WithOldValue(const AuditEventFieldValueUnion& value) { SetOldValue(value); return *this;}
-    inline AuditEventField& WithOldValue(AuditEventFieldValueUnion&& value) { SetOldValue(std::move(value)); return *this;}
+    template<typename OldValueT = AuditEventFieldValueUnion>
+    void SetOldValue(OldValueT&& value) { m_oldValueHasBeenSet = true; m_oldValue = std::forward<OldValueT>(value); }
+    template<typename OldValueT = AuditEventFieldValueUnion>
+    AuditEventField& WithOldValue(OldValueT&& value) { SetOldValue(std::forward<OldValueT>(value)); return *this;}
     ///@}
   private:
 

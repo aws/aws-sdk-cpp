@@ -40,7 +40,7 @@ namespace Model
   class CustomerProjectsContext
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API CustomerProjectsContext();
+    AWS_PARTNERCENTRALSELLING_API CustomerProjectsContext() = default;
     AWS_PARTNERCENTRALSELLING_API CustomerProjectsContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API CustomerProjectsContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,24 +48,24 @@ namespace Model
 
     ///@{
     
-    inline const EngagementCustomer& GetCustomer() const{ return m_customer; }
+    inline const EngagementCustomer& GetCustomer() const { return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    inline void SetCustomer(const EngagementCustomer& value) { m_customerHasBeenSet = true; m_customer = value; }
-    inline void SetCustomer(EngagementCustomer&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
-    inline CustomerProjectsContext& WithCustomer(const EngagementCustomer& value) { SetCustomer(value); return *this;}
-    inline CustomerProjectsContext& WithCustomer(EngagementCustomer&& value) { SetCustomer(std::move(value)); return *this;}
+    template<typename CustomerT = EngagementCustomer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = EngagementCustomer>
+    CustomerProjectsContext& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the customer project associated with the Engagement.</p>
      */
-    inline const EngagementCustomerProjectDetails& GetProject() const{ return m_project; }
+    inline const EngagementCustomerProjectDetails& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const EngagementCustomerProjectDetails& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(EngagementCustomerProjectDetails&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline CustomerProjectsContext& WithProject(const EngagementCustomerProjectDetails& value) { SetProject(value); return *this;}
-    inline CustomerProjectsContext& WithProject(EngagementCustomerProjectDetails&& value) { SetProject(std::move(value)); return *this;}
+    template<typename ProjectT = EngagementCustomerProjectDetails>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = EngagementCustomerProjectDetails>
+    CustomerProjectsContext& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 

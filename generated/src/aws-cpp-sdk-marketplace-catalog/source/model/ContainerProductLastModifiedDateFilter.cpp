@@ -18,13 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ContainerProductLastModifiedDateFilter::ContainerProductLastModifiedDateFilter() : 
-    m_dateRangeHasBeenSet(false)
-{
-}
-
 ContainerProductLastModifiedDateFilter::ContainerProductLastModifiedDateFilter(JsonView jsonValue)
-  : ContainerProductLastModifiedDateFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContainerProductLastModifiedDateFilter& ContainerProductLastModifiedDateFilter::
   if(jsonValue.ValueExists("DateRange"))
   {
     m_dateRange = jsonValue.GetObject("DateRange");
-
     m_dateRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReplicationConfigurationTemplatesRequest::DescribeReplicationConfigurationTemplatesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_replicationConfigurationTemplateIDsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReplicationConfigurationTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

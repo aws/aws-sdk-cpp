@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BrandDefinition::BrandDefinition() : 
-    m_brandNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_applicationThemeHasBeenSet(false),
-    m_logoConfigurationHasBeenSet(false)
-{
-}
-
 BrandDefinition::BrandDefinition(JsonView jsonValue)
-  : BrandDefinition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BrandDefinition& BrandDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BrandName"))
   {
     m_brandName = jsonValue.GetString("BrandName");
-
     m_brandNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationTheme"))
   {
     m_applicationTheme = jsonValue.GetObject("ApplicationTheme");
-
     m_applicationThemeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogoConfiguration"))
   {
     m_logoConfiguration = jsonValue.GetObject("LogoConfiguration");
-
     m_logoConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

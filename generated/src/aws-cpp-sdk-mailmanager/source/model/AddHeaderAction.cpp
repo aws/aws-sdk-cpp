@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-AddHeaderAction::AddHeaderAction() : 
-    m_headerNameHasBeenSet(false),
-    m_headerValueHasBeenSet(false)
-{
-}
-
 AddHeaderAction::AddHeaderAction(JsonView jsonValue)
-  : AddHeaderAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AddHeaderAction& AddHeaderAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HeaderName"))
   {
     m_headerName = jsonValue.GetString("HeaderName");
-
     m_headerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderValue"))
   {
     m_headerValue = jsonValue.GetString("HeaderValue");
-
     m_headerValueHasBeenSet = true;
   }
-
   return *this;
 }
 

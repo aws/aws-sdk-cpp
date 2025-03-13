@@ -27,7 +27,7 @@ namespace Model
   class PutAuditEventsRequest : public CloudTrailDataRequest
   {
   public:
-    AWS_CLOUDTRAILDATA_API PutAuditEventsRequest();
+    AWS_CLOUDTRAILDATA_API PutAuditEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,26 @@ namespace Model
      * <p>The JSON payload of events that you want to ingest. You can also point to the
      * JSON event payload in a file.</p>
      */
-    inline const Aws::Vector<AuditEvent>& GetAuditEvents() const{ return m_auditEvents; }
+    inline const Aws::Vector<AuditEvent>& GetAuditEvents() const { return m_auditEvents; }
     inline bool AuditEventsHasBeenSet() const { return m_auditEventsHasBeenSet; }
-    inline void SetAuditEvents(const Aws::Vector<AuditEvent>& value) { m_auditEventsHasBeenSet = true; m_auditEvents = value; }
-    inline void SetAuditEvents(Aws::Vector<AuditEvent>&& value) { m_auditEventsHasBeenSet = true; m_auditEvents = std::move(value); }
-    inline PutAuditEventsRequest& WithAuditEvents(const Aws::Vector<AuditEvent>& value) { SetAuditEvents(value); return *this;}
-    inline PutAuditEventsRequest& WithAuditEvents(Aws::Vector<AuditEvent>&& value) { SetAuditEvents(std::move(value)); return *this;}
-    inline PutAuditEventsRequest& AddAuditEvents(const AuditEvent& value) { m_auditEventsHasBeenSet = true; m_auditEvents.push_back(value); return *this; }
-    inline PutAuditEventsRequest& AddAuditEvents(AuditEvent&& value) { m_auditEventsHasBeenSet = true; m_auditEvents.push_back(std::move(value)); return *this; }
+    template<typename AuditEventsT = Aws::Vector<AuditEvent>>
+    void SetAuditEvents(AuditEventsT&& value) { m_auditEventsHasBeenSet = true; m_auditEvents = std::forward<AuditEventsT>(value); }
+    template<typename AuditEventsT = Aws::Vector<AuditEvent>>
+    PutAuditEventsRequest& WithAuditEvents(AuditEventsT&& value) { SetAuditEvents(std::forward<AuditEventsT>(value)); return *this;}
+    template<typename AuditEventsT = AuditEvent>
+    PutAuditEventsRequest& AddAuditEvents(AuditEventsT&& value) { m_auditEventsHasBeenSet = true; m_auditEvents.emplace_back(std::forward<AuditEventsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN or ID (the ARN suffix) of a channel.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-    inline PutAuditEventsRequest& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline PutAuditEventsRequest& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline PutAuditEventsRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    PutAuditEventsRequest& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * resource policy includes an external ID. This value can be any string, such as a
      * passphrase or account number.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline PutAuditEventsRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline PutAuditEventsRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline PutAuditEventsRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    PutAuditEventsRequest& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
   private:
 

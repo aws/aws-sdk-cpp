@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCustomLogSourceResult::CreateCustomLogSourceResult()
-{
-}
-
 CreateCustomLogSourceResult::CreateCustomLogSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateCustomLogSourceResult& CreateCustomLogSourceResult::operator =(const Aws::
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
+    m_sourceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

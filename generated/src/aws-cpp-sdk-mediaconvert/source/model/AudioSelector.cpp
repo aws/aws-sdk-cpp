@@ -18,30 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AudioSelector::AudioSelector() : 
-    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
-    m_audioDurationCorrectionHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_defaultSelection(AudioDefaultSelection::NOT_SET),
-    m_defaultSelectionHasBeenSet(false),
-    m_externalAudioFileInputHasBeenSet(false),
-    m_hlsRenditionGroupSettingsHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_offset(0),
-    m_offsetHasBeenSet(false),
-    m_pidsHasBeenSet(false),
-    m_programSelection(0),
-    m_programSelectionHasBeenSet(false),
-    m_remixSettingsHasBeenSet(false),
-    m_selectorType(AudioSelectorType::NOT_SET),
-    m_selectorTypeHasBeenSet(false),
-    m_tracksHasBeenSet(false)
-{
-}
-
 AudioSelector::AudioSelector(JsonView jsonValue)
-  : AudioSelector()
 {
   *this = jsonValue;
 }
@@ -51,52 +28,38 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioDurationCorrection"))
   {
     m_audioDurationCorrection = AudioDurationCorrectionMapper::GetAudioDurationCorrectionForName(jsonValue.GetString("audioDurationCorrection"));
-
     m_audioDurationCorrectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customLanguageCode"))
   {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
-
     m_customLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultSelection"))
   {
     m_defaultSelection = AudioDefaultSelectionMapper::GetAudioDefaultSelectionForName(jsonValue.GetString("defaultSelection"));
-
     m_defaultSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalAudioFileInput"))
   {
     m_externalAudioFileInput = jsonValue.GetString("externalAudioFileInput");
-
     m_externalAudioFileInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsRenditionGroupSettings"))
   {
     m_hlsRenditionGroupSettings = jsonValue.GetObject("hlsRenditionGroupSettings");
-
     m_hlsRenditionGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("offset"))
   {
     m_offset = jsonValue.GetInteger("offset");
-
     m_offsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pids"))
   {
     Aws::Utils::Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
@@ -106,28 +69,21 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
     }
     m_pidsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programSelection"))
   {
     m_programSelection = jsonValue.GetInteger("programSelection");
-
     m_programSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remixSettings"))
   {
     m_remixSettings = jsonValue.GetObject("remixSettings");
-
     m_remixSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectorType"))
   {
     m_selectorType = AudioSelectorTypeMapper::GetAudioSelectorTypeForName(jsonValue.GetString("selectorType"));
-
     m_selectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tracks"))
   {
     Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
@@ -137,7 +93,6 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
     }
     m_tracksHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Rollback::Rollback() : 
-    m_reasonHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_serviceRevisionArnHasBeenSet(false)
-{
-}
-
 Rollback::Rollback(JsonView jsonValue)
-  : Rollback()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Rollback& Rollback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceRevisionArn"))
   {
     m_serviceRevisionArn = jsonValue.GetString("serviceRevisionArn");
-
     m_serviceRevisionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

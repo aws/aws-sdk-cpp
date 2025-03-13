@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VolumeDetail::VolumeDetail() : 
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 VolumeDetail::VolumeDetail(const XmlNode& xmlNode)
-  : VolumeDetail()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ VolumeDetail& VolumeDetail::operator =(const XmlNode& xmlNode)
     {
       m_size = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeNode.GetText()).c_str()).c_str());
       m_sizeHasBeenSet = true;
+       m_sizeHasBeenSet = true;
     }
   }
 

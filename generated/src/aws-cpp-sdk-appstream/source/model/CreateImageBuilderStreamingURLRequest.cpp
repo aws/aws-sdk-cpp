@@ -12,13 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateImageBuilderStreamingURLRequest::CreateImageBuilderStreamingURLRequest() : 
-    m_nameHasBeenSet(false),
-    m_validity(0),
-    m_validityHasBeenSet(false)
-{
-}
-
 Aws::String CreateImageBuilderStreamingURLRequest::SerializePayload() const
 {
   JsonValue payload;

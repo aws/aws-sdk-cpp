@@ -28,7 +28,7 @@ namespace Model
   class UpdateProfileResourceAssociationResult
   {
   public:
-    AWS_ROUTE53PROFILES_API UpdateProfileResourceAssociationResult();
+    AWS_ROUTE53PROFILES_API UpdateProfileResourceAssociationResult() = default;
     AWS_ROUTE53PROFILES_API UpdateProfileResourceAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53PROFILES_API UpdateProfileResourceAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> Information about the <code>UpdateProfileResourceAssociation</code> request,
      * including a status message. </p>
      */
-    inline const ProfileResourceAssociation& GetProfileResourceAssociation() const{ return m_profileResourceAssociation; }
-    inline void SetProfileResourceAssociation(const ProfileResourceAssociation& value) { m_profileResourceAssociation = value; }
-    inline void SetProfileResourceAssociation(ProfileResourceAssociation&& value) { m_profileResourceAssociation = std::move(value); }
-    inline UpdateProfileResourceAssociationResult& WithProfileResourceAssociation(const ProfileResourceAssociation& value) { SetProfileResourceAssociation(value); return *this;}
-    inline UpdateProfileResourceAssociationResult& WithProfileResourceAssociation(ProfileResourceAssociation&& value) { SetProfileResourceAssociation(std::move(value)); return *this;}
+    inline const ProfileResourceAssociation& GetProfileResourceAssociation() const { return m_profileResourceAssociation; }
+    template<typename ProfileResourceAssociationT = ProfileResourceAssociation>
+    void SetProfileResourceAssociation(ProfileResourceAssociationT&& value) { m_profileResourceAssociationHasBeenSet = true; m_profileResourceAssociation = std::forward<ProfileResourceAssociationT>(value); }
+    template<typename ProfileResourceAssociationT = ProfileResourceAssociation>
+    UpdateProfileResourceAssociationResult& WithProfileResourceAssociation(ProfileResourceAssociationT&& value) { SetProfileResourceAssociation(std::forward<ProfileResourceAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProfileResourceAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProfileResourceAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProfileResourceAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProfileResourceAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProfileResourceAssociation m_profileResourceAssociation;
+    bool m_profileResourceAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

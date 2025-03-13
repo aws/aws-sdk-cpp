@@ -32,7 +32,7 @@ namespace Model
   class SolutionStackDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API SolutionStackDescription();
+    AWS_ELASTICBEANSTALK_API SolutionStackDescription() = default;
     AWS_ELASTICBEANSTALK_API SolutionStackDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API SolutionStackDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>The name of the solution stack.</p>
      */
-    inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
+    inline const Aws::String& GetSolutionStackName() const { return m_solutionStackName; }
     inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
-    inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
-    inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
-    inline SolutionStackDescription& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
-    inline SolutionStackDescription& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
-    inline SolutionStackDescription& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+    template<typename SolutionStackNameT = Aws::String>
+    void SetSolutionStackName(SolutionStackNameT&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::forward<SolutionStackNameT>(value); }
+    template<typename SolutionStackNameT = Aws::String>
+    SolutionStackDescription& WithSolutionStackName(SolutionStackNameT&& value) { SetSolutionStackName(std::forward<SolutionStackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The permitted file types allowed for a solution stack.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPermittedFileTypes() const{ return m_permittedFileTypes; }
+    inline const Aws::Vector<Aws::String>& GetPermittedFileTypes() const { return m_permittedFileTypes; }
     inline bool PermittedFileTypesHasBeenSet() const { return m_permittedFileTypesHasBeenSet; }
-    inline void SetPermittedFileTypes(const Aws::Vector<Aws::String>& value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes = value; }
-    inline void SetPermittedFileTypes(Aws::Vector<Aws::String>&& value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes = std::move(value); }
-    inline SolutionStackDescription& WithPermittedFileTypes(const Aws::Vector<Aws::String>& value) { SetPermittedFileTypes(value); return *this;}
-    inline SolutionStackDescription& WithPermittedFileTypes(Aws::Vector<Aws::String>&& value) { SetPermittedFileTypes(std::move(value)); return *this;}
-    inline SolutionStackDescription& AddPermittedFileTypes(const Aws::String& value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes.push_back(value); return *this; }
-    inline SolutionStackDescription& AddPermittedFileTypes(Aws::String&& value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes.push_back(std::move(value)); return *this; }
-    inline SolutionStackDescription& AddPermittedFileTypes(const char* value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes.push_back(value); return *this; }
+    template<typename PermittedFileTypesT = Aws::Vector<Aws::String>>
+    void SetPermittedFileTypes(PermittedFileTypesT&& value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes = std::forward<PermittedFileTypesT>(value); }
+    template<typename PermittedFileTypesT = Aws::Vector<Aws::String>>
+    SolutionStackDescription& WithPermittedFileTypes(PermittedFileTypesT&& value) { SetPermittedFileTypes(std::forward<PermittedFileTypesT>(value)); return *this;}
+    template<typename PermittedFileTypesT = Aws::String>
+    SolutionStackDescription& AddPermittedFileTypes(PermittedFileTypesT&& value) { m_permittedFileTypesHasBeenSet = true; m_permittedFileTypes.emplace_back(std::forward<PermittedFileTypesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-DeploymentDetails::DeploymentDetails() : 
-    m_latestDeploymentIdHasBeenSet(false)
-{
-}
-
 DeploymentDetails::DeploymentDetails(JsonView jsonValue)
-  : DeploymentDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeploymentDetails& DeploymentDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LatestDeploymentId"))
   {
     m_latestDeploymentId = jsonValue.GetString("LatestDeploymentId");
-
     m_latestDeploymentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

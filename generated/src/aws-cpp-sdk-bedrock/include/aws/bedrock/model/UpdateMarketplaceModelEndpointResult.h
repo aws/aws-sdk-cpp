@@ -28,7 +28,7 @@ namespace Model
   class UpdateMarketplaceModelEndpointResult
   {
   public:
-    AWS_BEDROCK_API UpdateMarketplaceModelEndpointResult();
+    AWS_BEDROCK_API UpdateMarketplaceModelEndpointResult() = default;
     AWS_BEDROCK_API UpdateMarketplaceModelEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API UpdateMarketplaceModelEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the updated endpoint.</p>
      */
-    inline const MarketplaceModelEndpoint& GetMarketplaceModelEndpoint() const{ return m_marketplaceModelEndpoint; }
-    inline void SetMarketplaceModelEndpoint(const MarketplaceModelEndpoint& value) { m_marketplaceModelEndpoint = value; }
-    inline void SetMarketplaceModelEndpoint(MarketplaceModelEndpoint&& value) { m_marketplaceModelEndpoint = std::move(value); }
-    inline UpdateMarketplaceModelEndpointResult& WithMarketplaceModelEndpoint(const MarketplaceModelEndpoint& value) { SetMarketplaceModelEndpoint(value); return *this;}
-    inline UpdateMarketplaceModelEndpointResult& WithMarketplaceModelEndpoint(MarketplaceModelEndpoint&& value) { SetMarketplaceModelEndpoint(std::move(value)); return *this;}
+    inline const MarketplaceModelEndpoint& GetMarketplaceModelEndpoint() const { return m_marketplaceModelEndpoint; }
+    template<typename MarketplaceModelEndpointT = MarketplaceModelEndpoint>
+    void SetMarketplaceModelEndpoint(MarketplaceModelEndpointT&& value) { m_marketplaceModelEndpointHasBeenSet = true; m_marketplaceModelEndpoint = std::forward<MarketplaceModelEndpointT>(value); }
+    template<typename MarketplaceModelEndpointT = MarketplaceModelEndpoint>
+    UpdateMarketplaceModelEndpointResult& WithMarketplaceModelEndpoint(MarketplaceModelEndpointT&& value) { SetMarketplaceModelEndpoint(std::forward<MarketplaceModelEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateMarketplaceModelEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateMarketplaceModelEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateMarketplaceModelEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateMarketplaceModelEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MarketplaceModelEndpoint m_marketplaceModelEndpoint;
+    bool m_marketplaceModelEndpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

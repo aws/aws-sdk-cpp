@@ -36,7 +36,7 @@ namespace Model
   class CopyJobSummary
   {
   public:
-    AWS_BACKUP_API CopyJobSummary();
+    AWS_BACKUP_API CopyJobSummary() = default;
     AWS_BACKUP_API CopyJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API CopyJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,40 +46,34 @@ namespace Model
     /**
      * <p>The Amazon Web Services Regions within the job summary.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline CopyJobSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline CopyJobSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline CopyJobSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    CopyJobSummary& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account ID that owns the jobs within the summary.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CopyJobSummary& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CopyJobSummary& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CopyJobSummary& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CopyJobSummary& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This value is job count for jobs with the specified state.</p>
      */
-    inline const CopyJobStatus& GetState() const{ return m_state; }
+    inline CopyJobStatus GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CopyJobStatus& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CopyJobStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CopyJobSummary& WithState(const CopyJobStatus& value) { SetState(value); return *this;}
-    inline CopyJobSummary& WithState(CopyJobStatus&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CopyJobStatus value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CopyJobSummary& WithState(CopyJobStatus value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <code>GetSupportedResourceTypes</code> returns strings for supported resource
      * types</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline CopyJobSummary& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline CopyJobSummary& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline CopyJobSummary& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    CopyJobSummary& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,21 +100,19 @@ namespace Model
      * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
      * for all message categories and returns the sum.</p>
      */
-    inline const Aws::String& GetMessageCategory() const{ return m_messageCategory; }
+    inline const Aws::String& GetMessageCategory() const { return m_messageCategory; }
     inline bool MessageCategoryHasBeenSet() const { return m_messageCategoryHasBeenSet; }
-    inline void SetMessageCategory(const Aws::String& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = value; }
-    inline void SetMessageCategory(Aws::String&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::move(value); }
-    inline void SetMessageCategory(const char* value) { m_messageCategoryHasBeenSet = true; m_messageCategory.assign(value); }
-    inline CopyJobSummary& WithMessageCategory(const Aws::String& value) { SetMessageCategory(value); return *this;}
-    inline CopyJobSummary& WithMessageCategory(Aws::String&& value) { SetMessageCategory(std::move(value)); return *this;}
-    inline CopyJobSummary& WithMessageCategory(const char* value) { SetMessageCategory(value); return *this;}
+    template<typename MessageCategoryT = Aws::String>
+    void SetMessageCategory(MessageCategoryT&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::forward<MessageCategoryT>(value); }
+    template<typename MessageCategoryT = Aws::String>
+    CopyJobSummary& WithMessageCategory(MessageCategoryT&& value) { SetMessageCategory(std::forward<MessageCategoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value as a number of jobs in a job summary.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline CopyJobSummary& WithCount(int value) { SetCount(value); return *this;}
@@ -135,12 +125,12 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CopyJobSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CopyJobSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CopyJobSummary& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +140,12 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline CopyJobSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline CopyJobSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    CopyJobSummary& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,7 +155,7 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    CopyJobStatus m_state;
+    CopyJobStatus m_state{CopyJobStatus::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_resourceType;
@@ -174,13 +164,13 @@ namespace Model
     Aws::String m_messageCategory;
     bool m_messageCategoryHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

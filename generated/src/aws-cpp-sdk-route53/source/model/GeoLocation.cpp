@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-GeoLocation::GeoLocation() : 
-    m_continentCodeHasBeenSet(false),
-    m_countryCodeHasBeenSet(false),
-    m_subdivisionCodeHasBeenSet(false)
-{
-}
-
 GeoLocation::GeoLocation(const XmlNode& xmlNode)
-  : GeoLocation()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ GeoLocation& GeoLocation::operator =(const XmlNode& xmlNode)
     {
       m_continentCode = Aws::Utils::Xml::DecodeEscapedXmlText(continentCodeNode.GetText());
       m_continentCodeHasBeenSet = true;
+       m_continentCodeHasBeenSet = true;
     }
     XmlNode countryCodeNode = resultNode.FirstChild("CountryCode");
     if(!countryCodeNode.IsNull())
     {
       m_countryCode = Aws::Utils::Xml::DecodeEscapedXmlText(countryCodeNode.GetText());
       m_countryCodeHasBeenSet = true;
+       m_countryCodeHasBeenSet = true;
     }
     XmlNode subdivisionCodeNode = resultNode.FirstChild("SubdivisionCode");
     if(!subdivisionCodeNode.IsNull())
     {
       m_subdivisionCode = Aws::Utils::Xml::DecodeEscapedXmlText(subdivisionCodeNode.GetText());
       m_subdivisionCodeHasBeenSet = true;
+       m_subdivisionCodeHasBeenSet = true;
     }
   }
 

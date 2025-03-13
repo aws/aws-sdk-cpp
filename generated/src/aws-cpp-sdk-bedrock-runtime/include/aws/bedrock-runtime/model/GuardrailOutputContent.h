@@ -31,7 +31,7 @@ namespace Model
   class GuardrailOutputContent
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailOutputContent();
+    AWS_BEDROCKRUNTIME_API GuardrailOutputContent() = default;
     AWS_BEDROCKRUNTIME_API GuardrailOutputContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailOutputContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The specific text for the output content produced by the guardrail.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline GuardrailOutputContent& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline GuardrailOutputContent& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline GuardrailOutputContent& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    GuardrailOutputContent& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

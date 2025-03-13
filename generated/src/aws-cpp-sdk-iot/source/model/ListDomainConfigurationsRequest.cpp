@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDomainConfigurationsRequest::ListDomainConfigurationsRequest() : 
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainConfigurationsRequest::SerializePayload() const
 {
   return {};

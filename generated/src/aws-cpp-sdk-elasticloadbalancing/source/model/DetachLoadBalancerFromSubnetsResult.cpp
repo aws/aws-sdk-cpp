@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetachLoadBalancerFromSubnetsResult::DetachLoadBalancerFromSubnetsResult()
-{
-}
-
 DetachLoadBalancerFromSubnetsResult::DetachLoadBalancerFromSubnetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DetachLoadBalancerFromSubnetsResult& DetachLoadBalancerFromSubnetsResult::operat
     if(!subnetsNode.IsNull())
     {
       XmlNode subnetsMember = subnetsNode.FirstChild("member");
+      m_subnetsHasBeenSet = !subnetsMember.IsNull();
       while(!subnetsMember.IsNull())
       {
         m_subnets.push_back(subnetsMember.GetText());
@@ -54,6 +51,7 @@ DetachLoadBalancerFromSubnetsResult& DetachLoadBalancerFromSubnetsResult::operat
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DetachLoadBalancerFromSubnetsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-StartDBInstanceAutomatedBackupsReplicationRequest::StartDBInstanceAutomatedBackupsReplicationRequest() : 
-    m_sourceDBInstanceArnHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_preSignedUrlHasBeenSet(false),
-    m_sourceRegionHasBeenSet(false)
-{
-}
-
 Aws::String StartDBInstanceAutomatedBackupsReplicationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

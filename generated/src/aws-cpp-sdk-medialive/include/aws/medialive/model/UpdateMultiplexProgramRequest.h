@@ -25,7 +25,7 @@ namespace Model
   class UpdateMultiplexProgramRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API UpdateMultiplexProgramRequest();
+    AWS_MEDIALIVE_API UpdateMultiplexProgramRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,36 @@ namespace Model
     /**
      * The ID of the multiplex of the program to update.
      */
-    inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
+    inline const Aws::String& GetMultiplexId() const { return m_multiplexId; }
     inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
-    inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
-    inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
-    inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
-    inline UpdateMultiplexProgramRequest& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
-    inline UpdateMultiplexProgramRequest& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
-    inline UpdateMultiplexProgramRequest& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
+    template<typename MultiplexIdT = Aws::String>
+    void SetMultiplexId(MultiplexIdT&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::forward<MultiplexIdT>(value); }
+    template<typename MultiplexIdT = Aws::String>
+    UpdateMultiplexProgramRequest& WithMultiplexId(MultiplexIdT&& value) { SetMultiplexId(std::forward<MultiplexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The new settings for a multiplex program.
      */
-    inline const MultiplexProgramSettings& GetMultiplexProgramSettings() const{ return m_multiplexProgramSettings; }
+    inline const MultiplexProgramSettings& GetMultiplexProgramSettings() const { return m_multiplexProgramSettings; }
     inline bool MultiplexProgramSettingsHasBeenSet() const { return m_multiplexProgramSettingsHasBeenSet; }
-    inline void SetMultiplexProgramSettings(const MultiplexProgramSettings& value) { m_multiplexProgramSettingsHasBeenSet = true; m_multiplexProgramSettings = value; }
-    inline void SetMultiplexProgramSettings(MultiplexProgramSettings&& value) { m_multiplexProgramSettingsHasBeenSet = true; m_multiplexProgramSettings = std::move(value); }
-    inline UpdateMultiplexProgramRequest& WithMultiplexProgramSettings(const MultiplexProgramSettings& value) { SetMultiplexProgramSettings(value); return *this;}
-    inline UpdateMultiplexProgramRequest& WithMultiplexProgramSettings(MultiplexProgramSettings&& value) { SetMultiplexProgramSettings(std::move(value)); return *this;}
+    template<typename MultiplexProgramSettingsT = MultiplexProgramSettings>
+    void SetMultiplexProgramSettings(MultiplexProgramSettingsT&& value) { m_multiplexProgramSettingsHasBeenSet = true; m_multiplexProgramSettings = std::forward<MultiplexProgramSettingsT>(value); }
+    template<typename MultiplexProgramSettingsT = MultiplexProgramSettings>
+    UpdateMultiplexProgramRequest& WithMultiplexProgramSettings(MultiplexProgramSettingsT&& value) { SetMultiplexProgramSettings(std::forward<MultiplexProgramSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the program to update.
      */
-    inline const Aws::String& GetProgramName() const{ return m_programName; }
+    inline const Aws::String& GetProgramName() const { return m_programName; }
     inline bool ProgramNameHasBeenSet() const { return m_programNameHasBeenSet; }
-    inline void SetProgramName(const Aws::String& value) { m_programNameHasBeenSet = true; m_programName = value; }
-    inline void SetProgramName(Aws::String&& value) { m_programNameHasBeenSet = true; m_programName = std::move(value); }
-    inline void SetProgramName(const char* value) { m_programNameHasBeenSet = true; m_programName.assign(value); }
-    inline UpdateMultiplexProgramRequest& WithProgramName(const Aws::String& value) { SetProgramName(value); return *this;}
-    inline UpdateMultiplexProgramRequest& WithProgramName(Aws::String&& value) { SetProgramName(std::move(value)); return *this;}
-    inline UpdateMultiplexProgramRequest& WithProgramName(const char* value) { SetProgramName(value); return *this;}
+    template<typename ProgramNameT = Aws::String>
+    void SetProgramName(ProgramNameT&& value) { m_programNameHasBeenSet = true; m_programName = std::forward<ProgramNameT>(value); }
+    template<typename ProgramNameT = Aws::String>
+    UpdateMultiplexProgramRequest& WithProgramName(ProgramNameT&& value) { SetProgramName(std::forward<ProgramNameT>(value)); return *this;}
     ///@}
   private:
 

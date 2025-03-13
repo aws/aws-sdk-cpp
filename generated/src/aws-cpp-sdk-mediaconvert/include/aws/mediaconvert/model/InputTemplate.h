@@ -50,7 +50,7 @@ namespace Model
   class InputTemplate
   {
   public:
-    AWS_MEDIACONVERT_API InputTemplate();
+    AWS_MEDIACONVERT_API InputTemplate() = default;
     AWS_MEDIACONVERT_API InputTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API InputTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,12 +70,10 @@ namespace Model
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
-    inline const AdvancedInputFilter& GetAdvancedInputFilter() const{ return m_advancedInputFilter; }
+    inline AdvancedInputFilter GetAdvancedInputFilter() const { return m_advancedInputFilter; }
     inline bool AdvancedInputFilterHasBeenSet() const { return m_advancedInputFilterHasBeenSet; }
-    inline void SetAdvancedInputFilter(const AdvancedInputFilter& value) { m_advancedInputFilterHasBeenSet = true; m_advancedInputFilter = value; }
-    inline void SetAdvancedInputFilter(AdvancedInputFilter&& value) { m_advancedInputFilterHasBeenSet = true; m_advancedInputFilter = std::move(value); }
-    inline InputTemplate& WithAdvancedInputFilter(const AdvancedInputFilter& value) { SetAdvancedInputFilter(value); return *this;}
-    inline InputTemplate& WithAdvancedInputFilter(AdvancedInputFilter&& value) { SetAdvancedInputFilter(std::move(value)); return *this;}
+    inline void SetAdvancedInputFilter(AdvancedInputFilter value) { m_advancedInputFilterHasBeenSet = true; m_advancedInputFilter = value; }
+    inline InputTemplate& WithAdvancedInputFilter(AdvancedInputFilter value) { SetAdvancedInputFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +81,12 @@ namespace Model
      * Optional settings for Advanced input filter when you set Advanced input filter
      * to Enabled.
      */
-    inline const AdvancedInputFilterSettings& GetAdvancedInputFilterSettings() const{ return m_advancedInputFilterSettings; }
+    inline const AdvancedInputFilterSettings& GetAdvancedInputFilterSettings() const { return m_advancedInputFilterSettings; }
     inline bool AdvancedInputFilterSettingsHasBeenSet() const { return m_advancedInputFilterSettingsHasBeenSet; }
-    inline void SetAdvancedInputFilterSettings(const AdvancedInputFilterSettings& value) { m_advancedInputFilterSettingsHasBeenSet = true; m_advancedInputFilterSettings = value; }
-    inline void SetAdvancedInputFilterSettings(AdvancedInputFilterSettings&& value) { m_advancedInputFilterSettingsHasBeenSet = true; m_advancedInputFilterSettings = std::move(value); }
-    inline InputTemplate& WithAdvancedInputFilterSettings(const AdvancedInputFilterSettings& value) { SetAdvancedInputFilterSettings(value); return *this;}
-    inline InputTemplate& WithAdvancedInputFilterSettings(AdvancedInputFilterSettings&& value) { SetAdvancedInputFilterSettings(std::move(value)); return *this;}
+    template<typename AdvancedInputFilterSettingsT = AdvancedInputFilterSettings>
+    void SetAdvancedInputFilterSettings(AdvancedInputFilterSettingsT&& value) { m_advancedInputFilterSettingsHasBeenSet = true; m_advancedInputFilterSettings = std::forward<AdvancedInputFilterSettingsT>(value); }
+    template<typename AdvancedInputFilterSettingsT = AdvancedInputFilterSettings>
+    InputTemplate& WithAdvancedInputFilterSettings(AdvancedInputFilterSettingsT&& value) { SetAdvancedInputFilterSettings(std::forward<AdvancedInputFilterSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,18 +96,16 @@ namespace Model
      * embedded audio, it's simpler to assign multiple input tracks into a single audio
      * selector rather than use an audio selector group.
      */
-    inline const Aws::Map<Aws::String, AudioSelectorGroup>& GetAudioSelectorGroups() const{ return m_audioSelectorGroups; }
+    inline const Aws::Map<Aws::String, AudioSelectorGroup>& GetAudioSelectorGroups() const { return m_audioSelectorGroups; }
     inline bool AudioSelectorGroupsHasBeenSet() const { return m_audioSelectorGroupsHasBeenSet; }
-    inline void SetAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = value; }
-    inline void SetAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = std::move(value); }
-    inline InputTemplate& WithAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { SetAudioSelectorGroups(value); return *this;}
-    inline InputTemplate& WithAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { SetAudioSelectorGroups(std::move(value)); return *this;}
-    inline InputTemplate& AddAudioSelectorGroups(const Aws::String& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
-    inline InputTemplate& AddAudioSelectorGroups(Aws::String&& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), value); return *this; }
-    inline InputTemplate& AddAudioSelectorGroups(const Aws::String& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddAudioSelectorGroups(Aws::String&& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), std::move(value)); return *this; }
-    inline InputTemplate& AddAudioSelectorGroups(const char* key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddAudioSelectorGroups(const char* key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
+    template<typename AudioSelectorGroupsT = Aws::Map<Aws::String, AudioSelectorGroup>>
+    void SetAudioSelectorGroups(AudioSelectorGroupsT&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = std::forward<AudioSelectorGroupsT>(value); }
+    template<typename AudioSelectorGroupsT = Aws::Map<Aws::String, AudioSelectorGroup>>
+    InputTemplate& WithAudioSelectorGroups(AudioSelectorGroupsT&& value) { SetAudioSelectorGroups(std::forward<AudioSelectorGroupsT>(value)); return *this;}
+    template<typename AudioSelectorGroupsKeyT = Aws::String, typename AudioSelectorGroupsValueT = AudioSelectorGroup>
+    InputTemplate& AddAudioSelectorGroups(AudioSelectorGroupsKeyT&& key, AudioSelectorGroupsValueT&& value) {
+      m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::forward<AudioSelectorGroupsKeyT>(key), std::forward<AudioSelectorGroupsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -117,18 +113,16 @@ namespace Model
      * Use Audio selectors to specify a track or set of tracks from the input that you
      * will use in your outputs. You can use multiple Audio selectors per input.
      */
-    inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const{ return m_audioSelectors; }
+    inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const { return m_audioSelectors; }
     inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
-    inline void SetAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = value; }
-    inline void SetAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = std::move(value); }
-    inline InputTemplate& WithAudioSelectors(const Aws::Map<Aws::String, AudioSelector>& value) { SetAudioSelectors(value); return *this;}
-    inline InputTemplate& WithAudioSelectors(Aws::Map<Aws::String, AudioSelector>&& value) { SetAudioSelectors(std::move(value)); return *this;}
-    inline InputTemplate& AddAudioSelectors(const Aws::String& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
-    inline InputTemplate& AddAudioSelectors(Aws::String&& key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), value); return *this; }
-    inline InputTemplate& AddAudioSelectors(const Aws::String& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddAudioSelectors(Aws::String&& key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::move(key), std::move(value)); return *this; }
-    inline InputTemplate& AddAudioSelectors(const char* key, AudioSelector&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddAudioSelectors(const char* key, const AudioSelector& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(key, value); return *this; }
+    template<typename AudioSelectorsT = Aws::Map<Aws::String, AudioSelector>>
+    void SetAudioSelectors(AudioSelectorsT&& value) { m_audioSelectorsHasBeenSet = true; m_audioSelectors = std::forward<AudioSelectorsT>(value); }
+    template<typename AudioSelectorsT = Aws::Map<Aws::String, AudioSelector>>
+    InputTemplate& WithAudioSelectors(AudioSelectorsT&& value) { SetAudioSelectors(std::forward<AudioSelectorsT>(value)); return *this;}
+    template<typename AudioSelectorsKeyT = Aws::String, typename AudioSelectorsValueT = AudioSelector>
+    InputTemplate& AddAudioSelectors(AudioSelectorsKeyT&& key, AudioSelectorsValueT&& value) {
+      m_audioSelectorsHasBeenSet = true; m_audioSelectors.emplace(std::forward<AudioSelectorsKeyT>(key), std::forward<AudioSelectorsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -136,18 +130,16 @@ namespace Model
      * Use captions selectors to specify the captions data from your input that you use
      * in your outputs. You can use up to 100 captions selectors per input.
      */
-    inline const Aws::Map<Aws::String, CaptionSelector>& GetCaptionSelectors() const{ return m_captionSelectors; }
+    inline const Aws::Map<Aws::String, CaptionSelector>& GetCaptionSelectors() const { return m_captionSelectors; }
     inline bool CaptionSelectorsHasBeenSet() const { return m_captionSelectorsHasBeenSet; }
-    inline void SetCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = value; }
-    inline void SetCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = std::move(value); }
-    inline InputTemplate& WithCaptionSelectors(const Aws::Map<Aws::String, CaptionSelector>& value) { SetCaptionSelectors(value); return *this;}
-    inline InputTemplate& WithCaptionSelectors(Aws::Map<Aws::String, CaptionSelector>&& value) { SetCaptionSelectors(std::move(value)); return *this;}
-    inline InputTemplate& AddCaptionSelectors(const Aws::String& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
-    inline InputTemplate& AddCaptionSelectors(Aws::String&& key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), value); return *this; }
-    inline InputTemplate& AddCaptionSelectors(const Aws::String& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddCaptionSelectors(Aws::String&& key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::move(key), std::move(value)); return *this; }
-    inline InputTemplate& AddCaptionSelectors(const char* key, CaptionSelector&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddCaptionSelectors(const char* key, const CaptionSelector& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(key, value); return *this; }
+    template<typename CaptionSelectorsT = Aws::Map<Aws::String, CaptionSelector>>
+    void SetCaptionSelectors(CaptionSelectorsT&& value) { m_captionSelectorsHasBeenSet = true; m_captionSelectors = std::forward<CaptionSelectorsT>(value); }
+    template<typename CaptionSelectorsT = Aws::Map<Aws::String, CaptionSelector>>
+    InputTemplate& WithCaptionSelectors(CaptionSelectorsT&& value) { SetCaptionSelectors(std::forward<CaptionSelectorsT>(value)); return *this;}
+    template<typename CaptionSelectorsKeyT = Aws::String, typename CaptionSelectorsValueT = CaptionSelector>
+    InputTemplate& AddCaptionSelectors(CaptionSelectorsKeyT&& key, CaptionSelectorsValueT&& value) {
+      m_captionSelectorsHasBeenSet = true; m_captionSelectors.emplace(std::forward<CaptionSelectorsKeyT>(key), std::forward<CaptionSelectorsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -156,12 +148,12 @@ namespace Model
      * in the output video frame. If you specify a value here, it will override any
      * value that you specify in the output setting Cropping selection.
      */
-    inline const Rectangle& GetCrop() const{ return m_crop; }
+    inline const Rectangle& GetCrop() const { return m_crop; }
     inline bool CropHasBeenSet() const { return m_cropHasBeenSet; }
-    inline void SetCrop(const Rectangle& value) { m_cropHasBeenSet = true; m_crop = value; }
-    inline void SetCrop(Rectangle&& value) { m_cropHasBeenSet = true; m_crop = std::move(value); }
-    inline InputTemplate& WithCrop(const Rectangle& value) { SetCrop(value); return *this;}
-    inline InputTemplate& WithCrop(Rectangle&& value) { SetCrop(std::move(value)); return *this;}
+    template<typename CropT = Rectangle>
+    void SetCrop(CropT&& value) { m_cropHasBeenSet = true; m_crop = std::forward<CropT>(value); }
+    template<typename CropT = Rectangle>
+    InputTemplate& WithCrop(CropT&& value) { SetCrop(std::forward<CropT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,12 +161,10 @@ namespace Model
      * Enable Deblock to produce smoother motion in the output. Default is disabled.
      * Only manually controllable for MPEG2 and uncompressed video inputs.
      */
-    inline const InputDeblockFilter& GetDeblockFilter() const{ return m_deblockFilter; }
+    inline InputDeblockFilter GetDeblockFilter() const { return m_deblockFilter; }
     inline bool DeblockFilterHasBeenSet() const { return m_deblockFilterHasBeenSet; }
-    inline void SetDeblockFilter(const InputDeblockFilter& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
-    inline void SetDeblockFilter(InputDeblockFilter&& value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = std::move(value); }
-    inline InputTemplate& WithDeblockFilter(const InputDeblockFilter& value) { SetDeblockFilter(value); return *this;}
-    inline InputTemplate& WithDeblockFilter(InputDeblockFilter&& value) { SetDeblockFilter(std::move(value)); return *this;}
+    inline void SetDeblockFilter(InputDeblockFilter value) { m_deblockFilterHasBeenSet = true; m_deblockFilter = value; }
+    inline InputTemplate& WithDeblockFilter(InputDeblockFilter value) { SetDeblockFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +172,10 @@ namespace Model
      * Enable Denoise to filter noise from the input. Default is disabled. Only
      * applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
      */
-    inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
+    inline InputDenoiseFilter GetDenoiseFilter() const { return m_denoiseFilter; }
     inline bool DenoiseFilterHasBeenSet() const { return m_denoiseFilterHasBeenSet; }
-    inline void SetDenoiseFilter(const InputDenoiseFilter& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = value; }
-    inline void SetDenoiseFilter(InputDenoiseFilter&& value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = std::move(value); }
-    inline InputTemplate& WithDenoiseFilter(const InputDenoiseFilter& value) { SetDenoiseFilter(value); return *this;}
-    inline InputTemplate& WithDenoiseFilter(InputDenoiseFilter&& value) { SetDenoiseFilter(std::move(value)); return *this;}
+    inline void SetDenoiseFilter(InputDenoiseFilter value) { m_denoiseFilterHasBeenSet = true; m_denoiseFilter = value; }
+    inline InputTemplate& WithDenoiseFilter(InputDenoiseFilter value) { SetDenoiseFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -202,14 +190,12 @@ namespace Model
      * MediaConvert read permissions to this file. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
      */
-    inline const Aws::String& GetDolbyVisionMetadataXml() const{ return m_dolbyVisionMetadataXml; }
+    inline const Aws::String& GetDolbyVisionMetadataXml() const { return m_dolbyVisionMetadataXml; }
     inline bool DolbyVisionMetadataXmlHasBeenSet() const { return m_dolbyVisionMetadataXmlHasBeenSet; }
-    inline void SetDolbyVisionMetadataXml(const Aws::String& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = value; }
-    inline void SetDolbyVisionMetadataXml(Aws::String&& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = std::move(value); }
-    inline void SetDolbyVisionMetadataXml(const char* value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml.assign(value); }
-    inline InputTemplate& WithDolbyVisionMetadataXml(const Aws::String& value) { SetDolbyVisionMetadataXml(value); return *this;}
-    inline InputTemplate& WithDolbyVisionMetadataXml(Aws::String&& value) { SetDolbyVisionMetadataXml(std::move(value)); return *this;}
-    inline InputTemplate& WithDolbyVisionMetadataXml(const char* value) { SetDolbyVisionMetadataXml(value); return *this;}
+    template<typename DolbyVisionMetadataXmlT = Aws::String>
+    void SetDolbyVisionMetadataXml(DolbyVisionMetadataXmlT&& value) { m_dolbyVisionMetadataXmlHasBeenSet = true; m_dolbyVisionMetadataXml = std::forward<DolbyVisionMetadataXmlT>(value); }
+    template<typename DolbyVisionMetadataXmlT = Aws::String>
+    InputTemplate& WithDolbyVisionMetadataXml(DolbyVisionMetadataXmlT&& value) { SetDolbyVisionMetadataXml(std::forward<DolbyVisionMetadataXmlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -222,18 +208,16 @@ namespace Model
      * for two or more inputs, each input must have the same number of audio tracks and
      * audio channels.
      */
-    inline const Aws::Map<Aws::String, DynamicAudioSelector>& GetDynamicAudioSelectors() const{ return m_dynamicAudioSelectors; }
+    inline const Aws::Map<Aws::String, DynamicAudioSelector>& GetDynamicAudioSelectors() const { return m_dynamicAudioSelectors; }
     inline bool DynamicAudioSelectorsHasBeenSet() const { return m_dynamicAudioSelectorsHasBeenSet; }
-    inline void SetDynamicAudioSelectors(const Aws::Map<Aws::String, DynamicAudioSelector>& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors = value; }
-    inline void SetDynamicAudioSelectors(Aws::Map<Aws::String, DynamicAudioSelector>&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors = std::move(value); }
-    inline InputTemplate& WithDynamicAudioSelectors(const Aws::Map<Aws::String, DynamicAudioSelector>& value) { SetDynamicAudioSelectors(value); return *this;}
-    inline InputTemplate& WithDynamicAudioSelectors(Aws::Map<Aws::String, DynamicAudioSelector>&& value) { SetDynamicAudioSelectors(std::move(value)); return *this;}
-    inline InputTemplate& AddDynamicAudioSelectors(const Aws::String& key, const DynamicAudioSelector& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, value); return *this; }
-    inline InputTemplate& AddDynamicAudioSelectors(Aws::String&& key, const DynamicAudioSelector& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(std::move(key), value); return *this; }
-    inline InputTemplate& AddDynamicAudioSelectors(const Aws::String& key, DynamicAudioSelector&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddDynamicAudioSelectors(Aws::String&& key, DynamicAudioSelector&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(std::move(key), std::move(value)); return *this; }
-    inline InputTemplate& AddDynamicAudioSelectors(const char* key, DynamicAudioSelector&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, std::move(value)); return *this; }
-    inline InputTemplate& AddDynamicAudioSelectors(const char* key, const DynamicAudioSelector& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(key, value); return *this; }
+    template<typename DynamicAudioSelectorsT = Aws::Map<Aws::String, DynamicAudioSelector>>
+    void SetDynamicAudioSelectors(DynamicAudioSelectorsT&& value) { m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors = std::forward<DynamicAudioSelectorsT>(value); }
+    template<typename DynamicAudioSelectorsT = Aws::Map<Aws::String, DynamicAudioSelector>>
+    InputTemplate& WithDynamicAudioSelectors(DynamicAudioSelectorsT&& value) { SetDynamicAudioSelectors(std::forward<DynamicAudioSelectorsT>(value)); return *this;}
+    template<typename DynamicAudioSelectorsKeyT = Aws::String, typename DynamicAudioSelectorsValueT = DynamicAudioSelector>
+    InputTemplate& AddDynamicAudioSelectors(DynamicAudioSelectorsKeyT&& key, DynamicAudioSelectorsValueT&& value) {
+      m_dynamicAudioSelectorsHasBeenSet = true; m_dynamicAudioSelectors.emplace(std::forward<DynamicAudioSelectorsKeyT>(key), std::forward<DynamicAudioSelectorsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -244,12 +228,10 @@ namespace Model
      * input type and quality: Choose Force. When you do, you must also specify a value
      * for Filter strength.
      */
-    inline const InputFilterEnable& GetFilterEnable() const{ return m_filterEnable; }
+    inline InputFilterEnable GetFilterEnable() const { return m_filterEnable; }
     inline bool FilterEnableHasBeenSet() const { return m_filterEnableHasBeenSet; }
-    inline void SetFilterEnable(const InputFilterEnable& value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
-    inline void SetFilterEnable(InputFilterEnable&& value) { m_filterEnableHasBeenSet = true; m_filterEnable = std::move(value); }
-    inline InputTemplate& WithFilterEnable(const InputFilterEnable& value) { SetFilterEnable(value); return *this;}
-    inline InputTemplate& WithFilterEnable(InputFilterEnable&& value) { SetFilterEnable(std::move(value)); return *this;}
+    inline void SetFilterEnable(InputFilterEnable value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
+    inline InputTemplate& WithFilterEnable(InputFilterEnable value) { SetFilterEnable(value); return *this;}
     ///@}
 
     ///@{
@@ -261,7 +243,7 @@ namespace Model
      * filtering and 5 is the most. The value that you enter applies to the strength of
      * the Deblock or Denoise filters, or to the strength of the Advanced input filter.
      */
-    inline int GetFilterStrength() const{ return m_filterStrength; }
+    inline int GetFilterStrength() const { return m_filterStrength; }
     inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
     inline void SetFilterStrength(int value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
     inline InputTemplate& WithFilterStrength(int value) { SetFilterStrength(value); return *this;}
@@ -273,12 +255,12 @@ namespace Model
      * Enable or disable this feature for each input individually. This setting is
      * disabled by default.
      */
-    inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
+    inline const ImageInserter& GetImageInserter() const { return m_imageInserter; }
     inline bool ImageInserterHasBeenSet() const { return m_imageInserterHasBeenSet; }
-    inline void SetImageInserter(const ImageInserter& value) { m_imageInserterHasBeenSet = true; m_imageInserter = value; }
-    inline void SetImageInserter(ImageInserter&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::move(value); }
-    inline InputTemplate& WithImageInserter(const ImageInserter& value) { SetImageInserter(value); return *this;}
-    inline InputTemplate& WithImageInserter(ImageInserter&& value) { SetImageInserter(std::move(value)); return *this;}
+    template<typename ImageInserterT = ImageInserter>
+    void SetImageInserter(ImageInserterT&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::forward<ImageInserterT>(value); }
+    template<typename ImageInserterT = ImageInserter>
+    InputTemplate& WithImageInserter(ImageInserterT&& value) { SetImageInserter(std::forward<ImageInserterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,14 +272,14 @@ namespace Model
      * input clip, the transcoding service creates the job outputs by stringing the
      * clips together in the order you specify them.
      */
-    inline const Aws::Vector<InputClipping>& GetInputClippings() const{ return m_inputClippings; }
+    inline const Aws::Vector<InputClipping>& GetInputClippings() const { return m_inputClippings; }
     inline bool InputClippingsHasBeenSet() const { return m_inputClippingsHasBeenSet; }
-    inline void SetInputClippings(const Aws::Vector<InputClipping>& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = value; }
-    inline void SetInputClippings(Aws::Vector<InputClipping>&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = std::move(value); }
-    inline InputTemplate& WithInputClippings(const Aws::Vector<InputClipping>& value) { SetInputClippings(value); return *this;}
-    inline InputTemplate& WithInputClippings(Aws::Vector<InputClipping>&& value) { SetInputClippings(std::move(value)); return *this;}
-    inline InputTemplate& AddInputClippings(const InputClipping& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(value); return *this; }
-    inline InputTemplate& AddInputClippings(InputClipping&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(std::move(value)); return *this; }
+    template<typename InputClippingsT = Aws::Vector<InputClipping>>
+    void SetInputClippings(InputClippingsT&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = std::forward<InputClippingsT>(value); }
+    template<typename InputClippingsT = Aws::Vector<InputClipping>>
+    InputTemplate& WithInputClippings(InputClippingsT&& value) { SetInputClippings(std::forward<InputClippingsT>(value)); return *this;}
+    template<typename InputClippingsT = InputClipping>
+    InputTemplate& AddInputClippings(InputClippingsT&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.emplace_back(std::forward<InputClippingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -310,12 +292,10 @@ namespace Model
      * PsF. Don't set this value to PsF when your input is interlaced. Doing so creates
      * horizontal interlacing artifacts.
      */
-    inline const InputScanType& GetInputScanType() const{ return m_inputScanType; }
+    inline InputScanType GetInputScanType() const { return m_inputScanType; }
     inline bool InputScanTypeHasBeenSet() const { return m_inputScanTypeHasBeenSet; }
-    inline void SetInputScanType(const InputScanType& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = value; }
-    inline void SetInputScanType(InputScanType&& value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = std::move(value); }
-    inline InputTemplate& WithInputScanType(const InputScanType& value) { SetInputScanType(value); return *this;}
-    inline InputTemplate& WithInputScanType(InputScanType&& value) { SetInputScanType(std::move(value)); return *this;}
+    inline void SetInputScanType(InputScanType value) { m_inputScanTypeHasBeenSet = true; m_inputScanType = value; }
+    inline InputTemplate& WithInputScanType(InputScanType value) { SetInputScanType(value); return *this;}
     ///@}
 
     ///@{
@@ -328,12 +308,12 @@ namespace Model
      * a value here, this will ignore anything that you specify for the setting Scaling
      * Behavior.
      */
-    inline const Rectangle& GetPosition() const{ return m_position; }
+    inline const Rectangle& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Rectangle& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Rectangle&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline InputTemplate& WithPosition(const Rectangle& value) { SetPosition(value); return *this;}
-    inline InputTemplate& WithPosition(Rectangle&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Rectangle>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Rectangle>
+    InputTemplate& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -343,7 +323,7 @@ namespace Model
      * program within the transport stream. If the program you specify doesn't exist,
      * the transcoding service will use this default.
      */
-    inline int GetProgramNumber() const{ return m_programNumber; }
+    inline int GetProgramNumber() const { return m_programNumber; }
     inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
     inline InputTemplate& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
@@ -357,12 +337,10 @@ namespace Model
 * Use PSI -
      * Scan only PSI data.
      */
-    inline const InputPsiControl& GetPsiControl() const{ return m_psiControl; }
+    inline InputPsiControl GetPsiControl() const { return m_psiControl; }
     inline bool PsiControlHasBeenSet() const { return m_psiControlHasBeenSet; }
-    inline void SetPsiControl(const InputPsiControl& value) { m_psiControlHasBeenSet = true; m_psiControl = value; }
-    inline void SetPsiControl(InputPsiControl&& value) { m_psiControlHasBeenSet = true; m_psiControl = std::move(value); }
-    inline InputTemplate& WithPsiControl(const InputPsiControl& value) { SetPsiControl(value); return *this;}
-    inline InputTemplate& WithPsiControl(InputPsiControl&& value) { SetPsiControl(std::move(value)); return *this;}
+    inline void SetPsiControl(InputPsiControl value) { m_psiControlHasBeenSet = true; m_psiControl = value; }
+    inline InputTemplate& WithPsiControl(InputPsiControl value) { SetPsiControl(value); return *this;}
     ///@}
 
     ///@{
@@ -377,12 +355,10 @@ namespace Model
      * source, the service will use Embedded by default. For more information about
      * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
-    inline const InputTimecodeSource& GetTimecodeSource() const{ return m_timecodeSource; }
+    inline InputTimecodeSource GetTimecodeSource() const { return m_timecodeSource; }
     inline bool TimecodeSourceHasBeenSet() const { return m_timecodeSourceHasBeenSet; }
-    inline void SetTimecodeSource(const InputTimecodeSource& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
-    inline void SetTimecodeSource(InputTimecodeSource&& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = std::move(value); }
-    inline InputTemplate& WithTimecodeSource(const InputTimecodeSource& value) { SetTimecodeSource(value); return *this;}
-    inline InputTemplate& WithTimecodeSource(InputTimecodeSource&& value) { SetTimecodeSource(std::move(value)); return *this;}
+    inline void SetTimecodeSource(InputTimecodeSource value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
+    inline InputTemplate& WithTimecodeSource(InputTimecodeSource value) { SetTimecodeSource(value); return *this;}
     ///@}
 
     ///@{
@@ -392,28 +368,26 @@ namespace Model
      * under the input settings, to Specified start. For more information about
      * timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
-    inline const Aws::String& GetTimecodeStart() const{ return m_timecodeStart; }
+    inline const Aws::String& GetTimecodeStart() const { return m_timecodeStart; }
     inline bool TimecodeStartHasBeenSet() const { return m_timecodeStartHasBeenSet; }
-    inline void SetTimecodeStart(const Aws::String& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = value; }
-    inline void SetTimecodeStart(Aws::String&& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = std::move(value); }
-    inline void SetTimecodeStart(const char* value) { m_timecodeStartHasBeenSet = true; m_timecodeStart.assign(value); }
-    inline InputTemplate& WithTimecodeStart(const Aws::String& value) { SetTimecodeStart(value); return *this;}
-    inline InputTemplate& WithTimecodeStart(Aws::String&& value) { SetTimecodeStart(std::move(value)); return *this;}
-    inline InputTemplate& WithTimecodeStart(const char* value) { SetTimecodeStart(value); return *this;}
+    template<typename TimecodeStartT = Aws::String>
+    void SetTimecodeStart(TimecodeStartT&& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = std::forward<TimecodeStartT>(value); }
+    template<typename TimecodeStartT = Aws::String>
+    InputTemplate& WithTimecodeStart(TimecodeStartT&& value) { SetTimecodeStart(std::forward<TimecodeStartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Contains an array of video overlays.
      */
-    inline const Aws::Vector<VideoOverlay>& GetVideoOverlays() const{ return m_videoOverlays; }
+    inline const Aws::Vector<VideoOverlay>& GetVideoOverlays() const { return m_videoOverlays; }
     inline bool VideoOverlaysHasBeenSet() const { return m_videoOverlaysHasBeenSet; }
-    inline void SetVideoOverlays(const Aws::Vector<VideoOverlay>& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays = value; }
-    inline void SetVideoOverlays(Aws::Vector<VideoOverlay>&& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays = std::move(value); }
-    inline InputTemplate& WithVideoOverlays(const Aws::Vector<VideoOverlay>& value) { SetVideoOverlays(value); return *this;}
-    inline InputTemplate& WithVideoOverlays(Aws::Vector<VideoOverlay>&& value) { SetVideoOverlays(std::move(value)); return *this;}
-    inline InputTemplate& AddVideoOverlays(const VideoOverlay& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays.push_back(value); return *this; }
-    inline InputTemplate& AddVideoOverlays(VideoOverlay&& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays.push_back(std::move(value)); return *this; }
+    template<typename VideoOverlaysT = Aws::Vector<VideoOverlay>>
+    void SetVideoOverlays(VideoOverlaysT&& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays = std::forward<VideoOverlaysT>(value); }
+    template<typename VideoOverlaysT = Aws::Vector<VideoOverlay>>
+    InputTemplate& WithVideoOverlays(VideoOverlaysT&& value) { SetVideoOverlays(std::forward<VideoOverlaysT>(value)); return *this;}
+    template<typename VideoOverlaysT = VideoOverlay>
+    InputTemplate& AddVideoOverlays(VideoOverlaysT&& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays.emplace_back(std::forward<VideoOverlaysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -421,16 +395,16 @@ namespace Model
      * Input video selectors contain the video settings for the input. Each of your
      * inputs can have up to one video selector.
      */
-    inline const VideoSelector& GetVideoSelector() const{ return m_videoSelector; }
+    inline const VideoSelector& GetVideoSelector() const { return m_videoSelector; }
     inline bool VideoSelectorHasBeenSet() const { return m_videoSelectorHasBeenSet; }
-    inline void SetVideoSelector(const VideoSelector& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = value; }
-    inline void SetVideoSelector(VideoSelector&& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = std::move(value); }
-    inline InputTemplate& WithVideoSelector(const VideoSelector& value) { SetVideoSelector(value); return *this;}
-    inline InputTemplate& WithVideoSelector(VideoSelector&& value) { SetVideoSelector(std::move(value)); return *this;}
+    template<typename VideoSelectorT = VideoSelector>
+    void SetVideoSelector(VideoSelectorT&& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = std::forward<VideoSelectorT>(value); }
+    template<typename VideoSelectorT = VideoSelector>
+    InputTemplate& WithVideoSelector(VideoSelectorT&& value) { SetVideoSelector(std::forward<VideoSelectorT>(value)); return *this;}
     ///@}
   private:
 
-    AdvancedInputFilter m_advancedInputFilter;
+    AdvancedInputFilter m_advancedInputFilter{AdvancedInputFilter::NOT_SET};
     bool m_advancedInputFilterHasBeenSet = false;
 
     AdvancedInputFilterSettings m_advancedInputFilterSettings;
@@ -448,10 +422,10 @@ namespace Model
     Rectangle m_crop;
     bool m_cropHasBeenSet = false;
 
-    InputDeblockFilter m_deblockFilter;
+    InputDeblockFilter m_deblockFilter{InputDeblockFilter::NOT_SET};
     bool m_deblockFilterHasBeenSet = false;
 
-    InputDenoiseFilter m_denoiseFilter;
+    InputDenoiseFilter m_denoiseFilter{InputDenoiseFilter::NOT_SET};
     bool m_denoiseFilterHasBeenSet = false;
 
     Aws::String m_dolbyVisionMetadataXml;
@@ -460,10 +434,10 @@ namespace Model
     Aws::Map<Aws::String, DynamicAudioSelector> m_dynamicAudioSelectors;
     bool m_dynamicAudioSelectorsHasBeenSet = false;
 
-    InputFilterEnable m_filterEnable;
+    InputFilterEnable m_filterEnable{InputFilterEnable::NOT_SET};
     bool m_filterEnableHasBeenSet = false;
 
-    int m_filterStrength;
+    int m_filterStrength{0};
     bool m_filterStrengthHasBeenSet = false;
 
     ImageInserter m_imageInserter;
@@ -472,19 +446,19 @@ namespace Model
     Aws::Vector<InputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet = false;
 
-    InputScanType m_inputScanType;
+    InputScanType m_inputScanType{InputScanType::NOT_SET};
     bool m_inputScanTypeHasBeenSet = false;
 
     Rectangle m_position;
     bool m_positionHasBeenSet = false;
 
-    int m_programNumber;
+    int m_programNumber{0};
     bool m_programNumberHasBeenSet = false;
 
-    InputPsiControl m_psiControl;
+    InputPsiControl m_psiControl{InputPsiControl::NOT_SET};
     bool m_psiControlHasBeenSet = false;
 
-    InputTimecodeSource m_timecodeSource;
+    InputTimecodeSource m_timecodeSource{InputTimecodeSource::NOT_SET};
     bool m_timecodeSourceHasBeenSet = false;
 
     Aws::String m_timecodeStart;

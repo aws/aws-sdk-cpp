@@ -18,13 +18,7 @@ namespace Omics
 namespace Model
 {
 
-VariantImportItemSource::VariantImportItemSource() : 
-    m_sourceHasBeenSet(false)
-{
-}
-
 VariantImportItemSource::VariantImportItemSource(JsonView jsonValue)
-  : VariantImportItemSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VariantImportItemSource& VariantImportItemSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

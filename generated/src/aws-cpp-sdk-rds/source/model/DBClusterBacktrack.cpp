@@ -20,18 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBClusterBacktrack::DBClusterBacktrack() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_backtrackIdentifierHasBeenSet(false),
-    m_backtrackToHasBeenSet(false),
-    m_backtrackedFromHasBeenSet(false),
-    m_backtrackRequestCreationTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 DBClusterBacktrack::DBClusterBacktrack(const XmlNode& xmlNode)
-  : DBClusterBacktrack()
 {
   *this = xmlNode;
 }
@@ -47,36 +36,42 @@ DBClusterBacktrack& DBClusterBacktrack::operator =(const XmlNode& xmlNode)
     {
       m_dBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBClusterIdentifierNode.GetText());
       m_dBClusterIdentifierHasBeenSet = true;
+       m_dBClusterIdentifierHasBeenSet = true;
     }
     XmlNode backtrackIdentifierNode = resultNode.FirstChild("BacktrackIdentifier");
     if(!backtrackIdentifierNode.IsNull())
     {
       m_backtrackIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(backtrackIdentifierNode.GetText());
       m_backtrackIdentifierHasBeenSet = true;
+       m_backtrackIdentifierHasBeenSet = true;
     }
     XmlNode backtrackToNode = resultNode.FirstChild("BacktrackTo");
     if(!backtrackToNode.IsNull())
     {
       m_backtrackTo = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backtrackToNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_backtrackToHasBeenSet = true;
+       m_backtrackToHasBeenSet = true;
     }
     XmlNode backtrackedFromNode = resultNode.FirstChild("BacktrackedFrom");
     if(!backtrackedFromNode.IsNull())
     {
       m_backtrackedFrom = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backtrackedFromNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_backtrackedFromHasBeenSet = true;
+       m_backtrackedFromHasBeenSet = true;
     }
     XmlNode backtrackRequestCreationTimeNode = resultNode.FirstChild("BacktrackRequestCreationTime");
     if(!backtrackRequestCreationTimeNode.IsNull())
     {
       m_backtrackRequestCreationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(backtrackRequestCreationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_backtrackRequestCreationTimeHasBeenSet = true;
+       m_backtrackRequestCreationTimeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
   }
 

@@ -39,7 +39,7 @@ namespace Model
   class Preset
   {
   public:
-    AWS_ELASTICTRANSCODER_API Preset();
+    AWS_ELASTICTRANSCODER_API Preset() = default;
     AWS_ELASTICTRANSCODER_API Preset(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Preset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,56 +50,48 @@ namespace Model
      * <p>Identifier for the new preset. You use this value to get settings for the
      * preset or to delete it.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Preset& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Preset& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Preset& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Preset& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the preset.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Preset& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Preset& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Preset& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Preset& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the preset.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Preset& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Preset& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Preset& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Preset& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the preset.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Preset& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Preset& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Preset& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Preset& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +101,12 @@ namespace Model
      * <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>,
      * <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
      */
-    inline const Aws::String& GetContainer() const{ return m_container; }
+    inline const Aws::String& GetContainer() const { return m_container; }
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
-    inline void SetContainer(const Aws::String& value) { m_containerHasBeenSet = true; m_container = value; }
-    inline void SetContainer(Aws::String&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
-    inline void SetContainer(const char* value) { m_containerHasBeenSet = true; m_container.assign(value); }
-    inline Preset& WithContainer(const Aws::String& value) { SetContainer(value); return *this;}
-    inline Preset& WithContainer(Aws::String&& value) { SetContainer(std::move(value)); return *this;}
-    inline Preset& WithContainer(const char* value) { SetContainer(value); return *this;}
+    template<typename ContainerT = Aws::String>
+    void SetContainer(ContainerT&& value) { m_containerHasBeenSet = true; m_container = std::forward<ContainerT>(value); }
+    template<typename ContainerT = Aws::String>
+    Preset& WithContainer(ContainerT&& value) { SetContainer(std::forward<ContainerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +114,12 @@ namespace Model
      * <p>A section of the response body that provides information about the audio
      * preset values.</p>
      */
-    inline const AudioParameters& GetAudio() const{ return m_audio; }
+    inline const AudioParameters& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioParameters& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioParameters&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline Preset& WithAudio(const AudioParameters& value) { SetAudio(value); return *this;}
-    inline Preset& WithAudio(AudioParameters&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioParameters>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioParameters>
+    Preset& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +127,12 @@ namespace Model
      * <p>A section of the response body that provides information about the video
      * preset values.</p>
      */
-    inline const VideoParameters& GetVideo() const{ return m_video; }
+    inline const VideoParameters& GetVideo() const { return m_video; }
     inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
-    inline void SetVideo(const VideoParameters& value) { m_videoHasBeenSet = true; m_video = value; }
-    inline void SetVideo(VideoParameters&& value) { m_videoHasBeenSet = true; m_video = std::move(value); }
-    inline Preset& WithVideo(const VideoParameters& value) { SetVideo(value); return *this;}
-    inline Preset& WithVideo(VideoParameters&& value) { SetVideo(std::move(value)); return *this;}
+    template<typename VideoT = VideoParameters>
+    void SetVideo(VideoT&& value) { m_videoHasBeenSet = true; m_video = std::forward<VideoT>(value); }
+    template<typename VideoT = VideoParameters>
+    Preset& WithVideo(VideoT&& value) { SetVideo(std::forward<VideoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +140,12 @@ namespace Model
      * <p>A section of the response body that provides information about the thumbnail
      * preset values, if any.</p>
      */
-    inline const Thumbnails& GetThumbnails() const{ return m_thumbnails; }
+    inline const Thumbnails& GetThumbnails() const { return m_thumbnails; }
     inline bool ThumbnailsHasBeenSet() const { return m_thumbnailsHasBeenSet; }
-    inline void SetThumbnails(const Thumbnails& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = value; }
-    inline void SetThumbnails(Thumbnails&& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = std::move(value); }
-    inline Preset& WithThumbnails(const Thumbnails& value) { SetThumbnails(value); return *this;}
-    inline Preset& WithThumbnails(Thumbnails&& value) { SetThumbnails(std::move(value)); return *this;}
+    template<typename ThumbnailsT = Thumbnails>
+    void SetThumbnails(ThumbnailsT&& value) { m_thumbnailsHasBeenSet = true; m_thumbnails = std::forward<ThumbnailsT>(value); }
+    template<typename ThumbnailsT = Thumbnails>
+    Preset& WithThumbnails(ThumbnailsT&& value) { SetThumbnails(std::forward<ThumbnailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +154,12 @@ namespace Model
      * (<code>System</code>) or a preset that you have defined
      * (<code>Custom</code>).</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Preset& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Preset& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Preset& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Preset& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

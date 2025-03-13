@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailContentPolicyAssessment::GuardrailContentPolicyAssessment() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 GuardrailContentPolicyAssessment::GuardrailContentPolicyAssessment(JsonView jsonValue)
-  : GuardrailContentPolicyAssessment()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GuardrailContentPolicyAssessment& GuardrailContentPolicyAssessment::operator =(J
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

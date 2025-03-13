@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomConnectorProfileProperties::CustomConnectorProfileProperties() : 
-    m_profilePropertiesHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false)
-{
-}
-
 CustomConnectorProfileProperties::CustomConnectorProfileProperties(JsonView jsonValue)
-  : CustomConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ CustomConnectorProfileProperties& CustomConnectorProfileProperties::operator =(J
     }
     m_profilePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
-
     m_oAuth2PropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

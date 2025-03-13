@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TextLogDestination::TextLogDestination() : 
-    m_cloudWatchHasBeenSet(false)
-{
-}
-
 TextLogDestination::TextLogDestination(JsonView jsonValue)
-  : TextLogDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextLogDestination& TextLogDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cloudWatch"))
   {
     m_cloudWatch = jsonValue.GetObject("cloudWatch");
-
     m_cloudWatchHasBeenSet = true;
   }
-
   return *this;
 }
 

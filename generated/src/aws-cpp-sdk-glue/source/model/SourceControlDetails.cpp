@@ -18,22 +18,7 @@ namespace Glue
 namespace Model
 {
 
-SourceControlDetails::SourceControlDetails() : 
-    m_provider(SourceControlProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_branchHasBeenSet(false),
-    m_folderHasBeenSet(false),
-    m_lastCommitIdHasBeenSet(false),
-    m_authStrategy(SourceControlAuthStrategy::NOT_SET),
-    m_authStrategyHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
-{
-}
-
 SourceControlDetails::SourceControlDetails(JsonView jsonValue)
-  : SourceControlDetails()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ SourceControlDetails& SourceControlDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Provider"))
   {
     m_provider = SourceControlProviderMapper::GetSourceControlProviderForName(jsonValue.GetString("Provider"));
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Repository"))
   {
     m_repository = jsonValue.GetString("Repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Branch"))
   {
     m_branch = jsonValue.GetString("Branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Folder"))
   {
     m_folder = jsonValue.GetString("Folder");
-
     m_folderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastCommitId"))
   {
     m_lastCommitId = jsonValue.GetString("LastCommitId");
-
     m_lastCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthStrategy"))
   {
     m_authStrategy = SourceControlAuthStrategyMapper::GetSourceControlAuthStrategyForName(jsonValue.GetString("AuthStrategy"));
-
     m_authStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthToken"))
   {
     m_authToken = jsonValue.GetString("AuthToken");
-
     m_authTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

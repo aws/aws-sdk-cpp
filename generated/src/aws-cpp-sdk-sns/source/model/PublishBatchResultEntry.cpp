@@ -20,15 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PublishBatchResultEntry::PublishBatchResultEntry() : 
-    m_idHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false)
-{
-}
-
 PublishBatchResultEntry::PublishBatchResultEntry(const XmlNode& xmlNode)
-  : PublishBatchResultEntry()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ PublishBatchResultEntry& PublishBatchResultEntry::operator =(const XmlNode& xmlN
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode messageIdNode = resultNode.FirstChild("MessageId");
     if(!messageIdNode.IsNull())
     {
       m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
       m_messageIdHasBeenSet = true;
+       m_messageIdHasBeenSet = true;
     }
     XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
     if(!sequenceNumberNode.IsNull())
     {
       m_sequenceNumber = Aws::Utils::Xml::DecodeEscapedXmlText(sequenceNumberNode.GetText());
       m_sequenceNumberHasBeenSet = true;
+       m_sequenceNumberHasBeenSet = true;
     }
   }
 

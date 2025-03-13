@@ -39,7 +39,7 @@ namespace Model
   class Script
   {
   public:
-    AWS_DLM_API Script();
+    AWS_DLM_API Script() = default;
     AWS_DLM_API Script(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Script& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,14 +64,13 @@ namespace Model
      * </ul> <p>If you are automating VSS Backups, omit this parameter.</p> <p>Default:
      * PRE and POST</p>
      */
-    inline const Aws::Vector<StageValues>& GetStages() const{ return m_stages; }
+    inline const Aws::Vector<StageValues>& GetStages() const { return m_stages; }
     inline bool StagesHasBeenSet() const { return m_stagesHasBeenSet; }
-    inline void SetStages(const Aws::Vector<StageValues>& value) { m_stagesHasBeenSet = true; m_stages = value; }
-    inline void SetStages(Aws::Vector<StageValues>&& value) { m_stagesHasBeenSet = true; m_stages = std::move(value); }
-    inline Script& WithStages(const Aws::Vector<StageValues>& value) { SetStages(value); return *this;}
-    inline Script& WithStages(Aws::Vector<StageValues>&& value) { SetStages(std::move(value)); return *this;}
-    inline Script& AddStages(const StageValues& value) { m_stagesHasBeenSet = true; m_stages.push_back(value); return *this; }
-    inline Script& AddStages(StageValues&& value) { m_stagesHasBeenSet = true; m_stages.push_back(std::move(value)); return *this; }
+    template<typename StagesT = Aws::Vector<StageValues>>
+    void SetStages(StagesT&& value) { m_stagesHasBeenSet = true; m_stages = std::forward<StagesT>(value); }
+    template<typename StagesT = Aws::Vector<StageValues>>
+    Script& WithStages(StagesT&& value) { SetStages(std::forward<StagesT>(value)); return *this;}
+    inline Script& AddStages(StageValues value) { m_stagesHasBeenSet = true; m_stages.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -83,12 +82,10 @@ namespace Model
      * Backups, omit this parameter.</p> </li> </ul> <p>Default:
      * AWS_SYSTEMS_MANAGER</p>
      */
-    inline const ExecutionHandlerServiceValues& GetExecutionHandlerService() const{ return m_executionHandlerService; }
+    inline ExecutionHandlerServiceValues GetExecutionHandlerService() const { return m_executionHandlerService; }
     inline bool ExecutionHandlerServiceHasBeenSet() const { return m_executionHandlerServiceHasBeenSet; }
-    inline void SetExecutionHandlerService(const ExecutionHandlerServiceValues& value) { m_executionHandlerServiceHasBeenSet = true; m_executionHandlerService = value; }
-    inline void SetExecutionHandlerService(ExecutionHandlerServiceValues&& value) { m_executionHandlerServiceHasBeenSet = true; m_executionHandlerService = std::move(value); }
-    inline Script& WithExecutionHandlerService(const ExecutionHandlerServiceValues& value) { SetExecutionHandlerService(value); return *this;}
-    inline Script& WithExecutionHandlerService(ExecutionHandlerServiceValues&& value) { SetExecutionHandlerService(std::move(value)); return *this;}
+    inline void SetExecutionHandlerService(ExecutionHandlerServiceValues value) { m_executionHandlerServiceHasBeenSet = true; m_executionHandlerService = value; }
+    inline Script& WithExecutionHandlerService(ExecutionHandlerServiceValues value) { SetExecutionHandlerService(value); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +100,12 @@ namespace Model
      * or ARN of the SSM document. If you are using a custom SSM document that is
      * shared with you, specify the ARN of the SSM document.</p> </li> </ul>
      */
-    inline const Aws::String& GetExecutionHandler() const{ return m_executionHandler; }
+    inline const Aws::String& GetExecutionHandler() const { return m_executionHandler; }
     inline bool ExecutionHandlerHasBeenSet() const { return m_executionHandlerHasBeenSet; }
-    inline void SetExecutionHandler(const Aws::String& value) { m_executionHandlerHasBeenSet = true; m_executionHandler = value; }
-    inline void SetExecutionHandler(Aws::String&& value) { m_executionHandlerHasBeenSet = true; m_executionHandler = std::move(value); }
-    inline void SetExecutionHandler(const char* value) { m_executionHandlerHasBeenSet = true; m_executionHandler.assign(value); }
-    inline Script& WithExecutionHandler(const Aws::String& value) { SetExecutionHandler(value); return *this;}
-    inline Script& WithExecutionHandler(Aws::String&& value) { SetExecutionHandler(std::move(value)); return *this;}
-    inline Script& WithExecutionHandler(const char* value) { SetExecutionHandler(value); return *this;}
+    template<typename ExecutionHandlerT = Aws::String>
+    void SetExecutionHandler(ExecutionHandlerT&& value) { m_executionHandlerHasBeenSet = true; m_executionHandler = std::forward<ExecutionHandlerT>(value); }
+    template<typename ExecutionHandlerT = Aws::String>
+    Script& WithExecutionHandler(ExecutionHandlerT&& value) { SetExecutionHandler(std::forward<ExecutionHandlerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,7 +118,7 @@ namespace Model
      * parameter is supported only if you run a pre script. If you run a post script
      * only, omit this parameter.</p> <p>Default: true</p>
      */
-    inline bool GetExecuteOperationOnScriptFailure() const{ return m_executeOperationOnScriptFailure; }
+    inline bool GetExecuteOperationOnScriptFailure() const { return m_executeOperationOnScriptFailure; }
     inline bool ExecuteOperationOnScriptFailureHasBeenSet() const { return m_executeOperationOnScriptFailureHasBeenSet; }
     inline void SetExecuteOperationOnScriptFailure(bool value) { m_executeOperationOnScriptFailureHasBeenSet = true; m_executeOperationOnScriptFailure = value; }
     inline Script& WithExecuteOperationOnScriptFailure(bool value) { SetExecuteOperationOnScriptFailure(value); return *this;}
@@ -138,7 +133,7 @@ namespace Model
      * </p> <p>If you are automating VSS Backups, omit this parameter.</p> <p>Default:
      * 10</p>
      */
-    inline int GetExecutionTimeout() const{ return m_executionTimeout; }
+    inline int GetExecutionTimeout() const { return m_executionTimeout; }
     inline bool ExecutionTimeoutHasBeenSet() const { return m_executionTimeoutHasBeenSet; }
     inline void SetExecutionTimeout(int value) { m_executionTimeoutHasBeenSet = true; m_executionTimeout = value; }
     inline Script& WithExecutionTimeout(int value) { SetExecutionTimeout(value); return *this;}
@@ -155,7 +150,7 @@ namespace Model
      * </li> </ul> <p>If you do not want Amazon Data Lifecycle Manager to retry failed
      * scripts, specify <code>0</code>.</p> <p>Default: 0</p>
      */
-    inline int GetMaximumRetryCount() const{ return m_maximumRetryCount; }
+    inline int GetMaximumRetryCount() const { return m_maximumRetryCount; }
     inline bool MaximumRetryCountHasBeenSet() const { return m_maximumRetryCountHasBeenSet; }
     inline void SetMaximumRetryCount(int value) { m_maximumRetryCountHasBeenSet = true; m_maximumRetryCount = value; }
     inline Script& WithMaximumRetryCount(int value) { SetMaximumRetryCount(value); return *this;}
@@ -165,19 +160,19 @@ namespace Model
     Aws::Vector<StageValues> m_stages;
     bool m_stagesHasBeenSet = false;
 
-    ExecutionHandlerServiceValues m_executionHandlerService;
+    ExecutionHandlerServiceValues m_executionHandlerService{ExecutionHandlerServiceValues::NOT_SET};
     bool m_executionHandlerServiceHasBeenSet = false;
 
     Aws::String m_executionHandler;
     bool m_executionHandlerHasBeenSet = false;
 
-    bool m_executeOperationOnScriptFailure;
+    bool m_executeOperationOnScriptFailure{false};
     bool m_executeOperationOnScriptFailureHasBeenSet = false;
 
-    int m_executionTimeout;
+    int m_executionTimeout{0};
     bool m_executionTimeoutHasBeenSet = false;
 
-    int m_maximumRetryCount;
+    int m_maximumRetryCount{0};
     bool m_maximumRetryCountHasBeenSet = false;
   };
 

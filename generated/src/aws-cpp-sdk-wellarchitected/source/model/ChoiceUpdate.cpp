@@ -18,17 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-ChoiceUpdate::ChoiceUpdate() : 
-    m_status(ChoiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reason(ChoiceReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_notesHasBeenSet(false)
-{
-}
-
 ChoiceUpdate::ChoiceUpdate(JsonView jsonValue)
-  : ChoiceUpdate()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ChoiceUpdate& ChoiceUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChoiceStatusMapper::GetChoiceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ChoiceReasonMapper::GetChoiceReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notes"))
   {
     m_notes = jsonValue.GetString("Notes");
-
     m_notesHasBeenSet = true;
   }
-
   return *this;
 }
 

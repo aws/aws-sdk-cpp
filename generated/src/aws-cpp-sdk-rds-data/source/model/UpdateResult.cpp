@@ -18,13 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-UpdateResult::UpdateResult() : 
-    m_generatedFieldsHasBeenSet(false)
-{
-}
-
 UpdateResult::UpdateResult(JsonView jsonValue)
-  : UpdateResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UpdateResult& UpdateResult::operator =(JsonView jsonValue)
     }
     m_generatedFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

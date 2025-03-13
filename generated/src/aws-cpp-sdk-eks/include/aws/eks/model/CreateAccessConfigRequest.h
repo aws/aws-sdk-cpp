@@ -32,7 +32,7 @@ namespace Model
   class CreateAccessConfigRequest
   {
   public:
-    AWS_EKS_API CreateAccessConfigRequest();
+    AWS_EKS_API CreateAccessConfigRequest() = default;
     AWS_EKS_API CreateAccessConfigRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API CreateAccessConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * cluster admin access entry during cluster creation time. The default value is
      * <code>true</code>.</p>
      */
-    inline bool GetBootstrapClusterCreatorAdminPermissions() const{ return m_bootstrapClusterCreatorAdminPermissions; }
+    inline bool GetBootstrapClusterCreatorAdminPermissions() const { return m_bootstrapClusterCreatorAdminPermissions; }
     inline bool BootstrapClusterCreatorAdminPermissionsHasBeenSet() const { return m_bootstrapClusterCreatorAdminPermissionsHasBeenSet; }
     inline void SetBootstrapClusterCreatorAdminPermissions(bool value) { m_bootstrapClusterCreatorAdminPermissionsHasBeenSet = true; m_bootstrapClusterCreatorAdminPermissions = value; }
     inline CreateAccessConfigRequest& WithBootstrapClusterCreatorAdminPermissions(bool value) { SetBootstrapClusterCreatorAdminPermissions(value); return *this;}
@@ -58,19 +58,17 @@ namespace Model
      * Services Management Console, the default value is
      * <code>API_AND_CONFIG_MAP</code>.</p>
      */
-    inline const AuthenticationMode& GetAuthenticationMode() const{ return m_authenticationMode; }
+    inline AuthenticationMode GetAuthenticationMode() const { return m_authenticationMode; }
     inline bool AuthenticationModeHasBeenSet() const { return m_authenticationModeHasBeenSet; }
-    inline void SetAuthenticationMode(const AuthenticationMode& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
-    inline void SetAuthenticationMode(AuthenticationMode&& value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = std::move(value); }
-    inline CreateAccessConfigRequest& WithAuthenticationMode(const AuthenticationMode& value) { SetAuthenticationMode(value); return *this;}
-    inline CreateAccessConfigRequest& WithAuthenticationMode(AuthenticationMode&& value) { SetAuthenticationMode(std::move(value)); return *this;}
+    inline void SetAuthenticationMode(AuthenticationMode value) { m_authenticationModeHasBeenSet = true; m_authenticationMode = value; }
+    inline CreateAccessConfigRequest& WithAuthenticationMode(AuthenticationMode value) { SetAuthenticationMode(value); return *this;}
     ///@}
   private:
 
-    bool m_bootstrapClusterCreatorAdminPermissions;
+    bool m_bootstrapClusterCreatorAdminPermissions{false};
     bool m_bootstrapClusterCreatorAdminPermissionsHasBeenSet = false;
 
-    AuthenticationMode m_authenticationMode;
+    AuthenticationMode m_authenticationMode{AuthenticationMode::NOT_SET};
     bool m_authenticationModeHasBeenSet = false;
   };
 

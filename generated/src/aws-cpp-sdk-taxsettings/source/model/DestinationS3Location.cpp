@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-DestinationS3Location::DestinationS3Location() : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 DestinationS3Location::DestinationS3Location(JsonView jsonValue)
-  : DestinationS3Location()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DestinationS3Location& DestinationS3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

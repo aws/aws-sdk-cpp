@@ -25,7 +25,7 @@ namespace Model
   class DescribeVTLDevicesRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeVTLDevicesRequest();
+    AWS_STORAGEGATEWAY_API DescribeVTLDevicesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline DescribeVTLDevicesRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeVTLDevicesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeVTLDevicesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeVTLDevicesRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,15 +55,14 @@ namespace Model
      * from the same gateway. If no VTL devices are specified, the result will contain
      * all devices on the specified gateway.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetVTLDeviceARNs() const{ return m_vTLDeviceARNs; }
+    inline const Aws::Vector<Aws::String>& GetVTLDeviceARNs() const { return m_vTLDeviceARNs; }
     inline bool VTLDeviceARNsHasBeenSet() const { return m_vTLDeviceARNsHasBeenSet; }
-    inline void SetVTLDeviceARNs(const Aws::Vector<Aws::String>& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs = value; }
-    inline void SetVTLDeviceARNs(Aws::Vector<Aws::String>&& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs = std::move(value); }
-    inline DescribeVTLDevicesRequest& WithVTLDeviceARNs(const Aws::Vector<Aws::String>& value) { SetVTLDeviceARNs(value); return *this;}
-    inline DescribeVTLDevicesRequest& WithVTLDeviceARNs(Aws::Vector<Aws::String>&& value) { SetVTLDeviceARNs(std::move(value)); return *this;}
-    inline DescribeVTLDevicesRequest& AddVTLDeviceARNs(const Aws::String& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.push_back(value); return *this; }
-    inline DescribeVTLDevicesRequest& AddVTLDeviceARNs(Aws::String&& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.push_back(std::move(value)); return *this; }
-    inline DescribeVTLDevicesRequest& AddVTLDeviceARNs(const char* value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.push_back(value); return *this; }
+    template<typename VTLDeviceARNsT = Aws::Vector<Aws::String>>
+    void SetVTLDeviceARNs(VTLDeviceARNsT&& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs = std::forward<VTLDeviceARNsT>(value); }
+    template<typename VTLDeviceARNsT = Aws::Vector<Aws::String>>
+    DescribeVTLDevicesRequest& WithVTLDeviceARNs(VTLDeviceARNsT&& value) { SetVTLDeviceARNs(std::forward<VTLDeviceARNsT>(value)); return *this;}
+    template<typename VTLDeviceARNsT = Aws::String>
+    DescribeVTLDevicesRequest& AddVTLDeviceARNs(VTLDeviceARNsT&& value) { m_vTLDeviceARNsHasBeenSet = true; m_vTLDeviceARNs.emplace_back(std::forward<VTLDeviceARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +70,12 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin describing the
      * VTL devices.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeVTLDevicesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeVTLDevicesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeVTLDevicesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeVTLDevicesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +83,7 @@ namespace Model
      * <p>Specifies that the number of VTL devices described be limited to the
      * specified number.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeVTLDevicesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -104,7 +99,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

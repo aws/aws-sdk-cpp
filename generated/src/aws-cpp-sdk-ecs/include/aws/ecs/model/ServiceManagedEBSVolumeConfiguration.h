@@ -42,7 +42,7 @@ namespace Model
   class ServiceManagedEBSVolumeConfiguration
   {
   public:
-    AWS_ECS_API ServiceManagedEBSVolumeConfiguration();
+    AWS_ECS_API ServiceManagedEBSVolumeConfiguration() = default;
     AWS_ECS_API ServiceManagedEBSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceManagedEBSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,7 +56,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
      * API</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline ServiceManagedEBSVolumeConfiguration& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -75,14 +75,12 @@ namespace Model
      * asynchronously. Therefore, if you specify an ID, alias, or ARN that is invalid,
      * the action can appear to complete, but eventually fails.</p> 
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ServiceManagedEBSVolumeConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ServiceManagedEBSVolumeConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +98,12 @@ namespace Model
      * <p>Magnetic: <code>standard</code> </p>  <p>The magnetic volume type is
      * not supported on Fargate.</p>  </li> </ul>
      */
-    inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+    inline const Aws::String& GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
-    inline ServiceManagedEBSVolumeConfiguration& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
+    template<typename VolumeTypeT = Aws::String>
+    void SetVolumeType(VolumeTypeT&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::forward<VolumeTypeT>(value); }
+    template<typename VolumeTypeT = Aws::String>
+    ServiceManagedEBSVolumeConfiguration& WithVolumeType(VolumeTypeT&& value) { SetVolumeType(std::forward<VolumeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +121,7 @@ namespace Model
      * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
      * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
-    inline int GetSizeInGiB() const{ return m_sizeInGiB; }
+    inline int GetSizeInGiB() const { return m_sizeInGiB; }
     inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }
     inline void SetSizeInGiB(int value) { m_sizeInGiBHasBeenSet = true; m_sizeInGiB = value; }
     inline ServiceManagedEBSVolumeConfiguration& WithSizeInGiB(int value) { SetSizeInGiB(value); return *this;}
@@ -139,14 +135,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
      * API</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline ServiceManagedEBSVolumeConfiguration& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    ServiceManagedEBSVolumeConfiguration& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,7 +161,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
      * API</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline ServiceManagedEBSVolumeConfiguration& WithIops(int value) { SetIops(value); return *this;}
@@ -183,7 +177,7 @@ namespace Model
      * parameter is only supported for the <code>gp3</code> volume type.</p>
      * 
      */
-    inline int GetThroughput() const{ return m_throughput; }
+    inline int GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
     inline ServiceManagedEBSVolumeConfiguration& WithThroughput(int value) { SetThroughput(value); return *this;}
@@ -197,14 +191,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html">CreateVolume
      * API</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
-    inline const Aws::Vector<EBSTagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<EBSTagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<EBSTagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<EBSTagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline ServiceManagedEBSVolumeConfiguration& WithTagSpecifications(const Aws::Vector<EBSTagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithTagSpecifications(Aws::Vector<EBSTagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& AddTagSpecifications(const EBSTagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline ServiceManagedEBSVolumeConfiguration& AddTagSpecifications(EBSTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<EBSTagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<EBSTagSpecification>>
+    ServiceManagedEBSVolumeConfiguration& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = EBSTagSpecification>
+    ServiceManagedEBSVolumeConfiguration& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -217,14 +211,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon
      * ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ServiceManagedEBSVolumeConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ServiceManagedEBSVolumeConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -237,16 +229,14 @@ namespace Model
      * specified, the <code>xfs</code> filesystem type is used by default.</p> <p>The
      * available Windows filesystem types are <code>NTFS</code>.</p>
      */
-    inline const TaskFilesystemType& GetFilesystemType() const{ return m_filesystemType; }
+    inline TaskFilesystemType GetFilesystemType() const { return m_filesystemType; }
     inline bool FilesystemTypeHasBeenSet() const { return m_filesystemTypeHasBeenSet; }
-    inline void SetFilesystemType(const TaskFilesystemType& value) { m_filesystemTypeHasBeenSet = true; m_filesystemType = value; }
-    inline void SetFilesystemType(TaskFilesystemType&& value) { m_filesystemTypeHasBeenSet = true; m_filesystemType = std::move(value); }
-    inline ServiceManagedEBSVolumeConfiguration& WithFilesystemType(const TaskFilesystemType& value) { SetFilesystemType(value); return *this;}
-    inline ServiceManagedEBSVolumeConfiguration& WithFilesystemType(TaskFilesystemType&& value) { SetFilesystemType(std::move(value)); return *this;}
+    inline void SetFilesystemType(TaskFilesystemType value) { m_filesystemTypeHasBeenSet = true; m_filesystemType = value; }
+    inline ServiceManagedEBSVolumeConfiguration& WithFilesystemType(TaskFilesystemType value) { SetFilesystemType(value); return *this;}
     ///@}
   private:
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
@@ -255,16 +245,16 @@ namespace Model
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet = false;
 
-    int m_sizeInGiB;
+    int m_sizeInGiB{0};
     bool m_sizeInGiBHasBeenSet = false;
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
-    int m_throughput;
+    int m_throughput{0};
     bool m_throughputHasBeenSet = false;
 
     Aws::Vector<EBSTagSpecification> m_tagSpecifications;
@@ -273,7 +263,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    TaskFilesystemType m_filesystemType;
+    TaskFilesystemType m_filesystemType{TaskFilesystemType::NOT_SET};
     bool m_filesystemTypeHasBeenSet = false;
   };
 

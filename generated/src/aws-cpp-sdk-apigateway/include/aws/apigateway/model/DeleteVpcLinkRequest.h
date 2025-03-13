@@ -25,7 +25,7 @@ namespace Model
   class DeleteVpcLinkRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API DeleteVpcLinkRequest();
+    AWS_APIGATEWAY_API DeleteVpcLinkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The identifier of the VpcLink. It is used in an Integration to reference this
      * VpcLink.</p>
      */
-    inline const Aws::String& GetVpcLinkId() const{ return m_vpcLinkId; }
+    inline const Aws::String& GetVpcLinkId() const { return m_vpcLinkId; }
     inline bool VpcLinkIdHasBeenSet() const { return m_vpcLinkIdHasBeenSet; }
-    inline void SetVpcLinkId(const Aws::String& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = value; }
-    inline void SetVpcLinkId(Aws::String&& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = std::move(value); }
-    inline void SetVpcLinkId(const char* value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId.assign(value); }
-    inline DeleteVpcLinkRequest& WithVpcLinkId(const Aws::String& value) { SetVpcLinkId(value); return *this;}
-    inline DeleteVpcLinkRequest& WithVpcLinkId(Aws::String&& value) { SetVpcLinkId(std::move(value)); return *this;}
-    inline DeleteVpcLinkRequest& WithVpcLinkId(const char* value) { SetVpcLinkId(value); return *this;}
+    template<typename VpcLinkIdT = Aws::String>
+    void SetVpcLinkId(VpcLinkIdT&& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = std::forward<VpcLinkIdT>(value); }
+    template<typename VpcLinkIdT = Aws::String>
+    DeleteVpcLinkRequest& WithVpcLinkId(VpcLinkIdT&& value) { SetVpcLinkId(std::forward<VpcLinkIdT>(value)); return *this;}
     ///@}
   private:
 

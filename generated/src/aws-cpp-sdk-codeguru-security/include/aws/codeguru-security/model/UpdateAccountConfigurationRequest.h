@@ -21,7 +21,7 @@ namespace Model
   class UpdateAccountConfigurationRequest : public CodeGuruSecurityRequest
   {
   public:
-    AWS_CODEGURUSECURITY_API UpdateAccountConfigurationRequest();
+    AWS_CODEGURUSECURITY_API UpdateAccountConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
      * previously specified a customer-managed KMS key and want CodeGuru Security to
      * use an AWS-managed key for encryption instead, pass nothing.</p>
      */
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-    inline UpdateAccountConfigurationRequest& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline UpdateAccountConfigurationRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    UpdateAccountConfigurationRequest& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
   private:
 

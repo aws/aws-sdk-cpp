@@ -30,7 +30,7 @@ namespace Model
   class DescribeDataSharesForConsumerResult
   {
   public:
-    AWS_REDSHIFT_API DescribeDataSharesForConsumerResult();
+    AWS_REDSHIFT_API DescribeDataSharesForConsumerResult() = default;
     AWS_REDSHIFT_API DescribeDataSharesForConsumerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeDataSharesForConsumerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Shows the results of datashares available for consumers.</p>
      */
-    inline const Aws::Vector<DataShare>& GetDataShares() const{ return m_dataShares; }
-    inline void SetDataShares(const Aws::Vector<DataShare>& value) { m_dataShares = value; }
-    inline void SetDataShares(Aws::Vector<DataShare>&& value) { m_dataShares = std::move(value); }
-    inline DescribeDataSharesForConsumerResult& WithDataShares(const Aws::Vector<DataShare>& value) { SetDataShares(value); return *this;}
-    inline DescribeDataSharesForConsumerResult& WithDataShares(Aws::Vector<DataShare>&& value) { SetDataShares(std::move(value)); return *this;}
-    inline DescribeDataSharesForConsumerResult& AddDataShares(const DataShare& value) { m_dataShares.push_back(value); return *this; }
-    inline DescribeDataSharesForConsumerResult& AddDataShares(DataShare&& value) { m_dataShares.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataShare>& GetDataShares() const { return m_dataShares; }
+    template<typename DataSharesT = Aws::Vector<DataShare>>
+    void SetDataShares(DataSharesT&& value) { m_dataSharesHasBeenSet = true; m_dataShares = std::forward<DataSharesT>(value); }
+    template<typename DataSharesT = Aws::Vector<DataShare>>
+    DescribeDataSharesForConsumerResult& WithDataShares(DataSharesT&& value) { SetDataShares(std::forward<DataSharesT>(value)); return *this;}
+    template<typename DataSharesT = DataShare>
+    DescribeDataSharesForConsumerResult& AddDataShares(DataSharesT&& value) { m_dataSharesHasBeenSet = true; m_dataShares.emplace_back(std::forward<DataSharesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,30 +57,31 @@ namespace Model
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeDataSharesForConsumerResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDataSharesForConsumerResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDataSharesForConsumerResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDataSharesForConsumerResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDataSharesForConsumerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDataSharesForConsumerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDataSharesForConsumerResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataShare> m_dataShares;
+    bool m_dataSharesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class NotificationConfiguration
   {
   public:
-    AWS_CODEGURUPROFILER_API NotificationConfiguration();
+    AWS_CODEGURUPROFILER_API NotificationConfiguration() = default;
     AWS_CODEGURUPROFILER_API NotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API NotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>List of up to two channels to be used for sending notifications for events
      * detected from the application profile.</p>
      */
-    inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
+    inline const Aws::Vector<Channel>& GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(const Aws::Vector<Channel>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline void SetChannels(Aws::Vector<Channel>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-    inline NotificationConfiguration& WithChannels(const Aws::Vector<Channel>& value) { SetChannels(value); return *this;}
-    inline NotificationConfiguration& WithChannels(Aws::Vector<Channel>&& value) { SetChannels(std::move(value)); return *this;}
-    inline NotificationConfiguration& AddChannels(const Channel& value) { m_channelsHasBeenSet = true; m_channels.push_back(value); return *this; }
-    inline NotificationConfiguration& AddChannels(Channel&& value) { m_channelsHasBeenSet = true; m_channels.push_back(std::move(value)); return *this; }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Vector<Channel>>
+    NotificationConfiguration& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    template<typename ChannelsT = Channel>
+    NotificationConfiguration& AddChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels.emplace_back(std::forward<ChannelsT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class TableRow
   {
   public:
-    AWS_KENDRA_API TableRow();
+    AWS_KENDRA_API TableRow() = default;
     AWS_KENDRA_API TableRow(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API TableRow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>A list of table cells in a row.</p>
      */
-    inline const Aws::Vector<TableCell>& GetCells() const{ return m_cells; }
+    inline const Aws::Vector<TableCell>& GetCells() const { return m_cells; }
     inline bool CellsHasBeenSet() const { return m_cellsHasBeenSet; }
-    inline void SetCells(const Aws::Vector<TableCell>& value) { m_cellsHasBeenSet = true; m_cells = value; }
-    inline void SetCells(Aws::Vector<TableCell>&& value) { m_cellsHasBeenSet = true; m_cells = std::move(value); }
-    inline TableRow& WithCells(const Aws::Vector<TableCell>& value) { SetCells(value); return *this;}
-    inline TableRow& WithCells(Aws::Vector<TableCell>&& value) { SetCells(std::move(value)); return *this;}
-    inline TableRow& AddCells(const TableCell& value) { m_cellsHasBeenSet = true; m_cells.push_back(value); return *this; }
-    inline TableRow& AddCells(TableCell&& value) { m_cellsHasBeenSet = true; m_cells.push_back(std::move(value)); return *this; }
+    template<typename CellsT = Aws::Vector<TableCell>>
+    void SetCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells = std::forward<CellsT>(value); }
+    template<typename CellsT = Aws::Vector<TableCell>>
+    TableRow& WithCells(CellsT&& value) { SetCells(std::forward<CellsT>(value)); return *this;}
+    template<typename CellsT = TableCell>
+    TableRow& AddCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells.emplace_back(std::forward<CellsT>(value)); return *this; }
     ///@}
   private:
 

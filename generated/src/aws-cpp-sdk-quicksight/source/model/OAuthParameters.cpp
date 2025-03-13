@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-OAuthParameters::OAuthParameters() : 
-    m_tokenProviderUrlHasBeenSet(false),
-    m_oAuthScopeHasBeenSet(false),
-    m_identityProviderVpcConnectionPropertiesHasBeenSet(false),
-    m_identityProviderResourceUriHasBeenSet(false)
-{
-}
-
 OAuthParameters::OAuthParameters(JsonView jsonValue)
-  : OAuthParameters()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OAuthParameters& OAuthParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TokenProviderUrl"))
   {
     m_tokenProviderUrl = jsonValue.GetString("TokenProviderUrl");
-
     m_tokenProviderUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuthScope"))
   {
     m_oAuthScope = jsonValue.GetString("OAuthScope");
-
     m_oAuthScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderVpcConnectionProperties"))
   {
     m_identityProviderVpcConnectionProperties = jsonValue.GetObject("IdentityProviderVpcConnectionProperties");
-
     m_identityProviderVpcConnectionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderResourceUri"))
   {
     m_identityProviderResourceUri = jsonValue.GetString("IdentityProviderResourceUri");
-
     m_identityProviderResourceUriHasBeenSet = true;
   }
-
   return *this;
 }
 

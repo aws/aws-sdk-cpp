@@ -28,7 +28,7 @@ namespace Model
   class DeleteProjectResult
   {
   public:
-    AWS_REKOGNITION_API DeleteProjectResult();
+    AWS_REKOGNITION_API DeleteProjectResult() = default;
     AWS_REKOGNITION_API DeleteProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The current status of the delete project operation.</p>
      */
-    inline const ProjectStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ProjectStatus& value) { m_status = value; }
-    inline void SetStatus(ProjectStatus&& value) { m_status = std::move(value); }
-    inline DeleteProjectResult& WithStatus(const ProjectStatus& value) { SetStatus(value); return *this;}
-    inline DeleteProjectResult& WithStatus(ProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ProjectStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ProjectStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteProjectResult& WithStatus(ProjectStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ProjectStatus m_status;
+    ProjectStatus m_status{ProjectStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -22,7 +22,7 @@ namespace Model
   class UpdateTriggerRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateTriggerRequest();
+    AWS_GLUE_API UpdateTriggerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The name of the trigger to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateTriggerRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateTriggerRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateTriggerRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateTriggerRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new values with which to update the trigger.</p>
      */
-    inline const TriggerUpdate& GetTriggerUpdate() const{ return m_triggerUpdate; }
+    inline const TriggerUpdate& GetTriggerUpdate() const { return m_triggerUpdate; }
     inline bool TriggerUpdateHasBeenSet() const { return m_triggerUpdateHasBeenSet; }
-    inline void SetTriggerUpdate(const TriggerUpdate& value) { m_triggerUpdateHasBeenSet = true; m_triggerUpdate = value; }
-    inline void SetTriggerUpdate(TriggerUpdate&& value) { m_triggerUpdateHasBeenSet = true; m_triggerUpdate = std::move(value); }
-    inline UpdateTriggerRequest& WithTriggerUpdate(const TriggerUpdate& value) { SetTriggerUpdate(value); return *this;}
-    inline UpdateTriggerRequest& WithTriggerUpdate(TriggerUpdate&& value) { SetTriggerUpdate(std::move(value)); return *this;}
+    template<typename TriggerUpdateT = TriggerUpdate>
+    void SetTriggerUpdate(TriggerUpdateT&& value) { m_triggerUpdateHasBeenSet = true; m_triggerUpdate = std::forward<TriggerUpdateT>(value); }
+    template<typename TriggerUpdateT = TriggerUpdate>
+    UpdateTriggerRequest& WithTriggerUpdate(TriggerUpdateT&& value) { SetTriggerUpdate(std::forward<TriggerUpdateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-QueryTransformationConfiguration::QueryTransformationConfiguration() : 
-    m_type(QueryTransformationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 QueryTransformationConfiguration::QueryTransformationConfiguration(JsonView jsonValue)
-  : QueryTransformationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ QueryTransformationConfiguration& QueryTransformationConfiguration::operator =(J
   if(jsonValue.ValueExists("type"))
   {
     m_type = QueryTransformationTypeMapper::GetQueryTransformationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,13 +20,7 @@ namespace Route53
 namespace Model
 {
 
-ResourceRecord::ResourceRecord() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 ResourceRecord::ResourceRecord(const XmlNode& xmlNode)
-  : ResourceRecord()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ResourceRecord& ResourceRecord::operator =(const XmlNode& xmlNode)
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetSigningProfileRequest : public SignerRequest
   {
   public:
-    AWS_SIGNER_API GetSigningProfileRequest();
+    AWS_SIGNER_API GetSigningProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the target signing profile.</p>
      */
-    inline const Aws::String& GetProfileName() const{ return m_profileName; }
+    inline const Aws::String& GetProfileName() const { return m_profileName; }
     inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
-    inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
-    inline void SetProfileName(Aws::String&& value) { m_profileNameHasBeenSet = true; m_profileName = std::move(value); }
-    inline void SetProfileName(const char* value) { m_profileNameHasBeenSet = true; m_profileName.assign(value); }
-    inline GetSigningProfileRequest& WithProfileName(const Aws::String& value) { SetProfileName(value); return *this;}
-    inline GetSigningProfileRequest& WithProfileName(Aws::String&& value) { SetProfileName(std::move(value)); return *this;}
-    inline GetSigningProfileRequest& WithProfileName(const char* value) { SetProfileName(value); return *this;}
+    template<typename ProfileNameT = Aws::String>
+    void SetProfileName(ProfileNameT&& value) { m_profileNameHasBeenSet = true; m_profileName = std::forward<ProfileNameT>(value); }
+    template<typename ProfileNameT = Aws::String>
+    GetSigningProfileRequest& WithProfileName(ProfileNameT&& value) { SetProfileName(std::forward<ProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS account ID of the profile owner.</p>
      */
-    inline const Aws::String& GetProfileOwner() const{ return m_profileOwner; }
+    inline const Aws::String& GetProfileOwner() const { return m_profileOwner; }
     inline bool ProfileOwnerHasBeenSet() const { return m_profileOwnerHasBeenSet; }
-    inline void SetProfileOwner(const Aws::String& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = value; }
-    inline void SetProfileOwner(Aws::String&& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = std::move(value); }
-    inline void SetProfileOwner(const char* value) { m_profileOwnerHasBeenSet = true; m_profileOwner.assign(value); }
-    inline GetSigningProfileRequest& WithProfileOwner(const Aws::String& value) { SetProfileOwner(value); return *this;}
-    inline GetSigningProfileRequest& WithProfileOwner(Aws::String&& value) { SetProfileOwner(std::move(value)); return *this;}
-    inline GetSigningProfileRequest& WithProfileOwner(const char* value) { SetProfileOwner(value); return *this;}
+    template<typename ProfileOwnerT = Aws::String>
+    void SetProfileOwner(ProfileOwnerT&& value) { m_profileOwnerHasBeenSet = true; m_profileOwner = std::forward<ProfileOwnerT>(value); }
+    template<typename ProfileOwnerT = Aws::String>
+    GetSigningProfileRequest& WithProfileOwner(ProfileOwnerT&& value) { SetProfileOwner(std::forward<ProfileOwnerT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface() : 
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deviceIndex(0),
-    m_deviceIndexHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ipv6AddressCount(0),
-    m_ipv6AddressCountHasBeenSet(false),
-    m_ipv6AddressesHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false),
-    m_privateIpAddressConfigsHasBeenSet(false),
-    m_secondaryPrivateIpAddressCount(0),
-    m_secondaryPrivateIpAddressCountHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 ScheduledInstancesNetworkInterface::ScheduledInstancesNetworkInterface(const XmlNode& xmlNode)
-  : ScheduledInstancesNetworkInterface()
 {
   *this = xmlNode;
 }
@@ -58,90 +36,102 @@ ScheduledInstancesNetworkInterface& ScheduledInstancesNetworkInterface::operator
     {
       m_associatePublicIpAddress = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(associatePublicIpAddressNode.GetText()).c_str()).c_str());
       m_associatePublicIpAddressHasBeenSet = true;
+       m_associatePublicIpAddressHasBeenSet = true;
     }
     XmlNode deleteOnTerminationNode = resultNode.FirstChild("DeleteOnTermination");
     if(!deleteOnTerminationNode.IsNull())
     {
       m_deleteOnTermination = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deleteOnTerminationNode.GetText()).c_str()).c_str());
       m_deleteOnTerminationHasBeenSet = true;
+       m_deleteOnTerminationHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode deviceIndexNode = resultNode.FirstChild("DeviceIndex");
     if(!deviceIndexNode.IsNull())
     {
       m_deviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deviceIndexNode.GetText()).c_str()).c_str());
       m_deviceIndexHasBeenSet = true;
+       m_deviceIndexHasBeenSet = true;
     }
     XmlNode groupsNode = resultNode.FirstChild("Group");
     if(!groupsNode.IsNull())
     {
       XmlNode groupsMember = groupsNode.FirstChild("SecurityGroupId");
+      m_groupsHasBeenSet = !groupsMember.IsNull();
       while(!groupsMember.IsNull())
       {
         m_groups.push_back(groupsMember.GetText());
         groupsMember = groupsMember.NextNode("SecurityGroupId");
       }
 
-      m_groupsHasBeenSet = true;
+       m_groupsHasBeenSet = true;
     }
     XmlNode ipv6AddressCountNode = resultNode.FirstChild("Ipv6AddressCount");
     if(!ipv6AddressCountNode.IsNull())
     {
       m_ipv6AddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressCountNode.GetText()).c_str()).c_str());
       m_ipv6AddressCountHasBeenSet = true;
+       m_ipv6AddressCountHasBeenSet = true;
     }
     XmlNode ipv6AddressesNode = resultNode.FirstChild("Ipv6Address");
     if(!ipv6AddressesNode.IsNull())
     {
       XmlNode ipv6AddressesMember = ipv6AddressesNode.FirstChild("Ipv6Address");
+      m_ipv6AddressesHasBeenSet = !ipv6AddressesMember.IsNull();
       while(!ipv6AddressesMember.IsNull())
       {
         m_ipv6Addresses.push_back(ipv6AddressesMember);
         ipv6AddressesMember = ipv6AddressesMember.NextNode("Ipv6Address");
       }
 
-      m_ipv6AddressesHasBeenSet = true;
+       m_ipv6AddressesHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("NetworkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+       m_networkInterfaceIdHasBeenSet = true;
     }
     XmlNode privateIpAddressNode = resultNode.FirstChild("PrivateIpAddress");
     if(!privateIpAddressNode.IsNull())
     {
       m_privateIpAddress = Aws::Utils::Xml::DecodeEscapedXmlText(privateIpAddressNode.GetText());
       m_privateIpAddressHasBeenSet = true;
+       m_privateIpAddressHasBeenSet = true;
     }
     XmlNode privateIpAddressConfigsNode = resultNode.FirstChild("PrivateIpAddressConfig");
     if(!privateIpAddressConfigsNode.IsNull())
     {
       XmlNode privateIpAddressConfigsMember = privateIpAddressConfigsNode.FirstChild("PrivateIpAddressConfigSet");
+      m_privateIpAddressConfigsHasBeenSet = !privateIpAddressConfigsMember.IsNull();
       while(!privateIpAddressConfigsMember.IsNull())
       {
         m_privateIpAddressConfigs.push_back(privateIpAddressConfigsMember);
         privateIpAddressConfigsMember = privateIpAddressConfigsMember.NextNode("PrivateIpAddressConfigSet");
       }
 
-      m_privateIpAddressConfigsHasBeenSet = true;
+       m_privateIpAddressConfigsHasBeenSet = true;
     }
     XmlNode secondaryPrivateIpAddressCountNode = resultNode.FirstChild("SecondaryPrivateIpAddressCount");
     if(!secondaryPrivateIpAddressCountNode.IsNull())
     {
       m_secondaryPrivateIpAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondaryPrivateIpAddressCountNode.GetText()).c_str()).c_str());
       m_secondaryPrivateIpAddressCountHasBeenSet = true;
+       m_secondaryPrivateIpAddressCountHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
   }
 

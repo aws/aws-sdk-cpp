@@ -30,7 +30,7 @@ namespace Model
   class GetSigningPlatformResult
   {
   public:
-    AWS_SIGNER_API GetSigningPlatformResult();
+    AWS_SIGNER_API GetSigningPlatformResult() = default;
     AWS_SIGNER_API GetSigningPlatformResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SIGNER_API GetSigningPlatformResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,85 +39,75 @@ namespace Model
     /**
      * <p>The ID of the target signing platform.</p>
      */
-    inline const Aws::String& GetPlatformId() const{ return m_platformId; }
-    inline void SetPlatformId(const Aws::String& value) { m_platformId = value; }
-    inline void SetPlatformId(Aws::String&& value) { m_platformId = std::move(value); }
-    inline void SetPlatformId(const char* value) { m_platformId.assign(value); }
-    inline GetSigningPlatformResult& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
-    inline GetSigningPlatformResult& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
-    inline GetSigningPlatformResult& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
+    inline const Aws::String& GetPlatformId() const { return m_platformId; }
+    template<typename PlatformIdT = Aws::String>
+    void SetPlatformId(PlatformIdT&& value) { m_platformIdHasBeenSet = true; m_platformId = std::forward<PlatformIdT>(value); }
+    template<typename PlatformIdT = Aws::String>
+    GetSigningPlatformResult& WithPlatformId(PlatformIdT&& value) { SetPlatformId(std::forward<PlatformIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the target signing platform.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline GetSigningPlatformResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline GetSigningPlatformResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline GetSigningPlatformResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    GetSigningPlatformResult& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of partner entities that use the target signing platform.</p>
      */
-    inline const Aws::String& GetPartner() const{ return m_partner; }
-    inline void SetPartner(const Aws::String& value) { m_partner = value; }
-    inline void SetPartner(Aws::String&& value) { m_partner = std::move(value); }
-    inline void SetPartner(const char* value) { m_partner.assign(value); }
-    inline GetSigningPlatformResult& WithPartner(const Aws::String& value) { SetPartner(value); return *this;}
-    inline GetSigningPlatformResult& WithPartner(Aws::String&& value) { SetPartner(std::move(value)); return *this;}
-    inline GetSigningPlatformResult& WithPartner(const char* value) { SetPartner(value); return *this;}
+    inline const Aws::String& GetPartner() const { return m_partner; }
+    template<typename PartnerT = Aws::String>
+    void SetPartner(PartnerT&& value) { m_partnerHasBeenSet = true; m_partner = std::forward<PartnerT>(value); }
+    template<typename PartnerT = Aws::String>
+    GetSigningPlatformResult& WithPartner(PartnerT&& value) { SetPartner(std::forward<PartnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The validation template that is used by the target signing platform.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
-    inline void SetTarget(const Aws::String& value) { m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_target.assign(value); }
-    inline GetSigningPlatformResult& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline GetSigningPlatformResult& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline GetSigningPlatformResult& WithTarget(const char* value) { SetTarget(value); return *this;}
+    inline const Aws::String& GetTarget() const { return m_target; }
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    GetSigningPlatformResult& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The category type of the target signing platform.</p>
      */
-    inline const Category& GetCategory() const{ return m_category; }
-    inline void SetCategory(const Category& value) { m_category = value; }
-    inline void SetCategory(Category&& value) { m_category = std::move(value); }
-    inline GetSigningPlatformResult& WithCategory(const Category& value) { SetCategory(value); return *this;}
-    inline GetSigningPlatformResult& WithCategory(Category&& value) { SetCategory(std::move(value)); return *this;}
+    inline Category GetCategory() const { return m_category; }
+    inline void SetCategory(Category value) { m_categoryHasBeenSet = true; m_category = value; }
+    inline GetSigningPlatformResult& WithCategory(Category value) { SetCategory(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of configurations applied to the target platform at signing.</p>
      */
-    inline const SigningConfiguration& GetSigningConfiguration() const{ return m_signingConfiguration; }
-    inline void SetSigningConfiguration(const SigningConfiguration& value) { m_signingConfiguration = value; }
-    inline void SetSigningConfiguration(SigningConfiguration&& value) { m_signingConfiguration = std::move(value); }
-    inline GetSigningPlatformResult& WithSigningConfiguration(const SigningConfiguration& value) { SetSigningConfiguration(value); return *this;}
-    inline GetSigningPlatformResult& WithSigningConfiguration(SigningConfiguration&& value) { SetSigningConfiguration(std::move(value)); return *this;}
+    inline const SigningConfiguration& GetSigningConfiguration() const { return m_signingConfiguration; }
+    template<typename SigningConfigurationT = SigningConfiguration>
+    void SetSigningConfiguration(SigningConfigurationT&& value) { m_signingConfigurationHasBeenSet = true; m_signingConfiguration = std::forward<SigningConfigurationT>(value); }
+    template<typename SigningConfigurationT = SigningConfiguration>
+    GetSigningPlatformResult& WithSigningConfiguration(SigningConfigurationT&& value) { SetSigningConfiguration(std::forward<SigningConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the target platform's signing image.</p>
      */
-    inline const SigningImageFormat& GetSigningImageFormat() const{ return m_signingImageFormat; }
-    inline void SetSigningImageFormat(const SigningImageFormat& value) { m_signingImageFormat = value; }
-    inline void SetSigningImageFormat(SigningImageFormat&& value) { m_signingImageFormat = std::move(value); }
-    inline GetSigningPlatformResult& WithSigningImageFormat(const SigningImageFormat& value) { SetSigningImageFormat(value); return *this;}
-    inline GetSigningPlatformResult& WithSigningImageFormat(SigningImageFormat&& value) { SetSigningImageFormat(std::move(value)); return *this;}
+    inline const SigningImageFormat& GetSigningImageFormat() const { return m_signingImageFormat; }
+    template<typename SigningImageFormatT = SigningImageFormat>
+    void SetSigningImageFormat(SigningImageFormatT&& value) { m_signingImageFormatHasBeenSet = true; m_signingImageFormat = std::forward<SigningImageFormatT>(value); }
+    template<typename SigningImageFormatT = SigningImageFormat>
+    GetSigningPlatformResult& WithSigningImageFormat(SigningImageFormatT&& value) { SetSigningImageFormat(std::forward<SigningImageFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,8 +115,8 @@ namespace Model
      * <p>The maximum size (in MB) of the payload that can be signed by the target
      * platform.</p>
      */
-    inline int GetMaxSizeInMB() const{ return m_maxSizeInMB; }
-    inline void SetMaxSizeInMB(int value) { m_maxSizeInMB = value; }
+    inline int GetMaxSizeInMB() const { return m_maxSizeInMB; }
+    inline void SetMaxSizeInMB(int value) { m_maxSizeInMBHasBeenSet = true; m_maxSizeInMB = value; }
     inline GetSigningPlatformResult& WithMaxSizeInMB(int value) { SetMaxSizeInMB(value); return *this;}
     ///@}
 
@@ -135,42 +125,50 @@ namespace Model
      * <p>A flag indicating whether signatures generated for the signing platform can
      * be revoked.</p>
      */
-    inline bool GetRevocationSupported() const{ return m_revocationSupported; }
-    inline void SetRevocationSupported(bool value) { m_revocationSupported = value; }
+    inline bool GetRevocationSupported() const { return m_revocationSupported; }
+    inline void SetRevocationSupported(bool value) { m_revocationSupportedHasBeenSet = true; m_revocationSupported = value; }
     inline GetSigningPlatformResult& WithRevocationSupported(bool value) { SetRevocationSupported(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSigningPlatformResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSigningPlatformResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSigningPlatformResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSigningPlatformResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_platformId;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_partner;
+    bool m_partnerHasBeenSet = false;
 
     Aws::String m_target;
+    bool m_targetHasBeenSet = false;
 
-    Category m_category;
+    Category m_category{Category::NOT_SET};
+    bool m_categoryHasBeenSet = false;
 
     SigningConfiguration m_signingConfiguration;
+    bool m_signingConfigurationHasBeenSet = false;
 
     SigningImageFormat m_signingImageFormat;
+    bool m_signingImageFormatHasBeenSet = false;
 
-    int m_maxSizeInMB;
+    int m_maxSizeInMB{0};
+    bool m_maxSizeInMBHasBeenSet = false;
 
-    bool m_revocationSupported;
+    bool m_revocationSupported{false};
+    bool m_revocationSupportedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

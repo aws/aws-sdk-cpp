@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKeyPairRequest::DeleteKeyPairRequest() : 
-    m_keyPairNameHasBeenSet(false),
-    m_expectedFingerprintHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

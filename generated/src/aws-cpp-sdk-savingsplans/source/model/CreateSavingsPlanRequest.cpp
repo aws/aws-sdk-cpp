@@ -12,17 +12,6 @@ using namespace Aws::SavingsPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSavingsPlanRequest::CreateSavingsPlanRequest() : 
-    m_savingsPlanOfferingIdHasBeenSet(false),
-    m_commitmentHasBeenSet(false),
-    m_upfrontPaymentAmountHasBeenSet(false),
-    m_purchaseTimeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSavingsPlanRequest::SerializePayload() const
 {
   JsonValue payload;

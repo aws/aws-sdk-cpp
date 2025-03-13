@@ -45,7 +45,7 @@ namespace Model
   class HyperParameterTrainingJobDefinition
   {
   public:
-    AWS_SAGEMAKER_API HyperParameterTrainingJobDefinition();
+    AWS_SAGEMAKER_API HyperParameterTrainingJobDefinition() = default;
     AWS_SAGEMAKER_API HyperParameterTrainingJobDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HyperParameterTrainingJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,34 +55,32 @@ namespace Model
     /**
      * <p>The job definition name.</p>
      */
-    inline const Aws::String& GetDefinitionName() const{ return m_definitionName; }
+    inline const Aws::String& GetDefinitionName() const { return m_definitionName; }
     inline bool DefinitionNameHasBeenSet() const { return m_definitionNameHasBeenSet; }
-    inline void SetDefinitionName(const Aws::String& value) { m_definitionNameHasBeenSet = true; m_definitionName = value; }
-    inline void SetDefinitionName(Aws::String&& value) { m_definitionNameHasBeenSet = true; m_definitionName = std::move(value); }
-    inline void SetDefinitionName(const char* value) { m_definitionNameHasBeenSet = true; m_definitionName.assign(value); }
-    inline HyperParameterTrainingJobDefinition& WithDefinitionName(const Aws::String& value) { SetDefinitionName(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithDefinitionName(Aws::String&& value) { SetDefinitionName(std::move(value)); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithDefinitionName(const char* value) { SetDefinitionName(value); return *this;}
+    template<typename DefinitionNameT = Aws::String>
+    void SetDefinitionName(DefinitionNameT&& value) { m_definitionNameHasBeenSet = true; m_definitionName = std::forward<DefinitionNameT>(value); }
+    template<typename DefinitionNameT = Aws::String>
+    HyperParameterTrainingJobDefinition& WithDefinitionName(DefinitionNameT&& value) { SetDefinitionName(std::forward<DefinitionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const HyperParameterTuningJobObjective& GetTuningObjective() const{ return m_tuningObjective; }
+    inline const HyperParameterTuningJobObjective& GetTuningObjective() const { return m_tuningObjective; }
     inline bool TuningObjectiveHasBeenSet() const { return m_tuningObjectiveHasBeenSet; }
-    inline void SetTuningObjective(const HyperParameterTuningJobObjective& value) { m_tuningObjectiveHasBeenSet = true; m_tuningObjective = value; }
-    inline void SetTuningObjective(HyperParameterTuningJobObjective&& value) { m_tuningObjectiveHasBeenSet = true; m_tuningObjective = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithTuningObjective(const HyperParameterTuningJobObjective& value) { SetTuningObjective(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithTuningObjective(HyperParameterTuningJobObjective&& value) { SetTuningObjective(std::move(value)); return *this;}
+    template<typename TuningObjectiveT = HyperParameterTuningJobObjective>
+    void SetTuningObjective(TuningObjectiveT&& value) { m_tuningObjectiveHasBeenSet = true; m_tuningObjective = std::forward<TuningObjectiveT>(value); }
+    template<typename TuningObjectiveT = HyperParameterTuningJobObjective>
+    HyperParameterTrainingJobDefinition& WithTuningObjective(TuningObjectiveT&& value) { SetTuningObjective(std::forward<TuningObjectiveT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ParameterRanges& GetHyperParameterRanges() const{ return m_hyperParameterRanges; }
+    inline const ParameterRanges& GetHyperParameterRanges() const { return m_hyperParameterRanges; }
     inline bool HyperParameterRangesHasBeenSet() const { return m_hyperParameterRangesHasBeenSet; }
-    inline void SetHyperParameterRanges(const ParameterRanges& value) { m_hyperParameterRangesHasBeenSet = true; m_hyperParameterRanges = value; }
-    inline void SetHyperParameterRanges(ParameterRanges&& value) { m_hyperParameterRangesHasBeenSet = true; m_hyperParameterRanges = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithHyperParameterRanges(const ParameterRanges& value) { SetHyperParameterRanges(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithHyperParameterRanges(ParameterRanges&& value) { SetHyperParameterRanges(std::move(value)); return *this;}
+    template<typename HyperParameterRangesT = ParameterRanges>
+    void SetHyperParameterRanges(HyperParameterRangesT&& value) { m_hyperParameterRangesHasBeenSet = true; m_hyperParameterRanges = std::forward<HyperParameterRangesT>(value); }
+    template<typename HyperParameterRangesT = ParameterRanges>
+    HyperParameterTrainingJobDefinition& WithHyperParameterRanges(HyperParameterRangesT&& value) { SetHyperParameterRanges(std::forward<HyperParameterRangesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,19 +88,16 @@ namespace Model
      * <p>Specifies the values of hyperparameters that do not change for the tuning
      * job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStaticHyperParameters() const{ return m_staticHyperParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStaticHyperParameters() const { return m_staticHyperParameters; }
     inline bool StaticHyperParametersHasBeenSet() const { return m_staticHyperParametersHasBeenSet; }
-    inline void SetStaticHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters = value; }
-    inline void SetStaticHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithStaticHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetStaticHyperParameters(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithStaticHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetStaticHyperParameters(std::move(value)); return *this;}
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(const Aws::String& key, const Aws::String& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(key, value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(Aws::String&& key, const Aws::String& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(std::move(key), value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(const Aws::String& key, Aws::String&& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(key, std::move(value)); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(Aws::String&& key, Aws::String&& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(const char* key, Aws::String&& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(key, std::move(value)); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(Aws::String&& key, const char* value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(std::move(key), value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddStaticHyperParameters(const char* key, const char* value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(key, value); return *this; }
+    template<typename StaticHyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetStaticHyperParameters(StaticHyperParametersT&& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters = std::forward<StaticHyperParametersT>(value); }
+    template<typename StaticHyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    HyperParameterTrainingJobDefinition& WithStaticHyperParameters(StaticHyperParametersT&& value) { SetStaticHyperParameters(std::forward<StaticHyperParametersT>(value)); return *this;}
+    template<typename StaticHyperParametersKeyT = Aws::String, typename StaticHyperParametersValueT = Aws::String>
+    HyperParameterTrainingJobDefinition& AddStaticHyperParameters(StaticHyperParametersKeyT&& key, StaticHyperParametersValueT&& value) {
+      m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters.emplace(std::forward<StaticHyperParametersKeyT>(key), std::forward<StaticHyperParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -112,12 +107,12 @@ namespace Model
      * object that specifies the resource algorithm to use for the training jobs that
      * the tuning job launches.</p>
      */
-    inline const HyperParameterAlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
+    inline const HyperParameterAlgorithmSpecification& GetAlgorithmSpecification() const { return m_algorithmSpecification; }
     inline bool AlgorithmSpecificationHasBeenSet() const { return m_algorithmSpecificationHasBeenSet; }
-    inline void SetAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = value; }
-    inline void SetAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
+    template<typename AlgorithmSpecificationT = HyperParameterAlgorithmSpecification>
+    void SetAlgorithmSpecification(AlgorithmSpecificationT&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::forward<AlgorithmSpecificationT>(value); }
+    template<typename AlgorithmSpecificationT = HyperParameterAlgorithmSpecification>
+    HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(AlgorithmSpecificationT&& value) { SetAlgorithmSpecification(std::forward<AlgorithmSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +120,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the training
      * jobs that the tuning job launches.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline HyperParameterTrainingJobDefinition& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    HyperParameterTrainingJobDefinition& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +135,14 @@ namespace Model
      * objects that specify the input for the training jobs that the tuning job
      * launches.</p>
      */
-    inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
+    inline const Aws::Vector<Channel>& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
-    inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
-    inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
-    inline HyperParameterTrainingJobDefinition& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
+    template<typename InputDataConfigT = Aws::Vector<Channel>>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = Aws::Vector<Channel>>
+    HyperParameterTrainingJobDefinition& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
+    template<typename InputDataConfigT = Channel>
+    HyperParameterTrainingJobDefinition& AddInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.emplace_back(std::forward<InputDataConfigT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,12 +155,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    HyperParameterTrainingJobDefinition& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,12 +168,12 @@ namespace Model
      * <p>Specifies the path to the Amazon S3 bucket where you store model artifacts
      * from the training jobs that the tuning job launches.</p>
      */
-    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+    inline const OutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
-    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
-    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    template<typename OutputDataConfigT = OutputDataConfig>
+    void SetOutputDataConfig(OutputDataConfigT&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::forward<OutputDataConfigT>(value); }
+    template<typename OutputDataConfigT = OutputDataConfig>
+    HyperParameterTrainingJobDefinition& WithOutputDataConfig(OutputDataConfigT&& value) { SetOutputDataConfig(std::forward<OutputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +188,12 @@ namespace Model
      * you want to use hyperparameter optimization with instance type flexibility, use
      * <code>HyperParameterTuningResourceConfig</code> instead.</p> 
      */
-    inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
+    inline const ResourceConfig& GetResourceConfig() const { return m_resourceConfig; }
     inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
-    inline void SetResourceConfig(const ResourceConfig& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = value; }
-    inline void SetResourceConfig(ResourceConfig&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithResourceConfig(const ResourceConfig& value) { SetResourceConfig(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithResourceConfig(ResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
+    template<typename ResourceConfigT = ResourceConfig>
+    void SetResourceConfig(ResourceConfigT&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::forward<ResourceConfigT>(value); }
+    template<typename ResourceConfigT = ResourceConfig>
+    HyperParameterTrainingJobDefinition& WithResourceConfig(ResourceConfigT&& value) { SetResourceConfig(std::forward<ResourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -212,12 +205,12 @@ namespace Model
      * <code>AlgorithmSpecification</code> parameter to additionally store training
      * data in the storage volume (optional).</p>
      */
-    inline const HyperParameterTuningResourceConfig& GetHyperParameterTuningResourceConfig() const{ return m_hyperParameterTuningResourceConfig; }
+    inline const HyperParameterTuningResourceConfig& GetHyperParameterTuningResourceConfig() const { return m_hyperParameterTuningResourceConfig; }
     inline bool HyperParameterTuningResourceConfigHasBeenSet() const { return m_hyperParameterTuningResourceConfigHasBeenSet; }
-    inline void SetHyperParameterTuningResourceConfig(const HyperParameterTuningResourceConfig& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = value; }
-    inline void SetHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(const HyperParameterTuningResourceConfig& value) { SetHyperParameterTuningResourceConfig(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { SetHyperParameterTuningResourceConfig(std::move(value)); return *this;}
+    template<typename HyperParameterTuningResourceConfigT = HyperParameterTuningResourceConfig>
+    void SetHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfigT&& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = std::forward<HyperParameterTuningResourceConfigT>(value); }
+    template<typename HyperParameterTuningResourceConfigT = HyperParameterTuningResourceConfig>
+    HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfigT&& value) { SetHyperParameterTuningResourceConfig(std::forward<HyperParameterTuningResourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,12 +220,12 @@ namespace Model
      * job reaches the time limit, SageMaker ends the training job. Use this API to cap
      * model training costs.</p>
      */
-    inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
+    inline const StoppingCondition& GetStoppingCondition() const { return m_stoppingCondition; }
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
-    inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
-    inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
+    template<typename StoppingConditionT = StoppingCondition>
+    void SetStoppingCondition(StoppingConditionT&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::forward<StoppingConditionT>(value); }
+    template<typename StoppingConditionT = StoppingCondition>
+    HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingConditionT&& value) { SetStoppingCondition(std::forward<StoppingConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -244,7 +237,7 @@ namespace Model
      * through the specified VPC, but the training container does not have network
      * access.</p>
      */
-    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+    inline bool GetEnableNetworkIsolation() const { return m_enableNetworkIsolation; }
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
     inline HyperParameterTrainingJobDefinition& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
@@ -258,7 +251,7 @@ namespace Model
      * on the amount of communication between compute instances, especially if you use
      * a deep learning algorithm in distributed training.</p>
      */
-    inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
+    inline bool GetEnableInterContainerTrafficEncryption() const { return m_enableInterContainerTrafficEncryption; }
     inline bool EnableInterContainerTrafficEncryptionHasBeenSet() const { return m_enableInterContainerTrafficEncryptionHasBeenSet; }
     inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
     inline HyperParameterTrainingJobDefinition& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
@@ -269,7 +262,7 @@ namespace Model
      * <p>A Boolean indicating whether managed spot training is enabled
      * (<code>True</code>) or not (<code>False</code>).</p>
      */
-    inline bool GetEnableManagedSpotTraining() const{ return m_enableManagedSpotTraining; }
+    inline bool GetEnableManagedSpotTraining() const { return m_enableManagedSpotTraining; }
     inline bool EnableManagedSpotTrainingHasBeenSet() const { return m_enableManagedSpotTrainingHasBeenSet; }
     inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTrainingHasBeenSet = true; m_enableManagedSpotTraining = value; }
     inline HyperParameterTrainingJobDefinition& WithEnableManagedSpotTraining(bool value) { SetEnableManagedSpotTraining(value); return *this;}
@@ -277,12 +270,12 @@ namespace Model
 
     ///@{
     
-    inline const CheckpointConfig& GetCheckpointConfig() const{ return m_checkpointConfig; }
+    inline const CheckpointConfig& GetCheckpointConfig() const { return m_checkpointConfig; }
     inline bool CheckpointConfigHasBeenSet() const { return m_checkpointConfigHasBeenSet; }
-    inline void SetCheckpointConfig(const CheckpointConfig& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = value; }
-    inline void SetCheckpointConfig(CheckpointConfig&& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithCheckpointConfig(const CheckpointConfig& value) { SetCheckpointConfig(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
+    template<typename CheckpointConfigT = CheckpointConfig>
+    void SetCheckpointConfig(CheckpointConfigT&& value) { m_checkpointConfigHasBeenSet = true; m_checkpointConfig = std::forward<CheckpointConfigT>(value); }
+    template<typename CheckpointConfigT = CheckpointConfig>
+    HyperParameterTrainingJobDefinition& WithCheckpointConfig(CheckpointConfigT&& value) { SetCheckpointConfig(std::forward<CheckpointConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,12 +283,12 @@ namespace Model
      * <p>The number of times to retry the job when the job fails due to an
      * <code>InternalServerError</code>.</p>
      */
-    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+    inline const RetryStrategy& GetRetryStrategy() const { return m_retryStrategy; }
     inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
-    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
-    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+    template<typename RetryStrategyT = RetryStrategy>
+    void SetRetryStrategy(RetryStrategyT&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::forward<RetryStrategyT>(value); }
+    template<typename RetryStrategyT = RetryStrategy>
+    HyperParameterTrainingJobDefinition& WithRetryStrategy(RetryStrategyT&& value) { SetRetryStrategy(std::forward<RetryStrategyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -313,19 +306,16 @@ namespace Model
      * of environment variables for all the training job definitions can't exceed the
      * maximum number specified.</p> 
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline HyperParameterTrainingJobDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline HyperParameterTrainingJobDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline HyperParameterTrainingJobDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    HyperParameterTrainingJobDefinition& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    HyperParameterTrainingJobDefinition& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -365,13 +355,13 @@ namespace Model
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet = false;
 
-    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolation{false};
     bool m_enableNetworkIsolationHasBeenSet = false;
 
-    bool m_enableInterContainerTrafficEncryption;
+    bool m_enableInterContainerTrafficEncryption{false};
     bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
-    bool m_enableManagedSpotTraining;
+    bool m_enableManagedSpotTraining{false};
     bool m_enableManagedSpotTrainingHasBeenSet = false;
 
     CheckpointConfig m_checkpointConfig;

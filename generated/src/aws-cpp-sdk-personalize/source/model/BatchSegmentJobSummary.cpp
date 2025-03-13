@@ -18,19 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-BatchSegmentJobSummary::BatchSegmentJobSummary() : 
-    m_batchSegmentJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false)
-{
-}
-
 BatchSegmentJobSummary::BatchSegmentJobSummary(JsonView jsonValue)
-  : BatchSegmentJobSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ BatchSegmentJobSummary& BatchSegmentJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("batchSegmentJobArn"))
   {
     m_batchSegmentJobArn = jsonValue.GetString("batchSegmentJobArn");
-
     m_batchSegmentJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionVersionArn"))
   {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
-
     m_solutionVersionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

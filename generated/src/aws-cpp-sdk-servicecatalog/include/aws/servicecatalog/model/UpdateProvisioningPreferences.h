@@ -35,7 +35,7 @@ namespace Model
   class UpdateProvisioningPreferences
   {
   public:
-    AWS_SERVICECATALOG_API UpdateProvisioningPreferences();
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences() = default;
     AWS_SERVICECATALOG_API UpdateProvisioningPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API UpdateProvisioningPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,15 +52,14 @@ namespace Model
      * specified, the default value is all accounts from the <code>STACKSET</code>
      * constraint.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const{ return m_stackSetAccounts; }
+    inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const { return m_stackSetAccounts; }
     inline bool StackSetAccountsHasBeenSet() const { return m_stackSetAccountsHasBeenSet; }
-    inline void SetStackSetAccounts(const Aws::Vector<Aws::String>& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = value; }
-    inline void SetStackSetAccounts(Aws::Vector<Aws::String>&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::move(value); }
-    inline UpdateProvisioningPreferences& WithStackSetAccounts(const Aws::Vector<Aws::String>& value) { SetStackSetAccounts(value); return *this;}
-    inline UpdateProvisioningPreferences& WithStackSetAccounts(Aws::Vector<Aws::String>&& value) { SetStackSetAccounts(std::move(value)); return *this;}
-    inline UpdateProvisioningPreferences& AddStackSetAccounts(const Aws::String& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
-    inline UpdateProvisioningPreferences& AddStackSetAccounts(Aws::String&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(std::move(value)); return *this; }
-    inline UpdateProvisioningPreferences& AddStackSetAccounts(const char* value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
+    template<typename StackSetAccountsT = Aws::Vector<Aws::String>>
+    void SetStackSetAccounts(StackSetAccountsT&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::forward<StackSetAccountsT>(value); }
+    template<typename StackSetAccountsT = Aws::Vector<Aws::String>>
+    UpdateProvisioningPreferences& WithStackSetAccounts(StackSetAccountsT&& value) { SetStackSetAccounts(std::forward<StackSetAccountsT>(value)); return *this;}
+    template<typename StackSetAccountsT = Aws::String>
+    UpdateProvisioningPreferences& AddStackSetAccounts(StackSetAccountsT&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.emplace_back(std::forward<StackSetAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,15 +73,14 @@ namespace Model
      * specified, the default value is all Regions from the <code>STACKSET</code>
      * constraint.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStackSetRegions() const{ return m_stackSetRegions; }
+    inline const Aws::Vector<Aws::String>& GetStackSetRegions() const { return m_stackSetRegions; }
     inline bool StackSetRegionsHasBeenSet() const { return m_stackSetRegionsHasBeenSet; }
-    inline void SetStackSetRegions(const Aws::Vector<Aws::String>& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = value; }
-    inline void SetStackSetRegions(Aws::Vector<Aws::String>&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = std::move(value); }
-    inline UpdateProvisioningPreferences& WithStackSetRegions(const Aws::Vector<Aws::String>& value) { SetStackSetRegions(value); return *this;}
-    inline UpdateProvisioningPreferences& WithStackSetRegions(Aws::Vector<Aws::String>&& value) { SetStackSetRegions(std::move(value)); return *this;}
-    inline UpdateProvisioningPreferences& AddStackSetRegions(const Aws::String& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
-    inline UpdateProvisioningPreferences& AddStackSetRegions(Aws::String&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(std::move(value)); return *this; }
-    inline UpdateProvisioningPreferences& AddStackSetRegions(const char* value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
+    template<typename StackSetRegionsT = Aws::Vector<Aws::String>>
+    void SetStackSetRegions(StackSetRegionsT&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = std::forward<StackSetRegionsT>(value); }
+    template<typename StackSetRegionsT = Aws::Vector<Aws::String>>
+    UpdateProvisioningPreferences& WithStackSetRegions(StackSetRegionsT&& value) { SetStackSetRegions(std::forward<StackSetRegionsT>(value)); return *this;}
+    template<typename StackSetRegionsT = Aws::String>
+    UpdateProvisioningPreferences& AddStackSetRegions(StackSetRegionsT&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.emplace_back(std::forward<StackSetRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,7 +94,7 @@ namespace Model
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The
      * default value is <code>0</code> if no value is specified.</p>
      */
-    inline int GetStackSetFailureToleranceCount() const{ return m_stackSetFailureToleranceCount; }
+    inline int GetStackSetFailureToleranceCount() const { return m_stackSetFailureToleranceCount; }
     inline bool StackSetFailureToleranceCountHasBeenSet() const { return m_stackSetFailureToleranceCountHasBeenSet; }
     inline void SetStackSetFailureToleranceCount(int value) { m_stackSetFailureToleranceCountHasBeenSet = true; m_stackSetFailureToleranceCount = value; }
     inline UpdateProvisioningPreferences& WithStackSetFailureToleranceCount(int value) { SetStackSetFailureToleranceCount(value); return *this;}
@@ -114,7 +112,7 @@ namespace Model
      * <code>StackSetFailureToleranceCount</code> or
      * <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
      */
-    inline int GetStackSetFailureTolerancePercentage() const{ return m_stackSetFailureTolerancePercentage; }
+    inline int GetStackSetFailureTolerancePercentage() const { return m_stackSetFailureTolerancePercentage; }
     inline bool StackSetFailureTolerancePercentageHasBeenSet() const { return m_stackSetFailureTolerancePercentageHasBeenSet; }
     inline void SetStackSetFailureTolerancePercentage(int value) { m_stackSetFailureTolerancePercentageHasBeenSet = true; m_stackSetFailureTolerancePercentage = value; }
     inline UpdateProvisioningPreferences& WithStackSetFailureTolerancePercentage(int value) { SetStackSetFailureTolerancePercentage(value); return *this;}
@@ -134,7 +132,7 @@ namespace Model
      * <code>StackSetMaxConcurrentCount</code> or
      * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
      */
-    inline int GetStackSetMaxConcurrencyCount() const{ return m_stackSetMaxConcurrencyCount; }
+    inline int GetStackSetMaxConcurrencyCount() const { return m_stackSetMaxConcurrencyCount; }
     inline bool StackSetMaxConcurrencyCountHasBeenSet() const { return m_stackSetMaxConcurrencyCountHasBeenSet; }
     inline void SetStackSetMaxConcurrencyCount(int value) { m_stackSetMaxConcurrencyCountHasBeenSet = true; m_stackSetMaxConcurrencyCount = value; }
     inline UpdateProvisioningPreferences& WithStackSetMaxConcurrencyCount(int value) { SetStackSetMaxConcurrencyCount(value); return *this;}
@@ -154,7 +152,7 @@ namespace Model
      * specify either <code>StackSetMaxConcurrentCount</code> or
      * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
      */
-    inline int GetStackSetMaxConcurrencyPercentage() const{ return m_stackSetMaxConcurrencyPercentage; }
+    inline int GetStackSetMaxConcurrencyPercentage() const { return m_stackSetMaxConcurrencyPercentage; }
     inline bool StackSetMaxConcurrencyPercentageHasBeenSet() const { return m_stackSetMaxConcurrencyPercentageHasBeenSet; }
     inline void SetStackSetMaxConcurrencyPercentage(int value) { m_stackSetMaxConcurrencyPercentageHasBeenSet = true; m_stackSetMaxConcurrencyPercentage = value; }
     inline UpdateProvisioningPreferences& WithStackSetMaxConcurrencyPercentage(int value) { SetStackSetMaxConcurrencyPercentage(value); return *this;}
@@ -174,12 +172,10 @@ namespace Model
      * <dt>DELETE</dt> <dd> <p>Deletes a stack instance in the stack set represented by
      * the provisioned product.</p> </dd> </dl>
      */
-    inline const StackSetOperationType& GetStackSetOperationType() const{ return m_stackSetOperationType; }
+    inline StackSetOperationType GetStackSetOperationType() const { return m_stackSetOperationType; }
     inline bool StackSetOperationTypeHasBeenSet() const { return m_stackSetOperationTypeHasBeenSet; }
-    inline void SetStackSetOperationType(const StackSetOperationType& value) { m_stackSetOperationTypeHasBeenSet = true; m_stackSetOperationType = value; }
-    inline void SetStackSetOperationType(StackSetOperationType&& value) { m_stackSetOperationTypeHasBeenSet = true; m_stackSetOperationType = std::move(value); }
-    inline UpdateProvisioningPreferences& WithStackSetOperationType(const StackSetOperationType& value) { SetStackSetOperationType(value); return *this;}
-    inline UpdateProvisioningPreferences& WithStackSetOperationType(StackSetOperationType&& value) { SetStackSetOperationType(std::move(value)); return *this;}
+    inline void SetStackSetOperationType(StackSetOperationType value) { m_stackSetOperationTypeHasBeenSet = true; m_stackSetOperationType = value; }
+    inline UpdateProvisioningPreferences& WithStackSetOperationType(StackSetOperationType value) { SetStackSetOperationType(value); return *this;}
     ///@}
   private:
 
@@ -189,19 +185,19 @@ namespace Model
     Aws::Vector<Aws::String> m_stackSetRegions;
     bool m_stackSetRegionsHasBeenSet = false;
 
-    int m_stackSetFailureToleranceCount;
+    int m_stackSetFailureToleranceCount{0};
     bool m_stackSetFailureToleranceCountHasBeenSet = false;
 
-    int m_stackSetFailureTolerancePercentage;
+    int m_stackSetFailureTolerancePercentage{0};
     bool m_stackSetFailureTolerancePercentageHasBeenSet = false;
 
-    int m_stackSetMaxConcurrencyCount;
+    int m_stackSetMaxConcurrencyCount{0};
     bool m_stackSetMaxConcurrencyCountHasBeenSet = false;
 
-    int m_stackSetMaxConcurrencyPercentage;
+    int m_stackSetMaxConcurrencyPercentage{0};
     bool m_stackSetMaxConcurrencyPercentageHasBeenSet = false;
 
-    StackSetOperationType m_stackSetOperationType;
+    StackSetOperationType m_stackSetOperationType{StackSetOperationType::NOT_SET};
     bool m_stackSetOperationTypeHasBeenSet = false;
   };
 

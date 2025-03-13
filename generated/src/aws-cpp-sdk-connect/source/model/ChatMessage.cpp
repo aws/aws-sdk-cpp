@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ChatMessage::ChatMessage() : 
-    m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 ChatMessage::ChatMessage(JsonView jsonValue)
-  : ChatMessage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ChatMessage& ChatMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

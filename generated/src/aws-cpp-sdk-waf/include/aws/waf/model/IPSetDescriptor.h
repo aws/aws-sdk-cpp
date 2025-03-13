@@ -41,7 +41,7 @@ namespace Model
   class IPSetDescriptor
   {
   public:
-    AWS_WAF_API IPSetDescriptor();
+    AWS_WAF_API IPSetDescriptor() = default;
     AWS_WAF_API IPSetDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API IPSetDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
     /**
      * <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
      */
-    inline const IPSetDescriptorType& GetType() const{ return m_type; }
+    inline IPSetDescriptorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const IPSetDescriptorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(IPSetDescriptorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline IPSetDescriptor& WithType(const IPSetDescriptorType& value) { SetType(value); return *this;}
-    inline IPSetDescriptor& WithType(IPSetDescriptorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(IPSetDescriptorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline IPSetDescriptor& WithType(IPSetDescriptorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -79,18 +77,16 @@ namespace Model
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline IPSetDescriptor& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline IPSetDescriptor& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline IPSetDescriptor& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    IPSetDescriptor& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    IPSetDescriptorType m_type;
+    IPSetDescriptorType m_type{IPSetDescriptorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_value;

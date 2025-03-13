@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MeasureField::MeasureField() : 
-    m_numericalMeasureFieldHasBeenSet(false),
-    m_categoricalMeasureFieldHasBeenSet(false),
-    m_dateMeasureFieldHasBeenSet(false),
-    m_calculatedMeasureFieldHasBeenSet(false)
-{
-}
-
 MeasureField::MeasureField(JsonView jsonValue)
-  : MeasureField()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MeasureField& MeasureField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumericalMeasureField"))
   {
     m_numericalMeasureField = jsonValue.GetObject("NumericalMeasureField");
-
     m_numericalMeasureFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoricalMeasureField"))
   {
     m_categoricalMeasureField = jsonValue.GetObject("CategoricalMeasureField");
-
     m_categoricalMeasureFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateMeasureField"))
   {
     m_dateMeasureField = jsonValue.GetObject("DateMeasureField");
-
     m_dateMeasureFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedMeasureField"))
   {
     m_calculatedMeasureField = jsonValue.GetObject("CalculatedMeasureField");
-
     m_calculatedMeasureFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

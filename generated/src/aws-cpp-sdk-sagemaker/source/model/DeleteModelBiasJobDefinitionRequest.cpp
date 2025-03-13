@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteModelBiasJobDefinitionRequest::DeleteModelBiasJobDefinitionRequest() : 
-    m_jobDefinitionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteModelBiasJobDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class RetrievalResultConfluenceLocation
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultConfluenceLocation();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultConfluenceLocation() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultConfluenceLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultConfluenceLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Confluence host URL for the data source location.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline RetrievalResultConfluenceLocation& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline RetrievalResultConfluenceLocation& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline RetrievalResultConfluenceLocation& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    RetrievalResultConfluenceLocation& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

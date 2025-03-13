@@ -33,7 +33,7 @@ namespace Model
   class CloneStackResult
   {
   public:
-    AWS_OPSWORKS_API CloneStackResult();
+    AWS_OPSWORKS_API CloneStackResult() = default;
     AWS_OPSWORKS_API CloneStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API CloneStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The cloned stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
-    inline void SetStackId(const Aws::String& value) { m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackId.assign(value); }
-    inline CloneStackResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline CloneStackResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline CloneStackResult& WithStackId(const char* value) { SetStackId(value); return *this;}
+    inline const Aws::String& GetStackId() const { return m_stackId; }
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    CloneStackResult& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CloneStackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CloneStackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CloneStackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CloneStackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stackId;
+    bool m_stackIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

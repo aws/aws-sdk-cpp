@@ -21,7 +21,7 @@ namespace Model
   class UpdateTemplateRequest : public SESRequest
   {
   public:
-    AWS_SES_API UpdateTemplateRequest();
+    AWS_SES_API UpdateTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
 
     ///@{
     
-    inline const Template& GetTemplate() const{ return m_template; }
+    inline const Template& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline UpdateTemplateRequest& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-    inline UpdateTemplateRequest& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
+    template<typename TemplateT = Template>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Template>
+    UpdateTemplateRequest& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
   private:
 

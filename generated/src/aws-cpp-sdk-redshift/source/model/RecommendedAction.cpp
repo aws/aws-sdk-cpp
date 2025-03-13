@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RecommendedAction::RecommendedAction() : 
-    m_textHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_type(RecommendedActionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RecommendedAction::RecommendedAction(const XmlNode& xmlNode)
-  : RecommendedAction()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ RecommendedAction& RecommendedAction::operator =(const XmlNode& xmlNode)
     {
       m_text = Aws::Utils::Xml::DecodeEscapedXmlText(textNode.GetText());
       m_textHasBeenSet = true;
+       m_textHasBeenSet = true;
     }
     XmlNode databaseNode = resultNode.FirstChild("Database");
     if(!databaseNode.IsNull())
     {
       m_database = Aws::Utils::Xml::DecodeEscapedXmlText(databaseNode.GetText());
       m_databaseHasBeenSet = true;
+       m_databaseHasBeenSet = true;
     }
     XmlNode commandNode = resultNode.FirstChild("Command");
     if(!commandNode.IsNull())
     {
       m_command = Aws::Utils::Xml::DecodeEscapedXmlText(commandNode.GetText());
       m_commandHasBeenSet = true;
+       m_commandHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RecommendedActionTypeMapper::GetRecommendedActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RecommendedActionTypeMapper::GetRecommendedActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
   }
 

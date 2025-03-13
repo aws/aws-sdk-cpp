@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateComponentResult::UpdateComponentResult()
-{
-}
-
 UpdateComponentResult::UpdateComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateComponentResult& UpdateComponentResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("component"))
   {
     m_component = jsonValue.GetObject("component");
-
+    m_componentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

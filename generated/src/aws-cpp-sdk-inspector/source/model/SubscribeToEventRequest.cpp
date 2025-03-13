@@ -12,14 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubscribeToEventRequest::SubscribeToEventRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_event(InspectorEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_topicArnHasBeenSet(false)
-{
-}
-
 Aws::String SubscribeToEventRequest::SerializePayload() const
 {
   JsonValue payload;

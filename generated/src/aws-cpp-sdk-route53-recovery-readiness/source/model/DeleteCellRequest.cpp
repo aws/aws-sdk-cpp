@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCellRequest::DeleteCellRequest() : 
-    m_cellNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCellRequest::SerializePayload() const
 {
   return {};

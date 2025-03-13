@@ -32,7 +32,7 @@ namespace Model
   class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Whether to create the Docker volume automatically if it does not already
      * exist.</p>
      */
-    inline bool GetAutoprovision() const{ return m_autoprovision; }
+    inline bool GetAutoprovision() const { return m_autoprovision; }
     inline bool AutoprovisionHasBeenSet() const { return m_autoprovisionHasBeenSet; }
     inline void SetAutoprovision(bool value) { m_autoprovisionHasBeenSet = true; m_autoprovision = value; }
     inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithAutoprovision(bool value) { SetAutoprovision(value); return *this;}
@@ -53,52 +53,44 @@ namespace Model
     /**
      * <p>The Docker volume driver to use.</p>
      */
-    inline const Aws::String& GetDriver() const{ return m_driver; }
+    inline const Aws::String& GetDriver() const { return m_driver; }
     inline bool DriverHasBeenSet() const { return m_driverHasBeenSet; }
-    inline void SetDriver(const Aws::String& value) { m_driverHasBeenSet = true; m_driver = value; }
-    inline void SetDriver(Aws::String&& value) { m_driverHasBeenSet = true; m_driver = std::move(value); }
-    inline void SetDriver(const char* value) { m_driverHasBeenSet = true; m_driver.assign(value); }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriver(const Aws::String& value) { SetDriver(value); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriver(Aws::String&& value) { SetDriver(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriver(const char* value) { SetDriver(value); return *this;}
+    template<typename DriverT = Aws::String>
+    void SetDriver(DriverT&& value) { m_driverHasBeenSet = true; m_driver = std::forward<DriverT>(value); }
+    template<typename DriverT = Aws::String>
+    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriver(DriverT&& value) { SetDriver(std::forward<DriverT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map of Docker driver-specific options that are passed through.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDriverOpts() const{ return m_driverOpts; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDriverOpts() const { return m_driverOpts; }
     inline bool DriverOptsHasBeenSet() const { return m_driverOptsHasBeenSet; }
-    inline void SetDriverOpts(const Aws::Map<Aws::String, Aws::String>& value) { m_driverOptsHasBeenSet = true; m_driverOpts = value; }
-    inline void SetDriverOpts(Aws::Map<Aws::String, Aws::String>&& value) { m_driverOptsHasBeenSet = true; m_driverOpts = std::move(value); }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriverOpts(const Aws::Map<Aws::String, Aws::String>& value) { SetDriverOpts(value); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriverOpts(Aws::Map<Aws::String, Aws::String>&& value) { SetDriverOpts(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(const Aws::String& key, const Aws::String& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, value); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(Aws::String&& key, const Aws::String& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::move(key), value); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(const Aws::String& key, Aws::String&& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(Aws::String&& key, Aws::String&& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(const char* key, Aws::String&& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(Aws::String&& key, const char* value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::move(key), value); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(const char* key, const char* value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, value); return *this; }
+    template<typename DriverOptsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDriverOpts(DriverOptsT&& value) { m_driverOptsHasBeenSet = true; m_driverOpts = std::forward<DriverOptsT>(value); }
+    template<typename DriverOptsT = Aws::Map<Aws::String, Aws::String>>
+    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithDriverOpts(DriverOptsT&& value) { SetDriverOpts(std::forward<DriverOptsT>(value)); return *this;}
+    template<typename DriverOptsKeyT = Aws::String, typename DriverOptsValueT = Aws::String>
+    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddDriverOpts(DriverOptsKeyT&& key, DriverOptsValueT&& value) {
+      m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::forward<DriverOptsKeyT>(key), std::forward<DriverOptsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Custom metadata to add to the Docker volume.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsKeyT = Aws::String, typename LabelsValueT = Aws::String>
+    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& AddLabels(LabelsKeyT&& key, LabelsValueT&& value) {
+      m_labelsHasBeenSet = true; m_labels.emplace(std::forward<LabelsKeyT>(key), std::forward<LabelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -108,18 +100,16 @@ namespace Model
      * destroyed when the task stops. Docker volumes that are shared persist after the
      * task stops. Valid values are <code>shared</code> or <code>task</code>.</p>
      */
-    inline const Aws::String& GetScope() const{ return m_scope; }
+    inline const Aws::String& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(const Aws::String& value) { SetScope(value); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
-    inline AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(const char* value) { SetScope(value); return *this;}
+    template<typename ScopeT = Aws::String>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = Aws::String>
+    AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_autoprovision;
+    bool m_autoprovision{false};
     bool m_autoprovisionHasBeenSet = false;
 
     Aws::String m_driver;

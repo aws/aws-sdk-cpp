@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGroupResult::DescribeGroupResult() : 
-    m_state(EntityState::NOT_SET),
-    m_hiddenFromGlobalAddressList(false)
-{
-}
-
 DescribeGroupResult::DescribeGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeGroupResult()
 {
   *this = result;
 }
@@ -35,51 +28,45 @@ DescribeGroupResult& DescribeGroupResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
+    m_groupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
+    m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EntityStateMapper::GetEntityStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledDate"))
   {
     m_enabledDate = jsonValue.GetDouble("EnabledDate");
-
+    m_enabledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledDate"))
   {
     m_disabledDate = jsonValue.GetDouble("DisabledDate");
-
+    m_disabledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiddenFromGlobalAddressList"))
   {
     m_hiddenFromGlobalAddressList = jsonValue.GetBool("HiddenFromGlobalAddressList");
-
+    m_hiddenFromGlobalAddressListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesDataSourceFreeTrial::KubernetesDataSourceFreeTrial() : 
-    m_auditLogsHasBeenSet(false)
-{
-}
-
 KubernetesDataSourceFreeTrial::KubernetesDataSourceFreeTrial(JsonView jsonValue)
-  : KubernetesDataSourceFreeTrial()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KubernetesDataSourceFreeTrial& KubernetesDataSourceFreeTrial::operator =(JsonVie
   if(jsonValue.ValueExists("auditLogs"))
   {
     m_auditLogs = jsonValue.GetObject("auditLogs");
-
     m_auditLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

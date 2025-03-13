@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ConversionTask::ConversionTask() : 
-    m_conversionTaskIdHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_importInstanceHasBeenSet(false),
-    m_importVolumeHasBeenSet(false),
-    m_state(ConversionTaskState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ConversionTask::ConversionTask(const XmlNode& xmlNode)
-  : ConversionTask()
 {
   *this = xmlNode;
 }
@@ -49,48 +36,55 @@ ConversionTask& ConversionTask::operator =(const XmlNode& xmlNode)
     {
       m_conversionTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(conversionTaskIdNode.GetText());
       m_conversionTaskIdHasBeenSet = true;
+       m_conversionTaskIdHasBeenSet = true;
     }
     XmlNode expirationTimeNode = resultNode.FirstChild("expirationTime");
     if(!expirationTimeNode.IsNull())
     {
       m_expirationTime = Aws::Utils::Xml::DecodeEscapedXmlText(expirationTimeNode.GetText());
       m_expirationTimeHasBeenSet = true;
+       m_expirationTimeHasBeenSet = true;
     }
     XmlNode importInstanceNode = resultNode.FirstChild("importInstance");
     if(!importInstanceNode.IsNull())
     {
       m_importInstance = importInstanceNode;
       m_importInstanceHasBeenSet = true;
+       m_importInstanceHasBeenSet = true;
     }
     XmlNode importVolumeNode = resultNode.FirstChild("importVolume");
     if(!importVolumeNode.IsNull())
     {
       m_importVolume = importVolumeNode;
       m_importVolumeHasBeenSet = true;
+       m_importVolumeHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ConversionTaskStateMapper::GetConversionTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ConversionTaskStateMapper::GetConversionTaskStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

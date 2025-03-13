@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetVoiceConnectorOriginationResult::GetVoiceConnectorOriginationResult()
-{
-}
-
 GetVoiceConnectorOriginationResult::GetVoiceConnectorOriginationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetVoiceConnectorOriginationResult& GetVoiceConnectorOriginationResult::operator
   if(jsonValue.ValueExists("Origination"))
   {
     m_origination = jsonValue.GetObject("Origination");
-
+    m_originationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

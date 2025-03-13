@@ -28,7 +28,7 @@ namespace Model
   class AddProfileKeyResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API AddProfileKeyResult();
+    AWS_CUSTOMERPROFILES_API AddProfileKeyResult() = default;
     AWS_CUSTOMERPROFILES_API AddProfileKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API AddProfileKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,46 +37,44 @@ namespace Model
     /**
      * <p>A searchable identifier of a customer profile.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
-    inline void SetKeyName(const Aws::String& value) { m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyName.assign(value); }
-    inline AddProfileKeyResult& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline AddProfileKeyResult& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline AddProfileKeyResult& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    AddProfileKeyResult& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of key values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_values = std::move(value); }
-    inline AddProfileKeyResult& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline AddProfileKeyResult& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline AddProfileKeyResult& AddValues(const Aws::String& value) { m_values.push_back(value); return *this; }
-    inline AddProfileKeyResult& AddValues(Aws::String&& value) { m_values.push_back(std::move(value)); return *this; }
-    inline AddProfileKeyResult& AddValues(const char* value) { m_values.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    AddProfileKeyResult& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    AddProfileKeyResult& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddProfileKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddProfileKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddProfileKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddProfileKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_keyName;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

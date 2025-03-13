@@ -21,7 +21,7 @@ namespace Model
   class ExecuteGremlinExplainQueryRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API ExecuteGremlinExplainQueryRequest();
+    AWS_NEPTUNEDATA_API ExecuteGremlinExplainQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Gremlin explain query string.</p>
      */
-    inline const Aws::String& GetGremlinQuery() const{ return m_gremlinQuery; }
+    inline const Aws::String& GetGremlinQuery() const { return m_gremlinQuery; }
     inline bool GremlinQueryHasBeenSet() const { return m_gremlinQueryHasBeenSet; }
-    inline void SetGremlinQuery(const Aws::String& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = value; }
-    inline void SetGremlinQuery(Aws::String&& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = std::move(value); }
-    inline void SetGremlinQuery(const char* value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery.assign(value); }
-    inline ExecuteGremlinExplainQueryRequest& WithGremlinQuery(const Aws::String& value) { SetGremlinQuery(value); return *this;}
-    inline ExecuteGremlinExplainQueryRequest& WithGremlinQuery(Aws::String&& value) { SetGremlinQuery(std::move(value)); return *this;}
-    inline ExecuteGremlinExplainQueryRequest& WithGremlinQuery(const char* value) { SetGremlinQuery(value); return *this;}
+    template<typename GremlinQueryT = Aws::String>
+    void SetGremlinQuery(GremlinQueryT&& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = std::forward<GremlinQueryT>(value); }
+    template<typename GremlinQueryT = Aws::String>
+    ExecuteGremlinExplainQueryRequest& WithGremlinQuery(GremlinQueryT&& value) { SetGremlinQuery(std::forward<GremlinQueryT>(value)); return *this;}
     ///@}
   private:
 

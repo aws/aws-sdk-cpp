@@ -12,16 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCalculationExecutionsRequest::ListCalculationExecutionsRequest() : 
-    m_sessionIdHasBeenSet(false),
-    m_stateFilter(CalculationExecutionState::NOT_SET),
-    m_stateFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCalculationExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

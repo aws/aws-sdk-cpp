@@ -18,18 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentTemplateTarget::ExperimentTemplateTarget() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_selectionModeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 ExperimentTemplateTarget::ExperimentTemplateTarget(JsonView jsonValue)
-  : ExperimentTemplateTarget()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ ExperimentTemplateTarget& ExperimentTemplateTarget::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArns"))
   {
     Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
@@ -52,7 +39,6 @@ ExperimentTemplateTarget& ExperimentTemplateTarget::operator =(JsonView jsonValu
     }
     m_resourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTags"))
   {
     Aws::Map<Aws::String, JsonView> resourceTagsJsonMap = jsonValue.GetObject("resourceTags").GetAllObjects();
@@ -62,7 +48,6 @@ ExperimentTemplateTarget& ExperimentTemplateTarget::operator =(JsonView jsonValu
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filters"))
   {
     Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
@@ -72,14 +57,11 @@ ExperimentTemplateTarget& ExperimentTemplateTarget::operator =(JsonView jsonValu
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectionMode"))
   {
     m_selectionMode = jsonValue.GetString("selectionMode");
-
     m_selectionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -89,7 +71,6 @@ ExperimentTemplateTarget& ExperimentTemplateTarget::operator =(JsonView jsonValu
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

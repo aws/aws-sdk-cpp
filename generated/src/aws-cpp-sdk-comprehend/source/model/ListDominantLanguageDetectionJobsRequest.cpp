@@ -12,14 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDominantLanguageDetectionJobsRequest::ListDominantLanguageDetectionJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDominantLanguageDetectionJobsRequest::SerializePayload() const
 {
   JsonValue payload;

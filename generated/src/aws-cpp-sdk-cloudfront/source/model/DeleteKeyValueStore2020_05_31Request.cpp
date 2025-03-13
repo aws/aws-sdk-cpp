@@ -15,11 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteKeyValueStore2020_05_31Request::DeleteKeyValueStore2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String DeleteKeyValueStore2020_05_31Request::SerializePayload() const
 {

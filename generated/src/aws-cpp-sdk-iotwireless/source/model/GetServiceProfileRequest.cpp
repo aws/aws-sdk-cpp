@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceProfileRequest::GetServiceProfileRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceProfileRequest::SerializePayload() const
 {
   return {};

@@ -12,18 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DiscoverInstancesRequest::DiscoverInstancesRequest() : 
-    m_namespaceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_queryParametersHasBeenSet(false),
-    m_optionalParametersHasBeenSet(false),
-    m_healthStatus(HealthStatusFilter::NOT_SET),
-    m_healthStatusHasBeenSet(false)
-{
-}
-
 Aws::String DiscoverInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

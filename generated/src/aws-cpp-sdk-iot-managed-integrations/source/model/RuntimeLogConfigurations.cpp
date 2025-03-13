@@ -18,27 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-RuntimeLogConfigurations::RuntimeLogConfigurations() : 
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_logFlushLevel(LogLevel::NOT_SET),
-    m_logFlushLevelHasBeenSet(false),
-    m_localStoreLocationHasBeenSet(false),
-    m_localStoreFileRotationMaxFiles(0),
-    m_localStoreFileRotationMaxFilesHasBeenSet(false),
-    m_localStoreFileRotationMaxBytes(0),
-    m_localStoreFileRotationMaxBytesHasBeenSet(false),
-    m_uploadLog(false),
-    m_uploadLogHasBeenSet(false),
-    m_uploadPeriodMinutes(0),
-    m_uploadPeriodMinutesHasBeenSet(false),
-    m_deleteLocalStoreAfterUpload(false),
-    m_deleteLocalStoreAfterUploadHasBeenSet(false)
-{
-}
-
 RuntimeLogConfigurations::RuntimeLogConfigurations(JsonView jsonValue)
-  : RuntimeLogConfigurations()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ RuntimeLogConfigurations& RuntimeLogConfigurations::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogFlushLevel"))
   {
     m_logFlushLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogFlushLevel"));
-
     m_logFlushLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalStoreLocation"))
   {
     m_localStoreLocation = jsonValue.GetString("LocalStoreLocation");
-
     m_localStoreLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalStoreFileRotationMaxFiles"))
   {
     m_localStoreFileRotationMaxFiles = jsonValue.GetInteger("LocalStoreFileRotationMaxFiles");
-
     m_localStoreFileRotationMaxFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalStoreFileRotationMaxBytes"))
   {
     m_localStoreFileRotationMaxBytes = jsonValue.GetInteger("LocalStoreFileRotationMaxBytes");
-
     m_localStoreFileRotationMaxBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploadLog"))
   {
     m_uploadLog = jsonValue.GetBool("UploadLog");
-
     m_uploadLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UploadPeriodMinutes"))
   {
     m_uploadPeriodMinutes = jsonValue.GetInteger("UploadPeriodMinutes");
-
     m_uploadPeriodMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteLocalStoreAfterUpload"))
   {
     m_deleteLocalStoreAfterUpload = jsonValue.GetBool("DeleteLocalStoreAfterUpload");
-
     m_deleteLocalStoreAfterUploadHasBeenSet = true;
   }
-
   return *this;
 }
 

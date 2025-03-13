@@ -18,13 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-SqsParameters::SqsParameters() : 
-    m_messageGroupIdHasBeenSet(false)
-{
-}
-
 SqsParameters::SqsParameters(JsonView jsonValue)
-  : SqsParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SqsParameters& SqsParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageGroupId"))
   {
     m_messageGroupId = jsonValue.GetString("MessageGroupId");
-
     m_messageGroupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

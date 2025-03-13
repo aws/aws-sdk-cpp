@@ -12,11 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteClientCertificateRequest::DeleteClientCertificateRequest() : 
-    m_clientCertificateIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClientCertificateRequest::SerializePayload() const
 {
   return {};

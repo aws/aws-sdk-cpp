@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MemoryMiB::MemoryMiB() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 MemoryMiB::MemoryMiB(const XmlNode& xmlNode)
-  : MemoryMiB()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ MemoryMiB& MemoryMiB::operator =(const XmlNode& xmlNode)
     {
       m_min = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
+       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("max");
     if(!maxNode.IsNull())
     {
       m_max = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

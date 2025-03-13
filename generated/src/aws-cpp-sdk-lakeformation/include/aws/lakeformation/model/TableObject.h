@@ -31,7 +31,7 @@ namespace Model
   class TableObject
   {
   public:
-    AWS_LAKEFORMATION_API TableObject();
+    AWS_LAKEFORMATION_API TableObject() = default;
     AWS_LAKEFORMATION_API TableObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API TableObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the object.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline TableObject& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline TableObject& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline TableObject& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    TableObject& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,21 +54,19 @@ namespace Model
      * <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code>
      * for validation and used to identify changes to the underlying data.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline TableObject& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline TableObject& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline TableObject& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    TableObject& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the Amazon S3 object in bytes.</p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline TableObject& WithSize(long long value) { SetSize(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_eTag;
     bool m_eTagHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
   };
 

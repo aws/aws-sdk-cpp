@@ -33,7 +33,7 @@ namespace Model
   class AddAttachmentsToSetResult
   {
   public:
-    AWS_SUPPORT_API AddAttachmentsToSetResult();
+    AWS_SUPPORT_API AddAttachmentsToSetResult() = default;
     AWS_SUPPORT_API AddAttachmentsToSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API AddAttachmentsToSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,42 @@ namespace Model
      * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
-    inline const Aws::String& GetAttachmentSetId() const{ return m_attachmentSetId; }
-    inline void SetAttachmentSetId(const Aws::String& value) { m_attachmentSetId = value; }
-    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetId = std::move(value); }
-    inline void SetAttachmentSetId(const char* value) { m_attachmentSetId.assign(value); }
-    inline AddAttachmentsToSetResult& WithAttachmentSetId(const Aws::String& value) { SetAttachmentSetId(value); return *this;}
-    inline AddAttachmentsToSetResult& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(std::move(value)); return *this;}
-    inline AddAttachmentsToSetResult& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
+    inline const Aws::String& GetAttachmentSetId() const { return m_attachmentSetId; }
+    template<typename AttachmentSetIdT = Aws::String>
+    void SetAttachmentSetId(AttachmentSetIdT&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = std::forward<AttachmentSetIdT>(value); }
+    template<typename AttachmentSetIdT = Aws::String>
+    AddAttachmentsToSetResult& WithAttachmentSetId(AttachmentSetIdT&& value) { SetAttachmentSetId(std::forward<AttachmentSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time and date when the attachment set expires.</p>
      */
-    inline const Aws::String& GetExpiryTime() const{ return m_expiryTime; }
-    inline void SetExpiryTime(const Aws::String& value) { m_expiryTime = value; }
-    inline void SetExpiryTime(Aws::String&& value) { m_expiryTime = std::move(value); }
-    inline void SetExpiryTime(const char* value) { m_expiryTime.assign(value); }
-    inline AddAttachmentsToSetResult& WithExpiryTime(const Aws::String& value) { SetExpiryTime(value); return *this;}
-    inline AddAttachmentsToSetResult& WithExpiryTime(Aws::String&& value) { SetExpiryTime(std::move(value)); return *this;}
-    inline AddAttachmentsToSetResult& WithExpiryTime(const char* value) { SetExpiryTime(value); return *this;}
+    inline const Aws::String& GetExpiryTime() const { return m_expiryTime; }
+    template<typename ExpiryTimeT = Aws::String>
+    void SetExpiryTime(ExpiryTimeT&& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = std::forward<ExpiryTimeT>(value); }
+    template<typename ExpiryTimeT = Aws::String>
+    AddAttachmentsToSetResult& WithExpiryTime(ExpiryTimeT&& value) { SetExpiryTime(std::forward<ExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddAttachmentsToSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddAttachmentsToSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddAttachmentsToSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddAttachmentsToSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attachmentSetId;
+    bool m_attachmentSetIdHasBeenSet = false;
 
     Aws::String m_expiryTime;
+    bool m_expiryTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

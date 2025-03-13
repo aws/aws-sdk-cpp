@@ -12,14 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLensShareRequest::CreateLensShareRequest() : 
-    m_lensAliasHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateLensShareRequest::SerializePayload() const
 {
   JsonValue payload;

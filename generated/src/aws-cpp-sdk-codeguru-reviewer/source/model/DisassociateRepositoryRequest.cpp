@@ -12,11 +12,6 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateRepositoryRequest::DisassociateRepositoryRequest() : 
-    m_associationArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateRepositoryRequest::SerializePayload() const
 {
   return {};

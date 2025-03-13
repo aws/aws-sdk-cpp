@@ -30,7 +30,7 @@ namespace Model
   class RefreshTokenGrant
   {
   public:
-    AWS_SSOADMIN_API RefreshTokenGrant();
+    AWS_SSOADMIN_API RefreshTokenGrant() = default;
     AWS_SSOADMIN_API RefreshTokenGrant(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API RefreshTokenGrant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;

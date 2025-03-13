@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListQuickConnectsRequest::ListQuickConnectsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_quickConnectTypesHasBeenSet(false)
-{
-}
-
 Aws::String ListQuickConnectsRequest::SerializePayload() const
 {
   return {};

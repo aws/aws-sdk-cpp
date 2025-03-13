@@ -22,7 +22,7 @@ namespace Model
   class DescribeVolumesRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeVolumesRequest();
+    AWS_OPSWORKS_API DescribeVolumesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code>
      * returns descriptions of the volumes associated with the specified instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DescribeVolumesRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DescribeVolumesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DescribeVolumesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DescribeVolumesRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>A stack ID. The action describes the stack's registered Amazon EBS
      * volumes.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline DescribeVolumesRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline DescribeVolumesRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline DescribeVolumesRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    DescribeVolumesRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * returns descriptions of the volumes associated with the specified RAID
      * array.</p>
      */
-    inline const Aws::String& GetRaidArrayId() const{ return m_raidArrayId; }
+    inline const Aws::String& GetRaidArrayId() const { return m_raidArrayId; }
     inline bool RaidArrayIdHasBeenSet() const { return m_raidArrayIdHasBeenSet; }
-    inline void SetRaidArrayId(const Aws::String& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = value; }
-    inline void SetRaidArrayId(Aws::String&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = std::move(value); }
-    inline void SetRaidArrayId(const char* value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId.assign(value); }
-    inline DescribeVolumesRequest& WithRaidArrayId(const Aws::String& value) { SetRaidArrayId(value); return *this;}
-    inline DescribeVolumesRequest& WithRaidArrayId(Aws::String&& value) { SetRaidArrayId(std::move(value)); return *this;}
-    inline DescribeVolumesRequest& WithRaidArrayId(const char* value) { SetRaidArrayId(value); return *this;}
+    template<typename RaidArrayIdT = Aws::String>
+    void SetRaidArrayId(RaidArrayIdT&& value) { m_raidArrayIdHasBeenSet = true; m_raidArrayId = std::forward<RaidArrayIdT>(value); }
+    template<typename RaidArrayIdT = Aws::String>
+    DescribeVolumesRequest& WithRaidArrayId(RaidArrayIdT&& value) { SetRaidArrayId(std::forward<RaidArrayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,15 +81,14 @@ namespace Model
      * <code>DescribeVolumes</code> returns descriptions of the specified volumes.
      * Otherwise, it returns a description of every volume.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
+    inline const Aws::Vector<Aws::String>& GetVolumeIds() const { return m_volumeIds; }
     inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
-    inline void SetVolumeIds(const Aws::Vector<Aws::String>& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = value; }
-    inline void SetVolumeIds(Aws::Vector<Aws::String>&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::move(value); }
-    inline DescribeVolumesRequest& WithVolumeIds(const Aws::Vector<Aws::String>& value) { SetVolumeIds(value); return *this;}
-    inline DescribeVolumesRequest& WithVolumeIds(Aws::Vector<Aws::String>&& value) { SetVolumeIds(std::move(value)); return *this;}
-    inline DescribeVolumesRequest& AddVolumeIds(const Aws::String& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
-    inline DescribeVolumesRequest& AddVolumeIds(Aws::String&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(std::move(value)); return *this; }
-    inline DescribeVolumesRequest& AddVolumeIds(const char* value) { m_volumeIdsHasBeenSet = true; m_volumeIds.push_back(value); return *this; }
+    template<typename VolumeIdsT = Aws::Vector<Aws::String>>
+    void SetVolumeIds(VolumeIdsT&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds = std::forward<VolumeIdsT>(value); }
+    template<typename VolumeIdsT = Aws::Vector<Aws::String>>
+    DescribeVolumesRequest& WithVolumeIds(VolumeIdsT&& value) { SetVolumeIds(std::forward<VolumeIdsT>(value)); return *this;}
+    template<typename VolumeIdsT = Aws::String>
+    DescribeVolumesRequest& AddVolumeIds(VolumeIdsT&& value) { m_volumeIdsHasBeenSet = true; m_volumeIds.emplace_back(std::forward<VolumeIdsT>(value)); return *this; }
     ///@}
   private:
 

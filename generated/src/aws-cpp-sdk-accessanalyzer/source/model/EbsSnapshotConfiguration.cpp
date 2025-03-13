@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-EbsSnapshotConfiguration::EbsSnapshotConfiguration() : 
-    m_userIdsHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 EbsSnapshotConfiguration::EbsSnapshotConfiguration(JsonView jsonValue)
-  : EbsSnapshotConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EbsSnapshotConfiguration& EbsSnapshotConfiguration::operator =(JsonView jsonValu
     }
     m_userIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
@@ -52,14 +43,11 @@ EbsSnapshotConfiguration& EbsSnapshotConfiguration::operator =(JsonView jsonValu
     }
     m_groupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

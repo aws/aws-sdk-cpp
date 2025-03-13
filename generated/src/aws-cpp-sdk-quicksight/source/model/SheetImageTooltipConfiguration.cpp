@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetImageTooltipConfiguration::SheetImageTooltipConfiguration() : 
-    m_tooltipTextHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 SheetImageTooltipConfiguration::SheetImageTooltipConfiguration(JsonView jsonValue)
-  : SheetImageTooltipConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SheetImageTooltipConfiguration& SheetImageTooltipConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("TooltipText"))
   {
     m_tooltipText = jsonValue.GetObject("TooltipText");
-
     m_tooltipTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

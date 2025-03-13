@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-SearchTransitGatewayRoutesRequest::SearchTransitGatewayRoutesRequest() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String SearchTransitGatewayRoutesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

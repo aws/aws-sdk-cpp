@@ -18,15 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetStatusHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(JsonView jsonValue)
-  : Subnet()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Subnet& Subnet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SubnetIdentifier"))
   {
     m_subnetIdentifier = jsonValue.GetString("SubnetIdentifier");
-
     m_subnetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetObject("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetStatus"))
   {
     m_subnetStatus = jsonValue.GetString("SubnetStatus");
-
     m_subnetStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

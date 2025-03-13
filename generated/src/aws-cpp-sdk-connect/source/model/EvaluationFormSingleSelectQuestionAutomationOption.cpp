@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormSingleSelectQuestionAutomationOption::EvaluationFormSingleSelectQuestionAutomationOption() : 
-    m_ruleCategoryHasBeenSet(false)
-{
-}
-
 EvaluationFormSingleSelectQuestionAutomationOption::EvaluationFormSingleSelectQuestionAutomationOption(JsonView jsonValue)
-  : EvaluationFormSingleSelectQuestionAutomationOption()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationFormSingleSelectQuestionAutomationOption& EvaluationFormSingleSelectQu
   if(jsonValue.ValueExists("RuleCategory"))
   {
     m_ruleCategory = jsonValue.GetObject("RuleCategory");
-
     m_ruleCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

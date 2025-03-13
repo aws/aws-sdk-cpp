@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSnowballUsageResult::GetSnowballUsageResult() : 
-    m_snowballLimit(0),
-    m_snowballsInUse(0)
-{
-}
-
 GetSnowballUsageResult::GetSnowballUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSnowballUsageResult()
 {
   *this = result;
 }
@@ -35,21 +28,20 @@ GetSnowballUsageResult& GetSnowballUsageResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("SnowballLimit"))
   {
     m_snowballLimit = jsonValue.GetInteger("SnowballLimit");
-
+    m_snowballLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowballsInUse"))
   {
     m_snowballsInUse = jsonValue.GetInteger("SnowballsInUse");
-
+    m_snowballsInUseHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

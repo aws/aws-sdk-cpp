@@ -18,20 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-Capacity::Capacity() : 
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_provisioned(0),
-    m_provisionedHasBeenSet(false),
-    m_logicalUsed(0),
-    m_logicalUsedHasBeenSet(false),
-    m_clusterCloudStorageUsed(0),
-    m_clusterCloudStorageUsedHasBeenSet(false)
-{
-}
-
 Capacity::Capacity(JsonView jsonValue)
-  : Capacity()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Capacity& Capacity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Used"))
   {
     m_used = jsonValue.GetInt64("Used");
-
     m_usedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Provisioned"))
   {
     m_provisioned = jsonValue.GetInt64("Provisioned");
-
     m_provisionedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogicalUsed"))
   {
     m_logicalUsed = jsonValue.GetInt64("LogicalUsed");
-
     m_logicalUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterCloudStorageUsed"))
   {
     m_clusterCloudStorageUsed = jsonValue.GetInt64("ClusterCloudStorageUsed");
-
     m_clusterCloudStorageUsedHasBeenSet = true;
   }
-
   return *this;
 }
 

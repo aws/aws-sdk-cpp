@@ -12,13 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSecurityPoliciesRequest::ListSecurityPoliciesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSecurityPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

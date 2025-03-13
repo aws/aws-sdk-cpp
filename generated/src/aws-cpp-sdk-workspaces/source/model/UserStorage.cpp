@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-UserStorage::UserStorage() : 
-    m_capacityHasBeenSet(false)
-{
-}
-
 UserStorage::UserStorage(JsonView jsonValue)
-  : UserStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserStorage& UserStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetString("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxScalingGroupConfiguration::KxScalingGroupConfiguration() : 
-    m_scalingGroupNameHasBeenSet(false),
-    m_memoryLimit(0),
-    m_memoryLimitHasBeenSet(false),
-    m_memoryReservation(0),
-    m_memoryReservationHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_cpu(0.0),
-    m_cpuHasBeenSet(false)
-{
-}
-
 KxScalingGroupConfiguration::KxScalingGroupConfiguration(JsonView jsonValue)
-  : KxScalingGroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ KxScalingGroupConfiguration& KxScalingGroupConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("scalingGroupName"))
   {
     m_scalingGroupName = jsonValue.GetString("scalingGroupName");
-
     m_scalingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryLimit"))
   {
     m_memoryLimit = jsonValue.GetInteger("memoryLimit");
-
     m_memoryLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryReservation"))
   {
     m_memoryReservation = jsonValue.GetInteger("memoryReservation");
-
     m_memoryReservationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeCount"))
   {
     m_nodeCount = jsonValue.GetInteger("nodeCount");
-
     m_nodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetDouble("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   return *this;
 }
 

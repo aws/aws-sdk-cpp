@@ -18,15 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-AssociateResourceError::AssociateResourceError() : 
-    m_messageHasBeenSet(false),
-    m_reason(AssociateResourceErrorReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 AssociateResourceError::AssociateResourceError(JsonView jsonValue)
-  : AssociateResourceError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssociateResourceError& AssociateResourceError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = AssociateResourceErrorReasonMapper::GetAssociateResourceErrorReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

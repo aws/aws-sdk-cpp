@@ -19,7 +19,7 @@ namespace Model
   class DescribeReportCreationRequest : public ResourceGroupsTaggingAPIRequest
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationRequest();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

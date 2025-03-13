@@ -34,7 +34,7 @@ namespace Model
   class ResponseHeadersPolicyCustomHeadersConfig
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeadersConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeadersConfig() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The number of HTTP response headers in the list.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline ResponseHeadersPolicyCustomHeadersConfig& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -55,18 +55,18 @@ namespace Model
     /**
      * <p>The list of HTTP response headers and their values.</p>
      */
-    inline const Aws::Vector<ResponseHeadersPolicyCustomHeader>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<ResponseHeadersPolicyCustomHeader>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<ResponseHeadersPolicyCustomHeader>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<ResponseHeadersPolicyCustomHeader>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline ResponseHeadersPolicyCustomHeadersConfig& WithItems(const Aws::Vector<ResponseHeadersPolicyCustomHeader>& value) { SetItems(value); return *this;}
-    inline ResponseHeadersPolicyCustomHeadersConfig& WithItems(Aws::Vector<ResponseHeadersPolicyCustomHeader>&& value) { SetItems(std::move(value)); return *this;}
-    inline ResponseHeadersPolicyCustomHeadersConfig& AddItems(const ResponseHeadersPolicyCustomHeader& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline ResponseHeadersPolicyCustomHeadersConfig& AddItems(ResponseHeadersPolicyCustomHeader&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<ResponseHeadersPolicyCustomHeader>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ResponseHeadersPolicyCustomHeader>>
+    ResponseHeadersPolicyCustomHeadersConfig& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ResponseHeadersPolicyCustomHeader>
+    ResponseHeadersPolicyCustomHeadersConfig& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<ResponseHeadersPolicyCustomHeader> m_items;

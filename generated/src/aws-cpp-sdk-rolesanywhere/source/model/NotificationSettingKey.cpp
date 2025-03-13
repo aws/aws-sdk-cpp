@@ -18,16 +18,7 @@ namespace RolesAnywhere
 namespace Model
 {
 
-NotificationSettingKey::NotificationSettingKey() : 
-    m_channel(NotificationChannel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_event(NotificationEvent::NOT_SET),
-    m_eventHasBeenSet(false)
-{
-}
-
 NotificationSettingKey::NotificationSettingKey(JsonView jsonValue)
-  : NotificationSettingKey()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ NotificationSettingKey& NotificationSettingKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("event"))
   {
     m_event = NotificationEventMapper::GetNotificationEventForName(jsonValue.GetString("event"));
-
     m_eventHasBeenSet = true;
   }
-
   return *this;
 }
 

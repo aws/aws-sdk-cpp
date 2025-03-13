@@ -12,13 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDataMigrationRequest::StartDataMigrationRequest() : 
-    m_dataMigrationIdentifierHasBeenSet(false),
-    m_startType(StartReplicationMigrationTypeValue::NOT_SET),
-    m_startTypeHasBeenSet(false)
-{
-}
-
 Aws::String StartDataMigrationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTrustedTokenIssuerResult::CreateTrustedTokenIssuerResult()
-{
-}
-
 CreateTrustedTokenIssuerResult::CreateTrustedTokenIssuerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateTrustedTokenIssuerResult& CreateTrustedTokenIssuerResult::operator =(const
   if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
   {
     m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
-
+    m_trustedTokenIssuerArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

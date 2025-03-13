@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCollectionResult::DescribeCollectionResult() : 
-    m_faceCount(0),
-    m_userCount(0)
-{
-}
-
 DescribeCollectionResult::DescribeCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeCollectionResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ DescribeCollectionResult& DescribeCollectionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("FaceCount"))
   {
     m_faceCount = jsonValue.GetInt64("FaceCount");
-
+    m_faceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceModelVersion"))
   {
     m_faceModelVersion = jsonValue.GetString("FaceModelVersion");
-
+    m_faceModelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CollectionARN"))
   {
     m_collectionARN = jsonValue.GetString("CollectionARN");
-
+    m_collectionARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
-
+    m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserCount"))
   {
     m_userCount = jsonValue.GetInt64("UserCount");
-
+    m_userCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

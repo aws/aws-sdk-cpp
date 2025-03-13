@@ -40,7 +40,7 @@ namespace Model
   class DashboardVersionDefinition
   {
   public:
-    AWS_QUICKSIGHT_API DashboardVersionDefinition();
+    AWS_QUICKSIGHT_API DashboardVersionDefinition() = default;
     AWS_QUICKSIGHT_API DashboardVersionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DashboardVersionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,42 +52,42 @@ namespace Model
      * dataset identifiers instead of dataset Amazon Resource Names (ARNs) throughout
      * the dashboard's sub-structures.</p>
      */
-    inline const Aws::Vector<DataSetIdentifierDeclaration>& GetDataSetIdentifierDeclarations() const{ return m_dataSetIdentifierDeclarations; }
+    inline const Aws::Vector<DataSetIdentifierDeclaration>& GetDataSetIdentifierDeclarations() const { return m_dataSetIdentifierDeclarations; }
     inline bool DataSetIdentifierDeclarationsHasBeenSet() const { return m_dataSetIdentifierDeclarationsHasBeenSet; }
-    inline void SetDataSetIdentifierDeclarations(const Aws::Vector<DataSetIdentifierDeclaration>& value) { m_dataSetIdentifierDeclarationsHasBeenSet = true; m_dataSetIdentifierDeclarations = value; }
-    inline void SetDataSetIdentifierDeclarations(Aws::Vector<DataSetIdentifierDeclaration>&& value) { m_dataSetIdentifierDeclarationsHasBeenSet = true; m_dataSetIdentifierDeclarations = std::move(value); }
-    inline DashboardVersionDefinition& WithDataSetIdentifierDeclarations(const Aws::Vector<DataSetIdentifierDeclaration>& value) { SetDataSetIdentifierDeclarations(value); return *this;}
-    inline DashboardVersionDefinition& WithDataSetIdentifierDeclarations(Aws::Vector<DataSetIdentifierDeclaration>&& value) { SetDataSetIdentifierDeclarations(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddDataSetIdentifierDeclarations(const DataSetIdentifierDeclaration& value) { m_dataSetIdentifierDeclarationsHasBeenSet = true; m_dataSetIdentifierDeclarations.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddDataSetIdentifierDeclarations(DataSetIdentifierDeclaration&& value) { m_dataSetIdentifierDeclarationsHasBeenSet = true; m_dataSetIdentifierDeclarations.push_back(std::move(value)); return *this; }
+    template<typename DataSetIdentifierDeclarationsT = Aws::Vector<DataSetIdentifierDeclaration>>
+    void SetDataSetIdentifierDeclarations(DataSetIdentifierDeclarationsT&& value) { m_dataSetIdentifierDeclarationsHasBeenSet = true; m_dataSetIdentifierDeclarations = std::forward<DataSetIdentifierDeclarationsT>(value); }
+    template<typename DataSetIdentifierDeclarationsT = Aws::Vector<DataSetIdentifierDeclaration>>
+    DashboardVersionDefinition& WithDataSetIdentifierDeclarations(DataSetIdentifierDeclarationsT&& value) { SetDataSetIdentifierDeclarations(std::forward<DataSetIdentifierDeclarationsT>(value)); return *this;}
+    template<typename DataSetIdentifierDeclarationsT = DataSetIdentifierDeclaration>
+    DashboardVersionDefinition& AddDataSetIdentifierDeclarations(DataSetIdentifierDeclarationsT&& value) { m_dataSetIdentifierDeclarationsHasBeenSet = true; m_dataSetIdentifierDeclarations.emplace_back(std::forward<DataSetIdentifierDeclarationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of sheet definitions for a dashboard.</p>
      */
-    inline const Aws::Vector<SheetDefinition>& GetSheets() const{ return m_sheets; }
+    inline const Aws::Vector<SheetDefinition>& GetSheets() const { return m_sheets; }
     inline bool SheetsHasBeenSet() const { return m_sheetsHasBeenSet; }
-    inline void SetSheets(const Aws::Vector<SheetDefinition>& value) { m_sheetsHasBeenSet = true; m_sheets = value; }
-    inline void SetSheets(Aws::Vector<SheetDefinition>&& value) { m_sheetsHasBeenSet = true; m_sheets = std::move(value); }
-    inline DashboardVersionDefinition& WithSheets(const Aws::Vector<SheetDefinition>& value) { SetSheets(value); return *this;}
-    inline DashboardVersionDefinition& WithSheets(Aws::Vector<SheetDefinition>&& value) { SetSheets(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddSheets(const SheetDefinition& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddSheets(SheetDefinition&& value) { m_sheetsHasBeenSet = true; m_sheets.push_back(std::move(value)); return *this; }
+    template<typename SheetsT = Aws::Vector<SheetDefinition>>
+    void SetSheets(SheetsT&& value) { m_sheetsHasBeenSet = true; m_sheets = std::forward<SheetsT>(value); }
+    template<typename SheetsT = Aws::Vector<SheetDefinition>>
+    DashboardVersionDefinition& WithSheets(SheetsT&& value) { SetSheets(std::forward<SheetsT>(value)); return *this;}
+    template<typename SheetsT = SheetDefinition>
+    DashboardVersionDefinition& AddSheets(SheetsT&& value) { m_sheetsHasBeenSet = true; m_sheets.emplace_back(std::forward<SheetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of calculated field definitions for the dashboard.</p>
      */
-    inline const Aws::Vector<CalculatedField>& GetCalculatedFields() const{ return m_calculatedFields; }
+    inline const Aws::Vector<CalculatedField>& GetCalculatedFields() const { return m_calculatedFields; }
     inline bool CalculatedFieldsHasBeenSet() const { return m_calculatedFieldsHasBeenSet; }
-    inline void SetCalculatedFields(const Aws::Vector<CalculatedField>& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = value; }
-    inline void SetCalculatedFields(Aws::Vector<CalculatedField>&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = std::move(value); }
-    inline DashboardVersionDefinition& WithCalculatedFields(const Aws::Vector<CalculatedField>& value) { SetCalculatedFields(value); return *this;}
-    inline DashboardVersionDefinition& WithCalculatedFields(Aws::Vector<CalculatedField>&& value) { SetCalculatedFields(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddCalculatedFields(const CalculatedField& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddCalculatedFields(CalculatedField&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.push_back(std::move(value)); return *this; }
+    template<typename CalculatedFieldsT = Aws::Vector<CalculatedField>>
+    void SetCalculatedFields(CalculatedFieldsT&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields = std::forward<CalculatedFieldsT>(value); }
+    template<typename CalculatedFieldsT = Aws::Vector<CalculatedField>>
+    DashboardVersionDefinition& WithCalculatedFields(CalculatedFieldsT&& value) { SetCalculatedFields(std::forward<CalculatedFieldsT>(value)); return *this;}
+    template<typename CalculatedFieldsT = CalculatedField>
+    DashboardVersionDefinition& AddCalculatedFields(CalculatedFieldsT&& value) { m_calculatedFieldsHasBeenSet = true; m_calculatedFields.emplace_back(std::forward<CalculatedFieldsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,14 +98,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
      * in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
-    inline const Aws::Vector<ParameterDeclaration>& GetParameterDeclarations() const{ return m_parameterDeclarations; }
+    inline const Aws::Vector<ParameterDeclaration>& GetParameterDeclarations() const { return m_parameterDeclarations; }
     inline bool ParameterDeclarationsHasBeenSet() const { return m_parameterDeclarationsHasBeenSet; }
-    inline void SetParameterDeclarations(const Aws::Vector<ParameterDeclaration>& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations = value; }
-    inline void SetParameterDeclarations(Aws::Vector<ParameterDeclaration>&& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations = std::move(value); }
-    inline DashboardVersionDefinition& WithParameterDeclarations(const Aws::Vector<ParameterDeclaration>& value) { SetParameterDeclarations(value); return *this;}
-    inline DashboardVersionDefinition& WithParameterDeclarations(Aws::Vector<ParameterDeclaration>&& value) { SetParameterDeclarations(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddParameterDeclarations(const ParameterDeclaration& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddParameterDeclarations(ParameterDeclaration&& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations.push_back(std::move(value)); return *this; }
+    template<typename ParameterDeclarationsT = Aws::Vector<ParameterDeclaration>>
+    void SetParameterDeclarations(ParameterDeclarationsT&& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations = std::forward<ParameterDeclarationsT>(value); }
+    template<typename ParameterDeclarationsT = Aws::Vector<ParameterDeclaration>>
+    DashboardVersionDefinition& WithParameterDeclarations(ParameterDeclarationsT&& value) { SetParameterDeclarations(std::forward<ParameterDeclarationsT>(value)); return *this;}
+    template<typename ParameterDeclarationsT = ParameterDeclaration>
+    DashboardVersionDefinition& AddParameterDeclarations(ParameterDeclarationsT&& value) { m_parameterDeclarationsHasBeenSet = true; m_parameterDeclarations.emplace_back(std::forward<ParameterDeclarationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,14 +114,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering
      * Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
-    inline const Aws::Vector<FilterGroup>& GetFilterGroups() const{ return m_filterGroups; }
+    inline const Aws::Vector<FilterGroup>& GetFilterGroups() const { return m_filterGroups; }
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
-    inline void SetFilterGroups(const Aws::Vector<FilterGroup>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
-    inline void SetFilterGroups(Aws::Vector<FilterGroup>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
-    inline DashboardVersionDefinition& WithFilterGroups(const Aws::Vector<FilterGroup>& value) { SetFilterGroups(value); return *this;}
-    inline DashboardVersionDefinition& WithFilterGroups(Aws::Vector<FilterGroup>&& value) { SetFilterGroups(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddFilterGroups(const FilterGroup& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddFilterGroups(FilterGroup&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
+    template<typename FilterGroupsT = Aws::Vector<FilterGroup>>
+    void SetFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::forward<FilterGroupsT>(value); }
+    template<typename FilterGroupsT = Aws::Vector<FilterGroup>>
+    DashboardVersionDefinition& WithFilterGroups(FilterGroupsT&& value) { SetFilterGroups(std::forward<FilterGroupsT>(value)); return *this;}
+    template<typename FilterGroupsT = FilterGroup>
+    DashboardVersionDefinition& AddFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.emplace_back(std::forward<FilterGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -130,50 +130,50 @@ namespace Model
      * used to set the default formatting for a column that is used throughout a
      * dashboard. </p>
      */
-    inline const Aws::Vector<ColumnConfiguration>& GetColumnConfigurations() const{ return m_columnConfigurations; }
+    inline const Aws::Vector<ColumnConfiguration>& GetColumnConfigurations() const { return m_columnConfigurations; }
     inline bool ColumnConfigurationsHasBeenSet() const { return m_columnConfigurationsHasBeenSet; }
-    inline void SetColumnConfigurations(const Aws::Vector<ColumnConfiguration>& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations = value; }
-    inline void SetColumnConfigurations(Aws::Vector<ColumnConfiguration>&& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations = std::move(value); }
-    inline DashboardVersionDefinition& WithColumnConfigurations(const Aws::Vector<ColumnConfiguration>& value) { SetColumnConfigurations(value); return *this;}
-    inline DashboardVersionDefinition& WithColumnConfigurations(Aws::Vector<ColumnConfiguration>&& value) { SetColumnConfigurations(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddColumnConfigurations(const ColumnConfiguration& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddColumnConfigurations(ColumnConfiguration&& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ColumnConfigurationsT = Aws::Vector<ColumnConfiguration>>
+    void SetColumnConfigurations(ColumnConfigurationsT&& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations = std::forward<ColumnConfigurationsT>(value); }
+    template<typename ColumnConfigurationsT = Aws::Vector<ColumnConfiguration>>
+    DashboardVersionDefinition& WithColumnConfigurations(ColumnConfigurationsT&& value) { SetColumnConfigurations(std::forward<ColumnConfigurationsT>(value)); return *this;}
+    template<typename ColumnConfigurationsT = ColumnConfiguration>
+    DashboardVersionDefinition& AddColumnConfigurations(ColumnConfigurationsT&& value) { m_columnConfigurationsHasBeenSet = true; m_columnConfigurations.emplace_back(std::forward<ColumnConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const AnalysisDefaults& GetAnalysisDefaults() const{ return m_analysisDefaults; }
+    inline const AnalysisDefaults& GetAnalysisDefaults() const { return m_analysisDefaults; }
     inline bool AnalysisDefaultsHasBeenSet() const { return m_analysisDefaultsHasBeenSet; }
-    inline void SetAnalysisDefaults(const AnalysisDefaults& value) { m_analysisDefaultsHasBeenSet = true; m_analysisDefaults = value; }
-    inline void SetAnalysisDefaults(AnalysisDefaults&& value) { m_analysisDefaultsHasBeenSet = true; m_analysisDefaults = std::move(value); }
-    inline DashboardVersionDefinition& WithAnalysisDefaults(const AnalysisDefaults& value) { SetAnalysisDefaults(value); return *this;}
-    inline DashboardVersionDefinition& WithAnalysisDefaults(AnalysisDefaults&& value) { SetAnalysisDefaults(std::move(value)); return *this;}
+    template<typename AnalysisDefaultsT = AnalysisDefaults>
+    void SetAnalysisDefaults(AnalysisDefaultsT&& value) { m_analysisDefaultsHasBeenSet = true; m_analysisDefaults = std::forward<AnalysisDefaultsT>(value); }
+    template<typename AnalysisDefaultsT = AnalysisDefaults>
+    DashboardVersionDefinition& WithAnalysisDefaults(AnalysisDefaultsT&& value) { SetAnalysisDefaults(std::forward<AnalysisDefaultsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of option definitions for a dashboard.</p>
      */
-    inline const AssetOptions& GetOptions() const{ return m_options; }
+    inline const AssetOptions& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const AssetOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(AssetOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline DashboardVersionDefinition& WithOptions(const AssetOptions& value) { SetOptions(value); return *this;}
-    inline DashboardVersionDefinition& WithOptions(AssetOptions&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = AssetOptions>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = AssetOptions>
+    DashboardVersionDefinition& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The static files for the definition.</p>
      */
-    inline const Aws::Vector<StaticFile>& GetStaticFiles() const{ return m_staticFiles; }
+    inline const Aws::Vector<StaticFile>& GetStaticFiles() const { return m_staticFiles; }
     inline bool StaticFilesHasBeenSet() const { return m_staticFilesHasBeenSet; }
-    inline void SetStaticFiles(const Aws::Vector<StaticFile>& value) { m_staticFilesHasBeenSet = true; m_staticFiles = value; }
-    inline void SetStaticFiles(Aws::Vector<StaticFile>&& value) { m_staticFilesHasBeenSet = true; m_staticFiles = std::move(value); }
-    inline DashboardVersionDefinition& WithStaticFiles(const Aws::Vector<StaticFile>& value) { SetStaticFiles(value); return *this;}
-    inline DashboardVersionDefinition& WithStaticFiles(Aws::Vector<StaticFile>&& value) { SetStaticFiles(std::move(value)); return *this;}
-    inline DashboardVersionDefinition& AddStaticFiles(const StaticFile& value) { m_staticFilesHasBeenSet = true; m_staticFiles.push_back(value); return *this; }
-    inline DashboardVersionDefinition& AddStaticFiles(StaticFile&& value) { m_staticFilesHasBeenSet = true; m_staticFiles.push_back(std::move(value)); return *this; }
+    template<typename StaticFilesT = Aws::Vector<StaticFile>>
+    void SetStaticFiles(StaticFilesT&& value) { m_staticFilesHasBeenSet = true; m_staticFiles = std::forward<StaticFilesT>(value); }
+    template<typename StaticFilesT = Aws::Vector<StaticFile>>
+    DashboardVersionDefinition& WithStaticFiles(StaticFilesT&& value) { SetStaticFiles(std::forward<StaticFilesT>(value)); return *this;}
+    template<typename StaticFilesT = StaticFile>
+    DashboardVersionDefinition& AddStaticFiles(StaticFilesT&& value) { m_staticFilesHasBeenSet = true; m_staticFiles.emplace_back(std::forward<StaticFilesT>(value)); return *this; }
     ///@}
   private:
 

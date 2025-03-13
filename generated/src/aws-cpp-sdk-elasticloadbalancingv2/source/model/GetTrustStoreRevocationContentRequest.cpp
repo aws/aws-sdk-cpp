@@ -10,13 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-GetTrustStoreRevocationContentRequest::GetTrustStoreRevocationContentRequest() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_revocationId(0),
-    m_revocationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetTrustStoreRevocationContentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

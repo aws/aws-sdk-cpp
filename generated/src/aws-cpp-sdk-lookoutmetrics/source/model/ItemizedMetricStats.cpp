@@ -18,15 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-ItemizedMetricStats::ItemizedMetricStats() : 
-    m_metricNameHasBeenSet(false),
-    m_occurrenceCount(0),
-    m_occurrenceCountHasBeenSet(false)
-{
-}
-
 ItemizedMetricStats::ItemizedMetricStats(JsonView jsonValue)
-  : ItemizedMetricStats()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ItemizedMetricStats& ItemizedMetricStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OccurrenceCount"))
   {
     m_occurrenceCount = jsonValue.GetInteger("OccurrenceCount");
-
     m_occurrenceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

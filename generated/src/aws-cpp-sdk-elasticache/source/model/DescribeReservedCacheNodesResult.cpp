@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedCacheNodesResult::DescribeReservedCacheNodesResult()
-{
-}
-
 DescribeReservedCacheNodesResult::DescribeReservedCacheNodesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeReservedCacheNodesResult& DescribeReservedCacheNodesResult::operator =(c
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode reservedCacheNodesNode = resultNode.FirstChild("ReservedCacheNodes");
     if(!reservedCacheNodesNode.IsNull())
     {
       XmlNode reservedCacheNodesMember = reservedCacheNodesNode.FirstChild("ReservedCacheNode");
+      m_reservedCacheNodesHasBeenSet = !reservedCacheNodesMember.IsNull();
       while(!reservedCacheNodesMember.IsNull())
       {
         m_reservedCacheNodes.push_back(reservedCacheNodesMember);
@@ -59,6 +57,7 @@ DescribeReservedCacheNodesResult& DescribeReservedCacheNodesResult::operator =(c
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeReservedCacheNodesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,13 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-ContactChannelAddress::ContactChannelAddress() : 
-    m_simpleAddressHasBeenSet(false)
-{
-}
-
 ContactChannelAddress::ContactChannelAddress(JsonView jsonValue)
-  : ContactChannelAddress()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContactChannelAddress& ContactChannelAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SimpleAddress"))
   {
     m_simpleAddress = jsonValue.GetString("SimpleAddress");
-
     m_simpleAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

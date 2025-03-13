@@ -27,7 +27,7 @@ namespace Model
   class UpdateTagsForDomainRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API UpdateTagsForDomainRequest();
+    AWS_ROUTE53DOMAINS_API UpdateTagsForDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The domain for which you want to add or update tags.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline UpdateTagsForDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpdateTagsForDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpdateTagsForDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpdateTagsForDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>A list of the tag keys and values that you want to add or update. If you
      * specify a key that already exists, the corresponding value will be replaced.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagsToUpdate() const{ return m_tagsToUpdate; }
+    inline const Aws::Vector<Tag>& GetTagsToUpdate() const { return m_tagsToUpdate; }
     inline bool TagsToUpdateHasBeenSet() const { return m_tagsToUpdateHasBeenSet; }
-    inline void SetTagsToUpdate(const Aws::Vector<Tag>& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = value; }
-    inline void SetTagsToUpdate(Aws::Vector<Tag>&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = std::move(value); }
-    inline UpdateTagsForDomainRequest& WithTagsToUpdate(const Aws::Vector<Tag>& value) { SetTagsToUpdate(value); return *this;}
-    inline UpdateTagsForDomainRequest& WithTagsToUpdate(Aws::Vector<Tag>&& value) { SetTagsToUpdate(std::move(value)); return *this;}
-    inline UpdateTagsForDomainRequest& AddTagsToUpdate(const Tag& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(value); return *this; }
-    inline UpdateTagsForDomainRequest& AddTagsToUpdate(Tag&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.push_back(std::move(value)); return *this; }
+    template<typename TagsToUpdateT = Aws::Vector<Tag>>
+    void SetTagsToUpdate(TagsToUpdateT&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate = std::forward<TagsToUpdateT>(value); }
+    template<typename TagsToUpdateT = Aws::Vector<Tag>>
+    UpdateTagsForDomainRequest& WithTagsToUpdate(TagsToUpdateT&& value) { SetTagsToUpdate(std::forward<TagsToUpdateT>(value)); return *this;}
+    template<typename TagsToUpdateT = Tag>
+    UpdateTagsForDomainRequest& AddTagsToUpdate(TagsToUpdateT&& value) { m_tagsToUpdateHasBeenSet = true; m_tagsToUpdate.emplace_back(std::forward<TagsToUpdateT>(value)); return *this; }
     ///@}
   private:
 

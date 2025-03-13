@@ -12,17 +12,6 @@ using namespace Aws::LexRuntimeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PostTextRequest::PostTextRequest() : 
-    m_botNameHasBeenSet(false),
-    m_botAliasHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false),
-    m_requestAttributesHasBeenSet(false),
-    m_inputTextHasBeenSet(false),
-    m_activeContextsHasBeenSet(false)
-{
-}
-
 Aws::String PostTextRequest::SerializePayload() const
 {
   JsonValue payload;

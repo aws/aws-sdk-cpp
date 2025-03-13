@@ -29,7 +29,7 @@ namespace Model
   class GetManagedThingStateResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingStateResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingStateResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The device endpoint.</p>
      */
-    inline const Aws::Vector<StateEndpoint>& GetEndpoints() const{ return m_endpoints; }
-    inline void SetEndpoints(const Aws::Vector<StateEndpoint>& value) { m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<StateEndpoint>&& value) { m_endpoints = std::move(value); }
-    inline GetManagedThingStateResult& WithEndpoints(const Aws::Vector<StateEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline GetManagedThingStateResult& WithEndpoints(Aws::Vector<StateEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline GetManagedThingStateResult& AddEndpoints(const StateEndpoint& value) { m_endpoints.push_back(value); return *this; }
-    inline GetManagedThingStateResult& AddEndpoints(StateEndpoint&& value) { m_endpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StateEndpoint>& GetEndpoints() const { return m_endpoints; }
+    template<typename EndpointsT = Aws::Vector<StateEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<StateEndpoint>>
+    GetManagedThingStateResult& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = StateEndpoint>
+    GetManagedThingStateResult& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedThingStateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedThingStateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedThingStateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedThingStateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StateEndpoint> m_endpoints;
+    bool m_endpointsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

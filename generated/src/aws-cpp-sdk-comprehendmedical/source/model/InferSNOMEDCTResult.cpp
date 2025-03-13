@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InferSNOMEDCTResult::InferSNOMEDCTResult()
-{
-}
-
 InferSNOMEDCTResult::InferSNOMEDCTResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,38 +32,35 @@ InferSNOMEDCTResult& InferSNOMEDCTResult::operator =(const Aws::AmazonWebService
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
     }
+    m_entitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaginationToken"))
   {
     m_paginationToken = jsonValue.GetString("PaginationToken");
-
+    m_paginationTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
+    m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNOMEDCTDetails"))
   {
     m_sNOMEDCTDetails = jsonValue.GetObject("SNOMEDCTDetails");
-
+    m_sNOMEDCTDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Characters"))
   {
     m_characters = jsonValue.GetObject("Characters");
-
+    m_charactersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

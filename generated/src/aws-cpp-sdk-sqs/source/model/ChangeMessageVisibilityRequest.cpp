@@ -12,14 +12,6 @@ using namespace Aws::SQS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ChangeMessageVisibilityRequest::ChangeMessageVisibilityRequest() : 
-    m_queueUrlHasBeenSet(false),
-    m_receiptHandleHasBeenSet(false),
-    m_visibilityTimeout(0),
-    m_visibilityTimeoutHasBeenSet(false)
-{
-}
-
 Aws::String ChangeMessageVisibilityRequest::SerializePayload() const
 {
   JsonValue payload;

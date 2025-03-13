@@ -16,34 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult() : 
-    m_contentType(PackageContentType::NOT_SET)
-{
-}
-
-GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(GetSolNetworkPackageContentResult&& toMove) : 
-    m_contentType(toMove.m_contentType),
-    m_nsdContent(std::move(toMove.m_nsdContent)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetSolNetworkPackageContentResult& GetSolNetworkPackageContentResult::operator=(GetSolNetworkPackageContentResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_contentType = toMove.m_contentType;
-   m_nsdContent = std::move(toMove.m_nsdContent);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : GetSolNetworkPackageContentResult()
 {
   *this = std::move(result);
 }
@@ -51,18 +24,21 @@ GetSolNetworkPackageContentResult::GetSolNetworkPackageContentResult(Aws::Amazon
 GetSolNetworkPackageContentResult& GetSolNetworkPackageContentResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_nsdContent = result.TakeOwnershipOfPayload();
+  m_nsdContentHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = PackageContentTypeMapper::GetPackageContentTypeForName(contentTypeIter->second);
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

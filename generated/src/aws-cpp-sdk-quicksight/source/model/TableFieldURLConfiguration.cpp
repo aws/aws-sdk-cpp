@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableFieldURLConfiguration::TableFieldURLConfiguration() : 
-    m_linkConfigurationHasBeenSet(false),
-    m_imageConfigurationHasBeenSet(false)
-{
-}
-
 TableFieldURLConfiguration::TableFieldURLConfiguration(JsonView jsonValue)
-  : TableFieldURLConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableFieldURLConfiguration& TableFieldURLConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("LinkConfiguration"))
   {
     m_linkConfiguration = jsonValue.GetObject("LinkConfiguration");
-
     m_linkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageConfiguration"))
   {
     m_imageConfiguration = jsonValue.GetObject("ImageConfiguration");
-
     m_imageConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

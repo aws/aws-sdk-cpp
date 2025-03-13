@@ -32,7 +32,7 @@ namespace Model
   class AwsWafv2VisibilityConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafv2VisibilityConfigDetails();
+    AWS_SECURITYHUB_API AwsWafv2VisibilityConfigDetails() = default;
     AWS_SECURITYHUB_API AwsWafv2VisibilityConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafv2VisibilityConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
      * metrics and dimensions</a> in the <i>WAF Developer Guide</i>. </p>
      */
-    inline bool GetCloudWatchMetricsEnabled() const{ return m_cloudWatchMetricsEnabled; }
+    inline bool GetCloudWatchMetricsEnabled() const { return m_cloudWatchMetricsEnabled; }
     inline bool CloudWatchMetricsEnabledHasBeenSet() const { return m_cloudWatchMetricsEnabledHasBeenSet; }
     inline void SetCloudWatchMetricsEnabled(bool value) { m_cloudWatchMetricsEnabledHasBeenSet = true; m_cloudWatchMetricsEnabled = value; }
     inline AwsWafv2VisibilityConfigDetails& WithCloudWatchMetricsEnabled(bool value) { SetCloudWatchMetricsEnabled(value); return *this;}
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p> A name of the Amazon CloudWatch metric. </p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline AwsWafv2VisibilityConfigDetails& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline AwsWafv2VisibilityConfigDetails& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline AwsWafv2VisibilityConfigDetails& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    AwsWafv2VisibilityConfigDetails& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,20 +69,20 @@ namespace Model
      * that match the rules. You can view the sampled requests through the WAF console.
      * </p>
      */
-    inline bool GetSampledRequestsEnabled() const{ return m_sampledRequestsEnabled; }
+    inline bool GetSampledRequestsEnabled() const { return m_sampledRequestsEnabled; }
     inline bool SampledRequestsEnabledHasBeenSet() const { return m_sampledRequestsEnabledHasBeenSet; }
     inline void SetSampledRequestsEnabled(bool value) { m_sampledRequestsEnabledHasBeenSet = true; m_sampledRequestsEnabled = value; }
     inline AwsWafv2VisibilityConfigDetails& WithSampledRequestsEnabled(bool value) { SetSampledRequestsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_cloudWatchMetricsEnabled;
+    bool m_cloudWatchMetricsEnabled{false};
     bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
 
-    bool m_sampledRequestsEnabled;
+    bool m_sampledRequestsEnabled{false};
     bool m_sampledRequestsEnabledHasBeenSet = false;
   };
 

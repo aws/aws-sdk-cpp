@@ -18,15 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-UserPoolAddOnsType::UserPoolAddOnsType() : 
-    m_advancedSecurityMode(AdvancedSecurityModeType::NOT_SET),
-    m_advancedSecurityModeHasBeenSet(false),
-    m_advancedSecurityAdditionalFlowsHasBeenSet(false)
-{
-}
-
 UserPoolAddOnsType::UserPoolAddOnsType(JsonView jsonValue)
-  : UserPoolAddOnsType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UserPoolAddOnsType& UserPoolAddOnsType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AdvancedSecurityMode"))
   {
     m_advancedSecurityMode = AdvancedSecurityModeTypeMapper::GetAdvancedSecurityModeTypeForName(jsonValue.GetString("AdvancedSecurityMode"));
-
     m_advancedSecurityModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedSecurityAdditionalFlows"))
   {
     m_advancedSecurityAdditionalFlows = jsonValue.GetObject("AdvancedSecurityAdditionalFlows");
-
     m_advancedSecurityAdditionalFlowsHasBeenSet = true;
   }
-
   return *this;
 }
 

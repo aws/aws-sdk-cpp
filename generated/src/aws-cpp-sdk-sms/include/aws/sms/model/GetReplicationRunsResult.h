@@ -30,7 +30,7 @@ namespace Model
   class GetReplicationRunsResult
   {
   public:
-    AWS_SMS_API GetReplicationRunsResult();
+    AWS_SMS_API GetReplicationRunsResult() = default;
     AWS_SMS_API GetReplicationRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API GetReplicationRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,24 +39,24 @@ namespace Model
     /**
      * <p>Information about the replication job.</p>
      */
-    inline const ReplicationJob& GetReplicationJob() const{ return m_replicationJob; }
-    inline void SetReplicationJob(const ReplicationJob& value) { m_replicationJob = value; }
-    inline void SetReplicationJob(ReplicationJob&& value) { m_replicationJob = std::move(value); }
-    inline GetReplicationRunsResult& WithReplicationJob(const ReplicationJob& value) { SetReplicationJob(value); return *this;}
-    inline GetReplicationRunsResult& WithReplicationJob(ReplicationJob&& value) { SetReplicationJob(std::move(value)); return *this;}
+    inline const ReplicationJob& GetReplicationJob() const { return m_replicationJob; }
+    template<typename ReplicationJobT = ReplicationJob>
+    void SetReplicationJob(ReplicationJobT&& value) { m_replicationJobHasBeenSet = true; m_replicationJob = std::forward<ReplicationJobT>(value); }
+    template<typename ReplicationJobT = ReplicationJob>
+    GetReplicationRunsResult& WithReplicationJob(ReplicationJobT&& value) { SetReplicationJob(std::forward<ReplicationJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the replication runs.</p>
      */
-    inline const Aws::Vector<ReplicationRun>& GetReplicationRunList() const{ return m_replicationRunList; }
-    inline void SetReplicationRunList(const Aws::Vector<ReplicationRun>& value) { m_replicationRunList = value; }
-    inline void SetReplicationRunList(Aws::Vector<ReplicationRun>&& value) { m_replicationRunList = std::move(value); }
-    inline GetReplicationRunsResult& WithReplicationRunList(const Aws::Vector<ReplicationRun>& value) { SetReplicationRunList(value); return *this;}
-    inline GetReplicationRunsResult& WithReplicationRunList(Aws::Vector<ReplicationRun>&& value) { SetReplicationRunList(std::move(value)); return *this;}
-    inline GetReplicationRunsResult& AddReplicationRunList(const ReplicationRun& value) { m_replicationRunList.push_back(value); return *this; }
-    inline GetReplicationRunsResult& AddReplicationRunList(ReplicationRun&& value) { m_replicationRunList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicationRun>& GetReplicationRunList() const { return m_replicationRunList; }
+    template<typename ReplicationRunListT = Aws::Vector<ReplicationRun>>
+    void SetReplicationRunList(ReplicationRunListT&& value) { m_replicationRunListHasBeenSet = true; m_replicationRunList = std::forward<ReplicationRunListT>(value); }
+    template<typename ReplicationRunListT = Aws::Vector<ReplicationRun>>
+    GetReplicationRunsResult& WithReplicationRunList(ReplicationRunListT&& value) { SetReplicationRunList(std::forward<ReplicationRunListT>(value)); return *this;}
+    template<typename ReplicationRunListT = ReplicationRun>
+    GetReplicationRunsResult& AddReplicationRunList(ReplicationRunListT&& value) { m_replicationRunListHasBeenSet = true; m_replicationRunList.emplace_back(std::forward<ReplicationRunListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,34 +64,34 @@ namespace Model
      * <p>The token required to retrieve the next set of results. This value is null
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetReplicationRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetReplicationRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetReplicationRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetReplicationRunsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetReplicationRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetReplicationRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetReplicationRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetReplicationRunsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReplicationJob m_replicationJob;
+    bool m_replicationJobHasBeenSet = false;
 
     Aws::Vector<ReplicationRun> m_replicationRunList;
+    bool m_replicationRunListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

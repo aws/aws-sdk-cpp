@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CustomerGateway::CustomerGateway() : 
-    m_certificateArnHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_bgpAsnExtendedHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false)
-{
-}
-
 CustomerGateway::CustomerGateway(const XmlNode& xmlNode)
-  : CustomerGateway()
 {
   *this = xmlNode;
 }
@@ -50,60 +36,69 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
     {
       m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
       m_certificateArnHasBeenSet = true;
+       m_certificateArnHasBeenSet = true;
     }
     XmlNode deviceNameNode = resultNode.FirstChild("deviceName");
     if(!deviceNameNode.IsNull())
     {
       m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
+       m_deviceNameHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode bgpAsnExtendedNode = resultNode.FirstChild("bgpAsnExtended");
     if(!bgpAsnExtendedNode.IsNull())
     {
       m_bgpAsnExtended = Aws::Utils::Xml::DecodeEscapedXmlText(bgpAsnExtendedNode.GetText());
       m_bgpAsnExtendedHasBeenSet = true;
+       m_bgpAsnExtendedHasBeenSet = true;
     }
     XmlNode customerGatewayIdNode = resultNode.FirstChild("customerGatewayId");
     if(!customerGatewayIdNode.IsNull())
     {
       m_customerGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(customerGatewayIdNode.GetText());
       m_customerGatewayIdHasBeenSet = true;
+       m_customerGatewayIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode ipAddressNode = resultNode.FirstChild("ipAddress");
     if(!ipAddressNode.IsNull())
     {
       m_ipAddress = Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressNode.GetText());
       m_ipAddressHasBeenSet = true;
+       m_ipAddressHasBeenSet = true;
     }
     XmlNode bgpAsnNode = resultNode.FirstChild("bgpAsn");
     if(!bgpAsnNode.IsNull())
     {
       m_bgpAsn = Aws::Utils::Xml::DecodeEscapedXmlText(bgpAsnNode.GetText());
       m_bgpAsnHasBeenSet = true;
+       m_bgpAsnHasBeenSet = true;
     }
   }
 

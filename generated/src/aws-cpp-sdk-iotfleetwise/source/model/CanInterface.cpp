@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CanInterface::CanInterface() : 
-    m_nameHasBeenSet(false),
-    m_protocolNameHasBeenSet(false),
-    m_protocolVersionHasBeenSet(false)
-{
-}
-
 CanInterface::CanInterface(JsonView jsonValue)
-  : CanInterface()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CanInterface& CanInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocolName"))
   {
     m_protocolName = jsonValue.GetString("protocolName");
-
     m_protocolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocolVersion"))
   {
     m_protocolVersion = jsonValue.GetString("protocolVersion");
-
     m_protocolVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-BonusPayment::BonusPayment() : 
-    m_workerIdHasBeenSet(false),
-    m_bonusAmountHasBeenSet(false),
-    m_assignmentIdHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_grantTimeHasBeenSet(false)
-{
-}
-
 BonusPayment::BonusPayment(JsonView jsonValue)
-  : BonusPayment()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ BonusPayment& BonusPayment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkerId"))
   {
     m_workerId = jsonValue.GetString("WorkerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BonusAmount"))
   {
     m_bonusAmount = jsonValue.GetString("BonusAmount");
-
     m_bonusAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentId"))
   {
     m_assignmentId = jsonValue.GetString("AssignmentId");
-
     m_assignmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GrantTime"))
   {
     m_grantTime = jsonValue.GetDouble("GrantTime");
-
     m_grantTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

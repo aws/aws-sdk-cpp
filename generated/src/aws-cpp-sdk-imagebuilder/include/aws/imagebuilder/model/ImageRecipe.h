@@ -38,7 +38,7 @@ namespace Model
   class ImageRecipe
   {
   public:
-    AWS_IMAGEBUILDER_API ImageRecipe();
+    AWS_IMAGEBUILDER_API ImageRecipe() = default;
     AWS_IMAGEBUILDER_API ImageRecipe(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ImageRecipe& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the image recipe.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ImageRecipe& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ImageRecipe& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ImageRecipe& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ImageRecipe& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,80 +61,68 @@ namespace Model
      * <p>Specifies which type of image is created by the recipe - an AMI or a
      * container image.</p>
      */
-    inline const ImageType& GetType() const{ return m_type; }
+    inline ImageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ImageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ImageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ImageRecipe& WithType(const ImageType& value) { SetType(value); return *this;}
-    inline ImageRecipe& WithType(ImageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ImageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ImageRecipe& WithType(ImageType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the image recipe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImageRecipe& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImageRecipe& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImageRecipe& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImageRecipe& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the image recipe.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ImageRecipe& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ImageRecipe& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ImageRecipe& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ImageRecipe& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The platform of the image recipe.</p>
      */
-    inline const Platform& GetPlatform() const{ return m_platform; }
+    inline Platform GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline ImageRecipe& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
-    inline ImageRecipe& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(Platform value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline ImageRecipe& WithPlatform(Platform value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the image recipe.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline ImageRecipe& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline ImageRecipe& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline ImageRecipe& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    ImageRecipe& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the image recipe.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline ImageRecipe& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline ImageRecipe& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline ImageRecipe& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    ImageRecipe& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,89 +131,80 @@ namespace Model
      * minimum of one build component, and can have a maximum of 20 build and test
      * components in any combination.</p>
      */
-    inline const Aws::Vector<ComponentConfiguration>& GetComponents() const{ return m_components; }
+    inline const Aws::Vector<ComponentConfiguration>& GetComponents() const { return m_components; }
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
-    inline void SetComponents(const Aws::Vector<ComponentConfiguration>& value) { m_componentsHasBeenSet = true; m_components = value; }
-    inline void SetComponents(Aws::Vector<ComponentConfiguration>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
-    inline ImageRecipe& WithComponents(const Aws::Vector<ComponentConfiguration>& value) { SetComponents(value); return *this;}
-    inline ImageRecipe& WithComponents(Aws::Vector<ComponentConfiguration>&& value) { SetComponents(std::move(value)); return *this;}
-    inline ImageRecipe& AddComponents(const ComponentConfiguration& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
-    inline ImageRecipe& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
+    template<typename ComponentsT = Aws::Vector<ComponentConfiguration>>
+    void SetComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components = std::forward<ComponentsT>(value); }
+    template<typename ComponentsT = Aws::Vector<ComponentConfiguration>>
+    ImageRecipe& WithComponents(ComponentsT&& value) { SetComponents(std::forward<ComponentsT>(value)); return *this;}
+    template<typename ComponentsT = ComponentConfiguration>
+    ImageRecipe& AddComponents(ComponentsT&& value) { m_componentsHasBeenSet = true; m_components.emplace_back(std::forward<ComponentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The base image of the image recipe.</p>
      */
-    inline const Aws::String& GetParentImage() const{ return m_parentImage; }
+    inline const Aws::String& GetParentImage() const { return m_parentImage; }
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
-    inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
-    inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
-    inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
-    inline ImageRecipe& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
-    inline ImageRecipe& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
-    inline ImageRecipe& WithParentImage(const char* value) { SetParentImage(value); return *this;}
+    template<typename ParentImageT = Aws::String>
+    void SetParentImage(ParentImageT&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::forward<ParentImageT>(value); }
+    template<typename ParentImageT = Aws::String>
+    ImageRecipe& WithParentImage(ParentImageT&& value) { SetParentImage(std::forward<ParentImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The block device mappings to apply when creating images from this recipe.</p>
      */
-    inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline ImageRecipe& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline ImageRecipe& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline ImageRecipe& AddBlockDeviceMappings(const InstanceBlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline ImageRecipe& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<InstanceBlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<InstanceBlockDeviceMapping>>
+    ImageRecipe& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = InstanceBlockDeviceMapping>
+    ImageRecipe& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The date on which this image recipe was created.</p>
      */
-    inline const Aws::String& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::String& GetDateCreated() const { return m_dateCreated; }
     inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
-    inline void SetDateCreated(const Aws::String& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
-    inline void SetDateCreated(Aws::String&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::move(value); }
-    inline void SetDateCreated(const char* value) { m_dateCreatedHasBeenSet = true; m_dateCreated.assign(value); }
-    inline ImageRecipe& WithDateCreated(const Aws::String& value) { SetDateCreated(value); return *this;}
-    inline ImageRecipe& WithDateCreated(Aws::String&& value) { SetDateCreated(std::move(value)); return *this;}
-    inline ImageRecipe& WithDateCreated(const char* value) { SetDateCreated(value); return *this;}
+    template<typename DateCreatedT = Aws::String>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::String>
+    ImageRecipe& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags of the image recipe.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ImageRecipe& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ImageRecipe& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ImageRecipe& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ImageRecipe& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ImageRecipe& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ImageRecipe& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ImageRecipe& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ImageRecipe& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ImageRecipe& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ImageRecipe& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ImageRecipe& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The working directory to be used during build and test workflows.</p>
      */
-    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+    inline const Aws::String& GetWorkingDirectory() const { return m_workingDirectory; }
     inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
-    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
-    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
-    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
-    inline ImageRecipe& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
-    inline ImageRecipe& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
-    inline ImageRecipe& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+    template<typename WorkingDirectoryT = Aws::String>
+    void SetWorkingDirectory(WorkingDirectoryT&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::forward<WorkingDirectoryT>(value); }
+    template<typename WorkingDirectoryT = Aws::String>
+    ImageRecipe& WithWorkingDirectory(WorkingDirectoryT&& value) { SetWorkingDirectory(std::forward<WorkingDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -237,19 +214,19 @@ namespace Model
      * adds a layer of control over those instances. You can define settings and add
      * scripts to run when an instance is launched from your AMI.</p>
      */
-    inline const AdditionalInstanceConfiguration& GetAdditionalInstanceConfiguration() const{ return m_additionalInstanceConfiguration; }
+    inline const AdditionalInstanceConfiguration& GetAdditionalInstanceConfiguration() const { return m_additionalInstanceConfiguration; }
     inline bool AdditionalInstanceConfigurationHasBeenSet() const { return m_additionalInstanceConfigurationHasBeenSet; }
-    inline void SetAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = value; }
-    inline void SetAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = std::move(value); }
-    inline ImageRecipe& WithAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { SetAdditionalInstanceConfiguration(value); return *this;}
-    inline ImageRecipe& WithAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { SetAdditionalInstanceConfiguration(std::move(value)); return *this;}
+    template<typename AdditionalInstanceConfigurationT = AdditionalInstanceConfiguration>
+    void SetAdditionalInstanceConfiguration(AdditionalInstanceConfigurationT&& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = std::forward<AdditionalInstanceConfigurationT>(value); }
+    template<typename AdditionalInstanceConfigurationT = AdditionalInstanceConfiguration>
+    ImageRecipe& WithAdditionalInstanceConfiguration(AdditionalInstanceConfigurationT&& value) { SetAdditionalInstanceConfiguration(std::forward<AdditionalInstanceConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    ImageType m_type;
+    ImageType m_type{ImageType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
@@ -258,7 +235,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Platform m_platform;
+    Platform m_platform{Platform::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::String m_owner;

@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateCacheSecurityGroupRequest::CreateCacheSecurityGroupRequest() : 
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCacheSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

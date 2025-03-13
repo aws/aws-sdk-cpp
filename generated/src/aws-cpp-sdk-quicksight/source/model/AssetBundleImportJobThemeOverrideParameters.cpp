@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverrideParameters() : 
-    m_themeIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobThemeOverrideParameters::AssetBundleImportJobThemeOverrideParameters(JsonView jsonValue)
-  : AssetBundleImportJobThemeOverrideParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetBundleImportJobThemeOverrideParameters& AssetBundleImportJobThemeOverridePa
   if(jsonValue.ValueExists("ThemeId"))
   {
     m_themeId = jsonValue.GetString("ThemeId");
-
     m_themeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

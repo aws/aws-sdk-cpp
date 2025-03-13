@@ -18,14 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-TlsValidationContext::TlsValidationContext() : 
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_trustHasBeenSet(false)
-{
-}
-
 TlsValidationContext::TlsValidationContext(JsonView jsonValue)
-  : TlsValidationContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TlsValidationContext& TlsValidationContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("subjectAlternativeNames"))
   {
     m_subjectAlternativeNames = jsonValue.GetObject("subjectAlternativeNames");
-
     m_subjectAlternativeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trust"))
   {
     m_trust = jsonValue.GetObject("trust");
-
     m_trustHasBeenSet = true;
   }
-
   return *this;
 }
 

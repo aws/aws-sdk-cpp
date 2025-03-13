@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheUsageLimits::CacheUsageLimits() : 
-    m_dataStorageHasBeenSet(false),
-    m_eCPUPerSecondHasBeenSet(false)
-{
-}
-
 CacheUsageLimits::CacheUsageLimits(const XmlNode& xmlNode)
-  : CacheUsageLimits()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CacheUsageLimits& CacheUsageLimits::operator =(const XmlNode& xmlNode)
     {
       m_dataStorage = dataStorageNode;
       m_dataStorageHasBeenSet = true;
+       m_dataStorageHasBeenSet = true;
     }
     XmlNode eCPUPerSecondNode = resultNode.FirstChild("ECPUPerSecond");
     if(!eCPUPerSecondNode.IsNull())
     {
       m_eCPUPerSecond = eCPUPerSecondNode;
       m_eCPUPerSecondHasBeenSet = true;
+       m_eCPUPerSecondHasBeenSet = true;
     }
   }
 

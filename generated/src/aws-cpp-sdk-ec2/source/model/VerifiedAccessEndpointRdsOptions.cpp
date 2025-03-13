@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointRdsOptions::VerifiedAccessEndpointRdsOptions() : 
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_rdsDbInstanceArnHasBeenSet(false),
-    m_rdsDbClusterArnHasBeenSet(false),
-    m_rdsDbProxyArnHasBeenSet(false),
-    m_rdsEndpointHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointRdsOptions::VerifiedAccessEndpointRdsOptions(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointRdsOptions()
 {
   *this = xmlNode;
 }
@@ -48,50 +34,57 @@ VerifiedAccessEndpointRdsOptions& VerifiedAccessEndpointRdsOptions::operator =(c
     XmlNode protocolNode = resultNode.FirstChild("protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode rdsDbInstanceArnNode = resultNode.FirstChild("rdsDbInstanceArn");
     if(!rdsDbInstanceArnNode.IsNull())
     {
       m_rdsDbInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(rdsDbInstanceArnNode.GetText());
       m_rdsDbInstanceArnHasBeenSet = true;
+       m_rdsDbInstanceArnHasBeenSet = true;
     }
     XmlNode rdsDbClusterArnNode = resultNode.FirstChild("rdsDbClusterArn");
     if(!rdsDbClusterArnNode.IsNull())
     {
       m_rdsDbClusterArn = Aws::Utils::Xml::DecodeEscapedXmlText(rdsDbClusterArnNode.GetText());
       m_rdsDbClusterArnHasBeenSet = true;
+       m_rdsDbClusterArnHasBeenSet = true;
     }
     XmlNode rdsDbProxyArnNode = resultNode.FirstChild("rdsDbProxyArn");
     if(!rdsDbProxyArnNode.IsNull())
     {
       m_rdsDbProxyArn = Aws::Utils::Xml::DecodeEscapedXmlText(rdsDbProxyArnNode.GetText());
       m_rdsDbProxyArnHasBeenSet = true;
+       m_rdsDbProxyArnHasBeenSet = true;
     }
     XmlNode rdsEndpointNode = resultNode.FirstChild("rdsEndpoint");
     if(!rdsEndpointNode.IsNull())
     {
       m_rdsEndpoint = Aws::Utils::Xml::DecodeEscapedXmlText(rdsEndpointNode.GetText());
       m_rdsEndpointHasBeenSet = true;
+       m_rdsEndpointHasBeenSet = true;
     }
     XmlNode subnetIdsNode = resultNode.FirstChild("subnetIdSet");
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
   }
 

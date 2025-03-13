@@ -18,23 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftPropertiesOutput::RedshiftPropertiesOutput() : 
-    m_credentialsHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_isProvisionedSecret(false),
-    m_isProvisionedSecretHasBeenSet(false),
-    m_jdbcIamUrlHasBeenSet(false),
-    m_jdbcUrlHasBeenSet(false),
-    m_lineageSyncHasBeenSet(false),
-    m_redshiftTempDirHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_storageHasBeenSet(false)
-{
-}
-
 RedshiftPropertiesOutput::RedshiftPropertiesOutput(JsonView jsonValue)
-  : RedshiftPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ RedshiftPropertiesOutput& RedshiftPropertiesOutput::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("credentials"))
   {
     m_credentials = jsonValue.GetObject("credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isProvisionedSecret"))
   {
     m_isProvisionedSecret = jsonValue.GetBool("isProvisionedSecret");
-
     m_isProvisionedSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jdbcIamUrl"))
   {
     m_jdbcIamUrl = jsonValue.GetString("jdbcIamUrl");
-
     m_jdbcIamUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jdbcUrl"))
   {
     m_jdbcUrl = jsonValue.GetString("jdbcUrl");
-
     m_jdbcUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lineageSync"))
   {
     m_lineageSync = jsonValue.GetObject("lineageSync");
-
     m_lineageSyncHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftTempDir"))
   {
     m_redshiftTempDir = jsonValue.GetString("redshiftTempDir");
-
     m_redshiftTempDirHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     m_storage = jsonValue.GetObject("storage");
-
     m_storageHasBeenSet = true;
   }
-
   return *this;
 }
 

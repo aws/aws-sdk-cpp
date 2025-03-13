@@ -29,7 +29,7 @@ namespace Model
   class ListStackInstancesForProvisionedProductResult
   {
   public:
-    AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult();
+    AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult() = default;
     AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of stack instances.</p>
      */
-    inline const Aws::Vector<StackInstance>& GetStackInstances() const{ return m_stackInstances; }
-    inline void SetStackInstances(const Aws::Vector<StackInstance>& value) { m_stackInstances = value; }
-    inline void SetStackInstances(Aws::Vector<StackInstance>&& value) { m_stackInstances = std::move(value); }
-    inline ListStackInstancesForProvisionedProductResult& WithStackInstances(const Aws::Vector<StackInstance>& value) { SetStackInstances(value); return *this;}
-    inline ListStackInstancesForProvisionedProductResult& WithStackInstances(Aws::Vector<StackInstance>&& value) { SetStackInstances(std::move(value)); return *this;}
-    inline ListStackInstancesForProvisionedProductResult& AddStackInstances(const StackInstance& value) { m_stackInstances.push_back(value); return *this; }
-    inline ListStackInstancesForProvisionedProductResult& AddStackInstances(StackInstance&& value) { m_stackInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StackInstance>& GetStackInstances() const { return m_stackInstances; }
+    template<typename StackInstancesT = Aws::Vector<StackInstance>>
+    void SetStackInstances(StackInstancesT&& value) { m_stackInstancesHasBeenSet = true; m_stackInstances = std::forward<StackInstancesT>(value); }
+    template<typename StackInstancesT = Aws::Vector<StackInstance>>
+    ListStackInstancesForProvisionedProductResult& WithStackInstances(StackInstancesT&& value) { SetStackInstances(std::forward<StackInstancesT>(value)); return *this;}
+    template<typename StackInstancesT = StackInstance>
+    ListStackInstancesForProvisionedProductResult& AddStackInstances(StackInstancesT&& value) { m_stackInstancesHasBeenSet = true; m_stackInstances.emplace_back(std::forward<StackInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListStackInstancesForProvisionedProductResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListStackInstancesForProvisionedProductResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListStackInstancesForProvisionedProductResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListStackInstancesForProvisionedProductResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStackInstancesForProvisionedProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStackInstancesForProvisionedProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStackInstancesForProvisionedProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStackInstancesForProvisionedProductResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StackInstance> m_stackInstances;
+    bool m_stackInstancesHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

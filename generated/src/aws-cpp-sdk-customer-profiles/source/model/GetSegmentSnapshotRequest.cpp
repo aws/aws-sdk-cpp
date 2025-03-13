@@ -12,13 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSegmentSnapshotRequest::GetSegmentSnapshotRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_segmentDefinitionNameHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentSnapshotRequest::SerializePayload() const
 {
   return {};

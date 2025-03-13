@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-EstimateTemplateCostRequest::EstimateTemplateCostRequest() : 
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String EstimateTemplateCostRequest::SerializePayload() const
 {
   Aws::StringStream ss;

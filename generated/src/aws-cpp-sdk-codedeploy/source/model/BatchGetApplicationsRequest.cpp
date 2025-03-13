@@ -12,11 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetApplicationsRequest::BatchGetApplicationsRequest() : 
-    m_applicationNamesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

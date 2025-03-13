@@ -36,7 +36,7 @@ namespace Model
   class EncryptionConfiguration
   {
   public:
-    AWS_S3CRT_API EncryptionConfiguration();
+    AWS_S3CRT_API EncryptionConfiguration() = default;
     AWS_S3CRT_API EncryptionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API EncryptionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,14 +54,12 @@ namespace Model
      * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetReplicaKmsKeyID() const{ return m_replicaKmsKeyID; }
+    inline const Aws::String& GetReplicaKmsKeyID() const { return m_replicaKmsKeyID; }
     inline bool ReplicaKmsKeyIDHasBeenSet() const { return m_replicaKmsKeyIDHasBeenSet; }
-    inline void SetReplicaKmsKeyID(const Aws::String& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = value; }
-    inline void SetReplicaKmsKeyID(Aws::String&& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = std::move(value); }
-    inline void SetReplicaKmsKeyID(const char* value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID.assign(value); }
-    inline EncryptionConfiguration& WithReplicaKmsKeyID(const Aws::String& value) { SetReplicaKmsKeyID(value); return *this;}
-    inline EncryptionConfiguration& WithReplicaKmsKeyID(Aws::String&& value) { SetReplicaKmsKeyID(std::move(value)); return *this;}
-    inline EncryptionConfiguration& WithReplicaKmsKeyID(const char* value) { SetReplicaKmsKeyID(value); return *this;}
+    template<typename ReplicaKmsKeyIDT = Aws::String>
+    void SetReplicaKmsKeyID(ReplicaKmsKeyIDT&& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = std::forward<ReplicaKmsKeyIDT>(value); }
+    template<typename ReplicaKmsKeyIDT = Aws::String>
+    EncryptionConfiguration& WithReplicaKmsKeyID(ReplicaKmsKeyIDT&& value) { SetReplicaKmsKeyID(std::forward<ReplicaKmsKeyIDT>(value)); return *this;}
     ///@}
   private:
 

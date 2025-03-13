@@ -33,7 +33,7 @@ namespace Model
   class BuiltInIntentSummary
   {
   public:
-    AWS_LEXMODELSV2_API BuiltInIntentSummary();
+    AWS_LEXMODELSV2_API BuiltInIntentSummary() = default;
     AWS_LEXMODELSV2_API BuiltInIntentSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BuiltInIntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>The signature of the built-in intent. Use this to specify the parent intent
      * of a derived intent.</p>
      */
-    inline const Aws::String& GetIntentSignature() const{ return m_intentSignature; }
+    inline const Aws::String& GetIntentSignature() const { return m_intentSignature; }
     inline bool IntentSignatureHasBeenSet() const { return m_intentSignatureHasBeenSet; }
-    inline void SetIntentSignature(const Aws::String& value) { m_intentSignatureHasBeenSet = true; m_intentSignature = value; }
-    inline void SetIntentSignature(Aws::String&& value) { m_intentSignatureHasBeenSet = true; m_intentSignature = std::move(value); }
-    inline void SetIntentSignature(const char* value) { m_intentSignatureHasBeenSet = true; m_intentSignature.assign(value); }
-    inline BuiltInIntentSummary& WithIntentSignature(const Aws::String& value) { SetIntentSignature(value); return *this;}
-    inline BuiltInIntentSummary& WithIntentSignature(Aws::String&& value) { SetIntentSignature(std::move(value)); return *this;}
-    inline BuiltInIntentSummary& WithIntentSignature(const char* value) { SetIntentSignature(value); return *this;}
+    template<typename IntentSignatureT = Aws::String>
+    void SetIntentSignature(IntentSignatureT&& value) { m_intentSignatureHasBeenSet = true; m_intentSignature = std::forward<IntentSignatureT>(value); }
+    template<typename IntentSignatureT = Aws::String>
+    BuiltInIntentSummary& WithIntentSignature(IntentSignatureT&& value) { SetIntentSignature(std::forward<IntentSignatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the intent.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline BuiltInIntentSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline BuiltInIntentSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline BuiltInIntentSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    BuiltInIntentSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

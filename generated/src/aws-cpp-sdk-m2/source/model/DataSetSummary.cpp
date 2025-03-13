@@ -18,18 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DataSetSummary::DataSetSummary() : 
-    m_creationTimeHasBeenSet(false),
-    m_dataSetNameHasBeenSet(false),
-    m_dataSetOrgHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_lastReferencedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 DataSetSummary::DataSetSummary(JsonView jsonValue)
-  : DataSetSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ DataSetSummary& DataSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSetName"))
   {
     m_dataSetName = jsonValue.GetString("dataSetName");
-
     m_dataSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSetOrg"))
   {
     m_dataSetOrg = jsonValue.GetString("dataSetOrg");
-
     m_dataSetOrgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = jsonValue.GetString("format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastReferencedTime"))
   {
     m_lastReferencedTime = jsonValue.GetDouble("lastReferencedTime");
-
     m_lastReferencedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

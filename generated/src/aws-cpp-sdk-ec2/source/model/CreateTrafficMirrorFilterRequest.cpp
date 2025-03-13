@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTrafficMirrorFilterRequest::CreateTrafficMirrorFilterRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateTrafficMirrorFilterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

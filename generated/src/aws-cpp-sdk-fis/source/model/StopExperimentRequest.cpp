@@ -12,11 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopExperimentRequest::StopExperimentRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String StopExperimentRequest::SerializePayload() const
 {
   return {};

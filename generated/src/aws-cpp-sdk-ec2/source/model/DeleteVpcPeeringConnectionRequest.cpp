@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVpcPeeringConnectionRequest::DeleteVpcPeeringConnectionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcPeeringConnectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

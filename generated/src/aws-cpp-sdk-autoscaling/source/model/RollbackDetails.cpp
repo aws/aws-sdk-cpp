@@ -20,19 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-RollbackDetails::RollbackDetails() : 
-    m_rollbackReasonHasBeenSet(false),
-    m_rollbackStartTimeHasBeenSet(false),
-    m_percentageCompleteOnRollback(0),
-    m_percentageCompleteOnRollbackHasBeenSet(false),
-    m_instancesToUpdateOnRollback(0),
-    m_instancesToUpdateOnRollbackHasBeenSet(false),
-    m_progressDetailsOnRollbackHasBeenSet(false)
-{
-}
-
 RollbackDetails::RollbackDetails(const XmlNode& xmlNode)
-  : RollbackDetails()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ RollbackDetails& RollbackDetails::operator =(const XmlNode& xmlNode)
     {
       m_rollbackReason = Aws::Utils::Xml::DecodeEscapedXmlText(rollbackReasonNode.GetText());
       m_rollbackReasonHasBeenSet = true;
+       m_rollbackReasonHasBeenSet = true;
     }
     XmlNode rollbackStartTimeNode = resultNode.FirstChild("RollbackStartTime");
     if(!rollbackStartTimeNode.IsNull())
     {
       m_rollbackStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rollbackStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_rollbackStartTimeHasBeenSet = true;
+       m_rollbackStartTimeHasBeenSet = true;
     }
     XmlNode percentageCompleteOnRollbackNode = resultNode.FirstChild("PercentageCompleteOnRollback");
     if(!percentageCompleteOnRollbackNode.IsNull())
     {
       m_percentageCompleteOnRollback = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(percentageCompleteOnRollbackNode.GetText()).c_str()).c_str());
       m_percentageCompleteOnRollbackHasBeenSet = true;
+       m_percentageCompleteOnRollbackHasBeenSet = true;
     }
     XmlNode instancesToUpdateOnRollbackNode = resultNode.FirstChild("InstancesToUpdateOnRollback");
     if(!instancesToUpdateOnRollbackNode.IsNull())
     {
       m_instancesToUpdateOnRollback = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancesToUpdateOnRollbackNode.GetText()).c_str()).c_str());
       m_instancesToUpdateOnRollbackHasBeenSet = true;
+       m_instancesToUpdateOnRollbackHasBeenSet = true;
     }
     XmlNode progressDetailsOnRollbackNode = resultNode.FirstChild("ProgressDetailsOnRollback");
     if(!progressDetailsOnRollbackNode.IsNull())
     {
       m_progressDetailsOnRollback = progressDetailsOnRollbackNode;
       m_progressDetailsOnRollbackHasBeenSet = true;
+       m_progressDetailsOnRollbackHasBeenSet = true;
     }
   }
 

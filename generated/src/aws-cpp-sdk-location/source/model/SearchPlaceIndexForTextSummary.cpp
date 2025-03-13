@@ -18,22 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary() : 
-    m_textHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterBBoxHasBeenSet(false),
-    m_filterCountriesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_resultBBoxHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_filterCategoriesHasBeenSet(false)
-{
-}
-
 SearchPlaceIndexForTextSummary::SearchPlaceIndexForTextSummary(JsonView jsonValue)
-  : SearchPlaceIndexForTextSummary()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BiasPosition"))
   {
     Aws::Utils::Array<JsonView> biasPositionJsonList = jsonValue.GetArray("BiasPosition");
@@ -56,7 +39,6 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
     }
     m_biasPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterBBox"))
   {
     Aws::Utils::Array<JsonView> filterBBoxJsonList = jsonValue.GetArray("FilterBBox");
@@ -66,7 +48,6 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
     }
     m_filterBBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterCountries"))
   {
     Aws::Utils::Array<JsonView> filterCountriesJsonList = jsonValue.GetArray("FilterCountries");
@@ -76,14 +57,11 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
     }
     m_filterCountriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultBBox"))
   {
     Aws::Utils::Array<JsonView> resultBBoxJsonList = jsonValue.GetArray("ResultBBox");
@@ -93,21 +71,16 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
     }
     m_resultBBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterCategories"))
   {
     Aws::Utils::Array<JsonView> filterCategoriesJsonList = jsonValue.GetArray("FilterCategories");
@@ -117,7 +90,6 @@ SearchPlaceIndexForTextSummary& SearchPlaceIndexForTextSummary::operator =(JsonV
     }
     m_filterCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

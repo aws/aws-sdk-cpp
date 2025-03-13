@@ -33,7 +33,7 @@ namespace Model
   class Consolidation
   {
   public:
-    AWS_CUSTOMERPROFILES_API Consolidation();
+    AWS_CUSTOMERPROFILES_API Consolidation() = default;
     AWS_CUSTOMERPROFILES_API Consolidation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Consolidation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>A list of matching criteria.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetMatchingAttributesList() const{ return m_matchingAttributesList; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetMatchingAttributesList() const { return m_matchingAttributesList; }
     inline bool MatchingAttributesListHasBeenSet() const { return m_matchingAttributesListHasBeenSet; }
-    inline void SetMatchingAttributesList(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_matchingAttributesListHasBeenSet = true; m_matchingAttributesList = value; }
-    inline void SetMatchingAttributesList(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_matchingAttributesListHasBeenSet = true; m_matchingAttributesList = std::move(value); }
-    inline Consolidation& WithMatchingAttributesList(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetMatchingAttributesList(value); return *this;}
-    inline Consolidation& WithMatchingAttributesList(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetMatchingAttributesList(std::move(value)); return *this;}
-    inline Consolidation& AddMatchingAttributesList(const Aws::Vector<Aws::String>& value) { m_matchingAttributesListHasBeenSet = true; m_matchingAttributesList.push_back(value); return *this; }
-    inline Consolidation& AddMatchingAttributesList(Aws::Vector<Aws::String>&& value) { m_matchingAttributesListHasBeenSet = true; m_matchingAttributesList.push_back(std::move(value)); return *this; }
+    template<typename MatchingAttributesListT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetMatchingAttributesList(MatchingAttributesListT&& value) { m_matchingAttributesListHasBeenSet = true; m_matchingAttributesList = std::forward<MatchingAttributesListT>(value); }
+    template<typename MatchingAttributesListT = Aws::Vector<Aws::Vector<Aws::String>>>
+    Consolidation& WithMatchingAttributesList(MatchingAttributesListT&& value) { SetMatchingAttributesList(std::forward<MatchingAttributesListT>(value)); return *this;}
+    template<typename MatchingAttributesListT = Aws::Vector<Aws::String>>
+    Consolidation& AddMatchingAttributesList(MatchingAttributesListT&& value) { m_matchingAttributesListHasBeenSet = true; m_matchingAttributesList.emplace_back(std::forward<MatchingAttributesListT>(value)); return *this; }
     ///@}
   private:
 

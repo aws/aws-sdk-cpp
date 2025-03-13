@@ -31,7 +31,7 @@ namespace Model
   class InvisibleFieldInfo
   {
   public:
-    AWS_CONNECT_API InvisibleFieldInfo();
+    AWS_CONNECT_API InvisibleFieldInfo() = default;
     AWS_CONNECT_API InvisibleFieldInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API InvisibleFieldInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Identifier of the invisible field.</p>
      */
-    inline const TaskTemplateFieldIdentifier& GetId() const{ return m_id; }
+    inline const TaskTemplateFieldIdentifier& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const TaskTemplateFieldIdentifier& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(TaskTemplateFieldIdentifier&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline InvisibleFieldInfo& WithId(const TaskTemplateFieldIdentifier& value) { SetId(value); return *this;}
-    inline InvisibleFieldInfo& WithId(TaskTemplateFieldIdentifier&& value) { SetId(std::move(value)); return *this;}
+    template<typename IdT = TaskTemplateFieldIdentifier>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = TaskTemplateFieldIdentifier>
+    InvisibleFieldInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

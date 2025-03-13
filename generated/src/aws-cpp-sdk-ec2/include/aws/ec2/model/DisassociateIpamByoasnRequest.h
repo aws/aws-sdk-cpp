@@ -21,7 +21,7 @@ namespace Model
   class DisassociateIpamByoasnRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DisassociateIpamByoasnRequest();
+    AWS_EC2_API DisassociateIpamByoasnRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DisassociateIpamByoasnRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,32 +53,28 @@ namespace Model
     /**
      * <p>A public 2-byte or 4-byte ASN.</p>
      */
-    inline const Aws::String& GetAsn() const{ return m_asn; }
+    inline const Aws::String& GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-    inline void SetAsn(const Aws::String& value) { m_asnHasBeenSet = true; m_asn = value; }
-    inline void SetAsn(Aws::String&& value) { m_asnHasBeenSet = true; m_asn = std::move(value); }
-    inline void SetAsn(const char* value) { m_asnHasBeenSet = true; m_asn.assign(value); }
-    inline DisassociateIpamByoasnRequest& WithAsn(const Aws::String& value) { SetAsn(value); return *this;}
-    inline DisassociateIpamByoasnRequest& WithAsn(Aws::String&& value) { SetAsn(std::move(value)); return *this;}
-    inline DisassociateIpamByoasnRequest& WithAsn(const char* value) { SetAsn(value); return *this;}
+    template<typename AsnT = Aws::String>
+    void SetAsn(AsnT&& value) { m_asnHasBeenSet = true; m_asn = std::forward<AsnT>(value); }
+    template<typename AsnT = Aws::String>
+    DisassociateIpamByoasnRequest& WithAsn(AsnT&& value) { SetAsn(std::forward<AsnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A BYOIP CIDR.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline DisassociateIpamByoasnRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline DisassociateIpamByoasnRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline DisassociateIpamByoasnRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    DisassociateIpamByoasnRequest& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_asn;

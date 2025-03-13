@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-LastCrawlInfo::LastCrawlInfo() : 
-    m_status(LastCrawlStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_logGroupHasBeenSet(false),
-    m_logStreamHasBeenSet(false),
-    m_messagePrefixHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 LastCrawlInfo::LastCrawlInfo(JsonView jsonValue)
-  : LastCrawlInfo()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ LastCrawlInfo& LastCrawlInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = LastCrawlStatusMapper::GetLastCrawlStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroup"))
   {
     m_logGroup = jsonValue.GetString("LogGroup");
-
     m_logGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogStream"))
   {
     m_logStream = jsonValue.GetString("LogStream");
-
     m_logStreamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessagePrefix"))
   {
     m_messagePrefix = jsonValue.GetString("MessagePrefix");
-
     m_messagePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

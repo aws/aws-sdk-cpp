@@ -30,7 +30,7 @@ namespace Model
   class AccessPolicyStats
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats();
+    AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats() = default;
     AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of data access policies in the current account.</p>
      */
-    inline long long GetDataPolicyCount() const{ return m_dataPolicyCount; }
+    inline long long GetDataPolicyCount() const { return m_dataPolicyCount; }
     inline bool DataPolicyCountHasBeenSet() const { return m_dataPolicyCountHasBeenSet; }
     inline void SetDataPolicyCount(long long value) { m_dataPolicyCountHasBeenSet = true; m_dataPolicyCount = value; }
     inline AccessPolicyStats& WithDataPolicyCount(long long value) { SetDataPolicyCount(value); return *this;}
     ///@}
   private:
 
-    long long m_dataPolicyCount;
+    long long m_dataPolicyCount{0};
     bool m_dataPolicyCountHasBeenSet = false;
   };
 

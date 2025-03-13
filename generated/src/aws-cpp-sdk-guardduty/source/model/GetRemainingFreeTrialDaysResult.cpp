@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRemainingFreeTrialDaysResult::GetRemainingFreeTrialDaysResult()
-{
-}
-
 GetRemainingFreeTrialDaysResult::GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator =(con
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());
     }
+    m_accountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedAccounts"))
   {
     Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
@@ -45,14 +41,15 @@ GetRemainingFreeTrialDaysResult& GetRemainingFreeTrialDaysResult::operator =(con
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());
     }
+    m_unprocessedAccountsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

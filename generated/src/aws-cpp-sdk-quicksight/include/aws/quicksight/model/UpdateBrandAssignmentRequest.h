@@ -21,7 +21,7 @@ namespace Model
   class UpdateBrandAssignmentRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateBrandAssignmentRequest();
+    AWS_QUICKSIGHT_API UpdateBrandAssignmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the brand assignment.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateBrandAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateBrandAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateBrandAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateBrandAssignmentRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the brand.</p>
      */
-    inline const Aws::String& GetBrandArn() const{ return m_brandArn; }
+    inline const Aws::String& GetBrandArn() const { return m_brandArn; }
     inline bool BrandArnHasBeenSet() const { return m_brandArnHasBeenSet; }
-    inline void SetBrandArn(const Aws::String& value) { m_brandArnHasBeenSet = true; m_brandArn = value; }
-    inline void SetBrandArn(Aws::String&& value) { m_brandArnHasBeenSet = true; m_brandArn = std::move(value); }
-    inline void SetBrandArn(const char* value) { m_brandArnHasBeenSet = true; m_brandArn.assign(value); }
-    inline UpdateBrandAssignmentRequest& WithBrandArn(const Aws::String& value) { SetBrandArn(value); return *this;}
-    inline UpdateBrandAssignmentRequest& WithBrandArn(Aws::String&& value) { SetBrandArn(std::move(value)); return *this;}
-    inline UpdateBrandAssignmentRequest& WithBrandArn(const char* value) { SetBrandArn(value); return *this;}
+    template<typename BrandArnT = Aws::String>
+    void SetBrandArn(BrandArnT&& value) { m_brandArnHasBeenSet = true; m_brandArn = std::forward<BrandArnT>(value); }
+    template<typename BrandArnT = Aws::String>
+    UpdateBrandAssignmentRequest& WithBrandArn(BrandArnT&& value) { SetBrandArn(std::forward<BrandArnT>(value)); return *this;}
     ///@}
   private:
 

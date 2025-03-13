@@ -36,7 +36,7 @@ namespace Model
   class X12Envelope
   {
   public:
-    AWS_B2BI_API X12Envelope();
+    AWS_B2BI_API X12Envelope() = default;
     AWS_B2BI_API X12Envelope(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API X12Envelope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
     /**
      * <p>A container for the X12 outbound EDI headers.</p>
      */
-    inline const X12OutboundEdiHeaders& GetCommon() const{ return m_common; }
+    inline const X12OutboundEdiHeaders& GetCommon() const { return m_common; }
     inline bool CommonHasBeenSet() const { return m_commonHasBeenSet; }
-    inline void SetCommon(const X12OutboundEdiHeaders& value) { m_commonHasBeenSet = true; m_common = value; }
-    inline void SetCommon(X12OutboundEdiHeaders&& value) { m_commonHasBeenSet = true; m_common = std::move(value); }
-    inline X12Envelope& WithCommon(const X12OutboundEdiHeaders& value) { SetCommon(value); return *this;}
-    inline X12Envelope& WithCommon(X12OutboundEdiHeaders&& value) { SetCommon(std::move(value)); return *this;}
+    template<typename CommonT = X12OutboundEdiHeaders>
+    void SetCommon(CommonT&& value) { m_commonHasBeenSet = true; m_common = std::forward<CommonT>(value); }
+    template<typename CommonT = X12OutboundEdiHeaders>
+    X12Envelope& WithCommon(CommonT&& value) { SetCommon(std::forward<CommonT>(value)); return *this;}
     ///@}
   private:
 

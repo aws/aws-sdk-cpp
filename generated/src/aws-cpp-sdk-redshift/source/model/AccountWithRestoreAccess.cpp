@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AccountWithRestoreAccess::AccountWithRestoreAccess() : 
-    m_accountIdHasBeenSet(false),
-    m_accountAliasHasBeenSet(false)
-{
-}
-
 AccountWithRestoreAccess::AccountWithRestoreAccess(const XmlNode& xmlNode)
-  : AccountWithRestoreAccess()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AccountWithRestoreAccess& AccountWithRestoreAccess::operator =(const XmlNode& xm
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
     XmlNode accountAliasNode = resultNode.FirstChild("AccountAlias");
     if(!accountAliasNode.IsNull())
     {
       m_accountAlias = Aws::Utils::Xml::DecodeEscapedXmlText(accountAliasNode.GetText());
       m_accountAliasHasBeenSet = true;
+       m_accountAliasHasBeenSet = true;
     }
   }
 

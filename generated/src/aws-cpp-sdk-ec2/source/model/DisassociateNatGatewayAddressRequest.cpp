@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisassociateNatGatewayAddressRequest::DisassociateNatGatewayAddressRequest() : 
-    m_natGatewayIdHasBeenSet(false),
-    m_associationIdsHasBeenSet(false),
-    m_maxDrainDurationSeconds(0),
-    m_maxDrainDurationSecondsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateNatGatewayAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

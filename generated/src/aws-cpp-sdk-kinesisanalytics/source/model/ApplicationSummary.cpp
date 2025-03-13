@@ -18,16 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-ApplicationSummary::ApplicationSummary() : 
-    m_applicationNameHasBeenSet(false),
-    m_applicationARNHasBeenSet(false),
-    m_applicationStatus(ApplicationStatus::NOT_SET),
-    m_applicationStatusHasBeenSet(false)
-{
-}
-
 ApplicationSummary::ApplicationSummary(JsonView jsonValue)
-  : ApplicationSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationName"))
   {
     m_applicationName = jsonValue.GetString("ApplicationName");
-
     m_applicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationARN"))
   {
     m_applicationARN = jsonValue.GetString("ApplicationARN");
-
     m_applicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationStatus"))
   {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));
-
     m_applicationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

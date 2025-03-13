@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-InstanceGroupTimeline::InstanceGroupTimeline() : 
-    m_creationDateTimeHasBeenSet(false),
-    m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
-{
-}
-
 InstanceGroupTimeline::InstanceGroupTimeline(JsonView jsonValue)
-  : InstanceGroupTimeline()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InstanceGroupTimeline& InstanceGroupTimeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadyDateTime"))
   {
     m_readyDateTime = jsonValue.GetDouble("ReadyDateTime");
-
     m_readyDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndDateTime"))
   {
     m_endDateTime = jsonValue.GetDouble("EndDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

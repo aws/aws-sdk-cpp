@@ -20,17 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-RevocationContent::RevocationContent() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false),
-    m_revocationType(RevocationType::NOT_SET),
-    m_revocationTypeHasBeenSet(false)
-{
-}
-
 RevocationContent::RevocationContent(const XmlNode& xmlNode)
-  : RevocationContent()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ RevocationContent& RevocationContent::operator =(const XmlNode& xmlNode)
     {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
+       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3KeyNode = resultNode.FirstChild("S3Key");
     if(!s3KeyNode.IsNull())
     {
       m_s3Key = Aws::Utils::Xml::DecodeEscapedXmlText(s3KeyNode.GetText());
       m_s3KeyHasBeenSet = true;
+       m_s3KeyHasBeenSet = true;
     }
     XmlNode s3ObjectVersionNode = resultNode.FirstChild("S3ObjectVersion");
     if(!s3ObjectVersionNode.IsNull())
     {
       m_s3ObjectVersion = Aws::Utils::Xml::DecodeEscapedXmlText(s3ObjectVersionNode.GetText());
       m_s3ObjectVersionHasBeenSet = true;
+       m_s3ObjectVersionHasBeenSet = true;
     }
     XmlNode revocationTypeNode = resultNode.FirstChild("RevocationType");
     if(!revocationTypeNode.IsNull())
     {
-      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()).c_str());
+      m_revocationType = RevocationTypeMapper::GetRevocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(revocationTypeNode.GetText()).c_str()));
       m_revocationTypeHasBeenSet = true;
+       m_revocationTypeHasBeenSet = true;
     }
   }
 

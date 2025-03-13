@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateVoiceConnectorResult::UpdateVoiceConnectorResult()
-{
-}
-
 UpdateVoiceConnectorResult::UpdateVoiceConnectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateVoiceConnectorResult& UpdateVoiceConnectorResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("VoiceConnector"))
   {
     m_voiceConnector = jsonValue.GetObject("VoiceConnector");
-
+    m_voiceConnectorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

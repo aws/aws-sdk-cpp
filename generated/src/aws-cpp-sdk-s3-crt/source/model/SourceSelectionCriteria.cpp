@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-SourceSelectionCriteria::SourceSelectionCriteria() : 
-    m_sseKmsEncryptedObjectsHasBeenSet(false),
-    m_replicaModificationsHasBeenSet(false)
-{
-}
-
 SourceSelectionCriteria::SourceSelectionCriteria(const XmlNode& xmlNode)
-  : SourceSelectionCriteria()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SourceSelectionCriteria& SourceSelectionCriteria::operator =(const XmlNode& xmlN
     {
       m_sseKmsEncryptedObjects = sseKmsEncryptedObjectsNode;
       m_sseKmsEncryptedObjectsHasBeenSet = true;
+       m_sseKmsEncryptedObjectsHasBeenSet = true;
     }
     XmlNode replicaModificationsNode = resultNode.FirstChild("ReplicaModifications");
     if(!replicaModificationsNode.IsNull())
     {
       m_replicaModifications = replicaModificationsNode;
       m_replicaModificationsHasBeenSet = true;
+       m_replicaModificationsHasBeenSet = true;
     }
   }
 

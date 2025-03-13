@@ -30,7 +30,7 @@ namespace Model
   class EpssDetails
   {
   public:
-    AWS_INSPECTOR2_API EpssDetails();
+    AWS_INSPECTOR2_API EpssDetails() = default;
     AWS_INSPECTOR2_API EpssDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API EpssDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The EPSS score.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline EpssDetails& WithScore(double value) { SetScore(value); return *this;}
     ///@}
   private:
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

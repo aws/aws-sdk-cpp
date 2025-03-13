@@ -18,25 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-NotificationOutput::NotificationOutput() : 
-    m_actionLinkHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_status(TaskStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_topicHasBeenSet(false),
-    m_type(NotificationType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 NotificationOutput::NotificationOutput(JsonView jsonValue)
-  : NotificationOutput()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ NotificationOutput& NotificationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionLink"))
   {
     m_actionLink = jsonValue.GetString("actionLink");
-
     m_actionLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetDouble("creationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainIdentifier"))
   {
     m_domainIdentifier = jsonValue.GetString("domainIdentifier");
-
     m_domainIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("lastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -94,35 +64,26 @@ NotificationOutput& NotificationOutput::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TaskStatusMapper::GetTaskStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topic"))
   {
     m_topic = jsonValue.GetObject("topic");
-
     m_topicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary() : 
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 NotebookInstanceLifecycleConfigSummary::NotebookInstanceLifecycleConfigSummary(JsonView jsonValue)
-  : NotebookInstanceLifecycleConfigSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ NotebookInstanceLifecycleConfigSummary& NotebookInstanceLifecycleConfigSummary::
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
   {
     m_notebookInstanceLifecycleConfigName = jsonValue.GetString("NotebookInstanceLifecycleConfigName");
-
     m_notebookInstanceLifecycleConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigArn"))
   {
     m_notebookInstanceLifecycleConfigArn = jsonValue.GetString("NotebookInstanceLifecycleConfigArn");
-
     m_notebookInstanceLifecycleConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

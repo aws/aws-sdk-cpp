@@ -39,7 +39,7 @@ namespace Model
   class VideoSelector
   {
   public:
-    AWS_MEDIACONVERT_API VideoSelector();
+    AWS_MEDIACONVERT_API VideoSelector() = default;
     AWS_MEDIACONVERT_API VideoSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
      * luma channel of your outputs.
      */
-    inline const AlphaBehavior& GetAlphaBehavior() const{ return m_alphaBehavior; }
+    inline AlphaBehavior GetAlphaBehavior() const { return m_alphaBehavior; }
     inline bool AlphaBehaviorHasBeenSet() const { return m_alphaBehaviorHasBeenSet; }
-    inline void SetAlphaBehavior(const AlphaBehavior& value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = value; }
-    inline void SetAlphaBehavior(AlphaBehavior&& value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = std::move(value); }
-    inline VideoSelector& WithAlphaBehavior(const AlphaBehavior& value) { SetAlphaBehavior(value); return *this;}
-    inline VideoSelector& WithAlphaBehavior(AlphaBehavior&& value) { SetAlphaBehavior(std::move(value)); return *this;}
+    inline void SetAlphaBehavior(AlphaBehavior value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = value; }
+    inline VideoSelector& WithAlphaBehavior(AlphaBehavior value) { SetAlphaBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,10 @@ namespace Model
      * (SDR): Display P3, sRGB, BT.709
  * P3D65 (HDR): Display P3, PQ, BT.709
      */
-    inline const ColorSpace& GetColorSpace() const{ return m_colorSpace; }
+    inline ColorSpace GetColorSpace() const { return m_colorSpace; }
     inline bool ColorSpaceHasBeenSet() const { return m_colorSpaceHasBeenSet; }
-    inline void SetColorSpace(const ColorSpace& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
-    inline void SetColorSpace(ColorSpace&& value) { m_colorSpaceHasBeenSet = true; m_colorSpace = std::move(value); }
-    inline VideoSelector& WithColorSpace(const ColorSpace& value) { SetColorSpace(value); return *this;}
-    inline VideoSelector& WithColorSpace(ColorSpace&& value) { SetColorSpace(std::move(value)); return *this;}
+    inline void SetColorSpace(ColorSpace value) { m_colorSpaceHasBeenSet = true; m_colorSpace = value; }
+    inline VideoSelector& WithColorSpace(ColorSpace value) { SetColorSpace(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +99,10 @@ namespace Model
      * there's no color metadata in your input file, the service defaults to using
      * values you specify in the input settings.
      */
-    inline const ColorSpaceUsage& GetColorSpaceUsage() const{ return m_colorSpaceUsage; }
+    inline ColorSpaceUsage GetColorSpaceUsage() const { return m_colorSpaceUsage; }
     inline bool ColorSpaceUsageHasBeenSet() const { return m_colorSpaceUsageHasBeenSet; }
-    inline void SetColorSpaceUsage(const ColorSpaceUsage& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = value; }
-    inline void SetColorSpaceUsage(ColorSpaceUsage&& value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = std::move(value); }
-    inline VideoSelector& WithColorSpaceUsage(const ColorSpaceUsage& value) { SetColorSpaceUsage(value); return *this;}
-    inline VideoSelector& WithColorSpaceUsage(ColorSpaceUsage&& value) { SetColorSpaceUsage(std::move(value)); return *this;}
+    inline void SetColorSpaceUsage(ColorSpaceUsage value) { m_colorSpaceUsageHasBeenSet = true; m_colorSpaceUsage = value; }
+    inline VideoSelector& WithColorSpaceUsage(ColorSpaceUsage value) { SetColorSpaceUsage(value); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +112,10 @@ namespace Model
      * recommend you also set Timecode source to Embedded. Leave Embedded timecode
      * override blank, or set to None, when your input does not contain MDPM timecode.
      */
-    inline const EmbeddedTimecodeOverride& GetEmbeddedTimecodeOverride() const{ return m_embeddedTimecodeOverride; }
+    inline EmbeddedTimecodeOverride GetEmbeddedTimecodeOverride() const { return m_embeddedTimecodeOverride; }
     inline bool EmbeddedTimecodeOverrideHasBeenSet() const { return m_embeddedTimecodeOverrideHasBeenSet; }
-    inline void SetEmbeddedTimecodeOverride(const EmbeddedTimecodeOverride& value) { m_embeddedTimecodeOverrideHasBeenSet = true; m_embeddedTimecodeOverride = value; }
-    inline void SetEmbeddedTimecodeOverride(EmbeddedTimecodeOverride&& value) { m_embeddedTimecodeOverrideHasBeenSet = true; m_embeddedTimecodeOverride = std::move(value); }
-    inline VideoSelector& WithEmbeddedTimecodeOverride(const EmbeddedTimecodeOverride& value) { SetEmbeddedTimecodeOverride(value); return *this;}
-    inline VideoSelector& WithEmbeddedTimecodeOverride(EmbeddedTimecodeOverride&& value) { SetEmbeddedTimecodeOverride(std::move(value)); return *this;}
+    inline void SetEmbeddedTimecodeOverride(EmbeddedTimecodeOverride value) { m_embeddedTimecodeOverrideHasBeenSet = true; m_embeddedTimecodeOverride = value; }
+    inline VideoSelector& WithEmbeddedTimecodeOverride(EmbeddedTimecodeOverride value) { SetEmbeddedTimecodeOverride(value); return *this;}
     ///@}
 
     ///@{
@@ -140,12 +132,12 @@ namespace Model
      * information about MediaConvert HDR jobs, see
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
-    inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
+    inline const Hdr10Metadata& GetHdr10Metadata() const { return m_hdr10Metadata; }
     inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
-    inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
-    inline void SetHdr10Metadata(Hdr10Metadata&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::move(value); }
-    inline VideoSelector& WithHdr10Metadata(const Hdr10Metadata& value) { SetHdr10Metadata(value); return *this;}
-    inline VideoSelector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}
+    template<typename Hdr10MetadataT = Hdr10Metadata>
+    void SetHdr10Metadata(Hdr10MetadataT&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::forward<Hdr10MetadataT>(value); }
+    template<typename Hdr10MetadataT = Hdr10Metadata>
+    VideoSelector& WithHdr10Metadata(Hdr10MetadataT&& value) { SetHdr10Metadata(std::forward<Hdr10MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,7 +145,7 @@ namespace Model
      * Specify the maximum mastering display luminance. Enter an integer from 0 to
      * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
      */
-    inline int GetMaxLuminance() const{ return m_maxLuminance; }
+    inline int GetMaxLuminance() const { return m_maxLuminance; }
     inline bool MaxLuminanceHasBeenSet() const { return m_maxLuminanceHasBeenSet; }
     inline void SetMaxLuminance(int value) { m_maxLuminanceHasBeenSet = true; m_maxLuminance = value; }
     inline VideoSelector& WithMaxLuminance(int value) { SetMaxLuminance(value); return *this;}
@@ -169,12 +161,10 @@ namespace Model
      * beginning or end, depending on your input. To keep the default behavior and not
      * generate black video, set Pad video to Disabled or leave blank.
      */
-    inline const PadVideo& GetPadVideo() const{ return m_padVideo; }
+    inline PadVideo GetPadVideo() const { return m_padVideo; }
     inline bool PadVideoHasBeenSet() const { return m_padVideoHasBeenSet; }
-    inline void SetPadVideo(const PadVideo& value) { m_padVideoHasBeenSet = true; m_padVideo = value; }
-    inline void SetPadVideo(PadVideo&& value) { m_padVideoHasBeenSet = true; m_padVideo = std::move(value); }
-    inline VideoSelector& WithPadVideo(const PadVideo& value) { SetPadVideo(value); return *this;}
-    inline VideoSelector& WithPadVideo(PadVideo&& value) { SetPadVideo(std::move(value)); return *this;}
+    inline void SetPadVideo(PadVideo value) { m_padVideoHasBeenSet = true; m_padVideo = value; }
+    inline VideoSelector& WithPadVideo(PadVideo value) { SetPadVideo(value); return *this;}
     ///@}
 
     ///@{
@@ -184,7 +174,7 @@ namespace Model
      * example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier
      * for a set of data in an MPEG-2 transport stream container.
      */
-    inline int GetPid() const{ return m_pid; }
+    inline int GetPid() const { return m_pid; }
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
     inline VideoSelector& WithPid(int value) { SetPid(value); return *this;}
@@ -195,7 +185,7 @@ namespace Model
      * Selects a specific program from within a multi-program transport stream. Note
      * that Quad 4K is not currently supported.
      */
-    inline int GetProgramNumber() const{ return m_programNumber; }
+    inline int GetProgramNumber() const { return m_programNumber; }
     inline bool ProgramNumberHasBeenSet() const { return m_programNumberHasBeenSet; }
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
     inline VideoSelector& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
@@ -213,12 +203,10 @@ namespace Model
      * By default, the service does no rotation, even if your input video has rotation
      * metadata. The service doesn't pass through rotation metadata.
      */
-    inline const InputRotate& GetRotate() const{ return m_rotate; }
+    inline InputRotate GetRotate() const { return m_rotate; }
     inline bool RotateHasBeenSet() const { return m_rotateHasBeenSet; }
-    inline void SetRotate(const InputRotate& value) { m_rotateHasBeenSet = true; m_rotate = value; }
-    inline void SetRotate(InputRotate&& value) { m_rotateHasBeenSet = true; m_rotate = std::move(value); }
-    inline VideoSelector& WithRotate(const InputRotate& value) { SetRotate(value); return *this;}
-    inline VideoSelector& WithRotate(InputRotate&& value) { SetRotate(std::move(value)); return *this;}
+    inline void SetRotate(InputRotate value) { m_rotateHasBeenSet = true; m_rotate = value; }
+    inline VideoSelector& WithRotate(InputRotate value) { SetRotate(value); return *this;}
     ///@}
 
     ///@{
@@ -232,46 +220,44 @@ namespace Model
      * input sample range or the sample range that you specify, MediaConvert uses the
      * sample range for transcoding and also writes it to the output metadata.
      */
-    inline const InputSampleRange& GetSampleRange() const{ return m_sampleRange; }
+    inline InputSampleRange GetSampleRange() const { return m_sampleRange; }
     inline bool SampleRangeHasBeenSet() const { return m_sampleRangeHasBeenSet; }
-    inline void SetSampleRange(const InputSampleRange& value) { m_sampleRangeHasBeenSet = true; m_sampleRange = value; }
-    inline void SetSampleRange(InputSampleRange&& value) { m_sampleRangeHasBeenSet = true; m_sampleRange = std::move(value); }
-    inline VideoSelector& WithSampleRange(const InputSampleRange& value) { SetSampleRange(value); return *this;}
-    inline VideoSelector& WithSampleRange(InputSampleRange&& value) { SetSampleRange(std::move(value)); return *this;}
+    inline void SetSampleRange(InputSampleRange value) { m_sampleRangeHasBeenSet = true; m_sampleRange = value; }
+    inline VideoSelector& WithSampleRange(InputSampleRange value) { SetSampleRange(value); return *this;}
     ///@}
   private:
 
-    AlphaBehavior m_alphaBehavior;
+    AlphaBehavior m_alphaBehavior{AlphaBehavior::NOT_SET};
     bool m_alphaBehaviorHasBeenSet = false;
 
-    ColorSpace m_colorSpace;
+    ColorSpace m_colorSpace{ColorSpace::NOT_SET};
     bool m_colorSpaceHasBeenSet = false;
 
-    ColorSpaceUsage m_colorSpaceUsage;
+    ColorSpaceUsage m_colorSpaceUsage{ColorSpaceUsage::NOT_SET};
     bool m_colorSpaceUsageHasBeenSet = false;
 
-    EmbeddedTimecodeOverride m_embeddedTimecodeOverride;
+    EmbeddedTimecodeOverride m_embeddedTimecodeOverride{EmbeddedTimecodeOverride::NOT_SET};
     bool m_embeddedTimecodeOverrideHasBeenSet = false;
 
     Hdr10Metadata m_hdr10Metadata;
     bool m_hdr10MetadataHasBeenSet = false;
 
-    int m_maxLuminance;
+    int m_maxLuminance{0};
     bool m_maxLuminanceHasBeenSet = false;
 
-    PadVideo m_padVideo;
+    PadVideo m_padVideo{PadVideo::NOT_SET};
     bool m_padVideoHasBeenSet = false;
 
-    int m_pid;
+    int m_pid{0};
     bool m_pidHasBeenSet = false;
 
-    int m_programNumber;
+    int m_programNumber{0};
     bool m_programNumberHasBeenSet = false;
 
-    InputRotate m_rotate;
+    InputRotate m_rotate{InputRotate::NOT_SET};
     bool m_rotateHasBeenSet = false;
 
-    InputSampleRange m_sampleRange;
+    InputSampleRange m_sampleRange{InputSampleRange::NOT_SET};
     bool m_sampleRangeHasBeenSet = false;
   };
 

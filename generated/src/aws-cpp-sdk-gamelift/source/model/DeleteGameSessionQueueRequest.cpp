@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGameSessionQueueRequest::DeleteGameSessionQueueRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGameSessionQueueRequest::SerializePayload() const
 {
   JsonValue payload;

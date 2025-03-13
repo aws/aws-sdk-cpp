@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelModeratedByAppInstanceUserSummary::ChannelModeratedByAppInstanceUserSummary() : 
-    m_channelSummaryHasBeenSet(false)
-{
-}
-
 ChannelModeratedByAppInstanceUserSummary::ChannelModeratedByAppInstanceUserSummary(JsonView jsonValue)
-  : ChannelModeratedByAppInstanceUserSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelModeratedByAppInstanceUserSummary& ChannelModeratedByAppInstanceUserSumma
   if(jsonValue.ValueExists("ChannelSummary"))
   {
     m_channelSummary = jsonValue.GetObject("ChannelSummary");
-
     m_channelSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

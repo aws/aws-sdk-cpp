@@ -10,13 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DescribeInsightRulesRequest::DescribeInsightRulesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInsightRulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

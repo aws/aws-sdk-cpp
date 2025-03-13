@@ -12,13 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTaskRequest::StopTaskRequest() : 
-    m_clusterHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String StopTaskRequest::SerializePayload() const
 {
   JsonValue payload;

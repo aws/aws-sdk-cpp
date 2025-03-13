@@ -12,14 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChannelClassRequest::UpdateChannelClassRequest() : 
-    m_channelClass(ChannelClass::NOT_SET),
-    m_channelClassHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChannelClassRequest::SerializePayload() const
 {
   JsonValue payload;

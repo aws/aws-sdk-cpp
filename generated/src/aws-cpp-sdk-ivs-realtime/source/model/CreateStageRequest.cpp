@@ -12,14 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStageRequest::CreateStageRequest() : 
-    m_nameHasBeenSet(false),
-    m_participantTokenConfigurationsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_autoParticipantRecordingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateStageRequest::SerializePayload() const
 {
   JsonValue payload;

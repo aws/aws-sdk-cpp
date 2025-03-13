@@ -39,7 +39,7 @@ namespace Model
   class OffPeakWindow
   {
   public:
-    AWS_OPENSEARCHSERVICE_API OffPeakWindow();
+    AWS_OPENSEARCHSERVICE_API OffPeakWindow() = default;
     AWS_OPENSEARCHSERVICE_API OffPeakWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API OffPeakWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * time. For example, if you specify 11:00 P.M. UTC as a start time, the end time
      * will automatically be set to 9:00 A.M.</p>
      */
-    inline const WindowStartTime& GetWindowStartTime() const{ return m_windowStartTime; }
+    inline const WindowStartTime& GetWindowStartTime() const { return m_windowStartTime; }
     inline bool WindowStartTimeHasBeenSet() const { return m_windowStartTimeHasBeenSet; }
-    inline void SetWindowStartTime(const WindowStartTime& value) { m_windowStartTimeHasBeenSet = true; m_windowStartTime = value; }
-    inline void SetWindowStartTime(WindowStartTime&& value) { m_windowStartTimeHasBeenSet = true; m_windowStartTime = std::move(value); }
-    inline OffPeakWindow& WithWindowStartTime(const WindowStartTime& value) { SetWindowStartTime(value); return *this;}
-    inline OffPeakWindow& WithWindowStartTime(WindowStartTime&& value) { SetWindowStartTime(std::move(value)); return *this;}
+    template<typename WindowStartTimeT = WindowStartTime>
+    void SetWindowStartTime(WindowStartTimeT&& value) { m_windowStartTimeHasBeenSet = true; m_windowStartTime = std::forward<WindowStartTimeT>(value); }
+    template<typename WindowStartTimeT = WindowStartTime>
+    OffPeakWindow& WithWindowStartTime(WindowStartTimeT&& value) { SetWindowStartTime(std::forward<WindowStartTimeT>(value)); return *this;}
     ///@}
   private:
 

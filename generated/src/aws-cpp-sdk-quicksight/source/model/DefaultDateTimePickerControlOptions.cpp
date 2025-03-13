@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DefaultDateTimePickerControlOptions::DefaultDateTimePickerControlOptions() : 
-    m_type(SheetControlDateTimePickerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_displayOptionsHasBeenSet(false),
-    m_commitMode(CommitMode::NOT_SET),
-    m_commitModeHasBeenSet(false)
-{
-}
-
 DefaultDateTimePickerControlOptions::DefaultDateTimePickerControlOptions(JsonView jsonValue)
-  : DefaultDateTimePickerControlOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DefaultDateTimePickerControlOptions& DefaultDateTimePickerControlOptions::operat
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SheetControlDateTimePickerTypeMapper::GetSheetControlDateTimePickerTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayOptions"))
   {
     m_displayOptions = jsonValue.GetObject("DisplayOptions");
-
     m_displayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitMode"))
   {
     m_commitMode = CommitModeMapper::GetCommitModeForName(jsonValue.GetString("CommitMode"));
-
     m_commitModeHasBeenSet = true;
   }
-
   return *this;
 }
 

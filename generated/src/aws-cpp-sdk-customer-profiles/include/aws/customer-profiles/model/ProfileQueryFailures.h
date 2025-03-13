@@ -31,7 +31,7 @@ namespace Model
   class ProfileQueryFailures
   {
   public:
-    AWS_CUSTOMERPROFILES_API ProfileQueryFailures();
+    AWS_CUSTOMERPROFILES_API ProfileQueryFailures() = default;
     AWS_CUSTOMERPROFILES_API ProfileQueryFailures(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ProfileQueryFailures& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The profile id the failure belongs to.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline ProfileQueryFailures& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline ProfileQueryFailures& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline ProfileQueryFailures& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    ProfileQueryFailures& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message describing the failure.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ProfileQueryFailures& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ProfileQueryFailures& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ProfileQueryFailures& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ProfileQueryFailures& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status describing the failure.</p>
      */
-    inline int GetStatus() const{ return m_status; }
+    inline int GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
     inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ProfileQueryFailures& WithStatus(int value) { SetStatus(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
     bool m_statusHasBeenSet = false;
   };
 

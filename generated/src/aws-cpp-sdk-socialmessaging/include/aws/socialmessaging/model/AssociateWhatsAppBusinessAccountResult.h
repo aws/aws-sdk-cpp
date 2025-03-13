@@ -28,7 +28,7 @@ namespace Model
   class AssociateWhatsAppBusinessAccountResult
   {
   public:
-    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult();
+    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult() = default;
     AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,39 +37,40 @@ namespace Model
     /**
      * <p>Contains your WhatsApp registration status.</p>
      */
-    inline const WhatsAppSignupCallbackResult& GetSignupCallbackResult() const{ return m_signupCallbackResult; }
-    inline void SetSignupCallbackResult(const WhatsAppSignupCallbackResult& value) { m_signupCallbackResult = value; }
-    inline void SetSignupCallbackResult(WhatsAppSignupCallbackResult&& value) { m_signupCallbackResult = std::move(value); }
-    inline AssociateWhatsAppBusinessAccountResult& WithSignupCallbackResult(const WhatsAppSignupCallbackResult& value) { SetSignupCallbackResult(value); return *this;}
-    inline AssociateWhatsAppBusinessAccountResult& WithSignupCallbackResult(WhatsAppSignupCallbackResult&& value) { SetSignupCallbackResult(std::move(value)); return *this;}
+    inline const WhatsAppSignupCallbackResult& GetSignupCallbackResult() const { return m_signupCallbackResult; }
+    template<typename SignupCallbackResultT = WhatsAppSignupCallbackResult>
+    void SetSignupCallbackResult(SignupCallbackResultT&& value) { m_signupCallbackResultHasBeenSet = true; m_signupCallbackResult = std::forward<SignupCallbackResultT>(value); }
+    template<typename SignupCallbackResultT = WhatsAppSignupCallbackResult>
+    AssociateWhatsAppBusinessAccountResult& WithSignupCallbackResult(SignupCallbackResultT&& value) { SetSignupCallbackResult(std::forward<SignupCallbackResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status code for the response.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline int GetStatusCode() const { return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline AssociateWhatsAppBusinessAccountResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateWhatsAppBusinessAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateWhatsAppBusinessAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateWhatsAppBusinessAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateWhatsAppBusinessAccountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WhatsAppSignupCallbackResult m_signupCallbackResult;
+    bool m_signupCallbackResultHasBeenSet = false;
 
-    int m_statusCode;
+    int m_statusCode{0};
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

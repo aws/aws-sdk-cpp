@@ -12,18 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTransformerRequest::UpdateTransformerRequest() : 
-    m_transformerIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(TransformerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inputConversionHasBeenSet(false),
-    m_mappingHasBeenSet(false),
-    m_outputConversionHasBeenSet(false),
-    m_sampleDocumentsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTransformerRequest::SerializePayload() const
 {
   JsonValue payload;

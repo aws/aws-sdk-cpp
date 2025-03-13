@@ -22,7 +22,7 @@ namespace Model
   class GenerateChangeSetRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API GenerateChangeSetRequest();
+    AWS_SMS_API GenerateChangeSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,33 +39,29 @@ namespace Model
     /**
      * <p>The ID of the application associated with the change set.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
+    inline const Aws::String& GetAppId() const { return m_appId; }
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-    inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-    inline GenerateChangeSetRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline GenerateChangeSetRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline GenerateChangeSetRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    GenerateChangeSetRequest& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format for the change set.</p>
      */
-    inline const OutputFormat& GetChangesetFormat() const{ return m_changesetFormat; }
+    inline OutputFormat GetChangesetFormat() const { return m_changesetFormat; }
     inline bool ChangesetFormatHasBeenSet() const { return m_changesetFormatHasBeenSet; }
-    inline void SetChangesetFormat(const OutputFormat& value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = value; }
-    inline void SetChangesetFormat(OutputFormat&& value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = std::move(value); }
-    inline GenerateChangeSetRequest& WithChangesetFormat(const OutputFormat& value) { SetChangesetFormat(value); return *this;}
-    inline GenerateChangeSetRequest& WithChangesetFormat(OutputFormat&& value) { SetChangesetFormat(std::move(value)); return *this;}
+    inline void SetChangesetFormat(OutputFormat value) { m_changesetFormatHasBeenSet = true; m_changesetFormat = value; }
+    inline GenerateChangeSetRequest& WithChangesetFormat(OutputFormat value) { SetChangesetFormat(value); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
 
-    OutputFormat m_changesetFormat;
+    OutputFormat m_changesetFormat{OutputFormat::NOT_SET};
     bool m_changesetFormatHasBeenSet = false;
   };
 

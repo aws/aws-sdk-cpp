@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSearchResultExportJobResult::StartSearchResultExportJobResult()
-{
-}
-
 StartSearchResultExportJobResult::StartSearchResultExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ StartSearchResultExportJobResult& StartSearchResultExportJobResult::operator =(c
   if(jsonValue.ValueExists("ExportJobArn"))
   {
     m_exportJobArn = jsonValue.GetString("ExportJobArn");
-
+    m_exportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportJobIdentifier"))
   {
     m_exportJobIdentifier = jsonValue.GetString("ExportJobIdentifier");
-
+    m_exportJobIdentifierHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

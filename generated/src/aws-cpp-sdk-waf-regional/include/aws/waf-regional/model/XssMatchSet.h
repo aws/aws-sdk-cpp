@@ -47,7 +47,7 @@ namespace Model
   class XssMatchSet
   {
   public:
-    AWS_WAFREGIONAL_API XssMatchSet();
+    AWS_WAFREGIONAL_API XssMatchSet() = default;
     AWS_WAFREGIONAL_API XssMatchSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API XssMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,28 +64,24 @@ namespace Model
      * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
-    inline const Aws::String& GetXssMatchSetId() const{ return m_xssMatchSetId; }
+    inline const Aws::String& GetXssMatchSetId() const { return m_xssMatchSetId; }
     inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
-    inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
-    inline void SetXssMatchSetId(const char* value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId.assign(value); }
-    inline XssMatchSet& WithXssMatchSetId(const Aws::String& value) { SetXssMatchSetId(value); return *this;}
-    inline XssMatchSet& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
-    inline XssMatchSet& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
+    template<typename XssMatchSetIdT = Aws::String>
+    void SetXssMatchSetId(XssMatchSetIdT&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::forward<XssMatchSetIdT>(value); }
+    template<typename XssMatchSetIdT = Aws::String>
+    XssMatchSet& WithXssMatchSetId(XssMatchSetIdT&& value) { SetXssMatchSetId(std::forward<XssMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name, if any, of the <code>XssMatchSet</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline XssMatchSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline XssMatchSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline XssMatchSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    XssMatchSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,14 @@ namespace Model
      * <p>Specifies the parts of web requests that you want to inspect for cross-site
      * scripting attacks.</p>
      */
-    inline const Aws::Vector<XssMatchTuple>& GetXssMatchTuples() const{ return m_xssMatchTuples; }
+    inline const Aws::Vector<XssMatchTuple>& GetXssMatchTuples() const { return m_xssMatchTuples; }
     inline bool XssMatchTuplesHasBeenSet() const { return m_xssMatchTuplesHasBeenSet; }
-    inline void SetXssMatchTuples(const Aws::Vector<XssMatchTuple>& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples = value; }
-    inline void SetXssMatchTuples(Aws::Vector<XssMatchTuple>&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples = std::move(value); }
-    inline XssMatchSet& WithXssMatchTuples(const Aws::Vector<XssMatchTuple>& value) { SetXssMatchTuples(value); return *this;}
-    inline XssMatchSet& WithXssMatchTuples(Aws::Vector<XssMatchTuple>&& value) { SetXssMatchTuples(std::move(value)); return *this;}
-    inline XssMatchSet& AddXssMatchTuples(const XssMatchTuple& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples.push_back(value); return *this; }
-    inline XssMatchSet& AddXssMatchTuples(XssMatchTuple&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples.push_back(std::move(value)); return *this; }
+    template<typename XssMatchTuplesT = Aws::Vector<XssMatchTuple>>
+    void SetXssMatchTuples(XssMatchTuplesT&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples = std::forward<XssMatchTuplesT>(value); }
+    template<typename XssMatchTuplesT = Aws::Vector<XssMatchTuple>>
+    XssMatchSet& WithXssMatchTuples(XssMatchTuplesT&& value) { SetXssMatchTuples(std::forward<XssMatchTuplesT>(value)); return *this;}
+    template<typename XssMatchTuplesT = XssMatchTuple>
+    XssMatchSet& AddXssMatchTuples(XssMatchTuplesT&& value) { m_xssMatchTuplesHasBeenSet = true; m_xssMatchTuples.emplace_back(std::forward<XssMatchTuplesT>(value)); return *this; }
     ///@}
   private:
 

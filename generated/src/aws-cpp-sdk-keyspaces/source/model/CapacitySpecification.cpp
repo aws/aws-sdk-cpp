@@ -18,18 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-CapacitySpecification::CapacitySpecification() : 
-    m_throughputMode(ThroughputMode::NOT_SET),
-    m_throughputModeHasBeenSet(false),
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
-{
-}
-
 CapacitySpecification::CapacitySpecification(JsonView jsonValue)
-  : CapacitySpecification()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ CapacitySpecification& CapacitySpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("throughputMode"))
   {
     m_throughputMode = ThroughputModeMapper::GetThroughputModeForName(jsonValue.GetString("throughputMode"));
-
     m_throughputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInt64("readCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeCapacityUnits"))
   {
     m_writeCapacityUnits = jsonValue.GetInt64("writeCapacityUnits");
-
     m_writeCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

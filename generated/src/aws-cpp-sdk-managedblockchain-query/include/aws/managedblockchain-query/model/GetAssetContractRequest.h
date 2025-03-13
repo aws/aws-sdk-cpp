@@ -21,7 +21,7 @@ namespace Model
   class GetAssetContractRequest : public ManagedBlockchainQueryRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API GetAssetContractRequest();
+    AWS_MANAGEDBLOCKCHAINQUERY_API GetAssetContractRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
      * <p>Contains the blockchain address and network information about the
      * contract.</p>
      */
-    inline const ContractIdentifier& GetContractIdentifier() const{ return m_contractIdentifier; }
+    inline const ContractIdentifier& GetContractIdentifier() const { return m_contractIdentifier; }
     inline bool ContractIdentifierHasBeenSet() const { return m_contractIdentifierHasBeenSet; }
-    inline void SetContractIdentifier(const ContractIdentifier& value) { m_contractIdentifierHasBeenSet = true; m_contractIdentifier = value; }
-    inline void SetContractIdentifier(ContractIdentifier&& value) { m_contractIdentifierHasBeenSet = true; m_contractIdentifier = std::move(value); }
-    inline GetAssetContractRequest& WithContractIdentifier(const ContractIdentifier& value) { SetContractIdentifier(value); return *this;}
-    inline GetAssetContractRequest& WithContractIdentifier(ContractIdentifier&& value) { SetContractIdentifier(std::move(value)); return *this;}
+    template<typename ContractIdentifierT = ContractIdentifier>
+    void SetContractIdentifier(ContractIdentifierT&& value) { m_contractIdentifierHasBeenSet = true; m_contractIdentifier = std::forward<ContractIdentifierT>(value); }
+    template<typename ContractIdentifierT = ContractIdentifier>
+    GetAssetContractRequest& WithContractIdentifier(ContractIdentifierT&& value) { SetContractIdentifier(std::forward<ContractIdentifierT>(value)); return *this;}
     ///@}
   private:
 

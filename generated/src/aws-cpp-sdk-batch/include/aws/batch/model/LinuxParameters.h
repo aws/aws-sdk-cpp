@@ -34,7 +34,7 @@ namespace Model
   class LinuxParameters
   {
   public:
-    AWS_BATCH_API LinuxParameters();
+    AWS_BATCH_API LinuxParameters() = default;
     AWS_BATCH_API LinuxParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API LinuxParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * <p>This parameter isn't applicable to jobs that are running on Fargate
      * resources. Don't provide it for these jobs.</p> 
      */
-    inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
+    inline const Aws::Vector<Device>& GetDevices() const { return m_devices; }
     inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
-    inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
-    inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
-    inline LinuxParameters& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
-    inline LinuxParameters& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
-    inline LinuxParameters& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
-    inline LinuxParameters& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
+    template<typename DevicesT = Aws::Vector<Device>>
+    void SetDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices = std::forward<DevicesT>(value); }
+    template<typename DevicesT = Aws::Vector<Device>>
+    LinuxParameters& WithDevices(DevicesT&& value) { SetDevices(std::forward<DevicesT>(value)); return *this;}
+    template<typename DevicesT = Device>
+    LinuxParameters& AddDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices.emplace_back(std::forward<DevicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,7 +72,7 @@ namespace Model
      * your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code> </p>
      */
-    inline bool GetInitProcessEnabled() const{ return m_initProcessEnabled; }
+    inline bool GetInitProcessEnabled() const { return m_initProcessEnabled; }
     inline bool InitProcessEnabledHasBeenSet() const { return m_initProcessEnabledHasBeenSet; }
     inline void SetInitProcessEnabled(bool value) { m_initProcessEnabledHasBeenSet = true; m_initProcessEnabled = value; }
     inline LinuxParameters& WithInitProcessEnabled(bool value) { SetInitProcessEnabled(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
      * <p>This parameter isn't applicable to jobs that are running on Fargate
      * resources. Don't provide it for these jobs.</p> 
      */
-    inline int GetSharedMemorySize() const{ return m_sharedMemorySize; }
+    inline int GetSharedMemorySize() const { return m_sharedMemorySize; }
     inline bool SharedMemorySizeHasBeenSet() const { return m_sharedMemorySizeHasBeenSet; }
     inline void SetSharedMemorySize(int value) { m_sharedMemorySizeHasBeenSet = true; m_sharedMemorySize = value; }
     inline LinuxParameters& WithSharedMemorySize(int value) { SetSharedMemorySize(value); return *this;}
@@ -100,14 +100,14 @@ namespace Model
      *  <p>This parameter isn't applicable to jobs that are running on Fargate
      * resources. Don't provide this parameter for this resource type.</p> 
      */
-    inline const Aws::Vector<Tmpfs>& GetTmpfs() const{ return m_tmpfs; }
+    inline const Aws::Vector<Tmpfs>& GetTmpfs() const { return m_tmpfs; }
     inline bool TmpfsHasBeenSet() const { return m_tmpfsHasBeenSet; }
-    inline void SetTmpfs(const Aws::Vector<Tmpfs>& value) { m_tmpfsHasBeenSet = true; m_tmpfs = value; }
-    inline void SetTmpfs(Aws::Vector<Tmpfs>&& value) { m_tmpfsHasBeenSet = true; m_tmpfs = std::move(value); }
-    inline LinuxParameters& WithTmpfs(const Aws::Vector<Tmpfs>& value) { SetTmpfs(value); return *this;}
-    inline LinuxParameters& WithTmpfs(Aws::Vector<Tmpfs>&& value) { SetTmpfs(std::move(value)); return *this;}
-    inline LinuxParameters& AddTmpfs(const Tmpfs& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(value); return *this; }
-    inline LinuxParameters& AddTmpfs(Tmpfs&& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(std::move(value)); return *this; }
+    template<typename TmpfsT = Aws::Vector<Tmpfs>>
+    void SetTmpfs(TmpfsT&& value) { m_tmpfsHasBeenSet = true; m_tmpfs = std::forward<TmpfsT>(value); }
+    template<typename TmpfsT = Aws::Vector<Tmpfs>>
+    LinuxParameters& WithTmpfs(TmpfsT&& value) { SetTmpfs(std::forward<TmpfsT>(value)); return *this;}
+    template<typename TmpfsT = Tmpfs>
+    LinuxParameters& AddTmpfs(TmpfsT&& value) { m_tmpfsHasBeenSet = true; m_tmpfs.emplace_back(std::forward<TmpfsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,7 +127,7 @@ namespace Model
      * to be used.</p>  <p>This parameter isn't applicable to jobs that are
      * running on Fargate resources. Don't provide it for these jobs.</p> 
      */
-    inline int GetMaxSwap() const{ return m_maxSwap; }
+    inline int GetMaxSwap() const { return m_maxSwap; }
     inline bool MaxSwapHasBeenSet() const { return m_maxSwapHasBeenSet; }
     inline void SetMaxSwap(int value) { m_maxSwapHasBeenSet = true; m_maxSwap = value; }
     inline LinuxParameters& WithMaxSwap(int value) { SetMaxSwap(value); return *this;}
@@ -164,7 +164,7 @@ namespace Model
      * applicable to jobs that are running on Fargate resources. Don't provide it for
      * these jobs.</p> 
      */
-    inline int GetSwappiness() const{ return m_swappiness; }
+    inline int GetSwappiness() const { return m_swappiness; }
     inline bool SwappinessHasBeenSet() const { return m_swappinessHasBeenSet; }
     inline void SetSwappiness(int value) { m_swappinessHasBeenSet = true; m_swappiness = value; }
     inline LinuxParameters& WithSwappiness(int value) { SetSwappiness(value); return *this;}
@@ -174,19 +174,19 @@ namespace Model
     Aws::Vector<Device> m_devices;
     bool m_devicesHasBeenSet = false;
 
-    bool m_initProcessEnabled;
+    bool m_initProcessEnabled{false};
     bool m_initProcessEnabledHasBeenSet = false;
 
-    int m_sharedMemorySize;
+    int m_sharedMemorySize{0};
     bool m_sharedMemorySizeHasBeenSet = false;
 
     Aws::Vector<Tmpfs> m_tmpfs;
     bool m_tmpfsHasBeenSet = false;
 
-    int m_maxSwap;
+    int m_maxSwap{0};
     bool m_maxSwapHasBeenSet = false;
 
-    int m_swappiness;
+    int m_swappiness{0};
     bool m_swappinessHasBeenSet = false;
   };
 

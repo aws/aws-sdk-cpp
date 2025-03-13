@@ -31,7 +31,7 @@ namespace Model
   class Frequency
   {
   public:
-    AWS_GROUNDSTATION_API Frequency();
+    AWS_GROUNDSTATION_API Frequency() = default;
     AWS_GROUNDSTATION_API Frequency(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Frequency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,10 @@ namespace Model
     /**
      * <p>Frequency units.</p>
      */
-    inline const FrequencyUnits& GetUnits() const{ return m_units; }
+    inline FrequencyUnits GetUnits() const { return m_units; }
     inline bool UnitsHasBeenSet() const { return m_unitsHasBeenSet; }
-    inline void SetUnits(const FrequencyUnits& value) { m_unitsHasBeenSet = true; m_units = value; }
-    inline void SetUnits(FrequencyUnits&& value) { m_unitsHasBeenSet = true; m_units = std::move(value); }
-    inline Frequency& WithUnits(const FrequencyUnits& value) { SetUnits(value); return *this;}
-    inline Frequency& WithUnits(FrequencyUnits&& value) { SetUnits(std::move(value)); return *this;}
+    inline void SetUnits(FrequencyUnits value) { m_unitsHasBeenSet = true; m_units = value; }
+    inline Frequency& WithUnits(FrequencyUnits value) { SetUnits(value); return *this;}
     ///@}
 
     ///@{
@@ -54,17 +52,17 @@ namespace Model
      * <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400
      * MHz for downlink and 2025 to 2120 MHz for uplink.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline Frequency& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    FrequencyUnits m_units;
+    FrequencyUnits m_units{FrequencyUnits::NOT_SET};
     bool m_unitsHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

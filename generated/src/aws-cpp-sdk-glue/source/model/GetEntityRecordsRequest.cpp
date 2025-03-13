@@ -12,21 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEntityRecordsRequest::GetEntityRecordsRequest() : 
-    m_connectionNameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_entityNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_dataStoreApiVersionHasBeenSet(false),
-    m_connectionOptionsHasBeenSet(false),
-    m_filterPredicateHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_orderByHasBeenSet(false),
-    m_selectedFieldsHasBeenSet(false)
-{
-}
-
 Aws::String GetEntityRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

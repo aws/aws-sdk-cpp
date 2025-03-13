@@ -12,12 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRemoteAccessSessionsRequest::ListRemoteAccessSessionsRequest() : 
-    m_arnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListRemoteAccessSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

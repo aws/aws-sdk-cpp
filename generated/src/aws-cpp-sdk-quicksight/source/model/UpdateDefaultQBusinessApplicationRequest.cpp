@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateDefaultQBusinessApplicationRequest::UpdateDefaultQBusinessApplicationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDefaultQBusinessApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

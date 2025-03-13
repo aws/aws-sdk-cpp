@@ -23,7 +23,7 @@ namespace Model
   class CreateRestoreTestingPlanRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API CreateRestoreTestingPlanRequest();
+    AWS_BACKUP_API CreateRestoreTestingPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric
      * or '-_.' characters.</p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
-    inline CreateRestoreTestingPlanRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline CreateRestoreTestingPlanRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline CreateRestoreTestingPlanRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    CreateRestoreTestingPlanRequest& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,31 +59,28 @@ namespace Model
      * is the name of the restore testing plan. This cannot be changed after creation,
      * and it must consist of only alphanumeric characters and underscores.</p>
      */
-    inline const RestoreTestingPlanForCreate& GetRestoreTestingPlan() const{ return m_restoreTestingPlan; }
+    inline const RestoreTestingPlanForCreate& GetRestoreTestingPlan() const { return m_restoreTestingPlan; }
     inline bool RestoreTestingPlanHasBeenSet() const { return m_restoreTestingPlanHasBeenSet; }
-    inline void SetRestoreTestingPlan(const RestoreTestingPlanForCreate& value) { m_restoreTestingPlanHasBeenSet = true; m_restoreTestingPlan = value; }
-    inline void SetRestoreTestingPlan(RestoreTestingPlanForCreate&& value) { m_restoreTestingPlanHasBeenSet = true; m_restoreTestingPlan = std::move(value); }
-    inline CreateRestoreTestingPlanRequest& WithRestoreTestingPlan(const RestoreTestingPlanForCreate& value) { SetRestoreTestingPlan(value); return *this;}
-    inline CreateRestoreTestingPlanRequest& WithRestoreTestingPlan(RestoreTestingPlanForCreate&& value) { SetRestoreTestingPlan(std::move(value)); return *this;}
+    template<typename RestoreTestingPlanT = RestoreTestingPlanForCreate>
+    void SetRestoreTestingPlan(RestoreTestingPlanT&& value) { m_restoreTestingPlanHasBeenSet = true; m_restoreTestingPlan = std::forward<RestoreTestingPlanT>(value); }
+    template<typename RestoreTestingPlanT = RestoreTestingPlanForCreate>
+    CreateRestoreTestingPlanRequest& WithRestoreTestingPlan(RestoreTestingPlanT&& value) { SetRestoreTestingPlan(std::forward<RestoreTestingPlanT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the restore testing plan.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRestoreTestingPlanRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateRestoreTestingPlanRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRestoreTestingPlanRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateRestoreTestingPlanRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRestoreTestingPlanRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRestoreTestingPlanRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateRestoreTestingPlanRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateRestoreTestingPlanRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateRestoreTestingPlanRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateRestoreTestingPlanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateRestoreTestingPlanRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

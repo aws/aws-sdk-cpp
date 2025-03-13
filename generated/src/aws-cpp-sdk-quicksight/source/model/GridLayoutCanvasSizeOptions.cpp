@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GridLayoutCanvasSizeOptions::GridLayoutCanvasSizeOptions() : 
-    m_screenCanvasSizeOptionsHasBeenSet(false)
-{
-}
-
 GridLayoutCanvasSizeOptions::GridLayoutCanvasSizeOptions(JsonView jsonValue)
-  : GridLayoutCanvasSizeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GridLayoutCanvasSizeOptions& GridLayoutCanvasSizeOptions::operator =(JsonView js
   if(jsonValue.ValueExists("ScreenCanvasSizeOptions"))
   {
     m_screenCanvasSizeOptions = jsonValue.GetObject("ScreenCanvasSizeOptions");
-
     m_screenCanvasSizeOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

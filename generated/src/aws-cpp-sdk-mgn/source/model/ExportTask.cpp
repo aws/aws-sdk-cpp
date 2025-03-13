@@ -18,23 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ExportTask::ExportTask() : 
-    m_creationDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_exportIDHasBeenSet(false),
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_status(ExportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false)
-{
-}
-
 ExportTask::ExportTask(JsonView jsonValue)
-  : ExportTask()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ExportTask& ExportTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetString("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDateTime"))
   {
     m_endDateTime = jsonValue.GetString("endDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportID"))
   {
     m_exportID = jsonValue.GetString("exportID");
-
     m_exportIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressPercentage"))
   {
     m_progressPercentage = jsonValue.GetDouble("progressPercentage");
-
     m_progressPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketOwner"))
   {
     m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
-
     m_s3BucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Key"))
   {
     m_s3Key = jsonValue.GetString("s3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExportStatusMapper::GetExportStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetObject("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   return *this;
 }
 

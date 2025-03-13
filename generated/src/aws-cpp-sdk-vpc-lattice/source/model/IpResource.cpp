@@ -18,13 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-IpResource::IpResource() : 
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 IpResource::IpResource(JsonView jsonValue)
-  : IpResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IpResource& IpResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

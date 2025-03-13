@@ -22,7 +22,7 @@ namespace Model
   class CreateSMSSandboxPhoneNumberRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API CreateSMSSandboxPhoneNumberRequest();
+    AWS_SNS_API CreateSMSSandboxPhoneNumberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * phone number to the list of verified phone numbers that you can send SMS
      * messages to.</p>
      */
-    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+    inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-    inline CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-    inline CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-    inline CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    template<typename PhoneNumberT = Aws::String>
+    void SetPhoneNumber(PhoneNumberT&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::forward<PhoneNumberT>(value); }
+    template<typename PhoneNumberT = Aws::String>
+    CreateSMSSandboxPhoneNumberRequest& WithPhoneNumber(PhoneNumberT&& value) { SetPhoneNumber(std::forward<PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The language to use for sending the OTP. The default value is
      * <code>en-US</code>.</p>
      */
-    inline const LanguageCodeString& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCodeString GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCodeString& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCodeString&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline CreateSMSSandboxPhoneNumberRequest& WithLanguageCode(const LanguageCodeString& value) { SetLanguageCode(value); return *this;}
-    inline CreateSMSSandboxPhoneNumberRequest& WithLanguageCode(LanguageCodeString&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCodeString value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline CreateSMSSandboxPhoneNumberRequest& WithLanguageCode(LanguageCodeString value) { SetLanguageCode(value); return *this;}
     ///@}
   private:
 
     Aws::String m_phoneNumber;
     bool m_phoneNumberHasBeenSet = false;
 
-    LanguageCodeString m_languageCode;
+    LanguageCodeString m_languageCode{LanguageCodeString::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
   };
 

@@ -12,18 +12,6 @@ using namespace Aws::B2BI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCapabilityRequest::CreateCapabilityRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(CapabilityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_instructionsDocumentsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCapabilityRequest::SerializePayload() const
 {
   JsonValue payload;

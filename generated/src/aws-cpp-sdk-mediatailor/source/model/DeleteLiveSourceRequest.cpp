@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLiveSourceRequest::DeleteLiveSourceRequest() : 
-    m_liveSourceNameHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLiveSourceRequest::SerializePayload() const
 {
   return {};

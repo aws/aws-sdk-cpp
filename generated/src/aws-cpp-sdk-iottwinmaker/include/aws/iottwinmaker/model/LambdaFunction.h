@@ -31,7 +31,7 @@ namespace Model
   class LambdaFunction
   {
   public:
-    AWS_IOTTWINMAKER_API LambdaFunction();
+    AWS_IOTTWINMAKER_API LambdaFunction() = default;
     AWS_IOTTWINMAKER_API LambdaFunction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API LambdaFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ARN of the Lambda function.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline LambdaFunction& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline LambdaFunction& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline LambdaFunction& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    LambdaFunction& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

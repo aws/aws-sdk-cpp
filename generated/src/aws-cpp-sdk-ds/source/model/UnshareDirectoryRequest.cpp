@@ -12,12 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnshareDirectoryRequest::UnshareDirectoryRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_unshareTargetHasBeenSet(false)
-{
-}
-
 Aws::String UnshareDirectoryRequest::SerializePayload() const
 {
   JsonValue payload;

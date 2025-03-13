@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchCreateBillScenarioCommitmentModificationEntry::BatchCreateBillScenarioCommitmentModificationEntry() : 
-    m_keyHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_usageAccountIdHasBeenSet(false),
-    m_commitmentActionHasBeenSet(false)
-{
-}
-
 BatchCreateBillScenarioCommitmentModificationEntry::BatchCreateBillScenarioCommitmentModificationEntry(JsonView jsonValue)
-  : BatchCreateBillScenarioCommitmentModificationEntry()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BatchCreateBillScenarioCommitmentModificationEntry& BatchCreateBillScenarioCommi
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usageAccountId"))
   {
     m_usageAccountId = jsonValue.GetString("usageAccountId");
-
     m_usageAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitmentAction"))
   {
     m_commitmentAction = jsonValue.GetObject("commitmentAction");
-
     m_commitmentActionHasBeenSet = true;
   }
-
   return *this;
 }
 

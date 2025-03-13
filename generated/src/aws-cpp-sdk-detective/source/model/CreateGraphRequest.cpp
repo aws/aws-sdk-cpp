@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGraphRequest::CreateGraphRequest() : 
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGraphRequest::SerializePayload() const
 {
   JsonValue payload;

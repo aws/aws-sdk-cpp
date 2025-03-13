@@ -12,14 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAppComponentRecommendationsRequest::ListAppComponentRecommendationsRequest() : 
-    m_assessmentArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAppComponentRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

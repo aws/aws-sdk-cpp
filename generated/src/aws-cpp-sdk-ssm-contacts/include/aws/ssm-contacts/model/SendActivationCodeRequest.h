@@ -21,7 +21,7 @@ namespace Model
   class SendActivationCodeRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API SendActivationCodeRequest();
+    AWS_SSMCONTACTS_API SendActivationCodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the contact channel.</p>
      */
-    inline const Aws::String& GetContactChannelId() const{ return m_contactChannelId; }
+    inline const Aws::String& GetContactChannelId() const { return m_contactChannelId; }
     inline bool ContactChannelIdHasBeenSet() const { return m_contactChannelIdHasBeenSet; }
-    inline void SetContactChannelId(const Aws::String& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = value; }
-    inline void SetContactChannelId(Aws::String&& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = std::move(value); }
-    inline void SetContactChannelId(const char* value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId.assign(value); }
-    inline SendActivationCodeRequest& WithContactChannelId(const Aws::String& value) { SetContactChannelId(value); return *this;}
-    inline SendActivationCodeRequest& WithContactChannelId(Aws::String&& value) { SetContactChannelId(std::move(value)); return *this;}
-    inline SendActivationCodeRequest& WithContactChannelId(const char* value) { SetContactChannelId(value); return *this;}
+    template<typename ContactChannelIdT = Aws::String>
+    void SetContactChannelId(ContactChannelIdT&& value) { m_contactChannelIdHasBeenSet = true; m_contactChannelId = std::forward<ContactChannelIdT>(value); }
+    template<typename ContactChannelIdT = Aws::String>
+    SendActivationCodeRequest& WithContactChannelId(ContactChannelIdT&& value) { SetContactChannelId(std::forward<ContactChannelIdT>(value)); return *this;}
     ///@}
   private:
 

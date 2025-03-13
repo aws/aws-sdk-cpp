@@ -38,7 +38,7 @@ namespace Model
   class UncompressedSettings
   {
   public:
-    AWS_MEDIACONVERT_API UncompressedSettings();
+    AWS_MEDIACONVERT_API UncompressedSettings() = default;
     AWS_MEDIACONVERT_API UncompressedSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API UncompressedSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
     /**
      * The four character code for the uncompressed video.
      */
-    inline const UncompressedFourcc& GetFourcc() const{ return m_fourcc; }
+    inline UncompressedFourcc GetFourcc() const { return m_fourcc; }
     inline bool FourccHasBeenSet() const { return m_fourccHasBeenSet; }
-    inline void SetFourcc(const UncompressedFourcc& value) { m_fourccHasBeenSet = true; m_fourcc = value; }
-    inline void SetFourcc(UncompressedFourcc&& value) { m_fourccHasBeenSet = true; m_fourcc = std::move(value); }
-    inline UncompressedSettings& WithFourcc(const UncompressedFourcc& value) { SetFourcc(value); return *this;}
-    inline UncompressedSettings& WithFourcc(UncompressedFourcc&& value) { SetFourcc(std::move(value)); return *this;}
+    inline void SetFourcc(UncompressedFourcc value) { m_fourccHasBeenSet = true; m_fourcc = value; }
+    inline UncompressedSettings& WithFourcc(UncompressedFourcc value) { SetFourcc(value); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,10 @@ namespace Model
      * approximations of fractions. If you choose Custom, specify your frame rate as a
      * fraction.
      */
-    inline const UncompressedFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline UncompressedFramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const UncompressedFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(UncompressedFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline UncompressedSettings& WithFramerateControl(const UncompressedFramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline UncompressedSettings& WithFramerateControl(UncompressedFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(UncompressedFramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline UncompressedSettings& WithFramerateControl(UncompressedFramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const UncompressedFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline UncompressedFramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const UncompressedFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline UncompressedSettings& WithFramerateConversionAlgorithm(const UncompressedFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline UncompressedSettings& WithFramerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline UncompressedSettings& WithFramerateConversionAlgorithm(UncompressedFramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -109,7 +103,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline UncompressedSettings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -124,7 +118,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline UncompressedSettings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -135,12 +129,10 @@ namespace Model
      * Optional. Choose the scan line type for this output. If you don't specify a
      * value, MediaConvert will create a progressive output.
      */
-    inline const UncompressedInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline UncompressedInterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const UncompressedInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(UncompressedInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline UncompressedSettings& WithInterlaceMode(const UncompressedInterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline UncompressedSettings& WithInterlaceMode(UncompressedInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(UncompressedInterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline UncompressedSettings& WithInterlaceMode(UncompressedInterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +150,10 @@ namespace Model
      * use optimized interlacing for hard telecine outputs. You must also set Interlace
      * mode to a value other than Progressive.
      */
-    inline const UncompressedScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+    inline UncompressedScanTypeConversionMode GetScanTypeConversionMode() const { return m_scanTypeConversionMode; }
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
-    inline void SetScanTypeConversionMode(const UncompressedScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
-    inline void SetScanTypeConversionMode(UncompressedScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
-    inline UncompressedSettings& WithScanTypeConversionMode(const UncompressedScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
-    inline UncompressedSettings& WithScanTypeConversionMode(UncompressedScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+    inline void SetScanTypeConversionMode(UncompressedScanTypeConversionMode value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+    inline UncompressedSettings& WithScanTypeConversionMode(UncompressedScanTypeConversionMode value) { SetScanTypeConversionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +164,10 @@ namespace Model
      * reduce the duration of your video. Related settings: You must also set Framerate
      * to 25.
      */
-    inline const UncompressedSlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline UncompressedSlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const UncompressedSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(UncompressedSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline UncompressedSettings& WithSlowPal(const UncompressedSlowPal& value) { SetSlowPal(value); return *this;}
-    inline UncompressedSettings& WithSlowPal(UncompressedSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(UncompressedSlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline UncompressedSettings& WithSlowPal(UncompressedSlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -190,40 +178,38 @@ namespace Model
      * MediaConvert does a standard frame rate conversion to 29.97 without doing
      * anything with the field polarity to create a smoother picture.
      */
-    inline const UncompressedTelecine& GetTelecine() const{ return m_telecine; }
+    inline UncompressedTelecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const UncompressedTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(UncompressedTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline UncompressedSettings& WithTelecine(const UncompressedTelecine& value) { SetTelecine(value); return *this;}
-    inline UncompressedSettings& WithTelecine(UncompressedTelecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(UncompressedTelecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline UncompressedSettings& WithTelecine(UncompressedTelecine value) { SetTelecine(value); return *this;}
     ///@}
   private:
 
-    UncompressedFourcc m_fourcc;
+    UncompressedFourcc m_fourcc{UncompressedFourcc::NOT_SET};
     bool m_fourccHasBeenSet = false;
 
-    UncompressedFramerateControl m_framerateControl;
+    UncompressedFramerateControl m_framerateControl{UncompressedFramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    UncompressedFramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    UncompressedFramerateConversionAlgorithm m_framerateConversionAlgorithm{UncompressedFramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    UncompressedInterlaceMode m_interlaceMode;
+    UncompressedInterlaceMode m_interlaceMode{UncompressedInterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    UncompressedScanTypeConversionMode m_scanTypeConversionMode;
+    UncompressedScanTypeConversionMode m_scanTypeConversionMode{UncompressedScanTypeConversionMode::NOT_SET};
     bool m_scanTypeConversionModeHasBeenSet = false;
 
-    UncompressedSlowPal m_slowPal;
+    UncompressedSlowPal m_slowPal{UncompressedSlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    UncompressedTelecine m_telecine;
+    UncompressedTelecine m_telecine{UncompressedTelecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
   };
 

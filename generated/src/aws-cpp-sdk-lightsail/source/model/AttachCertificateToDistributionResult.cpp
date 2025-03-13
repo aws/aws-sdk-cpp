@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AttachCertificateToDistributionResult::AttachCertificateToDistributionResult()
-{
-}
-
 AttachCertificateToDistributionResult::AttachCertificateToDistributionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AttachCertificateToDistributionResult& AttachCertificateToDistributionResult::op
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetObject("operation");
-
+    m_operationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,17 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetECSServiceRecommendationProjectedMetricsRequest::GetECSServiceRecommendationProjectedMetricsRequest() : 
-    m_serviceArnHasBeenSet(false),
-    m_stat(MetricStatistic::NOT_SET),
-    m_statHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetECSServiceRecommendationProjectedMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

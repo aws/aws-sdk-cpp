@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AddLayerVersionPermissionRequest::AddLayerVersionPermissionRequest() : 
-    m_layerNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String AddLayerVersionPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

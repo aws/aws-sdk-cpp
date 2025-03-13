@@ -21,7 +21,7 @@ namespace Model
   class GetCustomActionRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API GetCustomActionRequest();
+    AWS_CHATBOT_API GetCustomActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>Returns the fully defined Amazon Resource Name (ARN) of the custom
      * action.</p>
      */
-    inline const Aws::String& GetCustomActionArn() const{ return m_customActionArn; }
+    inline const Aws::String& GetCustomActionArn() const { return m_customActionArn; }
     inline bool CustomActionArnHasBeenSet() const { return m_customActionArnHasBeenSet; }
-    inline void SetCustomActionArn(const Aws::String& value) { m_customActionArnHasBeenSet = true; m_customActionArn = value; }
-    inline void SetCustomActionArn(Aws::String&& value) { m_customActionArnHasBeenSet = true; m_customActionArn = std::move(value); }
-    inline void SetCustomActionArn(const char* value) { m_customActionArnHasBeenSet = true; m_customActionArn.assign(value); }
-    inline GetCustomActionRequest& WithCustomActionArn(const Aws::String& value) { SetCustomActionArn(value); return *this;}
-    inline GetCustomActionRequest& WithCustomActionArn(Aws::String&& value) { SetCustomActionArn(std::move(value)); return *this;}
-    inline GetCustomActionRequest& WithCustomActionArn(const char* value) { SetCustomActionArn(value); return *this;}
+    template<typename CustomActionArnT = Aws::String>
+    void SetCustomActionArn(CustomActionArnT&& value) { m_customActionArnHasBeenSet = true; m_customActionArn = std::forward<CustomActionArnT>(value); }
+    template<typename CustomActionArnT = Aws::String>
+    GetCustomActionRequest& WithCustomActionArn(CustomActionArnT&& value) { SetCustomActionArn(std::forward<CustomActionArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,16 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListStackSetAutoDeploymentTargetsRequest::ListStackSetAutoDeploymentTargetsRequest() : 
-    m_stackSetNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_callAs(CallAs::NOT_SET),
-    m_callAsHasBeenSet(false)
-{
-}
-
 Aws::String ListStackSetAutoDeploymentTargetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

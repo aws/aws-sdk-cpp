@@ -12,21 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSourceControlFromJobRequest::UpdateSourceControlFromJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_provider(SourceControlProvider::NOT_SET),
-    m_providerHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryOwnerHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_folderHasBeenSet(false),
-    m_commitIdHasBeenSet(false),
-    m_authStrategy(SourceControlAuthStrategy::NOT_SET),
-    m_authStrategyHasBeenSet(false),
-    m_authTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSourceControlFromJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListResourceProfileArtifactsResult
   {
   public:
-    AWS_MACIE2_API ListResourceProfileArtifactsResult();
+    AWS_MACIE2_API ListResourceProfileArtifactsResult() = default;
     AWS_MACIE2_API ListResourceProfileArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API ListResourceProfileArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
      * the array with information about objects where the value for the
      * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.</p>
      */
-    inline const Aws::Vector<ResourceProfileArtifact>& GetArtifacts() const{ return m_artifacts; }
-    inline void SetArtifacts(const Aws::Vector<ResourceProfileArtifact>& value) { m_artifacts = value; }
-    inline void SetArtifacts(Aws::Vector<ResourceProfileArtifact>&& value) { m_artifacts = std::move(value); }
-    inline ListResourceProfileArtifactsResult& WithArtifacts(const Aws::Vector<ResourceProfileArtifact>& value) { SetArtifacts(value); return *this;}
-    inline ListResourceProfileArtifactsResult& WithArtifacts(Aws::Vector<ResourceProfileArtifact>&& value) { SetArtifacts(std::move(value)); return *this;}
-    inline ListResourceProfileArtifactsResult& AddArtifacts(const ResourceProfileArtifact& value) { m_artifacts.push_back(value); return *this; }
-    inline ListResourceProfileArtifactsResult& AddArtifacts(ResourceProfileArtifact&& value) { m_artifacts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceProfileArtifact>& GetArtifacts() const { return m_artifacts; }
+    template<typename ArtifactsT = Aws::Vector<ResourceProfileArtifact>>
+    void SetArtifacts(ArtifactsT&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::forward<ArtifactsT>(value); }
+    template<typename ArtifactsT = Aws::Vector<ResourceProfileArtifact>>
+    ListResourceProfileArtifactsResult& WithArtifacts(ArtifactsT&& value) { SetArtifacts(std::forward<ArtifactsT>(value)); return *this;}
+    template<typename ArtifactsT = ResourceProfileArtifact>
+    ListResourceProfileArtifactsResult& AddArtifacts(ArtifactsT&& value) { m_artifactsHasBeenSet = true; m_artifacts.emplace_back(std::forward<ArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourceProfileArtifactsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceProfileArtifactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceProfileArtifactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceProfileArtifactsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourceProfileArtifactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourceProfileArtifactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourceProfileArtifactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourceProfileArtifactsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceProfileArtifact> m_artifacts;
+    bool m_artifactsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

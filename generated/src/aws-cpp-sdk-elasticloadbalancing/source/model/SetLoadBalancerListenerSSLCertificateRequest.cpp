@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-SetLoadBalancerListenerSSLCertificateRequest::SetLoadBalancerListenerSSLCertificateRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_loadBalancerPort(0),
-    m_loadBalancerPortHasBeenSet(false),
-    m_sSLCertificateIdHasBeenSet(false)
-{
-}
-
 Aws::String SetLoadBalancerListenerSSLCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

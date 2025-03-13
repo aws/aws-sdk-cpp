@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Entity::Entity() : 
-    m_pathHasBeenSet(false)
-{
-}
-
 Entity::Entity(JsonView jsonValue)
-  : Entity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Entity& Entity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   return *this;
 }
 

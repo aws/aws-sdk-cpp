@@ -35,7 +35,7 @@ namespace Model
   class InstanceStorageInfo
   {
   public:
-    AWS_EC2_API InstanceStorageInfo();
+    AWS_EC2_API InstanceStorageInfo() = default;
     AWS_EC2_API InstanceStorageInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceStorageInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
     /**
      * <p>The total size of the disks, in GB.</p>
      */
-    inline long long GetTotalSizeInGB() const{ return m_totalSizeInGB; }
+    inline long long GetTotalSizeInGB() const { return m_totalSizeInGB; }
     inline bool TotalSizeInGBHasBeenSet() const { return m_totalSizeInGBHasBeenSet; }
     inline void SetTotalSizeInGB(long long value) { m_totalSizeInGBHasBeenSet = true; m_totalSizeInGB = value; }
     inline InstanceStorageInfo& WithTotalSizeInGB(long long value) { SetTotalSizeInGB(value); return *this;}
@@ -57,51 +57,47 @@ namespace Model
     /**
      * <p>Describes the disks that are available for the instance type.</p>
      */
-    inline const Aws::Vector<DiskInfo>& GetDisks() const{ return m_disks; }
+    inline const Aws::Vector<DiskInfo>& GetDisks() const { return m_disks; }
     inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
-    inline void SetDisks(const Aws::Vector<DiskInfo>& value) { m_disksHasBeenSet = true; m_disks = value; }
-    inline void SetDisks(Aws::Vector<DiskInfo>&& value) { m_disksHasBeenSet = true; m_disks = std::move(value); }
-    inline InstanceStorageInfo& WithDisks(const Aws::Vector<DiskInfo>& value) { SetDisks(value); return *this;}
-    inline InstanceStorageInfo& WithDisks(Aws::Vector<DiskInfo>&& value) { SetDisks(std::move(value)); return *this;}
-    inline InstanceStorageInfo& AddDisks(const DiskInfo& value) { m_disksHasBeenSet = true; m_disks.push_back(value); return *this; }
-    inline InstanceStorageInfo& AddDisks(DiskInfo&& value) { m_disksHasBeenSet = true; m_disks.push_back(std::move(value)); return *this; }
+    template<typename DisksT = Aws::Vector<DiskInfo>>
+    void SetDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks = std::forward<DisksT>(value); }
+    template<typename DisksT = Aws::Vector<DiskInfo>>
+    InstanceStorageInfo& WithDisks(DisksT&& value) { SetDisks(std::forward<DisksT>(value)); return *this;}
+    template<typename DisksT = DiskInfo>
+    InstanceStorageInfo& AddDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks.emplace_back(std::forward<DisksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
-    inline const EphemeralNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
+    inline EphemeralNvmeSupport GetNvmeSupport() const { return m_nvmeSupport; }
     inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
-    inline void SetNvmeSupport(const EphemeralNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
-    inline void SetNvmeSupport(EphemeralNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
-    inline InstanceStorageInfo& WithNvmeSupport(const EphemeralNvmeSupport& value) { SetNvmeSupport(value); return *this;}
-    inline InstanceStorageInfo& WithNvmeSupport(EphemeralNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
+    inline void SetNvmeSupport(EphemeralNvmeSupport value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
+    inline InstanceStorageInfo& WithNvmeSupport(EphemeralNvmeSupport value) { SetNvmeSupport(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether data is encrypted at rest.</p>
      */
-    inline const InstanceStorageEncryptionSupport& GetEncryptionSupport() const{ return m_encryptionSupport; }
+    inline InstanceStorageEncryptionSupport GetEncryptionSupport() const { return m_encryptionSupport; }
     inline bool EncryptionSupportHasBeenSet() const { return m_encryptionSupportHasBeenSet; }
-    inline void SetEncryptionSupport(const InstanceStorageEncryptionSupport& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = value; }
-    inline void SetEncryptionSupport(InstanceStorageEncryptionSupport&& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = std::move(value); }
-    inline InstanceStorageInfo& WithEncryptionSupport(const InstanceStorageEncryptionSupport& value) { SetEncryptionSupport(value); return *this;}
-    inline InstanceStorageInfo& WithEncryptionSupport(InstanceStorageEncryptionSupport&& value) { SetEncryptionSupport(std::move(value)); return *this;}
+    inline void SetEncryptionSupport(InstanceStorageEncryptionSupport value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = value; }
+    inline InstanceStorageInfo& WithEncryptionSupport(InstanceStorageEncryptionSupport value) { SetEncryptionSupport(value); return *this;}
     ///@}
   private:
 
-    long long m_totalSizeInGB;
+    long long m_totalSizeInGB{0};
     bool m_totalSizeInGBHasBeenSet = false;
 
     Aws::Vector<DiskInfo> m_disks;
     bool m_disksHasBeenSet = false;
 
-    EphemeralNvmeSupport m_nvmeSupport;
+    EphemeralNvmeSupport m_nvmeSupport{EphemeralNvmeSupport::NOT_SET};
     bool m_nvmeSupportHasBeenSet = false;
 
-    InstanceStorageEncryptionSupport m_encryptionSupport;
+    InstanceStorageEncryptionSupport m_encryptionSupport{InstanceStorageEncryptionSupport::NOT_SET};
     bool m_encryptionSupportHasBeenSet = false;
   };
 

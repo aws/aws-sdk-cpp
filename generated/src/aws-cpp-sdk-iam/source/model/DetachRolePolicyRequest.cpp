@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DetachRolePolicyRequest::DetachRolePolicyRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DetachRolePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

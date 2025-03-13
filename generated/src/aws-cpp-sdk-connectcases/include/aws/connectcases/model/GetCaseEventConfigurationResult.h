@@ -28,7 +28,7 @@ namespace Model
   class GetCaseEventConfigurationResult
   {
   public:
-    AWS_CONNECTCASES_API GetCaseEventConfigurationResult();
+    AWS_CONNECTCASES_API GetCaseEventConfigurationResult() = default;
     AWS_CONNECTCASES_API GetCaseEventConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCASES_API GetCaseEventConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Configuration to enable EventBridge case event delivery and determine what
      * data is delivered.</p>
      */
-    inline const EventBridgeConfiguration& GetEventBridge() const{ return m_eventBridge; }
-    inline void SetEventBridge(const EventBridgeConfiguration& value) { m_eventBridge = value; }
-    inline void SetEventBridge(EventBridgeConfiguration&& value) { m_eventBridge = std::move(value); }
-    inline GetCaseEventConfigurationResult& WithEventBridge(const EventBridgeConfiguration& value) { SetEventBridge(value); return *this;}
-    inline GetCaseEventConfigurationResult& WithEventBridge(EventBridgeConfiguration&& value) { SetEventBridge(std::move(value)); return *this;}
+    inline const EventBridgeConfiguration& GetEventBridge() const { return m_eventBridge; }
+    template<typename EventBridgeT = EventBridgeConfiguration>
+    void SetEventBridge(EventBridgeT&& value) { m_eventBridgeHasBeenSet = true; m_eventBridge = std::forward<EventBridgeT>(value); }
+    template<typename EventBridgeT = EventBridgeConfiguration>
+    GetCaseEventConfigurationResult& WithEventBridge(EventBridgeT&& value) { SetEventBridge(std::forward<EventBridgeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCaseEventConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCaseEventConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCaseEventConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCaseEventConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EventBridgeConfiguration m_eventBridge;
+    bool m_eventBridgeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-CustomOrchestrationTrace::CustomOrchestrationTrace() : 
-    m_eventHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 CustomOrchestrationTrace::CustomOrchestrationTrace(JsonView jsonValue)
-  : CustomOrchestrationTrace()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomOrchestrationTrace& CustomOrchestrationTrace::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("event"))
   {
     m_event = jsonValue.GetObject("event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

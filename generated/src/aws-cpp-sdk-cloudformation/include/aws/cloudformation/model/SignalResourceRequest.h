@@ -25,7 +25,7 @@ namespace Model
   class SignalResourceRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API SignalResourceRequest();
+    AWS_CLOUDFORMATION_API SignalResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The stack name or unique stack ID that includes the resource that you want to
      * signal.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline SignalResourceRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline SignalResourceRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline SignalResourceRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    SignalResourceRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The logical ID of the resource that you want to signal. The logical ID is the
      * name of the resource that given in the template.</p>
      */
-    inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+    inline const Aws::String& GetLogicalResourceId() const { return m_logicalResourceId; }
     inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
-    inline void SetLogicalResourceId(const Aws::String& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = value; }
-    inline void SetLogicalResourceId(Aws::String&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::move(value); }
-    inline void SetLogicalResourceId(const char* value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId.assign(value); }
-    inline SignalResourceRequest& WithLogicalResourceId(const Aws::String& value) { SetLogicalResourceId(value); return *this;}
-    inline SignalResourceRequest& WithLogicalResourceId(Aws::String&& value) { SetLogicalResourceId(std::move(value)); return *this;}
-    inline SignalResourceRequest& WithLogicalResourceId(const char* value) { SetLogicalResourceId(value); return *this;}
+    template<typename LogicalResourceIdT = Aws::String>
+    void SetLogicalResourceId(LogicalResourceIdT&& value) { m_logicalResourceIdHasBeenSet = true; m_logicalResourceId = std::forward<LogicalResourceIdT>(value); }
+    template<typename LogicalResourceIdT = Aws::String>
+    SignalResourceRequest& WithLogicalResourceId(LogicalResourceIdT&& value) { SetLogicalResourceId(std::forward<LogicalResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * If you send multiple signals to a single resource (such as signaling a wait
      * condition), each signal requires a different unique ID.</p>
      */
-    inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
+    inline const Aws::String& GetUniqueId() const { return m_uniqueId; }
     inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
-    inline void SetUniqueId(const Aws::String& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = value; }
-    inline void SetUniqueId(Aws::String&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::move(value); }
-    inline void SetUniqueId(const char* value) { m_uniqueIdHasBeenSet = true; m_uniqueId.assign(value); }
-    inline SignalResourceRequest& WithUniqueId(const Aws::String& value) { SetUniqueId(value); return *this;}
-    inline SignalResourceRequest& WithUniqueId(Aws::String&& value) { SetUniqueId(std::move(value)); return *this;}
-    inline SignalResourceRequest& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
+    template<typename UniqueIdT = Aws::String>
+    void SetUniqueId(UniqueIdT&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::forward<UniqueIdT>(value); }
+    template<typename UniqueIdT = Aws::String>
+    SignalResourceRequest& WithUniqueId(UniqueIdT&& value) { SetUniqueId(std::forward<UniqueIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,10 @@ namespace Model
      * signal causes CloudFormation to immediately fail the stack creation or
      * update.</p>
      */
-    inline const ResourceSignalStatus& GetStatus() const{ return m_status; }
+    inline ResourceSignalStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceSignalStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceSignalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SignalResourceRequest& WithStatus(const ResourceSignalStatus& value) { SetStatus(value); return *this;}
-    inline SignalResourceRequest& WithStatus(ResourceSignalStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceSignalStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SignalResourceRequest& WithStatus(ResourceSignalStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -111,7 +103,7 @@ namespace Model
     Aws::String m_uniqueId;
     bool m_uniqueIdHasBeenSet = false;
 
-    ResourceSignalStatus m_status;
+    ResourceSignalStatus m_status{ResourceSignalStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

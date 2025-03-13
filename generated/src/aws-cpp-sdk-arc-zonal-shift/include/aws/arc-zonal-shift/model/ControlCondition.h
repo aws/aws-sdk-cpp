@@ -42,7 +42,7 @@ namespace Model
   class ControlCondition
   {
   public:
-    AWS_ARCZONALSHIFT_API ControlCondition();
+    AWS_ARCZONALSHIFT_API ControlCondition() = default;
     AWS_ARCZONALSHIFT_API ControlCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API ControlCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for an Amazon CloudWatch alarm that you
      * specify as a control condition for a practice run.</p>
      */
-    inline const Aws::String& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
+    inline const Aws::String& GetAlarmIdentifier() const { return m_alarmIdentifier; }
     inline bool AlarmIdentifierHasBeenSet() const { return m_alarmIdentifierHasBeenSet; }
-    inline void SetAlarmIdentifier(const Aws::String& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
-    inline void SetAlarmIdentifier(Aws::String&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = std::move(value); }
-    inline void SetAlarmIdentifier(const char* value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier.assign(value); }
-    inline ControlCondition& WithAlarmIdentifier(const Aws::String& value) { SetAlarmIdentifier(value); return *this;}
-    inline ControlCondition& WithAlarmIdentifier(Aws::String&& value) { SetAlarmIdentifier(std::move(value)); return *this;}
-    inline ControlCondition& WithAlarmIdentifier(const char* value) { SetAlarmIdentifier(value); return *this;}
+    template<typename AlarmIdentifierT = Aws::String>
+    void SetAlarmIdentifier(AlarmIdentifierT&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = std::forward<AlarmIdentifierT>(value); }
+    template<typename AlarmIdentifierT = Aws::String>
+    ControlCondition& WithAlarmIdentifier(AlarmIdentifierT&& value) { SetAlarmIdentifier(std::forward<AlarmIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,19 +67,17 @@ namespace Model
      * CloudWatch alarms for practice runs, so the only valid value is
      * <code>CLOUDWATCH</code>.</p>
      */
-    inline const ControlConditionType& GetType() const{ return m_type; }
+    inline ControlConditionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ControlConditionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ControlConditionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ControlCondition& WithType(const ControlConditionType& value) { SetType(value); return *this;}
-    inline ControlCondition& WithType(ControlConditionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ControlConditionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ControlCondition& WithType(ControlConditionType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_alarmIdentifier;
     bool m_alarmIdentifierHasBeenSet = false;
 
-    ControlConditionType m_type;
+    ControlConditionType m_type{ControlConditionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

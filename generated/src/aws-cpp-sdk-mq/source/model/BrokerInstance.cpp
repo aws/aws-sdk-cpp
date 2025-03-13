@@ -18,15 +18,7 @@ namespace MQ
 namespace Model
 {
 
-BrokerInstance::BrokerInstance() : 
-    m_consoleURLHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 BrokerInstance::BrokerInstance(JsonView jsonValue)
-  : BrokerInstance()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ BrokerInstance& BrokerInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("consoleURL"))
   {
     m_consoleURL = jsonValue.GetString("consoleURL");
-
     m_consoleURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -49,14 +39,11 @@ BrokerInstance& BrokerInstance::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

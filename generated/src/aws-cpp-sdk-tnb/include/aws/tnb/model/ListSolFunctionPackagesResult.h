@@ -29,7 +29,7 @@ namespace Model
   class ListSolFunctionPackagesResult
   {
   public:
-    AWS_TNB_API ListSolFunctionPackagesResult();
+    AWS_TNB_API ListSolFunctionPackagesResult() = default;
     AWS_TNB_API ListSolFunctionPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TNB_API ListSolFunctionPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * TOSCA standard to describe how the network functions should run on your
      * network.</p>
      */
-    inline const Aws::Vector<ListSolFunctionPackageInfo>& GetFunctionPackages() const{ return m_functionPackages; }
-    inline void SetFunctionPackages(const Aws::Vector<ListSolFunctionPackageInfo>& value) { m_functionPackages = value; }
-    inline void SetFunctionPackages(Aws::Vector<ListSolFunctionPackageInfo>&& value) { m_functionPackages = std::move(value); }
-    inline ListSolFunctionPackagesResult& WithFunctionPackages(const Aws::Vector<ListSolFunctionPackageInfo>& value) { SetFunctionPackages(value); return *this;}
-    inline ListSolFunctionPackagesResult& WithFunctionPackages(Aws::Vector<ListSolFunctionPackageInfo>&& value) { SetFunctionPackages(std::move(value)); return *this;}
-    inline ListSolFunctionPackagesResult& AddFunctionPackages(const ListSolFunctionPackageInfo& value) { m_functionPackages.push_back(value); return *this; }
-    inline ListSolFunctionPackagesResult& AddFunctionPackages(ListSolFunctionPackageInfo&& value) { m_functionPackages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListSolFunctionPackageInfo>& GetFunctionPackages() const { return m_functionPackages; }
+    template<typename FunctionPackagesT = Aws::Vector<ListSolFunctionPackageInfo>>
+    void SetFunctionPackages(FunctionPackagesT&& value) { m_functionPackagesHasBeenSet = true; m_functionPackages = std::forward<FunctionPackagesT>(value); }
+    template<typename FunctionPackagesT = Aws::Vector<ListSolFunctionPackageInfo>>
+    ListSolFunctionPackagesResult& WithFunctionPackages(FunctionPackagesT&& value) { SetFunctionPackages(std::forward<FunctionPackagesT>(value)); return *this;}
+    template<typename FunctionPackagesT = ListSolFunctionPackageInfo>
+    ListSolFunctionPackagesResult& AddFunctionPackages(FunctionPackagesT&& value) { m_functionPackagesHasBeenSet = true; m_functionPackages.emplace_back(std::forward<FunctionPackagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSolFunctionPackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSolFunctionPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSolFunctionPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSolFunctionPackagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSolFunctionPackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSolFunctionPackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSolFunctionPackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSolFunctionPackagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListSolFunctionPackageInfo> m_functionPackages;
+    bool m_functionPackagesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

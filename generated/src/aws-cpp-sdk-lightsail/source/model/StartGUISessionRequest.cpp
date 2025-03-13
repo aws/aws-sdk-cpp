@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartGUISessionRequest::StartGUISessionRequest() : 
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 Aws::String StartGUISessionRequest::SerializePayload() const
 {
   JsonValue payload;

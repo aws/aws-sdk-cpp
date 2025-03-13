@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayConnectPeer::TransitGatewayConnectPeer() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_transitGatewayConnectPeerIdHasBeenSet(false),
-    m_state(TransitGatewayConnectPeerState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_connectPeerConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayConnectPeer::TransitGatewayConnectPeer(const XmlNode& xmlNode)
-  : TransitGatewayConnectPeer()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ TransitGatewayConnectPeer& TransitGatewayConnectPeer::operator =(const XmlNode& 
     {
       m_transitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayAttachmentIdNode.GetText());
       m_transitGatewayAttachmentIdHasBeenSet = true;
+       m_transitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode transitGatewayConnectPeerIdNode = resultNode.FirstChild("transitGatewayConnectPeerId");
     if(!transitGatewayConnectPeerIdNode.IsNull())
     {
       m_transitGatewayConnectPeerId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayConnectPeerIdNode.GetText());
       m_transitGatewayConnectPeerIdHasBeenSet = true;
+       m_transitGatewayConnectPeerIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayConnectPeerStateMapper::GetTransitGatewayConnectPeerStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayConnectPeerStateMapper::GetTransitGatewayConnectPeerStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode connectPeerConfigurationNode = resultNode.FirstChild("connectPeerConfiguration");
     if(!connectPeerConfigurationNode.IsNull())
     {
       m_connectPeerConfiguration = connectPeerConfigurationNode;
       m_connectPeerConfigurationHasBeenSet = true;
+       m_connectPeerConfigurationHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

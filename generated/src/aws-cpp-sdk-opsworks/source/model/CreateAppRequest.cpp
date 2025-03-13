@@ -12,24 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppRequest::CreateAppRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_shortnameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_type(AppType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_appSourceHasBeenSet(false),
-    m_domainsHasBeenSet(false),
-    m_enableSsl(false),
-    m_enableSslHasBeenSet(false),
-    m_sslConfigurationHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppRequest::SerializePayload() const
 {
   JsonValue payload;

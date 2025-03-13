@@ -23,7 +23,7 @@ namespace Model
   class UpdateProjectDataDeliveryRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectDataDeliveryRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API UpdateProjectDataDeliveryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
      * <p>A structure containing the CloudWatch Logs log group where you want to store
      * evaluation events.</p>
      */
-    inline const CloudWatchLogsDestinationConfig& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
+    inline const CloudWatchLogsDestinationConfig& GetCloudWatchLogs() const { return m_cloudWatchLogs; }
     inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
-    inline void SetCloudWatchLogs(const CloudWatchLogsDestinationConfig& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
-    inline void SetCloudWatchLogs(CloudWatchLogsDestinationConfig&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::move(value); }
-    inline UpdateProjectDataDeliveryRequest& WithCloudWatchLogs(const CloudWatchLogsDestinationConfig& value) { SetCloudWatchLogs(value); return *this;}
-    inline UpdateProjectDataDeliveryRequest& WithCloudWatchLogs(CloudWatchLogsDestinationConfig&& value) { SetCloudWatchLogs(std::move(value)); return *this;}
+    template<typename CloudWatchLogsT = CloudWatchLogsDestinationConfig>
+    void SetCloudWatchLogs(CloudWatchLogsT&& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = std::forward<CloudWatchLogsT>(value); }
+    template<typename CloudWatchLogsT = CloudWatchLogsDestinationConfig>
+    UpdateProjectDataDeliveryRequest& WithCloudWatchLogs(CloudWatchLogsT&& value) { SetCloudWatchLogs(std::forward<CloudWatchLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +52,12 @@ namespace Model
      * <p>The name or ARN of the project that you want to modify the data storage
      * options for.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline UpdateProjectDataDeliveryRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline UpdateProjectDataDeliveryRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline UpdateProjectDataDeliveryRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    UpdateProjectDataDeliveryRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * <p>A structure containing the S3 bucket name and bucket prefix where you want to
      * store evaluation events.</p>
      */
-    inline const S3DestinationConfig& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3DestinationConfig& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3DestinationConfig& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3DestinationConfig&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline UpdateProjectDataDeliveryRequest& WithS3Destination(const S3DestinationConfig& value) { SetS3Destination(value); return *this;}
-    inline UpdateProjectDataDeliveryRequest& WithS3Destination(S3DestinationConfig&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3DestinationConfig>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3DestinationConfig>
+    UpdateProjectDataDeliveryRequest& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 

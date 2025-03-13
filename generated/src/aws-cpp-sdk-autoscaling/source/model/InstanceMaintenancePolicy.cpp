@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceMaintenancePolicy::InstanceMaintenancePolicy() : 
-    m_minHealthyPercentage(0),
-    m_minHealthyPercentageHasBeenSet(false),
-    m_maxHealthyPercentage(0),
-    m_maxHealthyPercentageHasBeenSet(false)
-{
-}
-
 InstanceMaintenancePolicy::InstanceMaintenancePolicy(const XmlNode& xmlNode)
-  : InstanceMaintenancePolicy()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ InstanceMaintenancePolicy& InstanceMaintenancePolicy::operator =(const XmlNode& 
     {
       m_minHealthyPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minHealthyPercentageNode.GetText()).c_str()).c_str());
       m_minHealthyPercentageHasBeenSet = true;
+       m_minHealthyPercentageHasBeenSet = true;
     }
     XmlNode maxHealthyPercentageNode = resultNode.FirstChild("MaxHealthyPercentage");
     if(!maxHealthyPercentageNode.IsNull())
     {
       m_maxHealthyPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxHealthyPercentageNode.GetText()).c_str()).c_str());
       m_maxHealthyPercentageHasBeenSet = true;
+       m_maxHealthyPercentageHasBeenSet = true;
     }
   }
 

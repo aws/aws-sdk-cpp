@@ -32,7 +32,7 @@ namespace Model
   class GetVariantStoreResult
   {
   public:
-    AWS_OMICS_API GetVariantStoreResult();
+    AWS_OMICS_API GetVariantStoreResult() = default;
     AWS_OMICS_API GetVariantStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,186 +41,182 @@ namespace Model
     /**
      * <p>The store's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetVariantStoreResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetVariantStoreResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetVariantStoreResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetVariantStoreResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's genome reference.</p>
      */
-    inline const ReferenceItem& GetReference() const{ return m_reference; }
-    inline void SetReference(const ReferenceItem& value) { m_reference = value; }
-    inline void SetReference(ReferenceItem&& value) { m_reference = std::move(value); }
-    inline GetVariantStoreResult& WithReference(const ReferenceItem& value) { SetReference(value); return *this;}
-    inline GetVariantStoreResult& WithReference(ReferenceItem&& value) { SetReference(std::move(value)); return *this;}
+    inline const ReferenceItem& GetReference() const { return m_reference; }
+    template<typename ReferenceT = ReferenceItem>
+    void SetReference(ReferenceT&& value) { m_referenceHasBeenSet = true; m_reference = std::forward<ReferenceT>(value); }
+    template<typename ReferenceT = ReferenceItem>
+    GetVariantStoreResult& WithReference(ReferenceT&& value) { SetReference(std::forward<ReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's status.</p>
      */
-    inline const StoreStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const StoreStatus& value) { m_status = value; }
-    inline void SetStatus(StoreStatus&& value) { m_status = std::move(value); }
-    inline GetVariantStoreResult& WithStatus(const StoreStatus& value) { SetStatus(value); return *this;}
-    inline GetVariantStoreResult& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline StoreStatus GetStatus() const { return m_status; }
+    inline void SetStatus(StoreStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetVariantStoreResult& WithStatus(StoreStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's ARN.</p>
      */
-    inline const Aws::String& GetStoreArn() const{ return m_storeArn; }
-    inline void SetStoreArn(const Aws::String& value) { m_storeArn = value; }
-    inline void SetStoreArn(Aws::String&& value) { m_storeArn = std::move(value); }
-    inline void SetStoreArn(const char* value) { m_storeArn.assign(value); }
-    inline GetVariantStoreResult& WithStoreArn(const Aws::String& value) { SetStoreArn(value); return *this;}
-    inline GetVariantStoreResult& WithStoreArn(Aws::String&& value) { SetStoreArn(std::move(value)); return *this;}
-    inline GetVariantStoreResult& WithStoreArn(const char* value) { SetStoreArn(value); return *this;}
+    inline const Aws::String& GetStoreArn() const { return m_storeArn; }
+    template<typename StoreArnT = Aws::String>
+    void SetStoreArn(StoreArnT&& value) { m_storeArnHasBeenSet = true; m_storeArn = std::forward<StoreArnT>(value); }
+    template<typename StoreArnT = Aws::String>
+    GetVariantStoreResult& WithStoreArn(StoreArnT&& value) { SetStoreArn(std::forward<StoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetVariantStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetVariantStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetVariantStoreResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetVariantStoreResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetVariantStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetVariantStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetVariantStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetVariantStoreResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's server-side encryption (SSE) settings.</p>
      */
-    inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
-    inline void SetSseConfig(const SseConfig& value) { m_sseConfig = value; }
-    inline void SetSseConfig(SseConfig&& value) { m_sseConfig = std::move(value); }
-    inline GetVariantStoreResult& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-    inline GetVariantStoreResult& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+    inline const SseConfig& GetSseConfig() const { return m_sseConfig; }
+    template<typename SseConfigT = SseConfig>
+    void SetSseConfig(SseConfigT&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::forward<SseConfigT>(value); }
+    template<typename SseConfigT = SseConfig>
+    GetVariantStoreResult& WithSseConfig(SseConfigT&& value) { SetSseConfig(std::forward<SseConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the store was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetVariantStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetVariantStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetVariantStoreResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the store was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline GetVariantStoreResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline GetVariantStoreResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    GetVariantStoreResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetVariantStoreResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetVariantStoreResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetVariantStoreResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetVariantStoreResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetVariantStoreResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetVariantStoreResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetVariantStoreResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetVariantStoreResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetVariantStoreResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetVariantStoreResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetVariantStoreResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The store's status message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetVariantStoreResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetVariantStoreResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetVariantStoreResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetVariantStoreResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The store's size in bytes.</p>
      */
-    inline long long GetStoreSizeBytes() const{ return m_storeSizeBytes; }
-    inline void SetStoreSizeBytes(long long value) { m_storeSizeBytes = value; }
+    inline long long GetStoreSizeBytes() const { return m_storeSizeBytes; }
+    inline void SetStoreSizeBytes(long long value) { m_storeSizeBytesHasBeenSet = true; m_storeSizeBytes = value; }
     inline GetVariantStoreResult& WithStoreSizeBytes(long long value) { SetStoreSizeBytes(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVariantStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVariantStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVariantStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVariantStoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     ReferenceItem m_reference;
+    bool m_referenceHasBeenSet = false;
 
-    StoreStatus m_status;
+    StoreStatus m_status{StoreStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_storeArn;
+    bool m_storeArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     SseConfig m_sseConfig;
+    bool m_sseConfigHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
-    long long m_storeSizeBytes;
+    long long m_storeSizeBytes{0};
+    bool m_storeSizeBytesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

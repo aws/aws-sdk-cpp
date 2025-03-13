@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterTaskDefinitionResult::DeregisterTaskDefinitionResult()
-{
-}
-
 DeregisterTaskDefinitionResult::DeregisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeregisterTaskDefinitionResult& DeregisterTaskDefinitionResult::operator =(const
   if(jsonValue.ValueExists("taskDefinition"))
   {
     m_taskDefinition = jsonValue.GetObject("taskDefinition");
-
+    m_taskDefinitionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class KeyUsageProperty
   {
   public:
-    AWS_PCACONNECTORAD_API KeyUsageProperty();
+    AWS_PCACONNECTORAD_API KeyUsageProperty() = default;
     AWS_PCACONNECTORAD_API KeyUsageProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API KeyUsageProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>You can specify key usage for encryption, key agreement, and signature. You
      * can use property flags or property type but not both. </p>
      */
-    inline const KeyUsagePropertyFlags& GetPropertyFlags() const{ return m_propertyFlags; }
+    inline const KeyUsagePropertyFlags& GetPropertyFlags() const { return m_propertyFlags; }
     inline bool PropertyFlagsHasBeenSet() const { return m_propertyFlagsHasBeenSet; }
-    inline void SetPropertyFlags(const KeyUsagePropertyFlags& value) { m_propertyFlagsHasBeenSet = true; m_propertyFlags = value; }
-    inline void SetPropertyFlags(KeyUsagePropertyFlags&& value) { m_propertyFlagsHasBeenSet = true; m_propertyFlags = std::move(value); }
-    inline KeyUsageProperty& WithPropertyFlags(const KeyUsagePropertyFlags& value) { SetPropertyFlags(value); return *this;}
-    inline KeyUsageProperty& WithPropertyFlags(KeyUsagePropertyFlags&& value) { SetPropertyFlags(std::move(value)); return *this;}
+    template<typename PropertyFlagsT = KeyUsagePropertyFlags>
+    void SetPropertyFlags(PropertyFlagsT&& value) { m_propertyFlagsHasBeenSet = true; m_propertyFlags = std::forward<PropertyFlagsT>(value); }
+    template<typename PropertyFlagsT = KeyUsagePropertyFlags>
+    KeyUsageProperty& WithPropertyFlags(PropertyFlagsT&& value) { SetPropertyFlags(std::forward<PropertyFlagsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +58,17 @@ namespace Model
      * <p>You can specify all key usages using property type ALL. You can use property
      * type or property flags but not both. </p>
      */
-    inline const KeyUsagePropertyType& GetPropertyType() const{ return m_propertyType; }
+    inline KeyUsagePropertyType GetPropertyType() const { return m_propertyType; }
     inline bool PropertyTypeHasBeenSet() const { return m_propertyTypeHasBeenSet; }
-    inline void SetPropertyType(const KeyUsagePropertyType& value) { m_propertyTypeHasBeenSet = true; m_propertyType = value; }
-    inline void SetPropertyType(KeyUsagePropertyType&& value) { m_propertyTypeHasBeenSet = true; m_propertyType = std::move(value); }
-    inline KeyUsageProperty& WithPropertyType(const KeyUsagePropertyType& value) { SetPropertyType(value); return *this;}
-    inline KeyUsageProperty& WithPropertyType(KeyUsagePropertyType&& value) { SetPropertyType(std::move(value)); return *this;}
+    inline void SetPropertyType(KeyUsagePropertyType value) { m_propertyTypeHasBeenSet = true; m_propertyType = value; }
+    inline KeyUsageProperty& WithPropertyType(KeyUsagePropertyType value) { SetPropertyType(value); return *this;}
     ///@}
   private:
 
     KeyUsagePropertyFlags m_propertyFlags;
     bool m_propertyFlagsHasBeenSet = false;
 
-    KeyUsagePropertyType m_propertyType;
+    KeyUsagePropertyType m_propertyType{KeyUsagePropertyType::NOT_SET};
     bool m_propertyTypeHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteIdNamespaceAssociationRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API DeleteIdNamespaceAssociationRequest();
+    AWS_CLEANROOMS_API DeleteIdNamespaceAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The unique identifier of the ID namespace association that you want to
      * delete.</p>
      */
-    inline const Aws::String& GetIdNamespaceAssociationIdentifier() const{ return m_idNamespaceAssociationIdentifier; }
+    inline const Aws::String& GetIdNamespaceAssociationIdentifier() const { return m_idNamespaceAssociationIdentifier; }
     inline bool IdNamespaceAssociationIdentifierHasBeenSet() const { return m_idNamespaceAssociationIdentifierHasBeenSet; }
-    inline void SetIdNamespaceAssociationIdentifier(const Aws::String& value) { m_idNamespaceAssociationIdentifierHasBeenSet = true; m_idNamespaceAssociationIdentifier = value; }
-    inline void SetIdNamespaceAssociationIdentifier(Aws::String&& value) { m_idNamespaceAssociationIdentifierHasBeenSet = true; m_idNamespaceAssociationIdentifier = std::move(value); }
-    inline void SetIdNamespaceAssociationIdentifier(const char* value) { m_idNamespaceAssociationIdentifierHasBeenSet = true; m_idNamespaceAssociationIdentifier.assign(value); }
-    inline DeleteIdNamespaceAssociationRequest& WithIdNamespaceAssociationIdentifier(const Aws::String& value) { SetIdNamespaceAssociationIdentifier(value); return *this;}
-    inline DeleteIdNamespaceAssociationRequest& WithIdNamespaceAssociationIdentifier(Aws::String&& value) { SetIdNamespaceAssociationIdentifier(std::move(value)); return *this;}
-    inline DeleteIdNamespaceAssociationRequest& WithIdNamespaceAssociationIdentifier(const char* value) { SetIdNamespaceAssociationIdentifier(value); return *this;}
+    template<typename IdNamespaceAssociationIdentifierT = Aws::String>
+    void SetIdNamespaceAssociationIdentifier(IdNamespaceAssociationIdentifierT&& value) { m_idNamespaceAssociationIdentifierHasBeenSet = true; m_idNamespaceAssociationIdentifier = std::forward<IdNamespaceAssociationIdentifierT>(value); }
+    template<typename IdNamespaceAssociationIdentifierT = Aws::String>
+    DeleteIdNamespaceAssociationRequest& WithIdNamespaceAssociationIdentifier(IdNamespaceAssociationIdentifierT&& value) { SetIdNamespaceAssociationIdentifier(std::forward<IdNamespaceAssociationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The unique identifier of the membership that contains the ID namespace
      * association that you want to delete.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline DeleteIdNamespaceAssociationRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline DeleteIdNamespaceAssociationRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline DeleteIdNamespaceAssociationRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    DeleteIdNamespaceAssociationRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
   private:
 

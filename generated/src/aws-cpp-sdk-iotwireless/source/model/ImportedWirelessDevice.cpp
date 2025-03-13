@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ImportedWirelessDevice::ImportedWirelessDevice() : 
-    m_sidewalkHasBeenSet(false)
-{
-}
-
 ImportedWirelessDevice::ImportedWirelessDevice(JsonView jsonValue)
-  : ImportedWirelessDevice()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImportedWirelessDevice& ImportedWirelessDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Sidewalk"))
   {
     m_sidewalk = jsonValue.GetObject("Sidewalk");
-
     m_sidewalkHasBeenSet = true;
   }
-
   return *this;
 }
 

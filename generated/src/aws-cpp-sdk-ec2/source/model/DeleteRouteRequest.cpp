@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteRouteRequest::DeleteRouteRequest() : 
-    m_destinationPrefixListIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationIpv6CidrBlockHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

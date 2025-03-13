@@ -25,7 +25,7 @@ namespace Model
   class RegisterOrganizationDelegatedAdminRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API RegisterOrganizationDelegatedAdminRequest();
+    AWS_CLOUDTRAIL_API RegisterOrganizationDelegatedAdminRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>An organization member account ID that you want to designate as a delegated
      * administrator.</p>
      */
-    inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
+    inline const Aws::String& GetMemberAccountId() const { return m_memberAccountId; }
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
-    inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
-    inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
-    inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
-    inline RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
-    inline RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
-    inline RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}
+    template<typename MemberAccountIdT = Aws::String>
+    void SetMemberAccountId(MemberAccountIdT&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::forward<MemberAccountIdT>(value); }
+    template<typename MemberAccountIdT = Aws::String>
+    RegisterOrganizationDelegatedAdminRequest& WithMemberAccountId(MemberAccountIdT&& value) { SetMemberAccountId(std::forward<MemberAccountIdT>(value)); return *this;}
     ///@}
   private:
 

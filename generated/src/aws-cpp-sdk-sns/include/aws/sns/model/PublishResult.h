@@ -33,7 +33,7 @@ namespace Model
   class PublishResult
   {
   public:
-    AWS_SNS_API PublishResult();
+    AWS_SNS_API PublishResult() = default;
     AWS_SNS_API PublishResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SNS_API PublishResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
-    inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageId.assign(value); }
-    inline PublishResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline PublishResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline PublishResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    PublishResult& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,30 +58,31 @@ namespace Model
      * <code>SequenceNumber</code> continues to increase for each
      * <code>MessageGroupId</code>.</p>
      */
-    inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
-    inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumber = value; }
-    inline void SetSequenceNumber(Aws::String&& value) { m_sequenceNumber = std::move(value); }
-    inline void SetSequenceNumber(const char* value) { m_sequenceNumber.assign(value); }
-    inline PublishResult& WithSequenceNumber(const Aws::String& value) { SetSequenceNumber(value); return *this;}
-    inline PublishResult& WithSequenceNumber(Aws::String&& value) { SetSequenceNumber(std::move(value)); return *this;}
-    inline PublishResult& WithSequenceNumber(const char* value) { SetSequenceNumber(value); return *this;}
+    inline const Aws::String& GetSequenceNumber() const { return m_sequenceNumber; }
+    template<typename SequenceNumberT = Aws::String>
+    void SetSequenceNumber(SequenceNumberT&& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = std::forward<SequenceNumberT>(value); }
+    template<typename SequenceNumberT = Aws::String>
+    PublishResult& WithSequenceNumber(SequenceNumberT&& value) { SetSequenceNumber(std::forward<SequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PublishResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PublishResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PublishResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_messageId;
+    bool m_messageIdHasBeenSet = false;
 
     Aws::String m_sequenceNumber;
+    bool m_sequenceNumberHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

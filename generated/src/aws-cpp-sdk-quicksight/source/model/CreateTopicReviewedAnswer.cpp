@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CreateTopicReviewedAnswer::CreateTopicReviewedAnswer() : 
-    m_answerIdHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_questionHasBeenSet(false),
-    m_mirHasBeenSet(false),
-    m_primaryVisualHasBeenSet(false),
-    m_templateHasBeenSet(false)
-{
-}
-
 CreateTopicReviewedAnswer::CreateTopicReviewedAnswer(JsonView jsonValue)
-  : CreateTopicReviewedAnswer()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ CreateTopicReviewedAnswer& CreateTopicReviewedAnswer::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AnswerId"))
   {
     m_answerId = jsonValue.GetString("AnswerId");
-
     m_answerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetArn"))
   {
     m_datasetArn = jsonValue.GetString("DatasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Question"))
   {
     m_question = jsonValue.GetString("Question");
-
     m_questionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mir"))
   {
     m_mir = jsonValue.GetObject("Mir");
-
     m_mirHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryVisual"))
   {
     m_primaryVisual = jsonValue.GetObject("PrimaryVisual");
-
     m_primaryVisualHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Template"))
   {
     m_template = jsonValue.GetObject("Template");
-
     m_templateHasBeenSet = true;
   }
-
   return *this;
 }
 

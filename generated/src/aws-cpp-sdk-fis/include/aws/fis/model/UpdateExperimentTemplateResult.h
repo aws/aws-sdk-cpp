@@ -28,7 +28,7 @@ namespace Model
   class UpdateExperimentTemplateResult
   {
   public:
-    AWS_FIS_API UpdateExperimentTemplateResult();
+    AWS_FIS_API UpdateExperimentTemplateResult() = default;
     AWS_FIS_API UpdateExperimentTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIS_API UpdateExperimentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the experiment template.</p>
      */
-    inline const ExperimentTemplate& GetExperimentTemplate() const{ return m_experimentTemplate; }
-    inline void SetExperimentTemplate(const ExperimentTemplate& value) { m_experimentTemplate = value; }
-    inline void SetExperimentTemplate(ExperimentTemplate&& value) { m_experimentTemplate = std::move(value); }
-    inline UpdateExperimentTemplateResult& WithExperimentTemplate(const ExperimentTemplate& value) { SetExperimentTemplate(value); return *this;}
-    inline UpdateExperimentTemplateResult& WithExperimentTemplate(ExperimentTemplate&& value) { SetExperimentTemplate(std::move(value)); return *this;}
+    inline const ExperimentTemplate& GetExperimentTemplate() const { return m_experimentTemplate; }
+    template<typename ExperimentTemplateT = ExperimentTemplate>
+    void SetExperimentTemplate(ExperimentTemplateT&& value) { m_experimentTemplateHasBeenSet = true; m_experimentTemplate = std::forward<ExperimentTemplateT>(value); }
+    template<typename ExperimentTemplateT = ExperimentTemplate>
+    UpdateExperimentTemplateResult& WithExperimentTemplate(ExperimentTemplateT&& value) { SetExperimentTemplate(std::forward<ExperimentTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateExperimentTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateExperimentTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateExperimentTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateExperimentTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExperimentTemplate m_experimentTemplate;
+    bool m_experimentTemplateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class AccountTakeoverActionsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The action that you assign to a low-risk assessment by threat protection.</p>
      */
-    inline const AccountTakeoverActionType& GetLowAction() const{ return m_lowAction; }
+    inline const AccountTakeoverActionType& GetLowAction() const { return m_lowAction; }
     inline bool LowActionHasBeenSet() const { return m_lowActionHasBeenSet; }
-    inline void SetLowAction(const AccountTakeoverActionType& value) { m_lowActionHasBeenSet = true; m_lowAction = value; }
-    inline void SetLowAction(AccountTakeoverActionType&& value) { m_lowActionHasBeenSet = true; m_lowAction = std::move(value); }
-    inline AccountTakeoverActionsType& WithLowAction(const AccountTakeoverActionType& value) { SetLowAction(value); return *this;}
-    inline AccountTakeoverActionsType& WithLowAction(AccountTakeoverActionType&& value) { SetLowAction(std::move(value)); return *this;}
+    template<typename LowActionT = AccountTakeoverActionType>
+    void SetLowAction(LowActionT&& value) { m_lowActionHasBeenSet = true; m_lowAction = std::forward<LowActionT>(value); }
+    template<typename LowActionT = AccountTakeoverActionType>
+    AccountTakeoverActionsType& WithLowAction(LowActionT&& value) { SetLowAction(std::forward<LowActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +55,12 @@ namespace Model
      * <p>The action that you assign to a medium-risk assessment by threat
      * protection.</p>
      */
-    inline const AccountTakeoverActionType& GetMediumAction() const{ return m_mediumAction; }
+    inline const AccountTakeoverActionType& GetMediumAction() const { return m_mediumAction; }
     inline bool MediumActionHasBeenSet() const { return m_mediumActionHasBeenSet; }
-    inline void SetMediumAction(const AccountTakeoverActionType& value) { m_mediumActionHasBeenSet = true; m_mediumAction = value; }
-    inline void SetMediumAction(AccountTakeoverActionType&& value) { m_mediumActionHasBeenSet = true; m_mediumAction = std::move(value); }
-    inline AccountTakeoverActionsType& WithMediumAction(const AccountTakeoverActionType& value) { SetMediumAction(value); return *this;}
-    inline AccountTakeoverActionsType& WithMediumAction(AccountTakeoverActionType&& value) { SetMediumAction(std::move(value)); return *this;}
+    template<typename MediumActionT = AccountTakeoverActionType>
+    void SetMediumAction(MediumActionT&& value) { m_mediumActionHasBeenSet = true; m_mediumAction = std::forward<MediumActionT>(value); }
+    template<typename MediumActionT = AccountTakeoverActionType>
+    AccountTakeoverActionsType& WithMediumAction(MediumActionT&& value) { SetMediumAction(std::forward<MediumActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +68,12 @@ namespace Model
      * <p>The action that you assign to a high-risk assessment by threat
      * protection.</p>
      */
-    inline const AccountTakeoverActionType& GetHighAction() const{ return m_highAction; }
+    inline const AccountTakeoverActionType& GetHighAction() const { return m_highAction; }
     inline bool HighActionHasBeenSet() const { return m_highActionHasBeenSet; }
-    inline void SetHighAction(const AccountTakeoverActionType& value) { m_highActionHasBeenSet = true; m_highAction = value; }
-    inline void SetHighAction(AccountTakeoverActionType&& value) { m_highActionHasBeenSet = true; m_highAction = std::move(value); }
-    inline AccountTakeoverActionsType& WithHighAction(const AccountTakeoverActionType& value) { SetHighAction(value); return *this;}
-    inline AccountTakeoverActionsType& WithHighAction(AccountTakeoverActionType&& value) { SetHighAction(std::move(value)); return *this;}
+    template<typename HighActionT = AccountTakeoverActionType>
+    void SetHighAction(HighActionT&& value) { m_highActionHasBeenSet = true; m_highAction = std::forward<HighActionT>(value); }
+    template<typename HighActionT = AccountTakeoverActionType>
+    AccountTakeoverActionsType& WithHighAction(HighActionT&& value) { SetHighAction(std::forward<HighActionT>(value)); return *this;}
     ///@}
   private:
 

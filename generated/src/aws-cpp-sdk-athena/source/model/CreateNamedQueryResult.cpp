@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNamedQueryResult::CreateNamedQueryResult()
-{
-}
-
 CreateNamedQueryResult::CreateNamedQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateNamedQueryResult& CreateNamedQueryResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("NamedQueryId"))
   {
     m_namedQueryId = jsonValue.GetString("NamedQueryId");
-
+    m_namedQueryIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

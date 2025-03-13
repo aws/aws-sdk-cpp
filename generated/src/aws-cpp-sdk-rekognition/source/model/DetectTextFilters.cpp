@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DetectTextFilters::DetectTextFilters() : 
-    m_wordFilterHasBeenSet(false),
-    m_regionsOfInterestHasBeenSet(false)
-{
-}
-
 DetectTextFilters::DetectTextFilters(JsonView jsonValue)
-  : DetectTextFilters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DetectTextFilters& DetectTextFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WordFilter"))
   {
     m_wordFilter = jsonValue.GetObject("WordFilter");
-
     m_wordFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionsOfInterest"))
   {
     Aws::Utils::Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
@@ -48,7 +39,6 @@ DetectTextFilters& DetectTextFilters::operator =(JsonView jsonValue)
     }
     m_regionsOfInterestHasBeenSet = true;
   }
-
   return *this;
 }
 

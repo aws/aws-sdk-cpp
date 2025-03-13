@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-RecommendedStep::RecommendedStep() : 
-    m_unusedPermissionsRecommendedStepHasBeenSet(false)
-{
-}
-
 RecommendedStep::RecommendedStep(JsonView jsonValue)
-  : RecommendedStep()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecommendedStep& RecommendedStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unusedPermissionsRecommendedStep"))
   {
     m_unusedPermissionsRecommendedStep = jsonValue.GetObject("unusedPermissionsRecommendedStep");
-
     m_unusedPermissionsRecommendedStepHasBeenSet = true;
   }
-
   return *this;
 }
 

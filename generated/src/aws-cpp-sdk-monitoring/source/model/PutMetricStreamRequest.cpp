@@ -10,21 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutMetricStreamRequest::PutMetricStreamRequest() : 
-    m_nameHasBeenSet(false),
-    m_includeFiltersHasBeenSet(false),
-    m_excludeFiltersHasBeenSet(false),
-    m_firehoseArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_statisticsConfigurationsHasBeenSet(false),
-    m_includeLinkedAccountsMetrics(false),
-    m_includeLinkedAccountsMetricsHasBeenSet(false)
-{
-}
-
 Aws::String PutMetricStreamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

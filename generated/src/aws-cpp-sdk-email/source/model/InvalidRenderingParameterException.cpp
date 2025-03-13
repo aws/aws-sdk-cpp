@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidRenderingParameterException::InvalidRenderingParameterException() : 
-    m_templateNameHasBeenSet(false)
-{
-}
-
 InvalidRenderingParameterException::InvalidRenderingParameterException(const XmlNode& xmlNode)
-  : InvalidRenderingParameterException()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ InvalidRenderingParameterException& InvalidRenderingParameterException::operator
     {
       m_templateName = Aws::Utils::Xml::DecodeEscapedXmlText(templateNameNode.GetText());
       m_templateNameHasBeenSet = true;
+       m_templateNameHasBeenSet = true;
     }
   }
 

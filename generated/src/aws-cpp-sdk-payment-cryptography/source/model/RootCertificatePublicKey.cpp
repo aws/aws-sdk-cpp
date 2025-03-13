@@ -18,14 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-RootCertificatePublicKey::RootCertificatePublicKey() : 
-    m_keyAttributesHasBeenSet(false),
-    m_publicKeyCertificateHasBeenSet(false)
-{
-}
-
 RootCertificatePublicKey::RootCertificatePublicKey(JsonView jsonValue)
-  : RootCertificatePublicKey()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RootCertificatePublicKey& RootCertificatePublicKey::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("KeyAttributes"))
   {
     m_keyAttributes = jsonValue.GetObject("KeyAttributes");
-
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicKeyCertificate"))
   {
     m_publicKeyCertificate = jsonValue.GetString("PublicKeyCertificate");
-
     m_publicKeyCertificateHasBeenSet = true;
   }
-
   return *this;
 }
 

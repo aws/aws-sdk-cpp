@@ -32,7 +32,7 @@ namespace Model
   class TableFieldURLConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API TableFieldURLConfiguration();
+    AWS_QUICKSIGHT_API TableFieldURLConfiguration() = default;
     AWS_QUICKSIGHT_API TableFieldURLConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableFieldURLConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The link configuration of a table field URL.</p>
      */
-    inline const TableFieldLinkConfiguration& GetLinkConfiguration() const{ return m_linkConfiguration; }
+    inline const TableFieldLinkConfiguration& GetLinkConfiguration() const { return m_linkConfiguration; }
     inline bool LinkConfigurationHasBeenSet() const { return m_linkConfigurationHasBeenSet; }
-    inline void SetLinkConfiguration(const TableFieldLinkConfiguration& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = value; }
-    inline void SetLinkConfiguration(TableFieldLinkConfiguration&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::move(value); }
-    inline TableFieldURLConfiguration& WithLinkConfiguration(const TableFieldLinkConfiguration& value) { SetLinkConfiguration(value); return *this;}
-    inline TableFieldURLConfiguration& WithLinkConfiguration(TableFieldLinkConfiguration&& value) { SetLinkConfiguration(std::move(value)); return *this;}
+    template<typename LinkConfigurationT = TableFieldLinkConfiguration>
+    void SetLinkConfiguration(LinkConfigurationT&& value) { m_linkConfigurationHasBeenSet = true; m_linkConfiguration = std::forward<LinkConfigurationT>(value); }
+    template<typename LinkConfigurationT = TableFieldLinkConfiguration>
+    TableFieldURLConfiguration& WithLinkConfiguration(LinkConfigurationT&& value) { SetLinkConfiguration(std::forward<LinkConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image configuration of a table field URL.</p>
      */
-    inline const TableFieldImageConfiguration& GetImageConfiguration() const{ return m_imageConfiguration; }
+    inline const TableFieldImageConfiguration& GetImageConfiguration() const { return m_imageConfiguration; }
     inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
-    inline void SetImageConfiguration(const TableFieldImageConfiguration& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
-    inline void SetImageConfiguration(TableFieldImageConfiguration&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
-    inline TableFieldURLConfiguration& WithImageConfiguration(const TableFieldImageConfiguration& value) { SetImageConfiguration(value); return *this;}
-    inline TableFieldURLConfiguration& WithImageConfiguration(TableFieldImageConfiguration&& value) { SetImageConfiguration(std::move(value)); return *this;}
+    template<typename ImageConfigurationT = TableFieldImageConfiguration>
+    void SetImageConfiguration(ImageConfigurationT&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::forward<ImageConfigurationT>(value); }
+    template<typename ImageConfigurationT = TableFieldImageConfiguration>
+    TableFieldURLConfiguration& WithImageConfiguration(ImageConfigurationT&& value) { SetImageConfiguration(std::forward<ImageConfigurationT>(value)); return *this;}
     ///@}
   private:
 

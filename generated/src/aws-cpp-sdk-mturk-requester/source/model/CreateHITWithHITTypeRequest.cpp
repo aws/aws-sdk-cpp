@@ -12,22 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHITWithHITTypeRequest::CreateHITWithHITTypeRequest() : 
-    m_hITTypeIdHasBeenSet(false),
-    m_maxAssignments(0),
-    m_maxAssignmentsHasBeenSet(false),
-    m_lifetimeInSeconds(0),
-    m_lifetimeInSecondsHasBeenSet(false),
-    m_questionHasBeenSet(false),
-    m_requesterAnnotationHasBeenSet(false),
-    m_uniqueRequestTokenHasBeenSet(false),
-    m_assignmentReviewPolicyHasBeenSet(false),
-    m_hITReviewPolicyHasBeenSet(false),
-    m_hITLayoutIdHasBeenSet(false),
-    m_hITLayoutParametersHasBeenSet(false)
-{
-}
-
 Aws::String CreateHITWithHITTypeRequest::SerializePayload() const
 {
   JsonValue payload;

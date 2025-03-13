@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RSessionAppSettings::RSessionAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false)
-{
-}
-
 RSessionAppSettings::RSessionAppSettings(JsonView jsonValue)
-  : RSessionAppSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RSessionAppSettings& RSessionAppSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultResourceSpec"))
   {
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
-
     m_defaultResourceSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomImages"))
   {
     Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
@@ -48,7 +39,6 @@ RSessionAppSettings& RSessionAppSettings::operator =(JsonView jsonValue)
     }
     m_customImagesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-Signer::Signer() : 
-    m_awsAccountNumberHasBeenSet(false),
-    m_keyPairIdsHasBeenSet(false)
-{
-}
-
 Signer::Signer(const XmlNode& xmlNode)
-  : Signer()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Signer& Signer::operator =(const XmlNode& xmlNode)
     {
       m_awsAccountNumber = Aws::Utils::Xml::DecodeEscapedXmlText(awsAccountNumberNode.GetText());
       m_awsAccountNumberHasBeenSet = true;
+       m_awsAccountNumberHasBeenSet = true;
     }
     XmlNode keyPairIdsNode = resultNode.FirstChild("KeyPairIds");
     if(!keyPairIdsNode.IsNull())
     {
       m_keyPairIds = keyPairIdsNode;
       m_keyPairIdsHasBeenSet = true;
+       m_keyPairIdsHasBeenSet = true;
     }
   }
 

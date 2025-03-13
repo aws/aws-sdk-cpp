@@ -31,7 +31,7 @@ namespace Model
   class ApplicationDependencySummary
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary() = default;
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the nested application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline ApplicationDependencySummary& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline ApplicationDependencySummary& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline ApplicationDependencySummary& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    ApplicationDependencySummary& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The semantic version of the nested application.</p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-    inline ApplicationDependencySummary& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline ApplicationDependencySummary& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline ApplicationDependencySummary& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    ApplicationDependencySummary& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
   private:
 

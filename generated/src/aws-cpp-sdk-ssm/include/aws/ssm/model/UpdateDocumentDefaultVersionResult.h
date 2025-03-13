@@ -28,7 +28,7 @@ namespace Model
   class UpdateDocumentDefaultVersionResult
   {
   public:
-    AWS_SSM_API UpdateDocumentDefaultVersionResult();
+    AWS_SSM_API UpdateDocumentDefaultVersionResult() = default;
     AWS_SSM_API UpdateDocumentDefaultVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API UpdateDocumentDefaultVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The description of a custom document that you want to set as the default
      * version.</p>
      */
-    inline const DocumentDefaultVersionDescription& GetDescription() const{ return m_description; }
-    inline void SetDescription(const DocumentDefaultVersionDescription& value) { m_description = value; }
-    inline void SetDescription(DocumentDefaultVersionDescription&& value) { m_description = std::move(value); }
-    inline UpdateDocumentDefaultVersionResult& WithDescription(const DocumentDefaultVersionDescription& value) { SetDescription(value); return *this;}
-    inline UpdateDocumentDefaultVersionResult& WithDescription(DocumentDefaultVersionDescription&& value) { SetDescription(std::move(value)); return *this;}
+    inline const DocumentDefaultVersionDescription& GetDescription() const { return m_description; }
+    template<typename DescriptionT = DocumentDefaultVersionDescription>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = DocumentDefaultVersionDescription>
+    UpdateDocumentDefaultVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDocumentDefaultVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDocumentDefaultVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDocumentDefaultVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDocumentDefaultVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DocumentDefaultVersionDescription m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class CreateContainerServiceRegistryLoginResult
   {
   public:
-    AWS_LIGHTSAIL_API CreateContainerServiceRegistryLoginResult();
+    AWS_LIGHTSAIL_API CreateContainerServiceRegistryLoginResult() = default;
     AWS_LIGHTSAIL_API CreateContainerServiceRegistryLoginResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API CreateContainerServiceRegistryLoginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that describes the log in information for the container service
      * registry of your Lightsail account.</p>
      */
-    inline const ContainerServiceRegistryLogin& GetRegistryLogin() const{ return m_registryLogin; }
-    inline void SetRegistryLogin(const ContainerServiceRegistryLogin& value) { m_registryLogin = value; }
-    inline void SetRegistryLogin(ContainerServiceRegistryLogin&& value) { m_registryLogin = std::move(value); }
-    inline CreateContainerServiceRegistryLoginResult& WithRegistryLogin(const ContainerServiceRegistryLogin& value) { SetRegistryLogin(value); return *this;}
-    inline CreateContainerServiceRegistryLoginResult& WithRegistryLogin(ContainerServiceRegistryLogin&& value) { SetRegistryLogin(std::move(value)); return *this;}
+    inline const ContainerServiceRegistryLogin& GetRegistryLogin() const { return m_registryLogin; }
+    template<typename RegistryLoginT = ContainerServiceRegistryLogin>
+    void SetRegistryLogin(RegistryLoginT&& value) { m_registryLoginHasBeenSet = true; m_registryLogin = std::forward<RegistryLoginT>(value); }
+    template<typename RegistryLoginT = ContainerServiceRegistryLogin>
+    CreateContainerServiceRegistryLoginResult& WithRegistryLogin(RegistryLoginT&& value) { SetRegistryLogin(std::forward<RegistryLoginT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateContainerServiceRegistryLoginResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateContainerServiceRegistryLoginResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateContainerServiceRegistryLoginResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateContainerServiceRegistryLoginResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContainerServiceRegistryLogin m_registryLogin;
+    bool m_registryLoginHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

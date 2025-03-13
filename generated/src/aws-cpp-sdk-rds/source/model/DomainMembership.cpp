@@ -20,19 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DomainMembership::DomainMembership() : 
-    m_domainHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_fQDNHasBeenSet(false),
-    m_iAMRoleNameHasBeenSet(false),
-    m_oUHasBeenSet(false),
-    m_authSecretArnHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
-{
-}
-
 DomainMembership::DomainMembership(const XmlNode& xmlNode)
-  : DomainMembership()
 {
   *this = xmlNode;
 }
@@ -48,48 +36,55 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
     {
       m_domain = Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText());
       m_domainHasBeenSet = true;
+       m_domainHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode fQDNNode = resultNode.FirstChild("FQDN");
     if(!fQDNNode.IsNull())
     {
       m_fQDN = Aws::Utils::Xml::DecodeEscapedXmlText(fQDNNode.GetText());
       m_fQDNHasBeenSet = true;
+       m_fQDNHasBeenSet = true;
     }
     XmlNode iAMRoleNameNode = resultNode.FirstChild("IAMRoleName");
     if(!iAMRoleNameNode.IsNull())
     {
       m_iAMRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(iAMRoleNameNode.GetText());
       m_iAMRoleNameHasBeenSet = true;
+       m_iAMRoleNameHasBeenSet = true;
     }
     XmlNode oUNode = resultNode.FirstChild("OU");
     if(!oUNode.IsNull())
     {
       m_oU = Aws::Utils::Xml::DecodeEscapedXmlText(oUNode.GetText());
       m_oUHasBeenSet = true;
+       m_oUHasBeenSet = true;
     }
     XmlNode authSecretArnNode = resultNode.FirstChild("AuthSecretArn");
     if(!authSecretArnNode.IsNull())
     {
       m_authSecretArn = Aws::Utils::Xml::DecodeEscapedXmlText(authSecretArnNode.GetText());
       m_authSecretArnHasBeenSet = true;
+       m_authSecretArnHasBeenSet = true;
     }
     XmlNode dnsIpsNode = resultNode.FirstChild("DnsIps");
     if(!dnsIpsNode.IsNull())
     {
       XmlNode dnsIpsMember = dnsIpsNode.FirstChild("member");
+      m_dnsIpsHasBeenSet = !dnsIpsMember.IsNull();
       while(!dnsIpsMember.IsNull())
       {
         m_dnsIps.push_back(dnsIpsMember.GetText());
         dnsIpsMember = dnsIpsMember.NextNode("member");
       }
 
-      m_dnsIpsHasBeenSet = true;
+       m_dnsIpsHasBeenSet = true;
     }
   }
 

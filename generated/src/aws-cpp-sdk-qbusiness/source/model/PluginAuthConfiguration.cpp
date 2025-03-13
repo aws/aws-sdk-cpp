@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-PluginAuthConfiguration::PluginAuthConfiguration() : 
-    m_basicAuthConfigurationHasBeenSet(false),
-    m_oAuth2ClientCredentialConfigurationHasBeenSet(false),
-    m_noAuthConfigurationHasBeenSet(false),
-    m_idcAuthConfigurationHasBeenSet(false)
-{
-}
-
 PluginAuthConfiguration::PluginAuthConfiguration(JsonView jsonValue)
-  : PluginAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PluginAuthConfiguration& PluginAuthConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("basicAuthConfiguration"))
   {
     m_basicAuthConfiguration = jsonValue.GetObject("basicAuthConfiguration");
-
     m_basicAuthConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2ClientCredentialConfiguration"))
   {
     m_oAuth2ClientCredentialConfiguration = jsonValue.GetObject("oAuth2ClientCredentialConfiguration");
-
     m_oAuth2ClientCredentialConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noAuthConfiguration"))
   {
     m_noAuthConfiguration = jsonValue.GetObject("noAuthConfiguration");
-
     m_noAuthConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idcAuthConfiguration"))
   {
     m_idcAuthConfiguration = jsonValue.GetObject("idcAuthConfiguration");
-
     m_idcAuthConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

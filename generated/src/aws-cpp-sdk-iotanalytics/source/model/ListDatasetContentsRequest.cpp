@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDatasetContentsRequest::ListDatasetContentsRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_scheduledOnOrAfterHasBeenSet(false),
-    m_scheduledBeforeHasBeenSet(false)
-{
-}
-
 Aws::String ListDatasetContentsRequest::SerializePayload() const
 {
   return {};

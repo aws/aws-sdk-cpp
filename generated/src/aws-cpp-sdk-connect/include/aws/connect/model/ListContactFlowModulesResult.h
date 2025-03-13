@@ -29,7 +29,7 @@ namespace Model
   class ListContactFlowModulesResult
   {
   public:
-    AWS_CONNECT_API ListContactFlowModulesResult();
+    AWS_CONNECT_API ListContactFlowModulesResult() = default;
     AWS_CONNECT_API ListContactFlowModulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListContactFlowModulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the flow module.</p>
      */
-    inline const Aws::Vector<ContactFlowModuleSummary>& GetContactFlowModulesSummaryList() const{ return m_contactFlowModulesSummaryList; }
-    inline void SetContactFlowModulesSummaryList(const Aws::Vector<ContactFlowModuleSummary>& value) { m_contactFlowModulesSummaryList = value; }
-    inline void SetContactFlowModulesSummaryList(Aws::Vector<ContactFlowModuleSummary>&& value) { m_contactFlowModulesSummaryList = std::move(value); }
-    inline ListContactFlowModulesResult& WithContactFlowModulesSummaryList(const Aws::Vector<ContactFlowModuleSummary>& value) { SetContactFlowModulesSummaryList(value); return *this;}
-    inline ListContactFlowModulesResult& WithContactFlowModulesSummaryList(Aws::Vector<ContactFlowModuleSummary>&& value) { SetContactFlowModulesSummaryList(std::move(value)); return *this;}
-    inline ListContactFlowModulesResult& AddContactFlowModulesSummaryList(const ContactFlowModuleSummary& value) { m_contactFlowModulesSummaryList.push_back(value); return *this; }
-    inline ListContactFlowModulesResult& AddContactFlowModulesSummaryList(ContactFlowModuleSummary&& value) { m_contactFlowModulesSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContactFlowModuleSummary>& GetContactFlowModulesSummaryList() const { return m_contactFlowModulesSummaryList; }
+    template<typename ContactFlowModulesSummaryListT = Aws::Vector<ContactFlowModuleSummary>>
+    void SetContactFlowModulesSummaryList(ContactFlowModulesSummaryListT&& value) { m_contactFlowModulesSummaryListHasBeenSet = true; m_contactFlowModulesSummaryList = std::forward<ContactFlowModulesSummaryListT>(value); }
+    template<typename ContactFlowModulesSummaryListT = Aws::Vector<ContactFlowModuleSummary>>
+    ListContactFlowModulesResult& WithContactFlowModulesSummaryList(ContactFlowModulesSummaryListT&& value) { SetContactFlowModulesSummaryList(std::forward<ContactFlowModulesSummaryListT>(value)); return *this;}
+    template<typename ContactFlowModulesSummaryListT = ContactFlowModuleSummary>
+    ListContactFlowModulesResult& AddContactFlowModulesSummaryList(ContactFlowModulesSummaryListT&& value) { m_contactFlowModulesSummaryListHasBeenSet = true; m_contactFlowModulesSummaryList.emplace_back(std::forward<ContactFlowModulesSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListContactFlowModulesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListContactFlowModulesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListContactFlowModulesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContactFlowModulesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListContactFlowModulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListContactFlowModulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListContactFlowModulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListContactFlowModulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContactFlowModuleSummary> m_contactFlowModulesSummaryList;
+    bool m_contactFlowModulesSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

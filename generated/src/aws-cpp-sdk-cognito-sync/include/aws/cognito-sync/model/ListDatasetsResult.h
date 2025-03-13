@@ -34,7 +34,7 @@ namespace Model
   class ListDatasetsResult
   {
   public:
-    AWS_COGNITOSYNC_API ListDatasetsResult();
+    AWS_COGNITOSYNC_API ListDatasetsResult() = default;
     AWS_COGNITOSYNC_API ListDatasetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOSYNC_API ListDatasetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,21 +43,21 @@ namespace Model
     /**
      * A set of datasets.
      */
-    inline const Aws::Vector<Dataset>& GetDatasets() const{ return m_datasets; }
-    inline void SetDatasets(const Aws::Vector<Dataset>& value) { m_datasets = value; }
-    inline void SetDatasets(Aws::Vector<Dataset>&& value) { m_datasets = std::move(value); }
-    inline ListDatasetsResult& WithDatasets(const Aws::Vector<Dataset>& value) { SetDatasets(value); return *this;}
-    inline ListDatasetsResult& WithDatasets(Aws::Vector<Dataset>&& value) { SetDatasets(std::move(value)); return *this;}
-    inline ListDatasetsResult& AddDatasets(const Dataset& value) { m_datasets.push_back(value); return *this; }
-    inline ListDatasetsResult& AddDatasets(Dataset&& value) { m_datasets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Dataset>& GetDatasets() const { return m_datasets; }
+    template<typename DatasetsT = Aws::Vector<Dataset>>
+    void SetDatasets(DatasetsT&& value) { m_datasetsHasBeenSet = true; m_datasets = std::forward<DatasetsT>(value); }
+    template<typename DatasetsT = Aws::Vector<Dataset>>
+    ListDatasetsResult& WithDatasets(DatasetsT&& value) { SetDatasets(std::forward<DatasetsT>(value)); return *this;}
+    template<typename DatasetsT = Dataset>
+    ListDatasetsResult& AddDatasets(DatasetsT&& value) { m_datasetsHasBeenSet = true; m_datasets.emplace_back(std::forward<DatasetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * Number of datasets returned.
      */
-    inline int GetCount() const{ return m_count; }
-    inline void SetCount(int value) { m_count = value; }
+    inline int GetCount() const { return m_count; }
+    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline ListDatasetsResult& WithCount(int value) { SetCount(value); return *this;}
     ///@}
 
@@ -65,34 +65,34 @@ namespace Model
     /**
      * A pagination token for obtaining the next page of results.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDatasetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDatasetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDatasetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDatasetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDatasetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDatasetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDatasetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDatasetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Dataset> m_datasets;
+    bool m_datasetsHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
+    bool m_countHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

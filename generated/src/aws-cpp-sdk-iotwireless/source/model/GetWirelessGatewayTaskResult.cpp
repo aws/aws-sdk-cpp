@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayTaskResult::GetWirelessGatewayTaskResult() : 
-    m_status(WirelessGatewayTaskStatus::NOT_SET)
-{
-}
-
 GetWirelessGatewayTaskResult::GetWirelessGatewayTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWirelessGatewayTaskResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ GetWirelessGatewayTaskResult& GetWirelessGatewayTaskResult::operator =(const Aws
   if(jsonValue.ValueExists("WirelessGatewayId"))
   {
     m_wirelessGatewayId = jsonValue.GetString("WirelessGatewayId");
-
+    m_wirelessGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessGatewayTaskDefinitionId"))
   {
     m_wirelessGatewayTaskDefinitionId = jsonValue.GetString("WirelessGatewayTaskDefinitionId");
-
+    m_wirelessGatewayTaskDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUplinkReceivedAt"))
   {
     m_lastUplinkReceivedAt = jsonValue.GetString("LastUplinkReceivedAt");
-
+    m_lastUplinkReceivedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskCreatedAt"))
   {
     m_taskCreatedAt = jsonValue.GetString("TaskCreatedAt");
-
+    m_taskCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WirelessGatewayTaskStatusMapper::GetWirelessGatewayTaskStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

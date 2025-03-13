@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchSuspendUserRequest::BatchSuspendUserRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_userIdListHasBeenSet(false)
-{
-}
-
 Aws::String BatchSuspendUserRequest::SerializePayload() const
 {
   JsonValue payload;

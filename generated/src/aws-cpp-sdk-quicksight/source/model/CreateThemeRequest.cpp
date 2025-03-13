@@ -12,18 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateThemeRequest::CreateThemeRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_themeIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_baseThemeIdHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateThemeRequest::SerializePayload() const
 {
   JsonValue payload;

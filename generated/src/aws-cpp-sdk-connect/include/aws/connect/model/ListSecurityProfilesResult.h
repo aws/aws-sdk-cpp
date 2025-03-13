@@ -29,7 +29,7 @@ namespace Model
   class ListSecurityProfilesResult
   {
   public:
-    AWS_CONNECT_API ListSecurityProfilesResult();
+    AWS_CONNECT_API ListSecurityProfilesResult() = default;
     AWS_CONNECT_API ListSecurityProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListSecurityProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the security profiles.</p>
      */
-    inline const Aws::Vector<SecurityProfileSummary>& GetSecurityProfileSummaryList() const{ return m_securityProfileSummaryList; }
-    inline void SetSecurityProfileSummaryList(const Aws::Vector<SecurityProfileSummary>& value) { m_securityProfileSummaryList = value; }
-    inline void SetSecurityProfileSummaryList(Aws::Vector<SecurityProfileSummary>&& value) { m_securityProfileSummaryList = std::move(value); }
-    inline ListSecurityProfilesResult& WithSecurityProfileSummaryList(const Aws::Vector<SecurityProfileSummary>& value) { SetSecurityProfileSummaryList(value); return *this;}
-    inline ListSecurityProfilesResult& WithSecurityProfileSummaryList(Aws::Vector<SecurityProfileSummary>&& value) { SetSecurityProfileSummaryList(std::move(value)); return *this;}
-    inline ListSecurityProfilesResult& AddSecurityProfileSummaryList(const SecurityProfileSummary& value) { m_securityProfileSummaryList.push_back(value); return *this; }
-    inline ListSecurityProfilesResult& AddSecurityProfileSummaryList(SecurityProfileSummary&& value) { m_securityProfileSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecurityProfileSummary>& GetSecurityProfileSummaryList() const { return m_securityProfileSummaryList; }
+    template<typename SecurityProfileSummaryListT = Aws::Vector<SecurityProfileSummary>>
+    void SetSecurityProfileSummaryList(SecurityProfileSummaryListT&& value) { m_securityProfileSummaryListHasBeenSet = true; m_securityProfileSummaryList = std::forward<SecurityProfileSummaryListT>(value); }
+    template<typename SecurityProfileSummaryListT = Aws::Vector<SecurityProfileSummary>>
+    ListSecurityProfilesResult& WithSecurityProfileSummaryList(SecurityProfileSummaryListT&& value) { SetSecurityProfileSummaryList(std::forward<SecurityProfileSummaryListT>(value)); return *this;}
+    template<typename SecurityProfileSummaryListT = SecurityProfileSummary>
+    ListSecurityProfilesResult& AddSecurityProfileSummaryList(SecurityProfileSummaryListT&& value) { m_securityProfileSummaryListHasBeenSet = true; m_securityProfileSummaryList.emplace_back(std::forward<SecurityProfileSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSecurityProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSecurityProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSecurityProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSecurityProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSecurityProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSecurityProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSecurityProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSecurityProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SecurityProfileSummary> m_securityProfileSummaryList;
+    bool m_securityProfileSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

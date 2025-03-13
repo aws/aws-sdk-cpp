@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSecurityConfigurationRequest::CreateSecurityConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateSecurityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

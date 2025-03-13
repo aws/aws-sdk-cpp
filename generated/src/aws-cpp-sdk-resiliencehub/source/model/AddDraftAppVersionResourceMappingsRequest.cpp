@@ -12,12 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddDraftAppVersionResourceMappingsRequest::AddDraftAppVersionResourceMappingsRequest() : 
-    m_appArnHasBeenSet(false),
-    m_resourceMappingsHasBeenSet(false)
-{
-}
-
 Aws::String AddDraftAppVersionResourceMappingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-S3TableOutputOptions::S3TableOutputOptions() : 
-    m_locationHasBeenSet(false)
-{
-}
-
 S3TableOutputOptions::S3TableOutputOptions(JsonView jsonValue)
-  : S3TableOutputOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3TableOutputOptions& S3TableOutputOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetObject("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,25 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-AppBlock::AppBlock() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_sourceS3LocationHasBeenSet(false),
-    m_setupScriptDetailsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_postSetupScriptDetailsHasBeenSet(false),
-    m_packagingType(PackagingType::NOT_SET),
-    m_packagingTypeHasBeenSet(false),
-    m_state(AppBlockState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_appBlockErrorsHasBeenSet(false)
-{
-}
-
 AppBlock::AppBlock(JsonView jsonValue)
-  : AppBlock()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ AppBlock& AppBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceS3Location"))
   {
     m_sourceS3Location = jsonValue.GetObject("SourceS3Location");
-
     m_sourceS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetupScriptDetails"))
   {
     m_setupScriptDetails = jsonValue.GetObject("SetupScriptDetails");
-
     m_setupScriptDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostSetupScriptDetails"))
   {
     m_postSetupScriptDetails = jsonValue.GetObject("PostSetupScriptDetails");
-
     m_postSetupScriptDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackagingType"))
   {
     m_packagingType = PackagingTypeMapper::GetPackagingTypeForName(jsonValue.GetString("PackagingType"));
-
     m_packagingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = AppBlockStateMapper::GetAppBlockStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppBlockErrors"))
   {
     Aws::Utils::Array<JsonView> appBlockErrorsJsonList = jsonValue.GetArray("AppBlockErrors");
@@ -122,7 +84,6 @@ AppBlock& AppBlock::operator =(JsonView jsonValue)
     }
     m_appBlockErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

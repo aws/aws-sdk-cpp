@@ -36,7 +36,7 @@ namespace Model
   class RuleBasedProperties
   {
   public:
-    AWS_ENTITYRESOLUTION_API RuleBasedProperties();
+    AWS_ENTITYRESOLUTION_API RuleBasedProperties() = default;
     AWS_ENTITYRESOLUTION_API RuleBasedProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API RuleBasedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * field of Profile A matches the value of the <code>Email</code> field of Profile
      * B.</p>
      */
-    inline const AttributeMatchingModel& GetAttributeMatchingModel() const{ return m_attributeMatchingModel; }
+    inline AttributeMatchingModel GetAttributeMatchingModel() const { return m_attributeMatchingModel; }
     inline bool AttributeMatchingModelHasBeenSet() const { return m_attributeMatchingModelHasBeenSet; }
-    inline void SetAttributeMatchingModel(const AttributeMatchingModel& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
-    inline void SetAttributeMatchingModel(AttributeMatchingModel&& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = std::move(value); }
-    inline RuleBasedProperties& WithAttributeMatchingModel(const AttributeMatchingModel& value) { SetAttributeMatchingModel(value); return *this;}
-    inline RuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel&& value) { SetAttributeMatchingModel(std::move(value)); return *this;}
+    inline void SetAttributeMatchingModel(AttributeMatchingModel value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
+    inline RuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel value) { SetAttributeMatchingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * indexes the data.</p> <p>If you choose <code>INDEXING</code>, the process
      * indexes the data without generating IDs.</p>
      */
-    inline const MatchPurpose& GetMatchPurpose() const{ return m_matchPurpose; }
+    inline MatchPurpose GetMatchPurpose() const { return m_matchPurpose; }
     inline bool MatchPurposeHasBeenSet() const { return m_matchPurposeHasBeenSet; }
-    inline void SetMatchPurpose(const MatchPurpose& value) { m_matchPurposeHasBeenSet = true; m_matchPurpose = value; }
-    inline void SetMatchPurpose(MatchPurpose&& value) { m_matchPurposeHasBeenSet = true; m_matchPurpose = std::move(value); }
-    inline RuleBasedProperties& WithMatchPurpose(const MatchPurpose& value) { SetMatchPurpose(value); return *this;}
-    inline RuleBasedProperties& WithMatchPurpose(MatchPurpose&& value) { SetMatchPurpose(std::move(value)); return *this;}
+    inline void SetMatchPurpose(MatchPurpose value) { m_matchPurposeHasBeenSet = true; m_matchPurpose = value; }
+    inline RuleBasedProperties& WithMatchPurpose(MatchPurpose value) { SetMatchPurpose(value); return *this;}
     ///@}
 
     ///@{
@@ -85,21 +81,21 @@ namespace Model
      * <p>A list of <code>Rule</code> objects, each of which have fields
      * <code>RuleName</code> and <code>MatchingKeys</code>.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline RuleBasedProperties& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline RuleBasedProperties& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline RuleBasedProperties& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline RuleBasedProperties& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    RuleBasedProperties& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    RuleBasedProperties& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 
-    AttributeMatchingModel m_attributeMatchingModel;
+    AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
     bool m_attributeMatchingModelHasBeenSet = false;
 
-    MatchPurpose m_matchPurpose;
+    MatchPurpose m_matchPurpose{MatchPurpose::NOT_SET};
     bool m_matchPurposeHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;

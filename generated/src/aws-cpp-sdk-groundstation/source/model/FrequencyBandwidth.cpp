@@ -18,16 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-FrequencyBandwidth::FrequencyBandwidth() : 
-    m_units(BandwidthUnits::NOT_SET),
-    m_unitsHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 FrequencyBandwidth::FrequencyBandwidth(JsonView jsonValue)
-  : FrequencyBandwidth()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FrequencyBandwidth& FrequencyBandwidth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("units"))
   {
     m_units = BandwidthUnitsMapper::GetBandwidthUnitsForName(jsonValue.GetString("units"));
-
     m_unitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

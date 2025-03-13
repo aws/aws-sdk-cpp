@@ -18,39 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedServer::DescribedServer() : 
-    m_arnHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_protocolDetailsHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false),
-    m_endpointType(EndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_hostKeyFingerprintHasBeenSet(false),
-    m_identityProviderDetailsHasBeenSet(false),
-    m_identityProviderType(IdentityProviderType::NOT_SET),
-    m_identityProviderTypeHasBeenSet(false),
-    m_loggingRoleHasBeenSet(false),
-    m_postAuthenticationLoginBannerHasBeenSet(false),
-    m_preAuthenticationLoginBannerHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_securityPolicyNameHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userCount(0),
-    m_userCountHasBeenSet(false),
-    m_workflowDetailsHasBeenSet(false),
-    m_structuredLogDestinationsHasBeenSet(false),
-    m_s3StorageOptionsHasBeenSet(false),
-    m_as2ServiceManagedEgressIpAddressesHasBeenSet(false)
-{
-}
-
 DescribedServer::DescribedServer(JsonView jsonValue)
-  : DescribedServer()
 {
   *this = jsonValue;
 }
@@ -60,87 +28,63 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetString("Certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtocolDetails"))
   {
     m_protocolDetails = jsonValue.GetObject("ProtocolDetails");
-
     m_protocolDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = DomainMapper::GetDomainForName(jsonValue.GetString("Domain"));
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointDetails"))
   {
     m_endpointDetails = jsonValue.GetObject("EndpointDetails");
-
     m_endpointDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointType"))
   {
     m_endpointType = EndpointTypeMapper::GetEndpointTypeForName(jsonValue.GetString("EndpointType"));
-
     m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostKeyFingerprint"))
   {
     m_hostKeyFingerprint = jsonValue.GetString("HostKeyFingerprint");
-
     m_hostKeyFingerprintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderDetails"))
   {
     m_identityProviderDetails = jsonValue.GetObject("IdentityProviderDetails");
-
     m_identityProviderDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderType"))
   {
     m_identityProviderType = IdentityProviderTypeMapper::GetIdentityProviderTypeForName(jsonValue.GetString("IdentityProviderType"));
-
     m_identityProviderTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingRole"))
   {
     m_loggingRole = jsonValue.GetString("LoggingRole");
-
     m_loggingRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostAuthenticationLoginBanner"))
   {
     m_postAuthenticationLoginBanner = jsonValue.GetString("PostAuthenticationLoginBanner");
-
     m_postAuthenticationLoginBannerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreAuthenticationLoginBanner"))
   {
     m_preAuthenticationLoginBanner = jsonValue.GetString("PreAuthenticationLoginBanner");
-
     m_preAuthenticationLoginBannerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocols"))
   {
     Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
@@ -150,28 +94,21 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     }
     m_protocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityPolicyName"))
   {
     m_securityPolicyName = jsonValue.GetString("SecurityPolicyName");
-
     m_securityPolicyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerId"))
   {
     m_serverId = jsonValue.GetString("ServerId");
-
     m_serverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -181,21 +118,16 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserCount"))
   {
     m_userCount = jsonValue.GetInteger("UserCount");
-
     m_userCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowDetails"))
   {
     m_workflowDetails = jsonValue.GetObject("WorkflowDetails");
-
     m_workflowDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StructuredLogDestinations"))
   {
     Aws::Utils::Array<JsonView> structuredLogDestinationsJsonList = jsonValue.GetArray("StructuredLogDestinations");
@@ -205,14 +137,11 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     }
     m_structuredLogDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3StorageOptions"))
   {
     m_s3StorageOptions = jsonValue.GetObject("S3StorageOptions");
-
     m_s3StorageOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("As2ServiceManagedEgressIpAddresses"))
   {
     Aws::Utils::Array<JsonView> as2ServiceManagedEgressIpAddressesJsonList = jsonValue.GetArray("As2ServiceManagedEgressIpAddresses");
@@ -222,7 +151,6 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     }
     m_as2ServiceManagedEgressIpAddressesHasBeenSet = true;
   }
-
   return *this;
 }
 

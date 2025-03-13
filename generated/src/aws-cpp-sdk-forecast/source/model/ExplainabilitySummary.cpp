@@ -18,20 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ExplainabilitySummary::ExplainabilitySummary() : 
-    m_explainabilityArnHasBeenSet(false),
-    m_explainabilityNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_explainabilityConfigHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 ExplainabilitySummary::ExplainabilitySummary(JsonView jsonValue)
-  : ExplainabilitySummary()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ExplainabilitySummary& ExplainabilitySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExplainabilityArn"))
   {
     m_explainabilityArn = jsonValue.GetString("ExplainabilityArn");
-
     m_explainabilityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExplainabilityName"))
   {
     m_explainabilityName = jsonValue.GetString("ExplainabilityName");
-
     m_explainabilityNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExplainabilityConfig"))
   {
     m_explainabilityConfig = jsonValue.GetObject("ExplainabilityConfig");
-
     m_explainabilityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

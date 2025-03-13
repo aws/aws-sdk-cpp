@@ -29,7 +29,7 @@ namespace Model
   class PutEncryptionConfigurationResult
   {
   public:
-    AWS_IOTFLEETWISE_API PutEncryptionConfigurationResult();
+    AWS_IOTFLEETWISE_API PutEncryptionConfigurationResult() = default;
     AWS_IOTFLEETWISE_API PutEncryptionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API PutEncryptionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,24 +38,20 @@ namespace Model
     /**
      * <p>The ID of the KMS key that is used for encryption.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline PutEncryptionConfigurationResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline PutEncryptionConfigurationResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline PutEncryptionConfigurationResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    PutEncryptionConfigurationResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The encryption status.</p>
      */
-    inline const EncryptionStatus& GetEncryptionStatus() const{ return m_encryptionStatus; }
-    inline void SetEncryptionStatus(const EncryptionStatus& value) { m_encryptionStatus = value; }
-    inline void SetEncryptionStatus(EncryptionStatus&& value) { m_encryptionStatus = std::move(value); }
-    inline PutEncryptionConfigurationResult& WithEncryptionStatus(const EncryptionStatus& value) { SetEncryptionStatus(value); return *this;}
-    inline PutEncryptionConfigurationResult& WithEncryptionStatus(EncryptionStatus&& value) { SetEncryptionStatus(std::move(value)); return *this;}
+    inline EncryptionStatus GetEncryptionStatus() const { return m_encryptionStatus; }
+    inline void SetEncryptionStatus(EncryptionStatus value) { m_encryptionStatusHasBeenSet = true; m_encryptionStatus = value; }
+    inline PutEncryptionConfigurationResult& WithEncryptionStatus(EncryptionStatus value) { SetEncryptionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -65,32 +61,32 @@ namespace Model
      * <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an Amazon Web Services managed
      * key that is owned by the Amazon Web Services IoT FleetWise service account.</p>
      */
-    inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
-    inline void SetEncryptionType(const EncryptionType& value) { m_encryptionType = value; }
-    inline void SetEncryptionType(EncryptionType&& value) { m_encryptionType = std::move(value); }
-    inline PutEncryptionConfigurationResult& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
-    inline PutEncryptionConfigurationResult& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
+    inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
+    inline void SetEncryptionType(EncryptionType value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+    inline PutEncryptionConfigurationResult& WithEncryptionType(EncryptionType value) { SetEncryptionType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEncryptionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEncryptionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEncryptionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEncryptionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
-    EncryptionStatus m_encryptionStatus;
+    EncryptionStatus m_encryptionStatus{EncryptionStatus::NOT_SET};
+    bool m_encryptionStatusHasBeenSet = false;
 
-    EncryptionType m_encryptionType;
+    EncryptionType m_encryptionType{EncryptionType::NOT_SET};
+    bool m_encryptionTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

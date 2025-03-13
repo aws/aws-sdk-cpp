@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGatewayInstanceResult::UpdateGatewayInstanceResult() : 
-    m_bridgePlacement(BridgePlacement::NOT_SET)
-{
-}
-
 UpdateGatewayInstanceResult::UpdateGatewayInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateGatewayInstanceResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ UpdateGatewayInstanceResult& UpdateGatewayInstanceResult::operator =(const Aws::
   if(jsonValue.ValueExists("bridgePlacement"))
   {
     m_bridgePlacement = BridgePlacementMapper::GetBridgePlacementForName(jsonValue.GetString("bridgePlacement"));
-
+    m_bridgePlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gatewayInstanceArn"))
   {
     m_gatewayInstanceArn = jsonValue.GetString("gatewayInstanceArn");
-
+    m_gatewayInstanceArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

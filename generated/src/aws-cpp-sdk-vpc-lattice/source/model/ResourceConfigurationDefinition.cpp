@@ -18,15 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ResourceConfigurationDefinition::ResourceConfigurationDefinition() : 
-    m_arnResourceHasBeenSet(false),
-    m_dnsResourceHasBeenSet(false),
-    m_ipResourceHasBeenSet(false)
-{
-}
-
 ResourceConfigurationDefinition::ResourceConfigurationDefinition(JsonView jsonValue)
-  : ResourceConfigurationDefinition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResourceConfigurationDefinition& ResourceConfigurationDefinition::operator =(Jso
   if(jsonValue.ValueExists("arnResource"))
   {
     m_arnResource = jsonValue.GetObject("arnResource");
-
     m_arnResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsResource"))
   {
     m_dnsResource = jsonValue.GetObject("dnsResource");
-
     m_dnsResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipResource"))
   {
     m_ipResource = jsonValue.GetObject("ipResource");
-
     m_ipResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

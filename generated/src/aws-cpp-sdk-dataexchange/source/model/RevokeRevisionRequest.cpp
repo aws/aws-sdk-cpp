@@ -12,13 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeRevisionRequest::RevokeRevisionRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_revocationCommentHasBeenSet(false)
-{
-}
-
 Aws::String RevokeRevisionRequest::SerializePayload() const
 {
   JsonValue payload;

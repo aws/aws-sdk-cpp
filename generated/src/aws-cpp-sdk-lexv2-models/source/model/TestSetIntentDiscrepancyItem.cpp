@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetIntentDiscrepancyItem::TestSetIntentDiscrepancyItem() : 
-    m_intentNameHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 TestSetIntentDiscrepancyItem::TestSetIntentDiscrepancyItem(JsonView jsonValue)
-  : TestSetIntentDiscrepancyItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TestSetIntentDiscrepancyItem& TestSetIntentDiscrepancyItem::operator =(JsonView 
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

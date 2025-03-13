@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ListCondition::ListCondition() : 
-    m_targetListType(TargetListType::NOT_SET),
-    m_targetListTypeHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 ListCondition::ListCondition(JsonView jsonValue)
-  : ListCondition()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ListCondition& ListCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetListType"))
   {
     m_targetListType = TargetListTypeMapper::GetTargetListTypeForName(jsonValue.GetString("TargetListType"));
-
     m_targetListTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
@@ -49,7 +39,6 @@ ListCondition& ListCondition::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

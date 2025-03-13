@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProvisionedModelThroughputRequest::DeleteProvisionedModelThroughputRequest() : 
-    m_provisionedModelIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProvisionedModelThroughputRequest::SerializePayload() const
 {
   return {};

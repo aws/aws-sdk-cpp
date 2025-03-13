@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ComputeQuotaConfig::ComputeQuotaConfig() : 
-    m_computeQuotaResourcesHasBeenSet(false),
-    m_resourceSharingConfigHasBeenSet(false),
-    m_preemptTeamTasks(PreemptTeamTasks::NOT_SET),
-    m_preemptTeamTasksHasBeenSet(false)
-{
-}
-
 ComputeQuotaConfig::ComputeQuotaConfig(JsonView jsonValue)
-  : ComputeQuotaConfig()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ ComputeQuotaConfig& ComputeQuotaConfig::operator =(JsonView jsonValue)
     }
     m_computeQuotaResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceSharingConfig"))
   {
     m_resourceSharingConfig = jsonValue.GetObject("ResourceSharingConfig");
-
     m_resourceSharingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreemptTeamTasks"))
   {
     m_preemptTeamTasks = PreemptTeamTasksMapper::GetPreemptTeamTasksForName(jsonValue.GetString("PreemptTeamTasks"));
-
     m_preemptTeamTasksHasBeenSet = true;
   }
-
   return *this;
 }
 

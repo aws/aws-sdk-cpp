@@ -12,16 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCisScanConfigurationRequest::UpdateCisScanConfigurationRequest() : 
-    m_scanConfigurationArnHasBeenSet(false),
-    m_scanNameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_securityLevel(CisSecurityLevel::NOT_SET),
-    m_securityLevelHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCisScanConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

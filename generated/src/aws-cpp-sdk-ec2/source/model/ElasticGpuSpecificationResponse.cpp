@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ElasticGpuSpecificationResponse::ElasticGpuSpecificationResponse() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 ElasticGpuSpecificationResponse::ElasticGpuSpecificationResponse(const XmlNode& xmlNode)
-  : ElasticGpuSpecificationResponse()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ElasticGpuSpecificationResponse& ElasticGpuSpecificationResponse::operator =(con
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
   }
 

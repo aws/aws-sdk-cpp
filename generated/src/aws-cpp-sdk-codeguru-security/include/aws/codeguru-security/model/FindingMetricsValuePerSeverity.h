@@ -31,7 +31,7 @@ namespace Model
   class FindingMetricsValuePerSeverity
   {
   public:
-    AWS_CODEGURUSECURITY_API FindingMetricsValuePerSeverity();
+    AWS_CODEGURUSECURITY_API FindingMetricsValuePerSeverity() = default;
     AWS_CODEGURUSECURITY_API FindingMetricsValuePerSeverity(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API FindingMetricsValuePerSeverity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>A numeric value corresponding to a critical finding.</p>
      */
-    inline double GetCritical() const{ return m_critical; }
+    inline double GetCritical() const { return m_critical; }
     inline bool CriticalHasBeenSet() const { return m_criticalHasBeenSet; }
     inline void SetCritical(double value) { m_criticalHasBeenSet = true; m_critical = value; }
     inline FindingMetricsValuePerSeverity& WithCritical(double value) { SetCritical(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>A numeric value corresponding to a high severity finding.</p>
      */
-    inline double GetHigh() const{ return m_high; }
+    inline double GetHigh() const { return m_high; }
     inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
     inline void SetHigh(double value) { m_highHasBeenSet = true; m_high = value; }
     inline FindingMetricsValuePerSeverity& WithHigh(double value) { SetHigh(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>A numeric value corresponding to an informational finding.</p>
      */
-    inline double GetInfo() const{ return m_info; }
+    inline double GetInfo() const { return m_info; }
     inline bool InfoHasBeenSet() const { return m_infoHasBeenSet; }
     inline void SetInfo(double value) { m_infoHasBeenSet = true; m_info = value; }
     inline FindingMetricsValuePerSeverity& WithInfo(double value) { SetInfo(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>A numeric value corresponding to a low severity finding.</p>
      */
-    inline double GetLow() const{ return m_low; }
+    inline double GetLow() const { return m_low; }
     inline bool LowHasBeenSet() const { return m_lowHasBeenSet; }
     inline void SetLow(double value) { m_lowHasBeenSet = true; m_low = value; }
     inline FindingMetricsValuePerSeverity& WithLow(double value) { SetLow(value); return *this;}
@@ -81,26 +81,26 @@ namespace Model
     /**
      * <p>A numeric value corresponding to a medium severity finding.</p>
      */
-    inline double GetMedium() const{ return m_medium; }
+    inline double GetMedium() const { return m_medium; }
     inline bool MediumHasBeenSet() const { return m_mediumHasBeenSet; }
     inline void SetMedium(double value) { m_mediumHasBeenSet = true; m_medium = value; }
     inline FindingMetricsValuePerSeverity& WithMedium(double value) { SetMedium(value); return *this;}
     ///@}
   private:
 
-    double m_critical;
+    double m_critical{0.0};
     bool m_criticalHasBeenSet = false;
 
-    double m_high;
+    double m_high{0.0};
     bool m_highHasBeenSet = false;
 
-    double m_info;
+    double m_info{0.0};
     bool m_infoHasBeenSet = false;
 
-    double m_low;
+    double m_low{0.0};
     bool m_lowHasBeenSet = false;
 
-    double m_medium;
+    double m_medium{0.0};
     bool m_mediumHasBeenSet = false;
   };
 

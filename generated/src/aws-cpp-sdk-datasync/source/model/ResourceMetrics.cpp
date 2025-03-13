@@ -18,18 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-ResourceMetrics::ResourceMetrics() : 
-    m_timestampHasBeenSet(false),
-    m_p95MetricsHasBeenSet(false),
-    m_capacityHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(DiscoveryResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourceMetrics::ResourceMetrics(JsonView jsonValue)
-  : ResourceMetrics()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ResourceMetrics& ResourceMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("P95Metrics"))
   {
     m_p95Metrics = jsonValue.GetObject("P95Metrics");
-
     m_p95MetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetObject("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = DiscoveryResourceTypeMapper::GetDiscoveryResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

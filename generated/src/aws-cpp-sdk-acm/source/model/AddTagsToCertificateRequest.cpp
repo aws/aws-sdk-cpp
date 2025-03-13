@@ -12,12 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToCertificateRequest::AddTagsToCertificateRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

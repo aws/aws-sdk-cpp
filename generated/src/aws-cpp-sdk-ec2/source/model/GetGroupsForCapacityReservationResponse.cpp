@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGroupsForCapacityReservationResponse::GetGroupsForCapacityReservationResponse()
-{
-}
-
 GetGroupsForCapacityReservationResponse::GetGroupsForCapacityReservationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ GetGroupsForCapacityReservationResponse& GetGroupsForCapacityReservationResponse
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode capacityReservationGroupsNode = resultNode.FirstChild("capacityReservationGroupSet");
     if(!capacityReservationGroupsNode.IsNull())
     {
       XmlNode capacityReservationGroupsMember = capacityReservationGroupsNode.FirstChild("item");
+      m_capacityReservationGroupsHasBeenSet = !capacityReservationGroupsMember.IsNull();
       while(!capacityReservationGroupsMember.IsNull())
       {
         m_capacityReservationGroups.push_back(capacityReservationGroupsMember);
@@ -61,6 +59,7 @@ GetGroupsForCapacityReservationResponse& GetGroupsForCapacityReservationResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetGroupsForCapacityReservationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

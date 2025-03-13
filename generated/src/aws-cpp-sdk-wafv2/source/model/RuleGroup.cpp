@@ -18,24 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RuleGroup::RuleGroup() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false),
-    m_customResponseBodiesHasBeenSet(false),
-    m_availableLabelsHasBeenSet(false),
-    m_consumedLabelsHasBeenSet(false)
-{
-}
-
 RuleGroup::RuleGroup(JsonView jsonValue)
-  : RuleGroup()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -86,21 +59,16 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibilityConfig"))
   {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
-
     m_visibilityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelNamespace"))
   {
     m_labelNamespace = jsonValue.GetString("LabelNamespace");
-
     m_labelNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomResponseBodies"))
   {
     Aws::Map<Aws::String, JsonView> customResponseBodiesJsonMap = jsonValue.GetObject("CustomResponseBodies").GetAllObjects();
@@ -110,7 +78,6 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     }
     m_customResponseBodiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableLabels"))
   {
     Aws::Utils::Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
@@ -120,7 +87,6 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     }
     m_availableLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLabels"))
   {
     Aws::Utils::Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
@@ -130,7 +96,6 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
     }
     m_consumedLabelsHasBeenSet = true;
   }
-
   return *this;
 }
 

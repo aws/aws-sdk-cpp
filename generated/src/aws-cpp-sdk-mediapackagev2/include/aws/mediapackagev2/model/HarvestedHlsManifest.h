@@ -31,7 +31,7 @@ namespace Model
   class HarvestedHlsManifest
   {
   public:
-    AWS_MEDIAPACKAGEV2_API HarvestedHlsManifest();
+    AWS_MEDIAPACKAGEV2_API HarvestedHlsManifest() = default;
     AWS_MEDIAPACKAGEV2_API HarvestedHlsManifest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API HarvestedHlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the harvested HLS manifest.</p>
      */
-    inline const Aws::String& GetManifestName() const{ return m_manifestName; }
+    inline const Aws::String& GetManifestName() const { return m_manifestName; }
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
-    inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
-    inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
-    inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
-    inline HarvestedHlsManifest& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-    inline HarvestedHlsManifest& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-    inline HarvestedHlsManifest& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    template<typename ManifestNameT = Aws::String>
+    void SetManifestName(ManifestNameT&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::forward<ManifestNameT>(value); }
+    template<typename ManifestNameT = Aws::String>
+    HarvestedHlsManifest& WithManifestName(ManifestNameT&& value) { SetManifestName(std::forward<ManifestNameT>(value)); return *this;}
     ///@}
   private:
 

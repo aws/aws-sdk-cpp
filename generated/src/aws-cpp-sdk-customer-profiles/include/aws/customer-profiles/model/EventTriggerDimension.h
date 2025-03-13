@@ -32,7 +32,7 @@ namespace Model
   class EventTriggerDimension
   {
   public:
-    AWS_CUSTOMERPROFILES_API EventTriggerDimension();
+    AWS_CUSTOMERPROFILES_API EventTriggerDimension() = default;
     AWS_CUSTOMERPROFILES_API EventTriggerDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API EventTriggerDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>A list of object attributes to be evaluated.</p>
      */
-    inline const Aws::Vector<ObjectAttribute>& GetObjectAttributes() const{ return m_objectAttributes; }
+    inline const Aws::Vector<ObjectAttribute>& GetObjectAttributes() const { return m_objectAttributes; }
     inline bool ObjectAttributesHasBeenSet() const { return m_objectAttributesHasBeenSet; }
-    inline void SetObjectAttributes(const Aws::Vector<ObjectAttribute>& value) { m_objectAttributesHasBeenSet = true; m_objectAttributes = value; }
-    inline void SetObjectAttributes(Aws::Vector<ObjectAttribute>&& value) { m_objectAttributesHasBeenSet = true; m_objectAttributes = std::move(value); }
-    inline EventTriggerDimension& WithObjectAttributes(const Aws::Vector<ObjectAttribute>& value) { SetObjectAttributes(value); return *this;}
-    inline EventTriggerDimension& WithObjectAttributes(Aws::Vector<ObjectAttribute>&& value) { SetObjectAttributes(std::move(value)); return *this;}
-    inline EventTriggerDimension& AddObjectAttributes(const ObjectAttribute& value) { m_objectAttributesHasBeenSet = true; m_objectAttributes.push_back(value); return *this; }
-    inline EventTriggerDimension& AddObjectAttributes(ObjectAttribute&& value) { m_objectAttributesHasBeenSet = true; m_objectAttributes.push_back(std::move(value)); return *this; }
+    template<typename ObjectAttributesT = Aws::Vector<ObjectAttribute>>
+    void SetObjectAttributes(ObjectAttributesT&& value) { m_objectAttributesHasBeenSet = true; m_objectAttributes = std::forward<ObjectAttributesT>(value); }
+    template<typename ObjectAttributesT = Aws::Vector<ObjectAttribute>>
+    EventTriggerDimension& WithObjectAttributes(ObjectAttributesT&& value) { SetObjectAttributes(std::forward<ObjectAttributesT>(value)); return *this;}
+    template<typename ObjectAttributesT = ObjectAttribute>
+    EventTriggerDimension& AddObjectAttributes(ObjectAttributesT&& value) { m_objectAttributesHasBeenSet = true; m_objectAttributes.emplace_back(std::forward<ObjectAttributesT>(value)); return *this; }
     ///@}
   private:
 

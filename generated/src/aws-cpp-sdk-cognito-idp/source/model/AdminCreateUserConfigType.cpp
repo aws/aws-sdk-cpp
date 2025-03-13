@@ -18,17 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AdminCreateUserConfigType::AdminCreateUserConfigType() : 
-    m_allowAdminCreateUserOnly(false),
-    m_allowAdminCreateUserOnlyHasBeenSet(false),
-    m_unusedAccountValidityDays(0),
-    m_unusedAccountValidityDaysHasBeenSet(false),
-    m_inviteMessageTemplateHasBeenSet(false)
-{
-}
-
 AdminCreateUserConfigType::AdminCreateUserConfigType(JsonView jsonValue)
-  : AdminCreateUserConfigType()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AdminCreateUserConfigType& AdminCreateUserConfigType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AllowAdminCreateUserOnly"))
   {
     m_allowAdminCreateUserOnly = jsonValue.GetBool("AllowAdminCreateUserOnly");
-
     m_allowAdminCreateUserOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnusedAccountValidityDays"))
   {
     m_unusedAccountValidityDays = jsonValue.GetInteger("UnusedAccountValidityDays");
-
     m_unusedAccountValidityDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InviteMessageTemplate"))
   {
     m_inviteMessageTemplate = jsonValue.GetObject("InviteMessageTemplate");
-
     m_inviteMessageTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

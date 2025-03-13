@@ -26,7 +26,7 @@ namespace Model
   class ListClosedWorkflowExecutionsRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API ListClosedWorkflowExecutionsRequest();
+    AWS_SWF_API ListClosedWorkflowExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the domain that contains the workflow executions to list.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ListClosedWorkflowExecutionsRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,12 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</p> 
      */
-    inline const ExecutionTimeFilter& GetStartTimeFilter() const{ return m_startTimeFilter; }
+    inline const ExecutionTimeFilter& GetStartTimeFilter() const { return m_startTimeFilter; }
     inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
-    inline void SetStartTimeFilter(const ExecutionTimeFilter& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
-    inline void SetStartTimeFilter(ExecutionTimeFilter&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::move(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(const ExecutionTimeFilter& value) { SetStartTimeFilter(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
+    template<typename StartTimeFilterT = ExecutionTimeFilter>
+    void SetStartTimeFilter(StartTimeFilterT&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::forward<StartTimeFilterT>(value); }
+    template<typename StartTimeFilterT = ExecutionTimeFilter>
+    ListClosedWorkflowExecutionsRequest& WithStartTimeFilter(StartTimeFilterT&& value) { SetStartTimeFilter(std::forward<StartTimeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,12 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</p> 
      */
-    inline const ExecutionTimeFilter& GetCloseTimeFilter() const{ return m_closeTimeFilter; }
+    inline const ExecutionTimeFilter& GetCloseTimeFilter() const { return m_closeTimeFilter; }
     inline bool CloseTimeFilterHasBeenSet() const { return m_closeTimeFilterHasBeenSet; }
-    inline void SetCloseTimeFilter(const ExecutionTimeFilter& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = value; }
-    inline void SetCloseTimeFilter(ExecutionTimeFilter&& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = std::move(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(const ExecutionTimeFilter& value) { SetCloseTimeFilter(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(ExecutionTimeFilter&& value) { SetCloseTimeFilter(std::move(value)); return *this;}
+    template<typename CloseTimeFilterT = ExecutionTimeFilter>
+    void SetCloseTimeFilter(CloseTimeFilterT&& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = std::forward<CloseTimeFilterT>(value); }
+    template<typename CloseTimeFilterT = ExecutionTimeFilter>
+    ListClosedWorkflowExecutionsRequest& WithCloseTimeFilter(CloseTimeFilterT&& value) { SetCloseTimeFilter(std::forward<CloseTimeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,12 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a request.</p>
      * 
      */
-    inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
+    inline const WorkflowExecutionFilter& GetExecutionFilter() const { return m_executionFilter; }
     inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
-    inline void SetExecutionFilter(const WorkflowExecutionFilter& value) { m_executionFilterHasBeenSet = true; m_executionFilter = value; }
-    inline void SetExecutionFilter(WorkflowExecutionFilter&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::move(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(const WorkflowExecutionFilter& value) { SetExecutionFilter(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
+    template<typename ExecutionFilterT = WorkflowExecutionFilter>
+    void SetExecutionFilter(ExecutionFilterT&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::forward<ExecutionFilterT>(value); }
+    template<typename ExecutionFilterT = WorkflowExecutionFilter>
+    ListClosedWorkflowExecutionsRequest& WithExecutionFilter(ExecutionFilterT&& value) { SetExecutionFilter(std::forward<ExecutionFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +110,12 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a request.</p>
      * 
      */
-    inline const CloseStatusFilter& GetCloseStatusFilter() const{ return m_closeStatusFilter; }
+    inline const CloseStatusFilter& GetCloseStatusFilter() const { return m_closeStatusFilter; }
     inline bool CloseStatusFilterHasBeenSet() const { return m_closeStatusFilterHasBeenSet; }
-    inline void SetCloseStatusFilter(const CloseStatusFilter& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = value; }
-    inline void SetCloseStatusFilter(CloseStatusFilter&& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = std::move(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(const CloseStatusFilter& value) { SetCloseStatusFilter(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilter&& value) { SetCloseStatusFilter(std::move(value)); return *this;}
+    template<typename CloseStatusFilterT = CloseStatusFilter>
+    void SetCloseStatusFilter(CloseStatusFilterT&& value) { m_closeStatusFilterHasBeenSet = true; m_closeStatusFilter = std::forward<CloseStatusFilterT>(value); }
+    template<typename CloseStatusFilterT = CloseStatusFilter>
+    ListClosedWorkflowExecutionsRequest& WithCloseStatusFilter(CloseStatusFilterT&& value) { SetCloseStatusFilter(std::forward<CloseStatusFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +126,12 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a request.</p>
      * 
      */
-    inline const WorkflowTypeFilter& GetTypeFilter() const{ return m_typeFilter; }
+    inline const WorkflowTypeFilter& GetTypeFilter() const { return m_typeFilter; }
     inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
-    inline void SetTypeFilter(const WorkflowTypeFilter& value) { m_typeFilterHasBeenSet = true; m_typeFilter = value; }
-    inline void SetTypeFilter(WorkflowTypeFilter&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::move(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(const WorkflowTypeFilter& value) { SetTypeFilter(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
+    template<typename TypeFilterT = WorkflowTypeFilter>
+    void SetTypeFilter(TypeFilterT&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::forward<TypeFilterT>(value); }
+    template<typename TypeFilterT = WorkflowTypeFilter>
+    ListClosedWorkflowExecutionsRequest& WithTypeFilter(TypeFilterT&& value) { SetTypeFilter(std::forward<TypeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +141,12 @@ namespace Model
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
      * can specify at most one of these in a request.</p> 
      */
-    inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
+    inline const TagFilter& GetTagFilter() const { return m_tagFilter; }
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
-    inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
-    inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+    template<typename TagFilterT = TagFilter>
+    void SetTagFilter(TagFilterT&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::forward<TagFilterT>(value); }
+    template<typename TagFilterT = TagFilter>
+    ListClosedWorkflowExecutionsRequest& WithTagFilter(TagFilterT&& value) { SetTagFilter(std::forward<TagFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +160,12 @@ namespace Model
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline ListClosedWorkflowExecutionsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListClosedWorkflowExecutionsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListClosedWorkflowExecutionsRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,7 +173,7 @@ namespace Model
      * <p>The maximum number of results that are returned per call. Use
      * <code>nextPageToken</code> to obtain further pages of results. </p>
      */
-    inline int GetMaximumPageSize() const{ return m_maximumPageSize; }
+    inline int GetMaximumPageSize() const { return m_maximumPageSize; }
     inline bool MaximumPageSizeHasBeenSet() const { return m_maximumPageSizeHasBeenSet; }
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
     inline ListClosedWorkflowExecutionsRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
@@ -189,7 +185,7 @@ namespace Model
      * default the results are returned in descending order of the start or the close
      * time of the executions.</p>
      */
-    inline bool GetReverseOrder() const{ return m_reverseOrder; }
+    inline bool GetReverseOrder() const { return m_reverseOrder; }
     inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
     inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
     inline ListClosedWorkflowExecutionsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
@@ -220,10 +216,10 @@ namespace Model
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;
 
-    int m_maximumPageSize;
+    int m_maximumPageSize{0};
     bool m_maximumPageSizeHasBeenSet = false;
 
-    bool m_reverseOrder;
+    bool m_reverseOrder{false};
     bool m_reverseOrderHasBeenSet = false;
   };
 

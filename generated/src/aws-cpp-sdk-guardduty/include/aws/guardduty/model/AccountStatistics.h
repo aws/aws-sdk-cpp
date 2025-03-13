@@ -33,7 +33,7 @@ namespace Model
   class AccountStatistics
   {
   public:
-    AWS_GUARDDUTY_API AccountStatistics();
+    AWS_GUARDDUTY_API AccountStatistics() = default;
     AWS_GUARDDUTY_API AccountStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AccountStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,31 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountStatistics& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountStatistics& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountStatistics& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountStatistics& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the finding for this account was last generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastGeneratedAt() const{ return m_lastGeneratedAt; }
+    inline const Aws::Utils::DateTime& GetLastGeneratedAt() const { return m_lastGeneratedAt; }
     inline bool LastGeneratedAtHasBeenSet() const { return m_lastGeneratedAtHasBeenSet; }
-    inline void SetLastGeneratedAt(const Aws::Utils::DateTime& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = value; }
-    inline void SetLastGeneratedAt(Aws::Utils::DateTime&& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = std::move(value); }
-    inline AccountStatistics& WithLastGeneratedAt(const Aws::Utils::DateTime& value) { SetLastGeneratedAt(value); return *this;}
-    inline AccountStatistics& WithLastGeneratedAt(Aws::Utils::DateTime&& value) { SetLastGeneratedAt(std::move(value)); return *this;}
+    template<typename LastGeneratedAtT = Aws::Utils::DateTime>
+    void SetLastGeneratedAt(LastGeneratedAtT&& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = std::forward<LastGeneratedAtT>(value); }
+    template<typename LastGeneratedAtT = Aws::Utils::DateTime>
+    AccountStatistics& WithLastGeneratedAt(LastGeneratedAtT&& value) { SetLastGeneratedAt(std::forward<LastGeneratedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total number of findings associated with an account.</p>
      */
-    inline int GetTotalFindings() const{ return m_totalFindings; }
+    inline int GetTotalFindings() const { return m_totalFindings; }
     inline bool TotalFindingsHasBeenSet() const { return m_totalFindingsHasBeenSet; }
     inline void SetTotalFindings(int value) { m_totalFindingsHasBeenSet = true; m_totalFindings = value; }
     inline AccountStatistics& WithTotalFindings(int value) { SetTotalFindings(value); return *this;}
@@ -79,10 +77,10 @@ namespace Model
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastGeneratedAt;
+    Aws::Utils::DateTime m_lastGeneratedAt{};
     bool m_lastGeneratedAtHasBeenSet = false;
 
-    int m_totalFindings;
+    int m_totalFindings{0};
     bool m_totalFindingsHasBeenSet = false;
   };
 

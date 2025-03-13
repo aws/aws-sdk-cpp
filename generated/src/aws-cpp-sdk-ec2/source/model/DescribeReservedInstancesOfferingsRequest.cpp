@@ -10,36 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeReservedInstancesOfferingsRequest::DescribeReservedInstancesOfferingsRequest() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_includeMarketplace(false),
-    m_includeMarketplaceHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_maxDuration(0),
-    m_maxDurationHasBeenSet(false),
-    m_maxInstanceCount(0),
-    m_maxInstanceCountHasBeenSet(false),
-    m_minDuration(0),
-    m_minDurationHasBeenSet(false),
-    m_offeringClass(OfferingClassType::NOT_SET),
-    m_offeringClassHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false),
-    m_reservedInstancesOfferingIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_offeringType(OfferingTypeValues::NOT_SET),
-    m_offeringTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

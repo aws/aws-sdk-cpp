@@ -18,16 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-Root::Root() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyTypesHasBeenSet(false)
-{
-}
-
 Root::Root(JsonView jsonValue)
-  : Root()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Root& Root::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyTypes"))
   {
     Aws::Utils::Array<JsonView> policyTypesJsonList = jsonValue.GetArray("PolicyTypes");
@@ -64,7 +49,6 @@ Root& Root::operator =(JsonView jsonValue)
     }
     m_policyTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

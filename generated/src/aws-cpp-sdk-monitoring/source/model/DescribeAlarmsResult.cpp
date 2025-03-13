@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAlarmsResult::DescribeAlarmsResult()
-{
-}
-
 DescribeAlarmsResult::DescribeAlarmsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator =(const Aws::AmazonWebServi
     if(!compositeAlarmsNode.IsNull())
     {
       XmlNode compositeAlarmsMember = compositeAlarmsNode.FirstChild("member");
+      m_compositeAlarmsHasBeenSet = !compositeAlarmsMember.IsNull();
       while(!compositeAlarmsMember.IsNull())
       {
         m_compositeAlarms.push_back(compositeAlarmsMember);
@@ -53,6 +50,7 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator =(const Aws::AmazonWebServi
     if(!metricAlarmsNode.IsNull())
     {
       XmlNode metricAlarmsMember = metricAlarmsNode.FirstChild("member");
+      m_metricAlarmsHasBeenSet = !metricAlarmsMember.IsNull();
       while(!metricAlarmsMember.IsNull())
       {
         m_metricAlarms.push_back(metricAlarmsMember);
@@ -64,12 +62,14 @@ DescribeAlarmsResult& DescribeAlarmsResult::operator =(const Aws::AmazonWebServi
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::DescribeAlarmsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

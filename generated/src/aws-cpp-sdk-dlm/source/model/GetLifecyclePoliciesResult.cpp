@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLifecyclePoliciesResult::GetLifecyclePoliciesResult()
-{
-}
-
 GetLifecyclePoliciesResult::GetLifecyclePoliciesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetLifecyclePoliciesResult& GetLifecyclePoliciesResult::operator =(const Aws::Am
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());
     }
+    m_policiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

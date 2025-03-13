@@ -23,7 +23,7 @@ namespace Model
   class ListRobotApplicationsRequest : public RoboMakerRequest
   {
   public:
-    AWS_ROBOMAKER_API ListRobotApplicationsRequest();
+    AWS_ROBOMAKER_API ListRobotApplicationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The version qualifier of the robot application.</p>
      */
-    inline const Aws::String& GetVersionQualifier() const{ return m_versionQualifier; }
+    inline const Aws::String& GetVersionQualifier() const { return m_versionQualifier; }
     inline bool VersionQualifierHasBeenSet() const { return m_versionQualifierHasBeenSet; }
-    inline void SetVersionQualifier(const Aws::String& value) { m_versionQualifierHasBeenSet = true; m_versionQualifier = value; }
-    inline void SetVersionQualifier(Aws::String&& value) { m_versionQualifierHasBeenSet = true; m_versionQualifier = std::move(value); }
-    inline void SetVersionQualifier(const char* value) { m_versionQualifierHasBeenSet = true; m_versionQualifier.assign(value); }
-    inline ListRobotApplicationsRequest& WithVersionQualifier(const Aws::String& value) { SetVersionQualifier(value); return *this;}
-    inline ListRobotApplicationsRequest& WithVersionQualifier(Aws::String&& value) { SetVersionQualifier(std::move(value)); return *this;}
-    inline ListRobotApplicationsRequest& WithVersionQualifier(const char* value) { SetVersionQualifier(value); return *this;}
+    template<typename VersionQualifierT = Aws::String>
+    void SetVersionQualifier(VersionQualifierT&& value) { m_versionQualifierHasBeenSet = true; m_versionQualifier = std::forward<VersionQualifierT>(value); }
+    template<typename VersionQualifierT = Aws::String>
+    ListRobotApplicationsRequest& WithVersionQualifier(VersionQualifierT&& value) { SetVersionQualifier(std::forward<VersionQualifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * object's <code>nextToken</code> parameter. If there are no remaining results,
      * the previous response object's NextToken parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRobotApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRobotApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRobotApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRobotApplicationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * <code>ListRobotApplications</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRobotApplicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -90,14 +86,14 @@ namespace Model
      * is supported. When filtering, you must use the complete value of the filtered
      * item. You can use up to three filters.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListRobotApplicationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline ListRobotApplicationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListRobotApplicationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListRobotApplicationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    ListRobotApplicationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    ListRobotApplicationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
@@ -107,7 +103,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;

@@ -25,7 +25,7 @@ namespace Model
   class MergeDeveloperIdentitiesRequest : public CognitoIdentityRequest
   {
   public:
-    AWS_COGNITOIDENTITY_API MergeDeveloperIdentitiesRequest();
+    AWS_COGNITOIDENTITY_API MergeDeveloperIdentitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>User identifier for the source user. The value should be a
      * <code>DeveloperUserIdentifier</code>.</p>
      */
-    inline const Aws::String& GetSourceUserIdentifier() const{ return m_sourceUserIdentifier; }
+    inline const Aws::String& GetSourceUserIdentifier() const { return m_sourceUserIdentifier; }
     inline bool SourceUserIdentifierHasBeenSet() const { return m_sourceUserIdentifierHasBeenSet; }
-    inline void SetSourceUserIdentifier(const Aws::String& value) { m_sourceUserIdentifierHasBeenSet = true; m_sourceUserIdentifier = value; }
-    inline void SetSourceUserIdentifier(Aws::String&& value) { m_sourceUserIdentifierHasBeenSet = true; m_sourceUserIdentifier = std::move(value); }
-    inline void SetSourceUserIdentifier(const char* value) { m_sourceUserIdentifierHasBeenSet = true; m_sourceUserIdentifier.assign(value); }
-    inline MergeDeveloperIdentitiesRequest& WithSourceUserIdentifier(const Aws::String& value) { SetSourceUserIdentifier(value); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithSourceUserIdentifier(Aws::String&& value) { SetSourceUserIdentifier(std::move(value)); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithSourceUserIdentifier(const char* value) { SetSourceUserIdentifier(value); return *this;}
+    template<typename SourceUserIdentifierT = Aws::String>
+    void SetSourceUserIdentifier(SourceUserIdentifierT&& value) { m_sourceUserIdentifierHasBeenSet = true; m_sourceUserIdentifier = std::forward<SourceUserIdentifierT>(value); }
+    template<typename SourceUserIdentifierT = Aws::String>
+    MergeDeveloperIdentitiesRequest& WithSourceUserIdentifier(SourceUserIdentifierT&& value) { SetSourceUserIdentifier(std::forward<SourceUserIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>User identifier for the destination user. The value should be a
      * <code>DeveloperUserIdentifier</code>.</p>
      */
-    inline const Aws::String& GetDestinationUserIdentifier() const{ return m_destinationUserIdentifier; }
+    inline const Aws::String& GetDestinationUserIdentifier() const { return m_destinationUserIdentifier; }
     inline bool DestinationUserIdentifierHasBeenSet() const { return m_destinationUserIdentifierHasBeenSet; }
-    inline void SetDestinationUserIdentifier(const Aws::String& value) { m_destinationUserIdentifierHasBeenSet = true; m_destinationUserIdentifier = value; }
-    inline void SetDestinationUserIdentifier(Aws::String&& value) { m_destinationUserIdentifierHasBeenSet = true; m_destinationUserIdentifier = std::move(value); }
-    inline void SetDestinationUserIdentifier(const char* value) { m_destinationUserIdentifierHasBeenSet = true; m_destinationUserIdentifier.assign(value); }
-    inline MergeDeveloperIdentitiesRequest& WithDestinationUserIdentifier(const Aws::String& value) { SetDestinationUserIdentifier(value); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithDestinationUserIdentifier(Aws::String&& value) { SetDestinationUserIdentifier(std::move(value)); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithDestinationUserIdentifier(const char* value) { SetDestinationUserIdentifier(value); return *this;}
+    template<typename DestinationUserIdentifierT = Aws::String>
+    void SetDestinationUserIdentifier(DestinationUserIdentifierT&& value) { m_destinationUserIdentifierHasBeenSet = true; m_destinationUserIdentifier = std::forward<DestinationUserIdentifierT>(value); }
+    template<typename DestinationUserIdentifierT = Aws::String>
+    MergeDeveloperIdentitiesRequest& WithDestinationUserIdentifier(DestinationUserIdentifierT&& value) { SetDestinationUserIdentifier(std::forward<DestinationUserIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +72,24 @@ namespace Model
      * about the developer provider. For the <code>DeveloperProviderName</code>, you
      * can use letters as well as period (.), underscore (_), and dash (-).</p>
      */
-    inline const Aws::String& GetDeveloperProviderName() const{ return m_developerProviderName; }
+    inline const Aws::String& GetDeveloperProviderName() const { return m_developerProviderName; }
     inline bool DeveloperProviderNameHasBeenSet() const { return m_developerProviderNameHasBeenSet; }
-    inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = value; }
-    inline void SetDeveloperProviderName(Aws::String&& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = std::move(value); }
-    inline void SetDeveloperProviderName(const char* value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName.assign(value); }
-    inline MergeDeveloperIdentitiesRequest& WithDeveloperProviderName(const Aws::String& value) { SetDeveloperProviderName(value); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithDeveloperProviderName(Aws::String&& value) { SetDeveloperProviderName(std::move(value)); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
+    template<typename DeveloperProviderNameT = Aws::String>
+    void SetDeveloperProviderName(DeveloperProviderNameT&& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = std::forward<DeveloperProviderNameT>(value); }
+    template<typename DeveloperProviderNameT = Aws::String>
+    MergeDeveloperIdentitiesRequest& WithDeveloperProviderName(DeveloperProviderNameT&& value) { SetDeveloperProviderName(std::forward<DeveloperProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-    inline MergeDeveloperIdentitiesRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline MergeDeveloperIdentitiesRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    MergeDeveloperIdentitiesRequest& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
   private:
 

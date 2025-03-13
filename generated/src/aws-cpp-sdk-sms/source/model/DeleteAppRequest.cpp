@@ -12,15 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppRequest::DeleteAppRequest() : 
-    m_appIdHasBeenSet(false),
-    m_forceStopAppReplication(false),
-    m_forceStopAppReplicationHasBeenSet(false),
-    m_forceTerminateApp(false),
-    m_forceTerminateAppHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppRequest::SerializePayload() const
 {
   JsonValue payload;

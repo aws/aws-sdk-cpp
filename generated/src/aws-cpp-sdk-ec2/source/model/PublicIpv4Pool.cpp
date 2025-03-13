@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PublicIpv4Pool::PublicIpv4Pool() : 
-    m_poolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_poolAddressRangesHasBeenSet(false),
-    m_totalAddressCount(0),
-    m_totalAddressCountHasBeenSet(false),
-    m_totalAvailableAddressCount(0),
-    m_totalAvailableAddressCountHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PublicIpv4Pool::PublicIpv4Pool(const XmlNode& xmlNode)
-  : PublicIpv4Pool()
 {
   *this = xmlNode;
 }
@@ -50,54 +36,61 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     {
       m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
       m_poolIdHasBeenSet = true;
+       m_poolIdHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode poolAddressRangesNode = resultNode.FirstChild("poolAddressRangeSet");
     if(!poolAddressRangesNode.IsNull())
     {
       XmlNode poolAddressRangesMember = poolAddressRangesNode.FirstChild("item");
+      m_poolAddressRangesHasBeenSet = !poolAddressRangesMember.IsNull();
       while(!poolAddressRangesMember.IsNull())
       {
         m_poolAddressRanges.push_back(poolAddressRangesMember);
         poolAddressRangesMember = poolAddressRangesMember.NextNode("item");
       }
 
-      m_poolAddressRangesHasBeenSet = true;
+       m_poolAddressRangesHasBeenSet = true;
     }
     XmlNode totalAddressCountNode = resultNode.FirstChild("totalAddressCount");
     if(!totalAddressCountNode.IsNull())
     {
       m_totalAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAddressCountNode.GetText()).c_str()).c_str());
       m_totalAddressCountHasBeenSet = true;
+       m_totalAddressCountHasBeenSet = true;
     }
     XmlNode totalAvailableAddressCountNode = resultNode.FirstChild("totalAvailableAddressCount");
     if(!totalAvailableAddressCountNode.IsNull())
     {
       m_totalAvailableAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAvailableAddressCountNode.GetText()).c_str()).c_str());
       m_totalAvailableAddressCountHasBeenSet = true;
+       m_totalAvailableAddressCountHasBeenSet = true;
     }
     XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");
     if(!networkBorderGroupNode.IsNull())
     {
       m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
       m_networkBorderGroupHasBeenSet = true;
+       m_networkBorderGroupHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

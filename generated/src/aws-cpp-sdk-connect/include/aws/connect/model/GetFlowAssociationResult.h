@@ -28,7 +28,7 @@ namespace Model
   class GetFlowAssociationResult
   {
   public:
-    AWS_CONNECT_API GetFlowAssociationResult();
+    AWS_CONNECT_API GetFlowAssociationResult() = default;
     AWS_CONNECT_API GetFlowAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API GetFlowAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,58 +37,54 @@ namespace Model
     /**
      * <p>The identifier of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
-    inline GetFlowAssociationResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline GetFlowAssociationResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline GetFlowAssociationResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    GetFlowAssociationResult& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the flow.</p>
      */
-    inline const Aws::String& GetFlowId() const{ return m_flowId; }
-    inline void SetFlowId(const Aws::String& value) { m_flowId = value; }
-    inline void SetFlowId(Aws::String&& value) { m_flowId = std::move(value); }
-    inline void SetFlowId(const char* value) { m_flowId.assign(value); }
-    inline GetFlowAssociationResult& WithFlowId(const Aws::String& value) { SetFlowId(value); return *this;}
-    inline GetFlowAssociationResult& WithFlowId(Aws::String&& value) { SetFlowId(std::move(value)); return *this;}
-    inline GetFlowAssociationResult& WithFlowId(const char* value) { SetFlowId(value); return *this;}
+    inline const Aws::String& GetFlowId() const { return m_flowId; }
+    template<typename FlowIdT = Aws::String>
+    void SetFlowId(FlowIdT&& value) { m_flowIdHasBeenSet = true; m_flowId = std::forward<FlowIdT>(value); }
+    template<typename FlowIdT = Aws::String>
+    GetFlowAssociationResult& WithFlowId(FlowIdT&& value) { SetFlowId(std::forward<FlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A valid resource type.</p>
      */
-    inline const FlowAssociationResourceType& GetResourceType() const{ return m_resourceType; }
-    inline void SetResourceType(const FlowAssociationResourceType& value) { m_resourceType = value; }
-    inline void SetResourceType(FlowAssociationResourceType&& value) { m_resourceType = std::move(value); }
-    inline GetFlowAssociationResult& WithResourceType(const FlowAssociationResourceType& value) { SetResourceType(value); return *this;}
-    inline GetFlowAssociationResult& WithResourceType(FlowAssociationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline FlowAssociationResourceType GetResourceType() const { return m_resourceType; }
+    inline void SetResourceType(FlowAssociationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline GetFlowAssociationResult& WithResourceType(FlowAssociationResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFlowAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFlowAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFlowAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFlowAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_flowId;
+    bool m_flowIdHasBeenSet = false;
 
-    FlowAssociationResourceType m_resourceType;
+    FlowAssociationResourceType m_resourceType{FlowAssociationResourceType::NOT_SET};
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

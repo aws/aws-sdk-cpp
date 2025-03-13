@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpcPeeringConnectionDetails::AwsEc2VpcPeeringConnectionDetails() : 
-    m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_requesterVpcInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 AwsEc2VpcPeeringConnectionDetails::AwsEc2VpcPeeringConnectionDetails(JsonView jsonValue)
-  : AwsEc2VpcPeeringConnectionDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AwsEc2VpcPeeringConnectionDetails& AwsEc2VpcPeeringConnectionDetails::operator =
   if(jsonValue.ValueExists("AccepterVpcInfo"))
   {
     m_accepterVpcInfo = jsonValue.GetObject("AccepterVpcInfo");
-
     m_accepterVpcInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTime"))
   {
     m_expirationTime = jsonValue.GetString("ExpirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequesterVpcInfo"))
   {
     m_requesterVpcInfo = jsonValue.GetObject("RequesterVpcInfo");
-
     m_requesterVpcInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcPeeringConnectionId"))
   {
     m_vpcPeeringConnectionId = jsonValue.GetString("VpcPeeringConnectionId");
-
     m_vpcPeeringConnectionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

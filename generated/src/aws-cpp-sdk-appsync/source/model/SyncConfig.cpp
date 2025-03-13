@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-SyncConfig::SyncConfig() : 
-    m_conflictHandler(ConflictHandlerType::NOT_SET),
-    m_conflictHandlerHasBeenSet(false),
-    m_conflictDetection(ConflictDetectionType::NOT_SET),
-    m_conflictDetectionHasBeenSet(false),
-    m_lambdaConflictHandlerConfigHasBeenSet(false)
-{
-}
-
 SyncConfig::SyncConfig(JsonView jsonValue)
-  : SyncConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ SyncConfig& SyncConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conflictHandler"))
   {
     m_conflictHandler = ConflictHandlerTypeMapper::GetConflictHandlerTypeForName(jsonValue.GetString("conflictHandler"));
-
     m_conflictHandlerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conflictDetection"))
   {
     m_conflictDetection = ConflictDetectionTypeMapper::GetConflictDetectionTypeForName(jsonValue.GetString("conflictDetection"));
-
     m_conflictDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaConflictHandlerConfig"))
   {
     m_lambdaConflictHandlerConfig = jsonValue.GetObject("lambdaConflictHandlerConfig");
-
     m_lambdaConflictHandlerConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

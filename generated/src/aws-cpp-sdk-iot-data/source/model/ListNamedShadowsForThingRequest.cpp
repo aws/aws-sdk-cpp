@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListNamedShadowsForThingRequest::ListNamedShadowsForThingRequest() : 
-    m_thingNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListNamedShadowsForThingRequest::SerializePayload() const
 {
   return {};

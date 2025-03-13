@@ -38,7 +38,7 @@ namespace Model
   class WorkspaceImage
   {
   public:
-    AWS_WORKSPACES_API WorkspaceImage();
+    AWS_WORKSPACES_API WorkspaceImage() = default;
     AWS_WORKSPACES_API WorkspaceImage(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API WorkspaceImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,66 +48,58 @@ namespace Model
     /**
      * <p>The identifier of the image.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline WorkspaceImage& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline WorkspaceImage& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline WorkspaceImage& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    WorkspaceImage& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the image.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline WorkspaceImage& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline WorkspaceImage& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline WorkspaceImage& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    WorkspaceImage& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the image.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline WorkspaceImage& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline WorkspaceImage& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline WorkspaceImage& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    WorkspaceImage& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system that the image is running. </p>
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline const OperatingSystem& GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline WorkspaceImage& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline WorkspaceImage& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    template<typename OperatingSystemT = OperatingSystem>
+    void SetOperatingSystem(OperatingSystemT&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::forward<OperatingSystemT>(value); }
+    template<typename OperatingSystemT = OperatingSystem>
+    WorkspaceImage& WithOperatingSystem(OperatingSystemT&& value) { SetOperatingSystem(std::forward<OperatingSystemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the image.</p>
      */
-    inline const WorkspaceImageState& GetState() const{ return m_state; }
+    inline WorkspaceImageState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const WorkspaceImageState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(WorkspaceImageState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline WorkspaceImage& WithState(const WorkspaceImageState& value) { SetState(value); return *this;}
-    inline WorkspaceImage& WithState(WorkspaceImageState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(WorkspaceImageState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline WorkspaceImage& WithState(WorkspaceImageState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -118,40 +110,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
      * Your Own Windows Desktop Images</a>.</p>
      */
-    inline const WorkspaceImageRequiredTenancy& GetRequiredTenancy() const{ return m_requiredTenancy; }
+    inline WorkspaceImageRequiredTenancy GetRequiredTenancy() const { return m_requiredTenancy; }
     inline bool RequiredTenancyHasBeenSet() const { return m_requiredTenancyHasBeenSet; }
-    inline void SetRequiredTenancy(const WorkspaceImageRequiredTenancy& value) { m_requiredTenancyHasBeenSet = true; m_requiredTenancy = value; }
-    inline void SetRequiredTenancy(WorkspaceImageRequiredTenancy&& value) { m_requiredTenancyHasBeenSet = true; m_requiredTenancy = std::move(value); }
-    inline WorkspaceImage& WithRequiredTenancy(const WorkspaceImageRequiredTenancy& value) { SetRequiredTenancy(value); return *this;}
-    inline WorkspaceImage& WithRequiredTenancy(WorkspaceImageRequiredTenancy&& value) { SetRequiredTenancy(std::move(value)); return *this;}
+    inline void SetRequiredTenancy(WorkspaceImageRequiredTenancy value) { m_requiredTenancyHasBeenSet = true; m_requiredTenancy = value; }
+    inline WorkspaceImage& WithRequiredTenancy(WorkspaceImageRequiredTenancy value) { SetRequiredTenancy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code that is returned for the image.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline WorkspaceImage& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline WorkspaceImage& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline WorkspaceImage& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    WorkspaceImage& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text of the error message that is returned for the image.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline WorkspaceImage& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline WorkspaceImage& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline WorkspaceImage& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    WorkspaceImage& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,38 +146,36 @@ namespace Model
      * Web Services account that the image has been shared with sees the original
      * creation date of the image.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+    inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
-    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
-    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
-    inline WorkspaceImage& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
-    inline WorkspaceImage& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+    template<typename CreatedT = Aws::Utils::DateTime>
+    void SetCreated(CreatedT&& value) { m_createdHasBeenSet = true; m_created = std::forward<CreatedT>(value); }
+    template<typename CreatedT = Aws::Utils::DateTime>
+    WorkspaceImage& WithCreated(CreatedT&& value) { SetCreated(std::forward<CreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
-    inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
+    inline const Aws::String& GetOwnerAccountId() const { return m_ownerAccountId; }
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
-    inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
-    inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
-    inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
-    inline WorkspaceImage& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
-    inline WorkspaceImage& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
-    inline WorkspaceImage& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+    template<typename OwnerAccountIdT = Aws::String>
+    void SetOwnerAccountId(OwnerAccountIdT&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::forward<OwnerAccountIdT>(value); }
+    template<typename OwnerAccountIdT = Aws::String>
+    WorkspaceImage& WithOwnerAccountId(OwnerAccountIdT&& value) { SetOwnerAccountId(std::forward<OwnerAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updates (if any) that are available for the specified image.</p>
      */
-    inline const UpdateResult& GetUpdates() const{ return m_updates; }
+    inline const UpdateResult& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const UpdateResult& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(UpdateResult&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline WorkspaceImage& WithUpdates(const UpdateResult& value) { SetUpdates(value); return *this;}
-    inline WorkspaceImage& WithUpdates(UpdateResult&& value) { SetUpdates(std::move(value)); return *this;}
+    template<typename UpdatesT = UpdateResult>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = UpdateResult>
+    WorkspaceImage& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,14 +183,14 @@ namespace Model
      * <p>Additional details of the error returned for the image, including the
      * possible causes of the errors and troubleshooting information.</p>
      */
-    inline const Aws::Vector<ErrorDetails>& GetErrorDetails() const{ return m_errorDetails; }
+    inline const Aws::Vector<ErrorDetails>& GetErrorDetails() const { return m_errorDetails; }
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-    inline void SetErrorDetails(const Aws::Vector<ErrorDetails>& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-    inline void SetErrorDetails(Aws::Vector<ErrorDetails>&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-    inline WorkspaceImage& WithErrorDetails(const Aws::Vector<ErrorDetails>& value) { SetErrorDetails(value); return *this;}
-    inline WorkspaceImage& WithErrorDetails(Aws::Vector<ErrorDetails>&& value) { SetErrorDetails(std::move(value)); return *this;}
-    inline WorkspaceImage& AddErrorDetails(const ErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(value); return *this; }
-    inline WorkspaceImage& AddErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(std::move(value)); return *this; }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetails>>
+    void SetErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::forward<ErrorDetailsT>(value); }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetails>>
+    WorkspaceImage& WithErrorDetails(ErrorDetailsT&& value) { SetErrorDetails(std::forward<ErrorDetailsT>(value)); return *this;}
+    template<typename ErrorDetailsT = ErrorDetails>
+    WorkspaceImage& AddErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value)); return *this; }
     ///@}
   private:
 
@@ -222,10 +206,10 @@ namespace Model
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet = false;
 
-    WorkspaceImageState m_state;
+    WorkspaceImageState m_state{WorkspaceImageState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    WorkspaceImageRequiredTenancy m_requiredTenancy;
+    WorkspaceImageRequiredTenancy m_requiredTenancy{WorkspaceImageRequiredTenancy::NOT_SET};
     bool m_requiredTenancyHasBeenSet = false;
 
     Aws::String m_errorCode;
@@ -234,7 +218,7 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_created;
+    Aws::Utils::DateTime m_created{};
     bool m_createdHasBeenSet = false;
 
     Aws::String m_ownerAccountId;

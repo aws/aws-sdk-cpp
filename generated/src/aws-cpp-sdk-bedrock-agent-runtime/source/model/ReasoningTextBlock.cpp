@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ReasoningTextBlock::ReasoningTextBlock() : 
-    m_signatureHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 ReasoningTextBlock::ReasoningTextBlock(JsonView jsonValue)
-  : ReasoningTextBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReasoningTextBlock& ReasoningTextBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = jsonValue.GetString("signature");
-
     m_signatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

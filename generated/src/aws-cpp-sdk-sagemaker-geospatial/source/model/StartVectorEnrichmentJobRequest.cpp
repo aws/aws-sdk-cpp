@@ -12,18 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartVectorEnrichmentJobRequest::StartVectorEnrichmentJobRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_executionRoleArnHasBeenSet(false),
-    m_inputConfigHasBeenSet(false),
-    m_jobConfigHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartVectorEnrichmentJobRequest::SerializePayload() const
 {
   JsonValue payload;

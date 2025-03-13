@@ -34,7 +34,7 @@ namespace Model
   class SingleMasterChannelEndpointConfiguration
   {
   public:
-    AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration();
+    AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration() = default;
     AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,13 @@ namespace Model
      * this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this
      * API returns an <code>HTTPS</code> endpoint.</p>
      */
-    inline const Aws::Vector<ChannelProtocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<ChannelProtocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<ChannelProtocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<ChannelProtocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline SingleMasterChannelEndpointConfiguration& WithProtocols(const Aws::Vector<ChannelProtocol>& value) { SetProtocols(value); return *this;}
-    inline SingleMasterChannelEndpointConfiguration& WithProtocols(Aws::Vector<ChannelProtocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline SingleMasterChannelEndpointConfiguration& AddProtocols(const ChannelProtocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline SingleMasterChannelEndpointConfiguration& AddProtocols(ChannelProtocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<ChannelProtocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<ChannelProtocol>>
+    SingleMasterChannelEndpointConfiguration& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline SingleMasterChannelEndpointConfiguration& AddProtocols(ChannelProtocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -67,19 +66,17 @@ namespace Model
      * use only to send offers to another <code>MASTER</code> client on this signaling
      * channel. </p>
      */
-    inline const ChannelRole& GetRole() const{ return m_role; }
+    inline ChannelRole GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const ChannelRole& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(ChannelRole&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline SingleMasterChannelEndpointConfiguration& WithRole(const ChannelRole& value) { SetRole(value); return *this;}
-    inline SingleMasterChannelEndpointConfiguration& WithRole(ChannelRole&& value) { SetRole(std::move(value)); return *this;}
+    inline void SetRole(ChannelRole value) { m_roleHasBeenSet = true; m_role = value; }
+    inline SingleMasterChannelEndpointConfiguration& WithRole(ChannelRole value) { SetRole(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<ChannelProtocol> m_protocols;
     bool m_protocolsHasBeenSet = false;
 
-    ChannelRole m_role;
+    ChannelRole m_role{ChannelRole::NOT_SET};
     bool m_roleHasBeenSet = false;
   };
 

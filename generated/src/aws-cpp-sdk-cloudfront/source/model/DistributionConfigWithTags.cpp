@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-DistributionConfigWithTags::DistributionConfigWithTags() : 
-    m_distributionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DistributionConfigWithTags::DistributionConfigWithTags(const XmlNode& xmlNode)
-  : DistributionConfigWithTags()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ DistributionConfigWithTags& DistributionConfigWithTags::operator =(const XmlNode
     {
       m_distributionConfig = distributionConfigNode;
       m_distributionConfigHasBeenSet = true;
+       m_distributionConfigHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       m_tags = tagsNode;
       m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

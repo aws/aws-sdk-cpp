@@ -18,23 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-WorkloadSummary::WorkloadSummary() : 
-    m_workloadIdHasBeenSet(false),
-    m_workloadArnHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_lensesHasBeenSet(false),
-    m_riskCountsHasBeenSet(false),
-    m_improvementStatus(WorkloadImprovementStatus::NOT_SET),
-    m_improvementStatusHasBeenSet(false),
-    m_profilesHasBeenSet(false),
-    m_prioritizedRiskCountsHasBeenSet(false)
-{
-}
-
 WorkloadSummary::WorkloadSummary(JsonView jsonValue)
-  : WorkloadSummary()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ WorkloadSummary& WorkloadSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
     m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadArn"))
   {
     m_workloadArn = jsonValue.GetString("WorkloadArn");
-
     m_workloadArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkloadName"))
   {
     m_workloadName = jsonValue.GetString("WorkloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lenses"))
   {
     Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
@@ -85,7 +59,6 @@ WorkloadSummary& WorkloadSummary::operator =(JsonView jsonValue)
     }
     m_lensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> riskCountsJsonMap = jsonValue.GetObject("RiskCounts").GetAllObjects();
@@ -95,14 +68,11 @@ WorkloadSummary& WorkloadSummary::operator =(JsonView jsonValue)
     }
     m_riskCountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImprovementStatus"))
   {
     m_improvementStatus = WorkloadImprovementStatusMapper::GetWorkloadImprovementStatusForName(jsonValue.GetString("ImprovementStatus"));
-
     m_improvementStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Profiles"))
   {
     Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
@@ -112,7 +82,6 @@ WorkloadSummary& WorkloadSummary::operator =(JsonView jsonValue)
     }
     m_profilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrioritizedRiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> prioritizedRiskCountsJsonMap = jsonValue.GetObject("PrioritizedRiskCounts").GetAllObjects();
@@ -122,7 +91,6 @@ WorkloadSummary& WorkloadSummary::operator =(JsonView jsonValue)
     }
     m_prioritizedRiskCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

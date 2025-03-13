@@ -20,19 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-Listener::Listener() : 
-    m_protocolHasBeenSet(false),
-    m_loadBalancerPort(0),
-    m_loadBalancerPortHasBeenSet(false),
-    m_instanceProtocolHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false),
-    m_sSLCertificateIdHasBeenSet(false)
-{
-}
-
 Listener::Listener(const XmlNode& xmlNode)
-  : Listener()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode loadBalancerPortNode = resultNode.FirstChild("LoadBalancerPort");
     if(!loadBalancerPortNode.IsNull())
     {
       m_loadBalancerPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerPortNode.GetText()).c_str()).c_str());
       m_loadBalancerPortHasBeenSet = true;
+       m_loadBalancerPortHasBeenSet = true;
     }
     XmlNode instanceProtocolNode = resultNode.FirstChild("InstanceProtocol");
     if(!instanceProtocolNode.IsNull())
     {
       m_instanceProtocol = Aws::Utils::Xml::DecodeEscapedXmlText(instanceProtocolNode.GetText());
       m_instanceProtocolHasBeenSet = true;
+       m_instanceProtocolHasBeenSet = true;
     }
     XmlNode instancePortNode = resultNode.FirstChild("InstancePort");
     if(!instancePortNode.IsNull())
     {
       m_instancePort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePortNode.GetText()).c_str()).c_str());
       m_instancePortHasBeenSet = true;
+       m_instancePortHasBeenSet = true;
     }
     XmlNode sSLCertificateIdNode = resultNode.FirstChild("SSLCertificateId");
     if(!sSLCertificateIdNode.IsNull())
     {
       m_sSLCertificateId = Aws::Utils::Xml::DecodeEscapedXmlText(sSLCertificateIdNode.GetText());
       m_sSLCertificateIdHasBeenSet = true;
+       m_sSLCertificateIdHasBeenSet = true;
     }
   }
 

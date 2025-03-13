@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLogSubscriptionRequest::DeleteLogSubscriptionRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLogSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

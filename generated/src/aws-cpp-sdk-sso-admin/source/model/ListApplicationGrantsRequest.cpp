@@ -12,12 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApplicationGrantsRequest::ListApplicationGrantsRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationGrantsRequest::SerializePayload() const
 {
   JsonValue payload;

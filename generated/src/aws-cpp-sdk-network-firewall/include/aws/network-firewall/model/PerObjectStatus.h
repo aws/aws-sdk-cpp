@@ -37,7 +37,7 @@ namespace Model
   class PerObjectStatus
   {
   public:
-    AWS_NETWORKFIREWALL_API PerObjectStatus();
+    AWS_NETWORKFIREWALL_API PerObjectStatus() = default;
     AWS_NETWORKFIREWALL_API PerObjectStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API PerObjectStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * <p>Indicates whether this object is in sync with the version indicated in the
      * update token.</p>
      */
-    inline const PerObjectSyncStatus& GetSyncStatus() const{ return m_syncStatus; }
+    inline PerObjectSyncStatus GetSyncStatus() const { return m_syncStatus; }
     inline bool SyncStatusHasBeenSet() const { return m_syncStatusHasBeenSet; }
-    inline void SetSyncStatus(const PerObjectSyncStatus& value) { m_syncStatusHasBeenSet = true; m_syncStatus = value; }
-    inline void SetSyncStatus(PerObjectSyncStatus&& value) { m_syncStatusHasBeenSet = true; m_syncStatus = std::move(value); }
-    inline PerObjectStatus& WithSyncStatus(const PerObjectSyncStatus& value) { SetSyncStatus(value); return *this;}
-    inline PerObjectStatus& WithSyncStatus(PerObjectSyncStatus&& value) { SetSyncStatus(std::move(value)); return *this;}
+    inline void SetSyncStatus(PerObjectSyncStatus value) { m_syncStatusHasBeenSet = true; m_syncStatus = value; }
+    inline PerObjectStatus& WithSyncStatus(PerObjectSyncStatus value) { SetSyncStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -61,18 +59,16 @@ namespace Model
      * <p>The current version of the object that is either in sync or pending
      * synchronization. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
     inline bool UpdateTokenHasBeenSet() const { return m_updateTokenHasBeenSet; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateTokenHasBeenSet = true; m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateTokenHasBeenSet = true; m_updateToken.assign(value); }
-    inline PerObjectStatus& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline PerObjectStatus& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline PerObjectStatus& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    PerObjectStatus& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
   private:
 
-    PerObjectSyncStatus m_syncStatus;
+    PerObjectSyncStatus m_syncStatus{PerObjectSyncStatus::NOT_SET};
     bool m_syncStatusHasBeenSet = false;
 
     Aws::String m_updateToken;

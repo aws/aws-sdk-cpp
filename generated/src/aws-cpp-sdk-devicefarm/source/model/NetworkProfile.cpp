@@ -18,33 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-NetworkProfile::NetworkProfile() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(NetworkProfileType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uplinkBandwidthBits(0),
-    m_uplinkBandwidthBitsHasBeenSet(false),
-    m_downlinkBandwidthBits(0),
-    m_downlinkBandwidthBitsHasBeenSet(false),
-    m_uplinkDelayMs(0),
-    m_uplinkDelayMsHasBeenSet(false),
-    m_downlinkDelayMs(0),
-    m_downlinkDelayMsHasBeenSet(false),
-    m_uplinkJitterMs(0),
-    m_uplinkJitterMsHasBeenSet(false),
-    m_downlinkJitterMs(0),
-    m_downlinkJitterMsHasBeenSet(false),
-    m_uplinkLossPercent(0),
-    m_uplinkLossPercentHasBeenSet(false),
-    m_downlinkLossPercent(0),
-    m_downlinkLossPercentHasBeenSet(false)
-{
-}
-
 NetworkProfile::NetworkProfile(JsonView jsonValue)
-  : NetworkProfile()
 {
   *this = jsonValue;
 }
@@ -54,87 +28,63 @@ NetworkProfile& NetworkProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NetworkProfileTypeMapper::GetNetworkProfileTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uplinkBandwidthBits"))
   {
     m_uplinkBandwidthBits = jsonValue.GetInt64("uplinkBandwidthBits");
-
     m_uplinkBandwidthBitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("downlinkBandwidthBits"))
   {
     m_downlinkBandwidthBits = jsonValue.GetInt64("downlinkBandwidthBits");
-
     m_downlinkBandwidthBitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uplinkDelayMs"))
   {
     m_uplinkDelayMs = jsonValue.GetInt64("uplinkDelayMs");
-
     m_uplinkDelayMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("downlinkDelayMs"))
   {
     m_downlinkDelayMs = jsonValue.GetInt64("downlinkDelayMs");
-
     m_downlinkDelayMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uplinkJitterMs"))
   {
     m_uplinkJitterMs = jsonValue.GetInt64("uplinkJitterMs");
-
     m_uplinkJitterMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("downlinkJitterMs"))
   {
     m_downlinkJitterMs = jsonValue.GetInt64("downlinkJitterMs");
-
     m_downlinkJitterMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uplinkLossPercent"))
   {
     m_uplinkLossPercent = jsonValue.GetInteger("uplinkLossPercent");
-
     m_uplinkLossPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("downlinkLossPercent"))
   {
     m_downlinkLossPercent = jsonValue.GetInteger("downlinkLossPercent");
-
     m_downlinkLossPercentHasBeenSet = true;
   }
-
   return *this;
 }
 

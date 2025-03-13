@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRecommenderConfigurationsResult::GetRecommenderConfigurationsResult()
-{
-}
-
 GetRecommenderConfigurationsResult::GetRecommenderConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -30,12 +26,14 @@ GetRecommenderConfigurationsResult& GetRecommenderConfigurationsResult::operator
 {
   JsonView jsonValue = result.GetPayload().View();
   m_listRecommenderConfigurationsResponse = jsonValue;
+  m_listRecommenderConfigurationsResponseHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

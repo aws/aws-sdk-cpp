@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-FargateProfileIssue::FargateProfileIssue() : 
-    m_code(FargateProfileIssueCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
-{
-}
-
 FargateProfileIssue::FargateProfileIssue(JsonView jsonValue)
-  : FargateProfileIssue()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ FargateProfileIssue& FargateProfileIssue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = FargateProfileIssueCodeMapper::GetFargateProfileIssueCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -57,7 +44,6 @@ FargateProfileIssue& FargateProfileIssue::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

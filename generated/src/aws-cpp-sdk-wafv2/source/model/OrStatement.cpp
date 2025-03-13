@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-OrStatement::OrStatement() : 
-    m_statementsHasBeenSet(false)
-{
-}
-
 OrStatement::OrStatement(JsonView jsonValue)
-  : OrStatement()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OrStatement& OrStatement::operator =(JsonView jsonValue)
     }
     m_statementsHasBeenSet = true;
   }
-
   return *this;
 }
 

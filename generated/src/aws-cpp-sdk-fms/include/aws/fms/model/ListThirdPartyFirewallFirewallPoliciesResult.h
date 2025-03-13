@@ -29,7 +29,7 @@ namespace Model
   class ListThirdPartyFirewallFirewallPoliciesResult
   {
   public:
-    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult();
+    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult() = default;
     AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * <code>ThirdPartyFirewallFirewallPolicies</code> element contains the firewall
      * policy name and ID.</p>
      */
-    inline const Aws::Vector<ThirdPartyFirewallFirewallPolicy>& GetThirdPartyFirewallFirewallPolicies() const{ return m_thirdPartyFirewallFirewallPolicies; }
-    inline void SetThirdPartyFirewallFirewallPolicies(const Aws::Vector<ThirdPartyFirewallFirewallPolicy>& value) { m_thirdPartyFirewallFirewallPolicies = value; }
-    inline void SetThirdPartyFirewallFirewallPolicies(Aws::Vector<ThirdPartyFirewallFirewallPolicy>&& value) { m_thirdPartyFirewallFirewallPolicies = std::move(value); }
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithThirdPartyFirewallFirewallPolicies(const Aws::Vector<ThirdPartyFirewallFirewallPolicy>& value) { SetThirdPartyFirewallFirewallPolicies(value); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithThirdPartyFirewallFirewallPolicies(Aws::Vector<ThirdPartyFirewallFirewallPolicy>&& value) { SetThirdPartyFirewallFirewallPolicies(std::move(value)); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesResult& AddThirdPartyFirewallFirewallPolicies(const ThirdPartyFirewallFirewallPolicy& value) { m_thirdPartyFirewallFirewallPolicies.push_back(value); return *this; }
-    inline ListThirdPartyFirewallFirewallPoliciesResult& AddThirdPartyFirewallFirewallPolicies(ThirdPartyFirewallFirewallPolicy&& value) { m_thirdPartyFirewallFirewallPolicies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ThirdPartyFirewallFirewallPolicy>& GetThirdPartyFirewallFirewallPolicies() const { return m_thirdPartyFirewallFirewallPolicies; }
+    template<typename ThirdPartyFirewallFirewallPoliciesT = Aws::Vector<ThirdPartyFirewallFirewallPolicy>>
+    void SetThirdPartyFirewallFirewallPolicies(ThirdPartyFirewallFirewallPoliciesT&& value) { m_thirdPartyFirewallFirewallPoliciesHasBeenSet = true; m_thirdPartyFirewallFirewallPolicies = std::forward<ThirdPartyFirewallFirewallPoliciesT>(value); }
+    template<typename ThirdPartyFirewallFirewallPoliciesT = Aws::Vector<ThirdPartyFirewallFirewallPolicy>>
+    ListThirdPartyFirewallFirewallPoliciesResult& WithThirdPartyFirewallFirewallPolicies(ThirdPartyFirewallFirewallPoliciesT&& value) { SetThirdPartyFirewallFirewallPolicies(std::forward<ThirdPartyFirewallFirewallPoliciesT>(value)); return *this;}
+    template<typename ThirdPartyFirewallFirewallPoliciesT = ThirdPartyFirewallFirewallPolicy>
+    ListThirdPartyFirewallFirewallPoliciesResult& AddThirdPartyFirewallFirewallPolicies(ThirdPartyFirewallFirewallPoliciesT&& value) { m_thirdPartyFirewallFirewallPoliciesHasBeenSet = true; m_thirdPartyFirewallFirewallPolicies.emplace_back(std::forward<ThirdPartyFirewallFirewallPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,32 +56,31 @@ namespace Model
      * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListThirdPartyFirewallFirewallPolicies</code> request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThirdPartyFirewallFirewallPoliciesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListThirdPartyFirewallFirewallPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ThirdPartyFirewallFirewallPolicy> m_thirdPartyFirewallFirewallPolicies;
+    bool m_thirdPartyFirewallFirewallPoliciesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

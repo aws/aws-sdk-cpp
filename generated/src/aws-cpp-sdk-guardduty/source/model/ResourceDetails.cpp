@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_instanceArnHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceArn"))
   {
     m_instanceArn = jsonValue.GetString("instanceArn");
-
     m_instanceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateEgressOnlyInternetGatewayRequest::CreateEgressOnlyInternetGatewayRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEgressOnlyInternetGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationDrivingDistanceOptions::WaypointOptimizationDrivingDistanceOptions() : 
-    m_drivingDistance(0),
-    m_drivingDistanceHasBeenSet(false)
-{
-}
-
 WaypointOptimizationDrivingDistanceOptions::WaypointOptimizationDrivingDistanceOptions(JsonView jsonValue)
-  : WaypointOptimizationDrivingDistanceOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WaypointOptimizationDrivingDistanceOptions& WaypointOptimizationDrivingDistanceO
   if(jsonValue.ValueExists("DrivingDistance"))
   {
     m_drivingDistance = jsonValue.GetInt64("DrivingDistance");
-
     m_drivingDistanceHasBeenSet = true;
   }
-
   return *this;
 }
 

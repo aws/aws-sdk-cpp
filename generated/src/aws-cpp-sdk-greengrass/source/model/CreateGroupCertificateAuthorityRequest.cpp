@@ -13,12 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGroupCertificateAuthorityRequest::CreateGroupCertificateAuthorityRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupCertificateAuthorityRequest::SerializePayload() const
 {
   return {};

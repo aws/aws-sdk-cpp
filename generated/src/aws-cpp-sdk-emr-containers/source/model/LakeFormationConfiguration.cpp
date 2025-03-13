@@ -18,15 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-LakeFormationConfiguration::LakeFormationConfiguration() : 
-    m_authorizedSessionTagValueHasBeenSet(false),
-    m_secureNamespaceInfoHasBeenSet(false),
-    m_queryEngineRoleArnHasBeenSet(false)
-{
-}
-
 LakeFormationConfiguration::LakeFormationConfiguration(JsonView jsonValue)
-  : LakeFormationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LakeFormationConfiguration& LakeFormationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("authorizedSessionTagValue"))
   {
     m_authorizedSessionTagValue = jsonValue.GetString("authorizedSessionTagValue");
-
     m_authorizedSessionTagValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secureNamespaceInfo"))
   {
     m_secureNamespaceInfo = jsonValue.GetObject("secureNamespaceInfo");
-
     m_secureNamespaceInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queryEngineRoleArn"))
   {
     m_queryEngineRoleArn = jsonValue.GetString("queryEngineRoleArn");
-
     m_queryEngineRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

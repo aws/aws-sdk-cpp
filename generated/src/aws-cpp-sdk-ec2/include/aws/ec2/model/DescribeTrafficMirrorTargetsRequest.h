@@ -23,7 +23,7 @@ namespace Model
   class DescribeTrafficMirrorTargetsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeTrafficMirrorTargetsRequest();
+    AWS_EC2_API DescribeTrafficMirrorTargetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The ID of the Traffic Mirror targets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTrafficMirrorTargetIds() const{ return m_trafficMirrorTargetIds; }
+    inline const Aws::Vector<Aws::String>& GetTrafficMirrorTargetIds() const { return m_trafficMirrorTargetIds; }
     inline bool TrafficMirrorTargetIdsHasBeenSet() const { return m_trafficMirrorTargetIdsHasBeenSet; }
-    inline void SetTrafficMirrorTargetIds(const Aws::Vector<Aws::String>& value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds = value; }
-    inline void SetTrafficMirrorTargetIds(Aws::Vector<Aws::String>&& value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds = std::move(value); }
-    inline DescribeTrafficMirrorTargetsRequest& WithTrafficMirrorTargetIds(const Aws::Vector<Aws::String>& value) { SetTrafficMirrorTargetIds(value); return *this;}
-    inline DescribeTrafficMirrorTargetsRequest& WithTrafficMirrorTargetIds(Aws::Vector<Aws::String>&& value) { SetTrafficMirrorTargetIds(std::move(value)); return *this;}
-    inline DescribeTrafficMirrorTargetsRequest& AddTrafficMirrorTargetIds(const Aws::String& value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds.push_back(value); return *this; }
-    inline DescribeTrafficMirrorTargetsRequest& AddTrafficMirrorTargetIds(Aws::String&& value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds.push_back(std::move(value)); return *this; }
-    inline DescribeTrafficMirrorTargetsRequest& AddTrafficMirrorTargetIds(const char* value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds.push_back(value); return *this; }
+    template<typename TrafficMirrorTargetIdsT = Aws::Vector<Aws::String>>
+    void SetTrafficMirrorTargetIds(TrafficMirrorTargetIdsT&& value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds = std::forward<TrafficMirrorTargetIdsT>(value); }
+    template<typename TrafficMirrorTargetIdsT = Aws::Vector<Aws::String>>
+    DescribeTrafficMirrorTargetsRequest& WithTrafficMirrorTargetIds(TrafficMirrorTargetIdsT&& value) { SetTrafficMirrorTargetIds(std::forward<TrafficMirrorTargetIdsT>(value)); return *this;}
+    template<typename TrafficMirrorTargetIdsT = Aws::String>
+    DescribeTrafficMirrorTargetsRequest& AddTrafficMirrorTargetIds(TrafficMirrorTargetIdsT&& value) { m_trafficMirrorTargetIdsHasBeenSet = true; m_trafficMirrorTargetIds.emplace_back(std::forward<TrafficMirrorTargetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +59,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeTrafficMirrorTargetsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -78,14 +77,14 @@ namespace Model
      * <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeTrafficMirrorTargetsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeTrafficMirrorTargetsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeTrafficMirrorTargetsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeTrafficMirrorTargetsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeTrafficMirrorTargetsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeTrafficMirrorTargetsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,7 +93,7 @@ namespace Model
      * remaining results, make another call with the returned <code>nextToken</code>
      * value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeTrafficMirrorTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -104,27 +103,25 @@ namespace Model
     /**
      * <p>The token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeTrafficMirrorTargetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeTrafficMirrorTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeTrafficMirrorTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeTrafficMirrorTargetsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_trafficMirrorTargetIds;
     bool m_trafficMirrorTargetIdsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -32,7 +32,7 @@ namespace Model
   class PermissionOutput
   {
   public:
-    AWS_QAPPS_API PermissionOutput();
+    AWS_QAPPS_API PermissionOutput() = default;
     AWS_QAPPS_API PermissionOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API PermissionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The action associated with the permission.</p>
      */
-    inline const PermissionOutputActionEnum& GetAction() const{ return m_action; }
+    inline PermissionOutputActionEnum GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const PermissionOutputActionEnum& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(PermissionOutputActionEnum&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline PermissionOutput& WithAction(const PermissionOutputActionEnum& value) { SetAction(value); return *this;}
-    inline PermissionOutput& WithAction(PermissionOutputActionEnum&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(PermissionOutputActionEnum value) { m_actionHasBeenSet = true; m_action = value; }
+    inline PermissionOutput& WithAction(PermissionOutputActionEnum value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The principal user to which the permission applies.</p>
      */
-    inline const PrincipalOutput& GetPrincipal() const{ return m_principal; }
+    inline const PrincipalOutput& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const PrincipalOutput& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(PrincipalOutput&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline PermissionOutput& WithPrincipal(const PrincipalOutput& value) { SetPrincipal(value); return *this;}
-    inline PermissionOutput& WithPrincipal(PrincipalOutput&& value) { SetPrincipal(std::move(value)); return *this;}
+    template<typename PrincipalT = PrincipalOutput>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = PrincipalOutput>
+    PermissionOutput& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
   private:
 
-    PermissionOutputActionEnum m_action;
+    PermissionOutputActionEnum m_action{PermissionOutputActionEnum::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     PrincipalOutput m_principal;

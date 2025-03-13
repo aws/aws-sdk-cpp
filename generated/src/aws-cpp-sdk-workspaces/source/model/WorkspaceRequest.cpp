@@ -18,23 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkspaceRequest::WorkspaceRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_volumeEncryptionKeyHasBeenSet(false),
-    m_userVolumeEncryptionEnabled(false),
-    m_userVolumeEncryptionEnabledHasBeenSet(false),
-    m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false),
-    m_workspacePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceNameHasBeenSet(false)
-{
-}
-
 WorkspaceRequest::WorkspaceRequest(JsonView jsonValue)
-  : WorkspaceRequest()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ WorkspaceRequest& WorkspaceRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DirectoryId"))
   {
     m_directoryId = jsonValue.GetString("DirectoryId");
-
     m_directoryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BundleId"))
   {
     m_bundleId = jsonValue.GetString("BundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeEncryptionKey"))
   {
     m_volumeEncryptionKey = jsonValue.GetString("VolumeEncryptionKey");
-
     m_volumeEncryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserVolumeEncryptionEnabled"))
   {
     m_userVolumeEncryptionEnabled = jsonValue.GetBool("UserVolumeEncryptionEnabled");
-
     m_userVolumeEncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootVolumeEncryptionEnabled"))
   {
     m_rootVolumeEncryptionEnabled = jsonValue.GetBool("RootVolumeEncryptionEnabled");
-
     m_rootVolumeEncryptionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkspaceProperties"))
   {
     m_workspaceProperties = jsonValue.GetObject("WorkspaceProperties");
-
     m_workspacePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -99,14 +69,11 @@ WorkspaceRequest& WorkspaceRequest::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkspaceName"))
   {
     m_workspaceName = jsonValue.GetString("WorkspaceName");
-
     m_workspaceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(const XmlNode& xmlNode)
-  : S3Location()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ S3Location& S3Location::operator =(const XmlNode& xmlNode)
     {
       m_s3Bucket = Aws::Utils::Xml::DecodeEscapedXmlText(s3BucketNode.GetText());
       m_s3BucketHasBeenSet = true;
+       m_s3BucketHasBeenSet = true;
     }
     XmlNode s3KeyNode = resultNode.FirstChild("S3Key");
     if(!s3KeyNode.IsNull())
     {
       m_s3Key = Aws::Utils::Xml::DecodeEscapedXmlText(s3KeyNode.GetText());
       m_s3KeyHasBeenSet = true;
+       m_s3KeyHasBeenSet = true;
     }
   }
 

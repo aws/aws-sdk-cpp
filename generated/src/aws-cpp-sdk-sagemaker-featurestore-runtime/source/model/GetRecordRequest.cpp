@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRecordRequest::GetRecordRequest() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_featureNamesHasBeenSet(false),
-    m_expirationTimeResponse(ExpirationTimeResponse::NOT_SET),
-    m_expirationTimeResponseHasBeenSet(false)
-{
-}
-
 Aws::String GetRecordRequest::SerializePayload() const
 {
   return {};

@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PriceScheduleSpecification::PriceScheduleSpecification() : 
-    m_term(0),
-    m_termHasBeenSet(false),
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 PriceScheduleSpecification::PriceScheduleSpecification(const XmlNode& xmlNode)
-  : PriceScheduleSpecification()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ PriceScheduleSpecification& PriceScheduleSpecification::operator =(const XmlNode
     {
       m_term = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(termNode.GetText()).c_str()).c_str());
       m_termHasBeenSet = true;
+       m_termHasBeenSet = true;
     }
     XmlNode priceNode = resultNode.FirstChild("price");
     if(!priceNode.IsNull())
     {
       m_price = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceNode.GetText()).c_str()).c_str());
       m_priceHasBeenSet = true;
+       m_priceHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()));
       m_currencyCodeHasBeenSet = true;
+       m_currencyCodeHasBeenSet = true;
     }
   }
 

@@ -42,7 +42,7 @@ namespace Model
   class RowFilterExpression
   {
   public:
-    AWS_DATAZONE_API RowFilterExpression();
+    AWS_DATAZONE_API RowFilterExpression() = default;
     AWS_DATAZONE_API RowFilterExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RowFilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,144 +52,144 @@ namespace Model
     /**
      * <p>The 'equal to' clause of the row filter expression.</p>
      */
-    inline const EqualToExpression& GetEqualTo() const{ return m_equalTo; }
+    inline const EqualToExpression& GetEqualTo() const { return m_equalTo; }
     inline bool EqualToHasBeenSet() const { return m_equalToHasBeenSet; }
-    inline void SetEqualTo(const EqualToExpression& value) { m_equalToHasBeenSet = true; m_equalTo = value; }
-    inline void SetEqualTo(EqualToExpression&& value) { m_equalToHasBeenSet = true; m_equalTo = std::move(value); }
-    inline RowFilterExpression& WithEqualTo(const EqualToExpression& value) { SetEqualTo(value); return *this;}
-    inline RowFilterExpression& WithEqualTo(EqualToExpression&& value) { SetEqualTo(std::move(value)); return *this;}
+    template<typename EqualToT = EqualToExpression>
+    void SetEqualTo(EqualToT&& value) { m_equalToHasBeenSet = true; m_equalTo = std::forward<EqualToT>(value); }
+    template<typename EqualToT = EqualToExpression>
+    RowFilterExpression& WithEqualTo(EqualToT&& value) { SetEqualTo(std::forward<EqualToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'greater than' clause of the row filter expression.</p>
      */
-    inline const GreaterThanExpression& GetGreaterThan() const{ return m_greaterThan; }
+    inline const GreaterThanExpression& GetGreaterThan() const { return m_greaterThan; }
     inline bool GreaterThanHasBeenSet() const { return m_greaterThanHasBeenSet; }
-    inline void SetGreaterThan(const GreaterThanExpression& value) { m_greaterThanHasBeenSet = true; m_greaterThan = value; }
-    inline void SetGreaterThan(GreaterThanExpression&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::move(value); }
-    inline RowFilterExpression& WithGreaterThan(const GreaterThanExpression& value) { SetGreaterThan(value); return *this;}
-    inline RowFilterExpression& WithGreaterThan(GreaterThanExpression&& value) { SetGreaterThan(std::move(value)); return *this;}
+    template<typename GreaterThanT = GreaterThanExpression>
+    void SetGreaterThan(GreaterThanT&& value) { m_greaterThanHasBeenSet = true; m_greaterThan = std::forward<GreaterThanT>(value); }
+    template<typename GreaterThanT = GreaterThanExpression>
+    RowFilterExpression& WithGreaterThan(GreaterThanT&& value) { SetGreaterThan(std::forward<GreaterThanT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'greater than or equal to' clause of the filter expression.</p>
      */
-    inline const GreaterThanOrEqualToExpression& GetGreaterThanOrEqualTo() const{ return m_greaterThanOrEqualTo; }
+    inline const GreaterThanOrEqualToExpression& GetGreaterThanOrEqualTo() const { return m_greaterThanOrEqualTo; }
     inline bool GreaterThanOrEqualToHasBeenSet() const { return m_greaterThanOrEqualToHasBeenSet; }
-    inline void SetGreaterThanOrEqualTo(const GreaterThanOrEqualToExpression& value) { m_greaterThanOrEqualToHasBeenSet = true; m_greaterThanOrEqualTo = value; }
-    inline void SetGreaterThanOrEqualTo(GreaterThanOrEqualToExpression&& value) { m_greaterThanOrEqualToHasBeenSet = true; m_greaterThanOrEqualTo = std::move(value); }
-    inline RowFilterExpression& WithGreaterThanOrEqualTo(const GreaterThanOrEqualToExpression& value) { SetGreaterThanOrEqualTo(value); return *this;}
-    inline RowFilterExpression& WithGreaterThanOrEqualTo(GreaterThanOrEqualToExpression&& value) { SetGreaterThanOrEqualTo(std::move(value)); return *this;}
+    template<typename GreaterThanOrEqualToT = GreaterThanOrEqualToExpression>
+    void SetGreaterThanOrEqualTo(GreaterThanOrEqualToT&& value) { m_greaterThanOrEqualToHasBeenSet = true; m_greaterThanOrEqualTo = std::forward<GreaterThanOrEqualToT>(value); }
+    template<typename GreaterThanOrEqualToT = GreaterThanOrEqualToExpression>
+    RowFilterExpression& WithGreaterThanOrEqualTo(GreaterThanOrEqualToT&& value) { SetGreaterThanOrEqualTo(std::forward<GreaterThanOrEqualToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'in' clause of the row filter expression.</p>
      */
-    inline const InExpression& GetIn() const{ return m_in; }
+    inline const InExpression& GetIn() const { return m_in; }
     inline bool InHasBeenSet() const { return m_inHasBeenSet; }
-    inline void SetIn(const InExpression& value) { m_inHasBeenSet = true; m_in = value; }
-    inline void SetIn(InExpression&& value) { m_inHasBeenSet = true; m_in = std::move(value); }
-    inline RowFilterExpression& WithIn(const InExpression& value) { SetIn(value); return *this;}
-    inline RowFilterExpression& WithIn(InExpression&& value) { SetIn(std::move(value)); return *this;}
+    template<typename InT = InExpression>
+    void SetIn(InT&& value) { m_inHasBeenSet = true; m_in = std::forward<InT>(value); }
+    template<typename InT = InExpression>
+    RowFilterExpression& WithIn(InT&& value) { SetIn(std::forward<InT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'is not null' clause of the row filter expression.</p>
      */
-    inline const IsNotNullExpression& GetIsNotNull() const{ return m_isNotNull; }
+    inline const IsNotNullExpression& GetIsNotNull() const { return m_isNotNull; }
     inline bool IsNotNullHasBeenSet() const { return m_isNotNullHasBeenSet; }
-    inline void SetIsNotNull(const IsNotNullExpression& value) { m_isNotNullHasBeenSet = true; m_isNotNull = value; }
-    inline void SetIsNotNull(IsNotNullExpression&& value) { m_isNotNullHasBeenSet = true; m_isNotNull = std::move(value); }
-    inline RowFilterExpression& WithIsNotNull(const IsNotNullExpression& value) { SetIsNotNull(value); return *this;}
-    inline RowFilterExpression& WithIsNotNull(IsNotNullExpression&& value) { SetIsNotNull(std::move(value)); return *this;}
+    template<typename IsNotNullT = IsNotNullExpression>
+    void SetIsNotNull(IsNotNullT&& value) { m_isNotNullHasBeenSet = true; m_isNotNull = std::forward<IsNotNullT>(value); }
+    template<typename IsNotNullT = IsNotNullExpression>
+    RowFilterExpression& WithIsNotNull(IsNotNullT&& value) { SetIsNotNull(std::forward<IsNotNullT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'is null' clause of the row filter expression.</p>
      */
-    inline const IsNullExpression& GetIsNull() const{ return m_isNull; }
+    inline const IsNullExpression& GetIsNull() const { return m_isNull; }
     inline bool IsNullHasBeenSet() const { return m_isNullHasBeenSet; }
-    inline void SetIsNull(const IsNullExpression& value) { m_isNullHasBeenSet = true; m_isNull = value; }
-    inline void SetIsNull(IsNullExpression&& value) { m_isNullHasBeenSet = true; m_isNull = std::move(value); }
-    inline RowFilterExpression& WithIsNull(const IsNullExpression& value) { SetIsNull(value); return *this;}
-    inline RowFilterExpression& WithIsNull(IsNullExpression&& value) { SetIsNull(std::move(value)); return *this;}
+    template<typename IsNullT = IsNullExpression>
+    void SetIsNull(IsNullT&& value) { m_isNullHasBeenSet = true; m_isNull = std::forward<IsNullT>(value); }
+    template<typename IsNullT = IsNullExpression>
+    RowFilterExpression& WithIsNull(IsNullT&& value) { SetIsNull(std::forward<IsNullT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'less than' clause of the row filter expression.</p>
      */
-    inline const LessThanExpression& GetLessThan() const{ return m_lessThan; }
+    inline const LessThanExpression& GetLessThan() const { return m_lessThan; }
     inline bool LessThanHasBeenSet() const { return m_lessThanHasBeenSet; }
-    inline void SetLessThan(const LessThanExpression& value) { m_lessThanHasBeenSet = true; m_lessThan = value; }
-    inline void SetLessThan(LessThanExpression&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::move(value); }
-    inline RowFilterExpression& WithLessThan(const LessThanExpression& value) { SetLessThan(value); return *this;}
-    inline RowFilterExpression& WithLessThan(LessThanExpression&& value) { SetLessThan(std::move(value)); return *this;}
+    template<typename LessThanT = LessThanExpression>
+    void SetLessThan(LessThanT&& value) { m_lessThanHasBeenSet = true; m_lessThan = std::forward<LessThanT>(value); }
+    template<typename LessThanT = LessThanExpression>
+    RowFilterExpression& WithLessThan(LessThanT&& value) { SetLessThan(std::forward<LessThanT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'less than or equal to' clause of the row filter expression.</p>
      */
-    inline const LessThanOrEqualToExpression& GetLessThanOrEqualTo() const{ return m_lessThanOrEqualTo; }
+    inline const LessThanOrEqualToExpression& GetLessThanOrEqualTo() const { return m_lessThanOrEqualTo; }
     inline bool LessThanOrEqualToHasBeenSet() const { return m_lessThanOrEqualToHasBeenSet; }
-    inline void SetLessThanOrEqualTo(const LessThanOrEqualToExpression& value) { m_lessThanOrEqualToHasBeenSet = true; m_lessThanOrEqualTo = value; }
-    inline void SetLessThanOrEqualTo(LessThanOrEqualToExpression&& value) { m_lessThanOrEqualToHasBeenSet = true; m_lessThanOrEqualTo = std::move(value); }
-    inline RowFilterExpression& WithLessThanOrEqualTo(const LessThanOrEqualToExpression& value) { SetLessThanOrEqualTo(value); return *this;}
-    inline RowFilterExpression& WithLessThanOrEqualTo(LessThanOrEqualToExpression&& value) { SetLessThanOrEqualTo(std::move(value)); return *this;}
+    template<typename LessThanOrEqualToT = LessThanOrEqualToExpression>
+    void SetLessThanOrEqualTo(LessThanOrEqualToT&& value) { m_lessThanOrEqualToHasBeenSet = true; m_lessThanOrEqualTo = std::forward<LessThanOrEqualToT>(value); }
+    template<typename LessThanOrEqualToT = LessThanOrEqualToExpression>
+    RowFilterExpression& WithLessThanOrEqualTo(LessThanOrEqualToT&& value) { SetLessThanOrEqualTo(std::forward<LessThanOrEqualToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'like' clause of the row filter expression.</p>
      */
-    inline const LikeExpression& GetLike() const{ return m_like; }
+    inline const LikeExpression& GetLike() const { return m_like; }
     inline bool LikeHasBeenSet() const { return m_likeHasBeenSet; }
-    inline void SetLike(const LikeExpression& value) { m_likeHasBeenSet = true; m_like = value; }
-    inline void SetLike(LikeExpression&& value) { m_likeHasBeenSet = true; m_like = std::move(value); }
-    inline RowFilterExpression& WithLike(const LikeExpression& value) { SetLike(value); return *this;}
-    inline RowFilterExpression& WithLike(LikeExpression&& value) { SetLike(std::move(value)); return *this;}
+    template<typename LikeT = LikeExpression>
+    void SetLike(LikeT&& value) { m_likeHasBeenSet = true; m_like = std::forward<LikeT>(value); }
+    template<typename LikeT = LikeExpression>
+    RowFilterExpression& WithLike(LikeT&& value) { SetLike(std::forward<LikeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'no equal to' clause of the row filter expression.</p>
      */
-    inline const NotEqualToExpression& GetNotEqualTo() const{ return m_notEqualTo; }
+    inline const NotEqualToExpression& GetNotEqualTo() const { return m_notEqualTo; }
     inline bool NotEqualToHasBeenSet() const { return m_notEqualToHasBeenSet; }
-    inline void SetNotEqualTo(const NotEqualToExpression& value) { m_notEqualToHasBeenSet = true; m_notEqualTo = value; }
-    inline void SetNotEqualTo(NotEqualToExpression&& value) { m_notEqualToHasBeenSet = true; m_notEqualTo = std::move(value); }
-    inline RowFilterExpression& WithNotEqualTo(const NotEqualToExpression& value) { SetNotEqualTo(value); return *this;}
-    inline RowFilterExpression& WithNotEqualTo(NotEqualToExpression&& value) { SetNotEqualTo(std::move(value)); return *this;}
+    template<typename NotEqualToT = NotEqualToExpression>
+    void SetNotEqualTo(NotEqualToT&& value) { m_notEqualToHasBeenSet = true; m_notEqualTo = std::forward<NotEqualToT>(value); }
+    template<typename NotEqualToT = NotEqualToExpression>
+    RowFilterExpression& WithNotEqualTo(NotEqualToT&& value) { SetNotEqualTo(std::forward<NotEqualToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'not in' clause of the row filter expression.</p>
      */
-    inline const NotInExpression& GetNotIn() const{ return m_notIn; }
+    inline const NotInExpression& GetNotIn() const { return m_notIn; }
     inline bool NotInHasBeenSet() const { return m_notInHasBeenSet; }
-    inline void SetNotIn(const NotInExpression& value) { m_notInHasBeenSet = true; m_notIn = value; }
-    inline void SetNotIn(NotInExpression&& value) { m_notInHasBeenSet = true; m_notIn = std::move(value); }
-    inline RowFilterExpression& WithNotIn(const NotInExpression& value) { SetNotIn(value); return *this;}
-    inline RowFilterExpression& WithNotIn(NotInExpression&& value) { SetNotIn(std::move(value)); return *this;}
+    template<typename NotInT = NotInExpression>
+    void SetNotIn(NotInT&& value) { m_notInHasBeenSet = true; m_notIn = std::forward<NotInT>(value); }
+    template<typename NotInT = NotInExpression>
+    RowFilterExpression& WithNotIn(NotInT&& value) { SetNotIn(std::forward<NotInT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'not like' clause of the row filter expression.</p>
      */
-    inline const NotLikeExpression& GetNotLike() const{ return m_notLike; }
+    inline const NotLikeExpression& GetNotLike() const { return m_notLike; }
     inline bool NotLikeHasBeenSet() const { return m_notLikeHasBeenSet; }
-    inline void SetNotLike(const NotLikeExpression& value) { m_notLikeHasBeenSet = true; m_notLike = value; }
-    inline void SetNotLike(NotLikeExpression&& value) { m_notLikeHasBeenSet = true; m_notLike = std::move(value); }
-    inline RowFilterExpression& WithNotLike(const NotLikeExpression& value) { SetNotLike(value); return *this;}
-    inline RowFilterExpression& WithNotLike(NotLikeExpression&& value) { SetNotLike(std::move(value)); return *this;}
+    template<typename NotLikeT = NotLikeExpression>
+    void SetNotLike(NotLikeT&& value) { m_notLikeHasBeenSet = true; m_notLike = std::forward<NotLikeT>(value); }
+    template<typename NotLikeT = NotLikeExpression>
+    RowFilterExpression& WithNotLike(NotLikeT&& value) { SetNotLike(std::forward<NotLikeT>(value)); return *this;}
     ///@}
   private:
 

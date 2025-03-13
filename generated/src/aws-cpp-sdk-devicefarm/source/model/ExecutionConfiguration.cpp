@@ -18,22 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-ExecutionConfiguration::ExecutionConfiguration() : 
-    m_jobTimeoutMinutes(0),
-    m_jobTimeoutMinutesHasBeenSet(false),
-    m_accountsCleanup(false),
-    m_accountsCleanupHasBeenSet(false),
-    m_appPackagesCleanup(false),
-    m_appPackagesCleanupHasBeenSet(false),
-    m_videoCapture(false),
-    m_videoCaptureHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
-{
-}
-
 ExecutionConfiguration::ExecutionConfiguration(JsonView jsonValue)
-  : ExecutionConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ ExecutionConfiguration& ExecutionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobTimeoutMinutes"))
   {
     m_jobTimeoutMinutes = jsonValue.GetInteger("jobTimeoutMinutes");
-
     m_jobTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountsCleanup"))
   {
     m_accountsCleanup = jsonValue.GetBool("accountsCleanup");
-
     m_accountsCleanupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appPackagesCleanup"))
   {
     m_appPackagesCleanup = jsonValue.GetBool("appPackagesCleanup");
-
     m_appPackagesCleanupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoCapture"))
   {
     m_videoCapture = jsonValue.GetBool("videoCapture");
-
     m_videoCaptureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("skipAppResign"))
   {
     m_skipAppResign = jsonValue.GetBool("skipAppResign");
-
     m_skipAppResignHasBeenSet = true;
   }
-
   return *this;
 }
 

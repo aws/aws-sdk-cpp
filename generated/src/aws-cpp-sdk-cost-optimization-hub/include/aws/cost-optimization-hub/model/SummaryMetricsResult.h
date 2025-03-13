@@ -32,7 +32,7 @@ namespace Model
   class SummaryMetricsResult
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API SummaryMetricsResult();
+    AWS_COSTOPTIMIZATIONHUB_API SummaryMetricsResult() = default;
     AWS_COSTOPTIMIZATIONHUB_API SummaryMetricsResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API SummaryMetricsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * 30 days.</p>  <p>Savings percentage is only supported when filtering by
      * Region, account ID, or tags.</p> 
      */
-    inline const Aws::String& GetSavingsPercentage() const{ return m_savingsPercentage; }
+    inline const Aws::String& GetSavingsPercentage() const { return m_savingsPercentage; }
     inline bool SavingsPercentageHasBeenSet() const { return m_savingsPercentageHasBeenSet; }
-    inline void SetSavingsPercentage(const Aws::String& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = value; }
-    inline void SetSavingsPercentage(Aws::String&& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = std::move(value); }
-    inline void SetSavingsPercentage(const char* value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage.assign(value); }
-    inline SummaryMetricsResult& WithSavingsPercentage(const Aws::String& value) { SetSavingsPercentage(value); return *this;}
-    inline SummaryMetricsResult& WithSavingsPercentage(Aws::String&& value) { SetSavingsPercentage(std::move(value)); return *this;}
-    inline SummaryMetricsResult& WithSavingsPercentage(const char* value) { SetSavingsPercentage(value); return *this;}
+    template<typename SavingsPercentageT = Aws::String>
+    void SetSavingsPercentage(SavingsPercentageT&& value) { m_savingsPercentageHasBeenSet = true; m_savingsPercentage = std::forward<SavingsPercentageT>(value); }
+    template<typename SavingsPercentageT = Aws::String>
+    SummaryMetricsResult& WithSavingsPercentage(SavingsPercentageT&& value) { SetSavingsPercentage(std::forward<SavingsPercentageT>(value)); return *this;}
     ///@}
   private:
 

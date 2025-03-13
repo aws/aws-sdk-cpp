@@ -34,7 +34,7 @@ namespace Model
   class HeaderFooterSectionConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API HeaderFooterSectionConfiguration();
+    AWS_QUICKSIGHT_API HeaderFooterSectionConfiguration() = default;
     AWS_QUICKSIGHT_API HeaderFooterSectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API HeaderFooterSectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,36 @@ namespace Model
     /**
      * <p>The unique identifier of the header or footer section.</p>
      */
-    inline const Aws::String& GetSectionId() const{ return m_sectionId; }
+    inline const Aws::String& GetSectionId() const { return m_sectionId; }
     inline bool SectionIdHasBeenSet() const { return m_sectionIdHasBeenSet; }
-    inline void SetSectionId(const Aws::String& value) { m_sectionIdHasBeenSet = true; m_sectionId = value; }
-    inline void SetSectionId(Aws::String&& value) { m_sectionIdHasBeenSet = true; m_sectionId = std::move(value); }
-    inline void SetSectionId(const char* value) { m_sectionIdHasBeenSet = true; m_sectionId.assign(value); }
-    inline HeaderFooterSectionConfiguration& WithSectionId(const Aws::String& value) { SetSectionId(value); return *this;}
-    inline HeaderFooterSectionConfiguration& WithSectionId(Aws::String&& value) { SetSectionId(std::move(value)); return *this;}
-    inline HeaderFooterSectionConfiguration& WithSectionId(const char* value) { SetSectionId(value); return *this;}
+    template<typename SectionIdT = Aws::String>
+    void SetSectionId(SectionIdT&& value) { m_sectionIdHasBeenSet = true; m_sectionId = std::forward<SectionIdT>(value); }
+    template<typename SectionIdT = Aws::String>
+    HeaderFooterSectionConfiguration& WithSectionId(SectionIdT&& value) { SetSectionId(std::forward<SectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The layout configuration of the header or footer section.</p>
      */
-    inline const SectionLayoutConfiguration& GetLayout() const{ return m_layout; }
+    inline const SectionLayoutConfiguration& GetLayout() const { return m_layout; }
     inline bool LayoutHasBeenSet() const { return m_layoutHasBeenSet; }
-    inline void SetLayout(const SectionLayoutConfiguration& value) { m_layoutHasBeenSet = true; m_layout = value; }
-    inline void SetLayout(SectionLayoutConfiguration&& value) { m_layoutHasBeenSet = true; m_layout = std::move(value); }
-    inline HeaderFooterSectionConfiguration& WithLayout(const SectionLayoutConfiguration& value) { SetLayout(value); return *this;}
-    inline HeaderFooterSectionConfiguration& WithLayout(SectionLayoutConfiguration&& value) { SetLayout(std::move(value)); return *this;}
+    template<typename LayoutT = SectionLayoutConfiguration>
+    void SetLayout(LayoutT&& value) { m_layoutHasBeenSet = true; m_layout = std::forward<LayoutT>(value); }
+    template<typename LayoutT = SectionLayoutConfiguration>
+    HeaderFooterSectionConfiguration& WithLayout(LayoutT&& value) { SetLayout(std::forward<LayoutT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The style options of a header or footer section.</p>
      */
-    inline const SectionStyle& GetStyle() const{ return m_style; }
+    inline const SectionStyle& GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const SectionStyle& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(SectionStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline HeaderFooterSectionConfiguration& WithStyle(const SectionStyle& value) { SetStyle(value); return *this;}
-    inline HeaderFooterSectionConfiguration& WithStyle(SectionStyle&& value) { SetStyle(std::move(value)); return *this;}
+    template<typename StyleT = SectionStyle>
+    void SetStyle(StyleT&& value) { m_styleHasBeenSet = true; m_style = std::forward<StyleT>(value); }
+    template<typename StyleT = SectionStyle>
+    HeaderFooterSectionConfiguration& WithStyle(StyleT&& value) { SetStyle(std::forward<StyleT>(value)); return *this;}
     ///@}
   private:
 

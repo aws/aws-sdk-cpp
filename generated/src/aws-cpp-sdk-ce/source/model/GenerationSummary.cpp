@@ -18,18 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-GenerationSummary::GenerationSummary() : 
-    m_recommendationIdHasBeenSet(false),
-    m_generationStatus(GenerationStatus::NOT_SET),
-    m_generationStatusHasBeenSet(false),
-    m_generationStartedTimeHasBeenSet(false),
-    m_generationCompletionTimeHasBeenSet(false),
-    m_estimatedCompletionTimeHasBeenSet(false)
-{
-}
-
 GenerationSummary::GenerationSummary(JsonView jsonValue)
-  : GenerationSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ GenerationSummary& GenerationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerationStatus"))
   {
     m_generationStatus = GenerationStatusMapper::GetGenerationStatusForName(jsonValue.GetString("GenerationStatus"));
-
     m_generationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerationStartedTime"))
   {
     m_generationStartedTime = jsonValue.GetString("GenerationStartedTime");
-
     m_generationStartedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerationCompletionTime"))
   {
     m_generationCompletionTime = jsonValue.GetString("GenerationCompletionTime");
-
     m_generationCompletionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedCompletionTime"))
   {
     m_estimatedCompletionTime = jsonValue.GetString("EstimatedCompletionTime");
-
     m_estimatedCompletionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

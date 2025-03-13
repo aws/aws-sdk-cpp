@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-EgyptAdditionalInfo::EgyptAdditionalInfo() : 
-    m_uniqueIdentificationNumberHasBeenSet(false),
-    m_uniqueIdentificationNumberExpirationDateHasBeenSet(false)
-{
-}
-
 EgyptAdditionalInfo::EgyptAdditionalInfo(JsonView jsonValue)
-  : EgyptAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EgyptAdditionalInfo& EgyptAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uniqueIdentificationNumber"))
   {
     m_uniqueIdentificationNumber = jsonValue.GetString("uniqueIdentificationNumber");
-
     m_uniqueIdentificationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uniqueIdentificationNumberExpirationDate"))
   {
     m_uniqueIdentificationNumberExpirationDate = jsonValue.GetString("uniqueIdentificationNumberExpirationDate");
-
     m_uniqueIdentificationNumberExpirationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

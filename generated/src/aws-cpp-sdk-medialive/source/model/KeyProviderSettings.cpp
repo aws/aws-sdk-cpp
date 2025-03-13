@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-KeyProviderSettings::KeyProviderSettings() : 
-    m_staticKeySettingsHasBeenSet(false)
-{
-}
-
 KeyProviderSettings::KeyProviderSettings(JsonView jsonValue)
-  : KeyProviderSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KeyProviderSettings& KeyProviderSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("staticKeySettings"))
   {
     m_staticKeySettings = jsonValue.GetObject("staticKeySettings");
-
     m_staticKeySettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

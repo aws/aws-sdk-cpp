@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-SMSMfaSettingsType::SMSMfaSettingsType() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_preferredMfa(false),
-    m_preferredMfaHasBeenSet(false)
-{
-}
-
 SMSMfaSettingsType::SMSMfaSettingsType(JsonView jsonValue)
-  : SMSMfaSettingsType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SMSMfaSettingsType& SMSMfaSettingsType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMfa"))
   {
     m_preferredMfa = jsonValue.GetBool("PreferredMfa");
-
     m_preferredMfaHasBeenSet = true;
   }
-
   return *this;
 }
 

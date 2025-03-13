@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteTransitGatewayRequest::DeleteTransitGatewayRequest() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTransitGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;

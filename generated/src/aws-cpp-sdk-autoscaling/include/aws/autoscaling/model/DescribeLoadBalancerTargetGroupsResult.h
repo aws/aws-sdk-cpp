@@ -30,7 +30,7 @@ namespace Model
   class DescribeLoadBalancerTargetGroupsResult
   {
   public:
-    AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult();
+    AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult() = default;
     AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API DescribeLoadBalancerTargetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the target groups.</p>
      */
-    inline const Aws::Vector<LoadBalancerTargetGroupState>& GetLoadBalancerTargetGroups() const{ return m_loadBalancerTargetGroups; }
-    inline void SetLoadBalancerTargetGroups(const Aws::Vector<LoadBalancerTargetGroupState>& value) { m_loadBalancerTargetGroups = value; }
-    inline void SetLoadBalancerTargetGroups(Aws::Vector<LoadBalancerTargetGroupState>&& value) { m_loadBalancerTargetGroups = std::move(value); }
-    inline DescribeLoadBalancerTargetGroupsResult& WithLoadBalancerTargetGroups(const Aws::Vector<LoadBalancerTargetGroupState>& value) { SetLoadBalancerTargetGroups(value); return *this;}
-    inline DescribeLoadBalancerTargetGroupsResult& WithLoadBalancerTargetGroups(Aws::Vector<LoadBalancerTargetGroupState>&& value) { SetLoadBalancerTargetGroups(std::move(value)); return *this;}
-    inline DescribeLoadBalancerTargetGroupsResult& AddLoadBalancerTargetGroups(const LoadBalancerTargetGroupState& value) { m_loadBalancerTargetGroups.push_back(value); return *this; }
-    inline DescribeLoadBalancerTargetGroupsResult& AddLoadBalancerTargetGroups(LoadBalancerTargetGroupState&& value) { m_loadBalancerTargetGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LoadBalancerTargetGroupState>& GetLoadBalancerTargetGroups() const { return m_loadBalancerTargetGroups; }
+    template<typename LoadBalancerTargetGroupsT = Aws::Vector<LoadBalancerTargetGroupState>>
+    void SetLoadBalancerTargetGroups(LoadBalancerTargetGroupsT&& value) { m_loadBalancerTargetGroupsHasBeenSet = true; m_loadBalancerTargetGroups = std::forward<LoadBalancerTargetGroupsT>(value); }
+    template<typename LoadBalancerTargetGroupsT = Aws::Vector<LoadBalancerTargetGroupState>>
+    DescribeLoadBalancerTargetGroupsResult& WithLoadBalancerTargetGroups(LoadBalancerTargetGroupsT&& value) { SetLoadBalancerTargetGroups(std::forward<LoadBalancerTargetGroupsT>(value)); return *this;}
+    template<typename LoadBalancerTargetGroupsT = LoadBalancerTargetGroupState>
+    DescribeLoadBalancerTargetGroupsResult& AddLoadBalancerTargetGroups(LoadBalancerTargetGroupsT&& value) { m_loadBalancerTargetGroupsHasBeenSet = true; m_loadBalancerTargetGroups.emplace_back(std::forward<LoadBalancerTargetGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * for the <code>NextToken</code> value when requesting the next set of items. This
      * value is null when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeLoadBalancerTargetGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeLoadBalancerTargetGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeLoadBalancerTargetGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeLoadBalancerTargetGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeLoadBalancerTargetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeLoadBalancerTargetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeLoadBalancerTargetGroupsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LoadBalancerTargetGroupState> m_loadBalancerTargetGroups;
+    bool m_loadBalancerTargetGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

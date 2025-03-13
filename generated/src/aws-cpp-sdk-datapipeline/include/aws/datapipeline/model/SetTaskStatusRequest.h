@@ -25,7 +25,7 @@ namespace Model
   class SetTaskStatusRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API SetTaskStatusRequest();
+    AWS_DATAPIPELINE_API SetTaskStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline SetTaskStatusRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline SetTaskStatusRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline SetTaskStatusRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    SetTaskStatusRequest& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
      */
-    inline const TaskStatus& GetTaskStatus() const{ return m_taskStatus; }
+    inline TaskStatus GetTaskStatus() const { return m_taskStatus; }
     inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
-    inline void SetTaskStatus(const TaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
-    inline void SetTaskStatus(TaskStatus&& value) { m_taskStatusHasBeenSet = true; m_taskStatus = std::move(value); }
-    inline SetTaskStatusRequest& WithTaskStatus(const TaskStatus& value) { SetTaskStatus(value); return *this;}
-    inline SetTaskStatusRequest& WithTaskStatus(TaskStatus&& value) { SetTaskStatus(std::move(value)); return *this;}
+    inline void SetTaskStatus(TaskStatus value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
+    inline SetTaskStatusRequest& WithTaskStatus(TaskStatus value) { SetTaskStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * information to the user. It should not start with string "Service_" which is
      * reserved by the system.</p>
      */
-    inline const Aws::String& GetErrorId() const{ return m_errorId; }
+    inline const Aws::String& GetErrorId() const { return m_errorId; }
     inline bool ErrorIdHasBeenSet() const { return m_errorIdHasBeenSet; }
-    inline void SetErrorId(const Aws::String& value) { m_errorIdHasBeenSet = true; m_errorId = value; }
-    inline void SetErrorId(Aws::String&& value) { m_errorIdHasBeenSet = true; m_errorId = std::move(value); }
-    inline void SetErrorId(const char* value) { m_errorIdHasBeenSet = true; m_errorId.assign(value); }
-    inline SetTaskStatusRequest& WithErrorId(const Aws::String& value) { SetErrorId(value); return *this;}
-    inline SetTaskStatusRequest& WithErrorId(Aws::String&& value) { SetErrorId(std::move(value)); return *this;}
-    inline SetTaskStatusRequest& WithErrorId(const char* value) { SetErrorId(value); return *this;}
+    template<typename ErrorIdT = Aws::String>
+    void SetErrorId(ErrorIdT&& value) { m_errorIdHasBeenSet = true; m_errorId = std::forward<ErrorIdT>(value); }
+    template<typename ErrorIdT = Aws::String>
+    SetTaskStatusRequest& WithErrorId(ErrorIdT&& value) { SetErrorId(std::forward<ErrorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * display error information to the user. The web service does not parse this
      * value.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline SetTaskStatusRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline SetTaskStatusRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline SetTaskStatusRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    SetTaskStatusRequest& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,21 +99,19 @@ namespace Model
      * is used to display error information to the user. The web service does not parse
      * this value.</p>
      */
-    inline const Aws::String& GetErrorStackTrace() const{ return m_errorStackTrace; }
+    inline const Aws::String& GetErrorStackTrace() const { return m_errorStackTrace; }
     inline bool ErrorStackTraceHasBeenSet() const { return m_errorStackTraceHasBeenSet; }
-    inline void SetErrorStackTrace(const Aws::String& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = value; }
-    inline void SetErrorStackTrace(Aws::String&& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = std::move(value); }
-    inline void SetErrorStackTrace(const char* value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace.assign(value); }
-    inline SetTaskStatusRequest& WithErrorStackTrace(const Aws::String& value) { SetErrorStackTrace(value); return *this;}
-    inline SetTaskStatusRequest& WithErrorStackTrace(Aws::String&& value) { SetErrorStackTrace(std::move(value)); return *this;}
-    inline SetTaskStatusRequest& WithErrorStackTrace(const char* value) { SetErrorStackTrace(value); return *this;}
+    template<typename ErrorStackTraceT = Aws::String>
+    void SetErrorStackTrace(ErrorStackTraceT&& value) { m_errorStackTraceHasBeenSet = true; m_errorStackTrace = std::forward<ErrorStackTraceT>(value); }
+    template<typename ErrorStackTraceT = Aws::String>
+    SetTaskStatusRequest& WithErrorStackTrace(ErrorStackTraceT&& value) { SetErrorStackTrace(std::forward<ErrorStackTraceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskId;
     bool m_taskIdHasBeenSet = false;
 
-    TaskStatus m_taskStatus;
+    TaskStatus m_taskStatus{TaskStatus::NOT_SET};
     bool m_taskStatusHasBeenSet = false;
 
     Aws::String m_errorId;

@@ -35,7 +35,7 @@ namespace Model
   class DriftStatusSummary
   {
   public:
-    AWS_CONTROLTOWER_API DriftStatusSummary();
+    AWS_CONTROLTOWER_API DriftStatusSummary() = default;
     AWS_CONTROLTOWER_API DriftStatusSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API DriftStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,16 +54,14 @@ namespace Model
      * </li> <li> <p> <code>UNKNOWN</code>: Amazon Web Services Control Tower is not
      * able to check the drift status for the enabled control. </p> </li> </ul>
      */
-    inline const DriftStatus& GetDriftStatus() const{ return m_driftStatus; }
+    inline DriftStatus GetDriftStatus() const { return m_driftStatus; }
     inline bool DriftStatusHasBeenSet() const { return m_driftStatusHasBeenSet; }
-    inline void SetDriftStatus(const DriftStatus& value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
-    inline void SetDriftStatus(DriftStatus&& value) { m_driftStatusHasBeenSet = true; m_driftStatus = std::move(value); }
-    inline DriftStatusSummary& WithDriftStatus(const DriftStatus& value) { SetDriftStatus(value); return *this;}
-    inline DriftStatusSummary& WithDriftStatus(DriftStatus&& value) { SetDriftStatus(std::move(value)); return *this;}
+    inline void SetDriftStatus(DriftStatus value) { m_driftStatusHasBeenSet = true; m_driftStatus = value; }
+    inline DriftStatusSummary& WithDriftStatus(DriftStatus value) { SetDriftStatus(value); return *this;}
     ///@}
   private:
 
-    DriftStatus m_driftStatus;
+    DriftStatus m_driftStatus{DriftStatus::NOT_SET};
     bool m_driftStatusHasBeenSet = false;
   };
 

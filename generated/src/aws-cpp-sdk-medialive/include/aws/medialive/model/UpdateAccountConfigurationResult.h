@@ -34,35 +34,35 @@ namespace Model
   class UpdateAccountConfigurationResult
   {
   public:
-    AWS_MEDIALIVE_API UpdateAccountConfigurationResult();
+    AWS_MEDIALIVE_API UpdateAccountConfigurationResult() = default;
     AWS_MEDIALIVE_API UpdateAccountConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API UpdateAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const AccountConfiguration& GetAccountConfiguration() const{ return m_accountConfiguration; }
-    inline void SetAccountConfiguration(const AccountConfiguration& value) { m_accountConfiguration = value; }
-    inline void SetAccountConfiguration(AccountConfiguration&& value) { m_accountConfiguration = std::move(value); }
-    inline UpdateAccountConfigurationResult& WithAccountConfiguration(const AccountConfiguration& value) { SetAccountConfiguration(value); return *this;}
-    inline UpdateAccountConfigurationResult& WithAccountConfiguration(AccountConfiguration&& value) { SetAccountConfiguration(std::move(value)); return *this;}
+    inline const AccountConfiguration& GetAccountConfiguration() const { return m_accountConfiguration; }
+    template<typename AccountConfigurationT = AccountConfiguration>
+    void SetAccountConfiguration(AccountConfigurationT&& value) { m_accountConfigurationHasBeenSet = true; m_accountConfiguration = std::forward<AccountConfigurationT>(value); }
+    template<typename AccountConfigurationT = AccountConfiguration>
+    UpdateAccountConfigurationResult& WithAccountConfiguration(AccountConfigurationT&& value) { SetAccountConfiguration(std::forward<AccountConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAccountConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountConfiguration m_accountConfiguration;
+    bool m_accountConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,19 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStorageVirtualMachineRequest::CreateStorageVirtualMachineRequest() : 
-    m_activeDirectoryConfigurationHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_fileSystemIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_svmAdminPasswordHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_rootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle::NOT_SET),
-    m_rootVolumeSecurityStyleHasBeenSet(false)
-{
-}
-
 Aws::String CreateStorageVirtualMachineRequest::SerializePayload() const
 {
   JsonValue payload;

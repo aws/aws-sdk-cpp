@@ -10,24 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeEventsRequest::DescribeEventsRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_versionLabelHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_platformArnHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_severity(EventSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

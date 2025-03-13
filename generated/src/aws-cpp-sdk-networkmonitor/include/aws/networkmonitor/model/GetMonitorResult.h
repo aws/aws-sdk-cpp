@@ -32,7 +32,7 @@ namespace Model
   class GetMonitorResult
   {
   public:
-    AWS_NETWORKMONITOR_API GetMonitorResult();
+    AWS_NETWORKMONITOR_API GetMonitorResult() = default;
     AWS_NETWORKMONITOR_API GetMonitorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMONITOR_API GetMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,39 @@ namespace Model
     /**
      * <p>The ARN of the selected monitor.</p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArn.assign(value); }
-    inline GetMonitorResult& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline GetMonitorResult& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline GetMonitorResult& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    GetMonitorResult& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the monitor. </p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorName.assign(value); }
-    inline GetMonitorResult& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline GetMonitorResult& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline GetMonitorResult& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    GetMonitorResult& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists the status of the <code>state</code> of each monitor. </p>
      */
-    inline const MonitorState& GetState() const{ return m_state; }
-    inline void SetState(const MonitorState& value) { m_state = value; }
-    inline void SetState(MonitorState&& value) { m_state = std::move(value); }
-    inline GetMonitorResult& WithState(const MonitorState& value) { SetState(value); return *this;}
-    inline GetMonitorResult& WithState(MonitorState&& value) { SetState(std::move(value)); return *this;}
+    inline MonitorState GetState() const { return m_state; }
+    inline void SetState(MonitorState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline GetMonitorResult& WithState(MonitorState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregation period for the specified monitor.</p>
      */
-    inline long long GetAggregationPeriod() const{ return m_aggregationPeriod; }
-    inline void SetAggregationPeriod(long long value) { m_aggregationPeriod = value; }
+    inline long long GetAggregationPeriod() const { return m_aggregationPeriod; }
+    inline void SetAggregationPeriod(long long value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = value; }
     inline GetMonitorResult& WithAggregationPeriod(long long value) { SetAggregationPeriod(value); return *this;}
     ///@}
 
@@ -87,84 +81,88 @@ namespace Model
     /**
      * <p>The list of key-value pairs assigned to the monitor.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetMonitorResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetMonitorResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetMonitorResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetMonitorResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetMonitorResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetMonitorResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetMonitorResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetMonitorResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetMonitorResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetMonitorResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetMonitorResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The details about each probe associated with that monitor. </p>
      */
-    inline const Aws::Vector<Probe>& GetProbes() const{ return m_probes; }
-    inline void SetProbes(const Aws::Vector<Probe>& value) { m_probes = value; }
-    inline void SetProbes(Aws::Vector<Probe>&& value) { m_probes = std::move(value); }
-    inline GetMonitorResult& WithProbes(const Aws::Vector<Probe>& value) { SetProbes(value); return *this;}
-    inline GetMonitorResult& WithProbes(Aws::Vector<Probe>&& value) { SetProbes(std::move(value)); return *this;}
-    inline GetMonitorResult& AddProbes(const Probe& value) { m_probes.push_back(value); return *this; }
-    inline GetMonitorResult& AddProbes(Probe&& value) { m_probes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Probe>& GetProbes() const { return m_probes; }
+    template<typename ProbesT = Aws::Vector<Probe>>
+    void SetProbes(ProbesT&& value) { m_probesHasBeenSet = true; m_probes = std::forward<ProbesT>(value); }
+    template<typename ProbesT = Aws::Vector<Probe>>
+    GetMonitorResult& WithProbes(ProbesT&& value) { SetProbes(std::forward<ProbesT>(value)); return *this;}
+    template<typename ProbesT = Probe>
+    GetMonitorResult& AddProbes(ProbesT&& value) { m_probesHasBeenSet = true; m_probes.emplace_back(std::forward<ProbesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time and date when the monitor was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetMonitorResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetMonitorResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetMonitorResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time and date when the monitor was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline GetMonitorResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline GetMonitorResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    GetMonitorResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMonitorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMonitorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMonitorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMonitorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_monitorArn;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_monitorName;
+    bool m_monitorNameHasBeenSet = false;
 
-    MonitorState m_state;
+    MonitorState m_state{MonitorState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
-    long long m_aggregationPeriod;
+    long long m_aggregationPeriod{0};
+    bool m_aggregationPeriodHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<Probe> m_probes;
+    bool m_probesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class ListHarvestJobsRequest : public MediaPackageRequest
   {
   public:
-    AWS_MEDIAPACKAGE_API ListHarvestJobsRequest();
+    AWS_MEDIAPACKAGE_API ListHarvestJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,35 +43,31 @@ namespace Model
      * When specified, the request will return only HarvestJobs associated with the
      * given Channel ID.
      */
-    inline const Aws::String& GetIncludeChannelId() const{ return m_includeChannelId; }
+    inline const Aws::String& GetIncludeChannelId() const { return m_includeChannelId; }
     inline bool IncludeChannelIdHasBeenSet() const { return m_includeChannelIdHasBeenSet; }
-    inline void SetIncludeChannelId(const Aws::String& value) { m_includeChannelIdHasBeenSet = true; m_includeChannelId = value; }
-    inline void SetIncludeChannelId(Aws::String&& value) { m_includeChannelIdHasBeenSet = true; m_includeChannelId = std::move(value); }
-    inline void SetIncludeChannelId(const char* value) { m_includeChannelIdHasBeenSet = true; m_includeChannelId.assign(value); }
-    inline ListHarvestJobsRequest& WithIncludeChannelId(const Aws::String& value) { SetIncludeChannelId(value); return *this;}
-    inline ListHarvestJobsRequest& WithIncludeChannelId(Aws::String&& value) { SetIncludeChannelId(std::move(value)); return *this;}
-    inline ListHarvestJobsRequest& WithIncludeChannelId(const char* value) { SetIncludeChannelId(value); return *this;}
+    template<typename IncludeChannelIdT = Aws::String>
+    void SetIncludeChannelId(IncludeChannelIdT&& value) { m_includeChannelIdHasBeenSet = true; m_includeChannelId = std::forward<IncludeChannelIdT>(value); }
+    template<typename IncludeChannelIdT = Aws::String>
+    ListHarvestJobsRequest& WithIncludeChannelId(IncludeChannelIdT&& value) { SetIncludeChannelId(std::forward<IncludeChannelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * When specified, the request will return only HarvestJobs in the given status.
      */
-    inline const Aws::String& GetIncludeStatus() const{ return m_includeStatus; }
+    inline const Aws::String& GetIncludeStatus() const { return m_includeStatus; }
     inline bool IncludeStatusHasBeenSet() const { return m_includeStatusHasBeenSet; }
-    inline void SetIncludeStatus(const Aws::String& value) { m_includeStatusHasBeenSet = true; m_includeStatus = value; }
-    inline void SetIncludeStatus(Aws::String&& value) { m_includeStatusHasBeenSet = true; m_includeStatus = std::move(value); }
-    inline void SetIncludeStatus(const char* value) { m_includeStatusHasBeenSet = true; m_includeStatus.assign(value); }
-    inline ListHarvestJobsRequest& WithIncludeStatus(const Aws::String& value) { SetIncludeStatus(value); return *this;}
-    inline ListHarvestJobsRequest& WithIncludeStatus(Aws::String&& value) { SetIncludeStatus(std::move(value)); return *this;}
-    inline ListHarvestJobsRequest& WithIncludeStatus(const char* value) { SetIncludeStatus(value); return *this;}
+    template<typename IncludeStatusT = Aws::String>
+    void SetIncludeStatus(IncludeStatusT&& value) { m_includeStatusHasBeenSet = true; m_includeStatus = std::forward<IncludeStatusT>(value); }
+    template<typename IncludeStatusT = Aws::String>
+    ListHarvestJobsRequest& WithIncludeStatus(IncludeStatusT&& value) { SetIncludeStatus(std::forward<IncludeStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The upper bound on the number of records to return.
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListHarvestJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,14 +77,12 @@ namespace Model
     /**
      * A token used to resume pagination from the end of a previous request.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListHarvestJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHarvestJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHarvestJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHarvestJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +92,7 @@ namespace Model
     Aws::String m_includeStatus;
     bool m_includeStatusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

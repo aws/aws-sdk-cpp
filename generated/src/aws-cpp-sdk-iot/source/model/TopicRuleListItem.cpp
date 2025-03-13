@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TopicRuleListItem::TopicRuleListItem() : 
-    m_ruleArnHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_topicPatternHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_ruleDisabled(false),
-    m_ruleDisabledHasBeenSet(false)
-{
-}
-
 TopicRuleListItem::TopicRuleListItem(JsonView jsonValue)
-  : TopicRuleListItem()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ TopicRuleListItem& TopicRuleListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleArn"))
   {
     m_ruleArn = jsonValue.GetString("ruleArn");
-
     m_ruleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleName"))
   {
     m_ruleName = jsonValue.GetString("ruleName");
-
     m_ruleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topicPattern"))
   {
     m_topicPattern = jsonValue.GetString("topicPattern");
-
     m_topicPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleDisabled"))
   {
     m_ruleDisabled = jsonValue.GetBool("ruleDisabled");
-
     m_ruleDisabledHasBeenSet = true;
   }
-
   return *this;
 }
 

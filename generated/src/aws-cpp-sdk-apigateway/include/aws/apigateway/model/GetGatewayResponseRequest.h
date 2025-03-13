@@ -26,7 +26,7 @@ namespace Model
   class GetGatewayResponseRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetGatewayResponseRequest();
+    AWS_APIGATEWAY_API GetGatewayResponseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,33 +41,29 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetGatewayResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetGatewayResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetGatewayResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetGatewayResponseRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The response type of the associated GatewayResponse.</p>
      */
-    inline const GatewayResponseType& GetResponseType() const{ return m_responseType; }
+    inline GatewayResponseType GetResponseType() const { return m_responseType; }
     inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
-    inline void SetResponseType(const GatewayResponseType& value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
-    inline void SetResponseType(GatewayResponseType&& value) { m_responseTypeHasBeenSet = true; m_responseType = std::move(value); }
-    inline GetGatewayResponseRequest& WithResponseType(const GatewayResponseType& value) { SetResponseType(value); return *this;}
-    inline GetGatewayResponseRequest& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
+    inline void SetResponseType(GatewayResponseType value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
+    inline GetGatewayResponseRequest& WithResponseType(GatewayResponseType value) { SetResponseType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_restApiId;
     bool m_restApiIdHasBeenSet = false;
 
-    GatewayResponseType m_responseType;
+    GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
     bool m_responseTypeHasBeenSet = false;
   };
 

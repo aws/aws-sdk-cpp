@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_dataSourceArnHasBeenSet(false),
-    m_dataSourceDescriptionHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("dataSourceArn");
-
     m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceDescription"))
   {
     m_dataSourceDescription = jsonValue.GetString("dataSourceDescription");
-
     m_dataSourceDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

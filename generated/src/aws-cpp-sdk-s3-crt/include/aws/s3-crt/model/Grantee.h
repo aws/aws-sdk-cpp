@@ -31,7 +31,7 @@ namespace Model
   class Grantee
   {
   public:
-    AWS_S3CRT_API Grantee();
+    AWS_S3CRT_API Grantee() = default;
     AWS_S3CRT_API Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Screen name of the grantee.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Grantee& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Grantee& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Grantee& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Grantee& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,54 +63,46 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference.</p> 
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline Grantee& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline Grantee& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline Grantee& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    Grantee& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The canonical user ID of the grantee.</p>
      */
-    inline const Aws::String& GetID() const{ return m_iD; }
+    inline const Aws::String& GetID() const { return m_iD; }
     inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
-    inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
-    inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
-    inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
-    inline Grantee& WithID(const Aws::String& value) { SetID(value); return *this;}
-    inline Grantee& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
-    inline Grantee& WithID(const char* value) { SetID(value); return *this;}
+    template<typename IDT = Aws::String>
+    void SetID(IDT&& value) { m_iDHasBeenSet = true; m_iD = std::forward<IDT>(value); }
+    template<typename IDT = Aws::String>
+    Grantee& WithID(IDT&& value) { SetID(std::forward<IDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of grantee</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Grantee& WithType(const Type& value) { SetType(value); return *this;}
-    inline Grantee& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Grantee& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>URI of the grantee group.</p>
      */
-    inline const Aws::String& GetURI() const{ return m_uRI; }
+    inline const Aws::String& GetURI() const { return m_uRI; }
     inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
-    inline void SetURI(const Aws::String& value) { m_uRIHasBeenSet = true; m_uRI = value; }
-    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = std::move(value); }
-    inline void SetURI(const char* value) { m_uRIHasBeenSet = true; m_uRI.assign(value); }
-    inline Grantee& WithURI(const Aws::String& value) { SetURI(value); return *this;}
-    inline Grantee& WithURI(Aws::String&& value) { SetURI(std::move(value)); return *this;}
-    inline Grantee& WithURI(const char* value) { SetURI(value); return *this;}
+    template<typename URIT = Aws::String>
+    void SetURI(URIT&& value) { m_uRIHasBeenSet = true; m_uRI = std::forward<URIT>(value); }
+    template<typename URIT = Aws::String>
+    Grantee& WithURI(URIT&& value) { SetURI(std::forward<URIT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,7 +115,7 @@ namespace Model
     Aws::String m_iD;
     bool m_iDHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_uRI;

@@ -18,13 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-DynamoDbSettings::DynamoDbSettings() : 
-    m_serviceAccessRoleArnHasBeenSet(false)
-{
-}
-
 DynamoDbSettings::DynamoDbSettings(JsonView jsonValue)
-  : DynamoDbSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DynamoDbSettings& DynamoDbSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {
     m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
-
     m_serviceAccessRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

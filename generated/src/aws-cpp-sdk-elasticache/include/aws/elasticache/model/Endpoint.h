@@ -32,7 +32,7 @@ namespace Model
   class Endpoint
   {
   public:
-    AWS_ELASTICACHE_API Endpoint();
+    AWS_ELASTICACHE_API Endpoint() = default;
     AWS_ELASTICACHE_API Endpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API Endpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The DNS hostname of the cache node.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    Endpoint& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number that the cache engine is listening on.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_address;
     bool m_addressHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

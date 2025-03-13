@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-NotificationConfig::NotificationConfig() : 
-    m_notificationArnHasBeenSet(false),
-    m_notificationEventsHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false)
-{
-}
-
 NotificationConfig::NotificationConfig(JsonView jsonValue)
-  : NotificationConfig()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ NotificationConfig& NotificationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NotificationArn"))
   {
     m_notificationArn = jsonValue.GetString("NotificationArn");
-
     m_notificationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationEvents"))
   {
     Aws::Utils::Array<JsonView> notificationEventsJsonList = jsonValue.GetArray("NotificationEvents");
@@ -50,14 +39,11 @@ NotificationConfig& NotificationConfig::operator =(JsonView jsonValue)
     }
     m_notificationEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationType"))
   {
     m_notificationType = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("NotificationType"));
-
     m_notificationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

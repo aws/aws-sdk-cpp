@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialGradientStepColor::GeospatialGradientStepColor() : 
-    m_colorHasBeenSet(false),
-    m_dataValue(0.0),
-    m_dataValueHasBeenSet(false)
-{
-}
-
 GeospatialGradientStepColor::GeospatialGradientStepColor(JsonView jsonValue)
-  : GeospatialGradientStepColor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeospatialGradientStepColor& GeospatialGradientStepColor::operator =(JsonView js
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataValue"))
   {
     m_dataValue = jsonValue.GetDouble("DataValue");
-
     m_dataValueHasBeenSet = true;
   }
-
   return *this;
 }
 

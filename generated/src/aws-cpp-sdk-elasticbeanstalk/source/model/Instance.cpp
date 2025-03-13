@@ -20,13 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-Instance::Instance() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Instance::Instance(const XmlNode& xmlNode)
-  : Instance()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
   }
 

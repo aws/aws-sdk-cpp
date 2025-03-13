@@ -12,13 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptInvitationRequest::AcceptInvitationRequest() : 
-    m_administratorAccountIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false),
-    m_masterAccountHasBeenSet(false)
-{
-}
-
 Aws::String AcceptInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-LexV2Bot::LexV2Bot() : 
-    m_aliasArnHasBeenSet(false)
-{
-}
-
 LexV2Bot::LexV2Bot(JsonView jsonValue)
-  : LexV2Bot()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LexV2Bot& LexV2Bot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AliasArn"))
   {
     m_aliasArn = jsonValue.GetString("AliasArn");
-
     m_aliasArnHasBeenSet = true;
   }
-
   return *this;
 }
 

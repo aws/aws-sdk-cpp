@@ -29,7 +29,7 @@ namespace Model
   class DeleteGraphSnapshotResult
   {
   public:
-    AWS_NEPTUNEGRAPH_API DeleteGraphSnapshotResult();
+    AWS_NEPTUNEGRAPH_API DeleteGraphSnapshotResult() = default;
     AWS_NEPTUNEGRAPH_API DeleteGraphSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEGRAPH_API DeleteGraphSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The unique identifier of the graph snapshot.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline DeleteGraphSnapshotResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DeleteGraphSnapshotResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DeleteGraphSnapshotResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,103 +52,99 @@ namespace Model
      * must be a letter. It cannot end with a hyphen or contain two consecutive
      * hyphens. Only lowercase letters are allowed.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteGraphSnapshotResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteGraphSnapshotResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteGraphSnapshotResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the graph snapshot.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DeleteGraphSnapshotResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DeleteGraphSnapshotResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DeleteGraphSnapshotResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The graph identifier for the graph from which the snapshot was created.</p>
      */
-    inline const Aws::String& GetSourceGraphId() const{ return m_sourceGraphId; }
-    inline void SetSourceGraphId(const Aws::String& value) { m_sourceGraphId = value; }
-    inline void SetSourceGraphId(Aws::String&& value) { m_sourceGraphId = std::move(value); }
-    inline void SetSourceGraphId(const char* value) { m_sourceGraphId.assign(value); }
-    inline DeleteGraphSnapshotResult& WithSourceGraphId(const Aws::String& value) { SetSourceGraphId(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithSourceGraphId(Aws::String&& value) { SetSourceGraphId(std::move(value)); return *this;}
-    inline DeleteGraphSnapshotResult& WithSourceGraphId(const char* value) { SetSourceGraphId(value); return *this;}
+    inline const Aws::String& GetSourceGraphId() const { return m_sourceGraphId; }
+    template<typename SourceGraphIdT = Aws::String>
+    void SetSourceGraphId(SourceGraphIdT&& value) { m_sourceGraphIdHasBeenSet = true; m_sourceGraphId = std::forward<SourceGraphIdT>(value); }
+    template<typename SourceGraphIdT = Aws::String>
+    DeleteGraphSnapshotResult& WithSourceGraphId(SourceGraphIdT&& value) { SetSourceGraphId(std::forward<SourceGraphIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the snapshot was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const{ return m_snapshotCreateTime; }
-    inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTime = value; }
-    inline void SetSnapshotCreateTime(Aws::Utils::DateTime&& value) { m_snapshotCreateTime = std::move(value); }
-    inline DeleteGraphSnapshotResult& WithSnapshotCreateTime(const Aws::Utils::DateTime& value) { SetSnapshotCreateTime(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithSnapshotCreateTime(Aws::Utils::DateTime&& value) { SetSnapshotCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetSnapshotCreateTime() const { return m_snapshotCreateTime; }
+    template<typename SnapshotCreateTimeT = Aws::Utils::DateTime>
+    void SetSnapshotCreateTime(SnapshotCreateTimeT&& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = std::forward<SnapshotCreateTimeT>(value); }
+    template<typename SnapshotCreateTimeT = Aws::Utils::DateTime>
+    DeleteGraphSnapshotResult& WithSnapshotCreateTime(SnapshotCreateTimeT&& value) { SetSnapshotCreateTime(std::forward<SnapshotCreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the graph snapshot.</p>
      */
-    inline const SnapshotStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SnapshotStatus& value) { m_status = value; }
-    inline void SetStatus(SnapshotStatus&& value) { m_status = std::move(value); }
-    inline DeleteGraphSnapshotResult& WithStatus(const SnapshotStatus& value) { SetStatus(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithStatus(SnapshotStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SnapshotStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SnapshotStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteGraphSnapshotResult& WithStatus(SnapshotStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the KMS key used to encrypt and decrypt the snapshot.</p>
      */
-    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
-    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
-    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
-    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
-    inline DeleteGraphSnapshotResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
-    inline DeleteGraphSnapshotResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+    inline const Aws::String& GetKmsKeyIdentifier() const { return m_kmsKeyIdentifier; }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    void SetKmsKeyIdentifier(KmsKeyIdentifierT&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::forward<KmsKeyIdentifierT>(value); }
+    template<typename KmsKeyIdentifierT = Aws::String>
+    DeleteGraphSnapshotResult& WithKmsKeyIdentifier(KmsKeyIdentifierT&& value) { SetKmsKeyIdentifier(std::forward<KmsKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteGraphSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteGraphSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteGraphSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteGraphSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_sourceGraphId;
+    bool m_sourceGraphIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_snapshotCreateTime;
+    Aws::Utils::DateTime m_snapshotCreateTime{};
+    bool m_snapshotCreateTimeHasBeenSet = false;
 
-    SnapshotStatus m_status;
+    SnapshotStatus m_status{SnapshotStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

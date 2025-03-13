@@ -18,17 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-Destination::Destination() : 
-    m_configDetailsHasBeenSet(false),
-    m_configIdHasBeenSet(false),
-    m_configType(ConfigCapabilityType::NOT_SET),
-    m_configTypeHasBeenSet(false),
-    m_dataflowDestinationRegionHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configDetails"))
   {
     m_configDetails = jsonValue.GetObject("configDetails");
-
     m_configDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configId"))
   {
     m_configId = jsonValue.GetString("configId");
-
     m_configIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configType"))
   {
     m_configType = ConfigCapabilityTypeMapper::GetConfigCapabilityTypeForName(jsonValue.GetString("configType"));
-
     m_configTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataflowDestinationRegion"))
   {
     m_dataflowDestinationRegion = jsonValue.GetString("dataflowDestinationRegion");
-
     m_dataflowDestinationRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

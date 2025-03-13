@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-AccountTakeoverActionType::AccountTakeoverActionType() : 
-    m_notify(false),
-    m_notifyHasBeenSet(false),
-    m_eventAction(AccountTakeoverEventActionType::NOT_SET),
-    m_eventActionHasBeenSet(false)
-{
-}
-
 AccountTakeoverActionType::AccountTakeoverActionType(JsonView jsonValue)
-  : AccountTakeoverActionType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AccountTakeoverActionType& AccountTakeoverActionType::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Notify"))
   {
     m_notify = jsonValue.GetBool("Notify");
-
     m_notifyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventAction"))
   {
     m_eventAction = AccountTakeoverEventActionTypeMapper::GetAccountTakeoverEventActionTypeForName(jsonValue.GetString("EventAction"));
-
     m_eventActionHasBeenSet = true;
   }
-
   return *this;
 }
 

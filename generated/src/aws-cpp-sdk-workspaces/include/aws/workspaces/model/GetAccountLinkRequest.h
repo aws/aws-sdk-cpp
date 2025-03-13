@@ -21,7 +21,7 @@ namespace Model
   class GetAccountLinkRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API GetAccountLinkRequest();
+    AWS_WORKSPACES_API GetAccountLinkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The identifier of the account to link.</p>
      */
-    inline const Aws::String& GetLinkId() const{ return m_linkId; }
+    inline const Aws::String& GetLinkId() const { return m_linkId; }
     inline bool LinkIdHasBeenSet() const { return m_linkIdHasBeenSet; }
-    inline void SetLinkId(const Aws::String& value) { m_linkIdHasBeenSet = true; m_linkId = value; }
-    inline void SetLinkId(Aws::String&& value) { m_linkIdHasBeenSet = true; m_linkId = std::move(value); }
-    inline void SetLinkId(const char* value) { m_linkIdHasBeenSet = true; m_linkId.assign(value); }
-    inline GetAccountLinkRequest& WithLinkId(const Aws::String& value) { SetLinkId(value); return *this;}
-    inline GetAccountLinkRequest& WithLinkId(Aws::String&& value) { SetLinkId(std::move(value)); return *this;}
-    inline GetAccountLinkRequest& WithLinkId(const char* value) { SetLinkId(value); return *this;}
+    template<typename LinkIdT = Aws::String>
+    void SetLinkId(LinkIdT&& value) { m_linkIdHasBeenSet = true; m_linkId = std::forward<LinkIdT>(value); }
+    template<typename LinkIdT = Aws::String>
+    GetAccountLinkRequest& WithLinkId(LinkIdT&& value) { SetLinkId(std::forward<LinkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the account link</p>
      */
-    inline const Aws::String& GetLinkedAccountId() const{ return m_linkedAccountId; }
+    inline const Aws::String& GetLinkedAccountId() const { return m_linkedAccountId; }
     inline bool LinkedAccountIdHasBeenSet() const { return m_linkedAccountIdHasBeenSet; }
-    inline void SetLinkedAccountId(const Aws::String& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = value; }
-    inline void SetLinkedAccountId(Aws::String&& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = std::move(value); }
-    inline void SetLinkedAccountId(const char* value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId.assign(value); }
-    inline GetAccountLinkRequest& WithLinkedAccountId(const Aws::String& value) { SetLinkedAccountId(value); return *this;}
-    inline GetAccountLinkRequest& WithLinkedAccountId(Aws::String&& value) { SetLinkedAccountId(std::move(value)); return *this;}
-    inline GetAccountLinkRequest& WithLinkedAccountId(const char* value) { SetLinkedAccountId(value); return *this;}
+    template<typename LinkedAccountIdT = Aws::String>
+    void SetLinkedAccountId(LinkedAccountIdT&& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = std::forward<LinkedAccountIdT>(value); }
+    template<typename LinkedAccountIdT = Aws::String>
+    GetAccountLinkRequest& WithLinkedAccountId(LinkedAccountIdT&& value) { SetLinkedAccountId(std::forward<LinkedAccountIdT>(value)); return *this;}
     ///@}
   private:
 

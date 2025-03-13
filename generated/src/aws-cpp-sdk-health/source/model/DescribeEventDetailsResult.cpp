@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventDetailsResult::DescribeEventDetailsResult()
-{
-}
-
 DescribeEventDetailsResult::DescribeEventDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::Am
     {
       m_successfulSet.push_back(successfulSetJsonList[successfulSetIndex].AsObject());
     }
+    m_successfulSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedSet"))
   {
     Aws::Utils::Array<JsonView> failedSetJsonList = jsonValue.GetArray("failedSet");
@@ -45,14 +41,15 @@ DescribeEventDetailsResult& DescribeEventDetailsResult::operator =(const Aws::Am
     {
       m_failedSet.push_back(failedSetJsonList[failedSetIndex].AsObject());
     }
+    m_failedSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

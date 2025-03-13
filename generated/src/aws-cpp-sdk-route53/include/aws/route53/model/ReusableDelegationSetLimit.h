@@ -31,7 +31,7 @@ namespace Model
   class ReusableDelegationSetLimit
   {
   public:
-    AWS_ROUTE53_API ReusableDelegationSetLimit();
+    AWS_ROUTE53_API ReusableDelegationSetLimit() = default;
     AWS_ROUTE53_API ReusableDelegationSetLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API ReusableDelegationSetLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,10 @@ namespace Model
      * <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted
      * zones that you can associate with the specified reusable delegation set.</p>
      */
-    inline const ReusableDelegationSetLimitType& GetType() const{ return m_type; }
+    inline ReusableDelegationSetLimitType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ReusableDelegationSetLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ReusableDelegationSetLimitType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ReusableDelegationSetLimit& WithType(const ReusableDelegationSetLimitType& value) { SetType(value); return *this;}
-    inline ReusableDelegationSetLimit& WithType(ReusableDelegationSetLimitType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ReusableDelegationSetLimitType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ReusableDelegationSetLimit& WithType(ReusableDelegationSetLimitType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,17 +55,17 @@ namespace Model
      * <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>
      * limit.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline ReusableDelegationSetLimit& WithValue(long long value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    ReusableDelegationSetLimitType m_type;
+    ReusableDelegationSetLimitType m_type{ReusableDelegationSetLimitType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

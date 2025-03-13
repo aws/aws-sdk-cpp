@@ -37,7 +37,7 @@ namespace Model
   class Relationship
   {
   public:
-    AWS_TEXTRACT_API Relationship();
+    AWS_TEXTRACT_API Relationship() = default;
     AWS_TEXTRACT_API Relationship(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,12 +60,10 @@ namespace Model
      * </li> <li> <p> <i>TABLE_FOOTER</i> - A list of IDs that identify the
      * TABLE_FOOTER block types in a table. </p> </li> </ul>
      */
-    inline const RelationshipType& GetType() const{ return m_type; }
+    inline RelationshipType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Relationship& WithType(const RelationshipType& value) { SetType(value); return *this;}
-    inline Relationship& WithType(RelationshipType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RelationshipType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Relationship& WithType(RelationshipType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,19 +71,18 @@ namespace Model
      * <p>An array of IDs for related blocks. You can get the type of the relationship
      * from the <code>Type</code> element.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
+    inline const Aws::Vector<Aws::String>& GetIds() const { return m_ids; }
     inline bool IdsHasBeenSet() const { return m_idsHasBeenSet; }
-    inline void SetIds(const Aws::Vector<Aws::String>& value) { m_idsHasBeenSet = true; m_ids = value; }
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_idsHasBeenSet = true; m_ids = std::move(value); }
-    inline Relationship& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-    inline Relationship& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-    inline Relationship& AddIds(const Aws::String& value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
-    inline Relationship& AddIds(Aws::String&& value) { m_idsHasBeenSet = true; m_ids.push_back(std::move(value)); return *this; }
-    inline Relationship& AddIds(const char* value) { m_idsHasBeenSet = true; m_ids.push_back(value); return *this; }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    void SetIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids = std::forward<IdsT>(value); }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    Relationship& WithIds(IdsT&& value) { SetIds(std::forward<IdsT>(value)); return *this;}
+    template<typename IdsT = Aws::String>
+    Relationship& AddIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids.emplace_back(std::forward<IdsT>(value)); return *this; }
     ///@}
   private:
 
-    RelationshipType m_type;
+    RelationshipType m_type{RelationshipType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ids;

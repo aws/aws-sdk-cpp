@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-DataPartitionStorageOptions::DataPartitionStorageOptions() : 
-    m_maximumSizeHasBeenSet(false),
-    m_storageLocationHasBeenSet(false),
-    m_minimumTimeToLiveHasBeenSet(false)
-{
-}
-
 DataPartitionStorageOptions::DataPartitionStorageOptions(JsonView jsonValue)
-  : DataPartitionStorageOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataPartitionStorageOptions& DataPartitionStorageOptions::operator =(JsonView js
   if(jsonValue.ValueExists("maximumSize"))
   {
     m_maximumSize = jsonValue.GetObject("maximumSize");
-
     m_maximumSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageLocation"))
   {
     m_storageLocation = jsonValue.GetString("storageLocation");
-
     m_storageLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumTimeToLive"))
   {
     m_minimumTimeToLive = jsonValue.GetObject("minimumTimeToLive");
-
     m_minimumTimeToLiveHasBeenSet = true;
   }
-
   return *this;
 }
 

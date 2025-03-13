@@ -18,23 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceLevelObjective::ServiceLevelObjective() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_sliHasBeenSet(false),
-    m_requestBasedSliHasBeenSet(false),
-    m_evaluationType(EvaluationType::NOT_SET),
-    m_evaluationTypeHasBeenSet(false),
-    m_goalHasBeenSet(false),
-    m_burnRateConfigurationsHasBeenSet(false)
-{
-}
-
 ServiceLevelObjective::ServiceLevelObjective(JsonView jsonValue)
-  : ServiceLevelObjective()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ServiceLevelObjective& ServiceLevelObjective::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sli"))
   {
     m_sli = jsonValue.GetObject("Sli");
-
     m_sliHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestBasedSli"))
   {
     m_requestBasedSli = jsonValue.GetObject("RequestBasedSli");
-
     m_requestBasedSliHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationType"))
   {
     m_evaluationType = EvaluationTypeMapper::GetEvaluationTypeForName(jsonValue.GetString("EvaluationType"));
-
     m_evaluationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Goal"))
   {
     m_goal = jsonValue.GetObject("Goal");
-
     m_goalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BurnRateConfigurations"))
   {
     Aws::Utils::Array<JsonView> burnRateConfigurationsJsonList = jsonValue.GetArray("BurnRateConfigurations");
@@ -113,7 +79,6 @@ ServiceLevelObjective& ServiceLevelObjective::operator =(JsonView jsonValue)
     }
     m_burnRateConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

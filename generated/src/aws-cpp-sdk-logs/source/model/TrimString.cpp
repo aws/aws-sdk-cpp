@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-TrimString::TrimString() : 
-    m_withKeysHasBeenSet(false)
-{
-}
-
 TrimString::TrimString(JsonView jsonValue)
-  : TrimString()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TrimString& TrimString::operator =(JsonView jsonValue)
     }
     m_withKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

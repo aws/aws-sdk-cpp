@@ -31,7 +31,7 @@ namespace Model
   class ResourceState
   {
   public:
-    AWS_IMAGEBUILDER_API ResourceState();
+    AWS_IMAGEBUILDER_API ResourceState() = default;
     AWS_IMAGEBUILDER_API ResourceState(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API ResourceState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * <p>Shows the current lifecycle policy action that was applied to an impacted
      * resource.</p>
      */
-    inline const ResourceStatus& GetStatus() const{ return m_status; }
+    inline ResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ResourceState& WithStatus(const ResourceStatus& value) { SetStatus(value); return *this;}
-    inline ResourceState& WithStatus(ResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ResourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResourceState& WithStatus(ResourceStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ResourceStatus m_status;
+    ResourceStatus m_status{ResourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

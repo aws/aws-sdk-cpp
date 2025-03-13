@@ -21,7 +21,7 @@ namespace Model
   class GetQueryRuntimeStatisticsRequest : public AthenaRequest
   {
   public:
-    AWS_ATHENA_API GetQueryRuntimeStatisticsRequest();
+    AWS_ATHENA_API GetQueryRuntimeStatisticsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique ID of the query execution.</p>
      */
-    inline const Aws::String& GetQueryExecutionId() const{ return m_queryExecutionId; }
+    inline const Aws::String& GetQueryExecutionId() const { return m_queryExecutionId; }
     inline bool QueryExecutionIdHasBeenSet() const { return m_queryExecutionIdHasBeenSet; }
-    inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = value; }
-    inline void SetQueryExecutionId(Aws::String&& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = std::move(value); }
-    inline void SetQueryExecutionId(const char* value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId.assign(value); }
-    inline GetQueryRuntimeStatisticsRequest& WithQueryExecutionId(const Aws::String& value) { SetQueryExecutionId(value); return *this;}
-    inline GetQueryRuntimeStatisticsRequest& WithQueryExecutionId(Aws::String&& value) { SetQueryExecutionId(std::move(value)); return *this;}
-    inline GetQueryRuntimeStatisticsRequest& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+    template<typename QueryExecutionIdT = Aws::String>
+    void SetQueryExecutionId(QueryExecutionIdT&& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = std::forward<QueryExecutionIdT>(value); }
+    template<typename QueryExecutionIdT = Aws::String>
+    GetQueryRuntimeStatisticsRequest& WithQueryExecutionId(QueryExecutionIdT&& value) { SetQueryExecutionId(std::forward<QueryExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

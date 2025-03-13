@@ -33,7 +33,7 @@ namespace Model
   class ParentHyperParameterTuningJob
   {
   public:
-    AWS_SAGEMAKER_API ParentHyperParameterTuningJob();
+    AWS_SAGEMAKER_API ParentHyperParameterTuningJob() = default;
     AWS_SAGEMAKER_API ParentHyperParameterTuningJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ParentHyperParameterTuningJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the hyperparameter tuning job to be used as a starting point for
      * a new hyperparameter tuning job.</p>
      */
-    inline const Aws::String& GetHyperParameterTuningJobName() const{ return m_hyperParameterTuningJobName; }
+    inline const Aws::String& GetHyperParameterTuningJobName() const { return m_hyperParameterTuningJobName; }
     inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
-    inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
-    inline void SetHyperParameterTuningJobName(Aws::String&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::move(value); }
-    inline void SetHyperParameterTuningJobName(const char* value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName.assign(value); }
-    inline ParentHyperParameterTuningJob& WithHyperParameterTuningJobName(const Aws::String& value) { SetHyperParameterTuningJobName(value); return *this;}
-    inline ParentHyperParameterTuningJob& WithHyperParameterTuningJobName(Aws::String&& value) { SetHyperParameterTuningJobName(std::move(value)); return *this;}
-    inline ParentHyperParameterTuningJob& WithHyperParameterTuningJobName(const char* value) { SetHyperParameterTuningJobName(value); return *this;}
+    template<typename HyperParameterTuningJobNameT = Aws::String>
+    void SetHyperParameterTuningJobName(HyperParameterTuningJobNameT&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::forward<HyperParameterTuningJobNameT>(value); }
+    template<typename HyperParameterTuningJobNameT = Aws::String>
+    ParentHyperParameterTuningJob& WithHyperParameterTuningJobName(HyperParameterTuningJobNameT&& value) { SetHyperParameterTuningJobName(std::forward<HyperParameterTuningJobNameT>(value)); return *this;}
     ///@}
   private:
 

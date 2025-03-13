@@ -12,11 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatabaseRequest::DeleteDatabaseRequest() : 
-    m_databaseNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

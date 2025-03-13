@@ -18,16 +18,7 @@ namespace Shield
 namespace Model
 {
 
-InvalidParameterException::InvalidParameterException() : 
-    m_messageHasBeenSet(false),
-    m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 InvalidParameterException::InvalidParameterException(JsonView jsonValue)
-  : InvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InvalidParameterException& InvalidParameterException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
@@ -57,7 +44,6 @@ InvalidParameterException& InvalidParameterException::operator =(JsonView jsonVa
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

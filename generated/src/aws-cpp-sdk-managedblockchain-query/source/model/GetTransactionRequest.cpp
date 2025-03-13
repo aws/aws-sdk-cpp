@@ -12,14 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTransactionRequest::GetTransactionRequest() : 
-    m_transactionHashHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_network(QueryNetwork::NOT_SET),
-    m_networkHasBeenSet(false)
-{
-}
-
 Aws::String GetTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

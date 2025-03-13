@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AuthenticationProfile::AuthenticationProfile() : 
-    m_authenticationProfileNameHasBeenSet(false),
-    m_authenticationProfileContentHasBeenSet(false)
-{
-}
-
 AuthenticationProfile::AuthenticationProfile(const XmlNode& xmlNode)
-  : AuthenticationProfile()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AuthenticationProfile& AuthenticationProfile::operator =(const XmlNode& xmlNode)
     {
       m_authenticationProfileName = Aws::Utils::Xml::DecodeEscapedXmlText(authenticationProfileNameNode.GetText());
       m_authenticationProfileNameHasBeenSet = true;
+       m_authenticationProfileNameHasBeenSet = true;
     }
     XmlNode authenticationProfileContentNode = resultNode.FirstChild("AuthenticationProfileContent");
     if(!authenticationProfileContentNode.IsNull())
     {
       m_authenticationProfileContent = Aws::Utils::Xml::DecodeEscapedXmlText(authenticationProfileContentNode.GetText());
       m_authenticationProfileContentHasBeenSet = true;
+       m_authenticationProfileContentHasBeenSet = true;
     }
   }
 

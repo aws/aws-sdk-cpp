@@ -12,14 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetViolationDetailsRequest::GetViolationDetailsRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_memberAccountHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetViolationDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

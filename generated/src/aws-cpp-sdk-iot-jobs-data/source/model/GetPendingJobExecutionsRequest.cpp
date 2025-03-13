@@ -12,11 +12,6 @@ using namespace Aws::IoTJobsDataPlane::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPendingJobExecutionsRequest::GetPendingJobExecutionsRequest() : 
-    m_thingNameHasBeenSet(false)
-{
-}
-
 Aws::String GetPendingJobExecutionsRequest::SerializePayload() const
 {
   return {};

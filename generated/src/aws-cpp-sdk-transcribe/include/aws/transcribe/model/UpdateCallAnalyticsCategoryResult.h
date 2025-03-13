@@ -28,7 +28,7 @@ namespace Model
   class UpdateCallAnalyticsCategoryResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API UpdateCallAnalyticsCategoryResult();
+    AWS_TRANSCRIBESERVICE_API UpdateCallAnalyticsCategoryResult() = default;
     AWS_TRANSCRIBESERVICE_API UpdateCallAnalyticsCategoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API UpdateCallAnalyticsCategoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Provides you with the properties of the Call Analytics category you specified
      * in your <code>UpdateCallAnalyticsCategory</code> request.</p>
      */
-    inline const CategoryProperties& GetCategoryProperties() const{ return m_categoryProperties; }
-    inline void SetCategoryProperties(const CategoryProperties& value) { m_categoryProperties = value; }
-    inline void SetCategoryProperties(CategoryProperties&& value) { m_categoryProperties = std::move(value); }
-    inline UpdateCallAnalyticsCategoryResult& WithCategoryProperties(const CategoryProperties& value) { SetCategoryProperties(value); return *this;}
-    inline UpdateCallAnalyticsCategoryResult& WithCategoryProperties(CategoryProperties&& value) { SetCategoryProperties(std::move(value)); return *this;}
+    inline const CategoryProperties& GetCategoryProperties() const { return m_categoryProperties; }
+    template<typename CategoryPropertiesT = CategoryProperties>
+    void SetCategoryProperties(CategoryPropertiesT&& value) { m_categoryPropertiesHasBeenSet = true; m_categoryProperties = std::forward<CategoryPropertiesT>(value); }
+    template<typename CategoryPropertiesT = CategoryProperties>
+    UpdateCallAnalyticsCategoryResult& WithCategoryProperties(CategoryPropertiesT&& value) { SetCategoryProperties(std::forward<CategoryPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCallAnalyticsCategoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCallAnalyticsCategoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCallAnalyticsCategoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCallAnalyticsCategoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CategoryProperties m_categoryProperties;
+    bool m_categoryPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

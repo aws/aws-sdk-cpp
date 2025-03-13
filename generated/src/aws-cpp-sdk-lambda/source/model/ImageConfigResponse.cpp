@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-ImageConfigResponse::ImageConfigResponse() : 
-    m_imageConfigHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 ImageConfigResponse::ImageConfigResponse(JsonView jsonValue)
-  : ImageConfigResponse()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageConfigResponse& ImageConfigResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImageConfig"))
   {
     m_imageConfig = jsonValue.GetObject("ImageConfig");
-
     m_imageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

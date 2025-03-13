@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AddPrefixListEntry::AddPrefixListEntry() : 
-    m_cidrHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 AddPrefixListEntry::AddPrefixListEntry(const XmlNode& xmlNode)
-  : AddPrefixListEntry()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AddPrefixListEntry& AddPrefixListEntry::operator =(const XmlNode& xmlNode)
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
   }
 

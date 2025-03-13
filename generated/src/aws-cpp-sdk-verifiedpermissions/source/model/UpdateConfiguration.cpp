@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-UpdateConfiguration::UpdateConfiguration() : 
-    m_cognitoUserPoolConfigurationHasBeenSet(false),
-    m_openIdConnectConfigurationHasBeenSet(false)
-{
-}
-
 UpdateConfiguration::UpdateConfiguration(JsonView jsonValue)
-  : UpdateConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateConfiguration& UpdateConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cognitoUserPoolConfiguration"))
   {
     m_cognitoUserPoolConfiguration = jsonValue.GetObject("cognitoUserPoolConfiguration");
-
     m_cognitoUserPoolConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("openIdConnectConfiguration"))
   {
     m_openIdConnectConfiguration = jsonValue.GetObject("openIdConnectConfiguration");
-
     m_openIdConnectConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

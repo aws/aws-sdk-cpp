@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVerifiedAccessGroupPolicyRequest::ModifyVerifiedAccessGroupPolicyRequest() : 
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_policyEnabled(false),
-    m_policyEnabledHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVerifiedAccessGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

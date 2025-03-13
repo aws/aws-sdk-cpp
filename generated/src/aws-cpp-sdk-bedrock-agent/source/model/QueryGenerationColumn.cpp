@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-QueryGenerationColumn::QueryGenerationColumn() : 
-    m_descriptionHasBeenSet(false),
-    m_inclusion(IncludeExclude::NOT_SET),
-    m_inclusionHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 QueryGenerationColumn::QueryGenerationColumn(JsonView jsonValue)
-  : QueryGenerationColumn()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ QueryGenerationColumn& QueryGenerationColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inclusion"))
   {
     m_inclusion = IncludeExcludeMapper::GetIncludeExcludeForName(jsonValue.GetString("inclusion"));
-
     m_inclusionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

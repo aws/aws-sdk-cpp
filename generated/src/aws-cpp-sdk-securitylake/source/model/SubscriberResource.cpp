@@ -18,28 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-SubscriberResource::SubscriberResource() : 
-    m_accessTypesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_resourceShareArnHasBeenSet(false),
-    m_resourceShareNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_s3BucketArnHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_subscriberArnHasBeenSet(false),
-    m_subscriberDescriptionHasBeenSet(false),
-    m_subscriberEndpointHasBeenSet(false),
-    m_subscriberIdHasBeenSet(false),
-    m_subscriberIdentityHasBeenSet(false),
-    m_subscriberNameHasBeenSet(false),
-    m_subscriberStatus(SubscriberStatus::NOT_SET),
-    m_subscriberStatusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 SubscriberResource::SubscriberResource(JsonView jsonValue)
-  : SubscriberResource()
 {
   *this = jsonValue;
 }
@@ -55,42 +34,31 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     }
     m_accessTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceShareArn"))
   {
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
-
     m_resourceShareArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceShareName"))
   {
     m_resourceShareName = jsonValue.GetString("resourceShareName");
-
     m_resourceShareNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketArn"))
   {
     m_s3BucketArn = jsonValue.GetString("s3BucketArn");
-
     m_s3BucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -100,63 +68,46 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberArn"))
   {
     m_subscriberArn = jsonValue.GetString("subscriberArn");
-
     m_subscriberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberDescription"))
   {
     m_subscriberDescription = jsonValue.GetString("subscriberDescription");
-
     m_subscriberDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberEndpoint"))
   {
     m_subscriberEndpoint = jsonValue.GetString("subscriberEndpoint");
-
     m_subscriberEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberId"))
   {
     m_subscriberId = jsonValue.GetString("subscriberId");
-
     m_subscriberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberIdentity"))
   {
     m_subscriberIdentity = jsonValue.GetObject("subscriberIdentity");
-
     m_subscriberIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberName"))
   {
     m_subscriberName = jsonValue.GetString("subscriberName");
-
     m_subscriberNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriberStatus"))
   {
     m_subscriberStatus = SubscriberStatusMapper::GetSubscriberStatusForName(jsonValue.GetString("subscriberStatus"));
-
     m_subscriberStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration() : 
-    m_bucketConfigurationHasBeenSet(false)
-{
-}
-
 SnapshotS3DestinationConfiguration::SnapshotS3DestinationConfiguration(JsonView jsonValue)
-  : SnapshotS3DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnapshotS3DestinationConfiguration& SnapshotS3DestinationConfiguration::operator
   if(jsonValue.ValueExists("BucketConfiguration"))
   {
     m_bucketConfiguration = jsonValue.GetObject("BucketConfiguration");
-
     m_bucketConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

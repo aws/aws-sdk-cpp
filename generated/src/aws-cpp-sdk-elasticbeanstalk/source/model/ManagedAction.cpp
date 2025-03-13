@@ -20,19 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-ManagedAction::ManagedAction() : 
-    m_actionIdHasBeenSet(false),
-    m_actionDescriptionHasBeenSet(false),
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_status(ActionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_windowStartTimeHasBeenSet(false)
-{
-}
-
 ManagedAction::ManagedAction(const XmlNode& xmlNode)
-  : ManagedAction()
 {
   *this = xmlNode;
 }
@@ -48,30 +36,35 @@ ManagedAction& ManagedAction::operator =(const XmlNode& xmlNode)
     {
       m_actionId = Aws::Utils::Xml::DecodeEscapedXmlText(actionIdNode.GetText());
       m_actionIdHasBeenSet = true;
+       m_actionIdHasBeenSet = true;
     }
     XmlNode actionDescriptionNode = resultNode.FirstChild("ActionDescription");
     if(!actionDescriptionNode.IsNull())
     {
       m_actionDescription = Aws::Utils::Xml::DecodeEscapedXmlText(actionDescriptionNode.GetText());
       m_actionDescriptionHasBeenSet = true;
+       m_actionDescriptionHasBeenSet = true;
     }
     XmlNode actionTypeNode = resultNode.FirstChild("ActionType");
     if(!actionTypeNode.IsNull())
     {
-      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()).c_str());
+      m_actionType = ActionTypeMapper::GetActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionTypeNode.GetText()).c_str()));
       m_actionTypeHasBeenSet = true;
+       m_actionTypeHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ActionStatusMapper::GetActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ActionStatusMapper::GetActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode windowStartTimeNode = resultNode.FirstChild("WindowStartTime");
     if(!windowStartTimeNode.IsNull())
     {
       m_windowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(windowStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_windowStartTimeHasBeenSet = true;
+       m_windowStartTimeHasBeenSet = true;
     }
   }
 

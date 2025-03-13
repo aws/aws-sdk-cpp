@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetMonitoringSubscription2020_05_31Request::GetMonitoringSubscription2020_05_31Request() : 
-    m_distributionIdHasBeenSet(false)
-{
-}
 
 Aws::String GetMonitoringSubscription2020_05_31Request::SerializePayload() const
 {

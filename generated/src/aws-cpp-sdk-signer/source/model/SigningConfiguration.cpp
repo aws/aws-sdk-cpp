@@ -18,14 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningConfiguration::SigningConfiguration() : 
-    m_encryptionAlgorithmOptionsHasBeenSet(false),
-    m_hashAlgorithmOptionsHasBeenSet(false)
-{
-}
-
 SigningConfiguration::SigningConfiguration(JsonView jsonValue)
-  : SigningConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SigningConfiguration& SigningConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryptionAlgorithmOptions"))
   {
     m_encryptionAlgorithmOptions = jsonValue.GetObject("encryptionAlgorithmOptions");
-
     m_encryptionAlgorithmOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hashAlgorithmOptions"))
   {
     m_hashAlgorithmOptions = jsonValue.GetObject("hashAlgorithmOptions");
-
     m_hashAlgorithmOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RDSDatabaseProjectedMetric::RDSDatabaseProjectedMetric() : 
-    m_name(RDSDBMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 RDSDatabaseProjectedMetric::RDSDatabaseProjectedMetric(JsonView jsonValue)
-  : RDSDatabaseProjectedMetric()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ RDSDatabaseProjectedMetric& RDSDatabaseProjectedMetric::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = RDSDBMetricNameMapper::GetRDSDBMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamps"))
   {
     Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("timestamps");
@@ -50,7 +39,6 @@ RDSDatabaseProjectedMetric& RDSDatabaseProjectedMetric::operator =(JsonView json
     }
     m_timestampsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -60,7 +48,6 @@ RDSDatabaseProjectedMetric& RDSDatabaseProjectedMetric::operator =(JsonView json
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

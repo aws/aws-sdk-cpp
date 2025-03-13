@@ -18,13 +18,7 @@ namespace IVS
 namespace Model
 {
 
-ThrottlingException::ThrottlingException() : 
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 ThrottlingException::ThrottlingException(JsonView jsonValue)
-  : ThrottlingException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ThrottlingException& ThrottlingException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

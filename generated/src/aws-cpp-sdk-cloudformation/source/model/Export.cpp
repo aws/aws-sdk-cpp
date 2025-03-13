@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Export::Export() : 
-    m_exportingStackIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Export::Export(const XmlNode& xmlNode)
-  : Export()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ Export& Export::operator =(const XmlNode& xmlNode)
     {
       m_exportingStackId = Aws::Utils::Xml::DecodeEscapedXmlText(exportingStackIdNode.GetText());
       m_exportingStackIdHasBeenSet = true;
+       m_exportingStackIdHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");
     if(!valueNode.IsNull())
     {
       m_value = Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText());
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

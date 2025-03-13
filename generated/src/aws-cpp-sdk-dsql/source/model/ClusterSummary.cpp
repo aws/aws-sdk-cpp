@@ -18,14 +18,7 @@ namespace DSQL
 namespace Model
 {
 
-ClusterSummary::ClusterSummary() : 
-    m_identifierHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 ClusterSummary::ClusterSummary(JsonView jsonValue)
-  : ClusterSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

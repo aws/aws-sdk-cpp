@@ -22,7 +22,7 @@ namespace Model
   class DescribeTrustStoresRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API DescribeTrustStoresRequest();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeTrustStoresRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTrustStoreArns() const{ return m_trustStoreArns; }
+    inline const Aws::Vector<Aws::String>& GetTrustStoreArns() const { return m_trustStoreArns; }
     inline bool TrustStoreArnsHasBeenSet() const { return m_trustStoreArnsHasBeenSet; }
-    inline void SetTrustStoreArns(const Aws::Vector<Aws::String>& value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns = value; }
-    inline void SetTrustStoreArns(Aws::Vector<Aws::String>&& value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns = std::move(value); }
-    inline DescribeTrustStoresRequest& WithTrustStoreArns(const Aws::Vector<Aws::String>& value) { SetTrustStoreArns(value); return *this;}
-    inline DescribeTrustStoresRequest& WithTrustStoreArns(Aws::Vector<Aws::String>&& value) { SetTrustStoreArns(std::move(value)); return *this;}
-    inline DescribeTrustStoresRequest& AddTrustStoreArns(const Aws::String& value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns.push_back(value); return *this; }
-    inline DescribeTrustStoresRequest& AddTrustStoreArns(Aws::String&& value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns.push_back(std::move(value)); return *this; }
-    inline DescribeTrustStoresRequest& AddTrustStoreArns(const char* value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns.push_back(value); return *this; }
+    template<typename TrustStoreArnsT = Aws::Vector<Aws::String>>
+    void SetTrustStoreArns(TrustStoreArnsT&& value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns = std::forward<TrustStoreArnsT>(value); }
+    template<typename TrustStoreArnsT = Aws::Vector<Aws::String>>
+    DescribeTrustStoresRequest& WithTrustStoreArns(TrustStoreArnsT&& value) { SetTrustStoreArns(std::forward<TrustStoreArnsT>(value)); return *this;}
+    template<typename TrustStoreArnsT = Aws::String>
+    DescribeTrustStoresRequest& AddTrustStoreArns(TrustStoreArnsT&& value) { m_trustStoreArnsHasBeenSet = true; m_trustStoreArns.emplace_back(std::forward<TrustStoreArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The names of the trust stores.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline DescribeTrustStoresRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-    inline DescribeTrustStoresRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-    inline DescribeTrustStoresRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline DescribeTrustStoresRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-    inline DescribeTrustStoresRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<Aws::String>>
+    DescribeTrustStoresRequest& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = Aws::String>
+    DescribeTrustStoresRequest& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -72,21 +70,19 @@ namespace Model
      * <p>The marker for the next set of results. (You received this marker from a
      * previous call.)</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeTrustStoresRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeTrustStoresRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeTrustStoresRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeTrustStoresRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return with this call.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline DescribeTrustStoresRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -102,7 +98,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
   };
 

@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafRateBasedRuleDetails::AwsWafRateBasedRuleDetails() : 
-    m_metricNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rateKeyHasBeenSet(false),
-    m_rateLimit(0),
-    m_rateLimitHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_matchPredicatesHasBeenSet(false)
-{
-}
-
 AwsWafRateBasedRuleDetails::AwsWafRateBasedRuleDetails(JsonView jsonValue)
-  : AwsWafRateBasedRuleDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AwsWafRateBasedRuleDetails& AwsWafRateBasedRuleDetails::operator =(JsonView json
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RateKey"))
   {
     m_rateKey = jsonValue.GetString("RateKey");
-
     m_rateKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RateLimit"))
   {
     m_rateLimit = jsonValue.GetInt64("RateLimit");
-
     m_rateLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchPredicates"))
   {
     Aws::Utils::Array<JsonView> matchPredicatesJsonList = jsonValue.GetArray("MatchPredicates");
@@ -81,7 +59,6 @@ AwsWafRateBasedRuleDetails& AwsWafRateBasedRuleDetails::operator =(JsonView json
     }
     m_matchPredicatesHasBeenSet = true;
   }
-
   return *this;
 }
 

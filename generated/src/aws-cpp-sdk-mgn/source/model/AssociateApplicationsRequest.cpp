@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateApplicationsRequest::AssociateApplicationsRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_applicationIDsHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
-{
-}
-
 Aws::String AssociateApplicationsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuthorizerConfig::AuthorizerConfig() : 
-    m_defaultAuthorizerNameHasBeenSet(false),
-    m_allowAuthorizerOverride(false),
-    m_allowAuthorizerOverrideHasBeenSet(false)
-{
-}
-
 AuthorizerConfig::AuthorizerConfig(JsonView jsonValue)
-  : AuthorizerConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AuthorizerConfig& AuthorizerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultAuthorizerName"))
   {
     m_defaultAuthorizerName = jsonValue.GetString("defaultAuthorizerName");
-
     m_defaultAuthorizerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowAuthorizerOverride"))
   {
     m_allowAuthorizerOverride = jsonValue.GetBool("allowAuthorizerOverride");
-
     m_allowAuthorizerOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

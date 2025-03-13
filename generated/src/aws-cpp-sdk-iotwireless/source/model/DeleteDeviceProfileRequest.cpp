@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDeviceProfileRequest::DeleteDeviceProfileRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDeviceProfileRequest::SerializePayload() const
 {
   return {};

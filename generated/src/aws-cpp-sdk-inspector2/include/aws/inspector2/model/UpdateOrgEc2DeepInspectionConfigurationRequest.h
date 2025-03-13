@@ -22,7 +22,7 @@ namespace Model
   class UpdateOrgEc2DeepInspectionConfigurationRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API UpdateOrgEc2DeepInspectionConfigurationRequest();
+    AWS_INSPECTOR2_API UpdateOrgEc2DeepInspectionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p>The Amazon Inspector deep inspection custom paths you are adding for your
      * organization.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOrgPackagePaths() const{ return m_orgPackagePaths; }
+    inline const Aws::Vector<Aws::String>& GetOrgPackagePaths() const { return m_orgPackagePaths; }
     inline bool OrgPackagePathsHasBeenSet() const { return m_orgPackagePathsHasBeenSet; }
-    inline void SetOrgPackagePaths(const Aws::Vector<Aws::String>& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths = value; }
-    inline void SetOrgPackagePaths(Aws::Vector<Aws::String>&& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths = std::move(value); }
-    inline UpdateOrgEc2DeepInspectionConfigurationRequest& WithOrgPackagePaths(const Aws::Vector<Aws::String>& value) { SetOrgPackagePaths(value); return *this;}
-    inline UpdateOrgEc2DeepInspectionConfigurationRequest& WithOrgPackagePaths(Aws::Vector<Aws::String>&& value) { SetOrgPackagePaths(std::move(value)); return *this;}
-    inline UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(const Aws::String& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.push_back(value); return *this; }
-    inline UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(Aws::String&& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.push_back(std::move(value)); return *this; }
-    inline UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(const char* value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.push_back(value); return *this; }
+    template<typename OrgPackagePathsT = Aws::Vector<Aws::String>>
+    void SetOrgPackagePaths(OrgPackagePathsT&& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths = std::forward<OrgPackagePathsT>(value); }
+    template<typename OrgPackagePathsT = Aws::Vector<Aws::String>>
+    UpdateOrgEc2DeepInspectionConfigurationRequest& WithOrgPackagePaths(OrgPackagePathsT&& value) { SetOrgPackagePaths(std::forward<OrgPackagePathsT>(value)); return *this;}
+    template<typename OrgPackagePathsT = Aws::String>
+    UpdateOrgEc2DeepInspectionConfigurationRequest& AddOrgPackagePaths(OrgPackagePathsT&& value) { m_orgPackagePathsHasBeenSet = true; m_orgPackagePaths.emplace_back(std::forward<OrgPackagePathsT>(value)); return *this; }
     ///@}
   private:
 

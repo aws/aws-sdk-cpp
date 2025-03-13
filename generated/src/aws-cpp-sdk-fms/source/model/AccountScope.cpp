@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-AccountScope::AccountScope() : 
-    m_accountsHasBeenSet(false),
-    m_allAccountsEnabled(false),
-    m_allAccountsEnabledHasBeenSet(false),
-    m_excludeSpecifiedAccounts(false),
-    m_excludeSpecifiedAccountsHasBeenSet(false)
-{
-}
-
 AccountScope::AccountScope(JsonView jsonValue)
-  : AccountScope()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ AccountScope& AccountScope::operator =(JsonView jsonValue)
     }
     m_accountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllAccountsEnabled"))
   {
     m_allAccountsEnabled = jsonValue.GetBool("AllAccountsEnabled");
-
     m_allAccountsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeSpecifiedAccounts"))
   {
     m_excludeSpecifiedAccounts = jsonValue.GetBool("ExcludeSpecifiedAccounts");
-
     m_excludeSpecifiedAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

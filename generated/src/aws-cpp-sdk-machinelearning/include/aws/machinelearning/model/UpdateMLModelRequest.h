@@ -21,7 +21,7 @@ namespace Model
   class UpdateMLModelRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API UpdateMLModelRequest();
+    AWS_MACHINELEARNING_API UpdateMLModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
     inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelIdHasBeenSet = true; m_mLModelId.assign(value); }
-    inline UpdateMLModelRequest& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline UpdateMLModelRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline UpdateMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    UpdateMLModelRequest& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
-    inline const Aws::String& GetMLModelName() const{ return m_mLModelName; }
+    inline const Aws::String& GetMLModelName() const { return m_mLModelName; }
     inline bool MLModelNameHasBeenSet() const { return m_mLModelNameHasBeenSet; }
-    inline void SetMLModelName(const Aws::String& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = value; }
-    inline void SetMLModelName(Aws::String&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = std::move(value); }
-    inline void SetMLModelName(const char* value) { m_mLModelNameHasBeenSet = true; m_mLModelName.assign(value); }
-    inline UpdateMLModelRequest& WithMLModelName(const Aws::String& value) { SetMLModelName(value); return *this;}
-    inline UpdateMLModelRequest& WithMLModelName(Aws::String&& value) { SetMLModelName(std::move(value)); return *this;}
-    inline UpdateMLModelRequest& WithMLModelName(const char* value) { SetMLModelName(value); return *this;}
+    template<typename MLModelNameT = Aws::String>
+    void SetMLModelName(MLModelNameT&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = std::forward<MLModelNameT>(value); }
+    template<typename MLModelNameT = Aws::String>
+    UpdateMLModelRequest& WithMLModelName(MLModelNameT&& value) { SetMLModelName(std::forward<MLModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <code>ScoreThreshold</code> receive a negative response from the
      * <code>MLModel</code>, such as <code>false</code>.</p>
      */
-    inline double GetScoreThreshold() const{ return m_scoreThreshold; }
+    inline double GetScoreThreshold() const { return m_scoreThreshold; }
     inline bool ScoreThresholdHasBeenSet() const { return m_scoreThresholdHasBeenSet; }
     inline void SetScoreThreshold(double value) { m_scoreThresholdHasBeenSet = true; m_scoreThreshold = value; }
     inline UpdateMLModelRequest& WithScoreThreshold(double value) { SetScoreThreshold(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_mLModelName;
     bool m_mLModelNameHasBeenSet = false;
 
-    double m_scoreThreshold;
+    double m_scoreThreshold{0.0};
     bool m_scoreThresholdHasBeenSet = false;
   };
 

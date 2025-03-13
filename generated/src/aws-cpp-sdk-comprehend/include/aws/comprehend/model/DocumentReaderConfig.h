@@ -47,7 +47,7 @@ namespace Model
   class DocumentReaderConfig
   {
   public:
-    AWS_COMPREHEND_API DocumentReaderConfig();
+    AWS_COMPREHEND_API DocumentReaderConfig() = default;
     AWS_COMPREHEND_API DocumentReaderConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DocumentReaderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,10 @@ namespace Model
      * Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation.
      * </p> </li> </ul>
      */
-    inline const DocumentReadAction& GetDocumentReadAction() const{ return m_documentReadAction; }
+    inline DocumentReadAction GetDocumentReadAction() const { return m_documentReadAction; }
     inline bool DocumentReadActionHasBeenSet() const { return m_documentReadActionHasBeenSet; }
-    inline void SetDocumentReadAction(const DocumentReadAction& value) { m_documentReadActionHasBeenSet = true; m_documentReadAction = value; }
-    inline void SetDocumentReadAction(DocumentReadAction&& value) { m_documentReadActionHasBeenSet = true; m_documentReadAction = std::move(value); }
-    inline DocumentReaderConfig& WithDocumentReadAction(const DocumentReadAction& value) { SetDocumentReadAction(value); return *this;}
-    inline DocumentReaderConfig& WithDocumentReadAction(DocumentReadAction&& value) { SetDocumentReadAction(std::move(value)); return *this;}
+    inline void SetDocumentReadAction(DocumentReadAction value) { m_documentReadActionHasBeenSet = true; m_documentReadAction = value; }
+    inline DocumentReaderConfig& WithDocumentReadAction(DocumentReadAction value) { SetDocumentReadAction(value); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,10 @@ namespace Model
      * API specified by DocumentReadAction for all PDF files, including digital PDF
      * files. </p> </li> </ul>
      */
-    inline const DocumentReadMode& GetDocumentReadMode() const{ return m_documentReadMode; }
+    inline DocumentReadMode GetDocumentReadMode() const { return m_documentReadMode; }
     inline bool DocumentReadModeHasBeenSet() const { return m_documentReadModeHasBeenSet; }
-    inline void SetDocumentReadMode(const DocumentReadMode& value) { m_documentReadModeHasBeenSet = true; m_documentReadMode = value; }
-    inline void SetDocumentReadMode(DocumentReadMode&& value) { m_documentReadModeHasBeenSet = true; m_documentReadMode = std::move(value); }
-    inline DocumentReaderConfig& WithDocumentReadMode(const DocumentReadMode& value) { SetDocumentReadMode(value); return *this;}
-    inline DocumentReaderConfig& WithDocumentReadMode(DocumentReadMode&& value) { SetDocumentReadMode(std::move(value)); return *this;}
+    inline void SetDocumentReadMode(DocumentReadMode value) { m_documentReadModeHasBeenSet = true; m_documentReadMode = value; }
+    inline DocumentReaderConfig& WithDocumentReadMode(DocumentReadMode value) { SetDocumentReadMode(value); return *this;}
     ///@}
 
     ///@{
@@ -97,21 +93,20 @@ namespace Model
      * </p> </li> <li> <p> <code>FORMS</code> - Returns additional information about
      * any forms that are detected in the input document. </p> </li> </ul>
      */
-    inline const Aws::Vector<DocumentReadFeatureTypes>& GetFeatureTypes() const{ return m_featureTypes; }
+    inline const Aws::Vector<DocumentReadFeatureTypes>& GetFeatureTypes() const { return m_featureTypes; }
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
-    inline void SetFeatureTypes(const Aws::Vector<DocumentReadFeatureTypes>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
-    inline void SetFeatureTypes(Aws::Vector<DocumentReadFeatureTypes>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
-    inline DocumentReaderConfig& WithFeatureTypes(const Aws::Vector<DocumentReadFeatureTypes>& value) { SetFeatureTypes(value); return *this;}
-    inline DocumentReaderConfig& WithFeatureTypes(Aws::Vector<DocumentReadFeatureTypes>&& value) { SetFeatureTypes(std::move(value)); return *this;}
-    inline DocumentReaderConfig& AddFeatureTypes(const DocumentReadFeatureTypes& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
-    inline DocumentReaderConfig& AddFeatureTypes(DocumentReadFeatureTypes&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
+    template<typename FeatureTypesT = Aws::Vector<DocumentReadFeatureTypes>>
+    void SetFeatureTypes(FeatureTypesT&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::forward<FeatureTypesT>(value); }
+    template<typename FeatureTypesT = Aws::Vector<DocumentReadFeatureTypes>>
+    DocumentReaderConfig& WithFeatureTypes(FeatureTypesT&& value) { SetFeatureTypes(std::forward<FeatureTypesT>(value)); return *this;}
+    inline DocumentReaderConfig& AddFeatureTypes(DocumentReadFeatureTypes value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
     ///@}
   private:
 
-    DocumentReadAction m_documentReadAction;
+    DocumentReadAction m_documentReadAction{DocumentReadAction::NOT_SET};
     bool m_documentReadActionHasBeenSet = false;
 
-    DocumentReadMode m_documentReadMode;
+    DocumentReadMode m_documentReadMode{DocumentReadMode::NOT_SET};
     bool m_documentReadModeHasBeenSet = false;
 
     Aws::Vector<DocumentReadFeatureTypes> m_featureTypes;

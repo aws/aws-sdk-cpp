@@ -33,7 +33,7 @@ namespace Model
   class TransitGatewayConnectPeerAssociation
   {
   public:
-    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation();
+    AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation() = default;
     AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API TransitGatewayConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,68 +43,58 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
      */
-    inline const Aws::String& GetTransitGatewayConnectPeerArn() const{ return m_transitGatewayConnectPeerArn; }
+    inline const Aws::String& GetTransitGatewayConnectPeerArn() const { return m_transitGatewayConnectPeerArn; }
     inline bool TransitGatewayConnectPeerArnHasBeenSet() const { return m_transitGatewayConnectPeerArnHasBeenSet; }
-    inline void SetTransitGatewayConnectPeerArn(const Aws::String& value) { m_transitGatewayConnectPeerArnHasBeenSet = true; m_transitGatewayConnectPeerArn = value; }
-    inline void SetTransitGatewayConnectPeerArn(Aws::String&& value) { m_transitGatewayConnectPeerArnHasBeenSet = true; m_transitGatewayConnectPeerArn = std::move(value); }
-    inline void SetTransitGatewayConnectPeerArn(const char* value) { m_transitGatewayConnectPeerArnHasBeenSet = true; m_transitGatewayConnectPeerArn.assign(value); }
-    inline TransitGatewayConnectPeerAssociation& WithTransitGatewayConnectPeerArn(const Aws::String& value) { SetTransitGatewayConnectPeerArn(value); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithTransitGatewayConnectPeerArn(Aws::String&& value) { SetTransitGatewayConnectPeerArn(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithTransitGatewayConnectPeerArn(const char* value) { SetTransitGatewayConnectPeerArn(value); return *this;}
+    template<typename TransitGatewayConnectPeerArnT = Aws::String>
+    void SetTransitGatewayConnectPeerArn(TransitGatewayConnectPeerArnT&& value) { m_transitGatewayConnectPeerArnHasBeenSet = true; m_transitGatewayConnectPeerArn = std::forward<TransitGatewayConnectPeerArnT>(value); }
+    template<typename TransitGatewayConnectPeerArnT = Aws::String>
+    TransitGatewayConnectPeerAssociation& WithTransitGatewayConnectPeerArn(TransitGatewayConnectPeerArnT&& value) { SetTransitGatewayConnectPeerArn(std::forward<TransitGatewayConnectPeerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the global network.</p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline TransitGatewayConnectPeerAssociation& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    TransitGatewayConnectPeerAssociation& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline TransitGatewayConnectPeerAssociation& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    TransitGatewayConnectPeerAssociation& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the link.</p>
      */
-    inline const Aws::String& GetLinkId() const{ return m_linkId; }
+    inline const Aws::String& GetLinkId() const { return m_linkId; }
     inline bool LinkIdHasBeenSet() const { return m_linkIdHasBeenSet; }
-    inline void SetLinkId(const Aws::String& value) { m_linkIdHasBeenSet = true; m_linkId = value; }
-    inline void SetLinkId(Aws::String&& value) { m_linkIdHasBeenSet = true; m_linkId = std::move(value); }
-    inline void SetLinkId(const char* value) { m_linkIdHasBeenSet = true; m_linkId.assign(value); }
-    inline TransitGatewayConnectPeerAssociation& WithLinkId(const Aws::String& value) { SetLinkId(value); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithLinkId(Aws::String&& value) { SetLinkId(std::move(value)); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithLinkId(const char* value) { SetLinkId(value); return *this;}
+    template<typename LinkIdT = Aws::String>
+    void SetLinkId(LinkIdT&& value) { m_linkIdHasBeenSet = true; m_linkId = std::forward<LinkIdT>(value); }
+    template<typename LinkIdT = Aws::String>
+    TransitGatewayConnectPeerAssociation& WithLinkId(LinkIdT&& value) { SetLinkId(std::forward<LinkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the association.</p>
      */
-    inline const TransitGatewayConnectPeerAssociationState& GetState() const{ return m_state; }
+    inline TransitGatewayConnectPeerAssociationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const TransitGatewayConnectPeerAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(TransitGatewayConnectPeerAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline TransitGatewayConnectPeerAssociation& WithState(const TransitGatewayConnectPeerAssociationState& value) { SetState(value); return *this;}
-    inline TransitGatewayConnectPeerAssociation& WithState(TransitGatewayConnectPeerAssociationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(TransitGatewayConnectPeerAssociationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline TransitGatewayConnectPeerAssociation& WithState(TransitGatewayConnectPeerAssociationState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -120,7 +110,7 @@ namespace Model
     Aws::String m_linkId;
     bool m_linkIdHasBeenSet = false;
 
-    TransitGatewayConnectPeerAssociationState m_state;
+    TransitGatewayConnectPeerAssociationState m_state{TransitGatewayConnectPeerAssociationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

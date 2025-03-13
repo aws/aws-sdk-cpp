@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOriginationNumbersResult::ListOriginationNumbersResult()
-{
-}
-
 ListOriginationNumbersResult::ListOriginationNumbersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ ListOriginationNumbersResult& ListOriginationNumbersResult::operator =(const Aws
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode phoneNumbersNode = resultNode.FirstChild("PhoneNumbers");
     if(!phoneNumbersNode.IsNull())
     {
       XmlNode phoneNumbersMember = phoneNumbersNode.FirstChild("member");
+      m_phoneNumbersHasBeenSet = !phoneNumbersMember.IsNull();
       while(!phoneNumbersMember.IsNull())
       {
         m_phoneNumbers.push_back(phoneNumbersMember);
@@ -59,6 +57,7 @@ ListOriginationNumbersResult& ListOriginationNumbersResult::operator =(const Aws
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::ListOriginationNumbersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

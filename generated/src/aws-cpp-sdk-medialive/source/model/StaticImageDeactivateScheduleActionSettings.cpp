@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-StaticImageDeactivateScheduleActionSettings::StaticImageDeactivateScheduleActionSettings() : 
-    m_fadeOut(0),
-    m_fadeOutHasBeenSet(false),
-    m_layer(0),
-    m_layerHasBeenSet(false)
-{
-}
-
 StaticImageDeactivateScheduleActionSettings::StaticImageDeactivateScheduleActionSettings(JsonView jsonValue)
-  : StaticImageDeactivateScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StaticImageDeactivateScheduleActionSettings& StaticImageDeactivateScheduleAction
   if(jsonValue.ValueExists("fadeOut"))
   {
     m_fadeOut = jsonValue.GetInteger("fadeOut");
-
     m_fadeOutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layer"))
   {
     m_layer = jsonValue.GetInteger("layer");
-
     m_layerHasBeenSet = true;
   }
-
   return *this;
 }
 

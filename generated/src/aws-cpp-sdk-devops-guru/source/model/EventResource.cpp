@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-EventResource::EventResource() : 
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 EventResource::EventResource(JsonView jsonValue)
-  : EventResource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EventResource& EventResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

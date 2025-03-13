@@ -22,7 +22,7 @@ namespace Model
   class DeleteStudioSessionMappingRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API DeleteStudioSessionMappingRequest();
+    AWS_EMR_API DeleteStudioSessionMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the Amazon EMR Studio.</p>
      */
-    inline const Aws::String& GetStudioId() const{ return m_studioId; }
+    inline const Aws::String& GetStudioId() const { return m_studioId; }
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
-    inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
-    inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
-    inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
-    inline DeleteStudioSessionMappingRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
+    template<typename StudioIdT = Aws::String>
+    void SetStudioId(StudioIdT&& value) { m_studioIdHasBeenSet = true; m_studioId = std::forward<StudioIdT>(value); }
+    template<typename StudioIdT = Aws::String>
+    DeleteStudioSessionMappingRequest& WithStudioId(StudioIdT&& value) { SetStudioId(std::forward<StudioIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * in the <i>IAM Identity Center Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-    inline DeleteStudioSessionMappingRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    DeleteStudioSessionMappingRequest& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * in the <i>IAM Identity Center Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
-    inline const Aws::String& GetIdentityName() const{ return m_identityName; }
+    inline const Aws::String& GetIdentityName() const { return m_identityName; }
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
-    inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
-    inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
-    inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
-    inline DeleteStudioSessionMappingRequest& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}
+    template<typename IdentityNameT = Aws::String>
+    void SetIdentityName(IdentityNameT&& value) { m_identityNameHasBeenSet = true; m_identityName = std::forward<IdentityNameT>(value); }
+    template<typename IdentityNameT = Aws::String>
+    DeleteStudioSessionMappingRequest& WithIdentityName(IdentityNameT&& value) { SetIdentityName(std::forward<IdentityNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +88,10 @@ namespace Model
      * <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user
      * or a group.</p>
      */
-    inline const IdentityType& GetIdentityType() const{ return m_identityType; }
+    inline IdentityType GetIdentityType() const { return m_identityType; }
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
-    inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
-    inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
-    inline DeleteStudioSessionMappingRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
-    inline DeleteStudioSessionMappingRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    inline void SetIdentityType(IdentityType value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
+    inline DeleteStudioSessionMappingRequest& WithIdentityType(IdentityType value) { SetIdentityType(value); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::String m_identityName;
     bool m_identityNameHasBeenSet = false;
 
-    IdentityType m_identityType;
+    IdentityType m_identityType{IdentityType::NOT_SET};
     bool m_identityTypeHasBeenSet = false;
   };
 

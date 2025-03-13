@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-CrossZoneLoadBalancing::CrossZoneLoadBalancing() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 CrossZoneLoadBalancing::CrossZoneLoadBalancing(const XmlNode& xmlNode)
-  : CrossZoneLoadBalancing()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ CrossZoneLoadBalancing& CrossZoneLoadBalancing::operator =(const XmlNode& xmlNod
     {
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
+       m_enabledHasBeenSet = true;
     }
   }
 

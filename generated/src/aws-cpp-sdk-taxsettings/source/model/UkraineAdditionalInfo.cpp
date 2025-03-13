@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-UkraineAdditionalInfo::UkraineAdditionalInfo() : 
-    m_ukraineTrnType(UkraineTrnType::NOT_SET),
-    m_ukraineTrnTypeHasBeenSet(false)
-{
-}
-
 UkraineAdditionalInfo::UkraineAdditionalInfo(JsonView jsonValue)
-  : UkraineAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UkraineAdditionalInfo& UkraineAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ukraineTrnType"))
   {
     m_ukraineTrnType = UkraineTrnTypeMapper::GetUkraineTrnTypeForName(jsonValue.GetString("ukraineTrnType"));
-
     m_ukraineTrnTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TriggerConfig::TriggerConfig() : 
-    m_triggerNameHasBeenSet(false),
-    m_triggerTargetArnHasBeenSet(false),
-    m_triggerEventsHasBeenSet(false)
-{
-}
-
 TriggerConfig::TriggerConfig(JsonView jsonValue)
-  : TriggerConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("triggerName"))
   {
     m_triggerName = jsonValue.GetString("triggerName");
-
     m_triggerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerTargetArn"))
   {
     m_triggerTargetArn = jsonValue.GetString("triggerTargetArn");
-
     m_triggerTargetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerEvents"))
   {
     Aws::Utils::Array<JsonView> triggerEventsJsonList = jsonValue.GetArray("triggerEvents");
@@ -56,7 +44,6 @@ TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
     }
     m_triggerEventsHasBeenSet = true;
   }
-
   return *this;
 }
 

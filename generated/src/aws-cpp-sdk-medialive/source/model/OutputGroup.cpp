@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-OutputGroup::OutputGroup() : 
-    m_nameHasBeenSet(false),
-    m_outputGroupSettingsHasBeenSet(false),
-    m_outputsHasBeenSet(false)
-{
-}
-
 OutputGroup::OutputGroup(JsonView jsonValue)
-  : OutputGroup()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OutputGroup& OutputGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputGroupSettings"))
   {
     m_outputGroupSettings = jsonValue.GetObject("outputGroupSettings");
-
     m_outputGroupSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
@@ -56,7 +44,6 @@ OutputGroup& OutputGroup::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   return *this;
 }
 

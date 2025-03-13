@@ -12,11 +12,6 @@ using namespace Aws::OSIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartPipelineRequest::StartPipelineRequest() : 
-    m_pipelineNameHasBeenSet(false)
-{
-}
-
 Aws::String StartPipelineRequest::SerializePayload() const
 {
   return {};

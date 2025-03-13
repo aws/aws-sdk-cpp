@@ -31,7 +31,7 @@ namespace Model
   class SnowflakeVpcConfiguration
   {
   public:
-    AWS_FIREHOSE_API SnowflakeVpcConfiguration();
+    AWS_FIREHOSE_API SnowflakeVpcConfiguration() = default;
     AWS_FIREHOSE_API SnowflakeVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API SnowflakeVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
      * PrivateLink &amp; Snowflake</a> </p>
      */
-    inline const Aws::String& GetPrivateLinkVpceId() const{ return m_privateLinkVpceId; }
+    inline const Aws::String& GetPrivateLinkVpceId() const { return m_privateLinkVpceId; }
     inline bool PrivateLinkVpceIdHasBeenSet() const { return m_privateLinkVpceIdHasBeenSet; }
-    inline void SetPrivateLinkVpceId(const Aws::String& value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId = value; }
-    inline void SetPrivateLinkVpceId(Aws::String&& value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId = std::move(value); }
-    inline void SetPrivateLinkVpceId(const char* value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId.assign(value); }
-    inline SnowflakeVpcConfiguration& WithPrivateLinkVpceId(const Aws::String& value) { SetPrivateLinkVpceId(value); return *this;}
-    inline SnowflakeVpcConfiguration& WithPrivateLinkVpceId(Aws::String&& value) { SetPrivateLinkVpceId(std::move(value)); return *this;}
-    inline SnowflakeVpcConfiguration& WithPrivateLinkVpceId(const char* value) { SetPrivateLinkVpceId(value); return *this;}
+    template<typename PrivateLinkVpceIdT = Aws::String>
+    void SetPrivateLinkVpceId(PrivateLinkVpceIdT&& value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId = std::forward<PrivateLinkVpceIdT>(value); }
+    template<typename PrivateLinkVpceIdT = Aws::String>
+    SnowflakeVpcConfiguration& WithPrivateLinkVpceId(PrivateLinkVpceIdT&& value) { SetPrivateLinkVpceId(std::forward<PrivateLinkVpceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-DataCatalogInputDefinition::DataCatalogInputDefinition() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tempDirectoryHasBeenSet(false)
-{
-}
-
 DataCatalogInputDefinition::DataCatalogInputDefinition(JsonView jsonValue)
-  : DataCatalogInputDefinition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DataCatalogInputDefinition& DataCatalogInputDefinition::operator =(JsonView json
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TempDirectory"))
   {
     m_tempDirectory = jsonValue.GetObject("TempDirectory");
-
     m_tempDirectoryHasBeenSet = true;
   }
-
   return *this;
 }
 

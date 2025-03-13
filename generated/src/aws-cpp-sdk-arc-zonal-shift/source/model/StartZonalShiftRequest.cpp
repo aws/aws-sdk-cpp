@@ -12,14 +12,6 @@ using namespace Aws::ARCZonalShift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartZonalShiftRequest::StartZonalShiftRequest() : 
-    m_awayFromHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_expiresInHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartZonalShiftRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class DescribeFileSystemAssociationsRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeFileSystemAssociationsRequest();
+    AWS_STORAGEGATEWAY_API DescribeFileSystemAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p>An array containing the Amazon Resource Name (ARN) of each file system
      * association to be described.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFileSystemAssociationARNList() const{ return m_fileSystemAssociationARNList; }
+    inline const Aws::Vector<Aws::String>& GetFileSystemAssociationARNList() const { return m_fileSystemAssociationARNList; }
     inline bool FileSystemAssociationARNListHasBeenSet() const { return m_fileSystemAssociationARNListHasBeenSet; }
-    inline void SetFileSystemAssociationARNList(const Aws::Vector<Aws::String>& value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList = value; }
-    inline void SetFileSystemAssociationARNList(Aws::Vector<Aws::String>&& value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList = std::move(value); }
-    inline DescribeFileSystemAssociationsRequest& WithFileSystemAssociationARNList(const Aws::Vector<Aws::String>& value) { SetFileSystemAssociationARNList(value); return *this;}
-    inline DescribeFileSystemAssociationsRequest& WithFileSystemAssociationARNList(Aws::Vector<Aws::String>&& value) { SetFileSystemAssociationARNList(std::move(value)); return *this;}
-    inline DescribeFileSystemAssociationsRequest& AddFileSystemAssociationARNList(const Aws::String& value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList.push_back(value); return *this; }
-    inline DescribeFileSystemAssociationsRequest& AddFileSystemAssociationARNList(Aws::String&& value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList.push_back(std::move(value)); return *this; }
-    inline DescribeFileSystemAssociationsRequest& AddFileSystemAssociationARNList(const char* value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList.push_back(value); return *this; }
+    template<typename FileSystemAssociationARNListT = Aws::Vector<Aws::String>>
+    void SetFileSystemAssociationARNList(FileSystemAssociationARNListT&& value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList = std::forward<FileSystemAssociationARNListT>(value); }
+    template<typename FileSystemAssociationARNListT = Aws::Vector<Aws::String>>
+    DescribeFileSystemAssociationsRequest& WithFileSystemAssociationARNList(FileSystemAssociationARNListT&& value) { SetFileSystemAssociationARNList(std::forward<FileSystemAssociationARNListT>(value)); return *this;}
+    template<typename FileSystemAssociationARNListT = Aws::String>
+    DescribeFileSystemAssociationsRequest& AddFileSystemAssociationARNList(FileSystemAssociationARNListT&& value) { m_fileSystemAssociationARNListHasBeenSet = true; m_fileSystemAssociationARNList.emplace_back(std::forward<FileSystemAssociationARNListT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CloseAccountRequest::CloseAccountRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String CloseAccountRequest::SerializePayload() const
 {
   JsonValue payload;

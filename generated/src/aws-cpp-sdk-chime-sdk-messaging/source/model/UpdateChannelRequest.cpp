@@ -13,16 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateChannelRequest::UpdateChannelRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_mode(ChannelMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String UpdateChannelRequest::SerializePayload() const
 {
   JsonValue payload;

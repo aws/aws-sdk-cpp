@@ -18,15 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-AudioStandardGenerativeField::AudioStandardGenerativeField() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_typesHasBeenSet(false)
-{
-}
-
 AudioStandardGenerativeField::AudioStandardGenerativeField(JsonView jsonValue)
-  : AudioStandardGenerativeField()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AudioStandardGenerativeField& AudioStandardGenerativeField::operator =(JsonView 
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
@@ -49,7 +39,6 @@ AudioStandardGenerativeField& AudioStandardGenerativeField::operator =(JsonView 
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

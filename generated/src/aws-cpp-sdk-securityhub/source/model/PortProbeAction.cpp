@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-PortProbeAction::PortProbeAction() : 
-    m_portProbeDetailsHasBeenSet(false),
-    m_blocked(false),
-    m_blockedHasBeenSet(false)
-{
-}
-
 PortProbeAction::PortProbeAction(JsonView jsonValue)
-  : PortProbeAction()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ PortProbeAction& PortProbeAction::operator =(JsonView jsonValue)
     }
     m_portProbeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Blocked"))
   {
     m_blocked = jsonValue.GetBool("Blocked");
-
     m_blockedHasBeenSet = true;
   }
-
   return *this;
 }
 

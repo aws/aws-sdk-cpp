@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AssetHierarchyInfo::AssetHierarchyInfo() : 
-    m_parentAssetIdHasBeenSet(false),
-    m_childAssetIdHasBeenSet(false)
-{
-}
-
 AssetHierarchyInfo::AssetHierarchyInfo(JsonView jsonValue)
-  : AssetHierarchyInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetHierarchyInfo& AssetHierarchyInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("parentAssetId"))
   {
     m_parentAssetId = jsonValue.GetString("parentAssetId");
-
     m_parentAssetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("childAssetId"))
   {
     m_childAssetId = jsonValue.GetString("childAssetId");
-
     m_childAssetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

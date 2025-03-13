@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLatestConfigurationRequest::GetLatestConfigurationRequest() : 
-    m_configurationTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetLatestConfigurationRequest::SerializePayload() const
 {
   return {};

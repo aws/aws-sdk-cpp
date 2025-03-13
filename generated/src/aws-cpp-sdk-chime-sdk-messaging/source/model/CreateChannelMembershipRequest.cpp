@@ -13,16 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelMembershipRequest::CreateChannelMembershipRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_memberArnHasBeenSet(false),
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

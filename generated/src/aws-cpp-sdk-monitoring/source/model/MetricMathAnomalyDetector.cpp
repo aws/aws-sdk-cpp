@@ -20,13 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricMathAnomalyDetector::MetricMathAnomalyDetector() : 
-    m_metricDataQueriesHasBeenSet(false)
-{
-}
-
 MetricMathAnomalyDetector::MetricMathAnomalyDetector(const XmlNode& xmlNode)
-  : MetricMathAnomalyDetector()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ MetricMathAnomalyDetector& MetricMathAnomalyDetector::operator =(const XmlNode& 
     if(!metricDataQueriesNode.IsNull())
     {
       XmlNode metricDataQueriesMember = metricDataQueriesNode.FirstChild("member");
+      m_metricDataQueriesHasBeenSet = !metricDataQueriesMember.IsNull();
       while(!metricDataQueriesMember.IsNull())
       {
         m_metricDataQueries.push_back(metricDataQueriesMember);
         metricDataQueriesMember = metricDataQueriesMember.NextNode("member");
       }
 
-      m_metricDataQueriesHasBeenSet = true;
+       m_metricDataQueriesHasBeenSet = true;
     }
   }
 

@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-GetClusterCredentialsWithIAMRequest::GetClusterCredentialsWithIAMRequest() : 
-    m_dbNameHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetClusterCredentialsWithIAMRequest::SerializePayload() const
 {
   Aws::StringStream ss;

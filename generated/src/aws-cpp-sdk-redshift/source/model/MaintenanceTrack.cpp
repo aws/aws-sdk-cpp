@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-MaintenanceTrack::MaintenanceTrack() : 
-    m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false),
-    m_updateTargetsHasBeenSet(false)
-{
-}
-
 MaintenanceTrack::MaintenanceTrack(const XmlNode& xmlNode)
-  : MaintenanceTrack()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ MaintenanceTrack& MaintenanceTrack::operator =(const XmlNode& xmlNode)
     {
       m_maintenanceTrackName = Aws::Utils::Xml::DecodeEscapedXmlText(maintenanceTrackNameNode.GetText());
       m_maintenanceTrackNameHasBeenSet = true;
+       m_maintenanceTrackNameHasBeenSet = true;
     }
     XmlNode databaseVersionNode = resultNode.FirstChild("DatabaseVersion");
     if(!databaseVersionNode.IsNull())
     {
       m_databaseVersion = Aws::Utils::Xml::DecodeEscapedXmlText(databaseVersionNode.GetText());
       m_databaseVersionHasBeenSet = true;
+       m_databaseVersionHasBeenSet = true;
     }
     XmlNode updateTargetsNode = resultNode.FirstChild("UpdateTargets");
     if(!updateTargetsNode.IsNull())
     {
       XmlNode updateTargetsMember = updateTargetsNode.FirstChild("UpdateTarget");
+      m_updateTargetsHasBeenSet = !updateTargetsMember.IsNull();
       while(!updateTargetsMember.IsNull())
       {
         m_updateTargets.push_back(updateTargetsMember);
         updateTargetsMember = updateTargetsMember.NextNode("UpdateTarget");
       }
 
-      m_updateTargetsHasBeenSet = true;
+       m_updateTargetsHasBeenSet = true;
     }
   }
 

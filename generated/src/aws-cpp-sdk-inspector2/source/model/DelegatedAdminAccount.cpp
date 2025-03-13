@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-DelegatedAdminAccount::DelegatedAdminAccount() : 
-    m_accountIdHasBeenSet(false),
-    m_status(DelegatedAdminStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DelegatedAdminAccount::DelegatedAdminAccount(JsonView jsonValue)
-  : DelegatedAdminAccount()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DelegatedAdminAccount& DelegatedAdminAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DelegatedAdminStatusMapper::GetDelegatedAdminStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

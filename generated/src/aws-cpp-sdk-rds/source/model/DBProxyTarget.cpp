@@ -20,23 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBProxyTarget::DBProxyTarget() : 
-    m_targetArnHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_trackedClusterIdHasBeenSet(false),
-    m_rdsResourceIdHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_role(TargetRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_targetHealthHasBeenSet(false)
-{
-}
-
 DBProxyTarget::DBProxyTarget(const XmlNode& xmlNode)
-  : DBProxyTarget()
 {
   *this = xmlNode;
 }
@@ -52,48 +36,56 @@ DBProxyTarget& DBProxyTarget::operator =(const XmlNode& xmlNode)
     {
       m_targetArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetArnNode.GetText());
       m_targetArnHasBeenSet = true;
+       m_targetArnHasBeenSet = true;
     }
     XmlNode endpointNode = resultNode.FirstChild("Endpoint");
     if(!endpointNode.IsNull())
     {
       m_endpoint = Aws::Utils::Xml::DecodeEscapedXmlText(endpointNode.GetText());
       m_endpointHasBeenSet = true;
+       m_endpointHasBeenSet = true;
     }
     XmlNode trackedClusterIdNode = resultNode.FirstChild("TrackedClusterId");
     if(!trackedClusterIdNode.IsNull())
     {
       m_trackedClusterId = Aws::Utils::Xml::DecodeEscapedXmlText(trackedClusterIdNode.GetText());
       m_trackedClusterIdHasBeenSet = true;
+       m_trackedClusterIdHasBeenSet = true;
     }
     XmlNode rdsResourceIdNode = resultNode.FirstChild("RdsResourceId");
     if(!rdsResourceIdNode.IsNull())
     {
       m_rdsResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(rdsResourceIdNode.GetText());
       m_rdsResourceIdHasBeenSet = true;
+       m_rdsResourceIdHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = TargetTypeMapper::GetTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = TargetTypeMapper::GetTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode roleNode = resultNode.FirstChild("Role");
     if(!roleNode.IsNull())
     {
-      m_role = TargetRoleMapper::GetTargetRoleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText()).c_str()).c_str());
+      m_role = TargetRoleMapper::GetTargetRoleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText()).c_str()));
       m_roleHasBeenSet = true;
+       m_roleHasBeenSet = true;
     }
     XmlNode targetHealthNode = resultNode.FirstChild("TargetHealth");
     if(!targetHealthNode.IsNull())
     {
       m_targetHealth = targetHealthNode;
       m_targetHealthHasBeenSet = true;
+       m_targetHealthHasBeenSet = true;
     }
   }
 

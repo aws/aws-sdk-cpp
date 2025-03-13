@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ComboChartFieldWells::ComboChartFieldWells() : 
-    m_comboChartAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 ComboChartFieldWells::ComboChartFieldWells(JsonView jsonValue)
-  : ComboChartFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ComboChartFieldWells& ComboChartFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComboChartAggregatedFieldWells"))
   {
     m_comboChartAggregatedFieldWells = jsonValue.GetObject("ComboChartAggregatedFieldWells");
-
     m_comboChartAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

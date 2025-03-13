@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotJobResultErrorInfo::SnapshotJobResultErrorInfo() : 
-    m_errorMessageHasBeenSet(false),
-    m_errorTypeHasBeenSet(false)
-{
-}
-
 SnapshotJobResultErrorInfo::SnapshotJobResultErrorInfo(JsonView jsonValue)
-  : SnapshotJobResultErrorInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SnapshotJobResultErrorInfo& SnapshotJobResultErrorInfo::operator =(JsonView json
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorType"))
   {
     m_errorType = jsonValue.GetString("ErrorType");
-
     m_errorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

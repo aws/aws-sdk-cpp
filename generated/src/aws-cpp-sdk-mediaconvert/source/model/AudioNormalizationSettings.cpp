@@ -18,26 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AudioNormalizationSettings::AudioNormalizationSettings() : 
-    m_algorithm(AudioNormalizationAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_algorithmControl(AudioNormalizationAlgorithmControl::NOT_SET),
-    m_algorithmControlHasBeenSet(false),
-    m_correctionGateLevel(0),
-    m_correctionGateLevelHasBeenSet(false),
-    m_loudnessLogging(AudioNormalizationLoudnessLogging::NOT_SET),
-    m_loudnessLoggingHasBeenSet(false),
-    m_peakCalculation(AudioNormalizationPeakCalculation::NOT_SET),
-    m_peakCalculationHasBeenSet(false),
-    m_targetLkfs(0.0),
-    m_targetLkfsHasBeenSet(false),
-    m_truePeakLimiterThreshold(0.0),
-    m_truePeakLimiterThresholdHasBeenSet(false)
-{
-}
-
 AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue)
-  : AudioNormalizationSettings()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ AudioNormalizationSettings& AudioNormalizationSettings::operator =(JsonView json
   if(jsonValue.ValueExists("algorithm"))
   {
     m_algorithm = AudioNormalizationAlgorithmMapper::GetAudioNormalizationAlgorithmForName(jsonValue.GetString("algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("algorithmControl"))
   {
     m_algorithmControl = AudioNormalizationAlgorithmControlMapper::GetAudioNormalizationAlgorithmControlForName(jsonValue.GetString("algorithmControl"));
-
     m_algorithmControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("correctionGateLevel"))
   {
     m_correctionGateLevel = jsonValue.GetInteger("correctionGateLevel");
-
     m_correctionGateLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loudnessLogging"))
   {
     m_loudnessLogging = AudioNormalizationLoudnessLoggingMapper::GetAudioNormalizationLoudnessLoggingForName(jsonValue.GetString("loudnessLogging"));
-
     m_loudnessLoggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("peakCalculation"))
   {
     m_peakCalculation = AudioNormalizationPeakCalculationMapper::GetAudioNormalizationPeakCalculationForName(jsonValue.GetString("peakCalculation"));
-
     m_peakCalculationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetLkfs"))
   {
     m_targetLkfs = jsonValue.GetDouble("targetLkfs");
-
     m_targetLkfsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truePeakLimiterThreshold"))
   {
     m_truePeakLimiterThreshold = jsonValue.GetDouble("truePeakLimiterThreshold");
-
     m_truePeakLimiterThresholdHasBeenSet = true;
   }
-
   return *this;
 }
 

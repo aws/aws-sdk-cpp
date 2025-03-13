@@ -29,7 +29,7 @@ namespace Model
   class ListEventIntegrationsResult
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API ListEventIntegrationsResult();
+    AWS_APPINTEGRATIONSSERVICE_API ListEventIntegrationsResult() = default;
     AWS_APPINTEGRATIONSSERVICE_API ListEventIntegrationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPINTEGRATIONSSERVICE_API ListEventIntegrationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The event integrations.</p>
      */
-    inline const Aws::Vector<EventIntegration>& GetEventIntegrations() const{ return m_eventIntegrations; }
-    inline void SetEventIntegrations(const Aws::Vector<EventIntegration>& value) { m_eventIntegrations = value; }
-    inline void SetEventIntegrations(Aws::Vector<EventIntegration>&& value) { m_eventIntegrations = std::move(value); }
-    inline ListEventIntegrationsResult& WithEventIntegrations(const Aws::Vector<EventIntegration>& value) { SetEventIntegrations(value); return *this;}
-    inline ListEventIntegrationsResult& WithEventIntegrations(Aws::Vector<EventIntegration>&& value) { SetEventIntegrations(std::move(value)); return *this;}
-    inline ListEventIntegrationsResult& AddEventIntegrations(const EventIntegration& value) { m_eventIntegrations.push_back(value); return *this; }
-    inline ListEventIntegrationsResult& AddEventIntegrations(EventIntegration&& value) { m_eventIntegrations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventIntegration>& GetEventIntegrations() const { return m_eventIntegrations; }
+    template<typename EventIntegrationsT = Aws::Vector<EventIntegration>>
+    void SetEventIntegrations(EventIntegrationsT&& value) { m_eventIntegrationsHasBeenSet = true; m_eventIntegrations = std::forward<EventIntegrationsT>(value); }
+    template<typename EventIntegrationsT = Aws::Vector<EventIntegration>>
+    ListEventIntegrationsResult& WithEventIntegrations(EventIntegrationsT&& value) { SetEventIntegrations(std::forward<EventIntegrationsT>(value)); return *this;}
+    template<typename EventIntegrationsT = EventIntegration>
+    ListEventIntegrationsResult& AddEventIntegrations(EventIntegrationsT&& value) { m_eventIntegrationsHasBeenSet = true; m_eventIntegrations.emplace_back(std::forward<EventIntegrationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEventIntegrationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventIntegrationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventIntegrationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventIntegrationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEventIntegrationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEventIntegrationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEventIntegrationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEventIntegrationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventIntegration> m_eventIntegrations;
+    bool m_eventIntegrationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

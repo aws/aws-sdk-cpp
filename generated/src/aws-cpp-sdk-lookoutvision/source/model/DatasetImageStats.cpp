@@ -18,20 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-DatasetImageStats::DatasetImageStats() : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_labeled(0),
-    m_labeledHasBeenSet(false),
-    m_normal(0),
-    m_normalHasBeenSet(false),
-    m_anomaly(0),
-    m_anomalyHasBeenSet(false)
-{
-}
-
 DatasetImageStats::DatasetImageStats(JsonView jsonValue)
-  : DatasetImageStats()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DatasetImageStats& DatasetImageStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetInteger("Total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labeled"))
   {
     m_labeled = jsonValue.GetInteger("Labeled");
-
     m_labeledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Normal"))
   {
     m_normal = jsonValue.GetInteger("Normal");
-
     m_normalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Anomaly"))
   {
     m_anomaly = jsonValue.GetInteger("Anomaly");
-
     m_anomalyHasBeenSet = true;
   }
-
   return *this;
 }
 

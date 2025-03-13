@@ -21,7 +21,7 @@ namespace Model
   class DeleteCertificateRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteCertificateRequest();
+    AWS_LIGHTSAIL_API DeleteCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>GetCertificates</code> action to get a list of certificate names that you
      * can specify.</p>
      */
-    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+    inline const Aws::String& GetCertificateName() const { return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
-    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
-    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
-    inline DeleteCertificateRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
-    inline DeleteCertificateRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
-    inline DeleteCertificateRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+    template<typename CertificateNameT = Aws::String>
+    void SetCertificateName(CertificateNameT&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::forward<CertificateNameT>(value); }
+    template<typename CertificateNameT = Aws::String>
+    DeleteCertificateRequest& WithCertificateName(CertificateNameT&& value) { SetCertificateName(std::forward<CertificateNameT>(value)); return *this;}
     ///@}
   private:
 

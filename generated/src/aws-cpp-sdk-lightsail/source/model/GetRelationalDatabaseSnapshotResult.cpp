@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRelationalDatabaseSnapshotResult::GetRelationalDatabaseSnapshotResult()
-{
-}
-
 GetRelationalDatabaseSnapshotResult::GetRelationalDatabaseSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetRelationalDatabaseSnapshotResult& GetRelationalDatabaseSnapshotResult::operat
   if(jsonValue.ValueExists("relationalDatabaseSnapshot"))
   {
     m_relationalDatabaseSnapshot = jsonValue.GetObject("relationalDatabaseSnapshot");
-
+    m_relationalDatabaseSnapshotHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

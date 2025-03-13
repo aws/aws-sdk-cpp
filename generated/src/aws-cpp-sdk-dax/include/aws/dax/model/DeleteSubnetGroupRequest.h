@@ -21,7 +21,7 @@ namespace Model
   class DeleteSubnetGroupRequest : public DAXRequest
   {
   public:
-    AWS_DAX_API DeleteSubnetGroupRequest();
+    AWS_DAX_API DeleteSubnetGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the subnet group to delete.</p>
      */
-    inline const Aws::String& GetSubnetGroupName() const{ return m_subnetGroupName; }
+    inline const Aws::String& GetSubnetGroupName() const { return m_subnetGroupName; }
     inline bool SubnetGroupNameHasBeenSet() const { return m_subnetGroupNameHasBeenSet; }
-    inline void SetSubnetGroupName(const Aws::String& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = value; }
-    inline void SetSubnetGroupName(Aws::String&& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = std::move(value); }
-    inline void SetSubnetGroupName(const char* value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName.assign(value); }
-    inline DeleteSubnetGroupRequest& WithSubnetGroupName(const Aws::String& value) { SetSubnetGroupName(value); return *this;}
-    inline DeleteSubnetGroupRequest& WithSubnetGroupName(Aws::String&& value) { SetSubnetGroupName(std::move(value)); return *this;}
-    inline DeleteSubnetGroupRequest& WithSubnetGroupName(const char* value) { SetSubnetGroupName(value); return *this;}
+    template<typename SubnetGroupNameT = Aws::String>
+    void SetSubnetGroupName(SubnetGroupNameT&& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = std::forward<SubnetGroupNameT>(value); }
+    template<typename SubnetGroupNameT = Aws::String>
+    DeleteSubnetGroupRequest& WithSubnetGroupName(SubnetGroupNameT&& value) { SetSubnetGroupName(std::forward<SubnetGroupNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,27 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails() : 
-    m_arnHasBeenSet(false),
-    m_accessPoliciesHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_domainEndpointHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false),
-    m_clusterConfigHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
-{
-}
-
 AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails(JsonView jsonValue)
-  : AwsOpenSearchServiceDomainDetails()
 {
   *this = jsonValue;
 }
@@ -48,94 +28,68 @@ AwsOpenSearchServiceDomainDetails& AwsOpenSearchServiceDomainDetails::operator =
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPolicies"))
   {
     m_accessPolicies = jsonValue.GetString("AccessPolicies");
-
     m_accessPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainEndpoint"))
   {
     m_domainEndpoint = jsonValue.GetString("DomainEndpoint");
-
     m_domainEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionAtRestOptions"))
   {
     m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
-
     m_encryptionAtRestOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeToNodeEncryptionOptions"))
   {
     m_nodeToNodeEncryptionOptions = jsonValue.GetObject("NodeToNodeEncryptionOptions");
-
     m_nodeToNodeEncryptionOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceSoftwareOptions"))
   {
     m_serviceSoftwareOptions = jsonValue.GetObject("ServiceSoftwareOptions");
-
     m_serviceSoftwareOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterConfig"))
   {
     m_clusterConfig = jsonValue.GetObject("ClusterConfig");
-
     m_clusterConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainEndpointOptions"))
   {
     m_domainEndpointOptions = jsonValue.GetObject("DomainEndpointOptions");
-
     m_domainEndpointOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcOptions"))
   {
     m_vpcOptions = jsonValue.GetObject("VpcOptions");
-
     m_vpcOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogPublishingOptions"))
   {
     m_logPublishingOptions = jsonValue.GetObject("LogPublishingOptions");
-
     m_logPublishingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainEndpoints"))
   {
     Aws::Map<Aws::String, JsonView> domainEndpointsJsonMap = jsonValue.GetObject("DomainEndpoints").GetAllObjects();
@@ -145,14 +99,11 @@ AwsOpenSearchServiceDomainDetails& AwsOpenSearchServiceDomainDetails::operator =
     }
     m_domainEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedSecurityOptions"))
   {
     m_advancedSecurityOptions = jsonValue.GetObject("AdvancedSecurityOptions");
-
     m_advancedSecurityOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

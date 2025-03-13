@@ -18,22 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyLimits::JourneyLimits() : 
-    m_dailyCap(0),
-    m_dailyCapHasBeenSet(false),
-    m_endpointReentryCap(0),
-    m_endpointReentryCapHasBeenSet(false),
-    m_messagesPerSecond(0),
-    m_messagesPerSecondHasBeenSet(false),
-    m_endpointReentryIntervalHasBeenSet(false),
-    m_timeframeCapHasBeenSet(false),
-    m_totalCap(0),
-    m_totalCapHasBeenSet(false)
-{
-}
-
 JourneyLimits::JourneyLimits(JsonView jsonValue)
-  : JourneyLimits()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ JourneyLimits& JourneyLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DailyCap"))
   {
     m_dailyCap = jsonValue.GetInteger("DailyCap");
-
     m_dailyCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointReentryCap"))
   {
     m_endpointReentryCap = jsonValue.GetInteger("EndpointReentryCap");
-
     m_endpointReentryCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessagesPerSecond"))
   {
     m_messagesPerSecond = jsonValue.GetInteger("MessagesPerSecond");
-
     m_messagesPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointReentryInterval"))
   {
     m_endpointReentryInterval = jsonValue.GetString("EndpointReentryInterval");
-
     m_endpointReentryIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeframeCap"))
   {
     m_timeframeCap = jsonValue.GetObject("TimeframeCap");
-
     m_timeframeCapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCap"))
   {
     m_totalCap = jsonValue.GetInteger("TotalCap");
-
     m_totalCapHasBeenSet = true;
   }
-
   return *this;
 }
 

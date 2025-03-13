@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CertificateAuthentication::CertificateAuthentication() : 
-    m_clientRootCertificateChainHasBeenSet(false)
-{
-}
-
 CertificateAuthentication::CertificateAuthentication(const XmlNode& xmlNode)
-  : CertificateAuthentication()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ CertificateAuthentication& CertificateAuthentication::operator =(const XmlNode& 
     {
       m_clientRootCertificateChain = Aws::Utils::Xml::DecodeEscapedXmlText(clientRootCertificateChainNode.GetText());
       m_clientRootCertificateChainHasBeenSet = true;
+       m_clientRootCertificateChainHasBeenSet = true;
     }
   }
 

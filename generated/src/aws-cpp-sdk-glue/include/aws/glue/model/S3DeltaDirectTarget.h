@@ -37,7 +37,7 @@ namespace Model
   class S3DeltaDirectTarget
   {
   public:
-    AWS_GLUE_API S3DeltaDirectTarget();
+    AWS_GLUE_API S3DeltaDirectTarget() = default;
     AWS_GLUE_API S3DeltaDirectTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API S3DeltaDirectTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,57 +47,52 @@ namespace Model
     /**
      * <p>The name of the data target.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3DeltaDirectTarget& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3DeltaDirectTarget& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3DeltaDirectTarget& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3DeltaDirectTarget& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The nodes that are inputs to the data target.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline S3DeltaDirectTarget& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline S3DeltaDirectTarget& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline S3DeltaDirectTarget& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline S3DeltaDirectTarget& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline S3DeltaDirectTarget& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    S3DeltaDirectTarget& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    S3DeltaDirectTarget& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies native partitioning using a sequence of keys.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const{ return m_partitionKeys; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetPartitionKeys() const { return m_partitionKeys; }
     inline bool PartitionKeysHasBeenSet() const { return m_partitionKeysHasBeenSet; }
-    inline void SetPartitionKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
-    inline void SetPartitionKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
-    inline S3DeltaDirectTarget& WithPartitionKeys(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetPartitionKeys(value); return *this;}
-    inline S3DeltaDirectTarget& WithPartitionKeys(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetPartitionKeys(std::move(value)); return *this;}
-    inline S3DeltaDirectTarget& AddPartitionKeys(const Aws::Vector<Aws::String>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
-    inline S3DeltaDirectTarget& AddPartitionKeys(Aws::Vector<Aws::String>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
+    template<typename PartitionKeysT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetPartitionKeys(PartitionKeysT&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::forward<PartitionKeysT>(value); }
+    template<typename PartitionKeysT = Aws::Vector<Aws::Vector<Aws::String>>>
+    S3DeltaDirectTarget& WithPartitionKeys(PartitionKeysT&& value) { SetPartitionKeys(std::forward<PartitionKeysT>(value)); return *this;}
+    template<typename PartitionKeysT = Aws::Vector<Aws::String>>
+    S3DeltaDirectTarget& AddPartitionKeys(PartitionKeysT&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.emplace_back(std::forward<PartitionKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline S3DeltaDirectTarget& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline S3DeltaDirectTarget& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline S3DeltaDirectTarget& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    S3DeltaDirectTarget& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,55 +101,48 @@ namespace Model
      * data has a standard file extension. Possible values are <code>"gzip"</code> and
      * <code>"bzip"</code>).</p>
      */
-    inline const DeltaTargetCompressionType& GetCompression() const{ return m_compression; }
+    inline DeltaTargetCompressionType GetCompression() const { return m_compression; }
     inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
-    inline void SetCompression(const DeltaTargetCompressionType& value) { m_compressionHasBeenSet = true; m_compression = value; }
-    inline void SetCompression(DeltaTargetCompressionType&& value) { m_compressionHasBeenSet = true; m_compression = std::move(value); }
-    inline S3DeltaDirectTarget& WithCompression(const DeltaTargetCompressionType& value) { SetCompression(value); return *this;}
-    inline S3DeltaDirectTarget& WithCompression(DeltaTargetCompressionType&& value) { SetCompression(std::move(value)); return *this;}
+    inline void SetCompression(DeltaTargetCompressionType value) { m_compressionHasBeenSet = true; m_compression = value; }
+    inline S3DeltaDirectTarget& WithCompression(DeltaTargetCompressionType value) { SetCompression(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data output format for the target.</p>
      */
-    inline const TargetFormat& GetFormat() const{ return m_format; }
+    inline TargetFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const TargetFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(TargetFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline S3DeltaDirectTarget& WithFormat(const TargetFormat& value) { SetFormat(value); return *this;}
-    inline S3DeltaDirectTarget& WithFormat(TargetFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(TargetFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline S3DeltaDirectTarget& WithFormat(TargetFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies additional connection options for the connector.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalOptions() const{ return m_additionalOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalOptions() const { return m_additionalOptions; }
     inline bool AdditionalOptionsHasBeenSet() const { return m_additionalOptionsHasBeenSet; }
-    inline void SetAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = value; }
-    inline void SetAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::move(value); }
-    inline S3DeltaDirectTarget& WithAdditionalOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalOptions(value); return *this;}
-    inline S3DeltaDirectTarget& WithAdditionalOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalOptions(std::move(value)); return *this;}
-    inline S3DeltaDirectTarget& AddAdditionalOptions(const Aws::String& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
-    inline S3DeltaDirectTarget& AddAdditionalOptions(Aws::String&& key, const Aws::String& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
-    inline S3DeltaDirectTarget& AddAdditionalOptions(const Aws::String& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
-    inline S3DeltaDirectTarget& AddAdditionalOptions(Aws::String&& key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline S3DeltaDirectTarget& AddAdditionalOptions(const char* key, Aws::String&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, std::move(value)); return *this; }
-    inline S3DeltaDirectTarget& AddAdditionalOptions(Aws::String&& key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::move(key), value); return *this; }
-    inline S3DeltaDirectTarget& AddAdditionalOptions(const char* key, const char* value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(key, value); return *this; }
+    template<typename AdditionalOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalOptions(AdditionalOptionsT&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::forward<AdditionalOptionsT>(value); }
+    template<typename AdditionalOptionsT = Aws::Map<Aws::String, Aws::String>>
+    S3DeltaDirectTarget& WithAdditionalOptions(AdditionalOptionsT&& value) { SetAdditionalOptions(std::forward<AdditionalOptionsT>(value)); return *this;}
+    template<typename AdditionalOptionsKeyT = Aws::String, typename AdditionalOptionsValueT = Aws::String>
+    S3DeltaDirectTarget& AddAdditionalOptions(AdditionalOptionsKeyT&& key, AdditionalOptionsValueT&& value) {
+      m_additionalOptionsHasBeenSet = true; m_additionalOptions.emplace(std::forward<AdditionalOptionsKeyT>(key), std::forward<AdditionalOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A policy that specifies update behavior for the crawler.</p>
      */
-    inline const DirectSchemaChangePolicy& GetSchemaChangePolicy() const{ return m_schemaChangePolicy; }
+    inline const DirectSchemaChangePolicy& GetSchemaChangePolicy() const { return m_schemaChangePolicy; }
     inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
-    inline void SetSchemaChangePolicy(const DirectSchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
-    inline void SetSchemaChangePolicy(DirectSchemaChangePolicy&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::move(value); }
-    inline S3DeltaDirectTarget& WithSchemaChangePolicy(const DirectSchemaChangePolicy& value) { SetSchemaChangePolicy(value); return *this;}
-    inline S3DeltaDirectTarget& WithSchemaChangePolicy(DirectSchemaChangePolicy&& value) { SetSchemaChangePolicy(std::move(value)); return *this;}
+    template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
+    void SetSchemaChangePolicy(SchemaChangePolicyT&& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = std::forward<SchemaChangePolicyT>(value); }
+    template<typename SchemaChangePolicyT = DirectSchemaChangePolicy>
+    S3DeltaDirectTarget& WithSchemaChangePolicy(SchemaChangePolicyT&& value) { SetSchemaChangePolicy(std::forward<SchemaChangePolicyT>(value)); return *this;}
     ///@}
   private:
 
@@ -170,10 +158,10 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    DeltaTargetCompressionType m_compression;
+    DeltaTargetCompressionType m_compression{DeltaTargetCompressionType::NOT_SET};
     bool m_compressionHasBeenSet = false;
 
-    TargetFormat m_format;
+    TargetFormat m_format{TargetFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_additionalOptions;

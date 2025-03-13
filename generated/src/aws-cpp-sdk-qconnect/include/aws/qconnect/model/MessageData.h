@@ -31,7 +31,7 @@ namespace Model
   class MessageData
   {
   public:
-    AWS_QCONNECT_API MessageData();
+    AWS_QCONNECT_API MessageData() = default;
     AWS_QCONNECT_API MessageData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API MessageData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The message data in text type.</p>
      */
-    inline const TextMessage& GetText() const{ return m_text; }
+    inline const TextMessage& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const TextMessage& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(TextMessage&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline MessageData& WithText(const TextMessage& value) { SetText(value); return *this;}
-    inline MessageData& WithText(TextMessage&& value) { SetText(std::move(value)); return *this;}
+    template<typename TextT = TextMessage>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = TextMessage>
+    MessageData& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

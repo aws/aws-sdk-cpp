@@ -18,16 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-Message::Message() : 
-    m_contentHasBeenSet(false),
-    m_contentType(MessageContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_imageResponseCardHasBeenSet(false)
-{
-}
-
 Message::Message(JsonView jsonValue)
-  : Message()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Message& Message::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = MessageContentTypeMapper::GetMessageContentTypeForName(jsonValue.GetString("contentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageResponseCard"))
   {
     m_imageResponseCard = jsonValue.GetObject("imageResponseCard");
-
     m_imageResponseCardHasBeenSet = true;
   }
-
   return *this;
 }
 

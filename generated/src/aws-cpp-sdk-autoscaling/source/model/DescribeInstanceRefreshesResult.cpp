@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceRefreshesResult::DescribeInstanceRefreshesResult()
-{
-}
-
 DescribeInstanceRefreshesResult::DescribeInstanceRefreshesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeInstanceRefreshesResult& DescribeInstanceRefreshesResult::operator =(con
     if(!instanceRefreshesNode.IsNull())
     {
       XmlNode instanceRefreshesMember = instanceRefreshesNode.FirstChild("member");
+      m_instanceRefreshesHasBeenSet = !instanceRefreshesMember.IsNull();
       while(!instanceRefreshesMember.IsNull())
       {
         m_instanceRefreshes.push_back(instanceRefreshesMember);
@@ -53,12 +50,14 @@ DescribeInstanceRefreshesResult& DescribeInstanceRefreshesResult::operator =(con
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeInstanceRefreshesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

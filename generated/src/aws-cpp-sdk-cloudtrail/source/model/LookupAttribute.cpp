@@ -18,15 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-LookupAttribute::LookupAttribute() : 
-    m_attributeKey(LookupAttributeKey::NOT_SET),
-    m_attributeKeyHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 LookupAttribute::LookupAttribute(JsonView jsonValue)
-  : LookupAttribute()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LookupAttribute& LookupAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeKey"))
   {
     m_attributeKey = LookupAttributeKeyMapper::GetLookupAttributeKeyForName(jsonValue.GetString("AttributeKey"));
-
     m_attributeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeValue"))
   {
     m_attributeValue = jsonValue.GetString("AttributeValue");
-
     m_attributeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

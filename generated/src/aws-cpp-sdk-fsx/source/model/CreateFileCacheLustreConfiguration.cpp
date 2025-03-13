@@ -18,18 +18,7 @@ namespace FSx
 namespace Model
 {
 
-CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration() : 
-    m_perUnitStorageThroughput(0),
-    m_perUnitStorageThroughputHasBeenSet(false),
-    m_deploymentType(FileCacheLustreDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_metadataConfigurationHasBeenSet(false)
-{
-}
-
 CreateFileCacheLustreConfiguration::CreateFileCacheLustreConfiguration(JsonView jsonValue)
-  : CreateFileCacheLustreConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CreateFileCacheLustreConfiguration& CreateFileCacheLustreConfiguration::operator
   if(jsonValue.ValueExists("PerUnitStorageThroughput"))
   {
     m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
-
     m_perUnitStorageThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = FileCacheLustreDeploymentTypeMapper::GetFileCacheLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataConfiguration"))
   {
     m_metadataConfiguration = jsonValue.GetObject("MetadataConfiguration");
-
     m_metadataConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

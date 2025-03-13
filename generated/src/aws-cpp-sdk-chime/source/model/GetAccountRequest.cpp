@@ -12,11 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountRequest::GetAccountRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAccountRequest::SerializePayload() const
 {
   return {};

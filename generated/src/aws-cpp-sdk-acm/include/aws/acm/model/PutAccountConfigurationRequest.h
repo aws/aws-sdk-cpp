@@ -22,7 +22,7 @@ namespace Model
   class PutAccountConfigurationRequest : public ACMRequest
   {
   public:
-    AWS_ACM_API PutAccountConfigurationRequest();
+    AWS_ACM_API PutAccountConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
     /**
      * <p>Specifies expiration events associated with an account.</p>
      */
-    inline const ExpiryEventsConfiguration& GetExpiryEvents() const{ return m_expiryEvents; }
+    inline const ExpiryEventsConfiguration& GetExpiryEvents() const { return m_expiryEvents; }
     inline bool ExpiryEventsHasBeenSet() const { return m_expiryEventsHasBeenSet; }
-    inline void SetExpiryEvents(const ExpiryEventsConfiguration& value) { m_expiryEventsHasBeenSet = true; m_expiryEvents = value; }
-    inline void SetExpiryEvents(ExpiryEventsConfiguration&& value) { m_expiryEventsHasBeenSet = true; m_expiryEvents = std::move(value); }
-    inline PutAccountConfigurationRequest& WithExpiryEvents(const ExpiryEventsConfiguration& value) { SetExpiryEvents(value); return *this;}
-    inline PutAccountConfigurationRequest& WithExpiryEvents(ExpiryEventsConfiguration&& value) { SetExpiryEvents(std::move(value)); return *this;}
+    template<typename ExpiryEventsT = ExpiryEventsConfiguration>
+    void SetExpiryEvents(ExpiryEventsT&& value) { m_expiryEventsHasBeenSet = true; m_expiryEvents = std::forward<ExpiryEventsT>(value); }
+    template<typename ExpiryEventsT = ExpiryEventsConfiguration>
+    PutAccountConfigurationRequest& WithExpiryEvents(ExpiryEventsT&& value) { SetExpiryEvents(std::forward<ExpiryEventsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * the original result. If you change the idempotency token for each call, ACM
      * treats each call as a new request.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline PutAccountConfigurationRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline PutAccountConfigurationRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline PutAccountConfigurationRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    PutAccountConfigurationRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
   private:
 

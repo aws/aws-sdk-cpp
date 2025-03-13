@@ -31,7 +31,7 @@ namespace Model
   class StartShotDetectionFilter
   {
   public:
-    AWS_REKOGNITION_API StartShotDetectionFilter();
+    AWS_REKOGNITION_API StartShotDetectionFilter() = default;
     AWS_REKOGNITION_API StartShotDetectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API StartShotDetectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * <code>GetSegmentDetection</code> returns segments with confidence values greater
      * than or equal to 50 percent.</p>
      */
-    inline double GetMinSegmentConfidence() const{ return m_minSegmentConfidence; }
+    inline double GetMinSegmentConfidence() const { return m_minSegmentConfidence; }
     inline bool MinSegmentConfidenceHasBeenSet() const { return m_minSegmentConfidenceHasBeenSet; }
     inline void SetMinSegmentConfidence(double value) { m_minSegmentConfidenceHasBeenSet = true; m_minSegmentConfidence = value; }
     inline StartShotDetectionFilter& WithMinSegmentConfidence(double value) { SetMinSegmentConfidence(value); return *this;}
     ///@}
   private:
 
-    double m_minSegmentConfidence;
+    double m_minSegmentConfidence{0.0};
     bool m_minSegmentConfidenceHasBeenSet = false;
   };
 

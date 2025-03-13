@@ -29,7 +29,7 @@ namespace Model
   class DescribeExportTasksResponse
   {
   public:
-    AWS_EC2_API DescribeExportTasksResponse();
+    AWS_EC2_API DescribeExportTasksResponse() = default;
     AWS_EC2_API DescribeExportTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeExportTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the export tasks.</p>
      */
-    inline const Aws::Vector<ExportTask>& GetExportTasks() const{ return m_exportTasks; }
-    inline void SetExportTasks(const Aws::Vector<ExportTask>& value) { m_exportTasks = value; }
-    inline void SetExportTasks(Aws::Vector<ExportTask>&& value) { m_exportTasks = std::move(value); }
-    inline DescribeExportTasksResponse& WithExportTasks(const Aws::Vector<ExportTask>& value) { SetExportTasks(value); return *this;}
-    inline DescribeExportTasksResponse& WithExportTasks(Aws::Vector<ExportTask>&& value) { SetExportTasks(std::move(value)); return *this;}
-    inline DescribeExportTasksResponse& AddExportTasks(const ExportTask& value) { m_exportTasks.push_back(value); return *this; }
-    inline DescribeExportTasksResponse& AddExportTasks(ExportTask&& value) { m_exportTasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ExportTask>& GetExportTasks() const { return m_exportTasks; }
+    template<typename ExportTasksT = Aws::Vector<ExportTask>>
+    void SetExportTasks(ExportTasksT&& value) { m_exportTasksHasBeenSet = true; m_exportTasks = std::forward<ExportTasksT>(value); }
+    template<typename ExportTasksT = Aws::Vector<ExportTask>>
+    DescribeExportTasksResponse& WithExportTasks(ExportTasksT&& value) { SetExportTasks(std::forward<ExportTasksT>(value)); return *this;}
+    template<typename ExportTasksT = ExportTask>
+    DescribeExportTasksResponse& AddExportTasks(ExportTasksT&& value) { m_exportTasksHasBeenSet = true; m_exportTasks.emplace_back(std::forward<ExportTasksT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeExportTasksResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeExportTasksResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeExportTasksResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ExportTask> m_exportTasks;
+    bool m_exportTasksHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

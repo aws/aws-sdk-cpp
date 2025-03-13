@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSignalMapRequest::GetSignalMapRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetSignalMapRequest::SerializePayload() const
 {
   return {};

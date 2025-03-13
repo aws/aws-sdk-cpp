@@ -32,7 +32,7 @@ namespace Model
   class AuditContext
   {
   public:
-    AWS_LAKEFORMATION_API AuditContext();
+    AWS_LAKEFORMATION_API AuditContext() = default;
     AWS_LAKEFORMATION_API AuditContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API AuditContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * the request ID for you to track. This information will be displayed in
      * CloudTrail log in your account.</p>
      */
-    inline const Aws::String& GetAdditionalAuditContext() const{ return m_additionalAuditContext; }
+    inline const Aws::String& GetAdditionalAuditContext() const { return m_additionalAuditContext; }
     inline bool AdditionalAuditContextHasBeenSet() const { return m_additionalAuditContextHasBeenSet; }
-    inline void SetAdditionalAuditContext(const Aws::String& value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext = value; }
-    inline void SetAdditionalAuditContext(Aws::String&& value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext = std::move(value); }
-    inline void SetAdditionalAuditContext(const char* value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext.assign(value); }
-    inline AuditContext& WithAdditionalAuditContext(const Aws::String& value) { SetAdditionalAuditContext(value); return *this;}
-    inline AuditContext& WithAdditionalAuditContext(Aws::String&& value) { SetAdditionalAuditContext(std::move(value)); return *this;}
-    inline AuditContext& WithAdditionalAuditContext(const char* value) { SetAdditionalAuditContext(value); return *this;}
+    template<typename AdditionalAuditContextT = Aws::String>
+    void SetAdditionalAuditContext(AdditionalAuditContextT&& value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext = std::forward<AdditionalAuditContextT>(value); }
+    template<typename AdditionalAuditContextT = Aws::String>
+    AuditContext& WithAdditionalAuditContext(AdditionalAuditContextT&& value) { SetAdditionalAuditContext(std::forward<AdditionalAuditContextT>(value)); return *this;}
     ///@}
   private:
 

@@ -41,7 +41,7 @@ namespace Model
   class RequestBodyAssociatedResourceTypeConfig
   {
   public:
-    AWS_WAFV2_API RequestBodyAssociatedResourceTypeConfig();
+    AWS_WAFV2_API RequestBodyAssociatedResourceTypeConfig() = default;
     AWS_WAFV2_API RequestBodyAssociatedResourceTypeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RequestBodyAssociatedResourceTypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,16 +55,14 @@ namespace Model
      * the web ACL that inspect the body or JSON body. </p> <p>Default: <code>16 KB
      * (16,384 bytes)</code> </p>
      */
-    inline const SizeInspectionLimit& GetDefaultSizeInspectionLimit() const{ return m_defaultSizeInspectionLimit; }
+    inline SizeInspectionLimit GetDefaultSizeInspectionLimit() const { return m_defaultSizeInspectionLimit; }
     inline bool DefaultSizeInspectionLimitHasBeenSet() const { return m_defaultSizeInspectionLimitHasBeenSet; }
-    inline void SetDefaultSizeInspectionLimit(const SizeInspectionLimit& value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = value; }
-    inline void SetDefaultSizeInspectionLimit(SizeInspectionLimit&& value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = std::move(value); }
-    inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(const SizeInspectionLimit& value) { SetDefaultSizeInspectionLimit(value); return *this;}
-    inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(SizeInspectionLimit&& value) { SetDefaultSizeInspectionLimit(std::move(value)); return *this;}
+    inline void SetDefaultSizeInspectionLimit(SizeInspectionLimit value) { m_defaultSizeInspectionLimitHasBeenSet = true; m_defaultSizeInspectionLimit = value; }
+    inline RequestBodyAssociatedResourceTypeConfig& WithDefaultSizeInspectionLimit(SizeInspectionLimit value) { SetDefaultSizeInspectionLimit(value); return *this;}
     ///@}
   private:
 
-    SizeInspectionLimit m_defaultSizeInspectionLimit;
+    SizeInspectionLimit m_defaultSizeInspectionLimit{SizeInspectionLimit::NOT_SET};
     bool m_defaultSizeInspectionLimitHasBeenSet = false;
   };
 

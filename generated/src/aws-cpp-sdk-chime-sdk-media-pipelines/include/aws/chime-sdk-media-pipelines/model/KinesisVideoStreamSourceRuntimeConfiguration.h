@@ -34,7 +34,7 @@ namespace Model
   class KinesisVideoStreamSourceRuntimeConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamSourceRuntimeConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamSourceRuntimeConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamSourceRuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamSourceRuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>The streams in the source runtime configuration of a Kinesis video
      * stream.</p>
      */
-    inline const Aws::Vector<StreamConfiguration>& GetStreams() const{ return m_streams; }
+    inline const Aws::Vector<StreamConfiguration>& GetStreams() const { return m_streams; }
     inline bool StreamsHasBeenSet() const { return m_streamsHasBeenSet; }
-    inline void SetStreams(const Aws::Vector<StreamConfiguration>& value) { m_streamsHasBeenSet = true; m_streams = value; }
-    inline void SetStreams(Aws::Vector<StreamConfiguration>&& value) { m_streamsHasBeenSet = true; m_streams = std::move(value); }
-    inline KinesisVideoStreamSourceRuntimeConfiguration& WithStreams(const Aws::Vector<StreamConfiguration>& value) { SetStreams(value); return *this;}
-    inline KinesisVideoStreamSourceRuntimeConfiguration& WithStreams(Aws::Vector<StreamConfiguration>&& value) { SetStreams(std::move(value)); return *this;}
-    inline KinesisVideoStreamSourceRuntimeConfiguration& AddStreams(const StreamConfiguration& value) { m_streamsHasBeenSet = true; m_streams.push_back(value); return *this; }
-    inline KinesisVideoStreamSourceRuntimeConfiguration& AddStreams(StreamConfiguration&& value) { m_streamsHasBeenSet = true; m_streams.push_back(std::move(value)); return *this; }
+    template<typename StreamsT = Aws::Vector<StreamConfiguration>>
+    void SetStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams = std::forward<StreamsT>(value); }
+    template<typename StreamsT = Aws::Vector<StreamConfiguration>>
+    KinesisVideoStreamSourceRuntimeConfiguration& WithStreams(StreamsT&& value) { SetStreams(std::forward<StreamsT>(value)); return *this;}
+    template<typename StreamsT = StreamConfiguration>
+    KinesisVideoStreamSourceRuntimeConfiguration& AddStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams.emplace_back(std::forward<StreamsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,12 +63,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a> in the <i>Amazon Transcribe Developer Guide</i>.</p>
      */
-    inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
+    inline MediaEncoding GetMediaEncoding() const { return m_mediaEncoding; }
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
-    inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
-    inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
-    inline KinesisVideoStreamSourceRuntimeConfiguration& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
-    inline KinesisVideoStreamSourceRuntimeConfiguration& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    inline void SetMediaEncoding(MediaEncoding value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
+    inline KinesisVideoStreamSourceRuntimeConfiguration& WithMediaEncoding(MediaEncoding value) { SetMediaEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +77,7 @@ namespace Model
      * match that of your audio.</p> <p>Valid Range: Minimum value of 8000. Maximum
      * value of 48000.</p>
      */
-    inline int GetMediaSampleRate() const{ return m_mediaSampleRate; }
+    inline int GetMediaSampleRate() const { return m_mediaSampleRate; }
     inline bool MediaSampleRateHasBeenSet() const { return m_mediaSampleRateHasBeenSet; }
     inline void SetMediaSampleRate(int value) { m_mediaSampleRateHasBeenSet = true; m_mediaSampleRate = value; }
     inline KinesisVideoStreamSourceRuntimeConfiguration& WithMediaSampleRate(int value) { SetMediaSampleRate(value); return *this;}
@@ -89,10 +87,10 @@ namespace Model
     Aws::Vector<StreamConfiguration> m_streams;
     bool m_streamsHasBeenSet = false;
 
-    MediaEncoding m_mediaEncoding;
+    MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
     bool m_mediaEncodingHasBeenSet = false;
 
-    int m_mediaSampleRate;
+    int m_mediaSampleRate{0};
     bool m_mediaSampleRateHasBeenSet = false;
   };
 

@@ -24,7 +24,7 @@ namespace Model
   class StartDiscoveryJobRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API StartDiscoveryJobRequest();
+    AWS_DATASYNC_API StartDiscoveryJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system
      * that you want to run the discovery job on.</p>
      */
-    inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
+    inline const Aws::String& GetStorageSystemArn() const { return m_storageSystemArn; }
     inline bool StorageSystemArnHasBeenSet() const { return m_storageSystemArnHasBeenSet; }
-    inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = value; }
-    inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::move(value); }
-    inline void SetStorageSystemArn(const char* value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn.assign(value); }
-    inline StartDiscoveryJobRequest& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-    inline StartDiscoveryJobRequest& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-    inline StartDiscoveryJobRequest& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    template<typename StorageSystemArnT = Aws::String>
+    void SetStorageSystemArn(StorageSystemArnT&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::forward<StorageSystemArnT>(value); }
+    template<typename StorageSystemArnT = Aws::String>
+    StartDiscoveryJobRequest& WithStorageSystemArn(StorageSystemArnT&& value) { SetStorageSystemArn(std::forward<StorageSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * and provide a realistic representation of storage performance and
      * utilization.</p> 
      */
-    inline int GetCollectionDurationMinutes() const{ return m_collectionDurationMinutes; }
+    inline int GetCollectionDurationMinutes() const { return m_collectionDurationMinutes; }
     inline bool CollectionDurationMinutesHasBeenSet() const { return m_collectionDurationMinutesHasBeenSet; }
     inline void SetCollectionDurationMinutes(int value) { m_collectionDurationMinutesHasBeenSet = true; m_collectionDurationMinutes = value; }
     inline StartDiscoveryJobRequest& WithCollectionDurationMinutes(int value) { SetCollectionDurationMinutes(value); return *this;}
@@ -72,14 +70,12 @@ namespace Model
      * idempotent. If you don't specify a client token, DataSync generates one for you
      * automatically.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartDiscoveryJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartDiscoveryJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartDiscoveryJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartDiscoveryJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,21 +83,21 @@ namespace Model
      * <p>Specifies labels that help you categorize, filter, and search for your Amazon
      * Web Services resources.</p>
      */
-    inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagListEntry>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartDiscoveryJobRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
-    inline StartDiscoveryJobRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartDiscoveryJobRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StartDiscoveryJobRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    StartDiscoveryJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagListEntry>
+    StartDiscoveryJobRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_storageSystemArn;
     bool m_storageSystemArnHasBeenSet = false;
 
-    int m_collectionDurationMinutes;
+    int m_collectionDurationMinutes{0};
     bool m_collectionDurationMinutesHasBeenSet = false;
 
     Aws::String m_clientToken;

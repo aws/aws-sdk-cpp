@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-OverrideDatasetParameterOperation::OverrideDatasetParameterOperation() : 
-    m_parameterNameHasBeenSet(false),
-    m_newParameterNameHasBeenSet(false),
-    m_newDefaultValuesHasBeenSet(false)
-{
-}
-
 OverrideDatasetParameterOperation::OverrideDatasetParameterOperation(JsonView jsonValue)
-  : OverrideDatasetParameterOperation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OverrideDatasetParameterOperation& OverrideDatasetParameterOperation::operator =
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewParameterName"))
   {
     m_newParameterName = jsonValue.GetString("NewParameterName");
-
     m_newParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewDefaultValues"))
   {
     m_newDefaultValues = jsonValue.GetObject("NewDefaultValues");
-
     m_newDefaultValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

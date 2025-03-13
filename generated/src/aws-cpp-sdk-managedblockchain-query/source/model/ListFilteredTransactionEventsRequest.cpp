@@ -12,19 +12,6 @@ using namespace Aws::ManagedBlockchainQuery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFilteredTransactionEventsRequest::ListFilteredTransactionEventsRequest() : 
-    m_networkHasBeenSet(false),
-    m_addressIdentifierFilterHasBeenSet(false),
-    m_timeFilterHasBeenSet(false),
-    m_voutFilterHasBeenSet(false),
-    m_confirmationStatusFilterHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListFilteredTransactionEventsRequest::SerializePayload() const
 {
   JsonValue payload;

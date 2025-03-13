@@ -33,7 +33,7 @@ namespace Model
   class MetricConfiguration
   {
   public:
-    AWS_OAM_API MetricConfiguration();
+    AWS_OAM_API MetricConfiguration() = default;
     AWS_OAM_API MetricConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API MetricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * to delete the filter and share all metric namespaces with the monitoring
      * account.</p> 
      */
-    inline const Aws::String& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
-    inline MetricConfiguration& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
-    inline MetricConfiguration& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
-    inline MetricConfiguration& WithFilter(const char* value) { SetFilter(value); return *this;}
+    template<typename FilterT = Aws::String>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::String>
+    MetricConfiguration& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 

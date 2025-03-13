@@ -32,7 +32,7 @@ namespace Model
   class InputDefinition
   {
   public:
-    AWS_IOTEVENTS_API InputDefinition();
+    AWS_IOTEVENTS_API InputDefinition() = default;
     AWS_IOTEVENTS_API InputDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API InputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * in the <code>condition</code> expressions used by detectors that monitor this
      * input. </p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline InputDefinition& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline InputDefinition& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline InputDefinition& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline InputDefinition& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    InputDefinition& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Attribute>
+    InputDefinition& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

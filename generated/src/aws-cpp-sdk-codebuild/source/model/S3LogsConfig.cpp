@@ -18,19 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-S3LogsConfig::S3LogsConfig() : 
-    m_status(LogsConfigStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
-    m_bucketOwnerAccessHasBeenSet(false)
-{
-}
-
 S3LogsConfig::S3LogsConfig(JsonView jsonValue)
-  : S3LogsConfig()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ S3LogsConfig& S3LogsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = LogsConfigStatusTypeMapper::GetLogsConfigStatusTypeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionDisabled"))
   {
     m_encryptionDisabled = jsonValue.GetBool("encryptionDisabled");
-
     m_encryptionDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketOwnerAccess"))
   {
     m_bucketOwnerAccess = BucketOwnerAccessMapper::GetBucketOwnerAccessForName(jsonValue.GetString("bucketOwnerAccess"));
-
     m_bucketOwnerAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

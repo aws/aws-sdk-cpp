@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceDataSortBy::UtteranceDataSortBy() : 
-    m_name(AnalyticsUtteranceSortByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 UtteranceDataSortBy::UtteranceDataSortBy(JsonView jsonValue)
-  : UtteranceDataSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UtteranceDataSortBy& UtteranceDataSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsUtteranceSortByNameMapper::GetAnalyticsUtteranceSortByNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = AnalyticsSortOrderMapper::GetAnalyticsSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

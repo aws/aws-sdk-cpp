@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialMapState::GeospatialMapState() : 
-    m_boundsHasBeenSet(false),
-    m_mapNavigation(GeospatialMapNavigation::NOT_SET),
-    m_mapNavigationHasBeenSet(false)
-{
-}
-
 GeospatialMapState::GeospatialMapState(JsonView jsonValue)
-  : GeospatialMapState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeospatialMapState& GeospatialMapState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bounds"))
   {
     m_bounds = jsonValue.GetObject("Bounds");
-
     m_boundsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapNavigation"))
   {
     m_mapNavigation = GeospatialMapNavigationMapper::GetGeospatialMapNavigationForName(jsonValue.GetString("MapNavigation"));
-
     m_mapNavigationHasBeenSet = true;
   }
-
   return *this;
 }
 

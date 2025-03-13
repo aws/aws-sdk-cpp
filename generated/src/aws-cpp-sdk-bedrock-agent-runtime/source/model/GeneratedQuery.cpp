@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GeneratedQuery::GeneratedQuery() : 
-    m_sqlHasBeenSet(false),
-    m_type(GeneratedQueryType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GeneratedQuery::GeneratedQuery(JsonView jsonValue)
-  : GeneratedQuery()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeneratedQuery& GeneratedQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sql"))
   {
     m_sql = jsonValue.GetString("sql");
-
     m_sqlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = GeneratedQueryTypeMapper::GetGeneratedQueryTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

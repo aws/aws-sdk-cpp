@@ -32,7 +32,7 @@ namespace Model
   class SseConfig
   {
   public:
-    AWS_OMICS_API SseConfig();
+    AWS_OMICS_API SseConfig() = default;
     AWS_OMICS_API SseConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API SseConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The encryption type.</p>
      */
-    inline const EncryptionType& GetType() const{ return m_type; }
+    inline EncryptionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EncryptionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EncryptionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SseConfig& WithType(const EncryptionType& value) { SetType(value); return *this;}
-    inline SseConfig& WithType(EncryptionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EncryptionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SseConfig& WithType(EncryptionType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An encryption key ARN.</p>
      */
-    inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+    inline const Aws::String& GetKeyArn() const { return m_keyArn; }
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-    inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-    inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-    inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-    inline SseConfig& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-    inline SseConfig& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-    inline SseConfig& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    template<typename KeyArnT = Aws::String>
+    void SetKeyArn(KeyArnT&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::forward<KeyArnT>(value); }
+    template<typename KeyArnT = Aws::String>
+    SseConfig& WithKeyArn(KeyArnT&& value) { SetKeyArn(std::forward<KeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    EncryptionType m_type;
+    EncryptionType m_type{EncryptionType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_keyArn;

@@ -37,7 +37,7 @@ namespace Model
   class EngineTranscribeMedicalSettings
   {
   public:
-    AWS_CHIMESDKMEETINGS_API EngineTranscribeMedicalSettings();
+    AWS_CHIMESDKMEETINGS_API EngineTranscribeMedicalSettings() = default;
     AWS_CHIMESDKMEETINGS_API EngineTranscribeMedicalSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API EngineTranscribeMedicalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,50 +47,42 @@ namespace Model
     /**
      * <p>The language code specified for the Amazon Transcribe Medical engine.</p>
      */
-    inline const TranscribeMedicalLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline TranscribeMedicalLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const TranscribeMedicalLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(TranscribeMedicalLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline EngineTranscribeMedicalSettings& WithLanguageCode(const TranscribeMedicalLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline EngineTranscribeMedicalSettings& WithLanguageCode(TranscribeMedicalLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(TranscribeMedicalLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline EngineTranscribeMedicalSettings& WithLanguageCode(TranscribeMedicalLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specialty specified for the Amazon Transcribe Medical engine.</p>
      */
-    inline const TranscribeMedicalSpecialty& GetSpecialty() const{ return m_specialty; }
+    inline TranscribeMedicalSpecialty GetSpecialty() const { return m_specialty; }
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
-    inline void SetSpecialty(const TranscribeMedicalSpecialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
-    inline void SetSpecialty(TranscribeMedicalSpecialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
-    inline EngineTranscribeMedicalSettings& WithSpecialty(const TranscribeMedicalSpecialty& value) { SetSpecialty(value); return *this;}
-    inline EngineTranscribeMedicalSettings& WithSpecialty(TranscribeMedicalSpecialty&& value) { SetSpecialty(std::move(value)); return *this;}
+    inline void SetSpecialty(TranscribeMedicalSpecialty value) { m_specialtyHasBeenSet = true; m_specialty = value; }
+    inline EngineTranscribeMedicalSettings& WithSpecialty(TranscribeMedicalSpecialty value) { SetSpecialty(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of transcription.</p>
      */
-    inline const TranscribeMedicalType& GetType() const{ return m_type; }
+    inline TranscribeMedicalType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TranscribeMedicalType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TranscribeMedicalType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EngineTranscribeMedicalSettings& WithType(const TranscribeMedicalType& value) { SetType(value); return *this;}
-    inline EngineTranscribeMedicalSettings& WithType(TranscribeMedicalType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TranscribeMedicalType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EngineTranscribeMedicalSettings& WithType(TranscribeMedicalType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline EngineTranscribeMedicalSettings& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline EngineTranscribeMedicalSettings& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline EngineTranscribeMedicalSettings& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    EngineTranscribeMedicalSettings& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +90,10 @@ namespace Model
      * <p>The Amazon Web Services Region passed to Amazon Transcribe Medical. If you
      * don't specify a Region, Amazon Chime uses the meeting's Region. </p>
      */
-    inline const TranscribeMedicalRegion& GetRegion() const{ return m_region; }
+    inline TranscribeMedicalRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const TranscribeMedicalRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(TranscribeMedicalRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline EngineTranscribeMedicalSettings& WithRegion(const TranscribeMedicalRegion& value) { SetRegion(value); return *this;}
-    inline EngineTranscribeMedicalSettings& WithRegion(TranscribeMedicalRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(TranscribeMedicalRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline EngineTranscribeMedicalSettings& WithRegion(TranscribeMedicalRegion value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -111,31 +101,29 @@ namespace Model
      * <p>Set this field to <code>PHI</code> to identify personal health information in
      * the transcription output.</p>
      */
-    inline const TranscribeMedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline TranscribeMedicalContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const TranscribeMedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(TranscribeMedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline EngineTranscribeMedicalSettings& WithContentIdentificationType(const TranscribeMedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline EngineTranscribeMedicalSettings& WithContentIdentificationType(TranscribeMedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(TranscribeMedicalContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline EngineTranscribeMedicalSettings& WithContentIdentificationType(TranscribeMedicalContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
   private:
 
-    TranscribeMedicalLanguageCode m_languageCode;
+    TranscribeMedicalLanguageCode m_languageCode{TranscribeMedicalLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    TranscribeMedicalSpecialty m_specialty;
+    TranscribeMedicalSpecialty m_specialty{TranscribeMedicalSpecialty::NOT_SET};
     bool m_specialtyHasBeenSet = false;
 
-    TranscribeMedicalType m_type;
+    TranscribeMedicalType m_type{TranscribeMedicalType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_vocabularyName;
     bool m_vocabularyNameHasBeenSet = false;
 
-    TranscribeMedicalRegion m_region;
+    TranscribeMedicalRegion m_region{TranscribeMedicalRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
 
-    TranscribeMedicalContentIdentificationType m_contentIdentificationType;
+    TranscribeMedicalContentIdentificationType m_contentIdentificationType{TranscribeMedicalContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
   };
 

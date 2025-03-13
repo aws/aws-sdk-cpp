@@ -32,7 +32,7 @@ namespace Model
   class SectionBasedLayoutCanvasSizeOptions
   {
   public:
-    AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions();
+    AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions() = default;
     AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The options for a paper canvas of a section-based layout.</p>
      */
-    inline const SectionBasedLayoutPaperCanvasSizeOptions& GetPaperCanvasSizeOptions() const{ return m_paperCanvasSizeOptions; }
+    inline const SectionBasedLayoutPaperCanvasSizeOptions& GetPaperCanvasSizeOptions() const { return m_paperCanvasSizeOptions; }
     inline bool PaperCanvasSizeOptionsHasBeenSet() const { return m_paperCanvasSizeOptionsHasBeenSet; }
-    inline void SetPaperCanvasSizeOptions(const SectionBasedLayoutPaperCanvasSizeOptions& value) { m_paperCanvasSizeOptionsHasBeenSet = true; m_paperCanvasSizeOptions = value; }
-    inline void SetPaperCanvasSizeOptions(SectionBasedLayoutPaperCanvasSizeOptions&& value) { m_paperCanvasSizeOptionsHasBeenSet = true; m_paperCanvasSizeOptions = std::move(value); }
-    inline SectionBasedLayoutCanvasSizeOptions& WithPaperCanvasSizeOptions(const SectionBasedLayoutPaperCanvasSizeOptions& value) { SetPaperCanvasSizeOptions(value); return *this;}
-    inline SectionBasedLayoutCanvasSizeOptions& WithPaperCanvasSizeOptions(SectionBasedLayoutPaperCanvasSizeOptions&& value) { SetPaperCanvasSizeOptions(std::move(value)); return *this;}
+    template<typename PaperCanvasSizeOptionsT = SectionBasedLayoutPaperCanvasSizeOptions>
+    void SetPaperCanvasSizeOptions(PaperCanvasSizeOptionsT&& value) { m_paperCanvasSizeOptionsHasBeenSet = true; m_paperCanvasSizeOptions = std::forward<PaperCanvasSizeOptionsT>(value); }
+    template<typename PaperCanvasSizeOptionsT = SectionBasedLayoutPaperCanvasSizeOptions>
+    SectionBasedLayoutCanvasSizeOptions& WithPaperCanvasSizeOptions(PaperCanvasSizeOptionsT&& value) { SetPaperCanvasSizeOptions(std::forward<PaperCanvasSizeOptionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class ManagedSourceConfiguration
   {
   public:
-    AWS_QCONNECT_API ManagedSourceConfiguration();
+    AWS_QCONNECT_API ManagedSourceConfiguration() = default;
     AWS_QCONNECT_API ManagedSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ManagedSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Configuration data for web crawler data source.</p>
      */
-    inline const WebCrawlerConfiguration& GetWebCrawlerConfiguration() const{ return m_webCrawlerConfiguration; }
+    inline const WebCrawlerConfiguration& GetWebCrawlerConfiguration() const { return m_webCrawlerConfiguration; }
     inline bool WebCrawlerConfigurationHasBeenSet() const { return m_webCrawlerConfigurationHasBeenSet; }
-    inline void SetWebCrawlerConfiguration(const WebCrawlerConfiguration& value) { m_webCrawlerConfigurationHasBeenSet = true; m_webCrawlerConfiguration = value; }
-    inline void SetWebCrawlerConfiguration(WebCrawlerConfiguration&& value) { m_webCrawlerConfigurationHasBeenSet = true; m_webCrawlerConfiguration = std::move(value); }
-    inline ManagedSourceConfiguration& WithWebCrawlerConfiguration(const WebCrawlerConfiguration& value) { SetWebCrawlerConfiguration(value); return *this;}
-    inline ManagedSourceConfiguration& WithWebCrawlerConfiguration(WebCrawlerConfiguration&& value) { SetWebCrawlerConfiguration(std::move(value)); return *this;}
+    template<typename WebCrawlerConfigurationT = WebCrawlerConfiguration>
+    void SetWebCrawlerConfiguration(WebCrawlerConfigurationT&& value) { m_webCrawlerConfigurationHasBeenSet = true; m_webCrawlerConfiguration = std::forward<WebCrawlerConfigurationT>(value); }
+    template<typename WebCrawlerConfigurationT = WebCrawlerConfiguration>
+    ManagedSourceConfiguration& WithWebCrawlerConfiguration(WebCrawlerConfigurationT&& value) { SetWebCrawlerConfiguration(std::forward<WebCrawlerConfigurationT>(value)); return *this;}
     ///@}
   private:
 

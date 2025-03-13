@@ -18,20 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EndpointMessageResult::EndpointMessageResult() : 
-    m_addressHasBeenSet(false),
-    m_deliveryStatus(DeliveryStatus::NOT_SET),
-    m_deliveryStatusHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_updatedTokenHasBeenSet(false)
-{
-}
-
 EndpointMessageResult::EndpointMessageResult(JsonView jsonValue)
-  : EndpointMessageResult()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ EndpointMessageResult& EndpointMessageResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStatus"))
   {
     m_deliveryStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("DeliveryStatus"));
-
     m_deliveryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedToken"))
   {
     m_updatedToken = jsonValue.GetString("UpdatedToken");
-
     m_updatedTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

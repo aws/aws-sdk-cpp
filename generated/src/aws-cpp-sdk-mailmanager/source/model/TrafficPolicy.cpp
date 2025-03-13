@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-TrafficPolicy::TrafficPolicy() : 
-    m_defaultAction(AcceptAction::NOT_SET),
-    m_defaultActionHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_trafficPolicyNameHasBeenSet(false)
-{
-}
-
 TrafficPolicy::TrafficPolicy(JsonView jsonValue)
-  : TrafficPolicy()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TrafficPolicy& TrafficPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("DefaultAction"));
-
     m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicyId"))
   {
     m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
-
     m_trafficPolicyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicyName"))
   {
     m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");
-
     m_trafficPolicyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

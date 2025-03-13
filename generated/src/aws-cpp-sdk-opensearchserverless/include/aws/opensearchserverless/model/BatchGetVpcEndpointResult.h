@@ -30,7 +30,7 @@ namespace Model
   class BatchGetVpcEndpointResult
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API BatchGetVpcEndpointResult();
+    AWS_OPENSEARCHSERVERLESS_API BatchGetVpcEndpointResult() = default;
     AWS_OPENSEARCHSERVERLESS_API BatchGetVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVERLESS_API BatchGetVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Details about the specified VPC endpoint.</p>
      */
-    inline const Aws::Vector<VpcEndpointDetail>& GetVpcEndpointDetails() const{ return m_vpcEndpointDetails; }
-    inline void SetVpcEndpointDetails(const Aws::Vector<VpcEndpointDetail>& value) { m_vpcEndpointDetails = value; }
-    inline void SetVpcEndpointDetails(Aws::Vector<VpcEndpointDetail>&& value) { m_vpcEndpointDetails = std::move(value); }
-    inline BatchGetVpcEndpointResult& WithVpcEndpointDetails(const Aws::Vector<VpcEndpointDetail>& value) { SetVpcEndpointDetails(value); return *this;}
-    inline BatchGetVpcEndpointResult& WithVpcEndpointDetails(Aws::Vector<VpcEndpointDetail>&& value) { SetVpcEndpointDetails(std::move(value)); return *this;}
-    inline BatchGetVpcEndpointResult& AddVpcEndpointDetails(const VpcEndpointDetail& value) { m_vpcEndpointDetails.push_back(value); return *this; }
-    inline BatchGetVpcEndpointResult& AddVpcEndpointDetails(VpcEndpointDetail&& value) { m_vpcEndpointDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcEndpointDetail>& GetVpcEndpointDetails() const { return m_vpcEndpointDetails; }
+    template<typename VpcEndpointDetailsT = Aws::Vector<VpcEndpointDetail>>
+    void SetVpcEndpointDetails(VpcEndpointDetailsT&& value) { m_vpcEndpointDetailsHasBeenSet = true; m_vpcEndpointDetails = std::forward<VpcEndpointDetailsT>(value); }
+    template<typename VpcEndpointDetailsT = Aws::Vector<VpcEndpointDetail>>
+    BatchGetVpcEndpointResult& WithVpcEndpointDetails(VpcEndpointDetailsT&& value) { SetVpcEndpointDetails(std::forward<VpcEndpointDetailsT>(value)); return *this;}
+    template<typename VpcEndpointDetailsT = VpcEndpointDetail>
+    BatchGetVpcEndpointResult& AddVpcEndpointDetails(VpcEndpointDetailsT&& value) { m_vpcEndpointDetailsHasBeenSet = true; m_vpcEndpointDetails.emplace_back(std::forward<VpcEndpointDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Error information for a failed request.</p>
      */
-    inline const Aws::Vector<VpcEndpointErrorDetail>& GetVpcEndpointErrorDetails() const{ return m_vpcEndpointErrorDetails; }
-    inline void SetVpcEndpointErrorDetails(const Aws::Vector<VpcEndpointErrorDetail>& value) { m_vpcEndpointErrorDetails = value; }
-    inline void SetVpcEndpointErrorDetails(Aws::Vector<VpcEndpointErrorDetail>&& value) { m_vpcEndpointErrorDetails = std::move(value); }
-    inline BatchGetVpcEndpointResult& WithVpcEndpointErrorDetails(const Aws::Vector<VpcEndpointErrorDetail>& value) { SetVpcEndpointErrorDetails(value); return *this;}
-    inline BatchGetVpcEndpointResult& WithVpcEndpointErrorDetails(Aws::Vector<VpcEndpointErrorDetail>&& value) { SetVpcEndpointErrorDetails(std::move(value)); return *this;}
-    inline BatchGetVpcEndpointResult& AddVpcEndpointErrorDetails(const VpcEndpointErrorDetail& value) { m_vpcEndpointErrorDetails.push_back(value); return *this; }
-    inline BatchGetVpcEndpointResult& AddVpcEndpointErrorDetails(VpcEndpointErrorDetail&& value) { m_vpcEndpointErrorDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcEndpointErrorDetail>& GetVpcEndpointErrorDetails() const { return m_vpcEndpointErrorDetails; }
+    template<typename VpcEndpointErrorDetailsT = Aws::Vector<VpcEndpointErrorDetail>>
+    void SetVpcEndpointErrorDetails(VpcEndpointErrorDetailsT&& value) { m_vpcEndpointErrorDetailsHasBeenSet = true; m_vpcEndpointErrorDetails = std::forward<VpcEndpointErrorDetailsT>(value); }
+    template<typename VpcEndpointErrorDetailsT = Aws::Vector<VpcEndpointErrorDetail>>
+    BatchGetVpcEndpointResult& WithVpcEndpointErrorDetails(VpcEndpointErrorDetailsT&& value) { SetVpcEndpointErrorDetails(std::forward<VpcEndpointErrorDetailsT>(value)); return *this;}
+    template<typename VpcEndpointErrorDetailsT = VpcEndpointErrorDetail>
+    BatchGetVpcEndpointResult& AddVpcEndpointErrorDetails(VpcEndpointErrorDetailsT&& value) { m_vpcEndpointErrorDetailsHasBeenSet = true; m_vpcEndpointErrorDetails.emplace_back(std::forward<VpcEndpointErrorDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetVpcEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetVpcEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetVpcEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetVpcEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VpcEndpointDetail> m_vpcEndpointDetails;
+    bool m_vpcEndpointDetailsHasBeenSet = false;
 
     Aws::Vector<VpcEndpointErrorDetail> m_vpcEndpointErrorDetails;
+    bool m_vpcEndpointErrorDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

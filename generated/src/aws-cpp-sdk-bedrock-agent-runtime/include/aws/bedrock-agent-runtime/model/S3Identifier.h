@@ -32,7 +32,7 @@ namespace Model
   class S3Identifier
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API S3Identifier();
+    AWS_BEDROCKAGENTRUNTIME_API S3Identifier() = default;
     AWS_BEDROCKAGENTRUNTIME_API S3Identifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API S3Identifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The name of the S3 bucket. </p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline S3Identifier& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline S3Identifier& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline S3Identifier& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    S3Identifier& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The S3 object key for the S3 resource. </p>
      */
-    inline const Aws::String& GetS3ObjectKey() const{ return m_s3ObjectKey; }
+    inline const Aws::String& GetS3ObjectKey() const { return m_s3ObjectKey; }
     inline bool S3ObjectKeyHasBeenSet() const { return m_s3ObjectKeyHasBeenSet; }
-    inline void SetS3ObjectKey(const Aws::String& value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey = value; }
-    inline void SetS3ObjectKey(Aws::String&& value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey = std::move(value); }
-    inline void SetS3ObjectKey(const char* value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey.assign(value); }
-    inline S3Identifier& WithS3ObjectKey(const Aws::String& value) { SetS3ObjectKey(value); return *this;}
-    inline S3Identifier& WithS3ObjectKey(Aws::String&& value) { SetS3ObjectKey(std::move(value)); return *this;}
-    inline S3Identifier& WithS3ObjectKey(const char* value) { SetS3ObjectKey(value); return *this;}
+    template<typename S3ObjectKeyT = Aws::String>
+    void SetS3ObjectKey(S3ObjectKeyT&& value) { m_s3ObjectKeyHasBeenSet = true; m_s3ObjectKey = std::forward<S3ObjectKeyT>(value); }
+    template<typename S3ObjectKeyT = Aws::String>
+    S3Identifier& WithS3ObjectKey(S3ObjectKeyT&& value) { SetS3ObjectKey(std::forward<S3ObjectKeyT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::PersonalizeEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEventsRequest::PutEventsRequest() : 
-    m_trackingIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_eventListHasBeenSet(false)
-{
-}
-
 Aws::String PutEventsRequest::SerializePayload() const
 {
   JsonValue payload;

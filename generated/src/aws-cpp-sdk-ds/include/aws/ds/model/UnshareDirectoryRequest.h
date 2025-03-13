@@ -22,7 +22,7 @@ namespace Model
   class UnshareDirectoryRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API UnshareDirectoryRequest();
+    AWS_DIRECTORYSERVICE_API UnshareDirectoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The identifier of the Managed Microsoft AD directory that you want to stop
      * sharing.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline UnshareDirectoryRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline UnshareDirectoryRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline UnshareDirectoryRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    UnshareDirectoryRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>Identifier for the directory consumer account with whom the directory has to
      * be unshared.</p>
      */
-    inline const UnshareTarget& GetUnshareTarget() const{ return m_unshareTarget; }
+    inline const UnshareTarget& GetUnshareTarget() const { return m_unshareTarget; }
     inline bool UnshareTargetHasBeenSet() const { return m_unshareTargetHasBeenSet; }
-    inline void SetUnshareTarget(const UnshareTarget& value) { m_unshareTargetHasBeenSet = true; m_unshareTarget = value; }
-    inline void SetUnshareTarget(UnshareTarget&& value) { m_unshareTargetHasBeenSet = true; m_unshareTarget = std::move(value); }
-    inline UnshareDirectoryRequest& WithUnshareTarget(const UnshareTarget& value) { SetUnshareTarget(value); return *this;}
-    inline UnshareDirectoryRequest& WithUnshareTarget(UnshareTarget&& value) { SetUnshareTarget(std::move(value)); return *this;}
+    template<typename UnshareTargetT = UnshareTarget>
+    void SetUnshareTarget(UnshareTargetT&& value) { m_unshareTargetHasBeenSet = true; m_unshareTarget = std::forward<UnshareTargetT>(value); }
+    template<typename UnshareTargetT = UnshareTarget>
+    UnshareDirectoryRequest& WithUnshareTarget(UnshareTargetT&& value) { SetUnshareTarget(std::forward<UnshareTargetT>(value)); return *this;}
     ///@}
   private:
 

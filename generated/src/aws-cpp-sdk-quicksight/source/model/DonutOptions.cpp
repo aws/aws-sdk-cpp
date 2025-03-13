@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DonutOptions::DonutOptions() : 
-    m_arcOptionsHasBeenSet(false),
-    m_donutCenterOptionsHasBeenSet(false)
-{
-}
-
 DonutOptions::DonutOptions(JsonView jsonValue)
-  : DonutOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DonutOptions& DonutOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArcOptions"))
   {
     m_arcOptions = jsonValue.GetObject("ArcOptions");
-
     m_arcOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DonutCenterOptions"))
   {
     m_donutCenterOptions = jsonValue.GetObject("DonutCenterOptions");
-
     m_donutCenterOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

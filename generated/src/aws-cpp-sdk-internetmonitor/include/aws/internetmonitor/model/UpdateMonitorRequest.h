@@ -26,7 +26,7 @@ namespace Model
   class UpdateMonitorRequest : public InternetMonitorRequest
   {
   public:
-    AWS_INTERNETMONITOR_API UpdateMonitorRequest();
+    AWS_INTERNETMONITOR_API UpdateMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the monitor. </p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline UpdateMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline UpdateMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    UpdateMonitorRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * Private Clouds resources, at least one VPC must have an Internet Gateway
      * attached to it, to make sure that it has internet connectivity.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetResourcesToAdd() const{ return m_resourcesToAdd; }
+    inline const Aws::Vector<Aws::String>& GetResourcesToAdd() const { return m_resourcesToAdd; }
     inline bool ResourcesToAddHasBeenSet() const { return m_resourcesToAddHasBeenSet; }
-    inline void SetResourcesToAdd(const Aws::Vector<Aws::String>& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = value; }
-    inline void SetResourcesToAdd(Aws::Vector<Aws::String>&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = std::move(value); }
-    inline UpdateMonitorRequest& WithResourcesToAdd(const Aws::Vector<Aws::String>& value) { SetResourcesToAdd(value); return *this;}
-    inline UpdateMonitorRequest& WithResourcesToAdd(Aws::Vector<Aws::String>&& value) { SetResourcesToAdd(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& AddResourcesToAdd(const Aws::String& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(value); return *this; }
-    inline UpdateMonitorRequest& AddResourcesToAdd(Aws::String&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(std::move(value)); return *this; }
-    inline UpdateMonitorRequest& AddResourcesToAdd(const char* value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.push_back(value); return *this; }
+    template<typename ResourcesToAddT = Aws::Vector<Aws::String>>
+    void SetResourcesToAdd(ResourcesToAddT&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd = std::forward<ResourcesToAddT>(value); }
+    template<typename ResourcesToAddT = Aws::Vector<Aws::String>>
+    UpdateMonitorRequest& WithResourcesToAdd(ResourcesToAddT&& value) { SetResourcesToAdd(std::forward<ResourcesToAddT>(value)); return *this;}
+    template<typename ResourcesToAddT = Aws::String>
+    UpdateMonitorRequest& AddResourcesToAdd(ResourcesToAddT&& value) { m_resourcesToAddHasBeenSet = true; m_resourcesToAdd.emplace_back(std::forward<ResourcesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,15 +75,14 @@ namespace Model
      * <p>The resources to remove from a monitor, which you provide as a set of Amazon
      * Resource Names (ARNs).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourcesToRemove() const{ return m_resourcesToRemove; }
+    inline const Aws::Vector<Aws::String>& GetResourcesToRemove() const { return m_resourcesToRemove; }
     inline bool ResourcesToRemoveHasBeenSet() const { return m_resourcesToRemoveHasBeenSet; }
-    inline void SetResourcesToRemove(const Aws::Vector<Aws::String>& value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove = value; }
-    inline void SetResourcesToRemove(Aws::Vector<Aws::String>&& value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove = std::move(value); }
-    inline UpdateMonitorRequest& WithResourcesToRemove(const Aws::Vector<Aws::String>& value) { SetResourcesToRemove(value); return *this;}
-    inline UpdateMonitorRequest& WithResourcesToRemove(Aws::Vector<Aws::String>&& value) { SetResourcesToRemove(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& AddResourcesToRemove(const Aws::String& value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove.push_back(value); return *this; }
-    inline UpdateMonitorRequest& AddResourcesToRemove(Aws::String&& value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove.push_back(std::move(value)); return *this; }
-    inline UpdateMonitorRequest& AddResourcesToRemove(const char* value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove.push_back(value); return *this; }
+    template<typename ResourcesToRemoveT = Aws::Vector<Aws::String>>
+    void SetResourcesToRemove(ResourcesToRemoveT&& value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove = std::forward<ResourcesToRemoveT>(value); }
+    template<typename ResourcesToRemoveT = Aws::Vector<Aws::String>>
+    UpdateMonitorRequest& WithResourcesToRemove(ResourcesToRemoveT&& value) { SetResourcesToRemove(std::forward<ResourcesToRemoveT>(value)); return *this;}
+    template<typename ResourcesToRemoveT = Aws::String>
+    UpdateMonitorRequest& AddResourcesToRemove(ResourcesToRemoveT&& value) { m_resourcesToRemoveHasBeenSet = true; m_resourcesToRemove.emplace_back(std::forward<ResourcesToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,12 +92,10 @@ namespace Model
      * and <code>INACTIVE</code>. The following values are <i>not</i> accepted:
      * <code>PENDING</code>, and <code>ERROR</code>.</p>
      */
-    inline const MonitorConfigState& GetStatus() const{ return m_status; }
+    inline MonitorConfigState GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MonitorConfigState& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MonitorConfigState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateMonitorRequest& WithStatus(const MonitorConfigState& value) { SetStatus(value); return *this;}
-    inline UpdateMonitorRequest& WithStatus(MonitorConfigState&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MonitorConfigState value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateMonitorRequest& WithStatus(MonitorConfigState value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +104,12 @@ namespace Model
      * to make an idempotent API request. You should not reuse the same client token
      * for other API requests.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline UpdateMonitorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline UpdateMonitorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline UpdateMonitorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    UpdateMonitorRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,7 +120,7 @@ namespace Model
      * provider (ISP), that clients access the resources through. Setting this limit
      * can help control billing costs.</p>
      */
-    inline int GetMaxCityNetworksToMonitor() const{ return m_maxCityNetworksToMonitor; }
+    inline int GetMaxCityNetworksToMonitor() const { return m_maxCityNetworksToMonitor; }
     inline bool MaxCityNetworksToMonitorHasBeenSet() const { return m_maxCityNetworksToMonitorHasBeenSet; }
     inline void SetMaxCityNetworksToMonitor(int value) { m_maxCityNetworksToMonitorHasBeenSet = true; m_maxCityNetworksToMonitor = value; }
     inline UpdateMonitorRequest& WithMaxCityNetworksToMonitor(int value) { SetMaxCityNetworksToMonitor(value); return *this;}
@@ -140,12 +132,12 @@ namespace Model
      * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
      * Logs.</p>
      */
-    inline const InternetMeasurementsLogDelivery& GetInternetMeasurementsLogDelivery() const{ return m_internetMeasurementsLogDelivery; }
+    inline const InternetMeasurementsLogDelivery& GetInternetMeasurementsLogDelivery() const { return m_internetMeasurementsLogDelivery; }
     inline bool InternetMeasurementsLogDeliveryHasBeenSet() const { return m_internetMeasurementsLogDeliveryHasBeenSet; }
-    inline void SetInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = value; }
-    inline void SetInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = std::move(value); }
-    inline UpdateMonitorRequest& WithInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { SetInternetMeasurementsLogDelivery(value); return *this;}
-    inline UpdateMonitorRequest& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { SetInternetMeasurementsLogDelivery(std::move(value)); return *this;}
+    template<typename InternetMeasurementsLogDeliveryT = InternetMeasurementsLogDelivery>
+    void SetInternetMeasurementsLogDelivery(InternetMeasurementsLogDeliveryT&& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = std::forward<InternetMeasurementsLogDeliveryT>(value); }
+    template<typename InternetMeasurementsLogDeliveryT = InternetMeasurementsLogDelivery>
+    UpdateMonitorRequest& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDeliveryT&& value) { SetInternetMeasurementsLogDelivery(std::forward<InternetMeasurementsLogDeliveryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,7 +150,7 @@ namespace Model
      * an application traffic percentage to monitor </a> in the Amazon CloudWatch
      * Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
-    inline int GetTrafficPercentageToMonitor() const{ return m_trafficPercentageToMonitor; }
+    inline int GetTrafficPercentageToMonitor() const { return m_trafficPercentageToMonitor; }
     inline bool TrafficPercentageToMonitorHasBeenSet() const { return m_trafficPercentageToMonitorHasBeenSet; }
     inline void SetTrafficPercentageToMonitor(int value) { m_trafficPercentageToMonitorHasBeenSet = true; m_trafficPercentageToMonitor = value; }
     inline UpdateMonitorRequest& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
@@ -174,12 +166,12 @@ namespace Model
      * Change health event thresholds</a> in the Internet Monitor section of the
      * <i>CloudWatch User Guide</i>.</p>
      */
-    inline const HealthEventsConfig& GetHealthEventsConfig() const{ return m_healthEventsConfig; }
+    inline const HealthEventsConfig& GetHealthEventsConfig() const { return m_healthEventsConfig; }
     inline bool HealthEventsConfigHasBeenSet() const { return m_healthEventsConfigHasBeenSet; }
-    inline void SetHealthEventsConfig(const HealthEventsConfig& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = value; }
-    inline void SetHealthEventsConfig(HealthEventsConfig&& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = std::move(value); }
-    inline UpdateMonitorRequest& WithHealthEventsConfig(const HealthEventsConfig& value) { SetHealthEventsConfig(value); return *this;}
-    inline UpdateMonitorRequest& WithHealthEventsConfig(HealthEventsConfig&& value) { SetHealthEventsConfig(std::move(value)); return *this;}
+    template<typename HealthEventsConfigT = HealthEventsConfig>
+    void SetHealthEventsConfig(HealthEventsConfigT&& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = std::forward<HealthEventsConfigT>(value); }
+    template<typename HealthEventsConfigT = HealthEventsConfig>
+    UpdateMonitorRequest& WithHealthEventsConfig(HealthEventsConfigT&& value) { SetHealthEventsConfig(std::forward<HealthEventsConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -192,19 +184,19 @@ namespace Model
     Aws::Vector<Aws::String> m_resourcesToRemove;
     bool m_resourcesToRemoveHasBeenSet = false;
 
-    MonitorConfigState m_status;
+    MonitorConfigState m_status{MonitorConfigState::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    int m_maxCityNetworksToMonitor;
+    int m_maxCityNetworksToMonitor{0};
     bool m_maxCityNetworksToMonitorHasBeenSet = false;
 
     InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
     bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
 
-    int m_trafficPercentageToMonitor;
+    int m_trafficPercentageToMonitor{0};
     bool m_trafficPercentageToMonitorHasBeenSet = false;
 
     HealthEventsConfig m_healthEventsConfig;

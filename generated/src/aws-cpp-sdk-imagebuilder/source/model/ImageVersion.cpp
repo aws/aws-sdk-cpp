@@ -18,26 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImageVersion::ImageVersion() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(ImageType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_buildType(BuildType::NOT_SET),
-    m_buildTypeHasBeenSet(false),
-    m_imageSource(ImageSource::NOT_SET),
-    m_imageSourceHasBeenSet(false)
-{
-}
-
 ImageVersion::ImageVersion(JsonView jsonValue)
-  : ImageVersion()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ ImageVersion& ImageVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ImageTypeMapper::GetImageTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osVersion"))
   {
     m_osVersion = jsonValue.GetString("osVersion");
-
     m_osVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildType"))
   {
     m_buildType = BuildTypeMapper::GetBuildTypeForName(jsonValue.GetString("buildType"));
-
     m_buildTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSource"))
   {
     m_imageSource = ImageSourceMapper::GetImageSourceForName(jsonValue.GetString("imageSource"));
-
     m_imageSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

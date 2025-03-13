@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-SiemensIE::SiemensIE() : 
-    m_iotCoreThingNameHasBeenSet(false)
-{
-}
-
 SiemensIE::SiemensIE(JsonView jsonValue)
-  : SiemensIE()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SiemensIE& SiemensIE::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("iotCoreThingName"))
   {
     m_iotCoreThingName = jsonValue.GetString("iotCoreThingName");
-
     m_iotCoreThingNameHasBeenSet = true;
   }
-
   return *this;
 }
 

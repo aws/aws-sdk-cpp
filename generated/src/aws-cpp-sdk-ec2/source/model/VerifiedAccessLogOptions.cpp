@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogOptions::VerifiedAccessLogOptions() : 
-    m_s3HasBeenSet(false),
-    m_cloudWatchLogsHasBeenSet(false),
-    m_kinesisDataFirehoseHasBeenSet(false),
-    m_logVersionHasBeenSet(false),
-    m_includeTrustContext(false),
-    m_includeTrustContextHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogOptions::VerifiedAccessLogOptions(const XmlNode& xmlNode)
-  : VerifiedAccessLogOptions()
 {
   *this = xmlNode;
 }
@@ -47,30 +36,35 @@ VerifiedAccessLogOptions& VerifiedAccessLogOptions::operator =(const XmlNode& xm
     {
       m_s3 = s3Node;
       m_s3HasBeenSet = true;
+       m_s3HasBeenSet = true;
     }
     XmlNode cloudWatchLogsNode = resultNode.FirstChild("CloudWatchLogs");
     if(!cloudWatchLogsNode.IsNull())
     {
       m_cloudWatchLogs = cloudWatchLogsNode;
       m_cloudWatchLogsHasBeenSet = true;
+       m_cloudWatchLogsHasBeenSet = true;
     }
     XmlNode kinesisDataFirehoseNode = resultNode.FirstChild("KinesisDataFirehose");
     if(!kinesisDataFirehoseNode.IsNull())
     {
       m_kinesisDataFirehose = kinesisDataFirehoseNode;
       m_kinesisDataFirehoseHasBeenSet = true;
+       m_kinesisDataFirehoseHasBeenSet = true;
     }
     XmlNode logVersionNode = resultNode.FirstChild("LogVersion");
     if(!logVersionNode.IsNull())
     {
       m_logVersion = Aws::Utils::Xml::DecodeEscapedXmlText(logVersionNode.GetText());
       m_logVersionHasBeenSet = true;
+       m_logVersionHasBeenSet = true;
     }
     XmlNode includeTrustContextNode = resultNode.FirstChild("IncludeTrustContext");
     if(!includeTrustContextNode.IsNull())
     {
       m_includeTrustContext = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeTrustContextNode.GetText()).c_str()).c_str());
       m_includeTrustContextHasBeenSet = true;
+       m_includeTrustContextHasBeenSet = true;
     }
   }
 

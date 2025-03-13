@@ -18,13 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-BulkEmailContent::BulkEmailContent() : 
-    m_templateHasBeenSet(false)
-{
-}
-
 BulkEmailContent::BulkEmailContent(JsonView jsonValue)
-  : BulkEmailContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BulkEmailContent& BulkEmailContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Template"))
   {
     m_template = jsonValue.GetObject("Template");
-
     m_templateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FSxLustreFileSystem::FSxLustreFileSystem() : 
-    m_fileSystemIdHasBeenSet(false)
-{
-}
-
 FSxLustreFileSystem::FSxLustreFileSystem(JsonView jsonValue)
-  : FSxLustreFileSystem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FSxLustreFileSystem& FSxLustreFileSystem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

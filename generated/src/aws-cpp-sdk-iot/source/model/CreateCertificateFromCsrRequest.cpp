@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateCertificateFromCsrRequest::CreateCertificateFromCsrRequest() : 
-    m_certificateSigningRequestHasBeenSet(false),
-    m_setAsActive(false),
-    m_setAsActiveHasBeenSet(false)
-{
-}
-
 Aws::String CreateCertificateFromCsrRequest::SerializePayload() const
 {
   JsonValue payload;

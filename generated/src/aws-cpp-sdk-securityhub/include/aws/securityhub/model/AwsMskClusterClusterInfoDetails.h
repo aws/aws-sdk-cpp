@@ -34,7 +34,7 @@ namespace Model
   class AwsMskClusterClusterInfoDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsMskClusterClusterInfoDetails();
+    AWS_SECURITYHUB_API AwsMskClusterClusterInfoDetails() = default;
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsMskClusterClusterInfoDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,33 +46,31 @@ namespace Model
      * encrypting data at rest and whether you want Amazon MSK to encrypt your data in
      * transit.</p>
      */
-    inline const AwsMskClusterClusterInfoEncryptionInfoDetails& GetEncryptionInfo() const{ return m_encryptionInfo; }
+    inline const AwsMskClusterClusterInfoEncryptionInfoDetails& GetEncryptionInfo() const { return m_encryptionInfo; }
     inline bool EncryptionInfoHasBeenSet() const { return m_encryptionInfoHasBeenSet; }
-    inline void SetEncryptionInfo(const AwsMskClusterClusterInfoEncryptionInfoDetails& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = value; }
-    inline void SetEncryptionInfo(AwsMskClusterClusterInfoEncryptionInfoDetails&& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = std::move(value); }
-    inline AwsMskClusterClusterInfoDetails& WithEncryptionInfo(const AwsMskClusterClusterInfoEncryptionInfoDetails& value) { SetEncryptionInfo(value); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithEncryptionInfo(AwsMskClusterClusterInfoEncryptionInfoDetails&& value) { SetEncryptionInfo(std::move(value)); return *this;}
+    template<typename EncryptionInfoT = AwsMskClusterClusterInfoEncryptionInfoDetails>
+    void SetEncryptionInfo(EncryptionInfoT&& value) { m_encryptionInfoHasBeenSet = true; m_encryptionInfo = std::forward<EncryptionInfoT>(value); }
+    template<typename EncryptionInfoT = AwsMskClusterClusterInfoEncryptionInfoDetails>
+    AwsMskClusterClusterInfoDetails& WithEncryptionInfo(EncryptionInfoT&& value) { SetEncryptionInfo(std::forward<EncryptionInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current version of the cluster.</p>
      */
-    inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const Aws::String& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
-    inline AwsMskClusterClusterInfoDetails& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    template<typename CurrentVersionT = Aws::String>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = Aws::String>
+    AwsMskClusterClusterInfoDetails& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of broker nodes in the cluster.</p>
      */
-    inline int GetNumberOfBrokerNodes() const{ return m_numberOfBrokerNodes; }
+    inline int GetNumberOfBrokerNodes() const { return m_numberOfBrokerNodes; }
     inline bool NumberOfBrokerNodesHasBeenSet() const { return m_numberOfBrokerNodesHasBeenSet; }
     inline void SetNumberOfBrokerNodes(int value) { m_numberOfBrokerNodesHasBeenSet = true; m_numberOfBrokerNodes = value; }
     inline AwsMskClusterClusterInfoDetails& WithNumberOfBrokerNodes(int value) { SetNumberOfBrokerNodes(value); return *this;}
@@ -82,40 +80,36 @@ namespace Model
     /**
      * <p> The name of the cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline AwsMskClusterClusterInfoDetails& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    AwsMskClusterClusterInfoDetails& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Provides information for different modes of client authentication.</p>
      */
-    inline const AwsMskClusterClusterInfoClientAuthenticationDetails& GetClientAuthentication() const{ return m_clientAuthentication; }
+    inline const AwsMskClusterClusterInfoClientAuthenticationDetails& GetClientAuthentication() const { return m_clientAuthentication; }
     inline bool ClientAuthenticationHasBeenSet() const { return m_clientAuthenticationHasBeenSet; }
-    inline void SetClientAuthentication(const AwsMskClusterClusterInfoClientAuthenticationDetails& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = value; }
-    inline void SetClientAuthentication(AwsMskClusterClusterInfoClientAuthenticationDetails&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::move(value); }
-    inline AwsMskClusterClusterInfoDetails& WithClientAuthentication(const AwsMskClusterClusterInfoClientAuthenticationDetails& value) { SetClientAuthentication(value); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithClientAuthentication(AwsMskClusterClusterInfoClientAuthenticationDetails&& value) { SetClientAuthentication(std::move(value)); return *this;}
+    template<typename ClientAuthenticationT = AwsMskClusterClusterInfoClientAuthenticationDetails>
+    void SetClientAuthentication(ClientAuthenticationT&& value) { m_clientAuthenticationHasBeenSet = true; m_clientAuthentication = std::forward<ClientAuthenticationT>(value); }
+    template<typename ClientAuthenticationT = AwsMskClusterClusterInfoClientAuthenticationDetails>
+    AwsMskClusterClusterInfoDetails& WithClientAuthentication(ClientAuthenticationT&& value) { SetClientAuthentication(std::forward<ClientAuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies the level of monitoring for the cluster. </p>
      */
-    inline const Aws::String& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+    inline const Aws::String& GetEnhancedMonitoring() const { return m_enhancedMonitoring; }
     inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
-    inline void SetEnhancedMonitoring(const Aws::String& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
-    inline void SetEnhancedMonitoring(Aws::String&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
-    inline void SetEnhancedMonitoring(const char* value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring.assign(value); }
-    inline AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(const Aws::String& value) { SetEnhancedMonitoring(value); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(Aws::String&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}
-    inline AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(const char* value) { SetEnhancedMonitoring(value); return *this;}
+    template<typename EnhancedMonitoringT = Aws::String>
+    void SetEnhancedMonitoring(EnhancedMonitoringT&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::forward<EnhancedMonitoringT>(value); }
+    template<typename EnhancedMonitoringT = Aws::String>
+    AwsMskClusterClusterInfoDetails& WithEnhancedMonitoring(EnhancedMonitoringT&& value) { SetEnhancedMonitoring(std::forward<EnhancedMonitoringT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,7 +119,7 @@ namespace Model
     Aws::String m_currentVersion;
     bool m_currentVersionHasBeenSet = false;
 
-    int m_numberOfBrokerNodes;
+    int m_numberOfBrokerNodes{0};
     bool m_numberOfBrokerNodesHasBeenSet = false;
 
     Aws::String m_clusterName;

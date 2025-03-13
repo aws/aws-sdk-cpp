@@ -12,13 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationAuthenticationMethodRequest::DeleteApplicationAuthenticationMethodRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_authenticationMethodType(AuthenticationMethodType::NOT_SET),
-    m_authenticationMethodTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationAuthenticationMethodRequest::SerializePayload() const
 {
   JsonValue payload;

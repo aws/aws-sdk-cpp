@@ -21,7 +21,7 @@ namespace Model
   class InitializeClusterRequest : public CloudHSMV2Request
   {
   public:
-    AWS_CLOUDHSMV2_API InitializeClusterRequest();
+    AWS_CLOUDHSMV2_API InitializeClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The identifier (ID) of the cluster that you are claiming. To find the cluster
      * ID, use <a>DescribeClusters</a>.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline InitializeClusterRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline InitializeClusterRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline InitializeClusterRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    InitializeClusterRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * (CA). The certificate must be in PEM format and can contain a maximum of 5000
      * characters.</p>
      */
-    inline const Aws::String& GetSignedCert() const{ return m_signedCert; }
+    inline const Aws::String& GetSignedCert() const { return m_signedCert; }
     inline bool SignedCertHasBeenSet() const { return m_signedCertHasBeenSet; }
-    inline void SetSignedCert(const Aws::String& value) { m_signedCertHasBeenSet = true; m_signedCert = value; }
-    inline void SetSignedCert(Aws::String&& value) { m_signedCertHasBeenSet = true; m_signedCert = std::move(value); }
-    inline void SetSignedCert(const char* value) { m_signedCertHasBeenSet = true; m_signedCert.assign(value); }
-    inline InitializeClusterRequest& WithSignedCert(const Aws::String& value) { SetSignedCert(value); return *this;}
-    inline InitializeClusterRequest& WithSignedCert(Aws::String&& value) { SetSignedCert(std::move(value)); return *this;}
-    inline InitializeClusterRequest& WithSignedCert(const char* value) { SetSignedCert(value); return *this;}
+    template<typename SignedCertT = Aws::String>
+    void SetSignedCert(SignedCertT&& value) { m_signedCertHasBeenSet = true; m_signedCert = std::forward<SignedCertT>(value); }
+    template<typename SignedCertT = Aws::String>
+    InitializeClusterRequest& WithSignedCert(SignedCertT&& value) { SetSignedCert(std::forward<SignedCertT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * be the root certificate. The certificate must be in PEM format and can contain a
      * maximum of 5000 characters.</p>
      */
-    inline const Aws::String& GetTrustAnchor() const{ return m_trustAnchor; }
+    inline const Aws::String& GetTrustAnchor() const { return m_trustAnchor; }
     inline bool TrustAnchorHasBeenSet() const { return m_trustAnchorHasBeenSet; }
-    inline void SetTrustAnchor(const Aws::String& value) { m_trustAnchorHasBeenSet = true; m_trustAnchor = value; }
-    inline void SetTrustAnchor(Aws::String&& value) { m_trustAnchorHasBeenSet = true; m_trustAnchor = std::move(value); }
-    inline void SetTrustAnchor(const char* value) { m_trustAnchorHasBeenSet = true; m_trustAnchor.assign(value); }
-    inline InitializeClusterRequest& WithTrustAnchor(const Aws::String& value) { SetTrustAnchor(value); return *this;}
-    inline InitializeClusterRequest& WithTrustAnchor(Aws::String&& value) { SetTrustAnchor(std::move(value)); return *this;}
-    inline InitializeClusterRequest& WithTrustAnchor(const char* value) { SetTrustAnchor(value); return *this;}
+    template<typename TrustAnchorT = Aws::String>
+    void SetTrustAnchor(TrustAnchorT&& value) { m_trustAnchorHasBeenSet = true; m_trustAnchor = std::forward<TrustAnchorT>(value); }
+    template<typename TrustAnchorT = Aws::String>
+    InitializeClusterRequest& WithTrustAnchor(TrustAnchorT&& value) { SetTrustAnchor(std::forward<TrustAnchorT>(value)); return *this;}
     ///@}
   private:
 

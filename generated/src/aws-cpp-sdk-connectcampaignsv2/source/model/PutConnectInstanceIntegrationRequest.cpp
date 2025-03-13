@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaignsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConnectInstanceIntegrationRequest::PutConnectInstanceIntegrationRequest() : 
-    m_connectInstanceIdHasBeenSet(false),
-    m_integrationConfigHasBeenSet(false)
-{
-}
-
 Aws::String PutConnectInstanceIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

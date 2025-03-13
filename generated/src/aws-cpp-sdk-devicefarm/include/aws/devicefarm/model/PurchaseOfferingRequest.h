@@ -24,7 +24,7 @@ namespace Model
   class PurchaseOfferingRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API PurchaseOfferingRequest();
+    AWS_DEVICEFARM_API PurchaseOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The ID of the offering.</p>
      */
-    inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+    inline const Aws::String& GetOfferingId() const { return m_offeringId; }
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
-    inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
-    inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
-    inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
-    inline PurchaseOfferingRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
-    inline PurchaseOfferingRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
-    inline PurchaseOfferingRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+    template<typename OfferingIdT = Aws::String>
+    void SetOfferingId(OfferingIdT&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::forward<OfferingIdT>(value); }
+    template<typename OfferingIdT = Aws::String>
+    PurchaseOfferingRequest& WithOfferingId(OfferingIdT&& value) { SetOfferingId(std::forward<OfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of device slots to purchase in an offering request.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline PurchaseOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
     /**
      * <p>The ID of the offering promotion to be applied to the purchase.</p>
      */
-    inline const Aws::String& GetOfferingPromotionId() const{ return m_offeringPromotionId; }
+    inline const Aws::String& GetOfferingPromotionId() const { return m_offeringPromotionId; }
     inline bool OfferingPromotionIdHasBeenSet() const { return m_offeringPromotionIdHasBeenSet; }
-    inline void SetOfferingPromotionId(const Aws::String& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = value; }
-    inline void SetOfferingPromotionId(Aws::String&& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = std::move(value); }
-    inline void SetOfferingPromotionId(const char* value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId.assign(value); }
-    inline PurchaseOfferingRequest& WithOfferingPromotionId(const Aws::String& value) { SetOfferingPromotionId(value); return *this;}
-    inline PurchaseOfferingRequest& WithOfferingPromotionId(Aws::String&& value) { SetOfferingPromotionId(std::move(value)); return *this;}
-    inline PurchaseOfferingRequest& WithOfferingPromotionId(const char* value) { SetOfferingPromotionId(value); return *this;}
+    template<typename OfferingPromotionIdT = Aws::String>
+    void SetOfferingPromotionId(OfferingPromotionIdT&& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = std::forward<OfferingPromotionIdT>(value); }
+    template<typename OfferingPromotionIdT = Aws::String>
+    PurchaseOfferingRequest& WithOfferingPromotionId(OfferingPromotionIdT&& value) { SetOfferingPromotionId(std::forward<OfferingPromotionIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::String m_offeringPromotionId;

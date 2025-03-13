@@ -34,7 +34,7 @@ namespace Model
   class AudienceMedia
   {
   public:
-    AWS_MEDIATAILOR_API AudienceMedia();
+    AWS_MEDIATAILOR_API AudienceMedia() = default;
     AWS_MEDIATAILOR_API AudienceMedia(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API AudienceMedia& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The Audience defined in AudienceMedia.</p>
      */
-    inline const Aws::String& GetAudience() const{ return m_audience; }
+    inline const Aws::String& GetAudience() const { return m_audience; }
     inline bool AudienceHasBeenSet() const { return m_audienceHasBeenSet; }
-    inline void SetAudience(const Aws::String& value) { m_audienceHasBeenSet = true; m_audience = value; }
-    inline void SetAudience(Aws::String&& value) { m_audienceHasBeenSet = true; m_audience = std::move(value); }
-    inline void SetAudience(const char* value) { m_audienceHasBeenSet = true; m_audience.assign(value); }
-    inline AudienceMedia& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
-    inline AudienceMedia& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
-    inline AudienceMedia& WithAudience(const char* value) { SetAudience(value); return *this;}
+    template<typename AudienceT = Aws::String>
+    void SetAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience = std::forward<AudienceT>(value); }
+    template<typename AudienceT = Aws::String>
+    AudienceMedia& WithAudience(AudienceT&& value) { SetAudience(std::forward<AudienceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of AlternateMedia defined in AudienceMedia.</p>
      */
-    inline const Aws::Vector<AlternateMedia>& GetAlternateMedia() const{ return m_alternateMedia; }
+    inline const Aws::Vector<AlternateMedia>& GetAlternateMedia() const { return m_alternateMedia; }
     inline bool AlternateMediaHasBeenSet() const { return m_alternateMediaHasBeenSet; }
-    inline void SetAlternateMedia(const Aws::Vector<AlternateMedia>& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = value; }
-    inline void SetAlternateMedia(Aws::Vector<AlternateMedia>&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = std::move(value); }
-    inline AudienceMedia& WithAlternateMedia(const Aws::Vector<AlternateMedia>& value) { SetAlternateMedia(value); return *this;}
-    inline AudienceMedia& WithAlternateMedia(Aws::Vector<AlternateMedia>&& value) { SetAlternateMedia(std::move(value)); return *this;}
-    inline AudienceMedia& AddAlternateMedia(const AlternateMedia& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.push_back(value); return *this; }
-    inline AudienceMedia& AddAlternateMedia(AlternateMedia&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.push_back(std::move(value)); return *this; }
+    template<typename AlternateMediaT = Aws::Vector<AlternateMedia>>
+    void SetAlternateMedia(AlternateMediaT&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia = std::forward<AlternateMediaT>(value); }
+    template<typename AlternateMediaT = Aws::Vector<AlternateMedia>>
+    AudienceMedia& WithAlternateMedia(AlternateMediaT&& value) { SetAlternateMedia(std::forward<AlternateMediaT>(value)); return *this;}
+    template<typename AlternateMediaT = AlternateMedia>
+    AudienceMedia& AddAlternateMedia(AlternateMediaT&& value) { m_alternateMediaHasBeenSet = true; m_alternateMedia.emplace_back(std::forward<AlternateMediaT>(value)); return *this; }
     ///@}
   private:
 

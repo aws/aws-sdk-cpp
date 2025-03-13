@@ -31,7 +31,7 @@ namespace Model
   class VpcAttachmentOptions
   {
   public:
-    AWS_OSIS_API VpcAttachmentOptions();
+    AWS_OSIS_API VpcAttachmentOptions() = default;
     AWS_OSIS_API VpcAttachmentOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API VpcAttachmentOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Whether a VPC is attached to the pipeline.</p>
      */
-    inline bool GetAttachToVpc() const{ return m_attachToVpc; }
+    inline bool GetAttachToVpc() const { return m_attachToVpc; }
     inline bool AttachToVpcHasBeenSet() const { return m_attachToVpcHasBeenSet; }
     inline void SetAttachToVpc(bool value) { m_attachToVpcHasBeenSet = true; m_attachToVpc = value; }
     inline VpcAttachmentOptions& WithAttachToVpc(bool value) { SetAttachToVpc(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
      * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
      * network interfaces (ENIs).</p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline VpcAttachmentOptions& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline VpcAttachmentOptions& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline VpcAttachmentOptions& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    VpcAttachmentOptions& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_attachToVpc;
+    bool m_attachToVpc{false};
     bool m_attachToVpcHasBeenSet = false;
 
     Aws::String m_cidrBlock;

@@ -40,7 +40,7 @@ namespace Model
   class MetricPolicy
   {
   public:
-    AWS_MEDIASTORE_API MetricPolicy();
+    AWS_MEDIASTORE_API MetricPolicy() = default;
     AWS_MEDIASTORE_API MetricPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIASTORE_API MetricPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
     /**
      * <p>A setting to enable or disable metrics at the container level.</p>
      */
-    inline const ContainerLevelMetrics& GetContainerLevelMetrics() const{ return m_containerLevelMetrics; }
+    inline ContainerLevelMetrics GetContainerLevelMetrics() const { return m_containerLevelMetrics; }
     inline bool ContainerLevelMetricsHasBeenSet() const { return m_containerLevelMetricsHasBeenSet; }
-    inline void SetContainerLevelMetrics(const ContainerLevelMetrics& value) { m_containerLevelMetricsHasBeenSet = true; m_containerLevelMetrics = value; }
-    inline void SetContainerLevelMetrics(ContainerLevelMetrics&& value) { m_containerLevelMetricsHasBeenSet = true; m_containerLevelMetrics = std::move(value); }
-    inline MetricPolicy& WithContainerLevelMetrics(const ContainerLevelMetrics& value) { SetContainerLevelMetrics(value); return *this;}
-    inline MetricPolicy& WithContainerLevelMetrics(ContainerLevelMetrics&& value) { SetContainerLevelMetrics(std::move(value)); return *this;}
+    inline void SetContainerLevelMetrics(ContainerLevelMetrics value) { m_containerLevelMetricsHasBeenSet = true; m_containerLevelMetrics = value; }
+    inline MetricPolicy& WithContainerLevelMetrics(ContainerLevelMetrics value) { SetContainerLevelMetrics(value); return *this;}
     ///@}
 
     ///@{
@@ -67,18 +65,18 @@ namespace Model
      * href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
      * a quota increase</a> to allow up to 300 rules per policy.</p>
      */
-    inline const Aws::Vector<MetricPolicyRule>& GetMetricPolicyRules() const{ return m_metricPolicyRules; }
+    inline const Aws::Vector<MetricPolicyRule>& GetMetricPolicyRules() const { return m_metricPolicyRules; }
     inline bool MetricPolicyRulesHasBeenSet() const { return m_metricPolicyRulesHasBeenSet; }
-    inline void SetMetricPolicyRules(const Aws::Vector<MetricPolicyRule>& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules = value; }
-    inline void SetMetricPolicyRules(Aws::Vector<MetricPolicyRule>&& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules = std::move(value); }
-    inline MetricPolicy& WithMetricPolicyRules(const Aws::Vector<MetricPolicyRule>& value) { SetMetricPolicyRules(value); return *this;}
-    inline MetricPolicy& WithMetricPolicyRules(Aws::Vector<MetricPolicyRule>&& value) { SetMetricPolicyRules(std::move(value)); return *this;}
-    inline MetricPolicy& AddMetricPolicyRules(const MetricPolicyRule& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules.push_back(value); return *this; }
-    inline MetricPolicy& AddMetricPolicyRules(MetricPolicyRule&& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules.push_back(std::move(value)); return *this; }
+    template<typename MetricPolicyRulesT = Aws::Vector<MetricPolicyRule>>
+    void SetMetricPolicyRules(MetricPolicyRulesT&& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules = std::forward<MetricPolicyRulesT>(value); }
+    template<typename MetricPolicyRulesT = Aws::Vector<MetricPolicyRule>>
+    MetricPolicy& WithMetricPolicyRules(MetricPolicyRulesT&& value) { SetMetricPolicyRules(std::forward<MetricPolicyRulesT>(value)); return *this;}
+    template<typename MetricPolicyRulesT = MetricPolicyRule>
+    MetricPolicy& AddMetricPolicyRules(MetricPolicyRulesT&& value) { m_metricPolicyRulesHasBeenSet = true; m_metricPolicyRules.emplace_back(std::forward<MetricPolicyRulesT>(value)); return *this; }
     ///@}
   private:
 
-    ContainerLevelMetrics m_containerLevelMetrics;
+    ContainerLevelMetrics m_containerLevelMetrics{ContainerLevelMetrics::NOT_SET};
     bool m_containerLevelMetricsHasBeenSet = false;
 
     Aws::Vector<MetricPolicyRule> m_metricPolicyRules;

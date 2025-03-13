@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopSentimentDetectionJobResult::StopSentimentDetectionJobResult() : 
-    m_jobStatus(JobStatus::NOT_SET)
-{
-}
-
 StopSentimentDetectionJobResult::StopSentimentDetectionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopSentimentDetectionJobResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ StopSentimentDetectionJobResult& StopSentimentDetectionJobResult::operator =(con
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

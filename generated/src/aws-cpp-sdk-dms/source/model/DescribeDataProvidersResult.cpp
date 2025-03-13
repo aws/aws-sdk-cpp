@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataProvidersResult::DescribeDataProvidersResult()
-{
-}
-
 DescribeDataProvidersResult::DescribeDataProvidersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeDataProvidersResult& DescribeDataProvidersResult::operator =(const Aws::
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataProviders"))
   {
     Aws::Utils::Array<JsonView> dataProvidersJsonList = jsonValue.GetArray("DataProviders");
@@ -42,14 +37,15 @@ DescribeDataProvidersResult& DescribeDataProvidersResult::operator =(const Aws::
     {
       m_dataProviders.push_back(dataProvidersJsonList[dataProvidersIndex].AsObject());
     }
+    m_dataProvidersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

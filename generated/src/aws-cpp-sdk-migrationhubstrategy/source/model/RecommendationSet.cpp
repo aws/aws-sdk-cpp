@@ -18,17 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-RecommendationSet::RecommendationSet() : 
-    m_strategy(Strategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_targetDestination(TargetDestination::NOT_SET),
-    m_targetDestinationHasBeenSet(false),
-    m_transformationToolHasBeenSet(false)
-{
-}
-
 RecommendationSet::RecommendationSet(JsonView jsonValue)
-  : RecommendationSet()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RecommendationSet& RecommendationSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("strategy"))
   {
     m_strategy = StrategyMapper::GetStrategyForName(jsonValue.GetString("strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetDestination"))
   {
     m_targetDestination = TargetDestinationMapper::GetTargetDestinationForName(jsonValue.GetString("targetDestination"));
-
     m_targetDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformationTool"))
   {
     m_transformationTool = jsonValue.GetObject("transformationTool");
-
     m_transformationToolHasBeenSet = true;
   }
-
   return *this;
 }
 

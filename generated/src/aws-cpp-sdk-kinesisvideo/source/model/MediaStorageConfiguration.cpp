@@ -18,15 +18,7 @@ namespace KinesisVideo
 namespace Model
 {
 
-MediaStorageConfiguration::MediaStorageConfiguration() : 
-    m_streamARNHasBeenSet(false),
-    m_status(MediaStorageConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 MediaStorageConfiguration::MediaStorageConfiguration(JsonView jsonValue)
-  : MediaStorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MediaStorageConfiguration& MediaStorageConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
     m_streamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaStorageConfigurationStatusMapper::GetMediaStorageConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

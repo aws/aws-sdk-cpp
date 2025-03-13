@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-PineconeFieldMapping::PineconeFieldMapping() : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false)
-{
-}
-
 PineconeFieldMapping::PineconeFieldMapping(JsonView jsonValue)
-  : PineconeFieldMapping()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PineconeFieldMapping& PineconeFieldMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metadataField"))
   {
     m_metadataField = jsonValue.GetString("metadataField");
-
     m_metadataFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
-
     m_textFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

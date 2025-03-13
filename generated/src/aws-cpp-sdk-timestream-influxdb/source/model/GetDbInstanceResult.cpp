@@ -17,21 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDbInstanceResult::GetDbInstanceResult() : 
-    m_status(Status::NOT_SET),
-    m_port(0),
-    m_networkType(NetworkType::NOT_SET),
-    m_dbInstanceType(DbInstanceType::NOT_SET),
-    m_dbStorageType(DbStorageType::NOT_SET),
-    m_allocatedStorage(0),
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_publiclyAccessible(false),
-    m_instanceMode(InstanceMode::NOT_SET)
-{
-}
-
 GetDbInstanceResult::GetDbInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDbInstanceResult()
 {
   *this = result;
 }
@@ -42,69 +28,58 @@ GetDbInstanceResult& GetDbInstanceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
+    m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
+    m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkType"))
   {
     m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
-
+    m_networkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbInstanceType"))
   {
     m_dbInstanceType = DbInstanceTypeMapper::GetDbInstanceTypeForName(jsonValue.GetString("dbInstanceType"));
-
+    m_dbInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbStorageType"))
   {
     m_dbStorageType = DbStorageTypeMapper::GetDbStorageTypeForName(jsonValue.GetString("dbStorageType"));
-
+    m_dbStorageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("allocatedStorage");
-
+    m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentType"))
   {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("deploymentType"));
-
+    m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcSubnetIds"))
   {
     Aws::Utils::Array<JsonView> vpcSubnetIdsJsonList = jsonValue.GetArray("vpcSubnetIds");
@@ -112,14 +87,13 @@ GetDbInstanceResult& GetDbInstanceResult::operator =(const Aws::AmazonWebService
     {
       m_vpcSubnetIds.push_back(vpcSubnetIdsJsonList[vpcSubnetIdsIndex].AsString());
     }
+    m_vpcSubnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");
-
+    m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcSecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupIdsJsonList = jsonValue.GetArray("vpcSecurityGroupIds");
@@ -127,56 +101,50 @@ GetDbInstanceResult& GetDbInstanceResult::operator =(const Aws::AmazonWebService
     {
       m_vpcSecurityGroupIds.push_back(vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString());
     }
+    m_vpcSecurityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbParameterGroupIdentifier"))
   {
     m_dbParameterGroupIdentifier = jsonValue.GetString("dbParameterGroupIdentifier");
-
+    m_dbParameterGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
+    m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secondaryAvailabilityZone"))
   {
     m_secondaryAvailabilityZone = jsonValue.GetString("secondaryAvailabilityZone");
-
+    m_secondaryAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logDeliveryConfiguration"))
   {
     m_logDeliveryConfiguration = jsonValue.GetObject("logDeliveryConfiguration");
-
+    m_logDeliveryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("influxAuthParametersSecretArn"))
   {
     m_influxAuthParametersSecretArn = jsonValue.GetString("influxAuthParametersSecretArn");
-
+    m_influxAuthParametersSecretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbClusterId"))
   {
     m_dbClusterId = jsonValue.GetString("dbClusterId");
-
+    m_dbClusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceMode"))
   {
     m_instanceMode = InstanceModeMapper::GetInstanceModeForName(jsonValue.GetString("instanceMode"));
-
+    m_instanceModeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class TableConditionalFormatting
   {
   public:
-    AWS_QUICKSIGHT_API TableConditionalFormatting();
+    AWS_QUICKSIGHT_API TableConditionalFormatting() = default;
     AWS_QUICKSIGHT_API TableConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
      */
-    inline const Aws::Vector<TableConditionalFormattingOption>& GetConditionalFormattingOptions() const{ return m_conditionalFormattingOptions; }
+    inline const Aws::Vector<TableConditionalFormattingOption>& GetConditionalFormattingOptions() const { return m_conditionalFormattingOptions; }
     inline bool ConditionalFormattingOptionsHasBeenSet() const { return m_conditionalFormattingOptionsHasBeenSet; }
-    inline void SetConditionalFormattingOptions(const Aws::Vector<TableConditionalFormattingOption>& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = value; }
-    inline void SetConditionalFormattingOptions(Aws::Vector<TableConditionalFormattingOption>&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = std::move(value); }
-    inline TableConditionalFormatting& WithConditionalFormattingOptions(const Aws::Vector<TableConditionalFormattingOption>& value) { SetConditionalFormattingOptions(value); return *this;}
-    inline TableConditionalFormatting& WithConditionalFormattingOptions(Aws::Vector<TableConditionalFormattingOption>&& value) { SetConditionalFormattingOptions(std::move(value)); return *this;}
-    inline TableConditionalFormatting& AddConditionalFormattingOptions(const TableConditionalFormattingOption& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(value); return *this; }
-    inline TableConditionalFormatting& AddConditionalFormattingOptions(TableConditionalFormattingOption&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.push_back(std::move(value)); return *this; }
+    template<typename ConditionalFormattingOptionsT = Aws::Vector<TableConditionalFormattingOption>>
+    void SetConditionalFormattingOptions(ConditionalFormattingOptionsT&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions = std::forward<ConditionalFormattingOptionsT>(value); }
+    template<typename ConditionalFormattingOptionsT = Aws::Vector<TableConditionalFormattingOption>>
+    TableConditionalFormatting& WithConditionalFormattingOptions(ConditionalFormattingOptionsT&& value) { SetConditionalFormattingOptions(std::forward<ConditionalFormattingOptionsT>(value)); return *this;}
+    template<typename ConditionalFormattingOptionsT = TableConditionalFormattingOption>
+    TableConditionalFormatting& AddConditionalFormattingOptions(ConditionalFormattingOptionsT&& value) { m_conditionalFormattingOptionsHasBeenSet = true; m_conditionalFormattingOptions.emplace_back(std::forward<ConditionalFormattingOptionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,21 +12,6 @@ using namespace Aws::NetworkMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProbeRequest::UpdateProbeRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_probeIdHasBeenSet(false),
-    m_state(ProbeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationPort(0),
-    m_destinationPortHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_packetSize(0),
-    m_packetSizeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProbeRequest::SerializePayload() const
 {
   JsonValue payload;

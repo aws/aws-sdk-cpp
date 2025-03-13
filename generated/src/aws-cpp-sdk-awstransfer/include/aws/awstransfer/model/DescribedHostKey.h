@@ -34,7 +34,7 @@ namespace Model
   class DescribedHostKey
   {
   public:
-    AWS_TRANSFER_API DescribedHostKey();
+    AWS_TRANSFER_API DescribedHostKey() = default;
     AWS_TRANSFER_API DescribedHostKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedHostKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) for the host key.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribedHostKey& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribedHostKey& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribedHostKey& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribedHostKey& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the host key.</p>
      */
-    inline const Aws::String& GetHostKeyId() const{ return m_hostKeyId; }
+    inline const Aws::String& GetHostKeyId() const { return m_hostKeyId; }
     inline bool HostKeyIdHasBeenSet() const { return m_hostKeyIdHasBeenSet; }
-    inline void SetHostKeyId(const Aws::String& value) { m_hostKeyIdHasBeenSet = true; m_hostKeyId = value; }
-    inline void SetHostKeyId(Aws::String&& value) { m_hostKeyIdHasBeenSet = true; m_hostKeyId = std::move(value); }
-    inline void SetHostKeyId(const char* value) { m_hostKeyIdHasBeenSet = true; m_hostKeyId.assign(value); }
-    inline DescribedHostKey& WithHostKeyId(const Aws::String& value) { SetHostKeyId(value); return *this;}
-    inline DescribedHostKey& WithHostKeyId(Aws::String&& value) { SetHostKeyId(std::move(value)); return *this;}
-    inline DescribedHostKey& WithHostKeyId(const char* value) { SetHostKeyId(value); return *this;}
+    template<typename HostKeyIdT = Aws::String>
+    void SetHostKeyId(HostKeyIdT&& value) { m_hostKeyIdHasBeenSet = true; m_hostKeyId = std::forward<HostKeyIdT>(value); }
+    template<typename HostKeyIdT = Aws::String>
+    DescribedHostKey& WithHostKeyId(HostKeyIdT&& value) { SetHostKeyId(std::forward<HostKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,28 +69,24 @@ namespace Model
      * <p>The public key fingerprint, which is a short sequence of bytes used to
      * identify the longer public key.</p>
      */
-    inline const Aws::String& GetHostKeyFingerprint() const{ return m_hostKeyFingerprint; }
+    inline const Aws::String& GetHostKeyFingerprint() const { return m_hostKeyFingerprint; }
     inline bool HostKeyFingerprintHasBeenSet() const { return m_hostKeyFingerprintHasBeenSet; }
-    inline void SetHostKeyFingerprint(const Aws::String& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = value; }
-    inline void SetHostKeyFingerprint(Aws::String&& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = std::move(value); }
-    inline void SetHostKeyFingerprint(const char* value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint.assign(value); }
-    inline DescribedHostKey& WithHostKeyFingerprint(const Aws::String& value) { SetHostKeyFingerprint(value); return *this;}
-    inline DescribedHostKey& WithHostKeyFingerprint(Aws::String&& value) { SetHostKeyFingerprint(std::move(value)); return *this;}
-    inline DescribedHostKey& WithHostKeyFingerprint(const char* value) { SetHostKeyFingerprint(value); return *this;}
+    template<typename HostKeyFingerprintT = Aws::String>
+    void SetHostKeyFingerprint(HostKeyFingerprintT&& value) { m_hostKeyFingerprintHasBeenSet = true; m_hostKeyFingerprint = std::forward<HostKeyFingerprintT>(value); }
+    template<typename HostKeyFingerprintT = Aws::String>
+    DescribedHostKey& WithHostKeyFingerprint(HostKeyFingerprintT&& value) { SetHostKeyFingerprint(std::forward<HostKeyFingerprintT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text description for this host key.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DescribedHostKey& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribedHostKey& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribedHostKey& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribedHostKey& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,40 +98,38 @@ namespace Model
      * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
      * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline DescribedHostKey& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline DescribedHostKey& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline DescribedHostKey& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    DescribedHostKey& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date on which the host key was added to the server.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateImported() const{ return m_dateImported; }
+    inline const Aws::Utils::DateTime& GetDateImported() const { return m_dateImported; }
     inline bool DateImportedHasBeenSet() const { return m_dateImportedHasBeenSet; }
-    inline void SetDateImported(const Aws::Utils::DateTime& value) { m_dateImportedHasBeenSet = true; m_dateImported = value; }
-    inline void SetDateImported(Aws::Utils::DateTime&& value) { m_dateImportedHasBeenSet = true; m_dateImported = std::move(value); }
-    inline DescribedHostKey& WithDateImported(const Aws::Utils::DateTime& value) { SetDateImported(value); return *this;}
-    inline DescribedHostKey& WithDateImported(Aws::Utils::DateTime&& value) { SetDateImported(std::move(value)); return *this;}
+    template<typename DateImportedT = Aws::Utils::DateTime>
+    void SetDateImported(DateImportedT&& value) { m_dateImportedHasBeenSet = true; m_dateImported = std::forward<DateImportedT>(value); }
+    template<typename DateImportedT = Aws::Utils::DateTime>
+    DescribedHostKey& WithDateImported(DateImportedT&& value) { SetDateImported(std::forward<DateImportedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key-value pairs that can be used to group and search for host keys.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DescribedHostKey& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribedHostKey& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribedHostKey& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DescribedHostKey& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribedHostKey& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribedHostKey& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -158,7 +148,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateImported;
+    Aws::Utils::DateTime m_dateImported{};
     bool m_dateImportedHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

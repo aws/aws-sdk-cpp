@@ -18,16 +18,7 @@ namespace Batch
 namespace Model
 {
 
-LogConfiguration::LogConfiguration() : 
-    m_logDriver(LogDriver::NOT_SET),
-    m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_secretOptionsHasBeenSet(false)
-{
-}
-
 LogConfiguration::LogConfiguration(JsonView jsonValue)
-  : LogConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logDriver"))
   {
     m_logDriver = LogDriverMapper::GetLogDriverForName(jsonValue.GetString("logDriver"));
-
     m_logDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("options").GetAllObjects();
@@ -50,7 +39,6 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretOptions"))
   {
     Aws::Utils::Array<JsonView> secretOptionsJsonList = jsonValue.GetArray("secretOptions");
@@ -60,7 +48,6 @@ LogConfiguration& LogConfiguration::operator =(JsonView jsonValue)
     }
     m_secretOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

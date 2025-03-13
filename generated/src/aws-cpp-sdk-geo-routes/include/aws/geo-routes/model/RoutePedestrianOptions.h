@@ -29,7 +29,7 @@ namespace Model
   class RoutePedestrianOptions
   {
   public:
-    AWS_GEOROUTES_API RoutePedestrianOptions();
+    AWS_GEOROUTES_API RoutePedestrianOptions() = default;
     AWS_GEOROUTES_API RoutePedestrianOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePedestrianOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Walking speed in Kilometers per hour.</p>
      */
-    inline double GetSpeed() const{ return m_speed; }
+    inline double GetSpeed() const { return m_speed; }
     inline bool SpeedHasBeenSet() const { return m_speedHasBeenSet; }
     inline void SetSpeed(double value) { m_speedHasBeenSet = true; m_speed = value; }
     inline RoutePedestrianOptions& WithSpeed(double value) { SetSpeed(value); return *this;}
     ///@}
   private:
 
-    double m_speed;
+    double m_speed{0.0};
     bool m_speedHasBeenSet = false;
   };
 

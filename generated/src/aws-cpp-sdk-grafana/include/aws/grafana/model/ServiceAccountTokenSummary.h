@@ -33,7 +33,7 @@ namespace Model
   class ServiceAccountTokenSummary
   {
   public:
-    AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummary();
+    AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummary() = default;
     AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API ServiceAccountTokenSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,77 +43,73 @@ namespace Model
     /**
      * <p>When the service account token was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ServiceAccountTokenSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ServiceAccountTokenSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ServiceAccountTokenSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the service account token will expire.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
-    inline ServiceAccountTokenSummary& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline ServiceAccountTokenSummary& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    ServiceAccountTokenSummary& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the service account token.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ServiceAccountTokenSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ServiceAccountTokenSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ServiceAccountTokenSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ServiceAccountTokenSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the token was used to authorize a Grafana HTTP API.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUsedAt() const{ return m_lastUsedAt; }
+    inline const Aws::Utils::DateTime& GetLastUsedAt() const { return m_lastUsedAt; }
     inline bool LastUsedAtHasBeenSet() const { return m_lastUsedAtHasBeenSet; }
-    inline void SetLastUsedAt(const Aws::Utils::DateTime& value) { m_lastUsedAtHasBeenSet = true; m_lastUsedAt = value; }
-    inline void SetLastUsedAt(Aws::Utils::DateTime&& value) { m_lastUsedAtHasBeenSet = true; m_lastUsedAt = std::move(value); }
-    inline ServiceAccountTokenSummary& WithLastUsedAt(const Aws::Utils::DateTime& value) { SetLastUsedAt(value); return *this;}
-    inline ServiceAccountTokenSummary& WithLastUsedAt(Aws::Utils::DateTime&& value) { SetLastUsedAt(std::move(value)); return *this;}
+    template<typename LastUsedAtT = Aws::Utils::DateTime>
+    void SetLastUsedAt(LastUsedAtT&& value) { m_lastUsedAtHasBeenSet = true; m_lastUsedAt = std::forward<LastUsedAtT>(value); }
+    template<typename LastUsedAtT = Aws::Utils::DateTime>
+    ServiceAccountTokenSummary& WithLastUsedAt(LastUsedAtT&& value) { SetLastUsedAt(std::forward<LastUsedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service account token.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ServiceAccountTokenSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ServiceAccountTokenSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ServiceAccountTokenSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceAccountTokenSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
     bool m_expiresAtHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUsedAt;
+    Aws::Utils::DateTime m_lastUsedAt{};
     bool m_lastUsedAtHasBeenSet = false;
 
     Aws::String m_name;

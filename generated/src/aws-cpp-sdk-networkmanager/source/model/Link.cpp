@@ -18,24 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Link::Link() : 
-    m_linkIdHasBeenSet(false),
-    m_linkArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(LinkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Link::Link(JsonView jsonValue)
-  : Link()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ Link& Link::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LinkId"))
   {
     m_linkId = jsonValue.GetString("LinkId");
-
     m_linkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkArn"))
   {
     m_linkArn = jsonValue.GetString("LinkArn");
-
     m_linkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SiteId"))
   {
     m_siteId = jsonValue.GetString("SiteId");
-
     m_siteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bandwidth"))
   {
     m_bandwidth = jsonValue.GetObject("Bandwidth");
-
     m_bandwidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Provider"))
   {
     m_provider = jsonValue.GetString("Provider");
-
     m_providerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = LinkStateMapper::GetLinkStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -121,7 +84,6 @@ Link& Link::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

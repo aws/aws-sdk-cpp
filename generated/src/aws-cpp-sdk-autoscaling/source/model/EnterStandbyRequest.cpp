@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-EnterStandbyRequest::EnterStandbyRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_shouldDecrementDesiredCapacity(false),
-    m_shouldDecrementDesiredCapacityHasBeenSet(false)
-{
-}
-
 Aws::String EnterStandbyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointPortRange::VerifiedAccessEndpointPortRange() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointPortRange::VerifiedAccessEndpointPortRange(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointPortRange()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ VerifiedAccessEndpointPortRange& VerifiedAccessEndpointPortRange::operator =(con
     {
       m_fromPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fromPortNode.GetText()).c_str()).c_str());
       m_fromPortHasBeenSet = true;
+       m_fromPortHasBeenSet = true;
     }
     XmlNode toPortNode = resultNode.FirstChild("toPort");
     if(!toPortNode.IsNull())
     {
       m_toPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(toPortNode.GetText()).c_str()).c_str());
       m_toPortHasBeenSet = true;
+       m_toPortHasBeenSet = true;
     }
   }
 

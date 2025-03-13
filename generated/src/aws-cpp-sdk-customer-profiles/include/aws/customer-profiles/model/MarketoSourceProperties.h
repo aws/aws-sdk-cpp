@@ -32,7 +32,7 @@ namespace Model
   class MarketoSourceProperties
   {
   public:
-    AWS_CUSTOMERPROFILES_API MarketoSourceProperties();
+    AWS_CUSTOMERPROFILES_API MarketoSourceProperties() = default;
     AWS_CUSTOMERPROFILES_API MarketoSourceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API MarketoSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The object specified in the Marketo flow source.</p>
      */
-    inline const Aws::String& GetObject() const{ return m_object; }
+    inline const Aws::String& GetObject() const { return m_object; }
     inline bool ObjectHasBeenSet() const { return m_objectHasBeenSet; }
-    inline void SetObject(const Aws::String& value) { m_objectHasBeenSet = true; m_object = value; }
-    inline void SetObject(Aws::String&& value) { m_objectHasBeenSet = true; m_object = std::move(value); }
-    inline void SetObject(const char* value) { m_objectHasBeenSet = true; m_object.assign(value); }
-    inline MarketoSourceProperties& WithObject(const Aws::String& value) { SetObject(value); return *this;}
-    inline MarketoSourceProperties& WithObject(Aws::String&& value) { SetObject(std::move(value)); return *this;}
-    inline MarketoSourceProperties& WithObject(const char* value) { SetObject(value); return *this;}
+    template<typename ObjectT = Aws::String>
+    void SetObject(ObjectT&& value) { m_objectHasBeenSet = true; m_object = std::forward<ObjectT>(value); }
+    template<typename ObjectT = Aws::String>
+    MarketoSourceProperties& WithObject(ObjectT&& value) { SetObject(std::forward<ObjectT>(value)); return *this;}
     ///@}
   private:
 

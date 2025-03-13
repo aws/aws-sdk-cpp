@@ -18,18 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration() : 
-    m_storageConfigurationArnHasBeenSet(false),
-    m_mediaTypesHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false),
-    m_recordingReconnectWindowSeconds(0),
-    m_recordingReconnectWindowSecondsHasBeenSet(false),
-    m_hlsConfigurationHasBeenSet(false)
-{
-}
-
 AutoParticipantRecordingConfiguration::AutoParticipantRecordingConfiguration(JsonView jsonValue)
-  : AutoParticipantRecordingConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ AutoParticipantRecordingConfiguration& AutoParticipantRecordingConfiguration::op
   if(jsonValue.ValueExists("storageConfigurationArn"))
   {
     m_storageConfigurationArn = jsonValue.GetString("storageConfigurationArn");
-
     m_storageConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaTypes"))
   {
     Aws::Utils::Array<JsonView> mediaTypesJsonList = jsonValue.GetArray("mediaTypes");
@@ -52,28 +39,21 @@ AutoParticipantRecordingConfiguration& AutoParticipantRecordingConfiguration::op
     }
     m_mediaTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbnailConfiguration"))
   {
     m_thumbnailConfiguration = jsonValue.GetObject("thumbnailConfiguration");
-
     m_thumbnailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingReconnectWindowSeconds"))
   {
     m_recordingReconnectWindowSeconds = jsonValue.GetInteger("recordingReconnectWindowSeconds");
-
     m_recordingReconnectWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsConfiguration"))
   {
     m_hlsConfiguration = jsonValue.GetObject("hlsConfiguration");
-
     m_hlsConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-StatusReport::StatusReport() : 
-    m_statusHasBeenSet(false),
-    m_checkedTimeHasBeenSet(false)
-{
-}
-
 StatusReport::StatusReport(const XmlNode& xmlNode)
-  : StatusReport()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ StatusReport& StatusReport::operator =(const XmlNode& xmlNode)
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode checkedTimeNode = resultNode.FirstChild("CheckedTime");
     if(!checkedTimeNode.IsNull())
     {
       m_checkedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checkedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_checkedTimeHasBeenSet = true;
+       m_checkedTimeHasBeenSet = true;
     }
   }
 

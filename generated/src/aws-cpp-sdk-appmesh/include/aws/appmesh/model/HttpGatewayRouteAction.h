@@ -33,7 +33,7 @@ namespace Model
   class HttpGatewayRouteAction
   {
   public:
-    AWS_APPMESH_API HttpGatewayRouteAction();
+    AWS_APPMESH_API HttpGatewayRouteAction() = default;
     AWS_APPMESH_API HttpGatewayRouteAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API HttpGatewayRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The gateway route action to rewrite.</p>
      */
-    inline const HttpGatewayRouteRewrite& GetRewrite() const{ return m_rewrite; }
+    inline const HttpGatewayRouteRewrite& GetRewrite() const { return m_rewrite; }
     inline bool RewriteHasBeenSet() const { return m_rewriteHasBeenSet; }
-    inline void SetRewrite(const HttpGatewayRouteRewrite& value) { m_rewriteHasBeenSet = true; m_rewrite = value; }
-    inline void SetRewrite(HttpGatewayRouteRewrite&& value) { m_rewriteHasBeenSet = true; m_rewrite = std::move(value); }
-    inline HttpGatewayRouteAction& WithRewrite(const HttpGatewayRouteRewrite& value) { SetRewrite(value); return *this;}
-    inline HttpGatewayRouteAction& WithRewrite(HttpGatewayRouteRewrite&& value) { SetRewrite(std::move(value)); return *this;}
+    template<typename RewriteT = HttpGatewayRouteRewrite>
+    void SetRewrite(RewriteT&& value) { m_rewriteHasBeenSet = true; m_rewrite = std::forward<RewriteT>(value); }
+    template<typename RewriteT = HttpGatewayRouteRewrite>
+    HttpGatewayRouteAction& WithRewrite(RewriteT&& value) { SetRewrite(std::forward<RewriteT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>An object that represents the target that traffic is routed to when a request
      * matches the gateway route.</p>
      */
-    inline const GatewayRouteTarget& GetTarget() const{ return m_target; }
+    inline const GatewayRouteTarget& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const GatewayRouteTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(GatewayRouteTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline HttpGatewayRouteAction& WithTarget(const GatewayRouteTarget& value) { SetTarget(value); return *this;}
-    inline HttpGatewayRouteAction& WithTarget(GatewayRouteTarget&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = GatewayRouteTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = GatewayRouteTarget>
+    HttpGatewayRouteAction& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

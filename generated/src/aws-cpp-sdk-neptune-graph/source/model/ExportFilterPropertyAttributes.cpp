@@ -18,16 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ExportFilterPropertyAttributes::ExportFilterPropertyAttributes() : 
-    m_outputTypeHasBeenSet(false),
-    m_sourcePropertyNameHasBeenSet(false),
-    m_multiValueHandling(MultiValueHandlingType::NOT_SET),
-    m_multiValueHandlingHasBeenSet(false)
-{
-}
-
 ExportFilterPropertyAttributes::ExportFilterPropertyAttributes(JsonView jsonValue)
-  : ExportFilterPropertyAttributes()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExportFilterPropertyAttributes& ExportFilterPropertyAttributes::operator =(JsonV
   if(jsonValue.ValueExists("outputType"))
   {
     m_outputType = jsonValue.GetString("outputType");
-
     m_outputTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourcePropertyName"))
   {
     m_sourcePropertyName = jsonValue.GetString("sourcePropertyName");
-
     m_sourcePropertyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiValueHandling"))
   {
     m_multiValueHandling = MultiValueHandlingTypeMapper::GetMultiValueHandlingTypeForName(jsonValue.GetString("multiValueHandling"));
-
     m_multiValueHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

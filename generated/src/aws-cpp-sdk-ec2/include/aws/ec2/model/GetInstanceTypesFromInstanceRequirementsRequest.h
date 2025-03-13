@@ -25,7 +25,7 @@ namespace Model
   class GetInstanceTypesFromInstanceRequirementsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetInstanceTypesFromInstanceRequirementsRequest();
+    AWS_EC2_API GetInstanceTypesFromInstanceRequirementsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,7 +47,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetInstanceTypesFromInstanceRequirementsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -57,40 +57,38 @@ namespace Model
     /**
      * <p>The processor architecture type.</p>
      */
-    inline const Aws::Vector<ArchitectureType>& GetArchitectureTypes() const{ return m_architectureTypes; }
+    inline const Aws::Vector<ArchitectureType>& GetArchitectureTypes() const { return m_architectureTypes; }
     inline bool ArchitectureTypesHasBeenSet() const { return m_architectureTypesHasBeenSet; }
-    inline void SetArchitectureTypes(const Aws::Vector<ArchitectureType>& value) { m_architectureTypesHasBeenSet = true; m_architectureTypes = value; }
-    inline void SetArchitectureTypes(Aws::Vector<ArchitectureType>&& value) { m_architectureTypesHasBeenSet = true; m_architectureTypes = std::move(value); }
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithArchitectureTypes(const Aws::Vector<ArchitectureType>& value) { SetArchitectureTypes(value); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithArchitectureTypes(Aws::Vector<ArchitectureType>&& value) { SetArchitectureTypes(std::move(value)); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& AddArchitectureTypes(const ArchitectureType& value) { m_architectureTypesHasBeenSet = true; m_architectureTypes.push_back(value); return *this; }
-    inline GetInstanceTypesFromInstanceRequirementsRequest& AddArchitectureTypes(ArchitectureType&& value) { m_architectureTypesHasBeenSet = true; m_architectureTypes.push_back(std::move(value)); return *this; }
+    template<typename ArchitectureTypesT = Aws::Vector<ArchitectureType>>
+    void SetArchitectureTypes(ArchitectureTypesT&& value) { m_architectureTypesHasBeenSet = true; m_architectureTypes = std::forward<ArchitectureTypesT>(value); }
+    template<typename ArchitectureTypesT = Aws::Vector<ArchitectureType>>
+    GetInstanceTypesFromInstanceRequirementsRequest& WithArchitectureTypes(ArchitectureTypesT&& value) { SetArchitectureTypes(std::forward<ArchitectureTypesT>(value)); return *this;}
+    inline GetInstanceTypesFromInstanceRequirementsRequest& AddArchitectureTypes(ArchitectureType value) { m_architectureTypesHasBeenSet = true; m_architectureTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The virtualization type.</p>
      */
-    inline const Aws::Vector<VirtualizationType>& GetVirtualizationTypes() const{ return m_virtualizationTypes; }
+    inline const Aws::Vector<VirtualizationType>& GetVirtualizationTypes() const { return m_virtualizationTypes; }
     inline bool VirtualizationTypesHasBeenSet() const { return m_virtualizationTypesHasBeenSet; }
-    inline void SetVirtualizationTypes(const Aws::Vector<VirtualizationType>& value) { m_virtualizationTypesHasBeenSet = true; m_virtualizationTypes = value; }
-    inline void SetVirtualizationTypes(Aws::Vector<VirtualizationType>&& value) { m_virtualizationTypesHasBeenSet = true; m_virtualizationTypes = std::move(value); }
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithVirtualizationTypes(const Aws::Vector<VirtualizationType>& value) { SetVirtualizationTypes(value); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithVirtualizationTypes(Aws::Vector<VirtualizationType>&& value) { SetVirtualizationTypes(std::move(value)); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& AddVirtualizationTypes(const VirtualizationType& value) { m_virtualizationTypesHasBeenSet = true; m_virtualizationTypes.push_back(value); return *this; }
-    inline GetInstanceTypesFromInstanceRequirementsRequest& AddVirtualizationTypes(VirtualizationType&& value) { m_virtualizationTypesHasBeenSet = true; m_virtualizationTypes.push_back(std::move(value)); return *this; }
+    template<typename VirtualizationTypesT = Aws::Vector<VirtualizationType>>
+    void SetVirtualizationTypes(VirtualizationTypesT&& value) { m_virtualizationTypesHasBeenSet = true; m_virtualizationTypes = std::forward<VirtualizationTypesT>(value); }
+    template<typename VirtualizationTypesT = Aws::Vector<VirtualizationType>>
+    GetInstanceTypesFromInstanceRequirementsRequest& WithVirtualizationTypes(VirtualizationTypesT&& value) { SetVirtualizationTypes(std::forward<VirtualizationTypesT>(value)); return *this;}
+    inline GetInstanceTypesFromInstanceRequirementsRequest& AddVirtualizationTypes(VirtualizationType value) { m_virtualizationTypesHasBeenSet = true; m_virtualizationTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The attributes required for the instance types.</p>
      */
-    inline const InstanceRequirementsRequest& GetInstanceRequirements() const{ return m_instanceRequirements; }
+    inline const InstanceRequirementsRequest& GetInstanceRequirements() const { return m_instanceRequirements; }
     inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
-    inline void SetInstanceRequirements(const InstanceRequirementsRequest& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
-    inline void SetInstanceRequirements(InstanceRequirementsRequest&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithInstanceRequirements(const InstanceRequirementsRequest& value) { SetInstanceRequirements(value); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithInstanceRequirements(InstanceRequirementsRequest&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+    template<typename InstanceRequirementsT = InstanceRequirementsRequest>
+    void SetInstanceRequirements(InstanceRequirementsT&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::forward<InstanceRequirementsT>(value); }
+    template<typename InstanceRequirementsT = InstanceRequirementsRequest>
+    GetInstanceTypesFromInstanceRequirementsRequest& WithInstanceRequirements(InstanceRequirementsT&& value) { SetInstanceRequirements(std::forward<InstanceRequirementsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +98,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetInstanceTypesFromInstanceRequirementsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -111,18 +109,16 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetInstanceTypesFromInstanceRequirementsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetInstanceTypesFromInstanceRequirementsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<ArchitectureType> m_architectureTypes;
@@ -134,7 +130,7 @@ namespace Model
     InstanceRequirementsRequest m_instanceRequirements;
     bool m_instanceRequirementsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

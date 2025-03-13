@@ -9,8 +9,8 @@
 #include <aws/wafv2/model/ForwardedIPConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/RateBasedStatementCustomKey.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -95,7 +95,7 @@ namespace Model
   class RateBasedStatement
   {
   public:
-    AWS_WAFV2_API RateBasedStatement();
+    AWS_WAFV2_API RateBasedStatement() = default;
     AWS_WAFV2_API RateBasedStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateBasedStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -112,7 +112,7 @@ namespace Model
      * argument name "city", then this is the limit on requests for any single method,
      * city pair. </p> </li> </ul>
      */
-    inline long long GetLimit() const{ return m_limit; }
+    inline long long GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(long long value) { m_limitHasBeenSet = true; m_limit = value; }
     inline RateBasedStatement& WithLimit(long long value) { SetLimit(value); return *this;}
@@ -128,7 +128,7 @@ namespace Model
      * back it looks each time it checks. WAF checks the rate about every 10
      * seconds.</p> <p>Default: <code>300</code> (5 minutes)</p>
      */
-    inline long long GetEvaluationWindowSec() const{ return m_evaluationWindowSec; }
+    inline long long GetEvaluationWindowSec() const { return m_evaluationWindowSec; }
     inline bool EvaluationWindowSecHasBeenSet() const { return m_evaluationWindowSecHasBeenSet; }
     inline void SetEvaluationWindowSec(long long value) { m_evaluationWindowSecHasBeenSet = true; m_evaluationWindowSec = value; }
     inline RateBasedStatement& WithEvaluationWindowSec(long long value) { SetEvaluationWindowSec(value); return *this;}
@@ -161,12 +161,10 @@ namespace Model
      * aggregate on a combination of the IP address with other aggregate keys, use
      * <code>CUSTOM_KEYS</code>. </p> </li> </ul>
      */
-    inline const RateBasedStatementAggregateKeyType& GetAggregateKeyType() const{ return m_aggregateKeyType; }
+    inline RateBasedStatementAggregateKeyType GetAggregateKeyType() const { return m_aggregateKeyType; }
     inline bool AggregateKeyTypeHasBeenSet() const { return m_aggregateKeyTypeHasBeenSet; }
-    inline void SetAggregateKeyType(const RateBasedStatementAggregateKeyType& value) { m_aggregateKeyTypeHasBeenSet = true; m_aggregateKeyType = value; }
-    inline void SetAggregateKeyType(RateBasedStatementAggregateKeyType&& value) { m_aggregateKeyTypeHasBeenSet = true; m_aggregateKeyType = std::move(value); }
-    inline RateBasedStatement& WithAggregateKeyType(const RateBasedStatementAggregateKeyType& value) { SetAggregateKeyType(value); return *this;}
-    inline RateBasedStatement& WithAggregateKeyType(RateBasedStatementAggregateKeyType&& value) { SetAggregateKeyType(std::move(value)); return *this;}
+    inline void SetAggregateKeyType(RateBasedStatementAggregateKeyType value) { m_aggregateKeyTypeHasBeenSet = true; m_aggregateKeyType = value; }
+    inline RateBasedStatement& WithAggregateKeyType(RateBasedStatementAggregateKeyType value) { SetAggregateKeyType(value); return *this;}
     ///@}
 
     ///@{
@@ -178,12 +176,17 @@ namespace Model
      * scope-down statement, and you can nest statements at any level, the same as you
      * can for a rule statement. </p>
      */
-    AWS_WAFV2_API const Statement& GetScopeDownStatement() const;
-    AWS_WAFV2_API bool ScopeDownStatementHasBeenSet() const;
-    AWS_WAFV2_API void SetScopeDownStatement(const Statement& value);
-    AWS_WAFV2_API void SetScopeDownStatement(Statement&& value);
-    AWS_WAFV2_API RateBasedStatement& WithScopeDownStatement(const Statement& value);
-    AWS_WAFV2_API RateBasedStatement& WithScopeDownStatement(Statement&& value);
+    inline const Statement& GetScopeDownStatement() const{
+      return *m_scopeDownStatement;
+    }
+    inline bool ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
+    template<typename ScopeDownStatementT = Statement>
+    void SetScopeDownStatement(ScopeDownStatementT&& value) {
+      m_scopeDownStatementHasBeenSet = true; 
+      m_scopeDownStatement = Aws::MakeShared<Statement>("RateBasedStatement", std::forward<ScopeDownStatementT>(value));
+    }
+    template<typename ScopeDownStatementT = Statement>
+    RateBasedStatement& WithScopeDownStatement(ScopeDownStatementT&& value) { SetScopeDownStatement(std::forward<ScopeDownStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,36 +199,36 @@ namespace Model
      * <p>This is required if you specify a forwarded IP in the rule's aggregate key
      * settings. </p>
      */
-    inline const ForwardedIPConfig& GetForwardedIPConfig() const{ return m_forwardedIPConfig; }
+    inline const ForwardedIPConfig& GetForwardedIPConfig() const { return m_forwardedIPConfig; }
     inline bool ForwardedIPConfigHasBeenSet() const { return m_forwardedIPConfigHasBeenSet; }
-    inline void SetForwardedIPConfig(const ForwardedIPConfig& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = value; }
-    inline void SetForwardedIPConfig(ForwardedIPConfig&& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = std::move(value); }
-    inline RateBasedStatement& WithForwardedIPConfig(const ForwardedIPConfig& value) { SetForwardedIPConfig(value); return *this;}
-    inline RateBasedStatement& WithForwardedIPConfig(ForwardedIPConfig&& value) { SetForwardedIPConfig(std::move(value)); return *this;}
+    template<typename ForwardedIPConfigT = ForwardedIPConfig>
+    void SetForwardedIPConfig(ForwardedIPConfigT&& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = std::forward<ForwardedIPConfigT>(value); }
+    template<typename ForwardedIPConfigT = ForwardedIPConfig>
+    RateBasedStatement& WithForwardedIPConfig(ForwardedIPConfigT&& value) { SetForwardedIPConfig(std::forward<ForwardedIPConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the aggregate keys to use in a rate-base rule. </p>
      */
-    inline const Aws::Vector<RateBasedStatementCustomKey>& GetCustomKeys() const{ return m_customKeys; }
+    inline const Aws::Vector<RateBasedStatementCustomKey>& GetCustomKeys() const { return m_customKeys; }
     inline bool CustomKeysHasBeenSet() const { return m_customKeysHasBeenSet; }
-    inline void SetCustomKeys(const Aws::Vector<RateBasedStatementCustomKey>& value) { m_customKeysHasBeenSet = true; m_customKeys = value; }
-    inline void SetCustomKeys(Aws::Vector<RateBasedStatementCustomKey>&& value) { m_customKeysHasBeenSet = true; m_customKeys = std::move(value); }
-    inline RateBasedStatement& WithCustomKeys(const Aws::Vector<RateBasedStatementCustomKey>& value) { SetCustomKeys(value); return *this;}
-    inline RateBasedStatement& WithCustomKeys(Aws::Vector<RateBasedStatementCustomKey>&& value) { SetCustomKeys(std::move(value)); return *this;}
-    inline RateBasedStatement& AddCustomKeys(const RateBasedStatementCustomKey& value) { m_customKeysHasBeenSet = true; m_customKeys.push_back(value); return *this; }
-    inline RateBasedStatement& AddCustomKeys(RateBasedStatementCustomKey&& value) { m_customKeysHasBeenSet = true; m_customKeys.push_back(std::move(value)); return *this; }
+    template<typename CustomKeysT = Aws::Vector<RateBasedStatementCustomKey>>
+    void SetCustomKeys(CustomKeysT&& value) { m_customKeysHasBeenSet = true; m_customKeys = std::forward<CustomKeysT>(value); }
+    template<typename CustomKeysT = Aws::Vector<RateBasedStatementCustomKey>>
+    RateBasedStatement& WithCustomKeys(CustomKeysT&& value) { SetCustomKeys(std::forward<CustomKeysT>(value)); return *this;}
+    template<typename CustomKeysT = RateBasedStatementCustomKey>
+    RateBasedStatement& AddCustomKeys(CustomKeysT&& value) { m_customKeysHasBeenSet = true; m_customKeys.emplace_back(std::forward<CustomKeysT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_limit;
+    long long m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    long long m_evaluationWindowSec;
+    long long m_evaluationWindowSec{0};
     bool m_evaluationWindowSecHasBeenSet = false;
 
-    RateBasedStatementAggregateKeyType m_aggregateKeyType;
+    RateBasedStatementAggregateKeyType m_aggregateKeyType{RateBasedStatementAggregateKeyType::NOT_SET};
     bool m_aggregateKeyTypeHasBeenSet = false;
 
     std::shared_ptr<Statement> m_scopeDownStatement;

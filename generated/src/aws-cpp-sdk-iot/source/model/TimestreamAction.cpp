@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TimestreamAction::TimestreamAction() : 
-    m_roleArnHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 TimestreamAction::TimestreamAction(JsonView jsonValue)
-  : TimestreamAction()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TimestreamAction& TimestreamAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("dimensions");
@@ -65,14 +49,11 @@ TimestreamAction& TimestreamAction::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetObject("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

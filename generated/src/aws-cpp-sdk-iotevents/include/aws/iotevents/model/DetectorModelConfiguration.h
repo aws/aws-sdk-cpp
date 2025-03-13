@@ -35,7 +35,7 @@ namespace Model
   class DetectorModelConfiguration
   {
   public:
-    AWS_IOTEVENTS_API DetectorModelConfiguration();
+    AWS_IOTEVENTS_API DetectorModelConfiguration() = default;
     AWS_IOTEVENTS_API DetectorModelConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API DetectorModelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,48 @@ namespace Model
     /**
      * <p>The name of the detector model.</p>
      */
-    inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
+    inline const Aws::String& GetDetectorModelName() const { return m_detectorModelName; }
     inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
-    inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
-    inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
-    inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
-    inline DetectorModelConfiguration& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
+    template<typename DetectorModelNameT = Aws::String>
+    void SetDetectorModelName(DetectorModelNameT&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::forward<DetectorModelNameT>(value); }
+    template<typename DetectorModelNameT = Aws::String>
+    DetectorModelConfiguration& WithDetectorModelName(DetectorModelNameT&& value) { SetDetectorModelName(std::forward<DetectorModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the detector model.</p>
      */
-    inline const Aws::String& GetDetectorModelVersion() const{ return m_detectorModelVersion; }
+    inline const Aws::String& GetDetectorModelVersion() const { return m_detectorModelVersion; }
     inline bool DetectorModelVersionHasBeenSet() const { return m_detectorModelVersionHasBeenSet; }
-    inline void SetDetectorModelVersion(const Aws::String& value) { m_detectorModelVersionHasBeenSet = true; m_detectorModelVersion = value; }
-    inline void SetDetectorModelVersion(Aws::String&& value) { m_detectorModelVersionHasBeenSet = true; m_detectorModelVersion = std::move(value); }
-    inline void SetDetectorModelVersion(const char* value) { m_detectorModelVersionHasBeenSet = true; m_detectorModelVersion.assign(value); }
-    inline DetectorModelConfiguration& WithDetectorModelVersion(const Aws::String& value) { SetDetectorModelVersion(value); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelVersion(Aws::String&& value) { SetDetectorModelVersion(std::move(value)); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelVersion(const char* value) { SetDetectorModelVersion(value); return *this;}
+    template<typename DetectorModelVersionT = Aws::String>
+    void SetDetectorModelVersion(DetectorModelVersionT&& value) { m_detectorModelVersionHasBeenSet = true; m_detectorModelVersion = std::forward<DetectorModelVersionT>(value); }
+    template<typename DetectorModelVersionT = Aws::String>
+    DetectorModelConfiguration& WithDetectorModelVersion(DetectorModelVersionT&& value) { SetDetectorModelVersion(std::forward<DetectorModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the detector model.</p>
      */
-    inline const Aws::String& GetDetectorModelDescription() const{ return m_detectorModelDescription; }
+    inline const Aws::String& GetDetectorModelDescription() const { return m_detectorModelDescription; }
     inline bool DetectorModelDescriptionHasBeenSet() const { return m_detectorModelDescriptionHasBeenSet; }
-    inline void SetDetectorModelDescription(const Aws::String& value) { m_detectorModelDescriptionHasBeenSet = true; m_detectorModelDescription = value; }
-    inline void SetDetectorModelDescription(Aws::String&& value) { m_detectorModelDescriptionHasBeenSet = true; m_detectorModelDescription = std::move(value); }
-    inline void SetDetectorModelDescription(const char* value) { m_detectorModelDescriptionHasBeenSet = true; m_detectorModelDescription.assign(value); }
-    inline DetectorModelConfiguration& WithDetectorModelDescription(const Aws::String& value) { SetDetectorModelDescription(value); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelDescription(Aws::String&& value) { SetDetectorModelDescription(std::move(value)); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelDescription(const char* value) { SetDetectorModelDescription(value); return *this;}
+    template<typename DetectorModelDescriptionT = Aws::String>
+    void SetDetectorModelDescription(DetectorModelDescriptionT&& value) { m_detectorModelDescriptionHasBeenSet = true; m_detectorModelDescription = std::forward<DetectorModelDescriptionT>(value); }
+    template<typename DetectorModelDescriptionT = Aws::String>
+    DetectorModelConfiguration& WithDetectorModelDescription(DetectorModelDescriptionT&& value) { SetDetectorModelDescription(std::forward<DetectorModelDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the detector model.</p>
      */
-    inline const Aws::String& GetDetectorModelArn() const{ return m_detectorModelArn; }
+    inline const Aws::String& GetDetectorModelArn() const { return m_detectorModelArn; }
     inline bool DetectorModelArnHasBeenSet() const { return m_detectorModelArnHasBeenSet; }
-    inline void SetDetectorModelArn(const Aws::String& value) { m_detectorModelArnHasBeenSet = true; m_detectorModelArn = value; }
-    inline void SetDetectorModelArn(Aws::String&& value) { m_detectorModelArnHasBeenSet = true; m_detectorModelArn = std::move(value); }
-    inline void SetDetectorModelArn(const char* value) { m_detectorModelArnHasBeenSet = true; m_detectorModelArn.assign(value); }
-    inline DetectorModelConfiguration& WithDetectorModelArn(const Aws::String& value) { SetDetectorModelArn(value); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelArn(Aws::String&& value) { SetDetectorModelArn(std::move(value)); return *this;}
-    inline DetectorModelConfiguration& WithDetectorModelArn(const char* value) { SetDetectorModelArn(value); return *this;}
+    template<typename DetectorModelArnT = Aws::String>
+    void SetDetectorModelArn(DetectorModelArnT&& value) { m_detectorModelArnHasBeenSet = true; m_detectorModelArn = std::forward<DetectorModelArnT>(value); }
+    template<typename DetectorModelArnT = Aws::String>
+    DetectorModelConfiguration& WithDetectorModelArn(DetectorModelArnT&& value) { SetDetectorModelArn(std::forward<DetectorModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,50 +94,46 @@ namespace Model
      * <p>The ARN of the role that grants permission to AWS IoT Events to perform its
      * operations.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline DetectorModelConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DetectorModelConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DetectorModelConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DetectorModelConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the detector model was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline DetectorModelConfiguration& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DetectorModelConfiguration& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DetectorModelConfiguration& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the detector model was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline DetectorModelConfiguration& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline DetectorModelConfiguration& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    DetectorModelConfiguration& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the detector model.</p>
      */
-    inline const DetectorModelVersionStatus& GetStatus() const{ return m_status; }
+    inline DetectorModelVersionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DetectorModelVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DetectorModelVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DetectorModelConfiguration& WithStatus(const DetectorModelVersionStatus& value) { SetStatus(value); return *this;}
-    inline DetectorModelConfiguration& WithStatus(DetectorModelVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DetectorModelVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DetectorModelConfiguration& WithStatus(DetectorModelVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +147,12 @@ namespace Model
      * the device must send a message payload that contains the same
      * attribute-value.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DetectorModelConfiguration& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DetectorModelConfiguration& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DetectorModelConfiguration& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DetectorModelConfiguration& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +160,10 @@ namespace Model
      * <p>Information about the order in which events are evaluated and how actions are
      * executed. </p>
      */
-    inline const EvaluationMethod& GetEvaluationMethod() const{ return m_evaluationMethod; }
+    inline EvaluationMethod GetEvaluationMethod() const { return m_evaluationMethod; }
     inline bool EvaluationMethodHasBeenSet() const { return m_evaluationMethodHasBeenSet; }
-    inline void SetEvaluationMethod(const EvaluationMethod& value) { m_evaluationMethodHasBeenSet = true; m_evaluationMethod = value; }
-    inline void SetEvaluationMethod(EvaluationMethod&& value) { m_evaluationMethodHasBeenSet = true; m_evaluationMethod = std::move(value); }
-    inline DetectorModelConfiguration& WithEvaluationMethod(const EvaluationMethod& value) { SetEvaluationMethod(value); return *this;}
-    inline DetectorModelConfiguration& WithEvaluationMethod(EvaluationMethod&& value) { SetEvaluationMethod(std::move(value)); return *this;}
+    inline void SetEvaluationMethod(EvaluationMethod value) { m_evaluationMethodHasBeenSet = true; m_evaluationMethod = value; }
+    inline DetectorModelConfiguration& WithEvaluationMethod(EvaluationMethod value) { SetEvaluationMethod(value); return *this;}
     ///@}
   private:
 
@@ -198,19 +182,19 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
 
-    DetectorModelVersionStatus m_status;
+    DetectorModelVersionStatus m_status{DetectorModelVersionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    EvaluationMethod m_evaluationMethod;
+    EvaluationMethod m_evaluationMethod{EvaluationMethod::NOT_SET};
     bool m_evaluationMethodHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class VolumeStatusEvent
   {
   public:
-    AWS_EC2_API VolumeStatusEvent();
+    AWS_EC2_API VolumeStatusEvent() = default;
     AWS_EC2_API VolumeStatusEvent(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VolumeStatusEvent& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,80 +44,72 @@ namespace Model
     /**
      * <p>A description of the event.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline VolumeStatusEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline VolumeStatusEvent& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline VolumeStatusEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    VolumeStatusEvent& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of this event.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline VolumeStatusEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline VolumeStatusEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline VolumeStatusEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    VolumeStatusEvent& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of this event.</p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
+    inline const Aws::String& GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-    inline VolumeStatusEvent& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline VolumeStatusEvent& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline VolumeStatusEvent& WithEventType(const char* value) { SetEventType(value); return *this;}
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    VolumeStatusEvent& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest end time of the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
+    inline const Aws::Utils::DateTime& GetNotAfter() const { return m_notAfter; }
     inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
-    inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
-    inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
-    inline VolumeStatusEvent& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
-    inline VolumeStatusEvent& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    void SetNotAfter(NotAfterT&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::forward<NotAfterT>(value); }
+    template<typename NotAfterT = Aws::Utils::DateTime>
+    VolumeStatusEvent& WithNotAfter(NotAfterT&& value) { SetNotAfter(std::forward<NotAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The earliest start time of the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+    inline const Aws::Utils::DateTime& GetNotBefore() const { return m_notBefore; }
     inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
-    inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
-    inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
-    inline VolumeStatusEvent& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
-    inline VolumeStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
+    template<typename NotBeforeT = Aws::Utils::DateTime>
+    void SetNotBefore(NotBeforeT&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::forward<NotBeforeT>(value); }
+    template<typename NotBeforeT = Aws::Utils::DateTime>
+    VolumeStatusEvent& WithNotBefore(NotBeforeT&& value) { SetNotBefore(std::forward<NotBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance associated with the event.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline VolumeStatusEvent& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline VolumeStatusEvent& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline VolumeStatusEvent& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    VolumeStatusEvent& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -130,10 +122,10 @@ namespace Model
     Aws::String m_eventType;
     bool m_eventTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notAfter;
+    Aws::Utils::DateTime m_notAfter{};
     bool m_notAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_notBefore;
+    Aws::Utils::DateTime m_notBefore{};
     bool m_notBeforeHasBeenSet = false;
 
     Aws::String m_instanceId;

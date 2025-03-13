@@ -32,7 +32,7 @@ namespace Model
   class LoggingOptionsPayload
   {
   public:
-    AWS_IOT_API LoggingOptionsPayload();
+    AWS_IOT_API LoggingOptionsPayload() = default;
     AWS_IOT_API LoggingOptionsPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API LoggingOptionsPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline LoggingOptionsPayload& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline LoggingOptionsPayload& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline LoggingOptionsPayload& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    LoggingOptionsPayload& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log level.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline LoggingOptionsPayload& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline LoggingOptionsPayload& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline LoggingOptionsPayload& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
   private:
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class HierarchyPathReference
   {
   public:
-    AWS_CONNECT_API HierarchyPathReference();
+    AWS_CONNECT_API HierarchyPathReference() = default;
     AWS_CONNECT_API HierarchyPathReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HierarchyPathReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,60 +42,60 @@ namespace Model
     /**
      * <p>Information about level one.</p>
      */
-    inline const HierarchyGroupSummaryReference& GetLevelOne() const{ return m_levelOne; }
+    inline const HierarchyGroupSummaryReference& GetLevelOne() const { return m_levelOne; }
     inline bool LevelOneHasBeenSet() const { return m_levelOneHasBeenSet; }
-    inline void SetLevelOne(const HierarchyGroupSummaryReference& value) { m_levelOneHasBeenSet = true; m_levelOne = value; }
-    inline void SetLevelOne(HierarchyGroupSummaryReference&& value) { m_levelOneHasBeenSet = true; m_levelOne = std::move(value); }
-    inline HierarchyPathReference& WithLevelOne(const HierarchyGroupSummaryReference& value) { SetLevelOne(value); return *this;}
-    inline HierarchyPathReference& WithLevelOne(HierarchyGroupSummaryReference&& value) { SetLevelOne(std::move(value)); return *this;}
+    template<typename LevelOneT = HierarchyGroupSummaryReference>
+    void SetLevelOne(LevelOneT&& value) { m_levelOneHasBeenSet = true; m_levelOne = std::forward<LevelOneT>(value); }
+    template<typename LevelOneT = HierarchyGroupSummaryReference>
+    HierarchyPathReference& WithLevelOne(LevelOneT&& value) { SetLevelOne(std::forward<LevelOneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about level two.</p>
      */
-    inline const HierarchyGroupSummaryReference& GetLevelTwo() const{ return m_levelTwo; }
+    inline const HierarchyGroupSummaryReference& GetLevelTwo() const { return m_levelTwo; }
     inline bool LevelTwoHasBeenSet() const { return m_levelTwoHasBeenSet; }
-    inline void SetLevelTwo(const HierarchyGroupSummaryReference& value) { m_levelTwoHasBeenSet = true; m_levelTwo = value; }
-    inline void SetLevelTwo(HierarchyGroupSummaryReference&& value) { m_levelTwoHasBeenSet = true; m_levelTwo = std::move(value); }
-    inline HierarchyPathReference& WithLevelTwo(const HierarchyGroupSummaryReference& value) { SetLevelTwo(value); return *this;}
-    inline HierarchyPathReference& WithLevelTwo(HierarchyGroupSummaryReference&& value) { SetLevelTwo(std::move(value)); return *this;}
+    template<typename LevelTwoT = HierarchyGroupSummaryReference>
+    void SetLevelTwo(LevelTwoT&& value) { m_levelTwoHasBeenSet = true; m_levelTwo = std::forward<LevelTwoT>(value); }
+    template<typename LevelTwoT = HierarchyGroupSummaryReference>
+    HierarchyPathReference& WithLevelTwo(LevelTwoT&& value) { SetLevelTwo(std::forward<LevelTwoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about level three.</p>
      */
-    inline const HierarchyGroupSummaryReference& GetLevelThree() const{ return m_levelThree; }
+    inline const HierarchyGroupSummaryReference& GetLevelThree() const { return m_levelThree; }
     inline bool LevelThreeHasBeenSet() const { return m_levelThreeHasBeenSet; }
-    inline void SetLevelThree(const HierarchyGroupSummaryReference& value) { m_levelThreeHasBeenSet = true; m_levelThree = value; }
-    inline void SetLevelThree(HierarchyGroupSummaryReference&& value) { m_levelThreeHasBeenSet = true; m_levelThree = std::move(value); }
-    inline HierarchyPathReference& WithLevelThree(const HierarchyGroupSummaryReference& value) { SetLevelThree(value); return *this;}
-    inline HierarchyPathReference& WithLevelThree(HierarchyGroupSummaryReference&& value) { SetLevelThree(std::move(value)); return *this;}
+    template<typename LevelThreeT = HierarchyGroupSummaryReference>
+    void SetLevelThree(LevelThreeT&& value) { m_levelThreeHasBeenSet = true; m_levelThree = std::forward<LevelThreeT>(value); }
+    template<typename LevelThreeT = HierarchyGroupSummaryReference>
+    HierarchyPathReference& WithLevelThree(LevelThreeT&& value) { SetLevelThree(std::forward<LevelThreeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about level four.</p>
      */
-    inline const HierarchyGroupSummaryReference& GetLevelFour() const{ return m_levelFour; }
+    inline const HierarchyGroupSummaryReference& GetLevelFour() const { return m_levelFour; }
     inline bool LevelFourHasBeenSet() const { return m_levelFourHasBeenSet; }
-    inline void SetLevelFour(const HierarchyGroupSummaryReference& value) { m_levelFourHasBeenSet = true; m_levelFour = value; }
-    inline void SetLevelFour(HierarchyGroupSummaryReference&& value) { m_levelFourHasBeenSet = true; m_levelFour = std::move(value); }
-    inline HierarchyPathReference& WithLevelFour(const HierarchyGroupSummaryReference& value) { SetLevelFour(value); return *this;}
-    inline HierarchyPathReference& WithLevelFour(HierarchyGroupSummaryReference&& value) { SetLevelFour(std::move(value)); return *this;}
+    template<typename LevelFourT = HierarchyGroupSummaryReference>
+    void SetLevelFour(LevelFourT&& value) { m_levelFourHasBeenSet = true; m_levelFour = std::forward<LevelFourT>(value); }
+    template<typename LevelFourT = HierarchyGroupSummaryReference>
+    HierarchyPathReference& WithLevelFour(LevelFourT&& value) { SetLevelFour(std::forward<LevelFourT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about level five.</p>
      */
-    inline const HierarchyGroupSummaryReference& GetLevelFive() const{ return m_levelFive; }
+    inline const HierarchyGroupSummaryReference& GetLevelFive() const { return m_levelFive; }
     inline bool LevelFiveHasBeenSet() const { return m_levelFiveHasBeenSet; }
-    inline void SetLevelFive(const HierarchyGroupSummaryReference& value) { m_levelFiveHasBeenSet = true; m_levelFive = value; }
-    inline void SetLevelFive(HierarchyGroupSummaryReference&& value) { m_levelFiveHasBeenSet = true; m_levelFive = std::move(value); }
-    inline HierarchyPathReference& WithLevelFive(const HierarchyGroupSummaryReference& value) { SetLevelFive(value); return *this;}
-    inline HierarchyPathReference& WithLevelFive(HierarchyGroupSummaryReference&& value) { SetLevelFive(std::move(value)); return *this;}
+    template<typename LevelFiveT = HierarchyGroupSummaryReference>
+    void SetLevelFive(LevelFiveT&& value) { m_levelFiveHasBeenSet = true; m_levelFive = std::forward<LevelFiveT>(value); }
+    template<typename LevelFiveT = HierarchyGroupSummaryReference>
+    HierarchyPathReference& WithLevelFive(LevelFiveT&& value) { SetLevelFive(std::forward<LevelFiveT>(value)); return *this;}
     ///@}
   private:
 

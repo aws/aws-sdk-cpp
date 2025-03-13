@@ -12,20 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
-    m_applyDuringMaintenanceWindow(false),
-    m_applyDuringMaintenanceWindowHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_forceUpdate(false),
-    m_forceUpdateHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -40,7 +40,7 @@ namespace Model
   class EnvironmentResourceDescription
   {
   public:
-    AWS_ELASTICBEANSTALK_API EnvironmentResourceDescription();
+    AWS_ELASTICBEANSTALK_API EnvironmentResourceDescription() = default;
     AWS_ELASTICBEANSTALK_API EnvironmentResourceDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API EnvironmentResourceDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,112 +52,110 @@ namespace Model
     /**
      * <p>The name of the environment.</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline EnvironmentResourceDescription& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline EnvironmentResourceDescription& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    EnvironmentResourceDescription& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The <code>AutoScalingGroups</code> used by this environment. </p>
      */
-    inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+    inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const { return m_autoScalingGroups; }
     inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
-    inline void SetAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
-    inline void SetAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
-    inline EnvironmentResourceDescription& WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
-    inline EnvironmentResourceDescription& WithAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddAutoScalingGroups(const AutoScalingGroup& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
+    template<typename AutoScalingGroupsT = Aws::Vector<AutoScalingGroup>>
+    void SetAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::forward<AutoScalingGroupsT>(value); }
+    template<typename AutoScalingGroupsT = Aws::Vector<AutoScalingGroup>>
+    EnvironmentResourceDescription& WithAutoScalingGroups(AutoScalingGroupsT&& value) { SetAutoScalingGroups(std::forward<AutoScalingGroupsT>(value)); return *this;}
+    template<typename AutoScalingGroupsT = AutoScalingGroup>
+    EnvironmentResourceDescription& AddAutoScalingGroups(AutoScalingGroupsT&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.emplace_back(std::forward<AutoScalingGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 instances used by this environment.</p>
      */
-    inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+    inline const Aws::Vector<Instance>& GetInstances() const { return m_instances; }
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
-    inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
-    inline EnvironmentResourceDescription& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
-    inline EnvironmentResourceDescription& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+    template<typename InstancesT = Aws::Vector<Instance>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<Instance>>
+    EnvironmentResourceDescription& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = Instance>
+    EnvironmentResourceDescription& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Auto Scaling launch configurations in use by this environment.</p>
      */
-    inline const Aws::Vector<LaunchConfiguration>& GetLaunchConfigurations() const{ return m_launchConfigurations; }
+    inline const Aws::Vector<LaunchConfiguration>& GetLaunchConfigurations() const { return m_launchConfigurations; }
     inline bool LaunchConfigurationsHasBeenSet() const { return m_launchConfigurationsHasBeenSet; }
-    inline void SetLaunchConfigurations(const Aws::Vector<LaunchConfiguration>& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations = value; }
-    inline void SetLaunchConfigurations(Aws::Vector<LaunchConfiguration>&& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations = std::move(value); }
-    inline EnvironmentResourceDescription& WithLaunchConfigurations(const Aws::Vector<LaunchConfiguration>& value) { SetLaunchConfigurations(value); return *this;}
-    inline EnvironmentResourceDescription& WithLaunchConfigurations(Aws::Vector<LaunchConfiguration>&& value) { SetLaunchConfigurations(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddLaunchConfigurations(const LaunchConfiguration& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddLaunchConfigurations(LaunchConfiguration&& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations.push_back(std::move(value)); return *this; }
+    template<typename LaunchConfigurationsT = Aws::Vector<LaunchConfiguration>>
+    void SetLaunchConfigurations(LaunchConfigurationsT&& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations = std::forward<LaunchConfigurationsT>(value); }
+    template<typename LaunchConfigurationsT = Aws::Vector<LaunchConfiguration>>
+    EnvironmentResourceDescription& WithLaunchConfigurations(LaunchConfigurationsT&& value) { SetLaunchConfigurations(std::forward<LaunchConfigurationsT>(value)); return *this;}
+    template<typename LaunchConfigurationsT = LaunchConfiguration>
+    EnvironmentResourceDescription& AddLaunchConfigurations(LaunchConfigurationsT&& value) { m_launchConfigurationsHasBeenSet = true; m_launchConfigurations.emplace_back(std::forward<LaunchConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 launch templates in use by this environment.</p>
      */
-    inline const Aws::Vector<LaunchTemplate>& GetLaunchTemplates() const{ return m_launchTemplates; }
+    inline const Aws::Vector<LaunchTemplate>& GetLaunchTemplates() const { return m_launchTemplates; }
     inline bool LaunchTemplatesHasBeenSet() const { return m_launchTemplatesHasBeenSet; }
-    inline void SetLaunchTemplates(const Aws::Vector<LaunchTemplate>& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates = value; }
-    inline void SetLaunchTemplates(Aws::Vector<LaunchTemplate>&& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates = std::move(value); }
-    inline EnvironmentResourceDescription& WithLaunchTemplates(const Aws::Vector<LaunchTemplate>& value) { SetLaunchTemplates(value); return *this;}
-    inline EnvironmentResourceDescription& WithLaunchTemplates(Aws::Vector<LaunchTemplate>&& value) { SetLaunchTemplates(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddLaunchTemplates(const LaunchTemplate& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddLaunchTemplates(LaunchTemplate&& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates.push_back(std::move(value)); return *this; }
+    template<typename LaunchTemplatesT = Aws::Vector<LaunchTemplate>>
+    void SetLaunchTemplates(LaunchTemplatesT&& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates = std::forward<LaunchTemplatesT>(value); }
+    template<typename LaunchTemplatesT = Aws::Vector<LaunchTemplate>>
+    EnvironmentResourceDescription& WithLaunchTemplates(LaunchTemplatesT&& value) { SetLaunchTemplates(std::forward<LaunchTemplatesT>(value)); return *this;}
+    template<typename LaunchTemplatesT = LaunchTemplate>
+    EnvironmentResourceDescription& AddLaunchTemplates(LaunchTemplatesT&& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates.emplace_back(std::forward<LaunchTemplatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The LoadBalancers in use by this environment.</p>
      */
-    inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
+    inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const { return m_loadBalancers; }
     inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
-    inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
-    inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
-    inline EnvironmentResourceDescription& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
-    inline EnvironmentResourceDescription& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+    template<typename LoadBalancersT = Aws::Vector<LoadBalancer>>
+    void SetLoadBalancers(LoadBalancersT&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::forward<LoadBalancersT>(value); }
+    template<typename LoadBalancersT = Aws::Vector<LoadBalancer>>
+    EnvironmentResourceDescription& WithLoadBalancers(LoadBalancersT&& value) { SetLoadBalancers(std::forward<LoadBalancersT>(value)); return *this;}
+    template<typename LoadBalancersT = LoadBalancer>
+    EnvironmentResourceDescription& AddLoadBalancers(LoadBalancersT&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.emplace_back(std::forward<LoadBalancersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The <code>AutoScaling</code> triggers in use by this environment. </p>
      */
-    inline const Aws::Vector<Trigger>& GetTriggers() const{ return m_triggers; }
+    inline const Aws::Vector<Trigger>& GetTriggers() const { return m_triggers; }
     inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
-    inline void SetTriggers(const Aws::Vector<Trigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
-    inline void SetTriggers(Aws::Vector<Trigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
-    inline EnvironmentResourceDescription& WithTriggers(const Aws::Vector<Trigger>& value) { SetTriggers(value); return *this;}
-    inline EnvironmentResourceDescription& WithTriggers(Aws::Vector<Trigger>&& value) { SetTriggers(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddTriggers(const Trigger& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddTriggers(Trigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
+    template<typename TriggersT = Aws::Vector<Trigger>>
+    void SetTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers = std::forward<TriggersT>(value); }
+    template<typename TriggersT = Aws::Vector<Trigger>>
+    EnvironmentResourceDescription& WithTriggers(TriggersT&& value) { SetTriggers(std::forward<TriggersT>(value)); return *this;}
+    template<typename TriggersT = Trigger>
+    EnvironmentResourceDescription& AddTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers.emplace_back(std::forward<TriggersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The queues used by this environment.</p>
      */
-    inline const Aws::Vector<Queue>& GetQueues() const{ return m_queues; }
+    inline const Aws::Vector<Queue>& GetQueues() const { return m_queues; }
     inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
-    inline void SetQueues(const Aws::Vector<Queue>& value) { m_queuesHasBeenSet = true; m_queues = value; }
-    inline void SetQueues(Aws::Vector<Queue>&& value) { m_queuesHasBeenSet = true; m_queues = std::move(value); }
-    inline EnvironmentResourceDescription& WithQueues(const Aws::Vector<Queue>& value) { SetQueues(value); return *this;}
-    inline EnvironmentResourceDescription& WithQueues(Aws::Vector<Queue>&& value) { SetQueues(std::move(value)); return *this;}
-    inline EnvironmentResourceDescription& AddQueues(const Queue& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
-    inline EnvironmentResourceDescription& AddQueues(Queue&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
+    template<typename QueuesT = Aws::Vector<Queue>>
+    void SetQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues = std::forward<QueuesT>(value); }
+    template<typename QueuesT = Aws::Vector<Queue>>
+    EnvironmentResourceDescription& WithQueues(QueuesT&& value) { SetQueues(std::forward<QueuesT>(value)); return *this;}
+    template<typename QueuesT = Queue>
+    EnvironmentResourceDescription& AddQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues.emplace_back(std::forward<QueuesT>(value)); return *this; }
     ///@}
   private:
 

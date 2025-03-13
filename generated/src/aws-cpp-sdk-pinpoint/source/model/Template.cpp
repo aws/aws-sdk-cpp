@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-Template::Template() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Template::Template(JsonView jsonValue)
-  : Template()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Template& Template::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

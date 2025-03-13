@@ -32,7 +32,7 @@ namespace Model
   class AgentVersion
   {
   public:
-    AWS_OPSWORKS_API AgentVersion();
+    AWS_OPSWORKS_API AgentVersion() = default;
     AWS_OPSWORKS_API AgentVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API AgentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The agent version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline AgentVersion& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline AgentVersion& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline AgentVersion& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    AgentVersion& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration manager.</p>
      */
-    inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
+    inline const StackConfigurationManager& GetConfigurationManager() const { return m_configurationManager; }
     inline bool ConfigurationManagerHasBeenSet() const { return m_configurationManagerHasBeenSet; }
-    inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
-    inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
-    inline AgentVersion& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
-    inline AgentVersion& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
+    template<typename ConfigurationManagerT = StackConfigurationManager>
+    void SetConfigurationManager(ConfigurationManagerT&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::forward<ConfigurationManagerT>(value); }
+    template<typename ConfigurationManagerT = StackConfigurationManager>
+    AgentVersion& WithConfigurationManager(ConfigurationManagerT&& value) { SetConfigurationManager(std::forward<ConfigurationManagerT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class DescribeConnectionAliasPermissionsResult
   {
   public:
-    AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult();
+    AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult() = default;
     AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The identifier of the connection alias.</p>
      */
-    inline const Aws::String& GetAliasId() const{ return m_aliasId; }
-    inline void SetAliasId(const Aws::String& value) { m_aliasId = value; }
-    inline void SetAliasId(Aws::String&& value) { m_aliasId = std::move(value); }
-    inline void SetAliasId(const char* value) { m_aliasId.assign(value); }
-    inline DescribeConnectionAliasPermissionsResult& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithAliasId(const char* value) { SetAliasId(value); return *this;}
+    inline const Aws::String& GetAliasId() const { return m_aliasId; }
+    template<typename AliasIdT = Aws::String>
+    void SetAliasId(AliasIdT&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::forward<AliasIdT>(value); }
+    template<typename AliasIdT = Aws::String>
+    DescribeConnectionAliasPermissionsResult& WithAliasId(AliasIdT&& value) { SetAliasId(std::forward<AliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The permissions associated with a connection alias.</p>
      */
-    inline const Aws::Vector<ConnectionAliasPermission>& GetConnectionAliasPermissions() const{ return m_connectionAliasPermissions; }
-    inline void SetConnectionAliasPermissions(const Aws::Vector<ConnectionAliasPermission>& value) { m_connectionAliasPermissions = value; }
-    inline void SetConnectionAliasPermissions(Aws::Vector<ConnectionAliasPermission>&& value) { m_connectionAliasPermissions = std::move(value); }
-    inline DescribeConnectionAliasPermissionsResult& WithConnectionAliasPermissions(const Aws::Vector<ConnectionAliasPermission>& value) { SetConnectionAliasPermissions(value); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithConnectionAliasPermissions(Aws::Vector<ConnectionAliasPermission>&& value) { SetConnectionAliasPermissions(std::move(value)); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& AddConnectionAliasPermissions(const ConnectionAliasPermission& value) { m_connectionAliasPermissions.push_back(value); return *this; }
-    inline DescribeConnectionAliasPermissionsResult& AddConnectionAliasPermissions(ConnectionAliasPermission&& value) { m_connectionAliasPermissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConnectionAliasPermission>& GetConnectionAliasPermissions() const { return m_connectionAliasPermissions; }
+    template<typename ConnectionAliasPermissionsT = Aws::Vector<ConnectionAliasPermission>>
+    void SetConnectionAliasPermissions(ConnectionAliasPermissionsT&& value) { m_connectionAliasPermissionsHasBeenSet = true; m_connectionAliasPermissions = std::forward<ConnectionAliasPermissionsT>(value); }
+    template<typename ConnectionAliasPermissionsT = Aws::Vector<ConnectionAliasPermission>>
+    DescribeConnectionAliasPermissionsResult& WithConnectionAliasPermissions(ConnectionAliasPermissionsT&& value) { SetConnectionAliasPermissions(std::forward<ConnectionAliasPermissionsT>(value)); return *this;}
+    template<typename ConnectionAliasPermissionsT = ConnectionAliasPermission>
+    DescribeConnectionAliasPermissionsResult& AddConnectionAliasPermissions(ConnectionAliasPermissionsT&& value) { m_connectionAliasPermissionsHasBeenSet = true; m_connectionAliasPermissions.emplace_back(std::forward<ConnectionAliasPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,34 +63,34 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is null
      * when there are no more results to return. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeConnectionAliasPermissionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeConnectionAliasPermissionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConnectionAliasPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConnectionAliasPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConnectionAliasPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aliasId;
+    bool m_aliasIdHasBeenSet = false;
 
     Aws::Vector<ConnectionAliasPermission> m_connectionAliasPermissions;
+    bool m_connectionAliasPermissionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

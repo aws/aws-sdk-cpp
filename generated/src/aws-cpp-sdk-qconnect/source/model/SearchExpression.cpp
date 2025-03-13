@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SearchExpression::SearchExpression() : 
-    m_filtersHasBeenSet(false)
-{
-}
-
 SearchExpression::SearchExpression(JsonView jsonValue)
-  : SearchExpression()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SearchExpression& SearchExpression::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   return *this;
 }
 

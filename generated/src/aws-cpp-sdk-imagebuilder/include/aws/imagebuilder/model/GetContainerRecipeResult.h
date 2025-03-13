@@ -28,7 +28,7 @@ namespace Model
   class GetContainerRecipeResult
   {
   public:
-    AWS_IMAGEBUILDER_API GetContainerRecipeResult();
+    AWS_IMAGEBUILDER_API GetContainerRecipeResult() = default;
     AWS_IMAGEBUILDER_API GetContainerRecipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API GetContainerRecipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,30 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContainerRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContainerRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContainerRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContainerRecipeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The container recipe object that is returned.</p>
      */
-    inline const ContainerRecipe& GetContainerRecipe() const{ return m_containerRecipe; }
-    inline void SetContainerRecipe(const ContainerRecipe& value) { m_containerRecipe = value; }
-    inline void SetContainerRecipe(ContainerRecipe&& value) { m_containerRecipe = std::move(value); }
-    inline GetContainerRecipeResult& WithContainerRecipe(const ContainerRecipe& value) { SetContainerRecipe(value); return *this;}
-    inline GetContainerRecipeResult& WithContainerRecipe(ContainerRecipe&& value) { SetContainerRecipe(std::move(value)); return *this;}
+    inline const ContainerRecipe& GetContainerRecipe() const { return m_containerRecipe; }
+    template<typename ContainerRecipeT = ContainerRecipe>
+    void SetContainerRecipe(ContainerRecipeT&& value) { m_containerRecipeHasBeenSet = true; m_containerRecipe = std::forward<ContainerRecipeT>(value); }
+    template<typename ContainerRecipeT = ContainerRecipe>
+    GetContainerRecipeResult& WithContainerRecipe(ContainerRecipeT&& value) { SetContainerRecipe(std::forward<ContainerRecipeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     ContainerRecipe m_containerRecipe;
+    bool m_containerRecipeHasBeenSet = false;
   };
 
 } // namespace Model

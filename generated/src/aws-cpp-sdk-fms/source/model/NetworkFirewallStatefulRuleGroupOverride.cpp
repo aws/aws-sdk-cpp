@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkFirewallStatefulRuleGroupOverride::NetworkFirewallStatefulRuleGroupOverride() : 
-    m_action(NetworkFirewallOverrideAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 NetworkFirewallStatefulRuleGroupOverride::NetworkFirewallStatefulRuleGroupOverride(JsonView jsonValue)
-  : NetworkFirewallStatefulRuleGroupOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NetworkFirewallStatefulRuleGroupOverride& NetworkFirewallStatefulRuleGroupOverri
   if(jsonValue.ValueExists("Action"))
   {
     m_action = NetworkFirewallOverrideActionMapper::GetNetworkFirewallOverrideActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

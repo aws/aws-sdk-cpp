@@ -12,14 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitFeedbackRequest::SubmitFeedbackRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_queryIdHasBeenSet(false),
-    m_clickFeedbackItemsHasBeenSet(false),
-    m_relevanceFeedbackItemsHasBeenSet(false)
-{
-}
-
 Aws::String SubmitFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class LambdaFunctionUtilizationMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric();
+    AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric() = default;
     AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API LambdaFunctionUtilizationMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * your function code spends processing an event.</p> </li> <li> <p>
      * <code>Memory</code> - The amount of memory used per invocation.</p> </li> </ul>
      */
-    inline const LambdaFunctionMetricName& GetName() const{ return m_name; }
+    inline LambdaFunctionMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const LambdaFunctionMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(LambdaFunctionMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline LambdaFunctionUtilizationMetric& WithName(const LambdaFunctionMetricName& value) { SetName(value); return *this;}
-    inline LambdaFunctionUtilizationMetric& WithName(LambdaFunctionMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(LambdaFunctionMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline LambdaFunctionUtilizationMetric& WithName(LambdaFunctionMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -70,32 +68,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
      * CloudWatch User Guide</a>.</p>
      */
-    inline const LambdaFunctionMetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline LambdaFunctionMetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const LambdaFunctionMetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(LambdaFunctionMetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline LambdaFunctionUtilizationMetric& WithStatistic(const LambdaFunctionMetricStatistic& value) { SetStatistic(value); return *this;}
-    inline LambdaFunctionUtilizationMetric& WithStatistic(LambdaFunctionMetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(LambdaFunctionMetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline LambdaFunctionUtilizationMetric& WithStatistic(LambdaFunctionMetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the utilization metric.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline LambdaFunctionUtilizationMetric& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    LambdaFunctionMetricName m_name;
+    LambdaFunctionMetricName m_name{LambdaFunctionMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    LambdaFunctionMetricStatistic m_statistic;
+    LambdaFunctionMetricStatistic m_statistic{LambdaFunctionMetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

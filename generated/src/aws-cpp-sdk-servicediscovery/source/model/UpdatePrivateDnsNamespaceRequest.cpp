@@ -12,14 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePrivateDnsNamespaceRequest::UpdatePrivateDnsNamespaceRequest() : 
-    m_idHasBeenSet(false),
-    m_updaterRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_updaterRequestIdHasBeenSet(true),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePrivateDnsNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

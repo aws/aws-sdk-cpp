@@ -21,7 +21,7 @@ namespace Model
   class RemoveApplicationInstanceRequest : public PanoramaRequest
   {
   public:
-    AWS_PANORAMA_API RemoveApplicationInstanceRequest();
+    AWS_PANORAMA_API RemoveApplicationInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>An application instance ID.</p>
      */
-    inline const Aws::String& GetApplicationInstanceId() const{ return m_applicationInstanceId; }
+    inline const Aws::String& GetApplicationInstanceId() const { return m_applicationInstanceId; }
     inline bool ApplicationInstanceIdHasBeenSet() const { return m_applicationInstanceIdHasBeenSet; }
-    inline void SetApplicationInstanceId(const Aws::String& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = value; }
-    inline void SetApplicationInstanceId(Aws::String&& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = std::move(value); }
-    inline void SetApplicationInstanceId(const char* value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId.assign(value); }
-    inline RemoveApplicationInstanceRequest& WithApplicationInstanceId(const Aws::String& value) { SetApplicationInstanceId(value); return *this;}
-    inline RemoveApplicationInstanceRequest& WithApplicationInstanceId(Aws::String&& value) { SetApplicationInstanceId(std::move(value)); return *this;}
-    inline RemoveApplicationInstanceRequest& WithApplicationInstanceId(const char* value) { SetApplicationInstanceId(value); return *this;}
+    template<typename ApplicationInstanceIdT = Aws::String>
+    void SetApplicationInstanceId(ApplicationInstanceIdT&& value) { m_applicationInstanceIdHasBeenSet = true; m_applicationInstanceId = std::forward<ApplicationInstanceIdT>(value); }
+    template<typename ApplicationInstanceIdT = Aws::String>
+    RemoveApplicationInstanceRequest& WithApplicationInstanceId(ApplicationInstanceIdT&& value) { SetApplicationInstanceId(std::forward<ApplicationInstanceIdT>(value)); return *this;}
     ///@}
   private:
 

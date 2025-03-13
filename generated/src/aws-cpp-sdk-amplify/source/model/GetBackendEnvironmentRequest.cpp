@@ -12,12 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBackendEnvironmentRequest::GetBackendEnvironmentRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String GetBackendEnvironmentRequest::SerializePayload() const
 {
   return {};

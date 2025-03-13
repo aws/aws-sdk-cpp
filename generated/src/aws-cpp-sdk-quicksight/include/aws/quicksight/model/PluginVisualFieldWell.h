@@ -36,7 +36,7 @@ namespace Model
   class PluginVisualFieldWell
   {
   public:
-    AWS_QUICKSIGHT_API PluginVisualFieldWell();
+    AWS_QUICKSIGHT_API PluginVisualFieldWell() = default;
     AWS_QUICKSIGHT_API PluginVisualFieldWell(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PluginVisualFieldWell& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,58 +46,56 @@ namespace Model
     /**
      * <p>The semantic axis name for the field well.</p>
      */
-    inline const PluginVisualAxisName& GetAxisName() const{ return m_axisName; }
+    inline PluginVisualAxisName GetAxisName() const { return m_axisName; }
     inline bool AxisNameHasBeenSet() const { return m_axisNameHasBeenSet; }
-    inline void SetAxisName(const PluginVisualAxisName& value) { m_axisNameHasBeenSet = true; m_axisName = value; }
-    inline void SetAxisName(PluginVisualAxisName&& value) { m_axisNameHasBeenSet = true; m_axisName = std::move(value); }
-    inline PluginVisualFieldWell& WithAxisName(const PluginVisualAxisName& value) { SetAxisName(value); return *this;}
-    inline PluginVisualFieldWell& WithAxisName(PluginVisualAxisName&& value) { SetAxisName(std::move(value)); return *this;}
+    inline void SetAxisName(PluginVisualAxisName value) { m_axisNameHasBeenSet = true; m_axisName = value; }
+    inline PluginVisualFieldWell& WithAxisName(PluginVisualAxisName value) { SetAxisName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of dimensions for the field well.</p>
      */
-    inline const Aws::Vector<DimensionField>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<DimensionField>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<DimensionField>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<DimensionField>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline PluginVisualFieldWell& WithDimensions(const Aws::Vector<DimensionField>& value) { SetDimensions(value); return *this;}
-    inline PluginVisualFieldWell& WithDimensions(Aws::Vector<DimensionField>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline PluginVisualFieldWell& AddDimensions(const DimensionField& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline PluginVisualFieldWell& AddDimensions(DimensionField&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<DimensionField>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<DimensionField>>
+    PluginVisualFieldWell& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = DimensionField>
+    PluginVisualFieldWell& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of measures that exist in the field well.</p>
      */
-    inline const Aws::Vector<MeasureField>& GetMeasures() const{ return m_measures; }
+    inline const Aws::Vector<MeasureField>& GetMeasures() const { return m_measures; }
     inline bool MeasuresHasBeenSet() const { return m_measuresHasBeenSet; }
-    inline void SetMeasures(const Aws::Vector<MeasureField>& value) { m_measuresHasBeenSet = true; m_measures = value; }
-    inline void SetMeasures(Aws::Vector<MeasureField>&& value) { m_measuresHasBeenSet = true; m_measures = std::move(value); }
-    inline PluginVisualFieldWell& WithMeasures(const Aws::Vector<MeasureField>& value) { SetMeasures(value); return *this;}
-    inline PluginVisualFieldWell& WithMeasures(Aws::Vector<MeasureField>&& value) { SetMeasures(std::move(value)); return *this;}
-    inline PluginVisualFieldWell& AddMeasures(const MeasureField& value) { m_measuresHasBeenSet = true; m_measures.push_back(value); return *this; }
-    inline PluginVisualFieldWell& AddMeasures(MeasureField&& value) { m_measuresHasBeenSet = true; m_measures.push_back(std::move(value)); return *this; }
+    template<typename MeasuresT = Aws::Vector<MeasureField>>
+    void SetMeasures(MeasuresT&& value) { m_measuresHasBeenSet = true; m_measures = std::forward<MeasuresT>(value); }
+    template<typename MeasuresT = Aws::Vector<MeasureField>>
+    PluginVisualFieldWell& WithMeasures(MeasuresT&& value) { SetMeasures(std::forward<MeasuresT>(value)); return *this;}
+    template<typename MeasuresT = MeasureField>
+    PluginVisualFieldWell& AddMeasures(MeasuresT&& value) { m_measuresHasBeenSet = true; m_measures.emplace_back(std::forward<MeasuresT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of unaggregated fields that exist in the field well.</p>
      */
-    inline const Aws::Vector<UnaggregatedField>& GetUnaggregated() const{ return m_unaggregated; }
+    inline const Aws::Vector<UnaggregatedField>& GetUnaggregated() const { return m_unaggregated; }
     inline bool UnaggregatedHasBeenSet() const { return m_unaggregatedHasBeenSet; }
-    inline void SetUnaggregated(const Aws::Vector<UnaggregatedField>& value) { m_unaggregatedHasBeenSet = true; m_unaggregated = value; }
-    inline void SetUnaggregated(Aws::Vector<UnaggregatedField>&& value) { m_unaggregatedHasBeenSet = true; m_unaggregated = std::move(value); }
-    inline PluginVisualFieldWell& WithUnaggregated(const Aws::Vector<UnaggregatedField>& value) { SetUnaggregated(value); return *this;}
-    inline PluginVisualFieldWell& WithUnaggregated(Aws::Vector<UnaggregatedField>&& value) { SetUnaggregated(std::move(value)); return *this;}
-    inline PluginVisualFieldWell& AddUnaggregated(const UnaggregatedField& value) { m_unaggregatedHasBeenSet = true; m_unaggregated.push_back(value); return *this; }
-    inline PluginVisualFieldWell& AddUnaggregated(UnaggregatedField&& value) { m_unaggregatedHasBeenSet = true; m_unaggregated.push_back(std::move(value)); return *this; }
+    template<typename UnaggregatedT = Aws::Vector<UnaggregatedField>>
+    void SetUnaggregated(UnaggregatedT&& value) { m_unaggregatedHasBeenSet = true; m_unaggregated = std::forward<UnaggregatedT>(value); }
+    template<typename UnaggregatedT = Aws::Vector<UnaggregatedField>>
+    PluginVisualFieldWell& WithUnaggregated(UnaggregatedT&& value) { SetUnaggregated(std::forward<UnaggregatedT>(value)); return *this;}
+    template<typename UnaggregatedT = UnaggregatedField>
+    PluginVisualFieldWell& AddUnaggregated(UnaggregatedT&& value) { m_unaggregatedHasBeenSet = true; m_unaggregated.emplace_back(std::forward<UnaggregatedT>(value)); return *this; }
     ///@}
   private:
 
-    PluginVisualAxisName m_axisName;
+    PluginVisualAxisName m_axisName{PluginVisualAxisName::NOT_SET};
     bool m_axisNameHasBeenSet = false;
 
     Aws::Vector<DimensionField> m_dimensions;

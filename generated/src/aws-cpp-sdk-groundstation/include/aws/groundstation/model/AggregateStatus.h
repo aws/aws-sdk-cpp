@@ -33,7 +33,7 @@ namespace Model
   class AggregateStatus
   {
   public:
-    AWS_GROUNDSTATION_API AggregateStatus();
+    AWS_GROUNDSTATION_API AggregateStatus() = default;
     AWS_GROUNDSTATION_API AggregateStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API AggregateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,34 +43,32 @@ namespace Model
     /**
      * <p>Sparse map of failure signatures.</p>
      */
-    inline const Aws::Map<Aws::String, bool>& GetSignatureMap() const{ return m_signatureMap; }
+    inline const Aws::Map<Aws::String, bool>& GetSignatureMap() const { return m_signatureMap; }
     inline bool SignatureMapHasBeenSet() const { return m_signatureMapHasBeenSet; }
-    inline void SetSignatureMap(const Aws::Map<Aws::String, bool>& value) { m_signatureMapHasBeenSet = true; m_signatureMap = value; }
-    inline void SetSignatureMap(Aws::Map<Aws::String, bool>&& value) { m_signatureMapHasBeenSet = true; m_signatureMap = std::move(value); }
-    inline AggregateStatus& WithSignatureMap(const Aws::Map<Aws::String, bool>& value) { SetSignatureMap(value); return *this;}
-    inline AggregateStatus& WithSignatureMap(Aws::Map<Aws::String, bool>&& value) { SetSignatureMap(std::move(value)); return *this;}
-    inline AggregateStatus& AddSignatureMap(const Aws::String& key, bool value) { m_signatureMapHasBeenSet = true; m_signatureMap.emplace(key, value); return *this; }
-    inline AggregateStatus& AddSignatureMap(Aws::String&& key, bool value) { m_signatureMapHasBeenSet = true; m_signatureMap.emplace(std::move(key), value); return *this; }
-    inline AggregateStatus& AddSignatureMap(const char* key, bool value) { m_signatureMapHasBeenSet = true; m_signatureMap.emplace(key, value); return *this; }
+    template<typename SignatureMapT = Aws::Map<Aws::String, bool>>
+    void SetSignatureMap(SignatureMapT&& value) { m_signatureMapHasBeenSet = true; m_signatureMap = std::forward<SignatureMapT>(value); }
+    template<typename SignatureMapT = Aws::Map<Aws::String, bool>>
+    AggregateStatus& WithSignatureMap(SignatureMapT&& value) { SetSignatureMap(std::forward<SignatureMapT>(value)); return *this;}
+    inline AggregateStatus& AddSignatureMap(Aws::String key, bool value) {
+      m_signatureMapHasBeenSet = true; m_signatureMap.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Aggregate status.</p>
      */
-    inline const AgentStatus& GetStatus() const{ return m_status; }
+    inline AgentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AgentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AgentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AggregateStatus& WithStatus(const AgentStatus& value) { SetStatus(value); return *this;}
-    inline AggregateStatus& WithStatus(AgentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AgentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AggregateStatus& WithStatus(AgentStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, bool> m_signatureMap;
     bool m_signatureMapHasBeenSet = false;
 
-    AgentStatus m_status;
+    AgentStatus m_status{AgentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

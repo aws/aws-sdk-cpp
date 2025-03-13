@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ActiveContext::ActiveContext() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ActiveContext::ActiveContext(JsonView jsonValue)
-  : ActiveContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActiveContext& ActiveContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

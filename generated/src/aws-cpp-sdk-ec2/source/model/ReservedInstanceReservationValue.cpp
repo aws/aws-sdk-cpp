@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstanceReservationValue::ReservedInstanceReservationValue() : 
-    m_reservationValueHasBeenSet(false),
-    m_reservedInstanceIdHasBeenSet(false)
-{
-}
-
 ReservedInstanceReservationValue::ReservedInstanceReservationValue(const XmlNode& xmlNode)
-  : ReservedInstanceReservationValue()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ReservedInstanceReservationValue& ReservedInstanceReservationValue::operator =(c
     {
       m_reservationValue = reservationValueNode;
       m_reservationValueHasBeenSet = true;
+       m_reservationValueHasBeenSet = true;
     }
     XmlNode reservedInstanceIdNode = resultNode.FirstChild("reservedInstanceId");
     if(!reservedInstanceIdNode.IsNull())
     {
       m_reservedInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(reservedInstanceIdNode.GetText());
       m_reservedInstanceIdHasBeenSet = true;
+       m_reservedInstanceIdHasBeenSet = true;
     }
   }
 

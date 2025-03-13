@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredentials() : 
-    m_credentialPairHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobDataSourceCredentials::AssetBundleImportJobDataSourceCredentials(JsonView jsonValue)
-  : AssetBundleImportJobDataSourceCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetBundleImportJobDataSourceCredentials& AssetBundleImportJobDataSourceCredent
   if(jsonValue.ValueExists("CredentialPair"))
   {
     m_credentialPair = jsonValue.GetObject("CredentialPair");
-
     m_credentialPairHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

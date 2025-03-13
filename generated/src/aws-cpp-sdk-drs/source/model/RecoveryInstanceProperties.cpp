@@ -18,20 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstanceProperties::RecoveryInstanceProperties() : 
-    m_cpusHasBeenSet(false),
-    m_disksHasBeenSet(false),
-    m_identificationHintsHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_ramBytes(0),
-    m_ramBytesHasBeenSet(false)
-{
-}
-
 RecoveryInstanceProperties::RecoveryInstanceProperties(JsonView jsonValue)
-  : RecoveryInstanceProperties()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator =(JsonView json
     }
     m_cpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disks"))
   {
     Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
@@ -57,21 +43,16 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator =(JsonView json
     }
     m_disksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identificationHints"))
   {
     m_identificationHints = jsonValue.GetObject("identificationHints");
-
     m_identificationHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetString("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -81,21 +62,16 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator =(JsonView json
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("os"))
   {
     m_os = jsonValue.GetObject("os");
-
     m_osHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramBytes"))
   {
     m_ramBytes = jsonValue.GetInt64("ramBytes");
-
     m_ramBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategoryInheritedValueDimension::CostCategoryInheritedValueDimension() : 
-    m_dimensionName(CostCategoryInheritedValueDimensionName::NOT_SET),
-    m_dimensionNameHasBeenSet(false),
-    m_dimensionKeyHasBeenSet(false)
-{
-}
-
 CostCategoryInheritedValueDimension::CostCategoryInheritedValueDimension(JsonView jsonValue)
-  : CostCategoryInheritedValueDimension()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CostCategoryInheritedValueDimension& CostCategoryInheritedValueDimension::operat
   if(jsonValue.ValueExists("DimensionName"))
   {
     m_dimensionName = CostCategoryInheritedValueDimensionNameMapper::GetCostCategoryInheritedValueDimensionNameForName(jsonValue.GetString("DimensionName"));
-
     m_dimensionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionKey"))
   {
     m_dimensionKey = jsonValue.GetString("DimensionKey");
-
     m_dimensionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRetainedMessageResult::GetRetainedMessageResult() : 
-    m_qos(0),
-    m_lastModifiedTime(0)
-{
-}
-
 GetRetainedMessageResult::GetRetainedMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRetainedMessageResult()
 {
   *this = result;
 }
@@ -36,37 +29,35 @@ GetRetainedMessageResult& GetRetainedMessageResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("topic"))
   {
     m_topic = jsonValue.GetString("topic");
-
+    m_topicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = HashingUtils::Base64Decode(jsonValue.GetString("payload"));
+    m_payloadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qos"))
   {
     m_qos = jsonValue.GetInteger("qos");
-
+    m_qosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetInt64("lastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userProperties"))
   {
     m_userProperties = HashingUtils::Base64Decode(jsonValue.GetString("userProperties"));
+    m_userPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

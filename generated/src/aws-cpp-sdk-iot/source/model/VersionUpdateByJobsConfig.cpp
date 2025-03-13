@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-VersionUpdateByJobsConfig::VersionUpdateByJobsConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 VersionUpdateByJobsConfig::VersionUpdateByJobsConfig(JsonView jsonValue)
-  : VersionUpdateByJobsConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VersionUpdateByJobsConfig& VersionUpdateByJobsConfig::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

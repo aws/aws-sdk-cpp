@@ -12,38 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFlowSourceRequest::UpdateFlowSourceRequest() : 
-    m_decryptionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_entitlementArnHasBeenSet(false),
-    m_flowArnHasBeenSet(false),
-    m_ingestPort(0),
-    m_ingestPortHasBeenSet(false),
-    m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false),
-    m_maxLatency(0),
-    m_maxLatencyHasBeenSet(false),
-    m_maxSyncBuffer(0),
-    m_maxSyncBufferHasBeenSet(false),
-    m_mediaStreamSourceConfigurationsHasBeenSet(false),
-    m_minLatency(0),
-    m_minLatencyHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_senderControlPort(0),
-    m_senderControlPortHasBeenSet(false),
-    m_senderIpAddressHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceListenerAddressHasBeenSet(false),
-    m_sourceListenerPort(0),
-    m_sourceListenerPortHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false),
-    m_gatewayBridgeSourceHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFlowSourceRequest::SerializePayload() const
 {
   JsonValue payload;

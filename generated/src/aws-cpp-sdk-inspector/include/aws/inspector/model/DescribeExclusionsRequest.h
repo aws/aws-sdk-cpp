@@ -23,7 +23,7 @@ namespace Model
   class DescribeExclusionsRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API DescribeExclusionsRequest();
+    AWS_INSPECTOR_API DescribeExclusionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
     /**
      * <p>The list of ARNs that specify the exclusions that you want to describe.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionArns() const{ return m_exclusionArns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionArns() const { return m_exclusionArns; }
     inline bool ExclusionArnsHasBeenSet() const { return m_exclusionArnsHasBeenSet; }
-    inline void SetExclusionArns(const Aws::Vector<Aws::String>& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns = value; }
-    inline void SetExclusionArns(Aws::Vector<Aws::String>&& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns = std::move(value); }
-    inline DescribeExclusionsRequest& WithExclusionArns(const Aws::Vector<Aws::String>& value) { SetExclusionArns(value); return *this;}
-    inline DescribeExclusionsRequest& WithExclusionArns(Aws::Vector<Aws::String>&& value) { SetExclusionArns(std::move(value)); return *this;}
-    inline DescribeExclusionsRequest& AddExclusionArns(const Aws::String& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns.push_back(value); return *this; }
-    inline DescribeExclusionsRequest& AddExclusionArns(Aws::String&& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns.push_back(std::move(value)); return *this; }
-    inline DescribeExclusionsRequest& AddExclusionArns(const char* value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns.push_back(value); return *this; }
+    template<typename ExclusionArnsT = Aws::Vector<Aws::String>>
+    void SetExclusionArns(ExclusionArnsT&& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns = std::forward<ExclusionArnsT>(value); }
+    template<typename ExclusionArnsT = Aws::Vector<Aws::String>>
+    DescribeExclusionsRequest& WithExclusionArns(ExclusionArnsT&& value) { SetExclusionArns(std::forward<ExclusionArnsT>(value)); return *this;}
+    template<typename ExclusionArnsT = Aws::String>
+    DescribeExclusionsRequest& AddExclusionArns(ExclusionArnsT&& value) { m_exclusionArnsHasBeenSet = true; m_exclusionArns.emplace_back(std::forward<ExclusionArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,19 +55,17 @@ namespace Model
      * <p>The locale into which you want to translate the exclusion's title,
      * description, and recommendation.</p>
      */
-    inline const Locale& GetLocale() const{ return m_locale; }
+    inline Locale GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline DescribeExclusionsRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-    inline DescribeExclusionsRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+    inline void SetLocale(Locale value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline DescribeExclusionsRequest& WithLocale(Locale value) { SetLocale(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_exclusionArns;
     bool m_exclusionArnsHasBeenSet = false;
 
-    Locale m_locale;
+    Locale m_locale{Locale::NOT_SET};
     bool m_localeHasBeenSet = false;
   };
 

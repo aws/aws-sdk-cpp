@@ -18,15 +18,7 @@ namespace Chime
 namespace Model
 {
 
-ForbiddenException::ForbiddenException() : 
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ForbiddenException::ForbiddenException(JsonView jsonValue)
-  : ForbiddenException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ForbiddenException& ForbiddenException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

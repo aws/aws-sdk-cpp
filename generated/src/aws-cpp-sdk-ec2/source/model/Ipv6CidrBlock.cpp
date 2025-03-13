@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6CidrBlock::Ipv6CidrBlock() : 
-    m_ipv6CidrBlockHasBeenSet(false)
-{
-}
-
 Ipv6CidrBlock::Ipv6CidrBlock(const XmlNode& xmlNode)
-  : Ipv6CidrBlock()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ Ipv6CidrBlock& Ipv6CidrBlock::operator =(const XmlNode& xmlNode)
     {
       m_ipv6CidrBlock = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6CidrBlockNode.GetText());
       m_ipv6CidrBlockHasBeenSet = true;
+       m_ipv6CidrBlockHasBeenSet = true;
     }
   }
 

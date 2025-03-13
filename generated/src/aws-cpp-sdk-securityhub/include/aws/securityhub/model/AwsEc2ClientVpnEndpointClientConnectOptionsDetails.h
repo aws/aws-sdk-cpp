@@ -33,7 +33,7 @@ namespace Model
   class AwsEc2ClientVpnEndpointClientConnectOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientConnectOptionsDetails();
+    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientConnectOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientConnectOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointClientConnectOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p> Indicates whether client connect options are enabled. </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,30 +54,28 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the Lambda function used for connection
      * authorization. </p>
      */
-    inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
+    inline const Aws::String& GetLambdaFunctionArn() const { return m_lambdaFunctionArn; }
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
-    inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
-    inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
-    inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
-    inline AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
-    inline AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
-    inline AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
+    template<typename LambdaFunctionArnT = Aws::String>
+    void SetLambdaFunctionArn(LambdaFunctionArnT&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::forward<LambdaFunctionArnT>(value); }
+    template<typename LambdaFunctionArnT = Aws::String>
+    AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithLambdaFunctionArn(LambdaFunctionArnT&& value) { SetLambdaFunctionArn(std::forward<LambdaFunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The status of any updates to the client connect options. </p>
      */
-    inline const AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails& GetStatus() const{ return m_status; }
+    inline const AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithStatus(const AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails& value) { SetStatus(value); return *this;}
-    inline AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithStatus(AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = AwsEc2ClientVpnEndpointClientConnectOptionsStatusDetails>
+    AwsEc2ClientVpnEndpointClientConnectOptionsDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_lambdaFunctionArn;

@@ -12,18 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGlossaryRequest::CreateGlossaryRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdentifierHasBeenSet(false),
-    m_status(GlossaryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String CreateGlossaryRequest::SerializePayload() const
 {
   JsonValue payload;

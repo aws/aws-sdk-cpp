@@ -20,17 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Statement::Statement() : 
-    m_sourcePolicyIdHasBeenSet(false),
-    m_sourcePolicyType(PolicySourceType::NOT_SET),
-    m_sourcePolicyTypeHasBeenSet(false),
-    m_startPositionHasBeenSet(false),
-    m_endPositionHasBeenSet(false)
-{
-}
-
 Statement::Statement(const XmlNode& xmlNode)
-  : Statement()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ Statement& Statement::operator =(const XmlNode& xmlNode)
     {
       m_sourcePolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyIdNode.GetText());
       m_sourcePolicyIdHasBeenSet = true;
+       m_sourcePolicyIdHasBeenSet = true;
     }
     XmlNode sourcePolicyTypeNode = resultNode.FirstChild("SourcePolicyType");
     if(!sourcePolicyTypeNode.IsNull())
     {
-      m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyTypeNode.GetText()).c_str()).c_str());
+      m_sourcePolicyType = PolicySourceTypeMapper::GetPolicySourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourcePolicyTypeNode.GetText()).c_str()));
       m_sourcePolicyTypeHasBeenSet = true;
+       m_sourcePolicyTypeHasBeenSet = true;
     }
     XmlNode startPositionNode = resultNode.FirstChild("StartPosition");
     if(!startPositionNode.IsNull())
     {
       m_startPosition = startPositionNode;
       m_startPositionHasBeenSet = true;
+       m_startPositionHasBeenSet = true;
     }
     XmlNode endPositionNode = resultNode.FirstChild("EndPosition");
     if(!endPositionNode.IsNull())
     {
       m_endPosition = endPositionNode;
       m_endPositionHasBeenSet = true;
+       m_endPositionHasBeenSet = true;
     }
   }
 

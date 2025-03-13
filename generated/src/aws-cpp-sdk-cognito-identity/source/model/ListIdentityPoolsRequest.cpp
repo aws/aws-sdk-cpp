@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListIdentityPoolsRequest::ListIdentityPoolsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListIdentityPoolsRequest::SerializePayload() const
 {
   JsonValue payload;

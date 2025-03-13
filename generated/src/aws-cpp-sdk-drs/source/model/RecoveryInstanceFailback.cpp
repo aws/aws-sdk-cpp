@@ -18,25 +18,7 @@ namespace drs
 namespace Model
 {
 
-RecoveryInstanceFailback::RecoveryInstanceFailback() : 
-    m_agentLastSeenByServiceDateTimeHasBeenSet(false),
-    m_elapsedReplicationDurationHasBeenSet(false),
-    m_failbackClientIDHasBeenSet(false),
-    m_failbackClientLastSeenByServiceDateTimeHasBeenSet(false),
-    m_failbackInitiationTimeHasBeenSet(false),
-    m_failbackJobIDHasBeenSet(false),
-    m_failbackLaunchType(FailbackLaunchType::NOT_SET),
-    m_failbackLaunchTypeHasBeenSet(false),
-    m_failbackToOriginalServer(false),
-    m_failbackToOriginalServerHasBeenSet(false),
-    m_firstByteDateTimeHasBeenSet(false),
-    m_state(FailbackState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 RecoveryInstanceFailback::RecoveryInstanceFailback(JsonView jsonValue)
-  : RecoveryInstanceFailback()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ RecoveryInstanceFailback& RecoveryInstanceFailback::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("agentLastSeenByServiceDateTime"))
   {
     m_agentLastSeenByServiceDateTime = jsonValue.GetString("agentLastSeenByServiceDateTime");
-
     m_agentLastSeenByServiceDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("elapsedReplicationDuration"))
   {
     m_elapsedReplicationDuration = jsonValue.GetString("elapsedReplicationDuration");
-
     m_elapsedReplicationDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failbackClientID"))
   {
     m_failbackClientID = jsonValue.GetString("failbackClientID");
-
     m_failbackClientIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failbackClientLastSeenByServiceDateTime"))
   {
     m_failbackClientLastSeenByServiceDateTime = jsonValue.GetString("failbackClientLastSeenByServiceDateTime");
-
     m_failbackClientLastSeenByServiceDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failbackInitiationTime"))
   {
     m_failbackInitiationTime = jsonValue.GetString("failbackInitiationTime");
-
     m_failbackInitiationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failbackJobID"))
   {
     m_failbackJobID = jsonValue.GetString("failbackJobID");
-
     m_failbackJobIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failbackLaunchType"))
   {
     m_failbackLaunchType = FailbackLaunchTypeMapper::GetFailbackLaunchTypeForName(jsonValue.GetString("failbackLaunchType"));
-
     m_failbackLaunchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failbackToOriginalServer"))
   {
     m_failbackToOriginalServer = jsonValue.GetBool("failbackToOriginalServer");
-
     m_failbackToOriginalServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstByteDateTime"))
   {
     m_firstByteDateTime = jsonValue.GetString("firstByteDateTime");
-
     m_firstByteDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = FailbackStateMapper::GetFailbackStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

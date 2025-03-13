@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetryWorkflowStepResult::RetryWorkflowStepResult() : 
-    m_status(StepStatus::NOT_SET)
-{
-}
-
 RetryWorkflowStepResult::RetryWorkflowStepResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RetryWorkflowStepResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ RetryWorkflowStepResult& RetryWorkflowStepResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("stepGroupId"))
   {
     m_stepGroupId = jsonValue.GetString("stepGroupId");
-
+    m_stepGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
+    m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StepStatusMapper::GetStepStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

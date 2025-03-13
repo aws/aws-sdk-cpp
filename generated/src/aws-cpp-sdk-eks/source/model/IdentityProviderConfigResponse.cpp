@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-IdentityProviderConfigResponse::IdentityProviderConfigResponse() : 
-    m_oidcHasBeenSet(false)
-{
-}
-
 IdentityProviderConfigResponse::IdentityProviderConfigResponse(JsonView jsonValue)
-  : IdentityProviderConfigResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IdentityProviderConfigResponse& IdentityProviderConfigResponse::operator =(JsonV
   if(jsonValue.ValueExists("oidc"))
   {
     m_oidc = jsonValue.GetObject("oidc");
-
     m_oidcHasBeenSet = true;
   }
-
   return *this;
 }
 

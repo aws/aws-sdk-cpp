@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Rule::Rule() : 
-    m_includedUsersAndGroupsHasBeenSet(false),
-    m_excludedUsersAndGroupsHasBeenSet(false),
-    m_ruleType(RuleType::NOT_SET),
-    m_ruleTypeHasBeenSet(false),
-    m_ruleConfigurationHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("includedUsersAndGroups"))
   {
     m_includedUsersAndGroups = jsonValue.GetObject("includedUsersAndGroups");
-
     m_includedUsersAndGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludedUsersAndGroups"))
   {
     m_excludedUsersAndGroups = jsonValue.GetObject("excludedUsersAndGroups");
-
     m_excludedUsersAndGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleType"))
   {
     m_ruleType = RuleTypeMapper::GetRuleTypeForName(jsonValue.GetString("ruleType"));
-
     m_ruleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleConfiguration"))
   {
     m_ruleConfiguration = jsonValue.GetObject("ruleConfiguration");
-
     m_ruleConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

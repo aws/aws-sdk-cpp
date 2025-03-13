@@ -12,11 +12,6 @@ using namespace Aws::SSMQuickSetup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfigurationRequest::GetConfigurationRequest() : 
-    m_configurationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetConfigurationRequest::SerializePayload() const
 {
   return {};

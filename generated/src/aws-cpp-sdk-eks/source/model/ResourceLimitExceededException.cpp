@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ResourceLimitExceededException::ResourceLimitExceededException() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodegroupNameHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue)
-  : ResourceLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourceLimitExceededException& ResourceLimitExceededException::operator =(JsonV
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodegroupName"))
   {
     m_nodegroupName = jsonValue.GetString("nodegroupName");
-
     m_nodegroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriptionId"))
   {
     m_subscriptionId = jsonValue.GetString("subscriptionId");
-
     m_subscriptionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

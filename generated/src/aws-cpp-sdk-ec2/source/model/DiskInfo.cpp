@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DiskInfo::DiskInfo() : 
-    m_sizeInGB(0),
-    m_sizeInGBHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_type(DiskType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 DiskInfo::DiskInfo(const XmlNode& xmlNode)
-  : DiskInfo()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ DiskInfo& DiskInfo::operator =(const XmlNode& xmlNode)
     {
       m_sizeInGB = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInGBNode.GetText()).c_str()).c_str());
       m_sizeInGBHasBeenSet = true;
+       m_sizeInGBHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("count");
     if(!countNode.IsNull())
     {
       m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
       m_countHasBeenSet = true;
+       m_countHasBeenSet = true;
     }
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = DiskTypeMapper::GetDiskTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = DiskTypeMapper::GetDiskTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
   }
 

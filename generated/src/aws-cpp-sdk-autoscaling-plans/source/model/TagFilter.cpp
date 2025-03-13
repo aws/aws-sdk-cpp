@@ -18,14 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-TagFilter::TagFilter() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 TagFilter::TagFilter(JsonView jsonValue)
-  : TagFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

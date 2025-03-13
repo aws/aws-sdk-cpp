@@ -12,16 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifyMacRequest::VerifyMacRequest() : 
-    m_keyIdentifierHasBeenSet(false),
-    m_messageDataHasBeenSet(false),
-    m_macHasBeenSet(false),
-    m_verificationAttributesHasBeenSet(false),
-    m_macLength(0),
-    m_macLengthHasBeenSet(false)
-{
-}
-
 Aws::String VerifyMacRequest::SerializePayload() const
 {
   JsonValue payload;

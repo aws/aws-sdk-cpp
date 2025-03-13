@@ -34,7 +34,7 @@ namespace Model
   class ListInvalidations2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result();
+    AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Information about invalidation batches.</p>
      */
-    inline const InvalidationList& GetInvalidationList() const{ return m_invalidationList; }
-    inline void SetInvalidationList(const InvalidationList& value) { m_invalidationList = value; }
-    inline void SetInvalidationList(InvalidationList&& value) { m_invalidationList = std::move(value); }
-    inline ListInvalidations2020_05_31Result& WithInvalidationList(const InvalidationList& value) { SetInvalidationList(value); return *this;}
-    inline ListInvalidations2020_05_31Result& WithInvalidationList(InvalidationList&& value) { SetInvalidationList(std::move(value)); return *this;}
+    inline const InvalidationList& GetInvalidationList() const { return m_invalidationList; }
+    template<typename InvalidationListT = InvalidationList>
+    void SetInvalidationList(InvalidationListT&& value) { m_invalidationListHasBeenSet = true; m_invalidationList = std::forward<InvalidationListT>(value); }
+    template<typename InvalidationListT = InvalidationList>
+    ListInvalidations2020_05_31Result& WithInvalidationList(InvalidationListT&& value) { SetInvalidationList(std::forward<InvalidationListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListInvalidations2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListInvalidations2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListInvalidations2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListInvalidations2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InvalidationList m_invalidationList;
+    bool m_invalidationListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

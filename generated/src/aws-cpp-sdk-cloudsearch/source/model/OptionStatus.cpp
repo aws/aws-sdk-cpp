@@ -20,20 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-OptionStatus::OptionStatus() : 
-    m_creationDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_updateVersion(0),
-    m_updateVersionHasBeenSet(false),
-    m_state(OptionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_pendingDeletion(false),
-    m_pendingDeletionHasBeenSet(false)
-{
-}
-
 OptionStatus::OptionStatus(const XmlNode& xmlNode)
-  : OptionStatus()
 {
   *this = xmlNode;
 }
@@ -49,30 +36,35 @@ OptionStatus& OptionStatus::operator =(const XmlNode& xmlNode)
     {
       m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
+       m_creationDateHasBeenSet = true;
     }
     XmlNode updateDateNode = resultNode.FirstChild("UpdateDate");
     if(!updateDateNode.IsNull())
     {
       m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
+       m_updateDateHasBeenSet = true;
     }
     XmlNode updateVersionNode = resultNode.FirstChild("UpdateVersion");
     if(!updateVersionNode.IsNull())
     {
       m_updateVersion = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateVersionNode.GetText()).c_str()).c_str());
       m_updateVersionHasBeenSet = true;
+       m_updateVersionHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("State");
     if(!stateNode.IsNull())
     {
-      m_state = OptionStateMapper::GetOptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = OptionStateMapper::GetOptionStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode pendingDeletionNode = resultNode.FirstChild("PendingDeletion");
     if(!pendingDeletionNode.IsNull())
     {
       m_pendingDeletion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(pendingDeletionNode.GetText()).c_str()).c_str());
       m_pendingDeletionHasBeenSet = true;
+       m_pendingDeletionHasBeenSet = true;
     }
   }
 

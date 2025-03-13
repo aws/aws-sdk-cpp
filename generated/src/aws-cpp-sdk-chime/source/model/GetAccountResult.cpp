@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccountResult::GetAccountResult()
-{
-}
-
 GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetObject("Account");
-
+    m_accountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

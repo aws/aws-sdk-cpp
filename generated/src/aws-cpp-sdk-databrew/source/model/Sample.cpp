@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Sample::Sample() : 
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_type(SampleType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Sample::Sample(JsonView jsonValue)
-  : Sample()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Sample& Sample::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInteger("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SampleTypeMapper::GetSampleTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

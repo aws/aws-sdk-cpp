@@ -33,7 +33,7 @@ namespace Model
   class CampaignSmsMessage
   {
   public:
-    AWS_PINPOINT_API CampaignSmsMessage();
+    AWS_PINPOINT_API CampaignSmsMessage() = default;
     AWS_PINPOINT_API CampaignSmsMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API CampaignSmsMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The body of the SMS message.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline CampaignSmsMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline CampaignSmsMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline CampaignSmsMessage& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    CampaignSmsMessage& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * messsages that aren't critical or time-sensitive, such as marketing
      * messages).</p>
      */
-    inline const MessageType& GetMessageType() const{ return m_messageType; }
+    inline MessageType GetMessageType() const { return m_messageType; }
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
-    inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
-    inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
-    inline CampaignSmsMessage& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
-    inline CampaignSmsMessage& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
+    inline void SetMessageType(MessageType value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
+    inline CampaignSmsMessage& WithMessageType(MessageType value) { SetMessageType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * ensure prompt and accurate delivery of the message. For example,
      * +12065550100.</p>
      */
-    inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+    inline const Aws::String& GetOriginationNumber() const { return m_originationNumber; }
     inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
-    inline void SetOriginationNumber(const Aws::String& value) { m_originationNumberHasBeenSet = true; m_originationNumber = value; }
-    inline void SetOriginationNumber(Aws::String&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::move(value); }
-    inline void SetOriginationNumber(const char* value) { m_originationNumberHasBeenSet = true; m_originationNumber.assign(value); }
-    inline CampaignSmsMessage& WithOriginationNumber(const Aws::String& value) { SetOriginationNumber(value); return *this;}
-    inline CampaignSmsMessage& WithOriginationNumber(Aws::String&& value) { SetOriginationNumber(std::move(value)); return *this;}
-    inline CampaignSmsMessage& WithOriginationNumber(const char* value) { SetOriginationNumber(value); return *this;}
+    template<typename OriginationNumberT = Aws::String>
+    void SetOriginationNumber(OriginationNumberT&& value) { m_originationNumberHasBeenSet = true; m_originationNumber = std::forward<OriginationNumberT>(value); }
+    template<typename OriginationNumberT = Aws::String>
+    CampaignSmsMessage& WithOriginationNumber(OriginationNumberT&& value) { SetOriginationNumber(std::forward<OriginationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>The sender ID to display on recipients' devices when they receive the SMS
      * message.</p>
      */
-    inline const Aws::String& GetSenderId() const{ return m_senderId; }
+    inline const Aws::String& GetSenderId() const { return m_senderId; }
     inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
-    inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
-    inline void SetSenderId(Aws::String&& value) { m_senderIdHasBeenSet = true; m_senderId = std::move(value); }
-    inline void SetSenderId(const char* value) { m_senderIdHasBeenSet = true; m_senderId.assign(value); }
-    inline CampaignSmsMessage& WithSenderId(const Aws::String& value) { SetSenderId(value); return *this;}
-    inline CampaignSmsMessage& WithSenderId(Aws::String&& value) { SetSenderId(std::move(value)); return *this;}
-    inline CampaignSmsMessage& WithSenderId(const char* value) { SetSenderId(value); return *this;}
+    template<typename SenderIdT = Aws::String>
+    void SetSenderId(SenderIdT&& value) { m_senderIdHasBeenSet = true; m_senderId = std::forward<SenderIdT>(value); }
+    template<typename SenderIdT = Aws::String>
+    CampaignSmsMessage& WithSenderId(SenderIdT&& value) { SetSenderId(std::forward<SenderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +98,12 @@ namespace Model
      * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
      * for sending SMS in your country.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline CampaignSmsMessage& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline CampaignSmsMessage& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline CampaignSmsMessage& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    CampaignSmsMessage& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,21 +111,19 @@ namespace Model
      * <p>The template ID received from the regulatory body for sending SMS in your
      * country.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-    inline CampaignSmsMessage& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline CampaignSmsMessage& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline CampaignSmsMessage& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    CampaignSmsMessage& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_body;
     bool m_bodyHasBeenSet = false;
 
-    MessageType m_messageType;
+    MessageType m_messageType{MessageType::NOT_SET};
     bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_originationNumber;

@@ -12,14 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListClustersRequest::ListClustersRequest() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_clusterStatesHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String ListClustersRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTopicRuleDestinationRequest::CreateTopicRuleDestinationRequest() : 
-    m_destinationConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateTopicRuleDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

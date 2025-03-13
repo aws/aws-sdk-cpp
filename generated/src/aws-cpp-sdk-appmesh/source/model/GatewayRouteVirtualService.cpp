@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GatewayRouteVirtualService::GatewayRouteVirtualService() : 
-    m_virtualServiceNameHasBeenSet(false)
-{
-}
-
 GatewayRouteVirtualService::GatewayRouteVirtualService(JsonView jsonValue)
-  : GatewayRouteVirtualService()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GatewayRouteVirtualService& GatewayRouteVirtualService::operator =(JsonView json
   if(jsonValue.ValueExists("virtualServiceName"))
   {
     m_virtualServiceName = jsonValue.GetString("virtualServiceName");
-
     m_virtualServiceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

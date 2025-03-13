@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 EventDestinationAlreadyExistsException::EventDestinationAlreadyExistsException(const XmlNode& xmlNode)
-  : EventDestinationAlreadyExistsException()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ EventDestinationAlreadyExistsException& EventDestinationAlreadyExistsException::
     {
       m_configurationSetName = Aws::Utils::Xml::DecodeEscapedXmlText(configurationSetNameNode.GetText());
       m_configurationSetNameHasBeenSet = true;
+       m_configurationSetNameHasBeenSet = true;
     }
     XmlNode eventDestinationNameNode = resultNode.FirstChild("EventDestinationName");
     if(!eventDestinationNameNode.IsNull())
     {
       m_eventDestinationName = Aws::Utils::Xml::DecodeEscapedXmlText(eventDestinationNameNode.GetText());
       m_eventDestinationNameHasBeenSet = true;
+       m_eventDestinationNameHasBeenSet = true;
     }
   }
 

@@ -32,7 +32,7 @@ namespace Model
   class AuthorizerConfig
   {
   public:
-    AWS_IOT_API AuthorizerConfig();
+    AWS_IOT_API AuthorizerConfig() = default;
     AWS_IOT_API AuthorizerConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuthorizerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the authorization service for a domain configuration.</p>
      */
-    inline const Aws::String& GetDefaultAuthorizerName() const{ return m_defaultAuthorizerName; }
+    inline const Aws::String& GetDefaultAuthorizerName() const { return m_defaultAuthorizerName; }
     inline bool DefaultAuthorizerNameHasBeenSet() const { return m_defaultAuthorizerNameHasBeenSet; }
-    inline void SetDefaultAuthorizerName(const Aws::String& value) { m_defaultAuthorizerNameHasBeenSet = true; m_defaultAuthorizerName = value; }
-    inline void SetDefaultAuthorizerName(Aws::String&& value) { m_defaultAuthorizerNameHasBeenSet = true; m_defaultAuthorizerName = std::move(value); }
-    inline void SetDefaultAuthorizerName(const char* value) { m_defaultAuthorizerNameHasBeenSet = true; m_defaultAuthorizerName.assign(value); }
-    inline AuthorizerConfig& WithDefaultAuthorizerName(const Aws::String& value) { SetDefaultAuthorizerName(value); return *this;}
-    inline AuthorizerConfig& WithDefaultAuthorizerName(Aws::String&& value) { SetDefaultAuthorizerName(std::move(value)); return *this;}
-    inline AuthorizerConfig& WithDefaultAuthorizerName(const char* value) { SetDefaultAuthorizerName(value); return *this;}
+    template<typename DefaultAuthorizerNameT = Aws::String>
+    void SetDefaultAuthorizerName(DefaultAuthorizerNameT&& value) { m_defaultAuthorizerNameHasBeenSet = true; m_defaultAuthorizerName = std::forward<DefaultAuthorizerNameT>(value); }
+    template<typename DefaultAuthorizerNameT = Aws::String>
+    AuthorizerConfig& WithDefaultAuthorizerName(DefaultAuthorizerNameT&& value) { SetDefaultAuthorizerName(std::forward<DefaultAuthorizerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>A Boolean that specifies whether the domain configuration's authorization
      * service can be overridden.</p>
      */
-    inline bool GetAllowAuthorizerOverride() const{ return m_allowAuthorizerOverride; }
+    inline bool GetAllowAuthorizerOverride() const { return m_allowAuthorizerOverride; }
     inline bool AllowAuthorizerOverrideHasBeenSet() const { return m_allowAuthorizerOverrideHasBeenSet; }
     inline void SetAllowAuthorizerOverride(bool value) { m_allowAuthorizerOverrideHasBeenSet = true; m_allowAuthorizerOverride = value; }
     inline AuthorizerConfig& WithAllowAuthorizerOverride(bool value) { SetAllowAuthorizerOverride(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_defaultAuthorizerName;
     bool m_defaultAuthorizerNameHasBeenSet = false;
 
-    bool m_allowAuthorizerOverride;
+    bool m_allowAuthorizerOverride{false};
     bool m_allowAuthorizerOverrideHasBeenSet = false;
   };
 

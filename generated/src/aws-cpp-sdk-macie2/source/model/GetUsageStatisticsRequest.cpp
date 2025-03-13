@@ -12,17 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUsageStatisticsRequest::GetUsageStatisticsRequest() : 
-    m_filterByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_timeRange(TimeRange::NOT_SET),
-    m_timeRangeHasBeenSet(false)
-{
-}
-
 Aws::String GetUsageStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

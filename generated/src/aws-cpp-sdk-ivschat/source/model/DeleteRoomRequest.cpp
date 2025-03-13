@@ -12,11 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRoomRequest::DeleteRoomRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRoomRequest::SerializePayload() const
 {
   JsonValue payload;

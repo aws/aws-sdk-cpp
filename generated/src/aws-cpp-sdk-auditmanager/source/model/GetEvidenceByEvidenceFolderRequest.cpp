@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetEvidenceByEvidenceFolderRequest::GetEvidenceByEvidenceFolderRequest() : 
-    m_assessmentIdHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_evidenceFolderIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetEvidenceByEvidenceFolderRequest::SerializePayload() const
 {
   return {};

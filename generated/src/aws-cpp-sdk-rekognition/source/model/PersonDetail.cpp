@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-PersonDetail::PersonDetail() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false)
-{
-}
-
 PersonDetail::PersonDetail(JsonView jsonValue)
-  : PersonDetail()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PersonDetail& PersonDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInt64("Index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Face"))
   {
     m_face = jsonValue.GetObject("Face");
-
     m_faceHasBeenSet = true;
   }
-
   return *this;
 }
 

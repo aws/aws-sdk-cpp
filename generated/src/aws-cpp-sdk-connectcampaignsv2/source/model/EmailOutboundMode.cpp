@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-EmailOutboundMode::EmailOutboundMode() : 
-    m_agentlessHasBeenSet(false)
-{
-}
-
 EmailOutboundMode::EmailOutboundMode(JsonView jsonValue)
-  : EmailOutboundMode()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EmailOutboundMode& EmailOutboundMode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentless"))
   {
     m_agentless = jsonValue.GetObject("agentless");
-
     m_agentlessHasBeenSet = true;
   }
-
   return *this;
 }
 

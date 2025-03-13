@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstanceLimitPrice::ReservedInstanceLimitPrice() : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 ReservedInstanceLimitPrice::ReservedInstanceLimitPrice(const XmlNode& xmlNode)
-  : ReservedInstanceLimitPrice()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ ReservedInstanceLimitPrice& ReservedInstanceLimitPrice::operator =(const XmlNode
     {
       m_amount = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amountNode.GetText()).c_str()).c_str());
       m_amountHasBeenSet = true;
+       m_amountHasBeenSet = true;
     }
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()));
       m_currencyCodeHasBeenSet = true;
+       m_currencyCodeHasBeenSet = true;
     }
   }
 

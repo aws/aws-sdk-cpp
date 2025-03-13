@@ -18,18 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Project::Project() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_defaultJobTimeoutMinutes(0),
-    m_defaultJobTimeoutMinutesHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 Project::Project(JsonView jsonValue)
-  : Project()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Project& Project::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultJobTimeoutMinutes"))
   {
     m_defaultJobTimeoutMinutes = jsonValue.GetInteger("defaultJobTimeoutMinutes");
-
     m_defaultJobTimeoutMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

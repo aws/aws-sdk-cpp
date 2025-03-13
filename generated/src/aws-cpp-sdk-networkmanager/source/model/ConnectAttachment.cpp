@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectAttachment::ConnectAttachment() : 
-    m_attachmentHasBeenSet(false),
-    m_transportAttachmentIdHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 ConnectAttachment::ConnectAttachment(JsonView jsonValue)
-  : ConnectAttachment()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ConnectAttachment& ConnectAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attachment"))
   {
     m_attachment = jsonValue.GetObject("Attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransportAttachmentId"))
   {
     m_transportAttachmentId = jsonValue.GetString("TransportAttachmentId");
-
     m_transportAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   return *this;
 }
 

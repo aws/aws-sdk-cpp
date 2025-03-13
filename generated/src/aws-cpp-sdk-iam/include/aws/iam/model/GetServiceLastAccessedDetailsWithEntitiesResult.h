@@ -33,7 +33,7 @@ namespace Model
   class GetServiceLastAccessedDetailsWithEntitiesResult
   {
   public:
-    AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult();
+    AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult() = default;
     AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,11 +42,9 @@ namespace Model
     /**
      * <p>The status of the job.</p>
      */
-    inline const JobStatusType& GetJobStatus() const{ return m_jobStatus; }
-    inline void SetJobStatus(const JobStatusType& value) { m_jobStatus = value; }
-    inline void SetJobStatus(JobStatusType&& value) { m_jobStatus = std::move(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobStatus(const JobStatusType& value) { SetJobStatus(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobStatus(JobStatusType&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline JobStatusType GetJobStatus() const { return m_jobStatus; }
+    inline void SetJobStatus(JobStatusType value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobStatus(JobStatusType value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -54,11 +52,11 @@ namespace Model
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
      * date-time format</a>, when the report job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetJobCreationDate() const{ return m_jobCreationDate; }
-    inline void SetJobCreationDate(const Aws::Utils::DateTime& value) { m_jobCreationDate = value; }
-    inline void SetJobCreationDate(Aws::Utils::DateTime&& value) { m_jobCreationDate = std::move(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobCreationDate(const Aws::Utils::DateTime& value) { SetJobCreationDate(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobCreationDate(Aws::Utils::DateTime&& value) { SetJobCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetJobCreationDate() const { return m_jobCreationDate; }
+    template<typename JobCreationDateT = Aws::Utils::DateTime>
+    void SetJobCreationDate(JobCreationDateT&& value) { m_jobCreationDateHasBeenSet = true; m_jobCreationDate = std::forward<JobCreationDateT>(value); }
+    template<typename JobCreationDateT = Aws::Utils::DateTime>
+    GetServiceLastAccessedDetailsWithEntitiesResult& WithJobCreationDate(JobCreationDateT&& value) { SetJobCreationDate(std::forward<JobCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,11 +66,11 @@ namespace Model
      * <p>This field is null if the job is still in progress, as indicated by a job
      * status value of <code>IN_PROGRESS</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetJobCompletionDate() const{ return m_jobCompletionDate; }
-    inline void SetJobCompletionDate(const Aws::Utils::DateTime& value) { m_jobCompletionDate = value; }
-    inline void SetJobCompletionDate(Aws::Utils::DateTime&& value) { m_jobCompletionDate = std::move(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobCompletionDate(const Aws::Utils::DateTime& value) { SetJobCompletionDate(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithJobCompletionDate(Aws::Utils::DateTime&& value) { SetJobCompletionDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetJobCompletionDate() const { return m_jobCompletionDate; }
+    template<typename JobCompletionDateT = Aws::Utils::DateTime>
+    void SetJobCompletionDate(JobCompletionDateT&& value) { m_jobCompletionDateHasBeenSet = true; m_jobCompletionDate = std::forward<JobCompletionDateT>(value); }
+    template<typename JobCompletionDateT = Aws::Utils::DateTime>
+    GetServiceLastAccessedDetailsWithEntitiesResult& WithJobCompletionDate(JobCompletionDateT&& value) { SetJobCompletionDate(std::forward<JobCompletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,13 +79,13 @@ namespace Model
      * IAM entity (user or role) used group or policy permissions in an attempt to
      * access the specified Amazon Web Services service.</p>
      */
-    inline const Aws::Vector<EntityDetails>& GetEntityDetailsList() const{ return m_entityDetailsList; }
-    inline void SetEntityDetailsList(const Aws::Vector<EntityDetails>& value) { m_entityDetailsList = value; }
-    inline void SetEntityDetailsList(Aws::Vector<EntityDetails>&& value) { m_entityDetailsList = std::move(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithEntityDetailsList(const Aws::Vector<EntityDetails>& value) { SetEntityDetailsList(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithEntityDetailsList(Aws::Vector<EntityDetails>&& value) { SetEntityDetailsList(std::move(value)); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& AddEntityDetailsList(const EntityDetails& value) { m_entityDetailsList.push_back(value); return *this; }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& AddEntityDetailsList(EntityDetails&& value) { m_entityDetailsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EntityDetails>& GetEntityDetailsList() const { return m_entityDetailsList; }
+    template<typename EntityDetailsListT = Aws::Vector<EntityDetails>>
+    void SetEntityDetailsList(EntityDetailsListT&& value) { m_entityDetailsListHasBeenSet = true; m_entityDetailsList = std::forward<EntityDetailsListT>(value); }
+    template<typename EntityDetailsListT = Aws::Vector<EntityDetails>>
+    GetServiceLastAccessedDetailsWithEntitiesResult& WithEntityDetailsList(EntityDetailsListT&& value) { SetEntityDetailsList(std::forward<EntityDetailsListT>(value)); return *this;}
+    template<typename EntityDetailsListT = EntityDetails>
+    GetServiceLastAccessedDetailsWithEntitiesResult& AddEntityDetailsList(EntityDetailsListT&& value) { m_entityDetailsListHasBeenSet = true; m_entityDetailsList.emplace_back(std::forward<EntityDetailsListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,8 +98,8 @@ namespace Model
      * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline GetServiceLastAccessedDetailsWithEntitiesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -111,51 +109,57 @@ namespace Model
      * and contains the value to use for the <code>Marker</code> parameter in a
      * subsequent pagination request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    GetServiceLastAccessedDetailsWithEntitiesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains details about the reason the operation failed.</p>
      */
-    inline const ErrorDetails& GetError() const{ return m_error; }
-    inline void SetError(const ErrorDetails& value) { m_error = value; }
-    inline void SetError(ErrorDetails&& value) { m_error = std::move(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithError(const ErrorDetails& value) { SetError(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    inline const ErrorDetails& GetError() const { return m_error; }
+    template<typename ErrorT = ErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetails>
+    GetServiceLastAccessedDetailsWithEntitiesResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetServiceLastAccessedDetailsWithEntitiesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetServiceLastAccessedDetailsWithEntitiesResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    JobStatusType m_jobStatus;
+    JobStatusType m_jobStatus{JobStatusType::NOT_SET};
+    bool m_jobStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_jobCreationDate;
+    Aws::Utils::DateTime m_jobCreationDate{};
+    bool m_jobCreationDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_jobCompletionDate;
+    Aws::Utils::DateTime m_jobCompletionDate{};
+    bool m_jobCompletionDateHasBeenSet = false;
 
     Aws::Vector<EntityDetails> m_entityDetailsList;
+    bool m_entityDetailsListHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ErrorDetails m_error;
+    bool m_errorHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace PcaConnectorScep
 namespace Model
 {
 
-MobileDeviceManagement::MobileDeviceManagement() : 
-    m_intuneHasBeenSet(false)
-{
-}
-
 MobileDeviceManagement::MobileDeviceManagement(JsonView jsonValue)
-  : MobileDeviceManagement()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MobileDeviceManagement& MobileDeviceManagement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Intune"))
   {
     m_intune = jsonValue.GetObject("Intune");
-
     m_intuneHasBeenSet = true;
   }
-
   return *this;
 }
 

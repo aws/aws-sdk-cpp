@@ -34,7 +34,7 @@ namespace Model
   class ServerProcess
   {
   public:
-    AWS_GAMELIFT_API ServerProcess();
+    AWS_GAMELIFT_API ServerProcess() = default;
     AWS_GAMELIFT_API ServerProcess(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * that calls the server SDK operations <code>initSDK()</code> and
      * <code>ProcessReady()</code>. </p> 
      */
-    inline const Aws::String& GetLaunchPath() const{ return m_launchPath; }
+    inline const Aws::String& GetLaunchPath() const { return m_launchPath; }
     inline bool LaunchPathHasBeenSet() const { return m_launchPathHasBeenSet; }
-    inline void SetLaunchPath(const Aws::String& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
-    inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = std::move(value); }
-    inline void SetLaunchPath(const char* value) { m_launchPathHasBeenSet = true; m_launchPath.assign(value); }
-    inline ServerProcess& WithLaunchPath(const Aws::String& value) { SetLaunchPath(value); return *this;}
-    inline ServerProcess& WithLaunchPath(Aws::String&& value) { SetLaunchPath(std::move(value)); return *this;}
-    inline ServerProcess& WithLaunchPath(const char* value) { SetLaunchPath(value); return *this;}
+    template<typename LaunchPathT = Aws::String>
+    void SetLaunchPath(LaunchPathT&& value) { m_launchPathHasBeenSet = true; m_launchPath = std::forward<LaunchPathT>(value); }
+    template<typename LaunchPathT = Aws::String>
+    ServerProcess& WithLaunchPath(LaunchPathT&& value) { SetLaunchPath(std::forward<LaunchPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
-    inline const Aws::String& GetParameters() const{ return m_parameters; }
+    inline const Aws::String& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
-    inline ServerProcess& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
-    inline ServerProcess& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
-    inline ServerProcess& WithParameters(const char* value) { SetParameters(value); return *this;}
+    template<typename ParametersT = Aws::String>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::String>
+    ServerProcess& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * <p>The number of server processes using this configuration that run concurrently
      * on each instance or compute.</p>
      */
-    inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
+    inline int GetConcurrentExecutions() const { return m_concurrentExecutions; }
     inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
     inline ServerProcess& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
@@ -96,7 +92,7 @@ namespace Model
     Aws::String m_parameters;
     bool m_parametersHasBeenSet = false;
 
-    int m_concurrentExecutions;
+    int m_concurrentExecutions{0};
     bool m_concurrentExecutionsHasBeenSet = false;
   };
 

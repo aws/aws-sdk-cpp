@@ -12,13 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromStreamRequest::RemoveTagsFromStreamRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsFromStreamRequest::SerializePayload() const
 {
   JsonValue payload;

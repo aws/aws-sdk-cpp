@@ -10,12 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-PutDashboardRequest::PutDashboardRequest() : 
-    m_dashboardNameHasBeenSet(false),
-    m_dashboardBodyHasBeenSet(false)
-{
-}
-
 Aws::String PutDashboardRequest::SerializePayload() const
 {
   Aws::StringStream ss;

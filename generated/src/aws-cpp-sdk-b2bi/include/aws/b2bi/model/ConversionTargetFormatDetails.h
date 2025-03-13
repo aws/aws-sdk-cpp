@@ -32,7 +32,7 @@ namespace Model
   class ConversionTargetFormatDetails
   {
   public:
-    AWS_B2BI_API ConversionTargetFormatDetails();
+    AWS_B2BI_API ConversionTargetFormatDetails() = default;
     AWS_B2BI_API ConversionTargetFormatDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API ConversionTargetFormatDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const X12Details& GetX12() const{ return m_x12; }
+    inline const X12Details& GetX12() const { return m_x12; }
     inline bool X12HasBeenSet() const { return m_x12HasBeenSet; }
-    inline void SetX12(const X12Details& value) { m_x12HasBeenSet = true; m_x12 = value; }
-    inline void SetX12(X12Details&& value) { m_x12HasBeenSet = true; m_x12 = std::move(value); }
-    inline ConversionTargetFormatDetails& WithX12(const X12Details& value) { SetX12(value); return *this;}
-    inline ConversionTargetFormatDetails& WithX12(X12Details&& value) { SetX12(std::move(value)); return *this;}
+    template<typename X12T = X12Details>
+    void SetX12(X12T&& value) { m_x12HasBeenSet = true; m_x12 = std::forward<X12T>(value); }
+    template<typename X12T = X12Details>
+    ConversionTargetFormatDetails& WithX12(X12T&& value) { SetX12(std::forward<X12T>(value)); return *this;}
     ///@}
   private:
 

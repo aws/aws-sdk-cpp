@@ -32,7 +32,7 @@ namespace Model
   class MetricDefinition
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition();
+    AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition() = default;
     AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API MetricDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The entity, such as a user or session, that does an action that causes a
      * metric value to be recorded.</p>
      */
-    inline const Aws::String& GetEntityIdKey() const{ return m_entityIdKey; }
+    inline const Aws::String& GetEntityIdKey() const { return m_entityIdKey; }
     inline bool EntityIdKeyHasBeenSet() const { return m_entityIdKeyHasBeenSet; }
-    inline void SetEntityIdKey(const Aws::String& value) { m_entityIdKeyHasBeenSet = true; m_entityIdKey = value; }
-    inline void SetEntityIdKey(Aws::String&& value) { m_entityIdKeyHasBeenSet = true; m_entityIdKey = std::move(value); }
-    inline void SetEntityIdKey(const char* value) { m_entityIdKeyHasBeenSet = true; m_entityIdKey.assign(value); }
-    inline MetricDefinition& WithEntityIdKey(const Aws::String& value) { SetEntityIdKey(value); return *this;}
-    inline MetricDefinition& WithEntityIdKey(Aws::String&& value) { SetEntityIdKey(std::move(value)); return *this;}
-    inline MetricDefinition& WithEntityIdKey(const char* value) { SetEntityIdKey(value); return *this;}
+    template<typename EntityIdKeyT = Aws::String>
+    void SetEntityIdKey(EntityIdKeyT&& value) { m_entityIdKeyHasBeenSet = true; m_entityIdKey = std::forward<EntityIdKeyT>(value); }
+    template<typename EntityIdKeyT = Aws::String>
+    MetricDefinition& WithEntityIdKey(EntityIdKeyT&& value) { SetEntityIdKey(std::forward<EntityIdKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,56 +58,48 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html">Amazon
      * EventBridge event patterns</a>.</p>
      */
-    inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
+    inline const Aws::String& GetEventPattern() const { return m_eventPattern; }
     inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
-    inline void SetEventPattern(const Aws::String& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
-    inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
-    inline void SetEventPattern(const char* value) { m_eventPatternHasBeenSet = true; m_eventPattern.assign(value); }
-    inline MetricDefinition& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
-    inline MetricDefinition& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
-    inline MetricDefinition& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
+    template<typename EventPatternT = Aws::String>
+    void SetEventPattern(EventPatternT&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::forward<EventPatternT>(value); }
+    template<typename EventPatternT = Aws::String>
+    MetricDefinition& WithEventPattern(EventPatternT&& value) { SetEventPattern(std::forward<EventPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MetricDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MetricDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MetricDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MetricDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The label for the units that the metric is measuring.</p>
      */
-    inline const Aws::String& GetUnitLabel() const{ return m_unitLabel; }
+    inline const Aws::String& GetUnitLabel() const { return m_unitLabel; }
     inline bool UnitLabelHasBeenSet() const { return m_unitLabelHasBeenSet; }
-    inline void SetUnitLabel(const Aws::String& value) { m_unitLabelHasBeenSet = true; m_unitLabel = value; }
-    inline void SetUnitLabel(Aws::String&& value) { m_unitLabelHasBeenSet = true; m_unitLabel = std::move(value); }
-    inline void SetUnitLabel(const char* value) { m_unitLabelHasBeenSet = true; m_unitLabel.assign(value); }
-    inline MetricDefinition& WithUnitLabel(const Aws::String& value) { SetUnitLabel(value); return *this;}
-    inline MetricDefinition& WithUnitLabel(Aws::String&& value) { SetUnitLabel(std::move(value)); return *this;}
-    inline MetricDefinition& WithUnitLabel(const char* value) { SetUnitLabel(value); return *this;}
+    template<typename UnitLabelT = Aws::String>
+    void SetUnitLabel(UnitLabelT&& value) { m_unitLabelHasBeenSet = true; m_unitLabel = std::forward<UnitLabelT>(value); }
+    template<typename UnitLabelT = Aws::String>
+    MetricDefinition& WithUnitLabel(UnitLabelT&& value) { SetUnitLabel(std::forward<UnitLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value that is tracked to produce the metric.</p>
      */
-    inline const Aws::String& GetValueKey() const{ return m_valueKey; }
+    inline const Aws::String& GetValueKey() const { return m_valueKey; }
     inline bool ValueKeyHasBeenSet() const { return m_valueKeyHasBeenSet; }
-    inline void SetValueKey(const Aws::String& value) { m_valueKeyHasBeenSet = true; m_valueKey = value; }
-    inline void SetValueKey(Aws::String&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::move(value); }
-    inline void SetValueKey(const char* value) { m_valueKeyHasBeenSet = true; m_valueKey.assign(value); }
-    inline MetricDefinition& WithValueKey(const Aws::String& value) { SetValueKey(value); return *this;}
-    inline MetricDefinition& WithValueKey(Aws::String&& value) { SetValueKey(std::move(value)); return *this;}
-    inline MetricDefinition& WithValueKey(const char* value) { SetValueKey(value); return *this;}
+    template<typename ValueKeyT = Aws::String>
+    void SetValueKey(ValueKeyT&& value) { m_valueKeyHasBeenSet = true; m_valueKey = std::forward<ValueKeyT>(value); }
+    template<typename ValueKeyT = Aws::String>
+    MetricDefinition& WithValueKey(ValueKeyT&& value) { SetValueKey(std::forward<ValueKeyT>(value)); return *this;}
     ///@}
   private:
 

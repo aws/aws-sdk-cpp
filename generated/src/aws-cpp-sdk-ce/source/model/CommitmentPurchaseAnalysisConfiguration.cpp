@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CommitmentPurchaseAnalysisConfiguration::CommitmentPurchaseAnalysisConfiguration() : 
-    m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet(false)
-{
-}
-
 CommitmentPurchaseAnalysisConfiguration::CommitmentPurchaseAnalysisConfiguration(JsonView jsonValue)
-  : CommitmentPurchaseAnalysisConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CommitmentPurchaseAnalysisConfiguration& CommitmentPurchaseAnalysisConfiguration
   if(jsonValue.ValueExists("SavingsPlansPurchaseAnalysisConfiguration"))
   {
     m_savingsPlansPurchaseAnalysisConfiguration = jsonValue.GetObject("SavingsPlansPurchaseAnalysisConfiguration");
-
     m_savingsPlansPurchaseAnalysisConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

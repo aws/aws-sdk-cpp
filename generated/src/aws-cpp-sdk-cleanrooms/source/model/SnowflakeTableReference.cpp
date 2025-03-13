@@ -18,18 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-SnowflakeTableReference::SnowflakeTableReference() : 
-    m_secretArnHasBeenSet(false),
-    m_accountIdentifierHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_tableSchemaHasBeenSet(false)
-{
-}
-
 SnowflakeTableReference::SnowflakeTableReference(JsonView jsonValue)
-  : SnowflakeTableReference()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ SnowflakeTableReference& SnowflakeTableReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountIdentifier"))
   {
     m_accountIdentifier = jsonValue.GetString("accountIdentifier");
-
     m_accountIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaName"))
   {
     m_schemaName = jsonValue.GetString("schemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableSchema"))
   {
     m_tableSchema = jsonValue.GetObject("tableSchema");
-
     m_tableSchemaHasBeenSet = true;
   }
-
   return *this;
 }
 

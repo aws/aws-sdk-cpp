@@ -32,7 +32,7 @@ namespace Model
   class RouteDriverOptions
   {
   public:
-    AWS_GEOROUTES_API RouteDriverOptions();
+    AWS_GEOROUTES_API RouteDriverOptions() = default;
     AWS_GEOROUTES_API RouteDriverOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteDriverOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>Driver work-rest schedule. Stops are added to fulfil the provided rest
      * schedule.</p>
      */
-    inline const Aws::Vector<RouteDriverScheduleInterval>& GetSchedule() const{ return m_schedule; }
+    inline const Aws::Vector<RouteDriverScheduleInterval>& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Aws::Vector<RouteDriverScheduleInterval>& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Aws::Vector<RouteDriverScheduleInterval>&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline RouteDriverOptions& WithSchedule(const Aws::Vector<RouteDriverScheduleInterval>& value) { SetSchedule(value); return *this;}
-    inline RouteDriverOptions& WithSchedule(Aws::Vector<RouteDriverScheduleInterval>&& value) { SetSchedule(std::move(value)); return *this;}
-    inline RouteDriverOptions& AddSchedule(const RouteDriverScheduleInterval& value) { m_scheduleHasBeenSet = true; m_schedule.push_back(value); return *this; }
-    inline RouteDriverOptions& AddSchedule(RouteDriverScheduleInterval&& value) { m_scheduleHasBeenSet = true; m_schedule.push_back(std::move(value)); return *this; }
+    template<typename ScheduleT = Aws::Vector<RouteDriverScheduleInterval>>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Aws::Vector<RouteDriverScheduleInterval>>
+    RouteDriverOptions& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
+    template<typename ScheduleT = RouteDriverScheduleInterval>
+    RouteDriverOptions& AddSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule.emplace_back(std::forward<ScheduleT>(value)); return *this; }
     ///@}
   private:
 

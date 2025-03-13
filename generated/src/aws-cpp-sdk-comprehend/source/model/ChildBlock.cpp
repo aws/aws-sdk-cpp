@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-ChildBlock::ChildBlock() : 
-    m_childBlockIdHasBeenSet(false),
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
-{
-}
-
 ChildBlock::ChildBlock(JsonView jsonValue)
-  : ChildBlock()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ChildBlock& ChildBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChildBlockId"))
   {
     m_childBlockId = jsonValue.GetString("ChildBlockId");
-
     m_childBlockIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("BeginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffset"))
   {
     m_endOffset = jsonValue.GetInteger("EndOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

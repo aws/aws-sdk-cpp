@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstancesIpv6Address::ScheduledInstancesIpv6Address() : 
-    m_ipv6AddressHasBeenSet(false)
-{
-}
-
 ScheduledInstancesIpv6Address::ScheduledInstancesIpv6Address(const XmlNode& xmlNode)
-  : ScheduledInstancesIpv6Address()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ScheduledInstancesIpv6Address& ScheduledInstancesIpv6Address::operator =(const X
     {
       m_ipv6Address = Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressNode.GetText());
       m_ipv6AddressHasBeenSet = true;
+       m_ipv6AddressHasBeenSet = true;
     }
   }
 

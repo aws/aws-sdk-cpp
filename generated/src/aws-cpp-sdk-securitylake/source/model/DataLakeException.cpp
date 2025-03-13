@@ -18,16 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeException::DataLakeException() : 
-    m_exceptionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 DataLakeException::DataLakeException(JsonView jsonValue)
-  : DataLakeException()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DataLakeException& DataLakeException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exception"))
   {
     m_exception = jsonValue.GetString("exception");
-
     m_exceptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remediation"))
   {
     m_remediation = jsonValue.GetString("remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

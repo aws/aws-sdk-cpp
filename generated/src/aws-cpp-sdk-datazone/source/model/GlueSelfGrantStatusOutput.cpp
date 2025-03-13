@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GlueSelfGrantStatusOutput::GlueSelfGrantStatusOutput() : 
-    m_selfGrantStatusDetailsHasBeenSet(false)
-{
-}
-
 GlueSelfGrantStatusOutput::GlueSelfGrantStatusOutput(JsonView jsonValue)
-  : GlueSelfGrantStatusOutput()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GlueSelfGrantStatusOutput& GlueSelfGrantStatusOutput::operator =(JsonView jsonVa
     }
     m_selfGrantStatusDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

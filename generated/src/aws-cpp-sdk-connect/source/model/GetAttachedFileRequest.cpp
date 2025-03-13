@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAttachedFileRequest::GetAttachedFileRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_fileIdHasBeenSet(false),
-    m_urlExpiryInSeconds(0),
-    m_urlExpiryInSecondsHasBeenSet(false),
-    m_associatedResourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetAttachedFileRequest::SerializePayload() const
 {
   return {};

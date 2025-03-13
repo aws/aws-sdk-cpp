@@ -28,7 +28,7 @@ namespace Model
   class ListCachePolicies2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListCachePolicies2020_05_31Result();
+    AWS_CLOUDFRONT_API ListCachePolicies2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListCachePolicies2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListCachePolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A list of cache policies.</p>
      */
-    inline const CachePolicyList& GetCachePolicyList() const{ return m_cachePolicyList; }
-    inline void SetCachePolicyList(const CachePolicyList& value) { m_cachePolicyList = value; }
-    inline void SetCachePolicyList(CachePolicyList&& value) { m_cachePolicyList = std::move(value); }
-    inline ListCachePolicies2020_05_31Result& WithCachePolicyList(const CachePolicyList& value) { SetCachePolicyList(value); return *this;}
-    inline ListCachePolicies2020_05_31Result& WithCachePolicyList(CachePolicyList&& value) { SetCachePolicyList(std::move(value)); return *this;}
+    inline const CachePolicyList& GetCachePolicyList() const { return m_cachePolicyList; }
+    template<typename CachePolicyListT = CachePolicyList>
+    void SetCachePolicyList(CachePolicyListT&& value) { m_cachePolicyListHasBeenSet = true; m_cachePolicyList = std::forward<CachePolicyListT>(value); }
+    template<typename CachePolicyListT = CachePolicyList>
+    ListCachePolicies2020_05_31Result& WithCachePolicyList(CachePolicyListT&& value) { SetCachePolicyList(std::forward<CachePolicyListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCachePolicies2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCachePolicies2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCachePolicies2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCachePolicies2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CachePolicyList m_cachePolicyList;
+    bool m_cachePolicyListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

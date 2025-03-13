@@ -33,7 +33,7 @@ namespace Model
   class ApprovalResult
   {
   public:
-    AWS_CODEPIPELINE_API ApprovalResult();
+    AWS_CODEPIPELINE_API ApprovalResult() = default;
     AWS_CODEPIPELINE_API ApprovalResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ApprovalResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The summary of the current status of the approval request.</p>
      */
-    inline const Aws::String& GetSummary() const{ return m_summary; }
+    inline const Aws::String& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
-    inline ApprovalResult& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
-    inline ApprovalResult& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
-    inline ApprovalResult& WithSummary(const char* value) { SetSummary(value); return *this;}
+    template<typename SummaryT = Aws::String>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = Aws::String>
+    ApprovalResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The response submitted by a reviewer assigned to an approval action
      * request.</p>
      */
-    inline const ApprovalStatus& GetStatus() const{ return m_status; }
+    inline ApprovalStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApprovalStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApprovalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApprovalResult& WithStatus(const ApprovalStatus& value) { SetStatus(value); return *this;}
-    inline ApprovalResult& WithStatus(ApprovalStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApprovalStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApprovalResult& WithStatus(ApprovalStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_summary;
     bool m_summaryHasBeenSet = false;
 
-    ApprovalStatus m_status;
+    ApprovalStatus m_status{ApprovalStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

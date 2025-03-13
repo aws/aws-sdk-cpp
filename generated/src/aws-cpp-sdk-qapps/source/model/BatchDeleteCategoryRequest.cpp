@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteCategoryRequest::BatchDeleteCategoryRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_categoriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteCategoryRequest::SerializePayload() const
 {
   JsonValue payload;

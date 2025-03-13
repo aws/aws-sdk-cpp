@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Alarms::Alarms() : 
-    m_alarmRoleArnHasBeenSet(false),
-    m_notificationLambdaArnHasBeenSet(false)
-{
-}
-
 Alarms::Alarms(JsonView jsonValue)
-  : Alarms()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Alarms& Alarms::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alarmRoleArn"))
   {
     m_alarmRoleArn = jsonValue.GetString("alarmRoleArn");
-
     m_alarmRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationLambdaArn"))
   {
     m_notificationLambdaArn = jsonValue.GetString("notificationLambdaArn");
-
     m_notificationLambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

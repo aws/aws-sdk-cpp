@@ -12,17 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataRetentionRequest::UpdateDataRetentionRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_operation(UpdateDataRetentionOperation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_dataRetentionChangeInHours(0),
-    m_dataRetentionChangeInHoursHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataRetentionRequest::SerializePayload() const
 {
   JsonValue payload;

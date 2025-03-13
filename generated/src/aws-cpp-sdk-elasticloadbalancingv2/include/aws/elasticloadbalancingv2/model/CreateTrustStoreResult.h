@@ -29,7 +29,7 @@ namespace Model
   class CreateTrustStoreResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API CreateTrustStoreResult();
+    AWS_ELASTICLOADBALANCINGV2_API CreateTrustStoreResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API CreateTrustStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API CreateTrustStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the trust store created.</p>
      */
-    inline const Aws::Vector<TrustStore>& GetTrustStores() const{ return m_trustStores; }
-    inline void SetTrustStores(const Aws::Vector<TrustStore>& value) { m_trustStores = value; }
-    inline void SetTrustStores(Aws::Vector<TrustStore>&& value) { m_trustStores = std::move(value); }
-    inline CreateTrustStoreResult& WithTrustStores(const Aws::Vector<TrustStore>& value) { SetTrustStores(value); return *this;}
-    inline CreateTrustStoreResult& WithTrustStores(Aws::Vector<TrustStore>&& value) { SetTrustStores(std::move(value)); return *this;}
-    inline CreateTrustStoreResult& AddTrustStores(const TrustStore& value) { m_trustStores.push_back(value); return *this; }
-    inline CreateTrustStoreResult& AddTrustStores(TrustStore&& value) { m_trustStores.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrustStore>& GetTrustStores() const { return m_trustStores; }
+    template<typename TrustStoresT = Aws::Vector<TrustStore>>
+    void SetTrustStores(TrustStoresT&& value) { m_trustStoresHasBeenSet = true; m_trustStores = std::forward<TrustStoresT>(value); }
+    template<typename TrustStoresT = Aws::Vector<TrustStore>>
+    CreateTrustStoreResult& WithTrustStores(TrustStoresT&& value) { SetTrustStores(std::forward<TrustStoresT>(value)); return *this;}
+    template<typename TrustStoresT = TrustStore>
+    CreateTrustStoreResult& AddTrustStores(TrustStoresT&& value) { m_trustStoresHasBeenSet = true; m_trustStores.emplace_back(std::forward<TrustStoresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTrustStoreResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTrustStoreResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTrustStoreResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrustStore> m_trustStores;
+    bool m_trustStoresHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

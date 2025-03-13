@@ -18,17 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-SearchField::SearchField() : 
-    m_key(SearchFieldKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(SearchFieldOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 SearchField::SearchField(JsonView jsonValue)
-  : SearchField()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ SearchField& SearchField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = SearchFieldKeyMapper::GetSearchFieldKeyForName(jsonValue.GetString("Key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,14 +39,11 @@ SearchField& SearchField::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = SearchFieldOperatorMapper::GetSearchFieldOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

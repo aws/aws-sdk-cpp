@@ -18,19 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableSummary::TableSummary() : 
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(TableType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_tableARNHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
-{
-}
-
 TableSummary::TableSummary(JsonView jsonValue)
-  : TableSummary()
 {
   *this = jsonValue;
 }
@@ -46,42 +34,31 @@ TableSummary& TableSummary::operator =(JsonView jsonValue)
     }
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TableTypeMapper::GetTableTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableARN"))
   {
     m_tableARN = jsonValue.GetString("tableARN");
-
     m_tableARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

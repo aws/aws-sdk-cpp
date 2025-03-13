@@ -18,17 +18,7 @@ namespace SMS
 namespace Model
 {
 
-AppValidationConfiguration::AppValidationConfiguration() : 
-    m_validationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_appValidationStrategy(AppValidationStrategy::NOT_SET),
-    m_appValidationStrategyHasBeenSet(false),
-    m_ssmValidationParametersHasBeenSet(false)
-{
-}
-
 AppValidationConfiguration::AppValidationConfiguration(JsonView jsonValue)
-  : AppValidationConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AppValidationConfiguration& AppValidationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("validationId"))
   {
     m_validationId = jsonValue.GetString("validationId");
-
     m_validationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appValidationStrategy"))
   {
     m_appValidationStrategy = AppValidationStrategyMapper::GetAppValidationStrategyForName(jsonValue.GetString("appValidationStrategy"));
-
     m_appValidationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ssmValidationParameters"))
   {
     m_ssmValidationParameters = jsonValue.GetObject("ssmValidationParameters");
-
     m_ssmValidationParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -39,7 +39,7 @@ namespace Model
   class ToolbarConfiguration
   {
   public:
-    AWS_WORKSPACESWEB_API ToolbarConfiguration();
+    AWS_WORKSPACESWEB_API ToolbarConfiguration() = default;
     AWS_WORKSPACESWEB_API ToolbarConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API ToolbarConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,63 +49,56 @@ namespace Model
     /**
      * <p>The list of toolbar items to be hidden.</p>
      */
-    inline const Aws::Vector<ToolbarItem>& GetHiddenToolbarItems() const{ return m_hiddenToolbarItems; }
+    inline const Aws::Vector<ToolbarItem>& GetHiddenToolbarItems() const { return m_hiddenToolbarItems; }
     inline bool HiddenToolbarItemsHasBeenSet() const { return m_hiddenToolbarItemsHasBeenSet; }
-    inline void SetHiddenToolbarItems(const Aws::Vector<ToolbarItem>& value) { m_hiddenToolbarItemsHasBeenSet = true; m_hiddenToolbarItems = value; }
-    inline void SetHiddenToolbarItems(Aws::Vector<ToolbarItem>&& value) { m_hiddenToolbarItemsHasBeenSet = true; m_hiddenToolbarItems = std::move(value); }
-    inline ToolbarConfiguration& WithHiddenToolbarItems(const Aws::Vector<ToolbarItem>& value) { SetHiddenToolbarItems(value); return *this;}
-    inline ToolbarConfiguration& WithHiddenToolbarItems(Aws::Vector<ToolbarItem>&& value) { SetHiddenToolbarItems(std::move(value)); return *this;}
-    inline ToolbarConfiguration& AddHiddenToolbarItems(const ToolbarItem& value) { m_hiddenToolbarItemsHasBeenSet = true; m_hiddenToolbarItems.push_back(value); return *this; }
-    inline ToolbarConfiguration& AddHiddenToolbarItems(ToolbarItem&& value) { m_hiddenToolbarItemsHasBeenSet = true; m_hiddenToolbarItems.push_back(std::move(value)); return *this; }
+    template<typename HiddenToolbarItemsT = Aws::Vector<ToolbarItem>>
+    void SetHiddenToolbarItems(HiddenToolbarItemsT&& value) { m_hiddenToolbarItemsHasBeenSet = true; m_hiddenToolbarItems = std::forward<HiddenToolbarItemsT>(value); }
+    template<typename HiddenToolbarItemsT = Aws::Vector<ToolbarItem>>
+    ToolbarConfiguration& WithHiddenToolbarItems(HiddenToolbarItemsT&& value) { SetHiddenToolbarItems(std::forward<HiddenToolbarItemsT>(value)); return *this;}
+    inline ToolbarConfiguration& AddHiddenToolbarItems(ToolbarItem value) { m_hiddenToolbarItemsHasBeenSet = true; m_hiddenToolbarItems.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum display resolution that is allowed for the session.</p>
      */
-    inline const MaxDisplayResolution& GetMaxDisplayResolution() const{ return m_maxDisplayResolution; }
+    inline MaxDisplayResolution GetMaxDisplayResolution() const { return m_maxDisplayResolution; }
     inline bool MaxDisplayResolutionHasBeenSet() const { return m_maxDisplayResolutionHasBeenSet; }
-    inline void SetMaxDisplayResolution(const MaxDisplayResolution& value) { m_maxDisplayResolutionHasBeenSet = true; m_maxDisplayResolution = value; }
-    inline void SetMaxDisplayResolution(MaxDisplayResolution&& value) { m_maxDisplayResolutionHasBeenSet = true; m_maxDisplayResolution = std::move(value); }
-    inline ToolbarConfiguration& WithMaxDisplayResolution(const MaxDisplayResolution& value) { SetMaxDisplayResolution(value); return *this;}
-    inline ToolbarConfiguration& WithMaxDisplayResolution(MaxDisplayResolution&& value) { SetMaxDisplayResolution(std::move(value)); return *this;}
+    inline void SetMaxDisplayResolution(MaxDisplayResolution value) { m_maxDisplayResolutionHasBeenSet = true; m_maxDisplayResolution = value; }
+    inline ToolbarConfiguration& WithMaxDisplayResolution(MaxDisplayResolution value) { SetMaxDisplayResolution(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of toolbar displayed during the session.</p>
      */
-    inline const ToolbarType& GetToolbarType() const{ return m_toolbarType; }
+    inline ToolbarType GetToolbarType() const { return m_toolbarType; }
     inline bool ToolbarTypeHasBeenSet() const { return m_toolbarTypeHasBeenSet; }
-    inline void SetToolbarType(const ToolbarType& value) { m_toolbarTypeHasBeenSet = true; m_toolbarType = value; }
-    inline void SetToolbarType(ToolbarType&& value) { m_toolbarTypeHasBeenSet = true; m_toolbarType = std::move(value); }
-    inline ToolbarConfiguration& WithToolbarType(const ToolbarType& value) { SetToolbarType(value); return *this;}
-    inline ToolbarConfiguration& WithToolbarType(ToolbarType&& value) { SetToolbarType(std::move(value)); return *this;}
+    inline void SetToolbarType(ToolbarType value) { m_toolbarTypeHasBeenSet = true; m_toolbarType = value; }
+    inline ToolbarConfiguration& WithToolbarType(ToolbarType value) { SetToolbarType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visual mode of the toolbar.</p>
      */
-    inline const VisualMode& GetVisualMode() const{ return m_visualMode; }
+    inline VisualMode GetVisualMode() const { return m_visualMode; }
     inline bool VisualModeHasBeenSet() const { return m_visualModeHasBeenSet; }
-    inline void SetVisualMode(const VisualMode& value) { m_visualModeHasBeenSet = true; m_visualMode = value; }
-    inline void SetVisualMode(VisualMode&& value) { m_visualModeHasBeenSet = true; m_visualMode = std::move(value); }
-    inline ToolbarConfiguration& WithVisualMode(const VisualMode& value) { SetVisualMode(value); return *this;}
-    inline ToolbarConfiguration& WithVisualMode(VisualMode&& value) { SetVisualMode(std::move(value)); return *this;}
+    inline void SetVisualMode(VisualMode value) { m_visualModeHasBeenSet = true; m_visualMode = value; }
+    inline ToolbarConfiguration& WithVisualMode(VisualMode value) { SetVisualMode(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<ToolbarItem> m_hiddenToolbarItems;
     bool m_hiddenToolbarItemsHasBeenSet = false;
 
-    MaxDisplayResolution m_maxDisplayResolution;
+    MaxDisplayResolution m_maxDisplayResolution{MaxDisplayResolution::NOT_SET};
     bool m_maxDisplayResolutionHasBeenSet = false;
 
-    ToolbarType m_toolbarType;
+    ToolbarType m_toolbarType{ToolbarType::NOT_SET};
     bool m_toolbarTypeHasBeenSet = false;
 
-    VisualMode m_visualMode;
+    VisualMode m_visualMode{VisualMode::NOT_SET};
     bool m_visualModeHasBeenSet = false;
   };
 

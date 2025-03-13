@@ -34,7 +34,7 @@ namespace Model
   class NewPrivateVirtualInterface
   {
   public:
-    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface();
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface() = default;
     AWS_DIRECTCONNECT_API NewPrivateVirtualInterface(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API NewPrivateVirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
      * has a maximum of 100 characters. The following are valid characters: a-z, 0-9
      * and a hyphen (-).</p>
      */
-    inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
+    inline const Aws::String& GetVirtualInterfaceName() const { return m_virtualInterfaceName; }
     inline bool VirtualInterfaceNameHasBeenSet() const { return m_virtualInterfaceNameHasBeenSet; }
-    inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = value; }
-    inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = std::move(value); }
-    inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName.assign(value); }
-    inline NewPrivateVirtualInterface& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
-    inline NewPrivateVirtualInterface& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
+    template<typename VirtualInterfaceNameT = Aws::String>
+    void SetVirtualInterfaceName(VirtualInterfaceNameT&& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = std::forward<VirtualInterfaceNameT>(value); }
+    template<typename VirtualInterfaceNameT = Aws::String>
+    NewPrivateVirtualInterface& WithVirtualInterfaceName(VirtualInterfaceNameT&& value) { SetVirtualInterfaceName(std::forward<VirtualInterfaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VLAN.</p>
      */
-    inline int GetVlan() const{ return m_vlan; }
+    inline int GetVlan() const { return m_vlan; }
     inline bool VlanHasBeenSet() const { return m_vlanHasBeenSet; }
     inline void SetVlan(int value) { m_vlanHasBeenSet = true; m_vlan = value; }
     inline NewPrivateVirtualInterface& WithVlan(int value) { SetVlan(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
      * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
      * configuration.</p> <p>The valid values are 1-2147483647.</p>
      */
-    inline int GetAsn() const{ return m_asn; }
+    inline int GetAsn() const { return m_asn; }
     inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
     inline NewPrivateVirtualInterface& WithAsn(int value) { SetAsn(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
      * and 8500. The default value is 1500.</p>
      */
-    inline int GetMtu() const{ return m_mtu; }
+    inline int GetMtu() const { return m_mtu; }
     inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
     inline void SetMtu(int value) { m_mtuHasBeenSet = true; m_mtu = value; }
     inline NewPrivateVirtualInterface& WithMtu(int value) { SetMtu(value); return *this;}
@@ -93,103 +91,91 @@ namespace Model
      * <p>The authentication key for BGP configuration. This string has a minimum
      * length of 6 characters and and a maximun lenth of 80 characters.</p>
      */
-    inline const Aws::String& GetAuthKey() const{ return m_authKey; }
+    inline const Aws::String& GetAuthKey() const { return m_authKey; }
     inline bool AuthKeyHasBeenSet() const { return m_authKeyHasBeenSet; }
-    inline void SetAuthKey(const Aws::String& value) { m_authKeyHasBeenSet = true; m_authKey = value; }
-    inline void SetAuthKey(Aws::String&& value) { m_authKeyHasBeenSet = true; m_authKey = std::move(value); }
-    inline void SetAuthKey(const char* value) { m_authKeyHasBeenSet = true; m_authKey.assign(value); }
-    inline NewPrivateVirtualInterface& WithAuthKey(const Aws::String& value) { SetAuthKey(value); return *this;}
-    inline NewPrivateVirtualInterface& WithAuthKey(Aws::String&& value) { SetAuthKey(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
+    template<typename AuthKeyT = Aws::String>
+    void SetAuthKey(AuthKeyT&& value) { m_authKeyHasBeenSet = true; m_authKey = std::forward<AuthKeyT>(value); }
+    template<typename AuthKeyT = Aws::String>
+    NewPrivateVirtualInterface& WithAuthKey(AuthKeyT&& value) { SetAuthKey(std::forward<AuthKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address assigned to the Amazon interface.</p>
      */
-    inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
+    inline const Aws::String& GetAmazonAddress() const { return m_amazonAddress; }
     inline bool AmazonAddressHasBeenSet() const { return m_amazonAddressHasBeenSet; }
-    inline void SetAmazonAddress(const Aws::String& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = value; }
-    inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = std::move(value); }
-    inline void SetAmazonAddress(const char* value) { m_amazonAddressHasBeenSet = true; m_amazonAddress.assign(value); }
-    inline NewPrivateVirtualInterface& WithAmazonAddress(const Aws::String& value) { SetAmazonAddress(value); return *this;}
-    inline NewPrivateVirtualInterface& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
+    template<typename AmazonAddressT = Aws::String>
+    void SetAmazonAddress(AmazonAddressT&& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = std::forward<AmazonAddressT>(value); }
+    template<typename AmazonAddressT = Aws::String>
+    NewPrivateVirtualInterface& WithAmazonAddress(AmazonAddressT&& value) { SetAmazonAddress(std::forward<AmazonAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IP address assigned to the customer interface.</p>
      */
-    inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
+    inline const Aws::String& GetCustomerAddress() const { return m_customerAddress; }
     inline bool CustomerAddressHasBeenSet() const { return m_customerAddressHasBeenSet; }
-    inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
-    inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
-    inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
-    inline NewPrivateVirtualInterface& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
-    inline NewPrivateVirtualInterface& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
+    template<typename CustomerAddressT = Aws::String>
+    void SetCustomerAddress(CustomerAddressT&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::forward<CustomerAddressT>(value); }
+    template<typename CustomerAddressT = Aws::String>
+    NewPrivateVirtualInterface& WithCustomerAddress(CustomerAddressT&& value) { SetCustomerAddress(std::forward<CustomerAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address family for the BGP peer.</p>
      */
-    inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
+    inline AddressFamily GetAddressFamily() const { return m_addressFamily; }
     inline bool AddressFamilyHasBeenSet() const { return m_addressFamilyHasBeenSet; }
-    inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
-    inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = std::move(value); }
-    inline NewPrivateVirtualInterface& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
-    inline NewPrivateVirtualInterface& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
+    inline void SetAddressFamily(AddressFamily value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
+    inline NewPrivateVirtualInterface& WithAddressFamily(AddressFamily value) { SetAddressFamily(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
+    inline const Aws::String& GetVirtualGatewayId() const { return m_virtualGatewayId; }
     inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
-    inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
-    inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
-    inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
-    inline NewPrivateVirtualInterface& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
-    inline NewPrivateVirtualInterface& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
+    template<typename VirtualGatewayIdT = Aws::String>
+    void SetVirtualGatewayId(VirtualGatewayIdT&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::forward<VirtualGatewayIdT>(value); }
+    template<typename VirtualGatewayIdT = Aws::String>
+    NewPrivateVirtualInterface& WithVirtualGatewayId(VirtualGatewayIdT&& value) { SetVirtualGatewayId(std::forward<VirtualGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+    inline const Aws::String& GetDirectConnectGatewayId() const { return m_directConnectGatewayId; }
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-    inline NewPrivateVirtualInterface& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-    inline NewPrivateVirtualInterface& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    void SetDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::forward<DirectConnectGatewayIdT>(value); }
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    NewPrivateVirtualInterface& WithDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { SetDirectConnectGatewayId(std::forward<DirectConnectGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the private virtual interface.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline NewPrivateVirtualInterface& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline NewPrivateVirtualInterface& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline NewPrivateVirtualInterface& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline NewPrivateVirtualInterface& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    NewPrivateVirtualInterface& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    NewPrivateVirtualInterface& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether to enable or disable SiteLink.</p>
      */
-    inline bool GetEnableSiteLink() const{ return m_enableSiteLink; }
+    inline bool GetEnableSiteLink() const { return m_enableSiteLink; }
     inline bool EnableSiteLinkHasBeenSet() const { return m_enableSiteLinkHasBeenSet; }
     inline void SetEnableSiteLink(bool value) { m_enableSiteLinkHasBeenSet = true; m_enableSiteLink = value; }
     inline NewPrivateVirtualInterface& WithEnableSiteLink(bool value) { SetEnableSiteLink(value); return *this;}
@@ -199,13 +185,13 @@ namespace Model
     Aws::String m_virtualInterfaceName;
     bool m_virtualInterfaceNameHasBeenSet = false;
 
-    int m_vlan;
+    int m_vlan{0};
     bool m_vlanHasBeenSet = false;
 
-    int m_asn;
+    int m_asn{0};
     bool m_asnHasBeenSet = false;
 
-    int m_mtu;
+    int m_mtu{0};
     bool m_mtuHasBeenSet = false;
 
     Aws::String m_authKey;
@@ -217,7 +203,7 @@ namespace Model
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet = false;
 
-    AddressFamily m_addressFamily;
+    AddressFamily m_addressFamily{AddressFamily::NOT_SET};
     bool m_addressFamilyHasBeenSet = false;
 
     Aws::String m_virtualGatewayId;
@@ -229,7 +215,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    bool m_enableSiteLink;
+    bool m_enableSiteLink{false};
     bool m_enableSiteLinkHasBeenSet = false;
   };
 

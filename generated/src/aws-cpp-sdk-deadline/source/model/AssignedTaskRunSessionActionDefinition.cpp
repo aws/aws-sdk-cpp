@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition() : 
-    m_taskIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 AssignedTaskRunSessionActionDefinition::AssignedTaskRunSessionActionDefinition(JsonView jsonValue)
-  : AssignedTaskRunSessionActionDefinition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssignedTaskRunSessionActionDefinition& AssignedTaskRunSessionActionDefinition::
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -56,7 +44,6 @@ AssignedTaskRunSessionActionDefinition& AssignedTaskRunSessionActionDefinition::
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

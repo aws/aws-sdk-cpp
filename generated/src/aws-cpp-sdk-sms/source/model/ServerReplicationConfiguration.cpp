@@ -18,14 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerReplicationConfiguration::ServerReplicationConfiguration() : 
-    m_serverHasBeenSet(false),
-    m_serverReplicationParametersHasBeenSet(false)
-{
-}
-
 ServerReplicationConfiguration::ServerReplicationConfiguration(JsonView jsonValue)
-  : ServerReplicationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ServerReplicationConfiguration& ServerReplicationConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("server"))
   {
     m_server = jsonValue.GetObject("server");
-
     m_serverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverReplicationParameters"))
   {
     m_serverReplicationParameters = jsonValue.GetObject("serverReplicationParameters");
-
     m_serverReplicationParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,35 +33,35 @@ namespace Model
   class GetDataAutomationProjectResult
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult();
+    AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult() = default;
     AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKDATAAUTOMATION_API GetDataAutomationProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const DataAutomationProject& GetProject() const{ return m_project; }
-    inline void SetProject(const DataAutomationProject& value) { m_project = value; }
-    inline void SetProject(DataAutomationProject&& value) { m_project = std::move(value); }
-    inline GetDataAutomationProjectResult& WithProject(const DataAutomationProject& value) { SetProject(value); return *this;}
-    inline GetDataAutomationProjectResult& WithProject(DataAutomationProject&& value) { SetProject(std::move(value)); return *this;}
+    inline const DataAutomationProject& GetProject() const { return m_project; }
+    template<typename ProjectT = DataAutomationProject>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = DataAutomationProject>
+    GetDataAutomationProjectResult& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataAutomationProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataAutomationProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataAutomationProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataAutomationProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataAutomationProject m_project;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ExportDestinationConfiguration::ExportDestinationConfiguration() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 ExportDestinationConfiguration::ExportDestinationConfiguration(JsonView jsonValue)
-  : ExportDestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportDestinationConfiguration& ExportDestinationConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("S3"))
   {
     m_s3 = jsonValue.GetObject("S3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class ServerEvent
   {
   public:
-    AWS_OPSWORKSCM_API ServerEvent();
+    AWS_OPSWORKSCM_API ServerEvent() = default;
     AWS_OPSWORKSCM_API ServerEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKSCM_API ServerEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,58 +43,52 @@ namespace Model
     /**
      * <p>The time when the event occurred. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ServerEvent& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ServerEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ServerEvent& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the server on or for which the event occurred. </p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline ServerEvent& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline ServerEvent& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline ServerEvent& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    ServerEvent& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A human-readable informational or status message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServerEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServerEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServerEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServerEvent& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>
      */
-    inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
+    inline const Aws::String& GetLogUrl() const { return m_logUrl; }
     inline bool LogUrlHasBeenSet() const { return m_logUrlHasBeenSet; }
-    inline void SetLogUrl(const Aws::String& value) { m_logUrlHasBeenSet = true; m_logUrl = value; }
-    inline void SetLogUrl(Aws::String&& value) { m_logUrlHasBeenSet = true; m_logUrl = std::move(value); }
-    inline void SetLogUrl(const char* value) { m_logUrlHasBeenSet = true; m_logUrl.assign(value); }
-    inline ServerEvent& WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
-    inline ServerEvent& WithLogUrl(Aws::String&& value) { SetLogUrl(std::move(value)); return *this;}
-    inline ServerEvent& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
+    template<typename LogUrlT = Aws::String>
+    void SetLogUrl(LogUrlT&& value) { m_logUrlHasBeenSet = true; m_logUrl = std::forward<LogUrlT>(value); }
+    template<typename LogUrlT = Aws::String>
+    ServerEvent& WithLogUrl(LogUrlT&& value) { SetLogUrl(std::forward<LogUrlT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_serverName;

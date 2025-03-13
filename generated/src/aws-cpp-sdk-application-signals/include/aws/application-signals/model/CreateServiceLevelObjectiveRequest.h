@@ -27,7 +27,7 @@ namespace Model
   class CreateServiceLevelObjectiveRequest : public ApplicationSignalsRequest
   {
   public:
-    AWS_APPLICATIONSIGNALS_API CreateServiceLevelObjectiveRequest();
+    AWS_APPLICATIONSIGNALS_API CreateServiceLevelObjectiveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A name for this SLO.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateServiceLevelObjectiveRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateServiceLevelObjectiveRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description for this SLO.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateServiceLevelObjectiveRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateServiceLevelObjectiveRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same
      * operation.</p>
      */
-    inline const ServiceLevelIndicatorConfig& GetSliConfig() const{ return m_sliConfig; }
+    inline const ServiceLevelIndicatorConfig& GetSliConfig() const { return m_sliConfig; }
     inline bool SliConfigHasBeenSet() const { return m_sliConfigHasBeenSet; }
-    inline void SetSliConfig(const ServiceLevelIndicatorConfig& value) { m_sliConfigHasBeenSet = true; m_sliConfig = value; }
-    inline void SetSliConfig(ServiceLevelIndicatorConfig&& value) { m_sliConfigHasBeenSet = true; m_sliConfig = std::move(value); }
-    inline CreateServiceLevelObjectiveRequest& WithSliConfig(const ServiceLevelIndicatorConfig& value) { SetSliConfig(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithSliConfig(ServiceLevelIndicatorConfig&& value) { SetSliConfig(std::move(value)); return *this;}
+    template<typename SliConfigT = ServiceLevelIndicatorConfig>
+    void SetSliConfig(SliConfigT&& value) { m_sliConfigHasBeenSet = true; m_sliConfig = std::forward<SliConfigT>(value); }
+    template<typename SliConfigT = ServiceLevelIndicatorConfig>
+    CreateServiceLevelObjectiveRequest& WithSliConfig(SliConfigT&& value) { SetSliConfig(std::forward<SliConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +84,12 @@ namespace Model
      * both <code>RequestBasedSliConfig</code> and <code>SliConfig</code> in the same
      * operation.</p>
      */
-    inline const RequestBasedServiceLevelIndicatorConfig& GetRequestBasedSliConfig() const{ return m_requestBasedSliConfig; }
+    inline const RequestBasedServiceLevelIndicatorConfig& GetRequestBasedSliConfig() const { return m_requestBasedSliConfig; }
     inline bool RequestBasedSliConfigHasBeenSet() const { return m_requestBasedSliConfigHasBeenSet; }
-    inline void SetRequestBasedSliConfig(const RequestBasedServiceLevelIndicatorConfig& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = value; }
-    inline void SetRequestBasedSliConfig(RequestBasedServiceLevelIndicatorConfig&& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = std::move(value); }
-    inline CreateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(const RequestBasedServiceLevelIndicatorConfig& value) { SetRequestBasedSliConfig(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(RequestBasedServiceLevelIndicatorConfig&& value) { SetRequestBasedSliConfig(std::move(value)); return *this;}
+    template<typename RequestBasedSliConfigT = RequestBasedServiceLevelIndicatorConfig>
+    void SetRequestBasedSliConfig(RequestBasedSliConfigT&& value) { m_requestBasedSliConfigHasBeenSet = true; m_requestBasedSliConfig = std::forward<RequestBasedSliConfigT>(value); }
+    template<typename RequestBasedSliConfigT = RequestBasedServiceLevelIndicatorConfig>
+    CreateServiceLevelObjectiveRequest& WithRequestBasedSliConfig(RequestBasedSliConfigT&& value) { SetRequestBasedSliConfig(std::forward<RequestBasedSliConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +97,12 @@ namespace Model
      * <p>This structure contains the attributes that determine the goal of the
      * SLO.</p>
      */
-    inline const Goal& GetGoal() const{ return m_goal; }
+    inline const Goal& GetGoal() const { return m_goal; }
     inline bool GoalHasBeenSet() const { return m_goalHasBeenSet; }
-    inline void SetGoal(const Goal& value) { m_goalHasBeenSet = true; m_goal = value; }
-    inline void SetGoal(Goal&& value) { m_goalHasBeenSet = true; m_goal = std::move(value); }
-    inline CreateServiceLevelObjectiveRequest& WithGoal(const Goal& value) { SetGoal(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithGoal(Goal&& value) { SetGoal(std::move(value)); return *this;}
+    template<typename GoalT = Goal>
+    void SetGoal(GoalT&& value) { m_goalHasBeenSet = true; m_goal = std::forward<GoalT>(value); }
+    template<typename GoalT = Goal>
+    CreateServiceLevelObjectiveRequest& WithGoal(GoalT&& value) { SetGoal(std::forward<GoalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +114,14 @@ namespace Model
      * can also use them to scope user permissions by granting a user permission to
      * access or change only resources with certain tag values.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateServiceLevelObjectiveRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateServiceLevelObjectiveRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateServiceLevelObjectiveRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateServiceLevelObjectiveRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateServiceLevelObjectiveRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,14 +130,14 @@ namespace Model
      * metric that indicates how fast the service is consuming the error budget,
      * relative to the attainment goal of the SLO.</p>
      */
-    inline const Aws::Vector<BurnRateConfiguration>& GetBurnRateConfigurations() const{ return m_burnRateConfigurations; }
+    inline const Aws::Vector<BurnRateConfiguration>& GetBurnRateConfigurations() const { return m_burnRateConfigurations; }
     inline bool BurnRateConfigurationsHasBeenSet() const { return m_burnRateConfigurationsHasBeenSet; }
-    inline void SetBurnRateConfigurations(const Aws::Vector<BurnRateConfiguration>& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = value; }
-    inline void SetBurnRateConfigurations(Aws::Vector<BurnRateConfiguration>&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = std::move(value); }
-    inline CreateServiceLevelObjectiveRequest& WithBurnRateConfigurations(const Aws::Vector<BurnRateConfiguration>& value) { SetBurnRateConfigurations(value); return *this;}
-    inline CreateServiceLevelObjectiveRequest& WithBurnRateConfigurations(Aws::Vector<BurnRateConfiguration>&& value) { SetBurnRateConfigurations(std::move(value)); return *this;}
-    inline CreateServiceLevelObjectiveRequest& AddBurnRateConfigurations(const BurnRateConfiguration& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.push_back(value); return *this; }
-    inline CreateServiceLevelObjectiveRequest& AddBurnRateConfigurations(BurnRateConfiguration&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.push_back(std::move(value)); return *this; }
+    template<typename BurnRateConfigurationsT = Aws::Vector<BurnRateConfiguration>>
+    void SetBurnRateConfigurations(BurnRateConfigurationsT&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations = std::forward<BurnRateConfigurationsT>(value); }
+    template<typename BurnRateConfigurationsT = Aws::Vector<BurnRateConfiguration>>
+    CreateServiceLevelObjectiveRequest& WithBurnRateConfigurations(BurnRateConfigurationsT&& value) { SetBurnRateConfigurations(std::forward<BurnRateConfigurationsT>(value)); return *this;}
+    template<typename BurnRateConfigurationsT = BurnRateConfiguration>
+    CreateServiceLevelObjectiveRequest& AddBurnRateConfigurations(BurnRateConfigurationsT&& value) { m_burnRateConfigurationsHasBeenSet = true; m_burnRateConfigurations.emplace_back(std::forward<BurnRateConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

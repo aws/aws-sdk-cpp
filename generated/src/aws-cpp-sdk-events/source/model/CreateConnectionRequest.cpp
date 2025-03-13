@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectionRequest::CreateConnectionRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_authorizationType(ConnectionAuthorizationType::NOT_SET),
-    m_authorizationTypeHasBeenSet(false),
-    m_authParametersHasBeenSet(false)
-{
-}
-
 Aws::String CreateConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

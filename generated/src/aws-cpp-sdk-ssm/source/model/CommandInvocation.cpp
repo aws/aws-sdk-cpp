@@ -18,29 +18,7 @@ namespace SSM
 namespace Model
 {
 
-CommandInvocation::CommandInvocation() : 
-    m_commandIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_requestedDateTimeHasBeenSet(false),
-    m_status(CommandInvocationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_traceOutputHasBeenSet(false),
-    m_standardOutputUrlHasBeenSet(false),
-    m_standardErrorUrlHasBeenSet(false),
-    m_commandPluginsHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
-{
-}
-
 CommandInvocation::CommandInvocation(JsonView jsonValue)
-  : CommandInvocation()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ CommandInvocation& CommandInvocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CommandId"))
   {
     m_commandId = jsonValue.GetString("CommandId");
-
     m_commandIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceName"))
   {
     m_instanceName = jsonValue.GetString("InstanceName");
-
     m_instanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetString("Comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedDateTime"))
   {
     m_requestedDateTime = jsonValue.GetDouble("RequestedDateTime");
-
     m_requestedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CommandInvocationStatusMapper::GetCommandInvocationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     m_statusDetails = jsonValue.GetString("StatusDetails");
-
     m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TraceOutput"))
   {
     m_traceOutput = jsonValue.GetString("TraceOutput");
-
     m_traceOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardOutputUrl"))
   {
     m_standardOutputUrl = jsonValue.GetString("StandardOutputUrl");
-
     m_standardOutputUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardErrorUrl"))
   {
     m_standardErrorUrl = jsonValue.GetString("StandardErrorUrl");
-
     m_standardErrorUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommandPlugins"))
   {
     Aws::Utils::Array<JsonView> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
@@ -140,28 +94,21 @@ CommandInvocation& CommandInvocation::operator =(JsonView jsonValue)
     }
     m_commandPluginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfig"))
   {
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
-
     m_notificationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchOutputConfig"))
   {
     m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
-
     m_cloudWatchOutputConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

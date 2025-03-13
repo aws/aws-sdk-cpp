@@ -18,21 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-PhysicalEndpoint::PhysicalEndpoint() : 
-    m_awsLocationHasBeenSet(false),
-    m_glueConnectionHasBeenSet(false),
-    m_glueConnectionNameHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_stageHasBeenSet(false)
-{
-}
-
 PhysicalEndpoint::PhysicalEndpoint(JsonView jsonValue)
-  : PhysicalEndpoint()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ PhysicalEndpoint& PhysicalEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsLocation"))
   {
     m_awsLocation = jsonValue.GetObject("awsLocation");
-
     m_awsLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glueConnection"))
   {
     m_glueConnection = jsonValue.GetObject("glueConnection");
-
     m_glueConnectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glueConnectionName"))
   {
     m_glueConnectionName = jsonValue.GetString("glueConnectionName");
-
     m_glueConnectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("host"))
   {
     m_host = jsonValue.GetString("host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
     m_stageHasBeenSet = true;
   }
-
   return *this;
 }
 

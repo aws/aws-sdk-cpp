@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyHostsRequest::ModifyHostsRequest() : 
-    m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false),
-    m_hostIdsHasBeenSet(false),
-    m_autoPlacement(AutoPlacement::NOT_SET),
-    m_autoPlacementHasBeenSet(false)
-{
-}
-
 Aws::String ModifyHostsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

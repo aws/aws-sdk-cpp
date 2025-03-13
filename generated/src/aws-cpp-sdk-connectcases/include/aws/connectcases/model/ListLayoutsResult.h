@@ -29,7 +29,7 @@ namespace Model
   class ListLayoutsResult
   {
   public:
-    AWS_CONNECTCASES_API ListLayoutsResult();
+    AWS_CONNECTCASES_API ListLayoutsResult() = default;
     AWS_CONNECTCASES_API ListLayoutsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCASES_API ListLayoutsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The layouts for the domain.</p>
      */
-    inline const Aws::Vector<LayoutSummary>& GetLayouts() const{ return m_layouts; }
-    inline void SetLayouts(const Aws::Vector<LayoutSummary>& value) { m_layouts = value; }
-    inline void SetLayouts(Aws::Vector<LayoutSummary>&& value) { m_layouts = std::move(value); }
-    inline ListLayoutsResult& WithLayouts(const Aws::Vector<LayoutSummary>& value) { SetLayouts(value); return *this;}
-    inline ListLayoutsResult& WithLayouts(Aws::Vector<LayoutSummary>&& value) { SetLayouts(std::move(value)); return *this;}
-    inline ListLayoutsResult& AddLayouts(const LayoutSummary& value) { m_layouts.push_back(value); return *this; }
-    inline ListLayoutsResult& AddLayouts(LayoutSummary&& value) { m_layouts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LayoutSummary>& GetLayouts() const { return m_layouts; }
+    template<typename LayoutsT = Aws::Vector<LayoutSummary>>
+    void SetLayouts(LayoutsT&& value) { m_layoutsHasBeenSet = true; m_layouts = std::forward<LayoutsT>(value); }
+    template<typename LayoutsT = Aws::Vector<LayoutSummary>>
+    ListLayoutsResult& WithLayouts(LayoutsT&& value) { SetLayouts(std::forward<LayoutsT>(value)); return *this;}
+    template<typename LayoutsT = LayoutSummary>
+    ListLayoutsResult& AddLayouts(LayoutsT&& value) { m_layoutsHasBeenSet = true; m_layouts.emplace_back(std::forward<LayoutsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token for the next set of results. This is null if there are no more
      * results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLayoutsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLayoutsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLayoutsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLayoutsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLayoutsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLayoutsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLayoutsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLayoutsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LayoutSummary> m_layouts;
+    bool m_layoutsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

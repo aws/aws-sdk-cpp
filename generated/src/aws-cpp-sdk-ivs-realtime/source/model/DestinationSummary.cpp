@@ -18,17 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-DestinationSummary::DestinationSummary() : 
-    m_idHasBeenSet(false),
-    m_state(DestinationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 DestinationSummary::DestinationSummary(JsonView jsonValue)
-  : DestinationSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DestinationSummary& DestinationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = DestinationStateMapper::GetDestinationStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

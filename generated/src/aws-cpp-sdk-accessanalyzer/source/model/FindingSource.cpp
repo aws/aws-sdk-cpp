@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-FindingSource::FindingSource() : 
-    m_type(FindingSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_detailHasBeenSet(false)
-{
-}
-
 FindingSource::FindingSource(JsonView jsonValue)
-  : FindingSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FindingSource& FindingSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = FindingSourceTypeMapper::GetFindingSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detail"))
   {
     m_detail = jsonValue.GetObject("detail");
-
     m_detailHasBeenSet = true;
   }
-
   return *this;
 }
 

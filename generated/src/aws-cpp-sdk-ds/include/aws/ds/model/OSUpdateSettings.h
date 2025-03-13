@@ -32,7 +32,7 @@ namespace Model
   class OSUpdateSettings
   {
   public:
-    AWS_DIRECTORYSERVICE_API OSUpdateSettings();
+    AWS_DIRECTORYSERVICE_API OSUpdateSettings() = default;
     AWS_DIRECTORYSERVICE_API OSUpdateSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API OSUpdateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p> OS version that the directory needs to be updated to. </p>
      */
-    inline const OSVersion& GetOSVersion() const{ return m_oSVersion; }
+    inline OSVersion GetOSVersion() const { return m_oSVersion; }
     inline bool OSVersionHasBeenSet() const { return m_oSVersionHasBeenSet; }
-    inline void SetOSVersion(const OSVersion& value) { m_oSVersionHasBeenSet = true; m_oSVersion = value; }
-    inline void SetOSVersion(OSVersion&& value) { m_oSVersionHasBeenSet = true; m_oSVersion = std::move(value); }
-    inline OSUpdateSettings& WithOSVersion(const OSVersion& value) { SetOSVersion(value); return *this;}
-    inline OSUpdateSettings& WithOSVersion(OSVersion&& value) { SetOSVersion(std::move(value)); return *this;}
+    inline void SetOSVersion(OSVersion value) { m_oSVersionHasBeenSet = true; m_oSVersion = value; }
+    inline OSUpdateSettings& WithOSVersion(OSVersion value) { SetOSVersion(value); return *this;}
     ///@}
   private:
 
-    OSVersion m_oSVersion;
+    OSVersion m_oSVersion{OSVersion::NOT_SET};
     bool m_oSVersionHasBeenSet = false;
   };
 

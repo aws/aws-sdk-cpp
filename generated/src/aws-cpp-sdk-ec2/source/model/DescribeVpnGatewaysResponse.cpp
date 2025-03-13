@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpnGatewaysResponse::DescribeVpnGatewaysResponse()
-{
-}
-
 DescribeVpnGatewaysResponse::DescribeVpnGatewaysResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVpnGatewaysResponse& DescribeVpnGatewaysResponse::operator =(const Aws::
     if(!vpnGatewaysNode.IsNull())
     {
       XmlNode vpnGatewaysMember = vpnGatewaysNode.FirstChild("item");
+      m_vpnGatewaysHasBeenSet = !vpnGatewaysMember.IsNull();
       while(!vpnGatewaysMember.IsNull())
       {
         m_vpnGateways.push_back(vpnGatewaysMember);
@@ -56,6 +53,7 @@ DescribeVpnGatewaysResponse& DescribeVpnGatewaysResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpnGatewaysResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

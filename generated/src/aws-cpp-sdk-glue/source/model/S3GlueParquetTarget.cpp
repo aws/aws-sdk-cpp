@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3GlueParquetTarget::S3GlueParquetTarget() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_compression(ParquetCompressionType::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_schemaChangePolicyHasBeenSet(false)
-{
-}
-
 S3GlueParquetTarget::S3GlueParquetTarget(JsonView jsonValue)
-  : S3GlueParquetTarget()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ S3GlueParquetTarget& S3GlueParquetTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -53,7 +39,6 @@ S3GlueParquetTarget& S3GlueParquetTarget::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
@@ -70,28 +55,21 @@ S3GlueParquetTarget& S3GlueParquetTarget::operator =(JsonView jsonValue)
     }
     m_partitionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = ParquetCompressionTypeMapper::GetParquetCompressionTypeForName(jsonValue.GetString("Compression"));
-
     m_compressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaChangePolicy"))
   {
     m_schemaChangePolicy = jsonValue.GetObject("SchemaChangePolicy");
-
     m_schemaChangePolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

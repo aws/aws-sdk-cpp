@@ -34,7 +34,7 @@ namespace Model
   class ToxicityDetectionSettings
   {
   public:
-    AWS_TRANSCRIBESERVICE_API ToxicityDetectionSettings();
+    AWS_TRANSCRIBESERVICE_API ToxicityDetectionSettings() = default;
     AWS_TRANSCRIBESERVICE_API ToxicityDetectionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API ToxicityDetectionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,13 @@ namespace Model
      * you must also include <code>ToxicityCategories</code>. The only accepted value
      * for this parameter is <code>ALL</code>.</p>
      */
-    inline const Aws::Vector<ToxicityCategory>& GetToxicityCategories() const{ return m_toxicityCategories; }
+    inline const Aws::Vector<ToxicityCategory>& GetToxicityCategories() const { return m_toxicityCategories; }
     inline bool ToxicityCategoriesHasBeenSet() const { return m_toxicityCategoriesHasBeenSet; }
-    inline void SetToxicityCategories(const Aws::Vector<ToxicityCategory>& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories = value; }
-    inline void SetToxicityCategories(Aws::Vector<ToxicityCategory>&& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories = std::move(value); }
-    inline ToxicityDetectionSettings& WithToxicityCategories(const Aws::Vector<ToxicityCategory>& value) { SetToxicityCategories(value); return *this;}
-    inline ToxicityDetectionSettings& WithToxicityCategories(Aws::Vector<ToxicityCategory>&& value) { SetToxicityCategories(std::move(value)); return *this;}
-    inline ToxicityDetectionSettings& AddToxicityCategories(const ToxicityCategory& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories.push_back(value); return *this; }
-    inline ToxicityDetectionSettings& AddToxicityCategories(ToxicityCategory&& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories.push_back(std::move(value)); return *this; }
+    template<typename ToxicityCategoriesT = Aws::Vector<ToxicityCategory>>
+    void SetToxicityCategories(ToxicityCategoriesT&& value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories = std::forward<ToxicityCategoriesT>(value); }
+    template<typename ToxicityCategoriesT = Aws::Vector<ToxicityCategory>>
+    ToxicityDetectionSettings& WithToxicityCategories(ToxicityCategoriesT&& value) { SetToxicityCategories(std::forward<ToxicityCategoriesT>(value)); return *this;}
+    inline ToxicityDetectionSettings& AddToxicityCategories(ToxicityCategory value) { m_toxicityCategoriesHasBeenSet = true; m_toxicityCategories.push_back(value); return *this; }
     ///@}
   private:
 

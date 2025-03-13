@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-DataConnector::DataConnector() : 
-    m_lambdaHasBeenSet(false),
-    m_isNative(false),
-    m_isNativeHasBeenSet(false)
-{
-}
-
 DataConnector::DataConnector(JsonView jsonValue)
-  : DataConnector()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataConnector& DataConnector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lambda"))
   {
     m_lambda = jsonValue.GetObject("lambda");
-
     m_lambdaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isNative"))
   {
     m_isNative = jsonValue.GetBool("isNative");
-
     m_isNativeHasBeenSet = true;
   }
-
   return *this;
 }
 

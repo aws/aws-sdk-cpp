@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-EvaluateCodeErrorDetail::EvaluateCodeErrorDetail() : 
-    m_messageHasBeenSet(false),
-    m_codeErrorsHasBeenSet(false)
-{
-}
-
 EvaluateCodeErrorDetail::EvaluateCodeErrorDetail(JsonView jsonValue)
-  : EvaluateCodeErrorDetail()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EvaluateCodeErrorDetail& EvaluateCodeErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeErrors"))
   {
     Aws::Utils::Array<JsonView> codeErrorsJsonList = jsonValue.GetArray("codeErrors");
@@ -48,7 +39,6 @@ EvaluateCodeErrorDetail& EvaluateCodeErrorDetail::operator =(JsonView jsonValue)
     }
     m_codeErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

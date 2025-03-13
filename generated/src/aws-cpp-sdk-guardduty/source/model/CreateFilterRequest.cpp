@@ -12,21 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFilterRequest::CreateFilterRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_action(FilterAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_findingCriteriaHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFilterRequest::SerializePayload() const
 {
   JsonValue payload;

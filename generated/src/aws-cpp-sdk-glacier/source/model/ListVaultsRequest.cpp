@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVaultsRequest::ListVaultsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListVaultsRequest::SerializePayload() const
 {
   return {};

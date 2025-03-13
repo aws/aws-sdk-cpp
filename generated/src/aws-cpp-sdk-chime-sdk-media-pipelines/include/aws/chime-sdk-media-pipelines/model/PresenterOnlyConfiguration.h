@@ -32,7 +32,7 @@ namespace Model
   class PresenterOnlyConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Defines the position of the presenter video tile. Default:
      * <code>TopRight</code>.</p>
      */
-    inline const PresenterPosition& GetPresenterPosition() const{ return m_presenterPosition; }
+    inline PresenterPosition GetPresenterPosition() const { return m_presenterPosition; }
     inline bool PresenterPositionHasBeenSet() const { return m_presenterPositionHasBeenSet; }
-    inline void SetPresenterPosition(const PresenterPosition& value) { m_presenterPositionHasBeenSet = true; m_presenterPosition = value; }
-    inline void SetPresenterPosition(PresenterPosition&& value) { m_presenterPositionHasBeenSet = true; m_presenterPosition = std::move(value); }
-    inline PresenterOnlyConfiguration& WithPresenterPosition(const PresenterPosition& value) { SetPresenterPosition(value); return *this;}
-    inline PresenterOnlyConfiguration& WithPresenterPosition(PresenterPosition&& value) { SetPresenterPosition(std::move(value)); return *this;}
+    inline void SetPresenterPosition(PresenterPosition value) { m_presenterPositionHasBeenSet = true; m_presenterPosition = value; }
+    inline PresenterOnlyConfiguration& WithPresenterPosition(PresenterPosition value) { SetPresenterPosition(value); return *this;}
     ///@}
   private:
 
-    PresenterPosition m_presenterPosition;
+    PresenterPosition m_presenterPosition{PresenterPosition::NOT_SET};
     bool m_presenterPositionHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateSolNetworkPackageContentResult::ValidateSolNetworkPackageContentResult()
-{
-}
-
 ValidateSolNetworkPackageContentResult::ValidateSolNetworkPackageContentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,33 @@ ValidateSolNetworkPackageContentResult& ValidateSolNetworkPackageContentResult::
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
+    m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdId"))
   {
     m_nsdId = jsonValue.GetString("nsdId");
-
+    m_nsdIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdName"))
   {
     m_nsdName = jsonValue.GetString("nsdName");
-
+    m_nsdNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdVersion"))
   {
     m_nsdVersion = jsonValue.GetString("nsdVersion");
-
+    m_nsdVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vnfPkgIds"))
   {
     Aws::Utils::Array<JsonView> vnfPkgIdsJsonList = jsonValue.GetArray("vnfPkgIds");
@@ -72,14 +62,15 @@ ValidateSolNetworkPackageContentResult& ValidateSolNetworkPackageContentResult::
     {
       m_vnfPkgIds.push_back(vnfPkgIdsJsonList[vnfPkgIdsIndex].AsString());
     }
+    m_vnfPkgIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -30,7 +30,7 @@ namespace Model
   class OnChangeStateTemplateUpdateStrategy
   {
   public:
-    AWS_IOTFLEETWISE_API OnChangeStateTemplateUpdateStrategy();
+    AWS_IOTFLEETWISE_API OnChangeStateTemplateUpdateStrategy() = default;
     AWS_IOTFLEETWISE_API OnChangeStateTemplateUpdateStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API OnChangeStateTemplateUpdateStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;

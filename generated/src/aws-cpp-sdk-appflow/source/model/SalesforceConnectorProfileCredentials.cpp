@@ -18,19 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials() : 
-    m_accessTokenHasBeenSet(false),
-    m_refreshTokenHasBeenSet(false),
-    m_oAuthRequestHasBeenSet(false),
-    m_clientCredentialsArnHasBeenSet(false),
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_jwtTokenHasBeenSet(false)
-{
-}
-
 SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials(JsonView jsonValue)
-  : SalesforceConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SalesforceConnectorProfileCredentials& SalesforceConnectorProfileCredentials::op
   if(jsonValue.ValueExists("accessToken"))
   {
     m_accessToken = jsonValue.GetString("accessToken");
-
     m_accessTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshToken"))
   {
     m_refreshToken = jsonValue.GetString("refreshToken");
-
     m_refreshTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthRequest"))
   {
     m_oAuthRequest = jsonValue.GetObject("oAuthRequest");
-
     m_oAuthRequestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientCredentialsArn"))
   {
     m_clientCredentialsArn = jsonValue.GetString("clientCredentialsArn");
-
     m_clientCredentialsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2GrantType"))
   {
     m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("oAuth2GrantType"));
-
     m_oAuth2GrantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jwtToken"))
   {
     m_jwtToken = jsonValue.GetString("jwtToken");
-
     m_jwtTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

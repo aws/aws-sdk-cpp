@@ -32,7 +32,7 @@ namespace Model
   class SlackSourceProperties
   {
   public:
-    AWS_APPFLOW_API SlackSourceProperties();
+    AWS_APPFLOW_API SlackSourceProperties() = default;
     AWS_APPFLOW_API SlackSourceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SlackSourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The object specified in the Slack flow source. </p>
      */
-    inline const Aws::String& GetObject() const{ return m_object; }
+    inline const Aws::String& GetObject() const { return m_object; }
     inline bool ObjectHasBeenSet() const { return m_objectHasBeenSet; }
-    inline void SetObject(const Aws::String& value) { m_objectHasBeenSet = true; m_object = value; }
-    inline void SetObject(Aws::String&& value) { m_objectHasBeenSet = true; m_object = std::move(value); }
-    inline void SetObject(const char* value) { m_objectHasBeenSet = true; m_object.assign(value); }
-    inline SlackSourceProperties& WithObject(const Aws::String& value) { SetObject(value); return *this;}
-    inline SlackSourceProperties& WithObject(Aws::String&& value) { SetObject(std::move(value)); return *this;}
-    inline SlackSourceProperties& WithObject(const char* value) { SetObject(value); return *this;}
+    template<typename ObjectT = Aws::String>
+    void SetObject(ObjectT&& value) { m_objectHasBeenSet = true; m_object = std::forward<ObjectT>(value); }
+    template<typename ObjectT = Aws::String>
+    SlackSourceProperties& WithObject(ObjectT&& value) { SetObject(std::forward<ObjectT>(value)); return *this;}
     ///@}
   private:
 

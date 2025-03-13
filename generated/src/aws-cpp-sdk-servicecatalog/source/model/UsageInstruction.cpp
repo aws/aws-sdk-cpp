@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-UsageInstruction::UsageInstruction() : 
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 UsageInstruction::UsageInstruction(JsonView jsonValue)
-  : UsageInstruction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UsageInstruction& UsageInstruction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

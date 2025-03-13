@@ -29,7 +29,7 @@ namespace Model
   class CreateStreamProcessorRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API CreateStreamProcessorRequest();
+    AWS_REKOGNITION_API CreateStreamProcessorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,12 @@ namespace Model
      * are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.
      * This is required for both face search and label detection stream processors.</p>
      */
-    inline const StreamProcessorInput& GetInput() const{ return m_input; }
+    inline const StreamProcessorInput& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const StreamProcessorInput& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(StreamProcessorInput&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline CreateStreamProcessorRequest& WithInput(const StreamProcessorInput& value) { SetInput(value); return *this;}
-    inline CreateStreamProcessorRequest& WithInput(StreamProcessorInput&& value) { SetInput(std::move(value)); return *this;}
+    template<typename InputT = StreamProcessorInput>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = StreamProcessorInput>
+    CreateStreamProcessorRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +65,12 @@ namespace Model
      * stream processor or a Kinesis data stream ARN for a face search stream
      * processor.</p>
      */
-    inline const StreamProcessorOutput& GetOutput() const{ return m_output; }
+    inline const StreamProcessorOutput& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const StreamProcessorOutput& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(StreamProcessorOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline CreateStreamProcessorRequest& WithOutput(const StreamProcessorOutput& value) { SetOutput(value); return *this;}
-    inline CreateStreamProcessorRequest& WithOutput(StreamProcessorOutput&& value) { SetOutput(std::move(value)); return *this;}
+    template<typename OutputT = StreamProcessorOutput>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = StreamProcessorOutput>
+    CreateStreamProcessorRequest& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +81,12 @@ namespace Model
      * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. This is
      * required for both face search and label detection stream processors. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateStreamProcessorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateStreamProcessorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateStreamProcessorRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateStreamProcessorRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +95,12 @@ namespace Model
      * You can use <code>FaceSearch</code> to recognize faces in a streaming video, or
      * you can use <code>ConnectedHome</code> to detect labels.</p>
      */
-    inline const StreamProcessorSettings& GetSettings() const{ return m_settings; }
+    inline const StreamProcessorSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const StreamProcessorSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(StreamProcessorSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline CreateStreamProcessorRequest& WithSettings(const StreamProcessorSettings& value) { SetSettings(value); return *this;}
-    inline CreateStreamProcessorRequest& WithSettings(StreamProcessorSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = StreamProcessorSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = StreamProcessorSettings>
+    CreateStreamProcessorRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +111,12 @@ namespace Model
      * Amazon Simple Notification Service topic for a label detection stream processor.
      * This is required for both face search and label detection stream processors.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateStreamProcessorRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateStreamProcessorRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateStreamProcessorRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateStreamProcessorRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,29 +124,26 @@ namespace Model
      * <p> A set of tags (key-value pairs) that you want to attach to the stream
      * processor. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateStreamProcessorRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateStreamProcessorRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateStreamProcessorRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateStreamProcessorRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateStreamProcessorRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateStreamProcessorRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateStreamProcessorRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateStreamProcessorRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateStreamProcessorRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateStreamProcessorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateStreamProcessorRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const StreamProcessorNotificationChannel& GetNotificationChannel() const{ return m_notificationChannel; }
+    inline const StreamProcessorNotificationChannel& GetNotificationChannel() const { return m_notificationChannel; }
     inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
-    inline void SetNotificationChannel(const StreamProcessorNotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
-    inline void SetNotificationChannel(StreamProcessorNotificationChannel&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::move(value); }
-    inline CreateStreamProcessorRequest& WithNotificationChannel(const StreamProcessorNotificationChannel& value) { SetNotificationChannel(value); return *this;}
-    inline CreateStreamProcessorRequest& WithNotificationChannel(StreamProcessorNotificationChannel&& value) { SetNotificationChannel(std::move(value)); return *this;}
+    template<typename NotificationChannelT = StreamProcessorNotificationChannel>
+    void SetNotificationChannel(NotificationChannelT&& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = std::forward<NotificationChannelT>(value); }
+    template<typename NotificationChannelT = StreamProcessorNotificationChannel>
+    CreateStreamProcessorRequest& WithNotificationChannel(NotificationChannelT&& value) { SetNotificationChannel(std::forward<NotificationChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +156,12 @@ namespace Model
      * to your Amazon S3 bucket, which includes image frames and hero images. Your
      * source images are unaffected. </p> <p> </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateStreamProcessorRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateStreamProcessorRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateStreamProcessorRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateStreamProcessorRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,14 +172,14 @@ namespace Model
      * detection stream processors and should not be used to create a face search
      * stream processor. </p>
      */
-    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const{ return m_regionsOfInterest; }
+    inline const Aws::Vector<RegionOfInterest>& GetRegionsOfInterest() const { return m_regionsOfInterest; }
     inline bool RegionsOfInterestHasBeenSet() const { return m_regionsOfInterestHasBeenSet; }
-    inline void SetRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = value; }
-    inline void SetRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::move(value); }
-    inline CreateStreamProcessorRequest& WithRegionsOfInterest(const Aws::Vector<RegionOfInterest>& value) { SetRegionsOfInterest(value); return *this;}
-    inline CreateStreamProcessorRequest& WithRegionsOfInterest(Aws::Vector<RegionOfInterest>&& value) { SetRegionsOfInterest(std::move(value)); return *this;}
-    inline CreateStreamProcessorRequest& AddRegionsOfInterest(const RegionOfInterest& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(value); return *this; }
-    inline CreateStreamProcessorRequest& AddRegionsOfInterest(RegionOfInterest&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.push_back(std::move(value)); return *this; }
+    template<typename RegionsOfInterestT = Aws::Vector<RegionOfInterest>>
+    void SetRegionsOfInterest(RegionsOfInterestT&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest = std::forward<RegionsOfInterestT>(value); }
+    template<typename RegionsOfInterestT = Aws::Vector<RegionOfInterest>>
+    CreateStreamProcessorRequest& WithRegionsOfInterest(RegionsOfInterestT&& value) { SetRegionsOfInterest(std::forward<RegionsOfInterestT>(value)); return *this;}
+    template<typename RegionsOfInterestT = RegionOfInterest>
+    CreateStreamProcessorRequest& AddRegionsOfInterest(RegionsOfInterestT&& value) { m_regionsOfInterestHasBeenSet = true; m_regionsOfInterest.emplace_back(std::forward<RegionsOfInterestT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -198,12 +189,12 @@ namespace Model
      * basis. Note that if you opt out at the account level this setting is ignored on
      * individual streams. </p>
      */
-    inline const StreamProcessorDataSharingPreference& GetDataSharingPreference() const{ return m_dataSharingPreference; }
+    inline const StreamProcessorDataSharingPreference& GetDataSharingPreference() const { return m_dataSharingPreference; }
     inline bool DataSharingPreferenceHasBeenSet() const { return m_dataSharingPreferenceHasBeenSet; }
-    inline void SetDataSharingPreference(const StreamProcessorDataSharingPreference& value) { m_dataSharingPreferenceHasBeenSet = true; m_dataSharingPreference = value; }
-    inline void SetDataSharingPreference(StreamProcessorDataSharingPreference&& value) { m_dataSharingPreferenceHasBeenSet = true; m_dataSharingPreference = std::move(value); }
-    inline CreateStreamProcessorRequest& WithDataSharingPreference(const StreamProcessorDataSharingPreference& value) { SetDataSharingPreference(value); return *this;}
-    inline CreateStreamProcessorRequest& WithDataSharingPreference(StreamProcessorDataSharingPreference&& value) { SetDataSharingPreference(std::move(value)); return *this;}
+    template<typename DataSharingPreferenceT = StreamProcessorDataSharingPreference>
+    void SetDataSharingPreference(DataSharingPreferenceT&& value) { m_dataSharingPreferenceHasBeenSet = true; m_dataSharingPreference = std::forward<DataSharingPreferenceT>(value); }
+    template<typename DataSharingPreferenceT = StreamProcessorDataSharingPreference>
+    CreateStreamProcessorRequest& WithDataSharingPreference(DataSharingPreferenceT&& value) { SetDataSharingPreference(std::forward<DataSharingPreferenceT>(value)); return *this;}
     ///@}
   private:
 

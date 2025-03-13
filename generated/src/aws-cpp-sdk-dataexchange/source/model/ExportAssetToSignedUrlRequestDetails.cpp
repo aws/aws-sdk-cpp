@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ExportAssetToSignedUrlRequestDetails::ExportAssetToSignedUrlRequestDetails() : 
-    m_assetIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 ExportAssetToSignedUrlRequestDetails::ExportAssetToSignedUrlRequestDetails(JsonView jsonValue)
-  : ExportAssetToSignedUrlRequestDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExportAssetToSignedUrlRequestDetails& ExportAssetToSignedUrlRequestDetails::oper
   if(jsonValue.ValueExists("AssetId"))
   {
     m_assetId = jsonValue.GetString("AssetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

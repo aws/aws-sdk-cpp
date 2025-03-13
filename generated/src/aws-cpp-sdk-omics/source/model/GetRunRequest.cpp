@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRunRequest::GetRunRequest() : 
-    m_idHasBeenSet(false),
-    m_exportHasBeenSet(false)
-{
-}
-
 Aws::String GetRunRequest::SerializePayload() const
 {
   return {};

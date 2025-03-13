@@ -12,16 +12,6 @@ using namespace Aws::PcaConnectorAd::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTemplateRequest::CreateTemplateRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_connectorArnHasBeenSet(false),
-    m_definitionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

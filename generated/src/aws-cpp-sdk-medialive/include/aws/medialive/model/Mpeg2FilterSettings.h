@@ -31,7 +31,7 @@ namespace Model
   class Mpeg2FilterSettings
   {
   public:
-    AWS_MEDIALIVE_API Mpeg2FilterSettings();
+    AWS_MEDIALIVE_API Mpeg2FilterSettings() = default;
     AWS_MEDIALIVE_API Mpeg2FilterSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Mpeg2FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const TemporalFilterSettings& GetTemporalFilterSettings() const{ return m_temporalFilterSettings; }
+    inline const TemporalFilterSettings& GetTemporalFilterSettings() const { return m_temporalFilterSettings; }
     inline bool TemporalFilterSettingsHasBeenSet() const { return m_temporalFilterSettingsHasBeenSet; }
-    inline void SetTemporalFilterSettings(const TemporalFilterSettings& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = value; }
-    inline void SetTemporalFilterSettings(TemporalFilterSettings&& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = std::move(value); }
-    inline Mpeg2FilterSettings& WithTemporalFilterSettings(const TemporalFilterSettings& value) { SetTemporalFilterSettings(value); return *this;}
-    inline Mpeg2FilterSettings& WithTemporalFilterSettings(TemporalFilterSettings&& value) { SetTemporalFilterSettings(std::move(value)); return *this;}
+    template<typename TemporalFilterSettingsT = TemporalFilterSettings>
+    void SetTemporalFilterSettings(TemporalFilterSettingsT&& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = std::forward<TemporalFilterSettingsT>(value); }
+    template<typename TemporalFilterSettingsT = TemporalFilterSettings>
+    Mpeg2FilterSettings& WithTemporalFilterSettings(TemporalFilterSettingsT&& value) { SetTemporalFilterSettings(std::forward<TemporalFilterSettingsT>(value)); return *this;}
     ///@}
   private:
 

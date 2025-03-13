@@ -12,26 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRemoteAccessSessionRequest::CreateRemoteAccessSessionRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_deviceArnHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_sshPublicKeyHasBeenSet(false),
-    m_remoteDebugEnabled(false),
-    m_remoteDebugEnabledHasBeenSet(false),
-    m_remoteRecordEnabled(false),
-    m_remoteRecordEnabledHasBeenSet(false),
-    m_remoteRecordAppArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_interactionMode(InteractionMode::NOT_SET),
-    m_interactionModeHasBeenSet(false),
-    m_skipAppResign(false),
-    m_skipAppResignHasBeenSet(false)
-{
-}
-
 Aws::String CreateRemoteAccessSessionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNotebookInstanceLifecycleConfigResult::CreateNotebookInstanceLifecycleConfigResult()
-{
-}
-
 CreateNotebookInstanceLifecycleConfigResult::CreateNotebookInstanceLifecycleConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateNotebookInstanceLifecycleConfigResult& CreateNotebookInstanceLifecycleConf
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigArn"))
   {
     m_notebookInstanceLifecycleConfigArn = jsonValue.GetString("NotebookInstanceLifecycleConfigArn");
-
+    m_notebookInstanceLifecycleConfigArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

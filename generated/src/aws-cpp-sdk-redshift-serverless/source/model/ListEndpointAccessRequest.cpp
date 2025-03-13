@@ -12,16 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEndpointAccessRequest::ListEndpointAccessRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
-{
-}
-
 Aws::String ListEndpointAccessRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class WarmPoolStatus
   {
   public:
-    AWS_SAGEMAKER_API WarmPoolStatus();
+    AWS_SAGEMAKER_API WarmPoolStatus() = default;
     AWS_SAGEMAKER_API WarmPoolStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API WarmPoolStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * terminated for a patch update, or terminated for exceeding the specified
      * <code>KeepAlivePeriodInSeconds</code>.</p> </li> </ul>
      */
-    inline const WarmPoolResourceStatus& GetStatus() const{ return m_status; }
+    inline WarmPoolResourceStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WarmPoolResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WarmPoolResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline WarmPoolStatus& WithStatus(const WarmPoolResourceStatus& value) { SetStatus(value); return *this;}
-    inline WarmPoolStatus& WithStatus(WarmPoolResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WarmPoolResourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline WarmPoolStatus& WithStatus(WarmPoolResourceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * time SageMaker bills you if you run warm pool training. The formula is as
      * follows: <code>ResourceRetainedBillableTimeInSeconds * InstanceCount</code>.</p>
      */
-    inline int GetResourceRetainedBillableTimeInSeconds() const{ return m_resourceRetainedBillableTimeInSeconds; }
+    inline int GetResourceRetainedBillableTimeInSeconds() const { return m_resourceRetainedBillableTimeInSeconds; }
     inline bool ResourceRetainedBillableTimeInSecondsHasBeenSet() const { return m_resourceRetainedBillableTimeInSecondsHasBeenSet; }
     inline void SetResourceRetainedBillableTimeInSeconds(int value) { m_resourceRetainedBillableTimeInSecondsHasBeenSet = true; m_resourceRetainedBillableTimeInSeconds = value; }
     inline WarmPoolStatus& WithResourceRetainedBillableTimeInSeconds(int value) { SetResourceRetainedBillableTimeInSeconds(value); return *this;}
@@ -77,21 +75,19 @@ namespace Model
     /**
      * <p>The name of the matching training job that reused the warm pool.</p>
      */
-    inline const Aws::String& GetReusedByJob() const{ return m_reusedByJob; }
+    inline const Aws::String& GetReusedByJob() const { return m_reusedByJob; }
     inline bool ReusedByJobHasBeenSet() const { return m_reusedByJobHasBeenSet; }
-    inline void SetReusedByJob(const Aws::String& value) { m_reusedByJobHasBeenSet = true; m_reusedByJob = value; }
-    inline void SetReusedByJob(Aws::String&& value) { m_reusedByJobHasBeenSet = true; m_reusedByJob = std::move(value); }
-    inline void SetReusedByJob(const char* value) { m_reusedByJobHasBeenSet = true; m_reusedByJob.assign(value); }
-    inline WarmPoolStatus& WithReusedByJob(const Aws::String& value) { SetReusedByJob(value); return *this;}
-    inline WarmPoolStatus& WithReusedByJob(Aws::String&& value) { SetReusedByJob(std::move(value)); return *this;}
-    inline WarmPoolStatus& WithReusedByJob(const char* value) { SetReusedByJob(value); return *this;}
+    template<typename ReusedByJobT = Aws::String>
+    void SetReusedByJob(ReusedByJobT&& value) { m_reusedByJobHasBeenSet = true; m_reusedByJob = std::forward<ReusedByJobT>(value); }
+    template<typename ReusedByJobT = Aws::String>
+    WarmPoolStatus& WithReusedByJob(ReusedByJobT&& value) { SetReusedByJob(std::forward<ReusedByJobT>(value)); return *this;}
     ///@}
   private:
 
-    WarmPoolResourceStatus m_status;
+    WarmPoolResourceStatus m_status{WarmPoolResourceStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_resourceRetainedBillableTimeInSeconds;
+    int m_resourceRetainedBillableTimeInSeconds{0};
     bool m_resourceRetainedBillableTimeInSecondsHasBeenSet = false;
 
     Aws::String m_reusedByJob;

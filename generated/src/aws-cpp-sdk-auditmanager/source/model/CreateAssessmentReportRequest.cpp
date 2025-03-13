@@ -12,14 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssessmentReportRequest::CreateAssessmentReportRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_queryStatementHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssessmentReportRequest::SerializePayload() const
 {
   JsonValue payload;

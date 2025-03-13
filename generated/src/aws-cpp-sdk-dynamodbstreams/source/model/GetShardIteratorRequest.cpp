@@ -12,15 +12,6 @@ using namespace Aws::DynamoDBStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetShardIteratorRequest::GetShardIteratorRequest() : 
-    m_streamArnHasBeenSet(false),
-    m_shardIdHasBeenSet(false),
-    m_shardIteratorType(ShardIteratorType::NOT_SET),
-    m_shardIteratorTypeHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetShardIteratorRequest::SerializePayload() const
 {
   JsonValue payload;

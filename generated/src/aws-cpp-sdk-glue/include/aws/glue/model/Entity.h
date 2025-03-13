@@ -33,7 +33,7 @@ namespace Model
   class Entity
   {
   public:
-    AWS_GLUE_API Entity();
+    AWS_GLUE_API Entity() = default;
     AWS_GLUE_API Entity(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Entity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the entity.</p>
      */
-    inline const Aws::String& GetEntityName() const{ return m_entityName; }
+    inline const Aws::String& GetEntityName() const { return m_entityName; }
     inline bool EntityNameHasBeenSet() const { return m_entityNameHasBeenSet; }
-    inline void SetEntityName(const Aws::String& value) { m_entityNameHasBeenSet = true; m_entityName = value; }
-    inline void SetEntityName(Aws::String&& value) { m_entityNameHasBeenSet = true; m_entityName = std::move(value); }
-    inline void SetEntityName(const char* value) { m_entityNameHasBeenSet = true; m_entityName.assign(value); }
-    inline Entity& WithEntityName(const Aws::String& value) { SetEntityName(value); return *this;}
-    inline Entity& WithEntityName(Aws::String&& value) { SetEntityName(std::move(value)); return *this;}
-    inline Entity& WithEntityName(const char* value) { SetEntityName(value); return *this;}
+    template<typename EntityNameT = Aws::String>
+    void SetEntityName(EntityNameT&& value) { m_entityNameHasBeenSet = true; m_entityName = std::forward<EntityNameT>(value); }
+    template<typename EntityNameT = Aws::String>
+    Entity& WithEntityName(EntityNameT&& value) { SetEntityName(std::forward<EntityNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Label used for the entity.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline Entity& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline Entity& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline Entity& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    Entity& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * <p>A Boolean value which helps to determine whether there are sub objects that
      * can be listed.</p>
      */
-    inline bool GetIsParentEntity() const{ return m_isParentEntity; }
+    inline bool GetIsParentEntity() const { return m_isParentEntity; }
     inline bool IsParentEntityHasBeenSet() const { return m_isParentEntityHasBeenSet; }
     inline void SetIsParentEntity(bool value) { m_isParentEntityHasBeenSet = true; m_isParentEntity = value; }
     inline Entity& WithIsParentEntity(bool value) { SetIsParentEntity(value); return *this;}
@@ -82,14 +78,12 @@ namespace Model
     /**
      * <p>A description of the entity.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Entity& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Entity& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Entity& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Entity& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,14 +93,12 @@ namespace Model
      * and <code>databases</code> or <code>schemas</code> or <code>tables</code> for
      * sources like Amazon Redshift.</p>
      */
-    inline const Aws::String& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-    inline Entity& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-    inline Entity& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-    inline Entity& WithCategory(const char* value) { SetCategory(value); return *this;}
+    template<typename CategoryT = Aws::String>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::String>
+    Entity& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,19 +106,16 @@ namespace Model
      * <p>An optional map of keys which may be returned for an entity by a
      * connector.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomProperties() const{ return m_customProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomProperties() const { return m_customProperties; }
     inline bool CustomPropertiesHasBeenSet() const { return m_customPropertiesHasBeenSet; }
-    inline void SetCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customPropertiesHasBeenSet = true; m_customProperties = value; }
-    inline void SetCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customPropertiesHasBeenSet = true; m_customProperties = std::move(value); }
-    inline Entity& WithCustomProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomProperties(value); return *this;}
-    inline Entity& WithCustomProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomProperties(std::move(value)); return *this;}
-    inline Entity& AddCustomProperties(const Aws::String& key, const Aws::String& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
-    inline Entity& AddCustomProperties(Aws::String&& key, const Aws::String& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), value); return *this; }
-    inline Entity& AddCustomProperties(const Aws::String& key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, std::move(value)); return *this; }
-    inline Entity& AddCustomProperties(Aws::String&& key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline Entity& AddCustomProperties(const char* key, Aws::String&& value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, std::move(value)); return *this; }
-    inline Entity& AddCustomProperties(Aws::String&& key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::move(key), value); return *this; }
-    inline Entity& AddCustomProperties(const char* key, const char* value) { m_customPropertiesHasBeenSet = true; m_customProperties.emplace(key, value); return *this; }
+    template<typename CustomPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomProperties(CustomPropertiesT&& value) { m_customPropertiesHasBeenSet = true; m_customProperties = std::forward<CustomPropertiesT>(value); }
+    template<typename CustomPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    Entity& WithCustomProperties(CustomPropertiesT&& value) { SetCustomProperties(std::forward<CustomPropertiesT>(value)); return *this;}
+    template<typename CustomPropertiesKeyT = Aws::String, typename CustomPropertiesValueT = Aws::String>
+    Entity& AddCustomProperties(CustomPropertiesKeyT&& key, CustomPropertiesValueT&& value) {
+      m_customPropertiesHasBeenSet = true; m_customProperties.emplace(std::forward<CustomPropertiesKeyT>(key), std::forward<CustomPropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -136,7 +125,7 @@ namespace Model
     Aws::String m_label;
     bool m_labelHasBeenSet = false;
 
-    bool m_isParentEntity;
+    bool m_isParentEntity{false};
     bool m_isParentEntityHasBeenSet = false;
 
     Aws::String m_description;

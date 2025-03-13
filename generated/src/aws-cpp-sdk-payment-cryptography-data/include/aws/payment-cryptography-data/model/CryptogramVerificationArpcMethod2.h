@@ -32,7 +32,7 @@ namespace Model
   class CryptogramVerificationArpcMethod2
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramVerificationArpcMethod2();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramVerificationArpcMethod2() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramVerificationArpcMethod2(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramVerificationArpcMethod2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The data indicating whether the issuer approves or declines an online
      * transaction using an EMV chip card.</p>
      */
-    inline const Aws::String& GetCardStatusUpdate() const{ return m_cardStatusUpdate; }
+    inline const Aws::String& GetCardStatusUpdate() const { return m_cardStatusUpdate; }
     inline bool CardStatusUpdateHasBeenSet() const { return m_cardStatusUpdateHasBeenSet; }
-    inline void SetCardStatusUpdate(const Aws::String& value) { m_cardStatusUpdateHasBeenSet = true; m_cardStatusUpdate = value; }
-    inline void SetCardStatusUpdate(Aws::String&& value) { m_cardStatusUpdateHasBeenSet = true; m_cardStatusUpdate = std::move(value); }
-    inline void SetCardStatusUpdate(const char* value) { m_cardStatusUpdateHasBeenSet = true; m_cardStatusUpdate.assign(value); }
-    inline CryptogramVerificationArpcMethod2& WithCardStatusUpdate(const Aws::String& value) { SetCardStatusUpdate(value); return *this;}
-    inline CryptogramVerificationArpcMethod2& WithCardStatusUpdate(Aws::String&& value) { SetCardStatusUpdate(std::move(value)); return *this;}
-    inline CryptogramVerificationArpcMethod2& WithCardStatusUpdate(const char* value) { SetCardStatusUpdate(value); return *this;}
+    template<typename CardStatusUpdateT = Aws::String>
+    void SetCardStatusUpdate(CardStatusUpdateT&& value) { m_cardStatusUpdateHasBeenSet = true; m_cardStatusUpdate = std::forward<CardStatusUpdateT>(value); }
+    template<typename CardStatusUpdateT = Aws::String>
+    CryptogramVerificationArpcMethod2& WithCardStatusUpdate(CardStatusUpdateT&& value) { SetCardStatusUpdate(std::forward<CardStatusUpdateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The proprietary authentication data used by issuer for communication during
      * online transaction using an EMV chip card.</p>
      */
-    inline const Aws::String& GetProprietaryAuthenticationData() const{ return m_proprietaryAuthenticationData; }
+    inline const Aws::String& GetProprietaryAuthenticationData() const { return m_proprietaryAuthenticationData; }
     inline bool ProprietaryAuthenticationDataHasBeenSet() const { return m_proprietaryAuthenticationDataHasBeenSet; }
-    inline void SetProprietaryAuthenticationData(const Aws::String& value) { m_proprietaryAuthenticationDataHasBeenSet = true; m_proprietaryAuthenticationData = value; }
-    inline void SetProprietaryAuthenticationData(Aws::String&& value) { m_proprietaryAuthenticationDataHasBeenSet = true; m_proprietaryAuthenticationData = std::move(value); }
-    inline void SetProprietaryAuthenticationData(const char* value) { m_proprietaryAuthenticationDataHasBeenSet = true; m_proprietaryAuthenticationData.assign(value); }
-    inline CryptogramVerificationArpcMethod2& WithProprietaryAuthenticationData(const Aws::String& value) { SetProprietaryAuthenticationData(value); return *this;}
-    inline CryptogramVerificationArpcMethod2& WithProprietaryAuthenticationData(Aws::String&& value) { SetProprietaryAuthenticationData(std::move(value)); return *this;}
-    inline CryptogramVerificationArpcMethod2& WithProprietaryAuthenticationData(const char* value) { SetProprietaryAuthenticationData(value); return *this;}
+    template<typename ProprietaryAuthenticationDataT = Aws::String>
+    void SetProprietaryAuthenticationData(ProprietaryAuthenticationDataT&& value) { m_proprietaryAuthenticationDataHasBeenSet = true; m_proprietaryAuthenticationData = std::forward<ProprietaryAuthenticationDataT>(value); }
+    template<typename ProprietaryAuthenticationDataT = Aws::String>
+    CryptogramVerificationArpcMethod2& WithProprietaryAuthenticationData(ProprietaryAuthenticationDataT&& value) { SetProprietaryAuthenticationData(std::forward<ProprietaryAuthenticationDataT>(value)); return *this;}
     ///@}
   private:
 

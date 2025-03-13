@@ -20,21 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBProxyTargetGroup::DBProxyTargetGroup() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_connectionPoolConfigHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
-{
-}
-
 DBProxyTargetGroup::DBProxyTargetGroup(const XmlNode& xmlNode)
-  : DBProxyTargetGroup()
 {
   *this = xmlNode;
 }
@@ -50,48 +36,56 @@ DBProxyTargetGroup& DBProxyTargetGroup::operator =(const XmlNode& xmlNode)
     {
       m_dBProxyName = Aws::Utils::Xml::DecodeEscapedXmlText(dBProxyNameNode.GetText());
       m_dBProxyNameHasBeenSet = true;
+       m_dBProxyNameHasBeenSet = true;
     }
     XmlNode targetGroupNameNode = resultNode.FirstChild("TargetGroupName");
     if(!targetGroupNameNode.IsNull())
     {
       m_targetGroupName = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupNameNode.GetText());
       m_targetGroupNameHasBeenSet = true;
+       m_targetGroupNameHasBeenSet = true;
     }
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");
     if(!targetGroupArnNode.IsNull())
     {
       m_targetGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetGroupArnNode.GetText());
       m_targetGroupArnHasBeenSet = true;
+       m_targetGroupArnHasBeenSet = true;
     }
     XmlNode isDefaultNode = resultNode.FirstChild("IsDefault");
     if(!isDefaultNode.IsNull())
     {
       m_isDefault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultNode.GetText()).c_str()).c_str());
       m_isDefaultHasBeenSet = true;
+       m_isDefaultHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode connectionPoolConfigNode = resultNode.FirstChild("ConnectionPoolConfig");
     if(!connectionPoolConfigNode.IsNull())
     {
       m_connectionPoolConfig = connectionPoolConfigNode;
       m_connectionPoolConfigHasBeenSet = true;
+       m_connectionPoolConfigHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("CreatedDate");
     if(!createdDateNode.IsNull())
     {
       m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
+       m_createdDateHasBeenSet = true;
     }
     XmlNode updatedDateNode = resultNode.FirstChild("UpdatedDate");
     if(!updatedDateNode.IsNull())
     {
       m_updatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedDateHasBeenSet = true;
+       m_updatedDateHasBeenSet = true;
     }
   }
 

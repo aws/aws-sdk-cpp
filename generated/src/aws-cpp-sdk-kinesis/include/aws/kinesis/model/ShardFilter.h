@@ -34,7 +34,7 @@ namespace Model
   class ShardFilter
   {
   public:
-    AWS_KINESIS_API ShardFilter();
+    AWS_KINESIS_API ShardFilter() = default;
     AWS_KINESIS_API ShardFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API ShardFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,12 +61,10 @@ namespace Model
      * <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is
      * less than the <code>TRIM_HORIZON</code> value.</p> </li> </ul>
      */
-    inline const ShardFilterType& GetType() const{ return m_type; }
+    inline ShardFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ShardFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ShardFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ShardFilter& WithType(const ShardFilterType& value) { SetType(value); return *this;}
-    inline ShardFilter& WithType(ShardFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ShardFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ShardFilter& WithType(ShardFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <code>ShardFilter</code> parameter. This property can only be used if the
      * <code>AFTER_SHARD_ID</code> shard type is specified.</p>
      */
-    inline const Aws::String& GetShardId() const{ return m_shardId; }
+    inline const Aws::String& GetShardId() const { return m_shardId; }
     inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
-    inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
-    inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
-    inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
-    inline ShardFilter& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
-    inline ShardFilter& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
-    inline ShardFilter& WithShardId(const char* value) { SetShardId(value); return *this;}
+    template<typename ShardIdT = Aws::String>
+    void SetShardId(ShardIdT&& value) { m_shardIdHasBeenSet = true; m_shardId = std::forward<ShardIdT>(value); }
+    template<typename ShardIdT = Aws::String>
+    ShardFilter& WithShardId(ShardIdT&& value) { SetShardId(std::forward<ShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,22 +89,22 @@ namespace Model
      * if <code>FROM_TIMESTAMP</code> or <code>AT_TIMESTAMP</code> shard types are
      * specified.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline ShardFilter& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline ShardFilter& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    ShardFilter& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
-    ShardFilterType m_type;
+    ShardFilterType m_type{ShardFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_shardId;
     bool m_shardIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class SourceConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API SourceConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API SourceConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The selected video streams for a specified media pipeline. The number of
      * video streams can't exceed 25.</p>
      */
-    inline const SelectedVideoStreams& GetSelectedVideoStreams() const{ return m_selectedVideoStreams; }
+    inline const SelectedVideoStreams& GetSelectedVideoStreams() const { return m_selectedVideoStreams; }
     inline bool SelectedVideoStreamsHasBeenSet() const { return m_selectedVideoStreamsHasBeenSet; }
-    inline void SetSelectedVideoStreams(const SelectedVideoStreams& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = value; }
-    inline void SetSelectedVideoStreams(SelectedVideoStreams&& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = std::move(value); }
-    inline SourceConfiguration& WithSelectedVideoStreams(const SelectedVideoStreams& value) { SetSelectedVideoStreams(value); return *this;}
-    inline SourceConfiguration& WithSelectedVideoStreams(SelectedVideoStreams&& value) { SetSelectedVideoStreams(std::move(value)); return *this;}
+    template<typename SelectedVideoStreamsT = SelectedVideoStreams>
+    void SetSelectedVideoStreams(SelectedVideoStreamsT&& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = std::forward<SelectedVideoStreamsT>(value); }
+    template<typename SelectedVideoStreamsT = SelectedVideoStreams>
+    SourceConfiguration& WithSelectedVideoStreams(SelectedVideoStreamsT&& value) { SetSelectedVideoStreams(std::forward<SelectedVideoStreamsT>(value)); return *this;}
     ///@}
   private:
 

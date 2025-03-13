@@ -30,7 +30,7 @@ namespace Model
   class RouteMatrixAutoCircle
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixAutoCircle();
+    AWS_GEOROUTES_API RouteMatrixAutoCircle() = default;
     AWS_GEOROUTES_API RouteMatrixAutoCircle(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixAutoCircle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The margin provided for the calculation.</p>
      */
-    inline long long GetMargin() const{ return m_margin; }
+    inline long long GetMargin() const { return m_margin; }
     inline bool MarginHasBeenSet() const { return m_marginHasBeenSet; }
     inline void SetMargin(long long value) { m_marginHasBeenSet = true; m_margin = value; }
     inline RouteMatrixAutoCircle& WithMargin(long long value) { SetMargin(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The maximum size of the radius provided for the calculation.</p>
      */
-    inline long long GetMaxRadius() const{ return m_maxRadius; }
+    inline long long GetMaxRadius() const { return m_maxRadius; }
     inline bool MaxRadiusHasBeenSet() const { return m_maxRadiusHasBeenSet; }
     inline void SetMaxRadius(long long value) { m_maxRadiusHasBeenSet = true; m_maxRadius = value; }
     inline RouteMatrixAutoCircle& WithMaxRadius(long long value) { SetMaxRadius(value); return *this;}
     ///@}
   private:
 
-    long long m_margin;
+    long long m_margin{0};
     bool m_marginHasBeenSet = false;
 
-    long long m_maxRadius;
+    long long m_maxRadius{0};
     bool m_maxRadiusHasBeenSet = false;
   };
 

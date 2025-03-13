@@ -34,7 +34,7 @@ namespace Model
   class ManagedNotificationChannelAssociationSummary
   {
   public:
-    AWS_NOTIFICATIONS_API ManagedNotificationChannelAssociationSummary();
+    AWS_NOTIFICATIONS_API ManagedNotificationChannelAssociationSummary() = default;
     AWS_NOTIFICATIONS_API ManagedNotificationChannelAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API ManagedNotificationChannelAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The unique identifier for the notification channel.</p>
      */
-    inline const Aws::String& GetChannelIdentifier() const{ return m_channelIdentifier; }
+    inline const Aws::String& GetChannelIdentifier() const { return m_channelIdentifier; }
     inline bool ChannelIdentifierHasBeenSet() const { return m_channelIdentifierHasBeenSet; }
-    inline void SetChannelIdentifier(const Aws::String& value) { m_channelIdentifierHasBeenSet = true; m_channelIdentifier = value; }
-    inline void SetChannelIdentifier(Aws::String&& value) { m_channelIdentifierHasBeenSet = true; m_channelIdentifier = std::move(value); }
-    inline void SetChannelIdentifier(const char* value) { m_channelIdentifierHasBeenSet = true; m_channelIdentifier.assign(value); }
-    inline ManagedNotificationChannelAssociationSummary& WithChannelIdentifier(const Aws::String& value) { SetChannelIdentifier(value); return *this;}
-    inline ManagedNotificationChannelAssociationSummary& WithChannelIdentifier(Aws::String&& value) { SetChannelIdentifier(std::move(value)); return *this;}
-    inline ManagedNotificationChannelAssociationSummary& WithChannelIdentifier(const char* value) { SetChannelIdentifier(value); return *this;}
+    template<typename ChannelIdentifierT = Aws::String>
+    void SetChannelIdentifier(ChannelIdentifierT&& value) { m_channelIdentifierHasBeenSet = true; m_channelIdentifier = std::forward<ChannelIdentifierT>(value); }
+    template<typename ChannelIdentifierT = Aws::String>
+    ManagedNotificationChannelAssociationSummary& WithChannelIdentifier(ChannelIdentifierT&& value) { SetChannelIdentifier(std::forward<ChannelIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * <code>EMAIL</code> </p> <ul> <li> <p>Delivers notifications to email
      * addresses.</p> </li> </ul> </li> </ul> </li> </ul>
      */
-    inline const ChannelType& GetChannelType() const{ return m_channelType; }
+    inline ChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
-    inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
-    inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
-    inline ManagedNotificationChannelAssociationSummary& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
-    inline ManagedNotificationChannelAssociationSummary& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+    inline void SetChannelType(ChannelType value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+    inline ManagedNotificationChannelAssociationSummary& WithChannelType(ChannelType value) { SetChannelType(value); return *this;}
     ///@}
 
     ///@{
@@ -84,22 +80,20 @@ namespace Model
      * </p> <ul> <li> <p>Users cannot associate or disassociate channels with the
      * notification configuration.</p> </li> </ul> </li> </ul> </li> </ul>
      */
-    inline const ChannelAssociationOverrideOption& GetOverrideOption() const{ return m_overrideOption; }
+    inline ChannelAssociationOverrideOption GetOverrideOption() const { return m_overrideOption; }
     inline bool OverrideOptionHasBeenSet() const { return m_overrideOptionHasBeenSet; }
-    inline void SetOverrideOption(const ChannelAssociationOverrideOption& value) { m_overrideOptionHasBeenSet = true; m_overrideOption = value; }
-    inline void SetOverrideOption(ChannelAssociationOverrideOption&& value) { m_overrideOptionHasBeenSet = true; m_overrideOption = std::move(value); }
-    inline ManagedNotificationChannelAssociationSummary& WithOverrideOption(const ChannelAssociationOverrideOption& value) { SetOverrideOption(value); return *this;}
-    inline ManagedNotificationChannelAssociationSummary& WithOverrideOption(ChannelAssociationOverrideOption&& value) { SetOverrideOption(std::move(value)); return *this;}
+    inline void SetOverrideOption(ChannelAssociationOverrideOption value) { m_overrideOptionHasBeenSet = true; m_overrideOption = value; }
+    inline ManagedNotificationChannelAssociationSummary& WithOverrideOption(ChannelAssociationOverrideOption value) { SetOverrideOption(value); return *this;}
     ///@}
   private:
 
     Aws::String m_channelIdentifier;
     bool m_channelIdentifierHasBeenSet = false;
 
-    ChannelType m_channelType;
+    ChannelType m_channelType{ChannelType::NOT_SET};
     bool m_channelTypeHasBeenSet = false;
 
-    ChannelAssociationOverrideOption m_overrideOption;
+    ChannelAssociationOverrideOption m_overrideOption{ChannelAssociationOverrideOption::NOT_SET};
     bool m_overrideOptionHasBeenSet = false;
   };
 

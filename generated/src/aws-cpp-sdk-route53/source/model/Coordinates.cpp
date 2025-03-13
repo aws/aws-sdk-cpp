@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-Coordinates::Coordinates() : 
-    m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 Coordinates::Coordinates(const XmlNode& xmlNode)
-  : Coordinates()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Coordinates& Coordinates::operator =(const XmlNode& xmlNode)
     {
       m_latitude = Aws::Utils::Xml::DecodeEscapedXmlText(latitudeNode.GetText());
       m_latitudeHasBeenSet = true;
+       m_latitudeHasBeenSet = true;
     }
     XmlNode longitudeNode = resultNode.FirstChild("Longitude");
     if(!longitudeNode.IsNull())
     {
       m_longitude = Aws::Utils::Xml::DecodeEscapedXmlText(longitudeNode.GetText());
       m_longitudeHasBeenSet = true;
+       m_longitudeHasBeenSet = true;
     }
   }
 

@@ -33,7 +33,7 @@ namespace Model
   class Fragment
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment() = default;
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Fragment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The unique identifier of the fragment. This value monotonically increases
      * based on the ingestion order.</p>
      */
-    inline const Aws::String& GetFragmentNumber() const{ return m_fragmentNumber; }
+    inline const Aws::String& GetFragmentNumber() const { return m_fragmentNumber; }
     inline bool FragmentNumberHasBeenSet() const { return m_fragmentNumberHasBeenSet; }
-    inline void SetFragmentNumber(const Aws::String& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = value; }
-    inline void SetFragmentNumber(Aws::String&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::move(value); }
-    inline void SetFragmentNumber(const char* value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber.assign(value); }
-    inline Fragment& WithFragmentNumber(const Aws::String& value) { SetFragmentNumber(value); return *this;}
-    inline Fragment& WithFragmentNumber(Aws::String&& value) { SetFragmentNumber(std::move(value)); return *this;}
-    inline Fragment& WithFragmentNumber(const char* value) { SetFragmentNumber(value); return *this;}
+    template<typename FragmentNumberT = Aws::String>
+    void SetFragmentNumber(FragmentNumberT&& value) { m_fragmentNumberHasBeenSet = true; m_fragmentNumber = std::forward<FragmentNumberT>(value); }
+    template<typename FragmentNumberT = Aws::String>
+    Fragment& WithFragmentNumber(FragmentNumberT&& value) { SetFragmentNumber(std::forward<FragmentNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The total fragment size, including information about the fragment and
      * contained media data.</p>
      */
-    inline long long GetFragmentSizeInBytes() const{ return m_fragmentSizeInBytes; }
+    inline long long GetFragmentSizeInBytes() const { return m_fragmentSizeInBytes; }
     inline bool FragmentSizeInBytesHasBeenSet() const { return m_fragmentSizeInBytesHasBeenSet; }
     inline void SetFragmentSizeInBytes(long long value) { m_fragmentSizeInBytesHasBeenSet = true; m_fragmentSizeInBytes = value; }
     inline Fragment& WithFragmentSizeInBytes(long long value) { SetFragmentSizeInBytes(value); return *this;}
@@ -69,12 +67,12 @@ namespace Model
     /**
      * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
-    inline const Aws::Utils::DateTime& GetProducerTimestamp() const{ return m_producerTimestamp; }
+    inline const Aws::Utils::DateTime& GetProducerTimestamp() const { return m_producerTimestamp; }
     inline bool ProducerTimestampHasBeenSet() const { return m_producerTimestampHasBeenSet; }
-    inline void SetProducerTimestamp(const Aws::Utils::DateTime& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = value; }
-    inline void SetProducerTimestamp(Aws::Utils::DateTime&& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = std::move(value); }
-    inline Fragment& WithProducerTimestamp(const Aws::Utils::DateTime& value) { SetProducerTimestamp(value); return *this;}
-    inline Fragment& WithProducerTimestamp(Aws::Utils::DateTime&& value) { SetProducerTimestamp(std::move(value)); return *this;}
+    template<typename ProducerTimestampT = Aws::Utils::DateTime>
+    void SetProducerTimestamp(ProducerTimestampT&& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = std::forward<ProducerTimestampT>(value); }
+    template<typename ProducerTimestampT = Aws::Utils::DateTime>
+    Fragment& WithProducerTimestamp(ProducerTimestampT&& value) { SetProducerTimestamp(std::forward<ProducerTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,19 +80,19 @@ namespace Model
      * <p>The timestamp from the Amazon Web Services server corresponding to the
      * fragment.</p>
      */
-    inline const Aws::Utils::DateTime& GetServerTimestamp() const{ return m_serverTimestamp; }
+    inline const Aws::Utils::DateTime& GetServerTimestamp() const { return m_serverTimestamp; }
     inline bool ServerTimestampHasBeenSet() const { return m_serverTimestampHasBeenSet; }
-    inline void SetServerTimestamp(const Aws::Utils::DateTime& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = value; }
-    inline void SetServerTimestamp(Aws::Utils::DateTime&& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = std::move(value); }
-    inline Fragment& WithServerTimestamp(const Aws::Utils::DateTime& value) { SetServerTimestamp(value); return *this;}
-    inline Fragment& WithServerTimestamp(Aws::Utils::DateTime&& value) { SetServerTimestamp(std::move(value)); return *this;}
+    template<typename ServerTimestampT = Aws::Utils::DateTime>
+    void SetServerTimestamp(ServerTimestampT&& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = std::forward<ServerTimestampT>(value); }
+    template<typename ServerTimestampT = Aws::Utils::DateTime>
+    Fragment& WithServerTimestamp(ServerTimestampT&& value) { SetServerTimestamp(std::forward<ServerTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The playback duration or other time value associated with the fragment.</p>
      */
-    inline long long GetFragmentLengthInMilliseconds() const{ return m_fragmentLengthInMilliseconds; }
+    inline long long GetFragmentLengthInMilliseconds() const { return m_fragmentLengthInMilliseconds; }
     inline bool FragmentLengthInMillisecondsHasBeenSet() const { return m_fragmentLengthInMillisecondsHasBeenSet; }
     inline void SetFragmentLengthInMilliseconds(long long value) { m_fragmentLengthInMillisecondsHasBeenSet = true; m_fragmentLengthInMilliseconds = value; }
     inline Fragment& WithFragmentLengthInMilliseconds(long long value) { SetFragmentLengthInMilliseconds(value); return *this;}
@@ -104,16 +102,16 @@ namespace Model
     Aws::String m_fragmentNumber;
     bool m_fragmentNumberHasBeenSet = false;
 
-    long long m_fragmentSizeInBytes;
+    long long m_fragmentSizeInBytes{0};
     bool m_fragmentSizeInBytesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_producerTimestamp;
+    Aws::Utils::DateTime m_producerTimestamp{};
     bool m_producerTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_serverTimestamp;
+    Aws::Utils::DateTime m_serverTimestamp{};
     bool m_serverTimestampHasBeenSet = false;
 
-    long long m_fragmentLengthInMilliseconds;
+    long long m_fragmentLengthInMilliseconds{0};
     bool m_fragmentLengthInMillisecondsHasBeenSet = false;
   };
 

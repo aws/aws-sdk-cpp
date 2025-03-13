@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeStacksRequest::DescribeStacksRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStacksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

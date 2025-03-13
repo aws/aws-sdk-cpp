@@ -33,7 +33,7 @@ namespace Model
   class UpdateParam
   {
   public:
-    AWS_EKS_API UpdateParam();
+    AWS_EKS_API UpdateParam() = default;
     AWS_EKS_API UpdateParam(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API UpdateParam& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The keys associated with an update request.</p>
      */
-    inline const UpdateParamType& GetType() const{ return m_type; }
+    inline UpdateParamType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const UpdateParamType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(UpdateParamType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UpdateParam& WithType(const UpdateParamType& value) { SetType(value); return *this;}
-    inline UpdateParam& WithType(UpdateParamType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(UpdateParamType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UpdateParam& WithType(UpdateParamType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the keys submitted as part of an update request.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline UpdateParam& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline UpdateParam& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline UpdateParam& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    UpdateParam& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    UpdateParamType m_type;
+    UpdateParamType m_type{UpdateParamType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_value;

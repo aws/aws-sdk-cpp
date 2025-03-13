@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ClusterStateChangeReason::ClusterStateChangeReason() : 
-    m_code(ClusterStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ClusterStateChangeReason::ClusterStateChangeReason(JsonView jsonValue)
-  : ClusterStateChangeReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ClusterStateChangeReason& ClusterStateChangeReason::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ClusterStateChangeReasonCodeMapper::GetClusterStateChangeReasonCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

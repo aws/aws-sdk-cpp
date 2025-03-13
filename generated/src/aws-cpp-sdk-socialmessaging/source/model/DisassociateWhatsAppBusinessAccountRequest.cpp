@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateWhatsAppBusinessAccountRequest::DisassociateWhatsAppBusinessAccountRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateWhatsAppBusinessAccountRequest::SerializePayload() const
 {
   return {};

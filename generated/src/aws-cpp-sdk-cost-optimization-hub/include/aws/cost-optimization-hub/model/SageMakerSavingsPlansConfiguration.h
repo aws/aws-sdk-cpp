@@ -32,7 +32,7 @@ namespace Model
   class SageMakerSavingsPlansConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API SageMakerSavingsPlansConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API SageMakerSavingsPlansConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API SageMakerSavingsPlansConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API SageMakerSavingsPlansConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>The account scope that you want your recommendations for.</p>
      */
-    inline const Aws::String& GetAccountScope() const{ return m_accountScope; }
+    inline const Aws::String& GetAccountScope() const { return m_accountScope; }
     inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
-    inline void SetAccountScope(const Aws::String& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
-    inline void SetAccountScope(Aws::String&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
-    inline void SetAccountScope(const char* value) { m_accountScopeHasBeenSet = true; m_accountScope.assign(value); }
-    inline SageMakerSavingsPlansConfiguration& WithAccountScope(const Aws::String& value) { SetAccountScope(value); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithAccountScope(Aws::String&& value) { SetAccountScope(std::move(value)); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithAccountScope(const char* value) { SetAccountScope(value); return *this;}
+    template<typename AccountScopeT = Aws::String>
+    void SetAccountScope(AccountScopeT&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::forward<AccountScopeT>(value); }
+    template<typename AccountScopeT = Aws::String>
+    SageMakerSavingsPlansConfiguration& WithAccountScope(AccountScopeT&& value) { SetAccountScope(std::forward<AccountScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Savings Plans recommendation term in years.</p>
      */
-    inline const Aws::String& GetTerm() const{ return m_term; }
+    inline const Aws::String& GetTerm() const { return m_term; }
     inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
-    inline void SetTerm(const Aws::String& value) { m_termHasBeenSet = true; m_term = value; }
-    inline void SetTerm(Aws::String&& value) { m_termHasBeenSet = true; m_term = std::move(value); }
-    inline void SetTerm(const char* value) { m_termHasBeenSet = true; m_term.assign(value); }
-    inline SageMakerSavingsPlansConfiguration& WithTerm(const Aws::String& value) { SetTerm(value); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithTerm(Aws::String&& value) { SetTerm(std::move(value)); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithTerm(const char* value) { SetTerm(value); return *this;}
+    template<typename TermT = Aws::String>
+    void SetTerm(TermT&& value) { m_termHasBeenSet = true; m_term = std::forward<TermT>(value); }
+    template<typename TermT = Aws::String>
+    SageMakerSavingsPlansConfiguration& WithTerm(TermT&& value) { SetTerm(std::forward<TermT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment option for the commitment.</p>
      */
-    inline const Aws::String& GetPaymentOption() const{ return m_paymentOption; }
+    inline const Aws::String& GetPaymentOption() const { return m_paymentOption; }
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const Aws::String& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(Aws::String&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline void SetPaymentOption(const char* value) { m_paymentOptionHasBeenSet = true; m_paymentOption.assign(value); }
-    inline SageMakerSavingsPlansConfiguration& WithPaymentOption(const Aws::String& value) { SetPaymentOption(value); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithPaymentOption(Aws::String&& value) { SetPaymentOption(std::move(value)); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithPaymentOption(const char* value) { SetPaymentOption(value); return *this;}
+    template<typename PaymentOptionT = Aws::String>
+    void SetPaymentOption(PaymentOptionT&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::forward<PaymentOptionT>(value); }
+    template<typename PaymentOptionT = Aws::String>
+    SageMakerSavingsPlansConfiguration& WithPaymentOption(PaymentOptionT&& value) { SetPaymentOption(std::forward<PaymentOptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hourly commitment for the Savings Plans type.</p>
      */
-    inline const Aws::String& GetHourlyCommitment() const{ return m_hourlyCommitment; }
+    inline const Aws::String& GetHourlyCommitment() const { return m_hourlyCommitment; }
     inline bool HourlyCommitmentHasBeenSet() const { return m_hourlyCommitmentHasBeenSet; }
-    inline void SetHourlyCommitment(const Aws::String& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = value; }
-    inline void SetHourlyCommitment(Aws::String&& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = std::move(value); }
-    inline void SetHourlyCommitment(const char* value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment.assign(value); }
-    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(const Aws::String& value) { SetHourlyCommitment(value); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(Aws::String&& value) { SetHourlyCommitment(std::move(value)); return *this;}
-    inline SageMakerSavingsPlansConfiguration& WithHourlyCommitment(const char* value) { SetHourlyCommitment(value); return *this;}
+    template<typename HourlyCommitmentT = Aws::String>
+    void SetHourlyCommitment(HourlyCommitmentT&& value) { m_hourlyCommitmentHasBeenSet = true; m_hourlyCommitment = std::forward<HourlyCommitmentT>(value); }
+    template<typename HourlyCommitmentT = Aws::String>
+    SageMakerSavingsPlansConfiguration& WithHourlyCommitment(HourlyCommitmentT&& value) { SetHourlyCommitment(std::forward<HourlyCommitmentT>(value)); return *this;}
     ///@}
   private:
 

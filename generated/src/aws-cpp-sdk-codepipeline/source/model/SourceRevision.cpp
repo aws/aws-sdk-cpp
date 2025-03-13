@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-SourceRevision::SourceRevision() : 
-    m_actionNameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_revisionSummaryHasBeenSet(false),
-    m_revisionUrlHasBeenSet(false)
-{
-}
-
 SourceRevision::SourceRevision(JsonView jsonValue)
-  : SourceRevision()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SourceRevision& SourceRevision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionSummary"))
   {
     m_revisionSummary = jsonValue.GetString("revisionSummary");
-
     m_revisionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionUrl"))
   {
     m_revisionUrl = jsonValue.GetString("revisionUrl");
-
     m_revisionUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

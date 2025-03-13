@@ -18,16 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryStagePlanNode::QueryStagePlanNode() : 
-    m_nameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_remoteSourcesHasBeenSet(false)
-{
-}
-
 QueryStagePlanNode::QueryStagePlanNode(JsonView jsonValue)
-  : QueryStagePlanNode()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Children"))
   {
     Aws::Utils::Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
@@ -57,7 +44,6 @@ QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
     }
     m_childrenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemoteSources"))
   {
     Aws::Utils::Array<JsonView> remoteSourcesJsonList = jsonValue.GetArray("RemoteSources");
@@ -67,7 +53,6 @@ QueryStagePlanNode& QueryStagePlanNode::operator =(JsonView jsonValue)
     }
     m_remoteSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

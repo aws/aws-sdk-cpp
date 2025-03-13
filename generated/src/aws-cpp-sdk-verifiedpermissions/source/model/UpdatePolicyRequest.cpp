@@ -12,13 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePolicyRequest::UpdatePolicyRequest() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_definitionHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

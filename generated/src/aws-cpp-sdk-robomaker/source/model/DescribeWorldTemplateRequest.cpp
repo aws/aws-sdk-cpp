@@ -12,11 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorldTemplateRequest::DescribeWorldTemplateRequest() : 
-    m_templateHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorldTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

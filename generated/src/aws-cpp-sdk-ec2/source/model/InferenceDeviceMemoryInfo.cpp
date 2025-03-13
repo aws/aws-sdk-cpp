@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InferenceDeviceMemoryInfo::InferenceDeviceMemoryInfo() : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
-{
-}
-
 InferenceDeviceMemoryInfo::InferenceDeviceMemoryInfo(const XmlNode& xmlNode)
-  : InferenceDeviceMemoryInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +36,7 @@ InferenceDeviceMemoryInfo& InferenceDeviceMemoryInfo::operator =(const XmlNode& 
     {
       m_sizeInMiB = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sizeInMiBNode.GetText()).c_str()).c_str());
       m_sizeInMiBHasBeenSet = true;
+       m_sizeInMiBHasBeenSet = true;
     }
   }
 

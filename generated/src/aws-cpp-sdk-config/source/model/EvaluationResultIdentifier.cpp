@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-EvaluationResultIdentifier::EvaluationResultIdentifier() : 
-    m_evaluationResultQualifierHasBeenSet(false),
-    m_orderingTimestampHasBeenSet(false),
-    m_resourceEvaluationIdHasBeenSet(false)
-{
-}
-
 EvaluationResultIdentifier::EvaluationResultIdentifier(JsonView jsonValue)
-  : EvaluationResultIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EvaluationResultIdentifier& EvaluationResultIdentifier::operator =(JsonView json
   if(jsonValue.ValueExists("EvaluationResultQualifier"))
   {
     m_evaluationResultQualifier = jsonValue.GetObject("EvaluationResultQualifier");
-
     m_evaluationResultQualifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderingTimestamp"))
   {
     m_orderingTimestamp = jsonValue.GetDouble("OrderingTimestamp");
-
     m_orderingTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceEvaluationId"))
   {
     m_resourceEvaluationId = jsonValue.GetString("ResourceEvaluationId");
-
     m_resourceEvaluationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class UpdateViewRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API UpdateViewRequest();
+    AWS_RESOURCEEXPLORER2_API UpdateViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,12 +55,12 @@ namespace Model
      * <i>not</i> tagged with a key <code>Stage</code> that has the value
      * <code>prod</code>.</p> 
      */
-    inline const SearchFilter& GetFilters() const{ return m_filters; }
+    inline const SearchFilter& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const SearchFilter& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(SearchFilter&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline UpdateViewRequest& WithFilters(const SearchFilter& value) { SetFilters(value); return *this;}
-    inline UpdateViewRequest& WithFilters(SearchFilter&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = SearchFilter>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = SearchFilter>
+    UpdateViewRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +69,14 @@ namespace Model
      * view. It is a list of objects that each describe a field to include.</p> <p>The
      * default is an empty list, with no optional fields included in the results.</p>
      */
-    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const{ return m_includedProperties; }
+    inline const Aws::Vector<IncludedProperty>& GetIncludedProperties() const { return m_includedProperties; }
     inline bool IncludedPropertiesHasBeenSet() const { return m_includedPropertiesHasBeenSet; }
-    inline void SetIncludedProperties(const Aws::Vector<IncludedProperty>& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = value; }
-    inline void SetIncludedProperties(Aws::Vector<IncludedProperty>&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::move(value); }
-    inline UpdateViewRequest& WithIncludedProperties(const Aws::Vector<IncludedProperty>& value) { SetIncludedProperties(value); return *this;}
-    inline UpdateViewRequest& WithIncludedProperties(Aws::Vector<IncludedProperty>&& value) { SetIncludedProperties(std::move(value)); return *this;}
-    inline UpdateViewRequest& AddIncludedProperties(const IncludedProperty& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.push_back(value); return *this; }
-    inline UpdateViewRequest& AddIncludedProperties(IncludedProperty&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.push_back(std::move(value)); return *this; }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    void SetIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties = std::forward<IncludedPropertiesT>(value); }
+    template<typename IncludedPropertiesT = Aws::Vector<IncludedProperty>>
+    UpdateViewRequest& WithIncludedProperties(IncludedPropertiesT&& value) { SetIncludedProperties(std::forward<IncludedPropertiesT>(value)); return *this;}
+    template<typename IncludedPropertiesT = IncludedProperty>
+    UpdateViewRequest& AddIncludedProperties(IncludedPropertiesT&& value) { m_includedPropertiesHasBeenSet = true; m_includedProperties.emplace_back(std::forward<IncludedPropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,14 +85,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * resource name (ARN)</a> of the view that you want to modify.</p>
      */
-    inline const Aws::String& GetViewArn() const{ return m_viewArn; }
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
     inline bool ViewArnHasBeenSet() const { return m_viewArnHasBeenSet; }
-    inline void SetViewArn(const Aws::String& value) { m_viewArnHasBeenSet = true; m_viewArn = value; }
-    inline void SetViewArn(Aws::String&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::move(value); }
-    inline void SetViewArn(const char* value) { m_viewArnHasBeenSet = true; m_viewArn.assign(value); }
-    inline UpdateViewRequest& WithViewArn(const Aws::String& value) { SetViewArn(value); return *this;}
-    inline UpdateViewRequest& WithViewArn(Aws::String&& value) { SetViewArn(std::move(value)); return *this;}
-    inline UpdateViewRequest& WithViewArn(const char* value) { SetViewArn(value); return *this;}
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    UpdateViewRequest& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
     ///@}
   private:
 

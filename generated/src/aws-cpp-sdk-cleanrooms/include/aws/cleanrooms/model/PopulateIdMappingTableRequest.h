@@ -21,7 +21,7 @@ namespace Model
   class PopulateIdMappingTableRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API PopulateIdMappingTableRequest();
+    AWS_CLEANROOMS_API PopulateIdMappingTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the ID mapping table that you want to populate.</p>
      */
-    inline const Aws::String& GetIdMappingTableIdentifier() const{ return m_idMappingTableIdentifier; }
+    inline const Aws::String& GetIdMappingTableIdentifier() const { return m_idMappingTableIdentifier; }
     inline bool IdMappingTableIdentifierHasBeenSet() const { return m_idMappingTableIdentifierHasBeenSet; }
-    inline void SetIdMappingTableIdentifier(const Aws::String& value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier = value; }
-    inline void SetIdMappingTableIdentifier(Aws::String&& value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier = std::move(value); }
-    inline void SetIdMappingTableIdentifier(const char* value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier.assign(value); }
-    inline PopulateIdMappingTableRequest& WithIdMappingTableIdentifier(const Aws::String& value) { SetIdMappingTableIdentifier(value); return *this;}
-    inline PopulateIdMappingTableRequest& WithIdMappingTableIdentifier(Aws::String&& value) { SetIdMappingTableIdentifier(std::move(value)); return *this;}
-    inline PopulateIdMappingTableRequest& WithIdMappingTableIdentifier(const char* value) { SetIdMappingTableIdentifier(value); return *this;}
+    template<typename IdMappingTableIdentifierT = Aws::String>
+    void SetIdMappingTableIdentifier(IdMappingTableIdentifierT&& value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier = std::forward<IdMappingTableIdentifierT>(value); }
+    template<typename IdMappingTableIdentifierT = Aws::String>
+    PopulateIdMappingTableRequest& WithIdMappingTableIdentifier(IdMappingTableIdentifierT&& value) { SetIdMappingTableIdentifier(std::forward<IdMappingTableIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>The unique identifier of the membership that contains the ID mapping table
      * that you want to populate.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline PopulateIdMappingTableRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline PopulateIdMappingTableRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline PopulateIdMappingTableRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    PopulateIdMappingTableRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
   private:
 

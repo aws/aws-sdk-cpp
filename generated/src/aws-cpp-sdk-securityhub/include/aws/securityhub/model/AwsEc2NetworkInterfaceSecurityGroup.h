@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2NetworkInterfaceSecurityGroup
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceSecurityGroup();
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceSecurityGroup() = default;
     AWS_SECURITYHUB_API AwsEc2NetworkInterfaceSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2NetworkInterfaceSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AwsEc2NetworkInterfaceSecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AwsEc2NetworkInterfaceSecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceSecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AwsEc2NetworkInterfaceSecurityGroup& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the security group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline AwsEc2NetworkInterfaceSecurityGroup& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline AwsEc2NetworkInterfaceSecurityGroup& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceSecurityGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    AwsEc2NetworkInterfaceSecurityGroup& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
   private:
 

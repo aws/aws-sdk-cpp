@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-IdleEstimatedMonthlySavings::IdleEstimatedMonthlySavings() : 
-    m_currency(Currency::NOT_SET),
-    m_currencyHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 IdleEstimatedMonthlySavings::IdleEstimatedMonthlySavings(JsonView jsonValue)
-  : IdleEstimatedMonthlySavings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IdleEstimatedMonthlySavings& IdleEstimatedMonthlySavings::operator =(JsonView js
   if(jsonValue.ValueExists("currency"))
   {
     m_currency = CurrencyMapper::GetCurrencyForName(jsonValue.GetString("currency"));
-
     m_currencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

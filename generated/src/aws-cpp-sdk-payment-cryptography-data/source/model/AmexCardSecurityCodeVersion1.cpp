@@ -18,13 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1() : 
-    m_cardExpiryDateHasBeenSet(false)
-{
-}
-
 AmexCardSecurityCodeVersion1::AmexCardSecurityCodeVersion1(JsonView jsonValue)
-  : AmexCardSecurityCodeVersion1()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmexCardSecurityCodeVersion1& AmexCardSecurityCodeVersion1::operator =(JsonView 
   if(jsonValue.ValueExists("CardExpiryDate"))
   {
     m_cardExpiryDate = jsonValue.GetString("CardExpiryDate");
-
     m_cardExpiryDateHasBeenSet = true;
   }
-
   return *this;
 }
 

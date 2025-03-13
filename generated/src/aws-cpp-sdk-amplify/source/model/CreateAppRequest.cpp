@@ -12,36 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAppRequest::CreateAppRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_computeRoleArnHasBeenSet(false),
-    m_iamServiceRoleArnHasBeenSet(false),
-    m_oauthTokenHasBeenSet(false),
-    m_accessTokenHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_enableBranchAutoBuild(false),
-    m_enableBranchAutoBuildHasBeenSet(false),
-    m_enableBranchAutoDeletion(false),
-    m_enableBranchAutoDeletionHasBeenSet(false),
-    m_enableBasicAuth(false),
-    m_enableBasicAuthHasBeenSet(false),
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_customRulesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_buildSpecHasBeenSet(false),
-    m_customHeadersHasBeenSet(false),
-    m_enableAutoBranchCreation(false),
-    m_enableAutoBranchCreationHasBeenSet(false),
-    m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false),
-    m_cacheConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateAppRequest::SerializePayload() const
 {
   JsonValue payload;

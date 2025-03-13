@@ -28,35 +28,35 @@ namespace Model
   class SendUsersMessagesResult
   {
   public:
-    AWS_PINPOINT_API SendUsersMessagesResult();
+    AWS_PINPOINT_API SendUsersMessagesResult() = default;
     AWS_PINPOINT_API SendUsersMessagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API SendUsersMessagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const SendUsersMessageResponse& GetSendUsersMessageResponse() const{ return m_sendUsersMessageResponse; }
-    inline void SetSendUsersMessageResponse(const SendUsersMessageResponse& value) { m_sendUsersMessageResponse = value; }
-    inline void SetSendUsersMessageResponse(SendUsersMessageResponse&& value) { m_sendUsersMessageResponse = std::move(value); }
-    inline SendUsersMessagesResult& WithSendUsersMessageResponse(const SendUsersMessageResponse& value) { SetSendUsersMessageResponse(value); return *this;}
-    inline SendUsersMessagesResult& WithSendUsersMessageResponse(SendUsersMessageResponse&& value) { SetSendUsersMessageResponse(std::move(value)); return *this;}
+    inline const SendUsersMessageResponse& GetSendUsersMessageResponse() const { return m_sendUsersMessageResponse; }
+    template<typename SendUsersMessageResponseT = SendUsersMessageResponse>
+    void SetSendUsersMessageResponse(SendUsersMessageResponseT&& value) { m_sendUsersMessageResponseHasBeenSet = true; m_sendUsersMessageResponse = std::forward<SendUsersMessageResponseT>(value); }
+    template<typename SendUsersMessageResponseT = SendUsersMessageResponse>
+    SendUsersMessagesResult& WithSendUsersMessageResponse(SendUsersMessageResponseT&& value) { SetSendUsersMessageResponse(std::forward<SendUsersMessageResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendUsersMessagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendUsersMessagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendUsersMessagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendUsersMessagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SendUsersMessageResponse m_sendUsersMessageResponse;
+    bool m_sendUsersMessageResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-SearchFilter::SearchFilter() : 
-    m_valuesHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 SearchFilter::SearchFilter(JsonView jsonValue)
-  : SearchFilter()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SearchFilter& SearchFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

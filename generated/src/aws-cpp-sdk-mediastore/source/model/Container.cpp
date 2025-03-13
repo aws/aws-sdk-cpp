@@ -18,20 +18,7 @@ namespace MediaStore
 namespace Model
 {
 
-Container::Container() : 
-    m_endpointHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ContainerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_accessLoggingEnabled(false),
-    m_accessLoggingEnabledHasBeenSet(false)
-{
-}
-
 Container::Container(JsonView jsonValue)
-  : Container()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Container& Container::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ContainerStatusMapper::GetContainerStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessLoggingEnabled"))
   {
     m_accessLoggingEnabled = jsonValue.GetBool("AccessLoggingEnabled");
-
     m_accessLoggingEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

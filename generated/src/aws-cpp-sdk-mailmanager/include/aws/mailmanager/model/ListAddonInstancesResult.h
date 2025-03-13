@@ -29,7 +29,7 @@ namespace Model
   class ListAddonInstancesResult
   {
   public:
-    AWS_MAILMANAGER_API ListAddonInstancesResult();
+    AWS_MAILMANAGER_API ListAddonInstancesResult() = default;
     AWS_MAILMANAGER_API ListAddonInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API ListAddonInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of ingress endpoints.</p>
      */
-    inline const Aws::Vector<AddonInstance>& GetAddonInstances() const{ return m_addonInstances; }
-    inline void SetAddonInstances(const Aws::Vector<AddonInstance>& value) { m_addonInstances = value; }
-    inline void SetAddonInstances(Aws::Vector<AddonInstance>&& value) { m_addonInstances = std::move(value); }
-    inline ListAddonInstancesResult& WithAddonInstances(const Aws::Vector<AddonInstance>& value) { SetAddonInstances(value); return *this;}
-    inline ListAddonInstancesResult& WithAddonInstances(Aws::Vector<AddonInstance>&& value) { SetAddonInstances(std::move(value)); return *this;}
-    inline ListAddonInstancesResult& AddAddonInstances(const AddonInstance& value) { m_addonInstances.push_back(value); return *this; }
-    inline ListAddonInstancesResult& AddAddonInstances(AddonInstance&& value) { m_addonInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AddonInstance>& GetAddonInstances() const { return m_addonInstances; }
+    template<typename AddonInstancesT = Aws::Vector<AddonInstance>>
+    void SetAddonInstances(AddonInstancesT&& value) { m_addonInstancesHasBeenSet = true; m_addonInstances = std::forward<AddonInstancesT>(value); }
+    template<typename AddonInstancesT = Aws::Vector<AddonInstance>>
+    ListAddonInstancesResult& WithAddonInstances(AddonInstancesT&& value) { SetAddonInstances(std::forward<AddonInstancesT>(value)); return *this;}
+    template<typename AddonInstancesT = AddonInstance>
+    ListAddonInstancesResult& AddAddonInstances(AddonInstancesT&& value) { m_addonInstancesHasBeenSet = true; m_addonInstances.emplace_back(std::forward<AddonInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * NextToken is a unique pagination token for each page. Make the call again using
      * the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAddonInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAddonInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAddonInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAddonInstancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAddonInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAddonInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAddonInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAddonInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AddonInstance> m_addonInstances;
+    bool m_addonInstancesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

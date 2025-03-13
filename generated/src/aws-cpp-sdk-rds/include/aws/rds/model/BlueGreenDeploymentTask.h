@@ -38,7 +38,7 @@ namespace Model
   class BlueGreenDeploymentTask
   {
   public:
-    AWS_RDS_API BlueGreenDeploymentTask();
+    AWS_RDS_API BlueGreenDeploymentTask() = default;
     AWS_RDS_API BlueGreenDeploymentTask(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API BlueGreenDeploymentTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The name of the blue/green deployment task.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline BlueGreenDeploymentTask& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline BlueGreenDeploymentTask& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline BlueGreenDeploymentTask& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    BlueGreenDeploymentTask& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * deployed.</p> </li> <li> <p> <code>FAILED</code> - Deployment of the resource
      * failed.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline BlueGreenDeploymentTask& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline BlueGreenDeploymentTask& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline BlueGreenDeploymentTask& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    BlueGreenDeploymentTask& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

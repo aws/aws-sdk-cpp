@@ -32,7 +32,7 @@ namespace Model
   class DeviceDefinitionVersion
   {
   public:
-    AWS_GREENGRASS_API DeviceDefinitionVersion();
+    AWS_GREENGRASS_API DeviceDefinitionVersion() = default;
     AWS_GREENGRASS_API DeviceDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API DeviceDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * A list of devices in the definition version.
      */
-    inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
+    inline const Aws::Vector<Device>& GetDevices() const { return m_devices; }
     inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
-    inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
-    inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
-    inline DeviceDefinitionVersion& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
-    inline DeviceDefinitionVersion& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
-    inline DeviceDefinitionVersion& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
-    inline DeviceDefinitionVersion& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
+    template<typename DevicesT = Aws::Vector<Device>>
+    void SetDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices = std::forward<DevicesT>(value); }
+    template<typename DevicesT = Aws::Vector<Device>>
+    DeviceDefinitionVersion& WithDevices(DevicesT&& value) { SetDevices(std::forward<DevicesT>(value)); return *this;}
+    template<typename DevicesT = Device>
+    DeviceDefinitionVersion& AddDevices(DevicesT&& value) { m_devicesHasBeenSet = true; m_devices.emplace_back(std::forward<DevicesT>(value)); return *this; }
     ///@}
   private:
 

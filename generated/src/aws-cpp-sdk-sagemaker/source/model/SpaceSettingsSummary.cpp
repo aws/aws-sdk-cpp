@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SpaceSettingsSummary::SpaceSettingsSummary() : 
-    m_appType(AppType::NOT_SET),
-    m_appTypeHasBeenSet(false),
-    m_spaceStorageSettingsHasBeenSet(false)
-{
-}
-
 SpaceSettingsSummary::SpaceSettingsSummary(JsonView jsonValue)
-  : SpaceSettingsSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SpaceSettingsSummary& SpaceSettingsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppType"))
   {
     m_appType = AppTypeMapper::GetAppTypeForName(jsonValue.GetString("AppType"));
-
     m_appTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceStorageSettings"))
   {
     m_spaceStorageSettings = jsonValue.GetObject("SpaceStorageSettings");
-
     m_spaceStorageSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

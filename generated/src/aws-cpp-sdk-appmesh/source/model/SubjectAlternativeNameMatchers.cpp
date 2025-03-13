@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-SubjectAlternativeNameMatchers::SubjectAlternativeNameMatchers() : 
-    m_exactHasBeenSet(false)
-{
-}
-
 SubjectAlternativeNameMatchers::SubjectAlternativeNameMatchers(JsonView jsonValue)
-  : SubjectAlternativeNameMatchers()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SubjectAlternativeNameMatchers& SubjectAlternativeNameMatchers::operator =(JsonV
     }
     m_exactHasBeenSet = true;
   }
-
   return *this;
 }
 

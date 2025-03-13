@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CachePointBlock::CachePointBlock() : 
-    m_type(CachePointType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CachePointBlock::CachePointBlock(JsonView jsonValue)
-  : CachePointBlock()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CachePointBlock& CachePointBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = CachePointTypeMapper::GetCachePointTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

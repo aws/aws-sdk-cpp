@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeTrustStoreAssociationsRequest::DescribeTrustStoreAssociationsRequest() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrustStoreAssociationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

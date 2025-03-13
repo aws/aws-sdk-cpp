@@ -26,7 +26,7 @@ namespace Model
   class RegisterDomainRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API RegisterDomainRequest();
+    AWS_ROUTE53DOMAINS_API RegisterDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,28 +59,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting
      * Internationalized Domain Names</a>. </p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline RegisterDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline RegisterDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline RegisterDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    RegisterDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const Aws::String& GetIdnLangCode() const{ return m_idnLangCode; }
+    inline const Aws::String& GetIdnLangCode() const { return m_idnLangCode; }
     inline bool IdnLangCodeHasBeenSet() const { return m_idnLangCodeHasBeenSet; }
-    inline void SetIdnLangCode(const Aws::String& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = value; }
-    inline void SetIdnLangCode(Aws::String&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::move(value); }
-    inline void SetIdnLangCode(const char* value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode.assign(value); }
-    inline RegisterDomainRequest& WithIdnLangCode(const Aws::String& value) { SetIdnLangCode(value); return *this;}
-    inline RegisterDomainRequest& WithIdnLangCode(Aws::String&& value) { SetIdnLangCode(std::move(value)); return *this;}
-    inline RegisterDomainRequest& WithIdnLangCode(const char* value) { SetIdnLangCode(value); return *this;}
+    template<typename IdnLangCodeT = Aws::String>
+    void SetIdnLangCode(IdnLangCodeT&& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = std::forward<IdnLangCodeT>(value); }
+    template<typename IdnLangCodeT = Aws::String>
+    RegisterDomainRequest& WithIdnLangCode(IdnLangCodeT&& value) { SetIdnLangCode(std::forward<IdnLangCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p> <p>Default: 1</p>
      */
-    inline int GetDurationInYears() const{ return m_durationInYears; }
+    inline int GetDurationInYears() const { return m_durationInYears; }
     inline bool DurationInYearsHasBeenSet() const { return m_durationInYearsHasBeenSet; }
     inline void SetDurationInYears(int value) { m_durationInYearsHasBeenSet = true; m_durationInYears = value; }
     inline RegisterDomainRequest& WithDurationInYears(int value) { SetDurationInYears(value); return *this;}
@@ -104,7 +100,7 @@ namespace Model
      * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
-    inline bool GetAutoRenew() const{ return m_autoRenew; }
+    inline bool GetAutoRenew() const { return m_autoRenew; }
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
     inline RegisterDomainRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
@@ -116,12 +112,12 @@ namespace Model
      * you specify for each element, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
-    inline const ContactDetail& GetAdminContact() const{ return m_adminContact; }
+    inline const ContactDetail& GetAdminContact() const { return m_adminContact; }
     inline bool AdminContactHasBeenSet() const { return m_adminContactHasBeenSet; }
-    inline void SetAdminContact(const ContactDetail& value) { m_adminContactHasBeenSet = true; m_adminContact = value; }
-    inline void SetAdminContact(ContactDetail&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::move(value); }
-    inline RegisterDomainRequest& WithAdminContact(const ContactDetail& value) { SetAdminContact(value); return *this;}
-    inline RegisterDomainRequest& WithAdminContact(ContactDetail&& value) { SetAdminContact(std::move(value)); return *this;}
+    template<typename AdminContactT = ContactDetail>
+    void SetAdminContact(AdminContactT&& value) { m_adminContactHasBeenSet = true; m_adminContact = std::forward<AdminContactT>(value); }
+    template<typename AdminContactT = ContactDetail>
+    RegisterDomainRequest& WithAdminContact(AdminContactT&& value) { SetAdminContact(std::forward<AdminContactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +126,12 @@ namespace Model
      * you specify for each element, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
-    inline const ContactDetail& GetRegistrantContact() const{ return m_registrantContact; }
+    inline const ContactDetail& GetRegistrantContact() const { return m_registrantContact; }
     inline bool RegistrantContactHasBeenSet() const { return m_registrantContactHasBeenSet; }
-    inline void SetRegistrantContact(const ContactDetail& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
-    inline void SetRegistrantContact(ContactDetail&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::move(value); }
-    inline RegisterDomainRequest& WithRegistrantContact(const ContactDetail& value) { SetRegistrantContact(value); return *this;}
-    inline RegisterDomainRequest& WithRegistrantContact(ContactDetail&& value) { SetRegistrantContact(std::move(value)); return *this;}
+    template<typename RegistrantContactT = ContactDetail>
+    void SetRegistrantContact(RegistrantContactT&& value) { m_registrantContactHasBeenSet = true; m_registrantContact = std::forward<RegistrantContactT>(value); }
+    template<typename RegistrantContactT = ContactDetail>
+    RegisterDomainRequest& WithRegistrantContact(RegistrantContactT&& value) { SetRegistrantContact(std::forward<RegistrantContactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +140,12 @@ namespace Model
      * you specify for each element, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
-    inline const ContactDetail& GetTechContact() const{ return m_techContact; }
+    inline const ContactDetail& GetTechContact() const { return m_techContact; }
     inline bool TechContactHasBeenSet() const { return m_techContactHasBeenSet; }
-    inline void SetTechContact(const ContactDetail& value) { m_techContactHasBeenSet = true; m_techContact = value; }
-    inline void SetTechContact(ContactDetail&& value) { m_techContactHasBeenSet = true; m_techContact = std::move(value); }
-    inline RegisterDomainRequest& WithTechContact(const ContactDetail& value) { SetTechContact(value); return *this;}
-    inline RegisterDomainRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
+    template<typename TechContactT = ContactDetail>
+    void SetTechContact(TechContactT&& value) { m_techContactHasBeenSet = true; m_techContact = std::forward<TechContactT>(value); }
+    template<typename TechContactT = ContactDetail>
+    RegisterDomainRequest& WithTechContact(TechContactT&& value) { SetTechContact(std::forward<TechContactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,7 +158,7 @@ namespace Model
      * setting for the administrative, billing, registrant, and technical contacts.</p>
      *  <p>Default: <code>true</code> </p>
      */
-    inline bool GetPrivacyProtectAdminContact() const{ return m_privacyProtectAdminContact; }
+    inline bool GetPrivacyProtectAdminContact() const { return m_privacyProtectAdminContact; }
     inline bool PrivacyProtectAdminContactHasBeenSet() const { return m_privacyProtectAdminContactHasBeenSet; }
     inline void SetPrivacyProtectAdminContact(bool value) { m_privacyProtectAdminContactHasBeenSet = true; m_privacyProtectAdminContact = value; }
     inline RegisterDomainRequest& WithPrivacyProtectAdminContact(bool value) { SetPrivacyProtectAdminContact(value); return *this;}
@@ -178,7 +174,7 @@ namespace Model
      * specify the same privacy setting for the administrative, billing, registrant,
      * and technical contacts.</p>  <p>Default: <code>true</code> </p>
      */
-    inline bool GetPrivacyProtectRegistrantContact() const{ return m_privacyProtectRegistrantContact; }
+    inline bool GetPrivacyProtectRegistrantContact() const { return m_privacyProtectRegistrantContact; }
     inline bool PrivacyProtectRegistrantContactHasBeenSet() const { return m_privacyProtectRegistrantContactHasBeenSet; }
     inline void SetPrivacyProtectRegistrantContact(bool value) { m_privacyProtectRegistrantContactHasBeenSet = true; m_privacyProtectRegistrantContact = value; }
     inline RegisterDomainRequest& WithPrivacyProtectRegistrantContact(bool value) { SetPrivacyProtectRegistrantContact(value); return *this;}
@@ -194,7 +190,7 @@ namespace Model
      * privacy setting for the administrative, billing, registrant, and technical
      * contacts.</p>  <p>Default: <code>true</code> </p>
      */
-    inline bool GetPrivacyProtectTechContact() const{ return m_privacyProtectTechContact; }
+    inline bool GetPrivacyProtectTechContact() const { return m_privacyProtectTechContact; }
     inline bool PrivacyProtectTechContactHasBeenSet() const { return m_privacyProtectTechContactHasBeenSet; }
     inline void SetPrivacyProtectTechContact(bool value) { m_privacyProtectTechContactHasBeenSet = true; m_privacyProtectTechContact = value; }
     inline RegisterDomainRequest& WithPrivacyProtectTechContact(bool value) { SetPrivacyProtectTechContact(value); return *this;}
@@ -206,12 +202,12 @@ namespace Model
      * you specify for each element, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
      */
-    inline const ContactDetail& GetBillingContact() const{ return m_billingContact; }
+    inline const ContactDetail& GetBillingContact() const { return m_billingContact; }
     inline bool BillingContactHasBeenSet() const { return m_billingContactHasBeenSet; }
-    inline void SetBillingContact(const ContactDetail& value) { m_billingContactHasBeenSet = true; m_billingContact = value; }
-    inline void SetBillingContact(ContactDetail&& value) { m_billingContactHasBeenSet = true; m_billingContact = std::move(value); }
-    inline RegisterDomainRequest& WithBillingContact(const ContactDetail& value) { SetBillingContact(value); return *this;}
-    inline RegisterDomainRequest& WithBillingContact(ContactDetail&& value) { SetBillingContact(std::move(value)); return *this;}
+    template<typename BillingContactT = ContactDetail>
+    void SetBillingContact(BillingContactT&& value) { m_billingContactHasBeenSet = true; m_billingContact = std::forward<BillingContactT>(value); }
+    template<typename BillingContactT = ContactDetail>
+    RegisterDomainRequest& WithBillingContact(BillingContactT&& value) { SetBillingContact(std::forward<BillingContactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,7 +220,7 @@ namespace Model
      * setting for the administrative, billing, registrant, and technical contacts.</p>
      * 
      */
-    inline bool GetPrivacyProtectBillingContact() const{ return m_privacyProtectBillingContact; }
+    inline bool GetPrivacyProtectBillingContact() const { return m_privacyProtectBillingContact; }
     inline bool PrivacyProtectBillingContactHasBeenSet() const { return m_privacyProtectBillingContactHasBeenSet; }
     inline void SetPrivacyProtectBillingContact(bool value) { m_privacyProtectBillingContactHasBeenSet = true; m_privacyProtectBillingContact = value; }
     inline RegisterDomainRequest& WithPrivacyProtectBillingContact(bool value) { SetPrivacyProtectBillingContact(value); return *this;}
@@ -237,10 +233,10 @@ namespace Model
     Aws::String m_idnLangCode;
     bool m_idnLangCodeHasBeenSet = false;
 
-    int m_durationInYears;
+    int m_durationInYears{0};
     bool m_durationInYearsHasBeenSet = false;
 
-    bool m_autoRenew;
+    bool m_autoRenew{false};
     bool m_autoRenewHasBeenSet = false;
 
     ContactDetail m_adminContact;
@@ -252,19 +248,19 @@ namespace Model
     ContactDetail m_techContact;
     bool m_techContactHasBeenSet = false;
 
-    bool m_privacyProtectAdminContact;
+    bool m_privacyProtectAdminContact{false};
     bool m_privacyProtectAdminContactHasBeenSet = false;
 
-    bool m_privacyProtectRegistrantContact;
+    bool m_privacyProtectRegistrantContact{false};
     bool m_privacyProtectRegistrantContactHasBeenSet = false;
 
-    bool m_privacyProtectTechContact;
+    bool m_privacyProtectTechContact{false};
     bool m_privacyProtectTechContactHasBeenSet = false;
 
     ContactDetail m_billingContact;
     bool m_billingContactHasBeenSet = false;
 
-    bool m_privacyProtectBillingContact;
+    bool m_privacyProtectBillingContact{false};
     bool m_privacyProtectBillingContactHasBeenSet = false;
   };
 

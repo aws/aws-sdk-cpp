@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteSSHPublicKeyRequest::DeleteSSHPublicKeyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSSHPublicKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyDBParameterGroupResult::CopyDBParameterGroupResult()
-{
-}
-
 CopyDBParameterGroupResult::CopyDBParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CopyDBParameterGroupResult& CopyDBParameterGroupResult::operator =(const Aws::Am
     if(!dBParameterGroupNode.IsNull())
     {
       m_dBParameterGroup = dBParameterGroupNode;
+      m_dBParameterGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CopyDBParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

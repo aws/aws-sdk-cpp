@@ -34,7 +34,7 @@ namespace Model
   class UpdateKxEnvironmentResult
   {
   public:
-    AWS_FINSPACE_API UpdateKxEnvironmentResult();
+    AWS_FINSPACE_API UpdateKxEnvironmentResult() = default;
     AWS_FINSPACE_API UpdateKxEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API UpdateKxEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The name of the kdb environment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateKxEnvironmentResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateKxEnvironmentResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the kdb environment.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentId.assign(value); }
-    inline UpdateKxEnvironmentResult& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    UpdateKxEnvironmentResult& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,120 +66,102 @@ namespace Model
      * <p>The unique identifier of the AWS account that is used to create the kdb
      * environment.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountId.assign(value); }
-    inline UpdateKxEnvironmentResult& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateKxEnvironmentResult& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the kdb environment.</p>
      */
-    inline const EnvironmentStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const EnvironmentStatus& value) { m_status = value; }
-    inline void SetStatus(EnvironmentStatus&& value) { m_status = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithStatus(const EnvironmentStatus& value) { SetStatus(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithStatus(EnvironmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline EnvironmentStatus GetStatus() const { return m_status; }
+    inline void SetStatus(EnvironmentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateKxEnvironmentResult& WithStatus(EnvironmentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the network configuration.</p>
      */
-    inline const TgwStatus& GetTgwStatus() const{ return m_tgwStatus; }
-    inline void SetTgwStatus(const TgwStatus& value) { m_tgwStatus = value; }
-    inline void SetTgwStatus(TgwStatus&& value) { m_tgwStatus = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithTgwStatus(const TgwStatus& value) { SetTgwStatus(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithTgwStatus(TgwStatus&& value) { SetTgwStatus(std::move(value)); return *this;}
+    inline TgwStatus GetTgwStatus() const { return m_tgwStatus; }
+    inline void SetTgwStatus(TgwStatus value) { m_tgwStatusHasBeenSet = true; m_tgwStatus = value; }
+    inline UpdateKxEnvironmentResult& WithTgwStatus(TgwStatus value) { SetTgwStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of DNS configuration.</p>
      */
-    inline const DnsStatus& GetDnsStatus() const{ return m_dnsStatus; }
-    inline void SetDnsStatus(const DnsStatus& value) { m_dnsStatus = value; }
-    inline void SetDnsStatus(DnsStatus&& value) { m_dnsStatus = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithDnsStatus(const DnsStatus& value) { SetDnsStatus(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithDnsStatus(DnsStatus&& value) { SetDnsStatus(std::move(value)); return *this;}
+    inline DnsStatus GetDnsStatus() const { return m_dnsStatus; }
+    inline void SetDnsStatus(DnsStatus value) { m_dnsStatusHasBeenSet = true; m_dnsStatus = value; }
+    inline UpdateKxEnvironmentResult& WithDnsStatus(DnsStatus value) { SetDnsStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the error message that appears if a flow fails.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline UpdateKxEnvironmentResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UpdateKxEnvironmentResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the environment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateKxEnvironmentResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateKxEnvironmentResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN identifier of the environment.</p>
      */
-    inline const Aws::String& GetEnvironmentArn() const{ return m_environmentArn; }
-    inline void SetEnvironmentArn(const Aws::String& value) { m_environmentArn = value; }
-    inline void SetEnvironmentArn(Aws::String&& value) { m_environmentArn = std::move(value); }
-    inline void SetEnvironmentArn(const char* value) { m_environmentArn.assign(value); }
-    inline UpdateKxEnvironmentResult& WithEnvironmentArn(const Aws::String& value) { SetEnvironmentArn(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithEnvironmentArn(Aws::String&& value) { SetEnvironmentArn(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithEnvironmentArn(const char* value) { SetEnvironmentArn(value); return *this;}
+    inline const Aws::String& GetEnvironmentArn() const { return m_environmentArn; }
+    template<typename EnvironmentArnT = Aws::String>
+    void SetEnvironmentArn(EnvironmentArnT&& value) { m_environmentArnHasBeenSet = true; m_environmentArn = std::forward<EnvironmentArnT>(value); }
+    template<typename EnvironmentArnT = Aws::String>
+    UpdateKxEnvironmentResult& WithEnvironmentArn(EnvironmentArnT&& value) { SetEnvironmentArn(std::forward<EnvironmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The KMS key ID to encrypt your data in the FinSpace environment.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline UpdateKxEnvironmentResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    UpdateKxEnvironmentResult& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the AWS environment infrastructure account.</p>
      */
-    inline const Aws::String& GetDedicatedServiceAccountId() const{ return m_dedicatedServiceAccountId; }
-    inline void SetDedicatedServiceAccountId(const Aws::String& value) { m_dedicatedServiceAccountId = value; }
-    inline void SetDedicatedServiceAccountId(Aws::String&& value) { m_dedicatedServiceAccountId = std::move(value); }
-    inline void SetDedicatedServiceAccountId(const char* value) { m_dedicatedServiceAccountId.assign(value); }
-    inline UpdateKxEnvironmentResult& WithDedicatedServiceAccountId(const Aws::String& value) { SetDedicatedServiceAccountId(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithDedicatedServiceAccountId(Aws::String&& value) { SetDedicatedServiceAccountId(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithDedicatedServiceAccountId(const char* value) { SetDedicatedServiceAccountId(value); return *this;}
+    inline const Aws::String& GetDedicatedServiceAccountId() const { return m_dedicatedServiceAccountId; }
+    template<typename DedicatedServiceAccountIdT = Aws::String>
+    void SetDedicatedServiceAccountId(DedicatedServiceAccountIdT&& value) { m_dedicatedServiceAccountIdHasBeenSet = true; m_dedicatedServiceAccountId = std::forward<DedicatedServiceAccountIdT>(value); }
+    template<typename DedicatedServiceAccountIdT = Aws::String>
+    UpdateKxEnvironmentResult& WithDedicatedServiceAccountId(DedicatedServiceAccountIdT&& value) { SetDedicatedServiceAccountId(std::forward<DedicatedServiceAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TransitGatewayConfiguration& GetTransitGatewayConfiguration() const{ return m_transitGatewayConfiguration; }
-    inline void SetTransitGatewayConfiguration(const TransitGatewayConfiguration& value) { m_transitGatewayConfiguration = value; }
-    inline void SetTransitGatewayConfiguration(TransitGatewayConfiguration&& value) { m_transitGatewayConfiguration = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithTransitGatewayConfiguration(const TransitGatewayConfiguration& value) { SetTransitGatewayConfiguration(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithTransitGatewayConfiguration(TransitGatewayConfiguration&& value) { SetTransitGatewayConfiguration(std::move(value)); return *this;}
+    inline const TransitGatewayConfiguration& GetTransitGatewayConfiguration() const { return m_transitGatewayConfiguration; }
+    template<typename TransitGatewayConfigurationT = TransitGatewayConfiguration>
+    void SetTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) { m_transitGatewayConfigurationHasBeenSet = true; m_transitGatewayConfiguration = std::forward<TransitGatewayConfigurationT>(value); }
+    template<typename TransitGatewayConfigurationT = TransitGatewayConfiguration>
+    UpdateKxEnvironmentResult& WithTransitGatewayConfiguration(TransitGatewayConfigurationT&& value) { SetTransitGatewayConfiguration(std::forward<TransitGatewayConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,35 +169,35 @@ namespace Model
      * <p>A list of DNS server name and server IP. This is used to set up Route-53
      * outbound resolvers.</p>
      */
-    inline const Aws::Vector<CustomDNSServer>& GetCustomDNSConfiguration() const{ return m_customDNSConfiguration; }
-    inline void SetCustomDNSConfiguration(const Aws::Vector<CustomDNSServer>& value) { m_customDNSConfiguration = value; }
-    inline void SetCustomDNSConfiguration(Aws::Vector<CustomDNSServer>&& value) { m_customDNSConfiguration = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithCustomDNSConfiguration(const Aws::Vector<CustomDNSServer>& value) { SetCustomDNSConfiguration(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithCustomDNSConfiguration(Aws::Vector<CustomDNSServer>&& value) { SetCustomDNSConfiguration(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& AddCustomDNSConfiguration(const CustomDNSServer& value) { m_customDNSConfiguration.push_back(value); return *this; }
-    inline UpdateKxEnvironmentResult& AddCustomDNSConfiguration(CustomDNSServer&& value) { m_customDNSConfiguration.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CustomDNSServer>& GetCustomDNSConfiguration() const { return m_customDNSConfiguration; }
+    template<typename CustomDNSConfigurationT = Aws::Vector<CustomDNSServer>>
+    void SetCustomDNSConfiguration(CustomDNSConfigurationT&& value) { m_customDNSConfigurationHasBeenSet = true; m_customDNSConfiguration = std::forward<CustomDNSConfigurationT>(value); }
+    template<typename CustomDNSConfigurationT = Aws::Vector<CustomDNSServer>>
+    UpdateKxEnvironmentResult& WithCustomDNSConfiguration(CustomDNSConfigurationT&& value) { SetCustomDNSConfiguration(std::forward<CustomDNSConfigurationT>(value)); return *this;}
+    template<typename CustomDNSConfigurationT = CustomDNSServer>
+    UpdateKxEnvironmentResult& AddCustomDNSConfiguration(CustomDNSConfigurationT&& value) { m_customDNSConfigurationHasBeenSet = true; m_customDNSConfiguration.emplace_back(std::forward<CustomDNSConfigurationT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the kdb environment was created in FinSpace. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestamp = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTimestamp() const { return m_creationTimestamp; }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::Utils::DateTime>
+    UpdateKxEnvironmentResult& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the kdb environment was updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTimestamp() const{ return m_updateTimestamp; }
-    inline void SetUpdateTimestamp(const Aws::Utils::DateTime& value) { m_updateTimestamp = value; }
-    inline void SetUpdateTimestamp(Aws::Utils::DateTime&& value) { m_updateTimestamp = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithUpdateTimestamp(const Aws::Utils::DateTime& value) { SetUpdateTimestamp(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithUpdateTimestamp(Aws::Utils::DateTime&& value) { SetUpdateTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTimestamp() const { return m_updateTimestamp; }
+    template<typename UpdateTimestampT = Aws::Utils::DateTime>
+    void SetUpdateTimestamp(UpdateTimestampT&& value) { m_updateTimestampHasBeenSet = true; m_updateTimestamp = std::forward<UpdateTimestampT>(value); }
+    template<typename UpdateTimestampT = Aws::Utils::DateTime>
+    UpdateKxEnvironmentResult& WithUpdateTimestamp(UpdateTimestampT&& value) { SetUpdateTimestamp(std::forward<UpdateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,61 +205,75 @@ namespace Model
      * <p>The identifier of the availability zones where subnets for the environment
      * are created.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const{ return m_availabilityZoneIds; }
-    inline void SetAvailabilityZoneIds(const Aws::Vector<Aws::String>& value) { m_availabilityZoneIds = value; }
-    inline void SetAvailabilityZoneIds(Aws::Vector<Aws::String>&& value) { m_availabilityZoneIds = std::move(value); }
-    inline UpdateKxEnvironmentResult& WithAvailabilityZoneIds(const Aws::Vector<Aws::String>& value) { SetAvailabilityZoneIds(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithAvailabilityZoneIds(Aws::Vector<Aws::String>&& value) { SetAvailabilityZoneIds(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& AddAvailabilityZoneIds(const Aws::String& value) { m_availabilityZoneIds.push_back(value); return *this; }
-    inline UpdateKxEnvironmentResult& AddAvailabilityZoneIds(Aws::String&& value) { m_availabilityZoneIds.push_back(std::move(value)); return *this; }
-    inline UpdateKxEnvironmentResult& AddAvailabilityZoneIds(const char* value) { m_availabilityZoneIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+    template<typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+    void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { m_availabilityZoneIdsHasBeenSet = true; m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value); }
+    template<typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+    UpdateKxEnvironmentResult& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value)); return *this;}
+    template<typename AvailabilityZoneIdsT = Aws::String>
+    UpdateKxEnvironmentResult& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) { m_availabilityZoneIdsHasBeenSet = true; m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateKxEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateKxEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateKxEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateKxEnvironmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_environmentId;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_awsAccountId;
+    bool m_awsAccountIdHasBeenSet = false;
 
-    EnvironmentStatus m_status;
+    EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    TgwStatus m_tgwStatus;
+    TgwStatus m_tgwStatus{TgwStatus::NOT_SET};
+    bool m_tgwStatusHasBeenSet = false;
 
-    DnsStatus m_dnsStatus;
+    DnsStatus m_dnsStatus{DnsStatus::NOT_SET};
+    bool m_dnsStatusHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_environmentArn;
+    bool m_environmentArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dedicatedServiceAccountId;
+    bool m_dedicatedServiceAccountIdHasBeenSet = false;
 
     TransitGatewayConfiguration m_transitGatewayConfiguration;
+    bool m_transitGatewayConfigurationHasBeenSet = false;
 
     Aws::Vector<CustomDNSServer> m_customDNSConfiguration;
+    bool m_customDNSConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTimestamp{};
+    bool m_creationTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTimestamp;
+    Aws::Utils::DateTime m_updateTimestamp{};
+    bool m_updateTimestampHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZoneIds;
+    bool m_availabilityZoneIdsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

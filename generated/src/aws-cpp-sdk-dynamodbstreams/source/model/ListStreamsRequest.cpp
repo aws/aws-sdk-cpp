@@ -12,14 +12,6 @@ using namespace Aws::DynamoDBStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStreamsRequest::ListStreamsRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_exclusiveStartStreamArnHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

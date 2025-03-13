@@ -20,15 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SearchFilter::SearchFilter() : 
-    m_attributeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SearchFilter::SearchFilter(const XmlNode& xmlNode)
-  : SearchFilter()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ SearchFilter& SearchFilter::operator =(const XmlNode& xmlNode)
     {
       m_attribute = Aws::Utils::Xml::DecodeEscapedXmlText(attributeNode.GetText());
       m_attributeHasBeenSet = true;
+       m_attributeHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("Operator");
     if(!operatorNode.IsNull())
     {
       m_operator = Aws::Utils::Xml::DecodeEscapedXmlText(operatorNode.GetText());
       m_operatorHasBeenSet = true;
+       m_operatorHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());
         valuesMember = valuesMember.NextNode("member");
       }
 
-      m_valuesHasBeenSet = true;
+       m_valuesHasBeenSet = true;
     }
   }
 

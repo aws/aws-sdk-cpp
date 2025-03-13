@@ -29,7 +29,7 @@ namespace Model
   class ListFlowAliasesResult
   {
   public:
-    AWS_BEDROCKAGENT_API ListFlowAliasesResult();
+    AWS_BEDROCKAGENT_API ListFlowAliasesResult() = default;
     AWS_BEDROCKAGENT_API ListFlowAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API ListFlowAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list, each member of which contains information about an alias.</p>
      */
-    inline const Aws::Vector<FlowAliasSummary>& GetFlowAliasSummaries() const{ return m_flowAliasSummaries; }
-    inline void SetFlowAliasSummaries(const Aws::Vector<FlowAliasSummary>& value) { m_flowAliasSummaries = value; }
-    inline void SetFlowAliasSummaries(Aws::Vector<FlowAliasSummary>&& value) { m_flowAliasSummaries = std::move(value); }
-    inline ListFlowAliasesResult& WithFlowAliasSummaries(const Aws::Vector<FlowAliasSummary>& value) { SetFlowAliasSummaries(value); return *this;}
-    inline ListFlowAliasesResult& WithFlowAliasSummaries(Aws::Vector<FlowAliasSummary>&& value) { SetFlowAliasSummaries(std::move(value)); return *this;}
-    inline ListFlowAliasesResult& AddFlowAliasSummaries(const FlowAliasSummary& value) { m_flowAliasSummaries.push_back(value); return *this; }
-    inline ListFlowAliasesResult& AddFlowAliasSummaries(FlowAliasSummary&& value) { m_flowAliasSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FlowAliasSummary>& GetFlowAliasSummaries() const { return m_flowAliasSummaries; }
+    template<typename FlowAliasSummariesT = Aws::Vector<FlowAliasSummary>>
+    void SetFlowAliasSummaries(FlowAliasSummariesT&& value) { m_flowAliasSummariesHasBeenSet = true; m_flowAliasSummaries = std::forward<FlowAliasSummariesT>(value); }
+    template<typename FlowAliasSummariesT = Aws::Vector<FlowAliasSummary>>
+    ListFlowAliasesResult& WithFlowAliasSummaries(FlowAliasSummariesT&& value) { SetFlowAliasSummaries(std::forward<FlowAliasSummariesT>(value)); return *this;}
+    template<typename FlowAliasSummariesT = FlowAliasSummary>
+    ListFlowAliasesResult& AddFlowAliasSummaries(FlowAliasSummariesT&& value) { m_flowAliasSummariesHasBeenSet = true; m_flowAliasSummaries.emplace_back(std::forward<FlowAliasSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * value provided in the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFlowAliasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFlowAliasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFlowAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFlowAliasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFlowAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFlowAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFlowAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFlowAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FlowAliasSummary> m_flowAliasSummaries;
+    bool m_flowAliasSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

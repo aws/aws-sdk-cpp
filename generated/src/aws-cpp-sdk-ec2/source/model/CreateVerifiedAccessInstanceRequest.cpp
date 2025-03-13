@@ -10,19 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateVerifiedAccessInstanceRequest::CreateVerifiedAccessInstanceRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_fIPSEnabled(false),
-    m_fIPSEnabledHasBeenSet(false),
-    m_cidrEndpointsCustomSubDomainHasBeenSet(false)
-{
-}
-
 Aws::String CreateVerifiedAccessInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

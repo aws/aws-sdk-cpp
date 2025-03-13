@@ -18,19 +18,7 @@ namespace FMS
 namespace Model
 {
 
-AppsListData::AppsListData() : 
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_listUpdateTokenHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_appsListHasBeenSet(false),
-    m_previousAppsListHasBeenSet(false)
-{
-}
-
 AppsListData::AppsListData(JsonView jsonValue)
-  : AppsListData()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AppsListData& AppsListData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ListId"))
   {
     m_listId = jsonValue.GetString("ListId");
-
     m_listIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListName"))
   {
     m_listName = jsonValue.GetString("ListName");
-
     m_listNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListUpdateToken"))
   {
     m_listUpdateToken = jsonValue.GetString("ListUpdateToken");
-
     m_listUpdateTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppsList"))
   {
     Aws::Utils::Array<JsonView> appsListJsonList = jsonValue.GetArray("AppsList");
@@ -81,7 +59,6 @@ AppsListData& AppsListData::operator =(JsonView jsonValue)
     }
     m_appsListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousAppsList"))
   {
     Aws::Map<Aws::String, JsonView> previousAppsListJsonMap = jsonValue.GetObject("PreviousAppsList").GetAllObjects();
@@ -98,7 +75,6 @@ AppsListData& AppsListData::operator =(JsonView jsonValue)
     }
     m_previousAppsListHasBeenSet = true;
   }
-
   return *this;
 }
 

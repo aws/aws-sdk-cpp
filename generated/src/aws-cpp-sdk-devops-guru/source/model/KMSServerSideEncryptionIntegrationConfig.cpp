@@ -18,17 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-KMSServerSideEncryptionIntegrationConfig::KMSServerSideEncryptionIntegrationConfig() : 
-    m_kMSKeyIdHasBeenSet(false),
-    m_optInStatus(OptInStatus::NOT_SET),
-    m_optInStatusHasBeenSet(false),
-    m_type(ServerSideEncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 KMSServerSideEncryptionIntegrationConfig::KMSServerSideEncryptionIntegrationConfig(JsonView jsonValue)
-  : KMSServerSideEncryptionIntegrationConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KMSServerSideEncryptionIntegrationConfig& KMSServerSideEncryptionIntegrationConf
   if(jsonValue.ValueExists("KMSKeyId"))
   {
     m_kMSKeyId = jsonValue.GetString("KMSKeyId");
-
     m_kMSKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptInStatus"))
   {
     m_optInStatus = OptInStatusMapper::GetOptInStatusForName(jsonValue.GetString("OptInStatus"));
-
     m_optInStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ServerSideEncryptionTypeMapper::GetServerSideEncryptionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

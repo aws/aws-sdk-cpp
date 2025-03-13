@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMigrationTaskUpdatesResult::ListMigrationTaskUpdatesResult()
-{
-}
-
 ListMigrationTaskUpdatesResult::ListMigrationTaskUpdatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMigrationTaskUpdatesResult& ListMigrationTaskUpdatesResult::operator =(const
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationTaskUpdateList"))
   {
     Aws::Utils::Array<JsonView> migrationTaskUpdateListJsonList = jsonValue.GetArray("MigrationTaskUpdateList");
@@ -42,14 +37,15 @@ ListMigrationTaskUpdatesResult& ListMigrationTaskUpdatesResult::operator =(const
     {
       m_migrationTaskUpdateList.push_back(migrationTaskUpdateListJsonList[migrationTaskUpdateListIndex].AsObject());
     }
+    m_migrationTaskUpdateListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

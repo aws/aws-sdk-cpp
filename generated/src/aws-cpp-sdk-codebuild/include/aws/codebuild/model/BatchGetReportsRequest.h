@@ -22,7 +22,7 @@ namespace Model
   class BatchGetReportsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API BatchGetReportsRequest();
+    AWS_CODEBUILD_API BatchGetReportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p> An array of ARNs that identify the <code>Report</code> objects to return.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetReportArns() const{ return m_reportArns; }
+    inline const Aws::Vector<Aws::String>& GetReportArns() const { return m_reportArns; }
     inline bool ReportArnsHasBeenSet() const { return m_reportArnsHasBeenSet; }
-    inline void SetReportArns(const Aws::Vector<Aws::String>& value) { m_reportArnsHasBeenSet = true; m_reportArns = value; }
-    inline void SetReportArns(Aws::Vector<Aws::String>&& value) { m_reportArnsHasBeenSet = true; m_reportArns = std::move(value); }
-    inline BatchGetReportsRequest& WithReportArns(const Aws::Vector<Aws::String>& value) { SetReportArns(value); return *this;}
-    inline BatchGetReportsRequest& WithReportArns(Aws::Vector<Aws::String>&& value) { SetReportArns(std::move(value)); return *this;}
-    inline BatchGetReportsRequest& AddReportArns(const Aws::String& value) { m_reportArnsHasBeenSet = true; m_reportArns.push_back(value); return *this; }
-    inline BatchGetReportsRequest& AddReportArns(Aws::String&& value) { m_reportArnsHasBeenSet = true; m_reportArns.push_back(std::move(value)); return *this; }
-    inline BatchGetReportsRequest& AddReportArns(const char* value) { m_reportArnsHasBeenSet = true; m_reportArns.push_back(value); return *this; }
+    template<typename ReportArnsT = Aws::Vector<Aws::String>>
+    void SetReportArns(ReportArnsT&& value) { m_reportArnsHasBeenSet = true; m_reportArns = std::forward<ReportArnsT>(value); }
+    template<typename ReportArnsT = Aws::Vector<Aws::String>>
+    BatchGetReportsRequest& WithReportArns(ReportArnsT&& value) { SetReportArns(std::forward<ReportArnsT>(value)); return *this;}
+    template<typename ReportArnsT = Aws::String>
+    BatchGetReportsRequest& AddReportArns(ReportArnsT&& value) { m_reportArnsHasBeenSet = true; m_reportArns.emplace_back(std::forward<ReportArnsT>(value)); return *this; }
     ///@}
   private:
 

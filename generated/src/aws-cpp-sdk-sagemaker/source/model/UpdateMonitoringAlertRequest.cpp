@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMonitoringAlertRequest::UpdateMonitoringAlertRequest() : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringAlertNameHasBeenSet(false),
-    m_datapointsToAlert(0),
-    m_datapointsToAlertHasBeenSet(false),
-    m_evaluationPeriod(0),
-    m_evaluationPeriodHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMonitoringAlertRequest::SerializePayload() const
 {
   JsonValue payload;

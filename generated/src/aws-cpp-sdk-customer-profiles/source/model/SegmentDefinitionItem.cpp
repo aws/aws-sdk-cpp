@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-SegmentDefinitionItem::SegmentDefinitionItem() : 
-    m_segmentDefinitionNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_segmentDefinitionArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SegmentDefinitionItem::SegmentDefinitionItem(JsonView jsonValue)
-  : SegmentDefinitionItem()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SegmentDefinitionItem& SegmentDefinitionItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SegmentDefinitionName"))
   {
     m_segmentDefinitionName = jsonValue.GetString("SegmentDefinitionName");
-
     m_segmentDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentDefinitionArn"))
   {
     m_segmentDefinitionArn = jsonValue.GetString("SegmentDefinitionArn");
-
     m_segmentDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -80,7 +59,6 @@ SegmentDefinitionItem& SegmentDefinitionItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

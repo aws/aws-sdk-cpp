@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcEndpointServicePermissionsResponse::DescribeVpcEndpointServicePermissionsResponse()
-{
-}
-
 DescribeVpcEndpointServicePermissionsResponse::DescribeVpcEndpointServicePermissionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeVpcEndpointServicePermissionsResponse& DescribeVpcEndpointServicePermiss
     if(!allowedPrincipalsNode.IsNull())
     {
       XmlNode allowedPrincipalsMember = allowedPrincipalsNode.FirstChild("item");
+      m_allowedPrincipalsHasBeenSet = !allowedPrincipalsMember.IsNull();
       while(!allowedPrincipalsMember.IsNull())
       {
         m_allowedPrincipals.push_back(allowedPrincipalsMember);
@@ -53,6 +50,7 @@ DescribeVpcEndpointServicePermissionsResponse& DescribeVpcEndpointServicePermiss
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeVpcEndpointServicePermissionsResponse& DescribeVpcEndpointServicePermiss
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcEndpointServicePermissionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

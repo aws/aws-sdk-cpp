@@ -12,15 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateReportGroupRequest::CreateReportGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(ReportType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_exportConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateReportGroupRequest::SerializePayload() const
 {
   JsonValue payload;

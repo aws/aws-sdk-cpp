@@ -32,7 +32,7 @@ namespace Model
   class EmbeddedSourceSettings
   {
   public:
-    AWS_MEDIALIVE_API EmbeddedSourceSettings();
+    AWS_MEDIALIVE_API EmbeddedSourceSettings() = default;
     AWS_MEDIALIVE_API EmbeddedSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API EmbeddedSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * fields of the 708 wrapper as well as translated into 708. 708 data present in
      * the source content will be discarded.
      */
-    inline const EmbeddedConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
+    inline EmbeddedConvert608To708 GetConvert608To708() const { return m_convert608To708; }
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
-    inline void SetConvert608To708(const EmbeddedConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
-    inline void SetConvert608To708(EmbeddedConvert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
-    inline EmbeddedSourceSettings& WithConvert608To708(const EmbeddedConvert608To708& value) { SetConvert608To708(value); return *this;}
-    inline EmbeddedSourceSettings& WithConvert608To708(EmbeddedConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
+    inline void SetConvert608To708(EmbeddedConvert608To708 value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
+    inline EmbeddedSourceSettings& WithConvert608To708(EmbeddedConvert608To708 value) { SetConvert608To708(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,10 @@ namespace Model
      * Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and
      * Embedded captions.
      */
-    inline const EmbeddedScte20Detection& GetScte20Detection() const{ return m_scte20Detection; }
+    inline EmbeddedScte20Detection GetScte20Detection() const { return m_scte20Detection; }
     inline bool Scte20DetectionHasBeenSet() const { return m_scte20DetectionHasBeenSet; }
-    inline void SetScte20Detection(const EmbeddedScte20Detection& value) { m_scte20DetectionHasBeenSet = true; m_scte20Detection = value; }
-    inline void SetScte20Detection(EmbeddedScte20Detection&& value) { m_scte20DetectionHasBeenSet = true; m_scte20Detection = std::move(value); }
-    inline EmbeddedSourceSettings& WithScte20Detection(const EmbeddedScte20Detection& value) { SetScte20Detection(value); return *this;}
-    inline EmbeddedSourceSettings& WithScte20Detection(EmbeddedScte20Detection&& value) { SetScte20Detection(std::move(value)); return *this;}
+    inline void SetScte20Detection(EmbeddedScte20Detection value) { m_scte20DetectionHasBeenSet = true; m_scte20Detection = value; }
+    inline EmbeddedSourceSettings& WithScte20Detection(EmbeddedScte20Detection value) { SetScte20Detection(value); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * Specifies the 608/708 channel number within the video track from which to
      * extract captions. Unused for passthrough.
      */
-    inline int GetSource608ChannelNumber() const{ return m_source608ChannelNumber; }
+    inline int GetSource608ChannelNumber() const { return m_source608ChannelNumber; }
     inline bool Source608ChannelNumberHasBeenSet() const { return m_source608ChannelNumberHasBeenSet; }
     inline void SetSource608ChannelNumber(int value) { m_source608ChannelNumberHasBeenSet = true; m_source608ChannelNumber = value; }
     inline EmbeddedSourceSettings& WithSource608ChannelNumber(int value) { SetSource608ChannelNumber(value); return *this;}
@@ -80,23 +76,23 @@ namespace Model
     /**
      * This field is unused and deprecated.
      */
-    inline int GetSource608TrackNumber() const{ return m_source608TrackNumber; }
+    inline int GetSource608TrackNumber() const { return m_source608TrackNumber; }
     inline bool Source608TrackNumberHasBeenSet() const { return m_source608TrackNumberHasBeenSet; }
     inline void SetSource608TrackNumber(int value) { m_source608TrackNumberHasBeenSet = true; m_source608TrackNumber = value; }
     inline EmbeddedSourceSettings& WithSource608TrackNumber(int value) { SetSource608TrackNumber(value); return *this;}
     ///@}
   private:
 
-    EmbeddedConvert608To708 m_convert608To708;
+    EmbeddedConvert608To708 m_convert608To708{EmbeddedConvert608To708::NOT_SET};
     bool m_convert608To708HasBeenSet = false;
 
-    EmbeddedScte20Detection m_scte20Detection;
+    EmbeddedScte20Detection m_scte20Detection{EmbeddedScte20Detection::NOT_SET};
     bool m_scte20DetectionHasBeenSet = false;
 
-    int m_source608ChannelNumber;
+    int m_source608ChannelNumber{0};
     bool m_source608ChannelNumberHasBeenSet = false;
 
-    int m_source608TrackNumber;
+    int m_source608TrackNumber{0};
     bool m_source608TrackNumberHasBeenSet = false;
   };
 

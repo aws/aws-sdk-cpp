@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResponseHeadersPolicies2020_05_31Result::ListResponseHeadersPolicies2020_05_31Result()
-{
-}
-
 ListResponseHeadersPolicies2020_05_31Result::ListResponseHeadersPolicies2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListResponseHeadersPolicies2020_05_31Result& ListResponseHeadersPolicies2020_05_
   if(!resultNode.IsNull())
   {
     m_responseHeadersPolicyList = resultNode;
+    m_responseHeadersPolicyListHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListResponseHeadersPolicies2020_05_31Result& ListResponseHeadersPolicies2020_05_
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

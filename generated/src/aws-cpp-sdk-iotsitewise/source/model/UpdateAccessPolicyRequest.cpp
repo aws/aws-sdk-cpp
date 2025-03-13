@@ -12,17 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAccessPolicyRequest::UpdateAccessPolicyRequest() : 
-    m_accessPolicyIdHasBeenSet(false),
-    m_accessPolicyIdentityHasBeenSet(false),
-    m_accessPolicyResourceHasBeenSet(false),
-    m_accessPolicyPermission(Permission::NOT_SET),
-    m_accessPolicyPermissionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

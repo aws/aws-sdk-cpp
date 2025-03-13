@@ -18,16 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-S3DestinationConfiguration::S3DestinationConfiguration() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_glueConfigurationHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
-  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glueConfiguration"))
   {
     m_glueConfiguration = jsonValue.GetObject("glueConfiguration");
-
     m_glueConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

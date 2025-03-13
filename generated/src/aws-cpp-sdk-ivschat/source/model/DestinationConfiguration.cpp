@@ -18,15 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-DestinationConfiguration::DestinationConfiguration() : 
-    m_s3HasBeenSet(false),
-    m_cloudWatchLogsHasBeenSet(false),
-    m_firehoseHasBeenSet(false)
-{
-}
-
 DestinationConfiguration::DestinationConfiguration(JsonView jsonValue)
-  : DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DestinationConfiguration& DestinationConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudWatchLogs"))
   {
     m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
-
     m_cloudWatchLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firehose"))
   {
     m_firehose = jsonValue.GetObject("firehose");
-
     m_firehoseHasBeenSet = true;
   }
-
   return *this;
 }
 

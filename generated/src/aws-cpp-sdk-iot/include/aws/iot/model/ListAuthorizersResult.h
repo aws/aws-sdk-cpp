@@ -29,7 +29,7 @@ namespace Model
   class ListAuthorizersResult
   {
   public:
-    AWS_IOT_API ListAuthorizersResult();
+    AWS_IOT_API ListAuthorizersResult() = default;
     AWS_IOT_API ListAuthorizersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListAuthorizersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The authorizers.</p>
      */
-    inline const Aws::Vector<AuthorizerSummary>& GetAuthorizers() const{ return m_authorizers; }
-    inline void SetAuthorizers(const Aws::Vector<AuthorizerSummary>& value) { m_authorizers = value; }
-    inline void SetAuthorizers(Aws::Vector<AuthorizerSummary>&& value) { m_authorizers = std::move(value); }
-    inline ListAuthorizersResult& WithAuthorizers(const Aws::Vector<AuthorizerSummary>& value) { SetAuthorizers(value); return *this;}
-    inline ListAuthorizersResult& WithAuthorizers(Aws::Vector<AuthorizerSummary>&& value) { SetAuthorizers(std::move(value)); return *this;}
-    inline ListAuthorizersResult& AddAuthorizers(const AuthorizerSummary& value) { m_authorizers.push_back(value); return *this; }
-    inline ListAuthorizersResult& AddAuthorizers(AuthorizerSummary&& value) { m_authorizers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthorizerSummary>& GetAuthorizers() const { return m_authorizers; }
+    template<typename AuthorizersT = Aws::Vector<AuthorizerSummary>>
+    void SetAuthorizers(AuthorizersT&& value) { m_authorizersHasBeenSet = true; m_authorizers = std::forward<AuthorizersT>(value); }
+    template<typename AuthorizersT = Aws::Vector<AuthorizerSummary>>
+    ListAuthorizersResult& WithAuthorizers(AuthorizersT&& value) { SetAuthorizers(std::forward<AuthorizersT>(value)); return *this;}
+    template<typename AuthorizersT = AuthorizerSummary>
+    ListAuthorizersResult& AddAuthorizers(AuthorizersT&& value) { m_authorizersHasBeenSet = true; m_authorizers.emplace_back(std::forward<AuthorizersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A marker used to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListAuthorizersResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListAuthorizersResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListAuthorizersResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListAuthorizersResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAuthorizersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAuthorizersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAuthorizersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAuthorizersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuthorizerSummary> m_authorizers;
+    bool m_authorizersHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

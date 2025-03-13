@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountLinkRequest::GetAccountLinkRequest() : 
-    m_linkIdHasBeenSet(false),
-    m_linkedAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAccountLinkRequest::SerializePayload() const
 {
   JsonValue payload;

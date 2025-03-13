@@ -18,22 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-SenderIdInformation::SenderIdInformation() : 
-    m_senderIdArnHasBeenSet(false),
-    m_senderIdHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false),
-    m_messageTypesHasBeenSet(false),
-    m_monthlyLeasingPriceHasBeenSet(false),
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_registered(false),
-    m_registeredHasBeenSet(false),
-    m_registrationIdHasBeenSet(false)
-{
-}
-
 SenderIdInformation::SenderIdInformation(JsonView jsonValue)
-  : SenderIdInformation()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ SenderIdInformation& SenderIdInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SenderIdArn"))
   {
     m_senderIdArn = jsonValue.GetString("SenderIdArn");
-
     m_senderIdArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageTypes"))
   {
     Aws::Utils::Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
@@ -70,35 +49,26 @@ SenderIdInformation& SenderIdInformation::operator =(JsonView jsonValue)
     }
     m_messageTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonthlyLeasingPrice"))
   {
     m_monthlyLeasingPrice = jsonValue.GetString("MonthlyLeasingPrice");
-
     m_monthlyLeasingPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
-
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Registered"))
   {
     m_registered = jsonValue.GetBool("Registered");
-
     m_registeredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
     m_registrationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

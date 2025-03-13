@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIdRequest::GetIdRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_loginsHasBeenSet(false)
-{
-}
-
 Aws::String GetIdRequest::SerializePayload() const
 {
   JsonValue payload;

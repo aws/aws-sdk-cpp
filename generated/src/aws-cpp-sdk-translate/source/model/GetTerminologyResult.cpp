@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTerminologyResult::GetTerminologyResult()
-{
-}
-
 GetTerminologyResult::GetTerminologyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GetTerminologyResult& GetTerminologyResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("TerminologyProperties"))
   {
     m_terminologyProperties = jsonValue.GetObject("TerminologyProperties");
-
+    m_terminologyPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminologyDataLocation"))
   {
     m_terminologyDataLocation = jsonValue.GetObject("TerminologyDataLocation");
-
+    m_terminologyDataLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuxiliaryDataLocation"))
   {
     m_auxiliaryDataLocation = jsonValue.GetObject("AuxiliaryDataLocation");
-
+    m_auxiliaryDataLocationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

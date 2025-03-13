@@ -34,7 +34,7 @@ namespace Model
   class ImageExtractionConfiguration
   {
   public:
-    AWS_QBUSINESS_API ImageExtractionConfiguration();
+    AWS_QBUSINESS_API ImageExtractionConfiguration() = default;
     AWS_QBUSINESS_API ImageExtractionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ImageExtractionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
      * <p>Specify whether to extract semantic meaning from images and visuals from
      * documents.</p>
      */
-    inline const ImageExtractionStatus& GetImageExtractionStatus() const{ return m_imageExtractionStatus; }
+    inline ImageExtractionStatus GetImageExtractionStatus() const { return m_imageExtractionStatus; }
     inline bool ImageExtractionStatusHasBeenSet() const { return m_imageExtractionStatusHasBeenSet; }
-    inline void SetImageExtractionStatus(const ImageExtractionStatus& value) { m_imageExtractionStatusHasBeenSet = true; m_imageExtractionStatus = value; }
-    inline void SetImageExtractionStatus(ImageExtractionStatus&& value) { m_imageExtractionStatusHasBeenSet = true; m_imageExtractionStatus = std::move(value); }
-    inline ImageExtractionConfiguration& WithImageExtractionStatus(const ImageExtractionStatus& value) { SetImageExtractionStatus(value); return *this;}
-    inline ImageExtractionConfiguration& WithImageExtractionStatus(ImageExtractionStatus&& value) { SetImageExtractionStatus(std::move(value)); return *this;}
+    inline void SetImageExtractionStatus(ImageExtractionStatus value) { m_imageExtractionStatusHasBeenSet = true; m_imageExtractionStatus = value; }
+    inline ImageExtractionConfiguration& WithImageExtractionStatus(ImageExtractionStatus value) { SetImageExtractionStatus(value); return *this;}
     ///@}
   private:
 
-    ImageExtractionStatus m_imageExtractionStatus;
+    ImageExtractionStatus m_imageExtractionStatus{ImageExtractionStatus::NOT_SET};
     bool m_imageExtractionStatusHasBeenSet = false;
   };
 

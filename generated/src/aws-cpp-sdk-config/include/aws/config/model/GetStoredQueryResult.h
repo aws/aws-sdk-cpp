@@ -28,7 +28,7 @@ namespace Model
   class GetStoredQueryResult
   {
   public:
-    AWS_CONFIGSERVICE_API GetStoredQueryResult();
+    AWS_CONFIGSERVICE_API GetStoredQueryResult() = default;
     AWS_CONFIGSERVICE_API GetStoredQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API GetStoredQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns a <code>StoredQuery</code> object.</p>
      */
-    inline const StoredQuery& GetStoredQuery() const{ return m_storedQuery; }
-    inline void SetStoredQuery(const StoredQuery& value) { m_storedQuery = value; }
-    inline void SetStoredQuery(StoredQuery&& value) { m_storedQuery = std::move(value); }
-    inline GetStoredQueryResult& WithStoredQuery(const StoredQuery& value) { SetStoredQuery(value); return *this;}
-    inline GetStoredQueryResult& WithStoredQuery(StoredQuery&& value) { SetStoredQuery(std::move(value)); return *this;}
+    inline const StoredQuery& GetStoredQuery() const { return m_storedQuery; }
+    template<typename StoredQueryT = StoredQuery>
+    void SetStoredQuery(StoredQueryT&& value) { m_storedQueryHasBeenSet = true; m_storedQuery = std::forward<StoredQueryT>(value); }
+    template<typename StoredQueryT = StoredQuery>
+    GetStoredQueryResult& WithStoredQuery(StoredQueryT&& value) { SetStoredQuery(std::forward<StoredQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStoredQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStoredQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStoredQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStoredQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StoredQuery m_storedQuery;
+    bool m_storedQueryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

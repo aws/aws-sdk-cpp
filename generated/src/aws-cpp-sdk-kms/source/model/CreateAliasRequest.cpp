@@ -12,12 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAliasRequest::CreateAliasRequest() : 
-    m_aliasNameHasBeenSet(false),
-    m_targetKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateAliasRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-AuthorizedTokenIssuer::AuthorizedTokenIssuer() : 
-    m_trustedTokenIssuerArnHasBeenSet(false),
-    m_authorizedAudiencesListHasBeenSet(false)
-{
-}
-
 AuthorizedTokenIssuer::AuthorizedTokenIssuer(const XmlNode& xmlNode)
-  : AuthorizedTokenIssuer()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ AuthorizedTokenIssuer& AuthorizedTokenIssuer::operator =(const XmlNode& xmlNode)
     {
       m_trustedTokenIssuerArn = Aws::Utils::Xml::DecodeEscapedXmlText(trustedTokenIssuerArnNode.GetText());
       m_trustedTokenIssuerArnHasBeenSet = true;
+       m_trustedTokenIssuerArnHasBeenSet = true;
     }
     XmlNode authorizedAudiencesListNode = resultNode.FirstChild("AuthorizedAudiencesList");
     if(!authorizedAudiencesListNode.IsNull())
     {
       XmlNode authorizedAudiencesListMember = authorizedAudiencesListNode.FirstChild("member");
+      m_authorizedAudiencesListHasBeenSet = !authorizedAudiencesListMember.IsNull();
       while(!authorizedAudiencesListMember.IsNull())
       {
         m_authorizedAudiencesList.push_back(authorizedAudiencesListMember.GetText());
         authorizedAudiencesListMember = authorizedAudiencesListMember.NextNode("member");
       }
 
-      m_authorizedAudiencesListHasBeenSet = true;
+       m_authorizedAudiencesListHasBeenSet = true;
     }
   }
 

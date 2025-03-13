@@ -32,7 +32,7 @@ namespace Model
   class ClassificationResultStatus
   {
   public:
-    AWS_MACIE2_API ClassificationResultStatus();
+    AWS_MACIE2_API ClassificationResultStatus() = default;
     AWS_MACIE2_API ClassificationResultStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API ClassificationResultStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * applies to. For example, the object is a file that uses an unsupported
      * format.</p></li></ul>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ClassificationResultStatus& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ClassificationResultStatus& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ClassificationResultStatus& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ClassificationResultStatus& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +118,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/macie/latest/user/discovery-supported-storage.html">Supported
      * storage classes and formats</a> in the <i>Amazon Macie User Guide</i>.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline ClassificationResultStatus& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline ClassificationResultStatus& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline ClassificationResultStatus& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    ClassificationResultStatus& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

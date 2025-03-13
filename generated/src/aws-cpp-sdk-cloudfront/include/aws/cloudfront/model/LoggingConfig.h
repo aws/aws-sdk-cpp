@@ -40,7 +40,7 @@ namespace Model
   class LoggingConfig
   {
   public:
-    AWS_CLOUDFRONT_API LoggingConfig();
+    AWS_CLOUDFRONT_API LoggingConfig() = default;
     AWS_CLOUDFRONT_API LoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API LoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -58,7 +58,7 @@ namespace Model
      * <code>Bucket</code> and <code>prefix</code>, the values are automatically
      * deleted.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline LoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
      * cookies for an existing distribution, specify <code>false</code> for
      * <code>IncludeCookies</code>.</p>
      */
-    inline bool GetIncludeCookies() const{ return m_includeCookies; }
+    inline bool GetIncludeCookies() const { return m_includeCookies; }
     inline bool IncludeCookiesHasBeenSet() const { return m_includeCookiesHasBeenSet; }
     inline void SetIncludeCookies(bool value) { m_includeCookiesHasBeenSet = true; m_includeCookies = value; }
     inline LoggingConfig& WithIncludeCookies(bool value) { SetIncludeCookies(value); return *this;}
@@ -85,14 +85,12 @@ namespace Model
      * <p>The Amazon S3 bucket to store the access logs in, for example,
      * <code>amzn-s3-demo-bucket.s3.amazonaws.com</code>.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline LoggingConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline LoggingConfig& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline LoggingConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    LoggingConfig& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,21 +101,19 @@ namespace Model
      * specify a prefix, you still must include an empty <code>Prefix</code> element in
      * the <code>Logging</code> element.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline LoggingConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline LoggingConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline LoggingConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    LoggingConfig& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    bool m_includeCookies;
+    bool m_includeCookies{false};
     bool m_includeCookiesHasBeenSet = false;
 
     Aws::String m_bucket;

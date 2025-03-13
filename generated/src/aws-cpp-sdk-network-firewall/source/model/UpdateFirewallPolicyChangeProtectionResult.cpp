@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFirewallPolicyChangeProtectionResult::UpdateFirewallPolicyChangeProtectionResult() : 
-    m_firewallPolicyChangeProtection(false)
-{
-}
-
 UpdateFirewallPolicyChangeProtectionResult::UpdateFirewallPolicyChangeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateFirewallPolicyChangeProtectionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpdateFirewallPolicyChangeProtectionResult& UpdateFirewallPolicyChangeProtection
   if(jsonValue.ValueExists("UpdateToken"))
   {
     m_updateToken = jsonValue.GetString("UpdateToken");
-
+    m_updateTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallArn"))
   {
     m_firewallArn = jsonValue.GetString("FirewallArn");
-
+    m_firewallArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallName"))
   {
     m_firewallName = jsonValue.GetString("FirewallName");
-
+    m_firewallNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallPolicyChangeProtection"))
   {
     m_firewallPolicyChangeProtection = jsonValue.GetBool("FirewallPolicyChangeProtection");
-
+    m_firewallPolicyChangeProtectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

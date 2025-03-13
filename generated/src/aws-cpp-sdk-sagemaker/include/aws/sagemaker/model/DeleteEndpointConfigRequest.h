@@ -21,7 +21,7 @@ namespace Model
   class DeleteEndpointConfigRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeleteEndpointConfigRequest();
+    AWS_SAGEMAKER_API DeleteEndpointConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the endpoint configuration that you want to delete.</p>
      */
-    inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
+    inline const Aws::String& GetEndpointConfigName() const { return m_endpointConfigName; }
     inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
-    inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
-    inline void SetEndpointConfigName(Aws::String&& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = std::move(value); }
-    inline void SetEndpointConfigName(const char* value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName.assign(value); }
-    inline DeleteEndpointConfigRequest& WithEndpointConfigName(const Aws::String& value) { SetEndpointConfigName(value); return *this;}
-    inline DeleteEndpointConfigRequest& WithEndpointConfigName(Aws::String&& value) { SetEndpointConfigName(std::move(value)); return *this;}
-    inline DeleteEndpointConfigRequest& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
+    template<typename EndpointConfigNameT = Aws::String>
+    void SetEndpointConfigName(EndpointConfigNameT&& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = std::forward<EndpointConfigNameT>(value); }
+    template<typename EndpointConfigNameT = Aws::String>
+    DeleteEndpointConfigRequest& WithEndpointConfigName(EndpointConfigNameT&& value) { SetEndpointConfigName(std::forward<EndpointConfigNameT>(value)); return *this;}
     ///@}
   private:
 

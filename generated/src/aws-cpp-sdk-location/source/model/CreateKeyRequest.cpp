@@ -12,17 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKeyRequest::CreateKeyRequest() : 
-    m_keyNameHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
-    m_noExpiry(false),
-    m_noExpiryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateKeyRequest::SerializePayload() const
 {
   JsonValue payload;

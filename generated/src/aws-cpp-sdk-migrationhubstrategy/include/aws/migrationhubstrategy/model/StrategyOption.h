@@ -34,7 +34,7 @@ namespace Model
   class StrategyOption
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategyOption();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategyOption() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategyOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API StrategyOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p> Indicates if a specific strategy is preferred for the application component.
      * </p>
      */
-    inline bool GetIsPreferred() const{ return m_isPreferred; }
+    inline bool GetIsPreferred() const { return m_isPreferred; }
     inline bool IsPreferredHasBeenSet() const { return m_isPreferredHasBeenSet; }
     inline void SetIsPreferred(bool value) { m_isPreferredHasBeenSet = true; m_isPreferred = value; }
     inline StrategyOption& WithIsPreferred(bool value) { SetIsPreferred(value); return *this;}
@@ -55,12 +55,10 @@ namespace Model
     /**
      * <p> Type of transformation. For example, Rehost, Replatform, and so on. </p>
      */
-    inline const Strategy& GetStrategy() const{ return m_strategy; }
+    inline Strategy GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const Strategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(Strategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline StrategyOption& WithStrategy(const Strategy& value) { SetStrategy(value); return *this;}
-    inline StrategyOption& WithStrategy(Strategy&& value) { SetStrategy(std::move(value)); return *this;}
+    inline void SetStrategy(Strategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline StrategyOption& WithStrategy(Strategy value) { SetStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * <p> Destination information about where the application component can migrate
      * to. For example, <code>EC2</code>, <code>ECS</code>, and so on. </p>
      */
-    inline const TargetDestination& GetTargetDestination() const{ return m_targetDestination; }
+    inline TargetDestination GetTargetDestination() const { return m_targetDestination; }
     inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
-    inline void SetTargetDestination(const TargetDestination& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = value; }
-    inline void SetTargetDestination(TargetDestination&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::move(value); }
-    inline StrategyOption& WithTargetDestination(const TargetDestination& value) { SetTargetDestination(value); return *this;}
-    inline StrategyOption& WithTargetDestination(TargetDestination&& value) { SetTargetDestination(std::move(value)); return *this;}
+    inline void SetTargetDestination(TargetDestination value) { m_targetDestinationHasBeenSet = true; m_targetDestination = value; }
+    inline StrategyOption& WithTargetDestination(TargetDestination value) { SetTargetDestination(value); return *this;}
     ///@}
 
     ///@{
@@ -81,25 +77,23 @@ namespace Model
      * <p> The name of the tool that can be used to transform an application component
      * using this strategy. </p>
      */
-    inline const TransformationToolName& GetToolName() const{ return m_toolName; }
+    inline TransformationToolName GetToolName() const { return m_toolName; }
     inline bool ToolNameHasBeenSet() const { return m_toolNameHasBeenSet; }
-    inline void SetToolName(const TransformationToolName& value) { m_toolNameHasBeenSet = true; m_toolName = value; }
-    inline void SetToolName(TransformationToolName&& value) { m_toolNameHasBeenSet = true; m_toolName = std::move(value); }
-    inline StrategyOption& WithToolName(const TransformationToolName& value) { SetToolName(value); return *this;}
-    inline StrategyOption& WithToolName(TransformationToolName&& value) { SetToolName(std::move(value)); return *this;}
+    inline void SetToolName(TransformationToolName value) { m_toolNameHasBeenSet = true; m_toolName = value; }
+    inline StrategyOption& WithToolName(TransformationToolName value) { SetToolName(value); return *this;}
     ///@}
   private:
 
-    bool m_isPreferred;
+    bool m_isPreferred{false};
     bool m_isPreferredHasBeenSet = false;
 
-    Strategy m_strategy;
+    Strategy m_strategy{Strategy::NOT_SET};
     bool m_strategyHasBeenSet = false;
 
-    TargetDestination m_targetDestination;
+    TargetDestination m_targetDestination{TargetDestination::NOT_SET};
     bool m_targetDestinationHasBeenSet = false;
 
-    TransformationToolName m_toolName;
+    TransformationToolName m_toolName{TransformationToolName::NOT_SET};
     bool m_toolNameHasBeenSet = false;
   };
 

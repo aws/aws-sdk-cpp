@@ -34,7 +34,7 @@ namespace Model
   class MetadataTableConfigurationResult
   {
   public:
-    AWS_S3CRT_API MetadataTableConfigurationResult();
+    AWS_S3CRT_API MetadataTableConfigurationResult() = default;
     AWS_S3CRT_API MetadataTableConfigurationResult(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API MetadataTableConfigurationResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,12 @@ namespace Model
      * unique within the <code>aws_s3_metadata</code> namespace in the destination
      * table bucket. </p>
      */
-    inline const S3TablesDestinationResult& GetS3TablesDestinationResult() const{ return m_s3TablesDestinationResult; }
+    inline const S3TablesDestinationResult& GetS3TablesDestinationResult() const { return m_s3TablesDestinationResult; }
     inline bool S3TablesDestinationResultHasBeenSet() const { return m_s3TablesDestinationResultHasBeenSet; }
-    inline void SetS3TablesDestinationResult(const S3TablesDestinationResult& value) { m_s3TablesDestinationResultHasBeenSet = true; m_s3TablesDestinationResult = value; }
-    inline void SetS3TablesDestinationResult(S3TablesDestinationResult&& value) { m_s3TablesDestinationResultHasBeenSet = true; m_s3TablesDestinationResult = std::move(value); }
-    inline MetadataTableConfigurationResult& WithS3TablesDestinationResult(const S3TablesDestinationResult& value) { SetS3TablesDestinationResult(value); return *this;}
-    inline MetadataTableConfigurationResult& WithS3TablesDestinationResult(S3TablesDestinationResult&& value) { SetS3TablesDestinationResult(std::move(value)); return *this;}
+    template<typename S3TablesDestinationResultT = S3TablesDestinationResult>
+    void SetS3TablesDestinationResult(S3TablesDestinationResultT&& value) { m_s3TablesDestinationResultHasBeenSet = true; m_s3TablesDestinationResult = std::forward<S3TablesDestinationResultT>(value); }
+    template<typename S3TablesDestinationResultT = S3TablesDestinationResult>
+    MetadataTableConfigurationResult& WithS3TablesDestinationResult(S3TablesDestinationResultT&& value) { SetS3TablesDestinationResult(std::forward<S3TablesDestinationResultT>(value)); return *this;}
     ///@}
   private:
 

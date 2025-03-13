@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IamInstanceProfile::IamInstanceProfile() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 IamInstanceProfile::IamInstanceProfile(const XmlNode& xmlNode)
-  : IamInstanceProfile()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ IamInstanceProfile& IamInstanceProfile::operator =(const XmlNode& xmlNode)
     {
       m_arn = Aws::Utils::Xml::DecodeEscapedXmlText(arnNode.GetText());
       m_arnHasBeenSet = true;
+       m_arnHasBeenSet = true;
     }
     XmlNode idNode = resultNode.FirstChild("id");
     if(!idNode.IsNull())
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
   }
 

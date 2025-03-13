@@ -32,7 +32,7 @@ namespace Model
   class Record
   {
   public:
-    AWS_SECURITYHUB_API Record();
+    AWS_SECURITYHUB_API Record() = default;
     AWS_SECURITYHUB_API Record(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
      * the data. If the field name is longer than 20 characters, it is truncated. If
      * the path is longer than 250 characters, it is truncated.</p>
      */
-    inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
+    inline const Aws::String& GetJsonPath() const { return m_jsonPath; }
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
-    inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
-    inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
-    inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
-    inline Record& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
-    inline Record& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
-    inline Record& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
+    template<typename JsonPathT = Aws::String>
+    void SetJsonPath(JsonPathT&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::forward<JsonPathT>(value); }
+    template<typename JsonPathT = Aws::String>
+    Record& WithJsonPath(JsonPathT&& value) { SetJsonPath(std::forward<JsonPathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The record index, starting from 0, for the record that contains the data.</p>
      */
-    inline long long GetRecordIndex() const{ return m_recordIndex; }
+    inline long long GetRecordIndex() const { return m_recordIndex; }
     inline bool RecordIndexHasBeenSet() const { return m_recordIndexHasBeenSet; }
     inline void SetRecordIndex(long long value) { m_recordIndexHasBeenSet = true; m_recordIndex = value; }
     inline Record& WithRecordIndex(long long value) { SetRecordIndex(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_jsonPath;
     bool m_jsonPathHasBeenSet = false;
 
-    long long m_recordIndex;
+    long long m_recordIndex{0};
     bool m_recordIndexHasBeenSet = false;
   };
 

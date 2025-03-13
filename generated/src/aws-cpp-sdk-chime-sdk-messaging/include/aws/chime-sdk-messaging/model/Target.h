@@ -34,7 +34,7 @@ namespace Model
   class Target
   {
   public:
-    AWS_CHIMESDKMESSAGING_API Target();
+    AWS_CHIMESDKMESSAGING_API Target() = default;
     AWS_CHIMESDKMESSAGING_API Target(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ARN of the target channel member.</p>
      */
-    inline const Aws::String& GetMemberArn() const{ return m_memberArn; }
+    inline const Aws::String& GetMemberArn() const { return m_memberArn; }
     inline bool MemberArnHasBeenSet() const { return m_memberArnHasBeenSet; }
-    inline void SetMemberArn(const Aws::String& value) { m_memberArnHasBeenSet = true; m_memberArn = value; }
-    inline void SetMemberArn(Aws::String&& value) { m_memberArnHasBeenSet = true; m_memberArn = std::move(value); }
-    inline void SetMemberArn(const char* value) { m_memberArnHasBeenSet = true; m_memberArn.assign(value); }
-    inline Target& WithMemberArn(const Aws::String& value) { SetMemberArn(value); return *this;}
-    inline Target& WithMemberArn(Aws::String&& value) { SetMemberArn(std::move(value)); return *this;}
-    inline Target& WithMemberArn(const char* value) { SetMemberArn(value); return *this;}
+    template<typename MemberArnT = Aws::String>
+    void SetMemberArn(MemberArnT&& value) { m_memberArnHasBeenSet = true; m_memberArn = std::forward<MemberArnT>(value); }
+    template<typename MemberArnT = Aws::String>
+    Target& WithMemberArn(MemberArnT&& value) { SetMemberArn(std::forward<MemberArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class InvokeDataAutomationAsyncRequest : public BedrockDataAutomationRuntimeRequest
   {
   public:
-    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationAsyncRequest();
+    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API InvokeDataAutomationAsyncRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,116 +50,112 @@ namespace Model
     /**
      * <p>Idempotency token.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline InvokeDataAutomationAsyncRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    InvokeDataAutomationAsyncRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Input configuration.</p>
      */
-    inline const InputConfiguration& GetInputConfiguration() const{ return m_inputConfiguration; }
+    inline const InputConfiguration& GetInputConfiguration() const { return m_inputConfiguration; }
     inline bool InputConfigurationHasBeenSet() const { return m_inputConfigurationHasBeenSet; }
-    inline void SetInputConfiguration(const InputConfiguration& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = value; }
-    inline void SetInputConfiguration(InputConfiguration&& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithInputConfiguration(const InputConfiguration& value) { SetInputConfiguration(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithInputConfiguration(InputConfiguration&& value) { SetInputConfiguration(std::move(value)); return *this;}
+    template<typename InputConfigurationT = InputConfiguration>
+    void SetInputConfiguration(InputConfigurationT&& value) { m_inputConfigurationHasBeenSet = true; m_inputConfiguration = std::forward<InputConfigurationT>(value); }
+    template<typename InputConfigurationT = InputConfiguration>
+    InvokeDataAutomationAsyncRequest& WithInputConfiguration(InputConfigurationT&& value) { SetInputConfiguration(std::forward<InputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Output configuration.</p>
      */
-    inline const OutputConfiguration& GetOutputConfiguration() const{ return m_outputConfiguration; }
+    inline const OutputConfiguration& GetOutputConfiguration() const { return m_outputConfiguration; }
     inline bool OutputConfigurationHasBeenSet() const { return m_outputConfigurationHasBeenSet; }
-    inline void SetOutputConfiguration(const OutputConfiguration& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = value; }
-    inline void SetOutputConfiguration(OutputConfiguration&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithOutputConfiguration(const OutputConfiguration& value) { SetOutputConfiguration(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithOutputConfiguration(OutputConfiguration&& value) { SetOutputConfiguration(std::move(value)); return *this;}
+    template<typename OutputConfigurationT = OutputConfiguration>
+    void SetOutputConfiguration(OutputConfigurationT&& value) { m_outputConfigurationHasBeenSet = true; m_outputConfiguration = std::forward<OutputConfigurationT>(value); }
+    template<typename OutputConfigurationT = OutputConfiguration>
+    InvokeDataAutomationAsyncRequest& WithOutputConfiguration(OutputConfigurationT&& value) { SetOutputConfiguration(std::forward<OutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Data automation configuration.</p>
      */
-    inline const DataAutomationConfiguration& GetDataAutomationConfiguration() const{ return m_dataAutomationConfiguration; }
+    inline const DataAutomationConfiguration& GetDataAutomationConfiguration() const { return m_dataAutomationConfiguration; }
     inline bool DataAutomationConfigurationHasBeenSet() const { return m_dataAutomationConfigurationHasBeenSet; }
-    inline void SetDataAutomationConfiguration(const DataAutomationConfiguration& value) { m_dataAutomationConfigurationHasBeenSet = true; m_dataAutomationConfiguration = value; }
-    inline void SetDataAutomationConfiguration(DataAutomationConfiguration&& value) { m_dataAutomationConfigurationHasBeenSet = true; m_dataAutomationConfiguration = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithDataAutomationConfiguration(const DataAutomationConfiguration& value) { SetDataAutomationConfiguration(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithDataAutomationConfiguration(DataAutomationConfiguration&& value) { SetDataAutomationConfiguration(std::move(value)); return *this;}
+    template<typename DataAutomationConfigurationT = DataAutomationConfiguration>
+    void SetDataAutomationConfiguration(DataAutomationConfigurationT&& value) { m_dataAutomationConfigurationHasBeenSet = true; m_dataAutomationConfiguration = std::forward<DataAutomationConfigurationT>(value); }
+    template<typename DataAutomationConfigurationT = DataAutomationConfiguration>
+    InvokeDataAutomationAsyncRequest& WithDataAutomationConfiguration(DataAutomationConfigurationT&& value) { SetDataAutomationConfiguration(std::forward<DataAutomationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Encryption configuration.</p>
      */
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    InvokeDataAutomationAsyncRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Notification configuration.</p>
      */
-    inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+    inline const NotificationConfiguration& GetNotificationConfiguration() const { return m_notificationConfiguration; }
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
-    inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
-    inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    template<typename NotificationConfigurationT = NotificationConfiguration>
+    void SetNotificationConfiguration(NotificationConfigurationT&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::forward<NotificationConfigurationT>(value); }
+    template<typename NotificationConfigurationT = NotificationConfiguration>
+    InvokeDataAutomationAsyncRequest& WithNotificationConfiguration(NotificationConfigurationT&& value) { SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Blueprint list.</p>
      */
-    inline const Aws::Vector<Blueprint>& GetBlueprints() const{ return m_blueprints; }
+    inline const Aws::Vector<Blueprint>& GetBlueprints() const { return m_blueprints; }
     inline bool BlueprintsHasBeenSet() const { return m_blueprintsHasBeenSet; }
-    inline void SetBlueprints(const Aws::Vector<Blueprint>& value) { m_blueprintsHasBeenSet = true; m_blueprints = value; }
-    inline void SetBlueprints(Aws::Vector<Blueprint>&& value) { m_blueprintsHasBeenSet = true; m_blueprints = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithBlueprints(const Aws::Vector<Blueprint>& value) { SetBlueprints(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithBlueprints(Aws::Vector<Blueprint>&& value) { SetBlueprints(std::move(value)); return *this;}
-    inline InvokeDataAutomationAsyncRequest& AddBlueprints(const Blueprint& value) { m_blueprintsHasBeenSet = true; m_blueprints.push_back(value); return *this; }
-    inline InvokeDataAutomationAsyncRequest& AddBlueprints(Blueprint&& value) { m_blueprintsHasBeenSet = true; m_blueprints.push_back(std::move(value)); return *this; }
+    template<typename BlueprintsT = Aws::Vector<Blueprint>>
+    void SetBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints = std::forward<BlueprintsT>(value); }
+    template<typename BlueprintsT = Aws::Vector<Blueprint>>
+    InvokeDataAutomationAsyncRequest& WithBlueprints(BlueprintsT&& value) { SetBlueprints(std::forward<BlueprintsT>(value)); return *this;}
+    template<typename BlueprintsT = Blueprint>
+    InvokeDataAutomationAsyncRequest& AddBlueprints(BlueprintsT&& value) { m_blueprintsHasBeenSet = true; m_blueprints.emplace_back(std::forward<BlueprintsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Data automation profile ARN</p>
      */
-    inline const Aws::String& GetDataAutomationProfileArn() const{ return m_dataAutomationProfileArn; }
+    inline const Aws::String& GetDataAutomationProfileArn() const { return m_dataAutomationProfileArn; }
     inline bool DataAutomationProfileArnHasBeenSet() const { return m_dataAutomationProfileArnHasBeenSet; }
-    inline void SetDataAutomationProfileArn(const Aws::String& value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn = value; }
-    inline void SetDataAutomationProfileArn(Aws::String&& value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn = std::move(value); }
-    inline void SetDataAutomationProfileArn(const char* value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn.assign(value); }
-    inline InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(const Aws::String& value) { SetDataAutomationProfileArn(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(Aws::String&& value) { SetDataAutomationProfileArn(std::move(value)); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(const char* value) { SetDataAutomationProfileArn(value); return *this;}
+    template<typename DataAutomationProfileArnT = Aws::String>
+    void SetDataAutomationProfileArn(DataAutomationProfileArnT&& value) { m_dataAutomationProfileArnHasBeenSet = true; m_dataAutomationProfileArn = std::forward<DataAutomationProfileArnT>(value); }
+    template<typename DataAutomationProfileArnT = Aws::String>
+    InvokeDataAutomationAsyncRequest& WithDataAutomationProfileArn(DataAutomationProfileArnT&& value) { SetDataAutomationProfileArn(std::forward<DataAutomationProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline InvokeDataAutomationAsyncRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline InvokeDataAutomationAsyncRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline InvokeDataAutomationAsyncRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline InvokeDataAutomationAsyncRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    InvokeDataAutomationAsyncRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    InvokeDataAutomationAsyncRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

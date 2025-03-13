@@ -12,11 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEnvironmentRequest::GetEnvironmentRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

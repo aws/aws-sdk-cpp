@@ -18,14 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-S3KeyOutput::S3KeyOutput() : 
-    m_s3KeyHasBeenSet(false),
-    m_etagHasBeenSet(false)
-{
-}
-
 S3KeyOutput::S3KeyOutput(JsonView jsonValue)
-  : S3KeyOutput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3KeyOutput& S3KeyOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Key"))
   {
     m_s3Key = jsonValue.GetString("s3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("etag"))
   {
     m_etag = jsonValue.GetString("etag");
-
     m_etagHasBeenSet = true;
   }
-
   return *this;
 }
 

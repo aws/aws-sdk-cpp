@@ -12,12 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSyncJobRequest::DeleteSyncJobRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_syncSourceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSyncJobRequest::SerializePayload() const
 {
   return {};

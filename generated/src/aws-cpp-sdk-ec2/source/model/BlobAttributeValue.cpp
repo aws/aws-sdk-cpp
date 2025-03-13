@@ -21,13 +21,7 @@ namespace EC2
 namespace Model
 {
 
-BlobAttributeValue::BlobAttributeValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 BlobAttributeValue::BlobAttributeValue(const XmlNode& xmlNode)
-  : BlobAttributeValue()
 {
   *this = xmlNode;
 }
@@ -43,6 +37,7 @@ BlobAttributeValue& BlobAttributeValue::operator =(const XmlNode& xmlNode)
     {
       m_value = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()));
       m_valueHasBeenSet = true;
+       m_valueHasBeenSet = true;
     }
   }
 

@@ -18,29 +18,7 @@ namespace CodeConnections
 namespace Model
 {
 
-SyncConfiguration::SyncConfiguration() : 
-    m_branchHasBeenSet(false),
-    m_configFileHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_repositoryLinkIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_resourceNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false),
-    m_publishDeploymentStatus(PublishDeploymentStatus::NOT_SET),
-    m_publishDeploymentStatusHasBeenSet(false),
-    m_triggerResourceUpdateOn(TriggerResourceUpdateOn::NOT_SET),
-    m_triggerResourceUpdateOnHasBeenSet(false),
-    m_pullRequestComment(PullRequestComment::NOT_SET),
-    m_pullRequestCommentHasBeenSet(false)
-{
-}
-
 SyncConfiguration::SyncConfiguration(JsonView jsonValue)
-  : SyncConfiguration()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ SyncConfiguration& SyncConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Branch"))
   {
     m_branch = jsonValue.GetString("Branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigFile"))
   {
     m_configFile = jsonValue.GetString("ConfigFile");
-
     m_configFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryLinkId"))
   {
     m_repositoryLinkId = jsonValue.GetString("RepositoryLinkId");
-
     m_repositoryLinkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepositoryName"))
   {
     m_repositoryName = jsonValue.GetString("RepositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncType"))
   {
     m_syncType = SyncConfigurationTypeMapper::GetSyncConfigurationTypeForName(jsonValue.GetString("SyncType"));
-
     m_syncTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishDeploymentStatus"))
   {
     m_publishDeploymentStatus = PublishDeploymentStatusMapper::GetPublishDeploymentStatusForName(jsonValue.GetString("PublishDeploymentStatus"));
-
     m_publishDeploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerResourceUpdateOn"))
   {
     m_triggerResourceUpdateOn = TriggerResourceUpdateOnMapper::GetTriggerResourceUpdateOnForName(jsonValue.GetString("TriggerResourceUpdateOn"));
-
     m_triggerResourceUpdateOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PullRequestComment"))
   {
     m_pullRequestComment = PullRequestCommentMapper::GetPullRequestCommentForName(jsonValue.GetString("PullRequestComment"));
-
     m_pullRequestCommentHasBeenSet = true;
   }
-
   return *this;
 }
 

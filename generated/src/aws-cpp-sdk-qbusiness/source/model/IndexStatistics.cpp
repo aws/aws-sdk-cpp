@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-IndexStatistics::IndexStatistics() : 
-    m_textDocumentStatisticsHasBeenSet(false)
-{
-}
-
 IndexStatistics::IndexStatistics(JsonView jsonValue)
-  : IndexStatistics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IndexStatistics& IndexStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textDocumentStatistics"))
   {
     m_textDocumentStatistics = jsonValue.GetObject("textDocumentStatistics");
-
     m_textDocumentStatisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

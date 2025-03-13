@@ -20,13 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication() : 
-    m_dBInstanceAutomatedBackupsArnHasBeenSet(false)
-{
-}
-
 DBInstanceAutomatedBackupsReplication::DBInstanceAutomatedBackupsReplication(const XmlNode& xmlNode)
-  : DBInstanceAutomatedBackupsReplication()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ DBInstanceAutomatedBackupsReplication& DBInstanceAutomatedBackupsReplication::op
     {
       m_dBInstanceAutomatedBackupsArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceAutomatedBackupsArnNode.GetText());
       m_dBInstanceAutomatedBackupsArnHasBeenSet = true;
+       m_dBInstanceAutomatedBackupsArnHasBeenSet = true;
     }
   }
 

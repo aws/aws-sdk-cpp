@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBSubnetGroupsResult::DescribeDBSubnetGroupsResult()
-{
-}
-
 DescribeDBSubnetGroupsResult::DescribeDBSubnetGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const Aws
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBSubnetGroupsNode = resultNode.FirstChild("DBSubnetGroups");
     if(!dBSubnetGroupsNode.IsNull())
     {
       XmlNode dBSubnetGroupsMember = dBSubnetGroupsNode.FirstChild("DBSubnetGroup");
+      m_dBSubnetGroupsHasBeenSet = !dBSubnetGroupsMember.IsNull();
       while(!dBSubnetGroupsMember.IsNull())
       {
         m_dBSubnetGroups.push_back(dBSubnetGroupsMember);
@@ -59,6 +57,7 @@ DescribeDBSubnetGroupsResult& DescribeDBSubnetGroupsResult::operator =(const Aws
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::DescribeDBSubnetGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

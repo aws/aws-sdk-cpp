@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReplaceRootVolumeTasksResponse::DescribeReplaceRootVolumeTasksResponse()
-{
-}
-
 DescribeReplaceRootVolumeTasksResponse::DescribeReplaceRootVolumeTasksResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeReplaceRootVolumeTasksResponse& DescribeReplaceRootVolumeTasksResponse::
     if(!replaceRootVolumeTasksNode.IsNull())
     {
       XmlNode replaceRootVolumeTasksMember = replaceRootVolumeTasksNode.FirstChild("item");
+      m_replaceRootVolumeTasksHasBeenSet = !replaceRootVolumeTasksMember.IsNull();
       while(!replaceRootVolumeTasksMember.IsNull())
       {
         m_replaceRootVolumeTasks.push_back(replaceRootVolumeTasksMember);
@@ -53,6 +50,7 @@ DescribeReplaceRootVolumeTasksResponse& DescribeReplaceRootVolumeTasksResponse::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeReplaceRootVolumeTasksResponse& DescribeReplaceRootVolumeTasksResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeReplaceRootVolumeTasksResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

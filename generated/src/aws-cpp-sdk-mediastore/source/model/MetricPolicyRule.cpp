@@ -18,14 +18,7 @@ namespace MediaStore
 namespace Model
 {
 
-MetricPolicyRule::MetricPolicyRule() : 
-    m_objectGroupHasBeenSet(false),
-    m_objectGroupNameHasBeenSet(false)
-{
-}
-
 MetricPolicyRule::MetricPolicyRule(JsonView jsonValue)
-  : MetricPolicyRule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetricPolicyRule& MetricPolicyRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectGroup"))
   {
     m_objectGroup = jsonValue.GetString("ObjectGroup");
-
     m_objectGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectGroupName"))
   {
     m_objectGroupName = jsonValue.GetString("ObjectGroupName");
-
     m_objectGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

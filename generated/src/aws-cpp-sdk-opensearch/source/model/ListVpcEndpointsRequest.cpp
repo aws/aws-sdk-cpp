@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListVpcEndpointsRequest::ListVpcEndpointsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListVpcEndpointsRequest::SerializePayload() const
 {
   return {};

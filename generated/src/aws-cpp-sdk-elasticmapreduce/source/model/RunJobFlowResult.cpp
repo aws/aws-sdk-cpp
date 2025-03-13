@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RunJobFlowResult::RunJobFlowResult()
-{
-}
-
 RunJobFlowResult::RunJobFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ RunJobFlowResult& RunJobFlowResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("JobFlowId"))
   {
     m_jobFlowId = jsonValue.GetString("JobFlowId");
-
+    m_jobFlowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

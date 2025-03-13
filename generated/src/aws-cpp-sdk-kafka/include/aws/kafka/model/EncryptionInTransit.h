@@ -34,7 +34,7 @@ namespace Model
   class EncryptionInTransit
   {
   public:
-    AWS_KAFKA_API EncryptionInTransit();
+    AWS_KAFKA_API EncryptionInTransit() = default;
     AWS_KAFKA_API EncryptionInTransit(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API EncryptionInTransit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
             <p>The default value is TLS_PLAINTEXT.</p>
          
      */
-    inline const ClientBroker& GetClientBroker() const{ return m_clientBroker; }
+    inline ClientBroker GetClientBroker() const { return m_clientBroker; }
     inline bool ClientBrokerHasBeenSet() const { return m_clientBrokerHasBeenSet; }
-    inline void SetClientBroker(const ClientBroker& value) { m_clientBrokerHasBeenSet = true; m_clientBroker = value; }
-    inline void SetClientBroker(ClientBroker&& value) { m_clientBrokerHasBeenSet = true; m_clientBroker = std::move(value); }
-    inline EncryptionInTransit& WithClientBroker(const ClientBroker& value) { SetClientBroker(value); return *this;}
-    inline EncryptionInTransit& WithClientBroker(ClientBroker&& value) { SetClientBroker(std::move(value)); return *this;}
+    inline void SetClientBroker(ClientBroker value) { m_clientBrokerHasBeenSet = true; m_clientBroker = value; }
+    inline EncryptionInTransit& WithClientBroker(ClientBroker value) { SetClientBroker(value); return *this;}
     ///@}
 
     ///@{
@@ -77,17 +75,17 @@ namespace Model
         
      * 
      */
-    inline bool GetInCluster() const{ return m_inCluster; }
+    inline bool GetInCluster() const { return m_inCluster; }
     inline bool InClusterHasBeenSet() const { return m_inClusterHasBeenSet; }
     inline void SetInCluster(bool value) { m_inClusterHasBeenSet = true; m_inCluster = value; }
     inline EncryptionInTransit& WithInCluster(bool value) { SetInCluster(value); return *this;}
     ///@}
   private:
 
-    ClientBroker m_clientBroker;
+    ClientBroker m_clientBroker{ClientBroker::NOT_SET};
     bool m_clientBrokerHasBeenSet = false;
 
-    bool m_inCluster;
+    bool m_inCluster{false};
     bool m_inClusterHasBeenSet = false;
   };
 

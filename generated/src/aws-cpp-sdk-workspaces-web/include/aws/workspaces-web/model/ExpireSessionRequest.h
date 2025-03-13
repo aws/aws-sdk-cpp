@@ -21,7 +21,7 @@ namespace Model
   class ExpireSessionRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API ExpireSessionRequest();
+    AWS_WORKSPACESWEB_API ExpireSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the web portal for the session.</p>
      */
-    inline const Aws::String& GetPortalId() const{ return m_portalId; }
+    inline const Aws::String& GetPortalId() const { return m_portalId; }
     inline bool PortalIdHasBeenSet() const { return m_portalIdHasBeenSet; }
-    inline void SetPortalId(const Aws::String& value) { m_portalIdHasBeenSet = true; m_portalId = value; }
-    inline void SetPortalId(Aws::String&& value) { m_portalIdHasBeenSet = true; m_portalId = std::move(value); }
-    inline void SetPortalId(const char* value) { m_portalIdHasBeenSet = true; m_portalId.assign(value); }
-    inline ExpireSessionRequest& WithPortalId(const Aws::String& value) { SetPortalId(value); return *this;}
-    inline ExpireSessionRequest& WithPortalId(Aws::String&& value) { SetPortalId(std::move(value)); return *this;}
-    inline ExpireSessionRequest& WithPortalId(const char* value) { SetPortalId(value); return *this;}
+    template<typename PortalIdT = Aws::String>
+    void SetPortalId(PortalIdT&& value) { m_portalIdHasBeenSet = true; m_portalId = std::forward<PortalIdT>(value); }
+    template<typename PortalIdT = Aws::String>
+    ExpireSessionRequest& WithPortalId(PortalIdT&& value) { SetPortalId(std::forward<PortalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the session to expire.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ExpireSessionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ExpireSessionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ExpireSessionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ExpireSessionRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 

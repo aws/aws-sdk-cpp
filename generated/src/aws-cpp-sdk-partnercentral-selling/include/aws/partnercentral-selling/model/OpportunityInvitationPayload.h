@@ -37,7 +37,7 @@ namespace Model
   class OpportunityInvitationPayload
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API OpportunityInvitationPayload();
+    AWS_PARTNERCENTRALSELLING_API OpportunityInvitationPayload() = default;
     AWS_PARTNERCENTRALSELLING_API OpportunityInvitationPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API OpportunityInvitationPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * Engagement Invitation. This data helps partners understand the customer’s
      * profile and requirements.</p>
      */
-    inline const EngagementCustomer& GetCustomer() const{ return m_customer; }
+    inline const EngagementCustomer& GetCustomer() const { return m_customer; }
     inline bool CustomerHasBeenSet() const { return m_customerHasBeenSet; }
-    inline void SetCustomer(const EngagementCustomer& value) { m_customerHasBeenSet = true; m_customer = value; }
-    inline void SetCustomer(EngagementCustomer&& value) { m_customerHasBeenSet = true; m_customer = std::move(value); }
-    inline OpportunityInvitationPayload& WithCustomer(const EngagementCustomer& value) { SetCustomer(value); return *this;}
-    inline OpportunityInvitationPayload& WithCustomer(EngagementCustomer&& value) { SetCustomer(std::move(value)); return *this;}
+    template<typename CustomerT = EngagementCustomer>
+    void SetCustomer(CustomerT&& value) { m_customerHasBeenSet = true; m_customer = std::forward<CustomerT>(value); }
+    template<typename CustomerT = EngagementCustomer>
+    OpportunityInvitationPayload& WithCustomer(CustomerT&& value) { SetCustomer(std::forward<CustomerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>Describes the project details associated with the opportunity, including the
      * customer’s needs and the scope of work expected to be performed.</p>
      */
-    inline const ProjectDetails& GetProject() const{ return m_project; }
+    inline const ProjectDetails& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const ProjectDetails& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(ProjectDetails&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline OpportunityInvitationPayload& WithProject(const ProjectDetails& value) { SetProject(value); return *this;}
-    inline OpportunityInvitationPayload& WithProject(ProjectDetails&& value) { SetProject(std::move(value)); return *this;}
+    template<typename ProjectT = ProjectDetails>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = ProjectDetails>
+    OpportunityInvitationPayload& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +75,13 @@ namespace Model
      * <p>Outlines the responsibilities or expectations of the receiver in the context
      * of the invitation.</p>
      */
-    inline const Aws::Vector<ReceiverResponsibility>& GetReceiverResponsibilities() const{ return m_receiverResponsibilities; }
+    inline const Aws::Vector<ReceiverResponsibility>& GetReceiverResponsibilities() const { return m_receiverResponsibilities; }
     inline bool ReceiverResponsibilitiesHasBeenSet() const { return m_receiverResponsibilitiesHasBeenSet; }
-    inline void SetReceiverResponsibilities(const Aws::Vector<ReceiverResponsibility>& value) { m_receiverResponsibilitiesHasBeenSet = true; m_receiverResponsibilities = value; }
-    inline void SetReceiverResponsibilities(Aws::Vector<ReceiverResponsibility>&& value) { m_receiverResponsibilitiesHasBeenSet = true; m_receiverResponsibilities = std::move(value); }
-    inline OpportunityInvitationPayload& WithReceiverResponsibilities(const Aws::Vector<ReceiverResponsibility>& value) { SetReceiverResponsibilities(value); return *this;}
-    inline OpportunityInvitationPayload& WithReceiverResponsibilities(Aws::Vector<ReceiverResponsibility>&& value) { SetReceiverResponsibilities(std::move(value)); return *this;}
-    inline OpportunityInvitationPayload& AddReceiverResponsibilities(const ReceiverResponsibility& value) { m_receiverResponsibilitiesHasBeenSet = true; m_receiverResponsibilities.push_back(value); return *this; }
-    inline OpportunityInvitationPayload& AddReceiverResponsibilities(ReceiverResponsibility&& value) { m_receiverResponsibilitiesHasBeenSet = true; m_receiverResponsibilities.push_back(std::move(value)); return *this; }
+    template<typename ReceiverResponsibilitiesT = Aws::Vector<ReceiverResponsibility>>
+    void SetReceiverResponsibilities(ReceiverResponsibilitiesT&& value) { m_receiverResponsibilitiesHasBeenSet = true; m_receiverResponsibilities = std::forward<ReceiverResponsibilitiesT>(value); }
+    template<typename ReceiverResponsibilitiesT = Aws::Vector<ReceiverResponsibility>>
+    OpportunityInvitationPayload& WithReceiverResponsibilities(ReceiverResponsibilitiesT&& value) { SetReceiverResponsibilities(std::forward<ReceiverResponsibilitiesT>(value)); return *this;}
+    inline OpportunityInvitationPayload& AddReceiverResponsibilities(ReceiverResponsibility value) { m_receiverResponsibilitiesHasBeenSet = true; m_receiverResponsibilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -90,14 +89,14 @@ namespace Model
      * <p>Represents the contact details of the AWS representatives involved in sending
      * the Engagement Invitation. These contacts are opportunity stakeholders.</p>
      */
-    inline const Aws::Vector<SenderContact>& GetSenderContacts() const{ return m_senderContacts; }
+    inline const Aws::Vector<SenderContact>& GetSenderContacts() const { return m_senderContacts; }
     inline bool SenderContactsHasBeenSet() const { return m_senderContactsHasBeenSet; }
-    inline void SetSenderContacts(const Aws::Vector<SenderContact>& value) { m_senderContactsHasBeenSet = true; m_senderContacts = value; }
-    inline void SetSenderContacts(Aws::Vector<SenderContact>&& value) { m_senderContactsHasBeenSet = true; m_senderContacts = std::move(value); }
-    inline OpportunityInvitationPayload& WithSenderContacts(const Aws::Vector<SenderContact>& value) { SetSenderContacts(value); return *this;}
-    inline OpportunityInvitationPayload& WithSenderContacts(Aws::Vector<SenderContact>&& value) { SetSenderContacts(std::move(value)); return *this;}
-    inline OpportunityInvitationPayload& AddSenderContacts(const SenderContact& value) { m_senderContactsHasBeenSet = true; m_senderContacts.push_back(value); return *this; }
-    inline OpportunityInvitationPayload& AddSenderContacts(SenderContact&& value) { m_senderContactsHasBeenSet = true; m_senderContacts.push_back(std::move(value)); return *this; }
+    template<typename SenderContactsT = Aws::Vector<SenderContact>>
+    void SetSenderContacts(SenderContactsT&& value) { m_senderContactsHasBeenSet = true; m_senderContacts = std::forward<SenderContactsT>(value); }
+    template<typename SenderContactsT = Aws::Vector<SenderContact>>
+    OpportunityInvitationPayload& WithSenderContacts(SenderContactsT&& value) { SetSenderContacts(std::forward<SenderContactsT>(value)); return *this;}
+    template<typename SenderContactsT = SenderContact>
+    OpportunityInvitationPayload& AddSenderContacts(SenderContactsT&& value) { m_senderContactsHasBeenSet = true; m_senderContacts.emplace_back(std::forward<SenderContactsT>(value)); return *this; }
     ///@}
   private:
 

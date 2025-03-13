@@ -74,7 +74,7 @@ namespace Model
   class HealthCheckConfig
   {
   public:
-    AWS_SERVICEDISCOVERY_API HealthCheckConfig();
+    AWS_SERVICEDISCOVERY_API HealthCheckConfig() = default;
     AWS_SERVICEDISCOVERY_API HealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API HealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -100,12 +100,10 @@ namespace Model
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
-    inline const HealthCheckType& GetType() const{ return m_type; }
+    inline HealthCheckType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const HealthCheckType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(HealthCheckType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline HealthCheckConfig& WithType(const HealthCheckType& value) { SetType(value); return *this;}
-    inline HealthCheckConfig& WithType(HealthCheckType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(HealthCheckType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline HealthCheckConfig& WithType(HealthCheckType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +117,12 @@ namespace Model
      * specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a
      * value for <code>ResourcePath</code>.</p>
      */
-    inline const Aws::String& GetResourcePath() const{ return m_resourcePath; }
+    inline const Aws::String& GetResourcePath() const { return m_resourcePath; }
     inline bool ResourcePathHasBeenSet() const { return m_resourcePathHasBeenSet; }
-    inline void SetResourcePath(const Aws::String& value) { m_resourcePathHasBeenSet = true; m_resourcePath = value; }
-    inline void SetResourcePath(Aws::String&& value) { m_resourcePathHasBeenSet = true; m_resourcePath = std::move(value); }
-    inline void SetResourcePath(const char* value) { m_resourcePathHasBeenSet = true; m_resourcePath.assign(value); }
-    inline HealthCheckConfig& WithResourcePath(const Aws::String& value) { SetResourcePath(value); return *this;}
-    inline HealthCheckConfig& WithResourcePath(Aws::String&& value) { SetResourcePath(std::move(value)); return *this;}
-    inline HealthCheckConfig& WithResourcePath(const char* value) { SetResourcePath(value); return *this;}
+    template<typename ResourcePathT = Aws::String>
+    void SetResourcePath(ResourcePathT&& value) { m_resourcePathHasBeenSet = true; m_resourcePath = std::forward<ResourcePathT>(value); }
+    template<typename ResourcePathT = Aws::String>
+    HealthCheckConfig& WithResourcePath(ResourcePathT&& value) { SetResourcePath(std::forward<ResourcePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,20 +134,20 @@ namespace Model
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
-    inline int GetFailureThreshold() const{ return m_failureThreshold; }
+    inline int GetFailureThreshold() const { return m_failureThreshold; }
     inline bool FailureThresholdHasBeenSet() const { return m_failureThresholdHasBeenSet; }
     inline void SetFailureThreshold(int value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
     inline HealthCheckConfig& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}
     ///@}
   private:
 
-    HealthCheckType m_type;
+    HealthCheckType m_type{HealthCheckType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_resourcePath;
     bool m_resourcePathHasBeenSet = false;
 
-    int m_failureThreshold;
+    int m_failureThreshold{0};
     bool m_failureThresholdHasBeenSet = false;
   };
 

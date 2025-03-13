@@ -18,15 +18,7 @@ namespace Invoicing
 namespace Model
 {
 
-Filters::Filters() : 
-    m_namesHasBeenSet(false),
-    m_invoiceReceiversHasBeenSet(false),
-    m_accountsHasBeenSet(false)
-{
-}
-
 Filters::Filters(JsonView jsonValue)
-  : Filters()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvoiceReceivers"))
   {
     Aws::Utils::Array<JsonView> invoiceReceiversJsonList = jsonValue.GetArray("InvoiceReceivers");
@@ -52,7 +43,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_invoiceReceiversHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accounts"))
   {
     Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("Accounts");
@@ -62,7 +52,6 @@ Filters& Filters::operator =(JsonView jsonValue)
     }
     m_accountsHasBeenSet = true;
   }
-
   return *this;
 }
 

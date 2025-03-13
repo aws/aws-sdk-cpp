@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAnycastIpLists2020_05_31Result::ListAnycastIpLists2020_05_31Result()
-{
-}
-
 ListAnycastIpLists2020_05_31Result::ListAnycastIpLists2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListAnycastIpLists2020_05_31Result& ListAnycastIpLists2020_05_31Result::operator
   if(!resultNode.IsNull())
   {
     m_anycastIpLists = resultNode;
+    m_anycastIpListsHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListAnycastIpLists2020_05_31Result& ListAnycastIpLists2020_05_31Result::operator
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,24 +18,7 @@ namespace Omics
 namespace Model
 {
 
-RunGroupListItem::RunGroupListItem() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_maxCpus(0),
-    m_maxCpusHasBeenSet(false),
-    m_maxRuns(0),
-    m_maxRunsHasBeenSet(false),
-    m_maxDuration(0),
-    m_maxDurationHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_maxGpus(0),
-    m_maxGpusHasBeenSet(false)
-{
-}
-
 RunGroupListItem::RunGroupListItem(JsonView jsonValue)
-  : RunGroupListItem()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ RunGroupListItem& RunGroupListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxCpus"))
   {
     m_maxCpus = jsonValue.GetInteger("maxCpus");
-
     m_maxCpusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxRuns"))
   {
     m_maxRuns = jsonValue.GetInteger("maxRuns");
-
     m_maxRunsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxDuration"))
   {
     m_maxDuration = jsonValue.GetInteger("maxDuration");
-
     m_maxDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxGpus"))
   {
     m_maxGpus = jsonValue.GetInteger("maxGpus");
-
     m_maxGpusHasBeenSet = true;
   }
-
   return *this;
 }
 

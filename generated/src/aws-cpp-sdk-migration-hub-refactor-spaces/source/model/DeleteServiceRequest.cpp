@@ -12,13 +12,6 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceRequest::DeleteServiceRequest() : 
-    m_applicationIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_serviceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceRequest::SerializePayload() const
 {
   return {};

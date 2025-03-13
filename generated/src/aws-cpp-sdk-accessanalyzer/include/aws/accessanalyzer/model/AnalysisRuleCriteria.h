@@ -34,7 +34,7 @@ namespace Model
   class AnalysisRuleCriteria
   {
   public:
-    AWS_ACCESSANALYZER_API AnalysisRuleCriteria();
+    AWS_ACCESSANALYZER_API AnalysisRuleCriteria() = default;
     AWS_ACCESSANALYZER_API AnalysisRuleCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API AnalysisRuleCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * organization-level analyzers. The list cannot include more than 2,000 account
      * IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline AnalysisRuleCriteria& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline AnalysisRuleCriteria& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline AnalysisRuleCriteria& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline AnalysisRuleCriteria& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline AnalysisRuleCriteria& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    AnalysisRuleCriteria& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    AnalysisRuleCriteria& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -70,14 +69,14 @@ namespace Model
      * value is 0 characters, the rule is applied to all principals with the specified
      * tag key.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline AnalysisRuleCriteria& WithResourceTags(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetResourceTags(value); return *this;}
-    inline AnalysisRuleCriteria& WithResourceTags(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline AnalysisRuleCriteria& AddResourceTags(const Aws::Map<Aws::String, Aws::String>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline AnalysisRuleCriteria& AddResourceTags(Aws::Map<Aws::String, Aws::String>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    AnalysisRuleCriteria& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+    AnalysisRuleCriteria& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
   private:
 

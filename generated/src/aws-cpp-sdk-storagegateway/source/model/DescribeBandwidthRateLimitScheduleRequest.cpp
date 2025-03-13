@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBandwidthRateLimitScheduleRequest::DescribeBandwidthRateLimitScheduleRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBandwidthRateLimitScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

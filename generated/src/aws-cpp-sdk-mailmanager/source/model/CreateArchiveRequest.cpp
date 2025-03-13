@@ -12,16 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateArchiveRequest::CreateArchiveRequest() : 
-    m_archiveNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_kmsKeyArnHasBeenSet(false),
-    m_retentionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateArchiveRequest::SerializePayload() const
 {
   JsonValue payload;

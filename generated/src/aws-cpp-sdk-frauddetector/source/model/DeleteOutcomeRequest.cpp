@@ -12,11 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOutcomeRequest::DeleteOutcomeRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOutcomeRequest::SerializePayload() const
 {
   JsonValue payload;

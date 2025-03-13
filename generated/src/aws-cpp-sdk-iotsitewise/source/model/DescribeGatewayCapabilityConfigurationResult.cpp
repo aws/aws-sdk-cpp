@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGatewayCapabilityConfigurationResult::DescribeGatewayCapabilityConfigurationResult() : 
-    m_capabilitySyncStatus(CapabilitySyncStatus::NOT_SET)
-{
-}
-
 DescribeGatewayCapabilityConfigurationResult::DescribeGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeGatewayCapabilityConfigurationResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ DescribeGatewayCapabilityConfigurationResult& DescribeGatewayCapabilityConfigura
   if(jsonValue.ValueExists("gatewayId"))
   {
     m_gatewayId = jsonValue.GetString("gatewayId");
-
+    m_gatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityNamespace"))
   {
     m_capabilityNamespace = jsonValue.GetString("capabilityNamespace");
-
+    m_capabilityNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityConfiguration"))
   {
     m_capabilityConfiguration = jsonValue.GetString("capabilityConfiguration");
-
+    m_capabilityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilitySyncStatus"))
   {
     m_capabilitySyncStatus = CapabilitySyncStatusMapper::GetCapabilitySyncStatusForName(jsonValue.GetString("capabilitySyncStatus"));
-
+    m_capabilitySyncStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

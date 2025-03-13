@@ -33,7 +33,7 @@ namespace Model
   class RegisterElasticIpResult
   {
   public:
-    AWS_OPSWORKS_API RegisterElasticIpResult();
+    AWS_OPSWORKS_API RegisterElasticIpResult() = default;
     AWS_OPSWORKS_API RegisterElasticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API RegisterElasticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
-    inline void SetElasticIp(const Aws::String& value) { m_elasticIp = value; }
-    inline void SetElasticIp(Aws::String&& value) { m_elasticIp = std::move(value); }
-    inline void SetElasticIp(const char* value) { m_elasticIp.assign(value); }
-    inline RegisterElasticIpResult& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
-    inline RegisterElasticIpResult& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
-    inline RegisterElasticIpResult& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
+    inline const Aws::String& GetElasticIp() const { return m_elasticIp; }
+    template<typename ElasticIpT = Aws::String>
+    void SetElasticIp(ElasticIpT&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::forward<ElasticIpT>(value); }
+    template<typename ElasticIpT = Aws::String>
+    RegisterElasticIpResult& WithElasticIp(ElasticIpT&& value) { SetElasticIp(std::forward<ElasticIpT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterElasticIpResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterElasticIpResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterElasticIpResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterElasticIpResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_elasticIp;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

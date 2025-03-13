@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-BatchScheduleActionCreateResult::BatchScheduleActionCreateResult() : 
-    m_scheduleActionsHasBeenSet(false)
-{
-}
-
 BatchScheduleActionCreateResult::BatchScheduleActionCreateResult(JsonView jsonValue)
-  : BatchScheduleActionCreateResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BatchScheduleActionCreateResult& BatchScheduleActionCreateResult::operator =(Jso
     }
     m_scheduleActionsHasBeenSet = true;
   }
-
   return *this;
 }
 

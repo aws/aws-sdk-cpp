@@ -12,13 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOrganizationalUnitRequest::CreateOrganizationalUnitRequest() : 
-    m_parentIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOrganizationalUnitRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,17 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-Change::Change() : 
-    m_type(ChangeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_hookInvocationCount(0),
-    m_hookInvocationCountHasBeenSet(false),
-    m_resourceChangeHasBeenSet(false)
-{
-}
-
 Change::Change(const XmlNode& xmlNode)
-  : Change()
 {
   *this = xmlNode;
 }
@@ -44,20 +34,23 @@ Change& Change::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
+       m_typeHasBeenSet = true;
     }
     XmlNode hookInvocationCountNode = resultNode.FirstChild("HookInvocationCount");
     if(!hookInvocationCountNode.IsNull())
     {
       m_hookInvocationCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hookInvocationCountNode.GetText()).c_str()).c_str());
       m_hookInvocationCountHasBeenSet = true;
+       m_hookInvocationCountHasBeenSet = true;
     }
     XmlNode resourceChangeNode = resultNode.FirstChild("ResourceChange");
     if(!resourceChangeNode.IsNull())
     {
       m_resourceChange = resourceChangeNode;
       m_resourceChangeHasBeenSet = true;
+       m_resourceChangeHasBeenSet = true;
     }
   }
 

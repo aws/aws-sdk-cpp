@@ -30,7 +30,7 @@ namespace Model
   class MotionGraphicsDeactivateScheduleActionSettings
   {
   public:
-    AWS_MEDIALIVE_API MotionGraphicsDeactivateScheduleActionSettings();
+    AWS_MEDIALIVE_API MotionGraphicsDeactivateScheduleActionSettings() = default;
     AWS_MEDIALIVE_API MotionGraphicsDeactivateScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MotionGraphicsDeactivateScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

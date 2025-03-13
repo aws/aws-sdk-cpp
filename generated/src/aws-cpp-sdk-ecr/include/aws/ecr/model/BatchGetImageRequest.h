@@ -23,7 +23,7 @@ namespace Model
   class BatchGetImageRequest : public ECRRequest
   {
   public:
-    AWS_ECR_API BatchGetImageRequest();
+    AWS_ECR_API BatchGetImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * the images to describe. If you do not specify a registry, the default registry
      * is assumed.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-    inline BatchGetImageRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline BatchGetImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline BatchGetImageRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    BatchGetImageRequest& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository that contains the images to describe.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline BatchGetImageRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline BatchGetImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline BatchGetImageRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    BatchGetImageRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,14 @@ namespace Model
      * format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or
      * <code>imageDigest=digest</code>.</p>
      */
-    inline const Aws::Vector<ImageIdentifier>& GetImageIds() const{ return m_imageIds; }
+    inline const Aws::Vector<ImageIdentifier>& GetImageIds() const { return m_imageIds; }
     inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
-    inline void SetImageIds(const Aws::Vector<ImageIdentifier>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
-    inline void SetImageIds(Aws::Vector<ImageIdentifier>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
-    inline BatchGetImageRequest& WithImageIds(const Aws::Vector<ImageIdentifier>& value) { SetImageIds(value); return *this;}
-    inline BatchGetImageRequest& WithImageIds(Aws::Vector<ImageIdentifier>&& value) { SetImageIds(std::move(value)); return *this;}
-    inline BatchGetImageRequest& AddImageIds(const ImageIdentifier& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
-    inline BatchGetImageRequest& AddImageIds(ImageIdentifier&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
+    template<typename ImageIdsT = Aws::Vector<ImageIdentifier>>
+    void SetImageIds(ImageIdsT&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::forward<ImageIdsT>(value); }
+    template<typename ImageIdsT = Aws::Vector<ImageIdentifier>>
+    BatchGetImageRequest& WithImageIds(ImageIdsT&& value) { SetImageIds(std::forward<ImageIdsT>(value)); return *this;}
+    template<typename ImageIdsT = ImageIdentifier>
+    BatchGetImageRequest& AddImageIds(ImageIdsT&& value) { m_imageIdsHasBeenSet = true; m_imageIds.emplace_back(std::forward<ImageIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,15 +85,14 @@ namespace Model
      * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
      * <code>application/vnd.oci.image.manifest.v1+json</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAcceptedMediaTypes() const{ return m_acceptedMediaTypes; }
+    inline const Aws::Vector<Aws::String>& GetAcceptedMediaTypes() const { return m_acceptedMediaTypes; }
     inline bool AcceptedMediaTypesHasBeenSet() const { return m_acceptedMediaTypesHasBeenSet; }
-    inline void SetAcceptedMediaTypes(const Aws::Vector<Aws::String>& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes = value; }
-    inline void SetAcceptedMediaTypes(Aws::Vector<Aws::String>&& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes = std::move(value); }
-    inline BatchGetImageRequest& WithAcceptedMediaTypes(const Aws::Vector<Aws::String>& value) { SetAcceptedMediaTypes(value); return *this;}
-    inline BatchGetImageRequest& WithAcceptedMediaTypes(Aws::Vector<Aws::String>&& value) { SetAcceptedMediaTypes(std::move(value)); return *this;}
-    inline BatchGetImageRequest& AddAcceptedMediaTypes(const Aws::String& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(value); return *this; }
-    inline BatchGetImageRequest& AddAcceptedMediaTypes(Aws::String&& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(std::move(value)); return *this; }
-    inline BatchGetImageRequest& AddAcceptedMediaTypes(const char* value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.push_back(value); return *this; }
+    template<typename AcceptedMediaTypesT = Aws::Vector<Aws::String>>
+    void SetAcceptedMediaTypes(AcceptedMediaTypesT&& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes = std::forward<AcceptedMediaTypesT>(value); }
+    template<typename AcceptedMediaTypesT = Aws::Vector<Aws::String>>
+    BatchGetImageRequest& WithAcceptedMediaTypes(AcceptedMediaTypesT&& value) { SetAcceptedMediaTypes(std::forward<AcceptedMediaTypesT>(value)); return *this;}
+    template<typename AcceptedMediaTypesT = Aws::String>
+    BatchGetImageRequest& AddAcceptedMediaTypes(AcceptedMediaTypesT&& value) { m_acceptedMediaTypesHasBeenSet = true; m_acceptedMediaTypes.emplace_back(std::forward<AcceptedMediaTypesT>(value)); return *this; }
     ///@}
   private:
 

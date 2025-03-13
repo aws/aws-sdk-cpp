@@ -12,16 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListIngestConfigurationsRequest::ListIngestConfigurationsRequest() : 
-    m_filterByStageArnHasBeenSet(false),
-    m_filterByState(IngestConfigurationState::NOT_SET),
-    m_filterByStateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListIngestConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

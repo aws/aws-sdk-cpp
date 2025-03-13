@@ -12,13 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendEventRequest::SendEventRequest() : 
-    m_roomIdentifierHasBeenSet(false),
-    m_eventNameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String SendEventRequest::SerializePayload() const
 {
   JsonValue payload;

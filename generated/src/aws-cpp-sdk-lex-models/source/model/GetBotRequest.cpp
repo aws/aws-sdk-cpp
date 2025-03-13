@@ -12,12 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBotRequest::GetBotRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionOrAliasHasBeenSet(false)
-{
-}
-
 Aws::String GetBotRequest::SerializePayload() const
 {
   return {};

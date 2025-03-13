@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestDNSAnswerResult::TestDNSAnswerResult() : 
-    m_recordType(RRType::NOT_SET)
-{
-}
-
 TestDNSAnswerResult::TestDNSAnswerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : TestDNSAnswerResult()
 {
   *this = result;
 }
@@ -38,21 +32,25 @@ TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebService
     if(!nameserverNode.IsNull())
     {
       m_nameserver = Aws::Utils::Xml::DecodeEscapedXmlText(nameserverNode.GetText());
+      m_nameserverHasBeenSet = true;
     }
     XmlNode recordNameNode = resultNode.FirstChild("RecordName");
     if(!recordNameNode.IsNull())
     {
       m_recordName = Aws::Utils::Xml::DecodeEscapedXmlText(recordNameNode.GetText());
+      m_recordNameHasBeenSet = true;
     }
     XmlNode recordTypeNode = resultNode.FirstChild("RecordType");
     if(!recordTypeNode.IsNull())
     {
-      m_recordType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recordTypeNode.GetText()).c_str()).c_str());
+      m_recordType = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(recordTypeNode.GetText()).c_str()));
+      m_recordTypeHasBeenSet = true;
     }
     XmlNode recordDataNode = resultNode.FirstChild("RecordData");
     if(!recordDataNode.IsNull())
     {
       XmlNode recordDataMember = recordDataNode.FirstChild("RecordDataEntry");
+      m_recordDataHasBeenSet = !recordDataMember.IsNull();
       while(!recordDataMember.IsNull())
       {
         m_recordData.push_back(recordDataMember.GetText());
@@ -64,11 +62,13 @@ TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebService
     if(!responseCodeNode.IsNull())
     {
       m_responseCode = Aws::Utils::Xml::DecodeEscapedXmlText(responseCodeNode.GetText());
+      m_responseCodeHasBeenSet = true;
     }
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
       m_protocol = Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText());
+      m_protocolHasBeenSet = true;
     }
   }
 
@@ -77,6 +77,7 @@ TestDNSAnswerResult& TestDNSAnswerResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

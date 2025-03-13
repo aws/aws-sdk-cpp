@@ -12,20 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceRequest::CreateServiceRequest() : 
-    m_branchNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_repositoryConnectionArnHasBeenSet(false),
-    m_repositoryIdHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceRequest::SerializePayload() const
 {
   JsonValue payload;

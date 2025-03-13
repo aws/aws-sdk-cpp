@@ -31,7 +31,7 @@ namespace Model
   class ConditionalFormattingIconDisplayConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration();
+    AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration() = default;
     AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Determines the icon display configuration.</p>
      */
-    inline const ConditionalFormattingIconDisplayOption& GetIconDisplayOption() const{ return m_iconDisplayOption; }
+    inline ConditionalFormattingIconDisplayOption GetIconDisplayOption() const { return m_iconDisplayOption; }
     inline bool IconDisplayOptionHasBeenSet() const { return m_iconDisplayOptionHasBeenSet; }
-    inline void SetIconDisplayOption(const ConditionalFormattingIconDisplayOption& value) { m_iconDisplayOptionHasBeenSet = true; m_iconDisplayOption = value; }
-    inline void SetIconDisplayOption(ConditionalFormattingIconDisplayOption&& value) { m_iconDisplayOptionHasBeenSet = true; m_iconDisplayOption = std::move(value); }
-    inline ConditionalFormattingIconDisplayConfiguration& WithIconDisplayOption(const ConditionalFormattingIconDisplayOption& value) { SetIconDisplayOption(value); return *this;}
-    inline ConditionalFormattingIconDisplayConfiguration& WithIconDisplayOption(ConditionalFormattingIconDisplayOption&& value) { SetIconDisplayOption(std::move(value)); return *this;}
+    inline void SetIconDisplayOption(ConditionalFormattingIconDisplayOption value) { m_iconDisplayOptionHasBeenSet = true; m_iconDisplayOption = value; }
+    inline ConditionalFormattingIconDisplayConfiguration& WithIconDisplayOption(ConditionalFormattingIconDisplayOption value) { SetIconDisplayOption(value); return *this;}
     ///@}
   private:
 
-    ConditionalFormattingIconDisplayOption m_iconDisplayOption;
+    ConditionalFormattingIconDisplayOption m_iconDisplayOption{ConditionalFormattingIconDisplayOption::NOT_SET};
     bool m_iconDisplayOptionHasBeenSet = false;
   };
 

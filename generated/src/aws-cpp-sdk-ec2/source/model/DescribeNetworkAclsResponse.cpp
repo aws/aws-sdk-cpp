@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeNetworkAclsResponse::DescribeNetworkAclsResponse()
-{
-}
-
 DescribeNetworkAclsResponse::DescribeNetworkAclsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Aws::
     if(!networkAclsNode.IsNull())
     {
       XmlNode networkAclsMember = networkAclsNode.FirstChild("item");
+      m_networkAclsHasBeenSet = !networkAclsMember.IsNull();
       while(!networkAclsMember.IsNull())
       {
         m_networkAcls.push_back(networkAclsMember);
@@ -53,6 +50,7 @@ DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Aws::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeNetworkAclsResponse& DescribeNetworkAclsResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeNetworkAclsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

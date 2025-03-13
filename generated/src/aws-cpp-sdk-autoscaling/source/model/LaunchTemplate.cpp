@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LaunchTemplate::LaunchTemplate() : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 LaunchTemplate::LaunchTemplate(const XmlNode& xmlNode)
-  : LaunchTemplate()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ LaunchTemplate& LaunchTemplate::operator =(const XmlNode& xmlNode)
     {
       m_launchTemplateSpecification = launchTemplateSpecificationNode;
       m_launchTemplateSpecificationHasBeenSet = true;
+       m_launchTemplateSpecificationHasBeenSet = true;
     }
     XmlNode overridesNode = resultNode.FirstChild("Overrides");
     if(!overridesNode.IsNull())
     {
       XmlNode overridesMember = overridesNode.FirstChild("member");
+      m_overridesHasBeenSet = !overridesMember.IsNull();
       while(!overridesMember.IsNull())
       {
         m_overrides.push_back(overridesMember);
         overridesMember = overridesMember.NextNode("member");
       }
 
-      m_overridesHasBeenSet = true;
+       m_overridesHasBeenSet = true;
     }
   }
 

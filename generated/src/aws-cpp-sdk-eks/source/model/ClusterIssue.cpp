@@ -18,16 +18,7 @@ namespace EKS
 namespace Model
 {
 
-ClusterIssue::ClusterIssue() : 
-    m_code(ClusterIssueCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
-{
-}
-
 ClusterIssue::ClusterIssue(JsonView jsonValue)
-  : ClusterIssue()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ClusterIssue& ClusterIssue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = ClusterIssueCodeMapper::GetClusterIssueCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -57,7 +44,6 @@ ClusterIssue& ClusterIssue::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

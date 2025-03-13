@@ -36,7 +36,7 @@ namespace Model
   class ProcessingS3Input
   {
   public:
-    AWS_SAGEMAKER_API ProcessingS3Input();
+    AWS_SAGEMAKER_API ProcessingS3Input() = default;
     AWS_SAGEMAKER_API ProcessingS3Input(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProcessingS3Input& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to
      * run a processing job.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline ProcessingS3Input& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline ProcessingS3Input& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline ProcessingS3Input& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    ProcessingS3Input& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * required parameter when <code>AppManaged</code> is <code>False</code>
      * (default).</p>
      */
-    inline const Aws::String& GetLocalPath() const{ return m_localPath; }
+    inline const Aws::String& GetLocalPath() const { return m_localPath; }
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
-    inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
-    inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
-    inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
-    inline ProcessingS3Input& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
-    inline ProcessingS3Input& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
-    inline ProcessingS3Input& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
+    template<typename LocalPathT = Aws::String>
+    void SetLocalPath(LocalPathT&& value) { m_localPathHasBeenSet = true; m_localPath = std::forward<LocalPathT>(value); }
+    template<typename LocalPathT = Aws::String>
+    ProcessingS3Input& WithLocalPath(LocalPathT&& value) { SetLocalPath(std::forward<LocalPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +81,10 @@ namespace Model
      * manifest file containing a list of object keys that you want Amazon SageMaker to
      * use for the processing job.</p>
      */
-    inline const ProcessingS3DataType& GetS3DataType() const{ return m_s3DataType; }
+    inline ProcessingS3DataType GetS3DataType() const { return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
-    inline void SetS3DataType(const ProcessingS3DataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
-    inline void SetS3DataType(ProcessingS3DataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
-    inline ProcessingS3Input& WithS3DataType(const ProcessingS3DataType& value) { SetS3DataType(value); return *this;}
-    inline ProcessingS3Input& WithS3DataType(ProcessingS3DataType&& value) { SetS3DataType(std::move(value)); return *this;}
+    inline void SetS3DataType(ProcessingS3DataType value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
+    inline ProcessingS3Input& WithS3DataType(ProcessingS3DataType value) { SetS3DataType(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +96,10 @@ namespace Model
      * input data from the source directly to your processing container into named
      * pipes without using the ML storage volume.</p>
      */
-    inline const ProcessingS3InputMode& GetS3InputMode() const{ return m_s3InputMode; }
+    inline ProcessingS3InputMode GetS3InputMode() const { return m_s3InputMode; }
     inline bool S3InputModeHasBeenSet() const { return m_s3InputModeHasBeenSet; }
-    inline void SetS3InputMode(const ProcessingS3InputMode& value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = value; }
-    inline void SetS3InputMode(ProcessingS3InputMode&& value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = std::move(value); }
-    inline ProcessingS3Input& WithS3InputMode(const ProcessingS3InputMode& value) { SetS3InputMode(value); return *this;}
-    inline ProcessingS3Input& WithS3InputMode(ProcessingS3InputMode&& value) { SetS3InputMode(std::move(value)); return *this;}
+    inline void SetS3InputMode(ProcessingS3InputMode value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = value; }
+    inline ProcessingS3Input& WithS3InputMode(ProcessingS3InputMode value) { SetS3InputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +108,10 @@ namespace Model
      * with <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared
      * by Amazon S3 key, downloading one shard of data to each processing instance.</p>
      */
-    inline const ProcessingS3DataDistributionType& GetS3DataDistributionType() const{ return m_s3DataDistributionType; }
+    inline ProcessingS3DataDistributionType GetS3DataDistributionType() const { return m_s3DataDistributionType; }
     inline bool S3DataDistributionTypeHasBeenSet() const { return m_s3DataDistributionTypeHasBeenSet; }
-    inline void SetS3DataDistributionType(const ProcessingS3DataDistributionType& value) { m_s3DataDistributionTypeHasBeenSet = true; m_s3DataDistributionType = value; }
-    inline void SetS3DataDistributionType(ProcessingS3DataDistributionType&& value) { m_s3DataDistributionTypeHasBeenSet = true; m_s3DataDistributionType = std::move(value); }
-    inline ProcessingS3Input& WithS3DataDistributionType(const ProcessingS3DataDistributionType& value) { SetS3DataDistributionType(value); return *this;}
-    inline ProcessingS3Input& WithS3DataDistributionType(ProcessingS3DataDistributionType&& value) { SetS3DataDistributionType(std::move(value)); return *this;}
+    inline void SetS3DataDistributionType(ProcessingS3DataDistributionType value) { m_s3DataDistributionTypeHasBeenSet = true; m_s3DataDistributionType = value; }
+    inline ProcessingS3Input& WithS3DataDistributionType(ProcessingS3DataDistributionType value) { SetS3DataDistributionType(value); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +122,10 @@ namespace Model
      * Amazon SageMaker streams input data from the source directly to your container
      * without using the EBS volume.</p>
      */
-    inline const ProcessingS3CompressionType& GetS3CompressionType() const{ return m_s3CompressionType; }
+    inline ProcessingS3CompressionType GetS3CompressionType() const { return m_s3CompressionType; }
     inline bool S3CompressionTypeHasBeenSet() const { return m_s3CompressionTypeHasBeenSet; }
-    inline void SetS3CompressionType(const ProcessingS3CompressionType& value) { m_s3CompressionTypeHasBeenSet = true; m_s3CompressionType = value; }
-    inline void SetS3CompressionType(ProcessingS3CompressionType&& value) { m_s3CompressionTypeHasBeenSet = true; m_s3CompressionType = std::move(value); }
-    inline ProcessingS3Input& WithS3CompressionType(const ProcessingS3CompressionType& value) { SetS3CompressionType(value); return *this;}
-    inline ProcessingS3Input& WithS3CompressionType(ProcessingS3CompressionType&& value) { SetS3CompressionType(std::move(value)); return *this;}
+    inline void SetS3CompressionType(ProcessingS3CompressionType value) { m_s3CompressionTypeHasBeenSet = true; m_s3CompressionType = value; }
+    inline ProcessingS3Input& WithS3CompressionType(ProcessingS3CompressionType value) { SetS3CompressionType(value); return *this;}
     ///@}
   private:
 
@@ -147,16 +135,16 @@ namespace Model
     Aws::String m_localPath;
     bool m_localPathHasBeenSet = false;
 
-    ProcessingS3DataType m_s3DataType;
+    ProcessingS3DataType m_s3DataType{ProcessingS3DataType::NOT_SET};
     bool m_s3DataTypeHasBeenSet = false;
 
-    ProcessingS3InputMode m_s3InputMode;
+    ProcessingS3InputMode m_s3InputMode{ProcessingS3InputMode::NOT_SET};
     bool m_s3InputModeHasBeenSet = false;
 
-    ProcessingS3DataDistributionType m_s3DataDistributionType;
+    ProcessingS3DataDistributionType m_s3DataDistributionType{ProcessingS3DataDistributionType::NOT_SET};
     bool m_s3DataDistributionTypeHasBeenSet = false;
 
-    ProcessingS3CompressionType m_s3CompressionType;
+    ProcessingS3CompressionType m_s3CompressionType{ProcessingS3CompressionType::NOT_SET};
     bool m_s3CompressionTypeHasBeenSet = false;
   };
 

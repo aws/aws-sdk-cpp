@@ -30,7 +30,7 @@ namespace Model
   class UniqueSources
   {
   public:
-    AWS_NETWORKFIREWALL_API UniqueSources();
+    AWS_NETWORKFIREWALL_API UniqueSources() = default;
     AWS_NETWORKFIREWALL_API UniqueSources(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API UniqueSources& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of unique source IP addresses that connected to a domain.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline UniqueSources& WithCount(int value) { SetCount(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

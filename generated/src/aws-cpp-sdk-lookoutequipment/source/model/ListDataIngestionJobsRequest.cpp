@@ -12,16 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListDataIngestionJobsRequest::ListDataIngestionJobsRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_status(IngestionJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListDataIngestionJobsRequest::SerializePayload() const
 {
   JsonValue payload;

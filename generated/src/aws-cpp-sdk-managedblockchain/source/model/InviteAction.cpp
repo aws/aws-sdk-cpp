@@ -18,13 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-InviteAction::InviteAction() : 
-    m_principalHasBeenSet(false)
-{
-}
-
 InviteAction::InviteAction(JsonView jsonValue)
-  : InviteAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InviteAction& InviteAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Principal"))
   {
     m_principal = jsonValue.GetString("Principal");
-
     m_principalHasBeenSet = true;
   }
-
   return *this;
 }
 

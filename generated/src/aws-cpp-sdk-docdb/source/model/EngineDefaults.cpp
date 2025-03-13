@@ -20,15 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-EngineDefaults::EngineDefaults() : 
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 EngineDefaults::EngineDefaults(const XmlNode& xmlNode)
-  : EngineDefaults()
 {
   *this = xmlNode;
 }
@@ -44,24 +36,27 @@ EngineDefaults& EngineDefaults::operator =(const XmlNode& xmlNode)
     {
       m_dBParameterGroupFamily = Aws::Utils::Xml::DecodeEscapedXmlText(dBParameterGroupFamilyNode.GetText());
       m_dBParameterGroupFamilyHasBeenSet = true;
+       m_dBParameterGroupFamilyHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
       m_markerHasBeenSet = true;
+       m_markerHasBeenSet = true;
     }
     XmlNode parametersNode = resultNode.FirstChild("Parameters");
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("Parameter");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
         parametersMember = parametersMember.NextNode("Parameter");
       }
 
-      m_parametersHasBeenSet = true;
+       m_parametersHasBeenSet = true;
     }
   }
 

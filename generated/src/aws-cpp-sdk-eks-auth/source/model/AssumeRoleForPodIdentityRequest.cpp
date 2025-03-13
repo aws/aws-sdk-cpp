@@ -12,12 +12,6 @@ using namespace Aws::EKSAuth::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssumeRoleForPodIdentityRequest::AssumeRoleForPodIdentityRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String AssumeRoleForPodIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

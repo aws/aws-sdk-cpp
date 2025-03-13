@@ -21,7 +21,7 @@ namespace Model
   class DeleteFrameworkRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API DeleteFrameworkRequest();
+    AWS_BACKUP_API DeleteFrameworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique name of a framework.</p>
      */
-    inline const Aws::String& GetFrameworkName() const{ return m_frameworkName; }
+    inline const Aws::String& GetFrameworkName() const { return m_frameworkName; }
     inline bool FrameworkNameHasBeenSet() const { return m_frameworkNameHasBeenSet; }
-    inline void SetFrameworkName(const Aws::String& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = value; }
-    inline void SetFrameworkName(Aws::String&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::move(value); }
-    inline void SetFrameworkName(const char* value) { m_frameworkNameHasBeenSet = true; m_frameworkName.assign(value); }
-    inline DeleteFrameworkRequest& WithFrameworkName(const Aws::String& value) { SetFrameworkName(value); return *this;}
-    inline DeleteFrameworkRequest& WithFrameworkName(Aws::String&& value) { SetFrameworkName(std::move(value)); return *this;}
-    inline DeleteFrameworkRequest& WithFrameworkName(const char* value) { SetFrameworkName(value); return *this;}
+    template<typename FrameworkNameT = Aws::String>
+    void SetFrameworkName(FrameworkNameT&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::forward<FrameworkNameT>(value); }
+    template<typename FrameworkNameT = Aws::String>
+    DeleteFrameworkRequest& WithFrameworkName(FrameworkNameT&& value) { SetFrameworkName(std::forward<FrameworkNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ParsingConfiguration::ParsingConfiguration() : 
-    m_bedrockDataAutomationConfigurationHasBeenSet(false),
-    m_bedrockFoundationModelConfigurationHasBeenSet(false),
-    m_parsingStrategy(ParsingStrategy::NOT_SET),
-    m_parsingStrategyHasBeenSet(false)
-{
-}
-
 ParsingConfiguration::ParsingConfiguration(JsonView jsonValue)
-  : ParsingConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ParsingConfiguration& ParsingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bedrockDataAutomationConfiguration"))
   {
     m_bedrockDataAutomationConfiguration = jsonValue.GetObject("bedrockDataAutomationConfiguration");
-
     m_bedrockDataAutomationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bedrockFoundationModelConfiguration"))
   {
     m_bedrockFoundationModelConfiguration = jsonValue.GetObject("bedrockFoundationModelConfiguration");
-
     m_bedrockFoundationModelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parsingStrategy"))
   {
     m_parsingStrategy = ParsingStrategyMapper::GetParsingStrategyForName(jsonValue.GetString("parsingStrategy"));
-
     m_parsingStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

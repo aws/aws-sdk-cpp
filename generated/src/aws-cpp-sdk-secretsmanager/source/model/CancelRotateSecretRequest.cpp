@@ -12,11 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelRotateSecretRequest::CancelRotateSecretRequest() : 
-    m_secretIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelRotateSecretRequest::SerializePayload() const
 {
   JsonValue payload;

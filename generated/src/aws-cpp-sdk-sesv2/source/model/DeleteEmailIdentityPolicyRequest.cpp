@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEmailIdentityPolicyRequest::DeleteEmailIdentityPolicyRequest() : 
-    m_emailIdentityHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEmailIdentityPolicyRequest::SerializePayload() const
 {
   return {};

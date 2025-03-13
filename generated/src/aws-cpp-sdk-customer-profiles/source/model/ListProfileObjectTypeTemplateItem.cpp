@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ListProfileObjectTypeTemplateItem::ListProfileObjectTypeTemplateItem() : 
-    m_templateIdHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceObjectHasBeenSet(false)
-{
-}
-
 ListProfileObjectTypeTemplateItem::ListProfileObjectTypeTemplateItem(JsonView jsonValue)
-  : ListProfileObjectTypeTemplateItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListProfileObjectTypeTemplateItem& ListProfileObjectTypeTemplateItem::operator =
   if(jsonValue.ValueExists("TemplateId"))
   {
     m_templateId = jsonValue.GetString("TemplateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceName"))
   {
     m_sourceName = jsonValue.GetString("SourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceObject"))
   {
     m_sourceObject = jsonValue.GetString("SourceObject");
-
     m_sourceObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

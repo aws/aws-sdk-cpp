@@ -32,7 +32,7 @@ namespace Model
   class LambdaSavingsEstimationMode
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API LambdaSavingsEstimationMode();
+    AWS_COMPUTEOPTIMIZER_API LambdaSavingsEstimationMode() = default;
     AWS_COMPUTEOPTIMIZER_API LambdaSavingsEstimationMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API LambdaSavingsEstimationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> Describes the source for calculation of savings opportunity for Lambda
      * functions. </p>
      */
-    inline const LambdaSavingsEstimationModeSource& GetSource() const{ return m_source; }
+    inline LambdaSavingsEstimationModeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const LambdaSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(LambdaSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline LambdaSavingsEstimationMode& WithSource(const LambdaSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-    inline LambdaSavingsEstimationMode& WithSource(LambdaSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(LambdaSavingsEstimationModeSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline LambdaSavingsEstimationMode& WithSource(LambdaSavingsEstimationModeSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
-    LambdaSavingsEstimationModeSource m_source;
+    LambdaSavingsEstimationModeSource m_source{LambdaSavingsEstimationModeSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

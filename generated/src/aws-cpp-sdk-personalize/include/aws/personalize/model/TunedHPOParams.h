@@ -34,7 +34,7 @@ namespace Model
   class TunedHPOParams
   {
   public:
-    AWS_PERSONALIZE_API TunedHPOParams();
+    AWS_PERSONALIZE_API TunedHPOParams() = default;
     AWS_PERSONALIZE_API TunedHPOParams(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API TunedHPOParams& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,16 @@ namespace Model
     /**
      * <p>A list of the hyperparameter values of the best performing model.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAlgorithmHyperParameters() const{ return m_algorithmHyperParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAlgorithmHyperParameters() const { return m_algorithmHyperParameters; }
     inline bool AlgorithmHyperParametersHasBeenSet() const { return m_algorithmHyperParametersHasBeenSet; }
-    inline void SetAlgorithmHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters = value; }
-    inline void SetAlgorithmHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters = std::move(value); }
-    inline TunedHPOParams& WithAlgorithmHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAlgorithmHyperParameters(value); return *this;}
-    inline TunedHPOParams& WithAlgorithmHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAlgorithmHyperParameters(std::move(value)); return *this;}
-    inline TunedHPOParams& AddAlgorithmHyperParameters(const Aws::String& key, const Aws::String& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, value); return *this; }
-    inline TunedHPOParams& AddAlgorithmHyperParameters(Aws::String&& key, const Aws::String& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::move(key), value); return *this; }
-    inline TunedHPOParams& AddAlgorithmHyperParameters(const Aws::String& key, Aws::String&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, std::move(value)); return *this; }
-    inline TunedHPOParams& AddAlgorithmHyperParameters(Aws::String&& key, Aws::String&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline TunedHPOParams& AddAlgorithmHyperParameters(const char* key, Aws::String&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, std::move(value)); return *this; }
-    inline TunedHPOParams& AddAlgorithmHyperParameters(Aws::String&& key, const char* value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::move(key), value); return *this; }
-    inline TunedHPOParams& AddAlgorithmHyperParameters(const char* key, const char* value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, value); return *this; }
+    template<typename AlgorithmHyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetAlgorithmHyperParameters(AlgorithmHyperParametersT&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters = std::forward<AlgorithmHyperParametersT>(value); }
+    template<typename AlgorithmHyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    TunedHPOParams& WithAlgorithmHyperParameters(AlgorithmHyperParametersT&& value) { SetAlgorithmHyperParameters(std::forward<AlgorithmHyperParametersT>(value)); return *this;}
+    template<typename AlgorithmHyperParametersKeyT = Aws::String, typename AlgorithmHyperParametersValueT = Aws::String>
+    TunedHPOParams& AddAlgorithmHyperParameters(AlgorithmHyperParametersKeyT&& key, AlgorithmHyperParametersValueT&& value) {
+      m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::forward<AlgorithmHyperParametersKeyT>(key), std::forward<AlgorithmHyperParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

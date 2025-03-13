@@ -33,7 +33,7 @@ namespace Model
   class ManagedLogs
   {
   public:
-    AWS_EMRCONTAINERS_API ManagedLogs();
+    AWS_EMRCONTAINERS_API ManagedLogs() = default;
     AWS_EMRCONTAINERS_API ManagedLogs(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API ManagedLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>Determines whether Amazon Web Services can retain logs.</p>
      */
-    inline const AllowAWSToRetainLogs& GetAllowAWSToRetainLogs() const{ return m_allowAWSToRetainLogs; }
+    inline AllowAWSToRetainLogs GetAllowAWSToRetainLogs() const { return m_allowAWSToRetainLogs; }
     inline bool AllowAWSToRetainLogsHasBeenSet() const { return m_allowAWSToRetainLogsHasBeenSet; }
-    inline void SetAllowAWSToRetainLogs(const AllowAWSToRetainLogs& value) { m_allowAWSToRetainLogsHasBeenSet = true; m_allowAWSToRetainLogs = value; }
-    inline void SetAllowAWSToRetainLogs(AllowAWSToRetainLogs&& value) { m_allowAWSToRetainLogsHasBeenSet = true; m_allowAWSToRetainLogs = std::move(value); }
-    inline ManagedLogs& WithAllowAWSToRetainLogs(const AllowAWSToRetainLogs& value) { SetAllowAWSToRetainLogs(value); return *this;}
-    inline ManagedLogs& WithAllowAWSToRetainLogs(AllowAWSToRetainLogs&& value) { SetAllowAWSToRetainLogs(std::move(value)); return *this;}
+    inline void SetAllowAWSToRetainLogs(AllowAWSToRetainLogs value) { m_allowAWSToRetainLogsHasBeenSet = true; m_allowAWSToRetainLogs = value; }
+    inline ManagedLogs& WithAllowAWSToRetainLogs(AllowAWSToRetainLogs value) { SetAllowAWSToRetainLogs(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
-    inline ManagedLogs& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline ManagedLogs& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline ManagedLogs& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    ManagedLogs& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
   private:
 
-    AllowAWSToRetainLogs m_allowAWSToRetainLogs;
+    AllowAWSToRetainLogs m_allowAWSToRetainLogs{AllowAWSToRetainLogs::NOT_SET};
     bool m_allowAWSToRetainLogsHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;

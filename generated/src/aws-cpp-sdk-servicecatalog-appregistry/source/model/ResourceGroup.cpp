@@ -18,16 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-ResourceGroup::ResourceGroup() : 
-    m_state(ResourceGroupState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ResourceGroup::ResourceGroup(JsonView jsonValue)
-  : ResourceGroup()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceGroup& ResourceGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = ResourceGroupStateMapper::GetResourceGroupStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

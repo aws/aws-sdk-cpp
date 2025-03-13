@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDomainPermissionsPolicyRequest::GetDomainPermissionsPolicyRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainPermissionsPolicyRequest::SerializePayload() const
 {
   return {};

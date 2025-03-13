@@ -18,14 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-OtherName::OtherName() : 
-    m_typeIdHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 OtherName::OtherName(JsonView jsonValue)
-  : OtherName()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OtherName& OtherName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypeId"))
   {
     m_typeId = jsonValue.GetString("TypeId");
-
     m_typeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

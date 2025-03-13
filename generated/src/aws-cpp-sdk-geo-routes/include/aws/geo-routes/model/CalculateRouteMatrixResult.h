@@ -30,7 +30,7 @@ namespace Model
   class CalculateRouteMatrixResult
   {
   public:
-    AWS_GEOROUTES_API CalculateRouteMatrixResult();
+    AWS_GEOROUTES_API CalculateRouteMatrixResult() = default;
     AWS_GEOROUTES_API CalculateRouteMatrixResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GEOROUTES_API CalculateRouteMatrixResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,8 +40,8 @@ namespace Model
      * <p>The count of error results in the route matrix. If this number is 0, all
      * routes were calculated successfully.</p>
      */
-    inline int GetErrorCount() const{ return m_errorCount; }
-    inline void SetErrorCount(int value) { m_errorCount = value; }
+    inline int GetErrorCount() const { return m_errorCount; }
+    inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
     inline CalculateRouteMatrixResult& WithErrorCount(int value) { SetErrorCount(value); return *this;}
     ///@}
 
@@ -49,13 +49,11 @@ namespace Model
     /**
      * <p>The pricing bucket for which the query is charged at.</p>
      */
-    inline const Aws::String& GetPricingBucket() const{ return m_pricingBucket; }
-    inline void SetPricingBucket(const Aws::String& value) { m_pricingBucket = value; }
-    inline void SetPricingBucket(Aws::String&& value) { m_pricingBucket = std::move(value); }
-    inline void SetPricingBucket(const char* value) { m_pricingBucket.assign(value); }
-    inline CalculateRouteMatrixResult& WithPricingBucket(const Aws::String& value) { SetPricingBucket(value); return *this;}
-    inline CalculateRouteMatrixResult& WithPricingBucket(Aws::String&& value) { SetPricingBucket(std::move(value)); return *this;}
-    inline CalculateRouteMatrixResult& WithPricingBucket(const char* value) { SetPricingBucket(value); return *this;}
+    inline const Aws::String& GetPricingBucket() const { return m_pricingBucket; }
+    template<typename PricingBucketT = Aws::String>
+    void SetPricingBucket(PricingBucketT&& value) { m_pricingBucketHasBeenSet = true; m_pricingBucket = std::forward<PricingBucketT>(value); }
+    template<typename PricingBucketT = Aws::String>
+    CalculateRouteMatrixResult& WithPricingBucket(PricingBucketT&& value) { SetPricingBucket(std::forward<PricingBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,13 +63,13 @@ namespace Model
      * entry in the row corresponds to the route from that entry in Origins to an entry
      * in Destination positions.</p>
      */
-    inline const Aws::Vector<Aws::Vector<RouteMatrixEntry>>& GetRouteMatrix() const{ return m_routeMatrix; }
-    inline void SetRouteMatrix(const Aws::Vector<Aws::Vector<RouteMatrixEntry>>& value) { m_routeMatrix = value; }
-    inline void SetRouteMatrix(Aws::Vector<Aws::Vector<RouteMatrixEntry>>&& value) { m_routeMatrix = std::move(value); }
-    inline CalculateRouteMatrixResult& WithRouteMatrix(const Aws::Vector<Aws::Vector<RouteMatrixEntry>>& value) { SetRouteMatrix(value); return *this;}
-    inline CalculateRouteMatrixResult& WithRouteMatrix(Aws::Vector<Aws::Vector<RouteMatrixEntry>>&& value) { SetRouteMatrix(std::move(value)); return *this;}
-    inline CalculateRouteMatrixResult& AddRouteMatrix(const Aws::Vector<RouteMatrixEntry>& value) { m_routeMatrix.push_back(value); return *this; }
-    inline CalculateRouteMatrixResult& AddRouteMatrix(Aws::Vector<RouteMatrixEntry>&& value) { m_routeMatrix.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Vector<RouteMatrixEntry>>& GetRouteMatrix() const { return m_routeMatrix; }
+    template<typename RouteMatrixT = Aws::Vector<Aws::Vector<RouteMatrixEntry>>>
+    void SetRouteMatrix(RouteMatrixT&& value) { m_routeMatrixHasBeenSet = true; m_routeMatrix = std::forward<RouteMatrixT>(value); }
+    template<typename RouteMatrixT = Aws::Vector<Aws::Vector<RouteMatrixEntry>>>
+    CalculateRouteMatrixResult& WithRouteMatrix(RouteMatrixT&& value) { SetRouteMatrix(std::forward<RouteMatrixT>(value)); return *this;}
+    template<typename RouteMatrixT = Aws::Vector<RouteMatrixEntry>>
+    CalculateRouteMatrixResult& AddRouteMatrix(RouteMatrixT&& value) { m_routeMatrixHasBeenSet = true; m_routeMatrix.emplace_back(std::forward<RouteMatrixT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,34 +79,37 @@ namespace Model
      * request routing boundary was set as AutoCircle, the response routing boundary
      * will return Circle derived from the AutoCircle settings.</p> 
      */
-    inline const RouteMatrixBoundary& GetRoutingBoundary() const{ return m_routingBoundary; }
-    inline void SetRoutingBoundary(const RouteMatrixBoundary& value) { m_routingBoundary = value; }
-    inline void SetRoutingBoundary(RouteMatrixBoundary&& value) { m_routingBoundary = std::move(value); }
-    inline CalculateRouteMatrixResult& WithRoutingBoundary(const RouteMatrixBoundary& value) { SetRoutingBoundary(value); return *this;}
-    inline CalculateRouteMatrixResult& WithRoutingBoundary(RouteMatrixBoundary&& value) { SetRoutingBoundary(std::move(value)); return *this;}
+    inline const RouteMatrixBoundary& GetRoutingBoundary() const { return m_routingBoundary; }
+    template<typename RoutingBoundaryT = RouteMatrixBoundary>
+    void SetRoutingBoundary(RoutingBoundaryT&& value) { m_routingBoundaryHasBeenSet = true; m_routingBoundary = std::forward<RoutingBoundaryT>(value); }
+    template<typename RoutingBoundaryT = RouteMatrixBoundary>
+    CalculateRouteMatrixResult& WithRoutingBoundary(RoutingBoundaryT&& value) { SetRoutingBoundary(std::forward<RoutingBoundaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CalculateRouteMatrixResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CalculateRouteMatrixResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CalculateRouteMatrixResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CalculateRouteMatrixResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_errorCount;
+    int m_errorCount{0};
+    bool m_errorCountHasBeenSet = false;
 
     Aws::String m_pricingBucket;
+    bool m_pricingBucketHasBeenSet = false;
 
     Aws::Vector<Aws::Vector<RouteMatrixEntry>> m_routeMatrix;
+    bool m_routeMatrixHasBeenSet = false;
 
     RouteMatrixBoundary m_routingBoundary;
+    bool m_routingBoundaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class DeleteDeploymentStrategyRequest : public AppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API DeleteDeploymentStrategyRequest();
+    AWS_APPCONFIG_API DeleteDeploymentStrategyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the deployment strategy you want to delete.</p>
      */
-    inline const Aws::String& GetDeploymentStrategyId() const{ return m_deploymentStrategyId; }
+    inline const Aws::String& GetDeploymentStrategyId() const { return m_deploymentStrategyId; }
     inline bool DeploymentStrategyIdHasBeenSet() const { return m_deploymentStrategyIdHasBeenSet; }
-    inline void SetDeploymentStrategyId(const Aws::String& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = value; }
-    inline void SetDeploymentStrategyId(Aws::String&& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = std::move(value); }
-    inline void SetDeploymentStrategyId(const char* value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId.assign(value); }
-    inline DeleteDeploymentStrategyRequest& WithDeploymentStrategyId(const Aws::String& value) { SetDeploymentStrategyId(value); return *this;}
-    inline DeleteDeploymentStrategyRequest& WithDeploymentStrategyId(Aws::String&& value) { SetDeploymentStrategyId(std::move(value)); return *this;}
-    inline DeleteDeploymentStrategyRequest& WithDeploymentStrategyId(const char* value) { SetDeploymentStrategyId(value); return *this;}
+    template<typename DeploymentStrategyIdT = Aws::String>
+    void SetDeploymentStrategyId(DeploymentStrategyIdT&& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = std::forward<DeploymentStrategyIdT>(value); }
+    template<typename DeploymentStrategyIdT = Aws::String>
+    DeleteDeploymentStrategyRequest& WithDeploymentStrategyId(DeploymentStrategyIdT&& value) { SetDeploymentStrategyId(std::forward<DeploymentStrategyIdT>(value)); return *this;}
     ///@}
   private:
 

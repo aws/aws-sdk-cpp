@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceEventWindowTimeRangeRequest::InstanceEventWindowTimeRangeRequest() : 
-    m_startWeekDay(WeekDay::NOT_SET),
-    m_startWeekDayHasBeenSet(false),
-    m_startHour(0),
-    m_startHourHasBeenSet(false),
-    m_endWeekDay(WeekDay::NOT_SET),
-    m_endWeekDayHasBeenSet(false),
-    m_endHour(0),
-    m_endHourHasBeenSet(false)
-{
-}
-
 InstanceEventWindowTimeRangeRequest::InstanceEventWindowTimeRangeRequest(const XmlNode& xmlNode)
-  : InstanceEventWindowTimeRangeRequest()
 {
   *this = xmlNode;
 }
@@ -47,26 +34,30 @@ InstanceEventWindowTimeRangeRequest& InstanceEventWindowTimeRangeRequest::operat
     XmlNode startWeekDayNode = resultNode.FirstChild("StartWeekDay");
     if(!startWeekDayNode.IsNull())
     {
-      m_startWeekDay = WeekDayMapper::GetWeekDayForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startWeekDayNode.GetText()).c_str()).c_str());
+      m_startWeekDay = WeekDayMapper::GetWeekDayForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startWeekDayNode.GetText()).c_str()));
       m_startWeekDayHasBeenSet = true;
+       m_startWeekDayHasBeenSet = true;
     }
     XmlNode startHourNode = resultNode.FirstChild("StartHour");
     if(!startHourNode.IsNull())
     {
       m_startHour = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startHourNode.GetText()).c_str()).c_str());
       m_startHourHasBeenSet = true;
+       m_startHourHasBeenSet = true;
     }
     XmlNode endWeekDayNode = resultNode.FirstChild("EndWeekDay");
     if(!endWeekDayNode.IsNull())
     {
-      m_endWeekDay = WeekDayMapper::GetWeekDayForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endWeekDayNode.GetText()).c_str()).c_str());
+      m_endWeekDay = WeekDayMapper::GetWeekDayForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endWeekDayNode.GetText()).c_str()));
       m_endWeekDayHasBeenSet = true;
+       m_endWeekDayHasBeenSet = true;
     }
     XmlNode endHourNode = resultNode.FirstChild("EndHour");
     if(!endHourNode.IsNull())
     {
       m_endHour = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endHourNode.GetText()).c_str()).c_str());
       m_endHourHasBeenSet = true;
+       m_endHourHasBeenSet = true;
     }
   }
 

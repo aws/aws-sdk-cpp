@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPolicyGrantsRequest::ListPolicyGrantsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_entityIdentifierHasBeenSet(false),
-    m_entityType(TargetEntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_policyType(ManagedPolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListPolicyGrantsRequest::SerializePayload() const
 {
   return {};

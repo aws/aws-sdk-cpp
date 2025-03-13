@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_resourceArnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(const XmlNode& xmlNode)
-  : ResourcePolicy()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ResourcePolicy& ResourcePolicy::operator =(const XmlNode& xmlNode)
     {
       m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
       m_resourceArnHasBeenSet = true;
+       m_resourceArnHasBeenSet = true;
     }
     XmlNode policyNode = resultNode.FirstChild("Policy");
     if(!policyNode.IsNull())
     {
       m_policy = Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText());
       m_policyHasBeenSet = true;
+       m_policyHasBeenSet = true;
     }
   }
 

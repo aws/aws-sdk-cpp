@@ -12,12 +12,6 @@ using namespace Aws::SagemakerEdgeManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceRegistrationRequest::GetDeviceRegistrationRequest() : 
-    m_deviceNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

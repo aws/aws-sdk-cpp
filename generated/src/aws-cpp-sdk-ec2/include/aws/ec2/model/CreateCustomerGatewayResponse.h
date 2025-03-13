@@ -33,7 +33,7 @@ namespace Model
   class CreateCustomerGatewayResponse
   {
   public:
-    AWS_EC2_API CreateCustomerGatewayResponse();
+    AWS_EC2_API CreateCustomerGatewayResponse() = default;
     AWS_EC2_API CreateCustomerGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateCustomerGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,26 +42,28 @@ namespace Model
     /**
      * <p>Information about the customer gateway.</p>
      */
-    inline const CustomerGateway& GetCustomerGateway() const{ return m_customerGateway; }
-    inline void SetCustomerGateway(const CustomerGateway& value) { m_customerGateway = value; }
-    inline void SetCustomerGateway(CustomerGateway&& value) { m_customerGateway = std::move(value); }
-    inline CreateCustomerGatewayResponse& WithCustomerGateway(const CustomerGateway& value) { SetCustomerGateway(value); return *this;}
-    inline CreateCustomerGatewayResponse& WithCustomerGateway(CustomerGateway&& value) { SetCustomerGateway(std::move(value)); return *this;}
+    inline const CustomerGateway& GetCustomerGateway() const { return m_customerGateway; }
+    template<typename CustomerGatewayT = CustomerGateway>
+    void SetCustomerGateway(CustomerGatewayT&& value) { m_customerGatewayHasBeenSet = true; m_customerGateway = std::forward<CustomerGatewayT>(value); }
+    template<typename CustomerGatewayT = CustomerGateway>
+    CreateCustomerGatewayResponse& WithCustomerGateway(CustomerGatewayT&& value) { SetCustomerGateway(std::forward<CustomerGatewayT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateCustomerGatewayResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateCustomerGatewayResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateCustomerGatewayResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     CustomerGateway m_customerGateway;
+    bool m_customerGatewayHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

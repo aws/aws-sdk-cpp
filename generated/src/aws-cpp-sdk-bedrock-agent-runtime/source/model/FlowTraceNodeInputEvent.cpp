@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowTraceNodeInputEvent::FlowTraceNodeInputEvent() : 
-    m_fieldsHasBeenSet(false),
-    m_nodeNameHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 FlowTraceNodeInputEvent::FlowTraceNodeInputEvent(JsonView jsonValue)
-  : FlowTraceNodeInputEvent()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ FlowTraceNodeInputEvent& FlowTraceNodeInputEvent::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeName"))
   {
     m_nodeName = jsonValue.GetString("nodeName");
-
     m_nodeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetString("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicRefreshSchedule::TopicRefreshSchedule() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_basedOnSpiceSchedule(false),
-    m_basedOnSpiceScheduleHasBeenSet(false),
-    m_startingAtHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_repeatAtHasBeenSet(false),
-    m_topicScheduleType(TopicScheduleType::NOT_SET),
-    m_topicScheduleTypeHasBeenSet(false)
-{
-}
-
 TopicRefreshSchedule::TopicRefreshSchedule(JsonView jsonValue)
-  : TopicRefreshSchedule()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ TopicRefreshSchedule& TopicRefreshSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsEnabled"))
   {
     m_isEnabled = jsonValue.GetBool("IsEnabled");
-
     m_isEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BasedOnSpiceSchedule"))
   {
     m_basedOnSpiceSchedule = jsonValue.GetBool("BasedOnSpiceSchedule");
-
     m_basedOnSpiceScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingAt"))
   {
     m_startingAt = jsonValue.GetDouble("StartingAt");
-
     m_startingAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RepeatAt"))
   {
     m_repeatAt = jsonValue.GetString("RepeatAt");
-
     m_repeatAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicScheduleType"))
   {
     m_topicScheduleType = TopicScheduleTypeMapper::GetTopicScheduleTypeForName(jsonValue.GetString("TopicScheduleType"));
-
     m_topicScheduleTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

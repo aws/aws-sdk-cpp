@@ -18,18 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-StepAdjustment::StepAdjustment() : 
-    m_metricIntervalLowerBound(0.0),
-    m_metricIntervalLowerBoundHasBeenSet(false),
-    m_metricIntervalUpperBound(0.0),
-    m_metricIntervalUpperBoundHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false)
-{
-}
-
 StepAdjustment::StepAdjustment(JsonView jsonValue)
-  : StepAdjustment()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ StepAdjustment& StepAdjustment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricIntervalLowerBound"))
   {
     m_metricIntervalLowerBound = jsonValue.GetDouble("MetricIntervalLowerBound");
-
     m_metricIntervalLowerBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricIntervalUpperBound"))
   {
     m_metricIntervalUpperBound = jsonValue.GetDouble("MetricIntervalUpperBound");
-
     m_metricIntervalUpperBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingAdjustment"))
   {
     m_scalingAdjustment = jsonValue.GetInteger("ScalingAdjustment");
-
     m_scalingAdjustmentHasBeenSet = true;
   }
-
   return *this;
 }
 

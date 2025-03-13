@@ -12,20 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResponsePlanRequest::CreateResponsePlanRequest() : 
-    m_actionsHasBeenSet(false),
-    m_chatChannelHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_displayNameHasBeenSet(false),
-    m_engagementsHasBeenSet(false),
-    m_incidentTemplateHasBeenSet(false),
-    m_integrationsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateResponsePlanRequest::SerializePayload() const
 {
   JsonValue payload;

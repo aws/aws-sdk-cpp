@@ -18,39 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudWatchAlarmDetails::AwsCloudWatchAlarmDetails() : 
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_comparisonOperatorHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_extendedStatisticHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_okActionsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_statisticHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false),
-    m_treatMissingDataHasBeenSet(false),
-    m_unitHasBeenSet(false)
-{
-}
-
 AwsCloudWatchAlarmDetails::AwsCloudWatchAlarmDetails(JsonView jsonValue)
-  : AwsCloudWatchAlarmDetails()
 {
   *this = jsonValue;
 }
@@ -60,10 +28,8 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ActionsEnabled"))
   {
     m_actionsEnabled = jsonValue.GetBool("ActionsEnabled");
-
     m_actionsEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmActions"))
   {
     Aws::Utils::Array<JsonView> alarmActionsJsonList = jsonValue.GetArray("AlarmActions");
@@ -73,49 +39,36 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
     }
     m_alarmActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmArn"))
   {
     m_alarmArn = jsonValue.GetString("AlarmArn");
-
     m_alarmArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfigurationUpdatedTimestamp"))
   {
     m_alarmConfigurationUpdatedTimestamp = jsonValue.GetString("AlarmConfigurationUpdatedTimestamp");
-
     m_alarmConfigurationUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmDescription"))
   {
     m_alarmDescription = jsonValue.GetString("AlarmDescription");
-
     m_alarmDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmName"))
   {
     m_alarmName = jsonValue.GetString("AlarmName");
-
     m_alarmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = jsonValue.GetString("ComparisonOperator");
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatapointsToAlarm"))
   {
     m_datapointsToAlarm = jsonValue.GetInteger("DatapointsToAlarm");
-
     m_datapointsToAlarmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dimensions"))
   {
     Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
@@ -125,28 +78,21 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluateLowSampleCountPercentile"))
   {
     m_evaluateLowSampleCountPercentile = jsonValue.GetString("EvaluateLowSampleCountPercentile");
-
     m_evaluateLowSampleCountPercentileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationPeriods"))
   {
     m_evaluationPeriods = jsonValue.GetInteger("EvaluationPeriods");
-
     m_evaluationPeriodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtendedStatistic"))
   {
     m_extendedStatistic = jsonValue.GetString("ExtendedStatistic");
-
     m_extendedStatisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsufficientDataActions"))
   {
     Aws::Utils::Array<JsonView> insufficientDataActionsJsonList = jsonValue.GetArray("InsufficientDataActions");
@@ -156,21 +102,16 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
     }
     m_insufficientDataActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OkActions"))
   {
     Aws::Utils::Array<JsonView> okActionsJsonList = jsonValue.GetArray("OkActions");
@@ -180,49 +121,36 @@ AwsCloudWatchAlarmDetails& AwsCloudWatchAlarmDetails::operator =(JsonView jsonVa
     }
     m_okActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Period"))
   {
     m_period = jsonValue.GetInteger("Period");
-
     m_periodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = jsonValue.GetString("Statistic");
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetDouble("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThresholdMetricId"))
   {
     m_thresholdMetricId = jsonValue.GetString("ThresholdMetricId");
-
     m_thresholdMetricIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatMissingData"))
   {
     m_treatMissingData = jsonValue.GetString("TreatMissingData");
-
     m_treatMissingDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = jsonValue.GetString("Unit");
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

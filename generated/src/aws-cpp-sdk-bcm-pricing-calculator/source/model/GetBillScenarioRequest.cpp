@@ -12,11 +12,6 @@ using namespace Aws::BCMPricingCalculator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBillScenarioRequest::GetBillScenarioRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetBillScenarioRequest::SerializePayload() const
 {
   JsonValue payload;

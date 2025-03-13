@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-IdNamespaceAssociationInputReferenceProperties::IdNamespaceAssociationInputReferenceProperties() : 
-    m_idNamespaceType(IdNamespaceType::NOT_SET),
-    m_idNamespaceTypeHasBeenSet(false),
-    m_idMappingWorkflowsSupportedHasBeenSet(false)
-{
-}
-
 IdNamespaceAssociationInputReferenceProperties::IdNamespaceAssociationInputReferenceProperties(JsonView jsonValue)
-  : IdNamespaceAssociationInputReferenceProperties()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ IdNamespaceAssociationInputReferenceProperties& IdNamespaceAssociationInputRefer
   if(jsonValue.ValueExists("idNamespaceType"))
   {
     m_idNamespaceType = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("idNamespaceType"));
-
     m_idNamespaceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idMappingWorkflowsSupported"))
   {
     Aws::Utils::Array<JsonView> idMappingWorkflowsSupportedJsonList = jsonValue.GetArray("idMappingWorkflowsSupported");
@@ -49,7 +39,6 @@ IdNamespaceAssociationInputReferenceProperties& IdNamespaceAssociationInputRefer
     }
     m_idMappingWorkflowsSupportedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGameSessionQueueRequest::UpdateGameSessionQueueRequest() : 
-    m_nameHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false),
-    m_priorityConfigurationHasBeenSet(false),
-    m_customEventDataHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGameSessionQueueRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,32 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-Participant::Participant() : 
-    m_participantIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_state(ParticipantState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_firstJoinTimeHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_published(false),
-    m_publishedHasBeenSet(false),
-    m_ispNameHasBeenSet(false),
-    m_osNameHasBeenSet(false),
-    m_osVersionHasBeenSet(false),
-    m_browserNameHasBeenSet(false),
-    m_browserVersionHasBeenSet(false),
-    m_sdkVersionHasBeenSet(false),
-    m_recordingS3BucketNameHasBeenSet(false),
-    m_recordingS3PrefixHasBeenSet(false),
-    m_recordingState(ParticipantRecordingState::NOT_SET),
-    m_recordingStateHasBeenSet(false),
-    m_protocol(ParticipantProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 Participant::Participant(JsonView jsonValue)
-  : Participant()
 {
   *this = jsonValue;
 }
@@ -53,31 +28,23 @@ Participant& Participant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("participantId"))
   {
     m_participantId = jsonValue.GetString("participantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userId"))
   {
     m_userId = jsonValue.GetString("userId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ParticipantStateMapper::GetParticipantStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstJoinTime"))
   {
     m_firstJoinTime = jsonValue.GetString("firstJoinTime");
-
     m_firstJoinTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -87,84 +54,61 @@ Participant& Participant::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("published"))
   {
     m_published = jsonValue.GetBool("published");
-
     m_publishedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ispName"))
   {
     m_ispName = jsonValue.GetString("ispName");
-
     m_ispNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osName"))
   {
     m_osName = jsonValue.GetString("osName");
-
     m_osNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osVersion"))
   {
     m_osVersion = jsonValue.GetString("osVersion");
-
     m_osVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("browserName"))
   {
     m_browserName = jsonValue.GetString("browserName");
-
     m_browserNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("browserVersion"))
   {
     m_browserVersion = jsonValue.GetString("browserVersion");
-
     m_browserVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sdkVersion"))
   {
     m_sdkVersion = jsonValue.GetString("sdkVersion");
-
     m_sdkVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingS3BucketName"))
   {
     m_recordingS3BucketName = jsonValue.GetString("recordingS3BucketName");
-
     m_recordingS3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingS3Prefix"))
   {
     m_recordingS3Prefix = jsonValue.GetString("recordingS3Prefix");
-
     m_recordingS3PrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingState"))
   {
     m_recordingState = ParticipantRecordingStateMapper::GetParticipantRecordingStateForName(jsonValue.GetString("recordingState"));
-
     m_recordingStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = ParticipantProtocolMapper::GetParticipantProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

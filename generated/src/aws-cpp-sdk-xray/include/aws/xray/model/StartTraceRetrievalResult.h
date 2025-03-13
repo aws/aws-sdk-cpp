@@ -27,7 +27,7 @@ namespace Model
   class StartTraceRetrievalResult
   {
   public:
-    AWS_XRAY_API StartTraceRetrievalResult();
+    AWS_XRAY_API StartTraceRetrievalResult() = default;
     AWS_XRAY_API StartTraceRetrievalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_XRAY_API StartTraceRetrievalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p> Retrieval token. </p>
      */
-    inline const Aws::String& GetRetrievalToken() const{ return m_retrievalToken; }
-    inline void SetRetrievalToken(const Aws::String& value) { m_retrievalToken = value; }
-    inline void SetRetrievalToken(Aws::String&& value) { m_retrievalToken = std::move(value); }
-    inline void SetRetrievalToken(const char* value) { m_retrievalToken.assign(value); }
-    inline StartTraceRetrievalResult& WithRetrievalToken(const Aws::String& value) { SetRetrievalToken(value); return *this;}
-    inline StartTraceRetrievalResult& WithRetrievalToken(Aws::String&& value) { SetRetrievalToken(std::move(value)); return *this;}
-    inline StartTraceRetrievalResult& WithRetrievalToken(const char* value) { SetRetrievalToken(value); return *this;}
+    inline const Aws::String& GetRetrievalToken() const { return m_retrievalToken; }
+    template<typename RetrievalTokenT = Aws::String>
+    void SetRetrievalToken(RetrievalTokenT&& value) { m_retrievalTokenHasBeenSet = true; m_retrievalToken = std::forward<RetrievalTokenT>(value); }
+    template<typename RetrievalTokenT = Aws::String>
+    StartTraceRetrievalResult& WithRetrievalToken(RetrievalTokenT&& value) { SetRetrievalToken(std::forward<RetrievalTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartTraceRetrievalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartTraceRetrievalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartTraceRetrievalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartTraceRetrievalResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_retrievalToken;
+    bool m_retrievalTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

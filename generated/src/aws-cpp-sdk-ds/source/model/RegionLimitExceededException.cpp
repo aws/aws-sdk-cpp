@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-RegionLimitExceededException::RegionLimitExceededException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 RegionLimitExceededException::RegionLimitExceededException(JsonView jsonValue)
-  : RegionLimitExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegionLimitExceededException& RegionLimitExceededException::operator =(JsonView 
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

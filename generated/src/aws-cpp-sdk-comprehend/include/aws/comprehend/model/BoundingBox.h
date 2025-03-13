@@ -35,7 +35,7 @@ namespace Model
   class BoundingBox
   {
   public:
-    AWS_COMPREHEND_API BoundingBox();
+    AWS_COMPREHEND_API BoundingBox() = default;
     AWS_COMPREHEND_API BoundingBox(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API BoundingBox& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * <p>The height of the bounding box as a ratio of the overall document page
      * height.</p>
      */
-    inline double GetHeight() const{ return m_height; }
+    inline double GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(double value) { m_heightHasBeenSet = true; m_height = value; }
     inline BoundingBox& WithHeight(double value) { SetHeight(value); return *this;}
@@ -57,7 +57,7 @@ namespace Model
      * <p>The left coordinate of the bounding box as a ratio of overall document page
      * width.</p>
      */
-    inline double GetLeft() const{ return m_left; }
+    inline double GetLeft() const { return m_left; }
     inline bool LeftHasBeenSet() const { return m_leftHasBeenSet; }
     inline void SetLeft(double value) { m_leftHasBeenSet = true; m_left = value; }
     inline BoundingBox& WithLeft(double value) { SetLeft(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * <p>The top coordinate of the bounding box as a ratio of overall document page
      * height.</p>
      */
-    inline double GetTop() const{ return m_top; }
+    inline double GetTop() const { return m_top; }
     inline bool TopHasBeenSet() const { return m_topHasBeenSet; }
     inline void SetTop(double value) { m_topHasBeenSet = true; m_top = value; }
     inline BoundingBox& WithTop(double value) { SetTop(value); return *this;}
@@ -79,23 +79,23 @@ namespace Model
      * <p>The width of the bounding box as a ratio of the overall document page
      * width.</p>
      */
-    inline double GetWidth() const{ return m_width; }
+    inline double GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(double value) { m_widthHasBeenSet = true; m_width = value; }
     inline BoundingBox& WithWidth(double value) { SetWidth(value); return *this;}
     ///@}
   private:
 
-    double m_height;
+    double m_height{0.0};
     bool m_heightHasBeenSet = false;
 
-    double m_left;
+    double m_left{0.0};
     bool m_leftHasBeenSet = false;
 
-    double m_top;
+    double m_top{0.0};
     bool m_topHasBeenSet = false;
 
-    double m_width;
+    double m_width{0.0};
     bool m_widthHasBeenSet = false;
   };
 

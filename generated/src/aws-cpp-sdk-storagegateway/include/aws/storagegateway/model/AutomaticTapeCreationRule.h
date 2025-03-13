@@ -35,7 +35,7 @@ namespace Model
   class AutomaticTapeCreationRule
   {
   public:
-    AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule();
+    AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule() = default;
     AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API AutomaticTapeCreationRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * 1-4 characters in length and must be one of the uppercase letters from A to
      * Z.</p> 
      */
-    inline const Aws::String& GetTapeBarcodePrefix() const{ return m_tapeBarcodePrefix; }
+    inline const Aws::String& GetTapeBarcodePrefix() const { return m_tapeBarcodePrefix; }
     inline bool TapeBarcodePrefixHasBeenSet() const { return m_tapeBarcodePrefixHasBeenSet; }
-    inline void SetTapeBarcodePrefix(const Aws::String& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = value; }
-    inline void SetTapeBarcodePrefix(Aws::String&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::move(value); }
-    inline void SetTapeBarcodePrefix(const char* value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix.assign(value); }
-    inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(const Aws::String& value) { SetTapeBarcodePrefix(value); return *this;}
-    inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(Aws::String&& value) { SetTapeBarcodePrefix(std::move(value)); return *this;}
-    inline AutomaticTapeCreationRule& WithTapeBarcodePrefix(const char* value) { SetTapeBarcodePrefix(value); return *this;}
+    template<typename TapeBarcodePrefixT = Aws::String>
+    void SetTapeBarcodePrefix(TapeBarcodePrefixT&& value) { m_tapeBarcodePrefixHasBeenSet = true; m_tapeBarcodePrefix = std::forward<TapeBarcodePrefixT>(value); }
+    template<typename TapeBarcodePrefixT = Aws::String>
+    AutomaticTapeCreationRule& WithTapeBarcodePrefix(TapeBarcodePrefixT&& value) { SetTapeBarcodePrefix(std::forward<TapeBarcodePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,21 +64,19 @@ namespace Model
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
      * that corresponds to the pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline AutomaticTapeCreationRule& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline AutomaticTapeCreationRule& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline AutomaticTapeCreationRule& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    AutomaticTapeCreationRule& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
-    inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
+    inline long long GetTapeSizeInBytes() const { return m_tapeSizeInBytes; }
     inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
     inline AutomaticTapeCreationRule& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
@@ -96,7 +92,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
      * Tapes Automatically</a>.</p>
      */
-    inline int GetMinimumNumTapes() const{ return m_minimumNumTapes; }
+    inline int GetMinimumNumTapes() const { return m_minimumNumTapes; }
     inline bool MinimumNumTapesHasBeenSet() const { return m_minimumNumTapesHasBeenSet; }
     inline void SetMinimumNumTapes(int value) { m_minimumNumTapesHasBeenSet = true; m_minimumNumTapes = value; }
     inline AutomaticTapeCreationRule& WithMinimumNumTapes(int value) { SetMinimumNumTapes(value); return *this;}
@@ -108,7 +104,7 @@ namespace Model
      * write-once-read-many (WORM). Set to <code>false</code> when WORM is not enabled
      * for tapes.</p>
      */
-    inline bool GetWorm() const{ return m_worm; }
+    inline bool GetWorm() const { return m_worm; }
     inline bool WormHasBeenSet() const { return m_wormHasBeenSet; }
     inline void SetWorm(bool value) { m_wormHasBeenSet = true; m_worm = value; }
     inline AutomaticTapeCreationRule& WithWorm(bool value) { SetWorm(value); return *this;}
@@ -121,13 +117,13 @@ namespace Model
     Aws::String m_poolId;
     bool m_poolIdHasBeenSet = false;
 
-    long long m_tapeSizeInBytes;
+    long long m_tapeSizeInBytes{0};
     bool m_tapeSizeInBytesHasBeenSet = false;
 
-    int m_minimumNumTapes;
+    int m_minimumNumTapes{0};
     bool m_minimumNumTapesHasBeenSet = false;
 
-    bool m_worm;
+    bool m_worm{false};
     bool m_wormHasBeenSet = false;
   };
 

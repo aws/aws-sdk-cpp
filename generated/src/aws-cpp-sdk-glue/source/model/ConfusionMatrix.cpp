@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ConfusionMatrix::ConfusionMatrix() : 
-    m_numTruePositives(0),
-    m_numTruePositivesHasBeenSet(false),
-    m_numFalsePositives(0),
-    m_numFalsePositivesHasBeenSet(false),
-    m_numTrueNegatives(0),
-    m_numTrueNegativesHasBeenSet(false),
-    m_numFalseNegatives(0),
-    m_numFalseNegativesHasBeenSet(false)
-{
-}
-
 ConfusionMatrix::ConfusionMatrix(JsonView jsonValue)
-  : ConfusionMatrix()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ConfusionMatrix& ConfusionMatrix::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumTruePositives"))
   {
     m_numTruePositives = jsonValue.GetInt64("NumTruePositives");
-
     m_numTruePositivesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumFalsePositives"))
   {
     m_numFalsePositives = jsonValue.GetInt64("NumFalsePositives");
-
     m_numFalsePositivesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumTrueNegatives"))
   {
     m_numTrueNegatives = jsonValue.GetInt64("NumTrueNegatives");
-
     m_numTrueNegativesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumFalseNegatives"))
   {
     m_numFalseNegatives = jsonValue.GetInt64("NumFalseNegatives");
-
     m_numFalseNegativesHasBeenSet = true;
   }
-
   return *this;
 }
 

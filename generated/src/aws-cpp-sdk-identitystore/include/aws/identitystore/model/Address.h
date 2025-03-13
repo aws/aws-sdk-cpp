@@ -31,7 +31,7 @@ namespace Model
   class Address
   {
   public:
-    AWS_IDENTITYSTORE_API Address();
+    AWS_IDENTITYSTORE_API Address() = default;
     AWS_IDENTITYSTORE_API Address(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Address& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,98 +41,84 @@ namespace Model
     /**
      * <p>The street of the address.</p>
      */
-    inline const Aws::String& GetStreetAddress() const{ return m_streetAddress; }
+    inline const Aws::String& GetStreetAddress() const { return m_streetAddress; }
     inline bool StreetAddressHasBeenSet() const { return m_streetAddressHasBeenSet; }
-    inline void SetStreetAddress(const Aws::String& value) { m_streetAddressHasBeenSet = true; m_streetAddress = value; }
-    inline void SetStreetAddress(Aws::String&& value) { m_streetAddressHasBeenSet = true; m_streetAddress = std::move(value); }
-    inline void SetStreetAddress(const char* value) { m_streetAddressHasBeenSet = true; m_streetAddress.assign(value); }
-    inline Address& WithStreetAddress(const Aws::String& value) { SetStreetAddress(value); return *this;}
-    inline Address& WithStreetAddress(Aws::String&& value) { SetStreetAddress(std::move(value)); return *this;}
-    inline Address& WithStreetAddress(const char* value) { SetStreetAddress(value); return *this;}
+    template<typename StreetAddressT = Aws::String>
+    void SetStreetAddress(StreetAddressT&& value) { m_streetAddressHasBeenSet = true; m_streetAddress = std::forward<StreetAddressT>(value); }
+    template<typename StreetAddressT = Aws::String>
+    Address& WithStreetAddress(StreetAddressT&& value) { SetStreetAddress(std::forward<StreetAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string of the address locality.</p>
      */
-    inline const Aws::String& GetLocality() const{ return m_locality; }
+    inline const Aws::String& GetLocality() const { return m_locality; }
     inline bool LocalityHasBeenSet() const { return m_localityHasBeenSet; }
-    inline void SetLocality(const Aws::String& value) { m_localityHasBeenSet = true; m_locality = value; }
-    inline void SetLocality(Aws::String&& value) { m_localityHasBeenSet = true; m_locality = std::move(value); }
-    inline void SetLocality(const char* value) { m_localityHasBeenSet = true; m_locality.assign(value); }
-    inline Address& WithLocality(const Aws::String& value) { SetLocality(value); return *this;}
-    inline Address& WithLocality(Aws::String&& value) { SetLocality(std::move(value)); return *this;}
-    inline Address& WithLocality(const char* value) { SetLocality(value); return *this;}
+    template<typename LocalityT = Aws::String>
+    void SetLocality(LocalityT&& value) { m_localityHasBeenSet = true; m_locality = std::forward<LocalityT>(value); }
+    template<typename LocalityT = Aws::String>
+    Address& WithLocality(LocalityT&& value) { SetLocality(std::forward<LocalityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The region of the address.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Address& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Address& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Address& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Address& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The postal code of the address.</p>
      */
-    inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
+    inline const Aws::String& GetPostalCode() const { return m_postalCode; }
     inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
-    inline void SetPostalCode(const Aws::String& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
-    inline void SetPostalCode(Aws::String&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::move(value); }
-    inline void SetPostalCode(const char* value) { m_postalCodeHasBeenSet = true; m_postalCode.assign(value); }
-    inline Address& WithPostalCode(const Aws::String& value) { SetPostalCode(value); return *this;}
-    inline Address& WithPostalCode(Aws::String&& value) { SetPostalCode(std::move(value)); return *this;}
-    inline Address& WithPostalCode(const char* value) { SetPostalCode(value); return *this;}
+    template<typename PostalCodeT = Aws::String>
+    void SetPostalCode(PostalCodeT&& value) { m_postalCodeHasBeenSet = true; m_postalCode = std::forward<PostalCodeT>(value); }
+    template<typename PostalCodeT = Aws::String>
+    Address& WithPostalCode(PostalCodeT&& value) { SetPostalCode(std::forward<PostalCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The country of the address.</p>
      */
-    inline const Aws::String& GetCountry() const{ return m_country; }
+    inline const Aws::String& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
-    inline Address& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
-    inline Address& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
-    inline Address& WithCountry(const char* value) { SetCountry(value); return *this;}
+    template<typename CountryT = Aws::String>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::String>
+    Address& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string containing a formatted version of the address for display.</p>
      */
-    inline const Aws::String& GetFormatted() const{ return m_formatted; }
+    inline const Aws::String& GetFormatted() const { return m_formatted; }
     inline bool FormattedHasBeenSet() const { return m_formattedHasBeenSet; }
-    inline void SetFormatted(const Aws::String& value) { m_formattedHasBeenSet = true; m_formatted = value; }
-    inline void SetFormatted(Aws::String&& value) { m_formattedHasBeenSet = true; m_formatted = std::move(value); }
-    inline void SetFormatted(const char* value) { m_formattedHasBeenSet = true; m_formatted.assign(value); }
-    inline Address& WithFormatted(const Aws::String& value) { SetFormatted(value); return *this;}
-    inline Address& WithFormatted(Aws::String&& value) { SetFormatted(std::move(value)); return *this;}
-    inline Address& WithFormatted(const char* value) { SetFormatted(value); return *this;}
+    template<typename FormattedT = Aws::String>
+    void SetFormatted(FormattedT&& value) { m_formattedHasBeenSet = true; m_formatted = std::forward<FormattedT>(value); }
+    template<typename FormattedT = Aws::String>
+    Address& WithFormatted(FormattedT&& value) { SetFormatted(std::forward<FormattedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string representing the type of address. For example, "Home."</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Address& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Address& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Address& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Address& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,7 +126,7 @@ namespace Model
      * <p>A Boolean value representing whether this is the primary address for the
      * associated resource.</p>
      */
-    inline bool GetPrimary() const{ return m_primary; }
+    inline bool GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
     inline Address& WithPrimary(bool value) { SetPrimary(value); return *this;}
@@ -168,7 +154,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    bool m_primary;
+    bool m_primary{false};
     bool m_primaryHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-EnvironmentLink::EnvironmentLink() : 
-    m_linkNameHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 EnvironmentLink::EnvironmentLink(const XmlNode& xmlNode)
-  : EnvironmentLink()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ EnvironmentLink& EnvironmentLink::operator =(const XmlNode& xmlNode)
     {
       m_linkName = Aws::Utils::Xml::DecodeEscapedXmlText(linkNameNode.GetText());
       m_linkNameHasBeenSet = true;
+       m_linkNameHasBeenSet = true;
     }
     XmlNode environmentNameNode = resultNode.FirstChild("EnvironmentName");
     if(!environmentNameNode.IsNull())
     {
       m_environmentName = Aws::Utils::Xml::DecodeEscapedXmlText(environmentNameNode.GetText());
       m_environmentNameHasBeenSet = true;
+       m_environmentNameHasBeenSet = true;
     }
   }
 

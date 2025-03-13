@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportSnapshotTask::ImportSnapshotTask() : 
-    m_descriptionHasBeenSet(false),
-    m_importTaskIdHasBeenSet(false),
-    m_snapshotTaskDetailHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ImportSnapshotTask::ImportSnapshotTask(const XmlNode& xmlNode)
-  : ImportSnapshotTask()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ ImportSnapshotTask& ImportSnapshotTask::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode importTaskIdNode = resultNode.FirstChild("importTaskId");
     if(!importTaskIdNode.IsNull())
     {
       m_importTaskId = Aws::Utils::Xml::DecodeEscapedXmlText(importTaskIdNode.GetText());
       m_importTaskIdHasBeenSet = true;
+       m_importTaskIdHasBeenSet = true;
     }
     XmlNode snapshotTaskDetailNode = resultNode.FirstChild("snapshotTaskDetail");
     if(!snapshotTaskDetailNode.IsNull())
     {
       m_snapshotTaskDetail = snapshotTaskDetailNode;
       m_snapshotTaskDetailHasBeenSet = true;
+       m_snapshotTaskDetailHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

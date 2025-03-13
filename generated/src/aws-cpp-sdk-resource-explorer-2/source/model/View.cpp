@@ -18,18 +18,7 @@ namespace ResourceExplorer2
 namespace Model
 {
 
-View::View() : 
-    m_filtersHasBeenSet(false),
-    m_includedPropertiesHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_viewArnHasBeenSet(false)
-{
-}
-
 View::View(JsonView jsonValue)
-  : View()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ View& View::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Filters"))
   {
     m_filters = jsonValue.GetObject("Filters");
-
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludedProperties"))
   {
     Aws::Utils::Array<JsonView> includedPropertiesJsonList = jsonValue.GetArray("IncludedProperties");
@@ -52,35 +39,26 @@ View& View::operator =(JsonView jsonValue)
     }
     m_includedPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetString("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewArn"))
   {
     m_viewArn = jsonValue.GetString("ViewArn");
-
     m_viewArnHasBeenSet = true;
   }
-
   return *this;
 }
 

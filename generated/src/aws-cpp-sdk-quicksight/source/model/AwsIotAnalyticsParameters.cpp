@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AwsIotAnalyticsParameters::AwsIotAnalyticsParameters() : 
-    m_dataSetNameHasBeenSet(false)
-{
-}
-
 AwsIotAnalyticsParameters::AwsIotAnalyticsParameters(JsonView jsonValue)
-  : AwsIotAnalyticsParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsIotAnalyticsParameters& AwsIotAnalyticsParameters::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DataSetName"))
   {
     m_dataSetName = jsonValue.GetString("DataSetName");
-
     m_dataSetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

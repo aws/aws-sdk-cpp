@@ -18,14 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-AttributeValueList::AttributeValueList() : 
-    m_integerValuesHasBeenSet(false),
-    m_stringValuesHasBeenSet(false)
-{
-}
-
 AttributeValueList::AttributeValueList(JsonView jsonValue)
-  : AttributeValueList()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ AttributeValueList& AttributeValueList::operator =(JsonView jsonValue)
     }
     m_integerValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValues"))
   {
     Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("stringValues");
@@ -51,7 +43,6 @@ AttributeValueList& AttributeValueList::operator =(JsonView jsonValue)
     }
     m_stringValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

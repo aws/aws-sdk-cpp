@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateWorkspaceAuthenticationResult::UpdateWorkspaceAuthenticationResult()
-{
-}
-
 UpdateWorkspaceAuthenticationResult::UpdateWorkspaceAuthenticationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateWorkspaceAuthenticationResult& UpdateWorkspaceAuthenticationResult::operat
   if(jsonValue.ValueExists("authentication"))
   {
     m_authentication = jsonValue.GetObject("authentication");
-
+    m_authenticationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

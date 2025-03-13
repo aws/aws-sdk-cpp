@@ -13,13 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFolderRequest::CreateFolderRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateFolderRequest::SerializePayload() const
 {
   JsonValue payload;

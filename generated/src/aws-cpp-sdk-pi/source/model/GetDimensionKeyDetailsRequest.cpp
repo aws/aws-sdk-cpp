@@ -12,16 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDimensionKeyDetailsRequest::GetDimensionKeyDetailsRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false),
-    m_requestedDimensionsHasBeenSet(false)
-{
-}
-
 Aws::String GetDimensionKeyDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-RecommendationRelatedEventResource::RecommendationRelatedEventResource() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 RecommendationRelatedEventResource::RecommendationRelatedEventResource(JsonView jsonValue)
-  : RecommendationRelatedEventResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecommendationRelatedEventResource& RecommendationRelatedEventResource::operator
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

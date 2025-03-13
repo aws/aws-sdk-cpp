@@ -18,14 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-IPSetSummary::IPSetSummary() : 
-    m_iPSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 IPSetSummary::IPSetSummary(JsonView jsonValue)
-  : IPSetSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IPSetSummary& IPSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IPSetId"))
   {
     m_iPSetId = jsonValue.GetString("IPSetId");
-
     m_iPSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

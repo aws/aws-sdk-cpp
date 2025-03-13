@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVerifiedAccessEndpointLoadBalancerOptions::CreateVerifiedAccessEndpointLoadBalancerOptions() : 
-    m_protocol(VerifiedAccessEndpointProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_loadBalancerArnHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_portRangesHasBeenSet(false)
-{
-}
-
 CreateVerifiedAccessEndpointLoadBalancerOptions::CreateVerifiedAccessEndpointLoadBalancerOptions(const XmlNode& xmlNode)
-  : CreateVerifiedAccessEndpointLoadBalancerOptions()
 {
   *this = xmlNode;
 }
@@ -46,44 +34,49 @@ CreateVerifiedAccessEndpointLoadBalancerOptions& CreateVerifiedAccessEndpointLoa
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = VerifiedAccessEndpointProtocolMapper::GetVerifiedAccessEndpointProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
+       m_protocolHasBeenSet = true;
     }
     XmlNode portNode = resultNode.FirstChild("Port");
     if(!portNode.IsNull())
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(portNode.GetText()).c_str()).c_str());
       m_portHasBeenSet = true;
+       m_portHasBeenSet = true;
     }
     XmlNode loadBalancerArnNode = resultNode.FirstChild("LoadBalancerArn");
     if(!loadBalancerArnNode.IsNull())
     {
       m_loadBalancerArn = Aws::Utils::Xml::DecodeEscapedXmlText(loadBalancerArnNode.GetText());
       m_loadBalancerArnHasBeenSet = true;
+       m_loadBalancerArnHasBeenSet = true;
     }
     XmlNode subnetIdsNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdsNode.IsNull())
     {
       XmlNode subnetIdsMember = subnetIdsNode.FirstChild("item");
+      m_subnetIdsHasBeenSet = !subnetIdsMember.IsNull();
       while(!subnetIdsMember.IsNull())
       {
         m_subnetIds.push_back(subnetIdsMember.GetText());
         subnetIdsMember = subnetIdsMember.NextNode("item");
       }
 
-      m_subnetIdsHasBeenSet = true;
+       m_subnetIdsHasBeenSet = true;
     }
     XmlNode portRangesNode = resultNode.FirstChild("PortRange");
     if(!portRangesNode.IsNull())
     {
       XmlNode portRangesMember = portRangesNode.FirstChild("item");
+      m_portRangesHasBeenSet = !portRangesMember.IsNull();
       while(!portRangesMember.IsNull())
       {
         m_portRanges.push_back(portRangesMember);
         portRangesMember = portRangesMember.NextNode("item");
       }
 
-      m_portRangesHasBeenSet = true;
+       m_portRangesHasBeenSet = true;
     }
   }
 

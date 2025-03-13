@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStreamKeyRequest::GetStreamKeyRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetStreamKeyRequest::SerializePayload() const
 {
   JsonValue payload;

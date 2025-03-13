@@ -33,7 +33,7 @@ namespace Model
   class TimeCondition
   {
   public:
-    AWS_BACKUPSEARCH_API TimeCondition();
+    AWS_BACKUPSEARCH_API TimeCondition() = default;
     AWS_BACKUPSEARCH_API TimeCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API TimeCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>This is the timestamp value of the time condition.</p>
      */
-    inline const Aws::Utils::DateTime& GetValue() const{ return m_value; }
+    inline const Aws::Utils::DateTime& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::DateTime& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::DateTime&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline TimeCondition& WithValue(const Aws::Utils::DateTime& value) { SetValue(value); return *this;}
-    inline TimeCondition& WithValue(Aws::Utils::DateTime&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::DateTime>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::DateTime>
+    TimeCondition& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +59,17 @@ namespace Model
      * <code>NOT_EQUALS_TO</code> with a value of <code>4</code> will return all
      * values.</p>
      */
-    inline const TimeConditionOperator& GetOperator() const{ return m_operator; }
+    inline TimeConditionOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const TimeConditionOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(TimeConditionOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline TimeCondition& WithOperator(const TimeConditionOperator& value) { SetOperator(value); return *this;}
-    inline TimeCondition& WithOperator(TimeConditionOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(TimeConditionOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline TimeCondition& WithOperator(TimeConditionOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_value;
+    Aws::Utils::DateTime m_value{};
     bool m_valueHasBeenSet = false;
 
-    TimeConditionOperator m_operator;
+    TimeConditionOperator m_operator{TimeConditionOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

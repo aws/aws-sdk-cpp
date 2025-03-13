@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-TextDetectionResult::TextDetectionResult() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_textDetectionHasBeenSet(false)
-{
-}
-
 TextDetectionResult::TextDetectionResult(JsonView jsonValue)
-  : TextDetectionResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TextDetectionResult& TextDetectionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextDetection"))
   {
     m_textDetection = jsonValue.GetObject("TextDetection");
-
     m_textDetectionHasBeenSet = true;
   }
-
   return *this;
 }
 

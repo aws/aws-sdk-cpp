@@ -18,16 +18,7 @@ namespace SFN
 namespace Model
 {
 
-BillingDetails::BillingDetails() : 
-    m_billedMemoryUsedInMB(0),
-    m_billedMemoryUsedInMBHasBeenSet(false),
-    m_billedDurationInMilliseconds(0),
-    m_billedDurationInMillisecondsHasBeenSet(false)
-{
-}
-
 BillingDetails::BillingDetails(JsonView jsonValue)
-  : BillingDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BillingDetails& BillingDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("billedMemoryUsedInMB"))
   {
     m_billedMemoryUsedInMB = jsonValue.GetInt64("billedMemoryUsedInMB");
-
     m_billedMemoryUsedInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billedDurationInMilliseconds"))
   {
     m_billedDurationInMilliseconds = jsonValue.GetInt64("billedDurationInMilliseconds");
-
     m_billedDurationInMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

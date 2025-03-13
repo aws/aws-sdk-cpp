@@ -37,7 +37,7 @@ namespace Model
   class GenerationConfiguration
   {
   public:
-    AWS_BEDROCK_API GenerationConfiguration();
+    AWS_BEDROCK_API GenerationConfiguration() = default;
     AWS_BEDROCK_API GenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,24 +48,24 @@ namespace Model
      * <p>Contains the template for the prompt that's sent to the model for response
      * generation.</p>
      */
-    inline const PromptTemplate& GetPromptTemplate() const{ return m_promptTemplate; }
+    inline const PromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
     inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
-    inline void SetPromptTemplate(const PromptTemplate& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = value; }
-    inline void SetPromptTemplate(PromptTemplate&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::move(value); }
-    inline GenerationConfiguration& WithPromptTemplate(const PromptTemplate& value) { SetPromptTemplate(value); return *this;}
-    inline GenerationConfiguration& WithPromptTemplate(PromptTemplate&& value) { SetPromptTemplate(std::move(value)); return *this;}
+    template<typename PromptTemplateT = PromptTemplate>
+    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
+    template<typename PromptTemplateT = PromptTemplate>
+    GenerationConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains configuration details for the guardrail.</p>
      */
-    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
-    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
-    inline GenerationConfiguration& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
-    inline GenerationConfiguration& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    GenerationConfiguration& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * <p>Contains configuration details for inference for knowledge base retrieval and
      * response generation.</p>
      */
-    inline const KbInferenceConfig& GetKbInferenceConfig() const{ return m_kbInferenceConfig; }
+    inline const KbInferenceConfig& GetKbInferenceConfig() const { return m_kbInferenceConfig; }
     inline bool KbInferenceConfigHasBeenSet() const { return m_kbInferenceConfigHasBeenSet; }
-    inline void SetKbInferenceConfig(const KbInferenceConfig& value) { m_kbInferenceConfigHasBeenSet = true; m_kbInferenceConfig = value; }
-    inline void SetKbInferenceConfig(KbInferenceConfig&& value) { m_kbInferenceConfigHasBeenSet = true; m_kbInferenceConfig = std::move(value); }
-    inline GenerationConfiguration& WithKbInferenceConfig(const KbInferenceConfig& value) { SetKbInferenceConfig(value); return *this;}
-    inline GenerationConfiguration& WithKbInferenceConfig(KbInferenceConfig&& value) { SetKbInferenceConfig(std::move(value)); return *this;}
+    template<typename KbInferenceConfigT = KbInferenceConfig>
+    void SetKbInferenceConfig(KbInferenceConfigT&& value) { m_kbInferenceConfigHasBeenSet = true; m_kbInferenceConfig = std::forward<KbInferenceConfigT>(value); }
+    template<typename KbInferenceConfigT = KbInferenceConfig>
+    GenerationConfiguration& WithKbInferenceConfig(KbInferenceConfigT&& value) { SetKbInferenceConfig(std::forward<KbInferenceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,18 +88,16 @@ namespace Model
      * to provide custom model parameters specific to the language model being
      * used.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
     inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
-    inline void SetAdditionalModelRequestFields(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
-    inline void SetAdditionalModelRequestFields(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
-    inline GenerationConfiguration& WithAdditionalModelRequestFields(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetAdditionalModelRequestFields(value); return *this;}
-    inline GenerationConfiguration& WithAdditionalModelRequestFields(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
-    inline GenerationConfiguration& AddAdditionalModelRequestFields(const Aws::String& key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, value); return *this; }
-    inline GenerationConfiguration& AddAdditionalModelRequestFields(Aws::String&& key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::move(key), value); return *this; }
-    inline GenerationConfiguration& AddAdditionalModelRequestFields(const Aws::String& key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, std::move(value)); return *this; }
-    inline GenerationConfiguration& AddAdditionalModelRequestFields(Aws::String&& key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::move(key), std::move(value)); return *this; }
-    inline GenerationConfiguration& AddAdditionalModelRequestFields(const char* key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, std::move(value)); return *this; }
-    inline GenerationConfiguration& AddAdditionalModelRequestFields(const char* key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, value); return *this; }
+    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
+    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    GenerationConfiguration& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
+    template<typename AdditionalModelRequestFieldsKeyT = Aws::String, typename AdditionalModelRequestFieldsValueT = Aws::Utils::Document>
+    GenerationConfiguration& AddAdditionalModelRequestFields(AdditionalModelRequestFieldsKeyT&& key, AdditionalModelRequestFieldsValueT&& value) {
+      m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::forward<AdditionalModelRequestFieldsKeyT>(key), std::forward<AdditionalModelRequestFieldsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

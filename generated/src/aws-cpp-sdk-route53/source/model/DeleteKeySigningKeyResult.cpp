@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteKeySigningKeyResult::DeleteKeySigningKeyResult()
-{
-}
-
 DeleteKeySigningKeyResult::DeleteKeySigningKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ DeleteKeySigningKeyResult& DeleteKeySigningKeyResult::operator =(const Aws::Amaz
     if(!changeInfoNode.IsNull())
     {
       m_changeInfo = changeInfoNode;
+      m_changeInfoHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ DeleteKeySigningKeyResult& DeleteKeySigningKeyResult::operator =(const Aws::Amaz
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

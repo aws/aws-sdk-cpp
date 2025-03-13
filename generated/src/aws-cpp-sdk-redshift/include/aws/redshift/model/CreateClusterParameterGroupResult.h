@@ -28,33 +28,35 @@ namespace Model
   class CreateClusterParameterGroupResult
   {
   public:
-    AWS_REDSHIFT_API CreateClusterParameterGroupResult();
+    AWS_REDSHIFT_API CreateClusterParameterGroupResult() = default;
     AWS_REDSHIFT_API CreateClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API CreateClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ClusterParameterGroup& GetClusterParameterGroup() const{ return m_clusterParameterGroup; }
-    inline void SetClusterParameterGroup(const ClusterParameterGroup& value) { m_clusterParameterGroup = value; }
-    inline void SetClusterParameterGroup(ClusterParameterGroup&& value) { m_clusterParameterGroup = std::move(value); }
-    inline CreateClusterParameterGroupResult& WithClusterParameterGroup(const ClusterParameterGroup& value) { SetClusterParameterGroup(value); return *this;}
-    inline CreateClusterParameterGroupResult& WithClusterParameterGroup(ClusterParameterGroup&& value) { SetClusterParameterGroup(std::move(value)); return *this;}
+    inline const ClusterParameterGroup& GetClusterParameterGroup() const { return m_clusterParameterGroup; }
+    template<typename ClusterParameterGroupT = ClusterParameterGroup>
+    void SetClusterParameterGroup(ClusterParameterGroupT&& value) { m_clusterParameterGroupHasBeenSet = true; m_clusterParameterGroup = std::forward<ClusterParameterGroupT>(value); }
+    template<typename ClusterParameterGroupT = ClusterParameterGroup>
+    CreateClusterParameterGroupResult& WithClusterParameterGroup(ClusterParameterGroupT&& value) { SetClusterParameterGroup(std::forward<ClusterParameterGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateClusterParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateClusterParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateClusterParameterGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ClusterParameterGroup m_clusterParameterGroup;
+    bool m_clusterParameterGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

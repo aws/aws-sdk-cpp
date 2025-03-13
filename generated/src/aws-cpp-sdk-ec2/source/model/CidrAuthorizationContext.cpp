@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CidrAuthorizationContext::CidrAuthorizationContext() : 
-    m_messageHasBeenSet(false),
-    m_signatureHasBeenSet(false)
-{
-}
-
 CidrAuthorizationContext::CidrAuthorizationContext(const XmlNode& xmlNode)
-  : CidrAuthorizationContext()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CidrAuthorizationContext& CidrAuthorizationContext::operator =(const XmlNode& xm
     {
       m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
       m_messageHasBeenSet = true;
+       m_messageHasBeenSet = true;
     }
     XmlNode signatureNode = resultNode.FirstChild("Signature");
     if(!signatureNode.IsNull())
     {
       m_signature = Aws::Utils::Xml::DecodeEscapedXmlText(signatureNode.GetText());
       m_signatureHasBeenSet = true;
+       m_signatureHasBeenSet = true;
     }
   }
 

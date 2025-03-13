@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConfirmDeviceResult::ConfirmDeviceResult() : 
-    m_userConfirmationNecessary(false)
-{
-}
-
 ConfirmDeviceResult::ConfirmDeviceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ConfirmDeviceResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ ConfirmDeviceResult& ConfirmDeviceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("UserConfirmationNecessary"))
   {
     m_userConfirmationNecessary = jsonValue.GetBool("UserConfirmationNecessary");
-
+    m_userConfirmationNecessaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

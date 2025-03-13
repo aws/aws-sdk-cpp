@@ -34,7 +34,7 @@ namespace Model
   class NodeInterfaceMapping
   {
   public:
-    AWS_MEDIALIVE_API NodeInterfaceMapping();
+    AWS_MEDIALIVE_API NodeInterfaceMapping() = default;
     AWS_MEDIALIVE_API NodeInterfaceMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API NodeInterfaceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,20 @@ namespace Model
      * A uniform logical interface name to address in a MediaLive channel
      * configuration.
      */
-    inline const Aws::String& GetLogicalInterfaceName() const{ return m_logicalInterfaceName; }
+    inline const Aws::String& GetLogicalInterfaceName() const { return m_logicalInterfaceName; }
     inline bool LogicalInterfaceNameHasBeenSet() const { return m_logicalInterfaceNameHasBeenSet; }
-    inline void SetLogicalInterfaceName(const Aws::String& value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName = value; }
-    inline void SetLogicalInterfaceName(Aws::String&& value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName = std::move(value); }
-    inline void SetLogicalInterfaceName(const char* value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName.assign(value); }
-    inline NodeInterfaceMapping& WithLogicalInterfaceName(const Aws::String& value) { SetLogicalInterfaceName(value); return *this;}
-    inline NodeInterfaceMapping& WithLogicalInterfaceName(Aws::String&& value) { SetLogicalInterfaceName(std::move(value)); return *this;}
-    inline NodeInterfaceMapping& WithLogicalInterfaceName(const char* value) { SetLogicalInterfaceName(value); return *this;}
+    template<typename LogicalInterfaceNameT = Aws::String>
+    void SetLogicalInterfaceName(LogicalInterfaceNameT&& value) { m_logicalInterfaceNameHasBeenSet = true; m_logicalInterfaceName = std::forward<LogicalInterfaceNameT>(value); }
+    template<typename LogicalInterfaceNameT = Aws::String>
+    NodeInterfaceMapping& WithLogicalInterfaceName(LogicalInterfaceNameT&& value) { SetLogicalInterfaceName(std::forward<LogicalInterfaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const NetworkInterfaceMode& GetNetworkInterfaceMode() const{ return m_networkInterfaceMode; }
+    inline NetworkInterfaceMode GetNetworkInterfaceMode() const { return m_networkInterfaceMode; }
     inline bool NetworkInterfaceModeHasBeenSet() const { return m_networkInterfaceModeHasBeenSet; }
-    inline void SetNetworkInterfaceMode(const NetworkInterfaceMode& value) { m_networkInterfaceModeHasBeenSet = true; m_networkInterfaceMode = value; }
-    inline void SetNetworkInterfaceMode(NetworkInterfaceMode&& value) { m_networkInterfaceModeHasBeenSet = true; m_networkInterfaceMode = std::move(value); }
-    inline NodeInterfaceMapping& WithNetworkInterfaceMode(const NetworkInterfaceMode& value) { SetNetworkInterfaceMode(value); return *this;}
-    inline NodeInterfaceMapping& WithNetworkInterfaceMode(NetworkInterfaceMode&& value) { SetNetworkInterfaceMode(std::move(value)); return *this;}
+    inline void SetNetworkInterfaceMode(NetworkInterfaceMode value) { m_networkInterfaceModeHasBeenSet = true; m_networkInterfaceMode = value; }
+    inline NodeInterfaceMapping& WithNetworkInterfaceMode(NetworkInterfaceMode value) { SetNetworkInterfaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +66,19 @@ namespace Model
      * The name of the physical interface on the hardware that will be running
      * Elemental anywhere.
      */
-    inline const Aws::String& GetPhysicalInterfaceName() const{ return m_physicalInterfaceName; }
+    inline const Aws::String& GetPhysicalInterfaceName() const { return m_physicalInterfaceName; }
     inline bool PhysicalInterfaceNameHasBeenSet() const { return m_physicalInterfaceNameHasBeenSet; }
-    inline void SetPhysicalInterfaceName(const Aws::String& value) { m_physicalInterfaceNameHasBeenSet = true; m_physicalInterfaceName = value; }
-    inline void SetPhysicalInterfaceName(Aws::String&& value) { m_physicalInterfaceNameHasBeenSet = true; m_physicalInterfaceName = std::move(value); }
-    inline void SetPhysicalInterfaceName(const char* value) { m_physicalInterfaceNameHasBeenSet = true; m_physicalInterfaceName.assign(value); }
-    inline NodeInterfaceMapping& WithPhysicalInterfaceName(const Aws::String& value) { SetPhysicalInterfaceName(value); return *this;}
-    inline NodeInterfaceMapping& WithPhysicalInterfaceName(Aws::String&& value) { SetPhysicalInterfaceName(std::move(value)); return *this;}
-    inline NodeInterfaceMapping& WithPhysicalInterfaceName(const char* value) { SetPhysicalInterfaceName(value); return *this;}
+    template<typename PhysicalInterfaceNameT = Aws::String>
+    void SetPhysicalInterfaceName(PhysicalInterfaceNameT&& value) { m_physicalInterfaceNameHasBeenSet = true; m_physicalInterfaceName = std::forward<PhysicalInterfaceNameT>(value); }
+    template<typename PhysicalInterfaceNameT = Aws::String>
+    NodeInterfaceMapping& WithPhysicalInterfaceName(PhysicalInterfaceNameT&& value) { SetPhysicalInterfaceName(std::forward<PhysicalInterfaceNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_logicalInterfaceName;
     bool m_logicalInterfaceNameHasBeenSet = false;
 
-    NetworkInterfaceMode m_networkInterfaceMode;
+    NetworkInterfaceMode m_networkInterfaceMode{NetworkInterfaceMode::NOT_SET};
     bool m_networkInterfaceModeHasBeenSet = false;
 
     Aws::String m_physicalInterfaceName;

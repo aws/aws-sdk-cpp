@@ -30,7 +30,7 @@ namespace Model
   class ScalingConfig
   {
   public:
-    AWS_LAMBDA_API ScalingConfig();
+    AWS_LAMBDA_API ScalingConfig() = default;
     AWS_LAMBDA_API ScalingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API ScalingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>Limits the number of concurrent instances that the Amazon SQS event source
      * can invoke.</p>
      */
-    inline int GetMaximumConcurrency() const{ return m_maximumConcurrency; }
+    inline int GetMaximumConcurrency() const { return m_maximumConcurrency; }
     inline bool MaximumConcurrencyHasBeenSet() const { return m_maximumConcurrencyHasBeenSet; }
     inline void SetMaximumConcurrency(int value) { m_maximumConcurrencyHasBeenSet = true; m_maximumConcurrency = value; }
     inline ScalingConfig& WithMaximumConcurrency(int value) { SetMaximumConcurrency(value); return *this;}
     ///@}
   private:
 
-    int m_maximumConcurrency;
+    int m_maximumConcurrency{0};
     bool m_maximumConcurrencyHasBeenSet = false;
   };
 

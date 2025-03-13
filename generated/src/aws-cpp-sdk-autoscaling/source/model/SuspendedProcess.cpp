@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-SuspendedProcess::SuspendedProcess() : 
-    m_processNameHasBeenSet(false),
-    m_suspensionReasonHasBeenSet(false)
-{
-}
-
 SuspendedProcess::SuspendedProcess(const XmlNode& xmlNode)
-  : SuspendedProcess()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ SuspendedProcess& SuspendedProcess::operator =(const XmlNode& xmlNode)
     {
       m_processName = Aws::Utils::Xml::DecodeEscapedXmlText(processNameNode.GetText());
       m_processNameHasBeenSet = true;
+       m_processNameHasBeenSet = true;
     }
     XmlNode suspensionReasonNode = resultNode.FirstChild("SuspensionReason");
     if(!suspensionReasonNode.IsNull())
     {
       m_suspensionReason = Aws::Utils::Xml::DecodeEscapedXmlText(suspensionReasonNode.GetText());
       m_suspensionReasonHasBeenSet = true;
+       m_suspensionReasonHasBeenSet = true;
     }
   }
 

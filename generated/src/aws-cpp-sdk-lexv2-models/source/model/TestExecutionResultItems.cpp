@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestExecutionResultItems::TestExecutionResultItems() : 
-    m_overallTestResultsHasBeenSet(false),
-    m_conversationLevelTestResultsHasBeenSet(false),
-    m_intentClassificationTestResultsHasBeenSet(false),
-    m_intentLevelSlotResolutionTestResultsHasBeenSet(false),
-    m_utteranceLevelTestResultsHasBeenSet(false)
-{
-}
-
 TestExecutionResultItems::TestExecutionResultItems(JsonView jsonValue)
-  : TestExecutionResultItems()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ TestExecutionResultItems& TestExecutionResultItems::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("overallTestResults"))
   {
     m_overallTestResults = jsonValue.GetObject("overallTestResults");
-
     m_overallTestResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conversationLevelTestResults"))
   {
     m_conversationLevelTestResults = jsonValue.GetObject("conversationLevelTestResults");
-
     m_conversationLevelTestResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentClassificationTestResults"))
   {
     m_intentClassificationTestResults = jsonValue.GetObject("intentClassificationTestResults");
-
     m_intentClassificationTestResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intentLevelSlotResolutionTestResults"))
   {
     m_intentLevelSlotResolutionTestResults = jsonValue.GetObject("intentLevelSlotResolutionTestResults");
-
     m_intentLevelSlotResolutionTestResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utteranceLevelTestResults"))
   {
     m_utteranceLevelTestResults = jsonValue.GetObject("utteranceLevelTestResults");
-
     m_utteranceLevelTestResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

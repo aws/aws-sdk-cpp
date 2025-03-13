@@ -22,7 +22,7 @@ namespace Model
   class UpdateCatalogRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateCatalogRequest();
+    AWS_GLUE_API UpdateCatalogRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the catalog.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline UpdateCatalogRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline UpdateCatalogRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline UpdateCatalogRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    UpdateCatalogRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p>A <code>CatalogInput</code> object specifying the new properties of an
      * existing catalog.</p>
      */
-    inline const CatalogInput& GetCatalogInput() const{ return m_catalogInput; }
+    inline const CatalogInput& GetCatalogInput() const { return m_catalogInput; }
     inline bool CatalogInputHasBeenSet() const { return m_catalogInputHasBeenSet; }
-    inline void SetCatalogInput(const CatalogInput& value) { m_catalogInputHasBeenSet = true; m_catalogInput = value; }
-    inline void SetCatalogInput(CatalogInput&& value) { m_catalogInputHasBeenSet = true; m_catalogInput = std::move(value); }
-    inline UpdateCatalogRequest& WithCatalogInput(const CatalogInput& value) { SetCatalogInput(value); return *this;}
-    inline UpdateCatalogRequest& WithCatalogInput(CatalogInput&& value) { SetCatalogInput(std::move(value)); return *this;}
+    template<typename CatalogInputT = CatalogInput>
+    void SetCatalogInput(CatalogInputT&& value) { m_catalogInputHasBeenSet = true; m_catalogInput = std::forward<CatalogInputT>(value); }
+    template<typename CatalogInputT = CatalogInput>
+    UpdateCatalogRequest& WithCatalogInput(CatalogInputT&& value) { SetCatalogInput(std::forward<CatalogInputT>(value)); return *this;}
     ///@}
   private:
 

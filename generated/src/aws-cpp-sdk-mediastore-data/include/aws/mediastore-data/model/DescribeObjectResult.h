@@ -28,7 +28,7 @@ namespace Model
   class DescribeObjectResult
   {
   public:
-    AWS_MEDIASTOREDATA_API DescribeObjectResult();
+    AWS_MEDIASTOREDATA_API DescribeObjectResult() = default;
     AWS_MEDIASTOREDATA_API DescribeObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIASTOREDATA_API DescribeObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,34 +37,30 @@ namespace Model
     /**
      * <p>The ETag that represents a unique instance of the object.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline DescribeObjectResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline DescribeObjectResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline DescribeObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    DescribeObjectResult& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content type of the object.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline DescribeObjectResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline DescribeObjectResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline DescribeObjectResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    DescribeObjectResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The length of the object in bytes.</p>
      */
-    inline long long GetContentLength() const{ return m_contentLength; }
-    inline void SetContentLength(long long value) { m_contentLength = value; }
+    inline long long GetContentLength() const { return m_contentLength; }
+    inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
     inline DescribeObjectResult& WithContentLength(long long value) { SetContentLength(value); return *this;}
     ///@}
 
@@ -76,49 +72,51 @@ namespace Model
      * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      * <p>Headers with a custom user-defined value are also accepted.</p>
      */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControl = value; }
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = std::move(value); }
-    inline void SetCacheControl(const char* value) { m_cacheControl.assign(value); }
-    inline DescribeObjectResult& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-    inline DescribeObjectResult& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-    inline DescribeObjectResult& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
+    template<typename CacheControlT = Aws::String>
+    void SetCacheControl(CacheControlT&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::forward<CacheControlT>(value); }
+    template<typename CacheControlT = Aws::String>
+    DescribeObjectResult& WithCacheControl(CacheControlT&& value) { SetCacheControl(std::forward<CacheControlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the object was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
-    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
-    inline DescribeObjectResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-    inline DescribeObjectResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    void SetLastModified(LastModifiedT&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::forward<LastModifiedT>(value); }
+    template<typename LastModifiedT = Aws::Utils::DateTime>
+    DescribeObjectResult& WithLastModified(LastModifiedT&& value) { SetLastModified(std::forward<LastModifiedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeObjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeObjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeObjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
-    long long m_contentLength;
+    long long m_contentLength{0};
+    bool m_contentLengthHasBeenSet = false;
 
     Aws::String m_cacheControl;
+    bool m_cacheControlHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModified;
+    Aws::Utils::DateTime m_lastModified{};
+    bool m_lastModifiedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

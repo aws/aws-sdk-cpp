@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-H264QvbrSettings::H264QvbrSettings() : 
-    m_maxAverageBitrate(0),
-    m_maxAverageBitrateHasBeenSet(false),
-    m_qvbrQualityLevel(0),
-    m_qvbrQualityLevelHasBeenSet(false),
-    m_qvbrQualityLevelFineTune(0.0),
-    m_qvbrQualityLevelFineTuneHasBeenSet(false)
-{
-}
-
 H264QvbrSettings::H264QvbrSettings(JsonView jsonValue)
-  : H264QvbrSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ H264QvbrSettings& H264QvbrSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxAverageBitrate"))
   {
     m_maxAverageBitrate = jsonValue.GetInteger("maxAverageBitrate");
-
     m_maxAverageBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qvbrQualityLevel"))
   {
     m_qvbrQualityLevel = jsonValue.GetInteger("qvbrQualityLevel");
-
     m_qvbrQualityLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qvbrQualityLevelFineTune"))
   {
     m_qvbrQualityLevelFineTune = jsonValue.GetDouble("qvbrQualityLevelFineTune");
-
     m_qvbrQualityLevelFineTuneHasBeenSet = true;
   }
-
   return *this;
 }
 

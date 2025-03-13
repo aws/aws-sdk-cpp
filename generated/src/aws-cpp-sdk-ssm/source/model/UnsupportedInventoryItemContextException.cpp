@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-UnsupportedInventoryItemContextException::UnsupportedInventoryItemContextException() : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 UnsupportedInventoryItemContextException::UnsupportedInventoryItemContextException(JsonView jsonValue)
-  : UnsupportedInventoryItemContextException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnsupportedInventoryItemContextException& UnsupportedInventoryItemContextExcepti
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-RouteMatrixEntry::RouteMatrixEntry() : 
-    m_distance(0.0),
-    m_distanceHasBeenSet(false),
-    m_durationSeconds(0.0),
-    m_durationSecondsHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 RouteMatrixEntry::RouteMatrixEntry(JsonView jsonValue)
-  : RouteMatrixEntry()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RouteMatrixEntry& RouteMatrixEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetDouble("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationSeconds"))
   {
     m_durationSeconds = jsonValue.GetDouble("DurationSeconds");
-
     m_durationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

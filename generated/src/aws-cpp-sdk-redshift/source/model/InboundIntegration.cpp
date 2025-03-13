@@ -20,19 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-InboundIntegration::InboundIntegration() : 
-    m_integrationArnHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(ZeroETLIntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
-{
-}
-
 InboundIntegration::InboundIntegration(const XmlNode& xmlNode)
-  : InboundIntegration()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,48 @@ InboundIntegration& InboundIntegration::operator =(const XmlNode& xmlNode)
     {
       m_integrationArn = Aws::Utils::Xml::DecodeEscapedXmlText(integrationArnNode.GetText());
       m_integrationArnHasBeenSet = true;
+       m_integrationArnHasBeenSet = true;
     }
     XmlNode sourceArnNode = resultNode.FirstChild("SourceArn");
     if(!sourceArnNode.IsNull())
     {
       m_sourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceArnNode.GetText());
       m_sourceArnHasBeenSet = true;
+       m_sourceArnHasBeenSet = true;
     }
     XmlNode targetArnNode = resultNode.FirstChild("TargetArn");
     if(!targetArnNode.IsNull())
     {
       m_targetArn = Aws::Utils::Xml::DecodeEscapedXmlText(targetArnNode.GetText());
       m_targetArnHasBeenSet = true;
+       m_targetArnHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("Errors");
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("IntegrationError");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
         errorsMember = errorsMember.NextNode("IntegrationError");
       }
 
-      m_errorsHasBeenSet = true;
+       m_errorsHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
     if(!createTimeNode.IsNull())
     {
       m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createTimeHasBeenSet = true;
+       m_createTimeHasBeenSet = true;
     }
   }
 

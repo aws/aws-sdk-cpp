@@ -18,19 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlow::DataIntegrationFlow() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sourcesHasBeenSet(false),
-    m_transformationHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 DataIntegrationFlow::DataIntegrationFlow(JsonView jsonValue)
-  : DataIntegrationFlow()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ DataIntegrationFlow& DataIntegrationFlow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sources"))
   {
     Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
@@ -60,35 +44,26 @@ DataIntegrationFlow& DataIntegrationFlow::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformation"))
   {
     m_transformation = jsonValue.GetObject("transformation");
-
     m_transformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

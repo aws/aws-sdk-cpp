@@ -27,7 +27,7 @@ namespace Model
   class AddPermissionResult
   {
   public:
-    AWS_LAMBDA_API AddPermissionResult();
+    AWS_LAMBDA_API AddPermissionResult() = default;
     AWS_LAMBDA_API AddPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAMBDA_API AddPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The permission statement that's added to the function policy.</p>
      */
-    inline const Aws::String& GetStatement() const{ return m_statement; }
-    inline void SetStatement(const Aws::String& value) { m_statement = value; }
-    inline void SetStatement(Aws::String&& value) { m_statement = std::move(value); }
-    inline void SetStatement(const char* value) { m_statement.assign(value); }
-    inline AddPermissionResult& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
-    inline AddPermissionResult& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
-    inline AddPermissionResult& WithStatement(const char* value) { SetStatement(value); return *this;}
+    inline const Aws::String& GetStatement() const { return m_statement; }
+    template<typename StatementT = Aws::String>
+    void SetStatement(StatementT&& value) { m_statementHasBeenSet = true; m_statement = std::forward<StatementT>(value); }
+    template<typename StatementT = Aws::String>
+    AddPermissionResult& WithStatement(StatementT&& value) { SetStatement(std::forward<StatementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddPermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddPermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddPermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddPermissionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_statement;
+    bool m_statementHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

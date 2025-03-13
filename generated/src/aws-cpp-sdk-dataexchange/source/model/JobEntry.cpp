@@ -18,22 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-JobEntry::JobEntry() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 JobEntry::JobEntry(JsonView jsonValue)
-  : JobEntry()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ JobEntry& JobEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     m_details = jsonValue.GetObject("Details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -70,35 +49,26 @@ JobEntry& JobEntry::operator =(JsonView jsonValue)
     }
     m_errorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

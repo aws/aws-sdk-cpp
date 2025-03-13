@@ -33,7 +33,7 @@ namespace Model
   class FargateProfileHealth
   {
   public:
-    AWS_EKS_API FargateProfileHealth();
+    AWS_EKS_API FargateProfileHealth() = default;
     AWS_EKS_API FargateProfileHealth(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API FargateProfileHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Any issues that are associated with the Fargate profile.</p>
      */
-    inline const Aws::Vector<FargateProfileIssue>& GetIssues() const{ return m_issues; }
+    inline const Aws::Vector<FargateProfileIssue>& GetIssues() const { return m_issues; }
     inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
-    inline void SetIssues(const Aws::Vector<FargateProfileIssue>& value) { m_issuesHasBeenSet = true; m_issues = value; }
-    inline void SetIssues(Aws::Vector<FargateProfileIssue>&& value) { m_issuesHasBeenSet = true; m_issues = std::move(value); }
-    inline FargateProfileHealth& WithIssues(const Aws::Vector<FargateProfileIssue>& value) { SetIssues(value); return *this;}
-    inline FargateProfileHealth& WithIssues(Aws::Vector<FargateProfileIssue>&& value) { SetIssues(std::move(value)); return *this;}
-    inline FargateProfileHealth& AddIssues(const FargateProfileIssue& value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
-    inline FargateProfileHealth& AddIssues(FargateProfileIssue&& value) { m_issuesHasBeenSet = true; m_issues.push_back(std::move(value)); return *this; }
+    template<typename IssuesT = Aws::Vector<FargateProfileIssue>>
+    void SetIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues = std::forward<IssuesT>(value); }
+    template<typename IssuesT = Aws::Vector<FargateProfileIssue>>
+    FargateProfileHealth& WithIssues(IssuesT&& value) { SetIssues(std::forward<IssuesT>(value)); return *this;}
+    template<typename IssuesT = FargateProfileIssue>
+    FargateProfileHealth& AddIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues.emplace_back(std::forward<IssuesT>(value)); return *this; }
     ///@}
   private:
 

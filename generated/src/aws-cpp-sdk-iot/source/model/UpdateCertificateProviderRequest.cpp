@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCertificateProviderRequest::UpdateCertificateProviderRequest() : 
-    m_certificateProviderNameHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false),
-    m_accountDefaultForOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCertificateProviderRequest::SerializePayload() const
 {
   JsonValue payload;

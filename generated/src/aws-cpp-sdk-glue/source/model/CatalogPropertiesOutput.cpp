@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CatalogPropertiesOutput::CatalogPropertiesOutput() : 
-    m_dataLakeAccessPropertiesHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
-{
-}
-
 CatalogPropertiesOutput::CatalogPropertiesOutput(JsonView jsonValue)
-  : CatalogPropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CatalogPropertiesOutput& CatalogPropertiesOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataLakeAccessProperties"))
   {
     m_dataLakeAccessProperties = jsonValue.GetObject("DataLakeAccessProperties");
-
     m_dataLakeAccessPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("CustomProperties").GetAllObjects();
@@ -48,7 +39,6 @@ CatalogPropertiesOutput& CatalogPropertiesOutput::operator =(JsonView jsonValue)
     }
     m_customPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

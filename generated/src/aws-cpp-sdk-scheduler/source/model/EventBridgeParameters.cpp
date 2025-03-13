@@ -18,14 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-EventBridgeParameters::EventBridgeParameters() : 
-    m_detailTypeHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 EventBridgeParameters::EventBridgeParameters(JsonView jsonValue)
-  : EventBridgeParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EventBridgeParameters& EventBridgeParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DetailType"))
   {
     m_detailType = jsonValue.GetString("DetailType");
-
     m_detailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

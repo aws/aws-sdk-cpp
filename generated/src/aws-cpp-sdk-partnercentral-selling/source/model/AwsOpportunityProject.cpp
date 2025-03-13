@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsOpportunityProject::AwsOpportunityProject() : 
-    m_expectedCustomerSpendHasBeenSet(false)
-{
-}
-
 AwsOpportunityProject::AwsOpportunityProject(JsonView jsonValue)
-  : AwsOpportunityProject()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsOpportunityProject& AwsOpportunityProject::operator =(JsonView jsonValue)
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
-
   return *this;
 }
 

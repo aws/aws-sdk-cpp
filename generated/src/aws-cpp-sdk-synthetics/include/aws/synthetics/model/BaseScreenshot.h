@@ -33,7 +33,7 @@ namespace Model
   class BaseScreenshot
   {
   public:
-    AWS_SYNTHETICS_API BaseScreenshot();
+    AWS_SYNTHETICS_API BaseScreenshot() = default;
     AWS_SYNTHETICS_API BaseScreenshot(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API BaseScreenshot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * run after the <code>UpdateCanary</code> operation that specified for this canary
      * to perform visual monitoring.</p>
      */
-    inline const Aws::String& GetScreenshotName() const{ return m_screenshotName; }
+    inline const Aws::String& GetScreenshotName() const { return m_screenshotName; }
     inline bool ScreenshotNameHasBeenSet() const { return m_screenshotNameHasBeenSet; }
-    inline void SetScreenshotName(const Aws::String& value) { m_screenshotNameHasBeenSet = true; m_screenshotName = value; }
-    inline void SetScreenshotName(Aws::String&& value) { m_screenshotNameHasBeenSet = true; m_screenshotName = std::move(value); }
-    inline void SetScreenshotName(const char* value) { m_screenshotNameHasBeenSet = true; m_screenshotName.assign(value); }
-    inline BaseScreenshot& WithScreenshotName(const Aws::String& value) { SetScreenshotName(value); return *this;}
-    inline BaseScreenshot& WithScreenshotName(Aws::String&& value) { SetScreenshotName(std::move(value)); return *this;}
-    inline BaseScreenshot& WithScreenshotName(const char* value) { SetScreenshotName(value); return *this;}
+    template<typename ScreenshotNameT = Aws::String>
+    void SetScreenshotName(ScreenshotNameT&& value) { m_screenshotNameHasBeenSet = true; m_screenshotName = std::forward<ScreenshotNameT>(value); }
+    template<typename ScreenshotNameT = Aws::String>
+    BaseScreenshot& WithScreenshotName(ScreenshotNameT&& value) { SetScreenshotName(std::forward<ScreenshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,15 +61,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
      * Editing or deleting a canary</a> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIgnoreCoordinates() const{ return m_ignoreCoordinates; }
+    inline const Aws::Vector<Aws::String>& GetIgnoreCoordinates() const { return m_ignoreCoordinates; }
     inline bool IgnoreCoordinatesHasBeenSet() const { return m_ignoreCoordinatesHasBeenSet; }
-    inline void SetIgnoreCoordinates(const Aws::Vector<Aws::String>& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates = value; }
-    inline void SetIgnoreCoordinates(Aws::Vector<Aws::String>&& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates = std::move(value); }
-    inline BaseScreenshot& WithIgnoreCoordinates(const Aws::Vector<Aws::String>& value) { SetIgnoreCoordinates(value); return *this;}
-    inline BaseScreenshot& WithIgnoreCoordinates(Aws::Vector<Aws::String>&& value) { SetIgnoreCoordinates(std::move(value)); return *this;}
-    inline BaseScreenshot& AddIgnoreCoordinates(const Aws::String& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.push_back(value); return *this; }
-    inline BaseScreenshot& AddIgnoreCoordinates(Aws::String&& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.push_back(std::move(value)); return *this; }
-    inline BaseScreenshot& AddIgnoreCoordinates(const char* value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.push_back(value); return *this; }
+    template<typename IgnoreCoordinatesT = Aws::Vector<Aws::String>>
+    void SetIgnoreCoordinates(IgnoreCoordinatesT&& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates = std::forward<IgnoreCoordinatesT>(value); }
+    template<typename IgnoreCoordinatesT = Aws::Vector<Aws::String>>
+    BaseScreenshot& WithIgnoreCoordinates(IgnoreCoordinatesT&& value) { SetIgnoreCoordinates(std::forward<IgnoreCoordinatesT>(value)); return *this;}
+    template<typename IgnoreCoordinatesT = Aws::String>
+    BaseScreenshot& AddIgnoreCoordinates(IgnoreCoordinatesT&& value) { m_ignoreCoordinatesHasBeenSet = true; m_ignoreCoordinates.emplace_back(std::forward<IgnoreCoordinatesT>(value)); return *this; }
     ///@}
   private:
 

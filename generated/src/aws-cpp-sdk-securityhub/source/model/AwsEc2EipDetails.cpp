@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2EipDetails::AwsEc2EipDetails() : 
-    m_instanceIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_allocationIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_publicIpv4PoolHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_networkInterfaceOwnerIdHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 AwsEc2EipDetails::AwsEc2EipDetails(JsonView jsonValue)
-  : AwsEc2EipDetails()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ AwsEc2EipDetails& AwsEc2EipDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIp"))
   {
     m_publicIp = jsonValue.GetString("PublicIp");
-
     m_publicIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocationId"))
   {
     m_allocationId = jsonValue.GetString("AllocationId");
-
     m_allocationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIpv4Pool"))
   {
     m_publicIpv4Pool = jsonValue.GetString("PublicIpv4Pool");
-
     m_publicIpv4PoolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkBorderGroup"))
   {
     m_networkBorderGroup = jsonValue.GetString("NetworkBorderGroup");
-
     m_networkBorderGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceOwnerId"))
   {
     m_networkInterfaceOwnerId = jsonValue.GetString("NetworkInterfaceOwnerId");
-
     m_networkInterfaceOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("PrivateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

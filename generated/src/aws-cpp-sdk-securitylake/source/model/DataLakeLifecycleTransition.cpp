@@ -18,15 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeLifecycleTransition::DataLakeLifecycleTransition() : 
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_storageClassHasBeenSet(false)
-{
-}
-
 DataLakeLifecycleTransition::DataLakeLifecycleTransition(JsonView jsonValue)
-  : DataLakeLifecycleTransition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataLakeLifecycleTransition& DataLakeLifecycleTransition::operator =(JsonView js
   if(jsonValue.ValueExists("days"))
   {
     m_days = jsonValue.GetInteger("days");
-
     m_daysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageClass"))
   {
     m_storageClass = jsonValue.GetString("storageClass");
-
     m_storageClassHasBeenSet = true;
   }
-
   return *this;
 }
 

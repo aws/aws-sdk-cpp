@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentTemplateVersionRequest::DeleteEnvironmentTemplateVersionRequest() : 
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentTemplateVersionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class AwsDmsReplicationInstanceVpcSecurityGroupsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsDmsReplicationInstanceVpcSecurityGroupsDetails();
+    AWS_SECURITYHUB_API AwsDmsReplicationInstanceVpcSecurityGroupsDetails() = default;
     AWS_SECURITYHUB_API AwsDmsReplicationInstanceVpcSecurityGroupsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDmsReplicationInstanceVpcSecurityGroupsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The identifier of the VPC security group that’s associated with the
      * replication instance. </p>
      */
-    inline const Aws::String& GetVpcSecurityGroupId() const{ return m_vpcSecurityGroupId; }
+    inline const Aws::String& GetVpcSecurityGroupId() const { return m_vpcSecurityGroupId; }
     inline bool VpcSecurityGroupIdHasBeenSet() const { return m_vpcSecurityGroupIdHasBeenSet; }
-    inline void SetVpcSecurityGroupId(const Aws::String& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = value; }
-    inline void SetVpcSecurityGroupId(Aws::String&& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = std::move(value); }
-    inline void SetVpcSecurityGroupId(const char* value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId.assign(value); }
-    inline AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(const Aws::String& value) { SetVpcSecurityGroupId(value); return *this;}
-    inline AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(Aws::String&& value) { SetVpcSecurityGroupId(std::move(value)); return *this;}
-    inline AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(const char* value) { SetVpcSecurityGroupId(value); return *this;}
+    template<typename VpcSecurityGroupIdT = Aws::String>
+    void SetVpcSecurityGroupId(VpcSecurityGroupIdT&& value) { m_vpcSecurityGroupIdHasBeenSet = true; m_vpcSecurityGroupId = std::forward<VpcSecurityGroupIdT>(value); }
+    template<typename VpcSecurityGroupIdT = Aws::String>
+    AwsDmsReplicationInstanceVpcSecurityGroupsDetails& WithVpcSecurityGroupId(VpcSecurityGroupIdT&& value) { SetVpcSecurityGroupId(std::forward<VpcSecurityGroupIdT>(value)); return *this;}
     ///@}
   private:
 

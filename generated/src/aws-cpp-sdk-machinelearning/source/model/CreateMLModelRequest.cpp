@@ -12,18 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMLModelRequest::CreateMLModelRequest() : 
-    m_mLModelIdHasBeenSet(false),
-    m_mLModelNameHasBeenSet(false),
-    m_mLModelType(MLModelType::NOT_SET),
-    m_mLModelTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_trainingDataSourceIdHasBeenSet(false),
-    m_recipeHasBeenSet(false),
-    m_recipeUriHasBeenSet(false)
-{
-}
-
 Aws::String CreateMLModelRequest::SerializePayload() const
 {
   JsonValue payload;

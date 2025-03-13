@@ -31,7 +31,7 @@ namespace Model
   class OperatorRequest
   {
   public:
-    AWS_EC2_API OperatorRequest();
+    AWS_EC2_API OperatorRequest() = default;
     AWS_EC2_API OperatorRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API OperatorRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The service provider that manages the resource.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline OperatorRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline OperatorRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline OperatorRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    OperatorRequest& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
   private:
 

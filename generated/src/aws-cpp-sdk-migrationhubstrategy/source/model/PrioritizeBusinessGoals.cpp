@@ -18,13 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-PrioritizeBusinessGoals::PrioritizeBusinessGoals() : 
-    m_businessGoalsHasBeenSet(false)
-{
-}
-
 PrioritizeBusinessGoals::PrioritizeBusinessGoals(JsonView jsonValue)
-  : PrioritizeBusinessGoals()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrioritizeBusinessGoals& PrioritizeBusinessGoals::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("businessGoals"))
   {
     m_businessGoals = jsonValue.GetObject("businessGoals");
-
     m_businessGoalsHasBeenSet = true;
   }
-
   return *this;
 }
 

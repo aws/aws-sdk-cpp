@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSchemasRequest::ListSchemasRequest() : 
-    m_collaborationIdentifierHasBeenSet(false),
-    m_schemaType(SchemaType::NOT_SET),
-    m_schemaTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSchemasRequest::SerializePayload() const
 {
   return {};

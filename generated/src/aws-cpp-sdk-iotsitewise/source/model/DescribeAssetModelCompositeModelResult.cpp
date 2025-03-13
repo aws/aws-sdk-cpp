@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAssetModelCompositeModelResult::DescribeAssetModelCompositeModelResult()
-{
-}
-
 DescribeAssetModelCompositeModelResult::DescribeAssetModelCompositeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ DescribeAssetModelCompositeModelResult& DescribeAssetModelCompositeModelResult::
   if(jsonValue.ValueExists("assetModelId"))
   {
     m_assetModelId = jsonValue.GetString("assetModelId");
-
+    m_assetModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelId"))
   {
     m_assetModelCompositeModelId = jsonValue.GetString("assetModelCompositeModelId");
-
+    m_assetModelCompositeModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelExternalId"))
   {
     m_assetModelCompositeModelExternalId = jsonValue.GetString("assetModelCompositeModelExternalId");
-
+    m_assetModelCompositeModelExternalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelPath"))
   {
     Aws::Utils::Array<JsonView> assetModelCompositeModelPathJsonList = jsonValue.GetArray("assetModelCompositeModelPath");
@@ -54,26 +47,23 @@ DescribeAssetModelCompositeModelResult& DescribeAssetModelCompositeModelResult::
     {
       m_assetModelCompositeModelPath.push_back(assetModelCompositeModelPathJsonList[assetModelCompositeModelPathIndex].AsObject());
     }
+    m_assetModelCompositeModelPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelName"))
   {
     m_assetModelCompositeModelName = jsonValue.GetString("assetModelCompositeModelName");
-
+    m_assetModelCompositeModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelDescription"))
   {
     m_assetModelCompositeModelDescription = jsonValue.GetString("assetModelCompositeModelDescription");
-
+    m_assetModelCompositeModelDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelType"))
   {
     m_assetModelCompositeModelType = jsonValue.GetString("assetModelCompositeModelType");
-
+    m_assetModelCompositeModelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelProperties"))
   {
     Aws::Utils::Array<JsonView> assetModelCompositeModelPropertiesJsonList = jsonValue.GetArray("assetModelCompositeModelProperties");
@@ -81,14 +71,13 @@ DescribeAssetModelCompositeModelResult& DescribeAssetModelCompositeModelResult::
     {
       m_assetModelCompositeModelProperties.push_back(assetModelCompositeModelPropertiesJsonList[assetModelCompositeModelPropertiesIndex].AsObject());
     }
+    m_assetModelCompositeModelPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compositionDetails"))
   {
     m_compositionDetails = jsonValue.GetObject("compositionDetails");
-
+    m_compositionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelSummaries"))
   {
     Aws::Utils::Array<JsonView> assetModelCompositeModelSummariesJsonList = jsonValue.GetArray("assetModelCompositeModelSummaries");
@@ -96,8 +85,8 @@ DescribeAssetModelCompositeModelResult& DescribeAssetModelCompositeModelResult::
     {
       m_assetModelCompositeModelSummaries.push_back(assetModelCompositeModelSummariesJsonList[assetModelCompositeModelSummariesIndex].AsObject());
     }
+    m_assetModelCompositeModelSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionDefinitions"))
   {
     Aws::Utils::Array<JsonView> actionDefinitionsJsonList = jsonValue.GetArray("actionDefinitions");
@@ -105,14 +94,15 @@ DescribeAssetModelCompositeModelResult& DescribeAssetModelCompositeModelResult::
     {
       m_actionDefinitions.push_back(actionDefinitionsJsonList[actionDefinitionsIndex].AsObject());
     }
+    m_actionDefinitionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

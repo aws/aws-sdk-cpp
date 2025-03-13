@@ -31,7 +31,7 @@ namespace Model
   class NetworkSettingsSummary
   {
   public:
-    AWS_WORKSPACESWEB_API NetworkSettingsSummary();
+    AWS_WORKSPACESWEB_API NetworkSettingsSummary() = default;
     AWS_WORKSPACESWEB_API NetworkSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API NetworkSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ARN of the network settings.</p>
      */
-    inline const Aws::String& GetNetworkSettingsArn() const{ return m_networkSettingsArn; }
+    inline const Aws::String& GetNetworkSettingsArn() const { return m_networkSettingsArn; }
     inline bool NetworkSettingsArnHasBeenSet() const { return m_networkSettingsArnHasBeenSet; }
-    inline void SetNetworkSettingsArn(const Aws::String& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = value; }
-    inline void SetNetworkSettingsArn(Aws::String&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::move(value); }
-    inline void SetNetworkSettingsArn(const char* value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn.assign(value); }
-    inline NetworkSettingsSummary& WithNetworkSettingsArn(const Aws::String& value) { SetNetworkSettingsArn(value); return *this;}
-    inline NetworkSettingsSummary& WithNetworkSettingsArn(Aws::String&& value) { SetNetworkSettingsArn(std::move(value)); return *this;}
-    inline NetworkSettingsSummary& WithNetworkSettingsArn(const char* value) { SetNetworkSettingsArn(value); return *this;}
+    template<typename NetworkSettingsArnT = Aws::String>
+    void SetNetworkSettingsArn(NetworkSettingsArnT&& value) { m_networkSettingsArnHasBeenSet = true; m_networkSettingsArn = std::forward<NetworkSettingsArnT>(value); }
+    template<typename NetworkSettingsArnT = Aws::String>
+    NetworkSettingsSummary& WithNetworkSettingsArn(NetworkSettingsArnT&& value) { SetNetworkSettingsArn(std::forward<NetworkSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC ID of the network settings.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline NetworkSettingsSummary& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline NetworkSettingsSummary& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline NetworkSettingsSummary& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    NetworkSettingsSummary& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 

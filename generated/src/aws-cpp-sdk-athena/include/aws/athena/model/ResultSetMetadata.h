@@ -34,7 +34,7 @@ namespace Model
   class ResultSetMetadata
   {
   public:
-    AWS_ATHENA_API ResultSetMetadata();
+    AWS_ATHENA_API ResultSetMetadata() = default;
     AWS_ATHENA_API ResultSetMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API ResultSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>Information about the columns returned in a query result metadata.</p>
      */
-    inline const Aws::Vector<ColumnInfo>& GetColumnInfo() const{ return m_columnInfo; }
+    inline const Aws::Vector<ColumnInfo>& GetColumnInfo() const { return m_columnInfo; }
     inline bool ColumnInfoHasBeenSet() const { return m_columnInfoHasBeenSet; }
-    inline void SetColumnInfo(const Aws::Vector<ColumnInfo>& value) { m_columnInfoHasBeenSet = true; m_columnInfo = value; }
-    inline void SetColumnInfo(Aws::Vector<ColumnInfo>&& value) { m_columnInfoHasBeenSet = true; m_columnInfo = std::move(value); }
-    inline ResultSetMetadata& WithColumnInfo(const Aws::Vector<ColumnInfo>& value) { SetColumnInfo(value); return *this;}
-    inline ResultSetMetadata& WithColumnInfo(Aws::Vector<ColumnInfo>&& value) { SetColumnInfo(std::move(value)); return *this;}
-    inline ResultSetMetadata& AddColumnInfo(const ColumnInfo& value) { m_columnInfoHasBeenSet = true; m_columnInfo.push_back(value); return *this; }
-    inline ResultSetMetadata& AddColumnInfo(ColumnInfo&& value) { m_columnInfoHasBeenSet = true; m_columnInfo.push_back(std::move(value)); return *this; }
+    template<typename ColumnInfoT = Aws::Vector<ColumnInfo>>
+    void SetColumnInfo(ColumnInfoT&& value) { m_columnInfoHasBeenSet = true; m_columnInfo = std::forward<ColumnInfoT>(value); }
+    template<typename ColumnInfoT = Aws::Vector<ColumnInfo>>
+    ResultSetMetadata& WithColumnInfo(ColumnInfoT&& value) { SetColumnInfo(std::forward<ColumnInfoT>(value)); return *this;}
+    template<typename ColumnInfoT = ColumnInfo>
+    ResultSetMetadata& AddColumnInfo(ColumnInfoT&& value) { m_columnInfoHasBeenSet = true; m_columnInfo.emplace_back(std::forward<ColumnInfoT>(value)); return *this; }
     ///@}
   private:
 

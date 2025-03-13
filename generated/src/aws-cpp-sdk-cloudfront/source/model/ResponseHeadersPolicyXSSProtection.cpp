@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyXSSProtection::ResponseHeadersPolicyXSSProtection() : 
-    m_override(false),
-    m_overrideHasBeenSet(false),
-    m_protection(false),
-    m_protectionHasBeenSet(false),
-    m_modeBlock(false),
-    m_modeBlockHasBeenSet(false),
-    m_reportUriHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyXSSProtection::ResponseHeadersPolicyXSSProtection(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyXSSProtection()
 {
   *this = xmlNode;
 }
@@ -48,24 +36,28 @@ ResponseHeadersPolicyXSSProtection& ResponseHeadersPolicyXSSProtection::operator
     {
       m_override = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(overrideNode.GetText()).c_str()).c_str());
       m_overrideHasBeenSet = true;
+       m_overrideHasBeenSet = true;
     }
     XmlNode protectionNode = resultNode.FirstChild("Protection");
     if(!protectionNode.IsNull())
     {
       m_protection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protectionNode.GetText()).c_str()).c_str());
       m_protectionHasBeenSet = true;
+       m_protectionHasBeenSet = true;
     }
     XmlNode modeBlockNode = resultNode.FirstChild("ModeBlock");
     if(!modeBlockNode.IsNull())
     {
       m_modeBlock = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(modeBlockNode.GetText()).c_str()).c_str());
       m_modeBlockHasBeenSet = true;
+       m_modeBlockHasBeenSet = true;
     }
     XmlNode reportUriNode = resultNode.FirstChild("ReportUri");
     if(!reportUriNode.IsNull())
     {
       m_reportUri = Aws::Utils::Xml::DecodeEscapedXmlText(reportUriNode.GetText());
       m_reportUriHasBeenSet = true;
+       m_reportUriHasBeenSet = true;
     }
   }
 

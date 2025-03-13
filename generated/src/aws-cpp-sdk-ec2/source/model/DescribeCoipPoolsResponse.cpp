@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCoipPoolsResponse::DescribeCoipPoolsResponse()
-{
-}
-
 DescribeCoipPoolsResponse::DescribeCoipPoolsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeCoipPoolsResponse& DescribeCoipPoolsResponse::operator =(const Aws::Amaz
     if(!coipPoolsNode.IsNull())
     {
       XmlNode coipPoolsMember = coipPoolsNode.FirstChild("item");
+      m_coipPoolsHasBeenSet = !coipPoolsMember.IsNull();
       while(!coipPoolsMember.IsNull())
       {
         m_coipPools.push_back(coipPoolsMember);
@@ -53,6 +50,7 @@ DescribeCoipPoolsResponse& DescribeCoipPoolsResponse::operator =(const Aws::Amaz
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +59,7 @@ DescribeCoipPoolsResponse& DescribeCoipPoolsResponse::operator =(const Aws::Amaz
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeCoipPoolsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

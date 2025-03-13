@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteLaunchTemplateRequest::DeleteLaunchTemplateRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLaunchTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

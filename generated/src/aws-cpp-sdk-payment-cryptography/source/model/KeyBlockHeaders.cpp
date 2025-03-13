@@ -18,17 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-KeyBlockHeaders::KeyBlockHeaders() : 
-    m_keyModesOfUseHasBeenSet(false),
-    m_keyExportability(KeyExportability::NOT_SET),
-    m_keyExportabilityHasBeenSet(false),
-    m_keyVersionHasBeenSet(false),
-    m_optionalBlocksHasBeenSet(false)
-{
-}
-
 KeyBlockHeaders::KeyBlockHeaders(JsonView jsonValue)
-  : KeyBlockHeaders()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KeyBlockHeaders& KeyBlockHeaders::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyModesOfUse"))
   {
     m_keyModesOfUse = jsonValue.GetObject("KeyModesOfUse");
-
     m_keyModesOfUseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyExportability"))
   {
     m_keyExportability = KeyExportabilityMapper::GetKeyExportabilityForName(jsonValue.GetString("KeyExportability"));
-
     m_keyExportabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyVersion"))
   {
     m_keyVersion = jsonValue.GetString("KeyVersion");
-
     m_keyVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptionalBlocks"))
   {
     Aws::Map<Aws::String, JsonView> optionalBlocksJsonMap = jsonValue.GetObject("OptionalBlocks").GetAllObjects();
@@ -65,7 +49,6 @@ KeyBlockHeaders& KeyBlockHeaders::operator =(JsonView jsonValue)
     }
     m_optionalBlocksHasBeenSet = true;
   }
-
   return *this;
 }
 

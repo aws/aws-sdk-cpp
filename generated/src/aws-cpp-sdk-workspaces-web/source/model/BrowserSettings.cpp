@@ -18,17 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-BrowserSettings::BrowserSettings() : 
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_associatedPortalArnsHasBeenSet(false),
-    m_browserPolicyHasBeenSet(false),
-    m_browserSettingsArnHasBeenSet(false),
-    m_customerManagedKeyHasBeenSet(false)
-{
-}
-
 BrowserSettings::BrowserSettings(JsonView jsonValue)
-  : BrowserSettings()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ BrowserSettings& BrowserSettings::operator =(JsonView jsonValue)
     }
     m_additionalEncryptionContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedPortalArns"))
   {
     Aws::Utils::Array<JsonView> associatedPortalArnsJsonList = jsonValue.GetArray("associatedPortalArns");
@@ -54,28 +43,21 @@ BrowserSettings& BrowserSettings::operator =(JsonView jsonValue)
     }
     m_associatedPortalArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("browserPolicy"))
   {
     m_browserPolicy = jsonValue.GetString("browserPolicy");
-
     m_browserPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("browserSettingsArn"))
   {
     m_browserSettingsArn = jsonValue.GetString("browserSettingsArn");
-
     m_browserSettingsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerManagedKey"))
   {
     m_customerManagedKey = jsonValue.GetString("customerManagedKey");
-
     m_customerManagedKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

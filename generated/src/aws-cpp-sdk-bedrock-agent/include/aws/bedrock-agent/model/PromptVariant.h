@@ -38,7 +38,7 @@ namespace Model
   class PromptVariant
   {
   public:
-    AWS_BEDROCKAGENT_API PromptVariant();
+    AWS_BEDROCKAGENT_API PromptVariant() = default;
     AWS_BEDROCKAGENT_API PromptVariant(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,36 +52,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
      * request parameters and response fields for foundation models</a>.</p>
      */
-    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline Aws::Utils::DocumentView GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
     inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
-    inline void SetAdditionalModelRequestFields(const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
-    inline void SetAdditionalModelRequestFields(Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
-    inline PromptVariant& WithAdditionalModelRequestFields(const Aws::Utils::Document& value) { SetAdditionalModelRequestFields(value); return *this;}
-    inline PromptVariant& WithAdditionalModelRequestFields(Aws::Utils::Document&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
+    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
+    template<typename AdditionalModelRequestFieldsT = Aws::Utils::Document>
+    PromptVariant& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a generative AI resource with which to use the prompt.</p>
      */
-    inline const PromptGenAiResource& GetGenAiResource() const{ return m_genAiResource; }
+    inline const PromptGenAiResource& GetGenAiResource() const { return m_genAiResource; }
     inline bool GenAiResourceHasBeenSet() const { return m_genAiResourceHasBeenSet; }
-    inline void SetGenAiResource(const PromptGenAiResource& value) { m_genAiResourceHasBeenSet = true; m_genAiResource = value; }
-    inline void SetGenAiResource(PromptGenAiResource&& value) { m_genAiResourceHasBeenSet = true; m_genAiResource = std::move(value); }
-    inline PromptVariant& WithGenAiResource(const PromptGenAiResource& value) { SetGenAiResource(value); return *this;}
-    inline PromptVariant& WithGenAiResource(PromptGenAiResource&& value) { SetGenAiResource(std::move(value)); return *this;}
+    template<typename GenAiResourceT = PromptGenAiResource>
+    void SetGenAiResource(GenAiResourceT&& value) { m_genAiResourceHasBeenSet = true; m_genAiResource = std::forward<GenAiResourceT>(value); }
+    template<typename GenAiResourceT = PromptGenAiResource>
+    PromptVariant& WithGenAiResource(GenAiResourceT&& value) { SetGenAiResource(std::forward<GenAiResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains inference configurations for the prompt variant.</p>
      */
-    inline const PromptInferenceConfiguration& GetInferenceConfiguration() const{ return m_inferenceConfiguration; }
+    inline const PromptInferenceConfiguration& GetInferenceConfiguration() const { return m_inferenceConfiguration; }
     inline bool InferenceConfigurationHasBeenSet() const { return m_inferenceConfigurationHasBeenSet; }
-    inline void SetInferenceConfiguration(const PromptInferenceConfiguration& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = value; }
-    inline void SetInferenceConfiguration(PromptInferenceConfiguration&& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = std::move(value); }
-    inline PromptVariant& WithInferenceConfiguration(const PromptInferenceConfiguration& value) { SetInferenceConfiguration(value); return *this;}
-    inline PromptVariant& WithInferenceConfiguration(PromptInferenceConfiguration&& value) { SetInferenceConfiguration(std::move(value)); return *this;}
+    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
+    void SetInferenceConfiguration(InferenceConfigurationT&& value) { m_inferenceConfigurationHasBeenSet = true; m_inferenceConfiguration = std::forward<InferenceConfigurationT>(value); }
+    template<typename InferenceConfigurationT = PromptInferenceConfiguration>
+    PromptVariant& WithInferenceConfiguration(InferenceConfigurationT&& value) { SetInferenceConfiguration(std::forward<InferenceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +89,14 @@ namespace Model
      * <p>An array of objects, each containing a key-value pair that defines a metadata
      * tag and value to attach to a prompt variant.</p>
      */
-    inline const Aws::Vector<PromptMetadataEntry>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Vector<PromptMetadataEntry>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Vector<PromptMetadataEntry>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Vector<PromptMetadataEntry>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline PromptVariant& WithMetadata(const Aws::Vector<PromptMetadataEntry>& value) { SetMetadata(value); return *this;}
-    inline PromptVariant& WithMetadata(Aws::Vector<PromptMetadataEntry>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline PromptVariant& AddMetadata(const PromptMetadataEntry& value) { m_metadataHasBeenSet = true; m_metadata.push_back(value); return *this; }
-    inline PromptVariant& AddMetadata(PromptMetadataEntry&& value) { m_metadataHasBeenSet = true; m_metadata.push_back(std::move(value)); return *this; }
+    template<typename MetadataT = Aws::Vector<PromptMetadataEntry>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Vector<PromptMetadataEntry>>
+    PromptVariant& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataT = PromptMetadataEntry>
+    PromptVariant& AddMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata.emplace_back(std::forward<MetadataT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,52 +105,46 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
      * profile</a> with which to run inference on the prompt.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline PromptVariant& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline PromptVariant& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline PromptVariant& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    PromptVariant& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the prompt variant.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PromptVariant& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PromptVariant& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PromptVariant& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PromptVariant& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains configurations for the prompt template.</p>
      */
-    inline const PromptTemplateConfiguration& GetTemplateConfiguration() const{ return m_templateConfiguration; }
+    inline const PromptTemplateConfiguration& GetTemplateConfiguration() const { return m_templateConfiguration; }
     inline bool TemplateConfigurationHasBeenSet() const { return m_templateConfigurationHasBeenSet; }
-    inline void SetTemplateConfiguration(const PromptTemplateConfiguration& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = value; }
-    inline void SetTemplateConfiguration(PromptTemplateConfiguration&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::move(value); }
-    inline PromptVariant& WithTemplateConfiguration(const PromptTemplateConfiguration& value) { SetTemplateConfiguration(value); return *this;}
-    inline PromptVariant& WithTemplateConfiguration(PromptTemplateConfiguration&& value) { SetTemplateConfiguration(std::move(value)); return *this;}
+    template<typename TemplateConfigurationT = PromptTemplateConfiguration>
+    void SetTemplateConfiguration(TemplateConfigurationT&& value) { m_templateConfigurationHasBeenSet = true; m_templateConfiguration = std::forward<TemplateConfigurationT>(value); }
+    template<typename TemplateConfigurationT = PromptTemplateConfiguration>
+    PromptVariant& WithTemplateConfiguration(TemplateConfigurationT&& value) { SetTemplateConfiguration(std::forward<TemplateConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of prompt template to use.</p>
      */
-    inline const PromptTemplateType& GetTemplateType() const{ return m_templateType; }
+    inline PromptTemplateType GetTemplateType() const { return m_templateType; }
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-    inline void SetTemplateType(const PromptTemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-    inline void SetTemplateType(PromptTemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-    inline PromptVariant& WithTemplateType(const PromptTemplateType& value) { SetTemplateType(value); return *this;}
-    inline PromptVariant& WithTemplateType(PromptTemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
+    inline void SetTemplateType(PromptTemplateType value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
+    inline PromptVariant& WithTemplateType(PromptTemplateType value) { SetTemplateType(value); return *this;}
     ///@}
   private:
 
@@ -175,7 +169,7 @@ namespace Model
     PromptTemplateConfiguration m_templateConfiguration;
     bool m_templateConfigurationHasBeenSet = false;
 
-    PromptTemplateType m_templateType;
+    PromptTemplateType m_templateType{PromptTemplateType::NOT_SET};
     bool m_templateTypeHasBeenSet = false;
   };
 

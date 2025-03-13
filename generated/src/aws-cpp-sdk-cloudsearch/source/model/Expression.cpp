@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-Expression::Expression() : 
-    m_expressionNameHasBeenSet(false),
-    m_expressionValueHasBeenSet(false)
-{
-}
-
 Expression::Expression(const XmlNode& xmlNode)
-  : Expression()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ Expression& Expression::operator =(const XmlNode& xmlNode)
     {
       m_expressionName = Aws::Utils::Xml::DecodeEscapedXmlText(expressionNameNode.GetText());
       m_expressionNameHasBeenSet = true;
+       m_expressionNameHasBeenSet = true;
     }
     XmlNode expressionValueNode = resultNode.FirstChild("ExpressionValue");
     if(!expressionValueNode.IsNull())
     {
       m_expressionValue = Aws::Utils::Xml::DecodeEscapedXmlText(expressionValueNode.GetText());
       m_expressionValueHasBeenSet = true;
+       m_expressionValueHasBeenSet = true;
     }
   }
 

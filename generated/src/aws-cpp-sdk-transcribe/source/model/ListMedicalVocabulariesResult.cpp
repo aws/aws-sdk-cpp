@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMedicalVocabulariesResult::ListMedicalVocabulariesResult() : 
-    m_status(VocabularyState::NOT_SET)
-{
-}
-
 ListMedicalVocabulariesResult::ListMedicalVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListMedicalVocabulariesResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ListMedicalVocabulariesResult& ListMedicalVocabulariesResult::operator =(const A
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Vocabularies"))
   {
     Aws::Utils::Array<JsonView> vocabulariesJsonList = jsonValue.GetArray("Vocabularies");
@@ -50,14 +42,15 @@ ListMedicalVocabulariesResult& ListMedicalVocabulariesResult::operator =(const A
     {
       m_vocabularies.push_back(vocabulariesJsonList[vocabulariesIndex].AsObject());
     }
+    m_vocabulariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SourceFieldProperties::SourceFieldProperties() : 
-    m_isRetrievable(false),
-    m_isRetrievableHasBeenSet(false),
-    m_isQueryable(false),
-    m_isQueryableHasBeenSet(false),
-    m_isTimestampFieldForIncrementalQueries(false),
-    m_isTimestampFieldForIncrementalQueriesHasBeenSet(false)
-{
-}
-
 SourceFieldProperties::SourceFieldProperties(JsonView jsonValue)
-  : SourceFieldProperties()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SourceFieldProperties& SourceFieldProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isRetrievable"))
   {
     m_isRetrievable = jsonValue.GetBool("isRetrievable");
-
     m_isRetrievableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isQueryable"))
   {
     m_isQueryable = jsonValue.GetBool("isQueryable");
-
     m_isQueryableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isTimestampFieldForIncrementalQueries"))
   {
     m_isTimestampFieldForIncrementalQueries = jsonValue.GetBool("isTimestampFieldForIncrementalQueries");
-
     m_isTimestampFieldForIncrementalQueriesHasBeenSet = true;
   }
-
   return *this;
 }
 

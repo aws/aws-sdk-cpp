@@ -29,7 +29,7 @@ namespace Model
   class DescribeThemePermissionsResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeThemePermissionsResult();
+    AWS_QUICKSIGHT_API DescribeThemePermissionsResult() = default;
     AWS_QUICKSIGHT_API DescribeThemePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeThemePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,71 +38,70 @@ namespace Model
     /**
      * <p>The ID for the theme.</p>
      */
-    inline const Aws::String& GetThemeId() const{ return m_themeId; }
-    inline void SetThemeId(const Aws::String& value) { m_themeId = value; }
-    inline void SetThemeId(Aws::String&& value) { m_themeId = std::move(value); }
-    inline void SetThemeId(const char* value) { m_themeId.assign(value); }
-    inline DescribeThemePermissionsResult& WithThemeId(const Aws::String& value) { SetThemeId(value); return *this;}
-    inline DescribeThemePermissionsResult& WithThemeId(Aws::String&& value) { SetThemeId(std::move(value)); return *this;}
-    inline DescribeThemePermissionsResult& WithThemeId(const char* value) { SetThemeId(value); return *this;}
+    inline const Aws::String& GetThemeId() const { return m_themeId; }
+    template<typename ThemeIdT = Aws::String>
+    void SetThemeId(ThemeIdT&& value) { m_themeIdHasBeenSet = true; m_themeId = std::forward<ThemeIdT>(value); }
+    template<typename ThemeIdT = Aws::String>
+    DescribeThemePermissionsResult& WithThemeId(ThemeIdT&& value) { SetThemeId(std::forward<ThemeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the theme.</p>
      */
-    inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
-    inline void SetThemeArn(const Aws::String& value) { m_themeArn = value; }
-    inline void SetThemeArn(Aws::String&& value) { m_themeArn = std::move(value); }
-    inline void SetThemeArn(const char* value) { m_themeArn.assign(value); }
-    inline DescribeThemePermissionsResult& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
-    inline DescribeThemePermissionsResult& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
-    inline DescribeThemePermissionsResult& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
+    inline const Aws::String& GetThemeArn() const { return m_themeArn; }
+    template<typename ThemeArnT = Aws::String>
+    void SetThemeArn(ThemeArnT&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::forward<ThemeArnT>(value); }
+    template<typename ThemeArnT = Aws::String>
+    DescribeThemePermissionsResult& WithThemeArn(ThemeArnT&& value) { SetThemeArn(std::forward<ThemeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of resource permissions set on the theme. </p>
      */
-    inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
-    inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
-    inline DescribeThemePermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
-    inline DescribeThemePermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline DescribeThemePermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
-    inline DescribeThemePermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourcePermission>& GetPermissions() const { return m_permissions; }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<ResourcePermission>>
+    DescribeThemePermissionsResult& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = ResourcePermission>
+    DescribeThemePermissionsResult& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeThemePermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeThemePermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeThemePermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeThemePermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeThemePermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_themeId;
+    bool m_themeIdHasBeenSet = false;
 
     Aws::String m_themeArn;
+    bool m_themeArnHasBeenSet = false;
 
     Aws::Vector<ResourcePermission> m_permissions;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

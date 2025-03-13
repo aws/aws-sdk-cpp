@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateVTLDeviceTypeResult::UpdateVTLDeviceTypeResult()
-{
-}
-
 UpdateVTLDeviceTypeResult::UpdateVTLDeviceTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateVTLDeviceTypeResult& UpdateVTLDeviceTypeResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("VTLDeviceARN"))
   {
     m_vTLDeviceARN = jsonValue.GetString("VTLDeviceARN");
-
+    m_vTLDeviceARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

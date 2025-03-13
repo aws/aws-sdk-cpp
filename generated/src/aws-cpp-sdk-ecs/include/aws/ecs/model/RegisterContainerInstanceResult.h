@@ -28,7 +28,7 @@ namespace Model
   class RegisterContainerInstanceResult
   {
   public:
-    AWS_ECS_API RegisterContainerInstanceResult();
+    AWS_ECS_API RegisterContainerInstanceResult() = default;
     AWS_ECS_API RegisterContainerInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API RegisterContainerInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The container instance that was registered.</p>
      */
-    inline const ContainerInstance& GetContainerInstance() const{ return m_containerInstance; }
-    inline void SetContainerInstance(const ContainerInstance& value) { m_containerInstance = value; }
-    inline void SetContainerInstance(ContainerInstance&& value) { m_containerInstance = std::move(value); }
-    inline RegisterContainerInstanceResult& WithContainerInstance(const ContainerInstance& value) { SetContainerInstance(value); return *this;}
-    inline RegisterContainerInstanceResult& WithContainerInstance(ContainerInstance&& value) { SetContainerInstance(std::move(value)); return *this;}
+    inline const ContainerInstance& GetContainerInstance() const { return m_containerInstance; }
+    template<typename ContainerInstanceT = ContainerInstance>
+    void SetContainerInstance(ContainerInstanceT&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::forward<ContainerInstanceT>(value); }
+    template<typename ContainerInstanceT = ContainerInstance>
+    RegisterContainerInstanceResult& WithContainerInstance(ContainerInstanceT&& value) { SetContainerInstance(std::forward<ContainerInstanceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterContainerInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterContainerInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterContainerInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterContainerInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContainerInstance m_containerInstance;
+    bool m_containerInstanceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,19 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerHasBeenSet(false),
-    m_domainArnHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false),
-    m_status(VpcEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endpointHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(JsonView jsonValue)
-  : VpcEndpoint()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ VpcEndpoint& VpcEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcEndpointOwner"))
   {
     m_vpcEndpointOwner = jsonValue.GetString("VpcEndpointOwner");
-
     m_vpcEndpointOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainArn"))
   {
     m_domainArn = jsonValue.GetString("DomainArn");
-
     m_domainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcOptions"))
   {
     m_vpcOptions = jsonValue.GetObject("VpcOptions");
-
     m_vpcOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VpcEndpointStatusMapper::GetVpcEndpointStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   return *this;
 }
 

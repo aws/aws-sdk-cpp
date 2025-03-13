@@ -12,14 +12,6 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMetadataFlagRequest::PutMetadataFlagRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_featureNameHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 Aws::String PutMetadataFlagRequest::SerializePayload() const
 {
   JsonValue payload;

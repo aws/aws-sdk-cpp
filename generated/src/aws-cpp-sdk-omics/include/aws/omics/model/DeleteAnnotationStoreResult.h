@@ -28,7 +28,7 @@ namespace Model
   class DeleteAnnotationStoreResult
   {
   public:
-    AWS_OMICS_API DeleteAnnotationStoreResult();
+    AWS_OMICS_API DeleteAnnotationStoreResult() = default;
     AWS_OMICS_API DeleteAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API DeleteAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The store's status.</p>
      */
-    inline const StoreStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const StoreStatus& value) { m_status = value; }
-    inline void SetStatus(StoreStatus&& value) { m_status = std::move(value); }
-    inline DeleteAnnotationStoreResult& WithStatus(const StoreStatus& value) { SetStatus(value); return *this;}
-    inline DeleteAnnotationStoreResult& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline StoreStatus GetStatus() const { return m_status; }
+    inline void SetStatus(StoreStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteAnnotationStoreResult& WithStatus(StoreStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAnnotationStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAnnotationStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAnnotationStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAnnotationStoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    StoreStatus m_status;
+    StoreStatus m_status{StoreStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

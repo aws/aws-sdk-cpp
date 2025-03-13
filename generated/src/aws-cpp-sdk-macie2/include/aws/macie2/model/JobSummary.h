@@ -40,7 +40,7 @@ namespace Model
   class JobSummary
   {
   public:
-    AWS_MACIE2_API JobSummary();
+    AWS_MACIE2_API JobSummary() = default;
     AWS_MACIE2_API JobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,12 @@ namespace Model
      * uses these criteria to determine which buckets to analyze. A job's definition
      * can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
      */
-    inline const S3BucketCriteriaForJob& GetBucketCriteria() const{ return m_bucketCriteria; }
+    inline const S3BucketCriteriaForJob& GetBucketCriteria() const { return m_bucketCriteria; }
     inline bool BucketCriteriaHasBeenSet() const { return m_bucketCriteriaHasBeenSet; }
-    inline void SetBucketCriteria(const S3BucketCriteriaForJob& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = value; }
-    inline void SetBucketCriteria(S3BucketCriteriaForJob&& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = std::move(value); }
-    inline JobSummary& WithBucketCriteria(const S3BucketCriteriaForJob& value) { SetBucketCriteria(value); return *this;}
-    inline JobSummary& WithBucketCriteria(S3BucketCriteriaForJob&& value) { SetBucketCriteria(std::move(value)); return *this;}
+    template<typename BucketCriteriaT = S3BucketCriteriaForJob>
+    void SetBucketCriteria(BucketCriteriaT&& value) { m_bucketCriteriaHasBeenSet = true; m_bucketCriteria = std::forward<BucketCriteriaT>(value); }
+    template<typename BucketCriteriaT = S3BucketCriteriaForJob>
+    JobSummary& WithBucketCriteria(BucketCriteriaT&& value) { SetBucketCriteria(std::forward<BucketCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +69,14 @@ namespace Model
      * definition can contain a bucketDefinitions array or a bucketCriteria object, not
      * both.</p>
      */
-    inline const Aws::Vector<S3BucketDefinitionForJob>& GetBucketDefinitions() const{ return m_bucketDefinitions; }
+    inline const Aws::Vector<S3BucketDefinitionForJob>& GetBucketDefinitions() const { return m_bucketDefinitions; }
     inline bool BucketDefinitionsHasBeenSet() const { return m_bucketDefinitionsHasBeenSet; }
-    inline void SetBucketDefinitions(const Aws::Vector<S3BucketDefinitionForJob>& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = value; }
-    inline void SetBucketDefinitions(Aws::Vector<S3BucketDefinitionForJob>&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = std::move(value); }
-    inline JobSummary& WithBucketDefinitions(const Aws::Vector<S3BucketDefinitionForJob>& value) { SetBucketDefinitions(value); return *this;}
-    inline JobSummary& WithBucketDefinitions(Aws::Vector<S3BucketDefinitionForJob>&& value) { SetBucketDefinitions(std::move(value)); return *this;}
-    inline JobSummary& AddBucketDefinitions(const S3BucketDefinitionForJob& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.push_back(value); return *this; }
-    inline JobSummary& AddBucketDefinitions(S3BucketDefinitionForJob&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.push_back(std::move(value)); return *this; }
+    template<typename BucketDefinitionsT = Aws::Vector<S3BucketDefinitionForJob>>
+    void SetBucketDefinitions(BucketDefinitionsT&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = std::forward<BucketDefinitionsT>(value); }
+    template<typename BucketDefinitionsT = Aws::Vector<S3BucketDefinitionForJob>>
+    JobSummary& WithBucketDefinitions(BucketDefinitionsT&& value) { SetBucketDefinitions(std::forward<BucketDefinitionsT>(value)); return *this;}
+    template<typename BucketDefinitionsT = S3BucketDefinitionForJob>
+    JobSummary& AddBucketDefinitions(BucketDefinitionsT&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.emplace_back(std::forward<BucketDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,26 +84,24 @@ namespace Model
      * <p>The date and time, in UTC and extended ISO 8601 format, when the job was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline JobSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline JobSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    JobSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline JobSummary& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline JobSummary& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline JobSummary& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    JobSummary& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +123,10 @@ namespace Model
      * the expiration date, refer to the UserPausedDetails.jobExpiresAt
      * property.</p></li></ul>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-    inline JobSummary& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline JobSummary& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline JobSummary& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -139,12 +135,10 @@ namespace Model
      * <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The
      * job runs on a daily, weekly, or monthly basis.</p></li></ul>
      */
-    inline const JobType& GetJobType() const{ return m_jobType; }
+    inline JobType GetJobType() const { return m_jobType; }
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
-    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
-    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
-    inline JobSummary& WithJobType(const JobType& value) { SetJobType(value); return *this;}
-    inline JobSummary& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+    inline void SetJobType(JobType value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+    inline JobSummary& WithJobType(JobType value) { SetJobType(value); return *this;}
     ///@}
 
     ///@{
@@ -153,26 +147,24 @@ namespace Model
      * the job ran. For a recurring job, this value indicates the error status of the
      * job's most recent run.</p>
      */
-    inline const LastRunErrorStatus& GetLastRunErrorStatus() const{ return m_lastRunErrorStatus; }
+    inline const LastRunErrorStatus& GetLastRunErrorStatus() const { return m_lastRunErrorStatus; }
     inline bool LastRunErrorStatusHasBeenSet() const { return m_lastRunErrorStatusHasBeenSet; }
-    inline void SetLastRunErrorStatus(const LastRunErrorStatus& value) { m_lastRunErrorStatusHasBeenSet = true; m_lastRunErrorStatus = value; }
-    inline void SetLastRunErrorStatus(LastRunErrorStatus&& value) { m_lastRunErrorStatusHasBeenSet = true; m_lastRunErrorStatus = std::move(value); }
-    inline JobSummary& WithLastRunErrorStatus(const LastRunErrorStatus& value) { SetLastRunErrorStatus(value); return *this;}
-    inline JobSummary& WithLastRunErrorStatus(LastRunErrorStatus&& value) { SetLastRunErrorStatus(std::move(value)); return *this;}
+    template<typename LastRunErrorStatusT = LastRunErrorStatus>
+    void SetLastRunErrorStatus(LastRunErrorStatusT&& value) { m_lastRunErrorStatusHasBeenSet = true; m_lastRunErrorStatus = std::forward<LastRunErrorStatusT>(value); }
+    template<typename LastRunErrorStatusT = LastRunErrorStatus>
+    JobSummary& WithLastRunErrorStatus(LastRunErrorStatusT&& value) { SetLastRunErrorStatus(std::forward<LastRunErrorStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom name of the job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline JobSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline JobSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline JobSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    JobSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,12 +174,12 @@ namespace Model
      * resumed. This value is present only if the value for jobStatus is
      * USER_PAUSED.</p>
      */
-    inline const UserPausedDetails& GetUserPausedDetails() const{ return m_userPausedDetails; }
+    inline const UserPausedDetails& GetUserPausedDetails() const { return m_userPausedDetails; }
     inline bool UserPausedDetailsHasBeenSet() const { return m_userPausedDetailsHasBeenSet; }
-    inline void SetUserPausedDetails(const UserPausedDetails& value) { m_userPausedDetailsHasBeenSet = true; m_userPausedDetails = value; }
-    inline void SetUserPausedDetails(UserPausedDetails&& value) { m_userPausedDetailsHasBeenSet = true; m_userPausedDetails = std::move(value); }
-    inline JobSummary& WithUserPausedDetails(const UserPausedDetails& value) { SetUserPausedDetails(value); return *this;}
-    inline JobSummary& WithUserPausedDetails(UserPausedDetails&& value) { SetUserPausedDetails(std::move(value)); return *this;}
+    template<typename UserPausedDetailsT = UserPausedDetails>
+    void SetUserPausedDetails(UserPausedDetailsT&& value) { m_userPausedDetailsHasBeenSet = true; m_userPausedDetails = std::forward<UserPausedDetailsT>(value); }
+    template<typename UserPausedDetailsT = UserPausedDetails>
+    JobSummary& WithUserPausedDetails(UserPausedDetailsT&& value) { SetUserPausedDetails(std::forward<UserPausedDetailsT>(value)); return *this;}
     ///@}
   private:
 
@@ -197,16 +189,16 @@ namespace Model
     Aws::Vector<S3BucketDefinitionForJob> m_bucketDefinitions;
     bool m_bucketDefinitionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
     bool m_jobStatusHasBeenSet = false;
 
-    JobType m_jobType;
+    JobType m_jobType{JobType::NOT_SET};
     bool m_jobTypeHasBeenSet = false;
 
     LastRunErrorStatus m_lastRunErrorStatus;

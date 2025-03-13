@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetEffectivePoliciesRequest::GetEffectivePoliciesRequest() : 
-    m_principalHasBeenSet(false),
-    m_cognitoIdentityPoolIdHasBeenSet(false),
-    m_thingNameHasBeenSet(false)
-{
-}
-
 Aws::String GetEffectivePoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

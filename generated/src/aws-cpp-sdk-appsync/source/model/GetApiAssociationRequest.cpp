@@ -12,11 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApiAssociationRequest::GetApiAssociationRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String GetApiAssociationRequest::SerializePayload() const
 {
   return {};

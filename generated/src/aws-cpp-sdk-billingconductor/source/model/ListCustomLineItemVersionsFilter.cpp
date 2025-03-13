@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter() : 
-    m_billingPeriodRangeHasBeenSet(false)
-{
-}
-
 ListCustomLineItemVersionsFilter::ListCustomLineItemVersionsFilter(JsonView jsonValue)
-  : ListCustomLineItemVersionsFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ListCustomLineItemVersionsFilter& ListCustomLineItemVersionsFilter::operator =(J
   if(jsonValue.ValueExists("BillingPeriodRange"))
   {
     m_billingPeriodRange = jsonValue.GetObject("BillingPeriodRange");
-
     m_billingPeriodRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

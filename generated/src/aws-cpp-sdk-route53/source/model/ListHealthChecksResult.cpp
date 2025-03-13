@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListHealthChecksResult::ListHealthChecksResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListHealthChecksResult::ListHealthChecksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListHealthChecksResult()
 {
   *this = result;
 }
@@ -38,6 +32,7 @@ ListHealthChecksResult& ListHealthChecksResult::operator =(const Aws::AmazonWebS
     if(!healthChecksNode.IsNull())
     {
       XmlNode healthChecksMember = healthChecksNode.FirstChild("HealthCheck");
+      m_healthChecksHasBeenSet = !healthChecksMember.IsNull();
       while(!healthChecksMember.IsNull())
       {
         m_healthChecks.push_back(healthChecksMember);
@@ -49,21 +44,25 @@ ListHealthChecksResult& ListHealthChecksResult::operator =(const Aws::AmazonWebS
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
+      m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
+      m_maxItemsHasBeenSet = true;
     }
   }
 
@@ -72,6 +71,7 @@ ListHealthChecksResult& ListHealthChecksResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

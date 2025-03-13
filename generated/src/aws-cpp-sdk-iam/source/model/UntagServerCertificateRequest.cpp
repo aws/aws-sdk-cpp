@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UntagServerCertificateRequest::UntagServerCertificateRequest() : 
-    m_serverCertificateNameHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagServerCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

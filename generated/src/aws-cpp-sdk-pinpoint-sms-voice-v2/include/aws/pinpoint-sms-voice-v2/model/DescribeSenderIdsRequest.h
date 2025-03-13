@@ -25,7 +25,7 @@ namespace Model
   class DescribeSenderIdsRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API DescribeSenderIdsRequest();
+    AWS_PINPOINTSMSVOICEV2_API DescribeSenderIdsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,28 @@ namespace Model
      * you are using a shared AWS End User Messaging SMS and Voice resource then you
      * must use the full Amazon Resource Name(ARN).</p> 
      */
-    inline const Aws::Vector<SenderIdAndCountry>& GetSenderIds() const{ return m_senderIds; }
+    inline const Aws::Vector<SenderIdAndCountry>& GetSenderIds() const { return m_senderIds; }
     inline bool SenderIdsHasBeenSet() const { return m_senderIdsHasBeenSet; }
-    inline void SetSenderIds(const Aws::Vector<SenderIdAndCountry>& value) { m_senderIdsHasBeenSet = true; m_senderIds = value; }
-    inline void SetSenderIds(Aws::Vector<SenderIdAndCountry>&& value) { m_senderIdsHasBeenSet = true; m_senderIds = std::move(value); }
-    inline DescribeSenderIdsRequest& WithSenderIds(const Aws::Vector<SenderIdAndCountry>& value) { SetSenderIds(value); return *this;}
-    inline DescribeSenderIdsRequest& WithSenderIds(Aws::Vector<SenderIdAndCountry>&& value) { SetSenderIds(std::move(value)); return *this;}
-    inline DescribeSenderIdsRequest& AddSenderIds(const SenderIdAndCountry& value) { m_senderIdsHasBeenSet = true; m_senderIds.push_back(value); return *this; }
-    inline DescribeSenderIdsRequest& AddSenderIds(SenderIdAndCountry&& value) { m_senderIdsHasBeenSet = true; m_senderIds.push_back(std::move(value)); return *this; }
+    template<typename SenderIdsT = Aws::Vector<SenderIdAndCountry>>
+    void SetSenderIds(SenderIdsT&& value) { m_senderIdsHasBeenSet = true; m_senderIds = std::forward<SenderIdsT>(value); }
+    template<typename SenderIdsT = Aws::Vector<SenderIdAndCountry>>
+    DescribeSenderIdsRequest& WithSenderIds(SenderIdsT&& value) { SetSenderIds(std::forward<SenderIdsT>(value)); return *this;}
+    template<typename SenderIdsT = SenderIdAndCountry>
+    DescribeSenderIdsRequest& AddSenderIds(SenderIdsT&& value) { m_senderIdsHasBeenSet = true; m_senderIds.emplace_back(std::forward<SenderIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of SenderIdFilter objects to filter the results.</p>
      */
-    inline const Aws::Vector<SenderIdFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<SenderIdFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<SenderIdFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<SenderIdFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeSenderIdsRequest& WithFilters(const Aws::Vector<SenderIdFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeSenderIdsRequest& WithFilters(Aws::Vector<SenderIdFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeSenderIdsRequest& AddFilters(const SenderIdFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeSenderIdsRequest& AddFilters(SenderIdFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<SenderIdFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<SenderIdFilter>>
+    DescribeSenderIdsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = SenderIdFilter>
+    DescribeSenderIdsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,21 +73,19 @@ namespace Model
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSenderIdsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSenderIdsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSenderIdsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSenderIdsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return per each request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSenderIdsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,12 +98,10 @@ namespace Model
      * account. The <code>Owner</code> and <code>SenderIds</code> parameters can't be
      * used at the same time. </p>
      */
-    inline const Owner& GetOwner() const{ return m_owner; }
+    inline Owner GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline DescribeSenderIdsRequest& WithOwner(const Owner& value) { SetOwner(value); return *this;}
-    inline DescribeSenderIdsRequest& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
+    inline void SetOwner(Owner value) { m_ownerHasBeenSet = true; m_owner = value; }
+    inline DescribeSenderIdsRequest& WithOwner(Owner value) { SetOwner(value); return *this;}
     ///@}
   private:
 
@@ -118,10 +114,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Owner m_owner;
+    Owner m_owner{Owner::NOT_SET};
     bool m_ownerHasBeenSet = false;
   };
 

@@ -28,35 +28,35 @@ namespace Model
   class UpdateEndpointsBatchResult
   {
   public:
-    AWS_PINPOINT_API UpdateEndpointsBatchResult();
+    AWS_PINPOINT_API UpdateEndpointsBatchResult() = default;
     AWS_PINPOINT_API UpdateEndpointsBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API UpdateEndpointsBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const MessageBody& GetMessageBody() const{ return m_messageBody; }
-    inline void SetMessageBody(const MessageBody& value) { m_messageBody = value; }
-    inline void SetMessageBody(MessageBody&& value) { m_messageBody = std::move(value); }
-    inline UpdateEndpointsBatchResult& WithMessageBody(const MessageBody& value) { SetMessageBody(value); return *this;}
-    inline UpdateEndpointsBatchResult& WithMessageBody(MessageBody&& value) { SetMessageBody(std::move(value)); return *this;}
+    inline const MessageBody& GetMessageBody() const { return m_messageBody; }
+    template<typename MessageBodyT = MessageBody>
+    void SetMessageBody(MessageBodyT&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::forward<MessageBodyT>(value); }
+    template<typename MessageBodyT = MessageBody>
+    UpdateEndpointsBatchResult& WithMessageBody(MessageBodyT&& value) { SetMessageBody(std::forward<MessageBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEndpointsBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEndpointsBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEndpointsBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEndpointsBatchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MessageBody m_messageBody;
+    bool m_messageBodyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

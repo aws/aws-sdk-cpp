@@ -35,7 +35,7 @@ namespace Model
   class CurrentMetricSortCriteria
   {
   public:
-    AWS_CONNECT_API CurrentMetricSortCriteria();
+    AWS_CONNECT_API CurrentMetricSortCriteria() = default;
     AWS_CONNECT_API CurrentMetricSortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CurrentMetricSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
 
     ///@{
     
-    inline const CurrentMetricName& GetSortByMetric() const{ return m_sortByMetric; }
+    inline CurrentMetricName GetSortByMetric() const { return m_sortByMetric; }
     inline bool SortByMetricHasBeenSet() const { return m_sortByMetricHasBeenSet; }
-    inline void SetSortByMetric(const CurrentMetricName& value) { m_sortByMetricHasBeenSet = true; m_sortByMetric = value; }
-    inline void SetSortByMetric(CurrentMetricName&& value) { m_sortByMetricHasBeenSet = true; m_sortByMetric = std::move(value); }
-    inline CurrentMetricSortCriteria& WithSortByMetric(const CurrentMetricName& value) { SetSortByMetric(value); return *this;}
-    inline CurrentMetricSortCriteria& WithSortByMetric(CurrentMetricName&& value) { SetSortByMetric(std::move(value)); return *this;}
+    inline void SetSortByMetric(CurrentMetricName value) { m_sortByMetricHasBeenSet = true; m_sortByMetric = value; }
+    inline CurrentMetricSortCriteria& WithSortByMetric(CurrentMetricName value) { SetSortByMetric(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The way to sort.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline CurrentMetricSortCriteria& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline CurrentMetricSortCriteria& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline CurrentMetricSortCriteria& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    CurrentMetricName m_sortByMetric;
+    CurrentMetricName m_sortByMetric{CurrentMetricName::NOT_SET};
     bool m_sortByMetricHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

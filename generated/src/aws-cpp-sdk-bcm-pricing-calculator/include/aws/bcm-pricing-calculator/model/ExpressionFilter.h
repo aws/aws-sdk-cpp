@@ -33,7 +33,7 @@ namespace Model
   class ExpressionFilter
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API ExpressionFilter();
+    AWS_BCMPRICINGCALCULATOR_API ExpressionFilter() = default;
     AWS_BCMPRICINGCALCULATOR_API ExpressionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API ExpressionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,44 +43,40 @@ namespace Model
     /**
      * <p> The key or attribute to filter on. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ExpressionFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ExpressionFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ExpressionFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ExpressionFilter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The match options for the filter (e.g., equals, contains). </p>
      */
-    inline const Aws::Vector<Aws::String>& GetMatchOptions() const{ return m_matchOptions; }
+    inline const Aws::Vector<Aws::String>& GetMatchOptions() const { return m_matchOptions; }
     inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
-    inline void SetMatchOptions(const Aws::Vector<Aws::String>& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = value; }
-    inline void SetMatchOptions(Aws::Vector<Aws::String>&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::move(value); }
-    inline ExpressionFilter& WithMatchOptions(const Aws::Vector<Aws::String>& value) { SetMatchOptions(value); return *this;}
-    inline ExpressionFilter& WithMatchOptions(Aws::Vector<Aws::String>&& value) { SetMatchOptions(std::move(value)); return *this;}
-    inline ExpressionFilter& AddMatchOptions(const Aws::String& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
-    inline ExpressionFilter& AddMatchOptions(Aws::String&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(std::move(value)); return *this; }
-    inline ExpressionFilter& AddMatchOptions(const char* value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
+    template<typename MatchOptionsT = Aws::Vector<Aws::String>>
+    void SetMatchOptions(MatchOptionsT&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::forward<MatchOptionsT>(value); }
+    template<typename MatchOptionsT = Aws::Vector<Aws::String>>
+    ExpressionFilter& WithMatchOptions(MatchOptionsT&& value) { SetMatchOptions(std::forward<MatchOptionsT>(value)); return *this;}
+    template<typename MatchOptionsT = Aws::String>
+    ExpressionFilter& AddMatchOptions(MatchOptionsT&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.emplace_back(std::forward<MatchOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The values to match against. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ExpressionFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ExpressionFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ExpressionFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ExpressionFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ExpressionFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ExpressionFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ExpressionFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

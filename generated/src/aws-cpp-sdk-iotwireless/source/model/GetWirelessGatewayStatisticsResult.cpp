@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult() : 
-    m_connectionStatus(ConnectionStatus::NOT_SET)
-{
-}
-
 GetWirelessGatewayStatisticsResult::GetWirelessGatewayStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWirelessGatewayStatisticsResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetWirelessGatewayStatisticsResult& GetWirelessGatewayStatisticsResult::operator
   if(jsonValue.ValueExists("WirelessGatewayId"))
   {
     m_wirelessGatewayId = jsonValue.GetString("WirelessGatewayId");
-
+    m_wirelessGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUplinkReceivedAt"))
   {
     m_lastUplinkReceivedAt = jsonValue.GetString("LastUplinkReceivedAt");
-
+    m_lastUplinkReceivedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
-
+    m_connectionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

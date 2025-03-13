@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDiscoverersRequest::ListDiscoverersRequest() : 
-    m_discovererIdPrefixHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sourceArnPrefixHasBeenSet(false)
-{
-}
-
 Aws::String ListDiscoverersRequest::SerializePayload() const
 {
   return {};

@@ -36,7 +36,7 @@ namespace Model
   class AssociationFilters
   {
   public:
-    AWS_SECURITYHUB_API AssociationFilters();
+    AWS_SECURITYHUB_API AssociationFilters() = default;
     AWS_SECURITYHUB_API AssociationFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AssociationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p> The ARN or UUID of the configuration policy. </p>
      */
-    inline const Aws::String& GetConfigurationPolicyId() const{ return m_configurationPolicyId; }
+    inline const Aws::String& GetConfigurationPolicyId() const { return m_configurationPolicyId; }
     inline bool ConfigurationPolicyIdHasBeenSet() const { return m_configurationPolicyIdHasBeenSet; }
-    inline void SetConfigurationPolicyId(const Aws::String& value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId = value; }
-    inline void SetConfigurationPolicyId(Aws::String&& value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId = std::move(value); }
-    inline void SetConfigurationPolicyId(const char* value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId.assign(value); }
-    inline AssociationFilters& WithConfigurationPolicyId(const Aws::String& value) { SetConfigurationPolicyId(value); return *this;}
-    inline AssociationFilters& WithConfigurationPolicyId(Aws::String&& value) { SetConfigurationPolicyId(std::move(value)); return *this;}
-    inline AssociationFilters& WithConfigurationPolicyId(const char* value) { SetConfigurationPolicyId(value); return *this;}
+    template<typename ConfigurationPolicyIdT = Aws::String>
+    void SetConfigurationPolicyId(ConfigurationPolicyIdT&& value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId = std::forward<ConfigurationPolicyIdT>(value); }
+    template<typename ConfigurationPolicyIdT = Aws::String>
+    AssociationFilters& WithConfigurationPolicyId(ConfigurationPolicyIdT&& value) { SetConfigurationPolicyId(std::forward<ConfigurationPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * directly applied by the Security Hub delegated administrator or inherited from a
      * parent. </p>
      */
-    inline const AssociationType& GetAssociationType() const{ return m_associationType; }
+    inline AssociationType GetAssociationType() const { return m_associationType; }
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-    inline void SetAssociationType(const AssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-    inline void SetAssociationType(AssociationType&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
-    inline AssociationFilters& WithAssociationType(const AssociationType& value) { SetAssociationType(value); return *this;}
-    inline AssociationFilters& WithAssociationType(AssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
+    inline void SetAssociationType(AssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
+    inline AssociationFilters& WithAssociationType(AssociationType value) { SetAssociationType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,22 +71,20 @@ namespace Model
      * <p> The current status of the association between a target and a configuration
      * policy. </p>
      */
-    inline const ConfigurationPolicyAssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
+    inline ConfigurationPolicyAssociationStatus GetAssociationStatus() const { return m_associationStatus; }
     inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
-    inline void SetAssociationStatus(const ConfigurationPolicyAssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
-    inline void SetAssociationStatus(ConfigurationPolicyAssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
-    inline AssociationFilters& WithAssociationStatus(const ConfigurationPolicyAssociationStatus& value) { SetAssociationStatus(value); return *this;}
-    inline AssociationFilters& WithAssociationStatus(ConfigurationPolicyAssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
+    inline void SetAssociationStatus(ConfigurationPolicyAssociationStatus value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+    inline AssociationFilters& WithAssociationStatus(ConfigurationPolicyAssociationStatus value) { SetAssociationStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationPolicyId;
     bool m_configurationPolicyIdHasBeenSet = false;
 
-    AssociationType m_associationType;
+    AssociationType m_associationType{AssociationType::NOT_SET};
     bool m_associationTypeHasBeenSet = false;
 
-    ConfigurationPolicyAssociationStatus m_associationStatus;
+    ConfigurationPolicyAssociationStatus m_associationStatus{ConfigurationPolicyAssociationStatus::NOT_SET};
     bool m_associationStatusHasBeenSet = false;
   };
 

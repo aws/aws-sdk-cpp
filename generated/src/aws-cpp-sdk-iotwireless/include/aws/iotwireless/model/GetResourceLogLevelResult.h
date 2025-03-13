@@ -28,35 +28,33 @@ namespace Model
   class GetResourceLogLevelResult
   {
   public:
-    AWS_IOTWIRELESS_API GetResourceLogLevelResult();
+    AWS_IOTWIRELESS_API GetResourceLogLevelResult() = default;
     AWS_IOTWIRELESS_API GetResourceLogLevelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API GetResourceLogLevelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
-    inline GetResourceLogLevelResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline GetResourceLogLevelResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline GetResourceLogLevelResult& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceLogLevelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceLogLevelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceLogLevelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceLogLevelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
+    bool m_logLevelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class WorkerCapabilities
   {
   public:
-    AWS_DEADLINE_API WorkerCapabilities();
+    AWS_DEADLINE_API WorkerCapabilities() = default;
     AWS_DEADLINE_API WorkerCapabilities(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API WorkerCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The worker capabilities amounts on a list of worker capabilities.</p>
      */
-    inline const Aws::Vector<WorkerAmountCapability>& GetAmounts() const{ return m_amounts; }
+    inline const Aws::Vector<WorkerAmountCapability>& GetAmounts() const { return m_amounts; }
     inline bool AmountsHasBeenSet() const { return m_amountsHasBeenSet; }
-    inline void SetAmounts(const Aws::Vector<WorkerAmountCapability>& value) { m_amountsHasBeenSet = true; m_amounts = value; }
-    inline void SetAmounts(Aws::Vector<WorkerAmountCapability>&& value) { m_amountsHasBeenSet = true; m_amounts = std::move(value); }
-    inline WorkerCapabilities& WithAmounts(const Aws::Vector<WorkerAmountCapability>& value) { SetAmounts(value); return *this;}
-    inline WorkerCapabilities& WithAmounts(Aws::Vector<WorkerAmountCapability>&& value) { SetAmounts(std::move(value)); return *this;}
-    inline WorkerCapabilities& AddAmounts(const WorkerAmountCapability& value) { m_amountsHasBeenSet = true; m_amounts.push_back(value); return *this; }
-    inline WorkerCapabilities& AddAmounts(WorkerAmountCapability&& value) { m_amountsHasBeenSet = true; m_amounts.push_back(std::move(value)); return *this; }
+    template<typename AmountsT = Aws::Vector<WorkerAmountCapability>>
+    void SetAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts = std::forward<AmountsT>(value); }
+    template<typename AmountsT = Aws::Vector<WorkerAmountCapability>>
+    WorkerCapabilities& WithAmounts(AmountsT&& value) { SetAmounts(std::forward<AmountsT>(value)); return *this;}
+    template<typename AmountsT = WorkerAmountCapability>
+    WorkerCapabilities& AddAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts.emplace_back(std::forward<AmountsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The worker attribute capabilities in the list of attribute capabilities.</p>
      */
-    inline const Aws::Vector<WorkerAttributeCapability>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<WorkerAttributeCapability>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<WorkerAttributeCapability>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<WorkerAttributeCapability>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline WorkerCapabilities& WithAttributes(const Aws::Vector<WorkerAttributeCapability>& value) { SetAttributes(value); return *this;}
-    inline WorkerCapabilities& WithAttributes(Aws::Vector<WorkerAttributeCapability>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline WorkerCapabilities& AddAttributes(const WorkerAttributeCapability& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline WorkerCapabilities& AddAttributes(WorkerAttributeCapability&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<WorkerAttributeCapability>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<WorkerAttributeCapability>>
+    WorkerCapabilities& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = WorkerAttributeCapability>
+    WorkerCapabilities& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

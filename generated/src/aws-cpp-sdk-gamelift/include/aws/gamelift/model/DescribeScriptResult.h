@@ -28,7 +28,7 @@ namespace Model
   class DescribeScriptResult
   {
   public:
-    AWS_GAMELIFT_API DescribeScriptResult();
+    AWS_GAMELIFT_API DescribeScriptResult() = default;
     AWS_GAMELIFT_API DescribeScriptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeScriptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A set of properties describing the requested script.</p>
      */
-    inline const Script& GetScript() const{ return m_script; }
-    inline void SetScript(const Script& value) { m_script = value; }
-    inline void SetScript(Script&& value) { m_script = std::move(value); }
-    inline DescribeScriptResult& WithScript(const Script& value) { SetScript(value); return *this;}
-    inline DescribeScriptResult& WithScript(Script&& value) { SetScript(std::move(value)); return *this;}
+    inline const Script& GetScript() const { return m_script; }
+    template<typename ScriptT = Script>
+    void SetScript(ScriptT&& value) { m_scriptHasBeenSet = true; m_script = std::forward<ScriptT>(value); }
+    template<typename ScriptT = Script>
+    DescribeScriptResult& WithScript(ScriptT&& value) { SetScript(std::forward<ScriptT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeScriptResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeScriptResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeScriptResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeScriptResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Script m_script;
+    bool m_scriptHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

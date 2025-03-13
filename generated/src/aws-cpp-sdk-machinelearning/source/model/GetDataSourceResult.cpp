@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataSourceResult::GetDataSourceResult() : 
-    m_dataSizeInBytes(0),
-    m_numberOfFiles(0),
-    m_status(EntityStatus::NOT_SET),
-    m_computeStatistics(false),
-    m_computeTime(0)
-{
-}
-
 GetDataSourceResult::GetDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataSourceResult()
 {
   *this = result;
 }
@@ -38,129 +28,110 @@ GetDataSourceResult& GetDataSourceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
+    m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLocationS3"))
   {
     m_dataLocationS3 = jsonValue.GetString("DataLocationS3");
-
+    m_dataLocationS3HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataRearrangement"))
   {
     m_dataRearrangement = jsonValue.GetString("DataRearrangement");
-
+    m_dataRearrangementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedByIamUser"))
   {
     m_createdByIamUser = jsonValue.GetString("CreatedByIamUser");
-
+    m_createdByIamUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSizeInBytes"))
   {
     m_dataSizeInBytes = jsonValue.GetInt64("DataSizeInBytes");
-
+    m_dataSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfFiles"))
   {
     m_numberOfFiles = jsonValue.GetInt64("NumberOfFiles");
-
+    m_numberOfFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EntityStatusMapper::GetEntityStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogUri"))
   {
     m_logUri = jsonValue.GetString("LogUri");
-
+    m_logUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
+    m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftMetadata"))
   {
     m_redshiftMetadata = jsonValue.GetObject("RedshiftMetadata");
-
+    m_redshiftMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RDSMetadata"))
   {
     m_rDSMetadata = jsonValue.GetObject("RDSMetadata");
-
+    m_rDSMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
+    m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeStatistics"))
   {
     m_computeStatistics = jsonValue.GetBool("ComputeStatistics");
-
+    m_computeStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeTime"))
   {
     m_computeTime = jsonValue.GetInt64("ComputeTime");
-
+    m_computeTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinishedAt"))
   {
     m_finishedAt = jsonValue.GetDouble("FinishedAt");
-
+    m_finishedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
+    m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceSchema"))
   {
     m_dataSourceSchema = jsonValue.GetString("DataSourceSchema");
-
+    m_dataSourceSchemaHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

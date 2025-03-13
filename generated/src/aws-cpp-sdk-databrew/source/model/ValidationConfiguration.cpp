@@ -18,15 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-ValidationConfiguration::ValidationConfiguration() : 
-    m_rulesetArnHasBeenSet(false),
-    m_validationMode(ValidationMode::NOT_SET),
-    m_validationModeHasBeenSet(false)
-{
-}
-
 ValidationConfiguration::ValidationConfiguration(JsonView jsonValue)
-  : ValidationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ValidationConfiguration& ValidationConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RulesetArn"))
   {
     m_rulesetArn = jsonValue.GetString("RulesetArn");
-
     m_rulesetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationMode"))
   {
     m_validationMode = ValidationModeMapper::GetValidationModeForName(jsonValue.GetString("ValidationMode"));
-
     m_validationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TimestampedInclusionAnnotation::TimestampedInclusionAnnotation() : 
-    m_value(InclusionAnnotationValue::NOT_SET),
-    m_valueHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false)
-{
-}
-
 TimestampedInclusionAnnotation::TimestampedInclusionAnnotation(JsonView jsonValue)
-  : TimestampedInclusionAnnotation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TimestampedInclusionAnnotation& TimestampedInclusionAnnotation::operator =(JsonV
   if(jsonValue.ValueExists("Value"))
   {
     m_value = InclusionAnnotationValueMapper::GetInclusionAnnotationValueForName(jsonValue.GetString("Value"));
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   return *this;
 }
 

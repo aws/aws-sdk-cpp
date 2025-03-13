@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-SubjectAlternativeNames::SubjectAlternativeNames() : 
-    m_matchHasBeenSet(false)
-{
-}
-
 SubjectAlternativeNames::SubjectAlternativeNames(JsonView jsonValue)
-  : SubjectAlternativeNames()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SubjectAlternativeNames& SubjectAlternativeNames::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   return *this;
 }
 

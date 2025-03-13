@@ -45,7 +45,7 @@ namespace Model
   class BackfillError
   {
   public:
-    AWS_GLUE_API BackfillError();
+    AWS_GLUE_API BackfillError() = default;
     AWS_GLUE_API BackfillError(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API BackfillError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,30 +56,28 @@ namespace Model
      * <p>The error code for an error that occurred when registering partition indexes
      * for an existing table.</p>
      */
-    inline const BackfillErrorCode& GetCode() const{ return m_code; }
+    inline BackfillErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const BackfillErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(BackfillErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline BackfillError& WithCode(const BackfillErrorCode& value) { SetCode(value); return *this;}
-    inline BackfillError& WithCode(BackfillErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(BackfillErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline BackfillError& WithCode(BackfillErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of a limited number of partitions in the response.</p>
      */
-    inline const Aws::Vector<PartitionValueList>& GetPartitions() const{ return m_partitions; }
+    inline const Aws::Vector<PartitionValueList>& GetPartitions() const { return m_partitions; }
     inline bool PartitionsHasBeenSet() const { return m_partitionsHasBeenSet; }
-    inline void SetPartitions(const Aws::Vector<PartitionValueList>& value) { m_partitionsHasBeenSet = true; m_partitions = value; }
-    inline void SetPartitions(Aws::Vector<PartitionValueList>&& value) { m_partitionsHasBeenSet = true; m_partitions = std::move(value); }
-    inline BackfillError& WithPartitions(const Aws::Vector<PartitionValueList>& value) { SetPartitions(value); return *this;}
-    inline BackfillError& WithPartitions(Aws::Vector<PartitionValueList>&& value) { SetPartitions(std::move(value)); return *this;}
-    inline BackfillError& AddPartitions(const PartitionValueList& value) { m_partitionsHasBeenSet = true; m_partitions.push_back(value); return *this; }
-    inline BackfillError& AddPartitions(PartitionValueList&& value) { m_partitionsHasBeenSet = true; m_partitions.push_back(std::move(value)); return *this; }
+    template<typename PartitionsT = Aws::Vector<PartitionValueList>>
+    void SetPartitions(PartitionsT&& value) { m_partitionsHasBeenSet = true; m_partitions = std::forward<PartitionsT>(value); }
+    template<typename PartitionsT = Aws::Vector<PartitionValueList>>
+    BackfillError& WithPartitions(PartitionsT&& value) { SetPartitions(std::forward<PartitionsT>(value)); return *this;}
+    template<typename PartitionsT = PartitionValueList>
+    BackfillError& AddPartitions(PartitionsT&& value) { m_partitionsHasBeenSet = true; m_partitions.emplace_back(std::forward<PartitionsT>(value)); return *this; }
     ///@}
   private:
 
-    BackfillErrorCode m_code;
+    BackfillErrorCode m_code{BackfillErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::Vector<PartitionValueList> m_partitions;

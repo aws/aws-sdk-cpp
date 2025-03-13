@@ -28,7 +28,7 @@ namespace Model
   class GetWorkloadDeploymentPatternResult
   {
   public:
-    AWS_LAUNCHWIZARD_API GetWorkloadDeploymentPatternResult();
+    AWS_LAUNCHWIZARD_API GetWorkloadDeploymentPatternResult() = default;
     AWS_LAUNCHWIZARD_API GetWorkloadDeploymentPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAUNCHWIZARD_API GetWorkloadDeploymentPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the workload deployment pattern.</p>
      */
-    inline const WorkloadDeploymentPatternData& GetWorkloadDeploymentPattern() const{ return m_workloadDeploymentPattern; }
-    inline void SetWorkloadDeploymentPattern(const WorkloadDeploymentPatternData& value) { m_workloadDeploymentPattern = value; }
-    inline void SetWorkloadDeploymentPattern(WorkloadDeploymentPatternData&& value) { m_workloadDeploymentPattern = std::move(value); }
-    inline GetWorkloadDeploymentPatternResult& WithWorkloadDeploymentPattern(const WorkloadDeploymentPatternData& value) { SetWorkloadDeploymentPattern(value); return *this;}
-    inline GetWorkloadDeploymentPatternResult& WithWorkloadDeploymentPattern(WorkloadDeploymentPatternData&& value) { SetWorkloadDeploymentPattern(std::move(value)); return *this;}
+    inline const WorkloadDeploymentPatternData& GetWorkloadDeploymentPattern() const { return m_workloadDeploymentPattern; }
+    template<typename WorkloadDeploymentPatternT = WorkloadDeploymentPatternData>
+    void SetWorkloadDeploymentPattern(WorkloadDeploymentPatternT&& value) { m_workloadDeploymentPatternHasBeenSet = true; m_workloadDeploymentPattern = std::forward<WorkloadDeploymentPatternT>(value); }
+    template<typename WorkloadDeploymentPatternT = WorkloadDeploymentPatternData>
+    GetWorkloadDeploymentPatternResult& WithWorkloadDeploymentPattern(WorkloadDeploymentPatternT&& value) { SetWorkloadDeploymentPattern(std::forward<WorkloadDeploymentPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorkloadDeploymentPatternResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorkloadDeploymentPatternResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorkloadDeploymentPatternResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorkloadDeploymentPatternResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WorkloadDeploymentPatternData m_workloadDeploymentPattern;
+    bool m_workloadDeploymentPatternHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

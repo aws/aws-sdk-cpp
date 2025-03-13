@@ -28,7 +28,7 @@ namespace Model
   class DeleteDbClusterResult
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API DeleteDbClusterResult();
+    AWS_TIMESTREAMINFLUXDB_API DeleteDbClusterResult() = default;
     AWS_TIMESTREAMINFLUXDB_API DeleteDbClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMINFLUXDB_API DeleteDbClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>The status of the DB cluster.</p>
      */
-    inline const ClusterStatus& GetDbClusterStatus() const{ return m_dbClusterStatus; }
-    inline void SetDbClusterStatus(const ClusterStatus& value) { m_dbClusterStatus = value; }
-    inline void SetDbClusterStatus(ClusterStatus&& value) { m_dbClusterStatus = std::move(value); }
-    inline DeleteDbClusterResult& WithDbClusterStatus(const ClusterStatus& value) { SetDbClusterStatus(value); return *this;}
-    inline DeleteDbClusterResult& WithDbClusterStatus(ClusterStatus&& value) { SetDbClusterStatus(std::move(value)); return *this;}
+    inline ClusterStatus GetDbClusterStatus() const { return m_dbClusterStatus; }
+    inline void SetDbClusterStatus(ClusterStatus value) { m_dbClusterStatusHasBeenSet = true; m_dbClusterStatus = value; }
+    inline DeleteDbClusterResult& WithDbClusterStatus(ClusterStatus value) { SetDbClusterStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteDbClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteDbClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteDbClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteDbClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ClusterStatus m_dbClusterStatus;
+    ClusterStatus m_dbClusterStatus{ClusterStatus::NOT_SET};
+    bool m_dbClusterStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

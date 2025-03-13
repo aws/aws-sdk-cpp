@@ -20,17 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-SingleMetricAnomalyDetector::SingleMetricAnomalyDetector() : 
-    m_accountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_statHasBeenSet(false)
-{
-}
-
 SingleMetricAnomalyDetector::SingleMetricAnomalyDetector(const XmlNode& xmlNode)
-  : SingleMetricAnomalyDetector()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,41 @@ SingleMetricAnomalyDetector& SingleMetricAnomalyDetector::operator =(const XmlNo
     {
       m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
       m_accountIdHasBeenSet = true;
+       m_accountIdHasBeenSet = true;
     }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
       m_namespace = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceNode.GetText());
       m_namespaceHasBeenSet = true;
+       m_namespaceHasBeenSet = true;
     }
     XmlNode metricNameNode = resultNode.FirstChild("MetricName");
     if(!metricNameNode.IsNull())
     {
       m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
       m_metricNameHasBeenSet = true;
+       m_metricNameHasBeenSet = true;
     }
     XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
         dimensionsMember = dimensionsMember.NextNode("member");
       }
 
-      m_dimensionsHasBeenSet = true;
+       m_dimensionsHasBeenSet = true;
     }
     XmlNode statNode = resultNode.FirstChild("Stat");
     if(!statNode.IsNull())
     {
       m_stat = Aws::Utils::Xml::DecodeEscapedXmlText(statNode.GetText());
       m_statHasBeenSet = true;
+       m_statHasBeenSet = true;
     }
   }
 

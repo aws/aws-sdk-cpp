@@ -12,32 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStackRequest::CreateStackRequest() : 
-    m_nameHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_defaultInstanceProfileArnHasBeenSet(false),
-    m_defaultOsHasBeenSet(false),
-    m_hostnameThemeHasBeenSet(false),
-    m_defaultAvailabilityZoneHasBeenSet(false),
-    m_defaultSubnetIdHasBeenSet(false),
-    m_customJsonHasBeenSet(false),
-    m_configurationManagerHasBeenSet(false),
-    m_chefConfigurationHasBeenSet(false),
-    m_useCustomCookbooks(false),
-    m_useCustomCookbooksHasBeenSet(false),
-    m_useOpsworksSecurityGroups(false),
-    m_useOpsworksSecurityGroupsHasBeenSet(false),
-    m_customCookbooksSourceHasBeenSet(false),
-    m_defaultSshKeyNameHasBeenSet(false),
-    m_defaultRootDeviceType(RootDeviceType::NOT_SET),
-    m_defaultRootDeviceTypeHasBeenSet(false),
-    m_agentVersionHasBeenSet(false)
-{
-}
-
 Aws::String CreateStackRequest::SerializePayload() const
 {
   JsonValue payload;

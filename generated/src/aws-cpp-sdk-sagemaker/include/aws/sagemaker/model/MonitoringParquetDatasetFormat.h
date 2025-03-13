@@ -30,7 +30,7 @@ namespace Model
   class MonitoringParquetDatasetFormat
   {
   public:
-    AWS_SAGEMAKER_API MonitoringParquetDatasetFormat();
+    AWS_SAGEMAKER_API MonitoringParquetDatasetFormat() = default;
     AWS_SAGEMAKER_API MonitoringParquetDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MonitoringParquetDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;

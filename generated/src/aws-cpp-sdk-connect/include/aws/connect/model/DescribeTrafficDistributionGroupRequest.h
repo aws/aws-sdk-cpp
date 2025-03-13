@@ -21,7 +21,7 @@ namespace Model
   class DescribeTrafficDistributionGroupRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API DescribeTrafficDistributionGroupRequest();
+    AWS_CONNECT_API DescribeTrafficDistributionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * group was created. The ARN must be provided if the call is from the replicated
      * Region.</p>
      */
-    inline const Aws::String& GetTrafficDistributionGroupId() const{ return m_trafficDistributionGroupId; }
+    inline const Aws::String& GetTrafficDistributionGroupId() const { return m_trafficDistributionGroupId; }
     inline bool TrafficDistributionGroupIdHasBeenSet() const { return m_trafficDistributionGroupIdHasBeenSet; }
-    inline void SetTrafficDistributionGroupId(const Aws::String& value) { m_trafficDistributionGroupIdHasBeenSet = true; m_trafficDistributionGroupId = value; }
-    inline void SetTrafficDistributionGroupId(Aws::String&& value) { m_trafficDistributionGroupIdHasBeenSet = true; m_trafficDistributionGroupId = std::move(value); }
-    inline void SetTrafficDistributionGroupId(const char* value) { m_trafficDistributionGroupIdHasBeenSet = true; m_trafficDistributionGroupId.assign(value); }
-    inline DescribeTrafficDistributionGroupRequest& WithTrafficDistributionGroupId(const Aws::String& value) { SetTrafficDistributionGroupId(value); return *this;}
-    inline DescribeTrafficDistributionGroupRequest& WithTrafficDistributionGroupId(Aws::String&& value) { SetTrafficDistributionGroupId(std::move(value)); return *this;}
-    inline DescribeTrafficDistributionGroupRequest& WithTrafficDistributionGroupId(const char* value) { SetTrafficDistributionGroupId(value); return *this;}
+    template<typename TrafficDistributionGroupIdT = Aws::String>
+    void SetTrafficDistributionGroupId(TrafficDistributionGroupIdT&& value) { m_trafficDistributionGroupIdHasBeenSet = true; m_trafficDistributionGroupId = std::forward<TrafficDistributionGroupIdT>(value); }
+    template<typename TrafficDistributionGroupIdT = Aws::String>
+    DescribeTrafficDistributionGroupRequest& WithTrafficDistributionGroupId(TrafficDistributionGroupIdT&& value) { SetTrafficDistributionGroupId(std::forward<TrafficDistributionGroupIdT>(value)); return *this;}
     ///@}
   private:
 

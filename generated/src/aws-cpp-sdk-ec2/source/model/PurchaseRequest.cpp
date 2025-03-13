@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PurchaseRequest::PurchaseRequest() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_purchaseTokenHasBeenSet(false)
-{
-}
-
 PurchaseRequest::PurchaseRequest(const XmlNode& xmlNode)
-  : PurchaseRequest()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ PurchaseRequest& PurchaseRequest::operator =(const XmlNode& xmlNode)
     {
       m_instanceCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceCountNode.GetText()).c_str()).c_str());
       m_instanceCountHasBeenSet = true;
+       m_instanceCountHasBeenSet = true;
     }
     XmlNode purchaseTokenNode = resultNode.FirstChild("PurchaseToken");
     if(!purchaseTokenNode.IsNull())
     {
       m_purchaseToken = Aws::Utils::Xml::DecodeEscapedXmlText(purchaseTokenNode.GetText());
       m_purchaseTokenHasBeenSet = true;
+       m_purchaseTokenHasBeenSet = true;
     }
   }
 

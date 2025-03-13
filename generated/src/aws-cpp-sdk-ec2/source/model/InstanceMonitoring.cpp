@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceMonitoring::InstanceMonitoring() : 
-    m_instanceIdHasBeenSet(false),
-    m_monitoringHasBeenSet(false)
-{
-}
-
 InstanceMonitoring::InstanceMonitoring(const XmlNode& xmlNode)
-  : InstanceMonitoring()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ InstanceMonitoring& InstanceMonitoring::operator =(const XmlNode& xmlNode)
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
+       m_instanceIdHasBeenSet = true;
     }
     XmlNode monitoringNode = resultNode.FirstChild("monitoring");
     if(!monitoringNode.IsNull())
     {
       m_monitoring = monitoringNode;
       m_monitoringHasBeenSet = true;
+       m_monitoringHasBeenSet = true;
     }
   }
 

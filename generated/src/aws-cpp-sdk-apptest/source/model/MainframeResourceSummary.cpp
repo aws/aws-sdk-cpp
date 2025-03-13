@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-MainframeResourceSummary::MainframeResourceSummary() : 
-    m_m2ManagedApplicationHasBeenSet(false),
-    m_m2NonManagedApplicationHasBeenSet(false)
-{
-}
-
 MainframeResourceSummary::MainframeResourceSummary(JsonView jsonValue)
-  : MainframeResourceSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MainframeResourceSummary& MainframeResourceSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("m2ManagedApplication"))
   {
     m_m2ManagedApplication = jsonValue.GetObject("m2ManagedApplication");
-
     m_m2ManagedApplicationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("m2NonManagedApplication"))
   {
     m_m2NonManagedApplication = jsonValue.GetObject("m2NonManagedApplication");
-
     m_m2NonManagedApplicationHasBeenSet = true;
   }
-
   return *this;
 }
 

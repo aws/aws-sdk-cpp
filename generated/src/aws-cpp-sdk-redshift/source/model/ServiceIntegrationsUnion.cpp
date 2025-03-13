@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ServiceIntegrationsUnion::ServiceIntegrationsUnion() : 
-    m_lakeFormationHasBeenSet(false),
-    m_s3AccessGrantsHasBeenSet(false)
-{
-}
-
 ServiceIntegrationsUnion::ServiceIntegrationsUnion(const XmlNode& xmlNode)
-  : ServiceIntegrationsUnion()
 {
   *this = xmlNode;
 }
@@ -42,25 +35,27 @@ ServiceIntegrationsUnion& ServiceIntegrationsUnion::operator =(const XmlNode& xm
     if(!lakeFormationNode.IsNull())
     {
       XmlNode lakeFormationMember = lakeFormationNode.FirstChild("member");
+      m_lakeFormationHasBeenSet = !lakeFormationMember.IsNull();
       while(!lakeFormationMember.IsNull())
       {
         m_lakeFormation.push_back(lakeFormationMember);
         lakeFormationMember = lakeFormationMember.NextNode("member");
       }
 
-      m_lakeFormationHasBeenSet = true;
+       m_lakeFormationHasBeenSet = true;
     }
     XmlNode s3AccessGrantsNode = resultNode.FirstChild("S3AccessGrants");
     if(!s3AccessGrantsNode.IsNull())
     {
       XmlNode s3AccessGrantsMember = s3AccessGrantsNode.FirstChild("member");
+      m_s3AccessGrantsHasBeenSet = !s3AccessGrantsMember.IsNull();
       while(!s3AccessGrantsMember.IsNull())
       {
         m_s3AccessGrants.push_back(s3AccessGrantsMember);
         s3AccessGrantsMember = s3AccessGrantsMember.NextNode("member");
       }
 
-      m_s3AccessGrantsHasBeenSet = true;
+       m_s3AccessGrantsHasBeenSet = true;
     }
   }
 

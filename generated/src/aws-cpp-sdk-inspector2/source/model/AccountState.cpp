@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AccountState::AccountState() : 
-    m_accountIdHasBeenSet(false),
-    m_resourceStateHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 AccountState::AccountState(JsonView jsonValue)
-  : AccountState()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AccountState& AccountState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceState"))
   {
     m_resourceState = jsonValue.GetObject("resourceState");
-
     m_resourceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

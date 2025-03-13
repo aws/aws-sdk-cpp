@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ResourceData::ResourceData() : 
-    m_s3BucketHasBeenSet(false),
-    m_ec2InstanceHasBeenSet(false),
-    m_accessKeyHasBeenSet(false),
-    m_ec2NetworkInterfaceHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 ResourceData::ResourceData(JsonView jsonValue)
-  : ResourceData()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ResourceData& ResourceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetObject("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2Instance"))
   {
     m_ec2Instance = jsonValue.GetObject("ec2Instance");
-
     m_ec2InstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessKey"))
   {
     m_accessKey = jsonValue.GetObject("accessKey");
-
     m_accessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2NetworkInterface"))
   {
     m_ec2NetworkInterface = jsonValue.GetObject("ec2NetworkInterface");
-
     m_ec2NetworkInterfaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Object"))
   {
     m_s3Object = jsonValue.GetObject("s3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

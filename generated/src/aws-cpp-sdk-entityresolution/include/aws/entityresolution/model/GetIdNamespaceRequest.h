@@ -21,7 +21,7 @@ namespace Model
   class GetIdNamespaceRequest : public EntityResolutionRequest
   {
   public:
-    AWS_ENTITYRESOLUTION_API GetIdNamespaceRequest();
+    AWS_ENTITYRESOLUTION_API GetIdNamespaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the ID namespace.</p>
      */
-    inline const Aws::String& GetIdNamespaceName() const{ return m_idNamespaceName; }
+    inline const Aws::String& GetIdNamespaceName() const { return m_idNamespaceName; }
     inline bool IdNamespaceNameHasBeenSet() const { return m_idNamespaceNameHasBeenSet; }
-    inline void SetIdNamespaceName(const Aws::String& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = value; }
-    inline void SetIdNamespaceName(Aws::String&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::move(value); }
-    inline void SetIdNamespaceName(const char* value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName.assign(value); }
-    inline GetIdNamespaceRequest& WithIdNamespaceName(const Aws::String& value) { SetIdNamespaceName(value); return *this;}
-    inline GetIdNamespaceRequest& WithIdNamespaceName(Aws::String&& value) { SetIdNamespaceName(std::move(value)); return *this;}
-    inline GetIdNamespaceRequest& WithIdNamespaceName(const char* value) { SetIdNamespaceName(value); return *this;}
+    template<typename IdNamespaceNameT = Aws::String>
+    void SetIdNamespaceName(IdNamespaceNameT&& value) { m_idNamespaceNameHasBeenSet = true; m_idNamespaceName = std::forward<IdNamespaceNameT>(value); }
+    template<typename IdNamespaceNameT = Aws::String>
+    GetIdNamespaceRequest& WithIdNamespaceName(IdNamespaceNameT&& value) { SetIdNamespaceName(std::forward<IdNamespaceNameT>(value)); return *this;}
     ///@}
   private:
 

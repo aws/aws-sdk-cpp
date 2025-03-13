@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ValidateTemplateRequest::ValidateTemplateRequest() : 
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false)
-{
-}
-
 Aws::String ValidateTemplateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

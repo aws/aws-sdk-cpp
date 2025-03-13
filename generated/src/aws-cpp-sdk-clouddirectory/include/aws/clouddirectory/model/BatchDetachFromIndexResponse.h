@@ -32,7 +32,7 @@ namespace Model
   class BatchDetachFromIndexResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchDetachFromIndexResponse();
+    AWS_CLOUDDIRECTORY_API BatchDetachFromIndexResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchDetachFromIndexResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchDetachFromIndexResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> of the object that was detached from the
      * index.</p>
      */
-    inline const Aws::String& GetDetachedObjectIdentifier() const{ return m_detachedObjectIdentifier; }
+    inline const Aws::String& GetDetachedObjectIdentifier() const { return m_detachedObjectIdentifier; }
     inline bool DetachedObjectIdentifierHasBeenSet() const { return m_detachedObjectIdentifierHasBeenSet; }
-    inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = value; }
-    inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = std::move(value); }
-    inline void SetDetachedObjectIdentifier(const char* value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier.assign(value); }
-    inline BatchDetachFromIndexResponse& WithDetachedObjectIdentifier(const Aws::String& value) { SetDetachedObjectIdentifier(value); return *this;}
-    inline BatchDetachFromIndexResponse& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(std::move(value)); return *this;}
-    inline BatchDetachFromIndexResponse& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
+    template<typename DetachedObjectIdentifierT = Aws::String>
+    void SetDetachedObjectIdentifier(DetachedObjectIdentifierT&& value) { m_detachedObjectIdentifierHasBeenSet = true; m_detachedObjectIdentifier = std::forward<DetachedObjectIdentifierT>(value); }
+    template<typename DetachedObjectIdentifierT = Aws::String>
+    BatchDetachFromIndexResponse& WithDetachedObjectIdentifier(DetachedObjectIdentifierT&& value) { SetDetachedObjectIdentifier(std::forward<DetachedObjectIdentifierT>(value)); return *this;}
     ///@}
   private:
 

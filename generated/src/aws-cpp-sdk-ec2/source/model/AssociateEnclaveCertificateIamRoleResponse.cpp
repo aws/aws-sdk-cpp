@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateEnclaveCertificateIamRoleResponse::AssociateEnclaveCertificateIamRoleResponse()
-{
-}
-
 AssociateEnclaveCertificateIamRoleResponse::AssociateEnclaveCertificateIamRoleResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,16 +38,19 @@ AssociateEnclaveCertificateIamRoleResponse& AssociateEnclaveCertificateIamRoleRe
     if(!certificateS3BucketNameNode.IsNull())
     {
       m_certificateS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(certificateS3BucketNameNode.GetText());
+      m_certificateS3BucketNameHasBeenSet = true;
     }
     XmlNode certificateS3ObjectKeyNode = resultNode.FirstChild("certificateS3ObjectKey");
     if(!certificateS3ObjectKeyNode.IsNull())
     {
       m_certificateS3ObjectKey = Aws::Utils::Xml::DecodeEscapedXmlText(certificateS3ObjectKeyNode.GetText());
+      m_certificateS3ObjectKeyHasBeenSet = true;
     }
     XmlNode encryptionKmsKeyIdNode = resultNode.FirstChild("encryptionKmsKeyId");
     if(!encryptionKmsKeyIdNode.IsNull())
     {
       m_encryptionKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(encryptionKmsKeyIdNode.GetText());
+      m_encryptionKmsKeyIdHasBeenSet = true;
     }
   }
 
@@ -60,6 +59,7 @@ AssociateEnclaveCertificateIamRoleResponse& AssociateEnclaveCertificateIamRoleRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateEnclaveCertificateIamRoleResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

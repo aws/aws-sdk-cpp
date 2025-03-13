@@ -18,21 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-JobTemplate::JobTemplate() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_jobTemplateDataHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_decryptionErrorHasBeenSet(false)
-{
-}
-
 JobTemplate::JobTemplate(JsonView jsonValue)
-  : JobTemplate()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -83,28 +59,21 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTemplateData"))
   {
     m_jobTemplateData = jsonValue.GetObject("jobTemplateData");
-
     m_jobTemplateDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decryptionError"))
   {
     m_decryptionError = jsonValue.GetString("decryptionError");
-
     m_decryptionErrorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class ConfigureAgentRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API ConfigureAgentRequest();
+    AWS_CODEGURUPROFILER_API ConfigureAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * example, if the profiling instance is an Amazon EC2 instance, it is the instance
      * ID. If it is an AWS Fargate container, it is the container's task ID. </p>
      */
-    inline const Aws::String& GetFleetInstanceId() const{ return m_fleetInstanceId; }
+    inline const Aws::String& GetFleetInstanceId() const { return m_fleetInstanceId; }
     inline bool FleetInstanceIdHasBeenSet() const { return m_fleetInstanceIdHasBeenSet; }
-    inline void SetFleetInstanceId(const Aws::String& value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId = value; }
-    inline void SetFleetInstanceId(Aws::String&& value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId = std::move(value); }
-    inline void SetFleetInstanceId(const char* value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId.assign(value); }
-    inline ConfigureAgentRequest& WithFleetInstanceId(const Aws::String& value) { SetFleetInstanceId(value); return *this;}
-    inline ConfigureAgentRequest& WithFleetInstanceId(Aws::String&& value) { SetFleetInstanceId(std::move(value)); return *this;}
-    inline ConfigureAgentRequest& WithFleetInstanceId(const char* value) { SetFleetInstanceId(value); return *this;}
+    template<typename FleetInstanceIdT = Aws::String>
+    void SetFleetInstanceId(FleetInstanceIdT&& value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId = std::forward<FleetInstanceIdT>(value); }
+    template<typename FleetInstanceIdT = Aws::String>
+    ConfigureAgentRequest& WithFleetInstanceId(FleetInstanceIdT&& value) { SetFleetInstanceId(std::forward<FleetInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,15 @@ namespace Model
      * </li> <li> <p> <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The
      * time in milliseconds for the previous Lambda invocation. </p> </li> </ul>
      */
-    inline const Aws::Map<MetadataField, Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Map<MetadataField, Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Map<MetadataField, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Map<MetadataField, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline ConfigureAgentRequest& WithMetadata(const Aws::Map<MetadataField, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline ConfigureAgentRequest& WithMetadata(Aws::Map<MetadataField, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline ConfigureAgentRequest& AddMetadata(const MetadataField& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-    inline ConfigureAgentRequest& AddMetadata(MetadataField&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline ConfigureAgentRequest& AddMetadata(const MetadataField& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline ConfigureAgentRequest& AddMetadata(MetadataField&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline ConfigureAgentRequest& AddMetadata(MetadataField&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline ConfigureAgentRequest& AddMetadata(const MetadataField& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    template<typename MetadataT = Aws::Map<MetadataField, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<MetadataField, Aws::String>>
+    ConfigureAgentRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    inline ConfigureAgentRequest& AddMetadata(MetadataField key, Aws::String value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -92,14 +87,12 @@ namespace Model
      * <p> The name of the profiling group for which the configured agent is collecting
      * profiling data. </p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-    inline ConfigureAgentRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline ConfigureAgentRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline ConfigureAgentRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    ConfigureAgentRequest& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
   private:
 

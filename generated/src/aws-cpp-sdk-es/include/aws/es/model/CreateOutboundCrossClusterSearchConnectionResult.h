@@ -37,7 +37,7 @@ namespace Model
   class CreateOutboundCrossClusterSearchConnectionResult
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API CreateOutboundCrossClusterSearchConnectionResult();
+    AWS_ELASTICSEARCHSERVICE_API CreateOutboundCrossClusterSearchConnectionResult() = default;
     AWS_ELASTICSEARCHSERVICE_API CreateOutboundCrossClusterSearchConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ELASTICSEARCHSERVICE_API CreateOutboundCrossClusterSearchConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,11 +47,11 @@ namespace Model
      * <p>Specifies the <code><a>DomainInformation</a></code> for the source
      * Elasticsearch domain.</p>
      */
-    inline const DomainInformation& GetSourceDomainInfo() const{ return m_sourceDomainInfo; }
-    inline void SetSourceDomainInfo(const DomainInformation& value) { m_sourceDomainInfo = value; }
-    inline void SetSourceDomainInfo(DomainInformation&& value) { m_sourceDomainInfo = std::move(value); }
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithSourceDomainInfo(const DomainInformation& value) { SetSourceDomainInfo(value); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithSourceDomainInfo(DomainInformation&& value) { SetSourceDomainInfo(std::move(value)); return *this;}
+    inline const DomainInformation& GetSourceDomainInfo() const { return m_sourceDomainInfo; }
+    template<typename SourceDomainInfoT = DomainInformation>
+    void SetSourceDomainInfo(SourceDomainInfoT&& value) { m_sourceDomainInfoHasBeenSet = true; m_sourceDomainInfo = std::forward<SourceDomainInfoT>(value); }
+    template<typename SourceDomainInfoT = DomainInformation>
+    CreateOutboundCrossClusterSearchConnectionResult& WithSourceDomainInfo(SourceDomainInfoT&& value) { SetSourceDomainInfo(std::forward<SourceDomainInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,11 +59,11 @@ namespace Model
      * <p>Specifies the <code><a>DomainInformation</a></code> for the destination
      * Elasticsearch domain.</p>
      */
-    inline const DomainInformation& GetDestinationDomainInfo() const{ return m_destinationDomainInfo; }
-    inline void SetDestinationDomainInfo(const DomainInformation& value) { m_destinationDomainInfo = value; }
-    inline void SetDestinationDomainInfo(DomainInformation&& value) { m_destinationDomainInfo = std::move(value); }
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithDestinationDomainInfo(const DomainInformation& value) { SetDestinationDomainInfo(value); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithDestinationDomainInfo(DomainInformation&& value) { SetDestinationDomainInfo(std::move(value)); return *this;}
+    inline const DomainInformation& GetDestinationDomainInfo() const { return m_destinationDomainInfo; }
+    template<typename DestinationDomainInfoT = DomainInformation>
+    void SetDestinationDomainInfo(DestinationDomainInfoT&& value) { m_destinationDomainInfoHasBeenSet = true; m_destinationDomainInfo = std::forward<DestinationDomainInfoT>(value); }
+    template<typename DestinationDomainInfoT = DomainInformation>
+    CreateOutboundCrossClusterSearchConnectionResult& WithDestinationDomainInfo(DestinationDomainInfoT&& value) { SetDestinationDomainInfo(std::forward<DestinationDomainInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,13 +71,11 @@ namespace Model
      * <p>Specifies the connection alias provided during the create connection
      * request.</p>
      */
-    inline const Aws::String& GetConnectionAlias() const{ return m_connectionAlias; }
-    inline void SetConnectionAlias(const Aws::String& value) { m_connectionAlias = value; }
-    inline void SetConnectionAlias(Aws::String&& value) { m_connectionAlias = std::move(value); }
-    inline void SetConnectionAlias(const char* value) { m_connectionAlias.assign(value); }
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithConnectionAlias(const Aws::String& value) { SetConnectionAlias(value); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithConnectionAlias(Aws::String&& value) { SetConnectionAlias(std::move(value)); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithConnectionAlias(const char* value) { SetConnectionAlias(value); return *this;}
+    inline const Aws::String& GetConnectionAlias() const { return m_connectionAlias; }
+    template<typename ConnectionAliasT = Aws::String>
+    void SetConnectionAlias(ConnectionAliasT&& value) { m_connectionAliasHasBeenSet = true; m_connectionAlias = std::forward<ConnectionAliasT>(value); }
+    template<typename ConnectionAliasT = Aws::String>
+    CreateOutboundCrossClusterSearchConnectionResult& WithConnectionAlias(ConnectionAliasT&& value) { SetConnectionAlias(std::forward<ConnectionAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,11 +83,11 @@ namespace Model
      * <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code>
      * for the newly created connection.</p>
      */
-    inline const OutboundCrossClusterSearchConnectionStatus& GetConnectionStatus() const{ return m_connectionStatus; }
-    inline void SetConnectionStatus(const OutboundCrossClusterSearchConnectionStatus& value) { m_connectionStatus = value; }
-    inline void SetConnectionStatus(OutboundCrossClusterSearchConnectionStatus&& value) { m_connectionStatus = std::move(value); }
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithConnectionStatus(const OutboundCrossClusterSearchConnectionStatus& value) { SetConnectionStatus(value); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithConnectionStatus(OutboundCrossClusterSearchConnectionStatus&& value) { SetConnectionStatus(std::move(value)); return *this;}
+    inline const OutboundCrossClusterSearchConnectionStatus& GetConnectionStatus() const { return m_connectionStatus; }
+    template<typename ConnectionStatusT = OutboundCrossClusterSearchConnectionStatus>
+    void SetConnectionStatus(ConnectionStatusT&& value) { m_connectionStatusHasBeenSet = true; m_connectionStatus = std::forward<ConnectionStatusT>(value); }
+    template<typename ConnectionStatusT = OutboundCrossClusterSearchConnectionStatus>
+    CreateOutboundCrossClusterSearchConnectionResult& WithConnectionStatus(ConnectionStatusT&& value) { SetConnectionStatus(std::forward<ConnectionStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,38 +95,40 @@ namespace Model
      * <p>Unique id for the created outbound connection, which is used for subsequent
      * operations on connection.</p>
      */
-    inline const Aws::String& GetCrossClusterSearchConnectionId() const{ return m_crossClusterSearchConnectionId; }
-    inline void SetCrossClusterSearchConnectionId(const Aws::String& value) { m_crossClusterSearchConnectionId = value; }
-    inline void SetCrossClusterSearchConnectionId(Aws::String&& value) { m_crossClusterSearchConnectionId = std::move(value); }
-    inline void SetCrossClusterSearchConnectionId(const char* value) { m_crossClusterSearchConnectionId.assign(value); }
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnectionId(const Aws::String& value) { SetCrossClusterSearchConnectionId(value); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnectionId(Aws::String&& value) { SetCrossClusterSearchConnectionId(std::move(value)); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnectionId(const char* value) { SetCrossClusterSearchConnectionId(value); return *this;}
+    inline const Aws::String& GetCrossClusterSearchConnectionId() const { return m_crossClusterSearchConnectionId; }
+    template<typename CrossClusterSearchConnectionIdT = Aws::String>
+    void SetCrossClusterSearchConnectionId(CrossClusterSearchConnectionIdT&& value) { m_crossClusterSearchConnectionIdHasBeenSet = true; m_crossClusterSearchConnectionId = std::forward<CrossClusterSearchConnectionIdT>(value); }
+    template<typename CrossClusterSearchConnectionIdT = Aws::String>
+    CreateOutboundCrossClusterSearchConnectionResult& WithCrossClusterSearchConnectionId(CrossClusterSearchConnectionIdT&& value) { SetCrossClusterSearchConnectionId(std::forward<CrossClusterSearchConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateOutboundCrossClusterSearchConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainInformation m_sourceDomainInfo;
+    bool m_sourceDomainInfoHasBeenSet = false;
 
     DomainInformation m_destinationDomainInfo;
+    bool m_destinationDomainInfoHasBeenSet = false;
 
     Aws::String m_connectionAlias;
+    bool m_connectionAliasHasBeenSet = false;
 
     OutboundCrossClusterSearchConnectionStatus m_connectionStatus;
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_crossClusterSearchConnectionId;
+    bool m_crossClusterSearchConnectionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListChangeSetsRequest::ListChangeSetsRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListChangeSetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,13 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBackupSelectionRequest::CreateBackupSelectionRequest() : 
-    m_backupPlanIdHasBeenSet(false),
-    m_backupSelectionHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateBackupSelectionRequest::SerializePayload() const
 {
   JsonValue payload;

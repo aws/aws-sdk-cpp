@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-Condition::Condition() : 
-    m_expressionStringHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expressionString"))
   {
     m_expressionString = jsonValue.GetString("expressionString");
-
     m_expressionStringHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelCapacityReservationFleetsResponse::CancelCapacityReservationFleetsResponse()
-{
-}
-
 CancelCapacityReservationFleetsResponse::CancelCapacityReservationFleetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CancelCapacityReservationFleetsResponse& CancelCapacityReservationFleetsResponse
     if(!successfulFleetCancellationsNode.IsNull())
     {
       XmlNode successfulFleetCancellationsMember = successfulFleetCancellationsNode.FirstChild("item");
+      m_successfulFleetCancellationsHasBeenSet = !successfulFleetCancellationsMember.IsNull();
       while(!successfulFleetCancellationsMember.IsNull())
       {
         m_successfulFleetCancellations.push_back(successfulFleetCancellationsMember);
@@ -53,6 +50,7 @@ CancelCapacityReservationFleetsResponse& CancelCapacityReservationFleetsResponse
     if(!failedFleetCancellationsNode.IsNull())
     {
       XmlNode failedFleetCancellationsMember = failedFleetCancellationsNode.FirstChild("item");
+      m_failedFleetCancellationsHasBeenSet = !failedFleetCancellationsMember.IsNull();
       while(!failedFleetCancellationsMember.IsNull())
       {
         m_failedFleetCancellations.push_back(failedFleetCancellationsMember);
@@ -67,6 +65,7 @@ CancelCapacityReservationFleetsResponse& CancelCapacityReservationFleetsResponse
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CancelCapacityReservationFleetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

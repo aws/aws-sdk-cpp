@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInvitationsCountResult::GetInvitationsCountResult() : 
-    m_invitationsCount(0)
-{
-}
-
 GetInvitationsCountResult::GetInvitationsCountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetInvitationsCountResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetInvitationsCountResult& GetInvitationsCountResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("InvitationsCount"))
   {
     m_invitationsCount = jsonValue.GetInteger("InvitationsCount");
-
+    m_invitationsCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace BedrockDataAutomationRuntime
 namespace Model
 {
 
-OutputConfiguration::OutputConfiguration() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 OutputConfiguration::OutputConfiguration(JsonView jsonValue)
-  : OutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputConfiguration& OutputConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

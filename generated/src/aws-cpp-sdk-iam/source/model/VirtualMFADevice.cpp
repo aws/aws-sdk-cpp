@@ -21,18 +21,7 @@ namespace IAM
 namespace Model
 {
 
-VirtualMFADevice::VirtualMFADevice() : 
-    m_serialNumberHasBeenSet(false),
-    m_base32StringSeedHasBeenSet(false),
-    m_qRCodePNGHasBeenSet(false),
-    m_userHasBeenSet(false),
-    m_enableDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode)
-  : VirtualMFADevice()
 {
   *this = xmlNode;
 }
@@ -48,42 +37,48 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
     {
       m_serialNumber = Aws::Utils::Xml::DecodeEscapedXmlText(serialNumberNode.GetText());
       m_serialNumberHasBeenSet = true;
+       m_serialNumberHasBeenSet = true;
     }
     XmlNode base32StringSeedNode = resultNode.FirstChild("Base32StringSeed");
     if(!base32StringSeedNode.IsNull())
     {
       m_base32StringSeed = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(base32StringSeedNode.GetText()));
       m_base32StringSeedHasBeenSet = true;
+       m_base32StringSeedHasBeenSet = true;
     }
     XmlNode qRCodePNGNode = resultNode.FirstChild("QRCodePNG");
     if(!qRCodePNGNode.IsNull())
     {
       m_qRCodePNG = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(qRCodePNGNode.GetText()));
       m_qRCodePNGHasBeenSet = true;
+       m_qRCodePNGHasBeenSet = true;
     }
     XmlNode userNode = resultNode.FirstChild("User");
     if(!userNode.IsNull())
     {
       m_user = userNode;
       m_userHasBeenSet = true;
+       m_userHasBeenSet = true;
     }
     XmlNode enableDateNode = resultNode.FirstChild("EnableDate");
     if(!enableDateNode.IsNull())
     {
       m_enableDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
+       m_enableDateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

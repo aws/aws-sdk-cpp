@@ -22,7 +22,7 @@ namespace Model
   class AuthorizeClientVpnIngressRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AuthorizeClientVpnIngressRequest();
+    AWS_EC2_API AuthorizeClientVpnIngressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint.</p>
      */
-    inline const Aws::String& GetClientVpnEndpointId() const{ return m_clientVpnEndpointId; }
+    inline const Aws::String& GetClientVpnEndpointId() const { return m_clientVpnEndpointId; }
     inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
-    inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
-    inline void SetClientVpnEndpointId(Aws::String&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::move(value); }
-    inline void SetClientVpnEndpointId(const char* value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId.assign(value); }
-    inline AuthorizeClientVpnIngressRequest& WithClientVpnEndpointId(const Aws::String& value) { SetClientVpnEndpointId(value); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithClientVpnEndpointId(Aws::String&& value) { SetClientVpnEndpointId(std::move(value)); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithClientVpnEndpointId(const char* value) { SetClientVpnEndpointId(value); return *this;}
+    template<typename ClientVpnEndpointIdT = Aws::String>
+    void SetClientVpnEndpointId(ClientVpnEndpointIdT&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::forward<ClientVpnEndpointIdT>(value); }
+    template<typename ClientVpnEndpointIdT = Aws::String>
+    AuthorizeClientVpnIngressRequest& WithClientVpnEndpointId(ClientVpnEndpointIdT&& value) { SetClientVpnEndpointId(std::forward<ClientVpnEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The IPv4 address range, in CIDR notation, of the network for which access is
      * being authorized.</p>
      */
-    inline const Aws::String& GetTargetNetworkCidr() const{ return m_targetNetworkCidr; }
+    inline const Aws::String& GetTargetNetworkCidr() const { return m_targetNetworkCidr; }
     inline bool TargetNetworkCidrHasBeenSet() const { return m_targetNetworkCidrHasBeenSet; }
-    inline void SetTargetNetworkCidr(const Aws::String& value) { m_targetNetworkCidrHasBeenSet = true; m_targetNetworkCidr = value; }
-    inline void SetTargetNetworkCidr(Aws::String&& value) { m_targetNetworkCidrHasBeenSet = true; m_targetNetworkCidr = std::move(value); }
-    inline void SetTargetNetworkCidr(const char* value) { m_targetNetworkCidrHasBeenSet = true; m_targetNetworkCidr.assign(value); }
-    inline AuthorizeClientVpnIngressRequest& WithTargetNetworkCidr(const Aws::String& value) { SetTargetNetworkCidr(value); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithTargetNetworkCidr(Aws::String&& value) { SetTargetNetworkCidr(std::move(value)); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithTargetNetworkCidr(const char* value) { SetTargetNetworkCidr(value); return *this;}
+    template<typename TargetNetworkCidrT = Aws::String>
+    void SetTargetNetworkCidr(TargetNetworkCidrT&& value) { m_targetNetworkCidrHasBeenSet = true; m_targetNetworkCidr = std::forward<TargetNetworkCidrT>(value); }
+    template<typename TargetNetworkCidrT = Aws::String>
+    AuthorizeClientVpnIngressRequest& WithTargetNetworkCidr(TargetNetworkCidrT&& value) { SetTargetNetworkCidr(std::forward<TargetNetworkCidrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * group or identity provider (IdP) group. Required if
      * <code>AuthorizeAllGroups</code> is <code>false</code> or not specified.</p>
      */
-    inline const Aws::String& GetAccessGroupId() const{ return m_accessGroupId; }
+    inline const Aws::String& GetAccessGroupId() const { return m_accessGroupId; }
     inline bool AccessGroupIdHasBeenSet() const { return m_accessGroupIdHasBeenSet; }
-    inline void SetAccessGroupId(const Aws::String& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = value; }
-    inline void SetAccessGroupId(Aws::String&& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = std::move(value); }
-    inline void SetAccessGroupId(const char* value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId.assign(value); }
-    inline AuthorizeClientVpnIngressRequest& WithAccessGroupId(const Aws::String& value) { SetAccessGroupId(value); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithAccessGroupId(Aws::String&& value) { SetAccessGroupId(std::move(value)); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithAccessGroupId(const char* value) { SetAccessGroupId(value); return *this;}
+    template<typename AccessGroupIdT = Aws::String>
+    void SetAccessGroupId(AccessGroupIdT&& value) { m_accessGroupIdHasBeenSet = true; m_accessGroupId = std::forward<AccessGroupIdT>(value); }
+    template<typename AccessGroupIdT = Aws::String>
+    AuthorizeClientVpnIngressRequest& WithAccessGroupId(AccessGroupIdT&& value) { SetAccessGroupId(std::forward<AccessGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * network. Must be set to <code>true</code> if <code>AccessGroupId</code> is not
      * specified.</p>
      */
-    inline bool GetAuthorizeAllGroups() const{ return m_authorizeAllGroups; }
+    inline bool GetAuthorizeAllGroups() const { return m_authorizeAllGroups; }
     inline bool AuthorizeAllGroupsHasBeenSet() const { return m_authorizeAllGroupsHasBeenSet; }
     inline void SetAuthorizeAllGroups(bool value) { m_authorizeAllGroupsHasBeenSet = true; m_authorizeAllGroups = value; }
     inline AuthorizeClientVpnIngressRequest& WithAuthorizeAllGroups(bool value) { SetAuthorizeAllGroups(value); return *this;}
@@ -99,14 +93,12 @@ namespace Model
     /**
      * <p>A brief description of the authorization rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AuthorizeClientVpnIngressRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AuthorizeClientVpnIngressRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +108,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline AuthorizeClientVpnIngressRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline AuthorizeClientVpnIngressRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    AuthorizeClientVpnIngressRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,7 +123,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AuthorizeClientVpnIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -149,7 +139,7 @@ namespace Model
     Aws::String m_accessGroupId;
     bool m_accessGroupIdHasBeenSet = false;
 
-    bool m_authorizeAllGroups;
+    bool m_authorizeAllGroups{false};
     bool m_authorizeAllGroupsHasBeenSet = false;
 
     Aws::String m_description;
@@ -158,7 +148,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

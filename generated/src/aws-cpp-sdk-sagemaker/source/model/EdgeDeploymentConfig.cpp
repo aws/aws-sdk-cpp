@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgeDeploymentConfig::EdgeDeploymentConfig() : 
-    m_failureHandlingPolicy(FailureHandlingPolicy::NOT_SET),
-    m_failureHandlingPolicyHasBeenSet(false)
-{
-}
-
 EdgeDeploymentConfig::EdgeDeploymentConfig(JsonView jsonValue)
-  : EdgeDeploymentConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EdgeDeploymentConfig& EdgeDeploymentConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FailureHandlingPolicy"))
   {
     m_failureHandlingPolicy = FailureHandlingPolicyMapper::GetFailureHandlingPolicyForName(jsonValue.GetString("FailureHandlingPolicy"));
-
     m_failureHandlingPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

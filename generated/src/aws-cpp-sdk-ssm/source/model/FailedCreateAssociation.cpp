@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-FailedCreateAssociation::FailedCreateAssociation() : 
-    m_entryHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_fault(Fault::NOT_SET),
-    m_faultHasBeenSet(false)
-{
-}
-
 FailedCreateAssociation::FailedCreateAssociation(JsonView jsonValue)
-  : FailedCreateAssociation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedCreateAssociation& FailedCreateAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Entry"))
   {
     m_entry = jsonValue.GetObject("Entry");
-
     m_entryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fault"))
   {
     m_fault = FaultMapper::GetFaultForName(jsonValue.GetString("Fault"));
-
     m_faultHasBeenSet = true;
   }
-
   return *this;
 }
 

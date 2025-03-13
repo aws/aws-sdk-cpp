@@ -28,7 +28,7 @@ namespace Model
   class ListPhoneNumbersRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API ListPhoneNumbersRequest();
+    AWS_CONNECT_API ListPhoneNumbersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ListPhoneNumbersRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ListPhoneNumbersRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ListPhoneNumbersRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ListPhoneNumbersRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +64,26 @@ namespace Model
      * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
      * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
-    inline const Aws::Vector<PhoneNumberType>& GetPhoneNumberTypes() const{ return m_phoneNumberTypes; }
+    inline const Aws::Vector<PhoneNumberType>& GetPhoneNumberTypes() const { return m_phoneNumberTypes; }
     inline bool PhoneNumberTypesHasBeenSet() const { return m_phoneNumberTypesHasBeenSet; }
-    inline void SetPhoneNumberTypes(const Aws::Vector<PhoneNumberType>& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes = value; }
-    inline void SetPhoneNumberTypes(Aws::Vector<PhoneNumberType>&& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes = std::move(value); }
-    inline ListPhoneNumbersRequest& WithPhoneNumberTypes(const Aws::Vector<PhoneNumberType>& value) { SetPhoneNumberTypes(value); return *this;}
-    inline ListPhoneNumbersRequest& WithPhoneNumberTypes(Aws::Vector<PhoneNumberType>&& value) { SetPhoneNumberTypes(std::move(value)); return *this;}
-    inline ListPhoneNumbersRequest& AddPhoneNumberTypes(const PhoneNumberType& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes.push_back(value); return *this; }
-    inline ListPhoneNumbersRequest& AddPhoneNumberTypes(PhoneNumberType&& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes.push_back(std::move(value)); return *this; }
+    template<typename PhoneNumberTypesT = Aws::Vector<PhoneNumberType>>
+    void SetPhoneNumberTypes(PhoneNumberTypesT&& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes = std::forward<PhoneNumberTypesT>(value); }
+    template<typename PhoneNumberTypesT = Aws::Vector<PhoneNumberType>>
+    ListPhoneNumbersRequest& WithPhoneNumberTypes(PhoneNumberTypesT&& value) { SetPhoneNumberTypes(std::forward<PhoneNumberTypesT>(value)); return *this;}
+    inline ListPhoneNumbersRequest& AddPhoneNumberTypes(PhoneNumberType value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ISO country code.</p>
      */
-    inline const Aws::Vector<PhoneNumberCountryCode>& GetPhoneNumberCountryCodes() const{ return m_phoneNumberCountryCodes; }
+    inline const Aws::Vector<PhoneNumberCountryCode>& GetPhoneNumberCountryCodes() const { return m_phoneNumberCountryCodes; }
     inline bool PhoneNumberCountryCodesHasBeenSet() const { return m_phoneNumberCountryCodesHasBeenSet; }
-    inline void SetPhoneNumberCountryCodes(const Aws::Vector<PhoneNumberCountryCode>& value) { m_phoneNumberCountryCodesHasBeenSet = true; m_phoneNumberCountryCodes = value; }
-    inline void SetPhoneNumberCountryCodes(Aws::Vector<PhoneNumberCountryCode>&& value) { m_phoneNumberCountryCodesHasBeenSet = true; m_phoneNumberCountryCodes = std::move(value); }
-    inline ListPhoneNumbersRequest& WithPhoneNumberCountryCodes(const Aws::Vector<PhoneNumberCountryCode>& value) { SetPhoneNumberCountryCodes(value); return *this;}
-    inline ListPhoneNumbersRequest& WithPhoneNumberCountryCodes(Aws::Vector<PhoneNumberCountryCode>&& value) { SetPhoneNumberCountryCodes(std::move(value)); return *this;}
-    inline ListPhoneNumbersRequest& AddPhoneNumberCountryCodes(const PhoneNumberCountryCode& value) { m_phoneNumberCountryCodesHasBeenSet = true; m_phoneNumberCountryCodes.push_back(value); return *this; }
-    inline ListPhoneNumbersRequest& AddPhoneNumberCountryCodes(PhoneNumberCountryCode&& value) { m_phoneNumberCountryCodesHasBeenSet = true; m_phoneNumberCountryCodes.push_back(std::move(value)); return *this; }
+    template<typename PhoneNumberCountryCodesT = Aws::Vector<PhoneNumberCountryCode>>
+    void SetPhoneNumberCountryCodes(PhoneNumberCountryCodesT&& value) { m_phoneNumberCountryCodesHasBeenSet = true; m_phoneNumberCountryCodes = std::forward<PhoneNumberCountryCodesT>(value); }
+    template<typename PhoneNumberCountryCodesT = Aws::Vector<PhoneNumberCountryCode>>
+    ListPhoneNumbersRequest& WithPhoneNumberCountryCodes(PhoneNumberCountryCodesT&& value) { SetPhoneNumberCountryCodes(std::forward<PhoneNumberCountryCodesT>(value)); return *this;}
+    inline ListPhoneNumbersRequest& AddPhoneNumberCountryCodes(PhoneNumberCountryCode value) { m_phoneNumberCountryCodesHasBeenSet = true; m_phoneNumberCountryCodes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPhoneNumbersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPhoneNumbersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPhoneNumbersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPhoneNumbersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +104,7 @@ namespace Model
      * <p>The maximum number of results to return per page. The default MaxResult size
      * is 100.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPhoneNumbersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -129,7 +123,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

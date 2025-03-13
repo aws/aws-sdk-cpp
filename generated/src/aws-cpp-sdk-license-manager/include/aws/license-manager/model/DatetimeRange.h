@@ -31,7 +31,7 @@ namespace Model
   class DatetimeRange
   {
   public:
-    AWS_LICENSEMANAGER_API DatetimeRange();
+    AWS_LICENSEMANAGER_API DatetimeRange() = default;
     AWS_LICENSEMANAGER_API DatetimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API DatetimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>Start of the time range.</p>
      */
-    inline const Aws::String& GetBegin() const{ return m_begin; }
+    inline const Aws::String& GetBegin() const { return m_begin; }
     inline bool BeginHasBeenSet() const { return m_beginHasBeenSet; }
-    inline void SetBegin(const Aws::String& value) { m_beginHasBeenSet = true; m_begin = value; }
-    inline void SetBegin(Aws::String&& value) { m_beginHasBeenSet = true; m_begin = std::move(value); }
-    inline void SetBegin(const char* value) { m_beginHasBeenSet = true; m_begin.assign(value); }
-    inline DatetimeRange& WithBegin(const Aws::String& value) { SetBegin(value); return *this;}
-    inline DatetimeRange& WithBegin(Aws::String&& value) { SetBegin(std::move(value)); return *this;}
-    inline DatetimeRange& WithBegin(const char* value) { SetBegin(value); return *this;}
+    template<typename BeginT = Aws::String>
+    void SetBegin(BeginT&& value) { m_beginHasBeenSet = true; m_begin = std::forward<BeginT>(value); }
+    template<typename BeginT = Aws::String>
+    DatetimeRange& WithBegin(BeginT&& value) { SetBegin(std::forward<BeginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>End of the time range.</p>
      */
-    inline const Aws::String& GetEnd() const{ return m_end; }
+    inline const Aws::String& GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-    inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
-    inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-    inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
-    inline DatetimeRange& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
-    inline DatetimeRange& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
-    inline DatetimeRange& WithEnd(const char* value) { SetEnd(value); return *this;}
+    template<typename EndT = Aws::String>
+    void SetEnd(EndT&& value) { m_endHasBeenSet = true; m_end = std::forward<EndT>(value); }
+    template<typename EndT = Aws::String>
+    DatetimeRange& WithEnd(EndT&& value) { SetEnd(std::forward<EndT>(value)); return *this;}
     ///@}
   private:
 

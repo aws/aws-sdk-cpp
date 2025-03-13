@@ -29,7 +29,7 @@ namespace Model
   class ListAccountRolesResult
   {
   public:
-    AWS_SSO_API ListAccountRolesResult();
+    AWS_SSO_API ListAccountRolesResult() = default;
     AWS_SSO_API ListAccountRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSO_API ListAccountRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The page token client that is used to retrieve the list of accounts.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAccountRolesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccountRolesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccountRolesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccountRolesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,33 @@ namespace Model
      * <p>A paginated response with the list of roles and the next token if more
      * results are available.</p>
      */
-    inline const Aws::Vector<RoleInfo>& GetRoleList() const{ return m_roleList; }
-    inline void SetRoleList(const Aws::Vector<RoleInfo>& value) { m_roleList = value; }
-    inline void SetRoleList(Aws::Vector<RoleInfo>&& value) { m_roleList = std::move(value); }
-    inline ListAccountRolesResult& WithRoleList(const Aws::Vector<RoleInfo>& value) { SetRoleList(value); return *this;}
-    inline ListAccountRolesResult& WithRoleList(Aws::Vector<RoleInfo>&& value) { SetRoleList(std::move(value)); return *this;}
-    inline ListAccountRolesResult& AddRoleList(const RoleInfo& value) { m_roleList.push_back(value); return *this; }
-    inline ListAccountRolesResult& AddRoleList(RoleInfo&& value) { m_roleList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RoleInfo>& GetRoleList() const { return m_roleList; }
+    template<typename RoleListT = Aws::Vector<RoleInfo>>
+    void SetRoleList(RoleListT&& value) { m_roleListHasBeenSet = true; m_roleList = std::forward<RoleListT>(value); }
+    template<typename RoleListT = Aws::Vector<RoleInfo>>
+    ListAccountRolesResult& WithRoleList(RoleListT&& value) { SetRoleList(std::forward<RoleListT>(value)); return *this;}
+    template<typename RoleListT = RoleInfo>
+    ListAccountRolesResult& AddRoleList(RoleListT&& value) { m_roleListHasBeenSet = true; m_roleList.emplace_back(std::forward<RoleListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccountRolesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccountRolesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccountRolesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccountRolesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RoleInfo> m_roleList;
+    bool m_roleListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class RegisterEcsClusterResult
   {
   public:
-    AWS_OPSWORKS_API RegisterEcsClusterResult();
+    AWS_OPSWORKS_API RegisterEcsClusterResult() = default;
     AWS_OPSWORKS_API RegisterEcsClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API RegisterEcsClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The cluster's ARN.</p>
      */
-    inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
-    inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArn = value; }
-    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArn = std::move(value); }
-    inline void SetEcsClusterArn(const char* value) { m_ecsClusterArn.assign(value); }
-    inline RegisterEcsClusterResult& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
-    inline RegisterEcsClusterResult& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
-    inline RegisterEcsClusterResult& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+    inline const Aws::String& GetEcsClusterArn() const { return m_ecsClusterArn; }
+    template<typename EcsClusterArnT = Aws::String>
+    void SetEcsClusterArn(EcsClusterArnT&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::forward<EcsClusterArnT>(value); }
+    template<typename EcsClusterArnT = Aws::String>
+    RegisterEcsClusterResult& WithEcsClusterArn(EcsClusterArnT&& value) { SetEcsClusterArn(std::forward<EcsClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterEcsClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterEcsClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterEcsClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterEcsClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ecsClusterArn;
+    bool m_ecsClusterArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

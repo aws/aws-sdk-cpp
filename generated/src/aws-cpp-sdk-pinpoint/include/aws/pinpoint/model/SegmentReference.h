@@ -32,7 +32,7 @@ namespace Model
   class SegmentReference
   {
   public:
-    AWS_PINPOINT_API SegmentReference();
+    AWS_PINPOINT_API SegmentReference() = default;
     AWS_PINPOINT_API SegmentReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SegmentReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The unique identifier for the segment.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline SegmentReference& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline SegmentReference& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline SegmentReference& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    SegmentReference& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the segment.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline SegmentReference& WithVersion(int value) { SetVersion(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
   };
 

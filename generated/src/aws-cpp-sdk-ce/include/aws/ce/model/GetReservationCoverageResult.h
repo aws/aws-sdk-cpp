@@ -30,7 +30,7 @@ namespace Model
   class GetReservationCoverageResult
   {
   public:
-    AWS_COSTEXPLORER_API GetReservationCoverageResult();
+    AWS_COSTEXPLORER_API GetReservationCoverageResult() = default;
     AWS_COSTEXPLORER_API GetReservationCoverageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COSTEXPLORER_API GetReservationCoverageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,24 +39,24 @@ namespace Model
     /**
      * <p>The amount of time that your reservations covered.</p>
      */
-    inline const Aws::Vector<CoverageByTime>& GetCoveragesByTime() const{ return m_coveragesByTime; }
-    inline void SetCoveragesByTime(const Aws::Vector<CoverageByTime>& value) { m_coveragesByTime = value; }
-    inline void SetCoveragesByTime(Aws::Vector<CoverageByTime>&& value) { m_coveragesByTime = std::move(value); }
-    inline GetReservationCoverageResult& WithCoveragesByTime(const Aws::Vector<CoverageByTime>& value) { SetCoveragesByTime(value); return *this;}
-    inline GetReservationCoverageResult& WithCoveragesByTime(Aws::Vector<CoverageByTime>&& value) { SetCoveragesByTime(std::move(value)); return *this;}
-    inline GetReservationCoverageResult& AddCoveragesByTime(const CoverageByTime& value) { m_coveragesByTime.push_back(value); return *this; }
-    inline GetReservationCoverageResult& AddCoveragesByTime(CoverageByTime&& value) { m_coveragesByTime.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CoverageByTime>& GetCoveragesByTime() const { return m_coveragesByTime; }
+    template<typename CoveragesByTimeT = Aws::Vector<CoverageByTime>>
+    void SetCoveragesByTime(CoveragesByTimeT&& value) { m_coveragesByTimeHasBeenSet = true; m_coveragesByTime = std::forward<CoveragesByTimeT>(value); }
+    template<typename CoveragesByTimeT = Aws::Vector<CoverageByTime>>
+    GetReservationCoverageResult& WithCoveragesByTime(CoveragesByTimeT&& value) { SetCoveragesByTime(std::forward<CoveragesByTimeT>(value)); return *this;}
+    template<typename CoveragesByTimeT = CoverageByTime>
+    GetReservationCoverageResult& AddCoveragesByTime(CoveragesByTimeT&& value) { m_coveragesByTimeHasBeenSet = true; m_coveragesByTime.emplace_back(std::forward<CoveragesByTimeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total amount of instance usage that a reservation covered.</p>
      */
-    inline const Coverage& GetTotal() const{ return m_total; }
-    inline void SetTotal(const Coverage& value) { m_total = value; }
-    inline void SetTotal(Coverage&& value) { m_total = std::move(value); }
-    inline GetReservationCoverageResult& WithTotal(const Coverage& value) { SetTotal(value); return *this;}
-    inline GetReservationCoverageResult& WithTotal(Coverage&& value) { SetTotal(std::move(value)); return *this;}
+    inline const Coverage& GetTotal() const { return m_total; }
+    template<typename TotalT = Coverage>
+    void SetTotal(TotalT&& value) { m_totalHasBeenSet = true; m_total = std::forward<TotalT>(value); }
+    template<typename TotalT = Coverage>
+    GetReservationCoverageResult& WithTotal(TotalT&& value) { SetTotal(std::forward<TotalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,34 +65,34 @@ namespace Model
      * provides the token when the response from a previous call has more results than
      * the maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetReservationCoverageResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetReservationCoverageResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetReservationCoverageResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetReservationCoverageResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetReservationCoverageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetReservationCoverageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetReservationCoverageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetReservationCoverageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CoverageByTime> m_coveragesByTime;
+    bool m_coveragesByTimeHasBeenSet = false;
 
     Coverage m_total;
+    bool m_totalHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

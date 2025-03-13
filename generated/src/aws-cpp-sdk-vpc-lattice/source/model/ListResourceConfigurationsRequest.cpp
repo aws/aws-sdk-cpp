@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListResourceConfigurationsRequest::ListResourceConfigurationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceConfigurationGroupIdentifierHasBeenSet(false),
-    m_resourceGatewayIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceConfigurationsRequest::SerializePayload() const
 {
   return {};

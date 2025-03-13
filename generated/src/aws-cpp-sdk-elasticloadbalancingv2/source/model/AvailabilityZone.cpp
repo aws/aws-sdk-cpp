@@ -20,17 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_zoneNameHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_outpostIdHasBeenSet(false),
-    m_loadBalancerAddressesHasBeenSet(false),
-    m_sourceNatIpv6PrefixesHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode)
-  : AvailabilityZone()
 {
   *this = xmlNode;
 }
@@ -46,42 +36,47 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
     {
       m_zoneName = Aws::Utils::Xml::DecodeEscapedXmlText(zoneNameNode.GetText());
       m_zoneNameHasBeenSet = true;
+       m_zoneNameHasBeenSet = true;
     }
     XmlNode subnetIdNode = resultNode.FirstChild("SubnetId");
     if(!subnetIdNode.IsNull())
     {
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
+       m_subnetIdHasBeenSet = true;
     }
     XmlNode outpostIdNode = resultNode.FirstChild("OutpostId");
     if(!outpostIdNode.IsNull())
     {
       m_outpostId = Aws::Utils::Xml::DecodeEscapedXmlText(outpostIdNode.GetText());
       m_outpostIdHasBeenSet = true;
+       m_outpostIdHasBeenSet = true;
     }
     XmlNode loadBalancerAddressesNode = resultNode.FirstChild("LoadBalancerAddresses");
     if(!loadBalancerAddressesNode.IsNull())
     {
       XmlNode loadBalancerAddressesMember = loadBalancerAddressesNode.FirstChild("member");
+      m_loadBalancerAddressesHasBeenSet = !loadBalancerAddressesMember.IsNull();
       while(!loadBalancerAddressesMember.IsNull())
       {
         m_loadBalancerAddresses.push_back(loadBalancerAddressesMember);
         loadBalancerAddressesMember = loadBalancerAddressesMember.NextNode("member");
       }
 
-      m_loadBalancerAddressesHasBeenSet = true;
+       m_loadBalancerAddressesHasBeenSet = true;
     }
     XmlNode sourceNatIpv6PrefixesNode = resultNode.FirstChild("SourceNatIpv6Prefixes");
     if(!sourceNatIpv6PrefixesNode.IsNull())
     {
       XmlNode sourceNatIpv6PrefixesMember = sourceNatIpv6PrefixesNode.FirstChild("member");
+      m_sourceNatIpv6PrefixesHasBeenSet = !sourceNatIpv6PrefixesMember.IsNull();
       while(!sourceNatIpv6PrefixesMember.IsNull())
       {
         m_sourceNatIpv6Prefixes.push_back(sourceNatIpv6PrefixesMember.GetText());
         sourceNatIpv6PrefixesMember = sourceNatIpv6PrefixesMember.NextNode("member");
       }
 
-      m_sourceNatIpv6PrefixesHasBeenSet = true;
+       m_sourceNatIpv6PrefixesHasBeenSet = true;
     }
   }
 

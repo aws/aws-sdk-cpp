@@ -20,22 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ResourceTargetDefinition::ResourceTargetDefinition() : 
-    m_attribute(ResourceAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requiresRecreation(RequiresRecreation::NOT_SET),
-    m_requiresRecreationHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_beforeValueHasBeenSet(false),
-    m_afterValueHasBeenSet(false),
-    m_attributeChangeType(AttributeChangeType::NOT_SET),
-    m_attributeChangeTypeHasBeenSet(false)
-{
-}
-
 ResourceTargetDefinition::ResourceTargetDefinition(const XmlNode& xmlNode)
-  : ResourceTargetDefinition()
 {
   *this = xmlNode;
 }
@@ -49,44 +34,51 @@ ResourceTargetDefinition& ResourceTargetDefinition::operator =(const XmlNode& xm
     XmlNode attributeNode = resultNode.FirstChild("Attribute");
     if(!attributeNode.IsNull())
     {
-      m_attribute = ResourceAttributeMapper::GetResourceAttributeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNode.GetText()).c_str()).c_str());
+      m_attribute = ResourceAttributeMapper::GetResourceAttributeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNode.GetText()).c_str()));
       m_attributeHasBeenSet = true;
+       m_attributeHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode requiresRecreationNode = resultNode.FirstChild("RequiresRecreation");
     if(!requiresRecreationNode.IsNull())
     {
-      m_requiresRecreation = RequiresRecreationMapper::GetRequiresRecreationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requiresRecreationNode.GetText()).c_str()).c_str());
+      m_requiresRecreation = RequiresRecreationMapper::GetRequiresRecreationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(requiresRecreationNode.GetText()).c_str()));
       m_requiresRecreationHasBeenSet = true;
+       m_requiresRecreationHasBeenSet = true;
     }
     XmlNode pathNode = resultNode.FirstChild("Path");
     if(!pathNode.IsNull())
     {
       m_path = Aws::Utils::Xml::DecodeEscapedXmlText(pathNode.GetText());
       m_pathHasBeenSet = true;
+       m_pathHasBeenSet = true;
     }
     XmlNode beforeValueNode = resultNode.FirstChild("BeforeValue");
     if(!beforeValueNode.IsNull())
     {
       m_beforeValue = Aws::Utils::Xml::DecodeEscapedXmlText(beforeValueNode.GetText());
       m_beforeValueHasBeenSet = true;
+       m_beforeValueHasBeenSet = true;
     }
     XmlNode afterValueNode = resultNode.FirstChild("AfterValue");
     if(!afterValueNode.IsNull())
     {
       m_afterValue = Aws::Utils::Xml::DecodeEscapedXmlText(afterValueNode.GetText());
       m_afterValueHasBeenSet = true;
+       m_afterValueHasBeenSet = true;
     }
     XmlNode attributeChangeTypeNode = resultNode.FirstChild("AttributeChangeType");
     if(!attributeChangeTypeNode.IsNull())
     {
-      m_attributeChangeType = AttributeChangeTypeMapper::GetAttributeChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeChangeTypeNode.GetText()).c_str()).c_str());
+      m_attributeChangeType = AttributeChangeTypeMapper::GetAttributeChangeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeChangeTypeNode.GetText()).c_str()));
       m_attributeChangeTypeHasBeenSet = true;
+       m_attributeChangeTypeHasBeenSet = true;
     }
   }
 

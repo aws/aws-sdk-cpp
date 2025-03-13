@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PacketHeaderStatement::PacketHeaderStatement() : 
-    m_sourceAddressesHasBeenSet(false),
-    m_destinationAddressesHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_sourcePrefixListsHasBeenSet(false),
-    m_destinationPrefixListsHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
-{
-}
-
 PacketHeaderStatement::PacketHeaderStatement(const XmlNode& xmlNode)
-  : PacketHeaderStatement()
 {
   *this = xmlNode;
 }
@@ -47,85 +35,92 @@ PacketHeaderStatement& PacketHeaderStatement::operator =(const XmlNode& xmlNode)
     if(!sourceAddressesNode.IsNull())
     {
       XmlNode sourceAddressesMember = sourceAddressesNode.FirstChild("item");
+      m_sourceAddressesHasBeenSet = !sourceAddressesMember.IsNull();
       while(!sourceAddressesMember.IsNull())
       {
         m_sourceAddresses.push_back(sourceAddressesMember.GetText());
         sourceAddressesMember = sourceAddressesMember.NextNode("item");
       }
 
-      m_sourceAddressesHasBeenSet = true;
+       m_sourceAddressesHasBeenSet = true;
     }
     XmlNode destinationAddressesNode = resultNode.FirstChild("destinationAddressSet");
     if(!destinationAddressesNode.IsNull())
     {
       XmlNode destinationAddressesMember = destinationAddressesNode.FirstChild("item");
+      m_destinationAddressesHasBeenSet = !destinationAddressesMember.IsNull();
       while(!destinationAddressesMember.IsNull())
       {
         m_destinationAddresses.push_back(destinationAddressesMember.GetText());
         destinationAddressesMember = destinationAddressesMember.NextNode("item");
       }
 
-      m_destinationAddressesHasBeenSet = true;
+       m_destinationAddressesHasBeenSet = true;
     }
     XmlNode sourcePortsNode = resultNode.FirstChild("sourcePortSet");
     if(!sourcePortsNode.IsNull())
     {
       XmlNode sourcePortsMember = sourcePortsNode.FirstChild("item");
+      m_sourcePortsHasBeenSet = !sourcePortsMember.IsNull();
       while(!sourcePortsMember.IsNull())
       {
         m_sourcePorts.push_back(sourcePortsMember.GetText());
         sourcePortsMember = sourcePortsMember.NextNode("item");
       }
 
-      m_sourcePortsHasBeenSet = true;
+       m_sourcePortsHasBeenSet = true;
     }
     XmlNode destinationPortsNode = resultNode.FirstChild("destinationPortSet");
     if(!destinationPortsNode.IsNull())
     {
       XmlNode destinationPortsMember = destinationPortsNode.FirstChild("item");
+      m_destinationPortsHasBeenSet = !destinationPortsMember.IsNull();
       while(!destinationPortsMember.IsNull())
       {
         m_destinationPorts.push_back(destinationPortsMember.GetText());
         destinationPortsMember = destinationPortsMember.NextNode("item");
       }
 
-      m_destinationPortsHasBeenSet = true;
+       m_destinationPortsHasBeenSet = true;
     }
     XmlNode sourcePrefixListsNode = resultNode.FirstChild("sourcePrefixListSet");
     if(!sourcePrefixListsNode.IsNull())
     {
       XmlNode sourcePrefixListsMember = sourcePrefixListsNode.FirstChild("item");
+      m_sourcePrefixListsHasBeenSet = !sourcePrefixListsMember.IsNull();
       while(!sourcePrefixListsMember.IsNull())
       {
         m_sourcePrefixLists.push_back(sourcePrefixListsMember.GetText());
         sourcePrefixListsMember = sourcePrefixListsMember.NextNode("item");
       }
 
-      m_sourcePrefixListsHasBeenSet = true;
+       m_sourcePrefixListsHasBeenSet = true;
     }
     XmlNode destinationPrefixListsNode = resultNode.FirstChild("destinationPrefixListSet");
     if(!destinationPrefixListsNode.IsNull())
     {
       XmlNode destinationPrefixListsMember = destinationPrefixListsNode.FirstChild("item");
+      m_destinationPrefixListsHasBeenSet = !destinationPrefixListsMember.IsNull();
       while(!destinationPrefixListsMember.IsNull())
       {
         m_destinationPrefixLists.push_back(destinationPrefixListsMember.GetText());
         destinationPrefixListsMember = destinationPrefixListsMember.NextNode("item");
       }
 
-      m_destinationPrefixListsHasBeenSet = true;
+       m_destinationPrefixListsHasBeenSet = true;
     }
     XmlNode protocolsNode = resultNode.FirstChild("protocolSet");
     if(!protocolsNode.IsNull())
     {
       XmlNode protocolsMember = protocolsNode.FirstChild("item");
+      m_protocolsHasBeenSet = !protocolsMember.IsNull();
       while(!protocolsMember.IsNull())
       {
         m_protocols.push_back(ProtocolMapper::GetProtocolForName(StringUtils::Trim(protocolsMember.GetText().c_str())));
         protocolsMember = protocolsMember.NextNode("item");
       }
 
-      m_protocolsHasBeenSet = true;
+       m_protocolsHasBeenSet = true;
     }
   }
 

@@ -34,7 +34,7 @@ namespace Model
   class CreateRepositoryResult
   {
   public:
-    AWS_CODECOMMIT_API CreateRepositoryResult();
+    AWS_CODECOMMIT_API CreateRepositoryResult() = default;
     AWS_CODECOMMIT_API CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Information about the newly created repository.</p>
      */
-    inline const RepositoryMetadata& GetRepositoryMetadata() const{ return m_repositoryMetadata; }
-    inline void SetRepositoryMetadata(const RepositoryMetadata& value) { m_repositoryMetadata = value; }
-    inline void SetRepositoryMetadata(RepositoryMetadata&& value) { m_repositoryMetadata = std::move(value); }
-    inline CreateRepositoryResult& WithRepositoryMetadata(const RepositoryMetadata& value) { SetRepositoryMetadata(value); return *this;}
-    inline CreateRepositoryResult& WithRepositoryMetadata(RepositoryMetadata&& value) { SetRepositoryMetadata(std::move(value)); return *this;}
+    inline const RepositoryMetadata& GetRepositoryMetadata() const { return m_repositoryMetadata; }
+    template<typename RepositoryMetadataT = RepositoryMetadata>
+    void SetRepositoryMetadata(RepositoryMetadataT&& value) { m_repositoryMetadataHasBeenSet = true; m_repositoryMetadata = std::forward<RepositoryMetadataT>(value); }
+    template<typename RepositoryMetadataT = RepositoryMetadata>
+    CreateRepositoryResult& WithRepositoryMetadata(RepositoryMetadataT&& value) { SetRepositoryMetadata(std::forward<RepositoryMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRepositoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RepositoryMetadata m_repositoryMetadata;
+    bool m_repositoryMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

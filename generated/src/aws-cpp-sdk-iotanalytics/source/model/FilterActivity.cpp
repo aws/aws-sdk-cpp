@@ -18,15 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-FilterActivity::FilterActivity() : 
-    m_nameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 FilterActivity::FilterActivity(JsonView jsonValue)
-  : FilterActivity()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FilterActivity& FilterActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetString("filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     m_next = jsonValue.GetString("next");
-
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

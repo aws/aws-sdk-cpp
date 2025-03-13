@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ServerlessIdentifier::ServerlessIdentifier() : 
-    m_namespaceIdentifierHasBeenSet(false),
-    m_workgroupIdentifierHasBeenSet(false)
-{
-}
-
 ServerlessIdentifier::ServerlessIdentifier(const XmlNode& xmlNode)
-  : ServerlessIdentifier()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ ServerlessIdentifier& ServerlessIdentifier::operator =(const XmlNode& xmlNode)
     {
       m_namespaceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(namespaceIdentifierNode.GetText());
       m_namespaceIdentifierHasBeenSet = true;
+       m_namespaceIdentifierHasBeenSet = true;
     }
     XmlNode workgroupIdentifierNode = resultNode.FirstChild("WorkgroupIdentifier");
     if(!workgroupIdentifierNode.IsNull())
     {
       m_workgroupIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(workgroupIdentifierNode.GetText());
       m_workgroupIdentifierHasBeenSet = true;
+       m_workgroupIdentifierHasBeenSet = true;
     }
   }
 

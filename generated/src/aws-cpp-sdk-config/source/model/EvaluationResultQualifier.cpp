@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-EvaluationResultQualifier::EvaluationResultQualifier() : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false)
-{
-}
-
 EvaluationResultQualifier::EvaluationResultQualifier(JsonView jsonValue)
-  : EvaluationResultQualifier()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EvaluationResultQualifier& EvaluationResultQualifier::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
-
     m_configRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMode"))
   {
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
-
     m_evaluationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

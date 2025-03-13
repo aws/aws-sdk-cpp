@@ -47,7 +47,7 @@ namespace Model
   class DataRepositoryAssociation
   {
   public:
-    AWS_FSX_API DataRepositoryAssociation();
+    AWS_FSX_API DataRepositoryAssociation() = default;
     AWS_FSX_API DataRepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DataRepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,38 +57,32 @@ namespace Model
     /**
      * <p>The system-generated, unique ID of the data repository association.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline DataRepositoryAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline DataRepositoryAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    DataRepositoryAssociation& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline DataRepositoryAssociation& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline DataRepositoryAssociation& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    DataRepositoryAssociation& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline DataRepositoryAssociation& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline DataRepositoryAssociation& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    DataRepositoryAssociation& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,22 +102,20 @@ namespace Model
      * - The data repository association is in a terminal state that cannot be
      * recovered.</p> </li> </ul>
      */
-    inline const DataRepositoryLifecycle& GetLifecycle() const{ return m_lifecycle; }
+    inline DataRepositoryLifecycle GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const DataRepositoryLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(DataRepositoryLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline DataRepositoryAssociation& WithLifecycle(const DataRepositoryLifecycle& value) { SetLifecycle(value); return *this;}
-    inline DataRepositoryAssociation& WithLifecycle(DataRepositoryLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline void SetLifecycle(DataRepositoryLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline DataRepositoryAssociation& WithLifecycle(DataRepositoryLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataRepositoryFailureDetails& GetFailureDetails() const{ return m_failureDetails; }
+    inline const DataRepositoryFailureDetails& GetFailureDetails() const { return m_failureDetails; }
     inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
-    inline void SetFailureDetails(const DataRepositoryFailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
-    inline void SetFailureDetails(DataRepositoryFailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::move(value); }
-    inline DataRepositoryAssociation& WithFailureDetails(const DataRepositoryFailureDetails& value) { SetFailureDetails(value); return *this;}
-    inline DataRepositoryAssociation& WithFailureDetails(DataRepositoryFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
+    template<typename FailureDetailsT = DataRepositoryFailureDetails>
+    void SetFailureDetails(FailureDetailsT&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = std::forward<FailureDetailsT>(value); }
+    template<typename FailureDetailsT = DataRepositoryFailureDetails>
+    DataRepositoryAssociation& WithFailureDetails(FailureDetailsT&& value) { SetFailureDetails(std::forward<FailureDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,14 +135,12 @@ namespace Model
      * to the file system. You can only specify "/" as the file system path for the
      * first data repository associated with a file system.</p> 
      */
-    inline const Aws::String& GetFileSystemPath() const{ return m_fileSystemPath; }
+    inline const Aws::String& GetFileSystemPath() const { return m_fileSystemPath; }
     inline bool FileSystemPathHasBeenSet() const { return m_fileSystemPathHasBeenSet; }
-    inline void SetFileSystemPath(const Aws::String& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = value; }
-    inline void SetFileSystemPath(Aws::String&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::move(value); }
-    inline void SetFileSystemPath(const char* value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath.assign(value); }
-    inline DataRepositoryAssociation& WithFileSystemPath(const Aws::String& value) { SetFileSystemPath(value); return *this;}
-    inline DataRepositoryAssociation& WithFileSystemPath(Aws::String&& value) { SetFileSystemPath(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithFileSystemPath(const char* value) { SetFileSystemPath(value); return *this;}
+    template<typename FileSystemPathT = Aws::String>
+    void SetFileSystemPath(FileSystemPathT&& value) { m_fileSystemPathHasBeenSet = true; m_fileSystemPath = std::forward<FileSystemPathT>(value); }
+    template<typename FileSystemPathT = Aws::String>
+    DataRepositoryAssociation& WithFileSystemPath(FileSystemPathT&& value) { SetFileSystemPath(std::forward<FileSystemPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,14 +164,12 @@ namespace Model
      * <code>s3://bucket-name/prefix/</code> (where <code>prefix</code> is
      * optional).</p> </li> </ul>
      */
-    inline const Aws::String& GetDataRepositoryPath() const{ return m_dataRepositoryPath; }
+    inline const Aws::String& GetDataRepositoryPath() const { return m_dataRepositoryPath; }
     inline bool DataRepositoryPathHasBeenSet() const { return m_dataRepositoryPathHasBeenSet; }
-    inline void SetDataRepositoryPath(const Aws::String& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = value; }
-    inline void SetDataRepositoryPath(Aws::String&& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = std::move(value); }
-    inline void SetDataRepositoryPath(const char* value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath.assign(value); }
-    inline DataRepositoryAssociation& WithDataRepositoryPath(const Aws::String& value) { SetDataRepositoryPath(value); return *this;}
-    inline DataRepositoryAssociation& WithDataRepositoryPath(Aws::String&& value) { SetDataRepositoryPath(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithDataRepositoryPath(const char* value) { SetDataRepositoryPath(value); return *this;}
+    template<typename DataRepositoryPathT = Aws::String>
+    void SetDataRepositoryPath(DataRepositoryPathT&& value) { m_dataRepositoryPathHasBeenSet = true; m_dataRepositoryPath = std::forward<DataRepositoryPathT>(value); }
+    template<typename DataRepositoryPathT = Aws::String>
+    DataRepositoryAssociation& WithDataRepositoryPath(DataRepositoryPathT&& value) { SetDataRepositoryPath(std::forward<DataRepositoryPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,7 +180,7 @@ namespace Model
      * <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories
      * linked to an Amazon File Cache resource.</p> 
      */
-    inline bool GetBatchImportMetaDataOnCreate() const{ return m_batchImportMetaDataOnCreate; }
+    inline bool GetBatchImportMetaDataOnCreate() const { return m_batchImportMetaDataOnCreate; }
     inline bool BatchImportMetaDataOnCreateHasBeenSet() const { return m_batchImportMetaDataOnCreateHasBeenSet; }
     inline void SetBatchImportMetaDataOnCreate(bool value) { m_batchImportMetaDataOnCreateHasBeenSet = true; m_batchImportMetaDataOnCreate = value; }
     inline DataRepositoryAssociation& WithBatchImportMetaDataOnCreate(bool value) { SetBatchImportMetaDataOnCreate(value); return *this;}
@@ -207,7 +195,7 @@ namespace Model
      * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
      * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
-    inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
+    inline int GetImportedFileChunkSize() const { return m_importedFileChunkSize; }
     inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
     inline void SetImportedFileChunkSize(int value) { m_importedFileChunkSizeHasBeenSet = true; m_importedFileChunkSize = value; }
     inline DataRepositoryAssociation& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
@@ -218,48 +206,46 @@ namespace Model
      * <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx
      * for Lustre file system with a data repository association.</p>
      */
-    inline const S3DataRepositoryConfiguration& GetS3() const{ return m_s3; }
+    inline const S3DataRepositoryConfiguration& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3DataRepositoryConfiguration& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3DataRepositoryConfiguration&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline DataRepositoryAssociation& WithS3(const S3DataRepositoryConfiguration& value) { SetS3(value); return *this;}
-    inline DataRepositoryAssociation& WithS3(S3DataRepositoryConfiguration&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3DataRepositoryConfiguration>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3DataRepositoryConfiguration>
+    DataRepositoryAssociation& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DataRepositoryAssociation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DataRepositoryAssociation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DataRepositoryAssociation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DataRepositoryAssociation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DataRepositoryAssociation& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline DataRepositoryAssociation& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DataRepositoryAssociation& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DataRepositoryAssociation& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The globally unique ID of the Amazon File Cache resource.</p>
      */
-    inline const Aws::String& GetFileCacheId() const{ return m_fileCacheId; }
+    inline const Aws::String& GetFileCacheId() const { return m_fileCacheId; }
     inline bool FileCacheIdHasBeenSet() const { return m_fileCacheIdHasBeenSet; }
-    inline void SetFileCacheId(const Aws::String& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = value; }
-    inline void SetFileCacheId(Aws::String&& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = std::move(value); }
-    inline void SetFileCacheId(const char* value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId.assign(value); }
-    inline DataRepositoryAssociation& WithFileCacheId(const Aws::String& value) { SetFileCacheId(value); return *this;}
-    inline DataRepositoryAssociation& WithFileCacheId(Aws::String&& value) { SetFileCacheId(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithFileCacheId(const char* value) { SetFileCacheId(value); return *this;}
+    template<typename FileCacheIdT = Aws::String>
+    void SetFileCacheId(FileCacheIdT&& value) { m_fileCacheIdHasBeenSet = true; m_fileCacheId = std::forward<FileCacheIdT>(value); }
+    template<typename FileCacheIdT = Aws::String>
+    DataRepositoryAssociation& WithFileCacheId(FileCacheIdT&& value) { SetFileCacheId(std::forward<FileCacheIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -279,14 +265,12 @@ namespace Model
      * cache.</p> <p>The cache path cannot be set to root (/) for an S3 DRA.</p>
      * 
      */
-    inline const Aws::String& GetFileCachePath() const{ return m_fileCachePath; }
+    inline const Aws::String& GetFileCachePath() const { return m_fileCachePath; }
     inline bool FileCachePathHasBeenSet() const { return m_fileCachePathHasBeenSet; }
-    inline void SetFileCachePath(const Aws::String& value) { m_fileCachePathHasBeenSet = true; m_fileCachePath = value; }
-    inline void SetFileCachePath(Aws::String&& value) { m_fileCachePathHasBeenSet = true; m_fileCachePath = std::move(value); }
-    inline void SetFileCachePath(const char* value) { m_fileCachePathHasBeenSet = true; m_fileCachePath.assign(value); }
-    inline DataRepositoryAssociation& WithFileCachePath(const Aws::String& value) { SetFileCachePath(value); return *this;}
-    inline DataRepositoryAssociation& WithFileCachePath(Aws::String&& value) { SetFileCachePath(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& WithFileCachePath(const char* value) { SetFileCachePath(value); return *this;}
+    template<typename FileCachePathT = Aws::String>
+    void SetFileCachePath(FileCachePathT&& value) { m_fileCachePathHasBeenSet = true; m_fileCachePath = std::forward<FileCachePathT>(value); }
+    template<typename FileCachePathT = Aws::String>
+    DataRepositoryAssociation& WithFileCachePath(FileCachePathT&& value) { SetFileCachePath(std::forward<FileCachePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -299,15 +283,14 @@ namespace Model
      * root of the subdirectories. Note that <code>DataRepositorySubdirectories</code>
      * is not supported for S3 data repositories.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataRepositorySubdirectories() const{ return m_dataRepositorySubdirectories; }
+    inline const Aws::Vector<Aws::String>& GetDataRepositorySubdirectories() const { return m_dataRepositorySubdirectories; }
     inline bool DataRepositorySubdirectoriesHasBeenSet() const { return m_dataRepositorySubdirectoriesHasBeenSet; }
-    inline void SetDataRepositorySubdirectories(const Aws::Vector<Aws::String>& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories = value; }
-    inline void SetDataRepositorySubdirectories(Aws::Vector<Aws::String>&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories = std::move(value); }
-    inline DataRepositoryAssociation& WithDataRepositorySubdirectories(const Aws::Vector<Aws::String>& value) { SetDataRepositorySubdirectories(value); return *this;}
-    inline DataRepositoryAssociation& WithDataRepositorySubdirectories(Aws::Vector<Aws::String>&& value) { SetDataRepositorySubdirectories(std::move(value)); return *this;}
-    inline DataRepositoryAssociation& AddDataRepositorySubdirectories(const Aws::String& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.push_back(value); return *this; }
-    inline DataRepositoryAssociation& AddDataRepositorySubdirectories(Aws::String&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.push_back(std::move(value)); return *this; }
-    inline DataRepositoryAssociation& AddDataRepositorySubdirectories(const char* value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.push_back(value); return *this; }
+    template<typename DataRepositorySubdirectoriesT = Aws::Vector<Aws::String>>
+    void SetDataRepositorySubdirectories(DataRepositorySubdirectoriesT&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories = std::forward<DataRepositorySubdirectoriesT>(value); }
+    template<typename DataRepositorySubdirectoriesT = Aws::Vector<Aws::String>>
+    DataRepositoryAssociation& WithDataRepositorySubdirectories(DataRepositorySubdirectoriesT&& value) { SetDataRepositorySubdirectories(std::forward<DataRepositorySubdirectoriesT>(value)); return *this;}
+    template<typename DataRepositorySubdirectoriesT = Aws::String>
+    DataRepositoryAssociation& AddDataRepositorySubdirectories(DataRepositorySubdirectoriesT&& value) { m_dataRepositorySubdirectoriesHasBeenSet = true; m_dataRepositorySubdirectories.emplace_back(std::forward<DataRepositorySubdirectoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -315,12 +298,12 @@ namespace Model
      * <p>The configuration for an NFS data repository linked to an Amazon File Cache
      * resource with a data repository association.</p>
      */
-    inline const NFSDataRepositoryConfiguration& GetNFS() const{ return m_nFS; }
+    inline const NFSDataRepositoryConfiguration& GetNFS() const { return m_nFS; }
     inline bool NFSHasBeenSet() const { return m_nFSHasBeenSet; }
-    inline void SetNFS(const NFSDataRepositoryConfiguration& value) { m_nFSHasBeenSet = true; m_nFS = value; }
-    inline void SetNFS(NFSDataRepositoryConfiguration&& value) { m_nFSHasBeenSet = true; m_nFS = std::move(value); }
-    inline DataRepositoryAssociation& WithNFS(const NFSDataRepositoryConfiguration& value) { SetNFS(value); return *this;}
-    inline DataRepositoryAssociation& WithNFS(NFSDataRepositoryConfiguration&& value) { SetNFS(std::move(value)); return *this;}
+    template<typename NFST = NFSDataRepositoryConfiguration>
+    void SetNFS(NFST&& value) { m_nFSHasBeenSet = true; m_nFS = std::forward<NFST>(value); }
+    template<typename NFST = NFSDataRepositoryConfiguration>
+    DataRepositoryAssociation& WithNFS(NFST&& value) { SetNFS(std::forward<NFST>(value)); return *this;}
     ///@}
   private:
 
@@ -333,7 +316,7 @@ namespace Model
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet = false;
 
-    DataRepositoryLifecycle m_lifecycle;
+    DataRepositoryLifecycle m_lifecycle{DataRepositoryLifecycle::NOT_SET};
     bool m_lifecycleHasBeenSet = false;
 
     DataRepositoryFailureDetails m_failureDetails;
@@ -345,10 +328,10 @@ namespace Model
     Aws::String m_dataRepositoryPath;
     bool m_dataRepositoryPathHasBeenSet = false;
 
-    bool m_batchImportMetaDataOnCreate;
+    bool m_batchImportMetaDataOnCreate{false};
     bool m_batchImportMetaDataOnCreateHasBeenSet = false;
 
-    int m_importedFileChunkSize;
+    int m_importedFileChunkSize{0};
     bool m_importedFileChunkSizeHasBeenSet = false;
 
     S3DataRepositoryConfiguration m_s3;
@@ -357,7 +340,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_fileCacheId;

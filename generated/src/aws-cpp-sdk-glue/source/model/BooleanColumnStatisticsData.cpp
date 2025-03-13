@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BooleanColumnStatisticsData::BooleanColumnStatisticsData() : 
-    m_numberOfTrues(0),
-    m_numberOfTruesHasBeenSet(false),
-    m_numberOfFalses(0),
-    m_numberOfFalsesHasBeenSet(false),
-    m_numberOfNulls(0),
-    m_numberOfNullsHasBeenSet(false)
-{
-}
-
 BooleanColumnStatisticsData::BooleanColumnStatisticsData(JsonView jsonValue)
-  : BooleanColumnStatisticsData()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BooleanColumnStatisticsData& BooleanColumnStatisticsData::operator =(JsonView js
   if(jsonValue.ValueExists("NumberOfTrues"))
   {
     m_numberOfTrues = jsonValue.GetInt64("NumberOfTrues");
-
     m_numberOfTruesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfFalses"))
   {
     m_numberOfFalses = jsonValue.GetInt64("NumberOfFalses");
-
     m_numberOfFalsesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfNulls"))
   {
     m_numberOfNulls = jsonValue.GetInt64("NumberOfNulls");
-
     m_numberOfNullsHasBeenSet = true;
   }
-
   return *this;
 }
 

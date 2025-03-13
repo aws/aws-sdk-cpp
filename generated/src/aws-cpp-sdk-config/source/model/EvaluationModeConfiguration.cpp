@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-EvaluationModeConfiguration::EvaluationModeConfiguration() : 
-    m_mode(EvaluationMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 EvaluationModeConfiguration::EvaluationModeConfiguration(JsonView jsonValue)
-  : EvaluationModeConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EvaluationModeConfiguration& EvaluationModeConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

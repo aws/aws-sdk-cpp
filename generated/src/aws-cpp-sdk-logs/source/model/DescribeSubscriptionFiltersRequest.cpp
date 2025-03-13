@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSubscriptionFiltersRequest::DescribeSubscriptionFiltersRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_filterNamePrefixHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSubscriptionFiltersRequest::SerializePayload() const
 {
   JsonValue payload;

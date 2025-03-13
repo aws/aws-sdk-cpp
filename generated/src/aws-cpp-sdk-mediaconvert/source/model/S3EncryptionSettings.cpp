@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-S3EncryptionSettings::S3EncryptionSettings() : 
-    m_encryptionType(S3ServerSideEncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsEncryptionContextHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 S3EncryptionSettings::S3EncryptionSettings(JsonView jsonValue)
-  : S3EncryptionSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ S3EncryptionSettings& S3EncryptionSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = S3ServerSideEncryptionTypeMapper::GetS3ServerSideEncryptionTypeForName(jsonValue.GetString("encryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsEncryptionContext"))
   {
     m_kmsEncryptionContext = jsonValue.GetString("kmsEncryptionContext");
-
     m_kmsEncryptionContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

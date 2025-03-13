@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExportLabelsTaskRunRequest::StartExportLabelsTaskRunRequest() : 
-    m_transformIdHasBeenSet(false),
-    m_outputS3PathHasBeenSet(false)
-{
-}
-
 Aws::String StartExportLabelsTaskRunRequest::SerializePayload() const
 {
   JsonValue payload;

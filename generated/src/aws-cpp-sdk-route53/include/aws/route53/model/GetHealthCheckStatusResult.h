@@ -35,7 +35,7 @@ namespace Model
   class GetHealthCheckStatusResult
   {
   public:
-    AWS_ROUTE53_API GetHealthCheckStatusResult();
+    AWS_ROUTE53_API GetHealthCheckStatusResult() = default;
     AWS_ROUTE53_API GetHealthCheckStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API GetHealthCheckStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -46,30 +46,30 @@ namespace Model
      * Amazon Route 53 health checker that is reporting a status about the health check
      * endpoint.</p>
      */
-    inline const Aws::Vector<HealthCheckObservation>& GetHealthCheckObservations() const{ return m_healthCheckObservations; }
-    inline void SetHealthCheckObservations(const Aws::Vector<HealthCheckObservation>& value) { m_healthCheckObservations = value; }
-    inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = std::move(value); }
-    inline GetHealthCheckStatusResult& WithHealthCheckObservations(const Aws::Vector<HealthCheckObservation>& value) { SetHealthCheckObservations(value); return *this;}
-    inline GetHealthCheckStatusResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(std::move(value)); return *this;}
-    inline GetHealthCheckStatusResult& AddHealthCheckObservations(const HealthCheckObservation& value) { m_healthCheckObservations.push_back(value); return *this; }
-    inline GetHealthCheckStatusResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HealthCheckObservation>& GetHealthCheckObservations() const { return m_healthCheckObservations; }
+    template<typename HealthCheckObservationsT = Aws::Vector<HealthCheckObservation>>
+    void SetHealthCheckObservations(HealthCheckObservationsT&& value) { m_healthCheckObservationsHasBeenSet = true; m_healthCheckObservations = std::forward<HealthCheckObservationsT>(value); }
+    template<typename HealthCheckObservationsT = Aws::Vector<HealthCheckObservation>>
+    GetHealthCheckStatusResult& WithHealthCheckObservations(HealthCheckObservationsT&& value) { SetHealthCheckObservations(std::forward<HealthCheckObservationsT>(value)); return *this;}
+    template<typename HealthCheckObservationsT = HealthCheckObservation>
+    GetHealthCheckStatusResult& AddHealthCheckObservations(HealthCheckObservationsT&& value) { m_healthCheckObservationsHasBeenSet = true; m_healthCheckObservations.emplace_back(std::forward<HealthCheckObservationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetHealthCheckStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetHealthCheckStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetHealthCheckStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetHealthCheckStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HealthCheckObservation> m_healthCheckObservations;
+    bool m_healthCheckObservationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

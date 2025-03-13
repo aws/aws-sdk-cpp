@@ -40,7 +40,7 @@ namespace Model
   class DocumentClassifierProperties
   {
   public:
-    AWS_COMPREHEND_API DocumentClassifierProperties();
+    AWS_COMPREHEND_API DocumentClassifierProperties() = default;
     AWS_COMPREHEND_API DocumentClassifierProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DocumentClassifierProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
      */
-    inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
+    inline const Aws::String& GetDocumentClassifierArn() const { return m_documentClassifierArn; }
     inline bool DocumentClassifierArnHasBeenSet() const { return m_documentClassifierArnHasBeenSet; }
-    inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = value; }
-    inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::move(value); }
-    inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn.assign(value); }
-    inline DocumentClassifierProperties& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
-    inline DocumentClassifierProperties& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
+    template<typename DocumentClassifierArnT = Aws::String>
+    void SetDocumentClassifierArn(DocumentClassifierArnT&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::forward<DocumentClassifierArnT>(value); }
+    template<typename DocumentClassifierArnT = Aws::String>
+    DocumentClassifierProperties& WithDocumentClassifierArn(DocumentClassifierArnT&& value) { SetDocumentClassifierArn(std::forward<DocumentClassifierArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,10 @@ namespace Model
      * <p>The language code for the language of the documents that the classifier was
      * trained on.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline DocumentClassifierProperties& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline DocumentClassifierProperties& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline DocumentClassifierProperties& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -83,50 +79,46 @@ namespace Model
      * information about why the classifier wasn't trained in the <code>Message</code>
      * field.</p>
      */
-    inline const ModelStatus& GetStatus() const{ return m_status; }
+    inline ModelStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DocumentClassifierProperties& WithStatus(const ModelStatus& value) { SetStatus(value); return *this;}
-    inline DocumentClassifierProperties& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ModelStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DocumentClassifierProperties& WithStatus(ModelStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the status of the classifier.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DocumentClassifierProperties& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DocumentClassifierProperties& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DocumentClassifierProperties& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the document classifier was submitted for training.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
+    inline const Aws::Utils::DateTime& GetSubmitTime() const { return m_submitTime; }
     inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
-    inline void SetSubmitTime(const Aws::Utils::DateTime& value) { m_submitTimeHasBeenSet = true; m_submitTime = value; }
-    inline void SetSubmitTime(Aws::Utils::DateTime&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::move(value); }
-    inline DocumentClassifierProperties& WithSubmitTime(const Aws::Utils::DateTime& value) { SetSubmitTime(value); return *this;}
-    inline DocumentClassifierProperties& WithSubmitTime(Aws::Utils::DateTime&& value) { SetSubmitTime(std::move(value)); return *this;}
+    template<typename SubmitTimeT = Aws::Utils::DateTime>
+    void SetSubmitTime(SubmitTimeT&& value) { m_submitTimeHasBeenSet = true; m_submitTime = std::forward<SubmitTimeT>(value); }
+    template<typename SubmitTimeT = Aws::Utils::DateTime>
+    DocumentClassifierProperties& WithSubmitTime(SubmitTimeT&& value) { SetSubmitTime(std::forward<SubmitTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that training the document classifier completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline DocumentClassifierProperties& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline DocumentClassifierProperties& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    DocumentClassifierProperties& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +127,12 @@ namespace Model
      * are billed for the time interval between this time and the value of
      * TrainingEndTime. </p>
      */
-    inline const Aws::Utils::DateTime& GetTrainingStartTime() const{ return m_trainingStartTime; }
+    inline const Aws::Utils::DateTime& GetTrainingStartTime() const { return m_trainingStartTime; }
     inline bool TrainingStartTimeHasBeenSet() const { return m_trainingStartTimeHasBeenSet; }
-    inline void SetTrainingStartTime(const Aws::Utils::DateTime& value) { m_trainingStartTimeHasBeenSet = true; m_trainingStartTime = value; }
-    inline void SetTrainingStartTime(Aws::Utils::DateTime&& value) { m_trainingStartTimeHasBeenSet = true; m_trainingStartTime = std::move(value); }
-    inline DocumentClassifierProperties& WithTrainingStartTime(const Aws::Utils::DateTime& value) { SetTrainingStartTime(value); return *this;}
-    inline DocumentClassifierProperties& WithTrainingStartTime(Aws::Utils::DateTime&& value) { SetTrainingStartTime(std::move(value)); return *this;}
+    template<typename TrainingStartTimeT = Aws::Utils::DateTime>
+    void SetTrainingStartTime(TrainingStartTimeT&& value) { m_trainingStartTimeHasBeenSet = true; m_trainingStartTime = std::forward<TrainingStartTimeT>(value); }
+    template<typename TrainingStartTimeT = Aws::Utils::DateTime>
+    DocumentClassifierProperties& WithTrainingStartTime(TrainingStartTimeT&& value) { SetTrainingStartTime(std::forward<TrainingStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +142,12 @@ namespace Model
      * billed for the time interval between this time and the value of
      * TrainingStartTime.</p>
      */
-    inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
+    inline const Aws::Utils::DateTime& GetTrainingEndTime() const { return m_trainingEndTime; }
     inline bool TrainingEndTimeHasBeenSet() const { return m_trainingEndTimeHasBeenSet; }
-    inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = value; }
-    inline void SetTrainingEndTime(Aws::Utils::DateTime&& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = std::move(value); }
-    inline DocumentClassifierProperties& WithTrainingEndTime(const Aws::Utils::DateTime& value) { SetTrainingEndTime(value); return *this;}
-    inline DocumentClassifierProperties& WithTrainingEndTime(Aws::Utils::DateTime&& value) { SetTrainingEndTime(std::move(value)); return *this;}
+    template<typename TrainingEndTimeT = Aws::Utils::DateTime>
+    void SetTrainingEndTime(TrainingEndTimeT&& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = std::forward<TrainingEndTimeT>(value); }
+    template<typename TrainingEndTimeT = Aws::Utils::DateTime>
+    DocumentClassifierProperties& WithTrainingEndTime(TrainingEndTimeT&& value) { SetTrainingEndTime(std::forward<TrainingEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +155,12 @@ namespace Model
      * <p>The input data configuration that you supplied when you created the document
      * classifier for training.</p>
      */
-    inline const DocumentClassifierInputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
+    inline const DocumentClassifierInputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
-    inline void SetInputDataConfig(const DocumentClassifierInputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
-    inline void SetInputDataConfig(DocumentClassifierInputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
-    inline DocumentClassifierProperties& WithInputDataConfig(const DocumentClassifierInputDataConfig& value) { SetInputDataConfig(value); return *this;}
-    inline DocumentClassifierProperties& WithInputDataConfig(DocumentClassifierInputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+    template<typename InputDataConfigT = DocumentClassifierInputDataConfig>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = DocumentClassifierInputDataConfig>
+    DocumentClassifierProperties& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,12 +168,12 @@ namespace Model
      * <p> Provides output results configuration parameters for custom classifier
      * jobs.</p>
      */
-    inline const DocumentClassifierOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+    inline const DocumentClassifierOutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
-    inline void SetOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
-    inline void SetOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
-    inline DocumentClassifierProperties& WithOutputDataConfig(const DocumentClassifierOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-    inline DocumentClassifierProperties& WithOutputDataConfig(DocumentClassifierOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    template<typename OutputDataConfigT = DocumentClassifierOutputDataConfig>
+    void SetOutputDataConfig(OutputDataConfigT&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::forward<OutputDataConfigT>(value); }
+    template<typename OutputDataConfigT = DocumentClassifierOutputDataConfig>
+    DocumentClassifierProperties& WithOutputDataConfig(OutputDataConfigT&& value) { SetOutputDataConfig(std::forward<OutputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,12 +182,12 @@ namespace Model
      * used for training the classifier, the number of documents used for test the
      * classifier, and an accuracy rating.</p>
      */
-    inline const ClassifierMetadata& GetClassifierMetadata() const{ return m_classifierMetadata; }
+    inline const ClassifierMetadata& GetClassifierMetadata() const { return m_classifierMetadata; }
     inline bool ClassifierMetadataHasBeenSet() const { return m_classifierMetadataHasBeenSet; }
-    inline void SetClassifierMetadata(const ClassifierMetadata& value) { m_classifierMetadataHasBeenSet = true; m_classifierMetadata = value; }
-    inline void SetClassifierMetadata(ClassifierMetadata&& value) { m_classifierMetadataHasBeenSet = true; m_classifierMetadata = std::move(value); }
-    inline DocumentClassifierProperties& WithClassifierMetadata(const ClassifierMetadata& value) { SetClassifierMetadata(value); return *this;}
-    inline DocumentClassifierProperties& WithClassifierMetadata(ClassifierMetadata&& value) { SetClassifierMetadata(std::move(value)); return *this;}
+    template<typename ClassifierMetadataT = ClassifierMetadata>
+    void SetClassifierMetadata(ClassifierMetadataT&& value) { m_classifierMetadataHasBeenSet = true; m_classifierMetadata = std::forward<ClassifierMetadataT>(value); }
+    template<typename ClassifierMetadataT = ClassifierMetadata>
+    DocumentClassifierProperties& WithClassifierMetadata(ClassifierMetadataT&& value) { SetClassifierMetadata(std::forward<ClassifierMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,14 +195,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend
      * read access to your input data.</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline DocumentClassifierProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline DocumentClassifierProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    DocumentClassifierProperties& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,14 +214,12 @@ namespace Model
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
+    inline const Aws::String& GetVolumeKmsKeyId() const { return m_volumeKmsKeyId; }
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
-    inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
-    inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
-    inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
-    inline DocumentClassifierProperties& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
-    inline DocumentClassifierProperties& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    void SetVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::forward<VolumeKmsKeyIdT>(value); }
+    template<typename VolumeKmsKeyIdT = Aws::String>
+    DocumentClassifierProperties& WithVolumeKmsKeyId(VolumeKmsKeyIdT&& value) { SetVolumeKmsKeyId(std::forward<VolumeKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -242,12 +230,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
      * VPC</a>. </p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline DocumentClassifierProperties& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline DocumentClassifierProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    DocumentClassifierProperties& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -257,12 +245,10 @@ namespace Model
      * Each classifier can only be trained in one mode and this cannot be changed once
      * the classifier is trained.</p>
      */
-    inline const DocumentClassifierMode& GetMode() const{ return m_mode; }
+    inline DocumentClassifierMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const DocumentClassifierMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(DocumentClassifierMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline DocumentClassifierProperties& WithMode(const DocumentClassifierMode& value) { SetMode(value); return *this;}
-    inline DocumentClassifierProperties& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(DocumentClassifierMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline DocumentClassifierProperties& WithMode(DocumentClassifierMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -274,28 +260,24 @@ namespace Model
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetModelKmsKeyId() const{ return m_modelKmsKeyId; }
+    inline const Aws::String& GetModelKmsKeyId() const { return m_modelKmsKeyId; }
     inline bool ModelKmsKeyIdHasBeenSet() const { return m_modelKmsKeyIdHasBeenSet; }
-    inline void SetModelKmsKeyId(const Aws::String& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = value; }
-    inline void SetModelKmsKeyId(Aws::String&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::move(value); }
-    inline void SetModelKmsKeyId(const char* value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId.assign(value); }
-    inline DocumentClassifierProperties& WithModelKmsKeyId(const Aws::String& value) { SetModelKmsKeyId(value); return *this;}
-    inline DocumentClassifierProperties& WithModelKmsKeyId(Aws::String&& value) { SetModelKmsKeyId(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithModelKmsKeyId(const char* value) { SetModelKmsKeyId(value); return *this;}
+    template<typename ModelKmsKeyIdT = Aws::String>
+    void SetModelKmsKeyId(ModelKmsKeyIdT&& value) { m_modelKmsKeyIdHasBeenSet = true; m_modelKmsKeyId = std::forward<ModelKmsKeyIdT>(value); }
+    template<typename ModelKmsKeyIdT = Aws::String>
+    DocumentClassifierProperties& WithModelKmsKeyId(ModelKmsKeyIdT&& value) { SetModelKmsKeyId(std::forward<ModelKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version name that you assigned to the document classifier.</p>
      */
-    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+    inline const Aws::String& GetVersionName() const { return m_versionName; }
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
-    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
-    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
-    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
-    inline DocumentClassifierProperties& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-    inline DocumentClassifierProperties& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    template<typename VersionNameT = Aws::String>
+    void SetVersionName(VersionNameT&& value) { m_versionNameHasBeenSet = true; m_versionName = std::forward<VersionNameT>(value); }
+    template<typename VersionNameT = Aws::String>
+    DocumentClassifierProperties& WithVersionName(VersionNameT&& value) { SetVersionName(std::forward<VersionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -304,53 +286,49 @@ namespace Model
      * from a different Amazon Web Services account to create the document classifier
      * model in your Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetSourceModelArn() const{ return m_sourceModelArn; }
+    inline const Aws::String& GetSourceModelArn() const { return m_sourceModelArn; }
     inline bool SourceModelArnHasBeenSet() const { return m_sourceModelArnHasBeenSet; }
-    inline void SetSourceModelArn(const Aws::String& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = value; }
-    inline void SetSourceModelArn(Aws::String&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::move(value); }
-    inline void SetSourceModelArn(const char* value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn.assign(value); }
-    inline DocumentClassifierProperties& WithSourceModelArn(const Aws::String& value) { SetSourceModelArn(value); return *this;}
-    inline DocumentClassifierProperties& WithSourceModelArn(Aws::String&& value) { SetSourceModelArn(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithSourceModelArn(const char* value) { SetSourceModelArn(value); return *this;}
+    template<typename SourceModelArnT = Aws::String>
+    void SetSourceModelArn(SourceModelArnT&& value) { m_sourceModelArnHasBeenSet = true; m_sourceModelArn = std::forward<SourceModelArnT>(value); }
+    template<typename SourceModelArnT = Aws::String>
+    DocumentClassifierProperties& WithSourceModelArn(SourceModelArnT&& value) { SetSourceModelArn(std::forward<SourceModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Number (ARN) of the flywheel</p>
      */
-    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+    inline const Aws::String& GetFlywheelArn() const { return m_flywheelArn; }
     inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
-    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
-    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
-    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
-    inline DocumentClassifierProperties& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-    inline DocumentClassifierProperties& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-    inline DocumentClassifierProperties& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+    template<typename FlywheelArnT = Aws::String>
+    void SetFlywheelArn(FlywheelArnT&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::forward<FlywheelArnT>(value); }
+    template<typename FlywheelArnT = Aws::String>
+    DocumentClassifierProperties& WithFlywheelArn(FlywheelArnT&& value) { SetFlywheelArn(std::forward<FlywheelArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_documentClassifierArn;
     bool m_documentClassifierArnHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    ModelStatus m_status;
+    ModelStatus m_status{ModelStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submitTime;
+    Aws::Utils::DateTime m_submitTime{};
     bool m_submitTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_trainingStartTime;
+    Aws::Utils::DateTime m_trainingStartTime{};
     bool m_trainingStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_trainingEndTime;
+    Aws::Utils::DateTime m_trainingEndTime{};
     bool m_trainingEndTimeHasBeenSet = false;
 
     DocumentClassifierInputDataConfig m_inputDataConfig;
@@ -371,7 +349,7 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
 
-    DocumentClassifierMode m_mode;
+    DocumentClassifierMode m_mode{DocumentClassifierMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
     Aws::String m_modelKmsKeyId;

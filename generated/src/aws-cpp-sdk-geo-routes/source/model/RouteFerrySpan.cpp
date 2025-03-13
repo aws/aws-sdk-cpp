@@ -18,21 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteFerrySpan::RouteFerrySpan() : 
-    m_countryHasBeenSet(false),
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_geometryOffset(0),
-    m_geometryOffsetHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 RouteFerrySpan::RouteFerrySpan(JsonView jsonValue)
-  : RouteFerrySpan()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ RouteFerrySpan& RouteFerrySpan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeometryOffset"))
   {
     m_geometryOffset = jsonValue.GetInteger("GeometryOffset");
-
     m_geometryOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -76,14 +54,11 @@ RouteFerrySpan& RouteFerrySpan::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

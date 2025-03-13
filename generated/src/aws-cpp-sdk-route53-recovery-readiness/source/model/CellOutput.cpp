@@ -18,17 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-CellOutput::CellOutput() : 
-    m_cellArnHasBeenSet(false),
-    m_cellNameHasBeenSet(false),
-    m_cellsHasBeenSet(false),
-    m_parentReadinessScopesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CellOutput::CellOutput(JsonView jsonValue)
-  : CellOutput()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ CellOutput& CellOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cellArn"))
   {
     m_cellArn = jsonValue.GetString("cellArn");
-
     m_cellArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cellName"))
   {
     m_cellName = jsonValue.GetString("cellName");
-
     m_cellNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cells"))
   {
     Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
@@ -58,7 +44,6 @@ CellOutput& CellOutput::operator =(JsonView jsonValue)
     }
     m_cellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentReadinessScopes"))
   {
     Aws::Utils::Array<JsonView> parentReadinessScopesJsonList = jsonValue.GetArray("parentReadinessScopes");
@@ -68,7 +53,6 @@ CellOutput& CellOutput::operator =(JsonView jsonValue)
     }
     m_parentReadinessScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -78,7 +62,6 @@ CellOutput& CellOutput::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListOutpostsRequest::ListOutpostsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_lifeCycleStatusFilterHasBeenSet(false),
-    m_availabilityZoneFilterHasBeenSet(false),
-    m_availabilityZoneIdFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListOutpostsRequest::SerializePayload() const
 {
   return {};

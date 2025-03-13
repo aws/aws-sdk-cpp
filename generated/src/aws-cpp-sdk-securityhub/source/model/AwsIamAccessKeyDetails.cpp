@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamAccessKeyDetails::AwsIamAccessKeyDetails() : 
-    m_status(AwsIamAccessKeyStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalTypeHasBeenSet(false),
-    m_principalNameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
-{
-}
-
 AwsIamAccessKeyDetails::AwsIamAccessKeyDetails(JsonView jsonValue)
-  : AwsIamAccessKeyDetails()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ AwsIamAccessKeyDetails& AwsIamAccessKeyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AwsIamAccessKeyStatusMapper::GetAwsIamAccessKeyStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalType"))
   {
     m_principalType = jsonValue.GetString("PrincipalType");
-
     m_principalTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalName"))
   {
     m_principalName = jsonValue.GetString("PrincipalName");
-
     m_principalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("AccessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionContext"))
   {
     m_sessionContext = jsonValue.GetObject("SessionContext");
-
     m_sessionContextHasBeenSet = true;
   }
-
   return *this;
 }
 

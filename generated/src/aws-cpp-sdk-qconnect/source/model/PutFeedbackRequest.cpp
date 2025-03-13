@@ -12,15 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutFeedbackRequest::PutFeedbackRequest() : 
-    m_assistantIdHasBeenSet(false),
-    m_contentFeedbackHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false)
-{
-}
-
 Aws::String PutFeedbackRequest::SerializePayload() const
 {
   JsonValue payload;

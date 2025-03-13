@@ -18,23 +18,7 @@ namespace deadline
 namespace Model
 {
 
-WorkerSummary::WorkerSummary() : 
-    m_workerIdHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_status(WorkerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_hostPropertiesHasBeenSet(false),
-    m_logHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
-{
-}
-
 WorkerSummary::WorkerSummary(JsonView jsonValue)
-  : WorkerSummary()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ WorkerSummary& WorkerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workerId"))
   {
     m_workerId = jsonValue.GetString("workerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("farmId"))
   {
     m_farmId = jsonValue.GetString("farmId");
-
     m_farmIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fleetId"))
   {
     m_fleetId = jsonValue.GetString("fleetId");
-
     m_fleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkerStatusMapper::GetWorkerStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostProperties"))
   {
     m_hostProperties = jsonValue.GetObject("hostProperties");
-
     m_hostPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("log"))
   {
     m_log = jsonValue.GetObject("log");
-
     m_logHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

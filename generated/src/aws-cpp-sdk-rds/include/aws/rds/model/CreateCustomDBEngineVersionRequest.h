@@ -23,7 +23,7 @@ namespace Model
   class CreateCustomDBEngineVersionRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CreateCustomDBEngineVersionRequest();
+    AWS_RDS_API CreateCustomDBEngineVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <code>custom-oracle-se2</code> </p> </li> <li> <p>
      * <code>custom-oracle-se2-cdb</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>Engine</code> and <code>EngineVersion</code> is unique per customer per
      * Region.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * your CEV. For example, a valid bucket name is
      * <code>my-custom-installation-files</code>.</p>
      */
-    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const{ return m_databaseInstallationFilesS3BucketName; }
+    inline const Aws::String& GetDatabaseInstallationFilesS3BucketName() const { return m_databaseInstallationFilesS3BucketName; }
     inline bool DatabaseInstallationFilesS3BucketNameHasBeenSet() const { return m_databaseInstallationFilesS3BucketNameHasBeenSet; }
-    inline void SetDatabaseInstallationFilesS3BucketName(const Aws::String& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = value; }
-    inline void SetDatabaseInstallationFilesS3BucketName(Aws::String&& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = std::move(value); }
-    inline void SetDatabaseInstallationFilesS3BucketName(const char* value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3BucketName(const Aws::String& value) { SetDatabaseInstallationFilesS3BucketName(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3BucketName(Aws::String&& value) { SetDatabaseInstallationFilesS3BucketName(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3BucketName(const char* value) { SetDatabaseInstallationFilesS3BucketName(value); return *this;}
+    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
+    void SetDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { m_databaseInstallationFilesS3BucketNameHasBeenSet = true; m_databaseInstallationFilesS3BucketName = std::forward<DatabaseInstallationFilesS3BucketNameT>(value); }
+    template<typename DatabaseInstallationFilesS3BucketNameT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3BucketName(DatabaseInstallationFilesS3BucketNameT&& value) { SetDatabaseInstallationFilesS3BucketName(std::forward<DatabaseInstallationFilesS3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If
      * this setting isn't specified, no prefix is assumed.</p>
      */
-    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const{ return m_databaseInstallationFilesS3Prefix; }
+    inline const Aws::String& GetDatabaseInstallationFilesS3Prefix() const { return m_databaseInstallationFilesS3Prefix; }
     inline bool DatabaseInstallationFilesS3PrefixHasBeenSet() const { return m_databaseInstallationFilesS3PrefixHasBeenSet; }
-    inline void SetDatabaseInstallationFilesS3Prefix(const Aws::String& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = value; }
-    inline void SetDatabaseInstallationFilesS3Prefix(Aws::String&& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = std::move(value); }
-    inline void SetDatabaseInstallationFilesS3Prefix(const char* value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3Prefix(const Aws::String& value) { SetDatabaseInstallationFilesS3Prefix(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3Prefix(Aws::String&& value) { SetDatabaseInstallationFilesS3Prefix(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3Prefix(const char* value) { SetDatabaseInstallationFilesS3Prefix(value); return *this;}
+    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
+    void SetDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { m_databaseInstallationFilesS3PrefixHasBeenSet = true; m_databaseInstallationFilesS3Prefix = std::forward<DatabaseInstallationFilesS3PrefixT>(value); }
+    template<typename DatabaseInstallationFilesS3PrefixT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithDatabaseInstallationFilesS3Prefix(DatabaseInstallationFilesS3PrefixT&& value) { SetDatabaseInstallationFilesS3Prefix(std::forward<DatabaseInstallationFilesS3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
      * operation.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,28 +129,24 @@ namespace Model
      * encryption key when you create a CEV and a DB instance, or choose different
      * keys.</p>
      */
-    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
-    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
-    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
-    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of your CEV.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,26 +167,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
      * Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
-    inline const Aws::String& GetManifest() const{ return m_manifest; }
+    inline const Aws::String& GetManifest() const { return m_manifest; }
     inline bool ManifestHasBeenSet() const { return m_manifestHasBeenSet; }
-    inline void SetManifest(const Aws::String& value) { m_manifestHasBeenSet = true; m_manifest = value; }
-    inline void SetManifest(Aws::String&& value) { m_manifestHasBeenSet = true; m_manifest = std::move(value); }
-    inline void SetManifest(const char* value) { m_manifestHasBeenSet = true; m_manifest.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithManifest(const Aws::String& value) { SetManifest(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithManifest(Aws::String&& value) { SetManifest(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithManifest(const char* value) { SetManifest(value); return *this;}
+    template<typename ManifestT = Aws::String>
+    void SetManifest(ManifestT&& value) { m_manifestHasBeenSet = true; m_manifest = std::forward<ManifestT>(value); }
+    template<typename ManifestT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithManifest(ManifestT&& value) { SetManifest(std::forward<ManifestT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCustomDBEngineVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateCustomDBEngineVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateCustomDBEngineVersionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateCustomDBEngineVersionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -211,14 +195,12 @@ namespace Model
      * manifest when you specify
      * <code>SourceCustomDbEngineVersionIdentifier</code>.</p>
      */
-    inline const Aws::String& GetSourceCustomDbEngineVersionIdentifier() const{ return m_sourceCustomDbEngineVersionIdentifier; }
+    inline const Aws::String& GetSourceCustomDbEngineVersionIdentifier() const { return m_sourceCustomDbEngineVersionIdentifier; }
     inline bool SourceCustomDbEngineVersionIdentifierHasBeenSet() const { return m_sourceCustomDbEngineVersionIdentifierHasBeenSet; }
-    inline void SetSourceCustomDbEngineVersionIdentifier(const Aws::String& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = value; }
-    inline void SetSourceCustomDbEngineVersionIdentifier(Aws::String&& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = std::move(value); }
-    inline void SetSourceCustomDbEngineVersionIdentifier(const char* value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier.assign(value); }
-    inline CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(const Aws::String& value) { SetSourceCustomDbEngineVersionIdentifier(value); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(Aws::String&& value) { SetSourceCustomDbEngineVersionIdentifier(std::move(value)); return *this;}
-    inline CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(const char* value) { SetSourceCustomDbEngineVersionIdentifier(value); return *this;}
+    template<typename SourceCustomDbEngineVersionIdentifierT = Aws::String>
+    void SetSourceCustomDbEngineVersionIdentifier(SourceCustomDbEngineVersionIdentifierT&& value) { m_sourceCustomDbEngineVersionIdentifierHasBeenSet = true; m_sourceCustomDbEngineVersionIdentifier = std::forward<SourceCustomDbEngineVersionIdentifierT>(value); }
+    template<typename SourceCustomDbEngineVersionIdentifierT = Aws::String>
+    CreateCustomDBEngineVersionRequest& WithSourceCustomDbEngineVersionIdentifier(SourceCustomDbEngineVersionIdentifierT&& value) { SetSourceCustomDbEngineVersionIdentifier(std::forward<SourceCustomDbEngineVersionIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -227,7 +209,7 @@ namespace Model
      * (AMI) for the CEV. If you specify <code>UseAwsProvidedLatestImage</code>, you
      * can't also specify <code>ImageId</code>.</p>
      */
-    inline bool GetUseAwsProvidedLatestImage() const{ return m_useAwsProvidedLatestImage; }
+    inline bool GetUseAwsProvidedLatestImage() const { return m_useAwsProvidedLatestImage; }
     inline bool UseAwsProvidedLatestImageHasBeenSet() const { return m_useAwsProvidedLatestImageHasBeenSet; }
     inline void SetUseAwsProvidedLatestImage(bool value) { m_useAwsProvidedLatestImageHasBeenSet = true; m_useAwsProvidedLatestImage = value; }
     inline CreateCustomDBEngineVersionRequest& WithUseAwsProvidedLatestImage(bool value) { SetUseAwsProvidedLatestImage(value); return *this;}
@@ -264,7 +246,7 @@ namespace Model
     Aws::String m_sourceCustomDbEngineVersionIdentifier;
     bool m_sourceCustomDbEngineVersionIdentifierHasBeenSet = false;
 
-    bool m_useAwsProvidedLatestImage;
+    bool m_useAwsProvidedLatestImage{false};
     bool m_useAwsProvidedLatestImageHasBeenSet = false;
   };
 

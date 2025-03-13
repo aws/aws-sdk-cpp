@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchReadOperationResponse::BatchReadOperationResponse() : 
-    m_successfulResponseHasBeenSet(false),
-    m_exceptionResponseHasBeenSet(false)
-{
-}
-
 BatchReadOperationResponse::BatchReadOperationResponse(JsonView jsonValue)
-  : BatchReadOperationResponse()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchReadOperationResponse& BatchReadOperationResponse::operator =(JsonView json
   if(jsonValue.ValueExists("SuccessfulResponse"))
   {
     m_successfulResponse = jsonValue.GetObject("SuccessfulResponse");
-
     m_successfulResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExceptionResponse"))
   {
     m_exceptionResponse = jsonValue.GetObject("ExceptionResponse");
-
     m_exceptionResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

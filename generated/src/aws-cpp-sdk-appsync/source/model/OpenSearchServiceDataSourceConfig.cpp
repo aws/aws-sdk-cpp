@@ -18,14 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-OpenSearchServiceDataSourceConfig::OpenSearchServiceDataSourceConfig() : 
-    m_endpointHasBeenSet(false),
-    m_awsRegionHasBeenSet(false)
-{
-}
-
 OpenSearchServiceDataSourceConfig::OpenSearchServiceDataSourceConfig(JsonView jsonValue)
-  : OpenSearchServiceDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenSearchServiceDataSourceConfig& OpenSearchServiceDataSourceConfig::operator =
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class EntityPropertyReference
   {
   public:
-    AWS_IOTTWINMAKER_API EntityPropertyReference();
+    AWS_IOTTWINMAKER_API EntityPropertyReference() = default;
     AWS_IOTTWINMAKER_API EntityPropertyReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API EntityPropertyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline EntityPropertyReference& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline EntityPropertyReference& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline EntityPropertyReference& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    EntityPropertyReference& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>This string specifies the path to the composite component, starting from the
      * top-level component.</p>
      */
-    inline const Aws::String& GetComponentPath() const{ return m_componentPath; }
+    inline const Aws::String& GetComponentPath() const { return m_componentPath; }
     inline bool ComponentPathHasBeenSet() const { return m_componentPathHasBeenSet; }
-    inline void SetComponentPath(const Aws::String& value) { m_componentPathHasBeenSet = true; m_componentPath = value; }
-    inline void SetComponentPath(Aws::String&& value) { m_componentPathHasBeenSet = true; m_componentPath = std::move(value); }
-    inline void SetComponentPath(const char* value) { m_componentPathHasBeenSet = true; m_componentPath.assign(value); }
-    inline EntityPropertyReference& WithComponentPath(const Aws::String& value) { SetComponentPath(value); return *this;}
-    inline EntityPropertyReference& WithComponentPath(Aws::String&& value) { SetComponentPath(std::move(value)); return *this;}
-    inline EntityPropertyReference& WithComponentPath(const char* value) { SetComponentPath(value); return *this;}
+    template<typename ComponentPathT = Aws::String>
+    void SetComponentPath(ComponentPathT&& value) { m_componentPathHasBeenSet = true; m_componentPath = std::forward<ComponentPathT>(value); }
+    template<typename ComponentPathT = Aws::String>
+    EntityPropertyReference& WithComponentPath(ComponentPathT&& value) { SetComponentPath(std::forward<ComponentPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,47 +69,40 @@ namespace Model
      * <p>A mapping of external IDs to property names. External IDs uniquely identify
      * properties from external data stores.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetExternalIdProperty() const{ return m_externalIdProperty; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetExternalIdProperty() const { return m_externalIdProperty; }
     inline bool ExternalIdPropertyHasBeenSet() const { return m_externalIdPropertyHasBeenSet; }
-    inline void SetExternalIdProperty(const Aws::Map<Aws::String, Aws::String>& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty = value; }
-    inline void SetExternalIdProperty(Aws::Map<Aws::String, Aws::String>&& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty = std::move(value); }
-    inline EntityPropertyReference& WithExternalIdProperty(const Aws::Map<Aws::String, Aws::String>& value) { SetExternalIdProperty(value); return *this;}
-    inline EntityPropertyReference& WithExternalIdProperty(Aws::Map<Aws::String, Aws::String>&& value) { SetExternalIdProperty(std::move(value)); return *this;}
-    inline EntityPropertyReference& AddExternalIdProperty(const Aws::String& key, const Aws::String& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(key, value); return *this; }
-    inline EntityPropertyReference& AddExternalIdProperty(Aws::String&& key, const Aws::String& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(std::move(key), value); return *this; }
-    inline EntityPropertyReference& AddExternalIdProperty(const Aws::String& key, Aws::String&& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(key, std::move(value)); return *this; }
-    inline EntityPropertyReference& AddExternalIdProperty(Aws::String&& key, Aws::String&& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(std::move(key), std::move(value)); return *this; }
-    inline EntityPropertyReference& AddExternalIdProperty(const char* key, Aws::String&& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(key, std::move(value)); return *this; }
-    inline EntityPropertyReference& AddExternalIdProperty(Aws::String&& key, const char* value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(std::move(key), value); return *this; }
-    inline EntityPropertyReference& AddExternalIdProperty(const char* key, const char* value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(key, value); return *this; }
+    template<typename ExternalIdPropertyT = Aws::Map<Aws::String, Aws::String>>
+    void SetExternalIdProperty(ExternalIdPropertyT&& value) { m_externalIdPropertyHasBeenSet = true; m_externalIdProperty = std::forward<ExternalIdPropertyT>(value); }
+    template<typename ExternalIdPropertyT = Aws::Map<Aws::String, Aws::String>>
+    EntityPropertyReference& WithExternalIdProperty(ExternalIdPropertyT&& value) { SetExternalIdProperty(std::forward<ExternalIdPropertyT>(value)); return *this;}
+    template<typename ExternalIdPropertyKeyT = Aws::String, typename ExternalIdPropertyValueT = Aws::String>
+    EntityPropertyReference& AddExternalIdProperty(ExternalIdPropertyKeyT&& key, ExternalIdPropertyValueT&& value) {
+      m_externalIdPropertyHasBeenSet = true; m_externalIdProperty.emplace(std::forward<ExternalIdPropertyKeyT>(key), std::forward<ExternalIdPropertyValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the entity.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline EntityPropertyReference& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline EntityPropertyReference& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline EntityPropertyReference& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    EntityPropertyReference& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the property.</p>
      */
-    inline const Aws::String& GetPropertyName() const{ return m_propertyName; }
+    inline const Aws::String& GetPropertyName() const { return m_propertyName; }
     inline bool PropertyNameHasBeenSet() const { return m_propertyNameHasBeenSet; }
-    inline void SetPropertyName(const Aws::String& value) { m_propertyNameHasBeenSet = true; m_propertyName = value; }
-    inline void SetPropertyName(Aws::String&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::move(value); }
-    inline void SetPropertyName(const char* value) { m_propertyNameHasBeenSet = true; m_propertyName.assign(value); }
-    inline EntityPropertyReference& WithPropertyName(const Aws::String& value) { SetPropertyName(value); return *this;}
-    inline EntityPropertyReference& WithPropertyName(Aws::String&& value) { SetPropertyName(std::move(value)); return *this;}
-    inline EntityPropertyReference& WithPropertyName(const char* value) { SetPropertyName(value); return *this;}
+    template<typename PropertyNameT = Aws::String>
+    void SetPropertyName(PropertyNameT&& value) { m_propertyNameHasBeenSet = true; m_propertyName = std::forward<PropertyNameT>(value); }
+    template<typename PropertyNameT = Aws::String>
+    EntityPropertyReference& WithPropertyName(PropertyNameT&& value) { SetPropertyName(std::forward<PropertyNameT>(value)); return *this;}
     ///@}
   private:
 

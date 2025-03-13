@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DescribeStackResourcesRequest::DescribeStackResourcesRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStackResourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

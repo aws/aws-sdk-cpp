@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-RequiredActivatedType::RequiredActivatedType() : 
-    m_typeNameAliasHasBeenSet(false),
-    m_originalTypeNameHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_supportedMajorVersionsHasBeenSet(false)
-{
-}
-
 RequiredActivatedType::RequiredActivatedType(const XmlNode& xmlNode)
-  : RequiredActivatedType()
 {
   *this = xmlNode;
 }
@@ -45,30 +36,34 @@ RequiredActivatedType& RequiredActivatedType::operator =(const XmlNode& xmlNode)
     {
       m_typeNameAlias = Aws::Utils::Xml::DecodeEscapedXmlText(typeNameAliasNode.GetText());
       m_typeNameAliasHasBeenSet = true;
+       m_typeNameAliasHasBeenSet = true;
     }
     XmlNode originalTypeNameNode = resultNode.FirstChild("OriginalTypeName");
     if(!originalTypeNameNode.IsNull())
     {
       m_originalTypeName = Aws::Utils::Xml::DecodeEscapedXmlText(originalTypeNameNode.GetText());
       m_originalTypeNameHasBeenSet = true;
+       m_originalTypeNameHasBeenSet = true;
     }
     XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");
     if(!publisherIdNode.IsNull())
     {
       m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
       m_publisherIdHasBeenSet = true;
+       m_publisherIdHasBeenSet = true;
     }
     XmlNode supportedMajorVersionsNode = resultNode.FirstChild("SupportedMajorVersions");
     if(!supportedMajorVersionsNode.IsNull())
     {
       XmlNode supportedMajorVersionsMember = supportedMajorVersionsNode.FirstChild("member");
+      m_supportedMajorVersionsHasBeenSet = !supportedMajorVersionsMember.IsNull();
       while(!supportedMajorVersionsMember.IsNull())
       {
         m_supportedMajorVersions.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(supportedMajorVersionsMember.GetText().c_str()).c_str()));
         supportedMajorVersionsMember = supportedMajorVersionsMember.NextNode("member");
       }
 
-      m_supportedMajorVersionsHasBeenSet = true;
+       m_supportedMajorVersionsHasBeenSet = true;
     }
   }
 

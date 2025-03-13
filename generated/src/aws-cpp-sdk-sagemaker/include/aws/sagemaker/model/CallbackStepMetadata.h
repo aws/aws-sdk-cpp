@@ -33,7 +33,7 @@ namespace Model
   class CallbackStepMetadata
   {
   public:
-    AWS_SAGEMAKER_API CallbackStepMetadata();
+    AWS_SAGEMAKER_API CallbackStepMetadata() = default;
     AWS_SAGEMAKER_API CallbackStepMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CallbackStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The pipeline generated token from the Amazon SQS queue.</p>
      */
-    inline const Aws::String& GetCallbackToken() const{ return m_callbackToken; }
+    inline const Aws::String& GetCallbackToken() const { return m_callbackToken; }
     inline bool CallbackTokenHasBeenSet() const { return m_callbackTokenHasBeenSet; }
-    inline void SetCallbackToken(const Aws::String& value) { m_callbackTokenHasBeenSet = true; m_callbackToken = value; }
-    inline void SetCallbackToken(Aws::String&& value) { m_callbackTokenHasBeenSet = true; m_callbackToken = std::move(value); }
-    inline void SetCallbackToken(const char* value) { m_callbackTokenHasBeenSet = true; m_callbackToken.assign(value); }
-    inline CallbackStepMetadata& WithCallbackToken(const Aws::String& value) { SetCallbackToken(value); return *this;}
-    inline CallbackStepMetadata& WithCallbackToken(Aws::String&& value) { SetCallbackToken(std::move(value)); return *this;}
-    inline CallbackStepMetadata& WithCallbackToken(const char* value) { SetCallbackToken(value); return *this;}
+    template<typename CallbackTokenT = Aws::String>
+    void SetCallbackToken(CallbackTokenT&& value) { m_callbackTokenHasBeenSet = true; m_callbackToken = std::forward<CallbackTokenT>(value); }
+    template<typename CallbackTokenT = Aws::String>
+    CallbackStepMetadata& WithCallbackToken(CallbackTokenT&& value) { SetCallbackToken(std::forward<CallbackTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,26 @@ namespace Model
      * <p>The URL of the Amazon Simple Queue Service (Amazon SQS) queue used by the
      * callback step.</p>
      */
-    inline const Aws::String& GetSqsQueueUrl() const{ return m_sqsQueueUrl; }
+    inline const Aws::String& GetSqsQueueUrl() const { return m_sqsQueueUrl; }
     inline bool SqsQueueUrlHasBeenSet() const { return m_sqsQueueUrlHasBeenSet; }
-    inline void SetSqsQueueUrl(const Aws::String& value) { m_sqsQueueUrlHasBeenSet = true; m_sqsQueueUrl = value; }
-    inline void SetSqsQueueUrl(Aws::String&& value) { m_sqsQueueUrlHasBeenSet = true; m_sqsQueueUrl = std::move(value); }
-    inline void SetSqsQueueUrl(const char* value) { m_sqsQueueUrlHasBeenSet = true; m_sqsQueueUrl.assign(value); }
-    inline CallbackStepMetadata& WithSqsQueueUrl(const Aws::String& value) { SetSqsQueueUrl(value); return *this;}
-    inline CallbackStepMetadata& WithSqsQueueUrl(Aws::String&& value) { SetSqsQueueUrl(std::move(value)); return *this;}
-    inline CallbackStepMetadata& WithSqsQueueUrl(const char* value) { SetSqsQueueUrl(value); return *this;}
+    template<typename SqsQueueUrlT = Aws::String>
+    void SetSqsQueueUrl(SqsQueueUrlT&& value) { m_sqsQueueUrlHasBeenSet = true; m_sqsQueueUrl = std::forward<SqsQueueUrlT>(value); }
+    template<typename SqsQueueUrlT = Aws::String>
+    CallbackStepMetadata& WithSqsQueueUrl(SqsQueueUrlT&& value) { SetSqsQueueUrl(std::forward<SqsQueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the output parameters of the callback step.</p>
      */
-    inline const Aws::Vector<OutputParameter>& GetOutputParameters() const{ return m_outputParameters; }
+    inline const Aws::Vector<OutputParameter>& GetOutputParameters() const { return m_outputParameters; }
     inline bool OutputParametersHasBeenSet() const { return m_outputParametersHasBeenSet; }
-    inline void SetOutputParameters(const Aws::Vector<OutputParameter>& value) { m_outputParametersHasBeenSet = true; m_outputParameters = value; }
-    inline void SetOutputParameters(Aws::Vector<OutputParameter>&& value) { m_outputParametersHasBeenSet = true; m_outputParameters = std::move(value); }
-    inline CallbackStepMetadata& WithOutputParameters(const Aws::Vector<OutputParameter>& value) { SetOutputParameters(value); return *this;}
-    inline CallbackStepMetadata& WithOutputParameters(Aws::Vector<OutputParameter>&& value) { SetOutputParameters(std::move(value)); return *this;}
-    inline CallbackStepMetadata& AddOutputParameters(const OutputParameter& value) { m_outputParametersHasBeenSet = true; m_outputParameters.push_back(value); return *this; }
-    inline CallbackStepMetadata& AddOutputParameters(OutputParameter&& value) { m_outputParametersHasBeenSet = true; m_outputParameters.push_back(std::move(value)); return *this; }
+    template<typename OutputParametersT = Aws::Vector<OutputParameter>>
+    void SetOutputParameters(OutputParametersT&& value) { m_outputParametersHasBeenSet = true; m_outputParameters = std::forward<OutputParametersT>(value); }
+    template<typename OutputParametersT = Aws::Vector<OutputParameter>>
+    CallbackStepMetadata& WithOutputParameters(OutputParametersT&& value) { SetOutputParameters(std::forward<OutputParametersT>(value)); return *this;}
+    template<typename OutputParametersT = OutputParameter>
+    CallbackStepMetadata& AddOutputParameters(OutputParametersT&& value) { m_outputParametersHasBeenSet = true; m_outputParameters.emplace_back(std::forward<OutputParametersT>(value)); return *this; }
     ///@}
   private:
 

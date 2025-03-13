@@ -18,25 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-PipelineDeclaration::PipelineDeclaration() : 
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_artifactStoreHasBeenSet(false),
-    m_artifactStoresHasBeenSet(false),
-    m_stagesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_executionMode(ExecutionMode::NOT_SET),
-    m_executionModeHasBeenSet(false),
-    m_pipelineType(PipelineType::NOT_SET),
-    m_pipelineTypeHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_triggersHasBeenSet(false)
-{
-}
-
 PipelineDeclaration::PipelineDeclaration(JsonView jsonValue)
-  : PipelineDeclaration()
 {
   *this = jsonValue;
 }
@@ -46,24 +28,18 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactStore"))
   {
     m_artifactStore = jsonValue.GetObject("artifactStore");
-
     m_artifactStoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactStores"))
   {
     Aws::Map<Aws::String, JsonView> artifactStoresJsonMap = jsonValue.GetObject("artifactStores").GetAllObjects();
@@ -73,7 +49,6 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
     }
     m_artifactStoresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stages"))
   {
     Aws::Utils::Array<JsonView> stagesJsonList = jsonValue.GetArray("stages");
@@ -83,28 +58,21 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
     }
     m_stagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInteger("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionMode"))
   {
     m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("executionMode"));
-
     m_executionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineType"))
   {
     m_pipelineType = PipelineTypeMapper::GetPipelineTypeForName(jsonValue.GetString("pipelineType"));
-
     m_pipelineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variables"))
   {
     Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
@@ -114,7 +82,6 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggers"))
   {
     Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
@@ -124,7 +91,6 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
     }
     m_triggersHasBeenSet = true;
   }
-
   return *this;
 }
 

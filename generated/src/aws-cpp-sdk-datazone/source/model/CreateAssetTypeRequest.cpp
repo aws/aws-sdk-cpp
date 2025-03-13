@@ -12,15 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssetTypeRequest::CreateAssetTypeRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_formsInputHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssetTypeRequest::SerializePayload() const
 {
   JsonValue payload;

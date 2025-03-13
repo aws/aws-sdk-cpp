@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-RangeOverride::RangeOverride() : 
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_end(0),
-    m_endHasBeenSet(false),
-    m_unit(RangeUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 RangeOverride::RangeOverride(JsonView jsonValue)
-  : RangeOverride()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RangeOverride& RangeOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetInteger("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetInteger("End");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = RangeUnitMapper::GetRangeUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

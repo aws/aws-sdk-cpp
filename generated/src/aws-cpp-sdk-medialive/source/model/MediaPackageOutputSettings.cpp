@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-MediaPackageOutputSettings::MediaPackageOutputSettings()
-{
-}
-
 MediaPackageOutputSettings::MediaPackageOutputSettings(JsonView jsonValue)
 {
   *this = jsonValue;

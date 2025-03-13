@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StatisticalThreshold::StatisticalThreshold() : 
-    m_statisticHasBeenSet(false)
-{
-}
-
 StatisticalThreshold::StatisticalThreshold(JsonView jsonValue)
-  : StatisticalThreshold()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StatisticalThreshold& StatisticalThreshold::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = jsonValue.GetString("statistic");
-
     m_statisticHasBeenSet = true;
   }
-
   return *this;
 }
 

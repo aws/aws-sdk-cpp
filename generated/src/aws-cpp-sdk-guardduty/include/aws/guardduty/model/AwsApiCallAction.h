@@ -35,7 +35,7 @@ namespace Model
   class AwsApiCallAction
   {
   public:
-    AWS_GUARDDUTY_API AwsApiCallAction();
+    AWS_GUARDDUTY_API AwsApiCallAction() = default;
     AWS_GUARDDUTY_API AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,68 +45,60 @@ namespace Model
     /**
      * <p>The Amazon Web Services API name.</p>
      */
-    inline const Aws::String& GetApi() const{ return m_api; }
+    inline const Aws::String& GetApi() const { return m_api; }
     inline bool ApiHasBeenSet() const { return m_apiHasBeenSet; }
-    inline void SetApi(const Aws::String& value) { m_apiHasBeenSet = true; m_api = value; }
-    inline void SetApi(Aws::String&& value) { m_apiHasBeenSet = true; m_api = std::move(value); }
-    inline void SetApi(const char* value) { m_apiHasBeenSet = true; m_api.assign(value); }
-    inline AwsApiCallAction& WithApi(const Aws::String& value) { SetApi(value); return *this;}
-    inline AwsApiCallAction& WithApi(Aws::String&& value) { SetApi(std::move(value)); return *this;}
-    inline AwsApiCallAction& WithApi(const char* value) { SetApi(value); return *this;}
+    template<typename ApiT = Aws::String>
+    void SetApi(ApiT&& value) { m_apiHasBeenSet = true; m_api = std::forward<ApiT>(value); }
+    template<typename ApiT = Aws::String>
+    AwsApiCallAction& WithApi(ApiT&& value) { SetApi(std::forward<ApiT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services API caller type.</p>
      */
-    inline const Aws::String& GetCallerType() const{ return m_callerType; }
+    inline const Aws::String& GetCallerType() const { return m_callerType; }
     inline bool CallerTypeHasBeenSet() const { return m_callerTypeHasBeenSet; }
-    inline void SetCallerType(const Aws::String& value) { m_callerTypeHasBeenSet = true; m_callerType = value; }
-    inline void SetCallerType(Aws::String&& value) { m_callerTypeHasBeenSet = true; m_callerType = std::move(value); }
-    inline void SetCallerType(const char* value) { m_callerTypeHasBeenSet = true; m_callerType.assign(value); }
-    inline AwsApiCallAction& WithCallerType(const Aws::String& value) { SetCallerType(value); return *this;}
-    inline AwsApiCallAction& WithCallerType(Aws::String&& value) { SetCallerType(std::move(value)); return *this;}
-    inline AwsApiCallAction& WithCallerType(const char* value) { SetCallerType(value); return *this;}
+    template<typename CallerTypeT = Aws::String>
+    void SetCallerType(CallerTypeT&& value) { m_callerTypeHasBeenSet = true; m_callerType = std::forward<CallerTypeT>(value); }
+    template<typename CallerTypeT = Aws::String>
+    AwsApiCallAction& WithCallerType(CallerTypeT&& value) { SetCallerType(std::forward<CallerTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain information for the Amazon Web Services API call.</p>
      */
-    inline const DomainDetails& GetDomainDetails() const{ return m_domainDetails; }
+    inline const DomainDetails& GetDomainDetails() const { return m_domainDetails; }
     inline bool DomainDetailsHasBeenSet() const { return m_domainDetailsHasBeenSet; }
-    inline void SetDomainDetails(const DomainDetails& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = value; }
-    inline void SetDomainDetails(DomainDetails&& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = std::move(value); }
-    inline AwsApiCallAction& WithDomainDetails(const DomainDetails& value) { SetDomainDetails(value); return *this;}
-    inline AwsApiCallAction& WithDomainDetails(DomainDetails&& value) { SetDomainDetails(std::move(value)); return *this;}
+    template<typename DomainDetailsT = DomainDetails>
+    void SetDomainDetails(DomainDetailsT&& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = std::forward<DomainDetailsT>(value); }
+    template<typename DomainDetailsT = DomainDetails>
+    AwsApiCallAction& WithDomainDetails(DomainDetailsT&& value) { SetDomainDetails(std::forward<DomainDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code of the failed Amazon Web Services API action.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline AwsApiCallAction& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline AwsApiCallAction& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline AwsApiCallAction& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    AwsApiCallAction& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The agent through which the API request was made.</p>
      */
-    inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
+    inline const Aws::String& GetUserAgent() const { return m_userAgent; }
     inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
-    inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
-    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
-    inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
-    inline AwsApiCallAction& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
-    inline AwsApiCallAction& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
-    inline AwsApiCallAction& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+    template<typename UserAgentT = Aws::String>
+    void SetUserAgent(UserAgentT&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::forward<UserAgentT>(value); }
+    template<typename UserAgentT = Aws::String>
+    AwsApiCallAction& WithUserAgent(UserAgentT&& value) { SetUserAgent(std::forward<UserAgentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,26 +106,24 @@ namespace Model
      * <p>The remote IP information of the connection that initiated the Amazon Web
      * Services API call.</p>
      */
-    inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
+    inline const RemoteIpDetails& GetRemoteIpDetails() const { return m_remoteIpDetails; }
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
-    inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
-    inline void SetRemoteIpDetails(RemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
-    inline AwsApiCallAction& WithRemoteIpDetails(const RemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
-    inline AwsApiCallAction& WithRemoteIpDetails(RemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
+    template<typename RemoteIpDetailsT = RemoteIpDetails>
+    void SetRemoteIpDetails(RemoteIpDetailsT&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::forward<RemoteIpDetailsT>(value); }
+    template<typename RemoteIpDetailsT = RemoteIpDetails>
+    AwsApiCallAction& WithRemoteIpDetails(RemoteIpDetailsT&& value) { SetRemoteIpDetails(std::forward<RemoteIpDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services service name whose API was invoked.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline AwsApiCallAction& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline AwsApiCallAction& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline AwsApiCallAction& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    AwsApiCallAction& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,12 +131,12 @@ namespace Model
      * <p>The details of the Amazon Web Services account that made the API call. This
      * field appears if the call was made from outside your account.</p>
      */
-    inline const RemoteAccountDetails& GetRemoteAccountDetails() const{ return m_remoteAccountDetails; }
+    inline const RemoteAccountDetails& GetRemoteAccountDetails() const { return m_remoteAccountDetails; }
     inline bool RemoteAccountDetailsHasBeenSet() const { return m_remoteAccountDetailsHasBeenSet; }
-    inline void SetRemoteAccountDetails(const RemoteAccountDetails& value) { m_remoteAccountDetailsHasBeenSet = true; m_remoteAccountDetails = value; }
-    inline void SetRemoteAccountDetails(RemoteAccountDetails&& value) { m_remoteAccountDetailsHasBeenSet = true; m_remoteAccountDetails = std::move(value); }
-    inline AwsApiCallAction& WithRemoteAccountDetails(const RemoteAccountDetails& value) { SetRemoteAccountDetails(value); return *this;}
-    inline AwsApiCallAction& WithRemoteAccountDetails(RemoteAccountDetails&& value) { SetRemoteAccountDetails(std::move(value)); return *this;}
+    template<typename RemoteAccountDetailsT = RemoteAccountDetails>
+    void SetRemoteAccountDetails(RemoteAccountDetailsT&& value) { m_remoteAccountDetailsHasBeenSet = true; m_remoteAccountDetails = std::forward<RemoteAccountDetailsT>(value); }
+    template<typename RemoteAccountDetailsT = RemoteAccountDetails>
+    AwsApiCallAction& WithRemoteAccountDetails(RemoteAccountDetailsT&& value) { SetRemoteAccountDetails(std::forward<RemoteAccountDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,19 +144,16 @@ namespace Model
      * <p>The details of the Amazon Web Services account that made the API call. This
      * field identifies the resources that were affected by this API call.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAffectedResources() const{ return m_affectedResources; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAffectedResources() const { return m_affectedResources; }
     inline bool AffectedResourcesHasBeenSet() const { return m_affectedResourcesHasBeenSet; }
-    inline void SetAffectedResources(const Aws::Map<Aws::String, Aws::String>& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources = value; }
-    inline void SetAffectedResources(Aws::Map<Aws::String, Aws::String>&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources = std::move(value); }
-    inline AwsApiCallAction& WithAffectedResources(const Aws::Map<Aws::String, Aws::String>& value) { SetAffectedResources(value); return *this;}
-    inline AwsApiCallAction& WithAffectedResources(Aws::Map<Aws::String, Aws::String>&& value) { SetAffectedResources(std::move(value)); return *this;}
-    inline AwsApiCallAction& AddAffectedResources(const Aws::String& key, const Aws::String& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, value); return *this; }
-    inline AwsApiCallAction& AddAffectedResources(Aws::String&& key, const Aws::String& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::move(key), value); return *this; }
-    inline AwsApiCallAction& AddAffectedResources(const Aws::String& key, Aws::String&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, std::move(value)); return *this; }
-    inline AwsApiCallAction& AddAffectedResources(Aws::String&& key, Aws::String&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsApiCallAction& AddAffectedResources(const char* key, Aws::String&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, std::move(value)); return *this; }
-    inline AwsApiCallAction& AddAffectedResources(Aws::String&& key, const char* value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::move(key), value); return *this; }
-    inline AwsApiCallAction& AddAffectedResources(const char* key, const char* value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, value); return *this; }
+    template<typename AffectedResourcesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAffectedResources(AffectedResourcesT&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources = std::forward<AffectedResourcesT>(value); }
+    template<typename AffectedResourcesT = Aws::Map<Aws::String, Aws::String>>
+    AwsApiCallAction& WithAffectedResources(AffectedResourcesT&& value) { SetAffectedResources(std::forward<AffectedResourcesT>(value)); return *this;}
+    template<typename AffectedResourcesKeyT = Aws::String, typename AffectedResourcesValueT = Aws::String>
+    AwsApiCallAction& AddAffectedResources(AffectedResourcesKeyT&& key, AffectedResourcesValueT&& value) {
+      m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::forward<AffectedResourcesKeyT>(key), std::forward<AffectedResourcesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

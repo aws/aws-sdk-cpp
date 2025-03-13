@@ -18,14 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-SlotMigration::SlotMigration() : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false)
-{
-}
-
 SlotMigration::SlotMigration(JsonView jsonValue)
-  : SlotMigration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SlotMigration& SlotMigration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProgressPercentage"))
   {
     m_progressPercentage = jsonValue.GetDouble("ProgressPercentage");
-
     m_progressPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

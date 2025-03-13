@@ -41,7 +41,7 @@ namespace Model
   class DetectAnomalyResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API DetectAnomalyResult();
+    AWS_LOOKOUTFORVISION_API DetectAnomalyResult() = default;
     AWS_LOOKOUTFORVISION_API DetectAnomalyResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API DetectAnomalyResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * <p>The source of the image that was analyzed. <code>direct</code> means that the
      * images was supplied from the local computer. No other values are supported.</p>
      */
-    inline const ImageSource& GetSource() const{ return m_source; }
+    inline const ImageSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const ImageSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(ImageSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline DetectAnomalyResult& WithSource(const ImageSource& value) { SetSource(value); return *this;}
-    inline DetectAnomalyResult& WithSource(ImageSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = ImageSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = ImageSource>
+    DetectAnomalyResult& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +65,7 @@ namespace Model
      * <p>True if Amazon Lookout for Vision classifies the image as containing an
      * anomaly, otherwise false.</p>
      */
-    inline bool GetIsAnomalous() const{ return m_isAnomalous; }
+    inline bool GetIsAnomalous() const { return m_isAnomalous; }
     inline bool IsAnomalousHasBeenSet() const { return m_isAnomalousHasBeenSet; }
     inline void SetIsAnomalous(bool value) { m_isAnomalousHasBeenSet = true; m_isAnomalous = value; }
     inline DetectAnomalyResult& WithIsAnomalous(bool value) { SetIsAnomalous(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
      * <p>The confidence that Lookout for Vision has in the accuracy of the
      * classification in <code>IsAnomalous</code>.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline DetectAnomalyResult& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -95,14 +95,14 @@ namespace Model
      * found on the image.</p> <p/> <p>An image classification model doesn't return an
      * <code>Anomalies</code> list. </p>
      */
-    inline const Aws::Vector<Anomaly>& GetAnomalies() const{ return m_anomalies; }
+    inline const Aws::Vector<Anomaly>& GetAnomalies() const { return m_anomalies; }
     inline bool AnomaliesHasBeenSet() const { return m_anomaliesHasBeenSet; }
-    inline void SetAnomalies(const Aws::Vector<Anomaly>& value) { m_anomaliesHasBeenSet = true; m_anomalies = value; }
-    inline void SetAnomalies(Aws::Vector<Anomaly>&& value) { m_anomaliesHasBeenSet = true; m_anomalies = std::move(value); }
-    inline DetectAnomalyResult& WithAnomalies(const Aws::Vector<Anomaly>& value) { SetAnomalies(value); return *this;}
-    inline DetectAnomalyResult& WithAnomalies(Aws::Vector<Anomaly>&& value) { SetAnomalies(std::move(value)); return *this;}
-    inline DetectAnomalyResult& AddAnomalies(const Anomaly& value) { m_anomaliesHasBeenSet = true; m_anomalies.push_back(value); return *this; }
-    inline DetectAnomalyResult& AddAnomalies(Anomaly&& value) { m_anomaliesHasBeenSet = true; m_anomalies.push_back(std::move(value)); return *this; }
+    template<typename AnomaliesT = Aws::Vector<Anomaly>>
+    void SetAnomalies(AnomaliesT&& value) { m_anomaliesHasBeenSet = true; m_anomalies = std::forward<AnomaliesT>(value); }
+    template<typename AnomaliesT = Aws::Vector<Anomaly>>
+    DetectAnomalyResult& WithAnomalies(AnomaliesT&& value) { SetAnomalies(std::forward<AnomaliesT>(value)); return *this;}
+    template<typename AnomaliesT = Anomaly>
+    DetectAnomalyResult& AddAnomalies(AnomaliesT&& value) { m_anomaliesHasBeenSet = true; m_anomalies.emplace_back(std::forward<AnomaliesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,28 +113,28 @@ namespace Model
      * the <code>color</code> field of the <a>PixelAnomaly</a> object.</p> <p>An image
      * classification model doesn't return an <code>Anomalies</code> list. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetAnomalyMask() const{ return m_anomalyMask; }
+    inline const Aws::Utils::ByteBuffer& GetAnomalyMask() const { return m_anomalyMask; }
     inline bool AnomalyMaskHasBeenSet() const { return m_anomalyMaskHasBeenSet; }
-    inline void SetAnomalyMask(const Aws::Utils::ByteBuffer& value) { m_anomalyMaskHasBeenSet = true; m_anomalyMask = value; }
-    inline void SetAnomalyMask(Aws::Utils::ByteBuffer&& value) { m_anomalyMaskHasBeenSet = true; m_anomalyMask = std::move(value); }
-    inline DetectAnomalyResult& WithAnomalyMask(const Aws::Utils::ByteBuffer& value) { SetAnomalyMask(value); return *this;}
-    inline DetectAnomalyResult& WithAnomalyMask(Aws::Utils::ByteBuffer&& value) { SetAnomalyMask(std::move(value)); return *this;}
+    template<typename AnomalyMaskT = Aws::Utils::ByteBuffer>
+    void SetAnomalyMask(AnomalyMaskT&& value) { m_anomalyMaskHasBeenSet = true; m_anomalyMask = std::forward<AnomalyMaskT>(value); }
+    template<typename AnomalyMaskT = Aws::Utils::ByteBuffer>
+    DetectAnomalyResult& WithAnomalyMask(AnomalyMaskT&& value) { SetAnomalyMask(std::forward<AnomalyMaskT>(value)); return *this;}
     ///@}
   private:
 
     ImageSource m_source;
     bool m_sourceHasBeenSet = false;
 
-    bool m_isAnomalous;
+    bool m_isAnomalous{false};
     bool m_isAnomalousHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::Vector<Anomaly> m_anomalies;
     bool m_anomaliesHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_anomalyMask;
+    Aws::Utils::ByteBuffer m_anomalyMask{};
     bool m_anomalyMaskHasBeenSet = false;
   };
 

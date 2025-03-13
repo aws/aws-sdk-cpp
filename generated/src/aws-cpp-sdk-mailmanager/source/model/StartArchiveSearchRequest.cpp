@@ -12,16 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartArchiveSearchRequest::StartArchiveSearchRequest() : 
-    m_archiveIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_fromTimestampHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_toTimestampHasBeenSet(false)
-{
-}
-
 Aws::String StartArchiveSearchRequest::SerializePayload() const
 {
   JsonValue payload;

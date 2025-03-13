@@ -35,7 +35,7 @@ namespace Model
   class DescribeCACertificateResult
   {
   public:
-    AWS_IOT_API DescribeCACertificateResult();
+    AWS_IOT_API DescribeCACertificateResult() = default;
     AWS_IOT_API DescribeCACertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeCACertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,41 +44,42 @@ namespace Model
     /**
      * <p>The CA certificate description.</p>
      */
-    inline const CACertificateDescription& GetCertificateDescription() const{ return m_certificateDescription; }
-    inline void SetCertificateDescription(const CACertificateDescription& value) { m_certificateDescription = value; }
-    inline void SetCertificateDescription(CACertificateDescription&& value) { m_certificateDescription = std::move(value); }
-    inline DescribeCACertificateResult& WithCertificateDescription(const CACertificateDescription& value) { SetCertificateDescription(value); return *this;}
-    inline DescribeCACertificateResult& WithCertificateDescription(CACertificateDescription&& value) { SetCertificateDescription(std::move(value)); return *this;}
+    inline const CACertificateDescription& GetCertificateDescription() const { return m_certificateDescription; }
+    template<typename CertificateDescriptionT = CACertificateDescription>
+    void SetCertificateDescription(CertificateDescriptionT&& value) { m_certificateDescriptionHasBeenSet = true; m_certificateDescription = std::forward<CertificateDescriptionT>(value); }
+    template<typename CertificateDescriptionT = CACertificateDescription>
+    DescribeCACertificateResult& WithCertificateDescription(CertificateDescriptionT&& value) { SetCertificateDescription(std::forward<CertificateDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the registration configuration.</p>
      */
-    inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
-    inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfig = value; }
-    inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfig = std::move(value); }
-    inline DescribeCACertificateResult& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
-    inline DescribeCACertificateResult& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
+    inline const RegistrationConfig& GetRegistrationConfig() const { return m_registrationConfig; }
+    template<typename RegistrationConfigT = RegistrationConfig>
+    void SetRegistrationConfig(RegistrationConfigT&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::forward<RegistrationConfigT>(value); }
+    template<typename RegistrationConfigT = RegistrationConfig>
+    DescribeCACertificateResult& WithRegistrationConfig(RegistrationConfigT&& value) { SetRegistrationConfig(std::forward<RegistrationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCACertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCACertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCACertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCACertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CACertificateDescription m_certificateDescription;
+    bool m_certificateDescriptionHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
+    bool m_registrationConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

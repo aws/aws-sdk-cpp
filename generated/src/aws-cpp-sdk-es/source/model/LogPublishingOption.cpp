@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-LogPublishingOption::LogPublishingOption() : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LogPublishingOption::LogPublishingOption(JsonView jsonValue)
-  : LogPublishingOption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LogPublishingOption& LogPublishingOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
   {
     m_cloudWatchLogsLogGroupArn = jsonValue.GetString("CloudWatchLogsLogGroupArn");
-
     m_cloudWatchLogsLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

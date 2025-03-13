@@ -21,7 +21,7 @@ namespace Model
   class DeleteExternalModelRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API DeleteExternalModelRequest();
+    AWS_FRAUDDETECTOR_API DeleteExternalModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The endpoint of the Amazon Sagemaker model to delete.</p>
      */
-    inline const Aws::String& GetModelEndpoint() const{ return m_modelEndpoint; }
+    inline const Aws::String& GetModelEndpoint() const { return m_modelEndpoint; }
     inline bool ModelEndpointHasBeenSet() const { return m_modelEndpointHasBeenSet; }
-    inline void SetModelEndpoint(const Aws::String& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = value; }
-    inline void SetModelEndpoint(Aws::String&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::move(value); }
-    inline void SetModelEndpoint(const char* value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint.assign(value); }
-    inline DeleteExternalModelRequest& WithModelEndpoint(const Aws::String& value) { SetModelEndpoint(value); return *this;}
-    inline DeleteExternalModelRequest& WithModelEndpoint(Aws::String&& value) { SetModelEndpoint(std::move(value)); return *this;}
-    inline DeleteExternalModelRequest& WithModelEndpoint(const char* value) { SetModelEndpoint(value); return *this;}
+    template<typename ModelEndpointT = Aws::String>
+    void SetModelEndpoint(ModelEndpointT&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::forward<ModelEndpointT>(value); }
+    template<typename ModelEndpointT = Aws::String>
+    DeleteExternalModelRequest& WithModelEndpoint(ModelEndpointT&& value) { SetModelEndpoint(std::forward<ModelEndpointT>(value)); return *this;}
     ///@}
   private:
 

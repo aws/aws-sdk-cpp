@@ -31,7 +31,7 @@ namespace Model
   class SchemaTypeProperties
   {
   public:
-    AWS_CLEANROOMS_API SchemaTypeProperties();
+    AWS_CLEANROOMS_API SchemaTypeProperties() = default;
     AWS_CLEANROOMS_API SchemaTypeProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API SchemaTypeProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The ID mapping table for the schema type properties.</p>
      */
-    inline const IdMappingTableSchemaTypeProperties& GetIdMappingTable() const{ return m_idMappingTable; }
+    inline const IdMappingTableSchemaTypeProperties& GetIdMappingTable() const { return m_idMappingTable; }
     inline bool IdMappingTableHasBeenSet() const { return m_idMappingTableHasBeenSet; }
-    inline void SetIdMappingTable(const IdMappingTableSchemaTypeProperties& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = value; }
-    inline void SetIdMappingTable(IdMappingTableSchemaTypeProperties&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::move(value); }
-    inline SchemaTypeProperties& WithIdMappingTable(const IdMappingTableSchemaTypeProperties& value) { SetIdMappingTable(value); return *this;}
-    inline SchemaTypeProperties& WithIdMappingTable(IdMappingTableSchemaTypeProperties&& value) { SetIdMappingTable(std::move(value)); return *this;}
+    template<typename IdMappingTableT = IdMappingTableSchemaTypeProperties>
+    void SetIdMappingTable(IdMappingTableT&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::forward<IdMappingTableT>(value); }
+    template<typename IdMappingTableT = IdMappingTableSchemaTypeProperties>
+    SchemaTypeProperties& WithIdMappingTable(IdMappingTableT&& value) { SetIdMappingTable(std::forward<IdMappingTableT>(value)); return *this;}
     ///@}
   private:
 

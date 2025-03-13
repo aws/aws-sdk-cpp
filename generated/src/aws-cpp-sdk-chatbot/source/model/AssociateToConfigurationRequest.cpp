@@ -12,12 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateToConfigurationRequest::AssociateToConfigurationRequest() : 
-    m_resourceHasBeenSet(false),
-    m_chatConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String AssociateToConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

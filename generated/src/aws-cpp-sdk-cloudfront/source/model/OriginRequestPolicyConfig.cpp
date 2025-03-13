@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginRequestPolicyConfig::OriginRequestPolicyConfig() : 
-    m_commentHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_headersConfigHasBeenSet(false),
-    m_cookiesConfigHasBeenSet(false),
-    m_queryStringsConfigHasBeenSet(false)
-{
-}
-
 OriginRequestPolicyConfig::OriginRequestPolicyConfig(const XmlNode& xmlNode)
-  : OriginRequestPolicyConfig()
 {
   *this = xmlNode;
 }
@@ -46,30 +36,35 @@ OriginRequestPolicyConfig& OriginRequestPolicyConfig::operator =(const XmlNode& 
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
       m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
       m_nameHasBeenSet = true;
+       m_nameHasBeenSet = true;
     }
     XmlNode headersConfigNode = resultNode.FirstChild("HeadersConfig");
     if(!headersConfigNode.IsNull())
     {
       m_headersConfig = headersConfigNode;
       m_headersConfigHasBeenSet = true;
+       m_headersConfigHasBeenSet = true;
     }
     XmlNode cookiesConfigNode = resultNode.FirstChild("CookiesConfig");
     if(!cookiesConfigNode.IsNull())
     {
       m_cookiesConfig = cookiesConfigNode;
       m_cookiesConfigHasBeenSet = true;
+       m_cookiesConfigHasBeenSet = true;
     }
     XmlNode queryStringsConfigNode = resultNode.FirstChild("QueryStringsConfig");
     if(!queryStringsConfigNode.IsNull())
     {
       m_queryStringsConfig = queryStringsConfigNode;
       m_queryStringsConfigHasBeenSet = true;
+       m_queryStringsConfigHasBeenSet = true;
     }
   }
 

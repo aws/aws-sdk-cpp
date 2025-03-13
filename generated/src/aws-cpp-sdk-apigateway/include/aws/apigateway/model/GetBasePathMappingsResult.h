@@ -35,52 +35,51 @@ namespace Model
   class GetBasePathMappingsResult
   {
   public:
-    AWS_APIGATEWAY_API GetBasePathMappingsResult();
+    AWS_APIGATEWAY_API GetBasePathMappingsResult() = default;
     AWS_APIGATEWAY_API GetBasePathMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetBasePathMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::String& value) { m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_position.assign(value); }
-    inline GetBasePathMappingsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetBasePathMappingsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetBasePathMappingsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    inline const Aws::String& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetBasePathMappingsResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current page of elements from this collection.</p>
      */
-    inline const Aws::Vector<BasePathMapping>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<BasePathMapping>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<BasePathMapping>&& value) { m_items = std::move(value); }
-    inline GetBasePathMappingsResult& WithItems(const Aws::Vector<BasePathMapping>& value) { SetItems(value); return *this;}
-    inline GetBasePathMappingsResult& WithItems(Aws::Vector<BasePathMapping>&& value) { SetItems(std::move(value)); return *this;}
-    inline GetBasePathMappingsResult& AddItems(const BasePathMapping& value) { m_items.push_back(value); return *this; }
-    inline GetBasePathMappingsResult& AddItems(BasePathMapping&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BasePathMapping>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<BasePathMapping>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<BasePathMapping>>
+    GetBasePathMappingsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = BasePathMapping>
+    GetBasePathMappingsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBasePathMappingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBasePathMappingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBasePathMappingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBasePathMappingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<BasePathMapping> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

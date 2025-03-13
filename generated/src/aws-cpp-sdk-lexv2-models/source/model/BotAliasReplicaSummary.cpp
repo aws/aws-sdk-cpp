@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotAliasReplicaSummary::BotAliasReplicaSummary() : 
-    m_botAliasIdHasBeenSet(false),
-    m_botAliasReplicationStatus(BotAliasReplicationStatus::NOT_SET),
-    m_botAliasReplicationStatusHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonsHasBeenSet(false)
-{
-}
-
 BotAliasReplicaSummary::BotAliasReplicaSummary(JsonView jsonValue)
-  : BotAliasReplicaSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ BotAliasReplicaSummary& BotAliasReplicaSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("botAliasId"))
   {
     m_botAliasId = jsonValue.GetString("botAliasId");
-
     m_botAliasIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botAliasReplicationStatus"))
   {
     m_botAliasReplicationStatus = BotAliasReplicationStatusMapper::GetBotAliasReplicationStatusForName(jsonValue.GetString("botAliasReplicationStatus"));
-
     m_botAliasReplicationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReasons"))
   {
     Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
@@ -81,7 +59,6 @@ BotAliasReplicaSummary& BotAliasReplicaSummary::operator =(JsonView jsonValue)
     }
     m_failureReasonsHasBeenSet = true;
   }
-
   return *this;
 }
 

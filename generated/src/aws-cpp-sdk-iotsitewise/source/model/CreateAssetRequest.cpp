@@ -12,18 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssetRequest::CreateAssetRequest() : 
-    m_assetNameHasBeenSet(false),
-    m_assetModelIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_assetDescriptionHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_assetExternalIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssetRequest::SerializePayload() const
 {
   JsonValue payload;

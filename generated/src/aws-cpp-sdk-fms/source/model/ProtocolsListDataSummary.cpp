@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-ProtocolsListDataSummary::ProtocolsListDataSummary() : 
-    m_listArnHasBeenSet(false),
-    m_listIdHasBeenSet(false),
-    m_listNameHasBeenSet(false),
-    m_protocolsListHasBeenSet(false)
-{
-}
-
 ProtocolsListDataSummary::ProtocolsListDataSummary(JsonView jsonValue)
-  : ProtocolsListDataSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProtocolsListDataSummary& ProtocolsListDataSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ListArn"))
   {
     m_listArn = jsonValue.GetString("ListArn");
-
     m_listArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListId"))
   {
     m_listId = jsonValue.GetString("ListId");
-
     m_listIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListName"))
   {
     m_listName = jsonValue.GetString("ListName");
-
     m_listNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtocolsList"))
   {
     Aws::Utils::Array<JsonView> protocolsListJsonList = jsonValue.GetArray("ProtocolsList");
@@ -64,7 +49,6 @@ ProtocolsListDataSummary& ProtocolsListDataSummary::operator =(JsonView jsonValu
     }
     m_protocolsListHasBeenSet = true;
   }
-
   return *this;
 }
 

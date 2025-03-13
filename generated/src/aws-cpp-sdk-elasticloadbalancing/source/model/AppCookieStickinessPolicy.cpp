@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-AppCookieStickinessPolicy::AppCookieStickinessPolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_cookieNameHasBeenSet(false)
-{
-}
-
 AppCookieStickinessPolicy::AppCookieStickinessPolicy(const XmlNode& xmlNode)
-  : AppCookieStickinessPolicy()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ AppCookieStickinessPolicy& AppCookieStickinessPolicy::operator =(const XmlNode& 
     {
       m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
       m_policyNameHasBeenSet = true;
+       m_policyNameHasBeenSet = true;
     }
     XmlNode cookieNameNode = resultNode.FirstChild("CookieName");
     if(!cookieNameNode.IsNull())
     {
       m_cookieName = Aws::Utils::Xml::DecodeEscapedXmlText(cookieNameNode.GetText());
       m_cookieNameHasBeenSet = true;
+       m_cookieNameHasBeenSet = true;
     }
   }
 

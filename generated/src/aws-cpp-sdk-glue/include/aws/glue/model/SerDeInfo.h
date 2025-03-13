@@ -33,7 +33,7 @@ namespace Model
   class SerDeInfo
   {
   public:
-    AWS_GLUE_API SerDeInfo();
+    AWS_GLUE_API SerDeInfo() = default;
     AWS_GLUE_API SerDeInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API SerDeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Name of the SerDe.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SerDeInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SerDeInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SerDeInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SerDeInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,33 +56,28 @@ namespace Model
      * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
-    inline const Aws::String& GetSerializationLibrary() const{ return m_serializationLibrary; }
+    inline const Aws::String& GetSerializationLibrary() const { return m_serializationLibrary; }
     inline bool SerializationLibraryHasBeenSet() const { return m_serializationLibraryHasBeenSet; }
-    inline void SetSerializationLibrary(const Aws::String& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = value; }
-    inline void SetSerializationLibrary(Aws::String&& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = std::move(value); }
-    inline void SetSerializationLibrary(const char* value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary.assign(value); }
-    inline SerDeInfo& WithSerializationLibrary(const Aws::String& value) { SetSerializationLibrary(value); return *this;}
-    inline SerDeInfo& WithSerializationLibrary(Aws::String&& value) { SetSerializationLibrary(std::move(value)); return *this;}
-    inline SerDeInfo& WithSerializationLibrary(const char* value) { SetSerializationLibrary(value); return *this;}
+    template<typename SerializationLibraryT = Aws::String>
+    void SetSerializationLibrary(SerializationLibraryT&& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = std::forward<SerializationLibraryT>(value); }
+    template<typename SerializationLibraryT = Aws::String>
+    SerDeInfo& WithSerializationLibrary(SerializationLibraryT&& value) { SetSerializationLibrary(std::forward<SerializationLibraryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline SerDeInfo& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline SerDeInfo& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline SerDeInfo& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline SerDeInfo& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline SerDeInfo& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SerDeInfo& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline SerDeInfo& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline SerDeInfo& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline SerDeInfo& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    SerDeInfo& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    SerDeInfo& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

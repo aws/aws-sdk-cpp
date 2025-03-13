@@ -18,22 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-SecurityControlDefinition::SecurityControlDefinition() : 
-    m_securityControlIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_remediationUrlHasBeenSet(false),
-    m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false),
-    m_currentRegionAvailability(RegionAvailabilityStatus::NOT_SET),
-    m_currentRegionAvailabilityHasBeenSet(false),
-    m_customizablePropertiesHasBeenSet(false),
-    m_parameterDefinitionsHasBeenSet(false)
-{
-}
-
 SecurityControlDefinition::SecurityControlDefinition(JsonView jsonValue)
-  : SecurityControlDefinition()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ SecurityControlDefinition& SecurityControlDefinition::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SecurityControlId"))
   {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
-
     m_securityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RemediationUrl"))
   {
     m_remediationUrl = jsonValue.GetString("RemediationUrl");
-
     m_remediationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SeverityRating"))
   {
     m_severityRating = SeverityRatingMapper::GetSeverityRatingForName(jsonValue.GetString("SeverityRating"));
-
     m_severityRatingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentRegionAvailability"))
   {
     m_currentRegionAvailability = RegionAvailabilityStatusMapper::GetRegionAvailabilityStatusForName(jsonValue.GetString("CurrentRegionAvailability"));
-
     m_currentRegionAvailabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizableProperties"))
   {
     Aws::Utils::Array<JsonView> customizablePropertiesJsonList = jsonValue.GetArray("CustomizableProperties");
@@ -91,7 +64,6 @@ SecurityControlDefinition& SecurityControlDefinition::operator =(JsonView jsonVa
     }
     m_customizablePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterDefinitions"))
   {
     Aws::Map<Aws::String, JsonView> parameterDefinitionsJsonMap = jsonValue.GetObject("ParameterDefinitions").GetAllObjects();
@@ -101,7 +73,6 @@ SecurityControlDefinition& SecurityControlDefinition::operator =(JsonView jsonVa
     }
     m_parameterDefinitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class UsageTopAccountsResult
   {
   public:
-    AWS_GUARDDUTY_API UsageTopAccountsResult();
+    AWS_GUARDDUTY_API UsageTopAccountsResult() = default;
     AWS_GUARDDUTY_API UsageTopAccountsResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API UsageTopAccountsResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,30 +46,28 @@ namespace Model
      * <code>RDS_LOGIN_EVENTS</code> is currently not supported with
      * <code>topAccountsByFeature</code>.</p>
      */
-    inline const UsageFeature& GetFeature() const{ return m_feature; }
+    inline UsageFeature GetFeature() const { return m_feature; }
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-    inline void SetFeature(const UsageFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
-    inline void SetFeature(UsageFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-    inline UsageTopAccountsResult& WithFeature(const UsageFeature& value) { SetFeature(value); return *this;}
-    inline UsageTopAccountsResult& WithFeature(UsageFeature&& value) { SetFeature(std::move(value)); return *this;}
+    inline void SetFeature(UsageFeature value) { m_featureHasBeenSet = true; m_feature = value; }
+    inline UsageTopAccountsResult& WithFeature(UsageFeature value) { SetFeature(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The accounts that contributed to the total usage cost.</p>
      */
-    inline const Aws::Vector<UsageTopAccountResult>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<UsageTopAccountResult>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<UsageTopAccountResult>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<UsageTopAccountResult>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline UsageTopAccountsResult& WithAccounts(const Aws::Vector<UsageTopAccountResult>& value) { SetAccounts(value); return *this;}
-    inline UsageTopAccountsResult& WithAccounts(Aws::Vector<UsageTopAccountResult>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline UsageTopAccountsResult& AddAccounts(const UsageTopAccountResult& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline UsageTopAccountsResult& AddAccounts(UsageTopAccountResult&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
+    template<typename AccountsT = Aws::Vector<UsageTopAccountResult>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<UsageTopAccountResult>>
+    UsageTopAccountsResult& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = UsageTopAccountResult>
+    UsageTopAccountsResult& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
   private:
 
-    UsageFeature m_feature;
+    UsageFeature m_feature{UsageFeature::NOT_SET};
     bool m_featureHasBeenSet = false;
 
     Aws::Vector<UsageTopAccountResult> m_accounts;

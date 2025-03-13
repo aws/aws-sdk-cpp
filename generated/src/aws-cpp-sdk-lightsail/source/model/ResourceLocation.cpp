@@ -18,15 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ResourceLocation::ResourceLocation() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_regionName(RegionName::NOT_SET),
-    m_regionNameHasBeenSet(false)
-{
-}
-
 ResourceLocation::ResourceLocation(JsonView jsonValue)
-  : ResourceLocation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceLocation& ResourceLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regionName"))
   {
     m_regionName = RegionNameMapper::GetRegionNameForName(jsonValue.GetString("regionName"));
-
     m_regionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

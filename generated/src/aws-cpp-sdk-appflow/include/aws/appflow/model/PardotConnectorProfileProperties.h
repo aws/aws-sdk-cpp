@@ -32,7 +32,7 @@ namespace Model
   class PardotConnectorProfileProperties
   {
   public:
-    AWS_APPFLOW_API PardotConnectorProfileProperties();
+    AWS_APPFLOW_API PardotConnectorProfileProperties() = default;
     AWS_APPFLOW_API PardotConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API PardotConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The location of the Salesforce Pardot resource.</p>
      */
-    inline const Aws::String& GetInstanceUrl() const{ return m_instanceUrl; }
+    inline const Aws::String& GetInstanceUrl() const { return m_instanceUrl; }
     inline bool InstanceUrlHasBeenSet() const { return m_instanceUrlHasBeenSet; }
-    inline void SetInstanceUrl(const Aws::String& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = value; }
-    inline void SetInstanceUrl(Aws::String&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::move(value); }
-    inline void SetInstanceUrl(const char* value) { m_instanceUrlHasBeenSet = true; m_instanceUrl.assign(value); }
-    inline PardotConnectorProfileProperties& WithInstanceUrl(const Aws::String& value) { SetInstanceUrl(value); return *this;}
-    inline PardotConnectorProfileProperties& WithInstanceUrl(Aws::String&& value) { SetInstanceUrl(std::move(value)); return *this;}
-    inline PardotConnectorProfileProperties& WithInstanceUrl(const char* value) { SetInstanceUrl(value); return *this;}
+    template<typename InstanceUrlT = Aws::String>
+    void SetInstanceUrl(InstanceUrlT&& value) { m_instanceUrlHasBeenSet = true; m_instanceUrl = std::forward<InstanceUrlT>(value); }
+    template<typename InstanceUrlT = Aws::String>
+    PardotConnectorProfileProperties& WithInstanceUrl(InstanceUrlT&& value) { SetInstanceUrl(std::forward<InstanceUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>Indicates whether the connector profile applies to a sandbox or production
      * environment.</p>
      */
-    inline bool GetIsSandboxEnvironment() const{ return m_isSandboxEnvironment; }
+    inline bool GetIsSandboxEnvironment() const { return m_isSandboxEnvironment; }
     inline bool IsSandboxEnvironmentHasBeenSet() const { return m_isSandboxEnvironmentHasBeenSet; }
     inline void SetIsSandboxEnvironment(bool value) { m_isSandboxEnvironmentHasBeenSet = true; m_isSandboxEnvironment = value; }
     inline PardotConnectorProfileProperties& WithIsSandboxEnvironment(bool value) { SetIsSandboxEnvironment(value); return *this;}
@@ -67,21 +65,19 @@ namespace Model
     /**
      * <p>The business unit id of Salesforce Pardot instance.</p>
      */
-    inline const Aws::String& GetBusinessUnitId() const{ return m_businessUnitId; }
+    inline const Aws::String& GetBusinessUnitId() const { return m_businessUnitId; }
     inline bool BusinessUnitIdHasBeenSet() const { return m_businessUnitIdHasBeenSet; }
-    inline void SetBusinessUnitId(const Aws::String& value) { m_businessUnitIdHasBeenSet = true; m_businessUnitId = value; }
-    inline void SetBusinessUnitId(Aws::String&& value) { m_businessUnitIdHasBeenSet = true; m_businessUnitId = std::move(value); }
-    inline void SetBusinessUnitId(const char* value) { m_businessUnitIdHasBeenSet = true; m_businessUnitId.assign(value); }
-    inline PardotConnectorProfileProperties& WithBusinessUnitId(const Aws::String& value) { SetBusinessUnitId(value); return *this;}
-    inline PardotConnectorProfileProperties& WithBusinessUnitId(Aws::String&& value) { SetBusinessUnitId(std::move(value)); return *this;}
-    inline PardotConnectorProfileProperties& WithBusinessUnitId(const char* value) { SetBusinessUnitId(value); return *this;}
+    template<typename BusinessUnitIdT = Aws::String>
+    void SetBusinessUnitId(BusinessUnitIdT&& value) { m_businessUnitIdHasBeenSet = true; m_businessUnitId = std::forward<BusinessUnitIdT>(value); }
+    template<typename BusinessUnitIdT = Aws::String>
+    PardotConnectorProfileProperties& WithBusinessUnitId(BusinessUnitIdT&& value) { SetBusinessUnitId(std::forward<BusinessUnitIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceUrl;
     bool m_instanceUrlHasBeenSet = false;
 
-    bool m_isSandboxEnvironment;
+    bool m_isSandboxEnvironment{false};
     bool m_isSandboxEnvironmentHasBeenSet = false;
 
     Aws::String m_businessUnitId;

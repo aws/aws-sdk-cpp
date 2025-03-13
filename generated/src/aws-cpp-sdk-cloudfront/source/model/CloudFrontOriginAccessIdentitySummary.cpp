@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary() : 
-    m_idHasBeenSet(false),
-    m_s3CanonicalUserIdHasBeenSet(false),
-    m_commentHasBeenSet(false)
-{
-}
-
 CloudFrontOriginAccessIdentitySummary::CloudFrontOriginAccessIdentitySummary(const XmlNode& xmlNode)
-  : CloudFrontOriginAccessIdentitySummary()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ CloudFrontOriginAccessIdentitySummary& CloudFrontOriginAccessIdentitySummary::op
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode s3CanonicalUserIdNode = resultNode.FirstChild("S3CanonicalUserId");
     if(!s3CanonicalUserIdNode.IsNull())
     {
       m_s3CanonicalUserId = Aws::Utils::Xml::DecodeEscapedXmlText(s3CanonicalUserIdNode.GetText());
       m_s3CanonicalUserIdHasBeenSet = true;
+       m_s3CanonicalUserIdHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
     if(!commentNode.IsNull())
     {
       m_comment = Aws::Utils::Xml::DecodeEscapedXmlText(commentNode.GetText());
       m_commentHasBeenSet = true;
+       m_commentHasBeenSet = true;
     }
   }
 

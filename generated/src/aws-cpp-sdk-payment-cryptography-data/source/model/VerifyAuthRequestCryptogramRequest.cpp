@@ -12,17 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifyAuthRequestCryptogramRequest::VerifyAuthRequestCryptogramRequest() : 
-    m_keyIdentifierHasBeenSet(false),
-    m_transactionDataHasBeenSet(false),
-    m_authRequestCryptogramHasBeenSet(false),
-    m_majorKeyDerivationMode(MajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_sessionKeyDerivationAttributesHasBeenSet(false),
-    m_authResponseAttributesHasBeenSet(false)
-{
-}
-
 Aws::String VerifyAuthRequestCryptogramRequest::SerializePayload() const
 {
   JsonValue payload;

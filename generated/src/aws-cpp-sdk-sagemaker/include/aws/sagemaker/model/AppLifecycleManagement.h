@@ -32,7 +32,7 @@ namespace Model
   class AppLifecycleManagement
   {
   public:
-    AWS_SAGEMAKER_API AppLifecycleManagement();
+    AWS_SAGEMAKER_API AppLifecycleManagement() = default;
     AWS_SAGEMAKER_API AppLifecycleManagement(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AppLifecycleManagement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Settings related to idle shutdown of Studio applications.</p>
      */
-    inline const IdleSettings& GetIdleSettings() const{ return m_idleSettings; }
+    inline const IdleSettings& GetIdleSettings() const { return m_idleSettings; }
     inline bool IdleSettingsHasBeenSet() const { return m_idleSettingsHasBeenSet; }
-    inline void SetIdleSettings(const IdleSettings& value) { m_idleSettingsHasBeenSet = true; m_idleSettings = value; }
-    inline void SetIdleSettings(IdleSettings&& value) { m_idleSettingsHasBeenSet = true; m_idleSettings = std::move(value); }
-    inline AppLifecycleManagement& WithIdleSettings(const IdleSettings& value) { SetIdleSettings(value); return *this;}
-    inline AppLifecycleManagement& WithIdleSettings(IdleSettings&& value) { SetIdleSettings(std::move(value)); return *this;}
+    template<typename IdleSettingsT = IdleSettings>
+    void SetIdleSettings(IdleSettingsT&& value) { m_idleSettingsHasBeenSet = true; m_idleSettings = std::forward<IdleSettingsT>(value); }
+    template<typename IdleSettingsT = IdleSettings>
+    AppLifecycleManagement& WithIdleSettings(IdleSettingsT&& value) { SetIdleSettings(std::forward<IdleSettingsT>(value)); return *this;}
     ///@}
   private:
 

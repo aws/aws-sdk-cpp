@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-TableToReload::TableToReload() : 
-    m_schemaNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
-{
-}
-
 TableToReload::TableToReload(JsonView jsonValue)
-  : TableToReload()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableToReload& TableToReload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   return *this;
 }
 

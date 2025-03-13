@@ -37,7 +37,7 @@ namespace Model
   class BlockPublicAccessConfigurationMetadata
   {
   public:
-    AWS_EMR_API BlockPublicAccessConfigurationMetadata();
+    AWS_EMR_API BlockPublicAccessConfigurationMetadata() = default;
     AWS_EMR_API BlockPublicAccessConfigurationMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API BlockPublicAccessConfigurationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,30 +47,28 @@ namespace Model
     /**
      * <p>The date and time that the configuration was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline BlockPublicAccessConfigurationMetadata& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline BlockPublicAccessConfigurationMetadata& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    BlockPublicAccessConfigurationMetadata& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name that created or last modified the configuration.</p>
      */
-    inline const Aws::String& GetCreatedByArn() const{ return m_createdByArn; }
+    inline const Aws::String& GetCreatedByArn() const { return m_createdByArn; }
     inline bool CreatedByArnHasBeenSet() const { return m_createdByArnHasBeenSet; }
-    inline void SetCreatedByArn(const Aws::String& value) { m_createdByArnHasBeenSet = true; m_createdByArn = value; }
-    inline void SetCreatedByArn(Aws::String&& value) { m_createdByArnHasBeenSet = true; m_createdByArn = std::move(value); }
-    inline void SetCreatedByArn(const char* value) { m_createdByArnHasBeenSet = true; m_createdByArn.assign(value); }
-    inline BlockPublicAccessConfigurationMetadata& WithCreatedByArn(const Aws::String& value) { SetCreatedByArn(value); return *this;}
-    inline BlockPublicAccessConfigurationMetadata& WithCreatedByArn(Aws::String&& value) { SetCreatedByArn(std::move(value)); return *this;}
-    inline BlockPublicAccessConfigurationMetadata& WithCreatedByArn(const char* value) { SetCreatedByArn(value); return *this;}
+    template<typename CreatedByArnT = Aws::String>
+    void SetCreatedByArn(CreatedByArnT&& value) { m_createdByArnHasBeenSet = true; m_createdByArn = std::forward<CreatedByArnT>(value); }
+    template<typename CreatedByArnT = Aws::String>
+    BlockPublicAccessConfigurationMetadata& WithCreatedByArn(CreatedByArnT&& value) { SetCreatedByArn(std::forward<CreatedByArnT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_createdByArn;

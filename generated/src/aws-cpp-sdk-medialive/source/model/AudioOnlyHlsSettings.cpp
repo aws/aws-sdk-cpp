@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AudioOnlyHlsSettings::AudioOnlyHlsSettings() : 
-    m_audioGroupIdHasBeenSet(false),
-    m_audioOnlyImageHasBeenSet(false),
-    m_audioTrackType(AudioOnlyHlsTrackType::NOT_SET),
-    m_audioTrackTypeHasBeenSet(false),
-    m_segmentType(AudioOnlyHlsSegmentType::NOT_SET),
-    m_segmentTypeHasBeenSet(false)
-{
-}
-
 AudioOnlyHlsSettings::AudioOnlyHlsSettings(JsonView jsonValue)
-  : AudioOnlyHlsSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AudioOnlyHlsSettings& AudioOnlyHlsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioGroupId"))
   {
     m_audioGroupId = jsonValue.GetString("audioGroupId");
-
     m_audioGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioOnlyImage"))
   {
     m_audioOnlyImage = jsonValue.GetObject("audioOnlyImage");
-
     m_audioOnlyImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioTrackType"))
   {
     m_audioTrackType = AudioOnlyHlsTrackTypeMapper::GetAudioOnlyHlsTrackTypeForName(jsonValue.GetString("audioTrackType"));
-
     m_audioTrackTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentType"))
   {
     m_segmentType = AudioOnlyHlsSegmentTypeMapper::GetAudioOnlyHlsSegmentTypeForName(jsonValue.GetString("segmentType"));
-
     m_segmentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

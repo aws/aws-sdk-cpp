@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceRecommendationsJobStep::InferenceRecommendationsJobStep() : 
-    m_stepType(RecommendationStepType::NOT_SET),
-    m_stepTypeHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_status(RecommendationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_inferenceBenchmarkHasBeenSet(false)
-{
-}
-
 InferenceRecommendationsJobStep::InferenceRecommendationsJobStep(JsonView jsonValue)
-  : InferenceRecommendationsJobStep()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ InferenceRecommendationsJobStep& InferenceRecommendationsJobStep::operator =(Jso
   if(jsonValue.ValueExists("StepType"))
   {
     m_stepType = RecommendationStepTypeMapper::GetRecommendationStepTypeForName(jsonValue.GetString("StepType"));
-
     m_stepTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RecommendationJobStatusMapper::GetRecommendationJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceBenchmark"))
   {
     m_inferenceBenchmark = jsonValue.GetObject("InferenceBenchmark");
-
     m_inferenceBenchmarkHasBeenSet = true;
   }
-
   return *this;
 }
 

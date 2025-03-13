@@ -34,7 +34,7 @@ namespace Model
   class ManagedWorkgroupListItem
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ManagedWorkgroupListItem();
+    AWS_REDSHIFTSERVERLESS_API ManagedWorkgroupListItem() = default;
     AWS_REDSHIFTSERVERLESS_API ManagedWorkgroupListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API ManagedWorkgroupListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The creation date of the managed workgroup.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline ManagedWorkgroupListItem& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline ManagedWorkgroupListItem& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    ManagedWorkgroupListItem& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the managed workgroup.</p>
      */
-    inline const Aws::String& GetManagedWorkgroupId() const{ return m_managedWorkgroupId; }
+    inline const Aws::String& GetManagedWorkgroupId() const { return m_managedWorkgroupId; }
     inline bool ManagedWorkgroupIdHasBeenSet() const { return m_managedWorkgroupIdHasBeenSet; }
-    inline void SetManagedWorkgroupId(const Aws::String& value) { m_managedWorkgroupIdHasBeenSet = true; m_managedWorkgroupId = value; }
-    inline void SetManagedWorkgroupId(Aws::String&& value) { m_managedWorkgroupIdHasBeenSet = true; m_managedWorkgroupId = std::move(value); }
-    inline void SetManagedWorkgroupId(const char* value) { m_managedWorkgroupIdHasBeenSet = true; m_managedWorkgroupId.assign(value); }
-    inline ManagedWorkgroupListItem& WithManagedWorkgroupId(const Aws::String& value) { SetManagedWorkgroupId(value); return *this;}
-    inline ManagedWorkgroupListItem& WithManagedWorkgroupId(Aws::String&& value) { SetManagedWorkgroupId(std::move(value)); return *this;}
-    inline ManagedWorkgroupListItem& WithManagedWorkgroupId(const char* value) { SetManagedWorkgroupId(value); return *this;}
+    template<typename ManagedWorkgroupIdT = Aws::String>
+    void SetManagedWorkgroupId(ManagedWorkgroupIdT&& value) { m_managedWorkgroupIdHasBeenSet = true; m_managedWorkgroupId = std::forward<ManagedWorkgroupIdT>(value); }
+    template<typename ManagedWorkgroupIdT = Aws::String>
+    ManagedWorkgroupListItem& WithManagedWorkgroupId(ManagedWorkgroupIdT&& value) { SetManagedWorkgroupId(std::forward<ManagedWorkgroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the managed workgroup.</p>
      */
-    inline const Aws::String& GetManagedWorkgroupName() const{ return m_managedWorkgroupName; }
+    inline const Aws::String& GetManagedWorkgroupName() const { return m_managedWorkgroupName; }
     inline bool ManagedWorkgroupNameHasBeenSet() const { return m_managedWorkgroupNameHasBeenSet; }
-    inline void SetManagedWorkgroupName(const Aws::String& value) { m_managedWorkgroupNameHasBeenSet = true; m_managedWorkgroupName = value; }
-    inline void SetManagedWorkgroupName(Aws::String&& value) { m_managedWorkgroupNameHasBeenSet = true; m_managedWorkgroupName = std::move(value); }
-    inline void SetManagedWorkgroupName(const char* value) { m_managedWorkgroupNameHasBeenSet = true; m_managedWorkgroupName.assign(value); }
-    inline ManagedWorkgroupListItem& WithManagedWorkgroupName(const Aws::String& value) { SetManagedWorkgroupName(value); return *this;}
-    inline ManagedWorkgroupListItem& WithManagedWorkgroupName(Aws::String&& value) { SetManagedWorkgroupName(std::move(value)); return *this;}
-    inline ManagedWorkgroupListItem& WithManagedWorkgroupName(const char* value) { SetManagedWorkgroupName(value); return *this;}
+    template<typename ManagedWorkgroupNameT = Aws::String>
+    void SetManagedWorkgroupName(ManagedWorkgroupNameT&& value) { m_managedWorkgroupNameHasBeenSet = true; m_managedWorkgroupName = std::forward<ManagedWorkgroupNameT>(value); }
+    template<typename ManagedWorkgroupNameT = Aws::String>
+    ManagedWorkgroupListItem& WithManagedWorkgroupName(ManagedWorkgroupNameT&& value) { SetManagedWorkgroupName(std::forward<ManagedWorkgroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,30 +81,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the managed workgroup in the AWS Glue Data
      * Catalog.</p>
      */
-    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+    inline const Aws::String& GetSourceArn() const { return m_sourceArn; }
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-    inline ManagedWorkgroupListItem& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-    inline ManagedWorkgroupListItem& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-    inline ManagedWorkgroupListItem& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    template<typename SourceArnT = Aws::String>
+    void SetSourceArn(SourceArnT&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::forward<SourceArnT>(value); }
+    template<typename SourceArnT = Aws::String>
+    ManagedWorkgroupListItem& WithSourceArn(SourceArnT&& value) { SetSourceArn(std::forward<SourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the managed workgroup.</p>
      */
-    inline const ManagedWorkgroupStatus& GetStatus() const{ return m_status; }
+    inline ManagedWorkgroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ManagedWorkgroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ManagedWorkgroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ManagedWorkgroupListItem& WithStatus(const ManagedWorkgroupStatus& value) { SetStatus(value); return *this;}
-    inline ManagedWorkgroupListItem& WithStatus(ManagedWorkgroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ManagedWorkgroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ManagedWorkgroupListItem& WithStatus(ManagedWorkgroupStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     Aws::String m_managedWorkgroupId;
@@ -120,7 +112,7 @@ namespace Model
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet = false;
 
-    ManagedWorkgroupStatus m_status;
+    ManagedWorkgroupStatus m_status{ManagedWorkgroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

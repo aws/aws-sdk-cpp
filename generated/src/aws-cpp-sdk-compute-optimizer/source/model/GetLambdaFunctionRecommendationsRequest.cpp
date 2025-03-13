@@ -12,16 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLambdaFunctionRecommendationsRequest::GetLambdaFunctionRecommendationsRequest() : 
-    m_functionArnsHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetLambdaFunctionRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

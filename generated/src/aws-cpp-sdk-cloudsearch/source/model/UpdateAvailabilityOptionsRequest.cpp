@@ -10,13 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-UpdateAvailabilityOptionsRequest::UpdateAvailabilityOptionsRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

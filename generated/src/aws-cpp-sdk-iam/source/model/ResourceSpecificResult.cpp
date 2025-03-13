@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ResourceSpecificResult::ResourceSpecificResult() : 
-    m_evalResourceNameHasBeenSet(false),
-    m_evalResourceDecision(PolicyEvaluationDecisionType::NOT_SET),
-    m_evalResourceDecisionHasBeenSet(false),
-    m_matchedStatementsHasBeenSet(false),
-    m_missingContextValuesHasBeenSet(false),
-    m_evalDecisionDetailsHasBeenSet(false),
-    m_permissionsBoundaryDecisionDetailHasBeenSet(false)
-{
-}
-
 ResourceSpecificResult::ResourceSpecificResult(const XmlNode& xmlNode)
-  : ResourceSpecificResult()
 {
   *this = xmlNode;
 }
@@ -48,42 +36,47 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
     {
       m_evalResourceName = Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceNameNode.GetText());
       m_evalResourceNameHasBeenSet = true;
+       m_evalResourceNameHasBeenSet = true;
     }
     XmlNode evalResourceDecisionNode = resultNode.FirstChild("EvalResourceDecision");
     if(!evalResourceDecisionNode.IsNull())
     {
-      m_evalResourceDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceDecisionNode.GetText()).c_str()).c_str());
+      m_evalResourceDecision = PolicyEvaluationDecisionTypeMapper::GetPolicyEvaluationDecisionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evalResourceDecisionNode.GetText()).c_str()));
       m_evalResourceDecisionHasBeenSet = true;
+       m_evalResourceDecisionHasBeenSet = true;
     }
     XmlNode matchedStatementsNode = resultNode.FirstChild("MatchedStatements");
     if(!matchedStatementsNode.IsNull())
     {
       XmlNode matchedStatementsMember = matchedStatementsNode.FirstChild("member");
+      m_matchedStatementsHasBeenSet = !matchedStatementsMember.IsNull();
       while(!matchedStatementsMember.IsNull())
       {
         m_matchedStatements.push_back(matchedStatementsMember);
         matchedStatementsMember = matchedStatementsMember.NextNode("member");
       }
 
-      m_matchedStatementsHasBeenSet = true;
+       m_matchedStatementsHasBeenSet = true;
     }
     XmlNode missingContextValuesNode = resultNode.FirstChild("MissingContextValues");
     if(!missingContextValuesNode.IsNull())
     {
       XmlNode missingContextValuesMember = missingContextValuesNode.FirstChild("member");
+      m_missingContextValuesHasBeenSet = !missingContextValuesMember.IsNull();
       while(!missingContextValuesMember.IsNull())
       {
         m_missingContextValues.push_back(missingContextValuesMember.GetText());
         missingContextValuesMember = missingContextValuesMember.NextNode("member");
       }
 
-      m_missingContextValuesHasBeenSet = true;
+       m_missingContextValuesHasBeenSet = true;
     }
     XmlNode evalDecisionDetailsNode = resultNode.FirstChild("EvalDecisionDetails");
 
     if(!evalDecisionDetailsNode.IsNull())
     {
       XmlNode evalDecisionDetailsEntry = evalDecisionDetailsNode.FirstChild("entry");
+      m_evalDecisionDetailsHasBeenSet = !evalDecisionDetailsEntry.IsNull();
       while(!evalDecisionDetailsEntry.IsNull())
       {
         XmlNode keyNode = evalDecisionDetailsEntry.FirstChild("key");
@@ -93,13 +86,14 @@ ResourceSpecificResult& ResourceSpecificResult::operator =(const XmlNode& xmlNod
         evalDecisionDetailsEntry = evalDecisionDetailsEntry.NextNode("entry");
       }
 
-      m_evalDecisionDetailsHasBeenSet = true;
+       m_evalDecisionDetailsHasBeenSet = true;
     }
     XmlNode permissionsBoundaryDecisionDetailNode = resultNode.FirstChild("PermissionsBoundaryDecisionDetail");
     if(!permissionsBoundaryDecisionDetailNode.IsNull())
     {
       m_permissionsBoundaryDecisionDetail = permissionsBoundaryDecisionDetailNode;
       m_permissionsBoundaryDecisionDetailHasBeenSet = true;
+       m_permissionsBoundaryDecisionDetailHasBeenSet = true;
     }
   }
 

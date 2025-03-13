@@ -20,35 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpoint::VerifiedAccessEndpoint() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_applicationDomainHasBeenSet(false),
-    m_endpointType(VerifiedAccessEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_attachmentType(VerifiedAccessEndpointAttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_domainCertificateArnHasBeenSet(false),
-    m_endpointDomainHasBeenSet(false),
-    m_deviceValidationDomainHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_loadBalancerOptionsHasBeenSet(false),
-    m_networkInterfaceOptionsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false),
-    m_rdsOptionsHasBeenSet(false),
-    m_cidrOptionsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpoint::VerifiedAccessEndpoint(const XmlNode& xmlNode)
-  : VerifiedAccessEndpoint()
 {
   *this = xmlNode;
 }
@@ -64,138 +36,159 @@ VerifiedAccessEndpoint& VerifiedAccessEndpoint::operator =(const XmlNode& xmlNod
     {
       m_verifiedAccessInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessInstanceIdNode.GetText());
       m_verifiedAccessInstanceIdHasBeenSet = true;
+       m_verifiedAccessInstanceIdHasBeenSet = true;
     }
     XmlNode verifiedAccessGroupIdNode = resultNode.FirstChild("verifiedAccessGroupId");
     if(!verifiedAccessGroupIdNode.IsNull())
     {
       m_verifiedAccessGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessGroupIdNode.GetText());
       m_verifiedAccessGroupIdHasBeenSet = true;
+       m_verifiedAccessGroupIdHasBeenSet = true;
     }
     XmlNode verifiedAccessEndpointIdNode = resultNode.FirstChild("verifiedAccessEndpointId");
     if(!verifiedAccessEndpointIdNode.IsNull())
     {
       m_verifiedAccessEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(verifiedAccessEndpointIdNode.GetText());
       m_verifiedAccessEndpointIdHasBeenSet = true;
+       m_verifiedAccessEndpointIdHasBeenSet = true;
     }
     XmlNode applicationDomainNode = resultNode.FirstChild("applicationDomain");
     if(!applicationDomainNode.IsNull())
     {
       m_applicationDomain = Aws::Utils::Xml::DecodeEscapedXmlText(applicationDomainNode.GetText());
       m_applicationDomainHasBeenSet = true;
+       m_applicationDomainHasBeenSet = true;
     }
     XmlNode endpointTypeNode = resultNode.FirstChild("endpointType");
     if(!endpointTypeNode.IsNull())
     {
-      m_endpointType = VerifiedAccessEndpointTypeMapper::GetVerifiedAccessEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText()).c_str()).c_str());
+      m_endpointType = VerifiedAccessEndpointTypeMapper::GetVerifiedAccessEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText()).c_str()));
       m_endpointTypeHasBeenSet = true;
+       m_endpointTypeHasBeenSet = true;
     }
     XmlNode attachmentTypeNode = resultNode.FirstChild("attachmentType");
     if(!attachmentTypeNode.IsNull())
     {
-      m_attachmentType = VerifiedAccessEndpointAttachmentTypeMapper::GetVerifiedAccessEndpointAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentTypeNode.GetText()).c_str()).c_str());
+      m_attachmentType = VerifiedAccessEndpointAttachmentTypeMapper::GetVerifiedAccessEndpointAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentTypeNode.GetText()).c_str()));
       m_attachmentTypeHasBeenSet = true;
+       m_attachmentTypeHasBeenSet = true;
     }
     XmlNode domainCertificateArnNode = resultNode.FirstChild("domainCertificateArn");
     if(!domainCertificateArnNode.IsNull())
     {
       m_domainCertificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(domainCertificateArnNode.GetText());
       m_domainCertificateArnHasBeenSet = true;
+       m_domainCertificateArnHasBeenSet = true;
     }
     XmlNode endpointDomainNode = resultNode.FirstChild("endpointDomain");
     if(!endpointDomainNode.IsNull())
     {
       m_endpointDomain = Aws::Utils::Xml::DecodeEscapedXmlText(endpointDomainNode.GetText());
       m_endpointDomainHasBeenSet = true;
+       m_endpointDomainHasBeenSet = true;
     }
     XmlNode deviceValidationDomainNode = resultNode.FirstChild("deviceValidationDomain");
     if(!deviceValidationDomainNode.IsNull())
     {
       m_deviceValidationDomain = Aws::Utils::Xml::DecodeEscapedXmlText(deviceValidationDomainNode.GetText());
       m_deviceValidationDomainHasBeenSet = true;
+       m_deviceValidationDomainHasBeenSet = true;
     }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("securityGroupIdSet");
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
         securityGroupIdsMember = securityGroupIdsMember.NextNode("item");
       }
 
-      m_securityGroupIdsHasBeenSet = true;
+       m_securityGroupIdsHasBeenSet = true;
     }
     XmlNode loadBalancerOptionsNode = resultNode.FirstChild("loadBalancerOptions");
     if(!loadBalancerOptionsNode.IsNull())
     {
       m_loadBalancerOptions = loadBalancerOptionsNode;
       m_loadBalancerOptionsHasBeenSet = true;
+       m_loadBalancerOptionsHasBeenSet = true;
     }
     XmlNode networkInterfaceOptionsNode = resultNode.FirstChild("networkInterfaceOptions");
     if(!networkInterfaceOptionsNode.IsNull())
     {
       m_networkInterfaceOptions = networkInterfaceOptionsNode;
       m_networkInterfaceOptionsHasBeenSet = true;
+       m_networkInterfaceOptionsHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+       m_descriptionHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
       m_creationTime = Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText());
       m_creationTimeHasBeenSet = true;
+       m_creationTimeHasBeenSet = true;
     }
     XmlNode lastUpdatedTimeNode = resultNode.FirstChild("lastUpdatedTime");
     if(!lastUpdatedTimeNode.IsNull())
     {
       m_lastUpdatedTime = Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText());
       m_lastUpdatedTimeHasBeenSet = true;
+       m_lastUpdatedTimeHasBeenSet = true;
     }
     XmlNode deletionTimeNode = resultNode.FirstChild("deletionTime");
     if(!deletionTimeNode.IsNull())
     {
       m_deletionTime = Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText());
       m_deletionTimeHasBeenSet = true;
+       m_deletionTimeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
     XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
     if(!sseSpecificationNode.IsNull())
     {
       m_sseSpecification = sseSpecificationNode;
       m_sseSpecificationHasBeenSet = true;
+       m_sseSpecificationHasBeenSet = true;
     }
     XmlNode rdsOptionsNode = resultNode.FirstChild("rdsOptions");
     if(!rdsOptionsNode.IsNull())
     {
       m_rdsOptions = rdsOptionsNode;
       m_rdsOptionsHasBeenSet = true;
+       m_rdsOptionsHasBeenSet = true;
     }
     XmlNode cidrOptionsNode = resultNode.FirstChild("cidrOptions");
     if(!cidrOptionsNode.IsNull())
     {
       m_cidrOptions = cidrOptionsNode;
       m_cidrOptionsHasBeenSet = true;
+       m_cidrOptionsHasBeenSet = true;
     }
   }
 

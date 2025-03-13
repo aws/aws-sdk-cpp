@@ -36,7 +36,7 @@ namespace Model
   class Build
   {
   public:
-    AWS_GAMELIFT_API Build();
+    AWS_GAMELIFT_API Build() = default;
     AWS_GAMELIFT_API Build(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Build& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>A unique identifier for the build.</p>
      */
-    inline const Aws::String& GetBuildId() const{ return m_buildId; }
+    inline const Aws::String& GetBuildId() const { return m_buildId; }
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
-    inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
-    inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
-    inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
-    inline Build& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
-    inline Build& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
-    inline Build& WithBuildId(const char* value) { SetBuildId(value); return *this;}
+    template<typename BuildIdT = Aws::String>
+    void SetBuildId(BuildIdT&& value) { m_buildIdHasBeenSet = true; m_buildId = std::forward<BuildIdT>(value); }
+    template<typename BuildIdT = Aws::String>
+    Build& WithBuildId(BuildIdT&& value) { SetBuildId(std::forward<BuildIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.</p>
      */
-    inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+    inline const Aws::String& GetBuildArn() const { return m_buildArn; }
     inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
-    inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
-    inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
-    inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
-    inline Build& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
-    inline Build& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
-    inline Build& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
+    template<typename BuildArnT = Aws::String>
+    void SetBuildArn(BuildArnT&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::forward<BuildArnT>(value); }
+    template<typename BuildArnT = Aws::String>
+    Build& WithBuildArn(BuildArnT&& value) { SetBuildArn(std::forward<BuildArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Build& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Build& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Build& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Build& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +92,12 @@ namespace Model
      * <p>Version information that is associated with a build or script. Version
      * strings do not need to be unique.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline Build& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline Build& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    Build& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +111,10 @@ namespace Model
      * <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new
      * fleets for this build. </p> </li> </ul>
      */
-    inline const BuildStatus& GetStatus() const{ return m_status; }
+    inline BuildStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const BuildStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Build& WithStatus(const BuildStatus& value) { SetStatus(value); return *this;}
-    inline Build& WithStatus(BuildStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(BuildStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Build& WithStatus(BuildStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -133,7 +123,7 @@ namespace Model
      * status is <code>INITIALIZED</code> or when using a custom Amazon S3 storage
      * location, this value is 0.</p>
      */
-    inline long long GetSizeOnDisk() const{ return m_sizeOnDisk; }
+    inline long long GetSizeOnDisk() const { return m_sizeOnDisk; }
     inline bool SizeOnDiskHasBeenSet() const { return m_sizeOnDiskHasBeenSet; }
     inline void SetSizeOnDisk(long long value) { m_sizeOnDiskHasBeenSet = true; m_sizeOnDisk = value; }
     inline Build& WithSizeOnDisk(long long value) { SetSizeOnDisk(value); return *this;}
@@ -152,12 +142,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
      * Migrate to Amazon GameLift server SDK version 5.</a> </p> 
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline Build& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline Build& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline Build& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
 
     ///@{
@@ -166,26 +154,24 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Build& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Build& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Build& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon GameLift Server SDK version used to develop your game server.</p>
      */
-    inline const Aws::String& GetServerSdkVersion() const{ return m_serverSdkVersion; }
+    inline const Aws::String& GetServerSdkVersion() const { return m_serverSdkVersion; }
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }
-    inline void SetServerSdkVersion(const Aws::String& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = value; }
-    inline void SetServerSdkVersion(Aws::String&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::move(value); }
-    inline void SetServerSdkVersion(const char* value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion.assign(value); }
-    inline Build& WithServerSdkVersion(const Aws::String& value) { SetServerSdkVersion(value); return *this;}
-    inline Build& WithServerSdkVersion(Aws::String&& value) { SetServerSdkVersion(std::move(value)); return *this;}
-    inline Build& WithServerSdkVersion(const char* value) { SetServerSdkVersion(value); return *this;}
+    template<typename ServerSdkVersionT = Aws::String>
+    void SetServerSdkVersion(ServerSdkVersionT&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::forward<ServerSdkVersionT>(value); }
+    template<typename ServerSdkVersionT = Aws::String>
+    Build& WithServerSdkVersion(ServerSdkVersionT&& value) { SetServerSdkVersion(std::forward<ServerSdkVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -201,16 +187,16 @@ namespace Model
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
 
-    BuildStatus m_status;
+    BuildStatus m_status{BuildStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    long long m_sizeOnDisk;
+    long long m_sizeOnDisk{0};
     bool m_sizeOnDiskHasBeenSet = false;
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
     bool m_operatingSystemHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_serverSdkVersion;

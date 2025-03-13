@@ -34,7 +34,7 @@ namespace Model
   class CommandCapability
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API CommandCapability();
+    AWS_IOTMANAGEDINTEGRATIONS_API CommandCapability() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API CommandCapability(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API CommandCapability& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,50 @@ namespace Model
     /**
      * <p>Describe the capability with an id.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CommandCapability& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CommandCapability& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CommandCapability& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CommandCapability& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describe the capability with an name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CommandCapability& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CommandCapability& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CommandCapability& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CommandCapability& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describe the capability with a version.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline CommandCapability& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline CommandCapability& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline CommandCapability& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    CommandCapability& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describe the command capability with the actions it supports.</p>
      */
-    inline const Aws::Vector<CapabilityAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<CapabilityAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<CapabilityAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<CapabilityAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline CommandCapability& WithActions(const Aws::Vector<CapabilityAction>& value) { SetActions(value); return *this;}
-    inline CommandCapability& WithActions(Aws::Vector<CapabilityAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline CommandCapability& AddActions(const CapabilityAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline CommandCapability& AddActions(CapabilityAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<CapabilityAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<CapabilityAction>>
+    CommandCapability& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = CapabilityAction>
+    CommandCapability& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 

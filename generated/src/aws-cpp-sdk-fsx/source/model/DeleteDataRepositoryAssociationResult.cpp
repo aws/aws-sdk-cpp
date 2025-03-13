@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDataRepositoryAssociationResult::DeleteDataRepositoryAssociationResult() : 
-    m_lifecycle(DataRepositoryLifecycle::NOT_SET),
-    m_deleteDataInFileSystem(false)
-{
-}
-
 DeleteDataRepositoryAssociationResult::DeleteDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDataRepositoryAssociationResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ DeleteDataRepositoryAssociationResult& DeleteDataRepositoryAssociationResult::op
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
+    m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = DataRepositoryLifecycleMapper::GetDataRepositoryLifecycleForName(jsonValue.GetString("Lifecycle"));
-
+    m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteDataInFileSystem"))
   {
     m_deleteDataInFileSystem = jsonValue.GetBool("DeleteDataInFileSystem");
-
+    m_deleteDataInFileSystemHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

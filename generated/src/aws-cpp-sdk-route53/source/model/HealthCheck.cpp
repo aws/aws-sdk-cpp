@@ -20,19 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HealthCheck::HealthCheck() : 
-    m_idHasBeenSet(false),
-    m_callerReferenceHasBeenSet(false),
-    m_linkedServiceHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false),
-    m_healthCheckVersion(0),
-    m_healthCheckVersionHasBeenSet(false),
-    m_cloudWatchAlarmConfigurationHasBeenSet(false)
-{
-}
-
 HealthCheck::HealthCheck(const XmlNode& xmlNode)
-  : HealthCheck()
 {
   *this = xmlNode;
 }
@@ -48,36 +36,42 @@ HealthCheck& HealthCheck::operator =(const XmlNode& xmlNode)
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
       m_idHasBeenSet = true;
+       m_idHasBeenSet = true;
     }
     XmlNode callerReferenceNode = resultNode.FirstChild("CallerReference");
     if(!callerReferenceNode.IsNull())
     {
       m_callerReference = Aws::Utils::Xml::DecodeEscapedXmlText(callerReferenceNode.GetText());
       m_callerReferenceHasBeenSet = true;
+       m_callerReferenceHasBeenSet = true;
     }
     XmlNode linkedServiceNode = resultNode.FirstChild("LinkedService");
     if(!linkedServiceNode.IsNull())
     {
       m_linkedService = linkedServiceNode;
       m_linkedServiceHasBeenSet = true;
+       m_linkedServiceHasBeenSet = true;
     }
     XmlNode healthCheckConfigNode = resultNode.FirstChild("HealthCheckConfig");
     if(!healthCheckConfigNode.IsNull())
     {
       m_healthCheckConfig = healthCheckConfigNode;
       m_healthCheckConfigHasBeenSet = true;
+       m_healthCheckConfigHasBeenSet = true;
     }
     XmlNode healthCheckVersionNode = resultNode.FirstChild("HealthCheckVersion");
     if(!healthCheckVersionNode.IsNull())
     {
       m_healthCheckVersion = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(healthCheckVersionNode.GetText()).c_str()).c_str());
       m_healthCheckVersionHasBeenSet = true;
+       m_healthCheckVersionHasBeenSet = true;
     }
     XmlNode cloudWatchAlarmConfigurationNode = resultNode.FirstChild("CloudWatchAlarmConfiguration");
     if(!cloudWatchAlarmConfigurationNode.IsNull())
     {
       m_cloudWatchAlarmConfiguration = cloudWatchAlarmConfigurationNode;
       m_cloudWatchAlarmConfigurationHasBeenSet = true;
+       m_cloudWatchAlarmConfigurationHasBeenSet = true;
     }
   }
 

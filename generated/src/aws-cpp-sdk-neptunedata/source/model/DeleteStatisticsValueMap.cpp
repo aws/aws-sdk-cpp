@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-DeleteStatisticsValueMap::DeleteStatisticsValueMap() : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_statisticsIdHasBeenSet(false)
-{
-}
-
 DeleteStatisticsValueMap::DeleteStatisticsValueMap(JsonView jsonValue)
-  : DeleteStatisticsValueMap()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DeleteStatisticsValueMap& DeleteStatisticsValueMap::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statisticsId"))
   {
     m_statisticsId = jsonValue.GetString("statisticsId");
-
     m_statisticsIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FleetLaunchTemplateConfig::FleetLaunchTemplateConfig() : 
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 FleetLaunchTemplateConfig::FleetLaunchTemplateConfig(const XmlNode& xmlNode)
-  : FleetLaunchTemplateConfig()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ FleetLaunchTemplateConfig& FleetLaunchTemplateConfig::operator =(const XmlNode& 
     {
       m_launchTemplateSpecification = launchTemplateSpecificationNode;
       m_launchTemplateSpecificationHasBeenSet = true;
+       m_launchTemplateSpecificationHasBeenSet = true;
     }
     XmlNode overridesNode = resultNode.FirstChild("overrides");
     if(!overridesNode.IsNull())
     {
       XmlNode overridesMember = overridesNode.FirstChild("item");
+      m_overridesHasBeenSet = !overridesMember.IsNull();
       while(!overridesMember.IsNull())
       {
         m_overrides.push_back(overridesMember);
         overridesMember = overridesMember.NextNode("item");
       }
 
-      m_overridesHasBeenSet = true;
+       m_overridesHasBeenSet = true;
     }
   }
 

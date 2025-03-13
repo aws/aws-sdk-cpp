@@ -32,7 +32,7 @@ namespace Model
   class BatchPutMetricsError
   {
   public:
-    AWS_SAGEMAKERMETRICS_API BatchPutMetricsError();
+    AWS_SAGEMAKERMETRICS_API BatchPutMetricsError() = default;
     AWS_SAGEMAKERMETRICS_API BatchPutMetricsError(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERMETRICS_API BatchPutMetricsError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,29 +48,27 @@ namespace Model
      * Multiple requests attempted to modify the same data simultaneously.</p> </li>
      * </ul>
      */
-    inline const PutMetricsErrorCode& GetCode() const{ return m_code; }
+    inline PutMetricsErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const PutMetricsErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(PutMetricsErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline BatchPutMetricsError& WithCode(const PutMetricsErrorCode& value) { SetCode(value); return *this;}
-    inline BatchPutMetricsError& WithCode(PutMetricsErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(PutMetricsErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline BatchPutMetricsError& WithCode(PutMetricsErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An index that corresponds to the metric in the request.</p>
      */
-    inline int GetMetricIndex() const{ return m_metricIndex; }
+    inline int GetMetricIndex() const { return m_metricIndex; }
     inline bool MetricIndexHasBeenSet() const { return m_metricIndexHasBeenSet; }
     inline void SetMetricIndex(int value) { m_metricIndexHasBeenSet = true; m_metricIndex = value; }
     inline BatchPutMetricsError& WithMetricIndex(int value) { SetMetricIndex(value); return *this;}
     ///@}
   private:
 
-    PutMetricsErrorCode m_code;
+    PutMetricsErrorCode m_code{PutMetricsErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
-    int m_metricIndex;
+    int m_metricIndex{0};
     bool m_metricIndexHasBeenSet = false;
   };
 

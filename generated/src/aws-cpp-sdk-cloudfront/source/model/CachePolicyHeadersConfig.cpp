@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CachePolicyHeadersConfig::CachePolicyHeadersConfig() : 
-    m_headerBehavior(CachePolicyHeaderBehavior::NOT_SET),
-    m_headerBehaviorHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 CachePolicyHeadersConfig::CachePolicyHeadersConfig(const XmlNode& xmlNode)
-  : CachePolicyHeadersConfig()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ CachePolicyHeadersConfig& CachePolicyHeadersConfig::operator =(const XmlNode& xm
     XmlNode headerBehaviorNode = resultNode.FirstChild("HeaderBehavior");
     if(!headerBehaviorNode.IsNull())
     {
-      m_headerBehavior = CachePolicyHeaderBehaviorMapper::GetCachePolicyHeaderBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headerBehaviorNode.GetText()).c_str()).c_str());
+      m_headerBehavior = CachePolicyHeaderBehaviorMapper::GetCachePolicyHeaderBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(headerBehaviorNode.GetText()).c_str()));
       m_headerBehaviorHasBeenSet = true;
+       m_headerBehaviorHasBeenSet = true;
     }
     XmlNode headersNode = resultNode.FirstChild("Headers");
     if(!headersNode.IsNull())
     {
       m_headers = headersNode;
       m_headersHasBeenSet = true;
+       m_headersHasBeenSet = true;
     }
   }
 

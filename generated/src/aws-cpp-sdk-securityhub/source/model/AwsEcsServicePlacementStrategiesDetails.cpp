@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails() : 
-    m_fieldHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsEcsServicePlacementStrategiesDetails::AwsEcsServicePlacementStrategiesDetails(JsonView jsonValue)
-  : AwsEcsServicePlacementStrategiesDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsServicePlacementStrategiesDetails& AwsEcsServicePlacementStrategiesDetails
   if(jsonValue.ValueExists("Field"))
   {
     m_field = jsonValue.GetString("Field");
-
     m_fieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

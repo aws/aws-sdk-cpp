@@ -12,12 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEmailTemplateRequest::CreateEmailTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_templateContentHasBeenSet(false)
-{
-}
-
 Aws::String CreateEmailTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

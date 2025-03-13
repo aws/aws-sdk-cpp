@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointAccessResult::DescribeEndpointAccessResult()
-{
-}
-
 DescribeEndpointAccessResult::DescribeEndpointAccessResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DescribeEndpointAccessResult& DescribeEndpointAccessResult::operator =(const Aws
     if(!endpointAccessListNode.IsNull())
     {
       XmlNode endpointAccessListMember = endpointAccessListNode.FirstChild("member");
+      m_endpointAccessListHasBeenSet = !endpointAccessListMember.IsNull();
       while(!endpointAccessListMember.IsNull())
       {
         m_endpointAccessList.push_back(endpointAccessListMember);
@@ -53,12 +50,14 @@ DescribeEndpointAccessResult& DescribeEndpointAccessResult::operator =(const Aws
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeEndpointAccessResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

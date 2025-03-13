@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-LineageSyncSchedule::LineageSyncSchedule() : 
-    m_scheduleHasBeenSet(false)
-{
-}
-
 LineageSyncSchedule::LineageSyncSchedule(JsonView jsonValue)
-  : LineageSyncSchedule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LineageSyncSchedule& LineageSyncSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetString("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   return *this;
 }
 

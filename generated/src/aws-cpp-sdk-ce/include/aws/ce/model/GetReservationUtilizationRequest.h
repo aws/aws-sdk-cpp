@@ -27,7 +27,7 @@ namespace Model
   class GetReservationUtilizationRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API GetReservationUtilizationRequest();
+    AWS_COSTEXPLORER_API GetReservationUtilizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,26 +49,26 @@ namespace Model
      * <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not
      * including <code>2017-05-01</code>. </p>
      */
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline GetReservationUtilizationRequest& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline GetReservationUtilizationRequest& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    GetReservationUtilizationRequest& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
      */
-    inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
+    inline const Aws::Vector<GroupDefinition>& GetGroupBy() const { return m_groupBy; }
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
-    inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
-    inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
-    inline GetReservationUtilizationRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
-    inline GetReservationUtilizationRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
-    inline GetReservationUtilizationRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
-    inline GetReservationUtilizationRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
+    template<typename GroupByT = Aws::Vector<GroupDefinition>>
+    void SetGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy = std::forward<GroupByT>(value); }
+    template<typename GroupByT = Aws::Vector<GroupDefinition>>
+    GetReservationUtilizationRequest& WithGroupBy(GroupByT&& value) { SetGroupBy(std::forward<GroupByT>(value)); return *this;}
+    template<typename GroupByT = GroupDefinition>
+    GetReservationUtilizationRequest& AddGroupBy(GroupByT&& value) { m_groupByHasBeenSet = true; m_groupBy.emplace_back(std::forward<GroupByT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,12 +81,10 @@ namespace Model
      * <p>The <code>GetReservationUtilization</code> operation supports only
      * <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
      */
-    inline const Granularity& GetGranularity() const{ return m_granularity; }
+    inline Granularity GetGranularity() const { return m_granularity; }
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-    inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-    inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-    inline GetReservationUtilizationRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
-    inline GetReservationUtilizationRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
+    inline void SetGranularity(Granularity value) { m_granularityHasBeenSet = true; m_granularity = value; }
+    inline GetReservationUtilizationRequest& WithGranularity(Granularity value) { SetGranularity(value); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +106,12 @@ namespace Model
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>
      */
-    inline const Expression& GetFilter() const{ return m_filter; }
+    inline const Expression& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetReservationUtilizationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
-    inline GetReservationUtilizationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Expression>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Expression>
+    GetReservationUtilizationRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +135,12 @@ namespace Model
      * </p> </li> </ul> <p>The supported values for <code>SortOrder</code> are
      * <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
      */
-    inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
+    inline const SortDefinition& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline GetReservationUtilizationRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
-    inline GetReservationUtilizationRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = SortDefinition>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = SortDefinition>
+    GetReservationUtilizationRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,14 +149,12 @@ namespace Model
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
-    inline GetReservationUtilizationRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetReservationUtilizationRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetReservationUtilizationRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetReservationUtilizationRequest& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,7 +164,7 @@ namespace Model
      * NextPageToken value that you can use in a subsequent call to get the next batch
      * of objects.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetReservationUtilizationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -181,7 +177,7 @@ namespace Model
     Aws::Vector<GroupDefinition> m_groupBy;
     bool m_groupByHasBeenSet = false;
 
-    Granularity m_granularity;
+    Granularity m_granularity{Granularity::NOT_SET};
     bool m_granularityHasBeenSet = false;
 
     Expression m_filter;
@@ -193,7 +189,7 @@ namespace Model
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

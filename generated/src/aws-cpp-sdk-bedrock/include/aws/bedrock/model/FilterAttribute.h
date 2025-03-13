@@ -34,7 +34,7 @@ namespace Model
   class FilterAttribute
   {
   public:
-    AWS_BEDROCK_API FilterAttribute();
+    AWS_BEDROCK_API FilterAttribute() = default;
     AWS_BEDROCK_API FilterAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API FilterAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
      * <p>The name of metadata attribute/field, which must match the name in your data
      * source/document metadata.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline FilterAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline FilterAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline FilterAttribute& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    FilterAttribute& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the metadata attribute/field.</p>
      */
-    inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
+    inline Aws::Utils::DocumentView GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline FilterAttribute& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-    inline FilterAttribute& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::Document>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::Document>
+    FilterAttribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

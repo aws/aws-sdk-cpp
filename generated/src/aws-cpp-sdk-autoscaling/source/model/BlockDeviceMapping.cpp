@@ -20,17 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-BlockDeviceMapping::BlockDeviceMapping() : 
-    m_virtualNameHasBeenSet(false),
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDevice(false),
-    m_noDeviceHasBeenSet(false)
-{
-}
-
 BlockDeviceMapping::BlockDeviceMapping(const XmlNode& xmlNode)
-  : BlockDeviceMapping()
 {
   *this = xmlNode;
 }
@@ -46,24 +36,28 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(const XmlNode& xmlNode)
     {
       m_virtualName = Aws::Utils::Xml::DecodeEscapedXmlText(virtualNameNode.GetText());
       m_virtualNameHasBeenSet = true;
+       m_virtualNameHasBeenSet = true;
     }
     XmlNode deviceNameNode = resultNode.FirstChild("DeviceName");
     if(!deviceNameNode.IsNull())
     {
       m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
       m_deviceNameHasBeenSet = true;
+       m_deviceNameHasBeenSet = true;
     }
     XmlNode ebsNode = resultNode.FirstChild("Ebs");
     if(!ebsNode.IsNull())
     {
       m_ebs = ebsNode;
       m_ebsHasBeenSet = true;
+       m_ebsHasBeenSet = true;
     }
     XmlNode noDeviceNode = resultNode.FirstChild("NoDevice");
     if(!noDeviceNode.IsNull())
     {
       m_noDevice = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(noDeviceNode.GetText()).c_str()).c_str());
       m_noDeviceHasBeenSet = true;
+       m_noDeviceHasBeenSet = true;
     }
   }
 

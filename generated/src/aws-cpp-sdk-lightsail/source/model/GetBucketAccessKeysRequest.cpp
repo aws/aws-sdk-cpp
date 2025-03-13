@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBucketAccessKeysRequest::GetBucketAccessKeysRequest() : 
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 Aws::String GetBucketAccessKeysRequest::SerializePayload() const
 {
   JsonValue payload;

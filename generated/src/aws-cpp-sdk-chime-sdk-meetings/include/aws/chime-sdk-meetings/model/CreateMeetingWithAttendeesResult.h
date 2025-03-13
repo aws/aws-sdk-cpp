@@ -31,7 +31,7 @@ namespace Model
   class CreateMeetingWithAttendeesResult
   {
   public:
-    AWS_CHIMESDKMEETINGS_API CreateMeetingWithAttendeesResult();
+    AWS_CHIMESDKMEETINGS_API CreateMeetingWithAttendeesResult() = default;
     AWS_CHIMESDKMEETINGS_API CreateMeetingWithAttendeesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEETINGS_API CreateMeetingWithAttendeesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,24 +41,24 @@ namespace Model
      * <p>The meeting information, including the meeting ID and
      * <code>MediaPlacement</code>.</p>
      */
-    inline const Meeting& GetMeeting() const{ return m_meeting; }
-    inline void SetMeeting(const Meeting& value) { m_meeting = value; }
-    inline void SetMeeting(Meeting&& value) { m_meeting = std::move(value); }
-    inline CreateMeetingWithAttendeesResult& WithMeeting(const Meeting& value) { SetMeeting(value); return *this;}
-    inline CreateMeetingWithAttendeesResult& WithMeeting(Meeting&& value) { SetMeeting(std::move(value)); return *this;}
+    inline const Meeting& GetMeeting() const { return m_meeting; }
+    template<typename MeetingT = Meeting>
+    void SetMeeting(MeetingT&& value) { m_meetingHasBeenSet = true; m_meeting = std::forward<MeetingT>(value); }
+    template<typename MeetingT = Meeting>
+    CreateMeetingWithAttendeesResult& WithMeeting(MeetingT&& value) { SetMeeting(std::forward<MeetingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attendee information, including attendees' IDs and join tokens.</p>
      */
-    inline const Aws::Vector<Attendee>& GetAttendees() const{ return m_attendees; }
-    inline void SetAttendees(const Aws::Vector<Attendee>& value) { m_attendees = value; }
-    inline void SetAttendees(Aws::Vector<Attendee>&& value) { m_attendees = std::move(value); }
-    inline CreateMeetingWithAttendeesResult& WithAttendees(const Aws::Vector<Attendee>& value) { SetAttendees(value); return *this;}
-    inline CreateMeetingWithAttendeesResult& WithAttendees(Aws::Vector<Attendee>&& value) { SetAttendees(std::move(value)); return *this;}
-    inline CreateMeetingWithAttendeesResult& AddAttendees(const Attendee& value) { m_attendees.push_back(value); return *this; }
-    inline CreateMeetingWithAttendeesResult& AddAttendees(Attendee&& value) { m_attendees.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Attendee>& GetAttendees() const { return m_attendees; }
+    template<typename AttendeesT = Aws::Vector<Attendee>>
+    void SetAttendees(AttendeesT&& value) { m_attendeesHasBeenSet = true; m_attendees = std::forward<AttendeesT>(value); }
+    template<typename AttendeesT = Aws::Vector<Attendee>>
+    CreateMeetingWithAttendeesResult& WithAttendees(AttendeesT&& value) { SetAttendees(std::forward<AttendeesT>(value)); return *this;}
+    template<typename AttendeesT = Attendee>
+    CreateMeetingWithAttendeesResult& AddAttendees(AttendeesT&& value) { m_attendeesHasBeenSet = true; m_attendees.emplace_back(std::forward<AttendeesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,34 +66,36 @@ namespace Model
      * <p>If the action fails for one or more of the attendees in the request, a list
      * of the attendees is returned, along with error codes and error messages.</p>
      */
-    inline const Aws::Vector<CreateAttendeeError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<CreateAttendeeError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<CreateAttendeeError>&& value) { m_errors = std::move(value); }
-    inline CreateMeetingWithAttendeesResult& WithErrors(const Aws::Vector<CreateAttendeeError>& value) { SetErrors(value); return *this;}
-    inline CreateMeetingWithAttendeesResult& WithErrors(Aws::Vector<CreateAttendeeError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline CreateMeetingWithAttendeesResult& AddErrors(const CreateAttendeeError& value) { m_errors.push_back(value); return *this; }
-    inline CreateMeetingWithAttendeesResult& AddErrors(CreateAttendeeError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreateAttendeeError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<CreateAttendeeError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<CreateAttendeeError>>
+    CreateMeetingWithAttendeesResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = CreateAttendeeError>
+    CreateMeetingWithAttendeesResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMeetingWithAttendeesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMeetingWithAttendeesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMeetingWithAttendeesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMeetingWithAttendeesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Meeting m_meeting;
+    bool m_meetingHasBeenSet = false;
 
     Aws::Vector<Attendee> m_attendees;
+    bool m_attendeesHasBeenSet = false;
 
     Aws::Vector<CreateAttendeeError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class TaxRegistrationDocument
   {
   public:
-    AWS_TAXSETTINGS_API TaxRegistrationDocument();
+    AWS_TAXSETTINGS_API TaxRegistrationDocument() = default;
     AWS_TAXSETTINGS_API TaxRegistrationDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API TaxRegistrationDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The tax registration document. </p>
      */
-    inline const TaxRegistrationDocFile& GetFile() const{ return m_file; }
+    inline const TaxRegistrationDocFile& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const TaxRegistrationDocFile& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(TaxRegistrationDocFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline TaxRegistrationDocument& WithFile(const TaxRegistrationDocFile& value) { SetFile(value); return *this;}
-    inline TaxRegistrationDocument& WithFile(TaxRegistrationDocFile&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = TaxRegistrationDocFile>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = TaxRegistrationDocFile>
+    TaxRegistrationDocument& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 location where your tax registration document is stored.</p>
      */
-    inline const SourceS3Location& GetS3Location() const{ return m_s3Location; }
+    inline const SourceS3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const SourceS3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(SourceS3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline TaxRegistrationDocument& WithS3Location(const SourceS3Location& value) { SetS3Location(value); return *this;}
-    inline TaxRegistrationDocument& WithS3Location(SourceS3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = SourceS3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = SourceS3Location>
+    TaxRegistrationDocument& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 

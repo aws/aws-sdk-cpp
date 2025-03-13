@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardSummary::DashboardSummary() : 
-    m_arnHasBeenSet(false),
-    m_dashboardIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_publishedVersionNumber(0),
-    m_publishedVersionNumberHasBeenSet(false),
-    m_lastPublishedTimeHasBeenSet(false)
-{
-}
-
 DashboardSummary::DashboardSummary(JsonView jsonValue)
-  : DashboardSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ DashboardSummary& DashboardSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
     m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishedVersionNumber"))
   {
     m_publishedVersionNumber = jsonValue.GetInt64("PublishedVersionNumber");
-
     m_publishedVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastPublishedTime"))
   {
     m_lastPublishedTime = jsonValue.GetDouble("LastPublishedTime");
-
     m_lastPublishedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

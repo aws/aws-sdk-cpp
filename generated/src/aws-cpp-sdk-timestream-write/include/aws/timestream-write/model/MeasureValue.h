@@ -37,7 +37,7 @@ namespace Model
   class MeasureValue
   {
   public:
-    AWS_TIMESTREAMWRITE_API MeasureValue();
+    AWS_TIMESTREAMWRITE_API MeasureValue() = default;
     AWS_TIMESTREAMWRITE_API MeasureValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API MeasureValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">
      * Naming Constraints</a> in the Amazon Timestream Developer Guide.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MeasureValue& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MeasureValue& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MeasureValue& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MeasureValue& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
      * types</a>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline MeasureValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline MeasureValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline MeasureValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    MeasureValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +77,10 @@ namespace Model
      * <p>Contains the data type of the MeasureValue for the time-series data
      * point.</p>
      */
-    inline const MeasureValueType& GetType() const{ return m_type; }
+    inline MeasureValueType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MeasureValueType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MeasureValueType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MeasureValue& WithType(const MeasureValueType& value) { SetType(value); return *this;}
-    inline MeasureValue& WithType(MeasureValueType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MeasureValueType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MeasureValue& WithType(MeasureValueType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -96,7 +90,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    MeasureValueType m_type;
+    MeasureValueType m_type{MeasureValueType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

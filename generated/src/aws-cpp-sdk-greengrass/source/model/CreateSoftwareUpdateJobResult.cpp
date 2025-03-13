@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSoftwareUpdateJobResult::CreateSoftwareUpdateJobResult()
-{
-}
-
 CreateSoftwareUpdateJobResult::CreateSoftwareUpdateJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateSoftwareUpdateJobResult& CreateSoftwareUpdateJobResult::operator =(const A
   if(jsonValue.ValueExists("IotJobArn"))
   {
     m_iotJobArn = jsonValue.GetString("IotJobArn");
-
+    m_iotJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IotJobId"))
   {
     m_iotJobId = jsonValue.GetString("IotJobId");
-
+    m_iotJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformSoftwareVersion"))
   {
     m_platformSoftwareVersion = jsonValue.GetString("PlatformSoftwareVersion");
-
+    m_platformSoftwareVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

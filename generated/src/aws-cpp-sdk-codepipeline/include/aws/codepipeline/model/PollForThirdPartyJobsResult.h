@@ -35,7 +35,7 @@ namespace Model
   class PollForThirdPartyJobsResult
   {
   public:
-    AWS_CODEPIPELINE_API PollForThirdPartyJobsResult();
+    AWS_CODEPIPELINE_API PollForThirdPartyJobsResult() = default;
     AWS_CODEPIPELINE_API PollForThirdPartyJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEPIPELINE_API PollForThirdPartyJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
     /**
      * <p>Information about the jobs to take action on.</p>
      */
-    inline const Aws::Vector<ThirdPartyJob>& GetJobs() const{ return m_jobs; }
-    inline void SetJobs(const Aws::Vector<ThirdPartyJob>& value) { m_jobs = value; }
-    inline void SetJobs(Aws::Vector<ThirdPartyJob>&& value) { m_jobs = std::move(value); }
-    inline PollForThirdPartyJobsResult& WithJobs(const Aws::Vector<ThirdPartyJob>& value) { SetJobs(value); return *this;}
-    inline PollForThirdPartyJobsResult& WithJobs(Aws::Vector<ThirdPartyJob>&& value) { SetJobs(std::move(value)); return *this;}
-    inline PollForThirdPartyJobsResult& AddJobs(const ThirdPartyJob& value) { m_jobs.push_back(value); return *this; }
-    inline PollForThirdPartyJobsResult& AddJobs(ThirdPartyJob&& value) { m_jobs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ThirdPartyJob>& GetJobs() const { return m_jobs; }
+    template<typename JobsT = Aws::Vector<ThirdPartyJob>>
+    void SetJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs = std::forward<JobsT>(value); }
+    template<typename JobsT = Aws::Vector<ThirdPartyJob>>
+    PollForThirdPartyJobsResult& WithJobs(JobsT&& value) { SetJobs(std::forward<JobsT>(value)); return *this;}
+    template<typename JobsT = ThirdPartyJob>
+    PollForThirdPartyJobsResult& AddJobs(JobsT&& value) { m_jobsHasBeenSet = true; m_jobs.emplace_back(std::forward<JobsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PollForThirdPartyJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PollForThirdPartyJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PollForThirdPartyJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PollForThirdPartyJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ThirdPartyJob> m_jobs;
+    bool m_jobsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

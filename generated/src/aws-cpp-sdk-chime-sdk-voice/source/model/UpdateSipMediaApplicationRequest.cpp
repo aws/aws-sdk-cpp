@@ -12,13 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSipMediaApplicationRequest::UpdateSipMediaApplicationRequest() : 
-    m_sipMediaApplicationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSipMediaApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

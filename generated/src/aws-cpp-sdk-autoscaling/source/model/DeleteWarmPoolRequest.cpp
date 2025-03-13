@@ -10,13 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DeleteWarmPoolRequest::DeleteWarmPoolRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWarmPoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

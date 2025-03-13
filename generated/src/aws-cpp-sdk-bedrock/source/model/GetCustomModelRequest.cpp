@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCustomModelRequest::GetCustomModelRequest() : 
-    m_modelIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCustomModelRequest::SerializePayload() const
 {
   return {};

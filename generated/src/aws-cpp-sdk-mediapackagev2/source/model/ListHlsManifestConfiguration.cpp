@@ -18,15 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-ListHlsManifestConfiguration::ListHlsManifestConfiguration() : 
-    m_manifestNameHasBeenSet(false),
-    m_childManifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 ListHlsManifestConfiguration::ListHlsManifestConfiguration(JsonView jsonValue)
-  : ListHlsManifestConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListHlsManifestConfiguration& ListHlsManifestConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChildManifestName"))
   {
     m_childManifestName = jsonValue.GetString("ChildManifestName");
-
     m_childManifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

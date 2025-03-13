@@ -47,7 +47,7 @@ namespace Model
   class SearchRecord
   {
   public:
-    AWS_SAGEMAKER_API SearchRecord();
+    AWS_SAGEMAKER_API SearchRecord() = default;
     AWS_SAGEMAKER_API SearchRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SearchRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,144 +57,144 @@ namespace Model
     /**
      * <p>The properties of a training job.</p>
      */
-    inline const TrainingJob& GetTrainingJob() const{ return m_trainingJob; }
+    inline const TrainingJob& GetTrainingJob() const { return m_trainingJob; }
     inline bool TrainingJobHasBeenSet() const { return m_trainingJobHasBeenSet; }
-    inline void SetTrainingJob(const TrainingJob& value) { m_trainingJobHasBeenSet = true; m_trainingJob = value; }
-    inline void SetTrainingJob(TrainingJob&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::move(value); }
-    inline SearchRecord& WithTrainingJob(const TrainingJob& value) { SetTrainingJob(value); return *this;}
-    inline SearchRecord& WithTrainingJob(TrainingJob&& value) { SetTrainingJob(std::move(value)); return *this;}
+    template<typename TrainingJobT = TrainingJob>
+    void SetTrainingJob(TrainingJobT&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::forward<TrainingJobT>(value); }
+    template<typename TrainingJobT = TrainingJob>
+    SearchRecord& WithTrainingJob(TrainingJobT&& value) { SetTrainingJob(std::forward<TrainingJobT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of an experiment.</p>
      */
-    inline const Experiment& GetExperiment() const{ return m_experiment; }
+    inline const Experiment& GetExperiment() const { return m_experiment; }
     inline bool ExperimentHasBeenSet() const { return m_experimentHasBeenSet; }
-    inline void SetExperiment(const Experiment& value) { m_experimentHasBeenSet = true; m_experiment = value; }
-    inline void SetExperiment(Experiment&& value) { m_experimentHasBeenSet = true; m_experiment = std::move(value); }
-    inline SearchRecord& WithExperiment(const Experiment& value) { SetExperiment(value); return *this;}
-    inline SearchRecord& WithExperiment(Experiment&& value) { SetExperiment(std::move(value)); return *this;}
+    template<typename ExperimentT = Experiment>
+    void SetExperiment(ExperimentT&& value) { m_experimentHasBeenSet = true; m_experiment = std::forward<ExperimentT>(value); }
+    template<typename ExperimentT = Experiment>
+    SearchRecord& WithExperiment(ExperimentT&& value) { SetExperiment(std::forward<ExperimentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of a trial.</p>
      */
-    inline const Trial& GetTrial() const{ return m_trial; }
+    inline const Trial& GetTrial() const { return m_trial; }
     inline bool TrialHasBeenSet() const { return m_trialHasBeenSet; }
-    inline void SetTrial(const Trial& value) { m_trialHasBeenSet = true; m_trial = value; }
-    inline void SetTrial(Trial&& value) { m_trialHasBeenSet = true; m_trial = std::move(value); }
-    inline SearchRecord& WithTrial(const Trial& value) { SetTrial(value); return *this;}
-    inline SearchRecord& WithTrial(Trial&& value) { SetTrial(std::move(value)); return *this;}
+    template<typename TrialT = Trial>
+    void SetTrial(TrialT&& value) { m_trialHasBeenSet = true; m_trial = std::forward<TrialT>(value); }
+    template<typename TrialT = Trial>
+    SearchRecord& WithTrial(TrialT&& value) { SetTrial(std::forward<TrialT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of a trial component.</p>
      */
-    inline const TrialComponent& GetTrialComponent() const{ return m_trialComponent; }
+    inline const TrialComponent& GetTrialComponent() const { return m_trialComponent; }
     inline bool TrialComponentHasBeenSet() const { return m_trialComponentHasBeenSet; }
-    inline void SetTrialComponent(const TrialComponent& value) { m_trialComponentHasBeenSet = true; m_trialComponent = value; }
-    inline void SetTrialComponent(TrialComponent&& value) { m_trialComponentHasBeenSet = true; m_trialComponent = std::move(value); }
-    inline SearchRecord& WithTrialComponent(const TrialComponent& value) { SetTrialComponent(value); return *this;}
-    inline SearchRecord& WithTrialComponent(TrialComponent&& value) { SetTrialComponent(std::move(value)); return *this;}
+    template<typename TrialComponentT = TrialComponent>
+    void SetTrialComponent(TrialComponentT&& value) { m_trialComponentHasBeenSet = true; m_trialComponent = std::forward<TrialComponentT>(value); }
+    template<typename TrialComponentT = TrialComponent>
+    SearchRecord& WithTrialComponent(TrialComponentT&& value) { SetTrialComponent(std::forward<TrialComponentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Endpoint& GetEndpoint() const{ return m_endpoint; }
+    inline const Endpoint& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Endpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Endpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline SearchRecord& WithEndpoint(const Endpoint& value) { SetEndpoint(value); return *this;}
-    inline SearchRecord& WithEndpoint(Endpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+    template<typename EndpointT = Endpoint>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Endpoint>
+    SearchRecord& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ModelPackage& GetModelPackage() const{ return m_modelPackage; }
+    inline const ModelPackage& GetModelPackage() const { return m_modelPackage; }
     inline bool ModelPackageHasBeenSet() const { return m_modelPackageHasBeenSet; }
-    inline void SetModelPackage(const ModelPackage& value) { m_modelPackageHasBeenSet = true; m_modelPackage = value; }
-    inline void SetModelPackage(ModelPackage&& value) { m_modelPackageHasBeenSet = true; m_modelPackage = std::move(value); }
-    inline SearchRecord& WithModelPackage(const ModelPackage& value) { SetModelPackage(value); return *this;}
-    inline SearchRecord& WithModelPackage(ModelPackage&& value) { SetModelPackage(std::move(value)); return *this;}
+    template<typename ModelPackageT = ModelPackage>
+    void SetModelPackage(ModelPackageT&& value) { m_modelPackageHasBeenSet = true; m_modelPackage = std::forward<ModelPackageT>(value); }
+    template<typename ModelPackageT = ModelPackage>
+    SearchRecord& WithModelPackage(ModelPackageT&& value) { SetModelPackage(std::forward<ModelPackageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ModelPackageGroup& GetModelPackageGroup() const{ return m_modelPackageGroup; }
+    inline const ModelPackageGroup& GetModelPackageGroup() const { return m_modelPackageGroup; }
     inline bool ModelPackageGroupHasBeenSet() const { return m_modelPackageGroupHasBeenSet; }
-    inline void SetModelPackageGroup(const ModelPackageGroup& value) { m_modelPackageGroupHasBeenSet = true; m_modelPackageGroup = value; }
-    inline void SetModelPackageGroup(ModelPackageGroup&& value) { m_modelPackageGroupHasBeenSet = true; m_modelPackageGroup = std::move(value); }
-    inline SearchRecord& WithModelPackageGroup(const ModelPackageGroup& value) { SetModelPackageGroup(value); return *this;}
-    inline SearchRecord& WithModelPackageGroup(ModelPackageGroup&& value) { SetModelPackageGroup(std::move(value)); return *this;}
+    template<typename ModelPackageGroupT = ModelPackageGroup>
+    void SetModelPackageGroup(ModelPackageGroupT&& value) { m_modelPackageGroupHasBeenSet = true; m_modelPackageGroup = std::forward<ModelPackageGroupT>(value); }
+    template<typename ModelPackageGroupT = ModelPackageGroup>
+    SearchRecord& WithModelPackageGroup(ModelPackageGroupT&& value) { SetModelPackageGroup(std::forward<ModelPackageGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Pipeline& GetPipeline() const{ return m_pipeline; }
+    inline const Pipeline& GetPipeline() const { return m_pipeline; }
     inline bool PipelineHasBeenSet() const { return m_pipelineHasBeenSet; }
-    inline void SetPipeline(const Pipeline& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
-    inline void SetPipeline(Pipeline&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::move(value); }
-    inline SearchRecord& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
-    inline SearchRecord& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    template<typename PipelineT = Pipeline>
+    void SetPipeline(PipelineT&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::forward<PipelineT>(value); }
+    template<typename PipelineT = Pipeline>
+    SearchRecord& WithPipeline(PipelineT&& value) { SetPipeline(std::forward<PipelineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PipelineExecution& GetPipelineExecution() const{ return m_pipelineExecution; }
+    inline const PipelineExecution& GetPipelineExecution() const { return m_pipelineExecution; }
     inline bool PipelineExecutionHasBeenSet() const { return m_pipelineExecutionHasBeenSet; }
-    inline void SetPipelineExecution(const PipelineExecution& value) { m_pipelineExecutionHasBeenSet = true; m_pipelineExecution = value; }
-    inline void SetPipelineExecution(PipelineExecution&& value) { m_pipelineExecutionHasBeenSet = true; m_pipelineExecution = std::move(value); }
-    inline SearchRecord& WithPipelineExecution(const PipelineExecution& value) { SetPipelineExecution(value); return *this;}
-    inline SearchRecord& WithPipelineExecution(PipelineExecution&& value) { SetPipelineExecution(std::move(value)); return *this;}
+    template<typename PipelineExecutionT = PipelineExecution>
+    void SetPipelineExecution(PipelineExecutionT&& value) { m_pipelineExecutionHasBeenSet = true; m_pipelineExecution = std::forward<PipelineExecutionT>(value); }
+    template<typename PipelineExecutionT = PipelineExecution>
+    SearchRecord& WithPipelineExecution(PipelineExecutionT&& value) { SetPipelineExecution(std::forward<PipelineExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FeatureGroup& GetFeatureGroup() const{ return m_featureGroup; }
+    inline const FeatureGroup& GetFeatureGroup() const { return m_featureGroup; }
     inline bool FeatureGroupHasBeenSet() const { return m_featureGroupHasBeenSet; }
-    inline void SetFeatureGroup(const FeatureGroup& value) { m_featureGroupHasBeenSet = true; m_featureGroup = value; }
-    inline void SetFeatureGroup(FeatureGroup&& value) { m_featureGroupHasBeenSet = true; m_featureGroup = std::move(value); }
-    inline SearchRecord& WithFeatureGroup(const FeatureGroup& value) { SetFeatureGroup(value); return *this;}
-    inline SearchRecord& WithFeatureGroup(FeatureGroup&& value) { SetFeatureGroup(std::move(value)); return *this;}
+    template<typename FeatureGroupT = FeatureGroup>
+    void SetFeatureGroup(FeatureGroupT&& value) { m_featureGroupHasBeenSet = true; m_featureGroup = std::forward<FeatureGroupT>(value); }
+    template<typename FeatureGroupT = FeatureGroup>
+    SearchRecord& WithFeatureGroup(FeatureGroupT&& value) { SetFeatureGroup(std::forward<FeatureGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The feature metadata used to search through the features.</p>
      */
-    inline const FeatureMetadata& GetFeatureMetadata() const{ return m_featureMetadata; }
+    inline const FeatureMetadata& GetFeatureMetadata() const { return m_featureMetadata; }
     inline bool FeatureMetadataHasBeenSet() const { return m_featureMetadataHasBeenSet; }
-    inline void SetFeatureMetadata(const FeatureMetadata& value) { m_featureMetadataHasBeenSet = true; m_featureMetadata = value; }
-    inline void SetFeatureMetadata(FeatureMetadata&& value) { m_featureMetadataHasBeenSet = true; m_featureMetadata = std::move(value); }
-    inline SearchRecord& WithFeatureMetadata(const FeatureMetadata& value) { SetFeatureMetadata(value); return *this;}
-    inline SearchRecord& WithFeatureMetadata(FeatureMetadata&& value) { SetFeatureMetadata(std::move(value)); return *this;}
+    template<typename FeatureMetadataT = FeatureMetadata>
+    void SetFeatureMetadata(FeatureMetadataT&& value) { m_featureMetadataHasBeenSet = true; m_featureMetadata = std::forward<FeatureMetadataT>(value); }
+    template<typename FeatureMetadataT = FeatureMetadata>
+    SearchRecord& WithFeatureMetadata(FeatureMetadataT&& value) { SetFeatureMetadata(std::forward<FeatureMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of a project.</p>
      */
-    inline const Project& GetProject() const{ return m_project; }
+    inline const Project& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Project& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Project&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline SearchRecord& WithProject(const Project& value) { SetProject(value); return *this;}
-    inline SearchRecord& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+    template<typename ProjectT = Project>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Project>
+    SearchRecord& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of a hyperparameter tuning job.</p>
      */
-    inline const HyperParameterTuningJobSearchEntity& GetHyperParameterTuningJob() const{ return m_hyperParameterTuningJob; }
+    inline const HyperParameterTuningJobSearchEntity& GetHyperParameterTuningJob() const { return m_hyperParameterTuningJob; }
     inline bool HyperParameterTuningJobHasBeenSet() const { return m_hyperParameterTuningJobHasBeenSet; }
-    inline void SetHyperParameterTuningJob(const HyperParameterTuningJobSearchEntity& value) { m_hyperParameterTuningJobHasBeenSet = true; m_hyperParameterTuningJob = value; }
-    inline void SetHyperParameterTuningJob(HyperParameterTuningJobSearchEntity&& value) { m_hyperParameterTuningJobHasBeenSet = true; m_hyperParameterTuningJob = std::move(value); }
-    inline SearchRecord& WithHyperParameterTuningJob(const HyperParameterTuningJobSearchEntity& value) { SetHyperParameterTuningJob(value); return *this;}
-    inline SearchRecord& WithHyperParameterTuningJob(HyperParameterTuningJobSearchEntity&& value) { SetHyperParameterTuningJob(std::move(value)); return *this;}
+    template<typename HyperParameterTuningJobT = HyperParameterTuningJobSearchEntity>
+    void SetHyperParameterTuningJob(HyperParameterTuningJobT&& value) { m_hyperParameterTuningJobHasBeenSet = true; m_hyperParameterTuningJob = std::forward<HyperParameterTuningJobT>(value); }
+    template<typename HyperParameterTuningJobT = HyperParameterTuningJobSearchEntity>
+    SearchRecord& WithHyperParameterTuningJob(HyperParameterTuningJobT&& value) { SetHyperParameterTuningJob(std::forward<HyperParameterTuningJobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,22 +202,22 @@ namespace Model
      * <p>An Amazon SageMaker Model Card that documents details about a machine
      * learning model.</p>
      */
-    inline const ModelCard& GetModelCard() const{ return m_modelCard; }
+    inline const ModelCard& GetModelCard() const { return m_modelCard; }
     inline bool ModelCardHasBeenSet() const { return m_modelCardHasBeenSet; }
-    inline void SetModelCard(const ModelCard& value) { m_modelCardHasBeenSet = true; m_modelCard = value; }
-    inline void SetModelCard(ModelCard&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::move(value); }
-    inline SearchRecord& WithModelCard(const ModelCard& value) { SetModelCard(value); return *this;}
-    inline SearchRecord& WithModelCard(ModelCard&& value) { SetModelCard(std::move(value)); return *this;}
+    template<typename ModelCardT = ModelCard>
+    void SetModelCard(ModelCardT&& value) { m_modelCardHasBeenSet = true; m_modelCard = std::forward<ModelCardT>(value); }
+    template<typename ModelCardT = ModelCard>
+    SearchRecord& WithModelCard(ModelCardT&& value) { SetModelCard(std::forward<ModelCardT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ModelDashboardModel& GetModel() const{ return m_model; }
+    inline const ModelDashboardModel& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const ModelDashboardModel& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(ModelDashboardModel&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline SearchRecord& WithModel(const ModelDashboardModel& value) { SetModel(value); return *this;}
-    inline SearchRecord& WithModel(ModelDashboardModel&& value) { SetModel(std::move(value)); return *this;}
+    template<typename ModelT = ModelDashboardModel>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = ModelDashboardModel>
+    SearchRecord& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
   private:
 

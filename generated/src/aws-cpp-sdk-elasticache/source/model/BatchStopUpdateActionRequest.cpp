@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-BatchStopUpdateActionRequest::BatchStopUpdateActionRequest() : 
-    m_replicationGroupIdsHasBeenSet(false),
-    m_cacheClusterIdsHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false)
-{
-}
-
 Aws::String BatchStopUpdateActionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

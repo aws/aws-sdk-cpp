@@ -29,7 +29,7 @@ namespace Model
   class DescribeTargetHealthResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult();
+    AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API DescribeTargetHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the health of the targets.</p>
      */
-    inline const Aws::Vector<TargetHealthDescription>& GetTargetHealthDescriptions() const{ return m_targetHealthDescriptions; }
-    inline void SetTargetHealthDescriptions(const Aws::Vector<TargetHealthDescription>& value) { m_targetHealthDescriptions = value; }
-    inline void SetTargetHealthDescriptions(Aws::Vector<TargetHealthDescription>&& value) { m_targetHealthDescriptions = std::move(value); }
-    inline DescribeTargetHealthResult& WithTargetHealthDescriptions(const Aws::Vector<TargetHealthDescription>& value) { SetTargetHealthDescriptions(value); return *this;}
-    inline DescribeTargetHealthResult& WithTargetHealthDescriptions(Aws::Vector<TargetHealthDescription>&& value) { SetTargetHealthDescriptions(std::move(value)); return *this;}
-    inline DescribeTargetHealthResult& AddTargetHealthDescriptions(const TargetHealthDescription& value) { m_targetHealthDescriptions.push_back(value); return *this; }
-    inline DescribeTargetHealthResult& AddTargetHealthDescriptions(TargetHealthDescription&& value) { m_targetHealthDescriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetHealthDescription>& GetTargetHealthDescriptions() const { return m_targetHealthDescriptions; }
+    template<typename TargetHealthDescriptionsT = Aws::Vector<TargetHealthDescription>>
+    void SetTargetHealthDescriptions(TargetHealthDescriptionsT&& value) { m_targetHealthDescriptionsHasBeenSet = true; m_targetHealthDescriptions = std::forward<TargetHealthDescriptionsT>(value); }
+    template<typename TargetHealthDescriptionsT = Aws::Vector<TargetHealthDescription>>
+    DescribeTargetHealthResult& WithTargetHealthDescriptions(TargetHealthDescriptionsT&& value) { SetTargetHealthDescriptions(std::forward<TargetHealthDescriptionsT>(value)); return *this;}
+    template<typename TargetHealthDescriptionsT = TargetHealthDescription>
+    DescribeTargetHealthResult& AddTargetHealthDescriptions(TargetHealthDescriptionsT&& value) { m_targetHealthDescriptionsHasBeenSet = true; m_targetHealthDescriptions.emplace_back(std::forward<TargetHealthDescriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeTargetHealthResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeTargetHealthResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeTargetHealthResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TargetHealthDescription> m_targetHealthDescriptions;
+    bool m_targetHealthDescriptionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

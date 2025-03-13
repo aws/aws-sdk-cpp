@@ -39,7 +39,7 @@ namespace Model
   class SearchResult
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API SearchResult();
+    AWS_CLOUDSEARCHDOMAIN_API SearchResult() = default;
     AWS_CLOUDSEARCHDOMAIN_API SearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDSEARCHDOMAIN_API SearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,79 +48,78 @@ namespace Model
     /**
      * <p>The status information returned for the search request.</p>
      */
-    inline const SearchStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SearchStatus& value) { m_status = value; }
-    inline void SetStatus(SearchStatus&& value) { m_status = std::move(value); }
-    inline SearchResult& WithStatus(const SearchStatus& value) { SetStatus(value); return *this;}
-    inline SearchResult& WithStatus(SearchStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const SearchStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = SearchStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = SearchStatus>
+    SearchResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The documents that match the search criteria.</p>
      */
-    inline const Hits& GetHits() const{ return m_hits; }
-    inline void SetHits(const Hits& value) { m_hits = value; }
-    inline void SetHits(Hits&& value) { m_hits = std::move(value); }
-    inline SearchResult& WithHits(const Hits& value) { SetHits(value); return *this;}
-    inline SearchResult& WithHits(Hits&& value) { SetHits(std::move(value)); return *this;}
+    inline const Hits& GetHits() const { return m_hits; }
+    template<typename HitsT = Hits>
+    void SetHits(HitsT&& value) { m_hitsHasBeenSet = true; m_hits = std::forward<HitsT>(value); }
+    template<typename HitsT = Hits>
+    SearchResult& WithHits(HitsT&& value) { SetHits(std::forward<HitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The requested facet information.</p>
      */
-    inline const Aws::Map<Aws::String, BucketInfo>& GetFacets() const{ return m_facets; }
-    inline void SetFacets(const Aws::Map<Aws::String, BucketInfo>& value) { m_facets = value; }
-    inline void SetFacets(Aws::Map<Aws::String, BucketInfo>&& value) { m_facets = std::move(value); }
-    inline SearchResult& WithFacets(const Aws::Map<Aws::String, BucketInfo>& value) { SetFacets(value); return *this;}
-    inline SearchResult& WithFacets(Aws::Map<Aws::String, BucketInfo>&& value) { SetFacets(std::move(value)); return *this;}
-    inline SearchResult& AddFacets(const Aws::String& key, const BucketInfo& value) { m_facets.emplace(key, value); return *this; }
-    inline SearchResult& AddFacets(Aws::String&& key, const BucketInfo& value) { m_facets.emplace(std::move(key), value); return *this; }
-    inline SearchResult& AddFacets(const Aws::String& key, BucketInfo&& value) { m_facets.emplace(key, std::move(value)); return *this; }
-    inline SearchResult& AddFacets(Aws::String&& key, BucketInfo&& value) { m_facets.emplace(std::move(key), std::move(value)); return *this; }
-    inline SearchResult& AddFacets(const char* key, BucketInfo&& value) { m_facets.emplace(key, std::move(value)); return *this; }
-    inline SearchResult& AddFacets(const char* key, const BucketInfo& value) { m_facets.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, BucketInfo>& GetFacets() const { return m_facets; }
+    template<typename FacetsT = Aws::Map<Aws::String, BucketInfo>>
+    void SetFacets(FacetsT&& value) { m_facetsHasBeenSet = true; m_facets = std::forward<FacetsT>(value); }
+    template<typename FacetsT = Aws::Map<Aws::String, BucketInfo>>
+    SearchResult& WithFacets(FacetsT&& value) { SetFacets(std::forward<FacetsT>(value)); return *this;}
+    template<typename FacetsKeyT = Aws::String, typename FacetsValueT = BucketInfo>
+    SearchResult& AddFacets(FacetsKeyT&& key, FacetsValueT&& value) {
+      m_facetsHasBeenSet = true; m_facets.emplace(std::forward<FacetsKeyT>(key), std::forward<FacetsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The requested field statistics information.</p>
      */
-    inline const Aws::Map<Aws::String, FieldStats>& GetStats() const{ return m_stats; }
-    inline void SetStats(const Aws::Map<Aws::String, FieldStats>& value) { m_stats = value; }
-    inline void SetStats(Aws::Map<Aws::String, FieldStats>&& value) { m_stats = std::move(value); }
-    inline SearchResult& WithStats(const Aws::Map<Aws::String, FieldStats>& value) { SetStats(value); return *this;}
-    inline SearchResult& WithStats(Aws::Map<Aws::String, FieldStats>&& value) { SetStats(std::move(value)); return *this;}
-    inline SearchResult& AddStats(const Aws::String& key, const FieldStats& value) { m_stats.emplace(key, value); return *this; }
-    inline SearchResult& AddStats(Aws::String&& key, const FieldStats& value) { m_stats.emplace(std::move(key), value); return *this; }
-    inline SearchResult& AddStats(const Aws::String& key, FieldStats&& value) { m_stats.emplace(key, std::move(value)); return *this; }
-    inline SearchResult& AddStats(Aws::String&& key, FieldStats&& value) { m_stats.emplace(std::move(key), std::move(value)); return *this; }
-    inline SearchResult& AddStats(const char* key, FieldStats&& value) { m_stats.emplace(key, std::move(value)); return *this; }
-    inline SearchResult& AddStats(const char* key, const FieldStats& value) { m_stats.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, FieldStats>& GetStats() const { return m_stats; }
+    template<typename StatsT = Aws::Map<Aws::String, FieldStats>>
+    void SetStats(StatsT&& value) { m_statsHasBeenSet = true; m_stats = std::forward<StatsT>(value); }
+    template<typename StatsT = Aws::Map<Aws::String, FieldStats>>
+    SearchResult& WithStats(StatsT&& value) { SetStats(std::forward<StatsT>(value)); return *this;}
+    template<typename StatsKeyT = Aws::String, typename StatsValueT = FieldStats>
+    SearchResult& AddStats(StatsKeyT&& key, StatsValueT&& value) {
+      m_statsHasBeenSet = true; m_stats.emplace(std::forward<StatsKeyT>(key), std::forward<StatsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SearchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SearchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SearchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SearchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SearchStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Hits m_hits;
+    bool m_hitsHasBeenSet = false;
 
     Aws::Map<Aws::String, BucketInfo> m_facets;
+    bool m_facetsHasBeenSet = false;
 
     Aws::Map<Aws::String, FieldStats> m_stats;
+    bool m_statsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

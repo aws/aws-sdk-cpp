@@ -32,7 +32,7 @@ namespace Model
   class DeleteUniqueIdError
   {
   public:
-    AWS_ENTITYRESOLUTION_API DeleteUniqueIdError();
+    AWS_ENTITYRESOLUTION_API DeleteUniqueIdError() = default;
     AWS_ENTITYRESOLUTION_API DeleteUniqueIdError(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API DeleteUniqueIdError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p> The error type for the batch delete unique ID operation.</p>
      */
-    inline const DeleteUniqueIdErrorType& GetErrorType() const{ return m_errorType; }
+    inline DeleteUniqueIdErrorType GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const DeleteUniqueIdErrorType& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(DeleteUniqueIdErrorType&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline DeleteUniqueIdError& WithErrorType(const DeleteUniqueIdErrorType& value) { SetErrorType(value); return *this;}
-    inline DeleteUniqueIdError& WithErrorType(DeleteUniqueIdErrorType&& value) { SetErrorType(std::move(value)); return *this;}
+    inline void SetErrorType(DeleteUniqueIdErrorType value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline DeleteUniqueIdError& WithErrorType(DeleteUniqueIdErrorType value) { SetErrorType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID that could not be deleted.</p>
      */
-    inline const Aws::String& GetUniqueId() const{ return m_uniqueId; }
+    inline const Aws::String& GetUniqueId() const { return m_uniqueId; }
     inline bool UniqueIdHasBeenSet() const { return m_uniqueIdHasBeenSet; }
-    inline void SetUniqueId(const Aws::String& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = value; }
-    inline void SetUniqueId(Aws::String&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::move(value); }
-    inline void SetUniqueId(const char* value) { m_uniqueIdHasBeenSet = true; m_uniqueId.assign(value); }
-    inline DeleteUniqueIdError& WithUniqueId(const Aws::String& value) { SetUniqueId(value); return *this;}
-    inline DeleteUniqueIdError& WithUniqueId(Aws::String&& value) { SetUniqueId(std::move(value)); return *this;}
-    inline DeleteUniqueIdError& WithUniqueId(const char* value) { SetUniqueId(value); return *this;}
+    template<typename UniqueIdT = Aws::String>
+    void SetUniqueId(UniqueIdT&& value) { m_uniqueIdHasBeenSet = true; m_uniqueId = std::forward<UniqueIdT>(value); }
+    template<typename UniqueIdT = Aws::String>
+    DeleteUniqueIdError& WithUniqueId(UniqueIdT&& value) { SetUniqueId(std::forward<UniqueIdT>(value)); return *this;}
     ///@}
   private:
 
-    DeleteUniqueIdErrorType m_errorType;
+    DeleteUniqueIdErrorType m_errorType{DeleteUniqueIdErrorType::NOT_SET};
     bool m_errorTypeHasBeenSet = false;
 
     Aws::String m_uniqueId;

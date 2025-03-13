@@ -23,7 +23,7 @@ namespace Model
   class CreateSbomExportRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API CreateSbomExportRequest();
+    AWS_INSPECTOR2_API CreateSbomExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,10 @@ namespace Model
     /**
      * <p>The output format for the software bill of materials (SBOM) report.</p>
      */
-    inline const SbomReportFormat& GetReportFormat() const{ return m_reportFormat; }
+    inline SbomReportFormat GetReportFormat() const { return m_reportFormat; }
     inline bool ReportFormatHasBeenSet() const { return m_reportFormatHasBeenSet; }
-    inline void SetReportFormat(const SbomReportFormat& value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
-    inline void SetReportFormat(SbomReportFormat&& value) { m_reportFormatHasBeenSet = true; m_reportFormat = std::move(value); }
-    inline CreateSbomExportRequest& WithReportFormat(const SbomReportFormat& value) { SetReportFormat(value); return *this;}
-    inline CreateSbomExportRequest& WithReportFormat(SbomReportFormat&& value) { SetReportFormat(std::move(value)); return *this;}
+    inline void SetReportFormat(SbomReportFormat value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
+    inline CreateSbomExportRequest& WithReportFormat(SbomReportFormat value) { SetReportFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -51,12 +49,12 @@ namespace Model
      * <p>The resource filter criteria for the software bill of materials (SBOM)
      * report.</p>
      */
-    inline const ResourceFilterCriteria& GetResourceFilterCriteria() const{ return m_resourceFilterCriteria; }
+    inline const ResourceFilterCriteria& GetResourceFilterCriteria() const { return m_resourceFilterCriteria; }
     inline bool ResourceFilterCriteriaHasBeenSet() const { return m_resourceFilterCriteriaHasBeenSet; }
-    inline void SetResourceFilterCriteria(const ResourceFilterCriteria& value) { m_resourceFilterCriteriaHasBeenSet = true; m_resourceFilterCriteria = value; }
-    inline void SetResourceFilterCriteria(ResourceFilterCriteria&& value) { m_resourceFilterCriteriaHasBeenSet = true; m_resourceFilterCriteria = std::move(value); }
-    inline CreateSbomExportRequest& WithResourceFilterCriteria(const ResourceFilterCriteria& value) { SetResourceFilterCriteria(value); return *this;}
-    inline CreateSbomExportRequest& WithResourceFilterCriteria(ResourceFilterCriteria&& value) { SetResourceFilterCriteria(std::move(value)); return *this;}
+    template<typename ResourceFilterCriteriaT = ResourceFilterCriteria>
+    void SetResourceFilterCriteria(ResourceFilterCriteriaT&& value) { m_resourceFilterCriteriaHasBeenSet = true; m_resourceFilterCriteria = std::forward<ResourceFilterCriteriaT>(value); }
+    template<typename ResourceFilterCriteriaT = ResourceFilterCriteria>
+    CreateSbomExportRequest& WithResourceFilterCriteria(ResourceFilterCriteriaT&& value) { SetResourceFilterCriteria(std::forward<ResourceFilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,16 +62,16 @@ namespace Model
      * <p>Contains details of the Amazon S3 bucket and KMS key used to export
      * findings.</p>
      */
-    inline const Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline CreateSbomExportRequest& WithS3Destination(const Destination& value) { SetS3Destination(value); return *this;}
-    inline CreateSbomExportRequest& WithS3Destination(Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = Destination>
+    CreateSbomExportRequest& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
   private:
 
-    SbomReportFormat m_reportFormat;
+    SbomReportFormat m_reportFormat{SbomReportFormat::NOT_SET};
     bool m_reportFormatHasBeenSet = false;
 
     ResourceFilterCriteria m_resourceFilterCriteria;

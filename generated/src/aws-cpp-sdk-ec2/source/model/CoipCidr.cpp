@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CoipCidr::CoipCidr() : 
-    m_cidrHasBeenSet(false),
-    m_coipPoolIdHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false)
-{
-}
-
 CoipCidr::CoipCidr(const XmlNode& xmlNode)
-  : CoipCidr()
 {
   *this = xmlNode;
 }
@@ -44,18 +36,21 @@ CoipCidr& CoipCidr::operator =(const XmlNode& xmlNode)
     {
       m_cidr = Aws::Utils::Xml::DecodeEscapedXmlText(cidrNode.GetText());
       m_cidrHasBeenSet = true;
+       m_cidrHasBeenSet = true;
     }
     XmlNode coipPoolIdNode = resultNode.FirstChild("coipPoolId");
     if(!coipPoolIdNode.IsNull())
     {
       m_coipPoolId = Aws::Utils::Xml::DecodeEscapedXmlText(coipPoolIdNode.GetText());
       m_coipPoolIdHasBeenSet = true;
+       m_coipPoolIdHasBeenSet = true;
     }
     XmlNode localGatewayRouteTableIdNode = resultNode.FirstChild("localGatewayRouteTableId");
     if(!localGatewayRouteTableIdNode.IsNull())
     {
       m_localGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayRouteTableIdNode.GetText());
       m_localGatewayRouteTableIdHasBeenSet = true;
+       m_localGatewayRouteTableIdHasBeenSet = true;
     }
   }
 

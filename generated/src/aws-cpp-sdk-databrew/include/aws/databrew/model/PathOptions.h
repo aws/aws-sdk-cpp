@@ -36,7 +36,7 @@ namespace Model
   class PathOptions
   {
   public:
-    AWS_GLUEDATABREW_API PathOptions();
+    AWS_GLUEDATABREW_API PathOptions() = default;
     AWS_GLUEDATABREW_API PathOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API PathOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>If provided, this structure defines a date range for matching Amazon S3
      * objects based on their LastModifiedDate attribute in Amazon S3.</p>
      */
-    inline const FilterExpression& GetLastModifiedDateCondition() const{ return m_lastModifiedDateCondition; }
+    inline const FilterExpression& GetLastModifiedDateCondition() const { return m_lastModifiedDateCondition; }
     inline bool LastModifiedDateConditionHasBeenSet() const { return m_lastModifiedDateConditionHasBeenSet; }
-    inline void SetLastModifiedDateCondition(const FilterExpression& value) { m_lastModifiedDateConditionHasBeenSet = true; m_lastModifiedDateCondition = value; }
-    inline void SetLastModifiedDateCondition(FilterExpression&& value) { m_lastModifiedDateConditionHasBeenSet = true; m_lastModifiedDateCondition = std::move(value); }
-    inline PathOptions& WithLastModifiedDateCondition(const FilterExpression& value) { SetLastModifiedDateCondition(value); return *this;}
-    inline PathOptions& WithLastModifiedDateCondition(FilterExpression&& value) { SetLastModifiedDateCondition(std::move(value)); return *this;}
+    template<typename LastModifiedDateConditionT = FilterExpression>
+    void SetLastModifiedDateCondition(LastModifiedDateConditionT&& value) { m_lastModifiedDateConditionHasBeenSet = true; m_lastModifiedDateCondition = std::forward<LastModifiedDateConditionT>(value); }
+    template<typename LastModifiedDateConditionT = FilterExpression>
+    PathOptions& WithLastModifiedDateCondition(LastModifiedDateConditionT&& value) { SetLastModifiedDateCondition(std::forward<LastModifiedDateConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>If provided, this structure imposes a limit on a number of files that should
      * be selected.</p>
      */
-    inline const FilesLimit& GetFilesLimit() const{ return m_filesLimit; }
+    inline const FilesLimit& GetFilesLimit() const { return m_filesLimit; }
     inline bool FilesLimitHasBeenSet() const { return m_filesLimitHasBeenSet; }
-    inline void SetFilesLimit(const FilesLimit& value) { m_filesLimitHasBeenSet = true; m_filesLimit = value; }
-    inline void SetFilesLimit(FilesLimit&& value) { m_filesLimitHasBeenSet = true; m_filesLimit = std::move(value); }
-    inline PathOptions& WithFilesLimit(const FilesLimit& value) { SetFilesLimit(value); return *this;}
-    inline PathOptions& WithFilesLimit(FilesLimit&& value) { SetFilesLimit(std::move(value)); return *this;}
+    template<typename FilesLimitT = FilesLimit>
+    void SetFilesLimit(FilesLimitT&& value) { m_filesLimitHasBeenSet = true; m_filesLimit = std::forward<FilesLimitT>(value); }
+    template<typename FilesLimitT = FilesLimit>
+    PathOptions& WithFilesLimit(FilesLimitT&& value) { SetFilesLimit(std::forward<FilesLimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +73,16 @@ namespace Model
      * <p>A structure that maps names of parameters used in the Amazon S3 path of a
      * dataset to their definitions.</p>
      */
-    inline const Aws::Map<Aws::String, DatasetParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, DatasetParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, DatasetParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, DatasetParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline PathOptions& WithParameters(const Aws::Map<Aws::String, DatasetParameter>& value) { SetParameters(value); return *this;}
-    inline PathOptions& WithParameters(Aws::Map<Aws::String, DatasetParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline PathOptions& AddParameters(const Aws::String& key, const DatasetParameter& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline PathOptions& AddParameters(Aws::String&& key, const DatasetParameter& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline PathOptions& AddParameters(const Aws::String& key, DatasetParameter&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline PathOptions& AddParameters(Aws::String&& key, DatasetParameter&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline PathOptions& AddParameters(const char* key, DatasetParameter&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline PathOptions& AddParameters(const char* key, const DatasetParameter& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, DatasetParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, DatasetParameter>>
+    PathOptions& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = DatasetParameter>
+    PathOptions& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

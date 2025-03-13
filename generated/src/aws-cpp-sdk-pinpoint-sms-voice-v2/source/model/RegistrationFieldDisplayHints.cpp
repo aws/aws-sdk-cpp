@@ -18,20 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-RegistrationFieldDisplayHints::RegistrationFieldDisplayHints() : 
-    m_titleHasBeenSet(false),
-    m_shortDescriptionHasBeenSet(false),
-    m_longDescriptionHasBeenSet(false),
-    m_documentationTitleHasBeenSet(false),
-    m_documentationLinkHasBeenSet(false),
-    m_selectOptionDescriptionsHasBeenSet(false),
-    m_textValidationDescriptionHasBeenSet(false),
-    m_exampleTextValueHasBeenSet(false)
-{
-}
-
 RegistrationFieldDisplayHints::RegistrationFieldDisplayHints(JsonView jsonValue)
-  : RegistrationFieldDisplayHints()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ RegistrationFieldDisplayHints& RegistrationFieldDisplayHints::operator =(JsonVie
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortDescription"))
   {
     m_shortDescription = jsonValue.GetString("ShortDescription");
-
     m_shortDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongDescription"))
   {
     m_longDescription = jsonValue.GetString("LongDescription");
-
     m_longDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentationTitle"))
   {
     m_documentationTitle = jsonValue.GetString("DocumentationTitle");
-
     m_documentationTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentationLink"))
   {
     m_documentationLink = jsonValue.GetString("DocumentationLink");
-
     m_documentationLinkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectOptionDescriptions"))
   {
     Aws::Utils::Array<JsonView> selectOptionDescriptionsJsonList = jsonValue.GetArray("SelectOptionDescriptions");
@@ -82,21 +59,16 @@ RegistrationFieldDisplayHints& RegistrationFieldDisplayHints::operator =(JsonVie
     }
     m_selectOptionDescriptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextValidationDescription"))
   {
     m_textValidationDescription = jsonValue.GetString("TextValidationDescription");
-
     m_textValidationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExampleTextValue"))
   {
     m_exampleTextValue = jsonValue.GetString("ExampleTextValue");
-
     m_exampleTextValueHasBeenSet = true;
   }
-
   return *this;
 }
 

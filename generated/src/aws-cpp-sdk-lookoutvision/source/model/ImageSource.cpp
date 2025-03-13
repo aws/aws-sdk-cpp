@@ -18,13 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-ImageSource::ImageSource() : 
-    m_typeHasBeenSet(false)
-{
-}
-
 ImageSource::ImageSource(JsonView jsonValue)
-  : ImageSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImageSource& ImageSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

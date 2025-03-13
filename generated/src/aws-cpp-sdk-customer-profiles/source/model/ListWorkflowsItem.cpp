@@ -18,20 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ListWorkflowsItem::ListWorkflowsItem() : 
-    m_workflowType(WorkflowType::NOT_SET),
-    m_workflowTypeHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDescriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 ListWorkflowsItem::ListWorkflowsItem(JsonView jsonValue)
-  : ListWorkflowsItem()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ListWorkflowsItem& ListWorkflowsItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WorkflowType"))
   {
     m_workflowType = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("WorkflowType"));
-
     m_workflowTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDescription"))
   {
     m_statusDescription = jsonValue.GetString("StatusDescription");
-
     m_statusDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,7 +19,7 @@ namespace Model
   class GetBlockPublicAccessConfigurationRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API GetBlockPublicAccessConfigurationRequest();
+    AWS_EMR_API GetBlockPublicAccessConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

@@ -18,16 +18,7 @@ namespace finspace
 namespace Model
 {
 
-ChangeRequest::ChangeRequest() : 
-    m_changeType(ChangeType::NOT_SET),
-    m_changeTypeHasBeenSet(false),
-    m_s3PathHasBeenSet(false),
-    m_dbPathHasBeenSet(false)
-{
-}
-
 ChangeRequest::ChangeRequest(JsonView jsonValue)
-  : ChangeRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ChangeRequest& ChangeRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("changeType"))
   {
     m_changeType = ChangeTypeMapper::GetChangeTypeForName(jsonValue.GetString("changeType"));
-
     m_changeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Path"))
   {
     m_s3Path = jsonValue.GetString("s3Path");
-
     m_s3PathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbPath"))
   {
     m_dbPath = jsonValue.GetString("dbPath");
-
     m_dbPathHasBeenSet = true;
   }
-
   return *this;
 }
 

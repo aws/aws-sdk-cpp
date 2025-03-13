@@ -12,12 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ManagePropertygraphStatisticsRequest::ManagePropertygraphStatisticsRequest() : 
-    m_mode(StatisticsAutoGenerationMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Aws::String ManagePropertygraphStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

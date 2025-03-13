@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-NameIdentifier::NameIdentifier() : 
-    m_nameHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 NameIdentifier::NameIdentifier(JsonView jsonValue)
-  : NameIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NameIdentifier& NameIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

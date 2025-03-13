@@ -33,7 +33,7 @@ namespace Model
   class StartDomainMaintenanceResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceResult();
+    AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceResult() = default;
     AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The request ID of requested action.</p>
      */
-    inline const Aws::String& GetMaintenanceId() const{ return m_maintenanceId; }
-    inline void SetMaintenanceId(const Aws::String& value) { m_maintenanceId = value; }
-    inline void SetMaintenanceId(Aws::String&& value) { m_maintenanceId = std::move(value); }
-    inline void SetMaintenanceId(const char* value) { m_maintenanceId.assign(value); }
-    inline StartDomainMaintenanceResult& WithMaintenanceId(const Aws::String& value) { SetMaintenanceId(value); return *this;}
-    inline StartDomainMaintenanceResult& WithMaintenanceId(Aws::String&& value) { SetMaintenanceId(std::move(value)); return *this;}
-    inline StartDomainMaintenanceResult& WithMaintenanceId(const char* value) { SetMaintenanceId(value); return *this;}
+    inline const Aws::String& GetMaintenanceId() const { return m_maintenanceId; }
+    template<typename MaintenanceIdT = Aws::String>
+    void SetMaintenanceId(MaintenanceIdT&& value) { m_maintenanceIdHasBeenSet = true; m_maintenanceId = std::forward<MaintenanceIdT>(value); }
+    template<typename MaintenanceIdT = Aws::String>
+    StartDomainMaintenanceResult& WithMaintenanceId(MaintenanceIdT&& value) { SetMaintenanceId(std::forward<MaintenanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartDomainMaintenanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartDomainMaintenanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartDomainMaintenanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartDomainMaintenanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_maintenanceId;
+    bool m_maintenanceIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

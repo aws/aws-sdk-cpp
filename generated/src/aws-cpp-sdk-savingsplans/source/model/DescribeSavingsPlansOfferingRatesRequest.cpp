@@ -12,21 +12,6 @@ using namespace Aws::SavingsPlans::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSavingsPlansOfferingRatesRequest::DescribeSavingsPlansOfferingRatesRequest() : 
-    m_savingsPlanOfferingIdsHasBeenSet(false),
-    m_savingsPlanPaymentOptionsHasBeenSet(false),
-    m_savingsPlanTypesHasBeenSet(false),
-    m_productsHasBeenSet(false),
-    m_serviceCodesHasBeenSet(false),
-    m_usageTypesHasBeenSet(false),
-    m_operationsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSavingsPlansOfferingRatesRequest::SerializePayload() const
 {
   JsonValue payload;

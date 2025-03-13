@@ -28,7 +28,7 @@ namespace Model
   class CreateDeliveryResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API CreateDeliveryResult();
+    AWS_CLOUDWATCHLOGS_API CreateDeliveryResult() = default;
     AWS_CLOUDWATCHLOGS_API CreateDeliveryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API CreateDeliveryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that contains information about the delivery that you just
      * created.</p>
      */
-    inline const Delivery& GetDelivery() const{ return m_delivery; }
-    inline void SetDelivery(const Delivery& value) { m_delivery = value; }
-    inline void SetDelivery(Delivery&& value) { m_delivery = std::move(value); }
-    inline CreateDeliveryResult& WithDelivery(const Delivery& value) { SetDelivery(value); return *this;}
-    inline CreateDeliveryResult& WithDelivery(Delivery&& value) { SetDelivery(std::move(value)); return *this;}
+    inline const Delivery& GetDelivery() const { return m_delivery; }
+    template<typename DeliveryT = Delivery>
+    void SetDelivery(DeliveryT&& value) { m_deliveryHasBeenSet = true; m_delivery = std::forward<DeliveryT>(value); }
+    template<typename DeliveryT = Delivery>
+    CreateDeliveryResult& WithDelivery(DeliveryT&& value) { SetDelivery(std::forward<DeliveryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeliveryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeliveryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeliveryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeliveryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Delivery m_delivery;
+    bool m_deliveryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

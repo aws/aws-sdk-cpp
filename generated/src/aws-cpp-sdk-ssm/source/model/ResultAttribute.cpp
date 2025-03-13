@@ -18,13 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResultAttribute::ResultAttribute() : 
-    m_typeNameHasBeenSet(false)
-{
-}
-
 ResultAttribute::ResultAttribute(JsonView jsonValue)
-  : ResultAttribute()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResultAttribute& ResultAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

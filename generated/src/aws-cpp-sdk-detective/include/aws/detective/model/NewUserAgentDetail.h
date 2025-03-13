@@ -32,7 +32,7 @@ namespace Model
   class NewUserAgentDetail
   {
   public:
-    AWS_DETECTIVE_API NewUserAgentDetail();
+    AWS_DETECTIVE_API NewUserAgentDetail() = default;
     AWS_DETECTIVE_API NewUserAgentDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API NewUserAgentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>New user agent which accessed the resource.</p>
      */
-    inline const Aws::String& GetUserAgent() const{ return m_userAgent; }
+    inline const Aws::String& GetUserAgent() const { return m_userAgent; }
     inline bool UserAgentHasBeenSet() const { return m_userAgentHasBeenSet; }
-    inline void SetUserAgent(const Aws::String& value) { m_userAgentHasBeenSet = true; m_userAgent = value; }
-    inline void SetUserAgent(Aws::String&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::move(value); }
-    inline void SetUserAgent(const char* value) { m_userAgentHasBeenSet = true; m_userAgent.assign(value); }
-    inline NewUserAgentDetail& WithUserAgent(const Aws::String& value) { SetUserAgent(value); return *this;}
-    inline NewUserAgentDetail& WithUserAgent(Aws::String&& value) { SetUserAgent(std::move(value)); return *this;}
-    inline NewUserAgentDetail& WithUserAgent(const char* value) { SetUserAgent(value); return *this;}
+    template<typename UserAgentT = Aws::String>
+    void SetUserAgent(UserAgentT&& value) { m_userAgentHasBeenSet = true; m_userAgent = std::forward<UserAgentT>(value); }
+    template<typename UserAgentT = Aws::String>
+    NewUserAgentDetail& WithUserAgent(UserAgentT&& value) { SetUserAgent(std::forward<UserAgentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Checks if the user agent is new for the entire account.</p>
      */
-    inline bool GetIsNewForEntireAccount() const{ return m_isNewForEntireAccount; }
+    inline bool GetIsNewForEntireAccount() const { return m_isNewForEntireAccount; }
     inline bool IsNewForEntireAccountHasBeenSet() const { return m_isNewForEntireAccountHasBeenSet; }
     inline void SetIsNewForEntireAccount(bool value) { m_isNewForEntireAccountHasBeenSet = true; m_isNewForEntireAccount = value; }
     inline NewUserAgentDetail& WithIsNewForEntireAccount(bool value) { SetIsNewForEntireAccount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_userAgent;
     bool m_userAgentHasBeenSet = false;
 
-    bool m_isNewForEntireAccount;
+    bool m_isNewForEntireAccount{false};
     bool m_isNewForEntireAccountHasBeenSet = false;
   };
 

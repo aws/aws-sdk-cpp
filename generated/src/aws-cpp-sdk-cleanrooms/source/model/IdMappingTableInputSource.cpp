@@ -18,15 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-IdMappingTableInputSource::IdMappingTableInputSource() : 
-    m_idNamespaceAssociationIdHasBeenSet(false),
-    m_type(IdNamespaceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 IdMappingTableInputSource::IdMappingTableInputSource(JsonView jsonValue)
-  : IdMappingTableInputSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ IdMappingTableInputSource& IdMappingTableInputSource::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("idNamespaceAssociationId"))
   {
     m_idNamespaceAssociationId = jsonValue.GetString("idNamespaceAssociationId");
-
     m_idNamespaceAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = IdNamespaceTypeMapper::GetIdNamespaceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

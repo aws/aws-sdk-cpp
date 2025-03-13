@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInferenceRecommendationsJobResult::CreateInferenceRecommendationsJobResult()
-{
-}
-
 CreateInferenceRecommendationsJobResult::CreateInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateInferenceRecommendationsJobResult& CreateInferenceRecommendationsJobResult
   if(jsonValue.ValueExists("JobArn"))
   {
     m_jobArn = jsonValue.GetString("JobArn");
-
+    m_jobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

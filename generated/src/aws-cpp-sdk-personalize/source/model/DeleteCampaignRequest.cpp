@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCampaignRequest::DeleteCampaignRequest() : 
-    m_campaignArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

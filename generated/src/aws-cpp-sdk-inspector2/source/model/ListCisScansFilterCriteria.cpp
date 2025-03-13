@@ -18,22 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-ListCisScansFilterCriteria::ListCisScansFilterCriteria() : 
-    m_failedChecksFiltersHasBeenSet(false),
-    m_scanArnFiltersHasBeenSet(false),
-    m_scanAtFiltersHasBeenSet(false),
-    m_scanConfigurationArnFiltersHasBeenSet(false),
-    m_scanNameFiltersHasBeenSet(false),
-    m_scanStatusFiltersHasBeenSet(false),
-    m_scheduledByFiltersHasBeenSet(false),
-    m_targetAccountIdFiltersHasBeenSet(false),
-    m_targetResourceIdFiltersHasBeenSet(false),
-    m_targetResourceTagFiltersHasBeenSet(false)
-{
-}
-
 ListCisScansFilterCriteria::ListCisScansFilterCriteria(JsonView jsonValue)
-  : ListCisScansFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -49,7 +34,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_failedChecksFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanArnFilters"))
   {
     Aws::Utils::Array<JsonView> scanArnFiltersJsonList = jsonValue.GetArray("scanArnFilters");
@@ -59,7 +43,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_scanArnFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanAtFilters"))
   {
     Aws::Utils::Array<JsonView> scanAtFiltersJsonList = jsonValue.GetArray("scanAtFilters");
@@ -69,7 +52,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_scanAtFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanConfigurationArnFilters"))
   {
     Aws::Utils::Array<JsonView> scanConfigurationArnFiltersJsonList = jsonValue.GetArray("scanConfigurationArnFilters");
@@ -79,7 +61,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_scanConfigurationArnFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanNameFilters"))
   {
     Aws::Utils::Array<JsonView> scanNameFiltersJsonList = jsonValue.GetArray("scanNameFilters");
@@ -89,7 +70,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_scanNameFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanStatusFilters"))
   {
     Aws::Utils::Array<JsonView> scanStatusFiltersJsonList = jsonValue.GetArray("scanStatusFilters");
@@ -99,7 +79,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_scanStatusFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledByFilters"))
   {
     Aws::Utils::Array<JsonView> scheduledByFiltersJsonList = jsonValue.GetArray("scheduledByFilters");
@@ -109,7 +88,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_scheduledByFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccountIdFilters"))
   {
     Aws::Utils::Array<JsonView> targetAccountIdFiltersJsonList = jsonValue.GetArray("targetAccountIdFilters");
@@ -119,7 +97,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_targetAccountIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceIdFilters"))
   {
     Aws::Utils::Array<JsonView> targetResourceIdFiltersJsonList = jsonValue.GetArray("targetResourceIdFilters");
@@ -129,7 +106,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_targetResourceIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceTagFilters"))
   {
     Aws::Utils::Array<JsonView> targetResourceTagFiltersJsonList = jsonValue.GetArray("targetResourceTagFilters");
@@ -139,7 +115,6 @@ ListCisScansFilterCriteria& ListCisScansFilterCriteria::operator =(JsonView json
     }
     m_targetResourceTagFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

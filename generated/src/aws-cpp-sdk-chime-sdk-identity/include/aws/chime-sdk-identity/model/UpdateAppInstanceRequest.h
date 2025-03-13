@@ -21,7 +21,7 @@ namespace Model
   class UpdateAppInstanceRequest : public ChimeSDKIdentityRequest
   {
   public:
-    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceRequest();
+    AWS_CHIMESDKIDENTITY_API UpdateAppInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The ARN of the <code>AppInstance</code>.</p>
      */
-    inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
+    inline const Aws::String& GetAppInstanceArn() const { return m_appInstanceArn; }
     inline bool AppInstanceArnHasBeenSet() const { return m_appInstanceArnHasBeenSet; }
-    inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = value; }
-    inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::move(value); }
-    inline void SetAppInstanceArn(const char* value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn.assign(value); }
-    inline UpdateAppInstanceRequest& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
-    inline UpdateAppInstanceRequest& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
-    inline UpdateAppInstanceRequest& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
+    template<typename AppInstanceArnT = Aws::String>
+    void SetAppInstanceArn(AppInstanceArnT&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::forward<AppInstanceArnT>(value); }
+    template<typename AppInstanceArnT = Aws::String>
+    UpdateAppInstanceRequest& WithAppInstanceArn(AppInstanceArnT&& value) { SetAppInstanceArn(std::forward<AppInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name that you want to change.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAppInstanceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAppInstanceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAppInstanceRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAppInstanceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata that you want to change.</p>
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline UpdateAppInstanceRequest& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline UpdateAppInstanceRequest& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline UpdateAppInstanceRequest& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    UpdateAppInstanceRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
   private:
 

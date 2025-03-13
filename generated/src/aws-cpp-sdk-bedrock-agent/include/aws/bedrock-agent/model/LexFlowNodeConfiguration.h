@@ -36,7 +36,7 @@ namespace Model
   class LexFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API LexFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API LexFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API LexFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API LexFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Lex bot alias to invoke.</p>
      */
-    inline const Aws::String& GetBotAliasArn() const{ return m_botAliasArn; }
+    inline const Aws::String& GetBotAliasArn() const { return m_botAliasArn; }
     inline bool BotAliasArnHasBeenSet() const { return m_botAliasArnHasBeenSet; }
-    inline void SetBotAliasArn(const Aws::String& value) { m_botAliasArnHasBeenSet = true; m_botAliasArn = value; }
-    inline void SetBotAliasArn(Aws::String&& value) { m_botAliasArnHasBeenSet = true; m_botAliasArn = std::move(value); }
-    inline void SetBotAliasArn(const char* value) { m_botAliasArnHasBeenSet = true; m_botAliasArn.assign(value); }
-    inline LexFlowNodeConfiguration& WithBotAliasArn(const Aws::String& value) { SetBotAliasArn(value); return *this;}
-    inline LexFlowNodeConfiguration& WithBotAliasArn(Aws::String&& value) { SetBotAliasArn(std::move(value)); return *this;}
-    inline LexFlowNodeConfiguration& WithBotAliasArn(const char* value) { SetBotAliasArn(value); return *this;}
+    template<typename BotAliasArnT = Aws::String>
+    void SetBotAliasArn(BotAliasArnT&& value) { m_botAliasArnHasBeenSet = true; m_botAliasArn = std::forward<BotAliasArnT>(value); }
+    template<typename BotAliasArnT = Aws::String>
+    LexFlowNodeConfiguration& WithBotAliasArn(BotAliasArnT&& value) { SetBotAliasArn(std::forward<BotAliasArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region to invoke the Amazon Lex bot in.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline LexFlowNodeConfiguration& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline LexFlowNodeConfiguration& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline LexFlowNodeConfiguration& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    LexFlowNodeConfiguration& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
   private:
 

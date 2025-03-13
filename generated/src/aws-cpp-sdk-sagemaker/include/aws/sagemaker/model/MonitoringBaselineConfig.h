@@ -36,7 +36,7 @@ namespace Model
   class MonitoringBaselineConfig
   {
   public:
-    AWS_SAGEMAKER_API MonitoringBaselineConfig();
+    AWS_SAGEMAKER_API MonitoringBaselineConfig() = default;
     AWS_SAGEMAKER_API MonitoringBaselineConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API MonitoringBaselineConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the job that performs baselining for the monitoring job.</p>
      */
-    inline const Aws::String& GetBaseliningJobName() const{ return m_baseliningJobName; }
+    inline const Aws::String& GetBaseliningJobName() const { return m_baseliningJobName; }
     inline bool BaseliningJobNameHasBeenSet() const { return m_baseliningJobNameHasBeenSet; }
-    inline void SetBaseliningJobName(const Aws::String& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = value; }
-    inline void SetBaseliningJobName(Aws::String&& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = std::move(value); }
-    inline void SetBaseliningJobName(const char* value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName.assign(value); }
-    inline MonitoringBaselineConfig& WithBaseliningJobName(const Aws::String& value) { SetBaseliningJobName(value); return *this;}
-    inline MonitoringBaselineConfig& WithBaseliningJobName(Aws::String&& value) { SetBaseliningJobName(std::move(value)); return *this;}
-    inline MonitoringBaselineConfig& WithBaseliningJobName(const char* value) { SetBaseliningJobName(value); return *this;}
+    template<typename BaseliningJobNameT = Aws::String>
+    void SetBaseliningJobName(BaseliningJobNameT&& value) { m_baseliningJobNameHasBeenSet = true; m_baseliningJobName = std::forward<BaseliningJobNameT>(value); }
+    template<typename BaseliningJobNameT = Aws::String>
+    MonitoringBaselineConfig& WithBaseliningJobName(BaseliningJobNameT&& value) { SetBaseliningJobName(std::forward<BaseliningJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>The baseline constraint file in Amazon S3 that the current monitoring job
      * should validated against.</p>
      */
-    inline const MonitoringConstraintsResource& GetConstraintsResource() const{ return m_constraintsResource; }
+    inline const MonitoringConstraintsResource& GetConstraintsResource() const { return m_constraintsResource; }
     inline bool ConstraintsResourceHasBeenSet() const { return m_constraintsResourceHasBeenSet; }
-    inline void SetConstraintsResource(const MonitoringConstraintsResource& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = value; }
-    inline void SetConstraintsResource(MonitoringConstraintsResource&& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = std::move(value); }
-    inline MonitoringBaselineConfig& WithConstraintsResource(const MonitoringConstraintsResource& value) { SetConstraintsResource(value); return *this;}
-    inline MonitoringBaselineConfig& WithConstraintsResource(MonitoringConstraintsResource&& value) { SetConstraintsResource(std::move(value)); return *this;}
+    template<typename ConstraintsResourceT = MonitoringConstraintsResource>
+    void SetConstraintsResource(ConstraintsResourceT&& value) { m_constraintsResourceHasBeenSet = true; m_constraintsResource = std::forward<ConstraintsResourceT>(value); }
+    template<typename ConstraintsResourceT = MonitoringConstraintsResource>
+    MonitoringBaselineConfig& WithConstraintsResource(ConstraintsResourceT&& value) { SetConstraintsResource(std::forward<ConstraintsResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * <p>The baseline statistics file in Amazon S3 that the current monitoring job
      * should be validated against.</p>
      */
-    inline const MonitoringStatisticsResource& GetStatisticsResource() const{ return m_statisticsResource; }
+    inline const MonitoringStatisticsResource& GetStatisticsResource() const { return m_statisticsResource; }
     inline bool StatisticsResourceHasBeenSet() const { return m_statisticsResourceHasBeenSet; }
-    inline void SetStatisticsResource(const MonitoringStatisticsResource& value) { m_statisticsResourceHasBeenSet = true; m_statisticsResource = value; }
-    inline void SetStatisticsResource(MonitoringStatisticsResource&& value) { m_statisticsResourceHasBeenSet = true; m_statisticsResource = std::move(value); }
-    inline MonitoringBaselineConfig& WithStatisticsResource(const MonitoringStatisticsResource& value) { SetStatisticsResource(value); return *this;}
-    inline MonitoringBaselineConfig& WithStatisticsResource(MonitoringStatisticsResource&& value) { SetStatisticsResource(std::move(value)); return *this;}
+    template<typename StatisticsResourceT = MonitoringStatisticsResource>
+    void SetStatisticsResource(StatisticsResourceT&& value) { m_statisticsResourceHasBeenSet = true; m_statisticsResource = std::forward<StatisticsResourceT>(value); }
+    template<typename StatisticsResourceT = MonitoringStatisticsResource>
+    MonitoringBaselineConfig& WithStatisticsResource(StatisticsResourceT&& value) { SetStatisticsResource(std::forward<StatisticsResourceT>(value)); return *this;}
     ///@}
   private:
 

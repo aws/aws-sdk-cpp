@@ -31,7 +31,7 @@ namespace Model
   class AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails();
+    AWS_SECURITYHUB_API AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails() = default;
     AWS_SECURITYHUB_API AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * <p> The amount of time, in seconds, that a CAPTCHA or challenge timestamp is
      * considered valid by WAF. </p>
      */
-    inline long long GetImmunityTime() const{ return m_immunityTime; }
+    inline long long GetImmunityTime() const { return m_immunityTime; }
     inline bool ImmunityTimeHasBeenSet() const { return m_immunityTimeHasBeenSet; }
     inline void SetImmunityTime(long long value) { m_immunityTimeHasBeenSet = true; m_immunityTime = value; }
     inline AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetails& WithImmunityTime(long long value) { SetImmunityTime(value); return *this;}
     ///@}
   private:
 
-    long long m_immunityTime;
+    long long m_immunityTime{0};
     bool m_immunityTimeHasBeenSet = false;
   };
 

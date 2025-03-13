@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ProvisioningConfiguration::ProvisioningConfiguration() : 
-    m_lakeFormationConfigurationHasBeenSet(false)
-{
-}
-
 ProvisioningConfiguration::ProvisioningConfiguration(JsonView jsonValue)
-  : ProvisioningConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProvisioningConfiguration& ProvisioningConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("lakeFormationConfiguration"))
   {
     m_lakeFormationConfiguration = jsonValue.GetObject("lakeFormationConfiguration");
-
     m_lakeFormationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

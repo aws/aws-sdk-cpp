@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-AwsAccount::AwsAccount() : 
-    m_accountIdHasBeenSet(false),
-    m_principalIdHasBeenSet(false)
-{
-}
-
 AwsAccount::AwsAccount(JsonView jsonValue)
-  : AwsAccount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsAccount& AwsAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   return *this;
 }
 

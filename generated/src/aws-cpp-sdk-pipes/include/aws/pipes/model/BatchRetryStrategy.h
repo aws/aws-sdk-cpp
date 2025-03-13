@@ -32,7 +32,7 @@ namespace Model
   class BatchRetryStrategy
   {
   public:
-    AWS_PIPES_API BatchRetryStrategy();
+    AWS_PIPES_API BatchRetryStrategy() = default;
     AWS_PIPES_API BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * value of <code>attempts</code> is greater than one, the job is retried on
      * failure the same number of attempts as the value.</p>
      */
-    inline int GetAttempts() const{ return m_attempts; }
+    inline int GetAttempts() const { return m_attempts; }
     inline bool AttemptsHasBeenSet() const { return m_attemptsHasBeenSet; }
     inline void SetAttempts(int value) { m_attemptsHasBeenSet = true; m_attempts = value; }
     inline BatchRetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
     ///@}
   private:
 
-    int m_attempts;
+    int m_attempts{0};
     bool m_attemptsHasBeenSet = false;
   };
 

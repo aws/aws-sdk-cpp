@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClusterRequest::DescribeClusterRequest() : 
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClusterRequest::SerializePayload() const
 {
   return {};

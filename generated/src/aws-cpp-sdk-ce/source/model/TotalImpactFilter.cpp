@@ -18,18 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-TotalImpactFilter::TotalImpactFilter() : 
-    m_numericOperator(NumericOperator::NOT_SET),
-    m_numericOperatorHasBeenSet(false),
-    m_startValue(0.0),
-    m_startValueHasBeenSet(false),
-    m_endValue(0.0),
-    m_endValueHasBeenSet(false)
-{
-}
-
 TotalImpactFilter::TotalImpactFilter(JsonView jsonValue)
-  : TotalImpactFilter()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TotalImpactFilter& TotalImpactFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumericOperator"))
   {
     m_numericOperator = NumericOperatorMapper::GetNumericOperatorForName(jsonValue.GetString("NumericOperator"));
-
     m_numericOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartValue"))
   {
     m_startValue = jsonValue.GetDouble("StartValue");
-
     m_startValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndValue"))
   {
     m_endValue = jsonValue.GetDouble("EndValue");
-
     m_endValueHasBeenSet = true;
   }
-
   return *this;
 }
 

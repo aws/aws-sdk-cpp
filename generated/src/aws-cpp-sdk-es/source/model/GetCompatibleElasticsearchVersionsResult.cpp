@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCompatibleElasticsearchVersionsResult::GetCompatibleElasticsearchVersionsResult()
-{
-}
-
 GetCompatibleElasticsearchVersionsResult::GetCompatibleElasticsearchVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetCompatibleElasticsearchVersionsResult& GetCompatibleElasticsearchVersionsResu
     {
       m_compatibleElasticsearchVersions.push_back(compatibleElasticsearchVersionsJsonList[compatibleElasticsearchVersionsIndex].AsObject());
     }
+    m_compatibleElasticsearchVersionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

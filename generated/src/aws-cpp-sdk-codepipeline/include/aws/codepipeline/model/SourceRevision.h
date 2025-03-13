@@ -32,7 +32,7 @@ namespace Model
   class SourceRevision
   {
   public:
-    AWS_CODEPIPELINE_API SourceRevision();
+    AWS_CODEPIPELINE_API SourceRevision() = default;
     AWS_CODEPIPELINE_API SourceRevision(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API SourceRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the action that processed the revision to the source
      * artifact.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline SourceRevision& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline SourceRevision& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline SourceRevision& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    SourceRevision& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The system-generated unique ID that identifies the revision number of the
      * artifact.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline SourceRevision& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline SourceRevision& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline SourceRevision& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    SourceRevision& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
-    inline const Aws::String& GetRevisionSummary() const{ return m_revisionSummary; }
+    inline const Aws::String& GetRevisionSummary() const { return m_revisionSummary; }
     inline bool RevisionSummaryHasBeenSet() const { return m_revisionSummaryHasBeenSet; }
-    inline void SetRevisionSummary(const Aws::String& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
-    inline void SetRevisionSummary(Aws::String&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = std::move(value); }
-    inline void SetRevisionSummary(const char* value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary.assign(value); }
-    inline SourceRevision& WithRevisionSummary(const Aws::String& value) { SetRevisionSummary(value); return *this;}
-    inline SourceRevision& WithRevisionSummary(Aws::String&& value) { SetRevisionSummary(std::move(value)); return *this;}
-    inline SourceRevision& WithRevisionSummary(const char* value) { SetRevisionSummary(value); return *this;}
+    template<typename RevisionSummaryT = Aws::String>
+    void SetRevisionSummary(RevisionSummaryT&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = std::forward<RevisionSummaryT>(value); }
+    template<typename RevisionSummaryT = Aws::String>
+    SourceRevision& WithRevisionSummary(RevisionSummaryT&& value) { SetRevisionSummary(std::forward<RevisionSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
      * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
-    inline const Aws::String& GetRevisionUrl() const{ return m_revisionUrl; }
+    inline const Aws::String& GetRevisionUrl() const { return m_revisionUrl; }
     inline bool RevisionUrlHasBeenSet() const { return m_revisionUrlHasBeenSet; }
-    inline void SetRevisionUrl(const Aws::String& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = value; }
-    inline void SetRevisionUrl(Aws::String&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = std::move(value); }
-    inline void SetRevisionUrl(const char* value) { m_revisionUrlHasBeenSet = true; m_revisionUrl.assign(value); }
-    inline SourceRevision& WithRevisionUrl(const Aws::String& value) { SetRevisionUrl(value); return *this;}
-    inline SourceRevision& WithRevisionUrl(Aws::String&& value) { SetRevisionUrl(std::move(value)); return *this;}
-    inline SourceRevision& WithRevisionUrl(const char* value) { SetRevisionUrl(value); return *this;}
+    template<typename RevisionUrlT = Aws::String>
+    void SetRevisionUrl(RevisionUrlT&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = std::forward<RevisionUrlT>(value); }
+    template<typename RevisionUrlT = Aws::String>
+    SourceRevision& WithRevisionUrl(RevisionUrlT&& value) { SetRevisionUrl(std::forward<RevisionUrlT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ListPoliciesGrantingServiceAccessEntry::ListPoliciesGrantingServiceAccessEntry() : 
-    m_serviceNamespaceHasBeenSet(false),
-    m_policiesHasBeenSet(false)
-{
-}
-
 ListPoliciesGrantingServiceAccessEntry::ListPoliciesGrantingServiceAccessEntry(const XmlNode& xmlNode)
-  : ListPoliciesGrantingServiceAccessEntry()
 {
   *this = xmlNode;
 }
@@ -43,18 +36,20 @@ ListPoliciesGrantingServiceAccessEntry& ListPoliciesGrantingServiceAccessEntry::
     {
       m_serviceNamespace = Aws::Utils::Xml::DecodeEscapedXmlText(serviceNamespaceNode.GetText());
       m_serviceNamespaceHasBeenSet = true;
+       m_serviceNamespaceHasBeenSet = true;
     }
     XmlNode policiesNode = resultNode.FirstChild("Policies");
     if(!policiesNode.IsNull())
     {
       XmlNode policiesMember = policiesNode.FirstChild("member");
+      m_policiesHasBeenSet = !policiesMember.IsNull();
       while(!policiesMember.IsNull())
       {
         m_policies.push_back(policiesMember);
         policiesMember = policiesMember.NextNode("member");
       }
 
-      m_policiesHasBeenSet = true;
+       m_policiesHasBeenSet = true;
     }
   }
 

@@ -18,23 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RDSInstanceDetails::RDSInstanceDetails() : 
-    m_familyHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_databaseEngineHasBeenSet(false),
-    m_databaseEditionHasBeenSet(false),
-    m_deploymentOptionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
-{
-}
-
 RDSInstanceDetails::RDSInstanceDetails(JsonView jsonValue)
-  : RDSInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ RDSInstanceDetails& RDSInstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseEngine"))
   {
     m_databaseEngine = jsonValue.GetString("DatabaseEngine");
-
     m_databaseEngineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseEdition"))
   {
     m_databaseEdition = jsonValue.GetString("DatabaseEdition");
-
     m_databaseEditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentOption"))
   {
     m_deploymentOption = jsonValue.GetString("DeploymentOption");
-
     m_deploymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseModel"))
   {
     m_licenseModel = jsonValue.GetString("LicenseModel");
-
     m_licenseModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentGeneration"))
   {
     m_currentGeneration = jsonValue.GetBool("CurrentGeneration");
-
     m_currentGenerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeFlexEligible"))
   {
     m_sizeFlexEligible = jsonValue.GetBool("SizeFlexEligible");
-
     m_sizeFlexEligibleHasBeenSet = true;
   }
-
   return *this;
 }
 

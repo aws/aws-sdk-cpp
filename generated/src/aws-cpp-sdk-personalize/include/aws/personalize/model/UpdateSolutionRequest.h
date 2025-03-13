@@ -22,7 +22,7 @@ namespace Model
   class UpdateSolutionRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API UpdateSolutionRequest();
+    AWS_PERSONALIZE_API UpdateSolutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the solution to update.</p>
      */
-    inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
+    inline const Aws::String& GetSolutionArn() const { return m_solutionArn; }
     inline bool SolutionArnHasBeenSet() const { return m_solutionArnHasBeenSet; }
-    inline void SetSolutionArn(const Aws::String& value) { m_solutionArnHasBeenSet = true; m_solutionArn = value; }
-    inline void SetSolutionArn(Aws::String&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::move(value); }
-    inline void SetSolutionArn(const char* value) { m_solutionArnHasBeenSet = true; m_solutionArn.assign(value); }
-    inline UpdateSolutionRequest& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-    inline UpdateSolutionRequest& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-    inline UpdateSolutionRequest& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
+    template<typename SolutionArnT = Aws::String>
+    void SetSolutionArn(SolutionArnT&& value) { m_solutionArnHasBeenSet = true; m_solutionArn = std::forward<SolutionArnT>(value); }
+    template<typename SolutionArnT = Aws::String>
+    UpdateSolutionRequest& WithSolutionArn(SolutionArnT&& value) { SetSolutionArn(std::forward<SolutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
      * </p>
      */
-    inline bool GetPerformAutoTraining() const{ return m_performAutoTraining; }
+    inline bool GetPerformAutoTraining() const { return m_performAutoTraining; }
     inline bool PerformAutoTrainingHasBeenSet() const { return m_performAutoTrainingHasBeenSet; }
     inline void SetPerformAutoTraining(bool value) { m_performAutoTrainingHasBeenSet = true; m_performAutoTraining = value; }
     inline UpdateSolutionRequest& WithPerformAutoTraining(bool value) { SetPerformAutoTraining(value); return *this;}
@@ -77,19 +75,19 @@ namespace Model
     /**
      * <p>The new configuration details of the solution.</p>
      */
-    inline const SolutionUpdateConfig& GetSolutionUpdateConfig() const{ return m_solutionUpdateConfig; }
+    inline const SolutionUpdateConfig& GetSolutionUpdateConfig() const { return m_solutionUpdateConfig; }
     inline bool SolutionUpdateConfigHasBeenSet() const { return m_solutionUpdateConfigHasBeenSet; }
-    inline void SetSolutionUpdateConfig(const SolutionUpdateConfig& value) { m_solutionUpdateConfigHasBeenSet = true; m_solutionUpdateConfig = value; }
-    inline void SetSolutionUpdateConfig(SolutionUpdateConfig&& value) { m_solutionUpdateConfigHasBeenSet = true; m_solutionUpdateConfig = std::move(value); }
-    inline UpdateSolutionRequest& WithSolutionUpdateConfig(const SolutionUpdateConfig& value) { SetSolutionUpdateConfig(value); return *this;}
-    inline UpdateSolutionRequest& WithSolutionUpdateConfig(SolutionUpdateConfig&& value) { SetSolutionUpdateConfig(std::move(value)); return *this;}
+    template<typename SolutionUpdateConfigT = SolutionUpdateConfig>
+    void SetSolutionUpdateConfig(SolutionUpdateConfigT&& value) { m_solutionUpdateConfigHasBeenSet = true; m_solutionUpdateConfig = std::forward<SolutionUpdateConfigT>(value); }
+    template<typename SolutionUpdateConfigT = SolutionUpdateConfig>
+    UpdateSolutionRequest& WithSolutionUpdateConfig(SolutionUpdateConfigT&& value) { SetSolutionUpdateConfig(std::forward<SolutionUpdateConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_solutionArn;
     bool m_solutionArnHasBeenSet = false;
 
-    bool m_performAutoTraining;
+    bool m_performAutoTraining{false};
     bool m_performAutoTrainingHasBeenSet = false;
 
     SolutionUpdateConfig m_solutionUpdateConfig;

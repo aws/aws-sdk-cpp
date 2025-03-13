@@ -18,17 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-FunctionConfigurationEnvironment::FunctionConfigurationEnvironment() : 
-    m_accessSysfs(false),
-    m_accessSysfsHasBeenSet(false),
-    m_executionHasBeenSet(false),
-    m_resourceAccessPoliciesHasBeenSet(false),
-    m_variablesHasBeenSet(false)
-{
-}
-
 FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(JsonView jsonValue)
-  : FunctionConfigurationEnvironment()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(J
   if(jsonValue.ValueExists("AccessSysfs"))
   {
     m_accessSysfs = jsonValue.GetBool("AccessSysfs");
-
     m_accessSysfsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Execution"))
   {
     m_execution = jsonValue.GetObject("Execution");
-
     m_executionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceAccessPolicies"))
   {
     Aws::Utils::Array<JsonView> resourceAccessPoliciesJsonList = jsonValue.GetArray("ResourceAccessPolicies");
@@ -58,7 +44,6 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(J
     }
     m_resourceAccessPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Variables"))
   {
     Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
@@ -68,7 +53,6 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(J
     }
     m_variablesHasBeenSet = true;
   }
-
   return *this;
 }
 

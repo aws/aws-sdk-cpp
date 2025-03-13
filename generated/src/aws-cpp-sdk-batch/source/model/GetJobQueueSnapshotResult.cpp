@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJobQueueSnapshotResult::GetJobQueueSnapshotResult()
-{
-}
-
 GetJobQueueSnapshotResult::GetJobQueueSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetJobQueueSnapshotResult& GetJobQueueSnapshotResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("frontOfQueue"))
   {
     m_frontOfQueue = jsonValue.GetObject("frontOfQueue");
-
+    m_frontOfQueueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-FailoverConditionSettings::FailoverConditionSettings() : 
-    m_audioSilenceSettingsHasBeenSet(false),
-    m_inputLossSettingsHasBeenSet(false),
-    m_videoBlackSettingsHasBeenSet(false)
-{
-}
-
 FailoverConditionSettings::FailoverConditionSettings(JsonView jsonValue)
-  : FailoverConditionSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FailoverConditionSettings& FailoverConditionSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("audioSilenceSettings"))
   {
     m_audioSilenceSettings = jsonValue.GetObject("audioSilenceSettings");
-
     m_audioSilenceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputLossSettings"))
   {
     m_inputLossSettings = jsonValue.GetObject("inputLossSettings");
-
     m_inputLossSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoBlackSettings"))
   {
     m_videoBlackSettings = jsonValue.GetObject("videoBlackSettings");
-
     m_videoBlackSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

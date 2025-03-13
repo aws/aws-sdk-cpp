@@ -32,7 +32,7 @@ namespace Model
   class ObjectAttributeRange
   {
   public:
-    AWS_CLOUDDIRECTORY_API ObjectAttributeRange();
+    AWS_CLOUDDIRECTORY_API ObjectAttributeRange() = default;
     AWS_CLOUDDIRECTORY_API ObjectAttributeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API ObjectAttributeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The key of the attribute that the attribute range covers.</p>
      */
-    inline const AttributeKey& GetAttributeKey() const{ return m_attributeKey; }
+    inline const AttributeKey& GetAttributeKey() const { return m_attributeKey; }
     inline bool AttributeKeyHasBeenSet() const { return m_attributeKeyHasBeenSet; }
-    inline void SetAttributeKey(const AttributeKey& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
-    inline void SetAttributeKey(AttributeKey&& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = std::move(value); }
-    inline ObjectAttributeRange& WithAttributeKey(const AttributeKey& value) { SetAttributeKey(value); return *this;}
-    inline ObjectAttributeRange& WithAttributeKey(AttributeKey&& value) { SetAttributeKey(std::move(value)); return *this;}
+    template<typename AttributeKeyT = AttributeKey>
+    void SetAttributeKey(AttributeKeyT&& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = std::forward<AttributeKeyT>(value); }
+    template<typename AttributeKeyT = AttributeKey>
+    ObjectAttributeRange& WithAttributeKey(AttributeKeyT&& value) { SetAttributeKey(std::forward<AttributeKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The range of attribute values being selected.</p>
      */
-    inline const TypedAttributeValueRange& GetRange() const{ return m_range; }
+    inline const TypedAttributeValueRange& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const TypedAttributeValueRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(TypedAttributeValueRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline ObjectAttributeRange& WithRange(const TypedAttributeValueRange& value) { SetRange(value); return *this;}
-    inline ObjectAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(std::move(value)); return *this;}
+    template<typename RangeT = TypedAttributeValueRange>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = TypedAttributeValueRange>
+    ObjectAttributeRange& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration() : 
-    m_heatmapColorHasBeenSet(false)
-{
-}
-
 GeospatialHeatmapConfiguration::GeospatialHeatmapConfiguration(JsonView jsonValue)
-  : GeospatialHeatmapConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GeospatialHeatmapConfiguration& GeospatialHeatmapConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("HeatmapColor"))
   {
     m_heatmapColor = jsonValue.GetObject("HeatmapColor");
-
     m_heatmapColorHasBeenSet = true;
   }
-
   return *this;
 }
 

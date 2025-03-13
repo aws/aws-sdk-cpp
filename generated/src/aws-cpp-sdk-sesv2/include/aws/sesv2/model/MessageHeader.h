@@ -32,7 +32,7 @@ namespace Model
   class MessageHeader
   {
   public:
-    AWS_SESV2_API MessageHeader();
+    AWS_SESV2_API MessageHeader() = default;
     AWS_SESV2_API MessageHeader(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API MessageHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * (33 - 126) except for colon (:).</p> </li> <li> <p>Can contain no more than 126
      * characters.</p> </li> </ul>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MessageHeader& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MessageHeader& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MessageHeader& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MessageHeader& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * character.</p> </li> <li> <p>Can contain no more than 870 characters.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline MessageHeader& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline MessageHeader& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline MessageHeader& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    MessageHeader& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

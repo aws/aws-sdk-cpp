@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReleaseIpamPoolAllocationResponse::ReleaseIpamPoolAllocationResponse() : 
-    m_success(false)
-{
-}
-
 ReleaseIpamPoolAllocationResponse::ReleaseIpamPoolAllocationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ReleaseIpamPoolAllocationResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ ReleaseIpamPoolAllocationResponse& ReleaseIpamPoolAllocationResponse::operator =
     if(!successNode.IsNull())
     {
       m_success = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(successNode.GetText()).c_str()).c_str());
+      m_successHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ ReleaseIpamPoolAllocationResponse& ReleaseIpamPoolAllocationResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ReleaseIpamPoolAllocationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteEventsByEventTypeResult::DeleteEventsByEventTypeResult()
-{
-}
-
 DeleteEventsByEventTypeResult::DeleteEventsByEventTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DeleteEventsByEventTypeResult& DeleteEventsByEventTypeResult::operator =(const A
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
+    m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventsDeletionStatus"))
   {
     m_eventsDeletionStatus = jsonValue.GetString("eventsDeletionStatus");
-
+    m_eventsDeletionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

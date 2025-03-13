@@ -27,7 +27,7 @@ namespace Model
   class CopyProjectVersionResult
   {
   public:
-    AWS_REKOGNITION_API CopyProjectVersionResult();
+    AWS_REKOGNITION_API CopyProjectVersionResult() = default;
     AWS_REKOGNITION_API CopyProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API CopyProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the copied model version in the destination project. </p>
      */
-    inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
-    inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArn = value; }
-    inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArn = std::move(value); }
-    inline void SetProjectVersionArn(const char* value) { m_projectVersionArn.assign(value); }
-    inline CopyProjectVersionResult& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
-    inline CopyProjectVersionResult& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
-    inline CopyProjectVersionResult& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
+    inline const Aws::String& GetProjectVersionArn() const { return m_projectVersionArn; }
+    template<typename ProjectVersionArnT = Aws::String>
+    void SetProjectVersionArn(ProjectVersionArnT&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::forward<ProjectVersionArnT>(value); }
+    template<typename ProjectVersionArnT = Aws::String>
+    CopyProjectVersionResult& WithProjectVersionArn(ProjectVersionArnT&& value) { SetProjectVersionArn(std::forward<ProjectVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CopyProjectVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CopyProjectVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CopyProjectVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CopyProjectVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectVersionArn;
+    bool m_projectVersionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

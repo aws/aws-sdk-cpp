@@ -18,14 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-ReplicaAutoScalingSpecification::ReplicaAutoScalingSpecification() : 
-    m_regionHasBeenSet(false),
-    m_autoScalingSpecificationHasBeenSet(false)
-{
-}
-
 ReplicaAutoScalingSpecification::ReplicaAutoScalingSpecification(JsonView jsonValue)
-  : ReplicaAutoScalingSpecification()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReplicaAutoScalingSpecification& ReplicaAutoScalingSpecification::operator =(Jso
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingSpecification"))
   {
     m_autoScalingSpecification = jsonValue.GetObject("autoScalingSpecification");
-
     m_autoScalingSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsTeamMember::AwsTeamMember() : 
-    m_businessTitle(AwsMemberBusinessTitle::NOT_SET),
-    m_businessTitleHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
-{
-}
-
 AwsTeamMember::AwsTeamMember(JsonView jsonValue)
-  : AwsTeamMember()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsTeamMember& AwsTeamMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BusinessTitle"))
   {
     m_businessTitle = AwsMemberBusinessTitleMapper::GetAwsMemberBusinessTitleForName(jsonValue.GetString("BusinessTitle"));
-
     m_businessTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   return *this;
 }
 

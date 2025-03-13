@@ -26,7 +26,7 @@ namespace Model
   class UpdateDashboardRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateDashboardRequest();
+    AWS_QUICKSIGHT_API UpdateDashboardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that contains the dashboard that
      * you're updating.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateDashboardRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateDashboardRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateDashboardRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateDashboardRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID for the dashboard.</p>
      */
-    inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
+    inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
-    inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
-    inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
-    inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
-    inline UpdateDashboardRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
-    inline UpdateDashboardRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
-    inline UpdateDashboardRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
+    template<typename DashboardIdT = Aws::String>
+    void SetDashboardId(DashboardIdT&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::forward<DashboardIdT>(value); }
+    template<typename DashboardIdT = Aws::String>
+    UpdateDashboardRequest& WithDashboardId(DashboardIdT&& value) { SetDashboardId(std::forward<DashboardIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the dashboard.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateDashboardRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateDashboardRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateDashboardRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateDashboardRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +90,12 @@ namespace Model
      * the placeholders listed in the original. The schema in each dataset must match
      * its placeholder. </p>
      */
-    inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
+    inline const DashboardSourceEntity& GetSourceEntity() const { return m_sourceEntity; }
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
-    inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
-    inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
-    inline UpdateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
-    inline UpdateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
+    template<typename SourceEntityT = DashboardSourceEntity>
+    void SetSourceEntity(SourceEntityT&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::forward<SourceEntityT>(value); }
+    template<typename SourceEntityT = DashboardSourceEntity>
+    UpdateDashboardRequest& WithSourceEntity(SourceEntityT&& value) { SetSourceEntity(std::forward<SourceEntityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,26 +104,24 @@ namespace Model
      * parameter overrides for a dashboard. A dashboard can have any type of
      * parameters, and some parameters might accept multiple values.</p>
      */
-    inline const Parameters& GetParameters() const{ return m_parameters; }
+    inline const Parameters& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline UpdateDashboardRequest& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
-    inline UpdateDashboardRequest& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
+    template<typename ParametersT = Parameters>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Parameters>
+    UpdateDashboardRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the first version of the dashboard being created.</p>
      */
-    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+    inline const Aws::String& GetVersionDescription() const { return m_versionDescription; }
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
-    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
-    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
-    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
-    inline UpdateDashboardRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
-    inline UpdateDashboardRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
-    inline UpdateDashboardRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+    template<typename VersionDescriptionT = Aws::String>
+    void SetVersionDescription(VersionDescriptionT&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::forward<VersionDescriptionT>(value); }
+    template<typename VersionDescriptionT = Aws::String>
+    UpdateDashboardRequest& WithVersionDescription(VersionDescriptionT&& value) { SetVersionDescription(std::forward<VersionDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +141,12 @@ namespace Model
      * <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p>
      * </li> </ul>
      */
-    inline const DashboardPublishOptions& GetDashboardPublishOptions() const{ return m_dashboardPublishOptions; }
+    inline const DashboardPublishOptions& GetDashboardPublishOptions() const { return m_dashboardPublishOptions; }
     inline bool DashboardPublishOptionsHasBeenSet() const { return m_dashboardPublishOptionsHasBeenSet; }
-    inline void SetDashboardPublishOptions(const DashboardPublishOptions& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = value; }
-    inline void SetDashboardPublishOptions(DashboardPublishOptions&& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = std::move(value); }
-    inline UpdateDashboardRequest& WithDashboardPublishOptions(const DashboardPublishOptions& value) { SetDashboardPublishOptions(value); return *this;}
-    inline UpdateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
+    template<typename DashboardPublishOptionsT = DashboardPublishOptions>
+    void SetDashboardPublishOptions(DashboardPublishOptionsT&& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = std::forward<DashboardPublishOptionsT>(value); }
+    template<typename DashboardPublishOptionsT = DashboardPublishOptions>
+    UpdateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptionsT&& value) { SetDashboardPublishOptions(std::forward<DashboardPublishOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +156,12 @@ namespace Model
      * originally associated with the entity. The theme ARN must exist in the same
      * Amazon Web Services account where you create the dashboard.</p>
      */
-    inline const Aws::String& GetThemeArn() const{ return m_themeArn; }
+    inline const Aws::String& GetThemeArn() const { return m_themeArn; }
     inline bool ThemeArnHasBeenSet() const { return m_themeArnHasBeenSet; }
-    inline void SetThemeArn(const Aws::String& value) { m_themeArnHasBeenSet = true; m_themeArn = value; }
-    inline void SetThemeArn(Aws::String&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::move(value); }
-    inline void SetThemeArn(const char* value) { m_themeArnHasBeenSet = true; m_themeArn.assign(value); }
-    inline UpdateDashboardRequest& WithThemeArn(const Aws::String& value) { SetThemeArn(value); return *this;}
-    inline UpdateDashboardRequest& WithThemeArn(Aws::String&& value) { SetThemeArn(std::move(value)); return *this;}
-    inline UpdateDashboardRequest& WithThemeArn(const char* value) { SetThemeArn(value); return *this;}
+    template<typename ThemeArnT = Aws::String>
+    void SetThemeArn(ThemeArnT&& value) { m_themeArnHasBeenSet = true; m_themeArn = std::forward<ThemeArnT>(value); }
+    template<typename ThemeArnT = Aws::String>
+    UpdateDashboardRequest& WithThemeArn(ThemeArnT&& value) { SetThemeArn(std::forward<ThemeArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,12 +169,12 @@ namespace Model
      * <p>The definition of a dashboard.</p> <p>A definition is the data model of all
      * features in a Dashboard, Template, or Analysis.</p>
      */
-    inline const DashboardVersionDefinition& GetDefinition() const{ return m_definition; }
+    inline const DashboardVersionDefinition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const DashboardVersionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(DashboardVersionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline UpdateDashboardRequest& WithDefinition(const DashboardVersionDefinition& value) { SetDefinition(value); return *this;}
-    inline UpdateDashboardRequest& WithDefinition(DashboardVersionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = DashboardVersionDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = DashboardVersionDefinition>
+    UpdateDashboardRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,12 +182,12 @@ namespace Model
      * <p>The option to relax the validation needed to update a dashboard with
      * definition objects. This skips the validation step for specific errors.</p>
      */
-    inline const ValidationStrategy& GetValidationStrategy() const{ return m_validationStrategy; }
+    inline const ValidationStrategy& GetValidationStrategy() const { return m_validationStrategy; }
     inline bool ValidationStrategyHasBeenSet() const { return m_validationStrategyHasBeenSet; }
-    inline void SetValidationStrategy(const ValidationStrategy& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = value; }
-    inline void SetValidationStrategy(ValidationStrategy&& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = std::move(value); }
-    inline UpdateDashboardRequest& WithValidationStrategy(const ValidationStrategy& value) { SetValidationStrategy(value); return *this;}
-    inline UpdateDashboardRequest& WithValidationStrategy(ValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
+    template<typename ValidationStrategyT = ValidationStrategy>
+    void SetValidationStrategy(ValidationStrategyT&& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = std::forward<ValidationStrategyT>(value); }
+    template<typename ValidationStrategyT = ValidationStrategy>
+    UpdateDashboardRequest& WithValidationStrategy(ValidationStrategyT&& value) { SetValidationStrategy(std::forward<ValidationStrategyT>(value)); return *this;}
     ///@}
   private:
 

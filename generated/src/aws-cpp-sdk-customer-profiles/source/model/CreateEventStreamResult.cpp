@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEventStreamResult::CreateEventStreamResult()
-{
-}
-
 CreateEventStreamResult::CreateEventStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateEventStreamResult& CreateEventStreamResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("EventStreamArn"))
   {
     m_eventStreamArn = jsonValue.GetString("EventStreamArn");
-
+    m_eventStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -42,14 +37,15 @@ CreateEventStreamResult& CreateEventStreamResult::operator =(const Aws::AmazonWe
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

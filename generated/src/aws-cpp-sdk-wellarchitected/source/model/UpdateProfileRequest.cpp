@@ -12,13 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProfileRequest::UpdateProfileRequest() : 
-    m_profileArnHasBeenSet(false),
-    m_profileDescriptionHasBeenSet(false),
-    m_profileQuestionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

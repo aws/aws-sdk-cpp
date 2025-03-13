@@ -37,7 +37,7 @@ namespace Model
   class DetectLabelsImageProperties
   {
   public:
-    AWS_REKOGNITION_API DetectLabelsImageProperties();
+    AWS_REKOGNITION_API DetectLabelsImageProperties() = default;
     AWS_REKOGNITION_API DetectLabelsImageProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DetectLabelsImageProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * brightness, sharpness, and contrast. The higher the value the greater the
      * brightness, sharpness, and contrast respectively.</p>
      */
-    inline const DetectLabelsImageQuality& GetQuality() const{ return m_quality; }
+    inline const DetectLabelsImageQuality& GetQuality() const { return m_quality; }
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
-    inline void SetQuality(const DetectLabelsImageQuality& value) { m_qualityHasBeenSet = true; m_quality = value; }
-    inline void SetQuality(DetectLabelsImageQuality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
-    inline DetectLabelsImageProperties& WithQuality(const DetectLabelsImageQuality& value) { SetQuality(value); return *this;}
-    inline DetectLabelsImageProperties& WithQuality(DetectLabelsImageQuality&& value) { SetQuality(std::move(value)); return *this;}
+    template<typename QualityT = DetectLabelsImageQuality>
+    void SetQuality(QualityT&& value) { m_qualityHasBeenSet = true; m_quality = std::forward<QualityT>(value); }
+    template<typename QualityT = DetectLabelsImageQuality>
+    DetectLabelsImageProperties& WithQuality(QualityT&& value) { SetQuality(std::forward<QualityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +63,14 @@ namespace Model
      * values, CSS color name, simplified color name, and PixelPercentage (the
      * percentage of image pixels that have a particular color).</p>
      */
-    inline const Aws::Vector<DominantColor>& GetDominantColors() const{ return m_dominantColors; }
+    inline const Aws::Vector<DominantColor>& GetDominantColors() const { return m_dominantColors; }
     inline bool DominantColorsHasBeenSet() const { return m_dominantColorsHasBeenSet; }
-    inline void SetDominantColors(const Aws::Vector<DominantColor>& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = value; }
-    inline void SetDominantColors(Aws::Vector<DominantColor>&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = std::move(value); }
-    inline DetectLabelsImageProperties& WithDominantColors(const Aws::Vector<DominantColor>& value) { SetDominantColors(value); return *this;}
-    inline DetectLabelsImageProperties& WithDominantColors(Aws::Vector<DominantColor>&& value) { SetDominantColors(std::move(value)); return *this;}
-    inline DetectLabelsImageProperties& AddDominantColors(const DominantColor& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.push_back(value); return *this; }
-    inline DetectLabelsImageProperties& AddDominantColors(DominantColor&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.push_back(std::move(value)); return *this; }
+    template<typename DominantColorsT = Aws::Vector<DominantColor>>
+    void SetDominantColors(DominantColorsT&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = std::forward<DominantColorsT>(value); }
+    template<typename DominantColorsT = Aws::Vector<DominantColor>>
+    DetectLabelsImageProperties& WithDominantColors(DominantColorsT&& value) { SetDominantColors(std::forward<DominantColorsT>(value)); return *this;}
+    template<typename DominantColorsT = DominantColor>
+    DetectLabelsImageProperties& AddDominantColors(DominantColorsT&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.emplace_back(std::forward<DominantColorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * foreground’s quality and dominant colors, including the quality and dominant
      * colors of the image.</p>
      */
-    inline const DetectLabelsImageForeground& GetForeground() const{ return m_foreground; }
+    inline const DetectLabelsImageForeground& GetForeground() const { return m_foreground; }
     inline bool ForegroundHasBeenSet() const { return m_foregroundHasBeenSet; }
-    inline void SetForeground(const DetectLabelsImageForeground& value) { m_foregroundHasBeenSet = true; m_foreground = value; }
-    inline void SetForeground(DetectLabelsImageForeground&& value) { m_foregroundHasBeenSet = true; m_foreground = std::move(value); }
-    inline DetectLabelsImageProperties& WithForeground(const DetectLabelsImageForeground& value) { SetForeground(value); return *this;}
-    inline DetectLabelsImageProperties& WithForeground(DetectLabelsImageForeground&& value) { SetForeground(std::move(value)); return *this;}
+    template<typename ForegroundT = DetectLabelsImageForeground>
+    void SetForeground(ForegroundT&& value) { m_foregroundHasBeenSet = true; m_foreground = std::forward<ForegroundT>(value); }
+    template<typename ForegroundT = DetectLabelsImageForeground>
+    DetectLabelsImageProperties& WithForeground(ForegroundT&& value) { SetForeground(std::forward<ForegroundT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +93,12 @@ namespace Model
      * background’s quality and dominant colors, including the quality and dominant
      * colors of the image.</p>
      */
-    inline const DetectLabelsImageBackground& GetBackground() const{ return m_background; }
+    inline const DetectLabelsImageBackground& GetBackground() const { return m_background; }
     inline bool BackgroundHasBeenSet() const { return m_backgroundHasBeenSet; }
-    inline void SetBackground(const DetectLabelsImageBackground& value) { m_backgroundHasBeenSet = true; m_background = value; }
-    inline void SetBackground(DetectLabelsImageBackground&& value) { m_backgroundHasBeenSet = true; m_background = std::move(value); }
-    inline DetectLabelsImageProperties& WithBackground(const DetectLabelsImageBackground& value) { SetBackground(value); return *this;}
-    inline DetectLabelsImageProperties& WithBackground(DetectLabelsImageBackground&& value) { SetBackground(std::move(value)); return *this;}
+    template<typename BackgroundT = DetectLabelsImageBackground>
+    void SetBackground(BackgroundT&& value) { m_backgroundHasBeenSet = true; m_background = std::forward<BackgroundT>(value); }
+    template<typename BackgroundT = DetectLabelsImageBackground>
+    DetectLabelsImageProperties& WithBackground(BackgroundT&& value) { SetBackground(std::forward<BackgroundT>(value)); return *this;}
     ///@}
   private:
 

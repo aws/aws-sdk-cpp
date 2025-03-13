@@ -33,7 +33,7 @@ namespace Model
   class CalendarInterval
   {
   public:
-    AWS_APPLICATIONSIGNALS_API CalendarInterval();
+    AWS_APPLICATIONSIGNALS_API CalendarInterval() = default;
     AWS_APPLICATIONSIGNALS_API CalendarInterval(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API CalendarInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,22 @@ namespace Model
      * <code>1698778057</code> </p> <p>As soon as one calendar interval ends, another
      * automatically begins.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CalendarInterval& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CalendarInterval& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CalendarInterval& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the calendar interval unit.</p>
      */
-    inline const DurationUnit& GetDurationUnit() const{ return m_durationUnit; }
+    inline DurationUnit GetDurationUnit() const { return m_durationUnit; }
     inline bool DurationUnitHasBeenSet() const { return m_durationUnitHasBeenSet; }
-    inline void SetDurationUnit(const DurationUnit& value) { m_durationUnitHasBeenSet = true; m_durationUnit = value; }
-    inline void SetDurationUnit(DurationUnit&& value) { m_durationUnitHasBeenSet = true; m_durationUnit = std::move(value); }
-    inline CalendarInterval& WithDurationUnit(const DurationUnit& value) { SetDurationUnit(value); return *this;}
-    inline CalendarInterval& WithDurationUnit(DurationUnit&& value) { SetDurationUnit(std::move(value)); return *this;}
+    inline void SetDurationUnit(DurationUnit value) { m_durationUnitHasBeenSet = true; m_durationUnit = value; }
+    inline CalendarInterval& WithDurationUnit(DurationUnit value) { SetDurationUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -75,20 +73,20 @@ namespace Model
      * <code>Duration</code> is <code>1</code> and <code>DurationUnit</code> is
      * <code>MONTH</code>, each interval is one month, aligned with the calendar.</p>
      */
-    inline int GetDuration() const{ return m_duration; }
+    inline int GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
     inline CalendarInterval& WithDuration(int value) { SetDuration(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    DurationUnit m_durationUnit;
+    DurationUnit m_durationUnit{DurationUnit::NOT_SET};
     bool m_durationUnitHasBeenSet = false;
 
-    int m_duration;
+    int m_duration{0};
     bool m_durationHasBeenSet = false;
   };
 

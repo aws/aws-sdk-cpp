@@ -22,7 +22,7 @@ namespace Model
   class GetCalendarStateRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetCalendarStateRequest();
+    AWS_SSM_API GetCalendarStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * (SSM documents) that represent the calendar entries for which you want to get
      * the state.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
+    inline const Aws::Vector<Aws::String>& GetCalendarNames() const { return m_calendarNames; }
     inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }
-    inline void SetCalendarNames(const Aws::Vector<Aws::String>& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = value; }
-    inline void SetCalendarNames(Aws::Vector<Aws::String>&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::move(value); }
-    inline GetCalendarStateRequest& WithCalendarNames(const Aws::Vector<Aws::String>& value) { SetCalendarNames(value); return *this;}
-    inline GetCalendarStateRequest& WithCalendarNames(Aws::Vector<Aws::String>&& value) { SetCalendarNames(std::move(value)); return *this;}
-    inline GetCalendarStateRequest& AddCalendarNames(const Aws::String& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
-    inline GetCalendarStateRequest& AddCalendarNames(Aws::String&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(std::move(value)); return *this; }
-    inline GetCalendarStateRequest& AddCalendarNames(const char* value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+    template<typename CalendarNamesT = Aws::Vector<Aws::String>>
+    void SetCalendarNames(CalendarNamesT&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::forward<CalendarNamesT>(value); }
+    template<typename CalendarNamesT = Aws::Vector<Aws::String>>
+    GetCalendarStateRequest& WithCalendarNames(CalendarNamesT&& value) { SetCalendarNames(std::forward<CalendarNamesT>(value)); return *this;}
+    template<typename CalendarNamesT = Aws::String>
+    GetCalendarStateRequest& AddCalendarNames(CalendarNamesT&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.emplace_back(std::forward<CalendarNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +58,12 @@ namespace Model
      * format. If you don't specify a value or <code>AtTime</code>, the current time is
      * used.</p>
      */
-    inline const Aws::String& GetAtTime() const{ return m_atTime; }
+    inline const Aws::String& GetAtTime() const { return m_atTime; }
     inline bool AtTimeHasBeenSet() const { return m_atTimeHasBeenSet; }
-    inline void SetAtTime(const Aws::String& value) { m_atTimeHasBeenSet = true; m_atTime = value; }
-    inline void SetAtTime(Aws::String&& value) { m_atTimeHasBeenSet = true; m_atTime = std::move(value); }
-    inline void SetAtTime(const char* value) { m_atTimeHasBeenSet = true; m_atTime.assign(value); }
-    inline GetCalendarStateRequest& WithAtTime(const Aws::String& value) { SetAtTime(value); return *this;}
-    inline GetCalendarStateRequest& WithAtTime(Aws::String&& value) { SetAtTime(std::move(value)); return *this;}
-    inline GetCalendarStateRequest& WithAtTime(const char* value) { SetAtTime(value); return *this;}
+    template<typename AtTimeT = Aws::String>
+    void SetAtTime(AtTimeT&& value) { m_atTimeHasBeenSet = true; m_atTime = std::forward<AtTimeT>(value); }
+    template<typename AtTimeT = Aws::String>
+    GetCalendarStateRequest& WithAtTime(AtTimeT&& value) { SetAtTime(std::forward<AtTimeT>(value)); return *this;}
     ///@}
   private:
 

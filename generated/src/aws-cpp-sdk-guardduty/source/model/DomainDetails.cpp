@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DomainDetails::DomainDetails() : 
-    m_domainHasBeenSet(false)
-{
-}
-
 DomainDetails::DomainDetails(JsonView jsonValue)
-  : DomainDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DomainDetails& DomainDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = jsonValue.GetString("domain");
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

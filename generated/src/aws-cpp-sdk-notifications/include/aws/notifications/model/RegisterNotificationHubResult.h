@@ -29,7 +29,7 @@ namespace Model
   class RegisterNotificationHubResult
   {
   public:
-    AWS_NOTIFICATIONS_API RegisterNotificationHubResult();
+    AWS_NOTIFICATIONS_API RegisterNotificationHubResult() = default;
     AWS_NOTIFICATIONS_API RegisterNotificationHubResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NOTIFICATIONS_API RegisterNotificationHubResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The Region of the <code>NotificationHub</code>.</p>
      */
-    inline const Aws::String& GetNotificationHubRegion() const{ return m_notificationHubRegion; }
-    inline void SetNotificationHubRegion(const Aws::String& value) { m_notificationHubRegion = value; }
-    inline void SetNotificationHubRegion(Aws::String&& value) { m_notificationHubRegion = std::move(value); }
-    inline void SetNotificationHubRegion(const char* value) { m_notificationHubRegion.assign(value); }
-    inline RegisterNotificationHubResult& WithNotificationHubRegion(const Aws::String& value) { SetNotificationHubRegion(value); return *this;}
-    inline RegisterNotificationHubResult& WithNotificationHubRegion(Aws::String&& value) { SetNotificationHubRegion(std::move(value)); return *this;}
-    inline RegisterNotificationHubResult& WithNotificationHubRegion(const char* value) { SetNotificationHubRegion(value); return *this;}
+    inline const Aws::String& GetNotificationHubRegion() const { return m_notificationHubRegion; }
+    template<typename NotificationHubRegionT = Aws::String>
+    void SetNotificationHubRegion(NotificationHubRegionT&& value) { m_notificationHubRegionHasBeenSet = true; m_notificationHubRegion = std::forward<NotificationHubRegionT>(value); }
+    template<typename NotificationHubRegionT = Aws::String>
+    RegisterNotificationHubResult& WithNotificationHubRegion(NotificationHubRegionT&& value) { SetNotificationHubRegion(std::forward<NotificationHubRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,56 +50,59 @@ namespace Model
      * <p>Provides additional information about the current
      * <code>NotificationConfiguration</code> status information.</p>
      */
-    inline const NotificationHubStatusSummary& GetStatusSummary() const{ return m_statusSummary; }
-    inline void SetStatusSummary(const NotificationHubStatusSummary& value) { m_statusSummary = value; }
-    inline void SetStatusSummary(NotificationHubStatusSummary&& value) { m_statusSummary = std::move(value); }
-    inline RegisterNotificationHubResult& WithStatusSummary(const NotificationHubStatusSummary& value) { SetStatusSummary(value); return *this;}
-    inline RegisterNotificationHubResult& WithStatusSummary(NotificationHubStatusSummary&& value) { SetStatusSummary(std::move(value)); return *this;}
+    inline const NotificationHubStatusSummary& GetStatusSummary() const { return m_statusSummary; }
+    template<typename StatusSummaryT = NotificationHubStatusSummary>
+    void SetStatusSummary(StatusSummaryT&& value) { m_statusSummaryHasBeenSet = true; m_statusSummary = std::forward<StatusSummaryT>(value); }
+    template<typename StatusSummaryT = NotificationHubStatusSummary>
+    RegisterNotificationHubResult& WithStatusSummary(StatusSummaryT&& value) { SetStatusSummary(std::forward<StatusSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the resource was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline RegisterNotificationHubResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline RegisterNotificationHubResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    RegisterNotificationHubResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the resource was last activated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastActivationTime() const{ return m_lastActivationTime; }
-    inline void SetLastActivationTime(const Aws::Utils::DateTime& value) { m_lastActivationTime = value; }
-    inline void SetLastActivationTime(Aws::Utils::DateTime&& value) { m_lastActivationTime = std::move(value); }
-    inline RegisterNotificationHubResult& WithLastActivationTime(const Aws::Utils::DateTime& value) { SetLastActivationTime(value); return *this;}
-    inline RegisterNotificationHubResult& WithLastActivationTime(Aws::Utils::DateTime&& value) { SetLastActivationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastActivationTime() const { return m_lastActivationTime; }
+    template<typename LastActivationTimeT = Aws::Utils::DateTime>
+    void SetLastActivationTime(LastActivationTimeT&& value) { m_lastActivationTimeHasBeenSet = true; m_lastActivationTime = std::forward<LastActivationTimeT>(value); }
+    template<typename LastActivationTimeT = Aws::Utils::DateTime>
+    RegisterNotificationHubResult& WithLastActivationTime(LastActivationTimeT&& value) { SetLastActivationTime(std::forward<LastActivationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterNotificationHubResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterNotificationHubResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterNotificationHubResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterNotificationHubResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_notificationHubRegion;
+    bool m_notificationHubRegionHasBeenSet = false;
 
     NotificationHubStatusSummary m_statusSummary;
+    bool m_statusSummaryHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastActivationTime;
+    Aws::Utils::DateTime m_lastActivationTime{};
+    bool m_lastActivationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

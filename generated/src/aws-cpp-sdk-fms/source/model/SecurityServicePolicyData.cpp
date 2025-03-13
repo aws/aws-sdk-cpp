@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-SecurityServicePolicyData::SecurityServicePolicyData() : 
-    m_type(SecurityServiceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_managedServiceDataHasBeenSet(false),
-    m_policyOptionHasBeenSet(false)
-{
-}
-
 SecurityServicePolicyData::SecurityServicePolicyData(JsonView jsonValue)
-  : SecurityServicePolicyData()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SecurityServicePolicyData& SecurityServicePolicyData::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SecurityServiceTypeMapper::GetSecurityServiceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedServiceData"))
   {
     m_managedServiceData = jsonValue.GetString("ManagedServiceData");
-
     m_managedServiceDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyOption"))
   {
     m_policyOption = jsonValue.GetObject("PolicyOption");
-
     m_policyOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

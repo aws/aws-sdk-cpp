@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-SourceS3Location::SourceS3Location() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 SourceS3Location::SourceS3Location(JsonView jsonValue)
-  : SourceS3Location()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SourceS3Location& SourceS3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

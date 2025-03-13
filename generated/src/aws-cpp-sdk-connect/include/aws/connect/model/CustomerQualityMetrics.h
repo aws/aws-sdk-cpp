@@ -32,7 +32,7 @@ namespace Model
   class CustomerQualityMetrics
   {
   public:
-    AWS_CONNECT_API CustomerQualityMetrics();
+    AWS_CONNECT_API CustomerQualityMetrics() = default;
     AWS_CONNECT_API CustomerQualityMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CustomerQualityMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Information about the audio quality of the Customer</p>
      */
-    inline const AudioQualityMetricsInfo& GetAudio() const{ return m_audio; }
+    inline const AudioQualityMetricsInfo& GetAudio() const { return m_audio; }
     inline bool AudioHasBeenSet() const { return m_audioHasBeenSet; }
-    inline void SetAudio(const AudioQualityMetricsInfo& value) { m_audioHasBeenSet = true; m_audio = value; }
-    inline void SetAudio(AudioQualityMetricsInfo&& value) { m_audioHasBeenSet = true; m_audio = std::move(value); }
-    inline CustomerQualityMetrics& WithAudio(const AudioQualityMetricsInfo& value) { SetAudio(value); return *this;}
-    inline CustomerQualityMetrics& WithAudio(AudioQualityMetricsInfo&& value) { SetAudio(std::move(value)); return *this;}
+    template<typename AudioT = AudioQualityMetricsInfo>
+    void SetAudio(AudioT&& value) { m_audioHasBeenSet = true; m_audio = std::forward<AudioT>(value); }
+    template<typename AudioT = AudioQualityMetricsInfo>
+    CustomerQualityMetrics& WithAudio(AudioT&& value) { SetAudio(std::forward<AudioT>(value)); return *this;}
     ///@}
   private:
 

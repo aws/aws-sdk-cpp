@@ -18,17 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DestinationTableConfiguration::DestinationTableConfiguration() : 
-    m_destinationTableNameHasBeenSet(false),
-    m_destinationDatabaseNameHasBeenSet(false),
-    m_uniqueKeysHasBeenSet(false),
-    m_partitionSpecHasBeenSet(false),
-    m_s3ErrorOutputPrefixHasBeenSet(false)
-{
-}
-
 DestinationTableConfiguration::DestinationTableConfiguration(JsonView jsonValue)
-  : DestinationTableConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ DestinationTableConfiguration& DestinationTableConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("DestinationTableName"))
   {
     m_destinationTableName = jsonValue.GetString("DestinationTableName");
-
     m_destinationTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationDatabaseName"))
   {
     m_destinationDatabaseName = jsonValue.GetString("DestinationDatabaseName");
-
     m_destinationDatabaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UniqueKeys"))
   {
     Aws::Utils::Array<JsonView> uniqueKeysJsonList = jsonValue.GetArray("UniqueKeys");
@@ -58,21 +44,16 @@ DestinationTableConfiguration& DestinationTableConfiguration::operator =(JsonVie
     }
     m_uniqueKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionSpec"))
   {
     m_partitionSpec = jsonValue.GetObject("PartitionSpec");
-
     m_partitionSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ErrorOutputPrefix"))
   {
     m_s3ErrorOutputPrefix = jsonValue.GetString("S3ErrorOutputPrefix");
-
     m_s3ErrorOutputPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

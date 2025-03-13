@@ -18,16 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-DatabaseConnection::DatabaseConnection() : 
-    m_databaseConnectionMethod(DatabaseConnectionMethod::NOT_SET),
-    m_databaseConnectionMethodHasBeenSet(false),
-    m_databaseArnHasBeenSet(false),
-    m_connectionIpHasBeenSet(false)
-{
-}
-
 DatabaseConnection::DatabaseConnection(JsonView jsonValue)
-  : DatabaseConnection()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DatabaseConnection& DatabaseConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatabaseConnectionMethod"))
   {
     m_databaseConnectionMethod = DatabaseConnectionMethodMapper::GetDatabaseConnectionMethodForName(jsonValue.GetString("DatabaseConnectionMethod"));
-
     m_databaseConnectionMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseArn"))
   {
     m_databaseArn = jsonValue.GetString("DatabaseArn");
-
     m_databaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionIp"))
   {
     m_connectionIp = jsonValue.GetString("ConnectionIp");
-
     m_connectionIpHasBeenSet = true;
   }
-
   return *this;
 }
 

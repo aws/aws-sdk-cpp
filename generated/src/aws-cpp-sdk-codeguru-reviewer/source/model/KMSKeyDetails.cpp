@@ -18,15 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-KMSKeyDetails::KMSKeyDetails() : 
-    m_kMSKeyIdHasBeenSet(false),
-    m_encryptionOption(EncryptionOption::NOT_SET),
-    m_encryptionOptionHasBeenSet(false)
-{
-}
-
 KMSKeyDetails::KMSKeyDetails(JsonView jsonValue)
-  : KMSKeyDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KMSKeyDetails& KMSKeyDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KMSKeyId"))
   {
     m_kMSKeyId = jsonValue.GetString("KMSKeyId");
-
     m_kMSKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionOption"))
   {
     m_encryptionOption = EncryptionOptionMapper::GetEncryptionOptionForName(jsonValue.GetString("EncryptionOption"));
-
     m_encryptionOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AuroraParameters::AuroraParameters() : 
-    m_hostHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_databaseHasBeenSet(false)
-{
-}
-
 AuroraParameters::AuroraParameters(JsonView jsonValue)
-  : AuroraParameters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AuroraParameters& AuroraParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServicePipelineRequest::UpdateServicePipelineRequest() : 
-    m_deploymentType(DeploymentUpdateType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_templateMajorVersionHasBeenSet(false),
-    m_templateMinorVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServicePipelineRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLabelResult::CreateLabelResult()
-{
-}
-
 CreateLabelResult::CreateLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLabelResult& CreateLabelResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("LabelId"))
   {
     m_labelId = jsonValue.GetString("LabelId");
-
+    m_labelIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

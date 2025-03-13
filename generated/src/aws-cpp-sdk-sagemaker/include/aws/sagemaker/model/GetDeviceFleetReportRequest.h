@@ -21,7 +21,7 @@ namespace Model
   class GetDeviceFleetReportRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API GetDeviceFleetReportRequest();
+    AWS_SAGEMAKER_API GetDeviceFleetReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline const Aws::String& GetDeviceFleetName() const{ return m_deviceFleetName; }
+    inline const Aws::String& GetDeviceFleetName() const { return m_deviceFleetName; }
     inline bool DeviceFleetNameHasBeenSet() const { return m_deviceFleetNameHasBeenSet; }
-    inline void SetDeviceFleetName(const Aws::String& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = value; }
-    inline void SetDeviceFleetName(Aws::String&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::move(value); }
-    inline void SetDeviceFleetName(const char* value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName.assign(value); }
-    inline GetDeviceFleetReportRequest& WithDeviceFleetName(const Aws::String& value) { SetDeviceFleetName(value); return *this;}
-    inline GetDeviceFleetReportRequest& WithDeviceFleetName(Aws::String&& value) { SetDeviceFleetName(std::move(value)); return *this;}
-    inline GetDeviceFleetReportRequest& WithDeviceFleetName(const char* value) { SetDeviceFleetName(value); return *this;}
+    template<typename DeviceFleetNameT = Aws::String>
+    void SetDeviceFleetName(DeviceFleetNameT&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::forward<DeviceFleetNameT>(value); }
+    template<typename DeviceFleetNameT = Aws::String>
+    GetDeviceFleetReportRequest& WithDeviceFleetName(DeviceFleetNameT&& value) { SetDeviceFleetName(std::forward<DeviceFleetNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-Condition::Condition() : 
-    m_result(Result::NOT_SET),
-    m_resultHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("result"))
   {
     m_result = ResultMapper::GetResultForName(jsonValue.GetString("result"));
-
     m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
@@ -49,7 +39,6 @@ Condition& Condition::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

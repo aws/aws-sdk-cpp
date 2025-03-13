@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-FilterExpression::FilterExpression() : 
-    m_operation(FilterOperation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 FilterExpression::FilterExpression(JsonView jsonValue)
-  : FilterExpression()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ FilterExpression& FilterExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = FilterOperationMapper::GetFilterOperationForName(jsonValue.GetString("Operation"));
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Negated"))
   {
     m_negated = jsonValue.GetBool("Negated");
-
     m_negatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -58,7 +44,6 @@ FilterExpression& FilterExpression::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

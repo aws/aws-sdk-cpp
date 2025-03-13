@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LaunchTemplateOverrides::LaunchTemplateOverrides() : 
-    m_instanceTypeHasBeenSet(false),
-    m_weightedCapacityHasBeenSet(false),
-    m_launchTemplateSpecificationHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false)
-{
-}
-
 LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode)
-  : LaunchTemplateOverrides()
 {
   *this = xmlNode;
 }
@@ -45,24 +36,28 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+       m_instanceTypeHasBeenSet = true;
     }
     XmlNode weightedCapacityNode = resultNode.FirstChild("WeightedCapacity");
     if(!weightedCapacityNode.IsNull())
     {
       m_weightedCapacity = Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText());
       m_weightedCapacityHasBeenSet = true;
+       m_weightedCapacityHasBeenSet = true;
     }
     XmlNode launchTemplateSpecificationNode = resultNode.FirstChild("LaunchTemplateSpecification");
     if(!launchTemplateSpecificationNode.IsNull())
     {
       m_launchTemplateSpecification = launchTemplateSpecificationNode;
       m_launchTemplateSpecificationHasBeenSet = true;
+       m_launchTemplateSpecificationHasBeenSet = true;
     }
     XmlNode instanceRequirementsNode = resultNode.FirstChild("InstanceRequirements");
     if(!instanceRequirementsNode.IsNull())
     {
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
+       m_instanceRequirementsHasBeenSet = true;
     }
   }
 

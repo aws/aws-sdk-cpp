@@ -18,20 +18,7 @@ namespace FMS
 namespace Model
 {
 
-SecurityGroupRuleDescription::SecurityGroupRuleDescription() : 
-    m_iPV4RangeHasBeenSet(false),
-    m_iPV6RangeHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false)
-{
-}
-
 SecurityGroupRuleDescription::SecurityGroupRuleDescription(JsonView jsonValue)
-  : SecurityGroupRuleDescription()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ SecurityGroupRuleDescription& SecurityGroupRuleDescription::operator =(JsonView 
   if(jsonValue.ValueExists("IPV4Range"))
   {
     m_iPV4Range = jsonValue.GetString("IPV4Range");
-
     m_iPV4RangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IPV6Range"))
   {
     m_iPV6Range = jsonValue.GetString("IPV6Range");
-
     m_iPV6RangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrefixListId"))
   {
     m_prefixListId = jsonValue.GetString("PrefixListId");
-
     m_prefixListIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromPort"))
   {
     m_fromPort = jsonValue.GetInt64("FromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToPort"))
   {
     m_toPort = jsonValue.GetInt64("ToPort");
-
     m_toPortHasBeenSet = true;
   }
-
   return *this;
 }
 

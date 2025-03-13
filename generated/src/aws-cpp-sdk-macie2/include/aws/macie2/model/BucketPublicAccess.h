@@ -33,7 +33,7 @@ namespace Model
   class BucketPublicAccess
   {
   public:
-    AWS_MACIE2_API BucketPublicAccess();
+    AWS_MACIE2_API BucketPublicAccess() = default;
     AWS_MACIE2_API BucketPublicAccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,26 @@ namespace Model
      * Amazon Macie can't determine whether the bucket is publicly
      * accessible.</p></li></ul>
      */
-    inline const EffectivePermission& GetEffectivePermission() const{ return m_effectivePermission; }
+    inline EffectivePermission GetEffectivePermission() const { return m_effectivePermission; }
     inline bool EffectivePermissionHasBeenSet() const { return m_effectivePermissionHasBeenSet; }
-    inline void SetEffectivePermission(const EffectivePermission& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = value; }
-    inline void SetEffectivePermission(EffectivePermission&& value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = std::move(value); }
-    inline BucketPublicAccess& WithEffectivePermission(const EffectivePermission& value) { SetEffectivePermission(value); return *this;}
-    inline BucketPublicAccess& WithEffectivePermission(EffectivePermission&& value) { SetEffectivePermission(std::move(value)); return *this;}
+    inline void SetEffectivePermission(EffectivePermission value) { m_effectivePermissionHasBeenSet = true; m_effectivePermission = value; }
+    inline BucketPublicAccess& WithEffectivePermission(EffectivePermission value) { SetEffectivePermission(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account-level and bucket-level permissions settings for the bucket.</p>
      */
-    inline const BucketPermissionConfiguration& GetPermissionConfiguration() const{ return m_permissionConfiguration; }
+    inline const BucketPermissionConfiguration& GetPermissionConfiguration() const { return m_permissionConfiguration; }
     inline bool PermissionConfigurationHasBeenSet() const { return m_permissionConfigurationHasBeenSet; }
-    inline void SetPermissionConfiguration(const BucketPermissionConfiguration& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = value; }
-    inline void SetPermissionConfiguration(BucketPermissionConfiguration&& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = std::move(value); }
-    inline BucketPublicAccess& WithPermissionConfiguration(const BucketPermissionConfiguration& value) { SetPermissionConfiguration(value); return *this;}
-    inline BucketPublicAccess& WithPermissionConfiguration(BucketPermissionConfiguration&& value) { SetPermissionConfiguration(std::move(value)); return *this;}
+    template<typename PermissionConfigurationT = BucketPermissionConfiguration>
+    void SetPermissionConfiguration(PermissionConfigurationT&& value) { m_permissionConfigurationHasBeenSet = true; m_permissionConfiguration = std::forward<PermissionConfigurationT>(value); }
+    template<typename PermissionConfigurationT = BucketPermissionConfiguration>
+    BucketPublicAccess& WithPermissionConfiguration(PermissionConfigurationT&& value) { SetPermissionConfiguration(std::forward<PermissionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    EffectivePermission m_effectivePermission;
+    EffectivePermission m_effectivePermission{EffectivePermission::NOT_SET};
     bool m_effectivePermissionHasBeenSet = false;
 
     BucketPermissionConfiguration m_permissionConfiguration;

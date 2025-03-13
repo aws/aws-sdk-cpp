@@ -27,7 +27,7 @@ namespace Model
   class CreateDeviceDefinitionResult
   {
   public:
-    AWS_GREENGRASS_API CreateDeviceDefinitionResult();
+    AWS_GREENGRASS_API CreateDeviceDefinitionResult() = default;
     AWS_GREENGRASS_API CreateDeviceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API CreateDeviceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,120 +36,112 @@ namespace Model
     /**
      * The ARN of the definition.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateDeviceDefinitionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateDeviceDefinitionResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The time, in milliseconds since the epoch, when the definition was created.
      */
-    inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
-    inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
-    inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
-    inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
-    inline CreateDeviceDefinitionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
+    inline const Aws::String& GetCreationTimestamp() const { return m_creationTimestamp; }
+    template<typename CreationTimestampT = Aws::String>
+    void SetCreationTimestamp(CreationTimestampT&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::forward<CreationTimestampT>(value); }
+    template<typename CreationTimestampT = Aws::String>
+    CreateDeviceDefinitionResult& WithCreationTimestamp(CreationTimestampT&& value) { SetCreationTimestamp(std::forward<CreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the definition.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateDeviceDefinitionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateDeviceDefinitionResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The time, in milliseconds since the epoch, when the definition was last updated.
      */
-    inline const Aws::String& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-    inline void SetLastUpdatedTimestamp(const Aws::String& value) { m_lastUpdatedTimestamp = value; }
-    inline void SetLastUpdatedTimestamp(Aws::String&& value) { m_lastUpdatedTimestamp = std::move(value); }
-    inline void SetLastUpdatedTimestamp(const char* value) { m_lastUpdatedTimestamp.assign(value); }
-    inline CreateDeviceDefinitionResult& WithLastUpdatedTimestamp(const Aws::String& value) { SetLastUpdatedTimestamp(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithLastUpdatedTimestamp(Aws::String&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithLastUpdatedTimestamp(const char* value) { SetLastUpdatedTimestamp(value); return *this;}
+    inline const Aws::String& GetLastUpdatedTimestamp() const { return m_lastUpdatedTimestamp; }
+    template<typename LastUpdatedTimestampT = Aws::String>
+    void SetLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::forward<LastUpdatedTimestampT>(value); }
+    template<typename LastUpdatedTimestampT = Aws::String>
+    CreateDeviceDefinitionResult& WithLastUpdatedTimestamp(LastUpdatedTimestampT&& value) { SetLastUpdatedTimestamp(std::forward<LastUpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the latest version associated with the definition.
      */
-    inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
-    inline void SetLatestVersion(const Aws::String& value) { m_latestVersion = value; }
-    inline void SetLatestVersion(Aws::String&& value) { m_latestVersion = std::move(value); }
-    inline void SetLatestVersion(const char* value) { m_latestVersion.assign(value); }
-    inline CreateDeviceDefinitionResult& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
+    inline const Aws::String& GetLatestVersion() const { return m_latestVersion; }
+    template<typename LatestVersionT = Aws::String>
+    void SetLatestVersion(LatestVersionT&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::forward<LatestVersionT>(value); }
+    template<typename LatestVersionT = Aws::String>
+    CreateDeviceDefinitionResult& WithLatestVersion(LatestVersionT&& value) { SetLatestVersion(std::forward<LatestVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ARN of the latest version associated with the definition.
      */
-    inline const Aws::String& GetLatestVersionArn() const{ return m_latestVersionArn; }
-    inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArn = value; }
-    inline void SetLatestVersionArn(Aws::String&& value) { m_latestVersionArn = std::move(value); }
-    inline void SetLatestVersionArn(const char* value) { m_latestVersionArn.assign(value); }
-    inline CreateDeviceDefinitionResult& WithLatestVersionArn(const Aws::String& value) { SetLatestVersionArn(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithLatestVersionArn(Aws::String&& value) { SetLatestVersionArn(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
+    inline const Aws::String& GetLatestVersionArn() const { return m_latestVersionArn; }
+    template<typename LatestVersionArnT = Aws::String>
+    void SetLatestVersionArn(LatestVersionArnT&& value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn = std::forward<LatestVersionArnT>(value); }
+    template<typename LatestVersionArnT = Aws::String>
+    CreateDeviceDefinitionResult& WithLatestVersionArn(LatestVersionArnT&& value) { SetLatestVersionArn(std::forward<LatestVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the definition.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateDeviceDefinitionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateDeviceDefinitionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDeviceDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDeviceDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDeviceDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDeviceDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_creationTimestamp;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_lastUpdatedTimestamp;
+    bool m_lastUpdatedTimestampHasBeenSet = false;
 
     Aws::String m_latestVersion;
+    bool m_latestVersionHasBeenSet = false;
 
     Aws::String m_latestVersionArn;
+    bool m_latestVersionArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class UpdateFileSystemRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API UpdateFileSystemRequest();
+    AWS_FSX_API UpdateFileSystemRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The ID of the file system that you are updating.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline UpdateFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline UpdateFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline UpdateFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    UpdateFileSystemRequest& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * idempotent updates. This string is automatically filled on your behalf when you
      * use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateFileSystemRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,7 +108,7 @@ namespace Model
      * storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP
      * User Guide</i>.</p>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline UpdateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
@@ -123,54 +119,52 @@ namespace Model
      * <p>The configuration updates for an Amazon FSx for Windows File Server file
      * system.</p>
      */
-    inline const UpdateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
+    inline const UpdateFileSystemWindowsConfiguration& GetWindowsConfiguration() const { return m_windowsConfiguration; }
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
-    inline void SetWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
-    inline void SetWindowsConfiguration(UpdateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
-    inline UpdateFileSystemRequest& WithWindowsConfiguration(const UpdateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
-    inline UpdateFileSystemRequest& WithWindowsConfiguration(UpdateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
+    template<typename WindowsConfigurationT = UpdateFileSystemWindowsConfiguration>
+    void SetWindowsConfiguration(WindowsConfigurationT&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::forward<WindowsConfigurationT>(value); }
+    template<typename WindowsConfigurationT = UpdateFileSystemWindowsConfiguration>
+    UpdateFileSystemRequest& WithWindowsConfiguration(WindowsConfigurationT&& value) { SetWindowsConfiguration(std::forward<WindowsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
+    inline const UpdateFileSystemLustreConfiguration& GetLustreConfiguration() const { return m_lustreConfiguration; }
     inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
-    inline void SetLustreConfiguration(const UpdateFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
-    inline void SetLustreConfiguration(UpdateFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
-    inline UpdateFileSystemRequest& WithLustreConfiguration(const UpdateFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
-    inline UpdateFileSystemRequest& WithLustreConfiguration(UpdateFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+    template<typename LustreConfigurationT = UpdateFileSystemLustreConfiguration>
+    void SetLustreConfiguration(LustreConfigurationT&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::forward<LustreConfigurationT>(value); }
+    template<typename LustreConfigurationT = UpdateFileSystemLustreConfiguration>
+    UpdateFileSystemRequest& WithLustreConfiguration(LustreConfigurationT&& value) { SetLustreConfiguration(std::forward<LustreConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateFileSystemOntapConfiguration& GetOntapConfiguration() const{ return m_ontapConfiguration; }
+    inline const UpdateFileSystemOntapConfiguration& GetOntapConfiguration() const { return m_ontapConfiguration; }
     inline bool OntapConfigurationHasBeenSet() const { return m_ontapConfigurationHasBeenSet; }
-    inline void SetOntapConfiguration(const UpdateFileSystemOntapConfiguration& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = value; }
-    inline void SetOntapConfiguration(UpdateFileSystemOntapConfiguration&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::move(value); }
-    inline UpdateFileSystemRequest& WithOntapConfiguration(const UpdateFileSystemOntapConfiguration& value) { SetOntapConfiguration(value); return *this;}
-    inline UpdateFileSystemRequest& WithOntapConfiguration(UpdateFileSystemOntapConfiguration&& value) { SetOntapConfiguration(std::move(value)); return *this;}
+    template<typename OntapConfigurationT = UpdateFileSystemOntapConfiguration>
+    void SetOntapConfiguration(OntapConfigurationT&& value) { m_ontapConfigurationHasBeenSet = true; m_ontapConfiguration = std::forward<OntapConfigurationT>(value); }
+    template<typename OntapConfigurationT = UpdateFileSystemOntapConfiguration>
+    UpdateFileSystemRequest& WithOntapConfiguration(OntapConfigurationT&& value) { SetOntapConfiguration(std::forward<OntapConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
-    inline const UpdateFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
+    inline const UpdateFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const { return m_openZFSConfiguration; }
     inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
-    inline void SetOpenZFSConfiguration(const UpdateFileSystemOpenZFSConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
-    inline void SetOpenZFSConfiguration(UpdateFileSystemOpenZFSConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
-    inline UpdateFileSystemRequest& WithOpenZFSConfiguration(const UpdateFileSystemOpenZFSConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
-    inline UpdateFileSystemRequest& WithOpenZFSConfiguration(UpdateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
+    template<typename OpenZFSConfigurationT = UpdateFileSystemOpenZFSConfiguration>
+    void SetOpenZFSConfiguration(OpenZFSConfigurationT&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::forward<OpenZFSConfigurationT>(value); }
+    template<typename OpenZFSConfigurationT = UpdateFileSystemOpenZFSConfiguration>
+    UpdateFileSystemRequest& WithOpenZFSConfiguration(OpenZFSConfigurationT&& value) { SetOpenZFSConfiguration(std::forward<OpenZFSConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StorageType& GetStorageType() const{ return m_storageType; }
+    inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline UpdateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
-    inline UpdateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline UpdateFileSystemRequest& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
     ///@}
 
     ///@{
@@ -179,14 +173,12 @@ namespace Model
      * values are <code>2.12</code> and <code>2.15</code>. The value you choose must be
      * newer than the file system's current Lustre version.</p>
      */
-    inline const Aws::String& GetFileSystemTypeVersion() const{ return m_fileSystemTypeVersion; }
+    inline const Aws::String& GetFileSystemTypeVersion() const { return m_fileSystemTypeVersion; }
     inline bool FileSystemTypeVersionHasBeenSet() const { return m_fileSystemTypeVersionHasBeenSet; }
-    inline void SetFileSystemTypeVersion(const Aws::String& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = value; }
-    inline void SetFileSystemTypeVersion(Aws::String&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::move(value); }
-    inline void SetFileSystemTypeVersion(const char* value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion.assign(value); }
-    inline UpdateFileSystemRequest& WithFileSystemTypeVersion(const Aws::String& value) { SetFileSystemTypeVersion(value); return *this;}
-    inline UpdateFileSystemRequest& WithFileSystemTypeVersion(Aws::String&& value) { SetFileSystemTypeVersion(std::move(value)); return *this;}
-    inline UpdateFileSystemRequest& WithFileSystemTypeVersion(const char* value) { SetFileSystemTypeVersion(value); return *this;}
+    template<typename FileSystemTypeVersionT = Aws::String>
+    void SetFileSystemTypeVersion(FileSystemTypeVersionT&& value) { m_fileSystemTypeVersionHasBeenSet = true; m_fileSystemTypeVersion = std::forward<FileSystemTypeVersionT>(value); }
+    template<typename FileSystemTypeVersionT = Aws::String>
+    UpdateFileSystemRequest& WithFileSystemTypeVersion(FileSystemTypeVersionT&& value) { SetFileSystemTypeVersion(std::forward<FileSystemTypeVersionT>(value)); return *this;}
     ///@}
   private:
 
@@ -196,7 +188,7 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
 
     UpdateFileSystemWindowsConfiguration m_windowsConfiguration;
@@ -211,7 +203,7 @@ namespace Model
     UpdateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
     bool m_openZFSConfigurationHasBeenSet = false;
 
-    StorageType m_storageType;
+    StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_fileSystemTypeVersion;

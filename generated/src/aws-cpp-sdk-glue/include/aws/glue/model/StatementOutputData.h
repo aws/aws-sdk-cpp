@@ -31,7 +31,7 @@ namespace Model
   class StatementOutputData
   {
   public:
-    AWS_GLUE_API StatementOutputData();
+    AWS_GLUE_API StatementOutputData() = default;
     AWS_GLUE_API StatementOutputData(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API StatementOutputData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The code execution output in text format.</p>
      */
-    inline const Aws::String& GetTextPlain() const{ return m_textPlain; }
+    inline const Aws::String& GetTextPlain() const { return m_textPlain; }
     inline bool TextPlainHasBeenSet() const { return m_textPlainHasBeenSet; }
-    inline void SetTextPlain(const Aws::String& value) { m_textPlainHasBeenSet = true; m_textPlain = value; }
-    inline void SetTextPlain(Aws::String&& value) { m_textPlainHasBeenSet = true; m_textPlain = std::move(value); }
-    inline void SetTextPlain(const char* value) { m_textPlainHasBeenSet = true; m_textPlain.assign(value); }
-    inline StatementOutputData& WithTextPlain(const Aws::String& value) { SetTextPlain(value); return *this;}
-    inline StatementOutputData& WithTextPlain(Aws::String&& value) { SetTextPlain(std::move(value)); return *this;}
-    inline StatementOutputData& WithTextPlain(const char* value) { SetTextPlain(value); return *this;}
+    template<typename TextPlainT = Aws::String>
+    void SetTextPlain(TextPlainT&& value) { m_textPlainHasBeenSet = true; m_textPlain = std::forward<TextPlainT>(value); }
+    template<typename TextPlainT = Aws::String>
+    StatementOutputData& WithTextPlain(TextPlainT&& value) { SetTextPlain(std::forward<TextPlainT>(value)); return *this;}
     ///@}
   private:
 

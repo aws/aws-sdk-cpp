@@ -28,7 +28,7 @@ namespace Model
   class CreateEntitlementResult
   {
   public:
-    AWS_APPSTREAM_API CreateEntitlementResult();
+    AWS_APPSTREAM_API CreateEntitlementResult() = default;
     AWS_APPSTREAM_API CreateEntitlementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CreateEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The entitlement.</p>
      */
-    inline const Entitlement& GetEntitlement() const{ return m_entitlement; }
-    inline void SetEntitlement(const Entitlement& value) { m_entitlement = value; }
-    inline void SetEntitlement(Entitlement&& value) { m_entitlement = std::move(value); }
-    inline CreateEntitlementResult& WithEntitlement(const Entitlement& value) { SetEntitlement(value); return *this;}
-    inline CreateEntitlementResult& WithEntitlement(Entitlement&& value) { SetEntitlement(std::move(value)); return *this;}
+    inline const Entitlement& GetEntitlement() const { return m_entitlement; }
+    template<typename EntitlementT = Entitlement>
+    void SetEntitlement(EntitlementT&& value) { m_entitlementHasBeenSet = true; m_entitlement = std::forward<EntitlementT>(value); }
+    template<typename EntitlementT = Entitlement>
+    CreateEntitlementResult& WithEntitlement(EntitlementT&& value) { SetEntitlement(std::forward<EntitlementT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateEntitlementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateEntitlementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateEntitlementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateEntitlementResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Entitlement m_entitlement;
+    bool m_entitlementHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

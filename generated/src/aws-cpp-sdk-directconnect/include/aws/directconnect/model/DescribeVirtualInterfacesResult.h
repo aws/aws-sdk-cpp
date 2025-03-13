@@ -29,7 +29,7 @@ namespace Model
   class DescribeVirtualInterfacesResult
   {
   public:
-    AWS_DIRECTCONNECT_API DescribeVirtualInterfacesResult();
+    AWS_DIRECTCONNECT_API DescribeVirtualInterfacesResult() = default;
     AWS_DIRECTCONNECT_API DescribeVirtualInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API DescribeVirtualInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The virtual interfaces</p>
      */
-    inline const Aws::Vector<VirtualInterface>& GetVirtualInterfaces() const{ return m_virtualInterfaces; }
-    inline void SetVirtualInterfaces(const Aws::Vector<VirtualInterface>& value) { m_virtualInterfaces = value; }
-    inline void SetVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { m_virtualInterfaces = std::move(value); }
-    inline DescribeVirtualInterfacesResult& WithVirtualInterfaces(const Aws::Vector<VirtualInterface>& value) { SetVirtualInterfaces(value); return *this;}
-    inline DescribeVirtualInterfacesResult& WithVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { SetVirtualInterfaces(std::move(value)); return *this;}
-    inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(const VirtualInterface& value) { m_virtualInterfaces.push_back(value); return *this; }
-    inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(VirtualInterface&& value) { m_virtualInterfaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VirtualInterface>& GetVirtualInterfaces() const { return m_virtualInterfaces; }
+    template<typename VirtualInterfacesT = Aws::Vector<VirtualInterface>>
+    void SetVirtualInterfaces(VirtualInterfacesT&& value) { m_virtualInterfacesHasBeenSet = true; m_virtualInterfaces = std::forward<VirtualInterfacesT>(value); }
+    template<typename VirtualInterfacesT = Aws::Vector<VirtualInterface>>
+    DescribeVirtualInterfacesResult& WithVirtualInterfaces(VirtualInterfacesT&& value) { SetVirtualInterfaces(std::forward<VirtualInterfacesT>(value)); return *this;}
+    template<typename VirtualInterfacesT = VirtualInterface>
+    DescribeVirtualInterfacesResult& AddVirtualInterfaces(VirtualInterfacesT&& value) { m_virtualInterfacesHasBeenSet = true; m_virtualInterfaces.emplace_back(std::forward<VirtualInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVirtualInterfacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVirtualInterfacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVirtualInterfacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVirtualInterfacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VirtualInterface> m_virtualInterfaces;
+    bool m_virtualInterfacesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

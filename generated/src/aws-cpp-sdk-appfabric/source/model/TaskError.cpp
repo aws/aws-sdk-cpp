@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-TaskError::TaskError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 TaskError::TaskError(JsonView jsonValue)
-  : TaskError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaskError& TaskError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

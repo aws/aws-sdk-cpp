@@ -25,7 +25,7 @@ namespace Model
   class GetServiceSettingRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetServiceSettingRequest();
+    AWS_SSM_API GetServiceSettingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,14 +52,12 @@ namespace Model
      * <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li> <li> <p>
      * <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetSettingId() const{ return m_settingId; }
+    inline const Aws::String& GetSettingId() const { return m_settingId; }
     inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
-    inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
-    inline void SetSettingId(Aws::String&& value) { m_settingIdHasBeenSet = true; m_settingId = std::move(value); }
-    inline void SetSettingId(const char* value) { m_settingIdHasBeenSet = true; m_settingId.assign(value); }
-    inline GetServiceSettingRequest& WithSettingId(const Aws::String& value) { SetSettingId(value); return *this;}
-    inline GetServiceSettingRequest& WithSettingId(Aws::String&& value) { SetSettingId(std::move(value)); return *this;}
-    inline GetServiceSettingRequest& WithSettingId(const char* value) { SetSettingId(value); return *this;}
+    template<typename SettingIdT = Aws::String>
+    void SetSettingId(SettingIdT&& value) { m_settingIdHasBeenSet = true; m_settingId = std::forward<SettingIdT>(value); }
+    template<typename SettingIdT = Aws::String>
+    GetServiceSettingRequest& WithSettingId(SettingIdT&& value) { SetSettingId(std::forward<SettingIdT>(value)); return *this;}
     ///@}
   private:
 

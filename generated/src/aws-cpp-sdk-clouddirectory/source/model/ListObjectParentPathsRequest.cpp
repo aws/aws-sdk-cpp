@@ -13,15 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListObjectParentPathsRequest::ListObjectParentPathsRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListObjectParentPathsRequest::SerializePayload() const
 {
   JsonValue payload;

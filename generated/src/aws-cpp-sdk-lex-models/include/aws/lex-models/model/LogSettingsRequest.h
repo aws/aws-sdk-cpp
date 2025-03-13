@@ -34,7 +34,7 @@ namespace Model
   class LogSettingsRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API LogSettingsRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API LogSettingsRequest() = default;
     AWS_LEXMODELBUILDINGSERVICE_API LogSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API LogSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs
      * log group. Audio logs are delivered to an S3 bucket.</p>
      */
-    inline const LogType& GetLogType() const{ return m_logType; }
+    inline LogType GetLogType() const { return m_logType; }
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
-    inline void SetLogType(const LogType& value) { m_logTypeHasBeenSet = true; m_logType = value; }
-    inline void SetLogType(LogType&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
-    inline LogSettingsRequest& WithLogType(const LogType& value) { SetLogType(value); return *this;}
-    inline LogSettingsRequest& WithLogType(LogType&& value) { SetLogType(std::move(value)); return *this;}
+    inline void SetLogType(LogType value) { m_logTypeHasBeenSet = true; m_logType = value; }
+    inline LogSettingsRequest& WithLogType(LogType value) { SetLogType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch
      * Logs log group. Audio logs are delivered to an S3 bucket.</p>
      */
-    inline const Destination& GetDestination() const{ return m_destination; }
+    inline Destination GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline LogSettingsRequest& WithDestination(const Destination& value) { SetDestination(value); return *this;}
-    inline LogSettingsRequest& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
+    inline void SetDestination(Destination value) { m_destinationHasBeenSet = true; m_destination = value; }
+    inline LogSettingsRequest& WithDestination(Destination value) { SetDestination(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * encrypting audio logs delivered to an S3 bucket. The key does not apply to
      * CloudWatch Logs and is optional for S3 buckets.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline LogSettingsRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline LogSettingsRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline LogSettingsRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    LogSettingsRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,21 +81,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket
      * where the logs should be delivered.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline LogSettingsRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline LogSettingsRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline LogSettingsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    LogSettingsRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 
-    LogType m_logType;
+    LogType m_logType{LogType::NOT_SET};
     bool m_logTypeHasBeenSet = false;
 
-    Destination m_destination;
+    Destination m_destination{Destination::NOT_SET};
     bool m_destinationHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;

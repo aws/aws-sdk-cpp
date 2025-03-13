@@ -30,7 +30,7 @@ namespace Model
   class PutEventSelectorsResult
   {
   public:
-    AWS_CLOUDTRAIL_API PutEventSelectorsResult();
+    AWS_CLOUDTRAIL_API PutEventSelectorsResult() = default;
     AWS_CLOUDTRAIL_API PutEventSelectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API PutEventSelectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,60 +41,60 @@ namespace Model
      * following is the format of a trail ARN.</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
-    inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
-    inline void SetTrailARN(const Aws::String& value) { m_trailARN = value; }
-    inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
-    inline void SetTrailARN(const char* value) { m_trailARN.assign(value); }
-    inline PutEventSelectorsResult& WithTrailARN(const Aws::String& value) { SetTrailARN(value); return *this;}
-    inline PutEventSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
-    inline PutEventSelectorsResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
+    inline const Aws::String& GetTrailARN() const { return m_trailARN; }
+    template<typename TrailARNT = Aws::String>
+    void SetTrailARN(TrailARNT&& value) { m_trailARNHasBeenSet = true; m_trailARN = std::forward<TrailARNT>(value); }
+    template<typename TrailARNT = Aws::String>
+    PutEventSelectorsResult& WithTrailARN(TrailARNT&& value) { SetTrailARN(std::forward<TrailARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the event selectors configured for your trail.</p>
      */
-    inline const Aws::Vector<EventSelector>& GetEventSelectors() const{ return m_eventSelectors; }
-    inline void SetEventSelectors(const Aws::Vector<EventSelector>& value) { m_eventSelectors = value; }
-    inline void SetEventSelectors(Aws::Vector<EventSelector>&& value) { m_eventSelectors = std::move(value); }
-    inline PutEventSelectorsResult& WithEventSelectors(const Aws::Vector<EventSelector>& value) { SetEventSelectors(value); return *this;}
-    inline PutEventSelectorsResult& WithEventSelectors(Aws::Vector<EventSelector>&& value) { SetEventSelectors(std::move(value)); return *this;}
-    inline PutEventSelectorsResult& AddEventSelectors(const EventSelector& value) { m_eventSelectors.push_back(value); return *this; }
-    inline PutEventSelectorsResult& AddEventSelectors(EventSelector&& value) { m_eventSelectors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventSelector>& GetEventSelectors() const { return m_eventSelectors; }
+    template<typename EventSelectorsT = Aws::Vector<EventSelector>>
+    void SetEventSelectors(EventSelectorsT&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors = std::forward<EventSelectorsT>(value); }
+    template<typename EventSelectorsT = Aws::Vector<EventSelector>>
+    PutEventSelectorsResult& WithEventSelectors(EventSelectorsT&& value) { SetEventSelectors(std::forward<EventSelectorsT>(value)); return *this;}
+    template<typename EventSelectorsT = EventSelector>
+    PutEventSelectorsResult& AddEventSelectors(EventSelectorsT&& value) { m_eventSelectorsHasBeenSet = true; m_eventSelectors.emplace_back(std::forward<EventSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the advanced event selectors configured for your trail.</p>
      */
-    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
-    inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectors = value; }
-    inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectors = std::move(value); }
-    inline PutEventSelectorsResult& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
-    inline PutEventSelectorsResult& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
-    inline PutEventSelectorsResult& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectors.push_back(value); return *this; }
-    inline PutEventSelectorsResult& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const { return m_advancedEventSelectors; }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    void SetAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::forward<AdvancedEventSelectorsT>(value); }
+    template<typename AdvancedEventSelectorsT = Aws::Vector<AdvancedEventSelector>>
+    PutEventSelectorsResult& WithAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { SetAdvancedEventSelectors(std::forward<AdvancedEventSelectorsT>(value)); return *this;}
+    template<typename AdvancedEventSelectorsT = AdvancedEventSelector>
+    PutEventSelectorsResult& AddAdvancedEventSelectors(AdvancedEventSelectorsT&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.emplace_back(std::forward<AdvancedEventSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutEventSelectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutEventSelectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutEventSelectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutEventSelectorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trailARN;
+    bool m_trailARNHasBeenSet = false;
 
     Aws::Vector<EventSelector> m_eventSelectors;
+    bool m_eventSelectorsHasBeenSet = false;
 
     Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
+    bool m_advancedEventSelectorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

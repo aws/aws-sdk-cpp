@@ -32,7 +32,7 @@ namespace Model
   class NodeFabricLogPublishingConfiguration
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration() = default;
     AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * chaincode. When enabled, a log stream is created for all chaincodes, with an
      * individual log stream for each chaincode.</p>
      */
-    inline const LogConfigurations& GetChaincodeLogs() const{ return m_chaincodeLogs; }
+    inline const LogConfigurations& GetChaincodeLogs() const { return m_chaincodeLogs; }
     inline bool ChaincodeLogsHasBeenSet() const { return m_chaincodeLogsHasBeenSet; }
-    inline void SetChaincodeLogs(const LogConfigurations& value) { m_chaincodeLogsHasBeenSet = true; m_chaincodeLogs = value; }
-    inline void SetChaincodeLogs(LogConfigurations&& value) { m_chaincodeLogsHasBeenSet = true; m_chaincodeLogs = std::move(value); }
-    inline NodeFabricLogPublishingConfiguration& WithChaincodeLogs(const LogConfigurations& value) { SetChaincodeLogs(value); return *this;}
-    inline NodeFabricLogPublishingConfiguration& WithChaincodeLogs(LogConfigurations&& value) { SetChaincodeLogs(std::move(value)); return *this;}
+    template<typename ChaincodeLogsT = LogConfigurations>
+    void SetChaincodeLogs(ChaincodeLogsT&& value) { m_chaincodeLogsHasBeenSet = true; m_chaincodeLogs = std::forward<ChaincodeLogsT>(value); }
+    template<typename ChaincodeLogsT = LogConfigurations>
+    NodeFabricLogPublishingConfiguration& WithChaincodeLogs(ChaincodeLogsT&& value) { SetChaincodeLogs(std::forward<ChaincodeLogsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * to join channels, enrolls an admin peer, and lists the chaincode instances on a
      * peer node. </p>
      */
-    inline const LogConfigurations& GetPeerLogs() const{ return m_peerLogs; }
+    inline const LogConfigurations& GetPeerLogs() const { return m_peerLogs; }
     inline bool PeerLogsHasBeenSet() const { return m_peerLogsHasBeenSet; }
-    inline void SetPeerLogs(const LogConfigurations& value) { m_peerLogsHasBeenSet = true; m_peerLogs = value; }
-    inline void SetPeerLogs(LogConfigurations&& value) { m_peerLogsHasBeenSet = true; m_peerLogs = std::move(value); }
-    inline NodeFabricLogPublishingConfiguration& WithPeerLogs(const LogConfigurations& value) { SetPeerLogs(value); return *this;}
-    inline NodeFabricLogPublishingConfiguration& WithPeerLogs(LogConfigurations&& value) { SetPeerLogs(std::move(value)); return *this;}
+    template<typename PeerLogsT = LogConfigurations>
+    void SetPeerLogs(PeerLogsT&& value) { m_peerLogsHasBeenSet = true; m_peerLogs = std::forward<PeerLogsT>(value); }
+    template<typename PeerLogsT = LogConfigurations>
+    NodeFabricLogPublishingConfiguration& WithPeerLogs(PeerLogsT&& value) { SetPeerLogs(std::forward<PeerLogsT>(value)); return *this;}
     ///@}
   private:
 

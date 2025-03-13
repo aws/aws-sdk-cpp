@@ -36,7 +36,7 @@ namespace Model
   class AwsGroundStationAgentEndpoint
   {
   public:
-    AWS_GROUNDSTATION_API AwsGroundStationAgentEndpoint();
+    AWS_GROUNDSTATION_API AwsGroundStationAgentEndpoint() = default;
     AWS_GROUNDSTATION_API AwsGroundStationAgentEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API AwsGroundStationAgentEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,44 @@ namespace Model
     /**
      * <p>The status of AgentEndpoint.</p>
      */
-    inline const AgentStatus& GetAgentStatus() const{ return m_agentStatus; }
+    inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
     inline bool AgentStatusHasBeenSet() const { return m_agentStatusHasBeenSet; }
-    inline void SetAgentStatus(const AgentStatus& value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
-    inline void SetAgentStatus(AgentStatus&& value) { m_agentStatusHasBeenSet = true; m_agentStatus = std::move(value); }
-    inline AwsGroundStationAgentEndpoint& WithAgentStatus(const AgentStatus& value) { SetAgentStatus(value); return *this;}
-    inline AwsGroundStationAgentEndpoint& WithAgentStatus(AgentStatus&& value) { SetAgentStatus(std::move(value)); return *this;}
+    inline void SetAgentStatus(AgentStatus value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
+    inline AwsGroundStationAgentEndpoint& WithAgentStatus(AgentStatus value) { SetAgentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The results of the audit.</p>
      */
-    inline const AuditResults& GetAuditResults() const{ return m_auditResults; }
+    inline AuditResults GetAuditResults() const { return m_auditResults; }
     inline bool AuditResultsHasBeenSet() const { return m_auditResultsHasBeenSet; }
-    inline void SetAuditResults(const AuditResults& value) { m_auditResultsHasBeenSet = true; m_auditResults = value; }
-    inline void SetAuditResults(AuditResults&& value) { m_auditResultsHasBeenSet = true; m_auditResults = std::move(value); }
-    inline AwsGroundStationAgentEndpoint& WithAuditResults(const AuditResults& value) { SetAuditResults(value); return *this;}
-    inline AwsGroundStationAgentEndpoint& WithAuditResults(AuditResults&& value) { SetAuditResults(std::move(value)); return *this;}
+    inline void SetAuditResults(AuditResults value) { m_auditResultsHasBeenSet = true; m_auditResults = value; }
+    inline AwsGroundStationAgentEndpoint& WithAuditResults(AuditResults value) { SetAuditResults(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The egress address of AgentEndpoint.</p>
      */
-    inline const ConnectionDetails& GetEgressAddress() const{ return m_egressAddress; }
+    inline const ConnectionDetails& GetEgressAddress() const { return m_egressAddress; }
     inline bool EgressAddressHasBeenSet() const { return m_egressAddressHasBeenSet; }
-    inline void SetEgressAddress(const ConnectionDetails& value) { m_egressAddressHasBeenSet = true; m_egressAddress = value; }
-    inline void SetEgressAddress(ConnectionDetails&& value) { m_egressAddressHasBeenSet = true; m_egressAddress = std::move(value); }
-    inline AwsGroundStationAgentEndpoint& WithEgressAddress(const ConnectionDetails& value) { SetEgressAddress(value); return *this;}
-    inline AwsGroundStationAgentEndpoint& WithEgressAddress(ConnectionDetails&& value) { SetEgressAddress(std::move(value)); return *this;}
+    template<typename EgressAddressT = ConnectionDetails>
+    void SetEgressAddress(EgressAddressT&& value) { m_egressAddressHasBeenSet = true; m_egressAddress = std::forward<EgressAddressT>(value); }
+    template<typename EgressAddressT = ConnectionDetails>
+    AwsGroundStationAgentEndpoint& WithEgressAddress(EgressAddressT&& value) { SetEgressAddress(std::forward<EgressAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ingress address of AgentEndpoint.</p>
      */
-    inline const RangedConnectionDetails& GetIngressAddress() const{ return m_ingressAddress; }
+    inline const RangedConnectionDetails& GetIngressAddress() const { return m_ingressAddress; }
     inline bool IngressAddressHasBeenSet() const { return m_ingressAddressHasBeenSet; }
-    inline void SetIngressAddress(const RangedConnectionDetails& value) { m_ingressAddressHasBeenSet = true; m_ingressAddress = value; }
-    inline void SetIngressAddress(RangedConnectionDetails&& value) { m_ingressAddressHasBeenSet = true; m_ingressAddress = std::move(value); }
-    inline AwsGroundStationAgentEndpoint& WithIngressAddress(const RangedConnectionDetails& value) { SetIngressAddress(value); return *this;}
-    inline AwsGroundStationAgentEndpoint& WithIngressAddress(RangedConnectionDetails&& value) { SetIngressAddress(std::move(value)); return *this;}
+    template<typename IngressAddressT = RangedConnectionDetails>
+    void SetIngressAddress(IngressAddressT&& value) { m_ingressAddressHasBeenSet = true; m_ingressAddress = std::forward<IngressAddressT>(value); }
+    template<typename IngressAddressT = RangedConnectionDetails>
+    AwsGroundStationAgentEndpoint& WithIngressAddress(IngressAddressT&& value) { SetIngressAddress(std::forward<IngressAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,21 +91,19 @@ namespace Model
      * <p>Name string associated with AgentEndpoint. Used as a human-readable
      * identifier for AgentEndpoint.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsGroundStationAgentEndpoint& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsGroundStationAgentEndpoint& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsGroundStationAgentEndpoint& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsGroundStationAgentEndpoint& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    AgentStatus m_agentStatus;
+    AgentStatus m_agentStatus{AgentStatus::NOT_SET};
     bool m_agentStatusHasBeenSet = false;
 
-    AuditResults m_auditResults;
+    AuditResults m_auditResults{AuditResults::NOT_SET};
     bool m_auditResultsHasBeenSet = false;
 
     ConnectionDetails m_egressAddress;

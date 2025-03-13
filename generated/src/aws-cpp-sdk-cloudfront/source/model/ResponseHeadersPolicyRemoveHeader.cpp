@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader() : 
-    m_headerHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyRemoveHeader::ResponseHeadersPolicyRemoveHeader(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyRemoveHeader()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ResponseHeadersPolicyRemoveHeader& ResponseHeadersPolicyRemoveHeader::operator =
     {
       m_header = Aws::Utils::Xml::DecodeEscapedXmlText(headerNode.GetText());
       m_headerHasBeenSet = true;
+       m_headerHasBeenSet = true;
     }
   }
 

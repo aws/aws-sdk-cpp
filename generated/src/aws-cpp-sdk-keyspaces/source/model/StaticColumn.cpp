@@ -18,13 +18,7 @@ namespace Keyspaces
 namespace Model
 {
 
-StaticColumn::StaticColumn() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 StaticColumn::StaticColumn(JsonView jsonValue)
-  : StaticColumn()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StaticColumn& StaticColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

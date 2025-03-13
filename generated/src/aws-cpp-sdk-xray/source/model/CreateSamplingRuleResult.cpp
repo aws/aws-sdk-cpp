@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSamplingRuleResult::CreateSamplingRuleResult()
-{
-}
-
 CreateSamplingRuleResult::CreateSamplingRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSamplingRuleResult& CreateSamplingRuleResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("SamplingRuleRecord"))
   {
     m_samplingRuleRecord = jsonValue.GetObject("SamplingRuleRecord");
-
+    m_samplingRuleRecordHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

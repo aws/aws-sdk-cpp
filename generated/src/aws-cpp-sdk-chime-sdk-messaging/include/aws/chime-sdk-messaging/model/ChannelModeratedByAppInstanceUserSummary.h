@@ -31,7 +31,7 @@ namespace Model
   class ChannelModeratedByAppInstanceUserSummary
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary() = default;
     AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API ChannelModeratedByAppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Summary of the details of a <code>Channel</code>.</p>
      */
-    inline const ChannelSummary& GetChannelSummary() const{ return m_channelSummary; }
+    inline const ChannelSummary& GetChannelSummary() const { return m_channelSummary; }
     inline bool ChannelSummaryHasBeenSet() const { return m_channelSummaryHasBeenSet; }
-    inline void SetChannelSummary(const ChannelSummary& value) { m_channelSummaryHasBeenSet = true; m_channelSummary = value; }
-    inline void SetChannelSummary(ChannelSummary&& value) { m_channelSummaryHasBeenSet = true; m_channelSummary = std::move(value); }
-    inline ChannelModeratedByAppInstanceUserSummary& WithChannelSummary(const ChannelSummary& value) { SetChannelSummary(value); return *this;}
-    inline ChannelModeratedByAppInstanceUserSummary& WithChannelSummary(ChannelSummary&& value) { SetChannelSummary(std::move(value)); return *this;}
+    template<typename ChannelSummaryT = ChannelSummary>
+    void SetChannelSummary(ChannelSummaryT&& value) { m_channelSummaryHasBeenSet = true; m_channelSummary = std::forward<ChannelSummaryT>(value); }
+    template<typename ChannelSummaryT = ChannelSummary>
+    ChannelModeratedByAppInstanceUserSummary& WithChannelSummary(ChannelSummaryT&& value) { SetChannelSummary(std::forward<ChannelSummaryT>(value)); return *this;}
     ///@}
   private:
 

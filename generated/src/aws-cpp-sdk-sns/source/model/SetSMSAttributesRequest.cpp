@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-SetSMSAttributesRequest::SetSMSAttributesRequest() : 
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String SetSMSAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

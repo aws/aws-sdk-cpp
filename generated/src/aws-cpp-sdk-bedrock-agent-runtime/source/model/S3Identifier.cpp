@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-S3Identifier::S3Identifier() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3ObjectKeyHasBeenSet(false)
-{
-}
-
 S3Identifier::S3Identifier(JsonView jsonValue)
-  : S3Identifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Identifier& S3Identifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ObjectKey"))
   {
     m_s3ObjectKey = jsonValue.GetString("s3ObjectKey");
-
     m_s3ObjectKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,31 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-QualificationType::QualificationType() : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_qualificationTypeStatus(QualificationTypeStatus::NOT_SET),
-    m_qualificationTypeStatusHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_testDurationInSeconds(0),
-    m_testDurationInSecondsHasBeenSet(false),
-    m_answerKeyHasBeenSet(false),
-    m_retryDelayInSeconds(0),
-    m_retryDelayInSecondsHasBeenSet(false),
-    m_isRequestable(false),
-    m_isRequestableHasBeenSet(false),
-    m_autoGranted(false),
-    m_autoGrantedHasBeenSet(false),
-    m_autoGrantedValue(0),
-    m_autoGrantedValueHasBeenSet(false)
-{
-}
-
 QualificationType::QualificationType(JsonView jsonValue)
-  : QualificationType()
 {
   *this = jsonValue;
 }
@@ -52,94 +28,68 @@ QualificationType& QualificationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QualificationTypeId"))
   {
     m_qualificationTypeId = jsonValue.GetString("QualificationTypeId");
-
     m_qualificationTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keywords"))
   {
     m_keywords = jsonValue.GetString("Keywords");
-
     m_keywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QualificationTypeStatus"))
   {
     m_qualificationTypeStatus = QualificationTypeStatusMapper::GetQualificationTypeStatusForName(jsonValue.GetString("QualificationTypeStatus"));
-
     m_qualificationTypeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Test"))
   {
     m_test = jsonValue.GetString("Test");
-
     m_testHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestDurationInSeconds"))
   {
     m_testDurationInSeconds = jsonValue.GetInt64("TestDurationInSeconds");
-
     m_testDurationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnswerKey"))
   {
     m_answerKey = jsonValue.GetString("AnswerKey");
-
     m_answerKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryDelayInSeconds"))
   {
     m_retryDelayInSeconds = jsonValue.GetInt64("RetryDelayInSeconds");
-
     m_retryDelayInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRequestable"))
   {
     m_isRequestable = jsonValue.GetBool("IsRequestable");
-
     m_isRequestableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoGranted"))
   {
     m_autoGranted = jsonValue.GetBool("AutoGranted");
-
     m_autoGrantedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoGrantedValue"))
   {
     m_autoGrantedValue = jsonValue.GetInteger("AutoGrantedValue");
-
     m_autoGrantedValueHasBeenSet = true;
   }
-
   return *this;
 }
 

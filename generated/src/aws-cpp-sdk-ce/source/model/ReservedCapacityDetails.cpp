@@ -18,13 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ReservedCapacityDetails::ReservedCapacityDetails() : 
-    m_dynamoDBCapacityDetailsHasBeenSet(false)
-{
-}
-
 ReservedCapacityDetails::ReservedCapacityDetails(JsonView jsonValue)
-  : ReservedCapacityDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReservedCapacityDetails& ReservedCapacityDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DynamoDBCapacityDetails"))
   {
     m_dynamoDBCapacityDetails = jsonValue.GetObject("DynamoDBCapacityDetails");
-
     m_dynamoDBCapacityDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

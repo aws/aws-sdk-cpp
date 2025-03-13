@@ -27,7 +27,7 @@ namespace Model
   class RejectSharedDirectoryResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult();
+    AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult() = default;
     AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API RejectSharedDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Identifier of the shared directory in the directory consumer account.</p>
      */
-    inline const Aws::String& GetSharedDirectoryId() const{ return m_sharedDirectoryId; }
-    inline void SetSharedDirectoryId(const Aws::String& value) { m_sharedDirectoryId = value; }
-    inline void SetSharedDirectoryId(Aws::String&& value) { m_sharedDirectoryId = std::move(value); }
-    inline void SetSharedDirectoryId(const char* value) { m_sharedDirectoryId.assign(value); }
-    inline RejectSharedDirectoryResult& WithSharedDirectoryId(const Aws::String& value) { SetSharedDirectoryId(value); return *this;}
-    inline RejectSharedDirectoryResult& WithSharedDirectoryId(Aws::String&& value) { SetSharedDirectoryId(std::move(value)); return *this;}
-    inline RejectSharedDirectoryResult& WithSharedDirectoryId(const char* value) { SetSharedDirectoryId(value); return *this;}
+    inline const Aws::String& GetSharedDirectoryId() const { return m_sharedDirectoryId; }
+    template<typename SharedDirectoryIdT = Aws::String>
+    void SetSharedDirectoryId(SharedDirectoryIdT&& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = std::forward<SharedDirectoryIdT>(value); }
+    template<typename SharedDirectoryIdT = Aws::String>
+    RejectSharedDirectoryResult& WithSharedDirectoryId(SharedDirectoryIdT&& value) { SetSharedDirectoryId(std::forward<SharedDirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RejectSharedDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RejectSharedDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RejectSharedDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RejectSharedDirectoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sharedDirectoryId;
+    bool m_sharedDirectoryIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

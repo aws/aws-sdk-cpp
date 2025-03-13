@@ -18,22 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-Replay::Replay() : 
-    m_replayNameHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_state(ReplayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_eventStartTimeHasBeenSet(false),
-    m_eventEndTimeHasBeenSet(false),
-    m_eventLastReplayedTimeHasBeenSet(false),
-    m_replayStartTimeHasBeenSet(false),
-    m_replayEndTimeHasBeenSet(false)
-{
-}
-
 Replay::Replay(JsonView jsonValue)
-  : Replay()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ Replay& Replay::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReplayName"))
   {
     m_replayName = jsonValue.GetString("ReplayName");
-
     m_replayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSourceArn"))
   {
     m_eventSourceArn = jsonValue.GetString("EventSourceArn");
-
     m_eventSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ReplayStateMapper::GetReplayStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventStartTime"))
   {
     m_eventStartTime = jsonValue.GetDouble("EventStartTime");
-
     m_eventStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventEndTime"))
   {
     m_eventEndTime = jsonValue.GetDouble("EventEndTime");
-
     m_eventEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventLastReplayedTime"))
   {
     m_eventLastReplayedTime = jsonValue.GetDouble("EventLastReplayedTime");
-
     m_eventLastReplayedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplayStartTime"))
   {
     m_replayStartTime = jsonValue.GetDouble("ReplayStartTime");
-
     m_replayStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplayEndTime"))
   {
     m_replayEndTime = jsonValue.GetDouble("ReplayEndTime");
-
     m_replayEndTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

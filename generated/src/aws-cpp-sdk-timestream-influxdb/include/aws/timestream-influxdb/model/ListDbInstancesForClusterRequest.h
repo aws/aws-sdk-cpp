@@ -21,7 +21,7 @@ namespace Model
   class ListDbInstancesForClusterRequest : public TimestreamInfluxDBRequest
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API ListDbInstancesForClusterRequest();
+    AWS_TIMESTREAMINFLUXDB_API ListDbInstancesForClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Service-generated unique identifier of the DB cluster.</p>
      */
-    inline const Aws::String& GetDbClusterId() const{ return m_dbClusterId; }
+    inline const Aws::String& GetDbClusterId() const { return m_dbClusterId; }
     inline bool DbClusterIdHasBeenSet() const { return m_dbClusterIdHasBeenSet; }
-    inline void SetDbClusterId(const Aws::String& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = value; }
-    inline void SetDbClusterId(Aws::String&& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = std::move(value); }
-    inline void SetDbClusterId(const char* value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId.assign(value); }
-    inline ListDbInstancesForClusterRequest& WithDbClusterId(const Aws::String& value) { SetDbClusterId(value); return *this;}
-    inline ListDbInstancesForClusterRequest& WithDbClusterId(Aws::String&& value) { SetDbClusterId(std::move(value)); return *this;}
-    inline ListDbInstancesForClusterRequest& WithDbClusterId(const char* value) { SetDbClusterId(value); return *this;}
+    template<typename DbClusterIdT = Aws::String>
+    void SetDbClusterId(DbClusterIdT&& value) { m_dbClusterIdHasBeenSet = true; m_dbClusterId = std::forward<DbClusterIdT>(value); }
+    template<typename DbClusterIdT = Aws::String>
+    ListDbInstancesForClusterRequest& WithDbClusterId(DbClusterIdT&& value) { SetDbClusterId(std::forward<DbClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The pagination token. To resume pagination, provide the nextToken value as an
      * argument of a subsequent API invocation.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDbInstancesForClusterRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDbInstancesForClusterRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDbInstancesForClusterRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDbInstancesForClusterRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +66,7 @@ namespace Model
      * output. To resume pagination, provide the nextToken value as an argument of a
      * subsequent API invocation.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDbInstancesForClusterRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

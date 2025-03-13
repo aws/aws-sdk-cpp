@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteMonitoringSubscription2020_05_31Result::DeleteMonitoringSubscription2020_05_31Result()
-{
-}
-
 DeleteMonitoringSubscription2020_05_31Result::DeleteMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -39,6 +35,7 @@ DeleteMonitoringSubscription2020_05_31Result& DeleteMonitoringSubscription2020_0
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

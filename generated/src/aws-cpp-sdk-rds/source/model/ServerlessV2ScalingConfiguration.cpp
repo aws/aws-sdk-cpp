@@ -20,18 +20,7 @@ namespace RDS
 namespace Model
 {
 
-ServerlessV2ScalingConfiguration::ServerlessV2ScalingConfiguration() : 
-    m_minCapacity(0.0),
-    m_minCapacityHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_secondsUntilAutoPause(0),
-    m_secondsUntilAutoPauseHasBeenSet(false)
-{
-}
-
 ServerlessV2ScalingConfiguration::ServerlessV2ScalingConfiguration(const XmlNode& xmlNode)
-  : ServerlessV2ScalingConfiguration()
 {
   *this = xmlNode;
 }
@@ -47,18 +36,21 @@ ServerlessV2ScalingConfiguration& ServerlessV2ScalingConfiguration::operator =(c
     {
       m_minCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minCapacityNode.GetText()).c_str()).c_str());
       m_minCapacityHasBeenSet = true;
+       m_minCapacityHasBeenSet = true;
     }
     XmlNode maxCapacityNode = resultNode.FirstChild("MaxCapacity");
     if(!maxCapacityNode.IsNull())
     {
       m_maxCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxCapacityNode.GetText()).c_str()).c_str());
       m_maxCapacityHasBeenSet = true;
+       m_maxCapacityHasBeenSet = true;
     }
     XmlNode secondsUntilAutoPauseNode = resultNode.FirstChild("SecondsUntilAutoPause");
     if(!secondsUntilAutoPauseNode.IsNull())
     {
       m_secondsUntilAutoPause = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondsUntilAutoPauseNode.GetText()).c_str()).c_str());
       m_secondsUntilAutoPauseHasBeenSet = true;
+       m_secondsUntilAutoPauseHasBeenSet = true;
     }
   }
 

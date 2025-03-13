@@ -18,17 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-ModuleLoggingConfiguration::ModuleLoggingConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logLevel(LoggingLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false)
-{
-}
-
 ModuleLoggingConfiguration::ModuleLoggingConfiguration(JsonView jsonValue)
-  : ModuleLoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ModuleLoggingConfiguration& ModuleLoggingConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LoggingLevelMapper::GetLoggingLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogGroupArn"))
   {
     m_cloudWatchLogGroupArn = jsonValue.GetString("CloudWatchLogGroupArn");
-
     m_cloudWatchLogGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

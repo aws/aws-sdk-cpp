@@ -18,14 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSSavingsEstimationMode::ECSSavingsEstimationMode() : 
-    m_source(ECSSavingsEstimationModeSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 ECSSavingsEstimationMode::ECSSavingsEstimationMode(JsonView jsonValue)
-  : ECSSavingsEstimationMode()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ECSSavingsEstimationMode& ECSSavingsEstimationMode::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("source"))
   {
     m_source = ECSSavingsEstimationModeSourceMapper::GetECSSavingsEstimationModeSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

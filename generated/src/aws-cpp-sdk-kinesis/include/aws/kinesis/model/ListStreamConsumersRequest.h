@@ -22,7 +22,7 @@ namespace Model
   class ListStreamConsumersRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API ListStreamConsumersRequest();
+    AWS_KINESIS_API ListStreamConsumersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline ListStreamConsumersRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline ListStreamConsumersRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline ListStreamConsumersRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    ListStreamConsumersRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +78,12 @@ namespace Model
      * specify an expired token in a call to <code>ListStreamConsumers</code>, you get
      * <code>ExpiredNextTokenException</code>.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStreamConsumersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStreamConsumersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStreamConsumersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStreamConsumersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +92,7 @@ namespace Model
      * <code>ListStreamConsumers</code> to return. The default value is 100. If you
      * specify a value greater than 100, at most 100 results are returned. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListStreamConsumersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -110,12 +106,12 @@ namespace Model
      * to specify which of the two streams you want to list the consumers for. </p>
      * <p>You can't specify this parameter if you specify the NextToken parameter. </p>
      */
-    inline const Aws::Utils::DateTime& GetStreamCreationTimestamp() const{ return m_streamCreationTimestamp; }
+    inline const Aws::Utils::DateTime& GetStreamCreationTimestamp() const { return m_streamCreationTimestamp; }
     inline bool StreamCreationTimestampHasBeenSet() const { return m_streamCreationTimestampHasBeenSet; }
-    inline void SetStreamCreationTimestamp(const Aws::Utils::DateTime& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = value; }
-    inline void SetStreamCreationTimestamp(Aws::Utils::DateTime&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = std::move(value); }
-    inline ListStreamConsumersRequest& WithStreamCreationTimestamp(const Aws::Utils::DateTime& value) { SetStreamCreationTimestamp(value); return *this;}
-    inline ListStreamConsumersRequest& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
+    template<typename StreamCreationTimestampT = Aws::Utils::DateTime>
+    void SetStreamCreationTimestamp(StreamCreationTimestampT&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = std::forward<StreamCreationTimestampT>(value); }
+    template<typename StreamCreationTimestampT = Aws::Utils::DateTime>
+    ListStreamConsumersRequest& WithStreamCreationTimestamp(StreamCreationTimestampT&& value) { SetStreamCreationTimestamp(std::forward<StreamCreationTimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -125,10 +121,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_streamCreationTimestamp;
+    Aws::Utils::DateTime m_streamCreationTimestamp{};
     bool m_streamCreationTimestampHasBeenSet = false;
   };
 

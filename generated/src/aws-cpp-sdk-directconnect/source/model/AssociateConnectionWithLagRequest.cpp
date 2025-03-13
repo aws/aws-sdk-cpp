@@ -12,12 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateConnectionWithLagRequest::AssociateConnectionWithLagRequest() : 
-    m_connectionIdHasBeenSet(false),
-    m_lagIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateConnectionWithLagRequest::SerializePayload() const
 {
   JsonValue payload;

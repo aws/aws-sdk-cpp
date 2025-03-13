@@ -35,7 +35,7 @@ namespace Model
   class TargetGroupPairInfo
   {
   public:
-    AWS_CODEDEPLOY_API TargetGroupPairInfo();
+    AWS_CODEDEPLOY_API TargetGroupPairInfo() = default;
     AWS_CODEDEPLOY_API TargetGroupPairInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API TargetGroupPairInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * second is associated with the task set that serves traffic after the deployment
      * is complete. </p>
      */
-    inline const Aws::Vector<TargetGroupInfo>& GetTargetGroups() const{ return m_targetGroups; }
+    inline const Aws::Vector<TargetGroupInfo>& GetTargetGroups() const { return m_targetGroups; }
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
-    inline void SetTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
-    inline void SetTargetGroups(Aws::Vector<TargetGroupInfo>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
-    inline TargetGroupPairInfo& WithTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { SetTargetGroups(value); return *this;}
-    inline TargetGroupPairInfo& WithTargetGroups(Aws::Vector<TargetGroupInfo>&& value) { SetTargetGroups(std::move(value)); return *this;}
-    inline TargetGroupPairInfo& AddTargetGroups(const TargetGroupInfo& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
-    inline TargetGroupPairInfo& AddTargetGroups(TargetGroupInfo&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
+    template<typename TargetGroupsT = Aws::Vector<TargetGroupInfo>>
+    void SetTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::forward<TargetGroupsT>(value); }
+    template<typename TargetGroupsT = Aws::Vector<TargetGroupInfo>>
+    TargetGroupPairInfo& WithTargetGroups(TargetGroupsT&& value) { SetTargetGroups(std::forward<TargetGroupsT>(value)); return *this;}
+    template<typename TargetGroupsT = TargetGroupInfo>
+    TargetGroupPairInfo& AddTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.emplace_back(std::forward<TargetGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p> The path used by a load balancer to route production traffic when an Amazon
      * ECS deployment is complete. </p>
      */
-    inline const TrafficRoute& GetProdTrafficRoute() const{ return m_prodTrafficRoute; }
+    inline const TrafficRoute& GetProdTrafficRoute() const { return m_prodTrafficRoute; }
     inline bool ProdTrafficRouteHasBeenSet() const { return m_prodTrafficRouteHasBeenSet; }
-    inline void SetProdTrafficRoute(const TrafficRoute& value) { m_prodTrafficRouteHasBeenSet = true; m_prodTrafficRoute = value; }
-    inline void SetProdTrafficRoute(TrafficRoute&& value) { m_prodTrafficRouteHasBeenSet = true; m_prodTrafficRoute = std::move(value); }
-    inline TargetGroupPairInfo& WithProdTrafficRoute(const TrafficRoute& value) { SetProdTrafficRoute(value); return *this;}
-    inline TargetGroupPairInfo& WithProdTrafficRoute(TrafficRoute&& value) { SetProdTrafficRoute(std::move(value)); return *this;}
+    template<typename ProdTrafficRouteT = TrafficRoute>
+    void SetProdTrafficRoute(ProdTrafficRouteT&& value) { m_prodTrafficRouteHasBeenSet = true; m_prodTrafficRoute = std::forward<ProdTrafficRouteT>(value); }
+    template<typename ProdTrafficRouteT = TrafficRoute>
+    TargetGroupPairInfo& WithProdTrafficRoute(ProdTrafficRouteT&& value) { SetProdTrafficRoute(std::forward<ProdTrafficRouteT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
-    inline const TrafficRoute& GetTestTrafficRoute() const{ return m_testTrafficRoute; }
+    inline const TrafficRoute& GetTestTrafficRoute() const { return m_testTrafficRoute; }
     inline bool TestTrafficRouteHasBeenSet() const { return m_testTrafficRouteHasBeenSet; }
-    inline void SetTestTrafficRoute(const TrafficRoute& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = value; }
-    inline void SetTestTrafficRoute(TrafficRoute&& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = std::move(value); }
-    inline TargetGroupPairInfo& WithTestTrafficRoute(const TrafficRoute& value) { SetTestTrafficRoute(value); return *this;}
-    inline TargetGroupPairInfo& WithTestTrafficRoute(TrafficRoute&& value) { SetTestTrafficRoute(std::move(value)); return *this;}
+    template<typename TestTrafficRouteT = TrafficRoute>
+    void SetTestTrafficRoute(TestTrafficRouteT&& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = std::forward<TestTrafficRouteT>(value); }
+    template<typename TestTrafficRouteT = TrafficRoute>
+    TargetGroupPairInfo& WithTestTrafficRoute(TestTrafficRouteT&& value) { SetTestTrafficRoute(std::forward<TestTrafficRouteT>(value)); return *this;}
     ///@}
   private:
 

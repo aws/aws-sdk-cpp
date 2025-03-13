@@ -66,11 +66,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting
      * permissions to use identity-aware console sessions</a>. </p>
      */
-    inline const Grantee& GetGrantee() const{ return m_grantee; }
-    inline void SetGrantee(const Grantee& value) { m_grantee = value; }
-    inline void SetGrantee(Grantee&& value) { m_grantee = std::move(value); }
-    inline GetDataAccessResult& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
-    inline GetDataAccessResult& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
+    inline const Grantee& GetGrantee() const { return m_grantee; }
+    template<typename GranteeT = Grantee>
+    void SetGrantee(GranteeT&& value) { m_granteeHasBeenSet = true; m_grantee = std::forward<GranteeT>(value); }
+    template<typename GranteeT = Grantee>
+    GetDataAccessResult& WithGrantee(GranteeT&& value) { SetGrantee(std::forward<GranteeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,6 +103,7 @@ namespace Model
     bool m_matchedGrantTargetHasBeenSet = false;
 
     Grantee m_grantee;
+    bool m_granteeHasBeenSet = false;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;

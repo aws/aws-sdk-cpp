@@ -12,11 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEvaluationRequest::DeleteEvaluationRequest() : 
-    m_evaluationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEvaluationRequest::SerializePayload() const
 {
   JsonValue payload;

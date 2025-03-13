@@ -34,7 +34,7 @@ namespace Model
   class DataSetImportTask
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API DataSetImportTask();
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportTask() = default;
     AWS_MAINFRAMEMODERNIZATION_API DataSetImportTask(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API DataSetImportTask& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,50 @@ namespace Model
     /**
      * <p>The status of the data set import task.</p>
      */
-    inline const DataSetTaskLifecycle& GetStatus() const{ return m_status; }
+    inline DataSetTaskLifecycle GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DataSetTaskLifecycle& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DataSetTaskLifecycle&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DataSetImportTask& WithStatus(const DataSetTaskLifecycle& value) { SetStatus(value); return *this;}
-    inline DataSetImportTask& WithStatus(DataSetTaskLifecycle&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DataSetTaskLifecycle value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DataSetImportTask& WithStatus(DataSetTaskLifecycle value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If dataset import failed, the failure reason will show here.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline DataSetImportTask& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline DataSetImportTask& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline DataSetImportTask& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    DataSetImportTask& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A summary of the data set import task.</p>
      */
-    inline const DataSetImportSummary& GetSummary() const{ return m_summary; }
+    inline const DataSetImportSummary& GetSummary() const { return m_summary; }
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-    inline void SetSummary(const DataSetImportSummary& value) { m_summaryHasBeenSet = true; m_summary = value; }
-    inline void SetSummary(DataSetImportSummary&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-    inline DataSetImportTask& WithSummary(const DataSetImportSummary& value) { SetSummary(value); return *this;}
-    inline DataSetImportTask& WithSummary(DataSetImportSummary&& value) { SetSummary(std::move(value)); return *this;}
+    template<typename SummaryT = DataSetImportSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = DataSetImportSummary>
+    DataSetImportTask& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the data set import task.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-    inline DataSetImportTask& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline DataSetImportTask& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline DataSetImportTask& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    DataSetImportTask& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
   private:
 
-    DataSetTaskLifecycle m_status;
+    DataSetTaskLifecycle m_status{DataSetTaskLifecycle::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;

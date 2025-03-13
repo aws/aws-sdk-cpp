@@ -12,10 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPortfolioPreferencesRequest::GetPortfolioPreferencesRequest()
-{
-}
-
 Aws::String GetPortfolioPreferencesRequest::SerializePayload() const
 {
   return {};

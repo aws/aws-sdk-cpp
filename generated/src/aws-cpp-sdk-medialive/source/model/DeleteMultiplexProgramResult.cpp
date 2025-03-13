@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteMultiplexProgramResult::DeleteMultiplexProgramResult()
-{
-}
-
 DeleteMultiplexProgramResult::DeleteMultiplexProgramResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ DeleteMultiplexProgramResult& DeleteMultiplexProgramResult::operator =(const Aws
   if(jsonValue.ValueExists("channelId"))
   {
     m_channelId = jsonValue.GetString("channelId");
-
+    m_channelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiplexProgramSettings"))
   {
     m_multiplexProgramSettings = jsonValue.GetObject("multiplexProgramSettings");
-
+    m_multiplexProgramSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packetIdentifiersMap"))
   {
     m_packetIdentifiersMap = jsonValue.GetObject("packetIdentifiersMap");
-
+    m_packetIdentifiersMapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineDetails"))
   {
     Aws::Utils::Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
@@ -54,20 +47,20 @@ DeleteMultiplexProgramResult& DeleteMultiplexProgramResult::operator =(const Aws
     {
       m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
     }
+    m_pipelineDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programName"))
   {
     m_programName = jsonValue.GetString("programName");
-
+    m_programNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

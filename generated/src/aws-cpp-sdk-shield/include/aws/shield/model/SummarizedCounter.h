@@ -31,7 +31,7 @@ namespace Model
   class SummarizedCounter
   {
   public:
-    AWS_SHIELD_API SummarizedCounter();
+    AWS_SHIELD_API SummarizedCounter() = default;
     AWS_SHIELD_API SummarizedCounter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API SummarizedCounter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The counter name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SummarizedCounter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SummarizedCounter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SummarizedCounter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SummarizedCounter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum value of the counter for a specified time period.</p>
      */
-    inline double GetMax() const{ return m_max; }
+    inline double GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
     inline SummarizedCounter& WithMax(double value) { SetMax(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     /**
      * <p>The average value of the counter for a specified time period.</p>
      */
-    inline double GetAverage() const{ return m_average; }
+    inline double GetAverage() const { return m_average; }
     inline bool AverageHasBeenSet() const { return m_averageHasBeenSet; }
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
     inline SummarizedCounter& WithAverage(double value) { SetAverage(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
     /**
      * <p>The total of counter values for a specified time period.</p>
      */
-    inline double GetSum() const{ return m_sum; }
+    inline double GetSum() const { return m_sum; }
     inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
     inline SummarizedCounter& WithSum(double value) { SetSum(value); return *this;}
@@ -85,7 +83,7 @@ namespace Model
     /**
      * <p>The number of counters for a specified time period.</p>
      */
-    inline int GetN() const{ return m_n; }
+    inline int GetN() const { return m_n; }
     inline bool NHasBeenSet() const { return m_nHasBeenSet; }
     inline void SetN(int value) { m_nHasBeenSet = true; m_n = value; }
     inline SummarizedCounter& WithN(int value) { SetN(value); return *this;}
@@ -95,30 +93,28 @@ namespace Model
     /**
      * <p>The unit of the counters.</p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline SummarizedCounter& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline SummarizedCounter& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline SummarizedCounter& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    SummarizedCounter& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    double m_max;
+    double m_max{0.0};
     bool m_maxHasBeenSet = false;
 
-    double m_average;
+    double m_average{0.0};
     bool m_averageHasBeenSet = false;
 
-    double m_sum;
+    double m_sum{0.0};
     bool m_sumHasBeenSet = false;
 
-    int m_n;
+    int m_n{0};
     bool m_nHasBeenSet = false;
 
     Aws::String m_unit;

@@ -18,22 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-Rule::Rule() : 
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_statementHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_overrideActionHasBeenSet(false),
-    m_ruleLabelsHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false),
-    m_challengeConfigHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statement"))
   {
     m_statement = jsonValue.GetObject("Statement");
-
     m_statementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetObject("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideAction"))
   {
     m_overrideAction = jsonValue.GetObject("OverrideAction");
-
     m_overrideActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleLabels"))
   {
     Aws::Utils::Array<JsonView> ruleLabelsJsonList = jsonValue.GetArray("RuleLabels");
@@ -84,28 +59,21 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_ruleLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibilityConfig"))
   {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
-
     m_visibilityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptchaConfig"))
   {
     m_captchaConfig = jsonValue.GetObject("CaptchaConfig");
-
     m_captchaConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChallengeConfig"))
   {
     m_challengeConfig = jsonValue.GetObject("ChallengeConfig");
-
     m_challengeConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

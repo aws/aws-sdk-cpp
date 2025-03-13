@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeNodeRequest::DescribeNodeRequest() : 
-    m_nodeIdHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNodeRequest::SerializePayload() const
 {
   return {};

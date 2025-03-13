@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RemoveStreamGroupLocationsRequest::RemoveStreamGroupLocationsRequest() : 
-    m_identifierHasBeenSet(false),
-    m_locationsHasBeenSet(false)
-{
-}
-
 Aws::String RemoveStreamGroupLocationsRequest::SerializePayload() const
 {
   return {};

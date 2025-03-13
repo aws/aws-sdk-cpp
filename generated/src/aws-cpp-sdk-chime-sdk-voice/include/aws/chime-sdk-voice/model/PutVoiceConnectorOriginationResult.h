@@ -28,7 +28,7 @@ namespace Model
   class PutVoiceConnectorOriginationResult
   {
   public:
-    AWS_CHIMESDKVOICE_API PutVoiceConnectorOriginationResult();
+    AWS_CHIMESDKVOICE_API PutVoiceConnectorOriginationResult() = default;
     AWS_CHIMESDKVOICE_API PutVoiceConnectorOriginationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API PutVoiceConnectorOriginationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The updated origination settings.</p>
      */
-    inline const Origination& GetOrigination() const{ return m_origination; }
-    inline void SetOrigination(const Origination& value) { m_origination = value; }
-    inline void SetOrigination(Origination&& value) { m_origination = std::move(value); }
-    inline PutVoiceConnectorOriginationResult& WithOrigination(const Origination& value) { SetOrigination(value); return *this;}
-    inline PutVoiceConnectorOriginationResult& WithOrigination(Origination&& value) { SetOrigination(std::move(value)); return *this;}
+    inline const Origination& GetOrigination() const { return m_origination; }
+    template<typename OriginationT = Origination>
+    void SetOrigination(OriginationT&& value) { m_originationHasBeenSet = true; m_origination = std::forward<OriginationT>(value); }
+    template<typename OriginationT = Origination>
+    PutVoiceConnectorOriginationResult& WithOrigination(OriginationT&& value) { SetOrigination(std::forward<OriginationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutVoiceConnectorOriginationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutVoiceConnectorOriginationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutVoiceConnectorOriginationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutVoiceConnectorOriginationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Origination m_origination;
+    bool m_originationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

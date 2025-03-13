@@ -18,16 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-ApplicationSettingsResponse::ApplicationSettingsResponse() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_settingsGroupHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
-{
-}
-
 ApplicationSettingsResponse::ApplicationSettingsResponse(JsonView jsonValue)
-  : ApplicationSettingsResponse()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ApplicationSettingsResponse& ApplicationSettingsResponse::operator =(JsonView js
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SettingsGroup"))
   {
     m_settingsGroup = jsonValue.GetString("SettingsGroup");
-
     m_settingsGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

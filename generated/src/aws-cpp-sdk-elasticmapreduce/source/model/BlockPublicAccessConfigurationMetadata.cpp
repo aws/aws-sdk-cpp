@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-BlockPublicAccessConfigurationMetadata::BlockPublicAccessConfigurationMetadata() : 
-    m_creationDateTimeHasBeenSet(false),
-    m_createdByArnHasBeenSet(false)
-{
-}
-
 BlockPublicAccessConfigurationMetadata::BlockPublicAccessConfigurationMetadata(JsonView jsonValue)
-  : BlockPublicAccessConfigurationMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BlockPublicAccessConfigurationMetadata& BlockPublicAccessConfigurationMetadata::
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedByArn"))
   {
     m_createdByArn = jsonValue.GetString("CreatedByArn");
-
     m_createdByArnHasBeenSet = true;
   }
-
   return *this;
 }
 

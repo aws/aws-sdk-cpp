@@ -33,7 +33,7 @@ namespace Model
   class VpnStaticRoute
   {
   public:
-    AWS_EC2_API VpnStaticRoute();
+    AWS_EC2_API VpnStaticRoute() = default;
     AWS_EC2_API VpnStaticRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpnStaticRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,48 +46,42 @@ namespace Model
      * <p>The CIDR block associated with the local subnet of the customer data
      * center.</p>
      */
-    inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
+    inline const Aws::String& GetDestinationCidrBlock() const { return m_destinationCidrBlock; }
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-    inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-    inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-    inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-    inline VpnStaticRoute& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-    inline VpnStaticRoute& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-    inline VpnStaticRoute& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    template<typename DestinationCidrBlockT = Aws::String>
+    void SetDestinationCidrBlock(DestinationCidrBlockT&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::forward<DestinationCidrBlockT>(value); }
+    template<typename DestinationCidrBlockT = Aws::String>
+    VpnStaticRoute& WithDestinationCidrBlock(DestinationCidrBlockT&& value) { SetDestinationCidrBlock(std::forward<DestinationCidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates how the routes were provided.</p>
      */
-    inline const VpnStaticRouteSource& GetSource() const{ return m_source; }
+    inline VpnStaticRouteSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const VpnStaticRouteSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(VpnStaticRouteSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline VpnStaticRoute& WithSource(const VpnStaticRouteSource& value) { SetSource(value); return *this;}
-    inline VpnStaticRoute& WithSource(VpnStaticRouteSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(VpnStaticRouteSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline VpnStaticRoute& WithSource(VpnStaticRouteSource value) { SetSource(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the static route.</p>
      */
-    inline const VpnState& GetState() const{ return m_state; }
+    inline VpnState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VpnState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VpnState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpnStaticRoute& WithState(const VpnState& value) { SetState(value); return *this;}
-    inline VpnStaticRoute& WithState(VpnState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VpnState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VpnStaticRoute& WithState(VpnState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationCidrBlock;
     bool m_destinationCidrBlockHasBeenSet = false;
 
-    VpnStaticRouteSource m_source;
+    VpnStaticRouteSource m_source{VpnStaticRouteSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
 
-    VpnState m_state;
+    VpnState m_state{VpnState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

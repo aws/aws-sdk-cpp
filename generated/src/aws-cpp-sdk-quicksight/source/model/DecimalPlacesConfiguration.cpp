@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DecimalPlacesConfiguration::DecimalPlacesConfiguration() : 
-    m_decimalPlaces(0),
-    m_decimalPlacesHasBeenSet(false)
-{
-}
-
 DecimalPlacesConfiguration::DecimalPlacesConfiguration(JsonView jsonValue)
-  : DecimalPlacesConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DecimalPlacesConfiguration& DecimalPlacesConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("DecimalPlaces"))
   {
     m_decimalPlaces = jsonValue.GetInt64("DecimalPlaces");
-
     m_decimalPlacesHasBeenSet = true;
   }
-
   return *this;
 }
 

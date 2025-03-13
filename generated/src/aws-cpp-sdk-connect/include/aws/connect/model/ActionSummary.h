@@ -31,7 +31,7 @@ namespace Model
   class ActionSummary
   {
   public:
-    AWS_CONNECT_API ActionSummary();
+    AWS_CONNECT_API ActionSummary() = default;
     AWS_CONNECT_API ActionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ActionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The action type.</p>
      */
-    inline const ActionType& GetActionType() const{ return m_actionType; }
+    inline ActionType GetActionType() const { return m_actionType; }
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-    inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-    inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-    inline ActionSummary& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
-    inline ActionSummary& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+    inline void SetActionType(ActionType value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
+    inline ActionSummary& WithActionType(ActionType value) { SetActionType(value); return *this;}
     ///@}
   private:
 
-    ActionType m_actionType;
+    ActionType m_actionType{ActionType::NOT_SET};
     bool m_actionTypeHasBeenSet = false;
   };
 

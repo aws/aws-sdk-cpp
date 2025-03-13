@@ -29,7 +29,7 @@ namespace Model
   class GetTerminologyResult
   {
   public:
-    AWS_TRANSLATE_API GetTerminologyResult();
+    AWS_TRANSLATE_API GetTerminologyResult() = default;
     AWS_TRANSLATE_API GetTerminologyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSLATE_API GetTerminologyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>The properties of the custom terminology being retrieved.</p>
      */
-    inline const TerminologyProperties& GetTerminologyProperties() const{ return m_terminologyProperties; }
-    inline void SetTerminologyProperties(const TerminologyProperties& value) { m_terminologyProperties = value; }
-    inline void SetTerminologyProperties(TerminologyProperties&& value) { m_terminologyProperties = std::move(value); }
-    inline GetTerminologyResult& WithTerminologyProperties(const TerminologyProperties& value) { SetTerminologyProperties(value); return *this;}
-    inline GetTerminologyResult& WithTerminologyProperties(TerminologyProperties&& value) { SetTerminologyProperties(std::move(value)); return *this;}
+    inline const TerminologyProperties& GetTerminologyProperties() const { return m_terminologyProperties; }
+    template<typename TerminologyPropertiesT = TerminologyProperties>
+    void SetTerminologyProperties(TerminologyPropertiesT&& value) { m_terminologyPropertiesHasBeenSet = true; m_terminologyProperties = std::forward<TerminologyPropertiesT>(value); }
+    template<typename TerminologyPropertiesT = TerminologyProperties>
+    GetTerminologyResult& WithTerminologyProperties(TerminologyPropertiesT&& value) { SetTerminologyProperties(std::forward<TerminologyPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,11 +58,11 @@ namespace Model
      * <p>Before you download an input file from Amazon S3, ensure that you recognize
      * the file and trust its creator.</p> 
      */
-    inline const TerminologyDataLocation& GetTerminologyDataLocation() const{ return m_terminologyDataLocation; }
-    inline void SetTerminologyDataLocation(const TerminologyDataLocation& value) { m_terminologyDataLocation = value; }
-    inline void SetTerminologyDataLocation(TerminologyDataLocation&& value) { m_terminologyDataLocation = std::move(value); }
-    inline GetTerminologyResult& WithTerminologyDataLocation(const TerminologyDataLocation& value) { SetTerminologyDataLocation(value); return *this;}
-    inline GetTerminologyResult& WithTerminologyDataLocation(TerminologyDataLocation&& value) { SetTerminologyDataLocation(std::move(value)); return *this;}
+    inline const TerminologyDataLocation& GetTerminologyDataLocation() const { return m_terminologyDataLocation; }
+    template<typename TerminologyDataLocationT = TerminologyDataLocation>
+    void SetTerminologyDataLocation(TerminologyDataLocationT&& value) { m_terminologyDataLocationHasBeenSet = true; m_terminologyDataLocation = std::forward<TerminologyDataLocationT>(value); }
+    template<typename TerminologyDataLocationT = TerminologyDataLocation>
+    GetTerminologyResult& WithTerminologyDataLocation(TerminologyDataLocationT&& value) { SetTerminologyDataLocation(std::forward<TerminologyDataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,32 +72,34 @@ namespace Model
      * attempted to create a terminology resource. The location is returned as a
      * presigned URL to that has a 30-minute expiration.</p>
      */
-    inline const TerminologyDataLocation& GetAuxiliaryDataLocation() const{ return m_auxiliaryDataLocation; }
-    inline void SetAuxiliaryDataLocation(const TerminologyDataLocation& value) { m_auxiliaryDataLocation = value; }
-    inline void SetAuxiliaryDataLocation(TerminologyDataLocation&& value) { m_auxiliaryDataLocation = std::move(value); }
-    inline GetTerminologyResult& WithAuxiliaryDataLocation(const TerminologyDataLocation& value) { SetAuxiliaryDataLocation(value); return *this;}
-    inline GetTerminologyResult& WithAuxiliaryDataLocation(TerminologyDataLocation&& value) { SetAuxiliaryDataLocation(std::move(value)); return *this;}
+    inline const TerminologyDataLocation& GetAuxiliaryDataLocation() const { return m_auxiliaryDataLocation; }
+    template<typename AuxiliaryDataLocationT = TerminologyDataLocation>
+    void SetAuxiliaryDataLocation(AuxiliaryDataLocationT&& value) { m_auxiliaryDataLocationHasBeenSet = true; m_auxiliaryDataLocation = std::forward<AuxiliaryDataLocationT>(value); }
+    template<typename AuxiliaryDataLocationT = TerminologyDataLocation>
+    GetTerminologyResult& WithAuxiliaryDataLocation(AuxiliaryDataLocationT&& value) { SetAuxiliaryDataLocation(std::forward<AuxiliaryDataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTerminologyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTerminologyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTerminologyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTerminologyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TerminologyProperties m_terminologyProperties;
+    bool m_terminologyPropertiesHasBeenSet = false;
 
     TerminologyDataLocation m_terminologyDataLocation;
+    bool m_terminologyDataLocationHasBeenSet = false;
 
     TerminologyDataLocation m_auxiliaryDataLocation;
+    bool m_auxiliaryDataLocationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

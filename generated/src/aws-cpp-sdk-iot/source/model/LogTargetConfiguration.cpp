@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-LogTargetConfiguration::LogTargetConfiguration() : 
-    m_logTargetHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 LogTargetConfiguration::LogTargetConfiguration(JsonView jsonValue)
-  : LogTargetConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LogTargetConfiguration& LogTargetConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logTarget"))
   {
     m_logTarget = jsonValue.GetObject("logTarget");
-
     m_logTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

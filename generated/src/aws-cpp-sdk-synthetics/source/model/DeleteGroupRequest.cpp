@@ -12,11 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGroupRequest::DeleteGroupRequest() : 
-    m_groupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGroupRequest::SerializePayload() const
 {
   return {};

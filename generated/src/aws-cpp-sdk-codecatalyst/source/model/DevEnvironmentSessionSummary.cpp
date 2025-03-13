@@ -18,17 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-DevEnvironmentSessionSummary::DevEnvironmentSessionSummary() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_devEnvironmentIdHasBeenSet(false),
-    m_startedTimeHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 DevEnvironmentSessionSummary::DevEnvironmentSessionSummary(JsonView jsonValue)
-  : DevEnvironmentSessionSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DevEnvironmentSessionSummary& DevEnvironmentSessionSummary::operator =(JsonView 
   if(jsonValue.ValueExists("spaceName"))
   {
     m_spaceName = jsonValue.GetString("spaceName");
-
     m_spaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("devEnvironmentId"))
   {
     m_devEnvironmentId = jsonValue.GetString("devEnvironmentId");
-
     m_devEnvironmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedTime"))
   {
     m_startedTime = jsonValue.GetString("startedTime");
-
     m_startedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

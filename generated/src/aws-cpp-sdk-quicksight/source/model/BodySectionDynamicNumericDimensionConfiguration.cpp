@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BodySectionDynamicNumericDimensionConfiguration::BodySectionDynamicNumericDimensionConfiguration() : 
-    m_columnHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_sortByMetricsHasBeenSet(false)
-{
-}
-
 BodySectionDynamicNumericDimensionConfiguration::BodySectionDynamicNumericDimensionConfiguration(JsonView jsonValue)
-  : BodySectionDynamicNumericDimensionConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BodySectionDynamicNumericDimensionConfiguration& BodySectionDynamicNumericDimens
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetInteger("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortByMetrics"))
   {
     Aws::Utils::Array<JsonView> sortByMetricsJsonList = jsonValue.GetArray("SortByMetrics");
@@ -57,7 +44,6 @@ BodySectionDynamicNumericDimensionConfiguration& BodySectionDynamicNumericDimens
     }
     m_sortByMetricsHasBeenSet = true;
   }
-
   return *this;
 }
 

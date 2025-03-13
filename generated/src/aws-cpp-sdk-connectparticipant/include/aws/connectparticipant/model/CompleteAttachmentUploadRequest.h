@@ -23,7 +23,7 @@ namespace Model
   class CompleteAttachmentUploadRequest : public ConnectParticipantRequest
   {
   public:
-    AWS_CONNECTPARTICIPANT_API CompleteAttachmentUploadRequest();
+    AWS_CONNECTPARTICIPANT_API CompleteAttachmentUploadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
     /**
      * <p>A list of unique identifiers for the attachments.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttachmentIds() const{ return m_attachmentIds; }
+    inline const Aws::Vector<Aws::String>& GetAttachmentIds() const { return m_attachmentIds; }
     inline bool AttachmentIdsHasBeenSet() const { return m_attachmentIdsHasBeenSet; }
-    inline void SetAttachmentIds(const Aws::Vector<Aws::String>& value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds = value; }
-    inline void SetAttachmentIds(Aws::Vector<Aws::String>&& value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds = std::move(value); }
-    inline CompleteAttachmentUploadRequest& WithAttachmentIds(const Aws::Vector<Aws::String>& value) { SetAttachmentIds(value); return *this;}
-    inline CompleteAttachmentUploadRequest& WithAttachmentIds(Aws::Vector<Aws::String>&& value) { SetAttachmentIds(std::move(value)); return *this;}
-    inline CompleteAttachmentUploadRequest& AddAttachmentIds(const Aws::String& value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds.push_back(value); return *this; }
-    inline CompleteAttachmentUploadRequest& AddAttachmentIds(Aws::String&& value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds.push_back(std::move(value)); return *this; }
-    inline CompleteAttachmentUploadRequest& AddAttachmentIds(const char* value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds.push_back(value); return *this; }
+    template<typename AttachmentIdsT = Aws::Vector<Aws::String>>
+    void SetAttachmentIds(AttachmentIdsT&& value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds = std::forward<AttachmentIdsT>(value); }
+    template<typename AttachmentIdsT = Aws::Vector<Aws::String>>
+    CompleteAttachmentUploadRequest& WithAttachmentIds(AttachmentIdsT&& value) { SetAttachmentIds(std::forward<AttachmentIdsT>(value)); return *this;}
+    template<typename AttachmentIdsT = Aws::String>
+    CompleteAttachmentUploadRequest& AddAttachmentIds(AttachmentIdsT&& value) { m_attachmentIdsHasBeenSet = true; m_attachmentIds.emplace_back(std::forward<AttachmentIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,28 +58,24 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CompleteAttachmentUploadRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CompleteAttachmentUploadRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CompleteAttachmentUploadRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CompleteAttachmentUploadRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication token associated with the participant's connection.</p>
      */
-    inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
+    inline const Aws::String& GetConnectionToken() const { return m_connectionToken; }
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-    inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-    inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-    inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-    inline CompleteAttachmentUploadRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-    inline CompleteAttachmentUploadRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-    inline CompleteAttachmentUploadRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
+    template<typename ConnectionTokenT = Aws::String>
+    void SetConnectionToken(ConnectionTokenT&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::forward<ConnectionTokenT>(value); }
+    template<typename ConnectionTokenT = Aws::String>
+    CompleteAttachmentUploadRequest& WithConnectionToken(ConnectionTokenT&& value) { SetConnectionToken(std::forward<ConnectionTokenT>(value)); return *this;}
     ///@}
   private:
 

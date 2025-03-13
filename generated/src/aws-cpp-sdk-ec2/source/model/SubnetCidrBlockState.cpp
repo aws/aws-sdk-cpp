@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetCidrBlockState::SubnetCidrBlockState() : 
-    m_state(SubnetCidrBlockStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 SubnetCidrBlockState::SubnetCidrBlockState(const XmlNode& xmlNode)
-  : SubnetCidrBlockState()
 {
   *this = xmlNode;
 }
@@ -42,14 +34,16 @@ SubnetCidrBlockState& SubnetCidrBlockState::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SubnetCidrBlockStateCodeMapper::GetSubnetCidrBlockStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SubnetCidrBlockStateCodeMapper::GetSubnetCidrBlockStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");
     if(!statusMessageNode.IsNull())
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
+       m_statusMessageHasBeenSet = true;
     }
   }
 

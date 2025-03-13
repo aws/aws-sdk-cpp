@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInsightsAccessScope::NetworkInsightsAccessScope() : 
-    m_networkInsightsAccessScopeIdHasBeenSet(false),
-    m_networkInsightsAccessScopeArnHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 NetworkInsightsAccessScope::NetworkInsightsAccessScope(const XmlNode& xmlNode)
-  : NetworkInsightsAccessScope()
 {
   *this = xmlNode;
 }
@@ -46,36 +36,41 @@ NetworkInsightsAccessScope& NetworkInsightsAccessScope::operator =(const XmlNode
     {
       m_networkInsightsAccessScopeId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeIdNode.GetText());
       m_networkInsightsAccessScopeIdHasBeenSet = true;
+       m_networkInsightsAccessScopeIdHasBeenSet = true;
     }
     XmlNode networkInsightsAccessScopeArnNode = resultNode.FirstChild("networkInsightsAccessScopeArn");
     if(!networkInsightsAccessScopeArnNode.IsNull())
     {
       m_networkInsightsAccessScopeArn = Aws::Utils::Xml::DecodeEscapedXmlText(networkInsightsAccessScopeArnNode.GetText());
       m_networkInsightsAccessScopeArnHasBeenSet = true;
+       m_networkInsightsAccessScopeArnHasBeenSet = true;
     }
     XmlNode createdDateNode = resultNode.FirstChild("createdDate");
     if(!createdDateNode.IsNull())
     {
       m_createdDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdDateHasBeenSet = true;
+       m_createdDateHasBeenSet = true;
     }
     XmlNode updatedDateNode = resultNode.FirstChild("updatedDate");
     if(!updatedDateNode.IsNull())
     {
       m_updatedDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updatedDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updatedDateHasBeenSet = true;
+       m_updatedDateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("item");
       }
 
-      m_tagsHasBeenSet = true;
+       m_tagsHasBeenSet = true;
     }
   }
 

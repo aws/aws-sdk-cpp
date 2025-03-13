@@ -10,15 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RevokeDBSecurityGroupIngressRequest::RevokeDBSecurityGroupIngressRequest() : 
-    m_dBSecurityGroupNameHasBeenSet(false),
-    m_cIDRIPHasBeenSet(false),
-    m_eC2SecurityGroupNameHasBeenSet(false),
-    m_eC2SecurityGroupIdHasBeenSet(false),
-    m_eC2SecurityGroupOwnerIdHasBeenSet(false)
-{
-}
-
 Aws::String RevokeDBSecurityGroupIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

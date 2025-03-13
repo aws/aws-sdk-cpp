@@ -18,13 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-MetricMonitorConfig::MetricMonitorConfig() : 
-    m_metricDefinitionHasBeenSet(false)
-{
-}
-
 MetricMonitorConfig::MetricMonitorConfig(JsonView jsonValue)
-  : MetricMonitorConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetricMonitorConfig& MetricMonitorConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("metricDefinition"))
   {
     m_metricDefinition = jsonValue.GetObject("metricDefinition");
-
     m_metricDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

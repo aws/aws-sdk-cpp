@@ -33,7 +33,7 @@ namespace Model
   class MessageResult
   {
   public:
-    AWS_PINPOINT_API MessageResult();
+    AWS_PINPOINT_API MessageResult() = default;
     AWS_PINPOINT_API MessageResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API MessageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,33 +55,29 @@ namespace Model
      * throttled the operation to send the message to the endpoint address.</p></li>
      * <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
      */
-    inline const DeliveryStatus& GetDeliveryStatus() const{ return m_deliveryStatus; }
+    inline DeliveryStatus GetDeliveryStatus() const { return m_deliveryStatus; }
     inline bool DeliveryStatusHasBeenSet() const { return m_deliveryStatusHasBeenSet; }
-    inline void SetDeliveryStatus(const DeliveryStatus& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = value; }
-    inline void SetDeliveryStatus(DeliveryStatus&& value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = std::move(value); }
-    inline MessageResult& WithDeliveryStatus(const DeliveryStatus& value) { SetDeliveryStatus(value); return *this;}
-    inline MessageResult& WithDeliveryStatus(DeliveryStatus&& value) { SetDeliveryStatus(std::move(value)); return *this;}
+    inline void SetDeliveryStatus(DeliveryStatus value) { m_deliveryStatusHasBeenSet = true; m_deliveryStatus = value; }
+    inline MessageResult& WithDeliveryStatus(DeliveryStatus value) { SetDeliveryStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the message that was sent.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline MessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline MessageResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline MessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    MessageResult& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The downstream service status code for delivering the message.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
+    inline int GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline MessageResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
@@ -91,14 +87,12 @@ namespace Model
     /**
      * <p>The status message for delivering the message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline MessageResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline MessageResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline MessageResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    MessageResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,24 +101,22 @@ namespace Model
      * whether the endpoint's device registration token was updated as part of
      * delivering the message.</p>
      */
-    inline const Aws::String& GetUpdatedToken() const{ return m_updatedToken; }
+    inline const Aws::String& GetUpdatedToken() const { return m_updatedToken; }
     inline bool UpdatedTokenHasBeenSet() const { return m_updatedTokenHasBeenSet; }
-    inline void SetUpdatedToken(const Aws::String& value) { m_updatedTokenHasBeenSet = true; m_updatedToken = value; }
-    inline void SetUpdatedToken(Aws::String&& value) { m_updatedTokenHasBeenSet = true; m_updatedToken = std::move(value); }
-    inline void SetUpdatedToken(const char* value) { m_updatedTokenHasBeenSet = true; m_updatedToken.assign(value); }
-    inline MessageResult& WithUpdatedToken(const Aws::String& value) { SetUpdatedToken(value); return *this;}
-    inline MessageResult& WithUpdatedToken(Aws::String&& value) { SetUpdatedToken(std::move(value)); return *this;}
-    inline MessageResult& WithUpdatedToken(const char* value) { SetUpdatedToken(value); return *this;}
+    template<typename UpdatedTokenT = Aws::String>
+    void SetUpdatedToken(UpdatedTokenT&& value) { m_updatedTokenHasBeenSet = true; m_updatedToken = std::forward<UpdatedTokenT>(value); }
+    template<typename UpdatedTokenT = Aws::String>
+    MessageResult& WithUpdatedToken(UpdatedTokenT&& value) { SetUpdatedToken(std::forward<UpdatedTokenT>(value)); return *this;}
     ///@}
   private:
 
-    DeliveryStatus m_deliveryStatus;
+    DeliveryStatus m_deliveryStatus{DeliveryStatus::NOT_SET};
     bool m_deliveryStatusHasBeenSet = false;
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    int m_statusCode;
+    int m_statusCode{0};
     bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;

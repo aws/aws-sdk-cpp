@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PollForThirdPartyJobsResult::PollForThirdPartyJobsResult()
-{
-}
-
 PollForThirdPartyJobsResult::PollForThirdPartyJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ PollForThirdPartyJobsResult& PollForThirdPartyJobsResult::operator =(const Aws::
     {
       m_jobs.push_back(jobsJsonList[jobsIndex].AsObject());
     }
+    m_jobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

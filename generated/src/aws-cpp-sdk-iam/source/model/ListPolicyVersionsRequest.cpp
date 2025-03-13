@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListPolicyVersionsRequest::ListPolicyVersionsRequest() : 
-    m_policyArnHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListPolicyVersionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

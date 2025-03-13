@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-AnomalyResource::AnomalyResource() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AnomalyResource::AnomalyResource(JsonView jsonValue)
-  : AnomalyResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AnomalyResource& AnomalyResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

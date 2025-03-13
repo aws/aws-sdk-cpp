@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ConditionalSpecification::ConditionalSpecification() : 
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_conditionalBranchesHasBeenSet(false),
-    m_defaultBranchHasBeenSet(false)
-{
-}
-
 ConditionalSpecification::ConditionalSpecification(JsonView jsonValue)
-  : ConditionalSpecification()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ConditionalSpecification& ConditionalSpecification::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionalBranches"))
   {
     Aws::Utils::Array<JsonView> conditionalBranchesJsonList = jsonValue.GetArray("conditionalBranches");
@@ -50,14 +39,11 @@ ConditionalSpecification& ConditionalSpecification::operator =(JsonView jsonValu
     }
     m_conditionalBranchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultBranch"))
   {
     m_defaultBranch = jsonValue.GetObject("defaultBranch");
-
     m_defaultBranchHasBeenSet = true;
   }
-
   return *this;
 }
 

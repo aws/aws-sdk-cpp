@@ -21,7 +21,7 @@ namespace Model
   class DeleteArchiveRequest : public EventBridgeRequest
   {
   public:
-    AWS_EVENTBRIDGE_API DeleteArchiveRequest();
+    AWS_EVENTBRIDGE_API DeleteArchiveRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the archive to delete.</p>
      */
-    inline const Aws::String& GetArchiveName() const{ return m_archiveName; }
+    inline const Aws::String& GetArchiveName() const { return m_archiveName; }
     inline bool ArchiveNameHasBeenSet() const { return m_archiveNameHasBeenSet; }
-    inline void SetArchiveName(const Aws::String& value) { m_archiveNameHasBeenSet = true; m_archiveName = value; }
-    inline void SetArchiveName(Aws::String&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::move(value); }
-    inline void SetArchiveName(const char* value) { m_archiveNameHasBeenSet = true; m_archiveName.assign(value); }
-    inline DeleteArchiveRequest& WithArchiveName(const Aws::String& value) { SetArchiveName(value); return *this;}
-    inline DeleteArchiveRequest& WithArchiveName(Aws::String&& value) { SetArchiveName(std::move(value)); return *this;}
-    inline DeleteArchiveRequest& WithArchiveName(const char* value) { SetArchiveName(value); return *this;}
+    template<typename ArchiveNameT = Aws::String>
+    void SetArchiveName(ArchiveNameT&& value) { m_archiveNameHasBeenSet = true; m_archiveName = std::forward<ArchiveNameT>(value); }
+    template<typename ArchiveNameT = Aws::String>
+    DeleteArchiveRequest& WithArchiveName(ArchiveNameT&& value) { SetArchiveName(std::forward<ArchiveNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class CacheBehavior
   {
   public:
-    AWS_LIGHTSAIL_API CacheBehavior();
+    AWS_LIGHTSAIL_API CacheBehavior() = default;
     AWS_LIGHTSAIL_API CacheBehavior(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API CacheBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,16 +53,14 @@ namespace Model
      * ideal for websites or web applications that use cookies, headers, and query
      * strings to personalize content for individual users.</p> </li> </ul>
      */
-    inline const BehaviorEnum& GetBehavior() const{ return m_behavior; }
+    inline BehaviorEnum GetBehavior() const { return m_behavior; }
     inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
-    inline void SetBehavior(const BehaviorEnum& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
-    inline void SetBehavior(BehaviorEnum&& value) { m_behaviorHasBeenSet = true; m_behavior = std::move(value); }
-    inline CacheBehavior& WithBehavior(const BehaviorEnum& value) { SetBehavior(value); return *this;}
-    inline CacheBehavior& WithBehavior(BehaviorEnum&& value) { SetBehavior(std::move(value)); return *this;}
+    inline void SetBehavior(BehaviorEnum value) { m_behaviorHasBeenSet = true; m_behavior = value; }
+    inline CacheBehavior& WithBehavior(BehaviorEnum value) { SetBehavior(value); return *this;}
     ///@}
   private:
 
-    BehaviorEnum m_behavior;
+    BehaviorEnum m_behavior{BehaviorEnum::NOT_SET};
     bool m_behaviorHasBeenSet = false;
   };
 

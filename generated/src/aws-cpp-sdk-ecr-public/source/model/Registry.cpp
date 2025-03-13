@@ -18,18 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-Registry::Registry() : 
-    m_registryIdHasBeenSet(false),
-    m_registryArnHasBeenSet(false),
-    m_registryUriHasBeenSet(false),
-    m_verified(false),
-    m_verifiedHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
-{
-}
-
 Registry::Registry(JsonView jsonValue)
-  : Registry()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Registry& Registry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryArn"))
   {
     m_registryArn = jsonValue.GetString("registryArn");
-
     m_registryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryUri"))
   {
     m_registryUri = jsonValue.GetString("registryUri");
-
     m_registryUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verified"))
   {
     m_verified = jsonValue.GetBool("verified");
-
     m_verifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aliases"))
   {
     Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("aliases");
@@ -73,7 +54,6 @@ Registry& Registry::operator =(JsonView jsonValue)
     }
     m_aliasesHasBeenSet = true;
   }
-
   return *this;
 }
 

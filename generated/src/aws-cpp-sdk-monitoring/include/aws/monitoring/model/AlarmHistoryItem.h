@@ -34,7 +34,7 @@ namespace Model
   class AlarmHistoryItem
   {
   public:
-    AWS_CLOUDWATCH_API AlarmHistoryItem();
+    AWS_CLOUDWATCH_API AlarmHistoryItem() = default;
     AWS_CLOUDWATCH_API AlarmHistoryItem(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API AlarmHistoryItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,91 +46,81 @@ namespace Model
     /**
      * <p>The descriptive name for the alarm.</p>
      */
-    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+    inline const Aws::String& GetAlarmName() const { return m_alarmName; }
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-    inline AlarmHistoryItem& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-    inline AlarmHistoryItem& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-    inline AlarmHistoryItem& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    template<typename AlarmNameT = Aws::String>
+    void SetAlarmName(AlarmNameT&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::forward<AlarmNameT>(value); }
+    template<typename AlarmNameT = Aws::String>
+    AlarmHistoryItem& WithAlarmName(AlarmNameT&& value) { SetAlarmName(std::forward<AlarmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of alarm, either metric alarm or composite alarm.</p>
      */
-    inline const AlarmType& GetAlarmType() const{ return m_alarmType; }
+    inline AlarmType GetAlarmType() const { return m_alarmType; }
     inline bool AlarmTypeHasBeenSet() const { return m_alarmTypeHasBeenSet; }
-    inline void SetAlarmType(const AlarmType& value) { m_alarmTypeHasBeenSet = true; m_alarmType = value; }
-    inline void SetAlarmType(AlarmType&& value) { m_alarmTypeHasBeenSet = true; m_alarmType = std::move(value); }
-    inline AlarmHistoryItem& WithAlarmType(const AlarmType& value) { SetAlarmType(value); return *this;}
-    inline AlarmHistoryItem& WithAlarmType(AlarmType&& value) { SetAlarmType(std::move(value)); return *this;}
+    inline void SetAlarmType(AlarmType value) { m_alarmTypeHasBeenSet = true; m_alarmType = value; }
+    inline AlarmHistoryItem& WithAlarmType(AlarmType value) { SetAlarmType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time stamp for the alarm history item.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline AlarmHistoryItem& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline AlarmHistoryItem& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    AlarmHistoryItem& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of alarm history item.</p>
      */
-    inline const HistoryItemType& GetHistoryItemType() const{ return m_historyItemType; }
+    inline HistoryItemType GetHistoryItemType() const { return m_historyItemType; }
     inline bool HistoryItemTypeHasBeenSet() const { return m_historyItemTypeHasBeenSet; }
-    inline void SetHistoryItemType(const HistoryItemType& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
-    inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = std::move(value); }
-    inline AlarmHistoryItem& WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
-    inline AlarmHistoryItem& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(std::move(value)); return *this;}
+    inline void SetHistoryItemType(HistoryItemType value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
+    inline AlarmHistoryItem& WithHistoryItemType(HistoryItemType value) { SetHistoryItemType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A summary of the alarm history, in text format.</p>
      */
-    inline const Aws::String& GetHistorySummary() const{ return m_historySummary; }
+    inline const Aws::String& GetHistorySummary() const { return m_historySummary; }
     inline bool HistorySummaryHasBeenSet() const { return m_historySummaryHasBeenSet; }
-    inline void SetHistorySummary(const Aws::String& value) { m_historySummaryHasBeenSet = true; m_historySummary = value; }
-    inline void SetHistorySummary(Aws::String&& value) { m_historySummaryHasBeenSet = true; m_historySummary = std::move(value); }
-    inline void SetHistorySummary(const char* value) { m_historySummaryHasBeenSet = true; m_historySummary.assign(value); }
-    inline AlarmHistoryItem& WithHistorySummary(const Aws::String& value) { SetHistorySummary(value); return *this;}
-    inline AlarmHistoryItem& WithHistorySummary(Aws::String&& value) { SetHistorySummary(std::move(value)); return *this;}
-    inline AlarmHistoryItem& WithHistorySummary(const char* value) { SetHistorySummary(value); return *this;}
+    template<typename HistorySummaryT = Aws::String>
+    void SetHistorySummary(HistorySummaryT&& value) { m_historySummaryHasBeenSet = true; m_historySummary = std::forward<HistorySummaryT>(value); }
+    template<typename HistorySummaryT = Aws::String>
+    AlarmHistoryItem& WithHistorySummary(HistorySummaryT&& value) { SetHistorySummary(std::forward<HistorySummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Data about the alarm, in JSON format.</p>
      */
-    inline const Aws::String& GetHistoryData() const{ return m_historyData; }
+    inline const Aws::String& GetHistoryData() const { return m_historyData; }
     inline bool HistoryDataHasBeenSet() const { return m_historyDataHasBeenSet; }
-    inline void SetHistoryData(const Aws::String& value) { m_historyDataHasBeenSet = true; m_historyData = value; }
-    inline void SetHistoryData(Aws::String&& value) { m_historyDataHasBeenSet = true; m_historyData = std::move(value); }
-    inline void SetHistoryData(const char* value) { m_historyDataHasBeenSet = true; m_historyData.assign(value); }
-    inline AlarmHistoryItem& WithHistoryData(const Aws::String& value) { SetHistoryData(value); return *this;}
-    inline AlarmHistoryItem& WithHistoryData(Aws::String&& value) { SetHistoryData(std::move(value)); return *this;}
-    inline AlarmHistoryItem& WithHistoryData(const char* value) { SetHistoryData(value); return *this;}
+    template<typename HistoryDataT = Aws::String>
+    void SetHistoryData(HistoryDataT&& value) { m_historyDataHasBeenSet = true; m_historyData = std::forward<HistoryDataT>(value); }
+    template<typename HistoryDataT = Aws::String>
+    AlarmHistoryItem& WithHistoryData(HistoryDataT&& value) { SetHistoryData(std::forward<HistoryDataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet = false;
 
-    AlarmType m_alarmType;
+    AlarmType m_alarmType{AlarmType::NOT_SET};
     bool m_alarmTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    HistoryItemType m_historyItemType;
+    HistoryItemType m_historyItemType{HistoryItemType::NOT_SET};
     bool m_historyItemTypeHasBeenSet = false;
 
     Aws::String m_historySummary;

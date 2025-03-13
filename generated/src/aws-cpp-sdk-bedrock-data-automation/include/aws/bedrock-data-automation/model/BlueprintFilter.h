@@ -32,7 +32,7 @@ namespace Model
   class BlueprintFilter
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API BlueprintFilter();
+    AWS_BEDROCKDATAAUTOMATION_API BlueprintFilter() = default;
     AWS_BEDROCKDATAAUTOMATION_API BlueprintFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API BlueprintFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,36 +40,30 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetBlueprintArn() const{ return m_blueprintArn; }
+    inline const Aws::String& GetBlueprintArn() const { return m_blueprintArn; }
     inline bool BlueprintArnHasBeenSet() const { return m_blueprintArnHasBeenSet; }
-    inline void SetBlueprintArn(const Aws::String& value) { m_blueprintArnHasBeenSet = true; m_blueprintArn = value; }
-    inline void SetBlueprintArn(Aws::String&& value) { m_blueprintArnHasBeenSet = true; m_blueprintArn = std::move(value); }
-    inline void SetBlueprintArn(const char* value) { m_blueprintArnHasBeenSet = true; m_blueprintArn.assign(value); }
-    inline BlueprintFilter& WithBlueprintArn(const Aws::String& value) { SetBlueprintArn(value); return *this;}
-    inline BlueprintFilter& WithBlueprintArn(Aws::String&& value) { SetBlueprintArn(std::move(value)); return *this;}
-    inline BlueprintFilter& WithBlueprintArn(const char* value) { SetBlueprintArn(value); return *this;}
+    template<typename BlueprintArnT = Aws::String>
+    void SetBlueprintArn(BlueprintArnT&& value) { m_blueprintArnHasBeenSet = true; m_blueprintArn = std::forward<BlueprintArnT>(value); }
+    template<typename BlueprintArnT = Aws::String>
+    BlueprintFilter& WithBlueprintArn(BlueprintArnT&& value) { SetBlueprintArn(std::forward<BlueprintArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetBlueprintVersion() const{ return m_blueprintVersion; }
+    inline const Aws::String& GetBlueprintVersion() const { return m_blueprintVersion; }
     inline bool BlueprintVersionHasBeenSet() const { return m_blueprintVersionHasBeenSet; }
-    inline void SetBlueprintVersion(const Aws::String& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = value; }
-    inline void SetBlueprintVersion(Aws::String&& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = std::move(value); }
-    inline void SetBlueprintVersion(const char* value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion.assign(value); }
-    inline BlueprintFilter& WithBlueprintVersion(const Aws::String& value) { SetBlueprintVersion(value); return *this;}
-    inline BlueprintFilter& WithBlueprintVersion(Aws::String&& value) { SetBlueprintVersion(std::move(value)); return *this;}
-    inline BlueprintFilter& WithBlueprintVersion(const char* value) { SetBlueprintVersion(value); return *this;}
+    template<typename BlueprintVersionT = Aws::String>
+    void SetBlueprintVersion(BlueprintVersionT&& value) { m_blueprintVersionHasBeenSet = true; m_blueprintVersion = std::forward<BlueprintVersionT>(value); }
+    template<typename BlueprintVersionT = Aws::String>
+    BlueprintFilter& WithBlueprintVersion(BlueprintVersionT&& value) { SetBlueprintVersion(std::forward<BlueprintVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BlueprintStage& GetBlueprintStage() const{ return m_blueprintStage; }
+    inline BlueprintStage GetBlueprintStage() const { return m_blueprintStage; }
     inline bool BlueprintStageHasBeenSet() const { return m_blueprintStageHasBeenSet; }
-    inline void SetBlueprintStage(const BlueprintStage& value) { m_blueprintStageHasBeenSet = true; m_blueprintStage = value; }
-    inline void SetBlueprintStage(BlueprintStage&& value) { m_blueprintStageHasBeenSet = true; m_blueprintStage = std::move(value); }
-    inline BlueprintFilter& WithBlueprintStage(const BlueprintStage& value) { SetBlueprintStage(value); return *this;}
-    inline BlueprintFilter& WithBlueprintStage(BlueprintStage&& value) { SetBlueprintStage(std::move(value)); return *this;}
+    inline void SetBlueprintStage(BlueprintStage value) { m_blueprintStageHasBeenSet = true; m_blueprintStage = value; }
+    inline BlueprintFilter& WithBlueprintStage(BlueprintStage value) { SetBlueprintStage(value); return *this;}
     ///@}
   private:
 
@@ -79,7 +73,7 @@ namespace Model
     Aws::String m_blueprintVersion;
     bool m_blueprintVersionHasBeenSet = false;
 
-    BlueprintStage m_blueprintStage;
+    BlueprintStage m_blueprintStage{BlueprintStage::NOT_SET};
     bool m_blueprintStageHasBeenSet = false;
   };
 

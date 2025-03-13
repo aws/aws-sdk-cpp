@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationTargetResponse::CapacityReservationTargetResponse() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_capacityReservationResourceGroupArnHasBeenSet(false)
-{
-}
-
 CapacityReservationTargetResponse::CapacityReservationTargetResponse(const XmlNode& xmlNode)
-  : CapacityReservationTargetResponse()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CapacityReservationTargetResponse& CapacityReservationTargetResponse::operator =
     {
       m_capacityReservationId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationIdNode.GetText());
       m_capacityReservationIdHasBeenSet = true;
+       m_capacityReservationIdHasBeenSet = true;
     }
     XmlNode capacityReservationResourceGroupArnNode = resultNode.FirstChild("capacityReservationResourceGroupArn");
     if(!capacityReservationResourceGroupArnNode.IsNull())
     {
       m_capacityReservationResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationResourceGroupArnNode.GetText());
       m_capacityReservationResourceGroupArnHasBeenSet = true;
+       m_capacityReservationResourceGroupArnHasBeenSet = true;
     }
   }
 

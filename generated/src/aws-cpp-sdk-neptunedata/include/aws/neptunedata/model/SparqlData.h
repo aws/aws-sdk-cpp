@@ -34,7 +34,7 @@ namespace Model
   class SparqlData
   {
   public:
-    AWS_NEPTUNEDATA_API SparqlData();
+    AWS_NEPTUNEDATA_API SparqlData() = default;
     AWS_NEPTUNEDATA_API SparqlData(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API SparqlData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>Holds an <a href="https://www.w3.org/TR/n-quads/">N-QUADS</a> statement
      * expressing the changed quad.</p>
      */
-    inline const Aws::String& GetStmt() const{ return m_stmt; }
+    inline const Aws::String& GetStmt() const { return m_stmt; }
     inline bool StmtHasBeenSet() const { return m_stmtHasBeenSet; }
-    inline void SetStmt(const Aws::String& value) { m_stmtHasBeenSet = true; m_stmt = value; }
-    inline void SetStmt(Aws::String&& value) { m_stmtHasBeenSet = true; m_stmt = std::move(value); }
-    inline void SetStmt(const char* value) { m_stmtHasBeenSet = true; m_stmt.assign(value); }
-    inline SparqlData& WithStmt(const Aws::String& value) { SetStmt(value); return *this;}
-    inline SparqlData& WithStmt(Aws::String&& value) { SetStmt(std::move(value)); return *this;}
-    inline SparqlData& WithStmt(const char* value) { SetStmt(value); return *this;}
+    template<typename StmtT = Aws::String>
+    void SetStmt(StmtT&& value) { m_stmtHasBeenSet = true; m_stmt = std::forward<StmtT>(value); }
+    template<typename StmtT = Aws::String>
+    SparqlData& WithStmt(StmtT&& value) { SetStmt(std::forward<StmtT>(value)); return *this;}
     ///@}
   private:
 

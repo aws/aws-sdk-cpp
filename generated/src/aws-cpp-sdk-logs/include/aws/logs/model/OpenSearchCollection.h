@@ -38,7 +38,7 @@ namespace Model
   class OpenSearchCollection
   {
   public:
-    AWS_CLOUDWATCHLOGS_API OpenSearchCollection();
+    AWS_CLOUDWATCHLOGS_API OpenSearchCollection() = default;
     AWS_CLOUDWATCHLOGS_API OpenSearchCollection(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API OpenSearchCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
     /**
      * <p>The endpoint of the collection.</p>
      */
-    inline const Aws::String& GetCollectionEndpoint() const{ return m_collectionEndpoint; }
+    inline const Aws::String& GetCollectionEndpoint() const { return m_collectionEndpoint; }
     inline bool CollectionEndpointHasBeenSet() const { return m_collectionEndpointHasBeenSet; }
-    inline void SetCollectionEndpoint(const Aws::String& value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint = value; }
-    inline void SetCollectionEndpoint(Aws::String&& value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint = std::move(value); }
-    inline void SetCollectionEndpoint(const char* value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint.assign(value); }
-    inline OpenSearchCollection& WithCollectionEndpoint(const Aws::String& value) { SetCollectionEndpoint(value); return *this;}
-    inline OpenSearchCollection& WithCollectionEndpoint(Aws::String&& value) { SetCollectionEndpoint(std::move(value)); return *this;}
-    inline OpenSearchCollection& WithCollectionEndpoint(const char* value) { SetCollectionEndpoint(value); return *this;}
+    template<typename CollectionEndpointT = Aws::String>
+    void SetCollectionEndpoint(CollectionEndpointT&& value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint = std::forward<CollectionEndpointT>(value); }
+    template<typename CollectionEndpointT = Aws::String>
+    OpenSearchCollection& WithCollectionEndpoint(CollectionEndpointT&& value) { SetCollectionEndpoint(std::forward<CollectionEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the collection.</p>
      */
-    inline const Aws::String& GetCollectionArn() const{ return m_collectionArn; }
+    inline const Aws::String& GetCollectionArn() const { return m_collectionArn; }
     inline bool CollectionArnHasBeenSet() const { return m_collectionArnHasBeenSet; }
-    inline void SetCollectionArn(const Aws::String& value) { m_collectionArnHasBeenSet = true; m_collectionArn = value; }
-    inline void SetCollectionArn(Aws::String&& value) { m_collectionArnHasBeenSet = true; m_collectionArn = std::move(value); }
-    inline void SetCollectionArn(const char* value) { m_collectionArnHasBeenSet = true; m_collectionArn.assign(value); }
-    inline OpenSearchCollection& WithCollectionArn(const Aws::String& value) { SetCollectionArn(value); return *this;}
-    inline OpenSearchCollection& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
-    inline OpenSearchCollection& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
+    template<typename CollectionArnT = Aws::String>
+    void SetCollectionArn(CollectionArnT&& value) { m_collectionArnHasBeenSet = true; m_collectionArn = std::forward<CollectionArnT>(value); }
+    template<typename CollectionArnT = Aws::String>
+    OpenSearchCollection& WithCollectionArn(CollectionArnT&& value) { SetCollectionArn(std::forward<CollectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,12 @@ namespace Model
      * <p>This structure contains information about the status of this OpenSearch
      * Service resource.</p>
      */
-    inline const OpenSearchResourceStatus& GetStatus() const{ return m_status; }
+    inline const OpenSearchResourceStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OpenSearchResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OpenSearchResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OpenSearchCollection& WithStatus(const OpenSearchResourceStatus& value) { SetStatus(value); return *this;}
-    inline OpenSearchCollection& WithStatus(OpenSearchResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = OpenSearchResourceStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = OpenSearchResourceStatus>
+    OpenSearchCollection& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

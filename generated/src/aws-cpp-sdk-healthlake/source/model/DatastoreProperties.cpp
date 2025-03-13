@@ -18,25 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-DatastoreProperties::DatastoreProperties() : 
-    m_datastoreIdHasBeenSet(false),
-    m_datastoreArnHasBeenSet(false),
-    m_datastoreNameHasBeenSet(false),
-    m_datastoreStatus(DatastoreStatus::NOT_SET),
-    m_datastoreStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_datastoreTypeVersion(FHIRVersion::NOT_SET),
-    m_datastoreTypeVersionHasBeenSet(false),
-    m_datastoreEndpointHasBeenSet(false),
-    m_sseConfigurationHasBeenSet(false),
-    m_preloadDataConfigHasBeenSet(false),
-    m_identityProviderConfigurationHasBeenSet(false),
-    m_errorCauseHasBeenSet(false)
-{
-}
-
 DatastoreProperties::DatastoreProperties(JsonView jsonValue)
-  : DatastoreProperties()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ DatastoreProperties& DatastoreProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DatastoreId"))
   {
     m_datastoreId = jsonValue.GetString("DatastoreId");
-
     m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatastoreArn"))
   {
     m_datastoreArn = jsonValue.GetString("DatastoreArn");
-
     m_datastoreArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatastoreName"))
   {
     m_datastoreName = jsonValue.GetString("DatastoreName");
-
     m_datastoreNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatastoreStatus"))
   {
     m_datastoreStatus = DatastoreStatusMapper::GetDatastoreStatusForName(jsonValue.GetString("DatastoreStatus"));
-
     m_datastoreStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatastoreTypeVersion"))
   {
     m_datastoreTypeVersion = FHIRVersionMapper::GetFHIRVersionForName(jsonValue.GetString("DatastoreTypeVersion"));
-
     m_datastoreTypeVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatastoreEndpoint"))
   {
     m_datastoreEndpoint = jsonValue.GetString("DatastoreEndpoint");
-
     m_datastoreEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SseConfiguration"))
   {
     m_sseConfiguration = jsonValue.GetObject("SseConfiguration");
-
     m_sseConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreloadDataConfig"))
   {
     m_preloadDataConfig = jsonValue.GetObject("PreloadDataConfig");
-
     m_preloadDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityProviderConfiguration"))
   {
     m_identityProviderConfiguration = jsonValue.GetObject("IdentityProviderConfiguration");
-
     m_identityProviderConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCause"))
   {
     m_errorCause = jsonValue.GetObject("ErrorCause");
-
     m_errorCauseHasBeenSet = true;
   }
-
   return *this;
 }
 

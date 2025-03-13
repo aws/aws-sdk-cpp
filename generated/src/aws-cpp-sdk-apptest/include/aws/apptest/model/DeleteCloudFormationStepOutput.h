@@ -29,7 +29,7 @@ namespace Model
   class DeleteCloudFormationStepOutput
   {
   public:
-    AWS_APPTEST_API DeleteCloudFormationStepOutput();
+    AWS_APPTEST_API DeleteCloudFormationStepOutput() = default;
     AWS_APPTEST_API DeleteCloudFormationStepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API DeleteCloudFormationStepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;

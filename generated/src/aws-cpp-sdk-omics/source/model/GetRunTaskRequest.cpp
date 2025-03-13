@@ -12,12 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRunTaskRequest::GetRunTaskRequest() : 
-    m_idHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRunTaskRequest::SerializePayload() const
 {
   return {};

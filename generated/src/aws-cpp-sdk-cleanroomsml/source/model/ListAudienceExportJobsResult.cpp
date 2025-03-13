@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAudienceExportJobsResult::ListAudienceExportJobsResult()
-{
-}
-
 ListAudienceExportJobsResult::ListAudienceExportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAudienceExportJobsResult& ListAudienceExportJobsResult::operator =(const Aws
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audienceExportJobs"))
   {
     Aws::Utils::Array<JsonView> audienceExportJobsJsonList = jsonValue.GetArray("audienceExportJobs");
@@ -42,14 +37,15 @@ ListAudienceExportJobsResult& ListAudienceExportJobsResult::operator =(const Aws
     {
       m_audienceExportJobs.push_back(audienceExportJobsJsonList[audienceExportJobsIndex].AsObject());
     }
+    m_audienceExportJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

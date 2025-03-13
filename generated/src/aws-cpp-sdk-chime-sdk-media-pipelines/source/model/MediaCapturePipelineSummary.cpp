@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaCapturePipelineSummary::MediaCapturePipelineSummary() : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false)
-{
-}
-
 MediaCapturePipelineSummary::MediaCapturePipelineSummary(JsonView jsonValue)
-  : MediaCapturePipelineSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MediaCapturePipelineSummary& MediaCapturePipelineSummary::operator =(JsonView js
   if(jsonValue.ValueExists("MediaPipelineId"))
   {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
-
     m_mediaPipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   return *this;
 }
 

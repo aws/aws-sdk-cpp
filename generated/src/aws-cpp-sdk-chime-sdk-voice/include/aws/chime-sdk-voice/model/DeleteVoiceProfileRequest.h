@@ -21,7 +21,7 @@ namespace Model
   class DeleteVoiceProfileRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API DeleteVoiceProfileRequest();
+    AWS_CHIMESDKVOICE_API DeleteVoiceProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The voice profile ID.</p>
      */
-    inline const Aws::String& GetVoiceProfileId() const{ return m_voiceProfileId; }
+    inline const Aws::String& GetVoiceProfileId() const { return m_voiceProfileId; }
     inline bool VoiceProfileIdHasBeenSet() const { return m_voiceProfileIdHasBeenSet; }
-    inline void SetVoiceProfileId(const Aws::String& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = value; }
-    inline void SetVoiceProfileId(Aws::String&& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = std::move(value); }
-    inline void SetVoiceProfileId(const char* value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId.assign(value); }
-    inline DeleteVoiceProfileRequest& WithVoiceProfileId(const Aws::String& value) { SetVoiceProfileId(value); return *this;}
-    inline DeleteVoiceProfileRequest& WithVoiceProfileId(Aws::String&& value) { SetVoiceProfileId(std::move(value)); return *this;}
-    inline DeleteVoiceProfileRequest& WithVoiceProfileId(const char* value) { SetVoiceProfileId(value); return *this;}
+    template<typename VoiceProfileIdT = Aws::String>
+    void SetVoiceProfileId(VoiceProfileIdT&& value) { m_voiceProfileIdHasBeenSet = true; m_voiceProfileId = std::forward<VoiceProfileIdT>(value); }
+    template<typename VoiceProfileIdT = Aws::String>
+    DeleteVoiceProfileRequest& WithVoiceProfileId(VoiceProfileIdT&& value) { SetVoiceProfileId(std::forward<VoiceProfileIdT>(value)); return *this;}
     ///@}
   private:
 

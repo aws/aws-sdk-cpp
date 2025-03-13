@@ -26,7 +26,7 @@ namespace Model
   class ModifyDBClusterSnapshotAttributeRequest : public DocDBRequest
   {
   public:
-    AWS_DOCDB_API ModifyDBClusterSnapshotAttributeRequest();
+    AWS_DOCDB_API ModifyDBClusterSnapshotAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The identifier for the cluster snapshot to modify the attributes for.</p>
      */
-    inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
+    inline const Aws::String& GetDBClusterSnapshotIdentifier() const { return m_dBClusterSnapshotIdentifier; }
     inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
-    inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
-    inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
-    inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
-    inline ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
+    template<typename DBClusterSnapshotIdentifierT = Aws::String>
+    void SetDBClusterSnapshotIdentifier(DBClusterSnapshotIdentifierT&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::forward<DBClusterSnapshotIdentifierT>(value); }
+    template<typename DBClusterSnapshotIdentifierT = Aws::String>
+    ModifyDBClusterSnapshotAttributeRequest& WithDBClusterSnapshotIdentifier(DBClusterSnapshotIdentifierT&& value) { SetDBClusterSnapshotIdentifier(std::forward<DBClusterSnapshotIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * cluster snapshot, set this value to <code>restore</code>.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,15 +78,14 @@ namespace Model
      * private information that you don't want to be available to all Amazon Web
      * Services accounts.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValuesToAdd() const{ return m_valuesToAdd; }
+    inline const Aws::Vector<Aws::String>& GetValuesToAdd() const { return m_valuesToAdd; }
     inline bool ValuesToAddHasBeenSet() const { return m_valuesToAddHasBeenSet; }
-    inline void SetValuesToAdd(const Aws::Vector<Aws::String>& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = value; }
-    inline void SetValuesToAdd(Aws::Vector<Aws::String>&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = std::move(value); }
-    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(const Aws::Vector<Aws::String>& value) { SetValuesToAdd(value); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(Aws::Vector<Aws::String>&& value) { SetValuesToAdd(std::move(value)); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(const Aws::String& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(Aws::String&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(std::move(value)); return *this; }
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(const char* value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
+    template<typename ValuesToAddT = Aws::Vector<Aws::String>>
+    void SetValuesToAdd(ValuesToAddT&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = std::forward<ValuesToAddT>(value); }
+    template<typename ValuesToAddT = Aws::Vector<Aws::String>>
+    ModifyDBClusterSnapshotAttributeRequest& WithValuesToAdd(ValuesToAddT&& value) { SetValuesToAdd(std::forward<ValuesToAddT>(value)); return *this;}
+    template<typename ValuesToAddT = Aws::String>
+    ModifyDBClusterSnapshotAttributeRequest& AddValuesToAdd(ValuesToAddT&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.emplace_back(std::forward<ValuesToAddT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,15 +100,14 @@ namespace Model
      * <code>restore</code> attribute can still copy or restore a manual cluster
      * snapshot.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValuesToRemove() const{ return m_valuesToRemove; }
+    inline const Aws::Vector<Aws::String>& GetValuesToRemove() const { return m_valuesToRemove; }
     inline bool ValuesToRemoveHasBeenSet() const { return m_valuesToRemoveHasBeenSet; }
-    inline void SetValuesToRemove(const Aws::Vector<Aws::String>& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = value; }
-    inline void SetValuesToRemove(Aws::Vector<Aws::String>&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = std::move(value); }
-    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToRemove(const Aws::Vector<Aws::String>& value) { SetValuesToRemove(value); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& WithValuesToRemove(Aws::Vector<Aws::String>&& value) { SetValuesToRemove(std::move(value)); return *this;}
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(const Aws::String& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(Aws::String&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(std::move(value)); return *this; }
-    inline ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(const char* value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
+    template<typename ValuesToRemoveT = Aws::Vector<Aws::String>>
+    void SetValuesToRemove(ValuesToRemoveT&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = std::forward<ValuesToRemoveT>(value); }
+    template<typename ValuesToRemoveT = Aws::Vector<Aws::String>>
+    ModifyDBClusterSnapshotAttributeRequest& WithValuesToRemove(ValuesToRemoveT&& value) { SetValuesToRemove(std::forward<ValuesToRemoveT>(value)); return *this;}
+    template<typename ValuesToRemoveT = Aws::String>
+    ModifyDBClusterSnapshotAttributeRequest& AddValuesToRemove(ValuesToRemoveT&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.emplace_back(std::forward<ValuesToRemoveT>(value)); return *this; }
     ///@}
   private:
 

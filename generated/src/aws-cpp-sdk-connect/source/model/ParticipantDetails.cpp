@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ParticipantDetails::ParticipantDetails() : 
-    m_displayNameHasBeenSet(false)
-{
-}
-
 ParticipantDetails::ParticipantDetails(JsonView jsonValue)
-  : ParticipantDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParticipantDetails& ParticipantDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

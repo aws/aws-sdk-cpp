@@ -18,15 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-MalaysiaAdditionalInfo::MalaysiaAdditionalInfo() : 
-    m_businessRegistrationNumberHasBeenSet(false),
-    m_serviceTaxCodesHasBeenSet(false),
-    m_taxInformationNumberHasBeenSet(false)
-{
-}
-
 MalaysiaAdditionalInfo::MalaysiaAdditionalInfo(JsonView jsonValue)
-  : MalaysiaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ MalaysiaAdditionalInfo& MalaysiaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("businessRegistrationNumber"))
   {
     m_businessRegistrationNumber = jsonValue.GetString("businessRegistrationNumber");
-
     m_businessRegistrationNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceTaxCodes"))
   {
     Aws::Utils::Array<JsonView> serviceTaxCodesJsonList = jsonValue.GetArray("serviceTaxCodes");
@@ -49,14 +39,11 @@ MalaysiaAdditionalInfo& MalaysiaAdditionalInfo::operator =(JsonView jsonValue)
     }
     m_serviceTaxCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxInformationNumber"))
   {
     m_taxInformationNumber = jsonValue.GetString("taxInformationNumber");
-
     m_taxInformationNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

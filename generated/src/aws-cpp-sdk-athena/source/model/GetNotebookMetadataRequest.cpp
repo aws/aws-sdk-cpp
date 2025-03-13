@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNotebookMetadataRequest::GetNotebookMetadataRequest() : 
-    m_notebookIdHasBeenSet(false)
-{
-}
-
 Aws::String GetNotebookMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

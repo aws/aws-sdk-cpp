@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-RouteAnalysisEndpointOptions::RouteAnalysisEndpointOptions() : 
-    m_transitGatewayAttachmentArnHasBeenSet(false),
-    m_transitGatewayArnHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 RouteAnalysisEndpointOptions::RouteAnalysisEndpointOptions(JsonView jsonValue)
-  : RouteAnalysisEndpointOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RouteAnalysisEndpointOptions& RouteAnalysisEndpointOptions::operator =(JsonView 
   if(jsonValue.ValueExists("TransitGatewayAttachmentArn"))
   {
     m_transitGatewayAttachmentArn = jsonValue.GetString("TransitGatewayAttachmentArn");
-
     m_transitGatewayAttachmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransitGatewayArn"))
   {
     m_transitGatewayArn = jsonValue.GetString("TransitGatewayArn");
-
     m_transitGatewayArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

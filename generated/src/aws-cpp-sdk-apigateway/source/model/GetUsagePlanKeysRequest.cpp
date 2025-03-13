@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetUsagePlanKeysRequest::GetUsagePlanKeysRequest() : 
-    m_usagePlanIdHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nameQueryHasBeenSet(false)
-{
-}
-
 Aws::String GetUsagePlanKeysRequest::SerializePayload() const
 {
   return {};

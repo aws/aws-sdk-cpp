@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DescribeFastSnapshotRestoreSuccessItem::DescribeFastSnapshotRestoreSuccessItem() : 
-    m_snapshotIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_state(FastSnapshotRestoreStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_ownerAliasHasBeenSet(false),
-    m_enablingTimeHasBeenSet(false),
-    m_optimizingTimeHasBeenSet(false),
-    m_enabledTimeHasBeenSet(false),
-    m_disablingTimeHasBeenSet(false),
-    m_disabledTimeHasBeenSet(false)
-{
-}
-
 DescribeFastSnapshotRestoreSuccessItem::DescribeFastSnapshotRestoreSuccessItem(const XmlNode& xmlNode)
-  : DescribeFastSnapshotRestoreSuccessItem()
 {
   *this = xmlNode;
 }
@@ -53,66 +36,77 @@ DescribeFastSnapshotRestoreSuccessItem& DescribeFastSnapshotRestoreSuccessItem::
     {
       m_snapshotId = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotIdNode.GetText());
       m_snapshotIdHasBeenSet = true;
+       m_snapshotIdHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
     if(!availabilityZoneNode.IsNull())
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+       m_availabilityZoneHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = FastSnapshotRestoreStateCodeMapper::GetFastSnapshotRestoreStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = FastSnapshotRestoreStateCodeMapper::GetFastSnapshotRestoreStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
     XmlNode stateTransitionReasonNode = resultNode.FirstChild("stateTransitionReason");
     if(!stateTransitionReasonNode.IsNull())
     {
       m_stateTransitionReason = Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionReasonNode.GetText());
       m_stateTransitionReasonHasBeenSet = true;
+       m_stateTransitionReasonHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
     {
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
+       m_ownerIdHasBeenSet = true;
     }
     XmlNode ownerAliasNode = resultNode.FirstChild("ownerAlias");
     if(!ownerAliasNode.IsNull())
     {
       m_ownerAlias = Aws::Utils::Xml::DecodeEscapedXmlText(ownerAliasNode.GetText());
       m_ownerAliasHasBeenSet = true;
+       m_ownerAliasHasBeenSet = true;
     }
     XmlNode enablingTimeNode = resultNode.FirstChild("enablingTime");
     if(!enablingTimeNode.IsNull())
     {
       m_enablingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablingTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_enablingTimeHasBeenSet = true;
+       m_enablingTimeHasBeenSet = true;
     }
     XmlNode optimizingTimeNode = resultNode.FirstChild("optimizingTime");
     if(!optimizingTimeNode.IsNull())
     {
       m_optimizingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(optimizingTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_optimizingTimeHasBeenSet = true;
+       m_optimizingTimeHasBeenSet = true;
     }
     XmlNode enabledTimeNode = resultNode.FirstChild("enabledTime");
     if(!enabledTimeNode.IsNull())
     {
       m_enabledTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_enabledTimeHasBeenSet = true;
+       m_enabledTimeHasBeenSet = true;
     }
     XmlNode disablingTimeNode = resultNode.FirstChild("disablingTime");
     if(!disablingTimeNode.IsNull())
     {
       m_disablingTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disablingTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_disablingTimeHasBeenSet = true;
+       m_disablingTimeHasBeenSet = true;
     }
     XmlNode disabledTimeNode = resultNode.FirstChild("disabledTime");
     if(!disabledTimeNode.IsNull())
     {
       m_disabledTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disabledTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_disabledTimeHasBeenSet = true;
+       m_disabledTimeHasBeenSet = true;
     }
   }
 

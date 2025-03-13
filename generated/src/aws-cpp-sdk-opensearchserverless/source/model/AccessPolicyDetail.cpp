@@ -18,22 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-AccessPolicyDetail::AccessPolicyDetail() : 
-    m_type(AccessPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_createdDate(0),
-    m_createdDateHasBeenSet(false),
-    m_lastModifiedDate(0),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 AccessPolicyDetail::AccessPolicyDetail(JsonView jsonValue)
-  : AccessPolicyDetail()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ AccessPolicyDetail& AccessPolicyDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = AccessPolicyTypeMapper::GetAccessPolicyTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyVersion"))
   {
     m_policyVersion = jsonValue.GetString("policyVersion");
-
     m_policyVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetObject("policy");
-
     m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetInt64("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetInt64("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

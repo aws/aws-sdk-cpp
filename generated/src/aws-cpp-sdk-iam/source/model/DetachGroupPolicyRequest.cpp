@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DetachGroupPolicyRequest::DetachGroupPolicyRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DetachGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

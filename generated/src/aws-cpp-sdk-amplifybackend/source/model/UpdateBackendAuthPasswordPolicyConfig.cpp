@@ -18,15 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-UpdateBackendAuthPasswordPolicyConfig::UpdateBackendAuthPasswordPolicyConfig() : 
-    m_additionalConstraintsHasBeenSet(false),
-    m_minimumLength(0.0),
-    m_minimumLengthHasBeenSet(false)
-{
-}
-
 UpdateBackendAuthPasswordPolicyConfig::UpdateBackendAuthPasswordPolicyConfig(JsonView jsonValue)
-  : UpdateBackendAuthPasswordPolicyConfig()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ UpdateBackendAuthPasswordPolicyConfig& UpdateBackendAuthPasswordPolicyConfig::op
     }
     m_additionalConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumLength"))
   {
     m_minimumLength = jsonValue.GetDouble("minimumLength");
-
     m_minimumLengthHasBeenSet = true;
   }
-
   return *this;
 }
 

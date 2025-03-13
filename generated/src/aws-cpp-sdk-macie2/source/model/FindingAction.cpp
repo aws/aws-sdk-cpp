@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-FindingAction::FindingAction() : 
-    m_actionType(FindingActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_apiCallDetailsHasBeenSet(false)
-{
-}
-
 FindingAction::FindingAction(JsonView jsonValue)
-  : FindingAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FindingAction& FindingAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = FindingActionTypeMapper::GetFindingActionTypeForName(jsonValue.GetString("actionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiCallDetails"))
   {
     m_apiCallDetails = jsonValue.GetObject("apiCallDetails");
-
     m_apiCallDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelJobRequest::CancelJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelJobRequest::SerializePayload() const
 {
   JsonValue payload;

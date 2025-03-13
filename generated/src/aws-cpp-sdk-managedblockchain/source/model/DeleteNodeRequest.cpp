@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteNodeRequest::DeleteNodeRequest() : 
-    m_networkIdHasBeenSet(false),
-    m_memberIdHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNodeRequest::SerializePayload() const
 {
   return {};

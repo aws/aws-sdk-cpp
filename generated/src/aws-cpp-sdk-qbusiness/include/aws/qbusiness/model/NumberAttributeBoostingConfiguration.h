@@ -36,7 +36,7 @@ namespace Model
   class NumberAttributeBoostingConfiguration
   {
   public:
-    AWS_QBUSINESS_API NumberAttributeBoostingConfiguration();
+    AWS_QBUSINESS_API NumberAttributeBoostingConfiguration() = default;
     AWS_QBUSINESS_API NumberAttributeBoostingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API NumberAttributeBoostingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,31 +47,27 @@ namespace Model
      * <p>Specifies the duration, in seconds, of a boost applies to a
      * <code>NUMBER</code> type document attribute.</p>
      */
-    inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
+    inline DocumentAttributeBoostingLevel GetBoostingLevel() const { return m_boostingLevel; }
     inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
-    inline void SetBoostingLevel(const DocumentAttributeBoostingLevel& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
-    inline void SetBoostingLevel(DocumentAttributeBoostingLevel&& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = std::move(value); }
-    inline NumberAttributeBoostingConfiguration& WithBoostingLevel(const DocumentAttributeBoostingLevel& value) { SetBoostingLevel(value); return *this;}
-    inline NumberAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
+    inline void SetBoostingLevel(DocumentAttributeBoostingLevel value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
+    inline NumberAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel value) { SetBoostingLevel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies how much a document attribute is boosted.</p>
      */
-    inline const NumberAttributeBoostingType& GetBoostingType() const{ return m_boostingType; }
+    inline NumberAttributeBoostingType GetBoostingType() const { return m_boostingType; }
     inline bool BoostingTypeHasBeenSet() const { return m_boostingTypeHasBeenSet; }
-    inline void SetBoostingType(const NumberAttributeBoostingType& value) { m_boostingTypeHasBeenSet = true; m_boostingType = value; }
-    inline void SetBoostingType(NumberAttributeBoostingType&& value) { m_boostingTypeHasBeenSet = true; m_boostingType = std::move(value); }
-    inline NumberAttributeBoostingConfiguration& WithBoostingType(const NumberAttributeBoostingType& value) { SetBoostingType(value); return *this;}
-    inline NumberAttributeBoostingConfiguration& WithBoostingType(NumberAttributeBoostingType&& value) { SetBoostingType(std::move(value)); return *this;}
+    inline void SetBoostingType(NumberAttributeBoostingType value) { m_boostingTypeHasBeenSet = true; m_boostingType = value; }
+    inline NumberAttributeBoostingConfiguration& WithBoostingType(NumberAttributeBoostingType value) { SetBoostingType(value); return *this;}
     ///@}
   private:
 
-    DocumentAttributeBoostingLevel m_boostingLevel;
+    DocumentAttributeBoostingLevel m_boostingLevel{DocumentAttributeBoostingLevel::NOT_SET};
     bool m_boostingLevelHasBeenSet = false;
 
-    NumberAttributeBoostingType m_boostingType;
+    NumberAttributeBoostingType m_boostingType{NumberAttributeBoostingType::NOT_SET};
     bool m_boostingTypeHasBeenSet = false;
   };
 

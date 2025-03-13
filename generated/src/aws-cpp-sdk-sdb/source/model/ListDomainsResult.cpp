@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDomainsResult::ListDomainsResult()
-{
-}
-
 ListDomainsResult::ListDomainsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ListDomainsResult& ListDomainsResult::operator =(const Aws::AmazonWebServiceResu
     if(!domainNamesNode.IsNull())
     {
       XmlNode domainNameMember = domainNamesNode;
+      m_domainNamesHasBeenSet = !domainNameMember.IsNull();
       while(!domainNameMember.IsNull())
       {
         m_domainNames.push_back(domainNameMember.GetText());
@@ -53,12 +50,14 @@ ListDomainsResult& ListDomainsResult::operator =(const Aws::AmazonWebServiceResu
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SimpleDB::Model::ListDomainsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

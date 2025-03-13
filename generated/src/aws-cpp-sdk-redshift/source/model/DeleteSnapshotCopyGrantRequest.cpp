@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteSnapshotCopyGrantRequest::DeleteSnapshotCopyGrantRequest() : 
-    m_snapshotCopyGrantNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotCopyGrantRequest::SerializePayload() const
 {
   Aws::StringStream ss;

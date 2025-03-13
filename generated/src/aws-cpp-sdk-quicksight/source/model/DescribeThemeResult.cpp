@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeThemeResult::DescribeThemeResult() : 
-    m_status(0)
-{
-}
-
 DescribeThemeResult::DescribeThemeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeThemeResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeThemeResult& DescribeThemeResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Theme"))
   {
     m_theme = jsonValue.GetObject("Theme");
-
+    m_themeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

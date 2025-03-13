@@ -35,7 +35,7 @@ namespace Model
   class DeregisterInstancesFromLoadBalancerResult
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerResult();
+    AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerResult() = default;
     AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCING_API DeregisterInstancesFromLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>The remaining instances registered with the load balancer.</p>
      */
-    inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
-    inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
-    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
-    inline DeregisterInstancesFromLoadBalancerResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
-    inline DeregisterInstancesFromLoadBalancerResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
-    inline DeregisterInstancesFromLoadBalancerResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
-    inline DeregisterInstancesFromLoadBalancerResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Instance>& GetInstances() const { return m_instances; }
+    template<typename InstancesT = Aws::Vector<Instance>>
+    void SetInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances = std::forward<InstancesT>(value); }
+    template<typename InstancesT = Aws::Vector<Instance>>
+    DeregisterInstancesFromLoadBalancerResult& WithInstances(InstancesT&& value) { SetInstances(std::forward<InstancesT>(value)); return *this;}
+    template<typename InstancesT = Instance>
+    DeregisterInstancesFromLoadBalancerResult& AddInstances(InstancesT&& value) { m_instancesHasBeenSet = true; m_instances.emplace_back(std::forward<InstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeregisterInstancesFromLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeregisterInstancesFromLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeregisterInstancesFromLoadBalancerResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Instance> m_instances;
+    bool m_instancesHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

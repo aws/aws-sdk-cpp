@@ -34,7 +34,7 @@ namespace Model
   class RelationalFilterConfiguration
   {
   public:
-    AWS_DATAZONE_API RelationalFilterConfiguration();
+    AWS_DATAZONE_API RelationalFilterConfiguration() = default;
     AWS_DATAZONE_API RelationalFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RelationalFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The database name specified in the relational filter configuration for the
      * data source.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline RelationalFilterConfiguration& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline RelationalFilterConfiguration& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline RelationalFilterConfiguration& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    RelationalFilterConfiguration& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <p>The filter expressions specified in the relational filter configuration for
      * the data source.</p>
      */
-    inline const Aws::Vector<FilterExpression>& GetFilterExpressions() const{ return m_filterExpressions; }
+    inline const Aws::Vector<FilterExpression>& GetFilterExpressions() const { return m_filterExpressions; }
     inline bool FilterExpressionsHasBeenSet() const { return m_filterExpressionsHasBeenSet; }
-    inline void SetFilterExpressions(const Aws::Vector<FilterExpression>& value) { m_filterExpressionsHasBeenSet = true; m_filterExpressions = value; }
-    inline void SetFilterExpressions(Aws::Vector<FilterExpression>&& value) { m_filterExpressionsHasBeenSet = true; m_filterExpressions = std::move(value); }
-    inline RelationalFilterConfiguration& WithFilterExpressions(const Aws::Vector<FilterExpression>& value) { SetFilterExpressions(value); return *this;}
-    inline RelationalFilterConfiguration& WithFilterExpressions(Aws::Vector<FilterExpression>&& value) { SetFilterExpressions(std::move(value)); return *this;}
-    inline RelationalFilterConfiguration& AddFilterExpressions(const FilterExpression& value) { m_filterExpressionsHasBeenSet = true; m_filterExpressions.push_back(value); return *this; }
-    inline RelationalFilterConfiguration& AddFilterExpressions(FilterExpression&& value) { m_filterExpressionsHasBeenSet = true; m_filterExpressions.push_back(std::move(value)); return *this; }
+    template<typename FilterExpressionsT = Aws::Vector<FilterExpression>>
+    void SetFilterExpressions(FilterExpressionsT&& value) { m_filterExpressionsHasBeenSet = true; m_filterExpressions = std::forward<FilterExpressionsT>(value); }
+    template<typename FilterExpressionsT = Aws::Vector<FilterExpression>>
+    RelationalFilterConfiguration& WithFilterExpressions(FilterExpressionsT&& value) { SetFilterExpressions(std::forward<FilterExpressionsT>(value)); return *this;}
+    template<typename FilterExpressionsT = FilterExpression>
+    RelationalFilterConfiguration& AddFilterExpressions(FilterExpressionsT&& value) { m_filterExpressionsHasBeenSet = true; m_filterExpressions.emplace_back(std::forward<FilterExpressionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * <p>The schema name specified in the relational filter configuration for the data
      * source.</p>
      */
-    inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
+    inline const Aws::String& GetSchemaName() const { return m_schemaName; }
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-    inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-    inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-    inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-    inline RelationalFilterConfiguration& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-    inline RelationalFilterConfiguration& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-    inline RelationalFilterConfiguration& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
+    template<typename SchemaNameT = Aws::String>
+    void SetSchemaName(SchemaNameT&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::forward<SchemaNameT>(value); }
+    template<typename SchemaNameT = Aws::String>
+    RelationalFilterConfiguration& WithSchemaName(SchemaNameT&& value) { SetSchemaName(std::forward<SchemaNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-MemoryGiBPerVCpuRequest::MemoryGiBPerVCpuRequest() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 MemoryGiBPerVCpuRequest::MemoryGiBPerVCpuRequest(const XmlNode& xmlNode)
-  : MemoryGiBPerVCpuRequest()
 {
   *this = xmlNode;
 }
@@ -45,12 +36,14 @@ MemoryGiBPerVCpuRequest& MemoryGiBPerVCpuRequest::operator =(const XmlNode& xmlN
     {
       m_min = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minNode.GetText()).c_str()).c_str());
       m_minHasBeenSet = true;
+       m_minHasBeenSet = true;
     }
     XmlNode maxNode = resultNode.FirstChild("Max");
     if(!maxNode.IsNull())
     {
       m_max = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNode.GetText()).c_str()).c_str());
       m_maxHasBeenSet = true;
+       m_maxHasBeenSet = true;
     }
   }
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DetachSecurityProfileRequest::DetachSecurityProfileRequest() : 
-    m_securityProfileNameHasBeenSet(false),
-    m_securityProfileTargetArnHasBeenSet(false)
-{
-}
-
 Aws::String DetachSecurityProfileRequest::SerializePayload() const
 {
   return {};

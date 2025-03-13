@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Xavc4kIntraCbgProfileSettings::Xavc4kIntraCbgProfileSettings() : 
-    m_xavcClass(Xavc4kIntraCbgProfileClass::NOT_SET),
-    m_xavcClassHasBeenSet(false)
-{
-}
-
 Xavc4kIntraCbgProfileSettings::Xavc4kIntraCbgProfileSettings(JsonView jsonValue)
-  : Xavc4kIntraCbgProfileSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Xavc4kIntraCbgProfileSettings& Xavc4kIntraCbgProfileSettings::operator =(JsonVie
   if(jsonValue.ValueExists("xavcClass"))
   {
     m_xavcClass = Xavc4kIntraCbgProfileClassMapper::GetXavc4kIntraCbgProfileClassForName(jsonValue.GetString("xavcClass"));
-
     m_xavcClassHasBeenSet = true;
   }
-
   return *this;
 }
 

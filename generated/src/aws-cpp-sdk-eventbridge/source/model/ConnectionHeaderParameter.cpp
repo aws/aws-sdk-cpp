@@ -18,16 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ConnectionHeaderParameter::ConnectionHeaderParameter() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_isValueSecret(false),
-    m_isValueSecretHasBeenSet(false)
-{
-}
-
 ConnectionHeaderParameter::ConnectionHeaderParameter(JsonView jsonValue)
-  : ConnectionHeaderParameter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConnectionHeaderParameter& ConnectionHeaderParameter::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsValueSecret"))
   {
     m_isValueSecret = jsonValue.GetBool("IsValueSecret");
-
     m_isValueSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

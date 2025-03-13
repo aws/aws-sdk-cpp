@@ -27,7 +27,7 @@ namespace Model
   class DeleteRecipeVersionResult
   {
   public:
-    AWS_GLUEDATABREW_API DeleteRecipeVersionResult();
+    AWS_GLUEDATABREW_API DeleteRecipeVersionResult() = default;
     AWS_GLUEDATABREW_API DeleteRecipeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUEDATABREW_API DeleteRecipeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The name of the recipe that was deleted.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteRecipeVersionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteRecipeVersionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteRecipeVersionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteRecipeVersionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the recipe that was deleted.</p>
      */
-    inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
-    inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersion = value; }
-    inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersion = std::move(value); }
-    inline void SetRecipeVersion(const char* value) { m_recipeVersion.assign(value); }
-    inline DeleteRecipeVersionResult& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
-    inline DeleteRecipeVersionResult& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
-    inline DeleteRecipeVersionResult& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
+    inline const Aws::String& GetRecipeVersion() const { return m_recipeVersion; }
+    template<typename RecipeVersionT = Aws::String>
+    void SetRecipeVersion(RecipeVersionT&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::forward<RecipeVersionT>(value); }
+    template<typename RecipeVersionT = Aws::String>
+    DeleteRecipeVersionResult& WithRecipeVersion(RecipeVersionT&& value) { SetRecipeVersion(std::forward<RecipeVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteRecipeVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteRecipeVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteRecipeVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteRecipeVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_recipeVersion;
+    bool m_recipeVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

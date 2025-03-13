@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest() : 
-    m_licenseConfigurationArnHasBeenSet(false)
-{
-}
-
 ImportImageLicenseConfigurationRequest::ImportImageLicenseConfigurationRequest(const XmlNode& xmlNode)
-  : ImportImageLicenseConfigurationRequest()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ ImportImageLicenseConfigurationRequest& ImportImageLicenseConfigurationRequest::
     {
       m_licenseConfigurationArn = Aws::Utils::Xml::DecodeEscapedXmlText(licenseConfigurationArnNode.GetText());
       m_licenseConfigurationArnHasBeenSet = true;
+       m_licenseConfigurationArnHasBeenSet = true;
     }
   }
 

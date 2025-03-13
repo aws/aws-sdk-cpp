@@ -12,11 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterDataLakeDelegatedAdministratorRequest::RegisterDataLakeDelegatedAdministratorRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String RegisterDataLakeDelegatedAdministratorRequest::SerializePayload() const
 {
   JsonValue payload;

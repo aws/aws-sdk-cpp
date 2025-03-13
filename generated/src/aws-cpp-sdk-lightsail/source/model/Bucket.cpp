@@ -18,29 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Bucket::Bucket() : 
-    m_resourceTypeHasBeenSet(false),
-    m_accessRulesHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_supportCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_objectVersioningHasBeenSet(false),
-    m_ableToUpdateBundle(false),
-    m_ableToUpdateBundleHasBeenSet(false),
-    m_readonlyAccessAccountsHasBeenSet(false),
-    m_resourcesReceivingAccessHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_accessLogConfigHasBeenSet(false)
-{
-}
-
 Bucket::Bucket(JsonView jsonValue)
-  : Bucket()
 {
   *this = jsonValue;
 }
@@ -50,66 +28,48 @@ Bucket& Bucket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessRules"))
   {
     m_accessRules = jsonValue.GetObject("accessRules");
-
     m_accessRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bundleId"))
   {
     m_bundleId = jsonValue.GetString("bundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetObject("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -119,21 +79,16 @@ Bucket& Bucket::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectVersioning"))
   {
     m_objectVersioning = jsonValue.GetString("objectVersioning");
-
     m_objectVersioningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ableToUpdateBundle"))
   {
     m_ableToUpdateBundle = jsonValue.GetBool("ableToUpdateBundle");
-
     m_ableToUpdateBundleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readonlyAccessAccounts"))
   {
     Aws::Utils::Array<JsonView> readonlyAccessAccountsJsonList = jsonValue.GetArray("readonlyAccessAccounts");
@@ -143,7 +98,6 @@ Bucket& Bucket::operator =(JsonView jsonValue)
     }
     m_readonlyAccessAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesReceivingAccess"))
   {
     Aws::Utils::Array<JsonView> resourcesReceivingAccessJsonList = jsonValue.GetArray("resourcesReceivingAccess");
@@ -153,21 +107,16 @@ Bucket& Bucket::operator =(JsonView jsonValue)
     }
     m_resourcesReceivingAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessLogConfig"))
   {
     m_accessLogConfig = jsonValue.GetObject("accessLogConfig");
-
     m_accessLogConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

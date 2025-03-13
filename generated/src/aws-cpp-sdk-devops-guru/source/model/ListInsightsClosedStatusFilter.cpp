@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ListInsightsClosedStatusFilter::ListInsightsClosedStatusFilter() : 
-    m_type(InsightType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_endTimeRangeHasBeenSet(false)
-{
-}
-
 ListInsightsClosedStatusFilter::ListInsightsClosedStatusFilter(JsonView jsonValue)
-  : ListInsightsClosedStatusFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ListInsightsClosedStatusFilter& ListInsightsClosedStatusFilter::operator =(JsonV
   if(jsonValue.ValueExists("Type"))
   {
     m_type = InsightTypeMapper::GetInsightTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimeRange"))
   {
     m_endTimeRange = jsonValue.GetObject("EndTimeRange");
-
     m_endTimeRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

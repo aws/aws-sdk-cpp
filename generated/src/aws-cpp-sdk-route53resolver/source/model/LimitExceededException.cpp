@@ -18,14 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-LimitExceededException::LimitExceededException() : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 LimitExceededException::LimitExceededException(JsonView jsonValue)
-  : LimitExceededException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LimitExceededException& LimitExceededException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

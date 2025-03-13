@@ -12,14 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForDeliveryStreamRequest::ListTagsForDeliveryStreamRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_exclusiveStartTagKeyHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForDeliveryStreamRequest::SerializePayload() const
 {
   JsonValue payload;

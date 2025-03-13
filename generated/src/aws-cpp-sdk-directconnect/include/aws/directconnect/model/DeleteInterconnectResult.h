@@ -28,7 +28,7 @@ namespace Model
   class DeleteInterconnectResult
   {
   public:
-    AWS_DIRECTCONNECT_API DeleteInterconnectResult();
+    AWS_DIRECTCONNECT_API DeleteInterconnectResult() = default;
     AWS_DIRECTCONNECT_API DeleteInterconnectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API DeleteInterconnectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,28 +47,26 @@ namespace Model
      * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
      * </li> </ul>
      */
-    inline const InterconnectState& GetInterconnectState() const{ return m_interconnectState; }
-    inline void SetInterconnectState(const InterconnectState& value) { m_interconnectState = value; }
-    inline void SetInterconnectState(InterconnectState&& value) { m_interconnectState = std::move(value); }
-    inline DeleteInterconnectResult& WithInterconnectState(const InterconnectState& value) { SetInterconnectState(value); return *this;}
-    inline DeleteInterconnectResult& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
+    inline InterconnectState GetInterconnectState() const { return m_interconnectState; }
+    inline void SetInterconnectState(InterconnectState value) { m_interconnectStateHasBeenSet = true; m_interconnectState = value; }
+    inline DeleteInterconnectResult& WithInterconnectState(InterconnectState value) { SetInterconnectState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteInterconnectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteInterconnectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteInterconnectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteInterconnectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    InterconnectState m_interconnectState;
+    InterconnectState m_interconnectState{InterconnectState::NOT_SET};
+    bool m_interconnectStateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

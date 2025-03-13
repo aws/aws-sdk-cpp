@@ -33,7 +33,7 @@ namespace Model
   class Accuracy
   {
   public:
-    AWS_IOTWIRELESS_API Accuracy();
+    AWS_IOTWIRELESS_API Accuracy() = default;
     AWS_IOTWIRELESS_API Accuracy(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Accuracy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>The horizontal accuracy of the estimated position, which is the difference
      * between the estimated location and the actual device location.</p>
      */
-    inline double GetHorizontalAccuracy() const{ return m_horizontalAccuracy; }
+    inline double GetHorizontalAccuracy() const { return m_horizontalAccuracy; }
     inline bool HorizontalAccuracyHasBeenSet() const { return m_horizontalAccuracyHasBeenSet; }
     inline void SetHorizontalAccuracy(double value) { m_horizontalAccuracyHasBeenSet = true; m_horizontalAccuracy = value; }
     inline Accuracy& WithHorizontalAccuracy(double value) { SetHorizontalAccuracy(value); return *this;}
@@ -55,17 +55,17 @@ namespace Model
      * <p>The vertical accuracy of the estimated position, which is the difference
      * between the estimated altitude and actual device latitude in meters.</p>
      */
-    inline double GetVerticalAccuracy() const{ return m_verticalAccuracy; }
+    inline double GetVerticalAccuracy() const { return m_verticalAccuracy; }
     inline bool VerticalAccuracyHasBeenSet() const { return m_verticalAccuracyHasBeenSet; }
     inline void SetVerticalAccuracy(double value) { m_verticalAccuracyHasBeenSet = true; m_verticalAccuracy = value; }
     inline Accuracy& WithVerticalAccuracy(double value) { SetVerticalAccuracy(value); return *this;}
     ///@}
   private:
 
-    double m_horizontalAccuracy;
+    double m_horizontalAccuracy{0.0};
     bool m_horizontalAccuracyHasBeenSet = false;
 
-    double m_verticalAccuracy;
+    double m_verticalAccuracy{0.0};
     bool m_verticalAccuracyHasBeenSet = false;
   };
 

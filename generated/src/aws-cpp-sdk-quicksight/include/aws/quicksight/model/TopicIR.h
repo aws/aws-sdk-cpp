@@ -37,7 +37,7 @@ namespace Model
   class TopicIR
   {
   public:
-    AWS_QUICKSIGHT_API TopicIR();
+    AWS_QUICKSIGHT_API TopicIR() = default;
     AWS_QUICKSIGHT_API TopicIR(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicIR& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,78 +47,78 @@ namespace Model
     /**
      * <p>The metrics for the <code>TopicIR</code>.</p>
      */
-    inline const Aws::Vector<TopicIRMetric>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<TopicIRMetric>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<TopicIRMetric>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<TopicIRMetric>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline TopicIR& WithMetrics(const Aws::Vector<TopicIRMetric>& value) { SetMetrics(value); return *this;}
-    inline TopicIR& WithMetrics(Aws::Vector<TopicIRMetric>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline TopicIR& AddMetrics(const TopicIRMetric& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline TopicIR& AddMetrics(TopicIRMetric&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+    template<typename MetricsT = Aws::Vector<TopicIRMetric>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<TopicIRMetric>>
+    TopicIR& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = TopicIRMetric>
+    TopicIR& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The GroupBy list for the <code>TopicIR</code>.</p>
      */
-    inline const Aws::Vector<TopicIRGroupBy>& GetGroupByList() const{ return m_groupByList; }
+    inline const Aws::Vector<TopicIRGroupBy>& GetGroupByList() const { return m_groupByList; }
     inline bool GroupByListHasBeenSet() const { return m_groupByListHasBeenSet; }
-    inline void SetGroupByList(const Aws::Vector<TopicIRGroupBy>& value) { m_groupByListHasBeenSet = true; m_groupByList = value; }
-    inline void SetGroupByList(Aws::Vector<TopicIRGroupBy>&& value) { m_groupByListHasBeenSet = true; m_groupByList = std::move(value); }
-    inline TopicIR& WithGroupByList(const Aws::Vector<TopicIRGroupBy>& value) { SetGroupByList(value); return *this;}
-    inline TopicIR& WithGroupByList(Aws::Vector<TopicIRGroupBy>&& value) { SetGroupByList(std::move(value)); return *this;}
-    inline TopicIR& AddGroupByList(const TopicIRGroupBy& value) { m_groupByListHasBeenSet = true; m_groupByList.push_back(value); return *this; }
-    inline TopicIR& AddGroupByList(TopicIRGroupBy&& value) { m_groupByListHasBeenSet = true; m_groupByList.push_back(std::move(value)); return *this; }
+    template<typename GroupByListT = Aws::Vector<TopicIRGroupBy>>
+    void SetGroupByList(GroupByListT&& value) { m_groupByListHasBeenSet = true; m_groupByList = std::forward<GroupByListT>(value); }
+    template<typename GroupByListT = Aws::Vector<TopicIRGroupBy>>
+    TopicIR& WithGroupByList(GroupByListT&& value) { SetGroupByList(std::forward<GroupByListT>(value)); return *this;}
+    template<typename GroupByListT = TopicIRGroupBy>
+    TopicIR& AddGroupByList(GroupByListT&& value) { m_groupByListHasBeenSet = true; m_groupByList.emplace_back(std::forward<GroupByListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The filters for the <code>TopicIR</code>.</p>
      */
-    inline const Aws::Vector<Aws::Vector<TopicIRFilterOption>>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Aws::Vector<TopicIRFilterOption>>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Aws::Vector<TopicIRFilterOption>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Aws::Vector<TopicIRFilterOption>>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline TopicIR& WithFilters(const Aws::Vector<Aws::Vector<TopicIRFilterOption>>& value) { SetFilters(value); return *this;}
-    inline TopicIR& WithFilters(Aws::Vector<Aws::Vector<TopicIRFilterOption>>&& value) { SetFilters(std::move(value)); return *this;}
-    inline TopicIR& AddFilters(const Aws::Vector<TopicIRFilterOption>& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline TopicIR& AddFilters(Aws::Vector<TopicIRFilterOption>&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Aws::Vector<TopicIRFilterOption>>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Aws::Vector<TopicIRFilterOption>>>
+    TopicIR& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Aws::Vector<TopicIRFilterOption>>
+    TopicIR& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The sort for the <code>TopicIR</code>.</p>
      */
-    inline const TopicSortClause& GetSort() const{ return m_sort; }
+    inline const TopicSortClause& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const TopicSortClause& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(TopicSortClause&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline TopicIR& WithSort(const TopicSortClause& value) { SetSort(value); return *this;}
-    inline TopicIR& WithSort(TopicSortClause&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = TopicSortClause>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = TopicSortClause>
+    TopicIR& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The contribution analysis for the <code>TopicIR</code>.</p>
      */
-    inline const TopicIRContributionAnalysis& GetContributionAnalysis() const{ return m_contributionAnalysis; }
+    inline const TopicIRContributionAnalysis& GetContributionAnalysis() const { return m_contributionAnalysis; }
     inline bool ContributionAnalysisHasBeenSet() const { return m_contributionAnalysisHasBeenSet; }
-    inline void SetContributionAnalysis(const TopicIRContributionAnalysis& value) { m_contributionAnalysisHasBeenSet = true; m_contributionAnalysis = value; }
-    inline void SetContributionAnalysis(TopicIRContributionAnalysis&& value) { m_contributionAnalysisHasBeenSet = true; m_contributionAnalysis = std::move(value); }
-    inline TopicIR& WithContributionAnalysis(const TopicIRContributionAnalysis& value) { SetContributionAnalysis(value); return *this;}
-    inline TopicIR& WithContributionAnalysis(TopicIRContributionAnalysis&& value) { SetContributionAnalysis(std::move(value)); return *this;}
+    template<typename ContributionAnalysisT = TopicIRContributionAnalysis>
+    void SetContributionAnalysis(ContributionAnalysisT&& value) { m_contributionAnalysisHasBeenSet = true; m_contributionAnalysis = std::forward<ContributionAnalysisT>(value); }
+    template<typename ContributionAnalysisT = TopicIRContributionAnalysis>
+    TopicIR& WithContributionAnalysis(ContributionAnalysisT&& value) { SetContributionAnalysis(std::forward<ContributionAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The visual for the <code>TopicIR</code>.</p>
      */
-    inline const VisualOptions& GetVisual() const{ return m_visual; }
+    inline const VisualOptions& GetVisual() const { return m_visual; }
     inline bool VisualHasBeenSet() const { return m_visualHasBeenSet; }
-    inline void SetVisual(const VisualOptions& value) { m_visualHasBeenSet = true; m_visual = value; }
-    inline void SetVisual(VisualOptions&& value) { m_visualHasBeenSet = true; m_visual = std::move(value); }
-    inline TopicIR& WithVisual(const VisualOptions& value) { SetVisual(value); return *this;}
-    inline TopicIR& WithVisual(VisualOptions&& value) { SetVisual(std::move(value)); return *this;}
+    template<typename VisualT = VisualOptions>
+    void SetVisual(VisualT&& value) { m_visualHasBeenSet = true; m_visual = std::forward<VisualT>(value); }
+    template<typename VisualT = VisualOptions>
+    TopicIR& WithVisual(VisualT&& value) { SetVisual(std::forward<VisualT>(value)); return *this;}
     ///@}
   private:
 

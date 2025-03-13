@@ -29,7 +29,7 @@ namespace Model
   class ListFacesResult
   {
   public:
-    AWS_REKOGNITION_API ListFacesResult();
+    AWS_REKOGNITION_API ListFacesResult() = default;
     AWS_REKOGNITION_API ListFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API ListFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of <code>Face</code> objects. </p>
      */
-    inline const Aws::Vector<Face>& GetFaces() const{ return m_faces; }
-    inline void SetFaces(const Aws::Vector<Face>& value) { m_faces = value; }
-    inline void SetFaces(Aws::Vector<Face>&& value) { m_faces = std::move(value); }
-    inline ListFacesResult& WithFaces(const Aws::Vector<Face>& value) { SetFaces(value); return *this;}
-    inline ListFacesResult& WithFaces(Aws::Vector<Face>&& value) { SetFaces(std::move(value)); return *this;}
-    inline ListFacesResult& AddFaces(const Face& value) { m_faces.push_back(value); return *this; }
-    inline ListFacesResult& AddFaces(Face&& value) { m_faces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Face>& GetFaces() const { return m_faces; }
+    template<typename FacesT = Aws::Vector<Face>>
+    void SetFaces(FacesT&& value) { m_facesHasBeenSet = true; m_faces = std::forward<FacesT>(value); }
+    template<typename FacesT = Aws::Vector<Face>>
+    ListFacesResult& WithFaces(FacesT&& value) { SetFaces(std::forward<FacesT>(value)); return *this;}
+    template<typename FacesT = Face>
+    ListFacesResult& AddFaces(FacesT&& value) { m_facesHasBeenSet = true; m_faces.emplace_back(std::forward<FacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,13 +52,11 @@ namespace Model
      * <p>If the response is truncated, Amazon Rekognition returns this token that you
      * can use in the subsequent request to retrieve the next set of faces.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFacesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFacesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,34 +64,34 @@ namespace Model
      * <p>Version number of the face detection model associated with the input
      * collection (<code>CollectionId</code>).</p>
      */
-    inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
-    inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
-    inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
-    inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
-    inline ListFacesResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
-    inline ListFacesResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
-    inline ListFacesResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
+    inline const Aws::String& GetFaceModelVersion() const { return m_faceModelVersion; }
+    template<typename FaceModelVersionT = Aws::String>
+    void SetFaceModelVersion(FaceModelVersionT&& value) { m_faceModelVersionHasBeenSet = true; m_faceModelVersion = std::forward<FaceModelVersionT>(value); }
+    template<typename FaceModelVersionT = Aws::String>
+    ListFacesResult& WithFaceModelVersion(FaceModelVersionT&& value) { SetFaceModelVersion(std::forward<FaceModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFacesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Face> m_faces;
+    bool m_facesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_faceModelVersion;
+    bool m_faceModelVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

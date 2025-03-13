@@ -18,10 +18,6 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDetachPolicyResponse::BatchDetachPolicyResponse()
-{
-}
-
 BatchDetachPolicyResponse::BatchDetachPolicyResponse(JsonView jsonValue)
 {
   *this = jsonValue;

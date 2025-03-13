@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProxyConfiguration::ProxyConfiguration() : 
-    m_defaultBehavior(FleetProxyRuleBehavior::NOT_SET),
-    m_defaultBehaviorHasBeenSet(false),
-    m_orderedProxyRulesHasBeenSet(false)
-{
-}
-
 ProxyConfiguration::ProxyConfiguration(JsonView jsonValue)
-  : ProxyConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ProxyConfiguration& ProxyConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultBehavior"))
   {
     m_defaultBehavior = FleetProxyRuleBehaviorMapper::GetFleetProxyRuleBehaviorForName(jsonValue.GetString("defaultBehavior"));
-
     m_defaultBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderedProxyRules"))
   {
     Aws::Utils::Array<JsonView> orderedProxyRulesJsonList = jsonValue.GetArray("orderedProxyRules");
@@ -49,7 +39,6 @@ ProxyConfiguration& ProxyConfiguration::operator =(JsonView jsonValue)
     }
     m_orderedProxyRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

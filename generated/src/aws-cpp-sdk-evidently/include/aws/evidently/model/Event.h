@@ -36,7 +36,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API Event();
+    AWS_CLOUDWATCHEVIDENTLY_API Event() = default;
     AWS_CLOUDWATCHEVIDENTLY_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
     /**
      * <p>The event data.</p>
      */
-    inline const Aws::String& GetData() const{ return m_data; }
+    inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-    inline Event& WithData(const Aws::String& value) { SetData(value); return *this;}
-    inline Event& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-    inline Event& WithData(const char* value) { SetData(value); return *this;}
+    template<typename DataT = Aws::String>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::String>
+    Event& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the event.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline Event& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline Event& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    Event& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,22 +73,20 @@ namespace Model
      * <code>aws.evidently.custom</code> specifies a custom event, which generates
      * metrics from user actions such as clicks and checkouts.</p>
      */
-    inline const EventType& GetType() const{ return m_type; }
+    inline EventType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EventType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EventType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Event& WithType(const EventType& value) { SetType(value); return *this;}
-    inline Event& WithType(EventType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EventType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Event& WithType(EventType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_data;
     bool m_dataHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    EventType m_type;
+    EventType m_type{EventType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-ReturnInformation::ReturnInformation() : 
-    m_replacementOrderArnHasBeenSet(false),
-    m_returnReasonHasBeenSet(false),
-    m_shippingAddressHasBeenSet(false),
-    m_shippingLabelHasBeenSet(false)
-{
-}
-
 ReturnInformation::ReturnInformation(JsonView jsonValue)
-  : ReturnInformation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ReturnInformation& ReturnInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("replacementOrderArn"))
   {
     m_replacementOrderArn = jsonValue.GetString("replacementOrderArn");
-
     m_replacementOrderArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("returnReason"))
   {
     m_returnReason = jsonValue.GetString("returnReason");
-
     m_returnReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingAddress"))
   {
     m_shippingAddress = jsonValue.GetObject("shippingAddress");
-
     m_shippingAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shippingLabel"))
   {
     m_shippingLabel = jsonValue.GetString("shippingLabel");
-
     m_shippingLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningJobRevocationRecord::SigningJobRevocationRecord() : 
-    m_reasonHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revokedByHasBeenSet(false)
-{
-}
-
 SigningJobRevocationRecord::SigningJobRevocationRecord(JsonView jsonValue)
-  : SigningJobRevocationRecord()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SigningJobRevocationRecord& SigningJobRevocationRecord::operator =(JsonView json
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revokedAt"))
   {
     m_revokedAt = jsonValue.GetDouble("revokedAt");
-
     m_revokedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revokedBy"))
   {
     m_revokedBy = jsonValue.GetString("revokedBy");
-
     m_revokedByHasBeenSet = true;
   }
-
   return *this;
 }
 

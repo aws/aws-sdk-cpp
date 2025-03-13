@@ -37,7 +37,7 @@ namespace Model
   class Processor
   {
   public:
-    AWS_FIREHOSE_API Processor();
+    AWS_FIREHOSE_API Processor() = default;
     AWS_FIREHOSE_API Processor(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,30 +47,28 @@ namespace Model
     /**
      * <p>The type of processor.</p>
      */
-    inline const ProcessorType& GetType() const{ return m_type; }
+    inline ProcessorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ProcessorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ProcessorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Processor& WithType(const ProcessorType& value) { SetType(value); return *this;}
-    inline Processor& WithType(ProcessorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ProcessorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Processor& WithType(ProcessorType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The processor parameters.</p>
      */
-    inline const Aws::Vector<ProcessorParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<ProcessorParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<ProcessorParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<ProcessorParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline Processor& WithParameters(const Aws::Vector<ProcessorParameter>& value) { SetParameters(value); return *this;}
-    inline Processor& WithParameters(Aws::Vector<ProcessorParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline Processor& AddParameters(const ProcessorParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline Processor& AddParameters(ProcessorParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<ProcessorParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<ProcessorParameter>>
+    Processor& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = ProcessorParameter>
+    Processor& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
   private:
 
-    ProcessorType m_type;
+    ProcessorType m_type{ProcessorType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<ProcessorParameter> m_parameters;

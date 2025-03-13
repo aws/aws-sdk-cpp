@@ -12,11 +12,6 @@ using namespace Aws::IoT1ClickDevicesService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ClaimDevicesByClaimCodeRequest::ClaimDevicesByClaimCodeRequest() : 
-    m_claimCodeHasBeenSet(false)
-{
-}
-
 Aws::String ClaimDevicesByClaimCodeRequest::SerializePayload() const
 {
   return {};

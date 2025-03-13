@@ -18,34 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-NetAppONTAPSVM::NetAppONTAPSVM() : 
-    m_clusterUuidHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_svmNameHasBeenSet(false),
-    m_cifsShareCount(0),
-    m_cifsShareCountHasBeenSet(false),
-    m_enabledProtocolsHasBeenSet(false),
-    m_totalCapacityUsed(0),
-    m_totalCapacityUsedHasBeenSet(false),
-    m_totalCapacityProvisioned(0),
-    m_totalCapacityProvisionedHasBeenSet(false),
-    m_totalLogicalCapacityUsed(0),
-    m_totalLogicalCapacityUsedHasBeenSet(false),
-    m_maxP95PerformanceHasBeenSet(false),
-    m_recommendationsHasBeenSet(false),
-    m_nfsExportedVolumes(0),
-    m_nfsExportedVolumesHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_totalSnapshotCapacityUsed(0),
-    m_totalSnapshotCapacityUsedHasBeenSet(false),
-    m_lunCount(0),
-    m_lunCountHasBeenSet(false)
-{
-}
-
 NetAppONTAPSVM::NetAppONTAPSVM(JsonView jsonValue)
-  : NetAppONTAPSVM()
 {
   *this = jsonValue;
 }
@@ -55,31 +28,23 @@ NetAppONTAPSVM& NetAppONTAPSVM::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterUuid"))
   {
     m_clusterUuid = jsonValue.GetString("ClusterUuid");
-
     m_clusterUuidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SvmName"))
   {
     m_svmName = jsonValue.GetString("SvmName");
-
     m_svmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CifsShareCount"))
   {
     m_cifsShareCount = jsonValue.GetInt64("CifsShareCount");
-
     m_cifsShareCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledProtocols"))
   {
     Aws::Utils::Array<JsonView> enabledProtocolsJsonList = jsonValue.GetArray("EnabledProtocols");
@@ -89,35 +54,26 @@ NetAppONTAPSVM& NetAppONTAPSVM::operator =(JsonView jsonValue)
     }
     m_enabledProtocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCapacityUsed"))
   {
     m_totalCapacityUsed = jsonValue.GetInt64("TotalCapacityUsed");
-
     m_totalCapacityUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCapacityProvisioned"))
   {
     m_totalCapacityProvisioned = jsonValue.GetInt64("TotalCapacityProvisioned");
-
     m_totalCapacityProvisionedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalLogicalCapacityUsed"))
   {
     m_totalLogicalCapacityUsed = jsonValue.GetInt64("TotalLogicalCapacityUsed");
-
     m_totalLogicalCapacityUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxP95Performance"))
   {
     m_maxP95Performance = jsonValue.GetObject("MaxP95Performance");
-
     m_maxP95PerformanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recommendations"))
   {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
@@ -127,35 +83,26 @@ NetAppONTAPSVM& NetAppONTAPSVM::operator =(JsonView jsonValue)
     }
     m_recommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NfsExportedVolumes"))
   {
     m_nfsExportedVolumes = jsonValue.GetInt64("NfsExportedVolumes");
-
     m_nfsExportedVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationStatus"))
   {
     m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("RecommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSnapshotCapacityUsed"))
   {
     m_totalSnapshotCapacityUsed = jsonValue.GetInt64("TotalSnapshotCapacityUsed");
-
     m_totalSnapshotCapacityUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LunCount"))
   {
     m_lunCount = jsonValue.GetInt64("LunCount");
-
     m_lunCountHasBeenSet = true;
   }
-
   return *this;
 }
 

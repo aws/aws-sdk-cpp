@@ -21,7 +21,7 @@ namespace Model
   class SendBonusRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API SendBonusRequest();
+    AWS_MTURK_API SendBonusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline const Aws::String& GetWorkerId() const { return m_workerId; }
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline SendBonusRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline SendBonusRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline SendBonusRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    template<typename WorkerIdT = Aws::String>
+    void SetWorkerId(WorkerIdT&& value) { m_workerIdHasBeenSet = true; m_workerId = std::forward<WorkerIdT>(value); }
+    template<typename WorkerIdT = Aws::String>
+    SendBonusRequest& WithWorkerId(WorkerIdT&& value) { SetWorkerId(std::forward<WorkerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,28 +52,24 @@ namespace Model
      * example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not
      * include currency symbols or currency codes. </p>
      */
-    inline const Aws::String& GetBonusAmount() const{ return m_bonusAmount; }
+    inline const Aws::String& GetBonusAmount() const { return m_bonusAmount; }
     inline bool BonusAmountHasBeenSet() const { return m_bonusAmountHasBeenSet; }
-    inline void SetBonusAmount(const Aws::String& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = value; }
-    inline void SetBonusAmount(Aws::String&& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = std::move(value); }
-    inline void SetBonusAmount(const char* value) { m_bonusAmountHasBeenSet = true; m_bonusAmount.assign(value); }
-    inline SendBonusRequest& WithBonusAmount(const Aws::String& value) { SetBonusAmount(value); return *this;}
-    inline SendBonusRequest& WithBonusAmount(Aws::String&& value) { SetBonusAmount(std::move(value)); return *this;}
-    inline SendBonusRequest& WithBonusAmount(const char* value) { SetBonusAmount(value); return *this;}
+    template<typename BonusAmountT = Aws::String>
+    void SetBonusAmount(BonusAmountT&& value) { m_bonusAmountHasBeenSet = true; m_bonusAmount = std::forward<BonusAmountT>(value); }
+    template<typename BonusAmountT = Aws::String>
+    SendBonusRequest& WithBonusAmount(BonusAmountT&& value) { SetBonusAmount(std::forward<BonusAmountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
      */
-    inline const Aws::String& GetAssignmentId() const{ return m_assignmentId; }
+    inline const Aws::String& GetAssignmentId() const { return m_assignmentId; }
     inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
-    inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
-    inline void SetAssignmentId(const char* value) { m_assignmentIdHasBeenSet = true; m_assignmentId.assign(value); }
-    inline SendBonusRequest& WithAssignmentId(const Aws::String& value) { SetAssignmentId(value); return *this;}
-    inline SendBonusRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
-    inline SendBonusRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+    template<typename AssignmentIdT = Aws::String>
+    void SetAssignmentId(AssignmentIdT&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::forward<AssignmentIdT>(value); }
+    template<typename AssignmentIdT = Aws::String>
+    SendBonusRequest& WithAssignmentId(AssignmentIdT&& value) { SetAssignmentId(std::forward<AssignmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +77,12 @@ namespace Model
      * <p>A message that explains the reason for the bonus payment. The Worker
      * receiving the bonus can see this message.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline SendBonusRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline SendBonusRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline SendBonusRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    SendBonusRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +94,12 @@ namespace Model
      * UniqueRequestToken, subsequent calls will return an error with a message
      * containing the request ID.</p>
      */
-    inline const Aws::String& GetUniqueRequestToken() const{ return m_uniqueRequestToken; }
+    inline const Aws::String& GetUniqueRequestToken() const { return m_uniqueRequestToken; }
     inline bool UniqueRequestTokenHasBeenSet() const { return m_uniqueRequestTokenHasBeenSet; }
-    inline void SetUniqueRequestToken(const Aws::String& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = value; }
-    inline void SetUniqueRequestToken(Aws::String&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::move(value); }
-    inline void SetUniqueRequestToken(const char* value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken.assign(value); }
-    inline SendBonusRequest& WithUniqueRequestToken(const Aws::String& value) { SetUniqueRequestToken(value); return *this;}
-    inline SendBonusRequest& WithUniqueRequestToken(Aws::String&& value) { SetUniqueRequestToken(std::move(value)); return *this;}
-    inline SendBonusRequest& WithUniqueRequestToken(const char* value) { SetUniqueRequestToken(value); return *this;}
+    template<typename UniqueRequestTokenT = Aws::String>
+    void SetUniqueRequestToken(UniqueRequestTokenT&& value) { m_uniqueRequestTokenHasBeenSet = true; m_uniqueRequestToken = std::forward<UniqueRequestTokenT>(value); }
+    template<typename UniqueRequestTokenT = Aws::String>
+    SendBonusRequest& WithUniqueRequestToken(UniqueRequestTokenT&& value) { SetUniqueRequestToken(std::forward<UniqueRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

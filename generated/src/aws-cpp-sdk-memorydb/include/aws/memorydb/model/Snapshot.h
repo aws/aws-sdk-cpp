@@ -34,7 +34,7 @@ namespace Model
   class Snapshot
   {
   public:
-    AWS_MEMORYDB_API Snapshot();
+    AWS_MEMORYDB_API Snapshot() = default;
     AWS_MEMORYDB_API Snapshot(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the snapshot</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Snapshot& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Snapshot& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Snapshot& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Snapshot& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The status of the snapshot. Valid values: creating | available | restoring |
      * copying | deleting.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Snapshot& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Snapshot& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Snapshot& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Snapshot& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,54 +70,48 @@ namespace Model
      * <p>Indicates whether the snapshot is from an automatic backup (automated) or was
      * created manually (manual).</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline Snapshot& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline Snapshot& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline Snapshot& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    Snapshot& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the KMS key used to encrypt the snapshot.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline Snapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline Snapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline Snapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    Snapshot& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN (Amazon Resource Name) of the snapshot.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline Snapshot& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline Snapshot& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline Snapshot& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    Snapshot& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the cluster from which the snapshot was taken</p>
      */
-    inline const ClusterConfiguration& GetClusterConfiguration() const{ return m_clusterConfiguration; }
+    inline const ClusterConfiguration& GetClusterConfiguration() const { return m_clusterConfiguration; }
     inline bool ClusterConfigurationHasBeenSet() const { return m_clusterConfigurationHasBeenSet; }
-    inline void SetClusterConfiguration(const ClusterConfiguration& value) { m_clusterConfigurationHasBeenSet = true; m_clusterConfiguration = value; }
-    inline void SetClusterConfiguration(ClusterConfiguration&& value) { m_clusterConfigurationHasBeenSet = true; m_clusterConfiguration = std::move(value); }
-    inline Snapshot& WithClusterConfiguration(const ClusterConfiguration& value) { SetClusterConfiguration(value); return *this;}
-    inline Snapshot& WithClusterConfiguration(ClusterConfiguration&& value) { SetClusterConfiguration(std::move(value)); return *this;}
+    template<typename ClusterConfigurationT = ClusterConfiguration>
+    void SetClusterConfiguration(ClusterConfigurationT&& value) { m_clusterConfigurationHasBeenSet = true; m_clusterConfiguration = std::forward<ClusterConfigurationT>(value); }
+    template<typename ClusterConfigurationT = ClusterConfiguration>
+    Snapshot& WithClusterConfiguration(ClusterConfigurationT&& value) { SetClusterConfiguration(std::forward<ClusterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,12 +122,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
      * tiering</a>.</p>
      */
-    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+    inline DataTieringStatus GetDataTiering() const { return m_dataTiering; }
     inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
-    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
-    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
-    inline Snapshot& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
-    inline Snapshot& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
+    inline void SetDataTiering(DataTieringStatus value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+    inline Snapshot& WithDataTiering(DataTieringStatus value) { SetDataTiering(value); return *this;}
     ///@}
   private:
 
@@ -159,7 +147,7 @@ namespace Model
     ClusterConfiguration m_clusterConfiguration;
     bool m_clusterConfigurationHasBeenSet = false;
 
-    DataTieringStatus m_dataTiering;
+    DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
     bool m_dataTieringHasBeenSet = false;
   };
 

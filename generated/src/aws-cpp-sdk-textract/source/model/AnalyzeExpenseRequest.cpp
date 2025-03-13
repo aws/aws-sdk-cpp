@@ -12,11 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AnalyzeExpenseRequest::AnalyzeExpenseRequest() : 
-    m_documentHasBeenSet(false)
-{
-}
-
 Aws::String AnalyzeExpenseRequest::SerializePayload() const
 {
   JsonValue payload;

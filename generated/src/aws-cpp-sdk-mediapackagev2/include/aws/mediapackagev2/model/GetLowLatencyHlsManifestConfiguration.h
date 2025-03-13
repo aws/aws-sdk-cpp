@@ -35,7 +35,7 @@ namespace Model
   class GetLowLatencyHlsManifestConfiguration
   {
   public:
-    AWS_MEDIAPACKAGEV2_API GetLowLatencyHlsManifestConfiguration();
+    AWS_MEDIAPACKAGEV2_API GetLowLatencyHlsManifestConfiguration() = default;
     AWS_MEDIAPACKAGEV2_API GetLowLatencyHlsManifestConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API GetLowLatencyHlsManifestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
      * HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest
      * object overrides the manifestName you provided on the originEndpoint object.</p>
      */
-    inline const Aws::String& GetManifestName() const{ return m_manifestName; }
+    inline const Aws::String& GetManifestName() const { return m_manifestName; }
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
-    inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
-    inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
-    inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
-    inline GetLowLatencyHlsManifestConfiguration& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    template<typename ManifestNameT = Aws::String>
+    void SetManifestName(ManifestNameT&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::forward<ManifestNameT>(value); }
+    template<typename ManifestNameT = Aws::String>
+    GetLowLatencyHlsManifestConfiguration& WithManifestName(ManifestNameT&& value) { SetManifestName(std::forward<ManifestNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The egress domain URL for stream delivery from MediaPackage.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline GetLowLatencyHlsManifestConfiguration& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    GetLowLatencyHlsManifestConfiguration& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,21 +78,19 @@ namespace Model
      * HLSManifest object overrides the manifestName you provided on the originEndpoint
      * object.</p>
      */
-    inline const Aws::String& GetChildManifestName() const{ return m_childManifestName; }
+    inline const Aws::String& GetChildManifestName() const { return m_childManifestName; }
     inline bool ChildManifestNameHasBeenSet() const { return m_childManifestNameHasBeenSet; }
-    inline void SetChildManifestName(const Aws::String& value) { m_childManifestNameHasBeenSet = true; m_childManifestName = value; }
-    inline void SetChildManifestName(Aws::String&& value) { m_childManifestNameHasBeenSet = true; m_childManifestName = std::move(value); }
-    inline void SetChildManifestName(const char* value) { m_childManifestNameHasBeenSet = true; m_childManifestName.assign(value); }
-    inline GetLowLatencyHlsManifestConfiguration& WithChildManifestName(const Aws::String& value) { SetChildManifestName(value); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithChildManifestName(Aws::String&& value) { SetChildManifestName(std::move(value)); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithChildManifestName(const char* value) { SetChildManifestName(value); return *this;}
+    template<typename ChildManifestNameT = Aws::String>
+    void SetChildManifestName(ChildManifestNameT&& value) { m_childManifestNameHasBeenSet = true; m_childManifestName = std::forward<ChildManifestNameT>(value); }
+    template<typename ChildManifestNameT = Aws::String>
+    GetLowLatencyHlsManifestConfiguration& WithChildManifestName(ChildManifestNameT&& value) { SetChildManifestName(std::forward<ChildManifestNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total duration (in seconds) of the manifest's content.</p>
      */
-    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+    inline int GetManifestWindowSeconds() const { return m_manifestWindowSeconds; }
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
     inline GetLowLatencyHlsManifestConfiguration& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
@@ -111,7 +105,7 @@ namespace Model
      * player.</p> <p>Irrespective of this parameter, if any ID3Timed metadata is in
      * the HLS input, it is passed through to the HLS output.</p>
      */
-    inline int GetProgramDateTimeIntervalSeconds() const{ return m_programDateTimeIntervalSeconds; }
+    inline int GetProgramDateTimeIntervalSeconds() const { return m_programDateTimeIntervalSeconds; }
     inline bool ProgramDateTimeIntervalSecondsHasBeenSet() const { return m_programDateTimeIntervalSecondsHasBeenSet; }
     inline void SetProgramDateTimeIntervalSeconds(int value) { m_programDateTimeIntervalSecondsHasBeenSet = true; m_programDateTimeIntervalSeconds = value; }
     inline GetLowLatencyHlsManifestConfiguration& WithProgramDateTimeIntervalSeconds(int value) { SetProgramDateTimeIntervalSeconds(value); return *this;}
@@ -119,32 +113,32 @@ namespace Model
 
     ///@{
     
-    inline const ScteHls& GetScteHls() const{ return m_scteHls; }
+    inline const ScteHls& GetScteHls() const { return m_scteHls; }
     inline bool ScteHlsHasBeenSet() const { return m_scteHlsHasBeenSet; }
-    inline void SetScteHls(const ScteHls& value) { m_scteHlsHasBeenSet = true; m_scteHls = value; }
-    inline void SetScteHls(ScteHls&& value) { m_scteHlsHasBeenSet = true; m_scteHls = std::move(value); }
-    inline GetLowLatencyHlsManifestConfiguration& WithScteHls(const ScteHls& value) { SetScteHls(value); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithScteHls(ScteHls&& value) { SetScteHls(std::move(value)); return *this;}
+    template<typename ScteHlsT = ScteHls>
+    void SetScteHls(ScteHlsT&& value) { m_scteHlsHasBeenSet = true; m_scteHls = std::forward<ScteHlsT>(value); }
+    template<typename ScteHlsT = ScteHls>
+    GetLowLatencyHlsManifestConfiguration& WithScteHls(ScteHlsT&& value) { SetScteHls(std::forward<ScteHlsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+    inline const FilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
     inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
-    inline void SetFilterConfiguration(const FilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
-    inline void SetFilterConfiguration(FilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
-    inline GetLowLatencyHlsManifestConfiguration& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+    template<typename FilterConfigurationT = FilterConfiguration>
+    void SetFilterConfiguration(FilterConfigurationT&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::forward<FilterConfigurationT>(value); }
+    template<typename FilterConfigurationT = FilterConfiguration>
+    GetLowLatencyHlsManifestConfiguration& WithFilterConfiguration(FilterConfigurationT&& value) { SetFilterConfiguration(std::forward<FilterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StartTag& GetStartTag() const{ return m_startTag; }
+    inline const StartTag& GetStartTag() const { return m_startTag; }
     inline bool StartTagHasBeenSet() const { return m_startTagHasBeenSet; }
-    inline void SetStartTag(const StartTag& value) { m_startTagHasBeenSet = true; m_startTag = value; }
-    inline void SetStartTag(StartTag&& value) { m_startTagHasBeenSet = true; m_startTag = std::move(value); }
-    inline GetLowLatencyHlsManifestConfiguration& WithStartTag(const StartTag& value) { SetStartTag(value); return *this;}
-    inline GetLowLatencyHlsManifestConfiguration& WithStartTag(StartTag&& value) { SetStartTag(std::move(value)); return *this;}
+    template<typename StartTagT = StartTag>
+    void SetStartTag(StartTagT&& value) { m_startTagHasBeenSet = true; m_startTag = std::forward<StartTagT>(value); }
+    template<typename StartTagT = StartTag>
+    GetLowLatencyHlsManifestConfiguration& WithStartTag(StartTagT&& value) { SetStartTag(std::forward<StartTagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +150,7 @@ namespace Model
      * Web Services Signature Version 4 for API requests</a> in <i>Identity and Access
      * Management User Guide</i>.</p>
      */
-    inline bool GetUrlEncodeChildManifest() const{ return m_urlEncodeChildManifest; }
+    inline bool GetUrlEncodeChildManifest() const { return m_urlEncodeChildManifest; }
     inline bool UrlEncodeChildManifestHasBeenSet() const { return m_urlEncodeChildManifestHasBeenSet; }
     inline void SetUrlEncodeChildManifest(bool value) { m_urlEncodeChildManifestHasBeenSet = true; m_urlEncodeChildManifest = value; }
     inline GetLowLatencyHlsManifestConfiguration& WithUrlEncodeChildManifest(bool value) { SetUrlEncodeChildManifest(value); return *this;}
@@ -172,10 +166,10 @@ namespace Model
     Aws::String m_childManifestName;
     bool m_childManifestNameHasBeenSet = false;
 
-    int m_manifestWindowSeconds;
+    int m_manifestWindowSeconds{0};
     bool m_manifestWindowSecondsHasBeenSet = false;
 
-    int m_programDateTimeIntervalSeconds;
+    int m_programDateTimeIntervalSeconds{0};
     bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
     ScteHls m_scteHls;
@@ -187,7 +181,7 @@ namespace Model
     StartTag m_startTag;
     bool m_startTagHasBeenSet = false;
 
-    bool m_urlEncodeChildManifest;
+    bool m_urlEncodeChildManifest{false};
     bool m_urlEncodeChildManifestHasBeenSet = false;
   };
 

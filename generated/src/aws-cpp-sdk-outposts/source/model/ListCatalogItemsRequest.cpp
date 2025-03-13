@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCatalogItemsRequest::ListCatalogItemsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_itemClassFilterHasBeenSet(false),
-    m_supportedStorageFilterHasBeenSet(false),
-    m_eC2FamilyFilterHasBeenSet(false)
-{
-}
-
 Aws::String ListCatalogItemsRequest::SerializePayload() const
 {
   return {};

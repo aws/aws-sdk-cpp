@@ -26,7 +26,7 @@ namespace Model
   class GetBuiltinSlotTypesRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>A list of locales that the slot type supports.</p>
      */
-    inline const Locale& GetLocale() const{ return m_locale; }
+    inline Locale GetLocale() const { return m_locale; }
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
-    inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
-    inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
-    inline GetBuiltinSlotTypesRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-    inline GetBuiltinSlotTypesRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+    inline void SetLocale(Locale value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline GetBuiltinSlotTypesRequest& WithLocale(Locale value) { SetLocale(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * returned if any part of its signature matches the substring. For example, "xyz"
      * matches both "xyzabc" and "abcxyz."</p>
      */
-    inline const Aws::String& GetSignatureContains() const{ return m_signatureContains; }
+    inline const Aws::String& GetSignatureContains() const { return m_signatureContains; }
     inline bool SignatureContainsHasBeenSet() const { return m_signatureContainsHasBeenSet; }
-    inline void SetSignatureContains(const Aws::String& value) { m_signatureContainsHasBeenSet = true; m_signatureContains = value; }
-    inline void SetSignatureContains(Aws::String&& value) { m_signatureContainsHasBeenSet = true; m_signatureContains = std::move(value); }
-    inline void SetSignatureContains(const char* value) { m_signatureContainsHasBeenSet = true; m_signatureContains.assign(value); }
-    inline GetBuiltinSlotTypesRequest& WithSignatureContains(const Aws::String& value) { SetSignatureContains(value); return *this;}
-    inline GetBuiltinSlotTypesRequest& WithSignatureContains(Aws::String&& value) { SetSignatureContains(std::move(value)); return *this;}
-    inline GetBuiltinSlotTypesRequest& WithSignatureContains(const char* value) { SetSignatureContains(value); return *this;}
+    template<typename SignatureContainsT = Aws::String>
+    void SetSignatureContains(SignatureContainsT&& value) { m_signatureContainsHasBeenSet = true; m_signatureContains = std::forward<SignatureContainsT>(value); }
+    template<typename SignatureContainsT = Aws::String>
+    GetBuiltinSlotTypesRequest& WithSignatureContains(SignatureContainsT&& value) { SetSignatureContains(std::forward<SignatureContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * response. To fetch the next page of slot types, specify the pagination token in
      * the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetBuiltinSlotTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetBuiltinSlotTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetBuiltinSlotTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetBuiltinSlotTypesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,14 @@ namespace Model
      * <p>The maximum number of slot types to return in the response. The default is
      * 10.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetBuiltinSlotTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    Locale m_locale;
+    Locale m_locale{Locale::NOT_SET};
     bool m_localeHasBeenSet = false;
 
     Aws::String m_signatureContains;
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

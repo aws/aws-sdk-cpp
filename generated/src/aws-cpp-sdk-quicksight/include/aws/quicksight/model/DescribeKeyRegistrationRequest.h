@@ -25,7 +25,7 @@ namespace Model
   class DescribeKeyRegistrationRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DescribeKeyRegistrationRequest();
+    AWS_QUICKSIGHT_API DescribeKeyRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that contains the customer managed
      * key registration that you want to describe.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DescribeKeyRegistrationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DescribeKeyRegistrationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DescribeKeyRegistrationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DescribeKeyRegistrationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines whether the request returns the default key only.</p>
      */
-    inline bool GetDefaultKeyOnly() const{ return m_defaultKeyOnly; }
+    inline bool GetDefaultKeyOnly() const { return m_defaultKeyOnly; }
     inline bool DefaultKeyOnlyHasBeenSet() const { return m_defaultKeyOnlyHasBeenSet; }
     inline void SetDefaultKeyOnly(bool value) { m_defaultKeyOnlyHasBeenSet = true; m_defaultKeyOnly = value; }
     inline DescribeKeyRegistrationRequest& WithDefaultKeyOnly(bool value) { SetDefaultKeyOnly(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
-    bool m_defaultKeyOnly;
+    bool m_defaultKeyOnly{false};
     bool m_defaultKeyOnlyHasBeenSet = false;
   };
 

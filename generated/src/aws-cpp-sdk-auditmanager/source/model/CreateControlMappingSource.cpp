@@ -18,22 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-CreateControlMappingSource::CreateControlMappingSource() : 
-    m_sourceNameHasBeenSet(false),
-    m_sourceDescriptionHasBeenSet(false),
-    m_sourceSetUpOption(SourceSetUpOption::NOT_SET),
-    m_sourceSetUpOptionHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceKeywordHasBeenSet(false),
-    m_sourceFrequency(SourceFrequency::NOT_SET),
-    m_sourceFrequencyHasBeenSet(false),
-    m_troubleshootingTextHasBeenSet(false)
-{
-}
-
 CreateControlMappingSource::CreateControlMappingSource(JsonView jsonValue)
-  : CreateControlMappingSource()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ CreateControlMappingSource& CreateControlMappingSource::operator =(JsonView json
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = jsonValue.GetString("sourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceDescription"))
   {
     m_sourceDescription = jsonValue.GetString("sourceDescription");
-
     m_sourceDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceSetUpOption"))
   {
     m_sourceSetUpOption = SourceSetUpOptionMapper::GetSourceSetUpOptionForName(jsonValue.GetString("sourceSetUpOption"));
-
     m_sourceSetUpOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceKeyword"))
   {
     m_sourceKeyword = jsonValue.GetObject("sourceKeyword");
-
     m_sourceKeywordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceFrequency"))
   {
     m_sourceFrequency = SourceFrequencyMapper::GetSourceFrequencyForName(jsonValue.GetString("sourceFrequency"));
-
     m_sourceFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("troubleshootingText"))
   {
     m_troubleshootingText = jsonValue.GetString("troubleshootingText");
-
     m_troubleshootingTextHasBeenSet = true;
   }
-
   return *this;
 }
 

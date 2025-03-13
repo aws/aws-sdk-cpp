@@ -23,7 +23,7 @@ namespace Model
   class ListShardsRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API ListShardsRequest();
+    AWS_KINESIS_API ListShardsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the data stream whose shards you want to list. </p> <p>You cannot
      * specify this parameter if you specify the <code>NextToken</code> parameter.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline ListShardsRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline ListShardsRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline ListShardsRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    ListShardsRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * specify an expired token in a call to <code>ListShards</code>, you get
      * <code>ExpiredNextTokenException</code>.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListShardsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListShardsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListShardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListShardsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * with the first one in the stream.</p> <p>You cannot specify this parameter if
      * you specify <code>NextToken</code>.</p>
      */
-    inline const Aws::String& GetExclusiveStartShardId() const{ return m_exclusiveStartShardId; }
+    inline const Aws::String& GetExclusiveStartShardId() const { return m_exclusiveStartShardId; }
     inline bool ExclusiveStartShardIdHasBeenSet() const { return m_exclusiveStartShardIdHasBeenSet; }
-    inline void SetExclusiveStartShardId(const Aws::String& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = value; }
-    inline void SetExclusiveStartShardId(Aws::String&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::move(value); }
-    inline void SetExclusiveStartShardId(const char* value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId.assign(value); }
-    inline ListShardsRequest& WithExclusiveStartShardId(const Aws::String& value) { SetExclusiveStartShardId(value); return *this;}
-    inline ListShardsRequest& WithExclusiveStartShardId(Aws::String&& value) { SetExclusiveStartShardId(std::move(value)); return *this;}
-    inline ListShardsRequest& WithExclusiveStartShardId(const char* value) { SetExclusiveStartShardId(value); return *this;}
+    template<typename ExclusiveStartShardIdT = Aws::String>
+    void SetExclusiveStartShardId(ExclusiveStartShardIdT&& value) { m_exclusiveStartShardIdHasBeenSet = true; m_exclusiveStartShardId = std::forward<ExclusiveStartShardIdT>(value); }
+    template<typename ExclusiveStartShardIdT = Aws::String>
+    ListShardsRequest& WithExclusiveStartShardId(ExclusiveStartShardIdT&& value) { SetExclusiveStartShardId(std::forward<ExclusiveStartShardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,7 +110,7 @@ namespace Model
      * <code>NextToken</code> value that you can use in a subsequent call to
      * <code>ListShards</code> to list the next set of shards.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListShardsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -131,12 +125,12 @@ namespace Model
      * cannot specify this parameter if you specify the <code>NextToken</code>
      * parameter.</p>
      */
-    inline const Aws::Utils::DateTime& GetStreamCreationTimestamp() const{ return m_streamCreationTimestamp; }
+    inline const Aws::Utils::DateTime& GetStreamCreationTimestamp() const { return m_streamCreationTimestamp; }
     inline bool StreamCreationTimestampHasBeenSet() const { return m_streamCreationTimestampHasBeenSet; }
-    inline void SetStreamCreationTimestamp(const Aws::Utils::DateTime& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = value; }
-    inline void SetStreamCreationTimestamp(Aws::Utils::DateTime&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = std::move(value); }
-    inline ListShardsRequest& WithStreamCreationTimestamp(const Aws::Utils::DateTime& value) { SetStreamCreationTimestamp(value); return *this;}
-    inline ListShardsRequest& WithStreamCreationTimestamp(Aws::Utils::DateTime&& value) { SetStreamCreationTimestamp(std::move(value)); return *this;}
+    template<typename StreamCreationTimestampT = Aws::Utils::DateTime>
+    void SetStreamCreationTimestamp(StreamCreationTimestampT&& value) { m_streamCreationTimestampHasBeenSet = true; m_streamCreationTimestamp = std::forward<StreamCreationTimestampT>(value); }
+    template<typename StreamCreationTimestampT = Aws::Utils::DateTime>
+    ListShardsRequest& WithStreamCreationTimestamp(StreamCreationTimestampT&& value) { SetStreamCreationTimestamp(std::forward<StreamCreationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,26 +155,24 @@ namespace Model
      * timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards
      * starting from the provided timestamp to TIP are returned. </p>
      */
-    inline const ShardFilter& GetShardFilter() const{ return m_shardFilter; }
+    inline const ShardFilter& GetShardFilter() const { return m_shardFilter; }
     inline bool ShardFilterHasBeenSet() const { return m_shardFilterHasBeenSet; }
-    inline void SetShardFilter(const ShardFilter& value) { m_shardFilterHasBeenSet = true; m_shardFilter = value; }
-    inline void SetShardFilter(ShardFilter&& value) { m_shardFilterHasBeenSet = true; m_shardFilter = std::move(value); }
-    inline ListShardsRequest& WithShardFilter(const ShardFilter& value) { SetShardFilter(value); return *this;}
-    inline ListShardsRequest& WithShardFilter(ShardFilter&& value) { SetShardFilter(std::move(value)); return *this;}
+    template<typename ShardFilterT = ShardFilter>
+    void SetShardFilter(ShardFilterT&& value) { m_shardFilterHasBeenSet = true; m_shardFilter = std::forward<ShardFilterT>(value); }
+    template<typename ShardFilterT = ShardFilter>
+    ListShardsRequest& WithShardFilter(ShardFilterT&& value) { SetShardFilter(std::forward<ShardFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline ListShardsRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline ListShardsRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline ListShardsRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    ListShardsRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
   private:
 
@@ -193,10 +185,10 @@ namespace Model
     Aws::String m_exclusiveStartShardId;
     bool m_exclusiveStartShardIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_streamCreationTimestamp;
+    Aws::Utils::DateTime m_streamCreationTimestamp{};
     bool m_streamCreationTimestampHasBeenSet = false;
 
     ShardFilter m_shardFilter;

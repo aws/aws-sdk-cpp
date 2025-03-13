@@ -12,18 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAuditSuppressionRequest::CreateAuditSuppressionRequest() : 
-    m_checkNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_suppressIndefinitely(false),
-    m_suppressIndefinitelyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateAuditSuppressionRequest::SerializePayload() const
 {
   JsonValue payload;

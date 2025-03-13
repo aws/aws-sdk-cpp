@@ -35,7 +35,7 @@ namespace Model
   class BehaviorCriteria
   {
   public:
-    AWS_IOT_API BehaviorCriteria();
+    AWS_IOT_API BehaviorCriteria() = default;
     AWS_IOT_API BehaviorCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API BehaviorCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,24 +53,22 @@ namespace Model
      * <code>less-than</code>, <code>less-than-equals</code>,
      * <code>greater-than</code>, and <code>greater-than-equals</code> </p> </li> </ul>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline BehaviorCriteria& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline BehaviorCriteria& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline BehaviorCriteria& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to be compared with the <code>metric</code>.</p>
      */
-    inline const MetricValue& GetValue() const{ return m_value; }
+    inline const MetricValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const MetricValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(MetricValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline BehaviorCriteria& WithValue(const MetricValue& value) { SetValue(value); return *this;}
-    inline BehaviorCriteria& WithValue(MetricValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = MetricValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = MetricValue>
+    BehaviorCriteria& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +82,7 @@ namespace Model
      * being given a percentile rank. Cannot be used with list-based metric
      * datatypes.</p>
      */
-    inline int GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const { return m_durationSeconds; }
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
     inline BehaviorCriteria& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
@@ -95,7 +93,7 @@ namespace Model
      * <p>If a device is in violation of the behavior for the specified number of
      * consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
      */
-    inline int GetConsecutiveDatapointsToAlarm() const{ return m_consecutiveDatapointsToAlarm; }
+    inline int GetConsecutiveDatapointsToAlarm() const { return m_consecutiveDatapointsToAlarm; }
     inline bool ConsecutiveDatapointsToAlarmHasBeenSet() const { return m_consecutiveDatapointsToAlarmHasBeenSet; }
     inline void SetConsecutiveDatapointsToAlarm(int value) { m_consecutiveDatapointsToAlarmHasBeenSet = true; m_consecutiveDatapointsToAlarm = value; }
     inline BehaviorCriteria& WithConsecutiveDatapointsToAlarm(int value) { SetConsecutiveDatapointsToAlarm(value); return *this;}
@@ -107,7 +105,7 @@ namespace Model
      * of the behavior for the specified number of consecutive datapoints, the alarm is
      * cleared. If not specified, the default is 1.</p>
      */
-    inline int GetConsecutiveDatapointsToClear() const{ return m_consecutiveDatapointsToClear; }
+    inline int GetConsecutiveDatapointsToClear() const { return m_consecutiveDatapointsToClear; }
     inline bool ConsecutiveDatapointsToClearHasBeenSet() const { return m_consecutiveDatapointsToClearHasBeenSet; }
     inline void SetConsecutiveDatapointsToClear(int value) { m_consecutiveDatapointsToClearHasBeenSet = true; m_consecutiveDatapointsToClear = value; }
     inline BehaviorCriteria& WithConsecutiveDatapointsToClear(int value) { SetConsecutiveDatapointsToClear(value); return *this;}
@@ -118,40 +116,40 @@ namespace Model
      * <p>A statistical ranking (percentile)that indicates a threshold value by which a
      * behavior is determined to be in compliance or in violation of the behavior.</p>
      */
-    inline const StatisticalThreshold& GetStatisticalThreshold() const{ return m_statisticalThreshold; }
+    inline const StatisticalThreshold& GetStatisticalThreshold() const { return m_statisticalThreshold; }
     inline bool StatisticalThresholdHasBeenSet() const { return m_statisticalThresholdHasBeenSet; }
-    inline void SetStatisticalThreshold(const StatisticalThreshold& value) { m_statisticalThresholdHasBeenSet = true; m_statisticalThreshold = value; }
-    inline void SetStatisticalThreshold(StatisticalThreshold&& value) { m_statisticalThresholdHasBeenSet = true; m_statisticalThreshold = std::move(value); }
-    inline BehaviorCriteria& WithStatisticalThreshold(const StatisticalThreshold& value) { SetStatisticalThreshold(value); return *this;}
-    inline BehaviorCriteria& WithStatisticalThreshold(StatisticalThreshold&& value) { SetStatisticalThreshold(std::move(value)); return *this;}
+    template<typename StatisticalThresholdT = StatisticalThreshold>
+    void SetStatisticalThreshold(StatisticalThresholdT&& value) { m_statisticalThresholdHasBeenSet = true; m_statisticalThreshold = std::forward<StatisticalThresholdT>(value); }
+    template<typename StatisticalThresholdT = StatisticalThreshold>
+    BehaviorCriteria& WithStatisticalThreshold(StatisticalThresholdT&& value) { SetStatisticalThreshold(std::forward<StatisticalThresholdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The configuration of an ML Detect </p>
      */
-    inline const MachineLearningDetectionConfig& GetMlDetectionConfig() const{ return m_mlDetectionConfig; }
+    inline const MachineLearningDetectionConfig& GetMlDetectionConfig() const { return m_mlDetectionConfig; }
     inline bool MlDetectionConfigHasBeenSet() const { return m_mlDetectionConfigHasBeenSet; }
-    inline void SetMlDetectionConfig(const MachineLearningDetectionConfig& value) { m_mlDetectionConfigHasBeenSet = true; m_mlDetectionConfig = value; }
-    inline void SetMlDetectionConfig(MachineLearningDetectionConfig&& value) { m_mlDetectionConfigHasBeenSet = true; m_mlDetectionConfig = std::move(value); }
-    inline BehaviorCriteria& WithMlDetectionConfig(const MachineLearningDetectionConfig& value) { SetMlDetectionConfig(value); return *this;}
-    inline BehaviorCriteria& WithMlDetectionConfig(MachineLearningDetectionConfig&& value) { SetMlDetectionConfig(std::move(value)); return *this;}
+    template<typename MlDetectionConfigT = MachineLearningDetectionConfig>
+    void SetMlDetectionConfig(MlDetectionConfigT&& value) { m_mlDetectionConfigHasBeenSet = true; m_mlDetectionConfig = std::forward<MlDetectionConfigT>(value); }
+    template<typename MlDetectionConfigT = MachineLearningDetectionConfig>
+    BehaviorCriteria& WithMlDetectionConfig(MlDetectionConfigT&& value) { SetMlDetectionConfig(std::forward<MlDetectionConfigT>(value)); return *this;}
     ///@}
   private:
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
     MetricValue m_value;
     bool m_valueHasBeenSet = false;
 
-    int m_durationSeconds;
+    int m_durationSeconds{0};
     bool m_durationSecondsHasBeenSet = false;
 
-    int m_consecutiveDatapointsToAlarm;
+    int m_consecutiveDatapointsToAlarm{0};
     bool m_consecutiveDatapointsToAlarmHasBeenSet = false;
 
-    int m_consecutiveDatapointsToClear;
+    int m_consecutiveDatapointsToClear{0};
     bool m_consecutiveDatapointsToClearHasBeenSet = false;
 
     StatisticalThreshold m_statisticalThreshold;

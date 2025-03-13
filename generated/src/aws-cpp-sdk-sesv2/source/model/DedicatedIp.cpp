@@ -18,18 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-DedicatedIp::DedicatedIp() : 
-    m_ipHasBeenSet(false),
-    m_warmupStatus(WarmupStatus::NOT_SET),
-    m_warmupStatusHasBeenSet(false),
-    m_warmupPercentage(0),
-    m_warmupPercentageHasBeenSet(false),
-    m_poolNameHasBeenSet(false)
-{
-}
-
 DedicatedIp::DedicatedIp(JsonView jsonValue)
-  : DedicatedIp()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DedicatedIp& DedicatedIp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Ip"))
   {
     m_ip = jsonValue.GetString("Ip");
-
     m_ipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmupStatus"))
   {
     m_warmupStatus = WarmupStatusMapper::GetWarmupStatusForName(jsonValue.GetString("WarmupStatus"));
-
     m_warmupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WarmupPercentage"))
   {
     m_warmupPercentage = jsonValue.GetInteger("WarmupPercentage");
-
     m_warmupPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolName"))
   {
     m_poolName = jsonValue.GetString("PoolName");
-
     m_poolNameHasBeenSet = true;
   }
-
   return *this;
 }
 

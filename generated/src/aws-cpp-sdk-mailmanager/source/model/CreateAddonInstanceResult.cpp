@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAddonInstanceResult::CreateAddonInstanceResult()
-{
-}
-
 CreateAddonInstanceResult::CreateAddonInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAddonInstanceResult& CreateAddonInstanceResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("AddonInstanceId"))
   {
     m_addonInstanceId = jsonValue.GetString("AddonInstanceId");
-
+    m_addonInstanceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

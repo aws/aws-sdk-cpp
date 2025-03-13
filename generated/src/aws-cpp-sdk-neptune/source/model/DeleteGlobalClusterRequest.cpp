@@ -10,11 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-DeleteGlobalClusterRequest::DeleteGlobalClusterRequest() : 
-    m_globalClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGlobalClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -25,7 +25,7 @@ namespace Model
   class UpgradeElasticsearchDomainRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API UpgradeElasticsearchDomainRequest();
+    AWS_ELASTICSEARCHSERVICE_API UpgradeElasticsearchDomainRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline UpgradeElasticsearchDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline UpgradeElasticsearchDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline UpgradeElasticsearchDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    UpgradeElasticsearchDomainRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
      */
-    inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
+    inline const Aws::String& GetTargetVersion() const { return m_targetVersion; }
     inline bool TargetVersionHasBeenSet() const { return m_targetVersionHasBeenSet; }
-    inline void SetTargetVersion(const Aws::String& value) { m_targetVersionHasBeenSet = true; m_targetVersion = value; }
-    inline void SetTargetVersion(Aws::String&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::move(value); }
-    inline void SetTargetVersion(const char* value) { m_targetVersionHasBeenSet = true; m_targetVersion.assign(value); }
-    inline UpgradeElasticsearchDomainRequest& WithTargetVersion(const Aws::String& value) { SetTargetVersion(value); return *this;}
-    inline UpgradeElasticsearchDomainRequest& WithTargetVersion(Aws::String&& value) { SetTargetVersion(std::move(value)); return *this;}
-    inline UpgradeElasticsearchDomainRequest& WithTargetVersion(const char* value) { SetTargetVersion(value); return *this;}
+    template<typename TargetVersionT = Aws::String>
+    void SetTargetVersion(TargetVersionT&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::forward<TargetVersionT>(value); }
+    template<typename TargetVersionT = Aws::String>
+    UpgradeElasticsearchDomainRequest& WithTargetVersion(TargetVersionT&& value) { SetTargetVersion(std::forward<TargetVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +63,7 @@ namespace Model
      * <p> This flag, when set to True, indicates that an Upgrade Eligibility Check
      * needs to be performed. This will not actually perform the Upgrade. </p>
      */
-    inline bool GetPerformCheckOnly() const{ return m_performCheckOnly; }
+    inline bool GetPerformCheckOnly() const { return m_performCheckOnly; }
     inline bool PerformCheckOnlyHasBeenSet() const { return m_performCheckOnlyHasBeenSet; }
     inline void SetPerformCheckOnly(bool value) { m_performCheckOnlyHasBeenSet = true; m_performCheckOnly = value; }
     inline UpgradeElasticsearchDomainRequest& WithPerformCheckOnly(bool value) { SetPerformCheckOnly(value); return *this;}
@@ -80,7 +76,7 @@ namespace Model
     Aws::String m_targetVersion;
     bool m_targetVersionHasBeenSet = false;
 
-    bool m_performCheckOnly;
+    bool m_performCheckOnly{false};
     bool m_performCheckOnlyHasBeenSet = false;
   };
 

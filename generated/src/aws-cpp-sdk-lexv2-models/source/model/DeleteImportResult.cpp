@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteImportResult::DeleteImportResult() : 
-    m_importStatus(ImportStatus::NOT_SET)
-{
-}
-
 DeleteImportResult::DeleteImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteImportResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteImportResult& DeleteImportResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("importId"))
   {
     m_importId = jsonValue.GetString("importId");
-
+    m_importIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importStatus"))
   {
     m_importStatus = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("importStatus"));
-
+    m_importStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GluePropertiesInput::GluePropertiesInput() : 
-    m_glueConnectionInputHasBeenSet(false)
-{
-}
-
 GluePropertiesInput::GluePropertiesInput(JsonView jsonValue)
-  : GluePropertiesInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ GluePropertiesInput& GluePropertiesInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("glueConnectionInput"))
   {
     m_glueConnectionInput = jsonValue.GetObject("glueConnectionInput");
-
     m_glueConnectionInputHasBeenSet = true;
   }
-
   return *this;
 }
 

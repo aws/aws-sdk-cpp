@@ -23,7 +23,7 @@ namespace Model
   class GetIpamDiscoveredAccountsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetIpamDiscoveredAccountsRequest();
+    AWS_EC2_API GetIpamDiscoveredAccountsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetIpamDiscoveredAccountsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>A resource discovery ID.</p>
      */
-    inline const Aws::String& GetIpamResourceDiscoveryId() const{ return m_ipamResourceDiscoveryId; }
+    inline const Aws::String& GetIpamResourceDiscoveryId() const { return m_ipamResourceDiscoveryId; }
     inline bool IpamResourceDiscoveryIdHasBeenSet() const { return m_ipamResourceDiscoveryIdHasBeenSet; }
-    inline void SetIpamResourceDiscoveryId(const Aws::String& value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId = value; }
-    inline void SetIpamResourceDiscoveryId(Aws::String&& value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId = std::move(value); }
-    inline void SetIpamResourceDiscoveryId(const char* value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId.assign(value); }
-    inline GetIpamDiscoveredAccountsRequest& WithIpamResourceDiscoveryId(const Aws::String& value) { SetIpamResourceDiscoveryId(value); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithIpamResourceDiscoveryId(Aws::String&& value) { SetIpamResourceDiscoveryId(std::move(value)); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithIpamResourceDiscoveryId(const char* value) { SetIpamResourceDiscoveryId(value); return *this;}
+    template<typename IpamResourceDiscoveryIdT = Aws::String>
+    void SetIpamResourceDiscoveryId(IpamResourceDiscoveryIdT&& value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId = std::forward<IpamResourceDiscoveryIdT>(value); }
+    template<typename IpamResourceDiscoveryIdT = Aws::String>
+    GetIpamDiscoveredAccountsRequest& WithIpamResourceDiscoveryId(IpamResourceDiscoveryIdT&& value) { SetIpamResourceDiscoveryId(std::forward<IpamResourceDiscoveryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,28 +68,26 @@ namespace Model
      * <p>The Amazon Web Services Region that the account information is returned
      * from.</p>
      */
-    inline const Aws::String& GetDiscoveryRegion() const{ return m_discoveryRegion; }
+    inline const Aws::String& GetDiscoveryRegion() const { return m_discoveryRegion; }
     inline bool DiscoveryRegionHasBeenSet() const { return m_discoveryRegionHasBeenSet; }
-    inline void SetDiscoveryRegion(const Aws::String& value) { m_discoveryRegionHasBeenSet = true; m_discoveryRegion = value; }
-    inline void SetDiscoveryRegion(Aws::String&& value) { m_discoveryRegionHasBeenSet = true; m_discoveryRegion = std::move(value); }
-    inline void SetDiscoveryRegion(const char* value) { m_discoveryRegionHasBeenSet = true; m_discoveryRegion.assign(value); }
-    inline GetIpamDiscoveredAccountsRequest& WithDiscoveryRegion(const Aws::String& value) { SetDiscoveryRegion(value); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithDiscoveryRegion(Aws::String&& value) { SetDiscoveryRegion(std::move(value)); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithDiscoveryRegion(const char* value) { SetDiscoveryRegion(value); return *this;}
+    template<typename DiscoveryRegionT = Aws::String>
+    void SetDiscoveryRegion(DiscoveryRegionT&& value) { m_discoveryRegionHasBeenSet = true; m_discoveryRegion = std::forward<DiscoveryRegionT>(value); }
+    template<typename DiscoveryRegionT = Aws::String>
+    GetIpamDiscoveredAccountsRequest& WithDiscoveryRegion(DiscoveryRegionT&& value) { SetDiscoveryRegion(std::forward<DiscoveryRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Discovered account filters.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline GetIpamDiscoveredAccountsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline GetIpamDiscoveredAccountsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    GetIpamDiscoveredAccountsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    GetIpamDiscoveredAccountsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,14 +95,12 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetIpamDiscoveredAccountsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetIpamDiscoveredAccountsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetIpamDiscoveredAccountsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +108,14 @@ namespace Model
      * <p>The maximum number of discovered accounts to return in one page of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetIpamDiscoveredAccountsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamResourceDiscoveryId;
@@ -136,7 +130,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

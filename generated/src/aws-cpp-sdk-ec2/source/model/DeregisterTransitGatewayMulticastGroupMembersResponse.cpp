@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterTransitGatewayMulticastGroupMembersResponse::DeregisterTransitGatewayMulticastGroupMembersResponse()
-{
-}
-
 DeregisterTransitGatewayMulticastGroupMembersResponse::DeregisterTransitGatewayMulticastGroupMembersResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeregisterTransitGatewayMulticastGroupMembersResponse& DeregisterTransitGatewayM
     if(!deregisteredMulticastGroupMembersNode.IsNull())
     {
       m_deregisteredMulticastGroupMembers = deregisteredMulticastGroupMembersNode;
+      m_deregisteredMulticastGroupMembersHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeregisterTransitGatewayMulticastGroupMembersResponse& DeregisterTransitGatewayM
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeregisterTransitGatewayMulticastGroupMembersResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,21 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-JobConfigInput::JobConfigInput() : 
-    m_bandMathConfigHasBeenSet(false),
-    m_cloudMaskingConfigHasBeenSet(false),
-    m_cloudRemovalConfigHasBeenSet(false),
-    m_geoMosaicConfigHasBeenSet(false),
-    m_landCoverSegmentationConfigHasBeenSet(false),
-    m_resamplingConfigHasBeenSet(false),
-    m_stackConfigHasBeenSet(false),
-    m_temporalStatisticsConfigHasBeenSet(false),
-    m_zonalStatisticsConfigHasBeenSet(false)
-{
-}
-
 JobConfigInput::JobConfigInput(JsonView jsonValue)
-  : JobConfigInput()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ JobConfigInput& JobConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BandMathConfig"))
   {
     m_bandMathConfig = jsonValue.GetObject("BandMathConfig");
-
     m_bandMathConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudMaskingConfig"))
   {
     m_cloudMaskingConfig = jsonValue.GetObject("CloudMaskingConfig");
-
     m_cloudMaskingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudRemovalConfig"))
   {
     m_cloudRemovalConfig = jsonValue.GetObject("CloudRemovalConfig");
-
     m_cloudRemovalConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeoMosaicConfig"))
   {
     m_geoMosaicConfig = jsonValue.GetObject("GeoMosaicConfig");
-
     m_geoMosaicConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LandCoverSegmentationConfig"))
   {
     m_landCoverSegmentationConfig = jsonValue.GetObject("LandCoverSegmentationConfig");
-
     m_landCoverSegmentationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResamplingConfig"))
   {
     m_resamplingConfig = jsonValue.GetObject("ResamplingConfig");
-
     m_resamplingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackConfig"))
   {
     m_stackConfig = jsonValue.GetObject("StackConfig");
-
     m_stackConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemporalStatisticsConfig"))
   {
     m_temporalStatisticsConfig = jsonValue.GetObject("TemporalStatisticsConfig");
-
     m_temporalStatisticsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZonalStatisticsConfig"))
   {
     m_zonalStatisticsConfig = jsonValue.GetObject("ZonalStatisticsConfig");
-
     m_zonalStatisticsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

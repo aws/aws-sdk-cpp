@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPublicAddressTags::IpamPublicAddressTags() : 
-    m_eipTagsHasBeenSet(false)
-{
-}
-
 IpamPublicAddressTags::IpamPublicAddressTags(const XmlNode& xmlNode)
-  : IpamPublicAddressTags()
 {
   *this = xmlNode;
 }
@@ -41,13 +35,14 @@ IpamPublicAddressTags& IpamPublicAddressTags::operator =(const XmlNode& xmlNode)
     if(!eipTagsNode.IsNull())
     {
       XmlNode eipTagsMember = eipTagsNode.FirstChild("item");
+      m_eipTagsHasBeenSet = !eipTagsMember.IsNull();
       while(!eipTagsMember.IsNull())
       {
         m_eipTags.push_back(eipTagsMember);
         eipTagsMember = eipTagsMember.NextNode("item");
       }
 
-      m_eipTagsHasBeenSet = true;
+       m_eipTagsHasBeenSet = true;
     }
   }
 

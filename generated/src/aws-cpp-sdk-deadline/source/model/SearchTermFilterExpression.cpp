@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-SearchTermFilterExpression::SearchTermFilterExpression() : 
-    m_searchTermHasBeenSet(false)
-{
-}
-
 SearchTermFilterExpression::SearchTermFilterExpression(JsonView jsonValue)
-  : SearchTermFilterExpression()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SearchTermFilterExpression& SearchTermFilterExpression::operator =(JsonView json
   if(jsonValue.ValueExists("searchTerm"))
   {
     m_searchTerm = jsonValue.GetString("searchTerm");
-
     m_searchTermHasBeenSet = true;
   }
-
   return *this;
 }
 

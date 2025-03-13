@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisableResult::DisableResult()
-{
-}
-
 DisableResult::DisableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ DisableResult& DisableResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());
     }
+    m_accountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedAccounts"))
   {
     Aws::Utils::Array<JsonView> failedAccountsJsonList = jsonValue.GetArray("failedAccounts");
@@ -45,14 +41,15 @@ DisableResult& DisableResult::operator =(const Aws::AmazonWebServiceResult<JsonV
     {
       m_failedAccounts.push_back(failedAccountsJsonList[failedAccountsIndex].AsObject());
     }
+    m_failedAccountsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

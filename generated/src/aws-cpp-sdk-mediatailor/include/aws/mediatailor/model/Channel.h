@@ -41,7 +41,7 @@ namespace Model
   class Channel
   {
   public:
-    AWS_MEDIATAILOR_API Channel();
+    AWS_MEDIATAILOR_API Channel() = default;
     AWS_MEDIATAILOR_API Channel(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,54 +51,48 @@ namespace Model
     /**
      * <p>The ARN of the channel.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Channel& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Channel& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Channel& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Channel& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the channel.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline Channel& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline Channel& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline Channel& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    Channel& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the state whether the channel is running or not.</p>
      */
-    inline const Aws::String& GetChannelState() const{ return m_channelState; }
+    inline const Aws::String& GetChannelState() const { return m_channelState; }
     inline bool ChannelStateHasBeenSet() const { return m_channelStateHasBeenSet; }
-    inline void SetChannelState(const Aws::String& value) { m_channelStateHasBeenSet = true; m_channelState = value; }
-    inline void SetChannelState(Aws::String&& value) { m_channelStateHasBeenSet = true; m_channelState = std::move(value); }
-    inline void SetChannelState(const char* value) { m_channelStateHasBeenSet = true; m_channelState.assign(value); }
-    inline Channel& WithChannelState(const Aws::String& value) { SetChannelState(value); return *this;}
-    inline Channel& WithChannelState(Aws::String&& value) { SetChannelState(std::move(value)); return *this;}
-    inline Channel& WithChannelState(const char* value) { SetChannelState(value); return *this;}
+    template<typename ChannelStateT = Aws::String>
+    void SetChannelState(ChannelStateT&& value) { m_channelStateHasBeenSet = true; m_channelState = std::forward<ChannelStateT>(value); }
+    template<typename ChannelStateT = Aws::String>
+    Channel& WithChannelState(ChannelStateT&& value) { SetChannelState(std::forward<ChannelStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the channel was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Channel& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Channel& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Channel& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,38 +102,38 @@ namespace Model
      * <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels
      * using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
      */
-    inline const SlateSource& GetFillerSlate() const{ return m_fillerSlate; }
+    inline const SlateSource& GetFillerSlate() const { return m_fillerSlate; }
     inline bool FillerSlateHasBeenSet() const { return m_fillerSlateHasBeenSet; }
-    inline void SetFillerSlate(const SlateSource& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = value; }
-    inline void SetFillerSlate(SlateSource&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::move(value); }
-    inline Channel& WithFillerSlate(const SlateSource& value) { SetFillerSlate(value); return *this;}
-    inline Channel& WithFillerSlate(SlateSource&& value) { SetFillerSlate(std::move(value)); return *this;}
+    template<typename FillerSlateT = SlateSource>
+    void SetFillerSlate(FillerSlateT&& value) { m_fillerSlateHasBeenSet = true; m_fillerSlate = std::forward<FillerSlateT>(value); }
+    template<typename FillerSlateT = SlateSource>
+    Channel& WithFillerSlate(FillerSlateT&& value) { SetFillerSlate(std::forward<FillerSlateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the channel was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Channel& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Channel& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Channel& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The channel's output properties.</p>
      */
-    inline const Aws::Vector<ResponseOutputItem>& GetOutputs() const{ return m_outputs; }
+    inline const Aws::Vector<ResponseOutputItem>& GetOutputs() const { return m_outputs; }
     inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
-    inline void SetOutputs(const Aws::Vector<ResponseOutputItem>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
-    inline void SetOutputs(Aws::Vector<ResponseOutputItem>&& value) { m_outputsHasBeenSet = true; m_outputs = std::move(value); }
-    inline Channel& WithOutputs(const Aws::Vector<ResponseOutputItem>& value) { SetOutputs(value); return *this;}
-    inline Channel& WithOutputs(Aws::Vector<ResponseOutputItem>&& value) { SetOutputs(std::move(value)); return *this;}
-    inline Channel& AddOutputs(const ResponseOutputItem& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
-    inline Channel& AddOutputs(ResponseOutputItem&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
+    template<typename OutputsT = Aws::Vector<ResponseOutputItem>>
+    void SetOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs = std::forward<OutputsT>(value); }
+    template<typename OutputsT = Aws::Vector<ResponseOutputItem>>
+    Channel& WithOutputs(OutputsT&& value) { SetOutputs(std::forward<OutputsT>(value)); return *this;}
+    template<typename OutputsT = ResponseOutputItem>
+    Channel& AddOutputs(OutputsT&& value) { m_outputsHasBeenSet = true; m_outputs.emplace_back(std::forward<OutputsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -149,14 +143,12 @@ namespace Model
      * back-to-back in an endless loop. When the last program in the schedule plays,
      * playback loops back to the first program in the schedule.</p>
      */
-    inline const Aws::String& GetPlaybackMode() const{ return m_playbackMode; }
+    inline const Aws::String& GetPlaybackMode() const { return m_playbackMode; }
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
-    inline void SetPlaybackMode(const Aws::String& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
-    inline void SetPlaybackMode(Aws::String&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
-    inline void SetPlaybackMode(const char* value) { m_playbackModeHasBeenSet = true; m_playbackMode.assign(value); }
-    inline Channel& WithPlaybackMode(const Aws::String& value) { SetPlaybackMode(value); return *this;}
-    inline Channel& WithPlaybackMode(Aws::String&& value) { SetPlaybackMode(std::move(value)); return *this;}
-    inline Channel& WithPlaybackMode(const char* value) { SetPlaybackMode(value); return *this;}
+    template<typename PlaybackModeT = Aws::String>
+    void SetPlaybackMode(PlaybackModeT&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::forward<PlaybackModeT>(value); }
+    template<typename PlaybackModeT = Aws::String>
+    Channel& WithPlaybackMode(PlaybackModeT&& value) { SetPlaybackMode(std::forward<PlaybackModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,19 +159,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
      * AWS Elemental MediaTailor Resources</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Channel& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Channel& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Channel& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Channel& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Channel& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Channel& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Channel& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Channel& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Channel& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Channel& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Channel& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -187,41 +176,38 @@ namespace Model
      * <p>The tier for this channel. STANDARD tier channels can contain live
      * programs.</p>
      */
-    inline const Aws::String& GetTier() const{ return m_tier; }
+    inline const Aws::String& GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
-    inline Channel& WithTier(const Aws::String& value) { SetTier(value); return *this;}
-    inline Channel& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
-    inline Channel& WithTier(const char* value) { SetTier(value); return *this;}
+    template<typename TierT = Aws::String>
+    void SetTier(TierT&& value) { m_tierHasBeenSet = true; m_tier = std::forward<TierT>(value); }
+    template<typename TierT = Aws::String>
+    Channel& WithTier(TierT&& value) { SetTier(std::forward<TierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The log configuration.</p>
      */
-    inline const LogConfigurationForChannel& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LogConfigurationForChannel& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfigurationForChannel& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfigurationForChannel&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline Channel& WithLogConfiguration(const LogConfigurationForChannel& value) { SetLogConfiguration(value); return *this;}
-    inline Channel& WithLogConfiguration(LogConfigurationForChannel&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LogConfigurationForChannel>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LogConfigurationForChannel>
+    Channel& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of audiences defined in channel.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+    inline const Aws::Vector<Aws::String>& GetAudiences() const { return m_audiences; }
     inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
-    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
-    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
-    inline Channel& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
-    inline Channel& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
-    inline Channel& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
-    inline Channel& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
-    inline Channel& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+    template<typename AudiencesT = Aws::Vector<Aws::String>>
+    void SetAudiences(AudiencesT&& value) { m_audiencesHasBeenSet = true; m_audiences = std::forward<AudiencesT>(value); }
+    template<typename AudiencesT = Aws::Vector<Aws::String>>
+    Channel& WithAudiences(AudiencesT&& value) { SetAudiences(std::forward<AudiencesT>(value)); return *this;}
+    template<typename AudiencesT = Aws::String>
+    Channel& AddAudiences(AudiencesT&& value) { m_audiencesHasBeenSet = true; m_audiences.emplace_back(std::forward<AudiencesT>(value)); return *this; }
     ///@}
   private:
 
@@ -234,13 +220,13 @@ namespace Model
     Aws::String m_channelState;
     bool m_channelStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     SlateSource m_fillerSlate;
     bool m_fillerSlateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<ResponseOutputItem> m_outputs;

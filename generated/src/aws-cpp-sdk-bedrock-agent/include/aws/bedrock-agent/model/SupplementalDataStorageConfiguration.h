@@ -34,7 +34,7 @@ namespace Model
   class SupplementalDataStorageConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API SupplementalDataStorageConfiguration();
+    AWS_BEDROCKAGENT_API SupplementalDataStorageConfiguration() = default;
     AWS_BEDROCKAGENT_API SupplementalDataStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API SupplementalDataStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>A list of objects specifying storage locations for images extracted from
      * multimodal documents in your data source.</p>
      */
-    inline const Aws::Vector<SupplementalDataStorageLocation>& GetStorageLocations() const{ return m_storageLocations; }
+    inline const Aws::Vector<SupplementalDataStorageLocation>& GetStorageLocations() const { return m_storageLocations; }
     inline bool StorageLocationsHasBeenSet() const { return m_storageLocationsHasBeenSet; }
-    inline void SetStorageLocations(const Aws::Vector<SupplementalDataStorageLocation>& value) { m_storageLocationsHasBeenSet = true; m_storageLocations = value; }
-    inline void SetStorageLocations(Aws::Vector<SupplementalDataStorageLocation>&& value) { m_storageLocationsHasBeenSet = true; m_storageLocations = std::move(value); }
-    inline SupplementalDataStorageConfiguration& WithStorageLocations(const Aws::Vector<SupplementalDataStorageLocation>& value) { SetStorageLocations(value); return *this;}
-    inline SupplementalDataStorageConfiguration& WithStorageLocations(Aws::Vector<SupplementalDataStorageLocation>&& value) { SetStorageLocations(std::move(value)); return *this;}
-    inline SupplementalDataStorageConfiguration& AddStorageLocations(const SupplementalDataStorageLocation& value) { m_storageLocationsHasBeenSet = true; m_storageLocations.push_back(value); return *this; }
-    inline SupplementalDataStorageConfiguration& AddStorageLocations(SupplementalDataStorageLocation&& value) { m_storageLocationsHasBeenSet = true; m_storageLocations.push_back(std::move(value)); return *this; }
+    template<typename StorageLocationsT = Aws::Vector<SupplementalDataStorageLocation>>
+    void SetStorageLocations(StorageLocationsT&& value) { m_storageLocationsHasBeenSet = true; m_storageLocations = std::forward<StorageLocationsT>(value); }
+    template<typename StorageLocationsT = Aws::Vector<SupplementalDataStorageLocation>>
+    SupplementalDataStorageConfiguration& WithStorageLocations(StorageLocationsT&& value) { SetStorageLocations(std::forward<StorageLocationsT>(value)); return *this;}
+    template<typename StorageLocationsT = SupplementalDataStorageLocation>
+    SupplementalDataStorageConfiguration& AddStorageLocations(StorageLocationsT&& value) { m_storageLocationsHasBeenSet = true; m_storageLocations.emplace_back(std::forward<StorageLocationsT>(value)); return *this; }
     ///@}
   private:
 

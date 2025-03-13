@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConnectionResult::CreateConnectionResult()
-{
-}
-
 CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ConnectionArn"))
   {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
-
+    m_connectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -42,14 +37,15 @@ CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebS
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

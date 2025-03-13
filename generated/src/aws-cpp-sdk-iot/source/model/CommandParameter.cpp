@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CommandParameter::CommandParameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 CommandParameter::CommandParameter(JsonView jsonValue)
-  : CommandParameter()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CommandParameter& CommandParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetObject("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

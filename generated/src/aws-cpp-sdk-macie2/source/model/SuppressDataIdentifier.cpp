@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SuppressDataIdentifier::SuppressDataIdentifier() : 
-    m_idHasBeenSet(false),
-    m_type(DataIdentifierType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SuppressDataIdentifier::SuppressDataIdentifier(JsonView jsonValue)
-  : SuppressDataIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SuppressDataIdentifier& SuppressDataIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = DataIdentifierTypeMapper::GetDataIdentifierTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

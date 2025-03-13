@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateParticipantRoleConfigRequest::UpdateParticipantRoleConfigRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_contactIdHasBeenSet(false),
-    m_channelConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateParticipantRoleConfigRequest::SerializePayload() const
 {
   JsonValue payload;

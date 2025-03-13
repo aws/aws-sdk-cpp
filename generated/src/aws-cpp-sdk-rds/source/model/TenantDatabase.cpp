@@ -20,26 +20,7 @@ namespace RDS
 namespace Model
 {
 
-TenantDatabase::TenantDatabase() : 
-    m_tenantDatabaseCreateTimeHasBeenSet(false),
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_tenantDBNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_tenantDatabaseResourceIdHasBeenSet(false),
-    m_tenantDatabaseARNHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_ncharCharacterSetNameHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 TenantDatabase::TenantDatabase(const XmlNode& xmlNode)
-  : TenantDatabase()
 {
   *this = xmlNode;
 }
@@ -55,84 +36,97 @@ TenantDatabase& TenantDatabase::operator =(const XmlNode& xmlNode)
     {
       m_tenantDatabaseCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenantDatabaseCreateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_tenantDatabaseCreateTimeHasBeenSet = true;
+       m_tenantDatabaseCreateTimeHasBeenSet = true;
     }
     XmlNode dBInstanceIdentifierNode = resultNode.FirstChild("DBInstanceIdentifier");
     if(!dBInstanceIdentifierNode.IsNull())
     {
       m_dBInstanceIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBInstanceIdentifierNode.GetText());
       m_dBInstanceIdentifierHasBeenSet = true;
+       m_dBInstanceIdentifierHasBeenSet = true;
     }
     XmlNode tenantDBNameNode = resultNode.FirstChild("TenantDBName");
     if(!tenantDBNameNode.IsNull())
     {
       m_tenantDBName = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDBNameNode.GetText());
       m_tenantDBNameHasBeenSet = true;
+       m_tenantDBNameHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
       m_status = Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText());
       m_statusHasBeenSet = true;
+       m_statusHasBeenSet = true;
     }
     XmlNode masterUsernameNode = resultNode.FirstChild("MasterUsername");
     if(!masterUsernameNode.IsNull())
     {
       m_masterUsername = Aws::Utils::Xml::DecodeEscapedXmlText(masterUsernameNode.GetText());
       m_masterUsernameHasBeenSet = true;
+       m_masterUsernameHasBeenSet = true;
     }
     XmlNode dbiResourceIdNode = resultNode.FirstChild("DbiResourceId");
     if(!dbiResourceIdNode.IsNull())
     {
       m_dbiResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(dbiResourceIdNode.GetText());
       m_dbiResourceIdHasBeenSet = true;
+       m_dbiResourceIdHasBeenSet = true;
     }
     XmlNode tenantDatabaseResourceIdNode = resultNode.FirstChild("TenantDatabaseResourceId");
     if(!tenantDatabaseResourceIdNode.IsNull())
     {
       m_tenantDatabaseResourceId = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDatabaseResourceIdNode.GetText());
       m_tenantDatabaseResourceIdHasBeenSet = true;
+       m_tenantDatabaseResourceIdHasBeenSet = true;
     }
     XmlNode tenantDatabaseARNNode = resultNode.FirstChild("TenantDatabaseARN");
     if(!tenantDatabaseARNNode.IsNull())
     {
       m_tenantDatabaseARN = Aws::Utils::Xml::DecodeEscapedXmlText(tenantDatabaseARNNode.GetText());
       m_tenantDatabaseARNHasBeenSet = true;
+       m_tenantDatabaseARNHasBeenSet = true;
     }
     XmlNode characterSetNameNode = resultNode.FirstChild("CharacterSetName");
     if(!characterSetNameNode.IsNull())
     {
       m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
+       m_characterSetNameHasBeenSet = true;
     }
     XmlNode ncharCharacterSetNameNode = resultNode.FirstChild("NcharCharacterSetName");
     if(!ncharCharacterSetNameNode.IsNull())
     {
       m_ncharCharacterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(ncharCharacterSetNameNode.GetText());
       m_ncharCharacterSetNameHasBeenSet = true;
+       m_ncharCharacterSetNameHasBeenSet = true;
     }
     XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
     if(!deletionProtectionNode.IsNull())
     {
       m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
+       m_deletionProtectionHasBeenSet = true;
     }
     XmlNode pendingModifiedValuesNode = resultNode.FirstChild("PendingModifiedValues");
     if(!pendingModifiedValuesNode.IsNull())
     {
       m_pendingModifiedValues = pendingModifiedValuesNode;
       m_pendingModifiedValuesHasBeenSet = true;
+       m_pendingModifiedValuesHasBeenSet = true;
     }
     XmlNode tagListNode = resultNode.FirstChild("TagList");
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);
         tagListMember = tagListMember.NextNode("Tag");
       }
 
-      m_tagListHasBeenSet = true;
+       m_tagListHasBeenSet = true;
     }
   }
 

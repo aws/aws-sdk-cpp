@@ -18,18 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-Rotation::Rotation() : 
-    m_rotationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_timeZoneIdHasBeenSet(false),
-    m_recurrenceHasBeenSet(false)
-{
-}
-
 Rotation::Rotation(JsonView jsonValue)
-  : Rotation()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ Rotation& Rotation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RotationArn"))
   {
     m_rotationArn = jsonValue.GetString("RotationArn");
-
     m_rotationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactIds"))
   {
     Aws::Utils::Array<JsonView> contactIdsJsonList = jsonValue.GetArray("ContactIds");
@@ -59,28 +44,21 @@ Rotation& Rotation::operator =(JsonView jsonValue)
     }
     m_contactIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZoneId"))
   {
     m_timeZoneId = jsonValue.GetString("TimeZoneId");
-
     m_timeZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recurrence"))
   {
     m_recurrence = jsonValue.GetObject("Recurrence");
-
     m_recurrenceHasBeenSet = true;
   }
-
   return *this;
 }
 

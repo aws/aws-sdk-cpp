@@ -20,14 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-CharacterSet::CharacterSet() : 
-    m_characterSetNameHasBeenSet(false),
-    m_characterSetDescriptionHasBeenSet(false)
-{
-}
-
 CharacterSet::CharacterSet(const XmlNode& xmlNode)
-  : CharacterSet()
 {
   *this = xmlNode;
 }
@@ -43,12 +36,14 @@ CharacterSet& CharacterSet::operator =(const XmlNode& xmlNode)
     {
       m_characterSetName = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetNameNode.GetText());
       m_characterSetNameHasBeenSet = true;
+       m_characterSetNameHasBeenSet = true;
     }
     XmlNode characterSetDescriptionNode = resultNode.FirstChild("CharacterSetDescription");
     if(!characterSetDescriptionNode.IsNull())
     {
       m_characterSetDescription = Aws::Utils::Xml::DecodeEscapedXmlText(characterSetDescriptionNode.GetText());
       m_characterSetDescriptionHasBeenSet = true;
+       m_characterSetDescriptionHasBeenSet = true;
     }
   }
 

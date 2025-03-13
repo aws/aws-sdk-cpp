@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkSegmentEdgeIdentifier::CoreNetworkSegmentEdgeIdentifier() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_segmentNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false)
-{
-}
-
 CoreNetworkSegmentEdgeIdentifier::CoreNetworkSegmentEdgeIdentifier(JsonView jsonValue)
-  : CoreNetworkSegmentEdgeIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CoreNetworkSegmentEdgeIdentifier& CoreNetworkSegmentEdgeIdentifier::operator =(J
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentName"))
   {
     m_segmentName = jsonValue.GetString("SegmentName");
-
     m_segmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocation"))
   {
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
-
     m_edgeLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

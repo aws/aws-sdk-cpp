@@ -33,7 +33,7 @@ namespace Model
   class EdgeOverride
   {
   public:
-    AWS_NETWORKMANAGER_API EdgeOverride();
+    AWS_NETWORKMANAGER_API EdgeOverride() = default;
     AWS_NETWORKMANAGER_API EdgeOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API EdgeOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The list of edge locations.</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetEdgeSets() const{ return m_edgeSets; }
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetEdgeSets() const { return m_edgeSets; }
     inline bool EdgeSetsHasBeenSet() const { return m_edgeSetsHasBeenSet; }
-    inline void SetEdgeSets(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_edgeSetsHasBeenSet = true; m_edgeSets = value; }
-    inline void SetEdgeSets(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_edgeSetsHasBeenSet = true; m_edgeSets = std::move(value); }
-    inline EdgeOverride& WithEdgeSets(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetEdgeSets(value); return *this;}
-    inline EdgeOverride& WithEdgeSets(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetEdgeSets(std::move(value)); return *this;}
-    inline EdgeOverride& AddEdgeSets(const Aws::Vector<Aws::String>& value) { m_edgeSetsHasBeenSet = true; m_edgeSets.push_back(value); return *this; }
-    inline EdgeOverride& AddEdgeSets(Aws::Vector<Aws::String>&& value) { m_edgeSetsHasBeenSet = true; m_edgeSets.push_back(std::move(value)); return *this; }
+    template<typename EdgeSetsT = Aws::Vector<Aws::Vector<Aws::String>>>
+    void SetEdgeSets(EdgeSetsT&& value) { m_edgeSetsHasBeenSet = true; m_edgeSets = std::forward<EdgeSetsT>(value); }
+    template<typename EdgeSetsT = Aws::Vector<Aws::Vector<Aws::String>>>
+    EdgeOverride& WithEdgeSets(EdgeSetsT&& value) { SetEdgeSets(std::forward<EdgeSetsT>(value)); return *this;}
+    template<typename EdgeSetsT = Aws::Vector<Aws::String>>
+    EdgeOverride& AddEdgeSets(EdgeSetsT&& value) { m_edgeSetsHasBeenSet = true; m_edgeSets.emplace_back(std::forward<EdgeSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The edge that should be used when overriding the current edge order.</p>
      */
-    inline const Aws::String& GetUseEdge() const{ return m_useEdge; }
+    inline const Aws::String& GetUseEdge() const { return m_useEdge; }
     inline bool UseEdgeHasBeenSet() const { return m_useEdgeHasBeenSet; }
-    inline void SetUseEdge(const Aws::String& value) { m_useEdgeHasBeenSet = true; m_useEdge = value; }
-    inline void SetUseEdge(Aws::String&& value) { m_useEdgeHasBeenSet = true; m_useEdge = std::move(value); }
-    inline void SetUseEdge(const char* value) { m_useEdgeHasBeenSet = true; m_useEdge.assign(value); }
-    inline EdgeOverride& WithUseEdge(const Aws::String& value) { SetUseEdge(value); return *this;}
-    inline EdgeOverride& WithUseEdge(Aws::String&& value) { SetUseEdge(std::move(value)); return *this;}
-    inline EdgeOverride& WithUseEdge(const char* value) { SetUseEdge(value); return *this;}
+    template<typename UseEdgeT = Aws::String>
+    void SetUseEdge(UseEdgeT&& value) { m_useEdgeHasBeenSet = true; m_useEdge = std::forward<UseEdgeT>(value); }
+    template<typename UseEdgeT = Aws::String>
+    EdgeOverride& WithUseEdge(UseEdgeT&& value) { SetUseEdge(std::forward<UseEdgeT>(value)); return *this;}
     ///@}
   private:
 

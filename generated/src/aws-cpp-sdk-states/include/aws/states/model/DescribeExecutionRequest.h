@@ -22,7 +22,7 @@ namespace Model
   class DescribeExecutionRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API DescribeExecutionRequest();
+    AWS_SFN_API DescribeExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
      */
-    inline const Aws::String& GetExecutionArn() const{ return m_executionArn; }
+    inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
     inline bool ExecutionArnHasBeenSet() const { return m_executionArnHasBeenSet; }
-    inline void SetExecutionArn(const Aws::String& value) { m_executionArnHasBeenSet = true; m_executionArn = value; }
-    inline void SetExecutionArn(Aws::String&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::move(value); }
-    inline void SetExecutionArn(const char* value) { m_executionArnHasBeenSet = true; m_executionArn.assign(value); }
-    inline DescribeExecutionRequest& WithExecutionArn(const Aws::String& value) { SetExecutionArn(value); return *this;}
-    inline DescribeExecutionRequest& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
-    inline DescribeExecutionRequest& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
+    template<typename ExecutionArnT = Aws::String>
+    void SetExecutionArn(ExecutionArnT&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::forward<ExecutionArnT>(value); }
+    template<typename ExecutionArnT = Aws::String>
+    DescribeExecutionRequest& WithExecutionArn(ExecutionArnT&& value) { SetExecutionArn(std::forward<ExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * METADATA_ONLY</code> to get a successful response without the encrypted
      * definition.</p>
      */
-    inline const IncludedData& GetIncludedData() const{ return m_includedData; }
+    inline IncludedData GetIncludedData() const { return m_includedData; }
     inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
-    inline void SetIncludedData(const IncludedData& value) { m_includedDataHasBeenSet = true; m_includedData = value; }
-    inline void SetIncludedData(IncludedData&& value) { m_includedDataHasBeenSet = true; m_includedData = std::move(value); }
-    inline DescribeExecutionRequest& WithIncludedData(const IncludedData& value) { SetIncludedData(value); return *this;}
-    inline DescribeExecutionRequest& WithIncludedData(IncludedData&& value) { SetIncludedData(std::move(value)); return *this;}
+    inline void SetIncludedData(IncludedData value) { m_includedDataHasBeenSet = true; m_includedData = value; }
+    inline DescribeExecutionRequest& WithIncludedData(IncludedData value) { SetIncludedData(value); return *this;}
     ///@}
   private:
 
     Aws::String m_executionArn;
     bool m_executionArnHasBeenSet = false;
 
-    IncludedData m_includedData;
+    IncludedData m_includedData{IncludedData::NOT_SET};
     bool m_includedDataHasBeenSet = false;
   };
 

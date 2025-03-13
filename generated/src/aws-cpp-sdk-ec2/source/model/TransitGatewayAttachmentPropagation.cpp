@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayAttachmentPropagation::TransitGatewayAttachmentPropagation() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayPropagationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 TransitGatewayAttachmentPropagation::TransitGatewayAttachmentPropagation(const XmlNode& xmlNode)
-  : TransitGatewayAttachmentPropagation()
 {
   *this = xmlNode;
 }
@@ -44,12 +36,14 @@ TransitGatewayAttachmentPropagation& TransitGatewayAttachmentPropagation::operat
     {
       m_transitGatewayRouteTableId = Aws::Utils::Xml::DecodeEscapedXmlText(transitGatewayRouteTableIdNode.GetText());
       m_transitGatewayRouteTableIdHasBeenSet = true;
+       m_transitGatewayRouteTableIdHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayPropagationStateMapper::GetTransitGatewayPropagationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayPropagationStateMapper::GetTransitGatewayPropagationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
+       m_stateHasBeenSet = true;
     }
   }
 

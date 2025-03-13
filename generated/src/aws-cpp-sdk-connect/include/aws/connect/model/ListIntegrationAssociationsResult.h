@@ -29,7 +29,7 @@ namespace Model
   class ListIntegrationAssociationsResult
   {
   public:
-    AWS_CONNECT_API ListIntegrationAssociationsResult();
+    AWS_CONNECT_API ListIntegrationAssociationsResult() = default;
     AWS_CONNECT_API ListIntegrationAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API ListIntegrationAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The associations.</p>
      */
-    inline const Aws::Vector<IntegrationAssociationSummary>& GetIntegrationAssociationSummaryList() const{ return m_integrationAssociationSummaryList; }
-    inline void SetIntegrationAssociationSummaryList(const Aws::Vector<IntegrationAssociationSummary>& value) { m_integrationAssociationSummaryList = value; }
-    inline void SetIntegrationAssociationSummaryList(Aws::Vector<IntegrationAssociationSummary>&& value) { m_integrationAssociationSummaryList = std::move(value); }
-    inline ListIntegrationAssociationsResult& WithIntegrationAssociationSummaryList(const Aws::Vector<IntegrationAssociationSummary>& value) { SetIntegrationAssociationSummaryList(value); return *this;}
-    inline ListIntegrationAssociationsResult& WithIntegrationAssociationSummaryList(Aws::Vector<IntegrationAssociationSummary>&& value) { SetIntegrationAssociationSummaryList(std::move(value)); return *this;}
-    inline ListIntegrationAssociationsResult& AddIntegrationAssociationSummaryList(const IntegrationAssociationSummary& value) { m_integrationAssociationSummaryList.push_back(value); return *this; }
-    inline ListIntegrationAssociationsResult& AddIntegrationAssociationSummaryList(IntegrationAssociationSummary&& value) { m_integrationAssociationSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IntegrationAssociationSummary>& GetIntegrationAssociationSummaryList() const { return m_integrationAssociationSummaryList; }
+    template<typename IntegrationAssociationSummaryListT = Aws::Vector<IntegrationAssociationSummary>>
+    void SetIntegrationAssociationSummaryList(IntegrationAssociationSummaryListT&& value) { m_integrationAssociationSummaryListHasBeenSet = true; m_integrationAssociationSummaryList = std::forward<IntegrationAssociationSummaryListT>(value); }
+    template<typename IntegrationAssociationSummaryListT = Aws::Vector<IntegrationAssociationSummary>>
+    ListIntegrationAssociationsResult& WithIntegrationAssociationSummaryList(IntegrationAssociationSummaryListT&& value) { SetIntegrationAssociationSummaryList(std::forward<IntegrationAssociationSummaryListT>(value)); return *this;}
+    template<typename IntegrationAssociationSummaryListT = IntegrationAssociationSummary>
+    ListIntegrationAssociationsResult& AddIntegrationAssociationSummaryList(IntegrationAssociationSummaryListT&& value) { m_integrationAssociationSummaryListHasBeenSet = true; m_integrationAssociationSummaryList.emplace_back(std::forward<IntegrationAssociationSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIntegrationAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIntegrationAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIntegrationAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIntegrationAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIntegrationAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIntegrationAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIntegrationAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIntegrationAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IntegrationAssociationSummary> m_integrationAssociationSummaryList;
+    bool m_integrationAssociationSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

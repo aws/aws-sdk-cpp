@@ -27,7 +27,7 @@ namespace Model
   class GetRunRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API GetRunRequest();
+    AWS_OMICS_API GetRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,25 @@ namespace Model
     /**
      * <p>The run's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetRunRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetRunRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetRunRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetRunRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's export format.</p>
      */
-    inline const Aws::Vector<RunExport>& GetExport() const{ return m_export; }
+    inline const Aws::Vector<RunExport>& GetExport() const { return m_export; }
     inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
-    inline void SetExport(const Aws::Vector<RunExport>& value) { m_exportHasBeenSet = true; m_export = value; }
-    inline void SetExport(Aws::Vector<RunExport>&& value) { m_exportHasBeenSet = true; m_export = std::move(value); }
-    inline GetRunRequest& WithExport(const Aws::Vector<RunExport>& value) { SetExport(value); return *this;}
-    inline GetRunRequest& WithExport(Aws::Vector<RunExport>&& value) { SetExport(std::move(value)); return *this;}
-    inline GetRunRequest& AddExport(const RunExport& value) { m_exportHasBeenSet = true; m_export.push_back(value); return *this; }
-    inline GetRunRequest& AddExport(RunExport&& value) { m_exportHasBeenSet = true; m_export.push_back(std::move(value)); return *this; }
+    template<typename ExportT = Aws::Vector<RunExport>>
+    void SetExport(ExportT&& value) { m_exportHasBeenSet = true; m_export = std::forward<ExportT>(value); }
+    template<typename ExportT = Aws::Vector<RunExport>>
+    GetRunRequest& WithExport(ExportT&& value) { SetExport(std::forward<ExportT>(value)); return *this;}
+    inline GetRunRequest& AddExport(RunExport value) { m_exportHasBeenSet = true; m_export.push_back(value); return *this; }
     ///@}
   private:
 

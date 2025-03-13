@@ -18,14 +18,7 @@ namespace Backup
 namespace Model
 {
 
-BackupPlanTemplatesListMember::BackupPlanTemplatesListMember() : 
-    m_backupPlanTemplateIdHasBeenSet(false),
-    m_backupPlanTemplateNameHasBeenSet(false)
-{
-}
-
 BackupPlanTemplatesListMember::BackupPlanTemplatesListMember(JsonView jsonValue)
-  : BackupPlanTemplatesListMember()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BackupPlanTemplatesListMember& BackupPlanTemplatesListMember::operator =(JsonVie
   if(jsonValue.ValueExists("BackupPlanTemplateId"))
   {
     m_backupPlanTemplateId = jsonValue.GetString("BackupPlanTemplateId");
-
     m_backupPlanTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanTemplateName"))
   {
     m_backupPlanTemplateName = jsonValue.GetString("BackupPlanTemplateName");
-
     m_backupPlanTemplateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

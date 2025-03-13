@@ -18,19 +18,7 @@ namespace XRay
 namespace Model
 {
 
-FaultRootCauseService::FaultRootCauseService() : 
-    m_nameHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_entityPathHasBeenSet(false),
-    m_inferred(false),
-    m_inferredHasBeenSet(false)
-{
-}
-
 FaultRootCauseService::FaultRootCauseService(JsonView jsonValue)
-  : FaultRootCauseService()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ FaultRootCauseService& FaultRootCauseService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Names"))
   {
     Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
@@ -53,21 +39,16 @@ FaultRootCauseService& FaultRootCauseService::operator =(JsonView jsonValue)
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityPath"))
   {
     Aws::Utils::Array<JsonView> entityPathJsonList = jsonValue.GetArray("EntityPath");
@@ -77,14 +58,11 @@ FaultRootCauseService& FaultRootCauseService::operator =(JsonView jsonValue)
     }
     m_entityPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inferred"))
   {
     m_inferred = jsonValue.GetBool("Inferred");
-
     m_inferredHasBeenSet = true;
   }
-
   return *this;
 }
 

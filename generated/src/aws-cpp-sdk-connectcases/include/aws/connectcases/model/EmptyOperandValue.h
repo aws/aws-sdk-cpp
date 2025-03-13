@@ -33,7 +33,7 @@ namespace Model
   class EmptyOperandValue
   {
   public:
-    AWS_CONNECTCASES_API EmptyOperandValue();
+    AWS_CONNECTCASES_API EmptyOperandValue() = default;
     AWS_CONNECTCASES_API EmptyOperandValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API EmptyOperandValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;

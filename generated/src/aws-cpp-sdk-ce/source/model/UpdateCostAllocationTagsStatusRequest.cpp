@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCostAllocationTagsStatusRequest::UpdateCostAllocationTagsStatusRequest() : 
-    m_costAllocationTagsStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCostAllocationTagsStatusRequest::SerializePayload() const
 {
   JsonValue payload;

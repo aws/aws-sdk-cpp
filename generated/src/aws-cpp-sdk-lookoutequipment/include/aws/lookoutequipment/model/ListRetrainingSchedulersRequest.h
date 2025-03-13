@@ -22,7 +22,7 @@ namespace Model
   class ListRetrainingSchedulersRequest : public LookoutEquipmentRequest
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ListRetrainingSchedulersRequest();
+    AWS_LOOKOUTEQUIPMENT_API ListRetrainingSchedulersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Specify this field to only list retraining schedulers whose machine learning
      * models begin with the value you specify. </p>
      */
-    inline const Aws::String& GetModelNameBeginsWith() const{ return m_modelNameBeginsWith; }
+    inline const Aws::String& GetModelNameBeginsWith() const { return m_modelNameBeginsWith; }
     inline bool ModelNameBeginsWithHasBeenSet() const { return m_modelNameBeginsWithHasBeenSet; }
-    inline void SetModelNameBeginsWith(const Aws::String& value) { m_modelNameBeginsWithHasBeenSet = true; m_modelNameBeginsWith = value; }
-    inline void SetModelNameBeginsWith(Aws::String&& value) { m_modelNameBeginsWithHasBeenSet = true; m_modelNameBeginsWith = std::move(value); }
-    inline void SetModelNameBeginsWith(const char* value) { m_modelNameBeginsWithHasBeenSet = true; m_modelNameBeginsWith.assign(value); }
-    inline ListRetrainingSchedulersRequest& WithModelNameBeginsWith(const Aws::String& value) { SetModelNameBeginsWith(value); return *this;}
-    inline ListRetrainingSchedulersRequest& WithModelNameBeginsWith(Aws::String&& value) { SetModelNameBeginsWith(std::move(value)); return *this;}
-    inline ListRetrainingSchedulersRequest& WithModelNameBeginsWith(const char* value) { SetModelNameBeginsWith(value); return *this;}
+    template<typename ModelNameBeginsWithT = Aws::String>
+    void SetModelNameBeginsWith(ModelNameBeginsWithT&& value) { m_modelNameBeginsWithHasBeenSet = true; m_modelNameBeginsWith = std::forward<ModelNameBeginsWithT>(value); }
+    template<typename ModelNameBeginsWithT = Aws::String>
+    ListRetrainingSchedulersRequest& WithModelNameBeginsWith(ModelNameBeginsWithT&& value) { SetModelNameBeginsWith(std::forward<ModelNameBeginsWithT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,10 @@ namespace Model
      * <p>Specify this field to only list retraining schedulers whose status matches
      * the value you specify. </p>
      */
-    inline const RetrainingSchedulerStatus& GetStatus() const{ return m_status; }
+    inline RetrainingSchedulerStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RetrainingSchedulerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RetrainingSchedulerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListRetrainingSchedulersRequest& WithStatus(const RetrainingSchedulerStatus& value) { SetStatus(value); return *this;}
-    inline ListRetrainingSchedulersRequest& WithStatus(RetrainingSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RetrainingSchedulerStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListRetrainingSchedulersRequest& WithStatus(RetrainingSchedulerStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -68,21 +64,19 @@ namespace Model
      * <p>If the number of results exceeds the maximum, a pagination token is returned.
      * Use the token in the request to show the next page of retraining schedulers.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRetrainingSchedulersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRetrainingSchedulersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRetrainingSchedulersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRetrainingSchedulersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the maximum number of retraining schedulers to list. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRetrainingSchedulersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -92,13 +86,13 @@ namespace Model
     Aws::String m_modelNameBeginsWith;
     bool m_modelNameBeginsWithHasBeenSet = false;
 
-    RetrainingSchedulerStatus m_status;
+    RetrainingSchedulerStatus m_status{RetrainingSchedulerStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

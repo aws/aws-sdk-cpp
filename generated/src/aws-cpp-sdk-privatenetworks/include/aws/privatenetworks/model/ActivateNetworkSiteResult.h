@@ -28,7 +28,7 @@ namespace Model
   class ActivateNetworkSiteResult
   {
   public:
-    AWS_PRIVATENETWORKS_API ActivateNetworkSiteResult();
+    AWS_PRIVATENETWORKS_API ActivateNetworkSiteResult() = default;
     AWS_PRIVATENETWORKS_API ActivateNetworkSiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PRIVATENETWORKS_API ActivateNetworkSiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the network site.</p>
      */
-    inline const NetworkSite& GetNetworkSite() const{ return m_networkSite; }
-    inline void SetNetworkSite(const NetworkSite& value) { m_networkSite = value; }
-    inline void SetNetworkSite(NetworkSite&& value) { m_networkSite = std::move(value); }
-    inline ActivateNetworkSiteResult& WithNetworkSite(const NetworkSite& value) { SetNetworkSite(value); return *this;}
-    inline ActivateNetworkSiteResult& WithNetworkSite(NetworkSite&& value) { SetNetworkSite(std::move(value)); return *this;}
+    inline const NetworkSite& GetNetworkSite() const { return m_networkSite; }
+    template<typename NetworkSiteT = NetworkSite>
+    void SetNetworkSite(NetworkSiteT&& value) { m_networkSiteHasBeenSet = true; m_networkSite = std::forward<NetworkSiteT>(value); }
+    template<typename NetworkSiteT = NetworkSite>
+    ActivateNetworkSiteResult& WithNetworkSite(NetworkSiteT&& value) { SetNetworkSite(std::forward<NetworkSiteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ActivateNetworkSiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ActivateNetworkSiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ActivateNetworkSiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ActivateNetworkSiteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NetworkSite m_networkSite;
+    bool m_networkSiteHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

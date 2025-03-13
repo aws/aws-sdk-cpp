@@ -33,7 +33,7 @@ namespace Model
   class MetricDimension
   {
   public:
-    AWS_PINPOINT_API MetricDimension();
+    AWS_PINPOINT_API MetricDimension() = default;
     AWS_PINPOINT_API MetricDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API MetricDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,19 @@ namespace Model
      * GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and
      * EQUAL.</p>
      */
-    inline const Aws::String& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline const Aws::String& GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const Aws::String& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(Aws::String&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline void SetComparisonOperator(const char* value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator.assign(value); }
-    inline MetricDimension& WithComparisonOperator(const Aws::String& value) { SetComparisonOperator(value); return *this;}
-    inline MetricDimension& WithComparisonOperator(Aws::String&& value) { SetComparisonOperator(std::move(value)); return *this;}
-    inline MetricDimension& WithComparisonOperator(const char* value) { SetComparisonOperator(value); return *this;}
+    template<typename ComparisonOperatorT = Aws::String>
+    void SetComparisonOperator(ComparisonOperatorT&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::forward<ComparisonOperatorT>(value); }
+    template<typename ComparisonOperatorT = Aws::String>
+    MetricDimension& WithComparisonOperator(ComparisonOperatorT&& value) { SetComparisonOperator(std::forward<ComparisonOperatorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to compare.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline MetricDimension& WithValue(double value) { SetValue(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

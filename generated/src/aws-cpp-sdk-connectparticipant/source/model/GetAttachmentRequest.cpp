@@ -13,14 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAttachmentRequest::GetAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false),
-    m_connectionTokenHasBeenSet(false),
-    m_urlExpiryInSeconds(0),
-    m_urlExpiryInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String GetAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class FormInputBindingPropertiesValue
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValue();
+    AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValue() = default;
     AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The property type.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline FormInputBindingPropertiesValue& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline FormInputBindingPropertiesValue& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline FormInputBindingPropertiesValue& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    FormInputBindingPropertiesValue& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the properties to customize with data at runtime.</p>
      */
-    inline const FormInputBindingPropertiesValueProperties& GetBindingProperties() const{ return m_bindingProperties; }
+    inline const FormInputBindingPropertiesValueProperties& GetBindingProperties() const { return m_bindingProperties; }
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
-    inline void SetBindingProperties(const FormInputBindingPropertiesValueProperties& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
-    inline void SetBindingProperties(FormInputBindingPropertiesValueProperties&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
-    inline FormInputBindingPropertiesValue& WithBindingProperties(const FormInputBindingPropertiesValueProperties& value) { SetBindingProperties(value); return *this;}
-    inline FormInputBindingPropertiesValue& WithBindingProperties(FormInputBindingPropertiesValueProperties&& value) { SetBindingProperties(std::move(value)); return *this;}
+    template<typename BindingPropertiesT = FormInputBindingPropertiesValueProperties>
+    void SetBindingProperties(BindingPropertiesT&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::forward<BindingPropertiesT>(value); }
+    template<typename BindingPropertiesT = FormInputBindingPropertiesValueProperties>
+    FormInputBindingPropertiesValue& WithBindingProperties(BindingPropertiesT&& value) { SetBindingProperties(std::forward<BindingPropertiesT>(value)); return *this;}
     ///@}
   private:
 

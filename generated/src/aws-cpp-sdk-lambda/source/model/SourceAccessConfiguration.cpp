@@ -18,15 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-SourceAccessConfiguration::SourceAccessConfiguration() : 
-    m_type(SourceAccessType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uRIHasBeenSet(false)
-{
-}
-
 SourceAccessConfiguration::SourceAccessConfiguration(JsonView jsonValue)
-  : SourceAccessConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SourceAccessConfiguration& SourceAccessConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SourceAccessTypeMapper::GetSourceAccessTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URI"))
   {
     m_uRI = jsonValue.GetString("URI");
-
     m_uRIHasBeenSet = true;
   }
-
   return *this;
 }
 

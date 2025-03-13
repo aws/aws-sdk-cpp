@@ -18,17 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-IamIdentityCenterOptions::IamIdentityCenterOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_iamIdentityCenterInstanceArnHasBeenSet(false),
-    m_iamRoleForIdentityCenterApplicationArnHasBeenSet(false),
-    m_iamIdentityCenterApplicationArnHasBeenSet(false)
-{
-}
-
 IamIdentityCenterOptions::IamIdentityCenterOptions(JsonView jsonValue)
-  : IamIdentityCenterOptions()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ IamIdentityCenterOptions& IamIdentityCenterOptions::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamIdentityCenterInstanceArn"))
   {
     m_iamIdentityCenterInstanceArn = jsonValue.GetString("iamIdentityCenterInstanceArn");
-
     m_iamIdentityCenterInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamRoleForIdentityCenterApplicationArn"))
   {
     m_iamRoleForIdentityCenterApplicationArn = jsonValue.GetString("iamRoleForIdentityCenterApplicationArn");
-
     m_iamRoleForIdentityCenterApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamIdentityCenterApplicationArn"))
   {
     m_iamIdentityCenterApplicationArn = jsonValue.GetString("iamIdentityCenterApplicationArn");
-
     m_iamIdentityCenterApplicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

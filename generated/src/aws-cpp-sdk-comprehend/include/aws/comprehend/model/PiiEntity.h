@@ -31,7 +31,7 @@ namespace Model
   class PiiEntity
   {
   public:
-    AWS_COMPREHEND_API PiiEntity();
+    AWS_COMPREHEND_API PiiEntity() = default;
     AWS_COMPREHEND_API PiiEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API PiiEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
      * detection.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline PiiEntity& WithScore(double value) { SetScore(value); return *this;}
@@ -52,12 +52,10 @@ namespace Model
     /**
      * <p>The entity's type.</p>
      */
-    inline const PiiEntityType& GetType() const{ return m_type; }
+    inline PiiEntityType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PiiEntityType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PiiEntityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PiiEntity& WithType(const PiiEntityType& value) { SetType(value); return *this;}
-    inline PiiEntity& WithType(PiiEntityType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PiiEntityType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PiiEntity& WithType(PiiEntityType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * <p>The zero-based offset from the beginning of the source text to the first
      * character in the entity.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline PiiEntity& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -76,23 +74,23 @@ namespace Model
      * <p>The zero-based offset from the beginning of the source text to the last
      * character in the entity.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline PiiEntity& WithEndOffset(int value) { SetEndOffset(value); return *this;}
     ///@}
   private:
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
 
-    PiiEntityType m_type;
+    PiiEntityType m_type{PiiEntityType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
   };
 

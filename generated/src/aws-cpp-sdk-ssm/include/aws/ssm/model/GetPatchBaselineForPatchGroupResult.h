@@ -28,7 +28,7 @@ namespace Model
   class GetPatchBaselineForPatchGroupResult
   {
   public:
-    AWS_SSM_API GetPatchBaselineForPatchGroupResult();
+    AWS_SSM_API GetPatchBaselineForPatchGroupResult() = default;
     AWS_SSM_API GetPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The ID of the patch baseline that should be used for the patch group.</p>
      */
-    inline const Aws::String& GetBaselineId() const{ return m_baselineId; }
-    inline void SetBaselineId(const Aws::String& value) { m_baselineId = value; }
-    inline void SetBaselineId(Aws::String&& value) { m_baselineId = std::move(value); }
-    inline void SetBaselineId(const char* value) { m_baselineId.assign(value); }
-    inline GetPatchBaselineForPatchGroupResult& WithBaselineId(const Aws::String& value) { SetBaselineId(value); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithBaselineId(Aws::String&& value) { SetBaselineId(std::move(value)); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithBaselineId(const char* value) { SetBaselineId(value); return *this;}
+    inline const Aws::String& GetBaselineId() const { return m_baselineId; }
+    template<typename BaselineIdT = Aws::String>
+    void SetBaselineId(BaselineIdT&& value) { m_baselineIdHasBeenSet = true; m_baselineId = std::forward<BaselineIdT>(value); }
+    template<typename BaselineIdT = Aws::String>
+    GetPatchBaselineForPatchGroupResult& WithBaselineId(BaselineIdT&& value) { SetBaselineId(std::forward<BaselineIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the patch group.</p>
      */
-    inline const Aws::String& GetPatchGroup() const{ return m_patchGroup; }
-    inline void SetPatchGroup(const Aws::String& value) { m_patchGroup = value; }
-    inline void SetPatchGroup(Aws::String&& value) { m_patchGroup = std::move(value); }
-    inline void SetPatchGroup(const char* value) { m_patchGroup.assign(value); }
-    inline GetPatchBaselineForPatchGroupResult& WithPatchGroup(const Aws::String& value) { SetPatchGroup(value); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithPatchGroup(Aws::String&& value) { SetPatchGroup(std::move(value)); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithPatchGroup(const char* value) { SetPatchGroup(value); return *this;}
+    inline const Aws::String& GetPatchGroup() const { return m_patchGroup; }
+    template<typename PatchGroupT = Aws::String>
+    void SetPatchGroup(PatchGroupT&& value) { m_patchGroupHasBeenSet = true; m_patchGroup = std::forward<PatchGroupT>(value); }
+    template<typename PatchGroupT = Aws::String>
+    GetPatchBaselineForPatchGroupResult& WithPatchGroup(PatchGroupT&& value) { SetPatchGroup(std::forward<PatchGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,32 +60,32 @@ namespace Model
      * <p>The operating system rule specified for patch groups using the patch
      * baseline.</p>
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystem = std::move(value); }
-    inline GetPatchBaselineForPatchGroupResult& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline GetPatchBaselineForPatchGroupResult& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPatchBaselineForPatchGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPatchBaselineForPatchGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPatchBaselineForPatchGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_baselineId;
+    bool m_baselineIdHasBeenSet = false;
 
     Aws::String m_patchGroup;
+    bool m_patchGroupHasBeenSet = false;
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
+    bool m_operatingSystemHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

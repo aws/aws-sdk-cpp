@@ -24,7 +24,7 @@ namespace Model
   class StartSimulationRequest : public SimSpaceWeaverRequest
   {
   public:
-    AWS_SIMSPACEWEAVER_API StartSimulationRequest();
+    AWS_SIMSPACEWEAVER_API StartSimulationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after
      * 24 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartSimulationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartSimulationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartSimulationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartSimulationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the simulation.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartSimulationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartSimulationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartSimulationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartSimulationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,28 +71,24 @@ namespace Model
      * <code>0</code> makes the simulation immediately transition to
      * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
-    inline const Aws::String& GetMaximumDuration() const{ return m_maximumDuration; }
+    inline const Aws::String& GetMaximumDuration() const { return m_maximumDuration; }
     inline bool MaximumDurationHasBeenSet() const { return m_maximumDurationHasBeenSet; }
-    inline void SetMaximumDuration(const Aws::String& value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = value; }
-    inline void SetMaximumDuration(Aws::String&& value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = std::move(value); }
-    inline void SetMaximumDuration(const char* value) { m_maximumDurationHasBeenSet = true; m_maximumDuration.assign(value); }
-    inline StartSimulationRequest& WithMaximumDuration(const Aws::String& value) { SetMaximumDuration(value); return *this;}
-    inline StartSimulationRequest& WithMaximumDuration(Aws::String&& value) { SetMaximumDuration(std::move(value)); return *this;}
-    inline StartSimulationRequest& WithMaximumDuration(const char* value) { SetMaximumDuration(value); return *this;}
+    template<typename MaximumDurationT = Aws::String>
+    void SetMaximumDuration(MaximumDurationT&& value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = std::forward<MaximumDurationT>(value); }
+    template<typename MaximumDurationT = Aws::String>
+    StartSimulationRequest& WithMaximumDuration(MaximumDurationT&& value) { SetMaximumDuration(std::forward<MaximumDurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the simulation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartSimulationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartSimulationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartSimulationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartSimulationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,14 +102,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * roles</a> in the <i>Identity and Access Management User Guide</i>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline StartSimulationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StartSimulationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StartSimulationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StartSimulationRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +120,12 @@ namespace Model
      * you provide a <code>SchemaS3Location</code> then you can't provide a
      * <code>SnapshotS3Location</code>.</p>
      */
-    inline const S3Location& GetSchemaS3Location() const{ return m_schemaS3Location; }
+    inline const S3Location& GetSchemaS3Location() const { return m_schemaS3Location; }
     inline bool SchemaS3LocationHasBeenSet() const { return m_schemaS3LocationHasBeenSet; }
-    inline void SetSchemaS3Location(const S3Location& value) { m_schemaS3LocationHasBeenSet = true; m_schemaS3Location = value; }
-    inline void SetSchemaS3Location(S3Location&& value) { m_schemaS3LocationHasBeenSet = true; m_schemaS3Location = std::move(value); }
-    inline StartSimulationRequest& WithSchemaS3Location(const S3Location& value) { SetSchemaS3Location(value); return *this;}
-    inline StartSimulationRequest& WithSchemaS3Location(S3Location&& value) { SetSchemaS3Location(std::move(value)); return *this;}
+    template<typename SchemaS3LocationT = S3Location>
+    void SetSchemaS3Location(SchemaS3LocationT&& value) { m_schemaS3LocationHasBeenSet = true; m_schemaS3Location = std::forward<SchemaS3LocationT>(value); }
+    template<typename SchemaS3LocationT = S3Location>
+    StartSimulationRequest& WithSchemaS3Location(SchemaS3LocationT&& value) { SetSchemaS3Location(std::forward<SchemaS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +139,12 @@ namespace Model
      * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
      * can't provide a <code>SchemaS3Location</code>.</p>
      */
-    inline const S3Location& GetSnapshotS3Location() const{ return m_snapshotS3Location; }
+    inline const S3Location& GetSnapshotS3Location() const { return m_snapshotS3Location; }
     inline bool SnapshotS3LocationHasBeenSet() const { return m_snapshotS3LocationHasBeenSet; }
-    inline void SetSnapshotS3Location(const S3Location& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = value; }
-    inline void SetSnapshotS3Location(S3Location&& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = std::move(value); }
-    inline StartSimulationRequest& WithSnapshotS3Location(const S3Location& value) { SetSnapshotS3Location(value); return *this;}
-    inline StartSimulationRequest& WithSnapshotS3Location(S3Location&& value) { SetSnapshotS3Location(std::move(value)); return *this;}
+    template<typename SnapshotS3LocationT = S3Location>
+    void SetSnapshotS3Location(SnapshotS3LocationT&& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = std::forward<SnapshotS3LocationT>(value); }
+    template<typename SnapshotS3LocationT = S3Location>
+    StartSimulationRequest& WithSnapshotS3Location(SnapshotS3LocationT&& value) { SetSnapshotS3Location(std::forward<SnapshotS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,19 +154,16 @@ namespace Model
      * Amazon Web Services resources</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartSimulationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartSimulationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartSimulationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline StartSimulationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartSimulationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartSimulationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartSimulationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartSimulationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartSimulationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartSimulationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartSimulationRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

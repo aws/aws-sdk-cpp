@@ -18,23 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncItem::ResourceDataSyncItem() : 
-    m_syncNameHasBeenSet(false),
-    m_syncTypeHasBeenSet(false),
-    m_syncSourceHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false),
-    m_lastSyncTimeHasBeenSet(false),
-    m_lastSuccessfulSyncTimeHasBeenSet(false),
-    m_syncLastModifiedTimeHasBeenSet(false),
-    m_lastStatus(LastResourceDataSyncStatus::NOT_SET),
-    m_lastStatusHasBeenSet(false),
-    m_syncCreatedTimeHasBeenSet(false),
-    m_lastSyncStatusMessageHasBeenSet(false)
-{
-}
-
 ResourceDataSyncItem::ResourceDataSyncItem(JsonView jsonValue)
-  : ResourceDataSyncItem()
 {
   *this = jsonValue;
 }
@@ -44,73 +28,53 @@ ResourceDataSyncItem& ResourceDataSyncItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SyncName"))
   {
     m_syncName = jsonValue.GetString("SyncName");
-
     m_syncNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncType"))
   {
     m_syncType = jsonValue.GetString("SyncType");
-
     m_syncTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncSource"))
   {
     m_syncSource = jsonValue.GetObject("SyncSource");
-
     m_syncSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("S3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSyncTime"))
   {
     m_lastSyncTime = jsonValue.GetDouble("LastSyncTime");
-
     m_lastSyncTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfulSyncTime"))
   {
     m_lastSuccessfulSyncTime = jsonValue.GetDouble("LastSuccessfulSyncTime");
-
     m_lastSuccessfulSyncTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncLastModifiedTime"))
   {
     m_syncLastModifiedTime = jsonValue.GetDouble("SyncLastModifiedTime");
-
     m_syncLastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStatus"))
   {
     m_lastStatus = LastResourceDataSyncStatusMapper::GetLastResourceDataSyncStatusForName(jsonValue.GetString("LastStatus"));
-
     m_lastStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SyncCreatedTime"))
   {
     m_syncCreatedTime = jsonValue.GetDouble("SyncCreatedTime");
-
     m_syncCreatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSyncStatusMessage"))
   {
     m_lastSyncStatusMessage = jsonValue.GetString("LastSyncStatusMessage");
-
     m_lastSyncStatusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

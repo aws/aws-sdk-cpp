@@ -12,20 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLogStreamsRequest::DescribeLogStreamsRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_logGroupIdentifierHasBeenSet(false),
-    m_logStreamNamePrefixHasBeenSet(false),
-    m_orderBy(OrderBy::NOT_SET),
-    m_orderByHasBeenSet(false),
-    m_descending(false),
-    m_descendingHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLogStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

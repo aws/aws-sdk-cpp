@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCertificatesResult::DescribeCertificatesResult()
-{
-}
-
 DescribeCertificatesResult::DescribeCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
     if(!defaultCertificateForNewLaunchesNode.IsNull())
     {
       m_defaultCertificateForNewLaunches = Aws::Utils::Xml::DecodeEscapedXmlText(defaultCertificateForNewLaunchesNode.GetText());
+      m_defaultCertificateForNewLaunchesHasBeenSet = true;
     }
     XmlNode certificatesNode = resultNode.FirstChild("Certificates");
     if(!certificatesNode.IsNull())
     {
       XmlNode certificatesMember = certificatesNode.FirstChild("Certificate");
+      m_certificatesHasBeenSet = !certificatesMember.IsNull();
       while(!certificatesMember.IsNull())
       {
         m_certificates.push_back(certificatesMember);
@@ -58,12 +56,14 @@ DescribeCertificatesResult& DescribeCertificatesResult::operator =(const Aws::Am
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeCertificatesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;
